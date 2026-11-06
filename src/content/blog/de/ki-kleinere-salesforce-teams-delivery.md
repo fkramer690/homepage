@@ -40,7 +40,7 @@ Für die Programmorganisation zählen fünf Bausteine:
 - **Benannte Verantwortung.** „A named human owns every artifact“, jedes Artefakt hat also einen namentlich benannten Menschen als Verantwortlichen. Agenten arbeiten nur in freigegebenen Sandboxes und Scratch Orgs, nie in Produktion.
 - **Dieselben Prüfungen für alle.** PMD, Code Analyzer und ApexGuru laufen in der CI für Menschen- und Agentencode gleichermaßen.
 
-Ich lese ApexHours als gut begründetes Praxis-Framework. Es nennt keine Teamgrößen und keine gemessenen Ergebnisse, die Zahlen müssen also aus anderen Quellen kommen.
+Ich stimme nicht jeder Zahl und nicht jedem Schritt in diesem Framework zu, aber die Richtung stimmt. Und eine Schablone passt nie hundertprozentig auf jeden Kunden.
 
 ## Warum werden Salesforce-Teams kleiner?
 

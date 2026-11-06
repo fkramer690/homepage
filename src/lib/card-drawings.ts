@@ -27,6 +27,15 @@ const pin = (x: number, y: number, color = G) =>
   `<g transform="translate(${x} ${y})"><path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#fff" stroke="${color}" stroke-width="1.4"/><circle cx="0" cy="-16" r="3" fill="${color}"/></g>`;
 
 const drawings: Record<string, Drawing> = {
+  'decision-makers-bottleneck-ai': (l) => `
+    ${t(18, 20, l('LEAD TIME 7.5 DAYS · 80 % WAITING', 'DURCHLAUFZEIT 7,5 TAGE · 80 % WARTEN'), { fill: D, size: 7 })}
+    ${box(18, 30, 70, 24, C)}${t(53, 45, l('Build 1.5 days', 'Bau 1,5 Tage'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(94, 30, 208, 24)}${t(198, 45, l('Waiting for decisions · 6 days', 'Warten auf Entscheidungen · 6 Tage'), { size: 7, anchor: 'middle' })}
+    <path d="M18 68H302" stroke="${L}"/>
+    ${t(18, 84, l('WHY DECISIONS STALL', 'WARUM ENTSCHEIDUNGEN LIEGEN'), { fill: D, size: 7 })}
+    ${[l('daily business', 'Tagesgeschäft'), l('unclear process', 'Prozess unklar'), l('owner missing', 'Owner fehlt')].map((s, i) => box(18 + i * 98, 92, 88, 22) + t(62 + i * 98, 106, s, { size: 7, anchor: 'middle' })).join('')}
+    ${tag(18, 126, 150, l('budget decision time', 'Entscheidungszeit budgetieren'))}${t(178, 139, l('deadline + default rule', 'Frist + Standardregel'), { size: 7 })}`,
+
   'cpq-to-revenue-cloud-migration-plan': (l) => `
     ${t(18, 20, l('3 PHASES · TYPICALLY 3 TO 6 MONTHS', '3 PHASEN · TYPISCH 3 BIS 6 MONATE'), { fill: D, size: 7 })}
     ${[l('Prepare', 'Vorbereiten'), l('Strategy', 'Strategie'), l('Execute', 'Umsetzen')].map((s, i) => box(18 + i * 100, 30, 84, 30, i === 2 ? C : G) + t(60 + i * 100, 49, (i + 1) + ' · ' + s, { fill: i === 2 ? C : G, size: 7.5, anchor: 'middle' })).join('')}

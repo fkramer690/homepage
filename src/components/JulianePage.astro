@@ -11,7 +11,7 @@ import photo from '../assets/partners/juliane-winterscheid-portrait.jpg';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
-import { juliane, julianePaths } from '../data/juliane-winterscheid';
+import { juliane, julianePaths, julianeProjectDetails } from '../data/juliane-winterscheid';
 import { homeHref, localHref, partnersHref } from '../lib/paths';
 
 interface Props {
@@ -20,6 +20,8 @@ interface Props {
 const { lang } = Astro.props;
 const t = lang === 'de' ? de : en;
 const c = juliane[lang];
+// Reference projects with their CV details, shown in the "project in focus" layout of the start page.
+const projects = c.projects.items.map((p) => ({ ...p, ...julianeProjectDetails[lang][p.logo] }));
 const base = import.meta.env.BASE_URL;
 const alternates = { en: localHref('en', julianePaths.en), de: localHref('de', julianePaths.de) };
 const url = new URL(alternates[lang], Astro.site).href;
@@ -114,6 +116,10 @@ const schema = [
         <p class="label mono">{c.about.tagsLabel}</p>
         <ul class="tags">{c.about.tags.map((tag) => <li>{tag}</li>)}</ul>
       </div>
+      <div class="focus">
+        <p class="label mono">{c.about.methodsLabel}</p>
+        <ul class="tags">{c.about.methods.map((tag) => <li>{tag}</li>)}</ul>
+      </div>
     </div>
   </section>
 
@@ -151,17 +157,45 @@ const schema = [
       <p class="label mono">{c.projects.label}</p>
       <h2>{c.projects.title}</h2>
       <p class="section-intro">{c.projects.intro}</p>
-      <div class="rc-terms-grid">
-        {c.projects.items.map((p) => {
+      {/* One project at a time: radio tabs without script, as "Ausgewählte Projekte" on the start page.
+          Desktop picks from the list, phones from the chips. */}
+      <div class="rf jw-rf">
+        {projects.map((_, i) => <input type="radio" name="jw-rf" id={`jw-rf-${i}`} class="visually-hidden" checked={i === 0} />)}
+        <div class="rf-chips" role="group" aria-label={c.projects.pickLabel}>
+          {projects.map((p, i) => <label for={`jw-rf-${i}`}>{p.short}</label>)}
+        </div>
+        <ol class="rf-list" aria-label={c.projects.pickLabel}>
+          {projects.map((p, i) => (
+            <li>
+              <label for={`jw-rf-${i}`}>
+                <span class="rf-sector">{p.sector}</span>
+                <span class="rf-title">{p.t}</span>
+              </label>
+            </li>
+          ))}
+        </ol>
+        {projects.map((p) => {
           const logo = logos.get(p.logo);
           return (
-            <div class="jw-project">
-              {logo && <Image src={logo} alt={`Logo ${p.t.split(':')[0]}`} height={40} class="jw-logo" />}
-              <h3>{p.t}</h3>
-              <p>{p.d}</p>
-            </div>
+            <article class="rf-panel">
+              <div class="rf-body">
+                <div class="jw-rf-head">
+                  {logo && <Image src={logo} alt={`Logo ${p.t.split(':')[0]}`} height={40} class="jw-logo" />}
+                  {p.period && <span class="jw-period mono">{p.period}</span>}
+                </div>
+                <p class="ref-sector">{p.sector}</p>
+                <h3>{p.t}</h3>
+                <dl>
+                  <dt class="mono">{c.projects.roleLabel}</dt><dd>{p.role}</dd>
+                  <dt class="mono">{c.projects.scopeLabel}</dt><dd>{p.scope}</dd>
+                  <dt class="mono">{c.projects.tasksLabel}</dt>
+                  <dd><ul class="jw-tasks">{p.bullets.map((b) => <li><Icon name="tick" class="jw-tick" />{b}</li>)}</ul></dd>
+                </dl>
+              </div>
+            </article>
           );
         })}
+        <style is:inline set:html={projects.map((_, i) => `#jw-rf-${i}:checked ~ .rf-list label[for="jw-rf-${i}"] { background: var(--white); border-left-color: var(--cyan); } #jw-rf-${i}:checked ~ .rf-chips label[for="jw-rf-${i}"] { background: var(--anthracite); border-color: var(--anthracite); color: var(--white); } #jw-rf-${i}:focus-visible ~ .rf-list label[for="jw-rf-${i}"], #jw-rf-${i}:focus-visible ~ .rf-chips label[for="jw-rf-${i}"] { outline: 2px solid var(--cyan); outline-offset: -2px; } #jw-rf-${i}:checked ~ .rf-panel:nth-of-type(${i + 1}) { display: block; }`).join('\n')} />
       </div>
       <div class="focus">
         <p class="label mono">{c.credentials.label}</p>

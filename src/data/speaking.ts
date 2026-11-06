@@ -21,6 +21,8 @@ export interface Talk {
   points: { en: string[]; de: string[] };
   appearances: Appearance[];
   recording?: { url: string; label: Text };
+  // Written version of the talk, published elsewhere.
+  article?: { url: string; label: Text };
 }
 
 export const talks: Talk[] = [
@@ -51,6 +53,10 @@ export const talks: Talk[] = [
     recording: {
       url: 'https://vimeo.com/1098825315/f7e9556eb2',
       label: { en: 'Watch the recording', de: 'Aufzeichnung ansehen' },
+    },
+    article: {
+      url: 'https://salesforcebreak.com/2025/09/04/measure-salesforce-flow-performance/',
+      label: { en: 'Read it as an article on Salesforce Break', de: 'Als Fachartikel auf Salesforce Break lesen (Englisch)' },
     },
   },
   {

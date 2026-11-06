@@ -1,4 +1,4 @@
-# Homepage – Backlog (Stand 03.11.2026)
+# Homepage – Backlog (Stand 05.11.2026)
 
 Einzige gepflegte Fassung des Backlogs. Andere Projekte (z. B. der tägliche Blog-Artikel-Lauf) lesen diese Datei. Das Repo ist öffentlich: keine Kundennamen, NDA-Details, Preise oder internen Notizen hier eintragen.
 
@@ -95,6 +95,18 @@ Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite
 
 Kein Handlungsbedarf: ich/wir auf der Startseite (getrennt nach Fabian, Juliane und gemeinsamem Angebot; „wir“ im Gesprächsabschnitt meint Kunde und Fabian), doppelte Logos (zweite Kopie hat bereits aria-hidden), Antwortzeit über 0,8 s (Einzelwert).
 
+## Lehren aus dem Video „Platz 1 in 48 Stunden“ (Prüfung 05.11.2026)
+
+Grundlage: Video eines SEO-Beraters, wie er eine Suche in 48 Stunden auf Platz 1 bei Google und in der KI-Suche bringt. Schon erfüllt: Kernaussagen oben, Autorenbox mit Foto und Profilen, 2 bis 6 FAQ mit kurzen Antworten, Vergleichstabellen (Blöcke `vergleich`, `tabelle`), Termin-Box in der Seitenspalte, Information Gain (IG1 bis IG5), Tracking und Nachbessern (D1, D9, U7). Bewusst nicht übernommen: „vs“-Seiten gegen Wettbewerber (funktioniert laut Video nur mit bekannter Marke) und viele schnelle Seiten (widerspricht U1).
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| R1 | LinkedIn-Artikel als eigener Ranking-Kanal: für die 3 bis 5 wichtigsten Artikel (z. B. L1 Partnerwahl, Field Service lohnt sich, Document-Builder-Grenzen) je einen LinkedIn-Artikel, umgeschrieben statt kopiert (eigener Einstieg, kürzer, anderes Beispiel), mit Link auf den Artikel. Am besten auf der LinkedIn-Unternehmensseite (QB Schritt 7) und vom Profil geteilt. Unterschied zu QB Schritt 8 und Weitere Ideen 5: dort Teaser-Posts, hier vollständige Artikel, die selbst bei Google und in KI-Antworten erscheinen sollen. Wirkung im Montagslauf mittracken | hoch | mittel | Claude schreibt die Fassungen, Fabian veröffentlicht | offen |
+| R2 | YouTube als eigener Ranking-Kanal: zu denselben Kernartikeln je ein kurzes Erklärvideo auf einem eigenen YouTube-Kanal, Titel mit dem Suchbegriff, Beschreibung mit Link auf den Artikel. Auf der Website bleibt das Video selbst gehostet (Blog-Richtlinien, keine Cookies), YouTube ist zusätzliche Fundstelle; Kanal-URL kommt als sameAs ins Schema. Videos mit HyperFrames möglich | mittel | mittel | Fabian entscheidet über Kanal und Gesicht im Video, Claude bereitet Skripte vor | offen |
+| R3 | Handlungsaufforderung im Artikeltext: bisher nur Termin-Box in der Seitenspalte und Kontaktbereich am Ende. Laut Video wirken zusätzlich zwei kurze Hinweise im Text nach ca. 15 bis 20 % und 30 bis 50 % des Artikels. Umsetzung zentral in `BlogPost.astro` (nach dem n-ten H2-Abschnitt eingefügt, nie per Markdown), Text aus dem Kontakt-Brief des Artikels. Passend zur Suchabsicht: Entscheidungs- und Vergleichsartikel → „Gespräch buchen“, reine Wissensartikel → Material zum Mitnehmen (siehe R4). Vorher Mockup, Fabian wählt | hoch | mittel | Claude, Freigabe Fabian | offen |
+| R4 | Material für Wissensartikel (Lead Magnet), damit R3 dort nicht nur „Termin buchen“ anbietet: z. B. Prüfliste Partnerwahl, Field-Service-Readiness-Check oder das Werkzeug aus KS4. Ein Angebot je Kategorie reicht | mittel | mittel | Claude schlägt vor, Fabian entscheidet | offen |
+| R5 | Begriffe nach Stärke der Konkurrenz wählen: vor jedem neuen Artikel (L-Liste, B13) mit DataForSEO prüfen, ob unter den Top 10 Seiten mit ähnlicher oder geringerer Domain-Stärke als fk-sd.de stehen. Wenn nur starke Domains ranken: Begriff eher über R1/R2 angehen oder einen spezifischeren Long-Tail-Begriff mit Kaufabsicht („beste X für Y“, „Alternativen zu“, „Erfahrungen“) nehmen. Als Schritt in den `blog-article`-Skill bzw. docs/blog-guidelines.md aufnehmen | mittel | klein | Claude | offen |
+
 ## Priorität 1: Artikel aus der Long-Tail-Recherche (DataForSEO, 28.10.2026)
 
 Grundlage: DataForSEO-Recherche vom 28.10.2026 (Google Deutschland, Suchen pro Monat). Auch in Deutschland wird überwiegend mit englischen Produktbegriffen gesucht, deshalb die englischen Begriffe in Titel und Einstieg der DE-Artikel aufnehmen. Alle Begriffe werden ab 2.11.2026 wöchentlich getrackt (seo/keywords.json). Claude entwirft, Fabian gibt frei.
@@ -135,7 +147,7 @@ Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier ne
 - B14. Salesforce Connect für SAP-Rechnungen und Lieferungen: wann Datenvirtualisierung statt Kopie reicht (Vertiefung zu L2).
 - B15. S/4HANA-Umstieg und Salesforce parallel: was in den gemeinsamen Programmplan gehört. *Braucht Beispiel von Fabian.*
 
-Erledigt im täglichen Lauf: Manufacturing Cloud lohnt sich (#41), Object Ownership Matrix (#42), Salesforce-Lizenzen (#43), Field Service lohnt sich (#44), Nearshore-Teams (#55), Open CTI endet 2028 (#82, Entwurf), SAP an Salesforce anbinden (#113, Entwurf). Aus der Begriffssuche vom 29.10.2026: Sandbox-Strategie, Berechtigungskonzept, UAT, Entwicklungsstandards und Definition of Done, Entscheidungslog, globales Template, DORA-Metriken, Dubletten und Stammdaten (ein PR, Entwurf).
+Erledigt im täglichen Lauf: Manufacturing Cloud lohnt sich (#41), Object Ownership Matrix (#42), Salesforce-Lizenzen (#43), Field Service lohnt sich (#44), Nearshore-Teams (#55), Open CTI endet 2028 (#82, Entwurf), SAP an Salesforce anbinden (#113, Entwurf). Aus der Begriffssuche vom 29.10.2026: Sandbox-Strategie, Berechtigungskonzept, UAT, Entwicklungsstandards und Definition of Done, Entscheidungslog, globales Template, DORA-Metriken, Dubletten und Stammdaten (ein PR, Entwurf). Entscheider als Engpass im KI-Salesforce-Projekt (Idee Fabian 05.11.2026, Entwurf; Praxisblock aus seiner Nachricht, konkretes Beispiel offen).
 
 ## Priorität: Sichtbarkeit und SEO (Audit 26.10.2026)
 
@@ -166,7 +178,7 @@ Macht Fabian selbst (Quick Wins):
   - Firmenverzeichnisse (gehen schnell online, teils viel Traffic): dasoertliche.de, werkenntdenbesten.de, gelbeseiten.de, stadtbranchenbuch.com, provenexpert.com (eher Bewertungsplattform), dastelefonbuch.de, Creditreform (kostenloser Firmeneintrag, Daten auch für Firmenwissen; Website ergänzen).
   - Ergänzung 30.10.2026: webwiki.de (Webkatalog, auch für Blogs) sowie die B2B-Plattformen europages.de und wlw.de (Wer liefert was); beide eher für Hersteller, aber in 10 Minuten erledigt.
   - Ohne Backlink, wichtig für lokale Sichtbarkeit: Google-Unternehmensprofil (siehe QA), Bing Places (Import aus Google), Apple Maps (Apple Business Connect).
-- QH. Gastartikel bei Salesforce Break nachhaken: https://salesforcebreak.com/2025/09/04/measure-salesforce-flow-performance/ . Fabian ist Autor, aber die Seite zeigt nur einen Benutzernamen statt seines Namens und hat keinen Link auf www.fk-sd.de (nur die Mailadresse). Redaktion bitten: Autorname „Fabian Kramer“, kurze Autoren-Bio mit Link auf www.fk-sd.de (oder die Vorträge-Seite). URL der Autorenseite danach an Claude (kommt ggf. ins Schema als sameAs).
+- QH. ~~Gastartikel bei Salesforce Break nachhaken~~ Erledigt 05.11.2026: Die Autorenseite https://salesforcebreak.com/author/fabiankramerbaaa9dc933/ zeigt jetzt Namen, Bio und einen Link auf www.fk-sd.de/en (nofollow). Autorenseite steht in den sameAs-Profilen, der Artikel ist auf der Vorträge-Seite beim Talk „Flow Performance“ verlinkt.
 - QM. Backlinks aus KI-Quellen (Recherche 31.10.2026): Quellen, die ChatGPT, Claude, Gemini, Perplexity und Google AI Mode im KI-Check vom 28.10.2026 und in Websuchen zu Fabians Themen zitieren. Wettbewerber aussortiert, nur kostenlose oder verdiente Links. Reihenfolge nach Nutzen:
   - sfdx-hardis-Doku, Seite „Articles & Videos“ (KI-Antworten zu DevOps zitieren die Doku mehrfach): Fabians sfdx-hardis-Artikel dort aufnehmen lassen. Weg: Pull Request auf docs/articles-videos.md im Repo hardisgroupcom/sfdx-hardis oder kurz beim Maintainer anfragen. Claude kann den PR-Text vorbereiten.
   - Salesforce Ben (in fünf KI-Antworten zitiert, u. a. zu Document Builder, SAP-Anbindung, Field Service): eigenen Fachartikel als Gastautor einreichen, nur Originaltext, nicht werblich. Autorenprofil mit Link auf www.fk-sd.de. Themenvorschlag: Document-Builder-Grenzen oder Field-Service-Rollout in Wellen.
