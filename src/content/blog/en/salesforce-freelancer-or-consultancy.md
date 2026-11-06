@@ -51,7 +51,7 @@ A consultancy or implementation partner is the right choice when you buy capacit
 - **Run and support.** Incidents on Monday morning, releases three times a year, new users: that needs an organisation, not one person.
 - **Peaks in delivery.** More people before go-live, fewer afterwards. A partner can do that, a freelancer cannot.
 
-A good partner brings its own architects. That works as long as there is one partner and the client can follow its decisions.
+A good partner brings its own architects. That works as long as there is one partner and the client can follow its decisions. How to spot a good partner in the proposal is covered in [how to choose a Salesforce implementation partner](../how-to-choose-a-salesforce-implementation-partner/).
 
 ## When does an independent architect fit better?
 

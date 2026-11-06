@@ -28,6 +28,8 @@ const errors = [];
 // every blog article, chapter and service page was rewritten; never set STRICT_STRUCTURE back to false.
 // `node scripts/check-blog.mjs --structure` lists every finding and exits non-zero while any is left.
 const STRICT_STRUCTURE = true;
+// Code spans allowed in the running text of a blog article (outside ```vertiefung blocks), Fabian 2026-11-05.
+const MAX_INLINE_CODE = 15;
 const showStructure = process.argv.includes('--structure');
 const structureIssues = [];
 const structurePhrases = [
@@ -120,6 +122,17 @@ function check(collection, rules) {
       const blocks = findBlocks(body);
       let text = body;
       for (const b of [...blocks].reverse()) text = `${text.slice(0, b.start)}${blockProse(b)}${text.slice(b.end)}`;
+      // Blog articles are written for decision makers: code styling in the running text reads like a
+      // generated answer (Fabian 2026-11-05). Commands, flags and API names go into a
+      // ```vertiefung For developers block; raw code fences are not allowed at all.
+      if (collection === 'blog') {
+        if (/```/.test(text)) fail('no raw code blocks in blog articles, describe the code in words or move it into a ```vertiefung block');
+        let prose = body;
+        for (const b of [...blocks].reverse()) prose = `${prose.slice(0, b.start)}${b.name === 'vertiefung' ? '' : blockProse(b)}${prose.slice(b.end)}`;
+        prose = prose.replace(/```[\s\S]*?```/g, '');
+        const inlineCode = (prose.match(/`[^`\n]+`/g) ?? []).length;
+        if (inlineCode > MAX_INLINE_CODE) fail(`${inlineCode} code spans in the running text, at most ${MAX_INLINE_CODE}: write names in plain words and move commands into a \`\`\`vertiefung block`);
+      }
       text = text.replace(/```[\s\S]*?```/g, '');
       for (const b of blocks) {
         for (const e of validateBlock(b)) fail(e);

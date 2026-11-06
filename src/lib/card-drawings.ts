@@ -27,6 +27,15 @@ const pin = (x: number, y: number, color = G) =>
   `<g transform="translate(${x} ${y})"><path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#fff" stroke="${color}" stroke-width="1.4"/><circle cx="0" cy="-16" r="3" fill="${color}"/></g>`;
 
 const drawings: Record<string, Drawing> = {
+  'decision-makers-bottleneck-ai': (l) => `
+    ${t(18, 20, l('LEAD TIME 7.5 DAYS · 80 % WAITING', 'DURCHLAUFZEIT 7,5 TAGE · 80 % WARTEN'), { fill: D, size: 7 })}
+    ${box(18, 30, 70, 24, C)}${t(53, 45, l('Build 1.5 days', 'Bau 1,5 Tage'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(94, 30, 208, 24)}${t(198, 45, l('Waiting for decisions · 6 days', 'Warten auf Entscheidungen · 6 Tage'), { size: 7, anchor: 'middle' })}
+    <path d="M18 68H302" stroke="${L}"/>
+    ${t(18, 84, l('WHY DECISIONS STALL', 'WARUM ENTSCHEIDUNGEN LIEGEN'), { fill: D, size: 7 })}
+    ${[l('daily business', 'Tagesgeschäft'), l('unclear process', 'Prozess unklar'), l('owner missing', 'Owner fehlt')].map((s, i) => box(18 + i * 98, 92, 88, 22) + t(62 + i * 98, 106, s, { size: 7, anchor: 'middle' })).join('')}
+    ${tag(18, 126, 150, l('budget decision time', 'Entscheidungszeit budgetieren'))}${t(178, 139, l('deadline + default rule', 'Frist + Standardregel'), { size: 7 })}`,
+
   'cpq-to-revenue-cloud-migration-plan': (l) => `
     ${t(18, 20, l('3 PHASES · TYPICALLY 3 TO 6 MONTHS', '3 PHASEN · TYPISCH 3 BIS 6 MONATE'), { fill: D, size: 7 })}
     ${[l('Prepare', 'Vorbereiten'), l('Strategy', 'Strategie'), l('Execute', 'Umsetzen')].map((s, i) => box(18 + i * 100, 30, 84, 30, i === 2 ? C : G) + t(60 + i * 100, 49, (i + 1) + ' · ' + s, { fill: i === 2 ? C : G, size: 7.5, anchor: 'middle' })).join('')}
@@ -902,6 +911,20 @@ const drawings: Record<string, Drawing> = {
     ${box(226, 30, 78, 46, C)}${t(265, 48, l('1 object =', '1 Objekt ='), { fill: C, size: 7, anchor: 'middle' })}${t(265, 62, l('1 owner', '1 Owner'), { fill: C, size: 7, anchor: 'middle' })}
     ${t(226, 100, l('8 streams', '8 Streams'), { size: 7 })}${t(226, 114, l('30+ developers', '30+ Entwickler'), { size: 7 })}${t(226, 128, l('~3 months', '~3 Monate'), { size: 7 })}${t(226, 142, l('80 % in v1', '80 % in V1'), { size: 7 })}`,
 
+  'choose-salesforce-implementation-partner': (l) => `
+    ${t(18, 20, l('PITCH VS. PROJECT', 'PITCH VS. PROJEKT'), { fill: D, size: 7 })}
+    ${box(18, 28, 120, 26)}${t(78, 44, l('Pitch: senior team', 'Pitch: Senior-Team'), { size: 7, anchor: 'middle' })}
+    ${arrow(140, 41, 180)}
+    ${box(182, 28, 120, 26, C)}${t(242, 44, l('Project: many juniors', 'Projekt: viele Junioren'), { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M18 66H302" stroke="${L}"/>
+    ${t(18, 82, l('CHECK BEFORE THE AWARD', 'VOR DER VERGABE PRÜFEN'), { fill: D, size: 7 })}
+    ${check(18, 92)}${t(30, 98, l('edge cases in discovery', 'Randfälle in Discovery'), { size: 7 })}
+    ${check(18, 104)}${t(30, 110, l('team by name', 'Team mit Namen'), { size: 7 })}
+    ${check(18, 116)}${t(30, 122, l('quality gates per milestone', 'Quality Gates je Meilenstein'), { size: 7 })}
+    ${check(170, 92)}${t(182, 98, l('repo with the client', 'Repo beim Kunden'), { size: 7 })}
+    ${check(170, 104)}${t(182, 110, l('lessons from failures', 'Lehren aus Fehlern'), { size: 7 })}
+    ${tag(18, 132, 170, l('references: briefed by partner', 'Referenzen: vom Partner gebrieft'))}`,
+
   'salesforce-freelancer-or-consultancy': (l) => `
     ${t(18, 20, l('WHO BUILDS, WHO DECIDES', 'WER BAUT, WER ENTSCHEIDET'), { fill: D, size: 7 })}
     ${box(18, 30, 130, 72)}${t(28, 46, l('CONSULTANCY', 'AGENTUR · PARTNER'), { fill: D, size: 7 })}
@@ -975,6 +998,17 @@ const drawings: Record<string, Drawing> = {
     ${tag(20, 120, 132, l('works council early', 'Betriebsrat früh'))}
     ${t(164, 128, l('timesheets · location', 'Timesheets · Standort'), { size: 7 })}
     ${t(164, 142, l('rules per country', 'Regeln je Land'), { fill: C, size: 7 })}`,
+
+  'salesforce-release-schedule': (l) => `
+    ${t(18, 18, l('THREE RELEASES A YEAR', 'DREI RELEASES PRO JAHR'), { fill: D, size: 7 })}
+    ${[l('Spring · Feb', 'Spring · Feb'), l('Summer · Jun', 'Summer · Jun'), l('Winter · Oct', 'Winter · Okt')].map((s, i) => box(18 + i * 98, 26, 88, 22, i === 0 ? C : G) + t(62 + i * 98, 40, s, { fill: i === 0 ? C : G, size: 7, anchor: 'middle' })).join('')}
+    <path d="M18 60H302" stroke="${L}"/>
+    ${t(18, 76, l("SPRING '27", "SPRING '27"), { fill: D, size: 7 })}
+    <path d="M30 90H290" stroke="${G}" stroke-width="1.2"/>
+    ${dot(30, 90)}${t(18, 106, l('8 Jan', '8.1.'), { fill: D, size: 7 })}${t(18, 117, 'Sandbox Preview', { size: 6.5 })}
+    ${dot(150, 90, C)}${t(150, 106, l('16 Jan', '16.1.'), { fill: C, size: 7, anchor: 'middle' })}${t(150, 117, l('first wave', 'erste Welle'), { size: 6.5, anchor: 'middle' })}
+    ${dot(290, 90)}${t(302, 106, l('to 20 Feb', 'bis 20.2.'), { fill: D, size: 7, anchor: 'end' })}${t(302, 117, l('production', 'Produktion'), { size: 6.5, anchor: 'end' })}
+    ${tag(18, 128, 150, l('6 checks per release', '6 Prüfungen je Release'))}${t(178, 141, l('first wave: 8 days of preview', 'erste Welle: 8 Tage Preview'), { size: 6.5 })}`,
 
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
