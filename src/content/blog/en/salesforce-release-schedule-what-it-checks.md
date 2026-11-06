@@ -107,6 +107,16 @@ As of 6 November 2026, the [Salesforce Sandbox Preview Guide](https://sandbox-pr
 
 The first wave needs the earliest preparation: orgs upgraded on 16 January have only eight days between the start of the preview and production, and those days follow the Christmas holidays. Salesforce has not yet announced the date of the release notes or the sandbox refresh cutoff.
 
+Which of the three weekends applies to your org takes two steps. First, look up the instance in Setup under Company Information:
+
+![Salesforce Setup, Company Information page (German UI): the Instance field shows DEU90, highlighted in red](../../../assets/blog/salesforce-instanz-setup-en.png)
+
+Then open that instance on [Salesforce Trust](https://status.salesforce.com/) and switch to the Maintenances tab. It lists every major release with its date:
+
+![Salesforce Trust, instance DEU90, Maintenances tab: Winter '27 Major Release resolved on 10 October 2026, Spring '27 Major Release confirmed for 20 February 2027, both highlighted in red](../../../assets/blog/trust-wartungskalender-en.png)
+
+In this example, the org on DEU90 is in the last wave and gets Spring '27 on 20 February. For the release planning, that date counts, not the first production weekend.
+
 ## Fix the sandbox plan for Spring '27 in December
 
-Look up your production instance on Trust first, so you know whether you are in the January wave. Then decide in December which sandbox goes on the preview for Spring '27 and which stays on the current release. Check each sandbox's release type in Setup, confirm the recommended action for its instance in the Sandbox Preview Guide and plan a refresh only where it is needed. Name an owner for each of the six checks and put the dates into the team calendar as soon as Salesforce announces the release notes.
+Look up your production instance in Setup and its date on Trust first, so you know whether you are in the January wave. Then decide in December which sandbox goes on the preview for Spring '27 and which stays on the current release. Check each sandbox's release type in Setup, confirm the recommended action for its instance in the Sandbox Preview Guide and plan a refresh only where it is needed. Name an owner for each of the six checks and put the dates into the team calendar as soon as Salesforce announces the release notes.

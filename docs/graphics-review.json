@@ -314,6 +314,8 @@
     "png:casey-or-service-rep": {"title": "casey-or-service-rep", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30"},
     "png:document-builder-workarounds": {"title": "document-builder-workarounds", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "die höhe der grauen box kann man bisschen reduzieren. sit ein quick win", "todo": "docs/backlog.md G8 erledigt 2026-10-30"},
     "png:field-service-report": {"title": "field-service-report", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
+    "png:salesforce-instanz-setup": {"title": "Screenshot Setup: Instanz der Org (Release-Termine)", "proposal": 1, "rating": null},
+    "png:trust-wartungskalender": {"title": "Screenshot Trust: Wartungsvorgänge je Instanz (Release-Termine)", "proposal": 1, "rating": null},
     "png:make-or-buy-roi": {"title": "make-or-buy-roi", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30"},
     "png:nearshore-team-setup": {"title": "nearshore-team-setup", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30"},
     "png:password-flow-timeline": {"title": "password-flow-timeline", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},

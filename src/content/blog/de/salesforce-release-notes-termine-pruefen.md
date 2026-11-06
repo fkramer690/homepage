@@ -107,6 +107,16 @@ Stand 6. November 2026 nennt der [Sandbox Preview Guide von Salesforce](https://
 
 Die erste Welle braucht die früheste Vorbereitung: Orgs mit Upgrade am 16. Januar haben zwischen dem Start der Preview und der Produktion nur acht Tage, und die liegen direkt nach den Weihnachtsferien. Den Termin der Release Notes und den Stichtag für den Sandbox-Refresh hat Salesforce noch nicht angekündigt.
 
+Welches der drei Wochenenden für Ihre Org gilt, finden Sie in zwei Schritten heraus. Zuerst steht die Instanz im Setup unter Unternehmensinformationen:
+
+![Salesforce Setup, Seite Unternehmensinformationen: Das Feld Instanz zeigt DEU90, rot markiert](../../../assets/blog/salesforce-instanz-setup-de.png)
+
+Dann öffnen Sie diese Instanz auf [Salesforce Trust](https://status.salesforce.com/) und wechseln auf den Reiter Wartungsvorgänge. Dort steht jedes große Release mit Datum:
+
+![Salesforce Trust, Instanz DEU90, Reiter Wartungsvorgänge: Winter '27 Major Release am 10. Oktober 2026 erledigt, Spring '27 Major Release für den 20. Februar 2027 bestätigt, beide rot markiert](../../../assets/blog/trust-wartungskalender-de.png)
+
+Im Beispiel liegt die Org auf DEU90 in der letzten Welle und erhält Spring '27 am 20. Februar. Für die Release-Planung zählt dieser Termin, nicht das erste Produktionswochenende.
+
 ## Den Sandbox-Plan für Spring '27 im Dezember festlegen
 
-Schauen Sie zuerst auf Trust nach, auf welcher Instanz Ihre Produktion liegt, damit Sie wissen, ob Sie zur Januar-Welle gehören. Legen Sie dann im Dezember fest, welche Sandbox auf die Preview für Spring '27 geht und welche auf dem aktuellen Release bleibt. Prüfen Sie den Release Type jeder Sandbox im Setup, bestätigen Sie im Sandbox Preview Guide die empfohlene Aktion für ihre Instanz und planen Sie einen Refresh nur dort, wo er nötig ist. Benennen Sie für jede der sechs Prüfungen einen Verantwortlichen und tragen Sie die Termine in den Kalender des Teams ein, sobald Salesforce die Release Notes ankündigt.
+Schauen Sie zuerst im Setup nach, auf welcher Instanz Ihre Produktion liegt, und auf Trust, wann diese Instanz das Upgrade erhält. Dann wissen Sie, ob Sie zur Januar-Welle gehören. Legen Sie dann im Dezember fest, welche Sandbox auf die Preview für Spring '27 geht und welche auf dem aktuellen Release bleibt. Prüfen Sie den Release Type jeder Sandbox im Setup, bestätigen Sie im Sandbox Preview Guide die empfohlene Aktion für ihre Instanz und planen Sie einen Refresh nur dort, wo er nötig ist. Benennen Sie für jede der sechs Prüfungen einen Verantwortlichen und tragen Sie die Termine in den Kalender des Teams ein, sobald Salesforce die Release Notes ankündigt.
