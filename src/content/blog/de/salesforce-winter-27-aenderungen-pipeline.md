@@ -26,21 +26,21 @@ faq:
     a: "SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt mit Summer '27, und SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 bekommen ab Summer '27 keine Updates mehr und fallen mit Summer '28 aus."
 ---
 
-Winter '27 ist seit dem 9. Oktober 2026 vollständig ausgerollt, und für Entwicklungs- und Release-Teams bringt es Änderungen, die eine Pipeline brechen können. Am dringendsten: Seit 28. Oktober gibt die Salesforce CLI mit `org display` keine Access Tokens mehr aus, und die CLI braucht jetzt Node.js 22. Dazu verschwindet die Developer Console aus dem Setup-Menü, die Apex-Heap-Limits steigen und die ersten API-Abschaltungen greifen. Einzeln ist nichts davon dramatisch, aber jeder Punkt kann ein Deployment am falschen Tag stoppen. Diese Übersicht basiert auf dem [Entwickler-Leitfaden von Salesforce zu Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) und ist nach Dringlichkeit sortiert.
+Winter '27 ist seit dem 9. Oktober 2026 vollständig ausgerollt, und für Entwicklungs- und Release-Teams bringt es Änderungen, die eine Pipeline brechen können. Am dringendsten: Seit 28. Oktober gibt die Salesforce CLI mit org display keine Access Tokens mehr aus, und die CLI braucht jetzt Node.js 22. Dazu verschwindet die Developer Console aus dem Setup-Menü, die Apex-Heap-Limits steigen und die ersten API-Abschaltungen greifen. Einzeln ist nichts davon dramatisch, aber jeder Punkt kann ein Deployment am falschen Tag stoppen. Diese Übersicht basiert auf dem [Entwickler-Leitfaden von Salesforce zu Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) und ist nach Dringlichkeit sortiert.
 
 ## Was bricht in einer Salesforce-Pipeline zuerst?
 
 Zwei CLI-Änderungen brauchen vor allem anderen Aufmerksamkeit.
 
-**Der Befehl org display gibt keine Secrets mehr aus.** Viele Pipelines und Hilfsskripte rufen `sf org display` auf und lesen das Access Token aus der Ausgabe, etwa um die REST-API direkt aufzurufen oder die Session an ein anderes Tool weiterzugeben. Mit Winter '27 zeigt der Befehl keine Secrets mehr. Salesforce hat eine Übergangslösung über die Umgebungsvariable `SF_TEMP_SHOW_SECRETS` angeboten und sie mit [CLI-Version 2.156.8](https://github.com/forcedotcom/cli/blob/main/releasenotes/README.md) am 28. Oktober 2026 entfernt. Wer ein Secret gezielt lesen muss, nutzt laut Release Notes die Befehle `sf org auth show-*`.
+**Der Befehl org display gibt keine Secrets mehr aus.** Viele Pipelines und Hilfsskripte rufen sf org display auf und lesen das Access Token aus der Ausgabe, etwa um die REST-API direkt aufzurufen oder die Session an ein anderes Tool weiterzugeben. Mit Winter '27 zeigt der Befehl keine Secrets mehr. Salesforce hat eine Übergangslösung über die Umgebungsvariable SF_TEMP_SHOW_SECRETS angeboten und sie mit [CLI-Version 2.156.8](https://github.com/forcedotcom/cli/blob/main/releasenotes/README.md) am 28. Oktober 2026 entfernt. Wer ein Secret gezielt lesen muss, nutzt laut Release Notes die Befehle sf org auth show-\*.
 
 ```hinweis achtung
-Die Übergangslösung ist am 28. Oktober 2026 ausgelaufen. Seitdem schlagen Skripte fehl, die sich auf das Token in der Ausgabe von `org display` verlassen, auch wenn `SF_TEMP_SHOW_SECRETS` gesetzt ist.
+Die Übergangslösung ist am 28. Oktober 2026 ausgelaufen. Seitdem schlagen Skripte fehl, die sich auf das Token in der Ausgabe von org display verlassen, auch wenn SF_TEMP_SHOW_SECRETS gesetzt ist.
 ```
 
 Was zu tun ist:
 
-1. Durchsuchen Sie Pipeline-Definitionen, Skripte und Repositories nach `org display` und nach dem Auslesen von `accessToken`.
+1. Durchsuchen Sie Pipeline-Definitionen, Skripte und Repositories nach org display und nach dem Auslesen von accessToken.
 2. Lassen Sie jeden Pipeline-Job sich direkt authentifizieren, am besten mit dem JWT Bearer Flow und einem Zertifikat im Secret Store des Kunden, statt Tokens zwischen Schritten weiterzureichen.
 3. Testen Sie die geänderten Jobs in einem Feature-Branch, zuerst die Jobs, die seit dem 28. Oktober fehlschlagen.
 
@@ -62,9 +62,9 @@ Mehrere Änderungen helfen Entwicklern, einige davon automatisch:
 
 - **Höhere Heap-Limits.** Das Apex-Heap-Limit steigt von 6 auf 10 MB für synchronen und von 12 auf 25 MB für asynchronen Code. Das gilt automatisch. Code, der nur wegen der alten Limits in Batches aufgeteilt wurde, lässt sich später vereinfachen, Eile ist aber nicht nötig.
 - **Warnungen für sehr alte API-Versionen.** Der Compiler warnt jetzt bei Klassen und Triggern, die mit den API-Versionen 9.0 bis 19.0 gespeichert sind. In älteren Enterprise-Orgs gibt es solche Klassen noch. Sie sind gute Kandidaten zum Aufräumen.
-- **Neue Apex-Funktionen in Preview und Beta.** Integrationstests gibt es als Developer Preview. `FORMULA()` in SOQL, die Apex Symbol API und Cursor für Data-360-Objekte sind in der Beta. Beta-Funktionen sollten nicht ohne bewusste Entscheidung in Produktionscode landen.
-- **LWC-Verbesserungen.** Komplexe Template-Ausdrücke, `lwc:external` für Web Components von Drittanbietern und `refresh()` für State Manager sind allgemein verfügbar.
-- **CLI-Vorlagen.** Die CLI hat neue Vorlagen für `Batchable`- und `Queueable`-Klassen und neue Debug-Optionen für `apex run`.
+- **Neue Apex-Funktionen in Preview und Beta.** Integrationstests gibt es als Developer Preview. FORMULA() in SOQL, die Apex Symbol API und Cursor für Data-360-Objekte sind in der Beta. Beta-Funktionen sollten nicht ohne bewusste Entscheidung in Produktionscode landen.
+- **LWC-Verbesserungen.** Komplexe Template-Ausdrücke, lwc:external für Web Components von Drittanbietern und refresh() für State Manager sind allgemein verfügbar.
+- **CLI-Vorlagen.** Die CLI hat neue Vorlagen für Batchable- und Queueable-Klassen und neue Debug-Optionen für apex run.
 
 ## Welche API-Abschaltungen beginnen jetzt?
 
@@ -86,13 +86,13 @@ Drei kleinere Punkte mit Auswirkung auf die Governance:
 
 - **Die Agentforce-Plattform ist standardmäßig eingeschaltet.** Legen Sie fest, wer Agenten bauen und aktivieren darf, und sorgen Sie dafür, dass Agenten-Konfiguration durch denselben Release-Prozess läuft wie andere Metadaten.
 - **Umleitung von Gemini-Modellen.** Anfragen an Gemini 2.5 Pro, Flash und Flash-Lite werden seit dem 20. Oktober 2026 auf neuere Gemini-Modelle umgeleitet. Verlassen sich Prompt Templates oder Agenten auf ein bestimmtes Modell, testen Sie ihre Ergebnisse erneut.
-- **Multi-Agent-Orchestrierung ist allgemein verfügbar**, und Agent Script hat Funktionen und `else if`-Ketten bekommen. Beides macht Agentenlogik mächtiger und ist ein Grund mehr, sie wie Code zu reviewen.
+- **Multi-Agent-Orchestrierung ist allgemein verfügbar**, und Agent Script hat Funktionen und else if-Ketten bekommen. Beides macht Agentenlogik mächtiger und ist ein Grund mehr, sie wie Code zu reviewen.
 
 ## Checkliste für Winter '27, beginnend mit den Token-Skripten
 
 Drei Releases pro Jahr bedeuten alle paar Monate eine solche Liste. Eine Pipeline, die jede Änderung durch Validierung und Tests schickt, fängt die meisten dieser Probleme früh ab, und das ist einer der Gründe, [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/). Für ein Release-Team decken diese Schritte das Wesentliche ab:
 
-1. Jede Nutzung von `org display`-Tokens in Pipelines finden und beheben; Jobs, die sich noch darauf verlassen, schlagen seit dem 28. Oktober fehl.
+1. Jede Nutzung von org display-Tokens in Pipelines finden und beheben; Jobs, die sich noch darauf verlassen, schlagen seit dem 28. Oktober fehl.
 2. Node.js auf Runnern, Docker-Images und Entwicklerrechnern auf Version 22 bringen.
 3. Regeln für Produktionszugriffe vereinbaren, jetzt wo die Developer Console ausgeblendet ist.
 4. Klassen und Trigger mit API-Versionen unter 20.0 auflisten und ihre Aktualisierung planen.

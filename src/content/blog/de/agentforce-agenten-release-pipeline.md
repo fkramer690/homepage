@@ -2,6 +2,7 @@
 title: "Agentforce-Agenten in der Release-Pipeline: wer gibt frei?"
 description: "Wie ein Agentforce-Agent von der Sandbox in Produktion kommt: Agent Script in Git, Validieren, Publish, Aktivieren, Rollback und wer in geteilten Orgs freigibt."
 pubDate: 2026-10-27
+updatedDate: 2026-11-05
 lang: de
 slug: agentforce-agenten-release-pipeline
 translationKey: agentforce-agents-release-pipeline
@@ -32,7 +33,7 @@ Ein Agentforce-Agent gehört in die Release-Pipeline wie alle anderen Metadaten.
 
 ## Woraus besteht ein Agentforce-Agent im Repository?
 
-Laut [Salesforce Developers Blog vom Mai 2026](https://developer.salesforce.com/blogs/2026/05/new-agentforce-metadata-and-development-lifecycle) wird ein Agent in einer einzigen `.agent`-Datei in Agent Script definiert, gespeichert im Metadatentyp `AiAuthoringBundle`. Wird eine Version committet, entstehen daraus die Laufzeit-Metadaten:
+Laut [Salesforce Developers Blog vom Mai 2026](https://developer.salesforce.com/blogs/2026/05/new-agentforce-metadata-and-development-lifecycle) wird ein Agent in einer einzigen .agent-Datei in Agent Script definiert, gespeichert im Metadatentyp AiAuthoringBundle. Wird eine Version committet, entstehen daraus die Laufzeit-Metadaten:
 
 - **Bot und BotVersion:** der Agent und eine Version davon. Ein Agent kann viele Versionen haben, aber nur eine aktive, so die [Metadatenreferenz](https://developer.salesforce.com/docs/ai/agentforce/references/agents-metadata-tooling/agents-metadata.html).
 - **GenAiPlannerBundle:** Subagenten, Anweisungen und Aktionen einer gepublishten Version.
@@ -40,7 +41,7 @@ Laut [Salesforce Developers Blog vom Mai 2026](https://developer.salesforce.com/
 
 Für Entscheider heißt das: Die Logik, die festlegt, was ein Händler zu Garantie oder Ersatzteilen hört, ist jetzt eine Textdatei, die sich prüfen und zurückdrehen lässt. Das zählt, sobald Regeln wie die Garantieberechtigung in [Agent Script statt im LLM](../agent-script-regeln-statt-llm/) stehen.
 
-Ein Detail ist jetzt wichtig. Die [Metadata-API-Referenz](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_aiauthoringbundle.htm) führt Winter '27 als API 68.0, und der [Agentforce-DX-Leitfaden zum Umzug von Agenten zwischen Orgs](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx-deploy-metadata.html) sagt, dass sich die Agenten-Metadaten mit v68 geändert haben: Beide Orgs müssen auf v68 sein, um Agenten mit den neuen Typen zu übertragen (`AiAgentDefinition` in den Beispiel-Manifesten). Die übrigen Änderungen dieses Releases stehen in [Winter '27: was sich für Ihre Pipeline ändert](../salesforce-winter-27-aenderungen-pipeline/).
+Ein Detail ist jetzt wichtig. Die [Metadata-API-Referenz](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_aiauthoringbundle.htm) führt Winter '27 als API 68.0, und der [Agentforce-DX-Leitfaden zum Umzug von Agenten zwischen Orgs](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx-deploy-metadata.html) sagt, dass sich die Agenten-Metadaten mit v68 geändert haben: Beide Orgs müssen auf v68 sein, um Agenten mit den neuen Typen zu übertragen (AiAgentDefinition in den Beispiel-Manifesten). Die übrigen Änderungen dieses Releases stehen in [Winter '27: was sich für Ihre Pipeline ändert](../salesforce-winter-27-aenderungen-pipeline/).
 
 ## Wie läuft ein Agent durch die Release-Pipeline?
 
@@ -48,24 +49,24 @@ Der [Beitrag zum Agentic Development Lifecycle vom Juni 2026](https://developer.
 
 ```schritte
 Pull Request
-  Der Partner committet die geänderte `.agent`-Datei und geänderte Flows oder Apex auf einem Feature-Branch; der Reviewer liest den Diff im Agent Script wie Code.
+  Der Partner committet die geänderte .agent-Datei und geänderte Flows oder Apex auf einem Feature-Branch; der Reviewer liest den Diff im Agent Script wie Code.
 Validieren
-  `sf agent validate authoring-bundle` prüft, ob das Agent Script kompiliert. Laut Salesforce ist die Validierung Pflicht vor dem Publish, sie gehört also als Gate in die Pipeline.
+  sf agent validate authoring-bundle prüft, ob das Agent Script kompiliert. Laut Salesforce ist die Validierung Pflicht vor dem Publish, sie gehört also als Gate in die Pipeline.
 Gezielt deployen
-  Erst die Flows, dann das Authoring Bundle, jeweils mit `--metadata` benannt. Der Beitrag warnt, dass ein nacktes `sf project deploy start` alles Geänderte ausliefert, Agenten-Metadaten eingeschlossen.
+  Erst die Flows, dann das Authoring Bundle, jeweils mit --metadata benannt. Der Beitrag warnt, dass ein nacktes sf project deploy start alles Geänderte ausliefert, Agenten-Metadaten eingeschlossen.
 Publish
-  `sf agent publish authoring-bundle` legt einen neuen Agenten oder eine neue Version an, mit den Metadaten Bot, BotVersion und GenAi, so die [CLI-Referenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_publish_authoring-bundle.html). Laut ADLC-Beitrag kann man jetzt publishen und später aktivieren, die Version startet nach meiner Lesart also inaktiv.
+  sf agent publish authoring-bundle legt einen neuen Agenten oder eine neue Version an, mit den Metadaten Bot, BotVersion und GenAi, so die [CLI-Referenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_publish_authoring-bundle.html). Laut ADLC-Beitrag kann man jetzt publishen und später aktivieren, die Version startet nach meiner Lesart also inaktiv.
 Testen
   Die Testsuite läuft in der Sandbox gegen die gepublishte Version; Schwellen und Passraten behandle ich in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
 Aktivieren
-  `sf agent activate` mit `--api-name` und `--version` schaltet die Version ein. Laut [Referenz zu activate](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_activate.html) ist der Agent damit sofort für die Anwender verfügbar.
+  sf agent activate mit --api-name und --version schaltet die Version ein. Laut [Referenz zu activate](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_activate.html) ist der Agent damit sofort für die Anwender verfügbar.
 ```
 
 ```hinweis achtung
-Mit `--json` und ohne `--version` aktiviert `sf agent activate` automatisch die neueste Version, so dieselbe Referenz. In einem unbeaufsichtigten Skript gebe ich die Versionsnummer deshalb immer mit, damit die Pipeline aktiviert, was der Fachverantwortliche freigegeben hat, und nicht das, was zuletzt gepublished wurde.
+Mit --json und ohne --version aktiviert sf agent activate automatisch die neueste Version, so dieselbe Referenz. In einem unbeaufsichtigten Skript gebe ich die Versionsnummer deshalb immer mit, damit die Pipeline aktiviert, was der Fachverantwortliche freigegeben hat, und nicht das, was zuletzt gepublished wurde.
 ```
 
-Der Mai-Beitrag nennt zwei Varianten. In der ersten Variante liegt nur das `AiAuthoringBundle` in Git, und jede Org publisht eine eigene neue Version. Voll automatisierte Pipelines deployen zusätzlich das erzeugte `GenAiPlannerBundle` und sparen sich den manuellen Commit-Schritt. Für einen Hersteller mit einer Produktiv-Org ziehe ich die erste vor: In Git liegt nur, was Menschen schreiben. Der Preis sind abweichende Versionsnummern zwischen den Orgs, denn die Nummern des Planners stimmen laut Salesforce nicht unbedingt mit denen des Bundles überein. Jede Release Note sollte deshalb festhalten, welche Produktivversion zu welchem Git-Commit gehört.
+Der Mai-Beitrag nennt zwei Varianten. In der ersten Variante liegt nur das AiAuthoringBundle in Git, und jede Org publisht eine eigene neue Version. Voll automatisierte Pipelines deployen zusätzlich das erzeugte GenAiPlannerBundle und sparen sich den manuellen Commit-Schritt. Für einen Hersteller mit einer Produktiv-Org ziehe ich die erste vor: In Git liegt nur, was Menschen schreiben. Der Preis sind abweichende Versionsnummern zwischen den Orgs, denn die Nummern des Planners stimmen laut Salesforce nicht unbedingt mit denen des Bundles überein. Jede Release Note sollte deshalb festhalten, welche Produktivversion zu welchem Git-Commit gehört.
 
 ```vertiefung Für Entwickler
 titel: Drei Fallen beim Umzug eines Agenten in eine neue Org
@@ -83,7 +84,7 @@ Meine Regel, festgelegt vor dem ersten Go-live: In Produktion hat niemand Rechte
 
 ## Wie macht man ein Rollback eines Agentforce-Agenten?
 
-Salesforce beschreibt kein Rollback-Verfahren. Der ADLC-Beitrag empfiehlt Git, um zu einer funktionierenden Version zurückkehren zu können, `sf agent activate` nimmt jede Versionsnummer an, und ein [Beitrag im Developers Blog vom Mai 2025](https://developer.salesforce.com/blogs/2025/05/deploy-your-agentforce-agents-with-zero-downtime-using-agent-versions) beschreibt den Versionswechsel als sofort und ohne Ausfallzeit. Nach meiner Lesart dieser Quellen ist der schnellste Rollback, die vorherige Versionsnummer wieder zu aktivieren: Minuten, kein Deployment.
+Salesforce beschreibt kein Rollback-Verfahren. Der ADLC-Beitrag empfiehlt Git, um zu einer funktionierenden Version zurückkehren zu können, sf agent activate nimmt jede Versionsnummer an, und ein [Beitrag im Developers Blog vom Mai 2025](https://developer.salesforce.com/blogs/2025/05/deploy-your-agentforce-agents-with-zero-downtime-using-agent-versions) beschreibt den Versionswechsel als sofort und ohne Ausfallzeit. Nach meiner Lesart dieser Quellen ist der schnellste Rollback, die vorherige Versionsnummer wieder zu aktivieren: Minuten, kein Deployment.
 
 Das hat eine Grenze, die jede Serviceleitung kennen sollte. Nach meiner Lesart des Metadatenmodells enthält die Agentenversion den Planner und Verweise auf Aktionen, während der Flow oder die Apex-Klasse hinter einer Aktion eigene Metadaten sind. Hat ein Release sowohl das Agent Script als auch einen Flow geändert, bringt die alte Version die alten Anweisungen zurück, aber mit dem neuen Flow. Der Flow braucht ein eigenes Revert, ein Grund mehr, Änderungen am Agenten und an Aktionen in getrennten Pull Requests zu halten.
 
@@ -93,7 +94,7 @@ Deaktivieren ist die Notbremse, und zwar eine harte. Laut [Agentforce-DX-Dokumen
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, SAP, Händlerportal und einer Produktiv-Org. Ein Partner hat den Serviceagenten für Händleranfragen gebaut; ein internes Team aus vier Personen verantwortet Git und Pipeline, alle zwei Wochen gibt es ein Release. Alle Zahlen sind Annahmen.
 
-Version 3 des Agenten beantwortet in Produktion Fragen zu Auftragsstatus und Garantie. Für Release 4 ergänzt der Partner einen Subagenten für Ersatzteile und erweitert den Auftragsstatus-Flow, damit er zu einem ersetzten Teil auch das Nachfolgeteil liefert. Der Architekt des Kunden prüft zwei Pull Requests, einen für den Flow und einen für die `.agent`-Datei; die Pipeline validiert, deployt in die UAT-Sandbox, published und lässt 60 Testfälle laufen, und die Serviceleitung gibt die Ergebnisse frei. Am Release-Tag wird Version 4 in Produktion inaktiv gepublished, und um 7 Uhr aktiviert die Pipeline sie mit der Versionsnummer aus der freigegebenen Release Note.
+Version 3 des Agenten beantwortet in Produktion Fragen zu Auftragsstatus und Garantie. Für Release 4 ergänzt der Partner einen Subagenten für Ersatzteile und erweitert den Auftragsstatus-Flow, damit er zu einem ersetzten Teil auch das Nachfolgeteil liefert. Der Architekt des Kunden prüft zwei Pull Requests, einen für den Flow und einen für die .agent-Datei; die Pipeline validiert, deployt in die UAT-Sandbox, published und lässt 60 Testfälle laufen, und die Serviceleitung gibt die Ergebnisse frei. Am Release-Tag wird Version 4 in Produktion inaktiv gepublished, und um 7 Uhr aktiviert die Pipeline sie mit der Versionsnummer aus der freigegebenen Release Note.
 
 Zwei Tage später empfiehlt der Ersatzteil-Subagent für eine Produktlinie das falsche Nachfolgeteil. Der Release Manager aktiviert innerhalb von 15 Minuten wieder Version 3; Auftragsstatus und Garantieauskünfte laufen weiter. Auch Version 3 ruft den erweiterten Flow auf, aber das zusätzliche Feld schadet nicht, also bleibt der Flow, und die Korrektur kommt als Version 5 über den normalen Weg. Produktionsrechte hat der Partner dabei nie gebraucht.
 
@@ -112,8 +113,8 @@ Unternehmensgruppen mit einer Produktiv-Org je Tochtergesellschaft stehen vor ei
 
 ## Die .agent-Dateien ins Repository des Kunden legen
 
-1. Legen Sie die `.agent`-Datei jedes Agenten ins Repository des Kunden und bauen Sie Agenten nicht mehr direkt in geteilten Orgs.
-2. Nehmen Sie `sf agent validate authoring-bundle` und gezielte Deployments in die Pipeline auf.
+1. Legen Sie die .agent-Datei jedes Agenten ins Repository des Kunden und bauen Sie Agenten nicht mehr direkt in geteilten Orgs.
+2. Nehmen Sie sf agent validate authoring-bundle und gezielte Deployments in die Pipeline auf.
 3. Entziehen Sie in Produktion allen außer dem Release Manager und einer Vertretung die Rechte zum Publishen und Aktivieren.
 4. Führen Sie ein Versionsprotokoll pro Org: Git-Commit, Versionsnummer, Datum, Freigabe.
 5. Schreiben Sie ein Rollback-Runbook: welche Version wieder aktiviert wird, welche Flows zurückgedreht werden, wohin Händler gehen, wenn der Agent aus ist.
