@@ -1,7 +1,7 @@
 ---
 title: "What Is Agentforce? Explained for IT Leaders"
-description: "What is Agentforce? Definition, building blocks such as subagents, actions and Agent Script, how it differs from chatbots and Prompt Builder, costs and data."
-pubDate: 2026-11-01
+description: "What is Agentforce? Definition, building blocks such as subagents, actions and Agent Script, how it differs from bots and Prompt Builder, costs and data."
+pubDate: 2026-11-06
 lang: en
 slug: what-is-agentforce
 translationKey: what-is-agentforce
@@ -9,84 +9,104 @@ topic: ai
 categories: [ai, architecture]
 tags: [Agentforce, AI agents, Agent Script, subagents, Salesforce AI, IT leadership]
 takeaways:
-  - "A flow follows a path someone built in advance. An agent picks the path for each request, but it can only do what its actions can do."
-  - "Its building blocks are subagents (formerly topics), instructions and actions. The reasoning engine connects them, the trust layer protects the data."
-  - "With Agent Script, you fix business logic firmly. The language model then mainly shapes the conversation style."
-  - "Billing is by consumption: according to the price list, an action costs 20 Flex Credits. Costs therefore follow the number of actions."
-  - "For manufacturers, access to ERP data such as order status, stock and assets decides whether an agent helps in daily work."
+  - "A flow runs a process modelled in advance. An agent interprets each request and chooses actions within set limits, and only its actions act."
+  - "You configure subagents, instructions and actions. The reasoning engine and trust layer run underneath; Data 360 adds native knowledge and monitoring."
+  - "Agent Script fixes order and conditions. Checks such as warranty or price belong in deterministic actions, not in the language model."
+  - "With Flex Credits, a standard action costs 20 credits, $0.10 or €0.10 at list price. There are also per-user licences, conversations and flat fees."
+  - "For manufacturers, ERP data and the question of who may see which installed base decide whether an agent helps or harms."
 faq:
   - q: "What is Agentforce?"
-    a: "Agentforce is Salesforce's platform for building and running AI agents. An agent uses generative AI to decide what to do next and carries out the steps through actions, such as flows, Apex or interfaces."
-  - q: "What is the difference between Agentforce and a chatbot?"
-    a: "A classic chatbot follows a fixed dialogue tree. An Agentforce agent understands the request, picks suitable subagents and actions, and can read and change data. Fixed rules can still be set with Agent Script."
+    a: "Agentforce is Salesforce's platform for building and running AI agents. An agent combines a language model that interprets requests with logic and actions you define, such as flows, Apex or interfaces."
+  - q: "What is the difference between Agentforce and an Einstein Bot?"
+    a: "An Einstein Bot runs dialogues modelled in advance, optionally with intent recognition. An Agentforce agent chooses subagents and actions dynamically. According to Salesforce, Einstein Bots have been in maintenance mode since 17 August 2026."
   - q: "What are subagents in Agentforce?"
     a: "Subagents describe the jobs an agent takes on, such as looking up order status or creating a service case. Salesforce used to call them topics. Each subagent has its own instructions and actions."
   - q: "How much does Agentforce cost?"
-    a: "Agentforce is billed by consumption in Flex Credits. According to the price list, an action costs 20 Flex Credits, which at €500 per 100,000 credits comes to €0.10. There are also editions with included credits and flat-fee agreements."
+    a: "It depends on the licence model. With Flex Credits, Salesforce lists $500 or €500 per 100,000 credits, and a standard action uses 20 credits, or $0.10 or €0.10 at list price. There are also per-user licences, conversation pricing and flat-fee agreements."
 draft: false
 ---
 
-Agentforce is Salesforce's platform for AI agents: software that uses generative AI to decide which step comes next and carries it out through actions in Salesforce or connected systems. Asking "what is Agentforce" often gets you marketing terms as an answer. For IT leaders, what counts is what an agent is made of technically, how much control you have over its behaviour, what it costs and which data it needs. This article puts that in order and links the detailed articles.
+Agentforce is Salesforce's platform for AI agents: software that uses generative AI to interpret a request and choose the next step within limits you define, then carries it out through actions in Salesforce or connected systems. Asking "what is Agentforce" often gets you marketing terms as an answer. For IT leaders, what counts is what an agent is made of technically, which parts behave predictably, under whose permissions it runs, what it costs and which data it needs. This article puts that in order.
 
 ## What is Agentforce?
 
 In its [Agentforce Guide](https://www.salesforce.com/agentforce/guide/), Salesforce describes Agentforce as a platform for building agents that go beyond simple chat interactions. According to Salesforce, an agent is a type of software that uses generative AI to make decisions about what to do next and how to do it.
 
-The difference from earlier automation lies in that decision. A flow follows a fixed path that someone built in advance. An agent receives a request in natural language, such as "When will my spare parts order arrive?", recognises the task, picks the right action and writes the answer. Agents work in customer service, in sales or for employees. They can be called from chat and portal, from Flow or Apex, and through an API from your own applications, as described in [Agentforce Agent API](../agentforce-agent-api-dealer-apps/).
+The difference from earlier automation lies in that decision. A flow runs a process whose paths and criteria were modelled in advance. An agent receives a request in natural language, such as "When will my spare parts order arrive?", recognises the task, picks an action and writes the answer. Agents work in customer service, in sales or for employees. They can be called from chat and portal, from Flow or Apex, and through an API, as described in [Agentforce Agent API](../agentforce-agent-api-dealer-apps/).
 
-## An agent consists of subagents, instructions and actions
+## What you configure and what runs underneath
 
-According to the Agentforce Guide, an agent is made of a few building blocks:
+The Agentforce Guide names a few building blocks. They sit on different levels: some you configure per agent, some are platform services, and one is only needed for certain use cases.
 
-| Building block | What it does |
-|---|---|
-| Subagents | describe the agent's jobs, such as looking up order status or creating a service case |
-| Instructions | set how a subagent handles conversations and what it does not do |
-| Actions | get information or perform tasks, for example through Flow, Apex, prompt templates or interfaces |
-| Reasoning engine | picks the next step based on subagents, instructions, actions and rules |
-| Trust layer | routes prompts to the language model, honours permissions and masks sensitive data |
-| Data 360 | indexes knowledge for answers based on your own documents and supplies data for analytics |
-
-For the architecture, this means: an agent can only do what its actions can do. The actions use the same permissions, flows and interfaces as the rest of the org. If you already have clean flows and integrations today, you will build agents faster.
-
-Actions come as standard actions from Salesforce and as custom actions. According to the Agentforce Guide, some types of custom actions need an additional licence. Check this for every planned action before you estimate costs.
-
-```hinweis tipp
-Salesforce has renamed topics to subagents. Older Trailhead modules, diagrams and articles, including some of my own, still say "topics". They mean the same thing.
+```tabelle
+title: Building blocks of an Agentforce agent
+columns: Building block | Level | What it does
+Subagents | You configure | Describe the agent's jobs, such as order status or a service case
+Instructions | You configure | Set how a subagent handles conversations and what it does not do
+Actions | You configure | Read or change data through Flow, Apex, prompt templates or interfaces *
+Reasoning engine | Platform | Picks the next step from subagents, instructions, actions and Agent Script
+Trust layer | Platform | Prompt defence, zero data retention at the model provider, audit; no data masking for agents
+Data 360 | Depends on use | Needed for native knowledge from your documents and for some audit and observability features
+note: An agent can only do what its actions can do. The actions are where architecture work happens.
 ```
 
-## Agent Script fixes the flow of work
+One point in the table surprises many: according to [Salesforce Help on the trust layer](https://help.salesforce.com/s/articleView?id=sf.copilot_trust.htm&language=en_US&type=5), pattern-based and field-based data masking is disabled for agents. Protecting sensitive data therefore depends on what the agent's user and actions may read in the first place. What the trust layer does instead is described in [Einstein Trust Layer: what it protects in Agentforce](../einstein-trust-layer-what-it-protects/).
 
-A common objection to AI agents is that their behaviour is not predictable. Salesforce's answer is Agent Script, its own language for agents. According to the Agentforce Guide, the reasoning engine uses it to combine decisions by the language model with rules-based execution. Script gives full deterministic control over agent behaviour and replaces overloaded system prompts with structured business logic.
+```hinweis achtung
+The permissions depend on the agent type. An employee agent can run in the context of the logged-in user. A service agent for customers or dealers usually runs as a dedicated agent user. For a dealer portal, that is the core question. The portal user must be authenticated, and each action must take the dealer from that verified login, not from what someone types into the chat. Only then do the agent user's rights and the filters in the actions keep each dealer to its own installed base.
+```
 
-Salesforce recommends this division of work: instructions shape the conversation style, the script handles the actual business logic. For manufacturers, this matters because many rules in service are fixed. A warranty applies or it does not, a return needs a serial number. Such rules belong in the script, so the agent applies them the same way every time.
+How to protect such a portal against manipulated input is covered in [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/).
 
-Before go-live, the Testing Center checks the agent's behaviour, and in operation Agentforce Observability shows where logic needs refining. How I release an agent for production is described in [testing Agentforce agents](../testing-agentforce-agents-before-go-live/).
+Salesforce has renamed topics to subagents. Older Trailhead modules and articles, including some of my own, still say "topics". They mean the same thing. Whether a planned action needs an extra licence depends on what it calls, for example a product-specific standard action. Check this per action before you estimate costs.
 
-## How does Agentforce differ from chatbots and Prompt Builder?
+## Which parts of an agent are deterministic?
 
-Agentforce does not replace every existing AI feature in Salesforce. Three tools are often confused:
+A common objection to AI agents is that their behaviour is not predictable. Salesforce's answer is Agent Script, its own language for agents. According to the Agentforce Guide, it combines decisions by the language model with rules-based execution. The deterministic part is what you model as logic in the script: order of steps, conditions, transitions. Prompt instructions and generated answers are still interpreted by the language model.
 
-- **Einstein Bot.** Follows a fixed dialogue tree with menus. Good for a few clearly structured requests. Whether and when switching pays off is covered in [moving an Einstein Bot to Agentforce](../einstein-bots-to-agentforce-upgrade/).
-- **Prompt Builder.** Generates text from a template, such as a summary of a service case or a draft reply. It does not act on its own. When a template is enough is compared in [Prompt Builder or Agentforce agent](../prompt-builder-or-agentforce-agent/).
-- **Agentforce agent.** Understands the request, picks subagents and actions, and can read and change data.
+For manufacturers, this suggests a division of work. Whether a warranty applies, which price a dealer gets or whether a spare part fits an asset are checks for a deterministic action, such as a flow, Apex or a call to the ERP. Agent Script makes sure the agent calls that check before it answers, and the language model phrases the answer.
 
-Many tasks in service and sales do not need an agent at all. A prompt template that drafts a reply is easier to test and cheaper to run.
+Testing follows the same logic. The Testing Center runs defined test cases repeatedly and evaluates subagent and action selection and results. It supports the release, but it does not replace business acceptance, integration and security tests. How to prepare an agent for production is described in [testing Agentforce agents](../testing-agentforce-agents-before-go-live/).
 
-## Costs arise per action
+## How does Agentforce differ from bots and Prompt Builder?
 
-Agentforce is billed by consumption. According to the price list, an action costs 20 Flex Credits, which at the list price of €500 per 100,000 credits comes to €0.10. Prompts by model tier and processing in Data 360 come on top. How to estimate this for one agent is shown in [Flex Credits: Agentforce cost per action](../flex-credits-agentforce-cost-per-action/). For larger programmes there are flat-fee agreements, which I compare in [AELA or Flex Credits](../aela-agentforce-flat-fee-vs-credits/).
+Agentforce does not replace every AI feature in Salesforce. Three tools are often confused:
 
-Also on the table early: which language model answers the requests and where it runs. That is covered in [Agentforce data residency](../agentforce-eu-data-residency-models/). Which deadlines the EU AI Act sets for agents is in [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/).
+```tabelle
+title: Einstein Bot, Prompt Builder and Agentforce agent
+columns: Tool | How it works | Fits when
+Einstein Bot | Dialogues modelled in advance, optionally with intent recognition and actions | Existing bots; in maintenance mode since 17 August 2026
+Prompt Builder | Generates output from a template; Flow, Apex or an app controls the process | The process is fixed and only the text varies *
+Agentforce agent | Chooses subagents and actions per request, reads and changes data | Requests vary and need data from several places
+note: Many tasks in service and sales do not need an agent. A flow with a prompt template is usually simpler to test.
+```
+
+According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.bots_service_terminology.htm&language=en_US&type=5), Einstein Bots have been in maintenance mode since 17 August 2026; for new implementations, Salesforce points to Agentforce. When switching pays off is covered in [moving an Einstein Bot to Agentforce](../einstein-bots-to-agentforce-upgrade/), and when a template is enough in [Prompt Builder or Agentforce agent](../prompt-builder-or-agentforce-agent/).
+
+## What does Agentforce cost?
+
+Salesforce sells Agentforce in several models: Flex Credits by consumption, conversation pricing, per-user licences with included use and flat-fee agreements. In the Flex Credits model, the [pricing page](https://www.salesforce.com/agentforce/pricing/) lists $500 or €500 per 100,000 credits. According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-02.23.2026.pdf), a standard action uses 20 credits in production, $0.10 or €0.10 at list price, and 16 in a sandbox; voice actions use 30. These are list prices, not contract prices.
+
+```kennzahlen
+20 | Flex Credits per standard action in production
+16 | Flex Credits per standard action in a sandbox
+30 | Flex Credits per voice action
+$0.10 | per standard action at $500 per 100,000 credits
+source: Salesforce Agentforce pricing page and Flex Credits rate card, list prices as of November 2026
+```
+
+Depending on licence and context, prompts by model tier and Data 360 processing can come on top. How to estimate this for one agent is shown in [Flex Credits: Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), flat fees in [AELA or Flex Credits](../aela-agentforce-flat-fee-vs-credits/).
+
+Also on the table early: which language model answers and where it runs, covered in [Agentforce data residency](../agentforce-eu-data-residency-models/).
 
 ## For manufacturers, the data from the ERP counts
 
-An agent in the dealer portal that does not know the order status helps nobody. For manufacturers, the data customers and dealers ask about often sits in the ERP: order status, delivery dates, stock, prices and assets. The agent needs an action that queries the ERP for this, for example through MuleSoft. I describe one example in [Agentforce and SAP: order status via MuleSoft](../agentforce-sap-order-status-mulesoft/).
+An agent in the dealer portal that does not know the order status helps nobody. For manufacturers, the data customers and dealers ask about often sits in the ERP or in the installed base: order status and confirmed delivery dates, stock, customer-specific prices, serial numbers and the spare parts that fit a machine. The agent needs actions that query these sources, for example through MuleSoft, as in [Agentforce and SAP: order status via MuleSoft](../agentforce-sap-order-status-mulesoft/).
 
-Read-only actions are the easier start. As soon as an agent is supposed to change something in the ERP, such as a delivery date or a return, the interface needs the same checks as for a person in inside sales: permission, plausibility and a log.
+Three questions decide whether that works. Which dealer may see which assets and prices? What does the agent say when the ERP is down or the data is old? And which dates may the agent pass on? Which system leads for the delivery date, what status it has, whether that status may go to a customer and when a person has to approve, for example for a return, has to be decided per status before go-live. Read-only actions are the easier start. As soon as an agent changes something in the ERP, the interface needs the same checks as for a person in inside sales: permission, plausibility and a log.
 
-The quality of the data in Salesforce itself matters just as much. If assets are assigned to the wrong customer or customers exist twice, the agent gives wrong answers, only faster and more politely. Why I therefore start with business value and data quality is in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
+The quality of the data in Salesforce matters just as much. If assets are assigned to the wrong customer, the agent gives wrong answers, only faster and more politely. Why business value and data quality come first is in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
 
 ## Pick one process with a target figure for the first agent
 
-For the start, pick a process with many similar requests, clear rules and data an action can reach, such as order status or spare parts requests from dealers. Set a target figure, for example the share of requests the agent resolves without handing over to a person, and a date on which you decide about expanding. Which criteria count is described in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/). I plan the architecture behind it with clients under [Salesforce architecture](../../services/salesforce-architecture/).
+For the start, pick a process with many similar requests, clear rules and data an action can reach, such as order status or spare parts requests from dealers. Set target figures that measure the result, not only the deflection: the share of correctly resolved requests, how often customers come back with the same question, correct handovers to people and the cost per resolved request. Set a date on which you decide about expanding. Which criteria count is described in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/). The architecture questions behind it, from actions and permissions to ERP integration, are part of my [Salesforce architecture](../../services/salesforce-architecture/) service.
