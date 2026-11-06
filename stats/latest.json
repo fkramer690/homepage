@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-06T04:47:46.865Z",
+  "generatedAt": "2026-11-06T12:55:09.626Z",
   "range": {
     "start": "2026-10-07",
     "end": "2026-11-06"
   },
   "browsers": [
     {
-      "count": 770,
+      "count": 780,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
@@ -24,12 +24,12 @@
       }
     },
     {
-      "count": 110,
+      "count": 120,
       "dimensions": {
         "userAgentBrowser": "Unknown"
       },
       "sum": {
-        "visits": 70
+        "visits": 80
       }
     },
     {
@@ -71,12 +71,12 @@
   ],
   "countries": [
     {
-      "count": 940,
+      "count": 960,
       "dimensions": {
         "countryName": "DE"
       },
       "sum": {
-        "visits": 130
+        "visits": 140
       }
     },
     {
@@ -233,11 +233,20 @@
       "sum": {
         "visits": 100
       }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "date": "2026-11-06"
+      },
+      "sum": {
+        "visits": 10
+      }
     }
   ],
   "devices": [
     {
-      "count": 860,
+      "count": 870,
       "dimensions": {
         "deviceType": "desktop"
       },
@@ -246,23 +255,23 @@
       }
     },
     {
-      "count": 280,
+      "count": 290,
       "dimensions": {
         "deviceType": "mobile"
       },
       "sum": {
-        "visits": 90
+        "visits": 100
       }
     }
   ],
   "pages": [
     {
-      "count": 280,
+      "count": 290,
       "dimensions": {
         "requestPath": "/"
       },
       "sum": {
-        "visits": 100
+        "visits": 110
       }
     },
     {
@@ -313,6 +322,15 @@
     {
       "count": 30,
       "dimensions": {
+        "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
         "requestPath": "/homepage/"
       },
       "sum": {
@@ -331,16 +349,7 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/masterclass/ki-salesforce/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 20,
-      "dimensions": {
-        "requestPath": "/en/partners/juliane-winterscheid/"
+        "requestPath": "/masterclass/"
       },
       "sum": {
         "visits": 0
@@ -350,24 +359,6 @@
       "count": 20,
       "dimensions": {
         "requestPath": "/leistungen/salesforce-architektur/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 20,
-      "dimensions": {
-        "requestPath": "/leistungen/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 20,
-      "dimensions": {
-        "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
       },
       "sum": {
         "visits": 0
@@ -394,7 +385,16 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/masterclass/"
+        "requestPath": "/masterclass/revenue-cloud/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/leistungen/"
       },
       "sum": {
         "visits": 0
@@ -403,16 +403,16 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/masterclass/revenue-cloud/"
+        "requestPath": "/masterclass/ki-salesforce/"
       },
       "sum": {
-        "visits": 10
+        "visits": 0
       }
     },
     {
-      "count": 10,
+      "count": 20,
       "dimensions": {
-        "requestPath": "/en/blog/copado-gearset-provar-ai-agents/"
+        "requestPath": "/en/partners/juliane-winterscheid/"
       },
       "sum": {
         "visits": 0
@@ -421,7 +421,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/en/blog/salesforce-dx-mcp-server-end-of-life/"
+        "requestPath": "/en/blog/ai-rules-file-salesforce-repository/"
       },
       "sum": {
         "visits": 10
@@ -435,11 +435,20 @@
       "sum": {
         "visits": 0
       }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/blog/copado-gearset-provar-ai-agents/"
+      },
+      "sum": {
+        "visits": 0
+      }
     }
   ],
   "referers": [
     {
-      "count": 800,
+      "count": 810,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
@@ -448,12 +457,12 @@
       }
     },
     {
-      "count": 240,
+      "count": 250,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 240
+        "visits": 250
       }
     },
     {

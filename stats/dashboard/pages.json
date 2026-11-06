@@ -1,8 +1,8 @@
 [
  {
   "page": "/",
-  "pageviews": 280,
-  "visits": 100
+  "pageviews": 290,
+  "visits": 110
  },
  {
   "page": "/en/",
@@ -30,6 +30,11 @@
   "visits": 10
  },
  {
+  "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
+  "pageviews": 30,
+  "visits": 0
+ },
+ {
   "page": "/homepage/",
   "pageviews": 30,
   "visits": 10
@@ -40,27 +45,12 @@
   "visits": 0
  },
  {
-  "page": "/masterclass/ki-salesforce/",
-  "pageviews": 20,
-  "visits": 0
- },
- {
-  "page": "/en/partners/juliane-winterscheid/",
+  "page": "/masterclass/",
   "pageviews": 20,
   "visits": 0
  },
  {
   "page": "/leistungen/salesforce-architektur/",
-  "pageviews": 20,
-  "visits": 0
- },
- {
-  "page": "/leistungen/",
-  "pageviews": 20,
-  "visits": 0
- },
- {
-  "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
   "pageviews": 20,
   "visits": 0
  },
@@ -75,27 +65,37 @@
   "visits": 0
  },
  {
-  "page": "/masterclass/",
-  "pageviews": 20,
-  "visits": 0
- },
- {
   "page": "/masterclass/revenue-cloud/",
   "pageviews": 20,
   "visits": 10
  },
  {
-  "page": "/en/blog/copado-gearset-provar-ai-agents/",
-  "pageviews": 10,
+  "page": "/leistungen/",
+  "pageviews": 20,
   "visits": 0
  },
  {
-  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
+  "page": "/masterclass/ki-salesforce/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
+  "page": "/en/partners/juliane-winterscheid/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
+  "page": "/en/blog/ai-rules-file-salesforce-repository/",
   "pageviews": 10,
   "visits": 10
  },
  {
   "page": "/en/masterclass/ai-salesforce/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/en/blog/copado-gearset-provar-ai-agents/",
   "pageviews": 10,
   "visits": 0
  }
