@@ -1094,6 +1094,71 @@ a.card-more:hover,
 .faq-item summary:hover h3 { color: var(--cyan-dark); }
 .faq-item p { margin: 0 0 16px; color: var(--text-2); max-width: 70ch; }
 @media (prefers-reduced-motion: reduce) { .faq-item summary::after { transition: none; } }
+/* Source chips in blog articles (src/lib/source-chips.mjs): numbered chip after the
+   former link text, hover shows the domain, the list at the end stays collapsed. */
+.prose a.cite {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  margin-left: 3px;
+  border: 1px solid var(--tint-line);
+  border-radius: var(--radius-xs);
+  background: var(--tint);
+  color: var(--cyan-dark);
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  vertical-align: 2px;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+.prose a.cite:hover, .prose a.cite:focus-visible { background: var(--cyan-dark); border-color: var(--cyan-dark); color: var(--white); }
+.prose a.cite::after {
+  content: attr(data-source);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  border-radius: var(--radius-xs);
+  background: var(--anthracite);
+  color: var(--on-dark);
+  font-family: var(--font);
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  white-space: nowrap;
+  pointer-events: none;
+  display: none;
+}
+/* Only on devices with a mouse; a hidden but laid-out label would widen the page on phones. */
+@media (hover: hover) { .prose a.cite:hover::after, .prose a.cite:focus-visible::after { display: block; } }
+.post-sources { margin-top: 2.6em; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.post-sources summary { display: flex; align-items: center; gap: 10px; padding: 16px 0; cursor: pointer; list-style: none; }
+.post-sources summary::-webkit-details-marker { display: none; }
+.post-sources .src-title { font-size: var(--fs-md); font-weight: 700; color: var(--text); }
+.post-sources .src-count { font-size: var(--fs-xs); color: var(--text-2); }
+.post-sources summary::after {
+  content: '+';
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--cyan-dark);
+  transition: transform var(--t-fast);
+}
+.post-sources[open] summary::after { transform: rotate(45deg); }
+.post-sources summary:hover .src-title { color: var(--cyan-dark); }
+.prose .src-list { list-style: none; margin: 0 0 12px; padding: 0; }
+.prose .src-list li { display: grid; grid-template-columns: 30px 1fr; gap: 8px; margin: 0; padding: 8px 0; border-top: 1px solid var(--line); font-size: var(--fs-ui); }
+.post-sources .src-n { padding-top: 3px; font-size: var(--fs-xs); font-weight: 600; color: var(--cyan-dark); }
+.post-sources .src-host { display: block; font-size: var(--fs-sm); color: var(--text-2); }
+.post-sources li:target { background: var(--tint); }
+@media (prefers-reduced-motion: reduce) { .post-sources summary::after, .prose a.cite { transition: none; } }
 .post-related { margin-top: 2em; }
 /* Article and chapter head (docs/layouts.md "Article head"): series or chapter as a
    pill above the title, one meta line below it (photo, name, date, reading time). */

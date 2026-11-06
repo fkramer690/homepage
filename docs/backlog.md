@@ -242,6 +242,8 @@ Ideen für mehr persönliche Note, von Fabian freigegeben, später abarbeiten:
 
 17. **Zitat nach einem Vergleich in Blogartikeln** (von Fabian gewünscht 30.10.2026) – die beiden Muster aus der Startseite (Rolle → Zitat) auch in Blogartikeln einsetzen: „Bühnenband“ (Foto rechts, Zitat kursiv auf dunklem Verlauf, gebaut auf der Startseite) und „Grundsatz-Karte“ (gestrichelte Linie aus der Vergleichsspalte in eine dunkle Karte mit rundem Foto). Beschreibung in `docs/layouts.md` („Quote after a comparison“). Dafür als Content-Block in die Bibliothek aufnehmen und passende Artikel mit einem Vergleich plus Kernsatz auswählen. *Entwurf: Claude, Freigabe: Fabian.*
 
+18. **Kundenstimme mit Zahlen unter den Referenzen** (von Fabian gewünscht 06.11.2026, Muster von 21st.dev „Single Voice Spotlight Testimonial“) – ein großes Zitat mit Rolle und Branche (Firma anonym), rechts drei Ergebniszahlen, heller Kasten unter „Projekt im Fokus“ auf der Startseite (Variante A, Mockups in den Projektdateien unter `homepage/21st-dev-mockups/`). Ergänzt Punkt 4 und 11. *Braucht: echtes Zitat und drei belegbare Zahlen von Fabian.*
+
 Weitere offene Punkte:
 - Fallstudien-Seiten (Ausgangslage, Architekturentscheidungen, Ergebnis, Grafik), sobald die Kundenfreigaben vorliegen. Status klärt Fabian.
 - Logo-Paket (ZIP) hochladen

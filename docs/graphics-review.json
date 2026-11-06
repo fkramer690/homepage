@@ -306,6 +306,7 @@
     "page:proof": {"title": "Zahlenleiste", "proposal": 1, "rating": 2, "ratedOn": "2026-10-30", "note": "geht. aber mir fällt gerade auch nix besseres ein"},
     "page:artikelkopf": {"title": "Artikel- und Kapitelkopf: Pill für Teil/Kapitel, Metazeile mit Foto, Datum, Lesezeit", "proposal": 1, "rating": null},
     "page:blog-mehr-laden": {"title": "Blog-Übersicht: Mehr laden nach 24 Artikeln, eine Kategorie pro Karte", "proposal": 1, "rating": null},
+    "page:quellen-chips": {"title": "Blog: nummerierte Quellen-Chips im Text, eingeklappte Quellenliste vor der FAQ (Muster von 21st.dev, Variante A)", "proposal": 1, "rating": null},
     "page:blog-video": {"title": "Blog: Video-Karte im Seitenrand mit Overlay und Transkript (Variante B)", "proposal": 1, "rating": null},
     "page:rolle-zitat": {"title": "Rolle: Vergleichspaar markiert, Zitat als Bühnenband", "proposal": 1, "rating": null},
     "page:juliane-referenzen": {"title": "Partnerseite Juliane: Referenzen als Projekt im Fokus (Liste links, Panel mit Logo, Zeitraum, Rolle, Umfang, Aufgaben)", "proposal": 1, "rating": null},
