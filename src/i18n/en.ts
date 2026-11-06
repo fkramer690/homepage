@@ -29,6 +29,8 @@ export type CourseVideo = {
   landscape: boolean;
   watch: string;
   transcript: string;
+  // Note on the voice, shown below the transcript (e.g. that it is AI-generated).
+  voice?: string;
 };
 const courseVideo = (video: CourseVideo | null) => video;
 
