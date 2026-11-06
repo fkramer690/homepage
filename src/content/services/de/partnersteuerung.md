@@ -89,7 +89,7 @@ Nach der ersten Version kamen in den folgenden Wochen neue Randfälle hinzu. Wir
 
 Auch ein Partner kann gute Standards schreiben. Legt er die Regeln fest, entscheidet er aber, wie alle anderen bauen, auch seine Wettbewerber. Liegen dazu Repository, Pipeline und Tools wie Jira oder Miro bei ihm, wird jeder Partnerwechsel teuer.
 
-Gehören Standards, Freigaberechte und Tools dem Kunden, startet ein neuer Partner mit denselben Regeln, Tools und Rechten wie alle anderen, und ein Partner, der geht, gibt nur seine Benutzer ab. Angebote lassen sich dann fair vergleichen, weil alle unter denselben Bedingungen liefern. Mehr dazu in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
+Gehören Standards, Freigaberechte und Tools dem Kunden, startet ein neuer Partner mit denselben Regeln, Tools und Rechten wie alle anderen, und ein Partner, der geht, gibt nur seine Benutzer ab. Angebote lassen sich dann fair vergleichen, weil alle unter denselben Bedingungen liefern. Mehr dazu in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/). Was Sie schon bei der Auswahl eines Partners dazu fragen sollten, steht in [Salesforce-Implementierungspartner auswählen](../../blog/salesforce-implementierungspartner-auswaehlen/).
 
 ## Wie passen Reviews hinein, ohne das Programm auszubremsen?
 

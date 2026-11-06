@@ -40,7 +40,7 @@ Die App hat eigene Versionsnummern neben den Plattform-Releases: Die Hauptversio
 
 Der [Beitrag zu 262.3](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pPWBC0A4) zeigt, warum Patches zählen. Unter iOS konnte die App Nutzer unerwartet abmelden, nachdem sie im Hintergrund gelegen hatte, und eine Startüberwachung rechnete die Zeit im Hintergrund mit und meldete falsche Zeitüberschreitungen. Unter Android konnten Nutzer bei der Anmeldung im App-internen Browser hängen bleiben. Genau solche Fehler halten einen Techniker vor der Tür des Kunden auf.
 
-Beide Beiträge ergänzen, dass Salesforce Haupt- und Patch-Versionen über mehrere Tage verteilt und Updates unter Umständen erst sieben Tage nach der allgemeinen Verfügbarkeit alle Nutzer erreichen. Für eine Serviceorganisation heißt das: Bis zu einer Woche arbeiten manche Techniker mit der alten und manche mit der neuen Version.
+Beide Beiträge ergänzen, dass Salesforce Haupt- und Patch-Versionen über mehrere Tage verteilt und Updates unter Umständen erst sieben Tage nach der allgemeinen Verfügbarkeit alle Nutzer erreichen. Für eine Serviceorganisation heißt das: Bis zu einer Woche arbeiten manche Techniker mit der alten und manche mit der neuen Version. Mit Winter '27 laufen Flows in der App außerdem auf einer nativen Laufzeit, mobile Flows gehören also in die Testroutine, siehe [Field Service Mobile App: Flow-Grenzen](../field-service-mobile-flows-grenzen/).
 
 ```hinweis tipp
 Der Support fragt bei jedem Ticket zuerst nach der App-Version. Sie steht in der App unter Profil, Einstellungen, Info.
