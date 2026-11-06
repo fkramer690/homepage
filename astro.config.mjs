@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import { satteri } from '@astrojs/markdown-satteri';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { externalLinks } from './src/lib/external-links.mjs';
+import { sourceChips } from './src/lib/source-chips.mjs';
 import { contentBlocks } from './src/lib/content-blocks-plugin.mjs';
 import { serviceIntro } from './src/lib/service-intro-plugin.mjs';
 import { explicitEmptyAlt } from './src/lib/explicit-empty-alt.mjs';
@@ -115,7 +116,7 @@ export default defineConfig({
     // All external links open in a new tab (checked by scripts/check-links.mjs).
     // Content blocks (```hinweis, ```zeitleiste, …) become markup (docs/blog-guidelines.md).
     // Service pages: the first body paragraph opens the page (src/lib/service-intro-plugin.mjs).
-    processor: satteri({ mdastPlugins: [serviceIntro(), contentBlocks({ site })], hastPlugins: [externalLinks({ site })] }),
+    processor: satteri({ mdastPlugins: [serviceIntro(), contentBlocks({ site })], hastPlugins: [sourceChips({ site }), externalLinks({ site })] }),
   },
   integrations: [
     explicitEmptyAlt(),
