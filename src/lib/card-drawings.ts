@@ -237,11 +237,11 @@ const drawings: Record<string, Drawing> = {
   'sap-crm-or-salesforce': (l) => `
     ${t(18, 18, l('SAP CRM 7.0 · MAINTENANCE', 'SAP CRM 7.0 · WARTUNG'), { fill: D, size: 7 })}
     <path d="M30 36H290" stroke="${G}" stroke-width="1.2"/>
-    ${dot(30, 36)}${t(18, 52, l('end 2027', 'Ende 2027'), { fill: D, size: 7 })}${t(18, 63, l('mainstream ends', 'reguläre endet'), { size: 6.5 })}
+    ${dot(30, 36)}${t(18, 52, l('end 2027', 'Ende 2027'), { fill: D, size: 7 })}${t(18, 63, l('mainstream ends', 'Mainstream endet'), { size: 6.5 })}
     ${dot(160, 36)}${t(160, 52, l('2028 to 2030', '2028 bis 2030'), { fill: D, size: 7, anchor: 'middle' })}${t(160, 63, l('extended, +2 points', 'verlängert, +2 Punkte'), { size: 6.5, anchor: 'middle' })}
     ${dot(290, 36, C)}${t(302, 52, l('from 2031', 'ab 2031'), { fill: C, size: 7, anchor: 'end' })}${t(302, 63, l('customer-specific', 'kundenspezifisch'), { size: 6.5, anchor: 'end' })}
     <path d="M18 74H302" stroke="${L}"/>
-    ${t(18, 90, l('THREE PATHS', 'DREI WEGE'), { fill: D, size: 7 })}
+    ${t(18, 90, l('MAIN TARGET OPTIONS', 'WICHTIGSTE ZIELE'), { fill: D, size: 7 })}
     ${['S/4HANA', 'Sales/Service Cloud', 'Salesforce'].map((s, i) => box(18 + i * 98, 98, 88, 24, i === 2 ? C : G) + t(62 + i * 98, 113, s, { fill: i === 2 ? C : G, size: 7, anchor: 'middle' })).join('')}
     ${tag(18, 132, 150, l('decide by 2027 or 2028', 'entscheiden bis 2027/2028'))}${t(178, 145, l('replacement: about 2 years', 'Ablösung: rund 2 Jahre'), { size: 7 })}`,
 

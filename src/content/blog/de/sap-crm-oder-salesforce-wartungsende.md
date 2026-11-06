@@ -1,7 +1,7 @@
 ---
 title: "SAP CRM oder Salesforce: Was nach 2027 kommt"
-description: "SAP vs Salesforce nach dem Wartungsende von SAP CRM 7.0: welche Wege es gibt, wann Salesforce passt, wann SAP, und was Abwarten bis 2030 kostet."
-pubDate: 2026-10-30
+description: "SAP vs Salesforce nach dem Wartungsende von SAP CRM 7.0: welche Wege es gibt, welche Fragen für Hersteller entscheiden, warum Abwarten bis 2030 riskant ist."
+pubDate: 2026-11-06
 lang: de
 slug: sap-crm-oder-salesforce-wartungsende
 translationKey: sap-crm-or-salesforce
@@ -10,97 +10,118 @@ categories: [architecture]
 contactBrief: make-or-buy
 tags: [SAP CRM, SAP vs Salesforce, S/4HANA, Make-or-buy, CRM-Auswahl, Wartungsende]
 takeaways:
-  - "Nach SAP CRM gibt es drei Wege: CRM-Funktionen in S/4HANA, SAP Sales und Service Cloud oder Salesforce. Ein Weiterbetrieb ohne Plan ist der teuerste."
-  - "Die reguläre Wartung für SAP CRM 7.0 endet Ende 2027. Die verlängerte Wartung bis Ende 2030 kostet zwei Prozentpunkte Aufschlag."
-  - "Salesforce passt, wenn Vertrieb, Service, Portale und Partner im Mittelpunkt stehen und das CRM mehr sein soll als die Vorstufe zum ERP-Auftrag."
-  - "Der SAP-Weg passt, wenn das CRM vor allem Aufträge und Serviceaufträge vorbereitet, die ohnehin in S/4HANA abgewickelt werden."
-  - "Welcher Weg gewinnt, entscheiden Prozesse, Schnittstellen und Lizenzen über mehrere Jahre, nicht der Produktname. Diese Rechnung gehört vor jedes Angebot."
+  - "Die Mainstream-Wartung für SAP CRM 7.0 endet 2027, die verlängerte 2030. Planen Sie die Entscheidung vom Abschaltdatum aus rückwärts."
+  - "Einen Eins-zu-eins-Nachfolger gibt es nicht. S/4HANA, SAP Sales und Service Cloud, Salesforce und Mischformen werden je Funktion geprüft."
+  - "Für Hersteller entscheiden installierte Basis, Verträge, Ersatzteile, Außendienst, Händler und Preise aus SAP, nicht der Produktname."
+  - "Weiterbetrieb ohne Enddatum erhöht Support-, Technik- und Projektrisiko, denn nach 2030 bleibt nur kundenspezifische Wartung."
+  - "Vergleichen Sie Lizenzen, Schnittstellen, Migration, Parallelbetrieb und Schulung über mehrere Jahre, bevor Sie Angebote einholen."
 faq:
   - q: "Wann endet die Wartung für SAP CRM?"
-    a: "SAP CRM 7.0 gehört zur SAP Business Suite 7. Die reguläre Wartung endet laut SAP Ende 2027. Die optionale verlängerte Wartung läuft von Anfang 2028 bis Ende 2030 und kostet zwei Prozentpunkte Aufschlag auf die Wartungsbasis."
-  - q: "Was ist der Nachfolger von SAP CRM?"
-    a: "SAP bietet zwei Richtungen an: CRM-Funktionen direkt in SAP S/4HANA, etwa SAP S/4HANA for customer management und S/4HANA Service, und die Cloud-Lösungen SAP Sales Cloud und SAP Service Cloud Version 2. Viele Unternehmen prüfen daneben Salesforce."
-  - q: "Ist Salesforce besser als SAP für das CRM?"
-    a: "Das hängt vom Schwerpunkt ab. Salesforce ist stark bei Vertrieb, Service, Portalen und Partnern. Der SAP-Weg ist naheliegend, wenn das CRM vor allem ERP-Aufträge vorbereitet. Entscheidend sind Prozesse, Schnittstellen und Lizenzen über mehrere Jahre."
-  - q: "Kann ich SAP CRM nach 2030 weiter betreiben?"
-    a: "Laut SAP erhalten Kunden ohne verlängerte Wartung oder nach deren Ende eine kundenspezifische Wartung. Neue Funktionen und gesetzliche Anpassungen sind darin nicht mehr zu erwarten. Als Dauerlösung taugt das selten."
+    a: "SAP CRM 7.0 gehört zur SAP Business Suite 7. Die Mainstream-Wartung endet laut SAP Ende 2027. Die optionale verlängerte Wartung läuft bis Ende 2030 und kostet zwei Prozentpunkte Aufschlag auf die Wartungsbasis."
+  - q: "Gibt es einen direkten Nachfolger für SAP CRM?"
+    a: "Nicht als Eins-zu-eins-Produkt. SAP verweist auf Vertriebs- und Servicefunktionen in S/4HANA und auf SAP Sales Cloud und SAP Service Cloud Version 2; viele Hersteller prüfen auch Salesforce. Welche Funktion wohin wandert, zeigt ein Fit-Gap-Abgleich."
+  - q: "Muss SAP CRM bis Ende 2030 abgeschaltet sein?"
+    a: "Nein, aber danach bietet SAP nur noch kundenspezifische Wartung, ohne neue gesetzliche Anpassungen oder Support Packages. Laut SAP endet 2030 außerdem der Support für Fremddatenbanken und für Java 8 mit AS Java 7.5."
+  - q: "Kann Salesforce SAP CRM vollständig ersetzen?"
+    a: "Nur nach einer Analyse von Funktionen, Daten, Schnittstellen und Betrieb. Salesforce deckt Vertrieb, Service, Außendienst und Portale ab, lizenziert nach Produkt und Nutzerart. Daten, für die das ERP führend ist, etwa der Auftragsstatus, werden bei Bedarf synchronisiert."
 draft: false
 ---
 
-Wer heute SAP CRM betreibt, muss bis spätestens 2030 entscheiden, wie es weitergeht: Die reguläre Wartung für SAP CRM 7.0 endet Ende 2027, die verlängerte Wartung Ende 2030. Zur Wahl stehen CRM-Funktionen in S/4HANA, SAP Sales und Service Cloud oder Salesforce. Wer nach „SAP vs Salesforce“ sucht, findet meist Funktionsvergleiche. Für Hersteller zählt eine andere Frage: Ist das CRM vor allem die Vorstufe zum ERP-Auftrag, oder soll es Vertrieb, Service, Portale und Partner tragen? Davon hängt ab, welcher Weg passt.
+Die Mainstream-Wartung für SAP CRM 7.0 endet am 31. Dezember 2027, die verlängerte Wartung am 31. Dezember 2030. Weil Auswahl, Einführung und Migration Zeit brauchen, fällt die Entscheidung deutlich vor der Abschaltung. Zur Wahl stehen Vertrieb und Service in S/4HANA, SAP Sales und Service Cloud, Salesforce oder eine Mischung. Für Hersteller sortiert eine Frage die Wege: Ist das CRM vor allem die Vorstufe zum ERP-Auftrag, oder soll es Vertrieb, Service, Portale und Partner tragen? Ich gestalte und steuere Salesforce-Programme für Hersteller auf Kundenseite; die SAP-Wege beschreibe ich nach den veröffentlichten Angaben von SAP.
 
 ## Wann endet die Wartung für SAP CRM?
 
-SAP CRM 7.0 gehört zur SAP Business Suite 7. Laut der [Wartungsstrategie von SAP](https://support.sap.com/en/release-upgrade-maintenance/maintenance-information/maintenance-strategy/s4hana-business-suite7.html) gelten für die Kernanwendungen der Suite, darunter SAP ERP 6.0 und SAP CRM 7.0, diese Fristen:
+SAP CRM 7.0 gehört zur SAP Business Suite 7. Laut der [Wartungsstrategie von SAP](https://support.sap.com/en/release-upgrade-maintenance/maintenance-information/maintenance-strategy/s4hana-business-suite7.html) gelten für die Kernanwendungen der Suite, darunter SAP ERP 6.0 und SAP CRM 7.0, auf unterstützten Erweiterungspaketen diese Fristen:
 
 ```zeitleiste
-2027-12-31 | Reguläre Wartung für SAP CRM 7.0 endet
+2027-12-31 | Mainstream-Wartung für SAP CRM 7.0 endet
 2028-01-01 | Optionale verlängerte Wartung beginnt, mit zwei Prozentpunkten Aufschlag
 2030-12-31 | Verlängerte Wartung endet, danach kundenspezifische Wartung
 ```
 
-Der Aufschlag von zwei Prozentpunkten auf die Wartungsbasis gilt laut SAP für alle Supportangebote im Umfang der Business Suite 7. Nach 2030 bietet SAP nur noch eine kundenspezifische Wartung an. Ein CRM, das bis dahin nicht abgelöst ist, läuft also ohne Weiterentwicklung weiter.
+Laut SAP gilt der Aufschlag für die Supportangebote rund um die Business Suite 7. Was er Sie kostet, hängt von Vertrag und Wartungsbasis ab; klären Sie das mit SAP, statt ihn als CRM-Aufschlag zu verbuchen. Fragen Sie dabei auch, ob Ihr installierter Release- und Erweiterungspaketstand abgedeckt ist.
 
-Für die Planung heißt das: Eine CRM-Ablösung mit Auswahl, Vertrag, Umsetzung, Datenmigration und Schulung dauert in einem internationalen Unternehmen leicht zwei Jahre. Wer 2030 fertig sein will, muss 2027 oder 2028 entscheiden.
+Nach 2030 heißt kundenspezifische Wartung: keine neuen gesetzlichen Anpassungen und keine neuen Support Packages. Im Oktober 2026 hat SAP außerdem [angekündigt](https://news.sap.com/2026/10/beyond-2030-sap-business-suite-7-sap-netweaver-customers-third-party-databases-java/), dass Ende 2030 der Datenbanksupport für Systeme auf Fremddatenbanken und der Support für Java 8 mit AS Java 7.5 enden. Ein SAP CRM, das dann noch läuft, läuft weiter, aber mit wachsendem technischem Risiko.
 
-## Nach SAP CRM gibt es drei Wege
+## Fünf Wege nach SAP CRM
 
-Grob gibt es drei Richtungen, dazu die Option, vorerst nichts zu tun:
+Einen einzelnen Nachfolger gibt es nicht. Die Funktionen von SAP CRM verteilen sich auf mehrere Ziele, und viele Unternehmen kombinieren sie:
 
-| Weg | Was dahinter steckt | Passt, wenn |
-|---|---|---|
-| CRM-Funktionen in S/4HANA | Vertriebs- und Serviceprozesse direkt im ERP, etwa S/4HANA for customer management und S/4HANA Service | das CRM vor allem Aufträge und Serviceaufträge vorbereitet |
-| SAP Sales und Service Cloud | Cloud-CRM von SAP, laut SAP mit Standardintegration Lead-to-Cash zu S/4HANA | ein Cloud-CRM gewünscht ist und die SAP-Landschaft führen soll |
-| Salesforce | Sales Cloud, Service Cloud, Field Service, Portale, ggf. Manufacturing Cloud | Vertrieb, Service, Portale und Partner im Mittelpunkt stehen |
-| Weiterbetrieb | SAP CRM mit verlängerter, später kundenspezifischer Wartung | als Brücke bis zu einem festen Ablösetermin |
-
-SAP selbst positioniert die [Version 2 von SAP Sales und Service Cloud](https://www.sap.com/engage/sscv2.html) als Cloud-Ziel und hebt die Integration mit S/4HANA hervor. Für Unternehmen, die SAP CRM ohnehin parallel zum Umstieg von ECC auf S/4HANA ablösen müssen, ist das ein ernstzunehmendes Argument.
-
-## Wann passt Salesforce, wann der SAP-Weg?
-
-Die Entscheidung hängt weniger am Produkt als daran, was das CRM leisten soll. Bei Herstellern sehe ich zwei Muster.
-
-Im ersten Muster ist das CRM eine Vorstufe zum ERP. Innendienst erfasst Angebote und Aufträge, Service legt Serviceaufträge an, und fast alles endet ohnehin in S/4HANA. Hier spricht viel für den SAP-Weg, weil Daten und Prozesse in einer Welt bleiben.
-
-Im zweiten Muster trägt das CRM eigene Prozesse: Vertriebssteuerung mit Forecasts und Rahmenverträgen, Kundenservice über mehrere Kanäle, Außendienst, Händler- und Kundenportale. Hier ist Salesforce stark, und die Schnittstelle zum ERP ist der Preis dafür.
-
-```pro-contra
-pro: Salesforce
-- Breites Angebot für Vertrieb, Service, Außendienst und Portale auf einer Plattform
-- Branchenfunktionen wie Sales Agreements in der Manufacturing Cloud
-- Großer Markt an Partnern und Fachleuten
-contra: Was Sie dafür einplanen müssen
-- Schnittstellen zu SAP für Kunden, Produkte, Preise und Aufträge
-- Ein klares führendes System pro Datenart
-- Lizenzen pro Nutzer, die über Jahre sauber geplant sein wollen
+```tabelle
+titel: Wege nach SAP CRM
+spalten: Weg | Was dahinter steckt | Naheliegend, wenn
+Vertrieb und Service in S/4HANA | Vertrieb in S/4HANA, Serviceaufträge und Serviceverträge in SAP S/4HANA Service | Das CRM vor allem Aufträge und Serviceaufträge für das ERP vorbereitet
+SAP Sales und Service Cloud | Cloud-CRM von SAP, laut SAP mit Standardintegration zu S/4HANA | SAP-Standardintegration wichtiger ist als Flexibilität im Frontoffice und der Cloud-Umfang Ihre Funktionen abdeckt
+Salesforce | Sales Cloud, Service Cloud, Field Service, Portale, eventuell Manufacturing Cloud | Vertrieb, Service, Portale und Partner eigene Prozesse tragen
+Mischform | Etwa Salesforce für Vertrieb und Portale, S/4HANA für die Serviceabwicklung | Frontoffice und Backoffice unterschiedlichen Prioritäten folgen
+Weiterbetrieb | SAP CRM mit verlängerter, später kundenspezifischer Wartung | Nur als Brücke zu einem festen Enddatum
+fazit: Prüfen Sie jede SAP-CRM-Funktion, die Sie tatsächlich nutzen: Zieht sie um, wird sie neu gestaltet oder entfällt sie?
 ```
 
-Bei der Integration hilft eine einfache Regel: Für jede Art von Daten führt genau ein System. Welche Daten zwischen SAP und Salesforce fließen, beschreibe ich am Beispiel der [Manufacturing Cloud](../manufacturing-cloud-sap-integration-datenfluesse/) und für Preise in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/). Die Architektur dahinter steht unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+SAP positioniert [Version 2 der SAP Sales und Service Cloud](https://www.sap.com/engage/sscv2.html) als Ziel in der Cloud. Sie ist eine eigene Lösung mit eigenem Datenmodell und braucht deshalb wie Salesforce eine Integration zu S/4HANA, auch wenn SAP mehr davon als Standardinhalt liefert. Lösungen desselben Herstellers bilden kein gemeinsames System.
+
+## Welche Fragen entscheiden zwischen Salesforce und SAP?
+
+Zwei Muster helfen, die Ausgangslage zu sortieren. Im ersten ist das CRM eine Vorstufe zum ERP: Der Innendienst erfasst Angebote und Aufträge, der Service legt Serviceaufträge an, und fast alles landet in S/4HANA. Hier gehören die SAP-Wege in die engere Auswahl. Im zweiten trägt das CRM eigene Prozesse: Vertriebssteuerung mit Prognosen und Sales Agreements, Kundenservice über mehrere Kanäle, Außendienst, Händler- und Kundenportale. Hier gehört Salesforce in die engere Auswahl. Viele Unternehmen liegen dazwischen.
+
+Die Muster grenzen die Liste ein. Die Entscheidung kommt aus den Fragen, die für Hersteller zählen:
+
+```tabelle
+titel: Was für Hersteller entscheidet
+spalten: Thema | Zu klärende Frage | In der Demo testen
+Installierte Basis | Wo liegen Maschinen, Konfigurationen und Historie, und wer pflegt sie? | Ihre Anlagenhierarchie mit realen Daten
+Verträge und Garantie | Welches System prüft Deckung, Ansprüche und Garantiefälle? | Einen Garantiefall von Anfang bis Ende
+Ersatzteile | Brauchen Techniker und Service Desk Bestand und Reservierungen aus dem ERP in Echtzeit? | Verfügbarkeitsprüfung bei einer Störung
+Außendienst | Brauchen Techniker eine offlinefähige mobile App und automatische Einsatzplanung? | Einen Techniker-Tag, offline
+Händler und Partner | Bearbeiten Händler Leads, Deals, Anlagen oder Garantiefälle in einem Portal? | Einen Händler, der einen Deal registriert
+Produkte und Preise | Gibt es einen Konfigurator, und bleiben Kundenpreise in den SAP-Konditionen? | Ein Angebot mit Kundenpreis aus SAP
+Aufträge | Welchen Auftrags- und Lieferstatus müssen Vertrieb oder Kunde sehen? | Status eines Auftrags im Portal
+fazit: Jede Antwort zeigt in eine Richtung, entscheiden kann nur das Gesamtbild.
+```
+
+Bei den [Sales Agreements der Manufacturing Cloud](https://help.salesforce.com/s/articleView?id=sf.sa_admin_parent_concept.htm&language=en_US&type=5) gilt: Sie planen Mengen und Umsatz über die Zeit. Das ist nicht dasselbe wie ein rechtlich bindender Rahmenvertrag oder ein Kontrakt in SAP; klären Sie, wo die verbindliche Fassung liegt.
+
+Neben den fachlichen Fragen prüfen Sie Berechtigungs- und Sicherheitsmodell, Datenresidenz, Anforderungen an Offline-Betrieb und Performance, den Release-Zyklus mit seinem Testaufwand und wer die Plattform betreibt und unterstützt. Eine gute Prozessdemo allein entscheidet nicht.
+
+## Jeder Weg braucht Schnittstellen
+
+Jeder Weg braucht Integration, auch die SAP-Wege. Den Aufwand bestimmt weniger die Zahl der Schnittstellen als die Zahl der führenden Systeme, die Flussrichtung, die nötige Aktualität, die Nachverarbeitung von Fehlern und die Verantwortung für den Betrieb. Für jedes fachliche Merkmal und jede Phase sollte genau ein System führend sein: Bei einem Kunden kann SAP für die rechtlichen Daten führend sein, während Vertriebsrollen und Ansprechpartner in Salesforce gepflegt werden.
+
+Welche Daten zwischen SAP und Salesforce fließen, beschreibe ich am Beispiel der [Manufacturing Cloud](../manufacturing-cloud-sap-integration-datenfluesse/) und für Preise in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/). Die Architektur dahinter steht unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/). Salesforce bildet Vertrieb, Service, [Field Service](https://help.salesforce.com/s/articleView?id=fs_overview.htm&language=en_US&type=5) und Portale auf einer Plattform ab; Lizenzen und Berechtigungen unterscheiden sich aber nach Produkt und Nutzerart, planen Sie sie getrennt.
 
 ## Die Rechnung über mehrere Jahre entscheidet
 
-Angebote vergleichen oft Lizenzkosten im ersten Jahr. Für eine CRM-Ablösung reicht das nicht. In die Rechnung gehören mindestens:
+Angebote vergleichen oft die Lizenzkosten im ersten Jahr. Bei einer CRM-Ablösung umfasst die Rechnung die ganze Laufzeit:
 
-1. **Lizenzen über die Vertragslaufzeit**, getrennt nach Nutzergruppen. Nicht jeder Nutzer braucht eine volle Lizenz, wie in [Salesforce-Lizenzen: braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/) beschrieben.
-2. **Schnittstellen**, also Aufbau und Betrieb. Beim Salesforce-Weg sind sie größer, beim SAP-Weg nicht null.
-3. **Datenmigration** von Kunden, Kontakten, Historie und offenen Vorgängen aus SAP CRM.
-4. **Wartung des Altsystems** bis zur Abschaltung, inklusive Aufschlag ab 2028.
-5. **Schulung und Einführung**, weil ein neues CRM nur wirkt, wenn Vertrieb und Service es nutzen.
-
-```praxis
-Ich habe Manufacturing Cloud in einem Projekt bewusst nicht empfohlen, weil Sales Agreements für den Kunden keine Rolle spielten. Dieselbe Logik gilt für die CRM-Ablösung: Entscheidend ist, welche Prozesse das neue System wirklich tragen soll, nicht welches Produkt im Angebot steht.
+```tabelle
+titel: Was in die Rechnung gehört
+spalten: Posten | Was hineingehört | Oft vergessen
+Lizenzen | Je Nutzergruppe über die Vertragslaufzeit | Externe Nutzer in Portalen
+Einführung | Prozessdesign, Konfiguration, Erweiterungen, Tests | Umgebungen und Deployment
+Schnittstellen | Aufbau und Betrieb, auf jedem Weg | Überwachung und Nachverarbeitung
+Datenmigration | Kunden, Kontakte, Historie und offene Vorgänge aus SAP CRM | Excel-Listen, die drumherum entstanden sind
+Altsystem | Wartung und Aufschlag bis zur Abschaltung | Parallelbetrieb und späte Änderungen
+Rollout | Schulung und Begleitung für Vertrieb und Service | Zeit der Key User
+Betrieb | Application Management, Releases, Weiterentwicklung | Archivierung und Stilllegung von SAP CRM
+fazit: Fragen Sie SAP nach der tatsächlichen Wartungsbasis und dem Aufschlag, bevor Sie Wege vergleichen.
 ```
 
-Wie ich solche Entscheidungen mit Kunden vorbereite, steht unter [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/). Wann sich die Manufacturing Cloud gegenüber der Sales Cloud lohnt, vergleicht [Manufacturing Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/).
+Welche Lizenzen Nutzergruppen wirklich brauchen, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/)
 
-## Was kostet es, bis 2030 abzuwarten?
+```praxis
+In einem Projekt habe ich bewusst von der Manufacturing Cloud abgeraten, weil Sales Agreements für den Kunden keine Rolle spielten. Bei einer CRM-Ablösung gilt dieselbe Logik: Entscheidend ist, welche Prozesse das neue System wirklich tragen muss, nicht welches Produkt im Angebot steht.
+```
 
-Abwarten wirkt zunächst günstig, weil das System läuft und niemand Budget beantragen muss. Ab 2028 kommt jedes Jahr der Aufschlag auf die Wartung dazu, bis zur Abschaltung. Wer erst 2029 entscheidet, hat für Auswahl, Umsetzung und Migration kaum Puffer und verhandelt mit Anbietern und Partnern unter Zeitdruck. Und das System selbst steht still: Neue Anforderungen aus Vertrieb und Service landen in einem CRM, in das niemand mehr investieren will. Sie wandern in Excel-Listen und Zusatzwerkzeuge, die später ebenfalls migriert werden müssen.
+Wie ich solche Entscheidungen mit Kunden vorbereite, steht unter [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/). Wann sich die Manufacturing Cloud gegenüber der Sales Cloud lohnt, beschreibe ich in [Manufacturing Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/).
 
-Dazu kommt, dass für SAP ERP 6.0 dieselben Fristen gelten und viele Unternehmen in denselben Jahren auf S/4HANA umsteigen. Fachleute für SAP, für Salesforce und für Datenmigration sind dann gefragt, und wer spät anfragt, bekommt die Teams, die noch frei sind. Der Weiterbetrieb taugt deshalb nur als Brücke mit festem Enddatum.
+## Warum erhöht Abwarten bis 2030 Kosten und Risiko?
 
-## Mit einer Bestandsaufnahme von SAP CRM beginnen
+Abwarten wirkt zunächst günstig, weil das System läuft und niemand Budget beantragen muss. In der verlängerten Wartung fällt der Aufschlag jedes Jahr an. Wer erst 2029 entscheidet, hat wenig Puffer für Auswahl, Einführung und Migration und verhandelt unter Zeitdruck. Neue Anforderungen aus Vertrieb und Service landen in einem CRM, in das oft nicht mehr investiert wird, wandern in Excel-Listen und Zusatzwerkzeuge und müssen später ebenfalls migriert werden.
 
-Beginnen Sie mit einer Bestandsaufnahme, bevor Sie Angebote einholen: Welche Prozesse laufen heute in SAP CRM, wie viele Nutzer arbeiten damit, welche Schnittstellen hängen daran, und welche Daten müssen mit? Klären Sie parallel, wann der Umstieg von ECC auf S/4HANA geplant ist, denn beide Projekte teilen sich Schnittstellen, Stammdaten und oft dasselbe Team.
+Dieselben Fristen gelten für SAP ERP 6.0, und viele Unternehmen wechseln in denselben Jahren auf S/4HANA. Beide Projekte teilen Schnittstellen, Stammdaten und oft dieselben Leute und konkurrieren um dieselben internen Fachleute und Umsetzungskapazitäten. Ein Weiterbetrieb von SAP CRM lässt sich am besten als Brücke mit festem Enddatum vertreten.
 
-Dann legen Sie fest, welches der beiden Muster bei Ihnen gilt: CRM als Vorstufe zum ERP oder CRM mit eigenen Prozessen für Vertrieb, Service und Partner. Mit dieser Antwort lässt sich die Auswahl auf zwei Wege eingrenzen und die Rechnung über mehrere Jahre aufstellen.
+## Mit Zielen und einer Bestandsaufnahme beginnen
+
+Bevor Sie Angebote einholen, klären Sie, was besser werden soll: welche Ergebnisse Vertrieb und Service brauchen, welche Prozesse entfallen sollen, wo SAP CRM heute scheitert und welche Nutzergruppen es umgehen. Dann nehmen Sie auf: Prozesse, Nutzer, Schnittstellen, Daten, Eigenentwicklungen und die technische Basis mit Datenbank, Java-Komponenten und Add-ons. Parallel klären Sie, wann der Wechsel von ECC auf S/4HANA geplant ist.
+
+Damit entscheiden Sie, welches Muster bei Ihnen gilt und welche Fragen aus der Tabelle für Sie am meisten zählen. Das grenzt die Auswahl auf zwei oder drei Wege ein und gibt Ihnen die Grundlage für die Rechnung über mehrere Jahre.
