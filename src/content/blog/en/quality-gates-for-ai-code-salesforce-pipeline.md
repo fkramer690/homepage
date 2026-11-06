@@ -1,7 +1,8 @@
 ---
 title: "Quality gates for AI code in the Salesforce pipeline"
-description: "Which automatic gates AI-generated Salesforce code must pass: Code Analyzer, validation deploy, Apex tests, ApexGuru, a merge block and what sfdx-hardis covers."
+description: "Which automatic checks AI-generated Salesforce code must pass before it reaches production, which of them block a merge and who should own them."
 pubDate: 2026-10-27
+updatedDate: 2026-11-05
 lang: en
 slug: quality-gates-for-ai-code-salesforce-pipeline
 translationKey: quality-gates-ai-code-pipeline
@@ -10,10 +11,10 @@ categories: [devops, ai]
 tags: [quality gates, ai coding, code analyzer, sfdx-hardis, devops, manufacturing]
 takeaways:
   - "Checks a coding agent runs on a partner's machine do not replace the pipeline the client owns."
-  - "Without --severity-threshold the build stays green whatever Code Analyzer finds. I would block at High and report the rest."
-  - "A validation deploy always runs Apex tests. A quick deploy with its job ID skips them and works for 10 days."
-  - "ApexGuru is available only in Production and Full Copy orgs. In the pipeline I treat it as advisory, not as a merge blocker."
-  - "sfdx-hardis covers validation and code quality as open source. Rules such as the API version check you add yourself."
+  - "Code analysis only stops anything once you set a severity level at which the build turns red. I would block at High and report the rest."
+  - "A test deployment against an integration sandbox catches invented fields and missing dependencies before anyone spends time on a review."
+  - "ApexGuru works only in Production and Full Copy orgs. In the pipeline I treat it as a report, not as a merge blocker."
+  - "sfdx-hardis covers test deployment and code quality as open source. A check for unrequested API version changes you add yourself."
 faq:
   - q: "Which quality gates does AI-generated Salesforce code need?"
     a: "At least Salesforce Code Analyzer with a severity threshold, a validation deploy with Apex tests against an integration sandbox, a few org-specific rules such as an API version check, and branch protection that blocks the merge until all of them are green."
@@ -22,88 +23,91 @@ faq:
   - q: "Should ApexGuru block a merge?"
     a: "I would not make it blocking. ApexGuru is available only in Production and Full Copy sandboxes and rates findings with runtime data, which a pipeline against an integration sandbox may not have. Use it as a report on pull requests and a regular scan of the main branch."
   - q: "Does sfdx-hardis include quality gates?"
-    a: "Yes. Every pull request runs a check deploy job that simulates the deployment, runs Apex tests and checks coverage, and a code quality job with MegaLinter and PMD. ApexGuru and org-specific rules are not part of the documented jobs and need extra steps."
+    a: "Yes. Every pull request runs a job that simulates the deployment, runs Apex tests and checks coverage, and a code quality job with MegaLinter and PMD. ApexGuru and org-specific rules are not part of the documented jobs and need extra steps."
 draft: false
 ---
 
-AI-generated Salesforce code should pass the same quality gates as human code, but every gate must block, run in your pipeline and apply to every partner alike. In practice that means Salesforce Code Analyzer with a severity threshold on each pull request, a validation deploy with Apex tests against an integration sandbox, a few rules for patterns agents get wrong, and branch protection nobody bypasses. ApexGuru adds performance hints where your org supports it. sfdx-hardis covers most of this as open source. What a rule cannot decide stays with a human reviewer.
+AI-generated Salesforce code should pass the same quality gates as code a person wrote, with three conditions: every check must be able to stop a change, it runs in a pipeline you own, and it applies to every partner alike. In practice that means five checks on every pull request, the change proposal a developer submits before code enters the main branch: code analysis with a hard threshold, a few rules for mistakes agents typically make, a test deployment into a sandbox, performance hints from ApexGuru and a merge block nobody can bypass. What a rule cannot decide stays with a human reviewer.
 
-## AI coding agents need harder quality gates
-
-The [2025 DORA report](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) found that AI adoption improves delivery throughput but still has a negative relationship with delivery stability. Its explanation: "Without robust control systems, like strong automated testing, mature version control practices, and fast feedback loops, an increase in change volume leads to instability." In a Salesforce programme, the pipeline is that control system.
-
-Salesforce's own skills for Claude Code already check a lot on the developer's machine. According to the [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills), they reject queries inside loops, force a sharing keyword on every class, run Code Analyzer and `sf apex run test` and ensure 75 percent coverage before they finish. The same post still tells developers to "run Salesforce Code Analyzer manually as an extra safety check". Checks on a partner's laptop are evidence for the partner; you cannot see which configuration ran. The gate that counts runs in a pipeline you own, with the same thresholds for every partner.
-
-Tests that prove nothing, wrong fields and business rules need a person; that split is the topic of [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/).
-
-## Which quality gates should AI-generated code pass?
-
-I would run five gates, in this order, so the cheap ones fail first.
-
-### 1. Code Analyzer with a severity threshold
-
-[Salesforce Code Analyzer](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engines.html) v5 bundles eight engines, among them PMD for Apex, ESLint for JavaScript in Lightning Web Components and a Flow Scanner that reports security issues in flows. In CI you call `sf code-analyzer run` or the official GitHub Action in version 2; version 1 still uses the retired Code Analyzer v4 ([CI/CD integration](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html)). The flag that turns a report into a gate is `--severity-threshold`: a violation that meets or exceeds it makes the command fail with a non-zero exit code ([command reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html)).
-
-```hinweis achtung
-Without `--severity-threshold`, the pipeline stays green whatever the Code Analyzer report says.
-```
-
-My recommendation: block at High from day one and report the rest. Blocking everything on an org with ten years of Apex produces hundreds of legacy findings, and partners start suppressing rules instead of fixing them.
-
-### 2. Rules for what agents get wrong
-
-The default rule selector is `Recommended`, and it does not know your org. Two additions earn their place with AI-generated code:
-
-- **Custom rules.** The Regex engine accepts your own rules in `code-analyzer.yml`, each with a pattern, file extensions, a description and a severity ([Regex engine](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engine-regex.html)). Candidates: `WITH SYSTEM_MODE` without a written reason, or hard-coded endpoints where your SAP integration should use a Named Credential.
-- **An API version check.** Since API version 67.0, Apex runs in user mode by default and classes without a sharing declaration run in the current user's sharing context ([Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm)). The change applies per class version, so the risk sits in the bump. A short script that compares the `apiVersion` in changed `-meta.xml` files with the target branch, and fails unless the bump was requested, costs an afternoon. Why the bump matters is explained in [API 67.0 and user mode](../api-67-apex-user-mode-fewer-records/).
-
-Do not expect PMD to judge test quality. The rule `ApexUnitTestClassShouldHaveAsserts` only checks for "at least one assertion" ([PMD best practices](https://docs.pmd-code.org/latest/pmd_rules_apex_bestpractices.html)), so `System.assertNotEquals(null, result)` passes it.
-
-### 3. Validation deploy with Apex tests
-
-`sf project deploy validate` checks whether a deployment would succeed without deploying anything. It always runs Apex tests, defaults to `RunLocalTests` and returns a job ID. If validation succeeds, `sf project deploy quick` deploys with that ID within 10 days and skips the tests ([command reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_validate.html)). For production, Salesforce requires 75 percent coverage, all tests passing and some coverage for every trigger ([Apex testing best practices](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_testing_best_practices.htm)).
-
-Run it against an integration sandbox with the full field set, including the fields your SAP interface maintains. That is where an invented field or a missing dependency fails, before anyone reviews. `RunRelevantTests`, where Salesforce picks the tests, is still beta; I would keep `RunLocalTests` for everything heading to UAT and production.
-
-### 4. ApexGuru as an advisory gate
-
-ApexGuru finds performance antipatterns such as SOQL in loops, unbounded queries and expensive schema lookups, and in Code Analyzer it scans against a connected org. Salesforce says ApexGuru "is available only in Production and Full Copy Sandbox orgs" and rates severity with runtime data from there ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/04/performance-first-apex-development-with-apexguru-in-salesforce-dx-mcp-server)). A pipeline against an integration sandbox may lack that data, so I treat ApexGuru as a report, not a merge blocker.
-
-### 5. A merge block nobody bypasses
-
-Gates only work if a red pipeline stops the merge. On GitHub, required status checks must pass before anyone can change a protected branch, and code owners can be required to approve changes to their paths. Administrators can bypass both unless "Do not allow bypassing the above settings" is on ([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)). With partner admins on the repository, I would switch it on and make a person on the client side the code owner for sharing, permission sets and integration classes.
-
-## What does sfdx-hardis cover out of the box?
-
-[sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) runs two control jobs on every pull request, according to its [documentation on pull request results](https://sfdx-hardis.cloudity.com/salesforce-devops-handle-merge-request-results/):
-
-```vertiefung For developers
-title: What the two sfdx-hardis jobs do in the pull request
-- **Check deploy job.** It simulates the deployment in the target org, runs the Apex tests, calculates coverage and posts the result as a pull request comment, with a visual diff of changed flows. The [sfdx-hardis overview](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) says quick deploy reuses the validated deployment after the merge.
-- **Code quality job.** It runs MegaLinter, which checks Apex with PMD and Lightning Web Components with ESLint and comments the result on the pull request. In the [documented configuration](https://sfdx-hardis.cloudity.com/salesforce-devops-solve-megalinter-errors/) the Apex error threshold carries the note that only the release manager can update it, and `// NOPMD` is meant "only for false positives, never to publish faster".
-```
-
-The default test level is `RunLocalTests` ([smart deployment](https://sfdx-hardis.cloudity.com/salesforce-devops-smart-deployment/)). sfdx-hardis also lists a [Coding Agent Auto-Fix (Beta)](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) for failed deployments. I would let an agent propose such fixes only if they pass the same gates and a person reviews them.
-
-ApexGuru and org-specific rules such as the API version check are not part of the documented jobs; add them as extra steps. How the rest of the pipeline fits together is in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
-
-## Worked example: two partners and a spare-parts lookup
+## Worked example: the spare part that is suddenly out of stock
 
 Assume a machine builder with SAP S/4, Service Cloud, Field Service for 150 technicians and a dealer portal. Two partners, one onshore and one nearshore, started using coding agents this year. All numbers are assumptions. Pull requests rise from about 60 to 110 a month; on the client side, one architect and one release manager still review them.
 
-A nearshore developer asks an agent to fix a rounding error in a spare-parts availability class that technicians call from the mobile app. The agent fixes it, adds a test and raises the class from API version 61.0 to 67.0 on the side. Under 67.0 its queries run in user mode, with the technician's own access rights. If the sharing model hides central warehouse stock from technicians, those records drop out of the result. The test creates its own data and runs without `System.runAs()`, so it passes. Code Analyzer is green, the validation deploy is green, coverage is 91 percent.
+A nearshore developer asks an agent to fix a rounding error in the spare-parts availability check that technicians use in the mobile app. The agent fixes it, adds a test and, on the side, moves the code to a newer Salesforce API version. Under that version the code sees only the records the logged-in technician may see. If technicians have no access to central warehouse stock, those parts drop out of the result. The test does not run as a technician, so it passes. Code analysis is green, the test deployment is green, coverage is 91 percent.
 
-The API version check stops the pull request. The partner either reverts the version or adds a `runAs` test with a restricted technician user, which shows the missing records. Without that gate, technicians would see "not in stock" for parts sitting in the central warehouse, and dispatchers would place emergency orders for nothing. Against that, assume 25 minutes per validation: 110 runs are about 46 hours of pipeline time a month, paid in CI minutes, not in anyone's calendar.
+```vergleich
+without: Without a check for version changes
+- Code analysis, tests and coverage are green.
+- Technicians see "not in stock" for parts in the central warehouse.
+- Dispatchers place emergency orders for parts the company already has.
+with: With a check for version changes
+- The pipeline stops the pull request before anyone reviews it.
+- The partner reverts the version or adds a test as a technician.
+- The missing records show up before the release.
+```
 
-## Put pipeline and thresholds in client hands
+That check is a short script, about an afternoon of work. Against it stands pipeline time: at 25 minutes per test deployment, 110 runs are about 46 hours a month, paid in CI minutes, not in anyone's calendar. Why the version change matters is explained in [API 67.0 and user mode](../api-67-apex-user-mode-fewer-records/).
 
-Setting up these gates for programmes with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work. The order matters, because a partner can switch off any threshold as long as the pipeline belongs to them.
+## The partner's own checks are not enough
+
+The [2025 DORA report](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) found that AI adoption increases delivery throughput but still has a negative relationship with delivery stability. Its explanation: "Without robust control systems, like strong automated testing, mature version control practices, and fast feedback loops, an increase in change volume leads to instability." In a Salesforce programme, the pipeline is that control system.
+
+Salesforce's own skills for Claude Code already check a lot on the developer's machine. According to the [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills), they reject database queries inside loops, run Code Analyzer and the Apex tests and ensure 75 percent coverage before they finish. The same post still tells developers to "run Salesforce Code Analyzer manually as an extra safety check".
+
+For you as the client, a check on a partner's laptop is the partner's word. You cannot see which configuration ran or which rules were switched off. The check that counts runs in a pipeline you own, with the same thresholds for every partner. Tests that prove nothing, wrong fields and business rules still need a person; that split is the topic of [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/).
+
+## Which quality gates should AI-generated code pass?
+
+I would run five checks, in this order, so the cheap ones fail first.
+
+```tabelle
+title: The five checks on every pull request
+columns: Check | What it stops | Blocks the merge? | Who owns it
+Code analysis | Known security and performance flaws | Yes, from severity High * | Client sets the threshold
+Rules for agents | Unrequested version changes, hard-coded addresses | Yes * | Client architect
+Test deployment | Invented fields, missing dependencies, failing tests | Yes * | Pipeline, integration sandbox
+ApexGuru | Slow code under real load | No, report only | Release manager per release
+Merge block | Merging a red build, even by an admin | Yes * | Code owner on the client side
+note: Assumed setup for a programme with several partners. Thresholds and owners belong in the partner contract.
+```
+
+**Code analysis.** [Salesforce Code Analyzer](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engines.html) checks Apex, Lightning components and flows for known security and performance problems. By default it only writes a report. I would let it block from severity High on day one and report everything below. Blocking everything on an org with ten years of Apex produces hundreds of old findings, and partners start switching rules off instead of fixing them.
+
+```hinweis achtung
+A report stops nothing. Unless the pipeline is told at which severity to fail, it stays green whatever the analysis finds.
+```
+
+**Rules for agents.** The standard rules do not know your org. Two additions earn their place with AI-generated code: your own rules for patterns you never want, such as hard-coded addresses where your SAP interface should use a stored connection, and the version check from the example above. Do not expect the analysis to judge test quality: a test with one meaningless assertion passes it.
+
+**Test deployment.** Before anything is merged, the pipeline deploys the change into an integration sandbox, a test copy of your org with the full field set, and runs all your own tests. Nothing is installed; the run only shows whether the release would work. That is where an invented field or a missing dependency fails, before a person reviews. For production, Salesforce requires 75 percent test coverage and all tests passing ([Apex testing best practices](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_testing_best_practices.htm)). A successful run can later be released without running the tests again, within 10 days ([command reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_validate.html)).
+
+**ApexGuru.** ApexGuru finds slow patterns such as queries without limits. Salesforce says it "is available only in Production and Full Copy Sandbox orgs" and rates findings with runtime data from there ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/04/performance-first-apex-development-with-apexguru-in-salesforce-dx-mcp-server)). A pipeline against an integration sandbox may lack that data, so I treat it as a report per release.
+
+**Merge block.** Checks only work if a red pipeline stops the merge. On GitHub, administrators can bypass branch protection unless a separate setting forbids it ([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)). With partner admins on the repository, I would switch that setting on and make a person on the client side the code owner for sharing, permissions and integration code.
+
+```vertiefung For developers
+title: Commands and settings behind the five checks
+- **Code analysis:** `sf code-analyzer run --severity-threshold 2` (2 is High) or the official GitHub Action in version 2; version 1 still uses the retired Code Analyzer v4 ([CI/CD integration](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html), [command reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html)).
+- **Own rules:** Regex rules in `code-analyzer.yml` with pattern, file extensions and severity ([Regex engine](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engine-regex.html)), for example `WITH SYSTEM_MODE` without a written reason. PMD's `ApexUnitTestClassShouldHaveAsserts` only checks for "at least one assertion" ([PMD best practices](https://docs.pmd-code.org/latest/pmd_rules_apex_bestpractices.html)).
+- **Version check:** compare `apiVersion` in changed `-meta.xml` files with the target branch and fail unless the bump was requested. From 67.0 Apex runs in user mode by default ([Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm)); a bump needs a `System.runAs()` test with a restricted user.
+- **Test deployment:** `sf project deploy validate` with `RunLocalTests`, release with `sf project deploy quick` and the job ID. `RunRelevantTests` is still beta.
+- **Merge block:** required status checks, code owners and "Do not allow bypassing the above settings" on the protected branch.
+```
+
+## sfdx-hardis covers most of it as open source
+
+[sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) runs two control jobs on every pull request, according to its [documentation on pull request results](https://sfdx-hardis.cloudity.com/salesforce-devops-handle-merge-request-results/). One simulates the deployment in the target org, runs the tests, checks coverage and posts the result as a comment on the pull request. The other checks code quality and comments its findings as well. In the documented configuration only the release manager may change the error threshold, and exceptions are meant "only for false positives, never to publish faster" ([MegaLinter errors](https://sfdx-hardis.cloudity.com/salesforce-devops-solve-megalinter-errors/)).
+
+ApexGuru and org-specific rules such as the version check are not part of the documented jobs; add them as extra steps. sfdx-hardis also lists an automatic fix by a coding agent for failed deployments, still in beta ([overview](https://sfdx-hardis.cloudity.com/salesforce-devops-home/)). I would accept such fixes only if they pass the same checks and a person reviews them. How the rest of the pipeline fits together is in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
+
+## Write the checks into every partner contract
+
+Setting up these checks for programmes with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work. The order matters, because a partner can switch off any threshold as long as the pipeline belongs to them.
 
 1. **Own the pipeline.** Repository, pipeline and thresholds sit with you, as described in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
-2. **Turn on Code Analyzer with `--severity-threshold`** at High and publish the full report on every pull request.
-3. **Validate every pull request** against an integration sandbox with `RunLocalTests`, and use quick deploy for releases.
-4. **Add the API version check** and the rule that a bump needs a `runAs` test. Write the same rule into the [AI rules file of your repository](../ai-rules-file-salesforce-repository/), so agents know it before the gate stops them.
-5. **Protect the branches** without admin bypass, with client-side code owners for sharing and integrations.
-6. **Run ApexGuru** on the main branch against an org where it has runtime data, and review the findings per release.
-7. **Count gate failures per partner and category** every month. A rising category shows which rule is missing from the rules file or the contract.
-
+2. **Let code analysis block from High** and publish the full report on every pull request.
+3. **Test-deploy every pull request** into an integration sandbox with all your own tests.
+4. **Stop unrequested version changes** and require a test as a restricted user for every requested one. Put the same rule into the [AI rules file of your repository](../ai-rules-file-salesforce-repository/), so agents know it before the pipeline stops them.
+5. **Protect the main branch** without an admin exception, with code owners on your side for sharing and integrations.
+6. **Run ApexGuru** per release against an org where it has runtime data.
+7. **Count failed checks per partner and category** every month. A rising category shows which rule is missing from the rules file or the contract.

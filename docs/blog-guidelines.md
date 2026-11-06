@@ -68,6 +68,7 @@ A topic too big for one article becomes a series (for example Salesforce Field S
 - First person, clear opinions, plain language. In German address readers with "Sie".
 - Concrete numbers and trade-offs instead of buzzwords. Show where Salesforce is not the right answer.
 - Explain technical terms the first time they appear.
+- No code styling in the running text (Fabian 2026-11-05): with many `code` spans an article reads like a generated answer. Write names in plain words (CLAUDE.md, the severity threshold), and put commands, flags, class and API names into one ```vertiefung For developers block. `check-blog.mjs` allows at most 15 code spans outside such blocks and no raw code blocks; show a code example as a described entry (```eintrag) instead.
 - Never identifiable: customers, partners, people. Never name the energy or utility sector (the script blocks typical terms). Do not highlight certifications.
 - Only claim experience Fabian actually has. If a claim or example is unclear, ask him.
 
