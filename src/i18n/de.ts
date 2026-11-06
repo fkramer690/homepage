@@ -432,6 +432,15 @@ export const de: Dict = {
   },
   masterclassDevops: {
     name: 'Masterclass DevOps',
+    video: {
+      file: 'masterclass-devops-intro',
+      title: 'Die Masterclass in 43 Sekunden',
+      duration: 43,
+      uploadDate: '2026-11-06',
+      landscape: true,
+      watch: 'Intro ansehen',
+      transcript: 'Vom Change Set zur eigenen Salesforce-Pipeline. Darum geht es in dieser Masterclass. Mehrere Partner. Eine Org. Drei Salesforce-Releases im Jahr. Ohne verbindlichen Release-Prozess wird jede Änderung zum Risiko. Die Masterclass zeigt den ganzen Weg einer Änderung: von der Sandbox über Review und Abnahme bis in die Produktion. Zehn Kapitel, von Change Sets bis zum stabilen Betrieb. Mit Open Source wie sfdx-hardis oder mit kommerziellen Plattformen. Die Masterclass ist kostenlos, auf Deutsch und Englisch. Alle Kapitel finden Sie auf fk-sd.de.',
+    },
     metaTitle: 'Masterclass DevOps: Salesforce-Releases in der Fertigung',
     metaDescription: 'Zehn Kapitel zu DevOps und Release-Management für Salesforce in Fertigungsunternehmen: Eigentum, Umgebungen, Werkzeuge, Pipeline, Qualität, Betrieb.',
     eyebrow: 'Masterclass · Stand Oktober 2026',
