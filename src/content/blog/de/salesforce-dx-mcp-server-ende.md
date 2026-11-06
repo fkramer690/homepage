@@ -1,8 +1,8 @@
 ---
 title: "Salesforce DX MCP Server: Ende am 2. November 2026"
-description: "Der lokale Salesforce DX MCP Server endet am 2. November 2026. Was IT-Leitungen jetzt von Partnern verlangen sollten, von der Inventur bis Hosted MCP."
+description: "Der lokale Salesforce DX MCP Server ist seit dem 2. November 2026 am Ende. Was IT-Leitungen jetzt von Partnern verlangen sollten, von Inventur bis Hosted MCP."
 pubDate: 2026-10-27
-updatedDate: 2026-11-05
+updatedDate: 2026-11-06
 lang: de
 slug: salesforce-dx-mcp-server-ende
 translationKey: salesforce-dx-mcp-server-end-of-life
@@ -10,36 +10,38 @@ topic: devops
 categories: [devops, ai]
 tags: [MCP, Salesforce DX, Claude Code, Agentforce Vibes, Partnersteuerung, DevOps]
 takeaways:
-  - "Am 27. Oktober lieferte npm noch Version 0.30.15 ohne Deprecated-Hinweis, und keine Dokumentationsseite von Salesforce nennt das Datum."
-  - "Die Salesforce-Anleitung konfiguriert den Server mit @latest. Pinnen Sie auf jedem Partnerrechner 0.30.15, bis der alte Eintrag entfernt ist."
+  - "Seit dem 2. November 2026 markiert npm das Paket als deprecated. Version 0.30.15 vom Juli ist die letzte, und keine geprüfte Dokuseite nannte das Datum."
+  - "Die Salesforce-Anleitung konfiguriert den Server mit @latest. Pinnen Sie auf jedem Partnerrechner 0.30.15 und entfernen Sie den Eintrag binnen Wochen."
   - "Mit ALLOW_ALL_ORGS oder DEFAULT_TARGET_ORG erreicht ein KI-Agent jede Org, an der der Entwickler angemeldet ist, auch die Produktion."
   - "sf-skills, das Claude-Code-Plugin und Hosted MCP decken die Arbeit ab. Dass sie Nachfolger sind, ist meine Lesart, keine Aussage von Salesforce."
   - "Ein MCP-Server des Plugins ist ein Beta-Service, den ein Admin in der Org aktivieren muss, und seine Aufrufe zählen auf das API-Kontingent."
 faq:
-  - q: "Was passiert am 2. November 2026 mit dem Salesforce DX MCP Server?"
-    a: "Laut README in beiden Salesforce-Repositories erreicht der lokale Server @salesforce/mcp dann sein End of Life. Die Details stehen in GitHub-Issue 46, das ich nicht öffnen konnte. Was danach genau mit Repository und npm-Paket passiert, ist deshalb nicht bestätigt."
-  - q: "Funktionieren bestehende DX-MCP-Konfigurationen ab dem 2. November nicht mehr?"
-    a: "Das kann außerhalb von Salesforce noch niemand sagen. Am 27. Oktober 2026 lieferte die npm-Registry die Version 0.30.15 ohne Deprecated-Hinweis. Ich würde diese Version jetzt pinnen, damit sich nichts überraschend ändert, und den Eintrag innerhalb weniger Monate entfernen."
+  - q: "Was ist am 2. November 2026 mit dem Salesforce DX MCP Server passiert?"
+    a: "Der lokale Server @salesforce/mcp hat sein End of Life erreicht, wie im README beider Salesforce-Repositories angekündigt. Am selben Tag hat npm das Paket als deprecated markiert, mit Verweis auf GitHub-Issue 46. Seit 0.30.15 vom Juli ist keine neue Version erschienen."
+  - q: "Funktionieren bestehende DX-MCP-Konfigurationen seit dem 2. November nicht mehr?"
+    a: "npm liefert Version 0.30.15 weiter aus, jetzt mit Deprecated-Hinweis, bestehende Einträge laden also vorerst. Offen ist, wie lange das so bleibt und ob Salesforce noch Korrekturen liefert. Ich würde die Version pinnen und den Eintrag binnen weniger Wochen entfernen."
   - q: "Ist das Claude-Code-Plugin von Salesforce der offizielle Ersatz?"
     a: "Die Ankündigung des Plugins vom 19. August 2026 erwähnt den DX MCP Server und sein Ende nicht. Plugin, sf-skills und Hosted MCP decken den Großteil derselben Arbeit ab, aber sie Nachfolger zu nennen ist meine Lesart, keine Salesforce-Aussage."
   - q: "Betrifft das Ende auch Agentforce Vibes?"
-    a: "Laut Vibes-Dokumentation wird der DX MCP Server mit Agentforce Vibes ausgeliefert und ist in Code Builder standardmäßig aktiv; das End of Life erwähnte sie beim Lesen nicht. Fragen Sie Partner und Salesforce-Ansprechpartner, womit Vibes nach dem 2. November arbeitet."
+    a: "Laut Vibes-Dokumentation wird der DX MCP Server mit Agentforce Vibes ausgeliefert und ist in Code Builder standardmäßig aktiv; das End of Life erwähnte sie beim Lesen nicht. Fragen Sie Partner und Salesforce-Ansprechpartner, womit Vibes seit dem 2. November arbeitet."
 draft: false
 ---
 
-Der lokale Salesforce DX MCP Server erreicht laut offiziellem README am 2. November 2026 sein End of Life. Setzen Ihre Implementierungspartner Claude Code, Cursor, Copilot oder Agentforce Vibes auf Ihren Orgs ein, nutzen einige ihn wahrscheinlich. Lassen Sie vor dem Stichtag jede Konfiguration auflisten, Version 0.30.15 fest eintragen, statt immer die neueste zu laden, und die Arbeit auf Salesforce CLI mit Skills, das Claude-Code-Plugin und Hosted MCP umstellen. Wichtiger als das Werkzeug ist für Sie, mit welchem Org-Zugriff es läuft.
+Der lokale Salesforce DX MCP Server hat am 2. November 2026 sein End of Life erreicht, und npm markiert das Paket seit diesem Tag als deprecated. Setzen Ihre Implementierungspartner Claude Code, Cursor, Copilot oder Agentforce Vibes auf Ihren Orgs ein, nutzen einige ihn wahrscheinlich noch. Lassen Sie jede Konfiguration auflisten, Version 0.30.15 fest eintragen, statt immer die neueste zu laden, und die Arbeit auf Salesforce CLI mit Skills, das Claude-Code-Plugin und Hosted MCP umstellen. Wichtiger als das Werkzeug ist für Sie, mit welchem Org-Zugriff es läuft.
 
-## Was genau endet am 2. November 2026?
+## Was genau ist am 2. November 2026 zu Ende gegangen?
 
 Das README des Issue-Repositorys [forcedotcom/mcp](https://raw.githubusercontent.com/forcedotcom/mcp/main/README.md) und des Quell-Repositorys [salesforcecli/mcp](https://raw.githubusercontent.com/salesforcecli/mcp/main/README.md) trägt dasselbe Banner: „End of Life: November 2nd, 2026“. Für Details verweist es auf GitHub-Issue 46. Dieses Issue konnte ich nicht öffnen. Ob die Repositories schreibgeschützt werden, ob das Paket als veraltet markiert wird und ob Sicherheitskorrekturen am Stichtag enden, kann ich Ihnen deshalb nicht sagen.
 
-Was ich am 27. Oktober 2026 prüfen konnte:
+Am 2. November 2026 hat die npm-Registry das Paket als deprecated markiert, mit dem Hinweis „The Salesforce DX MCP Server has been deprecated“ und einem Link auf Issue 46. Eine neue Version kam nicht: 0.30.15 vom 9. Juli 2026 ist weiterhin die aktuelle (geprüft am 6. November 2026).
+
+Was ich vorher, am 27. Oktober 2026, prüfen konnte:
 
 - Die [npm-Registry](https://registry.npmjs.org/@salesforce/mcp) führt 0.30.15 vom 9. Juli 2026 als aktuelle Version. Keine Version trägt bisher einen Deprecated-Hinweis. Seit April 2025 hat Salesforce 121 Versionen einschließlich Vorabversionen veröffentlicht, im Schnitt etwa alle vier Tage eine.
 - Der Salesforce DX Developer Guide beschreibt den Server weiterhin [ohne Hinweis auf das Ende](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_mcp_server.htm). Er konfiguriert das Paket so, dass es immer die neueste Version lädt, „so you always get the latest version“, und neue Versionen werden automatisch installiert.
 - Laut [Dokumentation von Agentforce Vibes](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-mcp-servers.html) wird der DX MCP Server mit Vibes ausgeliefert und ist in Code Builder „installed and enabled by default“.
 
-Das Datum selbst stützt sich allein auf das README-Banner: Keine der drei Dokumentationsseiten oben erwähnt es. Mit genau dieser Kombination würde ich planen. Ein Server, der sich selbst aktualisiert und auf Rechnern konfiguriert ist, die Sie nicht verwalten, verliert seinen Support, während DX Developer Guide und Vibes-Dokumentation das nicht erwähnen. Was Salesforce nach dem Stichtag auf npm veröffentlicht, landet auf diesen Rechnern, ohne dass jemand darüber entscheidet.
+Vor dem Stichtag stützte sich das Ende allein auf das README-Banner: Keine der drei Dokumentationsseiten oben erwähnte es. Genau diese Kombination ist das Risiko. Ein Server, der sich selbst aktualisiert und auf Rechnern konfiguriert ist, die Sie nicht verwalten, hat seinen Support verloren, während die Anleitungen ihn weiter beschreiben. Was Salesforce unter diesem Namen künftig auf npm veröffentlicht, landet auf diesen Rechnern, ohne dass jemand darüber entscheidet.
 
 Zum Vergleich die [Richtlinie für Hosted MCP Server](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/end-of-life.html): Jede Version wird mindestens drei Jahre unterstützt, und das Ende wird mindestens ein Jahr vorher angekündigt. Für den lokalen Server habe ich keine vergleichbare Zusage gefunden.
 
@@ -69,7 +71,7 @@ Salesforce hat 2026 drei Bausteine veröffentlicht. Keine der Seiten, die ich ge
 
 ```tabelle
 titel: Was welche Aufgabe übernimmt (meine Lesart)
-spalten: Aufgabe heute | Mit dem lokalen DX MCP Server | Option nach dem 2. November
+spalten: Aufgabe | Mit dem lokalen DX MCP Server | Option heute
 Deployen, abrufen, Tests ausführen | MCP-Tools auf dem Laptop | Salesforce CLI plus Skills aus sf-skills *
 Metadatenwissen, Unterstützung für Apex und SOQL | MCP-Tools auf dem Laptop | Claude-Code-Plugin für Salesforce-Entwicklung *
 Datensätze als Kontext lesen | Abfrage-Tool auf dem Laptop | Hosted MCP Server zum Lesen von Datensätzen *
@@ -91,10 +93,10 @@ Fahrlässig ist davon nichts. So sieht es aus, wenn sich ein Werkzeug in Partner
 
 Am längsten dürfte die Frage dauern, wer Hosted Server in der Produktion freigibt. Ich würde die Produktion außen vor lassen, bis es einen konkreten Bedarf gibt.
 
-## Was sollten Sie Ihre Partner vor dem 2. November fragen?
+## Was sollten Sie Ihre Partner jetzt fragen?
 
 1. **Inventur.** Lassen Sie sich von jedem Partner auflisten, auf welchen Rechnern, in welchen Repositories und in welchen Werkzeugen der DX MCP Server läuft. Jedes Werkzeug hält die Einstellung in einer eigenen Datei; wo Sie suchen, steht im Kasten unten.
-2. **Pinnen.** Ersetzen Sie jeden Eintrag, der die neueste Version lädt, durch die feste Version 0.30.15 und legen Sie ein Datum für die Entfernung fest. Eine gepinnte Version hält die Übergangszeit stabil, bekommt aber keine Korrekturen.
+2. **Pinnen.** Ersetzen Sie jeden Eintrag, der die neueste Version lädt, durch die feste Version 0.30.15 und legen Sie ein Datum für die Entfernung in den nächsten Wochen fest. Eine gepinnte Version hält die Übergangszeit stabil, Korrekturen hat aber niemand zugesagt.
 3. **Orgs festlegen.** Nur benannte Sandboxes, kein Zugriff auf alle Orgs, keine Produktion. Deployments in die Produktion laufen über die Pipeline, wie in [Partner coden mit KI: was in den Vertrag gehört](../partner-ki-coding-regeln-vertrag/) beschrieben.
 4. **Hosted Server bewusst aktivieren.** Zuerst in einer Sandbox, der lesende Server vor allem, was schreibt, mit einer External Client App, die auf ein Permission Set beschränkt ist.
 5. **Repository anpassen.** Die gemeinsame MCP-Konfiguration und die [KI-Regeldatei](../ki-regeldatei-salesforce-repository/) gehören in Ihr Repository und ändern sich nur über einen geprüften Pull Request, wie jeder andere Code. Claude Code unterstützt außerdem eine zentral verwaltete MCP-Konfiguration mit Allowlists, wenn Sie es selbst lizenzieren.
