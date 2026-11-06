@@ -136,7 +136,7 @@ Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier ne
 - B3. Center of Excellence auf Kundenseite: Format und Rhythmus. *Erledigt (#125).*
 - B4. MuleSoft oder Jitterbit: welche Middleware für Salesforce und das ERP? *Braucht Beispiel von Fabian.*
 - B5. Salesforce an proALPHA anbinden: was anders ist als bei SAP. *Braucht Beispiel von Fabian.*
-- B6. Technische Benutzer mit zu vielen Rechten: Integrationen aufräumen.
+- B6. Technische Benutzer mit zu vielen Rechten: Integrationen aufräumen. *Entwurf 3.11.2026 (PR #273).*
 - B7. Teams Phone als Telefonie für den Service (Folgeartikel zu Open CTI). *Braucht Erfahrung aus dem CTI-Rollout.*
 - B8. Spring '27: was ändert sich für Hersteller? (News, sobald die Release Notes erscheinen, ca. Mitte Januar 2027; passt zu L7.)
 - B9. Führendes System pro Objekt: Welches System führt Kunden, Preise und Anlagen, wenn SAP und Salesforce beide Daten halten? (Begriff aus der Homepage-Suche 29.10.2026, kommt auf Schnittstellen- und Architekturseite und in ca. 20 Artikeln vor; Abgrenzung zu L2 klären.)
@@ -146,6 +146,8 @@ Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier ne
 - B13. **Techniker-Einsatzplanung automatisieren: Schritt für Schritt** / „How to automate technician scheduling and dispatch“ (Idee Fabian 03.11.2026, Kategorie Field Service). Winkel: Anleitung für Head of Service und IT-Leitung, vom manuellen Disponieren zur Automatik in Stufen: Stammdaten als Voraussetzung (Skills, Gebiete, Arbeitszeiten, Anfahrt), Scheduling Policy, automatische Einplanung per Flow, Optimierung über Nacht, Ausnahmen beim Disponenten, Kennzahlen (Termintreue, Fahrzeit, Erstlösungsquote). Begriffe (Volumen vor dem Schreiben mit DataForSEO prüfen): „technician scheduling and dispatch“, „automated dispatch“, „field service scheduling software“, „Einsatzplanung Techniker“, „Disposition Außendienst automatisieren“. Abgrenzung klären (Kannibalisierung, siehe U4): „Field Service: Wie viel Planung darf automatisch laufen?“ (`field-service-scheduling-automation`) deckt die Frage nach dem Maß an Automatik schon ab; neuer Artikel nur als praktische Anleitung, die darauf verlinkt, sonst den bestehenden Artikel auf die Begriffe schärfen. Verlinken: Scheduling Console, Enhanced Scheduling (ESO), Bereitschaft und Schichten, Stammdaten, Lizenzen Dispatcher/Techniker. *Braucht Praxisbeispiel von Fabian; Tempo nach U1.*
 - B22. Release Updates im Setup: welche erzwungenen Updates der nächsten Releases Hersteller-Orgs treffen und wie man sie vorab in der Sandbox testet (Folgeartikel zu L7, aus Release Notes recherchierbar).
 - B23. Regressionstests für Salesforce-Releases automatisieren: welche Kernprozesse zuerst, wer sie pflegt (Folgeartikel zu L7). *Braucht Beispiel von Fabian.*
+- B24. External Client Apps statt Connected Apps: was sich für bestehende ERP- und Middleware-Schnittstellen ändert (Folgeartikel zu B6, aus Salesforce-Doku recherchierbar).
+- B25. Fragebogen an Schnittstellenanbieter: Objekte, IP-Adressen, Token-Speicherung und Notfallkontakt vor dem Go-live (Folgeartikel zu B6). *Braucht Beispiel von Fabian.*
 - B26. Discovery für Salesforce-Projekte: welche Randfälle vor dem Festpreis auf den Tisch müssen (Folgeartikel zu L1, Begriffe „salesforce discovery phase“, „Fit-Gap-Analyse Salesforce“ vorher prüfen). *Braucht Beispiel von Fabian.*
 - B27. Schlüsselperson des Partners geht: Übergabe planen, bevor die Qualität nachlässt (Folgeartikel zu L1). *Braucht Beispiel von Fabian.*
 
