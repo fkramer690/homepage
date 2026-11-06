@@ -33,7 +33,17 @@ Choose a Salesforce implementation partner on points that proposals often leave 
 
 References are briefed by the partner. No partner will name the project where things went badly wrong. That is not an accusation: every implementation partner has skeletons in the closet, and anyone who claims otherwise has done few projects or is not telling you everything.
 
-The figures on AppExchange help with the shortlist. A listing in the consultant section shows stars, the number of completed projects, certified experts and the products and industries the partner specialises in ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/consultants-on-appexchange/find-the-right-consultant-on-appexchange)). Salesforce measures customer satisfaction with a survey after the project ends. It is emailed to the contact the partner itself enters in the project record, only completed projects count towards the average, and terminated projects do not count against it. The average feeds into the score that decides the partner tier ([Salesforce Partner Community](https://partners.salesforce.com/s/Customer_Satisfaction_new)). Certified experts hint at the size of the practice, expertise entries at product and industry experience, stars at satisfaction. None of them tells you how the team assigned to you will work.
+The figures on AppExchange help with the shortlist ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/consultants-on-appexchange/find-the-right-consultant-on-appexchange)). The satisfaction survey after the project goes to the contact the partner itself enters, and terminated projects do not count towards the average ([Salesforce Partner Community](https://partners.salesforce.com/s/Customer_Satisfaction_new)).
+
+```tabelle
+title: What the AppExchange listing shows
+columns: Listing data | Shows | Does not show
+Certified experts | Size of the Salesforce practice | Who sits on your project *
+Specialisations | The firm's product and industry experience | Experience of the team you get *
+Stars and satisfaction | Verdict of the contacts the partner entered | Projects that were terminated *
+Partner tier | Score from satisfaction, certifications and Navigator status | Quality on a single project *
+note: Good for the shortlist, too little for the decision.
+```
 
 The better question is: which project went wrong for you, what did you learn, and how can I see that it will not happen again? A partner with a concrete answer, a changed rule or a new review step, has done something with its mistakes. If you can, also talk to a former customer who is not on the reference list.
 
@@ -52,17 +62,27 @@ Nothing on quality assurance | Defects only show up in testing | How do mileston
 note: Each point can be clarified before the award. After the award it costs money.
 ```
 
-The first point is often underrated. A fixed price looks safe, but in my cases it was too optimistic, and the client did not even know which functions the individual work packages contained and whether they covered its needs. Then it turns out during the project that a process is missing, and the original price no longer covers the actual scope. The protection of the fixed price erodes with every change request. How fixed price and time and materials shift now that partners build with AI is covered in [fixed price vs. time and materials](../fixed-price-vs-time-and-materials-ai/).
+The first point is often underrated. In my cases the fixed price was too optimistic, and the client did not even know which functions the individual work packages contained and whether they covered its needs. When a process then turns out to be missing, the price no longer covers the actual scope, and the protection of the fixed price erodes with every change request. How fixed price and time and materials shift now that partners build with AI is covered in [fixed price vs. time and materials](../fixed-price-vs-time-and-materials-ai/).
 
 ## The discovery decides how reliable the estimate is
 
-An estimate without any discovery has become rare. A discovery that stays on the surface is more common. I have seen estimates based on a discovery that only covered the happy path, the standard case done by the book. Edge cases did not come up.
+An estimate without any discovery has become rare. A discovery that stays on the surface is more common: I have seen estimates for which only the happy path was discussed, the standard case done by the book. At manufacturers, though, the effort often sits in the edge cases.
 
-At manufacturers, though, the effort often sits in the edge cases. Worked example: the standard case of a service process is configured quickly. Then come devices without a serial number, orders spanning two plants and customers with their own framework agreement. Many of these cases need a rule, an exception in the data model or an interface, and none of them is in the estimate.
+```vergleich
+without: Discovery only for the happy path
+- Only the standard case done by the book is discussed.
+- Devices without a serial number, orders spanning two plants or own framework agreements are missing.
+- Rules, data model and interfaces for them are in no estimate.
+- The edge cases come back later as change requests.
+with: Discovery with edge cases
+- The list of special cases comes with the proposal.
+- Assumptions behind the estimate and open decisions are written down.
+- You see before the award what the price covers and what it does not.
+```
 
-So do not ask whether a discovery took place. Ask which special cases it covered, and ask for the evidence: the list of edge cases, the assumptions behind the estimate and the open decisions. If the partner cannot show any of this, you have no evidence that edge cases were covered.
+So do not ask whether a discovery took place; ask to see this evidence. If the partner cannot show any of it, you have no evidence that edge cases were covered.
 
-Part of the responsibility lies with the client. In every one of my projects, user acceptance testing took longer than planned, because the client's people were not available, and change requests followed because the business had not looked closely enough at its own solution and the status quo beforehand. So also ask the partner what it expects from you: which process owners it needs and for how many days, when you have to make which decisions, and who prepares the test cases, provides test data and tests, with how much time on your side.
+Part of the responsibility lies with the client. In every one of my projects, user acceptance testing took longer than planned, because the client's people were not available, and change requests followed because the business had not looked closely enough at its own solution and the status quo beforehand. So also ask the partner what it expects from you: which process owners it needs and for how many days, when you have to make which decisions, and who prepares the test cases, provides test data and tests.
 
 ## The team in the pitch is not automatically the team on the project
 
@@ -72,33 +92,38 @@ The pitch brings the experienced people. On the project, in my cases, the team w
 I have seen partners replaced more than once. The reasons were similar: the quality was never there, or it dropped because the partner's people left the project or the company. Or sales had sold something the team had never done before, and the project needed more time and more budget.
 ```
 
-That gives you the questions for the pitch. Who fills the key roles from day one, by name and share of time, and what seniority does the rest of the team have? Who among these people has implemented exactly this product before, not just Salesforce in general? And who has built the scenarios you need, which for a manufacturer often means installed base and asset hierarchies, spare parts from the ERP or scheduling for field technicians? And what happens when a key person leaves: who takes over, and who pays for the onboarding?
+That gives you the questions for the pitch. Who fills the key roles from day one, by name and share of time, and what seniority does the rest of the team have? Who has implemented exactly this product and the scenarios you need, which for a manufacturer often means installed base and asset hierarchies, spare parts from the ERP or scheduling for field technicians? And who takes over when a key person leaves, and who pays for the onboarding?
 
 ## How do you ask about quality without giving away the answer?
 
-The obvious questions get you little. Ask "Will you work in our repository to our standards?" and every partner says yes. So I ask these questions indirectly: I describe a problem and let the partner explain how they would solve it. A partner with a good approach then describes it as their solution without me prompting it.
+Ask "Will you work in our repository to our standards?" and every partner says yes. So I ask these questions indirectly: I describe a problem and let the partner explain how they would solve it. A partner with a good approach then describes it as their solution without me prompting it. Code review and test rules rarely appear in a proposal, and especially now that partners code with AI tools, a partner should explain unprompted how it reviews every change, whoever or whatever wrote it.
 
-This is how it can sound:
-
-- **Milestones and quality.** "How do your project milestones connect with delivery and quality gates?" Listen for concrete checks with clear criteria: code review, test coverage and automated checks in the pipeline, but also data migration checks, integration tests and readiness for user acceptance testing. And listen for whether a milestone only counts as technically complete once they pass. The business acceptance of the result comes on top, with its own criteria.
+- **Milestones and quality.** "How do your project milestones connect with delivery and quality gates?" Good answers name concrete checks: code review, test coverage and automated checks in the pipeline, but also data migration, integration tests and readiness for acceptance testing. A milestone only counts as technically complete once they all pass; the business acceptance comes on top, with its own criteria. More in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/) and [partners using AI coding](../partners-using-ai-coding-contract-rules/).
 - **A second partner.** "In two years another partner joins for Field Service. How do we keep the two from overwriting each other?" Good answers mention pull requests, an [object ownership matrix](../salesforce-object-ownership-matrix/) and a shared [sandbox strategy](../salesforce-sandbox-strategy-multiple-partners/).
 - **Taking over after go-live.** "We want to run the platform ourselves later. What do we get from you then?" This shows whether code, configuration and documentation are meant to sit with you or stay with the partner.
-
-```hinweis tipp
-Code review and test rules rarely appear in a proposal. Especially now that partners code with AI tools, a partner should explain in the pitch, unprompted, how it reviews and tests every change, whoever or whatever wrote it. What belongs in the contract is in [partners using AI coding](../partners-using-ai-coding-contract-rules/), the technical side in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
-```
 
 ## What belongs in the contract with the partner
 
 What sounds good in the pitch has to go into the contract, or it does not count. These points belong there at a minimum:
 
 - **Named key roles,** swaps only with your consent, an equivalent replacement and a handover period at the partner's cost.
-- **Ownership and access:** code, metadata, documentation and pipeline configuration built for you belong to you from the start, with admin access to repository and pipeline on your side. For the partner's own accelerators and templates, the contract states your right to keep using them.
-- **Quality gates with defined checks** for the technical completion of every milestone, with the evidence the partner delivers. The business acceptance has its own criteria.
+- **Ownership and access:** code, metadata, documentation and pipeline configuration built for you belong to you from the start, with admin access to repository and pipeline. For the partner's accelerators and templates, the contract states your right of use.
+- **Quality gates with defined checks** for the technical completion of every milestone, with the evidence the partner delivers.
 - **Assumptions and exclusions** of the estimate, and a rule for edge cases the discovery did not cover: who assesses them, and under what conditions do they become change requests?
 
-If several partners work on one org, there is one more question: who sets the rules for all of them. In my largest programme, five partners worked with more than 30 developers on one org, and the standards came from the client side, as described on the [partner governance](../../services/partner-governance/) page. When an independent architect makes sense for this and when the partner can handle it alone is covered in [Salesforce freelancer or consultancy](../salesforce-freelancer-or-consultancy/).
+If several partners work on one org, there is one more question: who sets the rules for all of them. In my largest programme, five partners worked with more than 30 developers on one org, and the standards came from the client side, as described on the [partner governance](../../services/partner-governance/) page. When an independent architect makes sense for this is covered in [Salesforce freelancer or consultancy](../salesforce-freelancer-or-consultancy/).
 
 ## First step: write down three problem cases for every partner
 
-Before you invite partners, write down three situations from your own programme: an edge case from one of your processes, the case of a second partner joining later, and the case of a key person on the partner side leaving mid-project. Give every partner the same three cases in the pitch and let them explain how they would handle them. With the proposal, ask for the key roles by name, the list of special cases from the discovery and the assumptions behind the price. Rate the answers on the same criteria for every partner, and agree on the criteria before the first pitch, so the best presentation does not win by default.
+Before you invite partners, decide what you will measure them on and give all of them the same cases from your own programme.
+
+```schritte
+Write down cases | before the invitation · client
+  An edge case from your process, a second partner joining, a key person on the partner side leaving.
+Set criteria | before the first pitch · client
+  The same criteria for every partner, so the best presentation does not win by default.
+Play the cases | in the pitch · each partner
+  Each partner explains how it would handle the same three cases.
+Ask for evidence | with the proposal · partner
+  Key roles by name, the list of special cases from the discovery, the assumptions behind the price.
+```

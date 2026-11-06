@@ -34,9 +34,19 @@ Einen Salesforce-Implementierungspartner wählen Sie besser nach Punkten aus, di
 
 Referenzen werden vom Partner gebrieft. Kein Partner nennt Ihnen das Projekt, in dem es richtig schiefging. Das ist kein Vorwurf: Jeder Implementierungspartner hat Leichen im Keller, und wer etwas anderes behauptet, hat entweder wenige Projekte gemacht oder sagt nicht alles.
 
-Die Zahlen auf AppExchange helfen bei der Vorauswahl. Ein Eintrag im Consultant-Bereich zeigt Sterne, die Zahl abgeschlossener Projekte, zertifizierte Mitarbeitende sowie die Produkte und Branchen, auf die sich der Partner spezialisiert hat ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/consultants-on-appexchange/find-the-right-consultant-on-appexchange)). Die Kundenzufriedenheit misst Salesforce mit einer Umfrage nach Projektende. Sie geht per E-Mail an den Kontakt, den der Partner selbst im Projektdatensatz einträgt. In den Durchschnitt zählen nur abgeschlossene Projekte, abgebrochene Projekte zählen nicht dagegen, und der Durchschnitt fließt in den Punktwert ein, aus dem sich die Partnerstufe ergibt ([Salesforce Partner Community](https://partners.salesforce.com/s/Customer_Satisfaction_new)). Die Zahl zertifizierter Mitarbeitender deutet auf die Größe hin, die Spezialisierungen auf Produkt- und Branchenerfahrung, die Sterne auf Zufriedenheit. Wie das Team arbeitet, das Sie bekommen, zeigt keine davon.
+Die Zahlen auf AppExchange helfen bei der Vorauswahl ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/consultants-on-appexchange/find-the-right-consultant-on-appexchange)). Die Zufriedenheitsumfrage nach Projektende geht an den Kontakt, den der Partner selbst einträgt, und abgebrochene Projekte zählen nicht in den Durchschnitt ([Salesforce Partner Community](https://partners.salesforce.com/s/Customer_Satisfaction_new)).
 
-Die bessere Frage lautet: Welches Projekt ist bei Ihnen schiefgegangen, was haben Sie daraus gelernt, und woran sehe ich, dass es nicht wieder passiert? Ein Partner, der darauf eine konkrete Antwort hat, mit einer geänderten Regel oder einem neuen Prüfschritt, hat aus seinen Fehlern etwas gemacht. Wenn Sie können, sprechen Sie zusätzlich mit einem früheren Kunden, der nicht auf der Referenzliste steht.
+```tabelle
+titel: Was die Angaben auf AppExchange zeigen
+spalten: Angabe | Zeigt | Zeigt nicht
+Zertifizierte Mitarbeitende | Größe der Salesforce-Practice | Wer in Ihrem Projekt sitzt *
+Spezialisierungen | Produkt- und Branchenerfahrung der Firma | Erfahrung des Teams, das Sie bekommen *
+Sterne und Zufriedenheit | Urteil der Kontakte, die der Partner eingetragen hat | Projekte, die abgebrochen wurden *
+Partnerstufe | Punktwert aus Zufriedenheit, Zertifizierungen und Navigator-Status | Qualität in einem einzelnen Projekt *
+fazit: Gut für die Vorauswahl, zu wenig für die Entscheidung.
+```
+
+Die bessere Frage lautet: Welches Projekt ist bei Ihnen schiefgegangen, was haben Sie daraus gelernt, und woran sehe ich, dass es nicht wieder passiert? Wer darauf eine konkrete Antwort hat, mit einer geänderten Regel oder einem neuen Prüfschritt, hat aus seinen Fehlern etwas gemacht. Wenn Sie können, sprechen Sie zusätzlich mit einem früheren Kunden, der nicht auf der Referenzliste steht.
 
 ## Welche Warnsignale stehen im Angebot?
 
@@ -53,17 +63,27 @@ Keine Aussage zur Qualitätssicherung | Fehler zeigen sich erst im Test | Wie h�
 fazit: Jeder Punkt lässt sich vor der Vergabe klären. Nach der Vergabe kostet er Geld.
 ```
 
-Der erste Punkt wird oft unterschätzt. Ein Festpreis wirkt sicher, aber er war in meinen Fällen zu optimistisch, und der Kunde wusste gar nicht, welche Funktionen in den einzelnen Arbeitspaketen enthalten waren und ob sie seinen Bedarf decken. Dann stellt sich erst im Projekt heraus, dass ein Prozess fehlt, und der ursprüngliche Preis deckt den tatsächlichen Umfang nicht mehr. Mit jedem Change Request schwindet der Schutz, den der Festpreis versprochen hat. Wie sich Festpreis und Aufwand verschieben, seit Partner mit KI bauen, steht in [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/).
+Der erste Punkt wird oft unterschätzt. In meinen Fällen war der Festpreis zu optimistisch, und der Kunde wusste gar nicht, welche Funktionen in den einzelnen Arbeitspaketen enthalten waren und ob sie seinen Bedarf decken. Fehlt dann ein Prozess, deckt der Preis den tatsächlichen Umfang nicht mehr, und mit jedem Change Request schwindet der Schutz des Festpreises. Wie sich Festpreis und Aufwand verschieben, seit Partner mit KI bauen, steht in [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/).
 
 ## Die Discovery entscheidet, wie belastbar die Schätzung ist
 
-Eine Schätzung ganz ohne Discovery ist selten geworden. Häufiger ist eine Discovery, die zu oberflächlich bleibt. Ich habe Schätzungen gesehen, die auf einer Discovery beruhten, in der nur der Happy Path besprochen wurde, also der Standardfall nach Schema F. Randfälle kamen nicht vor.
+Eine Schätzung ganz ohne Discovery ist selten geworden. Häufiger ist eine Discovery, die zu oberflächlich bleibt: Ich habe Schätzungen gesehen, für die nur der Happy Path besprochen wurde, der Standardfall nach Schema F. Bei Herstellern liegt der Aufwand aber oft in den Randfällen.
 
-Bei Herstellern liegt der Aufwand aber oft in den Randfällen. Rechenbeispiel: Der Standardfall eines Serviceprozesses ist schnell konfiguriert. Dazu kommen Geräte ohne Seriennummer, Aufträge über zwei Werke und Kunden mit eigenem Rahmenvertrag. Viele dieser Fälle brauchen eine Regel, eine Ausnahme im Datenmodell oder eine Schnittstelle, und keiner steht in der Schätzung.
+```vergleich
+ohne: Discovery nur für den Happy Path
+- Nur der Standardfall nach Schema F ist besprochen.
+- Geräte ohne Seriennummer, Aufträge über zwei Werke oder eigene Rahmenverträge fehlen.
+- Regeln, Datenmodell und Schnittstellen dafür stehen in keiner Schätzung.
+- Die Randfälle kommen später als Change Request.
+mit: Discovery mit Randfällen
+- Die Liste der Sonderfälle liegt dem Angebot bei.
+- Annahmen hinter der Schätzung und offene Entscheidungen sind aufgeschrieben.
+- Sie sehen vor der Vergabe, was im Preis steckt und was nicht.
+```
 
-Fragen Sie deshalb nicht, ob eine Discovery stattfand, sondern welche Sonderfälle darin besprochen wurden, und lassen Sie sich die Belege zeigen: die Liste der Randfälle, die Annahmen hinter der Schätzung und die offenen Entscheidungen. Kann der Partner nichts davon zeigen, haben Sie keinen Beleg, dass Randfälle besprochen wurden.
+Fragen Sie deshalb nicht, ob eine Discovery stattfand, sondern lassen Sie sich diese Belege zeigen. Kann der Partner nichts davon vorlegen, haben Sie keinen Beleg, dass Randfälle besprochen wurden.
 
-Ein Teil der Verantwortung liegt beim Kunden. In jedem meiner Projekte dauerte der Abnahmetest länger als geplant, weil Mitarbeitende des Kunden nicht verfügbar waren, und es kamen Change Requests, weil der Fachbereich vorher zu wenig auf die eigene Lösung und den Ist-Zustand geschaut hatte. Fragen Sie den Partner deshalb auch, was er von Ihnen erwartet: welche Prozessverantwortlichen er wie viele Tage braucht, wann Sie welche Entscheidungen treffen müssen und wer Testfälle vorbereitet, Testdaten liefert und testet, mit wie viel Zeit auf Ihrer Seite.
+Ein Teil der Verantwortung liegt beim Kunden. In jedem meiner Projekte dauerte der Abnahmetest länger als geplant, weil Mitarbeitende des Kunden nicht verfügbar waren, und es kamen Change Requests, weil der Fachbereich vorher zu wenig auf die eigene Lösung und den Ist-Zustand geschaut hatte. Fragen Sie den Partner deshalb auch, was er von Ihnen erwartet: welche Prozessverantwortlichen er wie viele Tage braucht, wann Sie welche Entscheidungen treffen müssen und wer Testfälle vorbereitet, Testdaten liefert und testet.
 
 ## Das Team aus dem Pitch ist nicht automatisch das Team im Projekt
 
@@ -73,33 +93,38 @@ Im Pitch sitzen die erfahrenen Leute. Im Projekt war das Team dann in meinen Fä
 Partnerwechsel habe ich schon öfter erlebt. Die Gründe waren ähnlich: Die Qualität war nie da, oder sie ließ nach, weil Leute des Partners das Projekt oder die Firma verlassen hatten. Oder der Vertrieb hatte etwas verkauft, was das Team noch nie gemacht hatte, und das Projekt brauchte mehr Zeit und mehr Budget.
 ```
 
-Daraus ergeben sich die Fragen für den Pitch. Wer besetzt ab Tag 1 die Schlüsselrollen, mit Namen und Zeitanteil, und welche Seniorität hat der Rest des Teams? Wer von diesen Leuten hat genau dieses Produkt schon eingeführt, nicht nur Salesforce allgemein? Und wer hat die Szenarien gebaut, die Sie brauchen, bei Herstellern oft Installed Base und Anlagenhierarchien, Ersatzteile aus dem ERP oder Einsatzplanung für Servicetechniker? Was passiert, wenn eine Schlüsselperson geht: Wer übernimmt, und wer bezahlt die Einarbeitung?
+Daraus ergeben sich die Fragen für den Pitch. Wer besetzt ab Tag 1 die Schlüsselrollen, mit Namen und Zeitanteil, und welche Seniorität hat der Rest des Teams? Wer hat genau dieses Produkt und die Szenarien schon eingeführt, die Sie brauchen, bei Herstellern oft Installed Base und Anlagenhierarchien, Ersatzteile aus dem ERP oder Einsatzplanung für Servicetechniker? Und wer übernimmt, wenn eine Schlüsselperson geht, und wer bezahlt die Einarbeitung?
 
 ## Wie fragen Sie nach Qualität, ohne die Antwort vorzugeben?
 
-Die naheliegenden Fragen bringen wenig. Auf „Arbeiten Sie in unserem Repository nach unseren Standards?“ antwortet jeder Partner mit Ja. Ich stelle diese Fragen deshalb über Umwege: Ich beschreibe ein Problem und lasse den Partner erzählen, wie er es lösen würde. Ein Partner mit gutem Vorgehen beschreibt es dann als seine Lösung, ohne dass ich es vorgegeben habe.
+Auf „Arbeiten Sie in unserem Repository nach unseren Standards?“ antwortet jeder Partner mit Ja. Ich stelle diese Fragen deshalb über Umwege: Ich beschreibe ein Problem und lasse den Partner erzählen, wie er es lösen würde. Ein Partner mit gutem Vorgehen beschreibt es dann als seine Lösung, ohne dass ich es vorgegeben habe. Code-Review und Testregeln stehen selten im Angebot, und gerade seit Partner mit KI-Werkzeugen programmieren, sollte er von sich aus erklären, wie er jede Änderung prüft, egal wer oder was sie geschrieben hat.
 
-So kann das klingen:
-
-- **Meilensteine und Qualität.** „Wie hängen Ihre Projektmeilensteine mit der Lieferung und den Quality Gates zusammen?“ Achten Sie auf konkrete Prüfungen mit klaren Kriterien: Code-Review, Testabdeckung und automatische Prüfungen in der Pipeline, aber auch Prüfungen der Datenmigration, Integrationstests und die Abnahmereife. Achten Sie außerdem darauf, ob ein Meilenstein erst als technisch fertig gilt, wenn alle Prüfungen bestanden sind. Die fachliche Abnahme des Ergebnisses kommt mit eigenen Kriterien hinzu.
+- **Meilensteine und Qualität.** „Wie hängen Ihre Projektmeilensteine mit der Lieferung und den Quality Gates zusammen?“ Gute Antworten nennen konkrete Prüfungen: Code-Review, Testabdeckung und automatische Prüfungen in der Pipeline, aber auch Datenmigration, Integrationstests und Abnahmereife. Ein Meilenstein gilt erst als technisch fertig, wenn alle bestanden sind; die fachliche Abnahme kommt mit eigenen Kriterien hinzu. Mehr dazu in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) und [Partner codet mit KI](../partner-ki-coding-regeln-vertrag/).
 - **Ein zweiter Partner.** „In zwei Jahren kommt für Field Service ein weiterer Partner dazu. Wie verhindern wir, dass sich beide gegenseitig überschreiben?“ Gute Antworten erwähnen Pull Requests, eine [Object Ownership Matrix](../object-ownership-matrix-salesforce/) und eine gemeinsame [Sandbox-Strategie](../salesforce-sandbox-strategie-mehrere-partner/).
 - **Übernahme nach dem Go-live.** „Wir wollen den Betrieb später selbst führen. Was bekommen wir dann von Ihnen?“ Hier zeigt sich, ob Code, Konfiguration und Dokumentation bei Ihnen liegen sollen oder beim Partner bleiben.
-
-```hinweis tipp
-Code-Review und Testregeln stehen selten im Angebot. Gerade seit Partner mit KI-Werkzeugen programmieren, sollte ein Partner im Pitch von sich aus erklären, wie er jede Änderung prüft und testet, egal wer oder was sie geschrieben hat. Was dazu in den Vertrag gehört, steht in [Partner codet mit KI](../partner-ki-coding-regeln-vertrag/), die technische Seite in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/).
-```
 
 ## Was in den Vertrag mit dem Partner gehört
 
 Was im Pitch gut klingt, muss in den Vertrag, sonst gilt es nicht. Diese Punkte gehören mindestens hinein:
 
 - **Benannte Schlüsselrollen,** Austausch nur mit Ihrer Zustimmung, gleichwertiger Ersatz und eine Übergabezeit auf Kosten des Partners.
-- **Eigentum und Zugriff:** Code, Metadaten, Dokumentation und Pipeline-Konfiguration, die für Sie erstellt werden, gehören Ihnen von Anfang an. Sie erhalten Administratorzugriff auf Repository und Pipeline. Für eigene Accelerators und Vorlagen des Partners regelt der Vertrag Ihr Recht, sie weiter zu nutzen.
-- **Quality Gates mit festgelegten Prüfungen** für die technische Fertigstellung jedes Meilensteins, mit den Nachweisen, die der Partner liefert. Die fachliche Abnahme hat eigene Kriterien.
+- **Eigentum und Zugriff:** Code, Metadaten, Dokumentation und Pipeline-Konfiguration, die für Sie erstellt werden, gehören Ihnen von Anfang an, mit Administratorzugriff auf Repository und Pipeline. Für Accelerators und Vorlagen des Partners regelt der Vertrag Ihr Nutzungsrecht.
+- **Quality Gates mit festgelegten Prüfungen** für die technische Fertigstellung jedes Meilensteins, mit den Nachweisen, die der Partner liefert.
 - **Annahmen und Ausschlüsse** der Schätzung und eine Regel für Randfälle, die die Discovery nicht abgedeckt hat: Wer bewertet sie, und unter welchen Bedingungen werden sie zum Change Request?
 
-Arbeiten mehrere Partner an einer Org, kommt die Frage dazu, wer die Regeln für alle festlegt. In meinem größten Programm bauten fünf Partner mit über 30 Entwicklern an einer Org, und die Standards kamen von der Kundenseite, wie auf der Seite zur [Partnersteuerung](../../leistungen/partnersteuerung/) beschrieben. Wann dafür ein unabhängiger Architekt sinnvoll ist und wann der Partner das allein kann, steht in [Salesforce-Freelancer oder Agentur](../salesforce-freelancer-oder-agentur/).
+Arbeiten mehrere Partner an einer Org, kommt die Frage dazu, wer die Regeln für alle festlegt. In meinem größten Programm bauten fünf Partner mit über 30 Entwicklern an einer Org, und die Standards kamen von der Kundenseite, wie auf der Seite zur [Partnersteuerung](../../leistungen/partnersteuerung/) beschrieben. Wann dafür ein unabhängiger Architekt sinnvoll ist, steht in [Salesforce-Freelancer oder Agentur](../salesforce-freelancer-oder-agentur/).
 
 ## Erster Schritt: drei Problemfälle für alle Partner aufschreiben
 
-Bevor Sie Partner einladen, schreiben Sie drei Situationen aus Ihrem eigenen Programm auf: einen Randfall aus einem Ihrer Prozesse, den Fall, dass später ein zweiter Partner dazukommt, und den Fall, dass eine Schlüsselperson des Partners mitten im Projekt geht. Geben Sie allen Partnern im Pitch dieselben drei Fälle und lassen Sie sie erzählen, wie sie vorgehen würden. Mit dem Angebot verlangen Sie die Schlüsselrollen mit Namen, die Liste der Sonderfälle aus der Discovery und die Annahmen hinter dem Preis. Bewerten Sie die Antworten aller Partner nach denselben Kriterien und legen Sie diese vor dem ersten Pitch fest, damit nicht automatisch die beste Präsentation gewinnt.
+Bevor Sie Partner einladen, legen Sie fest, woran Sie sie messen, und geben allen dieselben Fälle aus Ihrem eigenen Programm.
+
+```schritte
+Fälle aufschreiben | vor der Einladung · Kunde
+  Ein Randfall aus Ihrem Prozess, ein zweiter Partner kommt dazu, eine Schlüsselperson des Partners geht.
+Kriterien festlegen | vor dem ersten Pitch · Kunde
+  Für alle Partner dieselben Kriterien, damit nicht die beste Präsentation gewinnt.
+Fälle im Pitch durchspielen | im Pitch · jeder Partner
+  Jeder Partner erzählt, wie er bei denselben drei Fällen vorgehen würde.
+Belege verlangen | mit dem Angebot · Partner
+  Schlüsselrollen mit Namen, Liste der Sonderfälle aus der Discovery, Annahmen hinter dem Preis.
+```
