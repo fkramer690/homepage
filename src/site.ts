@@ -34,11 +34,14 @@ export const site = {
     'https://app.fratch.io/de/profile/fabian-kramer-j',
     'https://www.salesforce.com/trailblazer/fkramer',
     'https://www.malt.com/profile/fabiankramer1',
+    'https://salesforcebreak.com/author/fabiankramerbaaa9dc933/',
   ],
   // Profiles of the company, only listed as sameAs in the structured data.
   companyProfiles: [
     // Google Business Profile (knowledge graph id).
     'https://www.google.com/search?kgmid=/g/11z_04sr6b',
+    // LinkedIn company page.
+    'https://www.linkedin.com/company/fk-solution-design-gmbh',
   ],
   legal: {
     street: 'Hans-Keul-Weg 27',

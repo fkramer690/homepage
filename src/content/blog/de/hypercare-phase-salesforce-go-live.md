@@ -86,6 +86,8 @@ Die Hypercare-Phase habe ich meist mit der Umsetzung von Feedback und Quick Wins
 
 Planen Sie deshalb eher mit Wochen bis Monaten als mit Tagen, je nach Zahl der Gruppen und ERP-Schnittstellen. Bei einem Rollout in Wellen beginnt die Hypercare in jedem Land neu, wie in [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/) beschrieben.
 
+Eine kürzere Fassung ohne Salesforce-Bezug, die genauso für ERP oder ein Serviceportal gilt, steht als Artikel auf LinkedIn: [Hypercare-Phase: Was sie bedeutet, wie lange sie dauert und wann sie endet](https://www.linkedin.com/pulse/hypercare-phase-sie-bedeutet-wie-lange-dauert-1rvae/).
+
 ## Wie übergeben Sie an den Betrieb?
 
 Die Übergabe ist der Moment, in dem das Projektteam weiterzieht. Gut läuft sie, wenn der Support von Anfang an mit am Tisch saß und die Übergabe schrittweise passiert: zuerst übernimmt er Bedienfragen, dann Datenprobleme, zuletzt die Steuerung der Fehler mit dem Partner.

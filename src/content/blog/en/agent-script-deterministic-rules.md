@@ -2,6 +2,7 @@
 title: "Agent Script: why business rules don't belong in the LLM"
 description: "Credit limits, warranty eligibility and price approvals belong in Agent Script logic, not in the LLM. How hybrid reasoning works and what to check in a design."
 pubDate: 2026-10-27
+updatedDate: 2026-11-05
 lang: en
 slug: agent-script-deterministic-rules
 translationKey: agent-script-deterministic-rules
@@ -57,23 +58,13 @@ Four building blocks matter for a decision maker. Your partner should be able to
 - **before_reasoning and after_reasoning.** `before_reasoning` runs deterministically at the start of every parse, for authentication, entitlement checks and loading context. `after_reasoning` runs after the model, for checks and transitions. A parse happens on first entry, after every tool call and on every user turn.
 - **Escalation.** `@utils.escalate` [hands the conversation to a human service rep](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-ref-utils.html) through Omni-Channel.
 
-A simplified sketch of a credit gate for spare part orders:
+A simplified sketch of a credit gate for spare part orders, in plain words:
 
-```
-before_reasoning:
-    if @variables.credit_checked == False:
-        run @actions.get_credit_status
-            with dealer_id=@variables.dealer_id
-            set @variables.credit_ok=@outputs.credit_ok
-        set @variables.credit_checked = True
-
-reasoning:
-    instructions: ->
-        if @variables.credit_ok == False:
-            | Explain that credit management must release the order first.
-    actions:
-        create_order: @actions.create_spare_parts_order
-            available when @variables.credit_ok == True
+```eintrag Credit gate for spare part orders
+Before reasoning | If credit has not been checked yet, call the credit status action with the dealer ID, store the result and mark it as checked
+Instruction | If credit is not OK, the agent explains that credit management must release the order first
+Action | "Create spare parts order" is available only when credit is OK *
+note: The model never decides about credit. It only sees the order action once the code has opened the gate.
 ```
 
 Three details in the guide are worth asking your partner about.
@@ -81,7 +72,7 @@ Three details in the guide are worth asking your partner about.
 ```vertiefung For developers
 title: Gate variables, the guard and is_displayable
 - **Code sets the gate variables.** If the LLM sets them, "you've reintroduced the variability the gate was designed to prevent."
-- **The guard in the sketch matters.** Without it the ERP lookup in `before_reasoning` runs on every parse, so several times per turn, and every run is an ERP call.
+- **The guard matters** (`if @variables.credit_checked == False`). Without it the ERP lookup in `before_reasoning` runs on every parse, so several times per turn, and every run is an ERP call.
 - **`is_displayable` ends the loop.** Such an action ends the reasoning loop as soon as its output is shown, and `after_reasoning` is skipped. A check placed there then never runs.
 ```
 
