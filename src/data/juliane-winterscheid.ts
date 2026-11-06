@@ -96,15 +96,15 @@ export const juliane = {
       tasksLabel: 'Aufgaben',
       intro: 'Eine Auswahl aus Julianes Projekten, mit Rolle, Umfang und Aufgaben laut ihrem Profil.',
       items: [
+        { logo: 'hdi', t: 'HDI Versicherungen AG: globale IT-Transformation (Cloudification, Rechenzentrums-Schließung)' },
+        { logo: 'danone', t: 'Danone Deutschland GmbH: agile Transformation in der DACH-Region' },
+        { logo: 'septodont', t: 'Septodont GmbH: Rollout von Salesforce Maps' },
         { logo: 'aak', t: 'AAK AB: globaler Salesforce-Sales-Cloud-Rollout' },
         { logo: 'deutsche-telekom', t: 'Deutsche Telekom AG: Salesforce-Prozessoptimierung' },
-        { logo: 'septodont', t: 'Septodont GmbH: Rollout von Salesforce Maps' },
-        { logo: 'von-rundstedt', t: 'Von Rundstedt: Salesforce-Einführung' },
-        { logo: 'hdi', t: 'HDI Versicherungen AG: globale IT-Transformation (Cloudification, Rechenzentrums-Schließung)' },
         { logo: 'karo-heiko', t: 'KaRo / Heiko Companies: Transformation auf Microsoft Dynamics 365' },
-        { logo: 'danone', t: 'Danone Deutschland GmbH: agile Transformation in der DACH-Region' },
-        { logo: 'hologic', t: 'Hologic Deutschland GmbH: Zusammenlegung von drei Standorten' },
         { logo: 'landal', t: 'Landal GreenParks GmbH: Umstrukturierung der Personalabteilung' },
+        { logo: 'hologic', t: 'Hologic Deutschland GmbH: Zusammenlegung von drei Standorten' },
+        { logo: 'von-rundstedt', t: 'Von Rundstedt: Salesforce-Einführung' },
       ],
     },
     steps: {
@@ -212,15 +212,15 @@ export const juliane = {
       tasksLabel: 'Tasks',
       intro: 'A selection of Juliane\'s projects, with role, scope and tasks as stated in her profile.',
       items: [
+        { logo: 'hdi', t: 'HDI Versicherungen AG: global IT transformation (cloudification, data centre closure)' },
+        { logo: 'danone', t: 'Danone Deutschland GmbH: agile transformation in the DACH region' },
+        { logo: 'septodont', t: 'Septodont GmbH: Salesforce Maps rollout' },
         { logo: 'aak', t: 'AAK AB: global Salesforce Sales Cloud rollout' },
         { logo: 'deutsche-telekom', t: 'Deutsche Telekom AG: Salesforce process optimisation' },
-        { logo: 'septodont', t: 'Septodont GmbH: Salesforce Maps rollout' },
-        { logo: 'von-rundstedt', t: 'Von Rundstedt: Salesforce implementation' },
-        { logo: 'hdi', t: 'HDI Versicherungen AG: global IT transformation (cloudification, data centre closure)' },
         { logo: 'karo-heiko', t: 'KaRo / Heiko Companies: Microsoft Dynamics 365 transformation' },
-        { logo: 'danone', t: 'Danone Deutschland GmbH: agile transformation in the DACH region' },
-        { logo: 'hologic', t: 'Hologic Deutschland GmbH: merging three sites into one' },
         { logo: 'landal', t: 'Landal GreenParks GmbH: restructuring the HR department' },
+        { logo: 'hologic', t: 'Hologic Deutschland GmbH: merging three sites into one' },
+        { logo: 'von-rundstedt', t: 'Von Rundstedt: Salesforce implementation' },
       ],
     },
     steps: {
@@ -254,6 +254,7 @@ export const juliane = {
   },
 };
 
+// Reference projects are listed newest first (by start date); Von Rundstedt has no date and stays last.
 // Details per reference project, keyed by its `logo` id (period, sector, scope, role, tasks), from her CV 2026.
 // Shown in the "project in focus" layout of the start page (docs/layouts.md); `short` names the phone chip.
 interface ProjectDetail { short: string; period: string; sector: string; scope: string; role: string; bullets: string[] }

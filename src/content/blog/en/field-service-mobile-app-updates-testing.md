@@ -40,7 +40,7 @@ The app has its own version numbers next to the platform releases: the major ver
 
 The [262.3 post](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pPWBC0A4) shows why patches matter. On iOS the app could log users out unexpectedly after it had been in the background, and a startup watchdog counted time in the background and caused false timeouts. On Android users could get stuck in the in-app browser during sign-in. These are exactly the errors that stop a technician at the customer's door.
 
-Both posts add that Salesforce deploys major and patch releases over several days, and that updates may not reach all users until seven days after general availability. For a service organisation this means for up to a week some technicians run the old version and some the new one.
+Both posts add that Salesforce deploys major and patch releases over several days, and that updates may not reach all users until seven days after general availability. For a service organisation this means for up to a week some technicians run the old version and some the new one. With Winter '27 the app also moved flows to a native runtime, so mobile flows belong in the test routine, see [Field Service mobile flow limitations](../field-service-mobile-flow-limitations/).
 
 ```hinweis tipp
 Support asks for the app version first on every ticket. It is shown in the app under Profile, Settings, About.

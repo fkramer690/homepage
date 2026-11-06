@@ -89,7 +89,7 @@ After the first version, new edge cases came up over the following weeks. We add
 
 A partner can write good standards too. But if it sets the rules, it decides how everyone else builds, including its competitors. If the repository, the pipeline and tools like Jira or Miro also sit with that partner, every change of partner gets expensive.
 
-When the client owns the standards, the approval rights and the tools, a new partner starts with the same rules, tools and rights as everyone else, and a partner who leaves hands over nothing but their user accounts. Offers can then be compared fairly, because everyone delivers under the same conditions. More on this in [why clients should own their DevOps tools](../../blog/why-clients-should-own-their-devops-tools/).
+When the client owns the standards, the approval rights and the tools, a new partner starts with the same rules, tools and rights as everyone else, and a partner who leaves hands over nothing but their user accounts. Offers can then be compared fairly, because everyone delivers under the same conditions. More on this in [why clients should own their DevOps tools](../../blog/why-clients-should-own-their-devops-tools/). What to ask about it when you select a partner is in [how to choose a Salesforce implementation partner](../../blog/how-to-choose-a-salesforce-implementation-partner/).
 
 ## How do reviews fit in without slowing the programme down?
 

@@ -283,6 +283,18 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 140, l('known gaps: tasks not primed, iOS loads LWC after cold start', 'bekannte Lücken: Tasks nicht geladen, iOS lädt LWC erst nach Kaltstart'), { size: 7 })}
     ${t(18, 153, l('test offline with a partner user (community licence)', 'offline mit Partnernutzer testen (Community-Lizenz)'), { fill: C, size: 7 })}`,
 
+  'field-service-mobile-flow-limits': (l) => `
+    ${t(18, 18, l('WHAT RUNS IN THE APP (HELP PAGES 11/2026)', 'WAS IN DER APP LÄUFT (HILFESEITEN 11/2026)'), { fill: D, size: 7 })}
+    ${box(134, 26, 72, 96)}${t(170, 40, l('FSM FLOW', 'FSM-FLOW'), { fill: D, size: 7, anchor: 'middle' })}
+    ${box(214, 26, 88, 96, C)}${t(258, 40, 'DATA CAPTURE', { fill: C, size: 7, anchor: 'middle' })}
+    ${[[l('data table', 'Data Table'), 'x'], ['Transform', 'x'], ['IN / NOT IN', '?'], [l('visibility rules', 'Sichtbarkeitsregeln'), 'v'], ['Section', 'v']].map(([s, dc], i) => {
+      const y = 56 + i * 14;
+      return t(18, y + 3, s, { size: 7 }) + cross(170, y) + (dc === 'x' ? cross(258, y) : dc === 'v' ? check(254, y - 1) : t(258, y + 3, '?', { size: 8, anchor: 'middle' }));
+    }).join('')}
+    <path d="M18 128H302" stroke="${L}"/>
+    ${t(18, 139, l("Winter '27: native runtime, limits list not updated", "Winter '27: native Laufzeit, Liste nicht angepasst"), { size: 7 })}
+    ${t(18, 151, l('multi-select: lookup or repeater in Data Capture', 'Mehrfachauswahl: Lookup oder Repeater in Data Capture'), { fill: C, size: 7 })}`,
+
   'field-service-mobile-release-testing': (l) => `
     ${t(18, 18, l('EACH APP VERSION', 'JEDE APP-VERSION'), { fill: D, size: 7 })}
     <path d="M24 60H300" stroke="${G}" stroke-width="1.2"/>
@@ -902,6 +914,20 @@ const drawings: Record<string, Drawing> = {
     ${box(226, 30, 78, 46, C)}${t(265, 48, l('1 object =', '1 Objekt ='), { fill: C, size: 7, anchor: 'middle' })}${t(265, 62, l('1 owner', '1 Owner'), { fill: C, size: 7, anchor: 'middle' })}
     ${t(226, 100, l('8 streams', '8 Streams'), { size: 7 })}${t(226, 114, l('30+ developers', '30+ Entwickler'), { size: 7 })}${t(226, 128, l('~3 months', '~3 Monate'), { size: 7 })}${t(226, 142, l('80 % in v1', '80 % in V1'), { size: 7 })}`,
 
+  'choose-salesforce-implementation-partner': (l) => `
+    ${t(18, 20, l('PITCH VS. PROJECT', 'PITCH VS. PROJEKT'), { fill: D, size: 7 })}
+    ${box(18, 28, 120, 26)}${t(78, 44, l('Pitch: senior team', 'Pitch: Senior-Team'), { size: 7, anchor: 'middle' })}
+    ${arrow(140, 41, 180)}
+    ${box(182, 28, 120, 26, C)}${t(242, 44, l('Project: many juniors', 'Projekt: viele Junioren'), { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M18 66H302" stroke="${L}"/>
+    ${t(18, 82, l('CHECK BEFORE THE AWARD', 'VOR DER VERGABE PRÜFEN'), { fill: D, size: 7 })}
+    ${check(18, 92)}${t(30, 98, l('edge cases in discovery', 'Randfälle in Discovery'), { size: 7 })}
+    ${check(18, 104)}${t(30, 110, l('team by name', 'Team mit Namen'), { size: 7 })}
+    ${check(18, 116)}${t(30, 122, l('quality gates per milestone', 'Quality Gates je Meilenstein'), { size: 7 })}
+    ${check(170, 92)}${t(182, 98, l('repo with the client', 'Repo beim Kunden'), { size: 7 })}
+    ${check(170, 104)}${t(182, 110, l('lessons from failures', 'Lehren aus Fehlern'), { size: 7 })}
+    ${tag(18, 132, 170, l('references: briefed by partner', 'Referenzen: vom Partner gebrieft'))}`,
+
   'salesforce-freelancer-or-consultancy': (l) => `
     ${t(18, 20, l('WHO BUILDS, WHO DECIDES', 'WER BAUT, WER ENTSCHEIDET'), { fill: D, size: 7 })}
     ${box(18, 30, 130, 72)}${t(28, 46, l('CONSULTANCY', 'AGENTUR · PARTNER'), { fill: D, size: 7 })}
@@ -975,6 +1001,17 @@ const drawings: Record<string, Drawing> = {
     ${tag(20, 120, 132, l('works council early', 'Betriebsrat früh'))}
     ${t(164, 128, l('timesheets · location', 'Timesheets · Standort'), { size: 7 })}
     ${t(164, 142, l('rules per country', 'Regeln je Land'), { fill: C, size: 7 })}`,
+
+  'salesforce-release-schedule': (l) => `
+    ${t(18, 18, l('THREE RELEASES A YEAR', 'DREI RELEASES PRO JAHR'), { fill: D, size: 7 })}
+    ${[l('Spring · Feb', 'Spring · Feb'), l('Summer · Jun', 'Summer · Jun'), l('Winter · Oct', 'Winter · Okt')].map((s, i) => box(18 + i * 98, 26, 88, 22, i === 0 ? C : G) + t(62 + i * 98, 40, s, { fill: i === 0 ? C : G, size: 7, anchor: 'middle' })).join('')}
+    <path d="M18 60H302" stroke="${L}"/>
+    ${t(18, 76, l("SPRING '27", "SPRING '27"), { fill: D, size: 7 })}
+    <path d="M30 90H290" stroke="${G}" stroke-width="1.2"/>
+    ${dot(30, 90)}${t(18, 106, l('8 Jan', '8.1.'), { fill: D, size: 7 })}${t(18, 117, 'Sandbox Preview', { size: 6.5 })}
+    ${dot(150, 90, C)}${t(150, 106, l('16 Jan', '16.1.'), { fill: C, size: 7, anchor: 'middle' })}${t(150, 117, l('first wave', 'erste Welle'), { size: 6.5, anchor: 'middle' })}
+    ${dot(290, 90)}${t(302, 106, l('to 20 Feb', 'bis 20.2.'), { fill: D, size: 7, anchor: 'end' })}${t(302, 117, l('production', 'Produktion'), { size: 6.5, anchor: 'end' })}
+    ${tag(18, 128, 150, l('6 checks per release', '6 Prüfungen je Release'))}${t(178, 141, l('first wave: 8 days of preview', 'erste Welle: 8 Tage Preview'), { size: 6.5 })}`,
 
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}

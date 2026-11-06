@@ -2,6 +2,7 @@
 title: "Agent Script: Geschäftsregeln gehören nicht ins LLM"
 description: "Kreditlimit, Garantieberechtigung und Preisfreigabe gehören in Agent-Script-Logik statt ins LLM. Wie hybrides Reasoning funktioniert und was Sie prüfen sollten."
 pubDate: 2026-10-27
+updatedDate: 2026-11-05
 lang: de
 slug: agent-script-regeln-statt-llm
 translationKey: agent-script-deterministic-rules
@@ -57,23 +58,13 @@ Für Entscheider zählen vier Bausteine. Ihr Partner sollte Ihnen zeigen können
 - **before_reasoning und after_reasoning.** `before_reasoning` läuft deterministisch zu Beginn jedes Parse, für Authentifizierung, Berechtigungsprüfung und das Laden von Kontext. `after_reasoning` läuft nach dem Modell, für Prüfungen und Übergänge. Ein Parse passiert beim ersten Eintritt, nach jedem Werkzeugaufruf und bei jeder Nutzereingabe.
 - **Eskalation.** `@utils.escalate` [übergibt das Gespräch an eine Servicemitarbeiterin](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-ref-utils.html) über Omni-Channel.
 
-Eine vereinfachte Skizze eines Kredit-Gates für Ersatzteilaufträge:
+Eine vereinfachte Skizze eines Kredit-Gates für Ersatzteilaufträge, in Worten:
 
-```
-before_reasoning:
-    if @variables.credit_checked == False:
-        run @actions.get_credit_status
-            with dealer_id=@variables.dealer_id
-            set @variables.credit_ok=@outputs.credit_ok
-        set @variables.credit_checked = True
-
-reasoning:
-    instructions: ->
-        if @variables.credit_ok == False:
-            | Explain that credit management must release the order first.
-    actions:
-        create_order: @actions.create_spare_parts_order
-            available when @variables.credit_ok == True
+```eintrag Kredit-Gate für Ersatzteilaufträge
+Vor dem Reasoning | Ist die Bonität noch nicht geprüft, ruft das Skript die Bonitätsabfrage mit der Händlernummer auf, speichert das Ergebnis und merkt sich die Prüfung
+Anweisung | Ist die Bonität nicht in Ordnung, erklärt der Agent, dass das Kreditmanagement den Auftrag zuerst freigeben muss
+Aktion | „Ersatzteilauftrag anlegen“ ist nur verfügbar, wenn die Bonität in Ordnung ist *
+fazit: Das Modell entscheidet nie über die Bonität. Es sieht die Auftragsaktion erst, wenn der Code das Gate geöffnet hat.
 ```
 
 Drei Details aus dem Leitfaden sollten Sie bei Ihrem Partner erfragen.
@@ -81,7 +72,7 @@ Drei Details aus dem Leitfaden sollten Sie bei Ihrem Partner erfragen.
 ```vertiefung Für Entwickler
 titel: Gate-Variablen, Schutzbedingung und is_displayable
 - **Code setzt die Gate-Variablen.** Setzt sie das LLM, „you've reintroduced the variability the gate was designed to prevent.“
-- **Die Schutzbedingung in der Skizze zählt.** Ohne sie läuft die ERP-Abfrage in `before_reasoning` bei jedem Parse, also mehrmals pro Eingabe, und jeder Lauf ist ein ERP-Aufruf.
+- **Die Schutzbedingung zählt** (`if @variables.credit_checked == False`). Ohne sie läuft die ERP-Abfrage in `before_reasoning` bei jedem Parse, also mehrmals pro Eingabe, und jeder Lauf ist ein ERP-Aufruf.
 - **`is_displayable` beendet die Schleife.** Eine solche Aktion beendet die Reasoning-Schleife, sobald ihr Ergebnis angezeigt wird, und `after_reasoning` entfällt. Eine Prüfung dort läuft dann nie.
 ```
 
