@@ -58,12 +58,15 @@ For the first path, what counts is whether the vendor has a package for Salesfor
 
 The [EU pricing page](https://www.salesforce.com/eu/service/call-center-integration/voice-pricing/) and the [Contact Center page](https://www.salesforce.com/service/contact-center/pricing/) list these prices per user and month in October 2026:
 
-| Option | List price | Telephony |
-|---|---|---|
-| Partner Contact Center | €50 | from your own partner, licensed separately |
-| Partner Contact Center with Amazon Connect | €75 to €200 | 750 to 5,000 minutes per user and month |
-| Contact Center (native) | €125 | native telephony, annual contract |
-| Contact Center Plus | €250 | adds workforce and quality management |
+```tabelle
+title: Salesforce Voice list prices per user and month, October 2026
+columns: | List price | Telephony
+Partner Contact Center | €50 * | from your own partner, licensed separately
+Partner Contact Center with Amazon Connect | €75 to €200 | 750 to 5,000 minutes per user and month
+Contact Center (native) | €125 | native telephony, annual contract
+Contact Center Plus | €250 | adds workforce and quality management
+note: All options are billed per user and month with an annual contract.
+```
 
 An example with list prices: 40 service agents on Partner Contact Center cost €2,000 per month or €24,000 per year, on top of the telephony vendor's licence. According to the footnote, transcription on this path must also be licensed from the partner. With the native Contact Center it is €60,000 per year, but the telephony vendor goes away.
 
@@ -73,9 +76,16 @@ The comparison only works with the cost of today's telephony next to it. A compa
 
 The switch means more than a new softphone. According to the [migration guide](https://developer.salesforce.com/docs/service/api-cti/guide/migrate-cti.html), the following changes fundamentally:
 
-- **Data model.** Open CTI usually logs calls as tasks. Salesforce Voice creates VoiceCall records. Every report and dashboard on calls has to be rebuilt on the new object.
-- **Screen pop and presence.** Both move to Omni-Channel. Screen pop becomes an action in an Omni-Channel flow, and agent status is managed in Omni-Channel.
-- **Custom UI.** Whatever runs in the softphone's iframe today has to be rebuilt with Voice Extensions and the Voice Toolkit.
+```vergleich
+without: Open CTI today
+- Calls are logged as tasks, reports and dashboards build on them.
+- Screen pop and agent status run in the vendor's softphone.
+- Custom UI runs in the softphone's iframe.
+with: Salesforce Voice
+- Every call creates a VoiceCall record, so reports are rebuilt on the new object.
+- Screen pop becomes an action in an Omni-Channel flow, presence lives in Omni-Channel.
+- Custom UI is rebuilt with Voice Extensions and the Voice Toolkit.
+```
 
 Then there are the interfaces. Telephony rarely depends on Salesforce alone: caller identification needs customer data, callbacks need appointments, and some information comes from the ERP. I was involved in a global CTI rollout with Service Cloud Voice, Genesys, MuleSoft and Microsoft Teams. That list alone shows how many systems a hotline depends on, and every one of these connections has to be tested again during the switch. How I plan interfaces is described under [Salesforce integration](../../services/salesforce-integration/).
 

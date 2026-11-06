@@ -58,12 +58,15 @@ Für den ersten Weg zählt, ob der Anbieter ein Paket für Salesforce Voice hat.
 
 Die [EU-Preisseite](https://www.salesforce.com/eu/service/call-center-integration/voice-pricing/) und die Seite zum [Contact Center](https://www.salesforce.com/service/contact-center/pricing/) nennen im Oktober 2026 diese Listenpreise pro Nutzer und Monat:
 
-| Variante | Listenpreis | Telefonie |
-|---|---|---|
-| Partner Contact Center | 50 € | vom eigenen Partner, separat lizenziert |
-| Partner Contact Center mit Amazon Connect | 75 € bis 200 € | 750 bis 5.000 Minuten pro Nutzer und Monat |
-| Contact Center (nativ) | 125 € | native Telefonie, Jahresvertrag |
-| Contact Center Plus | 250 € | dazu Workforce und Quality Management |
+```tabelle
+titel: Listenpreise Salesforce Voice pro Nutzer und Monat, Oktober 2026
+spalten: | Listenpreis | Telefonie
+Partner Contact Center | 50 € * | vom eigenen Partner, separat lizenziert
+Partner Contact Center mit Amazon Connect | 75 € bis 200 € | 750 bis 5.000 Minuten pro Nutzer und Monat
+Contact Center (nativ) | 125 € | native Telefonie, Jahresvertrag
+Contact Center Plus | 250 € | dazu Workforce und Quality Management
+fazit: Alle Varianten werden pro Nutzer und Monat mit Jahresvertrag abgerechnet.
+```
 
 Ein Rechenbeispiel mit Listenpreisen: 40 Servicemitarbeiter mit Partner Contact Center kosten 2.000 € pro Monat oder 24.000 € pro Jahr, zusätzlich zur Lizenz des Telefonieanbieters. Transkription muss bei diesem Weg laut Fußnote ebenfalls beim Partner lizenziert werden. Mit dem nativen Contact Center sind es 60.000 € pro Jahr, dafür entfällt der Telefonieanbieter.
 
@@ -73,9 +76,16 @@ Der Vergleich gelingt nur mit den Kosten der heutigen Telefonie daneben. Wer ein
 
 Die Umstellung bedeutet mehr als ein neues Softphone. Laut [Migrationsleitfaden](https://developer.salesforce.com/docs/service/api-cti/guide/migrate-cti.html) ändert sich Folgendes grundlegend:
 
-- **Datenmodell.** Open CTI protokolliert Anrufe meist als Aufgaben. Salesforce Voice legt VoiceCall-Datensätze an. Jeder Bericht und jedes Dashboard über Anrufe muss auf das neue Objekt umgebaut werden.
-- **Screen Pop und Präsenz.** Beides läuft künftig über Omni-Channel. Screen Pop wird zu einer Aktion in einem Omni-Channel-Flow, der Status der Mitarbeiter wird in Omni-Channel gesteuert.
-- **Eigene Oberflächen.** Was heute in einem iFrame des Softphones läuft, muss mit Voice Extensions und dem Voice Toolkit neu gebaut werden.
+```vergleich
+ohne: Open CTI heute
+- Anrufe landen als Aufgaben, Berichte und Dashboards bauen darauf auf.
+- Screen Pop und Mitarbeiterstatus laufen im Softphone des Anbieters.
+- Eigene Oberflächen laufen im iFrame des Softphones.
+mit: Salesforce Voice
+- Jeder Anruf legt einen VoiceCall-Datensatz an, Berichte werden auf das neue Objekt umgebaut.
+- Screen Pop wird eine Aktion im Omni-Channel-Flow, der Status liegt in Omni-Channel.
+- Eigene Oberflächen entstehen neu mit Voice Extensions und dem Voice Toolkit.
+```
 
 Dazu kommen die Schnittstellen. Telefonie hängt selten nur an Salesforce: Rufnummernerkennung braucht Kundendaten, Rückrufe brauchen Termine, und manche Informationen kommen aus dem ERP. Ich war an einem globalen CTI-Rollout mit Service Cloud Voice, Genesys, MuleSoft und Microsoft Teams beteiligt. Schon diese Liste zeigt, wie viele Systeme an einer Hotline hängen, und jede dieser Verbindungen muss bei der Umstellung neu getestet werden. Wie ich Schnittstellen plane, steht unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
