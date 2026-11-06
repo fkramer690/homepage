@@ -283,6 +283,18 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 140, l('known gaps: tasks not primed, iOS loads LWC after cold start', 'bekannte Lücken: Tasks nicht geladen, iOS lädt LWC erst nach Kaltstart'), { size: 7 })}
     ${t(18, 153, l('test offline with a partner user (community licence)', 'offline mit Partnernutzer testen (Community-Lizenz)'), { fill: C, size: 7 })}`,
 
+  'field-service-mobile-flow-limits': (l) => `
+    ${t(18, 18, l('WHAT RUNS IN THE APP (HELP PAGES 11/2026)', 'WAS IN DER APP LÄUFT (HILFESEITEN 11/2026)'), { fill: D, size: 7 })}
+    ${box(134, 26, 72, 96)}${t(170, 40, l('FSM FLOW', 'FSM-FLOW'), { fill: D, size: 7, anchor: 'middle' })}
+    ${box(214, 26, 88, 96, C)}${t(258, 40, 'DATA CAPTURE', { fill: C, size: 7, anchor: 'middle' })}
+    ${[[l('data table', 'Data Table'), 'x'], ['Transform', 'x'], ['IN / NOT IN', '?'], [l('visibility rules', 'Sichtbarkeitsregeln'), 'v'], ['Section', 'v']].map(([s, dc], i) => {
+      const y = 56 + i * 14;
+      return t(18, y + 3, s, { size: 7 }) + cross(170, y) + (dc === 'x' ? cross(258, y) : dc === 'v' ? check(254, y - 1) : t(258, y + 3, '?', { size: 8, anchor: 'middle' }));
+    }).join('')}
+    <path d="M18 128H302" stroke="${L}"/>
+    ${t(18, 139, l("Winter '27: native runtime, limits list not updated", "Winter '27: native Laufzeit, Liste nicht angepasst"), { size: 7 })}
+    ${t(18, 151, l('multi-select: lookup or repeater in Data Capture', 'Mehrfachauswahl: Lookup oder Repeater in Data Capture'), { fill: C, size: 7 })}`,
+
   'field-service-mobile-release-testing': (l) => `
     ${t(18, 18, l('EACH APP VERSION', 'JEDE APP-VERSION'), { fill: D, size: 7 })}
     <path d="M24 60H300" stroke="${G}" stroke-width="1.2"/>
