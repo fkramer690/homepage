@@ -18,6 +18,20 @@ export type HubFigure =
     };
 const hubFigure = (figure: HubFigure | null) => figure;
 
+// Optional intro video of a masterclass hub (files in public/videos/<file>.mp4 + .jpg, rules:
+// docs/masterclass.md, "Intro video"). Only in the language it is spoken in; null elsewhere.
+// `landscape`: 16:9 instead of the 9:16 shorts of the blog. `watch`: text on the card.
+export type CourseVideo = {
+  file: string;
+  title: string;
+  duration: number;
+  uploadDate: string;
+  landscape: boolean;
+  watch: string;
+  transcript: string;
+};
+const courseVideo = (video: CourseVideo | null) => video;
+
 export const en = {
   lang: 'en',
   meta: {
@@ -451,6 +465,7 @@ export const en = {
   },
   masterclassDevops: {
     name: 'DevOps masterclass',
+    video: courseVideo(null),
     metaTitle: 'DevOps masterclass: Salesforce releases in manufacturing',
     metaDescription: 'Ten chapters on Salesforce DevOps and release management at manufacturing companies: ownership, environments, tools, pipeline, quality and operations.',
     eyebrow: 'Masterclass · October 2026',
