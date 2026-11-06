@@ -902,6 +902,20 @@ const drawings: Record<string, Drawing> = {
     ${box(226, 30, 78, 46, C)}${t(265, 48, l('1 object =', '1 Objekt ='), { fill: C, size: 7, anchor: 'middle' })}${t(265, 62, l('1 owner', '1 Owner'), { fill: C, size: 7, anchor: 'middle' })}
     ${t(226, 100, l('8 streams', '8 Streams'), { size: 7 })}${t(226, 114, l('30+ developers', '30+ Entwickler'), { size: 7 })}${t(226, 128, l('~3 months', '~3 Monate'), { size: 7 })}${t(226, 142, l('80 % in v1', '80 % in V1'), { size: 7 })}`,
 
+  'choose-salesforce-implementation-partner': (l) => `
+    ${t(18, 20, l('PITCH VS. PROJECT', 'PITCH VS. PROJEKT'), { fill: D, size: 7 })}
+    ${box(18, 28, 120, 26)}${t(78, 44, l('Pitch: senior team', 'Pitch: Senior-Team'), { size: 7, anchor: 'middle' })}
+    ${arrow(140, 41, 180)}
+    ${box(182, 28, 120, 26, C)}${t(242, 44, l('Project: many juniors', 'Projekt: viele Junioren'), { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M18 66H302" stroke="${L}"/>
+    ${t(18, 82, l('CHECK BEFORE THE AWARD', 'VOR DER VERGABE PRÜFEN'), { fill: D, size: 7 })}
+    ${check(18, 92)}${t(30, 98, l('edge cases in discovery', 'Randfälle in Discovery'), { size: 7 })}
+    ${check(18, 104)}${t(30, 110, l('team by name', 'Team mit Namen'), { size: 7 })}
+    ${check(18, 116)}${t(30, 122, l('quality gates per milestone', 'Quality Gates je Meilenstein'), { size: 7 })}
+    ${check(170, 92)}${t(182, 98, l('repo with the client', 'Repo beim Kunden'), { size: 7 })}
+    ${check(170, 104)}${t(182, 110, l('lessons from failures', 'Lehren aus Fehlern'), { size: 7 })}
+    ${tag(18, 132, 170, l('references: briefed by partner', 'Referenzen: vom Partner gebrieft'))}`,
+
   'salesforce-freelancer-or-consultancy': (l) => `
     ${t(18, 20, l('WHO BUILDS, WHO DECIDES', 'WER BAUT, WER ENTSCHEIDET'), { fill: D, size: 7 })}
     ${box(18, 30, 130, 72)}${t(28, 46, l('CONSULTANCY', 'AGENTUR · PARTNER'), { fill: D, size: 7 })}

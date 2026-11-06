@@ -69,6 +69,9 @@ export const freelanceArchitect = {
       more: 'Wann was passt, ausführlich:',
       moreLink: 'blog/salesforce-freelancer-oder-agentur/',
       moreText: 'Salesforce-Freelancer oder Agentur',
+      more2: 'Und wie Sie den Partner auswählen:',
+      moreLink2: 'blog/salesforce-implementierungspartner-auswaehlen/',
+      moreText2: 'Salesforce-Implementierungspartner auswählen',
     },
     deliverables: {
       label: 'Ergebnisse',
@@ -168,6 +171,9 @@ export const freelanceArchitect = {
       more: 'When which fits, in detail:',
       moreLink: 'blog/salesforce-freelancer-or-consultancy/',
       moreText: 'Salesforce freelancer or consultancy',
+      more2: 'And how to choose the partner:',
+      moreLink2: 'blog/how-to-choose-a-salesforce-implementation-partner/',
+      moreText2: 'How to choose a Salesforce implementation partner',
     },
     deliverables: {
       label: 'Results',

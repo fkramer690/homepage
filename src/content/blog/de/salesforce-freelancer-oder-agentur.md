@@ -51,7 +51,7 @@ Eine Agentur oder ein Implementierungspartner ist die richtige Wahl, wenn Sie Ka
 - **Betrieb und Support.** Störungen am Montagmorgen, Releases dreimal im Jahr, neue Nutzer: Das braucht eine Organisation, keinen Einzelnen.
 - **Spitzen in der Umsetzung.** Vor einem Go-live mehr Leute, danach weniger. Das kann ein Partner, ein Freelancer kann es nicht.
 
-Ein guter Partner bringt dazu eigene Architekten mit. Das ist sinnvoll, solange es nur einen Partner gibt und der Kunde dessen Entscheidungen nachvollziehen kann.
+Ein guter Partner bringt dazu eigene Architekten mit. Das ist sinnvoll, solange es nur einen Partner gibt und der Kunde dessen Entscheidungen nachvollziehen kann. Woran Sie einen guten Partner schon im Angebot erkennen, steht in [Salesforce-Implementierungspartner auswählen](../salesforce-implementierungspartner-auswaehlen/).
 
 ## Wann passt ein unabhängiger Architekt besser?
 
