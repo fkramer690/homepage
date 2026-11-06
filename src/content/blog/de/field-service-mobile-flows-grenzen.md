@@ -1,5 +1,5 @@
 ---
-title: "Grenzen von Flows in der Field Service Mobile App"
+title: "Field Service Mobile App: Flow-Grenzen in Winter '27"
 description: "Welche Flow-Funktionen die Salesforce Field Service Mobile App nicht unterstützt, was Data Capture verbessert und welche Lücken einen Umbau verlangen."
 pubDate: 2026-11-06
 lang: de
@@ -9,7 +9,7 @@ topic: field-service
 categories: [field-service]
 tags: [field service, außendienst, mobile, flow, data capture, offline]
 takeaways:
-  - "Die App führt zwei Flow-Typen aus. Der klassische Typ ist weiter stark eingeschränkt, Data Capture bekam seit Winter '26 in jedem Release Neues."
+  - "Die App führt zwei Flow-Typen aus. Der klassische Typ ist weiter stark eingeschränkt, Data Capture erhielt seit Winter '26 in jedem Release eine neue Funktion."
   - "Es gibt keine mobile Data Table und keinen gleichwertigen Ersatz. Der Lookup in Data Capture ist der einzige dokumentierte Weg zur Mehrfachauswahl."
   - "Der klassische Typ kennt kein IN oder NOT IN, keine bedingte Sichtbarkeit und keine Section. IF(), AND() und OR() fehlen, && und || gehen."
   - "Data-Capture-Formulare lassen sich offline ausfüllen, Datensätze ändern sie aber erst, wenn das Gerät wieder online ist."
@@ -18,15 +18,15 @@ faq:
   - q: "Kann ich in einem Field Service Mobile Flow eine Data Table verwenden?"
     a: "Nein. Salesforce schreibt, dass die Screen-Komponente Data Table nicht mit mobilen Geräten kompatibel ist, und in der Liste der Data-Capture-Komponenten fehlt sie. Mit dem Lookup in Data Capture wählt ein Techniker einen oder mehrere Datensätze; für eine Tabelle mit Checkbox pro Zeile gibt es keinen Standardersatz."
   - q: "Funktioniert der IN-Operator in der Field Service Mobile App?"
-    a: "Gehen Sie davon aus, dass nicht. Die Flow-Hinweise für die Mobile App führen In und Not In als nicht unterstützt, ohne Ausnahme für Data Capture, und die Data-Capture-Seite erwähnt sie nicht. Bilden Sie die Prüfung mit einzelnen Bedingungen ab oder verlagern Sie die Logik ins Backend."
+    a: "Behandeln Sie den Operator als nicht unterstützt. Die Flow-Hinweise für die Mobile App führen In und Not In als nicht unterstützt, ohne Ausnahme für Data Capture, und die Data-Capture-Seite erwähnt sie nicht. Bilden Sie die Prüfung mit einzelnen Bedingungen ab oder verlagern Sie die Logik ins Backend."
   - q: "Was unterscheidet einen Field Service Mobile Flow von einem Data-Capture-Flow?"
-    a: "Beide laufen in der Field Service Mobile App. Data Capture braucht Lightning Data Service und unterstützt bedingte Sichtbarkeit, Sections, Repeater, Lookups und 50 Formelfunktionen, dem älteren Typ Field Service Mobile Flow fehlen diese Screen-Funktionen, und er kennt nur 25 Formelfunktionen. In Data Capture laufen Anlegen, Ändern und Löschen erst, wenn das Gerät online ist."
+    a: "Beide laufen in der Field Service Mobile App. Data Capture braucht Lightning Data Service und unterstützt bedingte Sichtbarkeit, Sections, Repeater, Lookups und 50 Formelfunktionen. Dem älteren Field Service Mobile Flow fehlen diese Screen-Funktionen, und er kennt nur 25 Formelfunktionen. In Data Capture laufen Anlegen, Ändern und Löschen erst, wenn das Gerät online ist."
   - q: "Verhalten sich mobile Flows nach Winter '27 noch genauso?"
     a: "Nicht unbedingt. Seit Winter '27 laufen Flows in der App auf einer nativen Architektur, verteilt über die Patches 264 bis 264.3, und die Screens sehen aus wie normale Datensatzformulare. Die Seite mit den Einschränkungen listet weiter die alten Grenzen, testen Sie also jeden mobilen Flow neu."
 draft: false
 ---
 
-Die Salesforce Field Service Mobile App führt zwei Flow-Typen aus, und für neue Formulare im Außendienst ist Data Capture meist die bessere Wahl: bedingte Sichtbarkeit, Sections, Repeater, ein Lookup für mehrere Datensätze, und die Formulare lassen sich offline ausfüllen. Keiner der beiden Typen hat eine Data Table, um Datensätze aus einer Liste zu wählen, und keiner unterstützt den IN-Operator. Offline sammelt Data Capture die Antworten, legt Datensätze aber erst an oder ändert sie, wenn das Gerät wieder online ist. Dem klassischen Field Service Mobile Flow fehlt das meiste davon. Mit Winter '27 laufen beide auf einer neuen nativen Laufzeit, jeder bestehende mobile Flow braucht also einen neuen Test am Gerät.
+Die Salesforce Field Service Mobile App führt zwei Flow-Typen aus. Für neue Technikerformulare ist Data Capture meist die bessere Wahl: Es unterstützt bedingte Sichtbarkeit, Sections, Repeater und einen Lookup für mehrere Datensätze, und die Formulare lassen sich offline ausfüllen. Keiner der beiden Typen hat eine Data Table, um Datensätze aus einer Liste zu wählen, und keiner unterstützt den IN-Operator. Offline sammelt Data Capture die Antworten, legt Datensätze aber erst an oder ändert sie, wenn das Gerät wieder online ist. Dem klassischen Field Service Mobile Flow fehlt das meiste davon. Mit Winter '27 laufen beide auf einer neuen nativen Laufzeit, jeder bestehende mobile Flow braucht also einen neuen Test am Gerät.
 
 ## In der App laufen zwei Flow-Typen, und sie können nicht dasselbe
 
@@ -64,7 +64,7 @@ In meinen Field-Service-Projekten schmerzt diese Lücke am meisten. Techniker m�
 Einen gleichwertigen Ersatz gibt es nicht. Was Salesforce für Data Capture dokumentiert:
 
 - **Lookup-Komponente (Spring '26).** Der Techniker sucht einen oder mehrere Datensätze, etwa Assets, und wählt sie aus, auch offline. Das ist die einzige dokumentierte Mehrfachauswahl. Sie passt, wenn der Techniker weiß, wonach er sucht. Eine vorbereitete Liste zum Abhaken zeigt sie nicht.
-- **Repeater mit Datenquelle (Summer '26).** Eine Collection füllt die Zeilen vorab, der Techniker prüft oder ändert jede Zeile. Der Repeater ist dafür gedacht, Daten zu mehreren Positionen zu erfassen, nicht dafür, sie auszuwählen. Eine Auswahl lässt sich mit einer Checkbox pro Zeile nachbauen und nach dem Screen auswerten, bis 30 Zeilen.
+- **Repeater mit Datenquelle (Summer '26).** Eine Collection füllt die Zeilen vorab, der Techniker prüft oder ändert jede Zeile. Der Repeater ist dafür gedacht, Daten zu mehreren Positionen zu erfassen, nicht dafür, sie auszuwählen. Bei höchstens 30 Zeilen lässt sich eine Auswahl mit einer Checkbox pro Zeile nachbauen und nach dem Screen auswerten.
 
 Rechenbeispiel: Bei der Jahreswartung einer Verpackungslinie muss der Techniker markieren, welche von acht Baugruppen er geprüft hat und welche einen Folgeauftrag brauchen. Am Desktop ist das eine Data Table mit acht Checkboxen. In Data Capture werden daraus entweder acht Lookup-Suchen oder ein Repeater mit acht vorbefüllten Zeilen und je einer Checkbox, dazu ein Loop nach dem Screen, der die angehakten Zeilen einsammelt.
 
@@ -95,7 +95,7 @@ Bei Prüf- und Abnahmeprotokollen ist das die Grenze, die ich als erste mit der 
 
 ## Datum und Uhrzeit verhalten sich offline anders
 
-Die Eingabe von Datum und Uhrzeit ist nicht das Problem. Data Capture hat eine eigene Komponente Date & Time mit Minimum, Maximum und Standardwert. Der Ärger beginnt drumherum, und es hilft, vier Zeitpunkte zu trennen: wann die Arbeit stattfand, wann eine Formel ausgewertet wurde, wann der Datensatz synchronisiert wurde und die Audit-Felder des Datensatzes.
+Die Eingabe von Datum und Uhrzeit ist nicht das Problem. Data Capture hat eine eigene Komponente Date & Time mit Minimum, Maximum und Standardwert. Die Schwierigkeiten liegen im weiteren Ablauf, und es hilft, vier Zeitpunkte zu trennen: wann die Arbeit stattfand, wann eine Formel ausgewertet wurde, wann der Datensatz synchronisiert wurde und welche Zeiten in den Audit-Feldern stehen.
 
 - **NOW() offline.** Laut den [Offline-Hinweisen](https://help.salesforce.com/s/articleView?language=en_US&id=service.mfs_offline_considerations.htm&type=5) liefert NOW() in einem Datum/Uhrzeit-Feld den Zeitpunkt, zu dem der Datensatz mit dem Server synchronisiert wurde, nicht die Uhrzeit auf dem Gerät.
 - **Audit-Felder.** Erstell- und Änderungsdatum offline geänderter Datensätze stimmen nur mit der Einstellung "Accurate Record Dates for Offline", die der Salesforce-Support aktiviert. Einen fachlichen Zeitstempel aus NOW() korrigiert sie nicht.
