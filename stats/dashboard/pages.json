@@ -6,23 +6,28 @@
  },
  {
   "page": "/en/",
-  "pageviews": 100,
+  "pageviews": 120,
   "visits": 30
  },
  {
   "page": "/blog/",
-  "pageviews": 60,
+  "pageviews": 70,
   "visits": 10
  },
  {
   "page": "/leistungen/change-management/",
-  "pageviews": 40,
+  "pageviews": 70,
   "visits": 0
  },
  {
   "page": "/fragen/",
   "pageviews": 40,
   "visits": 0
+ },
+ {
+  "page": "/partner/juliane-winterscheid/",
+  "pageviews": 40,
+  "visits": 10
  },
  {
   "page": "/homepage/",
@@ -35,12 +40,7 @@
   "visits": 0
  },
  {
-  "page": "/partner/juliane-winterscheid/",
-  "pageviews": 30,
-  "visits": 10
- },
- {
-  "page": "/masterclass/",
+  "page": "/masterclass/ki-salesforce/",
   "pageviews": 20,
   "visits": 0
  },
@@ -50,7 +50,12 @@
   "visits": 0
  },
  {
-  "page": "/masterclass-ki/",
+  "page": "/leistungen/salesforce-architektur/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
+  "page": "/leistungen/",
   "pageviews": 20,
   "visits": 0
  },
@@ -60,19 +65,24 @@
   "visits": 0
  },
  {
+  "page": "/en/blog/ai-native-salesforce-delivery-process/",
+  "pageviews": 20,
+  "visits": 20
+ },
+ {
+  "page": "/masterclass-ki/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
+  "page": "/masterclass/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
   "page": "/masterclass/revenue-cloud/",
   "pageviews": 20,
   "visits": 10
- },
- {
-  "page": "/leistungen/salesforce-architektur/",
-  "pageviews": 20,
-  "visits": 0
- },
- {
-  "page": "/en/masterclass/ai-salesforce/",
-  "pageviews": 10,
-  "visits": 0
  },
  {
   "page": "/en/blog/copado-gearset-provar-ai-agents/",
@@ -80,22 +90,12 @@
   "visits": 0
  },
  {
-  "page": "/blog/sfdx-hardis-oder-devops-center-vergleich/",
+  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
   "pageviews": 10,
-  "visits": 0
+  "visits": 10
  },
  {
-  "page": "/blog/salesforce-architektur-entscheidungslog/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/masterclass/ki-salesforce/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/masterclass/manufacturing-cloud/",
+  "page": "/en/masterclass/ai-salesforce/",
   "pageviews": 10,
   "visits": 0
  }

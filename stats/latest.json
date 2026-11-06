@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-05T13:10:15.250Z",
+  "generatedAt": "2026-11-06T04:47:46.865Z",
   "range": {
-    "start": "2026-10-06",
-    "end": "2026-11-05"
+    "start": "2026-10-07",
+    "end": "2026-11-06"
   },
   "browsers": [
     {
@@ -15,21 +15,30 @@
       }
     },
     {
-      "count": 80,
-      "dimensions": {
-        "userAgentBrowser": "Unknown"
-      },
-      "sum": {
-        "visits": 50
-      }
-    },
-    {
-      "count": 50,
+      "count": 150,
       "dimensions": {
         "userAgentBrowser": "MobileSafari"
       },
       "sum": {
         "visits": 20
+      }
+    },
+    {
+      "count": 110,
+      "dimensions": {
+        "userAgentBrowser": "Unknown"
+      },
+      "sum": {
+        "visits": 70
+      }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "userAgentBrowser": "ChromeMobile"
+      },
+      "sum": {
+        "visits": 30
       }
     },
     {
@@ -39,15 +48,6 @@
       },
       "sum": {
         "visits": 30
-      }
-    },
-    {
-      "count": 30,
-      "dimensions": {
-        "userAgentBrowser": "ChromeMobile"
-      },
-      "sum": {
-        "visits": 10
       }
     },
     {
@@ -71,21 +71,21 @@
   ],
   "countries": [
     {
-      "count": 820,
+      "count": 940,
       "dimensions": {
         "countryName": "DE"
       },
       "sum": {
-        "visits": 120
+        "visits": 130
       }
     },
     {
-      "count": 90,
+      "count": 110,
       "dimensions": {
         "countryName": "US"
       },
       "sum": {
-        "visits": 70
+        "visits": 90
       }
     },
     {
@@ -107,12 +107,12 @@
       }
     },
     {
-      "count": 10,
+      "count": 20,
       "dimensions": {
         "countryName": "IN"
       },
       "sum": {
-        "visits": 10
+        "visits": 20
       }
     },
     {
@@ -226,32 +226,32 @@
       }
     },
     {
-      "count": 110,
+      "count": 260,
       "dimensions": {
         "date": "2026-11-05"
       },
       "sum": {
-        "visits": 60
+        "visits": 100
       }
     }
   ],
   "devices": [
     {
-      "count": 840,
+      "count": 860,
       "dimensions": {
         "deviceType": "desktop"
       },
       "sum": {
-        "visits": 170
+        "visits": 190
       }
     },
     {
-      "count": 150,
+      "count": 280,
       "dimensions": {
         "deviceType": "mobile"
       },
       "sum": {
-        "visits": 70
+        "visits": 90
       }
     }
   ],
@@ -266,7 +266,7 @@
       }
     },
     {
-      "count": 100,
+      "count": 120,
       "dimensions": {
         "requestPath": "/en/"
       },
@@ -275,7 +275,7 @@
       }
     },
     {
-      "count": 60,
+      "count": 70,
       "dimensions": {
         "requestPath": "/blog/"
       },
@@ -284,7 +284,7 @@
       }
     },
     {
-      "count": 40,
+      "count": 70,
       "dimensions": {
         "requestPath": "/leistungen/change-management/"
       },
@@ -299,6 +299,15 @@
       },
       "sum": {
         "visits": 0
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "requestPath": "/partner/juliane-winterscheid/"
+      },
+      "sum": {
+        "visits": 10
       }
     },
     {
@@ -320,18 +329,9 @@
       }
     },
     {
-      "count": 30,
-      "dimensions": {
-        "requestPath": "/partner/juliane-winterscheid/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
       "count": 20,
       "dimensions": {
-        "requestPath": "/masterclass/"
+        "requestPath": "/masterclass/ki-salesforce/"
       },
       "sum": {
         "visits": 0
@@ -349,7 +349,16 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/masterclass-ki/"
+        "requestPath": "/leistungen/salesforce-architektur/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/leistungen/"
       },
       "sum": {
         "visits": 0
@@ -367,28 +376,37 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/masterclass/revenue-cloud/"
+        "requestPath": "/en/blog/ai-native-salesforce-delivery-process/"
       },
       "sum": {
-        "visits": 10
+        "visits": 20
       }
     },
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/leistungen/salesforce-architektur/"
+        "requestPath": "/masterclass-ki/"
       },
       "sum": {
         "visits": 0
       }
     },
     {
-      "count": 10,
+      "count": 20,
       "dimensions": {
-        "requestPath": "/en/masterclass/ai-salesforce/"
+        "requestPath": "/masterclass/"
       },
       "sum": {
         "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/masterclass/revenue-cloud/"
+      },
+      "sum": {
+        "visits": 10
       }
     },
     {
@@ -403,34 +421,16 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/blog/sfdx-hardis-oder-devops-center-vergleich/"
+        "requestPath": "/en/blog/salesforce-dx-mcp-server-end-of-life/"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     },
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/blog/salesforce-architektur-entscheidungslog/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/masterclass/ki-salesforce/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/masterclass/manufacturing-cloud/"
+        "requestPath": "/en/masterclass/ai-salesforce/"
       },
       "sum": {
         "visits": 0
@@ -439,7 +439,7 @@
   ],
   "referers": [
     {
-      "count": 690,
+      "count": 800,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
@@ -448,12 +448,12 @@
       }
     },
     {
-      "count": 210,
+      "count": 240,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 210
+        "visits": 240
       }
     },
     {
@@ -478,6 +478,15 @@
       "count": 10,
       "dimensions": {
         "refererHost": "www.linkedin.com"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "refererHost": "com.linkedin.android"
       },
       "sum": {
         "visits": 10

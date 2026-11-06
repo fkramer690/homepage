@@ -5,24 +5,24 @@
   "visits": 110
  },
  {
-  "browser": "Unknown",
-  "pageviews": 80,
-  "visits": 50
+  "browser": "MobileSafari",
+  "pageviews": 150,
+  "visits": 20
  },
  {
-  "browser": "MobileSafari",
+  "browser": "Unknown",
+  "pageviews": 110,
+  "visits": 70
+ },
+ {
+  "browser": "ChromeMobile",
   "pageviews": 50,
-  "visits": 20
+  "visits": 30
  },
  {
   "browser": "Edge",
   "pageviews": 40,
   "visits": 30
- },
- {
-  "browser": "ChromeMobile",
-  "pageviews": 30,
-  "visits": 10
  },
  {
   "browser": "Firefox",
