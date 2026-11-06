@@ -36,7 +36,7 @@ Das [Trailhead-Modul zu Offline-Briefcases](https://trailhead.salesforce.com/con
 - **Briefcases.** In Briefcase Builder wählt ein Admin Objekte, Filter und die Nutzer oder Gruppen, für die ein Briefcase gilt. Auch eigene Objekte können so offline verfügbar werden.
 - **Performance Priming.** Es nutzt die Briefcases, um genau die Datensätze und Metadaten zu laden, die das Profil eines Technikers braucht, hält mehr Datensätze als Standard-Priming und synchronisiert die wichtigsten Änderungen alle fünf Minuten.
 
-Offline erfasste Änderungen speichert das Gerät und überträgt sie an Salesforce, sobald die Verbindung zurück ist. Flows, die auf Datensätze aus dem Briefcase zugreifen, laufen ebenfalls offline. Das ist für Formulare und geführte Arbeitsschritte wichtig.
+Offline erfasste Änderungen speichert das Gerät und überträgt sie an Salesforce, sobald die Verbindung zurück ist. Flows, die auf Datensätze aus dem Briefcase zugreifen, laufen ebenfalls offline. Das ist für Formulare und geführte Arbeitsschritte wichtig. Data Capture legt Datensätze offline aber erst an oder ändert sie, wenn das Gerät wieder online ist; diese und weitere Grenzen stehen in [Field Service Mobile App: Flow-Grenzen](../field-service-mobile-flows-grenzen/).
 
 Was Salesforce nicht veröffentlicht, ist eine feste Zahl an Datensätzen, die ein Gerät halten kann. Ich habe keine offizielle Grenze gefunden und würde deshalb auch nicht mit einer planen. Schneiden Sie den Briefcase nach Rolle zu und messen Sie, wie lange das Priming auf einem echten Gerät dauert.
 

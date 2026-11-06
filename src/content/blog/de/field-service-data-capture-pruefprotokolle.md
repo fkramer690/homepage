@@ -40,7 +40,7 @@ Was ein Formular enthalten kann:
 Für den Einsatz vor Ort zählen zwei Eigenschaften mehr als die Bausteine. Die Formulare funktionieren offline mit einer eigenen Offline-Engine, und die automatische Speicherung sichert jede Eingabe. Ein Techniker kann ein Formular an der Maschine schließen und später weitermachen. Jede Übermittlung wird protokolliert, online wie offline.
 
 ```hinweis achtung
-Offline funktioniert nur, wenn die Datensätze, die das Formular liest, auf dem Gerät liegen. Welche Datensätze in den Briefcase gehören, steht in [Field Service App offline: Welche Daten aufs Gerät?](../field-service-app-offline-briefcase/).
+Offline funktioniert nur, wenn die Datensätze, die das Formular liest, auf dem Gerät liegen. Welche Datensätze in den Briefcase gehören, steht in [Field Service App offline: Welche Daten aufs Gerät?](../field-service-app-offline-briefcase/). Welche Flow-Funktionen Data Capture gegenüber einem Desktop-Flow noch fehlen, etwa die Data Table, steht in [Field Service Mobile App: Flow-Grenzen](../field-service-mobile-flows-grenzen/).
 ```
 
 ## Voice to Form ist seit Spring '26 allgemein verfügbar

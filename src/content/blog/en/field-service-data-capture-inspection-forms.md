@@ -40,7 +40,7 @@ What a form can contain:
 For field work, two properties matter more than the components. The forms work offline with a dedicated offline engine, and auto-save captures every entry, so a technician can close a form at the machine and resume it later. Every submission is logged, online or offline.
 
 ```hinweis achtung
-Offline only works if the records the form reads are on the device. Which records belong in the briefcase is covered in [Field Service mobile offline: which data goes on the device?](../field-service-mobile-app-offline-data/).
+Offline only works if the records the form reads are on the device. Which records belong in the briefcase is covered in [Field Service mobile offline: which data goes on the device?](../field-service-mobile-app-offline-data/). Which flow features Data Capture still lacks compared with a desktop flow, such as the data table, is covered in [Field Service mobile flow limitations](../field-service-mobile-flow-limitations/).
 ```
 
 ## Voice to Form has been generally available since Spring '26

@@ -210,3 +210,17 @@ const schema = {
     </div>
   </section>
 </Page>
+
+<script>
+  // Source chips (src/lib/source-chips.mjs): a click on a number opens the collapsed
+  // source list before the browser jumps to the entry.
+  const sources = document.querySelector<HTMLDetailsElement>('details.post-sources');
+  if (sources) {
+    const open = () => {
+      if (/^#quelle-\d+$/.test(location.hash)) sources.open = true;
+    };
+    document.querySelectorAll('a.cite').forEach((a) => a.addEventListener('click', () => (sources.open = true)));
+    window.addEventListener('hashchange', open);
+    open();
+  }
+</script>
