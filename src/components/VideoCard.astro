@@ -11,7 +11,7 @@ import type { Dict } from '../i18n/en';
 interface Props {
   t: Dict;
   part: 'card' | 'dialog';
-  video: { file: string; title: string; duration: number; transcript: string; landscape?: boolean; watch?: string };
+  video: { file: string; title: string; duration: number; transcript: string; landscape?: boolean; watch?: string; voice?: string };
   class?: string;
 }
 const { t, part, video, class: className } = Astro.props;
@@ -44,6 +44,7 @@ const [vw, vh] = landscape ? [1920, 1080] : [1080, 1920];
         <details class="video-dialog-transcript" open>
           <summary>{t.side.videoTranscript}</summary>
           <p>{video.transcript}</p>
+          {video.voice && <p>{video.voice}</p>}
         </details>
       </div>
     </div>

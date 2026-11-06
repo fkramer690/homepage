@@ -70,9 +70,9 @@ Each of the three sections has a heading plus one or two sentences below it (`de
 
 ## Intro video
 
-A hub can have a short intro video (up to about 60 seconds), set as `video` in its texts in `src/i18n/` (type `CourseVideo` in `src/i18n/en.ts`: `file`, `title`, `duration` in seconds, `uploadDate`, `landscape`, `watch` for the card's call to action, `transcript` word for word). Only the language it is spoken in gets it; the other language sets `video: courseVideo(null)`. The same rules as for blog videos apply (docs/blog-guidelines.md, "Video"): self-hosted in `public/videos/<file>.mp4` plus poster `<file>.jpg`, H.264/AAC with `+faststart`, captions burned in, loaded only on play. `MasterclassHub.astro` shows a card below the hero buttons that opens `VideoCard.astro` as an overlay (16:9 with the transcript below) and adds a `VideoObject` to the structured data.
+A hub can have a short intro video (up to about 60 seconds), set as `video` in its texts in `src/i18n/` (type `CourseVideo` in `src/i18n/en.ts`: `file`, `title`, `duration` in seconds, `uploadDate`, `landscape`, `watch` for the card's call to action, `transcript` word for word, optional `voice` for a note on the voice shown below the transcript). Only the language it is spoken in gets it; the other language sets `video: courseVideo(null)`. The same rules as for blog videos apply (docs/blog-guidelines.md, "Video"): self-hosted in `public/videos/<file>.mp4` plus poster `<file>.jpg`, H.264/AAC with `+faststart`, captions burned in, loaded only on play. `MasterclassHub.astro` shows a card below the hero buttons that opens `VideoCard.astro` as an overlay (16:9 with the transcript below) and adds a `VideoObject` to the structured data.
 
-The first one is the DevOps intro (German, 16:9). It is rendered from an HTML animation with Playwright and FFmpeg and voiced with the open-source Piper voice Thorsten (CC0); the source files are kept outside the repository.
+The first one is the DevOps intro (German, 16:9). It is rendered from an HTML animation with Playwright and FFmpeg and voiced with the OpenAI TTS voice Onyx, played 21 % faster (the standard voice for all videos); the transcript notes that the voice is AI-generated, as OpenAI requires. The source files are kept outside the repository.
 
 ## Chapter page
 
