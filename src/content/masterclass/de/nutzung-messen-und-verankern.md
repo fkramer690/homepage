@@ -29,40 +29,36 @@ Reinforcement, die letzte Stufe im ADKAR-Modell, sorgt dafür, dass eine Veränd
 
 ## Warum fällt die Nutzung nach dem Go-live ab?
 
-Die ersten Wochen nach dem Go-live sind verzerrt. Die Aufmerksamkeit ist hoch, Key User sind präsent, und viele probieren das neue System aus. Nach drei bis sechs Monaten ist das Projektteam weitergezogen, und dann zeigt sich, ob ein Prozess bleibt. Fällt eine Zahl in dieser Zeit ab, fehlt Reinforcement. Eine weitere Schulung ändert daran nichts, weil die Leute wissen, wie es geht. Es fehlen Gründe, dabeizubleiben: ein Sponsor, der nachfragt, Berichte, die auf den Daten aufbauen, und Prüfungen, die Abkürzungen auffallen lassen.
+Was in den ersten Wochen nach dem Go-live passiert, täuscht. Alle schauen hin, Key User sitzen mit im Team, und viele probieren das neue System aus Neugier. Nach drei bis sechs Monaten ist das Projektteam weitergezogen, und dann zeigt sich, ob ein Prozess bleibt. Fällt eine Zahl in dieser Zeit ab, fehlt Reinforcement. Eine weitere Schulung ändert daran nichts, weil die Leute wissen, wie es geht. Es fehlen Gründe, dabeizubleiben: ein Sponsor, der nachfragt, Berichte, die auf den Daten aufbauen, und Prüfungen, die Abkürzungen auffallen lassen.
 
-Viele Programme berichten nach dem Go-live, wie viele Personen geschult wurden. Die Zahl sagt, dass das Projekt seine Arbeit gemacht hat. Ob jemand anders arbeitet, sagt sie nicht.
+Die Zahl der geschulten Personen taugt dafür nicht als Maß. Sie belegt die Arbeit des Projekts, über den Alltag der Teams verrät sie nichts.
 
 ## Vier Ebenen, gemessen gegen den Ausgangswert vor dem Go-live
 
-Salesforce hilft beim Messen, weil fast alles, was ein Nutzer tut, einen Datensatz mit Zeitstempel und Besitzer hinterlässt. Ich messe auf vier Ebenen:
+In Salesforce hinterlässt fast jede Handlung einen Datensatz mit Zeitstempel und Besitzer, das macht Messen einfach. Ich messe auf vier Ebenen. Für die Masterclass ist wichtiger, was ein Einbruch auf einer Ebene über die ADKAR-Stufe verrät:
 
-| Ebene | Frage | Beispiele |
+| Ebene | Typische Zahl | Bricht sie ein, fehlt meist |
 |---|---|---|
-| Aktivität | Öffnen die Nutzer das System? | aktive Nutzer pro Woche, Logins, Seitenaufrufe |
-| Nutzung des Prozesses | Findet der Prozess in Salesforce statt? | Angebote aus Salesforce statt aus Word, Aufträge in der App abgeschlossen |
-| Datenqualität | Sind die Daten brauchbar? | Pflichtfelder sinnvoll gefüllt statt mit Punkten, neue Dubletten |
-| Ergebnis | Bringt es, wofür es gebaut wurde? | Prognosegenauigkeit, Erstlösungsquote, Durchlaufzeit vom Angebot zum Auftrag |
+| Aktivität | aktive Nutzer je Woche | Awareness oder Desire: Das Team sieht keinen Grund, sich anzumelden |
+| Nutzung des Prozesses | Anteil der Angebote aus Salesforce | Ability: Der Prozess klappt im Alltag nicht, oder eine Liste nebenher ist bequemer |
+| Datenqualität | Pflichtfelder mit echtem Inhalt, neue Dubletten | Desire oder Knowledge: Felder werden ausgefüllt, weil sie müssen, ohne den Zweck zu kennen |
+| Ergebnis | Prognosegenauigkeit, Durchlaufzeit Angebot bis Auftrag | Reinforcement: Niemand fragt nach den Zahlen, also bleibt alles beim Alten |
 
 Die erste Ebene liefert Salesforce fast ohne Aufwand über Login-Historie und Nutzungsdaten der Lightning-Oberfläche. Die aussagekräftigen Zahlen liegen auf der zweiten und dritten Ebene, und die müssen Sie für Ihre Prozesse selbst definieren. Für den Außendienst steht die Kennzahlenliste in [Field Service Kennzahlen nach dem Go-live](../../../blog/field-service-kennzahlen-operations-home/), für alle anderen Bereiche die Methode in [Salesforce-Nutzung nach dem Go-live messen](../../../blog/salesforce-nutzung-messen-nach-go-live/).
 
 ```hinweis achtung
-Legen Sie vor dem Go-live einen Ausgangswert fest, etwa wie viele Angebote heute pro Monat erstellt werden, egal in welchem System. Ohne Ausgangswert wissen Sie nach dem Go-live nicht, ob 200 Angebote in Salesforce viel oder wenig sind.
+Halten Sie vor dem Go-live fest, wie viele Angebote heute im Monat entstehen, ganz gleich in welchem Werkzeug. Fehlt diese Zahl, können Sie 200 Angebote in Salesforce später weder als Erfolg noch als Warnsignal lesen.
 ```
 
 ## Wie erkennen Sie Schattenlösungen?
 
-Die teuerste Form niedriger Nutzung ist die Liste neben dem System. Drei Zeichen deuten darauf hin:
+Am teuersten wird niedrige Nutzung, wenn neben Salesforce eine eigene Liste weiterlebt. Sie verrät sich auf drei Wegen. Hohe Anmeldezahlen bei wenigen neuen Datensätzen heißen, dass das Team nachschaut und woanders arbeitet. Große Aktualisierungswellen kurz vor dem Monatsbericht an die Geschäftsführung heißen, dass nachgetragen wird. Und Berichte, die regelmäßig als Excel-Datei exportiert werden, füttern oft genau diese Liste.
 
-- **Lücken zwischen Aktivität und Prozess.** Ein Team meldet sich täglich an, legt aber kaum Datensätze an. Dann wird gelesen und anderswo gearbeitet.
-- **Nachträgliche Massenpflege.** Datensätze werden einmal im Monat in großen Mengen aktualisiert, kurz vor dem Bericht an die Geschäftsführung.
-- **Häufige Exporte.** Berichte, die regelmäßig nach Excel gehen, sind oft die Grundlage einer eigenen Liste.
-
-Keines dieser Zeichen ist ein Beweis. Es ist ein Grund, mit dem Team zu sprechen, am besten über den Key User aus [Kapitel 3](../key-user-und-schulung/). Dann folgt die Diagnose aus [Kapitel 1](../change-management-adkar-diagnose/): An welcher Stufe hängt die Gruppe?
+Beweisen lässt sich damit nichts, aber jedes Zeichen ist Anlass für ein Gespräch mit dem Team, am besten über den Key User aus [Kapitel 3](../key-user-und-schulung/). Dann folgt die Diagnose aus [Kapitel 1](../change-management-adkar-diagnose/): An welcher Stufe hängt die Gruppe?
 
 ## Wer bekommt welche Zahl?
 
-Der Lenkungsausschuss braucht zwei oder drei Zahlen pro Prozess auf den Ebenen Nutzung und Ergebnis, mit dem Verlauf seit dem Go-live. Der Sponsor eines Landes oder Bereichs braucht dieselben Zahlen für seine Teams. Wenn er im Monatsbericht danach fragt, ist das selbst schon Reinforcement. Key User und Teamleitungen brauchen die Detailsicht, aber für Gespräche und nicht für Ranglisten. Wer Einzelpersonen öffentlich vergleicht, bekommt gepflegte Zahlen statt gepflegter Daten, und in Deutschland gehört eine solche Auswertung vorher mit dem Betriebsrat geklärt, wie in [Kapitel 2](../sponsor-und-kommunikation/) beschrieben. Bei einem weltweiten Rollout messen Sie pro Land, weil jedes Land einen eigenen Verlauf hat.
+Im Lenkungsausschuss reichen je Prozess zwei bis drei Zahlen aus Prozessnutzung und Ergebnis, jeweils mit dem Verlauf seit dem Go-live. Der Sponsor eines Landes oder Bereichs sieht dieselben Zahlen für seine Teams, und schon seine Nachfrage im Monatsbericht wirkt als Reinforcement. Key User und Teamleitungen bekommen die Detailsicht, als Grundlage für Gespräche. Eine öffentliche Rangliste einzelner Personen führt dazu, dass Zahlen geschönt werden statt Daten gepflegt, und in Deutschland gehört eine solche Auswertung vorher mit dem Betriebsrat geklärt, wie in [Kapitel 2](../sponsor-und-kommunikation/) beschrieben. Bei einem weltweiten Rollout messen Sie pro Land, weil jedes Land einen eigenen Verlauf hat.
 
 ## Bei Partnern verankern Pipeline, Review und Center-of-Excellence-Call die Standards
 
