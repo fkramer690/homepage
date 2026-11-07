@@ -92,6 +92,8 @@ const services = defineCollection({
     results: z.array(z.string().max(220)).min(3).max(6),
     // icon: file name in src/icons/ shown in the ring of the phase timeline.
     phases: z.array(z.object({ title: z.string().max(40), icon: z.string(), text: z.string().max(260) })).min(3).max(4),
+    // Typical duration of the engagement, shown above the phase timeline (Fabian confirmed the values 2026-11-07).
+    duration: z.string().min(40).max(260),
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).min(2).max(6),
     // Blog tags that link an article back to its best matching service (getPostService).
     blogTags: z.array(z.string()).min(1).max(8),

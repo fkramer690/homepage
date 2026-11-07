@@ -410,6 +410,7 @@ export const en = {
     deliverables: 'What I do',
     results: 'What you get',
     phases: 'How we work together',
+    duration: 'Typical duration',
     faq: 'Frequently asked questions',
     posts: 'Articles on this topic',
     readingCourse: 'Masterclass',
