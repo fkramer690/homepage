@@ -1,8 +1,9 @@
 name: Fetch analytics
 
-# Daily snapshot of Cloudflare Web Analytics and Bing Webmaster Tools, stored
+# Daily snapshot of Cloudflare Web Analytics, Bing Webmaster Tools and Google
+# Search Console, stored
 # on the "stats" branch so it can be turned into a report without access to
-# either service itself.
+# any of these services.
 on:
   schedule:
     - cron: '15 5 * * *'
@@ -36,6 +37,12 @@ jobs:
         env:
           BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
         run: node scripts/fetch-bing.mjs /tmp/bing
+      - name: Query Google Search Console
+        # A Google outage must not cost the other snapshots.
+        continue-on-error: true
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/fetch-gsc.mjs /tmp/google
       - name: Commit snapshot to stats branch
         run: |
           git config user.name "github-actions[bot]"
@@ -55,6 +62,12 @@ jobs:
             cp /tmp/bing/latest.json stats/bing/latest.json
             cp /tmp/bing/latest.json "stats/bing/$(date -u +%F).json"
             rm -rf stats/bing/dashboard && cp -r /tmp/bing/dashboard stats/bing/dashboard
+          fi
+          if [ -f /tmp/google/latest.json ]; then
+            mkdir -p stats/google
+            cp /tmp/google/latest.json stats/google/latest.json
+            cp /tmp/google/latest.json "stats/google/$(date -u +%F).json"
+            rm -rf stats/google/dashboard && cp -r /tmp/google/dashboard stats/google/dashboard
           fi
           git add stats
           git commit -m "Analytics snapshot $(date -u +%F)" || exit 0
