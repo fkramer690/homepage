@@ -95,7 +95,7 @@ Salesforce verkauft Agentforce in mehreren Modellen: Flex Credits nach Verbrauch
 quelle: Agentforce-Preisseite und Flex-Credits-Preisliste von Salesforce, Listenpreise Stand November 2026
 ```
 
-Das sind Listenpreise, keine Vertragspreise. Je nach Lizenz und Kontext kommen Prompts nach Modellstufe und Verarbeitung in Data 360 hinzu. Wie Sie das für einen Agenten schätzen, zeigt [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), Pauschalen vergleiche ich in [AELA oder Flex Credits](../aela-agentforce-pauschale-oder-credits/).
+Das sind Listenpreise, keine Vertragspreise. Je nach Lizenz und Kontext kommen Prompts nach Modellstufe und Verarbeitung in Data 360 hinzu. Wie Sie das für einen Agenten schätzen, zeigt [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), der auch Pauschalen wie die AELA vergleicht.
 
 Früh auf den Tisch gehört auch, welches Sprachmodell antwortet und wo es läuft, beschrieben in [Agentforce-Datenresidenz](../agentforce-eu-datenresidenz-modelle/).
 

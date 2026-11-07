@@ -1309,14 +1309,6 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 146, l('changed documents: 195,000 credits', 'geänderte Dokumente: 195.000 Credits'), { fill: C, size: 7 })}
     ${tag(194, 128, 108, l('sandbox: no tiers', 'Sandbox: ohne Staffel'))}`,
 
-  'dealer-service-agent-costs': (l) => `
-    ${t(18, 18, l('3,000 DEALER CHATS / MONTH (SCENARIO)', '3.000 HÄNDLERGESPRÄCHE / MONAT (SZENARIO)'), { fill: D, size: 7 })}
-    ${[['Flex Credits', l('$1,020', '1.020 €'), 26, true], [l('per resolution, 60 %', 'pro Lösung, 60 %'), l('$3,600', '3.600 €'), 90, false], [l('per conversation', 'pro Gespräch'), l('$6,000', '6.000 €'), 150, false]]
-      .map(([a, b, w, hi], i) => t(18, 40 + i * 22, String(a), { size: 7 }) + `<rect x="108" y="${31 + i * 22}" width="${w}" height="12" rx="2" fill="${hi ? C : '#fff'}" fill-opacity="${hi ? 0.25 : 1}" stroke="${hi ? C : G}" stroke-width="1.1"/>` + t(114 + Number(w), 40 + i * 22, String(b), { fill: hi ? C : G, size: 7 })).join('')}
-    <path d="M18 104H302" stroke="${L}"/>
-    ${t(18, 120, l('1 chat = 3 actions + 2 prompts = 68 credits', '1 Gespräch = 3 Aktionen + 2 Prompts = 68 Credits'), { fill: D, size: 7.5 })}
-    ${t(18, 136, l('Data 360: 150 credits per MB of catalogue', 'Data 360: 150 Credits pro MB Katalog'), { size: 7 })}
-    ${t(18, 150, l('sandbox: 120 credits per MB, test a subset', 'Sandbox: 120 Credits pro MB, Ausschnitt testen'), { size: 7 })}`,
 
   'field-service-ai-agents-today': (l) => `
     ${t(18, 18, l('AVAILABLE TODAY', 'HEUTE VERFÜGBAR'), { fill: D, size: 7 })}${t(186, 18, l('MACHINE BUILDER', 'MASCHINENBAUER'), { fill: D, size: 7 })}
@@ -1352,17 +1344,6 @@ const drawings: Record<string, Drawing> = {
     ${[l('action: 20 · sandbox 16', 'Aktion: 20 · Sandbox 16'), l('voice action: 30 · sandbox 24', 'Sprachaktion: 30 · Sandbox 24'), l('prompt / 2,000 tokens: 2 · 4 · 16', 'Prompt / 2.000 Tokens: 2 · 4 · 16'), l('Data 360: 150 credits per MB', 'Data 360: 150 Credits pro MB')].map((s, i) => dot(22, 99 + i * 14, G, 2) + t(30, 102 + i * 14, s, { size: 7 })).join('')}
     ${box(214, 96, 88, 50, C)}${t(258, 114, l('unused credits', 'ungenutzte Credits'), { fill: C, size: 7, anchor: 'middle' })}${t(258, 126, l('expire at', 'verfallen zum'), { fill: C, size: 7, anchor: 'middle' })}${t(258, 138, l('order end', 'Bestellende'), { fill: C, size: 7, anchor: 'middle' })}`,
 
-  'headless-platform-interactions-budget': (l) => `
-    ${box(18, 30, 80, 46)}${t(58, 50, l('EXTERNAL AGENT', 'EXTERNER AGENT'), { fill: D, size: 7, anchor: 'middle' })}${t(58, 64, 'Claude · ChatGPT', { size: 7, anchor: 'middle' })}
-    ${box(222, 30, 80, 46)}${t(262, 50, 'SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(262, 64, l('production org', 'Produktions-Org'), { size: 7, anchor: 'middle' })}
-    ${arrow(98, 44, 222, C)}${arrow(98, 52, 222, C)}${arrow(98, 60, 222, C)}
-    ${t(160, 36, l('MCP / agentic API', 'MCP / agentische API'), { fill: C, size: 7, anchor: 'middle' })}
-    ${tag(130, 66, 60, l('rate: TBA', 'Satz: TBA'))}
-    ${t(18, 102, l('1 successful call = 1 interaction', '1 erfolgreicher Aufruf = 1 Interaktion'), { fill: D, size: 7.5 })}
-    ${t(18, 116, l('sandbox not metered, 30 days notice', 'Sandbox ohne Zähler, 30 Tage Vorlauf'), { size: 7 })}
-    <path d="M18 126H302" stroke="${L}"/>
-    ${t(18, 142, l('scenario: 2 vs 8 calls per question', 'Szenario: 2 statt 8 Aufrufe pro Frage'), { fill: D, size: 7.5 })}
-    ${t(18, 154, l('tool design changes the bill by factor 4', 'Tool-Design ändert die Rechnung um Faktor 4'), { fill: C, size: 7 })}`,
 
   'hosted-mcp-servers-data-access': (l) => `
     ${box(14, 30, 92, 50)}${t(60, 48, 'SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(60, 61, 'hosted MCP', { size: 7, anchor: 'middle' })}${t(60, 73, 'sobject-reads', { size: 7, anchor: 'middle' })}
@@ -1835,14 +1816,6 @@ const drawings: Record<string, Drawing> = {
     ${t(14, 150, l('Siemens + Teamcenter: announced', 'Siemens + Teamcenter: angekündigt'), { size: 7 })}
     ${t(306, 150, l('3 actions = $0.30', '3 Aktionen = 0,30 €'), { fill: C, size: 7, anchor: 'end' })}`,
 
-  'aela-flat-fee-vs-credits': (l) => `
-    ${box(18, 28, 134, 58)}${t(28, 44, 'FLEX CREDITS', { fill: D, size: 7.5 })}${t(28, 58, l('$500 per 100K credits', '500 € je 100K Credits'), { size: 7 })}${t(28, 72, l('pay per use, no rollover', 'Verbrauch, kein Übertrag'), { size: 7 })}
-    ${box(168, 28, 134, 58, C)}${t(178, 44, 'AELA', { fill: D, size: 7.5 })}${t(178, 58, l('fixed fee, 2 or 3 years', 'Pauschale, 2 oder 3 Jahre'), { size: 7 })}${t(178, 72, l('price not public', 'Preis nicht öffentlich'), { fill: C, size: 7 })}
-    ${t(18, 106, l('PayGo or Pre-Commit', 'PayGo oder Pre-Commit'), { size: 7 })}
-    ${t(170, 100, l('term', 'Laufzeit'), { size: 7 })}${arrow(168, 106, 218, C)}${tag(220, 96, 82, l('RENEWAL', 'VERLÄNGERUNG'))}
-    <path d="M18 124H302" stroke="${L}"/>
-    ${t(18, 140, l('Scenario: $150K a year = 30M credits = 1.5M actions', 'Szenario: 150K € im Jahr = 30 Mio. Credits = 1,5 Mio. Aktionen'), { fill: D, size: 7.5 })}
-    ${t(18, 153, l('120+ AELAs sold in Q4 FY26 (earnings call)', '120+ AELAs verkauft in Q4 FY26 (Earnings Call)'), { size: 7 })}`,
 
   'agentforce-agents-release-pipeline': (l) => `
     ${[['Git PR', G], [l('validate', 'validieren'), G], [l('deploy', 'deployen'), G], ['publish', G], [l('activate', 'aktivieren'), C]]
@@ -1876,15 +1849,6 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 116, l('ASK IN WRITING BEFORE YOU PAY', 'VOR DEM KAUF SCHRIFTLICH FRAGEN'), { fill: D, size: 7 })}
     ${box(18, 124, 284, 24, C)}${t(160, 139, l('model · region · retention · cap · approval', 'Modell · Region · Speicherdauer · Limit · Freigabe'), { fill: C, size: 7.5, anchor: 'middle' })}`,
 
-  'digital-wallet-chargeback': (l) => `
-    ${t(18, 18, l('ONE ORG, ONE POOL (SCENARIO)', 'EINE ORG, EIN POOL (SZENARIO)'), { fill: D, size: 7 })}${t(302, 18, l('4.1M credits planned', '4,1 Mio. Credits geplant'), { fill: D, size: 7, anchor: 'end' })}
-    ${[[18, 125, l('DE 1.8M', 'DE 1,8 Mio.')], [143, 97, l('US 1.4M', 'US 1,4 Mio.')], [240, 41, l('APAC', 'Asien')], [281, 21, 'IT']]
-      .map(([x, w, s]) => `<rect x="${x}" y="28" width="${w}" height="22" fill="#fff" stroke="${G}" stroke-width="1.1"/>` + t(Number(x) + Number(w) / 2 - (Number(w) < 30 ? 3.5 : 0), 42, String(s), { size: Number(w) < 30 ? 6.5 : 7, anchor: 'middle' })).join('')}
-    <path d="M295 24V58" stroke="${D}" stroke-width="1.3" stroke-dasharray="3 2"/>${t(302, 68, l('pool 4.0M, +100K overage', 'Pool 4,0 Mio., +100K Mehrverbrauch'), { size: 7, anchor: 'end' })}
-    <path d="M18 80H302" stroke="${L}"/>
-    ${[l('1 org = 1 pool, 1 contract owner', '1 Org = 1 Pool, 1 Vertragspartner'), l('chargeback: $5 per 1,000 credits', 'Verrechnung: 5 € pro 1.000 Credits'), l('overage: billed in arrears', 'Mehrverbrauch: nachträglich'), l('alerts yes, stop not documented', 'Warnungen ja, Stopp nicht dokumentiert')]
-      .map((s, i) => dot(22, 95 + i * 15, G, 2) + t(30, 98 + i * 15, s, { size: 7 })).join('')}
-    ${box(206, 88, 96, 56, C)}${t(254, 105, l('APAC 4 months late', 'Asien 4 Monate später'), { fill: C, size: 6.5, anchor: 'middle' })}${t(254, 119, l('300K credits expire', '300K Credits verfallen'), { fill: C, size: 6.5, anchor: 'middle' })}${t(254, 133, l('= $1,500', '= 1.500 €'), { fill: C, size: 7.5, anchor: 'middle' })}`,
 
   'multilingual-dealer-agents': (l) => `
     ${t(18, 18, l('AGENTFORCE LANGUAGES', 'AGENTFORCE-SPRACHEN'), { fill: D, size: 7 })}${t(166, 18, l('KNOWLEDGE', 'WISSEN'), { fill: D, size: 7 })}

@@ -63,7 +63,7 @@ The introduction unit on Trailhead names these prerequisites:
 | Add-on licences | Agentforce and Einstein for Service |
 | Platform | Einstein generative AI, set up together with Data 360 |
 
-Two things stand out. First, the Buyer Agent needs Service Cloud, so a company that runs only Sales Cloud next to the store buys more than the agent. Second, I found no separate price for the Buyer Agent on the official pages. Usage runs on the Agentforce add-on, so the cost depends on your contract and your volume. How such a calculation works for a dealer service agent is shown in [Agentforce dealer service agent: cost per month](../dealer-service-agent-cost-calculation/).
+Two things stand out. First, the Buyer Agent needs Service Cloud, so a company that runs only Sales Cloud next to the store buys more than the agent. Second, I found no separate price for the Buyer Agent on the official pages. Usage runs on the Agentforce add-on, so the cost depends on your contract and your volume. How such a calculation works for a dealer service agent is shown in [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/).
 
 ## Contract prices and credit come from the store and the ERP
 

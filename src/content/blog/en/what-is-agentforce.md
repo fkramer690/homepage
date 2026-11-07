@@ -95,7 +95,7 @@ $0.10 | per standard action at $500 per 100,000 credits
 source: Salesforce Agentforce pricing page and Flex Credits rate card, list prices as of November 2026
 ```
 
-These are list prices, not contract prices. Depending on licence and context, prompts by model tier and Data 360 processing can come on top. How to estimate this for one agent is shown in [Flex Credits: Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), flat fees in [AELA or Flex Credits](../aela-agentforce-flat-fee-vs-credits/).
+These are list prices, not contract prices. Depending on licence and context, prompts by model tier and Data 360 processing can come on top. How to estimate this for one agent is shown in [Flex Credits: Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), which also compares flat fees such as the AELA.
 
 Also on the table early: which language model answers and where it runs, covered in [Agentforce data residency](../agentforce-eu-data-residency-models/).
 

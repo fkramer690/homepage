@@ -56,7 +56,7 @@ Trailhead recommends a [weekly schedule for operational and technical topics and
 | Content | upcoming changes to shared objects, edge cases from reviews, new or changed standards | priorities, roadmap, budget, new partners |
 | Outcome | a decision, an updated standard or matrix | a prioritised backlog for the coming months |
 
-The roadmap meeting is also the place for budget questions that cut across units. One example is the Agentforce allowance I describe in [Digital Wallet: Agentforce cost control for plants](../digital-wallet-agentforce-cost-control/): someone in the CoE has to watch the pool and run the chargeback to plants and subsidiaries.
+The roadmap meeting is also the place for budget questions that cut across units. One example is the Agentforce allowance I describe in [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/): someone in the CoE has to watch the pool and run the chargeback to plants and subsidiaries.
 
 ## The technical call always follows the same agenda
 

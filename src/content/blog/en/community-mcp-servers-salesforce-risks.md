@@ -84,7 +84,7 @@ Salesforce Hosted MCP Servers are [generally available since 29 April 2026](http
 Hosted MCP has limits that drive people to community servers:
 
 - **No machine-to-machine access.** The security guide says: "There are no service accounts, no machine-to-machine flows". A nightly agent cannot use it.
-- **Edition and cost.** The [overview](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) says the servers are "intended only for customers with Flex Credits and you may be billed for server usage". Why that becomes a budget line is in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
+- **Edition and cost.** The [overview](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) says the servers are "intended only for customers with Flex Credits and you may be billed for server usage". Why that becomes a budget line is in [MCP calls as a budget risk](../flex-credits-agentforce-cost-per-action/).
 
 Neither limit makes a community server the answer. A nightly job is an integration with its own user and the client credentials or JWT flow. When Agentforce is the client, [Trailhead](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce) describes registering third-party servers in Agentforce Registry, selecting tools and limiting calls through Agentforce Gateway. That governs the agent's side; the server behind it still needs the six checks.
 

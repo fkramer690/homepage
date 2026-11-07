@@ -60,7 +60,7 @@ Soll ein externes Modell weniger sehen als die Person, helfen die Standard-sObje
 - **Custom Server.** Flows, Invocable Apex, Apex REST und Endpunkte aus dem API Catalog lassen sich zu einem [Custom Server](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/custom-servers.html) bündeln. Salesforce empfiehlt fokussierte Server pro Persona, weil ein KI-Client „beyond a few dozen tools“ das richtige Tool schlechter findet. Ein Flow, der eine Händlerübersicht ohne Preisfelder liefert, beantwortet die Frage und verbirgt den Rest.
 - **Eigene Benutzer.** Salesforce bindet im eigenen Beispiel einen Server für Datenpflege an ein Profil, als das sich nur Data Stewards anmelden können.
 
-Custom Server kosten Aufwand, senken aber die Aufrufe pro Frage, und das zählt, sobald Salesforce sie abrechnet, siehe [MCP-Zugriffe auf Salesforce als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
+Custom Server kosten Aufwand, senken aber die Aufrufe pro Frage, und das zählt, sobald Salesforce sie abrechnet, siehe [MCP-Zugriffe auf Salesforce als Budgetrisiko](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Zuerst sobject-reads in einer Sandbox
 

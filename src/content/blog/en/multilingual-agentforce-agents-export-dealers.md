@@ -64,7 +64,7 @@ source: Salesforce Flex Credits rate card of 31 August 2026,
 
 A chat of 2,500 translated characters costs 10 credits, $0.05. Three actions cost 60.
 
-Less clear is when it runs. The [help article on billable usage types](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) meters translation "by the number of characters processed" and refers to each feature's documentation. The pricing page says credits are "fungible across Actions, Prompts, Translations, and Voice Actions". I found no Salesforce page naming the agent features that use it. Ask your account executive and watch [Digital Wallet](../digital-wallet-agentforce-cost-control/).
+Less clear is when it runs. The [help article on billable usage types](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) meters translation "by the number of characters processed" and refers to each feature's documentation. The pricing page says credits are "fungible across Actions, Prompts, Translations, and Voice Actions". I found no Salesforce page naming the agent features that use it. Ask your account executive and watch [Digital Wallet](../flex-credits-agentforce-cost-per-action/).
 
 For human reps, [Real-Time Translations](https://help.salesforce.com/s/articleView?language=en_US&id=service.messaging_translate_2.htm&type=5) translates enhanced chat and messaging. It needs the Agentforce for Service SKU plus a permission set license and takes custom terminology for up to 10 languages. The help pages I read do not say how its usage is billed.
 
@@ -106,7 +106,7 @@ Assume a machine builder with dealers in 20 countries and 13 languages. Knowledg
 | Manuals indexed in 13 languages, once | 292,500 | 1,463 |
 | Sandbox tests, 13 × 40 conversations, once | 29,120 | 146 |
 
-The extra prompt units assume one of two prompts per conversation crosses the 2,000-token line. A test conversation counts three actions at 16 sandbox credits and two prompts at 4. The full method is in [Agentforce dealer service agent: cost per month](../dealer-service-agent-cost-calculation/).
+The extra prompt units assume one of two prompts per conversation crosses the 2,000-token line. A test conversation counts three actions at 16 sandbox credits and two prompts at 4. The full method is in [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/).
 
 Language adds about $112 a month to $1,200 for actions. Indexing manuals in all 13 languages costs six and a half times the two-language index, and each version needs maintenance. The budget question is the number of maintained languages, not the price per character.
 

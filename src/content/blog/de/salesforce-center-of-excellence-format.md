@@ -56,7 +56,7 @@ Trailhead empfiehlt einen [wöchentlichen Rhythmus für operative und technische
 | Inhalt | anstehende Änderungen an gemeinsamen Objekten, Randfälle aus Reviews, neue oder geänderte Standards | Prioritäten, Roadmap, Budget, neue Partner |
 | Ergebnis | Entscheidung, aktualisierter Standard oder Matrix | priorisierter Backlog für die nächsten Monate |
 
-Der Roadmap-Termin ist auch der Ort für Budgetfragen, die mehrere Bereiche betreffen. Ein Beispiel ist das Kontingent für Agentforce, das ich in [Digital Wallet: Agentforce-Kostenkontrolle für Werke](../digital-wallet-agentforce-kostenkontrolle/) beschreibe: Jemand im CoE muss den Pool beobachten und die Verrechnung an Werke und Töchter führen.
+Der Roadmap-Termin ist auch der Ort für Budgetfragen, die mehrere Bereiche betreffen. Ein Beispiel ist das Kontingent für Agentforce, das ich in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/) beschreibe: Jemand im CoE muss den Pool beobachten und die Verrechnung an Werke und Töchter führen.
 
 ## Der technische Call folgt immer derselben Agenda
 

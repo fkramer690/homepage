@@ -101,7 +101,7 @@ The open line is the Headless Platform Interaction meter. The rate card lists it
 Neither source says whether a call to the Agent API from your dealer app counts as a Headless Platform Interaction on top of the agent's actions. I would ask your account executive for that answer in writing.
 ```
 
-How to budget a meter without a price is in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
+How to budget a meter without a price is in [MCP calls as a budget risk](../flex-credits-agentforce-cost-per-action/).
 
 ## Begin with one read-only use case such as order status
 

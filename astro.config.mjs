@@ -8,6 +8,7 @@ import { sourceChips } from './src/lib/source-chips.mjs';
 import { contentBlocks } from './src/lib/content-blocks-plugin.mjs';
 import { serviceIntro } from './src/lib/service-intro-plugin.mjs';
 import { explicitEmptyAlt } from './src/lib/explicit-empty-alt.mjs';
+import { retiredPaths } from './src/lib/retired-posts.mjs';
 
 // The site runs on the custom domain https://www.fk-sd.de (see public/CNAME).
 const site = process.env.SITE_URL ?? 'https://www.fk-sd.de';
@@ -100,8 +101,9 @@ for (const lang of ['de', 'en']) {
   sitemapInfo.set(lang === 'de' ? '/blog/' : '/en/blog/', { date: latest });
 }
 // The AI masterclass moved from /masterclass-ki/ and /en/ai-masterclass/ on 2026-10-28,
-// the change management area page into its service page on 2026-10-29.
-const redirectPaths = [/^\/de\//, /^\/services\//, /^\/masterclass-ki\//, /^\/en\/ai-masterclass\//, /^\/(en\/)?change-management\/$/, ...enSlugs.map((slug) => new RegExp(`^/blog/${slug}/$`))];
+// the change management area page into its service page on 2026-10-29. Merged blog
+// articles (src/lib/retired-posts.mjs) are redirect pages since 2026-11-07.
+const redirectPaths = [/^\/de\//, /^\/services\//, /^\/masterclass-ki\//, /^\/en\/ai-masterclass\//, /^\/(en\/)?change-management\/$/, ...enSlugs.map((slug) => new RegExp(`^/blog/${slug}/$`)), ...retiredPaths.map((path) => new RegExp(`^${path}$`))];
 
 export default defineConfig({
   site,

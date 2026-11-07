@@ -92,7 +92,7 @@ Angenommen sind 2.000 Auftragsanfragen im Monat mit bis zu drei API-Aufrufen: Au
 
 Im Rechenbeispiel bringt die erste Testwoche drei Befunde. Telefonisch erfasste Aufträge haben keine Bestellnummer des Händlers, der Agent muss also auch nach SAP-Auftragsnummer suchen. Manche Händler haben für Tochtergesellschaften mehrere Auftraggebernummern, der Account braucht also eine Zuordnung, die jemand pflegt, dasselbe Problem wie bei [Sales Agreements und Ist-Mengen aus dem ERP](../sales-agreements-abnahmemengen-erp/). Und ein Werk pflegt für Ersatzteile keine bestätigten Termine, für diese Positionen kann der Agent nur „noch nicht bestätigt“ sagen. Das ist ein Datenproblem, und kein Prompt behebt es.
 
-Was ein Gespräch in Flex Credits kostet, rechne ich in [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/) durch.
+Was ein Gespräch in Flex Credits kostet, rechne ich in [was ein Serviceagent für Händleranfragen kostet](../flex-credits-agentforce-kosten-pro-aktion/) durch.
 
 ## Live-Aufruf oder Kopie in Salesforce?
 
