@@ -53,8 +53,11 @@ function cleanOrganic(item) {
   } catch {}
   const crumb = hostOf(item.breadcrumb);
   if (crumb && !GOOGLE_HOST.test(crumb)) {
-    // Keep the path from the breadcrumb so the own page can still be named.
-    const path = String(item.breadcrumb).split('›').slice(1).map((p) => p.trim()).filter(Boolean).join('/');
+    // Keep the breadcrumb path where it looks like real URL segments; Google also shows the
+    // site name ("FK Solution Design › Blog") or cuts segments short ("freelanceproje...").
+    const segments = String(item.breadcrumb).split('›').slice(1).map((p) => p.trim()).filter(Boolean);
+    const cut = segments.findIndex((p) => !/^[\w.~%-]+$/.test(p) || /\.\.\.|…/.test(p));
+    const path = (cut === -1 ? segments : segments.slice(0, cut)).join('/');
     return { ...item, url: `https://${crumb}/${path}`, domain: crumb, resolved: 'breadcrumb' };
   }
   return null;
