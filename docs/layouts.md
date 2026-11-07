@@ -183,7 +183,8 @@ examples to reuse in blog articles (backlog item 17).
 - **Principle card (variant A, built for blog articles 2026-11-07):** a dashed cyan line
   runs from the "with" column down into a dark full-width card: round photo (cyan
   ring), mono kicker "Mein Grundsatz", the quote, mono attribution. More compact than
-  the band; fits the reading column. In articles it is the `vergleich` block with
+  the band; fits the reading column. In articles without kicker and name line
+  (Fabian 2026-11-07: "Mein Grundsatz" did not fit, name and role not wanted). In articles it is the `vergleich` block with
   `zitat:` (docs/content-blocks.md).
 
 Mockups of both: project files `homepage/rolle-zitat/`.

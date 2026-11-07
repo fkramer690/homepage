@@ -20,14 +20,12 @@ const labels = {
     quelle: 'Quelle', next: 'nächster Termin', risiko: 'Größtes Risiko', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'angrenzender Prozess' },
     diagram: 'Ablaufdiagramm', grenzen: 'Grenzen', besser: 'Dafür besser', aus: 'aus', gesetzt: 'gesetzt', addon: 'Add-on', level: 'Level', tor: 'Tor',
     ctrl: 'Steuerzentrale', sichtbar: 'Sichtbar', darunter: 'Darunter: die echten Kosten',
-    grundsatz: 'Mein Grundsatz', rolle: 'Salesforce-Architekt auf Kundenseite',
   },
   en: {
     tipp: 'Tip', achtung: 'Warning', offen: 'Get it confirmed in writing', praxis: 'From my practice', entry: 'Entry',
     quelle: 'Source', next: 'next date', risiko: 'Biggest risk', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'adjacent process' },
     diagram: 'Flow diagram', grenzen: 'Limits', besser: 'Better suited', aus: 'from', gesetzt: 'given', addon: 'add-on', level: 'Level', tor: 'Gate',
     ctrl: 'Control centre', sichtbar: 'Visible', darunter: 'Below: the real costs',
-    grundsatz: 'My rule', rolle: 'Salesforce architect on the client side',
   },
 };
 const variants = ['tipp', 'achtung', 'offen'];
@@ -873,12 +871,13 @@ export function renderBlock(block, { lang, isExternal, readDiagram, base = '/', 
   }
   if (name === 'vergleich') {
     // With "zitat:" the marked pair is summed up in a principle card below the
-    // comparison (layout "Quote after a comparison" in docs/layouts.md).
+    // comparison: round photo and quote only, no kicker or attribution (Fabian
+    // 2026-11-07; layout "Quote after a comparison" in docs/layouts.md).
     const cols = parseCompare(content);
     const compare = `<div class="cb cb-compare${cols.quote ? ' cb-compare-quoted' : ''}">${cols.map((c) => `<div class="cb-compare-col cb-compare-${c.kind}"><p class="cb-compare-title">${inline(c.title, o)}</p><ul>${c.items.map((i, n) => `<li${c.marks.includes(n) ? ' class="cb-compare-hit"' : ''}>${c.kind === 'with' ? icon.check : icon.cross}<span>${inline(i, o)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;
     if (!cols.quote) return compare;
     const [qo, qc] = lang === 'de' ? ['„', '“'] : ['“', '”'];
-    return `${compare}<figure class="cb cb-principle"><span class="cb-principle-link" aria-hidden="true"></span><div class="cb-principle-card"><img class="cb-principle-photo" src="${o.base ?? '/'}quote/fabian-kramer.webp" alt="Fabian Kramer" width="80" height="80" loading="lazy" decoding="async"><blockquote><p class="cb-principle-kicker">${escHtml(t.grundsatz)}</p><p class="cb-principle-quote">${qo}${inline(cols.quote, o)}${qc}</p></blockquote><figcaption>Fabian Kramer · ${escHtml(t.rolle)}</figcaption></div></figure>`;
+    return `${compare}<figure class="cb cb-principle"><span class="cb-principle-link" aria-hidden="true"></span><div class="cb-principle-card"><img class="cb-principle-photo" src="${o.base ?? '/'}quote/fabian-kramer.webp" alt="Fabian Kramer" width="80" height="80" loading="lazy" decoding="async"><blockquote><p class="cb-principle-quote">${qo}${inline(cols.quote, o)}${qc}</p></blockquote></div></figure>`;
   }
   if (name === 'pipeline') {
     const { title, stages, gate, hotfix, notes } = parsePipeline(content);
