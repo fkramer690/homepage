@@ -35,6 +35,7 @@ phases:
   - title: "Delivery and testing"
     icon: "check"
     text: "During delivery I check that interfaces follow the architecture, that error handling and monitoring exist and that end-to-end tests cover the real processes."
+duration: "System map and integration architecture 4 to 8 weeks, specification 1 to 3 weeks per interface. Build and test with the partner 3 to 9 months, depending on the number of interfaces."
 faq:
   - q: "Which systems does Salesforce usually connect to at manufacturers?"
     a: "Almost always an ERP, very often SAP, sometimes other systems such as proALPHA. On top of that come telephony and email for service, product and pricing data, document generation and often a data platform. Salesforce is never the only system."

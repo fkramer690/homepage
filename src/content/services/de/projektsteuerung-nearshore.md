@@ -36,6 +36,7 @@ phases:
   - title: "Steuerung"
     icon: "steer"
     text: "In der Umsetzung steuere ich Plan, Risiken und Qualität, halte Abhängigkeiten zwischen Teams sichtbar und berichte dem Management in einem Format, das Entscheidungen unterstützt."
+duration: "Plan und Partnerauswahl 4 bis 8 Wochen. Bis ein neues Team voll liefert, vergehen 2 bis 3 Monate. Die Steuerung läuft danach über die Programmlaufzeit, meist 12 Monate und mehr."
 faq:
   - q: "Wie groß sollte ein Nearshore-Team für Salesforce sein?"
     a: "Bis zu etwa acht Entwickler pro Team. Darüber funktionieren agile Teams selten gut: Die Abstimmung nimmt überhand, und Sprint-Meetings werden lang. Braucht ein Programm mehr Kapazität, setze ich mehrere Teams mit klaren Verantwortlichkeiten auf statt eines großen."

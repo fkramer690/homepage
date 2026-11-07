@@ -36,6 +36,7 @@ phases:
   - title: "Decision and negotiation"
     icon: "contract"
     text: "The recommendation goes to the decision makers with the reasons behind it. If it leads to a Salesforce offer, I help prepare the negotiation."
+duration: "Make-or-buy decision with ROI case 3 to 6 weeks. A licence forecast before a contract renewal 2 to 3 weeks."
 faq:
   - q: "When is a custom solution better than a Salesforce industry cloud?"
     a: "When the industry cloud's core features do not match how the company works. In one manufacturing project, sales agreements, a central feature of Manufacturing Cloud, were not relevant for the business, so a custom solution on the core platform was the better choice. The ROI case decides, including maintenance over several years."

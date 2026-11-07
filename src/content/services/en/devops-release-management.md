@@ -38,6 +38,7 @@ phases:
   - title: "Handover"
     icon: "handshake"
     text: "Internal colleagues learn to run and extend the pipeline. The documentation stays in the client's repository, next to the code."
+duration: "Assessment and target process 1 to 2 weeks. The first team works with the pipeline after 4 to 6 weeks. All teams have switched after 2 to 4 months, depending on how many there are."
 faq:
   - q: "Which Git platforms can a Salesforce pipeline run on?"
     a: "I have built Salesforce pipelines on GitHub, GitLab, Azure DevOps and Bitbucket. Each platform has its own details, but the pipelines are defined in YAML, so the backbone of the process is the same on all of them. The best choice is usually the platform the company already uses."

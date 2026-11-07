@@ -35,6 +35,7 @@ phases:
   - title: "Umsetzung und Test"
     icon: "check"
     text: "In der Umsetzung prüfe ich, ob Schnittstellen der Architektur folgen, ob Fehlerbehandlung und Monitoring existieren und ob End-to-End-Tests die echten Prozesse abdecken."
+duration: "Systemlandkarte und Integrationsarchitektur 4 bis 8 Wochen, Spezifikation je Schnittstelle 1 bis 3 Wochen. Umsetzung und Test mit dem Partner 3 bis 9 Monate, je nach Zahl der Schnittstellen."
 faq:
   - q: "Mit welchen Systemen wird Salesforce bei Herstellern meist verbunden?"
     a: "Fast immer mit einem ERP, sehr oft SAP, manchmal mit anderen Systemen wie proALPHA. Dazu kommen Telefonie und E-Mail für den Service, Produkt- und Preisdaten, Dokumentenerstellung und oft eine Datenplattform. Salesforce ist nie das einzige System."

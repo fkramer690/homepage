@@ -25,7 +25,7 @@ interface Props {
   service: Service;
 }
 const { service } = Astro.props;
-const { lang, title, headline, description, lead, situations, deliverables, results, phases, faq, order, note, notePartner, section } = service.data;
+const { lang, title, headline, description, lead, situations, deliverables, results, phases, duration, faq, order, note, notePartner, section } = service.data;
 // section: change-management adds the team (Fabian and Juliane) above the reading grid and
 // the change management articles instead of the related articles; "wir" there are Fabian and
 // Juliane, so the deliverables heading and the author box name both (src/data/change-management.ts).
@@ -151,6 +151,7 @@ const schema = {
           </div>
           <section class="service-block" aria-labelledby="phases">
             <h2 id="phases">{t.servicePage.phases}</h2>
+            <p class="phase-duration"><strong>{t.servicePage.duration}:</strong> {duration}</p>
             <ol class="phase-flow">
               {phases.map((phase, i) => (
                 <li>

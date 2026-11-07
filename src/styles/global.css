@@ -1474,6 +1474,8 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
    the FAQ: icon ring per phase, dashed line between them (approved 2026-10-29, placed
    2026-10-31, docs/layouts.md). */
 .phase-flow { list-style: none; margin: 8px 0 0; padding: 0; }
+/* Typical duration line above the phase timeline (2026-11-07). */
+.phase-duration { margin: 0 0 1.4em; }
 .phase-flow li { position: relative; display: grid; grid-template-columns: 56px minmax(0, 1fr); column-gap: 18px; padding-bottom: 24px; }
 .phase-flow li:last-child { padding-bottom: 0; }
 .phase-flow li > :not(.phase-ring) { grid-column: 2; }

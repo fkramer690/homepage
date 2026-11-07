@@ -36,6 +36,7 @@ phases:
   - title: "Steering"
     icon: "steer"
     text: "During delivery I steer plan, risks and quality, keep dependencies between teams visible and report to management in a format that supports decisions."
+duration: "Plan and partner selection 4 to 8 weeks. A new team needs 2 to 3 months until it delivers at full speed. Steering then runs for the life of the programme, usually 12 months or more."
 faq:
   - q: "How large should a nearshore Salesforce team be?"
     a: "Up to around eight developers per team. Beyond that, agile teams rarely work well: coordination takes over, and sprint meetings become long. If a programme needs more capacity, I set up several teams with clear responsibilities instead of one large one."

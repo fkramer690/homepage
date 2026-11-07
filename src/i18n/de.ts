@@ -372,6 +372,7 @@ export const de: Dict = {
     deliverables: 'Was ich mache',
     results: 'Was Sie bekommen',
     phases: 'So läuft die Zusammenarbeit',
+    duration: 'Typische Dauer',
     faq: 'Häufig gestellte Fragen',
     posts: 'Weiterlesen im Blog',
   },

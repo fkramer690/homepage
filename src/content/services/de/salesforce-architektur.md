@@ -36,6 +36,7 @@ phases:
   - title: "Architektur in der Umsetzung"
     icon: "architecture"
     text: "Während der Umsetzung prüfe ich Partner-Designs, halte das Entscheidungslog aktuell und greife ein, wenn sich der Bau vom Zielbild entfernt."
+duration: "Zielbild mit Datenmodell und Entscheidungslog 6 bis 10 Wochen, Solution Designs für die kritischen Bereiche weitere 4 bis 8 Wochen. Danach begleite ich die Umsetzung, meist 1 bis 2 Tage pro Woche."
 faq:
   - q: "Was macht ein Salesforce-Architekt auf Kundenseite?"
     a: "Er entwirft die Zielarchitektur im Interesse des Unternehmens und nicht eines Herstellers oder Partners: welche Clouds und Produkte nötig sind, wie das Datenmodell aussieht, wie Salesforce mit den anderen Systemen verbunden ist und welche Entscheidungen langfristig dokumentiert werden. In der Umsetzung prüft er, was Partner bauen, gegen dieses Bild."
