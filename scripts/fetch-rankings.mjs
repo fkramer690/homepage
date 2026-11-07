@@ -60,9 +60,13 @@ function cleanOrganic(item) {
     const path = (cut === -1 ? segments : segments.slice(0, cut)).join('/');
     return { ...item, url: `https://${crumb}/${path}`, domain: crumb, resolved: 'breadcrumb' };
   }
+  // Some results carry no breadcrumb but name the site ("sortlist.de").
+  const site = hostOf(item.website_name);
+  if (site && !GOOGLE_HOST.test(site)) return { ...item, url: `https://${site}/`, domain: site, resolved: 'website_name' };
   return null;
 }
 const googleSamples = [];
+const droppedSamples = [];
 let googleDropped = 0;
 let googleResolved = 0;
 
@@ -110,6 +114,11 @@ for (const lang of ['de', 'en']) {
       const rawOrganic = items.filter((i) => i.type === 'organic');
       const organic = rawOrganic.map(cleanOrganic).filter(Boolean);
       const dropped = rawOrganic.length - organic.length;
+      for (const i of rawOrganic) {
+        if (droppedSamples.length < 15 && !cleanOrganic(i)) {
+          droppedSamples.push({ keyword, rank: i.rank_group, url: i.url?.slice(0, 80), title: i.title, breadcrumb: i.breadcrumb, websiteName: i.website_name });
+        }
+      }
       googleDropped += dropped;
       googleResolved += organic.filter((i) => i.resolved).length;
       const sample = rawOrganic.find((i) => GOOGLE_HOST.test(hostOf(i.url) || i.domain || ''));
@@ -173,6 +182,7 @@ for (const lang of ['de', 'en']) {
 
 const failed = Object.values(languages).flat().filter((r) => r.error).map((r) => r.keyword);
 console.error(`google.com links resolved: ${googleResolved}, dropped: ${googleDropped}`);
+for (const s of droppedSamples) console.error(`  dropped "${s.keyword}" #${s.rank}: ${s.url} | ${s.breadcrumb} | ${s.websiteName} (${s.title})`);
 for (const s of googleSamples) console.error(`  e.g. "${s.keyword}" #${s.rank}: ${s.url} | ${s.breadcrumb} (${s.title})`);
 console.error(`failed keywords: ${failed.length ? failed.join(', ') : 'none'}`);
 console.error(`cost of this run ${cost.toFixed(4)} USD`);
@@ -185,7 +195,7 @@ console.log(JSON.stringify({
   cost: Number(cost.toFixed(4)),
   // Data quality of this run: Google's own links removed from the organic list, and
   // keywords whose SERP could not be fetched. A run with failures is not comparable.
-  quality: { googleResolved, googleDropped, googleSamples, failed },
+  quality: { googleResolved, googleDropped, googleSamples, droppedSamples, failed },
   ...languages,
   ranked,
 }, null, 2));
