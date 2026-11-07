@@ -36,9 +36,9 @@ Grundlage: Video-Analyse der Gewinner und Verlierer des Spam Updates (abgeschlos
 
 | # | Maßnahme | Impact | Aufwand | Wer | Status |
 |---|---|---|---|---|---|
-| U1 | Veröffentlichungstempo drosseln: 197 DE-Artikel, davon 146 am 27. und 28.10.2026, passen zum Muster „Scaled Content Abuse“. Bis Ende Januar 2027 höchstens 1 bis 2 Artikel pro Woche, bevorzugt mit Praxis von Fabian (D8, D14, D15). In Search Console (Seiten-Bericht) prüfen, wie viele Artikel indexiert sind; nach 3 Monaten nicht indexierte Artikel in stärkere zusammenlegen | hoch | klein | Claude prüft, Fabian entscheidet | offen |
+| U1 | Veröffentlichungstempo drosseln: 197 DE-Artikel, davon 146 am 27. und 28.10.2026, passen zum Muster „Scaled Content Abuse“. Bis Ende Januar 2027 höchstens 1 bis 2 Artikel pro Woche, bevorzugt mit Praxis von Fabian (D8, D14, D15). In Search Console (Seiten-Bericht) prüfen, wie viele Artikel indexiert sind; nach 3 Monaten nicht indexierte Artikel in stärkere zusammenlegen | hoch | klein | Claude prüft, Fabian entscheidet | Entschieden 07.11.2026 (Fabian): bis Ende Januar 2027 höchstens 2 neue Artikel pro Woche, gilt auch für den täglichen Artikel-Lauf und fertige Entwürfe. Indexierung prüft Claude ab 09.11.2026 über die Search-Console-Anbindung (ersetzt QE) |
 | U2 | Themen-Hubs für das, was verkauft wird: Field Service (34 Artikel), Manufacturing Cloud (29), Revenue Cloud (27), B2B Commerce (26) haben keine indexierte Hub-Seite, die Blog-Kategorien sind nur #-Filter. Empfohlen: Masterclass-Hubs zu Themen-Hubs ausbauen (Kapitel plus alle Artikel des Themas, gruppiert nach Fragen wie Lohnt es sich, Lizenzen, Einführung, SAP); Alternative: indexierte Kategorieseiten | hoch | mittel | Claude | Field Service umgesetzt 07.11.2026 (Hub /masterclass/field-service/ mit Fragen-Liste, Titel auf „Salesforce Field Service“); Manufacturing Cloud, Revenue Cloud, B2B Commerce offen |
-| U3 | Leistungsseiten verlinken ihr Thema: statt 3 automatisch über Tags gewählter Artikel unter FAQ und Autorenbox eine kuratierte Liste (5 bis 8 Artikel plus passende Masterclass) im Lesefluss | hoch | mittel | Claude | offen |
+| U3 | Leistungsseiten verlinken ihr Thema: statt 3 automatisch über Tags gewählter Artikel unter FAQ und Autorenbox eine kuratierte Liste (5 bis 8 Artikel plus passende Masterclass) im Lesefluss | hoch | mittel | Claude | erledigt 07.11.2026: Abschnitt „Artikel zum Thema“ vor dem Ablauf, Frontmatter `readMore` und `masterclass` |
 | U4 | Kannibalisierung Masterclass und Blog auflösen, je Paar eine Hauptseite festlegen, die andere kürzen und verlinken: Change-Rollout Länder (Kapitel) und „Change Management weltweiter Rollout“ (8 gleiche Sätze), ADKAR-Diagnose und „Change Management Salesforce-Einführung“ (6), „Releases dem Fachbereich kommunizieren“ und Kapitel „Sponsor und Kommunikation“ (5), Nearshore-Artikel und Leistungsseite (3) | mittel | mittel | Claude | erledigt 07.11.2026: Masterclass-Kapitel neu gefasst (PR #310), Leistungsseiten Nearshore und Partnersteuerung umgeschrieben und auf die Artikel verlinkt (gleicher Text 17 % bzw. 16 % → unter 1 %); Ergebnis im Crawl vom 1.12. prüfen |
 | U5 | /leistungen/ mobil: erster Bildschirm zeigt nur zwei Absätze, keine Leistung. Zweiten Absatz unter die Karten | mittel | klein | Claude | erledigt 07.11.2026 (PR #311, Kennzahlen mobil unter den Karten) |
 | U6 | Content Drift beobachten: Julianes allgemeine Change-Artikel (Change-Kurve, Stakeholder-Analyse, Was ist Change Management) bleiben an Change-Leistungsseite und Blog, nicht auf der Startseite; bei D16 prüfen, ob sie passende Besucher bringen | klein | klein | Claude | ab 24.12.2026 |
@@ -53,7 +53,7 @@ Grundlage: Prüfung aller 197 DE-Artikel (EN-Paare inhaltlich gleich) auf eigene
 | IG1 | Die 15 schwachen Artikel mit den meisten Impressionen aus der Search Console ziehen und pro Artikel 2 bis 3 Fragen an Fabian formulieren (echte Größenordnung, Entscheidung mit Grund, Fehler aus dem Test) | hoch | klein | Claude | offen |
 | IG2 | Antworten als Praxis-Kasten und klare Meinung einbauen (DE + EN), in Paketen von 5 Artikeln | hoch | mittel | Fabian liefert Fakten, Claude baut ein | offen |
 | IG3 | Dünne Kostenartikel zu Agentforce zu einem starken Artikel zusammenlegen (Flex Credits, AELA, Digital Wallet, Serviceagent-Kosten, MCP-Budgetrisiko), alte URLs weiterleiten; passt zu U1 | mittel | mittel | Claude schlägt vor, Fabian entscheidet | offen |
-| IG4 | Artikel ohne Aussicht auf eigene Erfahrung (v. a. Revenue Cloud und B2B Commerce ohne eigene Projekte) auf Kürzen, Zusammenlegen oder noindex prüfen | mittel | mittel | Claude prüft, Fabian entscheidet | offen |
+| IG4 | Artikel ohne Aussicht auf eigene Erfahrung (v. a. Revenue Cloud und B2B Commerce ohne eigene Projekte) auf Kürzen, Zusammenlegen oder noindex prüfen | mittel | mittel | Claude prüft, Fabian entscheidet | Entschieden 07.11.2026: erst nach 3 Monaten Search-Console-Daten entscheiden, also ab Anfang Februar 2027 |
 | IG5 | Eigene Daten erzeugen statt Doku zusammenfassen: Tests in einer Dev-Org (z. B. Teilenummern in der B2B-Suche), kleine Umfrage unter Kunden oder LinkedIn-Kontakten | mittel | mittel | Fabian | offen |
 
 ## KI-Such-Checkliste (Prüfung 03.11.2026)
@@ -162,7 +162,7 @@ Erledigt im täglichen Lauf: Manufacturing Cloud lohnt sich (#41), Object Owners
 Technik erledigt in PR #51 (Sitemap, IndexNow, Schema, Titel, interne Links).
 
 Inhalte (Claude entwirft, Fabian gibt frei):
-- S1. Landingpages After-Sales und Field Service.
+- ~~S1. Landingpages After-Sales und Field Service.~~ Field Service durch den Themen-Hub erledigt (U2), After-Sales gestrichen (Fabian 07.11.2026).
 - ~~S2, S3, S4~~ → jetzt L3, L2, L1 oben.
 - ~~S5. Seite „Fragen, die ich in jedem Projekt stelle“~~ (umgesetzt 26.10.2026, PR #54, siehe Punkt 3 unten).
 
@@ -179,7 +179,7 @@ Macht Fabian selbst (Quick Wins):
   - Optional Profil-URL kürzen, neue URL an Claude (Website-Links umstellen)
 - ~~QC. Bing Webmaster Tools~~ (erledigt 26.10.2026, per Meta-Tag verifiziert, PR #53).
 - QD. Backlinks sammeln (Trailhead, Konferenz-/Sessionize-Seiten, Blue Apes) und URLs an Claude geben (kommen ins Schema als sameAs).
-- QE. Ab ca. 9.11.2026: Search Console Bericht „Seiten“ und PageSpeed Insights prüfen.
+- ~~QE. Ab ca. 9.11.2026: Search Console Bericht „Seiten“ und PageSpeed Insights prüfen.~~ Übernimmt Claude über die Search-Console-Anbindung und den monatlichen PageSpeed-Lauf (Fabian 07.11.2026).
 - QF. Unternehmensverzeichnisse: Einträge mit überall gleichem Namen, gleicher Adresse und Telefonnummer wie im Google-Profil anlegen, jeweils mit Link auf www.fk-sd.de. Vorschläge: Bing Places (Import aus dem Google-Profil möglich), Apple Business Connect, Gelbe Seiten, Das Örtliche, Cylex, 11880. North Data und Firmenwissen ziehen Daten aus dem Handelsregister, dort nur prüfen und ggf. Website ergänzen. Fertige Eintrags-URLs an Claude geben (kommen ggf. ins Schema als sameAs).
 - QG. Verzeichniseinträge (Liste Fabian 30.10.2026), alle mit gleichem Namen, gleicher Adresse und Telefonnummer und Link auf www.fk-sd.de. Nur kostenlose Basiseinträge, keine Bezahlpakete. Nicht ins Schema als sameAs (Verzeichnisse, keine eigenen Profile).
   - Webkataloge (wenig Aufwand, alte Domains, kaum Traffic, Freischaltung dauert Wochen bis Monate): onlinestreet.de, suchnase.de, webspider24.de (strenge Regeln vorher lesen), bunte-suche.de, go-findyou.de.

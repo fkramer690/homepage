@@ -408,7 +408,9 @@ export const en = {
     results: 'What you get',
     phases: 'How we work together',
     faq: 'Frequently asked questions',
-    posts: 'Further reading',
+    posts: 'Articles on this topic',
+    readingCourse: 'Masterclass',
+    readingChapters: 'chapters, free',
   },
   masterclass: {
     name: 'AI masterclass',
