@@ -123,6 +123,7 @@ Every article and every masterclass chapter loosens up its text with building bl
 ## SEO
 
 - One primary keyword (long tail, e.g. "Salesforce DevOps enterprise") in the title, the first paragraph, one H2 and the slug.
+- Pick the keyword by competition, not only by volume (R5, 2026-11-07): before writing a new article, check the top 10 for the keyword with DataForSEO (SERP plus domain rank of each result, login in the environment as `DATAFORSEO_LOGIN`/`DATAFORSEO_PASSWORD`). If at least a few results come from domains as strong as fk-sd.de or weaker, take it. If only strong domains rank (Salesforce, Trailhead, large consultancies, SalesforceBen), choose a more specific long-tail keyword with buying intent ("best X for Y", "alternatives to X", "X experiences", "X for manufacturers") or cover the term through LinkedIn or YouTube instead (R1, R2). Note the check in the pull request.
 - Slug: lowercase words with hyphens, in the article's language, unique across EN and DE (checked). Never change it after publishing.
 - At least 2 internal links, written relative so they survive the domain move: `../other-slug/`, the matching service page (`../../leistungen/<slug>/` in German, `../../services/<slug>/` in English), `../../#references`, `../../#about`. Prefer a specific service page over the generic `../../#services`. Never hardcode the domain or start a link with `/`.
 - External links only to sources that back a statement. Write them as normal Markdown links. In the body each one becomes a numbered source chip after the link text (`src/lib/source-chips.mjs`); the sources are collected in the collapsed list "Quellen"/"Sources" before the FAQ, where they open in a new tab (`src/lib/external-links.mjs`). So the link text must name the source ("Salesforce-Blog", "Release Notes Winter '27"), not "hier" or "Framework". Links inside content blocks stay plain links.
@@ -138,6 +139,9 @@ AI assistants quote passages that answer a question on their own. So:
 - Write definitions as complete sentences ("Salesforce DevOps means …").
 - Prefer lists and short paragraphs over long blocks of text.
 - Name the author and their role clearly (done by the template).
+- Every H2 section stands on its own, because AI search quotes single sections. No pointers back like "wie oben beschrieben", "siehe oben", "der oben genannte Beitrag", "as described above" or "in the previous section": name the point again in a few words. `scripts/check-blog.mjs` fails on these phrases in articles and chapters (KS2, 2026-11-07).
+- Name products, features and releases by their name ("Salesforce Field Service", "Document Builder", "Winter '27") instead of "das Tool", "die Lösung" or "das Feature", also in the second and third mention within a section.
+- Selection and comparison articles ("which partner", "X or Y", "when does X pay off") state the criteria behind the recommendation, as a short list or a ```vergleich or ```tabelle block, before the recommendation itself (KS3). A reader and an AI assistant must be able to see why the answer is what it is.
 
 ## Languages
 
