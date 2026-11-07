@@ -231,7 +231,7 @@ old card grids "sehr erschlagend"). Built in `src/components/MasterclassHub.astr
   that is also the topic hub for its product gets a section "Ihre Frage" right below the
   figures (`.mc-qa`): one row per question with number, question, short answer and a link
   to the one page that answers it in full (texts `questions` in the course texts,
-  resolved by `articleKey`; also emitted as FAQPage schema). First used for Field Service.
+  resolved by `articleKey`; also emitted as FAQPage schema). First used for Field Service, then Manufacturing Cloud and B2B Commerce (2026-11-07).
 
 ## Photos of Fabian
 
