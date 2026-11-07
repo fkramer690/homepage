@@ -1,0 +1,32 @@
+[
+ {
+  "day": "2026-10-30",
+  "inIndex": 325,
+  "crawledPages": 197,
+  "crawlErrors": 0
+ },
+ {
+  "day": "2026-10-31",
+  "inIndex": 400,
+  "crawledPages": 173,
+  "crawlErrors": 0
+ },
+ {
+  "day": "2026-11-01",
+  "inIndex": 405,
+  "crawledPages": 222,
+  "crawlErrors": 0
+ },
+ {
+  "day": "2026-11-02",
+  "inIndex": 405,
+  "crawledPages": 334,
+  "crawlErrors": 0
+ },
+ {
+  "day": "2026-11-03",
+  "inIndex": 409,
+  "crawledPages": 302,
+  "crawlErrors": 0
+ }
+]
