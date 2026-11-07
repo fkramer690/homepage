@@ -1,7 +1,8 @@
 name: Fetch analytics
 
-# Daily snapshot of Cloudflare Web Analytics, stored on the "stats" branch
-# so it can be turned into a report without access to Cloudflare itself.
+# Daily snapshot of Cloudflare Web Analytics and Bing Webmaster Tools, stored
+# on the "stats" branch so it can be turned into a report without access to
+# either service itself.
 on:
   schedule:
     - cron: '15 5 * * *'
@@ -29,6 +30,12 @@ jobs:
         run: |
           node scripts/fetch-analytics.mjs > /tmp/latest.json
           node scripts/dashboard-rows.mjs /tmp/latest.json /tmp/dashboard
+      - name: Query Bing Webmaster Tools
+        # A Bing outage must not cost the Cloudflare snapshot.
+        continue-on-error: true
+        env:
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+        run: node scripts/fetch-bing.mjs /tmp/bing
       - name: Commit snapshot to stats branch
         run: |
           git config user.name "github-actions[bot]"
@@ -43,6 +50,12 @@ jobs:
           cp /tmp/latest.json stats/latest.json
           cp /tmp/latest.json "stats/$(date -u +%F).json"
           rm -rf stats/dashboard && cp -r /tmp/dashboard stats/dashboard
+          if [ -f /tmp/bing/latest.json ]; then
+            mkdir -p stats/bing
+            cp /tmp/bing/latest.json stats/bing/latest.json
+            cp /tmp/bing/latest.json "stats/bing/$(date -u +%F).json"
+            rm -rf stats/bing/dashboard && cp -r /tmp/bing/dashboard stats/bing/dashboard
+          fi
           git add stats
           git commit -m "Analytics snapshot $(date -u +%F)" || exit 0
           git push origin stats
