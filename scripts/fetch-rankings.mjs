@@ -31,30 +31,37 @@ async function call(path, body, attempt = 0) {
   }
 }
 
-// Since 2026-11 Google mixes its own links (AI Mode, "more results", search redirects) into
-// the organic list; DataForSEO reports them as organic items with domain google.com (140 of
-// 234 top-3 slots on 2026-11-02). Redirect links are unwrapped to their target; the rest are
-// dropped, and positions are counted on the cleaned list.
+// Since 2026-11 Google wraps organic links in its own redirects (google.com/url?q=… or
+// google.com/goto?url=<opaque token>), so DataForSEO reports domain google.com for them
+// (140 of 234 top-3 slots on 2026-11-02, almost all results on 2026-11-07). Readable
+// redirects are unwrapped; for opaque ones the domain comes from the visible breadcrumb
+// ("https://www.example.com › path"). Only links with no recoverable target, i.e. Google's
+// own features, are dropped; positions are counted on the cleaned list.
 const GOOGLE_HOST = /^(www\.)?google\.[a-z.]+$/;
+const hostOf = (value) => {
+  const m = String(value ?? '').trim().match(/^(?:https?:\/\/)?([a-z0-9-]+(?:\.[a-z0-9-]+)+)/i);
+  return m ? m[1].toLowerCase() : '';
+};
 function cleanOrganic(item) {
   let url = item.url ?? '';
-  let host = '';
+  let host = hostOf(url) || item.domain || '';
+  if (!GOOGLE_HOST.test(host)) return item;
   try {
     const u = new URL(url);
-    host = u.hostname;
-    const target = GOOGLE_HOST.test(host) && (u.searchParams.get('q') ?? u.searchParams.get('url'));
-    if (target && /^https?:\/\//.test(target)) {
-      url = target;
-      host = new URL(target).hostname;
-    }
-  } catch {
-    host = item.domain ?? '';
+    const target = u.searchParams.get('q') ?? u.searchParams.get('url');
+    if (target && /^https?:\/\//.test(target)) return { ...item, url: target, domain: hostOf(target), resolved: 'redirect' };
+  } catch {}
+  const crumb = hostOf(item.breadcrumb);
+  if (crumb && !GOOGLE_HOST.test(crumb)) {
+    // Keep the path from the breadcrumb so the own page can still be named.
+    const path = String(item.breadcrumb).split('›').slice(1).map((p) => p.trim()).filter(Boolean).join('/');
+    return { ...item, url: `https://${crumb}/${path}`, domain: crumb, resolved: 'breadcrumb' };
   }
-  if (GOOGLE_HOST.test(host || item.domain || '')) return null;
-  return { ...item, url, domain: host || item.domain };
+  return null;
 }
 const googleSamples = [];
 let googleDropped = 0;
+let googleResolved = 0;
 
 async function request(path, body) {
   const res = await fetch(`https://api.dataforseo.com/v3/${path}`, {
@@ -101,9 +108,13 @@ for (const lang of ['de', 'en']) {
       const organic = rawOrganic.map(cleanOrganic).filter(Boolean);
       const dropped = rawOrganic.length - organic.length;
       googleDropped += dropped;
-      if (dropped && googleSamples.length < 5) {
-        const sample = rawOrganic.find((i) => GOOGLE_HOST.test(i.domain ?? ''));
-        googleSamples.push({ keyword, url: sample?.url, title: sample?.title, rank: sample?.rank_group });
+      googleResolved += organic.filter((i) => i.resolved).length;
+      const sample = rawOrganic.find((i) => GOOGLE_HOST.test(hostOf(i.url) || i.domain || ''));
+      if (sample && googleSamples.length < 5) {
+        googleSamples.push({
+          keyword, rank: sample.rank_group, url: sample.url?.slice(0, 80), title: sample.title,
+          breadcrumb: sample.breadcrumb, websiteName: sample.website_name, fields: Object.keys(sample),
+        });
       }
       const index = organic.findIndex((i) => isOwn(i.domain));
       const hit = organic[index];
@@ -158,8 +169,8 @@ for (const lang of ['de', 'en']) {
 }
 
 const failed = Object.values(languages).flat().filter((r) => r.error).map((r) => r.keyword);
-console.error(`google.com links dropped from organic results: ${googleDropped}`);
-for (const s of googleSamples) console.error(`  e.g. "${s.keyword}" #${s.rank}: ${s.url} (${s.title})`);
+console.error(`google.com links resolved: ${googleResolved}, dropped: ${googleDropped}`);
+for (const s of googleSamples) console.error(`  e.g. "${s.keyword}" #${s.rank}: ${s.url} | ${s.breadcrumb} (${s.title})`);
 console.error(`failed keywords: ${failed.length ? failed.join(', ') : 'none'}`);
 console.error(`cost of this run ${cost.toFixed(4)} USD`);
 console.log(JSON.stringify({
@@ -171,7 +182,7 @@ console.log(JSON.stringify({
   cost: Number(cost.toFixed(4)),
   // Data quality of this run: Google's own links removed from the organic list, and
   // keywords whose SERP could not be fetched. A run with failures is not comparable.
-  quality: { googleDropped, googleSamples, failed },
+  quality: { googleResolved, googleDropped, googleSamples, failed },
   ...languages,
   ranked,
 }, null, 2));
