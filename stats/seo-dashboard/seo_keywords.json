@@ -9,7 +9,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Wo hat Salesforce seinen Sitz? | Was kostet Salesforce im Monat? | Warum ist Salesforce so stark gefallen? | Was ist Salesforce kurz erklärt?"
+  "questions": "Was verdient ein Salesforce Consultant? | Wie viel verdient man bei Salesforce? | Was macht Salesforce genau? | Was ist ein Salesforce Consultant?"
  },
  {
   "key": "de:salesforce freelancer",
@@ -45,7 +45,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "Is solutions architect a good role? | What is Salesforce architecture and what are its key features? | Is Salesforce hard to learn? | Who designed Salesforce?"
  },
  {
   "key": "de:salesforce beratung mittelstand",
@@ -81,7 +81,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was für ein Programm ist Salesforce? | Was genau macht ein DevOps? | Was ist besser, SAP oder Salesforce? | Was verdient man als Salesforce Consultant?"
+  "questions": ""
  },
  {
   "key": "de:salesforce release management",
@@ -123,10 +123,10 @@
   "key": "de:salesforce nearshore",
   "lang": "DE",
   "keyword": "salesforce nearshore",
-  "position": null,
+  "position": 23,
   "previous": null,
   "volume": null,
-  "page": null,
+  "page": "/services",
   "aiOverview": "ja",
   "aiCited": "nein",
   "questions": ""
@@ -153,7 +153,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "What is the difference between the __C and __R prefixes in Salesforce? | What is a field service manager? | Where are files stored in Salesforce? | Is Salesforce difficult to learn?"
  },
  {
   "key": "de:salesforce field service einführung",
@@ -171,7 +171,7 @@
   "key": "de:field service lizenzen salesforce",
   "lang": "DE",
   "keyword": "field service lizenzen salesforce",
-  "position": 13,
+  "position": 19,
   "previous": null,
   "volume": null,
   "page": "/Blog",
@@ -225,7 +225,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "Is Salesforce CPQ part of revenue Cloud? | What is the difference between Salesforce CPQ and revenue Cloud? | Is Salesforce still selling CPQ? | What is Salesforce revenue Cloud?"
  },
  {
   "key": "de:salesforce cpq end of sale",
@@ -273,7 +273,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Ist Salesforce wie SAP? | Was kostet Salesforce im Monat? | Was ist Salesforce kurz erklärt? | Was kann Agentforce?"
+  "questions": "Was bedeutet Salesforce? | Was kostet Salesforce im Monat? | Was kann Agentforce? | Ist Salesforce wie SAP?"
  },
  {
   "key": "de:agentforce kosten",
@@ -333,7 +333,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "What is a GCP well-architected framework? | What is the salary of a Technical Architect at Salesforce? | What is Salesforce architecture and what are its key features? | Which Salesforce architect certification is best?"
+  "questions": "What is a GCP well-architected framework? | Is Salesforce worth learning in 2026? | What is the salary of a Technical Architect at Salesforce? | What is Salesforce architecture and what are its key features?"
  },
  {
   "key": "de:sap to salesforce",
@@ -345,7 +345,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Which is better, Salesforce or SAP? | Why is Salesforce falling? | Who is Salesforce's biggest competitor? | How can I integrate SAP with Salesforce?"
+  "questions": ""
  },
  {
   "key": "de:salesforce implementation partner",
@@ -381,7 +381,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was ist Salesforce? | Welche kostengünstigen CRM-Tools gibt es? | Was verdient man als Salesforce Consultant? | Was ist besser, SAP oder Salesforce?"
+  "questions": "Was ist Salesforce? | Was ist besser, SAP oder Salesforce? | Welche kostengünstigen CRM-Tools gibt es? | Was verdient man als Salesforce Consultant?"
  },
  {
   "key": "de:was ist agentforce",
@@ -393,7 +393,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was für ein Programm ist Salesforce? | Was versteht man unter Agent? | Warum ist Salesforce so stark gefallen? | Ist Salesforce wie SAP?"
+  "questions": "Was bedeutet Salesforce? | Was versteht man unter Agent? | Welche KI-Agenten sind für Privatpersonen geeignet? | Was kostet Salesforce im Monat?"
  },
  {
   "key": "de:salesforce field service license",
@@ -513,7 +513,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "Was ist das 5-Phasen-Modell? | Welche Change Management-Modelle gibt es? | Was bedeutet \"ADKAR\" auf Deutsch? | Was sind die 7 Phasen der Veränderung?"
  },
  {
   "key": "de:change management masterclass",
@@ -535,9 +535,9 @@
   "previous": null,
   "volume": 140,
   "page": null,
-  "aiOverview": "nein",
+  "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was macht man als Key-User? | Welche 3 ERP-Systeme gibt es? | Welche ERP-Kenntnisse sind wichtig? | Wie schreibt man \"Key User\" richtig?"
+  "questions": "Welche 3 ERP-Systeme gibt es? | Was ist mit Key gemeint? | Welche ERP-Kenntnisse sind wichtig? | Welche Schulungen gibt es für SAP-Key-User?"
  },
  {
   "key": "de:hypercare phase",
@@ -549,16 +549,16 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Welche 5 Phasen des Projektmanagements gibt es? | Was bedeutet Hypercare? | Wie lange dauert eine Hypercare-Phase? | Was ist die Definitionsphase im Projektmanagement?"
+  "questions": "Was bedeutet Hypercare? | Wie lange dauert eine Hypercare-Phase?"
  },
  {
   "key": "de:juliane winterscheid",
   "lang": "DE",
   "keyword": "juliane winterscheid",
-  "position": 9,
+  "position": null,
   "previous": null,
   "volume": 10,
-  "page": "/partner",
+  "page": null,
   "aiOverview": "nein",
   "aiCited": "nein",
   "questions": ""
@@ -621,7 +621,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Welche Methoden gibt es für die Stakeholderanalyse? | Was ist Stakeholder-Theorie? | Was ist das Interesse von Stakeholdern? | Wie erstellt man eine Stakeholder-Matrix?"
+  "questions": "Welche Methoden gibt es für die Stakeholderanalyse? | Was ist Stakeholder-Theorie? | Wie erstellt man eine Stakeholder-Matrix? | Was ist das Interesse von Stakeholdern?"
  },
  {
   "key": "de:stakeholder analyse vorlage",
@@ -631,7 +631,7 @@
   "previous": null,
   "volume": 70,
   "page": null,
-  "aiOverview": "nein",
+  "aiOverview": "ja",
   "aiCited": "nein",
   "questions": ""
  },
@@ -655,7 +655,7 @@
   "previous": null,
   "volume": 480,
   "page": null,
-  "aiOverview": "nein",
+  "aiOverview": "ja",
   "aiCited": "nein",
   "questions": "Was ist das 5-Phasen-Modell? | Welche Change Management-Modelle gibt es? | Welche Stufen der Akzeptanz gibt es? | Was sind die 7 Phasen der Veränderung?"
  },
@@ -735,10 +735,10 @@
   "key": "en:sfdx-hardis",
   "lang": "EN",
   "keyword": "sfdx-hardis",
-  "position": 10,
+  "position": 9,
   "previous": null,
   "volume": 40,
-  "page": "/FK%20Solution%20Design/Blog",
+  "page": "/",
   "aiOverview": "ja",
   "aiCited": "nein",
   "questions": ""
@@ -921,7 +921,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "What is change management in layman terms? | What are the 5 P's of change management? | What are the 7 C's of change management? | What are the key principles of change management?"
+  "questions": "What is change management in layman terms? | Why do organisations need to change? | What are the 5 P's of change management? | What are the 7 C's of change management?"
  },
  {
   "key": "en:change management models",
@@ -945,7 +945,7 @@
   "page": null,
   "aiOverview": "nein",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "How do you analyse stakeholders? | Can you explain Mendelow's Matrix and its purpose? | What is R. Edward Freeman's Stakeholder Theory? | What are the 7 principles of stakeholder management?"
  },
  {
   "key": "en:change curve",
