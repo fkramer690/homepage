@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-07T11:42:56.026Z",
+  "generatedAt": "2026-11-07T19:49:01.061Z",
   "range": {
     "start": "2026-10-08",
     "end": "2026-11-07"
@@ -24,12 +24,12 @@
       }
     },
     {
-      "count": 120,
+      "count": 130,
       "dimensions": {
         "userAgentBrowser": "Unknown"
       },
       "sum": {
-        "visits": 80
+        "visits": 90
       }
     },
     {
@@ -80,12 +80,12 @@
       }
     },
     {
-      "count": 110,
+      "count": 120,
       "dimensions": {
         "countryName": "US"
       },
       "sum": {
-        "visits": 90
+        "visits": 100
       }
     },
     {
@@ -253,23 +253,23 @@
       }
     },
     {
-      "count": 10,
+      "count": 20,
       "dimensions": {
         "date": "2026-11-07"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     }
   ],
   "devices": [
     {
-      "count": 900,
+      "count": 910,
       "dimensions": {
         "deviceType": "desktop"
       },
       "sum": {
-        "visits": 190
+        "visits": 200
       }
     },
     {
@@ -304,15 +304,6 @@
     {
       "count": 70,
       "dimensions": {
-        "requestPath": "/blog/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 70,
-      "dimensions": {
         "requestPath": "/leistungen/change-management/"
       },
       "sum": {
@@ -320,12 +311,21 @@
       }
     },
     {
-      "count": 40,
+      "count": 70,
       "dimensions": {
-        "requestPath": "/fragen/"
+        "requestPath": "/blog/"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "requestPath": "/partner/juliane-winterscheid/"
+      },
+      "sum": {
+        "visits": 10
       }
     },
     {
@@ -340,10 +340,10 @@
     {
       "count": 40,
       "dimensions": {
-        "requestPath": "/partner/juliane-winterscheid/"
+        "requestPath": "/fragen/"
       },
       "sum": {
-        "visits": 10
+        "visits": 0
       }
     },
     {
@@ -376,46 +376,10 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/leistungen/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 20,
-      "dimensions": {
-        "requestPath": "/en/blog/ai-native-salesforce-delivery-process/"
-      },
-      "sum": {
-        "visits": 20
-      }
-    },
-    {
-      "count": 20,
-      "dimensions": {
-        "requestPath": "/masterclass-ki/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 20,
-      "dimensions": {
         "requestPath": "/masterclass/revenue-cloud/"
       },
       "sum": {
         "visits": 10
-      }
-    },
-    {
-      "count": 20,
-      "dimensions": {
-        "requestPath": "/leistungen/salesforce-architektur/"
-      },
-      "sum": {
-        "visits": 0
       }
     },
     {
@@ -437,6 +401,42 @@
       }
     },
     {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/en/blog/ai-native-salesforce-delivery-process/"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/leistungen/salesforce-architektur/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/leistungen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/masterclass-ki/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
       "count": 10,
       "dimensions": {
         "requestPath": "/en/blog/ai-rules-file-salesforce-repository/"
@@ -448,7 +448,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/en/blog/copado-gearset-provar-ai-agents/"
+        "requestPath": "/en/masterclass/ai-salesforce/"
       },
       "sum": {
         "visits": 0
@@ -457,10 +457,10 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/blog/merchandising-agent-teilekatalog/"
+        "requestPath": "/en/blog/copado-gearset-provar-ai-agents/"
       },
       "sum": {
-        "visits": 10
+        "visits": 0
       }
     }
   ],
@@ -475,12 +475,12 @@
       }
     },
     {
-      "count": 250,
+      "count": 260,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 250
+        "visits": 260
       }
     },
     {
