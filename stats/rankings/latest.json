@@ -1,42 +1,233 @@
 {
-  "generatedAt": "2026-11-07T21:43:13.232Z",
+  "generatedAt": "2026-11-07T22:11:23.407Z",
   "domain": "fk-sd.de",
   "location": "Germany",
   "depth": 50,
-  "balanceBefore": 80.445967,
-  "cost": 1.074,
+  "balanceBefore": 79.353967,
+  "cost": 1.084,
   "quality": {
-    "googleDropped": 3678,
+    "googleResolved": 3296,
+    "googleDropped": 448,
     "googleSamples": [
       {
         "keyword": "salesforce berater",
-        "url": "https://google.com/goto?url=CAESeAHEIkXX8K99Ld9z9TXs_aXet8RoFL3z5XTcXRtBHURYk3_aNt5cvckiWUtyEDJJM01fD06XkF8KbXqrbMaIIOC6HqgSy1BbZ58xvjM7jdhavmqWY6xwUNoVjb1xCIWw1kTDhOFRMS4ORelx2qfIzs910Wp4ZtA6Jw",
+        "rank": 1,
+        "url": "https://google.com/goto?url=CAESeQHEIkXXPLqFT8VWX-zNltiOx6JCdlATkQ4t9yns7RjnV5AL",
         "title": "Top Salesforce Beratung Agenturen in Deutschland - Sortlist",
-        "rank": 1
+        "breadcrumb": "https://www.sortlist.de › deutschland-de",
+        "websiteName": "sortlist.de",
+        "fields": [
+          "type",
+          "rank_group",
+          "rank_absolute",
+          "page",
+          "position",
+          "xpath",
+          "domain",
+          "title",
+          "url",
+          "cache_url",
+          "related_search_url",
+          "breadcrumb",
+          "website_name",
+          "is_image",
+          "is_video",
+          "is_featured_snippet",
+          "is_malicious",
+          "is_web_story",
+          "checks",
+          "description",
+          "pre_snippet",
+          "extended_snippet",
+          "images",
+          "amp_version",
+          "rating",
+          "price",
+          "highlighted",
+          "links",
+          "faq",
+          "extended_people_also_search",
+          "about_this_result",
+          "related_result",
+          "timestamp",
+          "rectangle"
+        ]
       },
       {
         "keyword": "salesforce freelancer",
-        "url": "https://google.com/goto?url=CAESpgEBxCJF13bcvcXNRdE4yJnXCyW8OzI3D-NUoq1zbO2AybeFTqwV8j2FyFWCCenrzwoQktWkwoWl8xS71BLkluzEGacM2X1qF5kuojh7abC0mP6OJ_QFtPgi6sRxNXOdmDIG7p34gyFswdL6BH1bP8OquXQo7xvNsX3IRBPrXy7j0xoLZwHLYSWsEcU-0asA4eBr9-o9bTjDRhWY6KOwKC9KEcYg5Zv_",
-        "title": "Haben Sie schon einmal einen Freiberufler für Salesforce ...",
-        "rank": 1
+        "rank": 1,
+        "url": "https://google.com/goto?url=CAESkgEBxCJF193-gDY0Zf1Hr9WT2mWf6GQoVjh94Xn1okofkdB1",
+        "title": "Freelance Project Work | Salesforce Trailblazer Community",
+        "breadcrumb": "https://trailhead.salesforce.com › topics › freelanceproje...",
+        "websiteName": "Trailhead",
+        "fields": [
+          "type",
+          "rank_group",
+          "rank_absolute",
+          "page",
+          "position",
+          "xpath",
+          "domain",
+          "title",
+          "url",
+          "cache_url",
+          "related_search_url",
+          "breadcrumb",
+          "website_name",
+          "is_image",
+          "is_video",
+          "is_featured_snippet",
+          "is_malicious",
+          "is_web_story",
+          "checks",
+          "description",
+          "pre_snippet",
+          "extended_snippet",
+          "images",
+          "amp_version",
+          "rating",
+          "price",
+          "highlighted",
+          "links",
+          "faq",
+          "extended_people_also_search",
+          "about_this_result",
+          "related_result",
+          "timestamp",
+          "rectangle"
+        ]
       },
       {
         "keyword": "salesforce architekt freelancer",
-        "url": "https://google.com/goto?url=CAESdQHEIkXX-9O9BLRRZwrVcUMp7eY9ibpxklvHxuet6ZBZMQhWgdOF6WsTi_0YQVGoUuWQNY7K2D9jRMoSakesndXCGJRbj9MYoXZFnR2rOzCqDBg0Meyp9GRhR_340zvaQ9K-v0pFWVv5s_6cxrrdD0tANHRzZQ",
-        "title": "Freie Salesforce lightning Jobs für Freelancer finden",
-        "rank": 1
+        "rank": 1,
+        "url": "https://google.com/goto?url=CAESggEBxCJF1yykHQG8vIax3suk5oGyzSR7Mno22xY2rQVaFsFl",
+        "title": "26 Freelancer und Freiberufler Einträge zum Hersteller ...",
+        "breadcrumb": "https://www.it-projekte.de › nach-hersteller › salesforce",
+        "websiteName": "IT-Projekte.de",
+        "fields": [
+          "type",
+          "rank_group",
+          "rank_absolute",
+          "page",
+          "position",
+          "xpath",
+          "domain",
+          "title",
+          "url",
+          "cache_url",
+          "related_search_url",
+          "breadcrumb",
+          "website_name",
+          "is_image",
+          "is_video",
+          "is_featured_snippet",
+          "is_malicious",
+          "is_web_story",
+          "checks",
+          "description",
+          "pre_snippet",
+          "extended_snippet",
+          "images",
+          "amp_version",
+          "rating",
+          "price",
+          "highlighted",
+          "links",
+          "faq",
+          "extended_people_also_search",
+          "about_this_result",
+          "related_result",
+          "timestamp",
+          "rectangle"
+        ]
       },
       {
         "keyword": "salesforce solution architect",
-        "url": "https://google.com/goto?url=CAESaAHEIkXXdWLpPewdYIUmiXkE3ffi0xbdT-TutoOS6QqT3kxxRWVWCGRSeKF7QamnRMTHRvoZJnJNteouZopQnHh32xKeONUs5age1pg8bYakZNEZhMlJ7Y6Z-Kp3NSRJV6treuXDfQAk",
+        "rank": 1,
+        "url": "https://google.com/goto?url=CAESaAHEIkXXN2dBeWY8rHB2TWSrvJo2PhCj1M8Ed98hWfh57ByE",
         "title": "How to Become a Salesforce Architect",
-        "rank": 1
+        "breadcrumb": "Ca. 11.370 Aufrufe  ·  vor 3 Jahren",
+        "websiteName": "YouTube · Salesforce Hulk",
+        "fields": [
+          "type",
+          "rank_group",
+          "rank_absolute",
+          "page",
+          "position",
+          "xpath",
+          "domain",
+          "title",
+          "url",
+          "cache_url",
+          "related_search_url",
+          "breadcrumb",
+          "website_name",
+          "is_image",
+          "is_video",
+          "is_featured_snippet",
+          "is_malicious",
+          "is_web_story",
+          "checks",
+          "description",
+          "pre_snippet",
+          "extended_snippet",
+          "images",
+          "amp_version",
+          "rating",
+          "price",
+          "highlighted",
+          "links",
+          "faq",
+          "extended_people_also_search",
+          "about_this_result",
+          "related_result",
+          "timestamp",
+          "rectangle"
+        ]
       },
       {
-        "keyword": "salesforce beratung mittelstand",
-        "url": "https://google.com/goto?url=CAESgAEBxCJF11qHrR2W4lk0f-_ELb4qYXP6e_ZayoH2HloakQkg5DSSOi0m8ycv-PTaxxAJ6mfbMoKq827SEGu0W7wWoIYjp8G85Uhtcez4vNSbRMoWC24M-gCn3bVQyMkuUhMMHGk8Oy6UouotO7yXPVupcoKLrTcD99hbbCTkbD4TEw",
-        "title": "HubSpot vs. Salesforce: Welches CRM passt zum ...",
-        "rank": 1
+        "keyword": "salesforce devops beratung",
+        "rank": 1,
+        "url": "https://google.com/goto?url=CAESqgEBxCJF1zal--FXyd0IaVNxfjSJcOqi3CnAntf-QAklEdYu",
+        "title": "Lifecycle Center",
+        "breadcrumb": "https://help.salesforce.com › arti...",
+        "websiteName": "Salesforce",
+        "fields": [
+          "type",
+          "rank_group",
+          "rank_absolute",
+          "page",
+          "position",
+          "xpath",
+          "domain",
+          "title",
+          "url",
+          "cache_url",
+          "related_search_url",
+          "breadcrumb",
+          "website_name",
+          "is_image",
+          "is_video",
+          "is_featured_snippet",
+          "is_malicious",
+          "is_web_story",
+          "checks",
+          "description",
+          "pre_snippet",
+          "extended_snippet",
+          "images",
+          "amp_version",
+          "rating",
+          "price",
+          "highlighted",
+          "links",
+          "faq",
+          "extended_people_also_search",
+          "about_this_result",
+          "related_result",
+          "timestamp",
+          "rectangle"
+        ]
       }
     ],
     "failed": []
@@ -56,9 +247,18 @@
         "freonit.com",
         "google.com"
       ],
-      "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "questions": [
+        "Wo hat Salesforce seinen Sitz?",
+        "Was kostet Salesforce im Monat?",
+        "Warum ist Salesforce so stark gefallen?",
+        "Was ist Salesforce kurz erklärt?"
+      ],
+      "top3": [
+        "www.sortlist.de",
+        "comselect.de",
+        "de.indeed.com"
+      ],
+      "googleDropped": 3
     },
     {
       "keyword": "salesforce freelancer",
@@ -70,14 +270,17 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "youtube.com",
-        "freelancermap.de",
+        "freelance.de",
         "google.com",
         "trailhead.salesforce.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "trailhead.salesforce.com",
+        "www.freelance.de",
+        "www.upwork.com"
+      ],
+      "googleDropped": 5
     },
     {
       "keyword": "salesforce architekt freelancer",
@@ -89,15 +292,18 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "consultingheads.com",
-        "freelancermap.de",
+        "freelancermap.com",
+        "9am.works",
         "google.com",
-        "freelance.de",
-        "trailhead.salesforce.com"
+        "it-projekte.de"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "www.it-projekte.de",
+        "de.indeed.com",
+        "www.freelancermap.com"
+      ],
+      "googleDropped": 3
     },
     {
       "keyword": "salesforce solution architect",
@@ -109,18 +315,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "youtube.com",
+        "sellickpartnership.co.uk",
         "google.com",
-        "salesforceben.com"
+        "youtube.com",
+        "curatepartners.com",
+        "trailhead.salesforce.com"
       ],
-      "questions": [
-        "Is solutions architect a good role?",
-        "What is Salesforce architecture and what are its key features?",
-        "Is Salesforce hard to learn?",
-        "Who designed Salesforce?"
+      "questions": [],
+      "top3": [
+        "www.apexhours.com",
+        "curatepartners.com",
+        "www.levels.fyi"
       ],
-      "top3": [],
-      "googleDropped": 46
+      "googleDropped": 7
     },
     {
       "keyword": "salesforce beratung mittelstand",
@@ -132,14 +339,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
+        "comselect.de",
         "google.com",
-        "ommax.com",
-        "nortal.com",
-        "trailheadacademy.salesforce.com"
+        "youtube.com",
+        "bc-advisory.de",
+        "salesforce.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "www.bc-advisory.de",
+        "comselect.de",
+        "www.sortlist.de"
+      ],
+      "googleDropped": 3
     },
     {
       "keyword": "salesforce partnersteuerung",
@@ -151,14 +363,16 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "de.linkedin.com",
-        "partners.salesforce.com",
         "youtube.com",
         "google.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 23
+      "top3": [
+        "www.deloittedigital.com",
+        "help.salesforce.com",
+        "smartrms.my.salesforce-sites.com"
+      ],
+      "googleDropped": 7
     },
     {
       "keyword": "salesforce devops beratung",
@@ -170,14 +384,24 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "youtube.com",
+        "de.linkedin.com",
         "google.com",
-        "trailhead.salesforce.com",
-        "aviando.io"
+        "salesforce.com",
+        "youtube.com",
+        "help.salesforce.com"
       ],
-      "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "questions": [
+        "Was für ein Programm ist Salesforce?",
+        "Was genau macht ein DevOps?",
+        "Was ist besser, SAP oder Salesforce?",
+        "Was verdient man als Salesforce Consultant?"
+      ],
+      "top3": [
+        "help.salesforce.com",
+        "www.techforceservices.com",
+        "sptechusa.com"
+      ],
+      "googleDropped": 4
     },
     {
       "keyword": "salesforce release management",
@@ -189,15 +413,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
+        "trailhead.salesforce.com",
         "youtube.com",
         "google.com",
-        "bluecanvas.io",
-        "docs.gearset.com",
-        "copado.com"
+        "flosum.com",
+        "linkedin.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 47
+      "top3": [
+        "trailhead.salesforce.com",
+        "trailhead.salesforce.com",
+        "help.salesforce.com"
+      ],
+      "googleDropped": 5
     },
     {
       "keyword": "sfdx-hardis",
@@ -216,8 +444,12 @@
         "google.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 46
+      "top3": [
+        "sfdx-hardis.cloudity.com",
+        "sfdx-hardis.cloudity.com",
+        "open-vsx.org"
+      ],
+      "googleDropped": 6
     },
     {
       "keyword": "salesforce devops center",
@@ -235,9 +467,18 @@
         "gearset.com",
         "google.com"
       ],
-      "questions": [],
-      "top3": [],
-      "googleDropped": 47
+      "questions": [
+        "What is the Salesforce DevOps Center?",
+        "What is DevOps Salesforce?",
+        "Is COPADO only for Salesforce?",
+        "What is the Dev Hub in Salesforce?"
+      ],
+      "top3": [
+        "developer.salesforce.com",
+        "help.salesforce.com",
+        "www.salesforce.com"
+      ],
+      "googleDropped": 13
     },
     {
       "keyword": "salesforce nearshore",
@@ -249,13 +490,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "thinkbeyond.cloud",
+        "kinpoint.de",
         "google.com",
-        "adesso.de"
+        "appexchange.salesforce.com",
+        "adesso.de",
+        "discoverypartners.co"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "help.salesforce.com",
+        "www.salesforce.com",
+        "www.salesforce.com"
+      ],
+      "googleDropped": 3
     },
     {
       "keyword": "salesforce lizenzen",
@@ -267,11 +514,11 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
+        "apracor.sunzinet.com",
         "najar.ai",
-        "blog.factory42.com",
-        "trusted.de",
-        "mind-force.de",
-        "youtube.com"
+        "google.com",
+        "meetergo.com",
+        "mind-force.de"
       ],
       "questions": [
         "Was ist Salesforce?",
@@ -279,8 +526,12 @@
         "Welche kostengünstigen CRM-Tools gibt es?",
         "Welche Salesforce-Zertifizierungen gibt es?"
       ],
-      "top3": [],
-      "googleDropped": 45
+      "top3": [
+        "blog.factory42.com",
+        "meetergo.com",
+        "mind-force.de"
+      ],
+      "googleDropped": 4
     },
     {
       "keyword": "salesforce field service",
@@ -298,11 +549,11 @@
       ],
       "questions": [],
       "top3": [
-        "play.google.com",
-        "play.google.com",
-        "play.google.com"
+        "www.salesforce.com",
+        "trailhead.salesforce.com",
+        "www.salesforce.com"
       ],
-      "googleDropped": 43
+      "googleDropped": 2
     },
     {
       "keyword": "salesforce field service einführung",
@@ -314,30 +565,32 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "apracor.sunzinet.com",
-        "trailhead.salesforce.com",
-        "capterra.com.de",
-        "youtube.com",
-        "google.com"
+        "google.com",
+        "salesforce.com",
+        "mind-force.de",
+        "youtube.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "mind-force.de",
+        "mind-force.de",
+        "trailheadacademy.salesforce.com"
+      ],
+      "googleDropped": 8
     },
     {
       "keyword": "field service lizenzen salesforce",
-      "position": null,
-      "url": null,
+      "position": 13,
+      "url": "https://www.fk-sd.de/Blog",
       "volume": null,
       "cpc": null,
       "competition": null,
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "google.com",
-        "datasensum.com",
-        "salesforce.com",
-        "titandxp.com"
+        "stackingo.com",
+        "scribd.com",
+        "google.com"
       ],
       "questions": [
         "Was ist Dynamics 365 Field Service?",
@@ -345,8 +598,11 @@
         "Was ist besser, SAP oder Salesforce?",
         "Ist Trailhead kostenlos?"
       ],
-      "top3": [],
-      "googleDropped": 42
+      "top3": [
+        "www.scribd.com",
+        "www.salesforce.com",
+        "www.taloflow.ai"
+      ]
     },
     {
       "keyword": "salesforce manufacturing cloud",
@@ -364,8 +620,12 @@
         "help.salesforce.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 45
+      "top3": [
+        "www.salesforce.com",
+        "trailhead.salesforce.com",
+        "www.salesforce.com"
+      ],
+      "googleDropped": 5
     },
     {
       "keyword": "manufacturing cloud funktionen",
@@ -377,17 +637,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "ibs-technology.com",
         "salesforce.com",
-        "geschaeftskunden.telekom.de",
+        "artemis-innovations.de",
+        "google.com",
         "youtube.com",
-        "salesfive.com"
+        "trailhead.salesforce.com"
       ],
       "questions": [],
       "top3": [
-        "cloud.google.com"
+        "www.salesforce.com",
+        "trailhead.salesforce.com",
+        "artemis-innovations.de"
       ],
-      "googleDropped": 48
+      "googleDropped": 2
     },
     {
       "keyword": "salesforce revenue cloud",
@@ -406,8 +668,12 @@
         "youtube.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 43
+      "top3": [
+        "trailhead.salesforce.com",
+        "www.salesforce.com",
+        "help.salesforce.com"
+      ],
+      "googleDropped": 4
     },
     {
       "keyword": "salesforce cpq revenue cloud",
@@ -419,14 +685,18 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "salesforce.com",
-        "youtube.com",
+        "experlogix.com",
         "google.com",
-        "fluidogroup.com"
+        "youtube.com",
+        "everstage.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "www.dhruvsoft.com",
+        "www.softwebsolutions.com",
+        "experlogix.com"
+      ],
+      "googleDropped": 7
     },
     {
       "keyword": "salesforce cpq end of sale",
@@ -438,15 +708,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
+        "servicepath.co",
         "salesforce.com",
-        "linkedin.com",
         "google.com",
         "experlogix.com",
-        "stratavar.com"
+        "rithom.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 47
+      "top3": [
+        "servicepath.co",
+        "www.stratavar.com",
+        "www.salesforce.com"
+      ],
+      "googleDropped": 18
     },
     {
       "keyword": "salesforce b2b commerce",
@@ -458,14 +732,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "google.com",
-        "softwareadvice.de",
         "youtube.com",
-        "salesforce.com"
+        "salesforceben.com",
+        "google.com",
+        "salesforce.com",
+        "developer.salesforce.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "www.salesforceben.com",
+        "help.salesforce.com",
+        "www.salesforce.com"
+      ],
+      "googleDropped": 5
     },
     {
       "keyword": "b2b commerce preise salesforce",
@@ -477,13 +756,22 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "adtribute.io",
-        "google.com",
-        "salesforce.com"
+        "salesfive.com",
+        "eesel.ai",
+        "help.salesforce.com"
       ],
-      "questions": [],
-      "top3": [],
-      "googleDropped": 49
+      "questions": [
+        "Was ist Salesforce?",
+        "Was ist B2B-Commerce?",
+        "Was ist besser, SAP oder Salesforce?",
+        "Welche Alternativen gibt es zu Salesforce?"
+      ],
+      "top3": [
+        "www.dotsource.de",
+        "comselect.de",
+        "www.sunzinet.com"
+      ],
+      "googleDropped": 4
     },
     {
       "keyword": "agentforce hersteller",
@@ -497,9 +785,7 @@
       "aiSources": [
         "de.wikipedia.org",
         "google.com",
-        "salesforce.com",
-        "ai-first.ai",
-        "lucidlabs.de"
+        "salesforce.com"
       ],
       "questions": [
         "Ist Salesforce wie SAP?",
@@ -507,8 +793,12 @@
         "Was ist Salesforce kurz erklärt?",
         "Was kann Agentforce?"
       ],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "www.valantic.com",
+        "de.nttdata.com",
+        "omr.com"
+      ],
+      "googleDropped": 5
     },
     {
       "keyword": "agentforce kosten",
@@ -521,18 +811,22 @@
       "aiCited": false,
       "aiSources": [
         "salesforce.com",
-        "de.linkedin.com",
+        "google.com",
         "meetergo.com",
-        "google.com"
+        "synebo.io"
       ],
       "questions": [
         "Was kostet Salesforce im Monat?",
         "Was kann Agentforce?",
-        "Ist Trailhead kostenlos?",
-        "Welche Produkte bietet Salesforce an?"
+        "Was macht Salesforce so besonders?",
+        "Ist Salesforce kostenlos?"
       ],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "www.salesforce.com",
+        "www.codleo.ai",
+        "www.eesel.ai"
+      ],
+      "googleDropped": 6
     },
     {
       "keyword": "flex credits agentforce",
@@ -545,17 +839,18 @@
       "aiCited": false,
       "aiSources": [
         "google.com",
-        "salesforce.com",
-        "salesfive.com",
-        "zenml.io",
-        "coworker.ai"
+        "eesel.ai",
+        "saksoft.com",
+        "ashapurasoftech.com",
+        "getmacha.com"
       ],
-      "questions": [
-        "Was ist Salesforce Agentforce?",
-        "Ist Salesforce kostenlos?"
+      "questions": [],
+      "top3": [
+        "www.eesel.ai",
+        "www.saksoft.com",
+        "nebulaconsulting.co.uk"
       ],
-      "top3": [],
-      "googleDropped": 47
+      "googleDropped": 8
     },
     {
       "keyword": "salesforce sap integration",
@@ -574,8 +869,12 @@
         "mulesoft.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 46
+      "top3": [
+        "mind-force.de",
+        "erlebe-software.de",
+        "mind-force.de"
+      ],
+      "googleDropped": 8
     },
     {
       "keyword": "salesforce document builder",
@@ -587,14 +886,16 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "youtube.com",
-        "linkedin.com",
-        "trailhead.salesforce.com",
-        "google.com"
+        "google.com",
+        "youtube.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "help.salesforce.com",
+        "trailhead.salesforce.com",
+        "help.salesforce.com"
+      ],
+      "googleDropped": 7
     },
     {
       "keyword": "salesforce well-architected",
@@ -606,14 +907,22 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "salesforce.com",
-        "youtube.com",
         "architect.salesforce.com",
+        "salesforce.com",
         "google.com"
       ],
-      "questions": [],
-      "top3": [],
-      "googleDropped": 41
+      "questions": [
+        "What is a GCP well-architected framework?",
+        "What is the salary of a Technical Architect at Salesforce?",
+        "What is Salesforce architecture and what are its key features?",
+        "Which Salesforce architect certification is best?"
+      ],
+      "top3": [
+        "www.salesforceben.com",
+        "trailhead.salesforce.com",
+        "www.apexhours.com"
+      ],
+      "googleDropped": 15
     },
     {
       "keyword": "sap to salesforce",
@@ -625,11 +934,11 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "magicsoftware.com",
+        "ekfrazo.com",
         "google.com",
-        "mind-force.de",
         "youtube.com",
-        "spinnakersupport.com"
+        "jitterbit.com",
+        "towa-digital.com"
       ],
       "questions": [
         "Which is better, Salesforce or SAP?",
@@ -637,8 +946,12 @@
         "Who is Salesforce's biggest competitor?",
         "How can I integrate SAP with Salesforce?"
       ],
-      "top3": [],
-      "googleDropped": 47
+      "top3": [
+        "mind-force.de",
+        "theobald-software.com",
+        "omr.com"
+      ],
+      "googleDropped": 9
     },
     {
       "keyword": "salesforce implementation partner",
@@ -655,8 +968,12 @@
         "customertimes.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 47
+      "top3": [
+        "www.girikon.com",
+        "www.synebo.io",
+        "www.codleo.com"
+      ],
+      "googleDropped": 5
     },
     {
       "keyword": "salesforce partner deutschland",
@@ -668,15 +985,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "sortlist.de",
-        "help.salesforce.com",
         "google.com",
+        "help.salesforce.com",
         "mind-force.de",
-        "comselect.de"
+        "comselect.de",
+        "sortlist.de"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "comselect.de",
+        "mind-force.de",
+        "help.salesforce.com"
+      ],
+      "googleDropped": 1
     },
     {
       "keyword": "salesforce lizenz kosten",
@@ -688,18 +1009,23 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "salesforce.com",
+        "find-your-software.de",
         "google.com",
-        "blog.factory42.com"
+        "help.salesforce.com",
+        "salesforce.com"
       ],
       "questions": [
         "Was ist Salesforce?",
-        "Was ist besser, SAP oder Salesforce?",
         "Welche kostengünstigen CRM-Tools gibt es?",
-        "Was verdient man als Salesforce Consultant?"
+        "Was verdient man als Salesforce Consultant?",
+        "Was ist besser, SAP oder Salesforce?"
       ],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "www.salesforce.com",
+        "trailhead.salesforce.com",
+        "www.salesfive.com"
+      ],
+      "googleDropped": 2
     },
     {
       "keyword": "was ist agentforce",
@@ -721,10 +1047,14 @@
         "Was für ein Programm ist Salesforce?",
         "Was versteht man unter Agent?",
         "Warum ist Salesforce so stark gefallen?",
-        "Was sind Beispiele für KI-Agenten?"
+        "Ist Salesforce wie SAP?"
       ],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "www.valantic.com",
+        "karesources.com",
+        "www.salesforce.com"
+      ],
+      "googleDropped": 4
     },
     {
       "keyword": "salesforce field service license",
@@ -736,19 +1066,18 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "fervorstudio.ca",
-        "nsiqinfotech.com",
-        "google.com",
-        "fieldex.com"
+        "help.salesforce.com",
+        "noltic.com",
+        "reddit.com",
+        "google.com"
       ],
-      "questions": [
-        "What are the types of Salesforce licenses available?",
-        "Who is Salesforce's biggest competitor?",
-        "What's the difference between CRM and FSM?",
-        "What does Salesforce field service do?"
+      "questions": [],
+      "top3": [
+        "noltic.com",
+        "trailhead.salesforce.com",
+        "www.salesforce.com"
       ],
-      "top3": [],
-      "googleDropped": 49
+      "googleDropped": 2
     },
     {
       "keyword": "salesforce manufacturing cloud vs sales cloud",
@@ -762,11 +1091,15 @@
       "aiSources": [
         "youtube.com",
         "google.com",
-        "comselect.de"
+        "routine-automation.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "routine-automation.com",
+        "help.salesforce.com",
+        "mind-force.de"
+      ],
+      "googleDropped": 9
     },
     {
       "keyword": "salesforce manufacturing cloud pricing",
@@ -778,14 +1111,18 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "google.com",
-        "enterprisedna.co",
         "salesforce.com",
+        "enterprisedna.co",
+        "google.com",
         "vendorbenchmark.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "www.salesforce.com",
+        "www.salesforce.com",
+        "www.salesforce.com"
+      ],
+      "googleDropped": 3
     },
     {
       "keyword": "salesforce cpq end of life",
@@ -804,8 +1141,12 @@
         "stratavar.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 47
+      "top3": [
+        "servicepath.co",
+        "invgate.com",
+        "experlogix.com"
+      ],
+      "googleDropped": 15
     },
     {
       "keyword": "salesforce field service implementation guide",
@@ -817,15 +1158,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "anavcloudsoftwares.com",
-        "appexchange.salesforce.com",
-        "linkedin.com",
         "google.com",
-        "australia.viseo.com"
+        "trailhead.salesforce.com",
+        "youtube.com",
+        "linkedin.com",
+        "appexchange.salesforce.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "appexchange.salesforce.com",
+        "australia.viseo.com",
+        "link.springer.com"
+      ],
+      "googleDropped": 2
     },
     {
       "keyword": "salesforce change management",
@@ -837,20 +1182,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "comselect.de",
+        "appfrontier.com",
         "minusculetechnologies.com",
-        "google.com",
-        "salesforce.com",
-        "youtube.com"
+        "youtube.com",
+        "trailhead.salesforce.com",
+        "reddit.com"
       ],
-      "questions": [
-        "What is a Salesforce change set?",
-        "What are the tools of change management?",
-        "Can Salesforce track your activity?",
-        "What are the four main types of change requests?"
+      "questions": [],
+      "top3": [
+        "appfrontier.com",
+        "trailhead.salesforce.com",
+        "www.salesforce.com"
       ],
-      "top3": [],
-      "googleDropped": 45
+      "googleDropped": 8
     },
     {
       "keyword": "change management beratung",
@@ -867,9 +1211,18 @@
         "kienbaum.com",
         "cpc-ag.de"
       ],
-      "questions": [],
-      "top3": [],
-      "googleDropped": 46
+      "questions": [
+        "Was bedeutet Change Management?",
+        "Was macht ein Change Coach?",
+        "Welche 7 Phasen des Change Managements gibt es?",
+        "Welche 4 Phasen gibt es im Change Management?"
+      ],
+      "top3": [
+        "www.batten-company.com",
+        "www.bonpago.de",
+        "www.fischerappelt.de"
+      ],
+      "googleDropped": 1
     },
     {
       "keyword": "change management crm",
@@ -881,13 +1234,18 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "youtube.com",
+        "link.springer.com",
+        "vantagepoint.io",
         "google.com",
-        "vtiger.de"
+        "youtube.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 45
+      "top3": [
+        "www.infinitas.de",
+        "blog.hubspot.com",
+        "crmsearch.com"
+      ],
+      "googleDropped": 3
     },
     {
       "keyword": "crm einführung",
@@ -906,8 +1264,12 @@
         "youtube.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "smartcrm.de",
+        "gedys.com",
+        "www.grutzeck.de"
+      ],
+      "googleDropped": 2
     },
     {
       "keyword": "adkar modell",
@@ -926,8 +1288,12 @@
         "wayra.de"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "www.coaching-neuherz.at",
+        "www.tomspike.com",
+        "www.tt-s.com"
+      ],
+      "googleDropped": 8
     },
     {
       "keyword": "change management masterclass",
@@ -939,14 +1305,18 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "youtube.com",
+        "archive.org",
+        "cmt.de",
         "google.com",
-        "linkedin.com",
-        "zendesk.com"
+        "kraus-und-partner.de"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 9
+      "top3": [
+        "mycompetence.de",
+        "sam.hwr-berlin.de",
+        "www.sorenkaplan.com"
+      ],
+      "googleDropped": 5
     },
     {
       "keyword": "key user aufgaben",
@@ -955,23 +1325,21 @@
       "volume": 140,
       "cpc": 0.62,
       "competition": "LOW",
-      "aiOverview": true,
+      "aiOverview": false,
       "aiCited": false,
-      "aiSources": [
-        "erp-management.de",
-        "gehalt.de",
-        "cobus-concept.de",
-        "google.com",
-        "t2informatik.de"
-      ],
+      "aiSources": [],
       "questions": [
+        "Was macht man als Key-User?",
         "Welche 3 ERP-Systeme gibt es?",
-        "Was ist mit Key gemeint?",
         "Welche ERP-Kenntnisse sind wichtig?",
-        "Welche Schulungen gibt es für SAP-Key-User?"
+        "Wie schreibt man \"Key User\" richtig?"
       ],
-      "top3": [],
-      "googleDropped": 46
+      "top3": [
+        "www.inway.de",
+        "link.springer.com",
+        "www.springerprofessional.de"
+      ],
+      "googleDropped": 3
     },
     {
       "keyword": "hypercare phase",
@@ -988,30 +1356,35 @@
         "google.com"
       ],
       "questions": [
+        "Welche 5 Phasen des Projektmanagements gibt es?",
+        "Was bedeutet Hypercare?",
         "Wie lange dauert eine Hypercare-Phase?",
-        "Was versteht man unter Hypercare?",
-        "Was ist die Hypercare-Phase?"
+        "Was ist die Definitionsphase im Projektmanagement?"
       ],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "www.prismat.de",
+        "www.salesforce.com",
+        "theprocurementor.com"
+      ],
+      "googleDropped": 11
     },
     {
       "keyword": "juliane winterscheid",
-      "position": null,
-      "url": null,
+      "position": 9,
+      "url": "https://www.fk-sd.de/partner",
       "volume": 10,
       "cpc": 1.7,
       "competition": "LOW",
-      "aiOverview": true,
+      "aiOverview": false,
       "aiCited": false,
-      "aiSources": [
-        "de.linkedin.com",
-        "freelancermap.de",
-        "google.com"
-      ],
+      "aiSources": [],
       "questions": [],
-      "top3": [],
-      "googleDropped": 8
+      "top3": [
+        "www.freelancermap.de",
+        "de.pinterest.com",
+        "music.amazon.com"
+      ],
+      "googleDropped": 22
     },
     {
       "keyword": "change management",
@@ -1035,8 +1408,11 @@
         "Welche 7 Phasen des Change Managements gibt es?",
         "Was sind Veränderungsprozesse?"
       ],
-      "top3": [],
-      "googleDropped": 46
+      "top3": [
+        "www.celoxis.com",
+        "www.berlitz.com",
+        "www.marketinginstitut.biz"
+      ]
     },
     {
       "keyword": "change management definition",
@@ -1060,8 +1436,11 @@
         "Was ist das 5-Phasen-Modell des Change Managements?",
         "Wie schreibt man change richtig?"
       ],
-      "top3": [],
-      "googleDropped": 46
+      "top3": [
+        "www.uni-augsburg.de",
+        "factorialhr.de",
+        "bankinghub.de"
+      ]
     },
     {
       "keyword": "was ist change management",
@@ -1083,10 +1462,13 @@
         "Wie viel verdient man im Change Management?",
         "Welche 7 Phasen des Change Managements gibt es?",
         "Was ist das 5-Phasen-Modell des Change Managements?",
-        "Welche 4 Phasen gibt es im Change Management?"
+        "Wie schreibt man change richtig?"
       ],
-      "top3": [],
-      "googleDropped": 46
+      "top3": [
+        "www.tixxt.com",
+        "www.plenum.de",
+        "slack.com"
+      ]
     },
     {
       "keyword": "change management modelle",
@@ -1105,8 +1487,11 @@
         "sharpist.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 45
+      "top3": [
+        "www.iph-hannover.de",
+        "asana.com",
+        "www.tixxt.com"
+      ]
     },
     {
       "keyword": "stakeholder analyse",
@@ -1127,11 +1512,15 @@
       "questions": [
         "Welche Methoden gibt es für die Stakeholderanalyse?",
         "Was ist Stakeholder-Theorie?",
-        "Wie erstellt man eine Stakeholder-Matrix?",
-        "Was ist das Interesse von Stakeholdern?"
+        "Was ist das Interesse von Stakeholdern?",
+        "Wie erstellt man eine Stakeholder-Matrix?"
       ],
-      "top3": [],
-      "googleDropped": 44
+      "top3": [
+        "www.gpm-ipma.de",
+        "de.smartsheet.com",
+        "digitalservice.bund.de"
+      ],
+      "googleDropped": 1
     },
     {
       "keyword": "stakeholder analyse vorlage",
@@ -1140,16 +1529,16 @@
       "volume": 70,
       "cpc": 2.41,
       "competition": "LOW",
-      "aiOverview": true,
+      "aiOverview": false,
       "aiCited": false,
-      "aiSources": [
-        "youtube.com",
-        "google.com",
-        "studyflix.de"
-      ],
+      "aiSources": [],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "www.strategische-wettbewerbsbeobachtung.com",
+        "online.visual-paradigm.com",
+        "exceltricks.blog"
+      ],
+      "googleDropped": 3
     },
     {
       "keyword": "change kurve",
@@ -1173,8 +1562,12 @@
         "Was sind die 7 Phasen der Veränderung?",
         "Welche Change Management-Modelle gibt es?"
       ],
-      "top3": [],
-      "googleDropped": 43
+      "top3": [
+        "www.tixxt.com",
+        "managementwissenonline.com",
+        "www.bonpago.de"
+      ],
+      "googleDropped": 6
     },
     {
       "keyword": "veränderungskurve",
@@ -1183,22 +1576,21 @@
       "volume": 480,
       "cpc": 2.86,
       "competition": "LOW",
-      "aiOverview": true,
+      "aiOverview": false,
       "aiCited": false,
-      "aiSources": [
-        "andreasklement.de",
-        "google.com",
-        "igs-beratung.de",
-        "youtube.com"
-      ],
+      "aiSources": [],
       "questions": [
-        "Was sind die 7 Phasen der Veränderung?",
-        "Welche 5 Phasen der Veränderung gibt es?",
-        "Was ist die Veränderungskurve nach Kübler-Ross?",
-        "Welche 5 Change-Typen gibt es?"
+        "Was ist das 5-Phasen-Modell?",
+        "Welche Change Management-Modelle gibt es?",
+        "Welche Stufen der Akzeptanz gibt es?",
+        "Was sind die 7 Phasen der Veränderung?"
       ],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "agolution.com",
+        "www.researchgate.net",
+        "michaelkatzmann.de"
+      ],
+      "googleDropped": 8
     },
     {
       "keyword": "kommunikationsplan",
@@ -1218,12 +1610,16 @@
       ],
       "questions": [
         "Wie erstellt man einen Kommunikationsplan?",
-        "Welche 6 Kommunikationsstrategien gibt es?",
-        "Wie erstelle ich ein Kommunikationskonzept?",
-        "Welche Vorlagen gibt es für ein Kommunikationskonzept?"
+        "Was sind die Ziele der Kommunikation?",
+        "Was ist ein Kommunikationskonzept?",
+        "Welche 6 Kommunikationsstrategien gibt es?"
       ],
-      "top3": [],
-      "googleDropped": 45
+      "top3": [
+        "www.hubspot.de",
+        "www.my-mooc.com",
+        "miro.com"
+      ],
+      "googleDropped": 2
     },
     {
       "keyword": "kommunikationsplan vorlage",
@@ -1236,14 +1632,17 @@
       "aiCited": false,
       "aiSources": [
         "google.com",
-        "youtube.com",
         "blog.hubspot.de",
         "asana.com",
         "iienstitu.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "clickup.com",
+        "www.factro.de",
+        "lucid.co"
+      ],
+      "googleDropped": 1
     }
   ],
   "en": [
@@ -1257,15 +1656,18 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "consultingheads.com",
+        "freelance.de",
         "google.com",
-        "freelancermap.com",
-        "trailhead.salesforce.com",
-        "freelance.de"
+        "youtube.com",
+        "freelancer.com",
+        "upwork.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "www.freelancer.com",
+        "www.freelance.de",
+        "app.9am.works"
+      ]
     },
     {
       "keyword": "salesforce consultant germany",
@@ -1277,15 +1679,18 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "stepstone.de",
-        "job.deloitte.com",
+        "google.com",
         "sunzinet.com",
-        "de.linkedin.com",
-        "google.com"
+        "stepstone.de",
+        "jobs.pwc.de",
+        "linkedin.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "www.sunzinet.com",
+        "jobs.womenforhire.com",
+        "de.indeed.com"
+      ]
     },
     {
       "keyword": "salesforce partner governance",
@@ -1298,12 +1703,15 @@
       "aiCited": false,
       "aiSources": [
         "google.com",
-        "zinfi.com",
-        "trailhead.salesforce.com"
+        "youtube.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "newstaging.wildnetedge.com",
+        "partners.salesforce.com",
+        "www.salesforce.com"
+      ],
+      "googleDropped": 6
     },
     {
       "keyword": "salesforce devops consulting",
@@ -1315,19 +1723,23 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "qiminfo.ch",
+        "flosum.com",
         "google.com",
-        "cloudfulcrum.com",
-        "youtube.com"
+        "youtube.com",
+        "salesforce.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "www.cloudfulcrum.com",
+        "in.linkedin.com",
+        "www.salesforce.com"
+      ],
+      "googleDropped": 6
     },
     {
       "keyword": "sfdx-hardis",
-      "position": null,
-      "url": null,
+      "position": 10,
+      "url": "https://www.fk-sd.de/FK Solution Design/Blog",
       "volume": 40,
       "cpc": 62.33,
       "competition": "LOW",
@@ -1341,8 +1753,12 @@
         "medium.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 46
+      "top3": [
+        "sfdx-hardis.cloudity.com",
+        "sfdx-hardis.cloudity.com",
+        "sfdx-hardis.cloudity.com"
+      ],
+      "googleDropped": 5
     },
     {
       "keyword": "sfdx-hardis vs devops center",
@@ -1354,15 +1770,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
+        "hyphenxsolutions.com",
         "youtube.com",
-        "google.com",
-        "linkedin.com",
-        "sfdx-hardis.cloudity.com",
-        "marketplace.visualstudio.com"
+        "sherwen.com",
+        "no.linkedin.com",
+        "google.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 22
+      "top3": [
+        "ayaninsights.com",
+        "www.sherwen.com",
+        "trailhead.salesforce.com"
+      ],
+      "googleDropped": 11
     },
     {
       "keyword": "salesforce field service implementation",
@@ -1375,14 +1795,18 @@
       "aiCited": false,
       "aiSources": [
         "salesforce.com",
+        "google.com",
         "melonleaf.com",
-        "cirriussolutions.com",
-        "australia.viseo.com",
-        "google.com"
+        "youtube.com",
+        "cirriussolutions.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "melonleaf.com",
+        "trailheadacademy.salesforce.com",
+        "www.salesforce.com"
+      ],
+      "googleDropped": 7
     },
     {
       "keyword": "salesforce manufacturing cloud features",
@@ -1394,15 +1818,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "investor.salesforce.com",
         "google.com",
         "youtube.com",
-        "cyntexa.com",
-        "artemis-innovations.de"
+        "medium.com",
+        "appexchange.salesforce.com",
+        "salesforce.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "www.manras.com",
+        "www.salesforce.com",
+        "mind-force.de"
+      ],
+      "googleDropped": 9
     },
     {
       "keyword": "salesforce revenue cloud pricing",
@@ -1414,14 +1842,18 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "salesforce.com",
-        "kugamon.com",
+        "help.salesforce.com",
+        "getmonetizely.com",
         "google.com",
         "reddit.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "magicfuse.co",
+        "help.salesforce.com",
+        "www.apexhours.com"
+      ],
+      "googleDropped": 9
     },
     {
       "keyword": "salesforce cpq vs revenue cloud",
@@ -1433,14 +1865,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "youtube.com",
-        "google.com",
+        "apexhours.com",
+        "everstage.com",
         "salesforce.com",
-        "quotewerks.com"
+        "youtube.com",
+        "dhruvsoft.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 46
+      "top3": [
+        "www.apexhours.com",
+        "www.everstage.com",
+        "www.salesforce.com"
+      ],
+      "googleDropped": 10
     },
     {
       "keyword": "salesforce b2b commerce pricing",
@@ -1452,12 +1889,18 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "google.com",
-        "youtube.com"
+        "twelverays.agency",
+        "smartitstaff.com",
+        "help.salesforce.com",
+        "google.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "www.salesforce.com",
+        "smartitstaff.com",
+        "twelverays.agency"
+      ],
+      "googleDropped": 5
     },
     {
       "keyword": "agentforce flex credits",
@@ -1469,15 +1912,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "google.com",
-        "eesel.ai",
-        "nebulaconsulting.co.uk",
+        "salesfive.com",
         "youtube.com",
-        "help.salesforce.com"
+        "help.salesforce.com",
+        "getmacha.com",
+        "google.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 47
+      "top3": [
+        "www.eesel.ai",
+        "nebulaconsulting.co.uk",
+        "www.salesforce.com"
+      ],
+      "googleDropped": 9
     },
     {
       "keyword": "salesforce document builder limitations",
@@ -1489,15 +1936,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "developer.salesforce.com",
-        "google.com",
-        "help.salesforce.com",
+        "salesforceben.com",
         "pdfbutler.com",
+        "developer.salesforce.com",
+        "help.salesforce.com",
         "trailhead.salesforce.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "www.salesforceben.com",
+        "help.salesforce.com",
+        "trailhead.salesforce.com"
+      ],
+      "googleDropped": 1
     },
     {
       "keyword": "salesforce well-architected framework",
@@ -1514,8 +1965,12 @@
         "salesforce.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 46
+      "top3": [
+        "www.apexhours.com",
+        "www.salesforce.com",
+        "www.awaf.dev"
+      ],
+      "googleDropped": 19
     },
     {
       "keyword": "salesforce change management",
@@ -1527,20 +1982,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "ocmsolution.com",
         "youtube.com",
         "google.com",
-        "salesforce.com",
-        "pivotalleap.com"
+        "pivotalleap.com",
+        "minusculetechnologies.com",
+        "ocmsolution.com"
       ],
-      "questions": [
-        "What is a Salesforce change set?",
-        "What are the tools of change management?",
-        "Can Salesforce track your activity?",
-        "What are the four main types of change requests?"
+      "questions": [],
+      "top3": [
+        "appfrontier.com",
+        "pivotalleap.com",
+        "www.minusculetechnologies.com"
       ],
-      "top3": [],
-      "googleDropped": 48
+      "googleDropped": 5
     },
     {
       "keyword": "salesforce change management consulting",
@@ -1552,15 +2006,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
-        "appexchange.salesforce.com",
-        "trailhead.salesforce.com",
+        "clicksnotcode.co",
         "google.com",
+        "trailhead.salesforce.com",
         "youtube.com",
         "minusculetechnologies.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "comselect.de",
+        "pivotalleap.com",
+        "trailhead.salesforce.com"
+      ],
+      "googleDropped": 4
     },
     {
       "keyword": "adkar model",
@@ -1573,13 +2031,17 @@
       "aiCited": false,
       "aiSources": [],
       "questions": [
-        "What is the ADKAR framework?",
-        "What are the 5 P's of change management?",
+        "What is the Prosci ADKAR framework?",
+        "How do you pronounce ADKAR?",
         "What are 7 effective change management models?",
-        "What is Prosci?"
+        "Is ADKAR still relevant today?"
       ],
-      "top3": [],
-      "googleDropped": 48
+      "top3": [
+        "www.haufe-akademie.de",
+        "www.walkme.com",
+        "www.toolshero.nl"
+      ],
+      "googleDropped": 7
     },
     {
       "keyword": "salesforce user adoption",
@@ -1592,14 +2054,18 @@
       "aiCited": false,
       "aiSources": [
         "cynoteck.com",
+        "youtube.com",
         "weflow.ai",
         "google.com",
-        "reddit.com",
-        "appexchange.salesforce.com"
+        "trailhead.salesforce.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 47
+      "top3": [
+        "www.cynoteck.com",
+        "www.weflow.ai",
+        "www.codleo.com"
+      ],
+      "googleDropped": 6
     },
     {
       "keyword": "salesforce adoption dashboard",
@@ -1612,14 +2078,17 @@
       "aiCited": false,
       "aiSources": [
         "google.com",
-        "youtube.com",
         "appexchange.salesforce.com",
-        "imprivata.com",
+        "youtube.com",
         "salesforceben.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 45
+      "top3": [
+        "appexchange.salesforce.com",
+        "appexchange.salesforce.com",
+        "www.salesforceben.com"
+      ],
+      "googleDropped": 4
     },
     {
       "keyword": "what is change management",
@@ -1642,8 +2111,12 @@
         "What are the 7 C's of change management?",
         "What are the key principles of change management?"
       ],
-      "top3": [],
-      "googleDropped": 45
+      "top3": [
+        "nmsconsulting.com",
+        "academy.technikum-wien.at",
+        "www.researchgate.net"
+      ],
+      "googleDropped": 6
     },
     {
       "keyword": "change management models",
@@ -1662,8 +2135,12 @@
         "lucid.co"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 44
+      "top3": [
+        "www.effivity.com",
+        "www.researchgate.net",
+        "online.campbellsville.edu"
+      ],
+      "googleDropped": 2
     },
     {
       "keyword": "stakeholder analysis template",
@@ -1676,8 +2153,12 @@
       "aiCited": false,
       "aiSources": [],
       "questions": [],
-      "top3": [],
-      "googleDropped": 49
+      "top3": [
+        "miro.com",
+        "www.atlassian.com",
+        "purplegriffon.com"
+      ],
+      "googleDropped": 2
     },
     {
       "keyword": "change curve",
@@ -1696,13 +2177,17 @@
         "linkedin.com"
       ],
       "questions": [
-        "What is the change curve?",
-        "What are the four stages of the change curve?",
-        "What are the criticisms of the Kübler-Ross change curve?",
-        "What are the 7 steps of change?"
+        "What are the 5 C's of change management?",
+        "What are the criticisms of the Kubler-Ross change curve?",
+        "What are the 7 challenges of managing change?",
+        "What is the change management curve?"
       ],
-      "top3": [],
-      "googleDropped": 47
+      "top3": [
+        "www.mindtools.com",
+        "training.nottingham.ac.uk",
+        "culturepartners.com"
+      ],
+      "googleDropped": 9
     },
     {
       "keyword": "change management communication plan",
@@ -1714,15 +2199,19 @@
       "aiOverview": true,
       "aiCited": false,
       "aiSources": [
+        "useworkshop.com",
         "google.com",
-        "prosci.com",
-        "change-management-institute.com",
         "youtube.com",
-        "useworkshop.com"
+        "linkedin.com",
+        "wac-cdn.atlassian.com"
       ],
       "questions": [],
-      "top3": [],
-      "googleDropped": 44
+      "top3": [
+        "useworkshop.com",
+        "change-management-institute.com",
+        "wac-cdn.atlassian.com"
+      ],
+      "googleDropped": 3
     }
   ],
   "ranked": {

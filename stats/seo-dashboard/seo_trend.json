@@ -20,10 +20,10 @@
  {
   "date": "2026-11-07",
   "tracked": 81,
-  "top10": 0,
-  "top20": 0,
-  "top50": 0,
-  "aiOverviews": 79,
+  "top10": 2,
+  "top20": 3,
+  "top50": 3,
+  "aiOverviews": 75,
   "aiCited": 0
  }
 ]
