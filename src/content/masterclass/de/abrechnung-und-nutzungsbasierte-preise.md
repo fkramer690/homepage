@@ -41,7 +41,7 @@ Eine Maschinenrechnung hängt an Versand, Abnahme und Anzahlungen, und alle drei
 | Maschine | SAP | Lieferung, Abnahme, Anzahlungen |
 | Ersatzteile | SAP | Fakturiert mit der Lieferung |
 | Abonnements wie Fernüberwachung | Revenue Cloud Billing | In Salesforce verkauft, geändert und verlängert |
-| Wartungspauschalen | Revenue Cloud Billing | Feste Gebühr je Periode, Nachträge aus dem Vertrieb |
+| Wartungspauschalen | Revenue Cloud Billing | Gleicher Betrag in jeder Periode, Änderungen kommen vom Vertrieb |
 | Nutzung über ein Kontingent hinaus | Revenue Cloud Billing | In Salesforce bewertet |
 
 Das Signal, auf das ich achte: Der Vertrieb ändert jede Woche Verträge, und die Buchhaltung korrigiert jeden Monat Rechnungen, weil SAP von einer Änderung nichts erfahren hat. Dann spart Billing in Salesforce eine Übergabe. Besteht das wiederkehrende Geschäft aus ein paar hundert Verträgen mit einer Rechnung im Jahr, reicht SAP. Die ganze Abwägung steht in [Revenue Cloud Billing oder SAP](../../../blog/revenue-cloud-billing-oder-sap-rechnung/), die Systemgrenze für den gesamten Prozess aus [Kapitel 1](../revenue-cloud-ueberblick/) in [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../../../blog/revenue-cloud-sap-quote-to-cash-aufteilung/).
@@ -58,18 +58,13 @@ Die [Produktseite](https://www.salesforce.com/sales/revenue-cloud-billing/) nenn
 
 ## Wer schließt die Periode: Finance oder das CRM-Team?
 
-Ein Nebenbuch führt die Einzelheiten der Forderungen, also jede Rechnung, Gutschrift und Zahlung, und übergibt Buchungssätze an das Hauptbuch. Das Hauptbuch bleibt in SAP. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/set-up-billing-basics) ordnen Legal Entities jede Abrechnungsbuchung der richtigen Buchungsperiode und dem richtigen Sachkonto zu. All das gibt es in SAP schon, als Buchungskreise, Geschäftsjahresperioden und Sachkonten.
+Im Nebenbuch stehen die Forderungen im Detail, jede Rechnung, jede Gutschrift, jede Zahlung. An das Hauptbuch in SAP gehen nur die Buchungssätze. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/set-up-billing-basics) ordnen Legal Entities jede Abrechnungsbuchung der richtigen Buchungsperiode und dem richtigen Sachkonto zu. All das gibt es in SAP schon, als Buchungskreise, Geschäftsjahresperioden und Sachkonten.
 
 ```hinweis offen
-Bevor ein Partner etwas konfiguriert, beantwortet Finance deshalb vier Fragen:
-
-- Welche Buchungskreise fakturieren aus Salesforce, und welche Legal Entities entsprechen ihnen?
-- Wer schließt eine Buchungsperiode in Salesforce, und in welcher Reihenfolge zum Periodenabschluss in SAP?
-- Wer pflegt die Zuordnung der Sachkonten, wenn sich der Kontenplan ändert?
-- Wie werden die Forderungen in Salesforce und SAP zum Monatsende abgestimmt, und wer klärt Differenzen?
+Bevor ein Partner etwas einrichtet, klärt Finance die Abbildung von SAP in Salesforce: welcher Buchungskreis welcher Legal Entity entspricht und welche davon aus Salesforce fakturieren, wer die Buchungsperiode in Salesforce schließt und ob das vor oder nach dem SAP-Abschluss passiert, wer die Sachkontenzuordnung nachzieht, wenn sich der Kontenplan ändert, und wer zum Monatsende die Forderungen beider Systeme abgleicht und Differenzen klärt.
 ```
 
-Trailhead beschreibt eine Rolle [Accounts Receivable Admin](https://trailhead.salesforce.com/content/learn/modules/billing-basics-in-revenue-cloud/explore-billing-features-and-roles), die Buchungsperioden, Buchungssätze und Finanzberichte verwaltet. In einem Fertigungsunternehmen sitzt diese Person in der Buchhaltung. Übernimmt dort niemand die Rolle, würde ich Billing nicht live nehmen. Die Schnittstellen für Buchungssätze und Rechnungsstatus gehören zu meiner Arbeit an [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/).
+Trailhead beschreibt eine Rolle [Accounts Receivable Admin](https://trailhead.salesforce.com/content/learn/modules/billing-basics-in-revenue-cloud/explore-billing-features-and-roles), für Buchungsperioden, Buchungssätze und Finanzberichte. Beim Hersteller gehört sie in die Buchhaltung, und ohne jemanden dort, der sie ausfüllt, nehme ich Billing nicht in Betrieb. Die Schnittstellen für Buchungssätze und Rechnungsstatus gehören zu meiner Arbeit an [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/).
 
 ## Was kostet Billing?
 

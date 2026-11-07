@@ -29,40 +29,36 @@ Reinforcement, the last stage of the ADKAR model, makes sure a change sticks. In
 
 ## Why does usage drop after go-live?
 
-The first weeks after go-live are distorted. Attention is high, key users are present and many people try out the new system. After three to six months the project team has moved on, and that is when it shows whether a process sticks. If a figure drops in this period, reinforcement is missing. Another training session changes nothing, because people know how it works. What is missing are reasons to stay with it: a sponsor who asks, reports built on the data and checks that make shortcuts visible.
+What happens in the first weeks after go-live is misleading. Everyone is watching, key users sit with the teams, and many people try the new system out of curiosity. After three to six months the project team has moved on, and that is when it shows whether a process sticks. If a figure drops in this period, reinforcement is missing. Another training session changes nothing, because people know how it works. What is missing are reasons to stay with it: a sponsor who asks, reports built on the data and checks that make shortcuts visible.
 
-Many programmes report after go-live how many people were trained. That figure says the project did its job. It does not say whether anyone works differently.
+The number of people trained is no measure for this. It proves the project's work and says nothing about how the teams actually work.
 
 ## Four levels, measured against the baseline before go-live
 
-Salesforce helps with measuring, because almost everything a user does leaves a record with a timestamp and an owner. I measure on four levels:
+In Salesforce almost every action leaves a record with a timestamp and an owner, which makes measuring easy. I measure on four levels. For this masterclass the more useful part is what a drop on one level says about the ADKAR stage:
 
-| Level | Question | Examples |
+| Level | Typical figure | If it drops, usually missing |
 |---|---|---|
-| Activity | Do users open the system? | active users per week, logins, page views |
-| Use of the process | Does the process happen in Salesforce? | quotes from Salesforce instead of Word, orders completed in the app |
-| Data quality | Is the data usable? | required fields filled sensibly instead of with dots, new duplicates |
-| Outcome | Does it deliver what it was built for? | forecast accuracy, first-time fix rate, lead time from quote to order |
+| Activity | active users per week | Awareness or desire: the team sees no reason to log in |
+| Use of the process | share of quotes from Salesforce | Ability: the process does not work in daily business, or a side list is more convenient |
+| Data quality | required fields with real content, new duplicates | Desire or knowledge: fields are filled because they must be, without knowing why |
+| Outcome | forecast accuracy, lead time from quote to order | Reinforcement: nobody asks about the figures, so everything stays as it was |
 
 Salesforce delivers the first level almost for free through login history and Lightning usage data. The meaningful figures are on the second and third levels, and you have to define those for your own processes. For field service the list of KPIs is in [Field Service KPIs after go-live](../../../blog/field-service-kpis-after-go-live/), for all other areas the method is in [Measuring Salesforce adoption after go-live](../../../blog/salesforce-adoption-metrics-after-go-live/).
 
 ```hinweis achtung
-Set a baseline before go-live, for example how many quotes are created per month today, whatever the system. Without a baseline you will not know after go-live whether 200 quotes in Salesforce is a lot or a little.
+Record before go-live how many quotes are created per month today, in whatever tool. Without that figure you cannot read 200 quotes in Salesforce later as either a success or a warning.
 ```
 
 ## How do you spot shadow lists?
 
-The most expensive form of low usage is the list next to the system. Three signs point to it:
+Low usage gets most expensive when a separate list lives on next to Salesforce. It gives itself away in three ways. High login figures with few new records mean the team looks things up and works elsewhere. Large waves of updates just before the monthly report to management mean records are filled in afterwards. And reports exported to Excel on a regular basis often feed exactly that list.
 
-- **Gaps between activity and process.** A team logs in daily but hardly creates records. Then people read here and work elsewhere.
-- **Bulk updates after the fact.** Records are updated in large batches once a month, just before the report to management.
-- **Frequent exports.** Reports that regularly go to Excel are often the basis of a separate list.
-
-None of these signs is proof. Each is a reason to talk to the team, ideally through the key user from [chapter 3](../key-users-and-training/). Then the diagnosis from [chapter 1](../change-management-adkar-diagnosis/) follows: at which stage is the group stuck?
+None of this proves anything, but each sign is a reason for a conversation with the team, ideally through the key user from [chapter 3](../key-users-and-training/). Then the diagnosis from [chapter 1](../change-management-adkar-diagnosis/) follows: at which stage is the group stuck?
 
 ## Who gets which figure?
 
-The steering committee needs two or three figures per process on the levels of use and outcome, with the trend since go-live. The sponsor of a country or department needs the same figures for their teams. When they ask about them in the monthly report, that is reinforcement in itself. Key users and team leads need the detailed view, but for conversations, not for rankings. Whoever compares individuals publicly gets well kept figures instead of well kept data, and in Germany such an evaluation needs to be agreed with the works council beforehand, as described in [chapter 2](../sponsor-and-communication/). In a global rollout you measure per country, because every country has its own curve.
+In the steering committee two or three figures per process from use and outcome are enough, each with the trend since go-live. The sponsor of a country or department sees the same figures for their teams, and their question in the monthly report already works as reinforcement. Key users and team leads get the detailed view as a basis for conversations. A public ranking of individuals leads to polished figures rather than maintained data, and in Germany such an evaluation needs to be agreed with the works council beforehand, as described in [chapter 2](../sponsor-and-communication/). In a global rollout you measure per country, because every country has its own curve.
 
 ## With partners, pipeline, review and Center of Excellence call anchor the standards
 

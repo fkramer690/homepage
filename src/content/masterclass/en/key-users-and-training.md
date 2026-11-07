@@ -30,43 +30,43 @@ Knowledge and ability, the middle stages of the ADKAR model, reach the team in a
 
 ## What do key users do in a rollout?
 
-Key users are business users who know the new system before everyone else. At manufacturers they have a second job: sales, inside sales and service work a little differently at every site, and the project team does not know these differences. Key users know them and say early where the planned process will not work in their own team. Their tasks change with the phase:
+Key users are business users who know the new system before everyone else. At manufacturers they have a second job: sales, inside sales and service work a little differently at every site, and the project team does not know these differences. Key users know them and say early where the planned process will not work in their own team. In ADKAR terms they carry knowledge and ability into the team, and the focus shifts with the phase:
 
 ```schritte
 Before the build | workshops · key users with product owner
-  Describe how their team works, name special cases, help write acceptance criteria for user stories.
+  Knowledge starts with the key user: they explain their team's routines with all special cases and co-write acceptance criteria.
 Before go-live | acceptance testing · key users
-  Run through their own cases and show colleagues in short sessions on real cases what changes.
+  They test with cases from their team and pass the knowledge on to colleagues in short sessions.
 First weeks | daily work · key users on site
-  First point of contact for questions, collect problems and report them to the project in batches.
+  Ability grows at the desk: they answer questions on the spot and report problems to the project in batches.
 Operations | ongoing · key users and admin
-  Onboard new colleagues, hear before every release what is coming and pass it on to the team.
+  Reinforcement: they onboard newcomers and translate every release for their team.
 ```
 
 In acceptance testing key users are the best testers, because they know which cases really occur in their team. How acceptance testing with business teams is set up is in [Salesforce UAT: who tests before the release?](../../../blog/salesforce-uat-business-acceptance-testing/).
 
 ## Choose key users by their standing in the team
 
-The most common choice is the worst: whoever has time becomes key user. I look at other criteria:
+Often the key user is whoever happens to have room in their calendar. That is the worst choice. Each of my criteria has a reason in the ADKAR model:
 
-| Criterion | How you recognise it |
-|---|---|
-| Standing in the team | Colleagues already ask this person for advice, whatever the system. |
-| Knowledge of the process | They know how a quote, an order or a service job really runs in their team, including the exceptions. |
-| Curiosity over enthusiasm | Critical key users find weaknesses earlier, and once convinced, they convince others. |
-| Staying a while | Whoever changes jobs in three months takes the knowledge with them. |
+| Criterion | How you recognise it | Stage it supports |
+|---|---|---|
+| Standing | The team already turns to this person for advice, whatever the system | Desire: the team accepts advice from a respected colleague |
+| Process knowledge | They know the daily reality of quote, order or service job in the team, exceptions included | Knowledge: they translate the system into the team's own cases |
+| Critical eye | They ask questions instead of cheering and so find weaknesses early | Desire: once they are convinced, people believe them |
+| Staying | No job change in sight for the coming months | Reinforcement: the knowledge stays in the team |
 
 A simple way to the candidates: ask in every team whom people ask today when they get stuck in the system. The names that come up more than once are your candidates. The limits of the role, tasks in operations and how the network holds together are in [Key users in Salesforce rollouts: what they do](../../../blog/salesforce-key-user-network/).
 
 ## How much time must the business free up?
 
-A key user without freed-up time is a title. How much time is needed depends on the scope. As a planning assumption: four workshops of four hours, one week of acceptance testing at half time and two weeks after go-live at a third add up to almost eight working days. Preparation and short sessions with colleagues come on top. In operations the effort drops to a few hours a month, mostly around releases.
+Without freed-up time, key user is just a label. The scope sets the need. For planning I count four half-day workshops, one week of acceptance testing at half capacity and the first two weeks after go-live at a third. That is just under eight working days, plus preparation and short sessions for colleagues. In operations a few hours a month remain, mostly around releases.
 
 ```hinweis tipp
-Agree the key users' time in writing with their manager, in weeks and hours, and decide who covers their work during that time. This agreement belongs in the sponsor plan from chapter 2.
+Put in writing with the manager in which weeks and for how many hours the key user works for the project, and who does their job in the meantime. That paper belongs in the sponsor plan from chapter 2.
 ```
 
-Visible recognition costs nothing and works. Whoever takes on extra work for the project should find it in their annual review. That decides whether someone volunteers again for the next project.
+Recognition that others can see costs nothing and works. The project work belongs in the annual review. That decides whether someone volunteers again for the next project.
 
 ## Training shortly before go-live, with cases from the team's own work
 
