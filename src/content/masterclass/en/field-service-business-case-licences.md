@@ -122,7 +122,7 @@ The pricing page lists five add-ons:
 |---|---|---|
 | Agentforce for Field Service and Operations | AI agents in the flow of work for employees | $125 per user and month |
 | Asset Service Lifecycle Management | Lifecycle of the installed base, from work order quoting to service campaigns | $75 per user and month |
-| Visual Remote Assistant | Video help for customers instead of a visit | $50 per user and month |
+| Visual Remote Assistant | [Visual remote assistance](../../../blog/visual-remote-assistant-remote-help-instead-of-visit/): video help for customers instead of a visit | $50 per user and month |
 | Appointment Assistant | Real-time appointment updates for customers | $25 per user and month |
 | Connected Assets | Proactive maintenance with external data and event orchestration | $15,000 per org and month |
 

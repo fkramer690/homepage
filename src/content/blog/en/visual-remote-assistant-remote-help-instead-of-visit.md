@@ -1,13 +1,15 @@
 ---
-title: "Visual Remote Assistant: video help instead of a visit?"
-description: "When a video session with Visual Remote Assistant can replace a technician visit for a machine builder, what it costs and what to settle before the first call."
+title: "Visual remote assistance: when video replaces a visit"
+metaTitle: "Visual remote assistance with Salesforce: video or visit?"
+description: "Visual remote assistance with Salesforce Visual Remote Assistant: when a video call replaces a technician visit, what it costs, what to settle first."
 pubDate: 2026-10-28
+updatedDate: 2026-11-07
 lang: en
 slug: visual-remote-assistant-remote-help-instead-of-visit
 translationKey: visual-remote-assistant-instead-of-visit
 topic: field-service
 categories: [field-service]
-tags: [Visual Remote Assistant, field service, remote service, breakdown hotline, works council]
+tags: [visual remote assistance, Visual Remote Assistant, field service, remote service, breakdown hotline, works council]
 takeaways:
   - "Visual Remote Assistant sends the customer a link by SMS or email; the two-way video opens in the mobile browser without an app, login or password."
   - "The add-on costs $50 per user and month (October 2026) and is included in Agentforce 1 Field Service. The customer needs no licence."
@@ -15,6 +17,8 @@ takeaways:
   - "Before the first session, settle recording consent, the works council and which faults may be closed remotely."
   - "Count the visits in your breakdown history that needed no part and no tool. That share is your realistic potential."
 faq:
+  - q: "What is visual remote assistance in field service?"
+    a: "Visual remote assistance means a service expert sees the machine through the customer's phone camera and guides the operator by video and drawn markers. In Salesforce the product for it is Visual Remote Assistant, an add-on for Service Cloud and Field Service."
   - q: "What does Visual Remote Assistant cost?"
     a: "According to the Salesforce product page, the add-on costs $50 or 50 € per user and month, billed annually (October 2026). It is included in the Agentforce 1 Field Service bundle. Only the people who run sessions need a licence; the customer joins through a link."
   - q: "Does the customer need an app for Visual Remote Assistant?"
@@ -26,11 +30,11 @@ faq:
 draft: false
 ---
 
-Visual Remote Assistant replaces a technician visit when the operator on site can fix the fault with guidance: a wrong parameter, an operating error, a reset, a sensor that needs cleaning. The customer gets a link by SMS or email and opens a two-way video in the mobile browser, without app or login, and the agent draws on the image. The add-on costs $50 per user and month on the price list of October 2026 and is included in Agentforce 1 Field Service. For mechanical repairs the video does not save the visit, but it saves the second one, because the technician arrives with the right part.
+Visual remote assistance replaces a technician visit when the operator on site can fix the fault with guidance: a wrong parameter, an operating error, a reset, a dirty sensor. In Salesforce the tool for it is Visual Remote Assistant. The customer gets a link by SMS or email and opens a two-way video in the mobile browser, without app or login, and the agent draws on the image. The add-on costs $50 per user and month (October 2026) and is included in Agentforce 1 Field Service. For mechanical repairs video does not save the visit, but it saves the second one, because the technician arrives with the right part.
 
 ## What does Visual Remote Assistant do?
 
-Visual Remote Assistant is a video tool for Service Cloud and Field Service. According to the [product page](https://salesforce.com/products/visual-remote-assistant), the agent "sends a secure link via SMS or email to the customer's mobile device", and when the customer taps it, "a two-way video stream is launched in their mobile browser". No app downloads, logins or passwords are required.
+Visual remote assistance is the general term: an expert sees what the customer sees and guides them by video. Visual Remote Assistant is the Salesforce product for it, a video tool for Service Cloud and Field Service. According to the [product page](https://salesforce.com/products/visual-remote-assistant), the agent "sends a secure link via SMS or email to the customer's mobile device", and when the customer taps it, "a two-way video stream is launched in their mobile browser". No app downloads, logins or passwords are required.
 
 During the session, the agent can, according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/visual-remote-assistant/set-up-visual-remote-assistant):
 
@@ -56,7 +60,7 @@ The product page lists the add-on in euros too, at 50 €. The [Field Service pr
 
 You license the people who start sessions: hotline agents, remote experts, perhaps senior technicians. The customer joins through a link and needs nothing. Eight users cost $400 a month or $4,800 a year at list price. Compared with the cost of one avoided trip abroad, that is small. The real effort lies in setup, the rules for remote fixes and training the hotline.
 
-## When can a video session replace a visit?
+## When can visual remote assistance replace a visit?
 
 In my view, video fits four situations for a machine builder:
 
