@@ -48,6 +48,8 @@ Every article page is built by `src/components/BlogPost.astro` and looks the sam
 7. Related articles
 8. Contact section with "Book a call" and the contact form. Heading, text and the two lists "What to bring" / "What we clarify" come from `src/lib/contact-briefs.ts`: by default the brief of the article's main category (the first in `categories`); set `contactBrief` in the frontmatter when another brief fits the topic better (e.g. `licences` for licence and pricing articles, `partner-governance` for partner topics). Add a new brief there instead of writing a CTA in the article.
 
+Two call hints sit inside the article body (`src/components/CallHint.astro`, placed by `src/components/ProseWithHints.astro`): one before the first H2 with at least 20 % of the words above it, one before the first later H2 at 40 %. Hint 1 shows the title and text of the article's contact brief, hint 2 the second item of its "What to bring" list; both have the booking button. Because of them, article pages have no booking box in the side column. Never write a call hint into the Markdown.
+
 Changes to parts 1–2 and 4–8 are made once in the components and apply to all articles. Markdown files contain no raw HTML, no author section and no CTA block; the check script rejects HTML.
 
 ## Series
