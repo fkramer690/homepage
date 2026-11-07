@@ -85,11 +85,28 @@ const index = crawl
   .filter((r) => r.day)
   .sort((a, b) => a.day.localeCompare(b.day));
 
+// The same entries per reporting period (Bing reports these weekly), so the
+// dashboard can drill into one week or month instead of only the whole range.
+function byPeriod(list, key) {
+  return list
+    .filter((r) => r.Query && isoDay(r.Date))
+    .map((r) => ({
+      period: isoDay(r.Date),
+      [key]: r.Query,
+      clicks: r.Clicks ?? 0,
+      impressions: r.Impressions ?? 0,
+      position: r.AvgImpressionPosition ?? null,
+    }))
+    .sort((a, b) => a.period.localeCompare(b.period) || b.impressions - a.impressions);
+}
+
 const tables = {
   daily,
   queries: totals(queryStats, 'query'),
   pages: totals(pageStats, 'page'),
   index,
+  query_periods: byPeriod(queryStats, 'query'),
+  page_periods: byPeriod(pageStats, 'page'),
 };
 
 mkdirSync(join(outDir, 'dashboard'), { recursive: true });
