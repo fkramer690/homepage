@@ -8,13 +8,6 @@
  },
  {
   "period": "2026-10-30",
-  "query": "primäradresse im salesforce ändern",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 9
- },
- {
-  "period": "2026-10-30",
   "query": "new scheduling console",
   "clicks": 0,
   "impressions": 2,
@@ -22,10 +15,24 @@
  },
  {
   "period": "2026-10-30",
-  "query": "salesforce scheduling console update service appointment duration on gantt",
+  "query": "primäradresse im salesforce ändern",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 9
+ },
+ {
+  "period": "2026-10-30",
+  "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
   "clicks": 0,
   "impressions": 1,
-  "position": 10
+  "position": 8
+ },
+ {
+  "period": "2026-10-30",
+  "query": "what is rca latest name for by salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
  },
  {
   "period": "2026-10-30",
@@ -36,10 +43,10 @@
  },
  {
   "period": "2026-10-30",
-  "query": "trailhead new dispatch console",
+  "query": "migrate list views scheudling console sfdc",
   "clicks": 0,
   "impressions": 1,
-  "position": 4
+  "position": 3
  },
  {
   "period": "2026-10-30",
@@ -57,14 +64,49 @@
  },
  {
   "period": "2026-10-30",
-  "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
+  "query": "what is salesforce devopps now called",
   "clicks": 0,
   "impressions": 1,
-  "position": 8
+  "position": 4
  },
  {
   "period": "2026-10-30",
-  "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
+  "query": "trailhead new dispatch console",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "period": "2026-10-30",
+  "query": "salesforce scheduling console update service appointment duration on gantt",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "period": "2026-10-30",
+  "query": "trailhead scheduling console",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
+  "period": "2026-10-30",
+  "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "period": "2026-10-30",
+  "query": "hardifs",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "period": "2026-10-30",
+  "query": "salesforce b2b commerce extension",
   "clicks": 0,
   "impressions": 1,
   "position": 7
@@ -92,27 +134,6 @@
  },
  {
   "period": "2026-10-30",
-  "query": "what is salesforce devopps now called",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "period": "2026-10-30",
-  "query": "change management definition kotter lewin widerstand organisation",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 3
- },
- {
-  "period": "2026-10-30",
-  "query": "hardifs",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
-  "period": "2026-10-30",
   "query": "difference between devops centre and salesforce dx",
   "clicks": 0,
   "impressions": 1,
@@ -127,10 +148,17 @@
  },
  {
   "period": "2026-10-30",
-  "query": "what is rca latest name for by salesforce",
+  "query": "change management definition kotter lewin widerstand organisation",
   "clicks": 0,
   "impressions": 1,
-  "position": 4
+  "position": 3
+ },
+ {
+  "period": "2026-10-30",
+  "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
  },
  {
   "period": "2026-10-30",
@@ -138,33 +166,5 @@
   "clicks": 0,
   "impressions": 1,
   "position": 4
- },
- {
-  "period": "2026-10-30",
-  "query": "salesforce b2b commerce extension",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
- },
- {
-  "period": "2026-10-30",
-  "query": "trailhead scheduling console",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 6
- },
- {
-  "period": "2026-10-30",
-  "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
- },
- {
-  "period": "2026-10-30",
-  "query": "migrate list views scheudling console sfdc",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 3
  }
 ]

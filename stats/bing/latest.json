@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-07T20:03:38.226Z",
+ "generatedAt": "2026-11-07T20:14:45.703Z",
  "siteUrl": "https://www.fk-sd.de/",
  "daily": [
   {
@@ -51,22 +51,28 @@
    "position": 6
   },
   {
-   "query": "primäradresse im salesforce ändern",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 9
-  },
-  {
    "query": "new scheduling console",
    "clicks": 0,
    "impressions": 2,
    "position": 4
   },
   {
-   "query": "salesforce scheduling console update service appointment duration on gantt",
+   "query": "primäradresse im salesforce ändern",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 9
+  },
+  {
+   "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
    "clicks": 0,
    "impressions": 1,
-   "position": 10
+   "position": 8
+  },
+  {
+   "query": "what is rca latest name for by salesforce",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
   },
   {
    "query": "new dispatch console salesforce",
@@ -75,10 +81,10 @@
    "position": 5
   },
   {
-   "query": "trailhead new dispatch console",
+   "query": "migrate list views scheudling console sfdc",
    "clicks": 0,
    "impressions": 1,
-   "position": 4
+   "position": 3
   },
   {
    "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
@@ -93,13 +99,43 @@
    "position": 10
   },
   {
-   "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
+   "query": "what is salesforce devopps now called",
    "clicks": 0,
    "impressions": 1,
-   "position": 8
+   "position": 4
   },
   {
-   "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
+   "query": "trailhead new dispatch console",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "query": "salesforce scheduling console update service appointment duration on gantt",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10
+  },
+  {
+   "query": "trailhead scheduling console",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
+  },
+  {
+   "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10
+  },
+  {
+   "query": "hardifs",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
+  },
+  {
+   "query": "salesforce b2b commerce extension",
    "clicks": 0,
    "impressions": 1,
    "position": 7
@@ -123,24 +159,6 @@
    "position": 6
   },
   {
-   "query": "what is salesforce devopps now called",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
-   "query": "change management definition kotter lewin widerstand organisation",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3
-  },
-  {
-   "query": "hardifs",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 5
-  },
-  {
    "query": "difference between devops centre and salesforce dx",
    "clicks": 0,
    "impressions": 1,
@@ -153,40 +171,22 @@
    "position": 4
   },
   {
-   "query": "what is rca latest name for by salesforce",
+   "query": "change management definition kotter lewin widerstand organisation",
    "clicks": 0,
    "impressions": 1,
-   "position": 4
+   "position": 3
+  },
+  {
+   "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
   },
   {
    "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
    "clicks": 0,
    "impressions": 1,
    "position": 4
-  },
-  {
-   "query": "salesforce b2b commerce extension",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 7
-  },
-  {
-   "query": "trailhead scheduling console",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 6
-  },
-  {
-   "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 10
-  },
-  {
-   "query": "migrate list views scheudling console sfdc",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3
   }
  ],
  "pages": [
@@ -209,28 +209,22 @@
    "position": 5
   },
   {
-   "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 4
-  },
-  {
    "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
    "clicks": 0,
    "impressions": 3,
    "position": 5
   },
   {
+   "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 4
+  },
+  {
    "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
    "clicks": 0,
    "impressions": 2,
    "position": 10
-  },
-  {
-   "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 5
   },
   {
    "page": "https://www.fk-sd.de/en/blog/revenue-cloud-product-names-rlm-rca/",
@@ -243,6 +237,12 @@
    "clicks": 0,
    "impressions": 1,
    "position": 8
+  },
+  {
+   "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
   }
  ],
  "index": [
@@ -287,13 +287,6 @@
   },
   {
    "period": "2026-10-30",
-   "query": "primäradresse im salesforce ändern",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 9
-  },
-  {
-   "period": "2026-10-30",
    "query": "new scheduling console",
    "clicks": 0,
    "impressions": 2,
@@ -301,10 +294,24 @@
   },
   {
    "period": "2026-10-30",
-   "query": "salesforce scheduling console update service appointment duration on gantt",
+   "query": "primäradresse im salesforce ändern",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 9
+  },
+  {
+   "period": "2026-10-30",
+   "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
    "clicks": 0,
    "impressions": 1,
-   "position": 10
+   "position": 8
+  },
+  {
+   "period": "2026-10-30",
+   "query": "what is rca latest name for by salesforce",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
   },
   {
    "period": "2026-10-30",
@@ -315,10 +322,10 @@
   },
   {
    "period": "2026-10-30",
-   "query": "trailhead new dispatch console",
+   "query": "migrate list views scheudling console sfdc",
    "clicks": 0,
    "impressions": 1,
-   "position": 4
+   "position": 3
   },
   {
    "period": "2026-10-30",
@@ -336,14 +343,49 @@
   },
   {
    "period": "2026-10-30",
-   "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
+   "query": "what is salesforce devopps now called",
    "clicks": 0,
    "impressions": 1,
-   "position": 8
+   "position": 4
   },
   {
    "period": "2026-10-30",
-   "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
+   "query": "trailhead new dispatch console",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 4
+  },
+  {
+   "period": "2026-10-30",
+   "query": "salesforce scheduling console update service appointment duration on gantt",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10
+  },
+  {
+   "period": "2026-10-30",
+   "query": "trailhead scheduling console",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
+  },
+  {
+   "period": "2026-10-30",
+   "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10
+  },
+  {
+   "period": "2026-10-30",
+   "query": "hardifs",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
+  },
+  {
+   "period": "2026-10-30",
+   "query": "salesforce b2b commerce extension",
    "clicks": 0,
    "impressions": 1,
    "position": 7
@@ -371,27 +413,6 @@
   },
   {
    "period": "2026-10-30",
-   "query": "what is salesforce devopps now called",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
-   "period": "2026-10-30",
-   "query": "change management definition kotter lewin widerstand organisation",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3
-  },
-  {
-   "period": "2026-10-30",
-   "query": "hardifs",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 5
-  },
-  {
-   "period": "2026-10-30",
    "query": "difference between devops centre and salesforce dx",
    "clicks": 0,
    "impressions": 1,
@@ -406,10 +427,17 @@
   },
   {
    "period": "2026-10-30",
-   "query": "what is rca latest name for by salesforce",
+   "query": "change management definition kotter lewin widerstand organisation",
    "clicks": 0,
    "impressions": 1,
-   "position": 4
+   "position": 3
+  },
+  {
+   "period": "2026-10-30",
+   "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
   },
   {
    "period": "2026-10-30",
@@ -417,34 +445,6 @@
    "clicks": 0,
    "impressions": 1,
    "position": 4
-  },
-  {
-   "period": "2026-10-30",
-   "query": "salesforce b2b commerce extension",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 7
-  },
-  {
-   "period": "2026-10-30",
-   "query": "trailhead scheduling console",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 6
-  },
-  {
-   "period": "2026-10-30",
-   "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 10
-  },
-  {
-   "period": "2026-10-30",
-   "query": "migrate list views scheudling console sfdc",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3
   }
  ],
  "page_periods": [
@@ -471,13 +471,6 @@
   },
   {
    "period": "2026-10-30",
-   "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 4
-  },
-  {
-   "period": "2026-10-30",
    "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
    "clicks": 0,
    "impressions": 3,
@@ -485,17 +478,17 @@
   },
   {
    "period": "2026-10-30",
+   "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 4
+  },
+  {
+   "period": "2026-10-30",
    "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
    "clicks": 0,
    "impressions": 2,
    "position": 10
-  },
-  {
-   "period": "2026-10-30",
-   "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 5
   },
   {
    "period": "2026-10-30",
@@ -510,6 +503,13 @@
    "clicks": 0,
    "impressions": 1,
    "position": 8
+  },
+  {
+   "period": "2026-10-30",
+   "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
   }
  ]
 }
