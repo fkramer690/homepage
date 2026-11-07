@@ -44,6 +44,8 @@ faq:
   - q: "What slows nearshore teams down?"
     a: "Above all, frequent changes in staffing, whether through rotation at the partner or resignations, because each time knowledge of the org is lost. A team of seniors only slows things down too: it debates designs instead of building."
 blogTags: [nearshore, pull request review, code quality, codequalität, devops, project management]
+readMore: [nearshore-team-size, development-standards-definition-of-done, pull-request-reviews-enterprise, salesforce-center-of-excellence, salesforce-uat-business-testing, nearshore-teams-with-ai-agents, smaller-teams-ai-native-delivery]
+masterclass: devops
 ---
 
 Programme management on the client side means planning and steering a Salesforce programme across internal teams, implementation partners and nearshore teams. It covers the plan with its dependencies, the team setup, the steering of risks and quality, and reporting that helps management decide. Nearshore teams are often part of it, because they add delivery capacity at a reasonable price. My nearshore experience comes from teams in Eastern Europe and India, and both regions showed the same patterns.

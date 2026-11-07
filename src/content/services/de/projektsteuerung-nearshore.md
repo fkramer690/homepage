@@ -44,6 +44,8 @@ faq:
   - q: "Was bremst Nearshore-Teams aus?"
     a: "Vor allem häufige Wechsel in der Besetzung, ob durch Rotation beim Partner oder durch Kündigungen, weil jedes Mal Wissen über die Org verloren geht. Ein Team aus lauter Seniors bremst ebenfalls: Es diskutiert Entwürfe, statt zu bauen."
 blogTags: [nearshore, pull request review, code quality, codequalität, devops, projektmanagement]
+readMore: [nearshore-team-size, development-standards-definition-of-done, pull-request-reviews-enterprise, salesforce-center-of-excellence, salesforce-uat-business-testing, nearshore-teams-with-ai-agents, smaller-teams-ai-native-delivery]
+masterclass: devops
 ---
 
 Programmsteuerung auf Kundenseite heißt, ein Salesforce-Programm über interne Teams, Umsetzungspartner und Nearshore-Teams hinweg zu planen und zu steuern. Dazu gehören der Plan mit seinen Abhängigkeiten, das Team-Setup, die Steuerung von Risiken und Qualität und ein Reporting, das dem Management Entscheidungen erleichtert. Nearshore-Teams sind oft Teil davon, weil sie Umsetzungskapazität zu einem vernünftigen Preis bringen. Meine Nearshore-Erfahrung stammt aus Teams in Osteuropa und Indien, und in beiden Regionen zeigten sich dieselben Muster.

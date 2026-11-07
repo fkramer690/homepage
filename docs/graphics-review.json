@@ -301,6 +301,7 @@
     "og:statisch": {"title": "Standard-Vorschaubild", "proposal": 3, "rating": 3, "ratedOn": "2026-10-30", "note": "please fix wording", "todo": "docs/backlog.md G4 (erledigt)"},
     "page:arbeitsweise": {"title": "Arbeitsweise mit Fortschrittslinie (Fotos entfernt 2026-10-30)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "page:blueprint": {"title": "Blueprint-Deko (Maßlinien, Fadenkreuz), seit 2026-10-31 nur noch im Hero der Startseite", "proposal": 1, "rating": null},
+    "page:artikel-zum-thema": {"title": "Leistungsseiten: Artikel zum Thema (nummerierte Liste in weißer Box, Masterclass-Zeile darunter)", "proposal": 2, "rating": null, "note": "Backlog U3, 07.11.2026"},
     "page:footer": {"title": "Footer zweistufig (Leistungen, Masterclasses, Wissen & mehr, Rechtliches)", "proposal": 2, "rating": null, "note": "Polished-Design-Paket F, 31.10.2026"},
     "page:hero": {"title": "Hero mit Maßlinien am Foto", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30"},
     "page:leistungen": {"title": "Leistungskacheln", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30"},
