@@ -48,6 +48,8 @@ faq:
   - q: "How long does it take to introduce a Git-based release process?"
     a: "It depends on the number of teams and the state of the org. The first team usually works on the new process after a few weeks; further teams follow step by step, so nobody has to switch overnight."
 blogTags: [devops, release management, release-management, sfdx-hardis, ci/cd, pull request review]
+readMore: [devops-salesforce-enterprise, sfdx-hardis-introduction, client-owned-devops-tools, pull-request-reviews-enterprise, sandbox-strategy-multiple-partners, salesforce-release-schedule, dora-metrics-salesforce-releases, quality-gates-ai-code-pipeline]
+masterclass: devops
 ---
 
 Salesforce DevOps means every change goes through Git, a pull request and an automated pipeline before it reaches production. Release management adds the rules around it: which branches exist, which checks run at which stage, who approves and when the business gets new features. In large orgs with several teams, this is what turns stressful release weekends into routine. I set up this process on the client side, on the Git platform the client already owns.

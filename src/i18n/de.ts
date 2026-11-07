@@ -376,7 +376,9 @@ export const de: Dict = {
     results: 'Was Sie bekommen',
     phases: 'So läuft die Zusammenarbeit',
     faq: 'Häufig gestellte Fragen',
-    posts: 'Weiterlesen im Blog',
+    posts: 'Artikel zum Thema',
+    readingCourse: 'Masterclass',
+    readingChapters: 'Kapitel, kostenlos',
   },
   masterclass: {
     name: 'Masterclass KI',

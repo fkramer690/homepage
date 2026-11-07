@@ -46,7 +46,7 @@ For quoting there are three routes today: Revenue Cloud Advanced from Salesforce
 
 In the project we took a custom CPQ approach. Whether that would be the right choice again today depends on the same questions I ask in every make-or-buy decision:
 
-- **How well does the standard model fit?** Off-the-shelf configurators are often built for options and bills of materials. Product properties with a cost effect, as described above, do not always fit that model.
+- **How well does the standard model fit?** Off-the-shelf configurators are often built for options and bills of materials. Product properties with a cost effect do not always fit that model.
 - **Who maintains the rules?** A custom configurator is your own code, which has to be tested with every release and maintained by someone.
 - **What does the licence cost over several years?** A standard product costs per user, a custom approach costs development and maintenance.
 

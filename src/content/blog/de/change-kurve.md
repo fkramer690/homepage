@@ -79,7 +79,7 @@ In großen Vorhaben kommt dazu, dass Gruppen und Länder zeitversetzt an verschi
 
 ## Die Kurve ist eine Gesprächsgrundlage, keine Diagnose
 
-Die Kurve ist beliebt, weil sie einfach ist. Sie hat aber Schwächen, die Prosci in dem oben genannten Beitrag deutlich benennt:
+Die Kurve ist beliebt, weil sie einfach ist. Sie hat aber Schwächen, die Prosci in seinem Beitrag zur Kübler-Ross-Kurve deutlich benennt:
 
 ```pro-contra
 pro: Wofür die Kurve taugt

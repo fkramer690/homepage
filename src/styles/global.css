@@ -2781,3 +2781,26 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   .call-hint { grid-template-columns: 1fr; padding: 20px; }
   .call-hint .btn { justify-self: start; margin-top: 8px; }
 }
+
+/* Service pages: curated reading list in the reading flow (backlog U3). One white box with
+   dashed dividers and cyan numbers (like the questions page), the masterclass as a tinted row below. */
+.svc-reading { list-style: none; margin: 0; padding: 4px 24px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+.svc-reading li { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 4px 14px; align-items: baseline; padding: 13px 0; }
+.svc-reading li + li { border-top: 1px dashed var(--line); }
+.svc-reading-n { font-size: var(--fs-xs); color: var(--cyan-dark); }
+.svc-reading a { font-weight: 600; font-size: var(--fs-ui); color: var(--text); text-decoration: none; }
+.svc-reading a:hover { color: var(--cyan-dark); }
+.svc-reading-cat { font-size: var(--fs-xs); color: var(--text-2); }
+.svc-reading-course { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 14px; align-items: center; margin-top: 12px; padding: 14px 24px; background: var(--tint); border: 1px solid var(--tint-line); border-radius: var(--radius); color: var(--text); text-decoration: none; transition: box-shadow var(--t-fast); }
+.svc-reading-course:hover { box-shadow: var(--shadow-lift); }
+.svc-reading-course .label { display: block; margin: 0 0 2px; }
+.svc-reading-course strong { display: block; font-size: var(--fs-md); font-weight: 600; }
+.svc-reading-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--radius-pill); background: var(--white); color: var(--cyan-dark); }
+.svc-reading-icon svg { width: 22px; height: 22px; }
+.svc-reading-arrow { color: var(--cyan-dark); font-weight: 600; }
+@media (max-width: 640px) {
+  .svc-reading { padding: 4px 16px; }
+  .svc-reading li { grid-template-columns: 28px minmax(0, 1fr); }
+  .svc-reading-cat { grid-column: 2; }
+  .svc-reading-course { padding: 14px 16px; }
+}

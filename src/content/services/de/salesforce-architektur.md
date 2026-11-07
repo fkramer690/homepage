@@ -44,6 +44,8 @@ faq:
   - q: "Was ist ein Entscheidungslog und warum ist es wichtig?"
     a: "Ein Entscheidungslog hält jede Architekturentscheidung mit ihren Optionen, den Gründen für die Wahl und ihren Folgen fest. Fragt zwei Jahre später jemand, warum ein Prozess so gebaut wurde, steht die Antwort dort, auch wenn die Beteiligten längst weitergezogen sind."
 blogTags: [architecture, architektur, data 360, data governance, agentforce, field service]
+readMore: [salesforce-well-architected-2026, revenue-cloud-vs-manufacturing-cloud-commerce, manufacturing-cloud-worth-it, salesforce-editions-core-advanced-max, architecture-decision-log, permission-concept-permission-sets, duplicates-master-data-cleanup]
+masterclass: manufacturing-cloud
 ---
 
 Salesforce-Architektur auf Kundenseite bedeutet, das Gesamtbild im Interesse des Unternehmens zu entwerfen: welche Clouds und Produkte es braucht, wie das Datenmodell aussieht, wie Salesforce mit ERP und anderen Systemen zusammenarbeitet und wie Entscheidungen dokumentiert werden. Meine Rolle ist unabhängig von Herstellern und Partnern, und das zählt vor allem dann, wenn ein Partner das nächste Produkt vorschlägt.

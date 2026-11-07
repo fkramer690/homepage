@@ -43,12 +43,14 @@ faq:
   - q: "What is Salesforce partner governance?"
     a: "It is the set of rules, roles and reviews that makes several implementation partners work on one Salesforce org in the same way: shared standards, clear ownership of objects and metadata, one release process and a technical review of every delivery."
   - q: "How long does it take to establish standards across several partners?"
-    a: "In my largest programme it took about three months. The first version covered around 80 percent of the cases; the remaining edge cases were added step by step until new topics were raised early in Center of Excellence calls."
+    a: "In my largest programme, about three months. The very first version settled around 80 percent of the cases. We added the rest bit by bit, until new topics came up in Center of Excellence calls before they caused conflicts."
   - q: "Why should the client, not a partner, own governance?"
     a: "If one partner sets the rules, it decides how all others build, including its competitors. When the client owns standards, repository and approvals, partners stay comparable and replaceable."
   - q: "What is an object ownership matrix?"
-    a: "A simple table that defines which stream or team is responsible for each Salesforce object and its metadata. It prevents two teams from changing the same object without coordination."
+    a: "A table with one row per Salesforce object that names one owning stream. All other teams agree changes to that object with the owner first."
 blogTags: [partner governance, partnersteuerung, pull request review, vendor lock-in, code quality, codequalität]
+readMore: [choose-salesforce-implementation-partner, object-ownership-matrix, development-standards-definition-of-done, sandbox-strategy-multiple-partners, salesforce-center-of-excellence, fixed-price-ai-salesforce-partners, ai-org-assessment-technical-debt, salesforce-freelancer-or-consultancy]
+masterclass: devops
 ---
 
 Partner governance on the client side is what keeps a Salesforce programme with several implementation partners in control. It means one set of standards, clear ownership for every object and process, one release process and someone who technically reviews each delivery before it moves on. Without it, every partner optimises its own scope, and the client pays for the conflicts between them. I take on this role as an independent architect, without ties to any vendor or partner.
@@ -68,21 +70,19 @@ with: With an architect on the client side | Every delivery runs through standar
 source: my largest programme as an architect on the client side
 ```
 
-At the start of this programme, nobody had defined who led which processes, objects and metadata. Changes overwrote each other, and the technical approaches of the teams had drifted far apart.
+When this programme started, no object had an owner. Teams overwrote each other's changes, and each built by its own rules.
 
-First, every change went through a pull request with a review, and for a while every single one crossed my desk. From those reviews we wrote down standards: naming conventions, one automation per object and context, test coverage. The object ownership matrix and the rules for configuration made the biggest difference. The matrix defined which stream was responsible for which object, and before a team changed an object it did not own, it coordinated with the owner. The configuration rules set out which values belong in custom metadata types or custom labels, so they are not hardcoded.
+The first step: every change reached the org as a pull request with a review, and for a while I checked all of them myself. Whatever kept coming up in those reviews became a standard, such as naming conventions, one automation per object and context, and rules for test coverage. Two levers did the most:
 
-```tabelle matrix
-title: Object ownership matrix, simplified example
-columns: Object | Sales stream | Service stream | Field service stream
-Account | Owner * | coordinates | coordinates
-Opportunity | Owner * | coordinates | coordinates
-Quote | Owner * | coordinates | coordinates
-Case | coordinates | Owner * | coordinates
-Asset | coordinates | Owner * | coordinates
-Work Order | coordinates | coordinates | Owner *
-note: Before a team changes another team's object, it coordinates with the owner.
+```hebel
+Object ownership matrix | One owning stream per object
+  A team that wants to change another stream's object talks to the owner first.
+Configuration rules | No fixed values in code
+  Thresholds, texts and switches live in custom metadata types or custom labels.
 ```
+
+How the matrix is built, with an example, is in [Salesforce Object Ownership Matrix: Who Owns What?](../../blog/salesforce-object-ownership-matrix/).
+
 After the first version, new edge cases came up over the following weeks. We addressed them in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), where upcoming changes were raised with enough lead time for all streams. After a while the edge cases disappeared, because topics came up before they turned into conflicts. Once the process ran smoothly, I handed it over to an internal colleague who has owned it since.
 
 ## Rules and tools belong to the client
