@@ -33,7 +33,7 @@ Revenue Cloud ist das Quote-to-Cash-Produkt von Salesforce auf Standardobjekten 
 
 ## Was umfasst Revenue Cloud?
 
-Revenue Cloud ist der Weg vom Produktkatalog bis zur Rechnung, gebaut auf Standardobjekten der Salesforce-Plattform statt in einem Managed Package. Das Trailhead-Modul [Agentforce Revenue Management Foundations](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management) nennt diese Bestandteile:
+Revenue Cloud deckt alles vom Produktkatalog bis zur Rechnung ab und nutzt dafür die Standardobjekte der Plattform, kein Managed Package. Das Trailhead-Modul [Agentforce Revenue Management Foundations](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management) nennt diese Bestandteile:
 
 | Bestandteil | Was er für einen Hersteller leistet |
 |---|---|
@@ -89,12 +89,12 @@ Die [Preisseite](https://www.salesforce.com/eu/sales/revenue-lifecycle-managemen
 
 | Edition | Listenpreis | Umfang |
 |---|---|---|
-| Revenue Cloud Growth | 150 Euro | Angebote und Konfigurator, Auftragserfassung, Abonnements |
+| Revenue Cloud Growth | 150 Euro | Konfigurator und Angebot, Aufträge erfassen, Abos verkaufen |
 | Revenue Cloud Advanced | 200 Euro | Growth plus Verträge und Aufträge, Verbrauch und Rechnungen, KI und Analytics |
 
 Laut FAQ derselben Seite ist Revenue Cloud ein kostenpflichtiges Zusatzprodukt zu einem Sales-Cloud-Abonnement. Die Vergleichstabelle markiert vier Zusatzprodukte als „Available for purchase“: Contract Lifecycle Management bei Growth sowie Dynamic Revenue Orchestration, Invoice Management und External User Support bei Advanced. Die beiden mittleren tragen den Hinweis „Freemium access available“, ohne zu sagen, was enthalten ist. Für Revenue Cloud Billing gibt es keinen veröffentlichten Listenpreis. Laut [Billing-Preisblatt vom Februar 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) verbraucht es ein Billing Event pro 50 US-Dollar Rechnungsbetrag, ohne Übertrag über das Vertragsende hinaus.
 
-Eine Rechnung zum Listenpreis, als Annahme: 50 Nutzer, die Angebote erstellen, bekommen Revenue Cloud Advanced. Das sind 50 × 200 Euro × 12 = 120.000 Euro im Jahr. Haben diese Nutzer noch kein Sales Cloud, kommen mit Sales Cloud Core zu 195 Euro pro Nutzer und Monat laut [Sales-Cloud-Preisseite](https://www.salesforce.com/eu/sales/pricing/) 117.000 Euro hinzu. Umsetzung, SAP-Integration und Betrieb kommen obendrauf.
+Rechenbeispiel zum Listenpreis: Angenommen, 50 Angebotsersteller arbeiten mit Revenue Cloud Advanced, dann kostet das 50 × 200 Euro × 12, also 120.000 Euro pro Jahr. Haben diese Nutzer noch kein Sales Cloud, kommen mit Sales Cloud Core zu 195 Euro pro Nutzer und Monat laut [Sales-Cloud-Preisseite](https://www.salesforce.com/eu/sales/pricing/) 117.000 Euro hinzu. Umsetzung, SAP-Integration und Betrieb kommen obendrauf.
 
 Die Zahl der Nutzer bewegt das Budget stärker als die Edition. Ich gruppiere Nutzer danach, was sie mit Angeboten tun: erstellen, freigeben, nur lesen, Katalog pflegen oder als Händler anbieten.
 
@@ -140,14 +140,15 @@ Die Überschneidungen liegen bei Katalog, Preis und Angebot. Ein Katalog, ein Pr
 
 ## Wann ist Salesforce die falsche Antwort?
 
-Revenue Cloud ist ein großes Produkt, und für manche Hersteller ist es zu viel:
+Revenue Cloud ist ein großes Produkt, und für manche Hersteller ist es zu viel. Ich prüfe dafür, welcher der drei Bausteine aus diesem Kapitel überhaupt Arbeit bekäme:
 
-- **Das Angebot ist eine SAP-Preisabfrage.** Der Vertrieb wählt Materialnummern, SAP rechnet. Salesforce braucht dann nur eine Schnittstelle zu SAP.
-- **Wenige Produkte, wenige Varianten.** Ein Sortiment von 200 Artikeln ohne Optionen braucht keinen Constraint-basierten Konfigurator.
-- **Regeln liegen woanders und bleiben dort.** Stehen Variantenregeln in SAP oder in den Köpfen der Anwendungstechnik und will niemand sie doppelt pflegen, bleibt der Konfigurator leer.
-- **Kein wiederkehrender Umsatz.** Ist jeder Verkauf eine einzelne Maschine und bleibt die Rechnung in SAP, liegen die stärksten Teile brach.
+| Baustein | Bleibt ungenutzt, wenn | Dann reicht |
+|---|---|---|
+| Preise | Der Vertrieb wählt Materialnummern, und SAP rechnet den Preis | Sales Cloud mit einer Preisabfrage an SAP |
+| Konfigurator | Das Sortiment hat kaum Varianten, oder die Variantenregeln bleiben in SAP oder bei der Anwendungstechnik | Produktauswahl ohne Constraint-Engine |
+| Verträge und Abrechnung | Jede Maschine wird einzeln verkauft, und SAP schreibt die Rechnung | Auftrag an SAP, kein Billing in Salesforce |
 
-Die Alternativen sind Angebote in Sales Cloud mit ERP-Schnittstelle, ein CPQ-Produkt eines Partners oder ein eigener Ansatz auf der Plattform. Den letzten Weg beschreibe ich in [vom Angebot zum Sales Agreement](../../../blog/angebot-zu-sales-agreement-produktkonfigurator/).
+Treffen alle drei Zeilen zu, sind Angebote in Sales Cloud mit ERP-Schnittstelle, ein CPQ-Produkt eines Partners oder ein eigener Ansatz auf der Plattform die besseren Wege. Ausführlich wäge ich das in [Lohnt sich Revenue Cloud für Hersteller?](../../../blog/revenue-cloud-lohnt-sich-hersteller/) ab. Den letzten Weg beschreibe ich in [vom Angebot zum Sales Agreement](../../../blog/angebot-zu-sales-agreement-produktkonfigurator/).
 
 ## Rechenbeispiel: 25 Grundmodelle mit Fernüberwachung
 
@@ -170,12 +171,12 @@ Die Rechnungen bleiben im ersten Jahr in SAP; Billing wird erst zum Thema, wenn 
 
 ## Erster Schritt: Preis, Regeln und Rechnung ins Entscheidungsprotokoll
 
-Partner fragen nach Funktionen. Die Entscheidungen, die Kosten und Zeitplan treiben, gehören dem Unternehmen:
+Ein Partner fragt nach Funktionen. Die Entscheidungen, an denen Kosten und Zeitplan hängen, trifft aber das Unternehmen selbst:
 
 | Entscheidung | Was dazu gehört |
 |---|---|
-| Preis-Master | SAP-Konditionen oder Salesforce Pricing, je Preisart, nie beides für denselben Preis. |
-| Konfigurator-Owner | Wer pflegt die Variantenregeln nach dem Go-live, und in welchem System? |
+| Preis-Master | Je Preisart entweder SAP-Konditionen oder Salesforce Pricing, für ein und denselben Preis nie beide. |
+| Konfigurator-Owner | Wer hält die Variantenregeln nach dem Go-live aktuell, und in welchem System liegen sie? |
 | Rechnungs-Owner | SAP oder Revenue Cloud Billing. Das entscheidet die Finanzabteilung, nicht das CRM-Team. |
 | Parallelbetrieb mit CPQ | Bestandskunden von CPQ stehen nicht unter Zeitdruck: Die CPQ-Seite sagt „There is no forced migration“, aber auch, dass CPQ „will not receive new features“. Eine typische Migration dauert laut derselben Seite drei bis sechs Monate. Die Einzelheiten stehen in Kapitel 5, [von CPQ zu Revenue Cloud](../von-cpq-zu-revenue-cloud/). |
 

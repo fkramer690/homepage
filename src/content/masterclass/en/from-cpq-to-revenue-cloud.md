@@ -56,25 +56,18 @@ At the renewal, agree the term, a cap on price increases and the right to run CP
 
 ## Revenue Cloud is a redesign on standard objects
 
-Both products configure, price, quote and bill, and underneath they share almost nothing. Salesforce Help says on its [migration page](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5): the data models "differ significantly". The CPQ page adds that "CPQ-specific objects, custom fields, pricing rules, and scripts don't map directly". The comparison per area:
+Both products configure, price, quote and bill, and underneath they share almost nothing. Salesforce Help says on its [migration page](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5): the data models "differ significantly". The CPQ page adds that "CPQ-specific objects, custom fields, pricing rules, and scripts don't map directly". The area-by-area comparison with sources is in the article [Salesforce CPQ vs Revenue Cloud: the real differences](../../../blog/salesforce-cpq-vs-revenue-cloud-differences/). For the migration another question counts: what happens to everything that lives in CPQ today?
 
-| Area | Salesforce CPQ and Billing (SteelBrick) | Revenue Cloud |
+| What lives in CPQ today | What it becomes in Revenue Cloud | Effort |
 |---|---|---|
-| Technical form | Managed packages, namespaces `SBQQ` and `blng` | Standard data model of the platform, API-first quoting |
-| Quote, order, sold products | Package objects such as `SBQQ__Quote__c`, subscription records on the contract | Standard objects Quote, Order, Asset |
-| Product model | Products and bundles with features and options | Catalogs, categories, product classifications with attributes, bundles |
-| Configuration rules | Product rules: validation, selection, filter, alert | Configuration rules and the constraint rules engine with CML |
-| Pricing | Price rules, optional JavaScript quote calculator plugin | Pricing procedures, decision tables, context definitions, price waterfall |
-| After the sale | Contract with subscription records | Assets with asset state periods and asset actions |
-| Amendment and renewal | New quote and opportunity on the contract | Amendment or renewal quote, then an order |
-| Approvals | Advanced Approvals package | Advanced Approvals as invocable actions and business APIs |
-| Order to fulfilment | Order generated from the quote | Order, optionally through Dynamic Revenue Orchestrator (add-on) |
-| Billing | Salesforce Billing package | Revenue Cloud Billing add-on: usage rating and digital wallet, invoicing, payments, collections, accounting subledger |
-| Reports and dashboards | Built on package objects | Rebuilt on standard objects |
-| Configuration storage | Mostly records | Mostly records |
-| Status October 2026 | End of sale, maintenance phase, no new features | Actively developed, sold as Growth and Advanced |
+| Quotes, contracts and subscriptions in package objects | Records on Quote, Order and Asset, with history | high |
+| Product rules as if-then records | Attributes and constraints in CML, modelled again | high |
+| Price rules and JavaScript in the quote calculator plugin | A pricing procedure with decision tables, some branches dropped | high |
+| Reports and dashboards on package objects | Rebuilt on the standard objects | medium |
+| Approvals in the Advanced Approvals package | Approvals through invocable actions and business APIs | medium |
+| Billing in the Salesforce Billing package | Revenue Cloud Billing add-on, if invoicing stays in Salesforce | medium to high |
 
-Three rows carry most of the effort.
+The three rows rated high carry most of the effort.
 
 **Configuration rules.** CPQ product rules are explicit if-then records. Revenue Cloud describes variants through classifications and attributes and checks combinations with declarative constraints in CML. Three hundred product rules do not become three hundred constraints. Someone who understands the machines has to model them again, as described in [chapter 2](../product-catalog-configurator-pricing/).
 
@@ -82,7 +75,7 @@ Three rows carry most of the effort.
 
 **Subscriptions.** Every open CPQ subscription becomes an asset with a correct history, so amendments and renewals work through quote and order as described in [chapter 3](../quote-contract-order/). For maintenance contracts and remote monitoring this is the riskiest data in the whole migration.
 
-One row is a similarity: according to [Gearset](https://docs.gearset.com/en/articles/11169961-how-to-compare-and-deploy-revenue-cloud-advanced), most configuration is stored as data in both products. The sources per row are in [Salesforce CPQ vs Revenue Cloud: the real differences](../../../blog/salesforce-cpq-vs-revenue-cloud-differences/).
+One thing in common makes the work easier: according to [Gearset](https://docs.gearset.com/en/articles/11169961-how-to-compare-and-deploy-revenue-cloud-advanced), most configuration is stored as data in both products.
 
 ## Stay on CPQ, move, or take a third route?
 

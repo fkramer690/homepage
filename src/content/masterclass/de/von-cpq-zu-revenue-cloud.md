@@ -56,25 +56,18 @@ Vereinbaren Sie bei der Verlängerung die Laufzeit, eine Obergrenze für Preiser
 
 ## Revenue Cloud ist ein Neuentwurf auf Standardobjekten
 
-Beide Produkte konfigurieren, bepreisen, erstellen Angebote und rechnen ab, und darunter haben sie fast nichts gemeinsam. Die Salesforce-Hilfe schreibt auf ihrer [Migrationsseite](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5), die Datenmodelle "differ significantly". Die CPQ-Seite ergänzt, dass "CPQ-specific objects, custom fields, pricing rules, and scripts don't map directly". Der Vergleich je Bereich:
+Beide Produkte konfigurieren, bepreisen, erstellen Angebote und rechnen ab, und darunter haben sie fast nichts gemeinsam. Die Salesforce-Hilfe schreibt auf ihrer [Migrationsseite](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5), die Datenmodelle "differ significantly". Die CPQ-Seite ergänzt, dass "CPQ-specific objects, custom fields, pricing rules, and scripts don't map directly". Den Vergleich Bereich für Bereich mit Quellen enthält der Artikel [Salesforce CPQ vs. Revenue Cloud: Die echten Unterschiede](../../../blog/salesforce-cpq-revenue-cloud-unterschiede/). Für die Migration zählt eine andere Frage: Was passiert mit dem, was heute in CPQ steckt?
 
-| Bereich | Salesforce CPQ und Billing (SteelBrick) | Revenue Cloud |
+| Was heute in CPQ liegt | Was daraus in Revenue Cloud wird | Aufwand |
 |---|---|---|
-| Technische Form | Managed Packages, Namespaces `SBQQ` und `blng` | Standarddatenmodell der Plattform, API-first beim Angebot |
-| Angebot, Auftrag, Verkauftes | Paketobjekte wie `SBQQ__Quote__c`, Subscription-Datensätze am Vertrag | Standardobjekte Quote, Order, Asset |
-| Produktmodell | Produkte und Bundles mit Features und Optionen | Kataloge, Kategorien, Produktklassifizierungen mit Attributen, Bundles |
-| Konfigurationsregeln | Produktregeln: Validation, Selection, Filter, Alert | Konfigurationsregeln und Constraint Rules Engine mit CML |
-| Preisberechnung | Preisregeln, optional JavaScript Quote Calculator Plugin | Preisprozeduren, Decision Tables, Context Definitions, Preis-Wasserfall |
-| Nach dem Verkauf | Vertrag mit Subscription-Datensätzen | Assets mit Asset State Periods und Asset Actions |
-| Nachtrag und Verlängerung | Neues Angebot mit Opportunity zum Vertrag | Nachtrags- oder Verlängerungsangebot, dann Auftrag |
-| Freigaben | Paket Advanced Approvals | Advanced Approvals als Invocable Actions und Business APIs |
-| Auftrag bis Erfüllung | Auftrag aus dem Angebot erzeugt | Auftrag, optional über Dynamic Revenue Orchestrator (Add-on) |
-| Abrechnung | Paket Salesforce Billing | Add-on Revenue Cloud Billing: Usage Rating und Digital Wallet, Rechnungen, Zahlungen, Mahnwesen, Nebenbuch |
-| Berichte und Dashboards | Auf Paketobjekten gebaut | Auf Standardobjekten neu gebaut |
-| Ablage der Konfiguration | Überwiegend Datensätze | Überwiegend Datensätze |
-| Status Oktober 2026 | Verkaufsende, Wartungsphase, keine neuen Funktionen | Aktiv weiterentwickelt, verkauft als Growth und Advanced |
+| Angebote, Verträge und Subscriptions in Paketobjekten | Datensätze auf Quote, Order und Asset, mit Historie | hoch |
+| Produktregeln als Wenn-dann-Datensätze | Neu modellierte Attribute und Constraints in CML | hoch |
+| Preisregeln und JavaScript im Quote Calculator Plugin | Preisprozedur mit Decision Tables, einzelne Zweige entfallen | hoch |
+| Berichte und Dashboards auf Paketobjekten | Neu gebaut auf den Standardobjekten | mittel |
+| Freigaben im Paket Advanced Approvals | Freigaben über Invocable Actions und Business APIs | mittel |
+| Abrechnung im Paket Salesforce Billing | Add-on Revenue Cloud Billing, falls die Rechnung in Salesforce bleibt | mittel bis hoch |
 
-Drei Zeilen tragen den größten Teil des Aufwands.
+Die drei Zeilen mit hohem Aufwand tragen den größten Teil der Arbeit.
 
 **Konfigurationsregeln.** Produktregeln in CPQ sind explizite Wenn-dann-Datensätze. Revenue Cloud beschreibt Varianten über Klassifizierungen und Attribute und prüft Kombinationen mit deklarativen Constraints in CML. Aus dreihundert Produktregeln werden nicht dreihundert Constraints. Jemand, der die Maschinen versteht, muss sie neu modellieren, wie in [Kapitel 2](../produktkatalog-konfigurator-preise/) beschrieben.
 
@@ -82,7 +75,7 @@ Drei Zeilen tragen den größten Teil des Aufwands.
 
 **Subscriptions.** Jede offene CPQ-Subscription wird zu einem Asset mit korrekter Historie, damit Nachträge und Verlängerungen über Angebot und Auftrag laufen, wie in [Kapitel 3](../angebot-vertrag-auftrag/) beschrieben. Bei Wartungsverträgen und Fernüberwachung sind das die heikelsten Daten der ganzen Migration.
 
-Eine Zeile ist eine Gemeinsamkeit: Laut [Gearset](https://docs.gearset.com/en/articles/11169961-how-to-compare-and-deploy-revenue-cloud-advanced) liegt in beiden Produkten der Großteil der Konfiguration als Daten vor. Die Quellen je Zeile stehen in [Salesforce CPQ vs. Revenue Cloud: Die echten Unterschiede](../../../blog/salesforce-cpq-revenue-cloud-unterschiede/).
+Eine Gemeinsamkeit erleichtert die Arbeit: Laut [Gearset](https://docs.gearset.com/en/articles/11169961-how-to-compare-and-deploy-revenue-cloud-advanced) liegt in beiden Produkten der Großteil der Konfiguration als Daten vor.
 
 ## CPQ behalten, wechseln oder ein dritter Weg?
 
