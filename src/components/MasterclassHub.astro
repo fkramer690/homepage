@@ -33,6 +33,12 @@ const video = (m as { video?: CourseVideo | null }).video ?? null;
 const chapters = await getChapters(lang, course);
 const clusters = await getClusters(lang, course);
 const articleCount = new Set(clusters.flatMap(({ posts }) => posts.map((p) => p.id))).size;
+// Optional question guide (topic hub): one row per question with a short answer and the page that answers it in full.
+type HubQuestion = { q: string; a: string; articleKey: string; link: string };
+const questionTexts = (m as { questions?: HubQuestion[] }).questions ?? [];
+const questions = (
+  await Promise.all(questionTexts.map(async (item) => ({ ...item, post: (await postsForKeys(lang, [item.articleKey]))[0] })))
+).filter((item) => item.post);
 const deadlinePosts = new Map(
   await Promise.all(
     m.deadlines.filter((d) => d.articleKey).map(async (d) => [d.articleKey, (await postsForKeys(lang, [d.articleKey]))[0]] as const),
@@ -132,6 +138,20 @@ const schema = {
             uploadDate: new Date(video.uploadDate).toISOString(),
             duration: `PT${video.duration}S`,
             transcript: video.transcript,
+          },
+        ]
+      : []),
+    ...(questions.length
+      ? [
+          {
+            '@type': 'FAQPage',
+            '@id': `${url}#questions`,
+            inLanguage: lang,
+            mainEntity: questions.map((item) => ({
+              '@type': 'Question',
+              name: item.q,
+              acceptedAnswer: { '@type': 'Answer', text: item.a, url: abs(postHref(item.post!)) },
+            })),
           },
         ]
       : []),
@@ -254,6 +274,26 @@ const schema = {
       </ul>
     </div>
   </section>
+
+  {questions.length > 0 && (
+    <section class="section mc-questions" id={(m as { questionsAnchor?: string }).questionsAnchor} aria-labelledby="mc-questions">
+      <div class="container">
+        <p class="label mono">{(m as { questionsLabel?: string }).questionsLabel}</p>
+        <h2 id="mc-questions">{(m as { questionsTitle?: string }).questionsTitle}</h2>
+        <p class="section-intro">{(m as { questionsText?: string }).questionsText}</p>
+        <ol class="mc-qa">
+          {questions.map((item, i) => (
+            <li>
+              <span class="mc-qa-n mono">{nn(i + 1)}</span>
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+              <a href={postHref(item.post!)}>{item.link} →</a>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )}
 
   {courses[course].partner && (
   <section class="section mc-partner">
