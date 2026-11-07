@@ -41,7 +41,7 @@ A machine invoice depends on shipment, acceptance and down payments, and all thr
 | Machine | SAP | Delivery, acceptance, down payments |
 | Spare parts | SAP | Invoiced with the delivery |
 | Subscriptions such as remote monitoring | Revenue Cloud Billing | Sold, amended and renewed in Salesforce |
-| Maintenance contract fees | Revenue Cloud Billing | Fixed fee per period, amendments from sales |
+| Maintenance contract fees | Revenue Cloud Billing | Same amount every period, changes come from sales |
 | Usage above an allowance | Revenue Cloud Billing | Rated in Salesforce |
 
 The signal I look for: sales changes contracts every week, and finance corrects invoices every month because SAP did not hear about a change. Then Billing in Salesforce removes a hand-over. If the recurring business is a few hundred contracts with one invoice a year, SAP is enough. The full reasoning is in [Revenue Cloud Billing or SAP](../../../blog/revenue-cloud-billing-or-sap-invoicing/), and the system boundary for the whole process from [chapter 1](../revenue-cloud-overview/) is in [who owns what in quote to cash](../../../blog/revenue-cloud-sap-quote-to-cash-ownership/).
@@ -58,18 +58,13 @@ The [product page](https://www.salesforce.com/sales/revenue-cloud-billing/) adds
 
 ## Who closes the period: finance or the CRM team?
 
-A subledger records the detail of receivables, every invoice, credit memo and payment, and passes journal entries to the general ledger. The general ledger stays in SAP. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/set-up-billing-basics), legal entity records tie every billing transaction to the right accounting periods and general ledger accounts. Each of these already exists in SAP as company codes, fiscal periods and G/L accounts.
+The subledger holds receivables in detail, each invoice, each credit memo, each payment. Only the journal entries go to the general ledger in SAP. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/set-up-billing-basics), legal entity records tie every billing transaction to the right accounting periods and general ledger accounts. Each of these already exists in SAP as company codes, fiscal periods and G/L accounts.
 
 ```hinweis offen
-So before a partner configures anything, finance answers four questions:
-
-- Which company codes invoice from Salesforce, and which legal entity records match them?
-- Who closes a Salesforce accounting period, and in which order relative to the SAP period close?
-- Who maintains the mapping of general ledger accounts when the chart of accounts changes?
-- How are receivables in Salesforce and SAP reconciled at month end, and who looks into differences?
+So before a partner sets anything up, finance settles how SAP maps into Salesforce: which company code matches which legal entity and which of them invoice from Salesforce, who closes the accounting period in Salesforce and whether that happens before or after the SAP close, who updates the G/L account mapping when the chart of accounts changes, and who compares the receivables of both systems at month end and resolves differences.
 ```
 
-Trailhead describes an [Accounts Receivable Admin](https://trailhead.salesforce.com/content/learn/modules/billing-basics-in-revenue-cloud/explore-billing-features-and-roles) who manages accounting periods, journal entries and financial reporting. In a manufacturing company that person sits in accounting. If nobody there takes the role, I would not take Billing live. The interfaces for journal entries and invoice status are part of my work on [Salesforce integration](../../../services/salesforce-integration/).
+Trailhead describes an [Accounts Receivable Admin](https://trailhead.salesforce.com/content/learn/modules/billing-basics-in-revenue-cloud/explore-billing-features-and-roles) for accounting periods, journal entries and financial reports. At a manufacturer that role belongs in accounting, and without someone there to fill it I do not put Billing into operation. The interfaces for journal entries and invoice status are part of my work on [Salesforce integration](../../../services/salesforce-integration/).
 
 ## What does Billing cost?
 

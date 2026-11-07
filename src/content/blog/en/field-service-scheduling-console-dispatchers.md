@@ -23,6 +23,10 @@ faq:
     a: "According to Trailhead, customisations applied to the Classic Dispatch Console continue to work in the Scheduling Console, and the Gantt state and user settings carry over. I would still test custom actions and Visualforce pages in a sandbox."
   - q: "Is the Classic Dispatch Console being retired?"
     a: "As of October 2026 I have found no announced retirement date. With Summer '26 Salesforce renamed the old tab to Classic Dispatch Console, and both consoles can be used side by side."
+  - q: "Why can I no longer find the classic dispatcher console?"
+    a: "Since Summer '26 (managed package version 262) its tab is called Classic Dispatch Console. Search for that name in the App Launcher or add the tab to the navigation of the Field Service app again."
+  - q: "Do my list views carry over to the Scheduling Console?"
+    a: "The appointment list is a standard Salesforce list view on service appointments, so list views built there appear in it. Filters from field sets work differently: a Trailblazer Community answer says the new console does not support them yet, so test them in a sandbox."
 draft: false
 ---
 

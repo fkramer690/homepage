@@ -95,8 +95,12 @@ const services = defineCollection({
     // Typical duration of the engagement, shown above the phase timeline (Fabian confirmed the values 2026-11-07).
     duration: z.string().min(40).max(260),
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).min(2).max(6),
-    // Blog tags whose articles are listed as further reading on this page.
+    // Blog tags that link an article back to its best matching service (getPostService).
     blogTags: z.array(z.string()).min(1).max(8),
+    // Curated reading list in the reading flow (backlog U3): 5 to 8 blog translationKeys in
+    // reading order, plus the masterclass that fits. Required on every page except change management.
+    readMore: z.array(z.string()).min(5).max(8).optional(),
+    masterclass: z.enum(courseIds).optional(),
     // Closing call to action: what to bring to the first call (src/lib/contact-briefs.ts).
     contactBrief: z.enum(contactBriefIds),
     // Optional extra block: change-management adds the team (Fabian and Juliane Winterscheid)

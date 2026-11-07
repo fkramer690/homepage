@@ -559,6 +559,12 @@ a:hover { color: var(--anthracite); }
 .proof-list li:first-child { border-left: 0; padding-left: 0; }
 @media (min-width: 901px) { .proof-list.cols-4 { grid-template-columns: repeat(4, 1fr); } }
 /* Closing call to action on the service overview */
+/* Phones: the services come first, key figures follow below them (first screen shows a service) */
+@media (max-width: 720px) {
+  .service-index-body { display: flex; flex-direction: column; }
+  .service-index-body > .proof { order: 2; }
+}
+.service-index-note { margin: 2.5em 0 0; max-width: var(--measure); font-size: var(--fs-md); }
 .service-index-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 2.5em; }
 .service-index-cta p { margin: 0; font-size: var(--fs-md); }
 /* Key figures as trust evidence on the service overview */
@@ -1823,12 +1829,22 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .mc-tab-panel > p { color: var(--text-2); font-size: var(--fs-ui); margin: 0; }
 .mc-tab-links { list-style: none; margin: 12px 0 0; padding: 0; columns: 2; column-gap: 32px; }
 .mc-tab-links li { break-inside: avoid; padding: 8px 0; border-top: 1px dashed var(--line); font-size: var(--fs-ui); }
+/* Question guide on topic hubs (variant B "kompakte Liste", 2026-11-07): one row per
+   question with number, question, short answer and the page that answers it in full */
+.mc-qa { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.mc-qa li { display: grid; grid-template-columns: 44px minmax(0, 1.1fr) minmax(0, 1.6fr) minmax(0, 250px); gap: 20px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.mc-qa-n { font-size: var(--fs-xs); color: var(--cyan-dark); }
+.mc-qa h3 { font-size: var(--fs-base); margin: 0; }
+.mc-qa p { font-size: var(--fs-ui); color: var(--text-2); margin: 0; }
+.mc-qa a { font-size: var(--fs-sm); font-weight: 600; color: var(--cyan-dark); text-align: right; }
 @media (max-width: 860px) {
   .mc-timeline { grid-template-columns: 1fr; gap: 14px; }
   .mc-timeline::before { left: 6px; right: auto; top: 0; bottom: 0; border-top: 0; border-left: 2px solid var(--line); }
   .mc-timeline li { padding: 0 0 0 28px; }
   .mc-path { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; }
   .mc-tab-links { columns: 1; }
+  .mc-qa li { grid-template-columns: 32px minmax(0, 1fr); gap: 6px 12px; }
+  .mc-qa p, .mc-qa a { grid-column: 2; text-align: left; }
 }
 /* Masterclasses on the home page (variant A, 2026-10-30): heading left, one white box
    right with one row per masterclass (icon, short name, topic line, chapters, arrow) */
@@ -2755,3 +2771,38 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   .cb-control *, .cb-iceberg * { animation: none !important; }
 }
 .rc-cv-note { margin: 0.9em 0 0; font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.65); max-width: 60ch; }
+
+/* Call hint inside the article text (CallHint.astro, placed by ProseWithHints.astro) */
+.call-hint { margin: 2.4em 0; display: grid; grid-template-columns: 1fr auto; gap: 8px 28px; align-items: center; padding: 24px 28px; border-radius: var(--radius); background: var(--anthracite); color: var(--on-dark); box-shadow: var(--accent-top); }
+.prose .call-hint p { margin: 0; }
+.call-hint .call-hint-kicker { grid-column: 1 / -1; font-size: var(--fs-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--cyan-light); }
+.prose .call-hint .call-hint-title { font-size: var(--fs-md); font-weight: 700; line-height: 1.35; color: var(--white); }
+.prose .call-hint .call-hint-text { margin-top: 4px; font-size: var(--fs-ui); line-height: 1.55; color: var(--on-dark); }
+.prose .call-hint .btn { white-space: nowrap; text-decoration: none; }
+@media (max-width: 760px) {
+  .call-hint { grid-template-columns: 1fr; padding: 20px; }
+  .call-hint .btn { justify-self: start; margin-top: 8px; }
+}
+
+/* Service pages: curated reading list in the reading flow (backlog U3). One white box with
+   dashed dividers and cyan numbers (like the questions page), the masterclass as a tinted row below. */
+.svc-reading { list-style: none; margin: 0; padding: 4px 24px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+.svc-reading li { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 4px 14px; align-items: baseline; padding: 13px 0; }
+.svc-reading li + li { border-top: 1px dashed var(--line); }
+.svc-reading-n { font-size: var(--fs-xs); color: var(--cyan-dark); }
+.svc-reading a { font-weight: 600; font-size: var(--fs-ui); color: var(--text); text-decoration: none; }
+.svc-reading a:hover { color: var(--cyan-dark); }
+.svc-reading-cat { font-size: var(--fs-xs); color: var(--text-2); }
+.svc-reading-course { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 14px; align-items: center; margin-top: 12px; padding: 14px 24px; background: var(--tint); border: 1px solid var(--tint-line); border-radius: var(--radius); color: var(--text); text-decoration: none; transition: box-shadow var(--t-fast); }
+.svc-reading-course:hover { box-shadow: var(--shadow-lift); }
+.svc-reading-course .label { display: block; margin: 0 0 2px; }
+.svc-reading-course strong { display: block; font-size: var(--fs-md); font-weight: 600; }
+.svc-reading-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--radius-pill); background: var(--white); color: var(--cyan-dark); }
+.svc-reading-icon svg { width: 22px; height: 22px; }
+.svc-reading-arrow { color: var(--cyan-dark); font-weight: 600; }
+@media (max-width: 640px) {
+  .svc-reading { padding: 4px 16px; }
+  .svc-reading li { grid-template-columns: 28px minmax(0, 1fr); }
+  .svc-reading-cat { grid-column: 2; }
+  .svc-reading-course { padding: 14px 16px; }
+}

@@ -112,7 +112,7 @@ Lieferung ..zurück..> Order Summary
 Rechnung ..zurück..> Order Summary
 ```
 
-Planen Sie den Rückweg so sorgfältig wie den Hinweg. Ein Händler, der drei Tage lang "Bestellung eingegangen" sieht, ruft im Innendienst an.
+Der Weg zurück aus SAP braucht dieselbe Sorgfalt wie der Weg hin. Steht eine Bestellung drei Tage auf "Bestellung eingegangen", greift der Händler zum Telefon und ruft den Innendienst an.
 
 ## Middleware oder direkte Callouts?
 
@@ -121,7 +121,7 @@ Für einen Shop mit zwei oder drei Live-Abfragen und einem Auftragsexport reiche
 Der [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/) enthält einen Quote-to-Cash-Fall, der Auftrags-, Bestands- und Kundendaten zwischen Sales Cloud und S/4HANA synchronisiert, und einen Fall für B2B-EDI. Das sind API-Vorlagen als Startpunkt. Eine fertige Anbindung für einen B2B-Commerce-Store ist es nicht.
 
 ```hinweis achtung
-Eine Frist gilt für jede Batch-Schnittstelle. Salesforce schaltet den [OAuth Username-Password Flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) für Connected Apps am 20. Februar 2027 ab. Ein nächtlicher Produktimport, der sich mit Passwort anmeldet, läuft dann nicht mehr, oft ohne dass es jemand sofort merkt. Wie Sie diese Schnittstellen finden und umstellen, steht in [Passwort-Integrationen enden 2027](../../../blog/salesforce-passwort-integrationen-2027/).
+Für alle Batch-Schnittstellen läuft eine Frist. Salesforce schaltet den [OAuth Username-Password Flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) für Connected Apps am 20. Februar 2027 ab. Ein nächtlicher Produktimport, der sich mit Passwort anmeldet, läuft dann nicht mehr, oft ohne dass es jemand sofort merkt. Wie Sie diese Schnittstellen finden und umstellen, steht in [Passwort-Integrationen enden 2027](../../../blog/salesforce-passwort-integrationen-2027/).
 ```
 
 ## Wann lohnt sich ein headless Shop?
@@ -135,7 +135,7 @@ Für die ERP-Anbindung heißt das: Extensions werden durch Connect-API-Aufrufe a
 Ein Maschinenbauer mit SAP S/4HANA plant einen Shop auf Growth Edition für 250 Händler und 15.000 Ersatzteile. Telefon- und EDI-Aufträge bleiben in SAP. Die Schnittstellenliste nach dem ersten Workshop könnte so aussehen:
 
 1. Kundenstamm zu Accounts und Buyer Accounts, nachts.
-2. Materialien und Produkthierarchie zu Produkten und Kategorien, nachts.
+2. Nachts Materialstamm und Produkthierarchie als Produkte und Kategorien.
 3. Listen- und Staffelpreise in Preisbücher, nachts; Vertragspreise der 40 größten Händler live über die Pricing-Extension.
 4. Bestandsstatus alle 15 Minuten in Omnichannel Inventory, bestätigter Termin live im Checkout.
 5. Kredit und Liefersperre live in `validate`.

@@ -1,5 +1,6 @@
 ---
 title: "Salesforce Field Service: Wann lohnt es sich?"
+metaTitle: "Lohnt sich Salesforce Field Service? Kriterien und Kosten"
 description: "Salesforce Field Service lohnt sich bei vielen kurzen Einsätzen, kaum bei langen Projekten. Kriterien, Lizenzkosten und Alternativen für den Außendienst."
 pubDate: 2026-10-26
 lang: de
@@ -85,7 +86,7 @@ Zwei Bedingungen aus dem Kleingedruckten zählen für die Lizenzplanung. Field S
 Dispatcher- und Technician-Lizenzen dürfen nicht für Contact Center oder Fallbearbeitung genutzt werden. Wer im Innendienst Fälle bearbeitet und zugleich Einsätze plant, braucht Field Service Plus.
 ```
 
-Welche Rolle welche Lizenz braucht, Subunternehmer eingeschlossen, steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/) und in [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/).
+Welche Rolle welche Lizenz braucht, Subunternehmer eingeschlossen, steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/) und in [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/). Die sechs häufigsten Fragen zum Produkt mit Kurzantwort sammelt der Themen-Hub [Salesforce Field Service für Hersteller](../../masterclass/field-service/).
 
 ## Woran entscheide ich?
 

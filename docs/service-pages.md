@@ -14,8 +14,9 @@ Service pages follow the content rules of the [blog guidelines](blog-guidelines.
 4. Typical situations (`situations`)
 5. What you get (`deliverables`) and results (`results`), side by side
 6. **The rest of the body (Markdown)**
+6a. "Artikel zum Thema" / "Articles on this topic": the curated reading list from `readMore` (5 to 8 blog articles in reading order, numbered, with their category) and the masterclass from `masterclass` as a tinted row below it. It sits in the reading flow and in the contents column (backlog U3, 2026-11-07). Not on the change management page, which lists its articles by author
 7. How I work (`phases`, 3–4 steps) as a vertical timeline, with the typical duration (`duration`) above it
-8. FAQ, collapsible (`faq`), author box, related blog articles (blog posts that share a tag with `blogTags`). With `section: change-management` the page shows the team cards (Fabian, Juliane Winterscheid, the joint plan) in a grey band below the reading grid and, instead of the related articles, the change management articles grouped by author (newest four per group, the rest linked in the filtered blog), the heading "Was wir machen" and the shared author box of Fabian and Juliane (`src/components/ChangeTeam.astro`, `ChangeArticles.astro`, texts in `src/data/change-management.ts`). On that page "ich" is Fabian and "wir" are Fabian and Juliane; the first paragraph says so
+8. FAQ, collapsible (`faq`), author box. With `section: change-management` the page shows the team cards (Fabian, Juliane Winterscheid, the joint plan) in a grey band below the reading grid and, instead of the curated reading list, the change management articles grouped by author (newest four per group, the rest linked in the filtered blog), the heading "Was wir machen" and the shared author box of Fabian and Juliane (`src/components/ChangeTeam.astro`, `ChangeArticles.astro`, texts in `src/data/change-management.ts`). On that page "ich" is Fabian and "wir" are Fabian and Juliane; the first paragraph says so
 9. Contact section with "Book a call" and the contact form, subject set to the service. Heading, text and the lists "What to bring" / "What we clarify" come from the brief named in the required frontmatter field `contactBrief` (`src/lib/contact-briefs.ts`)
 
 Blog articles link back to the best matching service automatically (`getPostService` in `src/lib/services.ts`).
@@ -38,7 +39,9 @@ Blog articles link back to the best matching service automatically (`getPostServ
 | `duration` | 40–260 characters, the typical duration of the engagement per phase or stage, shown as "Typische Dauer" above the phase timeline. Only values Fabian confirmed (2026-11-07) |
 | `faq` | 2–6 questions, answers up to 600 characters |
 | `note`, `notePartner` | optional, max. 240 characters: note shown at the very top, e.g. who the approach was developed with. `notePartner` is a name from `partnerPage.partners` in `src/i18n` and must appear in `note`; it is linked to the partner page and LinkedIn |
-| `blogTags` | 1–8 tags, matched case-insensitively against blog tags |
+| `blogTags` | 1–8 tags, matched case-insensitively against blog tags; they pick the service an article links back to |
+| `readMore` | 5–8 blog `translationKey`s in reading order: from the entry question to the details, the articles the service is really about. Required except on the change management page; the build fails on a key without a published article in the page's language. Same list in EN and DE |
+| `masterclass` | optional course id from `src/lib/courses.ts`: the masterclass that fits, shown below the reading list |
 | `section` | optional, only `change-management`: adds the team cards and the change management article lists (see "Fixed page structure") |
 
 ## Body

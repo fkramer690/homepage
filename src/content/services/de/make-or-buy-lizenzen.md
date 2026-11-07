@@ -47,6 +47,8 @@ faq:
   - q: "Bewerten Sie auch Tools außerhalb von Salesforce?"
     a: "Ja. Make-or-buy betrifft den ganzen IT-Stack, etwa Dokumentenerstellung, E-Signatur oder die Frage, ob ein Prozess überhaupt in Salesforce gehört. Ich habe keine Bindung an einen Hersteller, daher kann die Empfehlung auch ein Tool außerhalb des Salesforce-Ökosystems sein."
 blogTags: [business case, agentforce, open source, vendor lock-in, lizenzen]
+readMore: [salesforce-licence-types, salesforce-editions-core-advanced-max, manufacturing-cloud-worth-it, manufacturing-cloud-add-ons-costs, field-service-worth-it, revenue-cloud-worth-it-manufacturers, commerce-extensions-custom-code, aela-flat-fee-vs-credits]
+masterclass: manufacturing-cloud
 ---
 
 Make-or-buy bei Salesforce heißt, für jede Anforderung zu entscheiden, ob sie ein Standardprodukt, eine Industry Cloud, eine Eigenentwicklung auf der Kernplattform oder ein separates Tool abdeckt. Die Lizenzprognose beantwortet die verwandte Frage, welche Lizenztypen die Nutzer brauchen. Beide Entscheidungen fallen früh und lassen sich nur teuer zurückdrehen, daher stütze ich sie auf einen langfristigen ROI-Case inklusive Wartung und Folgekosten. Das Lizenzmodell und die Preisgestaltung von Salesforce kenne ich gut aus der Pre-Sales-Arbeit gemeinsam mit Salesforce.

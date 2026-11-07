@@ -46,44 +46,36 @@ Ich schreibe deshalb einen Sponsor-Plan: eine kurze Liste mit Terminen, an denen
 
 ## Der Einführungsplan hat eine Zeile pro betroffener Gruppe
 
-Mit einem sauberen Release-Prozess werden Releases kleiner und häufiger. Für Fachbereiche heißt das: öfter kleine Änderungen statt einmal im Quartal ein großes Paket. Wer nicht weiß, dass sich etwas geändert hat, hält die Änderung für einen Fehler. Der Einführungsplan verhindert das. Er hat eine Zeile pro betroffener Gruppe und wird mit dem Release-Plan zusammen gepflegt:
+Ein guter Release-Prozess macht Releases kleiner und häufiger. Der Fachbereich bekommt dann laufend kleine Änderungen statt eines großen Pakets pro Quartal. Eine Änderung, von der niemand wusste, wirkt wie ein Fehler. Dagegen hilft der Einführungsplan, den ich zusammen mit dem Release-Plan pflege. Für die Masterclass ergänze ich eine Spalte: welche ADKAR-Stufe bei dieser Gruppe gerade gefährdet ist. Daran hängt, ob eine Mail reicht oder der Sponsor ran muss.
 
-| Gruppe | Was ändert sich | Wer informiert | Wann |
+| Gruppe | Änderung | Gefährdete Stufe | Wer spricht |
 |---|---|---|---|
-| Innendienst Deutschland | neues Pflichtfeld Liefertermin im Angebot | Teamleitung, Key User | zwei Wochen vorher |
-| Außendienst Service | neues Formular für das Wartungsprotokoll in der App | Ansprechpartner der Region | vor dem nächsten App-Update |
-| Vertrieb alle Länder | keine sichtbare Änderung | niemand | nicht nötig |
+| Innendienst Deutschland | Liefertermin wird Pflichtfeld im Angebot | Desire, weil das Feld Arbeit macht | Sponsor vor dem Abnahmetest, dann Teamleitung |
+| Außendienst Service | neues Wartungsprotokoll in der App | Knowledge und Ability | Key User der Region, vor dem App-Update |
+| Vertrieb in allen Ländern | nichts Sichtbares | keine | niemand |
 
-Die letzte Zeile ist ernst gemeint. Wer jede Woche Release-Mails bekommt, die ihn nicht betreffen, liest auch die eine nicht, die ihn betrifft. Wie Repository, Pipeline und Freigaben dahinter organisiert sind, steht im DevOps-Kapitel [Release-Prozess: Eigentum, Rollen und Freigaben](../../devops-release-management/release-prozess-eigentum-rollen/).
+Gerade die leere Zeile zählt. Wer jede Woche Release-Mails ohne Bezug zur eigenen Arbeit bekommt, überliest irgendwann auch die eine, die ihn trifft. Wie Repository, Pipeline und Freigaben dahinter organisiert sind, steht im DevOps-Kapitel [Release-Prozess: Eigentum, Rollen und Freigaben](../../devops-release-management/release-prozess-eigentum-rollen/).
 
 ## Wie sehen Release Notes für Anwender aus?
 
-Technische Release Notes listen User Stories, Felder und Flows. Für den Fachbereich sind sie nutzlos. Release Notes für Anwender beantworten fünf Fragen:
-
-- **Was ändert sich für mich?** Getrennt nach Gruppen, mit einem Bildschirmfoto, wenn sich die Oberfläche ändert.
-- **Warum?** Ein Satz, zum Beispiel: Der Liefertermin wird Pflicht, weil die Absatzplanung ihn braucht.
-- **Ab wann?** Datum des Releases.
-- **Was bleibt gleich?** Das nimmt viel Unsicherheit und wird fast immer vergessen.
-- **Wen frage ich?** Den Key User des Teams, mit Namen.
-
-Mehr als eine halbe Seite pro Gruppe ist zu viel. Bei Gesellschaften in mehreren Ländern kommen die Release Notes in der Landessprache. Ein guter Test: Ein Key User liest sie ohne Erklärung und versteht sie. Den ganzen Ablauf mit Beispielen beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../../../blog/salesforce-releases-fachbereich-kommunizieren/).
+User Stories, Felder und Flows interessieren den Fachbereich nicht. Release Notes für Anwender sind deshalb ein eigenes Dokument, und jede ihrer Fragen zahlt auf eine ADKAR-Stufe ein. Was sich für meine Gruppe ändert, notfalls mit Bildschirmfoto, und ab welchem Datum, schafft Awareness. Der Grund in einem Satz, etwa dass die Absatzplanung den Liefertermin braucht, stützt Desire. Was gleich bleibt, nimmt Unsicherheit und fehlt fast immer. Der Name des Key Users als Ansprechpartner sichert Knowledge. Pro Gruppe genügt eine halbe Seite, in mehreren Ländern in der jeweiligen Landessprache. Als Probe gebe ich den Text einem Key User ohne weitere Erklärung. Den ganzen Ablauf mit Beispielen beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../../../blog/salesforce-releases-fachbereich-kommunizieren/).
 
 ```schritte
-Planung | wenn der Umfang feststeht · Product Owner mit Fachbereich
-  Einführungsplan je Gruppe anlegen, umstrittene Zeilen markieren und mit dem Sponsor besprechen.
-Vor dem Abnahmetest | etwa zwei Wochen vorher · Key User
-  Key User sehen die Änderung, testen sie und bereiten die Fragen ihres Teams vor.
-Kurz vor dem Release | wenige Tage vorher · Teamleitung, Key User
-  Release Notes für Anwender gehen an die betroffenen Gruppen, in Landessprache.
+Planung | sobald der Umfang klar ist · Product Owner und Fachbereich
+  Für jede Gruppe eine Zeile im Einführungsplan, strittige Zeilen gehen an den Sponsor.
+Vor dem Abnahmetest | rund zwei Wochen davor · Key User
+  Die Key User probieren die Änderung aus und sammeln vorab, was ihr Team fragen wird.
+Kurz vor dem Release | ein paar Tage davor · Teamleitung und Key User
+  Die betroffenen Gruppen erhalten ihre Release Notes in der eigenen Sprache.
 Nach dem Release | erste Woche · Key User, Projektteam
-  Fragen sammeln, Nutzung prüfen, Rückmeldungen in den Backlog übernehmen.
+  Key User sammeln Fragen, das Projekt schaut auf die Nutzung, Rückmeldungen wandern in den Backlog.
 ```
 
 ## Umstrittene Änderungen erklärt der Sponsor vor dem Abnahmetest
 
 Manche Änderungen gefallen nicht allen. Ein neues Pflichtfeld macht dem Innendienst Arbeit und hilft der Absatzplanung. Solche Änderungen sollten nicht über die Release Notes zum ersten Mal bekannt werden. Im Einführungsplan markiere ich diese Zeilen, und der Sponsor erklärt vor dem Abnahmetest, warum die Änderung kommt. Hier entscheidet sich Desire: Wer den Grund kennt und weiß, dass die eigene Führung ihn trägt, füllt das Feld. Wer ihn nicht kennt, füllt es mit einem Punkt.
 
-Genauso wichtig ist der Rückweg. Ich richte einen festen Ort für Rückmeldungen ein, trenne Fehler von Wünschen und sorge dafür, dass jede Rückmeldung eine sichtbare Antwort bekommt, auch wenn sie nein lautet. Ein Fachbereich, der erlebt, dass seine Rückmeldung im nächsten Release umgesetzt ist, liest auch die nächsten Release Notes.
+Ohne Rückkanal verpufft das. Rückmeldungen bekommen bei mir einen festen Ort, Fehler und Wünsche werden getrennt, und auf jede Rückmeldung folgt eine sichtbare Antwort, auch ein Nein. Ein Fachbereich, der erlebt, dass seine Rückmeldung im nächsten Release umgesetzt ist, liest auch die nächsten Release Notes.
 
 ## Wann kommt der Betriebsrat dazu?
 

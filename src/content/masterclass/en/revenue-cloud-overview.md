@@ -33,7 +33,7 @@ Revenue Cloud is Salesforce's quote-to-cash product on core platform objects: pr
 
 ## What does Revenue Cloud cover?
 
-Revenue Cloud is the route from product catalog to invoice, built on standard objects of the Salesforce platform instead of a managed package. The Trailhead module [Agentforce Revenue Management Foundations](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management) lists its components:
+Revenue Cloud covers everything from the product catalog to the invoice and uses the platform's standard objects for it, not a managed package. The Trailhead module [Agentforce Revenue Management Foundations](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management) lists its components:
 
 | Component | What it does for a manufacturer |
 |---|---|
@@ -89,12 +89,12 @@ The [pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-managem
 
 | Edition | List price | Contains |
 |---|---|---|
-| Revenue Cloud Growth | €150 / $150 | Quoting and configurator, order capture, subscriptions |
+| Revenue Cloud Growth | €150 / $150 | Configurator and quote, capturing orders, selling subscriptions |
 | Revenue Cloud Advanced | €200 / $200 | Growth plus contracts and orders, consumption and invoicing, AI and analytics |
 
 The FAQ on that page says Revenue Cloud is a paid add-on to a Sales Cloud subscription. The comparison table marks four add-ons as "Available for purchase": Contract Lifecycle Management for Growth, and Dynamic Revenue Orchestration, Invoice Management and External User Support for Advanced. The two in the middle carry the note "Freemium access available", without saying what is included. Revenue Cloud Billing has no published list price. According to the [Billing rate sheet from February 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf), it consumes one Billing Event per $50 of invoice amount, with no rollover past the order end date.
 
-A calculation at list price, as an assumption: 50 users who create quotes get Revenue Cloud Advanced, which is 50 × €200 × 12 = €120,000 a year. If they do not have Sales Cloud yet, Sales Cloud Core at €195 per user and month according to the [Sales Cloud pricing page](https://www.salesforce.com/eu/sales/pricing/) adds €117,000. Implementation, the SAP integration and operations come on top.
+Worked example at list price: assume 50 quote creators work with Revenue Cloud Advanced, then that costs 50 × €200 × 12, so €120,000 per year. If they do not have Sales Cloud yet, Sales Cloud Core at €195 per user and month according to the [Sales Cloud pricing page](https://www.salesforce.com/eu/sales/pricing/) adds €117,000. Implementation, the SAP integration and operations come on top.
 
 The number of users moves the budget more than the edition does. I group users by what they do with quotes: create, approve, only read, maintain the catalog, or quote as a dealer.
 
@@ -140,14 +140,15 @@ The overlaps are catalog, price and quote. One catalog, one price master and one
 
 ## When is Salesforce the wrong answer?
 
-For some manufacturers Revenue Cloud is too much:
+For some manufacturers Revenue Cloud is too much. I check which of the three building blocks from this chapter would actually get work:
 
-- **The quote is an SAP price lookup.** Sales picks material numbers, SAP calculates. Salesforce then only needs an interface to SAP.
-- **Few products, few variants.** A range of 200 items without options does not need a constraint-based configurator.
-- **Rules live elsewhere and stay there.** If variant rules sit in SAP or in the heads of application engineers and nobody will maintain them twice, the configurator stays empty.
-- **No recurring revenue.** If every sale is a one-off machine and the invoice stays in SAP, the strongest parts go unused.
+| Building block | Stays unused when | Then this is enough |
+|---|---|---|
+| Pricing | Sales picks material numbers and SAP calculates the price | Sales Cloud with a price lookup in SAP |
+| Configurator | The range has hardly any variants, or the variant rules stay in SAP or with application engineering | Product selection without a constraint engine |
+| Contracts and billing | Every machine is sold as a one-off and SAP writes the invoice | Order to SAP, no billing in Salesforce |
 
-The alternatives are Sales Cloud quotes with an ERP interface, a CPQ product from a partner, or a custom approach on the platform. I describe the last route in [from quote to sales agreement](../../../blog/quote-to-sales-agreement-product-configurator/).
+If all three rows apply, Sales Cloud quotes with an ERP interface, a CPQ product from a partner, or a custom approach on the platform are the better routes. I weigh this in detail in [Revenue Cloud for manufacturers: when is it worth it?](../../../blog/revenue-cloud-worth-it-manufacturers/). I describe the last route in [from quote to sales agreement](../../../blog/quote-to-sales-agreement-product-configurator/).
 
 ## Worked example: 25 base models with remote monitoring
 
@@ -170,12 +171,12 @@ Invoices stay in SAP in year one; Billing becomes a question once subscriptions 
 
 ## First step: price, rules and invoice into the decision log
 
-Partners ask about features. The decisions that drive cost and timeline belong to the company:
+A partner asks about features. The decisions that cost and timeline depend on are made by the company itself:
 
 | Decision | What it includes |
 |---|---|
-| Price master | SAP conditions or Salesforce Pricing, per price type, never both for the same price. |
-| Configurator owner | Who maintains variant rules after go-live, and in which system. |
+| Price master | Per price type either SAP conditions or Salesforce Pricing, never both for one and the same price. |
+| Configurator owner | Who keeps the variant rules current after go-live, and in which system they live. |
 | Invoice owner | SAP or Revenue Cloud Billing. Finance decides, not the CRM team. |
 | CPQ coexistence | Existing CPQ customers are under no time pressure: the CPQ page says "There is no forced migration", but also that CPQ "will not receive new features". A typical migration runs three to six months according to the same page. The details are in chapter 5, [from CPQ to Revenue Cloud](../from-cpq-to-revenue-cloud/). |
 

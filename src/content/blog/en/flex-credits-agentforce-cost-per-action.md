@@ -1,6 +1,6 @@
 ---
 title: "Flex Credits: estimating Agentforce cost per action"
-description: "How Flex Credits work and how to estimate Agentforce costs per action, prompt tier, voice call, sandbox test and Data 360 document, with a worked example."
+description: "One Agentforce action costs 20 Flex Credits, or $0.10. How to estimate cost per action, prompt tier, voice call, sandbox test and Data 360, with an example."
 pubDate: 2026-10-27
 lang: en
 slug: flex-credits-agentforce-cost-per-action

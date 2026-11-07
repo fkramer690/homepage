@@ -1,6 +1,7 @@
 ---
 title: "Salesforce Well-Architected: What the new framework changes"
-description: "Since September 2026 the Salesforce Well-Architected Framework has five pillars and an agentic lens. What changed and how to use it in your programme."
+metaTitle: "Salesforce Well-Architected Framework: the 5 new pillars"
+description: "The Salesforce Well-Architected Framework has five pillars and an agentic lens since September 2026. What changed and how to use it in your programme."
 pubDate: 2026-10-23
 updatedDate: 2026-10-27
 lang: en

@@ -1,6 +1,6 @@
 ---
 title: "Flex Credits: Agentforce-Kosten pro Aktion schätzen"
-description: "Wie Flex Credits funktionieren und wie Sie Agentforce-Kosten pro Aktion, Prompt-Stufe, Sprache, Sandbox-Test und Data-360-Dokument schätzen, mit Rechenbeispiel."
+description: "Eine Agentforce-Aktion kostet 20 Flex Credits, also 0,10 €. So schätzen Sie Kosten pro Aktion, Prompt-Stufe, Sprache, Sandbox-Test und Data 360, mit Beispiel."
 pubDate: 2026-10-27
 lang: de
 slug: flex-credits-agentforce-kosten-pro-aktion

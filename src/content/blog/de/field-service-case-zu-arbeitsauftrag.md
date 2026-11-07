@@ -57,7 +57,7 @@ Nein, und hier wird im Service das meiste Geld gespart oder verloren. Bevor ein 
 
 **Was löst das Problem?** Ich empfehle eine kurze Triage-Checkliste, die Anrufe in drei Ergebnisse sortiert:
 
-- **Fernhilfe.** Bedienfehler, ein Parameter, ein Reset. Der Case wird ohne Arbeitsauftrag geschlossen.
+- **Fernhilfe.** Bedienfehler, ein Parameter, ein Reset. Der Case wird ohne Arbeitsauftrag geschlossen. Mit [Visual Remote Assistance](../visual-remote-assistant-fernhilfe-statt-einsatz/) sieht der Mitarbeiter die Maschine über die Handykamera des Kunden, statt nach einer Beschreibung zu raten.
 - **Teileversand.** Der Fehler ist klar, und das Personal des Kunden kann das Teil tauschen. Der Auftrag geht ins ERP, der Case wartet auf Bestätigung.
 - **Technikereinsatz.** Erst dann entsteht ein Arbeitsauftrag.
 

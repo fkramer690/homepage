@@ -114,7 +114,7 @@ Cases sind im Portal der vertrauteste Teil. Hier hilft die Manufacturing Cloud m
 
 Bevor das Portal gebaut wird, klären Sie diese Punkte:
 
-1. **Was sehen und tun Kunden?** Eine Liste der Funktionen, wie oben im ersten Abschnitt.
+1. **Was sehen und tun Kunden?** Eine Liste der Funktionen: was Kunden nur sehen (Sales Agreements, Bestellungen, Cases) und was sie selbst tun (anfragen, bestellen, Stammdaten pflegen).
 2. **Welche Lizenz deckt das ab?** Schriftlich bestätigt, vor allem für Sales Agreements.
 3. **Welche Felder gehen nach außen?** Für das Sales Agreement und die Stammdaten, ohne Marge und Kosten.
 4. **Welche Daten fließen zurück ins ERP?** Pro Feld eine Richtung und eine Fehlerbehandlung.

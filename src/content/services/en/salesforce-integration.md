@@ -44,6 +44,8 @@ faq:
   - q: "How is telephony connected to Service Cloud?"
     a: "Through a CTI integration that brings calls into Service Cloud, so agents see the customer and the open cases when the phone rings. I have worked with the CTI providers Genesys and Mirage, and Microsoft Teams is becoming more relevant as a telephony platform. Phone and email remain the core channels in most service organisations."
 blogTags: [integration, oauth, security, sicherheit, service cloud]
+readMore: [manufacturing-cloud-erp-integration, revenue-cloud-sap-system-boundaries, commerce-sap-data-flows, customer-prices-sap-or-salesforce-pricing, field-service-spare-parts, agentforce-sap-order-status, legacy-erp-without-api-agents, salesforce-password-integrations-2027]
+masterclass: manufacturing-cloud
 ---
 
 Salesforce integration means connecting Salesforce to the systems the company already runs, so that data is entered once and processes work across system boundaries. At manufacturers that is almost always an ERP, very often SAP, sometimes systems such as proALPHA. In service it also means telephony and email, because these are still the core channels. I design the integration architecture on the client side and decide with the client which partner builds it.

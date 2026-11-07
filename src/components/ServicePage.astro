@@ -18,14 +18,17 @@ import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
 import { postHref } from '../lib/blog';
-import { type Service, servicesIndex, serviceHref, getServiceTranslation, getServicePosts } from '../lib/services';
+import { type Service, servicesIndex, serviceHref, getServiceTranslation, getServiceReading } from '../lib/services';
+import { categories } from '../lib/categories';
+import { courses } from '../lib/courses';
+import { courseTexts, masterclassIndex } from '../lib/masterclass';
 import { homeHref, localHref, partnersHref } from '../lib/paths';
 
 interface Props {
   service: Service;
 }
 const { service } = Astro.props;
-const { lang, title, headline, description, lead, situations, deliverables, results, phases, duration, faq, order, note, notePartner, section } = service.data;
+const { lang, title, headline, description, lead, situations, deliverables, results, phases, duration, faq, order, note, notePartner, section, masterclass } = service.data;
 // section: change-management adds the team (Fabian and Juliane) above the reading grid and
 // the change management articles instead of the related articles; "wir" there are Fabian and
 // Juliane, so the deliverables heading and the author box name both (src/data/change-management.ts).
@@ -44,10 +47,15 @@ const toc = [
   { slug: 'situations', text: t.servicePage.situations },
   { slug: 'deliverables', text: isChange ? changeSection[lang].deliverables : t.servicePage.deliverables },
   ...headings.filter((h) => h.depth === 2),
+  ...(isChange ? [] : [{ slug: 'reading', text: t.servicePage.posts }]),
   { slug: 'phases', text: t.servicePage.phases },
   { slug: 'faq', text: t.servicePage.faq }, ...(isChange ? [{ slug: 'articles', text: changeSection[lang].articles.title }] : [])];
 const translation = await getServiceTranslation(service);
-const posts = await getServicePosts(service);
+// Curated reading list in the reading flow (backlog U3, docs/service-pages.md); the change
+// management page lists its articles by author instead.
+const posts = await getServiceReading(service);
+if (!isChange && posts.length === 0) throw new Error(`${service.id}: readMore (5 to 8 articles) is required`);
+const course = masterclass ? { href: masterclassIndex(lang, masterclass), name: courseTexts(lang, masterclass).name, icon: courses[masterclass].icon, chapters: courses[masterclass].chapters } : undefined;
 const alternates = translation
   ? lang === 'de'
     ? { en: serviceHref(translation), de: serviceHref(service) }
@@ -149,6 +157,27 @@ const schema = {
           <div class="prose">
             <Content />
           </div>
+          {!isChange && posts.length > 0 && (
+            <section class="service-block" aria-labelledby="reading">
+              <h2 id="reading">{t.servicePage.posts}</h2>
+              <ol class="svc-reading">
+                {posts.map((p, i) => (
+                  <li>
+                    <span class="svc-reading-n mono">{String(i + 1).padStart(2, '0')}</span>
+                    <a href={postHref(p)}>{p.data.title}</a>
+                    <span class="svc-reading-cat">{categories[p.data.categories[0]][lang]}</span>
+                  </li>
+                ))}
+              </ol>
+              {course && (
+                <a class="svc-reading-course" href={course.href}>
+                  <span class="svc-reading-icon"><Icon name={course.icon} /></span>
+                  <span><span class="label mono">{t.servicePage.readingCourse}</span><strong>{course.name}</strong><span class="svc-reading-cat">{course.chapters} {t.servicePage.readingChapters}</span></span>
+                  <span class="svc-reading-arrow" aria-hidden="true">→</span>
+                </a>
+              )}
+            </section>
+          )}
           <section class="service-block" aria-labelledby="phases">
             <h2 id="phases">{t.servicePage.phases}</h2>
             <p class="phase-duration"><strong>{t.servicePage.duration}:</strong> {duration}</p>
@@ -174,14 +203,6 @@ const schema = {
             ))}
           </section>
           {isChange ? <AuthorBox lang={lang} coAuthor="juliane" {...changeSection[lang].authors} /> : <AuthorBox lang={lang} />}
-          {!isChange && posts.length > 0 && (
-            <nav class="post-related" aria-label={t.servicePage.posts}>
-              <p class="label mono">{t.servicePage.posts}</p>
-              <ul>
-                {posts.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
-              </ul>
-            </nav>
-          )}
         </ReadingGrid>
       </div>
     </div>

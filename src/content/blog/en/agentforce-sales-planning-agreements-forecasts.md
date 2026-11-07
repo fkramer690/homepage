@@ -22,6 +22,8 @@ faq:
     a: "The help page for the template does not name account forecasts in its body, and none of the three documented subagents is about them. Recalculating forecasts exists as a Flow action, which a custom agent action could call, but that is your own build."
   - q: "Where does the agent get actual quantities from?"
     a: "From the actual values stored on sales agreement product schedules. When orders live in SAP or proALPHA, an integration has to load them, for example through Bulk API in the mode Manually using API upload, and a daily job refreshes the agreements."
+  - q: "Is Sales Planning included with Agentforce for Sales?"
+    a: "No. Salesforce Help ties the Agentforce for Sales Planning template to the Agentforce for Manufacturing add-on or Agentforce 1 Manufacturing Edition. Salesforce also sells a Sales Planning product for territory and quota planning, so check which of the two your quote names."
 draft: false
 ---
 

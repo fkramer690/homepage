@@ -2,6 +2,7 @@
 title: "sfdx-hardis: Salesforce DevOps als Open Source erklärt"
 description: "Was sfdx-hardis ist, was es von CI/CD über Monitoring bis Dokumentation abdeckt, wie es sich von Gearset oder Copado unterscheidet und wann es passt."
 pubDate: 2026-10-23
+updatedDate: 2026-11-07
 lang: de
 slug: sfdx-hardis-einfuehrung-salesforce-devops
 translationKey: sfdx-hardis-introduction
@@ -28,6 +29,8 @@ faq:
 ---
 
 sfdx-hardis ist ein kostenloses Open-Source-Toolkit für Salesforce DevOps. Es verbindet ein Salesforce-CLI-Plugin mit einer VS-Code-Erweiterung und liefert eine fertige CI/CD-Pipeline, Delta-Deployments, Qualitätsprüfungen, Org-Monitoring, Metadaten-Backups und automatisch erzeugte Dokumentation. Es läuft auf der Git-Plattform, die ein Unternehmen bereits nutzt. Ich setze sfdx-hardis in Kundenprojekten ein und halte es für sehr gut, vor allem weil es das liefert, was die meisten Enterprise-Programme brauchen, ohne laufende Lizenzkosten.
+
+Dieser Artikel ist mein Überblick zu sfdx-hardis. Zwei Artikel gehen tiefer: Der [Vergleich sfdx-hardis oder DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/) zeigt, wann das native Werkzeug von Salesforce reicht, und mein [Erfahrungsbericht zum kostenlosen sfdx-hardis-Training](../sfdx-hardis-kostenloses-devops-training/) beschreibt, wie Sie das Toolkit in einem Tag selbst ausprobieren.
 
 ## Was ist sfdx-hardis?
 

@@ -1,5 +1,6 @@
 ---
 title: "Salesforce Field Service: When Is It Worth It?"
+metaTitle: "Is Salesforce Field Service worth it? Criteria and costs"
 description: "Salesforce Field Service pays off with many short jobs and rarely with long projects. Criteria, licence costs and alternatives for manufacturers' field teams."
 pubDate: 2026-10-26
 lang: en
@@ -85,7 +86,7 @@ Two conditions from the small print matter for licence planning. Field Service r
 Dispatcher and Technician licences may not be used for a contact centre or case management. Anyone in the back office who handles cases and plans jobs needs Field Service Plus.
 ```
 
-Which role needs which licence, subcontractors included, is in [Salesforce Field Service licences: who needs which?](../field-service-licences-by-role/) and in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
+Which role needs which licence, subcontractors included, is in [Salesforce Field Service licences: who needs which?](../field-service-licences-by-role/) and in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/). The six most common questions about the product, each with a short answer, are collected in the topic hub [Salesforce Field Service for manufacturers](../../masterclass/field-service/).
 
 ## How do I decide?
 

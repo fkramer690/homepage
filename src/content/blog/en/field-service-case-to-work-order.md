@@ -57,7 +57,7 @@ No, and this is where most of the money in service is saved or lost. Before a wo
 
 **What solves the problem?** I recommend a short triage checklist that sorts calls into three outcomes:
 
-- **Remote help.** Operator error, a parameter, a reset. The case is closed without a work order.
+- **Remote help.** Operator error, a parameter, a reset. The case is closed without a work order. With [visual remote assistance](../visual-remote-assistant-remote-help-instead-of-visit/) the agent sees the machine through the customer's phone camera instead of guessing from a description.
 - **Part shipment.** The fault is clear and the customer's staff can swap the part. The order goes to the ERP, the case waits for confirmation.
 - **Technician visit.** Only then is a work order created.
 

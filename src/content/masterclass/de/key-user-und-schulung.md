@@ -30,43 +30,43 @@ Wissen und Fähigkeit, die mittleren Stufen im ADKAR-Modell, bringen in einer Sa
 
 ## Was leisten Key User in der Einführung?
 
-Key User sind Fachanwender, die das neue System vor allen anderen kennen. Bei Herstellern haben sie eine zweite Aufgabe: Vertrieb, Innendienst und Service arbeiten an jedem Standort ein wenig anders, und das Projektteam kennt diese Unterschiede nicht. Key User kennen sie und sagen früh, wo der geplante Prozess im eigenen Team nicht funktionieren wird. Ihre Aufgaben ändern sich mit der Phase:
+Key User sind Fachanwender, die das neue System vor allen anderen kennen. Bei Herstellern haben sie eine zweite Aufgabe: Vertrieb, Innendienst und Service arbeiten an jedem Standort ein wenig anders, und das Projektteam kennt diese Unterschiede nicht. Key User kennen sie und sagen früh, wo der geplante Prozess im eigenen Team nicht funktionieren wird. In ADKAR-Sprache tragen sie Knowledge und Ability ins Team, und je nach Phase verschiebt sich der Schwerpunkt:
 
 ```schritte
 Vor dem Bau | Workshops · Key User mit Product Owner
-  Abläufe im eigenen Team beschreiben, Sonderfälle nennen, Akzeptanzkriterien für User Stories mitformulieren.
+  Knowledge entsteht beim Key User selbst: Er erklärt die Abläufe seines Teams samt Sonderfällen und schreibt Akzeptanzkriterien mit.
 Vor dem Go-live | Abnahmetest · Key User
-  Die eigenen Fälle durchspielen und Kollegen in kurzen Sitzungen an eigenen Fällen zeigen, was sich ändert.
+  Er testet mit Fällen aus seinem Team und gibt das Wissen in kurzen Runden an die Kollegen weiter.
 Erste Wochen | Alltag · Key User vor Ort
-  Erste Anlaufstelle für Fragen, Probleme sammeln und gebündelt ans Projekt melden.
+  Ability wächst am Arbeitsplatz: Er beantwortet Fragen sofort und meldet Probleme gesammelt ans Projekt.
 Betrieb | laufend · Key User und Admin
-  Neue Kollegen einarbeiten, vor jedem Release erfahren, was kommt, und es im Team weitergeben.
+  Reinforcement: Er arbeitet Neue ein und übersetzt jedes Release für sein Team.
 ```
 
 Im Abnahmetest sind Key User die besten Tester, weil sie wissen, welche Fälle in ihrem Team vorkommen. Wie ein Abnahmetest mit dem Fachbereich aufgebaut ist, steht in [Salesforce UAT: Wer testet vor dem Release?](../../../blog/salesforce-uat-abnahmetest-fachbereich/).
 
 ## Key User nach Ansehen im Team auswählen
 
-Die häufigste Auswahl ist die schlechteste: Wer gerade Zeit hat, wird Key User. Ich achte auf andere Kriterien:
+Oft wird Key User, wer gerade Luft im Kalender hat. Das ist die schlechteste Wahl. Jedes meiner Kriterien hat einen Grund im ADKAR-Modell:
 
-| Kriterium | Woran Sie es erkennen |
-|---|---|
-| Ansehen im Team | Kollegen fragen diese Person schon heute um Rat, egal zu welchem System. |
-| Kenntnis des Prozesses | Sie weiß, wie ein Angebot, ein Auftrag oder ein Serviceeinsatz im eigenen Team im Alltag läuft, inklusive der Ausnahmen. |
-| Neugier statt Begeisterung | Kritische Key User finden Schwächen früher, und wenn sie überzeugt sind, überzeugen sie andere. |
-| Bleibt eine Weile | Wer in drei Monaten die Stelle wechselt, nimmt das Wissen mit. |
+| Kriterium | Woran Sie es erkennen | Welche Stufe es stützt |
+|---|---|---|
+| Ansehen | Schon heute holt sich das Team bei dieser Person Rat, ganz gleich zu welchem System | Desire: Den Rat einer geschätzten Kollegin nimmt das Team an |
+| Prozesswissen | Sie kennt den Alltag von Angebot, Auftrag oder Serviceeinsatz im Team, Ausnahmen eingeschlossen | Knowledge: Sie übersetzt das System in die eigenen Fälle |
+| Kritischer Blick | Sie fragt nach, statt zu jubeln, und findet so Schwächen früh | Desire: Ist sie überzeugt, glaubt man ihr |
+| Verbleib | Kein Stellenwechsel in den nächsten Monaten absehbar | Reinforcement: Das Wissen bleibt im Team |
 
 Ein einfacher Weg zu den Kandidaten: Fragen Sie in jedem Team, wen die Leute heute fragen, wenn sie im System nicht weiterkommen. Die Namen, die mehrfach fallen, sind Ihre Kandidaten. Die Grenzen der Rolle, Aufgaben im Betrieb und wie das Netzwerk zusammenhält, beschreibe ich in [Key User in Salesforce-Einführungen: was sie leisten](../../../blog/salesforce-key-user-netzwerk/).
 
 ## Wie viel Zeit muss der Fachbereich freistellen?
 
-Ein Key User ohne freigestellte Zeit ist ein Titel. Wie viel Zeit nötig ist, hängt vom Umfang ab. Als Annahme für die Planung: vier Workshops zu je vier Stunden, eine Woche Abnahmetest zur Hälfte der Zeit und zwei Wochen nach dem Go-live zu einem Drittel ergeben zusammen knapp acht Arbeitstage. Dazu kommen Vorbereitung und kurze Sitzungen mit Kollegen. Im Betrieb sinkt der Aufwand auf wenige Stunden im Monat, vor allem rund um Releases.
+Ohne freigestellte Zeit bleibt Key User ein Etikett. Den Bedarf bestimmt der Umfang. Für die Planung rechne ich mit vier halbtägigen Workshops, einer Woche Abnahmetest mit halber Kapazität und den ersten zwei Wochen nach dem Go-live mit einem Drittel. Das sind knapp acht Arbeitstage, Vorbereitung und Kurzschulungen für Kollegen kommen hinzu. Im Betrieb bleiben ein paar Stunden im Monat, meist rund um Releases.
 
 ```hinweis tipp
-Vereinbaren Sie die Zeit der Key User schriftlich mit der Führungskraft, mit Wochen und Stunden, und legen Sie fest, wer in dieser Zeit ihre Arbeit übernimmt. Diese Vereinbarung gehört in den Sponsor-Plan aus Kapitel 2.
+Halten Sie mit der Führungskraft schriftlich fest, in welchen Wochen und wie viele Stunden der Key User fürs Projekt arbeitet und wer so lange seine Aufgaben macht. Das Papier gehört in den Sponsor-Plan aus Kapitel 2.
 ```
 
-Sichtbare Anerkennung kostet nichts und wirkt. Wer zusätzliche Arbeit für das Projekt übernimmt, sollte das im Jahresgespräch wiederfinden. Das entscheidet darüber, ob sich beim nächsten Projekt wieder jemand meldet.
+Anerkennung, die andere sehen, kostet nichts und wirkt. Die Projektarbeit gehört ins Jahresgespräch. Das entscheidet darüber, ob sich beim nächsten Projekt wieder jemand meldet.
 
 ## Schulung kurz vor dem Go-live, mit Fällen aus dem eigenen Alltag
 
