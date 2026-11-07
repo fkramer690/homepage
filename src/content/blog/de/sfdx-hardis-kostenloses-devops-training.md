@@ -2,6 +2,7 @@
 title: "Was ich aus dem kostenlosen sfdx-hardis-Training lernte"
 description: "Ich habe alle drei Level des kostenlosen sfdx-hardis-DevOps-Trainings abgeschlossen. Inhalte, Aufwand, Zielgruppe und meine fünf Takeaways."
 pubDate: 2026-10-23
+updatedDate: 2026-11-07
 lang: de
 slug: sfdx-hardis-kostenloses-devops-training
 translationKey: sfdx-hardis-training
@@ -25,7 +26,7 @@ faq:
     a: "Nein. Cloudity beschreibt es ausdrücklich als Badge, nicht als Zertifizierung. Es belegt, dass Sie die Labs abgeschlossen haben, weil ein automatischer Job Ihr eigenes Repository prüft."
 ---
 
-Das kostenlose sfdx-hardis-DevOps-Training ist der beste Salesforce-DevOps-Kurs, den ich bisher gemacht habe. In 27 Praxis-Labs auf drei Leveln bauen Sie eine komplette CI/CD-Pipeline auf kostenlosen Salesforce-Orgs, von der ersten User Story bis zu Produktions-Releases, Hotfixes und Monitoring. Ein Badge gibt es erst, wenn ein automatischer Job Ihre Arbeit im eigenen Repository geprüft hat. Ich habe alle drei Level im Oktober 2026 abgeschlossen und trotz fast zwei Jahren sfdx-hardis-Erfahrung beinahe einen ganzen Tag gebraucht.
+Das kostenlose DevOps-Training zu [sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/) ist der beste Salesforce-DevOps-Kurs, den ich bisher gemacht habe. In 27 Praxis-Labs auf drei Leveln bauen Sie eine komplette CI/CD-Pipeline auf kostenlosen Salesforce-Orgs, von der ersten User Story bis zu Produktions-Releases, Hotfixes und Monitoring. Ein Badge gibt es erst, wenn ein automatischer Job Ihre Arbeit im eigenen Repository geprüft hat. Ich habe alle drei Level im Oktober 2026 abgeschlossen und trotz fast zwei Jahren sfdx-hardis-Erfahrung beinahe einen ganzen Tag gebraucht.
 
 ## Warum habe ich das Training gemacht?
 
