@@ -1,5 +1,6 @@
 ---
 title: "Manufacturing Cloud add-ons: what costs extra"
+metaTitle: "Manufacturing Cloud Pricing: what the add-ons cost extra"
 description: "Which Manufacturing Cloud add-ons cost extra, from portal licences to Agentforce and Connected Assets, where Salesforce pages disagree and what to ask."
 pubDate: 2026-10-28
 lang: en
@@ -15,6 +16,8 @@ takeaways:
   - "On Manufacturing Intelligence and rebate management the Salesforce pages contradict each other, on price and on unit."
   - "In the worked example, Connected Assets and extra Omnistudio calls would double the licence line."
 faq:
+  - q: "What does Salesforce Manufacturing Cloud cost?"
+    a: "According to the pricing page (October 2026), Sales Core and Service Core cost $275 per user and month, the Max editions $650 and Sales and Service Max $700, billed annually. Add-ons come on top: portal licences from $15 per login and month, the Agentforce add-on at $150 per month and Channel Revenue Management at $30,000 per org and year."
   - q: "What do portal licences for Manufacturing Cloud cost?"
     a: "According to the add-ons page in October 2026, Experience Cloud for Manufacturing costs $15 per login or $35 per member per month for Customer Community Plus, and $20 per login or $50 per member for Partner Community, billed annually."
   - q: "Do I need the Agentforce add-on with a Max edition?"
