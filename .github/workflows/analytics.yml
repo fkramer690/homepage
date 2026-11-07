@@ -43,6 +43,16 @@ jobs:
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
         run: node scripts/fetch-gsc.mjs /tmp/google
+      - name: Weekly search actions ("Was tun?")
+        # Mondays and manual runs: snippet, near page 1 and FAQ candidates
+        # from the Google and Bing tables, compared with the previous list.
+        continue-on-error: true
+        run: |
+          if [ "$(date -u +%u)" != 1 ] && [ "${{ github.event_name }}" != workflow_dispatch ]; then exit 0; fi
+          git fetch -q origin stats || true
+          git show origin/stats:stats/actions/latest.json > /tmp/actions-prev.json 2>/dev/null || rm -f /tmp/actions-prev.json
+          node scripts/search-actions.mjs --google /tmp/google/dashboard --bing /tmp/bing/dashboard \
+            $( [ -s /tmp/actions-prev.json ] && echo --prev /tmp/actions-prev.json ) --out /tmp/actions
       - name: Commit snapshot to stats branch
         run: |
           git config user.name "github-actions[bot]"
@@ -68,6 +78,11 @@ jobs:
             cp /tmp/google/latest.json stats/google/latest.json
             cp /tmp/google/latest.json "stats/google/$(date -u +%F).json"
             rm -rf stats/google/dashboard && cp -r /tmp/google/dashboard stats/google/dashboard
+          fi
+          if [ -f /tmp/actions/latest.json ]; then
+            mkdir -p stats/actions
+            cp /tmp/actions/latest.json stats/actions/latest.json
+            cp /tmp/actions/latest.json "stats/actions/$(date -u +%F).json"
           fi
           git add stats
           git commit -m "Analytics snapshot $(date -u +%F)" || exit 0

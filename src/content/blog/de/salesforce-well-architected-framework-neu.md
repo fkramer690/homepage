@@ -1,5 +1,6 @@
 ---
 title: "Salesforce Well-Architected: Was das neue Framework ändert"
+metaTitle: "Salesforce Well-Architected Framework: die 5 neuen Säulen"
 description: "Das Salesforce Well-Architected Framework hat seit September 2026 fünf Säulen und eine Agenten-Linse. Was sich geändert hat und wie Sie es im Projekt nutzen."
 pubDate: 2026-10-23
 updatedDate: 2026-10-27

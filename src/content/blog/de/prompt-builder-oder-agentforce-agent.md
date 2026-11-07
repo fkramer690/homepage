@@ -1,6 +1,7 @@
 ---
 title: "Prompt Builder oder Agentforce-Agent: was wann passt"
-description: "Wann ein Prompt-Builder-Template für Servicebericht, Fallzusammenfassung und Händlerantwort reicht, wann Sie einen Agenten brauchen und was beides kostet."
+metaTitle: "Prompt Builder vs. Agentforce-Agent: was wann passt"
+description: "Prompt Builder reicht, wenn ein Mensch den Text zuerst liest. Einen Agenten brauchen Sie, wenn das System den nächsten Schritt wählt. Beispiele und Kosten."
 pubDate: 2026-10-27
 lang: de
 slug: prompt-builder-oder-agentforce-agent
