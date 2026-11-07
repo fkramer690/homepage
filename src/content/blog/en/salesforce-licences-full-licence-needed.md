@@ -24,6 +24,8 @@ faq:
     a: "Usually not. Enterprise, Unlimited and Performance Edition come with a limited number of free Salesforce Integration licences that only allow API access. More can be bought."
   - q: "When is the best time to negotiate Salesforce licences?"
     a: "Salesforce's fiscal year ends on 31 January. Near year end there is often room to add products from your own roadmap for a small premium, provided the company knows what it will need in two to three years."
+  - q: "Where do I buy Salesforce licences?"
+    a: "Usually directly from Salesforce through the account executive responsible for your company; smaller editions can also be bought online. Price and contract come from Salesforce, and the implementation partner helps you work out which licences each role needs."
 draft: false
 ---
 

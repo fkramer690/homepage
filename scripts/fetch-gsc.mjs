@@ -1,7 +1,9 @@
 // Pulls Google Search Console data for the domain property fk-sd.de and writes
 // a raw snapshot plus one JSON file of rows per dashboard table:
 // clicks, impressions and position per day, per query and per page (also per
-// day, so the dashboard can drill into a day, week or month), and the index
+// day, so the dashboard can drill into a day, week or month), per query and
+// page per day (which page Google showed for a query, used by
+// scripts/search-actions.mjs), and the index
 // status of every sitemap URL via the URL Inspection API.
 // Auth: a Google Cloud service account (JSON key in GSC_SERVICE_ACCOUNT_JSON)
 // that was added as a user of the property in Search Console. No extra
@@ -109,12 +111,15 @@ async function analytics(dimensions) {
 }
 
 const byImpressions = (a, b) => b.impressions - a.impressions || b.clicks - a.clicks;
-const [daily, queries, pages, queryDays, pageDays, devices, countries] = await Promise.all([
+const [daily, queries, pages, queryDays, pageDays, queryPageDays, devices, countries] = await Promise.all([
   analytics(['date']).then((rows) => rows.sort((a, b) => a.day.localeCompare(b.day))),
   analytics(['query']).then((rows) => rows.sort(byImpressions)),
   analytics(['page']).then((rows) => rows.sort(byImpressions)),
   analytics(['date', 'query']).then((rows) => rows.sort((a, b) => a.day.localeCompare(b.day) || byImpressions(a, b))),
   analytics(['date', 'page']).then((rows) => rows.sort((a, b) => a.day.localeCompare(b.day) || byImpressions(a, b))),
+  analytics(['date', 'query', 'page']).then((rows) =>
+    rows.sort((a, b) => a.day.localeCompare(b.day) || byImpressions(a, b)),
+  ),
   analytics(['device']).then((rows) => rows.sort(byImpressions)),
   analytics(['country']).then((rows) => rows.sort(byImpressions)),
 ]);
@@ -191,6 +196,7 @@ const tables = {
   pages,
   query_days: queryDays,
   page_days: pageDays,
+  query_page_days: queryPageDays,
   devices,
   countries,
   index_summary: [index],

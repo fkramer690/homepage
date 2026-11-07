@@ -1,6 +1,7 @@
 ---
 title: "Prompt Builder or Agentforce agent: when to use which"
-description: "When a Prompt Builder template is enough for service reports, case summaries and dealer replies, when you need an agent, and what each costs in Flex Credits."
+metaTitle: "Prompt Builder vs Agentforce agent: when to use which"
+description: "Prompt Builder is enough when a person reads the text first. You need an agent when the system picks the next step. Examples and Flex Credit costs."
 pubDate: 2026-10-27
 lang: en
 slug: prompt-builder-or-agentforce-agent

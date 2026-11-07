@@ -22,6 +22,8 @@ faq:
     a: "Die Hilfeseite zur Vorlage nennt Account Forecasts im Text nicht, und keiner der drei dokumentierten Subagents befasst sich damit. Das Neuberechnen von Prognosen gibt es als Flow-Aktion, die eine eigene Agenten-Aktion aufrufen könnte. Das ist dann Ihre eigene Entwicklung."
   - q: "Woher kommen die Ist-Mengen, die der Agent auswertet?"
     a: "Aus den Ist-Werten in den Zeitplänen der Sales-Agreement-Produkte. Liegen die Aufträge in SAP oder proALPHA, muss eine Schnittstelle sie laden, etwa per Bulk API im Modus Manually using API upload. Ein täglicher Job aktualisiert danach die Sales Agreements."
+  - q: "Ist Sales Planning in Agentforce for Sales enthalten?"
+    a: "Nein. Salesforce Help bindet die Vorlage Agentforce for Sales Planning an das Add-on Agentforce for Manufacturing oder an Agentforce 1 Manufacturing Edition. Salesforce verkauft außerdem ein Produkt Sales Planning für Gebiets- und Quotenplanung, prüfen Sie also, welches von beiden Ihr Angebot nennt."
 draft: false
 ---
 

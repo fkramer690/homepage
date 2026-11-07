@@ -24,6 +24,8 @@ faq:
     a: "In der Regel nicht. Enterprise, Unlimited und Performance Edition bringen eine begrenzte Zahl kostenloser Salesforce-Integration-Lizenzen mit, die nur API-Zugriff erlauben. Weitere lassen sich zukaufen."
   - q: "Wann ist der beste Zeitpunkt, Salesforce-Lizenzen zu verhandeln?"
     a: "Das Geschäftsjahr von Salesforce endet am 31. Januar. Zum Jahresende gibt es oft Spielraum, Produkte aus der eigenen Roadmap für wenig Aufpreis mitzunehmen, wenn das Unternehmen weiß, was es in zwei bis drei Jahren braucht."
+  - q: "Wo kaufe ich Salesforce-Lizenzen?"
+    a: "In der Regel direkt bei Salesforce über den zuständigen Account Executive, kleinere Editionen auch online. Preis und Vertrag kommen von Salesforce, der Implementierungspartner hilft bei der Frage, welche Rolle welche Lizenz braucht."
 draft: false
 ---
 
