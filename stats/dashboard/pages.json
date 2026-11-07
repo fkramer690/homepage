@@ -1,7 +1,7 @@
 [
  {
   "page": "/",
-  "pageviews": 290,
+  "pageviews": 300,
   "visits": 110
  },
  {
@@ -35,6 +35,11 @@
   "visits": 0
  },
  {
+  "page": "/masterclass/",
+  "pageviews": 30,
+  "visits": 0
+ },
+ {
   "page": "/homepage/",
   "pageviews": 30,
   "visits": 10
@@ -45,12 +50,7 @@
   "visits": 0
  },
  {
-  "page": "/masterclass/",
-  "pageviews": 20,
-  "visits": 0
- },
- {
-  "page": "/leistungen/salesforce-architektur/",
+  "page": "/leistungen/",
   "pageviews": 20,
   "visits": 0
  },
@@ -70,7 +70,7 @@
   "visits": 10
  },
  {
-  "page": "/leistungen/",
+  "page": "/leistungen/salesforce-architektur/",
   "pageviews": 20,
   "visits": 0
  },
@@ -90,13 +90,13 @@
   "visits": 10
  },
  {
-  "page": "/en/masterclass/ai-salesforce/",
+  "page": "/en/blog/copado-gearset-provar-ai-agents/",
   "pageviews": 10,
   "visits": 0
  },
  {
-  "page": "/en/blog/copado-gearset-provar-ai-agents/",
+  "page": "/blog/merchandising-agent-teilekatalog/",
   "pageviews": 10,
-  "visits": 0
+  "visits": 10
  }
 ]

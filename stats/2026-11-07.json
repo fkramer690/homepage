@@ -1,0 +1,514 @@
+{
+  "generatedAt": "2026-11-07T04:48:07.302Z",
+  "range": {
+    "start": "2026-10-08",
+    "end": "2026-11-07"
+  },
+  "browsers": [
+    {
+      "count": 800,
+      "dimensions": {
+        "userAgentBrowser": "Chrome"
+      },
+      "sum": {
+        "visits": 110
+      }
+    },
+    {
+      "count": 150,
+      "dimensions": {
+        "userAgentBrowser": "MobileSafari"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 120,
+      "dimensions": {
+        "userAgentBrowser": "Unknown"
+      },
+      "sum": {
+        "visits": 80
+      }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "userAgentBrowser": "ChromeMobile"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "userAgentBrowser": "Edge"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "userAgentBrowser": "Firefox"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "userAgentBrowser": "ChromeDerivative"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "countries": [
+    {
+      "count": 960,
+      "dimensions": {
+        "countryName": "DE"
+      },
+      "sum": {
+        "visits": 140
+      }
+    },
+    {
+      "count": 110,
+      "dimensions": {
+        "countryName": "US"
+      },
+      "sum": {
+        "visits": 90
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "countryName": "FR"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "countryName": "SE"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "countryName": "SG"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "countryName": "IN"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "countryName": "NL"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "daily": [
+    {
+      "count": 70,
+      "dimensions": {
+        "date": "2026-10-23"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "date": "2026-10-26"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
+    {
+      "count": 60,
+      "dimensions": {
+        "date": "2026-10-27"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "date": "2026-10-28"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 220,
+      "dimensions": {
+        "date": "2026-10-29"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 70,
+      "dimensions": {
+        "date": "2026-10-30"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "date": "2026-10-31"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 60,
+      "dimensions": {
+        "date": "2026-11-01"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "date": "2026-11-02"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 150,
+      "dimensions": {
+        "date": "2026-11-03"
+      },
+      "sum": {
+        "visits": 50
+      }
+    },
+    {
+      "count": 60,
+      "dimensions": {
+        "date": "2026-11-04"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 260,
+      "dimensions": {
+        "date": "2026-11-05"
+      },
+      "sum": {
+        "visits": 100
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "date": "2026-11-06"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "devices": [
+    {
+      "count": 890,
+      "dimensions": {
+        "deviceType": "desktop"
+      },
+      "sum": {
+        "visits": 190
+      }
+    },
+    {
+      "count": 290,
+      "dimensions": {
+        "deviceType": "mobile"
+      },
+      "sum": {
+        "visits": 100
+      }
+    }
+  ],
+  "pages": [
+    {
+      "count": 300,
+      "dimensions": {
+        "requestPath": "/"
+      },
+      "sum": {
+        "visits": 110
+      }
+    },
+    {
+      "count": 120,
+      "dimensions": {
+        "requestPath": "/en/"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
+    {
+      "count": 70,
+      "dimensions": {
+        "requestPath": "/blog/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 70,
+      "dimensions": {
+        "requestPath": "/leistungen/change-management/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "requestPath": "/fragen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "requestPath": "/partner/juliane-winterscheid/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/masterclass/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/homepage/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/en/blog/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/leistungen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/en/blog/ai-native-salesforce-delivery-process/"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/masterclass-ki/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/masterclass/revenue-cloud/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/leistungen/salesforce-architektur/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/masterclass/ki-salesforce/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/en/partners/juliane-winterscheid/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/blog/ai-rules-file-salesforce-repository/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/blog/copado-gearset-provar-ai-agents/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/blog/merchandising-agent-teilekatalog/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "referers": [
+    {
+      "count": 830,
+      "dimensions": {
+        "refererHost": "www.fk-sd.de"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 250,
+      "dimensions": {
+        "refererHost": ""
+      },
+      "sum": {
+        "visits": 250
+      }
+    },
+    {
+      "count": 60,
+      "dimensions": {
+        "refererHost": "fkramer690.github.io"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "refererHost": "teams.public.onecdn.static.microsoft"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "refererHost": "www.linkedin.com"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "refererHost": "com.linkedin.android"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ]
+}
