@@ -100,7 +100,7 @@ Die Serviceleitung möchte nun, dass Händler im Portal ohne Servicemitarbeiter 
 
 Hinzu kommen Tests. Eine Suite mit 100 Gesprächen zu je vier Aktionen à 16 Credits und zwei Prompts kostet 7.200 Credits pro Lauf. Zehn Läufe vor dem Go-live sind 72.000 Credits, etwa 360 €.
 
-Der Agent lohnt sich, wenn er mehr Arbeitszeit im Service spart als die zusätzlichen 600 € im Monat und die Tests kosten, etwa wenn Händler in anderen Zeitzonen heute bis zum nächsten Morgen warten. Antwortet Ihr Service ohnehin innerhalb einer Stunde, würde ich bei den Entwürfen bleiben. Die vollständige Rechnung für einen Auftragsstatus-Agenten finden Sie unter [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/).
+Der Agent lohnt sich, wenn er mehr Arbeitszeit im Service spart als die zusätzlichen 600 € im Monat und die Tests kosten, etwa wenn Händler in anderen Zeitzonen heute bis zum nächsten Morgen warten. Antwortet Ihr Service ohnehin innerhalb einer Stunde, würde ich bei den Entwürfen bleiben. Die vollständige Rechnung für einen Auftragsstatus-Agenten finden Sie unter [was ein Serviceagent für Händleranfragen kostet](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Ein Template testen Sie anders als einen Agenten
 

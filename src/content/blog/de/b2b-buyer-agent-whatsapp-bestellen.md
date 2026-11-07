@@ -63,7 +63,7 @@ Die Einführungseinheit auf Trailhead nennt diese Voraussetzungen:
 | Add-on-Lizenzen | Agentforce und Einstein for Service |
 | Plattform | Einstein generative AI, eingerichtet zusammen mit Data 360 |
 
-Zwei Punkte fallen auf. Erstens braucht der Buyer Agent Service Cloud. Wer neben dem Shop nur Sales Cloud betreibt, kauft also mehr als den Agenten. Zweitens habe ich auf den offiziellen Seiten keinen eigenen Preis für den Buyer Agent gefunden. Die Nutzung läuft über das Agentforce-Add-on, die Kosten hängen also an Ihrem Vertrag und Ihrem Volumen. Wie so eine Rechnung für einen Serviceagenten im Händlergeschäft aussieht, zeige ich in [Agentforce-Serviceagent für Händler: Kosten pro Monat](../serviceagent-haendleranfragen-kosten/).
+Zwei Punkte fallen auf. Erstens braucht der Buyer Agent Service Cloud. Wer neben dem Shop nur Sales Cloud betreibt, kauft also mehr als den Agenten. Zweitens habe ich auf den offiziellen Seiten keinen eigenen Preis für den Buyer Agent gefunden. Die Nutzung läuft über das Agentforce-Add-on, die Kosten hängen also an Ihrem Vertrag und Ihrem Volumen. Wie so eine Rechnung für einen Serviceagenten im Händlergeschäft aussieht, zeige ich in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Vertragspreis und Kredit kommen aus Shop und ERP
 

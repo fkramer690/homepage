@@ -2,13 +2,22 @@
 import BlogPost from '../../components/BlogPost.astro';
 import Redirect from '../../components/Redirect.astro';
 import { getPosts, postHref } from '../../lib/blog';
+import { retiredPosts } from '../../lib/retired-posts.mjs';
 
 // German articles live here. English articles used to live here too, so their
 // old URLs forward to /en/blog/.
 export async function getStaticPaths() {
   const de = (await getPosts('de')).map((post) => ({ params: { slug: post.data.slug }, props: { post } }));
   const en = (await getPosts('en')).map((post) => ({ params: { slug: post.data.slug }, props: { to: postHref(post) } }));
-  return [...de, ...en];
+  // Merged articles (src/lib/retired-posts.mjs): German slugs forward to the German target,
+  // English slugs (old /blog/ URLs) to the English one.
+  const all = [...(await getPosts('de')), ...(await getPosts('en'))];
+  const retired = retiredPosts.map(({ lang, slug, to }) => {
+    const target = all.find((p) => p.data.lang === lang && p.data.translationKey === to);
+    if (!target) throw new Error(`retired post ${slug}: no ${lang} article with translationKey ${to}`);
+    return { params: { slug }, props: { to: postHref(target) } };
+  });
+  return [...de, ...en, ...retired];
 }
 const { post, to } = Astro.props;
 ---

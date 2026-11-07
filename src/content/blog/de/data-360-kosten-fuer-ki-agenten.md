@@ -81,7 +81,7 @@ Nehmen wir einen Maschinenbauer, dessen Agent Händlern und Servicemitarbeitende
 
 Bei den Suchen nehme ich an, dass jede Abfrage den ganzen Index zählt. Laut Hilfeartikel werden bei hybrider Suche „the number of vectors and keyword records in the search index“ gezählt, und ein typischer Index hat so viele Keyword-Datensätze wie Vektoren. Das [Preisbeispiel von Salesforce](https://www.salesforce.com/data/pricing/agentforce-use-case/) geht davon aus, dass eine Abfrage 20 Prozent der unstrukturierten Daten durchsucht; meine Zahl liegt also auf der sicheren Seite.
 
-Drei Ergebnisse fallen auf. Die Suchen machen 7 Prozent der laufenden Kosten aus, geänderte Dokumente den Rest. Mit dem Standard-Parser auch für die Kataloge kostete die Erstbefüllung 1.164.000 statt 2.664.000 Credits. Und das erste Jahr kommt auf rund 5 Mio. Credits, mehr als die 2,75 Mio. Flex Credits pro Org und Jahr, die Salesforce für die Max Edition nennt, und das vor der ersten Agentenaktion. Die Agentenseite der Rechnung steht in [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/).
+Drei Ergebnisse fallen auf. Die Suchen machen 7 Prozent der laufenden Kosten aus, geänderte Dokumente den Rest. Mit dem Standard-Parser auch für die Kataloge kostete die Erstbefüllung 1.164.000 statt 2.664.000 Credits. Und das erste Jahr kommt auf rund 5 Mio. Credits, mehr als die 2,75 Mio. Flex Credits pro Org und Jahr, die Salesforce für die Max Edition nennt, und das vor der ersten Agentenaktion. Die Agentenseite der Rechnung steht in [was ein Serviceagent für Händleranfragen kostet](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Die versteckten Data-360-Kosten
 

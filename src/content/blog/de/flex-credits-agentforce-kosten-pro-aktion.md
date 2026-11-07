@@ -1,122 +1,170 @@
 ---
-title: "Flex Credits: Agentforce-Kosten pro Aktion schätzen"
-description: "Eine Agentforce-Aktion kostet 20 Flex Credits, also 0,10 €. So schätzen Sie Kosten pro Aktion, Prompt-Stufe, Sprache, Sandbox-Test und Data 360, mit Beispiel."
+title: "Agentforce-Kosten für Hersteller: Flex Credits bis AELA"
+description: "Agentforce-Kosten in einem Leitfaden: Flex Credits pro Aktion, Preis pro Gespräch, Editions-Pools, Digital Wallet, MCP-Zugriffe und AELA, mit Rechenbeispiel."
 pubDate: 2026-10-27
+updatedDate: 2026-11-07
 lang: de
 slug: flex-credits-agentforce-kosten-pro-aktion
 translationKey: flex-credits-agentforce-costs
 topic: ai
-categories: [ai]
+categories: [ai, architecture]
 contactBrief: licences
-tags: [Agentforce, Flex Credits, Kostenschätzung, Lizenzen, Data 360, Maschinenbau]
+tags: [Agentforce, Flex Credits, AELA, Digital Wallet, Kostenschätzung, Maschinenbau]
 takeaways:
-  - "Eine Schätzung braucht Aktionen zu 20 Flex Credits, Sprachaktionen zu 30, Prompts nach Modellstufe, Data-360-Verarbeitung und Sandbox-Testläufe."
-  - "Prompts kosten je angefangene 2.000 Tokens 2 Credits bei Basic-, 4 bei Standard- und 16 bei Advanced-Modellen wie Claude Opus oder GPT 5.5."
-  - "In der Sandbox kosten Aktionen 16 statt 20 Credits, Prompts so viel wie in Produktion und Unstructured Processing pauschal 120 Credits pro MB."
-  - "Ungenutzte Flex Credits verfallen zum Bestellende. Kaufen Sie sie deshalb entlang des Go-live-Plans, nicht entlang des Budgetjahrs."
-  - "Im Rechenbeispiel verbraucht ein Ersatzteilagent für Händler rund 218.000 Credits im Monat, reine Textaktionen sind davon nur 55 Prozent."
+  - "Prompts kosten je angefangene 2.000 Tokens 2, 4 oder 16 Credits, je nach Modellstufe. Advanced-Modelle machen dieselbe Zusammenfassung achtmal teurer."
+  - "Ab 17 Prozent gelöster Gespräche sind Flex Credits im Rechenbeispiel günstiger als der Preis pro Lösung von 400 Credits."
+  - "Digital Wallet schlüsselt den Verbrauch nach Agent, Kanal und eigenen Tags auf, stoppt aber keinen Agenten, wenn ein Werk sein Budget verbraucht hat."
+  - "MCP-Aufrufe externer Agenten werden als Headless Platform Interactions abgerechnet, der Satz steht noch auf TBA."
+  - "Gegen Flex Credits gerechnet lohnt eine AELA zu angenommenen 150.000 € im Jahr erst ab 30 Mio. Credits, also 1,5 Mio. Aktionen."
 faq:
-  - q: "Was ist ein Flex Credit wert?"
-    a: "Salesforce listet Flex Credits zu 500 € je 100.000 Credits, ein Credit kostet also einen halben Cent. Eine Standard- oder Custom-Aktion in Agentforce verbraucht 20 Credits, also 0,10 €."
-  - q: "Werden Prompts zusätzlich zu Agentforce-Aktionen berechnet?"
-    a: "Prompts werden pro Aufruf des LLM-Gateways gezählt, in Einheiten bis 2.000 Tokens. Ob die eigenen Reasoning-Aufrufe des Agenten als Prompts zählen, sagt der Hilfeartikel nicht; klären Sie das mit Ihrem Account Executive und beobachten Sie Digital Wallet im Piloten."
-  - q: "Kosten Agententests in der Sandbox Flex Credits?"
-    a: "Ja. Agententests laufen nur in Sandboxes, und laut Salesforce verbrauchen Testläufe Requests und Credits. Aktionen kosten dort 16 Credits, Prompts den vollen Satz."
+  - q: "Was kostet eine Agentforce-Aktion?"
+    a: "Eine Standard- oder Custom-Aktion verbraucht 20 Flex Credits. Bei 500 € je 100.000 Credits sind das 0,10 €. In Sandbox und Scratch Org kostet sie 16 Credits, eine Sprachaktion 30 in Produktion und 24 in der Sandbox."
+  - q: "Was kostet ein Agentforce-Serviceagent für Händler pro Monat?"
+    a: "Im Rechenbeispiel mit 3.000 Gesprächen, je drei Aktionen und zwei Standard-Prompts verbraucht er 204.000 Credits, rund 1.020 € im Monat. Mit Katalogpflege in Data 360 sind es 219.000. Das erste Jahr braucht mit Aufbau und Tests rund 3 Mio. Credits."
   - q: "Was passiert mit Flex Credits, die ich nicht nutze?"
-    a: "Sie verfallen. Flex Credits müssen vor dem Enddatum der Bestellung verbraucht werden und gehen nicht in die nächste Laufzeit über. Verbrauch über dem Kontingent wird ohne Aufschlag zum vereinbarten Satz abgerechnet."
-  - q: "Wie sehe ich, was mein Agent tatsächlich verbraucht?"
-    a: "Digital Wallet zeigt den Verbrauch nahezu in Echtzeit bis auf Agent, Aktion und Kanal und warnt bei selbst gesetzten Schwellen. Es ist mit Digital-Wallet-fähigen Produkten kostenlos, setzt aber ein aktiviertes Data 360 voraus."
+    a: "Sie verfallen zum Enddatum der Bestellung und gehen nicht in die nächste Laufzeit über. Mehrverbrauch wird ohne Aufschlag zum vereinbarten Satz monatlich nachträglich abgerechnet. Kaufen Sie deshalb entlang des Go-live-Plans."
+  - q: "Kann ich jedem Werk ein eigenes Flex-Credit-Limit geben?"
+    a: "Als harte Grenze nicht, jedenfalls nicht in der Dokumentation, die ich geöffnet habe. Digital Wallet warnt bei Schwellenwerten und nimmt Tags wie Kostenstelle, der Pool gilt aber pro Org. Werksbudgets vereinbaren Sie intern und prüfen sie gegen den getaggten Verbrauch."
+  - q: "Kosten MCP-Aufrufe auf Salesforce heute schon Geld?"
+    a: "Noch nicht. Laut Salesforce Ben wird agentische Nutzung noch nicht gemessen, Salesforce kündigt den Start 30 Tage vorher an, und Sandboxes sind ausgenommen. Die Rate Card führt den Zähler Headless Platform Interactions bereits, mit dem Satz TBA."
+  - q: "Was ist eine Salesforce AELA?"
+    a: "Laut Forrester ein Pauschalvertrag für Agentforce, Data 360 und MuleSoft über zwei oder drei Jahre. Preise und Standardkonditionen veröffentlicht Salesforce nicht. Verhandeln Sie schon bei Unterschrift, was nach der Laufzeit gilt."
 draft: false
 ---
 
-Die Agentforce-Kosten pro Aktion sind schnell genannt und leicht unterschätzt. Eine Standardaktion kostet 20 Flex Credits, also 0,10 €. Eine belastbare Schätzung zählt außerdem Prompts nach Modellstufe, Sprachaktionen zu 30 Credits, Data-360-Verarbeitung für Handbücher und Ersatzteilkataloge sowie Testläufe in der Sandbox. Nicht genutzte Credits verfallen zum Ende der Bestellung. Ich schätze pro Gesprächstyp, erfasse jeden Zähler einzeln und kaufe Credits entlang des Go-live-Plans. Im Rechenbeispiel unten machen reine Textaktionen nur 55 Prozent der Credits im Monat aus.
+Agentforce-Kosten bestehen aus mehr als dem Preis pro Aktion. Eine Standardaktion kostet 20 Flex Credits, also 0,10 €. Dazu kommen Prompts nach Modellstufe, Sprache, Data 360 für Handbücher und Ersatzteilkataloge, Testläufe in der Sandbox und bald MCP-Aufrufe externer KI-Agenten, deren Preis noch fehlt. Ungenutzte Credits verfallen zum Bestellende. Ein Serviceagent für Händleranfragen verbraucht im Rechenbeispiel unten Credits für rund 1.100 € im Monat und rund 15.000 € im ersten Jahr, ohne Umsetzung, MuleSoft und Nutzerlizenzen. Ich schätze pro Gesprächstyp, kaufe entlang des Go-live-Plans, benenne eine Budgetverantwortliche für den Pool und prüfe eine Pauschale erst, wenn mehrere Agenten live sind.
 
-## Flex Credits als Währung für Agentforce
+## Flex Credits: Rate Card mit eigenem Satz pro Nutzungsart
 
-Flex Credits sind die Währung, in der Salesforce den Agentforce-Verbrauch abrechnet. Die [Agentforce-Preisseite](https://www.salesforce.com/eu/agentforce/pricing/) nennt 500 € je 100.000 Credits. Jedes abrechenbare Ereignis zieht eine feste Zahl Credits laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) mit Stand 31. August 2026. Eine Aktion ist laut Salesforce „a specific function that an AI agent executes on the platform“, etwa einen Auftrag aus SAP lesen oder ein Ersatzteil nachschlagen. Ob sich ein Agent überhaupt lohnt, steht in [Agentforce für Hersteller](../agentforce-ja-oder-nein-hersteller/).
+Flex Credits sind die Währung, in der Salesforce den Agentforce-Verbrauch abrechnet. Die [Agentforce-Preisseite](https://www.salesforce.com/eu/agentforce/pricing/) nennt 500 € je 100.000 Credits, ein Credit kostet also einen halben Cent. Fast jede Nutzungsart zieht einen festen Satz laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) mit Stand 31. August 2026:
 
-Für die Planung zählen drei Details:
+- **Aktionen:** 20 Credits in Produktion, 16 in Sandbox oder Scratch Org. Laut [Hilfeartikel zu den abrechenbaren Nutzungsarten](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) auch dann, wenn sie deterministisch laufen.
+- **Sprachaktionen:** 30 Credits in Produktion, 24 in der Sandbox. Speech to Text kostet 150 Credits pro Stunde Audio und Text to Speech 6.000 pro Million Zeichen, gezählt unabhängig von den Sprachaktionen.
+- **Data 360:** 150 Credits pro MB für Unstructured Processing, 600 für Intelligent Processing, Abfragen 3 Credits pro Million Zeilen. Die Staffel gilt pro Nutzungsart und setzt sich monatlich zurück: Oberhalb von 300.000 Credits sinkt der Satz in Stufen. In der Sandbox gilt pauschal 120 pro MB. Hybride Suche kostet laut [Salesforce Ben](https://www.salesforceben.com/data-360-formerly-data-cloud-deep-dive-your-guide-to-the-vector-database/) doppelt so viel wie Vektorsuche, und neue Dateien bauen den Index neu auf.
+- **Headless Platform Interactions:** gelistet, aber ohne Satz („TBA“).
 
-- **Alle Credits kommen aus einem Topf.** Aktionen, Prompts, Sprache und Übersetzung ziehen dieselben Credits, und die Rate Card rechnet auch Data 360 in Flex Credits ab.
-- **Auch deterministische Schritte kosten.** Laut [Hilfeartikel zu den abrechenbaren Nutzungsarten](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) werden Aktionen abgerechnet, wenn sie laufen, auch wenn sie deterministisch laufen. Eine Garantieregel in [Agent Script](../agent-script-regeln-statt-llm/) macht den Agenten verlässlicher, nicht günstiger.
-- **Ein Preismodell pro Org.** Flex Credits und das Modell mit 2 € pro Gespräch werden nicht in derselben Org unterstützt.
-
-Es gibt laut [Salesforce Bens Preisleitfaden](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/) drei Kaufmodelle: Pre-Purchase zahlt die ganze Laufzeit im Voraus, Pre-Commit rechnet eine Grundmenge monatlich nachträglich ab und gleicht zum Laufzeitende aus, PayGo rechnet ab, was Sie nutzen. Verbrauch über dem Kontingent kostet den vereinbarten Satz, ohne Strafaufschlag. Das [im Mai 2025 angekündigte Flex Agreement](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) erlaubt außerdem, Nutzerlizenzen in Flex Credits umzuwandeln und zurück.
-
-## Was kosten Prompts, und warum zählt das Modell?
-
-Prompts übersieht man leicht, weil die Beispiele auf der Preisseite nur Aktionen zählen. Laut Hilfeartikel wird pro Aufruf des LLM-Gateways gezählt, und ein Prompt umfasst bis zu 2.000 Tokens Ein- und Ausgabe. Ein Aufruf mit 6.500 Tokens zählt als vier Prompts. Der Preis pro Prompt hängt von der Modellstufe ab, und die [Seite zur Modellunterstützung](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5) ordnet jedes Modell einer Stufe zu:
+Prompts übersieht man leicht, weil die Beispiele der Preisseite nur Aktionen zählen. Gezählt wird pro Aufruf des LLM-Gateways in Einheiten bis 2.000 Tokens, ein Aufruf mit 6.500 Tokens zählt als vier Prompts. Die [Seite zur Modellunterstützung](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5) ordnet jedes Modell einer Stufe zu:
 
 | Stufe | Credits pro Prompt | Beispielmodelle |
 |---|---|---|
-| Basic | 2 | GPT-5 Mini, Gemini 2.5 Flash, Nova Lite |
-| Standard | 4 | Claude Sonnet 4.6, Claude Sonnet 5, GPT-5, Gemini 2.5 Pro |
-| Advanced | 16 | Claude Opus 4.8, GPT 5.5, GPT 5.6 Sol |
-| Starter | 2 | nur für eigene Modelle (BYOLLM) |
+| Basic | 2 | GPT-5 Mini, Gemini 2.5 Flash |
+| Standard | 4 | Claude Sonnet 5, GPT-5, Gemini 2.5 Pro |
+| Advanced | 16 | Claude Opus 4.8, GPT 5.5 |
+| Starter | 2 | nur eigene Modelle (BYOLLM) |
 
-Advanced-Prompts werden seit dem 21. Juli 2026 gezählt. Dieselbe Zusammenfassung mit 6.500 Tokens kostet auf einem Basic-Modell 8 Credits, auf Standard 16 und auf Advanced 64. Für eine Fallzusammenfassung, die eine Servicemitarbeiterin liest und korrigiert, würde ich mit einem Standard-Modell starten und nur wechseln, wenn Tests eine Qualitätslücke zeigen.
+Für eine Fallzusammenfassung, die eine Servicemitarbeiterin liest und korrigiert, würde ich mit einem Standard-Modell starten und nur wechseln, wenn Tests eine Qualitätslücke zeigen. Ob die eigenen LLM-Aufrufe der Reasoning Engine zusätzlich als Prompts zählen, sagt der Hilfeartikel nicht; prüfen Sie das im Piloten.
 
-Der Hilfeartikel nennt außerdem eingebettete generative Funktionen wie Service Replies. Ich würde jede Prompt-Vorlage und jede generative Funktion im Design budgetieren.
+## Rechenbeispiel: ein Serviceagent für Händleranfragen
 
-```hinweis offen
-Ob die eigenen LLM-Aufrufe der Reasoning Engine zusätzlich zu den Aktionen als Prompts zählen, sagt der Hilfeartikel nicht. Klären Sie das mit Ihrem Account Executive und prüfen Sie im Piloten, ob Digital Wallet mehr zeigt.
-```
+Nehmen wir einen Maschinenbauer mit 400 Händlern, SAP S/4HANA, einem Händlerportal und rund 2.000 MB Ersatzteilkatalogen und Handbüchern als PDF. Der Agent beantwortet 3.000 Gespräche im Monat zu Auftragsstatus, Lieferterminen und Ersatzteilverfügbarkeit, mit je drei Aktionen und zwei Standard-Prompts. Alle Mengen sind Annahmen, die Sätze stammen aus der Rate Card.
 
-## Sprache, Sandbox und Data 360: wo Schätzungen danebenliegen
-
-### Sprache
-
-Sprachaktionen kosten 30 Credits in Produktion und 24 in der Sandbox; das Sprachbeispiel der Preisseite rechnet mit vier pro Anruf. Die Rate Card führt zusätzlich Speech to Text mit 150 Credits pro Stunde Audio und Text to Speech mit 6.000 pro Million Zeichen, gezählt unabhängig von anderen Nutzungsarten. Fragen Sie Ihren Account Executive, ob Ihr Sprachkanal diese Zähler zusätzlich zu den Sprachaktionen auslöst. Für einen Maschinenbauer passt Sprache zu einer Ersatzteil-Hotline, die Servicetechniker aus der Werkstatt oder im Außendienst anrufen. Im Händlerportal ist Text pro Schritt günstiger.
-
-### Sandbox und Tests
-
-Aktionen in Sandboxes und Scratch Orgs kosten 16 Credits, Prompts den vollen Satz. Agententests [laufen nur in Sandboxes](https://developer.salesforce.com/docs/ai/agentforce/guide/testing-api-get-started.html), und laut Salesforce verbrauchen Testläufe Credits. Eine Testsuite, die nach jeder Änderung läuft, ist ein laufender Kostenposten. Wie viele Läufe sinnvoll sind, beschreibe ich in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
-
-### Data 360
-
-Stützt sich der Agent auf Handbücher oder Ersatzteilkataloge, verarbeitet Data 360 diese Dokumente. Die Basisstufe kostet 150 Credits pro MB für Unstructured Processing und 600 pro MB für Intelligent Processing. Die Staffel setzt sich monatlich pro Nutzungsart zurück: Oberhalb von 300.000 Credits sinkt der Satz in drei Schritten auf ein Fünftel, 30 Credits pro MB ab 12,5 Mio. Abfragen kosten 3 Credits pro Million Zeilen. In der Sandbox gibt es keine Staffel; Unstructured Processing kostet dort pauschal 120 Credits pro MB.
-
-Zwei weitere Punkte nennt [Salesforce Bens Leitfaden zur Vektordatenbank in Data 360](https://www.salesforceben.com/data-360-formerly-data-cloud-deep-dive-your-guide-to-the-vector-database/): Hybride Suche kostet doppelt so viele Credits wie Vektorsuche, und Indizes müssen neu aufgebaut werden, wenn neue Dateien dazukommen. Planen Sie also das monatliche Änderungsvolumen, nicht nur die Erstbeladung. Mehr dazu in [Data-360-Kosten für KI-Agenten](../data-360-kosten-fuer-ki-agenten/).
-
-## Rechenbeispiel: ein Ersatzteilagent für Händler
-
-Nehmen wir einen Maschinenbauer mit SAP, Service Cloud, einem Händlerportal und rund 2.000 MB Ersatzteilkatalogen und Handbüchern als PDF. Der Agent beantwortet Händlerfragen zu Teilenummern, Verfügbarkeit und Lieferterminen, im Portal und am Telefon. Alle Zahlen sind Annahmen.
-
-| Posten pro Monat | Annahme | Credits |
+| Posten | Credits | EUR |
 |---|---|---|
-| Textaktionen | 2.000 Portalgespräche × 3 Aktionen × 20 | 120.000 |
-| Prompts | 2.000 Zusammenfassungen à 3.000 Tokens = 2 Prompts × 4 (Standard) | 16.000 |
-| Sprachaktionen | 400 Anrufe × 4 Sprachaktionen × 30 | 48.000 |
-| Speech to Text, falls berechnet | 400 Anrufe × 4 Minuten ≈ 27 Stunden × 150 | 4.000 |
-| Data-360-Aktualisierung | 200 MB geänderte Dokumente × 150 | 30.000 |
-| **Summe** | | **218.000, rund 1.090 €** |
+| Aktionen pro Monat: 3.000 × 3 × 20 | 180.000 | 900 |
+| Prompts pro Monat: 3.000 × 2 × 4 | 24.000 | 120 |
+| Data 360, 100 MB geänderte Dokumente pro Monat | 15.000 | 75 |
+| **Laufender Betrieb pro Monat** | **219.000** | **1.095** |
+| Erste Aufbereitung der 2.000 MB | 300.000 | 1.500 |
+| Sandbox: 500 Testgespräche, 4 Regressionsläufe, 200 MB Katalogausschnitt | 96.800 | 484 |
+| **Erstes Jahr: 12 Monate Gespräche, 11 Monate Änderungen, Aufbau, Tests** | **3.009.800** | **15.049** |
 
-Dazu kommen Aufbau und Tests. Die einmalige Verarbeitung der 2.000 MB kostet 300.000 Credits oder 1.500 €. Zehn Testläufe mit je 200 Gesprächen kosten 112.000 Credits: pro Lauf 9.600 für Aktionen zu 16 und 1.600 für Prompts. Eine Stichprobe von 200 MB der Kataloge in der Sandbox kostet 24.000 Credits; die vollen 2.000 MB kosteten dort 240.000. Zwölf Monate volle Last plus Aufbau und Tests ergeben rund 3,05 Mio. Credits.
-
-- **Textaktionen sind nur 55 Prozent der monatlichen Credits.** Wer Gespräche mal Aktionen rechnet, übersieht fast die Hälfte.
-- **Das Modell ist ein Preishebel.** Auf einem Advanced-Modell kosteten dieselben Zusammenfassungen 64.000 statt 16.000 Credits im Monat.
-- **Enthaltene Kontingente sind schnell weg.** Mit Aufbau und Tests braucht dieser eine Agent mehr als die 2,75 Mio. Credits pro Org und Jahr, die die Preisseite für die Max Edition nennt, und das Sechsfache der 500.000 in der Core Edition. Siehe [die Editionen Core, Advanced und Max](../salesforce-editionen-core-advanced-max/).
-
-Die Rechnung für einen Auftragsstatus-Agenten, verglichen mit dem Preis pro Gespräch, steht in [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/).
-
-## Wie schätzen Sie Agentforce-Kosten pro Aktion?
-
-1. **Aktionen pro Gesprächstyp zählen.** Die Beispiele der Preisseite geben ein Gefühl: zwei Aktionen für eine Auftragsstatusabfrage, fünf für die Terminbuchung im Außendienst. Bestätigen Sie die Zahl mit Protokollen aus Sandbox-Tests.
-2. **Jeden LLM-Aufruf auflisten**, der außerhalb der Aktionen läuft, die Tokens auf 2.000er-Einheiten aufrunden und mit der Modellstufe multiplizieren.
-3. **Sprache getrennt rechnen**: 30 Credits pro Sprachaktion, dazu Speech-Zähler, falls sie greifen.
-4. **Dokumente für Data 360 bemessen**: Erstbeladung und monatliche Änderungen in MB.
-5. **Testlast budgetieren**: Testfälle × Läufe × Aktionen zu 16, dazu Prompts und eine Dokumentstichprobe.
-6. **Auf Monate verteilen**: Pilot, Hochlauf, volle Last.
-7. **Reserve für offene Zähler einplanen.** Headless Platform Interactions, der Zähler für agentische MCP- und API-Aufrufe, stehen in der Rate Card als „TBA“; [laut Salesforce Ben](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/) kündigt Salesforce den Start 30 Tage vorher an, gezählt wird in Produktions-Orgs. Siehe [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
-
-Vier Wochen nach dem Go-live vergleichen Sie die Schätzung mit [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/). Es zeigt den Verbrauch bis auf Agent, Aktion und Kanal und warnt bei Schwellen, die Sie setzen. Voraussetzung ist ein aktiviertes Data 360.
-
-## Was passiert mit nicht genutzten Flex Credits?
-
-Sie verfallen. Laut Rate Card müssen Flex Credits vor dem Enddatum der Bestellung verbraucht werden, ohne Übertrag in die nächste Laufzeit.
+Nicht enthalten sind MuleSoft-Lizenzen, die Umsetzung, Lizenzen für Servicemitarbeitende und die Pflege; alle Werte sind Listenpreise. Den Katalog einmal aufzubereiten kostet so viel wie sechs Wochen Händlergespräche. Veraltete Katalogstände vorher auszusortieren ist die günstigste Einsparung im ganzen Projekt, mehr dazu in [Data-360-Kosten für KI-Agenten](../data-360-kosten-fuer-ki-agenten/). Agententests laufen nur in Sandboxes, und laut [Testdokumentation](https://developer.salesforce.com/docs/ai/agentforce/guide/testing-api-get-started.html) verbrauchen sie Credits; wie viele Läufe sinnvoll sind, steht in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
 
 ```hinweis achtung
-Kaufen Sie im Januar Credits für ein Jahr und rutscht der Go-live von März auf Juni, sind drei Monate Volumen bezahlt und verloren.
+Den vollen Katalog mit 2.000 MB in der Sandbox aufzubereiten kostet 240.000 Credits, fast so viel wie in Produktion, weil dort keine Staffel gilt. Ein repräsentativer Ausschnitt von 200 MB kostet 24.000 Credits.
 ```
 
-Ich würde das erste Jahr entlang des Hochlaufs kaufen: ein kleines Pre-Purchase für Pilot und Tests, PayGo oder Pre-Commit für den Hochlauf und ein größeres Volumen, sobald Digital Wallet echte Zahlen zeigt. Weil Mehrverbrauch ohne Aufschlag zum vereinbarten Satz abgerechnet wird, ist ein knapper erster Kauf wenig riskant. Beachten Sie außerdem den Zeitraum der enthaltenen Edition-Credits: Die [Preisseite der Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) führt die Pools pro Org und Jahr, die [Ankündigung der Editionen vom September 2026](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) nennt keinen Zeitraum. Mehrere Agenten teilen sich einen Pool, fragen Sie also, wie der Verbrauch pro Agent überwacht wird. Diese Fragen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+Auf der Nutzenseite: Braucht eine Servicemitarbeiterin heute sechs Minuten pro Anfrage und löst der Agent 60 Prozent, werden 180 Stunden im Monat frei, für rund 6 € Verbrauch pro Stunde. Nach meiner Einschätzung entscheidet der Verbrauch diesen Business Case selten. Aufbau, Tests und Pflege entscheiden ihn.
+
+## Pro Aktion, pro Gespräch oder pro Lösung bezahlen?
+
+Salesforce bietet drei Wege, denselben Agenten zu bezahlen, und sie liegen weit auseinander:
+
+- **Flex Credits pro Aktion und Prompt.** Im Rechenbeispiel 68 Credits pro Gespräch, 1.020 € im Monat für Aktionen und Prompts, ohne Katalogpflege.
+- **Pro Gespräch.** Die Preisseite nennt 2 € pro Gespräch, also 6.000 € im Monat. Flex Credits und Gesprächspreise werden laut Preisseite nicht in derselben Org unterstützt.
+- **Pro Lösung.** Der Help Agent, inzwischen Casey genannt (siehe [Casey und der Service Rep Assistant](../service-cloud-casey-und-service-rep-assistant/)), kostet 400 Credits pro gelöstem Gespräch. Bei 60 Prozent gelösten Gesprächen sind das 3.600 € im Monat. Laut [Salesforce Deutschland](https://www.salesforce.com/de/news/press-releases/2026/06/30/salesforce-agentforce-help-agent/) kostet eine Übergabe an einen Menschen nichts, auch nicht die Aufrufe davor, und Lösungen in der Sandbox sind kostenlos.
+
+Der Break-even ist einfach: 68 geteilt durch 400 ergibt 17 Prozent. Sobald mehr als 17 Prozent der Gespräche gelöst werden, sind Flex Credits günstiger. Als gelöst zählt laut [Salesforce Bens Preisleitfaden](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/) ein Gespräch mit mindestens zwei Nachrichtenwechseln, ohne negative Rückmeldung am Ende und ohne Eskalation, es sei denn, die Rückmeldung war positiv. Ohne Rückmeldung zählt eine Sitzung, die länger als zwei Stunden offen bleibt, also auch ein Händler, der einen falschen Termin bekam und das Fenster schloss. Für enge Händleranfragen würde ich mit Flex Credits planen. Der Preis pro Lösung hat nur in den ersten Monaten einen Vorteil, solange niemand die Lösungsquote kennt. Für Mitarbeitende in Salesforce gibt es einen vierten Weg: das Add-on pro Nutzer mit „Unmetered Agentforce usage for employees“, 125 $ pro Nutzer und Monat (US-Listenpreis). Für Händler und Kunden greift es nicht.
+
+## Der Pool einer Edition reicht für den Piloten, nicht fürs Programm
+
+Die [Editionen Core, Advanced und Max](../salesforce-editionen-core-advanced-max/) enthalten einen Flex-Credit-Pool. Die [EU-Preisseite für Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) nennt ihn pro Org und Jahr:
+
+```kennzahlen
+500.000 | Flex Credits pro Org und Jahr in Core
+1 Mio. | Flex Credits pro Org und Jahr in Advanced
+2,75 Mio. | Flex Credits pro Org und Jahr in Max
+quelle: Salesforce EU-Preisseite Sales Cloud und Meldung zu den Editionen 2026
+```
+
+Der Serviceagent aus dem Rechenbeispiel braucht im ersten Jahr mehr als den ganzen Max-Pool, und dieser Pool deckt auch jede andere verbrauchsabhängige Nutzung in der Org. Zusätzliche Credits gibt es als Pre-Purchase, Pre-Commit oder PayGo, und das [Flex Agreement](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) erlaubt, Nutzerlizenzen in Flex Credits umzuwandeln und zurück. Mehrverbrauch wird ohne Strafaufschlag zum vereinbarten Satz nachträglich abgerechnet. Ungenutzte Credits verfallen dagegen zum Bestellende, „no rollover will be permitted“.
+
+Daraus folgt die wichtigste Kaufregel: Kaufen Sie entlang des Go-live-Plans, nicht entlang des Budgetjahrs. Rutscht der Go-live von März auf Juni, sind drei Monate Volumen bezahlt und verloren. Ich würde mit einem kleinen Pre-Purchase für Pilot und Tests starten, den Hochlauf über PayGo oder Pre-Commit abdecken und erst größer kaufen, wenn Digital Wallet echte Zahlen zeigt.
+
+## Kostenkontrolle über Werke: Digital Wallet und eine Budgetverantwortliche
+
+Der Pool hängt an Org und Vertrag. Teilen sich zwei Werke, eine US-Tochter und eine Serviceregion eine Org, bedienen sich alle aus demselben Pool, und die Rechnung erhält, wer unterschrieben hat. [Digital Wallet](https://www.salesforce.com/eu/agentforce/digital-wallet/) liefert die Daten für die Verrechnung:
+
+- **Aufschlüsselung** bis auf Agent, Aktion und Kanal.
+- **Eigene Tags** nach Kategorien wie Abteilung oder Kostenstelle, laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.wallet_about.htm&type=5) mit getrennten Berechtigungen für Ansehen und Zuweisen.
+- **Schwellenwert-Warnungen** per Flow-Vorlage an Admins, als Systembenachrichtigung oder in Slack.
+
+Voraussetzung sind ein Digital-Wallet-fähiges Produkt, eine Data-360-Lizenz (eine Customer-Data-Platform-Lizenz reicht nicht) und die Berechtigung View Consumption; in Sandboxes ist Digital Wallet nicht verfügbar. Maßgeblich für die interne Rechnung ist laut [Trailhead](https://trailhead.salesforce.com/de/content/learn/modules/salesforce-digital-wallet-quick-look/get-to-know-salesforce-digital-wallet) die Monatsabrechnung, kein Dashboard-Screenshot. Dort steht auch eine Falle für Konzerne: Kauft eine Tochter eigene Credits für dieselbe Org, verbraucht Digital Wallet zuerst den Vertrag, der am frühesten endet.
+
+```hinweis offen
+Einen automatischen Stopp habe ich nicht gefunden. Die Seiten, die ich geöffnet habe, beschreiben nur Warnungen. Ein Werksbudget bleibt damit eine Zahl im Controlling, und wer eine harte Grenze braucht, deaktiviert den Agenten selbst.
+```
+
+Ich würde eine Person in der Konzern-IT oder im [Salesforce Center of Excellence](../salesforce-center-of-excellence-format/) zur Budgetverantwortlichen machen, Tags für Gesellschaft, Kostenstelle und Umgebung ab dem ersten Tag setzen und sechs Monate Showback fahren, bevor Werke zahlen. Danach verrechne ich zum festen Satz von 5 € pro 1.000 Credits. Schriftlich vor dem ersten regionalen Go-live: wer verfallene Credits trägt. Ohne Regel landet der Verlust im zentralen IT-Budget, und niemand merkt es. Welche Kennzahlen Sie pro Agent verfolgen, steht in [Agentforce-Kennzahlen nach dem Go-live](../agentforce-kennzahlen-nach-go-live/).
+
+## MCP-Zugriffe externer Agenten: der Zähler ohne Preis
+
+Nutzen Ihre Key Account Manager Claude oder ChatGPT auf Salesforce-Daten, entsteht ein Kostenposten, den kein Projekt plant. Laut [Salesforce Ben vom 24. September 2026](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), der sich auf einen Salesforce-Hilfeartikel beruft, zählt jeder erfolgreiche Aufruf eines registrierten Agenten über MCP oder eine als agentisch eingestufte API als Headless Platform Interaction. Gemessen wird noch nicht, Salesforce kündigt den Start 30 Tage vorher an, Sandboxes sind ausgenommen, und bestehende Schnittstellen zu SAP oder Middleware behalten ihre Konditionen.
+
+Bei einem eigenen Agentforce-Agenten legen Sie die Aktionen fest. Bei einem externen Agenten bestimmt dessen Verhalten, wie viele Aufrufe eine Frage braucht. Nehmen wir 60 Key Account Manager mit je 15 Fragen an 220 Arbeitstagen, also 198.000 Fragen im Jahr, und drei hypothetische Sätze:
+
+| Angenommener Satz pro Aufruf | 2 Aufrufe pro Frage | 8 Aufrufe pro Frage |
+|---|---|---|
+| 1 Credit | 1.980 € | 7.920 € |
+| 4 Credits | 7.920 € | 31.680 € |
+| 20 Credits, wie eine Aktion | 39.600 € | 158.400 € |
+
+Das Tool-Design verändert die Rechnung so stark wie der Satz selbst. Ein gezieltes Werkzeug, etwa ein Flow, der die Auftragsübersicht eines Händlers in einer Antwort liefert, spart bei jeder Frage Aufrufe; wer über diese Server was lesen darf, behandle ich in [Hosted MCP Server und Datenzugriff](../salesforce-hosted-mcp-server-datenzugriff/). Dazu zahlen Sie doppelt: den KI-Anbieter für Lizenzen oder Tokens und Salesforce für die Aufrufe. Künftige Max-Editionen sollen ein Kontingent für Headless 360 enthalten, eine Größe nennt Salesforce nicht; ich würde nichts dagegen planen. Zählen Sie Aufrufe pro Aufgabe in der Sandbox, wo Salesforce nicht misst (der KI-Anbieter rechnet trotzdem ab), budgetieren Sie eine Spanne und lassen Sie sich Satz und Obergrenze vor der Ankündigung schriftlich geben. Unabhängig davon verbrauchen direkte API-Aufrufe das [tägliche API-Kontingent der Org](https://developer.salesforce.com/docs/platform/salesforce-app-limits-cheatsheet/guide/salesforce-app-limits-platform-api.html), das Ihre SAP-Schnittstelle mitbenutzt.
+
+## Wann lohnt eine AELA statt Flex Credits?
+
+Das Agentic Enterprise License Agreement (AELA) ist laut [Forrester](https://www.forrester.com/blogs/ai-agents-become-economic-actors-salesforce-rewrites-the-rules-of-pricing) ein Pauschalvertrag mit „unlimited use of consumption‑based products such as Agentforce, Data 360/Data Cloud, and MuleSoft for a fixed fee over two or three years“. Salesforce verkaufte laut [Transkript zum vierten Quartal FY26](https://s205.q4cdn.com/626266368/files/doc_financials/2026/q4/Transcript-Salesforce-Inc-Q4-FY26-Earnings-Conference-Call-2-25-26.pdf) über 120 davon in einem Quartal. Preis, Fair-Use-Regeln und das Modell nach der Laufzeit sind nicht öffentlich, und „unlimited“ ist kein Standard: Bei Adecco unterliegt die Nutzung laut Fußnote dem Vertrag.
+
+Gerechnet nur gegen zusätzliche Flex Credits zeigt sich die Schwelle. Kostet die Pauschale oberhalb der heutigen Lizenzen angenommen 150.000 € im Jahr, kauft dasselbe Geld 30 Mio. Flex Credits, also 1,5 Mio. Standardaktionen. Plant ein Hersteller drei Agenten, die über drei Jahre auf zusammen 13,5 Mio. Credits wachsen, kostet das zum Listenpreis 67.500 €, die AELA 450.000 €. Enthält das Angebot Lizenzen, die Sie ohnehin kaufen, vergleichen Sie den ganzen Vertrag.
+
+```pro-contra
+pro: Spricht für eine AELA
+- **Mehrere Agenten sind freigegeben,** in mindestens zwei Bereichen wie Händlerservice und Außendienst.
+- **Das Angebot enthält Lizenzen, die Sie ohnehin kaufen,** etwa ein Upgrade der Edition oder Field Service.
+- **Der Verbrauch ist schwer zu schätzen,** weil große Dokumentbestände oder der MCP-Satz offen sind.
+contra: Nicht unterschreiben
+- In der Pilotphase oder für ein einzelnes Werk.
+- Solange Ersatzteil- und Anlagendaten unzuverlässig sind.
+- Ohne geregelte Verlängerung.
+```
+
+Die Finanzchefin von Salesforce sprach im selben Call davon, AELA-Kunden später in den Verbrauch zu überführen. Was die AELA kostet, entscheidet sich deshalb im zweiten Vertrag. Schreiben Sie in den ersten: Preismodell und Preisdeckel ab Jahr vier, jährliche Ausstiegspunkte (der Vertrag des [US-Veteranenministeriums](https://www.salesforce.com/news/press-releases/2026/07/24/missionforce-transforms-veteran-care/) läuft ein Jahr plus zwei optionale Verlängerungen), Umfang und Fair-Use-Regeln. Das ist eine kaufmännische Checkliste, keine Rechtsberatung.
+
+## Erster Schritt: ein Verbrauchsplan pro Agent über drei Jahre
+
+```schritte
+Aktionen und Prompts pro Gesprächstyp zählen
+  Mit Protokollen aus Sandbox-Tests, Tokens auf 2.000er-Einheiten aufgerundet.
+Dokumente für Data 360 bemessen
+  Erstbeladung und monatliche Änderungen in MB, veraltete Kataloge vorher aussortiert.
+Auf Monate verteilen
+  Pilot, Hochlauf und volle Last, mit Reserve für den MCP-Zähler.
+Kaufmodell wählen
+  Pool der Edition, Pre-Purchase für den Piloten, PayGo für den Hochlauf.
+Budget zuordnen
+  Eine Budgetverantwortliche, Tags pro Gesellschaft, Warnungen bei 50, 80 und 95 Prozent.
+Vier Wochen nach Go-live neu rechnen
+  Digital Wallet gegen die Schätzung, dann über weitere Agenten oder eine AELA entscheiden.
+```
+
+Die Methode für die Schätzung steht im [Masterclass-Kapitel zu Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/). Lizenzmodelle über mehrere Jahre und Gesellschaften zu vergleichen gehört zu meiner Arbeit in [Make-or-buy und Lizenzplanung](../../leistungen/make-or-buy-lizenzen/), auf Kundenseite und ohne eigenes Interesse am Abschluss. Bringen Sie zum ersten Gespräch Ihren Verbrauchsplan und, falls vorhanden, das schriftliche AELA-Angebot mit, dann rechnen wir beide Wege für Ihre Agenten nebeneinander.

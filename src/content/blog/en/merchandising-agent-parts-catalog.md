@@ -64,7 +64,7 @@ Two KPIs matter more in parts stores than AOV: zero result searches and the shar
 
 Trailhead lists the prerequisites: Salesforce generative AI, Agentforce, bots and Data 360 activated for the store. Setup runs in the Commerce app with guided steps, and the topics and actions come preconfigured for Commerce. For licensing, Trailhead points to the Salesforce Help article on enabling Agentforce Skills for Merchandising.
 
-The editions include Data Cloud credits: 250K in Growth and 500K in Advanced, according to the pricing page. What the agent consumes per request is not published. I would therefore measure consumption in a sandbox with real requests before go-live; how such an estimate works is shown in [Flex Credits: estimating Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
+The editions include Data Cloud credits: 250K in Growth and 500K in Advanced, according to the pricing page. What the agent consumes per request is not published. I would therefore measure consumption in a sandbox with real requests before go-live; how such an estimate works is shown in [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/).
 
 The store's limits also apply to the agent, and both rule limits are hard limits:
 

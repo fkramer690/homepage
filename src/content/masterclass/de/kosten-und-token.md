@@ -13,7 +13,7 @@ takeaways:
   - "Anthropic nennt für Claude Code rund 13 $ pro Entwickler und aktivem Tag. Seat-Preise kaufen heute ein Nutzungsbudget, keine unbegrenzte Nutzung."
   - "Core, Advanced und Max enthalten 500.000, 1 Mio. und 2,75 Mio. Flex Credits pro Org und Jahr. Ein Händleragent kann im ersten Jahr rund 3 Mio. verbrauchen."
   - "Data 360 für Ersatzteilkataloge und der noch unbepreiste Zähler für Headless Platform Interactions fehlen in Schätzungen am häufigsten."
-articles: [flex-credits-agentforce-costs, salesforce-editions-core-advanced-max, dealer-service-agent-costs, ai-coding-costs-salesforce-project, data-360-costs-for-agents, headless-platform-interactions-budget]
+articles: [flex-credits-agentforce-costs, salesforce-editions-core-advanced-max, ai-coding-costs-salesforce-project, data-360-costs-for-agents]
 faq:
   - q: "Was kostet ein Coding-Agent wie Claude Code pro Entwickler?"
     a: "Anthropic nennt für Unternehmenseinsätze im Schnitt rund 13 $ pro Entwickler und aktivem Tag und 150 bis 250 $ im Monat, für 90 Prozent der Nutzer unter 30 $ pro aktivem Tag. Team- und Enterprise-Seats begrenzen die Nutzung über ein Fünfstunden- und ein Wochenfenster."
@@ -160,13 +160,13 @@ Annahme: 3.000 Gespräche im Monat zu Auftragsstatus, Lieferterminen und Ersatzt
 | Summe | 204.000 Credits = **1.020 € im Monat**, im Modell pro Gespräch wären es 6.000 € |
 | Zwölf Monate | 2.448.000 Credits, mehr als die Pools von Core und Advanced, knapp unter Max |
 
-Mit der Aufbereitung von 2.000 MB Ersatzteilkatalogen in Data 360 (300.000 Credits) und den Sandbox-Tests kommt das erste Jahr auf rund 3 Mio. Credits oder 15.000 €. Die vollständige Rechnung mit Testlast und Lösungspreis steht in [Agentforce-Serviceagent für Händler](../../../blog/serviceagent-haendleranfragen-kosten/).
+Mit der Aufbereitung von 2.000 MB Ersatzteilkatalogen in Data 360 (300.000 Credits) und den Sandbox-Tests kommt das erste Jahr auf rund 3 Mio. Credits oder 15.000 €. Die vollständige Rechnung mit Testlast und Lösungspreis steht in [Agentforce-Serviceagent für Händler](../../../blog/flex-credits-agentforce-kosten-pro-aktion/).
 
 ### Die zwei häufigsten Lücken
 
 **Data 360.** Stützt sich ein Agent auf Handbücher, Explosionszeichnungen oder Ersatzteilkataloge, kostet 1 GB unstrukturierter Dokumente in der Basisstufe rund 150.000 Credits, etwa 750 €, und das Vierfache, wenn Explosionszeichnungen LLM-basiertes Intelligent Processing zu 600 Credits pro MB brauchen. In der Sandbox gibt es keine Mengenstaffel. Testen Sie mit einem Ausschnitt und sortieren Sie veraltete Katalogstände vorher aus. Mehr in [Data-360-Kosten für KI-Agenten](../../../blog/data-360-kosten-fuer-ki-agenten/).
 
-**Headless Platform Interactions.** Greifen Claude, ChatGPT oder andere Agenten über MCP oder API auf Salesforce zu, soll laut [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/) jeder erfolgreiche Aufruf eines registrierten Agenten zählen, nur in aktiven Produktions-Orgs und mit 30 Tagen Vorlauf. Klassische Integrationen bleiben bei ihrer heutigen Preislogik. Wer Claude auf Salesforce-Daten nutzt, zahlt dann doppelt: Anthropic für Tokens, Salesforce für Interaktionen. Die Menge können Sie schätzen, wie in [Kapitel 3](../mcp-und-schnittstellen/) gezeigt; den Budgetposten beschreibe ich in [MCP-Zugriffe auf Salesforce als Budgetrisiko](../../../blog/mcp-zugriffe-salesforce-budgetrisiko/).
+**Headless Platform Interactions.** Greifen Claude, ChatGPT oder andere Agenten über MCP oder API auf Salesforce zu, soll laut [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/) jeder erfolgreiche Aufruf eines registrierten Agenten zählen, nur in aktiven Produktions-Orgs und mit 30 Tagen Vorlauf. Klassische Integrationen bleiben bei ihrer heutigen Preislogik. Wer Claude auf Salesforce-Daten nutzt, zahlt dann doppelt: Anthropic für Tokens, Salesforce für Interaktionen. Die Menge können Sie schätzen, wie in [Kapitel 3](../mcp-und-schnittstellen/) gezeigt; den Budgetposten beschreibe ich in [MCP-Zugriffe auf Salesforce als Budgetrisiko](../../../blog/flex-credits-agentforce-kosten-pro-aktion/).
 
 ```hinweis offen
 Der Satz für Headless Platform Interactions steht auf der Rate Card noch als TBA. Lassen Sie sich vom Account Executive bestätigen, wie Pool, mehrere Orgs und Headless Platform Interactions abgerechnet werden.

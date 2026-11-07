@@ -46,7 +46,7 @@ faq:
   - q: "Bewerten Sie auch Tools außerhalb von Salesforce?"
     a: "Ja. Make-or-buy betrifft den ganzen IT-Stack, etwa Dokumentenerstellung, E-Signatur oder die Frage, ob ein Prozess überhaupt in Salesforce gehört. Ich habe keine Bindung an einen Hersteller, daher kann die Empfehlung auch ein Tool außerhalb des Salesforce-Ökosystems sein."
 blogTags: [business case, agentforce, open source, vendor lock-in, lizenzen]
-readMore: [salesforce-licence-types, salesforce-editions-core-advanced-max, manufacturing-cloud-worth-it, manufacturing-cloud-add-ons-costs, field-service-worth-it, revenue-cloud-worth-it-manufacturers, commerce-extensions-custom-code, aela-flat-fee-vs-credits]
+readMore: [salesforce-licence-types, salesforce-editions-core-advanced-max, manufacturing-cloud-worth-it, manufacturing-cloud-add-ons-costs, field-service-worth-it, revenue-cloud-worth-it-manufacturers, commerce-extensions-custom-code, flex-credits-agentforce-costs]
 masterclass: manufacturing-cloud
 ---
 
