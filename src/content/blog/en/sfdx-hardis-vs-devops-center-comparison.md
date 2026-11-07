@@ -2,6 +2,7 @@
 title: "sfdx-hardis vs DevOps Center: which one fits in 2026"
 description: "sfdx-hardis and Salesforce DevOps Center, now Lifecycle Center, compared: Git platforms, ease of use, costs, monitoring and when each tool is the right one."
 pubDate: 2026-10-28
+updatedDate: 2026-11-07
 lang: en
 slug: sfdx-hardis-vs-devops-center-comparison
 translationKey: sfdx-hardis-vs-devops-center
@@ -26,7 +27,7 @@ faq:
     a: "Lifecycle Center is the easier start for admins, because everything happens in Salesforce. The sfdx-hardis VS Code extension takes most Git commands off admins' hands, but it needs VS Code and some basic knowledge of branches."
 ---
 
-sfdx-hardis and Salesforce DevOps Center, called Lifecycle Center since October 2026, both come without licence fees and both take changes to production through Git. The difference is where the process lives. Lifecycle Center is a native app in a Salesforce org with a click-based interface, and it works only with GitHub.com and Bitbucket Cloud. sfdx-hardis runs as a pipeline in the client's CI, on GitHub, GitLab, Azure DevOps, Bitbucket or Jenkins, and adds monitoring, backup and documentation. My rule of thumb: Lifecycle Center for small, click-based teams, sfdx-hardis for programmes with several partners.
+[sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) and Salesforce DevOps Center, called Lifecycle Center since October 2026, both come without licence fees and both take changes to production through Git. The difference is where the process lives. Lifecycle Center is a native app in a Salesforce org with a click-based interface, and it works only with GitHub.com and Bitbucket Cloud. sfdx-hardis runs as a pipeline in the client's CI, on GitHub, GitLab, Azure DevOps, Bitbucket or Jenkins, and adds monitoring, backup and documentation. My rule of thumb: Lifecycle Center for small, click-based teams, sfdx-hardis for programmes with several partners.
 
 ## What is the difference between sfdx-hardis and DevOps Center?
 
