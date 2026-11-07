@@ -36,7 +36,7 @@ Salesforce B2B Commerce, which according to [Trailhead](https://trailhead.salesf
 
 When a buyer has access to several price books, the [pricing strategy](https://help.salesforce.com/s/articleView?id=sf.comm_priority_pricing.htm&language=en_US&type=5) decides:
 
-- **Best Price** shows the lowest price across all of the buyer's price books.
+- **Best Price** takes the cheapest of all price books the buyer has access to.
 - **Priority Price** follows the order you set per buyer group; the smaller number wins.
 
 I would start with Priority Price when dealers sit in several buyer groups, such as country and tier. Best Price rewards every overlap that slips in by accident during a data load.
@@ -152,10 +152,10 @@ The numbers are made up to show the method. Change one assumption, such as a sal
 
 Write one page on the price master decision before anyone designs the store:
 
-1. Which system calculates the price per buyer group: SAP, price books or Revenue Cloud?
-2. Which price appears where: product list, cart, order confirmation?
-3. What does the store show when the live call fails?
-4. Which price applies when store and ERP differ, and who resolves it?
+1. Who calculates the price for each buyer group, SAP, the price books or Revenue Cloud?
+2. Where does which price show, in the product list, in the cart, on the order confirmation?
+3. What does the dealer see when SAP does not answer the live call?
+4. If store and ERP disagree: which price counts, and who clears the difference?
 5. Which buyer groups pay by purchase order, which by card, and who checks credit?
 
 This page belongs next to your [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) and drives the interface list for [chapter 4](../erp-integration-stock-orders/). I design the price and credit calls as part of [Salesforce integration](../../../services/salesforce-integration/), and the Revenue Cloud licence question under [make or buy and licences](../../../services/make-or-buy-licences/). All chapters are on the [overview page](../).

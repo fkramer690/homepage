@@ -38,7 +38,7 @@ Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commer
 
 ```vertiefung For admins
 title: Which standard objects form the chain?
-- **BuyerAccount:** a normal account that is enabled for buying. Its contacts become buyers or buyer managers.
+- **BuyerAccount:** the dealer's account with the right to buy in the store. Its contacts turn into buyers or buyer managers.
 - **BuyerGroup and BuyerGroupMember:** the group bundles buyer accounts with the same settings; each membership is its own record.
 - **WebStoreBuyerGroup:** connects a buyer group to a store.
 - **CommerceEntitlementPolicy:** connects buyer groups to products and controls whether product and price are visible.
@@ -85,7 +85,7 @@ without: One buyer group per dealer
 - Every new dealer becomes a data project
 with: Buyer groups by attribute
 - Country or sales organisation, dealer tier and brand
-- Attributes that change rarely and that the ERP already holds in the customer master
+- Stable attributes the customer master in the ERP already carries
 - Entitlement policies follow assortments, not customers
 ```
 
@@ -163,12 +163,12 @@ A machine builder sells spare parts through 800 dealers in 12 countries, with th
 
 ## Write the entitlement concept on one page
 
-Write the entitlement concept on one page before anyone loads data:
+Put the entitlement concept on a single page before the first data load:
 
-- the list of buyer groups with the criteria that put an account into each one,
-- the list of entitlement policies with the assortment each one covers,
-- a matrix of which group gets which policy and which price book,
-- a count against the limits above, for today and for three years from now,
+- every buyer group with the rule that places an account in it,
+- every entitlement policy with the slice of the range it opens,
+- a cross table of groups, policies and price books,
+- the volumes of today and in three years, measured against the limits above,
 - 200 real search terms from dealers, taken from emails and phone notes and tested against a test store.
 
 The ERP fields that feed memberships and search then go into the interface list from [chapter 4](../erp-integration-stock-orders/). I review such concepts before a partner builds as part of [Salesforce architecture](../../../services/salesforce-architecture/); which data comes from which system is part of [Salesforce integration](../../../services/salesforce-integration/). All chapters are on the [overview page](../).
