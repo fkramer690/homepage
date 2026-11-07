@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-07T04:48:07.302Z",
+  "generatedAt": "2026-11-07T11:42:56.026Z",
   "range": {
     "start": "2026-10-08",
     "end": "2026-11-07"
   },
   "browsers": [
     {
-      "count": 800,
+      "count": 810,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
@@ -71,7 +71,7 @@
   ],
   "countries": [
     {
-      "count": 960,
+      "count": 970,
       "dimensions": {
         "countryName": "DE"
       },
@@ -251,11 +251,20 @@
       "sum": {
         "visits": 10
       }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-07"
+      },
+      "sum": {
+        "visits": 0
+      }
     }
   ],
   "devices": [
     {
-      "count": 890,
+      "count": 900,
       "dimensions": {
         "deviceType": "desktop"
       },
@@ -322,19 +331,19 @@
     {
       "count": 40,
       "dimensions": {
-        "requestPath": "/partner/juliane-winterscheid/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 30,
-      "dimensions": {
         "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
       },
       "sum": {
         "visits": 0
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "requestPath": "/partner/juliane-winterscheid/"
+      },
+      "sum": {
+        "visits": 10
       }
     },
     {
@@ -457,7 +466,7 @@
   ],
   "referers": [
     {
-      "count": 830,
+      "count": 840,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
