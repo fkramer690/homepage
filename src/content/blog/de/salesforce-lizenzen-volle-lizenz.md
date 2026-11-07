@@ -1,5 +1,6 @@
 ---
 title: "Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?"
+metaTitle: "Salesforce-Lizenzkosten: Braucht jeder eine volle Lizenz?"
 description: "Nicht jeder Nutzer braucht eine volle Salesforce-Lizenz. Welche Lizenztypen es gibt, was sie kosten und wie eine Lizenzprognose sechsstellig sparen kann."
 pubDate: 2026-10-26
 lang: de
@@ -16,6 +17,8 @@ takeaways:
   - "Externe Nutzer wie Händler und Kunden brauchen keine internen Lizenzen. Portallizenzen gibt es ab 4 € pro Login oder 10 € pro Mitglied."
   - "Eine Lizenzprognose gruppiert Nutzer nach dem, was sie im System tatsächlich tun, und gehört vor die Verhandlung, nicht danach."
 faq:
+  - q: "Was kostet eine Salesforce-Lizenz?"
+    a: "Zum Listenpreis (Stand Oktober 2026, jährliche Abrechnung) kostet Sales Cloud Core 195 € pro Nutzer und Monat, Platform Plus 100 €, Platform Starter 25 € und Field Service Technician 175 €. Portallizenzen für Kunden gibt es ab 4 € pro Login oder 10 € pro Mitglied. Die Lizenzkosten hängen vor allem davon ab, wie viele Nutzer wirklich eine volle Lizenz brauchen."
   - q: "Welche Salesforce-Lizenztypen gibt es?"
     a: "Für interne Nutzer gibt es volle Lizenzen wie Sales Cloud und Service Cloud, günstigere Platform-Lizenzen für eigene Apps und spezielle Lizenzen wie Field Service Technician. Für externe Nutzer gibt es Portallizenzen, für Schnittstellen eigene Integrationslizenzen ohne Benutzeroberfläche."
   - q: "Was kann ein Nutzer mit Salesforce Platform Starter nicht?"

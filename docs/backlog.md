@@ -40,7 +40,7 @@ Grundlage: Video-Analyse der Gewinner und Verlierer des Spam Updates (abgeschlos
 | U2 | Themen-Hubs für das, was verkauft wird: Field Service (34 Artikel), Manufacturing Cloud (29), Revenue Cloud (27), B2B Commerce (26) haben keine indexierte Hub-Seite, die Blog-Kategorien sind nur #-Filter. Empfohlen: Masterclass-Hubs zu Themen-Hubs ausbauen (Kapitel plus alle Artikel des Themas, gruppiert nach Fragen wie Lohnt es sich, Lizenzen, Einführung, SAP); Alternative: indexierte Kategorieseiten | hoch | mittel | Claude | Field Service umgesetzt 07.11.2026 (Hub /masterclass/field-service/ mit Fragen-Liste, Titel auf „Salesforce Field Service“); Manufacturing Cloud, Revenue Cloud, B2B Commerce offen |
 | U3 | Leistungsseiten verlinken ihr Thema: statt 3 automatisch über Tags gewählter Artikel unter FAQ und Autorenbox eine kuratierte Liste (5 bis 8 Artikel plus passende Masterclass) im Lesefluss | hoch | mittel | Claude | offen |
 | U4 | Kannibalisierung Masterclass und Blog auflösen, je Paar eine Hauptseite festlegen, die andere kürzen und verlinken: Change-Rollout Länder (Kapitel) und „Change Management weltweiter Rollout“ (8 gleiche Sätze), ADKAR-Diagnose und „Change Management Salesforce-Einführung“ (6), „Releases dem Fachbereich kommunizieren“ und Kapitel „Sponsor und Kommunikation“ (5), Nearshore-Artikel und Leistungsseite (3) | mittel | mittel | Claude | offen |
-| U5 | /leistungen/ mobil: erster Bildschirm zeigt nur zwei Absätze, keine Leistung. Zweiten Absatz unter die Karten | mittel | klein | Claude | offen |
+| U5 | /leistungen/ mobil: erster Bildschirm zeigt nur zwei Absätze, keine Leistung. Zweiten Absatz unter die Karten | mittel | klein | Claude | erledigt 07.11.2026 (PR #311, Kennzahlen mobil unter den Karten) |
 | U6 | Content Drift beobachten: Julianes allgemeine Change-Artikel (Change-Kurve, Stakeholder-Analyse, Was ist Change Management) bleiben an Change-Leistungsseite und Blog, nicht auf der Startseite; bei D16 prüfen, ob sie passende Besucher bringen | klein | klein | Claude | ab 24.12.2026 |
 | U7 | Messung nach Video-Methode: im Montagslauf die Anzahl Begriffe auf Platz 1 bis 3 zählen und mit den drei stärksten Wettbewerbern aus den SERPs vergleichen (zusammen mit D9) | mittel | klein | Claude | ab 16.11.2026 |
 
@@ -123,10 +123,10 @@ Neue Artikel:
 - L7. **Salesforce-Release-Kalender: was die IT-Leitung je Release prüfen muss.** Begriffe: „salesforce release notes“ (90), „salesforce release schedule/cycle/dates“ (je 20). Evergreen-Seite, je Release aktualisieren. *Entwurf 2.11.2026 (PR #269), am 6.11.2026 mit ChatGPT-Review überarbeitet und auf Spring '27 aktualisiert (Preview 8.1., Produktion 16.1./6.2./20.2.2027). Je Release nachziehen.*
 
 Bestehende Artikel nachschärfen (Titel, Einstieg, FAQ um den Suchbegriff ergänzen):
-- L8. Salesforce-Lizenzen-Artikel auf „salesforce lizenz kosten“ (20).
+- L8. Salesforce-Lizenzen-Artikel auf „salesforce lizenz kosten“ (20). *Erledigt 07.11.2026: Suchtitel „Salesforce-Lizenzkosten …“, FAQ „Was kostet eine Salesforce-Lizenz?“, EN parallel.*
 - L9. Field-Service-Lizenzen-Artikel auf „salesforce field service license / pricing / license comparison“ (je 10). *Erledigt (D4, PR #103).*
-- L10. Manufacturing-Cloud-Add-ons-Artikel auf „salesforce manufacturing cloud pricing“ (10).
-- L11. CPQ-Verkaufsende-Artikel auf „salesforce cpq end of life / retirement / replacement“ (je 10).
+- L10. Manufacturing-Cloud-Add-ons-Artikel auf „salesforce manufacturing cloud pricing“ (10). *Erledigt 07.11.2026: Suchtitel „Manufacturing Cloud Pricing …“, FAQ zu Editionspreisen, EN parallel.*
+- L11. CPQ-Verkaufsende-Artikel auf „salesforce cpq end of life / retirement / replacement“ (je 10). *Erledigt 07.11.2026: Suchtitel „Salesforce CPQ End of Life …“, FAQ „Was ersetzt Salesforce CPQ?“, EN parallel. Bei D19 mitprüfen.*
 - L12. Field-Service-Einführung auf „salesforce field service implementation guide“ (10); laut Benchmark rankt für „field service einführung“ bisher der Artikel „lohnt sich“ statt des Einführungsartikels. *Erledigt (D4, PR #103).*
 
 ## Blog: Themen aus dem täglichen Lauf (übernommen 28.10.2026)

@@ -1,5 +1,6 @@
 ---
 title: "Salesforce CPQ end of sale: what applies in October 2026"
+metaTitle: "Salesforce CPQ end of life: what actually applies"
 description: "What Salesforce has announced for CPQ and the Billing package, what existing customers may still do, and what to secure at the next renewal."
 pubDate: 2026-10-28
 lang: en
@@ -15,6 +16,8 @@ takeaways:
   - "The often quoted date of March 2025 comes from third-party reports. The Salesforce page itself names no date."
   - "The next CPQ renewal is the moment to secure term, price cap and the right to run CPQ and Revenue Cloud side by side."
 faq:
+  - q: "What replaces Salesforce CPQ?"
+    a: "Salesforce points new customers to Revenue Cloud Advanced, and to Revenue Cloud Billing for invoicing. There is no retirement date after which CPQ is switched off. Whether and when switching pays off for existing customers depends on contract term, customisation and the growing gap in new features."
   - q: "Is Salesforce CPQ being discontinued?"
     a: "No end-of-life date has been announced. Salesforce calls CPQ end of sale, not end of life: it is no longer sold to new customers, while existing customers can keep using it, add users, renew and receive support and critical fixes."
   - q: "Do I have to migrate from Salesforce CPQ to Revenue Cloud?"
