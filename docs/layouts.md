@@ -227,6 +227,11 @@ old card grids "sehr erschlagend"). Built in `src/components/MasterclassHub.astr
   topic text and the links in two columns; only the chosen topic is open.
 - Every section heading gets one or two sentences below it.
 - Fits: long, ordered content (courses, step plans) and many links grouped by topic.
+- Topic hub question list (variant B "kompakte Liste", 2026-11-07, backlog U2): a hub
+  that is also the topic hub for its product gets a section "Ihre Frage" right below the
+  figures (`.mc-qa`): one row per question with number, question, short answer and a link
+  to the one page that answers it in full (texts `questions` in the course texts,
+  resolved by `articleKey`; also emitted as FAQPage schema). First used for Field Service.
 
 ## Photos of Fabian
 
