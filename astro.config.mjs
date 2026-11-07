@@ -116,7 +116,7 @@ export default defineConfig({
     // All external links open in a new tab (checked by scripts/check-links.mjs).
     // Content blocks (```hinweis, ```zeitleiste, …) become markup (docs/blog-guidelines.md).
     // Service pages: the first body paragraph opens the page (src/lib/service-intro-plugin.mjs).
-    processor: satteri({ mdastPlugins: [serviceIntro(), contentBlocks({ site })], hastPlugins: [sourceChips({ site }), externalLinks({ site })] }),
+    processor: satteri({ mdastPlugins: [serviceIntro(), contentBlocks({ site, base })], hastPlugins: [sourceChips({ site }), externalLinks({ site })] }),
   },
   integrations: [
     explicitEmptyAlt(),

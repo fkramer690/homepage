@@ -74,7 +74,17 @@ Der erste und wirksamste Schritt war eine einfache Regel: Jede Änderung geht ü
 Nach einigen Wochen ging die Zahl der Review-Kommentare deutlich zurück, weil die Teams die Standards kannten. Releases wurden planbar, und die Validierungsläufe der Pipeline fanden fehlende Abhängigkeiten, bevor ein Anwender sie sah. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben und ihn eingearbeitet. Seitdem verantwortet der Kunde den Review-Prozess selbst.
 ```
 
-> Reviews sind der Weg, auf dem sich ein Programm mit vielen Teams auf eine gemeinsame Bauweise einigt.
+```vergleich
+ohne: Ohne Review
+- * Jedes Team baut nach eigenen Regeln.
+- Änderungen überschreiben sich, weil niemand abstimmt, wer was deployt.
+- Fehlende Abhängigkeiten fallen erst nach dem Release auf.
+mit: Jeder Pull Request mit Review
+- * Aus den Reviews entstehen aufgeschriebene Standards für alle Teams.
+- Konflikte zwischen Teams zeigen sich vor dem Merge.
+- Die Pipeline findet fehlende Abhängigkeiten, bevor ein Anwender sie sieht.
+zitat: Reviews sind der Weg, auf dem sich ein Programm mit vielen Teams auf eine gemeinsame Bauweise einigt.
+```
 
 ## Wie führen Sie Reviews ein, ohne langsamer zu werden?
 

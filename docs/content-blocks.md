@@ -145,6 +145,20 @@ Animation of the variant `treppe` (Fabian 2026-10-30, kept slow on purpose): whe
 
 Two columns like the start page comparison: `ohne: Title` (EN `without:`) with grey crosses, then `mit: Title` (EN `with:`) with cyan ticks and a cyan frame, two to five `- points` each. Approved by Fabian 2026-10-29. Use it for before and after; for a decision use `pro-contra`.
 
+With a core sentence (backlog 17, layout "Quote after a comparison" in `docs/layouts.md`): mark the one pair the sentence sums up with `- * ` in each column and end the block with `zitat:` (EN `quote:`), one sentence of at most 140 characters, without quotation marks. The pair is struck through on the left and bold cyan on the right; a dashed line runs from the "with" column into a dark principle card with Fabian's round photo (`public/quote/fabian-kramer.webp`), kicker "Mein Grundsatz", the quote in italic and the attribution. Use it only for a sentence that is really Fabian's position, at most once per article; never put a quote as a plain `>` blockquote under a list.
+
+````
+```vergleich
+ohne: Discovery nur für den Happy Path
+- Nur der Standardfall ist besprochen.
+- * Die Randfälle kommen später als Change Request.
+mit: Discovery mit Randfällen
+- * Die Liste der Sonderfälle liegt dem Angebot bei.
+- Annahmen hinter der Schätzung sind aufgeschrieben.
+zitat: Bei Herstellern liegt der Aufwand in den Randfällen, nicht im Standardfall.
+```
+````
+
 ````
 ```vergleich
 ohne: Einmal im Quartal ein großes Paket

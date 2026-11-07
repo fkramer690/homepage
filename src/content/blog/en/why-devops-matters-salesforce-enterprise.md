@@ -73,7 +73,17 @@ hotfix: Hotfix: separate branch, same pipeline, hours instead of weeks
 note: Git repository: single source of truth for all metadata
 ```
 
-> The pipeline belongs to the client, not to the partner. Whoever owns the release process owns the platform.
+```vergleich
+without: Pipeline with the partner
+- * The partner decides when and how releases happen.
+- Further partners work by the first partner's rules.
+- Changing partners means rebuilding the pipeline.
+with: Pipeline with the client
+- * The client sets the pace and the rules for every partner.
+- New partners join a setup with written standards.
+- Changing partners only changes the users.
+quote: The pipeline belongs to the client, not to the partner. Whoever owns the release process owns the platform.
+```
 
 That last point matters a lot to me as an [architect on the client side](../../#about). A repository and pipeline under the client's control make partners comparable and replaceable, which is the basis for [partner steering and governance](../../services/partner-governance/). They also make onboarding a new partner much easier, because the standards are written down and enforced automatically.
 

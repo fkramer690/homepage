@@ -26,6 +26,7 @@
     "block:stufen-treppe": {"title": "Stufen als Treppe", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30", "note": "super aber säulen per se könnte man auch gut animieren", "todo": "docs/backlog.md G7 erledigt 2026-10-30 (animiert)"},
     "block:tabelle": {"title": "Tabelle hell, auch Variante matrix (ersetzt PNGs integration-leading-system, object-ownership-matrix, sfdx-hardis-vs-commercial)", "proposal": 1, "rating": null, "note": "G5 erledigt: Fabian wählte am 2026-10-30 die Mockups 1A, 2A, 3A. Alte PNGs waren mit 3 bewertet, Notizen „kontrast komisch“, „bitte neuen vorschlag“", "todo": "docs/backlog.md G5 erledigt"},
     "block:vergleich": {"title": "Vergleich (ohne / mit)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
+    "block:vergleich-zitat": {"title": "Vergleich mit Grundsatz-Karte (markiertes Paar + Zitat, Backlog 17)", "proposal": 1, "rating": null, "note": "Mockups A/B 2026-11-07 in Projektdateien homepage/zitat-bloecke/"},
     "block:vertiefung": {"title": "Vertiefung (einklappbar)", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30"},
     "block:zeitleiste": {"title": "Zeitleiste", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30"},
     "card:ai-native-delivery-process": {"title": "Kartenskizze KI-nativer Delivery-Prozess", "proposal": 1, "rating": null},
