@@ -60,11 +60,19 @@ function cleanOrganic(item) {
     const path = (cut === -1 ? segments : segments.slice(0, cut)).join('/');
     return { ...item, url: `https://${crumb}/${path}`, domain: crumb, resolved: 'breadcrumb' };
   }
-  // Some results carry no breadcrumb but name the site ("sortlist.de").
-  const site = hostOf(item.website_name);
+  // Some results carry no breadcrumb but name the site ("sortlist.de"); forum and video
+  // results name the platform ("Reddit · r/salesforce", "YouTube · Salesforce Ben"). They
+  // are real results and must keep their slot, or every position below them moves up.
+  const name = String(item.website_name ?? '').split('·')[0].trim();
+  const site = hostOf(name) || PLATFORMS[name.toLowerCase()] || '';
   if (site && !GOOGLE_HOST.test(site)) return { ...item, url: `https://${site}/`, domain: site, resolved: 'website_name' };
+  if (name && item.title) return { ...item, url: '', domain: name.toLowerCase(), resolved: 'website_name' };
   return null;
 }
+const PLATFORMS = {
+  reddit: 'www.reddit.com', youtube: 'www.youtube.com', linkedin: 'www.linkedin.com', facebook: 'www.facebook.com',
+  medium: 'medium.com', instagram: 'www.instagram.com', tiktok: 'www.tiktok.com', x: 'x.com', quora: 'www.quora.com',
+};
 const googleSamples = [];
 const droppedSamples = [];
 let googleDropped = 0;
