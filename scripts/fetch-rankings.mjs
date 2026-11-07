@@ -17,16 +17,44 @@ const isOwn = (domain) => domain === DOMAIN || Boolean(domain?.endsWith(`.${DOMA
 const auth = 'Basic ' + Buffer.from(`${login}:${password}`).toString('base64');
 let cost = 0;
 
-// Live SERP calls fail now and then with "Internal SE Server Error"; one retry fixes most.
-async function call(path, body, retries = 1) {
+// Live SERP calls fail now and then with "Internal SE Server Error" (3 of 81 on 2026-11-02
+// despite one retry). Three retries with growing pauses, and failed keywords get a second
+// pass at the end of the run.
+const WAITS = [5000, 20000, 60000];
+async function call(path, body, attempt = 0) {
   try {
     return await request(path, body);
   } catch (err) {
-    if (retries <= 0) throw err;
-    await new Promise((r) => setTimeout(r, 5000));
-    return call(path, body, retries - 1);
+    if (attempt >= WAITS.length) throw err;
+    await new Promise((r) => setTimeout(r, WAITS[attempt]));
+    return call(path, body, attempt + 1);
   }
 }
+
+// Since 2026-11 Google mixes its own links (AI Mode, "more results", search redirects) into
+// the organic list; DataForSEO reports them as organic items with domain google.com (140 of
+// 234 top-3 slots on 2026-11-02). Redirect links are unwrapped to their target; the rest are
+// dropped, and positions are counted on the cleaned list.
+const GOOGLE_HOST = /^(www\.)?google\.[a-z.]+$/;
+function cleanOrganic(item) {
+  let url = item.url ?? '';
+  let host = '';
+  try {
+    const u = new URL(url);
+    host = u.hostname;
+    const target = GOOGLE_HOST.test(host) && (u.searchParams.get('q') ?? u.searchParams.get('url'));
+    if (target && /^https?:\/\//.test(target)) {
+      url = target;
+      host = new URL(target).hostname;
+    }
+  } catch {
+    host = item.domain ?? '';
+  }
+  if (GOOGLE_HOST.test(host || item.domain || '')) return null;
+  return { ...item, url, domain: host || item.domain };
+}
+const googleSamples = [];
+let googleDropped = 0;
 
 async function request(path, body) {
   const res = await fetch(`https://api.dataforseo.com/v3/${path}`, {
@@ -63,14 +91,22 @@ for (const lang of ['de', 'en']) {
   }
 
   const rows = [];
-  for (const keyword of list) {
+  const serpRow = async (keyword) => {
     try {
       const [serp] = await call('serp/google/organic/live/advanced', [
         { keyword, location_code: LOCATION, language_code: lang, depth: DEPTH, load_async_ai_overview: true },
       ]);
       const items = serp?.items ?? [];
-      const organic = items.filter((i) => i.type === 'organic');
-      const hit = organic.find((i) => isOwn(i.domain));
+      const rawOrganic = items.filter((i) => i.type === 'organic');
+      const organic = rawOrganic.map(cleanOrganic).filter(Boolean);
+      const dropped = rawOrganic.length - organic.length;
+      googleDropped += dropped;
+      if (dropped && googleSamples.length < 5) {
+        const sample = rawOrganic.find((i) => GOOGLE_HOST.test(i.domain ?? ''));
+        googleSamples.push({ keyword, url: sample?.url, title: sample?.title, rank: sample?.rank_group });
+      }
+      const index = organic.findIndex((i) => isOwn(i.domain));
+      const hit = organic[index];
       const aiOverview = items.find((i) => i.type === 'ai_overview');
       const aiSources = [
         ...new Set(
@@ -78,9 +114,9 @@ for (const lang of ['de', 'en']) {
         ),
       ];
       const questions = items.filter((i) => i.type === 'people_also_ask').flatMap((i) => i.items ?? []);
-      rows.push({
+      return {
         keyword,
-        position: hit?.rank_group ?? null,
+        position: hit ? index + 1 : null,
         url: hit?.url ?? null,
         ...(volumes[keyword.toLowerCase()] ?? volumes[keyword] ?? {}),
         // The element can be present without content when no overview loaded.
@@ -89,11 +125,19 @@ for (const lang of ['de', 'en']) {
         aiSources: aiSources.slice(0, 5),
         questions: questions.map((q) => q.title).filter(Boolean).slice(0, 4),
         top3: organic.slice(0, 3).map((i) => i.domain),
-      });
+        ...(dropped ? { googleDropped: dropped } : {}),
+      };
     } catch (err) {
       console.error(`serp "${keyword}" (${lang}) failed: ${err.message}`);
-      rows.push({ keyword, error: err.message });
+      return { keyword, error: err.message };
     }
+  };
+  for (const keyword of list) rows.push(await serpRow(keyword));
+  // Second pass for keywords that failed even after the retries.
+  for (const [i, row] of rows.entries()) {
+    if (!row.error) continue;
+    await new Promise((r) => setTimeout(r, 30000));
+    rows[i] = await serpRow(row.keyword);
   }
   languages[lang] = rows;
 
@@ -113,6 +157,10 @@ for (const lang of ['de', 'en']) {
   }
 }
 
+const failed = Object.values(languages).flat().filter((r) => r.error).map((r) => r.keyword);
+console.error(`google.com links dropped from organic results: ${googleDropped}`);
+for (const s of googleSamples) console.error(`  e.g. "${s.keyword}" #${s.rank}: ${s.url} (${s.title})`);
+console.error(`failed keywords: ${failed.length ? failed.join(', ') : 'none'}`);
 console.error(`cost of this run ${cost.toFixed(4)} USD`);
 console.log(JSON.stringify({
   generatedAt: new Date().toISOString(),
@@ -121,6 +169,9 @@ console.log(JSON.stringify({
   depth: DEPTH,
   balanceBefore,
   cost: Number(cost.toFixed(4)),
+  // Data quality of this run: Google's own links removed from the organic list, and
+  // keywords whose SERP could not be fetched. A run with failures is not comparable.
+  quality: { googleDropped, googleSamples, failed },
   ...languages,
   ranked,
 }, null, 2));
