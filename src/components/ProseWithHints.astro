@@ -1,0 +1,25 @@
+---
+// Article body with the two call hints (slots "hint1" and "hint2") placed in
+// front of an H2: hint 1 before the first H2 that has at least 20 % of the
+// body's words above it, hint 2 before the first later H2 at 40 %. Placed here
+// centrally, never in Markdown. Too few sections: the hint is left out.
+const html = await Astro.slots.render('default');
+const hints = [await Astro.slots.render('hint1'), await Astro.slots.render('hint2')];
+const parts = html.split(/(?=<h2[\s>])/);
+const words = (s: string) => s.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+const counts = parts.map(words);
+const total = counts.reduce((a, b) => a + b, 0) || 1;
+const targets = [0.2, 0.4];
+const spots: number[] = [];
+let acc = 0;
+let next = 0;
+parts.forEach((part, i) => {
+  if (next < targets.length && i > 0 && part.startsWith('<h2') && acc / total >= targets[next]) {
+    spots[i] = next;
+    next += 1;
+  }
+  acc += counts[i];
+});
+const out = parts.map((part, i) => (spots[i] === undefined ? part : hints[spots[i]] + part)).join('');
+---
+<div class="prose" set:html={out} />

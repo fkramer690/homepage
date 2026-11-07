@@ -2770,6 +2770,18 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 }
 .rc-cv-note { margin: 0.9em 0 0; font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.65); max-width: 60ch; }
 
+/* Call hint inside the article text (CallHint.astro, placed by ProseWithHints.astro) */
+.call-hint { margin: 2.4em 0; display: grid; grid-template-columns: 1fr auto; gap: 8px 28px; align-items: center; padding: 24px 28px; border-radius: var(--radius); background: var(--anthracite); color: var(--on-dark); box-shadow: var(--accent-top); }
+.prose .call-hint p { margin: 0; }
+.call-hint .call-hint-kicker { grid-column: 1 / -1; font-size: var(--fs-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--cyan-light); }
+.prose .call-hint .call-hint-title { font-size: var(--fs-md); font-weight: 700; line-height: 1.35; color: var(--white); }
+.prose .call-hint .call-hint-text { margin-top: 4px; font-size: var(--fs-ui); line-height: 1.55; color: var(--on-dark); }
+.prose .call-hint .btn { white-space: nowrap; text-decoration: none; }
+@media (max-width: 760px) {
+  .call-hint { grid-template-columns: 1fr; padding: 20px; }
+  .call-hint .btn { justify-self: start; margin-top: 8px; }
+}
+
 /* Service pages: curated reading list in the reading flow (backlog U3). One white box with
    dashed dividers and cyan numbers (like the questions page), the masterclass as a tinted row below. */
 .svc-reading { list-style: none; margin: 0; padding: 4px 24px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
