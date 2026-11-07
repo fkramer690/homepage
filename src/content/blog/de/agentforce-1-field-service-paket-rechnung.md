@@ -51,7 +51,7 @@ Dieselbe Preisseite nennt die Add-ons einzeln, und zwar nur in Dollar. Pro Nutze
 |---|---|
 | Field Service Plus | 230 Dollar |
 | Agentforce for Field Service and Operations | 125 Dollar |
-| Visual Remote Assistant | 50 Dollar |
+| [Visual Remote Assistant](../visual-remote-assistant-fernhilfe-statt-einsatz/) | 50 Dollar |
 | Appointment Assistant | 25 Dollar |
 | **Summe** | **430 Dollar** |
 | Agentforce 1 Field Service | 650 Dollar |

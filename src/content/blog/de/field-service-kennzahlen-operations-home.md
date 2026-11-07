@@ -69,7 +69,7 @@ Weil ein Kennzahlname noch keine Formel ist. Operations Home zeigt eine Erstlös
 2. **Bezug.** Gleiches Asset oder gleicher Kundenstandort?
 3. **Fehler.** Gleicher Fehlercode oder jeder weitere Einsatz?
 4. **Geplante Folgeeinsätze.** Ein zweiter Besuch, weil ein Teil bewusst bestellt wurde, oder eine mehrtägige Inbetriebnahme zählen nicht als Fehlschlag.
-5. **Fernlösungen.** Zählt ein Problem, das per Telefon oder Video gelöst wurde, als beim ersten Mal behoben?
+5. **Fernlösungen.** Zählt ein Problem, das per Telefon oder Video gelöst wurde, als beim ersten Mal behoben? Mit [Visual Remote Assistance](../visual-remote-assistant-fernhilfe-statt-einsatz/) wächst dieser Anteil, also legen Sie es vor der ersten Videositzung fest.
 
 Die dritte Entscheidung funktioniert nur mit codierten Fehlern. Stehen Fehlerursachen im Freitext, zählt die Quote jeden weiteren Einsatz, auch die Jahreswartung eine Woche später. Weichen die Definition des Herstellers und Ihre voneinander ab, berichten Sie Ihre und vermerken den Unterschied einmal.
 

@@ -122,7 +122,7 @@ Die Preisseite listet fünf Add-ons, auf der deutschen Seite in Dollar:
 |---|---|---|
 | Agentforce for Field Service and Operations | KI-Agenten im Arbeitsablauf der Mitarbeitenden | 125 Dollar pro Nutzer und Monat |
 | Asset Service Lifecycle Management | Lebenszyklus der installierten Basis, vom Angebot für Arbeitsaufträge bis zu Servicekampagnen | 75 Dollar pro Nutzer und Monat |
-| Visual Remote Assistant | Videohilfe für Kunden statt Einsatz | 50 Dollar pro Nutzer und Monat |
+| Visual Remote Assistant | [Visual Remote Assistance](../../../blog/visual-remote-assistant-fernhilfe-statt-einsatz/): Videohilfe für Kunden statt Einsatz | 50 Dollar pro Nutzer und Monat |
 | Appointment Assistant | Echtzeit-Updates zum Termin für Kunden | 25 Dollar pro Nutzer und Monat |
 | Connected Assets | Proaktive Wartung mit externen Daten und Event Orchestration | 15.000 Dollar pro Org und Monat |
 

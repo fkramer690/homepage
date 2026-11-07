@@ -69,7 +69,7 @@ Because a KPI name is not a formula. Operations Home shows a first-time fix rate
 2. **Scope.** Same asset or same customer site?
 3. **Fault.** Same fault code, or any further visit?
 4. **Planned follow-ups.** A second visit because a part was ordered on purpose, or a multiday commissioning job, should not count as a failure.
-5. **Remote fixes.** Does a problem solved by phone or video count as fixed first time?
+5. **Remote fixes.** Does a problem solved by phone or video count as fixed first time? With [visual remote assistance](../visual-remote-assistant-remote-help-instead-of-visit/) this share grows, so decide it before the first video session.
 
 The third decision only works with coded faults. If fault causes live in free text, the rate counts every further visit, including the annual maintenance a week later. If the vendor definition and yours differ, report yours and note the difference once.
 
