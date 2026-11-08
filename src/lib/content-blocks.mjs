@@ -182,13 +182,21 @@ export function parsePillars(content) {
 // Comparison: "ohne: Title" / "without: Title" and "mit: Title" / "with: Title", each with "- points".
 export function parseCompare(content) {
   const cols = [];
+  let quote = '';
   for (const l of lines(content)) {
     if (!l.trim()) continue;
+    const q = keyLine(l.trim(), ['zitat', 'quote']);
+    if (q) { quote = q.value; continue; }
     const k = keyLine(l.trim(), ['ohne', 'without', 'mit', 'with']);
-    if (k) { cols.push({ kind: ['ohne', 'without'].includes(k.key) ? 'without' : 'with', title: k.value, items: [] }); continue; }
-    const item = l.trim().match(/^[-*]\s+(.*)$/);
-    if (item && cols.length) cols[cols.length - 1].items.push(item[1]);
+    if (k) { cols.push({ kind: ['ohne', 'without'].includes(k.key) ? 'without' : 'with', title: k.value, items: [], marks: [] }); continue; }
+    const item = l.trim().match(/^[-*]\s+(\*\s+)?(.*)$/);
+    if (item && cols.length) {
+      const c = cols[cols.length - 1];
+      if (item[1]) c.marks.push(c.items.length);
+      c.items.push(item[2]);
+    }
   }
+  cols.quote = quote;
   return cols;
 }
 
@@ -542,6 +550,12 @@ export function validateBlock(block) {
     const cols = parseCompare(content);
     if (cols.length !== 2 || cols[0].kind !== 'without' || cols[1].kind !== 'with') errs.push('vergleich: needs an "ohne: Title" column followed by a "mit: Title" column');
     for (const c of cols) between(c.items.length, 2, 5, `points in "${c.title}"`);
+    const marked = cols.map((c) => c.marks.length);
+    if (cols.quote) {
+      if (marked.some((n) => n !== 1)) errs.push('vergleich: a quote sums up one pair, mark exactly one point per column with "- * " (docs/content-blocks.md)');
+      if (cols.quote.length > 140) errs.push(`vergleich: quote has ${cols.quote.length} characters, keep it to one sentence of at most 140`);
+      if (/^[„“"”]|[„“"”]$/.test(cols.quote)) errs.push('vergleich: write the quote without quotation marks, they are added');
+    } else if (marked.some((n) => n > 0)) errs.push('vergleich: marked points need a "zitat:" line (EN "quote:") that sums them up');
   } else if (name === 'hebel') {
     const levers = parseSteps(content);
     between(levers.length, 2, 3, 'levers');
@@ -764,9 +778,9 @@ function partnerFlowSvg(kind, arg, lang) {
 }
 
 // HTML of one block. `readDiagram(hash)` returns the stored SVG or undefined.
-export function renderBlock(block, { lang, isExternal, readDiagram, today = new Date().toISOString().slice(0, 10) }) {
+export function renderBlock(block, { lang, isExternal, readDiagram, base = '/', today = new Date().toISOString().slice(0, 10) }) {
   const t = labels[lang];
-  const o = { lang, isExternal };
+  const o = { lang, isExternal, base };
   const { name, arg, content } = block;
   if (name === 'hinweis') {
     return `<aside class="cb cb-card cb-note cb-note-${arg}">${label(t[arg] ?? arg)}${paras(content, o)}</aside>`;
@@ -856,7 +870,14 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
     return `<figure class="cb cb-strengths" style="--n:${strengths.length}">${label(title)}<ul class="cb-sg-tiles">${tiles}</ul><div class="cb-sg-limits"><p class="cb-sg-head">${escHtml(t.grenzen)}</p><ul>${crosses}</ul></div>${better ? `<p class="cb-sg-better"><span>${escHtml(t.besser)}</span>${inline(better, o)}</p>` : ''}</figure>`;
   }
   if (name === 'vergleich') {
-    return `<div class="cb cb-compare">${parseCompare(content).map((c) => `<div class="cb-compare-col cb-compare-${c.kind}"><p class="cb-compare-title">${inline(c.title, o)}</p><ul>${c.items.map((i) => `<li>${c.kind === 'with' ? icon.check : icon.cross}<span>${inline(i, o)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;
+    // With "zitat:" the marked pair is summed up in a principle card below the
+    // comparison: round photo and quote only, no kicker or attribution (Fabian
+    // 2026-11-07; layout "Quote after a comparison" in docs/layouts.md).
+    const cols = parseCompare(content);
+    const compare = `<div class="cb cb-compare${cols.quote ? ' cb-compare-quoted' : ''}">${cols.map((c) => `<div class="cb-compare-col cb-compare-${c.kind}"><p class="cb-compare-title">${inline(c.title, o)}</p><ul>${c.items.map((i, n) => `<li${c.marks.includes(n) ? ' class="cb-compare-hit"' : ''}>${c.kind === 'with' ? icon.check : icon.cross}<span>${inline(i, o)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;
+    if (!cols.quote) return compare;
+    const [qo, qc] = lang === 'de' ? ['„', '“'] : ['“', '”'];
+    return `${compare}<figure class="cb cb-principle"><span class="cb-principle-link" aria-hidden="true"></span><div class="cb-principle-card"><img class="cb-principle-photo" src="${o.base ?? '/'}quote/fabian-kramer.webp" alt="Fabian Kramer" width="80" height="80" loading="lazy" decoding="async"><blockquote><p class="cb-principle-quote">${qo}${inline(cols.quote, o)}${qc}</p></blockquote></div></figure>`;
   }
   if (name === 'pipeline') {
     const { title, stages, gate, hotfix, notes } = parsePipeline(content);

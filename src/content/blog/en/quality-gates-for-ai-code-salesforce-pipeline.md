@@ -37,13 +37,14 @@ A nearshore developer asks an agent to fix a rounding error in the spare-parts a
 
 ```vergleich
 without: Without a check for version changes
-- Code analysis, tests and coverage are green.
+- * Code analysis, tests and coverage are green.
 - Technicians see "not in stock" for parts in the central warehouse.
 - Dispatchers place emergency orders for parts the company already has.
 with: With a check for version changes
-- The pipeline stops the pull request before anyone reviews it.
+- * The pipeline stops the pull request before anyone reviews it.
 - The partner reverts the version or adds a test as a technician.
 - The missing records show up before the release.
+quote: A green pipeline only checks what someone built into it as a check beforehand.
 ```
 
 That check is a short script, about an afternoon of work. Against it stands pipeline time: at 25 minutes per test deployment, 110 runs are about 46 hours a month, paid in CI minutes, not in anyone's calendar. Why the version change matters is explained in [API 67.0 and user mode](../api-67-apex-user-mode-fewer-records/).

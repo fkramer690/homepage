@@ -74,7 +74,17 @@ The first and most effective step was a simple rule: every change goes through a
 After a few weeks the number of review comments dropped noticeably, because the teams knew the standards. Releases became predictable, and the pipeline's validation runs caught missing dependencies before users ever saw them. Once the process was stable, I handed it over to an internal colleague and trained them, so the client now owns the review process themselves.
 ```
 
-> Reviews are how a programme with many teams agrees on one way of building things.
+```vergleich
+without: Without reviews
+- * Every team builds by its own rules.
+- Changes overwrite each other because nobody agrees who deploys what.
+- Missing dependencies only show up after the release.
+with: Every pull request reviewed
+- * The reviews turn into written standards for all teams.
+- Conflicts between teams show up before the merge.
+- The pipeline finds missing dependencies before a user sees them.
+quote: Reviews are how a programme with many teams agrees on one way of building things.
+```
 
 ## How do you introduce reviews without slowing down?
 

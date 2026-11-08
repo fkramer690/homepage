@@ -37,13 +37,14 @@ Ein Entwickler des Nearshore-Partners lässt einen Agenten einen Rundungsfehler 
 
 ```vergleich
 ohne: Ohne Prüfung auf Versionswechsel
-- Codeanalyse, Tests und Abdeckung sind grün.
+- * Codeanalyse, Tests und Abdeckung sind grün.
 - Techniker sehen „nicht auf Lager“ für Teile im Zentrallager.
 - Disponenten bestellen per Eilauftrag Teile, die schon da sind.
 mit: Mit Prüfung auf Versionswechsel
-- Die Pipeline stoppt den Pull Request, bevor ihn jemand prüft.
+- * Die Pipeline stoppt den Pull Request, bevor ihn jemand prüft.
 - Der Partner nimmt die Version zurück oder testet als Techniker.
 - Die fehlenden Datensätze fallen vor dem Release auf.
+zitat: Eine grüne Pipeline prüft nur, was jemand vorher als Prüfung eingebaut hat.
 ```
 
 Diese Prüfung ist ein kurzes Skript, etwa ein Nachmittag Arbeit. Dagegen steht Pipeline-Zeit: Bei 25 Minuten pro Testdeployment sind 110 Läufe rund 46 Stunden im Monat, bezahlt in CI-Minuten, nicht in Kalendern. Warum der Versionswechsel so viel ändert, steht in [API 67.0 und User Mode](../api-67-apex-user-mode-weniger-datensaetze/).

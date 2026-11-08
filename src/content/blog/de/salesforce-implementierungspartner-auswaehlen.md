@@ -74,11 +74,12 @@ ohne: Discovery nur für den Happy Path
 - Nur der Standardfall nach Schema F ist besprochen.
 - Geräte ohne Seriennummer, Aufträge über zwei Werke oder eigene Rahmenverträge fehlen.
 - Regeln, Datenmodell und Schnittstellen dafür stehen in keiner Schätzung.
-- Die Randfälle kommen später als Change Request.
+- * Die Randfälle kommen später als Change Request.
 mit: Discovery mit Randfällen
-- Die Liste der Sonderfälle liegt dem Angebot bei.
+- * Die Liste der Sonderfälle liegt dem Angebot bei.
 - Annahmen hinter der Schätzung und offene Entscheidungen sind aufgeschrieben.
 - Sie sehen vor der Vergabe, was im Preis steckt und was nicht.
+zitat: Bei Herstellern liegt der Aufwand in den Randfällen, nicht im Standardfall.
 ```
 
 Fragen Sie deshalb nicht, ob eine Discovery stattfand, sondern lassen Sie sich diese Belege zeigen. Kann der Partner nichts davon vorlegen, haben Sie keinen Beleg, dass Randfälle besprochen wurden.

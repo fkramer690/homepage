@@ -2772,6 +2772,22 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 }
 .rc-cv-note { margin: 0.9em 0 0; font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.65); max-width: 60ch; }
 
+/* ```vergleich with "zitat:": the marked pair (left struck through, right bold cyan) and a
+   dashed line from the "with" column into a dark card with round photo and the quote in
+   italic (no kicker, no name line: Fabian 2026-11-07) ("Quote after a comparison" in docs/layouts.md). */
+.prose .cb-compare-without .cb-compare-hit span { color: var(--text-2); text-decoration: line-through; text-decoration-color: var(--grey-500); }
+.prose .cb-compare-with .cb-compare-hit span { color: var(--cyan-dark); font-weight: 700; }
+.prose .cb-compare-quoted { margin-bottom: 0; }
+.prose .cb-principle { display: grid; margin-top: 0; }
+.cb-principle-link { width: 0; height: 36px; margin-left: calc(75% + 4px); border-left: 2px dashed var(--cyan); }
+.cb-principle-card { display: grid; grid-template-columns: 80px minmax(0, 1fr); column-gap: 24px; align-items: center; padding: 28px 32px; border-radius: var(--radius); background: var(--anthracite); color: var(--white); }
+.prose .cb-principle-photo { width: 80px; height: 80px; margin: 0; border: 3px solid var(--cyan); border-radius: 50%; object-fit: cover; }
+.prose .cb-principle blockquote { margin: 0; padding: 0; border: 0; background: none; }
+.prose .cb-principle-quote { margin: 0; font-size: clamp(1.15rem, 2vw, 1.3rem); font-weight: 600; font-style: italic; line-height: 1.35; color: var(--white); }
+@media (max-width: 559px) {
+  .cb-principle-link { height: 28px; margin-left: 50%; }
+  .cb-principle-card { grid-template-columns: 56px minmax(0, 1fr); column-gap: 14px; padding: 20px 18px; }
+  .prose .cb-principle-photo { width: 56px; height: 56px; }
 /* Call hint inside the article text (CallHint.astro, placed by ProseWithHints.astro) */
 .call-hint { margin: 2.4em 0; display: grid; grid-template-columns: 1fr auto; gap: 8px 28px; align-items: center; padding: 24px 28px; border-radius: var(--radius); background: var(--anthracite); color: var(--on-dark); box-shadow: var(--accent-top); }
 .prose .call-hint p { margin: 0; }

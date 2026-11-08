@@ -73,7 +73,17 @@ hotfix: Hotfix: eigener Branch, gleiche Pipeline, Stunden statt Wochen
 fazit: Git-Repository: einzige Quelle der Wahrheit für alle Metadaten
 ```
 
-> Die Pipeline gehört dem Kunden, nicht dem Partner. Wer den Release-Prozess besitzt, besitzt die Plattform.
+```vergleich
+ohne: Pipeline beim Partner
+- * Der Partner bestimmt, wann und wie released wird.
+- Weitere Partner arbeiten nach den Regeln des ersten.
+- Ein Partnerwechsel heißt, die Pipeline neu zu bauen.
+mit: Pipeline beim Kunden
+- * Der Kunde bestimmt Takt und Regeln für alle Partner.
+- Neue Partner steigen in ein Setup mit schriftlichen Standards ein.
+- Ein Partnerwechsel ändert nur die Benutzer.
+zitat: Die Pipeline gehört dem Kunden, nicht dem Partner. Wer den Release-Prozess besitzt, besitzt die Plattform.
+```
 
 Dieser letzte Punkt ist mir als [Architekt auf Kundenseite](../../#about) besonders wichtig. Ein Repository und eine Pipeline unter Kontrolle des Kunden machen Partner vergleichbar und austauschbar. Das ist die Grundlage für [Partnersteuerung und Governance](../../leistungen/partnersteuerung/). Außerdem wird das Onboarding eines neuen Partners deutlich leichter, weil die Standards aufgeschrieben sind und automatisch durchgesetzt werden.
 
