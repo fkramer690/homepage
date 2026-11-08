@@ -36,6 +36,12 @@
   "position": 10
  },
  {
+  "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-product-names-rlm-rca/",
   "clicks": 0,
   "impressions": 1,
@@ -46,11 +52,5 @@
   "clicks": 0,
   "impressions": 1,
   "position": 8
- },
- {
-  "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
  }
 ]

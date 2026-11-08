@@ -8,8 +8,8 @@
  {
   "query": "how to automate technician scheduling and dispatch?",
   "clicks": 0,
-  "impressions": 31,
-  "position": 43.5
+  "impressions": 34,
+  "position": 43.8
  },
  {
   "query": "b2b portal",
@@ -30,22 +30,40 @@
   "position": 68.2
  },
  {
+  "query": "field engineer scheduling",
+  "clicks": 0,
+  "impressions": 23,
+  "position": 93.3
+ },
+ {
+  "query": "field service pricing",
+  "clicks": 0,
+  "impressions": 21,
+  "position": 87
+ },
+ {
+  "query": "sfdx-hardis",
+  "clicks": 1,
+  "impressions": 20,
+  "position": 10.7
+ },
+ {
+  "query": "field service scheduling and dispatch",
+  "clicks": 0,
+  "impressions": 20,
+  "position": 84.1
+ },
+ {
   "query": "(\"nearshore development center\" or \"nearshore partner\" or \"nearshore team\" or \"build delivery center poland\") (enterprise or \"mid-size\" or corporation) (europe or uk or germany or netherlands or scandinavia) -site:linkedin.com -site:twitter.com",
   "clicks": 0,
   "impressions": 19,
   "position": 6.9
  },
  {
-  "query": "field engineer scheduling",
+  "query": "field service shift planning",
   "clicks": 0,
   "impressions": 19,
-  "position": 95.6
- },
- {
-  "query": "field service pricing",
-  "clicks": 0,
-  "impressions": 19,
-  "position": 86.2
+  "position": 74.2
  },
  {
   "query": "salesforce commerce product data",
@@ -60,12 +78,6 @@
   "position": 66.9
  },
  {
-  "query": "field service scheduling and dispatch",
-  "clicks": 0,
-  "impressions": 18,
-  "position": 85.6
- },
- {
   "query": "is salesforce sales planning included with agentforce sales?",
   "clicks": 0,
   "impressions": 18,
@@ -78,28 +90,16 @@
   "position": 43.7
  },
  {
-  "query": "field service shift planning",
+  "query": "field service scheduling",
   "clicks": 0,
   "impressions": 17,
-  "position": 73.2
- },
- {
-  "query": "sfdx-hardis",
-  "clicks": 1,
-  "impressions": 15,
-  "position": 9.2
+  "position": 89.1
  },
  {
   "query": "b2b dealer portal",
   "clicks": 0,
   "impressions": 15,
   "position": 81.3
- },
- {
-  "query": "field service scheduling",
-  "clicks": 0,
-  "impressions": 15,
-  "position": 88.9
  },
  {
   "query": "stakeholder analysis matrix",
@@ -116,8 +116,14 @@
  {
   "query": "services scheduling dispatch",
   "clicks": 0,
+  "impressions": 13,
+  "position": 76.2
+ },
+ {
+  "query": "field service dispatcher",
+  "clicks": 0,
   "impressions": 12,
-  "position": 76.1
+  "position": 73.3
  },
  {
   "query": "agentforce api",
@@ -130,12 +136,6 @@
   "clicks": 0,
   "impressions": 11,
   "position": 37.9
- },
- {
-  "query": "field service dispatcher",
-  "clicks": 0,
-  "impressions": 11,
-  "position": 71.3
  },
  {
   "query": "b2b commerce platform with negotiable quotes",
@@ -156,6 +156,12 @@
   "position": 53.7
  },
  {
+  "query": "headless commerce solutions for b2b",
+  "clicks": 0,
+  "impressions": 10,
+  "position": 74.5
+ },
+ {
   "query": "revenue cloud",
   "clicks": 0,
   "impressions": 10,
@@ -172,6 +178,12 @@
   "clicks": 0,
   "impressions": 9,
   "position": 62.3
+ },
+ {
+  "query": "field service dispatch",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 92
  },
  {
   "query": "field service schedule",
@@ -202,12 +214,6 @@
   "clicks": 0,
   "impressions": 8,
   "position": 37
- },
- {
-  "query": "headless commerce solutions for b2b",
-  "clicks": 0,
-  "impressions": 8,
-  "position": 71.9
  },
  {
   "query": "revenue cloud advanced vs revenue cloud",
@@ -244,12 +250,6 @@
   "clicks": 0,
   "impressions": 7,
   "position": 55
- },
- {
-  "query": "field service dispatch",
-  "clicks": 0,
-  "impressions": 7,
-  "position": 94
  },
  {
   "query": "headless commerce for b2b",
@@ -378,6 +378,12 @@
   "position": 37.4
  },
  {
+  "query": "fertigung salesforce",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 17.6
+ },
+ {
   "query": "field service kpi",
   "clicks": 0,
   "impressions": 5,
@@ -448,12 +454,6 @@
   "clicks": 0,
   "impressions": 4,
   "position": 61.5
- },
- {
-  "query": "fertigung salesforce",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 17.3
  },
  {
   "query": "field service mobile solutions",
@@ -592,6 +592,12 @@
   "clicks": 0,
   "impressions": 3,
   "position": 58.7
+ },
+ {
+  "query": "headless commerce b2b",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 68.3
  },
  {
   "query": "headless commerce solution with advanced b2b account hierarchies.",
@@ -762,10 +768,22 @@
   "position": 63
  },
  {
+  "query": "dispatching field service",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 98.5
+ },
+ {
   "query": "einsatzplanung serviceaufträge",
   "clicks": 0,
   "impressions": 2,
   "position": 42.5
+ },
+ {
+  "query": "epicor kinetic salesforce warranty claim handoff",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 39.5
  },
  {
   "query": "field service",
@@ -804,12 +822,6 @@
   "position": 73
  },
  {
-  "query": "headless commerce b2b",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 72
- },
- {
   "query": "how does gearset position its agent and ai solutions?",
   "clicks": 0,
   "impressions": 2,
@@ -838,6 +850,12 @@
   "clicks": 0,
   "impressions": 2,
   "position": 5.5
+ },
+ {
+  "query": "nearshore salesforce development",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 85
  },
  {
   "query": "offline field service app",
@@ -1020,6 +1038,12 @@
   "position": 94
  },
  {
+  "query": "b2b headless commerce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 87
+ },
+ {
   "query": "b2b händlerportal",
   "clicks": 0,
   "impressions": 1,
@@ -1084,12 +1108,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 25
- },
- {
-  "query": "dispatching field service",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 99
  },
  {
   "query": "does gearset support more salesforce clouds than copado?",
@@ -1200,6 +1218,12 @@
   "position": 77
  },
  {
+  "query": "fksolutions",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
+ },
+ {
   "query": "grax vs flosum",
   "clicks": 0,
   "impressions": 1,
@@ -1254,6 +1278,12 @@
   "position": 56
  },
  {
+  "query": "infor csd salesforce warranty claim handoff",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 46
+ },
+ {
   "query": "intitle:\"agentforce for sales\" (apk or app or download or extension or application) -site:salesforce.com",
   "clicks": 0,
   "impressions": 1,
@@ -1282,12 +1312,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 38
- },
- {
-  "query": "nearshore salesforce development",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 76
  },
  {
   "query": "offline forms",

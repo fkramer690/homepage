@@ -4012,6 +4012,13 @@
  },
  {
   "day": "2026-11-05",
+  "query": "epicor kinetic salesforce warranty claim handoff",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 39.5
+ },
+ {
+  "day": "2026-11-05",
   "query": "field service dispatcher",
   "clicks": 0,
   "impressions": 2,
@@ -4156,6 +4163,13 @@
   "clicks": 0,
   "impressions": 1,
   "position": 74
+ },
+ {
+  "day": "2026-11-05",
+  "query": "infor csd salesforce warranty claim handoff",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 46
  },
  {
   "day": "2026-11-05",
@@ -4460,6 +4474,76 @@
  },
  {
   "day": "2026-11-07",
+  "query": "sfdx-hardis",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 13
+ },
+ {
+  "day": "2026-11-07",
+  "query": "field engineer scheduling",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 82.5
+ },
+ {
+  "day": "2026-11-07",
+  "query": "how to automate technician scheduling and dispatch?",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 47.7
+ },
+ {
+  "day": "2026-11-07",
+  "query": "field service dispatch",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 85
+ },
+ {
+  "day": "2026-11-07",
+  "query": "field service pricing",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 95
+ },
+ {
+  "day": "2026-11-07",
+  "query": "field service scheduling",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 90
+ },
+ {
+  "day": "2026-11-07",
+  "query": "field service scheduling and dispatch",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 70.5
+ },
+ {
+  "day": "2026-11-07",
+  "query": "field service shift planning",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 82.5
+ },
+ {
+  "day": "2026-11-07",
+  "query": "headless commerce b2b",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 60
+ },
+ {
+  "day": "2026-11-07",
+  "query": "headless commerce solutions for b2b",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 85
+ },
+ {
+  "day": "2026-11-07",
   "query": "b2b checkout",
   "clicks": 0,
   "impressions": 1,
@@ -4467,10 +4551,45 @@
  },
  {
   "day": "2026-11-07",
-  "query": "headless commerce b2b",
+  "query": "b2b headless commerce",
   "clicks": 0,
   "impressions": 1,
-  "position": 59
+  "position": 87
+ },
+ {
+  "day": "2026-11-07",
+  "query": "dispatching field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 98
+ },
+ {
+  "day": "2026-11-07",
+  "query": "fertigung salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 19
+ },
+ {
+  "day": "2026-11-07",
+  "query": "field service dispatcher",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 95
+ },
+ {
+  "day": "2026-11-07",
+  "query": "fksolutions",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
+ },
+ {
+  "day": "2026-11-07",
+  "query": "nearshore salesforce development",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 94
  },
  {
   "day": "2026-11-07",
@@ -4481,9 +4600,9 @@
  },
  {
   "day": "2026-11-07",
-  "query": "sfdx-hardis",
+  "query": "services scheduling dispatch",
   "clicks": 0,
   "impressions": 1,
-  "position": 3
+  "position": 78
  }
 ]

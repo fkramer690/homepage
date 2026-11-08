@@ -43,6 +43,13 @@
  },
  {
   "period": "2026-10-30",
+  "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "period": "2026-10-30",
   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-product-names-rlm-rca/",
   "clicks": 0,
   "impressions": 1,
@@ -54,12 +61,5 @@
   "clicks": 0,
   "impressions": 1,
   "position": 8
- },
- {
-  "period": "2026-10-30",
-  "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
  }
 ]
