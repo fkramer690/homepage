@@ -36,36 +36,39 @@ phases:
   - title: "Steuerung"
     icon: "steer"
     text: "In der Umsetzung steuere ich Plan, Risiken und Qualität, halte Abhängigkeiten zwischen Teams sichtbar und berichte dem Management in einem Format, das Entscheidungen unterstützt."
+duration: "Plan und Partnerauswahl 4 bis 8 Wochen. Bis ein neues Team voll liefert, vergehen 2 bis 3 Monate. Die Steuerung läuft danach über die Programmlaufzeit, meist 12 Monate und mehr."
 faq:
   - q: "Wie groß sollte ein Nearshore-Team für Salesforce sein?"
-    a: "Bis zu etwa acht Entwickler pro Team. Darüber funktionieren agile Teams selten gut: Die Abstimmung nimmt überhand, und Sprint-Meetings werden lang. Braucht ein Programm mehr Kapazität, setze ich mehrere Teams mit klaren Verantwortlichkeiten auf statt eines großen."
+    a: "Etwa acht Entwickler. Wird mehr Kapazität gebraucht, plane ich ein weiteres Team mit eigenem Verantwortungsbereich, weil in einem großen Team die Abstimmung schneller wächst als die Leistung."
   - q: "Was macht Nearshore-Teams erfolgreich?"
-    a: "Kultur, gemeinsame Werte, Vertrauen und der Wille zu liefern, auf beiden Seiten. Dazu braucht es Rückhalt im Management, weil ein Nearshore-Team Zeit, Aufmerksamkeit und Entscheidungen vom Kunden braucht. Skills zählen, sind aber selten der Grund, warum ein Team kämpft."
+    a: "Ein Partner, der Werte und Vertrauen teilt und liefern will, und ein Kunde, der Zeit, Zugänge und Entscheidungen bereitstellt. Fehlende Skills sind nach meiner Erfahrung selten der Grund, warum ein Team kämpft."
   - q: "Was bremst Nearshore-Teams aus?"
-    a: "Rotierende Ressourcen und hohe Fluktuation, weil mit jedem Wechsel Wissen über die Org verloren geht. Auch zu seniore Teams können Probleme machen: Erfahrene Entwickler, die alle entwerfen wollen, und niemand, der bauen möchte, bringen Unruhe und bremsen das Team."
+    a: "Vor allem häufige Wechsel in der Besetzung, ob durch Rotation beim Partner oder durch Kündigungen, weil jedes Mal Wissen über die Org verloren geht. Ein Team aus lauter Seniors bremst ebenfalls: Es diskutiert Entwürfe, statt zu bauen."
 blogTags: [nearshore, pull request review, code quality, codequalität, devops, projektmanagement]
+readMore: [nearshore-team-size, development-standards-definition-of-done, pull-request-reviews-enterprise, salesforce-center-of-excellence, salesforce-uat-business-testing, nearshore-teams-with-ai-agents, smaller-teams-ai-native-delivery]
+masterclass: devops
 ---
 
-Programmsteuerung auf Kundenseite heißt, ein Salesforce-Programm über interne Teams, Umsetzungspartner und Nearshore-Teams hinweg zu planen und zu steuern. Dazu gehören der Plan mit seinen Abhängigkeiten, das Team-Setup, die Steuerung von Risiken und Qualität und ein Reporting, das dem Management Entscheidungen erleichtert. Nearshore-Teams sind oft Teil davon, weil sie Umsetzungskapazität zu einem vernünftigen Preis bringen. Ich habe mit Nearshore-Teams in Osteuropa und Indien gearbeitet, und die Erfahrungen waren in beiden Regionen dieselben.
+Programmsteuerung auf Kundenseite heißt, ein Salesforce-Programm über interne Teams, Umsetzungspartner und Nearshore-Teams hinweg zu planen und zu steuern. Dazu gehören der Plan mit seinen Abhängigkeiten, das Team-Setup, die Steuerung von Risiken und Qualität und ein Reporting, das dem Management Entscheidungen erleichtert. Nearshore-Teams sind oft Teil davon, weil sie Umsetzungskapazität zu einem vernünftigen Preis bringen. Meine Nearshore-Erfahrung stammt aus Teams in Osteuropa und Indien, und in beiden Regionen zeigten sich dieselben Muster.
 
 ## Warum tun sich Nearshore-Teams schwer?
 
-Liefert ein Nearshore-Team weniger als erwartet, werden oft zuerst die Skills verantwortlich gemacht. Nach meiner Erfahrung liegen die Gründe woanders, und für jeden gibt es eine Antwort im Setup:
+Selten wegen fehlender Skills. Wenn ich ein laufendes Nearshore-Setup übernehme, finde ich fast immer dieselben vier Ursachen, und jede lässt sich im Setup beheben. Die Begründung im Detail steht in [Nearshore-Teams für Salesforce: Warum höchstens acht?](../../blog/nearshore-teams-salesforce-acht-entwickler/).
 
 ```vergleich
-ohne: Woran Nearshore-Teams hängen bleiben
-- **Rotierende Ressourcen:** Werden Entwickler alle paar Monate verschoben, geht das Wissen über die Org mit ihnen.
-- **Hohe Fluktuation:** Der Effekt ist derselbe, und sie bringt Unruhe in den Rest des Teams.
-- **Zu seniore Teams:** Zu viele wollen entwerfen, zu wenige bauen.
-- **Fehlender Rückhalt im Management:** Ohne Entscheidungen, Zugänge und Aufmerksamkeit vom Kunden wartet das Team.
-mit: Ein Setup, das stabil liefert
-- Regeln zu Besetzung und Rotation stehen fest, bevor der erste Sprint startet.
-- Neue Teammitglieder lernen die Konventionen der Org in den Pull-Request-Reviews.
-- Das Team-Setup legt einen Senioritätsmix fest, mit Leuten, die bauen wollen.
-- Das Management bekommt Status, Risiken und Entscheidungen regelmäßig vorgelegt.
+ohne: Was ich in schwachen Setups vorfinde
+- **Wechselnde Besetzung:** Der Partner zieht Entwickler nach ein paar Monaten ab, und die Kenntnis der Org verschwindet mit ihnen.
+- **Abgänge im Team:** Jede Kündigung kostet Wochen Einarbeitung und verunsichert die, die bleiben.
+- **Nur Seniors:** Viele Architekturideen, wenige fertige User Stories.
+- **Niemand beim Kunden greifbar:** Fragen und Freigaben bleiben liegen, und das Team wartet auf Kosten des Kunden.
+mit: Was ich stattdessen aufsetze
+- Mindestverweildauer und Übergaberegeln sind mit dem Partner vereinbart, bevor das Team startet.
+- Die Konventionen der Org lernen neue Leute im Review, nicht aus einem Wiki.
+- Wenige Seniors tragen Architektur und Reviews, dazu kommen Entwickler, die gern umsetzen.
+- Ein fester Ansprechpartner beim Kunden und ein Reporting, das Entscheidungen einfordert.
 ```
 
-## Höchstens acht Entwickler pro Team und feste Regeln zur Rotation
+## Kleine Teams, feste Besetzung, eine Pipeline
 
 ```kennzahlen
 8 | Entwickler pro Team, höchstens
@@ -74,13 +77,11 @@ mit: Ein Setup, das stabil liefert
 quelle: meine Nearshore-Teams in Salesforce-Programmen
 ```
 
-Ich halte Teams bei bis zu etwa acht Entwicklern. Größere agile Teams funktionieren selten gut, weil die Abstimmung überhandnimmt. Braucht das Programm mehr Kapazität, bekommt es mehrere Teams mit klaren Verantwortlichkeiten.
+Jedes Team, das ich aufsetze, bleibt bei etwa acht Entwicklern. Mehr Kapazität bedeutet ein weiteres Team mit eigenem Stream, nicht ein größeres. Warum die Grenze gerade dort liegt, rechne ich im Blogartikel zur Teamgröße vor.
 
-Vor dem ersten Sprint vereinbaren Kunde und Partner Regeln zu Besetzung und Rotation. Kultur zählt so viel wie Skills: gemeinsame Werte, Vertrauen und der Wille zu liefern, auf beiden Seiten. Darauf achte ich bei der Partnerauswahl und in den ersten Wochen jedes neuen Teams.
+Bei der Partnerauswahl zählen für mich Kultur und der Wille zu liefern so viel wie Zertifikate. Dazu gehört die Frage, wie der Partner Besetzung und Rotation regelt, denn genau dort entscheidet sich, ob das Team nach einem halben Jahr noch dasselbe ist.
 
-Vom ersten Tag an arbeitet ein Nearshore-Team mit denselben Standards, Pull-Request-Reviews und derselben Pipeline wie alle anderen. In Reviews wird die Qualität geprüft, und neue Teammitglieder lernen dort die Konventionen der Org, wie in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../../blog/warum-pull-request-reviews-pflicht-sind/) beschrieben.
-
-![Mehrere kleine Teams auf einer gemeinsamen Basis: Jedes Team hat bis zu etwa acht Entwickler und klare Verantwortlichkeiten. Vom ersten Tag an arbeitet jedes Team mit denselben Standards, Pull-Request-Reviews und derselben Pipeline wie alle anderen. Regeln zu Besetzung und Rotation werden vor dem ersten Sprint vereinbart, und ein Programmplan mit Streams und Abhängigkeiten sowie ein Release-Prozess halten die Teams zusammen.](../../../assets/blog/nearshore-team-setup-de.png)
+Ab dem ersten Tag liefert ein neues Team über dasselbe Repository, dieselben Reviews und dieselbe Pipeline wie alle anderen Teams. Wie Reviews dabei Qualität sichern und Wissen weitergeben, steht in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../../blog/warum-pull-request-reviews-pflicht-sind/).
 
 ## Steuerung über mehrere Teams und Partner
 

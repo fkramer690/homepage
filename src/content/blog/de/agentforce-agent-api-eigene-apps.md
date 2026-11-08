@@ -101,7 +101,7 @@ Offen ist der Zähler für Headless Platform Interactions. Die Rate Card führt 
 Keine der beiden Quellen sagt, ob ein Agent-API-Aufruf aus Ihrer Händler-App zusätzlich zu den Aktionen des Agenten als Headless Platform Interaction zählt. Diese Antwort würde ich mir vom Account Executive schriftlich geben lassen.
 ```
 
-Wie man einen Zähler ohne Preis budgetiert, steht in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
+Wie man einen Zähler ohne Preis budgetiert, steht in [MCP-Zugriffe als Budgetrisiko](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Mit einem lesenden Anwendungsfall wie dem Auftragsstatus beginnen
 

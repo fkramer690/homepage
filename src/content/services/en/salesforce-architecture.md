@@ -36,6 +36,7 @@ phases:
   - title: "Architecture during delivery"
     icon: "architecture"
     text: "During implementation I review partner designs, keep the decision log current and step in when the build drifts away from the target picture."
+duration: "Target picture with data model and decision log 6 to 10 weeks, solution designs for the critical areas another 4 to 8 weeks. After that I accompany the build, usually 1 to 2 days a week."
 faq:
   - q: "What does a Salesforce architect on the client side do?"
     a: "They design the target architecture in the interest of the company, not of a vendor or partner: which clouds and products are needed, how the data model looks, how Salesforce connects to the other systems, and which decisions are documented for the long term. During delivery they review what partners build against that picture."
@@ -44,6 +45,8 @@ faq:
   - q: "What is a decision log and why does it matter?"
     a: "A decision log records every architecture decision with its options, the reasons for the choice and its consequences. Two years later, when someone asks why a process was built a certain way, the answer is there, even if the people who made the decision have moved on."
 blogTags: [architecture, architektur, data 360, data governance, agentforce, field service]
+readMore: [salesforce-well-architected-2026, revenue-cloud-vs-manufacturing-cloud-commerce, manufacturing-cloud-worth-it, salesforce-editions-core-advanced-max, architecture-decision-log, permission-concept-permission-sets, duplicates-master-data-cleanup]
+masterclass: manufacturing-cloud
 ---
 
 Salesforce architecture on the client side means designing the overall picture in the interest of the company: which clouds and products it needs, how the data model looks, how Salesforce works with ERP and other systems, and how decisions are documented. My role is independent from vendors and partners, which matters most when a partner proposes the next product.

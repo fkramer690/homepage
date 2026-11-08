@@ -65,7 +65,7 @@ The Agentforce add-on already includes unmetered use for employees. The Agentfor
 
 Salesforce lists Flex Credits at [$500 per 100,000](https://www.salesforce.com/agentforce/pricing/), and a standard action costs 20 credits, according to the [announcement of the pricing model](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/). One million Flex Credits are therefore worth $5,000 a year at list price, or 50,000 standard actions. If the Scheduling Agent row means a second million, it is $10,000.
 
-The premium is per user, the credits are per org. $220 per user and month are $2,640 per user and year. $5,000 in credits cover the premium for 1.9 users, $10,000 for 3.8 users. From the fifth user on, the credits alone never justify the bundle. How to estimate credits per process in detail is covered in [Flex Credits: estimating Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
+The premium is per user, the credits are per org. $220 per user and month are $2,640 per user and year. $5,000 in credits cover the premium for 1.9 users, $10,000 for 3.8 users. From the fifth user on, the credits alone never justify the bundle. How to estimate credits per process in detail is covered in [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/).
 
 ## Worked example: 50 users and a booking agent
 
@@ -95,7 +95,7 @@ contra: Single add-ons win when
 - customer-facing agents are still a pilot and the credit need is unknown
 ```
 
-A third route sits outside both lists: an agreement with a fixed fee for Agentforce, Data 360 and MuleSoft. When that is worth it is covered in [Salesforce AELA vs Flex Credits](../aela-agentforce-flat-fee-vs-credits/). Which agents for customers, dispatchers and technicians are ready today is covered in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/).
+A third route sits outside both lists: an agreement with a fixed fee for Agentforce, Data 360 and MuleSoft. When that is worth it is covered in [Salesforce AELA vs Flex Credits](../flex-credits-agentforce-cost-per-action/). Which agents for customers, dispatchers and technicians are ready today is covered in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/).
 
 ## Write down the AI features per role and compare three columns
 

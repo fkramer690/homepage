@@ -65,7 +65,7 @@ Deflection is the number vendors like to show, and the weakest of the set. A dea
 Once an LLM judges deflection and abandonment, the definition can change under your trend line. Note the prompt version next to each monthly figure.
 ```
 
-Billing adds a third definition. For resolution-based Help Agent pricing, according to [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/), a messaging session with more than two turns, no feedback and no escalation request that runs past two hours is billed as resolved. That model is compared with Flex Credits in [what a dealer service agent costs](../dealer-service-agent-cost-calculation/).
+Billing adds a third definition. For resolution-based Help Agent pricing, according to [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/), a messaging session with more than two turns, no feedback and no escalation request that runs past two hours is billed as resolved. That model is compared with Flex Credits in [what a dealer service agent costs](../flex-credits-agentforce-cost-per-action/).
 
 So I count an enquiry as resolved only when the task resolution detector says so, and a senior service rep reads 50 sessions a month. Wrong answers in sessions marked as resolved mean the KPI is too optimistic, and that gap goes into the report.
 

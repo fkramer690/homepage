@@ -6,7 +6,7 @@ description: Write or update a blog article for the FK Solution Design homepage 
 # Writing a blog article
 
 1. Read `docs/blog-guidelines.md` completely. Its rules are binding.
-2. Copy `docs/blog-template.md` to `src/content/blog/en/<slug>.md` and write the English version.
+2. Check the keyword against the competition with DataForSEO before writing (see "SEO" in the guidelines, R5): if only strong domains rank, choose a more specific long-tail keyword. Note the result in the pull request. Then copy `docs/blog-template.md` to `src/content/blog/en/<slug>.md` and write the English version.
 3. Write the German version in `src/content/blog/de/<german-slug>.md` with the same `translationKey`. Localise, use "Sie".
 4. Only use experience and examples Fabian has confirmed (briefing, project memory, his messages). Ask him when an example is missing instead of inventing one.
 5. Do a slop review of both versions (see "No AI slop" in the guidelines): delete every sentence that would fit any article, replace generic claims with Fabian's concrete facts, read it out loud once.

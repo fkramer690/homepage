@@ -90,7 +90,7 @@ Ebenso offen ist, ob Disponenten, die weitergeleitete Anrufe annehmen, einen eig
 
 Für diese Arbeitsplätze nennt die [Preisseite von Salesforce Voice](https://www.salesforce.com/eu/service/call-center-integration/voice-pricing/) Contact Centre mit 125 € pro Nutzer und Monat inklusive unbegrenzter Plattform-Sprachminuten oder Partner Contact Centre mit 50 €, wenn Sie Ihren Telefonieanbieter behalten.
 
-Wie man Kosten pro Aktion grundsätzlich schätzt, steht in [Flex Credits: Agentforce-Kosten pro Aktion schätzen](../flex-credits-agentforce-kosten-pro-aktion/).
+Wie man Kosten pro Aktion grundsätzlich schätzt, steht in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Rechenbeispiel: 400 Hotline-Anrufe im Monat
 

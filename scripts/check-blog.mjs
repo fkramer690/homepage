@@ -37,6 +37,9 @@ const structurePhrases = [
   /die gute nachricht/i, /the good news/i, /\bder haken\b/i, /\bthe catch\b/i, /the honest answer/i, /die ehrliche antwort/i,
   /ein typisches szenario, als annahme/i, /a typical scenario, as an assumption/i, /^(erstens|zweitens|firstly|secondly)\b/im, /\b(drittens|thirdly)\b/i,
 ];
+// Back-references to other sections: AI search quotes single sections, so every H2 section must be
+// understandable on its own (KS2, AI search checklist 2026-11-03). Name the point again instead.
+const backReference = /\bwie (oben|bereits|schon) (beschrieben|erwähnt|gesagt|gezeigt|erklärt)|\bwie oben im\b|\bsiehe oben\b|\boben genannte[nmrs]?\b|\bim (vorigen|vorherigen|letzten) abschnitt\b|\bas (described|mentioned|shown|noted|explained) (above|earlier|before)\b|\bsee above\b|\b(in )?the previous section\b|\bmentioned earlier\b/i;
 const genericCloser = /^(wo (fangen sie an|starten sie|sollten sie (anfangen|starten))|womit (fangen sie an|sollten sie anfangen)|where (do|should) you (start|begin)|what should you start with)\??$/i;
 const countAnnounce = /\b(drei|vier|fünf|three|four|five) (dinge|punkte|fragen|regeln|gründe|entscheidungen|kriterien|hebel|things|points|questions|rules|reasons|decisions|criteria|levers)\b/gi;
 const intensifiers = { de: /\b(echt(e|er|en|es|em)?|wirklich|tatsächlich|ehrlich)\b/gi, en: /\b(really|actually|honest(ly)?|genuinely|truly)\b/gi };
@@ -159,6 +162,10 @@ function check(collection, rules) {
       if (words < rules.minWords) fail(`${words} words, at least ${rules.minWords} needed`);
       if (words > rules.maxWords) fail(`${words} words, split it up (max ${rules.maxWords})`);
 
+      if (collection !== 'services') {
+        const back = text.match(backReference);
+        if (back) fail(`"${back[0]}": each section must stand on its own for AI search, name the point again instead of pointing back (KS2)`);
+      }
       if (/^# /m.test(text)) fail('no H1 (#) in the body, the title is the H1');
       const h2 = [...text.matchAll(/^## (.+)$/gm)].map((m) => m[1].trim());
       if (h2.length < rules.minH2) fail(`${h2.length} H2 sections, at least ${rules.minH2} needed`);

@@ -77,7 +77,7 @@ source: Salesforce Agentforce pricing page
 
 Prompts come on top and depend on the model tier.
 
-A rough estimate, as an assumption: a quote dialogue needs five actions, such as finding the account, searching products, creating the quote, adding lines and applying a discount. That is 100 credits or $0.50 per quote. At 1,500 agent quotes a month you are at about $750 plus prompts. Tests in a sandbox also consume credits. How to estimate all meters is in [Flex Credits: estimating Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), and the AI masterclass chapter on [costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/) puts it into a budget.
+A rough estimate, as an assumption: a quote dialogue needs five actions, such as finding the account, searching products, creating the quote, adding lines and applying a discount. That is 100 credits or $0.50 per quote. At 1,500 agent quotes a month you are at about $750 plus prompts. Tests in a sandbox also consume credits. How to estimate all meters is in [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/), and the AI masterclass chapter on [costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/) puts it into a budget.
 
 ## When is the quoting agent the wrong tool?
 

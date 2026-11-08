@@ -74,7 +74,7 @@ Die Ankündigungen sind größer als das, was sich einschalten lässt. Stand 27.
 quelle: Anthropic zu Salesforce in Claude; Salesforce Flex Credits Rate Card vom 31.08.2026
 ```
 
-Zu den Kosten sagt die Ankündigung: „Pricing and packaging are subject to change.“ Die Rate Card führt Headless Platform Interactions, den Zähler für agentische API- und MCP-Aufrufe, als „TBA“. Warum daraus ein Budgetposten wird, steht in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
+Zu den Kosten sagt die Ankündigung: „Pricing and packaging are subject to change.“ Die Rate Card führt Headless Platform Interactions, den Zähler für agentische API- und MCP-Aufrufe, als „TBA“. Warum daraus ein Budgetposten wird, steht in [MCP-Zugriffe als Budgetrisiko](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Für Hersteller hilft AIforce heute dem Vertrieb mehr als dem Service
 

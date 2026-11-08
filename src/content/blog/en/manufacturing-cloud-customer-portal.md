@@ -114,7 +114,7 @@ Cases are the most familiar part of the portal. Here Manufacturing Cloud helps w
 
 Before the portal is built, settle these points:
 
-1. **What do customers see and do?** A list of features, as in the first section above.
+1. **What do customers see and do?** A list of features: what customers only see (sales agreements, orders, cases) and what they do themselves (request, order, maintain master data).
 2. **Which licence covers it?** Confirmed in writing, especially for sales agreements.
 3. **Which fields go outside?** For the sales agreement and the master data, without margin and cost.
 4. **Which data flows back to the ERP?** One direction and one error handling per field.

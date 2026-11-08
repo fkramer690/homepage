@@ -46,7 +46,7 @@ Für die Angebotserstellung gibt es heute drei Wege: Revenue Cloud Advanced von 
 
 Im Projekt haben wir einen eigenen CPQ-Ansatz verfolgt. Ob das heute wieder die richtige Wahl wäre, hängt von denselben Fragen ab, die ich bei jeder Make-or-buy-Entscheidung stelle:
 
-- **Wie gut passt das Standardmodell?** Konfiguratoren von der Stange sind oft für Optionen und Stücklisten gebaut. Produkteigenschaften mit Kostenwirkung, wie oben beschrieben, passen nicht immer in dieses Modell.
+- **Wie gut passt das Standardmodell?** Konfiguratoren von der Stange sind oft für Optionen und Stücklisten gebaut. Produkteigenschaften mit Kostenwirkung passen nicht immer in dieses Modell.
 - **Wer pflegt die Regeln?** Ein eigener Konfigurator ist eigener Code, der bei jedem Release mitgetestet und von jemandem gepflegt werden muss.
 - **Was kostet die Lizenz über mehrere Jahre?** Ein Standardprodukt kostet pro Nutzer, ein eigener Ansatz kostet Entwicklung und Wartung.
 

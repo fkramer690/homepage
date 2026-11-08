@@ -53,13 +53,28 @@ function cleanOrganic(item) {
   } catch {}
   const crumb = hostOf(item.breadcrumb);
   if (crumb && !GOOGLE_HOST.test(crumb)) {
-    // Keep the path from the breadcrumb so the own page can still be named.
-    const path = String(item.breadcrumb).split('›').slice(1).map((p) => p.trim()).filter(Boolean).join('/');
+    // Keep the breadcrumb path where it looks like real URL segments; Google also shows the
+    // site name ("FK Solution Design › Blog") or cuts segments short ("freelanceproje...").
+    const segments = String(item.breadcrumb).split('›').slice(1).map((p) => p.trim()).filter(Boolean);
+    const cut = segments.findIndex((p) => !/^[\w.~%-]+$/.test(p) || /\.\.\.|…/.test(p));
+    const path = (cut === -1 ? segments : segments.slice(0, cut)).join('/');
     return { ...item, url: `https://${crumb}/${path}`, domain: crumb, resolved: 'breadcrumb' };
   }
+  // Some results carry no breadcrumb but name the site ("sortlist.de"); forum and video
+  // results name the platform ("Reddit · r/salesforce", "YouTube · Salesforce Ben"). They
+  // are real results and must keep their slot, or every position below them moves up.
+  const name = String(item.website_name ?? '').split('·')[0].trim();
+  const site = hostOf(name) || PLATFORMS[name.toLowerCase()] || '';
+  if (site && !GOOGLE_HOST.test(site)) return { ...item, url: `https://${site}/`, domain: site, resolved: 'website_name' };
+  if (name && item.title) return { ...item, url: '', domain: name.toLowerCase(), resolved: 'website_name' };
   return null;
 }
+const PLATFORMS = {
+  reddit: 'www.reddit.com', youtube: 'www.youtube.com', linkedin: 'www.linkedin.com', facebook: 'www.facebook.com',
+  medium: 'medium.com', instagram: 'www.instagram.com', tiktok: 'www.tiktok.com', x: 'x.com', quora: 'www.quora.com',
+};
 const googleSamples = [];
+const droppedSamples = [];
 let googleDropped = 0;
 let googleResolved = 0;
 
@@ -107,6 +122,11 @@ for (const lang of ['de', 'en']) {
       const rawOrganic = items.filter((i) => i.type === 'organic');
       const organic = rawOrganic.map(cleanOrganic).filter(Boolean);
       const dropped = rawOrganic.length - organic.length;
+      for (const i of rawOrganic) {
+        if (droppedSamples.length < 15 && !cleanOrganic(i)) {
+          droppedSamples.push({ keyword, rank: i.rank_group, url: i.url?.slice(0, 80), title: i.title, breadcrumb: i.breadcrumb, websiteName: i.website_name });
+        }
+      }
       googleDropped += dropped;
       googleResolved += organic.filter((i) => i.resolved).length;
       const sample = rawOrganic.find((i) => GOOGLE_HOST.test(hostOf(i.url) || i.domain || ''));
@@ -170,6 +190,7 @@ for (const lang of ['de', 'en']) {
 
 const failed = Object.values(languages).flat().filter((r) => r.error).map((r) => r.keyword);
 console.error(`google.com links resolved: ${googleResolved}, dropped: ${googleDropped}`);
+for (const s of droppedSamples) console.error(`  dropped "${s.keyword}" #${s.rank}: ${s.url} | ${s.breadcrumb} | ${s.websiteName} (${s.title})`);
 for (const s of googleSamples) console.error(`  e.g. "${s.keyword}" #${s.rank}: ${s.url} | ${s.breadcrumb} (${s.title})`);
 console.error(`failed keywords: ${failed.length ? failed.join(', ') : 'none'}`);
 console.error(`cost of this run ${cost.toFixed(4)} USD`);
@@ -182,7 +203,7 @@ console.log(JSON.stringify({
   cost: Number(cost.toFixed(4)),
   // Data quality of this run: Google's own links removed from the organic list, and
   // keywords whose SERP could not be fetched. A run with failures is not comparable.
-  quality: { googleResolved, googleDropped, googleSamples, failed },
+  quality: { googleResolved, googleDropped, googleSamples, droppedSamples, failed },
   ...languages,
   ranked,
 }, null, 2));

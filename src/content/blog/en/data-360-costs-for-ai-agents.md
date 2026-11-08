@@ -81,7 +81,7 @@ Assume a machine builder whose agent answers dealers and service reps on spare p
 
 For the searches I assume each query counts the whole index. The help article says that for hybrid search "the number of vectors and keyword records in the search index are counted", and that a typical index has as many keyword records as vectors. Salesforce's own [pricing example](https://www.salesforce.com/data/pricing/agentforce-use-case/) assumes a query scans 20 percent of the unstructured data, so my figure errs on the safe side.
 
-Three results stand out. Searches are 7 percent of the running cost. With the default parser for the catalogues too, the initial load would cost 1,164,000 credits instead of 2,664,000. And the first year comes to about 5 million credits, more than the 2.75 million Flex Credits per org per year that Salesforce lists for Max Edition, before a single agent action. The agent side of the bill is in [what a dealer service agent costs](../dealer-service-agent-cost-calculation/).
+Three results stand out. Searches are 7 percent of the running cost. With the default parser for the catalogues too, the initial load would cost 1,164,000 credits instead of 2,664,000. And the first year comes to about 5 million credits, more than the 2.75 million Flex Credits per org per year that Salesforce lists for Max Edition, before a single agent action. The agent side of the bill is in [what a dealer service agent costs](../flex-credits-agentforce-cost-per-action/).
 
 ## The hidden Data 360 costs
 

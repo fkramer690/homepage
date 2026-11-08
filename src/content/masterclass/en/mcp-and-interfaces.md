@@ -13,7 +13,7 @@ takeaways:
   - "Hosted MCP has no service accounts and no machine-to-machine flows. Unattended night-time agents need the Agent API or a classic integration."
   - "The Salesforce docs do not say whether the Einstein Trust Layer applies when Claude reads data through Hosted MCP. The AI vendor contract is what counts."
   - "Agentic MCP and API calls will consume Flex Credits as Headless Platform Interactions. The rate card still lists the rate as TBA."
-articles: [salesforce-dx-mcp-server-end-of-life, mcp-explained-salesforce-it-leads, hosted-mcp-servers-data-access, headless-platform-interactions-budget]
+articles: [salesforce-dx-mcp-server-end-of-life, mcp-explained-salesforce-it-leads, hosted-mcp-servers-data-access, flex-credits-agentforce-costs]
 faq:
   - q: "What happens to the Salesforce DX MCP Server on 2 November 2026?"
     a: "According to the maintainers' notice (issue 46 in the forcedotcom/mcp repository), the local server then gets no more maintenance, support or releases. The npm package is marked deprecated but stays installable. Pin version 0.30.15 and plan the move to skills, the plugin and Hosted MCP."
@@ -117,7 +117,7 @@ Then there is prompt injection. In [ForcedLeak](https://thehackernews.com/2025/0
 
 The [Hosted MCP Servers overview](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) says: "intended only for customers with Flex Credits and you may be billed for server usage". The [Flex Credits rate card dated 31 Aug 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) lists the meter "Headless Platform Interaction" with the rate TBA. According to [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), successful calls by registered agents via MCP or API count, metering applies only to active production orgs, customers get 30 days' notice, and existing API integrations keep their current pricing.
 
-For planning, this means you do not know the price, but you can estimate the volume. Count users, questions per day and tool calls per question, because an agent often calls several tools for one answer. The worked numbers are in [MCP and API calls to Salesforce as a budget risk](../../../blog/mcp-api-calls-salesforce-budget-risk/), and the cost models as a whole in [chapter 7](../costs-and-tokens/).
+For planning, this means you do not know the price, but you can estimate the volume. Count users, questions per day and tool calls per question, because an agent often calls several tools for one answer. The worked numbers are in [MCP and API calls to Salesforce as a budget risk](../../../blog/flex-credits-agentforce-cost-per-action/), and the cost models as a whole in [chapter 7](../costs-and-tokens/).
 
 ## Walk-through: service data in Claude at a machine builder
 
