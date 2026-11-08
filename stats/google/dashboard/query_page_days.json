@@ -6105,6 +6105,14 @@
  },
  {
   "day": "2026-11-06",
+  "query": "salesforce 264 release date",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 30
+ },
+ {
+  "day": "2026-11-06",
   "query": "salesforce architektur essen",
   "page": "https://www.fk-sd.de/leistungen/",
   "clicks": 0,
@@ -6193,6 +6201,30 @@
  },
  {
   "day": "2026-11-07",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 80
+ },
+ {
+  "day": "2026-11-07",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/en/speaking/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 10
+ },
+ {
+  "day": "2026-11-07",
+  "query": "b2b headless commerce",
+  "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 68.5
+ },
+ {
+  "day": "2026-11-07",
   "query": "field service dispatch",
   "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
   "clicks": 0,
@@ -6249,19 +6281,27 @@
  },
  {
   "day": "2026-11-07",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/blog/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 24.5
+ },
+ {
+  "day": "2026-11-07",
+  "query": "adkar modell",
+  "page": "https://www.fk-sd.de/blog/change-management-modelle/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 92
+ },
+ {
+  "day": "2026-11-07",
   "query": "b2b checkout",
   "page": "https://www.fk-sd.de/en/blog/b2b-checkout-purchase-order-card-invoice/",
   "clicks": 0,
   "impressions": 1,
   "position": 63
- },
- {
-  "day": "2026-11-07",
-  "query": "b2b headless commerce",
-  "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 87
  },
  {
   "day": "2026-11-07",
@@ -6305,11 +6345,27 @@
  },
  {
   "day": "2026-11-07",
+  "query": "salesforce architecture planning",
+  "page": "https://www.fk-sd.de/en/services/salesforce-architecture/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 89
+ },
+ {
+  "day": "2026-11-07",
   "query": "salesforce konfiguration",
   "page": "https://www.fk-sd.de/blog/",
   "clicks": 0,
   "impressions": 1,
   "position": 29
+ },
+ {
+  "day": "2026-11-07",
+  "query": "scalable b2b headless commerce",
+  "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 36
  },
  {
   "day": "2026-11-07",
@@ -6322,17 +6378,41 @@
  {
   "day": "2026-11-07",
   "query": "sfdx-hardis",
-  "page": "https://www.fk-sd.de/blog/",
+  "page": "https://www.fk-sd.de/en/",
   "clicks": 0,
   "impressions": 1,
-  "position": 20
+  "position": 27
  },
  {
   "day": "2026-11-07",
   "query": "sfdx-hardis",
-  "page": "https://www.fk-sd.de/en/speaking/",
+  "page": "https://www.fk-sd.de/en/blog/",
   "clicks": 0,
   "impressions": 1,
-  "position": 3
+  "position": 19
+ },
+ {
+  "day": "2026-11-07",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/en/services/devops-release-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "day": "2026-11-07",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/leistungen/devops-und-release-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 31
+ },
+ {
+  "day": "2026-11-07",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  }
 ]

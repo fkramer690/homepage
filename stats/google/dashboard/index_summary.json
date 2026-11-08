@@ -4,19 +4,19 @@
   "sitemapUrls": 538,
   "inspected": 538,
   "failed": 0,
-  "indexed": 458,
+  "indexed": 461,
   "byCoverage": [
    {
     "coverage": "Submitted and indexed",
-    "urls": 458
+    "urls": 461
    },
    {
     "coverage": "Discovered - currently not indexed",
-    "urls": 65
+    "urls": 54
    },
    {
     "coverage": "URL is unknown to Google",
-    "urls": 15
+    "urls": 23
    }
   ]
  }

@@ -4418,6 +4418,13 @@
  },
  {
   "day": "2026-11-06",
+  "query": "salesforce 264 release date",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 30
+ },
+ {
+  "day": "2026-11-06",
   "query": "salesforce architektur essen",
   "clicks": 0,
   "impressions": 1,
@@ -4476,8 +4483,8 @@
   "day": "2026-11-07",
   "query": "sfdx-hardis",
   "clicks": 0,
-  "impressions": 6,
-  "position": 13
+  "impressions": 8,
+  "position": 12
  },
  {
   "day": "2026-11-07",
@@ -4492,6 +4499,20 @@
   "clicks": 0,
   "impressions": 3,
   "position": 47.7
+ },
+ {
+  "day": "2026-11-07",
+  "query": "salesforce commerce product data",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 80
+ },
+ {
+  "day": "2026-11-07",
+  "query": "b2b headless commerce",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 68.5
  },
  {
   "day": "2026-11-07",
@@ -4544,17 +4565,17 @@
  },
  {
   "day": "2026-11-07",
+  "query": "adkar modell",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 92
+ },
+ {
+  "day": "2026-11-07",
   "query": "b2b checkout",
   "clicks": 0,
   "impressions": 1,
   "position": 63
- },
- {
-  "day": "2026-11-07",
-  "query": "b2b headless commerce",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 87
  },
  {
   "day": "2026-11-07",
@@ -4593,6 +4614,13 @@
  },
  {
   "day": "2026-11-07",
+  "query": "salesforce architecture planning",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 89
+ },
+ {
+  "day": "2026-11-07",
   "query": "salesforce konfiguration",
   "clicks": 0,
   "impressions": 1,
@@ -4600,9 +4628,23 @@
  },
  {
   "day": "2026-11-07",
+  "query": "scalable b2b headless commerce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 36
+ },
+ {
+  "day": "2026-11-07",
   "query": "services scheduling dispatch",
   "clicks": 0,
   "impressions": 1,
   "position": 78
+ },
+ {
+  "day": "2026-11-07",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  }
 ]

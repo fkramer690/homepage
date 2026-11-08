@@ -22,17 +22,17 @@
  },
  {
   "period": "2026-10-30",
-  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 5
- },
- {
-  "period": "2026-10-30",
   "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
   "clicks": 0,
   "impressions": 3,
   "position": 4
+ },
+ {
+  "period": "2026-10-30",
+  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 5
  },
  {
   "period": "2026-10-30",
@@ -43,10 +43,10 @@
  },
  {
   "period": "2026-10-30",
-  "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
+  "page": "https://www.fk-sd.de/blog/shop-bestellungen-erp-auftrag/",
   "clicks": 0,
   "impressions": 1,
-  "position": 5
+  "position": 8
  },
  {
   "period": "2026-10-30",
@@ -57,9 +57,9 @@
  },
  {
   "period": "2026-10-30",
-  "page": "https://www.fk-sd.de/blog/shop-bestellungen-erp-auftrag/",
+  "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
   "clicks": 0,
   "impressions": 1,
-  "position": 8
+  "position": 5
  }
 ]

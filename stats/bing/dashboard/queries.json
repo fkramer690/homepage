@@ -30,16 +30,16 @@
   "position": 6
  },
  {
-  "query": "veränderungskurve kühn-rosch",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 6
- },
- {
   "query": "salesforce fehlende sicht berechtigung",
   "clicks": 0,
   "impressions": 3,
   "position": 10
+ },
+ {
+  "query": "veränderungskurve kühn-rosch",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 6
  },
  {
   "query": "primäradresse im salesforce ändern",
@@ -48,10 +48,10 @@
   "position": 9
  },
  {
-  "query": "brauch salesforce voice flex credits",
+  "query": "sfdx-hardis vs salesforce devops center lifecycle center comparison 2026",
   "clicks": 0,
   "impressions": 2,
-  "position": 10
+  "position": 2
  },
  {
   "query": "salesforce well architected framework",
@@ -72,10 +72,16 @@
   "position": 3
  },
  {
-  "query": "sfdx-hardis vs salesforce devops center lifecycle center comparison 2026",
+  "query": "brauch salesforce voice flex credits",
   "clicks": 0,
   "impressions": 2,
-  "position": 2
+  "position": 10
+ },
+ {
+  "query": "salesforce well architected framework architect agent",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7
  },
  {
   "query": "暴食后第二天轻断食有用吗",
@@ -90,10 +96,10 @@
   "position": 8
  },
  {
-  "query": "salesforce well architected framework architect agent",
+  "query": "well architected framework salesforce",
   "clicks": 0,
   "impressions": 2,
-  "position": 7
+  "position": 6
  },
  {
   "query": "scheduling console salesforce",
@@ -102,10 +108,10 @@
   "position": 8
  },
  {
-  "query": "well architected framework salesforce",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 6
+  "query": "unterschiede adkar und drei phasen modell von lewis",
+  "clicks": 1,
+  "impressions": 1,
+  "position": 2
  },
  {
   "query": "salesforce gmv",
@@ -114,34 +120,40 @@
   "position": 4
  },
  {
-  "query": "unterschiede adkar und drei phasen modell von lewis",
-  "clicks": 1,
-  "impressions": 1,
-  "position": 2
- },
- {
   "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
   "clicks": 0,
   "impressions": 1,
   "position": 8
  },
  {
-  "query": "trailhead scheduling console",
+  "query": "hardifs",
   "clicks": 0,
   "impressions": 1,
-  "position": 6
+  "position": 5
  },
  {
-  "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
+  "query": "new dispatch console salesforce",
   "clicks": 0,
   "impressions": 1,
-  "position": 10
+  "position": 5
  },
  {
-  "query": "salesforce b2b commerce extension",
+  "query": "what is rca latest name for by salesforce",
   "clicks": 0,
   "impressions": 1,
-  "position": 7
+  "position": 4
+ },
+ {
+  "query": "difference between devops centre and salesforce dx",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 1
+ },
+ {
+  "query": "adjust duration in new cheudling console salesforce field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
  },
  {
   "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
@@ -156,24 +168,6 @@
   "position": 10
  },
  {
-  "query": "migrate list views scheudling console sfdc",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 3
- },
- {
-  "query": "what is rca latest name for by salesforce",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
- },
- {
   "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
   "clicks": 0,
   "impressions": 1,
@@ -184,6 +178,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 3
+ },
+ {
+  "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
  },
  {
   "query": "trailhead new dispatch console",
@@ -216,28 +216,22 @@
   "position": 6
  },
  {
-  "query": "hardifs",
+  "query": "trailhead scheduling console",
   "clicks": 0,
   "impressions": 1,
-  "position": 5
+  "position": 6
  },
  {
-  "query": "difference between devops centre and salesforce dx",
+  "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
   "clicks": 0,
   "impressions": 1,
-  "position": 1
+  "position": 10
  },
  {
-  "query": "adjust duration in new cheudling console salesforce field service",
+  "query": "migrate list views scheudling console sfdc",
   "clicks": 0,
   "impressions": 1,
-  "position": 4
- },
- {
-  "query": "new dispatch console salesforce",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
+  "position": 3
  },
  {
   "query": "what is salesforce devopps now called",
@@ -246,28 +240,22 @@
   "position": 4
  },
  {
-  "query": "what it is new on salesforce well architected framework ?",
+  "query": "salesforce b2b commerce extension",
   "clicks": 0,
   "impressions": 1,
-  "position": 4
+  "position": 7
  },
  {
-  "query": "agentforce flexcredits voice minutes",
+  "query": "hypercare phase wie lange ist das",
   "clicks": 0,
   "impressions": 1,
-  "position": 10
+  "position": 6
  },
  {
-  "query": "die veränderungskurve steich",
+  "query": "sfdx-hardis v6 release date features",
   "clicks": 0,
   "impressions": 1,
-  "position": 5
- },
- {
-  "query": "siforce meaning",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
+  "position": 7
  },
  {
   "query": "\"pflege\" \"schulungskonzept\" \"key-user\" studie",
@@ -294,9 +282,21 @@
   "position": 4
  },
  {
-  "query": "salesforce agent context engine",
+  "query": "360 blog salesforce context engine",
   "clicks": 0,
   "impressions": 1,
-  "position": 4
+  "position": 3
+ },
+ {
+  "query": "veränderungskurve management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "query": "buyer groups and entitlement policies in salesforce cpq",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
  }
 ]
