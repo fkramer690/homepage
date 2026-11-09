@@ -71,7 +71,7 @@ Gedacht ist das für das sogenannte Run-Rate-Geschäft. Ein Kunde nimmt über ei
 ## Wann passt die Manufacturing Cloud nicht?
 
 ```praxis
-In einem Fertigungsprojekt habe ich die Manufacturing Cloud bewertet und mich dagegen entschieden. Sales Agreements, die zentrale Vertriebsfunktion, waren für das Geschäft nicht relevant. Das Unternehmen verkaufte nicht über langfristige Mengenvereinbarungen, und damit fiel der wichtigste Grund für die Lizenz weg. Eine eigene Lösung auf der Kernplattform war günstiger und einfacher zu warten.
+In einem Fertigungsprojekt habe ich die Manufacturing Cloud bewertet und mich dagegen entschieden. Sales Agreements, die zentrale Vertriebsfunktion, waren für das Geschäft nicht relevant. Das Unternehmen verkaufte nicht über langfristige Mengenvereinbarungen, und damit fiel der wichtigste Grund für die Lizenz weg. Die Standardlösung passte nicht gut genug, und der Lizenzaufpreis hätte sich nicht gerechnet. In diesem Fall war es günstiger, die nötigen Funktionen selbst auf der Kernplattform zu entwickeln.
 ```
 
 Daraus habe ich eine Regel mitgenommen: Eine Industry Cloud wird nach ihren Funktionen gekauft, nicht nach dem Branchennamen. „Wir sind Hersteller, also Manufacturing Cloud“ ist kein Business Case. Passt die Kernfunktion nicht, zahlt das Unternehmen für Funktionen, die es nicht nutzt, und baut trotzdem um die herum, die nicht passen.

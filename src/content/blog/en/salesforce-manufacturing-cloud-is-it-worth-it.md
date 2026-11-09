@@ -71,7 +71,7 @@ The feature is built for run-rate business. A customer buys the same products re
 ## When is Manufacturing Cloud the wrong choice?
 
 ```praxis
-In one manufacturing project I evaluated Manufacturing Cloud and decided against it. Sales agreements, the central sales feature, were not relevant to the business. The company did not sell through long-term volume agreements, so the main reason for the license was gone. A custom solution on the core platform was cheaper and easier to maintain.
+In one manufacturing project I evaluated Manufacturing Cloud and decided against it. Sales agreements, the central sales feature, were not relevant to the business. The company did not sell through long-term volume agreements, so the main reason for the license was gone. The fit with the standard solution was not good enough, and the license premium had no return. In that case building the needed functions on the core platform was the cheaper option.
 ```
 
 I took one rule from that: an industry cloud is bought for its features, not for the industry name. "We are a manufacturer, so Manufacturing Cloud" is not a business case. If the core feature does not fit, the company pays for features it does not use and still builds around the ones that do not fit.
