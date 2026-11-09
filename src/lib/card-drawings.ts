@@ -1018,6 +1018,18 @@ const drawings: Record<string, Drawing> = {
     ${dot(290, 90)}${t(302, 106, l('to 20 Feb', 'bis 20.2.'), { fill: D, size: 7, anchor: 'end' })}${t(302, 117, l('production', 'Produktion'), { size: 6.5, anchor: 'end' })}
     ${tag(18, 128, 150, l('6 checks per release', '6 Prüfungen je Release'))}${t(178, 141, l('first wave: 8 days of preview', 'erste Welle: 8 Tage Preview'), { size: 6.5 })}`,
 
+  'salesforce-release-updates': (l) => `
+    ${t(18, 18, l('RELEASE UPDATES UP TO SUMMER 2027', 'RELEASE UPDATES BIS SOMMER 2027'), { fill: D, size: 7 })}
+    <path d="M30 34H290" stroke="${G}" stroke-width="1.2"/>
+    ${dot(30, 34, C)}${t(18, 50, l('1 Dec', '1.12.'), { fill: C, size: 7 })}${t(18, 61, 'SOAP login', { size: 6.5 })}
+    ${dot(117, 34)}${t(117, 50, l('20 Feb', '20.2.'), { fill: D, size: 7, anchor: 'middle' })}${t(117, 61, l('password flow', 'Passwort-Flow'), { size: 6.5, anchor: 'middle' })}
+    ${dot(203, 34)}${t(203, 50, "Spring '27", { fill: D, size: 7, anchor: 'middle' })}${t(203, 61, l('instance URLs', 'Instanz-URLs'), { size: 6.5, anchor: 'middle' })}
+    ${dot(290, 34)}${t(302, 50, "Summer '27", { fill: D, size: 7, anchor: 'end' })}${t(302, 61, l('API 31 to 64', 'API 31 bis 64'), { size: 6.5, anchor: 'end' })}
+    <path d="M18 76H302" stroke="${L}"/>
+    ${t(18, 92, l('TEST RUN AS', 'TESTLAUF ALS'), { fill: D, size: 7 })}
+    ${[l('integration user', 'Integrationsuser'), l('technician', 'Techniker'), l('sales rep', 'Vertrieb')].map((s, i) => box(18 + i * 98, 100, 88, 22) + t(62 + i * 98, 114, s, { size: 7, anchor: 'middle' })).join('')}
+    ${tag(18, 132, 150, l('activate on your date', 'selbst aktivieren'))}${t(178, 145, l('not on the upgrade weekend', 'nicht am Upgrade-Wochenende'), { size: 6.5 })}`,
+
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
     ${arrow(70, 43, 82)}${arrow(132, 43, 144)}
