@@ -87,6 +87,19 @@ Bing zeigte am 09.11.2026 für „fk-sd.de“ und „FK Solution Design GmbH“ 
 |---|---|---|---|---|---|
 | BI1 | Bing-Auftritt nachprüfen: Ist der Bing-Places-Eintrag veröffentlicht (Dashboard „Veröffentlicht“, Pin auf bing.com/maps mit Adresse, E-Mail eingetragen)? Zeigt Bing bei „fk-sd.de“ und „FK Solution Design GmbH“ jetzt die deutsche Startseite und ein Firmenpanel? Link zum Bing-Maps-Eintrag als sameAs in `site.companyProfiles` aufnehmen | mittel | klein | Fabian (Bing-Suche und Places-Dashboard), Claude (sameAs) | ab 23.11.2026 |
 
+## Abdeckung der KI-Assistenten (Prüfung 09.11.2026)
+
+Nutzung in Deutschland (Bitkom 2026, unter KI-Nutzern): ChatGPT 71 %, Gemini 50 %, Copilot 43 %, Meta AI 35 %; Claude und Perplexity kleiner. Die Websuche der Assistenten hängt an drei Indizes: Google (Gemini, AI Overviews, AI Mode), Bing (Copilot, Meta AI, teils ChatGPT) und Brave (Claude, Mistral Le Chat), dazu die eigenen Crawler von OpenAI (OAI-SearchBot) und Perplexity. Alle drei Indizes werden beliefert und gemessen; robots.txt sperrt keinen KI-Crawler. KI-Suche 09.11.2026: Perplexity 7, ChatGPT 3, Claude, Gemini und AI Mode 0 Antworten mit fk-sd.de. Bing „AI Performance“ (Copilot und Bing-KI-Antworten) zeigt 28.10. bis 06.11.2026 96 Zitate auf 10 Seiten, vorn /en/blog/salesforce-agent-context-engine-explained/ (27) und /en/blog/field-service-scheduling-console-dispatchers/ (23). Für diesen Bericht gibt es keine dokumentierte API, nur den Export „Download all“.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| KA1 | Copilot messen: Bing „AI Performance“ (bing.com/webmasters/aiperformance) einmal im Monat als CSV exportieren (Seiten und Grounding Queries) und in `/mnt/project-files/homepage/bing-ai-performance/` ablegen; Claude wertet aus und übernimmt die Zahlen ins Dashboard. Sobald Bing eine API dafür anbietet, in `scripts/fetch-bing.mjs` aufnehmen | hoch | klein | Fabian (Export), Claude (Auswertung) | ab Anfang Dezember 2026 monatlich |
+| KA2 | Gemini und AI Mode bei 0 trotz Google-Index: Hebel ist Autorität (Backlinks, Erwähnungen, siehe QM und Gastartikel), nicht Technik. In den Läufen am 23.11. und 07.12.2026 verfolgen | hoch | groß | Fabian, Claude | laufend |
+| KA3 | Stichprobe in den Apps: einmal im Monat 3 Fragen aus `seo/ai-prompts.json` von Hand in ChatGPT, Gemini und Copilot stellen, weil die API-Abfrage der KI-Suche andere Modelle nutzt als die Apps | mittel | klein | Fabian | Backlog |
+| KA4 | Bing zitiert zwei Seiten unter der Apex-Domain ohne www und ohne Schrägstrich (fk-sd.de/en/blog/revenue-cloud-assets-amendments-renewals, fk-sd.de/blog/change-management-weltweiter-rollout). Die Weiterleitung auf www ist korrekt; beobachten, ob Bing die Zitate auf die www-Adresse umstellt | klein | klein | Claude | beobachten |
+| KA5 | KI-Crawler-Besuche sind unsichtbar (GitHub Pages liefert keine Server-Logs). Ginge nur mit Cloudflare als Proxy vor der Seite (DNS-Umbau) | klein | groß | später | zurückgestellt |
+| KA6 | Meta AI (läuft über Bing), Grok und DeepSeek nicht eigens messen: für CIOs und CRM-Leiter kaum relevant | klein | – | – | entschieden, keine Maßnahme |
+
 ## Befunde Jev-Analyse und jev-seo-Audit (29.10.2026)
 
 Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite und 392 Blog-URLs sowie jev-seo-Audit (450 URLs), beide 29.10.2026. Bericht: https://claude.ai/artifact/4d9jFTDK2EbewV53cLymFN. Fehlalarme ohne Maßnahme: HTTPS-Weiterleitung, 110 kaputte Links und 37 Seiten mit 404 (jev-seo löst relative Links falsch auf), noindex auf Impressum und Datenschutz (gewollt). Reihenfolge nach Impact und Aufwand.
