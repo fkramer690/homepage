@@ -1,6 +1,6 @@
 ---
-title: "Field Service: How to Model Maintenance Contracts"
-description: "Service contracts, maintenance plans and entitlements in Salesforce Field Service: what each object covers and how response times steer scheduling."
+title: "Salesforce Field Service: Modeling Maintenance Contracts"
+description: "Service contracts, maintenance plans and entitlements in Salesforce Field Service: what each object covers and how response times reach scheduling."
 pubDate: 2026-10-27
 lang: en
 slug: salesforce-field-service-maintenance-contracts
@@ -12,8 +12,8 @@ tags: [Field Service, Maintenance contracts, Entitlements, Manufacturing]
 takeaways:
   - "A maintenance contract sits on three objects: service contract (what was sold), maintenance plan (planned maintenance) and entitlement (service level)."
   - "Entitlements can also come from a warranty or a support package. They describe what a customer is entitled to."
-  - "Maintenance plans generate work orders for maintenance in advance, according to Salesforce at most 2,600 work orders and line items per run."
-  - "Entitlements can steer priority in dispatching. Field Service schedules high-priority appointments first and can push out others to do so."
+  - "Maintenance plans generate maintenance work orders in advance. Size large plans by assets, rules and timeframe, because each run has a limit."
+  - "Entitlements influence scheduling once automation turns the service level into a priority. High-priority appointments are then scheduled first."
   - "Response times from the contract are measured with entitlement processes and milestones on the work order, which makes them provable."
 faq:
   - q: "What is the difference between a service contract and an entitlement?"
@@ -23,11 +23,11 @@ faq:
   - q: "How does Salesforce measure response times in field service?"
     a: "With an entitlement process of type Work Order. It consists of milestones, such as a time until the technician is on site, which run on the work order and show whether the commitment was met."
   - q: "How does priority influence scheduling in Field Service?"
-    a: "By default, priority uses a scale from 1 to 10, where 1 is the highest. When technicians are scarce, optimization schedules high-priority appointments first and can push out low-priority ones."
+    a: "By default, priority uses a scale from 1 to 10, where 1 is the highest. When technicians are scarce, optimization schedules high-priority appointments first and can push out low-priority ones. An entitlement only affects this if a flow or formula turns it into that priority."
 draft: false
 ---
 
-In Salesforce Field Service a maintenance contract spreads across three objects. The service contract records what was sold. The maintenance plan generates the planned maintenance. The entitlement describes the service level the customer is entitled to, such as a response time. Entitlements are only partly about maintenance contracts, because a right to service can also come from a warranty or a support package. In one project, entitlements were part of the scope and influenced prioritization in dispatching. That is where their value for field service shows.
+In Salesforce Field Service a maintenance contract spreads across three objects. The service contract records what was sold. The maintenance plan generates the planned maintenance. The entitlement describes the service level the customer is entitled to, such as a response time. Entitlements are only partly about maintenance contracts, because a right to service can also come from a warranty or a support package. In one project, entitlements were part of the scope and influenced prioritization in dispatching. They do not do that by themselves: automation has to translate the service level into a scheduling priority. That is where their value for field service shows.
 
 This article is part 5 of the series. How Field Service schedules and what the dispatcher checks is in [part 3](../salesforce-field-service-scheduling-automation/). Which master data this needs, such as assets and visiting hours, is in [part 2](../salesforce-field-service-master-data/).
 
@@ -52,11 +52,11 @@ A maintenance plan defines how often a customer's assets are maintained and gene
 Two settings deserve attention:
 
 - **Generation timeframe.** It sets how far ahead work orders are created. Too short leaves scheduling no room, too long fills the system with work orders that will still change.
-- **Limit per run.** One run creates at most 2,600 work orders and line items combined. For a customer with many assets and a short interval, that limit comes sooner than you think.
+- **Limit per run.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.fs_limits.htm&language=en_US&type=5), one run creates at most 2,600 work orders per maintenance plan, which in practice also limits the number of assets per plan. With several maintenance work rules per asset, the practical limit drops further. For a customer with many assets and a short interval, that limit comes sooner than you think. Salesforce recommends reducing frequency, generation timeframe or the number of assets per plan.
 
 Maintenance visits are the jobs where the automation from part 3 can most likely run without a dispatcher. They are plannable, recurring and usually have a fixed work type with known skills and parts.
 
-## How do entitlements steer dispatching?
+## How do entitlements influence dispatching?
 
 An entitlement on its own changes nothing about scheduling. It only takes effect when it triggers two things: a measurement and a priority.
 
@@ -89,9 +89,15 @@ When the milestone counts as met, for example with the status In Progress on sit
 
 **Separate the objects cleanly from the start.** If response times live in a text field on the service contract, you can neither measure them nor bring them into scheduling. If maintenance intervals hide in entitlements, you get no automatically generated work orders.
 
-**Keep the number of service levels small.** Each level needs its own process, its own milestones and its own priority rule. Three levels can be explained and checked, ten cannot.
+**Keep the number of service levels small.** Several levels can share one entitlement process if milestones with different criteria are enough. A separate process makes sense when levels differ in business hours, start or exit logic. Each level still needs its milestones and its priority rule. Three levels can be explained and checked, ten cannot.
 
-**Check the hours.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=fs_oh_considerations.htm&language=en_US&type=5), entitlements can carry their own operating hours for appointment booking, for example shorter time windows for customers with a premium contract. On top come the visiting hours on the account from part 2. If you maintain both, know which one applies before a customer asks why their 24-hour appointment did not happen on Saturday.
+**Keep the hours apart.** Three time concepts meet here and get mixed up easily:
+
+- **The SLA clock.** Business hours on the entitlement process and its milestones decide whether a 24-hour commitment counts Saturday or not.
+- **The booking window.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=fs_oh_considerations.htm&language=en_US&type=5), operating hours on the entitlement set the arrival windows offered to the customer, for example two hours for premium customers instead of four.
+- **Customer availability.** The visiting hours on the account from part 2, copied to the work order, say when the technician can reach the machine.
+
+Decide for each contract type which of the three applies, before a customer asks why their 24-hour appointment did not happen on Saturday.
 
 **Settle the line to warranty.** Whether a visit runs under warranty, under contract or is billed decides the invoicing. That commercial side does not belong in scheduling, but it has to be visible on the work order. Otherwise the technician fits a part that nobody can invoice later, or the customer gets a bill for a visit that ran under warranty.
 

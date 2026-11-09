@@ -11,22 +11,22 @@ series: { id: field-service, part: 7 }
 tags: [Field Service, Rollout, Works council, Data protection, Manufacturing]
 takeaways:
   - "Each wave brings its own data, dispatchers, technicians and partners. The first wave is the test for all others."
-  - "The works council has a say on two topics: what technicians see of each other, e.g. in timesheets, and where they are. Both go before the first wave."
+  - "With the works council, two topics dominated in my projects: what technicians see of each other and where they are. Show it the whole system."
   - "Location tracking in the app can be set by interval and accuracy and switched off per technician. These settings belong in the talks."
   - "Each country has its own rules. Waves by country let you adapt the configuration to them."
 faq:
   - q: "What is the best way to roll out Salesforce Field Service?"
     a: "In waves, region by region or country by country. Each wave covers the master data, territories, dispatchers, technicians and partners of one region. The first wave is also the test for all others."
   - q: "Does the works council need to be involved in Field Service?"
-    a: "In Germany, the works council has a right of co-determination under section 87 of the Works Constitution Act for technical systems that monitor employee behaviour or performance. Location data and time recording typically fall under it. Other countries have their own rules, so check with legal."
+    a: "In Germany, yes. Under section 87 of the Works Constitution Act the works council has a say on technical systems suited to monitor behavior or performance, and on working time rules, among others. Section 90 adds information and consultation on new work processes. Location data and time recording are typical topics, status times, KPIs and automated scheduling can be too. Other countries have their own rules, so check with legal."
   - q: "Can location tracking in the Field Service app be limited?"
-    a: "Yes. Interval and accuracy can be set, from about 10 metres to about one kilometre. Single technicians can be excluded, and with Appointment Assistant tracking can be limited to the En Route status."
+    a: "Yes. Interval and accuracy can be set, from about 10 meters to about one kilometre. Single technicians can be excluded, and with Appointment Assistant tracking can be limited to the En Route status."
   - q: "What belongs in a rollout wave?"
     a: "Clean master data for the region, set-up territories and scheduling policy, trained dispatchers and technicians, connected partners, agreements with the works council and data protection, and metrics measured before and after go-live."
 draft: false
 ---
 
-I always roll out Salesforce Field Service in waves, region by region or country by country. Each wave brings its own master data, dispatchers, technicians and partners, and the first wave is the test for all others. Then there is a topic that often comes up too late: the works council. It plays a role on what technicians can see of each other, for example in timesheets, and on the technicians' location. Both should be raised proactively. And different regions and countries have different conditions that need checking before each wave.
+I always roll out Salesforce Field Service in waves, region by region or country by country. Each wave brings its own master data, dispatchers, technicians and partners, and the first wave is the test for all others. Then there is a topic that often comes up too late: the works council. In my projects it played a role above all on what technicians can see of each other, for example in timesheets, and on the technicians' location. Both should be raised proactively, along with everything else the system records about technicians. And different regions and countries have different conditions that need checking before each wave.
 
 This is the last part of the series. The parts before describe what has to be in place in every wave: the decision in [part 1](../salesforce-field-service-worth-it/), master data in [part 2](../salesforce-field-service-master-data/), scheduling in [part 3](../salesforce-field-service-scheduling-automation/), spare parts in [part 4](../salesforce-field-service-spare-parts-erp/), contracts in [part 5](../salesforce-field-service-maintenance-contracts/) and partners in [part 6](../salesforce-field-service-service-partners/). Every question about the product with a short answer is collected in the topic hub [Salesforce Field Service for manufacturers](../../masterclass/field-service/).
 
@@ -53,11 +53,11 @@ Leave room between two waves. The first weeks after a region goes live are when 
 
 ## Which topics go to the works council early?
 
-Field Service collects data about employees. Two topics played a role in my projects.
+Field Service collects data about employees. Two topics played the biggest role in my projects.
 
 **Visibility among technicians.** Who sees whose appointments, working hours and timesheets? According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.fs_set_up_timesheets.htm&language=en_US&type=5), Field Service offers timesheets in which technicians record their time for a week or a month, including travel and breaks, with an approval process. Whether a technician sees colleagues' times and appointments, whether the team lead sees everyone and who approves is decided by sharing. That needs to be settled before it gets built.
 
-**Location.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.mfs_resource_tracking.htm&type=5), the mobile app can send technicians' location to Salesforce regularly. It lands in the Last Known Location field on the service resource, and a history can be recorded if wanted. For scheduling that is useful, because the engine knows where a technician is. For the works council it is a tool that can make behaviour and performance visible.
+**Location.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.mfs_resource_tracking.htm&type=5), the mobile app can send technicians' location to Salesforce regularly. It lands in the Last Known Location field on the service resource, and a history can be recorded if wanted. Scheduling uses it for specific cases, not for normal planning. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.pfs_emergency.htm&language=en_US&type=5), emergency dispatch calculates travel time from the last known location, as long as it is recent enough; otherwise it uses the last appointment or the home base. Regular travel time planning works with appointment addresses, previous appointments and the home base. For the works council, location tracking is a tool that can make behavior and performance visible. So ask which use case really needs it.
 
 The technology can be configured. This is what I would discuss with the works council in concrete terms:
 
@@ -71,7 +71,14 @@ The technology can be configured. This is what I would discuss with the works co
 
 On top come the skills and absences from part 2 and the voice input I describe in [Field Service Mobile: guided flows and voice](../salesforce-field-service-mobile-guided-voice/). That is employee data too.
 
-In Germany, the works council has a right of co-determination under [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) for technical systems that monitor employee behaviour or performance. How that applies in a given case is for legal to decide.
+In Germany, co-determination reaches further than these two topics. [Section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) covers, among others, technical systems suited to monitor behavior or performance, the start and end of working time and breaks, and rules of conduct. [Section 90](https://www.gesetze-im-internet.de/betrvg/__90.html) requires timely information and consultation on new technical systems, work processes and workplaces. So I would not take a list of features to the works council but the whole system, with a short check per topic:
+
+- Which data about technicians does it record: location, status times, working time, skills, absences, voice input?
+- Who sees it: colleagues, team lead, dispatcher, partner?
+- Which evaluations are possible: KPIs, utilization, comparisons between technicians?
+- What does the engine decide automatically, and who can override it?
+
+How that applies in a given case is for legal to decide.
 
 ```hinweis achtung
 From a project point of view, timing matters most. Whoever talks to the works council only once the app is fully configured risks weeks of delay and a configuration that has to be rebuilt.
@@ -87,12 +94,12 @@ That argues for waves by country. Each wave checks the conditions of its country
 
 Every wave needs numbers from before and after. I would take the ones that already came up in the series:
 
-- the four numbers from part 1: jobs per day, share of travel time, skills and first-time fix rate
+- the four numbers from part 1: jobs per day, share of travel time, skill and parts complexity and first-time fix rate
 - the failed visits from part 2 and their causes
 - the share of proposals the dispatcher changes before release, from part 3
 - the response times met, from part 5
 
-If the numbers do not improve in the first wave, in my view it is rarely the product. Usually data is missing, or scheduling still happens on the side. Which numbers to watch is covered in [Field Service KPIs after go-live](../field-service-kpis-after-go-live/).
+If the numbers do not improve in the first wave, in my view the cause is more often data or scheduling on the side than the product. I still check all causes in order: data, configuration, integration, adoption, the process and finally product fit. A product that does not fit the kind of field service is a possible finding too. Which numbers to watch is covered in [Field Service KPIs after go-live](../field-service-kpis-after-go-live/).
 
 ## First step: a region with clean data for the first wave
 

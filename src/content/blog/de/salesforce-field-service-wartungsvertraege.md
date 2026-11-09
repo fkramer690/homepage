@@ -1,6 +1,6 @@
 ---
-title: "Field Service: Wie bildet man Wartungsverträge ab?"
-description: "Service Contracts, Maintenance Plans und Entitlements in Salesforce Field Service: was welches Objekt abbildet und wie Reaktionszeiten die Planung steuern."
+title: "Salesforce Field Service: Wartungsverträge abbilden"
+description: "Service Contracts, Maintenance Plans und Entitlements in Salesforce Field Service: was welches Objekt abbildet und wie Reaktionszeiten in die Planung kommen."
 pubDate: 2026-10-27
 lang: de
 slug: salesforce-field-service-wartungsvertraege
@@ -12,8 +12,8 @@ tags: [Field Service, Außendienst, Wartungsverträge, Entitlements, Fertigung]
 takeaways:
   - "Ein Wartungsvertrag liegt auf drei Objekten: Service Contract (was verkauft wurde), Maintenance Plan (geplante Wartungen) und Entitlement (Service-Level)."
   - "Entitlements können auch aus einer Garantie oder einem Supportpaket kommen. Sie beschreiben, worauf ein Kunde Anspruch hat."
-  - "Maintenance Plans erzeugen Arbeitsaufträge für Wartungen im Voraus, laut Salesforce höchstens 2.600 Arbeitsaufträge und Positionen pro Lauf."
-  - "Entitlements können die Priorität im Dispatching steuern. Termine mit hoher Priorität plant Field Service zuerst und verdrängt dafür andere."
+  - "Maintenance Plans erzeugen Wartungsaufträge im Voraus. Große Pläne nach Anlagen, Regeln und Vorlauf bemessen, denn jeder Lauf hat eine Grenze."
+  - "Entitlements wirken auf die Planung, wenn eine Automatisierung den Service-Level in eine Priorität übersetzt. Hohe Priorität wird zuerst geplant."
   - "Reaktionszeiten aus dem Vertrag werden über Entitlement-Prozesse mit Milestones am Arbeitsauftrag gemessen und damit nachweisbar."
 faq:
   - q: "Was ist der Unterschied zwischen Service Contract und Entitlement?"
@@ -23,11 +23,11 @@ faq:
   - q: "Wie misst Salesforce Reaktionszeiten im Außendienst?"
     a: "Über einen Entitlement-Prozess vom Typ Work Order. Er besteht aus Milestones, etwa einer Zeit bis zum Termin vor Ort, die am Arbeitsauftrag laufen und zeigen, ob die Zusage eingehalten wurde."
   - q: "Wie beeinflusst die Priorität die Planung in Field Service?"
-    a: "Die Priorität liegt standardmäßig auf einer Skala von 1 bis 10, wobei 1 die höchste ist. Bei knappen Technikern plant die Optimierung Termine mit hoher Priorität zuerst und kann Termine mit niedriger Priorität verdrängen."
+    a: "Die Priorität liegt standardmäßig auf einer Skala von 1 bis 10, wobei 1 die höchste ist. Bei knappen Technikern plant die Optimierung Termine mit hoher Priorität zuerst und kann Termine mit niedriger Priorität verdrängen. Ein Entitlement wirkt darauf nur, wenn ein Flow oder eine Formel es in diese Priorität übersetzt."
 draft: false
 ---
 
-Ein Wartungsvertrag verteilt sich in Salesforce Field Service auf drei Objekte. Der Service Contract hält fest, was verkauft wurde. Der Maintenance Plan erzeugt die geplanten Wartungen. Das Entitlement beschreibt, auf welchen Service-Level der Kunde Anspruch hat, etwa eine Reaktionszeit. Entitlements haben dabei mit Wartungsverträgen nur bedingt zu tun, denn ein Anspruch kann auch aus einer Garantie oder einem Supportpaket kommen. In einem Projekt waren Entitlements Teil des Umfangs und haben die Priorisierung im Dispatching beeinflusst. Genau dort zeigt sich der Wert für den Außendienst.
+Ein Wartungsvertrag verteilt sich in Salesforce Field Service auf drei Objekte. Der Service Contract hält fest, was verkauft wurde. Der Maintenance Plan erzeugt die geplanten Wartungen. Das Entitlement beschreibt, auf welchen Service-Level der Kunde Anspruch hat, etwa eine Reaktionszeit. Entitlements haben dabei mit Wartungsverträgen nur bedingt zu tun, denn ein Anspruch kann auch aus einer Garantie oder einem Supportpaket kommen. In einem Projekt waren Entitlements Teil des Umfangs und haben die Priorisierung im Dispatching beeinflusst. Von selbst tun sie das nicht: Eine Automatisierung muss den Service-Level in eine Planungspriorität übersetzen. Genau dort zeigt sich der Wert für den Außendienst.
 
 Dieser Artikel ist Teil 5 der Serie. Wie Field Service plant und was der Disponent prüft, steht in [Teil 3](../salesforce-field-service-terminplanung-automatisieren/). Welche Stammdaten, etwa Anlagen und Öffnungszeiten, dafür nötig sind, steht in [Teil 2](../salesforce-field-service-stammdaten/).
 
@@ -52,11 +52,11 @@ Ein Maintenance Plan legt fest, wie oft die Anlagen eines Kunden gewartet werden
 Zwei Einstellungen verdienen Aufmerksamkeit:
 
 - **Vorlauf der Erzeugung.** Er legt fest, wie weit im Voraus Arbeitsaufträge entstehen. Ein zu kurzer Vorlauf lässt der Planung keinen Spielraum, ein zu langer füllt das System mit Aufträgen, die sich bis dahin noch ändern.
-- **Grenze pro Lauf.** Ein Lauf erzeugt höchstens 2.600 Arbeitsaufträge und Positionen zusammen. Bei einem Kunden mit vielen Anlagen und kurzem Intervall ist das schneller erreicht, als man denkt.
+- **Grenze pro Lauf.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.fs_limits.htm&language=en_US&type=5) erzeugt ein Lauf höchstens 2.600 Arbeitsaufträge je Maintenance Plan, was praktisch auch die Zahl der Anlagen je Plan begrenzt. Mit mehreren Maintenance Work Rules je Anlage sinkt die praktische Grenze weiter. Bei einem Kunden mit vielen Anlagen und kurzem Intervall ist das schneller erreicht, als man denkt. Salesforce empfiehlt, Intervall, Vorlauf oder die Zahl der Anlagen je Plan zu verringern.
 
 Wartungen sind die Einsätze, bei denen die Automatik aus Teil 3 am ehesten ohne Disponent laufen kann. Sie sind planbar, wiederkehrend und haben meist einen festen Arbeitstyp mit bekannten Qualifikationen und Teilen.
 
-## Wie steuern Entitlements das Dispatching?
+## Wie beeinflussen Entitlements das Dispatching?
 
 Ein Entitlement allein ändert an der Planung nichts. Es wird erst wirksam, wenn es zwei Dinge auslöst: eine Messung und eine Priorität.
 
@@ -89,9 +89,15 @@ Wann der Milestone als erfüllt gilt, etwa mit dem Status In Progress vor Ort, l
 
 **Trennen Sie die Objekte von Anfang an sauber.** Wer Reaktionszeiten als Textfeld am Service Contract pflegt, kann sie weder messen noch in die Planung bringen. Wer Wartungsintervalle in Entitlements versteckt, bekommt keine automatisch erzeugten Aufträge.
 
-**Halten Sie die Zahl der Service-Level klein.** Jede Stufe braucht einen eigenen Prozess, eigene Milestones und eine eigene Prioritätsregel. Drei Stufen lassen sich erklären und prüfen, zehn nicht.
+**Halten Sie die Zahl der Service-Level klein.** Mehrere Stufen können sich einen Entitlement-Prozess teilen, wenn Milestones mit unterschiedlichen Kriterien reichen. Ein eigener Prozess lohnt sich, wenn Stufen sich in Geschäftszeiten, Start- oder Endlogik unterscheiden. Jede Stufe braucht trotzdem ihre Milestones und ihre Prioritätsregel. Drei Stufen lassen sich erklären und prüfen, zehn nicht.
 
-**Prüfen Sie die Öffnungszeiten.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=fs_oh_considerations.htm&language=en_US&type=5) können Entitlements eigene Arbeitszeiten für die Terminbuchung tragen, etwa kürzere Zeitfenster für Kunden mit Premium-Vertrag. Dazu kommen die Besuchszeiten am Account aus Teil 2. Wer beides pflegt, sollte wissen, was gilt, bevor ein Kunde fragt, warum sein 24-Stunden-Termin am Samstag nicht kam.
+**Halten Sie die Zeiten auseinander.** Hier treffen drei Zeitbegriffe aufeinander, die leicht vermischt werden:
+
+- **Die SLA-Uhr.** Geschäftszeiten am Entitlement-Prozess und seinen Milestones entscheiden, ob eine 24-Stunden-Zusage den Samstag mitzählt.
+- **Das Buchungsfenster.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=fs_oh_considerations.htm&language=en_US&type=5) legen Arbeitszeiten am Entitlement die Ankunftsfenster fest, die dem Kunden angeboten werden, etwa zwei statt vier Stunden für Premium-Kunden.
+- **Die Verfügbarkeit des Kunden.** Die Besuchszeiten am Account aus Teil 2, die auf den Arbeitsauftrag übernommen werden, sagen, wann der Techniker an die Maschine kommt.
+
+Legen Sie für jede Vertragsart fest, welcher der drei gilt, bevor ein Kunde fragt, warum sein 24-Stunden-Termin am Samstag nicht kam.
 
 **Klären Sie die Grenze zur Garantie.** Ob ein Einsatz unter Garantie, Vertrag oder gegen Rechnung läuft, entscheidet über die Abrechnung. Diese kaufmännische Seite gehört nicht in die Planung, muss aber am Arbeitsauftrag erkennbar sein. Sonst baut der Techniker ein Teil ein, das später niemand abrechnen kann, oder der Kunde bekommt eine Rechnung für einen Einsatz, der unter Garantie lief.
 
