@@ -942,6 +942,27 @@ const drawings: Record<string, Drawing> = {
     ${check(170, 104)}${t(182, 110, l('lessons from failures', 'Lehren aus Fehlern'), { size: 7 })}
     ${tag(18, 132, 170, l('references: briefed by partner', 'Referenzen: vom Partner gebrieft'))}`,
 
+  'switch-salesforce-partner': (l) => `
+    ${t(18, 20, l('FOUR PHASES', 'VIER PHASEN'), { fill: D, size: 7 })}
+    ${[[l('Secure', 'Sichern'), G], [l('Assess', 'Analysieren'), G], [l('Select', 'Auswählen'), G], [l('Hand over', 'Übergeben'), C]]
+      .map(([s, c], i) => box(18 + i * 74, 28, 62, 24, c) + t(49 + i * 74, 43, s, { size: 7, anchor: 'middle', fill: c }) + (i < 3 ? arrow(82 + i * 74, 40, 90 + i * 74) : '')).join('')}
+    <path d="M18 66H302" stroke="${L}"/>
+    ${t(18, 82, l('OWN BEFORE THE NOTICE', 'VOR DER KÜNDIGUNG BESITZEN'), { fill: D, size: 7 })}
+    ${check(18, 92)}${t(30, 98, l('repo in your account', 'Repo im eigenen Account'), { size: 7 })}
+    ${check(18, 104)}${t(30, 110, l('pipeline on your licence', 'Pipeline auf eigener Lizenz'), { size: 7 })}
+    ${check(170, 92)}${t(182, 98, l('own integration users', 'eigene Integrationsbenutzer'), { size: 7 })}
+    ${check(170, 104)}${t(182, 110, l('decision log', 'Entscheidungslog'), { size: 7 })}
+    ${tag(18, 128, 170, l('4 to 8 weeks overlap', '4 bis 8 Wochen Überlappung'))}`,
+
+  'salesforce-architect-or-system-integrator': (l) => `
+    ${t(18, 20, l('SAME SKILLS, OTHER EMPLOYER', 'GLEICHES WISSEN, ANDERER AUFTRAG'), { fill: D, size: 7 })}
+    ${box(18, 30, 130, 60)}${t(28, 46, l('SI ARCHITECT', 'ARCHITEKT SI'), { fill: D, size: 7 })}
+    ${t(28, 62, l('works for: partner', 'arbeitet für: Partner'), { size: 7 })}${t(28, 76, l('paid by effort', 'bezahlt nach Aufwand'), { size: 7 })}
+    ${box(172, 30, 130, 60, C)}${t(182, 46, l('CLIENT-SIDE ARCHITECT', 'ARCHITEKT KUNDENSEITE'), { fill: C, size: 7 })}
+    ${t(182, 62, l('works for: client', 'arbeitet für: Kunde'), { size: 7 })}${t(182, 76, l('plans for 10 years', 'plant für 10 Jahre'), { size: 7 })}
+    ${t(18, 110, l('scope · licences · repo · change requests', 'Umfang · Lizenzen · Repo · Change Requests'), { size: 7 })}
+    ${tag(18, 122, 200, l('from 2 partners: own architect', 'ab 2 Partnern: eigener Architekt'))}`,
+
   'salesforce-freelancer-or-consultancy': (l) => `
     ${t(18, 20, l('WHO BUILDS, WHO DECIDES', 'WER BAUT, WER ENTSCHEIDET'), { fill: D, size: 7 })}
     ${box(18, 30, 130, 72)}${t(28, 46, l('CONSULTANCY', 'AGENTUR · PARTNER'), { fill: D, size: 7 })}

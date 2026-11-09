@@ -3,6 +3,7 @@ title: "Salesforce-Implementierungspartner auswählen"
 metaTitle: "Salesforce-Implementierungspartner auswählen: Prüffragen"
 description: "Wie Hersteller einen Salesforce-Implementierungspartner auswählen: Warnsignale im Angebot, Fragen im Pitch und warum Referenzen wenig über Qualität verraten."
 pubDate: 2026-11-06
+updatedDate: 2026-11-10
 lang: de
 slug: salesforce-implementierungspartner-auswaehlen
 translationKey: choose-salesforce-implementation-partner
@@ -30,6 +31,24 @@ draft: false
 
 Einen Salesforce-Implementierungspartner wählen Sie besser nach Punkten aus, die in Angeboten oft fehlen, als nach der Aufmachung der Präsentation und den Referenzen, die der Partner aussucht: wie gründlich der Partner Ihre Prozesse untersucht hat, bevor er einen Preis nennt, wer die Schlüsselrollen ab Tag 1 besetzt, wie er Qualität an Meilensteine bindet und ob Sie ohne ihn weitermachen könnten. Als Architekt auf Kundenseite habe ich schon öfter erlebt, dass ein Partner gewechselt werden musste. Viele Gründe dafür waren schon im Angebot erkennbar.
 
+## Nach welchen Kriterien wählen Sie einen Salesforce-Partner aus?
+
+Kurz gesagt: Vergleichen Sie alle Kandidaten anhand derselben sechs Kriterien und stellen Sie allen dieselben Fragen. Die ersten fünf Warnsignale habe ich in echten Angeboten gesehen, und jedes hat sich später im Projekt bemerkbar gemacht.
+
+```tabelle
+titel: Kriterien für die Wahl eines Salesforce-Implementierungspartners
+spalten: Kriterium | Was Sie fragen | Warnsignal im Angebot
+Umfang | Welcher unserer Prozesse ist nicht abgedeckt? * | Optimistischer Festpreis
+Discovery | Welche Sonderfälle haben Sie besprochen? * | Discovery nur für den Happy Path
+Team | Wer besetzt ab Tag 1 die Schlüsselrollen, mit Namen? * | Senior-Leute nur im Pitch
+Austauschbarkeit | Könnten wir nach dem Go-live ohne Sie weitermachen? * | Kein Wort zu Repository und Pipeline
+Qualität | Wie hängen Meilensteine und Quality Gates zusammen? * | Keine Aussage zur Qualitätssicherung
+Lernen | Welches Projekt ging schief, und was haben Sie geändert? * | Nur vom Partner gebriefte Referenzen
+fazit: Jeder Punkt lässt sich vor der Vergabe klären. Nach der Vergabe kostet er Geld.
+```
+
+Der erste Punkt wird oft unterschätzt. In meinen Fällen war der Festpreis zu optimistisch, und der Kunde wusste gar nicht, welche Funktionen in den einzelnen Arbeitspaketen enthalten waren und ob sie seinen Bedarf decken. Fehlt dann ein Prozess, deckt der Preis den tatsächlichen Umfang nicht mehr, und mit jedem Change Request schwindet der Schutz des Festpreises. Wie sich Festpreis und Aufwand verschieben, seit Partner mit KI bauen, steht in [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/).
+
 ## Warum Referenzen wenig über einen Implementierungspartner verraten
 
 Referenzen werden vom Partner gebrieft. Kein Partner nennt Ihnen das Projekt, in dem es richtig schiefging. Das ist kein Vorwurf: Jeder Implementierungspartner hat Leichen im Keller, und wer etwas anderes behauptet, hat entweder wenige Projekte gemacht oder sagt nicht alles.
@@ -47,23 +66,6 @@ fazit: Gut für die Vorauswahl, zu wenig für die Entscheidung.
 ```
 
 Die bessere Frage lautet: Welches Projekt ist bei Ihnen schiefgegangen, was haben Sie daraus gelernt, und woran sehe ich, dass es nicht wieder passiert? Wer darauf eine konkrete Antwort hat, mit einer geänderten Regel oder einem neuen Prüfschritt, hat aus seinen Fehlern etwas gemacht. Wenn Sie können, sprechen Sie zusätzlich mit einem früheren Kunden, der nicht auf der Referenzliste steht.
-
-## Welche Warnsignale stehen im Angebot?
-
-Die folgenden Punkte habe ich in Angeboten gesehen, und jeder davon hat sich später im Projekt bemerkbar gemacht.
-
-```tabelle
-titel: Warnsignale im Angebot eines Salesforce-Partners
-spalten: Warnsignal | Was daraus wird | Was Sie fragen
-Optimistischer Festpreis | Prozesse, die in den Arbeitspaketen fehlen, tauchen im Projekt auf | Welcher unserer Prozesse ist nicht abgedeckt? *
-Discovery nur für den Happy Path | Randfälle kommen als Change Request | Welche Sonderfälle haben Sie besprochen? *
-Senior-Leute im Pitch | Im Projekt ein gemischtes Team mit vielen Junioren | Wer besetzt ab Tag 1 die Schlüsselrollen, mit Namen? *
-Kein Wort zu Repository und Pipeline | Der Partner ist schwer austauschbar | Könnten wir nach dem Go-live ohne Sie weitermachen? *
-Keine Aussage zur Qualitätssicherung | Fehler zeigen sich erst im Test | Wie hängen Meilensteine und Quality Gates zusammen? *
-fazit: Jeder Punkt lässt sich vor der Vergabe klären. Nach der Vergabe kostet er Geld.
-```
-
-Der erste Punkt wird oft unterschätzt. In meinen Fällen war der Festpreis zu optimistisch, und der Kunde wusste gar nicht, welche Funktionen in den einzelnen Arbeitspaketen enthalten waren und ob sie seinen Bedarf decken. Fehlt dann ein Prozess, deckt der Preis den tatsächlichen Umfang nicht mehr, und mit jedem Change Request schwindet der Schutz des Festpreises. Wie sich Festpreis und Aufwand verschieben, seit Partner mit KI bauen, steht in [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/).
 
 ## Die Discovery entscheidet, wie belastbar die Schätzung ist
 

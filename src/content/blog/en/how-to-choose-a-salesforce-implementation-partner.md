@@ -2,6 +2,7 @@
 title: "How to choose a Salesforce implementation partner"
 description: "How manufacturers choose a Salesforce implementation partner: warning signs in the proposal, pitch questions and why references say little about quality."
 pubDate: 2026-11-06
+updatedDate: 2026-11-10
 lang: en
 slug: how-to-choose-a-salesforce-implementation-partner
 translationKey: choose-salesforce-implementation-partner
@@ -29,6 +30,24 @@ draft: false
 
 Choose a Salesforce implementation partner on points that proposals often leave out, rather than on presentation polish and partner-selected references: how thoroughly the partner investigated your processes before pricing them, which people fill the key roles from day one, how the partner ties quality to milestones and whether you could continue without them. As an architect on the client side I have seen partners replaced more than once. Many of the reasons were visible in the proposal.
 
+## Which criteria decide the choice of a Salesforce partner?
+
+In short: compare all candidates on the same six criteria and ask each of them the same questions. I have seen the first five warning signs in real proposals, and each one made itself felt later in the project.
+
+```tabelle
+title: Criteria for choosing a Salesforce implementation partner
+columns: Criterion | What you ask | Warning sign in the proposal
+Scope | Which of our processes is not covered? * | Optimistic fixed price
+Discovery | Which special cases did you discuss? * | Discovery only for the happy path
+Team | Who fills the key roles from day one, by name? * | Senior people only in the pitch
+Replaceability | Could we continue without you after go-live? * | Nothing on repository and pipeline
+Quality | How do milestones and quality gates connect? * | Nothing on quality assurance
+Learning | Which project went wrong, and what did you change? * | Only references the partner briefed
+note: Each point can be clarified before the award. After the award it costs money.
+```
+
+The first point is often underrated. In my cases the fixed price was too optimistic, and the client did not even know which functions the individual work packages contained and whether they covered its needs. When a process then turns out to be missing, the price no longer covers the actual scope, and the protection of the fixed price erodes with every change request. How fixed price and time and materials shift now that partners build with AI is covered in [fixed price vs. time and materials](../fixed-price-vs-time-and-materials-ai/).
+
 ## Why references tell you little about an implementation partner
 
 References are briefed by the partner. No partner will name the project where things went badly wrong. That is not an accusation: every implementation partner has skeletons in the closet, and anyone who claims otherwise has done few projects or is not telling you everything.
@@ -46,23 +65,6 @@ note: Good for the shortlist, too little for the decision.
 ```
 
 The better question is: which project went wrong for you, what did you learn, and how can I see that it will not happen again? A partner with a concrete answer, a changed rule or a new review step, has done something with its mistakes. If you can, also talk to a former customer who is not on the reference list.
-
-## Which warning signs show up in the proposal?
-
-I have seen each of the following points in proposals, and each one made itself felt later in the project.
-
-```tabelle
-title: Warning signs in a Salesforce partner's proposal
-columns: Warning sign | What it turns into | What you ask
-Optimistic fixed price | Processes missing from the work packages turn up during the project | Which of our processes is not covered? *
-Discovery only for the happy path | Edge cases come back as change requests | Which special cases did you discuss? *
-Senior people in the pitch | A mixed team with many juniors on the project | Who fills the key roles from day one, by name? *
-Nothing on repository and pipeline | The partner is hard to replace | Could we continue without you after go-live? *
-Nothing on quality assurance | Defects only show up in testing | How do milestones and quality gates connect? *
-note: Each point can be clarified before the award. After the award it costs money.
-```
-
-The first point is often underrated. In my cases the fixed price was too optimistic, and the client did not even know which functions the individual work packages contained and whether they covered its needs. When a process then turns out to be missing, the price no longer covers the actual scope, and the protection of the fixed price erodes with every change request. How fixed price and time and materials shift now that partners build with AI is covered in [fixed price vs. time and materials](../fixed-price-vs-time-and-materials-ai/).
 
 ## The discovery decides how reliable the estimate is
 

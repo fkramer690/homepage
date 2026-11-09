@@ -111,11 +111,11 @@ Nutzung in Deutschland (Bitkom 2026, unter KI-Nutzern): ChatGPT 71 %, Gemini 50 
 | # | Maßnahme | Nutzen | Aufwand | Wer | Status |
 |---|---|---|---|---|---|
 | MP1 | Artikel „Gearset- und Copado-Alternativen“ (DE + EN) als Vergleich mit Tabelle, Preisen und ehrlicher Passung je Tool; zitiert werden heute nur Listicles von Toolanbietern | hoch | mittel | Claude, Fabian je Tool ein Praxissatz | offen |
-| MP2 | Ratgeber „Salesforce-Partner wechseln“ (DE + EN): Ablauf, Übergabe-Checkliste, Fallen, was die Kundenseite vorher besitzen muss | hoch | mittel | Claude | offen |
+| MP2 | Ratgeber „Salesforce-Partner wechseln“ (DE + EN): Ablauf, Übergabe-Checkliste, Fallen, was die Kundenseite vorher besitzen muss | hoch | mittel | Claude | erledigt 10.11.2026, Artikel live (salesforce-partner-wechseln) |
 | MP3 | Seite „Salesforce-Projekt retten“ (DE + EN), nur wenn Fabian das anbietet; braucht ein anonymes Beispiel | mittel | mittel | Fabian entscheidet | offen |
-| MP4 | Branchenseite „Salesforce für Maschinen- und Anlagenbau“ (DE + EN), bündelt Field Service, Manufacturing Cloud, SAP und Händler | hoch | groß | Claude, Fabian prüft | offen |
-| MP5 | Erklärartikel „Architekt auf Kundenseite oder Systemintegrator“ (EN + DE) | mittel | mittel | Claude | offen |
-| MP6 | Schärfen: Integrationsseite mit „SAP“ in Titel und erstem Satz, Make-or-Buy-Seite mit „Lizenz-Check“, Partnerwahl-Artikel mit Kurzfazit und Kriterientabelle oben (wie D20 ff.) | mittel | klein | Claude | offen |
+| MP4 | Branchenseite „Salesforce für Maschinen- und Anlagenbau“ (DE + EN), bündelt Field Service, Manufacturing Cloud, SAP und Händler | hoch | groß | Claude, Fabian prüft | Seite gebaut 10.11.2026 (/salesforce-maschinenbau/), Fabian prüft |
+| MP5 | Erklärartikel „Architekt auf Kundenseite oder Systemintegrator“ (EN + DE) | mittel | mittel | Claude | Text fertig 10.11.2026 (draft), live ab 16.11.2026 wegen 2 Artikeln pro Woche |
+| MP6 | Schärfen: Integrationsseite mit „SAP“ in Titel und erstem Satz, Make-or-Buy-Seite mit „Lizenz-Check“, Partnerwahl-Artikel mit Kurzfazit und Kriterientabelle oben (wie D20 ff.) | mittel | klein | Claude | erledigt 10.11.2026 |
 | MP7 | AppExchange-Consultant-Listing (QI) vorziehen: AppExchange wird bei 6 der 22 Anfragen zitiert, öfter als jede Wettbewerberseite | hoch | groß | Fabian | offen |
 | MP8 | LinkedIn-Headline EN um „multi-vendor Salesforce governance“ ergänzen (bei dieser Anfrage zitieren die Assistenten nur LinkedIn-Profile); Sortlist-Profil prüfen | mittel | klein | Fabian | offen |
 | MP9 | Die 22 Anfragen einmal im Monat mitmessen (ca. 2,70 USD je Lauf), getrennt von den 15 Wissensfragen | mittel | klein | Claude | offen |

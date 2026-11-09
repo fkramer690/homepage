@@ -1,12 +1,12 @@
 ---
-title: "Salesforce-Integration mit ERP, Middleware und Telefonie"
-description: "Salesforce angebunden an SAP und andere ERP-Systeme, Middleware und Telefonie wie Genesys oder Teams Phone, mit einer Integrationsarchitektur beim Kunden."
+title: "Salesforce-SAP-Integration, ERP-Schnittstellen, Telefonie"
+description: "Salesforce-SAP-Integration und Anbindung anderer ERP-Systeme, Middleware und Telefonie wie Genesys oder Teams Phone, mit Integrationsarchitektur beim Kunden."
 lang: de
 slug: salesforce-schnittstellen
 translationKey: service-integration
 contactBrief: integration
 order: 5
-lead: "Salesforce ist nie das einzige System. Aufträge, Preise, Bestände und Rechnungen liegen im ERP, und der Service läuft über Telefon und E-Mail. Ich entwerfe die Integrationsarchitektur auf Kundenseite und arbeite mit ausgewählten Partnern, die Schnittstellen in großen internationalen Programmen gebaut haben."
+lead: "Salesforce ist nie das einzige System. Aufträge, Preise, Bestände und Rechnungen liegen im ERP, bei Herstellern meist in SAP, und der Service läuft über Telefon und E-Mail. Ich entwerfe die Integrationsarchitektur auf Kundenseite und arbeite mit ausgewählten Partnern mit Erfahrung aus großen internationalen Programmen."
 situations:
   - "Salesforce braucht Daten aus SAP oder einem anderen ERP, etwa Kunden, Produkte, Preise, Aufträge oder Rechnungen, und es ist unklar, welches System für welche Daten führt."
   - "Punkt-zu-Punkt-Schnittstellen sind über Jahre gewachsen, und jede Änderung in einem System bricht etwas in einem anderen."
@@ -68,7 +68,7 @@ readMore: [manufacturing-cloud-erp-integration, revenue-cloud-sap-system-boundar
 masterclass: manufacturing-cloud
 ---
 
-Salesforce-Integration heißt, Salesforce mit den Systemen zu verbinden, die das Unternehmen schon betreibt, damit Daten einmal erfasst werden und Prozesse über Systemgrenzen hinweg funktionieren. Bei Herstellern ist das fast immer ein ERP, sehr oft SAP, manchmal Systeme wie proALPHA. Im Service gehören auch Telefonie und E-Mail dazu, weil sie noch immer die Kernkanäle sind. Ich entwerfe die Integrationsarchitektur auf Kundenseite und entscheide mit dem Kunden, welcher Partner sie baut.
+Salesforce-Integration heißt bei Herstellern fast immer Salesforce-SAP-Integration: Salesforce wird mit dem ERP verbunden, damit Daten einmal erfasst werden und Prozesse über Systemgrenzen hinweg funktionieren. Manchmal ist das ERP ein anderes System wie proALPHA. Im Service gehören auch Telefonie und E-Mail dazu, weil sie noch immer die Kernkanäle sind. Ich entwerfe die Integrationsarchitektur auf Kundenseite und entscheide mit dem Kunden, welcher Partner sie baut.
 
 ## Welches System führt für welche Daten?
 
