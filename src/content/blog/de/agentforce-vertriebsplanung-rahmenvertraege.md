@@ -18,9 +18,9 @@ faq:
   - q: "Was ist Agentforce for Sales Planning?"
     a: "Eine Agentenvorlage für die Manufacturing Cloud. Laut Salesforce-Hilfe beantwortet sie Fragen zu Sales Agreements, erstellt Performance-Zusammenfassungen, unterstützt bei Besuchen und E-Mails, ändert Sales Agreements in Massen und wandelt Programmprognosen in Opportunities um."
   - q: "Welche Lizenz braucht der Sales-Planning-Agent?"
-    a: "Die Hilfe nennt Enterprise, Performance oder Unlimited Edition mit dem Add-on Agentforce for Manufacturing oder die Agentforce 1 Manufacturing Edition. Jeder Nutzer braucht das Add-on. Klären Sie mit Ihrem Account-Team, wie das zu den neuen Max-Editionen passt."
+    a: "Die Hilfe nennt Enterprise, Performance oder Unlimited Edition mit dem Add-on Agentforce for Manufacturing oder die Agentforce 1 Manufacturing Edition. Jeder Nutzer braucht das Add-on, um auf die Aktion zuzugreifen. Klären Sie mit Ihrem Account-Team, wie das zu den neuen Max-Editionen passt."
   - q: "Arbeitet der Agent auch mit Account Forecasts?"
-    a: "Die Hilfeseite zur Vorlage nennt Account Forecasts im Text nicht, und keiner der drei dokumentierten Subagents befasst sich damit. Das Neuberechnen von Prognosen gibt es als Flow-Aktion, die eine eigene Agenten-Aktion aufrufen könnte. Das ist dann Ihre eigene Entwicklung."
+    a: "Die Hilfeseite zur Vorlage nennt Account Forecasts im Text nicht, und keiner der drei dokumentierten Subagents befasst sich damit. Das Neuberechnen von Prognosen gibt es als Flow-Aktion, die eine eigene Agenten-Aktion aufrufen kann. Das ist dann Ihre eigene Entwicklung."
   - q: "Woher kommen die Ist-Mengen, die der Agent auswertet?"
     a: "Aus den Ist-Werten in den Zeitplänen der Sales-Agreement-Produkte. Liegen die Aufträge in SAP oder proALPHA, muss eine Schnittstelle sie laden, etwa per Bulk API im Modus Manually using API upload. Ein täglicher Job aktualisiert danach die Sales Agreements."
   - q: "Ist Sales Planning in Agentforce for Sales enthalten?"
@@ -32,7 +32,7 @@ Agentforce for Sales Planning ist eine Agentenvorlage für die Vertriebsplanung 
 
 ## Was macht Agentforce for Sales Planning laut Salesforce?
 
-Salesforce hat Agentforce for Manufacturing am [21. August 2025](https://salesforce.com/news/stories/agentforce-for-manufacturing-announcement) angekündigt und die Vorlage Sales Planning als „available today“ bezeichnet. Die Ankündigung beschreibt einen Agenten, der Vertrieb und Disposition auf auffällige Abweichungen in Produktionsplänen („build plans“) hinweist, gemessen an geplanten und tatsächlichen Verkäufen. Auf Basis dieser Abweichungen könne er automatisch einen Besuch beim Kunden ansetzen, mit vorgeschlagenen Gesprächspunkten für das Account-Team.
+Salesforce hat Agentforce for Manufacturing am [21. August 2025](https://salesforce.com/news/stories/agentforce-for-manufacturing-announcement) angekündigt und die Vorlage Sales Planning als „available today“ bezeichnet. Die Ankündigung beschreibt einen Agenten, der auffällige Abweichungen in Produktionsplänen („build plans“) überwacht und Vertrieb sowie operative Teams darauf hinweist, gemessen an geplanten und tatsächlichen Verkäufen. Auf Basis dieser Abweichungen könne er automatisch einen Besuch beim Kunden ansetzen, mit vorgeschlagenen Gesprächspunkten für das Account-Team.
 
 Die [Hilfeseite zur Vorlage](https://help.salesforce.com/s/articleView?id=ind.mfg_gen_ai_agentforce_sales_planning_agent.htm&language=en_US&type=5) ist bescheidener. Der Agent kann laut Hilfe Fragen zu Sales Agreements beantworten, Performance-Zusammenfassungen erstellen und bei verwandten Aufgaben helfen, etwa Besuche ansetzen oder E-Mails entwerfen. Er kann Sales Agreements in Massen ändern und Datensätze anhand verknüpfter Daten aktualisieren. Für Program Based Business, den Bereich der Manufacturing Cloud für Fertigungsprogramme, wandelt er Prognosedatensätze von Programmkomponenten in Opportunities um.
 
@@ -56,7 +56,7 @@ Salesforce hat das Produkt selbst umbenannt: Die Hilfe schreibt inzwischen [„A
 
 Dieselbe Namensgebung taucht bei den Prognose-Einstellungen auf. Trailhead schreibt, Agentforce Manufacturing erzeuge zu Beginn jeder Anpassungsperiode automatisch Prognosen für neue Produkte. In [derselben Einheit](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/define-account-forecast-settings) ist das die Neuberechnung der Prognose zum Periodenstart, also eine geplante Berechnung des älteren Account Forecasting; für neue Einführungen empfiehlt Salesforce Advanced Account Forecasting. Ein Subagent oder Prompt kommt darin nicht vor.
 
-Problematisch wird das Branding, wenn im Hersteller-Workshop „der Agent prognostiziert Ihre neuen Produkte“ im Business Case landet. Meine Frage in solchen Terminen ist immer dieselbe: welcher Subagent, welche Aktion, welche Lizenz, und wo steht das in der Hilfe?
+Problematisch wird das Branding, wenn im Workshop mit dem Anbieter „der Agent prognostiziert Ihre neuen Produkte“ im Business Case landet. Meine Frage in solchen Terminen ist immer dieselbe: welcher Subagent, welche Aktion, welche Lizenz, und wo steht das in der Hilfe?
 
 ## Ist Sales Planning in Agentforce for Sales enthalten?
 
@@ -88,7 +88,7 @@ Fragt ein Account Manager, welche Verträge im Rückstand sind, vergleicht der A
 Ich habe Sales Agreements mit Ist-Mengen aus dem ERP in der Manufacturing Cloud eingeführt. Der Stolperstein war die ERP-Schnittstelle.
 ```
 
-Laut [Salesforce-Hilfe zum Import von Ist-Werten](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_api_external.htm&language=en_US&type=5) stellt der Admin dafür die Ist-Berechnung auf „Manually using API upload“. Eine Schnittstelle schreibt Actual Quantity und Actual Amount per Bulk API oder Data Loader in die Datensätze Sales Agreement Product Schedule, der tägliche Job läuft in der Zeitzone der Org. Wer Werte von Hand korrigiert, braucht die Berechtigung „Edit Actual Quantity of Sales Agreements Products“.
+Laut [Salesforce-Hilfe zum Import von Ist-Werten](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_api_external.htm&language=en_US&type=5) stellt der Admin dafür die Ist-Berechnung auf „Manually using API upload“. Eine Schnittstelle schreibt Actual Quantity und Actual Amount per Bulk API oder Data Loader in die Datensätze Sales Agreement Product Schedule. Der tägliche Job läuft in der Zeitzone der Org. Wer Werte von Hand korrigiert, braucht die Berechtigung „Edit Actual Quantity of Sales Agreements Products“.
 
 ```ablauf
 erp: Aufträge im ERP
@@ -107,11 +107,11 @@ Wer den Abgleich mit dem Produktionsplan will, muss auch die Planmengen aus der 
 
 Nehmen wir einen Kompressorenhersteller mit 35 Account Managern und 280 Sales Agreements mit Händlern und OEM-Kunden an, Aufträge in SAP. Alle Zahlen sind Annahmen zur Veranschaulichung.
 
-Eine Account Managerin fragt den Agenten am Montag, welche ihrer Verträge im Quartal mehr als 15 Prozent im Rückstand sind. Der Agent antwortet auf Basis des Laufs von 1:00 Uhr. Zwei Händler tauchen auf. Einer ist echt. Der andere bestellt über eine polnische Tochter, die auf einer eigenen ERP-Instanz läuft und noch nicht angebunden ist. Ohne Ladedatum in der Antwort hätte sie einen Kunden angerufen, der im Plan liegt.
+Eine Account Managerin fragt den Agenten am Montag, welche ihrer Verträge im Quartal mehr als 15 Prozent im Rückstand sind. Der Agent antwortet auf Basis des Laufs von 1:00 Uhr. Zwei Händler tauchen auf. Bei einem besteht der Rückstand wirklich. Der andere bestellt über eine polnische Tochter, die auf einer eigenen ERP-Instanz läuft und noch nicht angebunden ist. Ohne Ladedatum in der Antwort hätte sie einen Kunden angerufen, der im Plan liegt.
 
-Für den echten Rückstand entwirft der Agent eine E-Mail und einen Besuch mit Gesprächspunkten. Der größte Händlervertrag umfasst angenommene 900 Ersatzteilpositionen über 36 Monatszeitpläne, zusammen 32.400 Zeitpläne. Das liegt innerhalb der allgemeinen Grenzen. Nutzt die Zusammenfassung des Agenten denselben Ausschnitt wie die KI-Zusammenfassung auf der Vertragsseite, spricht sie über drei von 900 Positionen. Für einen Ersatzteilvertrag ist das dünn.
+Für diesen Rückstand entwirft der Agent eine E-Mail und bereitet einen Besuch mit Gesprächspunkten vor. Der größte Händlervertrag umfasst angenommene 900 Ersatzteilpositionen über 36 Monatszeitpläne, zusammen 32.400 Zeitpläne. Das liegt innerhalb der allgemeinen Grenzen. Nutzt die Zusammenfassung des Agenten denselben Ausschnitt wie die KI-Zusammenfassung auf der Vertragsseite, spricht sie über drei von 900 Positionen. Für einen Ersatzteilvertrag ist das dünn.
 
-Dann soll eine Preiserhöhung für eine Produktfamilie in 60 Verträge. Die Vorschau des Agenten zeigt nur 50 davon, und bei mehr als 450 betroffenen Vertragsprodukten überschreitet die Änderung ihre Grenze, schon bei durchschnittlich acht Produkten je Vertrag. Ich würde die Änderung deshalb in Pakete von höchstens 50 Verträgen und 450 Produkten teilen, zuerst in einer Full-Copy-Sandbox laufen lassen und für jedes Paket die eingebaute Vorschau und Bestätigung nutzen.
+Dann soll eine Preiserhöhung für eine Produktfamilie in 60 Verträge eingepflegt werden. Die Vorschau des Agenten zeigt nur 50 davon, und bei mehr als 450 betroffenen Vertragsprodukten überschreitet die Änderung ihre Grenze, schon bei durchschnittlich acht Produkten je Vertrag. Ich würde die Änderung deshalb in Pakete von höchstens 50 Verträgen und 450 Produkten teilen, zuerst in einer Full-Copy-Sandbox laufen lassen und für jedes Paket die eingebaute Vorschau und Bestätigung nutzen.
 
 ## Was würde ich vor dem Einschalten prüfen?
 
