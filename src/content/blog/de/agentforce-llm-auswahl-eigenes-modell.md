@@ -1,6 +1,6 @@
 ---
 title: "Agentforce LLM-Auswahl: Default, Claude oder eigenes Modell"
-description: "Welches LLM sollte Ihren Agentforce-Agenten antreiben? Salesforce Default, ein festgelegtes Claude-, GPT- oder Gemini-Modell pro Subagent oder BYOLLM mit Ihrem Azure-Vertrag."
+description: "Welches LLM sollte Ihre Agentforce-Agenten antreiben? Salesforce Default, ein festes Claude-, GPT- oder Gemini-Modell pro Subagent oder BYOLLM über Azure."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de

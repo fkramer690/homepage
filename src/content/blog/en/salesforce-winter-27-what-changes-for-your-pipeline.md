@@ -1,6 +1,6 @@
 ---
 title: "Salesforce Winter '27: what changes for your CI/CD pipeline"
-description: "Around Winter '27 the Salesforce CLI stops printing tokens, Apex limits rise, the Developer Console is hidden and API retirement dates approach. What release teams adjust."
+description: "Around Winter '27 the Salesforce CLI stops printing tokens, Apex limits rise, the Developer Console is hidden and API retirements near. What release teams adjust."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09
 lang: en
@@ -26,7 +26,7 @@ faq:
     a: "SOAP login() in API versions 31.0 to 64.0 is retired in Summer '27, and SOAP, REST and Bulk API versions 31.0 to 40.0 stop receiving updates in Summer '27 and fail in Summer '28."
 ---
 
-Winter '27 completed its production rollout in October 2026, and together with the weekly CLI releases around it, it brings changes that can break a CI/CD pipeline. The most urgent one: since 28 October the Salesforce CLI no longer prints access tokens with org display, even with the old workaround, and the CLI now needs Node.js 22. On top of that, the Developer Console is hidden from the Setup menu, Apex heap limits go up and the first API retirement dates are weeks away. The CLI changes can break CI now, the API dates break integrations later. This overview is based on Salesforce's [developer guide to Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) and sorted by urgency.
+Winter '27 completed its production rollout in October 2026, and together with the weekly CLI releases around it, it brings changes that can break a CI/CD pipeline. The most urgent one: since 28 October the Salesforce CLI no longer prints access tokens with org display, even with the old workaround, and the CLI now needs Node.js 22. On top of that, the Developer Console is hidden from the Setup menu, Apex heap limits go up and the first API retirement dates are weeks away. The CLI changes can break CI now, the API dates break integrations later. This overview follows Salesforce's [developer guide to Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release).
 
 ## What breaks first in a Salesforce pipeline?
 
