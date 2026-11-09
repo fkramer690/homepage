@@ -18,7 +18,7 @@ takeaways:
   - "Seit 5. November 2026 verkauft die US-Preisliste stattdessen Field Service Max zu 650 $; die deutsche Liste zeigt noch das Paket."
 faq:
   - q: "Was kostet Agentforce 1 Field Service?"
-    a: "Laut Salesforce-Preisliste vom Oktober 2026 kostet Agentforce 1 Field Service 650 € oder 650 Dollar pro Nutzer und Monat bei Jahresvertrag. Enthalten sind alles aus Field Service Plus, KI, weitere Produkte und Credits pro Org."
+    a: "Laut Salesforce-Preisliste vom Oktober 2026 kostet Agentforce 1 Field Service 650 € oder 650 Dollar pro Nutzer und Monat bei Jahresvertrag. Enthalten sind alle Funktionen von Field Service Plus sowie KI, weitere Produkte und Credits pro Org."
   - q: "Was ist in Agentforce 1 Field Service enthalten?"
     a: "Die Preisseite nennt Field Service Plus, unbegrenzte Agentforce-Nutzung für Mitarbeitende, Appointment Assistant, Visual Remote Assistant, Digital Channels, Slack und Tableau Next sowie 1 Million Flex Credits und 2,5 Millionen Data-Cloud-Credits (heute Data 360) pro Org und Jahr."
   - q: "Ist das Agentforce-Add-on günstiger als Agentforce 1 Field Service?"
@@ -28,10 +28,10 @@ faq:
 draft: false
 ---
 
-Agentforce 1 Field Service für 650 € pro Nutzer und Monat rechnet sich nur in einem engen Fall: wenn das Unternehmen Slack, Tableau Next, Digital Channels und Data 360 für dieselben Nutzer ohnehin kaufen würde. Aus Einzelteilen kosten Field Service Plus und die Add-ons für Agentforce, Visual Remote Assistant und Appointment Assistant 430 Dollar, das Paket kostet also 220 Dollar mehr pro Nutzer und Monat. Die enthaltenen Credits schließen diese Lücke nicht: 1 Million Flex Credits pro Org und Jahr sind zum Listenpreis 5.000 Dollar wert und decken den Aufpreis für etwa zwei Nutzer. Für Techniker, die nur das KI-Add-on brauchen, sind Einzellizenzen klar günstiger.
+Agentforce 1 Field Service für 650 € pro Nutzer und Monat rechnet sich nur in einem engen Fall: wenn das Unternehmen Slack, Tableau Next, Digital Channels und Data 360 für dieselben Nutzer ohnehin kaufen würde. Aus Einzelteilen kosten Field Service Plus und die Add-ons für Agentforce, Visual Remote Assistant und Appointment Assistant 430 Dollar, das Paket kostet also 220 Dollar mehr pro Nutzer und Monat. Die enthaltenen Credits mit 5.000 Dollar Listenwert decken diesen Aufpreis für etwa zwei Nutzer. In den USA führt Salesforce stattdessen inzwischen Field Service Max zu 650 Dollar; die Methode bleibt, das Ergebnis ändert sich.
 
 ```hinweis achtung
-Am 5. November 2026 hat die [US-Preisseite](https://www.salesforce.com/service/field-service-management/pricing/) Agentforce 1 Field Service durch Field Service Max zum selben Preis ersetzt, jetzt mit 2,75 Mio. Flex Credits pro Org und Jahr, Visual Remote Assistant, Asset Service Lifecycle Management und Connected Assets, und Field Service Plus durch Field Service+ Core. Die deutsche Preisseite zeigt am 9. November 2026 noch das alte Modell, auf dem die Rechnung unten beruht. Klären Sie im Angebot, welches Modell für Ihren Vertrag gilt.
+Am 5. November 2026 hat die [US-Preisseite](https://www.salesforce.com/service/field-service-management/pricing/) Agentforce 1 Field Service durch Field Service Max zum selben Preis ersetzt, jetzt mit 2,75 Mio. Flex Credits pro Org und Jahr, Visual Remote Assistant, Asset Service Lifecycle Management und Connected Assets, und Field Service Plus durch Field Service+ Core zu 250 Dollar. Die deutsche Preisseite zeigt am 9. November 2026 noch das alte Modell, auf dem die Rechnung unten beruht. Klären Sie im Angebot, welches Modell für Ihren Vertrag gilt.
 ```
 
 ## Was steckt in Agentforce 1 Field Service?
@@ -41,7 +41,7 @@ Salesforce verwendet auf Teilen seiner Preisseiten den Namen Field Service and O
 - alles aus Field Service Plus, also Dispatcher, Technician und das Recht auf Case Management,
 - unbegrenzte Agentforce-Nutzung für Mitarbeitende,
 - Appointment Assistant, Visual Remote Assistant, Digital Channels, Slack und Tableau Next,
-- 1 Million Flex Credits und 2,5 Millionen Data-Cloud-Credits pro Org und Jahr.
+- 1 Million Flex Credits und 2,5 Millionen Data-Cloud-Credits, heute Data 360, pro Org und Jahr.
 
 ```hinweis offen
 In der Funktionstabelle steht in der Zeile für den Scheduling Agent bei diesem Paket "1M Flex Credits included per org", bei allen anderen Editionen "Requires Flex Credits". Ob das eine zweite Million ist oder derselbe Topf wie oben, sagt die Seite nicht. Ich würde es mir im Angebot bestätigen lassen.
@@ -101,12 +101,12 @@ contra: Einzel-Add-ons gewinnen, wenn
 - Agenten für Kunden noch ein Pilot sind und der Credit-Bedarf unbekannt ist
 ```
 
-Ein dritter Weg liegt außerhalb beider Listen: das Agentic Enterprise License Agreement (AELA), eine Pauschale für Verbrauchsdienste, deren genauer Umfang vom Vertrag abhängt. Wann sich das lohnt, steht in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/). Welche Agenten für Kunden, Disposition und Techniker heute tragen, steht in [KI-Agenten im Außendienst: Was funktioniert heute?](../ki-agenten-aussendienst-field-service/).
+Ein dritter Weg liegt außerhalb beider Listen: das Agentic Enterprise License Agreement (AELA), eine Pauschale für Verbrauchsdienste, deren genauer Umfang vom Vertrag abhängt. Wann sich das lohnt, steht in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/). Welche Agenten für Kunden, Disposition und Techniker heute einsatzbereit sind, steht in [KI-Agenten im Außendienst: Was funktioniert heute?](../ki-agenten-aussendienst-field-service/).
 
 ## Was ändert sich mit Field Service Max?
 
-Field Service Max kostet in den USA dieselben 650 Dollar, aber die Vergleichsseite hat sich verschoben. Field Service+ Advanced kostet auf der US-Seite 450 Dollar, und die [US-Seite für KI im Field Service](https://www.salesforce.com/service/field-service-management/ai/pricing/) nennt für Agentforce for Field Service 150 Dollar. Diese zwei Bausteine kommen schon auf 600 Dollar, vor Visual Remote Assistant, Asset Service Lifecycle Management und Connected Assets, die Max zusammen mit 2,75 Mio. Flex Credits pro Org und Jahr enthält. Der Abstand von 220 Dollar aus dem Oktober-Paket lässt sich deshalb nicht übertragen. Ob Field Service+ Advanced Teile davon schon enthält und welche Org-Voraussetzungen gelten, würde ich mir im Angebot bestätigen lassen, bevor ich die Spalten neu vergleiche.
+Field Service Max kostet in den USA ebenfalls 650 Dollar, aber die Vergleichsbasis hat sich geändert. Field Service+ Advanced kostet auf der US-Seite 450 Dollar, und die [US-Seite für KI im Field Service](https://www.salesforce.com/service/field-service-management/ai/pricing/) nennt für Agentforce for Field Service 150 Dollar. Diese zwei Bausteine kommen schon auf 600 Dollar, vor Visual Remote Assistant, Asset Service Lifecycle Management und Connected Assets, die Max zusammen mit 2,75 Mio. Flex Credits pro Org und Jahr enthält. Der Abstand von 220 Dollar aus dem Oktober-Paket lässt sich deshalb nicht übertragen. Ob Field Service+ Advanced Teile davon schon enthält und welche Org-Voraussetzungen gelten, würde ich mir im Angebot bestätigen lassen, bevor ich die Spalten neu vergleiche.
 
 ## KI-Funktionen pro Rolle aufschreiben und drei Spalten vergleichen
 
-Schreiben Sie pro Rolle auf, welche KI-Funktionen im ersten Jahr wirklich genutzt werden, und schätzen Sie die Aktionen der Kundenagenten pro Monat. Dann vergleichen Sie drei Spalten: Paket, Einzelteile und Einzelteile nach Rolle. Die Credit-Seite erklärt das [Kapitel Kosten und Token der KI-Masterclass](../../masterclass/ki-salesforce/kosten-und-token/), die Lizenzmatrix nach Rollen [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/) und den Business Case insgesamt [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/).
+Schreiben Sie pro Rolle auf, welche KI-Funktionen im ersten Jahr wirklich genutzt werden, und schätzen Sie die monatlichen Aktionen von Agenten mit Kundenkontakt. Dann vergleichen Sie drei Spalten: Paket, Einzelteile und Einzelteile nach Rolle. Die Credit-Seite erklärt das [Kapitel Kosten und Token der KI-Masterclass](../../masterclass/ki-salesforce/kosten-und-token/), die Lizenzmatrix nach Rollen [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/) und den Business Case insgesamt [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/).

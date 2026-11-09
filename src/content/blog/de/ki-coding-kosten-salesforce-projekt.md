@@ -11,16 +11,16 @@ categories: [devops, ai]
 tags: [KI-Coding, Claude Code, GitHub Copilot, Agentforce Vibes, Partnersteuerung, Kosten]
 takeaways:
   - "Anthropic nennt für Claude Code rund 13 $ pro Entwickler und aktivem Arbeitstag; Caching macht wiederholten Kontext billig, teuer sind Output und Thinking."
-  - "Im Rechenbeispiel kosten KI-Werkzeuge für ein Partnerteam mit acht Personen etwa 650 $ bis 1.500 $ im Monat, rund ein Prozent der Tagessätze."
+  - "Im Rechenbeispiel kosten KI-Werkzeuge für ein Partnerteam mit acht Personen etwa 650 $ bis 1.500 $ im Monat, rund ein Prozent der monatlichen Teamkosten."
   - "Agentforce Vibes im Verbrauchsmodell zieht aus denselben Flex Credits wie Ihre Agenten in Produktion; Opus kostet 16 Credits pro 2.000 Tokens."
-  - "Meine bevorzugte Aufteilung: bei Aufwand besitzt der Kunde die Accounts und zahlt die Tokens, beim Festpreis zahlt der Partner."
+  - "Meine bevorzugte Aufteilung: bei Abrechnung nach Aufwand besitzt der Kunde die Accounts und zahlt die Tokens, beim Festpreis zahlt der Partner."
 faq:
   - q: "Was kostet Claude Code pro Entwickler und Monat?"
     a: "Anthropic nennt für Unternehmenseinsätze zu API-Preisen im Schnitt rund 13 $ pro Entwickler und aktivem Tag und 150 $ bis 250 $ pro Monat. Ein Premium-Seat im Claude-Team-Plan kostet 125 $ im Monat, bei Jahreszahlung 100 $, mit Nutzungskontingent statt Token-Rechnung."
   - q: "Ist GitHub Copilot für Salesforce-Arbeit günstiger als Claude Code?"
     a: "Der Seat ist günstiger: Copilot Business kostet 19 $ pro Nutzer und Monat und enthält 1.900 AI Credits, also 19 $ Modellnutzung. Agenten-Sessions verbrauchen Credits zum Token-Preis des Modells, über den gepoolten Credits kostet jeder Credit 0,01 $. Bei intensiver Agentennutzung schrumpft der Abstand."
   - q: "Wer sollte KI-Coding-Werkzeuge bezahlen, Kunde oder Umsetzungspartner?"
-    a: "Meine Empfehlung folgt dem Vertragsmodell. Bei Aufwand bekommt der Kunde den Produktivitätsgewinn nur über weniger abgerechnete Tage, also sollte er die Accounts besitzen und zahlen. Beim Festpreis behält der Partner den Gewinn und trägt die Token-Kosten, auch wenn der Kunde die Accounts aus Sicherheitsgründen trotzdem selbst halten kann."
+    a: "Meine Empfehlung folgt dem Vertragsmodell. Bei Abrechnung nach Aufwand bekommt der Kunde den Produktivitätsgewinn nur über weniger abgerechnete Tage, also sollte er die Accounts besitzen und zahlen. Beim Festpreis behält der Partner den Gewinn und trägt die Token-Kosten, auch wenn der Kunde die Accounts aus Sicherheitsgründen trotzdem selbst halten kann."
   - q: "Verbraucht Agentforce Vibes meine Agentforce Flex Credits?"
     a: "Im Verbrauchsmodell ja. Laut Salesforce nutzt es dieselben Credits wie Agentforce, gezählt in Einheiten zu 2.000 Tokens. Das Unmetered-Add-on für 125 € pro Nutzer und Monat deckt GPT-5 als enthaltenes Modell und Claude Sonnet 4.6 als Premium-Modell bis 2.500 Requests oder 36 Mio. Tokens pro 30 Tage ab. Opus gibt es nur im Verbrauchsmodell."
   - q: "Warum ist Prompt-Caching für KI-Coding-Kosten so wichtig?"
@@ -28,15 +28,15 @@ faq:
 draft: false
 ---
 
-KI-Coding kostet im Salesforce-Projekt weniger, als die meisten Budgetdiskussionen annehmen. Seats beginnen bei 19 $ pro Entwickler und Monat, und Anthropic und OpenAI nennen für typische Agentennutzung rund 100 $ bis 250 $ pro Entwickler und Monat; intensive Nutzung nach Verbrauch kann darüber liegen. In meinem Rechenbeispiel landet ein Partnerteam mit acht Personen bei rund 650 $ bis 1.500 $ im Monat, etwa einem Prozent der Tagessätze. Schwieriger ist die Frage, wem die Accounts gehören und wer das Verbrauchsrisiko trägt. Meine bevorzugte Aufteilung: bei Aufwand zahlt der Kunde, beim Festpreis der Partner.
+KI-Coding kostet im Salesforce-Projekt weniger, als die meisten Budgetdiskussionen annehmen. Seats beginnen bei 19 $ pro Entwickler und Monat, und Anthropic und OpenAI nennen für typische Agentennutzung rund 100 $ bis 250 $ pro Entwickler und Monat; intensive Nutzung nach Verbrauch kann darüber liegen. In meinem Rechenbeispiel landet ein Partnerteam mit acht Personen bei rund 650 $ bis 1.500 $ im Monat, etwa einem Prozent der monatlichen Teamkosten. Schwieriger ist die Frage, wem die Accounts gehören und wer das Verbrauchsrisiko trägt. Meine bevorzugte Aufteilung: bei Abrechnung nach Aufwand zahlt der Kunde, beim Festpreis der Partner.
 
 ## Was kostet KI-Coding pro Entwickler und Monat?
 
 Die Produkte kombinieren Seats, enthaltene Kontingente und Abrechnung nach Verbrauch unterschiedlich, und Nutzung über dem Kontingent ist nicht immer automatisch freigeschaltet. Hier die Listenpreise vom 27. Oktober 2026, geprüft am 9. November 2026; außer bei Salesforce sind es US-Listenpreise in USD:
 
 - **Claude Code zu API-Preisen.** Anthropic [nennt](https://code.claude.com/docs/en/costs) für Unternehmenseinsätze rund 13 $ pro Entwickler und aktivem Tag und 150 $ bis 250 $ pro Monat; 90 Prozent der Nutzer bleiben unter 30 $ pro aktivem Tag.
-- **Claude Team und Enterprise.** Laut [Preisseite von Anthropic](https://claude.com/pricing) kostet ein Team-Standard-Seat 25 $ im Monat (20 $ jährlich), Premium 125 $ (100 $ jährlich), Enterprise 20 $ pro Seat plus Nutzung zu API-Preisen. Die Nutzung zieht aus einem Kontingent, das sich in einem Fünf-Stunden- und einem Wochenfenster erneuert. Wie viele Tokens das sind, veröffentlicht Anthropic nicht.
-- **OpenAI Codex.** Die [Codex Rate Card](https://help.openai.com/en/articles/20001106-codex-rate-card-2) nennt im Schnitt rund 100 $ bis 200 $ pro Entwickler und Monat. OpenAI führt Codex unter den Funktionen von [ChatGPT Business](https://openai.com/business/pricing/) zu 25 $ pro Standard-Seat (20 $ jährlich).
+- **Claude Team und Enterprise.** Laut [Preisseite von Anthropic](https://claude.com/pricing) kostet ein Team-Standard-Seat 25 $ im Monat, bei jährlicher Abrechnung 20 $, Premium 125 $, bei jährlicher Abrechnung 100 $, Enterprise 20 $ pro Seat plus Nutzung zu API-Preisen. Die Nutzung zieht aus einem Kontingent, das sich in einem Fünf-Stunden- und einem Wochenfenster erneuert. Wie viele Tokens das sind, veröffentlicht Anthropic nicht.
+- **OpenAI Codex.** Die [Codex Rate Card](https://help.openai.com/en/articles/20001106-codex-rate-card-2) nennt im Schnitt rund 100 $ bis 200 $ pro Entwickler und Monat. OpenAI führt Codex unter den Funktionen von [ChatGPT Business](https://openai.com/business/pricing/) zu 25 $ pro Standard-Seat und Monat, bei jährlicher Abrechnung 20 $.
 - **GitHub Copilot.** Business kostet [19 $ pro Nutzer mit 1.900 AI Credits](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan), Enterprise 39 $ mit 3.900. Ein Credit kostet 0,01 $, die Credits werden [organisationsweit gepoolt](https://docs.github.com/de/copilot/concepts/billing/organizations-and-enterprises/usage-based-billing), Code-Vervollständigungen kosten keine Credits.
 - **Agentforce Vibes.** Verbrauch in Flex Credits oder ein Unmetered-Add-on für 125 € pro Nutzer und Monat mit Grenzen, dazu unten mehr.
 
@@ -71,7 +71,7 @@ Zwei Effekte treiben das nach oben: Claude ab 4.7 erzeugt für denselben Text ru
 
 ## Rechenbeispiel: ein Partnerteam mit acht Personen baut Serviceprozesse
 
-Nehmen wir einen Maschinenbauer mit SAP, Service Cloud, Field Service für den Außendienst und einem Händlerportal. Ein Nearshore-Partnerteam mit acht Personen baut das nächste Release: sechs Entwickler, die an 18 Tagen im Monat mit einem Coding-Agenten arbeiten, dazu ein Lead Consultant und eine Projektleiterin mit Chat-Seats. Alle Mengen sind Annahmen, die Preise die Listenpreise von oben.
+Nehmen wir einen Maschinenbauer mit SAP, Service Cloud, Field Service für seine Servicetechniker und einem Händlerportal. Ein Nearshore-Partnerteam mit acht Personen baut das nächste Release: sechs Entwickler, die an 18 Tagen im Monat mit einem Coding-Agenten arbeiten, dazu ein Lead Consultant und eine Person aus der Projektleitung mit Chat-Seats. Alle Mengen sind Annahmen, die Preise die Listenpreise von oben.
 
 - **Claude Code zu API-Preisen:** 6 × 18 × 13 $ = 1.404 $, plus zwei Standard-Seats, rund 1.450 $ im Monat, ohne Obergrenze, solange niemand eine setzt.
 - **Claude Team:** sechs Premium- und zwei Standard-Seats = 800 $ im Monat, 640 $ bei Jahreszahlung. Planbar, aber wer sein Kontingent aufbraucht, wartet auf das nächste Fenster, außer der Admin hat Usage Credits freigeschaltet.
@@ -101,11 +101,11 @@ Meine bevorzugte Aufteilung folgt dem Vertragsmodell. Bei Abrechnung nach Aufwan
 - **Der Partner bringt eigene Werkzeuge mit.** Die Kosten stecken im Tagessatz, das Verbrauchsrisiko auch. Ihr Quellcode läuft dann aber über einen Vertrag, den Sie nie gelesen haben. Der Vertrag mit dem Partner muss deshalb erlaubte Werkzeuge, Modelle und Datenregeln nennen, siehe [Regeln für Partner mit KI-Coding im Vertrag](../partner-ki-coding-regeln-vertrag/).
 - **Weiterberechnung zum Selbstkostenpreis.** Der Partner stellt die Tokens monatlich in Rechnung. Das würde ich nur mit Obergrenze pro Entwickler, Verbrauchsbericht pro Person und ohne Aufschlag akzeptieren, sonst hat niemand einen Grund, Sonnet statt Opus zu wählen.
 
-Bei Aufwand bevorzuge ich die erste Variante: Für 650 $ bis 1.500 $ im Monat behält der Kunde Daten, Limits und Offboarding in der Hand. In Deutschland ist der Betriebsrat zu unterrichten und zu beraten, wenn KI Arbeitsabläufe verändert, und wo Nutzungsdaten eine Überwachung von Beschäftigten erlauben, kann Mitbestimmung greifen, siehe [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/). Ob Sie überhaupt Seats kaufen, gehört zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+Bei Abrechnung nach Aufwand bevorzuge ich die erste Variante: Für 650 $ bis 1.500 $ im Monat behält der Kunde Daten, Limits und Offboarding in der Hand. In Deutschland ist der Betriebsrat zu unterrichten und zu beraten, wenn KI Arbeitsabläufe verändert, und wo Nutzungsdaten eine Überwachung von Beschäftigten erlauben, kann Mitbestimmung greifen, siehe [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/). Ob Sie überhaupt Seats kaufen, gehört zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
 ## Vor dem ersten Sprint klären, wer zahlt
 
-1. **Klären Sie vor dem ersten Sprint, wer zahlt**, und schreiben Sie es in den Vertrag.
+1. **Klären Sie vor dem ersten Sprint, wer zahlt**, und halten Sie es in der Leistungsbeschreibung fest.
 2. **Setzen Sie Limits.** Claude Team und Enterprise bieten Ausgabenlimits pro Organisation, Gruppe und Mitglied für Nutzung über das Seat-Kontingent hinaus, die Claude Console Limits pro Workspace, GitHub Budgets pro Nutzer und Kostenstelle.
 3. **Sonnet als Standard.** Anthropic empfiehlt Sonnet für die meisten Coding-Aufgaben und Opus für komplexe Architekturentscheidungen.
 4. **Halten Sie die Regeldatei kurz.** Anthropic rät, CLAUDE.md unter 200 Zeilen zu halten, siehe [die KI-Regeldatei im Repository](../ki-regeldatei-salesforce-repository/).
