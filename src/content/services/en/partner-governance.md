@@ -1,5 +1,5 @@
 ---
-title: "Salesforce partner governance for multi-vendor programmes"
+title: "Salesforce partner governance for multi-vendor programs"
 headline: "Several Salesforce partners, one owner on the client side"
 description: "Several implementation partners on one Salesforce org? One governance and release framework, clear ownership and reviews on the client side keep it in control."
 lang: en
@@ -44,7 +44,7 @@ faq:
   - q: "What is Salesforce partner governance?"
     a: "It is the set of rules, roles and reviews that makes several implementation partners work on one Salesforce org in the same way: shared standards, clear ownership of objects and metadata, one release process and a technical review of every delivery."
   - q: "How long does it take to establish standards across several partners?"
-    a: "In my largest programme, about three months. The very first version settled around 80 percent of the cases. We added the rest bit by bit, until new topics came up in Center of Excellence calls before they caused conflicts."
+    a: "In my largest program, about three months. The very first version settled around 80 percent of the cases. We added the rest bit by bit, until new topics came up in Center of Excellence calls before they caused conflicts."
   - q: "Why should the client, not a partner, own governance?"
     a: "If one partner sets the rules, it decides how all others build, including its competitors. When the client owns standards, repository and approvals, partners stay comparable and replaceable."
   - q: "What is an object ownership matrix?"
@@ -58,7 +58,7 @@ readMore: [choose-salesforce-implementation-partner, object-ownership-matrix, de
 masterclass: devops
 ---
 
-Partner governance on the client side is what keeps a Salesforce programme with several implementation partners in control. It means one set of standards, clear ownership for every object and process, one release process and someone who technically reviews each delivery before it moves on. Without it, every partner optimises its own scope, and the client pays for the conflicts between them. I take on this role as an independent architect, without ties to any vendor or partner.
+Partner governance on the client side is what keeps a Salesforce program with several implementation partners in control. It means one set of standards, clear ownership for every object and process, one release process and someone who technically reviews each delivery before it moves on. Without it, every partner optimizes its own scope, and the client pays for the conflicts between them. I take on this role as an independent architect, without ties to any vendor or partner.
 
 ```partnerfluss architect
 without: Without an owner on the client side | Every partner delivers its part, conflicts only show in the org.
@@ -72,10 +72,10 @@ with: With an architect on the client side | Every delivery runs through standar
 5 | implementation partners plus internal teams
 3 | months until the standards were stable
 80 % | of cases covered by the first version
-source: my largest programme as an architect on the client side
+source: my largest program as an architect on the client side
 ```
 
-When this programme started, no object had an owner. Teams overwrote each other's changes, and each built by its own rules.
+When this program started, no object had an owner. Teams overwrote each other's changes, and each built by its own rules.
 
 The first step: every change reached the org as a pull request with a review, and for a while I checked all of them myself. Whatever kept coming up in those reviews became a standard, such as naming conventions, one automation entry point per object and context, and rules for test coverage. Two levers did the most:
 
@@ -96,7 +96,7 @@ A partner can write good standards too. But if it sets the rules, it decides how
 
 When the client owns the standards, the approval rights and the tools, a new partner starts with the same rules, tools and rights as everyone else, and a partner who leaves hands over open work and knowledge, while the repository, pipeline and standards stay where they are. Offers can then be compared fairly, because everyone delivers under the same conditions. More on this in [why clients should own their DevOps tools](../../blog/why-clients-should-own-their-devops-tools/). What to ask about it when you select a partner is in [how to choose a Salesforce implementation partner](../../blog/how-to-choose-a-salesforce-implementation-partner/).
 
-## How do reviews fit in without slowing the programme down?
+## How do reviews fit in without slowing the program down?
 
 Reviews turn written standards into daily practice. They do not slow things down when pull requests are small, the pipeline runs every repeatable check and everyone knows when the review will come:
 

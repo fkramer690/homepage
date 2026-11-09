@@ -17,7 +17,7 @@ export const architectCerts: Cert[] = [
   {
     name: "Application Architect",
     year: 2020,
-    en: "Salesforce awards this one for holding the Data Architect, Sharing and Visibility Architect, Platform App Builder and Platform Developer I credentials together. It stands for one judgement: configure, code or leave it out of Salesforce. Getting that call right early saves the most money in any project.",
+    en: "Salesforce awards this one for holding the Data Architect, Sharing and Visibility Architect, Platform App Builder and Platform Developer I credentials together. It stands for one judgment: configure, code or leave it out of Salesforce. Getting that call right early saves the most money in any project.",
     de: "Salesforce vergibt sie für die Kombination aus Data Architect, Sharing and Visibility Architect, Platform App Builder und Platform Developer I. Sie steht für eine Abwägung: konfigurieren, programmieren oder gar nicht in Salesforce bauen. Diese Entscheidung früh richtig zu treffen spart in jedem Projekt am meisten Geld.",
   },
   {
@@ -68,7 +68,7 @@ export const salesforceCerts: Cert[] = [
   {
     name: "Experience Cloud Consultant",
     year: 2019,
-    en: "Dealer, partner and subcontractor portals put Salesforce data in front of people outside the company. Licensing, external sharing and branding have to be settled before the first page is built. A portal that partners do not use costs licences and brings nothing.",
+    en: "Dealer, partner and subcontractor portals put Salesforce data in front of people outside the company. Licensing, external sharing and branding have to be settled before the first page is built. A portal that partners do not use costs licenses and brings nothing.",
     de: "Händler-, Partner- und Subunternehmer-Portale zeigen Salesforce-Daten Menschen außerhalb des Unternehmens. Lizenzen, externes Sharing und Branding müssen geklärt sein, bevor die erste Seite entsteht. Ein Portal, das Partner nicht nutzen, kostet Lizenzen und bringt nichts.",
   },
   {
@@ -181,7 +181,7 @@ export const otherCerts: Record<'architecture' | 'devops' | 'delivery' | 'crm', 
     {
       name: "MuleSoft Associate",
       year: 2025,
-      en: "API-led connectivity organises interfaces in reusable layers. With many systems around Salesforce this keeps the landscape changeable, because a new system connects to existing APIs.",
+      en: "API-led connectivity organizes interfaces in reusable layers. With many systems around Salesforce this keeps the landscape changeable, because a new system connects to existing APIs.",
       de: "API-led Connectivity ordnet Schnittstellen in wiederverwendbaren Schichten. Bei vielen Systemen rund um Salesforce bleibt die Landschaft so veränderbar, weil ein neues System an bestehende APIs andockt.",
     },
   ],
@@ -227,7 +227,7 @@ export const otherCerts: Record<'architecture' | 'devops' | 'delivery' | 'crm', 
     {
       name: "PRINCE2 Foundation",
       year: 2020,
-      en: "Large companies often steer programmes with a steering committee while teams work in Scrum. PRINCE2 gives me the vocabulary of the governance side, so both levels can be connected without friction.",
+      en: "Large companies often steer programs with a steering committee while teams work in Scrum. PRINCE2 gives me the vocabulary of the governance side, so both levels can be connected without friction.",
       de: "Große Unternehmen steuern Programme oft über einen Lenkungskreis, während die Teams in Scrum arbeiten. PRINCE2 gibt mir das Vokabular der Steuerungsebene, damit sich beide Ebenen ohne Reibung verbinden lassen.",
     },
     {
@@ -253,7 +253,7 @@ export const otherCerts: Record<'architecture' | 'devops' | 'delivery' | 'crm', 
     {
       name: "HubSpot Marketing Software",
       year: 2025,
-      en: "HubSpot Marketing is a common alternative to Marketing Cloud. Knowing it allows a licence recommendation based on the requirements alone.",
+      en: "HubSpot Marketing is a common alternative to Marketing Cloud. Knowing it allows a license recommendation based on the requirements alone.",
       de: "HubSpot Marketing ist eine verbreitete Alternative zur Marketing Cloud. Wer es kennt, kann eine Lizenzempfehlung geben, die sich allein an den Anforderungen orientiert.",
     },
     {

@@ -286,7 +286,7 @@ const drawings: Record<string, Drawing> = {
     ${[l('price lists', 'Preislisten'), l('all assets', 'alle Assets'), l('all stock', 'alle Lager')].map((s, i) => cross(252, 54 + i * 16) + t(262, 57 + i * 16, s, { size: 7 })).join('')}
     <path d="M18 126H302" stroke="${L}"/>
     ${t(18, 140, l('known gaps: tasks not primed, iOS loads LWC after cold start', 'bekannte Lücken: Tasks nicht geladen, iOS lädt LWC erst nach Kaltstart'), { size: 7 })}
-    ${t(18, 153, l('test offline with a partner user (community licence)', 'offline mit Partnernutzer testen (Community-Lizenz)'), { fill: C, size: 7 })}`,
+    ${t(18, 153, l('test offline with a partner user (community license)', 'offline mit Partnernutzer testen (Community-Lizenz)'), { fill: C, size: 7 })}`,
 
   'field-service-mobile-flow-limits': (l) => `
     ${t(18, 18, l('WHAT RUNS IN THE APP (HELP PAGES 11/2026)', 'WAS IN DER APP LÄUFT (HILFESEITEN 11/2026)'), { fill: D, size: 7 })}
@@ -424,7 +424,7 @@ const drawings: Record<string, Drawing> = {
     ${t(14, 146, l('Maintenance plan: work order without case, 3x a day', 'Wartungsplan: Arbeitsauftrag ohne Case, 3x am Tag'), { size: 7 })}`,
 
   'field-service-licences-by-role': (l) => `
-    ${t(18, 20, l('ROLE → LICENCE (PER USER / MONTH)', 'ROLLE → LIZENZ (PRO NUTZER / MONAT)'), { fill: D, size: 7.5 })}
+    ${t(18, 20, l('ROLE → LICENSE (PER USER / MONTH)', 'ROLLE → LIZENZ (PRO NUTZER / MONAT)'), { fill: D, size: 7.5 })}
     ${[[l('Hotline', 'Hotline'), 'Service Cloud Core', l('$195', '195 €'), G], [l('Hotline + dispatch', 'Hotline + Disposition'), 'Field Service Plus', l('$230', '230 €'), C], [l('Dispatcher', 'Disposition'), 'Dispatcher', l('$175', '175 €'), G], [l('Technician', 'Techniker'), 'Technician', l('$175', '175 €'), G], [l('Partner technician', 'Partnertechniker'), 'Contractor Plus', l('$80 or $32/login', '80 € oder 32 €/Login'), G]]
       .map(([r, lic, p, c], i) => `<path d="M18 ${30 + i * 20}H302" stroke="${L}"/>` + t(22, 43 + i * 20, String(r), { fill: String(c) === C ? C : G, size: 7.5 }) + t(196, 43 + i * 20, String(lic), { fill: String(c), size: 7, anchor: 'end' }) + t(298, 43 + i * 20, String(p), { fill: String(c), size: 7, anchor: 'end' })).join('')}
     ${cross(24, 146)}${t(34, 149, l('no case management on Dispatcher or Technician', 'kein Case Management mit Dispatcher oder Technician'), { size: 7 })}`,
@@ -554,7 +554,7 @@ const drawings: Record<string, Drawing> = {
     ${t(120, 39.5, l('Sales Core 495K', 'Sales Core 495K'), { size: 7, anchor: 'middle' })}${t(262, 39.5, '+198K', { fill: C, size: 7.5, anchor: 'middle' })}
     ${[[l('Portal, 100 members + 300 logins', 'Portal, 100 Mitglieder + 300 Logins'), '132K'], [l('Agentforce add-on, 20 users', 'Agentforce-Add-on, 20 Nutzer'), '36K'], ['Channel Revenue Mgmt', '30K']]
       .map(([s, v], i) => `<path d="M221 ${58 + i * 14}H302" stroke="${L}"/>` + dot(225, 54 + i * 14, C, 2.2) + t(232, 57 + i * 14, String(v), { fill: C, size: 7 }) + t(214, 57 + i * 14, String(s), { size: 6.8, anchor: 'end' })).join('')}
-    ${tag(18, 98, 112, l('+40 % on licences', '+40 % auf Lizenzen'))}
+    ${tag(18, 98, 112, l('+40 % on licenses', '+40 % auf Lizenzen'))}
     <path d="M18 128H302" stroke="${L}"/>
     ${t(18, 140, l('optional: Connected Assets 180K, Omnistudio +2M calls 120K', 'optional: Connected Assets 180K, Omnistudio +2 Mio. Aufrufe 120K'), { size: 7 })}
     ${cross(22, 150)}${t(32, 154, l('Manufacturing Intelligence: $220/login or "from $165"?', 'Manufacturing Intelligence: 220 $/Login oder „ab 165 $“?'), { size: 7 })}`,
@@ -577,7 +577,7 @@ const drawings: Record<string, Drawing> = {
     ${[[l('spare parts stock', 'Ersatzteilbestand'), l('integer', 'Ganzzahl')], [l('trained mechanics', 'geschulte Mechaniker'), l('integer', 'Ganzzahl')], [l('demo machines', 'Vorführmaschinen'), l('integer', 'Ganzzahl')], [l('open claims > 30 d', 'Ansprüche > 30 T.'), l('integer', 'Ganzzahl')], [l('target reached', 'Ziel erreicht'), l('percentage', 'Prozent')]]
       .map(([a, b], r) => `<path d="M146 ${34 + r * 17}H296" stroke="${L}"/>` + t(146, 46 + r * 17, String(a), { size: 6.8 }) + t(296, 46 + r * 17, String(b), { size: 6.5, anchor: 'end' })).join('')}
     ${t(221, 128, l('expected vs actual', 'Soll gegen Ist'), { fill: C, size: 7.5, anchor: 'middle' })}
-    ${t(14, 152, l('licence and offline use: ask Salesforce', 'Lizenz und Offline: Salesforce fragen'), { size: 7 })}`,
+    ${t(14, 152, l('license and offline use: ask Salesforce', 'Lizenz und Offline: Salesforce fragen'), { size: 7 })}`,
 
   'manufacturing-cloud-product-service-campaigns': (l) => `
     ${box(18, 50, 76, 42)}${t(56, 67, l('CAUSAL PART', 'VERURSACHER'), { fill: D, size: 7, anchor: 'middle' })}${t(56, 81, l('valve batch', 'Ventilcharge'), { size: 7, anchor: 'middle' })}
@@ -619,7 +619,7 @@ const drawings: Record<string, Drawing> = {
     ${t(14, 150, l('SOAP login() needs Use Any API Auth from 1 Dec 2026', 'SOAP login() braucht Use Any API Auth ab 01.12.2026'), { size: 7 })}`,
 
   'manufacturing-cloud-feature-map': (l) => `
-    ${t(18, 18, l('ONE LICENCE, ONE SWITCH PER FEATURE', 'EINE LIZENZ, EIN SCHALTER PRO FUNKTION'), { fill: D, size: 7 })}
+    ${t(18, 18, l('ONE LICENSE, ONE SWITCH PER FEATURE', 'EINE LIZENZ, EIN SCHALTER PRO FUNKTION'), { fill: D, size: 7 })}
     ${[
       { h: l('SALES', 'VERTRIEB'), items: ['Sales Agreements', l('Adv. forecasting', 'Adv. Forecasting'), l('Programs', 'Programme'), 'Targets'] },
       { h: 'SERVICE', items: [l('Warranty', 'Garantie'), l('Campaigns', 'Kampagnen'), 'Asset console', 'Prework'] },
@@ -699,8 +699,8 @@ const drawings: Record<string, Drawing> = {
     ${check(20, 143)}${t(34, 147, l('country x tier: 36 groups, limit 2,000 per part', 'Land x Stufe: 36 Gruppen, Grenze 2.000 je Teil'), { fill: C, size: 7 })}`,
 
   'commerce-buyer-licences': (l) => `
-    ${t(18, 20, l('B2B COMMERCE LICENCES', 'B2B-COMMERCE-LIZENZEN'), { fill: D, size: 7.5 })}
-    ${[[l('Buyer', 'Käufer'), 'Customer Community Plus', C], ['Buyer Manager', 'Customer Community Plus', C], ['Merchandiser', 'B2B and D2C Commerce', G], [l('Developer', 'Entwickler'), l('Full licence', 'Volle Lizenz'), G]]
+    ${t(18, 20, l('B2B COMMERCE LICENSES', 'B2B-COMMERCE-LIZENZEN'), { fill: D, size: 7.5 })}
+    ${[[l('Buyer', 'Käufer'), 'Customer Community Plus', C], ['Buyer Manager', 'Customer Community Plus', C], ['Merchandiser', 'B2B and D2C Commerce', G], [l('Developer', 'Entwickler'), l('Full license', 'Volle Lizenz'), G]]
       .map(([r, lic, c], i) => `<path d="M18 ${36 + i * 22}H190" stroke="${L}"/>` + t(22, 50 + i * 22, String(r), { size: 7.5 }) + t(186, 50 + i * 22, String(lic), { fill: String(c), size: 7, anchor: 'end' })).join('')}
     ${box(206, 30, 96, 58)}${t(254, 46, l('PER MONTH', 'PRO MONAT'), { fill: D, size: 7, anchor: 'middle' })}
     ${t(214, 62, l('Member', 'Mitglied'), { size: 7 })}${t(294, 62, l('$35', '35 €'), { fill: C, size: 7.5, anchor: 'end' })}
@@ -755,7 +755,7 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 64, l('% of GMV: not published', '% vom GMV: nicht veröffentlicht'), { fill: C, size: 7 })}
     ${box(18, 76, 136, 66)}${t(28, 92, 'GROWTH', { fill: D, size: 7.5 })}${t(28, 106, l('6 storefronts', '6 Storefronts'), { size: 7 })}${t(28, 119, 'Order Management Lite', { size: 7 })}${t(28, 132, l('250K Data Cloud credits', '250.000 Data-Cloud-Credits'), { size: 7 })}
     ${box(166, 76, 136, 66)}${t(176, 92, 'ADVANCED', { fill: D, size: 7.5 })}${t(176, 106, l('10 storefronts', '10 Storefronts'), { size: 7 })}${t(176, 119, l('full Order Management', 'volles Order Management'), { size: 7 })}${t(176, 132, l('500K Data Cloud credits', '500.000 Data-Cloud-Credits'), { size: 7 })}
-    ${t(160, 153, l('+ buyer licences, Revenue Cloud, implementation', '+ Käuferlizenzen, Revenue Cloud, Umsetzung'), { size: 7, anchor: 'middle' })}`,
+    ${t(160, 153, l('+ buyer licenses, Revenue Cloud, implementation', '+ Käuferlizenzen, Revenue Cloud, Umsetzung'), { size: 7, anchor: 'middle' })}`,
 
   'commerce-headless-b2b': (l) => `
     ${box(18, 18, 92, 30)}${t(64, 37, l('LWR STORE', 'LWR-STORE'), { fill: D, anchor: 'middle' })}
@@ -801,7 +801,7 @@ const drawings: Record<string, Drawing> = {
     ${box(14, 76, 110, 44)}${t(69, 92, 'PIM / DAM', { fill: D, size: 7.5, anchor: 'middle' })}${t(69, 106, l('texts · attributes · media', 'Texte · Merkmale · Medien'), { size: 6.5, anchor: 'middle' })}
     ${arrow(124, 44, 150)}${arrow(124, 98, 150)}${t(137, 74, l('copy', 'Kopie'), { size: 6.5, anchor: 'middle' })}
     ${box(150, 22, 154, 98, C)}${t(160, 38, 'B2B STORE', { fill: C, size: 7.5 })}
-    ${[l('1 catalogue per store', '1 Katalog pro Store'), l('4M products, 1M searchable', '4 Mio. Produkte, 1 Mio. suchbar'), l('200 variants per parent', '200 Varianten je Träger'), l('9 images + 5 files', '9 Bilder + 5 Dateien'), l('category depth 5', 'Kategorietiefe 5')]
+    ${[l('1 catalog per store', '1 Katalog pro Store'), l('4M products, 1M searchable', '4 Mio. Produkte, 1 Mio. suchbar'), l('200 variants per parent', '200 Varianten je Träger'), l('9 images + 5 files', '9 Bilder + 5 Dateien'), l('category depth 5', 'Kategorietiefe 5')]
       .map((s, i) => dot(164, 52 + i * 14, G, 2) + t(172, 55 + i * 14, s, { size: 6.5 })).join('')}
     <path d="M18 134H302" stroke="${L}"/>
     ${t(18, 150, l('1 owner per field, Salesforce owns only categories and search', '1 Owner pro Feld, Salesforce führt nur Kategorien und Suche'), { fill: D, size: 7 })}`,
@@ -878,7 +878,7 @@ const drawings: Record<string, Drawing> = {
 
   'commerce-stores-countries-brands': (l) => `
     ${t(14, 18, l('1 STORE PER BRAND, BUYER GROUPS INSIDE', '1 STORE PRO MARKE, KÄUFERGRUPPEN INNEN'), { fill: D, size: 7 })}
-    ${box(14, 30, 140, 92, C)}${t(24, 46, l('STORE · BRAND A', 'STORE · MARKE A'), { fill: D, size: 7.5 })}${t(144, 46, l('1 catalogue', '1 Katalog'), { fill: C, size: 6.5, anchor: 'end' })}
+    ${box(14, 30, 140, 92, C)}${t(24, 46, l('STORE · BRAND A', 'STORE · MARKE A'), { fill: D, size: 7.5 })}${t(144, 46, l('1 catalog', '1 Katalog'), { fill: C, size: 6.5, anchor: 'end' })}
     ${[l('DE · tier 1', 'DE · Stufe 1'), l('FR · tier 2', 'FR · Stufe 2'), l('CH · CHF', 'CH · CHF'), '…'].map((s, i) => `<rect x="24" y="${54 + i * 15}" width="120" height="12" rx="3" fill="#fff" stroke="${L}"/>` + t(30, 62.5 + i * 15, s, { size: 6.5 })).join('')}
     ${box(166, 30, 140, 92)}${t(176, 46, l('STORE · BRAND B', 'STORE · MARKE B'), { fill: D, size: 7.5 })}${t(296, 46, l('own ERP', 'eigenes ERP'), { size: 6.5, anchor: 'end' })}
     ${[l('IT · tier 1', 'IT · Stufe 1'), l('ES · tier 2', 'ES · Stufe 2'), '…'].map((s, i) => `<rect x="176" y="${54 + i * 15}" width="120" height="12" rx="3" fill="#fff" stroke="${L}"/>` + t(182, 62.5 + i * 15, s, { size: 6.5 })).join('')}
@@ -1040,10 +1040,10 @@ const drawings: Record<string, Drawing> = {
   'field-service-worth-it': (l) => `
     ${t(18, 18, l('MANY SHORT JOBS / DAY', 'VIELE KURZE EINSÄTZE / TAG'), { fill: C, size: 7 })}
     <path d="M18 40H302" stroke="${L}"/>${[0, 1, 2, 3, 4].map((i) => `<rect x="${24 + i * 56}" y="30" width="34" height="20" rx="3" fill="#fff" stroke="${C}" stroke-width="1.2"/>` + (i < 4 ? `<path d="M${58 + i * 56} 40H${80 + i * 56}" stroke="${C}" stroke-width="1.2" stroke-dasharray="3 3"/>` : '')).join('')}
-    ${t(18, 66, l('route + slot optimisation pays off', 'Routen- und Terminoptimierung lohnt'), { fill: C, size: 7 })}
+    ${t(18, 66, l('route + slot optimization pays off', 'Routen- und Terminoptimierung lohnt'), { fill: C, size: 7 })}
     ${t(18, 92, l('FEW LONG JOBS', 'WENIGE LANGE EINSÄTZE'), { fill: D, size: 7 })}
     <rect x="24" y="100" width="270" height="20" rx="3" fill="#fff" stroke="${G}" stroke-width="1.2"/>${t(159, 113.5, l('commissioning, 2 weeks', 'Inbetriebnahme, 2 Wochen'), { size: 7, anchor: 'middle' })}
-    ${t(18, 140, l('little to optimise', 'wenig zu optimieren'), { size: 7 })}${t(302, 140, l('175 / technician / month', '175 / Techniker / Monat'), { size: 7, anchor: 'end' })}`,
+    ${t(18, 140, l('little to optimize', 'wenig zu optimieren'), { size: 7 })}${t(302, 140, l('175 / technician / month', '175 / Techniker / Monat'), { size: 7, anchor: 'end' })}`,
 
   'sfdx-hardis-training': (l) => `
     <path d="M24 136H110V104H210V72H300" fill="none" stroke="${G}" stroke-width="1.3"/>
@@ -1070,7 +1070,7 @@ const drawings: Record<string, Drawing> = {
     ${[l('checks', 'Prüfungen'), 'deployments', 'monitoring', l('docs', 'Doku')].map((s, i) => check(130, 66 + i * 12, C) + t(142, 72 + i * 12, s, { size: 7 })).join('')}
     ${box(228, 52, 72, 56)}${t(264, 72, 'ORG', { fill: D, anchor: 'middle' })}${t(264, 86, 'UAT · prod', { size: 7, anchor: 'middle' })}
     ${arrow(92, 80, 118)}${arrow(202, 80, 228)}
-    ${t(160, 140, l('open source · no licence fees', 'Open Source · keine Lizenzkosten'), { fill: C, size: 7.5, anchor: 'middle' })}`,
+    ${t(160, 140, l('open source · no license fees', 'Open Source · keine Lizenzkosten'), { fill: C, size: 7.5, anchor: 'middle' })}`,
 
   'sfdx-hardis-vs-devops-center': (l) => `
     ${box(18, 20, 128, 40)}${t(82, 38, 'LIFECYCLE CENTER', { fill: D, anchor: 'middle' })}${t(82, 51, l('hub org · clicks', 'Hub-Org · Klicks'), { size: 7, anchor: 'middle' })}
@@ -1079,7 +1079,7 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 120, l('GitLab, Azure DevOps: no date', 'GitLab, Azure DevOps: kein Termin'), { size: 7 })}
     ${box(174, 20, 128, 40, C)}${t(238, 38, 'sfdx-hardis', { fill: D, anchor: 'middle' })}${t(238, 51, l("client's CI", 'CI des Kunden'), { size: 7, anchor: 'middle' })}
     ${['GitHub', 'GitLab', 'Azure DevOps', 'Bitbucket', 'Jenkins'].map((s, i) => check(184, 72 + i * 11, C) + t(196, 77 + i * 11, s, { size: 7 })).join('')}
-    ${t(160, 148, l('both: no licence fees', 'beide: keine Lizenzgebühren'), { fill: C, size: 7.5, anchor: 'middle' })}`,
+    ${t(160, 148, l('both: no license fees', 'beide: keine Lizenzgebühren'), { fill: C, size: 7.5, anchor: 'middle' })}`,
 
   'client-owned-devops-tools': (l) => `
     ${box(112, 56, 96, 48, C)}${t(160, 76, l('CLIENT', 'KUNDE'), { fill: D, anchor: 'middle' })}${t(160, 90, l('owns the accounts', 'besitzt die Accounts'), { size: 7, anchor: 'middle' })}
@@ -1090,7 +1090,7 @@ const drawings: Record<string, Drawing> = {
     ${t(160, 140, l('partner leaves: access revoked', 'Partner geht: Zugriff entzogen'), { fill: C, size: 7, anchor: 'middle' })}`,
 
   'salesforce-licence-types': (l) => `
-    ${t(18, 18, l('USER GROUP', 'NUTZERGRUPPE'), { fill: D, size: 7 })}${t(170, 18, l('LICENCE / MONTH', 'LIZENZ / MONAT'), { fill: D, size: 7 })}
+    ${t(18, 18, l('USER GROUP', 'NUTZERGRUPPE'), { fill: D, size: 7 })}${t(170, 18, l('LICENSE / MONTH', 'LIZENZ / MONAT'), { fill: D, size: 7 })}
     ${[[l('sales', 'Vertrieb'), 'Sales Cloud Core 195', false], [l('readers', 'Leser'), 'Platform Starter 25', true], [l('approvers', 'Freigeber'), 'Platform Starter 25', true], [l('dealers', 'Händler'), 'PRM 25', false], [l('interfaces', 'Schnittstellen'), 'Integration, API only', false]]
       .map(([a, b, hi], i) => box(18, 26 + i * 22, 112, 17) + t(26, 37.5 + i * 22, String(a), { size: 7 }) + arrow(134, 34.5 + i * 22, 164, hi ? C : G) + box(170, 26 + i * 22, 132, 17, hi ? C : G) + t(178, 37.5 + i * 22, String(b), { fill: hi ? C : G, size: 7 })).join('')}
     ${t(18, 150, l('100 users x 170 x 12 = 204,000 / year', '100 Nutzer x 170 x 12 = 204.000 / Jahr'), { fill: C, size: 7.5 })}`,
@@ -1217,7 +1217,7 @@ const drawings: Record<string, Drawing> = {
     ${box(104, 118, 112, 26)}${t(160, 134, l('supplier recovery per part', 'Regress pro Teil'), { size: 6.3, anchor: 'middle' })}`,
 
   'manufacturing-cloud-global-rollout': (l) => `
-    ${box(14, 26, 116, 30, C)}${t(72, 40, l('GLOBAL TEMPLATE', 'GLOBALES TEMPLATE'), { fill: D, size: 7.5, anchor: 'middle' })}${t(72, 50, l('goal: harmonisation', 'Ziel: Harmonisierung'), { size: 6.5, anchor: 'middle' })}
+    ${box(14, 26, 116, 30, C)}${t(72, 40, l('GLOBAL TEMPLATE', 'GLOBALES TEMPLATE'), { fill: D, size: 7.5, anchor: 'middle' })}${t(72, 50, l('goal: harmonization', 'Ziel: Harmonisierung'), { size: 6.5, anchor: 'middle' })}
     <path d="M30 96H302" stroke="${G}" stroke-width="0.8"/>
     ${[[60, l('phase 1', 'Phase 1'), l('large country', 'großes Land'), true], [140, l('phase 2', 'Phase 2'), l('large region', 'große Region'), true], [220, l('phase 3', 'Phase 3'), l('more countries', 'weitere Länder'), false], [290, '…', '', false]].map(([x, a, b, hit]) => dot(x, 96, hit ? C : G, hit ? 4 : 3) + t(x, 86, a, { fill: hit ? C : G, size: 7, anchor: 'middle' }) + t(x, 112, b, { size: 6.5, anchor: 'middle' })).join('')}
     ${t(170, 40, l('≥ 80 % identical per country', '≥ 80 % identisch pro Land'), { size: 7 })}
@@ -1300,7 +1300,7 @@ const drawings: Record<string, Drawing> = {
 
   'data-360-costs-for-agents': (l) => `
     ${t(18, 18, l('CREDITS PER MB (BASE TIER)', 'CREDITS PRO MB (BASISSTAFFEL)'), { fill: D, size: 7 })}
-    ${[[l('catalogue PDF', 'Katalog-PDF'), l('LLM parsing', 'LLM-Parsing'), '600', true], [l('manual PDF', 'Handbuch-PDF'), l('default parser', 'Standard-Parser'), '150', false]]
+    ${[[l('catalog PDF', 'Katalog-PDF'), l('LLM parsing', 'LLM-Parsing'), '600', true], [l('manual PDF', 'Handbuch-PDF'), l('default parser', 'Standard-Parser'), '150', false]]
       .map(([a, b, c, hi], i) => box(18, 26 + i * 30, 82, 22) + t(59, 40 + i * 30, String(a), { size: 7, anchor: 'middle' }) + arrow(100, 37 + i * 30, 124, hi ? C : G) + box(124, 26 + i * 30, 84, 22, hi ? C : G) + t(166, 40 + i * 30, String(b), { size: 7, anchor: 'middle' }) + t(222, 41 + i * 30, String(c), { fill: hi ? C : D, size: 8.5 })).join('')}
     ${t(244, 41, l('/ MB', '/ MB'), { size: 7 })}${t(244, 71, l('/ MB', '/ MB'), { size: 7 })}
     <path d="M18 98H302" stroke="${L}"/>
@@ -1889,7 +1889,7 @@ const drawings: Record<string, Drawing> = {
 
   'permission-concept-permission-sets': (l) => `
     ${t(18, 18, l('PERMISSIONS AND VISIBILITY SEPARATE', 'RECHTE UND SICHTBARKEIT GETRENNT'), { fill: D, size: 7 })}
-    ${[[l('BASE PROFILE', 'BASISPROFIL'), l('per licence type', 'pro Lizenztyp')], ['PERMISSION SETS', l('per function', 'pro Funktion')], ['PERMISSION SET GROUPS', l('per role', 'pro Rolle')]].map(([a, b], i) => box(18, 28 + i * 34, 196, 26, i === 2 ? C : G) + t(28, 44 + i * 34, a, { fill: i === 2 ? C : D, size: 7 }) + t(206, 44 + i * 34, b, { size: 7, anchor: 'end' })).join('')}
+    ${[[l('BASE PROFILE', 'BASISPROFIL'), l('per license type', 'pro Lizenztyp')], ['PERMISSION SETS', l('per function', 'pro Funktion')], ['PERMISSION SET GROUPS', l('per role', 'pro Rolle')]].map(([a, b], i) => box(18, 28 + i * 34, 196, 26, i === 2 ? C : G) + t(28, 44 + i * 34, a, { fill: i === 2 ? C : D, size: 7 }) + t(206, 44 + i * 34, b, { size: 7, anchor: 'end' })).join('')}
     ${check(226, 72, G)}${t(238, 78, l('stream delivers', 'Stream liefert'), { size: 7 })}
     ${check(226, 106)}${t(238, 112, l('client decides', 'Kunde entscheidet'), { fill: C, size: 7 })}
     ${cross(24, 140)}${t(36, 143, l('no new permissions in profiles', 'keine neuen Rechte im Profil'), { size: 7 })}`,
@@ -2056,7 +2056,7 @@ const drawings: Record<string, Drawing> = {
     <path d="M18 100H302" stroke="${L}"/>
     ${t(18, 118, l('Partial Copy sandbox · refresh every 5 days', 'Partial Copy Sandbox · alle 5 Tage neu'), { size: 7 })}
     ${t(18, 134, l('train the trainer via key users', 'Train the Trainer über Key User'), { size: 7 })}
-    ${t(18, 148, l('3 walkthroughs without extra licence', '3 Walkthroughs ohne Zusatzlizenz'), { size: 7 })}`,
+    ${t(18, 148, l('3 walkthroughs without extra license', '3 Walkthroughs ohne Zusatzlizenz'), { size: 7 })}`,
 
   'change-hypercare': (l) => `
     ${t(18, 18, l('WEEKLY STATUS CALL', 'WÖCHENTLICHER STATUS-CALL'), { fill: D, size: 7 })}

@@ -1,15 +1,15 @@
 ---
-title: "Salesforce programme management and nearshore teams"
+title: "Salesforce program management and nearshore teams"
 headline: "Nearshore Salesforce teams that deliver steadily"
-description: "Planning and steering of Salesforce programmes, with nearshore teams in Eastern Europe and offshore teams in India, in team setups that stay stable."
+description: "Planning and steering of Salesforce programs, with nearshore teams in Eastern Europe and offshore teams in India, in team setups that stay stable."
 lang: en
 slug: program-management-nearshore
 translationKey: service-nearshore
 contactBrief: nearshore
 order: 5
-lead: "Nearshore teams can deliver a lot for a reasonable price, if the setup is right. Most problems have little to do with skills and a lot to do with team size, turnover and culture. I plan and steer Salesforce programmes on the client side, including nearshore teams in Eastern Europe and offshore teams in India."
+lead: "Nearshore teams can deliver a lot for a reasonable price, if the setup is right. Most problems have little to do with skills and a lot to do with team size, turnover and culture. I plan and steer Salesforce programs on the client side, including nearshore teams in Eastern Europe and offshore teams in India."
 situations:
-  - "A Salesforce programme needs more delivery capacity than the internal team and the current partners can provide."
+  - "A Salesforce program needs more delivery capacity than the internal team and the current partners can provide."
   - "A nearshore team is in place, but velocity stays low and the client spends a lot of time explaining and correcting."
   - "Developers rotate in and out of the team, and knowledge leaves with every change."
   - "Several teams and partners deliver in parallel, and nobody plans dependencies and releases across them."
@@ -17,16 +17,16 @@ deliverables:
   - "I select nearshore partners with you and look at culture and the will to deliver as closely as at skills."
   - "I onboard new teams into the standards, the review process and the pipeline."
   - "I keep dependencies between teams and partners visible and plan releases across them."
-  - "I steer plan, risks and quality for as long as the programme runs."
+  - "I steer plan, risks and quality for as long as the program runs."
 results:
-  - "A programme plan with streams, dependencies, milestones and release plan"
+  - "A program plan with streams, dependencies, milestones and release plan"
   - "A team setup for every nearshore team with size, roles and seniority mix"
   - "Written rules for staffing and rotation, agreed with every nearshore partner"
   - "Regular reporting with status, risks and upcoming decisions for management"
 phases:
   - title: "Plan and team setup"
     icon: "team"
-    text: "I plan the programme with its streams and dependencies and define the team setup: how many developers, which roles and which mix of seniority."
+    text: "I plan the program with its streams and dependencies and define the team setup: how many developers, which roles and which mix of seniority."
   - title: "Partner selection"
     icon: "partners"
     text: "Together with the client I select nearshore partners and agree on rules for staffing, rotation and communication before the first sprint starts."
@@ -36,7 +36,7 @@ phases:
   - title: "Steering"
     icon: "steer"
     text: "During delivery I steer plan, risks and quality, keep dependencies between teams visible and report to management in a format that supports decisions."
-duration: "Plan and partner selection 4 to 8 weeks. A new team needs 2 to 3 months until it delivers at full speed. Steering then runs for the life of the programme, usually 12 months or more."
+duration: "Plan and partner selection 4 to 8 weeks. A new team needs 2 to 3 months until it delivers at full speed. Steering then runs for the life of the program, usually 12 months or more."
 faq:
   - q: "How large should a nearshore Salesforce team be?"
     a: "At most eight developers. If more capacity is needed, I plan another team with its own area of responsibility, because in a large team coordination grows faster than output."
@@ -55,7 +55,7 @@ readMore: [nearshore-team-size, development-standards-definition-of-done, pull-r
 masterclass: devops
 ---
 
-Programme management on the client side means planning and steering a Salesforce programme across internal teams, implementation partners and nearshore teams. It covers the plan with its dependencies, the team setup, the steering of risks and quality, and reporting that helps management decide. Nearshore teams are often part of it, because they add delivery capacity at a reasonable price. My nearshore experience comes from teams in Eastern Europe and India, and both regions showed the same patterns.
+Program management on the client side means planning and steering a Salesforce program across internal teams, implementation partners and nearshore teams. It covers the plan with its dependencies, the team setup, the steering of risks and quality, and reporting that helps management decide. Nearshore teams are often part of it, because they add delivery capacity at a reasonable price. My nearshore experience comes from teams in Eastern Europe and India, and both regions showed the same patterns.
 
 ## Why do nearshore teams struggle?
 
@@ -80,7 +80,7 @@ with: What I set up instead
 8 | developers per team, at most
 2 | regions: Eastern Europe (nearshore) and India (offshore)
 1 | pipeline with the same standards for all teams
-source: my nearshore teams in Salesforce programmes
+source: my nearshore teams in Salesforce programs
 ```
 
 Every team I set up has at most eight developers. More capacity means another team with its own stream, not a bigger one. Why the limit sits there is worked out in the blog article on team size.
@@ -91,10 +91,10 @@ From day one, a new team delivers through the same repository, the same reviews 
 
 ## Steering across several teams and partners
 
-With several teams and partners, the plan only holds if dependencies and releases are coordinated. The rules that make several partners work together are described under [partner governance](../partner-governance/), and the shared release process under [DevOps and release management](../devops-release-management/). On the client side I run the programme plan, the release process and the reporting:
+With several teams and partners, the plan only holds if dependencies and releases are coordinated. The rules that make several partners work together are described under [partner governance](../partner-governance/), and the shared release process under [DevOps and release management](../devops-release-management/). On the client side I run the program plan, the release process and the reporting:
 
 ```stufen
-1 | Programme plan | streams and dependencies | Who delivers what, and when?
+1 | Program plan | streams and dependencies | Who delivers what, and when?
 2 | Release process | shared by all teams | When does what go live?
 3 | Reporting | status, risks, decisions | What does management need to decide?
 ```

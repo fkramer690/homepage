@@ -148,8 +148,8 @@ export const freelanceArchitect = {
       intro: 'An architect on the client side pays off where a partner would decide on something it earns from, or where several partners build on the same org.',
       cards: [
         { icon: 'partners', t: 'Several partners on one org', d: 'Each partner builds by its own rules until automations block each other. I set up standards and an object ownership matrix that apply to all of them.', link: 'services/partner-governance/', linkText: 'Partner governance' },
-        { icon: 'architecture', t: 'A decision before signing', d: 'Industry cloud or custom build, Field Service or not: I weigh the benefit against licence and follow-up costs before anyone commits.', link: 'services/salesforce-architecture/', linkText: 'Salesforce architecture' },
-        { icon: 'license', t: 'Licences nobody needs', d: 'Full licences are offered by default although many users do not need them. That can easily add up to six figures per year.', link: 'services/make-or-buy-licences/', linkText: 'Make or buy and licences' },
+        { icon: 'architecture', t: 'A decision before signing', d: 'Industry cloud or custom build, Field Service or not: I weigh the benefit against license and follow-up costs before anyone commits.', link: 'services/salesforce-architecture/', linkText: 'Salesforce architecture' },
+        { icon: 'license', t: 'Licenses nobody needs', d: 'Full licenses are offered by default although many users do not need them. That can easily add up to six figures per year.', link: 'services/make-or-buy-licences/', linkText: 'Make or buy and licenses' },
         { icon: 'integration', t: 'Salesforce and SAP', d: 'Salesforce is never the only system. I define which system leads for customers, prices and orders and what the interfaces look like.', link: 'services/salesforce-integration/', linkText: 'Integration' },
         { icon: 'pipeline', t: 'Releases nobody oversees', d: 'I build pipelines on GitLab, Azure DevOps, GitHub or Bitbucket, in the client’s repository, so a change of partner stays possible.', link: 'services/devops-release-management/', linkText: 'DevOps and releases' },
         { icon: 'team', t: 'Steering a nearshore team', d: 'Teams of up to eight developers, nearshore in Eastern Europe or offshore in India, with clear standards and reviews, so quality does not depend on single people.', link: 'services/program-management-nearshore/', linkText: 'Programme management and nearshore' },
@@ -158,7 +158,7 @@ export const freelanceArchitect = {
     compare: {
       label: 'Positioning',
       title: 'Client-side architect or implementation partner?',
-      intro: 'Both have their place. In larger programmes they work together: the partner builds, I make sure it builds by the client’s rules.',
+      intro: 'Both have their place. In larger programs they work together: the partner builds, I make sure it builds by the client’s rules.',
       colMe: 'Freelance architect',
       colPartner: 'Implementation partner',
       rows: [
@@ -183,13 +183,13 @@ export const freelanceArchitect = {
         { icon: 'design', t: 'Data model', d: 'Objects, relationships and the question which data comes from the ERP.' },
         { icon: 'steer', t: 'Standards for every partner', d: 'Naming conventions, one automation entry point per object, test coverage and the object ownership matrix.' },
         { icon: 'check', t: 'Reviews', d: 'Designs and pull requests before they go to production.' },
-        { icon: 'budget', t: 'ROI and licence calculation', d: 'Calculated for the long term, with maintenance and follow-up costs, as the basis for negotiation.' },
+        { icon: 'budget', t: 'ROI and license calculation', d: 'Calculated for the long term, with maintenance and follow-up costs, as the basis for negotiation.' },
         { icon: 'handshake', t: 'Handover', d: 'Reviews and the CoE call go to an internal colleague once the process runs stable.' },
       ] as Point[],
     },
     practice: {
       label: 'From my practice',
-      title: 'My largest programme',
+      title: 'My largest program',
       text: 'Five implementation partners built on the same org with more than 30 developers in eight streams. The standards for it took about three months: 80 percent were in place after the first round, the edge cases came in step by step. Later, changes were presented with lead time in the technical CoE call every two weeks, until new edge cases had almost disappeared.',
       facts: [
         { value: '5', label: 'partners' },
@@ -203,7 +203,7 @@ export const freelanceArchitect = {
       title: 'How we start',
       steps: [
         { icon: 'message', t: '30 minutes', d: 'You describe the situation, I tell you honestly whether I am the right person.' },
-        { icon: 'sliders', t: 'Scope', d: 'Role, duration, utilisation, start and on-site share.' },
+        { icon: 'sliders', t: 'Scope', d: 'Role, duration, utilization, start and on-site share.' },
         { icon: 'contract', t: 'Offer', d: 'A rate for exactly this role, contract with FK Solution Design GmbH.' },
         { icon: 'implement', t: 'Start', d: 'First the current state and the target picture, then standards and reviews.' },
       ] as Point[],
@@ -222,7 +222,7 @@ export const freelanceArchitect = {
       { q: 'Which companies and clouds do you work for?', a: 'For manufacturers in production, service, after-sales and B2B sales. Focus areas are Sales and Service Cloud, Field Service, Experience Cloud, Manufacturing Cloud, CPQ, B2B Commerce and integration with SAP.' },
       { q: 'Can I hire you through a staffing agency?', a: 'Yes. Many of my projects run through recruiters. How I work with them is on the page for recruiters.' },
     ],
-    ctaTitle: 'Is someone on your side missing in your programme?',
+    ctaTitle: 'Is someone on your side missing in your program?',
     ctaText: 'Briefly describe the situation: how many partners, which clouds, which decision is coming up. Then I tell you whether and how I can help.',
     formSubject: 'Request freelance architect',
     footerLink: 'Freelance architect',

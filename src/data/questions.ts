@@ -135,7 +135,7 @@ export const questions = {
   en: {
     title: 'Questions I ask in every Salesforce project',
     description:
-      'The 14 questions Fabian Kramer asks before any Salesforce architecture: on goal and deadline, partners, ERP interfaces, data volumes, operations and licences.',
+      'The 14 questions Fabian Kramer asks before any Salesforce architecture: on goal and deadline, partners, ERP interfaces, data volumes, operations and licenses.',
     eyebrow: 'How I work',
     lead: 'Before I draw a Salesforce architecture for a manufacturer, I ask questions, especially when several implementation partners work in the same org. Mostly the same ones, and mostly the answers are more interesting than the requirements document. Here is the list. If you have no quick answer to three of them, a call is worth it.',
     groups: [
@@ -154,7 +154,7 @@ export const questions = {
           },
           {
             q: 'Does this really belong in Salesforce?',
-            a: 'Some requirements belong in the ERP, the phone system or a specialised tool. The question is cheaper before the build than after it.',
+            a: 'Some requirements belong in the ERP, the phone system or a specialized tool. The question is cheaper before the build than after it.',
           },
           {
             q: 'What happens if the go-live does not happen on the planned date?',
@@ -214,8 +214,8 @@ export const questions = {
             a: 'Three Salesforce releases a year plus your own releases need a process, not courage.',
           },
           {
-            q: 'What will the licences cost once the rollout is done?',
-            a: 'The licence forecast belongs in the architecture decision, not in the budget round afterwards.',
+            q: 'What will the licenses cost once the rollout is done?',
+            a: 'The license forecast belongs in the architecture decision, not in the budget round afterwards.',
           },
         ],
       },
@@ -232,7 +232,7 @@ export const questions = {
       },
     ] as QuestionGroup[],
     ctaTitle: 'Did you hesitate on some of these?',
-    ctaText: 'In 30 minutes we find out which of them is costing your programme the most right now.',
+    ctaText: 'In 30 minutes we find out which of them is costing your program the most right now.',
     formSubject: 'Questions about the project',
     link: 'Questions I ask in every project',
     back: 'Back to the start page',
@@ -240,7 +240,7 @@ export const questions = {
     count: (n: number) => (n === 1 ? '1 question' : `${n} questions`),
     stats: {
       questions: 'questions before any architecture',
-      topics: 'topics from goal to licences',
+      topics: 'topics from goal to licenses',
       more: [
         { value: '3', text: 'questions without a quick answer: time for a call' },
         { value: '30', text: 'minutes first call, no pitch' },

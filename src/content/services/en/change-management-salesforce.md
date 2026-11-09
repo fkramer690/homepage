@@ -16,7 +16,7 @@ situations:
   - "Training has taken place, yet usage stays low, and nobody can say exactly where it gets stuck."
   - "New standards for development and release have been agreed, but every partner and team reads them differently."
   - "Releases become smaller and more frequent, and business teams learn about changes only once they are in production."
-  - "Management expects results from the programme but is rarely there when decisions about the rollout are due."
+  - "Management expects results from the program but is rarely there when decisions about the rollout are due."
 deliverables:
   - "For each affected group we use the ADKAR model to assess at which of the five stages the rollout is stuck."
   - "We introduce new standards in stages and start with the most common cases."
@@ -41,11 +41,11 @@ phases:
 duration: "Preparation 2 to 4 weeks. Support up to the rollout usually takes 3 to 9 months, securing the results 1 to 2 months after go-live."
 faq:
   - q: "Why do you follow Prosci?"
-    a: "Because to me Prosci is the gold standard in change management. The approach rests on surveys since 1998 with more than 10,000 participants and is widely used in the industry. It gives structure to the part of a Salesforce programme that is often left to chance: whether people actually work differently."
+    a: "Because to me Prosci is the gold standard in change management. The approach rests on surveys since 1998 with more than 10,000 participants and is widely used in the industry. It gives structure to the part of a Salesforce program that is often left to chance: whether people actually work differently."
   - q: "What is the ADKAR model?"
     a: "ADKAR is a Prosci model with five stages each person goes through in a change: Awareness, Desire, Knowledge, Ability and Reinforcement. When a rollout stalls, one of these stages is usually missing. The model shows which one."
-  - q: "How long does it take to introduce new standards in a large programme?"
-    a: "In my largest programme, with more than 30 developers and five implementation partners, it took about three months. The first version covered around 80 percent of the cases, and the edge cases were added over time."
+  - q: "How long does it take to introduce new standards in a large program?"
+    a: "In my largest program, with more than 30 developers and five implementation partners, it took about three months. The first version covered around 80 percent of the cases, and the edge cases were added over time."
   - q: "Who has to take part in change management?"
     a: "Everyone the change affects or who carries it: business teams, developer teams, partners and management. Without backing from management, decisions and attention are missing, and new rules become a recommendation that not everyone follows."
   - q: "What changes with smaller, more frequent releases?"
@@ -55,7 +55,7 @@ faq:
 blogTags: [change management, Partner governance, Governance, DevOps training, Release management]
 ---
 
-Change management in a Salesforce programme means introducing new processes, standards and releases so that the people who work with them actually use them. That applies to the business teams who do their daily work in Salesforce as much as to the developer teams and implementation partners who are meant to build by common rules. Juliane Winterscheid and I take on this work on the client side: Juliane guides the people through the change, I make sure architecture, partner governance and releases fit with it. Wherever this page says "we", it means the two of us. Our approach follows Prosci, and further down you can read why.
+Change management in a Salesforce program means introducing new processes, standards and releases so that the people who work with them actually use them. That applies to the business teams who do their daily work in Salesforce as much as to the developer teams and implementation partners who are meant to build by common rules. Juliane Winterscheid and I take on this work on the client side: Juliane guides the people through the change, I make sure architecture, partner governance and releases fit with it. Wherever this page says "we", it means the two of us. Our approach follows Prosci, and further down you can read why.
 
 ## Why do new processes not reach daily work?
 
@@ -74,7 +74,7 @@ contra: Where it fails
 - **The old way stays open**, Excel lists and emails keep working.
 ```
 
-## What does ADKAR look like in a Salesforce programme?
+## What does ADKAR look like in a Salesforce program?
 
 The [ADKAR model](https://www.prosci.com/blog/adkar-model) by Prosci describes five stages each person goes through in a change. When a rollout stalls, one of them is usually missing. We often see the following: the training has taken place, yet usage stays low. Instead of scheduling another session, we ask per affected group at which stage it is stuck:
 
@@ -97,12 +97,12 @@ Salesforce helps with measuring. Whether a new process is used shows more reliab
 5 | implementation partners
 3 | months until all teams worked by the standards
 80 % | of cases covered by the first version
-source: my largest programme as architect on the client side
+source: my largest program as architect on the client side
 ```
 
-At the start of this programme, the technical approaches of the teams had drifted far apart. So we introduced common standards for naming conventions, one automation entry point per object, test coverage and an [object ownership matrix](../../blog/salesforce-object-ownership-matrix/) in stages.
+At the start of this program, the technical approaches of the teams had drifted far apart. So we introduced common standards for naming conventions, one automation entry point per object, test coverage and an [object ownership matrix](../../blog/salesforce-object-ownership-matrix/) in stages.
 
-The first version covered around 80 percent of the cases. The edge cases were added step by step as they came up in the project. Later we raised new topics in the programme with lead time in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), before they turned into problems. At some point hardly any new edge cases came up. I describe the rules for several partners under [partner governance](../partner-governance/).
+The first version covered around 80 percent of the cases. The edge cases were added step by step as they came up in the project. Later we raised new topics in the program with lead time in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), before they turned into problems. At some point hardly any new edge cases came up. I describe the rules for several partners under [partner governance](../partner-governance/).
 
 ## Smaller releases need a fixed route into the business
 
@@ -119,8 +119,8 @@ To me, Prosci is the gold standard in change management. The reason is the resea
 source: Prosci, Best Practices in Change Management, 12th edition, 2,668 participants
 ```
 
-In the 12th edition of its study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), Prosci reports from its benchmark data that projects with excellent change management met their objectives seven times as often as projects with poor change management, 88 against 13 percent. Participants name active and visible sponsorship by management as the biggest contributor to success. That matches what I see in Salesforce programmes.
+In the 12th edition of its study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), Prosci reports from its benchmark data that projects with excellent change management met their objectives seven times as often as projects with poor change management, 88 against 13 percent. Participants name active and visible sponsorship by management as the biggest contributor to success. That matches what I see in Salesforce programs.
 
-Together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), who is Prosci certified, I have applied two building blocks from Prosci to Salesforce programmes: the ADKAR model described above and the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). The 3-Phase Process gives the rollout a frame at the level of the organisation: Prepare Approach, Manage Change and Sustain Outcomes. The steps under “How we work together” follow these phases.
+Together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), who is Prosci certified, I have applied two building blocks from Prosci to Salesforce programs: the ADKAR model described above and the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). The 3-Phase Process gives the rollout a frame at the level of the organization: Prepare Approach, Manage Change and Sustain Outcomes. The steps under “How we work together” follow these phases.
 
-Prosci and ADKAR are registered trademarks of Prosci, Inc. The Prosci certification is held by Juliane Winterscheid, not by FK Solution Design, and FK Solution Design is not a Prosci partner. This page describes how we apply elements of the approach in Salesforce programmes.
+Prosci and ADKAR are registered trademarks of Prosci, Inc. The Prosci certification is held by Juliane Winterscheid, not by FK Solution Design, and FK Solution Design is not a Prosci partner. This page describes how we apply elements of the approach in Salesforce programs.

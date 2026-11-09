@@ -1,15 +1,15 @@
 ---
 title: "Salesforce architecture and solution design"
 headline: "A Salesforce target architecture before the partner builds"
-description: "Target architecture, data model and cloud selection for Salesforce programmes with several clouds, portals and integrations, designed on the client side."
+description: "Target architecture, data model and cloud selection for Salesforce programs with several clouds, portals and integrations, designed on the client side."
 lang: en
 slug: salesforce-architecture
 translationKey: service-architecture
 contactBrief: architecture
 order: 1
-lead: "Large Salesforce programmes mostly get into trouble because nobody decided early which clouds, which data model and which integrations the company needs. I design the target architecture on the client side and document every decision, so it still holds when partners change."
+lead: "Large Salesforce programs mostly get into trouble because nobody decided early which clouds, which data model and which integrations the company needs. I design the target architecture on the client side and document every decision, so it still holds when partners change."
 situations:
-  - "A new Salesforce programme is starting, and the company needs a target picture before it signs with an implementation partner."
+  - "A new Salesforce program is starting, and the company needs a target picture before it signs with an implementation partner."
   - "Several clouds, portals and integrations have grown over the years, and nobody has the overall picture anymore."
   - "Partners propose additional clouds or industry products, and the company cannot judge whether they pay off."
   - "The data model has grown project by project, and reports, automation and AI use cases suffer from it."
@@ -41,7 +41,7 @@ faq:
   - q: "What does a Salesforce architect on the client side do?"
     a: "They design the target architecture in the interest of the company, not of a vendor or partner: which clouds and products are needed, how the data model looks, how Salesforce connects to the other systems, and which decisions are documented for the long term. During delivery they review what partners build against that picture."
   - q: "Which Salesforce clouds does a manufacturer need?"
-    a: "Sales Cloud and Service Cloud are part of almost every enterprise project. Field Service pays off most with many short jobs where route and appointment optimisation improves the numbers, less with a few long projects. Experience Cloud fits customer-facing processes and self-service. Manufacturing Cloud only makes sense with a clear fit that is calculated in the ROI case."
+    a: "Sales Cloud and Service Cloud are part of almost every enterprise project. Field Service pays off most with many short jobs where route and appointment optimization improves the numbers, less with a few long projects. Experience Cloud fits customer-facing processes and self-service. Manufacturing Cloud only makes sense with a clear fit that is calculated in the ROI case."
   - q: "What is a decision log and why does it matter?"
     a: "A decision log records every architecture decision with its options, the reasons for the choice and its consequences. Two years later, when someone asks why a process was built a certain way, the answer is there, even if the people who made the decision have moved on."
   - q: "Do you replace our implementation partner?"
@@ -68,13 +68,13 @@ Which add-ons pay off depends on the type of work:
 ```basis-addons
 title: Which clouds the company needs
 base: Sales Cloud, Service Cloud | A given in almost every enterprise project
-+ Field Service | Fits with many short jobs, where route and appointment optimisation clearly improves the numbers. Much smaller benefit with a few long projects.
++ Field Service | Fits with many short jobs, where route and appointment optimization clearly improves the numbers. Much smaller benefit with a few long projects.
 + Experience Cloud | Fits customer-facing processes. Self-service portals save internal capacity.
 + Manufacturing Cloud | Only when its features match how the company sells. The fit is calculated in the ROI case.
 note: Sales Cloud and Service Cloud are usually set, the real decision is about the add-ons.
 ```
 
-For Field Service, the locations and the duration of the jobs count as well as the type of work. I wrote about the current mobile features in [Field Service mobile with guided flows and voice](../../blog/salesforce-field-service-mobile-guided-voice/). Experience Cloud saves capacity because customers find answers and submit requests themselves. I calculate the fit of Manufacturing Cloud in the ROI case, which I describe on the [make-or-buy and licences](../make-or-buy-licences/) page.
+For Field Service, the locations and the duration of the jobs count as well as the type of work. I wrote about the current mobile features in [Field Service mobile with guided flows and voice](../../blog/salesforce-field-service-mobile-guided-voice/). Experience Cloud saves capacity because customers find answers and submit requests themselves. I calculate the fit of Manufacturing Cloud in the ROI case, which I describe on the [make-or-buy and licenses](../make-or-buy-licences/) page.
 
 ## The data model carries reports, automation and AI
 
@@ -82,7 +82,7 @@ Every report, every automation and every AI use case depends on the data model. 
 
 ```vergleich
 without: Every project models differently
-- Accounts, products and contracts are modelled differently in each project.
+- Accounts, products and contracts are modeled differently in each project.
 - Years later, nobody trusts the reports.
 - Agents give wrong answers.
 with: Data model as part of the architecture

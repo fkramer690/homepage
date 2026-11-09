@@ -1,4 +1,4 @@
-// Change management as one building block of Fabian's Salesforce programmes, shown on
+// Change management as one building block of Fabian's Salesforce programs, shown on
 // the service page /leistungen/change-management/ and /en/services/change-management-salesforce/
 // (frontmatter `section: change-management`, rendered by ChangeTeam.astro and
 // ChangeArticles.astro inside ServicePage.astro). Juliane Winterscheid owns the change in
@@ -42,12 +42,12 @@ export const changeSection = {
   },
   en: {
     deliverables: 'What we do',
-    authors: { label: 'Your contacts', joint: 'We developed the approach together, and that is how we work together in your programme.' },
+    authors: { label: 'Your contacts', joint: 'We developed the approach together, and that is how we work together in your program.' },
     team: {
       label: 'Who is behind it',
       title: 'Two specialisms, one joint plan',
       intro:
-        'I am responsible for the Salesforce architecture, Juliane Winterscheid for the change in people. In your programme we plan both together, so that release plan and change plan fit.',
+        'I am responsible for the Salesforce architecture, Juliane Winterscheid for the change in people. In your program we plan both together, so that release plan and change plan fit.',
       items: [
         { who: 'Fabian Kramer', icon: 'architecture', title: 'Architecture and releases', text: 'I make sure architecture, release plan and pipeline support the change, and I measure adoption directly in Salesforce.', more: 'About me' },
         { who: 'Juliane Winterscheid', icon: 'change', title: 'Change management', text: 'Juliane guides sponsors, managers and key users through the change. She is Prosci certified and has taught change management at Hochschule Fresenius.', more: 'Profile and references' },
@@ -61,7 +61,7 @@ export const changeSection = {
         text: 'Juliane explains what change management is, which phases and models exist and how tools such as the stakeholder analysis and the communication plan work.',
       },
       programmes: {
-        title: 'Practice from Salesforce programmes',
+        title: 'Practice from Salesforce programs',
         text: 'I describe how key users, training, hypercare and measurement work together in a Salesforce rollout.',
       },
       minutes: '{n} min',
