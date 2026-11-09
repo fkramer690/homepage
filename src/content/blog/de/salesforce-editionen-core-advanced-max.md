@@ -1,6 +1,6 @@
 ---
 title: "Salesforce-Editionen Core, Advanced, Max für Hersteller"
-description: "Was die Salesforce-Editionen Core, Advanced und Max für die Lizenzplanung von Herstellern bedeuten, wie weit die Flex-Credit-Pools reichen und warum Credits Max nur selten rechtfertigen."
+description: "Was die Editionen Core, Advanced und Max für die Lizenzplanung von Herstellern bedeuten, wie weit die Flex-Credit-Pools reichen und wann Credits Max tragen."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de
