@@ -13,10 +13,10 @@ takeaways:
   - "Penny Perfect Pricing gibt es auch in Automotive Cloud und Consumer Goods Cloud. Ihre 19 Objekte kamen mit API 68.0 (Winter '27)."
   - "Die Objekte bilden die SAP-Konditionstechnik nach, von Kalkulationsschema und Suchstrategie bis zu Konditionssätzen mit Staffeln."
   - "In der Manufacturing Cloud bepreist sie Telesales-Aufträge; Angebote gehören zu Revenue Cloud und Shoppreise zu B2B Commerce, beides ersetzt sie nicht."
-  - "Vor dem ersten Auftrag steht fest, wer Preisregeln, Konditionsdaten, Auftragspreis und Rechnungspreis verantwortet."
+  - "Legen Sie vor dem ersten Auftrag fest, wer Preisregeln und Konditionsdaten verantwortet und welches System Auftrags- und Rechnungspreis bestimmt."
 faq:
   - q: "Was ist Penny Perfect Pricing in Salesforce?"
-    a: "Eine Preisfindung, die Preise für Positionen von Advanced Orders in Echtzeit berechnet, etwa im Telesales. Salesforce führt sie unter Winter '27 für die Manufacturing Cloud und dokumentiert sie für Manufacturing, Automotive und Consumer Goods Cloud."
+    a: "Eine Preisfindungs-Engine, die Preise für Positionen von Advanced Orders in Echtzeit berechnet, etwa im Telesales. Salesforce führt sie unter Winter '27 für die Manufacturing Cloud und dokumentiert sie für Manufacturing, Automotive und Consumer Goods Cloud."
   - q: "Ersetzt Penny Perfect Pricing die Preisfindung in SAP?"
     a: "Sie kann unterstützte Preismuster nach ERP-Art in Salesforce nachbilden, innerhalb dokumentierter Grenzen wie 28 Schemaschritten und nur, wenn sich Ihre eigene SAP-Logik darauf abbilden lässt. Ob sie das sollte, hängt davon ab, ob Sie die Konditionssätze synchron halten können. Für die meisten Hersteller mit SAP würde ich SAP als Preis-Master behalten."
   - q: "Ist Penny Perfect Pricing in der Manufacturing-Cloud-Lizenz enthalten?"
@@ -37,7 +37,7 @@ Konkreter wird der [Developer Guide](https://developer.salesforce.com/docs/indus
 - Sofortpreise für Positionen liefern, während ein Auftrag erfasst wird,
 - die endgültigen Preise eines Auftrags berechnen,
 - Preisdaten anlegen,
-- einen vollständigen Auftrag mit einem einzigen Aufruf platzieren,
+- einen vollständigen Auftrag mit einem einzigen Aufruf aufgeben,
 - Account-Hierarchien für Reporting und Analysen flach darstellen.
 
 Der Guide beschreibt 19 Objekte, alle ab API-Version 68.0 verfügbar, und nennt Manufacturing Cloud, Automotive Cloud und Consumer Goods Cloud als die Clouds, die sie nutzen. Im [Developer Guide der Manufacturing Cloud](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_penny_perfect_pricing_dev.htm) hat sie einen eigenen Eintrag, direkt neben Advanced Orders for Telesales.
@@ -59,7 +59,7 @@ Die [Objektreferenz](https://developer.salesforce.com/docs/industries/penny-perf
 
 Dazu kommen gemeinsame Objekte wie Account, Product2, Account-Beziehungen und interne Organisationseinheiten, die geschäftsbereichsspezifische Einstellungen pro Account tragen.
 
-Die Ähnlichkeit hat zwei Seiten. Wer die SAP-Preisfindung kennt, erkennt die Logik wieder. Sie bedeutet aber auch ähnlichen Konfigurationsaufwand: Jede Preisregel, jeder Zugriff und jeder Konditionssatz, der für den Auftragskanal in Salesforce relevant ist, braucht ein unterstütztes Gegenstück, und eigene SAP-Routinen oder Formeln brauchen eine ausdrückliche Antwort.
+Die Ähnlichkeit hat zwei Seiten. Wer die SAP-Preisfindung kennt, erkennt die Logik wieder. Sie bedeutet aber auch ähnlichen Konfigurationsaufwand: Jede Preisregel, jede Zugriffsfolge und jeder Konditionssatz, der für den Auftragskanal in Salesforce relevant ist, braucht ein unterstütztes Gegenstück, und eigene SAP-Routinen oder Formeln brauchen eine ausdrückliche Antwort.
 
 ## Wo passt Penny Perfect Pricing, und wo nicht?
 
@@ -76,13 +76,13 @@ Agenten, die Händlerangebote erstellen, etwa der AI Partner Sales Assistant, ha
 
 Als ich den Artikel am 28. Oktober 2026 geschrieben habe, fand ich weder Lizenz noch Ladeprozess. Inzwischen dokumentiert die Salesforce-Hilfe beides, geprüft am 9. November 2026:
 
-1. **Editionen und Add-ons.** Penny Perfect Pricing läuft in der [Enterprise und Unlimited Edition](https://help.salesforce.com/s/articleView?id=xcloud.ppp_editions_permissions.htm&language=en_US&type=5) von Manufacturing, Automotive und Consumer Goods Cloud, dazu kommen [Pflicht-Add-ons](https://help.salesforce.com/s/articleView?id=xcloud.ppp_verify_addons.htm&language=en_US&type=5): Core Pricing Design Time, Core Pricing Run Time, Core Pricing Monthly Per Unit Entitlement, das Manufacturing Foundation oder Penny-Perfect Pricing Add-on, Industries Sales Excellence, Data Pipelines und Data Processing Engine. Permission Set Licenses und Permission Sets kommen hinzu. Die [Preisseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/) nennt für diese Add-ons keinen Preis.
+1. **Editionen und Add-ons.** Penny Perfect Pricing läuft mit der [Enterprise oder Unlimited Edition](https://help.salesforce.com/s/articleView?id=xcloud.ppp_editions_permissions.htm&language=en_US&type=5) von Manufacturing, Automotive und Consumer Goods Cloud, dazu kommen [Pflicht-Add-ons](https://help.salesforce.com/s/articleView?id=xcloud.ppp_verify_addons.htm&language=en_US&type=5): Core Pricing Design Time, Core Pricing Run Time, Core Pricing Monthly Per Unit Entitlement, das Manufacturing Foundation oder Penny-Perfect Pricing Add-on, Industries Sales Excellence, Data Pipelines und Data Processing Engine. Permission Set Licenses und Permission Sets kommen hinzu. Die [Preisseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/) nennt für diese Add-ons keinen Preis.
 2. **Konditionssätze laden.** Salesforce [beschreibt einen Ladeprozess](https://help.salesforce.com/s/articleView?id=xcloud.ppp_load_condition_data.htm&language=en_US&type=5): Konditionen aus dem ERP als CSV exportieren, mit dem Data Loader in External Pricing Key Value und External Pricing Key Value Tier importieren und dann den mitgelieferten Data-Processing-Engine-Job "External Pricing Key Value Consolidation" ausführen. Erst wenn dieser Job erfolgreich gelaufen ist, lassen sich Aufträge bepreisen. Delta-Läufe nutzen das letzte Sync-Datum, für die Einplanung braucht es einen Flow. Einen SAP-Connector gibt es nicht: Extraktion, Mapping und Monitoring bleiben Integrationsarbeit.
 3. **Grenzen.** Die [Considerations](https://help.salesforce.com/s/articleView?id=xcloud.ppp_considerations.htm&language=en_US&type=5) nennen bis zu 1.000 Positionen pro Auftrag, 40 Millionen Konditionssätze pro Verkaufsorganisation, 28 Schritte im Kalkulationsschema, 7 Account- und 5 Produkt-Hierarchieebenen sowie 2, 4 oder 6 Nachkommastellen. Sie berechnet nur Nettopreise, bucht nichts ins Hauptbuch, erzeugt keine Steuerrechnungen und arbeitet in diesem Release nicht mit Standard-Promotions aus Commerce oder Loyalty zusammen.
 4. **Mengeneinheiten, Steuern und Märkte.** Die [Hilfe der Manufacturing Cloud](https://help.salesforce.com/s/articleView?id=ind.mfg_ppp_pointer.htm&language=en_US&type=5) nennt die Umrechnung von Mengeneinheiten sowie primäre und sekundäre Steuern. Wie mehrere Märkte auf Verkaufsorganisationen abgebildet werden, würde ich in einer Sandbox testen, bevor ich mich darauf verlasse.
 
 ```hinweis offen
-Den Ladeprozess gibt es also, die SAP-Extraktion und ihr Monitoring bauen aber Sie. Fragen Sie schriftlich nach dem Preis der Add-ons und prüfen Sie die Grenzen an Ihren größten Aufträgen und Ihrem Konditionsvolumen, bevor ein Projektplan davon abhängt.
+Der Ladeprozess ist also vorhanden. Die SAP-Extraktion und ihr Monitoring setzen Sie selbst um. Fragen Sie schriftlich nach dem Preis der Add-ons und prüfen Sie die Grenzen an Ihren größten Aufträgen und Ihrem Konditionsvolumen, bevor ein Projektplan davon abhängt.
 ```
 
 ## Zwei Preisfindungen laufen auseinander, weil Konditionen sich ändern
@@ -91,7 +91,7 @@ Konditionssätze ändern sich ständig. Die Preisabteilung legt in SAP jede Woch
 
 - **Zeitpunkt.** Eine Kondition ändert sich in SAP um zehn Uhr, die Kopie kommt über Nacht, und der Telesales-Mitarbeiter nennt den ganzen Tag den Preis von gestern.
 - **Neue Konditionsarten.** Die Finanzabteilung führt in SAP einen Zuschlag ein. Niemand ergänzt die passende Preisspezifikation im Kalkulationsschema in Salesforce.
-- **Rundung.** "Penny perfect" setzt identische Rundung in jedem Schritt voraus. Eine Abweichung in der Rechenreihenfolge, und Auftrag und Rechnung unterscheiden sich um ein paar Cent pro Position, was Kunden bei großen Aufträgen bemerken.
+- **Rundung.** "Penny perfect" setzt identische Rundung in jedem Schritt voraus. Schon eine Abweichung in der Rechenreihenfolge kann dazu führen, dass sich Auftrags- und Rechnungspreis um ein paar Cent pro Position unterscheiden, was Kunden bei großen Aufträgen bemerken.
 - **Welcher Preis gilt.** Übernimmt SAP den Salesforce-Preis, wenn der Auftrag ankommt, oder ermittelt es einen eigenen? Rechnen beide, bekommt der Kunde womöglich eine Auftragsbestätigung mit einem Preis und eine Rechnung mit einem anderen.
 
 Diese Lücken lassen sich beherrschen, wenn vier Rollen feststehen, bevor sich ein Mitarbeiter auf einen Salesforce-Preis verlässt: wer die Preisregeln verantwortet, wer die Konditionsdaten, welches System den Auftragspreis rechnet und welches den Rechnungspreis bestimmt, dazu eine Regel für Abweichungen. SAP kann Master für Regeln und Daten bleiben, während Salesforce den Auftragspreis aus Kopien rechnet.
@@ -100,7 +100,7 @@ Diese Lücken lassen sich beherrschen, wenn vier Rollen feststehen, bevor sich e
 
 Angenommen, ein Maschinenbauer nimmt mit einem Telesales-Team von zehn Personen Ersatzteilaufträge am Telefon an. 30.000 Ersatzteile, 2.500 Kunden, Preise aus SAP mit vier Konditionsarten: Listenpreis, Kundenrabatt, Mindermengenzuschlag und Mengenstaffeln. Die Aufträge sollen in Salesforce erfasst werden, wo der Mitarbeiter auch die installierte Basis und offene Fälle des Kunden sieht.
 
-**Variante A: SAP bleibt Preis-Master.** Salesforce fragt SAP pro Position nach dem Preis, während der Auftrag erfasst wird, über eine API wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/). Salesforce zeigt den aktuellen SAP-Preis, und Auftrag und Rechnung passen zusammen, solange SAP den Auftrag mit denselben Partnern, demselben Datum und denselben Mengen bepreist. Der Preis dafür ist eine Abhängigkeit: Ist SAP im Wartungsfenster, kann das Team keine Aufträge bepreisen.
+**Variante A: SAP bleibt Preis-Master.** Salesforce fragt SAP pro Position nach dem Preis, während der Auftrag erfasst wird, über eine API wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/). Salesforce zeigt den aktuellen SAP-Preis, und Auftrags- und Rechnungspreis stimmen überein, solange SAP den Auftrag mit denselben Partnern, demselben Datum und denselben Mengen bepreist. Der Preis dafür ist eine Abhängigkeit: Ist SAP im Wartungsfenster, kann das Team keine Aufträge bepreisen.
 
 **Variante B: Penny Perfect Pricing rechnet.** Die vier Konditionsarten werden als Preisspezifikationen nachgebaut, und die Konditionssätze für 2.500 Kunden werden als External Pricing Key Values kopiert, mit Delta-Ladung und Konsolidierungslauf mehrmals am Tag. Die Grenzen von 1.000 Positionen pro Auftrag und 28 Schemaschritten sind hier kein Problem, gehören aber in die Prüfung. Preise kommen sofort, ohne SAP. Der Aufwand liegt im Abgleich und in einer zweiten Preiskonfiguration, die jemand verantwortet.
 
