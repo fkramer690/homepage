@@ -1,6 +1,7 @@
 ---
 title: "Händlerbestand und Nachschub mit Agentforce"
-description: "Kann Agentforce Händlerbestände prüfen und Nachschub auslösen? Was die Fertigungsvorlagen können und warum ATP, Preise und Kreditlimit im ERP bleiben."
+metaTitle: "Kann Agentforce Händlerbestände prüfen und nachbestellen?"
+description: "Ja, Agentforce kann Händlerbestände prüfen und Nachschub vorbereiten, aber Verfügbarkeit, Preis und Kredit bleiben im ERP. Was die Fertigungsvorlagen können."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de

@@ -1,6 +1,7 @@
 ---
 title: "Revenue Cloud Billing Kosten: Was Billing Events bedeuten"
-description: "Wie Revenue Cloud Billing abgerechnet wird: ein Billing Event je 50 Dollar Rechnungsbetrag, kein Übertrag, eine Beispielrechnung und was ins Order Form gehört."
+metaTitle: "Revenue Cloud Billing Preise: ein Billing Event je 50 Dollar"
+description: "Revenue Cloud Billing wird in Billing Events abgerechnet: eines je 50 Dollar Rechnungsbetrag, ohne Übertrag. Mit Beispielrechnung und Tipps zum Order Form."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de
@@ -11,7 +12,7 @@ categories: [revenue-cloud]
 contactBrief: licences
 tags: [Revenue Cloud Billing, Billing Events, Lizenzen, Preise, Order Form]
 takeaways:
-  - "Laut Rate Sheet vom Februar 2026 wird je 50 Dollar Rechnungsbetrag ein Billing Event verbraucht, also 0,02 Events pro Dollar."
+  - "Salesforce veröffentlicht keinen Preis pro Billing Event. Preis, Staffel und Mehrverbrauch gehören vor der Unterschrift ins Order Form."
   - "Gezählt wird die Zwischensumme gebuchter Rechnungen ohne Steuer, aber mit Versand. Andere Währungen werden zum Tagesdurchschnittskurs in Dollar umgerechnet."
   - "Billing Events verfallen zum Ende der Bestellung und werden nicht übertragen. Prüfen Sie, ob ein Mehrjahresvertrag einen Pool oder Jahrespools hat."
   - "Was über Billing läuft, bestimmt die Kosten: Maschinenrechnungen mit hohen Beträgen verbrauchen weit mehr Events als Abo- und Servicerechnungen."
@@ -27,7 +28,7 @@ faq:
 draft: false
 ---
 
-Revenue Cloud Billing ist ein Add-on zu Revenue Cloud, und Salesforce nennt den Preis nur auf Anfrage. Der Verbrauch wird in Billing Events gemessen: Laut Rate Sheet vom Februar 2026 wird je 50 Dollar Rechnungsbetrag ein Billing Event verbraucht. Gezählt wird die Zwischensumme gebuchter Rechnungen ohne Steuer, aber mit Versand, und andere Währungen werden zum Tagesdurchschnittskurs in Dollar umgerechnet. Ungenutzte Events verfallen am Order End Date. Die Kosten hängen also am Rechnungsvolumen, das Sie über Billing fakturieren, nicht an der Zahl der Nutzer. Schätzen Sie dieses Volumen pro Jahr, bevor Sie verhandeln.
+Revenue Cloud Billing wird in Billing Events abgerechnet: Laut Rate Sheet vom Februar 2026 wird je 50 Dollar Rechnungsbetrag ein Billing Event verbraucht. Billing ist ein Add-on zu Revenue Cloud, und Salesforce nennt den Preis nur auf Anfrage. Gezählt wird die Zwischensumme gebuchter Rechnungen ohne Steuer, aber mit Versand, und andere Währungen werden zum Tagesdurchschnittskurs in Dollar umgerechnet. Ungenutzte Events verfallen am Order End Date. Die Kosten hängen also am Rechnungsvolumen, das Sie über Billing fakturieren, nicht an der Zahl der Nutzer. Schätzen Sie dieses Volumen pro Jahr, bevor Sie verhandeln.
 
 ## Wie wird Revenue Cloud Billing bepreist?
 

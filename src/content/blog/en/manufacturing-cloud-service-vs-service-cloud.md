@@ -1,7 +1,7 @@
 ---
 title: "Manufacturing Cloud for Service or Service Cloud?"
-metaTitle: "Manufacturing Cloud vs Service Cloud: who needs which?"
-description: "When Manufacturing Cloud Service Core is worth $80 more per user and month than Service Cloud Core, what the premium buys and who needs which license."
+metaTitle: "Manufacturing Cloud vs Service Cloud: $275 vs $195 per user"
+description: "Manufacturing Cloud Service Core lists at $275 per user and month, Service Cloud Core at $195. Who needs the $80 premium (warranty claims) and when a mix wins."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: en

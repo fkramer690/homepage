@@ -1,6 +1,7 @@
 ---
 title: "Agentforce Sales Planning: What the Agent Really Does"
-description: "What the Agentforce for Sales Planning template does with sales agreements and forecasts, what Salesforce leaves undocumented and which ERP data comes first."
+metaTitle: "Agentforce Sales Planning: not included in Agentforce Sales"
+description: "Agentforce for Sales Planning is not part of Agentforce for Sales, it needs the Manufacturing add-on. What it does with sales agreements, and its limits."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: en
@@ -28,7 +29,7 @@ faq:
 draft: false
 ---
 
-Agentforce for Sales Planning is an agent template for Manufacturing Cloud that answers questions about sales agreements, writes performance summaries, helps set up customer visits and bulk updates agreements. That is what Salesforce Help documents today, with tight limits: the bulk update preview shows the first 50 agreements, and one update covers at most 450 agreement products. Two things from the August 2025 announcement are thinner in the documentation: proactive alerts when build plans and sales drift apart, and any work on account forecasts. When the actual quantities live in SAP or proALPHA, the actuals feed comes before the agent.
+Agentforce for Sales Planning is not included in Agentforce for Sales: the agent template belongs to Manufacturing Cloud and needs the Agentforce for Manufacturing add-on or Agentforce 1 Manufacturing Edition. It answers questions about sales agreements, writes performance summaries, helps set up customer visits and bulk updates agreements. That is what Salesforce Help documents today, with tight limits: the bulk update preview shows the first 50 agreements, and one update covers at most 450 agreement products. When the actual quantities live in SAP or proALPHA, the actuals feed comes before the agent.
 
 ## What does Agentforce for Sales Planning do according to Salesforce?
 

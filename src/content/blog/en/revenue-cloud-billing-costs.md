@@ -1,6 +1,7 @@
 ---
 title: "Revenue Cloud Billing costs: what billing events mean"
-description: "How Revenue Cloud Billing is charged: one billing event per $50 of invoice amount, no rollover, a worked estimate and what to settle on the order form."
+metaTitle: "Revenue Cloud Billing pricing: one billing event per $50"
+description: "Revenue Cloud Billing is charged in billing events: one per $50 of posted invoice amount, unused events expire. A worked estimate and order form tips."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: en
@@ -11,7 +12,7 @@ categories: [revenue-cloud]
 contactBrief: licences
 tags: [revenue cloud billing, billing events, licenses, pricing, order form]
 takeaways:
-  - "According to the rate sheet of February 2026, one billing event is consumed for every $50 of total invoice amount, which is 0.02 events per dollar."
+  - "Salesforce publishes no price per billing event. Get the price, the tiers and the overage rate in writing on the order form before you sign."
   - "The invoice amount is the subtotal of posted invoices without tax but with shipping; other currencies are converted to US dollars at the average daily rate."
   - "Billing events must be used before the order end date and do not roll over, so check whether a multi-year order has one pool or annual ones."
   - "What you route through Billing drives the cost: high-value machine invoices consume many more events than subscription and service invoices."
@@ -27,7 +28,7 @@ faq:
 draft: false
 ---
 
-Revenue Cloud Billing is an add-on to Revenue Cloud, and Salesforce quotes it only on request. Consumption is measured in billing events: according to the rate sheet of February 2026, one billing event is used for every $50 of total invoice amount. The amount is the subtotal of posted invoices without tax but with shipping, and other currencies are converted to US dollars at the average daily rate. Unused events expire at the order end date. So the cost depends on the invoice volume you run through Billing, not on the number of users. Estimate that volume per year before you negotiate.
+Revenue Cloud Billing is charged in billing events: according to the rate sheet of February 2026, one billing event is used for every $50 of total invoice amount. Billing is an add-on to Revenue Cloud, and Salesforce quotes its price only on request. The amount is the subtotal of posted invoices without tax but with shipping, and other currencies are converted to US dollars at the average daily rate. Unused events expire at the order end date. So the cost depends on the invoice volume you run through Billing, not on the number of users. Estimate that volume per year before you negotiate.
 
 ## How is Revenue Cloud Billing priced?
 

@@ -1,6 +1,7 @@
 ---
 title: "ServiceMax vs Salesforce Field Service: which one?"
-description: "ServiceMax still runs on Salesforce, with a second vendor and scheduling on AWS. When it beats Salesforce Field Service for manufacturers and when it does not."
+metaTitle: "ServiceMax vs Salesforce Field Service: part of Salesforce?"
+description: "ServiceMax belongs to PTC, not Salesforce, yet Core runs in your Salesforce org. When it beats Salesforce Field Service for manufacturers and when not."
 pubDate: 2026-10-29
 updatedDate: 2026-11-09
 lang: en
@@ -27,7 +28,7 @@ faq:
 draft: false
 ---
 
-ServiceMax from PTC and Salesforce Field Service, now called Agentforce Field Service and Operations, do not sit on separate platforms. According to PTC's service description of February 2025, ServiceMax Core runs as a package in the customer's Salesforce org, with its own data model. PTC runs Service Board and Schedule Optimization on AWS. So Core users need Salesforce licenses, plus a second vendor. Based on the documented scope, ServiceMax deserves a closer look when depot repair, returns and rule-based entitlements shape your service and your PLM comes from PTC. Otherwise I would start with Salesforce Field Service.
+ServiceMax is not part of Salesforce: PTC has owned it since January 2023, yet ServiceMax Core still runs as a package in the customer's Salesforce org. According to PTC's service description of February 2025, Core brings its own data model, and PTC runs Service Board and Schedule Optimization on AWS. The native alternative is Salesforce Field Service, now called Agentforce Field Service and Operations. So Core users need Salesforce licenses, plus a second vendor. Based on the documented scope, ServiceMax deserves a closer look when depot repair, returns and rule-based entitlements shape your service and your PLM comes from PTC. Otherwise I would start with Salesforce Field Service.
 
 ## Does ServiceMax still run on Salesforce?
 

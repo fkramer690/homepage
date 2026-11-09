@@ -1,7 +1,7 @@
 ---
 title: "Customer prices in B2B Commerce: price books or ERP?"
 metaTitle: "Salesforce B2B Commerce: SAP prices or price books?"
-description: "When price books in Salesforce B2B Commerce are enough and when SAP should deliver customer prices live: limits, risks and a mixed model for manufacturers."
+description: "Price books in Salesforce B2B Commerce cover list, tier and quantity prices. If SAP conditions set dealer prices, replicate net prices or ask SAP live."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: en
