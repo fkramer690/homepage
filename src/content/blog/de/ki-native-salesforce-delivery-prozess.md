@@ -1,7 +1,8 @@
 ---
 title: "KI-nativer Delivery-Prozess für Salesforce in 14 Schritten"
-description: "KI-nativer Delivery-Prozess für Salesforce vom Workshop bis zur Produktion: was der Agent macht, wo Personen an fünf Toren entscheiden."
+description: "KI-nativer Delivery-Prozess für Salesforce vom Workshop bis zur Produktion: was der Agent macht, wo Personen an fünf Toren entscheiden, was die Pipeline prüft."
 pubDate: 2026-10-30
+updatedDate: 2026-11-09
 lang: de
 slug: ki-native-salesforce-delivery-prozess
 translationKey: ai-native-delivery-process
@@ -10,23 +11,23 @@ categories: [devops, ai]
 tags: [KI-native Delivery, Coding-Agenten, Jira, DevOps, Anforderungsmanagement, Maschinenbau]
 takeaways:
   - "Ein Agent macht die Fleißarbeit vom Workshop-Protokoll bis zum Pull Request, Personen entscheiden an fünf festen Toren."
-  - "Jede Zeile Code lässt sich über Anforderung, Story, Commit und Test auf einen Satz im Workshop-Transkript zurückführen."
+  - "Jede deployte Änderung führt über Story, Commit und Test auf eine freigegebene Anforderung zurück, am besten auf eine Entscheidung im bestätigten Protokoll."
   - "Das wichtigste Tor ist die Spec-Freigabe „Ready for Agent“ durch Business Analyst und Architekt, weil ein Fehler dort am billigsten zu korrigieren ist."
-  - "Die Pipeline bleibt deterministisch und hat als Einzige Zugang zur Produktion; der Agent arbeitet nur in Scratch Orgs und Sandboxes."
+  - "Die Pipeline bleibt deterministisch und prüft vor dem Merge. Nur ihre eigene Identität erreicht die Produktion; der Agent hat keine Produktionszugänge."
   - "Rückmeldungen aus dem Abnahmetest ordnet der Agent mit Beleg aus dem Protokoll als Bug, Change Request oder Klärungsbedarf ein."
 faq:
   - q: "Was ist der Unterschied zwischen KI-gestützter und KI-nativer Salesforce-Delivery?"
-    a: "KI-gestützt heißt, der alte Prozess bekommt einen Coding-Assistenten. KI-nativ heißt, der Prozess ist um den Agenten herum gebaut: Er analysiert, protokolliert, entwirft und programmiert, Personen kuratieren und entscheiden an festen Toren."
+    a: "KI-gestützt heißt, einzelne Tätigkeiten im bestehenden Prozess bekommen KI-Hilfe. KI-nativ heißt, Übergaben an Agenten, maschinenlesbare Spezifikationen, Berechtigungen und Tore gehören von Anfang an zum Prozessdesign: Der Agent analysiert, protokolliert, entwirft und programmiert, Personen kuratieren und entscheiden an festen Toren."
   - q: "Darf ein KI-Agent nach Produktion deployen?"
-    a: "Nein. Produktionszugänge liegen ausschließlich bei der Pipeline, die eine bereits validierte Deployment-ID per Quick Deploy ausrollt. Der Agent arbeitet in Scratch Orgs und Sandboxes, die ausdrücklich für ihn freigegeben sind."
+    a: "Nein. Validierung gegen Produktion und Deployment laufen nur über die Pipeline mit eigener technischer Identität: Sie validiert das Release-Artefakt gegen Produktion und rollt genau diese Validierungs-ID innerhalb von zehn Tagen per Quick Deploy aus. Der Agent arbeitet in Scratch Orgs und Sandboxes und hat keine Produktionszugänge auf seinem Rechner."
   - q: "Dürfen Workshops mit dem Kunden aufgezeichnet werden?"
-    a: "Nur mit Einwilligung aller Teilnehmenden, bei Konzernkunden oft zusätzlich mit dem Betriebsrat, und mit Klärung, in wessen Tenant das Transkript liegt. Will der Kunde keine Aufzeichnung, diktiert der Business Analyst direkt nach dem Termin eine Zusammenfassung, die denselben Weg geht."
+    a: "Nur nach rechtlicher und datenschutzrechtlicher Prüfung. Alle müssen informiert sein, unbefugte Aufnahmen des nichtöffentlich gesprochenen Worts können strafbar sein, und der Betriebsrat kann mitbestimmen. Zweck, Aufbewahrung und wo Transkript und Agent die Daten verarbeiten, müssen vorher feststehen. Will der Kunde keine Aufzeichnung, diktiert der Business Analyst direkt nach dem Termin eine Zusammenfassung, die denselben Weg geht."
   - q: "Wer verantwortet die Qualität der Agenten-Ergebnisse?"
-    a: "Fachlich der Business Analyst, technisch der Architekt über die Regeldatei im Repository, im Code der Entwickler, der jeden Pull Request reviewt. Der Agent entscheidet nichts Verbindliches."
+    a: "Fachlich der Business Analyst, technisch der Architekt über die Regeldatei im Repository, im Code der Entwickler, der jeden Pull Request reviewt. Der Agent entwirft und löst umkehrbare automatische Schritte aus, aber jede verbindliche Entscheidung braucht eine Person mit Namen."
 draft: false
 ---
 
-Ein KI-nativer Delivery-Prozess für Salesforce macht das Jira-Ticket zur ausführbaren Spezifikation. Ein Agent erledigt die Fleißarbeit von der Workshop-Vorbereitung bis zum Pull Request, die Pipeline prüft deterministisch, und Personen entscheiden an fünf festen Toren: Protokoll, Spec, Code-Review, Bugs und Change Requests, Release. Der Prozess hat 14 Schritte von der ersten Anforderung bis zur Produktion. Er hält eine Kette zusammen, die klassische Projekte selten schaffen: Jede Zeile Code führt auf einen Satz zurück, den jemand beim Kunden gesagt hat. Für Hersteller ändert sich vor allem eines: Der Fachbereich sieht viel früher etwas Lauffähiges und muss dafür schneller bestätigen.
+Ein KI-nativer Delivery-Prozess für Salesforce macht das Jira-Ticket zur ausführbaren Spezifikation. Ein Agent erledigt die Fleißarbeit von der Workshop-Vorbereitung bis zum Pull Request, die Pipeline prüft deterministisch, und Personen entscheiden an fünf festen Toren: Protokoll, Spec, Code-Review, Bugs und Change Requests, Release. Der Prozess hat 14 Schritte von der ersten Anforderung bis zur Produktion. Er hält eine Kette zusammen, die klassische Projekte selten schaffen: Jede deployte Änderung führt auf eine freigegebene Anforderung zurück, am besten auf eine Entscheidung, die jemand beim Kunden bestätigt hat. Für Hersteller ändert sich vor allem eines: Der Fachbereich sieht viel früher etwas Lauffähiges und muss dafür schneller bestätigen.
 
 ## Was heißt KI-nativ in einem Salesforce-Projekt?
 
@@ -41,11 +42,11 @@ team | Personen | entscheiden an Toren | Sie führen jedes Gespräch mit dem Kun
 basis: Ein Prozess, um den Agenten herum gebaut
 ```
 
-Der Unterschied zu KI-gestützt: Dort bekommt der alte Prozess einen Coding-Assistenten, der Business Analyst tippt weiter Stories ab, und der Kunde sieht erst im Abnahmetest etwas Lauffähiges. Hier liefert der Agent Protokoll, Stories und einen Prototyp, und jede Rückmeldung wird gegen das bestätigte Protokoll eingeordnet.
+Der Unterschied zu KI-gestützt: Dort bekommen einzelne Tätigkeiten im bestehenden Prozess KI-Hilfe. Hier sind Übergaben an Agenten, maschinenlesbare Spezifikationen, Berechtigungen und Tore von Anfang an eingeplant. Der Agent liefert Protokoll, Stories und einen Prototyp, und jede Rückmeldung wird gegen das bestätigte Protokoll eingeordnet.
 
 ## Wie läuft der Prozess vom Workshop bis zur Produktion?
 
-Der Prozess hat drei Phasen mit zusammen 14 Schritten. Jede Grafik zeigt eine Phase in drei Spuren: was Personen im Gespräch tun, was der Agent erledigt und was die Pipeline prüft. Die dunklen Balken sind die Tore, an denen eine Person verbindlich entscheidet. Die blaue Spalte rechts zeigt den Status des Jira-Tickets und wer ihn setzt: Der Agent legt Stories direkt in Jira an, die Pipeline schaltet den Status nach Validierung und Deployment selbst weiter.
+Der Prozess hat drei Phasen mit zusammen 14 Schritten. Jede Grafik zeigt eine Phase in drei Spuren: was Personen im Gespräch tun, was der Agent erledigt und was die Pipeline prüft. Die dunklen Balken sind die Tore, an denen eine Person verbindlich entscheidet. Die blaue Spalte rechts zeigt den Status des Jira-Tickets und wer ihn setzt: Der Agent legt Stories direkt in Jira an, die Pipeline schaltet den Status nach Validierung und Deployment selbst weiter. Beide nutzen eigene Bot-Identitäten mit nur den nötigen Übergängen.
 
 ### Discovery: der Agent bereitet vor, Personen führen das Gespräch
 
@@ -65,9 +66,9 @@ tor: BA und Architekt geben die Story frei | Ready for Agent · BA
 
 Vor dem Workshop analysiert der Agent die bestehende Org: Objekte, Flows, Validierungsregeln, Berechtigungen. Daraus entwirft er Agenda, Hypothesen und gezielte Fragen, etwa: „Auf Opportunity laufen drei Flows, die sich überschneiden. Wer ist dafür fachlich zuständig?“ Der Business Analyst schärft die Agenda und streicht Hypothesen, die politisch heikel sind. Wie eine solche Org-Analyse aussieht, steht in [KI-Org-Analyse: technische Schulden finden](../ki-org-analyse-technische-schulden/).
 
-Im Workshop moderiert der Business Analyst und muss nicht mitschreiben. Aus dem Transkript erzeugt der Agent ein Protokoll mit Entscheidungen, offenen Fragen und Verantwortlichen sowie Entwürfe für Epics und Stories in Jira, jeweils mit Zeitstempel. Er trennt hart zwischen „Kunde hat gesagt“ und „Agent interpretiert“. Der Business Analyst kuratiert: streichen, schärfen, Fit-Gap ergänzen (Standard, Konfiguration oder Code), falsch erkannte Fachbegriffe und verwechselte Sprecher korrigieren.
+Im Workshop moderiert der Business Analyst und muss nicht mitschreiben. Aus dem Transkript erzeugt der Agent ein Protokoll mit Entscheidungen, offenen Fragen und Verantwortlichen sowie Entwürfe für Epics und Stories in Jira, jeweils mit Zeitstempel. Er trennt hart zwischen „Kunde hat gesagt“ und „Agent interpretiert“. Der Business Analyst kuratiert das Ergebnis: Er streicht, schärft, ergänzt den Fit-Gap (Standard, Konfiguration oder Code) und korrigiert falsch erkannte Fachbegriffe und verwechselte Sprecher.
 
-Bestätigt der Kunde das Protokoll, steht die Scope-Baseline. Danach baut der Agent in Stunden einen Prototyp in einer Scratch Org, einer kurzlebigen Test-Org, mit Objekten, Feldern, Layouts und einem einfachen Flow. Im Refinement reagiert der Kunde auf etwas Echtes statt auf Papier. Der Agent schreibt danach keinen neuen Story-Satz, sondern einen Diff gegen die bestehenden Stories: „Akzeptanzkriterium 2 geändert, weil der Kunde bei 00:41:07 sagte …“, ergänzt um betroffene Metadaten, Testfälle und Impact gegen den Stand im Repository.
+Bestätigt der Kunde das Protokoll, stehen die vereinbarten Anforderungen; die Scope-Baseline entsteht mit der Spec-Freigabe. Für abgegrenzte Konfiguration baut der Agent oft in Stunden einen ersten Prototyp in einer Scratch Org, einer kurzlebigen Test-Org, sofern Org-Definition, Pakete, Lizenzen und synthetische Daten schon bereitstehen: Objekte, Felder, Layouts und ein einfacher Flow. Im Refinement reagiert der Kunde auf etwas Echtes statt auf Papier. Der Agent schreibt danach keinen neuen Story-Satz, sondern einen Diff gegen die bestehenden Stories: „Akzeptanzkriterium 2 geändert, weil der Kunde bei 00:41:07 sagte …“, ergänzt um betroffene Metadaten, Testfälle und Impact gegen den Stand im Repository.
 
 ### Bauen: der Agent programmiert, der Entwickler reviewt
 
@@ -78,16 +79,18 @@ ticket: Jira
 start: 7 | 3
 Agent | Implementierung | Plan, Freigabe, Code und Tests | In Arbeit · Agent
 Agent | Pull Request | Beschreibung, Jira-Link, KI-Review | In Review · Agent
-tor: Entwickler reviewt und merged
-Pipeline | CI-Validierung | Delta als Check-Deploy, Tests, Analyzer | Validiert · Pipeline
+Pipeline | CI-Validierung | Check-Deploy, Tests, Analyzer vor Merge | Validiert · Pipeline
 zurueck: Fehler: Agent liest das Log und fixt, höchstens 2 Versuche
+tor: Entwickler reviewt und merged
 ```
 
 Erst wenn Business Analyst und Architekt eine Story auf „Ready for Agent“ setzen, beginnt die Umsetzung. Der Agent liest das Ticket, legt einen Feature-Branch an, schreibt einen Umsetzungsplan und setzt ihn erst nach Freigabe durch den Entwickler um: Apex, Lightning Web Components oder Flow, jeweils mit Tests. Bei unklaren Anforderungen liest er die verlinkte Stelle im Transkript, statt zu raten. Er schreibt die Beschreibung des Pull Requests mit Ticket-Link und Komponentenliste, ein KI-Reviewer kommentiert vorab.
 
-Gemergt wird nur nach dem Review durch einen Entwickler. Der Entwickler reviewt in diesem Prozess mehr, als er schreibt. Warum ich auf dieses Tor nie verzichte, steht in [Warum Pull-Request-Reviews Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
+Vor jedem Merge läuft die Pipeline als Pflichtprüfung am Pull Request: ein Delta-Paket, etwa mit dem Drittanbieter-Werkzeug `sfdx-git-delta` in fester Version und mit vollständigem Deployment als Fallback, ein Check-only-Deploy gegen die Integrations-Sandbox, definierte Tests und ein Gate mit Code Analyzer v5, dessen Regeln und Schwellen versioniert im Repository liegen. Schlägt sie fehl, bekommt der Agent das Log und darf einen Fix-Commit liefern, höchstens zwei Versuche. Danach übernimmt der Entwickler.
 
-Danach läuft die Pipeline: ein Delta-Paket mit `sfdx-git-delta`, ein Check-only-Deploy gegen die Integrations-Sandbox, definierte Tests und ein Code-Analyzer-Gate. Schlägt sie fehl, bekommt der Agent das Log und darf einen Fix-Commit liefern, höchstens zwei Versuche. Danach übernimmt der Entwickler. Welche Prüfungen ich für KI-Code in die Pipeline setze, beschreibe ich in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/).
+Gemergt wird nur mit grüner Pipeline und nach dem Review durch einen Entwickler. Der Entwickler reviewt in diesem Prozess mehr, als er schreibt. Warum ich auf dieses Tor nie verzichte, steht in [Warum Pull-Request-Reviews Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
+
+Welche Prüfungen ich für KI-Code in die Pipeline setze, beschreibe ich in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/).
 
 ### Release: der Kunde testet, der Agent ordnet ein
 
@@ -96,24 +99,24 @@ titel: Phase 3 von 3 · Release
 spuren: Personen | Agent | Pipeline
 ticket: Jira
 start: 10 | 4
-Pipeline | Deploy nach UAT | Agent schreibt Testskripte ins Ticket | In UAT · Pipeline
+Pipeline | Deploy nach UAT | Freigegebene Testskripte im Ticket | In UAT · Pipeline
 Personen | Abnahmetest | Kunde testet, BA begleitet
 Agent | Feedback-Triage | Bug, Change Request oder Klärung | Bug oder CR angelegt · Agent
 tor: BA und Kunde entscheiden über Bugs und CRs
 zurueck: Bugs zurück an 07, Change Requests als neue Story an 06
+Agent | Release Notes und Anwenderhilfe | Entwürfe, BA prüft
 tor: Kunde gibt das Release frei | Freigegeben · Kunde
-Pipeline | Release nach Produktion | Quick Deploy der validierten ID | Erledigt · Pipeline
-Agent | Release Notes und Handbuch | BA liest gegen
+Pipeline | Release nach Produktion | In Produktion validieren, Quick Deploy | Erledigt · Pipeline
 fazit: **Regel:** Der Agent hat keinen Zugang zur Produktion. Dorthin deployt nur die Pipeline.
 ```
 
-Nach dem Merge deployt die Pipeline in die UAT-Sandbox, und der Agent schreibt Testskripte direkt aus den Akzeptanzkriterien ins Ticket. Der Kunde testet, der Business Analyst begleitet die Sessions. Jede Rückmeldung ordnet der Agent ein: **Bug**, wenn sie einem bestätigten Kriterium widerspricht, **Change Request**, wenn sie neu ist, **Klärungsbedarf**, wenn der Beleg fehlt. Business Analyst und Kunde bestätigen die Einordnung. Bugs gehen zurück in die Implementierung, Change Requests werden als neue Story bewertet, auch kommerziell. Scope Creep wird damit sichtbar, mit Beleg statt Bauchgefühl. Wie ein Abnahmetest mit dem Fachbereich aufgebaut ist, steht in [Salesforce-UAT mit dem Fachbereich](../salesforce-uat-abnahmetest-fachbereich/).
+Nach dem Merge deployt die Pipeline in die UAT-Sandbox. Die Testskripte hat der Agent aus den Akzeptanzkriterien entworfen, freigegeben vor diesem Deployment, mit Negativfällen, Rollenrechten und Regression. Der Kunde testet, der Business Analyst begleitet die Sessions. Jede Rückmeldung ordnet der Agent ein: **Bug**, wenn sie einem bestätigten Kriterium widerspricht, **Change Request**, wenn sie neu ist, **Klärungsbedarf**, wenn der Beleg fehlt. Business Analyst und Kunde bestätigen die Einordnung. Bugs gehen zurück in die Implementierung, Change Requests werden als neue Story bewertet, auch kommerziell. Scope Creep wird damit sichtbar, mit Beleg statt Bauchgefühl. Wie ein Abnahmetest mit dem Fachbereich aufgebaut ist, steht in [Salesforce-UAT mit dem Fachbereich](../salesforce-uat-abnahmetest-fachbereich/).
 
-Nach der Freigabe rollt die Pipeline die bereits validierte Deployment-ID per Quick Deploy aus. Der Agent schreibt Release Notes und eine Anwenderhilfe in der Sprache des Fachbereichs, der Business Analyst liest gegen.
+Vor der Release-Entscheidung entwirft der Agent Release Notes und eine Anwenderhilfe in der Sprache des Fachbereichs, der Business Analyst liest gegen. Nach der Freigabe validiert die Pipeline das unveränderte Release-Artefakt gegen Produktion, mit den dort nötigen Tests, und rollt genau diese Validierungs-ID innerhalb von zehn Tagen per Quick Deploy aus. Eine Validierung gegen eine Sandbox lässt sich für Produktion nicht wiederverwenden.
 
 ## Verbindlich entscheiden nur Personen mit Namen
 
-Agent und Pipeline entscheiden nichts Verbindliches. Jede Entscheidung, die Scope, Qualität oder Produktion betrifft, trifft eine Person mit Namen.
+Agent und Pipeline liefern Entwürfe und lösen automatische, umkehrbare Schritte aus, etwa einen Jira-Status. Jede verbindliche Entscheidung, die Scope, Qualität oder Produktion betrifft, trifft eine Person mit Namen.
 
 ```tabelle
 titel: Wer in welcher Phase entscheidet
@@ -140,7 +143,7 @@ Ein angenommenes Beispiel, um die Kette zu zeigen. Im Discovery-Workshop eines M
 - Im Abnahmetest meldet eine Vertriebsmitarbeiterin, dass kleine Ersatzteilaufträge trotzdem als gewonnen gelten sollen. Der Agent ordnet das als Change Request ein, weil kein bestätigtes Kriterium eine Ausnahme vorsieht.
 - Die Release Note nennt die neue Mindestsumme für gewonnene Opportunities.
 
-Fragt ein Jahr später jemand, warum die Regel bei 10.000 Euro greift, führt die Kette in zwei Klicks zur Aussage im Workshop.
+Fragt ein Jahr später jemand, warum die Regel bei 10.000 Euro greift, führt die Kette in zwei Klicks zur bestätigten Entscheidung. Das klappt nur, wenn das bestätigte Protokoll mit festen Entscheidungs-IDs als Nachweis aufbewahrt wird, auch wenn das Rohtranskript gelöscht ist.
 
 ```kette
 titel: Rückverfolgung: vom Satz im Workshop zur Release Note
@@ -150,7 +153,7 @@ Story | Gilt nur für Closed Won, ergänzt im Refinement am Prototyp
 Commit | Validierungsregel: Closed Won mit `Amount < 10000` wird abgelehnt
 Test | 9.999 Euro wird abgelehnt, 10.000 Euro geht durch
 Release Note | Gewonnene Opportunities brauchen mindestens 10.000 Euro
-fazit: Jedes Glied verweist auf das vorige. So bleibt jede Zeile Code belegbar.
+fazit: Jedes Glied verweist auf das vorige. So bleibt jede deployte Änderung belegbar.
 ```
 
 ## Welche Werkzeuge brauchen Sie dafür?
@@ -158,9 +161,9 @@ fazit: Jedes Glied verweist auf das vorige. So bleibt jede Zeile Code belegbar.
 Der Prozess hängt an keinem bestimmten Coding-Agenten. Er braucht vier Verbindungen, Stand Oktober 2026:
 
 - **Jira als gemeinsames Ticketsystem.** Agent und Pipeline laufen nicht in Jira, sie lesen und schreiben nur dieselben Tickets. Der Agent läuft beim Entwickler und greift über den Atlassian Rovo MCP Server auf Jira zu; laut [Atlassian](https://www.atlassian.com/blog/jira/mcp-enhancements) liest er dort auch das Development-Panel mit verknüpften Branches, Pull Requests und Commits. Die Pipeline läuft auf der Git-Plattform und setzt den Ticketstatus nach jedem Lauf selbst, damit niemand ihn von Hand pflegt.
-- **Zugriff auf die Sandboxes.** Über die Salesforce CLI mit den Skills aus [sf-skills](https://github.com/forcedotcom/sf-skills), das [Claude-Code-Plugin von Salesforce](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) oder Hosted MCP Server. Der lokale Salesforce DX MCP Server erreicht laut README am 2. November 2026 sein End of Life; was das für Ihre Partner heißt, steht in [Salesforce DX MCP Server: Ende am 2. November 2026](../salesforce-dx-mcp-server-ende/). Der Agent erreicht jede Org, an der die Salesforce CLI auf seinem Rechner angemeldet ist. Dort sind deshalb nur feste Sandbox-Aliase angemeldet, nie die Produktion.
-- **Eine Git-Pipeline**, die ohne KI validiert und deployt, mit Produktionszugang nur für die Pipeline. Wie ich sie aufsetze, beschreibe ich unter [DevOps und Release Management](../../leistungen/devops-und-release-management/).
-- **Transkription im Tenant des Kunden**, etwa über die Aufzeichnung in Teams. Einwilligung und Betriebsrat behandle ich in [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
+- **Zugriff auf die Sandboxes.** Skills aus [sf-skills](https://github.com/forcedotcom/sf-skills) liefern Anweisungen, die Salesforce CLI führt Org-Aktionen aus, und das [Claude-Code-Plugin von Salesforce](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) ergänzt MCP-Server für Kontext. Der lokale Salesforce DX MCP Server hat am 2. November 2026 sein End of Life erreicht; was das für Ihre Partner heißt, steht in [Salesforce DX MCP Server: Ende am 2. November 2026](../salesforce-dx-mcp-server-ende/). Der Agent erreicht jede Org, deren Zugangsdaten die CLI auf seinem Rechner hält. Ein Sandbox-Alias ist keine Sicherheitsgrenze, deshalb läuft der Agent unter eigener Identität ohne Produktionszugangsdaten, mit begrenzten Befehlen und Protokollierung.
+- **Eine Git-Pipeline**, die ohne KI validiert und deployt, mit Produktionszugang nur für die Identität der Pipeline. Wie ich sie aufsetze, beschreibe ich unter [DevOps und Release Management](../../leistungen/devops-und-release-management/).
+- **Transkription im Tenant des Kunden**, etwa über die Aufzeichnung in Teams, die beim Organisator landet; ein Mitarbeiter des Kunden sollte also einladen. Das regelt nur die Ablage: Der Modellanbieter, der das Transkript liest, braucht ebenfalls einen Auftragsverarbeitungsvertrag, eine festgelegte Verarbeitungsregion und den Ausschluss der Daten vom Training. Einwilligung und Betriebsrat behandle ich in [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
 
 ## Wo stolpert der Prozess?
 
@@ -168,13 +171,13 @@ Der Prozess hängt an keinem bestimmten Coding-Agenten. Er braucht vier Verbindu
 
 - **Ein Transkript ist keine Wahrheit.** Ein Satz im Meeting ist keine Entscheidung. Der Agent erzeugt daraus nie verbindliche Stories ohne Prüfung durch den Business Analyst.
 - **Kunden ohne Aufzeichnung.** Dann diktiert der Business Analyst direkt nach dem Termin eine Zusammenfassung, die denselben Weg geht.
-- **Aufbewahrung.** Transkripte nach der Abnahme löschen oder auf die bestätigten Protokolle reduzieren.
+- **Aufbewahrung.** Rohaufnahmen und Transkripte nach einer festen Frist löschen und die bestätigten Protokolle mit Entscheidungs-IDs und nötigen Auszügen versioniert aufbewahren.
 
 **In der Salesforce-Strecke:**
 
 - **Klickentwicklung.** Admins bauen Flows und Layouts weiter in Sandboxes. Der Prozess braucht einen Schritt, in dem der Agent solche Änderungen abruft und committet, sonst driftet Git von der Org weg.
 - **Profile, Permission Sets, Destructive Changes.** Die klassischen Deploy-Fallen gehören als ausdrückliche Regeln in die Regeldatei.
-- **Konfigurationsdaten.** CPQ- und Field-Service-Setups oder Custom Settings sind kein Metadaten-Deploy und brauchen eine eigene Strecke.
+- **Konfigurationsdaten.** Konfiguration, die nur als Datensätze existiert, etwa große Teile von CPQ oder Datensätze in Custom Settings, braucht eine eigene Datenstrecke. Field Service hat deploybare Metadaten und Daten, also entscheiden Sie pro Artefakttyp.
 
 ## Erster Schritt: die Spec-Freigabe
 
@@ -186,7 +189,7 @@ Spec-Freigabe | ein Stream · BA und Architekt
 Messen | im Code-Review · Entwickler
   Zählen, wie oft der Entwickler trotzdem nachfragen muss.
 Absichern | parallel
-  Aufzeichnung und Tenant klären, jeden Produktionszugang außer dem der Pipeline sperren.
+  Aufzeichnung, Tenant und Verarbeitung im Modell klären, jeden Produktionszugang außer dem der Pipeline entfernen.
 Ausbauen | wenn es stabil läuft
   Prototyp und Feedback-Triage dazunehmen.
 ```
