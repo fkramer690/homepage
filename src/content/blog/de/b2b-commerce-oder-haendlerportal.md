@@ -1,7 +1,8 @@
 ---
 title: "B2B Commerce oder Händlerportal: Wann lohnt ein Shop?"
-description: "Wann Hersteller Salesforce B2B Commerce statt eines Portals auf Experience Cloud oder Manufacturing Cloud brauchen: Funktionen, Käuferlizenzen, vier Kriterien."
+description: "Wann Hersteller Salesforce B2B Commerce statt eines Portals auf Experience Cloud brauchen: Funktionen, Käuferlizenzen und vier Kriterien für die Entscheidung."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: de
 slug: b2b-commerce-oder-haendlerportal
 translationKey: commerce-shop-or-portal
@@ -9,24 +10,24 @@ topic: commerce
 categories: [b2b-commerce, manufacturing-cloud]
 tags: [B2B Commerce, Experience Cloud, Händlerportal, Manufacturing Cloud, Ersatzteile, Lizenzen]
 takeaways:
-  - "Ein Portal zeigt Daten und nimmt Anfragen an. B2B Commerce ergänzt Katalog, Sichtbarkeit je Käufergruppe, Käuferpreise, Warenkorb und Checkout."
-  - "Käufer im Store brauchen Customer Community Plus, dieselbe Lizenzfamilie wie im Portal. Zum Listenpreis sind das 35 € pro Mitglied oder 15 € pro Login."
+  - "Ein Portal zeigt Daten und nimmt Anfragen an. B2B Commerce ergänzt Katalog, Sichtbarkeit je Käufergruppe, Käuferpreise, Warenkorb und Checkout von Haus aus."
+  - "Ein einfacher Käufer im Store braucht eine External-Apps-Lizenz oder höher. Buyer Manager und Account-Wechsler brauchen Customer Community Plus."
   - "Ein Shop lohnt sich, wenn Händler bekannte Teilenummern in Menge nachbestellen und ein großer Teil davon noch per Telefon oder E-Mail kommt."
-  - "Konfigurierte Maschinen bleiben im Vertrieb und im Angebot. Ein Shop verkauft, was ein Händler ohne Gespräch bestellen kann."
-  - "Im Rechenbeispiel mit 250 Händlern und 30.000 Positionen im Jahr bestellt jeder Händler rund zehn Positionen im Monat, genug für einen Warenkorb."
+  - "Maschinen mit Engineering-Aufwand bleiben im Vertrieb und im Angebot. Standardoptionen und Bundles lassen sich mit Revenue Management im Shop verkaufen."
+  - "Im Rechenbeispiel mit 250 Händlern und 30.000 Positionen im Jahr passt ein Shop gut; ob er sich rechnet, zeigt erst ein eigener Business Case."
 faq:
   - q: "Was ist der Unterschied zwischen Händlerportal und B2B-Shop in Salesforce?"
     a: "Ein Portal auf Experience Cloud zeigt Datensätze wie Bestellungen, Verträge und Cases und nimmt Anfragen über Formulare an. Salesforce B2B Commerce ergänzt einen Produktkatalog, Sichtbarkeitsregeln je Käufergruppe, Preise je Käufer, Warenkorb, Checkout und Nachbestellen aus früheren Aufträgen."
   - q: "Welche Lizenz brauchen Käufer in Salesforce B2B Commerce?"
-    a: "Laut Trailhead nutzen Käufer und Buyer Manager Customer Community Plus mit der Berechtigung B2B Commerce User oder B2B Commerce Super User. In Experience Cloud for Manufacturing kostet sie laut Preisliste 35 € pro Mitglied oder 15 € pro Login im Monat, jährlich abgerechnet."
-  - q: "Können Händler im Manufacturing-Cloud-Portal ohne B2B Commerce bestellen?"
-    a: "Ja, ein Portal kann Bestellungen annehmen, etwa als Auftragsdatensatz oder Formular. Es fehlen aber ein durchsuchbarer Katalog mit Sichtbarkeitsregeln, eine Preisberechnung je Käufer und ein Warenkorb. Für gelegentliche Bestellungen reicht das, für Hunderte Positionen im Monat nicht."
+    a: "Laut Salesforce-Hilfe braucht ein Käufer eine External-Apps-Lizenz oder höher mit dem Berechtigungssatz Buyer. Ein Buyer Manager, der Bestellungen anderer Käufer sieht, Accounts wechselt oder Berichte nutzt, braucht Customer Community Plus oder höher mit dem Berechtigungssatz Buyer Manager."
+  - q: "Können Händler im Portal ohne B2B Commerce bestellen?"
+    a: "Ja, ein Portal kann Bestellungen annehmen, etwa als Auftragsdatensatz oder Formular, und Katalog- oder Warenkorbfunktionen lassen sich mit eigenen Komponenten bauen. Von Haus aus fehlen aber ein durchsuchbarer Katalog mit Sichtbarkeitsregeln, eine Preisberechnung je Käufer und ein Warenkorb. Nach meiner Erfahrung reicht das für gelegentliche Bestellungen, für Hunderte Positionen im Monat nicht."
   - q: "Heißt Salesforce B2B Commerce jetzt Agentforce Commerce?"
-    a: "Trailhead schreibt, B2B Commerce heiße jetzt Agentforce Commerce for B2B. Die Salesforce-Hilfe nennt das Produkt weiter Salesforce B2B Commerce, und die Preisseite verkauft es als Commerce Cloud B2B Growth und Advanced Edition."
+    a: "Laut Trailhead heißt B2B Commerce jetzt Agentforce Commerce for B2B. Die Salesforce-Hilfe nennt das Produkt weiter Salesforce B2B Commerce, und die Preisseite verkauft es als Commerce Cloud B2B Growth und Advanced Edition."
 draft: false
 ---
 
-Ein Hersteller braucht Salesforce B2B Commerce statt eines Portals, wenn Händler und Kunden bekannte Artikel in Menge nachbestellen: Ersatzteile, Verbrauchsmaterial, Zubehör. Ein Portal auf Experience Cloud oder Manufacturing Cloud zeigt Verträge, Bestellungen und Cases und nimmt Anfragen an. Ein B2B-Store ergänzt, was wiederkehrendes Einkaufen braucht: Katalog, Sichtbarkeit je Käufergruppe, Käuferpreise, Warenkorb und Checkout. Die Käuferlizenz stammt in beiden Fällen aus derselben Familie. Den Unterschied machen die Commerce-Gebühr und die Umsetzung. Meine Faustregel: Schicken Ihnen Händler jede Woche Bestelllisten, bauen Sie einen Shop. Rufen sie zweimal im Jahr wegen einer Maschine an, reicht ein Portal.
+Ein Hersteller braucht Salesforce B2B Commerce statt eines Portals, wenn Händler und Kunden bekannte Artikel in Menge nachbestellen: Ersatzteile, Verbrauchsmaterial, Zubehör. Ein Portal auf Experience Cloud, auf Wunsch mit Experience Cloud for Manufacturing, zeigt Verträge, Bestellungen und Cases und nimmt Anfragen an. Ein B2B-Store ergänzt von Haus aus, was wiederkehrendes Einkaufen braucht: Katalog, Sichtbarkeit je Käufergruppe, Käuferpreise, Warenkorb und Checkout. Die Kosten unterscheiden sich vor allem durch die Commerce-Gebühr und die Umsetzung. Meine Faustregel: Schicken Ihnen Händler jede Woche Bestelllisten, bauen Sie einen Shop. Rufen sie zweimal im Jahr wegen einer Maschine an, reicht ein Portal.
 
 ## Was leistet ein Portal, und was ergänzt ein Shop?
 
@@ -36,62 +37,62 @@ Salesforce B2B Commerce deckt "ich kaufe das selbst" ab. Laut [Salesforce-Hilfe]
 
 - **Buyer Accounts** sind normale Salesforce-Accounts, deren Kontakte als Käufer freigeschaltet werden.
 - **Buyer Groups** (Käufergruppen) bündeln ähnliche Buyer Accounts, zum Beispiel alle Premiumhändler eines Landes.
-- **Entitlement Policies** legen fest, welche Produkte eine Käufergruppe sieht.
+- **Entitlement Policies** legen fest, welche Produkte eine Käufergruppe im Store sieht. Als Zugriffskontrolle sollte die externe Freigabe auf Produkte privat sein, sonst finden angemeldete Nutzer nicht freigegebene Produkte noch über die API.
 - **Preisbücher** bestimmen, welche Preise eine Käufergruppe bekommt.
 
-Dazu kommen Warenkorb, Checkout und die Order Summary, die der Käufer in seiner Bestellhistorie sieht. Salesforce vermarktet das Produkt inzwischen auch als "Agentforce Commerce for B2B", so steht es auf [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping). Hilfe und Preisseite verwenden noch die älteren Namen.
+Dazu kommen Warenkorb, Checkout und die Order Summary, die der Käufer in seiner Bestellhistorie sieht. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping) heißt Commerce Cloud jetzt Agentforce Commerce und B2B Commerce jetzt Agentforce Commerce for B2B. Die Hilfe sagt weiter B2B Commerce, und die Preisseite verkauft Commerce Cloud B2B Growth und Advanced Edition.
 
-| | Portal (Experience Cloud, Manufacturing Cloud) | Salesforce B2B Commerce |
+| Von Haus aus | Portal (Experience Cloud) | Salesforce B2B Commerce |
 |---|---|---|
 | Typischer Einsatz | Datensätze ansehen, anfragen, Case melden | Suchen, auswählen, bestellen, nachbestellen |
-| Produkte | Auf Datensätzen angezeigt, kein Katalog | Katalog mit Suche und Filtern |
+| Produkte | Auf Datensätzen angezeigt, Katalog nur als Eigenbau | Katalog mit Suche und Filtern |
 | Wer sieht was | Freigaberegeln auf Datensätzen | Entitlement Policies je Käufergruppe |
 | Preise | Sichtbar, wenn jemand sie auf Datensätzen pflegt | Preisbücher je Käufergruppe, im Warenkorb berechnet |
 | Bestellen | Formular oder Auftragsdatensatz | Warenkorb und Checkout |
-| Zusätzliche Gebühr | Nur Lizenzen | Anteil am Umsatz über den Store |
+| Zusätzliche Gebühr | Nur Lizenzen | Commerce-Edition, bepreist als Anteil am GMV des Stores |
 
-## Käufer brauchen Customer Community Plus, wie im Portal
+## Einfache Käufer brauchen weniger als ein Portalnutzer
 
-Hier liegen beide Varianten näher beieinander, als viele erwarten. Salesforce beschreibt die Personas und Berechtigungen für einen B2B-Store so: Käufer und Buyer Manager nutzen eine Customer-Community-Plus-Lizenz. Käufer bekommen die Berechtigung B2B Commerce User, Buyer Manager B2B Commerce Super User plus Delegated External User Administration, damit sie die Käufer ihres eigenen Unternehmens betreuen können. Merchandiser, die den Store intern pflegen, brauchen die Lizenz "B2B and D2C Commerce".
+Die Salesforce-Hilfe beschreibt die [Personas und Berechtigungssätze](https://help.salesforce.com/s/articleView?id=commerce.commerce_buyer_and_buyer_mgr_perm_sets.htm&language=de&type=5) für einen B2B-Store: Ein Käufer braucht eine Lizenz für External Apps oder höher und bekommt den Berechtigungssatz Buyer. Ein Buyer Manager, der Bestellungen anderer Käufer sieht, zwischen Accounts wechselt oder Berichte nutzt, braucht Customer Community Plus oder höher und bekommt den Berechtigungssatz Buyer Manager. Delegated External User Administration kommt nur dazu, wenn Buyer Manager andere externe Nutzer verwalten. Merchandiser und Commerce-Admins, die den Store intern pflegen, nutzen eine interne Standardlizenz mit dem Berechtigungssatz Merchandiser oder Commerce Admin.
 
-Customer Community Plus ist auch die Lizenzfamilie für ein Kundenportal. Die Listenpreise laut [Preisliste für Experience Cloud for Manufacturing](https://www.salesforce.com/manufacturing/cloud/experience-cloud/), jährlich abgerechnet:
+Für Händler hängt die Portallizenz davon ab, was das Portal leisten soll: Customer Community Plus passt für Bestellen und Service, Partner Community für echten Partnervertrieb mit Leads, Opportunities und Angeboten. Die Listenpreise des Add-ons [Experience Cloud for Manufacturing](https://www.salesforce.com/manufacturing/cloud/experience-cloud/), jährlich abgerechnet, Stand 9. November 2026:
 
 ```kennzahlen
 35 € | Customer Community Plus pro Mitglied und Monat
 15 € | Customer Community Plus pro Login und Monat
 50 € | Partner Community pro Mitglied und Monat
 20 € | Partner Community pro Login und Monat
-quelle: Salesforce, Preisliste Experience Cloud for Manufacturing, jährliche Abrechnung
+quelle: Salesforce, Add-on Experience Cloud for Manufacturing, Listenpreise, jährliche Abrechnung
 ```
 
-Die Käuferlizenz entscheidet also nicht zwischen Portal und Shop. Den Unterschied machen die Commerce-Gebühr, die Salesforce als Anteil am Umsatz über den Store berechnet, und der Aufwand für Katalog, Preise und ERP-Aufrufe. Die Gebühr erkläre ich in [B2B Commerce Preise: Was das GMV-Modell kostet](../b2b-commerce-preise-gmv-modell/). Wie sich Portallizenzen von internen Lizenzen unterscheiden, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
+Die Käuferlizenz entscheidet also selten zwischen Portal und Shop; pro einfachem Käufer kann der Store sogar günstiger sein. Den Unterschied machen die Commerce-Edition, die die Preisseite als Anteil am Warenwert über den Store (GMV) mit Preisen auf Anfrage führt, und der Aufwand für Katalog, Preise und ERP-Aufrufe. Die Gebühr erkläre ich in [B2B Commerce Preise: Was das GMV-Modell kostet](../b2b-commerce-preise-gmv-modell/). Wie sich Portallizenzen von internen Lizenzen unterscheiden, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 
 ## Wann lohnt sich ein Shop?
 
 Ich schaue auf vier Zahlen, bevor jemand über Store-Vorlagen spricht:
 
 1. **Wiederholte Bestellungen bekannter Teilenummern.** Ein Store ist stark, wenn der Käufer weiß, was er will: den Filter vom letzten Quartal, das Verschleißteil aus der Stückliste. Je mehr Bestellungen sich auf eine Teilenummer beziehen, desto mehr hilft ein Katalog.
-2. **Bestellpositionen pro Jahr.** Jede Position, die der Innendienst abtippt, kostet Zeit und birgt ein Fehlerrisiko. Ein paar Hundert Positionen im Jahr rechtfertigen keinen Store. Zehntausende meist schon.
+2. **Bestellpositionen pro Jahr.** Jede Position, die der Innendienst abtippt, kostet Zeit und birgt ein Fehlerrisiko. Nach meiner Erfahrung rechtfertigen ein paar Hundert Positionen im Jahr selten einen Store, Zehntausende oft schon. Ob er sich rechnet, hängt von den Kosten je Position, den Fehlerkosten und davon ab, wie viele Händler umsteigen.
 3. **Anzahl bestellender Händler und Kunden.** Bei fünf Großkunden über EDI bringt ein Store wenig. Bei Hunderten kleiner Händler, die per E-Mail bestellen, bringt er viel.
 4. **Anteil der Bestellungen per Telefon und E-Mail.** Das ist das Volumen, das ein Store tatsächlich verschieben kann. Was heute schon per EDI kommt, bleibt dort.
 
-Bekommen Sie diese Zahlen nicht innerhalb einer Woche aus dem ERP, würde ich sie vor jedem weiteren Schritt erheben. Sie sind auch die Grundlage für den [Business Case eines B2B-Webshops](../b2b-webshop-business-case-hersteller/).
+Bekommen Sie diese Zahlen nicht innerhalb einer Woche aus dem ERP, würde ich sie vor jedem weiteren Schritt erheben. Sie zeigen, ob ein Store passt. Ob er sich lohnt, ist eine Dreijahresrechnung aus Gebühr, Lizenzen, Umsetzung und Betrieb gegen gesparte Zeit, weniger Fehler und zusätzliche Marge, die ich im [Business Case eines B2B-Webshops](../b2b-webshop-business-case-hersteller/) durchgehe.
 
 ## Rechenbeispiel: 250 Händler, 30.000 Positionen im Jahr
 
 Angenommen, ein Hersteller von Kompressoren verkauft über 250 Händler in Europa. Die Händler bestellen rund 30.000 Ersatzteil-Bestellpositionen im Jahr, meist per E-Mail mit einer Liste von Teilenummern, manche per Telefon. Der Innendienst erfasst jede Position in SAP. Für Garantiefälle nutzen die Händler bereits ein Portal.
 
-Das sind rund 120 Positionen pro Händler und Jahr, etwa zehn im Monat. Die Händler kennen ihre Teilenummern, sie bestellen dieselben Verschleißteile nach, und sie würden auch außerhalb der Geschäftszeiten bestellen, wenn sie könnten. Hier würde ich einen Store bauen und das Portal für Cases behalten. Der [B2B-Commerce-Teil der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5) enthält eine Anleitung, wie man einen B2B-Store zu einer bestehenden Experience-Cloud-Site hinzufügt, sodass Portal und Store auf einer Site laufen können.
+Das sind rund 120 Positionen pro Händler und Jahr, etwa zehn im Monat. Die Händler kennen ihre Teilenummern, sie bestellen dieselben Verschleißteile nach, und sie würden auch außerhalb der Geschäftszeiten bestellen, wenn sie könnten. Hier passt ein Store gut, und ich würde den Business Case rechnen und das Portal für Cases behalten. Der [B2B-Commerce-Teil der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5) enthält eine Anleitung, wie man einen B2B-Store zu einer bestehenden Experience-Cloud-Site hinzufügt, sodass Portal und Store auf einer Site laufen können, sofern die Site eine unterstützte Vorlage nutzt, keine eigene, und noch keinen Store hat. Käufergruppe, Katalog, Preisbuch und Entitlement Policy legen Sie dann selbst an.
 
-Ändern Sie eine Annahme: Derselbe Hersteller hat 20 Händler, die zweimal im Jahr komplette Kompressoren bestellen, jeden in einer anderen Konfiguration. Dann bringt ein Store nichts. Der Händler braucht ein Angebot, und das Portal zeigt dessen Status.
+Ändern Sie eine Annahme: Derselbe Hersteller hat 20 Händler, die zweimal im Jahr komplette Kompressoren bestellen, jeden in einer anderen Konfiguration. Dann bringt ein Store wenig. Der Händler braucht ein Angebot, und das Portal zeigt dessen Status.
 
 ## Wo reicht ein Portal?
 
 Ein Portal ist in diesen Fällen die bessere Antwort:
 
-- **Konfigurierte Maschinen.** Eine Maschine mit Optionen, Aufstellungsplan und einem Liefertermin, den der Vertrieb bestätigen muss, gehört in einen Angebotsprozess. Ein Store verkauft, was ein Käufer ohne Gespräch bestellen kann.
+- **Maschinen mit Engineering-Aufwand.** Eine Maschine mit Aufstellungsplan und einem Liefertermin, den der Vertrieb bestätigen muss, gehört in einen Angebotsprozess. Standardoptionen und konfigurierbare Bundles lassen sich in einem Store mit Anbindung an Revenue Management verkaufen, das braucht aber weitere Lizenzen und eine größere Umsetzung.
 - **Wenige Bestellungen, viele Fragen.** Fragen Händler vor allem nach Status, Dokumenten oder Garantie, erledigt das ein Portal mit Cases, Bestellungen und Anlagen.
-- **Bestellungen laufen schon über EDI.** Großkunden, die aus ihrem eigenen ERP bestellen, steigen nicht auf Klicken im Store um.
+- **Bestellungen laufen schon über EDI.** Großkunden, die aus ihrem eigenen ERP bestellen, steigen selten auf Klicken im Store um.
 
 Und manchmal ist Salesforce gar nicht die Antwort. Hat das Unternehmen kein Salesforce-CRM, bringt der Store die ganze Plattform mit. Deckt das Commerce-Modul Ihres ERP-Anbieters Preise und Bestand schon ab, prüfen Sie das zuerst. Bei einem sehr kleinen Katalog und wenigen Händlern ist ein einfaches Bestellformular günstiger als jedes Shopsystem.
 
