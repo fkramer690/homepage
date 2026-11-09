@@ -1,7 +1,9 @@
 ---
 title: "Stakeholder-Analyse: Matrix, Beispiel und Vorlage"
-description: "Stakeholder-Analyse in fünf Schritten: Matrix nach Einfluss und Betroffenheit, ein Beispiel aus einer CRM-Einführung und eine Vorlage als Excel-Datei."
+metaTitle: "Stakeholder-Analyse: Matrix, Beispiel und Excel-Vorlage"
+description: "Stakeholder-Analyse in fünf Schritten: Matrix nach Einfluss und Betroffenheit, ausgefülltes Beispiel einer CRM-Einführung, Excel-Vorlage ohne Anmeldung."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: de
 slug: stakeholder-analyse
 translationKey: change-basics-stakeholders
@@ -12,7 +14,7 @@ author: juliane
 tags: [Stakeholder-Analyse, Stakeholder-Matrix, Change Management, Vorlage]
 takeaways:
   - "Ich ordne Gruppen nach Einfluss und Betroffenheit, weil die stark Betroffenen die Veränderung im Alltag umsetzen müssen."
-  - "Die klassische Matrix nach Einfluss und Interesse schiebt die künftigen Nutzer oft ins Feld „Beobachten“, obwohl sie über den Erfolg entscheiden."
+  - "Die Matrix nach Einfluss und Interesse kann künftige Nutzer unterschätzen, die wenig formellen Einfluss haben, aber über den Erfolg entscheiden."
   - "Eine gute Analyse endet nicht mit der Matrix, sondern mit einer Maßnahme und einer verantwortlichen Person je Gruppe."
   - "Die Analyse ist nie fertig: Haltungen ändern sich mit jeder Entscheidung, deshalb gehört sie in jede Projektphase neu auf den Tisch."
 faq:
@@ -45,7 +47,7 @@ Aus den Antworten ergibt sich, wer welche Art von Einbindung braucht. Die Begrif
 
 ## Wie führt man eine Stakeholder-Analyse durch?
 
-Ich gehe in fünf Schritten vor. Der Aufwand ist überschaubar: Für ein Vorhaben mit fünf bis zehn Gruppen reicht meist ein halber Tag Workshop mit Sponsor, Projektleitung und den wichtigsten Führungskräften, plus Nacharbeit.
+Ich gehe in fünf Schritten vor. Der Aufwand ist überschaubar: Für einen ersten Entwurf mit fünf bis zehn Gruppen reicht meist ein halber Tag Workshop mit Sponsor, Projektleitung und den wichtigsten Führungskräften, plus Nacharbeit. In Programmen über Bereiche und Länder werden es schnell mehr Gruppen, und der Workshop liefert Annahmen, die Sie danach in Gesprächen prüfen.
 
 ```schritte
 Gruppen sammeln | 1 Stunde · Projektleitung und Führungskräfte
@@ -64,7 +66,7 @@ Der dritte Schritt ist der heikelste. Haltung wird gern geschätzt statt erfragt
 
 ## Wie sieht eine Stakeholder-Matrix aus?
 
-Die bekannteste Form ist die Einfluss-Interesse-Matrix, die auf Aubrey Mendelow zurückgeht und deshalb auch Mendelow-Matrix heißt. Sie hat vier Felder, und jedes steht für eine Strategie. Die Nielsen Norman Group beschreibt das Vorgehen in ihrem [Leitfaden zur Stakeholder-Analyse](https://www.nngroup.com/articles/stakeholder-analysis/) gut nachvollziehbar.
+Die bekannteste Form ist die Einfluss-Interesse-Matrix, die häufig Aubrey Mendelow zugeschrieben wird und deshalb auch Mendelow-Matrix heißt. Sie hat vier Felder, und jedes steht für eine Strategie. Die Nielsen Norman Group beschreibt das Vorgehen in ihrem [Leitfaden zur Stakeholder-Analyse](https://www.nngroup.com/articles/stakeholder-analysis/) gut nachvollziehbar.
 
 | Feld | Einfluss | Interesse | Strategie | Beispiel bei einer CRM-Einführung |
 |---|---|---|---|---|
@@ -73,7 +75,7 @@ Die bekannteste Form ist die Einfluss-Interesse-Matrix, die auf Aubrey Mendelow 
 | Informieren | niedrig | hoch | laufend auf dem Stand halten, Rückmeldung einholen | Innendienst |
 | Beobachten | niedrig | niedrig | in größeren Abständen prüfen, ob sich etwas ändert | Einkauf |
 
-Für das Projektmanagement reicht diese Matrix oft. Im Change Management fehlt ihr eine Achse. Die Gruppe, die eine neue Software jeden Tag nutzen muss, hat oft wenig formellen Einfluss und am Anfang auch wenig Interesse. In der klassischen Matrix landet sie bei „Beobachten“. Genau diese Gruppe entscheidet aber, ob die Veränderung im Alltag ankommt.
+Für das Projektmanagement reicht diese Matrix oft. Im Change Management fehlt ihr eine Achse. Die Gruppe, die eine neue Software jeden Tag nutzen muss, hat oft wenig formellen Einfluss und am Anfang auch wenig Interesse. In der klassischen Matrix landet sie dann leicht bei „Beobachten“. Genau diese Gruppe entscheidet aber, ob die Veränderung im Alltag ankommt.
 
 Deshalb arbeite ich im Change Management mit einer zweiten Sicht: **Einfluss mal Betroffenheit**. Gruppen mit hoher Betroffenheit brauchen immer einen eigenen Plan, unabhängig von ihrem Einfluss. Gruppen mit hohem Einfluss und geringer Betroffenheit brauchen vor allem Information und gelegentlich eine Entscheidung. So wird aus der Stakeholder-Analyse die Grundlage für den Change-Plan je Gruppe, wie ich ihn in [Was ist Change Management?](../was-ist-change-management/) beschreibe.
 
@@ -86,11 +88,11 @@ Nehmen wir ein Unternehmen, das ein CRM-System wie Salesforce für Vertrieb und 
 | Vertriebsleitung | mittel | hoch | unterstützend | als Sponsor sichtbar machen, Prognose im Monatsbericht aus dem System | Projektleitung |
 | Außendienst | hoch | mittel | skeptisch | Nutzen im eigenen Alltag zeigen, Key User je Region | Vertriebsleitung |
 | Innendienst | hoch | niedrig | offen | Schulung am echten Fall, frühe Tests | Change-Managerin |
-| Betriebsrat | niedrig | hoch | unbekannt | Gespräch im ersten Monat, Auswertungen offenlegen | Sponsor |
+| Betriebsrat | niedrig | hoch | unbekannt | Gespräch, bevor Auswertungen und Berichte festgelegt werden | Sponsor |
 | IT-Betrieb | mittel | mittel | unterstützend | Betriebsübergabe planen | IT-Leitung |
 | Controlling | niedrig | mittel | neutral | über neue Berichte informieren | Projektleitung |
 
-Beim Betriebsrat steht „unbekannt“, und das ist ehrlicher als eine Schätzung. Bei Software, die Verhalten oder Leistung der Beschäftigten auswerten kann, hat er in Deutschland ein Mitbestimmungsrecht, deshalb gehört das Gespräch an den Anfang. Der Außendienst ist die kritischste Gruppe: stark betroffen, mit genug informellem Einfluss, um das System zu umgehen, und skeptisch. Hier hilft keine Rundmail, sondern die eigene Führungskraft und Kolleginnen und Kollegen als [Key User](../salesforce-key-user-netzwerk/). Und jede Zeile hat eine verantwortliche Person, und das ist selten die Change-Managerin.
+Beim Betriebsrat steht „unbekannt“, und das ist ehrlicher als eine Schätzung. Bei technischen Einrichtungen, die geeignet sind, Verhalten oder Leistung der Beschäftigten zu überwachen, hat er in Deutschland ein Mitbestimmungsrecht nach [§ 87 Abs. 1 Nr. 6 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html), deshalb gehört das Gespräch an den Anfang, bevor Aktivitätsberichte und Auswertungen konfiguriert sind. Der Außendienst ist die kritischste Gruppe: stark betroffen, mit genug informellem Einfluss, um das System zu umgehen, und skeptisch. Hier hilft keine Rundmail, sondern die eigene Führungskraft und Kolleginnen und Kollegen als [Key User](../salesforce-key-user-netzwerk/). Und jede Zeile hat eine verantwortliche Person, und das ist selten die Change-Managerin.
 
 Die Spalte ADKAR-Stufe habe ich im Beispiel weggelassen, in der Vorlage ist sie enthalten. Sie zeigt, wo eine Gruppe im Moment steht: Fehlt das Bewusstsein, warum sich etwas ändert, oder fehlt das Wissen, wie es geht? Je nach Antwort ist die Maßnahme eine ganz andere. Wie das Modell funktioniert, steht in [Change-Management-Modelle im Vergleich](../change-management-modelle/).
 

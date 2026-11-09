@@ -1,23 +1,24 @@
 ---
-title: "DevOps-Werkzeuge für Salesforce im Vergleich"
-description: "Change Sets, Salesforce CLI, Lifecycle Center, sfdx-hardis, Gearset, Copado und Flosum im Vergleich, mit Kriterien und Entscheidungsmatrix für Hersteller."
+title: "Salesforce-DevOps-Werkzeuge im Vergleich: Matrix 2026"
+description: "Lifecycle Center (früher DevOps Center), sfdx-hardis, Gearset, Copado und Flosum im Vergleich nach Git-Plattform, Team, Partnern, Eigentum und Kosten."
 lang: de
 slug: devops-werkzeuge-vergleich
 course: devops
 translationKey: devops-04
 chapter: 4
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 short: "Werkzeuge im Überblick"
 summary: "Vom Change Set bis zur kommerziellen Plattform: welches DevOps-Werkzeug zu Ihrer Git-Plattform, Ihrem Team und Ihren Partnern passt."
 takeaways:
   - "Change Sets funktionieren nur zwischen Orgs derselben Produktion und haben weder Daten noch Versionskontrolle. Für mehrere Partner reichen sie nicht."
   - "Lifecycle Center, bis Oktober 2026 DevOps Center, unterstützt nur GitHub.com-Cloud-Pläne und Bitbucket Cloud und fehlt in der EU Operating Zone."
-  - "Die Git-Plattform, die Ihre IT schon betreibt, schließt oft die Hälfte der Werkzeuge aus. Klären Sie sie vor jeder Produktdemo."
+  - "Die Git-Plattform Ihrer IT kann Lifecycle Center ausschließen und Hosting-Optionen einschränken. Klären Sie sie vor jeder Produktdemo."
   - "Ein kommerzielles Werkzeug passt zum Kundeneigentum, solange Vertrag, Admin-Rechte und Repository auf Ihren Namen laufen."
 articles: [sfdx-hardis-vs-devops-center, sfdx-hardis-introduction, devops-ai-agents-copado-gearset, client-owned-devops-tools]
 faq:
   - q: "Reichen Change Sets für ein Salesforce-Programm mit mehreren Partnern?"
-    a: "Nein. Change Sets übertragen Setup-Änderungen zwischen Orgs derselben Produktion, aber ohne Versionskontrolle, ohne Review und ohne Vergleich der Stände. Sobald zwei Teams an denselben Komponenten arbeiten, fehlt die Grundlage, um Konflikte zu sehen und zu lösen."
+    a: "Meist nicht. Change Sets übertragen Setup-Änderungen zwischen Orgs derselben Produktion, aber ohne Versionskontrolle, ohne Review und ohne Vergleich der Stände. Sobald zwei Teams an denselben Komponenten arbeiten, fehlt die Grundlage, um Konflikte zu sehen und zu lösen."
   - q: "Was ist Lifecycle Center?"
     a: "Lifecycle Center ist der neue Name des Next Generation DevOps Center seit Oktober 2026. Es ist eine native App in Salesforce ohne Paket, mit Work Items, Pipelines, Test-Suites und Quality Gates, und unterstützt als Git-Plattform GitHub.com-Cloud-Pläne und Bitbucket Cloud."
   - q: "Kann ich Lifecycle Center mit Azure DevOps oder GitLab nutzen?"
@@ -29,7 +30,7 @@ faq:
 draft: false
 ---
 
-Für Salesforce DevOps gibt es drei Wege: den Standard von Salesforce mit Change Sets, Salesforce CLI und Lifecycle Center (bis Oktober 2026 DevOps Center), Open Source mit sfdx-hardis und kommerzielle Plattformen wie Gearset, Copado und Flosum. Change Sets reichen für ein Programm mit mehreren Partnern nicht, weil sie keine Versionskontrolle kennen. Lifecycle Center passt zu kleinen Admin-Teams auf GitHub.com oder Bitbucket Cloud. sfdx-hardis passt, wenn Sie die Pipeline selbst besitzen und betreiben wollen. Die kommerziellen Plattformen lohnen sich, wenn Sie Oberfläche, Zusatzmodule und Herstellersupport einkaufen wollen. Entscheiden sollten Git-Plattform, Team, Partner, Eigentum, Kosten und Support, in dieser Reihenfolge.
+Für Salesforce DevOps gibt es drei Wege: den Standard von Salesforce mit Change Sets, Salesforce CLI und Lifecycle Center (bis Oktober 2026 DevOps Center), Open Source mit sfdx-hardis und kommerzielle Plattformen wie Gearset, Copado und Flosum. Change Sets reichen für ein Programm mit mehreren Partnern nicht, weil sie keine Versionskontrolle kennen. Lifecycle Center passt zu Teams auf GitHub.com oder Bitbucket Cloud, die einen nativen, klickbasierten Prozess wollen. sfdx-hardis passt, wenn Sie die Pipeline selbst besitzen und betreiben wollen. Die kommerziellen Plattformen lohnen sich, wenn Sie Oberfläche, Zusatzmodule und Herstellersupport einkaufen wollen. Entscheiden sollten Git-Plattform, Team, Partner, Eigentum, Kosten und Support, in dieser Reihenfolge.
 
 ## Was bringt Salesforce selbst mit?
 
@@ -67,7 +68,7 @@ contra: Was Sie vorher prüfen
 - Die Migration von Projekten aus dem Managed Package ist eine Developer Preview. Für produktive Projekte würde ich darauf nicht bauen, bis sie allgemein verfügbar ist.
 ```
 
-Wie Lifecycle Center im Detail gegen sfdx-hardis steht, habe ich im [Vergleich sfdx-hardis oder DevOps Center](../../../blog/sfdx-hardis-oder-devops-center-vergleich/) beschrieben. Kurz: Bei Lifecycle Center ist Salesforce die Steuerzentrale und Git der Speicher.
+Wie Lifecycle Center im Detail gegen sfdx-hardis steht, habe ich im [Vergleich sfdx-hardis oder DevOps Center](../../../blog/sfdx-hardis-oder-devops-center-vergleich/) beschrieben. Kurz: Lifecycle Center liefert Ablauf und Kontrollen, das angebundene Git-Repository bleibt die verbindliche Quelle.
 
 ## sfdx-hardis: der Open-Source-Weg
 
@@ -119,7 +120,7 @@ Die Fakten in der Tabelle stammen von den oben verlinkten Herstellerseiten. Die 
 | Zusatzmodule | keine | Tests, Quality Gates, Governance (Beta) | Monitoring, Metadaten-Backup, Dokumentation | Backup, Seeding, Observability, Code Reviews | Robotic Testing, KI-Agenten | Backup, Data Migrator, Trust Center |
 | Lizenzkosten | keine | keine | keine | öffentlich, ab 215 USD pro Nutzer und Monat | keine öffentliche Preisliste gefunden | auf Anfrage |
 | Support | Salesforce | Salesforce | Community, Cloudity als Dienstleister | Hersteller | Hersteller | Hersteller |
-| Passt zu | wenigen Admins, kleinen Änderungen | einem Admin-Team ohne Partner auf GitHub oder Bitbucket Cloud | mehreren Partnern, wenn eine Release-Rolle beim Kunden existiert | gemischten Teams, die Vergleich und Module aus einer Hand wollen | großen Programmen mit mehreren Orgs und Governance-Bedarf | regulierten Umgebungen mit Audit-Pflichten |
+| Passt zu | wenigen Admins, kleinen Änderungen | Teams auf GitHub oder Bitbucket Cloud, die einen nativen, klickbasierten Prozess wollen; mehrere Partner erst nach einem Pilot | mehreren Partnern, wenn eine Release-Rolle beim Kunden existiert | gemischten Teams, die Vergleich und Module aus einer Hand wollen | großen Programmen mit mehreren Orgs und Governance-Bedarf | regulierten Umgebungen mit Audit-Pflichten |
 
 ```hinweis tipp
 Zwei Dinge zeigt die Matrix nicht. Erstens die Qualität des Supports, die Sie nur in Referenzgesprächen erfahren. Zweitens, wie gut ein Werkzeug Ihre konkreten Metadaten verarbeitet, etwa Field-Service-Konfiguration oder Experience-Cloud-Seiten für ein Händlerportal. Das prüfen Sie in einem kurzen Test mit Ihrer eigenen Org, bevor Sie unterschreiben.

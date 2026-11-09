@@ -1,8 +1,9 @@
 ---
 title: "Salesforce DX MCP Server: Ende am 2. November 2026"
-description: "Der lokale Salesforce DX MCP Server ist seit dem 2. November 2026 am Ende. Was IT-Leitungen jetzt von Partnern verlangen sollten, von Inventur bis Hosted MCP."
+metaTitle: "Salesforce DX MCP Server eingestellt: was ihn ersetzt"
+description: "Salesforce unterstützt den lokalen DX MCP Server seit 2. November 2026 nicht mehr. Was noch läuft, warum @latest raus muss und wie Partner auf Skills wechseln."
 pubDate: 2026-10-27
-updatedDate: 2026-11-06
+updatedDate: 2026-11-09
 lang: de
 slug: salesforce-dx-mcp-server-ende
 translationKey: salesforce-dx-mcp-server-end-of-life
@@ -10,30 +11,30 @@ topic: devops
 categories: [devops, ai]
 tags: [MCP, Salesforce DX, Claude Code, Agentforce Vibes, Partnersteuerung, DevOps]
 takeaways:
-  - "Seit dem 2. November 2026 markiert npm das Paket als deprecated. Version 0.30.15 vom Juli ist die letzte, und keine geprüfte Dokuseite nannte das Datum."
-  - "Die Salesforce-Anleitung konfiguriert den Server mit @latest. Pinnen Sie auf jedem Partnerrechner 0.30.15 und entfernen Sie den Eintrag binnen Wochen."
-  - "Mit ALLOW_ALL_ORGS oder DEFAULT_TARGET_ORG erreicht ein KI-Agent jede Org, an der der Entwickler angemeldet ist, auch die Produktion."
-  - "sf-skills, das Claude-Code-Plugin und Hosted MCP decken die Arbeit ab. Dass sie Nachfolger sind, ist meine Lesart, keine Aussage von Salesforce."
-  - "Ein MCP-Server des Plugins ist ein Beta-Service, den ein Admin in der Org aktivieren muss, und seine Aufrufe zählen auf das API-Kontingent."
+  - "Seit dem 2. November 2026 wird der Server nicht mehr gepflegt, beide Repositories sind archiviert. Version 0.30.15 bleibt installierbar."
+  - "Die Salesforce-Anleitung nutzt @latest. Entfernen Sie den Server oder pinnen Sie 0.30.15 nur befristet, mit festem Datum für die Entfernung."
+  - "Mit ALLOW_ALL_ORGS erreicht ein KI-Agent jede angemeldete Org, auch die Produktion. Mit DEFAULT_TARGET_ORG die Org, die gerade Standard ist."
+  - "Salesforce verweist auf Skills (sf-skills). Das Claude-Code-Plugin bündelt sie, Hosted MCP deckt Daten und Aktionen ab, ist aber kein direkter Ersatz."
+  - "Die Metadata-API-Kontext-Tools des Plugins sind ein Beta-Service, den ein Admin aktivieren muss, und ihre Aufrufe zählen auf das API-Kontingent."
 faq:
   - q: "Was ist am 2. November 2026 mit dem Salesforce DX MCP Server passiert?"
-    a: "Der lokale Server @salesforce/mcp hat sein End of Life erreicht, wie im README beider Salesforce-Repositories angekündigt. Am selben Tag hat npm das Paket als deprecated markiert, mit Verweis auf GitHub-Issue 46. Seit 0.30.15 vom Juli ist keine neue Version erschienen."
+    a: "Der lokale Server @salesforce/mcp hat sein End of Life erreicht. Laut GitHub-Issue 46 wird er nicht mehr gepflegt oder unterstützt, neue Versionen kommen nicht, und beide Repositories sind archiviert. npm markiert das Paket als deprecated; die letzte Version ist 0.30.15 vom Juli."
   - q: "Funktionieren bestehende DX-MCP-Konfigurationen seit dem 2. November nicht mehr?"
-    a: "npm liefert Version 0.30.15 weiter aus, jetzt mit Deprecated-Hinweis, bestehende Einträge laden also vorerst. Offen ist, wie lange das so bleibt und ob Salesforce noch Korrekturen liefert. Ich würde die Version pinnen und den Eintrag binnen weniger Wochen entfernen."
-  - q: "Ist das Claude-Code-Plugin von Salesforce der offizielle Ersatz?"
-    a: "Die Ankündigung des Plugins vom 19. August 2026 erwähnt den DX MCP Server und sein Ende nicht. Plugin, sf-skills und Hosted MCP decken den Großteil derselben Arbeit ab, aber sie Nachfolger zu nennen ist meine Lesart, keine Salesforce-Aussage."
+    a: "Vorerst ja. Laut Salesforce bleibt das Paket installierbar, bestehende und gepinnte Einrichtungen mit 0.30.15 funktionieren also weiter. Korrekturen kommen aber keine mehr, auch keine Sicherheitskorrekturen. Die weitere Nutzung sollte deshalb eine befristete Ausnahme mit Datum für die Entfernung sein."
+  - q: "Was ersetzt den Salesforce DX MCP Server offiziell?"
+    a: "Die End-of-Life-Mitteilung von Salesforce sagt, dass Salesforce-Werkzeuge jetzt als Skills ausgeliefert werden, und verweist auf die Bibliothek sf-skills. Das Claude-Code-Plugin für Salesforce-Entwicklung bündelt Skills und weitere Werkzeuge. Hosted MCP Server decken Datenzugriff und Aktionen aus externen KI-Clients ab, ersetzen aber keine lokalen Deploy- und Testwerkzeuge."
   - q: "Betrifft das Ende auch Agentforce Vibes?"
     a: "Laut Vibes-Dokumentation wird der DX MCP Server mit Agentforce Vibes ausgeliefert und ist in Code Builder standardmäßig aktiv; das End of Life erwähnte sie beim Lesen nicht. Fragen Sie Partner und Salesforce-Ansprechpartner, womit Vibes seit dem 2. November arbeitet."
 draft: false
 ---
 
-Der lokale Salesforce DX MCP Server hat am 2. November 2026 sein End of Life erreicht, und npm markiert das Paket seit diesem Tag als deprecated. Setzen Ihre Implementierungspartner Claude Code, Cursor, Copilot oder Agentforce Vibes auf Ihren Orgs ein, nutzen einige ihn wahrscheinlich noch. Lassen Sie jede Konfiguration auflisten, Version 0.30.15 fest eintragen, statt immer die neueste zu laden, und die Arbeit auf Salesforce CLI mit Skills, das Claude-Code-Plugin und Hosted MCP umstellen. Wichtiger als das Werkzeug ist für Sie, mit welchem Org-Zugriff es läuft.
+Salesforce pflegt und unterstützt den lokalen Salesforce DX MCP Server seit dem 2. November 2026 nicht mehr. Version 0.30.15 bleibt installierbar, aber neue Versionen kommen nicht, beide Repositories sind archiviert, und Salesforce verweist auf Skills. Setzen Ihre Implementierungspartner Claude Code, Cursor, Copilot oder Agentforce Vibes auf Ihren Orgs ein, nutzen einige ihn wahrscheinlich noch. Lassen Sie jede Konfiguration auflisten, die Einstellung entfernen, die immer die neueste Version lädt, und die Arbeit auf Salesforce CLI mit Skills umstellen. Wichtiger als das Werkzeug ist für Sie, mit welchem Org-Zugriff es läuft.
 
 ## Was genau ist am 2. November 2026 zu Ende gegangen?
 
-Das README des Issue-Repositorys [forcedotcom/mcp](https://raw.githubusercontent.com/forcedotcom/mcp/main/README.md) und des Quell-Repositorys [salesforcecli/mcp](https://raw.githubusercontent.com/salesforcecli/mcp/main/README.md) trägt dasselbe Banner: „End of Life: November 2nd, 2026“. Für Details verweist es auf GitHub-Issue 46. Dieses Issue konnte ich nicht öffnen. Ob die Repositories schreibgeschützt werden, ob das Paket als veraltet markiert wird und ob Sicherheitskorrekturen am Stichtag enden, kann ich Ihnen deshalb nicht sagen.
+Das README des Issue-Repositorys [forcedotcom/mcp](https://raw.githubusercontent.com/forcedotcom/mcp/main/README.md) und des Quell-Repositorys [salesforcecli/mcp](https://raw.githubusercontent.com/salesforcecli/mcp/main/README.md) trägt dasselbe Banner: „End of Life: November 2nd, 2026“. Für Details verweist es auf [GitHub-Issue 46](https://github.com/forcedotcom/mcp/issues/46): Nach dem Stichtag wird der Server nicht mehr gepflegt oder unterstützt, und es kommen keine weiteren Versionen. Beide Repositories sind schreibgeschützt archiviert, das Paket bleibt installierbar, bestehende und gepinnte Einrichtungen mit 0.30.15 laufen also weiter. Für die Zukunft sagt das Issue, dass Salesforce-Werkzeuge jetzt als Skills ausgeliefert werden, und verweist auf sf-skills.
 
-Am 2. November 2026 hat die npm-Registry das Paket als deprecated markiert, mit dem Hinweis „The Salesforce DX MCP Server has been deprecated“ und einem Link auf Issue 46. Eine neue Version kam nicht: 0.30.15 vom 9. Juli 2026 ist weiterhin die aktuelle (geprüft am 6. November 2026).
+Am 2. November 2026 hat die npm-Registry das Paket als deprecated markiert, mit dem Hinweis „The Salesforce DX MCP Server has been deprecated“ und einem Link auf Issue 46. Eine neue Version kam nicht: 0.30.15 vom 9. Juli 2026 ist die letzte (geprüft am 9. November 2026).
 
 Was ich vorher, am 27. Oktober 2026, prüfen konnte:
 
@@ -41,7 +42,7 @@ Was ich vorher, am 27. Oktober 2026, prüfen konnte:
 - Der Salesforce DX Developer Guide beschreibt den Server weiterhin [ohne Hinweis auf das Ende](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_mcp_server.htm). Er konfiguriert das Paket so, dass es immer die neueste Version lädt, „so you always get the latest version“, und neue Versionen werden automatisch installiert.
 - Laut [Dokumentation von Agentforce Vibes](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-mcp-servers.html) wird der DX MCP Server mit Vibes ausgeliefert und ist in Code Builder „installed and enabled by default“.
 
-Vor dem Stichtag stützte sich das Ende allein auf das README-Banner: Keine der drei Dokumentationsseiten oben erwähnte es. Genau diese Kombination ist das Risiko. Ein Server, der sich selbst aktualisiert und auf Rechnern konfiguriert ist, die Sie nicht verwalten, hat seinen Support verloren, während die Anleitungen ihn weiter beschreiben. Was Salesforce unter diesem Namen künftig auf npm veröffentlicht, landet auf diesen Rechnern, ohne dass jemand darüber entscheidet.
+Vor dem Stichtag stützte sich das Ende allein auf das README-Banner: Keine der drei Dokumentationsseiten oben erwähnte es. Genau diese Kombination ist das Risiko. Ein Server, der sich selbst aktualisiert und auf Rechnern konfiguriert ist, die Sie nicht verwalten, hat seinen Support verloren, während die Anleitungen ihn weiter beschreiben. Neue Versionen kommen nicht mehr, aber auch keine Korrekturen, und ein Eintrag mit @latest verdeckt, dass niemand entschieden hat, welche Version läuft.
 
 Zum Vergleich die [Richtlinie für Hosted MCP Server](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/end-of-life.html): Jede Version wird mindestens drei Jahre unterstützt, und das Ende wird mindestens ein Jahr vorher angekündigt. Für den lokalen Server habe ich keine vergleichbare Zusage gefunden.
 
@@ -59,7 +60,7 @@ MCP (Model Context Protocol) ist der offene Standard, über den ein KI-Werkzeug 
 
 - **Alle Orgs erlauben** öffnet jede auf dem Rechner angemeldete Org; Salesforce schreibt dazu „Use this value with caution.“
 - **Standard-Org** wird bei jedem Tool-Aufruf neu aufgelöst. Wechselt der Entwickler seine Standard-Org, arbeitet der Agent ohne Warnung in der neuen.
-- **Explizite Benutzernamen oder Aliase** binden den Server an benannte Orgs. Nur diese Einstellung akzeptiere ich für Agenten.
+- **Explizite Benutzernamen oder Aliase** binden den Server an benannte Orgs. Nur diese Einstellung akzeptiere ich für Agenten, am besten mit Benutzernamen, weil sich ein Alias auf eine andere Org umbiegen lässt.
 
 Die Werkzeuge hinter dieser Einstellung sind nicht harmlos. Eines deployt in eine Org, eines weist Permission Sets zu, auch für andere Benutzer, eines liest Daten. Telemetrie ist standardmäßig eingeschaltet. Ein Partnerentwickler, der am Montag Ihre Produktion betreut und am Dienstag in einer Sandbox baut, hat womöglich beide Orgs auf demselben Laptop.
 
@@ -67,7 +68,7 @@ Bei einem Hersteller liegen in der Produktions-Org Händlerkonditionen, Garantie
 
 ## Was ersetzt den Salesforce DX MCP Server?
 
-Salesforce hat 2026 drei Bausteine veröffentlicht. Keine der Seiten, die ich geöffnet habe, nennt sie Nachfolger des DX MCP Servers. Die [Plugin-Ankündigung](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) vom 19. August 2026 erwähnt ihn gar nicht. Die Zuordnung der bisherigen Aufgaben ist meine Lesart:
+Die End-of-Life-Mitteilung von Salesforce nennt eine Richtung: Skills. Darum herum hat Salesforce 2026 drei Bausteine veröffentlicht. Die [Plugin-Ankündigung](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) vom 19. August 2026 erwähnt den DX MCP Server nicht, und Hosted MCP ist kein direkter Ersatz für lokale Deploy- und Testwerkzeuge. Die Zuordnung der bisherigen Aufgaben ist meine Lesart:
 
 ```tabelle
 titel: Was welche Aufgabe übernimmt (meine Lesart)
@@ -79,7 +80,7 @@ Datensätze als Kontext lesen | Abfrage-Tool auf dem Laptop | Hosted MCP Server 
 
 **sf-skills** ist eine offene Bibliothek mit mehr als 100 Skills. Das [sf-skills-README](https://raw.githubusercontent.com/forcedotcom/sf-skills/main/README.md) zeigt eine Installation in einer Zeile für Codex, Cursor und Claude Code, in Agentforce Vibes werden die Skills automatisch installiert und aktualisiert. Das README warnt, Skills „may be renamed, restructured, or removed between releases“, und sie haben nicht die Stabilitätszusagen von GA-APIs. Ich würde sie deshalb behandeln wie jede andere Abhängigkeit: Version festhalten, Änderungen prüfen.
 
-**Das Claude-Code-Plugin** bündelt rund 40 dieser Skills und drei MCP-Server: einen für API-Kontext, einen für Metadatenwissen und einen für die Sprachunterstützung im Editor. Die ersten beiden laufen auf Salesforce-Infrastruktur. Laut [Metadata API Guide](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_salesforce_api_mcp_intro.htm) ist der API-Context-Server ein Beta-Service unter den Beta Services Terms, setzt eingerichtetes Hosted MCP in der Org voraus, und seine Aufrufe zählen auf Ihr API-Kontingent. Ihr Admin muss das einschalten. Rechtsabteilung und IT sollten also wissen, dass sie dabei einen Beta-Service freigeben.
+**Das Claude-Code-Plugin** bündelt rund 40 dieser Skills und drei MCP-Server: einen für API-Kontext, einen für Metadatenwissen und einen für die Sprachunterstützung im Editor. Die ersten beiden laufen auf Salesforce-Infrastruktur. Laut [Metadata API Guide](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_salesforce_api_mcp_intro.htm) sind die Metadata-API-Kontext-Tools auf dem API-Context-Server ein Beta-Service unter den Beta Services Terms, setzen eingerichtetes Hosted MCP in der Org voraus, und ihre Aufrufe zählen auf Ihr API-Kontingent. Ihr Admin muss das einschalten. Rechtsabteilung und IT sollten also wissen, dass sie dabei einen Beta-Service freigeben.
 
 **Hosted MCP Server** sind seit dem [29. April 2026 GA](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available), für Enterprise Edition und höher. Laut [Security Best Practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html) sind sie standardmäßig aus, jeder Aufruf läuft mit den Rechten des Benutzers, der die Verbindung autorisiert hat, und Service Accounts gibt es nicht. Wer darüber welche Daten lesen darf, steht in [Hosted MCP Server: wer darf welche Daten lesen](../salesforce-hosted-mcp-server-datenzugriff/), warum die Aufrufe zum Kostenposten werden, in [MCP-Zugriffe auf Salesforce als Budgetrisiko](../flex-credits-agentforce-kosten-pro-aktion/).
 
@@ -96,7 +97,7 @@ Am längsten dürfte die Frage dauern, wer Hosted Server in der Produktion freig
 ## Was sollten Sie Ihre Partner jetzt fragen?
 
 1. **Inventur.** Lassen Sie sich von jedem Partner auflisten, auf welchen Rechnern, in welchen Repositories und in welchen Werkzeugen der DX MCP Server läuft. Jedes Werkzeug hält die Einstellung in einer eigenen Datei; wo Sie suchen, steht im Kasten unten.
-2. **Pinnen.** Ersetzen Sie jeden Eintrag, der die neueste Version lädt, durch die feste Version 0.30.15 und legen Sie ein Datum für die Entfernung in den nächsten Wochen fest. Eine gepinnte Version hält die Übergangszeit stabil, Korrekturen hat aber niemand zugesagt.
+2. **Entfernen oder pinnen.** Stoppen Sie neue Installationen und entfernen Sie jeden Eintrag, der die neueste Version lädt. Wo der Server nicht sofort raus kann, pinnen Sie die feste Version 0.30.15 als befristete Ausnahme für benannte Sandboxes, mit Verantwortlichem und Datum für die Entfernung. Eine gepinnte Version hält die Übergangszeit stabil, Korrekturen bekommt sie aber nicht.
 3. **Orgs festlegen.** Nur benannte Sandboxes, kein Zugriff auf alle Orgs, keine Produktion. Deployments in die Produktion laufen über die Pipeline, wie in [Partner coden mit KI: was in den Vertrag gehört](../partner-ki-coding-regeln-vertrag/) beschrieben.
 4. **Hosted Server bewusst aktivieren.** Zuerst in einer Sandbox, der lesende Server vor allem, was schreibt, mit einer External Client App, die auf ein Permission Set beschränkt ist.
 5. **Repository anpassen.** Die gemeinsame MCP-Konfiguration und die [KI-Regeldatei](../ki-regeldatei-salesforce-repository/) gehören in Ihr Repository und ändern sich nur über einen geprüften Pull Request, wie jeder andere Code. Claude Code unterstützt außerdem eine zentral verwaltete MCP-Konfiguration mit Allowlists, wenn Sie es selbst lizenzieren.

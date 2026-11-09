@@ -1,7 +1,9 @@
 ---
 title: "Kundenpreise in B2B Commerce: Preisbücher oder ERP?"
-description: "Wie Salesforce B2B Commerce Kundenpreise zeigt: Preisbücher, Preisstrategie, Limits und wann ein Live-Aufruf ans ERP über die Pricing Extension besser passt."
+metaTitle: "Salesforce B2B Commerce: SAP-Preise oder Preisbücher?"
+description: "Wann Preisbücher in Salesforce B2B Commerce reichen und wann SAP Kundenpreise live liefern sollte: Limits, Risiken und ein Mischmodell für Hersteller."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: de
 slug: kundenpreise-b2b-commerce-preisbuecher-erp
 translationKey: commerce-customer-prices
@@ -10,19 +12,19 @@ categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, Kundenpreise, Preisbücher, SAP, ERP-Anbindung, Commerce Extensions]
 takeaways:
   - "Preise kommen aus Preisbüchern, die Store und Käufergruppen zugeordnet sind. Die Preisstrategie Best Price oder Priority Price entscheidet, welches gilt."
-  - "Ein Store hat bis zu 5 Preisbücher, eines bis zu 350.000 Einträge. Ein Preisaufruf wertet nur die ersten 25 gültigen Preisbücher aus, das Limit ist hart."
+  - "Einem Store lassen sich bis zu 5 Preisbücher direkt zuordnen, weitere über Käufergruppen. Ein Preisaufruf wertet höchstens 25 gültige Preisbücher aus."
   - "SAP-Konditionen mit Kundenpreisen, Gruppenrabatten und Zuschlägen passen selten eins zu eins in Preisbücher, die einen Preis pro Produkt und Buch halten."
-  - "Die Extension Commerce_Domain_Pricing_Service ersetzt Preisbücher durch eigene Logik, etwa einen Live-Aufruf ans ERP, das dann schnell antworten muss."
+  - "Commerce_Domain_Pricing_Service erweitert oder ersetzt die Preisfindung, etwa per Live-Aufruf ans ERP, getrennt für Produktseiten und Checkout."
   - "Legen Sie schriftlich fest, welches System Preis-Master ist, bevor ein Käufer einen Preis sieht, und was gilt, wenn Shoppreis und Auftragspreis abweichen."
 faq:
   - q: "Woher kommen Kundenpreise in Salesforce B2B Commerce?"
     a: "Im Standard aus Preisbüchern: dem Standardpreisbuch, Store-Preisbüchern und Preisbüchern je Käufergruppe. Hat ein Käufer mehrere, entscheidet die Preisstrategie: Best Price zeigt den niedrigsten Preis, Priority Price folgt der Priorität, die Sie je Käufergruppe setzen."
   - q: "Wie viele Preisbücher kann ein B2B-Store nutzen?"
-    a: "Einem Store lassen sich 5 Preisbücher zuordnen, ein Preisbuch fasst bis zu 350.000 Einträge (weiches Limit). Pro Preisaufruf werden nur die ersten 25 aktiven Preisbücher in der Währung des Käufers ausgewertet; dieses Limit ist hart."
+    a: "Einem Store lassen sich 5 Preisbücher direkt zuordnen, weitere kommen über Käufergruppen dazu. Ein Preisbuch fasst bis zu 350.000 Einträge (weiches Limit). Pro Preisaufruf werden nur die ersten 25 aktiven Preisbücher in der Währung des Käufers ausgewertet; dieses Limit ist hart."
   - q: "Kann B2B Commerce Preise live aus SAP holen?"
-    a: "Ja, über den Extension Point Commerce_Domain_Pricing_Service. Er nutzt im Standard Preisbücher und lässt sich durch Apex-Logik ersetzen, die das ERP aufruft. Für den Warenkorb gibt es einen eigenen Pricing Cart Calculator."
-  - q: "Wie viele Preisbücher darf eine Käufergruppe haben?"
-    a: "Die Limit-Seite von Salesforce nennt beide Werte: 50 in der Tabelle und 25 in einem Hinweis auf derselben Seite. Klären Sie die Zahl mit Salesforce, bevor Sie ein Preisbuch pro Käufer planen."
+    a: "Ja, über den Extension Point Commerce_Domain_Pricing_Service. Er nutzt im Standard Preisbücher und lässt sich in Apex erweitern oder ersetzen, etwa durch einen Aufruf an SAP. processPrice wirkt auf Produktliste und Produktseite, processTransactionalPrice auf Warenkorb und Checkout. Preisbucheinträge braucht es je nach Funktion trotzdem, etwa für Faster Add-to-Cart."
+  - q: "Was zeigt der Shop, wenn SAP bei der Preisabfrage nicht erreichbar ist?"
+    a: "Das muss die Preisarchitektur vorher festlegen. Möglich sind ein unverbindlicher Preis aus einem Zwischenspeicher, der Hinweis „Preis auf Anfrage“ oder ein gesperrter Checkout. Ein womöglich falscher Preis sollte nie unbemerkt als verbindlich erscheinen."
 draft: false
 ---
 
@@ -30,7 +32,7 @@ Kundenpreise in Salesforce B2B Commerce kommen im Standard aus Preisbüchern. St
 
 ## Wie funktionieren Preisbücher im B2B-Store?
 
-Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet, nutzt dieselben Preisbuch-Objekte wie Sales Cloud. Jedes Produkt braucht einen Eintrag im Standardpreisbuch, bevor es in ein anderes Preisbuch kommt. Darüber ordnen Sie eigene Preisbücher dem Store oder Käufergruppen zu. Eine Käufergruppe (Buyer Group) ist eine Menge von Käuferkonten mit gleicher Sichtbarkeit und gleichen Preisen, etwa alle Gold-Händler in Deutschland. Laut [Salesforce-Hilfe zu Preisen in B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) bekommt ein neuer Store automatisch ein Standard-Preisbuch und ein Streichpreis-Preisbuch. Das Streichpreis-Preisbuch zeigt einen durchgestrichenen Vergleichspreis neben dem Preis des Käufers.
+Salesforce B2B Commerce nutzt dieselben Preisbuch-Objekte wie Sales Cloud. Jedes Produkt braucht einen Eintrag im Standardpreisbuch, bevor es in ein anderes Preisbuch kommt. Darüber ordnen Sie eigene Preisbücher dem Store oder Käufergruppen zu. Eine Käufergruppe (Buyer Group) ist eine Menge von Käuferkonten mit gleicher Sichtbarkeit und gleichen Preisen, etwa alle Gold-Händler in Deutschland. Laut [Salesforce-Hilfe zu Preisen in B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) bekommt ein neuer Store automatisch ein Standard-Preisbuch und ein Streichpreis-Preisbuch. Das Streichpreis-Preisbuch zeigt einen durchgestrichenen Vergleichspreis neben dem Preis des Käufers.
 
 Hat ein Käufer Zugriff auf mehrere Preisbücher, braucht der Store eine Regel. Die [Salesforce-Hilfe zu Preisstrategien](https://help.salesforce.com/s/articleView?id=sf.comm_priority_pricing.htm&language=en_US&type=5) bietet zwei:
 
@@ -41,13 +43,13 @@ Für Mengenrabatte gibt es Staffelpreise (Tiered Pricing). Das Preis-Datenmodell
 
 Die Salesforce-Hilfe nennt drei typische Muster: je Händlerstufe eine Käufergruppe, eine Entitlement Policy und ein Preisbuch; je Käufer ein Preisbuch und eine Käufergruppe, wenn Sie käuferindividuelle Preise wollen; und Käufergruppen je Produktgruppe, um Sichtbarkeit zu steuern. Mit dem ersten Muster würde ich anfangen.
 
-## 5 Preisbücher pro Store, 25 pro Preisaufruf
+## 5 Preisbücher direkt am Store, 25 je Preisaufruf
 
 Die [Limits für Preisbuchdaten](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-price-book-limits.html) entscheiden früh, ob Preisbücher für Sie realistisch sind:
 
 | Limit | Wert | Art |
 |---|---|---|
-| Preisbücher je Store | 5 | hart |
+| Preisbücher direkt am Store | 5 | hart |
 | Einträge je Preisbuch | 350.000 | weich |
 | Ausgewertete Preisbücher je Preisaufruf | 25 | hart |
 | Käufergruppen je Preisbuch | 100 | weich |
@@ -55,7 +57,7 @@ Die [Limits für Preisbuchdaten](https://developer.salesforce.com/docs/commerce/
 | Preisbucheinträge je Org | 50 Millionen | weich |
 | Preisbücher je Käufergruppe | 50 oder 25 | unklar |
 
-Am wichtigsten sind die 25 je Aufruf. Ausgewertet werden nur die ersten 25 gültigen Preisbücher, also aktiv und in der Währung des Käufers; alles darüber ignoriert der Store ohne Fehlermeldung. Ein Käufer in vielen Käufergruppen mit jeweils mehreren Preisbüchern kann so einen Preis sehen, den Sie nicht vorgesehen haben. Ein Käuferkonto kann im Standard bis zu 20 Käufergruppen angehören.
+Am wichtigsten sind die 25 je Aufruf. Ausgewertet werden nur die ersten 25 gültigen Preisbücher, also aktiv und in der Währung des Käufers; alles darüber fließt laut Salesforce nicht in die Auswertung ein. Verlassen Sie sich nicht darauf, dass eine falsche Zuordnung im Betrieb auffällt. Ein Käufer in vielen Käufergruppen mit jeweils mehreren Preisbüchern kann so einen Preis sehen, den Sie nicht vorgesehen haben. Ein Käuferkonto kann im Standard bis zu 20 Käufergruppen angehören.
 
 ```hinweis offen
 Die letzte Zeile ist ein Problem der Dokumentation. Dieselbe Salesforce-Seite nennt in der Tabelle 50 Preisbücher je Käufergruppe und in einem Hinweis 25. Hängt Ihr Design an dieser Zahl, holen Sie sich die Antwort von Salesforce schriftlich.
@@ -79,7 +81,7 @@ Die Abwägung ist klar:
 
 - **Live-Aufruf:** Der Käufer sieht den SAP-Nettopreis. Dafür müssen ERP und Middleware so schnell antworten, wie ein Käufer es auf einer Produktliste akzeptiert, und Sie brauchen eine Regel, was der Shop zeigt, wenn SAP nicht erreichbar ist.
 - **Replizierte Preisbücher:** schnell und unabhängig vom ERP. Dafür sind die Preise so alt wie die letzte Ladung, und die Preislogik existiert zweimal.
-- **Gemischt:** Preisbücher für Listen- und Staffelpreise auf Produktseiten, der Live-Aufruf dort, wo der Preis verbindlich wird. Die Dokumentation sagt nicht, welche Methode auf welcher Seite läuft. Diese Aufteilung würde ich deshalb in einem Prototyp beweisen, bevor ich mich festlege.
+- **Gemischt:** Preisbücher für Listen- und Staffelpreise auf Produktseiten, der Live-Aufruf dort, wo der Preis verbindlich wird. Der Leitfaden trennt das sauber: processPrice läuft auf Produktliste und Produktseite, processTransactionalPrice wirkt auf Warenkorb und Checkout. Antwortzeiten, Preissprünge zwischen Produktseite und Warenkorb und das Verhalten bei Ausfällen würde ich trotzdem in einem Prototyp prüfen, bevor ich mich festlege.
 
 Eine dritte Option ist Advanced Pricing powered by Revenue Cloud, eine Preis-Engine innerhalb von Salesforce. Wann sich die zusätzliche Lizenz lohnt, steht in [Advanced Pricing im B2B-Shop](../advanced-pricing-b2b-shop-revenue-cloud/).
 
@@ -87,7 +89,7 @@ Eine dritte Option ist Advanced Pricing powered by Revenue Cloud, eine Preis-Eng
 
 Angenommen, ein Hersteller von Kompressoren verkauft Ersatzteile an 600 Händler in 9 Ländern. SAP hält einen Listenpreis je Land, einen Rabatt je Händlerstufe und Materialgruppe und Kundenpreise für etwa 40 große Händler. Rund 25.000 Teile werden online verkauft.
 
-Ich würde aufteilen. Für die rund 560 Händler mit Stufenrabatt berechnet ein nächtlicher Job die Nettopreise in je ein Preisbuch pro Land und Stufe; bei 9 Ländern und 3 Stufen sind das 27 Preisbücher mit höchstens 25.000 Einträgen, und jeder Käufer sieht genau eines davon. Für die 40 großen Händler mit Kundenpreisen fragt die Pricing Extension im Warenkorb live bei SAP. Fracht- und Mindermengenzuschläge kommen für alle im Checkout aus SAP. Der Auftrag, der zurück an SAP geht, trägt den Preis, den der Käufer gesehen hat, und SAP prüft ihn mit einer festgelegten Toleranz gegen das eigene Ergebnis.
+Ich würde aufteilen. Für die rund 560 Händler mit Stufenrabatt berechnet ein nächtlicher Job die Nettopreise in je ein Preisbuch pro Land und Stufe; bei 9 Ländern und 3 Stufen sind das 27 Preisbücher mit höchstens 25.000 Einträgen. Sie hängen an Käufergruppen je Land und Stufe, nicht direkt am Store, und jeder Käufer sieht genau eines davon. Für die 40 großen Händler mit Kundenpreisen fragt die Pricing Extension im Warenkorb live bei SAP; auf Produktliste und Produktseite sehen sie den Hinweis, dass ihr Preis im Warenkorb berechnet wird. Fracht- und Mindermengenzuschläge kommen für alle im Checkout aus SAP, über die dafür zuständigen Cart Calculators und nicht über die Pricing Extension. Der Auftrag, der zurück an SAP geht, trägt den Preis, den der Käufer gesehen hat, und SAP prüft ihn mit einer festgelegten Toleranz gegen das eigene Ergebnis.
 
 ```ablauf
 sf: Store-Preisbücher, Pricing Extension, Warenkorb
