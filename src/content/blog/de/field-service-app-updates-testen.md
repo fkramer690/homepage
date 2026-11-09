@@ -13,7 +13,7 @@ takeaways:
   - "Neben drei Plattform-Releases im Jahr hat die App eigene Haupt-, Patch- und Notfallversionen, die über App Store und Google Play zu Technikern kommen."
   - "Das Beta-Programm liefert Builds etwa einen Monat vor Hauptversionen und eine Woche vor Patches; Notfallkorrekturen kommen ohne Beta."
   - "Salesforce verteilt Versionen über mehrere Tage, bis zu einer Woche laufen also gemischte Versionen. Das ist ein Risiko, kein Testfenster."
-  - "Pro Version laufen acht Testfälle nach Skript unter iOS und Android, mit Offline-Priming, Formular, Servicebericht und Partnernutzer."
+  - "Pro Version laufen acht Testfälle nach Skript unter iOS und Android, mit Offline-Priming, Data-Capture-Formular, Servicebericht und Partnernutzer."
   - "Eine Pilotgruppe, die vor jeder Hauptversion zwei Wochen mit der Beta arbeitet, findet die Fehler, die Admins im Büro übersehen."
 faq:
   - q: "Wie oft wird die Salesforce Field Service App aktualisiert?"
@@ -21,7 +21,7 @@ faq:
   - q: "Wie bekomme ich Beta-Versionen der Field Service App?"
     a: "Über das Field Service Mobile Beta and Early Adopters Program auf Salesforce Developers. Beta-Builds gibt es einen Monat vor Hauptversionen und eine Woche vor Patches nach Bedarf. Die Beta zu 260.0 funktionierte nur mit Sandbox-Orgs auf Spring '26."
   - q: "Kann ich verhindern, dass sich die Field Service App auf den Geräten aktualisiert?"
-    a: "Salesforce veröffentlicht die App über App Store und Google Play und verteilt sie über mehrere Tage. Für mehr Kontrolle verweist Salesforce auf Mobile Device Management (MDM); klären Sie mit dem Team, das die Geräte verwaltet, was es zurückhalten kann. Halten Sie nicht zu lange zurück: Ab 18. Januar 2027 drohen Versionen vor 264.1 erzwungene Abmeldungen."
+    a: "Salesforce veröffentlicht die App über App Store und Google Play und verteilt sie über mehrere Tage. Für mehr Kontrolle verweist Salesforce auf Mobile Device Management (MDM); klären Sie mit dem Team, das die Geräte verwaltet, was es zurückhalten kann. Halten Sie Updates nicht zu lange zurück: Auf Geräten mit Versionen vor 264.1 kommt es ab dem 18. Januar 2027 zu erzwungenen Abmeldungen."
   - q: "Was sollte eine Testroutine für eine neue App-Version abdecken?"
     a: "Anmeldung und Rückkehr aus dem Hintergrund, Offline-Priming und einen kompletten Einsatz ohne Netz, verbrauchte Teile, ein Data-Capture-Formular, den Servicebericht mit Unterschrift, eigene Komponenten nach einem Kaltstart und einen Partnernutzer, jeweils unter iOS und Android."
 draft: false
@@ -37,7 +37,7 @@ Die App hat eigene Versionsnummern neben den Plattform-Releases: Die Hauptversio
 |---|---|---|---|
 | 260.0 (Spring '26) | 14. Januar 2026 | GA im März 2026 | Voice to Form GA, neue Data-Capture-Funktionen, GIS-Karten, Startfortschritt |
 | 262.3 (Patch) | 26. August 2026 | 4. September 2026 | Korrekturen bei Anmeldung und Start unter iOS und Android |
-| 262.3.1 iOS, E-Patch Android | keine genannt | 23. September 2026 | Weiterer Patch |
+| 262.3.1 (iOS), Android-E-Patch | keine genannt | 23. September 2026 | Weiterer Patch |
 | 264.1 (Winter '27) | keine genannt | Oktober 2026 | Refresh Token Rotation; Update vor dem 18. Januar 2027 nötig |
 
 Der [Beitrag zu 262.3](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pPWBC0A4) zeigt, warum Patches zählen. Unter iOS konnte die App Nutzer unerwartet abmelden, nachdem sie im Hintergrund gelegen hatte, und eine Startüberwachung rechnete die Zeit im Hintergrund mit und meldete falsche Zeitüberschreitungen. Unter Android konnten Nutzer bei der Anmeldung im App-internen Browser hängen bleiben. Genau solche Fehler halten einen Techniker vor der Tür des Kunden auf.
@@ -52,7 +52,7 @@ Notieren Sie bei jedem Ticket zur App die genaue App-Version, dazu Plattform, Be
 
 Das [Field Service Mobile Beta and Early Adopters Program](https://developer.salesforce.com/tools/field-service-mobile-beta) steht Kunden offen. Laut Salesforce gibt es Beta-Versionen einen Monat vor Hauptversionen und eine Woche vor Patches nach Bedarf. Die Daten zu 262.3 passen dazu: Beta am 26. August, Veröffentlichung am 4. September.
 
-Zwei Einschränkungen zählen für die Planung. Erstens hängt die Beta an der passenden Vorschau: Laut dem Beitrag zu 260.0 ließ sich diese Beta nur mit Sandbox-Orgs auf Spring '26 nutzen. Techniker können sie also nicht im Tagesgeschäft gegen die Produktion testen. Zweitens beschreibt Salesforce die Beta als Möglichkeit, Kompatibilität zu prüfen und eigene Anpassungen vor dem Rollout vorzubereiten. Sie gehört also auf Testgeräte.
+Zwei Einschränkungen zählen für die Planung. Erstens hängt die Beta an der passenden Vorschau: Laut dem Beitrag zu 260.0 ließ sich diese Beta nur mit Sandbox-Orgs auf Spring '26 nutzen. Techniker können sie also im Tagesgeschäft nicht mit der Produktiv-Org testen. Zweitens beschreibt Salesforce die Beta als Möglichkeit, Kompatibilität zu prüfen und eigene Anpassungen vor dem Rollout vorzubereiten. Sie gehört also auf Testgeräte.
 
 Ein Termin gehört jetzt in jeden Kalender: Laut [Release Note](https://help.salesforce.com/s/articleView?id=release-notes.rn_fieldservice_264_mobile_refresh_token.htm&language=en_US&type=5) nutzen die Versionen ab 264.1 Refresh Token Rotation, und Geräte mit älteren Versionen werden ab dem 18. Januar 2027 regelmäßig abgemeldet, wobei nicht synchronisierte Arbeit verloren gehen kann.
 
@@ -63,10 +63,10 @@ Debug-Builds sind das Werkzeug der Entwickler. Salesforce bietet sie für Haupt-
 Eine gute Routine ist kurz genug für einen halben Tag und deckt die Stellen ab, an denen ein Versionswechsel etwas kaputt macht. Meine hat diese Schritte, jeweils unter iOS und unter Android:
 
 1. **Update und Anmeldung.** Die App auf einem Gerät mit geladenen Daten und offenen Uploads direkt aktualisieren, dann mit Single Sign-on anmelden, die App eine Stunde in den Hintergrund legen, wieder öffnen.
-2. **Offline-Priming.** Mit einem echten Technikerprofil laden, in den Flugmodus wechseln, Termin, Arbeitsauftrag und Asset-Historie öffnen.
+2. **Offline-Priming.** Das Priming mit einem echten Technikerprofil durchführen, in den Flugmodus wechseln, Servicetermin, Arbeitsauftrag und Asset-Historie öffnen.
 3. **Kompletter Einsatz offline.** Verbrauchte Teile aus dem Fahrzeuglager buchen, Status ändern, Foto anhängen.
 4. **Data-Capture-Formular.** Ein echtes Prüfformular ausfüllen, zur Hälfte schließen, fortsetzen, absenden.
-5. **Servicebericht oder Servicedokument.** Beim klassischen Servicebericht Unterschrift und Vorschau offline erfassen, synchronisieren, dann das endgültige PDF prüfen. Mit Document Builder das Servicedokument mit Vorlage, Unterschriften und eigenen Komponenten prüfen.
+5. **Servicebericht oder Servicedokument.** Beim klassischen Servicebericht offline die Unterschrift erfassen und die Vorschau öffnen, dann synchronisieren und das endgültige PDF prüfen. Mit Document Builder das Servicedokument mit Vorlage, Unterschriften und eigenen Komponenten prüfen.
 6. **Eigene Komponenten.** Die App vollständig schließen und neu starten, denn unter iOS laden geänderte Lightning Web Components erst nach einem Kaltstart.
 7. **Partnernutzer.** Schritte 1 bis 3 mit einem echten Partnernutzer wiederholen: Experience-Cloud-Lizenz, Field-Service-Mobile-Lizenz, Berechtigungssätze und Freigaben wie in Produktion.
 8. **Innendienst und ERP.** Nach der Synchronisation prüfen, ob Verbrauch und Bericht angekommen sind, einschließlich der Schnittstelle ins ERP.
@@ -75,9 +75,9 @@ Die Schritte 2 und 7 kommen aus den bekannten Offline-Lücken, beschrieben in [F
 
 Schreiben Sie die Schritte als Skripte mit erwartetem Ergebnis, genauso wie Testfälle für ein Plattform-Release. Das [Kapitel zu Qualität und Tests in der DevOps-Masterclass](../../masterclass/devops-release-management/qualitaet-tests-reviews/) erklärt, wie solche Tests in Quality Gates passen.
 
-## Wem gehören App-Versionen und Geräte?
+## Wer verantwortet App-Versionen und Geräte?
 
-App-Versionen liegen zwischen zwei Teams. Das Salesforce-Team kennt die Org und die Anpassungen. Das Gerätemanagement kennt die Geräte, die Betriebssystemversionen und die Regeln für App-Updates. Keines der beiden sieht allein das ganze Bild.
+Die Verantwortung verteilt sich auf zwei Teams. Das Salesforce-Team kennt die Org und die Anpassungen. Das Gerätemanagement kennt die Geräte, die Betriebssystemversionen und die Regeln für App-Updates. Keines der beiden sieht allein das ganze Bild.
 
 Ich würde eine Person für jede App-Version verantwortlich machen, meist den Release-Manager des Salesforce-Programms. Diese Person verfolgt die Release-Beiträge, startet den Beta-Test, sammelt Ergebnisse und entscheidet mit dem Gerätemanagement, ob etwas warten muss. Betriebssystem-Updates auf den Geräten gehören in denselben Plan, denn ein großes iOS- oder Android-Update kann Anmeldung, Hintergrundverarbeitung und Offline-Verhalten verändern. Gleichen Sie vor jedem Testzyklus die Geräteflotte mit der Salesforce-Liste der unterstützten Betriebssysteme ab.
 
