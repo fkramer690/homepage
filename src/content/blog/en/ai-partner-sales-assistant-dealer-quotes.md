@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-The AI Partner Sales Assistant (Summer '26) helps dealers find products and build quotes in Manufacturing Cloud, and the AI Sales Concierge (Winter '27) does the same for customers on your Experience Cloud site. Both are marketing names; Salesforce Help documents the templates behind them as Industries Sales Assistance and Sales Concierge for Partners. I treat them as a new front end on your existing quoting data. That data decides the result. Before any dealer gets an AI-built quote, every sellable variant needs a product record a dealer can search, a price per market and dealer tier, a rule for what can be built and a discount limit the model cannot talk round.
+The AI Partner Sales Assistant (Summer '26) helps dealers find products and build quotes in Manufacturing Cloud, and the AI Sales Concierge (Winter '27) does the same for customers on your Experience Cloud site. Salesforce Help documents the templates behind these marketing names as Industries Sales Assistance and Sales Concierge for Partners: a new front end on your existing quoting data. That data decides the result. Before any dealer gets an AI-built quote, every sellable variant needs a product record a dealer can search, a price per market and dealer tier, a rule for what can be built and a discount limit the model cannot talk round.
 
 ## What do the AI Partner Sales Assistant and the AI Sales Concierge do?
 

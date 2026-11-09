@@ -11,10 +11,10 @@ categories: [field-service, ai]
 tags: [Field Service, Außendienst, Agentforce, KI-Agenten, Maschinenbau, Wartung]
 takeaways:
   - "Salesforce nennt 17 Minuten, um einen Vor-Ort-Termin zu planen, und unter 5 Minuten mit dem Buchungsagenten. Das sind Herstellerangaben."
-  - "Für einen Maschinenbauer lohnen sich zuerst die proaktive Wartungsbuchung und der vorformulierte Einsatzbericht, weil beide häufig, klar abgegrenzt und leicht zu prüfen sind."
+  - "Für Maschinenbauer lohnen sich zuerst Wartungsbuchung und vorformulierter Einsatzbericht, weil beide häufig, klar abgegrenzt und leicht zu prüfen sind."
   - "Kundenseitige Buchung kostet 20 Flex Credits (0,10 €) pro Aktion, das Add-on für Mitarbeitende 125 € pro Nutzer und Monat."
   - "Störungsbuchung, Fehlersuche und Ausfallprognose brauchen Triage, sortierte Handbücher oder genug Reparaturhistorie. Sie kommen später."
-  - "Ein Berichtsentwurf hilft nur, wenn Ersatzteile, Zeiten und Fehlercodes strukturierte Felder bleiben, denn Abrechnung und Garantie im ERP brauchen zugeordnete Felder."
+  - "Ein Berichtsentwurf hilft nur, wenn Ersatzteile, Zeiten und Fehlercodes strukturierte Felder bleiben, denn Abrechnung und Garantie im ERP brauchen sie."
 faq:
   - q: "Welche Agentforce-Funktionen gibt es für Salesforce Field Service?"
     a: "Laut Salesforce: Termine buchen, verschieben und absagen, proaktive Wartungsplanung aus Maintenance Plans, Planungslücken für Disponenten füllen, Pre-Work Briefs und Post-Work Summaries für Techniker sowie Fehlersuche vor Ort. Die Salesforce-Hilfe dokumentiert außerdem einen sprachfähigen Scheduling Agent für die Buchung per Telefon."
