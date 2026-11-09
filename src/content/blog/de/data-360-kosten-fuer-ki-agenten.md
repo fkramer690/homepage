@@ -14,7 +14,7 @@ takeaways:
   - "Data 360 berechnet Verarbeitung pro MB beim Indexieren, Abfragen pro Million Zeilen bei jeder Suche und Speicher für Dateien, Chunks und Indexobjekte."
   - "LLM-Parsing für Kataloge mit Explosionszeichnungen kostet als Intelligent Processing 600 Credits pro MB, viermal so viel wie der Standard-Parser."
   - "Im Rechenbeispiel kosten die Suchen des Agenten rund 14.400 Credits im Monat, 400 MB geänderte Dokumente dagegen 195.000."
-  - "Ändert sich ein Feld am Quell-DMO, werden alle seine Anhänge neu indexiert. Kataloge gehören nicht an Datensätze mit nächtlicher ERP-Schnittstelle."
+  - "Verarbeitet Data 360 eine Feldänderung am Quell-DMO, werden alle Anhänge neu indexiert. Kataloge gehören nicht an Datensätze, die ein ERP nachts aktualisiert."
   - "In der Sandbox hat Data 360 keine Mengenstaffeln: 6.000 MB Kataloge mit LLM-Parsing kosten dort 2,88 Mio. Credits, mehr als die 2,22 Mio. in Produktion."
 faq:
   - q: "Was kostet Data 360 pro MB Dokumente?"
@@ -34,7 +34,7 @@ In meinem Rechenbeispiel entstehen die Data 360 Kosten für KI-Agenten vor allem
 
 ## Was berechnet Data 360, wenn ein Agent Dokumente liest?
 
-Ein Agent liest kein PDF direkt. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/enable-trusted-agents-with-data-cloud) zerlegt Data 360 das Dokument in Abschnitte (Chunks), wandelt jeden Chunk in einen Vektor um und legt ihn in einem Suchindex ab. Zur Laufzeit holt ein Retriever die passenden Chunks für den Prompt. Salesforce fasst das in den [Abrechnungshinweisen zu Agentforce Coworker](https://developer.salesforce.com/docs/data/agentforce-coworker/guide/agentforce-coworker-billing-considerations.html) in einem Satz zusammen: Data 360 verbraucht Credits, um Inhalte zu verarbeiten, semantisch zu indexieren und abzufragen. Wie Data 360 über Dokumente hinaus Kontext zusammenstellt, beschreibe ich in [Agent Context Engine einfach erklärt](../salesforce-agent-context-engine-erklaert/).
+Ein Agent liest kein PDF direkt. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/enable-trusted-agents-with-data-cloud) zerlegt Data 360 das Dokument in Abschnitte (Chunks), erzeugt für jeden Chunk ein Vektor-Embedding und legt ihn in einem Suchindex ab. Zur Laufzeit holt ein Retriever die passenden Chunks für den Prompt. Salesforce fasst das in den [Abrechnungshinweisen zu Agentforce Coworker](https://developer.salesforce.com/docs/data/agentforce-coworker/guide/agentforce-coworker-billing-considerations.html) in einem Satz zusammen: Data 360 verbraucht Credits, um Inhalte zu verarbeiten, semantisch zu indexieren und abzufragen. Wie Data 360 über Dokumente hinaus Kontext zusammenstellt, beschreibe ich in [Agent Context Engine einfach erklärt](../salesforce-agent-context-engine-erklaert/).
 
 Daraus ergeben sich drei Zähler:
 
@@ -63,7 +63,7 @@ Die [Liste der Data-360-Nutzungsarten](https://help.salesforce.com/s/articleView
 
 ## Rechenbeispiel: After-Sales-Dokumente bei einem Maschinenbauer
 
-Nehmen wir einen Maschinenbauer, dessen Agent Händlern und Servicemitarbeitenden Fragen zu Ersatzteilen und Wartung beantwortet. Alle Mengen sind Annahmen, die das Vorgehen zeigen sollen; die Sätze stammen aus der Rate Card zum Listenpreis.
+Nehmen wir einen Maschinenbauer, dessen Agent Fragen von Händlern und Servicemitarbeitenden zu Ersatzteilen und Wartung beantwortet. Alle Mengen sind Annahmen, die das Vorgehen zeigen sollen; die Sätze stammen aus der Rate Card zum Listenpreis.
 
 - 6.000 MB Ersatzteilkataloge als PDF, mit LLM-basiertem Parsing
 - 3.000 MB Betriebs- und Wartungsanleitungen plus 200 MB Serviceinformationen, Standard-Parser
@@ -104,7 +104,7 @@ In der Sandbox hat Data 360 keine Mengenstaffeln: 120 Credits pro MB unstrukturi
 
 ### Angereicherte Indizes
 
-Angereicherte Indizes (Enriched Indexing) erzeugen per LLM zusätzliche Chunks, laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/search-index-types-data-cloud-quick-look/get-to-know-search-index-types-in-data-cloud) entstehen drei neue Chunks. Seit Oktober 2026 weisen die [Billing Considerations](https://help.salesforce.com/s/articleView?id=data.c360_a_unstructured_data_billing_considerations.htm&language=en_US&type=5) die LLM-Aufrufe für angereicherte Chunks als Intelligent Processing aus, nicht mehr als Standard Prompts. Eine Zahl würde ich daraus nicht hochrechnen, sondern eine Stichprobe mit Anreicherung indexieren und den Verbrauch im Digital Wallet ablesen. Der größere Index erhöht außerdem die Zeilen, die jede Suche zählt. Die Bedingung von Trailhead passt: nur dort, wo höhere Trefferqualität einen messbaren Nutzen bringt.
+Angereicherte Indizes (Enriched Indexing) erzeugen per LLM zusätzliche Chunks, laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/search-index-types-data-cloud-quick-look/get-to-know-search-index-types-in-data-cloud) entstehen drei neue Chunks. Seit Oktober 2026 weisen die [Billing Considerations](https://help.salesforce.com/s/articleView?id=data.c360_a_unstructured_data_billing_considerations.htm&language=en_US&type=5) die LLM-Aufrufe für angereicherte Chunks als Intelligent Processing aus, nicht mehr als Standard Prompts. Eine Zahl würde ich daraus nicht hochrechnen, sondern eine Stichprobe mit Anreicherung indexieren und den Verbrauch im Digital Wallet ablesen. Der größere Index erhöht außerdem die Zeilen, die jede Suche zählt. Trailhead knüpft angereicherte Indizes an einen messbaren Nutzen durch bessere Trefferqualität.
 
 ### Hybride Suche
 
