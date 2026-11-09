@@ -74,7 +74,7 @@ Ich würde vom Partner oder Entwickler schriftliche Antworten auf sechs Fragen v
 
 **Werkzeuge.** Lassen Sie sich die vollständige Werkzeugliste mit Beschreibungen geben. Ein Server mit einem Lesewerkzeug für offene Fälle ist eine andere Entscheidung als einer, der beliebiges SOQL oder anonymes Apex ausführt.
 
-**Kombination.** Willisons [Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) besteht aus privaten Daten, nicht vertrauenswürdigen Inhalten und einem Weg, Daten nach außen zu senden. Er schreibt, MCP "encourages users to mix and match tools from different sources". Bei einem Maschinenbauer sind Fallbeschreibungen aus dem Händlerportal oder aus Garantieformularen solche fremden Inhalte, siehe [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
+**Kombination.** Willisons [Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) besteht aus privaten Daten, nicht vertrauenswürdigen Inhalten und einem Weg, Daten nach außen zu senden. Willison schreibt, MCP "encourages users to mix and match tools from different sources". Bei einem Maschinenbauer sind Fallbeschreibungen aus dem Händlerportal oder aus Garantieformularen solche fremden Inhalte, siehe [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
 
 Für ein kommerzielles Gateway reichen die sechs Fragen nicht. Ergänzen Sie die Prüfungen, die Sie jedem SaaS mit CRM-Daten stellen: welche Daten, Prompts und Werkzeugergebnisse welche Region verlassen, was wie lange gespeichert wird, welche Unterauftragnehmer und Modelle beteiligt sind, wie Tokens geschützt und widerrufen werden, wie Mandanten getrennt sind und welche Audit-Logs Sie einsehen können.
 
