@@ -1,0 +1,52 @@
+name: Brave Search
+
+# Weekly Brave Search check (scripts/fetch-brave.mjs): positions of fk-sd.de for the
+# ranking keywords and the AI search questions, plus the pages Brave has indexed. Claude's
+# web search draws on the Brave index. Runs right after the Monday rankings run
+# (rankings.yml, started by the daily dashboard task), so no own cron. Stored on the
+# "stats" branch under stats/brave/. Needs the secret BRAVE_SEARCH_API_KEY ("Search" plan,
+# about 110 to 200 requests per run, inside the 5 USD monthly free credit).
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['Fetch rankings']
+    types: [completed]
+
+permissions:
+  contents: write
+
+# Shares the group with analytics.yml, rankings.yml and ai-visibility.yml so they never push to "stats" at once.
+concurrency:
+  group: analytics
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Query Brave Search
+        env:
+          BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
+        run: node scripts/fetch-brave.mjs > /tmp/brave.json
+      - name: Commit snapshot to stats branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code origin stats >/dev/null; then
+            git fetch origin stats
+            git switch stats
+          else
+            git switch --orphan stats
+          fi
+          mkdir -p stats/brave
+          cp /tmp/brave.json stats/brave/latest.json
+          cp /tmp/brave.json "stats/brave/$(date -u +%F).json"
+          git add stats/brave
+          git commit -m "Brave snapshot $(date -u +%F)" || exit 0
+          git push origin stats
