@@ -43,11 +43,11 @@ Die Frage „Welche Dichtung passt in diese Maschine?“ berührt drei Systeme:
 | Frage | Führendes System | Daten |
 |---|---|---|
 | Welche Maschine ist es? | Salesforce | Asset mit Seriennummer, Kunde, Standort, Maschinentyp, über- und untergeordnete Assets |
-| Was wurde verbaut, was ist freigegeben? | PLM | As-built- und As-maintained-Struktur je Seriennummer, Service-Stückliste mit Alternativen und Ersatzteilen, Änderungsstände |
+| Was wurde verbaut, was ist freigegeben? | PLM | As-built- und As-maintained-Struktur je Seriennummer, Service-Stückliste mit freigegebenen Alternativen und Ersatzmaterialien, Änderungsstände |
 | Was hat sich seit Auslieferung geändert? | Salesforce Field Service | Arbeitsaufträge mit verbrauchten Teilen, Umbauten, getauschte Baugruppen |
 | Ist das Teil lieferbar, zu welchem Preis? | ERP (SAP, proALPHA) | Materialnummer, Nachfolgematerial, Vertriebsstatus, Verfügbarkeit, Kunden- oder Händlerpreis |
 
-Eine **As-built-Stückliste** ist die Stückliste einer ausgelieferten Maschine mit den tatsächlich verbauten Varianten und Ständen. Die Konstruktionsstückliste beschreibt den Maschinentyp. Bei einer Sondermaschine mit Optionen können beide genau an der Position abweichen, nach der der Techniker fragt. Für den Service zählen zwei weitere Sichten: Die As-maintained-Struktur zeigt, was nach Reparaturen und Nachrüstungen heute verbaut ist, und die Service-Stückliste nennt die servicefähigen Teile mit freigegebenen Alternativen.
+Eine **As-built-Stückliste** ist die Stückliste einer ausgelieferten Maschine mit den tatsächlich verbauten Varianten und Ständen. Die Konstruktionsstückliste beschreibt den Maschinentyp. Bei einer Sondermaschine mit Optionen können beide genau an der Position abweichen, nach der der Techniker fragt. Für den Service zählen zwei weitere Sichten: Die As-maintained-Struktur zeigt, was nach Reparaturen und Nachrüstungen heute verbaut ist, und die Service-Stückliste nennt die servicefähigen Teile mit freigegebenen Alternativen und Ersatzmaterialien.
 
 Auf der Salesforce-Seite beschreibt [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field_service_maint/field_service_maint_assets) ein Asset als konkret gekauftes oder installiertes Produkt. Asset-Hierarchien bilden zusammengehörige Assets ab, etwa die Komponenten einer Maschine, über das Feld Parent Asset. Arbeitsaufträge lassen sich mit Assets verknüpfen. Das ist der Anker: Der Agent übergibt die Identität des Assets an PLM und ERP. Das Standardfeld für die Seriennummer ist nicht eindeutig, die Schnittstelle braucht also eine eindeutige externe ID; die Seriennummer ist der Suchwert. Wie Assets überhaupt nach Salesforce kommen, steht in [Stammdaten für Field Service](../salesforce-field-service-stammdaten/).
 
@@ -59,7 +59,7 @@ Die Zeile, die ich zuerst prüfen würde, ist die dritte. Die As-built-Stücklis
 
 **Live-Abfrage.** Das PLM oder eine Middleware bietet eine API wie „ersatzteilrelevante Positionen für Seriennummer X und Baugruppe Y“. Der [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog) beschreibt den Weg über MuleSoft: Topics und Aktionen in Topic Center festlegen, die API in Exchange veröffentlichen und mit dem API Catalog synchronisieren. Named Credentials und External Services legt Salesforce dann automatisch an. Der Agent ruft die API als Aktion auf, Flow und Apex können dieselbe API nutzen. PLM oder SAP nennt der Blog nicht; [Agentforce und SAP](../agentforce-sap-auftragsstatus/) wendet dasselbe Muster auf den Auftragsstatus an.
 
-Dazwischen gibt es weitere Wege, etwa einen Zwischenspeicher nur für offene Arbeitsaufträge oder die Siemens-App selbst. **Meine Empfehlung für diese Architektur: nach Nutzung trennen.** Salesforce hält die Maschine und ihre servicerelevanten Hauptbaugruppen als Asset-Hierarchie, die Garantie, Wartungsverträge und Händlerportal ohnehin brauchen. Die vollständige Stückliste bleibt im PLM und kommt live. Für den Hallenkeller ohne Netz läuft der Agent vor dem Einsatz und schreibt seinen Vorschlag als Products Required, also benötigte Teile, in den Arbeitsauftrag. Products Required lassen sich mit dem Arbeitsauftrag offline synchronisieren, testen Sie das in Ihrer mobilen Konfiguration.
+Dazwischen gibt es weitere Wege, etwa einen Zwischenspeicher nur für offene Arbeitsaufträge oder die Siemens-App selbst. **Meine Empfehlung für diese Architektur: nach Nutzung trennen.** Salesforce hält die Maschine und ihre servicerelevanten Hauptbaugruppen als Asset-Hierarchie, die Garantie, Wartungsverträge und Händlerportal ohnehin brauchen. Die vollständige Stückliste bleibt im PLM und wird bei Bedarf live abgerufen. Für den Hallenkeller ohne Netz läuft der Agent vor dem Einsatz und schreibt seinen Vorschlag als Products Required, also benötigte Teile, in den Arbeitsauftrag. Products Required lassen sich mit dem Arbeitsauftrag offline synchronisieren, testen Sie das in Ihrer mobilen Konfiguration.
 
 ```ablauf
 sf: Asset, Agent, Arbeitsauftrag
@@ -77,10 +77,10 @@ Hat Ihr PLM keine API oder keine As-built-Daten je Seriennummer, kann der Agent 
 
 ## Was darf der Agent entscheiden, und was nicht?
 
-Welche Teile für eine Seriennummer freigegeben sind, entscheiden Regeln: Es kann mehrere freigegebene Optionen geben, etwa Alternativen, Nachfolger oder eine komplette Baugruppe, aber der Agent darf keine erfinden. Diese Entscheidung gehört in die API. Der Agent liefert seinen Beitrag rund um diese Antwort:
+Welche Teile für eine Seriennummer freigegeben sind, entscheiden Regeln: Es kann mehrere freigegebene Optionen geben, etwa Alternativen, Nachfolger oder eine komplette Baugruppe, aber der Agent darf keine erfinden. Diese Entscheidung gehört in die API. Der Agent hilft bei der Einordnung und Aufbereitung dieser Antwort:
 
 - **Die Frage verstehen.** „Die Zuführpumpe links an Linie 2 ist undicht“ muss zu genau einer Baugruppe in der Hierarchie werden. Passen zwei, fragt der Agent nach, statt zu wählen.
-- **Kontext lesen.** Fehlercode, letzte Arbeitsaufträge und ein Foto grenzen ein. Salesforce beschreibt in der [Ankündigung zur Fehlersuche in Field Service](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/) bereits einen Agenten, der Fotos des Technikers auswertet.
+- **Kontext lesen.** Fehlercode, letzte Arbeitsaufträge und ein Foto grenzen die Auswahl ein. Salesforce beschreibt in der [Ankündigung zur Fehlersuche in Field Service](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/) bereits einen Agenten, der Fotos des Technikers auswertet.
 - **Das Ergebnis aufbereiten.** Teilenummern, Mengen und Verfügbarkeit als kurze Liste, dazu ein Vorschlag für die benötigten Teile am Arbeitsauftrag, den ein Mensch bestätigt.
 
 Regelbasiert bleiben: die Teileliste selbst, Nachfolgematerialien (aufgelöst in ERP oder PLM, nie aus ähnlichen Bezeichnungen geraten), Preise und jede Bestellung. Liefert die API nichts, sagt der Agent das und übergibt an die Ersatzteilabteilung. Wie man solche Schranken durchsetzt, beschreibt [Agent Script: Regeln statt LLM](../agent-script-regeln-statt-llm/).
@@ -104,7 +104,7 @@ Angenommen sind 400 ersatzteilrelevante Positionen je Maschine. Eine vollständi
 
 Angenommen sind 1.500 Ersatzteilfragen im Monat mit je drei Aktionen: Asset finden, Teile der Baugruppe aus dem PLM holen, Verfügbarkeit und Preis aus SAP abfragen. Laut [Flex Credits Rate Card vom 3. November 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) kostet eine Aktion in Produktion 20 Credits, eine Frage also 60 Credits, im Monat 90.000. Beim [Listenpreis von 500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) sind das rund 0,30 € je Frage und etwa 450 € im Monat für die Aktionen, wenn jede Frage drei Aktionen braucht. Die einmalige Arbeit an Schnittstelle und PLM kostet ein Vielfaches; das Abrechnungsmodell erklärt [Flex Credits: Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
 
-In diesem gedachten Szenario, keinem gemessenen Kundenergebnis, bringt ein Pilot mit zehn Technikern zwei Erkenntnisse. Für Maschinen vor 2016 hat das PLM nur die Typstückliste, der Agent kann Kandidaten nennen, aber die Variante nicht bestätigen; das muss er sagen, und die Ersatzteilabteilung entscheidet. Und bei einem Teil der geprüften Maschinen zeigen verbrauchte Teile eine durch einen Nachfolger getauschte Baugruppe, die in der Asset-Hierarchie fehlt. Beides sind Datenprobleme. Die Entscheidung im Szenario: nur Techniker, nur Maschinen ab 2016, und ein Tauschschritt am Arbeitsauftrag, der Hauptbaugruppen nachzieht, wenn ein Techniker eine tauscht.
+In diesem gedachten Szenario, keinem gemessenen Kundenergebnis, bringt ein Pilot mit zehn Technikern zwei Erkenntnisse. Für Maschinen vor 2016 hat das PLM nur die Typstückliste, der Agent kann Kandidaten nennen, aber die Variante nicht bestätigen; das muss er sagen, und die Ersatzteilabteilung entscheidet. Und bei einem Teil der geprüften Maschinen zeigen verbrauchte Teile, dass eine Baugruppe durch einen Nachfolger ersetzt wurde, ohne dass die Asset-Hierarchie diesen Austausch abbildet. Beides sind Datenprobleme. Die Entscheidung im Szenario: nur Techniker, nur Maschinen ab 2016, und ein Tauschschritt am Arbeitsauftrag, der Hauptbaugruppen nachzieht, wenn ein Techniker eine tauscht.
 
 ## 20 Ersatzteilbestellungen von Hand prüfen
 
@@ -114,7 +114,7 @@ Zuerst von Hand testen
 Eindeutigen Asset-Schlüssel vereinbaren
   Eine eindeutige externe ID für die Schnittstelle und die Seriennummer als Suchwert, im gleichen Format auf dem Typenschild, im ERP, im PLM und in Salesforce, inklusive führender Nullen und Werkspräfixe.
 API vor dem Agenten bauen
-  Geben Sie der Ersatzteilabteilung zuerst eine Maske darauf. Hilft sie Menschen nicht, hilft auch kein Agent.
+  Stellen Sie der Ersatzteilabteilung dafür zuerst eine Oberfläche bereit. Hilft sie Menschen nicht, hilft auch kein Agent.
 Mit Technikern starten
   Nehmen Sie Händler erst mit den Portalregeln von oben dazu.
 ```
