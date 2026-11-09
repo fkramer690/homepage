@@ -16,7 +16,7 @@ takeaways:
   - "An agent action costs 20 Flex Credits in production (16 in a sandbox), so a five-action quote costs about $0.50 at list price before prompts."
 faq:
   - q: "What does the quoting agent in Revenue Cloud do?"
-    a: "It creates, modifies and summarises quotes while respecting role-based access, quotes valid products according to catalog and fulfillment rules, keeps pricing and discounting within system guardrails and handles new business quotes, asset amendments and quote updates through the Quote Management subagent."
+    a: "It creates, modifies and summarizes quotes while respecting role-based access, quotes valid products according to catalog and fulfillment rules, keeps pricing and discounting within system guardrails and handles new business quotes, asset amendments and quote updates through the Quote Management subagent."
   - q: "What do I need before using the quoting agent?"
     a: "Revenue Cloud with a maintained product catalog, pricing data synced through Salesforce Pricing, Agentforce enabled and an employee agent with the Quote Management subagent. In practice also discount limits as rules and approval workflows that catch what the agent must not decide."
   - q: "Can dealers and customers use the quoting agent?"
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-The quoting agent in Revenue Cloud turns a request in plain language into a quote: it picks valid products from the catalog, prices them with Salesforce Pricing, applies discounts within the guardrails and can amend and summarise quotes. For an internal sales desk with standard products and clean pricing data, that saves real time. Before it goes live, you need a maintained catalog and synced prices, and I would add configuration rules in Salesforce and discount limits that approvals enforce. For configured machines whose rules live outside Salesforce, the standard agent cannot help without a custom integration.
+The quoting agent in Revenue Cloud turns a request in plain language into a quote: it picks valid products from the catalog, prices them with Salesforce Pricing, applies discounts within the guardrails and can amend and summarize quotes. For an internal sales desk with standard products and clean pricing data, that saves real time. Before it goes live, you need a maintained catalog and synced prices, and I would add configuration rules in Salesforce and discount limits that approvals enforce. For configured machines whose rules live outside Salesforce, the standard agent cannot help without a custom integration.
 
 ## What does the Revenue Cloud quoting agent do?
 
@@ -34,7 +34,7 @@ Salesforce announced agent quoting for Revenue Cloud in July 2025, and the expan
 
 The [Trailhead quick start for a quoting agent](https://trailhead.salesforce.com/content/learn/projects/quick-start-build-an-agent-to-create-quotes-fast/build-your-first-agentforce-quoting-agent) is more precise about the scope. The agent:
 
-- creates, modifies and summarises quotes and respects role-based access,
+- creates, modifies and summarizes quotes and respects role-based access,
 - follows product catalog and fulfillment rules, which keeps it to products the catalog allows, but is no guarantee that every configuration can be built,
 - keeps pricing and discounting within system guardrails,
 - handles new business quotes, amendments to assets and quote updates.
@@ -49,7 +49,7 @@ The agent reads the same records your sales desk reads. What an experienced rep 
 - **Synced pricing data.** The Trailhead setup starts with Sync Pricing Data in Salesforce Pricing Setup. If prices are not synced, the agent quotes nothing useful.
 - **Configuration rules in Salesforce.** The agent stays within catalog rules. If your rules sit in SAP variant configuration or in an engineer's head, the standard actions do not see them; only a custom action with an integration could.
 - **Discount limits as approvals.** The agent may apply a discount a rep asks for. Whether it needs approval should be decided by the approval workflow, as described in [discount approvals in Revenue Cloud](../revenue-cloud-discount-approvals/).
-- **Agentforce setup.** Agentforce enabled, an employee agent with the Quote Management subagent, a permission set that grants agent access and search indexing for the product search. Check the edition and add-on the agent needs, and read the considerations page in Help for limits, for example on currencies, languages and the number of quote lines one request may change.
+- **Agentforce setup.** Agentforce enabled, an employee agent with the Quote Management subagent, a permission set that grants agent access and search indexing for the product search. Check the edition and add-on the agent needs, and read the [considerations page](https://help.salesforce.com/s/articleView?id=ind.qocal_agentforce_considerations.htm&language=en_US&type=5) in Help: as of 9 November 2026 the agent supports English (en_US) only, and as an employee agent it inherits the considerations and billing of that agent type. For a German sales desk, that is the first thing to check.
 
 I would count the share of products that a rep can find by the words customers use. If it is low, fix that before the pilot.
 

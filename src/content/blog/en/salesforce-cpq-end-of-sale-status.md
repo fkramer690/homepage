@@ -18,7 +18,7 @@ takeaways:
   - "The time before the next CPQ renewal is the best window to negotiate term, price cap and terms for running CPQ and Revenue Cloud side by side."
 faq:
   - q: "What replaces Salesforce CPQ?"
-    a: "Salesforce points new customers to Revenue Cloud Advanced. Depending on the invoicing, usage, payments and collections scope, Revenue Cloud Billing may be needed on top. There is no retirement date after which CPQ is switched off. Whether and when switching pays off for existing customers depends on contract term, customisation and the growing gap in new features."
+    a: "Salesforce points new customers to Revenue Cloud Advanced. Depending on the invoicing, usage, payments and collections scope, Revenue Cloud Billing may be needed on top. There is no retirement date after which CPQ is switched off. Whether and when switching pays off for existing customers depends on contract term, customization and the growing gap in new features."
   - q: "Is Salesforce CPQ being discontinued?"
     a: "No end-of-life date has been announced. Salesforce calls CPQ end of sale, not end of life: it is no longer sold to new customers, while existing customers can keep using it, add users, renew and receive support and critical fixes."
   - q: "Do I have to migrate from Salesforce CPQ to Revenue Cloud?"
@@ -108,4 +108,4 @@ No. The status removes the assumption of an imminent shutdown by Salesforce, and
 
 ## Find the renewal date of your contracts
 
-Find the renewal date of your CPQ and Billing contracts, list how many users and which customisations you have, and decide before the account team calls whether you want a short or a long term. The whole path from status to migration is laid out in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
+Find the renewal date of your CPQ and Billing contracts, list how many users and which customizations you have, and decide before the account team calls whether you want a short or a long term. The whole path from status to migration is laid out in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
