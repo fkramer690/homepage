@@ -11,8 +11,8 @@ categories: [field-service, manufacturing-cloud]
 contactBrief: licences
 tags: [Field Service, Asset Management, Lizenzen, Garantie, Connected Assets]
 takeaways:
-  - "Connected Assets kostet 15.000 Dollar pro Org und Monat. Es rechnet sich, wenn Echtzeitereignisse genug Stillstand verhindern, nicht allein über die Flottengröße."
-  - "Assets und Wartungspläne gehören zum Field-Service-Kern, Serviceverträge und Entitlements zu Service Cloud. Das Add-on ergänzt Deckungsansicht, Angebote, Rückrufaktionen."
+  - "Connected Assets kostet 15.000 Dollar pro Org und Monat. Es rechnet sich, wenn Echtzeitereignisse genug Stillstand verhindern, nicht über die Flottengröße."
+  - "Assets und Wartungspläne sind Field-Service-Kern, Serviceverträge und Entitlements Service Cloud. Das Add-on bringt Deckungsansicht, Angebote, Rückrufaktionen."
   - "Seit November 2026 nennt die Preisseite ASLM und Connected Assets bei Field Service Max, die Tabelle führt sie aber weiter als zukaufbar."
   - "Lagerfunktionen überschneiden sich mit dem ERP. Führt SAP Nachschub und Inventur, nutzen Sie ASLM nur für Serviceschritte wie Reservierung und Fahrzeuglager."
   - "Garantieansprüche, Rückrufe und Servicekampagnen gibt es auch in Manufacturing Cloud. Legen Sie fest, welches Produkt sie führt, bevor Sie beide kaufen."
