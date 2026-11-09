@@ -102,12 +102,12 @@ export const freelanceArchitect = {
       steps: [
         { icon: 'message', t: '30 Minuten', d: 'Sie schildern die Lage, ich sage ehrlich, ob ich der Richtige bin.' },
         { icon: 'sliders', t: 'Rahmen', d: 'Rolle, Laufzeit, Auslastung, Start und Vor-Ort-Anteil.' },
-        { icon: 'contract', t: 'Angebot', d: 'Ein Satz für genau diese Rolle, Vertrag mit der FK Solution Design GmbH.' },
+        { icon: 'contract', t: 'Angebot', d: 'Umfang, Dauer und Vor-Ort-Anteil für genau diese Rolle, Vertrag mit der FK Solution Design GmbH.' },
         { icon: 'implement', t: 'Start', d: 'Zuerst Bestandsaufnahme und Zielbild, dann Standards und Reviews.' },
       ] as Point[],
       termsLabel: 'Konditionen',
       terms: [
-        { t: 'Nach Aufwand', d: 'Stunden- oder Tagessatz je nach Rolle, Laufzeit und Vor-Ort-Anteil, monatlich abgerechnet mit Tätigkeitsnachweis.' },
+        { t: 'Nach Aufwand', d: 'Tagessatz 1.200 Euro netto bei Arbeit remote, vor Ort plus Pauschale oder Reisekosten. Monatlich abgerechnet mit Tätigkeitsnachweis.' },
         { t: 'Vor Ort und remote', d: 'Ich arbeite gern beim Kunden vor Ort. Die Anreise gehört in die Kalkulation.' },
         { t: 'Auch über Recruiter', d: 'Viele Projekte laufen über Personaldienstleister.', link: 'partner/recruiter/', linkText: 'So arbeite ich mit Recruitern' },
       ] as { t: string; d: string; link?: string; linkText?: string }[],
@@ -115,7 +115,7 @@ export const freelanceArchitect = {
     faqTitle: 'Häufig gestellte Fragen',
     faq: [
       { q: 'Was macht ein freiberuflicher Salesforce Architect?', a: 'Er arbeitet auf der Seite des Kunden: Er bereitet Architekturentscheidungen vor und dokumentiert sie, legt Standards für alle Implementierungspartner fest und prüft Entwürfe und Pull Requests. Die Umsetzung selbst liefern die Partner.' },
-      { q: 'Was kostet ein freiberuflicher Salesforce Architect?', a: 'Ich nenne einen Stunden- oder Tagessatz pro Anfrage, abhängig von Rolle, Laufzeit und Vor-Ort-Anteil. Abgerechnet wird monatlich nach Aufwand über die FK Solution Design GmbH. Eine Preisliste für alle Fälle gibt es nicht.' },
+      { q: 'Was kostet ein freiberuflicher Salesforce Architect?', a: 'Mein Tagessatz liegt bei 1.200 Euro netto für Arbeit remote. Für Tage vor Ort kommen eine Pauschale oder die Reisekosten dazu. Abgerechnet wird monatlich nach Aufwand über die FK Solution Design GmbH, meist mit 2 bis 5 Tagen pro Woche.' },
       { q: 'Ersetzt ein freiberuflicher Architekt den Implementierungspartner?', a: 'Nein. Für die Umsetzung brauchen Sie ein Team, das baut, testet und betreibt. Der Architekt auf Kundenseite sorgt dafür, dass dieses Team nach Ihren Regeln baut und Sie die Entscheidungen treffen.' },
       { q: 'Für welche Unternehmen und Clouds arbeiten Sie?', a: 'Für Hersteller in Fertigung, Service, After-Sales und B2B-Vertrieb. Schwerpunkte sind Sales und Service Cloud, Field Service, Experience Cloud, Manufacturing Cloud, CPQ, B2B Commerce und die Integration mit SAP.' },
       { q: 'Kann ich Sie auch über einen Personaldienstleister beauftragen?', a: 'Ja. Viele meiner Projekte laufen über Recruiter. Wie ich dabei arbeite, steht auf der Seite für Recruiter.' },
@@ -204,12 +204,12 @@ export const freelanceArchitect = {
       steps: [
         { icon: 'message', t: '30 minutes', d: 'You describe the situation, I tell you honestly whether I am the right person.' },
         { icon: 'sliders', t: 'Scope', d: 'Role, duration, utilization, start and on-site share.' },
-        { icon: 'contract', t: 'Offer', d: 'A rate for exactly this role, contract with FK Solution Design GmbH.' },
+        { icon: 'contract', t: 'Offer', d: 'Scope, duration and on-site share for exactly this role, contract with FK Solution Design GmbH.' },
         { icon: 'implement', t: 'Start', d: 'First the current state and the target picture, then standards and reviews.' },
       ] as Point[],
       termsLabel: 'Terms',
       terms: [
-        { t: 'By effort', d: 'Hourly or daily rate depending on role, duration and on-site share, billed monthly with a timesheet.' },
+        { t: 'By effort', d: 'Day rate EUR 1,200 net for remote work, on site plus a flat fee or travel expenses. Billed monthly with a timesheet.' },
         { t: 'On site and remote', d: 'I am happy to work on site at the client. Travel belongs in the calculation.' },
         { t: 'Also through recruiters', d: 'Many projects run through staffing agencies.', link: 'partners/recruiters/', linkText: 'How I work with recruiters' },
       ] as { t: string; d: string; link?: string; linkText?: string }[],
@@ -217,7 +217,7 @@ export const freelanceArchitect = {
     faqTitle: 'Frequently asked questions',
     faq: [
       { q: 'What does a freelance Salesforce architect do?', a: 'He works on the client’s side: he prepares architecture decisions and documents them, sets standards for every implementation partner and reviews designs and pull requests. The partners deliver the implementation itself.' },
-      { q: 'What does a freelance Salesforce architect cost?', a: 'I quote an hourly or daily rate per request, depending on role, duration and on-site share. Billing is monthly by effort through FK Solution Design GmbH. There is no price list for every case.' },
+      { q: 'What does a freelance Salesforce architect cost?', a: 'My day rate is EUR 1,200 net for remote work. On-site days add a flat fee or travel expenses. Billing is monthly by effort through FK Solution Design GmbH, usually for 2 to 5 days a week.' },
       { q: 'Does a freelance architect replace the implementation partner?', a: 'No. For the delivery you need a team that builds, tests and runs. The architect on the client side makes sure that team builds by your rules and that you take the decisions.' },
       { q: 'Which companies and clouds do you work for?', a: 'For manufacturers in production, service, after-sales and B2B sales. Focus areas are Sales and Service Cloud, Field Service, Experience Cloud, Manufacturing Cloud, CPQ, B2B Commerce and integration with SAP.' },
       { q: 'Can I hire you through a staffing agency?', a: 'Yes. Many of my projects run through recruiters. How I work with them is on the page for recruiters.' },

@@ -102,14 +102,14 @@ export const recruiters = {
       title: 'So läuft eine Anfrage',
       steps: [
         { icon: 'mail', t: 'Anfrage', d: 'Sie schicken mir die Anfrage per Mail oder über das Formular, mit Endkunde, Rolle, Laufzeit, Auslastung, Start und Budget.' },
-        { icon: 'clock', t: 'Antwort', d: 'Innerhalb eines Werktags sage ich Ihnen, ob es passt, und nenne Stunden- oder Tagessatz und Verfügbarkeit.' },
+        { icon: 'clock', t: 'Antwort', d: 'Innerhalb eines Werktags sage ich Ihnen, ob es passt und ab wann ich verfügbar bin.' },
         { icon: 'check', t: 'Freigabe', d: 'Sie bekommen meine schriftliche Freigabe für genau diese Anfrage.' },
         { icon: 'interview', t: 'Kundengespräch', d: 'Ich bereite mich auf das Projekt vor, nicht nur auf meinen Lebenslauf.' },
         { icon: 'contract', t: 'Vertrag und Start', d: 'Sie bleiben Ansprechpartner für alles Vertragliche, auch bei der Verlängerung.' },
       ] as Point[],
       termsLabel: 'Konditionen',
       terms: [
-        { t: 'Satz pro Anfrage', d: 'Meinen Stunden- oder Tagessatz nenne ich Ihnen für jede Anfrage einzeln. Er hängt davon ab, welche Rolle ich übernehme, wie lange das Projekt läuft und wie oft ich vor Ort bin.' },
+        { t: 'Tagessatz', d: 'Mein Tagessatz liegt bei 1.200 Euro netto für Arbeit remote. Für Tage vor Ort kommen eine Pauschale oder die Reisekosten dazu.' },
         { t: 'Vertrag mit der GmbH', d: 'Ihr Vertragspartner ist meine FK Solution Design GmbH. Ich rechne monatlich nach tatsächlichem Aufwand ab und lege jeder Rechnung einen Tätigkeitsnachweis bei.' },
         { t: 'Remote und vor Ort', d: 'Hier bin ich flexibel. Bewährt hat sich, intensive Phasen und Workshops gemeinsam mit dem Projektteam vor Ort zu machen und danach einige Wochen remote weiterzuarbeiten.' },
         { t: 'Reisen', d: 'Ich arbeite von Köln aus. Wenn es im Projekt darauf ankommt, etwa vor einem Go-live, reise ich auch weltweit, in der Regel aber nicht öfter als einmal im Quartal. Reisezeit rechne ich vollständig als Arbeitszeit ab. Die Reisekosten rechne ich am liebsten nach tatsächlichem Aufwand ab. Bevorzugt Ihr Kunde eine Pauschale, ist das auch möglich.' },
@@ -212,14 +212,14 @@ export const recruiters = {
       title: 'How a request works',
       steps: [
         { icon: 'mail', t: 'Request', d: 'You send me the request by email or through the form, with end client, role, duration, utilization, start and budget.' },
-        { icon: 'clock', t: 'Answer', d: 'Within one working day I tell you whether it fits and give you my hourly or daily rate and availability.' },
+        { icon: 'clock', t: 'Answer', d: 'Within one working day I tell you whether it fits and when I am available.' },
         { icon: 'check', t: 'Approval', d: 'You get my written approval for exactly this request.' },
         { icon: 'interview', t: 'Client interview', d: 'I prepare for the project, not just for my CV.' },
         { icon: 'contract', t: 'Contract and start', d: 'You remain the contact for everything contractual, including the extension.' },
       ] as Point[],
       termsLabel: 'Terms',
       terms: [
-        { t: 'Rate per request', d: 'I quote my hourly or daily rate for each request individually. It depends on the role I take on, how long the project runs and how often I am on site.' },
+        { t: 'Day rate', d: 'My day rate is EUR 1,200 net for remote work. On-site days add a flat fee or travel expenses.' },
         { t: 'Contract with the company', d: 'Your contract partner is my company, FK Solution Design GmbH. I invoice monthly by actual effort and attach a timesheet to every invoice.' },
         { t: 'Remote and on site', d: 'I am flexible here. What works well is running intensive phases and workshops on site together with the project team and then continuing remotely for a few weeks.' },
         { t: 'Travel', d: 'I work from Cologne. When the project needs it, for example before a go-live, I also travel worldwide, but usually no more than once a quarter. I bill travel time in full as working time. I prefer to bill travel expenses at actual cost. If your client prefers a flat rate, that works too.' },
