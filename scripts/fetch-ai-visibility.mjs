@@ -1,4 +1,4 @@
-// Monthly check whether AI assistants name or cite fk-sd.de: asks the questions in
+// Check (every second Monday) whether AI assistants name or cite fk-sd.de: asks the questions in
 // seo/ai-prompts.json to ChatGPT, Claude, Gemini and Perplexity (with web search)
 // and to Google AI Mode via DataForSEO. Printed as JSON; used by .github/workflows/ai-visibility.yml.
 import { readFile } from 'node:fs/promises';
