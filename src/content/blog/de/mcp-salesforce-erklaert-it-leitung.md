@@ -1,6 +1,6 @@
 ---
 title: "MCP und Salesforce, erklärt für die IT-Leitung"
-description: "Was MCP in Salesforce bedeutet und welche vier Entscheidungen bei der IT-Leitung liegen: welche Server, welche Benutzer, welche Daten, welche KI-Clients."
+description: "Was MCP in Salesforce bedeutet und welche vier Entscheidungen bei der IT-Leitung liegen: Server, Benutzer, Daten sowie KI-Clients und Agenten."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de
@@ -12,7 +12,7 @@ tags: [MCP, Salesforce-Schnittstellen, Claude, Sicherheit, IT-Governance, Maschi
 takeaways:
   - "Hosted MCP ist für einen benannten Benutzer mit einem KI-Werkzeug gebaut. Nächtliche Jobs, Systemintegration und Massenoperationen brauchen einen anderen Weg."
   - "Das Protokoll kann seine Sicherheitsprinzipien laut Spezifikation nicht durchsetzen. Die Kontrollen liegen im Client, im Server und in den Salesforce-Rechten."
-  - "Hosted MCP Servers sind standardmäßig aus und laufen als angemeldeter Benutzer ohne Service Accounts, Ihr Freigabemodell wird damit zur Grenze."
+  - "Hosted MCP Servers sind standardmäßig aus und laufen als benannter Benutzer ohne Service Accounts. Ihr Freigabemodell wird damit zur Grenze."
   - "Die IT-Leitung entscheidet, welche Server aktiv sind, wer sich verbinden darf, welche Daten die Tools erreichen und welche KI-Clients zugelassen sind."
   - "Ein sicherer Start ist sobject-reads in einer Sandbox, ein zugelassener KI-Client und kleine Custom Server pro Rolle statt eines Servers mit allen Tools."
 faq:
@@ -41,7 +41,7 @@ Laut [Architekturübersicht](https://modelcontextprotocol.io/docs/learn/architec
 - **Client:** eine Komponente im Host, die die Verbindung zu genau einem Server hält.
 - **Server:** das Programm, das Tools anbietet, zum Beispiel ein Hosted MCP Server von Salesforce.
 
-Ein Server bietet Tools an, die die KI ausführen kann (eine Abfrage, eine Datensatzänderung, einen Flow), außerdem Ressourcen mit Kontextdaten und Prompt-Vorlagen. Welches Tool aufgerufen wird, entscheidet das Modell im Gespräch. Server laufen lokal auf dem Rechner oder entfernt über HTTP; dort empfiehlt das Protokoll OAuth.
+Ein Server bietet Tools an, die die KI ausführen kann (eine Abfrage, eine Datensatzänderung, einen Flow), außerdem Ressourcen mit Kontextdaten und Prompt-Vorlagen. Welches Tool aufgerufen wird, entscheidet das Modell im Gespräch. Server laufen lokal auf dem Rechner oder remote über HTTP; dort empfiehlt das Protokoll OAuth.
 
 Ein Satz in der Übersicht lohnt das zweite Lesen: MCP regelt nur den Austausch von Kontext und schreibt nicht vor, wie die KI-Anwendung das Sprachmodell oder den erhaltenen Kontext nutzt. Wohin Ihre CRM-Daten gehen, nachdem Claude oder ChatGPT sie gelesen hat, sagt das Protokoll also nicht. Das regelt Ihr Vertrag mit dem KI-Anbieter.
 
@@ -79,7 +79,7 @@ Ein Detail ist für Prüfungen wichtig. Laut den [Designprinzipien der Spezifika
 
 Die [Server-Referenz](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html) nennt sieben Standardserver: vier für sObjects (All, Reads, Mutations, Deletes), Data 360, Tableau Next und Headless 360, der noch Beta ist und bis ins Setup reicht. Ihre Tool-Sets lassen sich nicht ändern. [Custom Server](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/custom-servers.html) geben eigene Autolaunched Flows, Invocable- und `@AuraEnabled`-Apex, Apex REST und Endpunkte aus dem API Catalog frei und können Tools der Standardserver bündeln, jeweils unter eigener URL. Salesforce warnt, dass ein KI-Client ab einigen Dutzend Tools nicht mehr zuverlässig das richtige auswählt, und empfiehlt fokussierte Server pro Rolle.
 
-Community-Server von npm oder GitHub sind die dritte Option. Die [Security Best Practices des MCP-Projekts](https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices) warnen, dass lokale Server mit denselben Rechten wie der Client laufen und beliebigen Code ausführen können. Gegen eine Produktion würde ich nur Server zulassen, die Salesforce selbst betreibt.
+Community-Server von npm oder GitHub sind die dritte Option. Die [Security Best Practices des MCP-Projekts](https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices) warnen, dass lokale Server mit denselben Rechten wie der Client laufen und beliebigen Code ausführen können. Für den Zugriff auf eine Produktions-Org würde ich nur Server zulassen, die Salesforce selbst betreibt.
 
 ### 2. Welche Benutzer dürfen sich verbinden?
 
@@ -93,14 +93,14 @@ Starten Sie mit `sobject-reads`, dem lesenden Server, den Salesforce als „a gr
 
 Salesforce nennt [Claude, ChatGPT, Cursor und Postman](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/setup-overview.html) als Clients. Jeder externe Client wird als External Client App mit einer eigenen Callback-URL registriert, angelegt von einem Admin; dynamische Client-Registrierung wird nicht unterstützt. Agentforce Vibes ist die [dokumentierte Ausnahme](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/client-connection-overview.html). Mit diesen Richtlinien bindet niemand ein neues externes KI-Werkzeug ohne die IT an, und jede External Client App ist eine Entscheidung über einen Anbieter, einen Vertrag und einen Datenfluss.
 
-Für Salesforce in Claude, das noch Beta ist und von Salesforce für Ihre Organisation freigegeben werden muss, legen Claude-Owner laut [Anthropics Einrichtungsanleitung](https://support.claude.com/en/articles/16952184-set-up-salesforce-in-claude-for-your-organization) pro Gruppe fest, ob das Plugin installiert wird, jede Person meldet sich mit ihrem eigenen Salesforce-Konto an, und Claude fragt standardmäßig vor jeder Änderung nach. Für Agentforce als Client schreibt Trailhead, dass der Einstein Trust Layer greift und Richtlinien im Agentforce Gateway begrenzen können, wie oft ein Agent ein Tool aufruft. Für externe Clients, die Ihre Daten lesen, habe ich keine vergleichbare Aussage gefunden; diese Lücke behandle ich in [Hosted MCP Server: wer darf welche Daten lesen](../salesforce-hosted-mcp-server-datenzugriff/).
+Für Salesforce in Claude, das noch Beta ist und von Salesforce für Ihre Organisation freigegeben werden muss, legen die Claude-Verantwortlichen laut [Anthropics Einrichtungsanleitung](https://support.claude.com/en/articles/16952184-set-up-salesforce-in-claude-for-your-organization) pro Gruppe fest, ob das Plugin installiert wird, jede Person meldet sich mit ihrem eigenen Salesforce-Konto an, und Claude fragt standardmäßig vor jeder Änderung nach. Für Agentforce als Client schreibt Trailhead, dass der Einstein Trust Layer greift und Richtlinien im Agentforce Gateway begrenzen können, wie oft ein Agent ein Tool aufruft. Für externe Clients, die Ihre Daten lesen, habe ich keine vergleichbare Aussage gefunden; diese Lücke behandle ich in [Hosted MCP Server: wer darf welche Daten lesen](../salesforce-hosted-mcp-server-datenzugriff/).
 
 ## Beispiel: vier MCP-Anfragen in einem Monat
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, einem Händlerportal und SAP. Alle Zahlen sind Annahmen. Innerhalb eines Monats erreichen die IT vier Anfragen:
 
 - **After-Sales:** 20 Personen im Serviceinnendienst möchten Claude nach offenen Fällen, installierten Maschinen und Garantiestatus fragen. Entscheidung: Pilot. Ein Custom Server mit drei Tools (offene Fälle pro Account, Maschinenhistorie nach Seriennummer als Flow, Garantiestatus als Named Query), gebunden an ein eigenes Permission Set und zuerst in einer Sandbox getestet.
-- **Vertriebsinnendienst:** möchte, dass ChatGPT nach Händlerbesuchen Opportunities aktualisiert. Entscheidung: später. Ein zweiter KI-Anbieter bedeutet eine zweite Vertragsprüfung, und Schreibzugriff wartet, bis der lesende Pilot acht Wochen gelaufen ist.
+- **Sales Operations:** möchte, dass ChatGPT nach Händlerbesuchen Opportunities aktualisiert. Entscheidung: später. Ein zweiter KI-Anbieter bedeutet eine zweite Vertragsprüfung, und Schreibzugriff wartet, bis der lesende Pilot acht Wochen gelaufen ist.
 - **Implementierungspartner:** möchte einen Community-MCP-Server mit Produktionszugang, um Daten schneller zu korrigieren. Entscheidung: nein. Partner arbeiten in Sandboxes, Änderungen an der Produktion laufen über die Pipeline. Das gehört in den Vertrag, siehe [Partner mit KI-Coding: Regeln für den Vertrag](../partner-ki-coding-regeln-vertrag/).
 - **Ersatzteilwesen:** möchte einen Agentforce-Agenten, der beim MCP-Server eines Teilelieferanten die Verfügbarkeit abfragt. Entscheidung: testen. Server in der Agentforce Registry registrieren, zwei Tools freigeben, ein Gateway-Limit setzen und in den Bedingungen des Lieferanten prüfen, was mit Ihren Abfragen passiert.
 

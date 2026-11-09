@@ -17,7 +17,7 @@ takeaways:
   - "Die neue Scheduling Console gibt es nur mit der neuen Engine. Wer bei der alten Engine bleibt, verzichtet also auch auf den neuen Disponenten-Bildschirm."
 faq:
   - q: "Was ist Enhanced Scheduling and Optimization in Salesforce Field Service?"
-    a: "Es ist die neuere Planungs- und Optimierungs-Engine von Field Service. Sie verteilt Termine wie die ältere Engine nach Scheduling Policy auf Techniker, hat aber höhere Limits, behandelt einige Work Rules anders und rechnet Fahrzeiten punktgenau vorausschauend. Neue Orgs haben sie standardmäßig aktiv."
+    a: "Es ist die neuere Planungs- und Optimierungs-Engine von Field Service. Sie verteilt Termine wie die ältere Engine nach Scheduling Policy auf Techniker, hat aber höhere Limits, behandelt einige Work Rules anders und berechnet Fahrzeiten vorausschauend von Punkt zu Punkt. Neue Orgs haben sie standardmäßig aktiv."
   - q: "Kann ich Enhanced Scheduling and Optimization nur für ein Servicegebiet einschalten?"
     a: "Ja. Laut dem Field-Service-Leitfaden können bestehende Orgs alle Servicegebiete umstellen oder die neue Engine pro Gebiet aktivieren. So ist ein Pilotgebiet möglich, bevor der Rest folgt."
   - q: "Was passiert mit Scheduling Recipes nach dem Wechsel?"
@@ -44,21 +44,21 @@ Die [Limits für Enhanced Scheduling and Optimization](https://help.salesforce.c
 | Limit | Enhanced Scheduling and Optimization |
 |---|---|
 | Skills pro Serviceressource | 250, bei der älteren Engine 100 |
-| Optimierte Servicetermine | 50.000 pro rollierenden 24 Stunden oder 500 pro Field Service Scheduling-Lizenz, je nachdem, was höher ist |
+| Optimierte Servicetermine | 50.000 innerhalb rollierender 24 Stunden oder 500 pro Field Service Scheduling-Lizenz, je nachdem, was höher ist |
 | Horizont für Abwesenheiten und Terminänderungen | 30 Tage, spätere Änderungen bekommen keine Aktualisierung von Fahrzeit und Mittagspause |
-| Servicegebiete pro geplantem Optimierungsjob | 100, mit Dynamic Scaling 1.000 |
+| Servicegebiete pro geplanter Optimierungsanfrage | 100, mit Dynamic Scaling 1.000 |
 
 Auf das Skill-Limit würde ich zuerst schauen. Ein Servicetechniker bei einem Maschinenbauer hat oft Skills pro Baureihe, pro Steuerung, pro Sicherheitsunterweisung und pro Sprache. Mit 100 Skills wird das bei größeren Produktprogrammen eng. Mit 250 ist Luft.
 
 Die 50.000 Termine sind selten der Engpass. Eine Serviceorganisation mit 45 Technikern bleibt weit darunter, und die Zahl gilt, bis Sie mehr als 100 Scheduling-Lizenzen haben. Den Verbrauch sehen Sie im Setup unter Unternehmensinformationen.
 
-Der 30-Tage-Horizont betrifft geplante Wartungen. Bucht die Disposition Jahreswartungen zwei Monate im Voraus, liegen diese Termine außerhalb des Fensters, in dem die Engine Fahrzeiten aktualisiert. Im Piloten würde ich prüfen, ob die Optimierung diese Termine neu ordnet, sobald sie ins Fenster rücken, und weit entfernte Buchungen bewusst neu einplanen, statt es anzunehmen.
+Der 30-Tage-Horizont betrifft geplante Wartungen. Bucht die Disposition Jahreswartungen zwei Monate im Voraus, liegen diese Termine außerhalb des Fensters, in dem die Engine Fahrzeiten aktualisiert. Im Piloten würde ich prüfen, ob die Optimierung diese Termine neu ordnet, sobald sie ins Fenster rücken, und weit in der Zukunft liegende Buchungen bewusst neu einplanen, statt davon auszugehen, dass das automatisch geschieht.
 
-Laut den [Hinweisen zu Enhanced Scheduling and Optimization](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_considerations.htm&language=en_US&type=5) rechnet die Engine Fahrzeiten mit punktgenauem, vorausschauendem Routing. Dafür braucht es Kartenabdeckung in den Regionen, in denen Ihre Techniker arbeiten. Die Optimierung muss außerdem nicht eigens aktiviert werden, weil sie mit einem Platform Integration User läuft.
+Laut den [Hinweisen zu Enhanced Scheduling and Optimization](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_considerations.htm&language=en_US&type=5) rechnet die Engine Fahrzeiten mit vorausschauendem Punkt-zu-Punkt-Routing. Dafür braucht es Kartenabdeckung in den Regionen, in denen Ihre Techniker arbeiten. Die Optimierung muss außerdem nicht eigens aktiviert werden, weil sie mit einem Platform Integration User läuft.
 
 ## Was fällt weg, und was verhält sich anders?
 
-Zwei Dinge fallen weg. Scheduling Recipes, also Automatismen, die bestimmte Ereignisse auslösen, um Überschneidungen im Plan aufzulösen, sind nicht verfügbar. Die Salesforce-Hilfe nennt den automatisierten Flow Fix Schedule Overlaps als Ersatz. Optimization Insights wird durch den Optimization Hub ersetzt. Wenn Ihre Disponenten heute auf Recipes bauen, muss der Ersatz vor dem Wechsel entworfen und getestet sein, nicht danach.
+Zwei Dinge fallen weg. Scheduling Recipes, also Automatisierungen, die bei bestimmten Ereignissen Überschneidungen im Terminplan auflösen, sind nicht verfügbar. Die Salesforce-Hilfe nennt den automatisierten Flow Fix Schedule Overlaps als Ersatz. Optimization Insights wird durch den Optimization Hub ersetzt. Wenn Ihre Disponenten heute auf Recipes bauen, muss der Ersatz vor dem Wechsel entworfen und getestet sein, nicht danach.
 
 Dazu kommen Work Rules, die mit denselben Daten andere Ergebnisse liefern. Derselbe Hilfeartikel listet sie auf.
 
@@ -69,7 +69,7 @@ titel: Welche Work Rules verhalten sich anders?
 - **Match Territory** macht einen Termin ohne Servicegebiet für Ressourcen aus allen Gebieten offen.
 - **Working Territories**: Sekundäre Gebietszuordnungen werden anders behandelt.
 - **Match Skills** bekommt zusätzlich die Option "mindestens ein Skill passt".
-- **Kapazitätsbasierte Ressourcen** verlieren die Unterstützung für Abwesenheiten und Effizienz.
+- **Kapazitätsbasierte Ressourcen:** Die Unterstützung für Abwesenheiten und Ressourceneffizienz entfällt.
 - **In-Day-Optimierung** hat eine andere Laufzeit.
 ```
 
@@ -81,7 +81,7 @@ Eine Änderung hilft Herstellern direkt. Termine, die gegen eine Regel verstoße
 
 Salesforce hat inzwischen zwei Oberflächen für Disponenten: die Classic Dispatch Console mit dem bekannten Gantt und die neue Scheduling Console. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-quick-look/didispatch-smarter-with-the-scheduling-console) ist die Scheduling Console nur mit Enhanced Scheduling and Optimization verfügbar.
 
-Damit hängen zwei Entscheidungen zusammen, die getrennt aussehen, allerdings nur in eine Richtung. Eine Org, die bei der älteren Engine bleibt, bleibt auch bei der Classic Dispatch Console; eine Org mit der neuen Engine kann die Classic Dispatch Console im Übergang weiter nutzen. Neue Funktionen der Konsole, etwa KI-Erklärungen zu vorgeschlagenen Terminen oder mehrtägige Einsätze, die Winter '27 als einen zusammenhängenden Auftrag zeigt, bleiben dann außer Reichweite. Ob Ihre Disponenten jetzt wechseln sollten, behandle ich in [Scheduling Console im Field Service: Disponenten umstellen?](../field-service-scheduling-console-disponenten/).
+Damit sind zwei scheinbar getrennte Entscheidungen verknüpft, allerdings nur in eine Richtung. Eine Org, die bei der älteren Engine bleibt, bleibt auch bei der Classic Dispatch Console; eine Org mit der neuen Engine kann die Classic Dispatch Console im Übergang weiter nutzen. Neue Funktionen der Konsole, etwa KI-Erklärungen zu vorgeschlagenen Terminen oder mehrtägige Einsätze, die Winter '27 als einen zusammenhängenden Auftrag zeigt, bleiben dann außer Reichweite. Ob Ihre Disponenten jetzt wechseln sollten, behandle ich in [Scheduling Console im Field Service: Disponenten umstellen?](../field-service-scheduling-console-disponenten/).
 
 ## Rechenbeispiel: erst ein Pilotgebiet
 

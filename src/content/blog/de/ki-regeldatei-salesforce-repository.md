@@ -10,11 +10,11 @@ topic: devops
 categories: [devops, ai]
 tags: [KI-Coding, DevOps, Partnersteuerung, Claude Code, Agentforce Vibes, Maschinenbau]
 takeaways:
-  - "Sobald intern oder beim Partner mit Agenten programmiert wird, braucht ein gemeinsames Repository eine Regeldatei: CLAUDE.md, AGENTS.md oder Regeln in .vibes/rules/."
+  - "Sobald intern oder beim Partner mit Agenten programmiert wird, braucht das gemeinsame Repository eine Regeldatei: CLAUDE.md, AGENTS.md oder .vibes/rules/."
   - "Die Datei liegt im Repository des Kunden und hat dort eine verantwortliche Person; Partner schlagen Änderungen per Pull Request vor."
   - "Claude behandelt CLAUDE.md laut Anthropic als Kontext. Was immer gelten muss, gehört in Deny-Regeln, Hooks, Pipeline-Gates und Branch Protection."
-  - "Claude Code liest AGENTS.md nur ohne CLAUDE.md; eine einzeilige CLAUDE.md, die sie importiert, hält eine gemeinsame Datei für alle Werkzeuge gültig."
-  - "Schützen Sie die Regeldateien mit CODEOWNERS, denn Copilot Code Review liest die Anweisungen aus dem Branch des Pull Requests."
+  - "Claude Code liest AGENTS.md nur ohne CLAUDE.md; eine einzeilige CLAUDE.md, die sie importiert, sorgt dafür, dass alle Werkzeuge dieselbe Datei nutzen."
+  - "Schützen Sie die Regeldateien mit CODEOWNERS, denn Copilot Code Review liest die Anweisungen aus dem Head-Branch des Pull Requests."
 faq:
   - q: "Brauche ich für jedes Coding-Werkzeug eine eigene KI-Regeldatei?"
     a: "Meist nicht. Eine AGENTS.md bedient Codex und Copilot, Claude Code über eine kurze CLAUDE.md, die sie importiert. Agentforce Vibes liest .vibes/rules/, und die Vibes-Dokumentation erwähnt AGENTS.md nicht. Pflegen Sie dort eine kurze Regel und ändern Sie sie im selben Pull Request."
@@ -31,7 +31,7 @@ Eine KI-Regeldatei ist die Markdown-Datei, die ein Coding-Agent als dauerhafte A
 
 ## Was ist eine KI-Regeldatei, und welches Werkzeug liest welche Datei?
 
-Eine Regeldatei enthält dauerhafte Projektanweisungen in einfachem Markdown: Befehle, Konventionen, Fallstricke und was „fertig“ bedeutet. Der Agent lädt sie beim Start einer Sitzung in seinen Kontext, Pfadregeln erst bei passenden Dateien, und muss Ihr Projekt nicht jedes Mal neu erkunden. Die vier Werkzeuge hier nutzen unterschiedliche Namen:
+Eine Regeldatei enthält dauerhafte Projektanweisungen in einfachem Markdown: Befehle, Konventionen, Fallstricke und was „fertig“ bedeutet. Der Agent lädt die Datei beim Start einer Sitzung in seinen Kontext, Pfadregeln erst, wenn er passende Dateien bearbeitet. So muss er Ihr Projekt nicht jedes Mal neu erkunden. Die vier Werkzeuge hier nutzen unterschiedliche Namen:
 
 ```tabelle
 titel: Welches Werkzeug welche Datei liest
@@ -83,7 +83,7 @@ Alles, was ohne Ausnahme gelten muss, gehört an einen Ort, mit dem das Modell n
 ```tabelle
 titel: Wohin die harten Regeln gehören
 spalten: Regel | Wohin sie gehört | Warum dort
-Kein direktes Lesen von Anmeldedateien, keine Deploy-Befehle gegen Produktion | Deny-Regeln in den eingecheckten Claude-Settings | Blocken direkte Versuche des Agenten in jedem Berechtigungsmodus, keine Sicherheitsgrenze *
+Kein direktes Lesen von Anmeldedateien, keine Deploy-Befehle gegen Produktion | Deny-Regeln in den eingecheckten Claude-Settings | Blockieren direkte Versuche des Agenten in jedem Berechtigungsmodus, keine Sicherheitsgrenze *
 Kein „fertig“ bei roten Tests | Ein Hook, der läuft, wenn der Agent aufhören will | Schickt den Agenten zurück an die Arbeit
 Codeanalyse, Tests, Validierungsdeployment | Pipeline als Merge-Gate | Läuft unabhängig vom Werkzeug *
 Kein Agent in Produktion | Keine Produktionszugänge auf Entwicklerrechnern; Vibes je Produktions-Org aus | Eine Textdatei entzieht keinen bestehenden Zugriff
@@ -113,7 +113,7 @@ Der Kunde richtet daraufhin ein:
 - Eingecheckte Deny-Regeln für den Produktions-Alias sowie Code Analyzer, Tests und Validierungs-Deployment als Merge-Gates in der Pipeline des Kunden.
 - CODEOWNERS für alle Regel- und Settings-Dateien.
 
-Die Vorlage von Partner A wird zum Vorschlags-Pull-Request; eine Handvoll Zeilen bleibt. Angenommen sind zwei Tage für die erste Fassung und danach eine halbe Stunde pro Sprint. Der Reviewer prüft weiter, schreibt aber nicht mehr dieselben Kommentare.
+Partner A reicht seine Vorlage als Pull Request ein; nur eine Handvoll Zeilen wird übernommen. Ich nehme zwei Tage für die erste Fassung an und danach eine halbe Stunde pro Sprint. Der Reviewer prüft weiter, schreibt aber nicht mehr dieselben Kommentare.
 
 ## Änderungen laufen per Pull Request mit CODEOWNERS
 

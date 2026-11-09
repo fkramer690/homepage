@@ -2,6 +2,7 @@
 title: "Account manager targets: sales targets per customer"
 description: "What account manager targets in Manufacturing Cloud do, how targets flow down to accounts and products, and which data they need before the spreadsheet can go."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: account-manager-targets-sales-targets
 translationKey: manufacturing-cloud-account-manager-targets

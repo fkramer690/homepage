@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Bevor Garantieprüfung, Rückrufe oder ein Agent in der Manufacturing Cloud arbeiten können, braucht jede Maschine ein Asset mit Seriennummer, Produkt, Betreiber, Standort und dem Datum, an dem die Garantie beginnt. Die Manufacturing Cloud ergänzt drei Dinge: Asset-Meilensteine für Ereignisse im Lebenszyklus, Beteiligte auf Account- und Kontaktebene und Flotten für Kunden mit vielen Maschinen. Das Datenmodell ist der leichte Teil. Schwierig ist die Herkunft der Daten, denn ERP-Lieferung, Registrierung durch den Händler und Inbetriebnahme kennen jeweils nur einen Teil. Ich würde festlegen, wem welches Feld gehört, bevor der erste Garantieantrag geprüft wird.
+Bevor die Manufacturing Cloud Garantieprüfung, Rückrufe oder einen Agenten unterstützen kann, braucht jede Maschine ein Asset mit Seriennummer, Produkt, Betreiber, Standort und dem Datum, an dem die Garantie beginnt. Die Manufacturing Cloud ergänzt drei Dinge: Asset-Meilensteine für Ereignisse im Lebenszyklus, Beteiligte auf Account- und Kontaktebene und Flotten für Kunden mit vielen Maschinen. Das Datenmodell ist der leichte Teil. Schwierig ist die Herkunft der Daten, denn ERP-Lieferung, Registrierung durch den Händler und Inbetriebnahme kennen jeweils nur einen Teil. Ich würde festlegen, wem welches Feld gehört, bevor der erste Garantieantrag geprüft wird.
 
 ## Was muss die Manufacturing Cloud über jede Maschine wissen?
 
@@ -44,7 +44,7 @@ Hauptbaugruppen können als untergeordnete Assets unter der Maschine stehen. Wie
 
 ## Was halten Asset-Meilensteine fest?
 
-Ein Asset-Meilenstein ist ein datiertes Ereignis im Leben einer Maschine. Die [Objektreferenz AssetMilestone](https://developer.salesforce.com/docs/atlas.en-us.264.0.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_assetmilestone.htm) beschreibt ihn als „the key events in the lifecycle of an asset, such as manufacturing, registration, or resale“. Das Objekt gibt es ab API 58.0, es hängt per Master-Detail am Asset. Die Felder:
+Ein Asset-Meilenstein ist ein datiertes Ereignis im Leben einer Maschine. Die [Objektreferenz AssetMilestone](https://developer.salesforce.com/docs/atlas.en-us.264.0.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_assetmilestone.htm) beschreibt ihn als „the key events in the lifecycle of an asset, such as manufacturing, registration, or resale“. Das Objekt gibt es ab API-Version 58.0 und hängt über eine Master-Detail-Beziehung am Asset. Die Felder:
 
 | Feld | Inhalt |
 |---|---|
@@ -81,7 +81,7 @@ Keine der Quellen kennt alles. Ein Rechenbeispiel mit angenommenen Zahlen: Ein M
 | Händler, der die Maschine erhalten hat | ERP-Lieferung | ERP |
 | Endkunde, Übergabedatum | Registrierung im Händlerportal | Händler erfasst, Hersteller prüft |
 | Installationsdatum, Standort | Inbetriebnahmeprotokoll | Service |
-| Betriebsstunden | Händler, Kunde oder Telemetrie | Hängt an den Garantiebedingungen |
+| Betriebsstunden | Händler, Kunde oder Telemetrie | Hängt von den Garantiebedingungen ab |
 
 In diesem Szenario hängt der Garantiebeginn am Händler. Ist die Registrierung freiwillig, fehlt bei einem großen Teil der Maschinen das Startdatum, und jeder Antrag dazu wird zur Handarbeit. Ich würde die Registrierung im Portal zur Pflicht machen, am besten verknüpft mit etwas, das der Händler will, etwa dass Garantieanträge nur für registrierte Maschinen angenommen werden. Welche Lizenz Händler dafür brauchen, steht im Beitrag zum [Kundenportal der Manufacturing Cloud](../manufacturing-cloud-kundenportal/).
 
@@ -95,7 +95,7 @@ Eine Konsole wirkt nur so vollständig wie die Daten dahinter. Das gilt genauso 
 
 ## Beim Arbeitsauftrag beginnt Field Service
 
-Assets, Meilensteine, Beteiligte und Flotten sind gemeinsamer Boden. Wartungspläne, Arbeitsaufträge, Termine und Technikerlager gehören zu Field Service, beschrieben im [Kapitel zu Assets und Wartung der Field-Service-Masterclass](../../masterclass/field-service/field-service-assets-wartung-teile/) und im Beitrag zu [Wartungsverträgen](../salesforce-field-service-wartungsvertraege/). Entwerfen Sie das Asset-Modell einmal für beide, nicht pro Projekt.
+Assets, Meilensteine, Beteiligte und Flotten bilden die gemeinsame Grundlage. Wartungspläne, Arbeitsaufträge, Servicetermine und Technikerbestände gehören zu Field Service, beschrieben im [Kapitel zu Assets und Wartung der Field-Service-Masterclass](../../masterclass/field-service/field-service-assets-wartung-teile/) und im Beitrag zu [Wartungsverträgen](../salesforce-field-service-wartungsvertraege/). Entwerfen Sie das Asset-Modell einmal für beide, nicht pro Projekt.
 
 Zwei Add-ons kommen hier oft auf den Tisch. Laut [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) kostet Connected Assets 15.000 US-Dollar pro Org und Monat bei jährlicher Abrechnung und bringt Telemetrie; Asset Service Lifecycle Management kostet 75 US-Dollar pro Nutzer und Monat und ist zu den Field-Service-Editionen buchbar (Field Service Max enthält laut Field-Service-Preisseite ASLM und Connected Assets). Für eine saubere installierte Basis brauchen Sie keines davon. Ob Telemetrie sich lohnt, steht in [Predictive Maintenance in Salesforce](../predictive-maintenance-salesforce-datenbasis/).
 

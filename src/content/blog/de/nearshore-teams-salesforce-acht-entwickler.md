@@ -31,7 +31,7 @@ Ich begrenze Nearshore-Teams für Salesforce auf etwa acht Entwickler. Mit Produ
 
 ## Warum höchstens acht Entwickler?
 
-Der [Scrum Guide](https://scrumguides.org/scrum-guide.html) beschreibt ein Scrum Team als typischerweise zehn oder weniger Personen. Klein genug, um beweglich zu bleiben, groß genug, um in einem Sprint etwas Relevantes fertigzustellen. Er schreibt auch, dass kleinere Teams nach seiner Erfahrung besser kommunizieren und produktiver sind. Zieht man Product Owner und Scrum Master ab, bleiben rund acht Entwickler. "Developers" meint im Scrum Guide alle, die am Ergebnis bauen, in einem Salesforce-Team also auch Admins, Tester und Business Analysten, nicht nur Programmierer.
+Der [Scrum Guide](https://scrumguides.org/scrum-guide.html) beschreibt ein Scrum Team als typischerweise zehn oder weniger Personen. Klein genug, um beweglich zu bleiben, groß genug, um in einem Sprint etwas Relevantes fertigzustellen. Er weist außerdem darauf hin, dass kleinere Teams tendenziell besser kommunizieren und produktiver sind. Zieht man Product Owner und Scrum Master ab, bleiben rund acht Entwickler. "Developers" meint im Scrum Guide alle, die am Ergebnis bauen, in einem Salesforce-Team also auch Admins, Tester und Business Analysten, nicht nur Programmierer.
 
 Die Rechnung dahinter ist einfach. In einem Team mit n Personen gibt es n mal (n minus 1) geteilt durch zwei mögliche Abstimmungswege zwischen je zwei Personen. Gezählt wird das ganze Team, Product Owner und Scrum Master eingeschlossen, und die Zahl zeigt mögliche Wege, nicht den tatsächlichen Aufwand:
 
@@ -50,15 +50,15 @@ Bei Nearshore-Teams kommt dazu, dass ein Teil der Abstimmung über Zeitzonen, Sp
 
 Ein Team mit zwölf oder fünfzehn Entwicklern funktioniert selten so, wie es auf dem Papier geplant war. Typisch sind drei Muster:
 
-- **Sprint-Meetings werden lang.** Mit fünfzehn Personen bleibt ein Daily in seinen fünfzehn Minuten selten nützlich, und die meisten hören bei den Themen der anderen nur zu. Detailabstimmung wandert in Zusatztermine, und Planning und Review behandeln viele Themen, die nur einen Teil des Teams betreffen.
-- **Abstimmung verlagert sich in kleine Gruppen.** Im großen Team bilden sich inoffizielle Untergruppen, die eigene Absprachen treffen. Die Vorteile kleiner Teams entstehen also trotzdem, nur ohne klare Verantwortung.
+- **Sprint-Meetings werden lang.** Mit fünfzehn Personen lässt sich ein nützliches Daily selten auf fünfzehn Minuten begrenzen, und die meisten hören bei den Themen der anderen nur zu. Detailabstimmung wandert in Zusatztermine, und Planning und Review behandeln viele Themen, die nur einen Teil des Teams betreffen.
+- **Abstimmung verlagert sich in kleine Gruppen.** Im großen Team bilden sich inoffizielle Untergruppen, die eigene Absprachen treffen. Am Ende entstehen also doch kleine Teams, nur ohne klare Verantwortung.
 - **Konflikte in der Org nehmen zu.** Ohne klare Verantwortung, Versionskontrolle und saubere Merges bedeuten mehr Entwickler, die gleichzeitig dieselben Objekte ändern, mehr Merge-Konflikte, mehr versehentlich überschriebene Metadaten und mehr Fehler, die keinem Team zugeordnet werden können.
 
-Dazu kommt ein kaufmännischer Effekt. Die meisten Nearshore-Verträge, die ich sehe, laufen nach Aufwand oder Kapazität, jede zusätzliche Person kostet also sofort. Wenn zusätzliche Entwickler vor allem zusätzliche Abstimmung erzeugen, steigt der Tagessatz des Teams, aber nicht die Lieferung.
+Dazu kommt ein kaufmännischer Effekt. Die meisten Nearshore-Verträge, die ich sehe, laufen nach Aufwand oder Kapazität, jede zusätzliche Person kostet also sofort. Wenn zusätzliche Entwickler vor allem zusätzliche Abstimmung erzeugen, steigen die täglichen Kosten des Teams, ohne dass es mehr liefert.
 
 ## Mehr Kapazität heißt mehrere Teams mit klaren Verantwortungsbereichen
 
-Braucht ein Programm mehr als acht Entwickler, setze ich mehrere Teams auf, jedes mit einem klaren Verantwortungsbereich. Der Scrum Guide empfiehlt dasselbe: Ein zu großes Team soll sich in mehrere zusammenhängende Teams aufteilen, die am selben Produkt arbeiten.
+Braucht ein Programm mehr als acht Entwickler, setze ich mehrere Teams auf, jedes mit einem klaren Verantwortungsbereich. Der Scrum Guide empfiehlt dasselbe: Ein zu großes Team soll sich in mehrere zusammengehörige Teams aufteilen, die am selben Produkt arbeiten.
 
 ![Mehrere kleine Teams auf einer gemeinsamen Basis: Jedes Team hat bis zu etwa acht Entwickler und klare Verantwortlichkeiten. Vom ersten Tag an arbeitet jedes Team mit denselben Standards, Pull-Request-Reviews und derselben Pipeline wie alle anderen. Regeln zu Besetzung und Rotation werden vor dem ersten Sprint vereinbart, und ein Programmplan mit Streams und Abhängigkeiten sowie ein Release-Prozess halten die Teams zusammen.](../../../assets/blog/nearshore-team-setup-de.png)
 
@@ -71,7 +71,7 @@ Damit mehrere Teams nicht wieder ein großes Team werden, brauchen sie vier geme
 
 Die Teams müssen nicht gleich groß sein. Ein Stream mit vielen Schnittstellen braucht vielleicht sechs Entwickler, ein kleiner Stream drei. Wichtig ist, dass keins über acht wächst und dass jedes weiß, wofür es verantwortlich ist.
 
-In der Praxis ist die Grenze selten ein Problem, wenn die Teams entlang der Streams geschnitten sind. Ein Stream ist selten so groß, dass mehr als acht Personen zum Beispiel an der Sales Cloud arbeiten. Wird ein Team größer, liegen die Aufgaben meist schon so weit auseinander, dass zwei Teams mehr Sinn ergeben. Häufig sehe ich das Gegenteil: Sales und Service landen in einem Topf, weil beide auf Account und Contact arbeiten. Das ergibt nur bedingt Sinn, denn die Prozesse, Fachbereiche und Releases der beiden unterscheiden sich stark.
+In der Praxis ist die Grenze selten ein Problem, wenn die Teams entlang der Streams geschnitten sind. Ein Stream ist selten so groß, dass mehr als acht Personen zum Beispiel an der Sales Cloud arbeiten. Wird ein Team größer, liegen die Aufgaben meist schon so weit auseinander, dass zwei Teams mehr Sinn ergeben. Häufig sehe ich das Gegenteil: Sales und Service landen in einem Topf, weil beide auf Account und Contact arbeiten. Das ergibt nur bedingt Sinn, denn ihre Prozesse, fachlichen Verantwortlichen und Releases unterscheiden sich stark.
 
 ```praxis
 In meinem größten Programm waren auch Nearshore-Teams dabei. Meist haben sie einzelne Streams komplett gestemmt, vom Backlog bis zum Release. Das funktioniert gut, weil ein Team dann einen klaren Bereich hat und nicht für mehrere Streams gleichzeitig arbeitet.
@@ -107,4 +107,4 @@ Haben Sie bereits ein Nearshore-Team, beantworten Sie drei Fragen:
 2. **Wie viele Personen haben im letzten halben Jahr das Team verlassen?** Ist die Zahl hoch, ist Rotation wahrscheinlich das größere Problem als die Größe.
 3. **Wer verantwortet welche Objekte?** Ist das nirgends festgehalten, beginnen Sie mit einer Object Ownership Matrix, bevor Sie Teams teilen.
 
-Planen Sie ein neues Setup, legen Sie Teamgröße, Rollen und Rotationsregeln fest, bevor Sie Angebote vergleichen. Dann vergleichen Sie Partner auf derselben Grundlage, und nicht nur über den Tagessatz. Wie ich Programme mit Nearshore-Teams plane und steuere, beschreibe ich unter [Programmsteuerung und Nearshore-Teams](../../leistungen/projektsteuerung-nearshore/).
+Planen Sie ein neues Setup, legen Sie Teamgröße, Rollen und Rotationsregeln fest, bevor Sie Angebote vergleichen. Dann vergleichen Sie Partner auf derselben Grundlage statt allein über den Tagessatz. Wie ich Programme mit Nearshore-Teams plane und steuere, beschreibe ich unter [Programmsteuerung und Nearshore-Teams](../../leistungen/projektsteuerung-nearshore/).

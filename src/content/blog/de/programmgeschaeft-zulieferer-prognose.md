@@ -20,7 +20,7 @@ faq:
   - q: "Woher kommen die Programmprognosen?"
     a: "Laut Trailhead importieren Account Manager Programm- und Variantenprognosen aus externen Marktdaten als CSV-Dateien. Datensätze werden über eine externe Referenznummer abgeglichen, eine neue Datei aktualisiert also bestehende Prognosen, statt sie zu verdoppeln."
   - q: "Wie wird aus einer Komponentenprognose ein Sales Agreement?"
-    a: "Die Transformation API wandelt abgeschlossene Komponentenprognosen in eine Opportunity mit Positionen und Zeitplänen pro Periode um. Ist die Opportunity gewonnen, macht die Sales Agreement Connect API daraus ein Sales Agreement mit Produkten."
+    a: "Die Transformation API wandelt abgeschlossene Komponentenprognosen in eine Opportunity mit Opportunity-Produkten und Zeitplänen pro Periode um. Ist die Opportunity gewonnen, macht die Sales Agreement Connect API daraus ein Sales Agreement mit Produkten."
   - q: "Welche Berechtigungssätze braucht das Programmgeschäft?"
     a: "Die Salesforce-Hilfe nennt Manufacturing Advanced Account Forecast und Manufacturing Program Based Business für Anwender sowie Data Pipelines Base User für Admins, die Definitionen der Data Processing Engine ausführen. Dazu brauchen die Nutzer die passenden Permission Set Licenses, und wer Sales Agreements anlegt, die Berechtigungen für Sales Agreements."
 draft: false
@@ -32,7 +32,7 @@ Das Programmgeschäft in der Manufacturing Cloud hilft Zulieferern, die Komponen
 
 [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business) beschreibt die Zulieferpyramide: oben der OEM, darunter Tier-1-, Tier-2- und Tier-3-Zulieferer. Startet der OEM eine neue Produktlinie, ein Programm, muss jeder Zulieferer darunter schätzen, wie viele seiner Teile dieses Programm pro Variante und Monat braucht, lange bevor der erste Auftrag kommt.
 
-Die [Produktseite für den Vertrieb](https://salesforce.com/manufacturing/cloud/sales) nennt, was die Funktion abdeckt: Marktgröße pro Hersteller und Programm, externe Bedarfsdaten mit IHS und Dodge als Beispielen, Margen und die Wirkung von Mengenänderungen auf die Fixkostenverteilung sowie Anbauquoten und Preise für technische Änderungen. Das Beispiel bei Trailhead ist ein Fahrzeugprogramm, das Modell passt aber zu jedem Zulieferer, dessen Teile in Serienprodukte weniger großer Kunden gehen.
+Die [Produktseite für den Vertrieb](https://salesforce.com/manufacturing/cloud/sales) nennt, was die Funktion abdeckt: Marktgröße pro Hersteller und Programm, externe Bedarfsdaten mit IHS und Dodge als Beispielen, Margen und die Wirkung von Mengenänderungen auf die Fixkostenverteilung sowie Verbauraten und Preise für technische Änderungen. Das Beispiel bei Trailhead ist ein Fahrzeugprogramm, das Modell passt aber zu jedem Zulieferer, dessen Teile in Serienprodukte weniger großer Kunden gehen.
 
 Die Funktion gehört zu Kapitel 2 der Masterclass, [Rahmenverträge und Prognosen](../../masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/), neben Account Forecasting. Account Forecasting plant, was bestehende Kunden von bestehenden Produkten abnehmen. Das Programmgeschäft plant den Bedarf von Programmen, die vielleicht noch gar nicht in Serie sind.
 
@@ -46,9 +46,9 @@ Das Datenmodell hat laut [Trailhead](https://trailhead.salesforce.com/content/le
 | Variante | Manufacturing Program Variant Forecast Fact | CSV-Import |
 | Komponente | Manufacturing Program Component Forecast Fact | Data Processing Engine |
 
-Jede Ebene hat ein Forecast Set mit Dimensionen wie Werk, Modell, Variante und Teil und mit Kennzahlen wie Programmmenge, Marktanteil, Verkaufspreis oder erwartetem Gewinn pro Einheit. Alle drei müssen denselben Periodentyp nutzen; das Trailhead-Beispiel arbeitet mit 24 Monatsperioden.
+Jede Ebene hat ein Forecast Set mit Dimensionen wie Werk, Modell, Variante und Teil und mit Kennzahlen wie Programmmenge, Marktanteil, Verkaufspreis pro Einheit oder erwartetem Gewinn pro Einheit. Alle drei müssen denselben Periodengruppentyp nutzen; das Trailhead-Beispiel arbeitet mit 24 Monatsperioden.
 
-Eine Programmvorlage legt fest, welche Forecast Sets auf welcher Ebene gelten, und jedes neue Programm entsteht aus einer Vorlage. Die Verbindung zwischen dem Produkt des OEM und dem Teil des Zulieferers ist der Datensatz Product Related Material: Programm, Variante, Komponente, Menge pro Produkteinheit, Mindestmenge, Vorlaufzeit und Gültigkeitsdaten. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/set-up-programs-and-products) entstehen Komponentenprognosen auf Basis dieser Daten, und eine Prognose unter der Mindestmenge wird auf die Mindestmenge angehoben.
+Eine Programmvorlage legt fest, welche Forecast Sets auf welcher Ebene gelten, und jedes neue Programm entsteht aus einer Vorlage. Die Verbindung zwischen dem Produkt des OEM und dem Teil des Zulieferers ist der Datensatz Product Related Material: Programm, Variante, Komponente, Menge pro Produkteinheit, Mindestmenge, Vorlaufzeit und Gültigkeitsdaten. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/set-up-programs-and-products) entstehen Komponentenprognosen auf Basis dieser Gültigkeitsdaten, und eine Prognose unter der Mindestmenge wird auf die Mindestmenge angehoben.
 
 Diesen Datensatz würde ich zuerst klären. Menge pro Einheit und Vorlaufzeit sind Daten aus Konstruktion und ERP. Pflegt sie in Salesforce niemand, rechnet die Komponentenprognose mit Zahlen, die zum Programmstart gestimmt haben.
 
@@ -56,7 +56,7 @@ Diesen Datensatz würde ich zuerst klären. Menge pro Einheit und Vorlaufzeit si
 
 Account Manager importieren Programm- und Variantenprognosen als CSV-Dateien in die beiden Prognoseobjekte, mit „Add and Update Records“. Abgeglichen wird über das Feld ExternalReferenceNumber, die nächste Datei aktualisiert also bestehende Prognosen, statt sie zu verdoppeln. Im Trailhead-Beispiel kommen die Daten von IHS Markit und werden vor dem Import bereinigt.
 
-Danach passen Menschen an. Forecast Sets legen Anpassungszeiträume fest: Im Beispiel dürfen Account Manager in den ersten fünf Tagen jedes Monats ändern, Konstruktionsleiter in den fünf Tagen danach. Jede Änderung wird mit Notiz festgehalten. Erfährt ein Account Manager vom Einkauf des OEM, dass sich eine Variante besser verkauft als die Marktdaten sagen, kann er die Zahl erhöhen, und der Grund bleibt sichtbar.
+Danach passen Menschen an. Forecast Sets legen Anpassungszeiträume fest: Im Beispiel dürfen Account Manager in den ersten fünf Tagen jedes Monats ändern, Konstruktionsleiter in den fünf Tagen danach. Jede Änderung wird zusammen mit einer Notiz festgehalten. Erfährt ein Account Manager vom Einkauf des OEM, dass sich eine Variante besser verkauft als die Marktdaten sagen, kann er die Zahl erhöhen, und der Grund bleibt sichtbar.
 
 ## Wie werden Komponentenprognosen berechnet?
 
@@ -72,14 +72,14 @@ Admins klonen und passen die Vorlagen an, geplante Flows starten sie, im Beispie
 Für die Architektur folgt daraus zweierlei. Geklonte DPE-Definitionen, Forecast Sets und Flows sind Konfiguration, die wie alles andere durch den Release-Prozess muss, wie in [Daten und Konfiguration in der Pipeline](../../masterclass/devops-release-management/daten-und-konfiguration/) beschrieben. Und die Zahl der Datensätze wächst mit Programmen, Varianten, Komponenten, Dimensionen und Perioden.
 
 ```hinweis offen
-Salesforce dokumentiert [empfohlene Mengen für das Programmgeschäft](https://help.salesforce.com/s/articleView?id=ind.mfg_pbb_admin_considerations_large_volumes_concept.htm&language=en_US&type=5): für große Orgs bis 150 Programme, 60 Perioden und 58,5 Millionen Komponentenprognosen. Eine Org enthält 1 GB Export der Data Processing Engine pro Tag, mit den Standardvorlagen etwa 3 Millionen Prognosedatensätze am Tag; mehr braucht das Data-Pipelines-Add-on.
+Salesforce dokumentiert [empfohlene Mengen für das Programmgeschäft](https://help.salesforce.com/s/articleView?id=ind.mfg_pbb_admin_considerations_large_volumes_concept.htm&language=en_US&type=5): für große Orgs bis 150 Programme, 60 Perioden und 58,5 Millionen Komponentenprognosen. Pro Org ist täglich 1 GB Exportvolumen der Data Processing Engine enthalten, mit den Standardvorlagen etwa 3 Millionen Prognosedatensätze am Tag; für mehr braucht es das Data-Pipelines-Add-on.
 ```
 
 ## Aus der freigegebenen Prognose wird in zwei Schritten ein Sales Agreement
 
-Dafür gibt es zwei API-Schritte. Zuerst wandelt die Transformation API abgeschlossene Komponentenprognosen in eine Opportunity um. Die Zuordnungen werden über die Metadaten ObjectHierarchyRelationship mit dem Usage Type Transformation Mapping definiert: Komponentenprognose zu Opportunity, zu Opportunity-Position und zu deren Zeitplan, dazu eine Hilfszuordnung vom Programm zur Opportunity, weil der Account nicht automatisch gesetzt wird. Ergebnis ist eine Opportunity mit einer Position pro Komponente und einem Zeitplan pro Periode.
+Dafür gibt es zwei API-Schritte. Zuerst wandelt die Transformation API abgeschlossene Komponentenprognosen in eine Opportunity um. Die Zuordnungen werden über die Metadaten ObjectHierarchyRelationship mit dem Usage Type Transformation Mapping definiert: Komponentenprognose zu Opportunity, zu Opportunity-Produkt und zu dessen Zeitplan, dazu eine Hilfszuordnung vom Programm zur Opportunity, weil der Account nicht automatisch gesetzt wird. Ergebnis ist eine Opportunity mit einem Opportunity-Produkt pro Komponente und einem Zeitplan pro Periode.
 
-Ist die Opportunity gewonnen (eine Prozessregel, die ich empfehle, keine technische Voraussetzung), macht die Sales Agreement Connect API aus Opportunity und Positionen ein Sales Agreement mit Produkten. Ab dann übernehmen die Ist-Mengen aus dem ERP, wie in [Sales Agreements: Kunden mit offenen Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/) beschrieben. Entsteht das Agreement stattdessen aus einem konfigurierten Angebot, steht der Weg in [vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/).
+Ist die Opportunity gewonnen (eine Prozessregel, die ich empfehle, keine technische Voraussetzung), macht die Sales Agreement Connect API aus Opportunity und Opportunity-Produkten ein Sales Agreement mit Produkten. Ab dann übernehmen die Ist-Mengen aus dem ERP, wie in [Sales Agreements: Kunden mit offenen Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/) beschrieben. Entsteht das Agreement stattdessen aus einem konfigurierten Angebot, steht der Weg in [vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/).
 
 ```ablauf
 ext: Marktdaten CSV
@@ -105,7 +105,7 @@ Einen Freigabestatus für die Prognose beschreibt Trailhead nicht. Wer eine Komp
 
 Angenommen, ein Hersteller von Hydraulikzylindern liefert in 12 Programme von vier Landmaschinen-OEMs. Jedes Programm hat etwa vier Varianten, jede Variante nutzt etwa zehn Teile des Zulieferers, gefertigt in zwei Werken. Heute führt jeder Key Account Manager eine Tabelle pro OEM.
 
-Bei 24 Monatsperioden sind das etwa 12 x 4 x 10 x 2 x 24 = 23.040 Komponentenprognosen unter diesen vereinfachten Annahmen, weit unter den empfohlenen Mengen. Einzeln prüft die niemand; das Team arbeitet gefilterte Abweichungen ab. Der Nutzen liegt an drei Stellen: eine Rechenlogik statt zwölf Tabellen, Anpassungen mit Begründung und Opportunities, die aus der Prognose entstehen, statt neu abgetippt zu werden. Die Kosten liegen in den Daten: Vorlaufzeiten und Mengen pro Einheit müssen aus der Konstruktion kommen, und Marktdaten zu Landmaschinenprogrammen müssen gekauft oder gesammelt werden.
+Bei 24 Monatsperioden sind das etwa 12 x 4 x 10 x 2 x 24 = 23.040 Komponentenprognose-Datensätze unter diesen vereinfachten Annahmen, weit unter den empfohlenen Mengen. Einzeln prüft die niemand; das Team arbeitet gefilterte Abweichungen ab. Der Nutzen liegt an drei Stellen: eine Rechenlogik statt zwölf Tabellen, Anpassungen mit Begründung und Opportunities, die aus der Prognose entstehen, statt neu abgetippt zu werden. Die Kosten liegen in den Daten: Vorlaufzeiten und Mengen pro Einheit müssen aus der Konstruktion kommen, und Marktdaten zu Landmaschinenprogrammen müssen gekauft oder gesammelt werden.
 
 ## Wann ist das Programmgeschäft zu viel?
 
@@ -114,4 +114,4 @@ Bei 24 Monatsperioden sind das etwa 12 x 4 x 10 x 2 x 24 = 23.040 Komponentenpro
 - **Keine externen oder OEM-Prognosen.** Ohne Programmzahlen gibt es nichts, woraus sich Komponenten ableiten lassen.
 - **Keine Sales Agreements danach.** Die Umwandlung in Opportunities und Rahmenverträge ist die Hälfte des Nutzens.
 
-Wenn Sie es einführen, braucht es eine benannte Person für die Komponentendaten, und die Anbindung an die Planung im ERP braucht eine führende Zahl. Das gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Wenn Sie es einführen, braucht es eine benannte Person für die Komponentendaten, und für die Anbindung an die Planung im ERP muss feststehen, welches System die maßgebliche Zahl liefert. Das gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).

@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-DORA-Metriken zeigen der IT-Leitung, ob Salesforce-Releases schneller und stabiler werden. Sie messen, wie lange eine Änderung bis in Produktion braucht, wie oft deployt wird, wie oft ein Deployment Probleme macht und wie schnell sie behoben sind. In Salesforce kommen die Zahlen aus Git, der Pipeline und Störungsdaten, Werkzeuge wie sfdx-hardis berechnen Näherungswerte aus der Pipeline. Entscheidend ist der Trend über mehrere Monate. Ich nutze die Metriken, um den Release-Prozess zu verbessern, nicht um Partner gegeneinander zu messen. Wer das tut, bekommt geschönte Zahlen.
+DORA-Metriken zeigen der IT-Leitung, ob Salesforce-Releases schneller und stabiler werden. Sie messen, wie lange eine Änderung bis in Produktion braucht, wie oft deployt wird, wie oft ein Deployment Probleme macht und wie schnell sie behoben sind. In Salesforce kommen die Zahlen aus Git, der Pipeline und Störungsdaten. Werkzeuge wie sfdx-hardis berechnen Näherungswerte aus der Pipeline. Entscheidend ist der Trend über mehrere Monate. Ich nutze die Metriken, um den Release-Prozess zu verbessern, nicht um Partner gegeneinander zu messen. Wer das tut, bekommt geschönte Zahlen.
 
 ## Was sind DORA-Metriken?
 
@@ -37,8 +37,8 @@ DORA steht für DevOps Research and Assessment, ein Forschungsprogramm, das seit
 | Durchlaufzeit von Änderungen | Zeit vom Commit bis zum erfolgreichen Deployment in Produktion | Durchsatz |
 | Deployment-Häufigkeit | wie oft Änderungen in Produktion deployt werden | Durchsatz |
 | Wiederherstellungszeit | Zeit bis zur Erholung nach einem Deployment, das sofortiges Eingreifen braucht | Durchsatz |
-| Fehlerquote von Änderungen | Anteil der Deployments, die sofortiges Eingreifen brauchen | Stabilität |
-| Nacharbeitsquote | Anteil ungeplanter Deployments infolge einer Störung in Produktion | Stabilität |
+| Fehlerquote von Änderungen | Anteil der Deployments, die sofortiges Eingreifen brauchen | Instabilität |
+| Nacharbeitsquote | Anteil ungeplanter Deployments infolge einer Störung in Produktion | Instabilität |
 
 Die Nacharbeitsquote ist 2024 als fünfte Kennzahl dazugekommen. Viele Tools und Artikel sprechen deshalb noch von den vier DORA-Metriken.
 
@@ -51,7 +51,7 @@ Die Metriken brauchen eine Datenquelle, in der jede Änderung mit Zeitstempel st
 - **Durchlaufzeit** aus Git: Zeitpunkt des Commits oder des Pull Requests und Zeitpunkt des Deployments in Produktion.
 - **Deployment-Häufigkeit** aus den Läufen der Pipeline gegen die Produktions-Org.
 - **Fehlerquote und Nacharbeitsquote** aus Störungen und Hotfixes: Eine Störung wird dem Deployment zugeordnet, das sie verursacht hat. Hotfix-Branches und Rollbacks sind Hinweise, aber nicht jeder Hotfix repariert das letzte Deployment.
-- **Wiederherstellungszeit** aus dem Ticketsystem: Zeit von der durch das Deployment verursachten Störung bis der Betrieb wieder läuft, per Korrektur, Rollback oder Deaktivieren der Änderung.
+- **Wiederherstellungszeit** aus dem Ticketsystem: Zeit vom Beginn der durch das Deployment verursachten Störung, bis der Betrieb wieder läuft, per Korrektur, Rollback oder Deaktivieren der Änderung.
 
 sfdx-hardis liefert dafür einen Bericht über die Kennzahlen, und auch kommerzielle DevOps-Tools für Salesforce bieten solche Auswertungen. Achten Sie darauf, was so ein Bericht misst: sfdx-hardis zählt fehlgeschlagene Deployment-Jobs als Fehler und misst die Durchlaufzeit ab Erstellung des Pull Requests, die Werte sind also Näherungen aus der Pipeline. Ein roter Job, der nie in Produktion ankam, ist kein Fehler im Sinne von DORA, und ein grüner Job kann trotzdem den Betrieb stören. Das Tool stuft die Werte außerdem nach DORA-Benchmarks von Elite bis Low ein; diese Einstufung würde ich nicht ungeprüft in den Lenkungsausschuss tragen. Die Pipeline dafür setze ich auf der Plattform des Kunden auf, siehe [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
 
@@ -96,7 +96,7 @@ Die Metriken sind nur nützlich, wenn aus einer schlechten Zahl eine Maßnahme f
 - **Hohe Fehlerquote:** Fehler entkommen den Tests. Ein [UAT mit Testnutzern pro Rolle](../salesforce-uat-abnahmetest-fachbereich/) und Regressionstests für die wichtigsten Prozesse fangen viele davon vor der Produktion ab.
 - **Lange Wiederherstellungszeit:** Es gibt keinen schnellen Weg für Korrekturen. Eine Hotfix-Sandbox, die zeitnah auf den Stand der Produktion gebracht wird, und ein eigener Hotfix-Branch verkürzen ihn.
 
-Rechenbeispiel: Ein Programm mit zwölf Releases im Jahr, von denen vier eine Störung mit sofortigem Eingriff verursacht haben, hat eine Fehlerquote von 33 Prozent. Zusammen mit der Wiederherstellungszeit und den betroffenen Prozessen sagt das dem Lenkungsausschuss mehr als eine Liste offener Tickets, und sie lässt sich nach jeder Maßnahme erneut prüfen.
+Rechenbeispiel: Ein Programm mit zwölf Releases im Jahr, von denen vier eine Störung mit sofortigem Eingriff verursacht haben, hat eine Fehlerquote von 33 Prozent. Zusammen mit der Wiederherstellungszeit und den betroffenen Prozessen sagt das dem Lenkungsausschuss mehr als eine Liste offener Tickets und lässt sich nach jeder Maßnahme erneut prüfen.
 
 ## Erster Schritt: Deployment-Häufigkeit und Fehlerquote
 

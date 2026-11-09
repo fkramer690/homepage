@@ -30,7 +30,7 @@ Der Einstieg in Salesforce ist leicht. Ein paar Klicks im Setup, ein Change Set,
 
 ## Was geht schief, wenn ein Salesforce-Programm wächst?
 
-In einer kleinen Org kennt ein Admin jede Änderung. In einem Enterprise-Programm ist dieses Bild verschwunden. Ich habe Programme mit bis zu acht Projektteams und mehr als 30 Entwicklern auf einer Plattform gesteuert. In so einem Umfeld passieren ohne sauberes DevOps-Setup einige Dinge sehr zuverlässig:
+In einer kleinen Org kennt ein Admin jede Änderung. In einem Enterprise-Programm funktioniert das nicht mehr. Ich habe Programme mit bis zu acht Projektteams und mehr als 30 Entwicklern auf einer Plattform gesteuert. In so einem Umfeld treten ohne sauberes DevOps-Setup fast immer dieselben Probleme auf:
 
 - **Änderungen überschreiben sich gegenseitig.** Team A deployt ein Page Layout, Team B deployt einen Tag später dasselbe Objekt mit einem älteren Stand. Es fällt erst auf, wenn sich Anwender beschweren.
 - **Niemand weiß, was in Produktion ist.** Wenn die Org selbst die einzige Quelle der Wahrheit ist, gibt es keine Historie, kein Review und keinen einfachen Weg zurück.
@@ -90,13 +90,13 @@ Dieser letzte Punkt ist mir als [Architekt auf Kundenseite](../../#about) besond
 
 ## So sah das in einem Programm aus, in das ich eingestiegen bin
 
-In einem Programm, in das ich eingestiegen bin, betrieb ein großes Unternehmen Salesforce mit mehreren Implementierungspartnern und internen Teams. Niemand hatte klar festgelegt, wer für welche Prozesse, Objekte und Metadaten die Führung hat. Das Ergebnis war absehbar:
+In einem Programm, in das ich eingestiegen bin, betrieb ein großes Unternehmen Salesforce mit mehreren Implementierungspartnern und internen Teams. Niemand hatte klar festgelegt, wer für welche Prozesse, Objekte und Metadaten federführend verantwortlich war. Das Ergebnis war absehbar:
 
 - Änderungen überschrieben sich, weil niemand abstimmte, wer was wann deployt.
-- Die technischen Ansätze der Teams lagen weit auseinander, ähnliche Probleme wurden sehr unterschiedlich gelöst.
+- Die technischen Ansätze der Teams hatten sich weit auseinanderentwickelt, ähnliche Probleme wurden sehr unterschiedlich gelöst.
 - Jedes Release war ein Risiko, und Fehler fielen oft erst auf, wenn Anwender darauf stießen.
 
-Wir haben das in wenigen Schritten geändert. Zuerst lief jede Änderung über einen Pull Request mit Review. Dann haben wir Entwicklungs- und Architekturstandards aufgeschrieben und in diesen Reviews durchgesetzt. Am Ende wurde die Pipeline der einzige reguläre Weg, Änderungen von einer Org in die nächste zu bringen, mit einem dokumentierten Notfallweg, dessen Änderungen danach zurück nach Git gehen.
+Wir haben das in wenigen Schritten geändert. Zuerst lief jede Änderung über einen Pull Request mit Review. Dann haben wir Entwicklungs- und Architekturstandards aufgeschrieben und in diesen Reviews durchgesetzt. Am Ende wurde die Pipeline der einzige reguläre Weg, Änderungen von einer Org in die nächste zu bringen, mit einem dokumentierten Notfallweg, dessen Änderungen anschließend in Git nachgeführt werden.
 
 ```praxis
 Eine Zeit lang ging jeder einzelne Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben, der ihn heute verantwortet.

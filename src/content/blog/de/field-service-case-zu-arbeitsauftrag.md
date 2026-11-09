@@ -21,15 +21,15 @@ faq:
   - q: "Was ist ein Servicetermin in Field Service?"
     a: "Ein Servicetermin (Service Appointment) ist der Einsatz, der geplant und einem Techniker zugewiesen wird. Sein übergeordneter Datensatz ist meist ein Arbeitsauftrag oder eine Arbeitsauftragsposition."
   - q: "Kann Salesforce den Servicetermin automatisch anlegen?"
-    a: "Ja. Ist im Work Type die Option Auto-Create Service Appointment gesetzt, entsteht automatisch ein Servicetermin, wenn dieser Work Type auf einen Arbeitsauftrag oder eine Position ohne Termin angewendet wird. Datensätze von vor dem Einschalten bekommen keinen."
+    a: "Ja. Ist im Work Type die Option Auto-Create Service Appointment gesetzt, entsteht automatisch ein Servicetermin, wenn dieser Work Type auf einen Arbeitsauftrag oder eine Position ohne Termin angewendet wird. Datensätze, die vor dem Einschalten angelegt wurden, bekommen keinen."
   - q: "Erzeugen Wartungspläne Cases?"
     a: "Im Standard nicht. Wartungspläne erzeugen Arbeitsaufträge, laut Trailhead manuell oder automatisch dreimal am Tag. Ein Case ist dabei nicht beteiligt."
 draft: false
 ---
 
-In Salesforce Field Service durchläuft eine typische Störungsmeldung bis zu vier Datensätze, bevor ein Techniker kommt; Case und Positionen sind optional. Der Case hält das Problem des Kunden, der Arbeitsauftrag den zu erledigenden Job, Arbeitsauftragspositionen die Teilschritte und der Servicetermin den Einsatz, der geplant wird. Die Hotline legt den Case an und entscheidet, ob überhaupt ein Einsatz nötig ist. Wenn ja, legt sie einen Arbeitsauftrag an, und ein passend eingestellter Work Type erzeugt den Termin automatisch. Disposition oder Planungsengine weisen dann einen Techniker zu. Geplante Wartung nimmt eine Abkürzung: Wartungspläne erzeugen Arbeitsaufträge ganz ohne Case.
+In Salesforce Field Service durchläuft eine typische Störungsmeldung bis zu vier Datensätze, bevor ein Techniker kommt; Case und Positionen sind optional. Der Case dokumentiert das Problem des Kunden, der Arbeitsauftrag die auszuführende Arbeit, Arbeitsauftragspositionen die Teilschritte und der Servicetermin den Einsatz, der geplant wird. Die Hotline legt den Case an und entscheidet, ob überhaupt ein Einsatz nötig ist. Wenn ja, legt sie einen Arbeitsauftrag an, und ein passend eingestellter Work Type erzeugt den Termin automatisch. Disposition oder Planungsengine weisen dann einen Techniker zu. Geplante Wartung nimmt eine Abkürzung: Wartungspläne erzeugen Arbeitsaufträge ganz ohne Case.
 
-## Welche Datensätze tragen einen Außendiensteinsatz?
+## Welche Datensätze bilden einen Außendiensteinsatz ab?
 
 Salesforce verkauft das Produkt heute als Field Service and Operations, das Datenmodell ist gleich geblieben. Der [Entwicklerleitfaden zu Field Service](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_soap_core.htm) beschreibt die Kernobjekte so:
 
@@ -72,7 +72,7 @@ An einer Störungshotline kann ein Sprachagent Aufnahme und Triage übernehmen. 
 | Arbeitsauftrag | Hotline, aus dem Case | Wenn die Triage "Einsatz" ergibt |
 | Positionen | Hotline, Work Type oder Techniker | Mit dem Arbeitsauftrag oder vor Ort |
 | Servicetermin | Automatisch über den Work Type | Beim Anlegen des Arbeitsauftrags |
-| Assigned Resource | Disposition oder Planungsengine | Terminstatus wechselt auf Scheduled, dann Dispatched |
+| Zugewiesene Ressource (Assigned Resource) | Disposition oder Planungsengine | Terminstatus wechselt auf Scheduled, dann Dispatched |
 | Arbeitsauftrag ohne Case | Wartungsplan | Geplante Wartung |
 
 Geplante Wartung kommt durch eine andere Tür. Laut der [Trailhead-Einheit zum Erzeugen von Arbeitsaufträgen](https://trailhead.salesforce.com/content/learn/modules/field_service_maint/field-service-generate-work-orders) erzeugt ein Wartungsplan Arbeitsaufträge manuell oder automatisch, und die automatische Erzeugung läuft dreimal am Tag. Je nach Erzeugungsmethode und Auto-Create-Option am Work Type bekommen diese Arbeitsaufträge gleich einen Termin. Ein Case ist nicht beteiligt.

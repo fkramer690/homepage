@@ -2,6 +2,7 @@
 title: "CPQ to Revenue Cloud migration: phases, effort, cutover"
 description: "How a move from Salesforce CPQ to Revenue Cloud runs: three readiness phases from Salesforce Help, data order, 3 to 6 months of effort and client decisions."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: cpq-to-revenue-cloud-migration-phases
 translationKey: cpq-to-revenue-cloud-migration-plan

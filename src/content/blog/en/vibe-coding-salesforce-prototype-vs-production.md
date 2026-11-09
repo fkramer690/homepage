@@ -2,6 +2,7 @@
 title: "Vibe coding in Salesforce: prototype or production?"
 description: "Where vibe coding in Salesforce helps manufacturers, from dealer-portal mock-ups to service cockpits, and why production code needs review, tests and CI."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: vibe-coding-salesforce-prototype-vs-production
 translationKey: vibe-coding-prototype-not-production

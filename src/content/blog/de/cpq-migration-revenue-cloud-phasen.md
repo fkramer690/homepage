@@ -2,6 +2,7 @@
 title: "CPQ zu Revenue Cloud migrieren: Phasen, Aufwand, Cutover"
 description: "So läuft der Umstieg von Salesforce CPQ auf Revenue Cloud: drei Vorbereitungsphasen laut Hilfe, Datenreihenfolge, 3 bis 6 Monate Aufwand, Kundenentscheidungen."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: de
 slug: cpq-migration-revenue-cloud-phasen
 translationKey: cpq-to-revenue-cloud-migration-plan
@@ -10,7 +11,7 @@ categories: [revenue-cloud, devops]
 tags: [Salesforce CPQ, Revenue Cloud, Migration, Cutover, Datenmigration]
 takeaways:
   - "Laut Salesforce-Hilfe unterscheiden sich die Datenmodelle deutlich. Berichte auf CPQ-Objekten werden neu gebaut, nicht migriert."
-  - "CPQ hat kein End-of-Life-Datum, den Umstieg terminieren Sie. Eine CPQ-Lizenz bleibt, solange CPQ-Daten genutzt werden."
+  - "CPQ hat kein End-of-Life-Datum, den Umstieg terminieren Sie. Behalten Sie mindestens eine CPQ-Lizenz, solange CPQ-Daten genutzt werden."
   - "Zuerst wandern Attribute und Katalog, dann Verkaufsmodelle und Preise, dann Assets mit ihrer Auftragshistorie, danach Billing-Daten."
   - "Migrationswerkzeuge von Forsys, IdeaHelix und Prodly beschleunigen das Mapping. Preisführung, Cutover-Termin und Umfang der Historie entscheidet der Kunde."
 faq:
@@ -29,7 +30,7 @@ Eine Migration von Salesforce CPQ zu Revenue Cloud ist ein Neuaufbau auf Salesfo
 
 ## Was ändert sich zwischen CPQ und Revenue Cloud wirklich?
 
-Salesforce CPQ und Salesforce Billing stammen von SteelBrick, das Salesforce [im Dezember 2015 übernommen hat (Abschluss Februar 2016)](https://siliconangle.com/2015/12/24/salesforce-confirms-360m-acquisition-of-quote-to-cash-startup-steelbrick/). Beide sind Managed Packages mit eigenen Objekten. Revenue Cloud, in der Salesforce-Hilfe derzeit Revenue Management genannt und ursprünglich als Revenue Lifecycle Management (RLM) gestartet, baut auf Standardobjekten auf. Die [CPQ-End-of-Life-Seite von Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/) fasst es knapp: CPQ nutzt eigene Objekte in einem Managed Package, Revenue Cloud ein Standarddatenmodell mit API-first-Angebotslogik, und "CPQ-specific objects, custom fields, pricing rules, and scripts don't map directly".
+Salesforce CPQ und Salesforce Billing stammen von SteelBrick, das Salesforce [im Dezember 2015 zu übernehmen vereinbart hat (Abschluss Februar 2016)](https://siliconangle.com/2015/12/24/salesforce-confirms-360m-acquisition-of-quote-to-cash-startup-steelbrick/). Beide sind Managed Packages mit eigenen Objekten. Revenue Cloud, in der Salesforce-Hilfe derzeit Revenue Management genannt und ursprünglich als Revenue Lifecycle Management (RLM) gestartet, baut auf Standardobjekten auf. Die [CPQ-End-of-Life-Seite von Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/) fasst es knapp: CPQ nutzt eigene Objekte in einem Managed Package, Revenue Cloud ein Standarddatenmodell mit API-first-Angebotslogik, und "CPQ-specific objects, custom fields, pricing rules, and scripts don't map directly".
 
 Was das für die Migration heißt, Baustein für Baustein:
 
@@ -62,7 +63,7 @@ Migrieren
 
 Einen festen Zeitrahmen setzt die Hilfe nicht. Die CPQ-Seite nennt 3 bis 6 Monate als typisch und ergänzt, dass komplexe Implementierungen länger dauern können. Meine Einschätzung: 3 Monate sind für eine aufgeräumte Org mit wenigen Preisregeln realistisch, eine über Jahre gewachsene Org mit vielen eigenen Skripten gehört an das obere Ende oder dahinter. Eine [Analyse der technischen Schulden](../ki-org-analyse-technische-schulden/) vor der Schätzung zeigt, welchen Fall Sie haben.
 
-Der Lizenzpunkt betrifft das Budget. Die Hilfe verlangt, [mindestens eine aktive CPQ-Lizenz](https://help.salesforce.com/s/articleView?id=ind.rev_migration_operational_considerations_cpq_license.htm&language=en_US&type=5) während der gesamten Migration zu behalten und so lange, wie CPQ-Daten noch genutzt werden; ohne sie gehen historische CPQ-Daten und Berichte verloren. Während des Aufbaus erstellt CPQ meist weiter Angebote in Produktion. Planen Sie also überlappende Lizenzkosten ein und klären Sie die Konditionen mit Salesforce. Ein Grund mehr, die Migration nicht über Jahre zu strecken.
+Der Lizenzpunkt betrifft das Budget. Die Hilfe verlangt, [mindestens eine aktive CPQ-Lizenz](https://help.salesforce.com/s/articleView?id=ind.rev_migration_operational_considerations_cpq_license.htm&language=en_US&type=5) während der gesamten Migration zu behalten und so lange, wie CPQ-Daten noch genutzt werden; ohne sie verlieren Sie den Zugriff auf historische CPQ-Daten und Berichte. Während des Aufbaus erstellt CPQ meist weiter Angebote in Produktion. Planen Sie also überlappende Lizenzkosten ein und klären Sie die Konditionen mit Salesforce. Ein Grund mehr, die Migration nicht über Jahre zu strecken.
 
 ## Die Daten wandern in der Reihenfolge ihrer Abhängigkeiten
 
@@ -71,13 +72,13 @@ Die Hilfe nennt drei Gruppen: Produktdaten, Asset-Daten und Billing-Daten. Die R
 1. **Katalogstruktur:** Attribut-Picklisten und ihre Werte, Attributdefinitionen, Produktklassifizierungen, dann die Produkte selbst.
 2. **Verkauf und Preise:** Product Selling Models und ihre Optionen, Preisbücher, Kostenbücher, Preisbucheinträge, danach Preisanpassungen.
 3. **Bundles und Kataloge:** Komponentengruppen und zugeordnete Komponenten, Kataloge und Kategorien.
-4. **Assets:** CPQ-Abos werden zu Assets, und laut Hilfe ist die vollständige Historienkette nötig. Empfohlen ist, Assets aus historischen Aufträgen zu erzeugen; Assets direkt anzulegen ist die Alternative, wenn sich die Auftragshistorie nicht nachbauen lässt. Ohne diese Kette funktionieren Nachträge und Verlängerungen nicht. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/asset-lifecycle-management-with-revenue-cloud/manage-customer-asset-amendments) beginnt jeder Nachtrag an einem Asset und läuft über ein Angebot und einen Auftrag.
+4. **Assets:** CPQ-Abos werden zu Assets, und laut Hilfe ist die vollständige Historienkette nötig. Empfohlen ist, Assets aus historischen Aufträgen zu erzeugen; Assets direkt anzulegen ist die Alternative, wenn sich die Auftragshistorie nicht nachbauen lässt. Ohne diese Kette funktionieren Vertragsänderungen und Verlängerungen nicht. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/asset-lifecycle-management-with-revenue-cloud/manage-customer-asset-amendments) beginnt jeder Nachtrag an einem Asset und läuft über ein Angebot und einen Auftrag.
 5. **Billing-Daten:** nur, wenn Sie heute Salesforce Billing nutzen, mit eigener Methode und eigenem Cutover-Plan. Dazu gibt es einen eigenen Beitrag: [von Salesforce Billing zu Revenue Cloud Billing](../von-salesforce-billing-zu-revenue-cloud-billing/).
 
 ```hinweis tipp
 Zwei Regeln von meiner Seite. Erstens: **Soll eine Verlängerung in Revenue Cloud laufen, das Abo vor dem Verlängerungstermin migrieren.** Ein Vertrag, der zwei Wochen nach dem Go-live noch in CPQ verlängert wird, erzeugt genau die doppelte Arbeit, die Sie vermeiden wollen.
 
-Die zweite Regel: **Abgeschlossene Angebote zurücklassen**, wie es laut Hilfe üblich ist, sofern Revision oder Berichte sie nicht brauchen. Sie bleiben als lesbare Historie in CPQ, was eine CPQ-Lizenz voraussetzt, oder gehen in ein Archiv.
+Die zweite Regel: **Abgeschlossene Angebote zurücklassen**, wie es laut Hilfe üblich ist, sofern sie nicht für Prüfung oder Berichte gebraucht werden. Sie bleiben als schreibgeschützte Historie in CPQ, was eine CPQ-Lizenz voraussetzt, oder werden archiviert.
 ```
 
 Wie Katalog und Preise danach von der Sandbox in die Produktion kommen, ist ein eigenes Thema: [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/).
@@ -88,7 +89,7 @@ Auf der CPQ-Seite nennt Salesforce drei Partnerangebote: Forsys RevRamp für Dat
 
 Diese Werkzeuge sparen Zeit bei Produkten, Preisbucheinträgen und Abos. Die Hilfe benennt die Grenze klar: Werkzeuge ersetzen keine menschlichen Designentscheidungen, vor allem nicht bei eigener Logik und beim Umbau von Schnittstellen. Eine Preisregel, die ein altes Rundungsproblem behebt, ein Skript, das ein Feld aus SAP liest, eine Freigabekette mit Ausnahmen für ein Land: Jemand muss entscheiden, ob diese Logik noch gebraucht wird und wie sie in einer Pricing Procedure aussieht.
 
-Beim Vergleich von Partnerangeboten würde ich jeden Partner nach denselben drei Zahlen fragen: wie viele Preisregeln, Produktregeln und Skripte er in Ihrer Org gezählt hat und was er mit jedem vorhat. Wer ohne Zählung anbietet, verkauft eine Spanne. Wie Sie solche Angebote vergleichen und welches Vertragsmodell passt, beschreiben [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/) und das Kapitel der KI-Masterclass zu [AIforce und Systemintegratoren](../../masterclass/ki-salesforce/aiforce-und-systemintegratoren/).
+Beim Vergleich von Partnerangeboten würde ich jeden Partner nach denselben drei Zahlen fragen: wie viele Preisregeln, Produktregeln und Skripte er in Ihrer Org gezählt hat und was er mit jedem vorhat. Wer ohne diese Zählung anbietet, nennt nur eine Spanne. Wie Sie solche Angebote vergleichen und welches Vertragsmodell passt, beschreiben [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/) und das Kapitel der KI-Masterclass zu [AIforce und Systemintegratoren](../../masterclass/ki-salesforce/aiforce-und-systemintegratoren/).
 
 ## Rechenbeispiel: ein Komponentenhersteller mit CPQ seit 2018
 

@@ -2,6 +2,7 @@
 title: "B2B checkout: purchase order, card or invoice?"
 description: "Which payment options a Salesforce B2B store needs when dealers buy on account: purchase order, card, Salesforce Payments and an ERP credit check."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: b2b-checkout-purchase-order-card-invoice
 translationKey: commerce-checkout-purchase-order
@@ -26,7 +27,7 @@ faq:
 draft: false
 ---
 
-A B2B store for dealers who buy on account needs a purchase order option first and a card option second, if at all. Salesforce B2B Commerce has a Purchase Order component that works without a payment gateway, a Dual Payment component for card and purchase order, and Salesforce Payments on Stripe or Adyen, which can also show a purchase order option in B2B stores. A purchase order triggers no payment in Salesforce, invoicing stays in the ERP. What the store has to add is the check whether the dealer may order at all, meaning credit limit and order block. That answer has to come from the ERP before the order is placed.
+A B2B store for dealers who buy on account needs a purchase order option first and a card option second, if at all. Salesforce B2B Commerce has a Purchase Order component that works without a payment gateway, a Dual Payment component for card and purchase order, and Salesforce Payments on Stripe or Adyen, which can also show a purchase order option in B2B stores. A purchase order triggers no payment in Salesforce, invoicing stays in the ERP. The store has to add the check whether the dealer may order at all: credit limit and order block. That answer has to come from the ERP before the order is placed.
 
 ## What does payment mean in a B2B store?
 

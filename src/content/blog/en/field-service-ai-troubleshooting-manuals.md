@@ -2,6 +2,7 @@
 title: "Field Service AI troubleshooting: fix the manuals first"
 description: "What a machine builder must do with manuals, bulletins and knowledge articles so the Field Service troubleshooting agent answers per variant and serial number."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: field-service-ai-troubleshooting-manuals
 translationKey: field-service-ai-troubleshooting-manuals
@@ -26,7 +27,7 @@ faq:
 draft: false
 ---
 
-A Field Service troubleshooting agent gives a technician the right answer only if it can tell which manual applies to the machine on site. Salesforce supplies the agent, the document model is the machine builder's job. Every manual, service bulletin and knowledge article needs the product key the asset already carries, plus a serial number range where a bulletin covers some units only, and the agent has to pass the asset's values into the search as filters. The index holds one valid version per variant and build state. A Data Library is enough while one current set of manuals applies to every machine in scope; once variants or build states share an index, I would use the advanced Data 360 setup with filter fields.
+A Field Service troubleshooting agent answers correctly only if it can tell which manual applies to the machine on site. Salesforce supplies the agent; the document model is the manufacturer's job. Every manual, service bulletin and knowledge article needs the asset's product key, plus a serial number range where a bulletin covers some units only. The agent passes the asset's values to the search as filters. The index holds one valid version per variant and build state. A Data Library is enough while one current set of manuals applies to every machine in scope; once variants share an index, I would use the advanced Data 360 setup with filter fields.
 
 ## What does the Field Service troubleshooting agent read?
 

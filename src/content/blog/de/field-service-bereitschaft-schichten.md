@@ -1,6 +1,6 @@
 ---
-title: "Bereitschaftsdienst im Field Service: Schichten planen"
-description: "Bereitschaft, Wochenenddienst und Überstunden in Salesforce Field Service mit Schichten planen, und was der Betriebsrat vorher mitbestimmen muss."
+title: "Rufbereitschaft im Field Service: Schichten planen"
+description: "Rufbereitschaft, Wochenenddienst und Überstunden in Salesforce Field Service mit Schichten planen, und was der Betriebsrat vorher mitbestimmen muss."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de
@@ -8,7 +8,7 @@ slug: field-service-bereitschaft-schichten
 translationKey: field-service-on-call-shifts
 topic: field-service
 categories: [field-service]
-tags: [Field Service, Außendienst, Bereitschaftsdienst, Schichten, Terminplanung, Betriebsrat]
+tags: [Field Service, Außendienst, Rufbereitschaft, Schichten, Terminplanung, Betriebsrat]
 takeaways:
   - "Arbeitszeiten beschreiben die wiederkehrende Arbeitszeit. Schichten ergänzen Verfügbarkeit an bestimmten Tagen, etwa Bereitschaft, Wochenende, Überstunden."
   - "Nur bestätigte Schichten zählen. Eine Extended-Schicht nimmt Termine nur an, wenn die Work Rule Service Resource Availability Überstunden erlaubt."
@@ -23,11 +23,11 @@ faq:
   - q: "Kann ich Bereitschaftsschichten in großer Zahl anlegen?"
     a: "Ja. Schichtvorlagen füllen Felder vor, und Schichtmuster wiederholen Vorlagen über eine Länge in Tagen. Mit New from Pattern legen Sie ein Startdatum und ein Enddatum oder eine Anzahl an Wiederholungen fest. Die Ressource kann leer bleiben und später zugewiesen werden."
   - q: "Muss der Betriebsrat Bereitschaftsplänen in Field Service zustimmen?"
-    a: "§ 87 BetrVG gibt dem Betriebsrat Mitbestimmung bei der Verteilung der Arbeitszeit, bei vorübergehender Verlängerung der Arbeitszeit und bei technischen Einrichtungen, die Mitarbeitende überwachen können, soweit kein Gesetz und kein Tarifvertrag die Frage schon regelt. Bereitschaftspläne in Field Service berühren diese Punkte meist. Klären Sie die Regeln vor dem Go-live."
+    a: "§ 87 BetrVG gibt dem Betriebsrat Mitbestimmung bei der Verteilung der Arbeitszeit, bei vorübergehender Verlängerung der Arbeitszeit und bei technischen Einrichtungen, die Mitarbeitende überwachen können, soweit keine gesetzliche oder tarifliche Regelung besteht. Bereitschaftspläne in Field Service berühren diese Punkte meist. Klären Sie die Regeln vor dem Go-live."
 draft: false
 ---
 
-Bereitschaftsdienst, Wochenendservice und Überstunden planen Sie in Salesforce Field Service mit Schichten. Die Arbeitszeiten (Operating Hours) beschreiben die reguläre Arbeitszeit eines Servicegebiets, meist Montag bis Freitag. Eine Schicht ergänzt Verfügbarkeit an bestimmten Tagen, meist außerhalb davon: einen Samstag in Bereitschaft, eine Nacht, zwei Überstunden. Nur bestätigte Schichten zählen, und eine Extended-Schicht nimmt Termine nur an, wenn die Work Rule für Verfügbarkeit Überstunden erlaubt. Filterkriterien begrenzen eine Bereitschaftsschicht auf Störungen. Ohne bestätigte Schicht oder andere Verfügbarkeit am Samstag findet die Planung keinen Techniker für eine Störung mit zugesagter Reaktionszeit. In Deutschland bestimmt dabei meist der Betriebsrat mit.
+Rufbereitschaft, Wochenendservice und Überstunden planen Sie in Salesforce Field Service mit Schichten. Die Arbeitszeiten (Operating Hours) beschreiben die reguläre Arbeitszeit eines Servicegebiets, meist Montag bis Freitag. Eine Schicht ergänzt Verfügbarkeit an bestimmten Tagen, meist außerhalb davon: einen Samstag in Rufbereitschaft, eine Nacht, zwei Überstunden. Nur bestätigte Schichten zählen, und eine Extended-Schicht nimmt Termine nur an, wenn die Work Rule für Verfügbarkeit Überstunden erlaubt. Filterkriterien begrenzen eine Bereitschaftsschicht auf Störungen. Ohne bestätigte Schicht oder andere Verfügbarkeit am Samstag findet die Planung keinen Techniker für eine Störung mit zugesagter Reaktionszeit. In Deutschland bestimmt dabei meist der Betriebsrat mit.
 
 ## Was sind Arbeitszeiten, und was sind Schichten?
 
@@ -49,7 +49,7 @@ Laut [Salesforce-Hilfe zum Anlegen von Schichten](https://help.salesforce.com/s/
 
 | Einstellung | Was sie bewirkt | Für Bereitschaft |
 |---|---|---|
-| Time Slot Type | Normal braucht keine Überstunden, Extended nimmt nur als Überstunden erlaubte Termine | Extended |
+| Time Slot Type | Normal geht ohne freigegebene Überstunden, Extended nimmt nur Termine an, die als Überstunden geplant werden dürfen | Extended |
 | Status | Tentative, Published, Confirmed; nur Confirmed zählt für die Planung | Confirmed, sobald der Plan abgestimmt ist |
 | Recordset Filter Criteria | Begrenzt, welche Termine die Schicht annimmt | Nur Termine mit dem Work Type Störung |
 | Job Profile | Mit Match Skills kommen für die automatische Zuweisung nur Techniker mit den Qualifikationen des Profils infrage | Störungsqualifikationen der Region |
@@ -77,7 +77,7 @@ Nimmt außerhalb der Geschäftszeiten ein Sprachagent den Anruf an, bekommt der 
 
 ## Der Betriebsrat bestimmt nach § 87 BetrVG mit
 
-Das deutsche Recht unterscheidet Bereitschaftsdienst, der grundsätzlich Arbeitszeit ist, und Rufbereitschaft, bei der grundsätzlich nur die tatsächlichen Einsätze zählen. In beiden Fällen ist der Betriebsrat im Spiel. [§ 87 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) gibt ihm, soweit kein Gesetz und kein Tarifvertrag die Frage schon regelt, unter anderem Mitbestimmung bei Beginn und Ende der täglichen Arbeitszeit und ihrer Verteilung auf die Wochentage (Nr. 2), bei vorübergehender Verlängerung der betriebsüblichen Arbeitszeit (Nr. 3) und bei technischen Einrichtungen, die dazu bestimmt sind, Verhalten oder Leistung zu überwachen (Nr. 6).
+Das deutsche Recht unterscheidet Bereitschaftsdienst, der grundsätzlich Arbeitszeit ist, und Rufbereitschaft, bei der grundsätzlich nur die tatsächlichen Einsätze zählen. In beiden Fällen ist der Betriebsrat im Spiel. [§ 87 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) gibt ihm, soweit keine gesetzliche oder tarifliche Regelung besteht, unter anderem Mitbestimmung bei Beginn und Ende der täglichen Arbeitszeit und ihrer Verteilung auf die Wochentage (Nr. 2), bei vorübergehender Verlängerung der betriebsüblichen Arbeitszeit (Nr. 3) und bei technischen Einrichtungen, die dazu bestimmt sind, Verhalten oder Leistung zu überwachen (Nr. 6).
 
 Ein Bereitschaftsplan in Field Service berührt diese Punkte meist. Schichten verteilen Arbeitszeit, Extended-Schichten stehen oft für Mehrarbeit, und das System hält fest, wer wann welche Schicht übernommen hat. Ob eine Extended-Schicht rechtlich oder bei der Vergütung als Überstunde zählt, entscheiden Ihr Arbeitszeitmodell und Ihre Vereinbarungen, nicht Salesforce. Diese Punkte würde ich vor dem Go-live mit dem Betriebsrat besprechen:
 

@@ -1,6 +1,6 @@
 ---
 title: "Object Ownership Matrix: Wer ändert welches Objekt?"
-description: "Mehrere Partner auf einer Salesforce-Org? Eine Object Ownership Matrix legt fest, wer welches Objekt verantwortet. Aufbau, Regeln und Erfahrung aus 8 Streams."
+description: "Mehrere Partner auf einer Salesforce-Org? Eine Object Ownership Matrix legt fest, wer welches Objekt verantwortet. Aufbau, Regeln, Erfahrung aus 8 Streams."
 pubDate: 2026-10-26
 updatedDate: 2026-11-09
 lang: de
@@ -11,7 +11,7 @@ categories: [architecture]
 contactBrief: partner-governance
 tags: [Partnersteuerung, Object Ownership Matrix, Governance, Pull Request Review, Automatisierung]
 takeaways:
-  - "Ändert ein Team ein fremdes Objekt, stimmt es sich vorher mit dem Verantwortlichen ab, damit sich Felder, Flows und Trigger nicht überschreiben."
+  - "Ändert ein Team das Objekt eines anderen Streams, stimmt es sich vorher mit dem Verantwortlichen ab, damit sich Felder, Flows und Trigger nicht überschreiben."
   - "Geteilte Objekte wie Account brauchen einen Verantwortlichen und einen Einstiegspunkt für Automatisierung: Flow oder ein Apex-Trigger, nicht beides."
   - "In meinem Programm mit über 30 Entwicklern in acht Streams waren Matrix und Standards nach etwa drei Monaten stabil."
   - "Durchgesetzt wird die Matrix im Pull-Request-Review und in regelmäßigen Center-of-Excellence-Calls, nicht durch ein Dokument im Wiki."
@@ -40,7 +40,7 @@ Verantwortung heißt dabei mehr als „hat das Objekt angelegt“. Der verantwor
 - **Seitenlayouts und Lightning Pages**, soweit sie das Objekt betreffen.
 - **Datenmodell-Änderungen**, etwa neue Beziehungen zu anderen Objekten.
 
-Andere Streams dürfen das Objekt nutzen, lesen und in ihren Prozessen verwenden. Wollen sie es ändern, gehen sie zum Verantwortlichen. Umgekehrt hört der Verantwortliche die nutzenden Streams an, bevor er etwas ändert, das sie betrifft, etwa neue Pflichtfelder, Validierungsregeln oder Schnittstellenfelder. Berührt eine Änderung ein zweites Objekt, stimmt auch dessen Verantwortlicher zu.
+Andere Streams dürfen das Objekt nutzen, lesen und in ihren Prozessen verwenden. Wollen sie es ändern, stimmen sie das mit dem Verantwortlichen ab. Umgekehrt bezieht der Verantwortliche die nutzenden Streams ein, bevor er etwas ändert, das sie betrifft, etwa neue Pflichtfelder, Validierungsregeln oder Schnittstellenfelder. Berührt eine Änderung ein zweites Objekt, stimmt auch dessen Verantwortlicher zu.
 
 ## Warum braucht ein Programm mit mehreren Partnern das?
 
@@ -52,7 +52,7 @@ Fünf Teams mit fünf Ansätzen auf einem Objekt halten sich an keine dieser Emp
 
 ## So lief es in meinem Programm mit acht Streams
 
-Als ich in das Programm kam, hatte niemand klar festgelegt, welches Team für welche Prozesse, Objekte und Metadaten im Lead war. Änderungen überschrieben sich, und die technischen Ansätze der Teams lagen weit auseinander.
+Als ich in das Programm kam, hatte niemand klar festgelegt, welches Team bei welchen Prozessen, Objekten und Metadaten die Federführung hatte. Änderungen überschrieben sich, und die technischen Ansätze der Teams lagen weit auseinander.
 
 Der erste Schritt war, jede Änderung über einen Pull Request mit Review laufen zu lassen. Eine Zeit lang ging jeder einzelne über meinen Schreibtisch. Aus diesen Reviews haben wir Standards aufgeschrieben, darunter Namenskonventionen, ein Einstiegspunkt für Automatisierung pro Objekt mit festgelegter Ausführungsreihenfolge und Testabdeckung. Zwei Elemente haben den größten Unterschied gemacht: die Object Ownership Matrix und Regeln für Konfiguration, etwa welche Werte in Custom Metadata Types oder Custom Labels gehören, statt fest im Code zu stehen.
 
@@ -91,12 +91,12 @@ Was nicht in die Matrix gehört: Detailregeln für Namenskonventionen, Tests ode
 Eine Tabelle im Wiki ändert allein nichts. Die Matrix wirkt erst, wenn sie im täglichen Ablauf geprüft wird.
 
 - **Im Pull-Request-Review.** Berührt eine Änderung ein fremdes Objekt, fragt der Reviewer, ob der Verantwortliche zugestimmt hat. Wie solche Reviews ablaufen, beschreibe ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
-- **Technisch im Repository.** Liegen die Metadaten in Git und kommen Änderungen an diesen Objekten nur über die Pipeline in die Org, lässt sich die Matrix teilweise abbilden, auf GitHub mit einer CODEOWNERS-Datei. Direkte Änderungen in der Org umgehen das, deshalb brauchen Notfallkorrekturen einen eigenen Weg zurück ins Repository.
+- **Technisch im Repository.** Liegen die Metadaten in Git und kommen Änderungen an diesen Objekten nur über die Pipeline in die Org, lässt sich die Matrix teilweise technisch abbilden, bei GitHub etwa mit einer CODEOWNERS-Datei. Direkte Änderungen in der Org umgehen das, deshalb brauchen Notfallkorrekturen einen eigenen Weg zurück ins Repository.
 - **Im Center of Excellence.** Regelmäßige Calls, in denen Streams anstehende Änderungen an gemeinsamen Objekten vorstellen, mit genug Vorlauf für alle anderen. Wie ein solches Gremium aufgebaut ist, beschreibe ich in [Salesforce Center of Excellence: Format und Rhythmus](../salesforce-center-of-excellence-format/).
 
 ```vertiefung Für Entwickler
 titel: Wie bildet CODEOWNERS die Matrix ab?
-Eine [CODEOWNERS-Datei](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) ordnet Pfade einem Team zu, zum Beispiel den Ordner eines Objekts. Layouts, Lightning-Seiten, Flows und Trigger liegen in anderen Ordnern, sie brauchen eigene Muster und eine Namenskonvention. Ändert ein Pull Request diese Dateien, wird das Team automatisch als Reviewer angefragt. Pflicht wird seine Freigabe erst mit "Require review from Code Owners" in der Branch Protection, das Team braucht Schreibrechte, und die CODEOWNERS-Datei selbst braucht einen Verantwortlichen.
+Eine [CODEOWNERS-Datei](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) ordnet Pfade einem Team zu, zum Beispiel den Ordner eines Objekts. Layouts, Lightning-Seiten, Flows und Trigger liegen in anderen Ordnern und brauchen deshalb eigene Muster und eine Namenskonvention. Ändert ein Pull Request diese Dateien, wird das Team automatisch als Reviewer angefragt. Pflicht wird seine Freigabe erst mit "Require review from Code Owners" in der Branch Protection, das Team braucht Schreibrechte, und die CODEOWNERS-Datei selbst braucht einen Verantwortlichen.
 ```
 
 Die Matrix gehört dem Kunden, nicht einem Partner. Legt ein Partner fest, wer welches Objekt verantwortet, entscheidet er auch darüber, was seine Wettbewerber bauen dürfen. Dasselbe gilt für Repository und Pipeline, wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/) beschrieben.

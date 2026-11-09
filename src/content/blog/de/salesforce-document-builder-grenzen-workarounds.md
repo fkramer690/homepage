@@ -10,10 +10,10 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Außendienst, Document Builder, Service Documents, Flow, LWC]
 takeaways:
-  - "Fünf Lücken tauchen in meinen Projekten auf: Vorlagenwahl, Dateiname, E-Mail, Vorbelegung und Styling. Für übliche Berichte braucht keine ein Zusatztool."
-  - "Das Vorlagenfeld enthält nur eine ID. Salesforce nimmt den Wert am Datensatz, an der Auftragsart oder den Standard; Ausnahmen brauchen einen Screen Flow."
+  - "Fünf Lücken tauchen in meinen Projekten auf: Vorlagenwahl, Dateiname, E-Mail, Vorbelegung und Styling. Für übliche Serviceberichte braucht keine ein Zusatztool."
+  - "Das Vorlagenfeld enthält nur eine ID. Salesforce nimmt den Wert am Datensatz, am Arbeitstyp oder den Standard; Ausnahmen brauchen einen Screen Flow."
   - "Den Dateinamen setzt ein asynchroner Flow, die E-Mail verschickt ein weiterer Flow, denn Salesforce macht beides nicht selbst."
-  - "Ein Flow kann die Sprache am Arbeitsauftrag und die Vorlage an Arbeitsauftrag oder Servicetermin vorbelegen, damit niemand auswählen muss."
+  - "Ein Flow kann die Sprache am Arbeitsauftrag und die Vorlage am Arbeitsauftrag oder Servicetermin vorbelegen, damit niemand auswählen muss."
   - "Eigene Lightning Web Components, die Daten über GraphQL und ohne Apex lesen, funktionieren offline und in der mobilen Vorschau, wenn die Daten vorgeladen sind."
 faq:
   - q: "Kann ich den Dateinamen eines Salesforce Service Document festlegen?"
@@ -21,7 +21,7 @@ faq:
   - q: "Kann der Document Builder den Servicebericht per E-Mail versenden?"
     a: "Nicht im Standard. Ein Flow, der bei Erstellung des Dokuments startet, kann das PDF an den Kundenkontakt schicken, mit der E-Mail-Vorlage und der Empfängerlogik, die Sie festlegen."
   - q: "Wie wählen Techniker die richtige Vorlage im Document Builder?"
-    a: "Salesforce nimmt die Vorlage aus dem Feld am Datensatz, sonst von der Auftragsart oder den Standard der Org. Pflegen Sie diese Zuordnung oder belegen Sie das Feld per Flow vor; für echte Ausnahmen bieten Sie einen Screen Flow an, der nur passende Vorlagen zeigt."
+    a: "Salesforce nimmt die Vorlage aus dem Feld am Datensatz, sonst vom Arbeitstyp oder den Standard der Org. Pflegen Sie diese Zuordnung oder belegen Sie das Feld per Flow vor; für echte Ausnahmen bieten Sie einen Screen Flow an, der nur passende Vorlagen zeigt."
   - q: "Funktionieren eigene Lightning Web Components im Document Builder offline?"
     a: "Ja, wenn sie ihre Daten über den GraphQL Wire Adapter lesen, kein Apex nutzen (das liefert offline ein leeres Ergebnis) und die Datensätze auf dem Gerät vorgeladen sind. In meinen Projekten hat der Offline-Modus dann funktioniert, und die Vorschau zeigte die Daten korrekt an."
 ---
@@ -34,13 +34,13 @@ In [meinem ersten Artikel zu Service Documents](../salesforce-service-documents-
 
 Die offizielle Liste der Limits nennt technische Grenzen wie 50 Seiten pro Dokument oder drei unterstützte Objekte. Was sie nicht nennt, sind die Lücken, die erst im ersten Test mit Technikern und Serviceinnendienst auffallen. Sie sind klein, entscheiden aber darüber, ob die Nutzer den Bericht annehmen. Ein Techniker, der nach jedem Einsatz die richtige Vorlage suchen muss, oder ein Innendienst, der jedes PDF von Hand umbenennt, fragt bald nach dem alten Papierformular.
 
-Der Document Builder steht aber auf derselben Plattform wie alles andere in Salesforce. Flows und Lightning Web Components (LWC, der Standardweg für eigene Oberflächenkomponenten) schließen alle fünf Lücken ohne zusätzliche Lizenz.
+Der Document Builder basiert aber auf derselben Plattform wie alles andere in Salesforce. Flows und Lightning Web Components (LWC, der Standardweg für eigene Oberflächenkomponenten) schließen alle fünf Lücken ohne zusätzliche Lizenz.
 
 ## Grenze 1: Die Vorlagenwahl braucht einen Screen Flow
 
-Das Vorlagenfeld an Arbeitsauftrag, Arbeitsauftragsposition und Servicetermin enthält die ID einer Service-Document-Vorlage, die wiederum auf die Lightning-Seite (FlexiPage) mit dem Layout verweist. Für einen Techniker ist das ein technischer Wert ohne Bedeutung. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=service.fs_service_document_template_field.htm&language=en_US&type=5) nimmt Salesforce den Wert am Datensatz, sonst eine Vorlage von der Auftragsart oder den Standard der Org. Gibt es mehrere Vorlagen, etwa pro Auftragsart oder pro Land, muss diese Zuordnung gepflegt sein, sonst nutzt der Bericht die falsche.
+Das Vorlagenfeld an Arbeitsauftrag, Arbeitsauftragsposition und Servicetermin enthält die ID einer Service-Document-Vorlage, die wiederum auf die Lightning-Seite (FlexiPage) mit dem Layout verweist. Für einen Techniker ist das ein technischer Wert ohne Bedeutung. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=service.fs_service_document_template_field.htm&language=en_US&type=5) nimmt Salesforce den Wert am Datensatz, sonst eine Vorlage vom Arbeitstyp oder den Standard der Org. Gibt es mehrere Vorlagen, etwa pro Arbeitstyp oder pro Land, muss diese Zuordnung gepflegt sein, sonst nutzt der Bericht die falsche.
 
-**Workaround:** Pflegen Sie die Vorlagen zuerst an den Auftragsarten. Für die Ausnahmen legen Sie die Auswahl hinter einen Screen Flow, der in der Field Service App läuft. Der Flow zeigt eine kurze Liste mit lesbaren Namen wie "Jahreswartung" oder "Reparatur mit Ersatzteilen" und schreibt den richtigen Wert in das Feld. Noch besser: Filtern Sie die Liste nach dem Einsatz, damit der Techniker nur Vorlagen sieht, die zur Auftragsart passen.
+**Workaround:** Pflegen Sie die Vorlagen zuerst an den Arbeitstypen. Für die Ausnahmen legen Sie die Auswahl hinter einen Screen Flow, der in der Field Service App läuft. Der Flow zeigt eine kurze Liste mit lesbaren Namen wie "Jahreswartung" oder "Reparatur mit Ersatzteilen" und schreibt den richtigen Wert in das Feld. Noch besser: Filtern Sie die Liste nach dem Einsatz, damit der Techniker nur Vorlagen sieht, die zum Arbeitstyp passen.
 
 ## Grenze 2: Der Dateiname steht fest
 
@@ -56,13 +56,13 @@ Der Flow muss asynchron laufen, also kurz nach der Erstellung. Nur dann existier
 
 Im Standard verschickt der Document Builder das Dokument nicht. Der Techniker erstellt das PDF, der Kunde unterschreibt, und dann liegt der Bericht am Arbeitsauftrag. In den meisten Serviceorganisationen erwartet der Kunde den Bericht noch am selben Tag per E-Mail, oft als Grundlage für die Rechnungsfreigabe.
 
-**Workaround:** Ein Flow, der startet, wenn das Dokument fertig ist, und es als Anhang verschickt. Im Flow legen Sie fest, wer es bekommt, zum Beispiel den Kontakt am Arbeitsauftrag oder eine zentrale Serviceadresse des Kunden, welche E-Mail-Vorlage genutzt wird und in welcher Sprache. Zusammen mit Grenze 2 kommt die E-Mail mit einem Dateinamen an, den der Kunde ablegen kann.
+**Workaround:** Ein Flow, der startet, wenn das Dokument fertig ist, und es als Anhang verschickt. Im Flow legen Sie fest, an wen es geht, zum Beispiel an den Kontakt am Arbeitsauftrag oder an eine zentrale Serviceadresse des Kunden, welche E-Mail-Vorlage genutzt wird und in welcher Sprache. Zusammen mit Grenze 2 kommt die E-Mail mit einem Dateinamen an, den der Kunde ablegen kann.
 
 ## Grenze 4: Lassen sich Sprache und Vorlage vorbelegen?
 
-Ja, per Flow. Im Standard leitet nichts Sprache und Vorlage vom Kunden ab: Die Vorlage kommt vom Datensatz, von der Auftragsart oder aus dem Standard, die Sprache wird nur am Arbeitsauftrag gesetzt und gilt für alle seine Servicetermine. Setzt sie niemand, bekommt ein Kunde in Frankreich einen deutschen Bericht.
+Ja, per Flow. Im Standard leitet nichts Sprache und Vorlage vom Kunden ab: Die Vorlage kommt vom Datensatz, vom Arbeitstyp oder aus dem Standard, die Sprache wird nur am Arbeitsauftrag gesetzt und gilt für alle seine Servicetermine. Setzt sie niemand, bekommt ein Kunde in Frankreich einen deutschen Bericht.
 
-**Workaround:** Setzen Sie per Flow die Sprache am Arbeitsauftrag und die Vorlage an Arbeitsauftrag oder Servicetermin. Die Sprache kann vom Account oder vom Servicegebiet kommen, die Vorlage von der Auftragsart oder vom Asset. Der Techniker prüft dann nur noch die Vorschau und holt die Unterschrift ein.
+**Workaround:** Setzen Sie per Flow die Sprache am Arbeitsauftrag und die Vorlage am Arbeitsauftrag oder Servicetermin. Die Sprache kann vom Account oder vom Servicegebiet kommen, die Vorlage vom Arbeitstyp oder vom Asset. Der Techniker prüft dann nur noch die Vorschau und holt die Unterschrift ein.
 
 ## Grenze 5: Wie weit kommt man beim Styling?
 
@@ -82,7 +82,7 @@ Nicht einfach so. Salesforce weist darauf hin, dass LWCs für Service Documents 
 
 ## Funktionieren die Workarounds offline?
 
-Das Hauptargument für den Document Builder ist die Offline-Erstellung an der Maschine des Kunden, also dürfen die Workarounds das nicht kaputt machen. In meinen Projekten haben sie das nicht. Eigene Komponenten lesen ihre Daten über GraphQL (die Abfrageschnittstelle, die die Field Service App für Offline-Daten nutzt) und ohne Apex, das offline ein leeres Ergebnis liefert, deshalb liegen vorgeladene Daten ohne Verbindung auf dem Gerät. Die Vorschau in der mobilen App zeigt die Informationen korrekt an, einschließlich der eigenen verknüpften Liste und der überschriebenen Bezeichnungen.
+Das Hauptargument für den Document Builder ist die Offline-Erstellung an der Maschine des Kunden, also dürfen die Workarounds das nicht kaputt machen. In meinen Projekten haben sie das nicht. Eigene Komponenten lesen ihre Daten über GraphQL (die Abfrageschnittstelle, die die Field Service App für Offline-Daten nutzt) und nicht über Apex, das offline ein leeres Ergebnis liefert. Vorgeladene Daten liegen deshalb auch ohne Verbindung auf dem Gerät. Die Vorschau in der mobilen App zeigt die Informationen korrekt an, einschließlich der eigenen verknüpften Liste und der überschriebenen Bezeichnungen.
 
 Die Flows aus Grenze 2 und 3 laufen nach der nächsten Synchronisierung auf dem Server. Dort gehören sie hin: Der Techniker wartet vor Ort nicht auf die E-Mail, und die umbenannte Datei und die E-Mail folgen, sobald das Gerät wieder online ist. Die Flows für Grenze 4 können laufen, wenn die Disposition den Einsatz plant. Dann liegen die Werte auf dem Gerät, bevor der Techniker losfährt.
 

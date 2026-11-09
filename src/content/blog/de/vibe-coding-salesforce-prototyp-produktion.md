@@ -2,6 +2,7 @@
 title: "Vibe Coding in Salesforce: Prototyp oder Produktion?"
 description: "Wo Vibe Coding in Salesforce Herstellern hilft, vom Händlerportal-Mock-up bis zum Service-Cockpit, und warum Produktivcode Review, Tests und CI braucht."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: de
 slug: vibe-coding-salesforce-prototyp-produktion
 translationKey: vibe-coding-prototype-not-production
@@ -9,7 +10,7 @@ topic: devops
 categories: [devops, ai]
 tags: [Vibe Coding, Agentforce Vibes, KI-Coding, Prototyping, DevOps, Maschinenbau]
 takeaways:
-  - "Vibe Coding passt zu Workshop-Prototypen wie einem Händlerportal-Mock-up, gebaut in einer Developer Edition mit Testdaten und danach verworfen."
+  - "Vibe Coding passt zu Workshop-Prototypen wie einem Händlerportal-Mock-up, gebaut in einer Developer Edition mit erfundenen Testdaten und danach verworfen."
   - "Code für eine Org mit Händler-, Garantie- oder Servicedaten braucht agentic engineering: Ein Mensch prüft, Tests und Pipeline-Gates entscheiden."
   - "Der Prototyp wird zur Spezifikation mit Masken und Abnahmekriterien. Die Produktivumsetzung beginnt neu im Repository des Kunden."
   - "Eine Developer Edition bekommt 110 Vibes-Anfragen oder 1,5 Mio. Tokens für einen Monat, eine Scratch Org lebt standardmäßig 7 und höchstens 30 Tage."
@@ -26,7 +27,7 @@ faq:
 draft: false
 ---
 
-Vibe Coding in Salesforce lohnt sich dort, wo der Code weggeworfen werden soll: ein klickbares Händlerportal-Mock-up für den Anforderungsworkshop, ein Service-Cockpit als LWC, das der Serviceleitung zeigt, wie die Maske aussehen könnte, ein Skript, das eine Testorg mit Ersatzteilen füllt. Bauen Sie so etwas in einer Developer Edition oder Scratch Org mit Testdaten. Für alles, was in eine Org mit Händler-, Garantie- oder Servicedaten geht, wechseln Sie zu agentic engineering: freigegebener Plan, menschliches Review, Tests und Pipeline-Gates. Der Prototyp wird zur Spezifikation, die Produktivumsetzung beginnt neu in Ihrem Repository.
+Vibe Coding in Salesforce lohnt sich dort, wo der Code weggeworfen werden soll: ein klickbares Händlerportal-Mock-up für den Anforderungsworkshop, ein Service-Cockpit als LWC, das der Serviceleitung zeigt, wie die Maske aussehen könnte, ein Skript, das eine Testorg mit Ersatzteilen füllt. Bauen Sie so etwas in einer Developer Edition oder Scratch Org mit erfundenen Testdaten. Für alles, was in eine Org mit Händler-, Garantie- oder Servicedaten geht, wechseln Sie zu agentic engineering: freigegebener Plan, menschliches Review, Tests und Pipeline-Gates. Der Prototyp wird zur Spezifikation, die Produktivumsetzung beginnt neu in Ihrem Repository.
 
 ## Was bedeutet Vibe Coding, und wo hört es auf?
 
@@ -38,14 +39,14 @@ Die Grenze verläuft also entlang einer Frage: Liest jemand den Code? Dieselbe S
 
 Fowler nennt Wegwerfsoftware und Prototypen als passende Einsätze: „Experienced programmers may also find it handy for rapid development of disposable software or prototypes.“ In einem Programm bei einem Maschinen- oder Anlagenbauer würde ich vier Kandidaten in Betracht ziehen:
 
-- **Händlerportal-Mock-ups.** Eine Seite, auf der ein Händler Ersatzteile zu einer Maschine über die Seriennummer bestellt, gezeigt vor ein paar Händlern im Workshop, bevor jemand eine User Story schreibt. Was das echte Portal ausmacht, steht in [das Kundenportal in der Manufacturing Cloud](../manufacturing-cloud-kundenportal/).
-- **Ein Service-Cockpit als LWC.** Eine Maske mit offenen Fällen, installierter Basis, nächstem Wartungstermin und zugeordnetem Techniker im Außendienst, damit die Serviceleitung zeigen kann, was fehlt. Agentforce Vibes 2.0 bietet [Live-Vorschauen für Lightning Web Components](https://developer.salesforce.com/developer-centers/agentforce-vibes/announcements/agentforce-vibes-4-1-0), sobald die Vorschau-Werkzeuge eingerichtet sind, das macht so etwas schnell.
+- **Händlerportal-Mock-ups.** Eine Seite, auf der ein Händler Ersatzteile zu einer Maschine über die Seriennummer bestellt, die ein paar Händler im Workshop sehen, bevor jemand eine User Story schreibt. Was das echte Portal ausmacht, steht in [das Kundenportal in der Manufacturing Cloud](../manufacturing-cloud-kundenportal/).
+- **Ein Service-Cockpit als LWC.** Eine Maske mit offenen Fällen, installierter Basis, nächstem Wartungstermin und zugeordnetem Techniker im Außendienst, damit die Serviceleitung zeigen kann, was fehlt. Agentforce Vibes 2.0 bietet [Live-Vorschauen für Lightning Web Components](https://developer.salesforce.com/developer-centers/agentforce-vibes/announcements/agentforce-vibes-4-1-0), sobald die Vorschauwerkzeuge eingerichtet sind; damit entsteht so eine Maske schnell.
 - **Skripte für Testdaten.** Ersatzteile, Anlagen und Wartungsverträge in plausiblen Mengen für eine Demo.
 - **Einmalige Auswertungen.** Ein Skript, das einmal zählt, welche Anlagenfelder gefüllt sind, auf einem freigegebenen, anonymisierten Export statt auf der Produktion.
 
 Der Nutzen liegt im Gespräch: Fachbereiche korrigieren eine lauffähige Maske schneller als ein Fachkonzept.
 
-Die Developer Edition kostet nichts. Mit der [Ankündigung vom April 2026](https://developer.salesforce.com/blogs/2026/04/new-developer-edition-agentforce-vibes-claude-mcp) hat Salesforce Agentforce Vibes, ein VS Code im Browser und gehostete MCP-Server kostenlos in jede Developer Edition gebracht. Die [Vibes-FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) begrenzt das pro Org, für einen Monat ab erster Nutzung, ohne Auffrischung. Teams mit einem Dev Hub, in dem Agentforce Vibes aktiviert ist, nutzen stattdessen Scratch Orgs: Laut [Salesforce-DX-Handbuch](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-scratch-orgs.html) sind sie „source-driven and disposable“ und starten ohne Daten.
+Die Developer Edition kostet nichts. Mit der [Ankündigung vom April 2026](https://developer.salesforce.com/blogs/2026/04/new-developer-edition-agentforce-vibes-claude-mcp) hat Salesforce Agentforce Vibes, ein VS Code im Browser und gehostete MCP-Server kostenlos in jede Developer Edition gebracht. Laut [Vibes-FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) gilt das Kontingent pro Org einen Monat ab der ersten Nutzung und wird nicht erneuert. Teams mit einem Dev Hub, in dem Agentforce Vibes aktiviert ist, nutzen stattdessen Scratch Orgs: Laut [Salesforce-DX-Handbuch](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-scratch-orgs.html) sind sie „source-driven and disposable“ und starten ohne Daten.
 
 ```kennzahlen
 110 | Anfragen an Agentforce Vibes pro Developer Edition, oder 1,5 Mio. Tokens
@@ -72,7 +73,7 @@ Ein Prototyp zeigt, dass eine Maske sinnvoll ist, aber nicht, ob der Code mit Ih
 
 In Salesforce hat ein Workshop-Prototyp typischerweise dieselben Lücken:
 
-- Er wurde als Systemadministrator gebaut und durchgeklickt und hat das Sharing-Modell nie gesehen, das einen Händler von den Aufträgen eines anderen fernhält.
+- Er wurde mit Administratorrechten gebaut und durchgeklickt. Ob das Sharing-Modell einen Händler zuverlässig von den Aufträgen anderer Händler trennt, hat dabei niemand geprüft.
 - Er liest Datensätze einzeln, weil die Demo zwölf davon hatte.
 - Bestände und Liefertermine sind fest eingetragen, wo die Produktivversion SAP aufrufen muss.
 - Er hat keine Tests, oder Tests, die nur die Abdeckung erreichen sollen.
@@ -105,12 +106,12 @@ Nehmen wir einen Maschinenbauer mit Service Cloud, SAP S/4 und 400 Händlern, de
 
 Nach dem Workshop liest der Architekt den Prototyp-Code einmal, als Referenz. Die Auftragsabfrage ignoriert die Händlerzuordnung, weil der Entwickler als Administrator angemeldet war. Liefertermine kommen aus einer fest eingetragenen Liste. Das Cockpit setzt pro Fall eine eigene Abfrage ab.
 
-Die Produktivumsetzung startet deshalb im Repository: drei User Stories, jede mit freigegebenem Plan, einem `runAs`-Test als Händlernutzer und einem SAP-Aufruf über die vorhandene MuleSoft-API. Angenommen sind dafür zwei Sprints für ein Partnerteam mit drei Personen. Ohne den Workshop wäre nach meiner Schätzung der erste Sprint dafür draufgegangen, herauszufinden, was die Masken zeigen sollen. Der Prototyp hat sich über die Anforderungen bezahlt gemacht und keine Zeile Apex beigesteuert. Was die KI-Werkzeuge für ein solches Team kosten, steht in [KI-Coding-Kosten im Salesforce-Projekt](../ki-coding-kosten-salesforce-projekt/).
+Die Produktivumsetzung startet deshalb im Repository: drei User Stories, jede mit freigegebenem Plan, einem `runAs`-Test als Händlernutzer und einem SAP-Aufruf über die vorhandene MuleSoft-API. Ich nehme dafür zwei Sprints für ein dreiköpfiges Partnerteam an. Ohne den Workshop wäre nach meiner Schätzung der erste Sprint dafür draufgegangen, herauszufinden, was die Masken zeigen sollen. Der Prototyp hat sich über die Anforderungen bezahlt gemacht und keine Zeile Apex beigesteuert. Was die KI-Werkzeuge für ein solches Team kosten, steht in [KI-Coding-Kosten im Salesforce-Projekt](../ki-coding-kosten-salesforce-projekt/).
 
 ## Vibe Coding in Developer Editions ausdrücklich erlauben
 
-1. **Vibe Coding ausdrücklich erlauben**, in Developer Editions und Scratch Orgs mit Testdaten, damit es niemand still in einer gemeinsamen Sandbox tut.
+1. **Vibe Coding ausdrücklich erlauben**, in Developer Editions und Scratch Orgs mit erfundenen Testdaten, damit es niemand still in einer gemeinsamen Sandbox tut.
 2. **Agentforce Vibes in Produktion abschalten** und produktive Deployments in der Pipeline halten.
 3. **Die Übergabe festlegen:** Masken, Abnahmekriterien und offene Fragen verlassen den Workshop, Apex aus dem Prototyp nicht.
 4. **Pläne sichtbar machen.** Lassen Sie Ihren Partner den freigegebenen Plan an den Pull Request hängen.
-5. **Die Pipeline selbst besitzen.** Sie für Programme mit mehreren Partnern aufzusetzen, ist der Kern meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
+5. **Die Pipeline selbst verantworten.** Sie für Programme mit mehreren Partnern aufzusetzen, ist der Kern meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).

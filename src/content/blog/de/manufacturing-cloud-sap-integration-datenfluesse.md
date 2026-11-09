@@ -2,6 +2,7 @@
 title: "Manufacturing Cloud und SAP: welche Daten wohin"
 description: "Welche Daten zwischen SAP und Manufacturing Cloud fließen, in welche Richtung und wie oft: Ist-Mengen, Aufträge, Gutschriften für Boni und Login-Fristen."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: de
 slug: manufacturing-cloud-sap-integration-datenfluesse
 translationKey: manufacturing-cloud-erp-integration
@@ -10,15 +11,15 @@ categories: [manufacturing-cloud, architecture]
 contactBrief: integration
 tags: [Manufacturing Cloud, SAP, ERP-Anbindung, MuleSoft, Sales Agreements, Boni]
 takeaways:
-  - "Lagerbestände können als Kennzahl neben der Abweichung aus SAP kommen. Boni gehen als SAP-Gutschrift zurück, Garantie braucht eine eigene Schnittstelle."
+  - "Lagerbestände kommen als Kennzahl neben der Fehlmenge aus SAP. Bonusauszahlungen werden in SAP zu Gutschriften, Garantie braucht eine eigene Schnittstelle."
   - "Die Aktion Refresh Actuals Calculation rechnet die Ist-Mengen eines Sales Agreements pro Zeitraum neu, seit API-Version 47.0."
   - "Ein Takt für alle Daten kostet entweder API-Aufrufe oder das Vertrauen der Händler in den Auftragsstatus."
   - "Ab 1. Dezember 2026 brauchen Schnittstellen mit SOAP login() die Berechtigung Use Any API Auth. Mit Summer '27 entfällt login() in API 31.0 bis 64.0."
 faq:
   - q: "Welche Daten müssen von SAP in die Manufacturing Cloud fließen?"
-    a: "Accounts mit ihrer Hierarchie, Produkte und entweder Aufträge oder Auftragssummen pro Kunde, Produkt und Zeitraum als Ist-Mengen für Sales Agreements. Der Lagerbestand ist als zusätzliche Kennzahl neben der Abweichung nützlich."
+    a: "Accounts mit ihrer Hierarchie, Produkte und entweder Aufträge oder Auftragssummen pro Kunde, Produkt und Zeitraum als Ist-Mengen für Sales Agreements. Der Lagerbestand ist als zusätzliche Kennzahl neben der Fehlmenge nützlich."
   - q: "Welche Daten fließen aus der Manufacturing Cloud zurück nach SAP?"
-    a: "Freigegebene Bonusauszahlungen, aus denen SAP Gutschriften erzeugt, und freigegebene Garantiebeträge, die die Buchhaltung mit dem Händler abrechnet. Welcher SAP-Beleg daraus wird, hängt von Ihrem Garantie- und Buchungsprozess ab. Die Aufträge selbst bleiben in SAP."
+    a: "Freigegebene Bonusauszahlungen, aus denen SAP Gutschriften erzeugt, und freigegebene Garantiebeträge, die die Buchhaltung mit dem Händler abrechnet. Welcher SAP-Beleg daraus wird, hängt von Ihrem Garantie- und Buchungsprozess ab. Für Aufträge bleibt SAP das führende System."
   - q: "Brauche ich MuleSoft, um SAP an die Manufacturing Cloud anzubinden?"
     a: "Nein. Der MuleSoft Accelerator for Manufacturing liefert Vorlagen für den Abgleich von Accounts, Produkten und Aufträgen und für Bonus-Gutschriften, und Salesforce führt MuleSoft als Add-on auf Anfrage. Eine andere Integrationsplattform kann dieselben Flüsse bauen, wenn sie SAP- und Salesforce-APIs, Mapping, Wiederholungen und Monitoring abdeckt."
   - q: "Wie oft sollten Ist-Mengen aus SAP geladen werden?"
@@ -41,11 +42,11 @@ So würde ich die Datenflüsse bei einem typischen Hersteller mit SAP als ERP au
 | Accounts und Account-Hierarchie | SAP | SAP nach Salesforce | täglich, nur Änderungen |
 | Produkte und Produkthierarchie | SAP | SAP nach Salesforce | täglich, nur Änderungen |
 | Aufträge oder Auftragssummen als Ist-Mengen | SAP | SAP nach Salesforce | täglich |
-| Lagerbestand als Kennzahl neben der Abweichung | SAP | SAP nach Salesforce | täglich |
+| Lagerbestand als Kennzahl neben der Fehlmenge | SAP | SAP nach Salesforce | täglich |
 | Auftragsstatus für Händler | SAP | Live-Aufruf, keine Kopie | bei Anfrage |
 | Freigegebene Bonusauszahlungen | Salesforce | Salesforce nach SAP | bei Freigabe |
 | Freigegebene Garantiebeträge | Salesforce | Salesforce nach SAP | bei Freigabe |
-| Zahlstatus der Gutschriften | SAP | SAP nach Salesforce | geplant |
+| Zahlungsstatus der Gutschriften | SAP | SAP nach Salesforce | nach Zeitplan |
 
 Preise sind mit Winter '27 eine eigene Frage, weil Salesforce jetzt eine eigene Preisfindung für Aufträge anbietet, mit eigenen Add-ons. Darum geht es in [Penny Perfect Pricing: ERP-Preise in Salesforce?](../penny-perfect-pricing-erp-preise/). Das ganze Kapitel, von den Datenflüssen bis zum Rollout, steht im Masterclass-Kapitel [ERP, KI und Rollout](../../masterclass/manufacturing-cloud/erp-ki-und-rollout/).
 
@@ -59,7 +60,7 @@ Der [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufactu
 - Unterstützt wird nur ein Produktkatalog.
 - Auf SAP-Seite braucht es ein Communication Arrangement für Produkthierarchien und ein eigenes Kennzeichenfeld im Materialstamm.
 
-**Vertriebsboni.** Laut dem [Anwendungsfall zu Boni](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/Use%20case%202%20-%20Sales%20rebate%20management/) ist die Manufacturing Cloud das führende System für Bonusauszahlungen. Wird eine Auszahlung freigegeben, erzeugt ein Ereignis eine Gutschrift im Entwurf in SAP. Der dokumentierte Massenweg arbeitet anders: Er holt alle neuen Auszahlungen "irrespective of status" und schickt sie an SAP. Ihr Bau braucht also einen Statusfilter und einen Test dafür. Ein geplanter Lauf setzt die Auszahlung später auf bezahlt, sobald SAP die Gutschrift bezahlt hat. Kundenaufträge fließen von SAP in die Manufacturing Cloud. Wie Bonusprogramme auf Salesforce-Seite funktionieren, steht in [Rebate Management: Händlerboni ohne Excel](../rebate-management-haendlerboni/).
+**Vertriebsboni.** Laut dem [Anwendungsfall zu Boni](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/Use%20case%202%20-%20Sales%20rebate%20management/) ist die Manufacturing Cloud das führende System für Bonusauszahlungen. Wird eine Auszahlung freigegeben, erzeugt ein Ereignis eine Gutschrift im Entwurf in SAP. Die dokumentierte Massenverarbeitung arbeitet anders: Sie holt alle neuen Auszahlungen "irrespective of status" und schickt sie an SAP. Ihre Umsetzung braucht also einen Statusfilter und einen Test dafür. Ein geplanter Lauf setzt die Auszahlung später auf bezahlt, sobald SAP die Gutschrift bezahlt hat. Kundenaufträge fließen von SAP in die Manufacturing Cloud. Wie Bonusprogramme auf Salesforce-Seite funktionieren, steht in [Rebate Management: Händlerboni ohne Excel](../rebate-management-haendlerboni/).
 
 Was der Accelerator nicht abdeckt: Er legt keine Sales Agreements an und nennt keinen Garantiefluss. Der freigegebene Betrag aus einem Garantieanspruch, den ich wie in [Garantieansprüche von Händlern](../garantieansprueche-haendler-salesforce/) beschrieben im ERP als Gutschrift an den Händler buchen würde, braucht eine eigene Schnittstelle.
 
@@ -73,7 +74,7 @@ Sales Agreements beziehen ihre Ist-Mengen aus Aufträgen in Salesforce, aus eine
 
 Für die Schnittstelle zählt eine Aktion: [Refresh Actuals Calculation](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_refresh_actuals_calculation.htm). Sie ist seit API-Version 47.0 für Nutzer mit dem Permission Set Manufacturing Sales Agreements verfügbar und berechnet die Ist-Mengen eines Sales Agreements neu. Zwei Schalter wählen die Zeiträume: nur der aktuelle Zeitraum, der aktuelle und vergangene Zeiträume oder der aktuelle und künftige Zeiträume. Wie viele künftige Zeiträume zählen, steht in einem Feld am Sales Agreement. Setzt man beide Schalter auf true, schlägt der Aufruf fehl, und laut Dokumentation lässt sich die Aktion nur über ein Datenbank-Rollback rückgängig machen.
 
-Daraus ergibt sich ein sauberes Muster für die Schnittstelle. Hat SAP verspätete Aufträge oder Korrekturen für einen abgeschlossenen Monat geliefert, ruft die Middleware die Aktion für die betroffenen Agreements mit "aktueller und vergangene Zeiträume" auf. Ohne diesen Schritt zeigt das Agreement bis zum nächsten regulären Lauf den Rückstand des Vormonats, und Account Manager rufen Kunden wegen Mengen an, die längst abgenommen sind.
+Daraus ergibt sich ein sauberes Muster für die Schnittstelle. Hat SAP verspätete Aufträge oder Korrekturen für einen abgeschlossenen Monat geliefert, ruft die Middleware die Aktion für die betroffenen Agreements mit der Einstellung für den aktuellen und die vergangenen Zeiträume auf. Ohne diesen Schritt zeigt das Agreement bis zum nächsten regulären Lauf die Fehlmenge des Vormonats, und Account Manager rufen Kunden wegen Mengen an, die längst abgenommen sind.
 
 ## Der Takt folgt der Frage, die die Daten beantworten
 
@@ -81,7 +82,7 @@ Der Takt folgt der Frage, die die Daten beantworten. Sales Agreements laufen üb
 
 Das Volumen entscheidet zwischen ganzen Aufträgen und Summen. Ein Rechenbeispiel mit angenommenen Zahlen: 800 Accounts mit Sales Agreements, im Schnitt 40 Produkte pro Agreement und Monatszeiträume. Summen pro Kunde, Produkt und Monat bedeuten höchstens 800 × 40 = 32.000 Werte im Monat, und ein täglicher Delta-Lauf schickt nur die geänderten Werte. Jede Auftragsposition zusätzlich zu replizieren, kostet Datenspeicher und einen Verknüpfungsschritt pro Auftrag. Das lohnt sich nur, wenn Vertrieb oder Service die Aufträge selbst in Salesforce sehen sollen.
 
-Der Lagerbestand gehört in denselben täglichen Lauf. Ein Rückstand liest sich anders, wenn die Ware das Lager füllt, als wenn sie ohnehin knapp ist.
+Der Lagerbestand gehört in denselben täglichen Lauf. Eine Fehlmenge liest sich anders, wenn die Ware das Lager füllt, als wenn sie ohnehin knapp ist.
 
 ## Welche Login-Fristen betreffen ERP-Schnittstellen?
 
@@ -93,7 +94,7 @@ Summer '27 | SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt; SOAP-, R
 Summer '28 | Aufrufe an SOAP-, REST- und Bulk-API 31.0 bis 40.0 schlagen fehl
 ```
 
-Salesforce rät im selben Guide, diese Schnittstellen auf OAuth mit External Client Apps umzustellen. Ein Ist-Mengen-Lauf, der still ausfällt, ist schlimmer als einer, der laut ausfällt, weil der Vertrieb einen alten Rückstand sieht und ihm glaubt. Wie Sie alle betroffenen Schnittstellen finden, steht in [Salesforce-Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
+Salesforce rät im selben Guide, diese Schnittstellen auf OAuth mit External Client Apps umzustellen. Ein Ist-Mengen-Lauf, der still ausfällt, ist schlimmer als einer, der laut ausfällt, weil der Vertrieb eine alte Fehlmenge sieht und ihm glaubt. Wie Sie alle betroffenen Schnittstellen finden, steht in [Salesforce-Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
 
 ## Jedes Objekt braucht ein führendes System und eine Person
 
@@ -104,14 +105,14 @@ Diese Fragen kommen in fast jedem Design:
 - **Account-Hierarchie.** Liegt der Auftraggeber aus SAP auf derselben Ebene wie der Account mit dem Sales Agreement? Wenn nicht, braucht es eine Zuordnungstabelle mit einem Verantwortlichen.
 - **Produktidentität.** Ist eine verkaufbare Variante in SAP und in Salesforce genau ein Produkt? Der Accelerator verknüpft Aufträge über das Produkt oder die primäre Kategorie mit Agreements.
 - **Korrekturen.** Wer stößt die Neuberechnung der Ist-Mengen an, wenn SAP eine Gutschrift oder Retoure für einen vergangenen Zeitraum bucht?
-- **Fehler.** Wer bekommt die Meldung, wenn der nächtliche Lauf ausfällt, und bis wann muss er laufen?
+- **Fehler.** Wer bekommt die Meldung, wenn der nächtliche Lauf ausfällt, und bis wann muss der Fehler behoben sein?
 
 Wie ich Schnittstellen zwischen ERP, Middleware und Salesforce aufsetze, beschreibe ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
 ## Tabelle mit Objekten, Richtung und Takt füllen
 
 1. **Füllen Sie die Tabelle** mit Ihren Objekten, führendem System, Richtung und Takt.
-2. **Entscheiden Sie Ist-Mengen als Aufträge oder Summen**, bevor das erste Sales Agreement live geht.
+2. **Entscheiden Sie, ob Sie Ist-Mengen als Aufträge oder als Summen abbilden**, bevor das erste Sales Agreement live geht.
 3. **Prüfen Sie den Accelerator** gegen Ihr SAP-Release und Ihre Katalogstruktur, und klären Sie die Regel für Kundenstammdaten.
 4. **Planen Sie die Geldflüsse zurück**: Bonusauszahlungen und Garantiebeträge, jeweils mit einem Status, der nach Salesforce zurückkommt.
 5. **Listen Sie jeden Schnittstellennutzer** und seine Anmeldemethode vor dem 1. Dezember 2026 auf.

@@ -1,7 +1,8 @@
 ---
 title: "Account Manager Targets: Vertriebsziele pro Kunde"
-description: "Was Account Manager Targets in der Manufacturing Cloud leisten, wie Ziele auf Kunden und Produkte fließen und welche Daten die Excel-Zielplanung ablösen."
+description: "Was Account Manager Targets in der Manufacturing Cloud leisten, wie Ziele auf Kunden und Produkte fließen und welche Daten nötig sind, bevor Excel entfällt."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: de
 slug: account-manager-targets-vertriebsziele
 translationKey: manufacturing-cloud-account-manager-targets
@@ -10,7 +11,7 @@ categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Account Manager Targets, Vertriebsziele, Absatzprognose, CRM Analytics]
 takeaways:
   - "Änderungen laufen nicht von selbst nach unten. Der Manager gibt sie weiter, oder ein Flow ruft Update Account Manager Target Values auf."
-  - "Verlässt jemand das Team oder ändert sich ein Manager-Feld, werden Zuordnungen ungültig. Ein Wechsel des Hierarchietyps sperrt alle Ziele."
+  - "Verlässt jemand das Team oder ändert sich das Feld Manager, werden Zuordnungen ungültig. Ein Wechsel des Hierarchietyps macht alle Ziele schreibgeschützt."
   - "Ziel, Prognose und Ist passen nur zusammen, wenn alle drei dieselben Kunden, Produkte und Zeiträume nutzen."
   - "Provisionen rechnet die Funktion nicht. Salesforce verkauft dafür Spiff, viele Hersteller nutzen die Lohnabrechnung."
 faq:
@@ -43,7 +44,7 @@ Im Setup hat die Funktion einen eigenen Schalter, und Nutzer brauchen das Permis
 
 ## Das Ziel läuft von der Vertriebsleitung bis zum Produkt
 
-Von oben nach unten. Das Objekt [AcctMgrTarget](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target.htm) speichert dafür Maßeinheit, Zielwert und den Prozentsatz vom übergeordneten Ziel: Die Vertriebsleitung legt ein Umsatzziel für das Jahr an und gibt den direkten Mitarbeitenden Prozentsätze, zum Beispiel 35, 35 und 30 Prozent. Wer einen Prozentsatz einträgt, bekommt den Wert berechnet, und umgekehrt. Jede Ebene kann einen Teil behalten und den Rest weitergeben.
+Von oben nach unten. Das Objekt [AcctMgrTarget](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target.htm) speichert dafür Kennzahl, Zielwert und den Prozentsatz des übergeordneten Ziels: Die Vertriebsleitung legt ein Umsatzziel für das Jahr an und gibt den direkten Mitarbeitenden Prozentsätze, zum Beispiel 35, 35 und 30 Prozent. Wer einen Prozentsatz einträgt, bekommt den Wert berechnet, und umgekehrt. Jede Ebene kann einen Teil behalten und den Rest weitergeben.
 
 Unterhalb der Teamebene kommen drei weitere Schnitte dazu; die [Verteilung](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target_distribution.htm) speichert dafür Kunde, Produkt und Preisbuch:
 
@@ -60,7 +61,7 @@ Für Automatisierung gibt es die [Aktion Update Account Manager Target Values](h
 
 ## Was passiert nach einer Umorganisation?
 
-Zuordnungen werden ungültig. Trailhead nennt als typische Gründe, dass jemand das Unternehmen verlässt oder sich die Managerhierarchie ändert. Ein Wechsel des Hierarchietyps selbst, etwa von Managerhierarchie zu Forecast-Hierarchie, geht weiter: Laut Hilfe werden dann alle bestehenden Ziele schreibgeschützt. Pro ungültiger Zuordnung hat der Manager vier Möglichkeiten:
+Zuordnungen werden ungültig. Trailhead nennt als typische Gründe, dass jemand das Unternehmen verlässt oder sich das Feld Manager ändert. Ein Wechsel des Hierarchietyps selbst, etwa von Managerhierarchie zu Forecast-Hierarchie, geht weiter: Laut Hilfe werden dann alle bestehenden Ziele schreibgeschützt. Pro ungültiger Zuordnung hat der Manager vier Möglichkeiten:
 
 | Option | Was sie tut |
 |---|---|
@@ -97,7 +98,7 @@ In der Praxis würde ich das Szenario trotzdem zuschneiden, wegen der Lesbarkeit
 
 ## Wo bleiben Provisionen und Prämien?
 
-Außerhalb dieser Funktion. Account Manager Targets verteilen und zeigen Ziele, sie rechnen keine Provision, keine Beschleuniger und keine Auszahlung. Dafür verkauft Salesforce ein eigenes Produkt, [Salesforce Spiff](https://salesforce.com/sales/incentive-compensation-management), gelistet mit 75 Dollar pro Nutzer und Monat. Viele Hersteller rechnen variable Vergütung ohnehin in der Lohnabrechnung oder im HR-System, oft mit einer Betriebsvereinbarung dahinter.
+Außerhalb dieser Funktion. Account Manager Targets verteilen und zeigen Ziele, sie berechnen weder Provisionen noch Provisionsstaffeln oder Auszahlungen. Dafür verkauft Salesforce ein eigenes Produkt, [Salesforce Spiff](https://salesforce.com/sales/incentive-compensation-management), gelistet mit 75 Dollar pro Nutzer und Monat. Viele Hersteller rechnen variable Vergütung ohnehin in der Lohnabrechnung oder im HR-System, oft mit einer Betriebsvereinbarung dahinter.
 
 Die saubere Trennung: Salesforce hält Ziel und Zielerreichung, das Vergütungssystem liest beides und rechnet die Auszahlung. Dann muss das Ziel in Salesforce das sein, auf das sich die Zielvereinbarung bezieht, eingefroren zu einem festen Stichtag. Ändern Manager Ziele im Lauf des Jahres, dokumentieren Sie, wer was geändert hat. Spätestens bei der Bonusrunde fragt jemand nach.
 

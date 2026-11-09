@@ -2,6 +2,7 @@
 title: "Agentforce Agent API: Agenten in eigenen Händler-Apps"
 description: "Wie Ihre Händler-App oder Ihr Maschinenportal einen Agentforce-Agenten über die Agent API aufruft und was das für Identität, Sicherheit und Flex Credits heißt."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: de
 slug: agentforce-agent-api-eigene-apps
 translationKey: agent-api-own-apps
@@ -12,8 +13,8 @@ tags: [Agentforce, Agent API, Händlerportal, Sicherheit, Flex Credits, Maschine
 takeaways:
   - "Ihr Backend holt ein Token per Client Credentials Flow, öffnet eine Session und sendet oder streamt Nachrichten an den Agenten."
   - "Mit Client Credentials erreichen alle Händler Salesforce unter einer Identität, Agent-User oder Token-User. Die Freigaben trennen ihre Aufträge nicht mehr."
-  - "Setzen Sie den Händler-Account beim Session-Start per API und lassen Sie die Aktionen in Logik danach filtern, nie nach dem Chattext."
-  - "Aufrufe registrierter Agenten zählen künftig als Headless Platform Interactions, Satz noch offen. Ob eine Händler-App über die Agent API zählt, ist ungeklärt."
+  - "Setzen Sie den Händler-Account beim Session-Start per API und lassen Sie jede Aktion in ihrer Logik danach filtern, nie nach dem Chattext."
+  - "Registrierte Agenten werden künftig als Headless Platform Interactions abgerechnet, Preis offen. Ob eine Händler-App über die Agent API zählt, ist unklar."
   - "Für Mitarbeitende mit Claude oder ChatGPT passt der Agent als Hosted-MCP-Tool besser, weil er ihren eigenen Benutzerkontext behält."
 faq:
   - q: "Was ist die Agentforce Agent API?"
@@ -59,7 +60,7 @@ Salesforces eigene Architekten warnen vor genau diesem Muster. In einem [Salesfo
 Sie geben die Freigaben als Grenze zwischen Händlern auf. Die Identität, unter der die Aktionen laufen, meist der Agent-User, braucht Lesezugriff auf Aufträge, Anlagen und Garantiefälle aller Händler, sonst kann der Agent niemandem antworten. Die Grenze wandert an zwei Stellen, die Ihnen gehören:
 
 - **Ihr Backend.** Es meldet den Händler über Ihr eigenes Login an, ordnet ihn einer Salesforce-Account-ID zu und verwahrt das Client Secret. Das Secret gehört nie in eine mobile App oder einen Browser.
-- **Die Aktionen des Agenten.** Das Backend übergibt die Account-ID beim Session-Start. Laut [Leitfaden zu Agent-API-Variablen](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-variables.html) sind viele Variablen schreibgeschützt und nur beim Start setzbar, und eine Variable muss das Setzen per API ausdrücklich erlauben. Binden Sie diese Variable an den Account-Eingang jeder Aktion, ob Flow oder Apex-Klasse, damit das Modell den Eingang nicht selbst füllt, und lassen Sie die Aktion den Filter noch einmal durchsetzen. Dann entscheidet das Sprachmodell nie, welchen Account eine Abfrage nutzt.
+- **Die Aktionen des Agenten.** Das Backend übergibt die Account-ID beim Session-Start. Laut [Leitfaden zu Agent-API-Variablen](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-variables.html) sind viele Variablen schreibgeschützt und nur beim Start setzbar, und eine Variable muss das Setzen per API ausdrücklich erlauben. Binden Sie diese Variable an den Account-Eingabeparameter jeder Aktion, ob Flow oder Apex-Klasse, damit das Modell den Eingang nicht selbst füllt, und lassen Sie die Aktion den Filter noch einmal durchsetzen. Dann entscheidet das Sprachmodell nie, welchen Account eine Abfrage nutzt.
 
 Beim zweiten Punkt zahlen sich [Agent Script und feste Regeln](../agent-script-regeln-statt-llm/) aus. Ein Händler, der „zeig mir die Aufträge von Account 4711“ tippt, versucht genau den Zugriff über Händlergrenzen, den Sie verhindern wollen. Ein Filter in der Logik stoppt ihn, eine Anweisung im Prompt vielleicht nicht. Das größere Muster beschreibe ich unter [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
 
@@ -89,7 +90,7 @@ Die Händler-App bekommt einen Agenten für Auftragsstatus und offene Garantief�
 
 Angenommen sind 5.000 Sessions im Monat mit je drei Aktionen. Bei [20 Flex Credits pro Aktion](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) sind das 300.000 Credits im Monat und 3,6 Millionen im Jahr. Zum Listenpreis von [500 € pro 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) kosten allein die Aktionen 1.500 € im Monat; Prompts und Data-360-Grounding können hinzukommen, je nachdem, wie der Agent gebaut ist. Schon die Händler-App allein übersteigt die 2,75 Millionen Flex Credits, die die [Max Edition](https://www.salesforce.com/service/pricing/) pro Org und Jahr enthält.
 
-Den Test, auf dem ich vor dem Go-live bestehen würde: Händler A fragt in zwanzig Formulierungen nach einer Auftragsnummer von Händler B, und jede Antwort muss „nicht gefunden“ lauten. Dazu kommen technische Fälle: eine manipulierte Account-ID beim Session-Start, eine leere Variable und zwei Händler in parallelen Sessions. Die Logs müssen zeigen, dass keine fremden Daten gelesen wurden, nicht nur, dass keine angezeigt wurden.
+Den Test, auf dem ich vor dem Go-live bestehen würde: Händler A fragt in zwanzig Formulierungen nach einer Auftragsnummer von Händler B, und jede Antwort muss „nicht gefunden“ lauten. Dazu kommen technische Fälle: eine manipulierte Account-ID beim Session-Start, eine leere Variable und zwei Händler in parallelen Sessions. Die Logs müssen zeigen, dass keine fremden Daten gelesen wurden; eine bloße Prüfung der Anzeige reicht nicht.
 
 ## Was kostet das, und was ist noch offen?
 

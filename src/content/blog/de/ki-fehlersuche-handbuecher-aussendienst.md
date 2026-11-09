@@ -2,6 +2,7 @@
 title: "KI-Fehlersuche im Außendienst: erst die Handbücher"
 description: "Was Maschinenbauer mit Handbüchern, Bulletins und Wissensartikeln tun müssen, damit der Field-Service-Agent je Variante und Seriennummer richtig antwortet."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: de
 slug: ki-fehlersuche-handbuecher-aussendienst
 translationKey: field-service-ai-troubleshooting-manuals
@@ -26,7 +27,7 @@ faq:
 draft: false
 ---
 
-Ein KI-Agent für die Fehlersuche im Außendienst gibt dem Techniker nur dann die richtige Antwort, wenn er weiß, welches Handbuch zur Maschine vor Ort gehört. Den Agenten liefert Salesforce, das Dokumentenmodell ist Aufgabe des Maschinenbauers. Jedes Handbuch, jedes Service-Bulletin und jeder Wissensartikel braucht den Produktschlüssel, den die Anlage schon trägt, und einen Seriennummernbereich, wo ein Bulletin nur für einen Teil der Maschinen gilt, und der Agent muss die Werte der Anlage als Filter in die Suche geben. Im Index liegt je Variante und Bauzustand eine gültige Fassung. Eine Data Library reicht, solange ein aktueller Handbuchstand für alle Maschinen im Umfang gilt; teilen sich Varianten oder Bauzustände einen Index, würde ich das erweiterte Data-360-Setup mit Filterfeldern nehmen.
+Ein KI-Agent für die Fehlersuche im Außendienst antwortet dem Techniker nur dann richtig, wenn er weiß, welches Handbuch zur Maschine vor Ort gehört. Den Agenten liefert Salesforce, das Dokumentenmodell ist Aufgabe des Maschinenbauers. Jedes Handbuch, jedes Service-Bulletin und jeder Wissensartikel braucht den Produktschlüssel, den die Anlage schon trägt, und einen Seriennummernbereich, wo ein Bulletin nur für einen Teil der Maschinen gilt. Der Agent übergibt die Werte der Anlage als Filter an die Suche. Im Index liegt je Variante und Bauzustand eine gültige Fassung. Eine Data Library reicht, solange ein aktueller Handbuchstand für alle einbezogenen Maschinen gilt. Teilen sich Varianten einen Index, würde ich das erweiterte Data-360-Setup mit Filterfeldern nehmen.
 
 ## Was liest der Field-Service-Agent bei der Fehlersuche?
 
@@ -36,11 +37,11 @@ Wie der Agent das Handbuch für eine bestimmte Anlage auswählt, erklärt keine 
 
 ## Handbücher im Maschinenbau verwirren einen Agenten
 
-Ein Maschinenbauer hat selten ein Handbuch pro Produkt. Nehmen Sie ein Bearbeitungszentrum in drei Varianten, mit neuer Steuerung ab einem bestimmten Baujahr, einer Nachrüstung an einem Teil der Maschinen und einem Service-Bulletin nur für die Seriennummern 4100 bis 4380. Ein Techniker fragt nach Spindelalarm 2041. Beschreiben drei Handbuchstände diesen Alarm unterschiedlich, liefert der Retriever den Abschnitt, der am besten zur Formulierung passt, und der Agent trägt die falsche Anleitung genauso überzeugt vor wie die richtige.
+Bei Maschinenbauern gibt es selten nur ein Handbuch pro Produkt. Nehmen Sie ein Bearbeitungszentrum in drei Varianten, mit neuer Steuerung ab einem bestimmten Baujahr, einer Nachrüstung an einem Teil der Maschinen und einem Service-Bulletin nur für die Seriennummern 4100 bis 4380. Ein Techniker fragt nach Spindelalarm 2041. Beschreiben drei Handbuchstände diesen Alarm unterschiedlich, liefert der Retriever den Abschnitt, der am besten zur Formulierung passt, und der Agent trägt die falsche Anleitung genauso überzeugt vor wie die richtige.
 
 Zwei weitere Fallen sind typisch für technische Dokumentation:
 
-- **Zeichnungen.** Der [Hilfeartikel zu Data Libraries](https://help.salesforce.com/s/articleView?id=004333412&language=en_US&type=1) sagt, Data Cloud „only chunks on text and not images of your files“. Schaltpläne und Explosionszeichnungen ohne Text bleiben unsichtbar. LLM-basiertes Parsing schickt das ganze Dokument an ein LLM, laut [Abrechnungshinweisen](https://help.salesforce.com/s/articleView?id=data.c360_a_unstructured_data_billing_considerations.htm&language=en_US&type=5) zählt das als Intelligent Processing: 600 Credits pro MB laut [Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) statt 150. Die Kostenseite steht in [Data-360-Kosten für KI-Agenten](../data-360-kosten-fuer-ki-agenten/).
+- **Zeichnungen.** Der [Hilfeartikel zu Data Libraries](https://help.salesforce.com/s/articleView?id=004333412&language=en_US&type=1) sagt, Data Cloud „only chunks on text and not images of your files“. Die Bildinhalte von Schaltplänen und Explosionszeichnungen bleiben unsichtbar. LLM-basiertes Parsing schickt das ganze Dokument an ein LLM, laut [Abrechnungshinweisen](https://help.salesforce.com/s/articleView?id=data.c360_a_unstructured_data_billing_considerations.htm&language=en_US&type=5) zählt das als Intelligent Processing: 600 Credits pro MB laut [Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) statt 150. Die Kostenseite steht in [Data-360-Kosten für KI-Agenten](../data-360-kosten-fuer-ki-agenten/).
 - **Zukaufkomponenten.** Ein Getriebe in der Maschine kommt mit dem Handbuch des Lieferanten. Es gehört zu dieser Komponente, die vielleicht in zwei Ihrer Produktlinien steckt.
 
 ## Wie verknüpfen Sie Handbücher mit Anlage und Seriennummer?
@@ -77,7 +78,7 @@ Trailhead beschreibt zwei Wege. Die Agentforce Data Library nimmt Wissensartikel
 ```pro-contra
 pro: Data Library
 - Schneller aufgesetzt als das erweiterte Setup
-- Passt für einen Piloten, in dem ein aktueller Handbuchstand für alle Maschinen im Umfang gilt
+- Passt für einen Piloten, in dem ein aktueller Handbuchstand für alle einbezogenen Maschinen gilt
 contra: Was Sie dafür aufgeben
 - Die Quelle einer Bibliothek lässt sich später nicht mehr ändern, so die [Trailhead-Einheit zu dateibasierten Bibliotheken](https://trailhead.salesforce.com/content/learn/modules/agentforce-data-library-basics/build-a-file-based-data-library-for-an-agent)
 - Höchstens 100 MB pro PDF und 4 MB pro Text- oder HTML-Datei, PDFs mit eingebetteten Inhalten laut Hilfeartikel nicht unterstützt
@@ -92,7 +93,7 @@ So lese ich das: Teilen sich mehrere Varianten einen Index, werden Variantenschl
 - **Bestände, Preise und Liefertermine.** Sie ändern sich täglich und gehören ins ERP. Warum das ERP den Ersatzteilbestand führt, steht in [Ersatzteile zwischen ERP und Field Service](../salesforce-field-service-ersatzteile-erp/).
 - **Überholte Fassungen und Entwürfe**, aus den Gründen oben.
 - **Rohe E-Mail-Verläufe und Chats.** Die Ankündigung nennt sie als Quelle. Ich würde stattdessen abgeschlossene Fälle mit sauberen Feldern für Fehler und Lösung indexieren. Das hält auch Kundenkontakte und Technikernamen aus dem Index.
-- **Dokumente an Datensätzen, die eine Schnittstelle aktualisiert.** Laut Abrechnungshinweisen gelten ein Data Model Object und alle seine Dateianhänge als eine Einheit, eine Änderung an einem Feld oder Anhang kann also eine Neuindexierung aller Anhänge auslösen.
+- **Dokumente an Datensätzen, die eine Schnittstelle aktualisiert.** Laut Abrechnungshinweisen werden ein Data Model Object und alle zugehörigen Dateianhänge als eine Einheit verarbeitet. Eine Änderung an einem Feld oder Anhang kann daher eine Neuindexierung aller Anhänge auslösen.
 - **Maschinen, die Sie nicht mehr betreuen.** Jedes Megabyte kostet Credits und liefert einen Kandidaten für einen falschen Treffer.
 
 ## Rechenbeispiel: vier Produktlinien, 1.500 Maschinen
@@ -117,7 +118,7 @@ Dokumentmerkmale festlegen
 Überholte Stände entfernen
   Und eine verantwortliche Person je Produktlinie benennen.
 Den Weg wählen
-  Data Library, solange ein Handbuchstand für alle Maschinen im Umfang passt, Filterfelder, sobald Varianten oder Bauzustände abweichen.
+  Data Library, solange ein Handbuchstand für alle einbezogenen Maschinen passt, Filterfelder, sobald Varianten oder Bauzustände abweichen.
 Mit echten Störfällen testen
   Bevor ein Techniker den Agenten sieht.
 ```

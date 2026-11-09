@@ -1,6 +1,6 @@
 ---
 title: "Salesforce-Releases an den Fachbereich kommunizieren"
-description: "Wie Fachbereiche vor jedem Salesforce-Release erfahren, was sich für sie ändert: Einführungsplan je Release, Release Notes in Alltagssprache und der Rückweg."
+description: "Wie Fachbereiche vor jedem Salesforce-Release erfahren, was sich für sie ändert: Einführungsplan je Release, Release Notes in Alltagssprache, Feedbackschleife."
 pubDate: 2026-10-29
 updatedDate: 2026-11-09
 lang: de
@@ -15,12 +15,12 @@ takeaways:
   - "Kleinere, häufigere Releases können das Risiko je Release senken, verlangen aber einen festen Weg, auf dem Fachbereiche vorher erfahren, was sich ändert."
   - "Vor jedem Release steht im Plan, welche Teams betroffen sind, was sich für sie ändert und wer sie informiert, bevor die Entwicklung fertig ist."
   - "Release Notes für den Fachbereich beschreiben, was sich im Alltag ändert, nicht welche Felder und Flows deployt wurden."
-  - "Zur Kommunikation gehört ein Rückweg: Was im Alltag nicht passt, landet in der Triage und im Backlog statt in einer E-Mail."
+  - "Zur Kommunikation gehört eine Feedbackschleife: Was im Alltag nicht passt, landet in der Triage und im Backlog statt in einer E-Mail."
 faq:
   - q: "Wie informiert man Fachbereiche über ein Salesforce-Release?"
     a: "Mit einem Einführungsplan je Release, der betroffene Gruppen, Änderungen und Verantwortliche nennt, mit Release Notes in Alltagssprache und über Key User, die die Änderung im Team weitergeben."
   - q: "Wann sollte der Fachbereich von einem Release erfahren?"
-    a: "Spätestens vor dem Abnahmetest, bei größeren Änderungen schon bei der Planung. Wer eine Änderung erst in Produktion sieht, sucht sich einen Weg drumherum."
+    a: "Spätestens vor dem Abnahmetest, bei größeren Änderungen schon bei der Planung. Wer eine Änderung erst in Produktion sieht, sucht nach einer Umgehungslösung."
   - q: "Was gehört in Release Notes für den Fachbereich?"
     a: "Was sich für welche Gruppe ändert, warum, ab wann, was ich tun muss, was gleich bleibt und wen man bei Fragen anspricht. Technische Details gehören in die Release Notes für die IT."
   - q: "Betreffen auch die Salesforce-Releases selbst den Fachbereich?"
@@ -28,11 +28,11 @@ faq:
 draft: false
 ---
 
-Fachbereiche sollten vor jedem Salesforce-Release erfahren, was sich für sie ändert, nicht erst danach. Dafür braucht es einen Einführungsplan je Release, der festlegt, welche Teams betroffen sind, was sich in ihren Abläufen ändert und wer sie informiert, Release Notes in Alltagssprache statt einer Liste deployter Komponenten und einen Rückweg, auf dem Anwender melden, was im Alltag nicht passt. Mit kleineren, häufigeren Releases wird das wichtiger, weil Änderungen öfter kommen. Der Plan steht, bevor die Entwicklung fertig ist.
+Fachbereiche sollten vor jedem Salesforce-Release erfahren, was sich für sie ändert, nicht erst danach. Dafür braucht es einen Einführungsplan je Release, der festlegt, welche Teams betroffen sind, was sich in ihren Abläufen ändert und wer sie informiert, Release Notes in Alltagssprache statt einer Liste deployter Komponenten und eine Feedbackschleife, über die Anwender melden, was im Alltag nicht passt. Mit kleineren, häufigeren Releases wird das wichtiger, weil Änderungen öfter kommen. Der Plan steht, bevor die Entwicklung fertig ist.
 
 ## Kleinere Releases brauchen mehr Kommunikation
 
-Mit einem sauberen Release-Prozess werden Releases meist kleiner und häufiger. Mit automatisierten Tests und beherrschten Abhängigkeiten kann das das Risiko einzelner Releases senken. Für Fachbereiche heißt es aber auch: öfter kleine Änderungen statt einmal im Quartal ein großes Paket. Wer nicht weiß, dass sich etwas geändert hat, hält die Änderung für einen Fehler, ruft den Support an oder baut sich einen Umweg.
+Mit einem sauberen Release-Prozess werden Releases meist kleiner und häufiger. Mit automatisierten Tests und kontrollierten Abhängigkeiten kann das das Risiko einzelner Releases senken. Für Fachbereiche heißt es aber auch: öfter kleine Änderungen statt einmal im Quartal ein großes Paket. Wer nicht weiß, dass sich etwas geändert hat, hält die Änderung für einen Fehler, ruft den Support an oder baut sich einen Umweg.
 
 Im [ADKAR-Modell](../change-management-salesforce-einfuehrung/) fehlt in diesem Fall die erste Stufe, Awareness. Der Anwender weiß nicht, dass und warum sich etwas ändert. Keine Schulung kann das nachholen, wenn sie erst nach dem Release stattfindet.
 
@@ -47,7 +47,7 @@ Der Einführungsplan ist eine Tabelle mit einer Zeile pro betroffener Gruppe. Er
 | Gruppe | Was ändert sich | Wer informiert | Wann |
 |---|---|---|---|
 | Innendienst Deutschland | neues Pflichtfeld Liefertermin im Angebot | Teamleitung, Key User | zwei Wochen vorher |
-| Außendienst Service | neues Formular für Wartungsprotokoll in der App | Ansprechpartner der Region | vor dem nächsten App-Update |
+| Serviceaußendienst | neues Formular für das Wartungsprotokoll in der App | regionale Ansprechperson | vor dem nächsten App-Update |
 | Vertrieb alle Länder | keine sichtbare Änderung | niemand | nicht nötig |
 
 Die letzte Zeile ist kein Scherz. Wenn ein Release eine Gruppe nicht betrifft, sollte sie auch keine Mail bekommen. Wer jede Woche Release-Mails bekommt, die ihn nicht betreffen, liest auch die eine nicht, die ihn betrifft.
@@ -56,8 +56,8 @@ Die letzte Zeile ist kein Scherz. Wenn ein Release eine Gruppe nicht betrifft, s
 
 Technische Release Notes listen User Stories, Komponenten, Abhängigkeiten und Deployment-Schritte. Als Kommunikation für Anwender taugen sie allein nicht. Release Notes für Anwender beantworten sechs Fragen:
 
-- **Was ändert sich für mich?** Getrennt nach Gruppen, mit einem Bildschirmfoto, wenn sich die Oberfläche ändert.
-- **Warum?** Ein Satz, zum Beispiel: Der Liefertermin wird Pflicht, weil die Absatzplanung ihn braucht. Pflicht wird ein Feld erst, wenn klar ist, dass der Anwender den Wert zu diesem Zeitpunkt kennt.
+- **Was ändert sich für mich?** Getrennt nach Gruppen, mit einem Screenshot, wenn sich die Oberfläche ändert.
+- **Warum?** Ein Satz, zum Beispiel: Der Liefertermin wird Pflicht, weil die Absatzplanung ihn braucht. Zum Pflichtfeld wird ein Feld erst, wenn der Anwender den Wert zu diesem Zeitpunkt kennen kann.
 - **Ab wann?** Datum des Releases.
 - **Was muss ich tun?** Zum Beispiel ein neues Feld füllen, die App aktualisieren oder an einer kurzen Schulung teilnehmen.
 - **Was bleibt gleich?** Das nimmt viel Unsicherheit.
@@ -80,17 +80,17 @@ Nach dem Release | erste Woche · Key User, Projektteam
   Fragen sammeln, Nutzung prüfen, Rückmeldungen in den Backlog übernehmen.
 ```
 
-Für Hinweise direkt in Salesforce bietet die Plattform In-App Guidance, mit Umfang und Limits je nach Edition und Lizenz: kurze Einblendungen auf einer Seite, die neue Felder oder Abläufe erklären. Sie ersetzen keine Release Notes, helfen aber in der ersten Woche, wenn ein Anwender die Änderung zum ersten Mal sieht.
+Für Hinweise direkt in Salesforce bietet die Plattform In-App Guidance, mit Funktionsumfang und Limits je nach Edition und Lizenz: kurze Einblendungen auf einer Seite, die neue Felder oder Abläufe erklären. Sie ersetzen keine Release Notes, helfen aber in der ersten Woche, wenn ein Anwender die Änderung zum ersten Mal sieht.
 
-## Der Rückweg führt ins Backlog
+## Die Feedbackschleife führt ins Backlog
 
-Kommunikation in eine Richtung reicht nicht. Probleme aus dem Alltag landen sonst in E-Mails an einzelne Personen, und nach einem Monat weiß niemand mehr, wie oft dieselbe Frage kam. Ich richte deshalb einen festen Rückweg ein:
+Kommunikation in eine Richtung reicht nicht. Probleme aus dem Alltag landen sonst in E-Mails an einzelne Personen, und nach einem Monat weiß niemand mehr, wie oft dieselbe Frage kam. Ich richte deshalb eine feste Feedbackschleife ein:
 
 - **Ein Ort für Rückmeldungen**, etwa ein einfaches Formular oder eine Kategorie im Ticketsystem, die Key User und Anwender kennen.
 - **Eine kurze Triage.** Fehler gehen in den Support, Fragen und Schulungsbedarf an die Key User, echte Änderungswünsche in den Backlog, wo der Product Owner sie bewertet.
 - **Eine sichtbare Antwort.** Wer etwas meldet, erfährt, was daraus wird, auch wenn die Antwort nein ist.
 
-Der Rückweg ist der Teil, der Vertrauen schafft. Ein Fachbereich, der erlebt, dass seine Rückmeldung im nächsten Release umgesetzt ist, liest auch die nächsten Release Notes.
+Die Feedbackschleife ist der Teil, der Vertrauen schafft. Ein Fachbereich, der erlebt, dass seine Rückmeldung im nächsten Release umgesetzt ist, liest auch die nächsten Release Notes.
 
 ## Was tun, wenn eine Änderung umstritten ist?
 
@@ -98,7 +98,7 @@ Manche Änderungen gefallen nicht allen, etwa ein neues Pflichtfeld, das dem Inn
 
 ## Was ist mit den Releases von Salesforce selbst?
 
-Salesforce veröffentlicht drei große saisonale Releases im Jahr, Spring, Summer und Winter, manche Produkte und Funktionen zusätzlich monatlich. Sie können Oberflächen ändern, Funktionen einführen oder alte abschalten. Die meisten Änderungen betreffen Admins und Entwickler, einige auch Anwender. Was in [Winter '27](../salesforce-winter-27-aenderungen-pipeline/) für die Pipeline wichtig war, habe ich beschrieben. Für den Fachbereich gilt derselbe Weg, aber der Zeitpunkt richtet sich nach Salesforce: Diese Änderungen kommen an dem Termin von Salesforce in Produktion, manche werden automatisch aktiviert oder später als Release Update erzwungen. Ich prüfe Release Notes und Release Updates, teste in der Preview-Sandbox und informiere die betroffenen Nutzer, bevor die Änderung aktiv wird, im Einführungsplan des Releases, das zuerst kommt.
+Salesforce veröffentlicht drei große saisonale Releases im Jahr, Spring, Summer und Winter, manche Produkte und Funktionen zusätzlich monatlich. Sie können Oberflächen ändern, Funktionen einführen oder alte abschalten. Die meisten Änderungen betreffen Admins und Entwickler, einige auch Anwender. Was in [Winter '27](../salesforce-winter-27-aenderungen-pipeline/) für die Pipeline wichtig war, habe ich beschrieben. Für den Fachbereich gilt derselbe Weg, aber der Zeitpunkt richtet sich nach Salesforce: Diese Änderungen erreichen die Produktion zu dem Termin, den Salesforce festlegt. Manche werden automatisch aktiviert oder später als Release Update verpflichtend. Ich prüfe Release Notes und Release Updates, teste in der Preview-Sandbox und informiere die betroffenen Nutzer, bevor die Änderung aktiv wird, im Einführungsplan des Releases, das zuerst kommt.
 
 ## Erster Schritt: ein Einführungsplan für das nächste Release
 

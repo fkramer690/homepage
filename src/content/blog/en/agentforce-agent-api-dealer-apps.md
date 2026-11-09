@@ -2,6 +2,7 @@
 title: "Agentforce Agent API: agents in your own dealer apps"
 description: "How your dealer app or machine portal calls an Agentforce agent through the Agent API, and what that means for identity, security and Flex Credit costs."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: agentforce-agent-api-dealer-apps
 translationKey: agent-api-own-apps

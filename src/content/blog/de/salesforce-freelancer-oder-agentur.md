@@ -12,7 +12,7 @@ contactBrief: partner-governance
 tags: [Freelancer, Agentur, Implementierungspartner, Partnersteuerung, Salesforce Architekt]
 takeaways:
   - "Eine Agentur liefert Umsetzungskapazität, also ein Team, das baut, testet und betreibt, und ein einzelner Freelancer ersetzt dieses Team nicht."
-  - "Ein freiberuflicher Architekt auf Kundenseite lohnt sich, wenn Entscheidungen und Standards beim Kunden liegen sollen und nicht beim Partner, der davon lebt."
+  - "Ein freiberuflicher Architekt auf Kundenseite lohnt sich, wenn Entscheidungen und Standards beim Kunden liegen sollen, nicht beim Partner, der daran verdient."
   - "Die Warnungen vor Freelancern stimmen für den Freelancer als günstigeren Ersatz für ein Entwicklerteam, nicht für die Architektenrolle."
   - "In meinem größten Programm bauten 5 Partner mit über 30 Entwicklern in 8 Streams, die Standards dafür kamen von der Kundenseite."
   - "Gegen das Ausfallrisiko eines Freelancers helfen ein Entscheidungslog, dokumentierte Standards und ein interner Kollege als Vertretung."
@@ -28,7 +28,7 @@ faq:
 draft: false
 ---
 
-Ob Sie für Salesforce einen Freelancer oder eine Agentur beauftragen, hängt an der Rolle, die Sie besetzen wollen. Brauchen Sie ein Team, das eine Einführung baut, testet und betreibt, ist eine Agentur oder ein Implementierungspartner die richtige Wahl. Ein einzelner Salesforce-Freelancer ersetzt dieses Team nicht. Sollen dagegen Architekturentscheidungen, Standards und die Steuerung mehrerer Partner beim Kunden liegen, passt ein freiberuflicher Architekt auf Kundenseite, weil er nicht an der Umsetzung verdient. In größeren Programmen von Herstellern arbeiten beide zusammen.
+Ob Sie für Salesforce einen Freelancer oder eine Agentur beauftragen, hängt an der Rolle, die Sie besetzen wollen. Brauchen Sie ein Team, das eine Einführung umsetzt, testet und betreibt, ist eine Agentur oder ein Implementierungspartner die richtige Wahl. Ein einzelner Salesforce-Freelancer ersetzt dieses Team nicht. Sollen dagegen Architekturentscheidungen, Standards und die Steuerung mehrerer Partner beim Kunden liegen, passt ein freiberuflicher Architekt auf Kundenseite, weil er nicht an der Umsetzung verdient. In größeren Programmen von Herstellern arbeiten beide zusammen.
 
 ## Was spricht gegen einen Salesforce-Freelancer?
 
@@ -41,7 +41,7 @@ Wer nach Salesforce-Freelancern sucht, findet weit oben Artikel von Agenturen, d
 
 Alle vier Punkte treffen zu, wenn ein Hersteller einen Freelancer als günstigeren Ersatz für ein Entwicklerteam einsetzt. Dann sitzt eine Person dort, wo ein Team hingehört, und der Kunde wundert sich, dass es nicht vorangeht.
 
-Für die Rolle, in der ich selbst arbeite, stellen sich andere Fragen. Ein Architekt auf Kundenseite baut nicht die Einführung. Er sorgt dafür, dass die Teams, die bauen, nach denselben Regeln bauen und dass der Kunde die Entscheidungen trifft, die er treffen muss.
+Für die Rolle, in der ich selbst arbeite, stellen sich andere Fragen. Ein Architekt auf Kundenseite baut nicht die Einführung. Er sorgt dafür, dass alle Umsetzungsteams nach denselben Regeln bauen und dass der Kunde die Entscheidungen trifft, die er treffen muss.
 
 ## Wann ist eine Agentur die bessere Wahl?
 
@@ -66,7 +66,7 @@ pro: Freiberuflicher Architekt auf Kundenseite
 - Bereitet Entscheidungen wie Industry Cloud oder Eigenbau ohne Verkaufsinteresse vor
 contra: Was er nicht leistet
 - Keine Umsetzungskapazität für eine ganze Einführung
-- Kein Werkvertrag über ein Gesamtergebnis
+- Keine vertragliche Verantwortung für ein Gesamtergebnis
 - Keine eingebaute Vertretung durch Kollegen, wenn er ausfällt, außer es ist eine benannte Vertretung vereinbart
 - Kein Betrieb und kein Support rund um die Uhr
 ```
@@ -88,7 +88,7 @@ In den meisten Programmen, in denen ich arbeite, gibt es beides: Partner, die ba
 | Standards und Object Ownership Matrix | gibt frei | entwirft und pflegt | hält sich daran, meldet Randfälle |
 | Umsetzung, Tests, Deployment | nimmt ab | prüft Entwürfe und Pull Requests | baut und liefert |
 | Center of Excellence | leitet | führt den technischen Call | stellt Änderungen vor |
-| Lizenzen und Verträge | verhandelt | rechnet Bedarf und Varianten | liefert Mengengerüst |
+| Lizenzen und Verträge | verhandelt | ermittelt Bedarf und berechnet Varianten | liefert Mengengerüst |
 
 ```praxis
 In meinem größten Programm haben 5 Implementierungspartner mit über 30 Entwicklern in 8 Streams an derselben Org gebaut. Die Standards dafür, von Namenskonventionen über einen Einstiegspunkt für Automatisierung pro Objekt bis zur Object Ownership Matrix, haben rund drei Monate gebraucht. 80 Prozent standen nach der ersten Runde, die Randfälle kamen nach und nach dazu. Später wurden Änderungen mit Vorlauf im technischen CoE-Call alle zwei Wochen vorgestellt, bis neue Randfälle fast ganz verschwunden waren.
@@ -103,7 +103,7 @@ Wenn Sie einen Architekten für Ihre Seite des Tisches suchen, helfen andere Fra
 - **Welche Entscheidung hat er zuletzt vorbereitet, und wie ist sie dokumentiert?** Lassen Sie sich ein anonymisiertes [Entscheidungslog](../salesforce-architektur-entscheidungslog/) zeigen. Wer keines führt, hinterlässt Ihnen später nur seine Erinnerung.
 - **Wie viele Partner hat er gleichzeitig gesteuert?** Ein Architekt, der nur innerhalb eines Partners gearbeitet hat, kennt die Konflikte zwischen Partnern nicht aus eigener Anschauung.
 - **Wo sagt er Nein?** Fragen Sie nach einer Rolle, die er abgelehnt hat. Ich nehme zum Beispiel keine reinen Admin- oder Entwicklerrollen an und keine Rollen, in denen die Architektur schon feststeht und nur noch abgenommen werden soll.
-- **Wie regelt er Ausfälle?** Eine Kollegenbank hat ein Freelancer nicht, außer es ist eine benannte Vertretung vereinbart. Was es geben muss: dokumentierte Standards, ein Entscheidungslog und einen internen Kollegen, der Reviews und Calls übernehmen kann. In einem Programm lief anfangs jeder Pull Request über meinen Schreibtisch, als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
+- **Wie regelt er Ausfälle?** Auf Kollegen als Vertretung kann ein Freelancer nicht ohne Weiteres zurückgreifen, außer es ist eine benannte Vertretung vereinbart. Was es geben muss: dokumentierte Standards, ein Entscheidungslog und einen internen Kollegen, der Reviews und Calls übernehmen kann. In einem Programm lief anfangs jeder Pull Request über meinen Schreibtisch, als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
 - **Wer ist Vertragspartner?** Bei mir ist das die FK Solution Design GmbH, abgerechnet wird monatlich nach Aufwand. Viele Kunden beauftragen über einen Personaldienstleister, auch das ist möglich.
 
 ## Aufschreiben, welche Rolle fehlt

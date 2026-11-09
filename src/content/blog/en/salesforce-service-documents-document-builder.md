@@ -2,6 +2,7 @@
 title: "Salesforce Service Documents: is Document Builder enough?"
 description: "What Salesforce Service Documents and Document Builder do in Field Service, what they cost, where the limits are and when manufacturers need another tool."
 pubDate: 2026-10-23
+updatedDate: 2026-11-09
 lang: en
 slug: salesforce-service-documents-document-builder
 translationKey: service-documents-document-builder
@@ -25,7 +26,7 @@ faq:
     a: "When you need Word templates with complex logic, DOCX or PowerPoint output, documents on assets or custom objects, batch generation or a DocuSign integration. Document Builder covers none of these; it can only show or hide components by criteria."
 ---
 
-Salesforce Service Documents are the PDFs that Field Service creates from a work order or a service appointment: the service report with working time, spare parts, photos and the customer's signature. The templates are built in Document Builder, which comes with the Field Service licenses at no extra cost. For the classic service report on site, also offline, that is the right choice. Simple conditions work too, because every component can be shown or hidden by criteria. For documents on the asset, Word output, batch runs or inspection reports whose logic goes beyond show and hide, it is not enough, and you need Salesforce Document Generation or a tool from the AppExchange.
+Salesforce Service Documents are the PDFs that Field Service creates from a work order or a service appointment: the service report with working time, spare parts, photos and the customer's signature. The templates are built in Document Builder, which comes with the Field Service licenses at no extra cost. For the classic service report on site, even offline, that is the right choice. Simple conditions work too, because every component can be shown or hidden by criteria. For documents on the asset, Word output, batch runs or inspection reports whose logic goes beyond show and hide, you need Salesforce Document Generation or an AppExchange tool.
 
 ## What are Salesforce Service Documents?
 
