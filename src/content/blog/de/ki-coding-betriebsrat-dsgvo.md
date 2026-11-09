@@ -1,6 +1,6 @@
 ---
-title: "KI-Coding-Tools im Unternehmen: Betriebsrat und DSGVO"
-description: "Claude Code, Copilot oder Codex einführen: wann der Betriebsrat zustimmen muss, was in die Betriebsvereinbarung gehört und wo Ihre Daten verarbeitet werden."
+title: "KI-Coding-Tools in Deutschland: Betriebsrat und DSGVO"
+description: "Claude Code, Copilot oder Codex an einem deutschen Standort einführen: wann der Betriebsrat zustimmt, was in die Betriebsvereinbarung gehört, wo Ihr Code läuft."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de
@@ -12,9 +12,9 @@ tags: [KI-Coding, Betriebsrat, DSGVO, Datenresidenz, Claude Code, GitHub Copilot
 takeaways:
   - "Gibt es einen Betriebsrat und kann das Tool Beschäftigte überwachen, braucht es laut CMS dessen Zustimmung oder einen Spruch der Einigungsstelle."
   - "Claude Code zeigt Admins akzeptierte Codezeilen pro Person, GitHub liefert Copilot-Metriken pro Nutzer, und genau das regelt die Betriebsvereinbarung."
-  - "EU-Inferenz geht über Bedrock mit festen EU-Profilen, Copilot mit Datenresidenz oder OpenAI. Die Anthropic-API hat keine EU-Region."
-  - "Ein Eilbeschluss von 2024 sah bei privaten Konten in einem Sonderfall keine Mitbestimmung. Ein Freibrief ist das nicht."
-  - "Planen Sie Betriebsrat und Datenschutz vor dem Pilot und trennen Sie die Einführung des Tools von späteren Änderungen an Teamgrößen oder Rollen."
+  - "EU-Inferenz geht über Bedrock mit festen EU-Profilen, Copilot auf GitHub Enterprise Cloud mit Datenresidenz oder OpenAI. Die Anthropic-API hat keine EU-Region."
+  - "Ein Eilbeschluss von 2024 sah bei privaten Konten in einem Sonderfall keine Mitbestimmung. Kein Freibrief, und es gelten Verbraucherbedingungen."
+  - "Planen Sie Betriebsrat und Datenschutz vor dem Pilotprojekt und trennen Sie die Einführung des Tools von späteren Änderungen an Teamgrößen oder Rollen."
 faq:
   - q: "Muss der Betriebsrat Claude Code oder GitHub Copilot zustimmen?"
     a: "In aller Regel ja, wenn das Unternehmen die Konten bereitstellt. Laut CMS reicht die objektive Möglichkeit, Leistung oder Verhalten zu überwachen, eine Absicht ist nicht nötig. Beide Tools erzeugen Nutzungsdaten pro Person. Dieser Beitrag ist keine Rechtsberatung."
@@ -29,20 +29,20 @@ faq:
 draft: false
 ---
 
-Wer in einem deutschen Unternehmen Claude Code, GitHub Copilot oder Codex für die eigenen Salesforce-Entwickler einführt, braucht in aller Regel die Zustimmung des Betriebsrats nach § 87 Abs. 1 Nr. 6 BetrVG, weil diese Tools Nutzungsdaten pro Person erzeugen können. Der Datenschutz fragt, welche Daten über welchen Kanal Ihre Umgebung verlassen, vom Kontext des Agenten bis zur Region der Inferenz. Die Anthropic-API bietet keine EU-Region; Bedrock, Copilot und OpenAI bieten EU-Verarbeitung mit Bedingungen. Planen Sie beides vor dem Pilot, denn wo es einen Betriebsrat gibt, darf das Tool ohne dessen Zustimmung oder einen Spruch der Einigungsstelle nicht live gehen.
+Wer Claude Code, GitHub Copilot oder Codex für Salesforce-Entwickler an einem deutschen Standort einführt, braucht in aller Regel die Zustimmung des Betriebsrats nach § 87 Abs. 1 Nr. 6 BetrVG, weil diese Tools Nutzungsdaten pro Person erzeugen können. Der Datenschutz fragt, welche Daten über welchen Kanal Ihre Umgebung verlassen, vom Kontext des Agenten bis zur Region der Inferenz. Die Anthropic-API bietet keine EU-Region; Bedrock, Copilot und OpenAI bieten EU-Verarbeitung mit Bedingungen. Planen Sie beides vor dem Pilotprojekt, denn wo es einen Betriebsrat gibt, darf das Tool ohne dessen Zustimmung oder einen Spruch der Einigungsstelle nicht live gehen.
 
 Vorweg: Ich bin Salesforce-Architekt, kein Anwalt. Was folgt, ist meine technische Sicht auf die Fragen, die Betriebsrat und Datenschutzbeauftragte stellen werden. Es ist keine Rechtsberatung. Die Betriebsvereinbarung und die Bewertung der Datenübermittlung gehören in die Hände Ihrer Rechtsabteilung oder eines Fachanwalts.
 
 ## Warum muss ein bestehender Betriebsrat einem KI-Coding-Tool zustimmen?
 
-§ 87 Abs. 1 Nr. 6 BetrVG gibt dem Betriebsrat ein Mitbestimmungsrecht bei technischen Einrichtungen, die geeignet sind, Verhalten oder Leistung der Beschäftigten zu überwachen. Laut einer [Analyse von CMS vom Juli 2026](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten) bestehen bei KI-Systemen „in aller Regel“ solche Mitbestimmungsrechte. Maßgeblich ist nach der Rechtsprechung des BAG die objektive Möglichkeit zur Überwachung, auch ohne jede Absicht. Die Folge formuliert CMS deutlich: Ohne Zustimmung des Betriebsrats oder einen Spruch der Einigungsstelle darf der Arbeitgeber das System nicht einführen. Ob die Pläne der Bundesregierung daran etwas ändern, lässt CMS ausdrücklich offen.
+Ein Betriebsrat ist die gewählte Interessenvertretung der Beschäftigten an einem deutschen Standort. § 87 Abs. 1 Nr. 6 BetrVG gibt ihm ein Mitbestimmungsrecht bei technischen Einrichtungen, die geeignet sind, Verhalten oder Leistung der Beschäftigten zu überwachen. Laut einer [Analyse von CMS vom Juli 2026](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten) bestehen bei KI-Systemen „in aller Regel“ solche Mitbestimmungsrechte. Maßgeblich ist nach der Rechtsprechung des BAG die objektive Möglichkeit zur Überwachung, auch ohne jede Absicht. Die Folge formuliert CMS deutlich: Ohne Zustimmung des Betriebsrats oder einen Spruch der Einigungsstelle darf der Arbeitgeber das System nicht einführen. Ob die Pläne der Bundesregierung daran etwas ändern, lässt CMS ausdrücklich offen.
 
 Bei Coding-Agenten muss man die Überwachungsmöglichkeit nicht lange suchen, die Hersteller liefern sie als Dashboard:
 
 - **Claude Code** zeigt in der [Nutzungsanalyse](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics) Owners im Team-Plan sowie Owners und Admins im Enterprise-Plan die E-Mail-Adresse und die akzeptierten Codezeilen jedes Mitglieds im laufenden Monat, exportierbar als CSV. Mit der GitHub-Integration (Beta) kommen gemergte und eröffnete Pull Requests pro Person dazu.
 - **GitHub Copilot** liefert [Nutzungsmetriken](https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/copilot-usage-metrics/copilot-metrics) über APIs auf Unternehmens-, Organisations-, Repository- und Nutzerebene, mit Akzeptanzrate, Codezeilen und Pull-Request-Kennzahlen.
 
-Das sind Nutzungs- und Ergebnissignale pro Person. Ein gültiges Maß für Entwicklerleistung sind sie nicht, aber sie eignen sich zur Verhaltens- oder Leistungskontrolle, und eine Rangliste „akzeptierte Zeilen pro Entwickler“ ist mit zwei Klicks erstellt. Prüfen Sie für Codex vor dem Pilot, was die Workspace-Auswertungen pro Person zeigen, und behandeln Sie sie genauso.
+Das sind Nutzungs- und Ergebnissignale pro Person. Ein gültiges Maß für Entwicklerleistung sind sie nicht, aber sie eignen sich zur Verhaltens- oder Leistungskontrolle, und eine Rangliste „akzeptierte Zeilen pro Entwickler“ ist mit zwei Klicks erstellt. Prüfen Sie für Codex vor dem Pilotprojekt, was die Workspace-Auswertungen pro Person zeigen, und behandeln Sie sie genauso.
 
 Es gibt eine Ausnahme, die gern zitiert wird. Das Arbeitsgericht Hamburg hat am 16. Januar 2024 (24 BVGa 1/24) in einem erstinstanzlichen Eilverfahren entschieden, dass bei ChatGPT über private Konten der Beschäftigten kein Mitbestimmungsrecht besteht, weil der Arbeitgeber keine Daten darüber hat, wer wann was genutzt hat. CMS weist in der [Besprechung des Beschlusses](https://cms.law/de/deu/legal-updates/kein-mitbestimmungsrecht-des-betriebsrats-bei-chatgpt-co) darauf hin, dass das anders zu beurteilen ist, sobald der Arbeitgeber Konten oder Lizenzen bereitstellt. Das Gericht stützte sich auf die konkrete Konstellation, und die Browsernutzung war bereits kollektiv geregelt. Für ein Salesforce-Team mit Firmenlizenzen hilft die Entscheidung also nicht.
 
@@ -62,7 +62,7 @@ CMS empfiehlt Rahmenbetriebsvereinbarungen, die das Verfahren für neue IT- und 
 
 Zwei Details aus der [Datennutzungsseite von Claude Code](https://code.claude.com/docs/en/data-usage) gehören in jede Anlage. Erstens speichert Claude Code Sitzungsprotokolle standardmäßig 30 Tage lokal im Klartext, einstellbar über `cleanupPeriodDays`. Zweitens beträgt die Aufbewahrung bei kommerziellen Konten 30 Tage; Zero Data Retention ist nicht Teil des normalen Enterprise-Plans, das Account-Team schaltet sie nach Prüfung der Berechtigung pro Organisation frei. Mit Zero Data Retention fallen laut Anthropic auch die GitHub-Beitragsmetriken weg, was die Verhandlung mit dem Betriebsrat vereinfachen kann.
 
-Für den Nutzen des Tools brauchen Sie keine Daten pro Person. Ob KI Ihr Programm schneller macht, messen Sie mit Durchlaufzeit, Fehlerquote und Nacharbeit pro Story auf Teamebene, wie in [KI-Nutzen im Salesforce-Projekt messen](../ki-nutzen-salesforce-projekt-messen/) beschrieben. Diese Zusage ist der Kern, um den es in den meisten Verhandlungen geht.
+Für den Nutzen des Tools brauchen Sie keine Daten pro Person. Ob KI Ihr Programm schneller macht, messen Sie mit Durchlaufzeit, Fehlerdurchschlupf und Nacharbeit je Story und Team, wie in [KI-Nutzen im Salesforce-Projekt messen](../ki-nutzen-salesforce-projekt-messen/) beschrieben. Diese Zusage ist der Kern, um den es in den meisten Verhandlungen geht.
 
 ## Was verlangt die DSGVO von KI-Coding-Tools?
 
@@ -85,9 +85,9 @@ Die DSGVO verlangt nicht grundsätzlich eine Verarbeitung nur in der EU. Ein Dri
 
 Den vollständigen Vergleich der Tools nach Vertrag, Kosten und Governance finden Sie in [Agentforce Vibes, Claude Code, Codex oder Copilot?](../agentforce-vibes-claude-code-copilot-vergleich/). Für Agentforce-Agenten im HR-Umfeld kommen eigene Fristen aus dem EU AI Act dazu, siehe [EU AI Act: Fristen für Agentforce](../eu-ai-act-fristen-agentforce/).
 
-## Beispiel: Freigabe vor dem Pilot
+## Beispiel: Freigabe vor dem Pilotprojekt
 
-Nehmen wir einen Maschinenbauer mit Betriebsrat, SAP, Sales Cloud, Service Cloud und Field Service, fünf internen Salesforce-Entwicklern, zwei Admins und einem Nearshore-Partner. Alle Angaben sind Annahmen, die das Vorgehen zeigen sollen. Die IT möchte Copilot für alle und Claude Code für zwei Entwickler, die mit dem Salesforce-Plugin arbeiten wollen.
+Nehmen wir einen Maschinenbauer mit Hauptwerk in Deutschland, Betriebsrat, SAP, Sales Cloud, Service Cloud und Field Service, fünf internen Salesforce-Entwicklern, zwei Admins und einem Nearshore-Partner. Alle Angaben sind Annahmen, die das Vorgehen zeigen sollen. Die IT möchte Copilot für alle und Claude Code für zwei Entwickler, die mit dem Salesforce-Plugin arbeiten wollen.
 
 ```schritte
 Bestandsaufnahme | Woche 1 · IT
@@ -96,13 +96,13 @@ Information des Betriebsrats | Woche 2 · IT
   Die IT legt für jedes Tool die Tabelle oben vor. Die Hauptsorge des Betriebsrats ist die Zeilenstatistik pro Person.
 Anlage zur IT-Rahmenvereinbarung | Wochen 3 bis 6
   Copilot-Metriken nur auf Teamebene, GitHub-Beitragsmetriken bleiben aus, keine Leistungsbewertung aus Tooldaten, lokale Protokolle werden nach 14 Tagen gelöscht. Parallel entscheidet der Datenschutz: die EU-Richtlinie in Copilot, weil das Unternehmen GitHub Enterprise Cloud mit Datenresidenz nutzt, und Claude Code über Bedrock mit festgelegten EU-Profilen. Alle Nutzer, auch die Entwickler des Partners, bekommen eine dokumentierte Schulung zur KI-Kompetenz nach Artikel 4 der KI-Verordnung: zulässige Daten, Code Review, Secrets, Prompt Injection und Plugins.
-Pilot | ab Woche 7
+Pilotphase | ab Woche 7
   Copilot und Claude Code starten mit den Regeln aus der Anlage, auch die Entwickler des Partners arbeiten auf Lizenzen des Kunden.
 ```
 
 Die Supportseite nennt die Nutzungsanalyse nur für Team, Enterprise und die Console, Bedrock gehört nicht dazu. Die Kostendaten liegen dann im AWS-Konto des Kunden, und die Anlage regelt, wer sie sieht.
 
-Sechs Wochen klingen lang, aber ein Pilot, der mittendrin gestoppt wird, kostet nach meiner Einschätzung mehr. Die tatsächliche Dauer hängt von bestehenden Vereinbarungen und der Organisation ab.
+Sechs Wochen klingen lang, aber ein Pilotprojekt, das mittendrin gestoppt wird, kostet nach meiner Einschätzung mehr. Die tatsächliche Dauer hängt von bestehenden Vereinbarungen und der Organisation ab.
 
 ## Inventar: Wer nutzt welches KI-Tool mit welchem Konto
 
@@ -113,4 +113,4 @@ Sechs Wochen klingen lang, aber ein Pilot, der mittendrin gestoppt wird, kostet 
 5. **Technisch umsetzen:** Dashboards einschränken, `cleanupPeriodDays` setzen, EU-Modelle festlegen, EU-Richtlinie in Copilot aktivieren, wo verfügbar.
 6. **Alle Nutzer schulen**, wie es die Pflicht zur KI-Kompetenz nach der KI-Verordnung verlangt.
 
-Gibt es eine IT-Rahmenvereinbarung und eine klare Beschreibung der Datenflüsse, geht die Freigabe nach meiner Erfahrung schneller als bei einem unvorbereiteten Pilot; eine feste Dauer kann niemand zusagen. Wie Teams und Partner neue Regeln im Alltag übernehmen, gehört zu meiner Arbeit im [Change Management](../../leistungen/change-management/); den Rahmen für Rollen und Review beschreibt [Kapitel 9 der Masterclass](../../masterclass/ki-salesforce/teamarbeit-und-delivery/).
+Gibt es eine IT-Rahmenvereinbarung und eine klare Beschreibung der Datenflüsse, geht die Freigabe nach meiner Erfahrung schneller als bei einem unvorbereiteten Pilotprojekt; eine feste Dauer kann niemand zusagen. Wie Teams und Partner neue Regeln im Alltag übernehmen, gehört zu meiner Arbeit im [Change Management](../../leistungen/change-management/); den Rahmen für Rollen und Review beschreibt [Kapitel 9 der Masterclass](../../masterclass/ki-salesforce/teamarbeit-und-delivery/).
