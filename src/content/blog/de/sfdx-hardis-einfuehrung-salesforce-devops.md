@@ -1,6 +1,7 @@
 ---
 title: "sfdx-hardis: Salesforce DevOps als Open Source erklärt"
-description: "Was sfdx-hardis ist, was es von CI/CD über Monitoring bis Dokumentation abdeckt, wie es sich von Gearset oder Copado unterscheidet und wann es passt."
+metaTitle: "sfdx-hardis: kostenloses Salesforce-DevOps-Toolkit erklärt"
+description: "sfdx-hardis ist ein kostenloses Open-Source-Toolkit für Salesforce DevOps: CI/CD, Delta-Deployments, Monitoring, Backups. Vergleich mit Gearset und Copado."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09
 lang: de

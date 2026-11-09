@@ -1,6 +1,7 @@
 ---
 title: "Agentforce for distributor stock and replenishment"
-description: "Can Agentforce check distributor stock and trigger replenishment orders? What the manufacturing templates do and why the ERP keeps ATP, prices and credit."
+metaTitle: "Can Agentforce check distributor stock and reorder?"
+description: "Yes, Agentforce can check distributor stock and prepare replenishment, but availability, price and credit stay in SAP. What the manufacturing templates do."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: en

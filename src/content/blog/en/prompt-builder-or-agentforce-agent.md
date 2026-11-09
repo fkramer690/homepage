@@ -1,7 +1,7 @@
 ---
 title: "Prompt Builder or Agentforce agent: when to use which"
-metaTitle: "Prompt Builder vs Agentforce agent: when to use which"
-description: "Prompt Builder is enough when a person reads the text first. You need an agent when the system picks the next step. Examples and Flex Credit costs."
+metaTitle: "Prompt Builder vs Agentforce agent: which one, what it costs"
+description: "Use Prompt Builder when a person reads the output first, an agent when the system picks the next step. 4 Flex Credits per prompt vs 20 per agent action."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: en
@@ -30,7 +30,7 @@ faq:
 draft: false
 ---
 
-Prompt Builder or Agentforce agent: a template is enough when one record goes in, one text comes out and a person reads it before anything happens. Service report texts, case summaries, dealer reply drafts and a nightly warranty summary fit that pattern. You need an agent when the system chooses its next step at runtime or holds a dialogue with a dealer without a person in between. A Standard prompt costs 4 Flex Credits per 2,000 tokens, an agent action 20 credits. I start with the template and add the agent only where the dialogue pays for it.
+Use Prompt Builder when one record goes in, one text comes out and a person reads it before anything happens; use an Agentforce agent when the system has to choose its next step itself. Service report texts, case summaries, dealer reply drafts and a nightly warranty summary fit that pattern. The agent also fits when it holds a dialogue with a dealer without a person in between. A Standard prompt costs 4 Flex Credits per 2,000 tokens, an agent action 20 credits. I start with the template and add the agent only where the dialogue pays for it.
 
 ## What is the difference between a prompt template and an agent?
 

@@ -1,6 +1,7 @@
 ---
 title: "Agentforce Vertriebsplanung: was der Agent wirklich kann"
-description: "Was die Vorlage Agentforce for Sales Planning mit Sales Agreements und Prognosen macht, was Salesforce offenlässt und welche ERP-Daten zuerst stehen müssen."
+metaTitle: "Agentforce Sales Planning: nicht Teil von Agentforce Sales"
+description: "Agentforce for Sales Planning ist nicht in Agentforce for Sales enthalten, es braucht das Manufacturing-Add-on. Was der Agent mit Rahmenverträgen kann."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de
@@ -28,7 +29,7 @@ faq:
 draft: false
 ---
 
-Agentforce for Sales Planning ist eine Agentenvorlage für die Vertriebsplanung in der Manufacturing Cloud. Sie beantwortet Fragen zu Sales Agreements (Rahmenverträgen mit Abnahmemengen), schreibt Performance-Zusammenfassungen, hilft bei Kundenbesuchen und ändert Verträge in Massen. So steht es heute in der Salesforce-Hilfe, mit engen Grenzen: Die Vorschau der Massenänderung zeigt die ersten 50 Verträge, und eine Änderung umfasst höchstens 450 Vertragsprodukte. Zwei Punkte aus der Ankündigung vom August 2025 sind dort dünn: proaktive Hinweise, wenn Produktionsplan und Absatz auseinanderlaufen, und jede Arbeit mit Account Forecasts. Liegen die Ist-Mengen in SAP oder proALPHA, kommt der Datenfluss von dort vor dem Agenten.
+Agentforce for Sales Planning ist nicht in Agentforce for Sales enthalten: Die Agentenvorlage gehört zur Manufacturing Cloud und braucht das Add-on Agentforce for Manufacturing oder die Agentforce 1 Manufacturing Edition. Sie beantwortet Fragen zu Sales Agreements (Rahmenverträgen mit Abnahmemengen), schreibt Performance-Zusammenfassungen, hilft bei Kundenbesuchen und ändert Verträge in Massen. So steht es heute in der Salesforce-Hilfe, mit engen Grenzen: Die Vorschau der Massenänderung zeigt die ersten 50 Verträge, und eine Änderung umfasst höchstens 450 Vertragsprodukte. Liegen die Ist-Mengen in SAP oder proALPHA, kommt der Datenfluss von dort vor dem Agenten.
 
 ## Was macht Agentforce for Sales Planning laut Salesforce?
 

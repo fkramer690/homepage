@@ -1,7 +1,7 @@
 ---
 title: "Agentforce-Kosten für Hersteller: Flex Credits bis AELA"
-metaTitle: "Agentforce-Preise 2026: Flex Credits und Rechenbeispiel"
-description: "Was kostet Salesforce Agentforce? Aktionen, Prompts, Data 360, Tests und Preis pro Lösung, mit Maschinenbau-Rechenbeispiel zur Rate Card vom November 2026."
+metaTitle: "Agentforce-Preise 2026: 0,10 € pro Aktion, Rechenbeispiel"
+description: "Eine Agentforce-Standardaktion kostet 20 Flex Credits (0,10 €). Dazu kommen Prompts, Data 360 und Tests: ein Serviceagent kostet rund 14.000 € im 1. Jahr."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de
@@ -33,7 +33,7 @@ faq:
 draft: false
 ---
 
-Agentforce-Kosten bestehen aus mehr als dem Preis pro Aktion. Eine Standardaktion kostet 20 Flex Credits, also 0,10 €. Dazu kommen Prompts nach Modellstufe, Sprache, Data 360 für Handbücher und Ersatzteilkataloge, Testläufe in der Sandbox und bald MCP-Aufrufe externer KI-Agenten, deren Preis noch fehlt. Ungenutzte Credits verfallen zum Bestellende. Ein Serviceagent für Händleranfragen verbraucht im Rechenbeispiel unten Credits für knapp 1.000 € im Monat und rund 14.000 € im ersten Jahr, ohne Umsetzung, MuleSoft und Nutzerlizenzen. Ich schätze pro Gesprächstyp, kaufe entlang des Go-live-Plans, benenne eine Budgetverantwortliche für den Pool und prüfe eine Pauschale erst, wenn mehrere Agenten live sind.
+Eine Standardaktion in Agentforce kostet 20 Flex Credits, also 0,10 €, doch die Kosten bestehen aus mehr als dem Preis pro Aktion. Dazu kommen Prompts nach Modellstufe, Sprache, Data 360 für Handbücher und Ersatzteilkataloge, Testläufe in der Sandbox und bald MCP-Aufrufe externer KI-Agenten, deren Preis noch fehlt. Ungenutzte Credits verfallen zum Bestellende. Ein Serviceagent für Händleranfragen verbraucht im Rechenbeispiel unten Credits für knapp 1.000 € im Monat und rund 14.000 € im ersten Jahr, ohne Umsetzung, MuleSoft und Nutzerlizenzen. Ich schätze pro Gesprächstyp, kaufe entlang des Go-live-Plans, benenne eine Budgetverantwortliche für den Pool und prüfe eine Pauschale erst, wenn mehrere Agenten live sind.
 
 ## Flex Credits: Rate Card mit eigenem Satz pro Nutzungsart
 

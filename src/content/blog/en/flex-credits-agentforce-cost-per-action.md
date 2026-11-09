@@ -1,7 +1,7 @@
 ---
 title: "Agentforce costs for manufacturers: Flex Credits to AELA"
-metaTitle: "Agentforce pricing 2026: Flex Credits and a cost example"
-description: "How much does Salesforce Agentforce cost? Actions, prompts, Data 360, tests and pay per resolution, with a manufacturing example on the November 2026 rate card."
+metaTitle: "Agentforce pricing 2026: $0.10 per action, full cost example"
+description: "A standard Agentforce action costs 20 Flex Credits ($0.10). Prompts, voice, Data 360 and tests add to it: a dealer service agent costs about $14,000 in year 1."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: en

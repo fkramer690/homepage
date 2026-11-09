@@ -1,7 +1,7 @@
 ---
 title: "Prompt Builder oder Agentforce-Agent: was wann passt"
-metaTitle: "Prompt Builder vs. Agentforce-Agent: was wann passt"
-description: "Prompt Builder reicht, wenn ein Mensch den Text zuerst liest. Einen Agenten brauchen Sie, wenn das System den nächsten Schritt wählt. Mit Beispielen und Kosten."
+metaTitle: "Prompt Builder oder Agentforce-Agent: wann was, und Kosten"
+description: "Prompt Builder, wenn ein Mensch den Text zuerst liest, ein Agent, wenn das System den nächsten Schritt wählt. 4 Flex Credits pro Prompt, 20 pro Agentenaktion."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de
@@ -30,7 +30,7 @@ faq:
 draft: false
 ---
 
-Prompt Builder oder Agentforce-Agent: Ein Template reicht, wenn ein Datensatz hineingeht, ein Text herauskommt und ein Mensch ihn liest, bevor etwas passiert. Serviceberichtstexte, Fallzusammenfassungen, Antwortentwürfe für Händler und eine nächtliche Übersicht offener Garantiefälle passen in dieses Muster. Einen Agenten brauchen Sie, wenn das System den nächsten Schritt zur Laufzeit wählt oder ohne Mensch dazwischen einen Dialog mit einem Händler führt. Ein Standard-Prompt kostet 4 Flex Credits pro 2.000 Tokens, eine Agentenaktion 20 Credits. Ich starte mit dem Template und ergänze den Agenten nur, wo der Dialog sich rechnet.
+Nehmen Sie Prompt Builder, wenn ein Datensatz hineingeht, ein Text herauskommt und ein Mensch ihn liest, bevor etwas passiert; einen Agentforce-Agenten, wenn das System seinen nächsten Schritt selbst wählen muss. Serviceberichtstexte, Fallzusammenfassungen, Antwortentwürfe für Händler und eine nächtliche Übersicht offener Garantiefälle passen in dieses Muster. Der Agent passt auch, wenn er ohne Mensch dazwischen einen Dialog mit einem Händler führt. Ein Standard-Prompt kostet 4 Flex Credits pro 2.000 Tokens, eine Agentenaktion 20 Credits. Ich starte mit dem Template und ergänze den Agenten nur, wo der Dialog sich rechnet.
 
 ## Was unterscheidet ein Prompt-Template von einem Agenten?
 
