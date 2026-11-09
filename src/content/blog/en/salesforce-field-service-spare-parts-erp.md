@@ -38,16 +38,13 @@ Field Service can hold quantities per location and log movements. It does not do
 
 ## What does Field Service need to know about spare parts?
 
-Field Service needs parts for two reasons: to prepare a visit and to document it afterwards. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=fs_manage_inventory.htm&language=en_US&type=5) there is a set of objects for that:
+Field Service needs parts for two reasons: to prepare a visit and to document it afterwards. [Salesforce Help](https://help.salesforce.com/s/articleView?id=fs_manage_inventory.htm&language=en_US&type=5) describes a whole set of inventory objects. For the start, three are enough:
 
-- **Locations** are warehouses and vehicles. A service van is a mobile location with stock, as described in part 2.
-- **Product items** are the stock of one part at one location, such as "twelve seals in technician A's van".
-- **Products required** are the parts a work order needs. When they are recorded, the back office knows before the visit what has to go into the van. They document the need; they do not reserve stock, and the scheduling engine does not check them against the van by default. If scheduling should consider parts, that needs a defined process, for example a check by the dispatcher or your own automation.
-- **Products consumed** are the parts the technician actually used. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.fs_parts_guidelines.htm&language=en_US&type=5), the product item quantity goes down automatically.
-- **Product requests** are part requests, for example when van stock runs low or a job needs a specific part. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=fs_create_part_requests.htm&language=en_US&type=5) they can be linked to work orders and have a van as their destination.
-- **Product transfers** and **return orders** cover transfers and returns.
+- **Stock per van.** The van is a mobile location, the stock of one part there is a product item, such as "twelve seals in technician A's van".
+- **Required parts on the work order.** They tell the back office before the visit what has to go into the van. They document the need; they do not reserve stock, and the scheduling engine does not check them against the van by default.
+- **Consumed parts.** The technician records what they used, and according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.fs_parts_guidelines.htm&language=en_US&type=5) the stock goes down automatically.
 
-Not every company needs all of them. If the ERP already handles part requests and transfers well, Salesforce often only needs the stock for display, the required parts on the work order and the consumption. Every additional object is another interface to maintain.
+Part requests, transfers and returns exist as objects too. I only bring them into Salesforce when the ERP does not already handle them well, because every additional object is another interface to maintain.
 
 ## How does data flow between the ERP and Field Service?
 
@@ -82,6 +79,16 @@ This is what I would work on before go-live:
 
 None of these problems is solved by software. Each needs an owner who maintains the data, and a process that makes wrong postings visible. A regular stock count of individual vans is a simple first step.
 
+## What do you need to decide?
+
+The split between ERP and Salesforce is the easy part. Three decisions cost money either way and belong to service management, logistics and IT together:
+
+- **How current stock has to be.** A nightly sync is cheap, a near real-time interface is not. The question is what a wrong stock figure costs you: a second visit, an express delivery, an annoyed customer. If you plan on the day of service, a figure from last night creates false certainty.
+- **Who owns stock differences.** When the van and the ERP disagree, someone has to clarify it and correct the posting. Without a named owner, the difference stays, and technicians stop trusting the app.
+- **Whether parts should steer scheduling.** Showing required parts is standard. Letting scheduling consider whether a technician has the part in the van is your own process or your own automation. Decide whether the failed visits caused by missing parts justify that effort.
+
+Three warning signs that the parts architecture does not hold: technicians call the warehouse before every visit, consumption is posted in the ERP days later, and stock is maintained in two systems by hand.
+
 ## Have three technicians count their van
 
 Check how accurate van stock in the ERP is today.
@@ -90,4 +97,5 @@ Check how accurate van stock in the ERP is today.
 A simple test: have three technicians count their van and compare the result with the ERP. If it differs a lot, that is the first thing to fix, before any interface.
 ```
 
-If it matches, decide which of the objects above you need, and start with stock, required parts and consumption. How maintenance contracts and committed response times reach scheduling is covered in the [next part of the series](../salesforce-field-service-maintenance-contracts/).
+If it matches, start with stock, required parts and consumption. How maintenance contracts and committed response times reach scheduling is covered in the [next part of the series](../salesforce-field-service-maintenance-contracts/).
+

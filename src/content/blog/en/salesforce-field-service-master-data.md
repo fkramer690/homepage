@@ -48,63 +48,39 @@ Scheduling software does not change this by itself. It makes the gaps visible fa
 
 ## What data does Salesforce Field Service need?
 
-Salesforce describes the objects in the [Field Service core data model](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_soap_core.htm). Two kinds of data need to be kept apart. Some are technically required: according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.pfs_scheduling.htm&language=en_US&type=5), every scheduling policy needs the work rules for resource availability and for earliest start permitted and due date, and appointments need an address the engine can geocode for travel times. The six areas below are what decides scheduling quality on top.
+Two kinds of data need to be kept apart. Some are technically required: according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.pfs_scheduling.htm&language=en_US&type=5), every scheduling policy needs the work rules for resource availability and for earliest start permitted and due date, and appointments need an address the engine can geocode for travel times. On top of that, six data areas decide how good the plan is. The objects behind them are described in the [Field Service core data model](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_soap_core.htm). As a starting point for leading system and owner I suggest the split below and adapt it to the company:
 
-### Service territories and operating hours
+| Data area | What scheduling uses it for | If it is missing or wrong | Leading system | Owner |
+|---|---|---|---|---|
+| Service territories and operating hours | Where and when work is planned, start address for travel | Travel from the wrong place, no boundaries for the engine | Salesforce | Service management |
+| Technicians and skills | Who may take a job | Wrong technician on site | HR or training system | HR with service management |
+| Work types | Duration and required skills per kind of job | Skills entered by hand on every work order | Salesforce | Service management |
+| Assets at customer sites | Which machine, which history, which part | Incomplete history, higher risk of the wrong part | ERP | Order management or commissioning |
+| Customer visiting hours | When the machine can be reached | Visit when nobody opens the door | Salesforce | Inside service |
+| Absences | When a technician is not available | Jobs for technicians on leave or in training | Time tracking | HR |
 
-A service territory is the area in which work is scheduled, usually geographic. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field_service_basics/field_service_basics_enable), territories and operating hours are the foundation: without them the scheduling engine has no boundaries to work within.
+Four details from Salesforce Help decide whether this works in practice:
 
-Technicians become service territory members. The [guidelines for service territories](https://help.salesforce.com/s/articleView?id=service.fs_territory_guidelines.htm&language=en_US&type=5) say each technician has exactly one primary territory, plus optional secondary territories for backup and relocation territories for temporary assignments elsewhere. Salesforce recommends up to 50 technicians per territory. The territory member record also holds the home base, for example the technician's home address when they start the day from there. Without it, the engine calculates travel from the wrong place.
+- **Territories.** According to the [guidelines for service territories](https://help.salesforce.com/s/articleView?id=service.fs_territory_guidelines.htm&language=en_US&type=5), each technician has exactly one primary territory plus optional secondary ones, and Salesforce recommends up to 50 technicians per territory.
+- **Skills.** The level ranges from 0 to 99.99 according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=fs_required_skills.htm&language=en_US&type=5), and the company decides what it means. Only the [Match Skills](https://help.salesforce.com/s/articleView?id=pfs_optimization_theory_work_rules_match_skills.htm&language=en_US&type=5) work rule enforces them; a technician without skills is then no candidate for any job that requires one.
+- **Visiting hours.** They are recorded as operating hours on the account and copied to each new work order according to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5). They only count when the visiting hours work rule is active.
+- **Absences.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_create_absences.htm&type=5), optimization does not assign technicians to appointments that conflict with them, but only if leave and training actually arrive in Salesforce.
 
-### Technicians and skills
+How a case becomes a work order with the right work type is covered in [from case to technician](../field-service-case-to-work-order/). Parts and van stock get [their own part](../salesforce-field-service-spare-parts-erp/) in this series.
 
-Every technician is a service resource. Their qualifications are skills, assigned with a level. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=fs_required_skills.htm&language=en_US&type=5) the level ranges from 0 to 99.99, and the company decides what each level means. A scale your service management already knows works best, for example the training levels you already use for your products.
+## What do you need to decide before scheduling starts?
 
-The difference between recording and enforcing matters here. Only the [Match Skills](https://help.salesforce.com/s/articleView?id=pfs_optimization_theory_work_rules_match_skills.htm&language=en_US&type=5) work rule makes sure that only technicians with matching skills are scheduled. A technician with no skills at all is then no candidate for any job with a skill requirement. That is intended, and it also shows how hard a data gap hits.
+The table above is a proposal. The decisions behind it belong to service management and IT together, and nobody else will make them:
 
-### Work types
+- **An owner for each data area.** Someone has to be accountable when skills are out of date or an asset is missing. Without a name in the table, data quality becomes nobody's job after go-live.
+- **Interface or manual maintenance.** Maintaining assets and skills by hand in Salesforce works for a pilot and breaks in daily operation. Every interface costs money to build and run, every manual list costs time and errors. Decide per area, based on volume and rate of change. How to decide which system leads is described on the page [Salesforce integration](../../services/salesforce-integration/).
+- **Which cause of failed visits to fix first.** Not all six areas can be clean on day one. The failed visits of your own region show where the money goes.
+- **Employee data.** Skills and absences are data about employees. Agree early with data protection and, where there is one, the works council which of them may go into Salesforce. The same applies to the app features in [Field Service Mobile: guided flows and voice](../salesforce-field-service-mobile-guided-voice/).
 
-A work type is the template for a kind of job, such as annual maintenance, breakdown repair or commissioning. It sets the estimated duration and the required skills. Work orders inherit the skills of their work type. With ten well-maintained work types, nobody has to enter by hand on every work order who may take it. How a case becomes a work order with the right work type is covered in [from case to technician](../field-service-case-to-work-order/).
-
-### Assets and locations
-
-Assets are the machines at the customer site. Work orders can be linked to an asset, and assets can form a hierarchy, a machine with its assemblies. The technician then sees the asset's history, and the back office sees which part fits which machine.
-
-Locations are places such as warehouses, vehicles or customer sites. A service van is a mobile location with its own stock. How parts, warehouses and the ERP work together is a topic of its own and gets its own part in this series.
-
-### Customer visiting hours
-
-Customers have their own times when a technician can reach the machine. In Field Service you record them as operating hours on the account. According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5), each new work order takes them over as visiting hours.
-
-```hinweis achtung
-Scheduling only respects visiting hours when the visiting hours work rule is active in the scheduling policy. A dispatcher can override them, but then sees a rule violation.
-```
-
-Opening hours do not solve every access problem. When a machine has to be shut down for maintenance, the visit needs to be agreed with the customer. How to handle that in scheduling belongs in the next part of the series.
-
-### Absences
-
-Resource absences block time in a technician's calendar. Salesforce knows the types vacation, meeting, training and medical. According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_create_absences.htm&type=5), optimization does not assign technicians to appointments that conflict with their absences. That only works when vacations and training actually arrive in Salesforce and do not live only in the time tracking system.
-
-## Where does the data come from, and who maintains it?
-
-The data comes from several systems. Some of it is created in Salesforce, the rest has to come from the ERP, HR or time tracking. So before go-live I set a leading system and an owner for each kind. As a starting point I suggest this split and adapt it to the company:
-
-| Data | Leading system | Owner |
-|---|---|---|
-| Service territories and operating hours | Salesforce | Service management |
-| Technicians and skills | HR or training system | HR with service management |
-| Work types | Salesforce | Service management |
-| Assets at customer sites | ERP | Order management or commissioning |
-| Customer visiting hours | Salesforce | Inside service |
-| Absences | Time tracking | HR |
-
-The interfaces follow from this table. Maintaining assets and skills by hand in Salesforce works for a pilot and breaks in daily operation. How to decide which system leads between ERP and Salesforce is described on the page [Salesforce integration](../../services/salesforce-integration/).
-
-Skills and absences are data about employees. Agree early with data protection and, where there is one, the works council which of them may go into Salesforce. The same applies to the new app features I describe in [Field Service Mobile: guided flows and voice](../salesforce-field-service-mobile-guided-voice/).
+Three warning signs that the data architecture does not hold: dispatchers keep a private list of who can do what, skills are only updated when a visit has already failed, and nobody can say which system is right when Salesforce and the ERP disagree on an asset.
 
 ## Analyze the failed visits of the last three months
 
 Take the failed visits of the last three months in one region. Assign each one a cause: parts, access, skills, availability or something else. The cause with the most failed visits shows which data you need clean first. If there is no list of failed visits, that is a result too: then the metric that Field Service will later have to be measured against is missing.
 
-Then check each of the six kinds of data: does it exist, where does it live, who maintains it? Once those questions are answered, it makes sense to set up scheduling itself. That is the topic of the next part of this series.
+Then check each of the six data areas: does it exist, where does it live, who maintains it? Once those questions are answered, it makes sense to set up scheduling itself. That is the topic of the next part of this series.

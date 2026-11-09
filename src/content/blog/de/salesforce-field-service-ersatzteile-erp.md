@@ -38,16 +38,13 @@ Field Service kann Mengen je Standort halten und Bewegungen protokollieren. Bewe
 
 ## Was muss Field Service über Ersatzteile wissen?
 
-Field Service braucht die Teile aus zwei Gründen: für die Vorbereitung eines Einsatzes und für die Dokumentation danach. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=fs_manage_inventory.htm&language=en_US&type=5) gibt es dafür eine Reihe von Objekten:
+Field Service braucht die Teile aus zwei Gründen: für die Vorbereitung eines Einsatzes und für die Dokumentation danach. Die [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=fs_manage_inventory.htm&language=en_US&type=5) beschreibt eine ganze Reihe von Lagerobjekten. Für den Start reichen drei:
 
-- **Standorte (Locations)** sind Lager und Fahrzeuge. Ein Servicefahrzeug ist ein mobiler Standort mit Bestand, wie in Teil 2 beschrieben.
-- **Product Items** sind der Bestand eines Teils an einem Standort, also „zwölf Dichtungen im Fahrzeug von Techniker A“.
-- **Products Required** sind die Teile, die ein Arbeitsauftrag braucht. Sind sie hinterlegt, weiß der Innendienst vor dem Einsatz, was ins Fahrzeug muss. Sie dokumentieren den Bedarf; sie reservieren keinen Bestand, und die Planungsengine gleicht sie standardmäßig nicht mit dem Fahrzeug ab. Soll die Planung Teile berücksichtigen, braucht es einen festgelegten Prozess, etwa eine Prüfung durch den Disponenten oder eine eigene Automatisierung.
-- **Products Consumed** sind die Teile, die der Techniker tatsächlich verbaut hat. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.fs_parts_guidelines.htm&language=en_US&type=5) sinkt die Menge des Product Items dabei automatisch.
-- **Product Requests** sind Teileanforderungen, etwa wenn der Bestand im Fahrzeug knapp wird oder ein Einsatz ein bestimmtes Teil braucht. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=fs_create_part_requests.htm&language=en_US&type=5) können sie an Arbeitsaufträgen hängen und ein Fahrzeug als Ziel haben.
-- **Product Transfers** und **Return Orders** bilden Umlagerungen und Rücksendungen ab.
+- **Bestand je Fahrzeug.** Das Fahrzeug ist ein mobiler Standort (Location), der Bestand eines Teils dort ist ein Product Item, also „zwölf Dichtungen im Fahrzeug von Techniker A“.
+- **Benötigte Teile am Arbeitsauftrag (Products Required).** Sie sagen dem Innendienst vor dem Einsatz, was ins Fahrzeug muss. Sie dokumentieren den Bedarf; sie reservieren keinen Bestand, und die Planungsengine gleicht sie standardmäßig nicht mit dem Fahrzeug ab.
+- **Verbrauchte Teile (Products Consumed).** Der Techniker erfasst, was er verbaut hat, und laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.fs_parts_guidelines.htm&language=en_US&type=5) sinkt der Bestand dabei automatisch.
 
-Nicht jedes Unternehmen braucht alle davon. Wenn das ERP Teileanforderungen und Umlagerungen schon gut abwickelt, reicht in Salesforce oft der Bestand zur Anzeige, die benötigten Teile am Auftrag und der Verbrauch. Jedes weitere Objekt ist eine weitere Schnittstelle, die gepflegt werden muss.
+Teileanforderungen, Umlagerungen und Rücksendungen gibt es ebenfalls als Objekte. Ich hole sie nur nach Salesforce, wenn das ERP sie nicht schon gut abwickelt, denn jedes weitere Objekt ist eine weitere Schnittstelle, die gepflegt werden muss.
 
 ## Wie fließen die Daten zwischen ERP und Field Service?
 
@@ -82,6 +79,16 @@ Daran würde ich vor dem Start arbeiten:
 
 Keines dieser Probleme löst eine Software. Jedes braucht einen Verantwortlichen, der die Daten pflegt, und einen Prozess, der falsche Buchungen sichtbar macht. Eine regelmäßige Inventur einzelner Fahrzeuge ist dafür ein einfacher erster Schritt.
 
+## Was müssen Sie entscheiden?
+
+Die Aufteilung zwischen ERP und Salesforce ist der einfache Teil. Drei Entscheidungen kosten so oder so Geld und gehören Serviceleitung, Logistik und IT gemeinsam:
+
+- **Wie aktuell der Bestand sein muss.** Ein nächtlicher Abgleich ist günstig, eine Schnittstelle nahezu in Echtzeit nicht. Die Frage ist, was eine falsche Bestandszahl kostet: einen zweiten Einsatz, eine Expresslieferung, einen verärgerten Kunden. Wer am Einsatztag plant, bekommt mit einer Zahl von letzter Nacht falsche Sicherheit.
+- **Wer Bestandsdifferenzen verantwortet.** Weichen Fahrzeug und ERP ab, muss jemand das klären und die Buchung korrigieren. Ohne Verantwortlichen bleibt die Differenz, und die Techniker vertrauen der App nicht mehr.
+- **Ob Teile die Planung steuern sollen.** Benötigte Teile anzuzeigen ist Standard. Dass die Planung berücksichtigt, ob ein Techniker das Teil im Fahrzeug hat, ist ein eigener Prozess oder eine eigene Automatisierung. Entscheiden Sie, ob die Fehleinsätze wegen fehlender Teile diesen Aufwand rechtfertigen.
+
+Drei Warnzeichen, dass die Teilearchitektur nicht trägt: Techniker rufen vor jedem Einsatz im Lager an, der Verbrauch wird Tage später im ERP gebucht, und der Bestand wird in zwei Systemen von Hand gepflegt.
+
 ## Drei Techniker ihr Fahrzeug zählen lassen
 
 Prüfen Sie, wie genau der Fahrzeugbestand im ERP heute ist.
@@ -90,4 +97,5 @@ Prüfen Sie, wie genau der Fahrzeugbestand im ERP heute ist.
 Ein einfacher Test: Lassen Sie drei Techniker ihr Fahrzeug zählen und vergleichen Sie das Ergebnis mit dem ERP. Weicht es stark ab, ist das die erste Baustelle, vor jeder Schnittstelle.
 ```
 
-Stimmt es, legen Sie fest, welche der Objekte oben Sie brauchen, und starten Sie mit Bestand, benötigten Teilen und Verbrauch. Wie Wartungsverträge und zugesagte Reaktionszeiten in die Planung kommen, zeigt der [nächste Teil der Serie](../salesforce-field-service-wartungsvertraege/).
+Stimmt es, starten Sie mit Bestand, benötigten Teilen und Verbrauch. Wie Wartungsverträge und zugesagte Reaktionszeiten in die Planung kommen, zeigt der [nächste Teil der Serie](../salesforce-field-service-wartungsvertraege/).
+

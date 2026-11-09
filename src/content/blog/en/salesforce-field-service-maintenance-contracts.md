@@ -66,7 +66,7 @@ An entitlement on its own changes nothing about scheduling. It only takes effect
 Milestones on work orders need an entitlement process of type Work Order. A process of type Case does not run on a work order, even if the same entitlement is behind it.
 ```
 
-**Priority.** Field Service schedules by a priority field. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.pfs_scheduling_priority_optimization.htm&language=en_US&type=5), it uses a scale from 1 to 10 by default, where 1 is the highest. The work order comes with a Priority field from Low to Critical, which a formula turns into numbers. When technicians are scarce, optimization schedules high-priority appointments first and can push out low-priority ones to do so.
+**Priority.** Field Service schedules by a priority field. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.pfs_scheduling_priority_optimization.htm&language=en_US&type=5), it uses a scale from 1 to 10 by default, where 1 is the highest; a formula translates the work order priority into it. When technicians are scarce, optimization schedules high-priority appointments first and can push out low-priority ones to do so.
 
 You build the link between the two yourself, usually with a flow: a work order with a "response within 24 hours" entitlement gets a higher priority than one without a commitment. That way the commitment from the contract goes straight into the scheduling engine's decision, and the dispatcher does not have to look up the contract for every breakdown.
 
@@ -100,6 +100,16 @@ When the milestone counts as met, for example with the status In Progress on sit
 Decide for each contract type which of the three applies, before a customer asks why their 24-hour appointment did not happen on Saturday.
 
 **Settle the line to warranty.** Whether a visit runs under warranty, under contract or is billed decides the invoicing. That commercial side does not belong in scheduling, but it has to be visible on the work order. Otherwise the technician fits a part that nobody can invoice later, or the customer gets a bill for a visit that ran under warranty.
+
+## Sales, service and finance decide what goes into the objects
+
+The objects are configuration. What goes into them is a business decision, and it belongs to service management, sales and finance together:
+
+- **How many service levels sales may sell.** Every level that sales promises has to be set up and measured. Only levels that should change the order of visits need a scheduling priority, and several levels can share one. Agree on a short list before the first contract is negotiated, not afterwards.
+- **What a missed response time costs.** Penalties, credits or simply a lost renewal. Together with how critical the machine is and any safety or regulatory consequences, that decides how much priority a commitment gets in scheduling and how much it is worth to measure it reliably.
+- **Who decides between warranty, contract and invoice.** Someone has to set this per work order, ideally before the visit. Otherwise service and finance argue about it after every visit.
+
+Three warning signs that the contract model does not hold: response times live in a text field, dispatchers look up the contract for every breakdown, and nobody can report how many commitments were met last month.
 
 ## Write down your three most common contract types
 
