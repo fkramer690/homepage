@@ -2,6 +2,7 @@
 title: "AI-native Salesforce delivery process in 14 steps"
 description: "An AI-native delivery process for Salesforce from workshop to deployment: what the agent does, where people decide at five gates and what the pipeline checks."
 pubDate: 2026-10-30
+updatedDate: 2026-11-09
 lang: en
 slug: ai-native-salesforce-delivery-process
 translationKey: ai-native-delivery-process
@@ -10,23 +11,23 @@ categories: [devops, ai]
 tags: [AI-native delivery, coding agents, Jira, DevOps, requirements, manufacturing]
 takeaways:
   - "An agent does the legwork from workshop minutes to pull request; people decide at five fixed gates."
-  - "Every line of code traces back through requirement, story, commit and test to a sentence in the workshop transcript."
+  - "Every deployed change traces back through story, commit and test to an approved requirement, ideally to a decision in the confirmed minutes."
   - "The most important gate is the spec approval \"Ready for Agent\" by business analyst and architect, because a mistake there is cheapest to fix."
-  - "The pipeline stays deterministic, with no AI decisions; only the pipeline has access to production, the agent works in scratch orgs and sandboxes only."
+  - "The pipeline stays deterministic and validates before the merge. Only its own identity can reach production; the agent gets no production credentials."
   - "The agent classifies UAT feedback as bug, change request or open question, with evidence from the confirmed minutes."
 faq:
   - q: "What is the difference between AI-assisted and AI-native Salesforce delivery?"
-    a: "AI-assisted means the old process gets a coding assistant. AI-native means the process is built around the agent: it analyses, takes minutes, drafts and codes, while people curate and decide at fixed gates."
+    a: "AI-assisted means individual activities get AI support inside the existing process. AI-native means agent handovers, machine-readable specifications, permissions and human gates are part of the process design from the start: the agent analyzes, takes minutes, drafts and codes, while people curate and decide at fixed gates."
   - q: "May an AI agent deploy to production?"
-    a: "No. Access to production lies with the pipeline only, which rolls out an already validated deployment ID by quick deploy. The agent works in scratch orgs and sandboxes that are explicitly allowed for it."
+    a: "No. Validation against production and the deployment run only through the pipeline with its own technical identity: it validates the release artifact against production and rolls out that validation ID by quick deploy within ten days. The agent works in scratch orgs and sandboxes and has no production credentials on its machine."
   - q: "May workshops with the client be recorded?"
-    a: "Only with the consent of everyone taking part, at large companies often with the works council as well, and once it is clear in whose tenant the transcript is stored. If the client does not want a recording, the business analyst dictates a summary right after the meeting, which takes the same route."
+    a: "Only after a legal and data protection review. In Germany everyone must be informed, unauthorized recording can be a criminal offense, and the works council may have a say. Purpose, retention and where transcript and agent process the data must be clear first. If the client does not want a recording, the business analyst dictates a summary right after the meeting, which takes the same route."
   - q: "Who is responsible for the quality of the agent's output?"
-    a: "On the business side the business analyst, technically the architect through the rules file in the repository, in the code the developer who reviews every pull request. The agent decides nothing binding."
+    a: "On the business side the business analyst, technically the architect through the rules file in the repository, in the code the developer who reviews every pull request. The agent drafts and triggers reversible automated steps, but every binding decision needs a named person."
 draft: false
 ---
 
-An AI-native delivery process for Salesforce turns the Jira ticket into an executable specification. An agent does the legwork from preparing the workshop to the pull request, the pipeline checks deterministically, and people decide at five fixed gates: minutes, spec, code review, bugs and change requests, release. The process has 14 steps from the first requirement to production. It holds together a chain that classic projects rarely manage: every line of code traces back to a sentence someone at the client said. For manufacturers one thing changes most: the business sees something that runs much earlier and has to confirm faster in return.
+An AI-native delivery process for Salesforce turns the Jira ticket into an executable specification. An agent does the legwork from preparing the workshop to the pull request, the pipeline checks deterministically, and people decide at five fixed gates: minutes, spec, code review, bugs and change requests, release. The process has 14 steps from the first requirement to production. It holds together a chain that classic projects rarely manage: every deployed change traces back to an approved requirement, ideally to a decision someone at the client confirmed. For manufacturers one thing changes most: the business sees something that runs much earlier and has to confirm faster in return.
 
 ## What does AI-native mean in a Salesforce project?
 
@@ -41,11 +42,11 @@ team | People | decide at gates | They hold every conversation with the client t
 base: One process, built around the agent
 ```
 
-The difference to AI-assisted: there the old process gets a coding assistant, the business analyst keeps typing up stories, and the client sees something that runs only in acceptance testing. Here the agent delivers minutes, stories and a prototype, and every piece of feedback is classified against the confirmed minutes.
+The difference to AI-assisted: there individual activities get AI support inside the existing process. Here agent handovers, machine-readable specifications, permissions and human gates are designed in from the start. The agent delivers minutes, stories and a prototype, and every piece of feedback is classified against the confirmed minutes.
 
 ## How does the process run from workshop to production?
 
-The process has three phases with 14 steps in total. Each graphic shows one phase in three lanes: what people do in conversation, what the agent does and what the pipeline checks. The dark bars are the gates where a person makes a binding decision. The blue column on the right shows the status of the Jira ticket and who sets it: the agent creates stories directly in Jira, the pipeline moves the status on by itself after validation and deployment.
+The process has three phases with 14 steps in total. Each graphic shows one phase in three lanes: what people do in conversation, what the agent does and what the pipeline checks. The dark bars are the gates where a person makes a binding decision. The blue column on the right shows the status of the Jira ticket and who sets it: the agent creates stories directly in Jira, the pipeline moves the status on by itself after validation and deployment. Both use their own bot identities with only the transitions they need.
 
 ### Discovery: the agent prepares, people hold the conversation
 
@@ -63,11 +64,11 @@ Agent | Story diff and impact | Changes, test cases, metadata | Stories updated 
 gate: BA and architect approve the story | Ready for Agent · BA
 ```
 
-Before the workshop the agent analyses the existing org: objects, flows, validation rules, permissions. From that it drafts the agenda, hypotheses and targeted questions, for example: "Three flows on Opportunity overlap. Who owns them on the business side?" The business analyst sharpens the agenda and strikes hypotheses that are politically sensitive. What such an org analysis looks like is in [AI org assessment: finding technical debt](../ai-org-assessment-technical-debt/).
+Before the workshop the agent analyzes the existing org: objects, flows, validation rules, permissions. From that it drafts the agenda, hypotheses and targeted questions, for example: "Three flows on Opportunity overlap. Who owns them on the business side?" The business analyst sharpens the agenda and strikes hypotheses that are politically sensitive. What such an org analysis looks like is in [AI org assessment: finding technical debt](../ai-org-assessment-technical-debt/).
 
 In the workshop the business analyst moderates and does not have to take notes. From the transcript the agent produces minutes with decisions, open questions and owners, plus drafts of epics and stories in Jira, each with a timestamp. It keeps "the client said" strictly apart from "the agent interprets". The business analyst curates: strikes, sharpens, adds the fit-gap (standard, configuration or code), corrects misheard terms and mixed-up speakers.
 
-Once the client confirms the minutes, the scope baseline stands. The agent then builds a prototype in a scratch org, a short-lived test org, within hours: objects, fields, layouts and a simple flow. In the refinement the client reacts to something real instead of paper. Afterwards the agent writes no new set of stories but a diff against the existing ones: "Acceptance criterion 2 changed because the client said at 00:41:07 …", with the affected metadata, test cases and impact against the state of the repository.
+Once the client confirms the minutes, the agreed requirements stand; the scope baseline is fixed at the spec approval. For isolated configuration the agent can often build a first prototype in a scratch org, a short-lived test org, within hours, provided the org definition, packages, licenses and synthetic data already exist: objects, fields, layouts and a simple flow. In the refinement the client reacts to something real instead of paper. Afterwards the agent writes no new set of stories but a diff against the existing ones: "Acceptance criterion 2 changed because the client said at 00:41:07 …", with the affected metadata, test cases and impact against the state of the repository.
 
 ### Build: the agent codes, the developer reviews
 
@@ -78,16 +79,16 @@ ticket: Jira
 start: 7 | 3
 Agent | Implementation | Plan, approval, code and tests | In progress · agent
 Agent | Pull request | Description, Jira link, AI review | In review · agent
-gate: Developer reviews and merges
-Pipeline | CI validation | Delta as check deploy, tests, analyzer | Validated · pipeline
+Pipeline | CI validation | Check deploy, tests, analyzer before merge | Validated · pipeline
 loop: Failure: agent reads the log and fixes, at most 2 attempts
+gate: Developer reviews and merges
 ```
 
 Only when business analyst and architect set a story to "Ready for Agent" does the build start. The agent reads the ticket, creates a feature branch, writes an implementation plan and carries it out only after the developer approves it: Apex, Lightning Web Components or flow, each with tests. When a requirement is unclear it reads the linked passage of the transcript instead of guessing. It writes the pull request description with ticket link and component list, and an AI reviewer comments first.
 
-Nothing is merged without a developer's review. In this process the developer reviews more than they write. Why I never give up this gate is in [Why pull request reviews are a must](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+Before anyone merges, the pipeline runs as a required status check on the pull request: a delta package, for example built with the third-party tool `sfdx-git-delta` in a pinned version and with a full deploy as fallback, a check-only deploy against the integration sandbox, defined tests and a Code Analyzer v5 gate whose rules and thresholds are versioned in the repository. If it fails, the agent gets the log and may deliver a fix commit, at most two attempts. After that the developer takes over.
 
-Then the pipeline runs: a delta package built with `sfdx-git-delta`, a check-only deploy against the integration sandbox, defined tests and a Code Analyzer gate. If it fails, the agent gets the log and may deliver a fix commit, at most two attempts. After that the developer takes over. Which checks I put into the pipeline for AI code I describe in [Quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
+Nothing is merged without a green pipeline and a developer's review. In this process the developer reviews more than they write. Why I never give up this gate is in [Why pull request reviews are a must](../why-pull-request-reviews-are-a-must-in-enterprise-projects/). Which checks I put into the pipeline for AI code I describe in [Quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
 
 ### Release: the client tests, the agent classifies
 
@@ -96,24 +97,24 @@ title: Phase 3 of 3 · Release
 lanes: People | Agent | Pipeline
 ticket: Jira
 start: 10 | 4
-Pipeline | Deploy to UAT | Agent writes test scripts into the ticket | In UAT · pipeline
+Pipeline | Deploy to UAT | Approved test scripts in the ticket | In UAT · pipeline
 People | Acceptance test | Client tests, BA supports
 Agent | Feedback triage | Bug, change request or question | Bug or CR created · agent
 gate: BA and client decide on bugs and CRs
 loop: Bugs back to 07, change requests as a new story to 06
+Agent | Release notes and guide | Drafts, BA proofreads
 gate: Client approves the release | Approved · client
-Pipeline | Release to production | Quick deploy of the validated ID | Done · pipeline
-Agent | Release notes and guide | BA proofreads
+Pipeline | Release to production | Validate in production, quick deploy | Done · pipeline
 note: **Rule:** The agent has no access to production. Only the pipeline deploys there.
 ```
 
-After the merge the pipeline deploys to the UAT sandbox, and the agent writes test scripts straight from the acceptance criteria into the ticket. The client tests, the business analyst supports the sessions. The agent classifies every piece of feedback: **bug** when it contradicts a confirmed criterion, **change request** when it is new, **open question** when the evidence is missing. Business analyst and client confirm the classification. Bugs go back to implementation, change requests are assessed as a new story, commercially as well. Scope creep becomes visible, with evidence instead of gut feeling. How an acceptance test with the business is set up is in [Salesforce UAT with the business](../salesforce-uat-business-acceptance-testing/).
+After the merge the pipeline deploys to the UAT sandbox. The agent drafted the test scripts from the acceptance criteria, approved before this deployment, including negative cases, role permissions and regression. The client tests, the business analyst supports the sessions. The agent classifies every piece of feedback: **bug** when it contradicts a confirmed criterion, **change request** when it is new, **open question** when the evidence is missing. Business analyst and client confirm the classification. Bugs go back to implementation, change requests are assessed as a new story, commercially as well. Scope creep becomes visible, with evidence instead of gut feeling. How an acceptance test with the business is set up is in [Salesforce UAT with the business](../salesforce-uat-business-acceptance-testing/).
 
-After approval the pipeline rolls out the already validated deployment ID by quick deploy. The agent writes release notes and a user guide in the language of the business, and the business analyst proofreads.
+Before the release decision the agent drafts release notes and a user guide in business language, and the business analyst proofreads. After approval the pipeline validates the unchanged release artifact against production, with the required tests running there, and rolls out exactly that validation ID by quick deploy within ten days. A validation against a sandbox cannot be reused for production.
 
 ## Only named people make binding decisions
 
-Agent and pipeline decide nothing binding. Every decision that affects scope, quality or production is made by a named person.
+Agent and pipeline produce drafts and trigger automated, reversible steps such as a Jira status. Every binding decision that affects scope, quality or production is made by a named person.
 
 ```tabelle
 title: Who decides in which phase
@@ -140,7 +141,7 @@ An assumed example, to show the chain. In the discovery workshop of a machine bu
 - In the acceptance test a sales rep reports that small spare parts orders should still count as won. The agent classifies this as a change request, because no confirmed criterion provides an exception.
 - The release note names the new minimum amount for won opportunities.
 
-If someone asks a year later why the rule applies at 10,000 euros, the chain leads back to the statement in the workshop in two clicks.
+If someone asks a year later why the rule applies at 10,000 euros, the chain leads back to the confirmed decision in two clicks. That only works if the confirmed minutes with stable decision IDs are kept as the audit record, even after the raw transcript is deleted.
 
 ```kette
 title: Traceability: from a sentence in the workshop to the release note
@@ -150,7 +151,7 @@ Story | Applies to Closed Won only, added in the refinement on the prototype
 Commit | Validation rule: Closed Won with `Amount < 10000` is rejected
 Test | 9,999 euros is rejected, 10,000 euros goes through
 Release note | Won opportunities need at least 10,000 euros
-note: Every link points to the one before. That keeps every line of code traceable.
+note: Every link points to the one before. That keeps every deployed change traceable.
 ```
 
 ## Which tools do you need for it?
@@ -158,9 +159,9 @@ note: Every link points to the one before. That keeps every line of code traceab
 The process does not depend on a particular coding agent. It needs four connections, as of October 2026:
 
 - **Jira as the shared ticket system.** Agent and pipeline do not run in Jira, they only read and write the same tickets. The agent runs on the developer's machine and reaches Jira through the Atlassian Rovo MCP Server; according to [Atlassian](https://www.atlassian.com/blog/jira/mcp-enhancements) it also reads the development panel there with linked branches, pull requests and commits. The pipeline runs on the Git platform and sets the ticket status itself after every run, so nobody maintains it by hand.
-- **Access to the sandboxes.** Through the Salesforce CLI with the skills from [sf-skills](https://github.com/forcedotcom/sf-skills), the [Salesforce Claude Code plugin](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) or Hosted MCP Servers. According to its README the local Salesforce DX MCP Server reaches end of life on 2 November 2026; what that means for your partners is in [Salesforce DX MCP Server: end of life on 2 November 2026](../salesforce-dx-mcp-server-end-of-life/). The agent reaches every org the Salesforce CLI on its machine is logged in to. That is why only fixed sandbox aliases are logged in there, never production.
-- **A Git pipeline** that validates and deploys without AI, with production access for the pipeline only. How I set it up is described under [DevOps and release management](../../services/devops-release-management/).
-- **Transcription in the client's tenant**, for example through the recording in Teams. Consent and the works council I cover in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
+- **Access to the sandboxes.** Skills from [sf-skills](https://github.com/forcedotcom/sf-skills) give instructions, the Salesforce CLI carries out org actions, and the [Salesforce plugin for Claude Code](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) adds MCP servers for context. The local Salesforce DX MCP Server reached end of life on November 2, 2026; what that means for your partners is in [Salesforce DX MCP Server: end of life on November 2, 2026](../salesforce-dx-mcp-server-end-of-life/). The agent reaches every org whose credentials the CLI on its machine holds. A sandbox alias is no security boundary, so the agent runs under its own identity without production credentials, with limited commands and logging.
+- **A Git pipeline** that validates and deploys without AI, with production access for the pipeline identity only. How I set it up is described under [DevOps and release management](../../services/devops-release-management/).
+- **Transcription in the client's tenant**, for example through the recording in Teams, which lands with the organizer, so a client employee should organize the meeting. That covers storage only: the model provider that reads the transcript needs a data processing agreement, region and training exclusion as well. Consent and the works council I cover in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
 
 ## Where does the process stumble?
 
@@ -168,13 +169,13 @@ The process does not depend on a particular coding agent. It needs four connecti
 
 - **A transcript is no truth.** A sentence in a meeting is no decision. The agent never creates binding stories from it without the business analyst's check.
 - **Clients who do not want a recording.** Then the business analyst dictates a summary right after the meeting, which takes the same route.
-- **Retention.** Delete transcripts after acceptance or reduce them to the confirmed minutes.
+- **Retention.** Delete raw recordings and transcripts after a defined period and keep the confirmed minutes with decision IDs and any needed excerpts as the versioned record.
 
 **In the Salesforce part:**
 
 - **Click development.** Admins keep building flows and layouts in sandboxes. The process needs a step in which the agent retrieves and commits such changes, otherwise Git drifts away from the org.
 - **Profiles, permission sets, destructive changes.** The classic deployment traps belong in the rules file as explicit rules.
-- **Configuration data.** CPQ and Field Service set-ups or custom settings are no metadata deployment and need their own track.
+- **Configuration data.** Configuration that exists only as records, such as much of CPQ or custom setting records, needs its own data track. Field Service has deployable metadata as well as data, so decide per artifact type.
 
 ## First step: the spec approval
 
@@ -186,7 +187,7 @@ Spec approval | one stream · BA and architect
 Measure | in code review · developer
   Count how often the developer still has to ask.
 Secure | in parallel
-  Settle recording and tenant, lock every production access except the pipeline's.
+  Settle recording, tenant and model processing; remove every production credential except the pipeline's.
 Expand | once it runs reliably
   Add the prototype and the feedback triage.
 ```
