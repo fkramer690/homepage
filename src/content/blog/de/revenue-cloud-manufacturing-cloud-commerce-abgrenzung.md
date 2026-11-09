@@ -11,14 +11,14 @@ categories: [revenue-cloud, manufacturing-cloud, b2b-commerce]
 tags: [Revenue Cloud, Manufacturing Cloud, B2B Commerce, Angebote, Architektur, Fertigung]
 takeaways:
   - "Revenue Cloud ist unter den dreien das Angebotssystem, vom Konfigurator über Angebot bis Auftrag; die volle Abrechnung braucht eine eigene Billing-Lizenz."
-  - "Manufacturing Cloud verfolgt das Seriengeschäft mit Sales Agreements und Account Forecasts. Komplex konfigurierte Angebote führt besser Revenue Cloud."
+  - "Manufacturing Cloud verfolgt das Seriengeschäft mit Sales Agreements und Account Forecasts. Bei komplex konfigurierten Angeboten sollte Revenue Cloud führen."
   - "B2B Commerce lässt Händler und Kunden selbst bestellen. Am stärksten ist es bei Herstellern für bekannte Artikel wie Ersatzteile und Verbrauchsmaterial."
   - "Zwei getrennt gebaute Angebotsmodelle können zwei Preise für dieselbe Maschine ergeben. Legen Sie pro Prozessschritt fest, welches Produkt führt."
 faq:
   - q: "Was ist der Unterschied zwischen Revenue Cloud und Manufacturing Cloud?"
-    a: "Revenue Cloud konfiguriert, bepreist und bietet Produkte an und führt das Geschäft über Auftrag und, mit der Billing-Lizenz, Abrechnung weiter. Manufacturing Cloud plant und misst wiederkehrendes Geschäft mit Sales Agreements und Account Forecasts. Ein Angebot aus Revenue Cloud kann der Ausgangspunkt für ein Sales Agreement in Manufacturing Cloud sein."
+    a: "Revenue Cloud konfiguriert und bepreist Produkte, erstellt Angebote und führt das Geschäft bis zum Auftrag sowie, mit der Billing-Lizenz, bis zur Abrechnung. Manufacturing Cloud plant und misst wiederkehrendes Geschäft mit Sales Agreements und Account Forecasts. Ein Angebot aus Revenue Cloud kann der Ausgangspunkt für ein Sales Agreement in Manufacturing Cloud sein."
   - q: "Brauche ich Revenue Cloud für B2B Commerce?"
-    a: "Nicht für einen Shop mit Preisbüchern. Die Salesforce-Hilfe nennt für Agentforce Revenue Management for B2B Commerce eine Commerce-Growth- oder Commerce-Advanced-Lizenz plus eine Revenue-Cloud-Advanced-Lizenz. Dazu kommen Preisprozeduren, konfigurierbare Bundles, Abonnements und Request for Quote."
+    a: "Nicht für einen Shop mit Preisbüchern. Die Salesforce-Hilfe nennt für Agentforce Revenue Management for B2B Commerce eine Commerce-Growth- oder Commerce-Advanced-Lizenz plus eine Revenue-Cloud-Advanced-Lizenz. Diese Lizenzkombination ergänzt Preisprozeduren, konfigurierbare Bundles, Abonnements und Request for Quote."
   - q: "Kann Manufacturing Cloud den Produktkatalog von Revenue Cloud nutzen?"
     a: "Das geht. Trailhead beschreibt ein zentrales Produktmodell mit Headless-Composable-APIs und schreibt, dass Agentforce Manufacturing die Produkt- und Preisinformationen aus dem Katalog nutzen kann. Dafür braucht es die Revenue-Cloud-Lizenz, Konfiguration und ein klares Datenmodell; automatisch passiert das nicht."
   - q: "Welches Produkt sollte ein Maschinenbauer zuerst einführen?"
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Revenue Cloud, Manufacturing Cloud und B2B Commerce decken unterschiedliche Teile des Vertriebs eines Herstellers ab. Revenue Cloud konfiguriert, bepreist und bietet Produkte an und führt das Geschäft bis zum Auftrag und, mit einer weiteren Lizenz, zur Abrechnung. Manufacturing Cloud plant und misst das Seriengeschäft mit Sales Agreements und Account Forecasts. B2B Commerce lässt Händler und Kunden bekannte Artikel im Shop nachbestellen. Die drei überschneiden sich bei Katalog, Preis und Angebot, und genau dort laufen Projekte schief. Meine Regel: ein Katalog, ein Preismaster, ein Angebotsmodell und pro Prozessschritt ein Produkt, das führt.
+Revenue Cloud, Manufacturing Cloud und B2B Commerce decken unterschiedliche Teile des Vertriebs eines Herstellers ab. Revenue Cloud konfiguriert und bepreist Produkte, erstellt Angebote und führt das Geschäft bis zum Auftrag und, mit einer weiteren Lizenz, zur Abrechnung. Manufacturing Cloud plant und misst das Seriengeschäft mit Sales Agreements und Account Forecasts. B2B Commerce lässt Händler und Kunden bekannte Artikel im Shop nachbestellen. Die drei überschneiden sich bei Katalog, Preis und Angebot, und genau dort laufen Projekte schief. Meine Regel: ein Katalog, ein Preismaster, ein Angebotsmodell und pro Prozessschritt ein Produkt, das führt.
 
 ## Was leistet welches Produkt?
 
@@ -34,7 +34,7 @@ Revenue Cloud, Manufacturing Cloud und B2B Commerce decken unterschiedliche Teil
 
 **Manufacturing Cloud** ist die Industry Cloud für das Seriengeschäft. Die [Produktseite](https://www.salesforce.com/manufacturing/cloud/) nennt für Sales Core Rahmenvereinbarungen ("run-rate agreements") und Bedarfsprognosen. Salesforce vermarktet sie inzwischen als Agentforce Manufacturing, Editionen wie Sales Core tragen weiter den Namen Manufacturing Cloud. Im Kern steht das Sales Agreement: geplante und tatsächliche Mengen pro Kunde, Produkt und Periode. Ob das zu Ihrem Geschäft passt, steht in [Manufacturing Cloud vs. Sales Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/). Händlerboni sind beim Neukauf kein Manufacturing-Cloud-Thema mehr: Laut [Salesforce](https://help.salesforce.com/s/articleView?id=005393495&language=en_US&type=1) ist Rebate Management seit 18. August 2026 nicht mehr verlängerbar, Nachfolger ist Channel Revenue Management, ein eigenes Produkt. Hintergrund zu Händlerboni steht in [Rebate Management für Händlerboni](../rebate-management-haendlerboni/).
 
-**B2B Commerce** ist der Salesforce-Shop für Geschäftskunden, verkauft als Commerce Cloud B2B Growth oder Advanced Edition. Händler melden sich an, sehen die Produkte, die ihre Käufergruppe kaufen darf, zu ihrem Preis, füllen einen Warenkorb und bestellen. Mit Revenue Cloud verkauft er auch konfigurierbare Bundles und Abonnements, für Hersteller lohnt er sich aber am meisten für Ersatzteile, Verbrauchsmaterial und Zubehör mit bekannten Teilenummern. Die [Masterclass B2B Commerce](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/) behandelt den Shop im Detail.
+**B2B Commerce** ist der Salesforce-Shop für Geschäftskunden, verkauft als Commerce Cloud B2B Growth oder Advanced Edition. Händler melden sich an, sehen die Produkte, die ihre Käufergruppe kaufen darf, zu ihrem Preis, füllen einen Warenkorb und bestellen. Mit Revenue Cloud lassen sich dort auch konfigurierbare Bundles und Abonnements verkaufen. Für Hersteller lohnt sich B2B Commerce aber am meisten für Ersatzteile, Verbrauchsmaterial und Zubehör mit bekannten Teilenummern. Die [Masterclass B2B Commerce](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/) behandelt den Shop im Detail.
 
 ## Wo überschneiden sich die drei Produkte?
 
@@ -52,7 +52,7 @@ Diese Tabelle ist mein Ausgangspunkt. Sie setzt SAP oder ein anderes ERP hinter 
 
 | Prozessschritt | Führendes Produkt | Hinweis |
 |---|---|---|
-| Maschine konfigurieren und anbieten | Revenue Cloud | Konfigurator, Preise, Freigabe |
+| Maschine konfigurieren und Angebot erstellen | Revenue Cloud | Konfigurator, Preise, Freigabe |
 | Kundenpreise berechnen | Revenue Cloud Pricing oder das ERP | Ein Master für Angebot und Shop |
 | Jahresmengen pro Kunde, Plan gegen Ist | Manufacturing Cloud | Sales Agreement, Istwerte aus dem ERP |
 | Händlerboni | Channel Revenue Management | Nachfolger von Rebate Management |
@@ -71,10 +71,10 @@ Vier Konstellationen würde ich in keinem Design-Review durchgehen lassen:
 
 1. **Zwei Kataloge.** Produkte und Attribute einmal für Revenue Cloud und einmal für den Shop oder für Manufacturing Cloud gepflegt. Jede neue Variante muss dann doppelt angelegt werden, und eine davon fehlt irgendwann.
 2. **Zwei Preismaster.** Preisbücher für den Shop, Preisprozeduren für das Angebot, Konditionen in SAP. Der Händler sieht im Shop einen Preis und im Angebot einen anderen.
-3. **Zwei Angebotsmodelle.** Händler bieten auf Standardangeboten mit Preisbüchern in Manufacturing Cloud an, der Innendienst in Revenue Cloud. Berichte, Freigaben und die Übergabe an das ERP gibt es dann doppelt.
+3. **Zwei Angebotsmodelle.** Händler erstellen in Manufacturing Cloud Standardangebote mit Preisbüchern, der Innendienst erstellt Angebote in Revenue Cloud. Berichte, Freigaben und die Übergabe an das ERP gibt es dann doppelt.
 4. **Zwei Angebotsagenten** auf diesen beiden Angebotsmodellen. Jeder Agent braucht eigene Tests, Leitplanken und ein eigenes Verbrauchsbudget, und ihre Antworten können sich widersprechen.
 
-## Rechenbeispiel: Kompressorenhersteller mit 200 Händlern
+## Praxisbeispiel: Kompressorenhersteller mit 200 Händlern
 
 Ein Hersteller von Industriekompressoren verkauft konfigurierte Maschinen über einen Innendienst und 200 Händler. Händler bestellen Filter und Ersatzteile per E-Mail nach. Zehn Großkunden haben Jahresmengenverträge, und Händler bekommen einen Jahresbonus, der in Tabellen berechnet wird.
 
