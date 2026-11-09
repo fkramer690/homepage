@@ -66,7 +66,7 @@ If none of these applies, the agent adds cost and test effort without adding val
 
 ## What does a prompt cost compared with an agent action?
 
-Salesforce meters prompts per call to the LLM gateway. According to the [help article on billable usage types](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5), each prompt covers up to 2,000 tokens of input and output, rounded up, so 6,500 tokens count as four prompts. The [rate card of 3 November 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) prices them by model tier, and the [model support page](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5) assigns the models as of November 2026; Salesforce can change the tiers:
+Salesforce meters prompts per call to the LLM gateway. According to the [help article on billable usage types](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5), each prompt covers up to 2,000 tokens of input and output, rounded up, so 6,500 tokens count as four prompts. The [rate card of November 3, 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) prices them by model tier, and the [model support page](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5) assigns the models as of November 2026; Salesforce can change the tiers:
 
 | Meter | Credits | Example models | USD at list price |
 |---|---|---|---|

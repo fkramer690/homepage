@@ -59,7 +59,7 @@ Under the Flex Credits model, Agentforce is billed per action. The rates are in 
 20 | Flex Credits per standard or custom action in production
 16 | Flex Credits per action in a sandbox
 $0.10 | per action at list price
-source: Salesforce Flex Credits rate card (as of 3 November 2026) and Agentforce pricing page
+source: Salesforce Flex Credits rate card (as of November 3, 2026) and Agentforce pricing page
 ```
 
 ```hinweis offen
@@ -70,7 +70,7 @@ Data 360 also charges for processing unstructured documents such as manuals and 
 
 ### 5. Which edition are you on?
 
-On 3 September 2026 Salesforce announced [Core, Advanced and Max editions](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) at $195, $395 and $550 per user and month, with 500,000, 1 million and 2.75 million Flex Credits included. The release itself gives no period, but the [Sales Cloud pricing page](https://www.salesforce.com/sales-cloud/pricing/) lists the pools per org and year. One pool for the whole org runs out quickly when several agents draw on it. Pricing for existing customers on legacy editions stays unchanged. Manufacturing Cloud has its own price list: the [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) shows Core at $275 with 500,000 credits and Max at $650 or $700 with 2.75 million credits, with no Advanced tier, and lists the full Agentforce for Industries suite only in Max. If you are mid-contract, the practical question is whether to buy credits for one process now or change editions at renewal. I look at that in [the editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
+On September 3, 2026 Salesforce announced [Core, Advanced and Max editions](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) at $195, $395 and $550 per user and month, with 500,000, 1 million and 2.75 million Flex Credits included. The release itself gives no period, but the [Sales Cloud pricing page](https://www.salesforce.com/sales-cloud/pricing/) lists the pools per org and year. One pool for the whole org runs out quickly when several agents draw on it. Pricing for existing customers on legacy editions stays unchanged. Manufacturing Cloud has its own price list: the [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) shows Core at $275 with 500,000 credits and Max at $650 or $700 with 2.75 million credits, with no Advanced tier, and lists the full Agentforce for Industries suite only in Max. If you are mid-contract, the practical question is whether to buy credits for one process now or change editions at renewal. I look at that in [the editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
 
 ## Worked example: three candidates at a machine builder
 

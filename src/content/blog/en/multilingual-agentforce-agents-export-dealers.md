@@ -53,13 +53,13 @@ Two consequences for a dealer portal. First, the session language filters knowle
 
 ## What does runtime translation cost?
 
-The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) of 3 November 2026 lists three language meters, here converted at the [list price of $500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/). The Translation meter also runs in a sandbox.
+The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) of November 3, 2026 lists three language meters, here converted at the [list price of $500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/). The Translation meter also runs in a sandbox.
 
 ```kennzahlen
 4,000 credits | Translation per million characters, about $20
 6,000 credits | Text to Speech per million characters, about $30
 150 credits | Speech to Text per hour of transcription, about $0.75
-source: Salesforce Flex Credits rate card of 3 November 2026,
+source: Salesforce Flex Credits rate card of November 3, 2026,
   list price from the Agentforce pricing page
 ```
 

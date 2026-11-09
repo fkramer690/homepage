@@ -16,7 +16,7 @@ takeaways:
   - "Reif ist ein KI-Angebot, wenn Ihr Innendienst es unverändert unterschreiben würde."
 faq:
   - q: "Was macht der AI Partner Sales Assistant?"
-    a: "Laut Produktseite der Manufacturing Cloud beschleunigt er den Vertrieb über Partner, indem er Produkte findet und Angebote in Sekunden baut. Salesforce führt ihn unter dem Release Summer '26; die Salesforce-Hilfe dokumentiert die passende Vorlage als Agentforce for Industries Sales Concierge for Partners."
+    a: "Laut Produktseite der Manufacturing Cloud beschleunigt er den Vertrieb über Partner, indem er Produkte findet und Angebote in Sekunden erstellt. Salesforce führt ihn unter dem Release Summer '26; die Salesforce-Hilfe dokumentiert die passende Vorlage als Agentforce for Industries Sales Concierge for Partners."
   - q: "Was unterscheidet ihn vom AI Sales Concierge?"
     a: "Sales Concierge for Customers (Winter '27) richtet sich an Kunden auf Ihrer Experience-Cloud-Site; einen Sales Concierge for Manufacturing gab es schon in Spring '26. Laut Release Highlights suchen sie dort Anlagen, finden Händler und fragen Angebote an. Der Partner Sales Assistant richtet sich an Händler und Distributoren."
   - q: "Welche Daten müssen vor KI-Angeboten für Händler stimmen?"
@@ -26,19 +26,19 @@ faq:
 draft: false
 ---
 
-Der AI Partner Sales Assistant (Summer '26) hilft Händlern in der Manufacturing Cloud, Produkte zu finden und Angebote zu bauen, der AI Sales Concierge (Winter '27) macht dasselbe für Kunden auf Ihrer Experience-Cloud-Site. Beides sind Marketingnamen; die Salesforce-Hilfe dokumentiert die Vorlagen dahinter als Industries Sales Assistance und Sales Concierge for Partners. Ich sehe sie als neue Oberfläche auf Ihren bestehenden Angebotsdaten. Diese Daten entscheiden. Bevor ein Händler ein KI-Angebot bekommt, braucht jede verkaufsfähige Variante einen auffindbaren Produktdatensatz, einen Preis je Markt und Händlerstufe, eine Regel, was baubar ist, und eine Rabattgrenze, die kein Modell aufweicht.
+Der AI Partner Sales Assistant (Summer '26) hilft Händlern in der Manufacturing Cloud, Produkte zu finden und Angebote zu erstellen, der AI Sales Concierge (Winter '27) macht dasselbe für Kunden auf Ihrer Experience-Cloud-Site. Beides sind Marketingnamen; die Salesforce-Hilfe dokumentiert die Vorlagen dahinter als Industries Sales Assistance und Sales Concierge for Partners. Sie sind eine neue Oberfläche für Ihre bestehenden Angebotsdaten. Diese Daten entscheiden. Bevor ein Händler ein KI-Angebot bekommt, braucht jede verkaufsfähige Variante einen auffindbaren Produktdatensatz, einen Preis je Markt und Händlerstufe, eine Regel, was baubar ist, und eine Rabattgrenze, die kein Modell aufweicht.
 
 ## Was leisten AI Partner Sales Assistant und AI Sales Concierge?
 
-Beide stehen auf der [Produktseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/). Unter Summer '26 verspricht Salesforce, mit dem AI Partner Sales Assistant den Vertrieb über Partner zu beschleunigen, weil er „finds products and builds quotes in seconds“. Unter Winter '27 soll der AI Sales Concierge Self-Service-Besuche in qualifizierte Pipeline verwandeln, mit derselben Formulierung: Er findet Produkte und baut Angebote in Sekunden. Winter '27 ist seit dem [12. Oktober 2026 allgemein verfügbar](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/).
+Beide stehen auf der [Produktseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/). Unter Summer '26 verspricht Salesforce, mit dem AI Partner Sales Assistant den Vertrieb über Partner zu beschleunigen, weil er „finds products and builds quotes in seconds“. Unter Winter '27 soll der AI Sales Concierge Self-Service-Besuche in qualifizierte Pipeline verwandeln, mit derselben Formulierung: Er findet Produkte und erstellt Angebote in Sekunden. Winter '27 ist seit dem [12. Oktober 2026 allgemein verfügbar](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/).
 
 Die Release-Unterlagen ergänzen wenig. Die [Winter '27 Highlights auf Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-manfacturing-media-netzero-nonprofit) beschreiben Sales Concierge for Customers als KI-gestütztes Einkaufserlebnis auf Ihrer Experience-Cloud-Site, auf der Kunden „search assets, locate dealers, and request quotes“. Einen Sales Concierge for Manufacturing mit Produkt- und Zubehörsuche, Händlersuche und schneller Angebotserstellung nannten bereits die [Spring '26 Highlights](https://trailhead.salesforce.com/it/content/learn/modules/spring-26-release-highlights/see-whats-new-agentforce-manufacturing-media-public-sector-nonprofit). Zum Partner Sales Assistant fand ich in den [Summer '26 Highlights für Manufacturing](https://trailhead.salesforce.com/content/learn/modules/summer-26-release-highlights/see-whats-new-manufacturing-media-nonprofit-and-agentforce-net-zero) keinen Eintrag; dort stehen Garantieunterstützung, Musterverwaltung und Bestellungen.
 
 ```hinweis achtung
-Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=ind.mfg_gen_ai_agentforce_overview.htm&language=en_US&type=5) laufen die Vorlagen auf Enterprise, Performance und Unlimited Edition, und jeder Benutzer, der die Aktionen nutzt, braucht das Add-on Agentforce for Manufacturing oder die Agentforce 1 Manufacturing Edition. Wie das für externe Partnerbenutzer gilt, lassen Sie sich vor dem Budget schriftlich bestätigen.
+Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=ind.mfg_gen_ai_agentforce_overview.htm&language=en_US&type=5) sind die Vorlagen in der Enterprise, Performance und Unlimited Edition verfügbar, und jeder Benutzer, der die Aktionen nutzt, braucht das Add-on Agentforce for Manufacturing oder die Agentforce 1 Manufacturing Edition. Wie das für externe Partnerbenutzer gilt, lassen Sie sich vor dem Budget schriftlich bestätigen.
 ```
 
-Für die Entscheidung zählt ein Unterschied. „Angebot anfragen“ und „Angebot bauen“ sind verschiedene Dinge: Eine Anfrage landet im Vertriebsinnendienst, ein gebautes Angebot weckt eine konkrete Preiserwartung, die der Händler als Ihre ansieht, auch bevor es rechtlich bindet.
+Für die Entscheidung zählt ein Unterschied. „Angebot anfragen“ und „Angebot erstellen“ sind verschiedene Dinge: Eine Anfrage landet im Vertriebsinnendienst. Ein erstelltes Angebot weckt eine konkrete Preiserwartung, die der Händler Ihrem Unternehmen zurechnet, auch bevor es rechtlich bindend ist.
 
 ```vertiefung Für Admins
 titel: Welche Agentenaktionen liegen darunter?
@@ -53,7 +53,7 @@ Winter '27 bringt auch außerhalb der Manufacturing Cloud einen Angebotsagenten.
 |---|---|---|---|
 | Release | Summer '26 | Winter '27 | Winter '27 |
 | Wer nutzt ihn | Händler, Distributoren | Kunden auf Ihrer Site | Einkäufer beim Kunden, Partner |
-| Was Salesforce sagt | Findet Produkte, baut Angebote | Findet Produkte, baut Angebote; Highlights: Angebot anfragen | Self-Service- und Partnerangebote |
+| Was Salesforce sagt | Findet Produkte, erstellt Angebote | Findet Produkte, erstellt Angebote; Highlights: Angebot anfragen | Self-Service- und Partnerangebote |
 | Produkt | Manufacturing Cloud | Manufacturing Cloud | Revenue Management, früher Revenue Cloud |
 
 Ich würde danach entscheiden, wo Ihr Angebot heute entsteht. Erstellen Sie Angebote bereits in Revenue Management, früher Revenue Cloud (nicht Salesforce CPQ), schauen Sie zuerst auf dessen Agenten; was er heute kann, steht im Beitrag zum [Angebotsagenten in Revenue Cloud](../revenue-cloud-angebotsagent-agentforce/). Arbeiten Händler mit Standard-Angeboten und Preisbüchern in der Manufacturing Cloud, passen die Manufacturing-Agenten. Zwei Angebotsagenten auf zwei Angebotsmodellen würde ich vermeiden.
@@ -62,15 +62,15 @@ Für Maschinenbauer mit Händlernetz stellt der Sales Concierge zuerst eine kauf
 
 ## Katalog, Preise, Regeln und Rabattgrenzen müssen vorher stimmen
 
-Ein Agent, der ein Angebot baut, liest dieselben Datensätze wie Ihr Innendienst. Was ein erfahrener Innendienst aus Gewohnheit korrigiert, gibt der Agent direkt an den Händler weiter.
+Ein Agent, der ein Angebot erstellt, liest dieselben Datensätze wie Ihr Innendienst. Was ein erfahrener Innendienst aus Gewohnheit korrigiert, gibt der Agent direkt an den Händler weiter.
 
 ### Ein Katalog, in dem Händler suchen können
 
-Jede direkt angebotene Artikelnummer und jedes Zubehörteil braucht einen eigenen Produktdatensatz mit korrektem Aktiv-Kennzeichen (konfigurierte Varianten brauchen stattdessen ein Produktmodell oder einen Konfigurator), abgelöste Produkte einen Verweis auf den Nachfolger. ERP-Kurztexte sind für interne Mitarbeitende geschrieben; ein Händler tippt „Schnellwechsler für 8-Tonnen-Bagger“. Zubehör braucht eine Zuordnung zu den Maschinenmodellen, an die es passt, sonst bietet der Agent ein Anbaugerät an, das nicht auf den Wechsler passt. Zählen Sie vor allem anderen, wie viel Prozent Ihres Zubehörs eine solche Zuordnung haben.
+Jede direkt angebotene Artikelnummer und jedes Zubehörteil braucht einen eigenen Produktdatensatz mit korrekt gesetztem Feld „Aktiv“ (konfigurierte Varianten brauchen stattdessen ein Produktmodell oder einen Konfigurator), abgelöste Produkte einen Verweis auf den Nachfolger. ERP-Kurztexte sind für interne Mitarbeitende geschrieben; ein Händler tippt „Schnellwechsler für 8-Tonnen-Bagger“. Zubehör braucht eine Zuordnung zu den Maschinenmodellen, an die es passt, sonst bietet der Agent ein Anbaugerät an, das nicht auf den Wechsler passt. Zählen Sie vor allem anderen, wie viel Prozent Ihres Zubehörs eine solche Zuordnung haben.
 
 ### Preise je Markt und Händlerstufe
 
-Hält SAP Listenpreise, Händlerrabatte je Stufe und Zuschläge als Konditionen und Salesforce nur den Listenpreis, können die Standardaktionen nur den Listenpreis aus der Preisbuch-Zuordnung nutzen. Sie brauchen einen gültigen Preis je Land, Währung und Händlerstufe mit Gültigkeitsdatum, synchronisiert aus dem ERP, ob als Preisbücher, Preisbucheinträge oder Preiskonditionen. Salesforce sieht die Lücke ebenfalls: Die Winter '27 Highlights nennen Penny Perfect Pricing mit Preisen für mehrere Märkte, mehreren Mengeneinheiten, Kalkulationsschema und ERP-Anbindung in der Manufacturing Cloud. Was dazu bisher bekannt ist, steht in [Penny Perfect Pricing: ERP-Preise in Salesforce?](../penny-perfect-pricing-erp-preise/). Die Salesforce-Hilfe dokumentiert es für die Auftragspreisfindung; dass die Angebotsaktion es aufruft, habe ich in keiner Quelle gefunden. Legen Sie einen Preis-Master fest: Das ERP rechnet und Salesforce zeigt das Ergebnis über eine API an, wie bei [Auftragsstatus aus SAP über MuleSoft](../agentforce-sap-auftragsstatus/); die ERP-Konditionen werden repliziert und Salesforce rechnet mit demselben Schema; oder Salesforce pflegt die Preise selbst.
+Hält SAP Listenpreise, Händlerrabatte je Stufe und Zuschläge als Konditionen und Salesforce nur den Listenpreis, können die Standardaktionen nur den Listenpreis aus der Preisbuch-Zuordnung nutzen. Sie brauchen je Land, Währung und Händlerstufe einen gültigen Preis mit Gültigkeitszeitraum, der aus dem ERP synchronisiert wird, etwa als Preisbuch, Preisbucheintrag oder Preiskondition. Salesforce sieht die Lücke ebenfalls: Die Winter '27 Highlights nennen Penny Perfect Pricing mit Preisen für mehrere Märkte, mehreren Mengeneinheiten, Kalkulationsschema und ERP-Anbindung in der Manufacturing Cloud. Was dazu bisher bekannt ist, steht in [Penny Perfect Pricing: ERP-Preise in Salesforce?](../penny-perfect-pricing-erp-preise/). Die Salesforce-Hilfe dokumentiert es für die Auftragspreisfindung; dass die Angebotsaktion es aufruft, habe ich in keiner Quelle gefunden. Legen Sie einen Preis-Master fest: Das ERP rechnet und Salesforce zeigt das Ergebnis über eine API an, wie bei [Auftragsstatus aus SAP über MuleSoft](../agentforce-sap-auftragsstatus/); die ERP-Konditionen werden repliziert und Salesforce rechnet mit demselben Schema; oder Salesforce pflegt die Preise selbst.
 
 ### Regeln, was baubar ist
 
@@ -110,7 +110,7 @@ Den Preis-Master festlegen
 Rabattgrenzen als Regeln schreiben
   Mit einem Verantwortlichen in Vertrieb und Finanzen.
 Salesforce schriftlich fragen
-  Wie das Add-on pro Nutzer für Partnerbenutzer gilt, welche Aktionen und Prompts der Agent aufruft und die Abgrenzung zum Agenten in Revenue Management.
+  Wie das Add-on pro Nutzer für Partnerbenutzer gilt, welche Aktionen und Prompts der Agent aufruft und wie er sich vom Agenten in Revenue Management abgrenzt.
 Einen Testsatz bauen
   Aus echten Händleranfragen, auch mit falschen Teilenummern und nicht baubaren Kombinationen, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
 ```

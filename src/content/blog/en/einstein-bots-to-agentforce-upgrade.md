@@ -11,13 +11,13 @@ categories: [ai]
 tags: [einstein bots, agentforce, service cloud, dealer portal, flex credits, manufacturing]
 takeaways:
   - "Upgrade Agent builds an Agentforce Service Agent from an Einstein Bot while the bot keeps running. Salesforce calls the tool experimental."
-  - "Einstein Bots have no retirement date but have been in Maintenance Mode since 17 August 2026: supported, without new features."
+  - "Einstein Bots have no retirement date but have been in Maintenance Mode since August 17, 2026: supported, without new features."
   - "An agent bills consumption at 20 Flex Credits ($0.10) per action or $2 per conversation, and Salesforce does not support both in one org."
   - "In the worked example, 4,000 portal conversations a month need about 2.9 million credits a year for actions, more than the 2.75 million in Service Cloud Max."
   - "Identification, warranty registration, safety reports and lookups by order number stay in menus, and the agent gets the free text."
 faq:
   - q: "Is Salesforce retiring Einstein Bots?"
-    a: "Salesforce names no retirement date, but Einstein Bots have been in Maintenance Mode since 17 August 2026: existing bots stay supported, new features go to Agentforce. Legacy Chat was retired on 14 February 2026, so bots on that channel had to move to Enhanced Chat, formerly Messaging for In-App and Web."
+    a: "Salesforce names no retirement date, but Einstein Bots have been in Maintenance Mode since August 17, 2026: existing bots stay supported, new features go to Agentforce. Legacy Chat was retired on February 14, 2026, so bots on that channel had to move to Enhanced Chat, formerly Messaging for In-App and Web."
   - q: "What does the Agentforce Upgrade Agent do?"
     a: "According to Salesforce it converts an existing Einstein Bot into an Agentforce Service Agent in minutes, while the bot keeps running. It runs in Agentforce Labs, which Salesforce describes as experimental and pre-release, so treat the result as a draft."
   - q: "Can an Einstein Bot and an Agentforce agent run side by side?"
@@ -54,7 +54,7 @@ Einstein Bots were budgeted as an allowance. Salesforce's [Einstein features che
 
 Agentforce bills consumption. The [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) lists Flex Credits at $500 per 100,000, and Salesforce's [May 2025 announcement](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) says "One Agentforce action consumes 20 Flex Credits ($0.10 USD)". The alternative is $2 per conversation, and the pricing page states that Flex Credits and conversations "will not be supported in the same org". Prompts and Data 360 grounding come on top of actions; I break them down in [Flex Credits per action](../flex-credits-agentforce-cost-per-action/).
 
-There is a third model. The [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) (as of 3 November 2026) lists Help Agent resolutions at 400 credits, and Salesforce's [June 2026 announcement](https://www.salesforce.com/de/news/press-releases/2026/06/30/salesforce-agentforce-help-agent/) says there is no charge when the customer is handed to a human. Salesforce announced this for Help Agent, now marketed as Casey, which I cover in [the Casey article](../service-cloud-casey-service-rep-assistant/). Salesforce's Dreamforce post says Upgrade Agent can also convert a bot into a Help Agent, so for simple service portals that is a third option worth pricing. For a custom service agent built from your bot, the resolution model does not apply.
+There is a third model. The [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) (as of November 3, 2026) lists Help Agent resolutions at 400 credits, and Salesforce's [June 2026 announcement](https://www.salesforce.com/de/news/press-releases/2026/06/30/salesforce-agentforce-help-agent/) says there is no charge when the customer is handed to a human. Salesforce announced this for Help Agent, now marketed as Casey, which I cover in [the Casey article](../service-cloud-casey-service-rep-assistant/). Salesforce's Dreamforce post says Upgrade Agent can also convert a bot into a Help Agent, so for simple service portals that is a third option worth pricing. For a custom service agent built from your bot, the resolution model does not apply.
 
 The [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) lists Max with "2.75M Flex Credits per org per year". That pool is shared by every agent in the org; whether Data 360 jobs draw from it too depends on whether your contract also contains Data Services Credits.
 
