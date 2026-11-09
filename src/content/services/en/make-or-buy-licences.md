@@ -6,7 +6,7 @@ lang: en
 slug: make-or-buy-licences
 translationKey: service-make-or-buy
 contactBrief: make-or-buy
-order: 6
+order: 7
 lead: "Not everything belongs in Salesforce, and not every Salesforce product pays off. I assess make-or-buy decisions and license needs before the contract is signed, based on a long-term ROI that includes maintenance and follow-up costs."
 situations:
   - "A partner or the vendor proposes an industry cloud, and the company wants to know whether a custom solution on the core platform would do the job."

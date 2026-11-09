@@ -6,7 +6,7 @@ lang: en
 slug: program-management-nearshore
 translationKey: service-nearshore
 contactBrief: nearshore
-order: 5
+order: 6
 lead: "Nearshore teams can deliver a lot for a reasonable price, if the setup is right. Most problems have little to do with skills and a lot to do with team size, turnover and culture. I plan and steer Salesforce programs on the client side, including nearshore teams in Eastern Europe and offshore teams in India."
 situations:
   - "A Salesforce program needs more delivery capacity than the internal team and the current partners can provide."

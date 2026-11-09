@@ -7,7 +7,7 @@ slug: change-management-salesforce
 translationKey: service-change
 contactBrief: change
 section: change-management
-order: 2
+order: 4
 note: "I developed this approach together with Juliane Winterscheid, my cooperation partner for change management. Juliane is Prosci certified."
 notePartner: "Juliane Winterscheid"
 lead: "A new Salesforce release is rolled out quickly. Whether business teams, developers and partners work differently afterwards is another question. Together with Juliane Winterscheid I plan the introduction of new processes and standards following Prosci and ADKAR, so they reach daily work and stay there."

@@ -70,12 +70,16 @@ export const de: Dict = {
         text: 'Zielarchitektur und Lösungsdesign für komplexe Salesforce-Landschaften mit mehreren Clouds, Portalen und Schnittstellen.',
       },
       {
-        title: 'Change Management',
-        text: 'Neue Prozesse und Releases so einführen, dass Fachbereiche, Teams und Partner sie im Alltag nutzen, nach Prosci und ADKAR.',
+        title: 'Partnersteuerung & Governance',
+        text: 'Ein gemeinsames Governance- und Release-Framework über mehrere Implementierungspartner. Dazu prüfe ich, was die Partner liefern.',
       },
       {
         title: 'DevOps & Release-Management',
         text: 'Release-Prozesse, Branching, Standards für Codequalität und automatische Prüfungen, z. B. mit sfdx-hardis.',
+      },
+      {
+        title: 'Change Management',
+        text: 'Neue Prozesse und Releases so einführen, dass Fachbereiche, Teams und Partner sie im Alltag nutzen, nach Prosci und ADKAR.',
       },
       {
         title: 'Integration',
@@ -89,10 +93,6 @@ export const de: Dict = {
         title: 'Make-or-Buy & Lizenzprognosen',
         text: 'Gehört das überhaupt in Salesforce? Best-of-Breed-Alternativen und Lizenzkosten, bewertet bevor die Entscheidung fällt.',
       },
-      {
-        title: 'Partnersteuerung & Governance',
-        text: 'Ein gemeinsames Governance- und Release-Framework über mehrere Implementierungspartner. Dazu prüfe ich, was die Partner liefern.',
-      },
     ],
     more: 'Mehr erfahren',
     featured: 4,
@@ -100,9 +100,9 @@ export const de: Dict = {
     moreAll: 'Alle Leistungen',
     morePartners: 'Partner',
     moreItems: [
-      { order: 5, text: 'Programme planen und steuern, Nearshore-Teams koordinieren.' },
-      { order: 6, text: 'Gehört das in Salesforce? Alternativen und Lizenzkosten vorher bewertet.' },
-      { order: 7, text: 'Mehrere Implementierungspartner nach gemeinsamen Regeln steuern und ihre Lieferungen prüfen.' },
+      { order: 5, text: 'Salesforce mit ERP, Middleware und Telefonie verbinden.' },
+      { order: 6, text: 'Programme planen und steuern, Nearshore-Teams koordinieren.' },
+      { order: 7, text: 'Gehört das in Salesforce? Alternativen und Lizenzkosten vorher bewertet.' },
     ],
     focusLabel: 'Schwerpunkte',
     focus: [
@@ -354,7 +354,7 @@ export const de: Dict = {
         linkedin: 'https://www.linkedin.com/in/juliane-winterscheid-4794b8115/',
         photo: 'juliane-winterscheid',
         photoAlt: 'Juliane Winterscheid präsentiert vor einem Team',
-        service: 2,
+        service: 4,
         serviceLink: 'Change Management bei mir',
         profile: 'partner/juliane-winterscheid/',
         profileLink: 'Profil und Referenzen',
