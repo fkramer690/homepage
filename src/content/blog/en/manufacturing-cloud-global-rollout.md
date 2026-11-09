@@ -2,12 +2,13 @@
 title: "Rolling Out Manufacturing Cloud Globally: the Order"
 description: "In which order manufacturers roll out Manufacturing Cloud across countries, why 80 percent should be identical and why change management belongs in it."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: manufacturing-cloud-global-rollout
 translationKey: manufacturing-cloud-global-rollout
 topic: governance
 categories: [manufacturing-cloud]
-tags: [Manufacturing Cloud, Rollout, Harmonisation, Change Management, Manufacturing]
+tags: [Manufacturing Cloud, Rollout, Harmonization, Change Management, Manufacturing]
 series: { id: manufacturing-cloud, part: 8 }
 takeaways:
   - "I include one of the biggest regions in the first two phases, so the global template is tested under load early."
@@ -18,17 +19,17 @@ faq:
   - q: "Which country should a global Salesforce rollout start with?"
     a: "With a large country of reasonable complexity. It has to be big enough to test the global template seriously and must not be so special that its edge cases shape the template for everyone else."
   - q: "How much may a country deviate from the global template?"
-    a: "My rule of thumb: all countries work at least 80 percent identically, and the delta per country is actively kept small. Legal requirements are given, everything else is justified and decided."
+    a: "My rule of thumb: all countries work at least 80 percent identically in their core processes and the main pillars of the implementation, and the delta per country is actively kept small. Legal requirements are given, everything else is justified and decided."
   - q: "Does a Salesforce rollout need change management?"
-    a: "Yes. A rollout aimed at harmonising processes changes how people work in every country. So I keep bringing change management up, even when the client does not think it is needed at first."
+    a: "Yes. A rollout aimed at harmonizing processes changes how people work in every country. So I keep bringing change management up, even when the client does not think it is needed at first."
 draft: false
 ---
 
-A global Manufacturing Cloud rollout starts with a decision that comes before any configuration: which strategic goal is it meant to achieve? Usually it is process harmonisation. That shapes how I plan the rollout: start with a large country of reasonable complexity, include one of the biggest regions in the first two phases, and keep all countries at least 80 percent identical. These are my lessons from the first global Manufacturing Cloud rollout I worked on. The most important one sounds the least technical: change management belongs in it, even when nobody asks for it.
+A global Manufacturing Cloud rollout starts with a decision that comes before any configuration: which strategic goal is it meant to achieve? Usually it is process harmonization. That shapes how I plan the rollout: start with a large country of reasonable complexity, include one of the biggest regions in the first two phases, and keep all countries at least 80 percent identical. These are my lessons from a premiere: the first global Manufacturing Cloud rollout Salesforce had ever done. The most important one sounds the least technical: change management belongs in it, even when nobody asks for it.
 
 ## What has to be settled before the first country?
 
-The goal. A rollout meant to harmonise processes is planned differently from one meant to give every country its own CRM. For manufacturers with entities in many countries it is usually about harmonisation: the same sales processes, the same sales agreements, the same reports for headquarters. How the rollout fits with ERP integration and AI is covered in [chapter 5 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/erp-ai-and-rollout/).
+The goal. A rollout meant to harmonize processes is planned differently from one meant to give every country its own CRM. For manufacturers with entities in many countries it is usually about harmonization: the same sales processes, the same sales agreements, the same reports for headquarters. How the rollout fits with ERP integration and AI is covered in [chapter 5 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/erp-ai-and-rollout/).
 
 That goal leads to a global template, the shared configuration every country adopts. For Manufacturing Cloud it includes at least the decisions from the earlier parts of this series:
 
@@ -39,6 +40,8 @@ That goal leads to a global template, the shared configuration every country ado
 ```hinweis achtung
 After the first country, these points can hardly be changed without touching every country already live. So each of them goes into the decision log before the first country goes live.
 ```
+
+Changing them later is still possible, but then it is a new version of the global template: with an owner, an impact assessment, regression tests in every live country and a date from which the next countries roll out on it. Without that versioning, the first country's mistakes are carried into every country after it.
 
 How I keep that log is described under [Salesforce architecture](../../services/salesforce-architecture/).
 
@@ -55,7 +58,7 @@ A second rule comes with it: one of the biggest regions should be part of the fi
 
 Three questions are answered differently for each country:
 
-1. **How similar are the processes?** Countries that already sell and invoice in a similar way go faster. Countries with their own processes need more time for harmonisation.
+1. **How similar are the processes?** Countries that already sell and invoice in a similar way go faster. Countries with their own processes need more time for harmonization.
 2. **Which business units are there?** An entity with several business units is a bigger step than one with a single unit.
 3. **What do the IT systems look like?** A country with its own ERP, its own middleware or its own legacy systems needs new integrations. If it shares the ERP with a country already live, the path is shorter.
 
@@ -76,7 +79,7 @@ So I put the brand into the template as its own question, even if the first coun
 
 ## Every country works at least 80 percent the same way
 
-There is a rule of thumb and a process for it. The rule of thumb: all countries work at least 80 percent identically, and for each country the aim is to minimise the delta. Countries after the first should only show marginal deviations.
+There is a rule of thumb and a process for it. The rule of thumb: all countries work at least 80 percent identically, measured on the core processes and the main pillars of the implementation, not on every screen or field. For each country the aim is to minimize the delta. Countries after the first should only show marginal deviations.
 
 The process is simple but needs discipline:
 
@@ -89,7 +92,7 @@ With several implementation partners, for example one per region, that decision 
 
 ## Why change management, even when nobody asks for it?
 
-Because harmonisation means people work differently. In every country that follows the template, processes, reports and habits change. A sales team that kept its volumes in its own spreadsheet does not automatically work with sales agreements just because they are live.
+Because harmonization means people work differently. In every country that follows the template, processes, reports and habits change. A sales team that kept its volumes in its own spreadsheet does not automatically work with sales agreements just because they are live.
 
 ```praxis
 Many clients think they do not need change management. The budget is allocated, the training is planned, and users will get used to it. I still keep bringing it up, during planning, before each country and after each go-live.
@@ -107,7 +110,7 @@ How I plan the introduction of new processes on the client side is described und
 
 Before the first country is planned, settle these points:
 
-1. **The goal.** Harmonisation or local freedom, in writing and backed by management.
+1. **The goal.** Harmonization or local freedom, in writing and backed by management.
 2. **The template.** Account level, product rule, portal and the other base decisions in the decision log.
 3. **The first country and the large region.** Big enough, not too special, and the large region in the first two phases.
 4. **The order.** A table with processes, business units, IT systems and brands per country.

@@ -2,6 +2,7 @@
 title: "Garantieansprüche von Händlern in Salesforce prüfen"
 description: "Wie die Manufacturing Cloud Garantiebedingungen, Garantieansprüche von Händlern und Regress beim Lieferanten abbildet und warum alles an den Anlagendaten hängt."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: de
 slug: garantieansprueche-haendler-salesforce
 translationKey: manufacturing-cloud-warranty-claims
@@ -10,34 +11,35 @@ categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Garantie, Händler, After-Sales, Fertigung]
 series: { id: manufacturing-cloud, part: 6 }
 takeaways:
-  - "Garantien haben drei Ebenen: Bedingungen pro Produktfamilie oder Produkt, Anpassungen pro Teil und die Garantie der einzelnen Anlage."
+  - "Eine Garantie besteht aus vier Datensätzen: Bedingung, Anpassung pro Teil, Verknüpfung mit dem Produkt und Garantie der einzelnen Anlage."
   - "Händler reichen Garantieansprüche über ein Portal ein, mit Teilen, Arbeitszeit und Kosten."
-  - "Ein Prüfer passt die Beträge an und gibt frei. Ohne Seriennummer, Startdatum und Nutzung kann auch ein Agent nicht sauber prüfen."
+  - "Ein Prüfer passt die Beträge an und gibt frei. Ein Agent kann die Prüfung vorbereiten, aber ohne Seriennummer, Startdatum und Nutzung auch nicht sauber prüfen."
   - "Aus einem Garantieanspruch erzeugt Salesforce pro verursachendem Teil einen Regressanspruch an den Lieferanten."
-  - "Die Garantie ist ein kaufmännischer Prozess. Der Einsatz vor Ort, Wartungsverträge und Reaktionszeiten gehören zu Field Service."
+  - "Die Garantie entscheidet über die Deckung. Reparatur, Wartungsverträge und Reaktionszeiten gehören zu Field Service."
 faq:
   - q: "Wie reichen Händler Garantieansprüche in Salesforce ein?"
     a: "Über ein Partnerportal auf Experience Cloud. Laut Trailhead legen Partner den Anspruch mit der betroffenen Anlage, Fehler- und Reparaturdatum und den Kosten für Teile, Arbeit und Transport an und setzen ihn auf eingereicht. Ansprüche per E-Mail oder Telefon kann ein Sachbearbeiter erfassen."
   - q: "Was ist ein Supplier Recovery Claim?"
     a: "Ein Regressanspruch an den Lieferanten, wenn ein Garantiefall auf ein zugekauftes Teil zurückgeht. Salesforce erzeugt aus einem Garantieanspruch pro verursachendem Teil einen Entwurf, der an den Lieferanten eingereicht wird."
   - q: "Kann ein Agent Garantieansprüche prüfen?"
-    a: "Laut Salesforce prüft der Warranty Claims Adjudication Agent ab Winter '27 die Deckung und markiert mögliche Betrugsfälle. Er ist auf vollständige Anlagen- und Garantiedaten angewiesen."
+    a: "Laut Salesforce-Hilfe prüft der Warranty Claims Adjudication Agent Ansprüche auf Vollständigkeit, markiert fehlende Angaben, entwirft Rückfragen, priorisiert offene Ansprüche und weist auf mögliche Betrugsfälle hin. Er genehmigt oder verwirft keine Ansprüche, das bleibt beim Prüfer. Er braucht das Add-on Agentforce for Manufacturing oder eine Agentforce-1-Edition und vollständige Anlagen- und Garantiedaten."
 draft: false
 ---
 
-Ob ein Garantieanspruch eines Händlers in Salesforce sauber geprüft werden kann, entscheiden die Daten der Anlage: Seriennummer, Kauf- oder Installationsdatum und Nutzung. Die Manufacturing Cloud bildet Garantiebedingungen, die Garantie jeder Anlage, die Ansprüche der Händler und den Regress beim Lieferanten in einem Datenmodell ab. Das lohnt sich, wenn Händler und Servicepartner regelmäßig Garantieansprüche einreichen und die Prüfung heute viel Handarbeit kostet. Fehlen die Anlagendaten, kann weder ein Mensch noch ein Agent verlässlich prüfen.
+Bei serialisierten Produkten entscheiden die Daten der Anlage, ob ein Garantieanspruch eines Händlers in Salesforce sauber geprüft werden kann: Seriennummer, Kauf- oder Installationsdatum und, wo die Bedingung davon abhängt, die Nutzung. Die Manufacturing Cloud bildet Garantiebedingungen, die Garantie jeder Anlage, die Ansprüche der Händler und den Regress beim Lieferanten in einem Datenmodell ab. Das lohnt sich, wenn Händler und Servicepartner regelmäßig Garantieansprüche einreichen und die Prüfung heute viel Handarbeit kostet. Fehlen die Anlagendaten, kann weder ein Mensch noch ein Agent verlässlich prüfen.
 
 Wie Teil 4 und 5 schreibe ich diesen Teil als Leitfaden für die Bewertung, nicht als Projektbericht. Die Garantie behandle ich als kaufmännischen Prozess, den Einsatz vor Ort deckt die Field-Service-Serie ab.
 
-## Eine Garantie hat drei Ebenen
+## Eine Garantie besteht aus vier Datensätzen
 
 Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/warranty-administration-and-claims-management-in-manufacturing-cloud/administer-warranty-terms) gilt:
 
-- **Warranty Term, die Garantiebedingung.** Sie enthält Art, Dauer und Beginn der Garantie, die Deckung für Arbeit, Teile und Nebenkosten in Prozent, die abgedeckte Nutzung und Ausschlüsse. Eine Bedingung kann eine ganze Produktfamilie, ein Produkt oder einzelne Anlagen abdecken.
+- **Warranty Term, die Garantiebedingung.** Sie enthält Art, Dauer und Beginn der Garantie, die Deckung für Arbeit, Teile und Nebenkosten in Prozent, die abgedeckte Nutzung und Ausschlüsse.
 - **Warranty Term Coverage, die Anpassung pro Teil.** Damit wird eine Bedingung für ein bestimmtes Teil erweitert oder eingeschränkt. Trailhead nennt als Beispiel einen Gabelstapler, bei dem der Motor zusätzlich gedeckt und der Hubmast ausgeschlossen ist.
+- **Product Warranty Term, die Verknüpfung mit dem Produkt.** Sie verbindet eine Bedingung mit einem Produkt oder einer ganzen Produktfamilie, damit die richtige Bedingung automatisch greift.
 - **Asset Warranty, die Garantie der einzelnen Anlage.** Sie wird beim Kauf oder bei der Installation zugeordnet. Für eine einzelne Anlage lässt sich die Deckung erweitern oder einschränken, etwa als Kulanz.
 
-Für Hersteller mit vielen Varianten ist die mittlere Ebene der eigentliche Nutzen. Statt für jede Kombination eine eigene Bedingung zu pflegen, gibt es eine Grundbedingung pro Familie und Ausnahmen pro Teil. Wer heute Garantiebedingungen in Tabellen oder Verträgen sucht, sollte diese Struktur zuerst auf Papier nachbauen. Dabei zeigt sich schnell, ob die eigenen Regeln in drei Ebenen passen.
+Für Hersteller mit vielen Varianten sehe ich den größten Nutzen in der Anpassung pro Teil. Statt für jede Kombination eine eigene Bedingung zu pflegen, gibt es eine Grundbedingung pro Familie und Ausnahmen pro Teil. Wer heute Garantiebedingungen in Tabellen oder Verträgen sucht, sollte diese Struktur zuerst auf Papier nachbauen. Dabei zeigt sich schnell, ob die eigenen Regeln in diese Struktur passen.
 
 ## Wie läuft ein Garantieanspruch vom Händler bis zur Gutschrift?
 
@@ -51,7 +53,7 @@ Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/warranty
 | Claim Coverage Payment Detail | Kosten pro Posten, etwa Teile, Arbeit oder Transport |
 | Claim Participant | Beteiligte und ihre Rollen |
 
-Der Partner trägt pro Posten den geforderten Betrag ein und setzt den Anspruch auf eingereicht. Der Prüfer trägt den genehmigten Betrag ein. Auf der [Produktseite](https://www.salesforce.com/manufacturing/cloud/service/) nennt Salesforce außerdem automatische Freigaben über Geschäftsregeln. Laut [Produktseite](https://www.salesforce.com/manufacturing/cloud/) kommt mit Winter '27 der Warranty Claims Adjudication Agent dazu, der die Deckung prüft und mögliche Betrugsfälle markiert, und eine geführte Rücksendung von Garantieteilen für Händler.
+Der Partner trägt pro Posten den geforderten Betrag ein und setzt den Anspruch auf eingereicht. Der Prüfer trägt den genehmigten Betrag ein. Auf der [Produktseite](https://www.salesforce.com/manufacturing/cloud/service/) nennt Salesforce außerdem automatische Freigaben über Geschäftsregeln. Laut [Produktseite](https://www.salesforce.com/manufacturing/cloud/) kommen mit Winter '27 der Warranty Claims Adjudication Agent und eine geführte Rücksendung von Garantieteilen für Händler dazu. Die [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=ind.mfg_genai_warranty_claims_adjudication.htm&language=en_US&type=5) beschreibt den Agenten als Unterstützung für den Prüfer: Er prüft Ansprüche auf Vollständigkeit, markiert fehlende Angaben, entwirft Rückfragen, priorisiert offene Ansprüche und weist auf mögliche Betrugsfälle hin. Er genehmigt oder verwirft keine Ansprüche. Er braucht das Add-on Agentforce for Manufacturing oder eine Agentforce-1-Edition und gehört deshalb als eigene Position ins Angebot.
 
 Die Gutschrift an den Händler würde ich wie bei den Boni in [Teil 5](../rebate-management-haendlerboni/) im ERP buchen. Salesforce prüft und gibt frei, eine Schnittstelle überträgt den genehmigten Betrag, und die Finanzabteilung bucht. Diese Schnittstelle gehört von Anfang an in die Planung, sonst sieht der Händler einen genehmigten Anspruch im Portal und wartet trotzdem auf sein Geld.
 
@@ -76,7 +78,7 @@ Diese Fragen beantwortet die Asset Warranty nur, wenn die Anlage mit ihren Daten
 - **Installierte Basis im ERP.** Seriennummern stehen im ERP oder in der Fertigung, aber nicht als Anlagen in Salesforce. Dann braucht es eine Schnittstelle, bevor der erste Anspruch geprüft werden kann. Wie die installierte Basis nach Salesforce kommt, steht in [Installierte Basis in Manufacturing Cloud](../installierte-basis-asset-meilensteine/).
 - **Nutzung.** Betriebsstunden oder Zyklen kommen von der Anlage selbst, vom Händler oder gar nicht. Ist die Nutzung Teil der Bedingung, braucht sie eine Quelle.
 
-Für den Agenten aus Winter '27 gilt das noch stärker. Ein Agent, der Deckung prüft, liest dieselben Felder wie ein Mensch, nur schneller und ohne nachzufragen. Fehlen die Daten, bewertet er auf Lücken. Warum ich bei Agenten zuerst auf die Datenqualität schaue, beschreibe ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
+Für den Agenten aus Winter '27 gilt das noch stärker. Ein Agent, der die Prüfung vorbereitet, arbeitet mit denselben Feldern wie ein Mensch. Fehlen die Daten, meldet seine Vollständigkeitsprüfung Lücken, statt dem Prüfer bei der Entscheidung zu helfen. Warum ich bei Agenten zuerst auf die Datenqualität schaue, beschreibe ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
 
 Laut der Übersicht der Portallizenzen, die ich in [Teil 7](../manufacturing-cloud-kundenportal/) beschreibe, deckt die Kundenlizenz Customer Community Plus for Manufacturing Anlagen und Garantien ab, Garantieansprüche nennt Salesforce bei der Partnerlizenz. Für Händler, die Ansprüche einreichen, plant man also Partnerlizenzen ein.
 
@@ -88,7 +90,7 @@ Damit das funktioniert, muss das verursachende Teil im Anspruch sauber erfasst s
 
 ## Wo endet die Garantie, wo beginnt Field Service?
 
-An der Tür des Kunden. Die Manufacturing Cloud klärt, ob ein Schaden gedeckt ist, wer welchen Betrag bekommt und wer am Ende zahlt. Wer wann mit welchem Ersatzteil zum Kunden fährt, ist eine Frage für Field Service. Dasselbe gilt für Wartungsverträge und zugesagte Reaktionszeiten, die in Salesforce über Service-Verträge und Entitlements laufen. Wie das aussieht, beschreibt [Teil 5 der Field-Service-Serie](../salesforce-field-service-wartungsvertraege/).
+Zwischen der Ausführung der Leistung und der Entscheidung über die kaufmännische Deckung. Die Manufacturing Cloud klärt, ob ein Schaden gedeckt ist, wer welchen Betrag bekommt und wer am Ende zahlt. Wer wann mit welchem Ersatzteil zum Kunden fährt, ist eine Frage für Field Service. Beides überschneidet sich: Ein Arbeitsauftrag kann eine Garantieprüfung auslösen, die Diagnose vor Ort liefert Fehlercode und verursachendes Teil, und Teile und Arbeitszeit aus dem Einsatz fließen in den Anspruch. Dasselbe gilt für Wartungsverträge und zugesagte Reaktionszeiten, die in Salesforce über Service-Verträge und Entitlements laufen. Wie das aussieht, beschreibt [Teil 5 der Field-Service-Serie](../salesforce-field-service-wartungsvertraege/).
 
 Beide Themen treffen sich an der Anlage. Dieselbe Anlage trägt die Garantie, die Wartungshistorie und die Arbeitsaufträge. Wer beides einführt, sollte das Anlagenmodell einmal entwerfen, nicht pro Projekt. Wo die Grenze im Detail verläuft, steht in [Kapitel 4 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/garantie-und-after-sales/). Ob sich Field Service lohnt, beschreibt die [Field-Service-Serie](../salesforce-field-service-lohnt-sich/).
 

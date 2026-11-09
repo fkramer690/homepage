@@ -2,6 +2,7 @@
 title: "Rebate Management: Händlerboni statt Excel"
 description: "Wann sich Rebate Management der Manufacturing Cloud für Händlerboni lohnt, woher die Umsätze kommen und warum die Auszahlung weiter im ERP passiert."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: de
 slug: rebate-management-haendlerboni
 translationKey: manufacturing-cloud-rebate-management
@@ -17,7 +18,7 @@ takeaways:
   - "Rebate Management lohnt sich bei vielen Händlern mit gestaffelten Programmen. Ein einfacher Jahresbonus für wenige Kunden läuft oft auch im ERP."
 faq:
   - q: "Was ist Rebate Management in Salesforce?"
-    a: "Rebate Management ist die Funktion der Manufacturing Cloud für Bonus- und Rückvergütungsprogramme. Sie verwaltet Programme, Teilnehmer und Staffeln, rechnet Auszahlungen pro Zeitraum über die Data Processing Engine und führt sie durch eine Freigabe."
+    a: "Rebate Management ist ein Salesforce-Produkt für Bonus- und Rückvergütungsprogramme, das mit der Manufacturing Cloud zusammenarbeitet und separat lizenziert wird. Seit dem 18. August 2026 verlängert Salesforce es nicht mehr; Nachfolger ist Channel Revenue Management. Es verwaltet Programme, Teilnehmer und Staffeln, rechnet Auszahlungen pro Zeitraum über die Data Processing Engine und führt sie durch eine Freigabe."
   - q: "Woher kommen die Umsätze für die Bonusberechnung?"
     a: "Aus dem Objekt Transaction Journal. Salesforce füllt es aus Aufträgen in Salesforce, aus CSV-Uploads der Partner über Experience Cloud oder per API und Data Loader aus externen Systemen wie dem ERP."
   - q: "Zahlt Salesforce die Boni aus?"
@@ -25,7 +26,11 @@ faq:
 draft: false
 ---
 
-Rebate Management lohnt sich für Hersteller, die Bonusprogramme für viele Händler mit Staffeln und Zeiträumen heute in Tabellen rechnen und deren Händler regelmäßig nach ihrem Stand fragen. Die Funktion der Manufacturing Cloud verwaltet Programme und Teilnehmer, rechnet die Boni pro Zeitraum und führt sie durch eine Freigabe. Ausgezahlt wird weiter im ERP. Ob sich das trägt, entscheidet sich an zwei Stellen: woher die bonusrelevanten Umsätze kommen und was genau als Umsatz zählt. Wie Teil 4 schreibe ich diesen Teil als Leitfaden für die Bewertung, nicht als Projektbericht.
+Rebate Management lohnt sich für Hersteller, die Bonusprogramme für viele Händler mit Staffeln und Zeiträumen heute in Tabellen rechnen und deren Händler regelmäßig nach ihrem Stand fragen. Das Salesforce-Produkt verwaltet Programme und Teilnehmer, rechnet die Boni pro Zeitraum und führt sie durch eine Freigabe. Ausgezahlt wird weiter im ERP. Ob sich das trägt, entscheidet sich an zwei Stellen: woher die bonusrelevanten Umsätze kommen und was genau als Umsatz zählt. Wie Teil 4 schreibe ich diesen Teil als Leitfaden für die Bewertung, nicht als Projektbericht.
+
+```hinweis achtung
+Rebate Management ist keine Kernfunktion der Manufacturing Cloud, sondern ein separat lizenziertes Produkt. Laut einem [Salesforce-Knowledge-Artikel](https://help.salesforce.com/s/articleView?id=005393495&language=en_US&type=1) lassen sich die Rebate-Management-Produkte, auch Rebate Management for Manufacturing, seit dem 18. August 2026 nicht mehr verlängern. Bestehende Verträge laufen bis zu ihrem Ende, als Nachfolger nennt Salesforce Channel Revenue Management. Dieser Artikel beschreibt Rebate Management. Für ein neues Projekt fragen Sie Channel Revenue Management im Angebot an und prüfen, welche der folgenden Punkte es anders löst; die Fragen nach Umsatz, Transaktionen und Abrechnung bleiben dieselben.
+```
 
 ## Was macht Rebate Management?
 
@@ -63,7 +68,13 @@ Diese Frage beantwortet kein System. Laut Hilfe entscheiden Programmverantwortli
 - **Retouren und Gutschriften.** Wird eine Retoure vom Umsatz abgezogen, und in welchem Zeitraum? Fehlt diese Regel, rechnet Salesforce einen Bonus auf Umsatz, der nie geblieben ist.
 - **Welche Produkte.** Viele Programme schließen Produktgruppen aus oder gewichten sie anders. Diese Kriterien müssen als Felder in den Transaktionen stehen, sonst kann die Staffel sie nicht berücksichtigen.
 
-Diese Regeln stehen heute meist in der Tabelle, mit der jemand im Vertrieb oder in der Finanzabteilung rechnet. Der erste Schritt einer Einführung ist deshalb, diese Tabelle zu lesen und jede Formel darin in eine Regel zu übersetzen.
+Drei weitere Punkte fehlen im ersten Entwurf oft, weil sie erst auffallen, wenn Geld geflossen ist:
+
+- **Status der Transaktionen.** Laut [Hilfe zur Bonusberechnung](https://help.salesforce.com/s/articleView?id=xcloud.admin_rebates_dpe_templates.htm&language=en_US&type=5) schließt die Berechnung Transaktionen nicht automatisch nach ihrem Status aus. Sollen nur freigegebene Transaktionen zählen, muss dieser Filter eingerichtet werden.
+- **Korrekturen nach Periodenabschluss.** Späte Rechnungen, Retouren und Gutschriften kommen, nachdem ein Zeitraum berechnet ist. Legen Sie fest, ob ein abgeschlossener Zeitraum wieder geöffnet wird oder die Korrektur in den nächsten wandert.
+- **Nachvollziehbarkeit.** Wer eine Staffel oder einen Betrag geändert und wer ihn freigegeben hat, muss für die Finanzabteilung und für Streitfälle mit Händlern sichtbar sein.
+
+Diese Regeln stehen heute meist in der Tabelle, mit der jemand im Vertrieb oder in der Finanzabteilung rechnet. Der erste Schritt einer Einführung ist deshalb, diese Tabelle zu lesen und jede Formel darin in eine Regel zu übersetzen. Die Korrektur- und Freigabeschritte drumherum stehen selten in der Tabelle, die kommen von der Finanzabteilung.
 
 ## Die Auszahlung bleibt im ERP
 
@@ -112,7 +123,7 @@ Zurückhaltend wäre ich bei einem einfachen Jahresbonus für wenige Kunden. Den
 Bevor das erste Programm angelegt wird, klären Sie diese Punkte:
 
 1. **Die heutige Tabelle.** Jede Formel darin als Regel aufschreiben.
-2. **Bonusrelevanter Umsatz.** Auftrag, Lieferung oder Rechnung, mit Retouren und Produktgruppen.
+2. **Bonusrelevanter Umsatz.** Auftrag, Lieferung oder Rechnung, mit Retouren, Produktgruppen, Status der Transaktionen und Korrekturen nach Periodenabschluss.
 3. **Transaktionen.** Welches System liefert sie, auf welcher Ebene und wie oft?
 4. **Abrechnung.** Wann kommen Freigaben und Rückstellungen ins ERP, abgestimmt mit dem Monatsabschluss?
 
