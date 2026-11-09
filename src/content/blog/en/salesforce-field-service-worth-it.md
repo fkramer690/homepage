@@ -15,20 +15,20 @@ takeaways:
   - "With few long jobs such as multi-day commissioning, routing adds little. Then mobile work, documentation, contracts or partners must carry the case."
   - "Dispatcher and Technician cost $175 per user and month each (Enterprise Edition). 40 technicians and 4 dispatchers cost $92,400 a year."
   - "Technician and Dispatcher licenses may not be used for case management in a contact center. Anyone who does both needs Field Service Plus at $230."
-  - "A first data check uses four numbers: jobs per day, share of travel time, skill and parts complexity and first-time fix rate."
+  - "A first data check uses four numbers: jobs per day, share of travel time, skill and part mismatches and first-time fix rate."
 faq:
   - q: "What is Salesforce Field Service?"
     a: "Salesforce Field Service is the field service product built on Service Cloud. It schedules jobs by skill, availability and travel time, sends them to a mobile app for technicians that also works offline, and documents work, parts and signatures."
   - q: "How much does Salesforce Field Service cost?"
     a: "According to the Salesforce pricing page (October 2026), Dispatcher and Technician cost $175 per user and month each on Enterprise Edition, Field Service Plus $230. On Unlimited Edition it is $330 and $380, all on annual contracts."
   - q: "Do I need a Service Cloud license for Field Service?"
-    a: "Yes. Field Service requires at least one Service Cloud license, and technicians need at least one dispatcher for scheduling to work. Field Service Plus meets the Service Cloud requirement itself."
+    a: "Yes. Field Service requires at least one Service Cloud license, and technicians need at least one Dispatcher license for scheduling to work. Field Service Plus meets the Service Cloud requirement itself."
   - q: "Are there licenses for external service partners?"
     a: "Yes. Subcontractors can use Contractor Plus licenses at $80 per user and month or $32 per login. They make sense for partners who only take on jobs occasionally."
 draft: false
 ---
 
-Salesforce Field Service is clearly worth it for manufacturers whose technicians handle many short jobs per day. There, scheduling and route optimization improve the numbers: more jobs per day, less travel time, more appointments kept. With few long jobs, such as commissioning over days or weeks, routing adds little. Then the mobile app and documentation, or the steering of assets, contracts, parts and partners, has to carry the business case, and license costs of $175 per technician and month are harder to justify. So before a quote is signed, be clear which kind of field service you run and which benefit you need.
+Scheduling in Salesforce Field Service pays off most for manufacturers whose technicians handle many short jobs per day. There, scheduling and route optimization improve the numbers: more jobs per day, less travel time, more appointments kept. With few long jobs, such as commissioning over days or weeks, routing adds little. Then the mobile app and documentation, or the steering of assets, contracts, parts and partners, has to carry the business case, and license costs of $175 per technician and month are harder to justify. So before a quote is signed, be clear which kind of field service you run and which benefit you need.
 
 ## What does Salesforce Field Service do?
 
@@ -46,7 +46,7 @@ Optimization helps most where there is a lot to optimize. In my experience that 
 
 - **Many short jobs per day**, such as maintenance, repairs or inspections. A typical example is telecommunications companies whose technicians have up to 16 appointments a day.
 - **A high share of travel time**, because customers are spread across a region.
-- **Many skills and spare parts** that have to match, so the right technician arrives with the right part.
+- **Many skills** that have to match, so the right technician arrives. Whether the right part is in the van is a check of its own before dispatch, see part 4.
 - **Committed response times** from service contracts that have to be met and proven.
 
 Salesforce points in the same direction. In an [article on scheduling](https://www.salesforce.com/blog/field-service-scheduling/) from 2025, it cites its own research: scheduling is the biggest efficiency blocker for technicians, and 47 percent of their appointments do not go as planned. The article names neither sample nor method, and it is vendor research, so I read it as a pointer, not as proof of a business case. What counts is the share of your own appointments that get rescheduled.
@@ -80,7 +80,7 @@ On Unlimited Edition, Dispatcher and Technician cost $330 according to the footn
 
 An example with list prices: 40 technicians and 4 dispatchers on Enterprise Edition are 44 licenses at $175, so $7,700 per month or $92,400 per year. Implementation, ERP integration and maintenance come on top.
 
-Two conditions from the small print matter for license planning. Field Service requires at least one Service Cloud license, and technicians need at least one dispatcher for scheduling to work. The second concerns the back office:
+Two conditions from the small print matter for license planning. Field Service requires at least one Service Cloud license, and technicians need at least one Dispatcher license for scheduling to work. The second concerns the back office:
 
 ```hinweis achtung
 Dispatcher and Technician licenses may not be used for a contact center or case management. Anyone in the back office who handles cases and plans jobs needs Field Service Plus.

@@ -30,7 +30,7 @@ In my projects, the ERP always owned spare parts stock in field service, includi
 
 This article is part 4 of the series. In [part 2](../salesforce-field-service-master-data/), missing spare parts were one of the reasons for failed visits. In [part 3](../salesforce-field-service-scheduling-automation/), "part not in the van" was a typical reason for a dispatcher to change the scheduling proposal. This part is about how spare parts come together in Field Service and the ERP.
 
-## The ERP owns the stock
+## Why the ERP should own the stock
 
 In the ERP, a spare part is more than a quantity at a place. It has a value on the balance sheet, a purchasing process, minimum stock levels, suppliers and transfers between warehouses. Every withdrawal is a posting that reaches accounting. The ERP is built for this, and the processes there have usually run for years.
 

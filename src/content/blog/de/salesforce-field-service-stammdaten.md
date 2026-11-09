@@ -88,7 +88,7 @@ Abwesenheiten (Resource Absences) blockieren Zeit im Kalender eines Technikers. 
 
 ## Woher kommen die Daten, und wer pflegt sie?
 
-Kaum eine dieser Datenarten entsteht in Field Service. Deshalb lege ich vor dem Start für jede Art ein führendes System und einen Verantwortlichen fest. Als Ausgangspunkt schlage ich diese Aufteilung vor und passe sie an das Unternehmen an:
+Die Daten kommen aus mehreren Systemen. Manches entsteht in Salesforce, der Rest muss aus ERP, Personalwesen oder Zeiterfassung kommen. Deshalb lege ich vor dem Start für jede Art ein führendes System und einen Verantwortlichen fest. Als Ausgangspunkt schlage ich diese Aufteilung vor und passe sie an das Unternehmen an:
 
 | Daten | Führendes System | Verantwortlich |
 |---|---|---|

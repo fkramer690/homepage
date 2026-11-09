@@ -30,7 +30,7 @@ In meinen Projekten hat immer das ERP den Ersatzteilbestand im Außendienst gef�
 
 Dieser Artikel ist Teil 4 der Serie. In [Teil 2](../salesforce-field-service-stammdaten/) war „Ersatzteile nicht da“ einer der Gründe für Fehleinsätze. In [Teil 3](../salesforce-field-service-terminplanung-automatisieren/) war „Teil nicht im Fahrzeug“ ein typischer Grund, warum ein Disponent den Vorschlag der Planung ändert. Hier geht es darum, wie Ersatzteile in Field Service und im ERP zusammenkommen.
 
-## Das ERP führt den Bestand
+## Warum das ERP den Bestand führen sollte
 
 Ein Ersatzteil ist im ERP mehr als eine Menge an einem Ort. Es hat einen Wert in der Bilanz, einen Einkaufsprozess, Mindestbestände, Lieferanten und Umlagerungen zwischen Lagern. Jede Entnahme ist eine Buchung, die in der Buchhaltung ankommt. Das ERP ist dafür gebaut, und die Prozesse dort laufen meist seit Jahren.
 

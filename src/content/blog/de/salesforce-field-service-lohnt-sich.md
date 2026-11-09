@@ -15,20 +15,20 @@ takeaways:
   - "Bei wenigen langen Einsätzen bringt die Routenplanung wenig. Dann müssen mobile Arbeit, Dokumentation, Verträge oder Partner den Business Case tragen."
   - "Dispatcher und Technician kosten je 175 € pro Nutzer und Monat (Enterprise Edition). 40 Techniker und 4 Disponenten kosten 92.400 € im Jahr."
   - "Technician- und Dispatcher-Lizenzen dürfen nicht für Fallbearbeitung im Contact Center genutzt werden. Wer beides tut, braucht Field Service Plus für 230 €."
-  - "Ein erster Datencheck nutzt vier Zahlen: Einsätze pro Tag, Fahrzeitanteil, Komplexität von Qualifikationen und Teilen und Erstlösungsquote."
+  - "Ein erster Datencheck nutzt vier Zahlen: Einsätze pro Tag, Fahrzeitanteil, Fehlzuordnungen bei Qualifikationen und Teilen und Erstlösungsquote."
 faq:
   - q: "Was ist Salesforce Field Service?"
     a: "Salesforce Field Service ist das Produkt für den Außendienst auf Basis der Service Cloud. Es plant Einsätze nach Qualifikation, Verfügbarkeit und Fahrzeit, schickt sie an eine mobile App für Techniker, die auch offline funktioniert, und dokumentiert Arbeit, Material und Unterschrift."
   - q: "Was kostet Salesforce Field Service?"
     a: "Laut Salesforce-Preisseite (Stand Oktober 2026) kosten Dispatcher und Technician je 175 € pro Nutzer und Monat in der Enterprise Edition, Field Service Plus 230 €. In der Unlimited Edition nennt die Fußnote 330 und 380 US-Dollar, jeweils mit Jahresvertrag."
   - q: "Brauche ich für Field Service eine Service-Cloud-Lizenz?"
-    a: "Ja, Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und Techniker brauchen mindestens einen Dispatcher, damit die Terminplanung funktioniert. Field Service Plus erfüllt die Service-Cloud-Voraussetzung selbst."
+    a: "Ja, Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und Techniker brauchen mindestens eine Dispatcher-Lizenz, damit die Terminplanung funktioniert. Field Service Plus erfüllt die Service-Cloud-Voraussetzung selbst."
   - q: "Gibt es Lizenzen für externe Servicepartner?"
     a: "Ja. Für Subunternehmer gibt es Contractor-Plus-Lizenzen für 80 € pro Nutzer und Monat oder 32 € pro Login. Sie lohnen sich für Partner, die nur gelegentlich Einsätze übernehmen."
 draft: false
 ---
 
-Salesforce Field Service lohnt sich klar für Hersteller, deren Techniker viele kurze Einsätze am Tag fahren. Dort verbessern Termin- und Routenoptimierung die Kennzahlen: mehr Einsätze pro Tag, weniger Fahrzeit, mehr Termine eingehalten. Bei wenigen langen Einsätzen, etwa Inbetriebnahmen über Tage oder Wochen, bringt die Routenoptimierung wenig. Dann müssen die mobile App mit Offline-Arbeit und Dokumentation oder die Steuerung von Anlagen, Verträgen, Teilen und Partnern den Business Case tragen, und die Lizenzkosten von 175 € pro Techniker und Monat tragen sich schwerer. Bevor ein Angebot unterschrieben wird, sollte deshalb klar sein, welche Art von Außendienst das Unternehmen tatsächlich hat und welchen dieser drei Nutzen es braucht.
+Die Planung in Salesforce Field Service lohnt sich vor allem für Hersteller, deren Techniker viele kurze Einsätze am Tag fahren. Dort verbessern Termin- und Routenoptimierung die Kennzahlen: mehr Einsätze pro Tag, weniger Fahrzeit, mehr Termine eingehalten. Bei wenigen langen Einsätzen, etwa Inbetriebnahmen über Tage oder Wochen, bringt die Routenoptimierung wenig. Dann müssen die mobile App mit Offline-Arbeit und Dokumentation oder die Steuerung von Anlagen, Verträgen, Teilen und Partnern den Business Case tragen, und die Lizenzkosten von 175 € pro Techniker und Monat tragen sich schwerer. Bevor ein Angebot unterschrieben wird, sollte deshalb klar sein, welche Art von Außendienst das Unternehmen tatsächlich hat und welchen dieser drei Nutzen es braucht.
 
 ## Was macht Salesforce Field Service?
 
@@ -46,7 +46,7 @@ Die Optimierung bringt dort am meisten, wo es viel zu optimieren gibt. Nach mein
 
 - **Vielen kurzen Einsätzen pro Tag**, etwa Wartung, Störungsbehebung oder Prüfungen. Ein typisches Beispiel sind Telekommunikationsunternehmen, deren Techniker bis zu 16 Termine am Tag haben.
 - **Einem hohen Anteil Fahrzeit**, weil Kunden über eine Region verteilt sind.
-- **Vielen Qualifikationen und Ersatzteilen**, die zusammenpassen müssen, damit der richtige Techniker mit dem richtigen Teil kommt.
+- **Vielen Qualifikationen**, die zusammenpassen müssen, damit der richtige Techniker kommt. Ob das richtige Teil im Fahrzeug ist, ist eine eigene Prüfung vor der Freigabe, siehe Teil 4.
 - **Zugesagten Reaktionszeiten** aus Serviceverträgen, die eingehalten und nachgewiesen werden müssen.
 
 Salesforce zeigt in dieselbe Richtung. In einem [Beitrag zur Terminplanung](https://www.salesforce.com/blog/field-service-scheduling/) von 2025 zitiert Salesforce eigene Forschung: Planung sei der größte Effizienzblocker für Techniker, und 47 Prozent ihrer Termine verliefen nicht wie geplant. Stichprobe und Methode nennt der Beitrag nicht, und es ist Herstellerforschung. Ich lese die Zahl deshalb als Hinweis, nicht als Beleg für einen Business Case. Entscheidend ist der Anteil Ihrer eigenen Termine, die umgeplant werden.
@@ -80,7 +80,7 @@ In der Unlimited Edition kosten Dispatcher und Technician laut Fußnote 330 US-D
 
 Ein Rechenbeispiel mit Listenpreisen: 40 Techniker und 4 Disponenten in der Enterprise Edition sind 44 Lizenzen zu 175 €, also 7.700 € pro Monat oder 92.400 € pro Jahr. Dazu kommen Umsetzung, Integration mit dem ERP und Wartung.
 
-Zwei Bedingungen aus dem Kleingedruckten zählen für die Lizenzplanung. Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und Techniker brauchen mindestens einen Dispatcher, damit die Planung funktioniert. Die zweite betrifft den Innendienst:
+Zwei Bedingungen aus dem Kleingedruckten zählen für die Lizenzplanung. Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und Techniker brauchen mindestens eine Dispatcher-Lizenz, damit die Planung funktioniert. Die zweite betrifft den Innendienst:
 
 ```hinweis achtung
 Dispatcher- und Technician-Lizenzen dürfen nicht für Contact Center oder Fallbearbeitung genutzt werden. Wer im Innendienst Fälle bearbeitet und zugleich Einsätze plant, braucht Field Service Plus.

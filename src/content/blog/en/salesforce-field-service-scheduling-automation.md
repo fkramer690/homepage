@@ -47,7 +47,7 @@ The engine assigns appointments by a scheduling policy. According to [Salesforce
 - **Work rules** filter out technicians who cannot take an appointment, for example because a skill is missing or the customer is closed at that time. Some are mandatory, such as technician availability.
 - **Service objectives** rank the remaining candidates, for example by short travel, early appointment or preferred technician. Each objective has a weight that you can tune step by step to your own metrics.
 
-Salesforce ships four policies. Customer First balances customer preference and short travel. High Intensity puts technician productivity above customer preferences, meant for peak periods. Soft Boundaries lets technicians work across territory borders. Emergency is for urgent jobs. As a starting point I recommend Customer First with adjusted weights, instead of building a policy from scratch.
+Salesforce ships four policies. Customer First balances customer preference and short travel. High Intensity puts technician productivity above customer preferences, meant for peak periods. Soft Boundaries lets technicians work across territory borders. Emergency is for urgent jobs. Which one to start from depends on your main goal: committed response times, short travel, customer preference, utilization or scarce specialists. Whatever you pick, start from a shipped policy and adjust the weights instead of building one from scratch.
 
 On top comes optimization. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) it can rearrange the plan for one or more territories over several days, for example every night. On the day of service, in-day optimization absorbs short-notice changes, and there is a separate optimization for a single technician when an appointment is canceled or runs late. Whether to switch to the newer engine is covered in [Enhanced Scheduling and Optimization: switch now?](../field-service-enhanced-scheduling-optimization-switch/), the full picture of engine, console and rules in [chapter 2 of the Field Service masterclass](../../masterclass/field-service/field-service-scheduling-dispatch/).
 
@@ -76,7 +76,7 @@ I would tie the step there to measured planning quality. The lead number is how 
 | Reason for the change | What is missing in Field Service |
 |---|---|
 | Customer only accessible on certain days | Operating hours on the account and the visiting hours work rule |
-| Part not in the van | Stock on the van as a mobile location |
+| Part not in the van | Stock on the van as a mobile location, plus a dispatcher check or own automation that compares required parts with that stock |
 | Technician does not know the equipment | Skill or certification on the technician, if needed a preferred technician on the account |
 | Technician is in training that day | Absence in Salesforce |
 
@@ -88,7 +88,7 @@ That way automation grows with proven quality, and not by a plan someone fixed b
 
 ```schritte
 Start with release
-  Customer First, the work rules for skills and visiting hours and the rule that the dispatcher releases every appointment.
+  A shipped policy that fits your main goal, the work rules for skills and visiting hours and the rule that the dispatcher releases every appointment.
 Note the changes | 4 weeks · dispatchers
   The dispatchers write down why they change a proposal from the engine.
 Turn reasons into data

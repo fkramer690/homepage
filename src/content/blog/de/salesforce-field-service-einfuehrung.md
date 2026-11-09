@@ -18,7 +18,7 @@ faq:
   - q: "Wie führt man Salesforce Field Service am besten ein?"
     a: "In Wellen, also Region für Region oder Land für Land. Jede Welle umfasst die Stammdaten, Servicegebiete, Disponenten, Techniker und Partner einer Region. Die erste Welle ist zugleich der Test für alle weiteren."
   - q: "Muss der Betriebsrat bei Field Service beteiligt werden?"
-    a: "In Deutschland ja. Nach § 87 BetrVG bestimmt der Betriebsrat unter anderem bei technischen Einrichtungen mit, die Verhalten oder Leistung überwachen können, und bei Arbeitszeitregeln. § 90 BetrVG verlangt zusätzlich Unterrichtung und Beratung bei neuen Arbeitsabläufen. Standortdaten und Zeiterfassung sind typische Themen, Statuszeiten, Kennzahlen und automatische Planung können es auch sein. Die rechtliche Einordnung gehört zur Rechtsabteilung."
+    a: "In Deutschland in der Regel ja. Nach § 87 BetrVG bestimmt der Betriebsrat unter anderem bei technischen Einrichtungen mit, die Verhalten oder Leistung überwachen können, und bei Arbeitszeitregeln. § 90 BetrVG verlangt zusätzlich Unterrichtung und Beratung bei neuen Arbeitsabläufen. Standortdaten und Zeiterfassung sind typische Themen, Statuszeiten, Kennzahlen und automatische Planung können es auch sein. Die rechtliche Einordnung gehört zur Rechtsabteilung."
   - q: "Kann man die Standortverfolgung in der Field Service App einschränken?"
     a: "Ja. Intervall und Genauigkeit sind einstellbar, von etwa 10 Metern bis etwa einem Kilometer. Einzelne Techniker lassen sich ausschließen, und mit Appointment Assistant kann die Verfolgung auf den Status En Route begrenzt werden."
   - q: "Was gehört in eine Einführungswelle?"
@@ -88,18 +88,18 @@ Aus Projektsicht zählt vor allem der Zeitpunkt. Wer erst mit dem Betriebsrat sp
 
 Ein internationaler Außendienst hat nicht eine Rechtslage, sondern viele. Mitbestimmung, Datenschutz und Arbeitszeitregeln unterscheiden sich je Land, manchmal auch je Region oder Standort mit eigener Arbeitnehmervertretung. Was in einem Land mit einer kurzen Abstimmung geht, braucht in einem anderen eine Betriebsvereinbarung.
 
-Das spricht für Wellen nach Ländern. Jede Welle prüft die Rahmenbedingungen ihres Landes, bevor sie startet. Die Konfiguration muss das mitmachen: Die Mobile-Einstellungen lassen sich je Profil unterschiedlich zuordnen, sodass etwa die Standortverfolgung in einem Land aktiv ist und in einem anderen nicht. Das sollte von Anfang an so angelegt sein, damit das zweite Land nicht die Einstellungen des ersten erbt. Was neben Recht und Technik pro Land dazugehört, vom Sponsor in der Landesleitung bis zu den Key Usern, behandelt [Kapitel 4 der Masterclass Change Management](../../masterclass/change-management/change-management-rollout-laender/).
+Das spricht für Wellen nach Ländern. Jede Welle prüft die Rahmenbedingungen ihres Landes, bevor sie startet. Die Konfiguration muss das mitmachen: Die Mobile-Einstellungen lassen sich je Profil unterschiedlich zuordnen, sodass etwa die Standortverfolgung in einem Land aktiv ist und in einem anderen nicht. Das sollte von Anfang an so angelegt sein, damit das zweite Land nicht die Einstellungen des ersten erbt. Halten Sie die Zahl solcher Varianten aber klein, denn Profile tragen auch Berechtigungen, und ein Profil je Land und Rolle wird schnell schwer wartbar. Was neben Recht und Technik pro Land dazugehört, vom Sponsor in der Landesleitung bis zu den Key Usern, behandelt [Kapitel 4 der Masterclass Change Management](../../masterclass/change-management/change-management-rollout-laender/).
 
 ## Woran messen Sie den Erfolg einer Welle?
 
 Jede Welle braucht Zahlen von vorher und nachher. Ich würde die nehmen, die in der Serie schon vorkamen:
 
-- die vier Zahlen aus Teil 1: Einsätze pro Tag, Fahrzeitanteil, Komplexität von Qualifikationen und Teilen und Erstlösungsquote
+- die vier Zahlen aus Teil 1: Einsätze pro Tag, Fahrzeitanteil, Fehlzuordnungen bei Qualifikationen und Teilen und Erstlösungsquote
 - die Fehleinsätze aus Teil 2 und ihre Ursachen
 - den Anteil der Vorschläge, die der Disponent vor der Freigabe ändert, aus Teil 3
 - die eingehaltenen Reaktionszeiten aus Teil 5
 
-Bessern sich die Zahlen in der ersten Welle nicht, liegt es meiner Einschätzung nach eher an Daten oder an einer Planung nebenher als am Produkt. Ich prüfe trotzdem alle Ursachen der Reihe nach: Daten, Konfiguration, Integration, Akzeptanz, Prozess und zuletzt die Passung des Produkts. Ein Produkt, das nicht zur Art des Außendienstes passt, ist ebenfalls ein mögliches Ergebnis. Welche Zahlen Sie beobachten sollten, steht in [Field Service Kennzahlen nach dem Go-live](../field-service-kennzahlen-operations-home/).
+Bessern sich die Zahlen in der ersten Welle nicht, liegt es meiner Einschätzung nach eher an Daten oder an einer Planung nebenher als am Produkt. Ich prüfe trotzdem jede Ursache: Daten, Konfiguration, Integration, Akzeptanz, Prozess und die Passung des Produkts. Ein Produkt, das nicht zur Art des Außendienstes passt, ist ein Ergebnis wie jedes andere. Welche Zahlen Sie beobachten sollten, steht in [Field Service Kennzahlen nach dem Go-live](../field-service-kennzahlen-operations-home/).
 
 ## Erster Schritt: eine Region mit sauberen Daten für die erste Welle
 

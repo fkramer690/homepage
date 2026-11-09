@@ -47,7 +47,7 @@ Die Engine vergibt Termine nach einer Scheduling Policy. Laut [Salesforce-Hilfe]
 - **Work Rules** filtern Techniker aus, die einen Termin nicht übernehmen können, etwa weil eine Qualifikation fehlt oder der Kunde zu dieser Zeit nicht öffnet. Einige sind Pflicht, zum Beispiel die Verfügbarkeit des Technikers.
 - **Service Objectives** bewerten die übrigen Kandidaten, etwa nach kurzer Fahrzeit, frühem Termin oder bevorzugtem Techniker. Jedes Ziel hat eine Gewichtung, die sich schrittweise an die eigenen Kennzahlen anpassen lässt.
 
-Salesforce liefert vier Policies mit. Customer First wägt Kundenwunsch und kurze Fahrzeit ab. High Intensity stellt die Produktivität der Techniker über Kundenwünsche, gedacht für Spitzenzeiten. Soft Boundaries erlaubt, Techniker über Gebietsgrenzen hinweg einzusetzen. Emergency ist für Notfälle. Als Ausgangspunkt empfehle ich Customer First und danach angepasste Gewichte, statt eine Policy von null aufzubauen.
+Salesforce liefert vier Policies mit. Customer First wägt Kundenwunsch und kurze Fahrzeit ab. High Intensity stellt die Produktivität der Techniker über Kundenwünsche, gedacht für Spitzenzeiten. Soft Boundaries erlaubt, Techniker über Gebietsgrenzen hinweg einzusetzen. Emergency ist für Notfälle. Von welcher Sie ausgehen, hängt am wichtigsten Ziel: zugesagte Reaktionszeiten, kurze Fahrten, Kundenwunsch, Auslastung oder knappe Spezialisten. Starten Sie in jedem Fall mit einer mitgelieferten Policy und passen Sie die Gewichte an, statt eine von null aufzubauen.
 
 Dazu kommt die Optimierung. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) kann sie den Plan für ein oder mehrere Gebiete über mehrere Tage neu ordnen, etwa jede Nacht. Am Einsatztag fängt eine In-Day-Optimierung kurzfristige Änderungen auf, und für einzelne Techniker gibt es eine eigene Optimierung, wenn ein Termin ausfällt oder sich verspätet. Ob sich der Umstieg auf die neuere Engine lohnt, steht in [Enhanced Scheduling and Optimization: jetzt umstellen?](../field-service-enhanced-scheduling-umstellen/), das Gesamtbild aus Engine, Konsole und Regeln in [Kapitel 2 der Masterclass Field Service](../../masterclass/field-service/field-service-terminplanung-disposition/).
 
@@ -76,7 +76,7 @@ Den Schritt dorthin würde ich an gemessener Planungsqualität festmachen. Die L
 | Grund für die Änderung | Was in Field Service fehlt |
 |---|---|
 | Kunde nur an bestimmten Tagen zugänglich | Arbeitszeiten am Account und die Work Rule für Besuchszeiten |
-| Teil nicht im Fahrzeug | Bestand am Fahrzeug als mobilem Standort |
+| Teil nicht im Fahrzeug | Bestand am Fahrzeug als mobilem Standort, dazu eine Prüfung durch den Disponenten oder eigene Automatisierung, die benötigte Teile mit diesem Bestand abgleicht |
 | Techniker kennt die Anlage nicht | Skill oder Zertifizierung am Techniker, bei Bedarf ein bevorzugter Techniker am Account |
 | Techniker ist an dem Tag in einer Schulung | Abwesenheit in Salesforce |
 
@@ -88,7 +88,7 @@ So wächst die Automatik mit nachgewiesener Qualität und nicht nach einem Plan,
 
 ```schritte
 Mit Freigabe starten
-  Customer First, die Work Rules für Qualifikationen und Besuchszeiten und die Regel, dass der Disponent jeden Termin freigibt.
+  Eine mitgelieferte Policy, die zum wichtigsten Ziel passt, die Work Rules für Qualifikationen und Besuchszeiten und die Regel, dass der Disponent jeden Termin freigibt.
 Änderungen notieren | 4 Wochen · Disponenten
   Die Disponenten schreiben auf, warum sie einen Vorschlag der Engine ändern.
 Gründe in Daten übersetzen

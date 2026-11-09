@@ -10,7 +10,7 @@ categories: [field-service]
 series: { id: field-service, part: 5 }
 tags: [Field Service, Maintenance contracts, Entitlements, Manufacturing]
 takeaways:
-  - "A maintenance contract sits on three objects: service contract (what was sold), maintenance plan (planned maintenance) and entitlement (service level)."
+  - "A maintenance contract typically uses three objects: service contract (what was sold), maintenance plan (planned maintenance) and entitlement (service level)."
   - "Entitlements can also come from a warranty or a support package. They describe what a customer is entitled to."
   - "Maintenance plans generate maintenance work orders in advance. Size large plans by assets, rules and timeframe, because each run has a limit."
   - "Entitlements influence scheduling once automation turns the service level into a priority. High-priority appointments are then scheduled first."
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-In Salesforce Field Service a maintenance contract spreads across three objects. The service contract records what was sold. The maintenance plan generates the planned maintenance. The entitlement describes the service level the customer is entitled to, such as a response time. Entitlements are only partly about maintenance contracts, because a right to service can also come from a warranty or a support package. In one project, entitlements were part of the scope and influenced prioritization in dispatching. They do not do that by themselves: automation has to translate the service level into a scheduling priority. That is where their value for field service shows.
+In Salesforce Field Service a maintenance contract typically uses three separate objects. The service contract records what was sold. The maintenance plan generates the planned maintenance. The entitlement describes the service level the customer is entitled to, such as a response time. Entitlements are only partly about maintenance contracts, because a right to service can also come from a warranty or a support package. In one project, entitlements were part of the scope and influenced prioritization in dispatching. They do not do that by themselves: automation has to translate the service level into a scheduling priority. That is where their value for field service shows.
 
 This article is part 5 of the series. How Field Service schedules and what the dispatcher checks is in [part 3](../salesforce-field-service-scheduling-automation/). Which master data this needs, such as assets and visiting hours, is in [part 2](../salesforce-field-service-master-data/).
 
@@ -43,7 +43,7 @@ The terms sound alike and often get mixed up in projects. According to [Salesfor
 | Entitlement | What the customer is entitled to | Technician on site within 24 hours |
 | Entitlement process with milestones | How the entitlement is measured | Clock starts when the work order is created |
 
-The service contract is the commercial side; how it is billed on a recurring basis is covered in [maintenance contracts: recurring billing in Revenue Cloud](../maintenance-contracts-recurring-billing/). The maintenance plan is the plannable work. The entitlement is the unplanned work with a commitment, the breakdown where a response time applies. A contract can have all three, but does not have to. A pure warranty case often has only an entitlement on the asset and no maintenance plan. How warranty claims run in Manufacturing Cloud is in [chapter 4 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/warranty-and-after-sales/).
+The service contract is the commercial side; how it is billed on a recurring basis is covered in [maintenance contracts: recurring billing in Revenue Cloud](../maintenance-contracts-recurring-billing/). The maintenance plan is the plannable work. The entitlement is a right to a service level; in field service it matters most for breakdowns where a response time applies. A contract can have all three, but does not have to. A pure warranty case often has only an entitlement on the asset and no maintenance plan. How warranty claims run in Manufacturing Cloud is in [chapter 4 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/warranty-and-after-sales/).
 
 ## How is planned maintenance created?
 
@@ -60,7 +60,7 @@ Maintenance visits are the jobs where the automation from part 3 can most likely
 
 An entitlement on its own changes nothing about scheduling. It only takes effect when it triggers two things: a measurement and a priority.
 
-**Measurement.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.entitlements_supported_objects.htm&type=5), milestones also run on work orders. The milestone shows whether the technician was on site within the committed time and makes the commitment provable to the customer.
+**Measurement.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.entitlements_supported_objects.htm&type=5), milestones also run on work orders. A configured milestone can show whether the technician was on site within the committed time, as long as an agreed status or timestamp marks the arrival. That makes the commitment provable to the customer.
 
 ```hinweis achtung
 Milestones on work orders need an entitlement process of type Work Order. A process of type Case does not run on a work order, even if the same entitlement is behind it.

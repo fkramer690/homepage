@@ -88,7 +88,7 @@ Resource absences block time in a technician's calendar. Salesforce knows the ty
 
 ## Where does the data come from, and who maintains it?
 
-Hardly any of this data is created in Field Service. So before go-live I set a leading system and an owner for each kind. As a starting point I suggest this split and adapt it to the company:
+The data comes from several systems. Some of it is created in Salesforce, the rest has to come from the ERP, HR or time tracking. So before go-live I set a leading system and an owner for each kind. As a starting point I suggest this split and adapt it to the company:
 
 | Data | Leading system | Owner |
 |---|---|---|

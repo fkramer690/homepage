@@ -18,9 +18,9 @@ faq:
   - q: "What is the best way to roll out Salesforce Field Service?"
     a: "In waves, region by region or country by country. Each wave covers the master data, territories, dispatchers, technicians and partners of one region. The first wave is also the test for all others."
   - q: "Does the works council need to be involved in Field Service?"
-    a: "In Germany, yes. Under section 87 of the Works Constitution Act the works council has a say on technical systems suited to monitor behavior or performance, and on working time rules, among others. Section 90 adds information and consultation on new work processes. Location data and time recording are typical topics, status times, KPIs and automated scheduling can be too. Other countries have their own rules, so check with legal."
+    a: "In Germany, as a rule yes. Under section 87 of the Works Constitution Act the works council has a say on technical systems suited to monitor behavior or performance, and on working time rules, among others. Section 90 adds information and consultation on new work processes. Location data and time recording are typical topics, status times, KPIs and automated scheduling can be too. Other countries have their own rules, so check with legal."
   - q: "Can location tracking in the Field Service app be limited?"
-    a: "Yes. Interval and accuracy can be set, from about 10 meters to about one kilometre. Single technicians can be excluded, and with Appointment Assistant tracking can be limited to the En Route status."
+    a: "Yes. Interval and accuracy can be set, from about 10 meters to about one kilometer. Single technicians can be excluded, and with Appointment Assistant tracking can be limited to the En Route status."
   - q: "What belongs in a rollout wave?"
     a: "Clean master data for the region, set-up territories and scheduling policy, trained dispatchers and technicians, connected partners, agreements with the works council and data protection, and metrics measured before and after go-live."
 draft: false
@@ -88,18 +88,18 @@ From a project point of view, timing matters most. Whoever talks to the works co
 
 An international field service does not have one legal situation but many. Co-determination, data protection and working time rules differ by country, sometimes also by region or site with its own employee representation. What takes a short alignment in one country needs a formal works agreement in another.
 
-That argues for waves by country. Each wave checks the conditions of its country before it starts. The configuration has to support that: mobile settings can be assigned per profile, so that location tracking is active in one country and not in another. Set it up that way from the start, so the second country does not inherit the settings of the first. What each country needs beyond law and technology, from a sponsor in the country management to key users, is covered in [chapter 4 of the change management masterclass](../../masterclass/change-management/change-management-rollout-countries/).
+That argues for waves by country. Each wave checks the conditions of its country before it starts. The configuration has to support that: mobile settings can be assigned per profile, so that location tracking is active in one country and not in another. Set it up that way from the start, so the second country does not inherit the settings of the first. Keep the number of such variants small, though, because profiles also carry permissions, and one profile per country and role quickly becomes hard to maintain. What each country needs beyond law and technology, from a sponsor in the country management to key users, is covered in [chapter 4 of the change management masterclass](../../masterclass/change-management/change-management-rollout-countries/).
 
 ## How do you measure the success of a wave?
 
 Every wave needs numbers from before and after. I would take the ones that already came up in the series:
 
-- the four numbers from part 1: jobs per day, share of travel time, skill and parts complexity and first-time fix rate
+- the four numbers from part 1: jobs per day, share of travel time, skill and part mismatches and first-time fix rate
 - the failed visits from part 2 and their causes
 - the share of proposals the dispatcher changes before release, from part 3
 - the response times met, from part 5
 
-If the numbers do not improve in the first wave, in my view the cause is more often data or scheduling on the side than the product. I still check all causes in order: data, configuration, integration, adoption, the process and finally product fit. A product that does not fit the kind of field service is a possible finding too. Which numbers to watch is covered in [Field Service KPIs after go-live](../field-service-kpis-after-go-live/).
+If the numbers do not improve in the first wave, in my view the cause is more often data or scheduling on the side than the product. I still check every cause: data, configuration, integration, adoption, the process and product fit. A product that does not fit the kind of field service is a finding like any other. Which numbers to watch is covered in [Field Service KPIs after go-live](../field-service-kpis-after-go-live/).
 
 ## First step: a region with clean data for the first wave
 
