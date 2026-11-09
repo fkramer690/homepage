@@ -6,7 +6,7 @@ lang: de
 slug: projektsteuerung-nearshore
 translationKey: service-nearshore
 contactBrief: nearshore
-order: 5
+order: 6
 lead: "Nearshore-Teams können viel zu einem vernünftigen Preis liefern, wenn das Setup stimmt. Die meisten Probleme haben wenig mit Skills zu tun und viel mit Teamgröße, Fluktuation und Kultur. Ich plane und steuere Salesforce-Programme auf Kundenseite, inklusive Nearshore-Teams in Osteuropa und Offshore-Teams in Indien."
 situations:
   - "Ein Salesforce-Programm braucht mehr Umsetzungskapazität, als das interne Team und die aktuellen Partner liefern können."

@@ -5,7 +5,7 @@ lang: en
 slug: salesforce-integration
 translationKey: service-integration
 contactBrief: integration
-order: 4
+order: 5
 lead: "Salesforce is never the only system. Orders, prices, stock and invoices live in the ERP, and service runs on phone and email. I design the integration architecture on the client side and work with selected partners who have built integrations in large international programs."
 situations:
   - "Salesforce needs data from SAP or another ERP, such as customers, products, prices, orders or invoices, and it is unclear which system leads for which data."

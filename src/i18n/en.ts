@@ -104,12 +104,16 @@ export const en = {
         text: 'Target architecture and solution design for complex Salesforce landscapes with several clouds, portals and integrations.',
       },
       {
-        title: 'Change management',
-        text: 'Introduce new processes and releases so that business teams, developers and partners use them in daily work, based on Prosci and ADKAR.',
+        title: 'Partner steering & governance',
+        text: 'One common governance and release framework across several implementation partners. On top, I review what the partners deliver.',
       },
       {
         title: 'DevOps & release management',
         text: 'Release processes, branching, code quality standards and automated checks, e.g. with sfdx-hardis.',
+      },
+      {
+        title: 'Change management',
+        text: 'Introduce new processes and releases so that business teams, developers and partners use them in daily work, based on Prosci and ADKAR.',
       },
       {
         title: 'Integration',
@@ -123,10 +127,6 @@ export const en = {
         title: 'Make-or-buy & license forecasts',
         text: 'Should this be built in Salesforce at all? Best-of-breed alternatives and license costs, assessed before the decision is made.',
       },
-      {
-        title: 'Partner steering & governance',
-        text: 'One common governance and release framework across several implementation partners. On top, I review what the partners deliver.',
-      },
     ],
     more: 'Learn more',
     featured: 4,
@@ -134,9 +134,9 @@ export const en = {
     moreAll: 'All services',
     morePartners: 'Partners',
     moreItems: [
-      { order: 5, text: 'Plan and steer programs, coordinate nearshore teams.' },
-      { order: 6, text: 'Does it belong in Salesforce? Alternatives and license costs assessed first.' },
-      { order: 7, text: 'Steer several implementation partners by common rules and review their deliveries.' },
+      { order: 5, text: 'Connect Salesforce with ERP, middleware and telephony.' },
+      { order: 6, text: 'Plan and steer programs, coordinate nearshore teams.' },
+      { order: 7, text: 'Does it belong in Salesforce? Alternatives and license costs assessed first.' },
     ],
     focusLabel: 'Focus areas',
     focus: [
@@ -389,7 +389,7 @@ export const en = {
         linkedin: 'https://www.linkedin.com/in/juliane-winterscheid-4794b8115/',
         photo: 'juliane-winterscheid',
         photoAlt: 'Juliane Winterscheid presenting to a team',
-        service: 2,
+        service: 4,
         serviceLink: 'Change management with me',
         profile: 'partners/juliane-winterscheid/',
         profileLink: 'Profile and references',
