@@ -2,6 +2,7 @@
 title: "Agentforce Vibes, Claude Code, Codex or Copilot?"
 description: "Which coding agent should your Salesforce team or partner use? A client-side decision by contracts, EU data residency, cost model and governance."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: agentforce-vibes-claude-code-copilot
 translationKey: vibes-claude-code-copilot-comparison
@@ -11,28 +12,28 @@ tags: [ai coding, agentforce vibes, claude code, github copilot, data residency,
 takeaways:
   - "Only after contracts, EU data residency, cost model and governance does the model matter when picking a coding agent."
   - "Agentforce Vibes is not available in the Hyperforce EU Operating Zone. There the choice is Copilot, Claude Code through a cloud provider or Codex."
-  - "Anthropic's first-party API offers only US or global inference. GitHub Copilot has had EU data residency since April 2026, for 10 percent more AI credits."
-  - "Codex supports EU data residency only on ChatGPT Enterprise and only in the Codex app and CLI. ChatGPT Business has none."
-  - "I recommend at most two approved coding agents, accounts owned by the client and one rules file in the client's repository that every agent reads."
+  - "Anthropic's own API offers only US or global inference. Copilot has EU residency since April 2026 on Enterprise Cloud with data residency."
+  - "Codex has European residency only on ChatGPT Enterprise, in app and CLI, and some processing can still run elsewhere. ChatGPT Business has none."
+  - "I recommend at most two approved coding agents, accounts owned by the client and one leading rules file in the client's repository."
 faq:
   - q: "Which coding agent is best for Salesforce development?"
     a: "I know of no public benchmark that settles that for Apex, LWC or Flow. Salesforce built its first official plugin for Claude Code, Agentforce Vibes runs inside your Salesforce contract, Copilot inside GitHub. Choose by contract, data residency and governance, then test on tasks from your own backlog."
   - q: "Can we use Agentforce Vibes in the EU?"
-    a: "Yes for orgs outside the Hyperforce EU Operating Zone. Salesforce states that Vibes is not available in the EU Operating Zone or in Government Cloud, and that data is handled within Salesforce's trust boundary and not stored after the session."
+    a: "Yes for orgs outside the Hyperforce EU Operating Zone. Salesforce states that Vibes is not available in the EU Operating Zone and that data is handled within Salesforce's trust boundary and not stored after the session. Its billing page also says Vibes uses Data Cloud to store data, so get retention confirmed in writing."
   - q: "Is there an EU option for Claude Code?"
-    a: "Not through Anthropic's own API, which offers US or global inference only. Claude Code can run through Amazon Bedrock in an EU region, or Claude models can be used through Copilot with EU data residency enabled."
+    a: "Not through Anthropic's own API, which offers US or global inference only. Claude Code can run through Amazon Bedrock in an EU region, or Claude models can be used through Copilot on GitHub Enterprise Cloud with EU data residency."
   - q: "Should the partner bring its own coding agent?"
     a: "I would not allow that by default. If the partner works with its own accounts, you do not control data residency, retention or offboarding. Give partner developers seats in your own GitHub, Claude or ChatGPT organization, or a Vibes license in your org."
 draft: false
 ---
 
-Choosing a coding agent for Salesforce, whether Agentforce Vibes, Claude Code, Codex or Copilot, is a client decision more than a developer preference. Facts on your side decide it: the contracts and tools you already run, whether code and prompts must be processed in the EU, the cost model you can control and the governance your IT security expects. If your org sits in the Hyperforce EU Operating Zone, Vibes is out. If EU processing is mandatory, Anthropic's own API is out and Copilot or Bedrock come in. Model quality decides last.
+Choosing a coding agent for Salesforce, whether Agentforce Vibes, Claude Code, Codex or Copilot, is a client decision more than a developer preference. Facts on your side decide it: the contracts and tools you already run, whether code and prompts must be processed in the EU, the cost model you can control and the governance your IT security expects. If your org sits in the Hyperforce EU Operating Zone, Vibes is out. If EU processing is mandatory, Anthropic's own API is out and Copilot or Bedrock come in. Model quality decides among the options that remain.
 
 ## Why should the client decide, not the developer?
 
-Developers and partners arrive with preferences. A nearshore team may know Claude Code, your internal developers may have Copilot in VS Code, and your Salesforce account executive will offer Agentforce Vibes. Each choice routes your source code, your metadata and sometimes test data from a sandbox to a model provider under a specific contract. For a manufacturer, that code holds discount approvals, dealer conditions, warranty rules and the interface definitions to SAP or proALPHA.
+Developers and partners arrive with preferences. A nearshore team may know Claude Code, your internal developers may have Copilot in VS Code, and your Salesforce account executive will offer Agentforce Vibes. Each choice routes your source code, your metadata and sometimes test data from a sandbox to a model provider under a specific contract. For a manufacturer, that code holds discount approval logic, warranty rules and the interface definitions to SAP or proALPHA, and test data or configuration can carry real dealer conditions.
 
-The capability gap between the tools is smaller than the marketing suggests. Salesforce describes its open skills library as [compatible with any coding agent](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release), naming Claude Code and Codex, and the Hosted MCP servers connect to any MCP-compatible client. Salesforce built its first official plugin for Claude Code: according to [Salesforce's announcement of 19 August 2026](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin), it bundles about 40 skills, three MCP servers, deployment validation hooks and a read-only architecture review agent. The feature comparison sits in [chapter 4 of the AI masterclass](../../masterclass/ai-salesforce/external-coding-agents/). This article covers the decision.
+I know of no public Salesforce-specific evidence that ranks the tools reliably, and they share much of the tooling. Salesforce describes its open skills library as [compatible with any coding agent](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release), naming Claude Code and Codex, and the Hosted MCP servers connect to any MCP-compatible client. Salesforce built its first official plugin for Claude Code: according to [Salesforce's announcement of August 19, 2026](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin), it bundles about 40 skills, three MCP servers, deployment validation hooks and a read-only architecture review agent. The feature comparison sits in [chapter 4 of the AI masterclass](../../masterclass/ai-salesforce/external-coding-agents/). This article covers the decision.
 
 ## Four questions that decide the coding agent for Salesforce
 
@@ -41,8 +42,8 @@ The capability gap between the tools is smaller than the marketing suggests. Sal
 Every option rides on a contract you may already hold:
 
 - **Agentforce Vibes** runs under your Salesforce contract: [$125 per user and month](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) as a flat fee, or metered Flex Credits that "consume the same credits used by Agentforce".
-- **GitHub Copilot** runs under GitHub. Since February 2026, Claude and Codex are [available as coding agents in Copilot Business](https://github.blog/changelog/2026-02-26-claude-and-codex-now-available-for-copilot-business-pro-users/), after Enterprise and Pro+, once an admin enables "Partner Agents". One contract then covers three agents.
-- **Claude Code** comes with every paid Claude plan. [Claude Enterprise](https://claude.com/pricing) costs $20 per seat and month plus usage at API rates, with a 20-seat minimum. Through Amazon Bedrock it is [billed per token to your AWS account](https://code.claude.com/docs/en/costs).
+- **GitHub Copilot** runs under GitHub. Since February 2026, Claude and Codex are [available as coding agents in Copilot Business](https://github.blog/changelog/2026-02-26-claude-and-codex-now-available-for-copilot-business-pro-users/), after Enterprise and Pro+, once an admin enables "Partner Agents". One contract then gives access to three agents, but the partner agents are integrations inside GitHub, not the same as Claude Code with the Salesforce plugin or the Codex CLI.
+- **Claude Code** comes with every paid Claude plan. [Claude Enterprise](https://claude.com/pricing) costs $20 per seat and month, billed annually with a 20-seat minimum; the seat covers access only and [all usage is billed at API rates](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan). Through Amazon Bedrock it is [billed per token to your AWS account](https://code.claude.com/docs/en/costs).
 - **Codex** is part of [ChatGPT Business and Enterprise](https://openai.com/business/pricing/).
 
 If one of these contracts already exists, procurement, data processing agreement and SSO are often in place. That saves weeks.
@@ -55,22 +56,22 @@ This is the question that removes options. What the vendors state on their own p
 |---|---|
 | Agentforce Vibes | [not available in the EU Operating Zone](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html); data stays within Salesforce's trust boundary and is not stored after the session; processing region not stated |
 | Claude Code, Anthropic API or Claude plans | [inference "us" or "global" only](https://platform.claude.com/docs/en/manage-claude/data-residency), workspace storage US only |
-| Claude Code through Amazon Bedrock | region follows the endpoint; Claude Code uses the [`eu.` inference profiles in `eu-*` regions](https://code.claude.com/docs/en/amazon-bedrock.md); according to Anthropic, regional endpoints carry a [10 percent premium](https://platform.claude.com/docs/en/about-claude/pricing) |
-| GitHub Copilot | [EU data residency since 13 April 2026](https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available) for all generally available features including cloud agent and CLI, off by default, 10 percent more AI credits |
-| Codex | data residency on ChatGPT Enterprise only; [Codex app and CLI supported, Codex Web excluded](https://help.openai.com/en/articles/9903489) |
+| Claude Code through Amazon Bedrock | EU only with an EU geographic or in-region inference profile, never a global one; Claude Code uses the [`eu.` inference profiles in `eu-*` regions](https://code.claude.com/docs/en/amazon-bedrock.md); according to Anthropic, regional endpoints carry a [10 percent premium](https://platform.claude.com/docs/en/about-claude/pricing) |
+| GitHub Copilot | [EU data residency since April 13, 2026](https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available) on GitHub Enterprise Cloud with data residency, for generally available features including cloud agent and CLI (preview features only once GA), off by default, 10 percent more AI credits |
+| Codex | data and inference residency on ChatGPT Enterprise only, region "Europe (EEA + Switzerland)"; [Codex app and CLI supported, Codex Web excluded](https://help.openai.com/en/articles/9903489); some non-GPU processing can run outside the region |
 
-Two details matter for Salesforce teams. The [EU model list for Copilot](https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency) includes Claude Opus 5.5 and Sonnet 5.5, so a team can work with Claude models under EU processing without an AWS account. Whether the works council has to agree is a separate question, covered in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
+Two details matter for Salesforce teams. The [EU model list for Copilot](https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency) includes Claude Opus 5.5 and Sonnet 5.5, so a team can work with Claude models under EU processing without an AWS account. The second detail: "EU" at GitHub and OpenAI can include EFTA countries or Switzerland, so check that against your data protection policy. Whether the works council has to agree is a separate question, covered in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
 
 ```hinweis offen
-For Vibes, Salesforce states no processing region. I would get it from Salesforce in writing before your data protection officer signs off.
+For Vibes, Salesforce states no processing region, and its FAQ (not stored after the session) and billing page (Data Cloud stores data) read differently. I would get region and retention from Salesforce in writing before your data protection officer signs off.
 ```
 
 ### 3. Which cost model can you control?
 
-The tools differ less in price than in who sees the spend:
+The tools differ less in price than in who sees the spend. Prices below are public US list prices as of November 9, 2026, before taxes and discounts:
 
 - **Copilot** includes credits worth the seat price, [$19 or $39 per user](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan), pooled across the enterprise, then $0.01 per credit. Admins set [budgets per enterprise, cost center and user](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/).
-- **Claude Team and Enterprise** draw on a seat allowance. Usage beyond it needs usage credits with spend limits per organization, group or member.
+- **Claude Team** draws on a seat allowance; usage beyond it needs usage credits with spend limits. **Claude Enterprise** has no included allowance: every token is billed at API rates on top of the seat.
 - **Claude Code on Bedrock** shows up in the AWS bill. Anthropic's analytics do not cover it, so per-user figures need OpenTelemetry or a gateway.
 - **Vibes metered** draws from the same Flex Credit pool as your production agents. A partner team can eat the budget you planned for a dealer service agent.
 
@@ -80,8 +81,8 @@ The numbers for a full team, and whether client or partner should pay, are in [w
 
 - **Identity and audit.** Claude Enterprise adds SCIM, audit logs, a compliance API and custom retention to the SSO that Team already has. ChatGPT Business has SSO but no SCIM, no role-based access and no compliance API; Enterprise has all three.
 - **Scope of use.** OpenAI lets admins [govern Codex Local and Codex Cloud separately](https://help.openai.com/en/articles/11369540), so you can allow the CLI and block delegated cloud tasks. Vibes can be [disabled for a production org](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes) in Setup.
-- **Training and retention.** Anthropic [does not train on code sent under commercial terms](https://code.claude.com/docs/en/data-usage) and retains it for 30 days; zero data retention for Claude Code is enabled per organization by the account team. OpenAI does not use business inputs for training by default.
-- **One rules file.** The Copilot coding agent [reads AGENTS.md and CLAUDE.md](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions). One file in your repository can steer several tools, see [the AI rules file for your Salesforce repository](../ai-rules-file-salesforce-repository/).
+- **Training and retention.** Anthropic [does not train on code sent under commercial terms](https://code.claude.com/docs/en/data-usage). Standard retention is 30 days, Enterprise can set custom retention, and zero data retention is available to qualifying organizations for eligible products; on Bedrock the AWS settings apply. OpenAI does not use business inputs for training by default.
+- **One leading rules file.** The Copilot coding agent [reads AGENTS.md and CLAUDE.md](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions), Codex reads AGENTS.md, and Claude Code reads CLAUDE.md, which can import AGENTS.md. One leading file steers several tools if you wire it up and test it, see [the AI rules file for your Salesforce repository](../ai-rules-file-salesforce-repository/).
 
 ## Worked example: two approved tools instead of four
 
@@ -96,18 +97,18 @@ How I would decide:
 3. **No partner accounts.** If the partner insists on Claude Code for the official plugin, it runs through the client's AWS account in an EU region, with a budget and OpenTelemetry.
 4. **No Codex for now.** ChatGPT Business has no data residency, and Enterprise would be a third contract for one developer.
 
-The result is two tools and one `AGENTS.md`, owned by the internal architect. How the partner contract reflects this is in [contract rules for partners coding with AI](../partners-using-ai-coding-contract-rules/).
+The result is two tools and one leading `AGENTS.md`, owned by the internal architect. How the partner contract reflects this is in [contract rules for partners coding with AI](../partners-using-ai-coding-contract-rules/).
 
 ## When is each tool the wrong choice?
 
-- **Agentforce Vibes:** the org sits in the EU Operating Zone or Government Cloud, metered use would compete with Flex Credits planned for agents, or much of the work is middleware and SAP mapping outside Salesforce.
+- **Agentforce Vibes:** the org sits in the EU Operating Zone, or in Government Cloud Plus you need Anthropic models, hosted MCP servers or the browser IDE, which [Salesforce does not support there](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-government-cloud.html), metered use would compete with Flex Credits planned for agents, or much of the work is middleware and SAP mapping outside Salesforce.
 - **Claude Code on Anthropic accounts:** EU inference is mandatory. Bedrock solves that, but you give up Anthropic's usage dashboards.
-- **GitHub Copilot:** your repositories live outside GitHub, so the cloud agent and partner agents have nothing to work on.
+- **GitHub Copilot cloud and partner agents:** your repositories live outside GitHub, so these agents have nothing to work on. Copilot in the IDE and CLI still works.
 - **Codex:** you only have ChatGPT Business and need EU processing, or the team wants Codex Web, which is excluded from residency even on Enterprise.
 
 ## First step: check EU Operating Zone and contracts in week 1
 
-Setting these rules across several partners is part of my work in [partner governance](../../services/partner-governance/) and [DevOps and release management](../../services/devops-release-management/). Without special cases, the decision stands after four weeks:
+Setting these rules across several partners is part of my work in [partner governance](../../services/partner-governance/) and [DevOps and release management](../../services/devops-release-management/). A four-week technical evaluation can produce a recommendation; data protection, procurement and the works council may take longer:
 
 ```schritte
 Take stock | Week 1
