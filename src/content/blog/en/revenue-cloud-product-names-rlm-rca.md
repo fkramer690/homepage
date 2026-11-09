@@ -7,7 +7,7 @@ slug: revenue-cloud-product-names-rlm-rca
 translationKey: revenue-cloud-product-names
 topic: revenue
 categories: [revenue-cloud]
-tags: [revenue cloud, revenue lifecycle management, cpq, licences, naming]
+tags: [revenue cloud, revenue lifecycle management, cpq, licenses, naming]
 takeaways:
   - "The Winter '27 Developer Guide says Revenue Management, Trailhead says Agentforce Revenue Management, older guides Revenue Lifecycle Management."
   - "Revenue Cloud from 2020 was a suite around the CPQ and Billing packages. Today's Revenue Cloud is a different product on core platform objects."
@@ -81,7 +81,7 @@ Marketing names change faster than contracts run. A three-year order form signed
 
 - **Order form:** take the exact product names and SKUs from the Salesforce quote, including the edition (Growth or Advanced) and every add-on, such as Revenue Cloud Billing, Dynamic Revenue Orchestration, Invoice Management or Contract Lifecycle Management. "Revenue Cloud" on its own is not enough.
 - **Tender:** describe the product by name and by data model, for example "Revenue Cloud Advanced (also Revenue Lifecycle Management or Revenue Management), native on the Salesforce platform, not the Salesforce CPQ managed package". That rules out a misunderstanding about the 2020 bundle.
-- **Licence forecast:** list Revenue Cloud as its own line next to Sales Cloud, because it is bought on top of a Sales Cloud subscription. How I build such a forecast is described in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+- **License forecast:** list Revenue Cloud as its own line next to Sales Cloud, because it is bought on top of a Sales Cloud subscription. How I build such a forecast is described in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 - **Project glossary:** pick one name for the project and stick to it. I would use Revenue Cloud, because that is what salesforce.com shows today.
 
 ## Search under all names

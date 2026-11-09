@@ -21,7 +21,7 @@ faq:
   - q: "How do I stop an agent from being manipulated through a dealer portal?"
     a: "Treat every free-text field from portals, forms or email as untrusted, enforce Trusted URLs and give the agent a user with minimal permissions. Decisions with monetary value belong in deterministic logic that no free text can talk round."
   - q: "What does an agent in manufacturing cost to run?"
-    a: "Agentforce bills per action: 20 Flex Credits in production, 16 in a sandbox. At $500 per 100,000 credits that is $0.10 per action. Data 360 for documents, integration work and, for some features, per-user licences come on top."
+    a: "Agentforce bills per action: 20 Flex Credits in production, 16 in a sandbox. At $500 per 100,000 credits that is $0.10 per action. Data 360 for documents, integration work and, for some features, per-user licenses come on top."
 draft: false
 ---
 
@@ -45,7 +45,7 @@ Salesforce offers three groups of building blocks for manufacturing: templates f
 | Voice | Agentforce Voice in German and five other new languages | [GA since Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) |
 | Legacy systems | Systems Integration Agent learns browser-based applications and, per Salesforce, works without code, APIs or RPA | GA since Dreamforce 2026 |
 
-On licensing: according to the [Manufacturing Cloud page](https://www.salesforce.com/manufacturing/cloud/), only the Max editions include the full Agentforce for Industries suite, at $650 (Sales Max or Service Max) or $700 (Sales & Service Max) per user per month on an annual contract. Core editions include Flex Credits for AI. On 3 September 2026 Salesforce said new pricing for the Industries editions would come ["later this fall"](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/). I found no separate licence statement for the warranty adjudication agent in the sources I could open.
+On licensing: according to the [Manufacturing Cloud page](https://www.salesforce.com/manufacturing/cloud/), only the Max editions include the full Agentforce for Industries suite, at $650 (Sales Max or Service Max) or $700 (Sales & Service Max) per user per month on an annual contract. Core editions include Flex Credits for AI. On 3 September 2026 Salesforce said new pricing for the Industries editions would come ["later this fall"](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/). I found no separate license statement for the warranty adjudication agent in the sources I could open.
 
 For a machine builder I sort this list by three questions: how many similar cases are there per month, where does the rule live, and is the data behind it maintained? That usually gives this order: dealer order status and planned maintenance first, then the job report, then warranty. Which field service features pay off is covered in [AI agents in field service](../../../blog/field-service-ai-agents-what-works-today/), what has to be in place before the warranty agent in [Warranty Claims Adjudication Agent: what to prepare](../../../blog/warranty-claims-adjudication-agent/). Whether an agent is the right next step at all, I check with the criteria in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/). How to introduce agents in field service step by step is in [chapter 5 of the Field Service masterclass](../../field-service/field-service-ai-agents-rollout/).
 
@@ -91,7 +91,7 @@ Two incidents from 2025 show where the attack surface is:
 | Incident | What happened | Lesson |
 |---|---|---|
 | [ForcedLeak](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html), CVSS 9.4, disclosed September 2025 | Hidden instructions in the description field of a Web-to-Lead form; Agentforce sent lead data as an image request to an expired allowlisted domain that could be bought for about $5 | Fields written by outsiders are untrusted input; Salesforce now enforces a Trusted URL allowlist |
-| [Salesloft Drift](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html), 8 to at least 18 August 2025 | Stolen OAuth and refresh tokens of an AI chat app; queries on Cases, Accounts, Users and Opportunities, hunting for AWS keys and passwords; Google counted more than 700 potentially affected organisations | Connected apps are high-value access paths; limit scopes, rotate tokens, keep no secrets in CRM records |
+| [Salesloft Drift](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html), 8 to at least 18 August 2025 | Stolen OAuth and refresh tokens of an AI chat app; queries on Cases, Accounts, Users and Opportunities, hunting for AWS keys and passwords; Google counted more than 700 potentially affected organizations | Connected apps are high-value access paths; limit scopes, rotate tokens, keep no secrets in CRM records |
 
 At manufacturers these fields are everywhere: Web-to-Lead, dealer portals on Experience Cloud, email-to-case, the fault description in a warranty claim, distributor uploads. MCP servers, Salesforce in Claude and third-party agents also add OAuth connections, exactly the kind of access abused in the Drift incident. My minimum list before the first agent:
 
@@ -121,7 +121,7 @@ almost 40 % | faster case resolution at JPW despite 15 percent more workload
 source: Siemens announcement of 15 September 2026; Agentforce for Manufacturing announcement (customer statement)
 ```
 
-I found no case study from the German-speaking market with hard figures on service, warranty or field service agents. Market figures need a footnote too: Salesforce reports more than $1.5bn Agentforce ARR for the quarter to July 2026, but [from that quarter on](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx) counts Slackbot, AI offerings and Headless 360 as well. And Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be cancelled by the end of 2027, due to cost, unclear value or weak risk controls.
+I found no case study from the German-speaking market with hard figures on service, warranty or field service agents. Market figures need a footnote too: Salesforce reports more than $1.5bn Agentforce ARR for the quarter to July 2026, but [from that quarter on](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx) counts Slackbot, AI offerings and Headless 360 as well. And Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be canceled by the end of 2027, due to cost, unclear value or weak risk controls.
 
 ## Assumed: a roadmap for a machine builder
 
@@ -129,7 +129,7 @@ Assume a machine builder with SAP S/4 and an existing MuleSoft API, Service Clou
 
 ```schritte
 Dealer agent for order status | Quarter 1
-  The agent reads order and delivery date through the MuleSoft API. `before_reasoning` makes sure a dealer only sees their own orders. Before go-live, 150 test cases from real, anonymised enquiries run, including questions about other dealers' orders and free text with hidden instructions. The decision date after eight weeks is agreed in advance.
+  The agent reads order and delivery date through the MuleSoft API. `before_reasoning` makes sure a dealer only sees their own orders. Before go-live, 150 test cases from real, anonymized enquiries run, including questions about other dealers' orders and free text with hidden instructions. The decision date after eight weeks is agreed in advance.
 Data work and inventory | in parallel · IT
   IT reconciles the installed base with SAP until every machine has a serial number and warranty start, and lists all connected apps with their scopes.
 Maintenance booking | Quarter 2

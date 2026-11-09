@@ -88,7 +88,7 @@ My split for a machine builder:
 
 - **Per language:** safety instructions and warranty terms that differ by country.
 - **Top languages only:** troubleshooting articles and FAQs.
-- **Pivot through one language:** manuals and spare part catalogues.
+- **Pivot through one language:** manuals and spare part catalogs.
 - **No translation:** order status and delivery dates, which the agent reads from the ERP.
 
 Machine translation renames parts, and the guide does not promise that its keep-tag workaround protects a term. Part names belong in a terminology list and in the test cases.

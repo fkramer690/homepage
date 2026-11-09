@@ -45,13 +45,17 @@ faq:
   - q: "Brauchen alle Nutzer eine volle Salesforce-Lizenz?"
     a: "Oft nicht. Volle Lizenzen werden gern standardmäßig angeboten, auch für Nutzer, die nur Daten lesen, Datensätze freigeben oder in einem engen Prozess arbeiten. Bei großen Nutzergruppen kann der Unterschied leicht sechsstellig pro Jahr sein, deshalb stütze ich die Prognose darauf, was Nutzer tatsächlich tun."
   - q: "Bewerten Sie auch Tools außerhalb von Salesforce?"
-    a: "Ja. Make-or-buy betrifft den ganzen IT-Stack, etwa Dokumentenerstellung, E-Signatur oder die Frage, ob ein Prozess überhaupt in Salesforce gehört. Ich habe keine Bindung an einen Hersteller, daher kann die Empfehlung auch ein Tool außerhalb des Salesforce-Ökosystems sein."
+    a: "Ja, sobald die Entscheidung die Salesforce-Architektur, ihre Daten oder ihre laufenden Kosten berührt, etwa Dokumentenerstellung, E-Signatur oder die Frage, ob ein Prozess überhaupt in Salesforce gehört. Ich habe keine Bindung an einen Hersteller, daher kann die Empfehlung auch ein Tool außerhalb des Salesforce-Ökosystems sein."
+  - q: "Ersetzen Sie unseren Umsetzungspartner?"
+    a: "Nein. Ihre Partner bauen weiter, ich steuere sie auf Kundenseite nach gemeinsamen Regeln. Wenn Sie einen Partner ablösen wollen, helfe ich dabei, ohne Wissensverlust und ohne Verzögerung im Programm."
+  - q: "Wie vermeiden Sie, dass Sie zum Engpass werden?"
+    a: "Ich arbeite transparent. Entscheidungen, Standards und Review-Kriterien sind so dokumentiert, dass Ihr Team und Ihre Partner sie sehen, damit niemand auf mich warten muss und die Arbeit nicht an mir hängt."
 blogTags: [business case, agentforce, open source, vendor lock-in, lizenzen]
 readMore: [salesforce-licence-types, salesforce-editions-core-advanced-max, manufacturing-cloud-worth-it, manufacturing-cloud-add-ons-costs, field-service-worth-it, revenue-cloud-worth-it-manufacturers, commerce-extensions-custom-code, flex-credits-agentforce-costs]
 masterclass: manufacturing-cloud
 ---
 
-Make-or-buy bei Salesforce heißt, für jede Anforderung zu entscheiden, ob sie ein Standardprodukt, eine Industry Cloud, eine Eigenentwicklung auf der Kernplattform oder ein separates Tool abdeckt. Die Lizenzprognose beantwortet die verwandte Frage, welche Lizenztypen die Nutzer brauchen. Beide Entscheidungen fallen früh und lassen sich nur teuer zurückdrehen, daher stütze ich sie auf einen langfristigen ROI-Case inklusive Wartung und Folgekosten. Das Lizenzmodell und die Preisgestaltung von Salesforce kenne ich gut aus der Pre-Sales-Arbeit gemeinsam mit Salesforce.
+Make-or-buy bei Salesforce heißt, für jede Anforderung zu entscheiden, ob sie ein Standardprodukt, eine Industry Cloud, eine Eigenentwicklung auf der Kernplattform oder ein separates Tool abdeckt. Die Lizenzprognose beantwortet die verwandte Frage, welche Lizenztypen die Nutzer brauchen. Beide Entscheidungen fallen früh und lassen sich nur teuer zurückdrehen, daher stütze ich sie auf einen langfristigen ROI-Case inklusive Wartung und Folgekosten. Das Lizenzmodell und die Preisgestaltung von Salesforce kenne ich gut aus der Pre-Sales-Arbeit gemeinsam mit Salesforce. Heute arbeite ich nur auf Kundenseite und verkaufe keine Lizenzen, deshalb nutze ich dieses Wissen, um Angebote zu prüfen.
 
 ## Wann lohnt sich eine Industry Cloud?
 

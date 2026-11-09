@@ -10,7 +10,7 @@ categories: [devops, ai]
 tags: [copado, gearset, provar, ai agents, devops, due diligence]
 takeaways:
   - "Agentia is in Copado's Advanced and Pro editions, Cam started on 2 September 2026 as a pilot, and Provar MCP is free for Provar customers."
-  - "Neither Copado nor Gearset names the model; Gearset's AI terms name OpenAI, AWS, US data centres and 90 days of retention."
+  - "Neither Copado nor Gearset names the model; Gearset's AI terms name OpenAI, AWS, US data centers and 90 days of retention."
   - "Before paying, ask in writing which model runs, where data is processed, how long it is kept, how usage is capped and who approves what the agent produces."
   - "A team already running open-source DevOps such as sfdx-hardis covers much of the same ground with a general coding agent and a model it chooses itself."
 faq:
@@ -48,7 +48,7 @@ A pilot rarely comes with a service level or a fixed price, so status matters. A
 | Copado Agentia | "available today" in the Agentia Advanced and Agentia Pro editions (April 2026) | no | no |
 | Copado Agentia Headless (agents in the IDE) | "officially GA" on Copado's Dreamforce 2026 page, no date given | no | no |
 | Gearset Cam | launched with pilots at "a selection of Gearset customers", no GA label | no | no |
-| Provar MCP | included with a Provar Automation licence, CLI plugin installed from the beta tag | no extra cost | uses your AI assistant |
+| Provar MCP | included with a Provar Automation license, CLI plugin installed from the beta tag | no extra cost | uses your AI assistant |
 
 Sources: Copado press release, [Copado Dreamforce 2026 page](https://www.copado.com/dreamforce-2026-copado), Gearset announcement and [Gearset agent page](https://gearset.com/solutions/gearset-agent/), [Provar MCP documentation](https://documentation.provar.com/documentation/v3/provar-mcp/).
 
@@ -68,14 +68,14 @@ Here the three products differ most, and this is where a manufacturer with GDPR 
 
 **Gearset** publishes general AI terms in its [product and location specific terms](https://gearset.com/legal/product-and-location-terms/), in a version effective from 15 September 2026. They do not mention Cam by name, but they cover Gearset's AI functionality as a whole:
 
-- Providers include "OpenAI and Amazon Web Services", with "data centres in the United States and as otherwise specified in the Documentation".
+- Providers include "OpenAI and Amazon Web Services", with "data centers in the United States and as otherwise specified in the Documentation".
 - Gearset keeps input and output for 90 days or, where the software offers it, a shorter period you set; the providers keep nothing.
 - Gearset does not train models on customer data, but may use input and output to assess and improve its services.
 - Usage is measured in credits with a monthly cap from the order form. At the cap, Gearset suspends the AI functionality until the end of the month.
 - The customer "may not use the AI functionality to replace or substantially replace human decision making".
 
 ```hinweis achtung
-US data centres mean a third-country transfer your data protection officer must assess before production metadata goes in.
+US data centers mean a third-country transfer your data protection officer must assess before production metadata goes in.
 ```
 
 **Copado** names no model and no region for Agentia on the pages I opened. Its public data sheet "Copado AI and your data" dates from June 2024 and covers CopadoGPT and Test Copilot, not Agentia; I could read only its summary page. That says nothing about the quality of the answers; it means you need them in writing before you sign.

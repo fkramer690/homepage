@@ -112,11 +112,11 @@ What sounds good in the pitch has to go into the contract, or it does not count.
 - **Quality gates with defined checks** for the technical completion of every milestone, with the evidence the partner delivers.
 - **Assumptions and exclusions** of the estimate, and a rule for edge cases the discovery did not cover: who assesses them, and under what conditions do they become change requests?
 
-If several partners work on one org, there is one more question: who sets the rules for all of them. In my largest programme, five partners worked with more than 30 developers on one org, and the standards came from the client side, as described on the [partner governance](../../services/partner-governance/) page. When an independent architect makes sense for this is covered in [Salesforce freelancer or consultancy](../salesforce-freelancer-or-consultancy/).
+If several partners work on one org, there is one more question: who sets the rules for all of them. In my largest program, five partners worked with more than 30 developers on one org, and the standards came from the client side, as described on the [partner governance](../../services/partner-governance/) page. When an independent architect makes sense for this is covered in [Salesforce freelancer or consultancy](../salesforce-freelancer-or-consultancy/).
 
 ## First step: write down three problem cases for every partner
 
-Before you invite partners, decide what you will measure them on and give all of them the same cases from your own programme.
+Before you invite partners, decide what you will measure them on and give all of them the same cases from your own program.
 
 ```schritte
 Write down cases | before the invitation · client

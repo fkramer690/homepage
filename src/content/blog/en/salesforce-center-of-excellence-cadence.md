@@ -1,6 +1,6 @@
 ---
 title: "Salesforce Center of Excellence: format and cadence"
-description: "How a Salesforce Center of Excellence works on the client side: two meetings, clear roles, decisions with lead time. Lessons from a programme with 8 streams."
+description: "How a Salesforce Center of Excellence works on the client side: two meetings, clear roles, decisions with lead time. Lessons from a program with 8 streams."
 pubDate: 2026-10-29
 lang: en
 slug: salesforce-center-of-excellence-cadence
@@ -12,7 +12,7 @@ tags: [center of excellence, CoE, partner governance, governance, object ownersh
 takeaways:
   - "Two meetings are enough to start: a technical call every two weeks for changes and edge cases, and a monthly meeting for roadmap and priorities."
   - "The chair and the decisions stay with the client, otherwise one partner sets the rules for its competitors."
-  - "Streams present changes to shared objects before they build them; in my largest programme this made edge cases almost disappear."
+  - "Streams present changes to shared objects before they build them; in my largest program this made edge cases almost disappear."
   - "The CoE's decisions have to show up in pull request reviews and in the pipeline, otherwise it is a talking shop."
 faq:
   - q: "What is a Salesforce Center of Excellence?"
@@ -26,13 +26,13 @@ faq:
 draft: false
 ---
 
-A Salesforce Center of Excellence (CoE) is the body on the client side that sets standards and aligns upcoming changes across all teams and partners. For a manufacturer with several implementation partners, two meetings are enough to start: a technical call every two weeks where streams present changes to shared objects with lead time, and a monthly meeting for roadmap and priorities. The client chairs it, not a partner. In my largest programme, regular CoE calls made new edge cases almost disappear, because topics came up before they turned into conflicts.
+A Salesforce Center of Excellence (CoE) is the body on the client side that sets standards and aligns upcoming changes across all teams and partners. For a manufacturer with several implementation partners, two meetings are enough to start: a technical call every two weeks where streams present changes to shared objects with lead time, and a monthly meeting for roadmap and priorities. The client chairs it, not a partner. In my largest program, regular CoE calls made new edge cases almost disappear, because topics came up before they turned into conflicts.
 
 ## What is a Salesforce Center of Excellence?
 
-In the Trailhead module [Salesforce Governance with a Center of Excellence](https://trailhead.salesforce.com/content/learn/modules/salesforce-governance-with-a-center-of-excellence/define-your-salesforce-coe), Salesforce describes the CoE as a team of experts from across the organisation that acts as the steering committee and knowledge hub for all Salesforce initiatives. It has three jobs there:
+In the Trailhead module [Salesforce Governance with a Center of Excellence](https://trailhead.salesforce.com/content/learn/modules/salesforce-governance-with-a-center-of-excellence/define-your-salesforce-coe), Salesforce describes the CoE as a team of experts from across the organization that acts as the steering committee and knowledge hub for all Salesforce initiatives. It has three jobs there:
 
-- **Vision:** a roadmap of where the platform is going, prioritised by value.
+- **Vision:** a roadmap of where the platform is going, prioritized by value.
 - **Standards:** rules for how work is done on the platform, from processes and data quality to development rules.
 - **Enablement:** training, communication and support for users and teams.
 
@@ -46,7 +46,7 @@ Partners still sit at the table. Their leads present changes, bring edge cases f
 
 ## Which format does a CoE need at the start?
 
-Trailhead recommends a [weekly schedule for operational and technical topics and a monthly one for strategy and roadmap](https://trailhead.salesforce.com/content/learn/modules/salesforce-governance-with-a-center-of-excellence/get-started-with-a-salesforce-coe). In my programme the technical call ran every two weeks for 60 minutes, and that was enough, because topics were submitted in advance and the agenda went out before the meeting. Weekly only pays off when the list of submitted topics is permanently longer than an hour. You do not need more meetings at the start.
+Trailhead recommends a [weekly schedule for operational and technical topics and a monthly one for strategy and roadmap](https://trailhead.salesforce.com/content/learn/modules/salesforce-governance-with-a-center-of-excellence/get-started-with-a-salesforce-coe). In my program the technical call ran every two weeks for 60 minutes, and that was enough, because topics were submitted in advance and the agenda went out before the meeting. Weekly only pays off when the list of submitted topics is permanently longer than an hour. You do not need more meetings at the start.
 
 | | Technical CoE call | Roadmap meeting |
 |---|---|---|
@@ -54,7 +54,7 @@ Trailhead recommends a [weekly schedule for operational and technical topics and
 | Chair | client-side architect | CoE lead |
 | Attendees | only the technical leads of all streams and partners | sponsor, CoE lead, business units, architect |
 | Content | upcoming changes to shared objects, edge cases from reviews, new or changed standards | priorities, roadmap, budget, new partners |
-| Outcome | a decision, an updated standard or matrix | a prioritised backlog for the coming months |
+| Outcome | a decision, an updated standard or matrix | a prioritized backlog for the coming months |
 
 The roadmap meeting is also the place for budget questions that cut across units. One example is the Agentforce allowance I describe in [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/): someone in the CoE has to watch the pool and run the chargeback to plants and subsidiaries.
 
@@ -68,13 +68,13 @@ The technical call is the part that makes the difference. To keep it from turnin
 
 Status reports do not belong in this call. Whoever wants to report what their team finished in the sprint does that in the sprint review. Otherwise 15 people sit together for an hour and the one change to Account that the call was meant for gets five minutes at the end.
 
-Next to the agenda I keep a backlog of CoE topics that are not urgent, such as naming conventions for new object types or a rule that keeps coming up in reviews. When few topics come in for a meeting, we take one from the backlog. That way no meeting gets cancelled and the cadence stays stable.
+Next to the agenda I keep a backlog of CoE topics that are not urgent, such as naming conventions for new object types or a rule that keeps coming up in reviews. When few topics come in for a meeting, we take one from the backlog. That way no meeting gets canceled and the cadence stays stable.
 
 It also matters who decides. The question belongs to the stream that owns the object. If two streams cannot agree, the client-side architect decides. A CoE that settles every question by vote becomes slow and political.
 
-## In my programme with eight streams the edge cases almost disappeared
+## In my program with eight streams the edge cases almost disappeared
 
-The largest programme I steered had more than 30 developers in eight streams, delivered by five implementation partners and internal teams. At the start nobody had defined which team owned which objects and metadata. Changes overwrote each other.
+The largest program I steered had more than 30 developers in eight streams, delivered by five implementation partners and internal teams. At the start nobody had defined which team owned which objects and metadata. Changes overwrote each other.
 
 First we sent every change through a pull request with review and wrote standards from what the reviews showed, including the object ownership matrix. The CoE came in as the second building block, as the place for everything the standards did not cover yet.
 

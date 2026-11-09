@@ -1,27 +1,27 @@
 ---
-title: "Salesforce make-or-buy and licence forecasts"
-headline: "Check your Salesforce licences before you sign"
-description: "Industry cloud, custom build or another tool? Make-or-buy decisions and Salesforce licence forecasts, calculated on long-term ROI including maintenance."
+title: "Salesforce make-or-buy and license forecasts"
+headline: "Check your Salesforce licenses before you sign"
+description: "Industry cloud, custom build or another tool? Make-or-buy decisions and Salesforce license forecasts, calculated on long-term ROI including maintenance."
 lang: en
 slug: make-or-buy-licences
 translationKey: service-make-or-buy
 contactBrief: make-or-buy
 order: 6
-lead: "Not everything belongs in Salesforce, and not every Salesforce product pays off. I assess make-or-buy decisions and licence needs before the contract is signed, based on a long-term ROI that includes maintenance and follow-up costs."
+lead: "Not everything belongs in Salesforce, and not every Salesforce product pays off. I assess make-or-buy decisions and license needs before the contract is signed, based on a long-term ROI that includes maintenance and follow-up costs."
 situations:
   - "A partner or the vendor proposes an industry cloud, and the company wants to know whether a custom solution on the core platform would do the job."
   - "A tool decision is due, for example for document generation or e-signatures, and the options inside and outside Salesforce look similar on paper."
   - "The question is whether an AI use case with Agentforce pays off or whether the data is not ready yet."
-  - "A licence renewal or a new offer is on the table, and nobody has checked which licence types the users need."
+  - "A license renewal or a new offer is on the table, and nobody has checked which license types the users need."
 deliverables:
   - "I write down what the business needs and collect the options inside and outside Salesforce."
-  - "I analyse what users do in the system and derive the licence types from it."
+  - "I analyze what users do in the system and derive the license types from it."
   - "I review Salesforce offers and prepare the negotiation with you."
   - "I also recommend tools outside Salesforce when they fit better."
 results:
   - "A make-or-buy assessment with options, criteria and a recommendation"
-  - "An ROI case over several years with licences, implementation, maintenance and follow-up costs"
-  - "A licence forecast per user group that can be compared with the vendor's offer"
+  - "An ROI case over several years with licenses, implementation, maintenance and follow-up costs"
+  - "A license forecast per user group that can be compared with the vendor's offer"
   - "A roadmap of the products you are likely to need in the next two to three years"
 phases:
   - title: "Requirements and options"
@@ -29,29 +29,33 @@ phases:
     text: "I write down what the business needs and which options exist: standard product, industry cloud, custom build on the platform or a separate tool."
   - title: "ROI case"
     icon: "budget"
-    text: "For each option I calculate costs and benefits over several years, including licences, implementation, maintenance, upgrades and the effort to change course later."
-  - title: "Licence forecast"
+    text: "For each option I calculate costs and benefits over several years, including licenses, implementation, maintenance, upgrades and the effort to change course later."
+  - title: "License forecast"
     icon: "license"
-    text: "I group users by what they do in the system and map them to licence types. The result is a forecast that can be compared with the vendor's offer."
+    text: "I group users by what they do in the system and map them to license types. The result is a forecast that can be compared with the vendor's offer."
   - title: "Decision and negotiation"
     icon: "contract"
     text: "The recommendation goes to the decision makers with the reasons behind it. If it leads to a Salesforce offer, I help prepare the negotiation."
-duration: "Make-or-buy decision with ROI case 3 to 6 weeks. A licence forecast before a contract renewal 2 to 3 weeks."
+duration: "Make-or-buy decision with ROI case 3 to 6 weeks. A license forecast before a contract renewal 2 to 3 weeks."
 faq:
   - q: "When is a custom solution better than a Salesforce industry cloud?"
     a: "When the industry cloud's core features do not match how the company works. In one manufacturing project, sales agreements, a central feature of Manufacturing Cloud, were not relevant for the business, so a custom solution on the core platform was the better choice. The ROI case decides, including maintenance over several years."
   - q: "Is the Salesforce list price the final price?"
     a: "Usually not. The list price is a starting point. Timing matters as well: at the end of the vendor's fiscal year or during promotions there is often room to include products from the next two to three years of the roadmap for little extra cost. That only works if the company knows its roadmap."
-  - q: "Do all users need a full Salesforce licence?"
-    a: "Often not. Full licences tend to be offered by default, even for users who only read data, approve records or work in a narrow process. For large user groups the difference can easily reach six figures per year, which is why I base the forecast on what users actually do."
+  - q: "Do all users need a full Salesforce license?"
+    a: "Often not. Full licenses tend to be offered by default, even for users who only read data, approve records or work in a narrow process. For large user groups the difference can easily reach six figures per year, which is why I base the forecast on what users actually do."
   - q: "Do you also assess tools outside Salesforce?"
-    a: "Yes. Make-or-buy applies to the whole IT stack, for example document generation, e-signatures or the question whether a process belongs in Salesforce at all. I have no ties to any vendor, so the recommendation can also be a tool outside the Salesforce ecosystem."
-blogTags: [business case, agentforce, open source, vendor lock-in, licences]
+    a: "Yes, whenever the decision affects the Salesforce architecture, its data or its running costs, for example document generation, e-signatures or the question whether a process belongs in Salesforce at all. I have no ties to any vendor, so the recommendation can also be a tool outside the Salesforce ecosystem."
+  - q: "Do you replace our implementation partner?"
+    a: "No. Your partners keep building, and I steer them on the client side by common rules. If you want to replace a partner, I help you do it without losing knowledge and without delaying the program."
+  - q: "How do you avoid becoming a bottleneck?"
+    a: "I keep my work transparent. Decisions, standards and review criteria are documented where your team and your partners can see them, so nobody has to wait for me and the work does not depend on me."
+blogTags: [business case, agentforce, open source, vendor lock-in, licenses]
 readMore: [salesforce-licence-types, salesforce-editions-core-advanced-max, manufacturing-cloud-worth-it, manufacturing-cloud-add-ons-costs, field-service-worth-it, revenue-cloud-worth-it-manufacturers, commerce-extensions-custom-code, flex-credits-agentforce-costs]
 masterclass: manufacturing-cloud
 ---
 
-Make-or-buy on Salesforce means deciding, for each requirement, whether it is covered by a standard product, an industry cloud, a custom build on the core platform or a separate tool. Licence forecasting answers the related question of which licence types the users need. Both decisions are made early and are expensive to reverse, so I base them on a long-term ROI case that includes maintenance and follow-up costs. I know the Salesforce licence model and pricing well from pre-sales work together with Salesforce.
+Make-or-buy on Salesforce means deciding, for each requirement, whether it is covered by a standard product, an industry cloud, a custom build on the core platform or a separate tool. License forecasting answers the related question of which license types the users need. Both decisions are made early and are expensive to reverse, so I base them on a long-term ROI case that includes maintenance and follow-up costs. I know the Salesforce license model and pricing well from pre-sales work alongside Salesforce. Today I work only on the client side and sell no licenses, so I use that knowledge to challenge offers.
 
 ## When does an industry cloud pay off?
 
@@ -74,19 +78,19 @@ The same logic applies beyond Salesforce products. Document generation, e-signat
 
 ## An ROI case over several years, with maintenance and follow-up costs
 
-The first-year price is the least interesting number. I look at several years and include licences, implementation, maintenance and upgrades, and follow-up costs:
+The first-year price is the least interesting number. I look at several years and include licenses, implementation, maintenance and upgrades, and follow-up costs:
 
-![Make-or-buy with four options per requirement: standard product, industry cloud, custom build on the core platform or separate tool. The ROI case looks at several years, not the first-year price, and includes licences for every user group with the expected growth, implementation by internal teams and partners, maintenance and upgrades including the effort custom code causes with every release, and follow-up costs such as add-ons needed later or the effort to switch to another option. The second lever is the licence type, because full licences are often offered by default, even for users who only read or approve.](../../../assets/blog/make-or-buy-roi-en.png)
+![Make-or-buy with four options per requirement: standard product, industry cloud, custom build on the core platform or separate tool. The ROI case looks at several years, not the first-year price, and includes licenses for every user group with the expected growth, implementation by internal teams and partners, maintenance and upgrades including the effort custom code causes with every release, and follow-up costs such as add-ons needed later or the effort to switch to another option. The second lever is the license type, because full licenses are often offered by default, even for users who only read or approve.](../../../assets/blog/make-or-buy-roi-en.png)
 
 Make-or-buy decisions shape the architecture, so this service often goes together with [Salesforce architecture and solution design](../salesforce-architecture/).
 
-## Licence type and timing decide the licence price
+## License type and timing decide the license price
 
 The list price is rarely the final offer. These levers make the difference:
 
 ```hebel
-The licence type | Easily six figures per year across a large user base
-  Full licences are often offered by default, even for users who only read data or approve records. I map every user group to the licence type it needs for its work.
+The license type | Easily six figures per year across a large user base
+  Full licenses are often offered by default, even for users who only read data or approve records. I map every user group to the license type it needs for its work.
 The timing | Products for two to three years at little extra cost
   At the end of the vendor's fiscal year or during promotions there is often room. That requires a roadmap that is clear enough to know what to ask for.
 ```

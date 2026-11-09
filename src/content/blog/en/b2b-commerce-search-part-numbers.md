@@ -95,7 +95,7 @@ Synonym rules remain useful for words. "O-ring", "seal ring" and the German "Dic
 
 Boost and bury is useful for parts in two cases. Successor parts go up, so a dealer searching a general term sees the current part before the old one. Phased-out parts with remaining stock go down but stay findable. With 100 rules per store, I would build rules on attributes such as sales status, not on single products.
 
-Facets help when a search returns many hits, for example "filter" in a catalogue with 400 filters. Then machine series, dimension and material narrow the list. 10 facets per query are enough if they are chosen well: the attributes dealers actually use to decide, in the order they use them. They require clean attribute values, which is a question of [product data from ERP and PIM](../b2b-commerce-product-data-pim-erp/).
+Facets help when a search returns many hits, for example "filter" in a catalog with 400 filters. Then machine series, dimension and material narrow the list. 10 facets per query are enough if they are chosen well: the attributes dealers actually use to decide, in the order they use them. They require clean attribute values, which is a question of [product data from ERP and PIM](../b2b-commerce-product-data-pim-erp/).
 
 Showing dealers only parts that fit a specific machine is a different requirement. Search and facets cannot know which machines a dealer owns. The options for that are in [show only parts for each machine](../spare-parts-shop-parts-per-machine/), and the AI side in [spare parts by serial number](../spare-parts-by-serial-number-ai/).
 
@@ -105,4 +105,4 @@ Collect what dealers actually type before you configure anything. Inside sales h
 
 After go-live, the list of zero-result searches is the working list for the next data cleanup. Check it every week in the first months. How that fits with other KPIs is covered in [B2B shop KPIs after go-live](../b2b-shop-kpis-after-go-live/). And after every change to searchable fields, products, categories or entitlement policies, rebuild the search index, because Trailhead names all of these as triggers.
 
-The topic belongs to the [chapter on catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of my B2B Commerce masterclass. Defining which ERP fields feed search is part of my work on [Salesforce integration](../../services/salesforce-integration/).
+The topic belongs to the [chapter on catalog, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of my B2B Commerce masterclass. Defining which ERP fields feed search is part of my work on [Salesforce integration](../../services/salesforce-integration/).

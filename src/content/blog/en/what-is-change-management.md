@@ -30,7 +30,7 @@ faq:
 draft: false
 ---
 
-Change management is the structured way of guiding people through a change, so that a new way of working reaches daily work and stays there. Prosci, whose method I rely on, defines it as [the application of a structured process and set of tools for leading the people side of change](https://prosci.com/blog/what-is-change-management-and-how-does-it-work) to achieve a desired outcome. Change management is therefore measured by whether the people affected actually work differently afterwards. New software, a new process or a new organisation has only been introduced once that is the case.
+Change management is the structured way of guiding people through a change, so that a new way of working reaches daily work and stays there. Prosci, whose method I rely on, defines it as [the application of a structured process and set of tools for leading the people side of change](https://prosci.com/blog/what-is-change-management-and-how-does-it-work) to achieve a desired outcome. Change management is therefore measured by whether the people affected actually work differently afterwards. New software, a new process or a new organization has only been introduced once that is the case.
 
 ## What exactly is change management?
 
@@ -39,7 +39,7 @@ Every change in a company has two sides. The technical side is the solution itse
 There are two perspectives that belong together:
 
 - **The individual.** Every person goes through a change on their own: they need to understand why something changes, want to take part, know how it works, be able to do it in daily work and stick with it. Prosci's [ADKAR model](https://www.prosci.com/blog/adkar-model) describes exactly these five stages.
-- **The organisation.** A company needs a plan that covers every group affected: who hears what and when, who sponsors the change, how training and communication fit together and how success is measured.
+- **The organization.** A company needs a plan that covers every group affected: who hears what and when, who sponsors the change, how training and communication fit together and how success is measured.
 
 Typical occasions are new software such as a CRM or ERP system, new processes in sales or service, a reorganisation, a move to a new site or a merger.
 
@@ -66,7 +66,7 @@ source: Prosci, Best Practices in Change Management, 12th edition
 
 ## Prosci divides change management into three phases
 
-At the level of the organisation, Prosci divides the work into three phases, the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). They run alongside the project plan, not after it:
+At the level of the organization, Prosci divides the work into three phases, the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). They run alongside the project plan, not after it:
 
 ```schritte
 Prepare approach | before the start · sponsor and change manager
@@ -90,7 +90,7 @@ Change management is teamwork with clearly assigned roles:
 - **The change manager.** Plans the approach, advises sponsor and managers, prepares communication and training and measures progress. They do not carry the responsibility for the outcome alone; that stays inside the company.
 - **Multipliers.** In software rollouts usually [key users](../salesforce-key-user-network/): colleagues from the business who are involved early and answer the first questions in daily work.
 
-In Germany there is one more role that international guides often leave out: the works council. Under [section 87 (1) no. 6 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) (German text) it has a right of co-determination when technical equipment is introduced that is designed to monitor the behaviour or performance of employees. Because almost any software logs who did what and when, this comes up with nearly every new system. Involving the works council early wins an important supporter; doing it late costs months.
+In Germany there is one more role that international guides often leave out: the works council. Under [section 87 (1) no. 6 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) (German text) it has a right of co-determination when technical equipment is introduced that is designed to monitor the behavior or performance of employees. Because almost any software logs who did what and when, this comes up with nearly every new system. Involving the works council early wins an important supporter; doing it late costs months.
 
 ## What does change management look like when software is introduced?
 
@@ -101,12 +101,12 @@ Take the introduction of a CRM system such as Salesforce in a company with field
 3. **Check the ADKAR stage per group.** Inside sales want to take part but do not know the new steps yet: training on real cases helps. Field sales see no benefit: a conversation with their manager helps, another training changes nothing.
 4. **Measure usage.** What counts is whether records are created and maintained; the number of training sessions says little about that. Reports in the system show it more reliably than a survey.
 
-Two projects from my work show the range: a global Salesforce Sales Cloud rollout with more than 500 users in the US, Asia and Europe, and an IT transformation at an insurer with more than 20,000 people affected in 19 countries. The phases are the same; the plan per group and country gets more demanding with size. How I set this up with Fabian Kramer for Salesforce programmes is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
+Two projects from my work show the range: a global Salesforce Sales Cloud rollout with more than 500 users in the US, Asia and Europe, and an IT transformation at an insurer with more than 20,000 people affected in 19 countries. The phases are the same; the plan per group and country gets more demanding with size. How I set this up with Fabian Kramer for Salesforce programs is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
 
 ## Outside help pays off once several groups or countries are affected
 
 Not every change needs an external change manager. If a single process changes for a team of ten, a manager who uses ADKAR as a checklist and answers the five questions honestly is enough.
 
-Outside support pays off when several groups or countries are affected, when nobody inside has the time and experience to plan it, or when the sponsor is still unclear. Then an outside view helps to clarify roles, coach the managers and hand the work over to internal owners at the end. For Salesforce programmes there is [Salesforce change management consulting](../../services/change-management-salesforce/).
+Outside support pays off when several groups or countries are affected, when nobody inside has the time and experience to plan it, or when the sponsor is still unclear. Then an outside view helps to clarify roles, coach the managers and hand the work over to internal owners at the end. For Salesforce programs there is [Salesforce change management consulting](../../services/change-management-salesforce/).
 
 *Prosci and ADKAR are registered trademarks of Prosci, Inc.*

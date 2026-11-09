@@ -37,7 +37,7 @@ Prompt Builder or Agentforce agent: a template is enough when one record goes in
 
 An agent decides for itself which action comes next. According to [Trailhead on agent customisation](https://trailhead.salesforce.com/content/learn/modules/agent-customization-quick-look/customize-your-agents), an agent can read data but "can't change records without a predefined agent action". Actions are built on Flow, Apex or a prompt template. Salesforce calls Flow and Apex actions deterministic and says a prompt template action "involves a degree of randomness".
 
-So the real question is who decides the next step. With a template, your process decides: the technician presses the button, the Flow runs at 2 a.m. With an agent, the language model decides within limits you design, as described in [Agent Script instead of LLM judgement](../agent-script-deterministic-rules/).
+So the real question is who decides the next step. With a template, your process decides: the technician presses the button, the Flow runs at 2 a.m. With an agent, the language model decides within limits you design, as described in [Agent Script instead of LLM judgment](../agent-script-deterministic-rules/).
 
 ## After-sales tasks a template covers
 

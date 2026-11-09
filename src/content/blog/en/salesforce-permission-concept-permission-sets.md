@@ -11,7 +11,7 @@ tags: [permission concept, permission sets, security, partner governance]
 takeaways:
   - "Profiles keep their permissions for now, but new permissions belong in permission sets, because Salesforce only develops those further."
   - "The concept has two layers: what a user may do with objects, fields and functions, and which records they see through sharing."
-  - "I recommend one lean base profile per licence type, permission sets per function and permission set groups per role, owned by the client."
+  - "I recommend one lean base profile per license type, permission sets per function and permission set groups per role, owned by the client."
   - "With several partners, each stream delivers permission sets for its features, while the mapping to roles stays with the client and goes through review."
 faq:
   - q: "What is the difference between a profile and a permission set?"
@@ -25,7 +25,7 @@ faq:
 draft: false
 ---
 
-A Salesforce permission concept defines what every user may do and which records they see. Today I build it with one lean base profile per licence type, permission sets per function and permission set groups per role. Profiles only carry what exists nowhere else, such as login hours and IP ranges. When several partners work on the org, each stream delivers the permission sets for its features, and the client decides which role gets which sets. That keeps the concept readable, even after the third change of partner.
+A Salesforce permission concept defines what every user may do and which records they see. Today I build it with one lean base profile per license type, permission sets per function and permission set groups per role. Profiles only carry what exists nowhere else, such as login hours and IP ranges. When several partners work on the org, each stream delivers the permission sets for its features, and the client decides which role gets which sets. That keeps the concept readable, even after the third change of partner.
 
 ## Which two layers does a permission concept have?
 
@@ -45,14 +45,14 @@ Every user has exactly one profile and any number of permission sets. For a long
 In 2023 Salesforce announced it would retire permissions on profiles with Spring '26 ([Salesforce Admins blog](https://admin.salesforce.com/blog/2023/permissions-updates-learn-moar-spring-23)). Salesforce later did not enforce that date ([Salesforce Ben](https://www.salesforceben.com/salesforce-permissions-profiles-the-latest-retirement-updates/)). So profiles keep working. The direction is still clear: new features arrive for permission sets and permission set groups, not for profiles. That is why I treat profiles like change sets: they still work, but nobody should build anything new on them.
 
 ```hinweis tipp
-Before creating any new profile, check whether a permission set is enough. In most cases it is. A new profile is really only needed for a new licence type or different login rules.
+Before creating any new profile, check whether a permission set is enough. In most cases it is. A new profile is really only needed for a new license type or different login rules.
 ```
 
 ## Base profile, permission sets and groups per role
 
 I build it in three layers:
 
-1. **One base profile per licence type.** One profile for internal users, one for portal users, one for integration users. It contains only what every user of that type needs, plus login settings. Salesforce provides the "Minimum Access - Salesforce" profile as a starting point.
+1. **One base profile per license type.** One profile for internal users, one for portal users, one for integration users. It contains only what every user of that type needs, plus login settings. Salesforce provides the "Minimum Access - Salesforce" profile as a starting point.
 2. **Permission sets per function.** One set for "create quotes", one for "dispatch work orders", one for "review warranty claims". A set describes a capability, not a person.
 3. **Permission set groups per role.** The role "inside sales Germany" bundles the sets this role needs. If a role explicitly must not have a permission from one of the sets, a muting permission set removes it within that group.
 
@@ -76,7 +76,7 @@ I consider these rules the minimum:
 ```vertiefung For admins
 title: How do I migrate from many profiles to permission sets?
 Salesforce offers the free User Access and Permissions Assistant, which analyses existing profiles and can move permissions into permission sets.
-- First collect the permissions that all profiles of one licence type share and put them into the base profile.
+- First collect the permissions that all profiles of one license type share and put them into the base profile.
 - Then move the differences into permission sets per function and bundle them into groups.
 - Switch users step by step, country by country, and only delete the old profiles once nobody uses them.
 ```

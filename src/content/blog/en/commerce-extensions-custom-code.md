@@ -13,17 +13,17 @@ takeaways:
   - "Commerce extensions are Apex classes at named extension points, such as pricing, inventory, tax, shipping or order creation."
   - "Domain extensions extend or replace a whole service. Endpoint extensions only change the request or response of one Connect API endpoint."
   - "Salesforce strongly recommends calling super() in domain extensions, so your code adds to the standard and keeps what later releases add."
-  - "Extensions are the preferred way to customise Commerce. Older integrations remain supported, and payments cannot be customised with an extension."
+  - "Extensions are the preferred way to customize Commerce. Older integrations remain supported, and payments cannot be customized with an extension."
   - "Extension classes, their registration and their store mapping belong in the client's repository and pipeline, so any partner can take them over."
 faq:
   - q: "What are Salesforce Commerce extensions?"
     a: "Apex classes, called extension providers, that Salesforce runs at named extension points of B2B Commerce. They change how pricing, inventory, tax, shipping, checkout or single Connect API endpoints behave, without replacing the store."
   - q: "What is the difference between a domain extension and an endpoint extension?"
-    a: "A domain extension works on a functional area such as pricing and can extend or replace the default service, which can affect several API endpoints. An endpoint extension changes the request or response of one Connect API endpoint and cannot replace its default behaviour."
+    a: "A domain extension works on a functional area such as pricing and can extend or replace the default service, which can affect several API endpoints. An endpoint extension changes the request or response of one Connect API endpoint and cannot replace its default behavior."
   - q: "How are commerce extensions registered?"
     a: "Salesforce recommends the Salesforce CLI with the commerce plug-in: sf commerce:extension:register registers the Apex class, sf commerce:extension:map maps it to a store. Alternatively you can use the RegisteredExternalService and StoreIntegratedService objects or the Connect API."
-  - q: "Can payments be customised with a commerce extension?"
-    a: "No. Salesforce states that payments currently cannot be customised with an extension. Payment gateways are connected through their own payment integration instead."
+  - q: "Can payments be customized with a commerce extension?"
+    a: "No. Salesforce states that payments currently cannot be customized with an extension. Payment gateways are connected through their own payment integration instead."
   - q: "Should we migrate old checkout integrations to extensions?"
     a: "Salesforce calls extensions the preferred approach and says integrations remain fully supported. I would migrate when the code needs to change anyway, not as a project of its own."
 draft: false
@@ -39,8 +39,8 @@ This applies to Salesforce B2B Commerce on the core platform, which Salesforce n
 
 There are two kinds:
 
-- **Domain extensions** belong to a functional area. A provider can extend or replace the default behaviour, and one change can affect several endpoints. Example: a pricing provider adjusts the standard price on product pages and again in cart and checkout.
-- **Endpoint extensions** belong to one Connect API resource. The provider can change the request before and the response after the call, but it cannot replace the standard behaviour.
+- **Domain extensions** belong to a functional area. A provider can extend or replace the default behavior, and one change can affect several endpoints. Example: a pricing provider adjusts the standard price on product pages and again in cart and checkout.
+- **Endpoint extensions** belong to one Connect API resource. The provider can change the request before and the response after the call, but it cannot replace the standard behavior.
 
 ## Extension points from pricing to order creation
 

@@ -20,7 +20,7 @@ faq:
   - q: "Do I need MuleSoft to connect SAP to Manufacturing Cloud?"
     a: "No. The MuleSoft Accelerator for Manufacturing provides templates for syncing accounts, products and orders from SAP S/4HANA and for rebate credit memos. It does not cover sales agreements or warranty. Any middleware that works with the Salesforce APIs can do the same job."
   - q: "Should prices be calculated in Salesforce or in SAP?"
-    a: "For most manufacturers running SAP I would keep SAP as the price master. Penny Perfect Pricing from Winter '27 prices telesales orders in Salesforce, but its licence and the import of SAP condition records are not documented, and two price engines drift apart."
+    a: "For most manufacturers running SAP I would keep SAP as the price master. Penny Perfect Pricing from Winter '27 prices telesales orders in Salesforce, but its license and the import of SAP condition records are not documented, and two price engines drift apart."
   - q: "Is Agentforce included in Manufacturing Cloud?"
     a: "The pricing page lists the full Agentforce for Industries suite only in the Max editions, from $650 per user and month. For Core there is the Agentforce for Manufacturing Cloud Add-on from $150 a month; the unit differs between two Salesforce pages, so get it confirmed in writing."
   - q: "Which country should a global Manufacturing Cloud rollout start with?"
@@ -88,7 +88,7 @@ The risk is an actuals load that fails silently: sales sees an old shortfall and
 With Winter '27, [generally available since 12 October 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), Salesforce offers its own price engine for orders. According to the [developer guide](https://developer.salesforce.com/docs/industries/penny-perfect-pricing/guide/overview.html), Penny Perfect Pricing prices advanced order line items, which is the telesales ordering flow, and describes 19 objects from API version 68.0. Calculation schema, search strategies and condition records with tiers look a lot like the SAP condition technique.
 
 ```hinweis tipp
-For most manufacturers I would still keep SAP as the price master. Two price engines drift apart as soon as the pricing team changes a condition in SAP and the copy only arrives overnight. Two points are also open: the developer documentation names no licence and no standard way to load SAP condition records. Settle both in writing before a project plan depends on them. The trade-off, with a scenario for spare parts telesales, is in [Penny Perfect Pricing: ERP prices in Salesforce?](../../../blog/penny-perfect-pricing-erp-prices/).
+For most manufacturers I would still keep SAP as the price master. Two price engines drift apart as soon as the pricing team changes a condition in SAP and the copy only arrives overnight. Two points are also open: the developer documentation names no license and no standard way to load SAP condition records. Settle both in writing before a project plan depends on them. The trade-off, with a scenario for spare parts telesales, is in [Penny Perfect Pricing: ERP prices in Salesforce?](../../../blog/penny-perfect-pricing-erp-prices/).
 ```
 
 The boundaries stay as in the other chapters: quotes with a configurator belong to Revenue Cloud, see [catalog, configurator, pricing](../../revenue-cloud/product-catalog-configurator-pricing/), and store prices to B2B Commerce, see [prices, cart, checkout](../../b2b-commerce/prices-cart-checkout/).
@@ -126,7 +126,7 @@ First the goal is fixed, usually harmonising processes. That leads to a global t
 | 80 percent the same | legal requirements are given, every other local requirement is justified and decided by one role on the client side. |
 | Change management | key users, communication before go-live and a look at usage afterwards, in every country. |
 
-The ERP column carries the most weight. A country with its own SAP system or its own middleware needs new interfaces for actuals, rebates and warranty. If it shares the ERP with a country that is already live, the path is shorter. How I build a roadmap with phases and gates is in the [rollout roadmap](../../devops-release-management/rollout-roadmap/) chapter of the DevOps masterclass, and the work with people in each country under [change management for Salesforce programmes](../../../services/change-management-salesforce/).
+The ERP column carries the most weight. A country with its own SAP system or its own middleware needs new interfaces for actuals, rebates and warranty. If it shares the ERP with a country that is already live, the path is shorter. How I build a roadmap with phases and gates is in the [rollout roadmap](../../devops-release-management/rollout-roadmap/) chapter of the DevOps masterclass, and the work with people in each country under [change management for Salesforce programs](../../../services/change-management-salesforce/).
 
 ## Retest after every Salesforce release
 

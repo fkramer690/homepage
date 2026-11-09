@@ -12,7 +12,7 @@ contactBrief: change
 tags: [training plan, Salesforce training, change management, key users, train the trainer]
 takeaways:
   - "In the ADKAR model, training covers knowledge and ability. When awareness or desire is missing, even the best training does not help."
-  - "Training happens on real cases in a sandbox with real processes and anonymised data, shortly before go-live, not months earlier."
+  - "Training happens on real cases in a sandbox with real processes and anonymized data, shortly before go-live, not months earlier."
   - "Key users train their own team better than a trainer from the project, provided they were trained thoroughly themselves first."
   - "Whether training worked shows in the questions and usage figures of the first weeks, not in the number of participants."
 faq:
@@ -23,7 +23,7 @@ faq:
   - q: "What is train the trainer in Salesforce projects?"
     a: "The project team first trains the key users thoroughly, and the key users then train their teams. Users learn from colleagues who know their daily work and are still around after go-live."
   - q: "Do I need a separate sandbox for training?"
-    a: "For larger rollouts, yes. Training in the test sandbox disrupts acceptance testing, and training in production creates real records. A Partial Copy sandbox with anonymised data is usually enough."
+    a: "For larger rollouts, yes. Training in the test sandbox disrupts acceptance testing, and training in production creates real records. A Partial Copy sandbox with anonymized data is usually enough."
 draft: false
 ---
 
@@ -67,14 +67,14 @@ In a separate training sandbox. Salesforce explicitly names training as one of t
 For most rollouts a Partial Copy sandbox is enough. It holds a subset of production data, up to 5 GB of data storage, and according to the [Salesforce documentation](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/deploy_sandboxes.pdf) can be refreshed every five days. A Full sandbox can only be refreshed every 29 days and is usually reserved for load and integration tests. How the training environment fits next to development and test sandboxes is covered in the [sandbox strategy with multiple partners](../salesforce-sandbox-strategy-multiple-partners/).
 
 ```hinweis achtung
-Real customer data does not belong in a training sandbox that many people can access unless it is anonymised. Create practice customers or anonymise the copy, and agree this with data protection beforehand.
+Real customer data does not belong in a training sandbox that many people can access unless it is anonymized. Create practice customers or anonymise the copy, and agree this with data protection beforehand.
 ```
 
-Every exercise needs a case participants know from their daily work: a typical customer, a typical machine, a typical fault. People who recognise their own processes transfer what they learned to daily work faster.
+Every exercise needs a case participants know from their daily work: a typical customer, a typical machine, a typical fault. People who recognize their own processes transfer what they learned to daily work faster.
 
 ## After training, help belongs inside the system
 
-What people learned in training fades quickly when they do not use it in daily work. That is why help belongs inside the system. With Salesforce In-App Guidance you can show short prompts and guided walkthroughs directly on the pages where someone works, for example when creating a quote for the first time ([Trailhead: Create In-App Prompts](https://trailhead.salesforce.com/content/learn/modules/user-engagement/create-in-app-prompts)). Prompts are included; more than three custom walkthroughs need an additional licence. Check this for your org before planning many walkthroughs.
+What people learned in training fades quickly when they do not use it in daily work. That is why help belongs inside the system. With Salesforce In-App Guidance you can show short prompts and guided walkthroughs directly on the pages where someone works, for example when creating a quote for the first time ([Trailhead: Create In-App Prompts](https://trailhead.salesforce.com/content/learn/modules/user-engagement/create-in-app-prompts)). Prompts are included; more than three custom walkthroughs need an additional license. Check this for your org before planning many walkthroughs.
 
 Add short guides per process, linked from inside the system, and key users nearby. Nobody reads an 80-page manual after training.
 

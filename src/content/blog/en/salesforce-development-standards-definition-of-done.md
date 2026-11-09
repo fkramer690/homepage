@@ -11,7 +11,7 @@ contactBrief: partner-governance
 tags: [development standards, definition of done, partner governance, code quality]
 takeaways:
   - "The definition of done sets when a user story is finished, and like the development standards it belongs to the client."
-  - "The first version does not have to be complete; in my largest programme it covered about 80 percent of cases."
+  - "The first version does not have to be complete; in my largest program it covered about 80 percent of cases."
   - "What made the biggest difference for me was the object ownership matrix and rules for configuration."
   - "Whatever can be checked automatically is checked by the pipeline, and the review checks the rest."
 faq:
@@ -20,7 +20,7 @@ faq:
   - q: "Who should write development standards, the client or the partner?"
     a: "Either can write them, but the client should own them. If one partner sets the rules, it also decides how its competitors build in the same org."
   - q: "How long does it take to establish standards across several partners?"
-    a: "In my largest programme with five partners it took about three months until the standards were stable. After that only single edge cases were added."
+    a: "In my largest program with five partners it took about three months until the standards were stable. After that only single edge cases were added."
   - q: "What test coverage does Salesforce require?"
     a: "Salesforce requires at least 75 percent Apex test coverage for a deployment to production. That is a floor; meaningful tests check results, not just executed lines."
 draft: false
@@ -35,12 +35,12 @@ Every experienced partner has their own standards. The problem is that they diff
 The consequences show up late: two automations on the same object run in an unclear order, a value has to be changed in three places, and a new partner needs weeks to understand how the org is built. Shared standards also make partners comparable, because everyone works by the same rules. The wider framework is described on the [partner governance](../../services/partner-governance/) page.
 
 ```praxis
-The largest programme I have steered had more than 30 developers in eight streams, delivered by five implementation partners and internal teams. For a while every pull request went across my desk, and we wrote the standards down from those reviews. It took about three months until they were stable. The first version covered about 80 percent of cases; we discussed and added the edge cases in the weeks after.
+The largest program I have steered had more than 30 developers in eight streams, delivered by five implementation partners and internal teams. For a while every pull request went across my desk, and we wrote the standards down from those reviews. It took about three months until they were stable. The first version covered about 80 percent of cases; we discussed and added the edge cases in the weeks after.
 ```
 
 ## What belongs in Salesforce development standards?
 
-Most standards documents are too long. In my programme the standards covered the usual topics, such as naming conventions, one automation per object and context, and test coverage. Two elements made the biggest difference: ownership of objects and rules for configuration. This table sums up what I put into a first version today:
+Most standards documents are too long. In my program the standards covered the usual topics, such as naming conventions, one automation per object and context, and test coverage. Two elements made the biggest difference: ownership of objects and rules for configuration. This table sums up what I put into a first version today:
 
 | Area | Rule | Why |
 |---|---|---|
@@ -79,7 +79,7 @@ The same rules apply to AI-generated code. A rules file in the repository turns 
 
 ## Edge cases belong in the Center of Excellence call
 
-The first version never covers everything. In the weeks after, cases come up that nobody thought of: a stream needs a field on another stream's object, or two teams plan a change to the same flow at the same time. In my programme we discussed these cases in regular [Center of Excellence calls](../salesforce-center-of-excellence-cadence/), where upcoming changes came to the table with enough lead time for all streams. Every decision from these calls went into the standards. At some point the edge cases disappeared, because topics were discussed before they turned into conflicts. Why standards at partners wear off after a few months without such a slot is described in [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/).
+The first version never covers everything. In the weeks after, cases come up that nobody thought of: a stream needs a field on another stream's object, or two teams plan a change to the same flow at the same time. In my program we discussed these cases in regular [Center of Excellence calls](../salesforce-center-of-excellence-cadence/), where upcoming changes came to the table with enough lead time for all streams. Every decision from these calls went into the standards. At some point the edge cases disappeared, because topics were discussed before they turned into conflicts. Why standards at partners wear off after a few months without such a slot is described in [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/).
 
 ## Collect review comments for two to three weeks
 

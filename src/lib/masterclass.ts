@@ -87,7 +87,7 @@ const aiClusters: Cluster[] = [
   {
     id: 'costs',
     en: {
-      title: 'Costs and licences',
+      title: 'Costs and licenses',
       text: 'Flex Credits, editions, Data 360 and AI coding: what it costs and how to estimate it upfront.',
     },
     de: {
@@ -181,7 +181,7 @@ const devopsClusters: Cluster[] = [
     id: 'foundations',
     en: {
       title: 'Foundations and ownership',
-      text: 'Why the release process decides enterprise programmes and why the client should own it.',
+      text: 'Why the release process decides enterprise programs and why the client should own it.',
     },
     de: {
       title: 'Grundlagen und Eigentum',
@@ -237,13 +237,13 @@ const devopsClusters: Cluster[] = [
 const manufacturingClusters: Cluster[] = [
   {
     id: 'business-case',
-    en: { title: 'Business case and licences', text: 'What Manufacturing Cloud contains, what it costs and who needs which licence.' },
+    en: { title: 'Business case and licenses', text: 'What Manufacturing Cloud contains, what it costs and who needs which license.' },
     de: { title: 'Business Case und Lizenzen', text: 'Was Manufacturing Cloud enthält, was es kostet und welche Lizenz wer braucht.' },
     articles: ['manufacturing-cloud-worth-it', 'manufacturing-cloud-feature-map', 'manufacturing-cloud-add-ons-costs', 'salesforce-editions-core-advanced-max', 'salesforce-licence-types'],
   },
   {
     id: 'sales-planning',
-    en: { title: 'Agreements and planning', text: 'Plan against actuals per customer and product, forecasts, programmes and targets.' },
+    en: { title: 'Agreements and planning', text: 'Plan against actuals per customer and product, forecasts, programs and targets.' },
     de: { title: 'Rahmenverträge und Planung', text: 'Plan gegen Ist pro Kunde und Produkt, Prognosen, Programme und Ziele.' },
     articles: ['manufacturing-cloud-quote-to-agreement', 'manufacturing-cloud-sales-agreements-actuals', 'manufacturing-cloud-account-forecasting', 'manufacturing-cloud-program-based-business', 'manufacturing-cloud-account-manager-targets', 'sales-planning-agent-agreements'],
   },
@@ -276,7 +276,7 @@ const revenueClusters: Cluster[] = [
   },
   {
     id: 'catalog-pricing',
-    en: { title: 'Catalog, configurator and pricing', text: 'How variants, rules and prices are modelled in Revenue Cloud and who maintains them.' },
+    en: { title: 'Catalog, configurator and pricing', text: 'How variants, rules and prices are modeled in Revenue Cloud and who maintains them.' },
     de: { title: 'Katalog, Konfigurator und Preise', text: 'Wie Varianten, Regeln und Preise in Revenue Cloud abgebildet werden und wer sie pflegt.' },
     articles: ['revenue-cloud-product-catalog-variants', 'revenue-cloud-configurator-constraint-rules', 'revenue-cloud-pricing-procedures', 'customer-prices-sap-or-salesforce-pricing', 'manufacturing-cloud-quote-to-agreement'],
   },
@@ -309,7 +309,7 @@ const commerceClusters: Cluster[] = [
   },
   {
     id: 'catalog',
-    en: { title: 'Catalogue and search', text: 'Who sees which product and how dealers find the right part.' },
+    en: { title: 'Catalog and search', text: 'Who sees which product and how dealers find the right part.' },
     de: { title: 'Katalog und Suche', text: 'Wer welches Produkt sieht und wie Händler das richtige Teil finden.' },
     articles: ['commerce-buyer-groups-entitlements', 'commerce-product-data-pim', 'commerce-search-part-numbers', 'commerce-stores-countries-brands', 'commerce-spare-parts-per-machine', 'spare-parts-serial-number-ai'],
   },
@@ -336,7 +336,7 @@ const commerceClusters: Cluster[] = [
 const fieldServiceClusters: Cluster[] = [
   {
     id: 'decision',
-    en: { title: 'Decision and licences', text: 'When Field Service pays off, which role needs which licence and how a job is created.' },
+    en: { title: 'Decision and licenses', text: 'When Field Service pays off, which role needs which license and how a job is created.' },
     de: { title: 'Entscheidung und Lizenzen', text: 'Wann sich Field Service rechnet, welche Rolle welche Lizenz braucht und wie ein Auftrag entsteht.' },
     articles: ['field-service-worth-it', 'field-service-licences-by-role', 'agentforce-1-field-service-bundle', 'salesforce-licence-types', 'field-service-case-to-work-order'],
   },
@@ -369,7 +369,7 @@ const fieldServiceClusters: Cluster[] = [
 const changeClusters: Cluster[] = [
   {
     id: 'diagnosis',
-    en: { title: 'Why rollouts fail', text: 'What change management means in a Salesforce programme and how ADKAR shows where it is stuck.' },
+    en: { title: 'Why rollouts fail', text: 'What change management means in a Salesforce program and how ADKAR shows where it is stuck.' },
     de: { title: 'Warum Einführungen scheitern', text: 'Was Change Management im Salesforce-Programm heißt und wie ADKAR zeigt, wo es hängt.' },
     articles: ['change-management-hub', 'change-process-salesforce', 'salesforce-center-of-excellence'],
   },

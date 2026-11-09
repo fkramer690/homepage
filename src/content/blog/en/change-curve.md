@@ -35,7 +35,7 @@ The change curve describes how people react emotionally to a change: first with 
 
 The change curve plots a person's morale and performance over the course of a change. Time runs along the horizontal axis, wellbeing or perceived competence along the vertical one. The line drops after the announcement, reaches a low point and then rises above the starting level if the change succeeds.
 
-Its origin is not in management. In 1969 the psychiatrist Elisabeth Kübler-Ross described five stages that dying patients go through in her book "On Death and Dying". The model was later applied to loss in general and eventually to change in organisations. Prosci, whose methodology I work with, describes this transfer and its limits in an article on the [Kübler-Ross change curve in change management](https://www.prosci.com/blog/kubler-ross-model-change-management).
+Its origin is not in management. In 1969 the psychiatrist Elisabeth Kübler-Ross described five stages that dying patients go through in her book "On Death and Dying". The model was later applied to loss in general and eventually to change in organizations. Prosci, whose methodology I work with, describes this transfer and its limits in an article on the [Kübler-Ross change curve in change management](https://www.prosci.com/blog/kubler-ross-model-change-management).
 
 The idea behind it is simple: a change takes something away from people, even when it is objectively an improvement. Familiar routines, certainty, sometimes status. At first they react to it as they would to a loss.
 
@@ -90,7 +90,7 @@ contra: What it does not do
 - People jump between stages or skip some
 - It comes from grief research, not every change is a loss
 - It does not say which action helps when
-- It describes individuals, not a plan for the organisation
+- It describes individuals, not a plan for the organization
 ```
 
 The curve therefore works as a basis for conversation, not as a diagnosis. In a workshop with managers it is useful to draw it and ask: where is your team right now? The answer is usually more interesting than the curve itself, because several people in the same department often stand at different points. Then ADKAR takes over to find out what is missing.
@@ -101,6 +101,6 @@ Do not show the change curve to the affected team and tell them they are now in 
 
 ## Plan for the valley
 
-Plan for the valley. If you know that morale and productivity drop after go-live, you can provide contacts, adjust targets for the first weeks and explain to management why the first figures look worse. Ask each group where it stands instead of choosing the same action for everyone. And connect the curve with a model that derives actions; the basics are in [What is change management?](../what-is-change-management/). In Salesforce programmes I do this together with Fabian Kramer, see [Salesforce change management consulting](../../services/change-management-salesforce/).
+Plan for the valley. If you know that morale and productivity drop after go-live, you can provide contacts, adjust targets for the first weeks and explain to management why the first figures look worse. Ask each group where it stands instead of choosing the same action for everyone. And connect the curve with a model that derives actions; the basics are in [What is change management?](../what-is-change-management/). In Salesforce programs I do this together with Fabian Kramer, see [Salesforce change management consulting](../../services/change-management-salesforce/).
 
 *Prosci and ADKAR are registered trademarks of Prosci, Inc.*

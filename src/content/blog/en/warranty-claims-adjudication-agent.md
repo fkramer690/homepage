@@ -13,7 +13,7 @@ takeaways:
   - "Manufacturing Cloud already adjudicates claims with Flow, the Business Rules Engine and expression sets, and the coverage decision stays there."
   - "Every claimed machine needs a serial number and a warranty start date in Salesforce, plus operating hours where terms depend on usage."
   - "Claims above an agreed amount, every fraud flag, goodwill and claims with missing asset data should go to a human adjudicator before any credit note is issued."
-  - "In the sources I could open, Salesforce has not published the licence, the fraud signals or a setup guide for this agent; clarify all three before you budget."
+  - "In the sources I could open, Salesforce has not published the license, the fraud signals or a setup guide for this agent; clarify all three before you budget."
 faq:
   - q: "What does the Warranty Claims Adjudication Agent do?"
     a: "According to the Manufacturing Cloud product page, it validates coverage and flags potential fraud to speed up claim decisions. It is part of the Winter '27 release, which became generally available on 12 October 2026."
@@ -22,7 +22,7 @@ faq:
   - q: "What must be in place before I switch it on?"
     a: "Assets with serial numbers and warranty start dates in Salesforce, warranty terms maintained as rules, an agreed approval threshold and a dealer portal whose free-text fields are treated as untrusted input."
   - q: "What does the agent cost?"
-    a: "Salesforce has not published a separate price in the sources I could open. The existing Agentforce for Manufacturing warranty actions need an add-on licence per user, and an Agentforce action costs 20 Flex Credits ($0.10) at list price, 16 credits in a sandbox."
+    a: "Salesforce has not published a separate price in the sources I could open. The existing Agentforce for Manufacturing warranty actions need an add-on license per user, and an Agentforce action costs 20 Flex Credits ($0.10) at list price, 16 credits in a sandbox."
 draft: false
 ---
 
@@ -35,7 +35,7 @@ Salesforce lists it on the [Manufacturing Cloud product page](https://www.salesf
 For a purchasing decision that is thin.
 
 ```hinweis offen
-In the sources I could open, Salesforce has not published which fraud signals the agent uses, which licence it needs or a setup guide like the ones for its other manufacturing agents. Ask your account team before you put a number in the budget.
+In the sources I could open, Salesforce has not published which fraud signals the agent uses, which license it needs or a setup guide like the ones for its other manufacturing agents. Ask your account team before you put a number in the budget.
 ```
 
 What is documented are the [Agentforce for Manufacturing warranty actions](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5): Check Asset For Warranty, Check Coverage for Parts, Get Asset Warranties and Get Warranty Claims for Account, which finds claims by asset ID, serial number or claim number. They require the Agentforce for Manufacturing add-on for each user, or Agentforce 1 Manufacturing Edition. I expect the adjudication agent to build on these actions, but that is my assumption.
@@ -68,7 +68,7 @@ Decide before go-live which claims may pass automatically and which always go to
 
 The agent reads text that dealers write. In 2025 the ForcedLeak vulnerability (rated CVSS 9.4 by its finder, Noma Security) showed that instructions hidden in the description field of a Web-to-Lead form could make Agentforce send lead data to an outside domain; Salesforce responded by enforcing a Trusted URL allowlist, as [The Hacker News reported](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html). A fault description in a warranty claim is the same kind of field. I cover the protection in [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/).
 
-### Licence and test budget
+### License and test budget
 
 Consumption has published prices:
 
@@ -79,7 +79,7 @@ $0.10 | per action in production, at $500 per 100,000 Flex Credits
 source: [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) and [Salesforce press release on flexible pricing](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/)
 ```
 
-Plan two separate lines: consumption, which you can estimate, and the licence, which only Salesforce can answer for now.
+Plan two separate lines: consumption, which you can estimate, and the license, which only Salesforce can answer for now.
 
 ## Worked example: agricultural machinery sold through 90 dealers
 
@@ -93,9 +93,9 @@ Assume a maker of agricultural machinery with 90 dealers in Germany and Austria,
 
 **Then the agent.** It reads the fault description, checks it against fault code and parts, flags repeated serial numbers and faults shortly after installation, writes a summary and drafts the request for missing information. Claims above €2,500, every flag and every data gap go to the adjudicators. Assume that is 30 percent of the volume.
 
-**Consumption.** Assume five actions per claim: 350 × 5 × 20 = 35,000 credits, about $175 a month. A test set of 200 real, anonymised claims costs 200 × 5 × 16 = 16,000 credits, or $80 per sandbox run. Ten runs before go-live come to $800.
+**Consumption.** Assume five actions per claim: 350 × 5 × 20 = 35,000 credits, about $175 a month. A test set of 200 real, anonymized claims costs 200 × 5 × 16 = 16,000 credits, or $80 per sandbox run. Ten runs before go-live come to $800.
 
-The consumption is small. The real cost is the three months of data work, and the open item is the licence.
+The consumption is small. The real cost is the three months of data work, and the open item is the license.
 
 ## Who decides what: rule, agent or adjudicator?
 
@@ -116,5 +116,5 @@ The agent goes to production like any other change: with a test set of real clai
 2. **Run rules-based adjudication first.** According to Salesforce Help it is available in Enterprise, Unlimited and Developer Editions, and it shows quickly whether your terms work as rules.
 3. **Agree the approval threshold** with service and finance, in writing.
 4. **Treat portal free text as untrusted** before any agent reads it.
-5. **Ask Salesforce three questions**: which licence, which fraud signals, which setup documentation.
+5. **Ask Salesforce three questions**: which license, which fraud signals, which setup documentation.
 6. **Build a test set** from real claims, including rejected ones and known fraud cases.

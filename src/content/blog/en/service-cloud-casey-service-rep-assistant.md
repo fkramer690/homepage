@@ -29,7 +29,7 @@ Salesforce is reorganising its service offering around two kinds of help: Casey,
 
 ## Ten Service Cloud launches from 13 October 2026
 
-On 13 October 2026 Salesforce summarised [ten Service Cloud launches](https://www.salesforce.com/blog/?p=155993). The most relevant for enterprise service organisations:
+On 13 October 2026 Salesforce summarised [ten Service Cloud launches](https://www.salesforce.com/blog/?p=155993). The most relevant for enterprise service organizations:
 
 - **Native contact center in Europe.** Generally available since 16 October 2026 in more than 30 European countries, with Australia and New Zealand following in November. It combines voice, digital channels, CRM data and AI agents in one system.
 - **Service Rep Assistant.** Reads customer sentiment and case context in real time and creates or adjusts an action plan for the rep as the conversation changes.
@@ -63,7 +63,7 @@ Two related functions make Casey more interesting for enterprise service:
 
 Casey talks to the customer. The Service Rep Assistant works next to the human rep. It follows the conversation, recognises sentiment, keeps track of the case context and suggests the next steps. Salesforce also showed a rebuilt service console that prioritises work by customer value and churn risk, not only by the age of a case.
 
-For many B2B service organisations, the assistant is the easier starting point. The rep stays responsible for the answer, and the AI saves time on searching, summarising and documenting. Mistakes are caught by a person before they reach the customer.
+For many B2B service organizations, the assistant is the easier starting point. The rep stays responsible for the answer, and the AI saves time on searching, summarising and documenting. Mistakes are caught by a person before they reach the customer.
 
 ## What does this mean for B2B service in manufacturing?
 
@@ -103,7 +103,7 @@ Choosing the right Service Cloud building blocks is part of [architecture and pa
 
 ```schritte
 Start with the Service Rep Assistant
-  For one team, so people stay in control while the organisation learns.
+  For one team, so people stay in control while the organization learns.
 Clean up knowledge
   For the most frequent contact reasons, using topic clustering to find them.
 Introduce Casey narrowly

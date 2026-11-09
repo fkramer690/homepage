@@ -1,7 +1,7 @@
 ---
 title: "Manufacturing Cloud for Service or Service Cloud?"
 metaTitle: "Manufacturing Cloud vs Service Cloud: who needs which?"
-description: "When Manufacturing Cloud Service Core is worth $80 more per user and month than Service Cloud Core, what the premium buys and who needs which licence."
+description: "When Manufacturing Cloud Service Core is worth $80 more per user and month than Service Cloud Core, what the premium buys and who needs which license."
 pubDate: 2026-10-28
 lang: en
 slug: manufacturing-cloud-service-vs-service-cloud
@@ -9,31 +9,31 @@ translationKey: manufacturing-cloud-service-vs-service-cloud
 topic: service
 categories: [manufacturing-cloud, field-service]
 contactBrief: licences
-tags: [Manufacturing Cloud, Service Cloud, licences, warranty, make-or-buy]
+tags: [Manufacturing Cloud, Service Cloud, licenses, warranty, make-or-buy]
 takeaways:
   - "The premium buys warranty lifecycle management, two service consoles, pre-work estimation and the manufacturing data model."
   - "Case management, entitlements and knowledge are Service Cloud features. A pure hotline does not need Manufacturing Cloud."
-  - "A mixed licence set is the normal case: warranty and campaigns on Manufacturing Cloud, first level on Service Cloud."
-  - "Field technicians need Field Service licences in either case, at $175 per Technician on Enterprise Edition."
+  - "A mixed license set is the normal case: warranty and campaigns on Manufacturing Cloud, first level on Service Cloud."
+  - "Field technicians need Field Service licenses in either case, at $175 per Technician on Enterprise Edition."
 faq:
   - q: "What does Manufacturing Cloud for Service cost?"
     a: "The pricing page lists Manufacturing Cloud Service Core at $275 and Service Max at $650 per user and month, billed annually, and Sales and Service Max at $700. Two footnotes contradict each other on whether these prices apply to Enterprise or Unlimited Edition, so check the quote."
   - q: "What is the difference between Manufacturing Cloud for Service and Service Cloud?"
     a: "Manufacturing Cloud for Service adds manufacturing features to service: warranty lifecycle management, the Asset Service Console, the Service Console for Manufacturing, pre-work estimation and a manufacturing data model. Case management, entitlements and knowledge come from Service Cloud."
-  - q: "Can I mix Manufacturing Cloud and Service Cloud licences in one org?"
-    a: "Licence mixes by role are common in Salesforce, but which Manufacturing Cloud records a Service Cloud user may read is a contract question. Ask Salesforce to confirm the mix and the access rights in writing before you sign."
-  - q: "Do field technicians need Manufacturing Cloud licences?"
-    a: "No. Technicians who work with the Field Service mobile app need Field Service licences, Technician at $175 per user and month on Enterprise Edition. Field Service also requires at least one Service Cloud licence in the org."
+  - q: "Can I mix Manufacturing Cloud and Service Cloud licenses in one org?"
+    a: "License mixes by role are common in Salesforce, but which Manufacturing Cloud records a Service Cloud user may read is a contract question. Ask Salesforce to confirm the mix and the access rights in writing before you sign."
+  - q: "Do field technicians need Manufacturing Cloud licenses?"
+    a: "No. Technicians who work with the Field Service mobile app need Field Service licenses, Technician at $175 per user and month on Enterprise Edition. Field Service also requires at least one Service Cloud license in the org."
 draft: false
 ---
 
-Manufacturing Cloud Service Core lists at $275 per user and month. Service Cloud costs $195 in Core, the edition Salesforce now sells instead of Enterprise. The premium is therefore $80 per user and month. In my view it pays off for the users who handle warranty claims from dealers or customers and run recalls or upgrades across an installed base. For case handling, entitlements and knowledge, Service Cloud is enough. A mixed licence set is usually the cheaper answer, and the mix belongs in the contract.
+Manufacturing Cloud Service Core lists at $275 per user and month. Service Cloud costs $195 in Core, the edition Salesforce now sells instead of Enterprise. The premium is therefore $80 per user and month. In my view it pays off for the users who handle warranty claims from dealers or customers and run recalls or upgrades across an installed base. For case handling, entitlements and knowledge, Service Cloud is enough. A mixed license set is usually the cheaper answer, and the mix belongs in the contract.
 
-## What do the licences cost?
+## What do the licenses cost?
 
 These are list prices per user and month, billed annually, as of October 2026:
 
-| Licence | List price | Flex Credits per org and year |
+| License | List price | Flex Credits per org and year |
 |---|---|---|
 | Service Cloud Core | $195 | 500,000 |
 | Manufacturing Cloud Service Core | $275 | 500,000 |
@@ -57,7 +57,7 @@ What these features do:
 
 ## What does Service Cloud cover on its own?
 
-More than many expect. The Service Cloud Core edition lists case management and a self-service help centre. The comparison table on the pricing page also lists service contracts and entitlements, knowledge management, and asset management and product tracking. Assets with serial numbers and hierarchies are standard Salesforce objects.
+More than many expect. The Service Cloud Core edition lists case management and a self-service help center. The comparison table on the pricing page also lists service contracts and entitlements, knowledge management, and asset management and product tracking. Assets with serial numbers and hierarchies are standard Salesforce objects.
 
 So a hotline that takes calls, opens cases, checks a service contract and answers from knowledge articles works on Service Cloud. What it lacks is the manufacturing layer: warranty terms per product and part, claims with payment details per item, asset milestones, participants and fleets, campaigns with causal parts. If you only need a warranty end date on the asset to show the agent, a custom field is enough.
 
@@ -65,7 +65,7 @@ So a hotline that takes calls, opens cases, checks a service contract and answer
 
 I would decide by role, not by department. The example is an assumed machine builder with 45 service users.
 
-| Role | Users | Licence |
+| Role | Users | License |
 |---|---|---|
 | Hotline, first level | 30 | Service Cloud Core |
 | Warranty adjudicators | 10 | Manufacturing Cloud Service Core |
@@ -75,9 +75,9 @@ All 45 on Manufacturing Cloud Service Core cost $148,500 a year at list price. T
 
 Three groups fall outside this table:
 
-- **Field technicians** need Field Service licences either way. The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) lists Technician at $175 and Field Service Plus at $230, requires "at least one (1) Service Cloud user license" and forbids Dispatcher and Technician licences for case management. Whether Field Service pays off is covered in [is Salesforce Field Service worth it](../salesforce-field-service-worth-it/).
-- **Dealers** who submit claims work in a portal with partner licences, see [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
-- **Managers who only read reports** may not need a full licence at all, see [does everyone need a full licence](../salesforce-licences-full-licence-needed/).
+- **Field technicians** need Field Service licenses either way. The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) lists Technician at $175 and Field Service Plus at $230, requires "at least one (1) Service Cloud user license" and forbids Dispatcher and Technician licenses for case management. Whether Field Service pays off is covered in [is Salesforce Field Service worth it](../salesforce-field-service-worth-it/).
+- **Dealers** who submit claims work in a portal with partner licenses, see [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
+- **Managers who only read reports** may not need a full license at all, see [does everyone need a full license](../salesforce-licences-full-licence-needed/).
 
 ```hinweis offen
 One point I would always get in writing: which Manufacturing Cloud records, such as warranty claims or asset warranties, a Service Cloud user may see. The hotline usually needs to read them, even if it never edits them.
@@ -102,7 +102,7 @@ contra: What you take on
 - You own every change yourself
 ```
 
-This is the same make-or-buy question as for the whole industry cloud, covered in [is Manufacturing Cloud worth it](../salesforce-manufacturing-cloud-is-it-worth-it/) and in the [scope and business case chapter](../../masterclass/manufacturing-cloud/scope-and-business-case/). I describe the approach under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
+This is the same make-or-buy question as for the whole industry cloud, covered in [is Manufacturing Cloud worth it](../salesforce-manufacturing-cloud-is-it-worth-it/) and in the [scope and business case chapter](../../masterclass/manufacturing-cloud/scope-and-business-case/). I describe the approach under [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
 
 ## Count the users per role for one region
 

@@ -93,7 +93,7 @@ The technician is the easier start: internal user, known machine, work order as 
 - **Only spare-relevant positions.** The full as-built structure is design knowledge and has no place in a dealer chat.
 - **Free text is untrusted.** Portal fields are entry points for manipulated instructions, see [prompt injection through dealer portals](../prompt-injection-dealer-portals-agentforce/).
 
-Which portal licence lets dealers see assets at all is covered in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
+Which portal license lets dealers see assets at all is covered in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
 
 ## Worked example: 6,000 machines and one seal
 

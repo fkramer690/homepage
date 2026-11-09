@@ -1,7 +1,7 @@
 ---
 title: "Manufacturing Cloud add-ons: what costs extra"
 metaTitle: "Manufacturing Cloud Pricing: what the add-ons cost extra"
-description: "Which Manufacturing Cloud add-ons cost extra, from portal licences to Agentforce and Connected Assets, where Salesforce pages disagree and what to ask."
+description: "Which Manufacturing Cloud add-ons cost extra, from portal licenses to Agentforce and Connected Assets, where Salesforce pages disagree and what to ask."
 pubDate: 2026-10-28
 lang: en
 slug: manufacturing-cloud-add-ons-extra-costs
@@ -9,16 +9,16 @@ translationKey: manufacturing-cloud-add-ons-costs
 topic: governance
 categories: [manufacturing-cloud, architecture]
 contactBrief: licences
-tags: [Manufacturing Cloud, licences, add-ons, Experience Cloud, Agentforce, make-or-buy]
+tags: [Manufacturing Cloud, licenses, add-ons, Experience Cloud, Agentforce, make-or-buy]
 takeaways:
-  - "Portal licences cost $15 per login or $35 per member for customers, $20 or $50 for partners, per month at list price."
+  - "Portal licenses cost $15 per login or $35 per member for customers, $20 or $50 for partners, per month at list price."
   - "The Agentforce add-on costs $150 per month, per user on one page and per login on the other. The unit belongs in the quote."
   - "On Manufacturing Intelligence and rebate management the Salesforce pages contradict each other, on price and on unit."
-  - "In the worked example, Connected Assets and extra Omnistudio calls would double the licence line."
+  - "In the worked example, Connected Assets and extra Omnistudio calls would double the license line."
 faq:
   - q: "What does Salesforce Manufacturing Cloud cost?"
-    a: "According to the pricing page (October 2026), Sales Core and Service Core cost $275 per user and month, the Max editions $650 and Sales and Service Max $700, billed annually. Add-ons come on top: portal licences from $15 per login and month, the Agentforce add-on at $150 per month and Channel Revenue Management at $30,000 per org and year."
-  - q: "What do portal licences for Manufacturing Cloud cost?"
+    a: "According to the pricing page (October 2026), Sales Core and Service Core cost $275 per user and month, the Max editions $650 and Sales and Service Max $700, billed annually. Add-ons come on top: portal licenses from $15 per login and month, the Agentforce add-on at $150 per month and Channel Revenue Management at $30,000 per org and year."
+  - q: "What do portal licenses for Manufacturing Cloud cost?"
     a: "According to the add-ons page in October 2026, Experience Cloud for Manufacturing costs $15 per login or $35 per member per month for Customer Community Plus, and $20 per login or $50 per member for Partner Community, billed annually."
   - q: "Do I need the Agentforce add-on with a Max edition?"
     a: "The add-ons page lists the Agentforce for Manufacturing Cloud Add-on as available with Core and Advanced. The Max editions include the full Agentforce for Industries suite. Agent consumption is billed in Flex Credits either way."
@@ -31,7 +31,7 @@ faq:
 draft: false
 ---
 
-Manufacturing Cloud add-ons cost extra on top of the edition, and almost every manufacturer needs at least one of them: portal licences for dealers and customers, at $15 to $50 per month. The Agentforce add-on at $150 per month, Channel Revenue Management for Manufacturing at $30,000 per org and year and Connected Assets at $15,000 per org and month depend on the process. In an assumed scenario with 150 users and 400 dealers, typical add-ons raise the licence line by about 40 percent. Several Salesforce pages contradict each other on prices and units, so each add-on belongs in the quote with a confirmed price.
+Manufacturing Cloud add-ons cost extra on top of the edition, and almost every manufacturer needs at least one of them: portal licenses for dealers and customers, at $15 to $50 per month. The Agentforce add-on at $150 per month, Channel Revenue Management for Manufacturing at $30,000 per org and year and Connected Assets at $15,000 per org and month depend on the process. In an assumed scenario with 150 users and 400 dealers, typical add-ons raise the license line by about 40 percent. Several Salesforce pages contradict each other on prices and units, so each add-on belongs in the quote with a confirmed price.
 
 ## Which add-ons does Salesforce list for Manufacturing Cloud?
 
@@ -50,13 +50,13 @@ The [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-on
 
 The rest are Feedback Management and survey packs. One oddity: the page lists add-ons as available with "Advanced", while the [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) prices only Core and Max editions, as I noted in [Salesforce editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
 
-## Portal licences for dealers and customers cost $15 to $50 a month
+## Portal licenses for dealers and customers cost $15 to $50 a month
 
-Portal licences are the add-on almost nobody avoids. A member licence belongs to one user, who can log in as often as needed. A login licence is bought as a monthly pool, and according to [Salesforce Help on Experience Cloud licences](https://help.salesforce.com/s/articleView?id=sf.users_license_types_communities.htm&language=en_US&type=5) logging in several times on the same day counts as one daily unique login.
+Portal licenses are the add-on almost nobody avoids. A member license belongs to one user, who can log in as often as needed. A login license is bought as a monthly pool, and according to [Salesforce Help on Experience Cloud licenses](https://help.salesforce.com/s/articleView?id=sf.users_license_types_communities.htm&language=en_US&type=5) logging in several times on the same day counts as one daily unique login.
 
-That gives a simple break-even. A partner member costs $50, a partner login $20, so the member licence pays off from the third login day per month. For customers it is $35 against $15, again from the third day. Dealers who check orders and agreements weekly belong on member licences, those who submit a warranty claim once a quarter on logins.
+That gives a simple break-even. A partner member costs $50, a partner login $20, so the member license pays off from the third login day per month. For customers it is $35 against $15, again from the third day. Dealers who check orders and agreements weekly belong on member licenses, those who submit a warranty claim once a quarter on logins.
 
-Which objects each licence lets external users see, for example sales agreements or rebate claims, is covered in [part 7: the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/). If dealers should order spare parts in a shop with cart and checkout, that is B2B Commerce with its own cost model, see chapter 1 of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/).
+Which objects each license lets external users see, for example sales agreements or rebate claims, is covered in [part 7: the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/). If dealers should order spare parts in a shop with cart and checkout, that is B2B Commerce with its own cost model, see chapter 1 of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/).
 
 ## Agentforce: add-on or Max edition?
 
@@ -117,7 +117,7 @@ A machine builder licenses 150 sales users on Manufacturing Cloud Sales Core and
 | Channel Revenue Management | per org | $30,000 |
 | **Add-ons** | | **$198,000** |
 
-The add-ons raise the licence line by 40 percent. If the same company also wants Connected Assets ($180,000) and outgrows the Omnistudio calls ($120,000), the add-ons cost more than the 150 licences themselves. Implementation, integration and Flex Credits beyond the pool come on top.
+The add-ons raise the license line by 40 percent. If the same company also wants Connected Assets ($180,000) and outgrows the Omnistudio calls ($120,000), the add-ons cost more than the 150 licenses themselves. Implementation, integration and Flex Credits beyond the pool come on top.
 
 ## What should you get in writing before signing?
 
@@ -125,8 +125,8 @@ The add-ons raise the licence line by 40 percent. If the same company also wants
 2. **The Agentforce unit:** per user or per login.
 3. **Rebate management:** included, "from $75" per what, or Channel Revenue Management.
 4. **Manufacturing Intelligence:** $220 or from $165, and what it contains.
-5. **Portal licences per group,** with the objects each group must see.
+5. **Portal licenses per group,** with the objects each group must see.
 6. **Omnistudio and Business Rules Engine:** how calls are counted, and the price of an extra block.
 7. **Add-ons for years two and three** at today's price, if they are on the roadmap.
 
-Not every internal user needs the industry licence either, as described in [does everyone need a full licence?](../salesforce-licences-full-licence-needed/). The full business case is in chapter 1 of the [Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/scope-and-business-case/), and the feature list behind it in [Manufacturing Cloud features: what is in the box](../manufacturing-cloud-features-overview/). Licence forecasts are part of my work on [make-or-buy and licences](../../services/make-or-buy-licences/).
+Not every internal user needs the industry license either, as described in [does everyone need a full license?](../salesforce-licences-full-licence-needed/). The full business case is in chapter 1 of the [Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/scope-and-business-case/), and the feature list behind it in [Manufacturing Cloud features: what is in the box](../manufacturing-cloud-features-overview/). License forecasts are part of my work on [make-or-buy and licenses](../../services/make-or-buy-licences/).

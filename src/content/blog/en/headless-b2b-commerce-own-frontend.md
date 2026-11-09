@@ -20,12 +20,12 @@ faq:
     a: "For guest cart and checkout with JWT, the Salesforce developer guide lists an active Experience Cloud site, a launched web store and a configured domain as prerequisites. For registered buyers the guides I read do not state it explicitly, so I would plan with the site and confirm it in a sandbox."
   - q: "Is there a starter project for a headless B2B storefront?"
     a: "Yes. Salesforce offers a React B2B Storefront Blueprint and a B2B Commerce headless reference app. The reference app's source code is published in the trailheadapps/commerce-b2b-headless repository on GitHub."
-  - q: "Which licence do buyers need in a headless B2B store?"
-    a: "The headless guides I read do not say. For buyers in a standard store, Trailhead names Customer Community Plus, so I would get the licence position for headless buyers confirmed by Salesforce in writing before the business case is final."
+  - q: "Which license do buyers need in a headless B2B store?"
+    a: "The headless guides I read do not say. For buyers in a standard store, Trailhead names Customer Community Plus, so I would get the license position for headless buyers confirmed by Salesforce in writing before the business case is final."
 draft: false
 ---
 
-Headless B2B Commerce means your own website or app is the storefront, while Salesforce B2B Commerce keeps catalogue, prices, cart, checkout and orders and serves them through the Commerce Connect REST APIs. Salesforce lists it as generally available, with a React B2B Storefront Blueprint and a headless reference app as a starting point. I would only go headless when a corporate website or a customer app already exists and a team runs it. Otherwise an LWR store built in Experience Builder is cheaper, because Salesforce hosts it and you do not have to test your own frontend against every Salesforce release.
+Headless B2B Commerce means your own website or app is the storefront, while Salesforce B2B Commerce keeps catalog, prices, cart, checkout and orders and serves them through the Commerce Connect REST APIs. Salesforce lists it as generally available, with a React B2B Storefront Blueprint and a headless reference app as a starting point. I would only go headless when a corporate website or a customer app already exists and a team runs it. Otherwise an LWR store built in Experience Builder is cheaper, because Salesforce hosts it and you do not have to test your own frontend against every Salesforce release.
 
 ## What does headless B2B Commerce mean?
 
@@ -40,7 +40,7 @@ In a normal Salesforce B2B store, the storefront is an Experience Cloud site bui
 
 The product itself carries several names right now. Salesforce Help still says "Salesforce B2B Commerce", while Trailhead writes that B2B Commerce is now [Agentforce Commerce for B2B](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping). Headless works with the same product, there is no separate headless edition.
 
-On the [Commerce innovations page](https://www.salesforce.com/ca/commerce/innovations/), Salesforce marks headless B2B Commerce as "GA Now" and promises "B2B buying anywhere your customers work", naming your site, your app and Slack. The same entry mentions a new React B2B Storefront Blueprint and an extensible checkout. In its [June 2026 release post](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/), Salesforce adds a headless reference app, a working application that shows the recommended API sequences from catalogue to checkout, for teams building with React or Vue. The [developer guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-journey-overview.html) links its source code in the `trailheadapps/commerce-b2b-headless` repository.
+On the [Commerce innovations page](https://www.salesforce.com/ca/commerce/innovations/), Salesforce marks headless B2B Commerce as "GA Now" and promises "B2B buying anywhere your customers work", naming your site, your app and Slack. The same entry mentions a new React B2B Storefront Blueprint and an extensible checkout. In its [June 2026 release post](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/), Salesforce adds a headless reference app, a working application that shows the recommended API sequences from catalog to checkout, for teams building with React or Vue. The [developer guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-journey-overview.html) links its source code in the `trailheadapps/commerce-b2b-headless` repository.
 
 ## Salesforce keeps the data, you run the frontend
 
@@ -48,7 +48,7 @@ The split is clearer than in most architecture discussions, because Salesforce s
 
 | Part | Experience Builder store (LWR) | Headless |
 |---|---|---|
-| Catalogue, entitlements, buyer groups | Salesforce | Salesforce |
+| Catalog, entitlements, buyer groups | Salesforce | Salesforce |
 | Prices, cart, checkout logic, extensions | Salesforce | Salesforce |
 | Order summaries and order history | Salesforce | Salesforce |
 | Page layout, design, routing | Experience Builder | Your frontend code |
@@ -79,7 +79,7 @@ Connect REST API --prepare, submit--> Order summary
 Login is the part you build yourself. For registered buyers, the [headless login guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-login.html) uses the OAuth authorize and token endpoints, supports external identity providers and custom Apex-based authentication, and after login all storefront calls rely on the active session. For guests, Salesforce documents [cart and checkout with a JWT](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-guest-jwt.html): a backend for frontend, a unique visitor ID per guest, and as prerequisites an active Experience Cloud site, a launched web store and a configured domain. Headless therefore does not mean you get rid of the Experience Cloud site.
 
 ```hinweis offen
-Which licence buyers in a headless store need is not stated in the guides I read. For a standard store, Trailhead names Customer Community Plus, see [B2B Commerce buyer licences](../b2b-commerce-buyer-licences/). I would get the headless case confirmed in writing before anyone calculates a business case.
+Which license buyers in a headless store need is not stated in the guides I read. For a standard store, Trailhead names Customer Community Plus, see [B2B Commerce buyer licenses](../b2b-commerce-buyer-licences/). I would get the headless case confirmed in writing before anyone calculates a business case.
 ```
 
 ## Four conditions for headless at a manufacturer
@@ -88,14 +88,14 @@ I see four conditions, and I would want at least the first and the last to be tr
 
 1. **A frontend already exists that buyers use.** A corporate website with product content, or a customer app for machine operators. Duplicating that content in an Experience Cloud site would cost more than connecting it.
 2. **Ordering is one function among others.** In a machine app, ordering wear parts sits next to machine status and documents. A separate shop would break that flow.
-3. **Several channels share one backend.** Website, app and later Slack or an agent all use the same catalogue, prices and orders.
+3. **Several channels share one backend.** Website, app and later Slack or an agent all use the same catalog, prices and orders.
 4. **A frontend team exists for years.** In-house or under a long-term contract, with React skills, its own pipeline and someone who answers when the shop is slow.
 
-Worked example: a machine builder runs a React app in which 3,000 operators see the status of their machines. Adding "order wear parts" to that app through the Connect APIs keeps the buyer in a tool they already open daily. The same manufacturer's 200 dealers, who order spare parts in bulk, are better served by a standard LWR store. Both can run on the same Salesforce catalogue.
+Worked example: a machine builder runs a React app in which 3,000 operators see the status of their machines. Adding "order wear parts" to that app through the Connect APIs keeps the buyer in a tool they already open daily. The same manufacturer's 200 dealers, who order spare parts in bulk, are better served by a standard LWR store. Both can run on the same Salesforce catalog.
 
 Headless is the wrong choice for a first store without a frontend team, or when the main goal is to get dealers off the phone quickly. If you only need a mobile app, the June release post also names Mobile Publisher, which publishes a branded app to the Apple and Google stores without building a headless frontend.
 
-## What does headless cost beyond the licence?
+## What does headless cost beyond the license?
 
 Salesforce sells B2B Commerce as a share of storefront revenue and publishes no percentage, see [B2B Commerce pricing and the GMV model](../b2b-commerce-pricing-gmv-model/). I found no separate price for headless. The real extra cost sits on your side:
 
@@ -108,4 +108,4 @@ The frontend repository and pipeline should belong to you, not to the agency tha
 
 ## Check channels in use and the frontend team
 
-Write down which channels buyers really use today and which one should take orders. Then check whether a frontend team will exist for the next three years. If both answers point to headless, build a short proof with the reference app against a sandbox that holds your real catalogue and your pricing extension, and measure how fast cart and checkout answer with the live ERP call. The data flows behind it are part of the chapter [ERP integration](../../masterclass/b2b-commerce/erp-integration-stock-orders/) in my B2B Commerce masterclass, and I support this kind of decision under [Salesforce integration](../../services/salesforce-integration/).
+Write down which channels buyers really use today and which one should take orders. Then check whether a frontend team will exist for the next three years. If both answers point to headless, build a short proof with the reference app against a sandbox that holds your real catalog and your pricing extension, and measure how fast cart and checkout answer with the live ERP call. The data flows behind it are part of the chapter [ERP integration](../../masterclass/b2b-commerce/erp-integration-stock-orders/) in my B2B Commerce masterclass, and I support this kind of decision under [Salesforce integration](../../services/salesforce-integration/).

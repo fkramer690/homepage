@@ -50,7 +50,7 @@ The authoring side is the strongest part. Trailhead names these capabilities:
 
 For a manufacturer the clause library and the Word integration decide acceptance. Sales wants a contract quickly from the quote; legal wants approved clauses and to negotiate in Word, not in a web form. Salesforce Contracts gives both sides their tool on the same record.
 
-The approval step uses the same logic as quote approvals. If your approval matrix is already modelled for discounts, extend it to non-standard clauses instead of building a second one. How I set up such a matrix is in [discount approvals in Revenue Cloud](../revenue-cloud-discount-approvals/).
+The approval step uses the same logic as quote approvals. If your approval matrix is already modeled for discounts, extend it to non-standard clauses instead of building a second one. How I set up such a matrix is in [discount approvals in Revenue Cloud](../revenue-cloud-discount-approvals/).
 
 ## What happens after signature?
 
@@ -77,7 +77,7 @@ source: Salesforce pricing pages for Salesforce Contracts and Revenue Cloud
 The feature matrix on both pricing pages does not show in readable form which edition includes which contract feature. Get that confirmed before you sign, together with what the DocuSign integration needs on the DocuSign side.
 ```
 
-More on licence planning in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/)
+More on license planning in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/)
 
 ## Sales agreements and service contracts stay separate objects
 
@@ -97,9 +97,9 @@ I would keep or choose a dedicated CLM tool outside Salesforce in these cases:
 
 - **Legal manages all contract types centrally.** Purchasing contracts, NDAs, employment and group contracts belong in one repository, and sales contracts are a small share.
 - **Most contracts are on the customer's paper.** Large OEM customers send their own purchasing terms. Then review and redlining of third-party documents matter more than templates.
-- **Legal does not work in Salesforce.** If lawyers would need a licence only for contract review, the per-user price adds up and adoption suffers.
+- **Legal does not work in Salesforce.** If lawyers would need a license only for contract review, the per-user price adds up and adoption suffers.
 
-In these cases Salesforce creates the commercial data and hands the signed contract over through an integration. A worked example: a supplier of drive components has an in-house legal team with an existing CLM tool for all group contracts. Sales sends 300 standard supply contracts a year from quotes. Here I would generate the standard contracts in Salesforce Contracts with approved clauses and DocuSign, and send only contracts with deviating clauses to legal's tool. That keeps the routine fast and the exceptions with legal. This make-or-buy question is part of my work on [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
+In these cases Salesforce creates the commercial data and hands the signed contract over through an integration. A worked example: a supplier of drive components has an in-house legal team with an existing CLM tool for all group contracts. Sales sends 300 standard supply contracts a year from quotes. Here I would generate the standard contracts in Salesforce Contracts with approved clauses and DocuSign, and send only contracts with deviating clauses to legal's tool. That keeps the routine fast and the exceptions with legal. This make-or-buy question is part of my work on [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
 
 ## Count your customer contracts and sort them into three groups
 

@@ -17,13 +17,13 @@ takeaways:
   - "A partner change costs little when the client owns the process: revoke access, renew certificates, reconcile org and repository."
 articles: [client-owned-devops-tools, pull-request-reviews-enterprise, partners-ai-coding-sow-rules, ai-org-assessment-technical-debt]
 faq:
-  - q: "Who should be release manager in a Salesforce programme?"
+  - q: "Who should be release manager in a Salesforce program?"
     a: "Someone on the client side, ideally an employee. An external consultant can set the role up and run it for a few months but should hand it over to an internal colleague. A partner who delivers work itself should not decide on every partner's releases."
   - q: "May a partner deploy directly to the production org?"
     a: "No. In production only the pipeline deploys, with its own technical user. Partner users in production need neither Modify All Data nor Deploy Change Sets or Author Apex, because each of these permissions opens deployment through the Metadata API."
-  - q: "Do required reviews need a specific Git licence?"
+  - q: "Do required reviews need a specific Git license?"
     a: "On GitHub, protected branches and code owners for private repositories start with GitHub Pro, Team or Enterprise. On GitLab, Code Owners is only in Premium or Ultimate. Check this before you settle on a Git platform."
-  - q: "What happens to the history when a partner leaves the programme?"
+  - q: "What happens to the history when a partner leaves the program?"
     a: "If it sits in your repository and your tool, it stays complete. You only remove the users and renew certificates and integration passwords. If it sits with the partner, you have to export and migrate, often with losses."
 draft: false
 ---
@@ -32,34 +32,34 @@ In a Salesforce release process, repository, pipeline, DevOps tool, sandboxes an
 
 ## What should you own as the client?
 
-[Chapter 1](../release-management-basics/) set the baseline: the release process belongs to you. In practice, the contracts, licences and admin rights for the building blocks below are in your name. Owning does not mean running your own servers. A cloud GitHub organisation is fine, as long as it is yours.
+[Chapter 1](../release-management-basics/) set the baseline: the release process belongs to you. In practice, the contracts, licenses and admin rights for the building blocks below are in your name. Owning does not mean running your own servers. A cloud GitHub organization is fine, as long as it is yours.
 
 | Building block | Owned by | Partners get |
 |---|---|---|
-| Git repository and organisation on the Git platform | you, with at least two internal admins | write access to feature branches, no admin rights |
+| Git repository and organization on the Git platform | you, with at least two internal admins | write access to feature branches, no admin rights |
 | Pipeline configuration and CI variables | you | read access, changes only by pull request |
-| DevOps tool (sfdx-hardis configuration, Gearset team, Copado or Flosum org) | you | a personal licence or user, assigned by you |
+| DevOps tool (sfdx-hardis configuration, Gearset team, Copado or Flosum org) | you | a personal license or user, assigned by you |
 | Production, sandboxes, Dev Hub | you | one user per person, rights to match the stage |
 | Certificates, technical users, integration access to SAP | you, in your own vault | no direct access |
 | Backlog, wiki, standards | you | edit rights in the project |
 
-What this looks like depends on the product. With sfdx-hardis the configuration lives as files in the repository, so whoever owns the repository owns the process. In Gearset, according to the [Gearset docs](https://docs.gearset.com/en/articles/2477938-team-ownership-and-management), only team owners manage licence assignment, and anyone removed from the team immediately loses access to the shared history, while the history stays with the team. That is exactly the behaviour you want, but only if the team is yours. Flosum is Salesforce-native according to the [vendor](https://www.flosum.com/), so it runs on the Salesforce platform itself. Make sure the org Flosum runs in belongs to you. Which tool fits you is compared in [chapter 4](../devops-tools-compared/). For this chapter one point matters: whoever holds the tool's contract decides who has access.
+What this looks like depends on the product. With sfdx-hardis the configuration lives as files in the repository, so whoever owns the repository owns the process. In Gearset, according to the [Gearset docs](https://docs.gearset.com/en/articles/2477938-team-ownership-and-management), only team owners manage license assignment, and anyone removed from the team immediately loses access to the shared history, while the history stays with the team. That is exactly the behavior you want, but only if the team is yours. Flosum is Salesforce-native according to the [vendor](https://www.flosum.com/), so it runs on the Salesforce platform itself. Make sure the org Flosum runs in belongs to you. Which tool fits you is compared in [chapter 4](../devops-tools-compared/). For this chapter one point matters: whoever holds the tool's contract decides who has access.
 
 Why the same applies to Jira, Confluence and Miro, and how to plan a move when a partner owns parts of it today, is covered in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
 
 ## Which roles does a release process need?
 
-Programmes with several partners easily develop the same gap: each partner owns its stream, nobody owns the whole. Four roles close it. In small programmes one person can hold two roles, but the responsibility still has to be named.
+Programs with several partners easily develop the same gap: each partner owns its stream, nobody owns the whole. Four roles close it. In small programs one person can hold two roles, but the responsibility still has to be named.
 
 - **Release manager (client side).** Owns the pipeline, the release calendar and every promotion from integration through UAT to production. The [sfdx-hardis release manager guide](https://sfdx-hardis.cloudity.com/salesforce-devops-release-home/) describes the job well: check validation jobs, solve conflicts, merge into the major branches, ship hotfixes and bring them back into the build branches afterwards, produce release notes and DORA metrics. According to the same page, one or two team members take this role, and on small projects a tech lead or senior admin can do it part time.
 - **Architect (client side).** Writes the development and architecture standards, approves architecture-relevant changes (new objects, integrations, sharing, the permission model) and decides when two streams need the same object. Which stream owns which object is set out in an [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/).
 - **Technical lead per partner.** Makes sure the team's pull requests arrive complete, small and checked, does the first review within the stream and supplies the input for the release notes. Has no approval rights for stages that affect other partners.
 - **Product owner in the business.** For example the head of service for Field Service or the head of sales for the dealer portal. Accepts stories in UAT and decides from a business point of view whether a feature goes live for users with the next release.
 
-The release role is the one programmes most often save on. My position, which I have set out in several articles: if you save licence costs with an open-source tool such as sfdx-hardis, the money is best invested in an internal release role. The same holds for commercial platforms such as Gearset, Copado or Flosum. Their advantage is that roles and approvals can be set up in one interface and the vendor provides support; a person on your side still has to own the approvals. More on this in [why DevOps decides Salesforce enterprise projects](../../../blog/why-devops-matters-salesforce-enterprise/).
+The release role is the one programs most often save on. My position, which I have set out in several articles: if you save license costs with an open-source tool such as sfdx-hardis, the money is best invested in an internal release role. The same holds for commercial platforms such as Gearset, Copado or Flosum. Their advantage is that roles and approvals can be set up in one interface and the vendor provides support; a person on your side still has to own the approvals. More on this in [why DevOps decides Salesforce enterprise projects](../../../blog/why-devops-matters-salesforce-enterprise/).
 
 ```praxis
-In one programme I supported, every pull request went across my desk at first. Once the process was stable, I handed it over to an internal colleague. That is the path I recommend: build it with outside help, hand it over internally.
+In one program I supported, every pull request went across my desk at first. Once the process was stable, I handed it over to an internal colleague. That is the path I recommend: build it with outside help, hand it over internally.
 ```
 
 ## Approvals in a matrix and in the Git platform
@@ -103,7 +103,7 @@ So check in production, UAT and staging which partner users hold one of these pe
 I am an architect, not a lawyer. The points below describe what I want to see in writing from a technical point of view. Your legal department turns them into clauses. I recommend one annex to the framework contract that applies identically to every partner, instead of renegotiating rules in every statement of work.
 
 1. **Work happens in your tools.** Code, tickets and documentation are created in your repository and your backlog, with personal, named users. Shared logins are ruled out.
-2. **The tool is fixed.** The choice is made at the start of the programme and applies to every partner. Whoever joins later does not bring their own release tool.
+2. **The tool is fixed.** The choice is made at the start of the program and applies to every partner. Whoever joins later does not bring their own release tool.
 3. **Every change by pull request.** Including flows, permission sets and layouts. Nobody changes anything directly in Setup in integration, UAT, staging or production.
 4. **Standards and review rules apply.** The client's standards document is part of the contract, as are agreed response times for reviews.
 5. **Definition of done.** Tests with real asserts, a pull request description that links to the story, documented pre and post deployment steps.

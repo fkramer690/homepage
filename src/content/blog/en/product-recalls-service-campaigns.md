@@ -11,8 +11,8 @@ tags: [Manufacturing Cloud, recalls, product service campaigns, dealers, after-s
 takeaways:
   - "Product service campaigns exist since API 51.0. Each affected machine becomes one campaign item with its own status."
   - "Since API 65.0 the model adds serial ranges, production batches, causal parts, partners and unsold dealer stock."
-  - "Dealers and service partners carry out the work. Work orders and appointments are Field Service and need its licences."
-  - "Neither the pricing page nor the reference names the licence for the campaigns themselves. That belongs in the quote, in writing."
+  - "Dealers and service partners carry out the work. Work orders and appointments are Field Service and need its licenses."
+  - "Neither the pricing page nor the reference names the license for the campaigns themselves. That belongs in the quote, in writing."
 faq:
   - q: "What is a product service campaign in Salesforce?"
     a: "A product service campaign represents a set of activities to be performed on a group of assets, for example a recall for safety issues or product defects, a fix or an upgrade. Each affected asset is a product service campaign item with its own status. The object is available from API version 51.0."
@@ -70,13 +70,13 @@ In the data model this becomes a campaign and a group definition. The causal ite
 
 ## Who carries out the work?
 
-Usually dealers and service partners, sometimes the manufacturer's own technicians. Work orders, service appointments and technician scheduling belong to Field Service and need Field Service licences. How partner technicians work in it is covered in [Field Service service partners](../salesforce-field-service-service-partners/) and in the [Field Service masterclass chapter on assets and parts](../../masterclass/field-service/field-service-assets-maintenance-parts/).
+Usually dealers and service partners, sometimes the manufacturer's own technicians. Work orders, service appointments and technician scheduling belong to Field Service and need Field Service licenses. How partner technicians work in it is covered in [Field Service service partners](../salesforce-field-service-service-partners/) and in the [Field Service masterclass chapter on assets and parts](../../masterclass/field-service/field-service-assets-maintenance-parts/).
 
-Dealers without Field Service report through the portal. Which licence that needs is covered in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/). Whichever path you choose, completion must be reported per machine, not per dealer as a number, or the campaign status in Salesforce is fiction.
+Dealers without Field Service report through the portal. Which license that needs is covered in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/). Whichever path you choose, completion must be reported per machine, not per dealer as a number, or the campaign status in Salesforce is fiction.
 
 ## When is a list in the quality system enough?
 
-Not every manufacturer needs this data model. For small actions, a list of serial numbers in the quality system plus one work order or case per machine is enough. The overhead of definitions, partners and partner inventory only pays off at scale. I would use product service campaigns when several of the points in their favour apply:
+Not every manufacturer needs this data model. For small actions, a list of serial numbers in the quality system plus one work order or case per machine is enough. The overhead of definitions, partners and partner inventory only pays off at scale. I would use product service campaigns when several of the points in their favor apply:
 
 ```pro-contra
 pro: What speaks for service campaigns
@@ -101,10 +101,10 @@ These are the questions I would answer in writing before building:
 2. **Who pays?** Parts, labour for the dealer and travel. The causal item covers supplier recovery; how dealers get paid for labour, through claims or a flat rate, is your decision.
 3. **How is completion reported?** Per machine, with date and who did it, through work order, portal or claim.
 
-Then there is the licence question:
+Then there is the license question:
 
 ```hinweis offen
-The [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) does not mention service campaigns, and the reference pages name no licence. Get Salesforce to confirm in writing which licence covers product service campaigns.
+The [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) does not mention service campaigns, and the reference pages name no license. Get Salesforce to confirm in writing which license covers product service campaigns.
 ```
 
 I walk through the reporting route from question 3 with two dealers before the first campaign starts. The full after-sales picture is in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.

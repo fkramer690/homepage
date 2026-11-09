@@ -12,11 +12,11 @@ takeaways:
   - "The help pages document three subagents. None of them is described as working on account forecasts."
   - "I could not find the proactive alerts on build plan deviations from the 2025 announcement in the help pages."
   - "Without a daily actuals feed per customer, product and period, the agent reports gaps that do not exist."
-  - "Not every feature labelled Agentforce Manufacturing is an agent. Ask which subagent, action and licence stand behind it."
+  - "Not every feature labeled Agentforce Manufacturing is an agent. Ask which subagent, action and license stand behind it."
 faq:
   - q: "What is Agentforce for Sales Planning?"
     a: "An agent template for Manufacturing Cloud. According to Salesforce Help, it answers questions about sales agreements, generates performance summaries, assists with visits and emails, bulk updates sales agreements and converts program component forecasts to opportunities."
-  - q: "Which licence does the Sales Planning agent need?"
+  - q: "Which license does the Sales Planning agent need?"
     a: "Salesforce Help names Enterprise, Performance or Unlimited Edition with the Agentforce for Manufacturing add-on, or Agentforce 1 Manufacturing Edition, and every user needs the add-on to access the action. Clarify with your account team how this maps to the new Max editions."
   - q: "Does the Sales Planning agent work on account forecasts?"
     a: "The help page for the template does not name account forecasts in its body, and none of the three documented subagents is about them. Recalculating forecasts exists as a Flow action, which a custom agent action could call, but that is your own build."
@@ -33,7 +33,7 @@ Agentforce for Sales Planning is an agent template for Manufacturing Cloud that 
 
 Salesforce announced Agentforce for Manufacturing on [21 August 2025](https://salesforce.com/news/stories/agentforce-for-manufacturing-announcement) and said the Sales Planning template was "available today". The announcement describes an agent that can "monitor and alert" sales and operations staff "to notable deviations in build plans based on planned and actual product sales". Based on these deviations, it "can automatically schedule an onsite visit" with "proposed talking points for the account team".
 
-The [help page for the template](https://help.salesforce.com/s/articleView?id=ind.mfg_gen_ai_agentforce_sales_planning_agent.htm&language=en_US&type=5) is more modest. The agent "can answer questions about your sales agreements, generate performance summaries, and assist with related actions such as setting up visits or drafting emails". It can also "perform bulk updates on sales agreements, and update records based on related data". For Program Based Business, the Manufacturing Cloud area for manufacturing programmes, it converts program component forecast records to opportunities.
+The [help page for the template](https://help.salesforce.com/s/articleView?id=ind.mfg_gen_ai_agentforce_sales_planning_agent.htm&language=en_US&type=5) is more modest. The agent "can answer questions about your sales agreements, generate performance summaries, and assist with related actions such as setting up visits or drafting emails". It can also "perform bulk updates on sales agreements, and update records based on related data". For Program Based Business, the Manufacturing Cloud area for manufacturing programs, it converts program component forecast records to opportunities.
 
 | Topic | Announcement, August 2025 | Help page, October 2026 |
 |---|---|---|
@@ -55,7 +55,7 @@ Trailhead now calls the product itself Agentforce Manufacturing. The [Trailhead 
 
 The same naming shows up in the forecast settings. Trailhead writes that "Agentforce Manufacturing also generates forecasts automatically for new products at the start of each adjustment period". In the [same unit](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/define-account-forecast-settings) this is the forecast recalculation at the start of each adjustment period, a scheduled calculation. No subagent or prompt is involved.
 
-I do not mind the branding. It becomes a problem in a vendor workshop when "the agent forecasts your new products" ends up in the business case. My question in such a meeting is always the same: which subagent, which action, which licence, and where is it in the help pages?
+I do not mind the branding. It becomes a problem in a vendor workshop when "the agent forecasts your new products" ends up in the business case. My question in such a meeting is always the same: which subagent, which action, which license, and where is it in the help pages?
 
 ## How far does the agent really work on sales agreements and account forecasts?
 
@@ -106,7 +106,7 @@ Then a price increase for one product family has to go into 60 agreements. The b
 
 ## What would I check before switching it on?
 
-1. **Licence.** Add-on per user, Agentforce 1 Manufacturing Edition or a Max edition: get it in writing. Consumption on top is covered in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
+1. **License.** Add-on per user, Agentforce 1 Manufacturing Edition or a Max edition: get it in writing. Consumption on top is covered in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
 2. **Actuals feed.** Live, daily, reconciled with the ERP for the 20 largest agreements.
 3. **Limits.** Bulk update and summary tested with your largest agreement.
 4. **Language.** The help says the user interface is available in English only and may not be fully supported in other languages. Test with German questions from your sales team.

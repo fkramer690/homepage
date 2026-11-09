@@ -36,7 +36,7 @@ None of the pages I opened explains how the agent picks the manual for a given a
 
 ## Machine builders' manuals confuse an agent
 
-A machine builder rarely has one manual per product. Take a machining centre in three variants, with a new control from a certain build year, a retrofit on some units and a service bulletin for serial numbers 4100 to 4380 only. A technician asks about spindle alarm 2041. If three manual versions describe that alarm differently, the retriever returns the chunk that fits the wording best, and the agent presents the wrong procedure as confidently as the right one.
+A machine builder rarely has one manual per product. Take a machining center in three variants, with a new control from a certain build year, a retrofit on some units and a service bulletin for serial numbers 4100 to 4380 only. A technician asks about spindle alarm 2041. If three manual versions describe that alarm differently, the retriever returns the chunk that fits the wording best, and the agent presents the wrong procedure as confidently as the right one.
 
 Two more traps are specific to industrial documents:
 
@@ -56,7 +56,7 @@ The asset is the anchor. According to [Trailhead](https://trailhead.salesforce.c
 | Language | EN, DE | one answer language per technician |
 | Status and valid from | released, March 2026 | superseded states stay out |
 
-The key has to be the one the asset already carries. If the asset says "MC-800" and the PDF is called "Machining centre 800 Rev C", nothing links the two. That is the master data question from [master data for scheduling](../salesforce-field-service-master-data/): if many assets have no product link, no document model fixes the answers.
+The key has to be the one the asset already carries. If the asset says "MC-800" and the PDF is called "Machining center 800 Rev C", nothing links the two. That is the master data question from [master data for scheduling](../salesforce-field-service-master-data/): if many assets have no product link, no document model fixes the answers.
 
 Maintenance procedures with fixed steps need no search at all. Knowledge articles can be attached to work types, and according to [Trailhead](https://trailhead.salesforce.com/content/learn/projects/modify-the-field-service-center/create-a-work-type) "a work type's attached articles show up on work orders and work order line items that use the work type." For a planned 2,000-hour service I would attach the procedure there and leave the unplanned fault to the agent.
 

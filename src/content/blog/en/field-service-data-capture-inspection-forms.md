@@ -50,7 +50,7 @@ The status changes with every mobile release, so it is worth knowing where it st
 - **Mobile release 260.0 (Spring '26).** The [Salesforce release post in the Trailblazer Community](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000j9vu70AA) marks Data Capture Voice to Form as GA. Technicians dictate, the app transcribes and fills the form fields. The same post lists a lookup component that also works offline, a multi-image preview and the option to launch forms from assets, custom objects and mobile timesheets. These carry no GA label in the post, so check their status in your org before you plan with them.
 - **Winter '27.** The [release highlights on Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) add Voice to Form in Spanish, Japanese, Italian, French and German.
 
-German voice input makes the feature relevant for many service organisations in the DACH region. It also processes employees' speech, which brings in data protection and, where one exists, the works council. I described those questions in [Salesforce Field Service mobile: guided work and voice](../salesforce-field-service-mobile-guided-voice/). For the form design it means: decide which fields may be filled by voice and which values the technician confirms by hand, for example a measured value that affects safety.
+German voice input makes the feature relevant for many service organizations in the DACH region. It also processes employees' speech, which brings in data protection and, where one exists, the works council. I described those questions in [Salesforce Field Service mobile: guided work and voice](../salesforce-field-service-mobile-guided-voice/). For the form design it means: decide which fields may be filled by voice and which values the technician confirms by hand, for example a measured value that affects safety.
 
 ## Which answers should become fields?
 
@@ -68,7 +68,7 @@ This is the decision I would make before the first form. A form answer is fine f
 
 Two rules follow from this table. A form does not ask for anything that already exists on the asset or the work order, such as serial number, customer or machine type. And consumption is booked as products consumed, never as a free text field in the form, otherwise the van stock and the ERP do not see it.
 
-Readings on the asset connect the form to maintenance planning. How maintenance plans and entitlements fit together is covered in [Field Service: how to model maintenance contracts](../salesforce-field-service-maintenance-contracts/). This is classic [architecture work](../../services/salesforce-architecture/) and belongs to the service organisation as much as to IT.
+Readings on the asset connect the form to maintenance planning. How maintenance plans and entitlements fit together is covered in [Field Service: how to model maintenance contracts](../salesforce-field-service-maintenance-contracts/). This is classic [architecture work](../../services/salesforce-architecture/) and belongs to the service organization as much as to IT.
 
 ## How does the form relate to the service report?
 

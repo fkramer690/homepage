@@ -2,6 +2,7 @@
 title: "From Quote to Sales Agreement: the Configurator"
 description: "How manufacturers carry configured products from the quote into a Salesforce sales agreement, what the configurator has to settle and where approvals belong."
 pubDate: 2026-10-26
+updatedDate: 2026-11-09
 lang: en
 slug: quote-to-sales-agreement-product-configurator
 translationKey: manufacturing-cloud-quote-to-agreement
@@ -11,7 +12,7 @@ tags: [Manufacturing Cloud, Sales Agreements, CPQ, Product Configurator, Manufac
 series: { id: manufacturing-cloud, part: 2 }
 takeaways:
   - "What gets configured are properties with a cost effect, such as physical and chemical criteria, raw materials or certificates."
-  - "Every variant that should be planned in the sales agreement needs its own product identity that the ERP knows too."
+  - "Every variant that should be planned in the sales agreement needs an identity that Salesforce and the ERP share."
   - "The Connect API creates a sales agreement from a quote, an opportunity or a custom object. A mapping defines the fields."
   - "Salesforce CPQ is no longer sold to new customers. The options are Revenue Cloud Advanced, partner products and a custom approach."
 faq:
@@ -22,7 +23,7 @@ faq:
   - q: "What does a product configurator configure at a manufacturer?"
     a: "Everything that matters to the end customer and affects the manufacturer's price or cost. In my project that meant physical and chemical criteria such as grind size, the raw materials and certificates such as halal."
   - q: "Does every configuration need its own product?"
-    a: "Every variant that is planned and measured in a sales agreement needs its own product identity, because the agreement holds quantities per product and actuals from the ERP have to be matched to a product."
+    a: "Every variant that is planned and measured in a sales agreement needs an identity that Salesforce and the ERP share, because the agreement holds quantities per product and actuals from the ERP have to be matched to it."
 draft: false
 ---
 
@@ -48,21 +49,21 @@ In the project we took a custom CPQ approach. Whether that would be the right ch
 
 - **How well does the standard model fit?** Off-the-shelf configurators are often built for options and bills of materials. Product properties with a cost effect do not always fit that model.
 - **Who maintains the rules?** A custom configurator is your own code, which has to be tested with every release and maintained by someone.
-- **What does the licence cost over several years?** A standard product costs per user, a custom approach costs development and maintenance.
+- **What does the license cost over several years?** A standard product costs per user, a custom approach costs development and maintenance.
 
-How I calculate such cases is described under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/). Whether Manufacturing Cloud itself pays off is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
+How I calculate such cases is described under [make-or-buy and license forecasts](../../services/make-or-buy-licences/). Whether Manufacturing Cloud itself pays off is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
 ## When does a configuration become a product?
 
 A sales agreement plans quantities per product. According to the [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_salesagreement.htm), it belongs to an account and a price book, and for each product you enter a total quantity that Salesforce spreads across the periods. The actuals that later come from the ERP are matched to a product as well.
 
-So every configured variant that should be planned and measured in a sales agreement needs its own product identity. In Salesforce that is a product record, in the ERP usually a material number. Without a link between the two, actuals land on the wrong product or never reach the agreement.
+So every configured variant that should be planned and measured in a sales agreement needs an identity that Salesforce and the ERP share. In my project that was a product record in Salesforce and a material number in the ERP for each variant. Without a link between the two, actuals land on the wrong product or never reach the agreement. A business that plans at a coarser level can put the identity at that level, as long as the ERP actuals can be matched to it.
 
 For the design, that means deciding early:
 
 1. **Which properties create a new product?** If a different grind size changes the material number in the ERP, it is a separate product. If it only changes the price, an attribute on the quote may be enough.
 2. **Who creates the product?** When a new variant appears in a quote, it has to be created in the ERP before it can be ordered. That is a process with an approval, usually outside sales.
-3. **How does the catalogue grow?** If almost every configuration is unique, the product catalogue grows fast. A rule for when a variant is reused helps.
+3. **How does the catalog grow?** If almost every configuration is unique, the product catalog grows fast. A rule for when a variant is reused helps.
 
 How actuals then get from the ERP into the sales agreement is covered in [part 3: sales agreements, spotting customers behind on volume](../sales-agreements-volume-shortfall-erp/).
 
@@ -93,11 +94,11 @@ The term row is easy to miss. According to Trailhead, Salesforce calculates the 
 
 According to Trailhead, a sales agreement always starts as a draft, gets approved and activates automatically on its start date. Which raises the next question.
 
-## The price is approved in exactly one place
+## Each commercial decision is approved once
 
 A quote with configured products often needs an approval, because the price depends on the configuration and therefore on cost. The sales agreement has its own approval step, which an admin can also switch off, according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better).
 
-I recommend approving the price once, on the quote, where the configuration and its cost are visible. If the agreement is created directly from the approved quote, its own approval can be lighter or dropped. Two approvals for the same price cost time and raise the question of which one counts when they differ.
+I recommend approving the price once, on the quote, where the configuration and its cost are visible. If the agreement is created directly from the approved quote, its own approval can be lighter or dropped. Two approvals for the same price cost time and raise the question of which one counts when they differ. The agreement approval keeps the decisions only the agreement contains, such as term, volume commitment and renewal.
 
 When something changes later, such as a new variant or a new price during the term, the route repeats: configuration, quote, approval, agreement update. In my project, customers could also request new products and prices themselves through the customer portal. How the portal fits in is covered in a later part of this series.
 

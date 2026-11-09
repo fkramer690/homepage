@@ -22,7 +22,7 @@ faq:
   - q: "How many lines can a B2B Commerce cart hold?"
     a: "According to the Salesforce cart limits, most stores limit cart size to 500 line items per order. With large cart support enabled, a store can process up to 2,000 line items per order."
   - q: "What is the Salesforce reorder portal?"
-    a: "A small Commerce service that focuses buyers on their past orders. Sales reps invite buyers from sales cadences or the order record. Integrating it with Sales Cloud requires an Agentforce Commerce licence and an enabled Digital Experience."
+    a: "A small Commerce service that focuses buyers on their past orders. Sales reps invite buyers from sales cadences or the order record. Integrating it with Sales Cloud requires an Agentforce Commerce license and an enabled Digital Experience."
   - q: "Can several people at a dealer work on the same cart?"
     a: "Salesforce lists multi-cart live collaboration for January 2027: several users build and review the same cart at the same time, with role permissions and an audit trail. Before that date, plan with one cart per user."
 draft: false
@@ -34,7 +34,7 @@ Dealers reorder fastest in Salesforce B2B Commerce when the store offers the way
 
 Most spare parts and consumables a dealer buys are items they have bought before. The dealer knows the part number, often the quantity, and wants the order done in a minute. If the store makes them search for each part again, they go back to email or the phone, and inside sales types the order into the ERP as before.
 
-So in a manufacturer's B2B store I look at reorder paths before I look at the product detail page. Search and catalogue matter for new parts; reorders carry the volume. Salesforce now also markets the product as "Agentforce Commerce for B2B", and all reorder features below belong to the same product.
+So in a manufacturer's B2B store I look at reorder paths before I look at the product detail page. Search and catalog matter for new parts; reorders carry the volume. Salesforce now also markets the product as "Agentforce Commerce for B2B", and all reorder features below belong to the same product.
 
 ## Four ways to reorder in Salesforce B2B Commerce
 
@@ -80,9 +80,9 @@ Salesforce lists multi-cart live collaboration on the innovations page as "GA Ja
 
 ## When is the reorder portal enough?
 
-The reorder portal is a lighter option for companies that do not want a full store. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal), it is a Commerce micro-service that focuses buyers on their past orders: view orders, change quantities, place new orders, check status. Sales reps invite buyers through sales cadences or from the order record. Integrating the portal with Sales Cloud requires an Agentforce Commerce licence and an enabled Digital Experience; Trailhead says it can be installed and configured in 30 minutes, built from a template with LWR components.
+The reorder portal is a lighter option for companies that do not want a full store. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal), it is a Commerce micro-service that focuses buyers on their past orders: view orders, change quantities, place new orders, check status. Sales reps invite buyers through sales cadences or from the order record. Integrating the portal with Sales Cloud requires an Agentforce Commerce license and an enabled Digital Experience; Trailhead says it can be installed and configured in 30 minutes, built from a template with LWR components.
 
-My view: the reorder portal fits when a sales team wants repeat orders from a few hundred existing customers and has no catalogue project. Once dealers need to find new parts, see buyer-specific assortments or import long lists, the full store is the better base.
+My view: the reorder portal fits when a sales team wants repeat orders from a few hundred existing customers and has no catalog project. Once dealers need to find new parts, see buyer-specific assortments or import long lists, the full store is the better base.
 
 ## Worked example: 180 dealers, two thirds repeat orders
 

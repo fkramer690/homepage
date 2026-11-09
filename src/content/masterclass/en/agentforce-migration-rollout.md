@@ -10,7 +10,7 @@ pubDate: 2026-10-28
 short: "Agents, migration, rollout"
 summary: "Buyer Agent and Merchandising Agent, the path from Aura to LWR and rolling out to dealers in waves."
 takeaways:
-  - "The Buyer Agent answers dealer questions from the store's catalogue, prices and orders, so it makes errors in that data visible faster."
+  - "The Buyer Agent answers dealer questions from the store's catalog, prices and orders, so it makes errors in that data visible faster."
   - "Salesforce lists the Buyer Agent as generally available since June 2026. The complete order in the chat is dated January 2027."
   - "Contract prices, credit limits and delivery dates come from the store and the ERP, never from the language model. Every dealer message is untrusted input."
   - "There is no retirement date for Aura stores as of 27 October 2026. Migrate to LWR when features, growing Aura code or a new checkout call for it."
@@ -18,7 +18,7 @@ takeaways:
 articles: [commerce-buyer-agent-whatsapp, commerce-merchandising-agent, commerce-aura-to-lwr-migration, commerce-dealer-rollout, commerce-kpis-after-go-live, prompt-injection-dealer-portals, multilingual-dealer-agents, distributor-replenishment-agent]
 faq:
   - q: "Should a manufacturer launch the B2B store with the Buyer Agent from day one?"
-    a: "I advise against it. The agent answers from the store's catalogue, entitlements, prices and orders. If that data is not right yet, dealers see the errors in a chat instead of on a product page. Launch the store, check the first wave, then add order status and reorder in the chat."
+    a: "I advise against it. The agent answers from the store's catalog, entitlements, prices and orders. If that data is not right yet, dealers see the errors in a chat instead of on a product page. Launch the store, check the first wave, then add order status and reorder in the chat."
   - q: "Do I have to move an Aura B2B store to LWR soon?"
     a: "There is no deadline. As of 27 October 2026 Aura stores are not on the list of active retirements, and the migration guide names no date. Salesforce recommends LWR for new stores. Decide by the features you need and by the amount of your own Aura code."
   - q: "How long does rolling out a B2B store to dealers take?"
@@ -32,7 +32,7 @@ Agents belong in a B2B store that already works. The Buyer Agent answers dealer 
 
 ## Where does the store stand after the first four chapters?
 
-This chapter assumes what the previous ones described: a decision for Salesforce B2B Commerce from [chapter 1](../b2b-commerce-worth-it-overview/), a catalogue with buyer groups and entitlements, customer prices and checkout on account, and an ERP integration that [chapter 4](../erp-integration-stock-orders/) used to settle what is called live and who owns the order. Salesforce now also markets the product as ["Agentforce Commerce for B2B"](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping). The new name shows where Salesforce is taking it.
+This chapter assumes what the previous ones described: a decision for Salesforce B2B Commerce from [chapter 1](../b2b-commerce-worth-it-overview/), a catalog with buyer groups and entitlements, customer prices and checkout on account, and an ERP integration that [chapter 4](../erp-integration-stock-orders/) used to settle what is called live and who owns the order. Salesforce now also markets the product as ["Agentforce Commerce for B2B"](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping). The new name shows where Salesforce is taking it.
 
 My order for the rest is still sober: first the store with the first dealers, then KPIs, then agents. An agent reads the same buyer groups, price books and order summaries as the storefront. If an entitlement is wrong, it shows the wrong part in the chat, just faster and in more convincing words.
 
@@ -50,7 +50,7 @@ Salesforce offers two kinds of agents for B2B Commerce. One talks to dealers, th
 
 You create the Buyer Agent from the template "Buyer Agent (B2B)". According to Trailhead it searches products by name, category or specification, shows past and current orders with their status and reorders by copying a past order. Salesforce's [June 2026 blog post](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) lists it under "GA June 2026" and names WhatsApp and SMS as channels. The complete order in the chat, with confirmation and payment at contract price, is dated January 2027 on the [Commerce innovations page](https://www.salesforce.com/ca/commerce/innovations/) under the name Carter for Buyers.
 
-The prerequisites are broader than the name suggests. Trailhead lists Agentforce Commerce for B2B, Service Cloud or Sales and Service Edition, the Agentforce and Einstein for Service add-ons, and Einstein generative AI with Data 360. If you run only Sales Cloud next to the store, you buy more than an agent. I found no separate price for the Buyer Agent on the official pages. How to estimate agent costs anyway is covered in the AI chapter on [costs and tokens](../../ai-salesforce/costs-and-tokens/). Subagents, channels and licences in detail are in [B2B Buyer Agent: ordering through WhatsApp and SMS](../../../blog/b2b-buyer-agent-whatsapp-ordering/).
+The prerequisites are broader than the name suggests. Trailhead lists Agentforce Commerce for B2B, Service Cloud or Sales and Service Edition, the Agentforce and Einstein for Service add-ons, and Einstein generative AI with Data 360. If you run only Sales Cloud next to the store, you buy more than an agent. I found no separate price for the Buyer Agent on the official pages. How to estimate agent costs anyway is covered in the AI chapter on [costs and tokens](../../ai-salesforce/costs-and-tokens/). Subagents, channels and licenses in detail are in [B2B Buyer Agent: ordering through WhatsApp and SMS](../../../blog/b2b-buyer-agent-whatsapp-ordering/).
 
 For export dealers, language comes on top. Which languages Agentforce agents handle, what translation costs and how to keep knowledge per language is covered in [multilingual Agentforce agents for export dealers](../../../blog/multilingual-agentforce-agents-export-dealers/). Check for the Buyer Agent itself which languages are released for your dealer countries.
 
@@ -58,7 +58,7 @@ For export dealers, language comes on top. Which languages Agentforce agents han
 
 The [B2B pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) lists Merchant Agent under Agentforce in both Growth and Advanced. The innovations page dates the Merchandising Agent for B2B to August 2026: it boosts or buries products in search, creates products and manages buyer accounts in conversation. The [Trailhead unit on the merchandising skills](https://trailhead.salesforce.com/content/learn/modules/agentforce-merchant-quick-look/get-to-know-your-merchant-agent) adds summaries of order value and conversion, and promotions from templates that a person reviews before they go live.
 
-In a spare parts catalogue, boost and bury is the useful part: superseded part numbers down, successor parts and repair kits up. The [search limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html) allow 100 boost and bury rules per store, whether a person or an agent creates them. Material number, unit and sales status stay in the ERP or PIM. My table of what the agent may and may not change is in [Merchandising Agent: what it does for a parts catalog](../../../blog/merchandising-agent-parts-catalog/).
+In a spare parts catalog, boost and bury is the useful part: superseded part numbers down, successor parts and repair kits up. The [search limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html) allow 100 boost and bury rules per store, whether a person or an agent creates them. Material number, unit and sales status stay in the ERP or PIM. My table of what the agent may and may not change is in [Merchandising Agent: what it does for a parts catalog](../../../blog/merchandising-agent-parts-catalog/).
 
 ## Why must the agent never make up a price?
 
@@ -86,7 +86,7 @@ pro: Migrate when one of these applies
 - A feature you need is missing in the Aura store or hard to build there; check each feature in the release notes and documentation
 - Custom Aura code keeps growing, and every new component is code you will rewrite later
 - Checkout has to change anyway, for example for a new credit check in the ERP
-- The partner who built the store is leaving the programme
+- The partner who built the store is leaving the program
 contra: What speaks for waiting
 - There is no retirement date
 - The move is a rebuild of the storefront
@@ -97,7 +97,7 @@ Even if you wait, I would take the first step: replace Aura components in the ru
 
 ## Rolling out to dealers in waves by buyer group
 
-A B2B store shows every dealer its own catalogue and its own prices. A big bang therefore shows every data error to every dealer on the same day. The data model makes waves easy: buyers reach the store through buyer groups, so a wave is the set of buyer groups you connect to the store.
+A B2B store shows every dealer its own catalog and its own prices. A big bang therefore shows every data error to every dealer on the same day. The data model makes waves easy: buyers reach the store through buyer groups, so a wave is the set of buyer groups you connect to the store.
 
 - **Pilot first.** Dealers with many repeat orders of known parts, an honest contact person and few special conditions.
 - **Buyer managers at the dealer.** According to Salesforce they get Customer Community Plus with B2B Commerce Super User and Delegated External User Administration. With that they create users for their own account, reset passwords and deactivate users without a ticket to your service desk.

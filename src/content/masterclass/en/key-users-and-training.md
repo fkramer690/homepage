@@ -22,7 +22,7 @@ faq:
   - q: "How many key users does a manufacturer need?"
     a: "One per team, site or country, two for critical areas. If the only key user of a country is out in the week after go-live, support for the whole country is out."
   - q: "Does a key user replace support?"
-    a: "No. They answer questions about usage but do not change configuration or fix interface errors. Bugs still go through the ticket system so they are counted and prioritised."
+    a: "No. They answer questions about usage but do not change configuration or fix interface errors. Bugs still go through the ticket system so they are counted and prioritized."
 draft: false
 ---
 
@@ -49,7 +49,7 @@ In acceptance testing key users are the best testers, because they know which ca
 
 Often the key user is whoever happens to have room in their calendar. That is the worst choice. Each of my criteria has a reason in the ADKAR model:
 
-| Criterion | How you recognise it | Stage it supports |
+| Criterion | How you recognize it | Stage it supports |
 |---|---|---|
 | Standing | The team already turns to this person for advice, whatever the system | Desire: the team accepts advice from a respected colleague |
 | Process knowledge | They know the daily reality of quote, order or service job in the team, exceptions included | Knowledge: they translate the system into the team's own cases |

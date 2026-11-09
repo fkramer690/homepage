@@ -1,6 +1,6 @@
 ---
 title: "Salesforce Object Ownership Matrix: Who Owns What?"
-description: "Several partners on one Salesforce org? An object ownership matrix sets who owns which object. Structure, rules and lessons from a programme with 8 streams."
+description: "Several partners on one Salesforce org? An object ownership matrix sets who owns which object. Structure, rules and lessons from a program with 8 streams."
 pubDate: 2026-10-26
 lang: en
 slug: salesforce-object-ownership-matrix
@@ -12,21 +12,21 @@ tags: [partner governance, object ownership matrix, governance, pull request rev
 takeaways:
   - "When a team changes another stream's object, it agrees the change with the owner first, so fields, flows and triggers do not overwrite each other."
   - "Shared objects like Account need one owner and one automation entry point, because Salesforce does not guarantee the order of several triggers."
-  - "In my programme with more than 30 developers in eight streams, the matrix and standards were stable after about three months."
-  - "The matrix is enforced in pull request reviews and regular centre of excellence calls, not by a page in the wiki."
+  - "In my program with more than 30 developers in eight streams, the matrix and standards were stable after about three months."
+  - "The matrix is enforced in pull request reviews and regular center of excellence calls, not by a page in the wiki."
 faq:
   - q: "What is an object ownership matrix in Salesforce?"
     a: "A simple table that sets which stream or team owns each Salesforce object and its metadata. Other teams agree changes with the owner before they touch the object."
   - q: "Who should own the object ownership matrix?"
-    a: "The client, for example through an architect or a centre of excellence. If a partner defines the matrix, it also decides what its competitors are allowed to build."
+    a: "The client, for example through an architect or a center of excellence. If a partner defines the matrix, it also decides what its competitors are allowed to build."
   - q: "What happens to objects every team needs?"
     a: "Account or Contact also get exactly one owner. The other teams submit their requirements, and the owner builds them into the object's shared automation."
   - q: "How long does it take to introduce an object ownership matrix?"
-    a: "The first version takes a few weeks. In my largest programme it took about three months until the matrix and standards were stable and new edge cases became rare."
+    a: "The first version takes a few weeks. In my largest program it took about three months until the matrix and standards were stable and new edge cases became rare."
 draft: false
 ---
 
-A Salesforce object ownership matrix defines which stream owns which object and its metadata in an org. If another team wants to change the object, it agrees the change with the owner first. That sounds trivial, which is exactly why the matrix is missing in many programmes with several implementation partners. In my largest programme, with more than 30 developers in eight streams and five partners, it was one of the two elements that made the biggest difference.
+A Salesforce object ownership matrix defines which stream owns which object and its metadata in an org. If another team wants to change the object, it agrees the change with the owner first. That sounds trivial, which is exactly why the matrix is missing in many programs with several implementation partners. In my largest program, with more than 30 developers in eight streams and five partners, it was one of the two elements that made the biggest difference.
 
 ## What is an object ownership matrix?
 
@@ -41,17 +41,17 @@ Ownership means more than "created the object". The owning stream decides on:
 
 Other streams may use the object, read it and work with it in their processes. If they want to change it, they go to the owner.
 
-## Why does a programme with several partners need one?
+## Why does a program with several partners need one?
 
-In a small org, one admin knows every change. In a programme with several partners, teams work on the same objects at the same time, often without knowing about each other. Account is the classic example: sales needs it for opportunities, service for cases, field service for jobs and the ERP team for the interface.
+In a small org, one admin knows every change. In a program with several partners, teams work on the same objects at the same time, often without knowing about each other. Account is the classic example: sales needs it for opportunities, service for cases, field service for jobs and the ERP team for the interface.
 
 Without clear ownership, every team builds its own automation on Account. That gets risky quickly. According to the [Salesforce Architect decision guide on record-triggered automation](https://architect.salesforce.com/docs/architect/decision-guides/guide/record-triggered), the platform does not guarantee the execution order of several Apex triggers on the same object and event. The guide recommends one trigger per object and advises against mixing Flow and Apex as entry points on the same object.
 
-Five teams with five approaches on one object follow none of these recommendations. The results are familiar to anyone who has worked in such programmes: two automations set the same field, one deployment overwrites another team's layout, and a production bug cannot be traced to any team.
+Five teams with five approaches on one object follow none of these recommendations. The results are familiar to anyone who has worked in such programs: two automations set the same field, one deployment overwrites another team's layout, and a production bug cannot be traced to any team.
 
-## How it went in my programme with eight streams
+## How it went in my program with eight streams
 
-When I joined the programme, nobody had clearly defined which team led on which processes, objects and metadata. Changes overwrote each other, and the teams' technical approaches were far apart.
+When I joined the program, nobody had clearly defined which team led on which processes, objects and metadata. Changes overwrote each other, and the teams' technical approaches were far apart.
 
 The first step was to route every change through a pull request with a review. For a while, every single one went across my desk. From those reviews we wrote down standards, including naming conventions, one automation per object and context, and test coverage. Two elements made the biggest difference: the object ownership matrix, and rules for configuration, such as which values belong in custom metadata types or custom labels instead of being hard-coded.
 
@@ -69,7 +69,7 @@ note: Before a team changes another team's object, it coordinates with the owner
 The rule was simple: before a team changed another stream's object, it had to agree the change with the owner. In the simplified example above, sales owns Account, Opportunity and Quote, service owns Case and Asset, and field service owns Work Order.
 
 ```praxis
-It took about three months until the standards were stable. The first version covered around 80 percent of cases. Edge cases came up afterwards, and we discussed them in regular centre of excellence calls. Eventually they almost disappeared, because upcoming changes came up early enough, before they turned into conflicts.
+It took about three months until the standards were stable. The first version covered around 80 percent of cases. Edge cases came up afterwards, and we discussed them in regular center of excellence calls. Eventually they almost disappeared, because upcoming changes came up early enough, before they turned into conflicts.
 ```
 
 ## What belongs in the matrix?
@@ -91,7 +91,7 @@ A table in the wiki changes nothing on its own. The matrix only works once it is
 
 - **In the pull request review.** If a change touches another stream's object, the reviewer asks whether the owner agreed. How such reviews work is described in [why pull request reviews are a must in enterprise projects](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 - **Technically in the repository.** Once the metadata lives in Git, parts of the matrix can be mapped, on GitHub with a CODEOWNERS file.
-- **In the centre of excellence.** Regular calls where streams present upcoming changes to shared objects, with enough lead time for everyone else. How to set one up is in [Salesforce Center of Excellence: format and cadence](../salesforce-center-of-excellence-cadence/).
+- **In the center of excellence.** Regular calls where streams present upcoming changes to shared objects, with enough lead time for everyone else. How to set one up is in [Salesforce Center of Excellence: format and cadence](../salesforce-center-of-excellence-cadence/).
 
 ```vertiefung For developers
 title: How does CODEOWNERS map the matrix?
@@ -108,6 +108,6 @@ A first matrix is ready sooner than most people expect:
 2. **Assign one stream to each object**, even when the decision for Account or Contact is uncomfortable.
 3. **Record the automation entry point per object** and allow new automation only there.
 4. **Ask about it in every review**, from day one.
-5. **Settle edge cases in the centre of excellence** and update the matrix.
+5. **Settle edge cases in the center of excellence** and update the matrix.
 
-In my experience the first version is never complete, and it does not need to be. You start with 80 percent, and the reviews deliver the rest. More on how I steer programmes with several partners is on the [partner governance](../../services/partner-governance/) page.
+In my experience the first version is never complete, and it does not need to be. You start with 80 percent, and the reviews deliver the rest. More on how I steer programs with several partners is on the [partner governance](../../services/partner-governance/) page.

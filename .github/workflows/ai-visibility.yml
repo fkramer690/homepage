@@ -1,11 +1,12 @@
 name: AI visibility
 
-# Monthly check whether ChatGPT, Claude, Gemini, Perplexity and Google AI Mode
+# Check every second Monday whether ChatGPT, Claude, Gemini, Perplexity and Google AI Mode
 # name or cite fk-sd.de for the questions in seo/ai-prompts.json (DataForSEO).
 # Stored on the "stats" branch, plus the rows the analytics dashboard reads.
+# Started every second Monday (every 14 days from 2026-11-09) at 5:47 Berlin time by the daily dashboard
+# task (a Claude scheduled task), together with rankings.yml, so the result is in the
+# dashboard by 7:30. No cron here, so the task is its only automatic start.
 on:
-  schedule:
-    - cron: '50 4 1 * *'
   workflow_dispatch:
 
 permissions:

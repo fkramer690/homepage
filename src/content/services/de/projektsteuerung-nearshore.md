@@ -1,13 +1,13 @@
 ---
 title: "Salesforce-Programmsteuerung und Nearshore-Teams"
 headline: "Nearshore-Teams für Salesforce, die stabil liefern"
-description: "Planung und Steuerung von Salesforce-Programmen inklusive Nearshore-Entwicklungsteams in Osteuropa und Indien, mit Team-Setups, die stabil bleiben."
+description: "Planung und Steuerung von Salesforce-Programmen mit Nearshore-Teams in Osteuropa und Offshore-Teams in Indien, in Team-Setups, die stabil bleiben."
 lang: de
 slug: projektsteuerung-nearshore
 translationKey: service-nearshore
 contactBrief: nearshore
 order: 5
-lead: "Nearshore-Teams können viel zu einem vernünftigen Preis liefern, wenn das Setup stimmt. Die meisten Probleme haben wenig mit Skills zu tun und viel mit Teamgröße, Fluktuation und Kultur. Ich plane und steuere Salesforce-Programme auf Kundenseite, inklusive Nearshore-Teams in Osteuropa und Indien."
+lead: "Nearshore-Teams können viel zu einem vernünftigen Preis liefern, wenn das Setup stimmt. Die meisten Probleme haben wenig mit Skills zu tun und viel mit Teamgröße, Fluktuation und Kultur. Ich plane und steuere Salesforce-Programme auf Kundenseite, inklusive Nearshore-Teams in Osteuropa und Offshore-Teams in Indien."
 situations:
   - "Ein Salesforce-Programm braucht mehr Umsetzungskapazität, als das interne Team und die aktuellen Partner liefern können."
   - "Ein Nearshore-Team ist im Einsatz, aber die Geschwindigkeit bleibt niedrig, und der Kunde verbringt viel Zeit mit Erklären und Korrigieren."
@@ -39,11 +39,17 @@ phases:
 duration: "Plan und Partnerauswahl 4 bis 8 Wochen. Bis ein neues Team voll liefert, vergehen 2 bis 3 Monate. Die Steuerung läuft danach über die Programmlaufzeit, meist 12 Monate und mehr."
 faq:
   - q: "Wie groß sollte ein Nearshore-Team für Salesforce sein?"
-    a: "Etwa acht Entwickler. Wird mehr Kapazität gebraucht, plane ich ein weiteres Team mit eigenem Verantwortungsbereich, weil in einem großen Team die Abstimmung schneller wächst als die Leistung."
+    a: "Höchstens acht Entwickler. Wird mehr Kapazität gebraucht, plane ich ein weiteres Team mit eigenem Verantwortungsbereich, weil in einem großen Team die Abstimmung schneller wächst als die Leistung."
   - q: "Was macht Nearshore-Teams erfolgreich?"
     a: "Ein Partner, der Werte und Vertrauen teilt und liefern will, und ein Kunde, der Zeit, Zugänge und Entscheidungen bereitstellt. Fehlende Skills sind nach meiner Erfahrung selten der Grund, warum ein Team kämpft."
   - q: "Was bremst Nearshore-Teams aus?"
     a: "Vor allem häufige Wechsel in der Besetzung, ob durch Rotation beim Partner oder durch Kündigungen, weil jedes Mal Wissen über die Org verloren geht. Ein Team aus lauter Seniors bremst ebenfalls: Es diskutiert Entwürfe, statt zu bauen."
+  - q: "Ersetzen Sie unseren Umsetzungspartner?"
+    a: "Nein. Ihre Partner bauen weiter, ich steuere sie auf Kundenseite nach gemeinsamen Regeln. Wenn Sie einen Partner ablösen wollen, helfe ich dabei, ohne Wissensverlust und ohne Verzögerung im Programm."
+  - q: "Wie vermeiden Sie, dass Sie zum Engpass werden?"
+    a: "Ich arbeite transparent. Entscheidungen, Standards und Review-Kriterien sind so dokumentiert, dass Ihr Team und Ihre Partner sie sehen, damit niemand auf mich warten muss und die Arbeit nicht an mir hängt."
+  - q: "Arbeiten Sie vor Ort oder remote?"
+    a: "Beides. Ich arbeite vor Ort mit Ihren Teams und remote, je nachdem, was die Phase des Programms braucht."
 blogTags: [nearshore, pull request review, code quality, codequalität, devops, projektmanagement]
 readMore: [nearshore-team-size, development-standards-definition-of-done, pull-request-reviews-enterprise, salesforce-center-of-excellence, salesforce-uat-business-testing, nearshore-teams-with-ai-agents, smaller-teams-ai-native-delivery]
 masterclass: devops
@@ -53,7 +59,7 @@ Programmsteuerung auf Kundenseite heißt, ein Salesforce-Programm über interne 
 
 ## Warum tun sich Nearshore-Teams schwer?
 
-Selten wegen fehlender Skills. Wenn ich ein laufendes Nearshore-Setup übernehme, finde ich fast immer dieselben vier Ursachen, und jede lässt sich im Setup beheben. Die Begründung im Detail steht in [Nearshore-Teams für Salesforce: Warum höchstens acht?](../../blog/nearshore-teams-salesforce-acht-entwickler/).
+Selten wegen fehlender Skills. Wenn ich ein laufendes Nearshore-Setup übernehme, finde ich fast immer dieselben vier Ursachen, und das Setup kann die Wirkung jeder einzelnen verringern. Die Begründung im Detail steht in [Nearshore-Teams für Salesforce: Warum höchstens acht?](../../blog/nearshore-teams-salesforce-acht-entwickler/).
 
 ```vergleich
 ohne: Was ich in schwachen Setups vorfinde
@@ -72,12 +78,12 @@ mit: Was ich stattdessen aufsetze
 
 ```kennzahlen
 8 | Entwickler pro Team, höchstens
-2 | Regionen: Osteuropa und Indien
+2 | Regionen: Osteuropa (Nearshore) und Indien (Offshore)
 1 | Pipeline mit denselben Standards für alle Teams
 quelle: meine Nearshore-Teams in Salesforce-Programmen
 ```
 
-Jedes Team, das ich aufsetze, bleibt bei etwa acht Entwicklern. Mehr Kapazität bedeutet ein weiteres Team mit eigenem Stream, nicht ein größeres. Warum die Grenze gerade dort liegt, rechne ich im Blogartikel zur Teamgröße vor.
+Jedes Team, das ich aufsetze, hat höchstens acht Entwickler. Mehr Kapazität bedeutet ein weiteres Team mit eigenem Stream, nicht ein größeres. Warum die Grenze gerade dort liegt, rechne ich im Blogartikel zur Teamgröße vor.
 
 Bei der Partnerauswahl zählen für mich Kultur und der Wille zu liefern so viel wie Zertifikate. Dazu gehört die Frage, wie der Partner Besetzung und Rotation regelt, denn genau dort entscheidet sich, ob das Team nach einem halben Jahr noch dasselbe ist.
 

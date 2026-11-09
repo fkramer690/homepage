@@ -13,7 +13,7 @@ takeaways:
   - "One Agentforce action costs 20 Flex Credits, which is $0.10 at the list price of $500 per 100,000 credits; the same action in a sandbox costs 16 credits."
   - "The Core, Advanced and Max editions include 500,000, 1 million and 2.75 million Flex Credits per org and year; if the pool runs out, you buy more credits."
   - "Decisions the ERP already makes, the shop floor itself and rare expert questions do not belong in an agent in Salesforce."
-  - "Gartner expects more than 40 percent of agentic AI projects to be cancelled by the end of 2027. A fixed go or no-go date protects the budget."
+  - "Gartner expects more than 40 percent of agentic AI projects to be canceled by the end of 2027. A fixed go or no-go date protects the budget."
 faq:
   - q: "Is Agentforce worth it for a mid-sized manufacturer?"
     a: "It is worth it when one process has thousands of similar requests per month, the data behind it is maintained and the ERP can be reached through an API. For rare or highly technical questions the cost of building, testing and maintaining an agent rarely pays back."
@@ -44,7 +44,7 @@ An agent pays back through repetition. A process with a few hundred requests a m
 
 ### 2. Does the data hold?
 
-An agent reads what is in the system, and unlike an experienced service rep it does not know which fields to distrust. For a machine builder that means installed base with serial numbers, warranty start dates, spare part master data and maintained knowledge articles. Gartner [predicts](https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk) that through 2026 organisations will abandon 60 percent of AI projects that lack AI-ready data. Why I check data before anything else is in [business value and data quality first](../agentforce-business-value-data-quality-first/).
+An agent reads what is in the system, and unlike an experienced service rep it does not know which fields to distrust. For a machine builder that means installed base with serial numbers, warranty start dates, spare part master data and maintained knowledge articles. Gartner [predicts](https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk) that through 2026 organizations will abandon 60 percent of AI projects that lack AI-ready data. Why I check data before anything else is in [business value and data quality first](../agentforce-business-value-data-quality-first/).
 
 ### 3. Can the agent reach the ERP?
 
@@ -65,7 +65,7 @@ source: Salesforce Flex Credits rate card (as of 31 August 2026) and Agentforce 
 The rate for Headless Platform Interactions, the meter for agentic API and MCP calls, is still listed as "TBA" in the rate card.
 ```
 
-Data 360 also charges 150 credits per MB for unstructured documents such as manuals and spare part catalogues. How to estimate this per action is the topic of [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
+Data 360 also charges 150 credits per MB for unstructured documents such as manuals and spare part catalogs. How to estimate this per action is the topic of [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
 
 ### 5. Which edition are you on?
 
@@ -81,7 +81,7 @@ Assume a machine builder with SAP, Sales Cloud and Service Cloud, a dealer netwo
 
 **Troubleshooting for special machines.** Assume 40 cases a month, each different, with the knowledge in the heads of four senior technicians. Volume is low, the risk of a wrong answer is high, and there are hardly any written articles to ground on. For now this stays with the technicians.
 
-One of three is ready. In my judgement that is a normal ratio, and one solid start beats three parallel pilots.
+One of three is ready. In my judgment that is a normal ratio, and one solid start beats three parallel pilots.
 
 ## Where Salesforce is not the answer
 
@@ -91,13 +91,13 @@ Part of an honest decision is naming where an agent in Salesforce does not belon
 - **The shop floor.** Machine data, MES and production orders have their own systems. Salesforce comes in when a machine needs service, not while it runs.
 - **Rare expert questions.** Low volume plus high risk means the build and test effort never pays back.
 - **Routine work without language.** If a process has no free text and no dialogue, a Flow or an ERP job does it cheaper. Gartner also recommends [automation for routine workflows](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) and agents for decisions.
-- **Users outside Salesforce.** If your service team works in SAP and Teams all day, buying Salesforce licences only to run an agent rarely pays off.
+- **Users outside Salesforce.** If your service team works in SAP and Teams all day, buying Salesforce licenses only to run an agent rarely pays off.
 
-These questions are part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/), because sometimes the cheapest agent is the one you do not build in Salesforce.
+These questions are part of my [make-or-buy and license planning](../../services/make-or-buy-licences/), because sometimes the cheapest agent is the one you do not build in Salesforce.
 
 ## Pick one process and one target number
 
-Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be cancelled by the end of 2027, citing rising costs, unclear business value and inadequate risk controls. These steps address all three:
+Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be canceled by the end of 2027, citing rising costs, unclear business value and inadequate risk controls. These steps address all three:
 
 ```schritte
 Pick one process

@@ -20,8 +20,8 @@ faq:
   - q: "Which dealers should be in the pilot?"
     a: "Dealers with many repeat orders of known parts, a contact who will give honest feedback and a manageable range of special conditions. They show quickly whether search, prices and checkout work, and they benefit most from the store."
   - q: "Who manages dealer users in a Salesforce B2B store?"
-    a: "Your admin enables accounts and contacts as buyers. With Delegated External User Administration, a buyer manager at the dealer can create and edit users, reset passwords and activate or deactivate users of their own account. Salesforce supports this for Customer Community Plus and Partner Community licences, among others."
-  - q: "What licence do dealer users need for a B2B store?"
+    a: "Your admin enables accounts and contacts as buyers. With Delegated External User Administration, a buyer manager at the dealer can create and edit users, reset passwords and activate or deactivate users of their own account. Salesforce supports this for Customer Community Plus and Partner Community licenses, among others."
+  - q: "What license do dealer users need for a B2B store?"
     a: "Trailhead names Customer Community Plus for buyers and buyer managers. The Salesforce list price for Experience Cloud for Manufacturing is $35 per member or $15 per login per month, billed annually."
 draft: false
 ---
@@ -30,7 +30,7 @@ Roll out a B2B shop to dealers in waves, by buyer group, and start with pilot de
 
 ## Why waves instead of one go-live?
 
-A B2B store shows every dealer their own catalogue and their own prices. That is its value, and it is also its risk. A wrong entitlement hides parts a dealer needs, a wrong price book shows a price the sales team never agreed. With a big bang, these errors reach all dealers on the same day, and inside sales spends the first weeks explaining instead of selling.
+A B2B store shows every dealer their own catalog and their own prices. That is its value, and it is also its risk. A wrong entitlement hides parts a dealer needs, a wrong price book shows a price the sales team never agreed. With a big bang, these errors reach all dealers on the same day, and inside sales spends the first weeks explaining instead of selling.
 
 Salesforce's data model makes waves natural. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model), buyers are connected to stores through buyer groups. A buyer group bundles buyer accounts with the same needs and carries their entitlement policies, which decide which products they see, and their price books. A store can have several buyer groups. So a wave is simply the set of buyer groups that you connect to the store, and you can test each group before its dealers get access. How to structure those groups is covered in [Buyer groups and entitlements](../buyer-groups-entitlements-product-visibility/).
 
@@ -49,11 +49,11 @@ Leave the largest dealer out of the pilot unless it fits these criteria. A bad f
 
 ## What do buyer managers do?
 
-Salesforce distinguishes buyers and buyer managers. According to Salesforce, buyers get Customer Community Plus with the B2B Commerce User permission set. Buyer managers get the same licence with B2B Commerce Super User, the Manage Account Address permission and Delegated External User Administration. A buyer manager approves purchases and manages buyers, and according to the [data model module](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) can also view the purchases and carts of their buyers.
+Salesforce distinguishes buyers and buyer managers. According to Salesforce, buyers get Customer Community Plus with the B2B Commerce User permission set. Buyer managers get the same license with B2B Commerce Super User, the Manage Account Address permission and Delegated External User Administration. A buyer manager approves purchases and manages buyers, and according to the [data model module](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) can also view the purchases and carts of their buyers.
 
 [Delegated External User Administration](https://help.salesforce.com/s/articleView?id=platform.networks_DPUA.htm&language=en-us&type=5) is what makes waves cheap to run. Users with this permission can create and edit members, reset passwords and activate or deactivate members for the account they manage. A dealer's purchasing lead can then onboard a new colleague without a ticket at your service desk. Plan one buyer manager per dealer before the wave starts and walk them through user admin in a short call.
 
-Licences belong in the plan too. According to the [Experience Cloud for Manufacturing page](https://www.salesforce.com/manufacturing/cloud/experience-cloud/), Customer Community Plus is sold per member or per login, billed annually. Which variant fits depends on how often dealers order, see [B2B Commerce buyer licences](../b2b-commerce-buyer-licences/). Large dealer groups with many locations need one more check on the Account Switcher, which lets a buyer order for several accounts; the limit is in the [Salesforce limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html).
+Licenses belong in the plan too. According to the [Experience Cloud for Manufacturing page](https://www.salesforce.com/manufacturing/cloud/experience-cloud/), Customer Community Plus is sold per member or per login, billed annually. Which variant fits depends on how often dealers order, see [B2B Commerce buyer licenses](../b2b-commerce-buyer-licences/). Large dealer groups with many locations need one more check on the Account Switcher, which lets a buyer order for several accounts; the limit is in the [Salesforce limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html).
 
 ```kennzahlen
 $35 | Customer Community Plus per member per month

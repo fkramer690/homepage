@@ -17,11 +17,11 @@ faq:
   - q: "What is Salesforce Revenue Cloud?"
     a: "Revenue Cloud is Salesforce's quote-to-cash product on the core platform. It covers product catalog, pricing, configurator, quotes and orders, contracts, order orchestration and, as an add-on, billing."
   - q: "Is Revenue Cloud worth it for a small product range?"
-    a: "Usually not. With few products, few variants and prices calculated in SAP, Sales Cloud quotes with an ERP interface cover the need at a much lower licence cost."
+    a: "Usually not. With few products, few variants and prices calculated in SAP, Sales Cloud quotes with an ERP interface cover the need at a much lower license cost."
   - q: "Do I need Sales Cloud for Revenue Cloud?"
     a: "Yes. According to the Salesforce pricing page, Revenue Cloud is a paid add-on that you buy in addition to a Sales Cloud subscription."
   - q: "Can I still buy Salesforce CPQ instead?"
-    a: "Not as a new customer. Salesforce no longer sells CPQ licences to new customers. Existing customers can keep using it, add users and renew."
+    a: "Not as a new customer. Salesforce no longer sells CPQ licenses to new customers. Existing customers can keep using it, add users and renew."
 draft: false
 ---
 
@@ -45,7 +45,7 @@ The product has had several names, among them Revenue Lifecycle Management and A
 For a new project one option has dropped out.
 
 ```hinweis achtung
-According to the [Salesforce CPQ end-of-sale page](https://www.salesforce.com/sales/cpq/end-of-life/), Salesforce no longer sells CPQ licences to new customers.
+According to the [Salesforce CPQ end-of-sale page](https://www.salesforce.com/sales/cpq/end-of-life/), Salesforce no longer sells CPQ licenses to new customers.
 ```
 
 The same page describes CPQ as a managed package and Revenue Cloud Advanced as its successor, built natively on the platform. Existing CPQ customers can keep using it, add users and renew, and there is no forced migration.
@@ -84,7 +84,7 @@ The [pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-managem
 
 The FAQ on the same page states that Revenue Cloud is a paid add-on bought in addition to a Sales Cloud subscription. Revenue Cloud Billing is a separate add-on with the price on request.
 
-A calculation at list price, as an assumption: 50 sales users who create quotes get Revenue Cloud Advanced. That is 50 × €200 × 12 = €120,000 a year. If these users do not have Sales Cloud yet, Sales Cloud Core at €195 per user and month adds €117,000. Implementation, the SAP integration and maintenance come on top. Who really needs a licence is the job of a licence forecast, as described in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/). Editions and add-ons in detail are in [Revenue Cloud pricing: Growth, Advanced and add-ons](../revenue-cloud-editions-pricing/).
+A calculation at list price, as an assumption: 50 sales users who create quotes get Revenue Cloud Advanced. That is 50 × €200 × 12 = €120,000 a year. If these users do not have Sales Cloud yet, Sales Cloud Core at €195 per user and month adds €117,000. Implementation, the SAP integration and maintenance come on top. Who really needs a license is the job of a license forecast, as described in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/). Editions and add-ons in detail are in [Revenue Cloud pricing: Growth, Advanced and add-ons](../revenue-cloud-editions-pricing/).
 
 ## Worked example: 400 quotes a month, one in ten is a project
 
@@ -92,7 +92,7 @@ A component maker sells valves and drives in about 3,000 variants. Most of the b
 
 For the 360 standard quotes a month, Revenue Cloud adds little. The price comes from SAP either way, and the dealer conditions would have to be rebuilt or queried for every quote. For the 40 project quotes it looks different: options with rules, a contract with a term and later amendments are exactly what the product is built for.
 
-My recommendation in such a case: first decide whether SAP stays the price master, then license only the project sales team. With 15 users on Advanced that is €36,000 a year at list price instead of six figures for the whole sales organisation. How the price master decision works is covered in [Customer prices: SAP conditions or Salesforce Pricing?](../customer-prices-sap-conditions-or-salesforce-pricing/).
+My recommendation in such a case: first decide whether SAP stays the price master, then license only the project sales team. With 15 users on Advanced that is €36,000 a year at list price instead of six figures for the whole sales organization. How the price master decision works is covered in [Customer prices: SAP conditions or Salesforce Pricing?](../customer-prices-sap-conditions-or-salesforce-pricing/).
 
 ## Settle price master and invoice owner before choosing a partner
 

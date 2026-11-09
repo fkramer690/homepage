@@ -47,7 +47,7 @@ Review
   By a person who only sees changes that have passed steps 1 to 3.
 ```
 
-Your Git platform does the blocking. On GitHub, a protected branch can require, according to the [documentation](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches), a set number of approvals and passing status checks. I would switch on two options in every programme with several partners: approvals are dismissed when new commits arrive, and "Do not allow bypassing the above settings", because without it the rules do not apply to administrators. If partners have admin rights on the repository, branch protection is otherwise just a suggestion.
+Your Git platform does the blocking. On GitHub, a protected branch can require, according to the [documentation](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches), a set number of approvals and passing status checks. I would switch on two options in every program with several partners: approvals are dismissed when new commits arrive, and "Do not allow bypassing the above settings", because without it the rules do not apply to administrators. If partners have admin rights on the repository, branch protection is otherwise just a suggestion.
 
 ## Why are reviews mandatory, even with good automation?
 
@@ -67,7 +67,7 @@ For a production deployment, the [Apex Developer Guide](https://developer.salesf
 
 What I want to see in the definition of done instead is almost word for word in the same guide:
 
-- **Real asserts** using the methods of the `Assert` class to check business behaviour.
+- **Real asserts** using the methods of the `Assert` class to check business behavior.
 - **Positive and negative cases**, valid and invalid inputs.
 - **Bulk tests with at least 20 records**, so a trigger does not hit governor limits during the nightly import of order status from SAP.
 - **Tests with `runAs`** in different user contexts, for example as a service technician or as a dealer in the portal.
@@ -147,6 +147,6 @@ A machine builder runs Service Cloud with Field Service for its field technician
 
 An admin from the first partner builds a record-triggered flow on the work order that updates the related appointments when the status changes, with an update element inside a loop. In the sandbox it works with one order. In the pull request, the Flow Scanner reports `DbInLoop` and `MissingFaultHandler`, both above the threshold, and the merge is blocked. The admin moves the update after the loop, adds a fault path and two flow tests.
 
-In the validation deployment, an Apex test from the second partner then fails: the bulk test of the SAP import class creates 200 work orders and now runs through the new flow. Without that test, the problem would have shown up during the nightly import in production. Finally, the review by the client's architect settles the business question no tool asks: whether the appointment on a cancelled order should be deleted or only cancelled.
+In the validation deployment, an Apex test from the second partner then fails: the bulk test of the SAP import class creates 200 work orders and now runs through the new flow. Without that test, the problem would have shown up during the nightly import in production. Finally, the review by the client's architect settles the business question no tool asks: whether the appointment on a canceled order should be deleted or only canceled.
 
-Which configuration data such flows need in sandboxes for tests to mean something is covered in [chapter 7](../data-and-configuration/). How I support programmes with this is described under [DevOps and release management](../../../services/devops-release-management/) and [partner governance](../../../services/partner-governance/).
+Which configuration data such flows need in sandboxes for tests to mean something is covered in [chapter 7](../data-and-configuration/). How I support programs with this is described under [DevOps and release management](../../../services/devops-release-management/) and [partner governance](../../../services/partner-governance/).

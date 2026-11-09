@@ -28,7 +28,7 @@ faq:
 draft: false
 ---
 
-A B2B store on Salesforce shows customer prices from price books by default. That covers list prices and dealer tiers. If your prices come from SAP condition logic or contracts, you need either a live call to the ERP through the pricing extension or Advanced Pricing powered by Revenue Cloud, which is a second licence. Large or unusual quantities go through Request for Quote. At checkout dealers pay with a purchase order, and the store first asks the ERP about credit limit and order block. Reordering is where the volume is. The most important decision in this chapter is still a written one: which system is the price master.
+A B2B store on Salesforce shows customer prices from price books by default. That covers list prices and dealer tiers. If your prices come from SAP condition logic or contracts, you need either a live call to the ERP through the pricing extension or Advanced Pricing powered by Revenue Cloud, which is a second license. Large or unusual quantities go through Request for Quote. At checkout dealers pay with a purchase order, and the store first asks the ERP about credit limit and order block. Reordering is where the volume is. The most important decision in this chapter is still a written one: which system is the price master.
 
 ## Where do prices in a B2B store come from?
 
@@ -41,7 +41,7 @@ When a buyer has access to several price books, the [pricing strategy](https://h
 
 I would start with Priority Price when dealers sit in several buyer groups, such as country and tier. Best Price rewards every overlap that slips in by accident during a data load.
 
-For quantity tiers, the pricing data model contains Price Adjustment Schedule and Price Adjustment Tier. Tiered pricing also appears in the list of Revenue Management features. Check which variant covers your tiers in a prototype before you buy licences.
+For quantity tiers, the pricing data model contains Price Adjustment Schedule and Price Adjustment Tier. Tiered pricing also appears in the list of Revenue Management features. Check which variant covers your tiers in a prototype before you buy licenses.
 
 The [price book limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-price-book-limits.html) shape the design early:
 
@@ -77,9 +77,9 @@ Whichever route you choose, one question needs an answer before go-live: which p
 
 ## When does the store need Advanced Pricing from Revenue Cloud?
 
-The third option is a pricing engine inside Salesforce. [Salesforce Help on Agentforce Revenue Management for B2B Commerce](https://help.salesforce.com/s/articleView?id=commerce.comm_revenue_intro.htm&language=en_US&type=5) requires a Commerce Growth or Commerce Advanced licence together with Revenue Cloud Advanced, bought through the account executive. It adds complex pricing strategies with pricing procedures, tiered pricing, configurable bundles, Request for Quote, qualification rules for visibility and subscriptions. Contract-based pricing for B2B stores has its own article in Help.
+The third option is a pricing engine inside Salesforce. [Salesforce Help on Agentforce Revenue Management for B2B Commerce](https://help.salesforce.com/s/articleView?id=commerce.comm_revenue_intro.htm&language=en_US&type=5) requires a Commerce Growth or Commerce Advanced license together with Revenue Cloud Advanced, bought through the account executive. It adds complex pricing strategies with pricing procedures, tiered pricing, configurable bundles, Request for Quote, qualification rules for visibility and subscriptions. Contract-based pricing for B2B stores has its own article in Help.
 
-On budget: the B2B editions say "Contact for Pricing", and the [Revenue Cloud pricing page](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) lists Revenue Cloud Advanced at $200 per user per month, billed annually. Neither page says how many of these user licences a store with external buyers needs. Ask Salesforce in writing before you build a business case.
+On budget: the B2B editions say "Contact for Pricing", and the [Revenue Cloud pricing page](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) lists Revenue Cloud Advanced at $200 per user per month, billed annually. Neither page says how many of these user licenses a store with external buyers needs. Ask Salesforce in writing before you build a business case.
 
 ```hinweis tipp
 My rule: Advanced Pricing pays off when sales already calculates quotes in Revenue Cloud, when contract prices are negotiated in Salesforce or when you need Request for Quote. If SAP calculates every customer price and should keep doing so, Revenue Cloud gives you a second pricing engine that has to agree with SAP. Then the live call is simpler. The trade-offs in detail are in [Advanced Pricing in B2B stores](../../../blog/advanced-pricing-b2b-store-revenue-cloud/). Sales agreements with volumes and terms, which plan demand rather than set the store price, belong to Manufacturing Cloud; the chapter [agreements and forecasting](../../manufacturing-cloud/agreements-and-forecasting/) covers them.
@@ -95,7 +95,7 @@ For custom components there is the Apex class [ConnectApi.CommerceQuotes](https:
 ```
 
 ```hinweis offen
-On licensing, the sources read differently. Help names Advanced Pricing as a prerequisite for RFQ, while the Apex reference supports simple products in createQuoteFromProduct with a B2B Commerce licence alone. Get the answer for your products in writing.
+On licensing, the sources read differently. Help names Advanced Pricing as a prerequisite for RFQ, while the Apex reference supports simple products in createQuoteFromProduct with a B2B Commerce license alone. Get the answer for your products in writing.
 ```
 
 Inside sales matters more than the technology. A buyer who waits three days for a quote from the store sends the next request by email again. Response time, ownership per queue and discount limits go on paper before go-live. I describe the whole loop in [Request for Quote in B2B Commerce](../../../blog/request-for-quote-b2b-commerce-cart-to-quote/).
@@ -111,7 +111,7 @@ The options for B2B stores:
 - **Salesforce Payments:** native Stripe integration that can also offer a purchase order in B2B stores.
 - **Custom component** or your own server-side gateway with an Apex adapter.
 
-According to the [extensions guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html), payments cannot be customised with extensions. Special payment rules are therefore custom code your team carries through every release.
+According to the [extensions guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html), payments cannot be customized with extensions. Special payment rules are therefore custom code your team carries through every release.
 
 What the standard does not do is check whether a dealer may order at all. Credit limit and order block live in the ERP. The place for that check is `Commerce_Domain_Checkout_PlaceOrder`: it runs cart validations when the buyer places the order, and you override its `validate` method with a live call to the ERP. Decide what happens on a timeout and what the buyer reads when blocked. Copying credit limits into Salesforce every night is wrong in my view: the copy is out of date exactly when a dealer placed three large orders this morning. More in [B2B checkout: purchase order, card or invoice?](../../../blog/b2b-checkout-purchase-order-card-invoice/).
 
@@ -125,13 +125,13 @@ A dealer has bought most spare parts and consumables before. If they have to sea
 | Order templates for buyers and sales reps | "GA September '26" on the [innovations page](https://www.salesforce.com/ca/commerce/innovations/) |
 | Import and export the cart as CSV or JSON | [July 2026 release](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) |
 | Several users edit one cart live | "GA January '27" |
-| Reorder portal for sales teams in Sales Cloud | available, needs an Agentforce Commerce licence |
+| Reorder portal for sales teams in Sales Cloud | available, needs an Agentforce Commerce license |
 
 Add Order to Cart works with order summaries in Salesforce. A phone order that exists only in SAP therefore cannot be reordered from the store history unless you bring those orders into Salesforce.
 
 The [cart limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-cart-limits.html): most stores cap a cart at 500 lines, 2,000 with large cart support. A user has up to 100 carts, one active and 99 secondary. Before anyone promises "upload your whole list", check how long the longest orders in the ERP really are.
 
-The [reorder portal](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal) is the lightweight option: sales reps invite buyers, who then repeat their past orders. Integrating it with Sales Cloud needs an Agentforce Commerce licence and an enabled Digital Experience. It fits when no catalogue project is planned. Which feature fits which ordering pattern is in [reorders in B2B Commerce](../../../blog/b2b-commerce-reorder-order-templates/).
+The [reorder portal](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal) is the lightweight option: sales reps invite buyers, who then repeat their past orders. Integrating it with Sales Cloud needs an Agentforce Commerce license and an enabled Digital Experience. It fits when no catalog project is planned. Which feature fits which ordering pattern is in [reorders in B2B Commerce](../../../blog/b2b-commerce-reorder-order-templates/).
 
 ## Worked example: 600 dealers in 9 countries
 
@@ -142,7 +142,7 @@ This is how I would decide:
 | Topic | Decision |
 |---|---|
 | Prices: | 27 price books for 9 countries and 3 tiers, calculated from SAP every night; each dealer sees exactly one. The 40 large dealers get their price live from SAP through the pricing extension. No Advanced Pricing, because the pricing logic stays in SAP. |
-| Quotes: | RFQ in a second stage once the licence question is settled; until then project business goes to inside sales as today. |
+| Quotes: | RFQ in a second stage once the license question is settled; until then project business goes to inside sales as today. |
 | Checkout: | Purchase Order component only, credit check in `validate` against SAP. On a timeout the store accepts the order, because SAP checks credit again when it creates the sales order. |
 | Reordering: | Add Order to Cart and order templates for everyone, CSV import for the large dealers. |
 
@@ -158,4 +158,4 @@ Write one page on the price master decision before anyone designs the store:
 4. If store and ERP disagree: which price counts, and who clears the difference?
 5. Which buyer groups pay by purchase order, which by card, and who checks credit?
 
-This page belongs next to your [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) and drives the interface list for [chapter 4](../erp-integration-stock-orders/). I design the price and credit calls as part of [Salesforce integration](../../../services/salesforce-integration/), and the Revenue Cloud licence question under [make or buy and licences](../../../services/make-or-buy-licences/). All chapters are on the [overview page](../).
+This page belongs next to your [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) and drives the interface list for [chapter 4](../erp-integration-stock-orders/). I design the price and credit calls as part of [Salesforce integration](../../../services/salesforce-integration/), and the Revenue Cloud license question under [make or buy and licenses](../../../services/make-or-buy-licences/). All chapters are on the [overview page](../).

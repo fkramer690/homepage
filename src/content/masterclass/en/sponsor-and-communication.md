@@ -30,7 +30,7 @@ Awareness and desire, the first two stages of the ADKAR model, come from the gro
 
 ## Why does the sponsor decide the rollout?
 
-In the Prosci study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), participants named active and visible sponsorship as the top success factor. In Salesforce programmes that is exactly what is missing most often. A sponsor is a person from management who visibly backs the rollout. They do not just sit on the steering committee; they stand in front of the teams affected.
+In the Prosci study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), participants named active and visible sponsorship as the top success factor. In Salesforce programs that is exactly what is missing most often. A sponsor is a person from management who visibly backs the rollout. They do not just sit on the steering committee; they stand in front of the teams affected.
 
 This is what makes a sponsor effective:
 
@@ -54,7 +54,7 @@ A good release process makes releases smaller and more frequent. The business th
 | Field service | new maintenance report in the app | Knowledge and ability | Key user of the region, before the app update |
 | Sales in all countries | nothing visible | none | nobody |
 
-The empty row is the important one. Someone who gets release emails every week that have nothing to do with their work will eventually skip the one that does. How the repository, pipeline and approvals behind this are organised is in the DevOps chapter [Release process: ownership, roles and approvals](../../devops-release-management/release-process-ownership-roles/).
+The empty row is the important one. Someone who gets release emails every week that have nothing to do with their work will eventually skip the one that does. How the repository, pipeline and approvals behind this are organized is in the DevOps chapter [Release process: ownership, roles and approvals](../../devops-release-management/release-process-ownership-roles/).
 
 ## What do release notes for users look like?
 
@@ -79,7 +79,7 @@ Without a feedback channel all of this fades. Feedback gets one fixed place, bug
 
 ## When does the works council join?
 
-In Germany the works council has a right of co-determination under [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) for technical systems that can monitor behaviour or performance. Salesforce touches that in several places: location data in the Field Service app, timesheets, evaluations of individuals and AI tools. For change management, openness counts as much as the legal question. A technician who hears from the works council that their location is only transmitted while travelling to a job reacts differently from one who discovers it on a map in the office.
+In Germany the works council has a right of co-determination under [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) for technical systems that can monitor behavior or performance. Salesforce touches that in several places: location data in the Field Service app, timesheets, evaluations of individuals and AI tools. For change management, openness counts as much as the legal question. A technician who hears from the works council that their location is only transmitted while travelling to a job reacts differently from one who discovers it on a map in the office.
 
 ```hinweis achtung
 Agree location data, working times and evaluations of individuals with the works council before they are set up, and put the result in plain words into the communication before go-live. Agreeing afterwards costs weeks and trust.
@@ -89,4 +89,4 @@ The same applies to AI tools in development, see [AI coding tools: works council
 
 ## Write the rollout plan for the next release
 
-Write a rollout plan for the next release with one row per affected group and mark the contested rows. Take this list to the sponsor and agree when they explain which change. If no sponsor can be found, that is the most important finding of the plan. The diagnosis behind it is in [chapter 1](../change-management-adkar-diagnosis/), my work on it on the page [Change management for Salesforce programmes](../../../services/change-management-salesforce/).
+Write a rollout plan for the next release with one row per affected group and mark the contested rows. Take this list to the sponsor and agree when they explain which change. If no sponsor can be found, that is the most important finding of the plan. The diagnosis behind it is in [chapter 1](../change-management-adkar-diagnosis/), my work on it on the page [Change management for Salesforce programs](../../../services/change-management-salesforce/).

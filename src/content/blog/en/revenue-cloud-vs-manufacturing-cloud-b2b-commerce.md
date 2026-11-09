@@ -17,7 +17,7 @@ faq:
   - q: "What is the difference between Revenue Cloud and Manufacturing Cloud?"
     a: "Revenue Cloud configures, prices and quotes products and carries the deal through order and billing. Manufacturing Cloud plans and measures recurring business with sales agreements, account forecasts and rebates. A quote from Revenue Cloud can be the starting point for a sales agreement in Manufacturing Cloud."
   - q: "Do I need Revenue Cloud for B2B Commerce?"
-    a: "Not for a store with price books. Salesforce Help names a Commerce Growth or Advanced licence plus a Revenue Cloud Advanced licence for Agentforce Revenue Management for B2B Commerce, which adds pricing procedures, configurable bundles, subscriptions and Request for Quote."
+    a: "Not for a store with price books. Salesforce Help names a Commerce Growth or Advanced license plus a Revenue Cloud Advanced license for Agentforce Revenue Management for B2B Commerce, which adds pricing procedures, configurable bundles, subscriptions and Request for Quote."
   - q: "Can Manufacturing Cloud use the Revenue Cloud product catalog?"
     a: "Yes. Trailhead describes a central product model with headless composable APIs and says Agentforce Manufacturing can use the product and pricing information from the catalog."
   - q: "Which product should a machine builder buy first?"
@@ -29,7 +29,7 @@ Revenue Cloud, Manufacturing Cloud and B2B Commerce cover different parts of a m
 
 ## What does each product do?
 
-**Revenue Cloud** is Salesforce's quote-to-cash product. Trailhead calls it Agentforce Revenue Management, while the salesforce.com product page says Revenue Cloud again. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management), it consists of Product Catalog Management, Product Configurator, Salesforce Pricing and Rate Management, Transaction Management for quotes, orders and assets, Dynamic Revenue Orchestrator, Salesforce Contracts and billing. The [product page](https://www.salesforce.com/uk/products/revenue-cycle-management) promises "a single, attribute-based catalogue" that exposes products across all channels. Revenue Cloud Advanced is listed at €200 per user and month on the [pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/), billed annually.
+**Revenue Cloud** is Salesforce's quote-to-cash product. Trailhead calls it Agentforce Revenue Management, while the salesforce.com product page says Revenue Cloud again. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management), it consists of Product Catalog Management, Product Configurator, Salesforce Pricing and Rate Management, Transaction Management for quotes, orders and assets, Dynamic Revenue Orchestrator, Salesforce Contracts and billing. The [product page](https://www.salesforce.com/uk/products/revenue-cycle-management) promises "a single, attribute-based catalog" that exposes products across all channels. Revenue Cloud Advanced is listed at €200 per user and month on the [pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/), billed annually.
 
 **Manufacturing Cloud** is the industry cloud for run-rate business. The [product page](https://www.salesforce.com/manufacturing/cloud/) describes run-rate agreements and demand forecasts in Sales Core, and Summer '26 brought rebate management improvements. The core is the sales agreement: planned and actual quantities per customer, product and period. Whether that fits your business is covered in [Manufacturing Cloud: is it worth it?](../salesforce-manufacturing-cloud-is-it-worth-it/). For rebates there is a separate article on [rebate management for dealers](../rebate-management-dealer-rebates/).
 
@@ -85,7 +85,7 @@ B2B Commerce with price books
 Revenue Cloud
   Compressor quotes are the second candidate. If configuration errors cost money today, Revenue Cloud follows, and from then on the store uses its catalog and, once contract prices live in Salesforce, its pricing.
 Manufacturing Cloud
-  Only comes in when the volume agreements of ten key accounts justify the licence for the users who manage them; until then, a report on ERP actuals may do. The rebate spreadsheet can wait for that decision.
+  Only comes in when the volume agreements of ten key accounts justify the license for the users who manage them; until then, a report on ERP actuals may do. The rebate spreadsheet can wait for that decision.
 ```
 
 The order matters less than the rule behind it: the second product reuses the catalog and price master of the first.

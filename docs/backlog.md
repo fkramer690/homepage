@@ -67,6 +67,18 @@ Grundlage: „AI Search Checklist“ der Agentur Contact (81 Punkte: Seitenbaust
 | KS3 | Auswahl- und Vergleichsartikel (z. B. L1 Partnerwahl) nennen die Kriterien, nach denen die Empfehlung entsteht | mittel | klein | Claude | erledigt 07.11.2026: Regel in docs/blog-guidelines.md (KI-Suche); L1 erfüllt sie bereits mit Tabellen und Vergleich |
 | KS4 | Eigenes kleines Werkzeug als zitierfähige Ressource, z. B. Flex-Credits-Rechner oder Make-or-Buy-Check (DE + EN) | mittel | mittel | Claude schlägt vor, Fabian entscheidet | offen |
 
+## Sichtbarkeit in Claude (Prüfung 09.11.2026)
+
+Lauf vom 09.11.2026: Claude 0 von 15 Fragen, Perplexity 9 von 15 mit denselben Seiten. Technisch ist nichts blockiert: robots.txt erlaubt alle Crawler (also auch ClaudeBot, Claude-SearchBot und Claude-User), die Seiten sind statisches HTML, llms.txt ist da. Claudes Websuche nutzt nach übereinstimmenden Berichten den Index von Brave Search (Anthropic nennt den Anbieter nicht selbst). Was dort nicht oben steht, zitiert Claude nicht. Bei 5 der 15 Fragen hat Claude gar nicht gesucht, dort zählt nur, was im Trainingsstand über Fabian steht, also Erwähnungen auf anderen Seiten. Zitiert hat Claude vor allem Verzeichnisse (freelance.de, GULP, consultingheads, bilarna, Software-Vergleichsportale), Salesforce-Doku, sfdx-hardis-Doku und GitHub, Salesforce Ben und Salesforce Dictionary.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| CL1 | Brave-Abdeckung prüfen: auf search.brave.com `site:fk-sd.de` sowie die Kernbegriffe der 15 Fragen aus `seo/ai-prompts.json` suchen und notieren, ob und wo fk-sd.de steht. Fehlende Hauptseiten über search.brave.com/submit-url melden (Start DE/EN, Partnersteuerung, Freiberuflicher Salesforce Architect, Document-Builder-Artikel, sfdx-hardis-Vergleich, Field-Service-Rollout). Automatisch geht das nicht: Brave sperrt Abfragen ohne API-Schlüssel | hoch | klein | Fabian (Browser) | offen |
+| CL2 | Brave-Positionen automatisch im KI-Such-Lauf mitschreiben: Brave Search API, Schlüssel als GitHub-Secret `BRAVE_SEARCH_API_KEY`, je Lauf 15 Abfragen | mittel | klein | Fabian legt Schlüssel an, Claude baut ein | offen |
+| CL3 | Quellen, die Claude zitiert, zuerst angehen (aus QM): sfdx-hardis-Doku-PR (Claude zitiert sfdx-hardis.cloudity.com und GitHub zur sfdx-hardis-Frage), Salesforce Dictionary (zitiert zu DevOps) | hoch | klein | Fabian | offen |
+| CL4 | Profile auf den Plattformen, die die Assistenten am 09.11.2026 zitiert haben, gleich formulieren wie die Website (Titel und erster Satz „Salesforce Enterprise Architect für Hersteller, Kundenseite, Partnersteuerung“, Firmenname FK Solution Design, soweit erlaubt): freelance.de (von allen vier Assistenten mit Websuche zitiert, Claude, ChatGPT, Perplexity, Google AI Mode), GULP (Claude, Perplexity), freelancermap und Fratch (Perplexity, Google AI Mode), LinkedIn. Profil fehlt noch bei consultingheads (Claude, Google AI Mode; Profile nicht öffentlich, siehe QM), Upwork und 9am.works (je Google AI Mode, nur prüfen). AppExchange und partners.salesforce.com siehe QI. Nicht sinnvoll: bilarna, softwarefinder, find-your-software, G2 (Software, keine Berater) | hoch | klein | Fabian | offen |
+| CL5 | Wirkung prüfen: Claude-Treffer und Brave-Positionen in den nächsten zwei KI-Such-Läufen (23.11. und 07.12.2026) vergleichen | mittel | klein | Claude | ab 23.11.2026 |
+
 ## Befunde Jev-Analyse und jev-seo-Audit (29.10.2026)
 
 Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite und 392 Blog-URLs sowie jev-seo-Audit (450 URLs), beide 29.10.2026. Bericht: https://claude.ai/artifact/4d9jFTDK2EbewV53cLymFN. Fehlalarme ohne Maßnahme: HTTPS-Weiterleitung, 110 kaputte Links und 37 Seiten mit 404 (jev-seo löst relative Links falsch auf), noindex auf Impressum und Datenschutz (gewollt). Reihenfolge nach Impact und Aufwand.
@@ -138,7 +150,7 @@ Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier ne
 - B3. Center of Excellence auf Kundenseite: Format und Rhythmus. *Erledigt (#125).*
 - B4. MuleSoft oder Jitterbit: welche Middleware für Salesforce und das ERP? *Braucht Beispiel von Fabian.*
 - B5. Salesforce an proALPHA anbinden: was anders ist als bei SAP. *Braucht Beispiel von Fabian.*
-- B6. Technische Benutzer mit zu vielen Rechten: Integrationen aufräumen.
+- B6. Technische Benutzer mit zu vielen Rechten: Integrationen aufräumen. *Entwurf 3.11.2026 (PR #273).*
 - B7. Teams Phone als Telefonie für den Service (Folgeartikel zu Open CTI). *Braucht Erfahrung aus dem CTI-Rollout.*
 - B8. Spring '27: was ändert sich für Hersteller? (News, sobald die Release Notes erscheinen, ca. Mitte Januar 2027; passt zu L7.)
 - B9. Führendes System pro Objekt: Welches System führt Kunden, Preise und Anlagen, wenn SAP und Salesforce beide Daten halten? (Begriff aus der Homepage-Suche 29.10.2026, kommt auf Schnittstellen- und Architekturseite und in ca. 20 Artikeln vor; Abgrenzung zu L2 klären.)
@@ -150,10 +162,14 @@ Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier ne
 - B19. Mobile App für Techniker im Vergleich: Salesforce Field Service App, SAP FSM App und SAP Service and Asset Manager (Folgeartikel zu L4). *Braucht Beispiel von Fabian.*
 - B20. Agent Script für Serviceregeln: Garantie, Rücksendung und Seriennummer fest im Agenten statt im Prompt (Folgeartikel zu L5). *Braucht Beispiel von Fabian.*
 - B21. Schreibende Agentenaktionen ins ERP: Berechtigung, Plausibilität und Protokoll, bevor ein Agent Liefertermine oder Rücksendungen ändert (Folgeartikel zu L5). *Braucht Beispiel von Fabian.*
-- B22. Release Updates im Setup: welche erzwungenen Updates der nächsten Releases Hersteller-Orgs treffen und wie man sie vorab in der Sandbox testet (Folgeartikel zu L7, aus Release Notes recherchierbar).
+- B22. Release Updates im Setup: welche erzwungenen Updates der nächsten Releases Hersteller-Orgs treffen und wie man sie vorab in der Sandbox testet (Folgeartikel zu L7, aus Release Notes recherchierbar). *Entwurf 9.11.2026 („Salesforce Release Updates vor der Durchsetzung testen“, ChatGPT-Review). Tabelle der Fristen je Release nachziehen.*
 - B23. Regressionstests für Salesforce-Releases automatisieren: welche Kernprozesse zuerst, wer sie pflegt (Folgeartikel zu L7). *Braucht Beispiel von Fabian.*
+- B24. External Client Apps statt Connected Apps: was sich für bestehende ERP- und Middleware-Schnittstellen ändert (Folgeartikel zu B6, aus Salesforce-Doku recherchierbar).
+- B25. Fragebogen an Schnittstellenanbieter: Objekte, IP-Adressen, Token-Speicherung und Notfallkontakt vor dem Go-live (Folgeartikel zu B6). *Braucht Beispiel von Fabian.*
 - B26. Discovery für Salesforce-Projekte: welche Randfälle vor dem Festpreis auf den Tisch müssen (Folgeartikel zu L1, Begriffe „salesforce discovery phase“, „Fit-Gap-Analyse Salesforce“ vorher prüfen). *Braucht Beispiel von Fabian.*
 - B27. Schlüsselperson des Partners geht: Übergabe planen, bevor die Qualität nachlässt (Folgeartikel zu L1). *Braucht Beispiel von Fabian.*
+- B28. Integrationsinventar: welche Angaben je Schnittstelle in die Liste gehören (Login-Methode, Integrationsuser, API-Version, Endpunkt, Verantwortlicher beider Seiten), damit Release Updates und Abschaltungen in Stunden statt Wochen bewertet sind (Folgeartikel zu B22). *Braucht Beispiel von Fabian.*
+- B29. Profilfilterung seit Winter '27: Zuordnung zu Queues und Technikern nach Berechtigungen oder Rollen statt Profilnamen bauen (Folgeartikel zu B22, aus der Salesforce-Hilfe recherchierbar).
 
 Erledigt im täglichen Lauf: Manufacturing Cloud lohnt sich (#41), Object Ownership Matrix (#42), Salesforce-Lizenzen (#43), Field Service lohnt sich (#44), Nearshore-Teams (#55), Open CTI endet 2028 (#82, Entwurf), Implementierungspartner auswählen (L1, #292). Aus der Begriffssuche vom 29.10.2026: Sandbox-Strategie, Berechtigungskonzept, UAT, Entwicklungsstandards und Definition of Done, Entscheidungslog, globales Template, DORA-Metriken, Dubletten und Stammdaten (ein PR, Entwurf). Entscheider als Engpass im KI-Salesforce-Projekt (Idee Fabian 05.11.2026, Entwurf; Praxisblock aus seiner Nachricht, konkretes Beispiel offen).
 

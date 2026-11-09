@@ -29,15 +29,15 @@ A decision log records every Salesforce architecture decision with context, opti
 
 ## Why do architecture decisions get lost?
 
-Architecture decisions are made in workshops, in calls and in comments on a ticket. Afterwards the result is in the system, the reasoning nowhere. As long as the same people are on the project, nobody notices. Two years later a new head of IT asks why dealers are modelled as accounts rather than partner accounts, and nobody can answer.
+Architecture decisions are made in workshops, in calls and in comments on a ticket. Afterwards the result is in the system, the reasoning nowhere. As long as the same people are on the project, nobody notices. Two years later a new head of IT asks why dealers are modeled as accounts rather than partner accounts, and nobody can answer.
 
 Then one of two things happens. Either nobody dares to touch the decision and the team builds around it. Or a new partner rolls it back because they do not know the reasons, and runs into exactly the problem the original decision solved. Both cost more than the half hour an entry takes to write.
 
-In programmes with several partners a third effect comes on top: every partner documents in their own Confluence. When the partner leaves, the reasoning leaves with them.
+In programs with several partners a third effect comes on top: every partner documents in their own Confluence. When the partner leaves, the reasoning leaves with them.
 
 ## What is a decision log?
 
-In software development such an entry is called an architecture decision record, or ADR. Michael Nygard described the format in 2011 ([Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)): title, context, decision, status and consequences. For Salesforce programmes I add two fields, because steering committees always ask for them: which options were considered and who decided.
+In software development such an entry is called an architecture decision record, or ADR. Michael Nygard described the format in 2011 ([Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)): title, context, decision, status and consequences. For Salesforce programs I add two fields, because steering committees always ask for them: which options were considered and who decided.
 
 ```vertiefung Template
 title: What goes into an entry?
@@ -67,7 +67,7 @@ Not every field decision needs an entry. My rule of thumb: the log holds whateve
 | Custom build | own configurator instead of a standard product |
 | Platform | one org for all countries instead of one org per region |
 
-The choice of clouds and add-ons is the most important area, because partners or the vendor regularly propose a product again. If the reasoning is in the log, the answer takes five minutes instead of a new assessment. How I calculate such assessments is described under [make-or-buy and licences](../../services/make-or-buy-licences/).
+The choice of clouds and add-ons is the most important area, because partners or the vendor regularly propose a product again. If the reasoning is in the log, the answer takes five minutes instead of a new assessment. How I calculate such assessments is described under [make-or-buy and licenses](../../services/make-or-buy-licences/).
 
 ```praxis
 In one manufacturing project I assessed Manufacturing Cloud and rejected it, because sales agreements were not relevant to this client's business. This is exactly the kind of decision that belongs in the log: when the product comes up again next year, the entry says why it does not fit and what would have to change for it to fit.
@@ -87,7 +87,7 @@ The roles are simple:
 
 A decision is never overwritten. When the situation changes, the old entry gets the status "superseded" and a link to the new one. That keeps visible what applied before and why it changed.
 
-## In the running programme: new partners, design reviews, steering committee
+## In the running program: new partners, design reviews, steering committee
 
 A log nobody reads is paperwork. Three occasions make it useful:
 
@@ -97,4 +97,4 @@ A log nobody reads is paperwork. Three occasions make it useful:
 
 ## Write up the five most questioned decisions
 
-Begin with the five decisions that are questioned most often in your programme; you do not need a wiki template for that. The first entry is almost always the question that stayed open in the last steering committee. Write an entry for each, even after the fact. From then on the rule is that every new architecture decision needs an entry before anything is built. After six months you have twenty to thirty entries and documentation a new partner can read in an afternoon. How I run the log as the architect on the client side is described under [Salesforce architecture on the client side](../../services/salesforce-architecture/).
+Begin with the five decisions that are questioned most often in your program; you do not need a wiki template for that. The first entry is almost always the question that stayed open in the last steering committee. Write an entry for each, even after the fact. From then on the rule is that every new architecture decision needs an entry before anything is built. After six months you have twenty to thirty entries and documentation a new partner can read in an afternoon. How I run the log as the architect on the client side is described under [Salesforce architecture on the client side](../../services/salesforce-architecture/).

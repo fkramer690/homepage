@@ -85,7 +85,7 @@ Salesforce writes that you do not have to recreate the store from scratch and th
 
 ## What does the guide leave open?
 
-The migration guide covers components and store configuration. It says nothing about catalogue, buyer groups, entitlement policies and price books, or about URLs and dealer bookmarks. Plan explicitly how the new store is connected to the existing buyer groups and price books, and test it with real buyer accounts before any dealer sees the store.
+The migration guide covers components and store configuration. It says nothing about catalog, buyer groups, entitlement policies and price books, or about URLs and dealer bookmarks. Plan explicitly how the new store is connected to the existing buyer groups and price books, and test it with real buyer accounts before any dealer sees the store.
 
 Experience metadata is easier to handle in a pipeline than with change sets. Salesforce describes [deploying store metadata](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-deploy-experience-metadata.html) with the Salesforce CLI and the ExperienceBundle or DigitalExperienceBundle types, committed to version control. The same page warns that some settings are not captured by the metadata and must be reapplied by hand, and that domains, URLs and single sign-on are tasks after deployment. Write those settings down before the switch. Where store configuration belongs in a pipeline is covered in the DevOps chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/).
 

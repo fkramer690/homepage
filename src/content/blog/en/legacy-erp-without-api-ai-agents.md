@@ -32,7 +32,7 @@ AI agents can still help with a legacy ERP without an API, but only through a de
 
 ## Why do so many manufacturers run an ERP without a usable API?
 
-Many machine builders in the German Mittelstand run an ERP that has been on premises for years and was customised heavily along the way. An older proALPHA installation or an old SAP release are typical examples. Whether such a system offers a usable interface depends on the version, the licensed modules and how far the customising went, so I make no general statement about any vendor. The first step is a question to your ERP vendor or partner.
+Many machine builders in the German Mittelstand run an ERP that has been on premises for years and was customized heavily along the way. An older proALPHA installation or an old SAP release are typical examples. Whether such a system offers a usable interface depends on the version, the licensed modules and how far the customising went, so I make no general statement about any vendor. The first step is a question to your ERP vendor or partner.
 
 "No API" often means an interface exists but is not licensed, or covers customers and items but not orders. Checking costs a day or two. A workaround costs maintenance for as long as it runs.
 

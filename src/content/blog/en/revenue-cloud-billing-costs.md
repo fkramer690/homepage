@@ -8,7 +8,7 @@ translationKey: revenue-cloud-billing-costs-billing-events
 topic: revenue
 categories: [revenue-cloud]
 contactBrief: licences
-tags: [revenue cloud billing, billing events, licences, pricing, order form]
+tags: [revenue cloud billing, billing events, licenses, pricing, order form]
 takeaways:
   - "According to the rate sheet of February 2026, one billing event is consumed for every $50 of total invoice amount, which is 0.02 events per dollar."
   - "The invoice amount is the subtotal of posted invoices without tax but with shipping; other currencies are converted to US dollars at the average daily rate."
@@ -97,7 +97,7 @@ I would take these points into the negotiation:
 5. **Feature split.** Which features you need come with Advanced, which with Invoice Management and which only with the Billing add-on.
 6. **Renewal.** A price cap for the event price at renewal, because consumption usually grows.
 
-Licence decisions like this belong in a licence forecast with real numbers, not in the last week before signature. The same applies to user licences, as described in [does everyone need a full licence](../salesforce-licences-full-licence-needed/) and [Salesforce editions Core, Advanced, Max](../salesforce-editions-core-advanced-max/). Preparing such forecasts is part of [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
+License decisions like this belong in a license forecast with real numbers, not in the last week before signature. The same applies to user licenses, as described in [does everyone need a full license](../salesforce-licences-full-licence-needed/) and [Salesforce editions Core, Advanced, Max](../salesforce-editions-core-advanced-max/). Preparing such forecasts is part of [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
 
 ## First step: finance owns the forecast
 

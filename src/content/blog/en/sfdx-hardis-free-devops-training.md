@@ -10,14 +10,14 @@ topic: training
 categories: [devops]
 tags: [sfdx-hardis, devops training, release management, dora metrics]
 takeaways:
-  - "27 labs in three levels build a complete Salesforce CI/CD pipeline on free orgs, without any licence or credit card."
+  - "27 labs in three levels build a complete Salesforce CI/CD pipeline on free orgs, without any license or credit card."
   - "Badges are earned by doing, not by quizzes: a job re-runs every check of a level against your own public repository."
   - "Even with about two years of sfdx-hardis experience and solid Git knowledge, all three badges took me almost a full day."
   - "It is the best Salesforce DevOps course I have taken, compared with courses from Gearset, Flosum and Copado."
   - "Level 3 is the most valuable part for anyone who runs releases: pull request reviews, UAT, production, DORA metrics, hotfixes and monitoring."
 faq:
   - q: "Is the sfdx-hardis training really free?"
-    a: "Yes. The training is free and open source. You need a free GitHub account and free Salesforce Developer Edition orgs, no paid service, licence or credit card."
+    a: "Yes. The training is free and open source. You need a free GitHub account and free Salesforce Developer Edition orgs, no paid service, license or credit card."
   - q: "How long does the sfdx-hardis training take?"
     a: "The course lists about 2 h 15 for Level 1, about 4 h for Level 2 and about 6 h 55 for Level 3. With prior experience I needed almost a day for all three."
   - q: "Who is the sfdx-hardis training for?"
@@ -91,7 +91,7 @@ I would recommend it to three groups:
 
 - **Admins and consultants** who want to stop fearing Git. Levels 1 and 2 show that branches, pull requests and merge conflicts are manageable with the VS Code extension.
 - **Developers and tech leads** who know Git but have not seen a complete Salesforce pipeline, including deployment actions, quality gates and monitoring.
-- **Release managers and architects** who own the release process. Level 3 is the part I would make mandatory for anyone in that role, especially in programmes with several partners, where [pull request reviews](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) and a clear release rhythm make the difference.
+- **Release managers and architects** who own the release process. Level 3 is the part I would make mandatory for anyone in that role, especially in programs with several partners, where [pull request reviews](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) and a clear release rhythm make the difference.
 
 For clients, it is also a cheap way to build internal DevOps knowledge, which is the basis for owning the release process instead of leaving it with a partner. That is a theme in most of my [architecture and governance work](../../services/partner-governance/).
 

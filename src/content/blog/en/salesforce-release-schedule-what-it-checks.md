@@ -90,7 +90,7 @@ For **communication**, a forwarded email from Salesforce is rarely enough. What 
 
 ## Salesforce releases need their own path in your release governance
 
-Salesforce's releases belong in your release governance, but they need their own path: the date is set by Salesforce, and your team can neither stop nor roll back the platform upgrade. In one programme I built the release process. At first, every pull request went across my desk. Once the process was stable, I handed it over to an internal colleague.
+Salesforce's releases belong in your release governance, but they need their own path: the date is set by Salesforce, and your team can neither stop nor roll back the platform upgrade. In one program I built the release process. At first, every pull request went across my desk. Once the process was stable, I handed it over to an internal colleague.
 
 The same principle works for the Salesforce releases: owners, dates and decision points instead of an ad hoc event every four months. Put the three releases into your release planning as fixed dates. Keep risky deployments of your own out of the upgrade weekend and the smoke test after it, and capture a baseline before the upgrade. That makes changes easier to compare and narrows down possible causes when something fails. [DORA metrics for Salesforce](../dora-metrics-salesforce-releases/) help measure throughput and instability of your own delivery over time. How I set up release processes with clients is described under [DevOps and release management](../../services/devops-release-management/).
 
