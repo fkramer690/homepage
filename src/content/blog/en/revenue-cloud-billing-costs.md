@@ -2,6 +2,7 @@
 title: "Revenue Cloud Billing costs: what billing events mean"
 description: "How Revenue Cloud Billing is charged: one billing event per $50 of invoice amount, no rollover, a worked estimate and what to settle on the order form."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: revenue-cloud-billing-costs
 translationKey: revenue-cloud-billing-costs-billing-events
@@ -12,13 +13,13 @@ tags: [revenue cloud billing, billing events, licenses, pricing, order form]
 takeaways:
   - "According to the rate sheet of February 2026, one billing event is consumed for every $50 of total invoice amount, which is 0.02 events per dollar."
   - "The invoice amount is the subtotal of posted invoices without tax but with shipping; other currencies are converted to US dollars at the average daily rate."
-  - "Billing events must be used before the order end date and do not roll over, so an entitlement sized for year three is wasted in year one."
+  - "Billing events must be used before the order end date and do not roll over, so check whether a multi-year order has one pool or annual ones."
   - "What you route through Billing drives the cost: high-value machine invoices consume many more events than subscription and service invoices."
 faq:
   - q: "How much does Revenue Cloud Billing cost?"
     a: "Salesforce lists Revenue Cloud Billing as an add-on with 'Request a Quote' and publishes no price per billing event. The consumption is public: one billing event per $50 of total invoice amount, according to the rate sheet of February 2026."
   - q: "What is a billing event in Revenue Cloud Billing?"
-    a: "A billing event is the unit Salesforce uses to measure Revenue Cloud Billing consumption. The rate sheet counts 0.02 billing events per dollar of total invoice amount, so one event per $50, including any partial $50."
+    a: "A billing event is the unit Salesforce uses to measure Revenue Cloud Billing consumption. The rate sheet counts 0.02 billing events per dollar of total invoice amount, for each dollar or portion thereof, which is one event per $50 before rounding."
   - q: "Do unused billing events roll over?"
     a: "No. According to the rate sheet, billing events must be used before the order end date in the usage details table of the order form, and no rollover is permitted."
   - q: "Does tax count toward the billing event calculation?"
@@ -48,7 +49,7 @@ A billing event is the unit Salesforce uses to measure Revenue Cloud Billing. Th
 
 ```kennzahlen
 0.02 | Multiplier: billing events per dollar of invoice amount
-$50 | Invoice amount per billing event, including any partial $50
+$50 | Invoice amount per billing event, before rounding
 source: Revenue Cloud Billing rate sheet, February 2026
 ```
 
@@ -66,12 +67,12 @@ The definitions in the rate sheet are short, and every word matters:
 For a German manufacturer invoicing in euros, that means the event count also moves with the euro to dollar rate.
 
 ```hinweis offen
-Three things the rate sheet does not answer: whether credit memos reduce the counted amount, whether the "portion thereof" rounding applies per invoice or to the total, and what happens when you use more events than you bought. Ask for all three in writing.
+According to Salesforce Help, consumption is based on positive posted invoice line amounts, and voiding a posted invoice does not give the events back. Three things the documents leave open: whether a separately posted credit memo reduces the counted amount, how the "portion thereof" rounding is applied, and what happens when you use more events than you bought. Ask for all three in writing.
 ```
 
 ## How do you estimate the cost?
 
-The formula is simple: invoice subtotal per year in US dollars, divided by 50. The hard part is the invoice volume.
+The formula for a first estimate is simple: positive posted invoice amounts per year in US dollars, times 0.02. The hard part is the invoice volume.
 
 Worked example: a machine builder plans to invoice remote monitoring subscriptions and maintenance contracts from Revenue Cloud Billing, €18 million a year without tax. For the estimate I assume an exchange rate of 1.15 dollars per euro; that is an assumption, not a forecast.
 
@@ -82,7 +83,7 @@ Worked example: a machine builder plans to invoice remote monitoring subscriptio
 
 The second row shows why scope drives the cost. Machine invoices would multiply the event count by more than seven, for invoices that SAP creates anyway. That is one reason I keep machine invoices in SAP, as described in [Revenue Cloud Billing or SAP](../revenue-cloud-billing-or-sap-invoicing/).
 
-Two effects are easy to miss. Invoice frequency hardly matters: twelve monthly invoices of €1,000 count about the same as one annual invoice of €12,000, unless rounding applies per invoice. Growth matters a lot: if recurring revenue grows by 20 percent a year, year three needs about 44 percent more events than year one.
+Two effects are easy to miss. Invoice frequency matters little: twelve monthly invoices of $1,000 count about the same as one annual invoice of $12,000, unless rounding applies per invoice. For invoices in euros, timing can shift the result through the daily exchange rate. Growth matters a lot: if recurring revenue grows by 20 percent a year, year three needs about 44 percent more events than year one.
 
 The price per event comes from your quote, because Salesforce does not publish it. Multiply your event forecast by that price and compare the result with the cost of invoicing the same revenue from SAP, including the interface you would need for amendments.
 
@@ -90,7 +91,7 @@ The price per event comes from your quote, because Salesforce does not publish i
 
 I would take these points into the negotiation:
 
-1. **Entitlement per contract year.** Ask for a ramp that follows your forecast instead of one pool sized for the last year.
+1. **Entitlement per contract year.** Ask whether a multi-year order has one pool or annual entitlements, and for a ramp that follows your forecast.
 2. **Overage.** Get the price and the process for additional events in writing before you sign.
 3. **Credit memos and rounding.** Clarify whether credit memos reduce the counted amount and whether rounding to $50 applies per invoice.
 4. **Exchange rate.** The rate sheet uses the average daily rate from Salesforce's provider. Agree how you can check the conversion.

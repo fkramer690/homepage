@@ -2,6 +2,7 @@
 title: "Salesforce Field Service Lizenzen: Wer braucht welche?"
 description: "Hotline, Disposition, Techniker, Backoffice, Servicepartner: welche Field-Service-Lizenz jede Rolle braucht, was sie kostet und welche Regeln zählen."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: de
 slug: field-service-lizenzen-rollen-dispatcher-techniker
 translationKey: field-service-licences-by-role
@@ -11,7 +12,7 @@ contactBrief: licences
 tags: [Field Service, Lizenzen, Dispatcher, Techniker, Contractor Plus, Außendienst]
 takeaways:
   - "Dispatcher und Technician kosten je 175 € pro Nutzer und Monat, Field Service Plus 230 €, Contractor Plus 80 € oder 32 € pro Login (Enterprise, 10/2026)."
-  - "Dispatcher und Technician sind für Contact Center und Case Management nicht erlaubt. Wer in der Hotline auch disponiert, braucht Field Service Plus."
+  - "Dispatcher und Technician sind für Case Management nicht erlaubt. Wer in der Hotline auch disponiert, braucht Field Service Plus oder Field Service+."
   - "Jede Field-Service-Org braucht mindestens eine Service-Cloud-Lizenz und für die Planung mindestens eine Dispatcher-Lizenz."
   - "Für Partnertechniker ist die Nutzerlizenz ab 2,5 Logins im Monat günstiger. Pro Login lohnt sich für Partner, die nur in Spitzen aushelfen."
   - "Eine Lizenzmatrix nach Rollen, gebaut aus dem, was Menschen im System tun, gehört vor dem ersten Angebot in den Business Case."
@@ -27,13 +28,13 @@ faq:
 draft: false
 ---
 
-In Salesforce Field Service braucht jede Rolle der Serviceorganisation ihre eigene Lizenz, und die Preisliste setzt feste Regeln für den Mix. Disponenten und Techniker bekommen Dispatcher oder Technician für 175 € pro Nutzer und Monat. Die Hotline, die Cases bearbeitet, braucht Service Cloud, und wenn sie auch disponiert, Field Service Plus für 230 €. Techniker von Servicepartnern bekommen Contractor Plus für 80 € pro Nutzer oder 32 € pro Login. Zwei Regeln entscheiden die meisten Rechnungen: Dispatcher und Technician dürfen kein Case Management machen, und jede Org braucht mindestens eine Service-Cloud- und eine Dispatcher-Lizenz.
+In Salesforce Field Service richtet sich die Lizenz danach, was eine Person im System tut, nicht nach der Stellenbezeichnung, und die Preisliste setzt feste Regeln für den Mix. Disponenten und Techniker bekommen Dispatcher oder Technician für 175 € pro Nutzer und Monat. Die Hotline, die Cases bearbeitet, braucht Service Cloud, und wenn sie auch disponiert, Field Service Plus für 230 €. Techniker von Servicepartnern bekommen Contractor Plus für 80 € pro Nutzer oder 32 € pro Login. Zwei Regeln entscheiden die meisten Rechnungen: Dispatcher und Technician dürfen kein Case Management machen, und die Planung in Salesforce braucht mindestens eine Service-Cloud-Lizenz und Dispatcher-Rechte in der Org.
 
 Weitere Fragen zum Produkt, von der Einführung bis zum ERP, beantwortet der Themen-Hub [Salesforce Field Service für Hersteller](../../masterclass/field-service/).
 
 ## Was kosten die Field Service Lizenzen?
 
-Salesforce verkauft das Produkt heute als Field Service and Operations. Die [deutsche Preisseite](https://www.salesforce.com/de/products/field-service/pricing) nennt im Oktober 2026 diese Preise pro Nutzer und Monat, bei jährlicher Abrechnung und für die Enterprise Edition. Die [US-Preisseite](https://www.salesforce.com/service/field-service-management/pricing/) zeigt dieselben Zahlen in Dollar.
+Salesforce verkauft das Produkt heute als Field Service and Operations. Die [deutsche Preisseite](https://www.salesforce.com/de/products/field-service/pricing) nennt am 9. November 2026 diese Preise pro Nutzer und Monat, bei jährlicher Abrechnung und für die Enterprise Edition.
 
 | Lizenz | Was laut Preisliste enthalten ist | Listenpreis |
 |---|---|---|
@@ -45,12 +46,14 @@ Salesforce verkauft das Produkt heute als Field Service and Operations. Die [deu
 
 In der Unlimited Edition kosten Dispatcher und Technician laut Fußnote 330 Dollar, das Plus-Paket 380 Dollar. Ob sich das Paket für 650 € rechnet, ist eine eigene Rechnung, die ich in [Agentforce 1 Field Service: Wann rechnet sich das Paket?](../agentforce-1-field-service-paket-rechnung/) aufmache.
 
+**Stand 9. November 2026:** Die [US-Preisseite](https://www.salesforce.com/service/field-service-management/pricing/) hat am 5. November 2026 umgestellt: Statt Field Service Plus und Agentforce 1 Field Service stehen dort Field Service+ Core (250 $), Field Service+ Advanced (450 $) und Field Service Max (650 $), Dispatcher und Technician bleiben bei 175 $. Die deutsche Seite zeigt noch das alte Modell. Ich würde im Angebot klären, welches Modell für Ihren Vertrag gilt und ob Field Service+ Core das Recht zum Case Management hat.
+
 ## Das Kleingedruckte ändert die Rechnung
 
 Drei Fußnoten der Preisliste sind wichtiger als die Preise selbst.
 
 1. **Mindestens eine Service-Cloud-Nutzerlizenz.** Field Service läuft auf Service Cloud. Eine Org ohne einen einzigen Service-Cloud-Nutzer erfüllt die Bedingung nicht. Field Service Plus enthält Service-Funktionen und zählt mit.
-2. **Mindestens eine Dispatcher-Lizenz.** Techniker und Contractors brauchen mindestens einen Dispatcher in der Org, um das Planungswerkzeug zu nutzen. Ein reiner Techniker-Rollout ohne Dispatcher-Lizenz funktioniert nicht.
+2. **Mindestens eine Dispatcher-Lizenz.** Techniker und Contractors brauchen mindestens einen Dispatcher in der Org, um das Planungswerkzeug zu nutzen. Ein reiner Techniker-Rollout mit Planung in Salesforce braucht deshalb eine Dispatcher-Lizenz oder ein Paket mit Dispatcher-Rechten.
 3. **Kein Case Management mit Dispatcher oder Technician.** Laut Preisliste dürfen diese beiden Lizenzen nicht für Contact Center, Call Center oder Case Management genutzt werden. Field Service Plus darf das.
 
 ```hinweis achtung
@@ -94,7 +97,7 @@ Die Zahlen sind angenommen. Ein Maschinenbauer hat eine Hotline mit 6 Mitarbeite
 | Disposition | 4 | Dispatcher zu 175 € | 700 € |
 | Eigene Techniker | 45 | Technician zu 175 € | 7.875 € |
 | Partner A | 5 | Contractor Plus pro Nutzer zu 80 € | 400 € |
-| Partner B | 3 | Contractor Plus, 6 Logins zu 32 € | 192 € |
+| Partner B | 3 | Contractor Plus, 6 gekaufte Monatslogins zu 32 € | 192 € |
 | **Summe** | | | **10.337 €** |
 
 Das sind 124.044 € im Jahr zum Listenpreis. Mit Nutzerlizenzen würde Partner B 240 € statt 192 € im Monat kosten. Soll die Hotline am Wochenende auch disponieren, wechseln alle sechs auf Field Service Plus: 1.380 € statt 1.170 €, also 2.520 € mehr im Jahr. Übernehmen umgekehrt die vier Disponenten abends die Störungshotline, brauchen sie ebenfalls Field Service Plus: 920 € statt 700 € im Monat.
@@ -106,7 +109,7 @@ Der Wert der Übung liegt weniger in der Summe als in den Entscheidungen, die si
 - **Wer Case Management macht.** Jede Person, die Cases bearbeitet und auch Techniker plant, braucht Field Service Plus. Das ist zuerst eine Prozessfrage.
 - **Wie Partner arbeiten.** Regelmäßige Partnertechniker mit Nutzerlizenz, gelegentliche pro Login. Die Zählregel vereinbaren.
 - **Welche Edition.** Die Preise oben gelten für die Enterprise Edition. In der Unlimited Edition kosten Dispatcher und Technician 330 Dollar.
-- **Welche Add-ons.** Agentforce for Field Service and Operations (125 Dollar), Visual Remote Assistant (50 Dollar) und Appointment Assistant (25 Dollar) werden pro Nutzer berechnet. Nur die Rollen, die sie nutzen, brauchen sie.
+- **Welche Add-ons.** Agentforce for Field Service and Operations, Visual Remote Assistant und Appointment Assistant werden als Add-ons verkauft; die US-Preisseite nennt seit 5. November 2026 keinen Preis mehr dafür. Nur die Rollen, die sie nutzen, brauchen sie.
 - **Wachstum.** Eine Lizenzprognose über drei Jahre, nach Rolle und Welle, verhindert, dass am ersten Tag 45 Techniker-Lizenzen gekauft werden, wenn die erste Welle 15 Techniker hat.
 
 Wie das in den Business Case für Field Service passt, steht in [Teil 1 der Serie](../salesforce-field-service-lohnt-sich/) und in [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/). Bearbeitet die Serviceorganisation auch Garantieansprüche, lohnt vor dem Kauf ein Blick in das [Manufacturing-Cloud-Kapitel zu Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/), damit dieselben Personen nicht zweimal lizenziert werden.

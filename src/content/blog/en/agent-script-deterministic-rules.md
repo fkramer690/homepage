@@ -2,7 +2,7 @@
 title: "Agent Script: why business rules don't belong in the LLM"
 description: "Credit limits, warranty eligibility and price approvals belong in Agent Script logic, not in the LLM. How hybrid reasoning works and what to check in a design."
 pubDate: 2026-10-27
-updatedDate: 2026-11-05
+updatedDate: 2026-11-09
 lang: en
 slug: agent-script-deterministic-rules
 translationKey: agent-script-deterministic-rules
@@ -11,37 +11,37 @@ categories: [ai]
 tags: [agent script, agentforce, ai agents, manufacturing, warranty, architecture]
 takeaways:
   - "The LLM understands the request and explains the result. The decision is made by Agent Script logic or the Flow, Apex or ERP call behind it."
-  - "In the new Agentforce, available since February 2026, logic instructions run as code without an LLM call; only prompt instructions trigger one."
+  - "In the new Agentforce, available since February 2026, logic instructions run as code without an LLM call; prompt nodes and some platform steps call the model."
   - "An action with an available when condition disappears from the LLM's tool list while the condition is false."
   - "Gate variables must be set by code, never by the LLM; otherwise the gate brings back exactly the variability it was meant to remove."
   - "before_reasoning runs on every parse, so an ERP lookup placed there without a guard runs several times per user turn."
 faq:
   - q: "What is hybrid reasoning in Agentforce?"
-    a: "Hybrid reasoning means an agent combines deterministic logic with LLM reasoning. In Agent Script, logic instructions run as code without an LLM call, while prompt instructions are interpreted by the model. The Atlas Reasoning Engine decides at each step which path applies."
+    a: "Hybrid reasoning means an agent combines deterministic logic with LLM reasoning. In Agent Script, logic instructions run as code without an LLM call, while prompt instructions are assembled into a prompt for the model. The Atlas Reasoning Engine decides at each step which path applies."
   - q: "What does available when do in Agent Script?"
     a: "It is a condition on an action. When it evaluates to false, the platform removes the action from the LLM's tool list, so the model cannot select or call it. Salesforce Architects calls this a hard platform-level gate."
   - q: "Can I still use agents built in the legacy Agentforce builder?"
-    a: "Yes. According to Salesforce, development on the legacy builder is frozen, new agents can only be created in the new builder since July 2026, and no end date has been published. Moving an agent means rebuilding it; activating the rebuilt agent deactivates the original."
+    a: "Yes. Development on the legacy builder is frozen, new agents can only be created in the new builder since July 2026, and existing agents stay editable. Salesforce Help describes an upgrade that creates a new version in the new builder and converts subagents, actions and settings to Agent Script; activating it deactivates the previous version."
   - q: "Should the agent calculate the credit limit itself?"
-    a: "No. The credit limit and the exposure are maintained in the ERP. The agent should read the result through an API action and use it as a gate. Recalculating the rule in Salesforce creates a second version of it that drifts apart from the ERP."
+    a: "No. The credit limit and the exposure are maintained in the ERP. The agent should read the result through an API action and use it as a gate, and the order action must check it again when it commits the order. Recalculating the rule in Salesforce creates a second version of it that drifts apart from the ERP."
 draft: false
 ---
 
-Credit limit checks, warranty eligibility and price approvals belong in Agent Script logic, not in the judgment of the language model. Since February 2026 the new Agentforce with hybrid reasoning is generally available: logic instructions execute as code, and the LLM is only called where you write prompt instructions. Use that split deliberately. A rule the model interprets can take a different path on the same input, and "the agent decided" does not hold up in an audit or a dispute with a dealer. Let the rule decide, and let the LLM understand the request and explain the result.
+Credit limit checks, warranty eligibility and price approvals must be decided deterministically, not by the judgment of the language model: in Agent Script logic or, for transactional rules, in the system that owns the rule. Since February 2026 the new Agentforce with hybrid reasoning is generally available: logic instructions execute as code, and the LLM is called at prompt nodes. Use that split deliberately. A rule the model interprets can take a different path on the same input, and "the agent decided" does not hold up in an audit or a dispute with a dealer. Let the rule decide, and let the LLM understand the request and explain the result.
 
 ## What is hybrid reasoning in Agent Script?
 
 Hybrid reasoning means one agent combines deterministic logic with LLM reasoning. Salesforce Architects describes the earlier Agentforce model plainly: the LLM made every decision at runtime, "with no guaranteed path through the workflow", so identical inputs could take different routes. The [architecture guide on hybrid reasoning](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) sets one rule against that: "if you can express a decision as code, it should be written as logic."
 
-Agent Script is the declarative language that implements this. It has two kinds of instructions. Logic instructions, such as conditions and action calls, run as code with no LLM involved. Prompt instructions are natural language for the model, and each one triggers an LLM call. A compiler turns the script into an Agent Graph, and the Atlas Reasoning Engine executes it as a state machine. According to the same guide, the new Agentforce has been generally available since February 2026.
+Agent Script is the declarative language that implements this. It has two kinds of instructions. Logic instructions, such as conditions and action calls, run as code with no LLM involved. Prompt instructions are natural language for the model; during a parse they are assembled into one prompt, and the model is called at that prompt node. Routing, response generation or groundedness checks can add further model calls. A compiler turns the script into an Agent Graph, and the Atlas Reasoning Engine executes it as a state machine. According to the same guide, the new Agentforce has been generally available since February 2026.
 
-For existing agents this is not optional for long. Salesforce wrote in [July 2026](https://www.salesforce.com/blog/upgrade-to-agent-script/) that development on the legacy builder is frozen and that new agents can only be created in the new builder. There is no end date yet, but every new agent you commission is an Agent Script agent.
+For existing agents this is not optional for long. Salesforce wrote in [July 2026](https://www.salesforce.com/blog/upgrade-to-agent-script/) that development on the legacy builder is frozen and that new agents can only be created in the new builder. There is no end date yet, existing agents stay editable, and Salesforce offers an [upgrade](https://help.salesforce.com/s/articleView?id=ai.agent_setup_create_upgrade.htm&language=en_US&type=5) that converts a legacy agent into a new Agent Script version for review and testing. Every new agent you commission is an Agent Script agent.
 
 ## Why do credit limits, warranty and price approvals not belong in the LLM?
 
 Because these are decisions with a right answer. A dealer is over the credit limit or not. A machine is under warranty or not. A discount needs approval or not. I see four reasons to keep them out of the model.
 
-**Audit and disputes.** A dealer whose warranty claim was rejected will ask why. The guide calls non-deterministic execution an audit gap, and I agree. A rule in code gives the same answer on Tuesday as on Monday and can be traced. Agent versions are also stored as metadata: the [AiAuthoringBundle](https://developer.salesforce.com/blogs/2026/05/new-agentforce-metadata-and-development-lifecycle) keeps versioned folders, so you can show which rule version was active.
+**Audit and disputes.** A dealer whose warranty claim was rejected will ask why. The guide calls non-deterministic execution an audit gap, and I agree. With the same version, inputs and system state, a rule in code follows the same path and can be traced. Agent versions are also stored as metadata: the [AiAuthoringBundle](https://developer.salesforce.com/blogs/2026/05/new-agentforce-metadata-and-development-lifecycle) keeps versioned folders. To prove which rule governed a specific transaction, also keep the activation history and runtime traces.
 
 **The rule already lives somewhere.** In manufacturing, the credit limit and the exposure sit in SAP or proALPHA. Warranty terms sit in Manufacturing Cloud or in the ERP. Price conditions sit in the ERP or in CPQ, a choice covered in [customer prices: SAP conditions or Salesforce Pricing?](../customer-prices-sap-conditions-or-salesforce-pricing/). An agent should read the result of that system, not rebuild the rule in a prompt. Two places with the same rule drift apart, and the prompt version is the one nobody tests.
 
@@ -54,8 +54,8 @@ Because these are decisions with a right answer. A dealer is over the credit lim
 Four building blocks matter for a decision maker. Your partner should be able to show you where each rule sits.
 
 - **Conditionals in the reasoning block.** According to the [Agent Script docs](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-patterns-conditionals.html), `if` and `else` are evaluated before the prompt reaches the LLM, and only the matching instruction is sent. The model never sees the branch that does not apply.
-- **available when.** A condition on an action. When it is false, the action is [completely hidden from the LLM](https://developer.salesforce.com/sample-apps/agent-script-recipes/action-configuration/available-when-filtering) and cannot be called. That is the gate for "create order" or "approve claim".
-- **before_reasoning and after_reasoning.** `before_reasoning` runs deterministically at the start of every parse, for authentication, entitlement checks and loading context. `after_reasoning` runs after the model, for checks and transitions. A parse happens on first entry, after every tool call and on every user turn.
+- **available when.** A condition on an action. When it is false, the action is [completely hidden from the LLM](https://developer.salesforce.com/sample-apps/agent-script-recipes/action-configuration/available-when-filtering) and cannot be called. That is the gate for "create order" or "approve claim". It is not an authorization boundary: the Flow, Apex service or ERP endpoint behind the action must enforce the rule and the caller's permissions again when it runs.
+- **before_reasoning and after_reasoning.** `before_reasoning` runs deterministically at the start of every parse, for authentication, entitlement checks and loading context. `after_reasoning` normally runs after the reasoning loop ends, for checks and transitions, but it is skipped in documented cases. A parse happens on first entry, after every tool call and on every user turn.
 - **Escalation.** `@utils.escalate` [hands the conversation to a human service rep](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-ref-utils.html) through Omni-Channel.
 
 A simplified sketch of a credit gate for spare part orders, in plain words:
@@ -73,18 +73,18 @@ Three details in the guide are worth asking your partner about.
 title: Gate variables, the guard and is_displayable
 - **Code sets the gate variables.** If the LLM sets them, "you've reintroduced the variability the gate was designed to prevent."
 - **The guard matters** (`if @variables.credit_checked == False`). Without it the ERP lookup in `before_reasoning` runs on every parse, so several times per turn, and every run is an ERP call.
-- **`is_displayable` ends the loop.** Such an action ends the reasoning loop as soon as its output is shown, and `after_reasoning` is skipped. A check placed there then never runs.
+- **`is_displayable` ends the loop.** If an action output is marked displayable and the model shows it, the reasoning loop ends and `after_reasoning` is skipped. A check placed there then never runs.
 ```
 
 ```hinweis offen
-The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) bills actions at 20 credits but does not say whether script-triggered calls count differently. With an ERP lookup in `before_reasoning`, I would have that confirmed in the quote.
+According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=ai.agent_considerations.htm&language=en_US&type=5), agent actions trigger billing when they run, also when they run deterministically from reasoning instructions. The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) of November 3, 2026 lists 20 credits per action, 16 in a sandbox. An unguarded ERP lookup in `before_reasoning` therefore costs credits on every parse.
 ```
 
 ## Worked example: a dealer agent for spare parts and warranty
 
 Assume a machine builder with SAP, Sales Cloud, Service Cloud and a dealer portal. The numbers are assumptions to show the method. The agent handles 800 spare part orders and 150 warranty pre-checks a month, and it touches credit limit, warranty and price approval.
 
-**Credit limit.** SAP credit management decides. A MuleSoft API returns a flag per dealer, as described in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/). The agent reads it once per session and gates the order action. Assume 4 percent of dealers are blocked at any time: for them the model explains that credit management has to release the order and offers to forward the request. It never sees an order button.
+**Credit limit.** SAP credit management decides. A MuleSoft API returns a flag per dealer, as described in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/). The agent reads it at the start of the session to guide the conversation and gates the order action; the order API checks the current credit status again when it creates the order. Assume 4 percent of dealers are blocked at any time: for them the model explains that credit management has to release the order and offers to forward the request. It never sees an order button.
 
 **Warranty eligibility.** Assume the rule is 24 months from installation or 5,000 operating hours, whichever comes first. The model's job is to collect the serial number and the fault description from free text. A Flow or Apex action then reads the asset warranty and returns eligible, not eligible or data missing, plus a reason. The model words the answer. If the installation date is missing, the result is "data missing" and the case goes to a person, not to a guess. How Manufacturing Cloud models the warranty is in [warranty claims from dealers](../warranty-claims-dealers-salesforce/), and the Winter '27 agent for this check in [the warranty claims adjudication agent](../warranty-claims-adjudication-agent/).
 
@@ -94,7 +94,7 @@ What remains for the model is the part it is good at: understanding "the hydraul
 
 ## What stays with the LLM?
 
-More than it sounds. The model recognises intent, fills required inputs from free text, summarises a case for a technician, explains a rejection politely in the dealer's language and decides when a conversation needs a human. Gartner recommends using agents [when decisions are needed](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) and automation for routine workflows. I read that the same way: the judgment about what the dealer wants belongs to the model, the rule that follows belongs to code.
+More than it sounds. The model recognizes intent, fills required inputs from free text, summarizes a case for a technician, explains a rejection politely in the dealer's language and recognizes when a conversation should go to a human, within escalation rules you define. Gartner recommends using agents [when decisions are needed](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) and automation for routine workflows. I read that the same way: the judgment about what the dealer wants belongs to the model, the rule that follows belongs to code.
 
 Agent Script is also not always the right place for the rule itself. If the rule has many variants, such as warranty terms per product family and part, it belongs in the data model or in the Business Rules Engine, which the [Manufacturing Cloud page](https://www.salesforce.com/manufacturing/cloud/) lists for claims, rebates and quoting. The script then calls it. If the ERP owns the rule, the script calls the ERP. Agent Script decides when a rule is checked and what happens with the result.
 

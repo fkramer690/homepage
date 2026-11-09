@@ -3,6 +3,7 @@ title: "Salesforce Licenses: Does Everyone Need a Full One?"
 metaTitle: "Salesforce License Cost: Does Everyone Need a Full One?"
 description: "Not every user needs a full Salesforce license. Which license types exist, what they cost, and how a license forecast can save six figures a year."
 pubDate: 2026-10-26
+updatedDate: 2026-11-09
 lang: en
 slug: salesforce-licences-full-licence-needed
 translationKey: salesforce-licence-types
@@ -13,8 +14,8 @@ tags: [licenses, make-or-buy, business case, platform, experience cloud]
 takeaways:
   - "Users who only read, approve or work in one narrow custom process can often use a Platform license."
   - "Sales Cloud Core costs $195 per user and month and Platform Starter $25, so for 100 users the difference is $204,000 a year."
-  - "Platform licenses allow no opportunities and few custom objects, and standard features must not be rebuilt with custom development to save licenses."
-  - "External users such as dealers and customers do not need internal licenses. Portal licenses start at $4 per login or $10 per member."
+  - "Platform licenses exclude opportunities, leads and forecasts, allow few custom objects, and do not cover customer service work on cases."
+  - "Dealers and customers do not need internal licenses. Self-service portal licenses start at $4 per login or $10 per member."
   - "A license forecast groups users by what they actually do in the system, and it belongs before the negotiation, not after it."
 faq:
   - q: "What does a Salesforce license cost?"
@@ -22,13 +23,13 @@ faq:
   - q: "What types of Salesforce licenses are there?"
     a: "For internal users there are full licenses such as Sales Cloud and Service Cloud, cheaper Platform licenses for custom apps, and special licenses such as Field Service Technician. External users get portal licenses, and interfaces get integration licenses without a user interface."
   - q: "What can't a Salesforce Platform Starter user do?"
-    a: "Platform users work with accounts, contacts, reports and custom objects, but not with opportunities and most sales and service features. Platform Starter allows 10 custom objects, Platform Plus 110."
+    a: "Platform users work with accounts, contacts, reports and custom objects, and can see cases, assets and work orders, but not leads, opportunities, quotes or forecasts, and they may not work as customer service agents. Platform Starter allows 10 custom objects, Platform Plus 110."
   - q: "Do integrations need a full Salesforce license?"
-    a: "Usually not. Enterprise, Unlimited and Performance Edition come with a limited number of free Salesforce Integration licenses that only allow API access. More can be bought."
+    a: "Usually not. Enterprise, Unlimited and Performance Edition currently come with five free Salesforce Integration licenses that only allow API access. More can be bought."
   - q: "When is the best time to negotiate Salesforce licenses?"
-    a: "Salesforce's fiscal year ends on 31 January. Near year end there is often room to add products from your own roadmap for a small premium, provided the company knows what it will need in two to three years."
+    a: "Salesforce's fiscal year ends on 31 January. That can affect commercial timing, but terms are account-specific. Add roadmap products early only if ramp dates and expected usage make the total contract value better."
   - q: "Where do I buy Salesforce licenses?"
-    a: "Usually directly from Salesforce through the account executive responsible for your company; smaller editions can also be bought online. Price and contract come from Salesforce, and the implementation partner helps you work out which licenses each role needs."
+    a: "Usually directly from Salesforce through the account executive responsible for your company; smaller editions can also be bought online. Price and contract come from Salesforce. Which licenses each role needs should be worked out on the customer side, with input from the implementation partner."
 draft: false
 ---
 
@@ -36,7 +37,7 @@ No, not every Salesforce user needs a full license. Full licenses such as Sales 
 
 ## What Salesforce licenses are there?
 
-Salesforce sells licenses per user. A user's license decides which objects and features they can see at all. For manufacturing companies these types matter, with list prices per user and month, billed annually (October 2026):
+Salesforce sells most licenses per user. A user's license sets the upper limit of objects and features; permission set licenses, permissions and contract terms decide the rest. For manufacturing companies these types matter, with list prices per user and month, billed annually (October 2026):
 
 | License | For whom | List price |
 |---|---|---|
@@ -44,13 +45,13 @@ Salesforce sells licenses per user. A user's license decides which objects and f
 | Platform Plus | Internal users of custom apps, up to 110 custom objects | $100 |
 | Platform Starter | Internal users of custom apps, up to 10 custom objects | $25 |
 | Field Service Technician | Field technicians | $175 |
-| Service Portal Member | Customers in a self-service portal | $10 per member |
-| Service Portal Login | Customers who rarely log in | $4 per login |
+| Service Portal Member | Customers in a self-service portal (requires a Service Cloud edition) | $10 per member |
+| Service Portal Login | Customers who rarely log in (requires a Service Cloud edition) | $4 per login |
 | Partner Relationship Management | Dealers and partners in a portal | $25 per member |
 
-The prices come from the Salesforce pages for [Sales Cloud](https://www.salesforce.com/products/sales-cloud-pricing/), [Platform](https://www.salesforce.com/eu/editions-pricing/app-cloud/), [Field Service](https://www.salesforce.com/service/field-service-management/pricing/), [self-service portals](https://www.salesforce.com/products/customer-self-service-pricing/) and [partner portals](https://www.salesforce.com/products/experience-cloud/pricing/partner-relationship-management/). List prices are a starting point. The quote almost always differs.
+The prices come from the Salesforce pages for [Sales Cloud](https://www.salesforce.com/products/sales-cloud-pricing/), [Platform](https://www.salesforce.com/eu/editions-pricing/app-cloud/), [Field Service](https://www.salesforce.com/service/field-service-management/pricing/), [self-service portals](https://www.salesforce.com/products/customer-self-service-pricing/) and [partner portals](https://www.salesforce.com/products/experience-cloud/pricing/partner-relationship-management/). List prices are a starting point, not solution costs: Field Service, for example, also needs at least one Service Cloud and one Dispatcher license. Since 5 November 2026 the US Field Service page also lists Field Service+ editions, see [Field Service licenses by role](../field-service-licences-by-role/).
 
-Then there are interfaces. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.integration_user.htm&type=5), orgs on Enterprise, Unlimited and Performance Edition get a limited number of free Salesforce Integration licenses. They allow API access only, no user interface. An interface to SAP therefore does not need a full license, and it should not have one, because a technical user with a full license usually has more rights than it needs.
+Then there are interfaces. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.integration_user.htm&type=5), orgs on Enterprise, Unlimited and Performance Edition currently get five free Salesforce Integration licenses. They allow API access only, no user interface. A typical interface to SAP should therefore be checked for an Integration license before anyone assigns a full license, because a technical user with a full license usually has more rights than it needs. Check required objects, APIs and package entitlements first.
 
 ## Where do companies pay too much?
 
@@ -66,7 +67,7 @@ What they have in common: they do not use the main activities, or they only take
 In a field service project, at one client we created travel requests based on service appointments, as a custom object, and made them available to the technicians from there. The colleagues who handled the travel requests did not need a Field Service license for that. They worked at a fraction of the cost of a full license.
 ```
 
-An example with list prices: 100 users who only read and approve. The difference is $170 per user and month, and more than $600,000 over a three-year contract.
+An example with list prices: 100 users who read accounts and contacts and approve records in a custom app that uses no excluded CRM objects. The difference is $170 per user and month, and more than $600,000 over a three-year contract.
 
 ```kennzahlen
 $195 | Sales Cloud Core per user and month
@@ -79,11 +80,11 @@ With external users the mistake costs even more. Dealers or customers working on
 
 ## No opportunities, few custom objects: the limits of a Platform license
 
-Platform licenses have hard limits, and ignoring them breaks the contract:
+Platform licenses have hard limits, and the order form makes them binding:
 
-- **No opportunities**, no forecasts and hardly any sales or service features. Platform users work with accounts, contacts, reports and custom objects.
+- **No leads, opportunities, quotes or forecasts.** Platform users work with accounts, contacts, reports and custom objects. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.users_license_types_communities_lightning_platform_details.htm&type=5) they can also access cases, assets and work orders, but they may not work as customer service agents.
 - **Few custom objects.** Platform Starter allows 10, Platform Plus 110.
-- **No rebuilding.** According to [Salesforce Ben](https://www.salesforceben.com/salesforce-platform-licenses/), customers must pay for standard features if they copy them with custom development. A custom "opportunity light" for Platform users is therefore no way to save money.
+- **No rebuilding.** A custom data model does not override the restrictions in your order form and product terms. According to [Salesforce Ben](https://www.salesforceben.com/salesforce-platform-licenses/), customers must pay for standard features if they copy them with custom development. A custom "opportunity light" for Platform users is therefore no way to save money.
 
 Special licenses have similar limits. According to the pricing page, Field Service Dispatcher and Technician licenses may not be used for a contact center or case management. A technician who also handles customer requests therefore needs Field Service Plus.
 
@@ -104,18 +105,20 @@ Put it next to the quote
   Where the quote differs, there is either a reason or a negotiation point.
 ```
 
-In existing orgs the login history and recently edited records help. Users with a full license who log in once a month are candidates for a different license, or for none.
+In existing orgs the login history and recently edited records help. A user with a full license who logs in once a month is a reason to look closer, not proof: what they do in that one login decides.
 
-Timing matters too. Salesforce's [fiscal year](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Fourth-Quarter-Fiscal-2026-Results/default.aspx) ends on 31 January. Near year end or during promotions there is often room to add products from the next two to three years of your own roadmap for a small premium. That only works if the company knows what to ask for.
+For rare users there is also a usage-based option: Salesforce sells [Platform logins](https://www.salesforce.com/platform/enterprise-app-development/pricing/) with roughly the rights of Platform Starter. For approvers who log in a few times a year, compare it with named licenses.
+
+Timing matters too. Salesforce's [fiscal year](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Fourth-Quarter-Fiscal-2026-Results/default.aspx) ends on 31 January. That can affect commercial timing, but discounts and bundle terms are account-specific. I would add roadmap products early only if ramp dates, reduction rights and expected usage make the total contract value better; otherwise they become shelfware.
 
 ## When is the full license still right?
 
-Saving at any cost is wrong too. A full license is right when a user works on leads, opportunities, cases or forecasts, even occasionally. It is also right when a group will clearly need more within a year. Changing licenses in the middle of a contract costs negotiation time, and a process built around a license that is too small costs maintenance.
+Saving at any cost is wrong too. A full license is right when a user works on leads, opportunities or forecasts, or handles cases as a service agent, even occasionally. It is also right when a group will clearly need more within a year. Changing licenses in the middle of a contract costs negotiation time, and a process built around a license that is too small costs maintenance.
 
-The same trade-off applies to industry clouds. When Manufacturing Cloud pays off compared to Sales Cloud, for example, is its own make-or-buy question, which I describe under [make-or-buy and license forecasts](../../services/make-or-buy-licences/). AI features add consumption credits, and there the business value comes first, as described in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
+The same trade-off applies to industry clouds. When Manufacturing Cloud pays off compared to Sales Cloud, for example, is its own make-or-buy question, which I describe under [make-or-buy and license forecasts](../../services/make-or-buy-licences/). AI features can add user-based or consumption-based charges, and there the business value comes first, as described in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
 
-## Check who edited opportunities or cases last quarter
+## Check who worked on opportunities or cases in the last year
 
-If a renewal or a new quote is coming up, take one hour for three questions: how many users with a full license edited an opportunity or a case last quarter? Which external users work on internal licenses today? Which interfaces run through a user with a full license?
+If a renewal or a new quote is coming up, start with three questions: how many users with a full license worked on opportunities or cases in the last twelve months? Which external users work on internal licenses today? Which interfaces run through a user with a full license?
 
-The answers show how much room the quote leaves. For the first question, a report on opportunities and cases grouped by "Last Modified By", set next to the list of active users, is enough.
+The answers show how much room the quote leaves. For a first indication, a report on opportunities and cases grouped by "Last Modified By", set next to the login history, helps. It only shows the last editor, so readers, approvers and seasonal users need interviews with the process owners before anyone changes a license.
