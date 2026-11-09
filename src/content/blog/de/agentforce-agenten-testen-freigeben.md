@@ -13,7 +13,7 @@ takeaways:
   - "Salesforce liefert Testwerkzeuge, aber keine Schwelle. Testsatz und Passrate über mehrere Läufe vereinbaren Sie selbst."
   - "Ein Testfall prüft Subagent, Aktionen und Ergebnis. Das Ergebnis bewertet ein Sprachmodell, harte Geschäftsregeln brauchen exakte Prüfungen auf Daten."
   - "Ob Testläufe Credits kosten, sollten Sie schriftlich klären: Laut Leitfaden zur Test-API verbrauchen sie Requests und Credits."
-  - "Ich empfehle 100 Prozent für harte Regeln und kritische Fälle über mehrere Versuche und rund 90 Prozent je Lauf für die Antwortqualität."
+  - "Ich empfehle 100 Prozent für harte Regeln und kritische Fälle, rund 90 Prozent je Lauf für die Antwortqualität und eine menschliche Prüfung."
   - "Session Traces, Health-Metriken und ein gestufter Rollout laufen ab dem ersten Tag, und typische fehlgeschlagene Gespräche werden neue Testfälle."
 faq:
   - q: "Was ist das Agentforce Testing Center?"
@@ -25,11 +25,11 @@ faq:
   - q: "Lassen sich Agentforce-Tests in einer CI-Pipeline ausführen?"
     a: "Ja. sf agent test run liefert Ergebnisse als JSON, TAP oder JUnit. Eine Pipeline kann sie auswerten und ein Deployment stoppen, wenn die Passrate unter der vereinbarten Schwelle liegt."
   - q: "Mit wie vielen Testfällen sollte man anfangen?"
-    a: "Anthropic nennt 20 bis 50 Aufgaben aus echten Fehlern einen guten Start. Für einen Händleragenten würde ich sie aus echten Händler-E-Mails und Servicetickets nehmen und um Grenz- und Schutzfälle ergänzen."
+    a: "Anthropic nennt 20 bis 50 aus realen Fehlerfällen abgeleitete Aufgaben einen guten Start. Für einen Händleragenten würde ich sie aus echten Händler-E-Mails und Servicetickets nehmen und um Grenz- und Schutzfälle ergänzen."
 draft: false
 ---
 
-Wer Agentforce-Agenten testet, braucht am Ende eine Zahl, die über den Go-live entscheidet. Ein Agent ist produktionsreif, wenn er einen vereinbarten Testsatz mit einer vereinbarten Passrate besteht, über mehrere Läufe, in einer Sandbox, und wenn das Monitoring läuft, bevor der erste Händler ihm schreibt. Diese Schwelle ist notwendig, aber nicht hinreichend: Berechtigungen, Datenschutz, Rückfallwege, Last und ein Weg zum Abschalten gehören ebenfalls geprüft. Salesforce liefert die Werkzeuge, nicht die Schwelle. Die Fachseite, etwa die Serviceleitung, legt sie mit IT, Security und Datenverantwortlichen fest, und ich würde sie vor dem Piloten schriftlich festhalten.
+Wer Agentforce-Agenten testet, braucht am Ende eine Zahl, die über den Go-live entscheidet. Ein Agent ist produktionsreif, wenn er einen vereinbarten Testsatz mit einer vereinbarten Passrate besteht, über mehrere Läufe, in einer Sandbox, und wenn das Monitoring läuft, bevor der erste Händler ihm schreibt. Diese Schwelle ist notwendig, aber nicht hinreichend: Berechtigungen, Datenschutz, Fallbacks, Lastverhalten und eine Abschaltmöglichkeit müssen ebenfalls geprüft werden. Salesforce liefert die Werkzeuge, nicht die Schwelle. Die Fachseite, etwa die Serviceleitung, legt sie mit IT, Security und Datenverantwortlichen fest, und ich würde sie vor dem Piloten schriftlich festhalten.
 
 ## Warum testet man einen KI-Agenten anders als Apex?
 
@@ -55,7 +55,7 @@ Die Werkzeuge ändern sich schnell. Der [TDX-2026-Rückblick](https://www.salesf
 ```hinweis achtung
 Agententests sind [nur in Sandboxes verfügbar](https://developer.salesforce.com/docs/ai/agentforce/guide/testing-api-get-started.html), und der Leitfaden zur Test-API weist darauf hin, dass Testläufe Requests und Credits verbrauchen und Daten ändern können. Laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) vom 3. November 2026 kostet eine Aktion in einer Sandbox oder Scratch Org 16 Credits statt 20 in Produktion. Die Abrechnungsregeln für Tests ändern sich mit den Releases, lassen Sie sich also schriftlich bestätigen, ob Ihre Testläufe abgerechnet werden.
 
-Und reserviert eine Aktion ein Teil in einem angebundenen Test-ERP, tut sie das bei jedem Testlauf.
+Reserviert eine Aktion in einem angebundenen Test-ERP ein Teil, geschieht das bei jedem Testlauf.
 ```
 
 ## Wie legen Sie Passraten-Schwellen für den Go-live fest?
@@ -73,7 +73,7 @@ Auch der Prüfer braucht eine Kontrolle. Anthropic empfiehlt, Modell-Bewerter en
 
 Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und einem Händlerportal. Der geplante Agent beantwortet Händlerfragen zu Ersatzteilverfügbarkeit und Auftragsstatus. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
-**Der Testsatz.** Das Team schreibt 60 Testfälle: 40 typische Fragen aus echten Händler-E-Mails, 10 Grenzfälle wie ersetzte Teilenummern oder eine Seriennummer, die in der installierten Basis fehlt, und 10 Schutzfälle wie die Frage nach Aufträgen eines anderen Händlers. Jeder Fall nutzt im Schnitt drei Aktionen: Maschine identifizieren, SAP abfragen, Antwort formulieren. Anthropics Leitfaden nennt 20 bis 50 Aufgaben aus echten Fehlern einen guten Start.
+**Der Testsatz.** Das Team schreibt 60 Testfälle: 40 typische Fragen aus echten Händler-E-Mails, 10 Grenzfälle wie ersetzte Teilenummern oder eine Seriennummer, die in der installierten Basis fehlt, und 10 Schutzfälle wie die Frage nach Aufträgen eines anderen Händlers. Jeder Fall nutzt im Schnitt drei Aktionen: Maschine identifizieren, SAP abfragen, Antwort formulieren. Anthropics Leitfaden nennt 20 bis 50 aus realen Fehlerfällen abgeleitete Aufgaben einen guten Start.
 
 **Die Kosten.** Werden Testaktionen zum Sandbox-Satz abgerechnet, sind ein vollständiger Lauf 60 × 3 = 180 Aktionen zu 16 Credits, also 2.880 Credits. Drei Läufe pro Release ergeben 8.640 Credits, beim [Listenpreis von 500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) rund 43 €, ohne Prompts und Data 360. Drei Läufe pro Woche über einen zwölfwöchigen Piloten kosteten rund 520 €, weniger als eine falsche Verfügbarkeitszusage an einen Händler, dessen Maschine steht. Sind Ihre Testläufe nicht abgerechnet, bleiben nur angebundene Systeme und Data 360. Wie Sie den Rest der Rechnung schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
 
@@ -85,10 +85,10 @@ Die meisten Fehler in so einem Lauf zeigen auf Daten und Schnittstellen. Deshalb
 
 Tests decken die Fragen ab, an die Sie gedacht haben. Händler stellen andere. Deshalb läuft das Monitoring ab dem ersten Tag:
 
-- **Session Traces.** Mit [Agentforce 3](https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement) hat Salesforce ein Datenmodell für Session Tracing in Data Cloud eingeführt, heute Data 360, auf Basis von OpenTelemetry. Mit der Session Trace OTel API (Beta) lassen sich Traces pro Sitzung abrufen und an Werkzeuge wie Splunk oder Datadog weiterleiten; sie setzt Data 360 voraus. Traces enthalten Nachrichten und Aktionseingaben, der Zugriff gehört also beschränkt.
+- **Session Traces.** Mit [Agentforce 3](https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement) hat Salesforce ein Datenmodell für Session Tracing in Data Cloud eingeführt, heute Data 360, auf Basis von OpenTelemetry. Mit der Session Trace OTel API (Beta) lassen sich Traces pro Sitzung abrufen und an Werkzeuge wie Splunk oder Datadog weiterleiten; sie setzt Data 360 voraus. Traces enthalten Nachrichten und Aktionseingaben, der Zugriff darauf muss also beschränkt sein.
 - **Zustand und Alarme.** Agentforce Observability zeigt Latenz, Eskalations- und Fehlerquoten, Alarme je Metrik richten Sie in Agentforce Studio ein. Agent Health Monitoring mit mindestens 16 eingebauten Metriken ist seit der Dreamforce 2026 GA.
-- **Gestufter Rollout.** Beim Veröffentlichen entsteht eine inaktive Agentenversion, das Aktivieren ist ein eigener Schritt. Starten Sie mit einer Händlergruppe und erweitern Sie, wenn die Zahlen halten.
-- **Rückkopplung.** Fehlgeschlagene Gespräche sichten, Dubletten und personenbezogene Daten entfernen und typische oder riskante Fehler in die Regressionstests aufnehmen.
+- **Gestufter Rollout.** Beim Veröffentlichen entsteht eine inaktive Agentenversion, das Aktivieren ist ein eigener Schritt. Starten Sie mit einer Händlergruppe und erweitern Sie den Kreis, wenn die Kennzahlen stabil bleiben.
+- **Feedbackschleife.** Fehlgeschlagene Gespräche sichten, Dubletten und personenbezogene Daten entfernen und typische oder riskante Fehler in die Regressionstests aufnehmen.
 
 Testen Sie neu, sobald sich etwas unter dem Agenten ändert: ein Subagent, ein Flow, Wissensartikel, ein Salesforce-Release, die SAP-API.
 
