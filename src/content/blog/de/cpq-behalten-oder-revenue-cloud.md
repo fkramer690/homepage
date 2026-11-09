@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Bei Salesforce CPQ zu bleiben ist erlaubt und vorerst oft richtig. Bestandskunden verlängern, kaufen Nutzer nach und erhalten Support, und Salesforce hat weder ein End-of-Life-Datum noch eine erzwungene Migration angekündigt. Wechseln Sie zu Revenue Cloud (heute Agentforce Revenue Management), wenn Sie etwas brauchen, das nur dort kommt, etwa agentenbasierte Angebote oder neuere Verbrauchsmodelle, oder wenn Sie Ihr Produktmodell ohnehin neu aufbauen. Warten Sie, wenn der Prozess stabil ist oder ein größeres Projekt Vorrang hat. Und prüfen Sie einen dritten Weg, Partnerprodukt oder eigener Ansatz, wenn Ihre Konfigurationsregeln außerhalb von Salesforce liegen. Am Anfang steht eine ehrliche Analyse Ihrer CPQ-Org.
+Bei Salesforce CPQ zu bleiben ist erlaubt und vorerst oft richtig. Bestandskunden verlängern, kaufen Nutzer nach und erhalten Support, und Salesforce hat weder ein End-of-Life-Datum noch eine erzwungene Migration angekündigt. Wechseln Sie zu Revenue Cloud (heute Agentforce Revenue Management), wenn Sie Funktionen brauchen, die nur Revenue Cloud erhält, etwa agentenbasierte Angebote oder neuere Verbrauchsmodelle, oder wenn Sie Ihr Produktmodell ohnehin neu aufbauen. Warten Sie, wenn der Prozess stabil ist oder ein größeres Projekt Vorrang hat. Und prüfen Sie einen dritten Weg, Partnerprodukt oder eigener Ansatz, wenn Ihre Konfigurationsregeln außerhalb von Salesforce liegen. Am Anfang steht eine ehrliche Analyse Ihrer CPQ-Org.
 
 ## Können Sie einfach bei CPQ bleiben?
 
@@ -41,20 +41,20 @@ pro: Was Sie behalten
 - Support und kritische Fehlerbehebungen
 - Kein End-of-Life-Datum und laut Salesforce "no forced migration"
 contra: Was Sie dafür aufgeben
-- Keine neuen Funktionen: Salesforce lenkt neue Entwicklungen in Revenue Cloud, CPQ bekommt keine
+- Keine neuen Funktionen: Salesforce entwickelt neue Revenue-Funktionen für Revenue Cloud, CPQ erhält keine davon
 - Partner bauen eher Revenue-Cloud-Teams auf als CPQ-Teams, das erwarte ich
 - Das Wissen für eine stark angepasste CPQ-Org wird also nicht günstiger
 ```
 
-Ich würde bewusst entscheiden und festhalten, wann Sie die Frage wieder aufnehmen, statt es laufen zu lassen.
+Ich würde bewusst entscheiden und festhalten, wann Sie die Frage wieder aufnehmen, statt die Entscheidung auf unbestimmte Zeit zu vertagen.
 
 ## Wann sollten Sie zu Revenue Cloud wechseln?
 
 Diese Auslöser sprechen für einen Wechsel in den nächsten ein bis zwei Jahren:
 
-- **Sie brauchen, was nur Revenue Cloud bekommt.** Salesforce hat im Juli 2025 Agentforce-Funktionen für Angebote als Teil von [Revenue Cloud](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/) angekündigt, mit denen Vertriebler Angebote aus einer Anfrage in normaler Sprache erstellen. CPQ bekommt solche Funktionen nicht.
+- **Sie brauchen, was nur Revenue Cloud bekommt.** Salesforce hat im Juli 2025 Agentforce-Funktionen für Angebote als Teil von [Revenue Cloud](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/) angekündigt, mit denen Vertriebsmitarbeitende Angebote aus einer Anfrage in natürlicher Sprache erstellen. CPQ bekommt solche Funktionen nicht.
 - **Neue Verbrauchsmodelle.** Abos, Verlängerungen und einfache Nutzungsabrechnung gehen auch mit CPQ und dem Paket Salesforce Billing. Sollen Fernüberwachungs-Abos oder Pay-per-Use mit Mindestabnahmen, Kontingenten und Wallets laufen, bringt Revenue Cloud Verbrauchs- und Wallet-Management; nutzungsbasierte Rechnungen brauchen die separate Revenue-Cloud-Billing-Lizenz.
-- **Das Produktmodell ändert sich ohnehin.** Eine neue Produktgeneration, eine neue Variantenstruktur oder ein Katalog-Aufräumen ist ein Neuentwurf. Ihn zweimal zu machen, erst in CPQ und später noch einmal in Revenue Cloud, verschwendet Arbeit.
+- **Das Produktmodell ändert sich ohnehin.** Eine neue Produktgeneration, eine neue Variantenstruktur oder eine Katalogbereinigung ist ein Neuentwurf. Ihn zweimal zu machen, erst in CPQ und später noch einmal in Revenue Cloud, verschwendet Arbeit.
 - **Org-Neustart oder Partnerwechsel.** Wenn die Org neu aufgebaut wird oder ein neuer Partner übernimmt, passt der Wechsel in ein Projekt, das ohnehin läuft. Eine [KI-gestützte Org-Analyse](../ki-org-analyse-technische-schulden/) hilft zu sehen, was wirklich in der alten Org steckt.
 - **CPQ-Anpassungen sind fragil.** Wenn jeder Release-Test etwas im Quote Calculator Plugin bricht und nur eine Person es versteht, nimmt ein Neuentwurf ein Risiko weg.
 
@@ -71,9 +71,9 @@ Abwarten heißt nicht, nichts zu tun. Löschen Sie ungenutzte Regeln, dokumentie
 
 ## Der dritte Weg: Partnerprodukt oder eigener Ansatz
 
-Ja, und ich würde ihn immer prüfen, bevor etwas unterschrieben wird. Neben Revenue Cloud gibt es Partnerprodukte, eigene Ansätze auf der Plattform, Angebote im ERP oder eine Konfiguration in der Konstruktion mit Salesforce als Oberfläche, und gemischte Lösungen für eine Übergangszeit. Es hilft, getrennt zu entscheiden, wo Vertrieb, Konfiguration, Preisfindung und Abrechnung führen; bei Herstellern müssen sie nicht im selben Produkt liegen. Wie ein eigener Ansatz mit eigenem Produktkonfigurator Angebote und Sales Agreements versorgt, beschreibe ich in [vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/).
+Ja, und ich würde ihn immer prüfen, bevor etwas unterschrieben wird. Neben Revenue Cloud gibt es Partnerprodukte, eigene Ansätze auf der Plattform, Angebote im ERP oder eine Konfiguration in der Konstruktion mit Salesforce als Oberfläche, und gemischte Lösungen für eine Übergangszeit. Entscheiden Sie getrennt, welches System bei Vertrieb, Konfiguration, Preisfindung und Abrechnung führt. Bei Herstellern müssen diese Aufgaben nicht im selben Produkt liegen. Wie ein eigener Ansatz mit eigenem Produktkonfigurator Angebote und Sales Agreements versorgt, beschreibe ich in [vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/).
 
-Ein dritter Weg passt, wenn Ihre Konfigurationsregeln in der SAP-Variantenkonfiguration, in einem PLM-System oder bei Anwendungstechnikern liegen und Salesforce nur das Ergebnis anzeigen würde. Dann verdoppelt ein vollständiges Constraint-Modell in Revenue Cloud Regeln, die jemand synchron halten muss. Die Make-or-Buy-Fragen sind dieselben wie bei jedem Produkt: Wie gut passt der Standard, wer pflegt die Regeln, und was kosten Lizenz und Wartung über mehrere Jahre? Wie ich das rechne, steht unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+Ein dritter Weg passt, wenn Ihre Konfigurationsregeln in der SAP-Variantenkonfiguration, in einem PLM-System oder bei Anwendungstechnikern liegen und Salesforce nur das Ergebnis anzeigen würde. Dann bildet ein vollständiges Constraint-Modell in Revenue Cloud dieselben Regeln ein zweites Mal ab, und jemand muss beide synchron halten. Die Make-or-Buy-Fragen sind dieselben wie bei jedem Produkt: Wie gut passt der Standard, wer pflegt die Regeln, und was kosten Lizenz und Wartung über mehrere Jahre? Wie ich das rechne, steht unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
 Die Zahlen von Salesforce geben etwas Einordnung. Laut der CPQ-Seite sind rund 15 Prozent der Kunden von Revenue Cloud Advanced von CPQ umgestiegen. Das ist ein Anteil der Advanced-Kunden, nicht der Anteil der CPQ-Bestandskunden, die gewechselt sind. Die Zahl zeigt, dass Migrationen stattfinden. Dass CPQ-Kunden die Zeit davonläuft, zeigt sie nicht.
 
@@ -95,7 +95,7 @@ Die Matrix ist ein Ausgangspunkt. Wenn zwei Spalten passen, entscheiden meist da
 
 ## Was kostet ein Wechsel?
 
-Die Lizenzen sind der einfachere Teil. Die [Preisseite von Revenue Cloud](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) nennt diese Listenpreise bei Jahresvertrag:
+Die Lizenzkosten sind der einfachere Teil, hängen aber nicht allein von der Nutzerzahl ab. Die [Preisseite von Revenue Cloud](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) nennt diese Listenpreise bei Jahresvertrag:
 
 ```kennzahlen
 150 € | Revenue Cloud Growth pro Nutzer und Monat
