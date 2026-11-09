@@ -1,6 +1,6 @@
 ---
 title: "Salesforce Winter '27: what changes for your CI/CD pipeline"
-description: "Around Winter '27 the Salesforce CLI stops printing tokens, Apex limits rise, the Developer Console is hidden and API retirements near. What release teams adjust."
+description: "Around Winter '27 the Salesforce CLI stops printing tokens, Apex limits rise, the Developer Console is hidden, API retirements near. What release teams adjust."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09
 lang: en
