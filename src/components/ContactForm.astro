@@ -62,6 +62,11 @@ const base = import.meta.env.BASE_URL;
 
 <script>
   // Submit via fetch so visitors stay on the page and see the result inline.
+  // Spam bots fill and send a form within a second or two of loading the page; a person
+  // needs longer. Such fast submissions get the success message but are never sent
+  // (together with the botcheck honeypot above).
+  const MIN_FILL_MS = 3000;
+  const loadedAt = Date.now();
   for (const form of document.querySelectorAll<HTMLFormElement>('.contact-form')) {
     const body = form.querySelector<HTMLElement>('.form-body')!;
     const status = form.querySelector<HTMLElement>('.form-status')!;
@@ -75,7 +80,8 @@ const base = import.meta.env.BASE_URL;
       status.textContent = '';
       status.className = 'form-status';
       try {
-        const res = await fetch(form.action, {
+        const tooFast = Date.now() - loadedAt < MIN_FILL_MS;
+        const res = tooFast ? new Response('{}') : await fetch(form.action, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
           body: JSON.stringify(Object.fromEntries(new FormData(form))),
