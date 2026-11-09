@@ -79,7 +79,7 @@ export const freelanceArchitect = {
       items: [
         { icon: 'target', t: 'Zielbild und Entscheidungslog', d: 'Welche Clouds, welche Systeme führen, und warum. Jede Entscheidung mit Begründung nachlesbar.' },
         { icon: 'design', t: 'Datenmodell', d: 'Objekte, Beziehungen und die Frage, welche Daten aus dem ERP kommen.' },
-        { icon: 'steer', t: 'Standards für alle Partner', d: 'Namenskonventionen, eine Automation pro Objekt, Testabdeckung und die Object Ownership Matrix.' },
+        { icon: 'steer', t: 'Standards für alle Partner', d: 'Namenskonventionen, ein Einstiegspunkt für Automation pro Objekt, Testabdeckung und die Object Ownership Matrix.' },
         { icon: 'check', t: 'Reviews', d: 'Entwürfe und Pull Requests, bevor sie in Produktion gehen.' },
         { icon: 'budget', t: 'ROI- und Lizenzrechnung', d: 'Langfristig gerechnet, mit Wartung und Folgekosten, als Grundlage für die Verhandlung.' },
         { icon: 'handshake', t: 'Übergabe', d: 'Reviews und CoE-Call gehen an einen internen Kollegen, sobald der Prozess stabil läuft.' },
@@ -181,7 +181,7 @@ export const freelanceArchitect = {
       items: [
         { icon: 'target', t: 'Target picture and decision log', d: 'Which clouds, which systems lead, and why. Every decision with its reasoning on record.' },
         { icon: 'design', t: 'Data model', d: 'Objects, relationships and the question which data comes from the ERP.' },
-        { icon: 'steer', t: 'Standards for every partner', d: 'Naming conventions, one automation per object, test coverage and the object ownership matrix.' },
+        { icon: 'steer', t: 'Standards for every partner', d: 'Naming conventions, one automation entry point per object, test coverage and the object ownership matrix.' },
         { icon: 'check', t: 'Reviews', d: 'Designs and pull requests before they go to production.' },
         { icon: 'budget', t: 'ROI and licence calculation', d: 'Calculated for the long term, with maintenance and follow-up costs, as the basis for negotiation.' },
         { icon: 'handshake', t: 'Handover', d: 'Reviews and the CoE call go to an internal colleague once the process runs stable.' },

@@ -65,10 +65,10 @@ export const en = {
     mailSubject: 'Salesforce architecture: first call',
   },
   proof: [
-    { value: '8', label: 'years Salesforce' },
+    { value: '8', label: 'years of Salesforce' },
     { value: '20+', label: 'enterprise projects' },
     { value: '32', label: 'developers in 8 teams, one program' },
-    { value: '25', label: 'Salesforce certifications, 8 architect' },
+    { value: '25', label: 'Salesforce certifications, 8 of them architect' },
   ],
   role: {
     label: 'The role',

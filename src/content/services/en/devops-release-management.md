@@ -41,9 +41,9 @@ phases:
 duration: "Assessment and target process 1 to 2 weeks. The first team works with the pipeline after 4 to 6 weeks. All teams have switched after 2 to 4 months, depending on how many there are."
 faq:
   - q: "Which Git platforms can a Salesforce pipeline run on?"
-    a: "I have built Salesforce pipelines on GitHub, GitLab, Azure DevOps and Bitbucket. Each platform has its own details, but the pipelines are defined in YAML, so the backbone of the process is the same on all of them. The best choice is usually the platform the company already uses."
+    a: "I have built Salesforce pipelines on GitHub, GitLab, Azure DevOps and Bitbucket. Each platform needs its own pipeline definition, but the deployment steps and checks behind it are the same on all of them. The best choice is usually the platform the company already uses."
   - q: "Do we need a commercial DevOps tool such as Gearset or Copado?"
-    a: "Not necessarily. Commercial tools work, but they come with running licence costs. Open-source tools like sfdx-hardis cover branching, checks, deployments and monitoring on the client's own Git platform. Which way fits depends on the team, the budget and how much the client wants to own."
+    a: "Not necessarily. Salesforce's own DevOps Center is free but supports fewer Git platforms. Commercial tools work, but they come with running licence costs. Open-source tools like sfdx-hardis cover branching, checks, deployments and monitoring on the client's own Git platform. Which way fits depends on the team, the budget and how much the client wants to own."
   - q: "How do you measure whether the new release process works?"
     a: "Before and after numbers are often hard to get, because many companies cannot measure their current process and because releases change shape: they become smaller and more frequent. I focus on metrics the pipeline itself provides, such as deployment frequency, failed deployments and lead time for changes."
   - q: "How long does it take to introduce a Git-based release process?"
@@ -53,7 +53,7 @@ readMore: [devops-salesforce-enterprise, sfdx-hardis-introduction, client-owned-
 masterclass: devops
 ---
 
-Salesforce DevOps means every change goes through Git, a pull request and an automated pipeline before it reaches production. Release management adds the rules around it: which branches exist, which checks run at which stage, who approves and when the business gets new features. In large orgs with several teams, this is what turns stressful release weekends into routine. I set up this process on the client side, on the Git platform the client already owns.
+Salesforce DevOps means every change that can be deployed as metadata goes through Git, a pull request and an automated pipeline before it reaches production. The rare change that has to be made directly in production follows a documented exception and is pulled back into Git afterwards. Release management adds the rules around it: which branches exist, which checks run at which stage, who approves and when the business gets new features. In large orgs with several teams, this is what turns stressful release weekends into routine. I set up this process on the client side, on the Git platform the client already owns.
 
 ## Why do Salesforce releases cause so much trouble?
 
@@ -95,17 +95,17 @@ In one programme I built the release process myself. At first every pull request
 
 ```kennzahlen
 4 | Git platforms: GitHub, GitLab, Azure DevOps and Bitbucket
-1 | YAML backbone, the same on every platform
-€0 | running licence costs for sfdx-hardis
+1 | set of deployment steps and checks, reused on every platform
+€0 | licence fee for sfdx-hardis
 source: my pipelines in client projects
 ```
 
-I build pipelines on the Git platform the company already uses. So far that has been GitHub, GitLab, Azure DevOps and Bitbucket. The pipelines are defined in YAML, so the backbone is the same on every platform, even though each one has its own details, for example how the validation status of a pull request is shown.
+I build pipelines on the Git platform the company already uses. So far that has been GitHub, GitLab, Azure DevOps and Bitbucket. Each platform needs its own pipeline definition, but the deployment steps and checks behind it are the same everywhere, even though each one has its own details, for example how the validation status of a pull request is shown.
 
-For the Salesforce part I often use sfdx-hardis, an open-source DevOps tool that I use in my own projects. It has no running licence costs, and the repository, the pipeline and the access rights stay with the client. I explain what it does in [sfdx-hardis: open-source DevOps for Salesforce](../../blog/sfdx-hardis-open-source-salesforce-devops/). I support the project, but I have no financial ties to it. If a client already has a commercial tool that works, I build on it.
+For the Salesforce part I often use sfdx-hardis, an open-source DevOps tool that I use in my own projects. It has no licence fee (runners and maintenance still cost time and money), and the repository, the pipeline and the access rights stay with the client. I explain what it does in [sfdx-hardis: open-source DevOps for Salesforce](../../blog/sfdx-hardis-open-source-salesforce-devops/). I support the project, but I have no financial ties to it. If a client already has a commercial tool that works, I build on it.
 
 ```hinweis tipp
-Platform changes are part of release management too. Each Salesforce release, such as [Winter '27](../../blog/salesforce-winter-27-what-changes-for-your-pipeline/), can change API versions, CLI behaviour or security settings that a pipeline depends on.
+Platform changes are part of release management too. Each Salesforce release, such as [Winter '27](../../blog/salesforce-winter-27-what-changes-for-your-pipeline/), can change API versions, metadata behaviour or security settings that a pipeline depends on. The Salesforce CLI gets new versions every week on top of that, so I pin the tool versions in the pipeline and test updates before they reach the release path.
 ```
 
 ## One release process for all partners

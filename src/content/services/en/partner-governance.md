@@ -73,13 +73,13 @@ source: my largest programme as an architect on the client side
 
 When this programme started, no object had an owner. Teams overwrote each other's changes, and each built by its own rules.
 
-The first step: every change reached the org as a pull request with a review, and for a while I checked all of them myself. Whatever kept coming up in those reviews became a standard, such as naming conventions, one automation per object and context, and rules for test coverage. Two levers did the most:
+The first step: every change reached the org as a pull request with a review, and for a while I checked all of them myself. Whatever kept coming up in those reviews became a standard, such as naming conventions, one automation entry point per object and context, and rules for test coverage. Two levers did the most:
 
 ```hebel
 Object ownership matrix | One owning stream per object
   A team that wants to change another stream's object talks to the owner first.
 Configuration rules | No fixed values in code
-  Thresholds, texts and switches live in custom metadata types or custom labels.
+  Thresholds and switches live in custom metadata types, texts in custom labels.
 ```
 
 How the matrix is built, with an example, is in [Salesforce Object Ownership Matrix: Who Owns What?](../../blog/salesforce-object-ownership-matrix/).
@@ -90,7 +90,7 @@ After the first version, new edge cases came up over the following weeks. We add
 
 A partner can write good standards too. But if it sets the rules, it decides how everyone else builds, including its competitors. If the repository, the pipeline and tools like Jira or Miro also sit with that partner, every change of partner gets expensive.
 
-When the client owns the standards, the approval rights and the tools, a new partner starts with the same rules, tools and rights as everyone else, and a partner who leaves hands over nothing but their user accounts. Offers can then be compared fairly, because everyone delivers under the same conditions. More on this in [why clients should own their DevOps tools](../../blog/why-clients-should-own-their-devops-tools/). What to ask about it when you select a partner is in [how to choose a Salesforce implementation partner](../../blog/how-to-choose-a-salesforce-implementation-partner/).
+When the client owns the standards, the approval rights and the tools, a new partner starts with the same rules, tools and rights as everyone else, and a partner who leaves hands over open work and knowledge, while the repository, pipeline and standards stay where they are. Offers can then be compared fairly, because everyone delivers under the same conditions. More on this in [why clients should own their DevOps tools](../../blog/why-clients-should-own-their-devops-tools/). What to ask about it when you select a partner is in [how to choose a Salesforce implementation partner](../../blog/how-to-choose-a-salesforce-implementation-partner/).
 
 ## How do reviews fit in without slowing the programme down?
 

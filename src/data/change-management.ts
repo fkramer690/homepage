@@ -22,7 +22,7 @@ export const changeSection = {
         'Ich verantworte die Salesforce-Architektur, Juliane Winterscheid die Veränderung bei den Menschen. In Ihrem Programm planen wir beides zusammen, damit Release-Plan und Change-Plan zueinander passen.',
       items: [
         { who: 'Fabian Kramer', icon: 'architecture', title: 'Architektur und Releases', text: 'Ich sorge dafür, dass Architektur, Release-Plan und Pipeline die Veränderung tragen, und messe die Nutzung direkt in Salesforce.', more: 'Über mich' },
-        { who: 'Juliane Winterscheid', icon: 'change', title: 'Change Management', text: 'Juliane begleitet Sponsoren, Führungskräfte und Key User durch die Veränderung. Sie ist Prosci-zertifiziert und lehrt an der Hochschule Fresenius.', more: 'Profil und Referenzen' },
+        { who: 'Juliane Winterscheid', icon: 'change', title: 'Change Management', text: 'Juliane begleitet Sponsoren, Führungskräfte und Key User durch die Veränderung. Sie ist Prosci-zertifiziert und hat an der Hochschule Fresenius Change Management gelehrt.', more: 'Profil und Referenzen' },
         { who: 'Gemeinsam', icon: 'handshake', title: 'Ein Plan für Release und Veränderung', text: 'Key User, Schulung, Kommunikation und Messung planen wir entlang des Release-Plans. Wie das entlang der ADKAR-Stufen aussieht, zeigt die Masterclass.', more: 'Zur Masterclass' },
       ],
     },
@@ -50,7 +50,7 @@ export const changeSection = {
         'I am responsible for the Salesforce architecture, Juliane Winterscheid for the change in people. In your programme we plan both together, so that release plan and change plan fit.',
       items: [
         { who: 'Fabian Kramer', icon: 'architecture', title: 'Architecture and releases', text: 'I make sure architecture, release plan and pipeline support the change, and I measure adoption directly in Salesforce.', more: 'About me' },
-        { who: 'Juliane Winterscheid', icon: 'change', title: 'Change management', text: 'Juliane guides sponsors, managers and key users through the change. She is Prosci certified and teaches at Hochschule Fresenius.', more: 'Profile and references' },
+        { who: 'Juliane Winterscheid', icon: 'change', title: 'Change management', text: 'Juliane guides sponsors, managers and key users through the change. She is Prosci certified and has taught change management at Hochschule Fresenius.', more: 'Profile and references' },
         { who: 'Together', icon: 'handshake', title: 'One plan for release and change', text: 'We plan key users, training, communication and measurement along the release plan. The masterclass shows how that works along the ADKAR stages.', more: 'See the masterclass' },
       ],
     },

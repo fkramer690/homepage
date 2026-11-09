@@ -39,7 +39,7 @@ phases:
 duration: "Plan und Partnerauswahl 4 bis 8 Wochen. Bis ein neues Team voll liefert, vergehen 2 bis 3 Monate. Die Steuerung läuft danach über die Programmlaufzeit, meist 12 Monate und mehr."
 faq:
   - q: "Wie groß sollte ein Nearshore-Team für Salesforce sein?"
-    a: "Etwa acht Entwickler. Wird mehr Kapazität gebraucht, plane ich ein weiteres Team mit eigenem Verantwortungsbereich, weil in einem großen Team die Abstimmung schneller wächst als die Leistung."
+    a: "Höchstens acht Entwickler. Wird mehr Kapazität gebraucht, plane ich ein weiteres Team mit eigenem Verantwortungsbereich, weil in einem großen Team die Abstimmung schneller wächst als die Leistung."
   - q: "Was macht Nearshore-Teams erfolgreich?"
     a: "Ein Partner, der Werte und Vertrauen teilt und liefern will, und ein Kunde, der Zeit, Zugänge und Entscheidungen bereitstellt. Fehlende Skills sind nach meiner Erfahrung selten der Grund, warum ein Team kämpft."
   - q: "Was bremst Nearshore-Teams aus?"
@@ -53,7 +53,7 @@ Programmsteuerung auf Kundenseite heißt, ein Salesforce-Programm über interne 
 
 ## Warum tun sich Nearshore-Teams schwer?
 
-Selten wegen fehlender Skills. Wenn ich ein laufendes Nearshore-Setup übernehme, finde ich fast immer dieselben vier Ursachen, und jede lässt sich im Setup beheben. Die Begründung im Detail steht in [Nearshore-Teams für Salesforce: Warum höchstens acht?](../../blog/nearshore-teams-salesforce-acht-entwickler/).
+Selten wegen fehlender Skills. Wenn ich ein laufendes Nearshore-Setup übernehme, finde ich fast immer dieselben vier Ursachen, und das Setup kann die Wirkung jeder einzelnen verringern. Die Begründung im Detail steht in [Nearshore-Teams für Salesforce: Warum höchstens acht?](../../blog/nearshore-teams-salesforce-acht-entwickler/).
 
 ```vergleich
 ohne: Was ich in schwachen Setups vorfinde
@@ -77,7 +77,7 @@ mit: Was ich stattdessen aufsetze
 quelle: meine Nearshore-Teams in Salesforce-Programmen
 ```
 
-Jedes Team, das ich aufsetze, bleibt bei etwa acht Entwicklern. Mehr Kapazität bedeutet ein weiteres Team mit eigenem Stream, nicht ein größeres. Warum die Grenze gerade dort liegt, rechne ich im Blogartikel zur Teamgröße vor.
+Jedes Team, das ich aufsetze, hat höchstens acht Entwickler. Mehr Kapazität bedeutet ein weiteres Team mit eigenem Stream, nicht ein größeres. Warum die Grenze gerade dort liegt, rechne ich im Blogartikel zur Teamgröße vor.
 
 Bei der Partnerauswahl zählen für mich Kultur und der Wille zu liefern so viel wie Zertifikate. Dazu gehört die Frage, wie der Partner Besetzung und Rotation regelt, denn genau dort entscheidet sich, ob das Team nach einem halben Jahr noch dasselbe ist.
 

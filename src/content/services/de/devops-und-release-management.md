@@ -41,9 +41,9 @@ phases:
 duration: "Bestandsaufnahme und Zielprozess 1 bis 2 Wochen. Das erste Team arbeitet nach 4 bis 6 Wochen mit der Pipeline. Alle Teams sind nach 2 bis 4 Monaten umgestellt, je nach Zahl der Teams."
 faq:
   - q: "Auf welchen Git-Plattformen kann eine Salesforce-Pipeline laufen?"
-    a: "Ich habe Salesforce-Pipelines auf GitHub, GitLab, Azure DevOps und Bitbucket gebaut. Jede Plattform hat ihre Eigenheiten, aber die Pipelines werden in YAML definiert, daher ist das Grundgerüst überall gleich. Am besten passt meist die Plattform, die das Unternehmen schon nutzt."
+    a: "Ich habe Salesforce-Pipelines auf GitHub, GitLab, Azure DevOps und Bitbucket gebaut. Jede Plattform braucht ihre eigene Pipeline-Definition, aber die Deployment-Schritte und Prüfungen dahinter sind überall gleich. Am besten passt meist die Plattform, die das Unternehmen schon nutzt."
   - q: "Brauchen wir ein kommerzielles DevOps-Tool wie Gearset oder Copado?"
-    a: "Nicht unbedingt. Kommerzielle Tools funktionieren, haben aber laufende Lizenzkosten. Open-Source-Tools wie sfdx-hardis decken Branching, Prüfungen, Deployments und Monitoring auf der Git-Plattform des Kunden ab. Welcher Weg passt, hängt vom Team, vom Budget und davon ab, wie viel der Kunde selbst besitzen möchte."
+    a: "Nicht unbedingt. Das DevOps Center von Salesforce ist kostenlos, unterstützt aber weniger Git-Plattformen. Kommerzielle Tools funktionieren, haben aber laufende Lizenzkosten. Open-Source-Tools wie sfdx-hardis decken Branching, Prüfungen, Deployments und Monitoring auf der Git-Plattform des Kunden ab. Welcher Weg passt, hängt vom Team, vom Budget und davon ab, wie viel der Kunde selbst besitzen möchte."
   - q: "Wie misst man, ob der neue Release-Prozess funktioniert?"
     a: "Vorher-nachher-Zahlen sind oft schwer zu bekommen, weil viele Unternehmen ihren aktuellen Prozess nicht messen können und weil sich Releases verändern: Sie werden kleiner und häufiger. Ich setze auf Kennzahlen, die die Pipeline selbst liefert, etwa Deployment-Häufigkeit, fehlgeschlagene Deployments und Durchlaufzeit von Änderungen."
   - q: "Wie lange dauert die Einführung eines Git-basierten Release-Prozesses?"
@@ -53,7 +53,7 @@ readMore: [devops-salesforce-enterprise, sfdx-hardis-introduction, client-owned-
 masterclass: devops
 ---
 
-Salesforce DevOps bedeutet, dass jede Änderung über Git, einen Pull Request und eine automatische Pipeline läuft, bevor sie in Produktion ankommt. Release-Management ergänzt die Regeln darum: welche Branches es gibt, welche Prüfungen auf welcher Stufe laufen, wer freigibt und wann das Business neue Funktionen bekommt. In großen Orgs mit mehreren Teams macht genau das aus anstrengenden Release-Wochenenden Routine. Diesen Prozess setze ich auf Kundenseite auf, auf der Git-Plattform, die der Kunde schon besitzt.
+Salesforce DevOps bedeutet, dass jede Änderung, die sich als Metadaten deployen lässt, über Git, einen Pull Request und eine automatische Pipeline läuft, bevor sie in Produktion ankommt. Die seltene Änderung, die direkt in Produktion nötig ist, folgt einer dokumentierten Ausnahme und wird danach in Git nachgezogen. Release-Management ergänzt die Regeln darum: welche Branches es gibt, welche Prüfungen auf welcher Stufe laufen, wer freigibt und wann das Business neue Funktionen bekommt. In großen Orgs mit mehreren Teams macht genau das aus anstrengenden Release-Wochenenden Routine. Diesen Prozess setze ich auf Kundenseite auf, auf der Git-Plattform, die der Kunde schon besitzt.
 
 ## Warum machen Salesforce-Releases so viel Ärger?
 
@@ -95,17 +95,17 @@ In einem Programm habe ich den Release-Prozess selbst aufgebaut. Am Anfang ging 
 
 ```kennzahlen
 4 | Git-Plattformen: GitHub, GitLab, Azure DevOps und Bitbucket
-1 | Grundgerüst in YAML, gleich auf jeder Plattform
-0 € | laufende Lizenzkosten für sfdx-hardis
+1 | Satz Deployment-Schritte und Prüfungen, auf jeder Plattform wiederverwendet
+0 € | Lizenzgebühr für sfdx-hardis
 quelle: meine Pipelines in Kundenprojekten
 ```
 
-Ich baue Pipelines auf der Git-Plattform, die das Unternehmen schon nutzt. Bisher waren das GitHub, GitLab, Azure DevOps und Bitbucket. Die Pipelines werden in YAML definiert, daher ist das Grundgerüst auf jeder Plattform gleich, auch wenn jede ihre Eigenheiten hat, zum Beispiel wie der Validierungsstatus eines Pull Requests angezeigt wird.
+Ich baue Pipelines auf der Git-Plattform, die das Unternehmen schon nutzt. Bisher waren das GitHub, GitLab, Azure DevOps und Bitbucket. Jede Plattform braucht ihre eigene Pipeline-Definition, aber die Deployment-Schritte und Prüfungen dahinter sind überall gleich, auch wenn jede ihre Eigenheiten hat, zum Beispiel wie der Validierungsstatus eines Pull Requests angezeigt wird.
 
-Für den Salesforce-Teil nutze ich oft sfdx-hardis, ein Open-Source-DevOps-Tool, das ich in eigenen Projekten einsetze. Es hat keine laufenden Lizenzkosten, und Repository, Pipeline und Zugriffsrechte bleiben beim Kunden. Was es kann, erkläre ich in [sfdx-hardis: Einführung in Open-Source-DevOps für Salesforce](../../blog/sfdx-hardis-einfuehrung-salesforce-devops/). Ich unterstütze das Projekt, habe aber keine finanziellen Verbindungen dazu. Hat ein Kunde schon ein kommerzielles Tool, das funktioniert, baue ich darauf auf.
+Für den Salesforce-Teil nutze ich oft sfdx-hardis, ein Open-Source-DevOps-Tool, das ich in eigenen Projekten einsetze. Es hat keine Lizenzgebühr (Runner und Wartung kosten trotzdem Zeit und Geld), und Repository, Pipeline und Zugriffsrechte bleiben beim Kunden. Was es kann, erkläre ich in [sfdx-hardis: Einführung in Open-Source-DevOps für Salesforce](../../blog/sfdx-hardis-einfuehrung-salesforce-devops/). Ich unterstütze das Projekt, habe aber keine finanziellen Verbindungen dazu. Hat ein Kunde schon ein kommerzielles Tool, das funktioniert, baue ich darauf auf.
 
 ```hinweis tipp
-Auch Plattformänderungen gehören zum Release-Management. Jedes Salesforce-Release, etwa [Winter '27](../../blog/salesforce-winter-27-aenderungen-pipeline/), kann API-Versionen, CLI-Verhalten oder Sicherheitseinstellungen ändern, von denen eine Pipeline abhängt.
+Auch Plattformänderungen gehören zum Release-Management. Jedes Salesforce-Release, etwa [Winter '27](../../blog/salesforce-winter-27-aenderungen-pipeline/), kann API-Versionen, Metadaten-Verhalten oder Sicherheitseinstellungen ändern, von denen eine Pipeline abhängt. Die Salesforce CLI bekommt zusätzlich jede Woche neue Versionen, deshalb lege ich die Tool-Versionen in der Pipeline fest und teste Updates, bevor sie in den Release-Pfad kommen.
 ```
 
 ## Ein Release-Prozess für alle Partner

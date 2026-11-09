@@ -1,6 +1,6 @@
 ---
 title: "Salesforce-Integration mit ERP, Middleware und Telefonie"
-description: "Salesforce angebunden an SAP und andere ERP-Systeme, Middleware und Telefonie wie Genesys oder Microsoft Teams, mit einer Integrationsarchitektur beim Kunden."
+description: "Salesforce angebunden an SAP und andere ERP-Systeme, Middleware und Telefonie wie Genesys oder Teams Phone, mit einer Integrationsarchitektur beim Kunden."
 lang: de
 slug: salesforce-schnittstellen
 translationKey: service-integration

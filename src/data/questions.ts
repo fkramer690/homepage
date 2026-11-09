@@ -18,7 +18,7 @@ export const questions = {
     description:
       'Die 14 Fragen, die Fabian Kramer vor jeder Salesforce-Architektur stellt: zu Ziel und Termin, Partnern, ERP-Schnittstellen, Datenmengen, Betrieb und Lizenzen.',
     eyebrow: 'Arbeitsweise',
-    lead: 'Bevor ich eine Architektur zeichne, stelle ich Fragen. Meistens dieselben, und meistens sind die Antworten interessanter als das Lastenheft. Hier ist die Liste. Wenn Sie bei drei davon keine schnelle Antwort haben, lohnt sich ein Gespräch.',
+    lead: 'Bevor ich für einen Hersteller eine Salesforce-Architektur zeichne, stelle ich Fragen, vor allem wenn mehrere Umsetzungspartner in derselben Org arbeiten. Meistens dieselben, und meistens sind die Antworten interessanter als das Lastenheft. Hier ist die Liste. Wenn Sie bei drei davon keine schnelle Antwort haben, lohnt sich ein Gespräch.',
     groups: [
       {
         title: 'Zu Ziel und Termin',
@@ -69,7 +69,7 @@ export const questions = {
         questions: [
           {
             q: 'Welches System ist für Kunden, Produkte und Preise führend?',
-            a: 'Manufacturing-Projekte scheitern selten in Salesforce. Sie scheitern an der ERP-Schnittstelle und an doppelten Stammdaten.',
+            a: 'Nach meiner Erfahrung scheitern Manufacturing-Projekte selten in Salesforce. Sie scheitern an der ERP-Schnittstelle und an doppelten Stammdaten.',
           },
           {
             q: 'Was passiert, wenn die Schnittstelle zum ERP eine Stunde ausfällt?',
@@ -129,7 +129,7 @@ export const questions = {
       ],
     },
     quoteLead: 'Und die Frage, die ich am Ende immer stelle:',
-    quote: 'Was schon einmal gescheitert ist, ist die ehrlichste Antwort im ganzen Projekt. Sie spart oft Monate.',
+    quote: 'Was wurde schon einmal versucht und hat nicht funktioniert?',
     quoteCaption: 'Frage 14',
   },
   en: {
@@ -137,7 +137,7 @@ export const questions = {
     description:
       'The 14 questions Fabian Kramer asks before any Salesforce architecture: on goal and deadline, partners, ERP interfaces, data volumes, operations and licences.',
     eyebrow: 'How I work',
-    lead: 'Before I draw an architecture, I ask questions. Mostly the same ones, and mostly the answers are more interesting than the requirements document. Here is the list. If you have no quick answer to three of them, a call is worth it.',
+    lead: 'Before I draw a Salesforce architecture for a manufacturer, I ask questions, especially when several implementation partners work in the same org. Mostly the same ones, and mostly the answers are more interesting than the requirements document. Here is the list. If you have no quick answer to three of them, a call is worth it.',
     groups: [
       {
         title: 'Goal and deadline',
@@ -176,7 +176,7 @@ export const questions = {
             a: 'If they sit with the implementation partner, changing partners gets expensive.',
           },
           {
-            q: 'Who reviews what the partners deliver before it goes into acceptance?',
+            q: 'Who reviews what the partners deliver before user acceptance testing starts?',
             a: 'Problems that only show up in UAT or production cost many times more.',
           },
         ],
@@ -188,7 +188,7 @@ export const questions = {
         questions: [
           {
             q: 'Which system is the master for customers, products and prices?',
-            a: 'Manufacturing projects rarely fail in Salesforce. They fail at the ERP interface and on duplicate master data.',
+            a: 'In my experience, manufacturing projects rarely fail in Salesforce. They fail at the ERP interface and on duplicate master data.',
           },
           {
             q: 'What happens if the ERP interface is down for an hour?',
@@ -247,7 +247,7 @@ export const questions = {
       ],
     },
     quoteLead: 'And the question I always ask at the end:',
-    quote: 'What has failed before is the most honest answer in the whole project. It often saves months.',
+    quote: 'What has been tried before and did not work?',
     quoteCaption: 'question 14',
   },
 };

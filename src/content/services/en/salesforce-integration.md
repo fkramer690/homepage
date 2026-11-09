@@ -1,6 +1,6 @@
 ---
 title: "Salesforce integration with ERP, middleware and telephony"
-description: "Salesforce connected to SAP and other ERP systems, middleware and telephony such as Genesys or Microsoft Teams, with an integration architecture you own."
+description: "Salesforce connected to SAP and other ERP systems, middleware and telephony such as Genesys or Teams Phone, with an integration architecture you own."
 lang: en
 slug: salesforce-integration
 translationKey: service-integration

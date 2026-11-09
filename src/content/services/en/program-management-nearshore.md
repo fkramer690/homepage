@@ -39,7 +39,7 @@ phases:
 duration: "Plan and partner selection 4 to 8 weeks. A new team needs 2 to 3 months until it delivers at full speed. Steering then runs for the life of the programme, usually 12 months or more."
 faq:
   - q: "How large should a nearshore Salesforce team be?"
-    a: "Around eight developers. If more capacity is needed, I plan another team with its own area of responsibility, because in a large team coordination grows faster than output."
+    a: "At most eight developers. If more capacity is needed, I plan another team with its own area of responsibility, because in a large team coordination grows faster than output."
   - q: "What makes nearshore teams succeed?"
     a: "A partner who shares values and trust and wants to deliver, and a client who provides time, access and decisions. In my experience, missing skills are rarely why a team struggles."
   - q: "What slows nearshore teams down?"
@@ -53,7 +53,7 @@ Programme management on the client side means planning and steering a Salesforce
 
 ## Why do nearshore teams struggle?
 
-Rarely because of missing skills. When I take over a running nearshore setup, I almost always find the same four causes, and each one can be fixed in the setup. The detailed reasoning is in [Nearshore Salesforce teams: why eight developers at most?](../../blog/salesforce-nearshore-teams-eight-developers/).
+Rarely because of missing skills. When I take over a running nearshore setup, I almost always find the same four causes, and the setup can reduce the impact of each one. The detailed reasoning is in [Nearshore Salesforce teams: why eight developers at most?](../../blog/salesforce-nearshore-teams-eight-developers/).
 
 ```vergleich
 without: What I find in weak setups
@@ -77,7 +77,7 @@ with: What I set up instead
 source: my nearshore teams in Salesforce programmes
 ```
 
-Every team I set up stays at around eight developers. More capacity means another team with its own stream, not a bigger one. Why the limit sits there is worked out in the blog article on team size.
+Every team I set up has at most eight developers. More capacity means another team with its own stream, not a bigger one. Why the limit sits there is worked out in the blog article on team size.
 
 In partner selection, culture and the will to deliver count as much as certifications for me. That includes asking how the partner handles staffing and rotation, because that is where it is decided whether the team is still the same team six months later.
 

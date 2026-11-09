@@ -45,13 +45,13 @@ faq:
   - q: "Do all users need a full Salesforce licence?"
     a: "Often not. Full licences tend to be offered by default, even for users who only read data, approve records or work in a narrow process. For large user groups the difference can easily reach six figures per year, which is why I base the forecast on what users actually do."
   - q: "Do you also assess tools outside Salesforce?"
-    a: "Yes. Make-or-buy applies to the whole IT stack, for example document generation, e-signatures or the question whether a process belongs in Salesforce at all. I have no ties to any vendor, so the recommendation can also be a tool outside the Salesforce ecosystem."
+    a: "Yes, whenever the decision affects the Salesforce architecture, its data or its running costs, for example document generation, e-signatures or the question whether a process belongs in Salesforce at all. I have no ties to any vendor, so the recommendation can also be a tool outside the Salesforce ecosystem."
 blogTags: [business case, agentforce, open source, vendor lock-in, licences]
 readMore: [salesforce-licence-types, salesforce-editions-core-advanced-max, manufacturing-cloud-worth-it, manufacturing-cloud-add-ons-costs, field-service-worth-it, revenue-cloud-worth-it-manufacturers, commerce-extensions-custom-code, flex-credits-agentforce-costs]
 masterclass: manufacturing-cloud
 ---
 
-Make-or-buy on Salesforce means deciding, for each requirement, whether it is covered by a standard product, an industry cloud, a custom build on the core platform or a separate tool. Licence forecasting answers the related question of which licence types the users need. Both decisions are made early and are expensive to reverse, so I base them on a long-term ROI case that includes maintenance and follow-up costs. I know the Salesforce licence model and pricing well from pre-sales work together with Salesforce.
+Make-or-buy on Salesforce means deciding, for each requirement, whether it is covered by a standard product, an industry cloud, a custom build on the core platform or a separate tool. Licence forecasting answers the related question of which licence types the users need. Both decisions are made early and are expensive to reverse, so I base them on a long-term ROI case that includes maintenance and follow-up costs. I know the Salesforce licence model and pricing well from pre-sales work alongside Salesforce. Today I work only on the client side and sell no licences, so I use that knowledge to challenge offers.
 
 ## When does an industry cloud pay off?
 

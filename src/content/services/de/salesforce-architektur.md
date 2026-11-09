@@ -65,7 +65,7 @@ basis: Sales Cloud, Service Cloud | In fast jedem Enterprise-Projekt gesetzt
 + Field Service | Passt bei vielen kurzen Einsätzen, bei denen Routen- und Terminoptimierung die Kennzahlen deutlich verbessert. Bei wenigen langen Projekten viel kleinerer Nutzen.
 + Experience Cloud | Passt zu kundennahen Prozessen. Self-Service-Portale sparen interne Kapazität.
 + Manufacturing Cloud | Nur wenn die Funktionen dazu passen, wie das Unternehmen verkauft. Der Fit wird im ROI-Case gerechnet.
-fazit: Sales Cloud und Service Cloud sind gesetzt, entschieden wird bei den Add-ons.
+fazit: Sales Cloud und Service Cloud sind meist gesetzt, entschieden wird bei den Add-ons.
 ```
 
 Bei Field Service zählen neben der Art der Arbeit auch die Standorte und die Dauer der Einsätze. Über die aktuellen mobilen Funktionen habe ich in [Field Service Mobile im Außendienst](../../blog/salesforce-field-service-mobile-aussendienst/) geschrieben. Experience Cloud spart Kapazität, weil Kunden Antworten selbst finden und Anfragen selbst stellen. Den Fit der Manufacturing Cloud rechne ich im ROI-Case, den ich auf der Seite [Make-or-buy und Lizenzen](../make-or-buy-lizenzen/) beschreibe.

@@ -57,7 +57,7 @@ Change management in a Salesforce programme means introducing new processes, sta
 
 ## Why do new processes not reach daily work?
 
-A release is technically rolled out in minutes. What happens next decides whether anyone works differently. The reasons it does not happen are usually the same, and each one has an answer:
+Deploying a release is the technical part. What happens next decides whether anyone works differently. The reasons it does not happen are usually the same, and each one has an answer:
 
 ```pro-contra
 pro: What we do about it
@@ -93,12 +93,12 @@ Salesforce helps with measuring. Whether a new process is used shows more reliab
 ```kennzahlen
 30+ | developers in eight streams
 5 | implementation partners
-3 | months until people lived by the standards
+3 | months until all teams worked by the standards
 80 % | of cases covered by the first version
 source: my largest programme as architect on the client side
 ```
 
-At the start of this programme, the technical approaches of the teams had drifted far apart. So we introduced common standards for naming conventions, one automation per object, test coverage and an [object ownership matrix](../../blog/salesforce-object-ownership-matrix/) in stages.
+At the start of this programme, the technical approaches of the teams had drifted far apart. So we introduced common standards for naming conventions, one automation entry point per object, test coverage and an [object ownership matrix](../../blog/salesforce-object-ownership-matrix/) in stages.
 
 The first version covered around 80 percent of the cases. The edge cases were added step by step as they came up in the project. Later we raised new topics in the programme with lead time in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), before they turned into problems. At some point hardly any new edge cases came up. I describe the rules for several partners under [partner governance](../partner-governance/).
 
@@ -117,7 +117,7 @@ To me, Prosci is the gold standard in change management. The reason is the resea
 source: Prosci, Best Practices in Change Management, 12th edition, 2,668 participants
 ```
 
-In the 12th edition of its study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), with 2,668 participants, projects with excellent change management met their objectives seven times as often as projects with poor change management, 88 against 13 percent. Participants name active and visible sponsorship by management as the biggest contributor to success. That matches what I see in Salesforce programmes.
+In the 12th edition of its study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), Prosci reports from its benchmark data that projects with excellent change management met their objectives seven times as often as projects with poor change management, 88 against 13 percent. Participants name active and visible sponsorship by management as the biggest contributor to success. That matches what I see in Salesforce programmes.
 
 Together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), who is Prosci certified, I have applied two building blocks from Prosci to Salesforce programmes: the ADKAR model described above and the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). The 3-Phase Process gives the rollout a frame at the level of the organisation: Prepare Approach, Manage Change and Sustain Outcomes. The steps under “How we work together” follow these phases.
 
