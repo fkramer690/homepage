@@ -2,7 +2,7 @@
 title: "Account Forecasting: Sales Volume Planning"
 description: "When Manufacturing Cloud account forecasting pays off for sales volume planning, which data it needs and where planning in the ERP should take over."
 pubDate: 2026-10-27
-updatedDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: account-forecasting-sales-volume-planning
 translationKey: manufacturing-cloud-account-forecasting
@@ -12,9 +12,9 @@ tags: [Manufacturing Cloud, Account Forecasting, Demand Planning, ERP, Manufactu
 series: { id: manufacturing-cloud, part: 4 }
 takeaways:
   - "Account forecasting plans quantities and revenue per customer, product and period, combining orders, opportunities and sales agreements."
-  - "The forecast is calculated from order history, which at manufacturers lives in the ERP. It has to reach Salesforce through an integration."
-  - "Customers times products times periods quickly means millions of records that count against a limit. Set the scope before go-live."
-  - "Salesforce provides the sales view, the ERP plans capacity and materials. One of the two numbers has to count as the leading one."
+  - "The forecast can build on order history, which at manufacturers lives in the ERP. It has to reach Salesforce through an integration."
+  - "Customers times products times periods quickly means millions of records. Salesforce recommends limits, so set the scope before go-live."
+  - "Salesforce provides the sales view, the ERP plans capacity and materials. Each number needs an owner, a version and a fixed handover date."
 faq:
   - q: "What is account forecasting in Manufacturing Cloud?"
     a: "Account forecasting is the sales forecast in Manufacturing Cloud. It plans quantities and revenue per customer, product and period and, according to Salesforce, uses orders, opportunities, sales agreements and custom objects that the Data Processing Engine aggregates."
@@ -23,11 +23,11 @@ faq:
   - q: "Does account forecasting replace production planning?"
     a: "No. Account forecasting provides what sales expects per customer and product. Capacity, materials and production plans stay in the ERP or a planning system that uses the sales forecast as an input."
   - q: "Are there limits for account forecasting?"
-    a: "Yes. Salesforce counts, among other things, forecast records per customer, product and period, and recalculations, against a limit. Once it is exceeded, further calculations only run again after old records are deleted."
+    a: "Yes. For Advanced Account Forecasting, Salesforce recommends among other things at most 10 forecast sets, 3 custom dimensions, 56 periods and 4 regenerations per year. Help also names volume limits for the calculation runs; larger volumes have to be split."
 draft: false
 ---
 
-Account forecasting pays off for manufacturers with recurring offtake whose sales team should plan quantities per customer and product over months. The Manufacturing Cloud feature combines orders, opportunities and sales agreements into a forecast that account managers adjust. It only holds up under three conditions: order history arrives reliably from the ERP, the scope of customers, products and periods fits within the limit, and it is clear where planning in the ERP takes over.
+Account forecasting pays off for manufacturers with recurring call-offs whose sales team should plan quantities per customer and product over months. The Manufacturing Cloud feature combines orders, opportunities and sales agreements into a forecast that account managers adjust. It only holds up under three conditions: order history arrives reliably from the ERP, the scope of customers, products and periods fits within the volumes Salesforce recommends, and it is clear where planning in the ERP takes over.
 
 I am writing this part of the series as an evaluation guide, not as a project report.
 
@@ -46,9 +46,9 @@ The difference to the forecast many know from Sales Cloud: there, sales mainly e
 
 ## The forecast needs data from the ERP
 
-Three sources carry the forecast, and at manufacturers two of them rarely live in Salesforce:
+There is no single Salesforce formula. For each measure in the forecast set, the company decides whether the Data Processing Engine calculates it, a forecast formula derives it, or users enter or import the value. The calculation template Salesforce provides aggregates orders, opportunities and sales agreements, and at manufacturers two of them rarely live in Salesforce:
 
-1. **Order history.** What a customer took in recent months is the best starting point for the next ones. That history lives in the ERP. Trailhead describes exactly this problem in its example: forecasts were inaccurate because sales had no access to the history in the ERP.
+1. **Order history.** For products customers buy regularly, what a customer took in recent months is a good starting point for the next ones. For new products or after a shift in the market it says less. That history lives in the ERP. Trailhead describes exactly this problem in its example: forecasts were inaccurate because sales had no access to the history in the ERP.
 2. **Sales agreements.** Agreed volumes are a fixed input to the forecast. How actuals for them come from the ERP is covered in [part 3: sales agreements, spotting customers behind on volume](../sales-agreements-volume-shortfall-erp/).
 3. **Opportunities.** New business that has not closed yet. This is the only source that is created in Salesforce anyway.
 
@@ -65,9 +65,11 @@ For the architecture, that means account forecasting is an integration project f
 
 ## How big does the forecast get?
 
-Bigger than you think in the first workshop. The forecast stores one value per customer, product and period. A worked example: 2,000 customers, 500 products and 24 months give 24 million possible combinations. Not every customer buys every product, but the order of magnitude shows the problem.
+Bigger than you think in the first workshop. Advanced Account Forecasting stores its values as forecast fact records, one per combination of dimensions and period. A worked example: 2,000 customers, 500 products and 24 months give up to 24 million combinations. Not every customer buys every product, so first estimate how many combinations actually occur. The order of magnitude still shows the problem.
 
-Salesforce counts these records against a limit. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/define-account-forecast-settings), setup shows usage for forecast records per customer, product and period, for recalculations and for regenerations, with a traffic light from green to red. If a regeneration exceeds the limit, it still finishes. After that, further calculations and the rollover into the next period only run again once old records are deleted.
+In its [considerations for Advanced Account Forecasting](https://help.salesforce.com/s/articleView?id=ind.aaf_considerations_concept.htm&language=en_US&type=5), Salesforce recommends, among other things, at most 10 forecast sets, 3 custom dimensions, 56 periods and 4 regenerations per year. For the Data Processing Engine runs behind it, Help names volume limits as well; larger volumes have to be split. These are recommendations rather than hard limits, but anyone planning beyond them should have Salesforce confirm it.
+
+The same page warns against activating the older account forecasting and Advanced Account Forecasting at the same time, because that can corrupt data. Salesforce recommends Advanced Account Forecasting for new implementations and a [migration](https://help.salesforce.com/s/articleView?id=ind.aaf_admin_migrate_af.htm&language=en_US&type=5) for existing ones. This article is about Advanced Account Forecasting only.
 
 That leads to three scoping decisions:
 
@@ -75,11 +77,11 @@ That leads to three scoping decisions:
 - **Which customers.** A forecast per customer pays off for the large customers with framework agreements. For the long tail, a forecast at region or customer group level may be enough.
 - **How many periods.** 24 months of display plus history are set up quickly. Every extra month multiplies the records.
 
-I fix this scope before the first forecast set is activated, and I check the expected number of records against the limit stated in the quote.
+I fix this scope before the first forecast set is activated, and I check the expected number of forecast records against the volumes Salesforce documents.
 
 ## How often and by whom is it adjusted?
 
-The system calculates the forecast, people adjust it. According to Trailhead, the admin sets an adjustment frequency and an adjustment period in days for this, for example the first week of every month. During that time account managers change their values; afterwards the forecast for the period stands.
+The system calculates the forecast, people adjust it. For this the admin defines adjustment periods in the forecast set, for example the first week of every month. During that time account managers change their values; afterwards the forecast for the period is fixed.
 
 That requires a fixed rhythm in sales. A forecast that is only adjusted when someone remembers barely differs from the system's calculation after three months. So before go-live I ask:
 
@@ -93,8 +95,8 @@ At the question of what gets produced. Account forecasting provides what sales e
 
 Two points matter for the architecture:
 
-1. **One leading number.** If there is a sales forecast in Salesforce and demand planning in the ERP, it has to be clear which number counts and when it is handed over. Two forecasts that are both maintained drift apart, and then the meeting argues about numbers instead of customers.
-2. **One direction.** If the sales forecast flows into the ERP, the integration needs the same granularity as planning there. If the ERP plans by material number and plant, a forecast by product category helps only so much.
+1. **A clear role for each number.** A sales forecast in Salesforce and a demand plan in the ERP may differ, because one is the unconstrained sales view and the other takes capacity into account. What has to be settled is which number serves which decision, who owns it, which version is handed over when, and how capacity limits get back to sales. Two forecasts for the same purpose that are both maintained drift apart, and then the meeting argues about numbers instead of customers.
+2. **Matching granularity.** If the sales forecast flows into the ERP, the integration needs the same granularity as planning there. If the ERP plans by material number and plant, a forecast by product category helps only so much.
 
 A note on Agentforce: Trailhead says that "Agentforce Manufacturing" generates forecasts automatically for new products at the start of each adjustment period. Agentforce Manufacturing is the product name there. As I read the Trailhead unit, this is the forecast calculation at the start of the period, not an agent, and the Salesforce Help page for the Sales Planning agent documents no subagent for it ([what the agent really does](../agentforce-sales-planning-agreements-forecasts/)). That sounds useful. I would only rely on it once history from the ERP arrives cleanly, because an automatic forecast on bad data is just wrong faster.
 
@@ -109,7 +111,7 @@ pro: Account forecasting pays off
 - **The sales forecast lives in spreadsheets today:** one file per account manager that someone merges every month.
 - **Production or procurement is waiting for the number:** there is a fixed date when the sales view is needed.
 contra: I would hold back
-- With a few large projects instead of running offtake.
+- With a few large projects instead of recurring call-offs.
 - With demand planning that works well in the ERP and only needs read access in the CRM.
 - When the order history cannot reach Salesforce.
 ```
@@ -121,8 +123,8 @@ In the last case the company pays for a feature that cannot work with its own da
 Before the first forecast set is configured, settle these points:
 
 1. **Order history.** Which data comes from the ERP, at which level and how often?
-2. **Scope.** Product or category, which customers, how many periods, checked against the limit.
+2. **Scope.** Product or category, which customers, how many periods, checked against the recommended volumes.
 3. **Rhythm.** Who adjusts when, aligned with planning in production and procurement.
-4. **Leading number.** Which forecast counts, and how does it reach the ERP?
+4. **Roles of the numbers.** Which forecast serves which decision, who owns it, and how does it reach the ERP?
 
-I calculate the scope in the first workshop: customers times products times periods, compared with the org's limit. If it does not fit, I plan at product category level and shorten the horizon before anyone creates the first forecast set.
+I calculate the scope in the first workshop: customers times products times periods, compared with the volumes Salesforce recommends. If the combinations that actually occur do not fit, I plan at product category level and shorten the horizon before anyone creates the first forecast set.

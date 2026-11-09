@@ -2,6 +2,7 @@
 title: "Manufacturing Cloud weltweit ausrollen: die Reihenfolge"
 description: "In welcher Reihenfolge Hersteller die Manufacturing Cloud in Ländern einführen, warum 80 Prozent gleich sein sollten und warum Change Management dazugehört."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: de
 slug: manufacturing-cloud-weltweit-ausrollen
 translationKey: manufacturing-cloud-global-rollout
@@ -18,13 +19,13 @@ faq:
   - q: "Mit welchem Land sollte ein weltweiter Salesforce-Rollout beginnen?"
     a: "Mit einem großen Land mit angemessener Komplexität. Es muss groß genug sein, um das globale Template ernsthaft zu prüfen, und darf nicht so speziell sein, dass seine Sonderfälle das Template für alle anderen prägen."
   - q: "Wie viel darf ein Land vom globalen Template abweichen?"
-    a: "Mein Richtwert: Alle Länder arbeiten zu mindestens 80 Prozent identisch, und das Delta pro Land wird aktiv klein gehalten. Rechtliche Vorgaben sind gesetzt, alles andere wird begründet und entschieden."
+    a: "Mein Richtwert: Alle Länder arbeiten in den Kernprozessen und den Säulen der Implementierung zu mindestens 80 Prozent identisch, und das Delta pro Land wird aktiv klein gehalten. Rechtliche Vorgaben sind gesetzt, alles andere wird begründet und entschieden."
   - q: "Braucht ein Salesforce-Rollout Change Management?"
     a: "Ja. Ein Rollout mit dem Ziel, Prozesse zu harmonisieren, ändert die Arbeit von Menschen in jedem Land. Ich bringe Change Management deshalb immer wieder ins Gespräch, auch wenn der Kunde es zunächst nicht für nötig hält."
 draft: false
 ---
 
-Ein weltweiter Rollout der Manufacturing Cloud beginnt mit einer Entscheidung, die vor jeder Konfiguration steht: Welches strategische Ziel soll er erreichen? Meistens ist es die Harmonisierung von Prozessen. Daraus folgt, wie ich den Rollout plane: mit einem großen Land mit angemessener Komplexität beginnen, eine der größten Regionen in die ersten zwei Phasen aufnehmen und alle Länder zu mindestens 80 Prozent identisch halten. Das sind meine Lehren aus dem ersten weltweiten Rollout der Manufacturing Cloud, den ich begleitet habe. Die wichtigste davon klingt am wenigsten technisch: Change Management gehört dazu, auch wenn niemand danach fragt.
+Ein weltweiter Rollout der Manufacturing Cloud beginnt mit einer Entscheidung, die vor jeder Konfiguration steht: Welches strategische Ziel soll er erreichen? Meistens ist es die Harmonisierung von Prozessen. Daraus folgt, wie ich den Rollout plane: mit einem großen Land mit angemessener Komplexität beginnen, eine der größten Regionen in die ersten zwei Phasen aufnehmen und alle Länder zu mindestens 80 Prozent identisch halten. Das sind meine Lehren aus einer Premiere: dem ersten weltweiten Rollout der Manufacturing Cloud, den Salesforce überhaupt durchgeführt hat. Die wichtigste davon klingt am wenigsten technisch: Change Management gehört dazu, auch wenn niemand danach fragt.
 
 ## Was muss vor dem ersten Land feststehen?
 
@@ -39,6 +40,8 @@ Aus diesem Ziel ergibt sich ein globales Template, also die gemeinsame Konfigura
 ```hinweis achtung
 Diese Punkte lassen sich nach dem ersten Land kaum noch ändern, ohne alle bereits eingeführten Länder anzufassen. Jede davon gehört deshalb ins Entscheidungslog, bevor das erste Land live geht.
 ```
+
+Später ändern lassen sie sich trotzdem, aber dann ist es eine neue Version des globalen Templates: mit einem Verantwortlichen, einer Folgenabschätzung, Regressionstests in jedem eingeführten Land und einem Datum, ab dem die nächsten Länder darauf ausgerollt werden. Ohne diese Versionierung tragen sich die Fehler des ersten Landes in jedes weitere.
 
 Wie ich dieses Log führe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
@@ -76,7 +79,7 @@ Ich nehme die Marke deshalb als eigene Frage ins Template auf, auch wenn das ers
 
 ## Jedes Land arbeitet zu mindestens 80 Prozent gleich
 
-Dafür gibt es einen Richtwert und einen Prozess. Der Richtwert: Alle Länder arbeiten zu mindestens 80 Prozent identisch, und pro Land wird versucht, das Delta zu minimieren. Andere Länder als das erste sollten nur marginale Abweichungen haben.
+Dafür gibt es einen Richtwert und einen Prozess. Der Richtwert: Alle Länder arbeiten zu mindestens 80 Prozent identisch, gemessen an den Kernprozessen und den Säulen der Implementierung, nicht an jeder Maske oder jedem Feld. Pro Land wird versucht, das Delta zu minimieren. Andere Länder als das erste sollten nur marginale Abweichungen haben.
 
 Der Prozess dazu ist einfach, braucht aber Disziplin:
 
