@@ -2,6 +2,7 @@
 title: "Global Salesforce template: how much country fits?"
 description: "How much country deviation a global Salesforce template can take, which deviations are justified and how to keep the delta per country small."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: en
 slug: salesforce-global-template-country-deviations
 translationKey: global-template-country-deviations
@@ -12,13 +13,13 @@ tags: [global template, rollout, harmonization, Salesforce architecture]
 takeaways:
   - "My guideline: every country is at least 80 percent identical to the template, and the delta per country is kept as small as possible."
   - "Deviations from law, tax, language and real differences in the business are justified. Habit alone is not a reason."
-  - "Country differences belong in configuration, such as custom metadata per country, not in separate flows or code per country."
+  - "Country differences belong in configuration, such as custom metadata per country; code per country only with a documented legal or integration reason."
   - "A global process owner decides on deviations together with the architect on the client side, and every decision goes into the log."
 faq:
   - q: "What is a global template in Salesforce?"
     a: "A global template is the shared state of processes, data model, automation and permissions that all countries of a worldwide rollout adopt. Country specifics are added as small, documented extensions."
   - q: "How much may a country deviate from the template?"
-    a: "I consider at least 80 percent match per country the right guideline. Every deviation needs a reason from law, tax, language or business model, and an approval."
+    a: "From my programs, at least 80 percent common process per country is a useful guideline, not a Salesforce benchmark. Every deviation needs a reason from law, tax, language or business model, and an approval."
   - q: "Who decides on deviations from the template?"
     a: "A global process owner together with the architect on the client side. The country requests, justifies and carries the follow-up cost of the deviation."
   - q: "Which country should a global template start with?"
@@ -50,8 +51,8 @@ I sort every request for a deviation into one of five groups:
 
 | Reason | Example | Into the template? |
 |---|---|---|
-| Law and tax | e-invoicing mandate, tax number, retention periods | yes, as country configuration |
-| Language and formats | translations, address formats, currency | yes, through standard features |
+| Law and tax | e-invoicing mandate, tax number, retention periods | yes, as configuration where possible; e-invoicing or archiving may need an integration or another system |
+| Language and formats | translations, address formats, currency | yes, through standard features where they cover it |
 | Brand and legal entity | subsidiary trades under a different name | yes, as master data, not as a process |
 | Different business | country sells through dealers instead of directly | yes if several countries are affected, otherwise review |
 | Habit | "the field has always been at the top here" | no |
@@ -62,12 +63,12 @@ The fourth group deserves a second look. If one country sells through dealers an
 
 ## Country differences belong in configuration, not in code
 
-The technical rule is simple: country differences belong in configuration, not in code or separate flows per country.
+The technical rule is simple: country differences belong in configuration, not in code or separate flows per country. Exceptions need a documented legal, integration or security reason, such as an e-invoicing interface.
 
-- **Values per country in custom metadata types.** Approval limits, VAT rates or required fields per country sit in a table. The automation reads the value for the record's country. A new country is then a new entry, not a new release.
+- **Values per country in custom metadata types.** Approval limits, routing parameters or required fields per country sit in a table. A validation rule or flow reads the value for the record's country and enforces it. A new country then adds entries rather than new automation, tested and deployed like any change. Tax rates stay in the ERP or tax system, which is their system of record.
 - **Translations through Salesforce's translation features**, not through extra fields per language.
-- **Record types only for real process variants**, not per country. Ten countries with one record type each are ten page layouts that drift apart.
-- **Visibility by country through roles and sharing rules**, as described in the [permission concept](../salesforce-permission-concept-permission-sets/).
+- **Record types only for real process variants**, not per country. Ten countries with one record type each multiply layouts, picklist values and tests that drift apart.
+- **Visibility by country, legal entity or region through roles, territories and sharing rules**, as described in the [permission concept](../salesforce-permission-concept-permission-sets/).
 
 These rules belong in the [development standards](../salesforce-development-standards-definition-of-done/), so every partner who rolls out a country knows them.
 
