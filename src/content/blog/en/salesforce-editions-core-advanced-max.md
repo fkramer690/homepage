@@ -52,7 +52,7 @@ The edition question only concerns users who need a full CRM license. Readers, a
 
 ## A Flex Credit pool covers 25,000 to 137,500 actions a year
 
-According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) (updated 3 November 2026), a standard or custom action costs 20 credits in production. That turns the pools into actions:
+According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) (updated November 3, 2026), a standard or custom action costs 20 credits in production. That turns the pools into actions:
 
 - **Core:** 25,000 actions a year, about 2,080 a month.
 - **Advanced:** 50,000 actions a year, about 4,170 a month.
