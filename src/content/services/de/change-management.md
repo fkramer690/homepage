@@ -39,6 +39,10 @@ phases:
     icon: "check"
     text: "Wir prüfen, wo Lücken bleiben, verankern neue Regeln in Pipeline, Berichten und Center-of-Excellence-Calls und übergeben die Verantwortung an interne Owner."
 duration: "Vorbereitung 2 bis 4 Wochen. Die Begleitung bis zum Rollout dauert meist 3 bis 9 Monate, die Sicherung der Ergebnisse 1 bis 2 Monate nach dem Go-live."
+notFit:
+  - "Es geht nur um eine Schulung zu neuen Funktionen."
+  - "Das Management ist nicht bereit, selbst sichtbar für die Veränderung einzustehen."
+alternatives: "Ein internes Change-Team oder die HR-Abteilung passt, wenn sie Erfahrung mit IT-Einführungen hat. Große Beratungen bringen Methode, aber selten Salesforce-Wissen."
 faq:
   - q: "Warum orientieren Sie sich an Prosci?"
     a: "Weil Prosci für mich der Goldstandard im Change Management ist. Das Vorgehen beruht auf Befragungen seit 1998 mit über 10.000 Teilnehmenden und ist in der Branche weit verbreitet. Es gibt dem Teil eines Salesforce-Programms eine Struktur, der sonst oft dem Zufall überlassen bleibt: ob die Menschen anders arbeiten."

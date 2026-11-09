@@ -39,6 +39,10 @@ phases:
     icon: "handshake"
     text: "Interne Kollegen lernen, die Pipeline zu betreiben und zu erweitern. Die Dokumentation liegt im Repository des Kunden, direkt neben dem Code."
 duration: "Bestandsaufnahme und Zielprozess 1 bis 2 Wochen. Das erste Team arbeitet nach 4 bis 6 Wochen mit der Pipeline. Alle Teams sind nach 2 bis 4 Monaten umgestellt, je nach Zahl der Teams."
+notFit:
+  - "Ein einzelner Admin macht Änderungen von Hand, und das reicht."
+  - "Ein kommerzielles DevOps-Tool läuft gut, und niemand will wechseln."
+alternatives: "Ein kommerzielles Tool wie Gearset oder Copado ist schneller eingerichtet, kostet aber Lizenzen pro Nutzer. Ein interner DevOps-Engineer kann die Pipeline übernehmen, sobald sie steht. Bei mehreren Partnern fehlt ihm oft die Rolle, Regeln durchzusetzen."
 faq:
   - q: "Auf welchen Git-Plattformen kann eine Salesforce-Pipeline laufen?"
     a: "Ich habe Salesforce-Pipelines auf GitHub, GitLab, Azure DevOps und Bitbucket gebaut. Jede Plattform braucht ihre eigene Pipeline-Definition, aber die Deployment-Schritte und Prüfungen dahinter sind überall gleich. Am besten passt meist die Plattform, die das Unternehmen schon nutzt."

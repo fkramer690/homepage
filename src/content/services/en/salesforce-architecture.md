@@ -37,6 +37,10 @@ phases:
     icon: "architecture"
     text: "During implementation I review partner designs, keep the decision log current and step in when the build drifts away from the target picture."
 duration: "Target picture with data model and decision log 6 to 10 weeks, solution designs for the critical areas another 4 to 8 weeks. After that I accompany the build, usually 1 to 2 days a week."
+notFit:
+  - "It is about a single cloud without interfaces, such as Sales Cloud for 20 users."
+  - "The implementation partner has already built it, and nobody is willing to change decisions any more."
+alternatives: "An internal architect with experience from several programmes is better in the long run, and I help build up that role. The implementation partner alone is enough for small, clearly scoped projects. A freelancer for configuration does not replace a target architecture."
 faq:
   - q: "What does a Salesforce architect on the client side do?"
     a: "They design the target architecture in the interest of the company, not of a vendor or partner: which clouds and products are needed, how the data model looks, how Salesforce connects to the other systems, and which decisions are documented for the long term. During delivery they review what partners build against that picture."

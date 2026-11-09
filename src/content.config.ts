@@ -94,6 +94,10 @@ const services = defineCollection({
     phases: z.array(z.object({ title: z.string().max(40), icon: z.string(), text: z.string().max(260) })).min(3).max(4),
     // Typical duration of the engagement, shown above the phase timeline (Fabian confirmed the values 2026-11-07).
     duration: z.string().min(40).max(260),
+    // Section "Passt das zu Ihrem Vorhaben?" after the phases (backlog KS1, Fabian confirmed 2026-11-09):
+    // when the service does not fit, and which alternatives fit better when.
+    notFit: z.array(z.string().max(160)).min(2).max(3),
+    alternatives: z.string().min(80).max(420),
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).min(2).max(6),
     // Blog tags that link an article back to its best matching service (getPostService).
     blogTags: z.array(z.string()).min(1).max(8),

@@ -37,6 +37,10 @@ phases:
     icon: "steer"
     text: "During delivery I steer plan, risks and quality, keep dependencies between teams visible and report to management in a format that supports decisions."
 duration: "Plan and partner selection 4 to 8 weeks. A new team needs 2 to 3 months until it delivers at full speed. Steering then runs for the life of the program, usually 12 months or more."
+notFit:
+  - "You only need individual developers for a limited time."
+  - "Management sees nearshore only as a way to cut costs and plans no time for onboarding."
+alternatives: "A German partner delivers with less coordination but costs more per day. Freelancers from portals close short-term gaps but do not build a stable team."
 faq:
   - q: "How large should a nearshore Salesforce team be?"
     a: "At most eight developers. If more capacity is needed, I plan another team with its own area of responsibility, because in a large team coordination grows faster than output."

@@ -37,6 +37,8 @@ Blog articles link back to the best matching service automatically (`getPostServ
 | `results` | 3–6 items: what the client holds in hand afterwards, such as a document, a matrix, a pipeline, a plan or a handed-over process. No benefits or promises ("vergleichbare Partner", "planbare Lieferung") and nothing a deliverable already says. Plain list, no check marks |
 | `phases` | 3–4 items with `title` (max. 40), `icon` (file name in `src/icons/`, shown in the ring of the phase timeline) and `text` (max. 260) |
 | `duration` | 40–260 characters, the typical duration of the engagement per phase or stage, shown as "Typische Dauer" above the phase timeline. Only values Fabian confirmed (2026-11-07) |
+| `notFit` | 2–3 items, max. 160 characters: when the service does not fit. Shown with `alternatives` and the shared text "Nach dem ersten Gespräch" (`servicePage.afterCallText` in `src/i18n`) in the section "Passt das zu Ihrem Vorhaben?" after the phases (KS1, confirmed by Fabian 2026-11-09) |
+| `alternatives` | 80–420 characters: which alternatives (internal role, partner alone, freelancer, tool) fit better and when |
 | `faq` | 2–6 questions, answers up to 600 characters |
 | `note`, `notePartner` | optional, max. 240 characters: note shown at the very top, e.g. who the approach was developed with. `notePartner` is a name from `partnerPage.partners` in `src/i18n` and must appear in `note`; it is linked to the partner page and LinkedIn |
 | `blogTags` | 1–8 tags, matched case-insensitively against blog tags; they pick the service an article links back to |
