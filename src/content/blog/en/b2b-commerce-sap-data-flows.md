@@ -2,6 +2,7 @@
 title: "B2B Commerce and SAP: which data flows where?"
 description: "Which data flows between Salesforce B2B Commerce and SAP: master data by batch, live calls in cart and checkout, the order out and status back."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: b2b-commerce-sap-data-flows
 translationKey: commerce-sap-data-flows
@@ -14,16 +15,16 @@ takeaways:
   - "Accounts, products, categories, price books and entitlements are copied into Salesforce; the product import reads CSV files as asynchronous jobs."
   - "Price, stock, tax, shipping and the check before an order is placed run through extension points such as Commerce_Domain_Pricing_Service."
   - "Since Winter '24, Salesforce recommends extensions over the older checkout integrations. Payments cannot be customized with an extension."
-  - "Every interface that still logs in to Salesforce with username and password has to move to another OAuth flow before 20 February 2027."
+  - "Every connected-app integration on the OAuth username-password flow must move, usually to client credentials, before 20 February 2027."
 faq:
   - q: "Which data does Salesforce B2B Commerce need from SAP?"
     a: "Customer accounts, products with categories, prices and the rules for who may see which product, plus live answers for price, availability and credit during checkout. After the order, the store needs the SAP order number, delivery status and invoices back."
   - q: "Does B2B Commerce have a standard SAP connector?"
-    a: "No such connector is part of B2B Commerce. MuleSoft offers an Accelerator for SAP with a quote-to-cash use case between Sales Cloud and S/4HANA, which is a starting point for APIs. The store side is built with Commerce extensions and import APIs."
+    a: "No such connector is part of B2B Commerce. MuleSoft offers an Accelerator for SAP with reusable SAP and Salesforce APIs and templates, including quote-to-cash between Sales Cloud and S/4HANA, which is a starting point. The store side is built with Commerce extensions and import APIs."
   - q: "Should prices and stock be copied to Salesforce or called live from SAP?"
-    a: "Decide per data item. A copy is fast and keeps the store running when SAP is down, a live call is exact but adds waiting time and load. I copy what changes rarely and call live where a wrong value costs money."
+    a: "Decide per data item. A copy is fast and keeps the store running when SAP is down, a live call is exact but adds waiting time and load. I copy where some staleness is acceptable and call live where the answer must be binding for the current order."
   - q: "Do I need MuleSoft for B2B Commerce and SAP?"
-    a: "Not for a few interfaces. Direct Apex callouts with named credentials are enough for one store with two or three live calls. Middleware pays off when several Salesforce clouds and agents use the same SAP data."
+    a: "Not necessarily. Direct Apex callouts with named credentials can be enough for one store with a few fast live calls, if timeouts, retries and monitoring are designed deliberately. Middleware pays off when several Salesforce clouds and agents use the same SAP data."
 draft: false
 ---
 
@@ -38,15 +39,13 @@ I draw the same map at the start of every integration discussion. For a typical 
 | Customer accounts, buyers, products, categories, price books, buyer groups, entitlements | SAP to Salesforce | Batch, nightly or on change | Import APIs, middleware |
 | Price, availability, credit, tax, shipping | Store asks SAP | Live, in cart and checkout | Commerce extensions |
 | Order with PO number, ship-to, requested date | Salesforce to SAP | When the order is placed | Order export after checkout |
-| Order number, confirmed dates, delivery, invoice | SAP to Salesforce | On change | Update of the order summary |
+| Order number, confirmed dates, delivery, invoice | SAP to Salesforce | On change | Order summary and its item summaries; deliveries and invoices need their own model |
 
 The table looks simple. The decisions sit in the second column of every row: which system writes, and how old the data in the store may be.
 
-A note on names: Salesforce now also markets the product as "Agentforce Commerce for B2B". The integration architecture is the same.
-
 ## Master data comes in by batch as a copy
 
-Everything that changes less often than a buyer clicks belongs in a copy. That covers SAP customer masters, which become accounts and buyer accounts in Salesforce, contacts who become buyers, materials that become products, product hierarchies that become categories, and prices for the store.
+Copy data where some staleness is acceptable and the store must keep running when SAP is slow; call live where the answer must be binding for the current order. That covers SAP customer masters, which become accounts and buyer accounts in Salesforce, contacts who become buyers, materials that become products, product hierarchies that become categories, and prices for the store.
 
 For products Salesforce offers a [product import API](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-import-apis.html). It reads a CSV file whose column headings map to product, category and price book information, and it runs as an asynchronous job with a status you can query. Price books are mapped through the import settings of the same job. That is enough for a first load and for regular updates from a middleware that writes the file.
 
@@ -74,13 +73,13 @@ The [integration architecture page](https://developer.salesforce.com/docs/commer
 
 There is one exception. According to the [extensions guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html), payments cannot be customized with an extension yet; for those the integrations remain the way. In practice that rarely touches SAP, because dealers usually buy on account with a purchase order.
 
-For new stores I would build every SAP call as an extension. Registration and store mapping run through the Salesforce CLI, so they can live in the repository and the pipeline. More on that in [Commerce extensions: custom code that survives updates](../commerce-extensions-custom-code/).
+For new stores I would build every synchronous SAP call in cart and checkout, such as price, stock, tax and the order check, as an extension. Batch imports, the order export and SAP callbacks use import APIs, middleware or other integration patterns. Registration and store mapping run through the Salesforce CLI, so they can live in the repository and the pipeline. More on that in [Commerce extensions: custom code that survives updates](../commerce-extensions-custom-code/).
 
 ## How does the order get to SAP, and what comes back?
 
-When the buyer places the order, B2B Commerce creates an order and an order summary in Salesforce. The order summary has a field `OrderLifeCycleType`. According to the [developer guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html), "unmanaged" marks a summary created by B2B Commerce whose lifecycle runs in an external system, and changes there "must be reflected in Salesforce".
+When the buyer places the order, B2B Commerce creates an order and an order summary in Salesforce. The order summary has a field `OrderLifeCycleType`. According to the [developer guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html), "unmanaged" marks a summary created by B2B Commerce whose lifecycle runs in an external system, and changes there "must be reflected in Salesforce". B2B Commerce creates unmanaged orders by default. The lifecycle type cannot be changed once the summary exists, and most Salesforce Order Management features do not work on unmanaged orders, so decide early who owns the order.
 
-That is the normal case with SAP. The order goes out, SAP creates the sales order, and the integration writes the status back:
+That is the normal case with SAP. The order goes out, SAP creates the sales order, and the integration writes the status back. Treat the order export as its own integration process, usually asynchronous after the Salesforce order exists, with retries, a duplicate check so SAP does not create the order twice, and a rule for orders SAP rejects:
 
 ```ablauf
 sf: Checkout, Order Summary
@@ -93,18 +92,18 @@ Sales order ..number, dates..> Order Summary
 Delivery and invoice ..status back..> Order Summary
 ```
 
-Users with the permission B2B Commerce Integrator User or Edit Unmanaged Order Summaries may update these summaries. Who should own the order, and when Salesforce Order Management makes sense instead, is the subject of [B2B store orders to the ERP](../b2b-store-orders-to-erp/).
+Users with the permission B2B Commerce Integrator User or Edit Unmanaged Order Summaries may update supported fields on these summaries and their related records. Order number and confirmation fit on the order summary; several deliveries with tracking or partial invoices need their own objects or a link to SAP documents. Who should own the order, and when Salesforce Order Management makes sense instead, is the subject of [B2B store orders to the ERP](../b2b-store-orders-to-erp/).
 
 Plan the return flow as carefully as the outbound one. A dealer who sees "order received" for three days calls inside sales, and the store has saved nothing.
 
 ## Middleware or direct callouts?
 
-MuleSoft offers an [Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/) for SAP ECC, S/4HANA and Salesforce. Its quote-to-cash use case syncs order, inventory and customer data between Sales Cloud and S/4HANA, and a second use case covers B2B EDI. It gives you API templates to start from. It does not contain a ready-made B2B Commerce store integration, so the store side remains your work.
+MuleSoft offers an [Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/) for SAP ECC, S/4HANA and Salesforce. It provides reusable SAP and Salesforce APIs, for example for accounts, products, orders, pricing and availability, and templates including a quote-to-cash use case between Sales Cloud and S/4HANA and a B2B EDI use case. It does not contain a ready-made B2B Commerce store integration, so the store side remains your work.
 
-Direct Apex callouts with named credentials are fine for one store with two or three live calls and one order export. A middleware layer pays off when the same SAP data also feeds Field Service, Manufacturing Cloud or Agentforce agents. Then one order status API serves the store, the [order status agent](../agentforce-sap-order-status-mulesoft/) and the service team. The AI masterclass explains in the chapter on [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/) why agents should reuse such APIs instead of getting their own.
+Direct Apex callouts with named credentials can be fine for one store with a few fast live calls, as long as timeouts, retries and monitoring are designed deliberately; Apex has no guaranteed delivery and a default timeout of ten seconds per callout. The order export often benefits from an asynchronous or queued pattern even with one store. A middleware layer pays off when the same SAP data also feeds Field Service, Manufacturing Cloud or Agentforce agents. Then one order status API serves the store, the [order status agent](../agentforce-sap-order-status-mulesoft/) and the service team. The AI masterclass explains in the chapter on [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/) why agents should reuse such APIs instead of getting their own.
 
 ```hinweis achtung
-One deadline applies to every batch interface. Salesforce retires the [OAuth username-password flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) for connected apps on 20 February 2027. A nightly product import that logs in with a password then stops working, often without anyone noticing. How to find and move those interfaces is described in [password integrations end in 2027](../salesforce-password-integrations-end-2027/).
+One deadline applies to many batch interfaces. Salesforce retires the [OAuth username-password flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) for connected apps on 20 February 2027. A nightly product import that uses this flow can then no longer get an access token. Salesforce recommends the client credentials flow for server-to-server integrations. Logins through SOAP `login()` follow their own schedule and need a separate check. How to find and move those interfaces is described in [password integrations end in 2027](../salesforce-password-integrations-end-2027/).
 ```
 
 ## Worked example: S/4HANA and 300 dealers in Europe
@@ -119,7 +118,7 @@ A machine builder runs SAP S/4HANA and wants a store for 300 dealers in Europe w
 6. Credit and order block live in `validate`.
 7. Order to SAP, order number and status back within minutes, deliveries and invoices on change.
 
-Seven interfaces, three of them live. That is a realistic scope for a first release, and each of them needs an owner on the client side.
+Seven data flows, three of them with live calls, implemented through more than seven technical interfaces once initial loads, deltas and error handling are counted. In this example that is a manageable scope for a first release, and each flow needs an owner on the client side.
 
 ## First step: object ownership matrix and interface list
 
