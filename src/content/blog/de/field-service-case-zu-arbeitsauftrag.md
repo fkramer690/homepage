@@ -81,10 +81,10 @@ Die Folge: Geplante und ungeplante Arbeit landen in derselben Dispositionsliste 
 ## Die Datensatzkette entscheidet auch über den Lizenzmix
 
 ```hinweis achtung
-Laut [Field-Service-Preisseite](https://www.salesforce.com/de/products/field-service/pricing) dürfen Dispatcher- und Technician-Lizenzen nicht für Contact Center, Call Center oder Case Management genutzt werden. Wer Cases bearbeitet, braucht Service Cloud oder Field Service Plus.
+Laut [Field-Service-Preisseite](https://www.salesforce.com/de/products/field-service/pricing) dürfen Dispatcher- und Technician-Lizenzen nicht für Contact Center, Call Center oder Case Management genutzt werden. Die Fußnote erlaubt es für Field Service and Operations Plus, einen Namen, den die aktuelle Preistabelle nicht mehr nutzt. Wer Cases bearbeitet, braucht Service Cloud oder eine Field-Service+-Edition.
 ```
 
-In der Praxis trifft das das kleine Serviceteam, in dem der Disponent auch die Hotline annimmt. Diese Person braucht Field Service Plus für 230 € statt Dispatcher für 175 € (Preisliste Oktober 2026). Die vollständige Rollenmatrix steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/).
+In der Praxis trifft das das kleine Serviceteam, in dem der Disponent auch die Hotline annimmt. Diese Person braucht laut deutscher Preisliste Field Service Plus für 230 € statt Dispatcher für 175 €. Die US-Preisseite hat am 5. November 2026 umgestellt und nennt dafür Field Service+ Core (250 $). Ich würde im Angebot klären, welches Modell für Ihren Vertrag gilt und ob es das Recht zum Case Management enthält. Die vollständige Rollenmatrix steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/).
 
 ## Rechenbeispiel: der Anruf "Maschine steht"
 

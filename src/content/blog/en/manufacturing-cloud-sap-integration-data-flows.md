@@ -10,7 +10,7 @@ categories: [manufacturing-cloud, architecture]
 contactBrief: integration
 tags: [Manufacturing Cloud, SAP, ERP integration, MuleSoft, sales agreements, rebates]
 takeaways:
-  - "Stock also flows from SAP into Salesforce. SAP books rebate and warranty amounts as credit memos."
+  - "Stock can flow from SAP as a metric next to the shortfall. Rebate payouts return to SAP as credit memos; warranty needs its own interface."
   - "The Refresh Actuals Calculation action recalculates a sales agreement's actuals per period, since API version 47.0."
   - "One frequency for all data costs either API calls or the dealers' trust in the order status."
   - "From 1 December 2026, interfaces using SOAP login() need Use Any API Auth. Summer '27 retires login() in API 31.0 to 64.0."
@@ -18,9 +18,9 @@ faq:
   - q: "Which data has to flow from SAP to Manufacturing Cloud?"
     a: "Accounts with their hierarchy, products, and either orders or order totals per customer, product and period as actuals for sales agreements. Stock is useful as an extra metric next to the shortfall."
   - q: "Which data flows from Manufacturing Cloud back to SAP?"
-    a: "Approved rebate payouts, which SAP turns into credit memos, and approved warranty amounts that finance books as credit notes to the dealer. Orders stay owned by SAP."
+    a: "Approved rebate payouts, which SAP turns into credit memos, and approved warranty amounts that finance settles with the dealer. Which SAP document that becomes depends on your warranty and accounting process. Orders stay owned by SAP."
   - q: "Do I need MuleSoft to connect SAP to Manufacturing Cloud?"
-    a: "No. The MuleSoft Accelerator for Manufacturing gives templates for account, product and order sync and for rebate credit memos, and Salesforce lists MuleSoft as an add-on on request. Any middleware that writes to the Salesforce APIs can do the same work."
+    a: "No. The MuleSoft Accelerator for Manufacturing gives templates for account, product and order sync and for rebate credit memos, and Salesforce lists MuleSoft as an add-on on request. Another integration platform can build the same flows if it handles the SAP and Salesforce APIs, mapping, retries and monitoring."
   - q: "How often should actuals be loaded from SAP?"
     a: "Daily is enough for sales agreements that run over months. Order status that a dealer or an agent asks about should be called live from SAP instead of being copied."
   - q: "Which deadlines affect ERP interfaces to Salesforce?"
@@ -28,11 +28,11 @@ faq:
 draft: false
 ---
 
-Between SAP and Manufacturing Cloud, master data and actuals flow into Salesforce and money flows back. Accounts, products and orders or order totals come from SAP, daily for actuals and live for order status. Approved rebate payouts and warranty credits go to SAP, where finance books them as credit memos. The MuleSoft Accelerator for Manufacturing covers account, product and order sync with SAP S/4HANA and rebate credit memos, but no sales agreements and no warranty flow. Before anyone builds, write down one leading system per object and check that no interface still logs in with username and password, because SOAP login() gets stricter from 1 December 2026.
+Between SAP and Manufacturing Cloud, master data and actuals flow into Salesforce and money flows back. Accounts, products and orders or order totals come from SAP, daily for actuals and live for order status. Approved rebate payouts and warranty amounts go to SAP, where finance settles them, for rebates as credit memos. The MuleSoft Accelerator for Manufacturing covers account, product and order sync with SAP S/4HANA and rebate credit memos, but it creates no sales agreements and has no warranty flow. Before anyone builds, write down one leading system per object and check whether any interface still calls SOAP API login(), because that gets stricter from 1 December 2026.
 
 ## Which data flows between SAP and Manufacturing Cloud?
 
-Manufacturing Cloud only works with data it does not create itself. A sales agreement compares planned volume with actual volume, and at manufacturers the actual volume is created in SAP, where orders are entered, confirmed and shipped. Rebates and warranty work the other way round: Salesforce calculates or approves, and SAP pays.
+Salesforce Help now calls the product Agentforce Manufacturing (formerly Manufacturing Cloud); I keep the old name because edition and feature names still use it. Its sales agreements depend on data the product does not create itself. A sales agreement compares planned volume with actual volume, and at manufacturers the actual volume is created in SAP, where orders are entered, confirmed and shipped. Rebates and warranty work the other way round: Salesforce calculates or approves, and SAP pays.
 
 This is how I would split the flows for a typical manufacturer with SAP as ERP:
 
@@ -47,11 +47,11 @@ This is how I would split the flows for a typical manufacturer with SAP as ERP:
 | Approved warranty amounts | Salesforce | Salesforce to SAP | on approval |
 | Payment status of credit memos | SAP | SAP to Salesforce | scheduled |
 
-Prices are a separate question with Winter '27, because Salesforce now offers its own pricing engine for orders. I cover that in [Penny Perfect Pricing: ERP prices in Salesforce?](../penny-perfect-pricing-erp-prices/). The whole chapter, from data flows to rollout, is in the masterclass chapter [ERP, AI and rollout](../../masterclass/manufacturing-cloud/erp-ai-and-rollout/).
+Prices are a separate question with Winter '27, because Salesforce now offers its own pricing engine for orders, with its own add-ons. I cover that in [Penny Perfect Pricing: ERP prices in Salesforce?](../penny-perfect-pricing-erp-prices/). The whole chapter, from data flows to rollout, is in the masterclass chapter [ERP, AI and rollout](../../masterclass/manufacturing-cloud/erp-ai-and-rollout/).
 
 ## What does the MuleSoft Accelerator for Manufacturing cover?
 
-The [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufacturing/latest/) provides prebuilt APIs, implementation templates and a reference architecture. It names three manufacturing use cases: account and product and order sync, sales rebate management and total productive maintenance. Two of them matter for Manufacturing Cloud.
+The [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufacturing/latest/) provides prebuilt APIs, implementation templates and a reference architecture. The linked Exchange asset is version 1.4.0, published on 25 October 2023 (checked 9 November 2026), so treat it as a reference and check its SAP APIs against your releases. It names three manufacturing use cases: account and product and order sync, sales rebate management and total productive maintenance. Two of them matter for Manufacturing Cloud.
 
 **Account and product and order sync.** According to the [use case page on Exchange](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/qrc-zzh/Use%20case%201%20-%20Account%20and%20product%20and%20order%20sync/), it extracts account, product and order data from SAP S/4HANA into Manufacturing Cloud, including account and product hierarchies. The sync is one way, SAP is the system of record, and it runs in real time or in batch. Three details are worth reading before you plan with it:
 
@@ -59,17 +59,17 @@ The [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufactu
 - Only one product catalog is supported.
 - The SAP side needs a communication arrangement for product hierarchies and a custom flag field on the product master.
 
-**Sales rebate management.** According to the [rebate use case](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/Use%20case%202%20-%20Sales%20rebate%20management/), Manufacturing Cloud is the system of record for rebate payouts. When a payout is approved, an event creates a draft credit memo in SAP. A scheduled job later marks payouts as paid once SAP has paid the credit memo. Sales orders flow from SAP into Manufacturing Cloud. How rebate programs work on the Salesforce side is in [Rebate Management: dealer rebates without Excel](../rebate-management-dealer-rebates/).
+**Sales rebate management.** According to the [rebate use case](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/Use%20case%202%20-%20Sales%20rebate%20management/), Manufacturing Cloud is the system of record for rebate payouts. When a payout is approved, an event creates a draft credit memo in SAP. The documented bulk path is different: it polls all new payouts "irrespective of status" and pushes them to SAP, so your build needs a status filter and a test for it. A scheduled job later marks payouts as paid once SAP has paid the credit memo. Sales orders flow from SAP into Manufacturing Cloud. How rebate programs work on the Salesforce side is in [Rebate Management: dealer rebates without Excel](../rebate-management-dealer-rebates/).
 
 What the accelerator does not cover: it creates no sales agreements, and it names no warranty flow. The approved amount from a warranty claim, which I would book in the ERP as a credit note to the dealer as described in [warranty claims from dealers](../warranty-claims-dealers-salesforce/), needs its own interface.
 
 One contradiction to settle early: in the order sync, customers flow one way with SAP as master. In the rebate use case, customers sync in both directions and either system can be the system of record. Both come from the same accelerator. Pick one rule for customers before you deploy both templates.
 
-Salesforce lists MuleSoft Anypoint Platform on the [Manufacturing Cloud add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) with "Request a quote" and no price. If MuleSoft already runs in your company, the templates save design time. Buying it only for these flows rarely pays off, and any middleware that writes to the Salesforce APIs can do the same work.
+Salesforce lists MuleSoft Anypoint Platform on the [Manufacturing Cloud add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) with "Request a quote" and no price. If MuleSoft already runs in your company, the templates save design time. In my view, buying it only for these flows rarely pays off. Another integration platform can build the same flows if it handles the SAP and Salesforce APIs, mapping, retries and monitoring.
 
 ## How do actuals get into sales agreements?
 
-Sales agreements take their actuals from orders in Salesforce, from an API upload or from a Data Processing Engine definition. The setting Actuals Calculation Mode decides which one, and every agreement keeps the mode it was created with. I describe the four modes and when each fits in [Sales agreements: spot customers behind on volume](../sales-agreements-volume-shortfall-erp/).
+Sales agreements take their actuals from orders in Salesforce, from an API upload or from a Data Processing Engine definition. The setting Actuals Calculation Mode decides which one. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_reference.htm&language=en_US&type=5), actuals are calculated with the mode in effect when the agreement is activated, and a change during the active period is ignored by the automated process. I describe the four modes and when each fits in [Sales agreements: spot customers behind on volume](../sales-agreements-volume-shortfall-erp/).
 
 For the interface, one action matters: [Refresh Actuals Calculation](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_refresh_actuals_calculation.htm). It has been available since API version 47.0 for users with the Manufacturing Sales Agreements permission set and recalculates the actuals of one sales agreement. Two flags choose the periods: the current period only, the current and past periods, or the current and future periods. How many future periods count comes from a field on the sales agreement. Setting both flags to true makes the call fail, and the documentation notes that undoing the action needs a database rollback.
 

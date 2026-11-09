@@ -12,13 +12,13 @@ takeaways:
   - "Vibe Coding passt zu Workshop-Prototypen wie einem Händlerportal-Mock-up, gebaut in einer Developer Edition mit Testdaten und danach verworfen."
   - "Code für eine Org mit Händler-, Garantie- oder Servicedaten braucht agentic engineering: Ein Mensch prüft, Tests und Pipeline-Gates entscheiden."
   - "Der Prototyp wird zur Spezifikation mit Masken und Abnahmekriterien. Die Produktivumsetzung beginnt neu im Repository des Kunden."
-  - "Eine Developer Edition bekommt 110 Anfragen an Agentforce Vibes für einen Monat, eine Scratch Org lebt standardmäßig 7 und höchstens 30 Tage."
-  - "Reine Modelle schreiben fast immer kompilierbaren Code, aber laut Veracode bestehen nur 56 Prozent die Sicherheitstests."
+  - "Eine Developer Edition bekommt 110 Vibes-Anfragen oder 1,5 Mio. Tokens für einen Monat, eine Scratch Org lebt standardmäßig 7 und höchstens 30 Tage."
+  - "Modelle schreiben fast immer syntaktisch korrekten Code, aber im Veracode-Test vom Oktober 2026 bestanden nur 62 Prozent die Sicherheitsprüfung."
 faq:
   - q: "Was ist Vibe Coding in Salesforce?"
-    a: "Vibe Coding heißt, einem Coding-Agenten wie Agentforce Vibes oder Claude Code eine Funktion zu beschreiben und das Ergebnis zu übernehmen, ohne den Code zu lesen. In Salesforce entstehen so schnell lauffähige LWCs, Apex-Klassen und Metadaten. Für Prototypen ist das nützlich, für Produktion riskant."
+    a: "Vibe Coding heißt, einem Coding-Agenten wie Agentforce Vibes oder Claude Code eine Funktion zu beschreiben und das Ergebnis zu übernehmen, ohne den Code zu lesen. In Salesforce entstehen so schnell LWCs, Apex-Klassen und Metadaten, die zu laufen scheinen. Für Prototypen ist das nützlich, für Produktion riskant."
   - q: "Darf ein per Vibe Coding gebauter Prototyp in Produktion?"
-    a: "So wie er ist, würde ich ihn nicht deployen. Prototypen entstehen meist als Administrator mit Testdaten, ohne Sharing-Modell, Bulk-Tests und Versionsverwaltung. Nutzen Sie den Prototyp als Spezifikation und bauen Sie die Funktion über Plan, Review und Pipeline neu."
+    a: "So wie er ist, würde ich ihn nicht deployen. Ein Workshop-Prototyp entsteht typischerweise als Administrator mit Testdaten, ohne Sharing-Modell, Bulk-Tests und Versionsverwaltung. Nutzen Sie den Prototyp als Grundlage der Spezifikation und bauen Sie die Funktion über Plan, Review und Pipeline neu."
   - q: "Welche Org eignet sich für Vibe-Coding-Prototypen?"
     a: "Eine Developer Edition oder eine Scratch Org ohne echte Kundendaten und ohne Verbindung zu SAP oder anderen Produktivsystemen. In der produktiven Org können Admins Agentforce Vibes im Setup unter Agentforce Vibes Extensions abschalten."
   - q: "Was unterscheidet Vibe Coding von agentic engineering?"
@@ -39,13 +39,13 @@ Die Grenze verläuft also entlang einer Frage: Liest jemand den Code? Dieselbe S
 Fowler nennt Wegwerfsoftware und Prototypen als passende Einsätze: „Experienced programmers may also find it handy for rapid development of disposable software or prototypes.“ In einem Programm bei einem Maschinen- oder Anlagenbauer würde ich vier Kandidaten in Betracht ziehen:
 
 - **Händlerportal-Mock-ups.** Eine Seite, auf der ein Händler Ersatzteile zu einer Maschine über die Seriennummer bestellt, gezeigt vor ein paar Händlern im Workshop, bevor jemand eine User Story schreibt. Was das echte Portal ausmacht, steht in [das Kundenportal in der Manufacturing Cloud](../manufacturing-cloud-kundenportal/).
-- **Ein Service-Cockpit als LWC.** Eine Maske mit offenen Fällen, installierter Basis, nächstem Wartungstermin und zugeordnetem Techniker im Außendienst, damit die Serviceleitung zeigen kann, was fehlt. Agentforce Vibes 2.0 bietet [Live-Vorschauen für Lightning Web Components](https://developer.salesforce.com/developer-centers/agentforce-vibes/announcements/agentforce-vibes-4-1-0), das macht so etwas schnell.
+- **Ein Service-Cockpit als LWC.** Eine Maske mit offenen Fällen, installierter Basis, nächstem Wartungstermin und zugeordnetem Techniker im Außendienst, damit die Serviceleitung zeigen kann, was fehlt. Agentforce Vibes 2.0 bietet [Live-Vorschauen für Lightning Web Components](https://developer.salesforce.com/developer-centers/agentforce-vibes/announcements/agentforce-vibes-4-1-0), sobald die Vorschau-Werkzeuge eingerichtet sind, das macht so etwas schnell.
 - **Skripte für Testdaten.** Ersatzteile, Anlagen und Wartungsverträge in plausiblen Mengen für eine Demo.
-- **Einmalige Auswertungen.** Ein Skript, das einmal zählt, welche Anlagenfelder tatsächlich gefüllt sind.
+- **Einmalige Auswertungen.** Ein Skript, das einmal zählt, welche Anlagenfelder gefüllt sind, auf einem freigegebenen, anonymisierten Export statt auf der Produktion.
 
 Der Nutzen liegt im Gespräch: Fachbereiche korrigieren eine lauffähige Maske schneller als ein Fachkonzept.
 
-Die Umgebungen kosten wenig. Mit der [Ankündigung vom April 2026](https://developer.salesforce.com/blogs/2026/04/new-developer-edition-agentforce-vibes-claude-mcp) hat Salesforce Agentforce Vibes, ein VS Code im Browser und gehostete MCP-Server kostenlos in jede Developer Edition gebracht. Die [Vibes-FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) begrenzt das pro Org, für einen Monat ab erster Nutzung, ohne Auffrischung. Teams mit Dev Hub nutzen stattdessen Scratch Orgs: Laut [Salesforce-DX-Handbuch](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-scratch-orgs.html) sind sie „source-driven and disposable“ und starten ohne Daten.
+Die Developer Edition kostet nichts. Mit der [Ankündigung vom April 2026](https://developer.salesforce.com/blogs/2026/04/new-developer-edition-agentforce-vibes-claude-mcp) hat Salesforce Agentforce Vibes, ein VS Code im Browser und gehostete MCP-Server kostenlos in jede Developer Edition gebracht. Die [Vibes-FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) begrenzt das pro Org, für einen Monat ab erster Nutzung, ohne Auffrischung. Teams mit einem Dev Hub, in dem Agentforce Vibes aktiviert ist, nutzen stattdessen Scratch Orgs: Laut [Salesforce-DX-Handbuch](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-scratch-orgs.html) sind sie „source-driven and disposable“ und starten ohne Daten.
 
 ```kennzahlen
 110 | Anfragen an Agentforce Vibes pro Developer Edition, oder 1,5 Mio. Tokens
@@ -60,15 +60,15 @@ Wie harmlos ein Prototyp ist, hängt an der Org, in der er läuft. Als das wohl 
 
 1. **Keine echten Daten.** Keine Händlernamen, keine Kundenmaschinen, keine Preise aus der Preisliste. Für ein Mock-up reichen erzeugte Testdaten.
 2. **Keine Verbindungen.** Keine Named Credential zu SAP oder proALPHA, kein Integrationsnutzer, keine Kopie produktiver Zugangsdaten. Die SAP-Antwort ist eine statische JSON-Datei.
-3. **Kein Coding-Agent in Produktion.** Salesforce erlaubt Admins, [Agentforce Vibes pro Org abzuschalten](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes), im Setup unter Agentforce Vibes Extensions. In der produktiven Org würde ich das am ersten Tag tun. Laut Salesforce gibt es Agentforce Vibes nicht in der Hyperforce EU Operating Zone ([Vibes-FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html)); für eine Org dort stellt sich die Frage also nicht, und [Kapitel 2 der KI-Masterclass](../../masterclass/ki-salesforce/salesforce-werkzeuge-ki-entwicklung/) zeigt die Alternativen.
-4. **Ein Verantwortlicher und ein Enddatum.** Scratch Orgs laufen von selbst ab. Eine Developer Edition bleibt, solange sich jemand anmeldet; also muss jemand sie stilllegen oder zumindest festhalten, was darin liegt.
+3. **Kein Coding-Agent in Produktion.** Salesforce erlaubt Admins, [Agentforce Vibes pro Org abzuschalten](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes), im Setup unter Agentforce Vibes Extensions. In der produktiven Org würde ich das am ersten Tag tun. Laut Salesforce gibt es Agentforce Vibes nicht in der EU Operating Zone ([Vibes-FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html)); für eine Org dort stellt sich die Frage also nicht, und [Kapitel 2 der KI-Masterclass](../../masterclass/ki-salesforce/salesforce-werkzeuge-ki-entwicklung/) zeigt die Alternativen.
+4. **Ein Verantwortlicher und ein Enddatum.** Scratch Orgs laufen von selbst ab. Eine Developer Edition bleibt aktiv, solange sich jemand regelmäßig anmeldet; also muss jemand sie stilllegen oder zumindest festhalten, was darin liegt.
 5. **Eine sichtbare Kennzeichnung.** „Prototyp, nicht für Produktion“ im Titel der Komponente, damit ein Screenshot in der Lenkungskreis-Präsentation nicht zur Zusage wird.
 
 Diese Regeln gehören auch in den Vertrag mit Ihrem Partner, wie in [Regeln für Partner, die mit KI programmieren](../partner-ki-coding-regeln-vertrag/) beschrieben.
 
 ## Warum gehört ein Vibe-Coding-Prototyp nicht in Produktion?
 
-Ein Prototyp zeigt, dass eine Maske sinnvoll ist, aber nicht, ob der Code mit Ihren Daten, Ihren Nutzern und Ihrem Sharing-Modell besteht. Der [GenAI Code Security Report 2026](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) von Veracode fand, dass reine Modelle zu etwa 100 Prozent kompilierbaren Code schreiben, aber nur 56 Prozent die Sicherheitstests bestehen. Mitgründer Chris Wysopal formuliert es so: „scan it, fix it, and never ship it blind.“ Code, der läuft, ist der leichte Teil.
+Ein Prototyp zeigt, dass eine Maske sinnvoll ist, aber nicht, ob der Code mit Ihren Daten, Ihren Nutzern und Ihrem Sharing-Modell besteht. Der [GenAI Code Security Report 2026](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) von Veracode fand, dass Modelle zu etwa 100 Prozent syntaktisch korrekten Code schreiben, aber nur 56 Prozent die Sicherheitstests bestehen. Die [Aktualisierung vom 29. Oktober 2026](https://www.veracode.com/blog/fall-2026-genai-code-security) hob den Wert auf 62 Prozent; getestet wurden Python, C#, JavaScript und Java gegen vier Schwachstellentypen, nicht Apex. Mitgründer Chris Wysopal formuliert es so: „scan it, fix it, and never ship it blind.“ Code, der läuft, ist der leichte Teil.
 
 In Salesforce hat ein Workshop-Prototyp typischerweise dieselben Lücken:
 
@@ -76,7 +76,7 @@ In Salesforce hat ein Workshop-Prototyp typischerweise dieselben Lücken:
 - Er liest Datensätze einzeln, weil die Demo zwölf davon hatte.
 - Bestände und Liefertermine sind fest eingetragen, wo die Produktivversion SAP aufrufen muss.
 - Er hat keine Tests, oder Tests, die nur die Abdeckung erreichen sollen.
-- Seine Metadaten liegen in einer Developer Edition, außerhalb Ihres Repositorys und außerhalb jedes Reviews.
+- Bei dieser Art Workshop bleiben seine Metadaten in der Developer Edition und erreichen nie Ihr Repository oder ein Review.
 
 Fowler ergänzt die Wartbarkeit: Ungeprüfter Code wächst zu Code, der sich schwer ändern lässt, für Menschen wie für Sprachmodelle. Nach meiner Einschätzung dauert es länger, diese Lücken im Prototyp einzeln zu schließen, als die Funktion sauber zu bauen. Auf welche Fehler Sie bei KI-Code achten sollten, steht in [KI-generierten Salesforce-Code prüfen](../ki-generierten-salesforce-code-pruefen/).
 
@@ -97,7 +97,7 @@ Review und Gates
   Pull Request, menschliches Review, Code Analyzer, Validierungsdeployment mit Apex-Tests. Die Gates beschreibe ich in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/).
 ```
 
-Eine Ausnahme akzeptiere ich: HTML-Template und CSS einer Mock-up-LWC dürfen mit, wenn sie dasselbe Review bestehen. Apex und Datenzugriff werden immer neu gebaut.
+Eine Ausnahme akzeptiere ich: HTML-Template und CSS einer Mock-up-LWC dürfen mit, wenn sie dasselbe Review bestehen. Apex und Datenzugriff baue ich standardmäßig neu, weil Prüfen und Aufräumen von Prototyp-Code meist mehr kostet als sauberes Schreiben.
 
 ## Rechenbeispiel: zwei Tage Workshop bei einem Maschinenbauer
 

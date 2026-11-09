@@ -1,6 +1,6 @@
 ---
 title: "B2B-Checkout: Bestellnummer, Karte oder Rechnung?"
-description: "Welche Zahlarten ein B2B-Shop auf Salesforce braucht, wenn Händler auf Rechnung kaufen: Bestellnummer, Karte, Dual Payment, Stripe und Kreditprüfung im ERP."
+description: "Welche Zahlarten ein B2B-Shop auf Salesforce braucht, wenn Händler auf Rechnung kaufen: Bestellnummer, Karte, Salesforce Payments, ERP-Kreditprüfung."
 pubDate: 2026-10-28
 lang: de
 slug: b2b-checkout-bestellnummer-rechnung
@@ -11,7 +11,7 @@ tags: [B2B Commerce, Checkout, Bestellnummer, Zahlung, Kreditlimit, ERP]
 takeaways:
   - "Eine Bestellnummer (Purchase Order) gilt im Shop als Zahlungsform, löst aber keine Zahlung aus. Die Nummer geht für die Rechnung ans ERP."
   - "Eine Bestellung geht nur ab, wenn der Warenkorb eine Zahlungsautorisierung oder eine Bestellnummer hat. Jeder Checkout endet in einem der beiden."
-  - "Die Purchase-Order-Komponente braucht kein Payment Gateway. Dual Payment bietet Karte und Bestellnummer, Salesforce Payments läuft über Stripe."
+  - "Die Purchase-Order-Komponente braucht kein Payment Gateway. Dual Payment bietet Karte und Bestellnummer, Salesforce Payments läuft über Stripe oder Adyen."
   - "Zahlungen lassen sich nicht mit einer Commerce Extension anpassen. Eigene Zahlungslogik braucht einen Apex-Adapter oder eine eigene Komponente."
   - "Kreditlimit und Auftragssperre gehören ins ERP. Die validate-Methode der PlaceOrder-Extension fragt das ERP, bevor die Bestellung entsteht."
 faq:
@@ -22,11 +22,11 @@ faq:
   - q: "Kann der Shop das Kreditlimit eines Händlers vor der Bestellung prüfen?"
     a: "Nicht im Standard. Der Extension Point PlaceOrder führt Warenkorbprüfungen aus, wenn der Käufer bestellt, und Sie überschreiben dessen validate-Methode mit eigener Logik, etwa einem Live-Aufruf ans ERP, der offenen Kredit und Auftragssperren prüft."
   - q: "Kann ich jeden Zahlungsanbieter mit B2B Commerce nutzen?"
-    a: "Salesforce nennt drei Wege: Anbieterpakete auf dem AppExchange, die B2B-Shops unterstützen, Salesforce Payments mit Stripe oder ein eigenes Gateway. Ein eigenes serverseitiges Gateway braucht einen Apex-Adapter, weil sich Zahlungen nicht mit Extensions anpassen lassen."
+    a: "Salesforce nennt drei Wege: Anbieterpakete auf dem AppExchange, die B2B-Shops unterstützen, Salesforce Payments mit Stripe oder Adyen oder ein eigenes Gateway. Ein eigenes serverseitiges Gateway braucht einen Apex-Adapter, weil sich Zahlungen nicht mit Extensions anpassen lassen."
 draft: false
 ---
 
-Ein B2B-Shop für Händler, die auf Rechnung kaufen, braucht zuerst die Bestellnummer als Zahlart und erst danach, wenn überhaupt, die Karte. Salesforce B2B Commerce bietet eine Purchase-Order-Komponente ohne Payment Gateway, eine Dual-Payment-Komponente für Karte und Bestellnummer und Salesforce Payments auf Basis von Stripe, das in B2B-Shops ebenfalls eine Bestellnummer anbieten kann. Eine Bestellnummer löst in Salesforce keine Zahlung aus, die Rechnung bleibt im ERP. Was der Shop ergänzen muss, ist die Prüfung, ob der Händler überhaupt bestellen darf, also Kreditlimit und Auftragssperre. Diese Antwort muss vor der Bestellung aus dem ERP kommen.
+Ein B2B-Shop für Händler, die auf Rechnung kaufen, braucht zuerst die Bestellnummer als Zahlart und erst danach, wenn überhaupt, die Karte. Salesforce B2B Commerce bietet eine Purchase-Order-Komponente ohne Payment Gateway, eine Dual-Payment-Komponente für Karte und Bestellnummer und Salesforce Payments auf Basis von Stripe oder Adyen, das in B2B-Shops ebenfalls eine Bestellnummer anbieten kann. Eine Bestellnummer löst in Salesforce keine Zahlung aus, die Rechnung bleibt im ERP. Was der Shop ergänzen muss, ist die Prüfung, ob der Händler überhaupt bestellen darf, also Kreditlimit und Auftragssperre. Diese Antwort muss vor der Bestellung aus dem ERP kommen.
 
 ## Was heißt Bezahlen in einem B2B-Shop?
 
@@ -47,11 +47,11 @@ Das Entwicklerhandbuch nennt für B2B-Shops diese Optionen, verfügbar in Enterp
 | Purchase Order | Für B2B-Shops, die nur Bestellnummern annehmen | Kein Gateway |
 | Payment | Kartenzahlung über einen Drittanbieter | Serverseitiges Gateway |
 | Dual Payment | Karte und Bestellnummer, nur für B2B | Serverseitiges Gateway für die Karte |
-| Salesforce Payments | Mehrere Zahlarten, gespeicherte Zahlungsmittel optional, in B2B mit Bestellnummer | Händlerkonto in der Commerce-App |
+| Salesforce Payments | Mehrere Zahlarten, gespeicherte Zahlungsmittel optional, in B2B mit Bestellnummer | Salesforce-Payments-Lizenz und Händlerkonto in der Commerce-App |
 | Express Checkout | Apple Pay, Google Pay, PayPal und Venmo | Salesforce Payments |
 | Eigene Komponente | Clientseitige Komponente, die direkt mit dem Anbieter spricht | Eigenentwicklung |
 
-Für das Gateway nennt die [Seite zu den Gateway-Optionen](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-payment-gateway-options.html) drei Wege: ein Anbieterpaket vom AppExchange, Salesforce Payments als native Stripe-Integration oder ein eigenes Gateway. Bei AppExchange-Paketen sollen Sie laut Salesforce prüfen, ob das Paket B2B-Shops unterstützt. Ein eigenes serverseitiges Gateway braucht einen Apex-Adapter.
+Für das Gateway nennt die [Seite zu den Gateway-Optionen](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-payment-gateway-options.html) drei Wege: ein Anbieterpaket vom AppExchange, Salesforce Payments als native Stripe-Integration oder ein eigenes Gateway. Inzwischen hat Salesforce Payments auch eine [native Integration mit Adyen](https://www.salesforce.com/blog/salesforce-native-integration-adyen/). Bei AppExchange-Paketen sollen Sie laut Salesforce prüfen, ob das Paket B2B-Shops unterstützt. Ein eigenes serverseitiges Gateway braucht einen Apex-Adapter.
 
 ```vertiefung Für Entwickler
 titel: Wo landet eigene Zahlungslogik?
@@ -76,7 +76,7 @@ Ich empfehle daher die Purchase-Order-Komponente, wenn der Shop nur für bekannt
 
 Kreditlimit, offene Posten und Auftragssperren liegen im ERP, bei SAP zum Beispiel im Kreditmanagement. Der Shop kennt davon nichts. Ohne Prüfung kann ein gesperrter Händler eine Bestellung abschicken, die das ERP später ablehnt, und der Innendienst muss anrufen und erklären.
 
-Der Ort für die Prüfung ist der PlaceOrder-Service, Extension Point `Commerce_Domain_Checkout_PlaceOrder`. Laut [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) führt er Warenkorbprüfungen aus, wenn ein Käufer bestellt, als Teil der Place Order Action API. Für eigene Logik erweitern Sie die Apex-Basisklasse und überschreiben die Methode `validate`. Darin fragt ein Live-Aufruf das ERP zwei Dinge: Ist das Konto gesperrt, und passt die Bestellsumme in den offenen Kreditrahmen? Wenn nicht, entsteht keine Bestellung, und der Käufer sieht einen Hinweis.
+Der Ort für die Prüfung ist der PlaceOrder-Service, Extension Point `Commerce_Domain_Checkout_PlaceOrder`. Laut [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) führt er Warenkorbprüfungen aus, wenn ein Käufer bestellt, als Teil der Place Order Action API. Für eigene Logik erweitern Sie die Apex-Basisklasse und überschreiben die Methode `validate`. Laut [Apex-Referenz](https://developer.salesforce.com/docs/commerce/salesforce-commerce/references/comm-apex-reference/CheckoutPlaceOrder.html) geht das nur mit der erweiterten Place Order Actions API, mit einem externen Aufruf pro Transaktion und ohne DML oder asynchrones Apex. Liegen Kreditstatus und Sperre hinter zwei ERP-Diensten, muss ein Middleware-Endpunkt beides zu einer Antwort bündeln. Darin fragt ein Live-Aufruf das ERP zwei Dinge: Ist das Konto gesperrt, und passt die Bestellsumme in den offenen Kreditrahmen? Wenn nicht, entsteht keine Bestellung, und der Käufer sieht einen Hinweis.
 
 ```ablauf
 sf: Checkout, validate-Prüfung, Order Summary
@@ -93,7 +93,7 @@ Drei Entscheidungen gehören in die Spezifikation:
 
 1. **Was der Käufer sieht.** "Bitte wenden Sie sich an Ihren Ansprechpartner im Vertrieb" reicht; das Kreditlimit selbst sollte der Einkäufer eines Händlers in der Regel nicht im Shop lesen.
 2. **Was bei Zeitüberschreitung passiert.** Antwortet das ERP nicht rechtzeitig, sperrt der Shop die Bestellung oder nimmt sie an. Prüft Ihr ERP den Kredit beim Anlegen des Kundenauftrags ohnehin noch einmal, ist Annehmen die freundlichere Wahl.
-3. **Kartenbestellungen.** Eine autorisierte Kartenzahlung braucht keine Kreditprüfung. Die validate-Logik muss wissen, wie der Käufer zahlt.
+3. **Kartenbestellungen.** Eine autorisierte Kartenzahlung braucht keine Prüfung des Kreditlimits, eine Auftragssperre kann aber trotzdem gelten. Die validate-Logik muss wissen, wie der Käufer zahlt.
 
 Ich würde Kreditlimits nicht nachts nach Salesforce kopieren, um den Live-Aufruf zu sparen. Eine Kopie von gestern Abend ist genau dann falsch, wenn es darauf ankommt: bei dem Händler, der heute Morgen drei große Bestellungen abgeschickt hat.
 
@@ -101,7 +101,7 @@ Ich würde Kreditlimits nicht nachts nach Salesforce kopieren, um den Live-Aufru
 
 Ein Pumpenhersteller verkauft Ersatzteile über 300 Händler in Deutschland, Österreich und der Schweiz. Alle Händler haben ein Debitorenkonto in SAP und zahlen innerhalb von 30 Tagen. Dazu bestellen rund 50 kleine Servicewerkstätten pro Jahr ein- oder zweimal und haben kein Debitorenkonto.
 
-Hier würde ich Salesforce Payments oder Dual Payment wählen, mit Bestellnummer für die Käufergruppe der Händler und Karte für die Werkstätten. Jede Bestellung auf Rechnung läuft durch die validate-Prüfung gegen SAP. Kartenbestellungen überspringen die Kreditprüfung, ihre Zahlung muss aber in die Buchhaltung in SAP, und das ist eine Schnittstelle mehr. Vor der Entscheidung würde ich die Buchhaltung fragen, welche Händler Rechnungen ohne eigene Bestellnummer zurückweisen; für diese kann die validate-Methode auch ein leeres Bestellnummernfeld ablehnen.
+Hier würde ich Salesforce Payments oder Dual Payment wählen, mit Bestellnummer für die Käufergruppe der Händler und Karte für die Werkstätten. Jede Bestellung auf Rechnung läuft durch die validate-Prüfung gegen SAP. Kartenbestellungen überspringen die Prüfung des Kreditlimits, nicht die der Sperre, und ihre Zahlung muss aber in die Buchhaltung in SAP, und das ist eine Schnittstelle mehr. Vor der Entscheidung würde ich die Buchhaltung fragen, welche Händler Rechnungen ohne eigene Bestellnummer zurückweisen; für diese kann die validate-Methode auch ein leeres Bestellnummernfeld ablehnen.
 
 Sind es am Ende weniger Werkstätten als gedacht, ist die einfachere Alternative ein Shop nur mit Purchase-Order-Komponente und ein Vertriebsprozess, der vor der ersten Bestellung ein Debitorenkonto anlegt.
 

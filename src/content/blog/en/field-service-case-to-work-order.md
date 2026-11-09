@@ -81,10 +81,10 @@ The consequence: planned and unplanned work land in the same dispatch queue and 
 ## The record chain also decides the license mix
 
 ```hinweis achtung
-According to the [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/), Dispatcher and Technician licenses may not be used for contact center, call center or customer case management. Whoever works cases needs Service Cloud or Field Service Plus.
+According to the [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/), Dispatcher and Technician licenses may not be used for contact center, call center or customer case management. The footnote allows it for Field Service and Operations Plus, a name the current price table no longer uses. Whoever works cases needs Service Cloud or a Field Service+ edition.
 ```
 
-In practice this hits the small service team where the dispatcher also answers the hotline. That person needs Field Service Plus at $230 instead of Dispatcher at $175 (price list, October 2026). The full role matrix is in [Salesforce Field Service licenses: who needs which?](../field-service-licences-by-role/).
+In practice this hits the small service team where the dispatcher also answers the hotline. Since the price list changed on 5 November 2026, that person needs Field Service+ Core at $250 instead of Dispatcher at $175 per user and month. I would have it confirmed in the order form that Field Service+ Core carries the right to case management. The full role matrix is in [Salesforce Field Service licenses: who needs which?](../field-service-licences-by-role/).
 
 ## Worked example: a "machine down" call
 

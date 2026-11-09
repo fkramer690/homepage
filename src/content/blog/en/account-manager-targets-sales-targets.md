@@ -10,12 +10,12 @@ categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Account Manager Targets, Sales Targets, Account Forecasting, CRM Analytics]
 takeaways:
   - "Changes do not flow down on their own. A manager propagates them, or a flow calls Update Account Manager Target Values."
-  - "When someone leaves or the manager hierarchy changes, assignments become invalid and have to be redistributed."
+  - "When someone leaves or a Manager field changes, assignments become invalid. Switching the hierarchy type makes all existing targets read-only."
   - "Targets, forecasts and actuals only line up when all three use the same customers, products and periods."
   - "The feature does not calculate commission. Salesforce sells Spiff for that, and many manufacturers use payroll."
 faq:
   - q: "What are account manager targets in Manufacturing Cloud?"
-    a: "A Manufacturing Cloud feature for yearly sales targets. Managers create a target on revenue, product volume or a custom measure, split it across their direct reports, and those reports split it further by account, product and month."
+    a: "A Manufacturing Cloud feature for yearly sales targets. Managers create a target on revenue or a measure the admin adds, such as quantity, split it across their direct reports, and those reports split it further by account, product and month."
   - q: "Do account manager targets replace the target spreadsheet?"
     a: "They can replace the distribution part: who has which target for which customer, product and month. They do not calculate commissions, and they only show attainment if actuals arrive in Salesforce in the same structure."
   - q: "What happens to targets when an account manager leaves?"
@@ -25,7 +25,7 @@ faq:
 draft: false
 ---
 
-Account manager targets can replace the distribution part of a sales target spreadsheet: who has which yearly target, for which customers, products and months. The Manufacturing Cloud feature sets targets on revenue, volume or a custom measure and passes them down the team hierarchy. It does not calculate commissions, and it only shows attainment when actuals reach Salesforce in the same customer and product structure as forecasts and sales agreements. Before you switch it on, settle the hierarchy, the price book, the record limit and the source of actuals. Then the spreadsheet can go.
+Account manager targets can replace the distribution part of a sales target spreadsheet: who has which yearly target, for which customers, products and months. The Manufacturing Cloud feature sets targets on revenue or a measure the admin adds, such as quantity, and passes them down the team hierarchy. It does not calculate commissions, and it only shows attainment when actuals reach Salesforce in the same customer and product structure as forecasts and sales agreements. Before you switch it on, settle the hierarchy, the price book, the record limit and the source of actuals. Then the spreadsheet can go.
 
 ## What are account manager targets?
 
@@ -33,11 +33,11 @@ Account manager targets are the Manufacturing Cloud feature for yearly sales tar
 
 The building blocks, according to the Trailhead module:
 
-- **Measure.** Revenue, product volume or a custom measure. In the example, the admin adds values such as Quantity, CSAT and NPS in Object Manager.
-- **Fiscal year.** Targets use the fiscal year defined in Setup. A manager can create them for the current year and the two following ones.
+- **Measure.** Revenue comes predefined. In the example, the admin adds values such as Quantity, CSAT and NPS in Object Manager.
+- **Fiscal year.** Targets use the fiscal year defined in Setup, and according to the [considerations in Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.mfg_amt_considerations.htm&language=en_US&type=5) only a standard fiscal year, not a custom one. That rules out 4-4-5 calendars. A manager can create targets for the current year and the two following ones.
 - **Distribution frequency.** Monthly, quarterly or yearly. By default the target is split equally across periods, and account managers can change the share per period.
 - **Team hierarchy.** Either the manager hierarchy, taken from the Manager field on each user record, or the forecasts hierarchy from Sales Cloud collaborative forecasting.
-- **Price book.** A default price book, used to turn a revenue target into a product volume.
+- **Price book.** A default price book that supplies the list price for product distributions.
 
 In Setup the feature has its own switch, and users need the permission set Manufacturing Account Manager Targets. In the metadata the switch is `enableIndustriesMfgTargets`, available since API version 49.0 according to the [IndustriesManufacturingSettings reference](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm).
 
@@ -48,7 +48,7 @@ Top down. The [AcctMgrTarget](https://developer.salesforce.com/docs/atlas.en-us.
 Below the team level there are three more cuts; the [distribution](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target_distribution.htm) stores account, product and price book for them:
 
 1. **By account.** A share of a person's target goes to a key account, and Salesforce fills in the amount.
-2. **By product.** A share goes to a product. Salesforce divides the amount by the list price from the default price book and gets a volume.
+2. **By product.** A share goes to a product. Salesforce fills in the list price from the selected price book; Help does not describe a conversion of the amount into a quantity.
 3. **By month.** The target is split equally across twelve months, and each month can be edited.
 
 Two details matter in practice. First, the assigned values do not have to add up to the parent target. Trailhead calls that a feature, because a manager can keep a share. For controlling it means a gap or an overshoot nobody notices unless a report shows it. Second, changes do not flow down by themselves. The manager clicks Propagate to Assignments, and Salesforce sends in-app notifications to the people affected.
@@ -60,7 +60,7 @@ For automation there is the [Update Account Manager Target Values action](https:
 
 ## What happens after a reorganisation?
 
-Targets become invalid. Trailhead names a team member leaving and a changed manager hierarchy as typical causes. The manager then has four options per invalid assignment:
+Assignments become invalid. Trailhead names a team member leaving and a changed manager hierarchy as typical causes. Switching the hierarchy type itself, for example from manager hierarchy to forecasts hierarchy, goes further: according to Help, all existing targets become read-only. The manager then has four options per invalid assignment:
 
 | Option | What it does |
 |---|---|
@@ -85,15 +85,15 @@ For the comparison itself, Trailhead describes the [dashboards of the CRM Analyt
 
 ## Worked example: 40 account managers and a record limit
 
-Assume a manufacturer of drive components with one head of sales, six regional managers and 40 account managers. Each account manager has 150 accounts, and targets should run per account, per product and per month for 60 products.
+Assume a manufacturer of drive components with one head of sales, six regional managers and 40 account managers. Each account manager has 150 accounts, and targets should be distributed per account, per product and per month for 60 products.
 
-If every account manager distributed every account by every product and month, that would be 40 × 150 × 60 × 12, or 4.32 million period records. Trailhead's setup unit mentions a limit for Account Manager Periodic Target Distribution records that the Salesforce account executive sets together with the admin; its example uses 10 million.
+Help describes account and product distributions on separate tabs, not a matrix of account times product. That gives 40 × (150 + 60) = 8,400 distributions. Even if every distribution stored one record per month, that would be about 100,000 period records. The [considerations in Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.mfg_amt_considerations.htm&language=en_US&type=5) set the maximum for Account Manager Periodic Target Distribution records at 10 million.
 
 ```hinweis offen
-The example value is no promise for your contract. I would calculate the expected number of period records before the first target year and get the limit confirmed in the quote.
+Whether your setup creates one period record per distribution or one per month, I would check in a sandbox before the first target year, together with the planned team targets.
 ```
 
-In practice I would cut the scenario down. Targets per account for the 20 largest customers per person, per product category instead of product, and the rest as one team target. That still covers most of the revenue and keeps the record count well below a million.
+In practice I would still cut the scenario down, for readability rather than the limit: targets per account for the 20 largest customers per person, products only for the strategic lines, and the rest as one team target. That still covers most of the revenue and keeps the review meeting manageable.
 
 ## Where do commissions and incentives stay?
 
@@ -107,7 +107,7 @@ The Sales Planning agent does not work on targets either. Which subagents Salesf
 
 1. **Hierarchy.** Manager hierarchy or forecasts hierarchy, and who keeps the Manager field correct.
 2. **Levels.** One customer level, one product level, one period type for targets, forecasts and actuals.
-3. **Records.** Expected period records against the limit in the quote.
+3. **Records and calendar.** Expected period records against the 10 million limit, and a standard fiscal year.
 4. **License.** Feature and dashboard confirmed for your edition in writing.
 
 I settle the levels in one meeting with the head of sales and controlling, because controlling delivers the actuals. Only then do I calculate the period records and have the limit confirmed in the quote.

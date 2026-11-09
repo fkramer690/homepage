@@ -10,22 +10,22 @@ categories: [field-service]
 tags: [Field Service, Außendienst, Service Documents, Document Builder, Dokumentenerstellung, Fertigung]
 takeaways:
   - "Service Documents sind PDFs, die Field Service aus Arbeitsaufträgen, Positionen und Terminen erzeugt. Die Vorlagen entstehen im Document Builder."
-  - "Der Document Builder steckt in den Lizenzen Dispatcher und Mobile: 250 Dokumente pro Nutzer und Monat, dazu einmalig 10.000 zusätzliche."
+  - "Der Document Builder steckt in Dispatcher und Mobile. Die Org bekommt 250 Dokumente pro solchem Nutzer und Monat, dazu einmalig 10.000 für Spitzen."
   - "Seine Stärke ist der Servicebericht vor Ort: Kundenunterschrift, Fotos und Erstellung in der mobilen App, auch offline."
-  - "Er erzeugt nur PDFs auf drei Objekten, ohne dokumentierte Bedingungslogik. Prüfprotokolle, Maschinenakten und Angebote brauchen meist ein anderes Tool."
+  - "Field-Service-Vorlagen gibt es für drei Objekte, nur als PDF, mit Ein- und Ausblenden je Komponente. Komplexe Logik und Massenläufe brauchen ein anderes Tool."
   - "Prüfen Sie Ihre bestehenden Berichte, Ihre iOS- und Android-Geräte und Ihr Dokumentenvolumen gegen die Grenzen, bevor Sie ein Zusatztool kaufen."
 faq:
   - q: "Was sind Salesforce Service Documents?"
     a: "Service Documents sind PDF-Dokumente, die Salesforce Field Service zu einem Arbeitsauftrag (Work Order), einer Auftragsposition oder einem Servicetermin (Service Appointment) erzeugt. Die Vorlagen werden im Document Builder gestaltet, das Ergebnis liegt als Service-Report-Datensatz am Vorgang."
   - q: "Kostet der Document Builder im Field Service extra?"
-    a: "Nein. Der Document Builder ist in den Permission Set Licenses Field Service Dispatcher und Field Service Mobile enthalten, inklusive 250 Dokumenten pro Nutzer und Monat. Contractor- und Contractor+-Lizenzen können ihn nicht nutzen."
+    a: "Nein. Der Document Builder ist in den Permission Set Licenses Field Service Dispatcher und Field Service Mobile enthalten, Die Org bekommt dafür 250 Dokumente pro Monat und solchem Nutzer. Die Hilfeseite zu den Berechtigungen schließt Contractor- und Contractor+-Lizenzen aus."
   - q: "Funktionieren Service Documents offline in der Field Service App?"
-    a: "Ja. Techniker erstellen Service Documents in der mobilen App auch ohne Verbindung, inklusive Unterschrift. Unter Android werden nur Vorlagen für Servicetermine unterstützt, unter iOS auch für Arbeitsaufträge."
+    a: "Ja. Techniker erstellen Service Documents in der mobilen App auch ohne Verbindung, inklusive Unterschrift. Zu Android widerspricht sich die Salesforce-Hilfe: Die Limits-Seite erlaubt nur Vorlagen für Servicetermine, die Seite zum Anlegen von Vorlagen alle drei Objekte. Testen Sie es auf Ihren Geräten."
   - q: "Wann brauche ich Salesforce Document Generation statt Document Builder?"
-    a: "Wenn Sie Word-Vorlagen mit bedingten Abschnitten, Ausgabe als DOCX oder PowerPoint, Dokumente am Asset oder an Custom Objects, Massenerzeugung oder eine DocuSign-Anbindung brauchen. Das alles deckt der Document Builder nicht ab."
+    a: "Wenn Sie Word-Vorlagen mit komplexer Logik, Ausgabe als DOCX oder PowerPoint, Dokumente am Asset oder an Custom Objects, Massenerzeugung oder eine DocuSign-Anbindung brauchen. Das alles deckt der Document Builder nicht ab; er kann Komponenten nur nach Kriterien ein- oder ausblenden."
 ---
 
-Salesforce Service Documents sind die PDFs, die Field Service aus einem Arbeitsauftrag oder Servicetermin erzeugt: der Servicebericht mit Arbeitszeit, Ersatzteilen, Fotos und Kundenunterschrift. Die Vorlagen baut man im Document Builder, der ohne Aufpreis in den Field-Service-Lizenzen steckt. Für den klassischen Servicebericht im Außendienst, auch offline, ist das die richtige Wahl. Für Prüfprotokolle mit Bedingungslogik, Dokumente am Asset, Word-Ausgabe oder Massenläufe reicht er nicht. Dann brauchen Sie Salesforce Document Generation oder ein Tool aus dem AppExchange.
+Salesforce Service Documents sind die PDFs, die Field Service aus einem Arbeitsauftrag oder Servicetermin erzeugt: der Servicebericht mit Arbeitszeit, Ersatzteilen, Fotos und Kundenunterschrift. Die Vorlagen baut man im Document Builder, der ohne Aufpreis in den Field-Service-Lizenzen steckt. Für den klassischen Servicebericht im Außendienst, auch offline, ist das die richtige Wahl. Einfache Bedingungen gehen auch, denn jede Komponente lässt sich nach Kriterien ein- oder ausblenden. Für Dokumente am Asset, Word-Ausgabe, Massenläufe oder Prüfprotokolle mit mehr Logik als Ein- und Ausblenden reicht er nicht. Dann brauchen Sie Salesforce Document Generation oder ein Tool aus dem AppExchange.
 
 ## Was sind Salesforce Service Documents?
 
@@ -33,29 +33,29 @@ Ein Service Document ist ein PDF, das Salesforce Field Service zu einem von drei
 
 Der Document Builder ist der Editor für die Vorlagen. Er läuft im Lightning App Builder und funktioniert per Drag-and-drop: Standardkomponenten für Felder, Tabellen mit verknüpften Datensätzen, Bildergalerien und Unterschriftsfelder. Reicht eine Standardkomponente nicht, können Entwickler eigene Lightning Web Components bauen. Salesforce weist darauf hin, dass diese ein eigenes Druck-Styling brauchen. Komponenten aus der mobilen App lassen sich also nicht einfach wiederverwenden.
 
-Eingeführt hat Salesforce Service Documents mit dem Release Spring '24. Die passende Aktion `createServiceDocument` gibt es ab API-Version 60.0. Damit lassen sich Dokumente auch aus einem Flow oder über die REST-API erzeugen. Die [Entwicklerdokumentation zur Aktion](https://developer.salesforce.com/docs/atlas.en-us.api_action.meta/api_action/actions_obj_create_service_document.htm) nennt zusätzlich Dokumenttypen für Angebote. Der Grund: Salesforce nutzt dieselbe Technik für Angebots-PDFs in Revenue Cloud. Wie Angebote dort funktionieren, steht in [Kapitel 3 der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/).
+Eingeführt hat Salesforce Service Documents mit dem Release Spring '24. Die Hilfe nennt das Produkt inzwischen Agentforce Field Service and Operations; die Namen der Funktionen sind gleich geblieben. Die passende Aktion `createServiceDocument` gibt es ab API-Version 60.0. Damit lassen sich Dokumente auch aus einem Flow oder über die REST-API erzeugen. Die [Entwicklerdokumentation zur Aktion](https://developer.salesforce.com/docs/atlas.en-us.api_action.meta/api_action/actions_obj_create_service_document.htm) nennt zusätzlich Dokumenttypen für Angebote, darunter einen für Field-Service-Angebote. Salesforce nutzt den Document Builder auch für Angebots-PDFs in Revenue Cloud. Wie Angebote dort funktionieren, steht in [Kapitel 3 der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/).
 
 Nicht verwechseln sollten Sie den Namen mit S-Docs. S-Docs ist ein eigenständiges Produkt im AppExchange und hat mit dieser Funktion nichts zu tun.
 
 ## Der Document Builder steckt in den Field-Service-Lizenzen
 
-Nichts extra, solange Field Service lizenziert ist. Laut [Salesforce-Hilfe zu den Berechtigungen](https://help.salesforce.com/s/articleView?id=fs_document_builder_perm_sets.htm&language=en_US&type=5) brauchen Nutzer entweder die Permission Set License Field Service Dispatcher oder Field Service Mobile.
+Nichts extra: Salesforce führt den Document Builder als Teil der Field-Service-SKUs. Laut [Salesforce-Hilfe zu den Berechtigungen](https://help.salesforce.com/s/articleView?id=fs_document_builder_perm_sets.htm&language=en_US&type=5) brauchen Nutzer entweder die Permission Set License Field Service Dispatcher oder Field Service Mobile.
 
 ```hinweis achtung
-Contractor- und Contractor+-Lizenzen sind ausgeschlossen. Das ist wichtig, wenn Subunternehmer Dokumente erstellen sollen.
+Die Berechtigungsseite schließt Contractor- und Contractor+-Lizenzen aus. Das ist wichtig, wenn Subunternehmer Dokumente erstellen sollen. Testen Sie es in Ihrer Org, bevor Sie mit Partnertechnikern planen.
 ```
 
 Das Volumen ist begrenzt:
 
 ```kennzahlen
-250 | Dokumente pro Nutzer und Monat mit Dispatcher-, Dispatcher-Plus- oder Mobile-Lizenz
-10.000 | Dokumente als einmaliges Zusatzkontingent, wenn die Org mehr braucht
+250 | Dokumente pro Monat je Nutzer mit Dispatcher-, Dispatcher-Plus- oder Mobile-Lizenz, als Kontingent der Org
+10.000 | Dokumente als einmaliges Zusatzkontingent, sobald die Org ihr Monatskontingent überschreitet
 quelle: Salesforce-Hilfe zu Document Builder und zu den Field-Service-Limits
 ```
 
-Eine schnelle Rechnung: Ein Techniker mit fünf Einsätzen am Tag und 21 Arbeitstagen erstellt rund 105 Berichte im Monat. Das liegt deutlich unter der Grenze. Eng wird es, wenn pro Einsatz mehrere Dokumente entstehen, etwa Servicebericht, Checkliste und eine korrigierte Fassung nach einer Reklamation.
+Das Kontingent zählt für die Org: 40 Techniker und 4 Disponenten ergeben 11.000 Dokumente im Monat. Ein Techniker mit fünf Einsätzen am Tag und 21 Arbeitstagen erstellt rund 105 Berichte im Monat, deutlich unter dem Durchschnitt. Eng wird es, wenn pro Einsatz mehrere Dokumente entstehen, etwa Servicebericht, Checkliste und eine korrigierte Fassung nach einer Reklamation.
 
-Die Einrichtung dauert etwa eine Stunde. Sie legen ein Permission Set ohne Lizenz an, aktivieren die Systemberechtigungen "Document Builder" und "Lightning SDK for Field Service Mobile" und weisen es Disponenten und Technikern zu. Außerdem muss das Vorlagenfeld auf die Seitenlayouts von Arbeitsauftrag und Servicetermin, sonst kann niemand eine Vorlage wählen.
+Die Einrichtung selbst ist kurz. Sie aktivieren den Document Builder in den Field Service Settings und warten auf die E-Mail, die die Registrierung der Org bestätigt. Dann bekommen Disponenten und Techniker die Berechtigungen, über die Standard-Permission-Sets oder ein Permission Set mit den Systemberechtigungen "Document Builder" und "Lightning SDK for Field Service Mobile". Außerdem muss das Vorlagenfeld auf die Seitenlayouts von Arbeitsauftrag und Servicetermin, sonst kann niemand eine Vorlage wählen. Eine Regel entscheidet die Umstellung: Jeder Nutzer bekommt entweder die klassischen Service Reports oder den Document Builder, nicht beides; mit dem Document Builder verschwindet für ihn der Button für Service Reports.
 
 ## Was können Service Documents im Außendienst?
 
@@ -72,40 +72,40 @@ titel: Document Builder: stark für den Servicebericht vor Ort
 + Unterschrift | Kunde und Techniker, auch offline in der mobilen App
 + Fotos | Bildergalerien, z. B. vor und nach der Reparatur
 + Deutsche Übersetzung | eine Vorlage für mehrere Länder
-+ Enthalten | in der Field-Service-Lizenz, 250 Dokumente pro Nutzer und Monat *
++ Enthalten | in der Field-Service-Lizenz, Kontingent von 250 Dokumenten pro Nutzer und Monat für die Org *
 - Format | nur PDF und nur synchron
 - Objekte | nur Arbeitsauftrag, Auftragsposition und Servicetermin
-- Android | nur Servicetermin
+- Android | Hilfe widersprüchlich, testen
 - Umfang | maximal 50 Seiten und 100 MB
-- Logik | keine dokumentierte Bedingungslogik
-besser: Für Prüfprotokolle, Maschinenakten, Angebote und Massenläufe: Salesforce Document Generation oder ein AppExchange-Tool.
+- Logik | Ein- und Ausblenden je Komponente, mehr nicht
+besser: Für komplexe Prüfprotokolle, Maschinenakten und Massenläufe: Salesforce Document Generation oder ein AppExchange-Tool.
 ```
-## Die Grenzen: nur PDF, drei Objekte, keine Bedingungslogik
+## Die Grenzen: nur PDF, drei Objekte, einfache Bedingungen
 
 Die [Übersicht der Field-Service-Limits](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5) listet sie auf. Diese zählen in Projekten bei Herstellern:
 
 - **Nur drei Objekte.** Vorlagen gibt es für Arbeitsauftrag, Auftragsposition und Servicetermin. Ein Wartungsprotokoll am Asset oder ein Dokument an einem Custom Object ist nicht möglich.
-- **Android hinkt hinterher.** Unter iOS können Techniker Vorlagen für Arbeitsauftrag und Servicetermin nutzen, unter Android nur für Servicetermine. Arbeiten Ihre Techniker mit Android-Geräten, muss sich die Vorlagenstrategie danach richten.
+- **Android braucht einen Test.** Die Limits-Seite erlaubt unter iOS Vorlagen für Arbeitsauftrag und Servicetermin, unter Android nur für Servicetermine. Die [Seite zum Anlegen von Vorlagen](https://help.salesforce.com/s/articleView?id=service.fs_create_service_document_templates.htm&language=en_US&type=5) nennt alle drei Objekte auf beiden Plattformen. Arbeiten Ihre Techniker mit Android-Geräten, testen Sie die Vorlagen dort, bevor Sie die Vorlagenstrategie festlegen.
 - **Die falsche Vorlage auf dem Tablet.** Erstellt ein Techniker auf dem Mobilgerät ein Dokument aus dem Arbeitsauftrag, bietet die App die Vorlage des Servicetermins an. Planen Sie das in der Schulung ein oder bauen Sie nur Vorlagen für Servicetermine.
 - **Nur PDF, nur synchron.** Keine Word-Ausgabe und keine Massenläufe, etwa um am Quartalsende alle Wartungsberichte eines Vertrags zu verschicken.
 - **Umfang.** Höchstens 50 Seiten und 100 MB pro Dokument. Für einen Servicebericht reicht das, für die Dokumentation einer ganzen Produktionslinie nicht.
 - **Lücken in der Darstellung.** Lookup-Felder in verknüpften Listen zeigen Datensatz-IDs statt Namen, Bild-URLs werden nicht gerendert, Rich Text druckt nur schwarz, lange Textfelder gehen in verknüpften Listen nicht. Formelfelder helfen oft, aber das sollten Sie vor dem Vorlagen-Workshop wissen.
 - **Übersetzung.** Im Rich Text werden nur Custom Labels übersetzt. Layouts für Schriften von rechts nach links werden nicht unterstützt.
 
-Am meisten fehlt mir Bedingungslogik. Salesforce dokumentiert keine bedingten Abschnitte wie "Druckprüfung nur für diesen Maschinentyp anzeigen". Wenn Ihre Prüfprotokolle heute so aufgebaut sind, bildet der Document Builder sie nicht ab. Fünf kleinere Lücken, von der Vorlagenwahl bis zur E-Mail, lassen sich mit Flows und Komponenten schließen; ich beschreibe sie in [Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/).
+Bedingungslogik ist enger als in einem Tool zur Dokumenterzeugung. Laut [Hilfeseite zu den Standardkomponenten](https://help.salesforce.com/s/articleView?id=service.fs_document_builder_standard_components.htm&language=en_US&type=5) lässt sich jede Komponente nur unter bestimmten Kriterien anzeigen, "Druckprüfung nur für diesen Maschinentyp" geht also. Berechnungen, wiederholte Blöcke je Prüfpunkt oder ein Aufbau, der sich je Variante ändert, sind etwas anderes. Wenn Ihre Prüfprotokolle heute so aufgebaut sind, prüfen Sie sie zuerst gegen die Regel zum Ein- und Ausblenden. Fünf kleinere Lücken, von der Vorlagenwahl bis zur E-Mail, lassen sich mit Flows und Komponenten schließen; ich beschreibe sie in [Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/).
 
 ## Was ich bei Tool-Auswahlen sehe
 
 Ich begleite Kunden regelmäßig bei Make-or-buy-Entscheidungen, und Dokumentenerstellung mit E-Signatur ist eines der wiederkehrenden Themen. Mein Vorgehen ist jedes Mal gleich: zuerst eine Bestandsaufnahme aller Dokumente mit Volumen, Datenquelle und wer unterschreibt, danach die Kosten über mehrere Jahre. Dazu gehören Lizenzen für jede Nutzergruppe, die Umsetzung, die Wartung mit jedem Salesforce-Release und die Folgekosten, falls Sie später wechseln müssen.
 
-Auf Field Service übertragen zerfällt die Bestandsaufnahme in zwei Gruppen. Der Servicebericht aus dem Außendienst ist nach Volumen die große Gruppe, und die deckt der Document Builder ab. Die kleinere Gruppe enthält die Dokumente mit Logik: Prüfprotokolle, Zertifikate, Angebote, Vertragsunterlagen. Für diese Gruppe ist ein zweites Tool oft gerechtfertigt. Den Fehler, den ich vermeiden will: wegen der kleinen Gruppe das große Tool für alles zu kaufen und Lizenzen für jeden Techniker zu bezahlen, der nur den Servicebericht braucht.
+Auf Field Service übertragen zerfällt die Bestandsaufnahme in zwei Gruppen. Der Servicebericht aus dem Außendienst ist nach Volumen die große Gruppe, und die deckt der Document Builder ab. Die kleinere Gruppe enthält die Dokumente mit komplexer Logik: manche Prüfprotokolle, Zertifikate, Vertragsunterlagen. Einfache Angebote können im Document Builder bleiben. Für diese Gruppe ist ein zweites Tool oft gerechtfertigt. Den Fehler, den ich vermeiden will: wegen der kleinen Gruppe das große Tool für alles zu kaufen und Lizenzen für jeden Techniker zu bezahlen, der nur den Servicebericht braucht.
 
-Field Service selbst lohnt sich am meisten bei vielen kurzen Einsätzen, wo Terminplanung und Routenoptimierung die Kennzahlen verbessern. Das sind auch die Organisationen mit den meisten Serviceberichten. Der Standard deckt also den Großteil des Volumens genau dort ab, wo Field Service am besten passt.
+Organisationen mit vielen kurzen Einsätzen erzeugen auch die meisten Serviceberichte. Der Standard deckt also den Großteil des Volumens dort ab, wo er am meisten zählt.
 
 ## Welche Alternative passt zu welchem Dokument?
 
 - **Klassische Service Reports.** Der ältere Vorlageneditor in Field Service. Bewährt und einfach, bis zu 20 Unterschriftsblöcke, aber wenig Gestaltungsspielraum. Abschnittstitel lassen sich nicht übersetzen, und in der Salesforce Mobile App steht die Aktion nicht zur Verfügung.
-- **Salesforce Document Generation.** Word-Vorlagen mit Platzhaltern und bedingten Abschnitten, für alle Standard- und Custom Objects, Ausgabe als PDF, DOCX oder PPTX, synchron und als Massenlauf, DocuSign-Anbindung. Nicht offline und nicht mobil. Sie braucht eine eigene Lizenz; Salesforce vergleicht beide im [Hilfeartikel zu Document Builder und Document Generation](https://help.salesforce.com/s/articleView?id=ind.sf_docgen_understand_doc_builder_and_doc_generation.htm&language=en_US&type=5).
+- **Salesforce Document Generation.** Word-Vorlagen mit Platzhaltern und bedingten Abschnitten, für alle Standard- und Custom Objects, Ausgabe als PDF, DOCX oder PPTX, synchron und als Massenlauf, DocuSign-Anbindung. Nicht offline und nicht mobil. Manche SKUs enthalten sie, etwa Industry Clouds und Revenue Cloud Advanced, sonst braucht sie eine eigene Lizenz; Salesforce vergleicht beide im [Hilfeartikel zu Document Builder und Document Generation](https://help.salesforce.com/s/articleView?id=ind.sf_docgen_understand_doc_builder_and_doc_generation.htm&language=en_US&type=5).
 - **OmniStudio Document Generation.** Wie Document Generation, zusätzlich externe Daten über DataRaptors und Integration Procedures. Setzt OmniStudio voraus, das mit den Industry Clouds und einigen Revenue-Cloud-Editionen kommt.
 - **AppExchange-Tools** wie S-Docs, Conga Composer oder Nintex DocGen. Ausgereifte Vorlagenlogik, viele Formate, Anbindungen an E-Signatur-Dienste. Sie kosten pro Nutzer extra und bringen ein weiteres Tool in den Betrieb. Klären Sie Offline-Fähigkeit und Preise beim Anbieter, bevor Sie entscheiden.
 

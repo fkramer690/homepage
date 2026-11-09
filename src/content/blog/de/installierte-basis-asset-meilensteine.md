@@ -96,7 +96,7 @@ Eine Konsole wirkt nur so vollständig wie die Daten dahinter. Das gilt genauso 
 
 Assets, Meilensteine, Beteiligte und Flotten sind gemeinsamer Boden. Wartungspläne, Arbeitsaufträge, Termine und Technikerlager gehören zu Field Service, beschrieben im [Kapitel zu Assets und Wartung der Field-Service-Masterclass](../../masterclass/field-service/field-service-assets-wartung-teile/) und im Beitrag zu [Wartungsverträgen](../salesforce-field-service-wartungsvertraege/). Entwerfen Sie das Asset-Modell einmal für beide, nicht pro Projekt.
 
-Zwei Add-ons kommen hier oft auf den Tisch. Laut [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) kostet Connected Assets 15.000 US-Dollar pro Org und Monat und bringt Telemetrie; Asset Service Lifecycle Management kostet 75 US-Dollar pro Nutzer und Monat und gehört zu den Field-Service-Editionen. Für eine saubere installierte Basis brauchen Sie keines davon. Ob Telemetrie sich lohnt, steht in [Predictive Maintenance in Salesforce](../predictive-maintenance-salesforce-datenbasis/).
+Zwei Add-ons kommen hier oft auf den Tisch. Laut [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) kostet Connected Assets 15.000 US-Dollar pro Org und Monat und bringt Telemetrie; Asset Service Lifecycle Management kostet 75 US-Dollar pro Nutzer und Monat und ist zu den Field-Service-Editionen buchbar (in Field Service Max laut Field-Service-Preisseite enthalten). Für eine saubere installierte Basis brauchen Sie keines davon. Ob Telemetrie sich lohnt, steht in [Predictive Maintenance in Salesforce](../predictive-maintenance-salesforce-datenbasis/).
 
 ## Lücken in den Garantieanträgen des Vorjahres zählen
 

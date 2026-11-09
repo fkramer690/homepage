@@ -10,7 +10,7 @@ categories: [manufacturing-cloud, architecture]
 contactBrief: integration
 tags: [Manufacturing Cloud, SAP, ERP-Anbindung, MuleSoft, Sales Agreements, Boni]
 takeaways:
-  - "Lagerbestände fließen ebenfalls aus SAP nach Salesforce. Bonus- und Garantiebeträge bucht SAP als Gutschrift."
+  - "Lagerbestände können als Kennzahl neben der Abweichung aus SAP kommen. Boni gehen als SAP-Gutschrift zurück, Garantie braucht eine eigene Schnittstelle."
   - "Die Aktion Refresh Actuals Calculation rechnet die Ist-Mengen eines Sales Agreements pro Zeitraum neu, seit API-Version 47.0."
   - "Ein Takt für alle Daten kostet entweder API-Aufrufe oder das Vertrauen der Händler in den Auftragsstatus."
   - "Ab 1. Dezember 2026 brauchen Schnittstellen mit SOAP login() die Berechtigung Use Any API Auth. Mit Summer '27 entfällt login() in API 31.0 bis 64.0."
@@ -18,9 +18,9 @@ faq:
   - q: "Welche Daten müssen von SAP in die Manufacturing Cloud fließen?"
     a: "Accounts mit ihrer Hierarchie, Produkte und entweder Aufträge oder Auftragssummen pro Kunde, Produkt und Zeitraum als Ist-Mengen für Sales Agreements. Der Lagerbestand ist als zusätzliche Kennzahl neben der Abweichung nützlich."
   - q: "Welche Daten fließen aus der Manufacturing Cloud zurück nach SAP?"
-    a: "Freigegebene Bonusauszahlungen, aus denen SAP Gutschriften erzeugt, und freigegebene Garantiebeträge, die die Buchhaltung als Gutschrift an den Händler bucht. Die Aufträge selbst bleiben in SAP."
+    a: "Freigegebene Bonusauszahlungen, aus denen SAP Gutschriften erzeugt, und freigegebene Garantiebeträge, die die Buchhaltung mit dem Händler abrechnet. Welcher SAP-Beleg daraus wird, hängt von Ihrem Garantie- und Buchungsprozess ab. Die Aufträge selbst bleiben in SAP."
   - q: "Brauche ich MuleSoft, um SAP an die Manufacturing Cloud anzubinden?"
-    a: "Nein. Der MuleSoft Accelerator for Manufacturing liefert Vorlagen für den Abgleich von Accounts, Produkten und Aufträgen und für Bonus-Gutschriften, und Salesforce führt MuleSoft als Add-on auf Anfrage. Jede Middleware, die die Salesforce-APIs bedient, kann dieselbe Arbeit leisten."
+    a: "Nein. Der MuleSoft Accelerator for Manufacturing liefert Vorlagen für den Abgleich von Accounts, Produkten und Aufträgen und für Bonus-Gutschriften, und Salesforce führt MuleSoft als Add-on auf Anfrage. Eine andere Integrationsplattform kann dieselben Flüsse bauen, wenn sie SAP- und Salesforce-APIs, Mapping, Wiederholungen und Monitoring abdeckt."
   - q: "Wie oft sollten Ist-Mengen aus SAP geladen werden?"
     a: "Für Sales Agreements, die über Monate laufen, reicht ein täglicher Lauf. Den Auftragsstatus, nach dem ein Händler oder ein Agent fragt, sollte man live in SAP abfragen statt ihn zu kopieren."
   - q: "Welche Fristen betreffen ERP-Schnittstellen zu Salesforce?"
@@ -28,11 +28,11 @@ faq:
 draft: false
 ---
 
-Zwischen SAP und der Manufacturing Cloud fließen Stammdaten und Ist-Mengen nach Salesforce und Geld zurück. Accounts, Produkte und Aufträge oder Auftragssummen kommen aus SAP, täglich für die Ist-Mengen und live für den Auftragsstatus. Freigegebene Bonusauszahlungen und Garantiebeträge gehen nach SAP, wo die Buchhaltung sie als Gutschrift bucht. Der MuleSoft Accelerator for Manufacturing deckt Accounts, Produkte und Aufträge aus SAP S/4HANA sowie Bonus-Gutschriften ab, aber keine Sales Agreements und keinen Garantiefluss. Legen Sie vor dem Bau ein führendes System pro Objekt fest und prüfen Sie, dass keine Schnittstelle sich noch mit Benutzername und Passwort anmeldet, denn SOAP login() wird ab 1. Dezember 2026 strenger.
+Zwischen SAP und der Manufacturing Cloud fließen Stammdaten und Ist-Mengen nach Salesforce und Geld zurück. Accounts, Produkte und Aufträge oder Auftragssummen kommen aus SAP, täglich für die Ist-Mengen und live für den Auftragsstatus. Freigegebene Bonusauszahlungen und Garantiebeträge gehen nach SAP, wo die Buchhaltung sie abrechnet, Boni als Gutschrift. Der MuleSoft Accelerator for Manufacturing deckt Accounts, Produkte und Aufträge aus SAP S/4HANA sowie Bonus-Gutschriften ab, legt aber keine Sales Agreements an und hat keinen Garantiefluss. Legen Sie vor dem Bau ein führendes System pro Objekt fest und prüfen Sie, ob eine Schnittstelle noch SOAP API login() aufruft, denn das wird ab 1. Dezember 2026 strenger.
 
 ## Welche Daten fließen zwischen SAP und der Manufacturing Cloud?
 
-Die Manufacturing Cloud arbeitet nur mit Daten, die sie nicht selbst erzeugt. Ein Sales Agreement, also ein Rahmenvertrag mit Planmengen pro Zeitraum, vergleicht geplante mit tatsächlichen Mengen. Die tatsächlichen Mengen entstehen bei Herstellern in SAP, wo Aufträge angelegt, bestätigt und ausgeliefert werden. Bei Boni und Garantie läuft es andersherum: Salesforce berechnet oder gibt frei, SAP zahlt.
+Salesforce Help nennt das Produkt inzwischen Agentforce Manufacturing (formerly Manufacturing Cloud); ich bleibe beim alten Namen, weil Editionen und Funktionen ihn noch tragen. Die Sales Agreements darin hängen an Daten, die das Produkt nicht selbst erzeugt. Ein Sales Agreement, also ein Rahmenvertrag mit Planmengen pro Zeitraum, vergleicht geplante mit tatsächlichen Mengen. Die tatsächlichen Mengen entstehen bei Herstellern in SAP, wo Aufträge angelegt, bestätigt und ausgeliefert werden. Bei Boni und Garantie läuft es andersherum: Salesforce berechnet oder gibt frei, SAP zahlt.
 
 So würde ich die Datenflüsse bei einem typischen Hersteller mit SAP als ERP aufteilen:
 
@@ -47,11 +47,11 @@ So würde ich die Datenflüsse bei einem typischen Hersteller mit SAP als ERP au
 | Freigegebene Garantiebeträge | Salesforce | Salesforce nach SAP | bei Freigabe |
 | Zahlstatus der Gutschriften | SAP | SAP nach Salesforce | geplant |
 
-Preise sind mit Winter '27 eine eigene Frage, weil Salesforce jetzt eine eigene Preisfindung für Aufträge anbietet. Darum geht es in [Penny Perfect Pricing: ERP-Preise in Salesforce?](../penny-perfect-pricing-erp-preise/). Das ganze Kapitel, von den Datenflüssen bis zum Rollout, steht im Masterclass-Kapitel [ERP, KI und Rollout](../../masterclass/manufacturing-cloud/erp-ki-und-rollout/).
+Preise sind mit Winter '27 eine eigene Frage, weil Salesforce jetzt eine eigene Preisfindung für Aufträge anbietet, mit eigenen Add-ons. Darum geht es in [Penny Perfect Pricing: ERP-Preise in Salesforce?](../penny-perfect-pricing-erp-preise/). Das ganze Kapitel, von den Datenflüssen bis zum Rollout, steht im Masterclass-Kapitel [ERP, KI und Rollout](../../masterclass/manufacturing-cloud/erp-ki-und-rollout/).
 
 ## Was deckt der MuleSoft Accelerator for Manufacturing ab?
 
-Der [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufacturing/latest/) liefert vorgefertigte APIs, Implementierungsvorlagen und eine Referenzarchitektur. Er nennt drei Anwendungsfälle für die Fertigung: Abgleich von Accounts, Produkten und Aufträgen, Verwaltung von Vertriebsboni und Total Productive Maintenance. Zwei davon betreffen die Manufacturing Cloud.
+Der [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufacturing/latest/) liefert vorgefertigte APIs, Implementierungsvorlagen und eine Referenzarchitektur. Das verlinkte Exchange-Asset ist Version 1.4.0 vom 25. Oktober 2023 (geprüft am 9. November 2026); nutzen Sie es als Referenz und prüfen Sie die SAP-APIs gegen Ihre Releases. Er nennt drei Anwendungsfälle für die Fertigung: Abgleich von Accounts, Produkten und Aufträgen, Verwaltung von Vertriebsboni und Total Productive Maintenance. Zwei davon betreffen die Manufacturing Cloud.
 
 **Abgleich von Accounts, Produkten und Aufträgen.** Laut der [Beschreibung auf Exchange](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/qrc-zzh/Use%20case%201%20-%20Account%20and%20product%20and%20order%20sync/) holt er Account-, Produkt- und Auftragsdaten aus SAP S/4HANA in die Manufacturing Cloud, einschließlich Account- und Produkthierarchien. Der Abgleich läuft in eine Richtung, SAP ist das führende System, und er arbeitet in Echtzeit oder im Batch. Drei Details sollten Sie lesen, bevor Sie damit planen:
 
@@ -59,17 +59,17 @@ Der [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufactu
 - Unterstützt wird nur ein Produktkatalog.
 - Auf SAP-Seite braucht es ein Communication Arrangement für Produkthierarchien und ein eigenes Kennzeichenfeld im Materialstamm.
 
-**Vertriebsboni.** Laut dem [Anwendungsfall zu Boni](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/Use%20case%202%20-%20Sales%20rebate%20management/) ist die Manufacturing Cloud das führende System für Bonusauszahlungen. Wird eine Auszahlung freigegeben, erzeugt ein Ereignis eine Gutschrift im Entwurf in SAP. Ein geplanter Lauf setzt die Auszahlung später auf bezahlt, sobald SAP die Gutschrift bezahlt hat. Kundenaufträge fließen von SAP in die Manufacturing Cloud. Wie Bonusprogramme auf Salesforce-Seite funktionieren, steht in [Rebate Management: Händlerboni ohne Excel](../rebate-management-haendlerboni/).
+**Vertriebsboni.** Laut dem [Anwendungsfall zu Boni](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/Use%20case%202%20-%20Sales%20rebate%20management/) ist die Manufacturing Cloud das führende System für Bonusauszahlungen. Wird eine Auszahlung freigegeben, erzeugt ein Ereignis eine Gutschrift im Entwurf in SAP. Der dokumentierte Massenweg arbeitet anders: Er holt alle neuen Auszahlungen "irrespective of status" und schickt sie an SAP. Ihr Bau braucht also einen Statusfilter und einen Test dafür. Ein geplanter Lauf setzt die Auszahlung später auf bezahlt, sobald SAP die Gutschrift bezahlt hat. Kundenaufträge fließen von SAP in die Manufacturing Cloud. Wie Bonusprogramme auf Salesforce-Seite funktionieren, steht in [Rebate Management: Händlerboni ohne Excel](../rebate-management-haendlerboni/).
 
 Was der Accelerator nicht abdeckt: Er legt keine Sales Agreements an und nennt keinen Garantiefluss. Der freigegebene Betrag aus einem Garantieanspruch, den ich wie in [Garantieansprüche von Händlern](../garantieansprueche-haendler-salesforce/) beschrieben im ERP als Gutschrift an den Händler buchen würde, braucht eine eigene Schnittstelle.
 
 Ein Widerspruch, den Sie früh klären sollten: Im Auftragsabgleich fließen Kunden in eine Richtung, mit SAP als Master. Im Anwendungsfall zu Boni werden Kunden in beide Richtungen abgeglichen, und jedes der beiden Systeme kann führend sein. Beides stammt aus demselben Accelerator. Legen Sie eine Regel für Kundenstammdaten fest, bevor Sie beide Vorlagen einsetzen.
 
-Salesforce führt MuleSoft Anypoint Platform auf der [Seite mit den Add-ons der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) mit "Request a quote" und ohne Preis. Läuft MuleSoft in Ihrem Unternehmen schon, sparen die Vorlagen Designzeit. Nur für diese Flüsse zu kaufen, lohnt sich selten, und jede Middleware, die die Salesforce-APIs bedient, kann dieselbe Arbeit leisten.
+Salesforce führt MuleSoft Anypoint Platform auf der [Seite mit den Add-ons der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) mit "Request a quote" und ohne Preis. Läuft MuleSoft in Ihrem Unternehmen schon, sparen die Vorlagen Designzeit. Nur für diese Flüsse zu kaufen, lohnt sich aus meiner Sicht selten. Eine andere Integrationsplattform kann dieselben Flüsse bauen, wenn sie SAP- und Salesforce-APIs, Mapping, Wiederholungen und Monitoring abdeckt.
 
 ## Wie kommen die Ist-Mengen in die Sales Agreements?
 
-Sales Agreements beziehen ihre Ist-Mengen aus Aufträgen in Salesforce, aus einem Upload per API oder aus einer Definition in der Data Processing Engine. Welcher Weg gilt, legt die Einstellung Actuals Calculation Mode fest, und jedes Agreement behält den Modus, mit dem es angelegt wurde. Die vier Modi und wann welcher passt, beschreibe ich in [Sales Agreements: fehlende Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/).
+Sales Agreements beziehen ihre Ist-Mengen aus Aufträgen in Salesforce, aus einem Upload per API oder aus einer Definition in der Data Processing Engine. Welcher Weg gilt, legt die Einstellung Actuals Calculation Mode fest. Laut [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_reference.htm&language=en_US&type=5) rechnet Salesforce mit dem Modus, der bei der Aktivierung des Agreements gilt; eine Änderung während der aktiven Laufzeit beachtet der automatische Prozess nicht. Die vier Modi und wann welcher passt, beschreibe ich in [Sales Agreements: fehlende Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/).
 
 Für die Schnittstelle zählt eine Aktion: [Refresh Actuals Calculation](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_refresh_actuals_calculation.htm). Sie ist seit API-Version 47.0 für Nutzer mit dem Permission Set Manufacturing Sales Agreements verfügbar und berechnet die Ist-Mengen eines Sales Agreements neu. Zwei Schalter wählen die Zeiträume: nur der aktuelle Zeitraum, der aktuelle und vergangene Zeiträume oder der aktuelle und künftige Zeiträume. Wie viele künftige Zeiträume zählen, steht in einem Feld am Sales Agreement. Setzt man beide Schalter auf true, schlägt der Aufruf fehl, und laut Dokumentation lässt sich die Aktion nur über ein Datenbank-Rollback rückgängig machen.
 

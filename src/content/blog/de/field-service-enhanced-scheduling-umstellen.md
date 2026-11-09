@@ -2,6 +2,7 @@
 title: "Enhanced Scheduling and Optimization: jetzt umstellen?"
 description: "Soll eine bestehende Field-Service-Org auf Enhanced Scheduling and Optimization wechseln? Limits, was wegfällt, was sich ändert und wie Sie es testen."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: de
 slug: field-service-enhanced-scheduling-umstellen
 translationKey: field-service-enhanced-scheduling-eso
@@ -13,7 +14,7 @@ takeaways:
   - "Die neue Engine erlaubt 250 statt 100 Skills pro Ressource und 50.000 optimierte Termine pro 24 Stunden oder 500 pro Scheduling-Lizenz."
   - "Scheduling Recipes entfallen, Salesforce verweist auf den Flow Fix Schedule Overlaps. Optimization Insights wird zum Optimization Hub."
   - "Mehrere Work Rules behandeln leere Felder anders, und ein Termin ohne Servicegebiet bekommt Kandidaten aus allen Gebieten."
-  - "Die neue Scheduling Console gibt es nur mit der neuen Engine. Damit entscheidet die Engine auch über den Bildschirm der Disponenten."
+  - "Die neue Scheduling Console gibt es nur mit der neuen Engine. Wer bei der alten Engine bleibt, verzichtet also auch auf den neuen Disponenten-Bildschirm."
 faq:
   - q: "Was ist Enhanced Scheduling and Optimization in Salesforce Field Service?"
     a: "Es ist die neuere Planungs- und Optimierungs-Engine von Field Service. Sie verteilt Termine wie die ältere Engine nach Scheduling Policy auf Techniker, hat aber höhere Limits, behandelt einige Work Rules anders und rechnet Fahrzeiten punktgenau vorausschauend. Neue Orgs haben sie standardmäßig aktiv."
@@ -51,7 +52,7 @@ Auf das Skill-Limit würde ich zuerst schauen. Ein Servicetechniker bei einem Ma
 
 Die 50.000 Termine sind selten der Engpass. Eine Serviceorganisation mit 45 Technikern bleibt weit darunter, und die Zahl gilt, bis Sie mehr als 100 Scheduling-Lizenzen haben. Den Verbrauch sehen Sie im Setup unter Unternehmensinformationen.
 
-Der 30-Tage-Horizont betrifft geplante Wartungen. Bucht die Disposition Jahreswartungen zwei Monate im Voraus, liegen diese Termine außerhalb des Fensters, in dem die Engine Fahrzeiten aktualisiert. Das ist in Ordnung, solange die Optimierung den Plan neu ordnet, sobald die Termine ins Fenster rücken.
+Der 30-Tage-Horizont betrifft geplante Wartungen. Bucht die Disposition Jahreswartungen zwei Monate im Voraus, liegen diese Termine außerhalb des Fensters, in dem die Engine Fahrzeiten aktualisiert. Im Piloten würde ich prüfen, ob die Optimierung diese Termine neu ordnet, sobald sie ins Fenster rücken, und weit entfernte Buchungen bewusst neu einplanen, statt es anzunehmen.
 
 Laut den [Hinweisen zu Enhanced Scheduling and Optimization](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_considerations.htm&language=en_US&type=5) rechnet die Engine Fahrzeiten mit punktgenauem, vorausschauendem Routing. Dafür braucht es Kartenabdeckung in den Regionen, in denen Ihre Techniker arbeiten. Die Optimierung muss außerdem nicht eigens aktiviert werden, weil sie mit einem Platform Integration User läuft.
 
@@ -80,7 +81,7 @@ Eine Änderung hilft Herstellern direkt. Termine, die gegen eine Regel verstoße
 
 Salesforce hat inzwischen zwei Oberflächen für Disponenten: die Classic Dispatch Console mit dem bekannten Gantt und die neue Scheduling Console. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-quick-look/didispatch-smarter-with-the-scheduling-console) ist die Scheduling Console nur mit Enhanced Scheduling and Optimization verfügbar.
 
-Damit hängen zwei Entscheidungen zusammen, die getrennt aussehen. Eine Org, die bei der älteren Engine bleibt, bleibt auch bei der Classic Dispatch Console. Neue Funktionen der Konsole, etwa KI-Erklärungen zu vorgeschlagenen Terminen oder mehrtägige Einsätze, die Winter '27 als einen zusammenhängenden Auftrag zeigt, bleiben dann außer Reichweite. Ob Ihre Disponenten jetzt wechseln sollten, behandle ich in [Scheduling Console im Field Service: Disponenten umstellen?](../field-service-scheduling-console-disponenten/).
+Damit hängen zwei Entscheidungen zusammen, die getrennt aussehen, allerdings nur in eine Richtung. Eine Org, die bei der älteren Engine bleibt, bleibt auch bei der Classic Dispatch Console; eine Org mit der neuen Engine kann die Classic Dispatch Console im Übergang weiter nutzen. Neue Funktionen der Konsole, etwa KI-Erklärungen zu vorgeschlagenen Terminen oder mehrtägige Einsätze, die Winter '27 als einen zusammenhängenden Auftrag zeigt, bleiben dann außer Reichweite. Ob Ihre Disponenten jetzt wechseln sollten, behandle ich in [Scheduling Console im Field Service: Disponenten umstellen?](../field-service-scheduling-console-disponenten/).
 
 ## Rechenbeispiel: erst ein Pilotgebiet
 
@@ -94,7 +95,7 @@ Recipes nachbauen | 2 Wochen
 Pilot | 4 Wochen
   Ein Gebiet mit neun Technikern wechselt auf die neue Engine. Die Disponenten notieren jeden Vorschlag, den sie ändern, und den Grund, so wie bei der Einführung der Automatik.
 Vergleich
-  Liegt der Anteil geänderter Vorschläge im Pilotgebiet nicht höher als in den anderen, folgen die übrigen Gebiete, eines pro Woche.
+  Liegt der Anteil geänderter Vorschläge im Pilotgebiet nicht höher als in den anderen und werden Fahrzeit, Überstunden und ungeplante Termine nicht schlechter, folgen die übrigen Gebiete, eines pro Woche.
 ```
 
 Die Konfiguration dafür, also die Einstellung pro Gebiet, Scheduling Policies und Work Rules, besteht aus Datensätzen, nicht aus Metadaten. Sie gehört in die Pipeline, wie im Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass beschrieben, sonst laufen getesteter Sandbox-Stand und Produktion auseinander.

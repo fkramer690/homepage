@@ -10,12 +10,12 @@ categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Account Manager Targets, Vertriebsziele, Absatzprognose, CRM Analytics]
 takeaways:
   - "Änderungen laufen nicht von selbst nach unten. Der Manager gibt sie weiter, oder ein Flow ruft Update Account Manager Target Values auf."
-  - "Verlässt jemand das Team oder ändert sich die Managerhierarchie, werden Zuordnungen ungültig und müssen neu verteilt werden."
+  - "Verlässt jemand das Team oder ändert sich ein Manager-Feld, werden Zuordnungen ungültig. Ein Wechsel des Hierarchietyps sperrt alle Ziele."
   - "Ziel, Prognose und Ist passen nur zusammen, wenn alle drei dieselben Kunden, Produkte und Zeiträume nutzen."
   - "Provisionen rechnet die Funktion nicht. Salesforce verkauft dafür Spiff, viele Hersteller nutzen die Lohnabrechnung."
 faq:
   - q: "Was sind Account Manager Targets in der Manufacturing Cloud?"
-    a: "Eine Funktion der Manufacturing Cloud für Jahresziele im Vertrieb. Manager legen ein Ziel auf Umsatz, Stückzahl oder eine eigene Kennzahl an, verteilen es auf ihre direkten Mitarbeitenden, und diese verteilen es weiter auf Kunden, Produkte und Monate."
+    a: "Eine Funktion der Manufacturing Cloud für Jahresziele im Vertrieb. Manager legen ein Ziel auf Umsatz oder eine vom Admin ergänzte Kennzahl wie die Stückzahl an, verteilen es auf ihre direkten Mitarbeitenden, und diese verteilen es weiter auf Kunden, Produkte und Monate."
   - q: "Ersetzen Account Manager Targets die Excel-Zielplanung?"
     a: "Sie können den Verteilungsteil ersetzen: wer welches Ziel für welchen Kunden, welches Produkt und welchen Monat hat. Provisionen rechnen sie nicht, und die Zielerreichung zeigen sie nur, wenn Istwerte in derselben Struktur in Salesforce ankommen."
   - q: "Was passiert mit Zielen, wenn ein Account Manager das Unternehmen verlässt?"
@@ -25,7 +25,7 @@ faq:
 draft: false
 ---
 
-Account Manager Targets können den Verteilungsteil der Excel-Zielplanung ersetzen: wer welches Jahresziel für welche Kunden, Produkte und Monate hat. Die Funktion der Manufacturing Cloud legt Vertriebsziele auf Umsatz, Stückzahl oder eine eigene Kennzahl an und verteilt sie über die Teamhierarchie nach unten. Provisionen rechnet sie nicht, und die Zielerreichung zeigt sie nur, wenn Istwerte in derselben Kunden- und Produktstruktur in Salesforce ankommen wie Prognosen und Sales Agreements. Klären Sie vor dem Einschalten Hierarchie, Preisbuch, Datensatzlimit und die Quelle der Istwerte. Dann kann die Tabelle weg.
+Account Manager Targets können den Verteilungsteil der Excel-Zielplanung ersetzen: wer welches Jahresziel für welche Kunden, Produkte und Monate hat. Die Funktion der Manufacturing Cloud legt Vertriebsziele auf Umsatz oder eine vom Admin ergänzte Kennzahl wie die Stückzahl an und verteilt sie über die Teamhierarchie nach unten. Provisionen rechnet sie nicht, und die Zielerreichung zeigt sie nur, wenn Istwerte in derselben Kunden- und Produktstruktur in Salesforce ankommen wie Prognosen und Sales Agreements. Klären Sie vor dem Einschalten Hierarchie, Preisbuch, Datensatzlimit und die Quelle der Istwerte. Dann kann die Tabelle weg.
 
 ## Was sind Account Manager Targets?
 
@@ -33,11 +33,11 @@ Account Manager Targets sind die Funktion der Manufacturing Cloud für Jahreszie
 
 Die Bausteine laut Trailhead-Modul:
 
-- **Kennzahl.** Umsatz, Stückzahl oder eine eigene Kennzahl. Im Beispiel ergänzt der Admin Werte wie Quantity, CSAT und NPS im Object Manager.
-- **Geschäftsjahr.** Ziele nutzen das im Setup definierte Geschäftsjahr. Ein Manager legt sie für das laufende und die zwei folgenden Jahre an.
+- **Kennzahl.** Umsatz ist vordefiniert. Im Beispiel ergänzt der Admin Werte wie Quantity, CSAT und NPS im Object Manager.
+- **Geschäftsjahr.** Ziele nutzen das im Setup definierte Geschäftsjahr, laut [Hinweisen in der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=ind.mfg_amt_considerations.htm&language=en_US&type=5) nur ein Standard-Geschäftsjahr, kein benutzerdefiniertes. 4-4-5-Kalender scheiden damit aus. Ein Manager legt Ziele für das laufende und die zwei folgenden Jahre an.
 - **Verteilungsrhythmus.** Monatlich, quartalsweise oder jährlich. Standardmäßig wird das Ziel gleichmäßig auf die Perioden verteilt, Account Manager ändern den Anteil pro Periode.
 - **Teamhierarchie.** Entweder die Managerhierarchie aus dem Feld Manager am Benutzer oder die Forecast-Hierarchie aus dem Collaborative Forecasting der Sales Cloud.
-- **Preisbuch.** Ein Standardpreisbuch, mit dem ein Umsatzziel in eine Stückzahl umgerechnet wird.
+- **Preisbuch.** Ein Standardpreisbuch, das den Listenpreis für Produktverteilungen liefert.
 
 Im Setup hat die Funktion einen eigenen Schalter, und Nutzer brauchen das Permission Set Manufacturing Account Manager Targets. In den Metadaten heißt der Schalter `enableIndustriesMfgTargets`, laut [Referenz zu IndustriesManufacturingSettings](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) seit API-Version 49.0.
 
@@ -48,7 +48,7 @@ Von oben nach unten. Das Objekt [AcctMgrTarget](https://developer.salesforce.com
 Unterhalb der Teamebene kommen drei weitere Schnitte dazu; die [Verteilung](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target_distribution.htm) speichert dafür Kunde, Produkt und Preisbuch:
 
 1. **Nach Kunde.** Ein Anteil des Ziels geht an einen Schlüsselkunden, Salesforce füllt den Betrag aus.
-2. **Nach Produkt.** Ein Anteil geht an ein Produkt. Salesforce teilt den Betrag durch den Listenpreis aus dem Standardpreisbuch und erhält eine Stückzahl.
+2. **Nach Produkt.** Ein Anteil geht an ein Produkt. Salesforce trägt den Listenpreis aus dem gewählten Preisbuch ein; eine Umrechnung des Betrags in eine Stückzahl beschreibt die Hilfe nicht.
 3. **Nach Monat.** Das Ziel wird gleichmäßig auf zwölf Monate verteilt, jeder Monat lässt sich ändern.
 
 Zwei Details zählen in der Praxis. Erstens müssen die verteilten Werte nicht genau das Elternziel ergeben. Trailhead nennt das eine Funktion, weil ein Manager einen Teil behalten kann. Für das Controlling heißt es: Lücken oder Überdeckungen fallen nur auf, wenn ein Bericht sie zeigt. Zweitens laufen Änderungen nicht von selbst nach unten. Der Manager klickt Propagate to Assignments, und Salesforce benachrichtigt die Betroffenen in der App.
@@ -60,7 +60,7 @@ Für Automatisierung gibt es die [Aktion Update Account Manager Target Values](h
 
 ## Was passiert nach einer Umorganisation?
 
-Ziele werden ungültig. Trailhead nennt als typische Gründe, dass jemand das Unternehmen verlässt oder sich die Managerhierarchie ändert. Pro ungültiger Zuordnung hat der Manager vier Möglichkeiten:
+Zuordnungen werden ungültig. Trailhead nennt als typische Gründe, dass jemand das Unternehmen verlässt oder sich die Managerhierarchie ändert. Ein Wechsel des Hierarchietyps selbst, etwa von Managerhierarchie zu Forecast-Hierarchie, geht weiter: Laut Hilfe werden dann alle bestehenden Ziele schreibgeschützt. Pro ungültiger Zuordnung hat der Manager vier Möglichkeiten:
 
 | Option | Was sie tut |
 |---|---|
@@ -85,15 +85,15 @@ Für den Vergleich beschreibt Trailhead [Dashboards der CRM-Analytics-Vorlage](h
 
 ## Rechenbeispiel: 40 Account Manager und ein Datensatzlimit
 
-Die Zahlen sind angenommen: Ein Hersteller von Antriebskomponenten hat eine Vertriebsleitung, sechs Regionalleiter und 40 Account Manager. Jeder Account Manager betreut 150 Kunden, und die Ziele sollen pro Kunde, Produkt und Monat für 60 Produkte laufen.
+Die Zahlen sind angenommen: Ein Hersteller von Antriebskomponenten hat eine Vertriebsleitung, sechs Regionalleiter und 40 Account Manager. Jeder Account Manager betreut 150 Kunden, und die Ziele sollen pro Kunde, pro Produkt und pro Monat für 60 Produkte verteilt werden.
 
-Verteilte jeder Account Manager jeden Kunden auf jedes Produkt und jeden Monat, wären das 40 × 150 × 60 × 12, also 4,32 Millionen Periodendatensätze. Die Setup-Unit auf Trailhead nennt ein Limit für Datensätze vom Typ Account Manager Periodic Target Distribution, das der Account Executive von Salesforce mit dem Admin festlegt. Das Beispiel dort nutzt 10 Millionen.
+Die Hilfe beschreibt Verteilungen nach Kunde und nach Produkt auf getrennten Reitern, keine Matrix aus Kunde mal Produkt. Das ergibt 40 × (150 + 60) = 8.400 Verteilungen. Selbst wenn jede Verteilung einen Datensatz pro Monat speichert, wären das rund 100.000 Periodendatensätze. Die [Hinweise in der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=ind.mfg_amt_considerations.htm&language=en_US&type=5) setzen das Maximum für Datensätze vom Typ Account Manager Periodic Target Distribution auf 10 Millionen.
 
 ```hinweis offen
-Ein Beispielwert ist keine Zusage für Ihren Vertrag. Ich würde die erwartete Zahl der Periodendatensätze vor dem ersten Zieljahr rechnen und das Limit im Angebot bestätigen lassen.
+Ob Ihr Aufbau einen Periodendatensatz pro Verteilung oder pro Monat erzeugt, würde ich vor dem ersten Zieljahr in einer Sandbox prüfen, zusammen mit den geplanten Teamzielen.
 ```
 
-In der Praxis würde ich das Szenario zuschneiden: Kundenziele für die 20 größten Kunden pro Person, Produktkategorie statt Produkt, der Rest als Teamziel. Das deckt den Großteil des Umsatzes und hält die Datensätze deutlich unter einer Million.
+In der Praxis würde ich das Szenario trotzdem zuschneiden, wegen der Lesbarkeit, nicht wegen des Limits: Kundenziele für die 20 größten Kunden pro Person, Produkte nur für die strategischen Linien, der Rest als Teamziel. Das deckt den Großteil des Umsatzes und hält das Review-Meeting handhabbar.
 
 ## Wo bleiben Provisionen und Prämien?
 
@@ -107,7 +107,7 @@ Auch der Sales-Planning-Agent arbeitet nicht mit Zielen. Welche Subagenten Sales
 
 1. **Hierarchie.** Managerhierarchie oder Forecast-Hierarchie, und wer das Feld Manager pflegt.
 2. **Ebenen.** Eine Kundenebene, eine Produktebene, ein Periodentyp für Ziel, Prognose und Ist.
-3. **Datensätze.** Erwartete Periodendatensätze gegen das Limit im Angebot.
+3. **Datensätze und Kalender.** Erwartete Periodendatensätze gegen das Limit von 10 Millionen, und ein Standard-Geschäftsjahr.
 4. **Lizenz.** Funktion und Dashboard für Ihre Edition schriftlich bestätigt.
 
 Die Ebenen lege ich in einem Termin mit Vertriebsleitung und Controlling fest, weil das Controlling die Istwerte liefert. Erst danach rechne ich die Periodendatensätze aus und lasse mir das Limit im Angebot bestätigen.

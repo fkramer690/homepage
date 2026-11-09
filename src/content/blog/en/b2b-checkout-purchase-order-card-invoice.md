@@ -1,6 +1,6 @@
 ---
 title: "B2B checkout: purchase order, card or invoice?"
-description: "Which payment options a Salesforce B2B store needs when dealers buy on account: purchase order, card, Dual Payment, Stripe and a credit check against the ERP."
+description: "Which payment options a Salesforce B2B store needs when dealers buy on account: purchase order, card, Salesforce Payments and an ERP credit check."
 pubDate: 2026-10-28
 lang: en
 slug: b2b-checkout-purchase-order-card-invoice
@@ -11,7 +11,7 @@ tags: [b2b commerce, checkout, purchase order, payments, credit limit, erp]
 takeaways:
   - "In Salesforce B2B Commerce a purchase order counts as a form of payment but triggers no payment flow; the PO number travels to the ERP for invoicing."
   - "An order can only be placed if the cart has either a payment authorisation or a purchase order. Every checkout has to end in one of the two."
-  - "The Purchase Order component needs no payment gateway. Dual Payment offers card and purchase order, and Salesforce Payments runs on Stripe."
+  - "The Purchase Order component needs no payment gateway. Dual Payment offers card and purchase order, Salesforce Payments runs on Stripe or Adyen."
   - "Payments cannot be customized with a Commerce extension. Custom payment logic needs an Apex adapter or a custom checkout component."
   - "Credit limit and order block belong to the ERP. The validate method of the PlaceOrder extension asks the ERP before the order exists."
 faq:
@@ -22,11 +22,11 @@ faq:
   - q: "Can the store check a dealer's credit limit before the order is placed?"
     a: "Not out of the box. The PlaceOrder extension point runs cart validations when the buyer places the order, and you override its validate method with your own logic, for example a live call to the ERP that checks open credit and order blocks."
   - q: "Can I use any payment provider with B2B Commerce?"
-    a: "Salesforce lists three routes: provider packages on AppExchange that support B2B stores, Salesforce Payments with Stripe, or a custom gateway. A custom server-side gateway requires an Apex adapter, because payments cannot be customized with extensions."
+    a: "Salesforce lists three routes: provider packages on AppExchange that support B2B stores, Salesforce Payments with Stripe or Adyen, or a custom gateway. A custom server-side gateway requires an Apex adapter, because payments cannot be customized with extensions."
 draft: false
 ---
 
-A B2B store for dealers who buy on account needs a purchase order option first and a card option second, if at all. Salesforce B2B Commerce has a Purchase Order component that works without a payment gateway, a Dual Payment component for card and purchase order, and Salesforce Payments on Stripe, which can also show a purchase order option in B2B stores. A purchase order triggers no payment in Salesforce, invoicing stays in the ERP. What the store has to add is the check whether the dealer may order at all, meaning credit limit and order block. That answer has to come from the ERP before the order is placed.
+A B2B store for dealers who buy on account needs a purchase order option first and a card option second, if at all. Salesforce B2B Commerce has a Purchase Order component that works without a payment gateway, a Dual Payment component for card and purchase order, and Salesforce Payments on Stripe or Adyen, which can also show a purchase order option in B2B stores. A purchase order triggers no payment in Salesforce, invoicing stays in the ERP. What the store has to add is the check whether the dealer may order at all, meaning credit limit and order block. That answer has to come from the ERP before the order is placed.
 
 ## What does payment mean in a B2B store?
 
@@ -47,11 +47,11 @@ The developer guide lists these options for B2B stores, available in Enterprise,
 | Purchase Order | For B2B stores that accept purchase orders only | No gateway |
 | Payment | Card payment through a third-party provider | Server-side gateway |
 | Dual Payment | Card and purchase order, for B2B stores only | Server-side gateway for the card |
-| Salesforce Payments | Several payment methods, saved methods optional, B2B stores can show a PO option | Merchant account set up in the Commerce app |
+| Salesforce Payments | Several payment methods, saved methods optional, B2B stores can show a PO option | Salesforce Payments license and a merchant account set up in the Commerce app |
 | Express Checkout | Apple Pay, Google Pay, PayPal and Venmo | Salesforce Payments |
 | Custom component | Your own client-side component that talks to the provider directly | Own development |
 
-For the gateway, the [gateway options page](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-payment-gateway-options.html) names three routes: a provider package from AppExchange, Salesforce Payments as the native Stripe integration, or a custom gateway. For AppExchange packages, Salesforce asks you to check that the package supports B2B stores. A custom server-side gateway requires an Apex adapter.
+For the gateway, the [gateway options page](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-payment-gateway-options.html) names three routes: a provider package from AppExchange, Salesforce Payments as the native Stripe integration, or a custom gateway. Salesforce has since added a [native integration with Adyen](https://www.salesforce.com/blog/salesforce-native-integration-adyen/) to Salesforce Payments. For AppExchange packages, Salesforce asks you to check that the package supports B2B stores. A custom server-side gateway requires an Apex adapter.
 
 ```vertiefung For developers
 title: Where does custom payment logic go?
@@ -76,7 +76,7 @@ So I recommend the Purchase Order component when the store is for known dealers 
 
 Credit limits, open items and order blocks live in the ERP, in SAP for example in credit management. The store knows none of this. Without a check, a blocked dealer can place an order that the ERP will reject later, and inside sales has to call and explain.
 
-The place for the check is the PlaceOrder service, extension point `Commerce_Domain_Checkout_PlaceOrder`. According to the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html), it runs cart validations when a buyer places an order, as part of the Place Order Action API. For your own logic you extend the base Apex class and override the `validate` method. Inside it, a live call asks the ERP two questions: is the account blocked, and does the order total fit the open credit? If not, the order is not created and the buyer sees a message.
+The place for the check is the PlaceOrder service, extension point `Commerce_Domain_Checkout_PlaceOrder`. According to the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html), it runs cart validations when a buyer places an order, as part of the Place Order Action API. For your own logic you extend the base Apex class and override the `validate` method. According to the [Apex reference](https://developer.salesforce.com/docs/commerce/salesforce-commerce/references/comm-apex-reference/CheckoutPlaceOrder.html), this works only with the enhanced Place Order Actions API, allows one external callout per transaction and no DML or asynchronous Apex. If credit and block status sit behind two ERP services, a middleware endpoint has to combine them into one answer. Inside it, a live call asks the ERP two questions: is the account blocked, and does the order total fit the open credit? If not, the order is not created and the buyer sees a message.
 
 ```ablauf
 sf: Checkout, Validate check, Order summary
@@ -93,7 +93,7 @@ Three decisions belong in the specification:
 
 1. **What the buyer sees.** "Please contact your sales representative" is enough; the credit limit itself usually is not something a dealer's buyer should read in a webshop.
 2. **What happens on timeout.** If the ERP does not answer in time, the store either blocks the order or accepts it. If your ERP checks credit again when it creates the sales order, accepting is the friendlier choice.
-3. **Card orders.** A card payment that is authorised does not need the credit check. The validate logic has to know which way the buyer pays.
+3. **Card orders.** A card payment that is authorised does not need the credit limit check, but an order block can still apply. The validate logic has to know which way the buyer pays.
 
 I would not copy credit limits into Salesforce overnight to save the live call. A copy from last night is wrong exactly when it matters, for the dealer who placed three large orders this morning.
 
@@ -101,7 +101,7 @@ I would not copy credit limits into Salesforce overnight to save the live call. 
 
 A manufacturer of pumps sells spare parts through 300 dealers in Germany, Austria and Switzerland. All dealers have a customer account in SAP and pay within 30 days. On top, around 50 small service workshops a year order once or twice and have no customer account.
 
-For this setup I would choose Salesforce Payments or Dual Payment, with the purchase order option for the dealer buyer group and card payment for the workshops. Every purchase order passes the validate check against SAP. Card orders skip the credit check, but their payment has to reach accounting in SAP, which adds one interface. Before deciding, I would ask finance which dealers reject invoices without their own PO number; for those, the validate method can also refuse an empty PO field.
+For this setup I would choose Salesforce Payments or Dual Payment, with the purchase order option for the dealer buyer group and card payment for the workshops. Every purchase order passes the validate check against SAP. Card orders skip the credit limit check but not the block check, and their payment has to reach accounting in SAP, which adds one interface. Before deciding, I would ask finance which dealers reject invoices without their own PO number; for those, the validate method can also refuse an empty PO field.
 
 If the workshops turn out to be fewer than expected, the simpler alternative is a store with the Purchase Order component only and a sales process that sets up a customer account before the first order.
 

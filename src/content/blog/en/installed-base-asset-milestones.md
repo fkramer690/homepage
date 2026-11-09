@@ -96,7 +96,7 @@ A console only looks as complete as the data behind it. The same is true for the
 
 Assets, milestones, participants and fleets are shared ground. Maintenance plans, work orders, service appointments and technician stock belong to Field Service, covered in the [Field Service masterclass chapter on assets and maintenance](../../masterclass/field-service/field-service-assets-maintenance-parts/) and in [maintenance contracts](../salesforce-field-service-maintenance-contracts/). Design the asset model once for both, not per project.
 
-Two add-ons often come up here. According to the [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/), Connected Assets costs $15,000 per org and month and brings telemetry; Asset Service Lifecycle Management costs $75 per user and month and comes with Field Service editions. Neither is needed for a clean installed base. Whether telemetry pays off is covered in [predictive maintenance in Salesforce](../predictive-maintenance-salesforce-data-needed/).
+Two add-ons often come up here. According to the [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/), Connected Assets costs $15,000 per org and month and brings telemetry; Asset Service Lifecycle Management costs $75 per user and month, available with Field Service editions (Field Service Max includes it, according to the Field Service pricing page). Neither is needed for a clean installed base. Whether telemetry pays off is covered in [predictive maintenance in Salesforce](../predictive-maintenance-salesforce-data-needed/).
 
 ## Count the gaps in last year's warranty claims
 
