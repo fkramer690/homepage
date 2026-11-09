@@ -61,7 +61,7 @@ The engine assigns appointments by a scheduling policy. Work rules filter out te
 
 The second decision is how far automation goes. A service appointment moves from None to Scheduled, when it has a technician and a slot, to Dispatched, when it is released to the technician's app. Between Scheduled and Dispatched a dispatcher can still step in. For manufacturers I recommend exactly that split at the start: the engine schedules, the dispatcher reviews and releases. The dispatcher knows that a customer has to shut down a line before maintenance, which is in no field.
 
-Automation grows when dispatchers hardly change proposals any more. To get there, they note for four weeks why they changed a proposal, and each reason becomes data or a work rule. The full path, including drip feed for automatic release, is in [how much Field Service scheduling should be automatic](../../../blog/salesforce-field-service-scheduling-automation/).
+Automation grows when dispatchers hardly change proposals any more. To get there, they note for four weeks why they changed a proposal, and each reason becomes data or a work rule. The full path, including drip feed for automatic release, is in [how to automate technician scheduling and dispatch step by step](../../../blog/salesforce-field-service-scheduling-automation/).
 
 ## Should you switch to Enhanced Scheduling and Optimization?
 

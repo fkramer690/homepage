@@ -2,6 +2,7 @@
 title: "Agentforce Vertriebsplanung: was der Agent wirklich kann"
 description: "Was die Vorlage Agentforce for Sales Planning mit Sales Agreements und Prognosen macht, was Salesforce offenlässt und welche ERP-Daten zuerst stehen müssen."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: de
 slug: agentforce-vertriebsplanung-rahmenvertraege
 translationKey: sales-planning-agent-agreements
@@ -23,7 +24,7 @@ faq:
   - q: "Woher kommen die Ist-Mengen, die der Agent auswertet?"
     a: "Aus den Ist-Werten in den Zeitplänen der Sales-Agreement-Produkte. Liegen die Aufträge in SAP oder proALPHA, muss eine Schnittstelle sie laden, etwa per Bulk API im Modus Manually using API upload. Ein täglicher Job aktualisiert danach die Sales Agreements."
   - q: "Ist Sales Planning in Agentforce for Sales enthalten?"
-    a: "Nein. Salesforce Help bindet die Vorlage Agentforce for Sales Planning an das Add-on Agentforce for Manufacturing oder an Agentforce 1 Manufacturing Edition. Salesforce verkauft außerdem ein Produkt Sales Planning für Gebiets- und Quotenplanung, prüfen Sie also, welches von beiden Ihr Angebot nennt."
+    a: "Die Agentenvorlage nicht. Salesforce Help bindet Agentforce for Sales Planning an das Add-on Agentforce for Manufacturing oder an Agentforce 1 Manufacturing Edition. Das eigene Produkt Sales Planning für Gebiets- und Quotenplanung ist in Agentforce 1 Sales Edition enthalten, der Max-Edition von Sales Cloud, und für die anderen Editionen ein Add-on."
 draft: false
 ---
 
@@ -56,6 +57,14 @@ Trailhead nennt das Produkt selbst inzwischen Agentforce Manufacturing. Der [Tra
 Dieselbe Namensgebung taucht bei den Prognose-Einstellungen auf. Trailhead schreibt, Agentforce Manufacturing erzeuge zu Beginn jeder Anpassungsperiode automatisch Prognosen für neue Produkte. In [derselben Einheit](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/define-account-forecast-settings) ist das die Neuberechnung der Prognose zum Periodenstart, also eine geplante Berechnung. Ein Subagent oder Prompt kommt darin nicht vor.
 
 Mich stört das Branding nicht. Problematisch wird es, wenn im Hersteller-Workshop „der Agent prognostiziert Ihre neuen Produkte“ im Business Case landet. Meine Frage in solchen Terminen ist immer dieselbe: welcher Subagent, welche Aktion, welche Lizenz, und wo steht das in der Hilfe?
+
+## Ist Sales Planning in Agentforce for Sales enthalten?
+
+Die Agentenvorlage Agentforce for Sales Planning ist weder in Agentforce for Sales noch in einer Sales-Cloud-Edition enthalten. Die [Hilfeseite zur Vorlage](https://help.salesforce.com/s/articleView?id=ind.mfg_gen_ai_agentforce_sales_planning_agent.htm&language=en_US&type=5) bindet sie an das Add-on Agentforce for Manufacturing oder an Agentforce 1 Manufacturing Edition. Sie setzt also die Manufacturing Cloud voraus.
+
+Die Verwechslung kommt von einem zweiten Produkt mit fast gleichem Namen. Sales Planning ist das Salesforce-Werkzeug für Gebiets-, Quoten- und Kapazitätsplanung. Laut [Preisseite](https://www.salesforce.com/de/sales/sales-planning/pricing/) ist es in Agentforce 1 Sales Edition enthalten und kostet sonst als Add-on 75 Euro pro Nutzer und Monat. Die [Preisseite von Sales Cloud](https://www.salesforce.com/eu/sales/pricing/) führt es in Max als enthalten und in Starter, Pro Suite und Core als zukaufbar (Stand November 2026). Es plant Gebiete und Quoten. Sales Agreements wertet es nicht aus.
+
+Steht in einem Angebot „Sales Planning“, frage ich deshalb immer nach, was gemeint ist: der Agent für Hersteller oder das Planungsprodukt.
 
 ## Wie weit arbeitet der Agent wirklich mit Sales Agreements und Account Forecasts?
 

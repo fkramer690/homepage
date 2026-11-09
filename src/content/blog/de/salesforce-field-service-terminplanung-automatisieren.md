@@ -1,7 +1,9 @@
 ---
 title: "Salesforce Field Service: Wie viel Planung automatisch?"
+metaTitle: "Field Service: Terminplanung und Dispatch automatisieren"
 description: "Wie viel Terminplanung in Salesforce Field Service automatisch laufen sollte: Scheduling Policies, die Rolle der Disponenten und ein Weg zu mehr Automatik."
 pubDate: 2026-10-26
+updatedDate: 2026-11-09
 lang: de
 slug: salesforce-field-service-terminplanung-automatisieren
 translationKey: field-service-scheduling-automation
@@ -23,6 +25,8 @@ faq:
     a: "Field Service bringt vier Standard-Policies mit: Customer First, High Intensity für Spitzenzeiten, Soft Boundaries für gebietsübergreifende Einsätze und Emergency für Notfälle. Sie sind ein Startpunkt und werden meist angepasst."
   - q: "Kann Field Service Termine automatisch an Techniker freigeben?"
     a: "Ja. Geplante Jobs können Termine automatisch von Scheduled auf Dispatched setzen. Mit Drip Feed hält Field Service dabei nur eine festgelegte Zahl von Terminen in der Warteschlange jedes Technikers."
+  - q: "Wie automatisiert man Terminplanung und Dispatch in Salesforce Field Service?"
+    a: "In vier Schritten. Eine mitgelieferte Scheduling Policy plant Termine bis Scheduled, ein Disponent gibt jeden frei. Die Disponenten notieren vier Wochen lang, warum sie Vorschläge ändern, und aus den Gründen werden Daten oder Work Rules. Ändern sie kaum noch etwas, laufen einfache Arbeitstypen mit Drip Feed automatisch in den Dispatch."
 draft: false
 ---
 
@@ -84,7 +88,9 @@ Bevorzugte, erforderliche oder ausgeschlossene Techniker lassen sich laut [Sales
 
 So wächst die Automatik mit nachgewiesener Qualität und nicht nach einem Plan, den jemand vor dem Projekt festgelegt hat. Welche Rolle die Ersatzteile dabei spielen, also wer weiß, ob das Teil im Fahrzeug ist, ist Thema des nächsten Teils der Serie.
 
-## Mit Freigabe durch den Disponenten starten
+## Terminplanung und Dispatch in vier Schritten automatisieren
+
+Im ersten Schritt gibt der Disponent noch jeden Termin frei:
 
 ```schritte
 Mit Freigabe starten
