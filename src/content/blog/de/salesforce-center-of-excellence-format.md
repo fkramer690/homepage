@@ -13,21 +13,21 @@ tags: [Center of Excellence, CoE, Partnersteuerung, Governance, Object Ownership
 takeaways:
   - "Zwei Termine setzen den ersten Governance-Rhythmus: ein technischer Call alle zwei Wochen für Änderungen und Randfälle und ein monatlicher Roadmap-Termin."
   - "Vorsitz und Entscheidungen liegen beim Kunden, sonst legt ein Partner die Regeln für seine Wettbewerber fest."
-  - "Streams stellen Änderungen an gemeinsamen Objekten vor, bevor sie bauen; in meinem größten Programm sind die Randfälle dadurch fast verschwunden."
-  - "Die Entscheidungen des CoE müssen in Owner-Freigaben, geschützten Branches und Pipeline-Prüfungen ankommen, sonst bleibt es eine Gesprächsrunde."
+  - "Streams stellen Änderungen an gemeinsamen Objekten vor der Umsetzung vor; in meinem größten Programm sind die Randfälle dadurch fast verschwunden."
+  - "CoE-Entscheidungen müssen in Freigaben der verantwortlichen Streams, geschützten Branches und Pipeline-Prüfungen ankommen, sonst bleibt es eine Gesprächsrunde."
 faq:
   - q: "Was ist ein Salesforce Center of Excellence?"
-    a: "Ein bereichsübergreifendes Gremium beim Kunden, das Plattformstrategie, Standards, Umsetzung und Befähigung für Salesforce verbindet. Salesforce beschreibt es als Lenkungskreis und Wissenszentrum für alle Salesforce-Initiativen."
+    a: "Ein kundeneigenes, bereichsübergreifendes Gremium, das Plattformstrategie, Standards, Umsetzung und Befähigung für Salesforce verbindet. Salesforce beschreibt es als Lenkungskreis und Wissenszentrum für alle Salesforce-Initiativen."
   - q: "Wie oft sollte sich ein Salesforce CoE treffen?"
-    a: "Salesforce schlägt vor, es wöchentlich für operative und technische Themen und monatlich für Strategie und Roadmap zu versuchen. In meinem Programm lief der technische Call alle zwei Wochen für 60 Minuten, mit vorher eingereichten Themen, und ein monatlicher Termin deckte Roadmap und Prioritäten ab."
+    a: "Salesforce empfiehlt, zunächst wöchentlich für operative und technische Themen und monatlich für Strategie und Roadmap zu tagen. In meinem Programm lief der technische Call alle zwei Wochen für 60 Minuten, mit vorher eingereichten Themen, und ein monatlicher Termin deckte Roadmap und Prioritäten ab."
   - q: "Wer sollte ein Salesforce Center of Excellence leiten?"
     a: "Der Kunde, mit einem benannten CoE-Lead und einem Architekten, der die technischen Calls führt. Partner nehmen teil und bringen ihre Themen ein, entscheiden aber nicht über die Regeln für alle."
   - q: "Braucht ein mittelständischer Hersteller überhaupt ein CoE?"
-    a: "Mehr als ein Team oder Partner an derselben Org ist ein starker Anlass für formale Governance. Es muss keine eigene Abteilung sein; für den Start kann ein Call alle zwei Wochen mit klarer Agenda und ein Verantwortlicher genügen, der Umfang wächst mit dem Programm."
+    a: "Mehr als ein Team oder Partner an derselben Org ist ein starker Anlass für formale Governance. Es muss keine eigene Abteilung sein; für den Start können ein Call alle zwei Wochen mit klarer Agenda und ein Verantwortlicher genügen, der Umfang wächst mit dem Programm."
 draft: false
 ---
 
-Ein Salesforce Center of Excellence (CoE) ist das Gremium beim Kunden, das Plattformstrategie, Standards, Umsetzung und Befähigung über alle Teams und Partner verbindet. Für einen Hersteller mit mehreren Umsetzungspartnern setzen zwei Termine den ersten Governance-Rhythmus: ein technischer Call alle zwei Wochen, in dem Streams Änderungen an gemeinsamen Objekten mit Vorlauf vorstellen, und ein monatlicher Termin für Roadmap und Prioritäten. Den Vorsitz hat der Kunde, kein Partner. In meinem größten Programm haben regelmäßige CoE-Calls nach meiner Beobachtung dazu geführt, dass neue Randfälle fast ganz wegfielen, weil Themen besprochen wurden, bevor sie zu Konflikten wurden.
+Ein Salesforce Center of Excellence (CoE) ist ein kundeneigenes Gremium, das Plattformstrategie, Standards, Umsetzung und Befähigung über alle Teams und Partner verbindet. Für einen Hersteller mit mehreren Umsetzungspartnern setzen zwei Termine den ersten Governance-Rhythmus: ein technischer Call alle zwei Wochen, in dem Streams Änderungen an gemeinsamen Objekten mit Vorlauf vorstellen, und ein monatlicher Termin für Roadmap und Prioritäten. Den Vorsitz hat der Kunde, kein Partner. In meinem größten Programm haben regelmäßige CoE-Calls nach meiner Beobachtung dazu geführt, dass neue Randfälle fast ganz wegfielen, weil Themen besprochen wurden, bevor sie zu Konflikten wurden.
 
 ## Was ist ein Salesforce Center of Excellence?
 
@@ -37,7 +37,7 @@ Salesforce beschreibt das CoE im Trailhead-Modul [Salesforce Governance with a C
 - **Standards:** Regeln, wie auf der Plattform gearbeitet wird, von Prozessen über Datenqualität bis zu Entwicklungsregeln.
 - **Befähigung:** Schulung, Kommunikation und Support für Nutzer und Teams.
 
-In Fertigungsunternehmen mit mehreren Partnern ist nach meiner Erfahrung der zweite Punkt der dringendste. Eine Roadmap gibt es meist schon in irgendeinem Lenkungsausschuss. Was fehlt, ist der Ort, an dem Teams verbindlich klären, wer was an der Org ändert. Ohne diesen Ort entsteht das, was Salesforce [Governance Debt](https://trailhead.salesforce.com/content/learn/modules/salesforce-governance-with-a-center-of-excellence/learn-about-salesforce-governance-and-why-it-matters) nennt: technische Schulden, inkonsistente Daten und Nutzer, die sich Excel-Listen daneben bauen.
+In Fertigungsunternehmen mit mehreren Partnern ist nach meiner Erfahrung der zweite Punkt der dringendste. Eine Roadmap gibt es meist schon in irgendeinem Lenkungsausschuss. Was fehlt, ist der Ort, an dem Teams verbindlich klären, wer was an der Org ändert. Ohne diesen Ort entsteht das, was Salesforce [Governance Debt](https://trailhead.salesforce.com/content/learn/modules/salesforce-governance-with-a-center-of-excellence/learn-about-salesforce-governance-and-why-it-matters) nennt: technische Schulden, inkonsistente Daten und Nutzer, die sich parallel eigene Excel-Listen führen.
 
 ## Warum gehört das CoE auf die Kundenseite?
 
@@ -47,7 +47,7 @@ Partner sitzen im CoE trotzdem mit am Tisch. Ihre Leads stellen Änderungen vor,
 
 ## Welches Format braucht ein CoE am Anfang?
 
-Salesforce schlägt vor, einen [wöchentlichen Rhythmus für operative und technische Themen und einen monatlichen für Strategie und Roadmap](https://trailhead.salesforce.com/content/learn/modules/salesforce-governance-with-a-center-of-excellence/get-started-with-a-salesforce-coe) für das Kernteam und seine Untergruppen zu versuchen. Dasselbe Modul beschreibt weitere Schritte zum Aufbau, vom Sponsor über den Umfang bis zur Messung; die zwei Termine sind der Governance-Rhythmus, nicht das ganze CoE. Den technischen Teil nennt Salesforce Design Authority, eine Untergruppe des CoE, die der Architekt leitet. In meinem Programm lief der technische Call alle zwei Wochen für 60 Minuten, und das hat gereicht, weil die Themen vorher eingereicht wurden und die Agenda vor dem Termin verschickt war. Wöchentlich lohnt sich nur, wenn die Liste der eingereichten Themen dauerhaft länger ist als eine Stunde. Mehr Termine braucht es am Anfang nicht.
+Salesforce schlägt vor, einen [wöchentlichen Rhythmus für operative und technische Themen und einen monatlichen für Strategie und Roadmap](https://trailhead.salesforce.com/content/learn/modules/salesforce-governance-with-a-center-of-excellence/get-started-with-a-salesforce-coe) für das Kernteam und seine Untergruppen zu erproben. Dasselbe Modul beschreibt weitere Schritte zum Aufbau, vom Sponsor über den Umfang bis zur Messung; die zwei Termine sind der Governance-Rhythmus, nicht das ganze CoE. Den technischen Teil nennt Salesforce Design Authority, eine Untergruppe des CoE, die der Architekt leitet. In meinem Programm lief der technische Call alle zwei Wochen für 60 Minuten, und das hat gereicht, weil die Themen vorher eingereicht wurden und die Agenda vor dem Termin verschickt war. Wöchentlich lohnt sich nur, wenn die Liste der eingereichten Themen dauerhaft länger ist als eine Stunde. Mehr Termine braucht es am Anfang nicht.
 
 | | Technischer CoE-Call | Roadmap-Termin |
 |---|---|---|
@@ -57,13 +57,13 @@ Salesforce schlägt vor, einen [wöchentlichen Rhythmus für operative und techn
 | Inhalt | anstehende Änderungen an gemeinsamen Objekten, Integrationen, Berechtigungen und anderen übergreifenden Bausteinen, Randfälle aus Reviews, neue oder geänderte Standards | Prioritäten, Roadmap, Budget, neue Partner |
 | Ergebnis | Entscheidung, aktualisierter Standard oder Matrix | aktualisierte Roadmap mit Prioritäten, Budget, Verantwortlichen und Meilensteinen |
 
-Der Roadmap-Termin ist auch der Ort für Budgetfragen, die mehrere Bereiche betreffen. Ein Beispiel ist das Kontingent für Agentforce, das ich in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/) beschreibe: Kauft das Unternehmen Flex Credits zentral, sollte das CoE einen Verantwortlichen für die Verbrauchsüberwachung benennen und entscheiden, ob Werke und Töchter Transparenz, eine Verrechnung oder ein zentrales Budget bekommen.
+Der Roadmap-Termin ist auch der Ort für Budgetfragen, die mehrere Bereiche betreffen. Ein Beispiel ist das Kontingent für Agentforce, das ich in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/) beschreibe: Kauft das Unternehmen Flex Credits zentral, sollte das CoE einen Verantwortlichen für die Verbrauchsüberwachung benennen und entscheiden, ob Werke und Tochtergesellschaften Kostentransparenz per Showback, eine interne Verrechnung per Chargeback oder ein zentrales Budget bekommen.
 
 ## Der technische Call folgt immer derselben Agenda
 
 Der technische Call ist der Teil, der den Unterschied macht. Damit er kein Statusmeeting wird, reichen die Streams ihre Themen vorher ein, und die Agenda geht vor dem Termin an alle Teilnehmer. So kann sich der verantwortliche Stream vorbereiten, statt im Call spontan zu entscheiden. Die Agenda folgt immer derselben Reihenfolge:
 
-1. **Anstehende Änderungen an gemeinsamen Bausteinen.** Ein Stream stellt vor, was er an Account, Asset, einer gemeinsamen Schnittstelle oder einem Berechtigungssatz ändern will, bevor er baut. Der verantwortliche Stream laut Matrix sagt, ob es passt und wo die Änderung hingehört.
+1. **Anstehende Änderungen an gemeinsamen Bausteinen.** Ein Stream stellt vor, was er an Account, Asset, einer gemeinsamen Schnittstelle oder einem Berechtigungssatz ändern will, bevor er mit der Umsetzung beginnt. Der verantwortliche Stream laut Matrix sagt, ob es passt und wo die Änderung hingehört.
 2. **Randfälle aus den Reviews.** Was im [Pull-Request-Review](../warum-pull-request-reviews-pflicht-sind/) aufgefallen ist und von keinem Standard abgedeckt wird, kommt hierher.
 3. **Entscheidungen festhalten.** Jede Entscheidung landet dort, wo die Standards stehen, und nicht im Protokoll eines einzelnen Partners.
 
@@ -71,7 +71,7 @@ Statusberichte gehören nicht in diesen Call. Wer berichten will, was sein Team 
 
 Neben der Agenda pflege ich einen Backlog mit CoE-Themen, die nicht dringend sind, etwa Namenskonventionen für neue Objekttypen oder eine Regel, die im Review immer wieder diskutiert wird. Kommen für einen Termin wenige Themen zusammen, nehmen wir eines aus dem Backlog als zeitlich begrenzten Standards-Workshop. Ist nichts entscheidungsreif, sagen Sie den Termin lieber ab, als ihn zu füllen.
 
-Wichtig ist auch, wer entscheidet. Der Stream, der das Objekt verantwortet, entscheidet über die Stimmigkeit darin. Architektur und technische Standards liegen beim Architekten auf Kundenseite als Design Authority, Prozess und Priorität beim Fachverantwortlichen, Budget, Umfang und ungelöste Konflikte beim Sponsor. Der CoE-Lead hält die Entscheidung mit Verantwortlichem und Frist fest. Ein CoE, das jede Frage per Abstimmung klärt, wird langsam und politisch.
+Wichtig ist auch, wer entscheidet. Der Stream, der das Objekt verantwortet, entscheidet, ob Änderungen innerhalb des Objekts konsistent sind. Architektur und technische Standards liegen beim Architekten auf Kundenseite als Design Authority, Prozess und Priorität beim Fachverantwortlichen, Budget, Umfang und ungelöste Konflikte beim Sponsor. Der CoE-Lead hält die Entscheidung mit Verantwortlichem und Frist fest. Ein CoE, das jede Frage per Abstimmung klärt, wird langsam und politisch.
 
 Entscheidungen halten nur, wenn die Umsetzung sie durchsetzt: Vor dem Merge ist die Freigabe des verantwortlichen Streams Pflicht, Branches und Deployment-Wege sind geschützt, und ausgewählte Standards laufen als automatische Pipeline-Prüfungen mit dokumentierten Ausnahmen.
 
@@ -96,7 +96,7 @@ Für mehrere Partner auf einer gemeinsamen Org würde ich zentral starten. Wenn 
 ```pro-contra
 pro: Zentrales CoE mit Vetorecht
 - Standards gelten für alle Partner gleich
-- Konflikte an gemeinsamen Objekten werden vor dem Bau entschieden
+- Konflikte an gemeinsamen Objekten werden vor Beginn der Umsetzung entschieden
 - Partner bleiben vergleichbar und austauschbar
 contra: Was Sie dafür in Kauf nehmen
 - Der Architekt im CoE wird anfangs zum Engpass

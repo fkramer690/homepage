@@ -1,5 +1,5 @@
 ---
-title: "Salesforce-Akzeptanz im Vertrieb: warum er es umgeht"
+title: "Vertriebsteam nutzt Salesforce nicht? Ursachen und Lösungen"
 description: "Warum der Vertrieb Salesforce nach dem Go-live umgeht, wie Sie Prozesslücken von ADKAR-Lücken trennen und welche vier Hebel bei Herstellern die Akzeptanz erhöhen."
 pubDate: 2026-10-29
 updatedDate: 2026-11-09
@@ -32,17 +32,17 @@ Der Vertrieb umgeht Salesforce, wenn die Pflege dem Management nützt und für d
 
 ## Warum umgeht der Vertrieb Salesforce?
 
-Prosci hat in seiner Forschung fünf Hauptgründe gefunden, warum Mitarbeitende sich gegen eine Veränderung sträuben: Sie verstehen den Grund nicht, ihre Rolle ändert sich, das Neue ist ihnen unbekannt, ihnen fehlt Vertrauen in die Führung, oder sie wurden an den Entscheidungen nicht beteiligt ([Prosci: Understanding Why People Resist Change](https://www.prosci.com/blog/understanding-why-people-resist-change)). Im Vertrieb treffen meist mehrere davon zusammen.
+Prosci hat in seiner Forschung fünf Hauptgründe gefunden, warum Mitarbeitende sich gegen eine Veränderung sträuben: Sie verstehen den Grund nicht, ihre Rolle ändert sich, sie fürchten das Unbekannte, ihnen fehlt Vertrauen in die Führung, oder sie wurden an den Entscheidungen nicht beteiligt ([Prosci: Understanding Why People Resist Change](https://www.prosci.com/blog/understanding-why-people-resist-change)). Im Vertrieb treffen meist mehrere davon zusammen.
 
-Dazu kommt ein Grund, der für den Vertrieb typisch ist: Ein CRM wirkt schnell wie ein Kontrollinstrument. Wer seine Kunden seit Jahren kennt, sieht wenig Sinn darin, Besuchsberichte für jemanden zu schreiben, der sie nie liest. Und Zeit ist knapp. In Salesforces siebter Ausgabe des [State of Sales](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/reports/sales/salesforce-state-of-sales-report-2026.pdf), mit 4.050 befragten Vertriebsmitarbeitenden im August und September 2025, entfallen 60 Prozent ihrer Arbeitszeit auf andere Tätigkeiten als Verkaufen. Jedes zusätzliche Feld geht von dieser Zeit ab.
+Dazu kommt ein Grund, der für den Vertrieb typisch ist: Ein CRM wirkt schnell wie ein Kontrollinstrument. Wer seine Kunden seit Jahren kennt, sieht wenig Sinn darin, Besuchsberichte für jemanden zu schreiben, der sie nie liest. Und Zeit ist knapp. Für die siebte Ausgabe des [State of Sales](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/reports/sales/salesforce-state-of-sales-report-2026.pdf) befragte Salesforce im August und September 2025 insgesamt 4.050 Vertriebsmitarbeitende. Demnach verbringen sie 60 Prozent ihrer Arbeitszeit mit anderen Tätigkeiten als dem Verkaufen. Jedes zusätzliche Feld geht von dieser Zeit ab.
 
-Bevor Sie ein Problem bei den Menschen suchen, prüfen Sie, ob Salesforce die Arbeit zuverlässig unterstützt: Ladezeiten, Berechtigungen und Datensicht, mobile und Offline-Nutzung, Qualität der ERP-Daten und ob der CRM-Prozess zum tatsächlichen Vertriebsablauf passt. Erst dann hilft das [ADKAR-Modell](../change-management-salesforce-einfuehrung/) einzugrenzen, woran es hängt. Eine Beobachtung löst die Diagnose aus, sie beweist die Stufe noch nicht:
+Bevor Sie ein Problem bei den Menschen suchen, prüfen Sie, ob Salesforce die Arbeit zuverlässig unterstützt: Ladezeiten, Berechtigungen und Datenzugriff, mobile und Offline-Nutzung, Qualität der integrierten ERP-Daten und ob der CRM-Prozess zum tatsächlichen Vertriebsablauf passt. Erst dann hilft das [ADKAR-Modell](../change-management-salesforce-einfuehrung/) einzugrenzen, woran es hängt. Eine Beobachtung löst die Diagnose aus, sie beweist die Stufe noch nicht:
 
 | Was Sie beobachten | Möglicher Engpass | Was hilft |
 |---|---|---|
 | „Wofür brauchen die das alles?“ | Awareness | Vertriebsleiter erklärt, welche Entscheidung auf den Daten beruht |
 | Pflichtfelder voller Punkte und Platzhalter | Desire | Weniger Felder, sichtbarer Nutzen für den Vertriebler |
-| Fragen nach dem Weg zu einer Funktion | Knowledge | Schulung am eigenen Kunden, Key User im Team |
+| Fragen nach dem Weg zu einer Funktion | Knowledge | Schulung anhand der eigenen Kunden, Key User im Team |
 | Pflege gelingt im Büro, nicht unterwegs | Ability | Mobile App, Outlook-Integration |
 | Nach drei Monaten zurück bei Excel | Reinforcement | Pipeline-Meeting nur aus Salesforce |
 
@@ -53,7 +53,7 @@ In den Einführungen, die ich erlebt habe, kam die zweite Zeile am häufigsten v
 Diese Frage entscheidet über die Bereitschaft, und sie braucht eine konkrete Antwort. „Bessere Daten für das Unternehmen“ reicht nicht. Bei Herstellern liegt die überzeugendste Antwort meist im ERP: Aufträge, Lieferstände, offene Rechnungen und Abnahmemengen aus Rahmenverträgen. Wer vor dem Termin in Salesforce sieht, dass der Kunde zum Beispiel nur 60 Prozent der vereinbarten Menge abgerufen hat und gerade zwei Servicefälle offen sind, geht besser vorbereitet hinein als mit seiner eigenen Liste.
 
 ```praxis
-In Manufacturing Cloud habe ich Rahmenverträge mit Ist-Mengen aus dem ERP eingeführt; in diesem Projekt war das ERP die gewählte Quelle, Salesforce kann Ist-Werte auch aus Aufträgen in Salesforce berechnen oder per API übernehmen. Der Stolperstein war die ERP-Schnittstelle, und genau an ihr hängt der Nutzen für den Vertrieb: Ohne Ist-Mengen zeigt ein Rahmenvertrag nur, was vereinbart war, nicht was der Kunde wirklich abnimmt.
+In Manufacturing Cloud habe ich Rahmenverträge (Sales Agreements) mit Ist-Mengen aus dem ERP eingeführt; in diesem Projekt war das ERP die gewählte Quelle, Salesforce kann Ist-Werte auch aus Aufträgen in Salesforce berechnen oder per API übernehmen. Der Stolperstein war die ERP-Schnittstelle, und genau an ihr hängt der Nutzen für den Vertrieb: Ohne Ist-Mengen zeigt ein Rahmenvertrag nur, was vereinbart war, nicht was der Kunde wirklich abnimmt.
 ```
 
 Wie diese Daten in Salesforce kommen, beschreibe ich in [Manufacturing Cloud und SAP: welche Daten wohin fließen](../manufacturing-cloud-sap-integration-datenfluesse/). Für die Akzeptanz zählt vor allem die Reihenfolge: Zum Go-live sollte der Vertrieb mindestens einen klaren, verlässlichen Nutzen haben, abgeleitet aus seiner Terminvorbereitung, nicht erst in einer späteren Phase. Eine instabile Schnittstelle schadet dem Vertrauen mehr als eine erste Ausbaustufe mit offen benannten Grenzen. Sonst lernt der Vertrieb in den ersten Wochen, dass Salesforce nur nimmt und nichts gibt, und dieser Eindruck hält.
@@ -66,7 +66,7 @@ Doppelpflege ist der schnellste Weg zur Schattenliste. Jede Information, die sch
 - **Daten aus dem ERP.** Kundennummern, Adressen, Aufträge und Umsätze kommen per Schnittstelle. Der Vertrieb pflegt sie nicht von Hand nach.
 - **Alte Listen.** Die Excel-Prognose und die eigene Kundendatei bekommen ein Abschaltdatum, das der Vertriebsleiter ankündigt. Solange beide Wege offen sind, gewinnt der gewohnte.
 
-Der letzte Punkt ist für mich der wichtigste. Wenn neue Prozesse oder Systeme eingeführt werden, braucht der alte Weg ein Enddatum. Bleibt die Option, nach der alten Weise zu arbeiten, unbegrenzt offen, ändert sich wenig. Das heißt nicht Abschalten über Nacht: Legen Sie fest, unter welchen Bedingungen der alte Weg schließt, halten Sie einen befristeten Notfallweg bereit und schalten Sie ab, sobald der neue Prozess nachweislich funktioniert. Das heißt konkret: Die alte Vorlage verschwindet aus dem Laufwerk, der alte Bericht wird nicht mehr verschickt, und wenn Salesforce das vereinbarte System für Angebote ist, gibt die Führungskraft Angebote von außerhalb nicht mehr frei.
+Der letzte Punkt ist für mich der wichtigste. Wenn neue Prozesse oder Systeme eingeführt werden, braucht der alte Weg ein Enddatum. Bleibt die Option, nach der alten Weise zu arbeiten, unbegrenzt offen, ändert sich wenig. Sie müssen den alten Weg dabei nicht über Nacht abschalten. Legen Sie fest, unter welchen Bedingungen Sie ihn schließen, halten Sie einen befristeten Notfallweg bereit und schalten Sie ihn ab, sobald der neue Prozess nachweislich funktioniert. Das heißt konkret: Die alte Vorlage verschwindet aus dem Laufwerk, der alte Bericht wird nicht mehr verschickt, und wenn Salesforce das vereinbarte System für Angebote ist, gibt die Führungskraft Angebote von außerhalb nicht mehr frei.
 
 ## Wie viele Pflichtfelder verträgt eine Opportunity?
 
@@ -84,7 +84,7 @@ Am Ende verankert die Führung, ob Salesforce gepflegt wird. Wenn der Vertriebsl
 
 Dasselbe gilt eine Ebene höher. Kommt die Absatzprognose an die Geschäftsführung aus Salesforce, wird sie dort gepflegt. Wie eine Prognose aus Salesforce für Hersteller aussehen kann, beschreibe ich in [Account Forecasting: Absatzprognose im Vertrieb](../account-forecasting-absatzprognose-vertrieb/).
 
-Eine Grenze ziehe ich dabei. Ranglisten einzelner Vertriebler nach Feldfüllquote führen leicht zu gepflegten Zahlen statt zu gepflegten Daten. Wo ein Betriebsrat besteht, kann eine Auswertung pro Person nach § 87 Abs. 1 Nr. 6 BetrVG mitbestimmungspflichtig sein und gehört vorher gegen die geltende IT- oder CRM-Betriebsvereinbarung geprüft; der Datenschutz gilt in jedem Fall. Für die Steuerung wählen Sie die geringste Detailtiefe, die den Zweck erfüllt, oft Team oder Land, und das Gespräch mit Einzelnen führt die Führungskraft oder der [Key User](../salesforce-key-user-netzwerk/).
+Eine Grenze ziehe ich dabei. Ranglisten einzelner Vertriebler nach Feldfüllquote führen leicht zu gepflegten Zahlen statt zu gepflegten Daten. Wo ein Betriebsrat besteht, kann eine Auswertung pro Person nach § 87 Abs. 1 Nr. 6 BetrVG mitbestimmungspflichtig sein. Prüfen Sie sie deshalb vorher gegen die geltende IT- oder CRM-Betriebsvereinbarung; der Datenschutz gilt in jedem Fall. Für die Steuerung wählen Sie die geringste Detailtiefe, die den Zweck erfüllt, oft Team oder Land, und das Gespräch mit Einzelnen führt die Führungskraft oder der [Key User](../salesforce-key-user-netzwerk/).
 
 ## Zwei Vertriebler nach ihrer Terminvorbereitung fragen
 

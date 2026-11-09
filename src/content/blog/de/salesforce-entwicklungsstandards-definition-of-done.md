@@ -12,14 +12,14 @@ contactBrief: partner-governance
 tags: [Entwicklungsstandards, Definition of Done, Partnersteuerung, Codequalität]
 takeaways:
   - "Die Definition of Done legt fest, wann eine User Story fertig ist, und gehört wie die Entwicklungsstandards dem Kunden."
-  - "Die erste Version muss nicht vollständig sein, in meinem größten Programm deckte sie die meisten wiederkehrenden Review-Themen ab."
+  - "Die erste Version muss nicht vollständig sein, in meinem größten Programm deckte sie die meisten wiederkehrenden Review-Themen ab, Randfälle folgten."
   - "Den größten Unterschied machten bei mir die Object Ownership Matrix und Regeln für Konfiguration."
   - "Was sich automatisch prüfen lässt, prüft die Pipeline, und das Review prüft den Rest."
 faq:
   - q: "Was ist eine Definition of Done?"
     a: "Eine Definition of Done ist eine kurze Liste von Bedingungen, die jede User Story erfüllen muss, bevor sie als fertig gilt, etwa Akzeptanzkriterien erfüllt, Review freigegeben, Tests grün, Rechte in Permission Sets und Doku aktualisiert. Ein gemeinsamer Kern gilt für alle Teams; Integrations-, Migrations- oder UI-Teams ergänzen eigene Prüfungen."
   - q: "Wer sollte Entwicklungsstandards schreiben, Kunde oder Partner?"
-    a: "Schreiben können sie beide, besitzen sollte sie der Kunde. Legt ein Partner die Regeln fest, entscheidet er auch, wie seine Wettbewerber in derselben Org bauen."
+    a: "Schreiben können sie beide, gehören sollten sie dem Kunden. Legt ein Partner die Regeln fest, entscheidet er auch, wie seine Wettbewerber in derselben Org bauen."
   - q: "Wie lange dauert es, Standards über mehrere Partner zu etablieren?"
     a: "Eine allgemeine Dauer gibt es nicht; sie hängt von vorhandenen Standards, Org-Größe, Automatisierungsdichte und Entscheidungswegen ab. In meinem größten Programm mit fünf Partnern waren es etwa drei Monate, bis die Standards stabil waren. Danach kamen nur noch einzelne Randfälle dazu."
   - q: "Welche Testabdeckung verlangt Salesforce?"
@@ -45,16 +45,16 @@ Die meisten Standarddokumente sind zu lang. In meinem Programm deckten die Stand
 
 | Bereich | Regel | Warum |
 |---|---|---|
-| Namen | Präfix des Streams, sprechende API-Namen, aussagekräftige Beschreibung an jedem eigenen Feld, das das Programm anlegt oder ändert | Man sieht im Setup, wem etwas gehört und wozu es dient |
+| Namen | Präfix des Streams, sprechende API-Namen, aussagekräftige Beschreibung an jedem benutzerdefinierten Feld, das das Programm anlegt oder ändert | Man sieht im Setup, wem etwas gehört und wozu es dient |
 | Automatisierung | ein Einstiegspunkt pro Objekt (Flow oder Apex), Flows nach Verantwortung getrennt und mit fester Reihenfolge | Reihenfolge und Seiteneffekte bleiben vorhersehbar |
-| Konfiguration | Schwellen und Parameter in Custom Metadata Types, übersetzbare Texte in Custom Labels, Zugangsdaten in Named Credentials | Ein Wert ändert sich an einer Stelle, ohne Apex anzufassen, und läuft trotzdem durch die Pipeline |
+| Konfiguration | Schwellen und Parameter in Custom Metadata Types, übersetzbare Texte in Custom Labels, Zugangsdaten in Named Credentials | Ein Wert lässt sich an einer Stelle ändern, ohne Apex anzupassen; die Änderung läuft weiter durch die Pipeline |
 | Tests | Apex-Tests prüfen Ergebnisse, nicht nur Zeilen | Tests finden Fehler statt nur die Quote zu erfüllen |
 | Sicherheit | Ausführungskontext bewusst gewählt (User Mode als Standard, System Mode nur als begründete Ausnahme), Rechte über Permission Sets | Kein Nutzer sieht über Code mehr, als er sehen darf |
 | Verantwortung | Änderungen an fremden Objekten nur nach Abstimmung | Teams überschreiben sich nicht gegenseitig |
 
 Die letzte Zeile regelt eine [Object Ownership Matrix](../object-ownership-matrix-salesforce/): Sie legt fest, welcher Stream für welches Objekt verantwortlich ist. Bevor ein Team ein fremdes Objekt ändert, stimmt es sich mit dem Verantwortlichen ab. Dazu kommen die Regeln für Rechte aus dem [Berechtigungskonzept](../salesforce-berechtigungskonzept-permission-sets/).
 
-„Ein Einstiegspunkt pro Objekt“ heißt konkret: Auf dem Arbeitsauftrag, den Service-Stream, ERP-Schnittstelle und Ersatzteilprozess gemeinsam berühren, reagieren entweder Flows oder ein Apex-Trigger auf Änderungen, nicht beides. Salesforces [Architekturleitfaden für datensatzgesteuerte Automatisierung](https://architect.salesforce.com/docs/architect/decision-guides/guide/record-triggered) rät davon ab, beides zu mischen, und nennt einen einzigen Mega-Flow pro Objekt ein Anti-Pattern. Der Arbeitsauftrag bekommt also wenige Flows mit klarer Verantwortung und einem Reihenfolgewert im Flow Trigger Explorer, statt fünf ungeordneter Flows und zwei Trigger. Braucht ein Stream neue Logik, ergänzt er sie an der vereinbarten Stelle.
+„Ein Einstiegspunkt pro Objekt“ heißt konkret: Am Objekt Arbeitsauftrag, das Service-Stream, ERP-Schnittstelle und Ersatzteilprozess gemeinsam nutzen, reagieren entweder Flows oder ein Apex-Trigger auf Änderungen, nicht beides. Salesforces [Architekturleitfaden für datensatzgesteuerte Automatisierung](https://architect.salesforce.com/docs/architect/decision-guides/guide/record-triggered) rät davon ab, beides zu mischen, und bezeichnet einen einzigen Mega-Flow pro Objekt als Anti-Pattern. Der Arbeitsauftrag bekommt also wenige Flows mit klarer Verantwortung und einem Reihenfolgewert im Flow Trigger Explorer, statt fünf ungeordneter Flows und zwei Trigger. Braucht ein Stream neue Logik, ergänzt er sie an der vereinbarten Stelle.
 
 ## Was steht in einer Definition of Done?
 
@@ -62,10 +62,10 @@ Die Definition of Done ist kürzer als die Standards und wird bei jeder User Sto
 
 - Die Akzeptanzkriterien sind erfüllt und im Ticket nachgewiesen.
 - Der Pull Request ist von einer zweiten Person freigegeben, und die Pipeline ist grün.
-- Das Deployment validiert gegen die vorgesehene Zielumgebung mit dem vereinbarten Testlevel, wo relevant mit Negativ- und Massentests.
+- Das Deployment wird mit dem vereinbarten Testlevel gegen die vorgesehene Zielumgebung validiert, wo relevant mit Negativ- und Massentests.
 - Neue fachliche Rechte liegen im Permission Set oder in der Permission Set Group der jeweiligen Fachfunktion, nicht in einem Profil.
 - Post-Deployment-Schritte sind automatisiert oder im Ticket beschrieben.
-- Der Systemtest ist mit den relevanten Benutzern, Permission Set Groups und Freigaben bestanden, und das Ergebnis steht im Ticket.
+- Der Systemtest wurde mit den relevanten Benutzern, Permission Set Groups und Datensatzfreigaben bestanden; das Ergebnis steht im Ticket.
 - Felder und Flows haben eine aussagekräftige Beschreibung, Apex-Klassen einen Kopfkommentar, und betroffene Doku ist aktualisiert.
 - Offene Fehler und akzeptierte Risiken sind aufgeführt.
 
@@ -75,7 +75,7 @@ Ein gemeinsamer Kern für alle Teams ist wichtiger als ein perfekter. Mit zwei P
 
 Standards, die niemand prüft, werden nach zwei Sprints ignoriert. Ich teile die Prüfung in zwei Teile:
 
-1. **Automatisch in der Pipeline.** Bei jedem Pull Request laufen Validierungs-Deployment, Apex-Tests und statische Codeanalyse. Salesforce verlangt für Produktion mindestens 75 Prozent Apex-Codeabdeckung; die Pipeline kann für neuen Code eine höhere Schwelle setzen. Salesforce Code Analyzer v5 erkennt unterstützte verbotene Muster wie fest codierte IDs; programmeigene Namenskonventionen brauchen eventuell eigene Regeln. Auch Verantwortung lässt sich automatisieren: Eine CODEOWNERS-Datei oder Pfadregeln setzen den verantwortlichen Stream als Pflicht-Reviewer.
+1. **Automatisch in der Pipeline.** Bei jedem Pull Request laufen ein Validierungs-Deployment, Apex-Tests und eine statische Codeanalyse. Salesforce verlangt für ein Deployment in Produktion mindestens 75 Prozent Apex-Codeabdeckung; die Pipeline kann für neuen Code eine höhere Schwelle setzen. Salesforce Code Analyzer v5 erkennt unterstützte verbotene Muster wie fest codierte IDs; programmeigene Namenskonventionen brauchen eventuell eigene Regeln. Auch Verantwortung lässt sich automatisieren: Eine CODEOWNERS-Datei oder Pfadregeln setzen den verantwortlichen Stream als Pflicht-Reviewer.
 2. **Im Review.** Ob eine neue Automatisierung an der vereinbarten Stelle sitzt und ob ein Design zur Architektur passt, braucht einen Menschen. Wie das ohne Bremse geht, beschreibe ich in [warum Pull-Request-Reviews Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
 
 Für KI-generierten Code gelten dieselben Regeln. Eine Regeldatei im Repository übersetzt die Standards in Anweisungen für Coding-Agenten, siehe [KI-Regeldatei im Salesforce-Repository](../ki-regeldatei-salesforce-repository/).
