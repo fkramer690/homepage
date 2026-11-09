@@ -10,23 +10,23 @@ topic: release
 categories: [devops]
 tags: [Release-Management, DevOps, Salesforce CLI, Winter 27, Apex]
 takeaways:
-  - "Seit CLI 2.156.8 (28. Oktober 2026) zeigt org display auch mit Übergangslösung keine Access Tokens; Skripte, die es daraus lesen, schlagen fehl."
+  - "Seit CLI 2.156.8 (28. Oktober 2026) zeigt org display auch mit Übergangslösung keine Access Tokens; Skripte, die sie daraus lesen, schlagen fehl."
   - "Die Salesforce CLI braucht jetzt Node.js 22 oder neuer. npm-Installationen und eigene CI-Images brauchen ein Update; die Installer bringen Node.js 24 mit."
   - "Die Developer Console ist im Setup standardmäßig ausgeblendet und im Wartungsmodus. In der neuen Web Console ist Apex in Produktion nur lesbar."
   - "Die Apex-Heap-Limits steigen automatisch von 6 auf 10 MB für synchronen und von 12 auf 25 MB für asynchronen Code."
   - "SOAP login() braucht ab 1. Dezember 2026 eine neue Berechtigung, und inaktive Orgs verlieren SOAP login() ab 15. Dezember 2026."
 faq:
   - q: "Was ändert sich in der Salesforce CLI mit Winter '27?"
-    a: "Genau genommen sind das CLI-Releases, die wöchentlich erscheinen, nicht Teil des Plattform-Releases. Seit CLI 2.136.8 (27. Mai 2026) gibt org display keine Secrets wie das Access Token mehr aus, und CLI 2.156.8 hat die Übergangslösung am 28. Oktober 2026 entfernt. Secrets zeigen jetzt nur noch die Befehle sf org auth show. Außerdem braucht die CLI Node.js 22 oder neuer; die Installer bringen Node.js 24 mit."
+    a: "Genau genommen sind das CLI-Releases, die wöchentlich erscheinen, nicht Teil des Plattform-Releases. Seit CLI 2.136.8 (27. Mai 2026) gibt org display keine Secrets wie das Access Token mehr aus, und CLI 2.156.8 hat die Übergangslösung am 28. Oktober 2026 entfernt. Secrets zeigen jetzt nur noch die Befehle sf org auth show-*. Außerdem braucht die CLI Node.js 22 oder neuer; die Installer bringen Node.js 24 mit."
   - q: "Wird die Developer Console mit Winter '27 entfernt?"
     a: "Nein. Sie erscheint standardmäßig nicht mehr im Setup-Menü und ist im Wartungsmodus, ein Admin kann sie aber wieder einschalten. Salesforce sieht die neue Web Console als Nachfolger; in Produktions-Orgs ist Apex dort nur lesbar."
   - q: "Muss ich für die höheren Apex-Heap-Limits etwas tun?"
-    a: "Nein. Die neuen Limits von 10 MB für synchronen und 25 MB für asynchronen Apex-Code gelten automatisch. Code, der um die alten Limits herum gebaut wurde, lohnt trotzdem einen zweiten Blick."
+    a: "Nein. Die neuen Limits von 10 MB für synchronen und 25 MB für asynchronen Apex-Code gelten automatisch. Trotzdem lohnt es sich, Code zu prüfen, der auf die alten Limits zugeschnitten wurde."
   - q: "Welche API-Versionen betreffen die Abschaltungen aus Winter '27?"
     a: "SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt mit Summer '27, und SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 bekommen ab Summer '27 keine Updates mehr und fallen mit Summer '28 aus."
 ---
 
-Winter '27 ist seit Oktober 2026 vollständig ausgerollt, und zusammen mit den wöchentlichen CLI-Releases rundherum bringt es Änderungen, die eine CI/CD-Pipeline brechen können. Am dringendsten: Seit 28. Oktober gibt die Salesforce CLI mit org display auch mit der alten Übergangslösung keine Access Tokens mehr aus, und die CLI braucht jetzt Node.js 22. Dazu ist die Developer Console im Setup-Menü ausgeblendet, die Apex-Heap-Limits steigen und die ersten API-Abschaltungen sind wenige Wochen entfernt. Die CLI-Änderungen brechen CI sofort, die API-Termine später die Integrationen. Diese Übersicht basiert auf dem [Entwickler-Leitfaden von Salesforce zu Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) und ist nach Dringlichkeit sortiert.
+Winter '27 ist seit Oktober 2026 vollständig ausgerollt, und zusammen mit den wöchentlichen CLI-Releases rundherum bringt es Änderungen, die eine CI/CD-Pipeline brechen können. Am dringendsten: Seit 28. Oktober gibt die Salesforce CLI mit org display auch mit der alten Übergangslösung keine Access Tokens mehr aus, und die CLI braucht jetzt Node.js 22. Dazu ist die Developer Console im Setup-Menü ausgeblendet, die Apex-Heap-Limits steigen und die ersten API-Abschaltungen sind wenige Wochen entfernt. Die CLI-Änderungen können CI schon jetzt brechen, die API-Termine später die Integrationen. Diese Übersicht basiert auf dem [Entwickler-Leitfaden von Salesforce zu Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) und ist nach Dringlichkeit sortiert.
 
 ## Was bricht in einer Salesforce-Pipeline zuerst?
 
@@ -46,13 +46,13 @@ Was zu tun ist:
 
 ![Pipeline-Authentifizierung ab 28. Oktober 2026: Pipelines, die sf org display aufrufen, das accessToken lesen und weiterreichen, brechen, weil der Befehl keine Secrets mehr zeigt und die Übergangslösung SF_TEMP_SHOW_SECRETS am 28. Oktober 2026 endet. Es funktioniert, wenn sich jeder Pipeline-Job selbst authentifiziert, mit dem JWT Bearer Flow und einem Zertifikat im Secret Store des Kunden, ohne Tokens zwischen Schritten weiterzureichen, und die geänderten Jobs zuerst in einem Feature-Branch getestet werden. Außerdem prüfen, dass die Salesforce CLI mit Node.js 22 oder neuer läuft.](../../../assets/blog/winter-27-org-display-de.png)
 
-**Die CLI braucht Node.js 22 oder neuer.** Das zählt dort, wo die CLI per npm installiert wird oder in einem selbst gebauten Image läuft: Hat ein solcher Runner noch eine ältere Node-Version, schlägt die Installation oder das Update der CLI fehl. Die Installer für die Betriebssysteme bringen ihre eigene Laufzeit mit, derzeit Node.js 24. Prüfen Sie die Basis-Images Ihrer Pipeline, die Setup-Schritte gehosteter Runner und die Rechner Ihrer Entwickler. Prüfen Sie auch Tools, die auf der Salesforce CLI aufbauen, wie [sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/).
+**Die CLI braucht Node.js 22 oder neuer.** Das ist relevant, wo die CLI per npm installiert wird oder in einem selbst gebauten Image läuft: Hat ein solcher Runner noch eine ältere Node-Version, schlägt die Installation oder das Update der CLI fehl. Die Installer für die Betriebssysteme bringen ihre eigene Laufzeit mit, derzeit Node.js 24. Prüfen Sie die Basis-Images Ihrer Pipeline, die Setup-Schritte gehosteter Runner und die Rechner Ihrer Entwickler. Prüfen Sie auch Tools, die auf der Salesforce CLI aufbauen, wie [sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/).
 
 ## Die Developer Console ist im Setup ausgeblendet
 
 Mit Winter '27 erscheint die Developer Console standardmäßig nicht mehr im Setup-Menü. Laut [Release Note](https://help.salesforce.com/s/articleView?id=release-notes.rn_developer_console.htm&language=en_US&type=5) ist sie im Wartungsmodus, bekommt nur noch Fixes für schwere Sicherheitslücken, und ein Admin kann sie wieder einschalten. Ihr Nachfolger ist die Web Console, die allgemein verfügbar ist. In Produktions-Orgs ist Apex in der Web Console nur lesbar.
 
-Für gut geführte Programme ändert sich damit wenig. Code direkt in der Produktion zu ändern oder Ad-hoc-Änderungen dort auszuführen, war schon immer ein Risiko: kein Review, keine Historie, kein Weg zurück. Die neue Voreinstellung schiebt Teams dorthin, wie es ohnehin laufen sollte: jede Code- und Metadatenänderung im Repository, geprüft in einem Pull Request und deployt über die Pipeline. Warum das wichtig ist, erkläre ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
+Für gut geführte Programme ändert sich damit wenig. Code direkt in der Produktion zu ändern oder Ad-hoc-Änderungen dort auszuführen, war schon immer ein Risiko: kein Review, keine Historie, kein Weg zurück. Die neue Voreinstellung stützt den Weg, der ohnehin richtig ist: jede Code- und Metadatenänderung im Repository, geprüft in einem Pull Request und deployt über die Pipeline. Warum das wichtig ist, erkläre ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
 
 Manche Teams nutzen die Developer Console noch für schnelle Abfragen, Log-Analysen oder anonymes Apex in der Produktion. Für diese Gewohnheiten braucht es jetzt einen Ersatz. Legen Sie fest, welche Aufgaben in der Produktion erlaubt sind, wer sie ausführen darf und wie sie dokumentiert werden.
 
@@ -86,7 +86,7 @@ Die Berechtigung deckt nur den 1. Dezember ab. Selten laufende Jobs, etwa Jahres
 
 Drei kleinere Punkte mit Auswirkung auf die Governance:
 
-- **Die Agentforce-Plattform ist standardmäßig eingeschaltet**, in Orgs, deren Lizenzen schon Agentforce-Zugriff enthalten. Legen Sie fest, wer Agenten bauen und aktivieren darf, und sorgen Sie dafür, dass Agenten-Konfiguration durch denselben Release-Prozess läuft wie andere Metadaten.
+- **Die Agentforce-Plattform ist in Orgs standardmäßig eingeschaltet**, deren Lizenzen schon Agentforce-Zugriff enthalten. Legen Sie fest, wer Agenten bauen und aktivieren darf, und sorgen Sie dafür, dass Agenten-Konfiguration durch denselben Release-Prozess läuft wie andere Metadaten.
 - **Umleitung von Gemini-Modellen.** Ab der Woche des 20. Oktober 2026 hat Salesforce Anfragen an Gemini 2.5 Pro, Flash und Flash-Lite auf neuere Gemini-Modelle umgeleitet. Verlassen sich Prompt Templates oder Agenten auf ein bestimmtes Modell, testen Sie ihre Ergebnisse erneut.
 - **Multi-Agent-Orchestrierung ist allgemein verfügbar** (Rollout seit August, die Agentforce-Release-Notes werden monatlich ergänzt), und Agent Script hat Funktionen und else if-Ketten bekommen. Beides macht Agentenlogik mächtiger und ist ein Grund mehr, sie wie Code zu reviewen.
 
