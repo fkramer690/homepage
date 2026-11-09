@@ -50,6 +50,8 @@ faq:
     a: "Everyone the change affects or who carries it: business teams, developer teams, partners and management. Without backing from management, decisions and attention are missing, and new rules become a recommendation that not everyone follows."
   - q: "What changes with smaller, more frequent releases?"
     a: "Business teams get small changes more often instead of rare large packages. That lowers the risk of each release but needs a fixed route on which the people affected learn in advance what is coming."
+  - q: "Do you replace our implementation partner?"
+    a: "No. Your partners keep building. We work on the client side, alongside them, and I steer them by common rules. If you want to replace a partner, I help you do it without losing knowledge and without delaying the program."
 blogTags: [change management, Partner governance, Governance, DevOps training, Release management]
 ---
 

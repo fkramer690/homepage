@@ -43,6 +43,12 @@ faq:
     a: "Das hängt von der Größe des Unternehmens und der Zahl der Systeme ab. Bei wenigen stabilen Schnittstellen kann eine direkte Anbindung reichen. Bei vielen Systemen, mehreren Teams und häufigen Änderungen macht eine Middleware Schnittstellen leichter änderbar, überwachbar und wiederverwendbar."
   - q: "Wie wird Telefonie an die Service Cloud angebunden?"
     a: "Über eine CTI-Integration, die Anrufe in die Service Cloud bringt, sodass Agenten beim Klingeln den Kunden und die offenen Fälle sehen. Ich habe mit den CTI-Anbietern Genesys und Mirage gearbeitet, und Microsoft Teams wird als Telefonieplattform wichtiger. Telefon und E-Mail bleiben in den meisten Serviceorganisationen die Kernkanäle."
+  - q: "Ersetzen Sie unseren Umsetzungspartner?"
+    a: "Nein. Ihre Partner bauen weiter, ich steuere sie auf Kundenseite nach gemeinsamen Regeln. Wenn Sie einen Partner ablösen wollen, helfe ich dabei, ohne Wissensverlust und ohne Verzögerung im Programm."
+  - q: "Wie vermeiden Sie, dass Sie zum Engpass werden?"
+    a: "Ich arbeite transparent. Entscheidungen, Standards und Review-Kriterien sind so dokumentiert, dass Ihr Team und Ihre Partner sie sehen, damit niemand auf mich warten muss und die Arbeit nicht an mir hängt."
+  - q: "Arbeiten Sie vor Ort oder remote?"
+    a: "Beides. Ich arbeite vor Ort mit Ihren Teams und remote, je nachdem, was die Phase des Programms braucht."
 blogTags: [integration, oauth, security, sicherheit, service cloud]
 readMore: [manufacturing-cloud-erp-integration, revenue-cloud-sap-system-boundaries, commerce-sap-data-flows, customer-prices-sap-or-salesforce-pricing, field-service-spare-parts, agentforce-sap-order-status, legacy-erp-without-api-agents, salesforce-password-integrations-2027]
 masterclass: manufacturing-cloud

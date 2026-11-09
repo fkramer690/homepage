@@ -43,6 +43,12 @@ faq:
     a: "It depends on the size of the company and the number of systems. With a few stable interfaces, direct integration can be enough. With many systems, several teams and frequent changes, a middleware makes interfaces easier to change, monitor and reuse."
   - q: "How is telephony connected to Service Cloud?"
     a: "Through a CTI integration that brings calls into Service Cloud, so agents see the customer and the open cases when the phone rings. I have worked with the CTI providers Genesys and Mirage, and Microsoft Teams is becoming more relevant as a telephony platform. Phone and email remain the core channels in most service organisations."
+  - q: "Do you replace our implementation partner?"
+    a: "No. Your partners keep building, and I steer them on the client side by common rules. If you want to replace a partner, I help you do it without losing knowledge and without delaying the program."
+  - q: "How do you avoid becoming a bottleneck?"
+    a: "I keep my work transparent. Decisions, standards and review criteria are documented where your team and your partners can see them, so nobody has to wait for me and the work does not depend on me."
+  - q: "Do you work on site or remotely?"
+    a: "Both. I work on site with your teams and remotely, depending on what the phase of the program needs."
 blogTags: [integration, oauth, security, sicherheit, service cloud]
 readMore: [manufacturing-cloud-erp-integration, revenue-cloud-sap-system-boundaries, commerce-sap-data-flows, customer-prices-sap-or-salesforce-pricing, field-service-spare-parts, agentforce-sap-order-status, legacy-erp-without-api-agents, salesforce-password-integrations-2027]
 masterclass: manufacturing-cloud

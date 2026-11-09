@@ -1,13 +1,13 @@
 ---
 title: "Salesforce programme management and nearshore teams"
 headline: "Nearshore Salesforce teams that deliver steadily"
-description: "Planning and steering of Salesforce programmes, including nearshore development teams in Eastern Europe and India, with team setups that stay stable."
+description: "Planning and steering of Salesforce programmes, with nearshore teams in Eastern Europe and offshore teams in India, in team setups that stay stable."
 lang: en
 slug: program-management-nearshore
 translationKey: service-nearshore
 contactBrief: nearshore
 order: 5
-lead: "Nearshore teams can deliver a lot for a reasonable price, if the setup is right. Most problems have little to do with skills and a lot to do with team size, turnover and culture. I plan and steer Salesforce programmes on the client side, including nearshore teams in Eastern Europe and India."
+lead: "Nearshore teams can deliver a lot for a reasonable price, if the setup is right. Most problems have little to do with skills and a lot to do with team size, turnover and culture. I plan and steer Salesforce programmes on the client side, including nearshore teams in Eastern Europe and offshore teams in India."
 situations:
   - "A Salesforce programme needs more delivery capacity than the internal team and the current partners can provide."
   - "A nearshore team is in place, but velocity stays low and the client spends a lot of time explaining and correcting."
@@ -44,6 +44,12 @@ faq:
     a: "A partner who shares values and trust and wants to deliver, and a client who provides time, access and decisions. In my experience, missing skills are rarely why a team struggles."
   - q: "What slows nearshore teams down?"
     a: "Above all, frequent changes in staffing, whether through rotation at the partner or resignations, because each time knowledge of the org is lost. A team of seniors only slows things down too: it debates designs instead of building."
+  - q: "Do you replace our implementation partner?"
+    a: "No. Your partners keep building, and I steer them on the client side by common rules. If you want to replace a partner, I help you do it without losing knowledge and without delaying the program."
+  - q: "How do you avoid becoming a bottleneck?"
+    a: "I keep my work transparent. Decisions, standards and review criteria are documented where your team and your partners can see them, so nobody has to wait for me and the work does not depend on me."
+  - q: "Do you work on site or remotely?"
+    a: "Both. I work on site with your teams and remotely, depending on what the phase of the program needs."
 blogTags: [nearshore, pull request review, code quality, codequalität, devops, project management]
 readMore: [nearshore-team-size, development-standards-definition-of-done, pull-request-reviews-enterprise, salesforce-center-of-excellence, salesforce-uat-business-testing, nearshore-teams-with-ai-agents, smaller-teams-ai-native-delivery]
 masterclass: devops
@@ -72,7 +78,7 @@ with: What I set up instead
 
 ```kennzahlen
 8 | developers per team, at most
-2 | regions: Eastern Europe and India
+2 | regions: Eastern Europe (nearshore) and India (offshore)
 1 | pipeline with the same standards for all teams
 source: my nearshore teams in Salesforce programmes
 ```

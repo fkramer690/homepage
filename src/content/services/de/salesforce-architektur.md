@@ -44,6 +44,12 @@ faq:
     a: "Sales Cloud und Service Cloud gehören zu fast jedem Enterprise-Projekt. Field Service lohnt sich am meisten bei vielen kurzen Einsätzen, bei denen Routen- und Terminoptimierung die Kennzahlen verbessert, weniger bei wenigen langen Projekten. Experience Cloud passt zu kundennahen Prozessen und Self-Service. Manufacturing Cloud ergibt nur bei klarem Fit Sinn, der im ROI-Case gerechnet ist."
   - q: "Was ist ein Entscheidungslog und warum ist es wichtig?"
     a: "Ein Entscheidungslog hält jede Architekturentscheidung mit ihren Optionen, den Gründen für die Wahl und ihren Folgen fest. Fragt zwei Jahre später jemand, warum ein Prozess so gebaut wurde, steht die Antwort dort, auch wenn die Beteiligten längst weitergezogen sind."
+  - q: "Ersetzen Sie unseren Umsetzungspartner?"
+    a: "Nein. Ihre Partner bauen weiter, ich steuere sie auf Kundenseite nach gemeinsamen Regeln. Wenn Sie einen Partner ablösen wollen, helfe ich dabei, ohne Wissensverlust und ohne Verzögerung im Programm."
+  - q: "Wie vermeiden Sie, dass Sie zum Engpass werden?"
+    a: "Ich arbeite transparent. Entscheidungen, Standards und Review-Kriterien sind so dokumentiert, dass Ihr Team und Ihre Partner sie sehen, damit niemand auf mich warten muss und die Arbeit nicht an mir hängt."
+  - q: "Arbeiten Sie vor Ort oder remote?"
+    a: "Beides. Ich arbeite vor Ort mit Ihren Teams und remote, je nachdem, was die Phase des Programms braucht."
 blogTags: [architecture, architektur, data 360, data governance, agentforce, field service]
 readMore: [salesforce-well-architected-2026, revenue-cloud-vs-manufacturing-cloud-commerce, manufacturing-cloud-worth-it, salesforce-editions-core-advanced-max, architecture-decision-log, permission-concept-permission-sets, duplicates-master-data-cleanup]
 masterclass: manufacturing-cloud

@@ -50,7 +50,7 @@ export const freelanceArchitect = {
         { icon: 'license', t: 'Lizenzen, die keiner braucht', d: 'Standardmäßig werden volle Lizenzen angeboten, obwohl viele Nutzer sie nicht brauchen. Das kann schnell sechsstellige Beträge pro Jahr ausmachen.', link: 'leistungen/make-or-buy-lizenzen/', linkText: 'Make-or-Buy und Lizenzen' },
         { icon: 'integration', t: 'Salesforce und SAP', d: 'Salesforce ist nie das einzige System. Ich lege fest, welches System für Kunden, Preise und Aufträge führt und wie die Schnittstellen aussehen.', link: 'leistungen/salesforce-schnittstellen/', linkText: 'Schnittstellen' },
         { icon: 'pipeline', t: 'Releases ohne Überblick', d: 'Ich baue Pipelines auf GitLab, Azure DevOps, GitHub oder Bitbucket auf, im Repository des Kunden, damit ein Partnerwechsel möglich bleibt.', link: 'leistungen/devops-und-release-management/', linkText: 'DevOps und Releases' },
-        { icon: 'team', t: 'Nearshore-Team steuern', d: 'Teams bis zu acht Entwickler in Osteuropa oder Indien, mit klaren Standards und Reviews, damit Qualität nicht von einzelnen Personen abhängt.', link: 'leistungen/projektsteuerung-nearshore/', linkText: 'Projektsteuerung und Nearshore' },
+        { icon: 'team', t: 'Nearshore-Team steuern', d: 'Teams bis zu acht Entwickler, nearshore in Osteuropa oder offshore in Indien, mit klaren Standards und Reviews, damit Qualität nicht von einzelnen Personen abhängt.', link: 'leistungen/projektsteuerung-nearshore/', linkText: 'Projektsteuerung und Nearshore' },
       ] as Card[],
     },
     compare: {
@@ -152,7 +152,7 @@ export const freelanceArchitect = {
         { icon: 'license', t: 'Licences nobody needs', d: 'Full licences are offered by default although many users do not need them. That can easily add up to six figures per year.', link: 'services/make-or-buy-licences/', linkText: 'Make or buy and licences' },
         { icon: 'integration', t: 'Salesforce and SAP', d: 'Salesforce is never the only system. I define which system leads for customers, prices and orders and what the interfaces look like.', link: 'services/salesforce-integration/', linkText: 'Integration' },
         { icon: 'pipeline', t: 'Releases nobody oversees', d: 'I build pipelines on GitLab, Azure DevOps, GitHub or Bitbucket, in the client’s repository, so a change of partner stays possible.', link: 'services/devops-release-management/', linkText: 'DevOps and releases' },
-        { icon: 'team', t: 'Steering a nearshore team', d: 'Teams of up to eight developers in Eastern Europe or India, with clear standards and reviews, so quality does not depend on single people.', link: 'services/program-management-nearshore/', linkText: 'Programme management and nearshore' },
+        { icon: 'team', t: 'Steering a nearshore team', d: 'Teams of up to eight developers, nearshore in Eastern Europe or offshore in India, with clear standards and reviews, so quality does not depend on single people.', link: 'services/program-management-nearshore/', linkText: 'Programme management and nearshore' },
       ] as Card[],
     },
     compare: {

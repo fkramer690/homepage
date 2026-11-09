@@ -50,6 +50,8 @@ faq:
     a: "Alle, die die Veränderung betrifft oder die sie tragen: Fachbereiche, Entwicklerteams, Partner und das Management. Ohne Rückhalt im Management fehlen Entscheidungen und Aufmerksamkeit, und neue Regeln werden zur Empfehlung, an die sich nicht jeder hält."
   - q: "Was ändert sich durch kleinere, häufigere Releases?"
     a: "Fachbereiche bekommen öfter kleine Änderungen statt selten große Pakete. Das senkt das Risiko einzelner Releases, verlangt aber einen festen Weg, auf dem Betroffene vorher erfahren, was kommt."
+  - q: "Ersetzen Sie unseren Umsetzungspartner?"
+    a: "Nein. Ihre Partner bauen weiter. Wir arbeiten auf Kundenseite neben ihnen, und ich steuere sie nach gemeinsamen Regeln. Wenn Sie einen Partner ablösen wollen, helfe ich dabei, ohne Wissensverlust und ohne Verzögerung im Programm."
 blogTags: [Change Management, Partnersteuerung, Governance, DevOps-Training, Release-Management]
 ---
 

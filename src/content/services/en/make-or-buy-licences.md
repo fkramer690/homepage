@@ -46,6 +46,10 @@ faq:
     a: "Often not. Full licences tend to be offered by default, even for users who only read data, approve records or work in a narrow process. For large user groups the difference can easily reach six figures per year, which is why I base the forecast on what users actually do."
   - q: "Do you also assess tools outside Salesforce?"
     a: "Yes, whenever the decision affects the Salesforce architecture, its data or its running costs, for example document generation, e-signatures or the question whether a process belongs in Salesforce at all. I have no ties to any vendor, so the recommendation can also be a tool outside the Salesforce ecosystem."
+  - q: "Do you replace our implementation partner?"
+    a: "No. Your partners keep building, and I steer them on the client side by common rules. If you want to replace a partner, I help you do it without losing knowledge and without delaying the program."
+  - q: "How do you avoid becoming a bottleneck?"
+    a: "I keep my work transparent. Decisions, standards and review criteria are documented where your team and your partners can see them, so nobody has to wait for me and the work does not depend on me."
 blogTags: [business case, agentforce, open source, vendor lock-in, licences]
 readMore: [salesforce-licence-types, salesforce-editions-core-advanced-max, manufacturing-cloud-worth-it, manufacturing-cloud-add-ons-costs, field-service-worth-it, revenue-cloud-worth-it-manufacturers, commerce-extensions-custom-code, flex-credits-agentforce-costs]
 masterclass: manufacturing-cloud

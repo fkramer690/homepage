@@ -49,6 +49,10 @@ faq:
     a: "If one partner sets the rules, it decides how all others build, including its competitors. When the client owns standards, repository and approvals, partners stay comparable and replaceable."
   - q: "What is an object ownership matrix?"
     a: "A table with one row per Salesforce object that names one owning stream. All other teams agree changes to that object with the owner first."
+  - q: "Do you replace our implementation partner?"
+    a: "No. Your partners keep building, and I steer them on the client side by common rules. If you want to replace a partner, I help you do it without losing knowledge and without delaying the program."
+  - q: "How do you avoid becoming a bottleneck?"
+    a: "I keep my work transparent. Decisions, standards and review criteria are documented where your team and your partners can see them, so nobody has to wait for me and the work does not depend on me."
 blogTags: [partner governance, partnersteuerung, pull request review, vendor lock-in, code quality, codequalität]
 readMore: [choose-salesforce-implementation-partner, object-ownership-matrix, development-standards-definition-of-done, sandbox-strategy-multiple-partners, salesforce-center-of-excellence, fixed-price-ai-salesforce-partners, ai-org-assessment-technical-debt, salesforce-freelancer-or-consultancy]
 masterclass: devops

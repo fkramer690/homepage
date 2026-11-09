@@ -48,6 +48,10 @@ faq:
     a: "Before and after numbers are often hard to get, because many companies cannot measure their current process and because releases change shape: they become smaller and more frequent. I focus on metrics the pipeline itself provides, such as deployment frequency, failed deployments and lead time for changes."
   - q: "How long does it take to introduce a Git-based release process?"
     a: "It depends on the number of teams and the state of the org. The first team usually works on the new process after a few weeks; further teams follow step by step, so nobody has to switch overnight."
+  - q: "Do you replace our implementation partner?"
+    a: "No. Your partners keep building, and I steer them on the client side by common rules. If you want to replace a partner, I help you do it without losing knowledge and without delaying the program."
+  - q: "How do you avoid becoming a bottleneck?"
+    a: "I keep my work transparent. Decisions, standards and review criteria are documented where your team and your partners can see them, so nobody has to wait for me and the work does not depend on me."
 blogTags: [devops, release management, release-management, sfdx-hardis, ci/cd, pull request review]
 readMore: [devops-salesforce-enterprise, sfdx-hardis-introduction, client-owned-devops-tools, pull-request-reviews-enterprise, sandbox-strategy-multiple-partners, salesforce-release-schedule, dora-metrics-salesforce-releases, quality-gates-ai-code-pipeline]
 masterclass: devops
