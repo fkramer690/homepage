@@ -1,6 +1,6 @@
 ---
 title: "Partner Visit Management: Händlerbesuche mit KPIs"
-description: "Wie Partner Visit Management in der Manufacturing Cloud Händlerbesuche in Aufgaben und Kennzahlen übersetzt und was der Außendienst mobil erfasst."
+description: "Wie Partner Visit Management in der Manufacturing Cloud Händlerbesuche in Aufgaben und Kennzahlen übersetzt und was Sie vorab mit Salesforce klären sollten."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de
@@ -10,8 +10,8 @@ topic: data
 categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Partner Visit Management, Händler, Distributoren, Kennzahlen, Mobil]
 takeaways:
-  - "Ein Besuch kann Aufgaben mit Ort, Priorität und Kennzahlen, die der Außendienst am Handy erfasst."
-  - "Aufgaben tragen Kontext wie ein Sales Agreement, einen Auftrag oder eine Anlage, damit der Mitarbeiter beim Händler den richtigen Datensatz sieht."
+  - "Ein Besuch kann Aufgaben mit Ort, Priorität und Kennzahlen enthalten, die der Außendienst am Handy erfasst."
+  - "Aufgaben tragen Kontext wie ein Sales Agreement, einen Auftrag oder ein Asset, damit der Mitarbeiter beim Händler den richtigen Datensatz sieht."
   - "Der Schalter enablePartnerVisitManagement existiert seit API 56.0. Lizenzumfang je Edition und Offline-Betrieb müssen Sie bestätigen lassen."
   - "Die Funktion ist ein starker Kandidat, wenn viele Händler mit derselben Checkliste besucht werden."
 faq:
@@ -22,11 +22,11 @@ faq:
   - q: "Funktioniert Partner Visit Management offline?"
     a: "Die Quellen zu Partner Visit Management, die ich geprüft habe, bestätigen es nicht. Lassen Sie sich schriftlich bestätigen, welche Schritte offline laufen, vom Start des Besuchs bis zu Kennzahlen und Datei-Upload, und testen Sie Flugmodus und Wiederverbindung vor dem Rollout."
   - q: "Brauche ich Partner Visit Management für Händlerbesuche?"
-    a: "Nicht bei einer Handvoll Händler und Besuchen ohne feste Kennzahlen. Ein eigenes Besuchsobjekt mit wenigen Feldern oder Standard-Termine in Salesforce können reichen, je nach Lizenzen und benötigter Logik. Die Funktion ist ein starker Kandidat bei vielen Händlern und einer wiederkehrenden Checkliste."
+    a: "Nicht bei einer Handvoll Händler und Besuchen ohne feste Kennzahlen. Ein eigenes Besuchsobjekt mit wenigen Feldern oder Salesforce-Ereignisse können reichen, je nach Lizenzen und benötigter Logik. Die Funktion ist ein starker Kandidat bei vielen Händlern und einer wiederkehrenden Checkliste."
 draft: false
 ---
 
-Partner Visit Management kann aus Händlerbesuchen vergleichbare Daten machen, wenn Sie die Kennzahlen vor dem ersten Besuch festlegen. Die Funktion der Manufacturing Cloud plant Besuche mit Aufgaben, Aufgaben können Kennzahlen mit Sollwert tragen, und der Außendienst erfasst die Istwerte am Handy. Mit passenden Berichten vergleicht der Innendienst Soll und Ist über die Händler, statt Besuchsberichte zu lesen. Ablauf und Permission Sets dokumentiert Salesforce gut. Welche Editionen die Lizenzen enthalten und ob die App offline läuft, gehört ins Angebot. Bei wenigen Händlern ohne feste Checkliste reicht ein einfaches Besuchsberichtsobjekt.
+Partner Visit Management kann aus Händlerbesuchen vergleichbare Daten machen, wenn Sie die Kennzahlen vor dem ersten Besuch festlegen. Die Funktion der Manufacturing Cloud plant Besuche mit Aufgaben, Aufgaben können Kennzahlen mit Sollwerten enthalten. Der Außendienst erfasst die Istwerte am Handy. Mit passenden Berichten vergleicht der Innendienst Soll und Ist über die Händler, statt Besuchsberichte zu lesen. Ablauf und Permission Sets dokumentiert Salesforce gut. Welche Editionen die Lizenzen enthalten und ob die App offline läuft, gehört ins Angebot. Bei wenigen Händlern ohne feste Checkliste reicht ein einfaches Besuchsberichtsobjekt.
 
 ## Was leistet Partner Visit Management?
 
@@ -59,15 +59,15 @@ Besuch
 
 Der Außendienst öffnet die Besuchs-App über den App Launcher (die Salesforce-Doku nennt sie derzeit mal Partner Visits, mal Generic Visits, prüfen Sie den Namen in Ihrer Org), sieht die geplanten Besuche, tippt auf Get Directions und arbeitet die Aufgaben ab. Zu jeder Aufgabe zeigt die App Kontext, Kennzahlen und Sollwerte. Der Mitarbeiter trägt Werte ein, ergänzt Notizen und lädt Screenshots hoch. Sind alle Kennzahlen einer Aufgabe erfasst, ist die Aufgabe erledigt, und sind alle Aufgaben erledigt, beendet der Mitarbeiter den Besuch. Sind nur optionale Aufgaben offen, kann er den Besuch mit Begründung abschließen. Lässt sich eine Pflichtaufgabe nicht erledigen, bricht er den Besuch ab und muss einen Grund angeben. „Abgeschlossen“ heißt also nicht immer, dass jede Aufgabe erledigt ist.
 
-Die erste Unit zeigt außerdem Aufgaben mit verknüpften Kundendatensätzen, etwa eine Garantiebedingung an einer Aufgabe zur Garantieverlängerung oder eine Anlage an einer Schadensprüfung. Das hilft bei Händlern, die [Garantieansprüche](../garantieansprueche-haendler-salesforce/) abwickeln: Der Mitarbeiter sieht in der Werkstatt die offenen Garantiebedingungen.
+Die erste Unit zeigt außerdem Aufgaben mit verknüpften Kundendatensätzen, etwa eine Garantiebedingung an einer Aufgabe zur Garantieverlängerung oder ein Asset an einer Schadensprüfung. Das hilft bei Händlern, die [Garantieansprüche](../garantieansprueche-haendler-salesforce/) abwickeln: Der Mitarbeiter sieht in der Werkstatt die offenen Garantiebedingungen.
 
 ## Einschalten ist einfach, Lizenzumfang und Offline sind offen
 
-Die Funktion hat eine eigene Einstellung. In den [Metadaten IndustriesManufacturingSettings](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) heißt sie `enablePartnerVisitManagement`, seit API-Version 56.0, neben `enablePartnerLeadManagement` und `enablePartnerPerformanceManagement`. Alle stehen standardmäßig auf aus. „Wir haben Manufacturing Cloud“ heißt also noch nicht, dass Besuche laufen.
+Die Funktion hat eine eigene Einstellung. In den [Metadaten IndustriesManufacturingSettings](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) heißt sie `enablePartnerVisitManagement`, seit API-Version 56.0, neben `enablePartnerLeadManagement` und `enablePartnerPerformanceManagement`. Alle sind standardmäßig deaktiviert. „Wir haben Manufacturing Cloud“ heißt also noch nicht, dass Besuche laufen.
 
 Zwei Punkte sollten Sie klären, bevor Sie damit planen:
 
-- **Lizenz.** Die Salesforce-Hilfe nennt das Permission Set und die Permission Set License für Partner Visit Management für interne Nutzer und Partner Visit Management for Experience Cloud für externe Nutzer, im Beispiel mit einer Partner-Community-Lizenz. Die [Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) führt „Visit Management“ im Editionsvergleich. Welche Ihrer Editionen diese Permission Set Licenses in welcher Menge enthalten und ob der externe Ablauf dem internen mobilen entspricht: Lassen Sie es schriftlich bestätigen.
+- **Lizenz.** Die Salesforce-Hilfe nennt das Permission Set und die Permission Set License für Partner Visit Management für interne Nutzer und Partner Visit Management for Experience Cloud für externe Nutzer, im Beispiel mit einer Partner-Community-Lizenz. Die [Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) führt „Visit Management“ im Editionsvergleich. Lassen Sie sich schriftlich bestätigen, welche Ihrer Editionen diese Permission Set Licenses in welcher Menge enthalten und ob der externe Ablauf dem internen mobilen Ablauf entspricht.
 - **Offline.** Die Quellen zu Partner Visit Management, die ich geprüft habe, bestätigen keinen Offline-Betrieb. Die allgemeine Zeile „Full Offline Mobile Functionality“ auf der Preisseite sagt nichts über die Besuchskomponenten. In Händlerwerkstätten und Lagern ist der Empfang oft schlecht. Fragen Sie Salesforce, ob Start und Ende des Besuchs, Aufgaben, Kennzahlen und Datei-Upload offline laufen, und testen Sie vor dem Rollout Flugmodus und Wiederverbindung mit widersprüchlichen Änderungen.
 
 Wie ich beide Punkte in der Lizenzplanung behandle, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
@@ -90,14 +90,14 @@ Lassen sich gemeinsame Kennzahlen nicht vereinbaren, sammelt die Funktion Daten,
 
 ## Wann reicht ein einfacher Besuchsbericht?
 
-Bei seltenen Besuchen, ohne feste Checkliste und ohne Bedarf an Aufgaben, Sollwerten oder Vorlagen. Dann kann ein eigenes Objekt mit Datum, Händler, Mitarbeiter, drei Auswahllisten und einem Notizfeld oder Standard-Termine in Salesforce mit einem kurzen Seitenlayout reichen. Entscheidend ist, wie komplex und wiederholbar der Besuchsablauf ist, nicht allein die Zahl der Händler.
+Bei seltenen Besuchen, ohne feste Checkliste und ohne Bedarf an Aufgaben, Sollwerten oder Vorlagen. Dann kann ein eigenes Objekt mit Datum, Händler, Mitarbeiter, drei Auswahllisten und einem Notizfeld oder Salesforce-Ereignisse mit einem kurzen Seitenlayout reichen. Entscheidend ist, wie komplex und wiederholbar der Besuchsablauf ist, nicht allein die Zahl der Händler.
 
 ```pro-contra
 pro: Partner Visit Management ist ein starker Kandidat bei
 - Vielen Händlern in festem Rhythmus, sodass Vorlagen Planungszeit sparen
 - Denselben Kennzahlen für jeden Händler, sodass Vergleiche Sinn ergeben
-- Kontext wie Sales Agreements, Anlagen oder Garantiebedingungen, den der Mitarbeiter vor Ort braucht
-- Gesteuerter Händlerleistung, etwa als Eingang für [Händlerboni](../rebate-management-haendlerboni/) oder für das [Manufacturing-Cloud-Kundenportal](../manufacturing-cloud-kundenportal/)
+- Kontext wie Sales Agreements, Assets oder Garantiebedingungen, den der Mitarbeiter vor Ort braucht
+- Gezielter Steuerung der Händlerleistung, etwa als Grundlage für [Händlerboni](../rebate-management-haendlerboni/) oder für das [Manufacturing-Cloud-Kundenportal](../manufacturing-cloud-kundenportal/)
 contra: Was für den einfachen Bericht spricht
 - Für einen engen Ablauf ist er schnell gebaut und läuft eventuell mit den Lizenzen, die Ihr Vertrieb schon hat (prüfen)
 - Er lässt sich leicht auswerten

@@ -10,7 +10,7 @@ topic: security
 categories: [ai]
 tags: [Agentforce, Prompt Injection, Sicherheit, Händlerportal, Experience Cloud, Maschinenbau]
 takeaways:
-  - "Felder, die Externe beschreiben, von der Fehlerbeschreibung im Garantieantrag bis Email-to-Case, werden zu Anweisungen, sobald ein Agent sie liest."
+  - "Felder, die Externe befüllen können, von der Fehlerbeschreibung im Garantieantrag bis Email-to-Case, werden zu Anweisungen, sobald ein Agent sie liest."
   - "ForcedLeak leitete Lead-Daten über eine abgelaufene Allowlist-Domain ab, SalesBleed umging 2026 die Trusted-URL-Filterung. Beides ist behoben."
   - "Prompt-Filter arbeiten mit Wahrscheinlichkeiten. Planen Sie so, als würden sie etwas übersehen, und begrenzen Sie den Schaden einer Injection."
   - "Brechen Sie die Lethal Trifecta: enge Leserechte im Ausführungskontext des Agenten, kein Weg nach draußen und Entscheidungen in deterministischer Logik."
@@ -26,18 +26,18 @@ faq:
 draft: false
 ---
 
-Prompt Injection im Händlerportal ist einer der direktesten Wege, auf denen ein Agentforce-Agent bei einem Hersteller gegen Sie arbeiten kann. Felder, die Händler, Kunden oder Websitebesucher beschreiben, von der Fehlerbeschreibung im Garantieantrag bis zu Web-to-Lead und Email-to-Case, werden zu Text, den Ihr Agent liest, sobald sie in seinem Kontext landen. ForcedLeak 2025 und SalesBleed 2026 haben gezeigt, dass versteckte Anweisungen in so einem Feld Agentforce dazu bringen konnten, CRM-Daten nach außen zu schicken. Filter, die mit Wahrscheinlichkeiten arbeiten, ziehen keine harte Grenze. Schutz ist deshalb eine Architekturentscheidung: begrenzen, was der Agent sieht, seine Wege nach außen schließen und Entscheidungen in deterministischer Logik halten.
+Prompt Injection im Händlerportal ist einer der direktesten Wege, auf denen ein Agentforce-Agent bei einem Hersteller gegen Sie arbeiten kann. Felder, die Händler, Kunden oder Websitebesucher befüllen können, von der Fehlerbeschreibung im Garantieantrag bis zu Web-to-Lead und Email-to-Case, werden zu Text, den Ihr Agent liest, sobald sie in seinem Kontext landen. ForcedLeak 2025 und SalesBleed 2026 haben gezeigt, dass versteckte Anweisungen in so einem Feld Agentforce dazu bringen konnten, CRM-Daten nach außen zu schicken. Filter, die mit Wahrscheinlichkeiten arbeiten, ziehen keine harte Grenze. Schutz ist deshalb eine Architekturentscheidung: begrenzen, was der Agent sieht, seine Wege nach außen schließen und Entscheidungen in deterministischer Logik halten.
 
 ## Was hat ForcedLeak gezeigt?
 
-ForcedLeak ist eine Kette von Schwachstellen, die Noma Security am 28. Juli 2025 an Salesforce gemeldet hat, von Noma bewertet mit CVSS 9,4. Laut [The Hacker News](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html) konnte sie Orgs treffen, in denen Agentforce Web-to-Lead-Datensätze verarbeitete. Ein Angreifer schickte ein Webformular ab, im Feld Description standen versteckte Anweisungen. Später stellte eine Mitarbeiterin Agentforce eine gewöhnliche Frage zu diesem Lead. Der Agent führte die versteckten Anweisungen zusammen mit der echten Frage aus, las weitere Lead-Daten und baute sie in die Adresse eines Bildes in seiner Antwort ein. Beim Anzeigen der Antwort lud der Browser dieses Bild von der Domain des Angreifers. Die Zieldomain stand auf der Allowlist von Salesforce, war aber abgelaufen und für etwa 5 US-Dollar zu kaufen.
+ForcedLeak ist eine Schwachstellenkette, die Noma Security am 28. Juli 2025 an Salesforce meldete und mit CVSS 9,4 bewertete. Laut [The Hacker News](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html) konnte sie Orgs treffen, in denen Agentforce Web-to-Lead-Datensätze verarbeitete. Ein Angreifer schickte ein Webformular ab, in dessen Feld Beschreibung (Description) standen versteckte Anweisungen. Später stellte eine Mitarbeiterin Agentforce eine gewöhnliche Frage zu diesem Lead. Der Agent führte die versteckten Anweisungen zusammen mit der echten Frage aus, las weitere Lead-Daten und baute sie in die Adresse eines Bildes in seiner Antwort ein. Beim Anzeigen der Antwort lud der Browser dieses Bild von der Domain des Angreifers. Die Zieldomain stand auf der Allowlist von Salesforce, war aber abgelaufen und für etwa 5 US-Dollar zu kaufen.
 
 ```ablauf
 ext: Angreifer, Mitarbeiterin, Abgelaufene Domain
 sf: Lead-Beschreibung, Agentforce
 Angreifer --Webformular--> Lead-Beschreibung
 Mitarbeiterin --Frage zum Lead--> Agentforce
-Lead-Beschreibung --liest Anweisung--> Agentforce
+Lead-Beschreibung --Versteckte Anweisung--> Agentforce
 Agentforce --Daten in Bild-URL--> Abgelaufene Domain
 ```
 
@@ -58,7 +58,7 @@ Zwei Punkte sind mir wichtiger als der Patch. Noma schreibt, dem Modell habe die
 
 ## Händlerportal und Servicepostfach sind Einfallstore
 
-Simon Willison hat das Muster im Juni 2025 [Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) genannt: Ein Agent mit Zugriff auf private Daten, Kontakt zu nicht vertrauenswürdigen Inhalten und der Möglichkeit, nach außen zu kommunizieren, lässt sich dazu bringen, diese Daten abfließen zu lassen. Nicht vertrauenswürdig ist für ihn jeder Weg, auf dem Text oder Bilder eines Angreifers beim Sprachmodell ankommen können. ForcedLeak nannte er einen [klassischen Fall](https://simonwillison.net/2025/Sep/26/agentforce/) davon. In einer Org eines Herstellers kommt solcher Text durch mehr Türen als Web-to-Lead:
+Simon Willison hat das Muster im Juni 2025 [Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) genannt: Ein Agent mit Zugriff auf private Daten, Kontakt zu nicht vertrauenswürdigen Inhalten und der Möglichkeit, nach außen zu kommunizieren, lässt sich dazu bringen, diese Daten abfließen zu lassen. ForcedLeak nannte er einen [klassischen Fall](https://simonwillison.net/2025/Sep/26/agentforce/) davon. In einer Org eines Herstellers kommt solcher Text durch mehr Türen als Web-to-Lead:
 
 - **Web-to-Lead** für Angebots- und Ersatzteilanfragen auf der Website. Meist ohne Anmeldung.
 - **Email-to-Case** am Servicepostfach. Wer die Adresse kennt, legt einen Case an, sofern keine vorgeschalteten Filter Absender einschränken.
@@ -74,7 +74,7 @@ Wie schlimm es wird, entscheidet das erste Merkmal: der Zugriff auf private Date
 
 ## Warum reicht ein Prompt-Filter nicht?
 
-Salesforce beschreibt einen [Detektor für Prompt Injection](https://www.salesforce.com/blog/prompt-injection-detection/) für seinen Trust Layer. Das KI-Forschungsteam beschreibt einen Klassifikator, der Nutzerprompts bewertet, damit die Plattform eingreifen kann, bevor sie beim Agenten ankommen. Das ist nützlich. Der Beitrag vom März 2025 beschreibt aber die Prüfung von Nutzerprompts und sagt nicht, wie Text aus Datensätzen geprüft wird, etwa aus einem Garantieantrag. Und jeder Klassifikator arbeitet mit Wahrscheinlichkeiten. Willison schreibt über Guardrail-Produkte, die 95 Prozent der Angriffe abfangen wollen: In der Sicherheit von Webanwendungen sei das „very much a failing grade“.
+Salesforce beschreibt einen [Detektor für Prompt Injection](https://www.salesforce.com/blog/prompt-injection-detection/) für seinen Trust Layer. Das KI-Forschungsteam beschreibt einen Klassifikator, der Nutzerprompts bewertet, damit die Plattform eingreifen kann, bevor diese den Agenten erreichen. Das ist nützlich. Der Beitrag vom März 2025 beschreibt aber die Prüfung von Nutzerprompts und sagt nicht, wie Text aus Datensätzen geprüft wird, etwa aus einem Garantieantrag. Und jeder Klassifikator arbeitet mit Wahrscheinlichkeiten. Willison schreibt über Guardrail-Produkte, die 95 Prozent der Angriffe abfangen wollen: In der Sicherheit von Webanwendungen sei das „very much a failing grade“.
 
 Der [Sicherheitsleitfaden für ISVs](https://developer.salesforce.com/docs/platform/isvforce/guide/secure-agentforce-prompt-injection-data.html) von Salesforce verlangt, nutzerkontrollierte Daten vor dem Einfügen in einen Prompt zu prüfen, mit einer Allowlist erlaubter Zeichen und Längengrenzen, und sie wegzulassen, wenn sie durchfallen. Das würde ich überall anwenden, wo fremder Text in einen Prompt geht, mit Regeln je Art des Inhalts: strenge Prüfung für strukturierte Felder, Längengrenzen für Freitext. Eine Zeichen-Allowlist würde in einer Fehlerbeschreibung Modellnummern und Einheiten zerstören. Die Prüfung erhöht den Aufwand für Angreifer. Sicher wird der Agent dadurch nicht, denn eine überzeugende Anweisung kann kurz sein und in normalen Worten stehen.
 
@@ -84,12 +84,12 @@ Ich behandle die Erkennung deshalb als eine Schicht und plane so, als würde sie
 
 Ziel ist, dass eine erfolgreiche Injection wenig anrichtet. Brechen Sie bei jedem Agenten, der fremden Text liest, mindestens eines der drei Merkmale, besser zwei.
 
-1. **Externe Inhalte markieren.** Listen Sie pro Objekt und Kanal jedes Feld auf, das jemand außerhalb des Unternehmens beschreiben kann, dazu E-Mail-Texte, Anhänge und Wissensartikel, die Externe beeinflussen. Diese Liste kann ein Business Analyst aktuell halten.
-2. **Ausgänge schließen.** Die Durchsetzung der Trusted URLs ist in jeder Org aktiv, prüfen Sie also, was sie erlaubt: exakte URLs in Agentenanweisungen, Platzhalter, CSP-Direktiven und die Liste der [Trusted URLs](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_csptrustedsite.htm) selbst an: Jeder Eintrag braucht einen Verantwortlichen und einen Grund, und ein Eintrag für eine Kampagnenseite von vor Jahren birgt dasselbe Risiko einer übernommenen Domain, das ForcedLeak in einer von Salesforce gepflegten Allowlist ausgenutzt hat. Ein neuer Eintrag erlaubt Bilder standardmäßig. Zu den Ausgängen gehören auch Agenten-Aktionen, die E-Mails senden, in Slack posten oder Webhooks aufrufen. Ein Agent, der fremden Text zusammenfasst, sollte keine davon haben.
-3. **Den Ausführungskontext verkleinern.** Klären Sie zuerst, in wessen Kontext der Agent läuft: Ein Mitarbeiter-Agent arbeitet mit den Rechten des angemeldeten Mitarbeiters, ein Service-Agent mit einem eigenen Agent User. [Salesforce](https://www.salesforce.com/blog/best-practices-for-secure-agentforce-implementation-2/) empfiehlt, nur das Nötigste zu vergeben und Rollenhierarchie und organisationsweite Standardeinstellungen regelmäßig prüfen. Ein Agent, der den Antrag eines Händlers bearbeitet, sieht diesen Antrag, das Asset und den Account dieses Händlers, nicht die ganze installierte Basis. Dafür braucht es Sharing oder Abfragefilter, Objektrechte allein reichen nicht.
+1. **Externe Inhalte markieren.** Listen Sie pro Objekt und Kanal jedes Feld auf, das jemand außerhalb des Unternehmens befüllen kann, dazu E-Mail-Texte, Anhänge und Wissensartikel, die Externe beeinflussen. Diese Liste kann ein Business Analyst aktuell halten.
+2. **Ausgänge schließen.** Trusted URLs werden in jeder Org durchgesetzt. Prüfen Sie daher, was erlaubt ist: exakte URLs in Agentenanweisungen, Platzhalter, CSP-Direktiven und die Liste der [Trusted URLs](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_csptrustedsite.htm) selbst. Jeder Eintrag braucht einen Verantwortlichen und einen Grund, und ein Eintrag für eine Kampagnenseite von vor Jahren birgt dasselbe Risiko einer übernommenen Domain, das ForcedLeak in einer von Salesforce gepflegten Allowlist ausgenutzt hat. Ein neuer Eintrag erlaubt Bilder standardmäßig. Zu den Ausgängen gehören auch Agenten-Aktionen, die E-Mails senden, in Slack posten oder Webhooks aufrufen. Ein Agent, der fremden Text zusammenfasst, sollte keine davon haben.
+3. **Den Ausführungskontext verkleinern.** Klären Sie zuerst, in wessen Kontext der Agent läuft: Ein Mitarbeiter-Agent arbeitet mit den Rechten des angemeldeten Mitarbeiters, ein Service-Agent mit einem eigenen Agent User. [Salesforce](https://www.salesforce.com/blog/best-practices-for-secure-agentforce-implementation-2/) empfiehlt, nur die nötigen Rechte zu vergeben und die Rollenhierarchie und die organisationsweiten Standardeinstellungen regelmäßig zu prüfen. Ein Agent, der den Antrag eines Händlers bearbeitet, sieht diesen Antrag, das Asset und den Account dieses Händlers, nicht die ganze installierte Basis. Dafür braucht es Sharing oder Abfragefilter, Objektrechte allein reichen nicht.
 4. **Entscheidungen und Schreibzugriffe aus dem Modell halten.** Garantiefreigaben, Gutschriften und Preisausnahmen gehören hinter deterministische Schranken, wie in [Agent Script: Regeln statt LLM](../agent-script-regeln-statt-llm/) beschrieben. Eine Aktion hinter einer `available when`-Bedingung lässt sich durch Text in einem Antrag nicht auslösen, sofern die Bedingung aus vertrauenswürdigen Daten oder einer deterministischen Aktion stammt und nicht aus der Deutung des Antrags durch das Modell. Alles, was Geld bewegt oder Daten an Dritte schickt, bekommt eine Freigabe durch einen Menschen.
 5. **Lesen und Handeln trennen.** Ein Paper zu Entwurfsmustern, das Willison [zusammengefasst](https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/) hat, bringt das Prinzip auf eine Zeile: Hat ein Agent nicht vertrauenswürdige Eingaben gelesen, muss er eingeschränkt werden. In Salesforce heißt das für mich: ein Zusammenfassungsschritt ohne Aktionen, dessen Ergebnis ein Mensch oder ein deterministischer Schritt weiterverwendet.
-6. **Testen und zurückschauen.** Nehmen Sie Schutzfälle mit versteckten Anweisungen in das Testset des Agenten auf, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/), und durchsuchen Sie bestehende Datensätze nach ungewöhnlichen Anweisungen in den externen Feldern, wie Noma es nach ForcedLeak empfohlen hat, und beobachten Sie blockierte Trusted-URL- und CSP-Verstöße sowie die Aktionsaufrufe des Agenten.
+6. **Testen und Bestandsdaten prüfen.** Nehmen Sie Sicherheitstestfälle mit versteckten Anweisungen in das Testset des Agenten auf, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/), und durchsuchen Sie bestehende Datensätze nach ungewöhnlichen Anweisungen in den externen Feldern, wie Noma es nach ForcedLeak empfohlen hat. Beobachten Sie außerdem blockierte Trusted-URL- und CSP-Verstöße sowie die Aktionsaufrufe des Agenten.
 
 ## Beispiel: Garantieanträge von 120 Händlern
 
@@ -101,11 +101,11 @@ Die Änderungen sind unspektakulär. Ein Flow übergibt dem Agenten einen Antrag
 
 Danach kann eine versteckte Anweisung in einer Fehlerbeschreibung noch eine Zusammenfassung verfälschen. Sie kommt aber nicht an Bonus- oder Margendaten, ihre Eingabe ist nur dieser eine Antrag, und sie hat keinen Weg nach draußen. Das Restrisiko ist eine irreführende Zusammenfassung, und die fällt auf, weil Anträge über einem vereinbarten Betrag immer vollständig gelesen werden. Nach meiner Einschätzung ist dieses Restrisiko vertretbar. Ein Agent mit breiten Leserechten und einer E-Mail-Aktion ist es nicht.
 
-## Einen halben Tag lang die beschreibbaren Felder durchgehen
+## Einen halben Tag lang die extern befüllbaren Felder prüfen
 
 Für einen ersten Durchgang würde ich mich einen halben Tag mit der Salesforce-Administration und der Serviceleitung zusammensetzen und fünf Fragen beantworten:
 
-1. Welche Felder und anderen Inhalte in unserer Org können Menschen außerhalb des Unternehmens beschreiben oder beeinflussen?
+1. Welche Felder und anderen Inhalte in unserer Org können Menschen außerhalb des Unternehmens befüllen oder beeinflussen?
 2. Welche Agenten, Prompts oder Flows lesen diese Felder?
 3. Was sieht jeder Agent in seinem Ausführungskontext über den aktuellen Datensatz hinaus?
 4. Welche Aktionen, Links oder Trusted URLs geben ihm einen Weg nach draußen?
