@@ -2,9 +2,10 @@
 // whether fk-sd.de is in the pool Claude picks its sources from:
 // - position of fk-sd.de for the keywords in seo/keywords.json (top 20, top 40 if not found),
 // - position for the AI search questions in seo/ai-prompts.json (top 20),
-// - which fk-sd.de pages Brave has indexed at all (site:fk-sd.de, up to 200 results).
+// - which fk-sd.de pages Brave has indexed at all (site:fk-sd.de, up to 200 results),
+// - whether the pages submitted by hand (seo/brave-submitted.json) are in the index yet.
 // Only our own positions and URLs are stored, not the result lists (Brave's terms reserve
-// storing full results for a separate plan). About 110 to 200 requests per run, inside the
+// storing full results for a separate plan). About 110 to 230 requests per run, inside the
 // 5 USD monthly free credit of the "Search" plan. Printed as JSON; used by .github/workflows/brave.yml.
 import { readFile } from 'node:fs/promises';
 
@@ -100,11 +101,35 @@ try {
   console.error(`site query failed: ${err.message}`);
 }
 
+// Pages submitted by hand at search.brave.com/submit-url (seo/brave-submitted.json): is each
+// one in the index yet? Pages already returned by site: count as indexed; every other one is
+// looked up by its own address (one request each, so the list stays short).
+const norm = (u) => u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '').toLowerCase();
+const indexedNorm = new Set([...indexed].map(norm));
+const { submissions = [] } = JSON.parse(await readFile(new URL('../seo/brave-submitted.json', import.meta.url), 'utf8'));
+const submitted = [];
+for (const { date, urls } of submissions) {
+  for (const url of urls) {
+    if (indexedNorm.has(norm(url))) {
+      submitted.push({ date, url, indexed: true });
+      continue;
+    }
+    try {
+      const { results } = await search(url.replace(/^https?:\/\//, ''), { lang: url.includes('/en/') ? 'en' : 'de' });
+      const hit = results.some((r) => norm(r.url) === norm(url));
+      submitted.push({ date, url, indexed: hit });
+    } catch (err) {
+      failed.push(url);
+      submitted.push({ date, url, indexed: null, error: err.message });
+    }
+  }
+}
+
 const allKeywords = [...rows.keywords.de, ...rows.keywords.en];
 const found = (list) => list.filter((r) => r.position).length;
 console.error(
   `Brave: ${found(allKeywords)}/${allKeywords.length} keywords, ${found(rows.prompts)}/${rows.prompts.length} questions, ` +
-    `${indexed.size} indexed pages, ${requests} requests`,
+    `${indexed.size} indexed pages, ${submitted.filter((x) => x.indexed).length}/${submitted.length} submitted indexed, ${requests} requests`,
 );
 console.error(`failed: ${failed.length ? failed.join(' | ') : 'none'}`);
 console.log(
@@ -119,10 +144,13 @@ console.log(
         questionsFound: found(rows.prompts),
         questions: rows.prompts.length,
         indexedPages: indexed.size,
+        submittedIndexed: submitted.filter((x) => x.indexed).length,
+        submitted: submitted.length,
       },
       keywords: rows.keywords,
       prompts: rows.prompts,
       indexed: [...indexed].sort(),
+      submitted,
     },
     null,
     2,

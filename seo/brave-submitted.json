@@ -1,0 +1,35 @@
+{
+  "_comment": "URLs submitted by hand at search.brave.com/submit-url (Brave has no submission API). scripts/fetch-brave.mjs checks every Monday whether each one is in the Brave index; the dashboard Brave tab shows the result per submission date. Add new submissions as a new entry with its date.",
+  "submissions": [
+    {
+      "date": "2026-11-09",
+      "urls": [
+        "https://www.fk-sd.de/",
+        "https://www.fk-sd.de/en/",
+        "https://www.fk-sd.de/leistungen/",
+        "https://www.fk-sd.de/en/services/partner-governance/",
+        "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+        "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/",
+        "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
+        "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
+        "https://www.fk-sd.de/en/blog/salesforce-field-service-rollout/",
+        "https://www.fk-sd.de/masterclass/devops-release-management/devops-werkzeuge-vergleich/",
+        "https://www.fk-sd.de/blog/",
+        "https://www.fk-sd.de/en/blog/",
+        "https://www.fk-sd.de/masterclass/",
+        "https://www.fk-sd.de/en/services/",
+        "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+        "https://www.fk-sd.de/en/freelance-salesforce-architect/",
+        "https://www.fk-sd.de/leistungen/partnersteuerung/",
+        "https://www.fk-sd.de/fragen/",
+        "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+        "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+        "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+        "https://www.fk-sd.de/blog/kundenpreise-sap-konditionen-oder-salesforce-pricing/",
+        "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
+        "https://www.fk-sd.de/blog/salesforce-field-service-einfuehrung/",
+        "https://www.fk-sd.de/en/blog/visual-remote-assistant-remote-help-instead-of-visit/"
+      ]
+    }
+  ]
+}
