@@ -42,6 +42,13 @@ export const site = {
     'https://www.google.com/search?kgmid=/g/11z_04sr6b',
     // LinkedIn company page.
     'https://www.linkedin.com/company/fk-solution-design-gmbh',
+    // Register and directory entries with the same name, address and HRB number.
+    // They let Bing and Google tie the register data to this site. Only sources
+    // with their own data or a real listing; pure copy sites are left out.
+    'https://www.northdata.de/FK%20Solution%20Design%20GmbH,%20K%C3%B6ln/HRB%20103579',
+    'https://www.online-handelsregister.de/handelsregisterauszug/nw/Koeln/HRB/103579/FK-Solution-Design-GmbH',
+    'https://www.11880.com/branchenbuch/koeln/150991138B112504437/fk-solution-design-gmbh.html',
+    'https://branchenbuch.meinestadt.de/koeln/company/15503572',
   ],
   legal: {
     street: 'Hans-Keul-Weg 27',
