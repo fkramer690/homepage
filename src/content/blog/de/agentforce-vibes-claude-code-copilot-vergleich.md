@@ -1,6 +1,6 @@
 ---
 title: "Agentforce Vibes, Claude Code, Codex oder Copilot?"
-description: "Welchen Coding-Agenten sollten Ihr Salesforce-Team oder Ihr Partner nutzen? Eine Entscheidung nach Verträgen, EU-Datenresidenz, Kostenmodell und Governance."
+description: "Welchen Coding-Agenten sollte Ihr Salesforce-Team oder Ihr Partner nutzen? Kundenentscheidung nach Verträgen, EU-Datenresidenz, Kostenmodell und Governance."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de
@@ -12,7 +12,7 @@ tags: [KI-Coding, Agentforce Vibes, Claude Code, GitHub Copilot, Datenresidenz, 
 takeaways:
   - "Erst nach Verträgen, EU-Datenresidenz, Kostenmodell und Governance zählt bei der Wahl des Coding-Agenten das Modell."
   - "Agentforce Vibes ist in der Hyperforce EU Operating Zone nicht verfügbar; liegt Ihre Org dort, bleiben Copilot, Claude Code über einen Cloud-Anbieter und Codex."
-  - "Anthropics eigene API rechnet nur in den USA oder global. Copilot hat seit April 2026 EU-Residenz mit GitHub Enterprise Cloud with data residency."
+  - "Anthropics eigene API bietet nur Inferenz in den USA oder global. Copilot hat seit April 2026 EU-Residenz mit GitHub Enterprise Cloud with data residency."
   - "Codex hat europäische Residenz nur mit ChatGPT Enterprise in App und CLI, Teile der Verarbeitung laufen trotzdem anderswo. ChatGPT Business hat keine."
   - "Ich empfehle höchstens zwei freigegebene Coding-Agenten, Konten im Besitz des Kunden und eine führende Regeldatei im Kunden-Repository."
 faq:
@@ -27,13 +27,13 @@ faq:
 draft: false
 ---
 
-Ob Agentforce Vibes, Claude Code, Codex oder Copilot: Die Wahl des Coding-Agenten für Salesforce ist eher eine Kundenentscheidung als eine Vorliebe der Entwickler. Den Ausschlag geben Fakten auf Ihrer Seite: welche Verträge und Werkzeuge Sie schon haben, ob Code und Prompts in der EU verarbeitet werden müssen, welches Kostenmodell Sie steuern können und welche Governance Ihre IT-Sicherheit erwartet. Liegt Ihre Org in der Hyperforce EU Operating Zone, fällt Vibes weg. Ist EU-Verarbeitung Pflicht, fällt die eigene API von Anthropic weg, Copilot oder Bedrock kommen dazu. Die Modellqualität entscheidet zwischen den Optionen, die übrig bleiben.
+Ob Agentforce Vibes, Claude Code, Codex oder Copilot: Die Wahl des Coding-Agenten für Salesforce ist eher eine Kundenentscheidung als eine Vorliebe der Entwickler. Den Ausschlag geben Fakten auf Ihrer Seite: welche Verträge und Werkzeuge Sie schon haben, ob Code und Prompts in der EU verarbeitet werden müssen, welches Kostenmodell Sie steuern können und welche Governance Ihre IT-Sicherheit erwartet. Liegt Ihre Org in der Hyperforce EU Operating Zone, fällt Vibes weg. Ist EU-Verarbeitung Pflicht, fällt die eigene API von Anthropic weg; Copilot und Bedrock bleiben. Die Modellqualität entscheidet zwischen den Optionen, die übrig bleiben.
 
 ## Warum sollte der Kunde entscheiden und nicht der Entwickler?
 
-Entwickler und Partner kommen mit Vorlieben. Ein Nearshore-Team kennt vielleicht Claude Code, Ihre internen Entwickler haben Copilot in VS Code, und Ihr Salesforce-Account-Executive bietet Agentforce Vibes an. Jede dieser Entscheidungen schickt Ihren Quellcode, Ihre Metadaten und manchmal Testdaten aus einer Sandbox unter einem bestimmten Vertrag zu einem Modellanbieter. Bei einem Hersteller stecken in diesem Code die Logik für Rabattfreigaben, Garantieregeln und die Schnittstellendefinitionen zu SAP oder proALPHA, und Testdaten oder Konfiguration können echte Händlerkonditionen enthalten.
+Entwickler und Partner kommen mit Vorlieben. Ein Nearshore-Team kennt vielleicht Claude Code, Ihre internen Entwickler haben Copilot in VS Code, und Ihr Salesforce-Account-Executive bietet Agentforce Vibes an. Jede Option schickt Ihren Quellcode, Ihre Metadaten und manchmal Testdaten aus einer Sandbox an einen Modellanbieter, jeweils unter einem bestimmten Vertrag. Bei einem Hersteller stecken in diesem Code die Logik für Rabattfreigaben, Garantieregeln und die Schnittstellendefinitionen zu SAP oder proALPHA, und Testdaten oder Konfiguration können echte Händlerkonditionen enthalten.
 
-Mir ist kein öffentlicher, Salesforce-spezifischer Beleg bekannt, der die Werkzeuge verlässlich ordnet, und sie teilen viel Werkzeug. Salesforce beschreibt seine offene Skills-Bibliothek als [kompatibel mit jedem Coding-Agenten](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release) und nennt Claude Code und Codex; die Hosted MCP Server verbinden sich mit jedem MCP-fähigen Client. Sein erstes offizielles Plugin hat Salesforce für Claude Code gebaut: Laut [Ankündigung vom 19. August 2026](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) bündelt es rund 40 Skills, drei MCP-Server, Hooks zur Deployment-Validierung und einen lesenden Agenten für Architektur-Reviews. Den Funktionsvergleich finden Sie in [Kapitel 4 der Masterclass KI](../../masterclass/ki-salesforce/externe-coding-agenten/). Hier geht es um die Entscheidung.
+Mir ist kein öffentlicher, Salesforce-spezifischer Beleg bekannt, der die Werkzeuge verlässlich einordnet, und sie nutzen viele gleiche Bausteine. Salesforce beschreibt seine offene Skills-Bibliothek als [kompatibel mit jedem Coding-Agenten](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release) und nennt Claude Code und Codex; die Hosted MCP Server verbinden sich mit jedem MCP-fähigen Client. Sein erstes offizielles Plugin hat Salesforce für Claude Code gebaut: Laut [Ankündigung vom 19. August 2026](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) bündelt es rund 40 Skills, drei MCP-Server, Hooks zur Deployment-Validierung und einen lesenden Agenten für Architektur-Reviews. Den Funktionsvergleich finden Sie in [Kapitel 4 der Masterclass KI](../../masterclass/ki-salesforce/externe-coding-agenten/). Hier geht es um die Entscheidung.
 
 ## Vier Fragen, die den Coding-Agenten für Salesforce bestimmen
 
@@ -41,7 +41,7 @@ Mir ist kein öffentlicher, Salesforce-spezifischer Beleg bekannt, der die Werkz
 
 Jede Option hängt an einem Vertrag, den Sie vielleicht bereits haben:
 
-- **Agentforce Vibes** läuft über Ihren Salesforce-Vertrag: Laut [Preisseite](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) als Flat Fee zu 125 € pro Nutzer und Monat oder mit Flex Credits nach Verbrauch, die „the same credits used by Agentforce“ verbrauchen.
+- **Agentforce Vibes** läuft über Ihren Salesforce-Vertrag: Laut [Preisseite](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) als Flat Fee zu 125 $ pro Nutzer und Monat oder mit Flex Credits nach Verbrauch, die „the same credits used by Agentforce“ verbrauchen.
 - **GitHub Copilot** läuft über GitHub. Seit Februar 2026 sind Claude und Codex [als Coding-Agenten in Copilot Business verfügbar](https://github.blog/changelog/2026-02-26-claude-and-codex-now-available-for-copilot-business-pro-users/), nach Enterprise und Pro+, sobald ein Admin „Partner Agents“ freischaltet. Ein Vertrag gibt dann Zugang zu drei Agenten, aber die Partner Agents sind Integrationen in GitHub, nicht dasselbe wie Claude Code mit dem Salesforce-Plugin oder die Codex-CLI.
 - **Claude Code** ist in jedem bezahlten Claude-Plan enthalten. [Claude Enterprise](https://claude.com/pricing) kostet 20 $ pro Seat und Monat bei jährlicher Abrechnung, mindestens 20 Seats (US-Listenpreis); der Seat deckt nur den Zugang, [die gesamte Nutzung läuft zu API-Preisen](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan). Über Amazon Bedrock wird es [pro Token über Ihr AWS-Konto abgerechnet](https://code.claude.com/docs/en/costs).
 - **Codex** gehört zu [ChatGPT Business und Enterprise](https://openai.com/business/pricing/).
@@ -68,7 +68,7 @@ Bei Vibes nennt Salesforce keine Verarbeitungsregion, und FAQ (nach der Sitzung 
 
 ### 3. Welches Kostenmodell können Sie steuern?
 
-Die Werkzeuge unterscheiden sich weniger im Preis als darin, wer die Ausgaben sieht. Die Preise sind öffentliche Listenpreise mit Stand 9. November 2026, ohne Steuern und Rabatte:
+Die Werkzeuge unterscheiden sich weniger im Preis als darin, wer die Ausgaben sieht. Die Preise sind öffentliche US-Listenpreise mit Stand 9. November 2026, ohne Steuern und Rabatte:
 
 - **Copilot** enthält Credits im Wert des Seatpreises, [19 $ oder 39 $ pro Nutzer](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan) (US-Listenpreis), gepoolt über das Unternehmen, danach 0,01 $ pro Credit. Admins setzen [Budgets pro Unternehmen, Kostenstelle und Nutzer](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/).
 - **Claude Team** zehrt von einem Kontingent pro Seat; wer mehr braucht, aktiviert Usage Credits mit Ausgabelimits. **Claude Enterprise** hat kein enthaltenes Kontingent: Jedes Token wird zusätzlich zum Seat zu API-Preisen abgerechnet.
@@ -81,7 +81,7 @@ Die Rechnung für ein ganzes Team und die Frage, ob Kunde oder Partner zahlt, st
 
 - **Identität und Audit.** Claude Enterprise ergänzt das SSO, das schon Team hat, um SCIM, Audit-Logs, eine Compliance-API und eigene Aufbewahrungsregeln. ChatGPT Business hat SSO, aber kein SCIM, keine rollenbasierten Rechte und keine Compliance-API; Enterprise hat alle drei.
 - **Umfang der Nutzung.** Bei OpenAI können Admins [Codex Local und Codex Cloud getrennt steuern](https://help.openai.com/en/articles/11369540), also die CLI erlauben und delegierte Cloud-Aufgaben sperren. Vibes lässt sich in Setup [für eine Produktiv-Org abschalten](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes).
-- **Training und Aufbewahrung.** Anthropic [trainiert nicht mit Code unter kommerziellen Bedingungen](https://code.claude.com/docs/en/data-usage) Standard sind 30 Tage Aufbewahrung, Enterprise kann eigene Fristen setzen, und Zero Data Retention gibt es für berechtigte Organisationen und geeignete Produkte; über Bedrock gelten die Einstellungen von AWS. OpenAI nutzt Eingaben von Geschäftskunden standardmäßig nicht fürs Training.
+- **Training und Aufbewahrung.** Anthropic [trainiert nicht mit Code, der unter kommerziellen Bedingungen übermittelt wird](https://code.claude.com/docs/en/data-usage). Standard sind 30 Tage Aufbewahrung, Enterprise kann eigene Fristen setzen, und Zero Data Retention gibt es für berechtigte Organisationen und geeignete Produkte; über Bedrock gelten die Einstellungen von AWS. OpenAI nutzt Eingaben von Geschäftskunden standardmäßig nicht fürs Training.
 - **Eine führende Regeldatei.** Der Copilot Coding Agent [liest AGENTS.md und CLAUDE.md](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions), Codex liest AGENTS.md, Claude Code liest CLAUDE.md, die AGENTS.md importieren kann. Eine führende Datei steuert also mehrere Werkzeuge, wenn Sie das verdrahten und testen, siehe [die KI-Regeldatei im Salesforce-Repository](../ki-regeldatei-salesforce-repository/).
 
 ## Rechenbeispiel: zwei freigegebene Werkzeuge statt vier
@@ -93,7 +93,7 @@ Auf dem Tisch liegen vier Wünsche: Die Admins wollen Vibes, die internen Entwic
 So würde ich entscheiden:
 
 1. **Copilot Enterprise als Standard für alle neun Entwickler**, mit aktivierter EU-Datenresidenz. Es läuft über den bestehenden GitHub-Vertrag, Partnerentwickler bekommen Seats in der Organisation des Kunden, und Claude Sonnet 5.5 steht unter EU-Verarbeitung bereit. Enterprise statt Business, weil Agentensitzungen Credits verbrauchen und Enterprise 39 $ statt 19 $ pro Seat enthält. Zum US-Listenpreis: 9 × 39 $ = 351 $ im Monat inklusive gepoolter Credits, mit 10 Prozent mehr Credits pro Anfrage.
-2. **Vibes als Flat Fee für die zwei Admins**, 2 × 125 € = 250 € im Monat, unter einer Bedingung: Salesforce bestätigt die Verarbeitungsregion schriftlich. Bis dahin nutzen die Admins Copilot.
+2. **Vibes als Flat Fee für die zwei Admins**, 2 × 125 $ = 250 $ im Monat, unter einer Bedingung: Salesforce bestätigt die Verarbeitungsregion schriftlich. Bis dahin nutzen die Admins Copilot.
 3. **Keine Partnerkonten.** Besteht der Partner wegen des offiziellen Plugins auf Claude Code, läuft es über das AWS-Konto des Kunden in einer EU-Region, mit Budget und OpenTelemetry.
 4. **Vorerst kein Codex.** ChatGPT Business hat keine Datenresidenz, und Enterprise wäre ein dritter Vertrag für einen Entwickler.
 
