@@ -2,6 +2,7 @@
 title: "Change-Kurve: Phasen der Veränderung und was hilft"
 description: "Die Change-Kurve erklärt, warum Teams nach einer Veränderung erst ins Tal gehen. Phasen nach Kübler-Ross und Streich, Grenzen und was in jeder Phase hilft."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: de
 slug: change-kurve
 translationKey: change-basics-curve
@@ -12,24 +13,24 @@ author: juliane
 tags: [Change-Kurve, Veränderungskurve, Kübler-Ross, Change Management]
 takeaways:
   - "Den Tiefpunkt nennt man Tal der Tränen. Dort sinken Stimmung und Produktivität, und dort entscheidet sich, ob Menschen dabeibleiben."
-  - "Die Kurve geht auf die fünf Trauerphasen von Elisabeth Kübler-Ross (1969) zurück. Verbreitet ist auch das Modell nach Richard K. Streich."
+  - "Die Kurve geht auf die fünf Phasen zurück, die Elisabeth Kübler-Ross 1969 bei Sterbenden beschrieb. Verbreitet ist auch das Modell von Richard K. Streich."
   - "Die Kurve hilft Führungskräften, Reaktionen einzuordnen. Einen Plan liefert sie nicht, und nicht jeder Mensch durchläuft die Phasen der Reihe nach."
   - "Für Maßnahmen verbinde ich die Kurve mit dem ADKAR-Modell: Jede Phase deutet auf eine Stufe, an der eine Person gerade Unterstützung braucht."
 faq:
   - q: "Was ist die Change-Kurve?"
     a: "Die Change-Kurve ist ein Modell, das die typischen emotionalen Reaktionen von Menschen auf eine Veränderung als Kurve über die Zeit zeigt. Stimmung und Leistungsfähigkeit sinken zunächst, erreichen ein Tief und steigen dann wieder, wenn die neue Arbeitsweise angenommen wird."
   - q: "Welche Phasen hat die Veränderungskurve?"
-    a: "Nach Kübler-Ross fünf: Verneinung, Ärger, Verhandeln, Niedergeschlagenheit und Akzeptanz. Das Modell nach Streich nennt sieben: Schock, Ablehnung, rationale Akzeptanz, emotionale Akzeptanz, Lernen, Erkenntnis und Integration."
+    a: "Nach Kübler-Ross fünf: Verneinung, Ärger, Verhandeln, Niedergeschlagenheit und Akzeptanz. Das Modell nach Streich nennt sieben: Schock, Verneinung, rationale Einsicht, emotionale Akzeptanz, Ausprobieren, Erkenntnis und Integration."
   - q: "Was ist das Tal der Tränen im Change Management?"
     a: "So wird der Tiefpunkt der Kurve genannt: Die Veränderung ist da, die alte Arbeitsweise geht nicht mehr, die neue sitzt noch nicht. In dieser Phase sinken Stimmung und oft auch die Produktivität, und hier entscheidet sich, ob Menschen dabeibleiben."
   - q: "Wie lange dauern die Phasen der Change-Kurve?"
     a: "Dafür gibt es keine feste Zeit. Sie hängt davon ab, wie stark sich der Alltag ändert und wie gut die Menschen begleitet werden. Verschiedene Gruppen im selben Unternehmen stehen oft an verschiedenen Stellen der Kurve."
   - q: "Was ist die Kritik an der Change-Kurve?"
-    a: "Sie stammt aus der Trauerforschung und unterstellt einen festen Ablauf. Menschen reagieren aber unterschiedlich, springen zwischen Phasen oder überspringen welche. Außerdem sagt die Kurve nicht, was eine Führungskraft tun soll."
+    a: "Sie stammt aus der Arbeit mit sterbenden Menschen und unterstellt einen festen Ablauf. Menschen reagieren aber unterschiedlich, springen zwischen Phasen oder überspringen welche. Als Vorhersage ist die Kurve empirisch kaum belegt; sie ist eine Denkhilfe, kein Messinstrument. Außerdem sagt sie nicht, was eine Führungskraft tun soll."
 draft: false
 ---
 
-Die Change-Kurve, auch Veränderungskurve genannt, beschreibt, wie Menschen emotional auf eine Veränderung reagieren: erst mit Schock und Ablehnung, dann mit einem Tief, in dem die alte Arbeitsweise nicht mehr geht und die neue noch nicht sitzt, und schließlich mit Ausprobieren und Integration. Sie geht auf die Trauerphasen von Elisabeth Kübler-Ross zurück. Für Führungskräfte ist sie eine gute Erklärung, warum ein Team nach anfänglicher Zustimmung plötzlich bremst. Einen Plan liefert sie nicht. Dafür verbinde ich sie mit dem ADKAR-Modell, das zeigt, was in welcher Phase hilft.
+Die Change-Kurve, auch Veränderungskurve genannt, beschreibt, wie Menschen emotional auf eine Veränderung reagieren: erst mit Schock und Ablehnung, dann mit einem Tief, in dem die alte Arbeitsweise nicht mehr geht und die neue noch nicht sitzt, und schließlich mit Ausprobieren und Integration. Sie geht auf die Phasen zurück, die Elisabeth Kübler-Ross bei sterbenden Menschen beschrieb. Für Führungskräfte ist sie eine gute Erklärung, warum ein Team nach anfänglicher Zustimmung plötzlich bremst. Einen Plan liefert sie nicht. Dafür verbinde ich sie mit dem ADKAR-Modell, das zeigt, was in welcher Phase hilft.
 
 ## Was ist die Change-Kurve?
 
@@ -45,13 +46,13 @@ Es gibt zwei verbreitete Fassungen. Die ursprüngliche nach Kübler-Ross hat fü
 
 | Kübler-Ross | Streich | Was Sie beobachten |
 |---|---|---|
-| Verneinung | Schock, Ablehnung | „Das betrifft uns nicht.“ „Das alte Verfahren hat doch funktioniert.“ |
-| Ärger | Ablehnung | Kritik am Projekt, an der Leitung, an der Software; Widerstand in Meetings |
-| Verhandeln | rationale Akzeptanz | „Können wir das nicht erst nächstes Jahr machen?“ Ausnahmen werden gesucht |
+| Verneinung | Schock, Verneinung | „Das betrifft uns nicht.“ „Das alte Verfahren hat doch funktioniert.“ |
+| Ärger | Verneinung | Kritik am Projekt, an der Leitung, an der Software; Widerstand in Meetings |
+| Verhandeln | rationale Einsicht | „Können wir das nicht erst nächstes Jahr machen?“ Ausnahmen werden gesucht |
 | Niedergeschlagenheit | emotionale Akzeptanz | Rückzug, Frust, sinkende Produktivität; das „Tal der Tränen“ |
-| Akzeptanz | Lernen, Erkenntnis, Integration | Ausprobieren, erste Erfolge, die neue Arbeitsweise wird normal |
+| Akzeptanz | Ausprobieren, Erkenntnis, Integration | Ausprobieren, erste Erfolge, die neue Arbeitsweise wird normal |
 
-Wichtig ist der Unterschied zwischen rationaler und emotionaler Akzeptanz, den Streich herausarbeitet. Ein Team kann im Meeting zustimmen, weil die Argumente überzeugen, und trotzdem am nächsten Tag weiter mit der alten Liste arbeiten. Erst wenn auch emotional akzeptiert ist, dass der alte Weg vorbei ist, beginnt das Lernen.
+Die Gegenüberstellung ist eine Annäherung, die Phasen beider Modelle decken sich nicht genau. Wichtig ist der Unterschied zwischen rationaler Einsicht und emotionaler Akzeptanz, den Streich herausarbeitet. Ein Team kann im Meeting zustimmen, weil die Argumente überzeugen, und trotzdem am nächsten Tag weiter mit der alten Liste arbeiten. Erst wenn auch emotional akzeptiert ist, dass der alte Weg vorbei ist, beginnt das Lernen.
 
 ## ADKAR zeigt, was in welcher Phase hilft
 
@@ -88,7 +89,8 @@ pro: Wofür die Kurve taugt
 - Das Tal nach dem Start einplanen statt davon überrascht werden
 contra: Was sie nicht leistet
 - Menschen springen zwischen Phasen oder überspringen welche
-- Sie stammt aus der Trauerforschung, nicht jede Veränderung ist ein Verlust
+- Sie stammt aus der Arbeit mit Sterbenden, nicht jede Veränderung ist ein Verlust
+- Als Vorhersage ist sie empirisch kaum belegt
 - Sie sagt nicht, welche Maßnahme wann hilft
 - Sie beschreibt Einzelne, keinen Plan für die Organisation
 ```

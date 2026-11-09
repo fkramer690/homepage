@@ -2,6 +2,7 @@
 title: "The change curve: stages of change and what helps"
 description: "The change curve explains why teams dip after a change before they recover. The Kübler-Ross stages, their limits and what helps people in each stage."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: en
 slug: change-curve
 translationKey: change-basics-curve
@@ -12,24 +13,24 @@ author: juliane
 tags: [change curve, Kübler-Ross, stages of change, change management]
 takeaways:
   - "In the valley the old way no longer works and the new one is not yet routine. This is where people decide whether they stay on board."
-  - "It goes back to the five stages of grief by Elisabeth Kübler-Ross (1969). A seven-stage version by Richard K. Streich is also common."
+  - "It goes back to the five stages that Elisabeth Kübler-Ross described in dying patients in 1969. A seven-stage version by Richard K. Streich is also common."
   - "The curve helps managers make sense of reactions. It does not provide a plan, and not everyone goes through the stages in order."
   - "For actions I connect the curve with the ADKAR model: each stage points to the element where a person needs support right now."
 faq:
   - q: "What is the change curve?"
     a: "The change curve is a model that shows the typical emotional reactions of people to a change as a curve over time. Morale and performance drop first, reach a low point and rise again as the new way of working is adopted."
   - q: "What are the stages of the change curve?"
-    a: "In the Kübler-Ross version five: denial, anger, bargaining, depression and acceptance. Streich's model names seven: shock, rejection, rational acceptance, emotional acceptance, learning, insight and integration."
+    a: "In the Kübler-Ross version five: denial, anger, bargaining, depression and acceptance. Streich's model names seven: shock, denial, rational insight, emotional acceptance, trying out, realization and integration."
   - q: "What is the valley of despair in change management?"
     a: "It is the low point of the curve: the change has arrived, the old way no longer works and the new one is not yet routine. Morale and often productivity drop in this stage, and this is where people decide whether to stay with the change."
   - q: "How long do the stages of the change curve last?"
     a: "There is no fixed duration. It depends on how much daily work changes and how well people are supported. Different groups in the same company are often at different points of the curve."
   - q: "What is the criticism of the change curve?"
-    a: "It comes from research on grief and assumes a fixed sequence. People react differently, jump between stages or skip some. The curve also does not say what a manager should do."
+    a: "It comes from work with dying patients and assumes a fixed sequence. People react differently, jump between stages or skip some. As a prediction the curve has little empirical support; it is a thinking aid, not a measuring tool. It also does not say what a manager should do."
 draft: false
 ---
 
-The change curve describes how people react emotionally to a change: first with shock and denial, then with a low point where the old way no longer works and the new one is not yet routine, and finally with experimenting and integration. It goes back to the stages of grief described by Elisabeth Kübler-Ross. For managers it is a good explanation of why a team that agreed at first suddenly pushes back. It does not provide a plan. That is why I connect it with the ADKAR model, which shows what helps in each stage.
+The change curve describes how people react emotionally to a change: first with shock and denial, then with a low point where the old way no longer works and the new one is not yet routine, and finally with experimenting and integration. It goes back to the stages Elisabeth Kübler-Ross described in dying patients. For managers it is a good explanation of why a team that agreed at first suddenly pushes back. It does not provide a plan. That is why I connect it with the ADKAR model, which shows what helps in each stage.
 
 ## What is the change curve?
 
@@ -45,13 +46,13 @@ There are two common versions. The original by Kübler-Ross has five stages. In 
 
 | Kübler-Ross | Streich | What you observe |
 |---|---|---|
-| Denial | Shock, rejection | "This does not affect us." "The old process worked fine." |
-| Anger | Rejection | Criticism of the project, the leadership, the software; resistance in meetings |
-| Bargaining | Rational acceptance | "Can we not do this next year?" People look for exceptions |
+| Denial | Shock, denial | "This does not affect us." "The old process worked fine." |
+| Anger | Denial | Criticism of the project, the leadership, the software; resistance in meetings |
+| Bargaining | Rational insight | "Can we not do this next year?" People look for exceptions |
 | Depression | Emotional acceptance | Withdrawal, frustration, falling productivity; the "valley of despair" |
-| Acceptance | Learning, insight, integration | Trying things out, first successes, the new way becomes normal |
+| Acceptance | Trying out, realization, integration | Trying things out, first successes, the new way becomes normal |
 
-The difference between rational and emotional acceptance that Streich works out matters. A team can agree in a meeting because the arguments are convincing and still keep working with the old list the next day. Learning only starts once people have also accepted emotionally that the old way is over.
+The comparison is an approximation; the stages of the two models do not match exactly. The difference between rational insight and emotional acceptance that Streich works out matters. A team can agree in a meeting because the arguments are convincing and still keep working with the old list the next day. Learning only starts once people have also accepted emotionally that the old way is over.
 
 ## ADKAR shows what helps in each stage
 
@@ -88,7 +89,8 @@ pro: What the curve is good for
 - Planning for the valley after go-live instead of being surprised
 contra: What it does not do
 - People jump between stages or skip some
-- It comes from grief research, not every change is a loss
+- It comes from work with dying patients, not every change is a loss
+- As a prediction it has little empirical support
 - It does not say which action helps when
 - It describes individuals, not a plan for the organization
 ```
