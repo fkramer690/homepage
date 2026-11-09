@@ -1,8 +1,8 @@
 ---
 title: "API 67.0: Warum Apex im User Mode weniger sieht"
-description: "Ab API 67.0 läuft Apex im User Mode und mit Sharing. Warum ein Versionssprung Datensätze ausblendet, warum KI-Code besonders betroffen ist und wie Sie planen."
+description: "Ab API 67.0 laufen Apex-Datenbankzugriffe im User Mode, Klassen mit Sharing. Warum ein Versionssprung Datensätze ausblendet, warum KI-Code besonders betroffen ist und wie Sie planen."
 pubDate: 2026-10-27
-updatedDate: 2026-11-05
+updatedDate: 2026-11-09
 lang: de
 slug: api-67-apex-user-mode-weniger-datensaetze
 translationKey: api-67-user-mode-apex
@@ -10,26 +10,26 @@ topic: release
 categories: [devops]
 tags: [Apex, API 67.0, User Mode, KI-Coding, Release-Management, Maschinenbau]
 takeaways:
-  - "Code mit API 66.0 oder älter behält das alte Verhalten, bis jemand die Version anhebt; das Risiko entsteht beim Versionssprung."
+  - "Code mit API 66.0 oder älter behält meist das alte Verhalten, bis jemand die Version anhebt; das Risiko entsteht beim Versionssprung."
   - "Vom Sharing ausgeblendete Datensätze fehlen ohne Fehlermeldung; eine fehlende Feldberechtigung lässt die Abfrage mit einer QueryException scheitern."
   - "WITH SECURITY_ENFORCED kompiliert mit 67.0 nicht mehr. WITH USER_MODE prüft auch polymorphe Felder und WHERE, ersetzte Abfragen brauchen einen Test."
-  - "KI-Agenten heben API-Versionen nebenbei an und testen ohne System.runAs(). Ein Versionssprung braucht deshalb einen eigenen Pull Request."
-  - "Bewusster Systemzugriff braucht mit 67.0 without sharing, WITH SYSTEM_MODE und eine schriftliche Begründung."
+  - "Coding-Agenten können API-Versionen nebenbei ändern und ohne System.runAs() testen. Ein Versionssprung braucht einen eigenen Pull Request."
+  - "Voller alter Systemzugriff braucht mit 67.0 without sharing, WITH SYSTEM_MODE und eine Begründung; nur für Feldrechte bleibt with sharing."
 faq:
   - q: "Ändert API 67.0 meinen bestehenden Apex-Code automatisch?"
-    a: "Nein. Die Änderung ist versioniert: Sie gilt für Klassen und Trigger, die mit API-Version 67.0 oder neuer gespeichert sind. Bestehender Code läuft weiter im System Mode, bis jemand seine Version anhebt; deshalb braucht jeder Versionssprung einen Testplan."
+    a: "Nein. Die Änderung ist versioniert: Sie gilt für Klassen und Trigger, die mit API-Version 67.0 oder neuer gespeichert sind. Bestehender Code ohne expliziten Zugriffsmodus behält die alten Standards, bis jemand seine Version anhebt, mit einer Ausnahme: Eine Klasse ohne Sharing-Deklaration läuft mit Sharing, sobald eine Klasse in ihrer Vererbungskette mit 67.0 gespeichert ist. Jeder Versionssprung braucht einen Testplan."
   - q: "Laufen Apex-Trigger ab API 67.0 im User Mode?"
     a: "Laut Salesforce laufen Trigger weiterhin ohne Sharing und können keinen Sharing-Modus deklarieren. Die Handler-Klassen, die sie aufrufen, sind betroffen, wenn ihnen eine Deklaration fehlt. Der aktuelle Apex Developer Guide empfiehlt einen expliziten Zugriffsmodus für jede Datenbankoperation in Triggern und Handlern."
   - q: "Was ersetzt WITH SECURITY_ENFORCED in API 67.0?"
     a: "WITH USER_MODE. Mit 67.0 kompiliert eine Abfrage mit WITH SECURITY_ENFORCED nicht mehr. WITH USER_MODE erzwingt zusätzlich das Sharing und prüft polymorphe Felder und die WHERE-Klausel; testen Sie jede ersetzte Abfrage mit einem eingeschränkten Benutzer."
   - q: "Wie erkenne ich, ob eine Abfrage wegen des Sharings weniger Datensätze liefert?"
-    a: "Führen Sie die Logik in einem Test mit System.runAs() als eingeschränkter Benutzer aus, etwa als Techniker, Händler oder Integrationsuser, und vergleichen Sie das Ergebnis mit einem Lauf ohne Einschränkung. Das Sharing filtert ohne Fehlermeldung, nur dieser Vergleich zeigt die Lücke."
+    a: "Führen Sie die Logik in einem Test mit System.runAs() als eingeschränkter Benutzer aus, etwa als Techniker, Händler oder Integrationsuser, und prüfen Sie genau, welche Datensätze diese Rolle sehen muss und welche nicht. Das Sharing filtert ohne Fehlermeldung, der Test muss also die erwartete Anzahl kennen. Ein Vergleich mit einem Lauf ohne Einschränkung hilft, die Ursache zu finden."
   - q: "Sollten wir auf API 66.0 bleiben, um die Änderung zu vermeiden?"
-    a: "Nur eine Weile. Salesforce empfiehlt die neueste API-Version und möglichst wenige Versionen in einer Codebasis, und Winter '27 warnt bereits bei Code mit 9.0 bis 19.0. Planen Sie den Umstieg in Etappen, statt Versionen einzufrieren."
+    a: "Nur eine Weile. Salesforce empfiehlt die neueste API-Version und möglichst wenige Versionen in einer Codebasis, und Winter '27 warnt bereits bei Code mit 9.0 bis 19.0. Seit Winter '27 ist 68.0 die neueste Version, sie behält die Standards von 67.0, ein Umstieg zielt heute also normalerweise auf 68.0. Planen Sie ihn in Etappen, statt Versionen einzufrieren."
 draft: false
 ---
 
-Apex-Code kann nach dem Anheben auf API-Version 67.0 weniger Datensätze sehen, denn ab dieser Version laufen Datenbankoperationen im User Mode, und Klassen ohne Sharing-Deklaration laufen mit Sharing. Die Änderung gilt pro Klasse: Nichts passiert, bis jemand eine Klasse anhebt. Dann liefern Abfragen nur noch, was der ausführende Benutzer sehen darf, ohne Fehlermeldung. KI-Agenten machen diesen Versionssprung wahrscheinlicher und testen ihn schlechter. Ich würde jeden Umstieg auf API 67.0 als geplante Änderung behandeln und mit den Benutzern testen, die den Code tatsächlich ausführen: Außendiensttechniker, Händler und der SAP-Integrationsuser.
+Apex-Code kann nach dem Anheben auf API-Version 67.0 weniger Datensätze sehen, denn ab dieser Version laufen Datenbankoperationen im User Mode, und Klassen ohne Sharing-Deklaration laufen mit Sharing. Die Änderung gilt pro Klasse: Meist passiert nichts, bis jemand eine Klasse anhebt. Dann liefern Abfragen nur noch, was der ausführende Benutzer sehen darf, ohne Fehlermeldung. KI-Agenten machen diesen Versionssprung wahrscheinlicher und testen ihn schlechter. Ich würde jeden Umstieg über API 67.0 hinaus, heute meist direkt auf 68.0, als geplante Änderung behandeln und mit den Benutzern testen, die den Code tatsächlich ausführen: Außendiensttechniker, Händler und der SAP-Integrationsuser.
 
 ## Was ändert sich in Apex mit API-Version 67.0?
 
@@ -39,7 +39,7 @@ Summer '26 kam je nach Instanz zwischen dem 15. Mai und dem 13. Juni 2026 in die
 - **With Sharing als Standard.** Eine Klasse ohne Sharing-Deklaration läuft im Sharing-Kontext des aktuellen Benutzers. Bis 66.0 lief eine solche Klasse ohne Sharing, wenn sie ein Einstiegspunkt war, oder übernahm den Modus ihres Aufrufers. Aura-Controller und @AuraEnabled-Methoden, die eine Lightning Web Component aufruft, liefen schon vorher mit Sharing.
 - **WITH SECURITY_ENFORCED entfällt.** Eine Abfrage damit kompiliert nicht mehr, das Deployment scheitert mit „WITH SECURITY_ENFORCED is no longer supported, use WITH USER_MODE instead“. Laut Developers Blog prüft WITH USER_MODE zusätzlich polymorphe Felder und die WHERE-Klausel; der Ersatz kann also strenger sein als das Original.
 
-Das Risiko steckt im Wort „versioniert“. Jede Klasse und jeder Trigger speichert seine API-Version in den Metadaten, und das neue Verhalten gilt nur für Code mit 67.0 oder neuer. Eine Klasse mit 62.0 läuft im System Mode weiter, bis jemand die Version anhebt. Eine Nebenwirkung übersieht man leicht: Laut [Sharing-Dokumentation](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_classes_keywords_sharing.htm) läuft eine ältere Klasse ohne Deklaration mit Sharing, sobald irgendeine Klasse in ihrer Vererbungskette mit 67.0 gespeichert ist. Wer eine Basisklasse anhebt, ändert Klassen, die niemand angefasst hat.
+Das Risiko steckt im Wort „versioniert“. Jede Klasse und jeder Trigger speichert seine API-Version in den Metadaten, und das neue Verhalten gilt nur für Code mit 67.0 oder neuer. Eine Klasse mit 62.0 ohne expliziten Zugriffsmodus läuft im System Mode weiter, bis jemand die Version anhebt. Eine Nebenwirkung übersieht man leicht: Laut [Sharing-Dokumentation](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_classes_keywords_sharing.htm) läuft eine ältere Klasse ohne Deklaration mit Sharing, sobald irgendeine Klasse in ihrer Vererbungskette mit 67.0 gespeichert ist. Wer eine Basisklasse anhebt, ändert Klassen, die niemand angefasst hat.
 
 ```vertiefung Für Entwickler
 titel: Laufen Trigger ab API 67.0 im User Mode?
@@ -50,14 +50,14 @@ Einig sind sich beide in der Empfehlung, und der folge ich: Zugriffsmodus in Tri
 
 ## Warum sieht Apex nach dem Versionssprung weniger Datensätze?
 
-Hier wirken zwei Mechanismen, und sie zeigen sich sehr unterschiedlich.
+Hier wirken zwei Arten von Effekten, und sie zeigen sich sehr unterschiedlich.
 
-**Das Sharing filtert still.** Läuft eine Klasse mit Sharing, liefert eine Abfrage nur die Datensätze, die der Benutzer über Organisationsweite Standards, Rollen, Freigaberegeln und Teams sehen darf. Keine Exception, kein Log-Eintrag. Eine Methode, die alle offenen Servicefälle einer Maschine gezählt hat, zählt jetzt die im Gebiet des Servicemitarbeiters, und der Code rechnet mit der kleineren Zahl weiter.
+**Der Datensatzzugriff filtert still.** Läuft eine Klasse mit Sharing, liefert eine Abfrage nur die Datensätze, die der Benutzer über Organisationsweite Standards, Rollen, Freigaberegeln und Teams sehen darf, und Restriction Rules können das weiter einschränken. Keine Exception und keine Warnung sagt Ihnen, welche Datensätze fehlen. Eine Methode, die alle offenen Servicefälle einer Maschine gezählt hat, zählt jetzt die im Gebiet des Servicemitarbeiters, und der Code rechnet mit der kleineren Zahl weiter.
 
 **Berechtigungen scheitern laut.** Im User Mode schlägt eine Abfrage fehl, die ein Feld auswählt, das der Benutzer nicht lesen darf. Die [Dokumentation zum Zugriffsmodus](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/apexref/apex_classes_enforce_usermode.htm) beschreibt getInaccessibleFields() an der QueryException, die alle betroffenen Felder auflistet, und getDmlFieldNames() für DML. Das tut im Abnahmetest weh, aber wenigstens merkt es jemand.
 
 ```hinweis achtung
-Eine Datenbankoperation im User Mode „always respects the user's sharing rules“, so dieselbe Seite. Mit 67.0 reicht without sharing an der Klasse für eine Abfrage ohne Zugriffsmodus also nicht mehr. Wer das alte Verhalten bewusst behalten will, braucht beides, das Schlüsselwort an der Klasse und WITH SYSTEM_MODE.
+Eine Datenbankoperation im User Mode „always respects the user's sharing rules“, so dieselbe Seite. Mit 67.0 reicht without sharing an der Klasse für eine Abfrage ohne Zugriffsmodus also nicht mehr. Wer das volle alte Verhalten bewusst behalten will, braucht beides, das Schlüsselwort an der Klasse und WITH SYSTEM_MODE. Muss der Code nur Objekt- und Feldrechte umgehen, ist WITH SYSTEM_MODE in einer Klasse mit Sharing die engere Wahl, denn im System Mode entscheidet weiter das Schlüsselwort der Klasse über den Datensatzzugriff.
 ```
 
 Für einen Hersteller zählt weniger der Code als die Frage, wer ihn ausführt:
@@ -72,39 +72,39 @@ Vier Gründe, jeder mit der heutigen Arbeitsweise von Coding-Agenten verbunden.
 
 **Die Modelle haben die alten Muster gelernt.** Der größte Teil des öffentlichen Apex-Codes ist älter als Summer '26, und vieles davon nutzt WITH SECURITY_ENFORCED oder verlässt sich stillschweigend auf den System Mode. Das Erste scheitert mit 67.0 beim Kompilieren, das ist der gute Fall. Das Zweite kompiliert und scheitert erst an echten Daten. Der [Leitfaden von Salesforce zu sicherem Apex für Lightning Web Components](https://developer.salesforce.com/docs/platform/lwc/guide/apex-security) baut inzwischen auf WITH USER_MODE und Security.stripInaccessible().
 
-**Agenten wählen die Version.** Ein Agent, der eine Klasse anlegt, schreibt eine -meta.xml-Datei mit API-Version, und Agenten räumen gern Metadaten auf, während sie eine Klasse ändern. Salesforce selbst empfiehlt die neueste API-Version und möglichst wenige Versionen in einer Codebasis, idealerweise eine. Nach meiner Einschätzung hebt ein Agent, der diesem Rat folgt, ohne die Folgen zu kennen, Klassen als Nebeneffekt fremder User Stories an.
+**Agenten wählen die Version.** Ein Agent, der eine Klasse anlegt, schreibt eine -meta.xml-Datei mit API-Version, und Agenten können Metadaten vereinheitlichen, während sie eine Klasse ändern. Salesforce selbst empfiehlt die neueste API-Version und möglichst wenige Versionen in einer Codebasis, idealerweise eine. Nach meiner Einschätzung kann ein Agent, der diesem Rat folgt, ohne die Folgen zu kennen, Klassen als Nebeneffekt fremder User Stories anheben.
 
-**Generierte Tests prüfen keine Sichtbarkeit.** Ein Agent, der 75 Prozent Abdeckung erreichen soll, schreibt Tests, die eigene Datensätze anlegen und als Benutzer laufen, der alles sieht. Die Architekten-Highlights halten fest, dass Tests, die unter 66.0 bestehen, das Verhalten unter 67.0 nicht garantieren, und empfehlen Tests mit eingeschränkten Benutzern. Ohne System.runAs() und ein realistisches Profil fallen die fehlenden Datensätze nie auf.
+**Generierte Tests prüfen oft keine Sichtbarkeit.** Verlangen die Regeln im Repository keine Tests mit eingeschränkten Benutzern, schreibt ein Agent, der 75 Prozent Abdeckung erreichen soll, meist Tests, die eigene Datensätze anlegen und als Benutzer laufen, der alles sieht. Die Architekten-Highlights halten fest, dass Tests, die unter 66.0 bestehen, das Verhalten unter 67.0 nicht garantieren, und empfehlen Tests mit eingeschränkten Benutzern. Ohne System.runAs() und ein realistisches Profil fallen die fehlenden Datensätze nie auf.
 
-**Leitplanken lösen das halbe Problem.** Die Skills von Salesforce für Claude Code „force the sharing keyword on all classes“ ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills)). Eine explizite Deklaration ist besser als der Standard, aber ein Agent, der with sharing an einen SAP-Integrationsservice schreibt, hat eine fachliche Entscheidung getroffen, die niemand geprüft hat. Die typischen Fehler von KI-Code beschreibe ich in [KI-generierten Salesforce-Code prüfen](../ki-generierten-salesforce-code-pruefen/); hier geht es darum, dass die Versionsnummer auf die Review-Liste gehört.
+**Leitplanken lösen das halbe Problem.** Die Open-Source-Entwicklungs-Skills von Salesforce, die es auch als Plugin für Claude Code gibt, „force the sharing keyword on all classes“ ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills)). Eine explizite Deklaration ist besser als der Standard, aber ein Agent, der with sharing an einen SAP-Integrationsservice schreibt, hat eine fachliche Entscheidung getroffen, die niemand geprüft hat. Die typischen Fehler von KI-Code beschreibe ich in [KI-generierten Salesforce-Code prüfen](../ki-generierten-salesforce-code-pruefen/); hier geht es darum, dass die Versionsnummer auf die Review-Liste gehört.
 
 ## Beispiel: API-Versionen bei einem Maschinenbauer vereinheitlichen
 
-Nehmen wir einen Maschinenbauer mit Service Cloud, einem Händlerportal und SAP S/4, angebunden über Apex-REST-Services. Alle Zahlen sind Annahmen. Nach den Compiler-Warnungen für sehr alte API-Versionen aus Winter '27, beschrieben in [Salesforce Winter '27: Was sich für Ihre Pipeline ändert](../salesforce-winter-27-aenderungen-pipeline/), beschließt die IT, 220 Apex-Klassen mit Versionen zwischen 38.0 und 62.0 auf 67.0 zu heben. Der Partner arbeitet mit einem Coding-Agenten. Der hebt die Versionen an, ersetzt in 15 Abfragen WITH SECURITY_ENFORCED durch WITH USER_MODE und behebt jeden Kompilierfehler. Alle Tests laufen durch, die Abdeckung bleibt bei 84 Prozent.
+Nehmen wir einen Maschinenbauer mit Service Cloud, einem Händlerportal und SAP S/4, angebunden über Apex-REST-Services. Alle Zahlen sind Annahmen. Nach den Compiler-Warnungen für sehr alte API-Versionen aus Winter '27, beschrieben in [Salesforce Winter '27: Was sich für Ihre Pipeline ändert](../salesforce-winter-27-aenderungen-pipeline/), beschließt die IT, 220 Apex-Klassen mit Versionen zwischen 38.0 und 62.0 auf die aktuelle Version 68.0 zu heben. Der Partner arbeitet mit einem Coding-Agenten. Der hebt die Versionen an, ersetzt in 15 Abfragen WITH SECURITY_ENFORCED durch WITH USER_MODE und behebt jeden Kompilierfehler. Alle Tests laufen durch, die Abdeckung bleibt bei 84 Prozent.
 
 Der Abnahmetest findet drei Probleme:
 
 1. **Die Auftragsstatus-Aktualisierung aus SAP scheitert.** Der REST-Service fragt jetzt im User Mode ab, und der Integrationsuser darf zwei Felder nicht lesen, die im letzten Jahr dazukamen. Das Schnittstellenmonitoring zeigt in der ersten Stunde QueryException-Fehler. Die Lösung sind zwei Zeilen in einem Berechtigungssatz.
 2. **Die Händlerseite für offene Garantieanträge bleibt leer.** Ihre Abfrage wählt ein internes Kostenfeld aus, das Händler nicht lesen dürfen. Die Lösung: Feld aus der Abfrage nehmen.
-3. **Die Kulanzregel entscheidet falsch.** Ein Trigger-Handler ohne Deklaration zählt die Garantieanträge pro Maschine der letzten zwölf Monate; mehr als zwei bedeuten keine automatische Kulanz. Mit 67.0 läuft der Handler im Sharing-Kontext der Servicemitarbeiterin. Anträge, die ein Händler aus einer anderen Region gestellt hat, sieht sie nicht, also zählt der Handler einen statt drei Anträge und gibt Kulanz frei. Nirgends ein Fehler. Aufgefallen ist es nur, weil eine Testerin aus dem Garantieteam die Ergebnisse mit einem Bericht verglichen hat.
+3. **Die Kulanzregel entscheidet falsch.** Ein Trigger-Handler ohne Deklaration zählt die Garantieanträge pro Maschine der letzten zwölf Monate; mehr als zwei bedeuten keine automatische Kulanz. Mit der neuen Version läuft der Handler im Sharing-Kontext der Servicemitarbeiterin. Anträge, die ein Händler aus einer anderen Region gestellt hat, sieht sie nicht, also zählt der Handler einen statt drei Anträge und gibt Kulanz frei. Nirgends ein Fehler. Aufgefallen ist es nur, weil jemand aus dem Garantieteam beim Testen die Ergebnisse mit einem Bericht verglichen hat.
 
 Zwei von drei Problemen melden sich selbst. Das dritte wäre live gegangen und hätte Geld gekostet, eine Gutschrift nach der anderen.
 
-## Den Umstieg auf API 67.0 als kleines Projekt planen
+## Den Umstieg über API 67.0 hinaus als kleines Projekt planen
 
 Ich würde ihn als kleines Projekt mit eigenem Releaseplan aufsetzen:
 
 1. **Bestand aufnehmen.** Klassen und Trigger nach API-Version auflisten und markieren: ohne Sharing-Deklaration, mit WITH SECURITY_ENFORCED, aufgerufen von Integrationsusern, dem Portal oder Trigger-Handlern.
 2. **Versionssprünge nebenbei verbieten.** Eine Versionsänderung bekommt einen eigenen Pull Request. Den Rest fängt eine Pipeline-Prüfung ab, die API-Versionen in geänderten Metadaten-Dateien vergleicht, wie in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) beschrieben. Die Regel gehört außerdem in die [KI-Regeldatei Ihres Repositorys](../ki-regeldatei-salesforce-repository/), damit Agenten sie vorher kennen.
-3. **Absicht im Code erklären.** Jede angefasste Klasse bekommt ein explizites Sharing-Schlüsselwort, jede Abfrage einen expliziten Zugriffsmodus. Systemzugriff braucht eine schriftliche Begründung in der Klasse, siehe Kasten unten.
+3. **Absicht im Code erklären.** Jede angefasste Klasse bekommt ein explizites Sharing-Schlüsselwort, jede SOQL-, SOSL-, DML- und Database-Operation einen expliziten Zugriffsmodus. Systemzugriff braucht eine schriftliche Begründung in der Klasse, siehe Kasten unten.
 
 4. **Mit echten Benutzern testen.** Pro Fachbereich mindestens ein Test mit System.runAs() als Techniker, Händler und Integrationsuser, der Datensatzanzahlen prüft und nicht nur „nicht null“.
-5. **Berechtigungssätze der Integrationsuser zuerst prüfen.** Geben Sie Integrationsusern die Feldzugriffe, die ihre Services brauchen, vor dem Versionssprung, damit die Schnittstelle es nicht in der Produktion herausfindet.
+5. **Berechtigungssätze der Integrationsuser zuerst prüfen.** Entscheiden Sie vor dem Versionssprung für jede Lücke, ob der Integrationsuser mehr Feldzugriff bekommt oder nur die betroffene Operation im System Mode läuft, damit die Schnittstelle es nicht in der Produktion herausfindet. Erweitern Sie den Berechtigungssatz nicht reflexhaft.
 
 ```vertiefung Für Entwickler
 titel: Wie ein erklärter Systemzugriff im Code aussieht
 - Ein Kommentar über der Klasse sagt, was sie liest und warum: „Liest alle offenen Aufträge für den SAP-Abgleich, unabhängig vom Benutzer. Begründung: Integrationspfad, freigegeben durch den Architekten des Kunden.“
-- Die Klasse ist als `public without sharing class SapOrderSyncSelector` deklariert.
+- Die Klasse ist als `public without sharing class SapOrderSyncSelector` deklariert, weil der Abgleich unabhängig vom Sharing jeden offenen Auftrag sehen muss.
 - Ihre Abfrage endet mit `WITH SYSTEM_MODE`: `SELECT Id, OrderNumber, Status FROM Order WHERE Sync_Status__c = 'Pending' WITH SYSTEM_MODE`.
 ```
 6. **In Etappen nach Fachbereich anheben.** Schnittstellen, Händlerportal, Servicelogik: Jede Etappe geht durch einen Abnahmetest mit jemandem aus dem Fachbereich, der weiß, welche Zahlen herauskommen müssen.
