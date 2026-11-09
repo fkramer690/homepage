@@ -2,6 +2,7 @@
 title: "ServiceMax oder Salesforce Field Service?"
 description: "ServiceMax läuft weiter auf Salesforce, mit zweitem Hersteller und Planung auf AWS. Wann es gegen Salesforce Field Service gewinnt und wann nicht."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: de
 slug: servicemax-oder-salesforce-field-service
 translationKey: servicemax-vs-salesforce-field-service
@@ -9,24 +10,24 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, ServiceMax, PTC, Außendienst, Softwareauswahl]
 takeaways:
-  - "Wer ServiceMax kauft, kauft immer auch Salesforce-Lizenzen. ServiceMax Core läuft als Managed Package in der Salesforce-Org des Kunden."
+  - "ServiceMax Core läuft als Managed Package in der Salesforce-Org des Kunden, Core-Nutzer brauchen also Salesforce-Lizenzen. Andere Rollen haben eigene Regeln."
   - "PTC nennt ServiceMax eine eigenständige Plattform. Das stimmt für Eigentum und Roadmap, technisch bleibt Salesforce die Basis (Stand Oktober 2026)."
   - "ServiceMax Core hat ein eigenes Datenmodell. Planung und Optimierung betreibt PTC auf AWS in Irland, die Kommunikationsapp Zinc in den USA."
   - "ServiceMax bringt Depotreparatur, Retouren und regelbasierte Entitlements mit. Field Service hält Daten, Lizenzen, Releases und KI bei einem Hersteller."
-  - "Die Verfügbarkeitszusage des PTC-Vertrags gilt für die ServiceMax-Suiten nicht. Klären Sie Betrieb, Haftung und Releasekalender vor der Auswahl."
+  - "Das Standard-SLA von PTC gilt für die ServiceMax-Suiten nicht, PTC sagt nur angemessene Anstrengungen zu. Klären Sie Betrieb, Haftung und Releasekalender."
 faq:
   - q: "Gehört ServiceMax zu Salesforce?"
     a: "Nein. ServiceMax gehört seit dem 4. Januar 2023 zu PTC, die Übernahme kostete laut Ankündigung 1,46 Milliarden Dollar. Salesforce ist Plattformanbieter und Wettbewerber mit eigenem Field Service."
   - q: "Läuft ServiceMax auf Salesforce?"
     a: "Ja, Stand Oktober 2026. ServiceMax Core und Asset 360 werden laut PTC in Salesforce-Rechenzentren betrieben, Core wird als Managed Package über AppExchange installiert. Service Board und Schedule Optimization betreibt PTC zusätzlich auf AWS in Irland."
   - q: "Brauche ich für ServiceMax Salesforce-Lizenzen?"
-    a: "Ja. Die PTC-Doku ordnet die ServiceMax-Lizenz Nutzern mit Salesforce-, Salesforce-Platform- oder Community-Lizenz zu. Für Asset 360 verlangt PTC zusätzlich Service Cloud und mindestens eine Field-Service-Lizenz."
+    a: "Für Core-Nutzer ja. Die PTC-Doku ordnet die ServiceMax-Lizenz Nutzern mit Salesforce-, Salesforce-Platform- oder Community-Lizenz zu. Andere Rollen unterscheiden sich: Techniker, die nur über Service Board disponiert werden, brauchen eine Service-Board-Lizenz, Zinc läuft auch ohne Core-Lizenz, und Engage-Nutzer brauchen eine Customer-Community-Plus-Lizenz. Für Asset 360 verlangt PTC zusätzlich Service Cloud und mindestens eine Field-Service-Lizenz."
   - q: "Was kostet ServiceMax?"
-    a: "PTC veröffentlicht keine Preise. Rechnen Sie mit einem Angebot von PTC und zusätzlich mit den Salesforce-Lizenzen für jeden Nutzer, und vergleichen Sie beides mit den Listenpreisen von Salesforce Field Service."
+    a: "Öffentliche Listenpreise für ServiceMax habe ich nicht gefunden. Rechnen Sie mit einem Angebot von PTC und zusätzlich mit den Salesforce-Lizenzen für jeden Core-Nutzer, und vergleichen Sie beides mit den Listenpreisen von Salesforce Field Service."
 draft: false
 ---
 
-ServiceMax von PTC und Salesforce Field Service stehen nicht auf getrennten Plattformen. ServiceMax Core läuft laut PTC-Leistungsbeschreibung vom Februar 2025 als Paket in der Salesforce-Org des Kunden, mit eigenem Datenmodell. Planung und Optimierung betreibt PTC auf AWS. Sie kaufen also immer Salesforce-Lizenzen und dazu einen zweiten Hersteller. ServiceMax lohnt sich aus meiner Sicht, wenn Depotreparatur, Retouren und regelbasierte Entitlements Ihren Service prägen und Ihr PLM von PTC kommt. Sonst ist Salesforce Field Service die einfachere Wahl.
+ServiceMax von PTC und Salesforce Field Service, heute Agentforce Field Service and Operations, stehen nicht auf getrennten Plattformen. ServiceMax Core läuft laut PTC-Leistungsbeschreibung vom Februar 2025 als Paket in der Salesforce-Org des Kunden, mit eigenem Datenmodell. Service Board und Schedule Optimization betreibt PTC auf AWS. Core-Nutzer brauchen also Salesforce-Lizenzen, dazu kommt ein zweiter Hersteller. Nach dem dokumentierten Umfang verdient ServiceMax einen genaueren Blick, wenn Depotreparatur, Retouren und regelbasierte Entitlements Ihren Service prägen und Ihr PLM von PTC kommt. Sonst würde ich mit Salesforce Field Service beginnen.
 
 ## Läuft ServiceMax noch auf Salesforce?
 
@@ -53,32 +54,32 @@ ServiceMax ist eine Produktfamilie. Für Hersteller zählen zwei Kernprodukte un
 | ServiceMax Asset 360 | Erweiterung für Salesforce Field Service | Salesforce-Org, auf den Standardobjekten von Field Service |
 | ServiceMax Go | Techniker-App mit Offline-Speicher | Synchronisiert über ein Gateway von PTC |
 | Service Board, Schedule Optimization | Plantafel und Optimierung | PTC-Plattform auf AWS in Irland |
-| ServiceMax AI | Assistent für Techniker, seit Februar 2025 | Eigenes Paket, Sprachmodell nicht dokumentiert |
+| ServiceMax AI | Assistent für Techniker, seit Februar 2025 | Eigenes Paket, nutzt [OpenAI-Modelle](https://support.ptc.com/help/servicemaxcore/en/articles/ai/ai-architecture-overview.html) und Pinecone; Modellversionen nicht dokumentiert |
 
-Der wichtigste Punkt steckt in der ersten Zeile. Der [Arbeitsauftrag in Core](https://support.ptc.com/help/servicemaxcore/en/articles/core/work-order1.html) ist ein eigenes Objekt mit 207 Feldern, die Installed Base ein eigenes Objekt „Installed Product“. Core nutzt also nicht WorkOrder, ServiceAppointment und Asset von Salesforce Field Service, sondern baut ein paralleles Modell in derselben Org. Asset 360 macht es umgekehrt und erweitert die Standardobjekte, mehr dazu in [ServiceMax Asset 360: Lohnt sich die Ergänzung?](../servicemax-asset-360-field-service/).
+Der wichtigste Punkt steckt in der ersten Zeile. Der [Arbeitsauftrag in Core](https://support.ptc.com/help/servicemaxcore/en/articles/core/work-order1.html) ist ein eigenes Objekt mit 207 Feldern, die Installed Base ein eigenes Objekt „Installed Product“. Core baut in derselben Org ein paralleles Modell auf; die Standardobjekte WorkOrder, ServiceAppointment und Asset von Salesforce Field Service bleiben dabei ungenutzt. Asset 360 macht es umgekehrt und erweitert die Standardobjekte, mehr dazu in [ServiceMax Asset 360: Lohnt sich die Ergänzung?](../servicemax-asset-360-field-service/).
 
 ## ServiceMax Core bringt Depotreparatur, Retouren und Entitlements mit
 
-Der Abstand ist kleiner als vor zehn Jahren. Salesforce Field Service hat Assets mit Hierarchien, Wartungspläne, Serviceverträge und Entitlements in der Basislizenz. Die Unterschiede liegen bei den Abläufen rund um die installierte Basis.
+Der Abstand ist kleiner als vor zehn Jahren. Salesforce stellt Standardobjekte für Assets und Asset-Hierarchien sowie für Wartungspläne, Serviceverträge und Entitlements bereit. Fertige Abläufe wie interaktive Asset-Hierarchie, Deckungsauswahl und Schätzung können ein Add-on brauchen. Die Unterschiede liegen bei diesen Abläufen rund um die installierte Basis.
 
-ServiceMax Core listet Ersatzteile, Retouren und Depotreparatur, Verträge mit einer regelbasierten Entitlement-Engine und einen Service Flow Manager für eigene Abläufe als Kernfunktionen. Bei Salesforce kommen Depotreparatur, Reparaturangebote und Deckungsauswahl erst mit dem Add-on Asset Service Lifecycle Management für 75 Dollar pro Nutzer und Monat. Was das Add-on genau enthält, steht in [Asset Service Lifecycle Management: Lohnt das Add-on?](../asset-service-lifecycle-management-zusatz/).
+ServiceMax Core listet Ersatzteile, Retouren und Depotreparatur, Verträge mit einer regelbasierten Entitlement-Engine und einen Service Flow Manager für eigene Abläufe als Kernfunktionen. Bei Salesforce kommen Depotreparatur, Work Order Estimation und Deckungsauswahl mit dem Add-on Asset Service Lifecycle Management, laut US-Liste 75 Dollar pro Nutzer und Monat; welche Editionen es schon enthalten, ändert sich gerade, siehe den Artikel dazu. Was das Add-on genau enthält, steht in [Asset Service Lifecycle Management: Lohnt sich das Add-on?](../asset-service-lifecycle-management-zusatz/).
 
-Mit Release 26R2 hat PTC laut [Übersicht der Neuerungen](https://www.ptc.com/en/products/servicemax/whats-new) Arbeitspläne mit Abhängigkeiten, eine Tagesoptimierung bis alle 15 Minuten und eine Teilefilterung nach Konfiguration der Anlage ergänzt. Das zielt auf komplexe Reparaturen an Maschinen mit vielen Varianten.
+Mit Release 26R2 Mitte 2026 hat PTC laut [Übersicht der Neuerungen](https://www.ptc.com/en/products/servicemax/whats-new) Arbeitspläne mit Abhängigkeiten, Intraday-Optimierung in Intervallen von bis zu 15 Minuten und Teilefilterung anhand der Anlagenkonfiguration ergänzt. Das zielt auf komplexe Reparaturen an Maschinen mit vielen Varianten. Release 26R3 folgte am 9. Oktober 2026, das geplante 26R4 rückt als 2027.0 in den Januar 2027.
 
-Der zweite Unterschied ist das PTC-Portfolio. PTC verkauft Windchill und Servigistics. Asset 360 hat seit Release 24R2 [Anbindungen an beide](https://www.arcweb.com/node/152476), und Daten aus Core fließen über eine [dokumentierte Integration](https://support.ptc.com/help/ptc_asset360/en/articles/implementers/servicemax_integration_with_asset_hub.html) in PTC Orbit, die Asset-Datenplattform von PTC. Wer Konstruktion und Ersatzteilplanung schon bei PTC hat, bekommt dort kürzere Wege.
+Der zweite Unterschied ist das PTC-Portfolio. PTC verkauft Windchill und Servigistics. Asset 360 dokumentiert [einzelne Integrationen](https://support.ptc.com/help/servicemax_asset360/en/articles/asset-360/product-integration.html): Optimierung der Außendienstbestände mit Servigistics und, als Beta, Problemmeldungen an Windchill, und Daten aus Core fließen über eine [dokumentierte Integration](https://support.ptc.com/help/ptc_asset360/en/articles/implementers/servicemax_integration_with_asset_hub.html) in PTC Orbit, die Asset-Datenplattform von PTC. Wer Konstruktion und Ersatzteilplanung schon bei PTC hat, bekommt dort kürzere Wege.
 
-Salesforce Field Service hat dafür die Plattform auf seiner Seite. Enhanced Scheduling and Optimization, die Field Service App, Agentforce for Field Service und neue Funktionen jedes Releases arbeiten auf den Standardobjekten. Ob sie mit den Core-Objekten zusammenspielen, beschreibt keine der Quellen, die ich gelesen habe. Ich gehe davon aus, dass nicht, und würde es vor jeder Auswahl schriftlich klären.
+Salesforce Field Service hat dafür die Plattform auf seiner Seite. Enhanced Scheduling and Optimization, die mobile Field Service App, Agentforce for Field Service und neue Funktionen jedes Releases arbeiten auf den Standardobjekten. Die Planung ist auf WorkOrder und ServiceAppointment gebaut, ohne Mapping würde ich also nicht annehmen, dass sie Core-Arbeitsaufträge plant. Zur App und zu Agentforce sagen die Quellen, die ich gelesen habe, nichts über die Core-Objekte; prüfen Sie die Unterstützung je Funktion und lassen Sie sich die Kompatibilität vor der Auswahlentscheidung schriftlich bestätigen.
 
 ## Ein zweiter Hersteller verändert Betrieb und Datenschutz
 
-Hier liegen die Punkte, die in Auswahlverfahren am häufigsten fehlen. Alle stehen in der Leistungsbeschreibung vom Februar 2025:
+Hier liegen die Punkte, die in Auswahlverfahren am häufigsten fehlen. Die meisten stehen in der Leistungsbeschreibung vom Februar 2025:
 
-- **Verfügbarkeit.** Die Verfügbarkeitszusage des PTC-Vertrags gilt für die ServiceMax-Suiten nicht, weil PTC die Hosting-Umgebungen nicht kontrolliert. PTC sagt kaufmännisch angemessene Anstrengungen zu. Für die Salesforce-Umgebung ist Salesforce verantwortlich.
+- **Verfügbarkeit.** Das SLA des PTC-Vertrags gilt für die ServiceMax-Suiten nicht, weil PTC die Hosting-Umgebungen nicht kontrolliert. PTC sagt nur wirtschaftlich vertretbare Bemühungen zu, ohne messbares SLA. Für die Salesforce-Umgebung ist Salesforce verantwortlich.
 - **Datenorte.** Service Board und Schedule Optimization liegen auf AWS in Irland, Zinc auf AWS in den USA mit Kundendaten in den USA. Die [Liste der Unterauftragsverarbeiter](https://www.ptc.com/es/documents/legal-agreements/data-processing-terms-and-conditions/sub-processors) nennt zusätzlich Kartendienste und Twilio.
-- **Lizenzen.** Service Board braucht eine Salesforce-Lizenz für die Integration. Jeder Nutzer braucht eine ServiceMax-Lizenz und eine Salesforce-Lizenz.
-- **Releases.** Salesforce liefert drei Releases im Jahr. ServiceMax folgt ab 2027 laut [Releaseplan](https://support.ptc.com/help/servicemaxcore/en/articles/release_notes/release-schedule.html) vier Major Releases mit je vier Wochen Vorschau, dazu monatliche Patches. Ihr Testteam prüft also zwei Kalender.
+- **Lizenzen.** Service Board braucht eine Salesforce-Lizenz für die Integration. Core-Nutzer brauchen eine ServiceMax- und eine Salesforce-Lizenz; Techniker, die nur über Service Board disponiert werden, brauchen eine Service-Board-Lizenz, Zinc läuft ohne Core, Engage braucht Customer Community Plus.
+- **Releases.** Salesforce liefert drei Releases im Jahr. ServiceMax folgt ab 2027 laut [Releaseplan](https://support.ptc.com/help/servicemaxcore/en/articles/release_notes/release-schedule.html) vier Major Releases mit je vier Wochen Vorschau, dazu Patches am letzten Freitag eines Monats, wenn es Korrekturen gibt. Ihr Testteam prüft also zwei Kalender.
 
-Dazu kommt die Strategie von PTC. PTC hat ThingWorx und Kepware an TPG verkauft, angekündigt im [November 2025](https://www.ptc.com/en/news/2025/tpg-to-acquire-ptcs-industrial-connectivity-and-iot-businesses), abgeschlossen im März 2026. Laut Ankündigung konzentriert sich PTC auf CAD, PLM, ALM und Service Lifecycle Management. ServiceMax gehört zum Kern. Die IoT-Plattform, die PTC auf der ServiceMax-Seite noch als Anbindung nennt, gehört heute einem anderen Unternehmen.
+Dazu kommt die Strategie von PTC. PTC hat ThingWorx und Kepware an TPG verkauft, angekündigt im [November 2025](https://www.ptc.com/en/news/2025/tpg-to-acquire-ptcs-industrial-connectivity-and-iot-businesses), abgeschlossen im März 2026. Laut Ankündigung konzentriert sich PTC auf CAD, PLM, ALM und Service Lifecycle Management. ServiceMax gehört zum Kern. Die IoT-Plattform, die PTC auf der ServiceMax-Seite noch als Anbindung nennt, gehört heute einem anderen Unternehmen. Und PTC selbst wechselt den Eigentümer: Am [5. Oktober 2026](https://investor.ptc.com/resources/news/news-details/2026/Schneider-Electric-to-acquire-PTC-creating-the-next-level-of-Energy-and-Industrial-Intelligence/default.aspx) hat Schneider Electric vereinbart, PTC zu übernehmen; der Abschluss wird bis Q3 2027 erwartet, vorbehaltlich Aktionärs- und Behördenzustimmung. Das bringt zusätzliche Unsicherheit über Eigentum und Roadmap in eine mehrjährige Auswahl.
 
 ## Was ich aus Field-Service-Projekten mitnehme
 
@@ -88,7 +89,7 @@ ServiceMax habe ich selbst nicht eingeführt, und ich habe es auch nicht in eine
 In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetriebnahmen kamen Installed Base und Ersatzteile aus dem ERP, die Planung lief automatisch. Die Stolpersteine waren die Datenqualität der Assets, die Akzeptanz der Techniker und die ERP-Schnittstellen.
 ```
 
-Keiner dieser Punkte hängt am Produkt. Eine bessere Entitlement-Engine hilft nicht, wenn die Seriennummern im ERP nicht stimmen. Deshalb gewichte ich in einer Auswahl die Frage, welches Produkt mit Ihren Daten und Ihrer Schnittstelle am wenigsten Sonderwege braucht, höher als die Funktionsliste. Wie die Teile zwischen ERP und Salesforce fließen, beschreibe ich in [Ersatzteile zwischen ERP und Salesforce](../salesforce-field-service-ersatzteile-erp/).
+Keinen dieser Punkte löst die Produktwahl allein, auch wenn die Architektur jeden leichter oder schwerer macht. Eine bessere Entitlement-Engine hilft nicht, wenn die Seriennummern im ERP nicht stimmen. Deshalb gewichte ich in einer Auswahl die Frage, welches Produkt mit Ihren Daten und Ihrer Schnittstelle am wenigsten Sonderwege braucht, höher als die Funktionsliste. Wie die Teile zwischen ERP und Salesforce fließen, beschreibe ich in [Ersatzteile zwischen ERP und Salesforce](../salesforce-field-service-ersatzteile-erp/).
 
 ## Wie entscheiden Sie zwischen ServiceMax und Salesforce Field Service?
 
@@ -98,17 +99,17 @@ pro: ServiceMax Core
 - Arbeitspläne mit Abhängigkeiten für komplexe Reparaturen
 - Anbindung an Windchill, Servigistics und PTC Orbit
 contra: Was Sie dafür in Kauf nehmen
-- Zwei Hersteller, zwei Releasekalender, keine PTC-Verfügbarkeitszusage
+- Zwei Hersteller, zwei Releasekalender, kein Standard-SLA von PTC
 - Eigenes Datenmodell neben den Field-Service-Objekten
 - Planungsdaten auf AWS, Zinc-Daten in den USA
-- Keine öffentlichen Preise
+- Keine öffentlichen Listenpreise gefunden
 ```
 
-Meine Faustregel: Salesforce Field Service ist der Standard für Hersteller, die Vertrieb und Service schon auf Salesforce haben und vor allem Wartung und Störungseinsätze planen. Ob sich Field Service überhaupt rechnet, zeigt [Salesforce Field Service: Wann lohnt es sich?](../salesforce-field-service-lohnt-sich/). ServiceMax Core gehört auf die Liste, wenn Reparaturen im eigenen Depot, Rücksendungen und vertragliche Ansprüche Ihren Service prägen und Ihr PLM von PTC kommt. Wenn Sie Salesforce Field Service behalten und nur Anlagentiefe ergänzen wollen, ist Asset 360 die Variante, die ich mir zuerst ansehen würde.
+Meine Faustregel: Salesforce Field Service ist der Standard für Hersteller, die Vertrieb und Service schon auf Salesforce haben und vor allem Wartung und Störungseinsätze planen. Ob sich Field Service überhaupt rechnet, zeigt [Salesforce Field Service: Wann lohnt es sich?](../salesforce-field-service-lohnt-sich/). ServiceMax Core verdient einen genaueren Blick, wenn Reparaturen im eigenen Depot, Rücksendungen und vertragliche Ansprüche Ihren Service prägen und Ihr PLM von PTC kommt. Wenn Sie Salesforce Field Service behalten und nur Anlagentiefe ergänzen wollen, ist Asset 360 die Variante, die ich mir zuerst ansehen würde.
 
 ## Serviceprozesse mit Depot, Retouren und Verträgen markieren
 
 1. **Listen Sie Ihre Serviceprozesse auf** und markieren Sie, welche davon Depot, Retouren und Vertragsprüfung betreffen.
 2. **Fordern Sie zwei Angebote an**: PTC inklusive aller Salesforce-Lizenzen, Salesforce Field Service inklusive Add-ons. Die Rollenlogik für Salesforce steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/).
-3. **Stellen Sie PTC vier Fragen schriftlich**: Datenorte, Verfügbarkeit, Sprachmodell von ServiceMax AI und Zusammenspiel mit Salesforce-Funktionen.
-4. **Lassen Sie die Bewertung unabhängig rechnen.** Wie ich solche Varianten vergleiche, steht unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+3. **Stellen Sie PTC vier Fragen schriftlich**: Datenorte, Verfügbarkeit, welche OpenAI-Modelle ServiceMax AI nutzt und wo Prompts verarbeitet werden, und Zusammenspiel mit Salesforce-Funktionen.
+4. **Lassen Sie den Vergleich unabhängig kalkulieren.** Wie ich solche Varianten vergleiche, steht unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
