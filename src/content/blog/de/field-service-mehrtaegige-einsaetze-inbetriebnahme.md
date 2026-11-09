@@ -1,6 +1,6 @@
 ---
-title: "Mehrtägige Einsätze im Field Service: Montage und Teams"
-description: "Inbetriebnahmen und Revisionen in Salesforce Field Service planen: mehrtägige Termine, Crews und Complex Work, und welche Grenzen Sie zuerst treffen."
+title: "Mehrtägige Field-Service-Einsätze: Inbetriebnahme und Crews"
+description: "Inbetriebnahmen und Revisionen in Salesforce Field Service planen: mehrtägige Termine, Crews und Complex Work, und an welche Grenzen Sie zuerst stoßen."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de
@@ -10,9 +10,9 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Außendienst, Mehrtägige Einsätze, Crews, Inbetriebnahme, Terminplanung]
 takeaways:
-  - "Ein mehrtägiger Termin darf bis zu acht Kalenderwochen umfassen. Automatische Planung und Optimierung erfassen aber nur Einsätze bis 30 Tage."
+  - "Ein mehrtägiger Termin darf bis zu acht Kalenderwochen umfassen. Automatische Planung und Optimierung erfassen aber nur Einsätze, die ganz in 30 Tage passen."
   - "Mehrtägige Termine gehen nicht mit Complex Work und nicht an Kapazitätsressourcen. Ein nur als Kapazität abgebildeter Partner fällt also aus."
-  - "Eine Crew ist eine eigene Serviceressource. Die Planung sieht ihre Abwesenheiten, nicht die der Mitglieder, und Mitglieder bekommen keine Benachrichtigung."
+  - "Eine Crew ist eine eigene Serviceressource. Die Planung sieht nur ihre Abwesenheiten, und Mitglieder bekommen keine Zuweisungsbenachrichtigung."
   - "Mit ESO plant eine Abhängigkeitsgruppe bis zu fünf Termine ganz oder gar nicht. Nur Optimierungsläufe dürfen mehrtägige Termine verschieben oder entfernen."
   - "Bei Inbetriebnahmen plane ich Vorabbesichtigung und Haupteinsatz als getrennte Termine und halte den Projektplan außerhalb des Gantt."
 faq:
@@ -44,12 +44,12 @@ Ein mehrtägiger Termin ist ein normaler Servicetermin (Service Appointment), be
 Diese Regeln zählen in der Praxis:
 
 - **Länge.** Ein mehrtägiger Termin kann bis zu acht Kalenderwochen umfassen. Appointment Booking, Schedule und Optimierung arbeiten nur bis 30 Tage, weil ihr Suchhorizont 30 Tage beträgt. Der ganze Termin muss in dieses Fenster passen.
-- **Arbeitszeit.** Geplanter Start und geplantes Ende müssen in den Arbeitszeiten des Technikers liegen. Die Besuchszeiten des Kunden am Arbeitsauftrag werden nicht berücksichtigt.
+- **Arbeitszeit.** Geplanter Start und geplantes Ende müssen in den Betriebszeiten des Technikers liegen. Die Besuchszeiten des Kunden am Arbeitsauftrag werden nicht berücksichtigt.
 - **Fahrt.** Die Spanne enthält die tägliche Fahrt vom und zum Heimatstandort, einstellbar an der Work Rule Service Resource Availability.
 - **Blockade.** Während eines mehrtägigen Termins kann die Ressource keine anderen Termine übernehmen.
 - **Keine Kapazität.** Mehrtägige Termine lassen sich nicht kapazitätsbasierten Ressourcen zuweisen.
 
-Mit Enhanced Scheduling and Optimization (ESO), der neueren Planungs-Engine, gilt zweierlei. Laut [Salesforce-Hilfe zur Multiday Work Optimization](https://help.salesforce.com/s/articleView?id=service.pfs_multiday_optimization.htm&language=en_US&type=5) können Global und In-Day Optimization mehrtägige Einsätze inzwischen planen, verschieben oder entfernen, etwa um Arbeit am selben Standort zu bündeln oder für einen Notfall einen niedriger priorisierten mehrtägigen Einsatz herauszunehmen. Appointment Booking, Get Candidates, Book Appointment, Drag and Drop, manuelles Umplanen und Auto-Dispatch tun das nicht. Und in der Classic Dispatch Console ignoriert die Auslastungsanzeige unter ESO mehrtägige Termine, ein Inbetriebnahme-Team, das zwei Wochen beim Kunden ist, sieht dort also untätig aus. Arbeiten Ihre Disponenten schon in der Scheduling Console, prüfen Sie in einer Sandbox, wie sie mehrtägige Arbeit zählt. Was der Wechsel zu ESO sonst bedeutet, steht in [Enhanced Scheduling and Optimization: jetzt umstellen?](../field-service-enhanced-scheduling-umstellen/).
+Mit Enhanced Scheduling and Optimization (ESO), der neueren Planungs-Engine, gilt zweierlei. Laut [Salesforce-Hilfe zur Multiday Work Optimization](https://help.salesforce.com/s/articleView?id=service.pfs_multiday_optimization.htm&language=en_US&type=5) können Global Optimization und In-Day Optimization mehrtägige Einsätze inzwischen planen, verschieben oder entfernen, etwa um Arbeit am selben Standort zu bündeln oder für einen Notfall einen niedriger priorisierten mehrtägigen Einsatz herauszunehmen. Appointment Booking, Get Candidates, Book Appointment, Drag and Drop, manuelles Umplanen und Auto-Dispatch tun das nicht. Und in der Classic Dispatch Console ignoriert die Auslastungsanzeige unter ESO mehrtägige Termine, ein Inbetriebnahme-Team, das zwei Wochen beim Kunden ist, sieht dort also untätig aus. Arbeiten Ihre Disponenten schon in der Scheduling Console, prüfen Sie in einer Sandbox, wie sie mehrtägige Arbeit zählt. Was der Wechsel zu ESO sonst bedeutet, steht in [Enhanced Scheduling and Optimization: jetzt umstellen?](../field-service-enhanced-scheduling-umstellen/).
 
 ## Wie funktionieren Crews für ein Inbetriebnahme-Team?
 
@@ -58,7 +58,7 @@ Eine Crew ist eine Gruppe von Technikern, die die Planung als eine Einheit behan
 - Nur aktive Ressourcen vom Typ Technician können Mitglied werden, und Crews können keine Crews enthalten. Mitglieder brauchen eine Mitgliedschaft im Servicegebiet der Crew, und ein Techniker kann in mehreren Crews sein, wenn sich die Zeiträume nicht überschneiden.
 - Abwesenheiten zählen nur an der Ressource der Crew. Ist ein Mitglied im Urlaub, sieht die Planung das nicht.
 - Die Effizienz der Crew bestimmt das geplante Ende. Die Effizienz der Mitglieder wird ignoriert.
-- Nur der Standort des Crew-Leiters wird verfolgt, und die Ressource der Crew ist der Heimatstandort für Fahrzeiten.
+- Nur der Standort des Crew-Leiters wird verfolgt; für die Fahrzeit gilt der Heimatstandort der Crew-Ressource.
 - Mitglieder bekommen keine Zuweisungsbenachrichtigung und werden beim Dispatch nicht als Follower eingetragen.
 - Arbeitstypen, Arbeitsaufträge und Positionen tragen eine minimale und eine empfohlene Crew-Größe. Nur das Minimum wirkt auf die Planung.
 - Mit Skill Grouping berücksichtigt die Planung die Qualifikationen aller Mitglieder zusammen.
@@ -103,7 +103,7 @@ Dauerte die Inbetriebnahme sechs Wochen, würde ich den Termin von Hand planen o
 
 ## Wann sollten lange Einsätze außerhalb von Field Service bleiben?
 
-Meine Regel, als Architekturempfehlung und nicht als Produktgrenze: Besteht Ihr Außendienst überwiegend aus Inbetriebnahmen und Revisionen, lohnt sich Field Service für die Planung allein selten. Die Optimierung mehrtägiger Arbeit hilft, wenn lange und kurze Einsätze um dieselben Leute konkurrieren; ist ein Team einfach zwei Wochen gebucht, hat die Engine wenig zu optimieren. Projektcontrolling, Kosten, Materialtermine, Abnahmen und Änderungen liegen meist ohnehin im ERP oder einem Projektwerkzeug. Field Service verdient seinen Platz, wenn dieselben Techniker zwischen den Projekten auch Wartungen und Störungseinsätze fahren, weil dann beide Arten von Arbeit in einem Plan landen.
+Meine Regel, als Architekturempfehlung und nicht als Produktgrenze: Besteht Ihr Außendienst überwiegend aus Inbetriebnahmen und Revisionen, lohnt sich Field Service für die Planung allein selten. Die Optimierung mehrtägiger Arbeit hilft, wenn lange und kurze Einsätze um dieselben Leute konkurrieren; ist ein Team einfach zwei Wochen gebucht, hat die Engine wenig zu optimieren. Projektcontrolling, Kosten, Materialtermine, Abnahmen und Änderungsanträge liegen meist ohnehin im ERP oder einem Projektwerkzeug. Field Service verdient seinen Platz, wenn dieselben Techniker zwischen den Projekten auch Wartungen und Störungseinsätze fahren, weil dann beide Arten von Arbeit in einem Plan landen.
 
 Zwei Entscheidungen gehören in das Design, bevor ein Partner etwas baut. Die erste: Welches System hält den Projektplan mit Phasen und Terminen, und wie kommen die Termine an das Service Appointment? Die zweite: Wie schützen Disponenten lange Einsätze vor kurzen? Die Scheduling Policy aus [Wie viel Planung darf automatisch laufen?](../salesforce-field-service-terminplanung-automatisieren/) braucht dafür eine klare Regel. Wo die Architekturfrage über Field Service hinausgeht, beschreibe ich mein Vorgehen unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 

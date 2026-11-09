@@ -1,6 +1,6 @@
 ---
 title: "API 67.0: Warum Apex im User Mode weniger sieht"
-description: "Ab API 67.0 laufen Apex-Datenbankzugriffe im User Mode, Klassen mit Sharing. Warum ein Versionssprung Datensätze ausblendet, warum KI-Code besonders betroffen ist und wie Sie planen."
+description: "Ab API 67.0 laufen Apex-Datenbankzugriffe standardmäßig im User Mode, Klassen mit Sharing. Warum Datensätze verschwinden, KI-Code besonders betroffen ist und wie Sie umsteigen."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de
@@ -14,7 +14,7 @@ takeaways:
   - "Vom Sharing ausgeblendete Datensätze fehlen ohne Fehlermeldung; eine fehlende Feldberechtigung lässt die Abfrage mit einer QueryException scheitern."
   - "WITH SECURITY_ENFORCED kompiliert mit 67.0 nicht mehr. WITH USER_MODE prüft auch polymorphe Felder und WHERE, ersetzte Abfragen brauchen einen Test."
   - "Coding-Agenten können API-Versionen nebenbei ändern und ohne System.runAs() testen. Ein Versionssprung braucht einen eigenen Pull Request."
-  - "Voller alter Systemzugriff braucht mit 67.0 without sharing, WITH SYSTEM_MODE und eine Begründung; nur für Feldrechte bleibt with sharing."
+  - "Voller alter Systemzugriff braucht ab 67.0 without sharing, WITH SYSTEM_MODE und eine Begründung; nur für Objekt- und Feldrechte reicht WITH SYSTEM_MODE."
 faq:
   - q: "Ändert API 67.0 meinen bestehenden Apex-Code automatisch?"
     a: "Nein. Die Änderung ist versioniert: Sie gilt für Klassen und Trigger, die mit API-Version 67.0 oder neuer gespeichert sind. Bestehender Code ohne expliziten Zugriffsmodus behält die alten Standards, bis jemand seine Version anhebt, mit einer Ausnahme: Eine Klasse ohne Sharing-Deklaration läuft mit Sharing, sobald eine Klasse in ihrer Vererbungskette mit 67.0 gespeichert ist. Jeder Versionssprung braucht einen Testplan."
@@ -29,11 +29,11 @@ faq:
 draft: false
 ---
 
-Apex-Code kann nach dem Anheben auf API-Version 67.0 weniger Datensätze sehen, denn ab dieser Version laufen Datenbankoperationen im User Mode, und Klassen ohne Sharing-Deklaration laufen mit Sharing. Die Änderung gilt pro Klasse: Meist passiert nichts, bis jemand eine Klasse anhebt. Dann liefern Abfragen nur noch, was der ausführende Benutzer sehen darf, ohne Fehlermeldung. KI-Agenten machen diesen Versionssprung wahrscheinlicher und testen ihn schlechter. Ich würde jeden Umstieg über API 67.0 hinaus, heute meist direkt auf 68.0, als geplante Änderung behandeln und mit den Benutzern testen, die den Code tatsächlich ausführen: Außendiensttechniker, Händler und der SAP-Integrationsuser.
+Apex-Code kann nach dem Anheben auf API-Version 67.0 weniger Datensätze sehen, denn ab dieser Version laufen Datenbankoperationen im User Mode, und Klassen ohne Sharing-Deklaration laufen mit Sharing. Die Änderung gilt pro Klasse: Meist passiert nichts, bis jemand eine Klasse anhebt. Dann liefern Abfragen nur noch, was der ausführende Benutzer sehen darf, ohne Fehlermeldung. KI-Agenten machen diesen Versionssprung wahrscheinlicher und testen ihn schlechter. Ich würde jeden Umstieg über API 67.0 hinaus, heute meist direkt auf 68.0, als geplante Änderung behandeln und als die Benutzer testen, die den Code tatsächlich ausführen: Außendiensttechniker, Händler und der SAP-Integrationsuser.
 
 ## Was ändert sich in Apex mit API-Version 67.0?
 
-Summer '26 kam je nach Instanz zwischen dem 15. Mai und dem 13. Juni 2026 in die Produktions-Orgs und brachte die API-Version 67.0 ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release)). Der [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm) nennt drei versionierte Verhaltensänderungen:
+Summer '26 kam je nach Instanz zwischen dem 15. Mai und dem 13. Juni 2026 in die Produktivorgs und brachte die API-Version 67.0 ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release)). Der [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm) nennt drei versionierte Verhaltensänderungen:
 
 - **User Mode als Standard.** SOQL, SOSL, DML und Database-Methoden erzwingen die Objektberechtigungen und die Feldsicherheit (Field-Level Security) des ausführenden Benutzers. Bis 66.0 war der System Mode Standard, und der Code musste diese Prüfungen selbst übernehmen.
 - **With Sharing als Standard.** Eine Klasse ohne Sharing-Deklaration läuft im Sharing-Kontext des aktuellen Benutzers. Bis 66.0 lief eine solche Klasse ohne Sharing, wenn sie ein Einstiegspunkt war, oder übernahm den Modus ihres Aufrufers. Aura-Controller und @AuraEnabled-Methoden, die eine Lightning Web Component aufruft, liefen schon vorher mit Sharing.
@@ -52,9 +52,9 @@ Einig sind sich beide in der Empfehlung, und der folge ich: Zugriffsmodus in Tri
 
 Hier wirken zwei Arten von Effekten, und sie zeigen sich sehr unterschiedlich.
 
-**Der Datensatzzugriff filtert still.** Läuft eine Klasse mit Sharing, liefert eine Abfrage nur die Datensätze, die der Benutzer über Organisationsweite Standards, Rollen, Freigaberegeln und Teams sehen darf, und Restriction Rules können das weiter einschränken. Keine Exception und keine Warnung sagt Ihnen, welche Datensätze fehlen. Eine Methode, die alle offenen Servicefälle einer Maschine gezählt hat, zählt jetzt die im Gebiet des Servicemitarbeiters, und der Code rechnet mit der kleineren Zahl weiter.
+**Datensätze fallen ohne Meldung weg.** Läuft eine Klasse mit Sharing, liefert eine Abfrage nur die Datensätze, die der Benutzer über organisationsweite Standardwerte, Rollen, Freigaberegeln und Teams sehen darf, und Restriction Rules können das weiter einschränken. Keine Exception und keine Warnung sagt Ihnen, welche Datensätze fehlen. Eine Methode, die alle offenen Servicefälle einer Maschine gezählt hat, zählt jetzt die im Gebiet des Servicemitarbeiters, und der Code rechnet mit der kleineren Zahl weiter.
 
-**Berechtigungen scheitern laut.** Im User Mode schlägt eine Abfrage fehl, die ein Feld auswählt, das der Benutzer nicht lesen darf. Die [Dokumentation zum Zugriffsmodus](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/apexref/apex_classes_enforce_usermode.htm) beschreibt getInaccessibleFields() an der QueryException, die alle betroffenen Felder auflistet, und getDmlFieldNames() für DML. Das tut im Abnahmetest weh, aber wenigstens merkt es jemand.
+**Fehlende Berechtigungen lösen einen Fehler aus.** Im User Mode schlägt eine Abfrage fehl, die ein Feld auswählt, das der Benutzer nicht lesen darf. Die [Dokumentation zum Zugriffsmodus](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/apexref/apex_classes_enforce_usermode.htm) beschreibt getInaccessibleFields() an der QueryException, die alle betroffenen Felder auflistet, und getDmlFieldNames() für DML. Das tut im Abnahmetest weh, aber wenigstens merkt es jemand.
 
 ```hinweis achtung
 Eine Datenbankoperation im User Mode „always respects the user's sharing rules“, so dieselbe Seite. Mit 67.0 reicht without sharing an der Klasse für eine Abfrage ohne Zugriffsmodus also nicht mehr. Wer das volle alte Verhalten bewusst behalten will, braucht beides, das Schlüsselwort an der Klasse und WITH SYSTEM_MODE. Muss der Code nur Objekt- und Feldrechte umgehen, ist WITH SYSTEM_MODE in einer Klasse mit Sharing die engere Wahl, denn im System Mode entscheidet weiter das Schlüsselwort der Klasse über den Datensatzzugriff.
@@ -62,7 +62,7 @@ Eine Datenbankoperation im User Mode „always respects the user's sharing rules
 
 Für einen Hersteller zählt weniger der Code als die Frage, wer ihn ausführt:
 
-- **Integrationsuser.** Ein Apex-REST-Service, den SAP oder proALPHA aufruft, um den Auftragsstatus zu aktualisieren, läuft als Integrationsuser. Dessen Berechtigungssatz wurde oft für den System Mode gebaut und deckt nur die Felder ab, die die API selbst brauchte.
+- **Integrationsuser.** Ein Apex-REST-Service, den SAP oder proALPHA aufruft, um den Auftragsstatus zu aktualisieren, läuft als Integrationsuser. Dessen Berechtigungssatz wurde oft für den bisherigen System Mode eingerichtet.
 - **Händler im Portal.** Controller hinter einem Händlerportal auf Experience Cloud liefen meist schon mit Sharing, weil @AuraEnabled-Methoden das taten. Neu ist die Feldsicherheit: Ein Feld, das das Händlerprofil nicht lesen darf und das abgefragt, aber nie angezeigt wird, bricht jetzt die Komponente. Mehr zu Portalen steht in [das Kundenportal der Manufacturing Cloud](../manufacturing-cloud-kundenportal/).
 - **Techniker und Servicemitarbeitende.** Techniker im Außendienst (Field Service) und Servicemitarbeitende sehen oft nur ihr Gebiet oder ihre Accounts. Logik, die über Kulanz, Garantie oder Ersatzteile anhand von Zählungen über alle Datensätze entscheidet, gibt andere Antworten.
 

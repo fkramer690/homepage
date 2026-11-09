@@ -13,7 +13,7 @@ tags: [MCP, Community-MCP-Server, Sicherheit, Claude Code, Partnersteuerung, Mas
 takeaways:
   - "Vor der Freigabe prüfen Sie Identität, Zugangsdaten, Maintainer und gepinnte Version, Werkzeugliste, andere Werkzeuge im Client und Ziel-Org."
   - "Ein gefälschtes postmark-mcp-Paket schickte ab Version 1.0.16 versteckte Blindkopien an eine fremde Adresse; mcp-remote hatte eine Lücke mit CVSS 9,6."
-  - "Für eine Person mit Claude, ChatGPT oder Cursor ist Salesforce Hosted MCP sicherer, wenn App-Zugriff und Werkzeuge beschränkt sind: Named User, PKCE."
+  - "Für eine Person mit Claude, ChatGPT oder Cursor ist Salesforce Hosted MCP sicherer, wenn App-Zugriff und Werkzeuge beschränkt sind: Named User, OAuth mit PKCE."
   - "Nächtliche Jobs und Maschine-zu-Maschine-Zugriffe gehören in eine klassische Integration, nicht in einen Community-Server mit Passwort."
 faq:
   - q: "Sind Community-MCP-Server für Salesforce unsicher?"
@@ -23,13 +23,13 @@ faq:
   - q: "Wann ist Salesforce Hosted MCP die bessere Wahl?"
     a: "Wenn eine Person interaktiv mit einem KI-Client auf einer Org ab Enterprise Edition arbeitet. Jeder Aufruf läuft unter diesem Named User, die Anmeldung nutzt OAuth mit PKCE, und die Server bleiben aus, bis ein Admin sie aktiviert. Beschränken Sie die External Client App auf vorab autorisierte Benutzer und schalten Sie nur die nötigen Werkzeuge frei. Laut Salesforce sind sie für Kunden mit Flex Credits gedacht, die Nutzung kann abgerechnet werden."
   - q: "Darf ein Community-MCP-Server Benutzername und Passwort nutzen?"
-    a: "Technisch geht das, ich würde es ablehnen. Salesforce beendet den OAuth Username-Password Flow am 20. Februar 2027 und davon getrennt das SOAP-API-login() mit Benutzername, Passwort und Security Token mit Summer '27. Unabhängig von der Frist ist ein Passwort in einer Konfigurationsdatei auf einem Laptop ist die schwächste Form von Zugangsdaten."
+    a: "Technisch geht das, ich würde es ablehnen. Salesforce beendet den OAuth Username-Password Flow am 20. Februar 2027 und davon getrennt das SOAP-API-login() mit Benutzername, Passwort und Security Token mit Summer '27. Unabhängig von der Frist ist ein Passwort in einer Konfigurationsdatei auf einem Laptop die schwächste Form von Zugangsdaten."
   - q: "Wie sperren wir nicht freigegebene MCP-Server in Claude Code?"
     a: "Claude Code unterstützt Managed Settings mit allowedMcpServers und allowManagedMcpServersOnly oder eine Datei managed-mcp.json mit festem Server-Set. Lokale Server auf der Allowlist müssen exakt mit Befehl und Argumenten übereinstimmen."
 draft: false
 ---
 
-Ein Community-MCP-Server für Salesforce ist Fremdcode oder ein fremder Dienst mit Zugriff auf Ihre Salesforce-Org. Ich würde ihn deshalb wie eine Schnittstelle freigeben, nicht wie ein Browser-Plugin. Bevor Sie zustimmen, klären Sie, unter wessen Identität er arbeitet, wo seine Zugangsdaten liegen, wer ihn pflegt und ob die Version gepinnt ist, welche Werkzeuge er anbietet, was sonst im selben KI-Client läuft und welche Org er erreicht. Arbeitet eine Person mit Claude, ChatGPT oder Cursor auf einer Enterprise Edition, ist Salesforce Hosted MCP der sicherere Weg, sofern App-Zugriff und Werkzeuge beschränkt sind. Nächtliche Jobs gehören in eine klassische Integration.
+Ein Community-MCP-Server für Salesforce ist Fremdcode oder ein fremder Dienst mit Zugriff auf Ihre Salesforce-Org. Ich würde ihn deshalb wie eine Integration freigeben, nicht wie ein Browser-Plugin. Bevor Sie zustimmen, klären Sie, unter wessen Identität er arbeitet, wo seine Zugangsdaten liegen, wer ihn pflegt und ob die Version gepinnt ist, welche Werkzeuge er anbietet, was sonst im selben KI-Client läuft und welche Org er erreicht. Arbeitet eine Person mit Claude, ChatGPT oder Cursor auf einer Enterprise Edition, ist Salesforce Hosted MCP der sicherere Weg, sofern App-Zugriff und Werkzeuge beschränkt sind. Nächtliche Jobs gehören in eine klassische Integration.
 
 ## Warum ist ein Community-MCP-Server ein eigenes Risiko?
 
@@ -49,7 +49,7 @@ Zwei Vorfälle außerhalb von Salesforce zeigen, was passieren kann:
 - **Ein gefälschtes Paket.** The Hacker News [berichtete im September 2025](https://thehackernews.com/2025/09/first-malicious-mcp-server-found.html), dass sich das npm-Paket `postmark-mcp` als legitime Postmark-Integration ausgab. Laut Koi Security, die es entdeckt hat, fügte Version 1.0.16 ausgehenden E-Mails eine versteckte Blindkopie an eine externe, vom Angreifer kontrollierte Adresse hinzu. Bis zur Löschung kam es auf 1.643 Downloads.
 - **Eine Lücke in einer Brücke.** Das Paket `mcp-remote`, das lokale Clients mit entfernten Servern verbindet, hatte eine Schwachstelle mit CVSS 9,6, gefunden von JFrog und [von The Hacker News gemeldet](https://thehackernews.com/2025/07/critical-mcp-remote-vulnerability.html). Ein bösartiger Server konnte Befehle auf dem Rechner des Entwicklers ausführen. Betroffen waren die Versionen 0.0.5 bis 0.1.15, das Paket hatte bei Bekanntwerden im Juli 2025 mehr als 437.000 Downloads, Version 0.1.16 behob diese Lücke.
 
-Einen veröffentlichten Vorfall mit einem Salesforce-Community-Server habe ich nicht gefunden. Die Vorfälle zeigen aber Risikoklassen, die auch Salesforce betreffen, denn ein Entwickler-Laptop mit Salesforce-Login ist genau das, was ein solches Paket erreicht.
+Einen veröffentlichten Vorfall mit einem Salesforce-Community-Server habe ich nicht gefunden. Die Vorfälle zeigen aber Risikoklassen, die ebenso für Salesforce-Zugänge gelten: Ein solches Paket landet genau auf dem Entwickler-Laptop mit Salesforce-Login.
 
 Leiser ist das Risiko in den Werkzeugbeschreibungen. Simon Willison beschreibt unter Berufung auf Invariant Labs das [Tool Poisoning](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/): "malicious instructions are tucked away in the tool descriptions themselves". Willison zitiert außerdem Elena Cross: "MCP tools can mutate their own definitions after installation." Ein Server, den Sie im März geprüft haben, kann sich nach einem Update im Mai anders verhalten.
 
@@ -82,7 +82,7 @@ Für ein kommerzielles Gateway reichen die sechs Fragen nicht. Ergänzen Sie die
 
 ```vertiefung Für Entwickler
 titel: Wie hilft Claude Code beim Pinnen und bei neuen Servern?
-In Claude Code muss ein Allowlist-Eintrag für einen lokalen Server [exakt mit Befehl und Argumenten übereinstimmen](https://code.claude.com/docs/en/managed-mcp). Ein Eintrag mit `pkg@1.4.2` sperrt also jede andere Versionsangabe. So lese ich die Abgleichregel. Sie erzwingt den konfigurierten Befehl, kein geprüftes Artefakt: Der `env`-Block wird nicht verglichen, Abhängigkeiten dieser Version können trotzdem kompromittiert sein, und für Remote-Server gilt sie nicht. Als Unternehmenskontrolle trägt sie nur aus Managed Settings.
+In Claude Code muss ein Allowlist-Eintrag für einen lokalen Server [exakt mit Befehl und Argumenten übereinstimmen](https://code.claude.com/docs/en/managed-mcp). Ein Eintrag mit `pkg@1.4.2` sperrt also jede andere Versionsangabe. So lese ich die Abgleichregel. Sie erzwingt den konfigurierten Befehl, kein geprüftes Artefakt: Der `env`-Block wird nicht verglichen, Abhängigkeiten dieser Version können trotzdem kompromittiert sein, und für Remote-Server gilt sie nicht. Als unternehmensweite Kontrolle greift sie nur über zentral verwaltete Managed Settings.
 
 Claude Code verlangt eine Vertrauensbestätigung, wenn ein neuer MCP-Server auftaucht. Laut Sicherheitsseite entfällt sie bei nicht interaktiven Läufen mit `-p`, ein Server in einem CI-Job bekommt also keine Rückfrage.
 ```
@@ -104,7 +104,7 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Händlerportal u
 
 **Anfrage 1.** Eine Entwicklerin möchte einen Community-Salesforce-Server von npm in Claude Code nutzen, angemeldet mit dem Passwort des Integrationsbenutzers, um doppelte Anlagen (Assets) in der Full-Copy-Sandbox zu analysieren. Entscheidung: nein zum Passwort und zum geteilten Benutzer. Sie bekommt `sobject-reads` über Hosted MCP in dieser Sandbox, unter ihrem eigenen Sandbox-Benutzer.
 
-**Anfrage 2.** Der Serviceinnendienst möchte ein kommerzielles Gateway, das ChatGPT mit Salesforce und SAP verbindet. Entscheidung: zurückgestellt. Das Gateway würde Refresh Tokens für die Org halten, und seine Doku zeigt nicht, ob jeder der 25 Benutzer ein eigenes Token bekommt oder alle Aufrufe als ein technischer Benutzer laufen. Der Anbieter muss OAuth-Client, Token-Inhaber, Run-As-Identität und Audit Trail je Zielsystem beschreiben. Der Salesforce-Teil läuft über Hosted MCP, der SAP-Teil wartet auf die Vertragsprüfung des Gateway-Anbieters.
+**Anfrage 2.** Der Serviceinnendienst möchte ein kommerzielles Gateway, das ChatGPT mit Salesforce und SAP verbindet. Entscheidung: zurückgestellt. Das Gateway würde Refresh Tokens für die Org halten, und seine Doku zeigt nicht, ob jeder der 25 Benutzer ein eigenes Token bekommt oder alle Aufrufe als ein technischer Benutzer laufen. Der Anbieter muss OAuth-Client, Token-Subjekt, Run-as-Identität und Audit Trail je Zielsystem beschreiben. Der Salesforce-Teil läuft über Hosted MCP, der SAP-Teil wartet auf die Vertragsprüfung des Gateway-Anbieters.
 
 **Anfrage 3.** Der Partner schlägt einen Community-Server für einen nächtlichen Agenten vor, der Händlerbestände mit SAP abgleicht. Entscheidung: kein MCP. Das ist eine Integration mit Run-as-Benutzer und Client Credentials, gebaut wie der Auftragsstatus in [Agentforce und SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/).
 
@@ -113,7 +113,7 @@ Jede Anfrage hat einen geregelten nächsten Schritt, und kein Community-Server e
 ## Die MCP-Server bei allen Partnern erfassen
 
 1. **Bestandsaufnahme.** Fragen Sie jeden Partner, welche MCP-Server in seinen Clients für Ihre Orgs eingerichtet sind, mit Versionen. Das Ende des DX MCP Servers ist ein guter Anlass, siehe [das Ende des Salesforce DX MCP Servers](../salesforce-dx-mcp-server-ende/).
-2. **Die Regel aufschreiben.** Standard sind gehostete oder von Salesforce betriebene Server; Community-Server nur nach den sechs Prüfpunkten, in Sandboxes und mit gepinnter Version.
+2. **Die Regel aufschreiben.** Standard sind Salesforce Hosted MCP oder andere von Salesforce betriebene Server; Community-Server nur nach den sechs Prüfpunkten, in Sandboxes und mit gepinnter Version.
 3. **Durchsetzen, wo es geht.** Lizenzieren Sie Claude Code zentral, sperren [Managed Settings](https://code.claude.com/docs/en/managed-mcp) mit `allowedMcpServers` und `allowManagedMcpServersOnly` jeden Server, der nicht auf Ihrer Liste steht.
 4. **Bei jedem Update neu prüfen.** Eine neue Version ist eine neue Freigabe.
 

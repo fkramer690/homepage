@@ -12,14 +12,14 @@ tags: [Field Service, Assets, installierte Basis, Asset-Hierarchie, PLM, ERP]
 takeaways:
   - "Salesforce erlaubt 50 Ebenen und 10.000 Assets pro Hierarchie, die Baumansicht navigiert aber nur 20 Ebenen und Hierarchien bis 500 Assets."
   - "Starke Signale für ein Asset: eigene Seriennummer, Wartung oder Garantie, wenn ein Serviceprozess genau diese Einheit getrennt verfolgen muss."
-  - "Asset-Attribute sparen eigene Felder pro Baureihe, erlauben aber 25 pro Asset und sind nicht Teil der Offline-Briefcases."
-  - "Die installierte Basis kommt aus dem System mit der seriennummerngenauen Konfiguration. Wer sie nach einem Tausch pflegt, steht vor dem Go-live fest."
+  - "Asset-Attribute sparen benutzerdefinierte Felder pro Baureihe, erlauben aber 25 pro Asset und sind nicht Teil der Offline-Briefcases."
+  - "Die installierte Basis kommt aus dem System mit der seriennummerngenauen Konfiguration. Wer sie nach einem Tausch pflegt, muss vor dem Go-live feststehen."
   - "Jedes zusätzliche servicerelevante Asset belastet Wartungspläne und Datenpflege. Halten Sie die Zahl so klein, wie der Service es erlaubt."
 faq:
   - q: "Wie viele Ebenen kann eine Asset-Hierarchie in Salesforce haben?"
     a: "Laut den Field-Service-Limits in der Salesforce-Hilfe bis zu 50 Ebenen, 2.000 untergeordnete Assets pro Asset und 10.000 Assets pro Hierarchie. Die Aktion View Asset Hierarchy navigiert bis zu 20 Ebenen und funktioniert nur bis 500 Assets."
   - q: "Sollte jedes Teil einer Maschine ein Asset werden?"
-    a: "Nein. Ich bilde die Maschine und die Komponenten als Assets ab, die ein Serviceprozess getrennt identifizieren, warten, garantieren oder tauschen muss; eigene Seriennummer, Wartung oder Garantie sind starke Signale. Schrauben, Dichtungen und Kabel bleiben in der Stückliste im PLM und werden bei Bedarf angezeigt."
+    a: "Nein. Ich bilde die Maschine und die Komponenten als Assets ab, die ein Serviceprozess getrennt identifizieren, warten, in der Garantie abwickeln oder tauschen muss; eigene Seriennummer, Wartung oder Garantie sind starke Signale. Schrauben, Dichtungen und Kabel bleiben in der Stückliste im PLM und werden bei Bedarf angezeigt."
   - q: "Was sind Asset-Attribute in Salesforce?"
     a: "AssetAttribute ist ein Standardobjekt, das Attributwerte pro Asset speichert, etwa eine Firmware-Version oder einen Zähler. Jeder Wert verweist auf eine Attributdefinition, neue Werte brauchen also kein neues Feld. Salesforce erlaubt 25 Attribute pro Asset und empfiehlt höchstens 10, wenn sie nutzungsbasierte Wartung steuern."
   - q: "Wer sollte Assets nach einem Umbau aktualisieren?"
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Ein Maschinenbauer sollte nur das als Asset abbilden, was ein Serviceprozess getrennt verfolgen muss, typischerweise Teile mit eigener Seriennummer, Wartung oder Garantie. Für die meisten Maschinen heißt das zwei oder drei Ebenen: die Linie oder Maschine, ihre Hauptbaugruppen mit Seriennummer und vielleicht einige Zukaufteile mit eigener Garantie. Alles andere bleibt in der Stückliste im PLM. Salesforce Field Service erlaubt deutlich mehr: 50 Ebenen und 10.000 Assets pro Hierarchie. Die echten Grenzen kommen früher, von Wartungsplänen, Datenpflege und der Baumansicht, die 20 Ebenen und Hierarchien bis 500 Assets navigiert.
+Ein Maschinenbauer sollte nur das als Asset abbilden, was ein Serviceprozess getrennt verfolgen muss, typischerweise Teile mit eigener Seriennummer, Wartung oder Garantie. Für die meisten Maschinen heißt das zwei oder drei Ebenen: die Linie oder Maschine, ihre Hauptbaugruppen mit Seriennummer und vielleicht einige Zukaufteile mit eigener Garantie. Alles andere bleibt in der Stückliste im PLM. Salesforce Field Service erlaubt deutlich mehr: 50 Ebenen und 10.000 Assets pro Hierarchie. In der Praxis setzen Wartungspläne, Datenpflege und die Baumansicht früher Grenzen: Sie navigiert 20 Ebenen und Hierarchien mit höchstens 500 Assets.
 
 ## Was erlaubt Salesforce?
 
@@ -49,23 +49,23 @@ Ersetzt eine Komponente eine andere, hält eine Asset-Beziehung das fest, zum Be
 
 ## Welche Komponenten sollten Assets werden?
 
-Meine Faustregel hat drei Fragen. Jedes Ja ist ein starkes Signal; entscheidend ist, ob ein Serviceprozess in Salesforce genau diese installierte Einheit getrennt identifizieren, warten, garantieren oder tauschen muss:
+Meine Faustregel hat drei Fragen. Jedes Ja ist ein starkes Signal; entscheidend ist, ob ein Serviceprozess in Salesforce genau diese installierte Einheit getrennt identifizieren, warten, in der Garantie abwickeln oder tauschen muss:
 
 - **Hat sie eine eigene Seriennummer?** Ein zugekauftes Getriebe, ein Roboter oder ein Schaltschrank mit Typenschild. Der Techniker muss festhalten, welches Exemplar eingebaut oder getauscht wurde.
-- **Hat sie eine eigene Wartung?** Eine Spindel mit eigenem Intervall in Betriebsstunden, eine Filteranlage mit eigener Prüfung. Maintenance Work Rules hängen an Assets, also braucht die Komponente eines.
+- **Hat sie eine eigene Wartung?** Eine Spindel mit eigenem Intervall in Betriebsstunden, eine Filteranlage mit eigener Prüfung. Maintenance Work Rules hängen an Assets, also braucht die Komponente ein eigenes Asset.
 - **Hat sie eine eigene Garantie?** Ein Lieferantenteil, dessen Garantie an einem anderen Datum beginnt als die der Maschine. Ohne eigenes Asset kann niemand sagen, ob der Anspruch an den Lieferanten geht.
 
 Alles andere bleibt in der Stückliste: Schrauben, Dichtungen, Kabel, Normteile. Der Techniker muss sie trotzdem finden, aber das ist eine Frage für PLM und Ersatzteilkatalog. In [Ersatzteile per Seriennummer](../ersatzteile-seriennummer-ki-agent/) empfehle ich dieselbe Aufteilung: Salesforce führt die Maschine und ihre für den Service wichtigen Hauptbaugruppen, die vollständige As-built-Stückliste bleibt im PLM und wird live gelesen.
 
 ## Felder oder Asset-Attribute für Maschinendaten?
 
-Baureihen unterscheiden sich. Die eine hat eine Firmware-Version und einen Hubzähler, die nächste eine Laserquelle mit Stunden und eine Kühlmittelsorte. Bekommt jede Baureihe ihre eigenen Felder am Asset, wächst das Objekt mit jeder neuen Produktlinie.
+Baureihen unterscheiden sich. Die eine hat eine Firmware-Version und einen Hubzähler, die nächste eine Laserquelle mit Stunden und eine Kühlmittelsorte. Bekommt jede Baureihe eigene benutzerdefinierte Felder am Asset, wächst das Objekt mit jeder neuen Produktlinie.
 
-Das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm), speichert laut Dokumentation Asset-Attribute, um den Zustand von Assets zu verfolgen und auszuwerten. Jeder Datensatz verbindet ein Asset mit einer Attributdefinition und speichert einen Wert, bei Auswahllisten mit den zugehörigen Werten. Neue Attribute brauchen eine neue Definition, kein neues Feld.
+Das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm) speichert laut Dokumentation Asset-Attribute, um den Zustand von Assets zu verfolgen und auszuwerten. Jeder Datensatz verbindet ein Asset mit einer Attributdefinition und speichert einen Wert, bei Auswahllisten mit den zugehörigen Werten. Neue Attribute brauchen eine neue Definition, kein neues Feld.
 
 Attribute haben laut [Hinweisen](https://help.salesforce.com/s/articleView?id=fs_asset_attrib_manage_monit_consider.htm&language=en_US&type=5) Grenzen: 25 pro Asset, und höchstens 10 empfohlen, wenn nutzungsbasierte Wartung daraus Arbeitsaufträge erzeugt. Validierungsregeln, Datensatztypen und Feldhistorie werden nicht unterstützt. Und Briefcases für das Offline-Priming [enthalten keine Asset-Attribute](https://help.salesforce.com/s/articleView?id=service.wfs_mobile_work_with_performance_priming.htm&language=en_US&type=5), Techniker brauchen also Verbindung, um sie zu lesen.
 
-Ich nutze Attribute für beschreibende Werte, die je Baureihe verschieden sind. Für wenige Zähler, die über alle Baureihen zählen, Validierung oder Historie brauchen oder offline lesbar sein müssen, etwa Betriebsstunden, nehme ich lieber ein Zahlenfeld am Asset. Nutzungsbasierte Wartung funktioniert mit beidem. Wie das im Detail funktioniert, steht in [Wartung nach Betriebsstunden im Field Service einrichten](../field-service-wartung-nach-betriebsstunden/).
+Ich nutze Attribute für beschreibende Werte, die je Baureihe verschieden sind. Für wenige Zähler, die über alle Baureihen hinweg relevant sind, Validierung oder Historie brauchen oder offline lesbar sein müssen, etwa Betriebsstunden, nehme ich lieber ein Zahlenfeld am Asset. Nutzungsbasierte Wartung funktioniert mit beidem. Wie das im Detail funktioniert, steht in [Wartung nach Betriebsstunden im Field Service einrichten](../field-service-wartung-nach-betriebsstunden/).
 
 ## Wer hält die Hierarchie aktuell?
 
@@ -100,11 +100,11 @@ Dasselbe gilt für Händlerportale: Jedes Asset, das ein Händler sehen darf, mu
 
 Alle Zahlen sind Annahmen. Ein Hersteller von Verpackungsmaschinen liefert eine Linie mit 6 Maschinen. Darin stecken 40 Baugruppen mit Seriennummer, etwa Servoantriebe, Roboter und Etikettierer, und rund 900 weitere Teile.
 
-**Vollständige Kopie.** Linie, Maschinen, Baugruppen und Teile als Assets: etwa 947 Datensätze pro Linie. Das liegt weit unter dem Limit von 10.000, aber über den 500 für die Baumansicht, und 900 Datensätze pro Linie müssen mit dem PLM übereinstimmen.
+**Vollständige Kopie.** Linie, Maschinen, Baugruppen und Teile als Assets: etwa 947 Datensätze pro Linie. Das liegt weit unter dem Limit von 10.000, aber über der Grenze von 500 Assets für die Baumansicht, und 900 Datensätze pro Linie müssen mit dem PLM übereinstimmen.
 
 **Empfohlene Tiefe.** Die Linie als oberstes Asset, weil der Servicevertrag sie als Ganzes abdeckt. Darunter die 6 Maschinen, darunter die 40 Baugruppen mit Seriennummer: 47 Assets in drei Ebenen. Zwölf Baugruppen mit eigenem Intervall bekommen Maintenance Work Rules. Die 900 Teile bleiben im PLM und erscheinen auf der Maschinenseite oder im Agenten, wenn jemand sie braucht.
 
-Bei 50 Linien im Feld sind das 2.350 Assets statt rund 47.000, und jedes davon trägt eine Information, die der Service nutzt.
+Bei 50 Linien im Feld sind das 2.350 Assets statt rund 47.000, und jedes davon enthält Informationen, die der Service nutzt.
 
 ## Einen Maschinentyp mit der Faustregel durchgehen
 

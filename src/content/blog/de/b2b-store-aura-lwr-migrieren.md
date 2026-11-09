@@ -51,7 +51,7 @@ Die [wichtigsten Unterschiede](https://developer.salesforce.com/docs/commerce/lw
 
 Zwei Zeilen verdienen Aufmerksamkeit. Die erste ist der Checkout. Für Aura-Stores schreibt Salesforce, dass Sie [Checkout-Flows mit Flow Builder bauen](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-setup-checkout-flow.html). LWR-Stores nutzen den Salesforce Commerce Checkout, der mit dem Store installiert wird. Dort zählen vier Ebenen: Checkout-Seite und Layout in Experience Builder, eigene Checkout-Komponenten, die Integrationen für Versand, Steuern und Zahlung und Extensions wie die Prüfung vor der Bestellung. Die Integrationen für Versand, Steuern und Zahlung laufen getrennt von den Aura-Subflows, und für eigene Logik empfiehlt Salesforce [Extensions statt Integrationen](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2c-comm-integration-arch.html). Wenn Ihr Aura-Checkout einen Subflow hat, der das ERP für eine Kreditprüfung aufruft, muss diese Logik neu gebaut werden. Wie Extensions funktionieren, steht in [Commerce Extensions: Eigenentwicklung, die Updates übersteht](../commerce-extensions-eigenentwicklung/).
 
-Die zweite ist die Warenkorbseite. Sie ist keine Record Page mehr, sondern eine Named Page. Jede Komponente, die mit `lightning/navigation` zum Warenkorb navigiert oder einen Link dorthin baut, muss angepasst werden, so steht es auf der Seite [Migrate Your Store](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/store-migration.html) des Leitfadens.
+Die zweite ist die Warenkorbseite. Sie wurde von einer Record Page zu einer Named Page. Jede Komponente, die mit `lightning/navigation` zum Warenkorb navigiert oder einen Link dorthin baut, muss angepasst werden, so steht es auf der Seite [Migrate Your Store](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/store-migration.html) des Leitfadens.
 
 ## Erst im Aura-Store vorbereiten, dann wechseln
 
@@ -60,7 +60,7 @@ Der Leitfaden trennt die Vorbereitung im Aura-Store vom Wechsel auf einen neuen 
 **Vorbereitung im laufenden Aura-Store** ([Prepare for Store Migration](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/prepare-for-migration.html)):
 
 1. **Bestand aufnehmen.** Suchen Sie im Setup nach Lightning Components, um alle Aura-Komponenten und Lightning Web Components zu sehen.
-2. **Aura-Komponenten ersetzen.** Lightning Web Components laufen in Aura- und LWR-Stores, oft ohne Änderung. Das lohnt sich, wenn der Store noch mehrere Releases auf Aura bleibt; steht ein Neubau kurz bevor, kann doppelter Regressionstest mehr kosten als er spart. Aura-Komponenten können Lightning Web Components enthalten, aber nicht umgekehrt, also stellen Sie zuerst die inneren Komponenten um. Lässt sich eine Aura-Komponente noch nicht ersetzen, reduzieren Sie sie auf eine dünne Hülle. Am Ende müssen alle Aura-Komponenten weg.
+2. **Aura-Komponenten ersetzen.** Lightning Web Components laufen in Aura- und LWR-Stores, oft ohne Änderung. Das lohnt sich, wenn der Store noch mehrere Releases auf Aura bleibt; steht ein Neubau kurz bevor, können doppelte Regressionstests mehr kosten, als sie sparen. Aura-Komponenten können Lightning Web Components enthalten, aber nicht umgekehrt. Stellen Sie deshalb zuerst die untersten Komponenten um. Lässt sich eine Aura-Komponente noch nicht ersetzen, reduzieren Sie sie auf einen dünnen Wrapper. Am Ende müssen alle Aura-Komponenten weg.
 
 ```vertiefung Für Entwickler
 titel: Wie baue ich Datenzugriff und Events für LWR um?
@@ -77,7 +77,7 @@ Store anlegen
 Umbau abschließen
   Komponenten in ein SFDX-Projekt legen, den Umbau abschließen, die Navigation zum Warenkorb anpassen und das Theme-Branding auf Styling-Hooks übertragen, wo es dem Theme-Panel folgen soll.
 Konfiguration übertragen
-  Der Leitfaden überträgt die Store-Konfiguration per Change Set. Die Hilfeseite beschreibt Change Sets zwischen verbundenen Orgs, testen Sie also in einer Sandbox, wie die Konfiguration in derselben Org in den neuen Store kommt.
+  Der Leitfaden überträgt die Store-Konfiguration per Change Set. Die Hilfeseite beschreibt Change Sets zwischen verbundenen Orgs. Testen Sie deshalb in einer Sandbox, wie die Konfiguration in derselben Org in den neuen Store kommt.
 Veröffentlichen
   Deployen, Komponenten in Experience Builder platzieren, Vorschau auf Desktop und Mobilgerät prüfen, veröffentlichen.
 ```
@@ -88,20 +88,20 @@ Salesforce schreibt, dass Sie den Store nicht von Grund auf neu bauen müssen un
 
 Der Leitfaden behandelt Komponenten und Store-Konfiguration. Zu Katalog, Buyer Groups, Entitlement Policies und Preisbüchern sagt er nichts, ebenso wenig zu URLs und Lesezeichen der Händler. Planen Sie ausdrücklich, wie der neue Store an die bestehenden Buyer Groups und Preisbücher angebunden wird, und testen Sie das mit echten Käuferkonten, bevor ein Händler den Store sieht.
 
-Experience-Metadaten lassen sich in einer Pipeline besser führen als mit Change Sets. Salesforce beschreibt das [Deployment von Store-Metadaten](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-deploy-experience-metadata.html) mit der Salesforce CLI und den Typen ExperienceBundle oder DigitalExperienceBundle, versioniert in Git. Dieselbe Seite warnt, dass manche Einstellungen nicht in den Metadaten stecken und von Hand nachgezogen werden müssen, und nennt Domains, URLs und Single Sign-on als Aufgaben nach dem Deployment. Schreiben Sie diese Einstellungen vor dem Wechsel auf. Wo Store-Konfiguration in einer Pipeline hingehört, beschreibt das DevOps-Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/).
+Experience-Metadaten lassen sich in einer Pipeline besser verwalten als mit Change Sets. Salesforce beschreibt das [Deployment von Store-Metadaten](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-deploy-experience-metadata.html) mit der Salesforce CLI und den Typen ExperienceBundle oder DigitalExperienceBundle und deren Ablage in der Versionskontrolle. Dieselbe Seite warnt, dass manche Einstellungen nicht in den Metadaten stecken und von Hand nachgezogen werden müssen, und nennt Domains, URLs und Single Sign-on als Aufgaben nach dem Deployment. Schreiben Sie diese Einstellungen vor dem Wechsel auf. Wo Store-Konfiguration in einer Pipeline hingehört, beschreibt das DevOps-Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/).
 
 ## Wann lohnt sich der Umstieg?
 
 Ich würde die Migration planen, wenn mindestens einer dieser Punkte zutrifft:
 
-- **Eine Funktion, die Sie brauchen, fehlt im Aura-Store oder ist dort schwer zu bauen.** Prüfen Sie für jede neue Funktion in den Release Notes, welches Template sie voraussetzt, bevor Sie die Migration damit begründen. Headless Commerce ist eine eigene Frontend-Architektur, und der Buyer Agent arbeitet auch außerhalb des Stores in WhatsApp oder SMS, beides ist allein also kein Grund für LWR.
+- **Eine Funktion, die Sie brauchen, fehlt im Aura-Store oder ist dort schwer zu bauen.** Prüfen Sie für jede neue Funktion in den Release Notes, welches Template sie voraussetzt, bevor Sie die Migration damit begründen. Headless Commerce ist eine eigene Frontend-Architektur. Der Buyer Agent arbeitet zudem außerhalb des Stores über WhatsApp oder SMS. Keiner der beiden Punkte ist allein ein Grund für LWR.
 - **Eigener Aura-Code wächst weiter.** Jede neue Aura-Komponente ist Code, den Sie später neu schreiben.
 - **Der Checkout muss ohnehin geändert werden.** Eine neue ERP-Schnittstelle oder eine neue Zahlart ist ein guter Anlass, den Checkout auf LWR mit Extensions neu zu bauen, statt einen Flow zu erweitern.
 - **Der Partner, der den Store gebaut hat, geht.** Ein neuer Partner sollte nicht erst Aura lernen müssen.
 
 Läuft der Store stabil, mit wenig eigenem Code und ohne geplante Änderungen, ist Abwarten eine legitime Entscheidung. Die Vorbereitungsschritte lohnen sich trotzdem, weil Lightning Web Components in beiden Stores laufen.
 
-Rechenbeispiel: Ein Maschinenbauer betreibt seit 2021 einen Aura-Store mit rund 30 eigenen Komponenten und einem Checkout-Flow mit Kreditprüfung im ERP. Im ersten Quartal ersetzt das Team die inneren Komponenten im Aura-Store durch Lightning Web Components und liefert sie mit den normalen Releases aus. Im zweiten Quartal baut es den LWR-Store in einer Sandbox auf, setzt die Kreditprüfung als Extension zur Prüfung vor der Bestellung neu um, mit Timeout und klarer Meldung, wenn das ERP nicht antwortet, und überträgt das Styling ins Theme-Panel. Dann wechselt eine Pilot-Buyer-Group in den neuen Store. Vorher sind Domains und Weiterleitungen, Single Sign-on, offene Warenkörbe, Buyer-Group-Zuordnungen, Suchindex und Links in Bestellmails geklärt und Kriterien für den Rückweg aufgeschrieben. Der alte Store bleibt zwei Wochen als Rückfallebene online, und die übrigen Gruppen folgen, wie in [B2B-Shop für Händler einführen](../b2b-shop-haendler-einfuehren/) beschrieben.
+Praxisbeispiel: Ein Maschinenbauer betreibt seit 2021 einen Aura-Store mit rund 30 eigenen Komponenten und einem Checkout-Flow mit Kreditprüfung im ERP. Im ersten Quartal ersetzt das Team zuerst die untersten Komponenten im Aura-Store durch Lightning Web Components und liefert sie mit den normalen Releases aus. Im zweiten Quartal baut es den LWR-Store in einer Sandbox auf, setzt die Kreditprüfung als Extension zur Prüfung vor der Bestellung neu um, mit Timeout und klarer Meldung, wenn das ERP nicht antwortet, und überträgt das Styling ins Theme-Panel. Dann wird eine Pilot-Buyer-Group auf den neuen Store umgestellt. Vorher sind Domains und Weiterleitungen, Single Sign-on, offene Warenkörbe, Buyer-Group-Zuordnungen, Suchindex und Links in Bestellmails geklärt und Kriterien für den Rückweg aufgeschrieben. Der alte Store bleibt zwei Wochen als Ausweichlösung online, und die übrigen Gruppen folgen, wie in [B2B-Shop für Händler einführen](../b2b-shop-haendler-einfuehren/) beschrieben.
 
 ## Aura-Komponenten und Checkout-Subflows auflisten
 

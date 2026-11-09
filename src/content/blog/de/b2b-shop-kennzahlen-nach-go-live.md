@@ -27,21 +27,21 @@ faq:
 draft: false
 ---
 
-Nach dem Go-live zeigen fünf Zahlen, ob ein B2B-Shop wirkt: der Anteil der Auftragspositionen, die über den Shop kommen, je Buyer Group, Suchen ohne Treffer, die Conversion von der Suche zur Bestellung, Innendienstminuten pro Auftragsposition und der Korrekturaufwand je Shop-Position. Sie zeigen Akzeptanz, Auffindbarkeit und ob der Shop Arbeit spart oder nur verschiebt. Einen Teil der Daten liefert Salesforce über die Suchanalyse auf Data 360 und den Merchant Agent, den Rest liefern das ERP und Ihre eigenen Ausgangswerte. Werten Sie die Akzeptanz je Buyer Group etwa drei Monate nach jeder Welle aus, und behalten Sie die Data-360-Credits im Blick.
+Nach dem Go-live zeigen fünf Zahlen, ob ein B2B-Shop wirkt: der Anteil der shopfähigen Auftragspositionen, die über den Shop kommen, je Buyer Group, Suchen ohne Treffer, die Conversion von der Suche zur Bestellung, Innendienstminuten pro Auftragsposition und der Korrekturaufwand je Shop-Position. Sie zeigen Akzeptanz, Auffindbarkeit und ob der Shop Arbeit spart oder nur verschiebt. Einen Teil der Daten liefert Salesforce über die Suchanalyse auf Data 360 und den Merchant Agent, den Rest liefern das ERP und Ihre eigenen Ausgangswerte. Werten Sie die Akzeptanz je Buyer Group etwa drei Monate nach jeder Welle aus, und behalten Sie die Data-360-Credits im Blick.
 
 ## Welche Kennzahlen zeigen, ob ein B2B-Shop wirkt?
 
-Ein B2B-Shop für Händler hat eine andere Aufgabe als ein Shop für Endkunden. Händler haben oft schon einen eingespielten Bestellweg, die Frage ist, ob sie über den Shop bestellen und ob Sie das weniger kostet. Deshalb nutze ich diese fünf Kennzahlen und lasse Besucherzahlen weg:
+Ein B2B-Shop für Händler hat eine andere Aufgabe als ein Shop für Endkunden. Händler haben oft schon einen eingespielten Bestellweg. Entscheidend ist, ob sie zum Shop wechseln und Ihre Kosten dadurch sinken. Deshalb nutze ich diese fünf Kennzahlen und lasse Besucherzahlen weg:
 
 | Kennzahl | Frage dahinter | Quelle |
 |---|---|---|
 | Anteil der shopfähigen Auftragspositionen über den Shop | Wechseln die Händler? | ERP, nach Bestellkanal |
 | Suchen ohne Treffer | Finden Händler ihre Teile? | Search Intelligence auf Data 360 |
-| Conversion von Suche zu Bestellung | Führt Finden zu Kaufen? | Eigene Auswertung: Klickrate aus Search Intelligence plus Bestelldaten |
+| Conversion von Suche zu Bestellung | Führt eine erfolgreiche Suche zur Bestellung? | Eigene Auswertung: Klickrate aus Search Intelligence plus Bestelldaten |
 | Innendienstminuten pro Auftragsposition | Spart der Shop Arbeit? | Eigene Zeitmessung, vorher und nachher |
 | Korrekturaufwand je Shop-Position | Stimmen die Daten? | ERP-Ablehnungs- und Änderungsprotokolle, Integrationsfehler oder ein Feld für den Korrekturgrund |
 
-Es sind dieselben fünf, die ich in den [Business Case für einen B2B-Webshop](../b2b-webshop-business-case-hersteller/) schreiben würde. Die Auswertung nach dem Go-live prüft die Annahmen dieses Business Case an der Wirklichkeit.
+Es sind dieselben fünf, die ich in den [Business Case für einen B2B-Webshop](../b2b-webshop-business-case-hersteller/) schreiben würde. Die Auswertung nach dem Go-live gleicht die Annahmen dieses Business Case mit den tatsächlichen Ergebnissen ab.
 
 ## Warum Auftragspositionen und nicht Umsatz?
 
@@ -55,7 +55,7 @@ Die Quelle ist das ERP, denn dort liegen alle Bestellungen aus allen Kanälen. B
 
 Ersatzteilhändler suchen nach Teilenummer, alter Teilenummer oder Beschreibung. Findet die Suche nichts, greift der Händler zum Telefon. Damit sind Suchen ohne Treffer das nützlichste Frühwarnsignal, das ein Shop hat.
 
-Mit dem B2B-Commerce-Release vom Juli 2026 hat Salesforce eine [Suchanalyse über Data Cloud](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) angekündigt, heute Data 360, in der Ankündigung mit „conversion outcomes“. Das in der Salesforce-Hilfe dokumentierte [Search-Intelligence-Dashboard](https://help.salesforce.com/s/articleView?id=commerce.comm_intelligence_dashboards_search.htm&type=5) zeigt Suchen gesamt, Suchen mit und ohne Treffer, Klickraten und die Suchbegriffe dahinter. Eine Conversion von der Suche zur Bestellung gehört nicht dazu. Behandeln Sie sie als eigene Auswertung mit festgelegter Zuordnung, etwa Klick auf einen Treffer und Bestellung in derselben Sitzung. Die Liste der Suchbegriffe ohne Treffer schaue ich in den ersten Monaten alle zwei Wochen durch. Die meisten Einträge haben eine von vier Ursachen: Eine alte Teilenummer fehlt als Attribut oder Synonym, die Händler nutzen eine andere Schreibweise, das Teil fehlt versehentlich im Katalog oder Entitlement, oder die Buyer Group darf das Teil zu Recht nicht kaufen, und der Shop sollte das erklären und auf einen Nachfolger oder Ansprechpartner verweisen. Die ersten beiden sind Sache der Sucheinrichtung, siehe [B2B-Shop-Suche: Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/). Denken Sie an die Grenzen: Die [Suchlimits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html) erlauben 100 Synonymregeln pro Store als harte Grenze, ersetzte Teilenummern gehören deshalb eher in Attribute als in Synonyme.
+Mit dem B2B-Commerce-Release vom Juli 2026 kündigte Salesforce eine [Suchanalyse über Data Cloud](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/), heute Data 360, an und erwähnte dabei „conversion outcomes“. Das in der Salesforce-Hilfe dokumentierte [Search-Intelligence-Dashboard](https://help.salesforce.com/s/articleView?id=commerce.comm_intelligence_dashboards_search.htm&type=5) zeigt Suchen gesamt, Suchen mit und ohne Treffer, Klickraten und die Suchbegriffe dahinter. Eine Conversion von der Suche zur Bestellung gehört nicht dazu. Behandeln Sie sie als eigene Auswertung mit festgelegter Zuordnung, etwa Klick auf einen Treffer und Bestellung in derselben Sitzung. Die Liste der Suchbegriffe ohne Treffer schaue ich in den ersten Monaten alle zwei Wochen durch. Die meisten Einträge haben eine von vier Ursachen: Eine alte Teilenummer fehlt als Attribut oder Synonym, die Händler nutzen eine andere Schreibweise, das Teil fehlt versehentlich im Katalog oder Entitlement, oder die Buyer Group darf das Teil zu Recht nicht kaufen, und der Shop sollte das erklären und auf einen Nachfolger oder Ansprechpartner verweisen. Die ersten beiden sind Sache der Sucheinrichtung, siehe [B2B-Shop-Suche: Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/). Denken Sie an die Grenzen: Die [Suchlimits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html) erlauben 100 Synonymregeln pro Store als harte Grenze, ersetzte Teilenummern gehören deshalb eher in Attribute als in Synonyme.
 
 Die Klickrate zeigt den nächsten Schritt: Eine Suche mit 50 Treffern, aber ohne Klick, deutet meist auf eine schlechte Sortierung. Hier helfen Boost-and-Bury-Regeln, Salesforce erlaubt bis zu 100 davon.
 
@@ -63,19 +63,19 @@ Die Klickrate zeigt den nächsten Schritt: Eine Suche mit 50 Treffern, aber ohne
 
 Laut der [Salesforce-Preisseite](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) enthalten beide B2B-Editionen, Growth und Advanced, den Merchant Agent. Das [Trailhead-Modul zum Merchant Agent](https://trailhead.salesforce.com/content/learn/modules/agentforce-merchant-quick-look/get-to-know-your-merchant-agent) zeigt, wie er den durchschnittlichen Bestellwert eines Stores abruft, zusammenfasst und die schwächste Kategorie nennt. Anfragen nach Details zur Conversion der Site beantwortet er ebenfalls. Zur Einrichtung aktivieren Sie generative KI, Agentforce, Bots und Data 360 für den Store.
 
-Für die wöchentliche Frage eines Merchandisers, welche Kategorie nachgelassen hat, finde ich das nützlich. Für die Auswertung mit der Geschäftsführung würde ich mich nicht auf Chat-Antworten verlassen. Nutzen Sie den Agenten, um ein Thema zu finden, und prüfen Sie die Zahl dann in einem Bericht, den Sie wiederholen können. Die Editionen enthalten außerdem CRM-Analytics-Benutzerlizenzen, 3 bei Growth und 5 bei Advanced. Prüfen Sie, ob das für Admins, Dashboard-Verantwortliche und regelmäßige Leser in Ihrem Betriebsmodell reicht.
+Für die wöchentliche Frage eines Merchandisers, welche Kategorie nachgelassen hat, finde ich das nützlich. Für die Auswertung mit der Geschäftsführung würde ich mich nicht auf Chat-Antworten verlassen. Nutzen Sie den Agenten, um ein Thema zu finden, und prüfen Sie die Zahl dann in einem reproduzierbaren Bericht. Die Editionen enthalten außerdem CRM-Analytics-Benutzerlizenzen, 3 bei Growth und 5 bei Advanced. Prüfen Sie, ob das für Admins, Dashboard-Verantwortliche und regelmäßige Leser in Ihrem Betriebsmodell reicht.
 
 ## Gesparte Arbeit in Innendienstminuten pro Position messen
 
 Innendienstminuten pro Auftragsposition sind die Kennzahl, die den Shop bezahlt, und Salesforce kann sie nicht für Sie messen. Sie brauchen einen Ausgangswert von vor dem Go-live: Zwei Wochen lang notiert der Innendienst, wie lange die Erfassung einer Bestellung per Telefon oder E-Mail dauert, aufgeteilt nach Positionen. Drei Monate nach jeder Welle wiederholen Sie dieselbe Messung.
 
-Die zweite Zahl ist der Korrekturaufwand: manuelle Korrekturminuten geteilt durch Shop-Positionen. Verfolgen Sie daneben den Anteil der Shop-Bestellungen mit irgendeiner Korrektur, und halten Sie die Ursache in einem Feld für den Korrekturgrund oder aus den ERP-Ablehnungen fest. Typische Ursachen sind einer falschen Lieferadresse, eine Preisdifferenz oder ein Teil, das das ERP ablehnt. Ein hoher Anteil heißt, dass der Shop Arbeit erzeugt statt spart. Die Ursache sind meist Daten: Preisbücher, die vom ERP abweichen, oder Entitlements für Teile, die nicht mehr bestellbar sind.
+Die zweite Zahl ist der Korrekturaufwand: manuelle Korrekturminuten geteilt durch Shop-Positionen. Verfolgen Sie daneben den Anteil der Shop-Bestellungen mit irgendeiner Korrektur, und halten Sie die Ursache in einem Feld für den Korrekturgrund oder aus den ERP-Ablehnungen fest. Typische Ursachen sind eine falsche Lieferadresse, eine Preisdifferenz oder ein vom ERP abgelehntes Teil. Ein hoher Anteil zeigt, dass der Shop zusätzliche Arbeit verursacht. Meist liegen Datenprobleme zugrunde: Preisbücher, die vom ERP abweichen, oder Entitlements für Teile, die nicht mehr bestellbar sind.
 
 Rechenbeispiel: Vor dem Go-live erfasst der Innendienst 40.000 Auftragspositionen im Jahr mit je 4 Minuten, rund 2.670 Stunden. Nach sechs Monaten kommen 45 Prozent der Positionen, also 18.000, über den Shop, und 3 Prozent davon brauchen eine Korrektur von 10 Minuten. Die Ersparnis liegt bei rund 1.200 Stunden Erfassung abzüglich 90 Stunden Korrektur. Bei einer Korrekturquote von 20 Prozent würden Korrekturen 600 Stunden fressen, die Hälfte der Ersparnis.
 
 ## 250K oder 500K Data-360-Credits machen den Verbrauch zum Kostenfaktor
 
-Die Suchanalyse läuft auf Data 360, früher Data Cloud, und Arbeit in Data 360 verbraucht Credits aus dem Kontingent Ihrer Edition. Die Analyse stoppt nicht, wenn sie aufgebraucht sind: Dann gelten Zusatz-Credits oder Mehrverbrauch zum Vertragssatz.
+Die Suchanalyse läuft auf Data 360, früher Data Cloud, und Arbeit in Data 360 verbraucht Credits aus dem Kontingent Ihrer Edition. Die Analyse stoppt nicht, wenn sie aufgebraucht sind: Dann fallen zusätzliche Credits oder Mehrverbrauch zum Vertragssatz an.
 
 ```kennzahlen
 250K | Data-360-Credits in Commerce Cloud B2B Growth
@@ -85,7 +85,7 @@ quelle: Salesforce-Preisseite Commerce Cloud B2B (dort noch Data-Cloud-Credits),
 
 Laut [Trailhead zum Credit-Verbrauch](https://trailhead.salesforce.com/content/learn/modules/data-cloud-credit-consumption-quick-look/get-started-with-data-cloud-credit-consumption) verbrauchen Datenaufnahme, Abfragen für Berichte und Dashboards, Segmentierung und Calculated Insights jeweils Credits, Calculated Insights bei jeder Aktualisierung erneut. Daten aus Ihrer Salesforce-Org über den CRM-Connector aufzunehmen, verbraucht keine Credits.
 
-Wie viele Credits die Suchanalyse verbraucht, veröffentlicht Salesforce nicht. Prüfen Sie den Verbrauch deshalb nach dem ersten Monat im Digital Wallet und erneut, wenn sich Datenmenge, Transform-Zeitpläne oder die Aktualisierung der Dashboards ändern. Das treibt den Verbrauch stärker als die Zahl der Dashboards. Wie Credits mit anderen KI-Kosten zusammenhängen, steht im KI-Masterclass-Kapitel [Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/).
+Wie viele Credits die Suchanalyse verbraucht, veröffentlicht Salesforce nicht. Prüfen Sie den Verbrauch deshalb nach dem ersten Monat im Digital Wallet und erneut, wenn sich Datenmenge, Zeitpläne für Transformationen oder die Aktualisierungsfrequenz der Dashboards ändern. Das treibt den Verbrauch stärker als die Zahl der Dashboards. Wie Credits mit anderen KI-Kosten zusammenhängen, steht im KI-Masterclass-Kapitel [Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/).
 
 ## Ausgangswerte vor dem Go-live erheben
 

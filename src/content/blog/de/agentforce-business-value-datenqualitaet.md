@@ -1,6 +1,6 @@
 ---
-title: "Agentforce: Business Value und Datenqualität zuerst"
-description: "Die meisten befragten Salesforce-Kunden haben Agentforce getestet, doch viele hängen im Pilot fest. Warum Business Value und Datenqualität über den Erfolg entscheiden."
+title: "Agentforce-Piloten: Business Value und Datenqualität zuerst"
+description: "Die meisten befragten Salesforce-Kunden haben Agentforce getestet, doch viele hängen im Pilot fest. Warum Business Value und Datenqualität entscheiden und wie der Einstieg gelingt."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09
 lang: de
@@ -10,7 +10,7 @@ topic: ai
 categories: [ai]
 tags: [Agentforce, KI-Agenten, Datenqualität, Business Case, Architektur]
 takeaways:
-  - "In einer Oppenheimer-Umfrage hatten 85 Prozent der antwortenden Salesforce-Kunden Agentforce getestet oder eingeführt, fast die Hälfte im Piloten."
+  - "In einer Oppenheimer-Umfrage hatten 85 Prozent der antwortenden Salesforce-Kunden Agentforce getestet oder eingeführt; fast die Hälfte im Pilot oder Test."
   - "In den Projekten, die ich sehe, bremsen fehlender Business Case, schlechte Daten und unklare Berechtigungen öfter als die Agentenkonfiguration."
   - "Jeder Agent braucht vor dem ersten Prompt eine Hauptkennzahl für den Nutzen, dazu Grenzen für Qualität, Eskalation und Kosten pro Erfolg."
   - "Stammdaten, Wissensartikel und Zugriffsregeln aufzuräumen gehört zum Agentenprojekt, denn genau diese Daten liest der Agent."
@@ -21,7 +21,7 @@ faq:
   - q: "Was gehört in einen Agentforce Business Case?"
     a: "Ein klarer Prozess, heutiges Volumen und heutige Kosten, ein messbares Ziel wie kürzere Bearbeitungszeit oder mehr Fälle ohne Eskalation, die erwarteten Verbrauchskosten und ein Verantwortlicher im Fachbereich."
   - q: "Wie wichtig ist Datenqualität für KI-Agenten?"
-    a: "Sehr wichtig, aber allein nicht ausreichend. Ein Agent antwortet und handelt auf Basis von CRM-Daten, Wissensartikeln und angebundenen Systemen, Dubletten, veraltete Datensätze oder widersprüchliche Artikel erhöhen also das Risiko falscher Antworten oder Aktionen. Über die Zuverlässigkeit entscheiden auch Suche, Anweisungen, Berechtigungen, Aktionen und Tests."
+    a: "Sehr wichtig, aber allein nicht ausreichend. Ein Agent antwortet und handelt auf Basis von CRM-Daten, Wissensartikeln und angebundenen Systemen. Dubletten, veraltete Datensätze oder widersprüchliche Artikel erhöhen das Risiko falscher Antworten oder Aktionen. Über die Zuverlässigkeit entscheiden auch Datenabruf, Anweisungen, Berechtigungen, Aktionen und Tests."
   - q: "Welcher Anwendungsfall eignet sich als erstes Agentforce-Projekt?"
     a: "Ein enger, häufiger und gut dokumentierter Prozess mit klaren Regeln, zum Beispiel Standardfragen im Service aus gepflegten Wissensartikeln beantworten oder Fallzusammenfassungen für Servicemitarbeitende vorbereiten."
 ---
@@ -68,16 +68,16 @@ Kann ein Anwendungsfall diese Fragen nicht beantworten, ist er nicht reif für e
 
 ## Warum entscheidet die Datenqualität als Zweites?
 
-Ein Agent antwortet und handelt auf Basis dessen, was er lesen kann: CRM-Datensätze, Wissensartikel, Dokumente und Daten aus angebundenen Systemen. Schlechte oder widersprüchliche Daten erhöhen das Risiko einer falschen Antwort oder Aktion, vorgetragen mit großer Überzeugung. Gute Daten sind nötig, aber nicht ausreichend: Suche, Anweisungen, Berechtigungen und Aktionen entscheiden mit.
+Ein Agent antwortet und handelt auf Basis dessen, was er lesen kann: CRM-Datensätze, Wissensartikel, Dokumente und Daten aus angebundenen Systemen. Schlechte oder widersprüchliche Daten erhöhen das Risiko einer falschen Antwort oder Aktion, vorgetragen mit großer Überzeugung. Gute Daten sind notwendig, reichen allein aber nicht aus. Auch Datenabruf, Anweisungen, Berechtigungen, Aktionen und Tests bestimmen die Zuverlässigkeit.
 
 In der Praxis prüfe ich diese Punkte, bevor ein Agent live geht:
 
-- **Stammdaten.** Sind Accounts, Kontakte und Anlagen frei von Dubletten? Ist klar, welcher Datensatz der richtige ist? Ein Agent, der den falschen Account wählt, schickt falsche Informationen an den falschen Kunden.
+- **Stammdaten.** Sind Accounts, Kontakte und Assets frei von Dubletten? Ist klar, welcher Datensatz der richtige ist? Ein Agent, der den falschen Account wählt, schickt falsche Informationen an den falschen Kunden.
 - **Wissen.** Sind Wissensartikel aktuell, widerspruchsfrei und hat jemand die Verantwortung dafür? Zwei Artikel mit widersprüchlichen Rückgaberegeln führen zu widersprüchlichen Antworten.
 - **Prozessdaten.** Werden Status, Termine und Felder zuverlässig gepflegt? Wird der Liefertermin in Salesforce nur einmal pro Woche aktualisiert, gibt der Agent veraltete Antworten.
-- **Zugriffsrechte.** Was darf der Agent sehen und wem darf er was zeigen? Freigaberegeln, Feldberechtigungen und Datenklassifizierung müssen stimmen, bevor ein Agent damit arbeitet. Welcher Benutzerkontext gilt, hängt vom Agententyp ab: Agenten für Mitarbeitende können mit den Rechten des angemeldeten Benutzers laufen, externe Service-Agenten laufen oft als eigener Agent User. Eine Kunden-ID in einer Kontextvariable schränkt den Datenzugriff nicht von selbst ein, Flows und Aktionen müssen die Daten deshalb auf den geprüften Kunden begrenzen.
+- **Zugriffsrechte.** Was darf der Agent sehen und wem darf er was zeigen? Freigaberegeln, Sicherheit auf Feldebene und Datenklassifizierung müssen stimmen, bevor ein Agent damit arbeitet. Welcher Benutzerkontext gilt, hängt vom Agententyp ab: Agenten für Mitarbeitende können mit den Rechten des angemeldeten Benutzers laufen, externe Service-Agenten laufen oft als eigener Agent User. Eine Kunden-ID in einer Kontextvariable schränkt den Datenzugriff nicht von selbst ein, Flows und Aktionen müssen die Daten deshalb auf den geprüften Kunden begrenzen.
 
-Salesforce baut dafür mehr Werkzeuge, etwa die Agent Context Engine, deren Verfügbarkeit Sie vor der Planung prüfen sollten, die Agenten geregelten Kontext aus Data 360 zusammenstellt. Ich beschreibe sie ausführlicher in [die Agent Context Engine erklärt](../salesforce-agent-context-engine-erklaert/). Aber auch die beste Kontextschicht kann nur weitergeben, was in den Daten steht.
+Salesforce entwickelt dafür weitere Werkzeuge, etwa die Agent Context Engine, die Agenten kontrollierten Kontext aus Data 360 bereitstellt. Prüfen Sie ihre Verfügbarkeit, bevor Sie damit planen. Ich beschreibe sie ausführlicher in [die Agent Context Engine erklärt](../salesforce-agent-context-engine-erklaert/). Aber auch die beste Kontextschicht kann nur weitergeben, was in den Daten steht.
 
 Daten aufräumen ist keine glanzvolle Arbeit, und man schiebt sie leicht auf „später“ oder zu jemand anderem. In den Projekten, die vorankommen, steht sie von Anfang an im Projektplan.
 
@@ -92,8 +92,8 @@ Ist-Zustand messen
   Bevor irgendetwas gebaut wird.
 Daten aufräumen
   Für genau diesen Prozess, inklusive Wissen, Stammdaten und Berechtigungen.
-Mit Mensch in der Schleife bauen
-  Für riskante, hohe oder unumkehrbare Entscheidungen, etwa größere Rabatte, Gutschriften oder Vertragsänderungen, mit festen Schwellen für Fälle mit geringem Risiko. Die Freigabe kann über bestehende Salesforce-Genehmigungsprozesse oder Flow laufen oder über Produkte wie Agentforce Operations; Verfügbarkeit und Lizenzen hängen vom Weg ab.
+Mit menschlicher Prüfung arbeiten
+  Bei risikoreichen, finanziell bedeutenden oder unumkehrbaren Entscheidungen, etwa größeren Rabatten, Erstattungen oder Vertragsänderungen, mit festen Schwellenwerten für Fälle mit geringem Risiko. Die Freigabe kann über bestehende Salesforce-Genehmigungsprozesse oder Flow laufen oder über Produkte wie Agentforce Operations; Verfügbarkeit und Lizenzen hängen vom Weg ab.
 Mit echten Fällen testen
   Auch mit den unangenehmen, und festlegen, was der Agent nicht tun darf.
 Begrenzt live gehen

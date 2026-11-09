@@ -1,6 +1,6 @@
 ---
 title: "Field Service Kennzahlen nach dem Go-live: Was messen?"
-description: "Welche Kennzahlen nach dem Go-live zeigen, ob Salesforce Field Service wirkt, wie Sie die Erstlösungsquote definieren und was Operations Home ergänzt."
+description: "Welche Kennzahlen nach dem Go-live zeigen, ob Salesforce Field Service wirkt, wie Sie die Erstlösungsquote definieren und was Operations Home und Dashboards beitragen."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de
@@ -11,12 +11,12 @@ categories: [field-service]
 tags: [Field Service, Kennzahlen, Erstlösungsquote, Operations Home, Einführung, Analytics]
 takeaways:
   - "Ich messe zusätzlich, wie oft Disponenten die Vorschläge der Engine vor der Freigabe ändern. Das zeigt, ob Daten und Scheduling Policy passen."
-  - "Das Salesforce-Dashboard berechnet die Erstlösungsquote aus dem Terminstatus. Eine Definition über Folgeeinsätze braucht eine eigene Berechnung."
+  - "Das Salesforce-Dashboard berechnet die Erstlösungsquote aus dem Terminstatus. Eine auf Folgeeinsätzen beruhende Definition braucht eine eigene Berechnung."
   - "Die Erstlösungsquote braucht eine schriftliche Definition: Zeitfenster, gleiches Asset, gleicher Fehlercode und welche Folgeeinsätze nicht zählen."
-  - "Ohne Ausgangswert aus dem Altsystem, mit denselben Definitionen und über Saisonschwankungen hinweg, kann niemand sagen, ob Field Service half."
+  - "Ohne Ausgangswert aus dem Altsystem mit denselben Definitionen und über Saisonschwankungen hinweg kann niemand sagen, ob Field Service geholfen hat."
 faq:
   - q: "Welche Kennzahlen zählen nach einem Field-Service-Go-live?"
-    a: "Für einen Business Case über Terminplanung und Produktivität nutze ich sechs: Einsätze pro Techniker und Tag, Fahrzeitanteil, Erstlösungsquote, eingehaltene Reaktionszeiten, Ankunft im zugesagten Zeitfenster und den Anteil der Vorschläge, die Disponenten vor der Freigabe ändern. Dazu mindestens eine finanzielle oder kundenseitige Ergebniszahl, etwa Servicemarge oder Kundenzufriedenheit."
+    a: "Für einen Business Case mit Fokus auf Terminplanung und Produktivität nutze ich sechs: Einsätze pro Techniker und Tag, Fahrzeitanteil, Erstlösungsquote, eingehaltene Reaktionszeiten, Ankunft im zugesagten Zeitfenster und den Anteil der Vorschläge, die Disponenten vor der Freigabe ändern. Dazu mindestens eine finanzielle oder kundenseitige Ergebniszahl, etwa Servicemarge oder Kundenzufriedenheit."
   - q: "Was ist Operations Home in Salesforce Field Service?"
     a: "Eine Startseite für den Innendienst. Im September 2025 beschrieb Salesforce sie mit 12 fertigen Kennzahlen, darunter Erstlösungsquote, Auslastung, Einsatzdauer und Stillstandszeit der Assets, auf Basis von Tableau Next, Data Cloud und Agentforce. Prüfen Sie die aktuelle Vorlage in Ihrem Release."
   - q: "Ist Field Service Intelligence in der Field-Service-Lizenz enthalten?"
@@ -26,22 +26,22 @@ faq:
 draft: false
 ---
 
-Nach dem Go-live muss Salesforce Field Service die Zahlen aus dem Business Case bewegen. Bei einem Business Case über Terminplanung und Produktivität sind das Einsätze pro Techniker und Tag, Fahrzeitanteil, Erstlösungsquote, eingehaltene Reaktionszeiten und Ankunft im zugesagten Zeitfenster. Ich nehme eine Kennzahl dazu: wie oft Disponenten die Vorschläge der Engine vor der Freigabe ändern. Salesforce bietet fertige Ansichten in Operations Home und Field Service Intelligence, aber deren Erstlösungsquote beruht auf dem Terminstatus, nicht auf Folgeeinsätzen. Vor jedem Dashboard legen Sie fest, wie jede Kennzahl definiert ist, und messen einen Ausgangswert im Altsystem.
+Nach dem Go-live muss Salesforce Field Service die Kennzahlen aus dem Business Case verbessern. Bei einem Business Case mit Fokus auf Terminplanung und Produktivität sind das Einsätze pro Techniker und Tag, Fahrzeitanteil, Erstlösungsquote, eingehaltene Reaktionszeiten und Ankunft im zugesagten Zeitfenster. Ich ergänze eine Kennzahl: wie oft Disponenten die Vorschläge der Engine vor der Freigabe ändern. Salesforce bietet fertige Ansichten in Operations Home und Field Service Intelligence, aber deren Erstlösungsquote beruht auf dem Terminstatus, nicht auf Folgeeinsätzen. Vor jedem Dashboard legen Sie fest, wie jede Kennzahl definiert ist, und messen einen Ausgangswert im Altsystem.
 
 ## Welche Kennzahlen zeigen, ob Field Service wirkt?
 
-Die Kennzahlen nach dem Go-live sind die vier Zahlen, mit denen ich entscheide, ob sich [Field Service lohnt](../salesforce-field-service-lohnt-sich/), plus zwei, die zeigen, ob die Terminplanung funktioniert. Sie passen zu einem Business Case über Terminplanung und Produktivität; daneben würde ich mindestens eine Ergebniszahl wie Servicemarge, Vertragsverlängerungen oder Kundenzufriedenheit verfolgen. Diese operative Auswahl würde ich pro Region und Monat verfolgen:
+Die Kennzahlen nach dem Go-live sind die vier Zahlen, mit denen ich entscheide, ob sich [Field Service lohnt](../salesforce-field-service-lohnt-sich/), plus zwei, die zeigen, ob die Terminplanung funktioniert. Sie passen zu einem Business Case mit Fokus auf Terminplanung und Produktivität; daneben würde ich mindestens eine Ergebniszahl wie Servicemarge, Vertragsverlängerungen oder Kundenzufriedenheit verfolgen. Diese operative Auswahl würde ich pro Region und Monat verfolgen:
 
 | Kennzahl | Wie ich sie definiere | Woher die Zahl kommt |
 |---|---|---|
-| Einsätze pro Techniker und Tag | Abgeschlossene Termine geteilt durch produktive Techniker-Tage, Crew-Einsätze einmal gezählt, möglichst nach Arbeitstyp gewichtet | Service Appointments mit Status Completed |
+| Einsätze pro Techniker und Tag | Abgeschlossene Termine geteilt durch produktive Techniker-Tage, Einsätze von Crews einmal gezählt, möglichst nach Arbeitsart gewichtet | Servicetermine (Service Appointments) mit Status Completed |
 | Fahrzeitanteil | Fahrzeit geteilt durch Arbeitszeit | Eine vereinbarte Quelle: tatsächliche Fahrzeit an der zugewiesenen Ressource, [Stundenzettel](https://help.salesforce.com/s/articleView?id=sf.fs_set_up_timesheets.htm&language=en_US&type=5) mit Fahrtkategorie, Telematik oder ERP-Zeitbuchungen |
 | Erstlösungsquote | Arbeitsaufträge ohne weiteren Einsatz am selben Asset für denselben Fehler innerhalb von 14 Tagen | Arbeitsauftrag, Asset, Fehlercode |
 | Eingehaltene Reaktionszeiten | Störungen, bei denen der Techniker in der zugesagten Zeit vor Ort war | Meilenstein-Ziel am Arbeitsauftrag, verglichen mit dem tatsächlichen Beginn |
 | Ankunft im Zeitfenster | Tatsächlicher Beginn im zugesagten Ankunftsfenster | Felder am Service Appointment |
 | Änderungsquote der Disposition | Anteil der Vorschläge, die vor dem Status Dispatched geändert werden | Eigener Schnappschuss von Vorschlag und finaler Zuweisung |
 
-Zwei davon bauen auf Standardfeldern auf. Das Service Appointment hat Felder für den [tatsächlichen Beginn und das Ankunftsfenster](https://developer.salesforce.com/docs/service/salesforce-scheduler-dev-guide/guide/sforce-api-objects-serviceappointment.html), ein Bericht kann sie vergleichen, sofern Techniker den Startstatus bei Ankunft setzen und das zugesagte Fenster später nicht überschrieben wird. Reaktionszeiten brauchen Meilensteine am Arbeitsauftrag mit einem Entitlement-Prozess vom Typ Work Order, wie in [Wartungsverträge in Field Service abbilden](../salesforce-field-service-wartungsvertraege/) beschrieben. Der Meilenstein liefert das zugesagte Ziel; ob der Techniker rechtzeitig da war, kommt aus dem tatsächlichen Beginn oder einem definierten Check-in, und eine Regel oder Automation muss beides verbinden.
+Zwei davon bauen auf Standardfeldern auf. Das Objekt Servicetermin (Service Appointment) hat Felder für den [tatsächlichen Beginn und das Ankunftsfenster](https://developer.salesforce.com/docs/service/salesforce-scheduler-dev-guide/guide/sforce-api-objects-serviceappointment.html), ein Bericht kann sie vergleichen, sofern Techniker den Startstatus bei Ankunft setzen und das zugesagte Fenster später nicht überschrieben wird. Reaktionszeiten brauchen Meilensteine am Arbeitsauftrag mit einem Entitlement-Prozess vom Typ Work Order, wie in [Wartungsverträge in Field Service abbilden](../salesforce-field-service-wartungsvertraege/) beschrieben. Der Meilenstein liefert das zugesagte Ziel; ob der Techniker rechtzeitig da war, kommt aus dem tatsächlichen Beginn oder einem definierten Check-in, und eine Regel oder Automation muss beides verbinden.
 
 Die Änderungsquote der Disposition kostet etwas Aufwand und ist in den ersten Monaten die nützlichste Zahl. In [Wie viel Terminplanung automatisch laufen sollte](../salesforce-field-service-terminplanung-automatisieren/) empfehle ich, dass Disponenten notieren, warum sie einen Vorschlag ändern. Eine Auswahlliste mit dem Grund allein misst aber keine Änderungen. Sie brauchen einen Schnappschuss von vorgeschlagener Ressource und Zeit, finaler Ressource und Zeit, wer wann geändert hat, plus den Grund; die Feldhistorie liefert einen Teil davon, wenn die richtigen Felder verfolgt werden. Eine hohe Quote kann heißen, dass Daten fehlen oder die Policy nicht passt, aber auch Kundenänderungen, Notfälle, Abwesenheiten oder Disponenten, die der Engine noch nicht trauen. Die Gründe zeigen, was davon.
 
@@ -49,10 +49,10 @@ Die Änderungsquote der Disposition kostet etwas Aufwand und ist in den ersten M
 
 Salesforce verkauft Field Service heute als Agentforce Field Service and Operations, die Auswertungen kommen in zwei Teilen. Laut [Salesforce-Blog vom September 2025](https://www.salesforce.com/blog/how-to-transform-field-service-operations-with-agentic-analytics/):
 
-- **Operations Home** ist die Startseite für den Innendienst, mit 12 fertigen Kennzahlen, darunter Erstlösungsquote, Auslastung, Einsatzdauer und Stillstandszeit der Assets. Sie basiert auf Tableau Next, Data Cloud und Agentforce, Fragen in normaler Sprache beantwortet Concierge.
+- **Operations Home** ist die Startseite für den Innendienst, mit 12 fertigen Kennzahlen, darunter Erstlösungsquote, Auslastung, Einsatzdauer und Stillstandszeit der Assets. Sie basiert auf Tableau Next, Data Cloud und Agentforce, Fragen in natürlicher Sprache beantwortet Concierge.
 - **Field Service Intelligence** hat fünf fertige Dashboards zu Arbeitsaufträgen, Terminen, Assets, Ersatzteilbestand und Ressourcen, mit mehr als 30 Kennzahlen.
 
-Die aktuelle Einrichtung baut auf Data 360 und Tableau Next auf. Die Salesforce-Hilfe beschreibt außerdem noch eine ältere Fassung von [Field Service Intelligence](https://help.salesforce.com/s/articleView?id=service.ifs_intro.htm&language=en_US&type=5) mit Data 360, CRM Analytics und Agentforce Service; beide Generationen brauchen Sie nicht. Ihr [Service Data Kit](https://help.salesforce.com/s/articleView?id=sf.ifs_install_data_kit.htm&language=en_US&type=5) richtet mehr als 20 Datenströme ein, und die Hilfe warnt davor, installierte Objekte, Felder oder Zuordnungen zu entfernen, weil die Dashboards darauf aufbauen. Tableau Next selbst braucht laut [Einrichtungsanleitung](https://help.tableau.com/current/tableau-next/en-us/tableau_next_setup_guide_configure_data_cloud.htm) zuerst eine konfigurierte Data Cloud.
+Die aktuelle Einrichtung baut auf Data 360 und Tableau Next auf. Die Salesforce-Hilfe beschreibt außerdem noch eine ältere Fassung von [Field Service Intelligence](https://help.salesforce.com/s/articleView?id=service.ifs_intro.htm&language=en_US&type=5) mit Data 360, CRM Analytics und Agentforce Service; beide Generationen parallel brauchen Sie nicht. Ihr [Service Data Kit](https://help.salesforce.com/s/articleView?id=sf.ifs_install_data_kit.htm&language=en_US&type=5) richtet mehr als 20 Datenströme ein, und die Hilfe warnt davor, installierte Objekte, Felder oder Zuordnungen zu entfernen, weil die Dashboards darauf aufbauen. Tableau Next selbst braucht laut [Einrichtungsanleitung](https://help.tableau.com/current/tableau-next/en-us/tableau_next_setup_guide_configure_data_cloud.htm) zuerst eine konfigurierte Data Cloud.
 
 Die Lizenzfrage ist aus der [Preisliste](https://www.salesforce.com/de/products/field-service/pricing/) nicht eindeutig abzulesen. Salesforce hat sie Anfang November 2026 umgestellt. Mit Stand 9. November 2026 führt die Vergleichstabelle Tableau Next bei Dispatcher und Technician als zukaufbar. Operations Home und Field Service Intelligence stehen bei mehreren Editionen als zukaufbar, und Field Service+ Advanced nennt Field Service Intelligence in seinem Umfang. Produktlizenz, Nutzerberechtigungen, Tableau-Next-Berechtigungen und Data-360-Verbrauch sind getrennte Fragen.
 
@@ -64,7 +64,7 @@ Meine Einschätzung: Die fertigen Ansichten lohnen sich, sobald die Definitionen
 
 ## Die Erstlösungsquote braucht zuerst eine Definition
 
-Weil ein Kennzahlname noch keine Formel ist. Das [Termin-Dashboard von Field Service Intelligence](https://help.salesforce.com/s/articleView?id=service.ifs_dashboards_sa.htm&language=en_US&type=5) berechnet die Erstlösungsquote als Termine mit Status Completed geteilt durch Termine mit Completed oder Cannot Complete. Diese Formel sieht weder einen zweiten Besuch zwei Wochen später noch denselben Fehler am selben Asset. Eine Definition über Folgeeinsätze, die die meisten Serviceleitungen meinen, braucht eine eigene Berechnung oder ein angepasstes Datenmodell. Ich halte fünf Entscheidungen schriftlich fest:
+Ein Kennzahlname ist noch keine Formel. Das [Termin-Dashboard von Field Service Intelligence](https://help.salesforce.com/s/articleView?id=service.ifs_dashboards_sa.htm&language=en_US&type=5) berechnet die Erstlösungsquote als Termine mit Status Completed geteilt durch Termine mit Completed oder Cannot Complete. Diese Formel sieht weder einen zweiten Besuch zwei Wochen später noch denselben Fehler am selben Asset. Eine auf Folgeeinsätzen beruhende Definition, wie sie die meisten Serviceleitungen meinen, braucht eine eigene Berechnung oder ein angepasstes Datenmodell. Ich halte fünf Entscheidungen schriftlich fest:
 
 1. **Zeitfenster.** Ein Folgeeinsatz innerhalb von 7, 14 oder 30 Tagen?
 2. **Bezug.** Gleiches Asset oder gleicher Kundenstandort?
@@ -92,7 +92,7 @@ Angenommen ist ein Komponentenhersteller mit 90 Technikern in drei Regionen, SAP
 
 ## Wem gehören die Zahlen nach dem Go-live?
 
-Jemandem im Fachbereich und nicht dem Projekt. Ich würde die Definitionen der Serviceleitung geben, die Änderungsquote der Dispositionsleitung und die Datenstrecke der IT. Eine halbe Stunde pro Monat und Region reicht: sechs Zahlen, die Gründe hinter Ausreißern und eine Entscheidung. Ob Disponenten und Techniker den neuen Prozess überhaupt nutzen, zeigen diese Zahlen nur indirekt. Welche Nutzungszahlen ich daneben stelle, steht in [Salesforce-Nutzung nach dem Go-live messen](../salesforce-nutzung-messen-nach-go-live/). Die technische Seite des Betriebs, von Überwachung bis Backup, behandelt das DevOps-Kapitel [Betrieb, Monitoring und Backup](../../masterclass/devops-release-management/betrieb-monitoring-backup/).
+Die Verantwortung liegt beim Fachbereich, nicht beim Projekt. Ich würde die Definitionen der Serviceleitung geben, die Änderungsquote der Dispositionsleitung und die Datenstrecke der IT. Eine halbe Stunde pro Monat und Region reicht: sechs Zahlen, die Gründe hinter Ausreißern und eine Entscheidung. Ob Disponenten und Techniker den neuen Prozess überhaupt nutzen, zeigen diese Zahlen nur indirekt. Welche Nutzungszahlen ich daneben stelle, steht in [Salesforce-Nutzung nach dem Go-live messen](../salesforce-nutzung-messen-nach-go-live/). Die technische Seite des Betriebs, von Überwachung bis Backup, behandelt das DevOps-Kapitel [Betrieb, Monitoring und Backup](../../masterclass/devops-release-management/betrieb-monitoring-backup/).
 
 Kommen später Field-Service-Agenten dazu, messen Sie diese getrennt mit eigenen Kennzahlen, wie in [Agentforce-Kennzahlen nach dem Go-live](../agentforce-kennzahlen-nach-go-live/) beschrieben. Ein Agent, der Wartungstermine bucht, verändert die Einsätze pro Tag nur mittelbar.
 

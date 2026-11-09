@@ -21,7 +21,7 @@ faq:
   - q: "Was ist Briefcase Builder in Salesforce Field Service?"
     a: "Briefcase Builder ist die Setup-Seite, auf der Sie festlegen, welche Datensätze für welche Nutzer und mit welchen Filtern offline verfügbar sind. Performance Priming arbeitet mit Briefcases, die Salesforce automatisch pro Profil erzeugt, und lädt die Datensätze und Metadaten, die das Profil eines Technikers braucht."
   - q: "Wie oft synchronisiert die Field Service App Offline-Daten?"
-    a: "Mit Performance Priming kommen wichtige Änderungen etwa alle fünf Minuten, solange das Gerät verbunden ist. Übrige Daten und Objekte ohne Change Data Capture werden mindestens alle 24 Stunden aktualisiert. Offline geänderte Datensätze bleiben auf dem Gerät und werden übertragen, wenn die Verbindung zurück ist; dabei können Validierungsfehler oder eine falsche Geräteuhr stören."
+    a: "Mit Performance Priming kommen wichtige Änderungen etwa alle fünf Minuten, solange das Gerät verbunden ist. Andere von Performance Priming abgedeckte Daten und Objekte ohne Change Data Capture werden mindestens alle 24 Stunden aktualisiert. Offline geänderte Datensätze bleiben auf dem Gerät und werden übertragen, wenn die Verbindung zurück ist; dabei können Validierungsfehler oder eine falsche Geräteuhr stören."
   - q: "Welche Offline-Probleme sollte ich vor dem Go-live testen?"
     a: "Für LWC Offline nennt Salesforce fünf Punkte: Aufgaben im Briefcase werden nicht geladen, globale Quick Actions erhalten keine Datensatz-ID, Nutzer mit Community-Lizenz können einen Fehler wegen fehlender Datensätze sehen, Appointment Assistant kann mit LWC Offline kollidieren, und unter iOS laden geänderte Komponenten erst nach einem Kaltstart. Dazu kommen Synchronisationsfehler, Geräteuhrzeit, Flows mit nicht geladenen Daten und verknüpfte Datensätze, die Sie vor Ort öffnen."
 draft: false
@@ -34,18 +34,18 @@ Die Salesforce Field Service App sollte offline alles enthalten, was ein Technik
 Das [Trailhead-Modul zu Offline-Briefcases](https://trailhead.salesforce.com/content/learn/modules/offline-briefcase/allow-access-to-information-online) beschreibt drei Ebenen.
 
 - **Grundausstattung.** Die App funktioniert ohne Netz von Haus aus, mit einer begrenzten Menge an Datensätzen auf dem Gerät.
-- **Briefcases.** In Briefcase Builder wählt ein Admin Objekte, Filter und die Nutzer oder Gruppen, für die ein Standard-Briefcase gilt. Auch eigene Objekte können so offline verfügbar werden.
+- **Briefcases.** In Briefcase Builder wählt ein Admin Objekte, Filter und die Nutzer oder Gruppen, für die ein Standard-Briefcase gilt. Auch benutzerdefinierte Objekte können so offline verfügbar werden.
 - **Performance Priming.** Es arbeitet mit Profil-Briefcases, die Salesforce automatisch erzeugt, lädt die Datensätze und Metadaten, die das Profil eines Technikers braucht, und hält mehr Datensätze als Standard-Priming. Laut [Hilfeartikel](https://help.salesforce.com/s/articleView?id=service.wfs_mobile_work_with_performance_priming.htm&language=en_US&type=5) kommen wichtige Änderungen etwa alle fünf Minuten, übrige Daten mindestens einmal am Tag. Voraussetzung sind Enterprise oder Unlimited Edition, Winter '26 oder neuer, App-Version 264 oder neuer und Field-Service-Mobile-Lizenzen.
 
 Das Produkt heißt inzwischen Agentforce Field Service and Operations; App und große Teile der Dokumentation sagen weiter Field Service.
 
-Offline erfasste Änderungen speichert das Gerät und überträgt sie an Salesforce, sobald die Verbindung zurück ist. Diese Übertragung kann scheitern: Validierungsregeln lehnen einen Datensatz ab, eine vorgestellte Geräteuhr führt zu "CreatedDate in future", und Datumsfelder zeigen die Synchronisationszeit statt der Offline-Zeit, solange der Support die genauen Datensatzdaten nicht aktiviert, so die [Offline-Hinweise](https://help.salesforce.com/s/articleView?id=service.mfs_offline_considerations.htm&language=en_US&type=5). Unterstützte mobile Flows laufen offline, wenn alle nötigen Daten und Metadaten geladen sind; braucht ein Flow mehr, scheitert er. Data Capture legt Datensätze offline aber erst an oder ändert sie, wenn das Gerät wieder online ist; diese und weitere Grenzen stehen in [Field Service Mobile App: Flow-Grenzen](../field-service-mobile-flows-grenzen/).
+Offline erfasste Änderungen speichert das Gerät und überträgt sie an Salesforce, sobald die Verbindung zurück ist. Diese Übertragung kann scheitern: Validierungsregeln lehnen einen Datensatz ab, eine zu weit vorgestellte Geräteuhr führt zu "CreatedDate in future", und Datumsfelder zeigen die Synchronisationszeit statt der Offline-Zeit, sofern der Salesforce Support nicht „Accurate Record Dates“ aktiviert, so die [Offline-Hinweise](https://help.salesforce.com/s/articleView?id=service.mfs_offline_considerations.htm&language=en_US&type=5). Unterstützte mobile Flows laufen offline, wenn alle nötigen Daten und Metadaten geladen sind; braucht ein Flow mehr, scheitert er. Im Offlinebetrieb legt Data Capture Datensätze aber erst an oder ändert sie, wenn das Gerät wieder online ist; diese und weitere Grenzen stehen in [Field Service Mobile App: Flow-Grenzen](../field-service-mobile-flows-grenzen/).
 
 Salesforce veröffentlicht durchaus Grenzen. Laut [Übersicht der Briefcase-Typen](https://help.salesforce.com/s/articleView?id=service.mfs_hvb_briefcase_types.htm&language=en_US&type=5) lädt ein Standard-Briefcase bis zu 50.000 Datensätze pro Nutzer, ein Profil-Briefcase für Performance Priming bis zu 100.000 eindeutige und ein High-Volume-Briefcase bis zu 400.000. Performance Priming begrenzt einen Briefcase außerdem auf 2.000 Service-Termine und 75.000 Datensätze pro Regel. Ich würde deutlich darunter planen und messen, wie lange das Priming auf einem echten Gerät dauert.
 
 ## Welche Daten gehören bei einem Maschinenbauer aufs Gerät?
 
-Meine Regel, für ein Modell, in dem Preise im Innendienst entstehen: Offline gehört, was der Techniker braucht, um den Einsatz abzuschließen und zu dokumentieren, ohne im Büro anzurufen. Alles andere bleibt online, denn jeder Datensatz muss synchronisiert werden, und ein schwerer Briefcase macht die Synchronisation am Morgen langsam.
+Meine Regel, für ein Modell, in dem Preise im Innendienst festgelegt werden: Offline gehört, was der Techniker braucht, um den Einsatz abzuschließen und zu dokumentieren, ohne im Büro anzurufen. Alles andere bleibt online, denn jeder Datensatz muss synchronisiert werden, und ein schwerer Briefcase macht die Synchronisation am Morgen langsam.
 
 | Auf dem Gerät | Warum |
 |---|---|
@@ -58,7 +58,7 @@ Meine Regel, für ein Modell, in dem Preise im Innendienst entstehen: Offline ge
 
 | Bleibt online | Warum |
 |---|---|
-| Vollständige Preislisten | Preise entstehen im Innendienst oder im ERP, außer Techniker bieten vor Ort an |
+| Vollständige Preislisten | Preise entstehen im Innendienst oder im ERP, außer Techniker erstellen vor Ort Angebote |
 | Alle Assets des Gebiets | Tausende Datensätze, die heute niemand öffnet |
 | Bestände aller Lager | In diesem Modell führt das ERP sie, der Innendienst schaut dort nach |
 | Abgeschlossene Aufträge, älter als einige Monate | Selten gebraucht, schwer zu synchronisieren |
@@ -69,7 +69,7 @@ Handbücher brauchen einen zweiten Blick. Ein Agent zur Fehlersuche findet das r
 
 ## Welche Offline-Lücken dokumentiert Salesforce?
 
-Die [Hinweise zu LWC Offline in der Field Service App](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sfs_gs_lwc_considerations.htm) nennen fünf bekannte Probleme. Eine vollständige Liste aller Offline-Probleme ist das nicht; die Synchronisationsfehler von oben kommen dazu. In einem ersten Test mit einem Admin-Nutzer fallen die fünf leicht durch, deshalb nehme ich alle in den Testplan auf.
+Die [Hinweise zu LWC Offline in der Field Service App](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sfs_gs_lwc_considerations.htm) nennen fünf bekannte Probleme. Eine vollständige Liste aller Offline-Probleme ist das nicht; die Synchronisationsfehler von oben kommen dazu. In einem ersten Test mit einem Admin-Nutzer werden diese fünf Punkte leicht übersehen, deshalb nehme ich alle in den Testplan auf.
 
 1. **Aufgaben werden nicht geladen.** Ein Task-Objekt im Briefcase löst beim Priming einen Fehler aus. Die übrigen Objekte werden trotzdem geladen. Abhilfe: Aufgaben aus dem Briefcase entfernen.
 2. **Globale Quick Actions erhalten keine Datensatz-ID.** Von einer Datensatzseite gestartet, wissen sie nicht, welchen Datensatz der Techniker gerade ansieht. Eine eigene Aktion, die auf dem aktuellen Arbeitsauftrag arbeiten soll, gehört deshalb ans Objekt und nicht zu den globalen Aktionen.
@@ -87,7 +87,7 @@ Viele Hersteller holen Subunternehmer in dieselbe App. Partnertechniker arbeiten
 
 Partner haben außerdem meist andere Freigaben, oft begrenzt auf ihr eigenes Gebiet und ihre eigenen Termine. Ein Briefcase, der für interne Techniker funktioniert, liefert einem Partner deshalb unter Umständen weniger Datensätze oder keine der verknüpften. Mein Rat: Geben Sie Partnern einen eigenen Briefcase und testen Sie ihn mit einem echten Partnernutzer, nie mit einem Admin, der das Profil wechselt.
 
-## Rechenbeispiel: ein Tag ohne Netz
+## Praxisbeispiel: ein Tag ohne Netz
 
 Ein Maschinenbauer schickt einen Techniker in die Produktionshalle eines Kunden. Die Kompressoren stehen im Keller, von 7 bis 16 Uhr gibt es kein Mobilfunknetz, und das Gast-WLAN des Kunden reicht nicht bis nach unten.
 
@@ -104,7 +104,7 @@ Der Servicebericht in diesem Szenario wird mit Document Builder erzeugt. Daten u
 
 ```schritte
 Rollen auf Briefcases abbilden
-  Interner Techniker, Partnertechniker, Meister. Mit Standard-Briefcases einer pro Rolle, mit Filtern auf Gebiet und Datum; bei Performance Priming trennt das Profil, also brauchen Rollen passende Profile.
+  Interner Techniker, Partnertechniker, Einsatzleiter. Mit Standard-Briefcases einer pro Rolle, mit Filtern auf Gebiet und Datum; bei Performance Priming trennt das Profil, also brauchen Rollen passende Profile.
 Datensätze pro Einsatzart auflisten
   Für Jahreswartung, Störung und Inbetriebnahme prüfen, was der Techniker vor Ort öffnet. Alles weglassen, was niemand öffnet.
 In einer echten Halle testen
@@ -112,7 +112,7 @@ In einer echten Halle testen
 Bekannte Probleme und Konfliktfälle durchgehen
   Die fünf LWC-Punkte, dazu ein Validierungsfehler bei der Übertragung, eine falsche Geräteuhr und ein Termin, den der Innendienst ändert, während der Techniker ihn bearbeitet. Mit internem Nutzer und, falls dabei, Partnernutzer, unter iOS und Android.
 Die Synchronisation messen
-  Dauer des Primings am Morgen und Speicherbedarf auf dem Gerät, mit dem Briefcase Ihrer stärksten Region.
+  Dauer des Primings am Morgen und Speicherbedarf auf dem Gerät, mit dem Briefcase der Region mit dem höchsten Einsatzvolumen.
 ```
 
 Das Offline-Design entscheidet, ob Formulare und Dokumente später funktionieren. Der nächste Schritt ist das Formular selbst, beschrieben in [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/). Das ganze Thema gehört zu [Kapitel 3 der Masterclass Field Service](../../masterclass/field-service/field-service-mobile-app-dokumente/).
