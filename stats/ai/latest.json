@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-01T11:47:10.255Z",
+  "generatedAt": "2026-11-09T08:58:53.188Z",
   "domain": "fk-sd.de",
-  "cost": 1.5576,
+  "cost": 1.5861,
   "models": {
     "chat_gpt": {
       "name": "gpt-5-mini",
@@ -28,7 +28,8 @@
       "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [],
+      "citedUrls": []
     },
     {
       "provider": "claude",
@@ -38,52 +39,55 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "bc-advisory.de"
-      ]
-    },
-    {
-      "provider": "gemini",
-      "model": "gemini-2.5-flash",
-      "lang": "de",
-      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
-      "cited": false,
-      "mentioned": false,
-      "domains": [
-        "vertexaisearch.cloud.google.com"
-      ]
-    },
-    {
-      "provider": "perplexity",
-      "model": "sonar",
-      "lang": "de",
-      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
-      "cited": false,
-      "mentioned": false,
-      "domains": [
-        "thinkbeyond.cloud",
-        "ibmix.de",
-        "conet.de",
-        "3li.global",
-        "ventionteams.com",
-        "salesforce.com",
-        "help.salesforce.com",
-        "appexchange.salesforce.com",
-        "itportal24.de"
-      ]
-    },
-    {
-      "provider": "google_ai_mode",
-      "model": "Google AI Mode",
-      "lang": "de",
-      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
-      "cited": false,
-      "mentioned": false,
-      "domains": [
+        "pwc.de",
         "bc-advisory.de",
-        "malt.com",
-        "freelancermap.de",
-        "freelance.de"
-      ]
+        "bilarna.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "conet.de",
+        "salesforce.com",
+        "manras.com",
+        "ibmix.de",
+        "ventionteams.com",
+        "help.salesforce.com",
+        "routine-automation.com",
+        "itportal24.de"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "appexchange.salesforce.com",
+        "vectrsolutions.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
@@ -92,7 +96,8 @@
       "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [],
+      "citedUrls": []
     },
     {
       "provider": "claude",
@@ -101,7 +106,8 @@
       "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [],
+      "citedUrls": []
     },
     {
       "provider": "gemini",
@@ -109,10 +115,11 @@
       "lang": "de",
       "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
       "cited": false,
-      "mentioned": false,
+      "mentioned": true,
       "domains": [
         "vertexaisearch.cloud.google.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "perplexity",
@@ -120,15 +127,14 @@
       "lang": "de",
       "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
       "cited": false,
-      "mentioned": false,
+      "mentioned": true,
       "domains": [
-        "gulp.de",
         "freelancermap.de",
+        "gulp.de",
         "fratch.io",
-        "linkedin.com",
-        "malt.com",
         "freelance.de"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "google_ai_mode",
@@ -139,9 +145,14 @@
       "mentioned": false,
       "domains": [
         "freelancermap.de",
+        "jeet-singh.com",
+        "jobs.voith.com",
         "freelance.de",
-        "consultingheads.com"
-      ]
+        "consultingheads.com",
+        "fratch.io",
+        "app.9am.works"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
@@ -150,7 +161,8 @@
       "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [],
+      "citedUrls": []
     },
     {
       "provider": "claude",
@@ -159,7 +171,8 @@
       "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [],
+      "citedUrls": []
     },
     {
       "provider": "gemini",
@@ -170,7 +183,8 @@
       "mentioned": false,
       "domains": [
         "vertexaisearch.cloud.google.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "perplexity",
@@ -182,9 +196,10 @@
       "domains": [
         "help.salesforce.com",
         "trailhead.salesforce.com",
-        "resources.docs.salesforce.com",
-        "salesforce.com"
-      ]
+        "salesforce.com",
+        "resources.docs.salesforce.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "google_ai_mode",
@@ -194,10 +209,12 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "salesforceben.com",
         "salesforce.com",
-        "developer.salesforce.com"
-      ]
+        "jetbi.com",
+        "hikko.com",
+        "reewamp.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
@@ -207,15 +224,12 @@
       "cited": false,
       "mentioned": false,
       "domains": [
+        "salesforce.com",
         "help.salesforce.com",
         "resources.docs.salesforce.com",
-        "salesforce.com",
-        "prometheusagency.co",
-        "blog.seraleads.com",
-        "appexchange.salesforce.com",
-        "techradar.com",
-        "systemselect.eu"
-      ]
+        "abilex.de"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "claude",
@@ -225,11 +239,12 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "getapp.com",
+        "itransition.com",
         "softwarefinder.com",
-        "find-your-software.de",
-        "salesforce.com"
-      ]
+        "salesforce.com",
+        "find-your-software.de"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "gemini",
@@ -240,19 +255,26 @@
       "mentioned": false,
       "domains": [
         "vertexaisearch.cloud.google.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "perplexity",
       "model": "sonar",
       "lang": "de",
       "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
-      "cited": false,
+      "cited": true,
       "mentioned": false,
       "domains": [
         "salesforce.com",
-        "find-your-software.de",
+        "fk-sd.de",
+        "help.salesforce.com",
+        "twopirconsulting.com",
         "appexchange.salesforce.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+        "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/"
       ]
     },
     {
@@ -263,12 +285,11 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "help.salesforce.com",
-        "zeeg.me",
-        "itportal24.de",
         "salesforce.com",
-        "routine-automation.com"
-      ]
+        "youtube.com",
+        "help.salesforce.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
@@ -280,11 +301,12 @@
       "domains": [
         "salesforce.com",
         "help.salesforce.com",
-        "stretch.se",
+        "kbmax.com",
+        "pwc.com",
         "companybench.com",
-        "clouderia.digital",
-        "pwc.com"
-      ]
+        "resources.docs.salesforce.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "claude",
@@ -295,12 +317,15 @@
       "mentioned": false,
       "domains": [
         "cloudmasonry.com",
-        "salesforce.com",
-        "clonepartner.com",
         "forceperformers.com",
-        "dhruvsoft.com",
-        "le-configurateur-des-industriels.com"
-      ]
+        "kugamon.com",
+        "apexhours.com",
+        "vectrsolutions.com",
+        "advancedcommunities.com",
+        "stackintelligence.com",
+        "clonepartner.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "gemini",
@@ -311,7 +336,8 @@
       "mentioned": false,
       "domains": [
         "vertexaisearch.cloud.google.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "perplexity",
@@ -322,13 +348,15 @@
       "mentioned": false,
       "domains": [
         "salesforce.com",
-        "gspsolutions.com",
-        "flosum.com",
+        "arcsen.com",
+        "revspire.io",
+        "ione360.com",
         "experlogix.com",
-        "techforceservices.com",
+        "bunny.com",
         "cloudmasonry.com",
-        "ione360.com"
-      ]
+        "flosum.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "google_ai_mode",
@@ -338,11 +366,13 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "applikontech.com",
         "salesforce.com",
-        "accordion.com",
-        "2-data.com"
-      ]
+        "automationchampion.com",
+        "cloudnexus.ai",
+        "vectrsolutions.com",
+        "everstage.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
@@ -352,13 +382,13 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "copado.com",
-        "gearset.com",
         "sfdx-hardis.cloudity.com",
-        "faun.dev",
-        "github.com",
-        "gtmsystemsacademy.com"
-      ]
+        "assets-global.website-files.com",
+        "assets.gearset.com",
+        "gearset.com",
+        "copado.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "claude",
@@ -368,10 +398,12 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "getclientell.com",
         "salesforcedictionary.com",
-        "gearset.com"
-      ]
+        "getclientell.com",
+        "gearset.com",
+        "g2.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "gemini",
@@ -382,21 +414,26 @@
       "mentioned": false,
       "domains": [
         "vertexaisearch.cloud.google.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "perplexity",
       "model": "sonar",
       "lang": "de",
       "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
-      "cited": false,
+      "cited": true,
       "mentioned": false,
       "domains": [
         "gearset.com",
+        "fk-sd.de",
         "copado.com",
-        "sherwen.com",
+        "accelq.com",
         "flosum.com",
-        "accelq.com"
+        "sherwen.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/masterclass/devops-release-management/devops-werkzeuge-vergleich/"
       ]
     },
     {
@@ -407,22 +444,30 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "reddit.com",
         "gearset.com",
         "linkedin.com",
-        "de.linkedin.com"
-      ]
+        "flosum.com",
+        "marketplace.visualstudio.com",
+        "sfdx-hardis.cloudity.com",
+        "salesforcedevops.net"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
       "model": "gpt-5-mini-2025-08-07",
       "lang": "de",
       "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
-      "cited": false,
-      "mentioned": false,
+      "cited": true,
+      "mentioned": true,
       "domains": [
         "salesforce.com",
-        "reddit.com"
+        "fk-sd.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/serviceagent-haendleranfragen-kosten/?utm_source=openai",
+        "https://www.fk-sd.de/blog/was-ist-agentforce/?utm_source=openai",
+        "https://www.fk-sd.de/blog/haendlerbestand-nachschub-agentforce/?utm_source=openai"
       ]
     },
     {
@@ -433,12 +478,12 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "cloudconsultants.ch",
-        "coworker.ai",
-        "pluno.ai",
-        "eesel.ai",
-        "activepieces.com"
-      ]
+        "myaskai.com",
+        "getclientell.com",
+        "valintry360.com",
+        "pluno.ai"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "gemini",
@@ -449,25 +494,29 @@
       "mentioned": false,
       "domains": [
         "vertexaisearch.cloud.google.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "perplexity",
       "model": "sonar",
       "lang": "de",
       "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
-      "cited": false,
+      "cited": true,
       "mentioned": false,
       "domains": [
-        "salesforce.com",
-        "ekfrazo.com",
-        "zarasa.io",
+        "fk-sd.de",
         "getclientell.com",
-        "find-your-software.de",
-        "oliv.ai",
+        "weflow.ai",
+        "salesforce.com",
         "default.com",
         "supered.io",
-        "lucidlabs.de"
+        "reviewramble.com",
+        "oliv.ai",
+        "omr.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/"
       ]
     },
     {
@@ -479,60 +528,69 @@
       "mentioned": false,
       "domains": [
         "salesforce.com",
-        "pluno.ai",
-        "coworker.ai"
-      ]
+        "pluno.ai"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
       "model": "gpt-5-mini-2025-08-07",
       "lang": "de",
       "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
-      "cited": false,
-      "mentioned": false,
+      "cited": true,
+      "mentioned": true,
       "domains": [
         "help.salesforce.com",
-        "resources.docs.salesforce.com",
+        "developer.salesforce.com",
+        "fk-sd.de",
         "luminix.atlassian.net",
+        "ideas.salesforce.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/blog/salesforce-document-builder-grenzen-workarounds/?utm_source=openai"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "github.com",
+        "help.salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "cited": true,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
         "trailhead.salesforce.com",
-        "linkedin.com"
-      ]
-    },
-    {
-      "provider": "claude",
-      "model": "claude-sonnet-5",
-      "lang": "de",
-      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
-      "cited": false,
-      "mentioned": false,
-      "domains": [
-        "help.salesforce.com",
-        "github.com"
-      ]
-    },
-    {
-      "provider": "gemini",
-      "model": "gemini-2.5-flash",
-      "lang": "de",
-      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
-      "cited": false,
-      "mentioned": false,
-      "domains": [
-        "vertexaisearch.cloud.google.com"
-      ]
-    },
-    {
-      "provider": "perplexity",
-      "model": "sonar",
-      "lang": "de",
-      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
-      "cited": false,
-      "mentioned": false,
-      "domains": [
-        "help.salesforce.com",
-        "developer.salesforce.com",
-        "helpx.adobe.com",
-        "trailhead.salesforce.com"
+        "fk-sd.de",
+        "developer.salesforce.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
+        "https://www.fk-sd.de/en/blog/salesforce-service-documents-document-builder/"
       ]
     },
     {
@@ -544,10 +602,10 @@
       "mentioned": false,
       "domains": [
         "help.salesforce.com",
-        "docable.co",
         "developer.salesforce.com",
         "trailhead.salesforce.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
@@ -556,7 +614,8 @@
       "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [],
+      "citedUrls": []
     },
     {
       "provider": "claude",
@@ -565,7 +624,8 @@
       "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [],
+      "citedUrls": []
     },
     {
       "provider": "gemini",
@@ -576,7 +636,8 @@
       "mentioned": false,
       "domains": [
         "vertexaisearch.cloud.google.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "perplexity",
@@ -586,16 +647,17 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "nickfrates.com",
+        "hub.sap.com",
         "ecosire.com",
-        "api.sap.com",
-        "salesforcetutorial.com",
         "comselect.de",
+        "nickfrates.com",
         "help.sap.com",
+        "salesforcetutorial.com",
+        "api.sap.com",
         "mulesoft.com",
-        "jitterbit.com",
-        "appseconnect.com"
-      ]
+        "de.scribd.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "google_ai_mode",
@@ -605,9 +667,12 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "walkme.com",
-        "community.sap.com"
-      ]
+        "seamless.engineering",
+        "community.sap.com",
+        "ashvirtech.com",
+        "salesforceben.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
@@ -616,7 +681,8 @@
       "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [],
+      "citedUrls": []
     },
     {
       "provider": "claude",
@@ -625,7 +691,8 @@
       "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [],
+      "citedUrls": []
     },
     {
       "provider": "gemini",
@@ -636,7 +703,8 @@
       "mentioned": false,
       "domains": [
         "vertexaisearch.cloud.google.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "perplexity",
@@ -648,9 +716,10 @@
       "domains": [
         "help.salesforce.com",
         "architect.salesforce.com",
-        "trailhead.salesforce.com",
-        "salesforce.com"
-      ]
+        "salesforce.com",
+        "trailhead.salesforce.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "google_ai_mode",
@@ -660,25 +729,30 @@
       "cited": false,
       "mentioned": false,
       "domains": [
+        "trailhead.salesforce.com",
+        "matchmyemail.com",
         "help.salesforce.com",
-        "de.linkedin.com",
+        "community.servicemax.com",
+        "intellipaat.com",
         "salesforceben.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
       "model": "gpt-5-mini-2025-08-07",
       "lang": "en",
       "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
-      "cited": false,
-      "mentioned": false,
+      "cited": true,
+      "mentioned": true,
       "domains": [
-        "xing.com",
-        "freelancermap.de",
-        "sfmike.de",
-        "gulp.de",
+        "fk-sd.de",
         "nextcloudsolution.de",
+        "sfmike.de",
         "freelance.de"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/freiberuflicher-salesforce-architect/?utm_source=openai"
       ]
     },
     {
@@ -688,7 +762,12 @@
       "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [
+        "freelance.de",
+        "gulp.de",
+        "consultingheads.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "gemini",
@@ -696,10 +775,11 @@
       "lang": "en",
       "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
       "cited": false,
-      "mentioned": false,
+      "mentioned": true,
       "domains": [
         "vertexaisearch.cloud.google.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "perplexity",
@@ -710,11 +790,12 @@
       "mentioned": true,
       "domains": [
         "fratch.io",
+        "freelancermap.de",
         "gulp.de",
-        "linkedin.com",
-        "conet.de",
-        "freelance.de"
-      ]
+        "freelance.de",
+        "linkedin.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "google_ai_mode",
@@ -724,11 +805,16 @@
       "cited": false,
       "mentioned": true,
       "domains": [
-        "jeet-singh.com",
+        "de.linkedin.com",
         "fratch.io",
-        "freelance.de",
-        "de.linkedin.com"
-      ]
+        "sfmike.de",
+        "upwork.com",
+        "9am.works",
+        "jeet-singh.com",
+        "freelancermap.de",
+        "consultingheads.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
@@ -738,14 +824,13 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "github.com",
-        "help.salesforce.com",
         "sfdx-hardis.github.io",
         "salesforce.com",
-        "sfdx-hardis-training.cloudity.com",
-        "elements.cloud",
-        "cirra.ai"
-      ]
+        "github.com",
+        "trailhead.salesforce.com",
+        "elements.cloud"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "claude",
@@ -756,10 +841,11 @@
       "mentioned": false,
       "domains": [
         "accelq.com",
+        "sherwen.com",
         "github.com",
-        "slideshare.net",
         "sfdx-hardis.cloudity.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "gemini",
@@ -770,7 +856,8 @@
       "mentioned": false,
       "domains": [
         "vertexaisearch.cloud.google.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "perplexity",
@@ -781,12 +868,15 @@
       "mentioned": false,
       "domains": [
         "fk-sd.de",
-        "sherwen.com",
-        "salesforce.com",
-        "sfdx-hardis.cloudity.com",
-        "marketplace.visualstudio.com",
+        "gtmsystemsacademy.com",
         "github.com",
-        "salesforceben.com"
+        "sfdx-hardis.cloudity.com",
+        "marketplace.visualstudio.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
+        "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
+        "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/"
       ]
     },
     {
@@ -797,10 +887,10 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "gearset.com",
-        "youtube.com",
+        "sfdx-hardis.cloudity.com",
         "reddit.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
@@ -809,7 +899,8 @@
       "prompt": "How do I govern several Salesforce implementation partners in one program?",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [],
+      "citedUrls": []
     },
     {
       "provider": "claude",
@@ -818,7 +909,8 @@
       "prompt": "How do I govern several Salesforce implementation partners in one program?",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [],
+      "citedUrls": []
     },
     {
       "provider": "gemini",
@@ -829,20 +921,26 @@
       "mentioned": false,
       "domains": [
         "vertexaisearch.cloud.google.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "perplexity",
       "model": "sonar",
       "lang": "en",
       "prompt": "How do I govern several Salesforce implementation partners in one program?",
-      "cited": false,
+      "cited": true,
       "mentioned": false,
       "domains": [
+        "fk-sd.de",
         "salesforce.com",
         "help.salesforce.com",
-        "docs.introw.io",
-        "partners.salesforce.com"
+        "sfvedas.com",
+        "partners.salesforce.com",
+        "docs.introw.io"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/services/partner-governance/"
       ]
     },
     {
@@ -853,8 +951,9 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "flosum.com"
-      ]
+        "medium.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
@@ -863,7 +962,8 @@
       "prompt": "Best practices for rolling out Salesforce Field Service in waves",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [],
+      "citedUrls": []
     },
     {
       "provider": "claude",
@@ -872,16 +972,8 @@
       "prompt": "Best practices for rolling out Salesforce Field Service in waves",
       "cited": false,
       "mentioned": false,
-      "domains": [
-        "cirriussolutions.com",
-        "omi.co",
-        "salesforce.com",
-        "minusculetechnologies.com",
-        "synebo.io",
-        "developer.salesforce.com",
-        "jetbi.com",
-        "muncly.com"
-      ]
+      "domains": [],
+      "citedUrls": []
     },
     {
       "provider": "gemini",
@@ -892,22 +984,26 @@
       "mentioned": false,
       "domains": [
         "vertexaisearch.cloud.google.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "perplexity",
       "model": "sonar",
       "lang": "en",
       "prompt": "Best practices for rolling out Salesforce Field Service in waves",
-      "cited": false,
+      "cited": true,
       "mentioned": false,
       "domains": [
+        "fk-sd.de",
         "help.salesforce.com",
         "salesforce.com",
         "resources.docs.salesforce.com",
-        "appexchange.salesforce.com",
-        "devsinc.com",
-        "fieldax.com"
+        "github.com",
+        "appexchange.salesforce.com"
+      ],
+      "citedUrls": [
+        "https://www.fk-sd.de/en/blog/salesforce-field-service-rollout/"
       ]
     },
     {
@@ -918,14 +1014,59 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "trailhead.salesforce.com",
-        "salesforce.com",
-        "reewamp.com"
-      ]
+        "hikko.com"
+      ],
+      "citedUrls": []
     },
     {
       "provider": "chat_gpt",
       "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "developer.salesforce.com",
+        "help.salesforce.com",
+        "ekenigsberg.com",
+        "salesforce.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "tinkertimelabs.com",
+        "thecloudupdate.co",
+        "salesforceben.com",
+        "helpx.adobe.com",
+        "experlogix.com",
+        "titandxp.com",
+        "docsmadeasy.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ],
+      "citedUrls": []
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
       "lang": "en",
       "prompt": "What are the limitations of Salesforce Document Builder?",
       "cited": false,
@@ -935,49 +1076,8 @@
         "developer.salesforce.com",
         "helpx.adobe.com",
         "trailhead.salesforce.com"
-      ]
-    },
-    {
-      "provider": "claude",
-      "model": "claude-sonnet-5",
-      "lang": "en",
-      "prompt": "What are the limitations of Salesforce Document Builder?",
-      "cited": false,
-      "mentioned": false,
-      "domains": [
-        "help.salesforce.com",
-        "helpx.adobe.com",
-        "titandxp.com",
-        "experlogix.com",
-        "360degreecloud.com"
-      ]
-    },
-    {
-      "provider": "gemini",
-      "model": "gemini-2.5-flash",
-      "lang": "en",
-      "prompt": "What are the limitations of Salesforce Document Builder?",
-      "cited": false,
-      "mentioned": false,
-      "domains": [
-        "vertexaisearch.cloud.google.com"
-      ]
-    },
-    {
-      "provider": "perplexity",
-      "model": "sonar",
-      "lang": "en",
-      "prompt": "What are the limitations of Salesforce Document Builder?",
-      "cited": false,
-      "mentioned": false,
-      "domains": [
-        "help.salesforce.com",
-        "developer.salesforce.com",
-        "helpx.adobe.com",
-        "titandxp.com",
-        "trailhead.salesforce.com",
-        "github.com"
-      ]
+      ],
+      "citedUrls": []
     },
     {
       "provider": "google_ai_mode",
@@ -987,10 +1087,10 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "docable.co",
-        "developer.salesforce.com",
-        "reddit.com"
-      ]
+        "help.salesforce.com",
+        "docgenius.ai"
+      ],
+      "citedUrls": []
     }
   ]
 }

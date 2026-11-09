@@ -1,46 +1,46 @@
 [
  {
   "domain": "salesforce.com",
-  "citations": 21
+  "citations": 18
  },
  {
   "domain": "help.salesforce.com",
-  "citations": 17
+  "citations": 18
  },
  {
   "domain": "vertexaisearch.cloud.google.com",
   "citations": 15
  },
  {
-  "domain": "trailhead.salesforce.com",
-  "citations": 8
+  "domain": "fk-sd.de",
+  "citations": 10
  },
  {
-  "domain": "developer.salesforce.com",
+  "domain": "trailhead.salesforce.com",
   "citations": 7
  },
  {
   "domain": "freelance.de",
-  "citations": 6
- },
- {
-  "domain": "github.com",
-  "citations": 6
- },
- {
-  "domain": "gearset.com",
   "citations": 5
  },
  {
-  "domain": "appexchange.salesforce.com",
-  "citations": 4
+  "domain": "sfdx-hardis.cloudity.com",
+  "citations": 5
+ },
+ {
+  "domain": "developer.salesforce.com",
+  "citations": 5
+ },
+ {
+  "domain": "github.com",
+  "citations": 5
  },
  {
   "domain": "freelancermap.de",
   "citations": 4
  },
  {
-  "domain": "linkedin.com",
+  "domain": "fratch.io",
   "citations": 4
  },
  {
@@ -48,27 +48,23 @@
   "citations": 4
  },
  {
-  "domain": "reddit.com",
+  "domain": "gearset.com",
   "citations": 4
  },
  {
-  "domain": "helpx.adobe.com",
-  "citations": 4
+  "domain": "appexchange.salesforce.com",
+  "citations": 3
+ },
+ {
+  "domain": "vectrsolutions.com",
+  "citations": 3
  },
  {
   "domain": "gulp.de",
   "citations": 3
  },
  {
-  "domain": "fratch.io",
-  "citations": 3
- },
- {
-  "domain": "salesforceben.com",
-  "citations": 3
- },
- {
-  "domain": "find-your-software.de",
+  "domain": "consultingheads.com",
   "citations": 3
  },
  {
@@ -76,7 +72,11 @@
   "citations": 3
  },
  {
-  "domain": "sfdx-hardis.cloudity.com",
+  "domain": "getclientell.com",
+  "citations": 3
+ },
+ {
+  "domain": "salesforceben.com",
   "citations": 3
  }
 ]
