@@ -120,7 +120,7 @@ const schema = {
   </Fragment>
   <article class="section post mc-chapter">
     <div class="container">
-      <a class="post-back" href={masterclassIndex(lang, course)}>← {m.back}</a>
+      <a class="post-back" data-nosnippet href={masterclassIndex(lang, course)}>← {m.back}</a>
       <p class="post-kicker"><span class="post-pill">{eyebrowPart}</span><span>{eyebrowCourse}</span></p>
       <h1>{title}</h1>
       <PostMeta lang={lang} authors={['fabian']} updatedDate={updatedDate} minutes={chapterReadingMinutes(chapter)} />

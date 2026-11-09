@@ -136,7 +136,7 @@ const schema = {
   </Fragment>
   <article class="section post">
     <div class="container">
-      <a class="post-back" href={blogIndex(lang)}>← {t.blog.back}</a>
+      <a class="post-back" data-nosnippet href={blogIndex(lang)}>← {t.blog.back}</a>
       {seriesInfo && seriesRef && (
         <p class="post-kicker"><span class="post-pill">{partLabel(seriesRef.part)}</span><a href="#series">{t.blog.series} {seriesInfo[lang]}</a></p>
       )}
