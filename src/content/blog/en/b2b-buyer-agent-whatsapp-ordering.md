@@ -1,6 +1,6 @@
 ---
 title: "B2B Buyer Agent: ordering through WhatsApp and SMS"
-description: "What the Salesforce B2B Buyer Agent does for dealers today on web chat, WhatsApp and SMS, what Carter for Buyers adds, which meters apply and where prices come from."
+description: "What the Salesforce B2B Buyer Agent does for dealers on web chat, WhatsApp and SMS, what Carter for Buyers adds, which meters apply and where prices come from."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: en
