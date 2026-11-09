@@ -2,6 +2,7 @@
 title: "Revenue Cloud and SAP: who owns what in quote to cash?"
 description: "Which quote-to-cash steps belong in Revenue Cloud and which in SAP S/4HANA: three cuts, an owner per object and what Revenue Cloud Billing means for finance."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: revenue-cloud-sap-quote-to-cash-ownership
 translationKey: revenue-cloud-sap-system-boundaries
@@ -11,12 +12,12 @@ contactBrief: integration
 tags: [revenue cloud, sap s/4hana, quote to cash, integration, billing, manufacturing]
 takeaways:
   - "MuleSoft's SAP accelerator creates the SAP order from Salesforce, but documents this only for Sales Cloud and CPQ, not for Revenue Cloud."
-  - "There are three sensible cuts: quote only, quote and order, or full quote to cash with Revenue Cloud Billing as a subledger."
+  - "There are three sensible cuts: quote only, quote and order, or quote to invoice with Revenue Cloud Billing as a subledger."
   - "Billing brings its own legal entities, accounting periods and general ledger accounts. Finance has to agree before the first invoice."
   - "Write the split down in one table, with an owner per object, the direction of every interface and a person for errors."
 faq:
   - q: "Should SAP or Revenue Cloud be the price master?"
-    a: "Exactly one of them. If SAP pricing conditions already hold customer prices and discounts, I keep SAP as the master and fetch the net price for the quote through an API. Revenue Cloud pricing pays off when the logic lives in sales anyway, for example for subscriptions and bundles."
+    a: "Exactly one of them per price component. If SAP pricing conditions already hold customer prices and discounts, I keep SAP as the master and fetch the net price for the quote through an API. Revenue Cloud pricing pays off when the logic lives in sales anyway, for example for subscriptions and bundles. A mixed quote is fine as long as no price is calculated in both systems."
   - q: "Does Revenue Cloud replace the SAP sales order?"
     a: "Usually not. Revenue Cloud creates and orchestrates the order in Salesforce, and an integration creates the sales order in SAP for delivery, with the SAP order number written back. The order in SAP stays the basis for delivery and the machine invoice."
   - q: "Can invoices come from Revenue Cloud Billing while SAP stays the general ledger?"
@@ -26,7 +27,7 @@ faq:
 draft: false
 ---
 
-In quote to cash with Revenue Cloud and SAP S/4HANA, Salesforce should own what sales changes every day: the catalog for selling, the configuration, the quote and its approval. SAP should keep the material master, the sales order for delivery and, for machine sales, the invoice. Revenue Cloud Billing only belongs in the picture when recurring or usage-based revenue is sold and changed in Salesforce, and then Salesforce becomes a subledger that sends journal entries to SAP. Pick one of three cuts, name an owner per object, and get the split signed by sales, finance and IT before a partner starts building.
+In quote to cash with Revenue Cloud and SAP S/4HANA, Salesforce should own what sales changes every day: the catalog for selling, the configuration, the quote and its approval. SAP should keep the material master, the sales order for delivery and, for machine sales, the invoice. In my view Revenue Cloud Billing only belongs in the picture when recurring or usage-based revenue is sold and changed in Salesforce. Salesforce then becomes a subledger, and an integration posts its journal entries to SAP. Pick one of three cuts, name an owner per object, and get the split signed by sales, finance and IT before a partner starts building.
 
 ## Which pattern does Salesforce document for SAP?
 
@@ -34,17 +35,17 @@ The closest official pattern is [use case 3a of the MuleSoft Accelerator for SAP
 
 Three details from that page matter for a manufacturer:
 
-- **Products come from a PIM** in the accelerator, with global IDs kept in an MDM system. If your material master lives in SAP, SAP plays that role.
+- **Products come from a PIM** in the accelerator, with global IDs kept in an MDM system. If your material master lives in SAP, SAP can take that role for material number and status, but that is your design decision, not part of the accelerator.
 - **Complex pricing is out of scope**, explicitly including SAP Variant Configuration. If your machines are configured in SAP today, the accelerator does not answer that question.
-- **Revenue Cloud is not mentioned.** The accelerator covers Sales Cloud and Salesforce CPQ and was published in December 2021.
+- **Revenue Cloud is not mentioned.** The accelerator covers Sales Cloud and Salesforce CPQ; the linked version 1.6 dates from December 2021.
 
-The pattern still carries over to Revenue Cloud, which Salesforce's Winter '27 documentation also calls Revenue Management and which started as Revenue Lifecycle Management. Revenue Cloud works on standard objects: the [quote data model](https://developer.salesforce.com/docs/platform/data-models/guide/transaction-management-quote.html) and the [order data model](https://developer.salesforce.com/docs/platform/data-models/guide/transaction-mgmt-order.html) list Quote, Quote Line Item, Order, Order Item, Asset, Product2 and Pricebook Entry. So the integration points are the same, but the design is your partner's, and someone on your side should review it.
+The business pattern still carries over to Revenue Cloud, which Salesforce now calls Revenue Management and which started as Revenue Lifecycle Management. Revenue Cloud works on standard objects: the [quote data model](https://developer.salesforce.com/docs/platform/data-models/guide/transaction-management-quote.html) and the [order data model](https://developer.salesforce.com/docs/platform/data-models/guide/transaction-mgmt-order.html) list Quote, Quote Line Item, Order, Order Item, Asset, Product2 and Pricebook Entry. So the integration points sit on familiar standard objects, but the CPQ accelerator is no implementation template: Revenue Cloud is not an upgrade of CPQ, and object mappings, APIs, orchestration and error handling have to be designed again. That design is your partner's, and someone on your side should review it.
 
 ## Quote only, quote and order, or all the way to the invoice
 
 I see three cuts that work. Each one moves the line between Salesforce and SAP one step further to the right.
 
-| Step | Cut 1: quote only | Cut 2: quote and order | Cut 3: full quote to cash |
+| Step | Cut 1: quote only | Cut 2: quote and order | Cut 3: quote to invoice |
 |---|---|---|---|
 | Catalog for selling, configuration | Revenue Cloud | Revenue Cloud | Revenue Cloud |
 | Price | SAP or Revenue Cloud, one master | same | same |
@@ -55,9 +56,9 @@ I see three cuts that work. Each one moves the line between Salesforce and SAP o
 
 **Cut 1** fits when the order is a one-off machine sale and everything after the signature is logistics. Salesforce hands over an accepted quote, SAP creates the order.
 
-**Cut 2** fits when the same customer keeps buying and changing things: options added later, service packages, subscriptions for remote monitoring. Revenue Cloud then holds the order and the assets, so an amendment starts from what the customer already has. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders), an activated order goes to Dynamic Revenue Orchestrator, which can make a callout to a third-party system. That callout is where SAP gets its order. Details are in [handing orders to SAP with Dynamic Revenue Orchestrator](../revenue-cloud-order-orchestration-sap/).
+**Cut 2** fits when the same customer keeps buying and changing things: options added later, service packages, subscriptions for remote monitoring. Revenue Cloud then holds the order and the assets, so an amendment starts from what the customer already has. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders), an activated order can be submitted to Dynamic Revenue Orchestrator, usually automated with a record-triggered flow, and the orchestrator can make a callout to a third-party system. That callout, ideally to an integration API rather than straight to SAP, is where SAP gets its order. Dynamic Revenue Orchestrator comes with Revenue Cloud Advanced, not Growth. Details are in [handing orders to SAP with Dynamic Revenue Orchestrator](../revenue-cloud-order-orchestration-sap/).
 
-**Cut 3** adds [Revenue Cloud Billing](https://www.salesforce.com/sales/revenue-cloud-billing/). Salesforce writes that it can "function as a sub-ledger", powering journal entries, closing periods and currency conversions, and that billing data and journal entries can be synchronised to the ERP. That makes sense for recurring revenue sold in Salesforce. For a machine invoice with delivery, customs and down payments, I would leave the invoice in SAP. The trade-offs are in [Revenue Cloud Billing or SAP invoicing](../revenue-cloud-billing-or-sap-invoicing/).
+**Cut 3** adds [Revenue Cloud Billing](https://www.salesforce.com/sales/revenue-cloud-billing/). Salesforce writes that it can "function as a sub-ledger", powering journal entries, closing periods and currency conversions, and that billing data and journal entries can be synchronised to the ERP. That makes sense for recurring revenue sold in Salesforce. For a machine invoice with delivery, customs and down payments, I would leave the invoice in SAP. Cut 3 also needs the Revenue Cloud Billing license, because Advanced only brings basic invoicing, and it still leaves receivables, payments and dunning to be assigned to one system. The trade-offs are in [Revenue Cloud Billing or SAP invoicing](../revenue-cloud-billing-or-sap-invoicing/), the licenses in [Revenue Cloud editions and pricing](../revenue-cloud-editions-pricing/).
 
 ## Who owns which object?
 
@@ -67,24 +68,24 @@ Cutting by process step is not enough. Partners build on objects, so the split h
 |---|---|---|
 | Product2 | SAP or PIM for material number and status; Revenue Cloud for selling attributes and catalog placement | Material number, status, units into Salesforce |
 | Pricebook Entry | SAP for list prices | List price per currency, scheduled |
-| Customer prices and discounts | One master, SAP conditions or Revenue Cloud pricing | Net price live from SAP, or nothing |
+| Customer prices and discounts | One master, SAP conditions or Revenue Cloud pricing | Net price live from SAP, or the Salesforce net price to SAP as a fixed price |
 | Quote | Revenue Cloud | Accepted quote to SAP in cut 1 |
 | Order | Revenue Cloud in cuts 2 and 3; SAP sales order for delivery | Order to SAP, SAP order number and status back |
 | Asset | Revenue Cloud for what was sold and its term | Serial number from SAP or Field Service |
 | Invoice | SAP in cuts 1 and 2; Revenue Cloud Billing in cut 3 | Invoice status back, or journal entries to SAP |
 
-The price row causes the most trouble. Two systems that both calculate customer prices will disagree, and the customer will see it when the order confirmation from SAP differs from the quote PDF. Which route fits your conditions is covered in [customer prices: SAP conditions or Salesforce Pricing](../customer-prices-sap-conditions-or-salesforce-pricing/).
+The price row causes the most trouble. Two systems that both calculate the same customer price will sooner or later disagree, and the customer will see it when the order confirmation from SAP differs from the quote PDF. Which route fits your conditions is covered in [customer prices: SAP conditions or Salesforce Pricing](../customer-prices-sap-conditions-or-salesforce-pricing/).
 
 ## What does Revenue Cloud Billing mean for finance?
 
 It means a second accounting structure. The Revenue Management Developer Guide lists the [billing objects to deploy](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_billing_objects.htm), among them LegalEntity, AccountingPeriod, LegalEntityAccountingPeriod, GeneralLedgerAccount, TaxPolicy and PaymentTerm. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/set-up-billing-basics) explains that legal entities make sure all billing transactions are related to accounting periods and general ledger accounts.
 
-Every one of these records already exists in SAP. So before cut 3, finance has to decide:
+SAP has a counterpart for each of them, but rarely a one-to-one match: a legal entity is not automatically a company code, and an accounting period depends on the fiscal year variant. So before cut 3, finance has to decide:
 
 1. **Which legal entities invoice from Salesforce**, and which stay in SAP.
 2. **How Salesforce accounting periods follow the SAP periods**, and who closes them.
 3. **How general ledger accounts map**, and who changes the mapping when the chart of accounts changes.
-4. **Which invoice format the customer receives.** From 2027, according to the [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094), only companies with prior-year turnover up to €800,000 may still send domestic business customers a PDF with their consent, and from 2028 the e-invoice requirements apply to everyone. What that means for Revenue Cloud is in [e-invoicing in Germany from 2027](../e-invoicing-germany-2027-revenue-cloud/).
+4. **Which invoice format the customer receives.** From 2027, according to the [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094), only companies with prior-year turnover up to €800,000 may still send domestic business customers a PDF with their consent, and from 2028 the e-invoice requirements apply to practically all domestic B2B invoices. Also settle which system creates the structured format and who validates it. What that means for Revenue Cloud is in [e-invoicing in Germany from 2027](../e-invoicing-germany-2027-revenue-cloud/).
 
 If finance has not been in the room for these four points, cut 3 is not ready.
 
@@ -122,4 +123,4 @@ Designing these interfaces is a large part of my work on [Salesforce integration
 
 ## Settle the unclear rows with finance
 
-List your quote-to-cash steps in one column and write SAP or Salesforce next to each, as things work today. Then mark the three rows where the answer is unclear: in most companies that is the price, the order and the invoice. Settle those three with finance before you ask partners for estimates, because each answer changes the scope by weeks.
+List your quote-to-cash steps in one column and write SAP or Salesforce next to each, as things work today. Then mark the three rows where the answer is unclear: in most companies that is the price, the order and the invoice. Settle those three with finance before you ask partners for estimates, because each answer can change the scope by weeks.

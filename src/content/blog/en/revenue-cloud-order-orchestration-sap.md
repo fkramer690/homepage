@@ -1,7 +1,8 @@
 ---
 title: "Handing orders to SAP: Dynamic Revenue Orchestrator"
-description: "How Dynamic Revenue Orchestrator turns a Revenue Cloud order into fulfilment steps, where the SAP callout belongs and when a plain integration is enough."
+description: "How Dynamic Revenue Orchestrator turns a Revenue Cloud order into fulfillment steps, where the SAP callout belongs and when a plain integration is enough."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: revenue-cloud-order-orchestration-sap
 translationKey: revenue-cloud-order-orchestration-erp
@@ -11,28 +12,28 @@ contactBrief: integration
 tags: [Revenue Cloud, Dynamic Revenue Orchestrator, SAP, order management, integration]
 takeaways:
   - "Decomposition turns commercial products into technical products for downstream systems, controlled by decomposition rules."
-  - "An orchestration plan has five step types: auto task, callout, manual task, milestone and pause. The hand-over to SAP is a callout."
-  - "Failed steps are fallout. DRO retries them a set number of times, then moves them to a queue where someone fixes them."
-  - "If an order goes to SAP in one piece and nothing else happens in Salesforce, a plain integration without DRO is enough and saves an add-on."
+  - "A plan uses five general step types plus Staged Assetize: auto task, callout, manual task, milestone and pause. The SAP hand-over is a callout."
+  - "Failed steps are fallout. A matching fallout rule sets retries and the queue; without one, the step fails fatally with no retry."
+  - "If an order goes to SAP in one piece and nothing else happens in Salesforce, a plain integration without DRO is usually enough."
 faq:
   - q: "What is Dynamic Revenue Orchestrator in Salesforce?"
-    a: "Dynamic Revenue Orchestrator (DRO) is the order fulfilment engine of Revenue Cloud. It breaks orders into technical products and runs an orchestration plan with steps in Salesforce and in external systems such as an ERP."
+    a: "Dynamic Revenue Orchestrator (DRO) is the order fulfillment engine of Revenue Cloud for orders you submit to it. It breaks orders into technical products and runs an orchestration plan with steps in Salesforce and in external systems such as an ERP."
   - q: "Do I need DRO to send Revenue Cloud orders to SAP?"
-    a: "No. A record-triggered flow or a middleware call can send an activated order to SAP directly. DRO pays off when one order triggers several fulfilment steps with dependencies, owners and deadlines."
+    a: "No. A record-triggered flow or a middleware call can send an activated order to SAP directly. DRO pays off when one order triggers several fulfillment steps with dependencies, owners and deadlines."
   - q: "How much does Dynamic Revenue Orchestrator cost?"
-    a: "The Revenue Cloud pricing page lists Dynamic Revenue Orchestration as an add-on available for purchase with Revenue Cloud Advanced, marked with freemium access. The page does not say what the freemium access covers, so ask Salesforce in writing before you plan with it."
+    a: "The Revenue Cloud pricing page lists Dynamic Revenue Orchestration as available for purchase with Revenue Cloud Advanced, marked with freemium access, but publishes no separate DRO price. The page does not say what the freemium access covers, so ask Salesforce in writing before you plan with it."
   - q: "What happens when SAP rejects an order from Revenue Cloud?"
-    a: "In DRO the failed step becomes fallout. It is retried as often as configured and then lands in a queue, where an operator corrects the data, retries the step or marks it complete manually."
+    a: "In DRO the failed step becomes fallout. With a matching fallout rule it is retried as configured and then assigned to a queue, where an operator corrects the data and retries the step. Without a matching rule it fails fatally without retry. Marking it complete manually should be an approved exception."
   - q: "Which step types does an orchestration plan have?"
-    a: "Five: an auto task runs a flow, a callout calls an external system, a manual task waits for a person, a milestone marks a checkpoint, and a pause holds the plan until another task is finished."
+    a: "Six: an auto task runs a flow, a callout calls an external system, a manual task waits for a person, a milestone marks a checkpoint, a pause holds the plan until a Resume On rule is met, and Staged Assetize creates assets for some lines while others are still in process."
 draft: false
 ---
 
-In Revenue Cloud, an activated order is handed to Dynamic Revenue Orchestrator (DRO), usually by a record-triggered flow. DRO breaks the commercial products the customer bought into technical products and runs an orchestration plan: auto tasks, callouts, manual tasks, milestones and pauses in a defined order. The hand-over to SAP belongs in a callout step that writes the SAP order number back, and failures land as fallout in a queue. DRO is an add-on for Revenue Cloud Advanced. If your order goes to SAP in one piece and nothing else happens in Salesforce, a plain integration is enough.
+In Revenue Cloud, an activated order is handed to Dynamic Revenue Orchestrator (DRO), usually by a record-triggered flow. DRO breaks the commercial products the customer bought into technical products and runs an orchestration plan of auto tasks, callouts, manual tasks, milestones, pauses and other steps in a defined order. The hand-over to SAP belongs in a callout step that writes the SAP order number back, and failures land as fallout in a queue. DRO is an add-on for Revenue Cloud Advanced. If your order goes to SAP in one piece and nothing else happens in Salesforce, a plain integration is enough.
 
 ## What does Dynamic Revenue Orchestrator do?
 
-Dynamic Revenue Orchestrator is the part of Revenue Cloud that takes over once an order is sold. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/meet-dynamic-revenue-orchestrator) calls it the engine for end-to-end order processing and splits it into two parts: decomposition breaks the order into technical products and services, orchestration maps the steps needed to fulfil it across systems, including fallout management for failed steps. Trailhead files DRO under "Agentforce Revenue Management", one of the names Salesforce currently uses for Revenue Cloud, and the pricing page sells it as "Dynamic Revenue Orchestration".
+Dynamic Revenue Orchestrator is the part of Revenue Cloud that takes over once an order is sold. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/meet-dynamic-revenue-orchestrator) calls it the engine for end-to-end order processing and splits it into two parts: decomposition breaks the order into technical products and services, orchestration maps the steps needed to fulfill it across systems, including fallout management for failed steps. Trailhead files DRO under "Agentforce Revenue Management", the name Salesforce now uses for Revenue Cloud, while the pricing page still says Revenue Cloud and sells it as "Dynamic Revenue Orchestration".
 
 Trailhead names three roles, and I would staff them before the first sprint:
 
@@ -40,25 +41,25 @@ Trailhead names three roles, and I would staff them before the first sprint:
 - **Fulfilment designer:** builds decomposition rules and orchestration plans and tests them.
 - **Fulfilment operator:** works the manual tasks in the queues and resolves failed steps.
 
-I would put the operator role in order management or inside sales, not in IT. These are the people who know why an order is stuck, and they need the training and the license.
+I would put the operator role in order management or inside sales, not in IT. These are the people who know why an order is stuck. Each of them needs the training, the Fulfillment User permission set license and the DRO permission set for the role.
 
 ## A record-triggered flow hands the order to DRO
 
-The path starts with an accepted quote that becomes an order. According to [Trailhead on managing orders](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders), you create a record-triggered flow that submits the order to DRO when, for example, its status changes to Activated. Two context definitions carry the data: SalesTransactionContext holds the order and its fulfilment line items, FulfillmentAssetContext is used for decomposition and mapped to the asset entities.
+The path starts with an accepted quote that becomes an order. According to [Trailhead on managing orders](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders), you create a record-triggered flow that submits the order to DRO when, for example, its status changes to Activated. Two context definitions carry the data: SalesTransactionContext holds the order and its fulfillment line items, FulfillmentAssetContext is used for decomposition and mapped to the asset entities.
 
-Activation is a business event, so decide who may activate an order and what must be true before: approvals complete, the customer known in SAP, the credit check passed. I would put these checks into the flow's entry conditions or into validation rules, instead of relying on the sales rep to remember them.
+Without such a flow nothing reaches DRO, and simple orders can deliberately bypass it. Activation is a business event, so decide who may activate an order and what must be true before: approvals complete, the customer known in SAP, the credit check passed. I would put these checks into the flow's entry conditions or into validation rules, instead of relying on the sales rep to remember them.
 
 ## What is order decomposition?
 
-Decomposition separates what the customer sees from what the back office needs. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/discover-order-decomposition), a commercial product is any product a customer can find in the catalog. A technical product also sits in the catalog, is generally hidden from customers and is defined around the needs of downstream systems such as billing, fulfilment or logistics. Product fulfillment decomposition rules map a source, a product or a product classification, to a technical product, including fields and attributes, and can carry conditions.
+Decomposition separates what the customer sees from what the back office needs. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/discover-order-decomposition), a commercial product is any product a customer can find in the catalog. A technical product also sits in the catalog, is generally hidden from customers and is defined around the needs of downstream systems such as billing, fulfillment or logistics. Product fulfillment decomposition rules map a source, a product or a product classification, to a technical product, including fields and attributes, and can carry conditions.
 
 A worked example: a customer buys "packaging line L200 with installation and remote monitoring". Decomposition turns that into three technical products: a sales order item for SAP, an installation job for service and the activation of the monitoring service. Neither the customer nor the sales rep sees these three.
 
 Trailhead also says decomposition is not needed for simple orders, which can be orchestrated directly. Because rules can point to product classifications, one rule can cover a whole product family instead of every single machine. That keeps the rules maintainable when the catalog has hundreds of variants.
 
-## Five step types in the orchestration plan
+## Step types in the orchestration plan
 
-An orchestration plan splits fulfilment into steps that run in a defined sequence. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/explore-order-orchestration) names five step types. The examples in the right column are my assumptions for a machine builder:
+An orchestration plan splits fulfillment into steps that run in a defined sequence. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/explore-order-orchestration) names five step types; current [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.fulfillment_step_types.htm&language=en_US&type=5) adds a sixth, Staged Assetize, which creates assets for finished lines while others are still in process. The examples in the right column are my assumptions for a machine builder:
 
 | Step type | What it does | Example in manufacturing |
 |---|---|---|
@@ -66,20 +67,20 @@ An orchestration plan splits fulfilment into steps that run in a defined sequenc
 | Callout | Calls a third-party system | Create the sales order in SAP |
 | Manual task | Waits for a person to enter data or confirm | Application engineer confirms the layout |
 | Milestone | Marks a checkpoint to track dependencies | Machine delivered |
-| Pause | Holds the plan until another task is finished | Wait until installation is complete |
+| Pause | Holds the plan until a Resume On rule is met | Wait until the installation status on the line item is set to complete |
 
-Steps are grouped in swimlanes, usually one per fulfilment system, and can depend on each other. A step's scope sets whether it is created once per plan, once per bundle or once per line item. Each step can carry an estimated duration as its SLA and a jeopardy threshold that warns before the SLA is missed: Trailhead's example flags a 24-hour step after 23 hours.
+Steps are grouped in swimlanes, usually one per fulfillment system, and can depend on each other; if a step only has to wait for another step, a dependency is enough and no pause is needed. A step's scope sets whether it is created once per plan, once per bundle, once per line item or per custom grouping, such as one SAP order per plant or site. Each step can carry an estimated duration as its SLA and a jeopardy threshold that warns before the SLA is missed: Trailhead's example flags a 24-hour step after 23 hours.
 
 ## The hand-over to SAP belongs in a callout
 
 In a callout step, early in the plan. SAP needs the sales order before it can plan production, deliver and invoice, so most other steps depend on it.
 
-I have not found a Salesforce reference pattern for Revenue Cloud and SAP. The closest is the [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/minor/1.6/pages/Use%20case%203a%20-%20Quote-to-cash%20-%20Salesforce%20and%20SAP%20S4HANA/), documented for Sales Cloud and Salesforce CPQ: creating the order in Salesforce triggers the order in SAP S/4HANA, and the SAP order number is displayed in Salesforce. I would carry these rules over to Revenue Cloud:
+I have not found a Salesforce reference pattern for Revenue Cloud and SAP. The closest is the [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/minor/1.6/pages/Use%20case%203a%20-%20Quote-to-cash%20-%20Salesforce%20and%20SAP%20S4HANA/), documented in 2021 for Sales Cloud and Salesforce CPQ, not for Revenue Cloud or DRO: creating the order in Salesforce triggers the order in SAP S/4HANA, and the SAP order number is displayed in Salesforce. I take only the correlation and order number ideas from it; the other rules are my own architecture choices:
 
-1. The callout sends the Salesforce order ID as a reference, so a retry finds the existing SAP order instead of creating a second one.
-2. The SAP order number comes back and is stored on the Salesforce order.
-3. After the hand-over, SAP owns delivery, confirmed dates and the invoice. Salesforce shows the status and does not change it.
-4. Changes after the hand-over run as new orders in Revenue Cloud, which DRO hands to SAP again. How amendments work on the asset side is in [assets, amendments and renewals](../revenue-cloud-assets-amendments-renewals/).
+1. The callout sends a stable idempotency key, such as the Salesforce order ID, and the integration layer or SAP checks it before creating an order. Merely sending the ID does not prevent duplicates.
+2. The SAP order number comes back and is stored on the Salesforce order, either in the synchronous response or, in the asynchronous pattern, through a later callback: the callout stays in progress after an HTTP 202 until the result arrives.
+3. In the architecture assumed here, SAP owns delivery, confirmed dates and the invoice after the hand-over. Salesforce shows the status and does not change it.
+4. Changes after submission need an explicit amendment design. Revenue Cloud can create a linked supplemental order, DRO reconciles the running plan and can run compensation steps, and whether SAP gets a change, a cancellation or a replacement order is an integration decision. How amendments work on the asset side is in [assets, amendments and renewals](../revenue-cloud-assets-amendments-renewals/).
 
 ```ablauf
 sf: Order, DRO plan, Fallout queue
@@ -96,9 +97,9 @@ Which system owns which step from quote to invoice is the topic of [Revenue Clou
 
 ## What happens when SAP rejects the order?
 
-Then the step becomes fallout. Trailhead defines fallout as an order that failed because of inadequate inventory, wrong information, a system error or another reason. You set a retry count. If the retries fail, the step moves to a queue where an operator resolves the problem and retries. Where a retry makes no sense, the operator can mark the step complete manually. The [design-time data model](https://developer.salesforce.com/docs/platform/data-models/guide/dro-design-time.html) has separate objects for fallout rules, jeopardy rules and task assignment rules, so this is configuration rather than custom code.
+Then the step becomes fallout. Trailhead defines fallout as an order that failed because of inadequate inventory, wrong information, a system error or another reason. A [fallout rule](https://help.salesforce.com/s/articleView?id=sf.dro_fallout_design_and_management.htm&language=en_US&type=5) sets retry count, interval and the queue for steps that fail for good; without a matching rule the step is set to fatally failed and not retried. In the queue an operator resolves the problem and retries. The operator can also mark the step complete, which lets the plan continue despite the failure: I would allow that only as an approved exception with a reason, never for a rejected SAP order that later steps depend on. The [design-time data model](https://developer.salesforce.com/docs/platform/data-models/guide/dro-design-time.html) has separate objects for fallout rules, jeopardy rules and task assignment rules, so this is configuration rather than custom code.
 
-Typical rejections from SAP, as an assumption: the ship-to party does not exist in SAP yet, a material is blocked for sales, or the customer has a credit block. Retrying helps with none of them. The queue therefore needs an owner in order management, a target time and a short list of what to check. Without that, fallout becomes a list nobody reads while the customer waits.
+Typical rejections from SAP, as an assumption: the ship-to party does not exist in SAP yet, a material is blocked for sales, or the customer has a credit block. Retrying helps with none of them. The queue therefore needs an owner in order management, a target time and a short list of what to check. Assigning a step to a fallout queue sends no email and creates no task, so you need your own notification. Without that, fallout becomes a list nobody reads while the customer waits.
 
 ## When is a plain integration without DRO enough?
 
@@ -111,7 +112,9 @@ I would look at DRO when at least two of these apply:
 - Commitments have deadlines that should be tracked per step.
 - Orders mix one-off products and subscriptions that need different handling.
 
-On cost, the [Revenue Cloud pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) lists Dynamic Revenue Orchestration as available for purchase with Revenue Cloud Advanced, which costs €200 per user and month at list price, marked "Freemium access available".
+For large configured orders, also check the current [DRO limits](https://help.salesforce.com/s/articleView?id=ind.dro_dynamic_revenue_orchestrator_limits.htm&language=en_US&type=5), which differ for synchronous and asynchronous submission.
+
+On cost, the [Revenue Cloud pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) lists Revenue Cloud Advanced at €200 per user and month, billed annually (as of 9 November 2026). That is the base product price, not a DRO price: Dynamic Revenue Orchestration is listed separately as available for purchase, marked "Freemium access available".
 
 ```hinweis offen
 What the freemium access includes is not stated on the pricing page. Get it in writing before your design depends on it.

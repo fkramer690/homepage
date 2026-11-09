@@ -2,6 +2,7 @@
 title: "Salesforce change management: why rollouts fail"
 description: "Salesforce change management: why CRM rollouts fail in daily work, how the ADKAR model shows the cause and where manufacturers should start."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: en
 slug: change-management-salesforce-rollout
 translationKey: change-management-hub
@@ -12,33 +13,35 @@ contactBrief: change
 tags: [change management, ADKAR, Prosci, Salesforce rollout]
 takeaways:
   - "A rollout fails when people keep working with Excel, email and their own lists after go-live."
-  - "ADKAR shows at which of five stages it is stuck. Another training session only helps with two of them, knowledge and ability."
-  - "In the Prosci study, projects with excellent change management met their objectives in 88 percent of cases, projects with poor change management in 13 percent."
+  - "ADKAR shows which of five elements is missing. Training builds knowledge, practice and coaching build ability; neither fixes awareness or desire."
+  - "In Prosci's benchmarking data, 88 percent of projects with excellent change management met or exceeded their objectives, 13 percent with poor."
   - "Change management concerns not only business users but also development teams and partners who are supposed to build to new standards."
 faq:
   - q: "What is change management in a Salesforce project?"
     a: "Change management means introducing new processes, standards and releases so that the people who work with them actually use them. It runs alongside the technical delivery and does not end at go-live."
   - q: "What is the ADKAR model?"
-    a: "A model by Prosci with five stages every person goes through in a change: awareness, desire, knowledge, ability and reinforcement. When an adoption stalls, one of these stages is usually missing."
+    a: "A model by Prosci with five elements a person needs for a change to succeed: awareness, desire, knowledge, ability and reinforcement. They build on each other, but people can fall back. When an adoption stalls, one of these elements is often missing."
   - q: "Does every Salesforce project need change management?"
-    a: "Every project that changes how people work. Many clients think they do not need it because training is planned. Training only covers knowledge and ability, not awareness, desire and reinforcement."
+    a: "Every project that changes how people work. Many clients think they do not need it because training is planned. Training mainly builds knowledge, and practice builds ability; neither solves missing awareness, desire or reinforcement on its own."
   - q: "Who is responsible for change management in a Salesforce program?"
-    a: "The client, with a sponsor in management who visibly backs the change. Partners build the system; they cannot own the change inside the company."
+    a: "The client, with a sponsor in management who visibly backs the change. Partners can lead or deliver change work, but sponsorship and accountability for adoption stay with the client's leadership and line managers."
   - q: "Is change management the same as IT change management?"
-    a: "No. IT change management in the ITIL sense controls changes to systems: who requests, reviews and approves a change. In Salesforce that is the job of release management and deployment. Change management in the sense of this article makes sure people adopt the change. A CRM rollout needs both."
+    a: "No. In ITIL, the practice for changes to systems is called Change Enablement: it assesses risks, authorizes changes and plans their schedule, next to release and deployment management. Change management in the sense of this article helps people adopt the change. A CRM rollout needs both."
 draft: false
 ---
 
-Salesforce rollouts rarely fail because of the technology. They fail when sales, service and field service keep working the way they did before go-live, with Excel, email and their own lists next to the new system. Salesforce change management is the work that prevents this: introducing new processes, standards and releases so that people use them. I follow Prosci and the ADKAR model, because it shows where an adoption is stuck. Another training session only helps when knowledge is missing, not when nobody understands what the whole thing is for.
+A technically successful Salesforce rollout can still fail to deliver value. It fails when sales, service and field service keep working the way they did before go-live, with Excel, email and their own lists next to the new system. Salesforce change management is the work that prevents this: introducing new processes, standards and releases so that people use them. I follow Prosci and the ADKAR model, because it shows where an adoption is stuck. Another training session builds knowledge; it does not help when nobody understands what the whole thing is for.
 
 ## Why does Salesforce not take hold in daily work?
 
-A release is rolled out technically in minutes. What happens afterwards decides whether anyone works differently. In Salesforce programs the reasons why they do not are almost always the same:
+The metadata deployment is often the shortest part of a release. What happens before and after decides whether anyone works differently. In Salesforce programs common reasons why they do not are these:
 
 - **The people affected hear about it too late.** Whoever first sees a change in production looks for a way around it.
 - **Nobody explains why.** A sales team maintains opportunities because it has to and does not know that demand planning depends on them.
 - **Management backing is missing.** Without decisions from the top, new rules stay a recommendation.
-- **There is no way back.** Problems from daily work end up in emails, not in the backlog.
+- **There is no structured feedback loop.** Problems from daily work end up in emails, not in the backlog.
+
+Low adoption can also point to real problems in the solution: extra typing, irrelevant required fields, poor mobile use or missing integrations. Those need fixing, not more communication.
 
 This does not only apply to business users. When a program introduces new standards for development and release, development teams and implementation partners are just as affected. They know the rules but interpret them differently as long as nobody anchors them.
 
@@ -48,11 +51,11 @@ Many clients think they do not need change management. The budget is allocated, 
 
 ## What does the ADKAR model show?
 
-Prosci has surveyed projects about their experience with change since 1998. In the 12th edition of its study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) with 2,668 participants, projects with excellent change management met their objectives in 88 percent of cases, projects with poor change management in 13 percent. Participants named active and visible sponsorship by management as the most important success factor.
+Prosci has surveyed projects about their experience with change since 1998. In the executive summary of the 12th edition of its study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), 88 percent of projects with excellent change management met or exceeded their objectives, against 13 percent with poor change management. These figures come from Prosci's cumulative benchmarking data of more than 10,800 respondents and show a correlation, not proof of cause; the 12th edition itself had 2,668 participants. Participants named active and visible sponsorship by management as the most important success factor.
 
-The [ADKAR model](https://www.prosci.com/blog/adkar-model) describes five stages every person goes through in a change. For a Salesforce program I translate them like this:
+The [ADKAR model](https://www.prosci.com/blog/adkar-model) describes five elements a person needs for a change. They build on each other, but not in a straight line; people can fall back. For a Salesforce program I translate them like this:
 
-| Stage | Question | Typical sign it is missing | Who helps |
+| Element | Question | Possible sign it is missing | Who helps |
 |---|---|---|---|
 | Awareness | Why is something changing? | "The old system worked fine." | the group's manager |
 | Desire | Do I want to take part? | required fields filled with dots | sponsor, direct manager |
@@ -60,7 +63,7 @@ The [ADKAR model](https://www.prosci.com/blog/adkar-model) describes five stages
 | Ability | Can I do it in daily work? | works in training, not in the customer meeting | key users on site, practice |
 | Reinforcement | Do I stick with it? | back to Excel after three months | reports, checks, recognition |
 
-The value lies in the diagnosis. Instead of scheduling the next training when usage is low, we ask for each affected group at which stage it is stuck. If sales does not know what maintained opportunities are needed for, awareness is missing, and the head of sales has to explain that, not the trainer.
+These signs are hypotheses, not diagnoses: dots in required fields can also mean a badly designed field. Check them with the users concerned. The value lies in the diagnosis. Instead of scheduling the next training when usage is low, we ask for each affected group which element is missing. If sales does not know what maintained opportunities are needed for, awareness is missing, and the head of sales has to explain that, not the trainer.
 
 The sponsor deserves a sentence of its own, because it is the role most often missing in Salesforce programs. It means a person from management who visibly backs the change: they explain in the sales meeting why forecasts will come from Salesforce from now on, decide when two departments cannot agree, and ask about usage in the monthly report. That is why I write a sponsor plan that defines what management does visibly and when. Without it, "management supports this" becomes a line on the first slide.
 
@@ -91,15 +94,15 @@ Prosci structures the work at the level of the organization in three phases, the
 Prepare approach | before the first release · client with sponsor
   Define how success is measured, which groups are affected, what changes for each and who in management carries the change.
 Manage change | with every release · client, key users
-  One plan per group along the ADKAR stages, linked to the release plan. Measure usage and adjust where it is stuck.
+  One plan per group along the ADKAR elements, linked to the release plan. Measure usage and adjust where it is stuck.
 Sustain outcomes | after go-live · internal owners
   Check for gaps, anchor new rules in pipeline, reports and Center of Excellence calls, hand over responsibility.
 ```
 
-Timing is what matters. Change management that starts two weeks before go-live can only inform. The question of which groups are affected and what changes for them belongs in planning, before anything is built. With a [global template](../salesforce-global-template-country-deviations/) it is even part of the architecture, because every deviation per country is also a question of habit.
+Timing is what matters. Change management that starts two weeks before go-live can only inform. The question of which groups are affected and what changes for them belongs in planning, before anything is built. With a [global template](../salesforce-global-template-country-deviations/) it is even part of the architecture, because some deviations per country are a question of habit, while others come from law, tax, contracts or the local ERP, and the rollout has to tell them apart.
 
 ## Write down groups, changes and sponsor of your next release
 
-For your next release, answer three questions in writing: which groups are affected? What changes for each in their daily work? Who in management visibly backs it? If the third answer is missing, that is the first step. Then decide how you measure success, for example by usage numbers in Salesforce instead of the number of training sessions.
+For your next release, answer three questions in writing: which groups are affected? What changes for each in their daily work? Who in management visibly backs it? If the third answer is missing, that is the first step. Then decide how you measure success, instead of counting training sessions: adoption (do the intended roles use the new process?), proficiency and data quality (do they do it correctly?) and business outcome, such as forecast quality or first-time fix rate.
 
-If you want to go through the five stages in order, the [change management masterclass](../../masterclass/change-management/) has a chapter per stage with the matching articles. How Juliane Winterscheid and I support this in programs is described under [Salesforce change management consulting](../../services/change-management-salesforce/).
+If you want to go through the five elements one by one, the [change management masterclass](../../masterclass/change-management/) has a chapter per stage with the matching articles. How Juliane Winterscheid and I support this in programs is described under [Salesforce change management consulting](../../services/change-management-salesforce/).

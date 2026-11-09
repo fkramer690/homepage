@@ -2,6 +2,7 @@
 title: "Change management communication plan with template"
 description: "A change management communication plan: what goes into it, who should deliver which message, an example from a CRM rollout and a free Excel template."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: en
 slug: change-management-communication-plan
 translationKey: change-basics-communication
@@ -23,7 +24,7 @@ faq:
   - q: "Who should communicate change in an organization?"
     a: "The reasons for the change are best explained by senior leadership or the sponsor. What changes for a team is explained by its direct manager. The project team supplies content and dates."
   - q: "How often should a change be communicated?"
-    a: "Prosci recommends repeating key messages five to seven times, through different channels and senders. Something said only once does not reach most people."
+    a: "Prosci recommends that the preferred senders repeat key messages five to seven times. The formats and channels can vary, but the core message stays the same. Something said only once does not reach most people."
   - q: "What is the difference between a communication plan and a change story?"
     a: "The change story is the one narrative of why something changes and where it leads. The communication plan defines how this narrative and the messages per group are spread over time."
 draft: false
@@ -50,7 +51,7 @@ The purpose column is the most important one and the one most often missing. It 
 
 ## Leadership explains the why, managers explain the impact
 
-The sender decides whether a message is taken seriously. In its Best Practices in Change Management research series, Prosci asked from whom employees want to hear which information. The result is clear and summarised in an article on [why some communications work and others do not](https://www.prosci.com/blog/understanding-why-some-communications-work-and-others-dont):
+The sender decides whether a message is taken seriously. In its Best Practices in Change Management research series, Prosci asked from whom employees want to hear which information. The result is clear and summarized in an article on [why some communications work and others do not](https://www.prosci.com/blog/understanding-why-some-communications-work-and-others-dont):
 
 | Type of message | Preferred sender | Typical content |
 |---|---|---|
@@ -88,14 +89,14 @@ For introducing a CRM system such as Salesforce in sales, an extract could look 
 | −12 | Everyone in sales | Awareness | Why we introduce one shared CRM and what happens otherwise | Managing director | Town hall |
 | −11 | Sales managers | Desire | Your role, your questions, your messages for the team | Sponsor | Briefing |
 | −10 | Field sales | Awareness | What changes for visit reports and forecasts | Regional head of sales | Regional meeting |
-| −8 | Works council | Awareness | Which reports the system allows and which it does not | Sponsor | Meeting |
+| −8 | Works council | Information and co-determination | Planned processes, data, reports, access rights and whether behavior or performance could be monitored | Sponsor, employer representative | Working session |
 | −4 | Inside sales | Knowledge | New quoting process, training dates | Project team | Email and intranet |
 | −2 | Everyone affected | Knowledge | What happens on go-live day, whom to ask | Key users | Team meeting |
 | +2 | Everyone affected | Reinforcement | First successes, most frequent questions, what we improve | Head of sales | Team meeting and email |
 
 Notice how few rows come from the project team, and that communication does not end at go-live. The message in week +2 is one of the most important: in this period morale and productivity often drop, as the [change curve](../change-curve/) describes, and visible successes help people through the valley.
 
-A global rollout adds another dimension. When countries in the US, Asia and Europe are involved, as in a Salesforce Sales Cloud rollout I supported, every country needs its own senders in its own language. A message from headquarters in English does not replace the country manager explaining why in their own meeting.
+A global rollout adds another dimension. When teams in the United States, Asia and Europe are involved, as in a Salesforce Sales Cloud rollout I supported, each country usually needs its own senders and messages in its own language. A message from headquarters in English does not replace the country manager explaining why in their own meeting.
 
 ## Communication plan template
 
@@ -113,7 +114,7 @@ Plan every key message at least three times, through different senders and chann
 - **No feedback channel.** If questions have no place to go, they end up in the kitchen and come back as rumours.
 - **Silence after go-live.** The hardest phase only starts after go-live. Going quiet then leaves the interpretation to those who are unhappy.
 
-Salesforce programs with regular releases need a form of their own: every new version changes something for a business team and needs a short, targeted announcement. Fabian Kramer describes how that works in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
+Salesforce programs with regular releases need a form of their own: Salesforce ships three seasonal releases a year, and the program deploys its own changes on top. Only what changes a business team's process, screens or responsibilities needs a short, targeted announcement. Fabian Kramer describes how that works in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
 
 ## Support pays off when many groups and countries are affected
 

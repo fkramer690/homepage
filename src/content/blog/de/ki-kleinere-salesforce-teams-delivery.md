@@ -1,7 +1,8 @@
 ---
 title: "KI-native Delivery: kleinere Salesforce-Teams"
-description: "KI-native Delivery verkleinert Salesforce-Teams auf Pods aus Architekt, Builder-Reviewer und Fachexperte. Was sich in der Programmorganisation ändert."
+description: "KI-native Delivery kann Salesforce-Teams auf Pods aus Architekt, Builder-Reviewer und Fachexperte verkleinern. Was sich in der Programmorganisation ändert."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: de
 slug: ki-kleinere-salesforce-teams-delivery
 translationKey: smaller-teams-ai-native-delivery
@@ -10,23 +11,23 @@ categories: [architecture, ai]
 tags: [KI-native Delivery, Programmsteuerung, Teamaufstellung, KI-Coding, Partnersteuerung, Maschinenbau]
 takeaways:
   - "Coding-Agenten entwerfen, bauen und testen, Menschen geben die Absicht vor, prüfen das Ergebnis und verantworten es."
-  - "In der McKinsey-Umfrage meldeten 79 Prozent der Organisationen mit dem größten Tempogewinn kleinere Teams, im Median sieben statt etwa zehn Personen."
+  - "Bei McKinsey meldeten 79 Prozent der Befragten aus Organisationen mit dem größten Tempogewinn kleinere Teams, im Median sieben statt etwa zehn Personen."
   - "Der Engpass wandert zum Hersteller: Jeder Pod braucht einen Fachexperten aus Service, Vertrieb oder After-Sales, der täglich laufende Software abnimmt."
-  - "Ein kurzer Intent mit prüfbaren Akzeptanzkriterien ersetzt meist das Lastenheft, SAP-Schnittstellen sowie Garantie- und Preisregeln brauchen Spezifikationen."
+  - "Intent, prüfbare Akzeptanzkriterien und technischer Kontext ersetzen Lastenhefte; SAP-Schnittstellen, Freigabemodell und Preisregeln brauchen Spezifikationen."
   - "Jedes Artefakt hat einen benannten Verantwortlichen, und für Menschen- und Agentencode gelten dieselben Pipeline-Prüfungen."
 faq:
   - q: "Was ist KI-native Delivery in Salesforce-Projekten?"
-    a: "Ein Liefermodell, das von Anfang an um Coding-Agenten herum gebaut ist: Agenten entwerfen Stories, Code, Tests und Runbooks, Menschen definieren den Intent, prüfen das Ergebnis und verantworten jedes Artefakt. Kleine Pods ersetzen die klassische Pyramide aus vielen Junior-Entwicklern."
+    a: "Ein Vorgehensmodell, das von Anfang an auf Coding-Agenten ausgerichtet ist: Agenten entwerfen Stories, Code, Tests und Runbooks, Menschen definieren den Intent, prüfen das Ergebnis und verantworten jedes Artefakt. Kleine Pods ersetzen die klassische Pyramide aus vielen Junior-Entwicklern."
   - q: "Brauchen KI-native Salesforce-Teams wirklich weniger Personen?"
     a: "Die Evidenz deutet darauf hin, ist aber dünn. McKinsey meldet, dass 79 Prozent der Befragten aus den Spitzenorganisationen kleinere Teams sehen, Median von etwa zehn auf sieben, in einer Umfrage mit Selbstauskunft. Messen Sie Ihre eigenen Durchlaufzeiten, bevor Sie ein Team verkleinern."
   - q: "Wer sollte bei einem Hersteller Fachexperte im Pod sein?"
-    a: "Jemand aus dem Fachbereich, der den Prozess kennt und darüber entscheiden darf, etwa eine Garantiesachbearbeiterin aus dem After-Sales oder ein Disponent aus dem Außendienst. Planen Sie rund die Hälfte der Arbeitszeit dieser Person ein; ohne sie baut der Pod auf Annahmen."
+    a: "Jemand aus dem Fachbereich, der den Prozess kennt und darüber entscheiden darf, etwa eine Garantiesachbearbeiterin aus dem After-Sales oder ein Disponent aus dem Field Service. Planen Sie rund die Hälfte der Arbeitszeit dieser Person ein; ohne sie baut der Pod auf Annahmen."
   - q: "Ersetzt die tägliche Demo den Abnahmetest?"
-    a: "Für die meisten Stories ersetzt sie das lange Warten auf den Abnahmetest, weil der Fachexperte täglich in der Sandbox abnimmt. Prozesse, die in SAP buchen, etwa Gutschriften für Garantieanträge, brauchen vor dem Release weiter einen End-to-End-Test."
+    a: "Nein. Sie verringert spätes Nacharbeiten, weil der Fachexperte täglich laufende Software in der Sandbox sieht. Die Release-Abnahme mit Regression, Rollen und Freigabemodell bleibt, und Prozesse, die in SAP buchen, etwa Gutschriften für Garantieanträge, brauchen vor dem Release einen End-to-End-Test."
 draft: false
 ---
 
-KI-native Delivery verkleinert ein Salesforce-Team auf kleine Pods: ein Architekt, ein Builder-Reviewer, der die Coding-Agenten steuert, und ein Fachexperte aus dem Fachbereich. Für Hersteller liegt die größere Änderung auf der eigenen Seite, weniger beim Partner. Jeder Pod braucht jemanden aus Service, Vertrieb oder After-Sales, der täglich über den Prozess entscheidet und in einer täglichen Demo laufende Software abnimmt. Kurze Intents ersetzen lange Lastenhefte, und jedes Artefakt hat einen benannten Verantwortlichen. Kann Ihre Organisation diese Personen nicht freistellen, machen kleinere Partnerteams das Programm nicht schneller.
+KI-native Delivery kann ein Salesforce-Team auf kleine Pods verkleinern, in dem Modell, das ich hier betrachte: ein Architekt, ein Builder-Reviewer, der die Coding-Agenten steuert, und ein Fachexperte aus dem Fachbereich. Für Hersteller betrifft die größere Änderung die eigene Organisation, weniger den Partner. Jeder Pod braucht jemanden aus Service, Vertrieb oder After-Sales, der täglich über den Prozess entscheidet und in einer täglichen Demo laufende Software abnimmt. Kurze Intents mit prüfbaren Akzeptanzkriterien ersetzen lange Lastenhefte in Prosa, und jedes Artefakt hat einen benannten Verantwortlichen. Kann Ihre Organisation diese Personen nicht freistellen, machen kleinere Partnerteams das Programm nicht schneller.
 
 ## Was ist KI-native Delivery?
 
@@ -38,7 +39,7 @@ Für die Programmorganisation zählen fünf Bausteine:
 - **Kleine Pods statt Pyramide.** Die große Pyramide aus Junior-Entwicklern weicht kleinen Pods aus Architekt, Builder-Reviewer und Fach- oder BA-Lead.
 - **Tägliche Demo statt Status-Standup.** Das Team zeigt dem Product Owner laufende Software, die seit dem Vortag entstanden ist.
 - **Benannte Verantwortung.** „A named human owns every artifact“, jedes Artefakt hat also einen namentlich benannten Menschen als Verantwortlichen. Agenten arbeiten nur in freigegebenen Sandboxes und Scratch Orgs, nie in Produktion.
-- **Dieselben Prüfungen für alle.** PMD, Code Analyzer und ApexGuru laufen in der CI für Menschen- und Agentencode gleichermaßen.
+- **Dieselben Prüfungen für alle.** Salesforce Code Analyzer mit seinen Engines, etwa PMD, läuft in der CI für Menschen- und Agentencode gleichermaßen.
 
 Ich stimme nicht jeder Zahl und nicht jedem Schritt in diesem Framework zu, aber die Richtung stimmt. Und eine Schablone passt nie hundertprozentig auf jeden Kunden.
 
@@ -59,35 +60,35 @@ Zwei Einschränkungen aus derselben Quelle. Die Zahlen sind Selbstauskünfte von
 
 ## In der Programmorganisation wird der Fachbereich zum Engpass
 
-### Der Fachbereich wird zum Engpass
+### Fachentscheidungen fallen im Pod
 
-Im klassischen Programm schreibt der Fachbereich Anforderungen und wartet dann wochenlang auf den Abnahmetest. Im Pod sieht der Fachexperte jeden Tag laufende Software und entscheidet sofort. Für einen Maschinenbauer heißt das: eine Garantiesachbearbeiterin aus dem After-Sales, ein Disponent aus dem Außendienst oder jemand aus dem Händlervertrieb, der über seinen Prozess entscheiden darf. Nach meiner Einschätzung braucht diese Person rund die Hälfte ihrer Zeit für den Pod. Serviceleiter planen das selten ein, und genau das würde ich vor jedem Partnerangebot verhandeln.
+Im klassischen Programm schreibt der Fachbereich Anforderungen und wartet dann wochenlang auf den Abnahmetest. Im Pod sieht der Fachexperte jeden Tag laufende Software und entscheidet sofort. Für einen Maschinenbauer heißt das: eine Garantiesachbearbeiterin aus dem After-Sales, ein Disponent aus dem Field Service oder jemand aus dem Händlervertrieb, der über seinen Prozess entscheiden darf. Nach meiner Einschätzung braucht diese Person rund die Hälfte ihrer Zeit für den Pod. Serviceleiter planen das selten ein, und genau das würde ich vor jedem Partnerangebot verhandeln.
 
 ### Intents ersetzen den größten Teil des Lastenhefts
 
-Ein guter Intent für eine Story im Händlerportal passt auf eine halbe Seite: Händler sehen den Liefertermin ihrer Ersatzteilbestellung, ohne anzurufen, gemessen an weniger Telefonanfragen; Rahmenbedingungen sind händlerspezifische Preise und Freigaben pro Account. McKinsey ergänzt, Spezifikationen sollten so klar sein, dass ein Agent danach handeln kann. Ich lese das als prüfbare Akzeptanzkriterien, nicht als mehr Prosa. Zwei Dinge behalten eine genaue Spezifikation: Schnittstellen zu SAP oder proALPHA, weil das ERP-Team einem eigenen Releaseplan folgt, und Regeln mit finanzieller Wirkung wie Garantieberechtigung oder Preisfreigabe.
+Ein guter Intent für eine Story im Händlerportal passt auf eine halbe Seite: Händler sehen den Liefertermin ihrer Ersatzteilbestellung, ohne anzurufen, gemessen an weniger Telefonanfragen; Rahmenbedingungen sind händlerspezifische Preise und Datensatzfreigabe pro Account. McKinsey ergänzt, Spezifikationen sollten so klar sein, dass ein Agent danach handeln kann. Ich lese das als prüfbare Akzeptanzkriterien plus den technischen Kontext, den der Agent braucht, etwa API-Namen der Felder, Freigaben und bestehende Automatisierung, nicht als mehr Prosa. Mehrere Dinge behalten eine genaue Spezifikation: Schnittstellen zu SAP oder proALPHA, weil das ERP-Team einem eigenen Releaseplan folgt, Regeln mit finanzieller Wirkung wie Garantieberechtigung oder Preisfreigabe und Änderungen an Freigaben, personenbezogenen Daten oder dem gemeinsamen Datenmodell.
 
 ### Statusrunden werden zu Demos
 
-Die tägliche Demo ersetzt das Standup und einen guten Teil des Statusberichts. Ein Lenkungsausschuss, der das Garantieantragsformular in der Sandbox laufen sieht, braucht weniger Ampeln. McKinsey nennt zweitägige Sprints als illustrativen Richtwert. Das würde ich nicht übernehmen, solange SAP-Transporte in festen Fenstern laufen; ein kurzer Zyklus in Salesforce mit einem Release-Rhythmus, der zum ERP passt, funktioniert besser.
+Die tägliche Demo ersetzt das Standup und einen Teil des Statusberichts. Ein Lenkungsausschuss, der das Garantieantragsformular in der Sandbox laufen sieht, braucht weniger Ampelberichte. Für Budget, Risiken, Abhängigkeiten zwischen Partnern und Releaseplanung braucht er sie weiterhin. McKinsey nennt zweitägige Sprints als illustrativen Richtwert. Das würde ich nicht übernehmen, solange SAP-Transporte in festen Fenstern laufen; ein kurzer Zyklus in Salesforce mit einem Release-Rhythmus, der zum ERP passt, funktioniert besser.
 
 ### Verantwortung muss aufgeschrieben werden
 
-Mit weniger Personen trägt jede einzelne mehr Wissen, und ein Agent verantwortet nichts. Der benannte Verantwortliche pro Artefakt passt zur [Object Ownership Matrix](../object-ownership-matrix-salesforce/), die ich nutze, wenn sich mehrere Partner eine Org teilen: Ein Team verantwortet jedes Objekt, eine Person jeden Flow, jede Klasse und jeden Agenten. Dazu kommen die Prüfungen in der Pipeline, siehe [Quality Gates für KI-Code in der Salesforce-Pipeline](../quality-gates-ki-code-salesforce-pipeline/).
+Mit weniger Personen trägt jede einzelne mehr Wissen, und ein Agent verantwortet nichts. Der benannte Verantwortliche pro Artefakt passt zur [Object Ownership Matrix](../object-ownership-matrix-salesforce/), die ich nutze, wenn sich mehrere Partner eine Org teilen: Für jedes Objekt ist ein Team verantwortlich, für jeden Flow, jede Klasse und jeden Agenten eine Person. Dazu kommen die Prüfungen in der Pipeline, siehe [Quality Gates für KI-Code in der Salesforce-Pipeline](../quality-gates-ki-code-salesforce-pipeline/).
 
 ## Rechenbeispiel: aus einem großen Partnerteam werden drei Pods
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Field Service und einer SAP-Anbindung. Sein Partner arbeitet mit einem klassischen Team aus zwölf Personen: ein Architekt, eine Projektleitung, zwei Business Analysts, sechs Entwickler (davon vier Junior) und zwei Tester. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen. Geplant sind drei Streams: Garantieanträge von Händlern, Ersatzteilbestellung im Händlerportal und Arbeitsaufträge im Außendienst mit Ersatzteilreservierung.
 
-Der Partner schlägt drei Pods vor. Jeder Pod bekommt einen Architekten und einen Builder-Reviewer vom Partner; eine Person für Plattform und DevOps arbeitet für alle drei. Das sind sieben Personen beim Partner, vorher waren es zwölf. Die Fachexperten stellt der Hersteller: eine Garantiesachbearbeiterin, eine Koordinatorin aus dem Händlervertrieb und einen Disponenten aus dem Außendienst, jeweils zur Hälfte, also 1,5 Vollzeitstellen, die der Fachbereich bisher nicht gegeben hat.
+Der Partner schlägt drei Pods vor. Jeder Pod bekommt einen Architekten und einen Builder-Reviewer vom Partner; eine Person für Plattform und DevOps arbeitet für alle drei. Das sind sieben Personen beim Partner, vorher waren es zwölf. Die Fachexperten stellt der Hersteller: eine Garantiesachbearbeiterin, eine Koordinatorin aus dem Händlervertrieb und einen Disponenten aus dem Außendienst, jeweils zur Hälfte, also 1,5 Vollzeitstellen, die der Fachbereich bisher nicht gegeben hat. Ehrlich verglichen stehen zwölf gegen mindestens 8,5 Personen, dazu Kosten für Werkzeuge und Modelle.
 
 Drei Entscheidungen tragen oder kippen dieses Setup:
 
 - **Kein Fachexperte, kein Pod.** Kann die Serviceleitung den Disponenten nicht freistellen, wartet der Field-Service-Pod. Ohne tägliche Abnahme baut er auf Vermutungen, und die Demo wird zur Vorführung für den Partner.
-- **Ein leitender Architekt über alle Pods.** Drei Pod-Architekten würden jeweils ihr eigenes Account- und Asset-Modell entwerfen. Datenmodell, Freigaben und die SAP-Schnittstelle würde ich bei einem Architekten auf Kundenseite halten.
-- **Formaler Test bleibt dort, wo SAP bucht.** Garantiegutschriften gehen nach SAP, dieser Stream behält deshalb vor jedem Release einen End-to-End-Test. Der Portal-Stream geht nach täglicher Abnahme live.
+- **Ein leitender Architekt über alle Pods.** Drei Pod-Architekten würden jeweils ihr eigenes Account- und Asset-Modell entwerfen. Datenmodell, Freigabemodell und die SAP-Schnittstelle würde ich bei einem leitenden Architekten auf Kundenseite halten, der den Rahmen für die Pod-Architekten setzt.
+- **Formaler Test bleibt dort, wo SAP bucht.** Garantiegutschriften gehen nach SAP, dieser Stream behält deshalb vor jedem Release einen End-to-End-Test. Der Portal-Stream geht nach täglicher Abnahme plus automatisierter Regression und Prüfung des Freigabemodells live, denn Händlerpreise und Bestellungen müssen beim richtigen Händler bleiben.
 
-Ob sieben Personen liefern, was vorher zwölf geliefert haben, bleibt offen, bis die Durchlaufzeiten gemessen sind. Der Preis des Partners für das neue Setup gehört ins kaufmännische Modell, siehe [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/).
+Ob sieben Personen liefern, was vorher zwölf geliefert haben, bleibt offen, bis Durchlaufzeiten, Nacharbeit, durchgerutschte Fehler und Gesamtkosten gemessen sind. Der Preis des Partners für das neue Setup gehört ins kaufmännische Modell, siehe [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/).
 
 ## Wo passt das Pod-Modell noch nicht?
 
@@ -106,7 +107,7 @@ Fachexperten zuerst benennen
 Intents schreiben
   Für die ersten zehn Stories, mit prüfbaren Akzeptanzkriterien; genaue Spezifikationen bleiben für Schnittstellen und Regeln mit finanzieller Wirkung.
 Leitplanken vereinbaren
-  Mit dem Partner: benannter Verantwortlicher pro Artefakt, Agenten nur in Sandboxes und Scratch Orgs, dieselben Prüfungen für allen Code. Die Vertragsseite beschreibe ich in [Partner mit KI-Coding: Regeln für den Vertrag](../partner-ki-coding-regeln-vertrag/).
+  Mit dem Partner: benannter Verantwortlicher pro Artefakt, Agenten nur in Sandboxes und Scratch Orgs, dieselben Prüfungen für den gesamten Code. Die Vertragsseite beschreibe ich in [Partner mit KI-Coding: Regeln für den Vertrag](../partner-ki-coding-regeln-vertrag/).
 Messen und entscheiden | 3 Monate
   Durchlaufzeit und Nacharbeit messen und erst dann über die anderen Streams entscheiden.
 ```

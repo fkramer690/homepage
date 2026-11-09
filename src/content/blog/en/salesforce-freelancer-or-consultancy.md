@@ -2,6 +2,7 @@
 title: "Salesforce freelancer or consultancy: which fits when"
 description: "When a manufacturer needs a Salesforce consultancy, when an independent architect on the client side, and why larger programs usually have both."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: en
 slug: salesforce-freelancer-or-consultancy
 translationKey: salesforce-freelancer-or-consultancy
@@ -19,7 +20,7 @@ faq:
   - q: "Is a Salesforce freelancer cheaper than a consultancy?"
     a: "Per day often yes, because the consultancy's sales, overhead and margin fall away. The real question is which role you fill. For a whole delivery team a consultancy is almost always the better choice, for the architect role on the client side an independent architect."
   - q: "When should I not hire a Salesforce freelancer?"
-    a: "When you need a complete implementation from one source, want a warranty for an overall result or expect round-the-clock support. One person cannot provide that."
+    a: "When you need a complete implementation from one source, want one provider to be responsible for the overall result or expect round-the-clock support. One person cannot carry that, whatever the contract says."
   - q: "Can an independent architect work with our implementation partner?"
     a: "Yes, that is the normal case. The partner builds, the architect on the client side sets standards, reviews designs and pull requests and prepares decisions for the client."
   - q: "How do I avoid the knowledge staying with the freelancer?"
@@ -36,7 +37,7 @@ Search for Salesforce freelancers and you find articles from consultancies near 
 - **One person drops out.** Illness, holidays, another project, and nobody takes over.
 - **No team behind him.** A freelancer cannot add three developers at short notice when go-live gets closer.
 - **Quality is hard to judge.** Profiles on portals are often anonymous, certifications say little about project experience.
-- **No liability for an overall result.** Whoever hires a freelancer on time and materials carries the result risk alone.
+- **No responsibility for an overall result.** Under time and materials the client carries most of the delivery risk; a small provider can agree on a defined deliverable, but its capacity stays limited.
 
 All four points hold when a manufacturer uses a freelancer as a cheaper substitute for a development team. Then one person sits where a team belongs, and the client wonders why nothing moves.
 
@@ -47,7 +48,7 @@ For the role I work in myself, other questions matter. An architect on the clien
 A consultancy or implementation partner is the right choice when you buy capacity and responsibility for a result:
 
 - **New implementation without your own Salesforce team.** You need consultants, developers, testers and a project lead who know each other and work as a unit.
-- **Fixed price or a contract for a deliverable.** If you want a result at a fixed price, you need a contractor with a team who stands behind it.
+- **Fixed price or a contract for a deliverable.** If you want a result at a fixed price, you need a contractor with a team who can deliver it. Whether a consultancy really owes the result depends on the contract, its acceptance criteria and liability terms.
 - **Run and support.** Incidents on Monday morning, releases three times a year, new users: that needs an organization, not one person.
 - **Peaks in delivery.** More people before go-live, fewer afterwards. A partner can do that, a freelancer cannot.
 
@@ -59,14 +60,14 @@ It gets critical when the partner also decides on things it earns from, or when 
 
 ```pro-contra
 pro: Independent architect on the client side
-- Works only for the client and does not earn from the size of the delivery
+- Represents only the client in the engagement: no license resale, no referral fees, no share in the delivery
 - Sets standards that apply to every partner alike
 - Reviews designs and pull requests independently of the supplier
 - Prepares decisions like industry cloud or custom build without a sales interest
 contra: What he does not provide
 - No delivery capacity for a whole implementation
 - No contract for an overall result
-- No cover by colleagues when he drops out
+- No built-in cover by colleagues when he drops out, unless a named backup is agreed
 - No run and no round-the-clock support
 ```
 
@@ -90,7 +91,7 @@ In most programs I work in, there are both: partners who build, and me on the cl
 | Licenses and contracts | negotiates | calculates demand and variants | provides quantities |
 
 ```praxis
-In my largest program 5 implementation partners built on the same org with more than 30 developers in 8 streams. The standards for it, from naming conventions to one automation per object to the object ownership matrix, took about three months. 80 percent were in place after the first round, the edge cases came in step by step. Later, changes were presented with lead time in the technical CoE call every two weeks, until new edge cases had almost disappeared.
+In my largest program 5 implementation partners built on the same org with more than 30 developers in 8 streams. The standards for it, from naming conventions to one automation entry point per object to the object ownership matrix, took about three months. 80 percent were in place after the first round, the edge cases came in step by step. Later, changes were presented with lead time in the technical CoE call every two weeks, until new edge cases had almost disappeared.
 ```
 
 No single partner could have taken this role without setting the rules for its competitors. And no freelancer could have done the work of the 30 developers. What the board around it looks like is in [Salesforce Center of Excellence: cadence and format](../salesforce-center-of-excellence-cadence/).
@@ -102,7 +103,7 @@ If you are looking for an architect for your side of the table, other questions 
 - **Which decision did he prepare last, and how is it documented?** Ask to see an anonymized [decision log](../salesforce-architecture-decision-log/). Whoever keeps none leaves you nothing but his memory.
 - **How many partners has he steered at the same time?** An architect who only worked inside one partner does not know the conflicts between partners first hand.
 - **Where does he say no?** Ask for a role he turned down. I, for example, do not take pure admin or developer roles, or roles where the architecture is already fixed and only needs to be signed off.
-- **How does he handle dropping out?** Cover by colleagues does not exist with a freelancer. What must exist: documented standards, a decision log and an internal colleague who can take over reviews and calls. In one program every pull request went across my desk at first, and once the process was stable I handed it over to an internal colleague.
+- **How does he handle dropping out?** A freelancer has no bench of colleagues unless a named backup is agreed. What must exist: documented standards, a decision log and an internal colleague who can take over reviews and calls. In one program every pull request went across my desk at first, and once the process was stable I handed it over to an internal colleague.
 - **Who is the contracting party?** With me it is FK Solution Design GmbH, billed monthly by effort. Many clients hire through a staffing agency, which works as well.
 
 ## Write down which role is missing
