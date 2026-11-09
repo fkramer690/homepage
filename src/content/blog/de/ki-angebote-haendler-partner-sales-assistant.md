@@ -2,6 +2,7 @@
 title: "KI-Angebote für Händler: Partner Sales Assistant"
 description: "Was AI Partner Sales Assistant und AI Sales Concierge in der Manufacturing Cloud leisten und welche Produkt-, Preis- und Rabattdaten vorher stimmen müssen."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: de
 slug: ki-angebote-haendler-partner-sales-assistant
 translationKey: partner-sales-assistant-dealer-quotes
@@ -9,23 +10,23 @@ topic: ai
 categories: [manufacturing-cloud, ai]
 tags: [Agentforce, Manufacturing Cloud, Händlervertrieb, Angebote, Preise, KI-Agenten]
 takeaways:
-  - "Einrichtung, Lizenz und Preis beider Agenten fand ich am 27. Oktober 2026 in keiner Salesforce-Quelle. Fragen Sie schriftlich, bevor Sie budgetieren."
-  - "Liegen Händlerpreise nur als Konditionen in SAP, nennt der Agent Listenpreise. Der Preis-Master gehört vorher festgelegt."
+  - "Jeder Nutzer der Manufacturing-Aktionen braucht das Add-on Agentforce for Manufacturing, ab 150 US-Dollar. Lassen Sie Partnerlizenzen schriftlich klären."
+  - "Liegen Händlerpreise nur als Konditionen in SAP, sehen die Standardaktionen nur Listenpreise. Der Preis-Master gehört vorher festgelegt."
   - "Konfigurierte Maschinen bleiben beim Innendienst, bis der Agent die Regeln aufrufen kann. Ich starte mit Zubehör und Standardmaschinen."
   - "Reif ist ein KI-Angebot, wenn Ihr Innendienst es unverändert unterschreiben würde."
 faq:
   - q: "Was macht der AI Partner Sales Assistant?"
-    a: "Laut Produktseite der Manufacturing Cloud beschleunigt er den Vertrieb über Partner, indem er Produkte findet und Angebote in Sekunden baut. Salesforce führt ihn unter dem Release Summer '26."
+    a: "Laut Produktseite der Manufacturing Cloud beschleunigt er den Vertrieb über Partner, indem er Produkte findet und Angebote in Sekunden baut. Salesforce führt ihn unter dem Release Summer '26; die Salesforce-Hilfe dokumentiert die passende Vorlage als Agentforce for Industries Sales Concierge for Partners."
   - q: "Was unterscheidet ihn vom AI Sales Concierge?"
-    a: "Der Sales Concierge (Winter '27) richtet sich an Kunden auf Ihrer Experience-Cloud-Site. Laut Release Highlights suchen sie dort Anlagen, finden Händler und fragen Angebote an. Der Partner Sales Assistant richtet sich an Händler und Distributoren."
+    a: "Sales Concierge for Customers (Winter '27) richtet sich an Kunden auf Ihrer Experience-Cloud-Site; einen Sales Concierge for Manufacturing gab es schon in Spring '26. Laut Release Highlights suchen sie dort Anlagen, finden Händler und fragen Angebote an. Der Partner Sales Assistant richtet sich an Händler und Distributoren."
   - q: "Welche Daten müssen vor KI-Angeboten für Händler stimmen?"
-    a: "Ein Produktdatensatz je verkaufsfähiger Variante mit einer Beschreibung, nach der ein Händler sucht, Zuordnung von Zubehör zu Maschinen, Preisbücher je Markt und Händlerstufe aus dem ERP, Konfigurationsregeln und Rabattgrenzen als Regeln."
+    a: "Ein Produktdatensatz je verkaufsfähiger Variante mit einer Beschreibung, nach der ein Händler sucht, Zuordnung von Zubehör zu Maschinen, ein gültiger Preis je Markt, Währung und Händlerstufe aus dem ERP, Konfigurationsregeln und Rabattgrenzen als Regeln."
   - q: "Was kostet ein KI-Angebot für Händler?"
-    a: "Einen Preis für diese Agenten hat Salesforce in den Quellen, die ich öffnen konnte, nicht veröffentlicht. Eine Standard-Aktion in Agentforce kostet 20 Flex Credits (0,10 € beim Listenpreis von 500 € je 100.000 Credits) in Produktion und 16 in einer Sandbox; offen ist die Lizenz für Partnerbenutzer."
+    a: "Drei Blöcke: der Portalzugang für Partnerbenutzer, das Add-on Agentforce for Manufacturing, das die Salesforce-Hilfe für jeden Nutzer der Aktionen verlangt und die Preisseite der Manufacturing Cloud ab 150 US-Dollar im Monat nennt, und der Verbrauch. Eine Standard-Aktion verbraucht in Produktion 20 Flex Credits, 0,10 € beim Listenpreis, dazu gesondert gezählte Prompts."
 draft: false
 ---
 
-Der AI Partner Sales Assistant (Summer '26) hilft Händlern in der Manufacturing Cloud, Produkte zu finden und Angebote zu bauen, der AI Sales Concierge (Winter '27) macht dasselbe für Kunden auf Ihrer Experience-Cloud-Site. Salesforce beschreibt beide in je einem Satz, deshalb sehe ich sie als neue Oberfläche auf Ihren bestehenden Angebotsdaten. Diese Daten entscheiden. Bevor ein Händler ein KI-Angebot bekommt, braucht jede verkaufsfähige Variante einen auffindbaren Produktdatensatz, einen Preis je Markt und Händlerstufe, eine Regel, was baubar ist, und eine Rabattgrenze, die kein Modell aufweicht.
+Der AI Partner Sales Assistant (Summer '26) hilft Händlern in der Manufacturing Cloud, Produkte zu finden und Angebote zu bauen, der AI Sales Concierge (Winter '27) macht dasselbe für Kunden auf Ihrer Experience-Cloud-Site. Beides sind Marketingnamen; die Salesforce-Hilfe dokumentiert die Vorlagen dahinter als Industries Sales Assistance und Sales Concierge for Partners. Ich sehe sie als neue Oberfläche auf Ihren bestehenden Angebotsdaten. Diese Daten entscheiden. Bevor ein Händler ein KI-Angebot bekommt, braucht jede verkaufsfähige Variante einen auffindbaren Produktdatensatz, einen Preis je Markt und Händlerstufe, eine Regel, was baubar ist, und eine Rabattgrenze, die kein Modell aufweicht.
 
 ## Was leisten AI Partner Sales Assistant und AI Sales Concierge?
 
@@ -33,15 +34,15 @@ Beide stehen auf der [Produktseite der Manufacturing Cloud](https://www.salesfor
 
 Die Release-Unterlagen ergänzen wenig. Die [Winter '27 Highlights auf Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-manfacturing-media-netzero-nonprofit) beschreiben Sales Concierge for Customers als KI-gestütztes Einkaufserlebnis auf Ihrer Experience-Cloud-Site, auf der Kunden „search assets, locate dealers, and request quotes“. Einen Sales Concierge for Manufacturing mit Produkt- und Zubehörsuche, Händlersuche und schneller Angebotserstellung nannten bereits die [Spring '26 Highlights](https://trailhead.salesforce.com/it/content/learn/modules/spring-26-release-highlights/see-whats-new-agentforce-manufacturing-media-public-sector-nonprofit). Zum Partner Sales Assistant fand ich in den [Summer '26 Highlights für Manufacturing](https://trailhead.salesforce.com/content/learn/modules/summer-26-release-highlights/see-whats-new-manufacturing-media-nonprofit-and-agentforce-net-zero) keinen Eintrag; dort stehen Garantieunterstützung, Musterverwaltung und Bestellungen.
 
-```hinweis offen
-Einrichtungsanleitung, Lizenz und Preis beider Agenten fand ich am 27. Oktober 2026 in keiner Quelle, die ich öffnen konnte. Fragen Sie Salesforce, bevor Sie budgetieren.
+```hinweis achtung
+Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=ind.mfg_gen_ai_agentforce_overview.htm&language=en_US&type=5) laufen die Vorlagen auf Enterprise, Performance und Unlimited Edition, und jeder Benutzer, der die Aktionen nutzt, braucht das Add-on Agentforce for Manufacturing oder die Agentforce 1 Manufacturing Edition. Wie das für externe Partnerbenutzer gilt, lassen Sie sich vor dem Budget schriftlich bestätigen.
 ```
 
-Für die Entscheidung zählt ein Unterschied. „Angebot anfragen“ und „Angebot bauen“ sind verschiedene Dinge: Eine Anfrage landet im Vertriebsinnendienst, ein gebautes Angebot trägt einen Preis, auf den sich der Händler beruft.
+Für die Entscheidung zählt ein Unterschied. „Angebot anfragen“ und „Angebot bauen“ sind verschiedene Dinge: Eine Anfrage landet im Vertriebsinnendienst, ein gebautes Angebot weckt eine konkrete Preiserwartung, die der Händler als Ihre ansieht, auch bevor es rechtlich bindet.
 
 ```vertiefung Für Admins
 titel: Welche Agentenaktionen liegen darunter?
-Die Navigation der Standard Agent Action Reference in der Salesforce-Hilfe führt im Bereich Manufacturing Aktionen von Agentforce for Manufacturing auf, etwa Search Product And Parts, Get Product Price Details, Get Price Books, Search Dealers for Products, Create Opportunity with Products and Preferred Seller und Create Quote from Opportunity. Eine Hilfeseite, die diese Aktionen im Detail beschreibt, habe ich nicht gefunden. Die einzige Aktionsseite, die ich geöffnet habe, [Get Warranty Claims for Account](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5), verlangt das Add-on Agentforce for Manufacturing für jeden Benutzer oder die Agentforce 1 Manufacturing Edition. Ich erwarte, dass beide Agenten solche Aktionen nutzen. Salesforce sagt das nicht, es ist also meine Annahme.
+Die Navigation der Standard Agent Action Reference in der Salesforce-Hilfe führt im Bereich Manufacturing Aktionen von Agentforce for Manufacturing auf, etwa Search Product And Parts, Get Product Price Details, Get Price Books, Search Dealers for Products, Create Opportunity with Products and Preferred Seller und Create Quote from Opportunity. Die Salesforce-Hilfe dokumentiert sie als Teil der [Vorlage Industries Sales Assistance](https://help.salesforce.com/s/articleView?id=ind.mfg_gen_ai_agentforce_industries_sales_assistance.htm&language=en_US&type=5) mit einem Sales-Concierge-Subagenten. Einige, etwa Search Dealers for Products, führen selbst Prompt-Templates aus, was für den Verbrauch zählt.
 ```
 
 ## Welcher Angebotsagent passt zu welchem Kanal?
@@ -53,9 +54,9 @@ Winter '27 bringt auch außerhalb der Manufacturing Cloud einen Angebotsagenten.
 | Release | Summer '26 | Winter '27 | Winter '27 |
 | Wer nutzt ihn | Händler, Distributoren | Kunden auf Ihrer Site | Einkäufer beim Kunden, Partner |
 | Was Salesforce sagt | Findet Produkte, baut Angebote | Findet Produkte, baut Angebote; Highlights: Angebot anfragen | Self-Service- und Partnerangebote |
-| Produkt | Manufacturing Cloud | Manufacturing Cloud | Revenue Cloud |
+| Produkt | Manufacturing Cloud | Manufacturing Cloud | Revenue Management, früher Revenue Cloud |
 
-Ich würde danach entscheiden, wo Ihr Angebot heute entsteht. Erstellen Sie Angebote bereits in Revenue Cloud, schauen Sie zuerst auf den Revenue Management Agent; was er heute kann, steht im Beitrag zum [Angebotsagenten in Revenue Cloud](../revenue-cloud-angebotsagent-agentforce/). Arbeiten Händler mit Standard-Angeboten und Preisbüchern in der Manufacturing Cloud, passen die Manufacturing-Agenten. Zwei Angebotsagenten auf zwei Angebotsmodellen würde ich vermeiden.
+Ich würde danach entscheiden, wo Ihr Angebot heute entsteht. Erstellen Sie Angebote bereits in Revenue Management, früher Revenue Cloud (nicht Salesforce CPQ), schauen Sie zuerst auf dessen Agenten; was er heute kann, steht im Beitrag zum [Angebotsagenten in Revenue Cloud](../revenue-cloud-angebotsagent-agentforce/). Arbeiten Händler mit Standard-Angeboten und Preisbüchern in der Manufacturing Cloud, passen die Manufacturing-Agenten. Zwei Angebotsagenten auf zwei Angebotsmodellen würde ich vermeiden.
 
 Für Maschinenbauer mit Händlernetz stellt der Sales Concierge zuerst eine kaufmännische Frage. Findet ein Endkunde eine Maschine auf Ihrer Website und bekommt einen Preis: Welcher Händler erhält den Lead, und darf dieser Preis unter dem Angebot des Händlers liegen? Klären Sie Lead-Verteilung und Preissichtbarkeit mit der Vertriebsleitung vor dem Go-live.
 
@@ -65,11 +66,11 @@ Ein Agent, der ein Angebot baut, liest dieselben Datensätze wie Ihr Innendienst
 
 ### Ein Katalog, in dem Händler suchen können
 
-Jede verkaufsfähige Variante und jedes Zubehörteil braucht einen eigenen Produktdatensatz mit korrektem Aktiv-Kennzeichen, abgelöste Produkte einen Verweis auf den Nachfolger. ERP-Kurztexte sind für interne Mitarbeitende geschrieben; ein Händler tippt „Schnellwechsler für 8-Tonnen-Bagger“. Zubehör braucht eine Zuordnung zu den Maschinenmodellen, an die es passt, sonst bietet der Agent ein Anbaugerät an, das nicht auf den Wechsler passt. Zählen Sie vor allem anderen, wie viel Prozent Ihres Zubehörs eine solche Zuordnung haben.
+Jede direkt angebotene Artikelnummer und jedes Zubehörteil braucht einen eigenen Produktdatensatz mit korrektem Aktiv-Kennzeichen (konfigurierte Varianten brauchen stattdessen ein Produktmodell oder einen Konfigurator), abgelöste Produkte einen Verweis auf den Nachfolger. ERP-Kurztexte sind für interne Mitarbeitende geschrieben; ein Händler tippt „Schnellwechsler für 8-Tonnen-Bagger“. Zubehör braucht eine Zuordnung zu den Maschinenmodellen, an die es passt, sonst bietet der Agent ein Anbaugerät an, das nicht auf den Wechsler passt. Zählen Sie vor allem anderen, wie viel Prozent Ihres Zubehörs eine solche Zuordnung haben.
 
 ### Preise je Markt und Händlerstufe
 
-Hält SAP Listenpreise, Händlerrabatte je Stufe und Zuschläge als Konditionen und Salesforce nur den Listenpreis, nennt der Agent den Listenpreis. Sie brauchen Preisbücher je Land, Währung und Händlerstufe mit Gültigkeitsdatum, synchronisiert aus dem ERP. Salesforce sieht die Lücke ebenfalls: Die Winter '27 Highlights nennen Penny Perfect Pricing mit Preisen für mehrere Märkte, mehreren Mengeneinheiten, Kalkulationsschema und ERP-Anbindung in der Manufacturing Cloud. Was dazu bisher bekannt ist, steht in [Penny Perfect Pricing: ERP-Preise in Salesforce?](../penny-perfect-pricing-erp-preise/). Legen Sie einen Preis-Master fest: Entweder rechnet das ERP und Salesforce zeigt das Ergebnis über eine API an, wie bei [Auftragsstatus aus SAP über MuleSoft](../agentforce-sap-auftragsstatus/), oder Salesforce rechnet mit demselben Schema.
+Hält SAP Listenpreise, Händlerrabatte je Stufe und Zuschläge als Konditionen und Salesforce nur den Listenpreis, können die Standardaktionen nur den Listenpreis aus der Preisbuch-Zuordnung nutzen. Sie brauchen einen gültigen Preis je Land, Währung und Händlerstufe mit Gültigkeitsdatum, synchronisiert aus dem ERP, ob als Preisbücher, Preisbucheinträge oder Preiskonditionen. Salesforce sieht die Lücke ebenfalls: Die Winter '27 Highlights nennen Penny Perfect Pricing mit Preisen für mehrere Märkte, mehreren Mengeneinheiten, Kalkulationsschema und ERP-Anbindung in der Manufacturing Cloud. Was dazu bisher bekannt ist, steht in [Penny Perfect Pricing: ERP-Preise in Salesforce?](../penny-perfect-pricing-erp-preise/). Die Salesforce-Hilfe dokumentiert es für die Auftragspreisfindung; dass die Angebotsaktion es aufruft, habe ich in keiner Quelle gefunden. Legen Sie einen Preis-Master fest: Das ERP rechnet und Salesforce zeigt das Ergebnis über eine API an, wie bei [Auftragsstatus aus SAP über MuleSoft](../agentforce-sap-auftragsstatus/); die ERP-Konditionen werden repliziert und Salesforce rechnet mit demselben Schema; oder Salesforce pflegt die Preise selbst.
 
 ### Regeln, was baubar ist
 
@@ -93,9 +94,9 @@ Nehmen wir einen Hersteller von Kompaktbaumaschinen mit 140 Händlern in 12 Län
 
 **Reihenfolge.** Zuordnungen aus dem Produktmanagement, Stufenpreise aus SAP in Preisbücher je Land mit nächtlicher Synchronisation, eine Freigaberegel für jeden Rabatt über der Stufe. Angenommen sind vier Monate. Danach ein Pilot mit 15 Händlern, nur für Anbaugeräte.
 
-**Verbrauch.** Falls der Agent wie andere Agentforce-Aktionen abrechnet, nehmen wir acht Aktionen pro Angebot an. Laut [Flex-Credits-Preisliste](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) kostet eine Aktion 20 Credits in Produktion und 16 in einer Sandbox, und Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/) (Listenpreis). Für die 1.260 einfachen Angebote: 1.260 × 8 × 20 = 201.600 Credits, rund 1.008 € im Monat. Ein Testsatz aus 300 echten Händleranfragen kostet 300 × 8 × 16 = 38.400 Credits, also 192 € pro Sandbox-Lauf.
+**Verbrauch.** Falls der Agent wie andere Agentforce-Aktionen abrechnet, nehmen wir acht Aktionen pro Angebot an. Laut [Flex-Credits-Preisliste vom 3. November 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) verbraucht eine Aktion 20 Credits in Produktion und 16 in einer Sandbox, für Agentforce-for-Industries-Kunden kommen Prompts dazu, und Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/) (Listenpreis). Für die 1.260 einfachen Angebote: 1.260 × 8 × 20 = 201.600 Credits, rund 1.008 € im Monat vor Prompts. Prüfen Sie die echte Zahl im Sandbox-Trace und in Digital Wallet. Ein Testsatz aus 300 echten Händleranfragen kostet 300 × 8 × 16 = 38.400 Credits, also 192 € pro Sandbox-Lauf.
 
-Der Verbrauch ist klein im Vergleich zu sechs Personen im Innendienst. Die Arbeit steckt in vier Monaten Katalog- und Preisdaten, offen bleibt die Lizenz für Partnerbenutzer.
+Der Verbrauch ist klein im Vergleich zu sechs Personen im Innendienst. Der größere Lizenzblock kann das Add-on sein: Braucht jeder Angebotsnutzer der Händler es für 150 US-Dollar im Monat, übersteigt das allein den Verbrauch. Die Arbeit steckt in vier Monaten Katalog- und Preisdaten.
 
 ## Einen Kanal wählen und den Katalog messen
 
@@ -109,7 +110,7 @@ Den Preis-Master festlegen
 Rabattgrenzen als Regeln schreiben
   Mit einem Verantwortlichen in Vertrieb und Finanzen.
 Salesforce schriftlich fragen
-  Lizenz je Partnerbenutzer, welche Aktionen der Agent aufruft, Verbrauchsmodell und Abgrenzung zum Revenue Management Agent.
+  Wie das Add-on pro Nutzer für Partnerbenutzer gilt, welche Aktionen und Prompts der Agent aufruft und die Abgrenzung zum Agenten in Revenue Management.
 Einen Testsatz bauen
   Aus echten Händleranfragen, auch mit falschen Teilenummern und nicht baubaren Kombinationen, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
 ```
