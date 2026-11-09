@@ -103,6 +103,23 @@ Nutzung in Deutschland (Bitkom 2026, unter KI-Nutzern): ChatGPT 71 %, Gemini 50 
 | KA5 | KI-Crawler-Besuche sind unsichtbar (GitHub Pages liefert keine Server-Logs). Ginge nur mit Cloudflare als Proxy vor der Seite (DNS-Umbau) | klein | groß | später | zurückgestellt |
 | KA6 | Meta AI (läuft über Bing), Grok und DeepSeek nicht eigens messen: für CIOs und CRM-Leiter kaum relevant | klein | – | – | entschieden, keine Maßnahme |
 
+
+## Kaufanfragen in der KI-Suche (Prüfung 09.11.2026)
+
+22 Anfragen mit Kaufabsicht (14 DE, 8 EN), je an ChatGPT, Claude, Gemini, Perplexity und Google AI Mode. fk-sd.de wird nur bei Partnersteuerung, sfdx-hardis und „unabhängiger Architekt für Hersteller“ zitiert, fast nur von Claude und Perplexity (9 Zitate in 110 Antworten, Google AI Mode 0). Für Tool-Alternativen, Partnerwechsel, Projektrettung, Branchenberatung und SAP-Integration zitieren alle Assistenten Seitentypen, die es auf fk-sd.de nicht gibt. Auswertung und Rohdaten in den Projektdateien (`homepage/ki-quellen/money-prompts/`, nicht im Repo).
+
+| # | Maßnahme | Nutzen | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| MP1 | Artikel „Gearset- und Copado-Alternativen“ (DE + EN) als Vergleich mit Tabelle, Preisen und ehrlicher Passung je Tool; zitiert werden heute nur Listicles von Toolanbietern | hoch | mittel | Claude, Fabian je Tool ein Praxissatz | offen |
+| MP2 | Ratgeber „Salesforce-Partner wechseln“ (DE + EN): Ablauf, Übergabe-Checkliste, Fallen, was die Kundenseite vorher besitzen muss | hoch | mittel | Claude | offen |
+| MP3 | Seite „Salesforce-Projekt retten“ (DE + EN), nur wenn Fabian das anbietet; braucht ein anonymes Beispiel | mittel | mittel | Fabian entscheidet | offen |
+| MP4 | Branchenseite „Salesforce für Maschinen- und Anlagenbau“ (DE + EN), bündelt Field Service, Manufacturing Cloud, SAP und Händler | hoch | groß | Claude, Fabian prüft | offen |
+| MP5 | Erklärartikel „Architekt auf Kundenseite oder Systemintegrator“ (EN + DE) | mittel | mittel | Claude | offen |
+| MP6 | Schärfen: Integrationsseite mit „SAP“ in Titel und erstem Satz, Make-or-Buy-Seite mit „Lizenz-Check“, Partnerwahl-Artikel mit Kurzfazit und Kriterientabelle oben (wie D20 ff.) | mittel | klein | Claude | offen |
+| MP7 | AppExchange-Consultant-Listing (QI) vorziehen: AppExchange wird bei 6 der 22 Anfragen zitiert, öfter als jede Wettbewerberseite | hoch | groß | Fabian | offen |
+| MP8 | LinkedIn-Headline EN um „multi-vendor Salesforce governance“ ergänzen (bei dieser Anfrage zitieren die Assistenten nur LinkedIn-Profile); Sortlist-Profil prüfen | mittel | klein | Fabian | offen |
+| MP9 | Die 22 Anfragen einmal im Monat mitmessen (ca. 2,70 USD je Lauf), getrennt von den 15 Wissensfragen | mittel | klein | Claude | offen |
+
 ## Befunde Jev-Analyse und jev-seo-Audit (29.10.2026)
 
 Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite und 392 Blog-URLs sowie jev-seo-Audit (450 URLs), beide 29.10.2026. Bericht: https://claude.ai/artifact/4d9jFTDK2EbewV53cLymFN. Fehlalarme ohne Maßnahme: HTTPS-Weiterleitung, 110 kaputte Links und 37 Seiten mit 404 (jev-seo löst relative Links falsch auf), noindex auf Impressum und Datenschutz (gewollt). Reihenfolge nach Impact und Aufwand.
