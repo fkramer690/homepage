@@ -34,6 +34,8 @@ const abs = (path: string) => new URL(path, Astro.site).href;
     <link rel="preload" href={soraRegular} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={soraSemibold} as="font" type="font/woff2" crossorigin />
     <meta name="description" content={description} />
+    <!-- Bing weighs this over hreflang when it picks the language version for a searcher. -->
+    <meta http-equiv="content-language" content={lang === 'de' ? 'de-DE' : 'en-US'} />
     <link rel="canonical" href={canonical.href} />
     {alternates && (
       <>
