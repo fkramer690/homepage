@@ -1,6 +1,6 @@
 ---
 title: "Revenue Cloud für Hersteller: Wann lohnt es sich?"
-description: "Wann sich Revenue Cloud für Maschinen- und Komponentenhersteller lohnt, wann Sales Cloud und SAP reichen, was es kostet und was vorher feststehen muss."
+description: "Wann sich Revenue Cloud für Maschinen- und Komponentenhersteller lohnt, wann Sales Cloud und SAP reichen, was es kostet und was vor der Partnerauswahl feststehen muss."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de
@@ -11,7 +11,7 @@ categories: [revenue-cloud, architecture]
 tags: [Revenue Cloud, CPQ, Quote-to-Cash, Make-or-Buy, SAP, Fertigung]
 takeaways:
   - "Ist ein Angebot nur eine Preisabfrage in SAP für ein kleines Sortiment, reichen meist Angebote in Sales Cloud und eine ERP-Schnittstelle."
-  - "Revenue Cloud Advanced kostet 200 Euro pro Nutzer und Monat zusätzlich zu Sales Cloud, für 50 Angebotsnutzer 120.000 Euro im Jahr."
+  - "Revenue Cloud Advanced kostet 200 Euro pro Nutzer und Monat zusätzlich zu Sales Cloud. Für 50 Angebotsnutzer sind das 120.000 Euro im Jahr."
   - "Salesforce CPQ wird an Neukunden nicht mehr verkauft. Ein Neukunde wählt zwischen Revenue Cloud, einem Partnerprodukt und einem eigenen Ansatz."
   - "Bevor ein Partner ausgewählt wird, sollte feststehen, wo Preise berechnet werden und welches System die Rechnung stellt."
 faq:
@@ -32,11 +32,11 @@ Revenue Cloud lohnt sich für Maschinen- und Komponentenhersteller, wenn ein Ang
 
 Revenue Cloud ist das Quote-to-Cash-Produkt von Salesforce, also der Weg vom Produktkatalog bis zur Rechnung, direkt auf der Salesforce-Plattform gebaut. Das Trailhead-Modul [Agentforce Revenue Management Foundations](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management) nennt diese Bausteine:
 
-- **Product Catalog Management:** ein Produktmodell, das Salesforce als einzige Quelle der Wahrheit für Produktdaten beschreibt.
+- **Product Catalog Management:** ein Produktmodell, das Salesforce als Single Source of Truth für Produktdaten bezeichnet.
 - **Salesforce Pricing:** Preisregeln einschließlich Rabatten, nutzbar über mehrere Kanäle.
 - **Rate Management:** Tarife nach Verbrauch, mit Staffeln und Mengen.
 - **Product Configurator:** gültige Merkmalskombinationen für komplexe Produkte, Bundles und Attribute.
-- **Transaction Management:** Angebote und Aufträge, einschließlich der Assets nach dem Verkauf.
+- **Transaction Management:** Angebote und Aufträge, einschließlich des Asset-Lebenszyklus nach dem Verkauf.
 - **Salesforce Contracts:** Verträge und die Pflichten daraus.
 - **Dynamic Revenue Orchestrator:** die Schritte nach dem Auftrag bis zur Erfüllung.
 - **Billing:** Rechnungen, Steuerberechnung, Zahlungsbedingungen und Gutschriften.
@@ -58,7 +58,7 @@ Ich suche im heutigen Angebotsprozess nach diesen Signalen:
 - **Viele Varianten mit Regeln.** Hat eine Maschine Dutzende Optionen, die sich ausschließen oder bedingen, spart ein Konfigurator mit Kombinationsprüfung Nacharbeit in der Auftragsabwicklung. Der Katalog arbeitet mit Attributen, nicht jede Variante braucht einen eigenen Produktdatensatz.
 - **Service und Abonnements auf demselben Angebot.** Ersatzteilpaket, Wartungsvertrag und ein Abo für Fernüberwachung auf einem Angebot sind ein typischer Fall. Abonnements sind laut [Preisseite](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) schon in Revenue Cloud Growth enthalten.
 - **Häufige Änderungen nach dem Verkauf.** Erweiterungen, Verlängerungen und Kündigungen laufen wieder über Angebot, Auftrag und Asset. Je öfter sich Verträge ändern, desto mehr ist diese Struktur wert.
-- **Große Angebote.** Für Winter '27 nennt Salesforce in den [Release Highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management) bis zu 15.000 Transaktionspositionen pro Geschäft. Große Transaktionen laufen in einem eigenen Modus mit Funktionsgrenzen, prüfen Sie also Nachträge, Verlängerungen und Partnerzugriff gegen die Support-Übersicht von Salesforce.
+- **Große Angebote.** Für Winter '27 nennt Salesforce in den [Release Highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management) bis zu 15.000 Transaktionspositionen pro Geschäft. Große Transaktionen laufen in einem eigenen Modus mit Funktionsgrenzen. Prüfen Sie deshalb in der Übersicht von Salesforce, ob Nachträge, Verlängerungen und Partnerzugriff unterstützt werden.
 - **Mehrere Kanäle auf einem Katalog.** Trailhead beschreibt Composable APIs, über die andere Clouds Katalog- und Preisdaten nutzen, mit Agentforce Manufacturing als Beispiel.
 
 Zwei oder drei dieser Signale zusammen rechtfertigen einen genaueren Blick. Eines allein selten. Ob es sich dann lohnt, ist ein Business Case: Stunden pro komplexem Angebot und Nacharbeit durch falsche Preise auf der einen Seite, Lizenzen, Umsetzung und Pflege der Regeln auf der anderen.
@@ -83,9 +83,9 @@ Die [Preisseite](https://www.salesforce.com/eu/sales/revenue-lifecycle-managemen
 | Revenue Cloud Growth | 150 Euro | Angebote und Konfigurator, Auftragserfassung, Abonnements |
 | Revenue Cloud Advanced | 200 Euro | Alles aus Growth plus Verträge und Aufträge, Verbrauch und Rechnungsstellung, KI und Analytics |
 
-Die FAQ derselben Seite sagt, dass Revenue Cloud ein kostenpflichtiges Zusatzprodukt ist, das zusätzlich zu einem Sales-Cloud-Abonnement gekauft wird. "Rechnungsstellung" in Advanced heißt grundlegende Rechnungsstellung; nutzungsbasierte Abrechnung, Zahlungen und Mahnwesen bringt Revenue Cloud Billing, ein weiteres Zusatzprodukt, der Preis nur auf Anfrage.
+Die FAQ derselben Seite sagt, dass Revenue Cloud ein kostenpflichtiges Zusatzprodukt ist, das zusätzlich zu einem Sales-Cloud-Abonnement gekauft wird. Mit "Rechnungsstellung" ist in Advanced eine grundlegende Rechnungsstellung gemeint. Nutzungsbasierte Abrechnung, Zahlungen und Mahnwesen bringt Revenue Cloud Billing, ein weiteres Zusatzprodukt mit Preis auf Anfrage.
 
-Eine Rechnung zum Listenpreis, als Annahme: 50 Vertriebsnutzer, die Angebote erstellen, bekommen Revenue Cloud Advanced. Das sind 50 × 200 Euro × 12 = 120.000 Euro im Jahr. Haben diese Nutzer noch kein Sales Cloud und ist Sales Cloud Core die gewählte Basisedition, kommen mit Core zu 195 Euro pro Nutzer und Monat 117.000 Euro hinzu. Umsetzung, SAP-Integration und Wartung kommen obendrauf. Wer wirklich eine Lizenz braucht, klärt eine Lizenzprognose, wie in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/) beschrieben. Editionen und Zusatzprodukte im Detail stehen in [Revenue Cloud Preise: Growth, Advanced und Add-ons](../revenue-cloud-editionen-preise/).
+Eine Rechnung zum Listenpreis, als Annahme: 50 Vertriebsnutzer, die Angebote erstellen, bekommen Revenue Cloud Advanced. Das sind 50 × 200 Euro × 12 = 120.000 Euro im Jahr. Haben diese Nutzer noch keine Sales-Cloud-Lizenz und ist Sales Cloud Core die gewählte Basisedition, kommen bei 195 Euro pro Nutzer und Monat 117.000 Euro im Jahr hinzu. Umsetzung, SAP-Integration und Wartung kommen obendrauf. Wer wirklich eine Lizenz braucht, klärt eine Lizenzprognose, wie in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/) beschrieben. Editionen und Zusatzprodukte im Detail stehen in [Revenue Cloud Preise: Growth, Advanced und Add-ons](../revenue-cloud-editionen-preise/).
 
 ## Rechenbeispiel: 400 Angebote im Monat, eines von zehn ist ein Projekt
 
@@ -97,11 +97,11 @@ Meine Empfehlung in so einem Fall: zuerst entscheiden, ob SAP der Preismaster bl
 
 ## Preismaster und Rechnungssystem vor der Partnerauswahl festlegen
 
-Partner fragen nach Funktionen. Die Entscheidungen, die Kosten und Zeitplan treiben, sind andere, und sie gehören dem Unternehmen:
+Partner fragen nach Funktionen. Für Kosten und Zeitplan entscheiden andere Fragen, und die muss das Unternehmen selbst beantworten:
 
 1. **Preismaster.** Rechnet SAP den Preis oder Salesforce Pricing? Eine Engine je Preisbestandteil, nie zwei für denselben.
 2. **Rechnungssystem.** Bleibt die Rechnung in SAP FI, oder kommt sie aus Revenue Cloud Billing? Das entscheidet das Finanzwesen, nicht das CRM-Team.
 3. **Verantwortung für den Konfigurator.** Wer pflegt die Variantenregeln nach dem Go-live, und in welchem System?
 4. **Parallelbetrieb mit CPQ.** Bestandskunden von CPQ entscheiden selbst, ob und wann sie umsteigen. Das [Kapitel zum Umstieg von CPQ](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/) beschreibt die Optionen.
 
-Wie die Schritte vom Angebot bis zur Rechnung zwischen Revenue Cloud und SAP aufgeteilt werden, behandelt [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/). Das [Überblickskapitel der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/) ordnet alles ein, und die Architekturseite gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+Wie die Schritte vom Angebot bis zur Rechnung zwischen Revenue Cloud und SAP aufgeteilt werden, behandelt [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/). Das [Überblickskapitel der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/) ordnet alles ein, und die Architektur dahinter gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).

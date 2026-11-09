@@ -1,6 +1,6 @@
 ---
 title: "Kundenpreise: SAP-Konditionen oder Salesforce Pricing?"
-description: "Sollen Händler- und Kundenpreise aus SAP-Konditionen kommen oder in Revenue Cloud neu entstehen? Drei Wege im Vergleich, mit Aufwand, Risiken und Faustregel."
+description: "Sollen Händler- und Kundenpreise aus SAP-Konditionen kommen oder in Revenue Cloud neu entstehen? Drei Wege im Vergleich, mit Aufwand, Risiken und einer Entscheidungsregel."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de
@@ -57,7 +57,7 @@ Der Accelerator deckt Sales Cloud und Salesforce CPQ ab, nicht Revenue Cloud. F�
 
 ```pro-contra
 pro: Stärken von Weg A
-- Das Angebot zeigt den SAP-Preis, Angebot und Auftragsbestätigung passen zusammen, solange SAP den Auftrag mit denselben Eingaben und demselben Preisdatum rechnet.
+- Das Angebot zeigt den SAP-Preis. Angebot und Auftragsbestätigung passen zusammen, solange SAP den Auftrag mit denselben Eingaben und demselben Preisdatum rechnet.
 - Konditionen werden an einer Stelle gepflegt.
 contra: Schwächen von Weg A
 - Jeder Aufruf hängt an SAP und der Middleware.
@@ -69,7 +69,7 @@ contra: Schwächen von Weg A
 
 Revenue Cloud hat die Werkzeuge dafür: Preisbücher je Land und Währung, Preisanpassungspläne für Mengenstaffeln und [Contract-Item-Price-Datensätze](https://trailhead.salesforce.com/content/learn/modules/advanced-price-management-with-revenue-cloud/configure-contract-based-pricing) für ausgehandelte Kundenpreise, mit eigenen Mengenstaffeln. Das Listenpreis-Element nutzt sie, wenn vertragsbasierte Preisfindung eingeschaltet ist. Nach Änderungen müssen die betroffenen Decision Tables für Vertragspreise, etwa Contract Pricing Entries und Contract Pricing Volume Tiers, aktualisiert werden, sobald der Ladelauf fertig ist.
 
-Stärken: Die Preisfindung ist schnell, funktioniert ohne SAP, und der Preiswasserfall erklärt jeden Schritt. Dieselbe Preislogik lässt sich über die Pricing API auch einem Portal, einem Shop oder einem Agenten anbieten, wenn diese Kanäle denselben Kontext und dieselbe Prozedur nutzen.
+Stärken: Die Preisfindung ist schnell, funktioniert ohne SAP, und der Preiswasserfall erklärt jeden Schritt. Dieselbe Preislogik lässt sich über die Pricing API auch einem Portal, einem Shop oder einem Agenten anbieten, wenn diese Kanäle denselben Kontext und dieselbe Pricing Procedure nutzen.
 
 Schwächen: SAP-Konditionen lassen sich selten eins zu eins übertragen. Jede Kondition mit ihrer Gültigkeit muss übersetzt, geladen und aktuell gehalten werden. Und solange SAP den Preis aus Salesforce nicht als festen Preis im Auftrag übernimmt, rechnet SAP mit eigener Logik neu, und Sie haben zwei Engines. Weg B funktioniert nur, wenn die Preishoheit wirklich zu Salesforce wandert und SAP diese Preise für Aufträge aus Salesforce nicht mehr rechnet.
 
@@ -77,7 +77,7 @@ Schwächen: SAP-Konditionen lassen sich selten eins zu eins übertragen. Jede Ko
 
 Die Listenpreise werden aus SAP ins Preisbuch geladen, danach folgt der Sync der Decision Tables. Mengenrabatte, Attributrabatte und manuelle Rabatte rechnet die Pricing Procedure in Salesforce, und der Freigabeprozess entscheidet, welche Rabatte genehmigt werden müssen.
 
-Das passt, wenn Listenpreise stabil sind und der Vertrieb Rabatte pro Geschäft verhandelt, wie bei Maschinen und Anlagen. Das Risiko ist ein doppelter Rabatt: Hält SAP noch einen Kundenrabatt, der im Auftrag automatisch greift, und gewährt der Vertrieb in Salesforce einen Rabatt, bekommt der Kunde beides. Auf diesem Weg darf SAP diese Konditionen also nicht auf Aufträge aus Salesforce anwenden, oder Salesforce darf sie nicht gewähren.
+Das passt, wenn Listenpreise stabil sind und der Vertrieb Rabatte pro Geschäft verhandelt, wie bei Maschinen und Anlagen. Das Risiko ist ein doppelter Rabatt: Hält SAP noch einen Kundenrabatt, der im Auftrag automatisch greift, und gewährt der Vertrieb in Salesforce einen Rabatt, bekommt der Kunde beides. Auf diesem Weg darf SAP diese Konditionen also nicht auf Aufträge aus Salesforce anwenden, oder Salesforce darf diese Rabatte nicht gewähren.
 
 ## Wie schneiden die drei Wege im Vergleich ab?
 
@@ -94,7 +94,7 @@ Euro-Beträge setze ich an die Wege nicht, weil sie von Ihren Konditionen, Ihrer
 
 ## Wo passen Vertragspreise und Sales Agreements hinein?
 
-Kundenspezifische Vertragspreise folgen derselben Regel. Werden sie in SAP verhandelt und gepflegt, dann Weg A oder eine Replikation in Contract-Item-Price-Datensätze mit klarer Verantwortung. Werden sie in Salesforce verhandelt, kann Revenue Cloud sie führen.
+Kundenspezifische Vertragspreise folgen derselben Regel. Werden sie in SAP verhandelt und gepflegt, eignen sich Weg A oder eine Replikation in Contract-Item-Price-Datensätze mit klarer Verantwortung. Werden sie in Salesforce verhandelt, kann Revenue Cloud sie führen.
 
 Sales Agreements in Manufacturing Cloud planen Mengen je Periode und tragen einen Verkaufspreis je Produkt. Ich würde diesen Preis einmal freigeben, im Angebot, und ihn in das Agreement übernehmen, wie in [Vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/) beschrieben. Das ist meine Designentscheidung, keine Produktgrenze: Das Agreement braucht dann keine eigene Preislogik, und Preisänderungen laufen über ein neues Angebot.
 

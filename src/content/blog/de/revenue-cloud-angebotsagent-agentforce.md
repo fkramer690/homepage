@@ -12,7 +12,7 @@ tags: [Revenue Cloud, Agentforce, Angebotsagent, Angebote, Flex Credits, KI-Agen
 takeaways:
   - "Salesforce meldet 75 Prozent weniger Zeit und 87 Prozent weniger Klicks im eigenen Vertrieb. Das ist eine Herstellerangabe, kein Maßstab für Maschinenbauer."
   - "Katalog und synchronisierte Preisdaten sind Pflicht; für den Echtbetrieb würde ich auch Konfigurationsregeln und Freigabegrenzen vorher aufsetzen."
-  - "Winter '27 kündigt Angebote per Agent für Self-Service von Kunden, für Partner im eigenen Arbeitsbereich und Verlängerungspakete an."
+  - "Winter '27 kündigt Angebote per Agent für Self-Service von Kunden und für Partner sowie Verlängerungspakete für Account Executives an."
   - "Eine Agentenaktion kostet 20 Flex Credits in Produktion (16 in der Sandbox), ein Angebot aus fünf Aktionen also rund 0,50 Dollar, ohne Prompts."
 faq:
   - q: "Was macht der Angebotsagent in Revenue Cloud?"
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Der Angebotsagent in Revenue Cloud macht aus einer Anfrage in normaler Sprache ein Angebot: Er wählt gültige Produkte aus dem Katalog, berechnet die Preise mit Salesforce Pricing, setzt Rabatte innerhalb der Leitplanken und kann Angebote ändern und zusammenfassen. Für einen Vertriebsinnendienst mit Standardprodukten und sauberen Preisdaten spart das echte Zeit. Vor dem Go-live brauchen Sie einen gepflegten Katalog und synchronisierte Preise, und ich würde Konfigurationsregeln in Salesforce und Rabattgrenzen, die Freigaben durchsetzen, dazunehmen. Bei konfigurierten Maschinen, deren Regeln außerhalb von Salesforce liegen, hilft der Standardagent ohne eigene Integration nicht.
+Der Angebotsagent in Revenue Cloud macht aus einer Anfrage in normaler Sprache ein Angebot: Er wählt gültige Produkte aus dem Katalog, berechnet die Preise mit Salesforce Pricing, setzt Rabatte innerhalb der Leitplanken und kann Angebote ändern und zusammenfassen. Für einen Vertriebsinnendienst mit Standardprodukten und sauberen Preisdaten spart das spürbar Zeit. Vor dem Go-live brauchen Sie einen gepflegten Katalog und synchronisierte Preise, und ich würde Konfigurationsregeln in Salesforce sowie Rabattgrenzen mit passendem Freigabe-Workflow dazunehmen. Bei konfigurierten Maschinen, deren Regeln außerhalb von Salesforce liegen, hilft der Standardagent ohne eigene Integration nicht.
 
 ## Was kann der Angebotsagent in Revenue Cloud?
 
@@ -55,7 +55,7 @@ Ich würde zuerst zählen, welcher Anteil der Produkte sich mit den Worten finde
 
 ## Winter '27 bringt Self-Service, Partner und Verlängerungen
 
-Die [Ankündigung zu Winter '27](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), zum Release, das seit dem 12. Oktober 2026 allgemein verfügbar ist, erweitert Angebote per Agent auf drei Gruppen: "self-service quoting for customer buyers, integrated quoting for partners, and automated renewal package assembly for account executives". Kunden bestellen ohne Vertriebsmitarbeiter, Partner arbeiten, ohne ihren Arbeitsbereich zu verlassen, und Account Manager bekommen vor einer Verlängerung "a drafted quote and risk signals".
+Mit dem Release [Winter '27](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), allgemein verfügbar seit dem 12. Oktober 2026, kündigt Salesforce Angebote per Agent für drei Gruppen an: "self-service quoting for customer buyers, integrated quoting for partners, and automated renewal package assembly for account executives". Kunden bestellen ohne Vertriebsmitarbeiter, Partner arbeiten, ohne ihren Arbeitsbereich zu verlassen, und Account Executives bekommen vor einer Verlängerung "a drafted quote and risk signals".
 
 Verlängerungsangebote selbst konnte der Agent schon vorher anlegen; neu ist das vorbereitete Verlängerungspaket mit Risikosignalen. Prüfen Sie in den Release Notes für jede der drei Funktionen, für welche Edition und welche Nutzer sie gilt. Für Hersteller ist der Verlängerungsentwurf der interessanteste Teil. Wartungs- und Fernüberwachungsabos verlängern sich jedes Jahr, und das Verlängerungsangebot vorzubereiten ist Routinearbeit. Partner- und Self-Service-Angebote werfen zuerst kaufmännische Fragen auf: Welche Preise sieht ein Händler, und darf das Self-Service-Angebot eines Kunden das Angebot des Händlers unterbieten?
 
@@ -87,11 +87,11 @@ In vier Fällen würde ich ihn nicht oder noch nicht einsetzen:
 1. **Auftragsbezogene Konstruktion.** Wird jede Maschine für den Auftrag konstruiert, kommt das Angebot aus der Konstruktion und nicht aus einem Katalog.
 2. **Regeln außerhalb von Salesforce.** Liegt die Konfigurationslogik in der SAP-Variantenkonfiguration oder im PLM, bietet der Agent Kombinationen an, die sich nicht bauen lassen.
 3. **Preise nur in SAP-Konditionen.** Hält Salesforce nur Listenpreise und kommt der Nettopreis aus SAP, nennt der Agent den falschen Preis, solange die Preisfindung SAP nicht abfragt.
-4. **Wenige Angebote mit hohem Wert.** Zehn Angebote im Monat mit wochenlanger Verhandlung brauchen keinen Agenten, sondern einen guten Vertriebsingenieur.
+4. **Wenige Angebote mit hohem Wert.** Bei zehn Angeboten im Monat mit wochenlanger Verhandlung zählt ein guter Vertriebsingenieur mehr als ein Agent.
 
 ## Rechenbeispiel: Ersatzteil- und Nachrüstangebote im Innendienst
 
-Ein Hersteller von Verpackungsmaschinen betreibt einen Innendienst, der Ersatzteil- und Nachrüstanfragen von Bestandskunden beantwortet: Verschleißteilsätze, Upgrade-Pakete und Servicestunden. Die Preise stehen in Salesforce-Preisbüchern, jede Nacht aus SAP synchronisiert, und der Katalog hat saubere Beschreibungen. Der Innendienst bearbeitet sehr viele kleine Angebote.
+Ein Hersteller von Verpackungsmaschinen betreibt einen Innendienst, der Ersatzteil- und Nachrüstanfragen von Bestandskunden beantwortet: Verschleißteilsätze, Upgrade-Pakete und Servicestunden. Die Preise stehen in Salesforce-Preisbüchern und werden jede Nacht aus SAP synchronisiert, und der Katalog hat saubere Beschreibungen. Der Innendienst bearbeitet sehr viele kleine Angebote.
 
 Hier passt der Agent gut. Eine Mitarbeiterin tippt "Verschleißteilsatz für Linie 3 plus zwei Servicetage, 10 Prozent Rabatt", und der Agent findet Satz und Serviceposition im Katalog und baut das Angebot für den Account des Kunden. Rabatte über der Grenze gehen in den Freigabe-Workflow. Angebote für neue Maschinen bleiben bei den Vertriebsingenieuren, weil deren Konfigurationsregeln noch in SAP liegen. Eingeführt wird der Agent zuerst in einem Land und mit echten Anfragen aus dem letzten Quartal getestet.
 

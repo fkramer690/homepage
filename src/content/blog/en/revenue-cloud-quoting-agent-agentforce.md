@@ -87,7 +87,7 @@ I would not use it, or not yet, in four situations:
 1. **Engineered to order.** If each machine is designed for the order, the quote comes from engineering, not from a catalog.
 2. **Rules outside Salesforce.** If configuration logic sits in SAP variant configuration or a PLM, the agent quotes combinations that cannot be built.
 3. **Prices only in SAP conditions.** If Salesforce holds list prices and the net price comes from SAP, the agent quotes the wrong price unless pricing calls SAP.
-4. **Few quotes with high value.** Ten quotes a month with weeks of negotiation do not need an agent; they need a good sales engineer.
+4. **Few quotes with high value.** With ten quotes a month and weeks of negotiation, a good sales engineer matters more than an agent.
 
 ## Worked example: spare parts and retrofit quotes on the sales desk
 
