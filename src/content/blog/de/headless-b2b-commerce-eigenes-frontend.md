@@ -1,6 +1,6 @@
 ---
 title: "Headless B2B Commerce: eigenes Frontend, Salesforce-Kern"
-description: "Wann ein Hersteller Salesforce B2B Commerce headless hinter der eigenen Website oder App betreiben sollte, was in Salesforce bleibt und was Sie selbst bauen."
+description: "Wann ein Hersteller Salesforce B2B Commerce headless hinter der eigenen Website oder App betreiben sollte, was in Salesforce bleibt und was Sie selbst bauen und betreiben."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de
@@ -10,7 +10,7 @@ topic: commerce
 categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, Headless, Connect REST API, React, Storefront, Fertigung]
 takeaways:
-  - "Headless verantwortet Ihr Team Frontend-Code, Pipeline und Login-Konzept; gehostet bei Ihnen oder als Bundle in einer Experience-Cloud-Site."
+  - "Bei Headless verantwortet Ihr Team Frontend-Code, Pipeline und Login-Konzept; das Frontend läuft bei Ihnen oder als Bundle in einer Experience-Cloud-Site."
   - "Headless B2B Commerce ist allgemein verfügbar, mit React B2B Storefront Blueprint und einer Referenz-App, deren Quellcode auf GitHub liegt."
   - "Zugeordnete Preis-, Bestands- und Checkout-Extensions können App und LWR-Store gleich bedienen. Welche läuft, hängt vom Vorgang ab, also testen."
   - "Headless lohnt sich, wenn eine Website oder Kunden-App und ein Team dafür schon da sind. Sonst ist ein LWR-Store meist der kleinere Aufwand."
@@ -18,7 +18,7 @@ faq:
   - q: "Was ist Headless B2B Commerce bei Salesforce?"
     a: "Ein Aufbau, bei dem Ihr eigenes Frontend, etwa eine React-Website oder eine mobile App, die Commerce Connect REST APIs von Salesforce für Suche, Produktdetails, Preise, Warenkorb, Checkout und Bestellhistorie aufruft. Salesforce B2B Commerce bleibt das Commerce-Backend, die Oberfläche bauen Sie selbst, gehostet bei Ihnen oder als Bundle in einer Experience-Cloud-Site."
   - q: "Braucht ein headless B2B-Shop trotzdem eine Experience-Cloud-Site?"
-    a: "Für Gast-Warenkorb und Checkout mit JWT nennt der Salesforce Developer Guide eine aktive Experience-Cloud-Site, einen gestarteten Web Store und eine konfigurierte Domain als Voraussetzung. Auch die React-Referenz-App von Salesforce läuft aus einem Experience-Cloud-Site-Container. Für andere Login-Muster registrierter Käufer prüfen Sie es in einer Sandbox."
+    a: "Für Gast-Warenkorb und Checkout mit JWT nennt der Salesforce Developer Guide eine aktive Experience-Cloud-Site, einen gestarteten Web Store und eine konfigurierte Domain als Voraussetzung. Auch die React-Referenz-App von Salesforce wird über einen Container in einer Experience-Cloud-Site bereitgestellt. Für andere Login-Muster registrierter Käufer prüfen Sie es in einer Sandbox."
   - q: "Gibt es ein Startprojekt für einen headless B2B-Shop?"
     a: "Ja. Salesforce bietet einen React B2B Storefront Blueprint und eine B2B Commerce Headless-Referenz-App an. Der Quellcode der Referenz-App liegt im Repository trailheadapps/commerce-b2b-headless auf GitHub."
   - q: "Welche Lizenz brauchen Käufer in einem headless B2B-Shop?"
@@ -41,11 +41,11 @@ In einem normalen B2B-Shop auf Salesforce ist die Storefront eine Experience-Clo
 
 Das Produkt trägt gerade mehrere Namen. Die Salesforce-Hilfe schreibt weiter "Salesforce B2B Commerce", Trailhead schreibt, B2B Commerce heiße jetzt [Agentforce Commerce for B2B](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping). Headless läuft mit demselben Produkt, eine eigene Headless-Edition gibt es nicht.
 
-Auf der [Seite zu den Commerce-Neuerungen](https://www.salesforce.com/de/commerce/innovations/) steht Headless B2B Commerce mit "AV heute", also verfügbar, und dem Versprechen von B2B-Einkauf "auf Ihrer Website, in Ihrer App, sogar in Slack". Im selben Eintrag nennt Salesforce einen neuen React B2B Storefront Blueprint und einen erweiterbaren Checkout. Im [Release-Beitrag vom Juni 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) kommt eine Headless-Referenz-App dazu: eine lauffähige Anwendung, die die empfohlenen API-Abfolgen vom Katalog bis zum Checkout zeigt, für Teams, die mit React oder Vue bauen. Der [Developer Guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-journey-overview.html) verlinkt den Quellcode im Repository `trailheadapps/commerce-b2b-headless`.
+Auf der [Seite zu den Commerce-Neuerungen](https://www.salesforce.com/de/commerce/innovations/) kennzeichnet Salesforce Headless B2B Commerce als "GA Now", also allgemein verfügbar, und dem Versprechen von B2B-Einkauf "auf Ihrer Website, in Ihrer App, sogar in Slack". Im selben Eintrag nennt Salesforce einen neuen React B2B Storefront Blueprint und einen erweiterbaren Checkout. Im [Release-Beitrag vom Juni 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) kommt eine Headless-Referenz-App dazu: eine lauffähige Anwendung, die die empfohlenen API-Abfolgen vom Katalog bis zum Checkout zeigt, für Teams, die mit React oder Vue bauen. Der [Developer Guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-journey-overview.html) verlinkt den Quellcode im Repository `trailheadapps/commerce-b2b-headless`.
 
 ## Salesforce hält die Daten, Sie betreiben das Frontend
 
-Die Aufteilung ist klarer als in den meisten Architekturdiskussionen, weil Salesforce sie im Architektur-Guide selbst nennt: Headless verwaltet Ihr Unternehmen Frontend-Hosting, Deployment-Pipelines und Integrationsschichten. Bei Experience Builder kümmert sich Salesforce um Hosting, Skalierung und die Plattform-Infrastruktur.
+Die Aufteilung ist klarer als in den meisten Architekturdiskussionen, weil Salesforce sie im Architektur-Guide selbst nennt: Bei Headless verwaltet Ihr Unternehmen Frontend-Hosting, Deployment-Pipelines und Integrationsschichten. Bei Experience Builder kümmert sich Salesforce um Hosting, Skalierung und die Plattform-Infrastruktur.
 
 | Teil | Store aus Experience Builder (LWR) | Headless |
 |---|---|---|
@@ -62,7 +62,7 @@ Salesforce bleibt das führende Commerce-System und steuert Entitlements, Warenk
 
 ## Wie funktioniert ein headless Checkout technisch?
 
-Der [Guide zum Headless-Checkout](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-checkout.html) zeigt die Abfolge. Das Frontend liest den aktiven Checkout und legt aus dem aktiven Warenkorb einen an, wenn es keinen gibt. Es setzt Lieferadresse und Versandart per PATCH, autorisiert eine Zahlung auf Bestellnummer mit dem Request-Typ `SimplePurchaseOrder` und der Bestellnummer als Token und platziert den Auftrag dann in zwei Schritten, `prepare` und `submit`. Die Antwort enthält Auftragsnummer und Order-Summary-ID.
+Der [Guide zum Headless-Checkout](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-checkout.html) zeigt die Abfolge. Das Frontend liest den aktiven Checkout und legt aus dem aktiven Warenkorb einen an, wenn es keinen gibt. Es setzt Lieferadresse und Versandart per PATCH, autorisiert eine Zahlung per Bestellauftrag mit dem Request-Typ `SimplePurchaseOrder` und der Bestellauftragsnummer als Token und platziert den Auftrag dann in zwei Schritten, `prepare` und `submit`. Die Antwort enthält Auftragsnummer und Order-Summary-ID.
 
 Der wichtige Punkt für die Architektur: Hinter diesen Aufrufen laufen Preis-, Bestands-, Steuer- und Checkout-Logik. Ruft Ihr Frontend die passenden Commerce APIs für denselben Web Store auf, können zugeordnete Extensions dieselben Preis-, Bestands-, Steuer- und Checkout-Anbindungen nutzen. Eine Preis-Extension, die SAP nach dem Kundenpreis fragt, kann also Ihre React-App wie den LWR-Store bedienen. Welche Extension läuft, hängt vom Vorgang, der Zuordnung und dem Cart-Calculate-Setup ab; testen Sie die genaue API-Abfolge. Wie man diese Extensions so baut, dass sie Releases überstehen, steht in [Commerce Extensions: Eigenentwicklung, die Updates übersteht](../commerce-extensions-eigenentwicklung/), woher Kundenpreise kommen sollten in [Kundenpreise in B2B Commerce](../kundenpreise-b2b-commerce-preisbuecher-erp/).
 
@@ -77,7 +77,7 @@ SAP Kundenpreis ..Preis zurück..> Preis-Extension
 Connect REST API --prepare, submit--> Order Summary
 ```
 
-Den Login müssen Sie entwerfen und umsetzen. Für registrierte Käufer nutzt der [Guide zum Headless-Login](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-login.html) die OAuth-Endpunkte für Authorize und Token, unterstützt externe Identity Provider und eigene Anmeldung in Apex, und nach dem Login hängen alle Storefront-Aufrufe an der aktiven Sitzung. Die React-Referenz-App meldet über Apex mit `Site.login()` an und nutzt dann die Salesforce-Sitzung. Für Gäste dokumentiert Salesforce [Warenkorb und Checkout mit einem JWT](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-guest-jwt.html): ein Backend for Frontend, eine eindeutige Besucher-ID pro Gast und als Voraussetzung eine aktive Experience-Cloud-Site, einen gestarteten Web Store und eine konfigurierte Domain. Auch die [React-Referenz-App](https://github.com/trailheadapps/commerce-b2b-headless) von Salesforce läuft aus einem Experience-Cloud-Site-Container. Gehen Sie also nicht davon aus, dass headless die Experience-Cloud-Einrichtung erspart; prüfen Sie es für das gewählte Login-Muster.
+Den Login müssen Sie entwerfen und umsetzen. Für registrierte Käufer nutzt der [Guide zum Headless-Login](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-login.html) die OAuth-Endpunkte für Authorize und Token, unterstützt externe Identity Provider und eigene Anmeldung in Apex, und nach dem Login hängen alle Storefront-Aufrufe an der aktiven Sitzung. Die React-Referenz-App meldet Käufer über Apex mit `Site.login()` an und nutzt dann die Salesforce-Sitzung. Für Gäste dokumentiert Salesforce [Warenkorb und Checkout mit einem JWT](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-guest-jwt.html): ein Backend for Frontend, eine eindeutige Besucher-ID pro Gast und als Voraussetzung eine aktive Experience-Cloud-Site, einen gestarteten Web Store und eine konfigurierte Domain. Auch die [React-Referenz-App](https://github.com/trailheadapps/commerce-b2b-headless) von Salesforce wird über einen Container in einer Experience-Cloud-Site bereitgestellt. Gehen Sie also nicht davon aus, dass headless die Experience-Cloud-Einrichtung erspart; prüfen Sie es für das gewählte Login-Muster.
 
 ```hinweis offen
 Käuferlizenzen folgen der Rolle, nicht dem Frontend: Die Salesforce-Hilfe nennt External Apps oder External Apps Login für normale Käufer und Customer Community Plus oder höher für Buyer Manager, siehe [B2B Commerce Lizenzen für Käufer](../b2b-commerce-lizenzen-kaeufer/). SKU und Login-Modell lassen Sie im Vertrag bestätigen, bevor jemand einen Business Case rechnet.
@@ -92,7 +92,7 @@ Ich sehe vier Bedingungen, und mindestens die erste und die letzte sollten erfü
 3. **Mehrere Kanäle teilen ein Backend.** Website, App und später Slack oder ein Agent nutzen denselben Katalog, dieselben Preise und dieselben Aufträge.
 4. **Ein Frontend-Team bleibt über Jahre.** Intern oder über einen langen Vertrag, mit React-Kenntnissen, eigener Pipeline und jemandem, der ans Telefon geht, wenn der Shop langsam ist.
 
-Rechenbeispiel: Ein Maschinenbauer betreibt eine React-App, in der 3.000 Bediener den Status ihrer Maschinen sehen. Wenn "Verschleißteile bestellen" über die Connect APIs in diese App kommt, bleibt der Käufer in einem Werkzeug, das er ohnehin täglich öffnet. Die 200 Händler desselben Herstellers, die Ersatzteile in großen Mengen bestellen, sind mit einem Standard-LWR-Store besser bedient. Beides kann auf demselben Salesforce-Katalog laufen.
+Praxisbeispiel: Ein Maschinenbauer betreibt eine React-App, in der 3.000 Bediener den Status ihrer Maschinen sehen. Wenn "Verschleißteile bestellen" über die Connect APIs in diese App kommt, bleibt der Käufer in einem Werkzeug, das er ohnehin täglich öffnet. Die 200 Händler desselben Herstellers, die Ersatzteile in großen Mengen bestellen, sind mit einem Standard-LWR-Store besser bedient. Beides kann auf demselben Salesforce-Katalog laufen.
 
 Falsch ist headless für einen ersten Shop ohne Frontend-Team, oder wenn das Ziel vor allem ist, Händler schnell vom Telefon wegzubekommen. Gibt es schon einen LWR-Store und darf die mobile App ihn einfach wiederverwenden, nennt der Juni-Beitrag auch Mobile Publisher, der diesen Store als App in Ihrem Design in die Stores von Apple und Google bringt. Eine Maschinen-App mit eigenen Abläufen ersetzt das nicht.
 

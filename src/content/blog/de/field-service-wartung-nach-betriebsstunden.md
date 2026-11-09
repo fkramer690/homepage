@@ -11,16 +11,16 @@ categories: [field-service]
 tags: [Field Service, Wartungspläne, Betriebsstunden, Assets, IoT, ERP]
 takeaways:
   - "Nutzung ist ein Regeltyp in den Recordset Filter Criteria einer kriterienbasierten Regel und wird nur an Wartungs-Assets gesetzt."
-  - "Eine kriterienbasierte Regel erzeugt keinen neuen Auftrag, solange ihr eigener offen ist. Andere Regeln am selben Asset können es trotzdem."
+  - "Eine kriterienbasierte Regel erzeugt keinen neuen Auftrag, solange der von ihr erzeugte offen ist. Andere Regeln am selben Asset können es trotzdem."
   - "Limits: 2.600 Arbeitsaufträge pro Lauf, 2.000 Assets bei RRULE mit COUNT. Salesforce empfiehlt höchstens fünf Regeln pro Plan oder Asset."
   - "In meinem Zielbild kommt der Zähler aus ERP oder IoT-Plattform. Rohdaten der Sensoren bleiben in der IoT-Plattform oder im Historian."
 faq:
   - q: "Kann Salesforce Field Service Wartung nach Betriebsstunden planen?"
     a: "Ja. Eine Maintenance Work Rule vom Typ kriterienbasiert verweist auf Recordset Filter Criteria, die Nutzungsregeln wie einen Usage Counter für Betriebsstunden oder allgemeine Bedingungen auf Asset-Feldern enthalten können. Ist die Schwelle erreicht, entsteht ein Arbeitsauftrag."
   - q: "Wie richte ich 2.000 Stunden oder 12 Monate ein, je nachdem, was zuerst eintritt?"
-    a: "Entweder kombinieren Sie eine Usage-Counter- und eine Usage-Duration-Regel mit ODER in denselben Recordset Filter Criteria, oder Sie nutzen zwei Bedingungen auf eigenen Feldern, verknüpft mit ODER: Stunden seit der letzten Wartung ab 2.000, Monate seit der letzten Wartung ab 12. Die Salesforce-Hilfe beschreibt das zweite Muster mit Schaltspielen oder Monaten seit der letzten Überholung."
+    a: "Entweder kombinieren Sie eine Usage-Counter- und eine Usage-Duration-Regel mit ODER in denselben Recordset Filter Criteria, oder Sie nutzen zwei Bedingungen auf benutzerdefinierten Feldern, verknüpft mit ODER: Stunden seit der letzten Wartung ab 2.000, Monate seit der letzten Wartung ab 12. Die Salesforce-Hilfe beschreibt das zweite Muster mit Aktivierungen oder Monaten seit der letzten Überholung."
   - q: "Welche Felder können Recordset Filter Criteria nicht nutzen?"
-    a: "Laut Salesforce-Hilfe werden URL-, Mehrfachauswahl-, verschlüsselte und Textbereichsfelder nicht unterstützt, Währungsfelder können keine Filterkriterien bilden. Zähler gehören in Zahlenfelder."
+    a: "Laut Salesforce-Hilfe werden Felder vom Typ URL, Mehrfachauswahlliste, verschlüsselte Felder und Textbereichsfelder nicht unterstützt, Währungsfelder können keine Filterkriterien bilden. Zähler gehören in Zahlenfelder."
   - q: "Brauche ich IoT für Wartung nach Betriebsstunden?"
     a: "Nein. Den Zähler kann der Techniker eintippen, das ERP schicken oder eine IoT-Plattform schreiben. Wie oft der Wert kommen muss, hängt davon ab, wie weit eine Maschine über die Schwelle laufen darf: höchste Nutzungsrate mal Verzögerung, bis der Arbeitsauftrag existiert."
 draft: false
@@ -46,7 +46,7 @@ Recordset Filter Criteria sind gespeicherte Bedingungen auf Asset-Feldern, etwa 
 
 Laut Hilfeartikel zur [nutzungsbasierten Wartung](https://help.salesforce.com/s/articleView?id=sf.fs_create_usage_based_rfc.htm&language=en_US&type=5) wählen Sie in den Recordset Filter Criteria den Regeltyp Usage und hängen sie an eine kriterienbasierte Regel. Nutzungsregeln lassen sich nur an Wartungs-Assets hinzufügen, sie sitzen also an jedem Wartungs-Asset und nicht zentral am Plan. Eine Usage-Counter-Regel liest einen Zähler wie die Betriebsstunden, mit Frequenz, erstem Auftreten und Nutzungsrate; eine Usage-Duration-Regel zählt vergangene Zeit. Das Nutzungsfeld darf eine Formel sein, das Feld für das nächste Auftreten nicht, weil das System es aktualisiert.
 
-Zwei Planungsarten bestimmen, wie es sich ändert. Beim festen Plan folgen Arbeitsaufträge strikten Intervallen des Lebenszeitzählers, eine verspätete 5.000-Stunden-Wartung verschiebt die 10.000-Stunden-Wartung nicht. Beim gleitenden Plan ist der nächste Fälligkeitspunkt der Stand bei Abschluss plus Frequenz, und diese Neuberechnung läuft nur, wenn der Status des Arbeitsauftrags der Kategorie Closed oder Completed zugeordnet ist. Vorlaufzeit und Nutzungsrate ergeben ein vorgeschlagenes Wartungsdatum vor Erreichen der Schwelle. Ich teste beide Arten in einer Sandbox mit ein paar echten Zählerständen, bevor der erste Plan live geht.
+Zwei Planungsarten bestimmen, wie der nächste Fälligkeitspunkt fortgeschrieben wird. Beim festen Plan folgen Arbeitsaufträge festen Intervallen des Gesamtzählerstands, eine verspätete 5.000-Stunden-Wartung verschiebt die 10.000-Stunden-Wartung nicht. Beim gleitenden Plan ist der nächste Fälligkeitspunkt der Stand bei Abschluss plus Frequenz, und diese Neuberechnung läuft nur, wenn der Status des Arbeitsauftrags der Kategorie Closed oder Completed zugeordnet ist. Vorlaufzeit und Nutzungsrate ergeben ein vorgeschlagenes Wartungsdatum vor Erreichen der Schwelle. Ich teste beide Arten in einer Sandbox mit ein paar echten Zählerständen, bevor der erste Plan live geht.
 
 ```hinweis achtung
 Eine Falle ist die Kombination von Regeln. Laut Hilfeartikel zur [kriterienbasierten Wartung](https://help.salesforce.com/s/articleView?id=sf.fs_rfc_create_any_criteria.htm&language=en_US&type=5) erzeugen eine Kriterienregel und eine Kalenderregel ihre Arbeitsaufträge unabhängig voneinander, auch mit demselben vorgeschlagenen Datum. Wer neben die Stundenregel eine Kalenderregel „alle 12 Monate“ legt, bekommt womöglich zwei Arbeitsaufträge für denselben Kompressor in derselben Woche. „Was zuerst eintritt“ gehört in eine einzige Regel: entweder Usage Counter und Usage Duration mit ODER, wobei das frühere Datum gewinnt, oder allgemeine Bedingungen mit ODER.
@@ -54,21 +54,21 @@ Eine Falle ist die Kombination von Regeln. Laut Hilfeartikel zur [kriterienbasie
 
 ## Eine kriterienbasierte Regel wartet, solange ihr Auftrag offen ist
 
-Für allgemeine Kriterien legen Sie Recordset Filter Criteria mit Bedingungen auf Standard- oder eigenen Asset-Feldern an, wählen, ob alle oder mindestens eine zutreffen müssen, und hängen sie an eine Maintenance Work Rule vom Typ kriterienbasiert. Das Beispiel der Hilfe kombiniert 60.000 Schaltspiele oder sechs Monate seit der letzten Überholung mit ODER. Genau dieses Muster „was zuerst eintritt“ schreiben Maschinenbauer in ihre Serviceverträge.
+Für allgemeine Kriterien legen Sie Recordset Filter Criteria mit Bedingungen auf Standard- oder benutzerdefinierten Asset-Feldern an, wählen, ob alle oder mindestens eine zutreffen müssen, und hängen sie an eine Maintenance Work Rule vom Typ kriterienbasiert. Das Beispiel der Hilfe kombiniert 60.000 Aktivierungen oder sechs Monate seit der letzten Überholung mit ODER. Genau dieses Muster „was zuerst eintritt“ schreiben Maschinenbauer in ihre Serviceverträge.
 
 Drei Regeln aus der Hilfe bestimmen das Design:
 
 - **Ein offener Arbeitsauftrag pro Regel.** Solange der Arbeitsauftrag dieser Regel nicht abgeschlossen ist, erzeugt sie keinen neuen; andere, unabhängige Regeln am Asset können es trotzdem. Als abgeschlossen gelten Cannot Complete, Canceled, Completed und Closed.
-- **Die Bedingung muss zurückgesetzt werden.** Trifft die Bedingung nach dem Abschluss noch zu, erzeugt der nächste Lauf den nächsten Arbeitsauftrag. Das Beispiel der Hilfe: Die kumulierte Stillstandszeit steigt von 982 auf 1.024 Stunden, ein Arbeitsauftrag entsteht, und weil der Wert über 1.000 bleibt, folgt der nächste. Vergleichen Sie deshalb gegen „Stunden seit letzter Wartung“ und speichern Sie den Zählerstand, wenn die Wartung tatsächlich erbracht wurde. Die Hilfe schlägt dasselbe vor: ein eigenes Feld aktualisieren, wenn Arbeitsaufträge abgeschlossen werden. Der Flow sollte nur auf einen Status reagieren, der „Arbeit erledigt“ bedeutet, etwa Completed, nicht auf Canceled oder Cannot Complete, die zwar die Erzeugung freigeben, aber keine Wartung waren.
-- **Feldtypen.** URL-, Mehrfachauswahl-, verschlüsselte und Textbereichsfelder gehen nicht, Währungsfelder können keine Filterkriterien bilden. Zähler gehören in Zahlenfelder.
+- **Die Bedingung muss zurückgesetzt werden.** Trifft die Bedingung nach dem Abschluss noch zu, erzeugt der nächste Lauf den nächsten Arbeitsauftrag. Das Beispiel der Hilfe: Die kumulierte Stillstandszeit steigt von 982 auf 1.024 Stunden, ein Arbeitsauftrag entsteht, und weil der Wert über 1.000 bleibt, folgt der nächste. Vergleichen Sie deshalb gegen „Stunden seit letzter Wartung“ und speichern Sie den Zählerstand, wenn die Wartung tatsächlich erbracht wurde. Die Hilfe schlägt dasselbe vor: ein benutzerdefiniertes Feld aktualisieren, wenn Arbeitsaufträge abgeschlossen werden. Der Flow sollte nur auf einen Status reagieren, der „Arbeit erledigt“ bedeutet, etwa Completed, nicht auf Canceled oder Cannot Complete, die zwar die Erzeugung freigeben, aber keine Wartung waren.
+- **Feldtypen.** Felder vom Typ URL, Mehrfachauswahlliste, verschlüsselte Felder und Textbereichsfelder werden nicht unterstützt, Währungsfelder können keine Filterkriterien bilden. Zähler gehören in Zahlenfelder.
 
-Die Hilfe nennt außerdem Asset-Attribute als Weg, Werte wie Schaltspiele seit der letzten Überholung zu führen. Das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm) gibt es seit API-Version 53.0; für nutzungsbasierte Wartung empfiehlt Salesforce höchstens 10 Attribute pro Asset, und Offline-Briefcases enthalten sie nicht. Wann ich Attribute und wann Felder nutze, beschreibe ich in [Asset-Hierarchie im Field Service: Wie tief pro Maschine?](../field-service-asset-hierarchie-maschinen/).
+Die Hilfe nennt außerdem Asset-Attribute als Weg, Werte wie Aktivierungen seit der letzten Überholung zu führen. Das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm) gibt es seit API-Version 53.0; für nutzungsbasierte Wartung empfiehlt Salesforce höchstens 10 Attribute pro Asset, und Offline-Briefcases enthalten sie nicht. Wann ich Attribute und wann Felder nutze, beschreibe ich in [Asset-Hierarchie im Field Service: Wie tief pro Maschine?](../field-service-asset-hierarchie-maschinen/).
 
 Ein Detail bei den Berechtigungen: Salesforce verlangt für Maintenance Work Rule und Recordset Filter Criteria passende Vollzugriffsrechte und Freigaberegeln, sonst greifen die Regeln für manche Nutzer nicht.
 
 ## Woher kommt der Zähler?
 
-Die Hilfe nennt drei Quellen: von Hand gepflegt, von einer IoT-Plattform aktualisiert oder über eine Integration vom AppExchange. Beim Maschinenbauer heißt das meist:
+Die Hilfe nennt drei Quellen: von Hand gepflegt, von einer IoT-Plattform aktualisiert oder über eine Integration aus AppExchange. Beim Maschinenbauer heißt das meist:
 
 - **Die IoT-Plattform** schreibt die Betriebsstunden der vernetzten Maschinen, etwa einmal am Tag.
 - **Das ERP**, zum Beispiel SAP, schickt Zählerstände, die es ohnehin vom Kunden oder aus Serviceberichten bekommt.
@@ -98,7 +98,7 @@ Die Zahlen sind angenommen. Ein Hersteller von Kompressoren betreut 1.200 Anlage
 
 **Daten.** Jedes Asset bekommt ein Zahlenfeld für die Betriebsstunden, ein Feld für den Stand bei der letzten Wartung und das Datum der letzten Wartung. Eine Formel berechnet die Stunden seit der letzten Wartung, eine zweite die Monate. Die IoT-Plattform schreibt jede Nacht die Stunden der vernetzten Anlagen. Bei den übrigen 400 tragen Techniker den Stand bei jedem Einsatz ein, dort greift die 12-Monats-Bedingung.
 
-**Regel.** Eine kriterienbasierte Regel mit zwei allgemeinen Bedingungen, verknüpft mit ODER. Eigene Felder statt des nativen Usage Counter habe ich hier gewählt, weil die 400 nicht vernetzten Anlagen keine verlässliche Nutzungsrate haben und für alle dieselbe Rücksetzlogik gelten soll. Ein Flow schreibt Zählerstand und Datum ans Asset, wenn der Arbeitsauftrag Completed erreicht, und setzt damit beide Bedingungen zurück; Canceled und Cannot Complete tun das nicht.
+**Regel.** Eine kriterienbasierte Regel mit zwei allgemeinen Bedingungen, verknüpft mit ODER. Eigene Felder statt des nativen Usage Counter habe ich hier gewählt, weil die 400 nicht vernetzten Anlagen keine verlässliche Nutzungsrate haben und für alle dieselbe Rücksetzlogik gelten soll. Ein Flow schreibt Zählerstand und Datum ans Asset, wenn der Arbeitsauftrag den Status Completed erreicht, und setzt damit beide Bedingungen zurück; Canceled und Cannot Complete tun das nicht.
 
 **Pläne.** Drei Pläne nach Region mit je etwa 400 Assets, damit jede regionale Serviceleitung einen Plan verantwortet.
 
