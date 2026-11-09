@@ -14,7 +14,7 @@ takeaways:
   - "Bei Stundenabrechnung rechnet ein Partner für jeden gesparten Tag weniger ab. Sie sehen den Gewinn nur in der Zeiterfassung oder als zusätzlichen Umfang."
   - "Salesforce hat im März 2026 verbrauchsabhängige Vergütung im Consulting Track angekündigt, das FDE Partner Network knüpft Anreize an Agenten in Produktion."
   - "In einer McKinsey-Umfrage nannten Befragte 11,8 Prozent Zeitersparnis, aber nur 6,2 Prozent weniger Nacharbeit. Bepreisen Sie selbst gemessenen Aufwand."
-  - "Erfolgsanteile funktionieren als Teil des Honorars, gekoppelt an eine selbst gemessene Kennzahl und mit Verbrauchsobergrenze pro Vorgang."
+  - "Erfolgsanteile funktionieren als Teil des Honorars, gekoppelt an eine selbst gemessene Kennzahl und mit Obergrenze je Vorgang in der Vertragseinheit."
 faq:
   - q: "Werden Festpreisprojekte in Salesforce durch KI günstiger?"
     a: "Nicht automatisch. Ein Festpreis auf Basis der alten Schätzung gibt den gesamten KI-Gewinn an den Partner. Günstiger wird es für Sie nur, wenn Preise gegen gemessenen Aufwand überprüft werden, etwa alle sechs Monate."
@@ -31,9 +31,9 @@ KI-Coding drückt Salesforce-Projekte für Arbeitspakete mit klaren Abnahmekrite
 
 ## Warum gerät die Abrechnung nach Aufwand durch KI unter Druck?
 
-Abrechnung nach Aufwand, im Englischen Time and Materials (T&M), heißt: Sie bezahlen die tatsächlich geleisteten Personentage, unabhängig vom Ergebnis. Der Anreiz war schon immer schief, denn ein langsameres Team verdient mehr. Das ließ sich aushalten, solange Sie ähnliche Aufgaben in derselben Org über die Zeit vergleichen konnten, auch wenn der Aufwand immer von Org-Komplexität, technischen Schulden, Schnittstellen und der Qualität der Anforderungen abhing.
+Abrechnung nach Aufwand, im Englischen Time and Materials (T&M), heißt: Sie bezahlen die tatsächlich geleisteten Personentage, unabhängig vom Ergebnis. Das Modell setzte schon immer einen schlechten Anreiz: Ein langsameres Team verdient mehr. Das ließ sich aushalten, solange Sie ähnliche Aufgaben in derselben Org über die Zeit vergleichen konnten, auch wenn der Aufwand immer von Org-Komplexität, technischen Schulden, Schnittstellen und der Qualität der Anforderungen abhing.
 
-Coding-Agenten brechen diese Stabilität auf. Lässt ein Entwickler Claude Code oder Agentforce Vibes die Apex-Klasse, die Testklasse und das Deployment-Manifest entwerfen, kann der Bauschritt deutlich schrumpfen. Bei Aufwandsabrechnung stellt der Partner dann weniger Tage in Rechnung oder nutzt die frei werdende Kapazität für weitere Stories aus Ihrem Backlog. Den Gewinn haben Sie nur, wenn der gesparte Aufwand in der Zeiterfassung sichtbar wird oder zu zusätzlich geliefertem Umfang führt. Ich unterstelle hier keine böse Absicht. Ich sehe eine Informationslücke, die das Vergütungsmodell schließen muss.
+Coding-Agenten brechen diese Stabilität auf. Lässt ein Entwickler Claude Code oder Agentforce Vibes die Apex-Klasse, die Testklasse und das Deployment-Manifest entwerfen, kann der Umsetzungsaufwand deutlich sinken. Bei Aufwandsabrechnung stellt der Partner dann weniger Tage in Rechnung oder nutzt die frei werdende Kapazität für weitere Stories aus Ihrem Backlog. Den Gewinn haben Sie nur, wenn der gesparte Aufwand in der Zeiterfassung sichtbar wird oder zu zusätzlich geliefertem Umfang führt. Ich unterstelle hier keine böse Absicht. Ich sehe eine Informationslücke, die das Vergütungsmodell schließen muss.
 
 Wie groß der Gewinn ist, bleibt offen, und das zählt für die Preisgestaltung. McKinseys [Umfrage unter 334 Produkt- und Engineering-Verantwortlichen](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) (veröffentlicht im August 2026, durchgeführt im Mai) zeigt, was die Befragten selbst über den Entwicklungszyklus angaben:
 
@@ -74,7 +74,7 @@ Für einen Hersteller hat das zwei Seiten. Ein Partner, der beim Go-live verdien
 
 **Erfolgsanteile funktionieren als Anteil, nicht als ganzes Honorar.** Kein Partner kontrolliert Ihre Anlagendaten, die Verfügbarkeit Ihres SAP-Systems oder wie viele Händler das Portal nutzen. Ein Honorar, das komplett an der Nutzung hängt, ist für beide Seiten ein Glücksspiel. Nach meiner Einschätzung sind 10 bis 20 Prozent des Honorars, gekoppelt an eine Kennzahl, eine diskutable Größenordnung.
 
-**Wer die Tokens bezahlt, gehört in den Preis.** McKinsey schätzt, dass Tokens, Rechenleistung, Infrastruktur und KI-Betrieb bis zu 20 Prozent der bisherigen Personalkosten erreichen können. Sie bleiben bei der Seite, der der Vertrag sie zuweist, beim Festpreis wie bei Aufwandsabrechnung. Nutzt ein Partner Agentforce Vibes in Ihrer Org, kann das Ihre Flex Credits verbrauchen. Die Zahlen stehen in [was KI-Coding im Salesforce-Projekt kostet](../ki-coding-kosten-salesforce-projekt/).
+**Wer die Tokens bezahlt, gehört in den Preis.** McKinsey schätzt, dass Tokens, Rechenleistung, Infrastruktur und KI-Betrieb bis zu 20 Prozent der bisherigen Personalkosten erreichen können. Diese Kosten trägt beim Festpreis wie bei Aufwandsabrechnung die Partei, die der Vertrag festlegt. Nutzt ein Partner Agentforce Vibes in Ihrer Org, kann das Ihre Flex Credits verbrauchen. Die Zahlen stehen in [was KI-Coding im Salesforce-Projekt kostet](../ki-coding-kosten-salesforce-projekt/).
 
 ## Rechenbeispiel: Verlängerung eines Rahmenvertrags
 
@@ -84,7 +84,7 @@ Für das nächste Jahr sind drei Arbeitspakete geplant.
 
 **Garantieantrag im Händlerportal.** Die SAP-Schnittstelle für Gutschriften existiert, die Regeln sind dokumentiert. Klassische Schätzung: 45 Personentage, 49.500 €. Der Partner rechnet mit Agenten mit etwa 30 Tagen. Nach Aufwand zahlten Sie 33.000 €, und der Partner verlöre für seine Ehrlichkeit 16.500 € Umsatz. Ein Festpreis von 49.500 € ließe ihm alles. Ich würde einen Festpreis von rund 41.000 € anbieten: Liefert der Partner in 30 Tagen, steigt sein effektiver Umsatz auf etwa 1.370 € pro Tag, Sie sparen 17 Prozent, und die Abnahme erfolgt gegen schriftliche Testfälle.
 
-**Ersatzteildaten aus dem Altsystem einer Tochtergesellschaft.** Niemand kennt das Datenmodell, eine API-Dokumentation gibt es nicht. Jeder Festpreis würde einen hohen Risikoaufschlag verstecken. Ich würde zehn Tage Discovery nach Aufwand mit Obergrenze einkaufen und den Bau erst zum Festpreis vergeben, wenn die Schnittstelle verstanden ist.
+**Ersatzteildaten aus dem Altsystem einer Tochtergesellschaft.** Niemand kennt das Datenmodell, eine API-Dokumentation gibt es nicht. Jeder Festpreis würde einen hohen Risikoaufschlag verstecken. Ich würde zehn Tage Discovery nach Aufwand mit Obergrenze einkaufen und die Umsetzung erst zum Festpreis vergeben, sobald Datenmodell und Schnittstelle geklärt sind.
 
 **Agent für Händlerfragen zur Ersatzteilverfügbarkeit.** Festpreis bis zum Go-live, dazu ein variabler Anteil von 15 Prozent, fällig nach drei Monaten, wenn eine zufällige monatliche Stichprobe von Antworten zu mindestens 90 Prozent korrekt ist, als Beispiel. Der Vertrag muss festlegen, was als korrekt gilt, welche Fehler kritisch sind (etwa eine falsche Verfügbarkeitszusage), wie groß die Stichprobe mindestens ist und wer strittige Fälle bewertet. Der Maschinenbauer verantwortet die Messung und die Ersatzteilstammdaten, der Partner Prompts, Aktionen, Tests, Fehlerbehandlung und das Monitoring veralteter oder fehlender Daten. Eine Obergrenze in der Verbrauchseinheit pro beantworteter Anfrage, je nach Kaufmodell Flex Credits oder gelöste Fälle, schützt vor einem Agenten, der teurer wird.
 
@@ -98,4 +98,4 @@ Der Tagessatz nach Aufwand bleibt für Discovery und Support bei 1.100 €. Neu 
 4. **Klären Sie, wer bezahlt**: Tokens und Flex Credits in Entwicklung, Sandbox-Tests und Produktion.
 5. **Prüfen Sie Preise alle sechs Monate** gegen gemessene Zahlen. Kleinere, KI-native Teams verändern auch die Kostenbasis, siehe [KI und kleinere Salesforce-Teams](../ki-kleinere-salesforce-teams-delivery/).
 
-Solche kommerziellen Regeln aufzusetzen gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/), auf Kundenseite und ohne Anteil am Umsatz eines Partners. Für die Basislinie aus Punkt 2 geben etwa 20 vergleichbare Stories aus Ihrem Ticketsystem eine erste Richtung, wenn Sie sie nach Art und Größe gruppieren und aktive Arbeit von Wartezeit trennen.
+Solche kommerziellen Regeln aufzusetzen gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/), auf Kundenseite und ohne Anteil am Umsatz eines Partners. Für die Basislinie aus Punkt 2 bieten etwa 20 vergleichbare Stories aus Ihrem Ticketsystem eine erste Orientierung, wenn Sie sie nach Art und Größe gruppieren und aktive Arbeit von Wartezeit trennen.
