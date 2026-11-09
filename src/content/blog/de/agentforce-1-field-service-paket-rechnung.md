@@ -2,6 +2,7 @@
 title: "Agentforce 1 Field Service: Wann rechnet sich das Paket?"
 description: "Agentforce 1 Field Service kostet 650 € pro Nutzer und Monat. Eine Rechnung gegen Field Service Plus mit Add-ons, der Wert der Credits und wann es sich lohnt."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: de
 slug: agentforce-1-field-service-paket-rechnung
 translationKey: agentforce-1-field-service-bundle
@@ -14,6 +15,7 @@ takeaways:
   - "Aus Einzelteilen kostet derselbe Kern 430 Dollar, das Paket also 220 Dollar mehr pro Nutzer und Monat."
   - "1 Million Flex Credits pro Org und Jahr sind zum Listenpreis 5.000 Dollar wert und decken den Aufpreis für etwa zwei Nutzer."
   - "Im Rechenbeispiel mit 50 Nutzern kostet das Paket mindestens 123.000 Dollar mehr im Jahr als dieselben Funktionen aus Einzellizenzen."
+  - "Seit 5. November 2026 verkauft die US-Preisliste stattdessen Field Service Max zu 650 $; die deutsche Liste zeigt noch das Paket."
 faq:
   - q: "Was kostet Agentforce 1 Field Service?"
     a: "Laut Salesforce-Preisliste vom Oktober 2026 kostet Agentforce 1 Field Service 650 € oder 650 Dollar pro Nutzer und Monat bei Jahresvertrag. Enthalten sind alles aus Field Service Plus, KI, weitere Produkte und Credits pro Org."
@@ -27,6 +29,10 @@ draft: false
 ---
 
 Agentforce 1 Field Service für 650 € pro Nutzer und Monat rechnet sich nur in einem engen Fall: wenn das Unternehmen Slack, Tableau Next, Digital Channels und Data Cloud für dieselben Nutzer ohnehin kaufen würde. Aus Einzelteilen kosten Field Service Plus und die Add-ons für Agentforce, Visual Remote Assistant und Appointment Assistant 430 Dollar, das Paket kostet also 220 Dollar mehr pro Nutzer und Monat. Die enthaltenen Credits schließen diese Lücke nicht: 1 Million Flex Credits pro Org und Jahr sind zum Listenpreis 5.000 Dollar wert und decken den Aufpreis für etwa zwei Nutzer. Für Techniker, die nur das KI-Add-on brauchen, sind Einzellizenzen klar günstiger.
+
+```hinweis achtung
+Am 5. November 2026 hat die [US-Preisseite](https://www.salesforce.com/service/field-service-management/pricing/) Agentforce 1 Field Service durch Field Service Max zum selben Preis ersetzt, jetzt mit 2,75 Mio. Flex Credits pro Org und Jahr, Visual Remote Assistant, Asset Service Lifecycle Management und Connected Assets, und Field Service Plus durch Field Service+ Core. Die deutsche Preisseite zeigt am 9. November 2026 noch das alte Modell, auf dem die Rechnung unten beruht. Klären Sie im Angebot, welches Modell für Ihren Vertrag gilt.
+```
 
 ## Was steckt in Agentforce 1 Field Service?
 

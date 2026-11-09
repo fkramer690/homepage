@@ -2,6 +2,7 @@
 title: "Agentforce 1 Field Service: when does the bundle pay off?"
 description: "Agentforce 1 Field Service costs $650 per user and month. A calculation against Field Service Plus with add-ons, the value of its credits and when it pays."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: agentforce-1-field-service-edition-worth-it
 translationKey: agentforce-1-field-service-bundle
@@ -14,6 +15,7 @@ takeaways:
   - "Built from parts, the same core costs $430, so the bundle costs $220 more per user and month."
   - "1 million Flex Credits per org and year are worth $5,000 at list price and cover the premium for about two users."
   - "In the worked example with 50 users, the bundle costs at least $123,000 more a year than the same features from single licenses."
+  - "Since 5 November 2026 the US price list sells Field Service Max at $650 instead; the German list still shows the bundle."
 faq:
   - q: "What does Agentforce 1 Field Service cost?"
     a: "According to the Salesforce price list in October 2026, Agentforce 1 Field Service costs $650 or €650 per user and month on an annual contract. It includes everything in Field Service Plus plus AI, further products and credits per org."
@@ -27,6 +29,10 @@ draft: false
 ---
 
 Agentforce 1 Field Service at $650 per user and month pays off only in a narrow case: when the company would buy Slack, Tableau Next, Digital Channels and Data Cloud for the same users anyway. Built from single parts, Field Service Plus with the Agentforce, Visual Remote Assistant and Appointment Assistant add-ons costs $430, so the bundle costs $220 more per user and month. The included credits do not close that gap: 1 million Flex Credits per org and year are worth $5,000 at list price, which covers the premium for about two users. For technicians who only need the AI add-on, single licenses win clearly.
+
+```hinweis achtung
+On 5 November 2026 the US [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) replaced Agentforce 1 Field Service with Field Service Max at the same $650, now with 2.75 million Flex Credits per org and year, Visual Remote Assistant, Asset Service Lifecycle Management and Connected Assets, and Field Service Plus with Field Service+ Core at $250. The German page still showed the old model on 9 November 2026. The calculation below uses the October price list; the method stays the same, but redo it with the figures in your quote.
+```
 
 ## What is in Agentforce 1 Field Service?
 

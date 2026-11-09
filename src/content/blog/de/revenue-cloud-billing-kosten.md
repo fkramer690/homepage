@@ -2,6 +2,7 @@
 title: "Revenue Cloud Billing Kosten: Was Billing Events bedeuten"
 description: "Wie Revenue Cloud Billing abgerechnet wird: ein Billing Event je 50 Dollar Rechnungsbetrag, kein Übertrag, eine Beispielrechnung und was ins Order Form gehört."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: de
 slug: revenue-cloud-billing-kosten
 translationKey: revenue-cloud-billing-costs-billing-events
@@ -12,13 +13,13 @@ tags: [Revenue Cloud Billing, Billing Events, Lizenzen, Preise, Order Form]
 takeaways:
   - "Laut Rate Sheet vom Februar 2026 wird je 50 Dollar Rechnungsbetrag ein Billing Event verbraucht, also 0,02 Events pro Dollar."
   - "Gezählt wird die Zwischensumme gebuchter Rechnungen ohne Steuer, aber mit Versand. Andere Währungen werden zum Tagesdurchschnittskurs in Dollar umgerechnet."
-  - "Billing Events verfallen zum Vertragsende und werden nicht übertragen. Ein Kontingent, das auf das dritte Jahr ausgelegt ist, verfällt im ersten Jahr teilweise."
+  - "Billing Events verfallen zum Ende der Bestellung und werden nicht übertragen. Prüfen Sie, ob ein Mehrjahresvertrag einen Pool oder Jahrespools hat."
   - "Was über Billing läuft, bestimmt die Kosten: Maschinenrechnungen mit hohen Beträgen verbrauchen weit mehr Events als Abo- und Servicerechnungen."
 faq:
   - q: "Was kostet Revenue Cloud Billing?"
     a: "Salesforce führt Revenue Cloud Billing als Add-on mit 'Request a Quote' und veröffentlicht keinen Preis pro Billing Event. Öffentlich ist der Verbrauch: laut Rate Sheet vom Februar 2026 ein Billing Event je 50 Dollar Rechnungsbetrag."
   - q: "Was ist ein Billing Event in Revenue Cloud Billing?"
-    a: "Ein Billing Event ist die Einheit, in der Salesforce den Verbrauch von Revenue Cloud Billing misst. Das Rate Sheet rechnet 0,02 Billing Events pro Dollar Rechnungsbetrag, also ein Event je angefangene 50 Dollar."
+    a: "Ein Billing Event ist die Einheit, in der Salesforce den Verbrauch von Revenue Cloud Billing misst. Das Rate Sheet rechnet 0,02 Billing Events pro Dollar Rechnungsbetrag, für jeden Dollar oder Teil davon, also vor Rundung ein Event je 50 Dollar."
   - q: "Werden ungenutzte Billing Events ins nächste Jahr übertragen?"
     a: "Nein. Laut Rate Sheet müssen Billing Events bis zum Order End Date aus der Usage-Details-Tabelle des Order Forms verbraucht werden, ein Übertrag ist ausgeschlossen."
   - q: "Zählt die Umsatzsteuer bei den Billing Events mit?"
@@ -48,7 +49,7 @@ Ein Billing Event ist die Einheit, in der Salesforce den Verbrauch von Revenue C
 
 ```kennzahlen
 0,02 | Faktor: Billing Events pro Dollar Rechnungsbetrag
-50 Dollar | Rechnungsbetrag je Billing Event, auch angefangene 50 Dollar
+50 Dollar | Rechnungsbetrag je Billing Event, vor Rundung
 quelle: Revenue Cloud Billing Rate Sheet, Februar 2026
 ```
 
@@ -66,12 +67,12 @@ Die Definitionen im Rate Sheet sind kurz, und jedes Wort zählt:
 Für einen deutschen Hersteller, der in Euro fakturiert, bewegt sich die Zahl der Events also auch mit dem Euro-Dollar-Kurs.
 
 ```hinweis offen
-Drei Fragen beantwortet das Rate Sheet nicht: ob Gutschriften den gezählten Betrag mindern, ob die Rundung auf angefangene 50 Dollar je Rechnung oder auf die Summe gilt, und was passiert, wenn Sie mehr Events verbrauchen als gekauft. Lassen Sie sich alle drei schriftlich beantworten.
+Laut Salesforce-Hilfe zählen die positiven Beträge gebuchter Rechnungspositionen, und das Stornieren einer gebuchten Rechnung gibt die Events nicht zurück. Drei Fragen lassen die Unterlagen offen: ob eine separat gebuchte Gutschrift den gezählten Betrag mindert, wie die Rundung angewendet wird und was passiert, wenn Sie mehr Events verbrauchen als gekauft. Lassen Sie sich alle drei schriftlich beantworten.
 ```
 
 ## Wie schätzen Sie die Kosten?
 
-Die Formel ist einfach: Zwischensumme der Rechnungen pro Jahr in Dollar, geteilt durch 50. Schwierig ist das Rechnungsvolumen.
+Die Formel für eine erste Schätzung ist einfach: positive gebuchte Rechnungsbeträge pro Jahr in Dollar, mal 0,02. Schwierig ist das Rechnungsvolumen.
 
 Rechenbeispiel: Ein Maschinenbauer will Fernüberwachungs-Abos und Wartungsverträge aus Revenue Cloud Billing fakturieren, 18 Millionen Euro im Jahr ohne Steuer. Für die Schätzung nehme ich einen Kurs von 1,15 Dollar je Euro an. Das ist eine Annahme, keine Prognose.
 
@@ -82,7 +83,7 @@ Rechenbeispiel: Ein Maschinenbauer will Fernüberwachungs-Abos und Wartungsvertr
 
 Die zweite Zeile zeigt, warum der Umfang die Kosten bestimmt. Maschinenrechnungen würden die Zahl der Events mehr als versiebenfachen, für Rechnungen, die SAP ohnehin erstellt. Das ist ein Grund, warum ich Maschinenrechnungen in SAP lasse, wie in [Revenue Cloud Billing oder SAP](../revenue-cloud-billing-oder-sap-rechnung/) beschrieben.
 
-Zwei Effekte übersieht man leicht. Die Rechnungsfrequenz spielt kaum eine Rolle: Zwölf Monatsrechnungen über je 1.000 Euro zählen etwa so viel wie eine Jahresrechnung über 12.000 Euro, es sei denn, die Rundung gilt je Rechnung. Das Wachstum spielt eine große Rolle: Wächst das wiederkehrende Geschäft um 20 Prozent im Jahr, braucht das dritte Jahr etwa 44 Prozent mehr Events als das erste.
+Zwei Effekte übersieht man leicht. Die Rechnungsfrequenz spielt wenig Rolle: Zwölf Monatsrechnungen über je 1.000 Euro zählen etwa so viel wie eine Jahresrechnung über 12.000 Euro, es sei denn, die Rundung gilt je Rechnung. Über den Tageskurs der Umrechnung in Dollar kann der Zeitpunkt das Ergebnis aber leicht verschieben. Das Wachstum spielt eine große Rolle: Wächst das wiederkehrende Geschäft um 20 Prozent im Jahr, braucht das dritte Jahr etwa 44 Prozent mehr Events als das erste.
 
 Den Preis pro Event liefert Ihr Angebot, denn Salesforce veröffentlicht ihn nicht. Multiplizieren Sie Ihre Event-Prognose mit diesem Preis und vergleichen Sie das Ergebnis mit den Kosten, denselben Umsatz aus SAP zu fakturieren, einschließlich der Schnittstelle, die Sie dann für Vertragsänderungen bräuchten.
 
@@ -90,7 +91,7 @@ Den Preis pro Event liefert Ihr Angebot, denn Salesforce veröffentlicht ihn nic
 
 Diese Punkte würde ich in die Verhandlung mitnehmen:
 
-1. **Kontingent je Vertragsjahr.** Bitten Sie um eine Staffel, die Ihrer Prognose folgt, statt eines Kontingents, das auf das letzte Jahr ausgelegt ist.
+1. **Kontingent je Vertragsjahr.** Fragen Sie, ob ein Mehrjahresvertrag einen Pool oder Jahreskontingente hat, und bitten Sie um eine Staffel, die Ihrer Prognose folgt.
 2. **Mehrverbrauch.** Preis und Ablauf für zusätzliche Events schriftlich vor der Unterschrift.
 3. **Gutschriften und Rundung.** Klären Sie, ob Gutschriften den gezählten Betrag mindern und ob auf 50 Dollar je Rechnung gerundet wird.
 4. **Wechselkurs.** Das Rate Sheet nutzt den Tagesdurchschnittskurs des Anbieters von Salesforce. Vereinbaren Sie, wie Sie die Umrechnung prüfen können.

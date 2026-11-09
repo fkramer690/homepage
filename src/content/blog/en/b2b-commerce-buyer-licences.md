@@ -2,6 +2,7 @@
 title: "B2B Commerce buyer licenses: who needs which one?"
 description: "Which Salesforce licenses buyers, buyer managers, merchandisers and sales reps need for B2B Commerce, member or login, and which limits to plan for early."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: b2b-commerce-buyer-licences
 translationKey: commerce-buyer-licences
@@ -10,68 +11,69 @@ categories: [b2b-commerce, architecture]
 contactBrief: licences
 tags: [B2B Commerce, licenses, Customer Community Plus, Experience Cloud, dealers]
 takeaways:
-  - "From three login days a month, the member license is cheaper. So login days per buyer decide the bill more than the number of dealers does."
+  - "Plain buyers need only External Apps; buyer managers and buyers who see other buyers or switch accounts need Customer Community Plus."
   - "Buyer licenses are not part of the Commerce editions. The B2B pricing page lists storefronts, Order Management and Data Cloud credits."
-  - "At the Experience Cloud for Manufacturing list price, Customer Community Plus costs $35 per member or $15 per login and month."
+  - "At the Experience Cloud for Manufacturing list price, Customer Community Plus costs $35 per member or $15 per login; members pay off from three days."
   - "Customer Community Plus needs roles. The default is 50,000 portal roles per org, which Salesforce can extend for B2B."
   - "A buyer who orders for many accounts uses the Account Switcher, which slows down beyond 200 accounts and fails at 2,000."
 faq:
   - q: "Which license do buyers need in Salesforce B2B Commerce?"
-    a: "Trailhead names Customer Community Plus for buyers and buyer managers. Buyers get the B2B Commerce User permission, buyer managers B2B Commerce Super User and Delegated External User Administration."
+    a: "According to Salesforce Help, an External Apps license gives buyers the minimum access, as a login license through the Registered Shopper SKU. Buyer managers and buyers who need to see other buyers need Customer Community Plus or higher."
   - q: "Is a member or a login license better for B2B buyers?"
-    a: "It depends on login days per month. At $35 per member and $15 per login, a buyer with up to two login days a month is cheaper on login, from three days on the member license is cheaper. Several logins on one day count once."
+    a: "For Customer Community Plus it depends on login days per month. At $35 per member and $15 per login, a buyer with up to two login days a month is cheaper on login, from three days on the member license is cheaper. Several logins on one day count once."
   - q: "Are buyer licenses included in the B2B Commerce edition?"
-    a: "No. The Growth and Advanced editions are billed as a share of gross merchandise value, and the pricing page lists no buyer licenses. They come on top and belong in the quote as a separate line."
+    a: "The pricing page lists no buyer licenses. Growth is billed as a share of gross merchandise value, and Help names GMV or per-order pricing for Advanced. Ask whether External Apps buyer licenses are included and put every license in the quote as a separate line."
   - q: "Can buyer managers create users for their own company?"
-    a: "Yes. Trailhead gives buyer managers the Delegated External User Administration permission, so they can manage buyers of their company in one or several buyer accounts."
+    a: "Yes, if you assign them Delegated External User Administration, which Trailhead lists for the buyer manager persona. They can then manage buyers of their company in one or several buyer accounts."
 draft: false
 ---
 
-According to Trailhead, buyers and buyer managers in a Salesforce B2B Commerce store need a Customer Community Plus license. Merchandisers who maintain the store need the "B2B and D2C Commerce" license, developers and site builders a full Salesforce license. The pricing page of the Commerce editions, which Salesforce bills as a share of gross merchandise value, lists none of these user licenses. At the Experience Cloud for Manufacturing list price, a buyer costs $35 per member or $15 per login and month. Whether member or login licenses are cheaper depends on how often your dealers actually log in.
+According to Salesforce Help, a plain buyer in a Salesforce B2B Commerce store needs only an External Apps license, or External Apps Login through the Registered Shopper SKU. Buyer managers, and buyers who need to see other buyers or switch between accounts, need Customer Community Plus or higher. Merchandisers need a Salesforce standard or Identity license with the Merchandiser permission set. The pricing page of the Commerce editions lists none of these user licenses. At the Experience Cloud for Manufacturing list price, Customer Community Plus costs $35 per member or $15 per login and month.
 
 ## Which licenses does B2B Commerce need?
 
-Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commerce for B2B", runs the store as a site on Experience Cloud. Everybody who works with the store needs a license, and which one depends on the role. Salesforce's description of personas and permissions names these roles:
+Salesforce B2B Commerce, now renamed "Agentforce Commerce for B2B" although Help and pricing pages still use both names, runs the store as a site on Experience Cloud. Everybody who works with the store needs a license, and which one depends on the role. [Salesforce Help on B2B Commerce licenses](https://help.salesforce.com/s/articleView?id=commerce.comm_b2b_licenses.htm&language=en_US&type=5) and the personas on Trailhead give this picture (checked 9 November 2026):
 
 | Role | What the role does | License | Permissions |
 |---|---|---|---|
-| Buyer | Views and buys products for a company | Customer Community Plus | B2B Commerce User, Flow User |
-| Buyer manager | Approves purchases, manages buyers | Customer Community Plus | B2B Commerce Super User, Manage Account Address, Delegated External User Administration |
-| Merchandiser | Runs catalog, store features and launches | B2B and D2C Commerce | Through the license on the internal user |
-| Developer, front-end builder | Loads product data, builds checkout and pages | Full Salesforce license | Customize Application, Author Apex, Create and Set Up Experiences |
+| Buyer | Views and buys products for a company | External Apps or External Apps Login (Registered Shopper SKU) | B2B Commerce User, Flow User |
+| Buyer who sees other buyers or uses the Account Switcher | Orders for several accounts, sees colleagues' orders | Customer Community Plus or higher | B2B Commerce User |
+| Buyer manager | Manages buyers, carts and addresses | Customer Community Plus or higher | B2B Commerce Super User, Manage Account Address, Delegated External User Administration |
+| Merchandiser | Runs catalog, store features and launches | Salesforce standard or Identity license | Merchandiser or Commerce Admin permission set |
+| Developer, front-end builder | Loads product data, builds checkout and pages | Internal Salesforce license, depending on the task | Customize Application, Author Apex, Create and Set Up Experiences |
 
-The [B2B Commerce pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) lists 6 or 10 storefronts, 20 inventory locations, Order Management, Data Cloud credits, the Merchant Agent and 3 or 5 users each for CRM Analytics and Knowledge. Buyer licenses do not appear there. They come on top of the GMV fee, which I cover in [B2B Commerce pricing: what the GMV model costs](../b2b-commerce-pricing-gmv-model/).
+The [B2B Commerce pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) lists 6 or 10 storefronts, 20 inventory locations, Order Management, Data Cloud credits, the Merchant Agent and 3 or 5 users each for CRM Analytics and Knowledge. Buyer licenses do not appear there; ask whether your edition includes any. Otherwise they come on top of the GMV fee, which I cover in [B2B Commerce pricing: what the GMV model costs](../b2b-commerce-pricing-gmv-model/).
 
-## Buyers and buyer managers need Customer Community Plus
+## Buyer managers need Customer Community Plus, plain buyers do not
 
-Both get Customer Community Plus. According to [Salesforce Help on external user licenses](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5), this license is meant for external users who need reports, dashboards and standard sharing. Partner Community is described there for business-to-business sites that need sales data, such as partner relationship management. Trailhead does not mention Partner Community for the store.
+The dividing line is access to other buyers. According to Help, "B2B Commerce requires a Customer Community Plus or higher license to access other buyers." A dealer's central purchaser who orders for several branches, or a buyer manager who manages colleagues, therefore needs Customer Community Plus. A buyer who only orders for their own account gets by with External Apps. According to [Salesforce Help on external user licenses](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5), this license is meant for external users who need reports, dashboards and standard sharing. Partner Community is described there for business-to-business sites that need sales data, such as partner relationship management. Trailhead does not mention Partner Community for the store.
 
 ```hinweis offen
 If your dealers already have Partner Community licenses for a partner portal, I would ask Salesforce in writing whether these users can buy in the store with the license they have. Two licenses for the same person at the same dealer is the most expensive answer.
 ```
 
-Buyer and buyer manager share the license and differ in their permission set. A buyer manager, according to Trailhead:
+A buyer manager, according to Trailhead:
 
 - manages buyers in one buyer account or across several,
 - reads, creates and edits carts and orders, like a buyer,
 - edits address fields on contact point addresses, which buyers can only read.
 
-With Delegated External User Administration, the dealer's buyer manager onboards new staff without a ticket to your inside sales team. In a rollout this saves more work than most store features, which is why I describe it in [the dealer rollout](../b2b-shop-dealer-rollout/).
+If you assign Delegated External User Administration, the dealer's buyer manager onboards new staff without a ticket to your inside sales team. In a rollout this saves more work than most store features, which is why I describe it in [the dealer rollout](../b2b-shop-dealer-rollout/).
 
-## Member or login license: which is cheaper?
+## Member or login license: which is cheaper for Customer Community Plus?
 
-Help explains the two models like this. A member license is assigned to one person, who can log in as often as they like. For login licenses you buy a number of logins per month, and each login to the site uses one. Several logins by the same person on the same day count once, Salesforce calls this a daily unique login.
+Help explains the two models like this. A member license is assigned to one person, who can log in as often as they like. For login licenses you buy a number of logins per month, and each login to the site uses one. Several logins by the same person on the same day count once, Salesforce calls this a daily unique login. The logins form one monthly pool across all login users, so plan with peaks, not averages.
 
-The [Experience Cloud for Manufacturing page](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) lists these list prices, billed annually:
+The [Experience Cloud for Manufacturing page](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) lists these add-on list prices, billed annually (checked 9 November 2026). For External Apps I found no public list price:
 
 | License | Per member and month | Per login and month |
 |---|---|---|
 | Customer Community Plus | $35 | $15 |
 | Partner Community | $50 | $20 |
 
-The break-even is simple. A buyer with two login days a month costs $30 on login and $35 as a member. From three login days, at $45, the member license is cheaper. Anyone who orders weekly therefore gets a member license, anyone who orders a few times a year a login license.
+The break-even is simple. A buyer with two login days a month costs $30 on login and $35 as a member. From three login days, at $45, the member license is cheaper. As a rule of thumb, a buyer manager who works weekly gets a member license, one who logs in a few times a year a login license.
 
-Worked example: a manufacturer with 250 dealers, each with one buyer manager and two buyers, so 750 users. 150 of them order several times a week and get member licenses: 150 × $35 = $5,250 a month. The other 600 log in once a month on average: 600 logins × $15 = $9,000. Together that is $14,250 a month, or $171,000 a year at list price. With member licenses for all 750 users it would be $26,250 a month, or $315,000 a year.
+Worked example: a manufacturer with 250 dealers, each with one buyer manager and two buyers, so 750 users. The 500 buyers order only for their own account and get External Apps, priced in the quote. The 250 buyer managers need Customer Community Plus: 100 work weekly on member licenses, 100 × $35 = $3,500 a month, the other 150 log in about once a month, 150 logins × $15 = $2,250. Together that is $5,750 a month, or $69,000 a year at list price. Customer Community Plus members for all 750 users would cost $26,250 a month, or $315,000 a year.
 
 ```hinweis achtung
 A login day is any day someone logs in, also to check an order status. If the store is where dealers look up delivery dates, login days rise even when orders do not.
