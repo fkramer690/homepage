@@ -2,6 +2,7 @@
 title: "Community MCP servers for Salesforce: what to check"
 description: "A partner wants a community or gateway MCP server for Salesforce. What to check before approval, and when Salesforce Hosted MCP is the safer route."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: community-mcp-servers-salesforce-risks
 translationKey: community-mcp-servers-risks
@@ -102,7 +103,7 @@ All three needs get met, and no community server reaches the org.
 
 ## Inventory the MCP servers at every partner
 
-1. **Inventory.** Ask every partner which MCP servers are configured in their clients for your orgs, including versions. The DX MCP server deadline is a good occasion, see [the end of the Salesforce DX MCP Server](../salesforce-dx-mcp-server-end-of-life/).
+1. **Inventory.** Ask every partner which MCP servers are configured in their clients for your orgs, including versions. The end of life of the DX MCP Server on 2 November 2026 is a good occasion, see [the end of the Salesforce DX MCP Server](../salesforce-dx-mcp-server-end-of-life/).
 2. **Put the rule in writing.** Hosted or Salesforce-operated servers by default; community servers only after the six checks, in sandboxes, with a pinned version.
 3. **Enforce it where you can.** If you license Claude Code centrally, [managed settings](https://code.claude.com/docs/en/managed-mcp) with `allowedMcpServers` and `allowManagedMcpServersOnly` block every server that is not on your list.
 4. **Review on every update.** A new version is a new approval.

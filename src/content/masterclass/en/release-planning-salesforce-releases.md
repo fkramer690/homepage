@@ -7,6 +7,7 @@ course: devops
 translationKey: devops-08
 chapter: 8
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 short: "Release planning"
 summary: "How to align your release calendar with the three Salesforce releases, release updates and retirements."
 takeaways:
@@ -111,7 +112,7 @@ Retirements are dates on which something stops working. Until Summer '28 these a
 | Date | What ends | Who it hits |
 |---|---|---|
 | 28 October 2026 | `sf org display` no longer prints access tokens, the workaround ends | pipeline scripts that read the token |
-| 2 November 2026 | local Salesforce DX MCP Server reaches end of life according to its README | partners' coding agents |
+| 2 November 2026 | local Salesforce DX MCP Server reached end of life according to its README | partners' coding agents |
 | 1 December 2026 | SOAP login() needs "Use Any API Auth" | integration users |
 | 20 February 2027 | OAuth username-password flow for connected apps | interfaces, data loaders, tools |
 | Summer '27 | SOAP login() in API 31.0 to 64.0; API 31.0 to 40.0 without updates | older interfaces |

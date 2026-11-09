@@ -2,6 +2,7 @@
 title: "KI-nativer Delivery-Prozess für Salesforce in 14 Schritten"
 description: "KI-nativer Delivery-Prozess für Salesforce vom Workshop bis zur Produktion: was der Agent macht, wo Personen an fünf Toren entscheiden."
 pubDate: 2026-10-30
+updatedDate: 2026-11-09
 lang: de
 slug: ki-native-salesforce-delivery-prozess
 translationKey: ai-native-delivery-process
@@ -158,7 +159,7 @@ fazit: Jedes Glied verweist auf das vorige. So bleibt jede Zeile Code belegbar.
 Der Prozess hängt an keinem bestimmten Coding-Agenten. Er braucht vier Verbindungen, Stand Oktober 2026:
 
 - **Jira als gemeinsames Ticketsystem.** Agent und Pipeline laufen nicht in Jira, sie lesen und schreiben nur dieselben Tickets. Der Agent läuft beim Entwickler und greift über den Atlassian Rovo MCP Server auf Jira zu; laut [Atlassian](https://www.atlassian.com/blog/jira/mcp-enhancements) liest er dort auch das Development-Panel mit verknüpften Branches, Pull Requests und Commits. Die Pipeline läuft auf der Git-Plattform und setzt den Ticketstatus nach jedem Lauf selbst, damit niemand ihn von Hand pflegt.
-- **Zugriff auf die Sandboxes.** Über die Salesforce CLI mit den Skills aus [sf-skills](https://github.com/forcedotcom/sf-skills), das [Claude-Code-Plugin von Salesforce](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) oder Hosted MCP Server. Der lokale Salesforce DX MCP Server erreicht laut README am 2. November 2026 sein End of Life; was das für Ihre Partner heißt, steht in [Salesforce DX MCP Server: Ende am 2. November 2026](../salesforce-dx-mcp-server-ende/). Der Agent erreicht jede Org, an der die Salesforce CLI auf seinem Rechner angemeldet ist. Dort sind deshalb nur feste Sandbox-Aliase angemeldet, nie die Produktion.
+- **Zugriff auf die Sandboxes.** Über die Salesforce CLI mit den Skills aus [sf-skills](https://github.com/forcedotcom/sf-skills), das [Claude-Code-Plugin von Salesforce](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) oder Hosted MCP Server. Der lokale Salesforce DX MCP Server hat laut README am 2. November 2026 sein End of Life erreicht; was das für Ihre Partner heißt, steht in [Salesforce DX MCP Server: Ende am 2. November 2026](../salesforce-dx-mcp-server-ende/). Der Agent erreicht jede Org, an der die Salesforce CLI auf seinem Rechner angemeldet ist. Dort sind deshalb nur feste Sandbox-Aliase angemeldet, nie die Produktion.
 - **Eine Git-Pipeline**, die ohne KI validiert und deployt, mit Produktionszugang nur für die Pipeline. Wie ich sie aufsetze, beschreibe ich unter [DevOps und Release Management](../../leistungen/devops-und-release-management/).
 - **Transkription im Tenant des Kunden**, etwa über die Aufzeichnung in Teams. Einwilligung und Betriebsrat behandle ich in [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
 

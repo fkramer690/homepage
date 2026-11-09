@@ -8,15 +8,15 @@ chapter: 3
 short: "MCP and interfaces"
 summary: "Which MCP servers and APIs connect AI agents to Salesforce, who reads which data through them and what the calls will cost."
 takeaways:
-  - "The local Salesforce DX MCP Server (@salesforce/mcp) reaches end of life on 2 November 2026. Inventory your configurations now."
+  - "The local Salesforce DX MCP Server (@salesforce/mcp) reached end of life on 2 November 2026. Inventory your configurations now."
   - "Hosted MCP Servers have been GA for Enterprise Edition and above since 29 April 2026, are off by default and run with the signed-in user's permissions."
   - "Hosted MCP has no service accounts and no machine-to-machine flows. Unattended night-time agents need the Agent API or a classic integration."
   - "The Salesforce docs do not say whether the Einstein Trust Layer applies when Claude reads data through Hosted MCP. The AI vendor contract is what counts."
   - "Agentic MCP and API calls will consume Flex Credits as Headless Platform Interactions. The rate card still lists the rate as TBA."
 articles: [salesforce-dx-mcp-server-end-of-life, mcp-explained-salesforce-it-leads, hosted-mcp-servers-data-access, flex-credits-agentforce-costs]
 faq:
-  - q: "What happens to the Salesforce DX MCP Server on 2 November 2026?"
-    a: "According to the maintainers' notice (issue 46 in the forcedotcom/mcp repository), the local server then gets no more maintenance, support or releases. The npm package is marked deprecated but stays installable. Pin version 0.30.15 and plan the move to skills, the plugin and Hosted MCP."
+  - q: "What happened to the Salesforce DX MCP Server on 2 November 2026?"
+    a: "According to the maintainers' notice (issue 46 in the forcedotcom/mcp repository), the local server has since received no more maintenance, support or releases. npm marks the package as deprecated, but it stays installable. Pin version 0.30.15 and plan the move to skills, the plugin and Hosted MCP."
   - q: "Can an AI agent read all Salesforce data through Hosted MCP?"
     a: "No. Every call runs with the object permissions, field-level security and sharing of the user who authorised the connection. The agent sees exactly what that person sees, and every action is attributed to them in the audit trail."
   - q: "Do MCP calls to Salesforce cost extra?"
@@ -24,7 +24,7 @@ faq:
 draft: false
 ---
 
-MCP (Model Context Protocol) is the standard way AI tools such as Claude, ChatGPT or Cursor work with Salesforce in 2026. The local Salesforce DX MCP Server reaches end of life on 2 November 2026. Salesforce's hosted MCP servers have been GA since April 2026 and always act on behalf of a signed-in user. And agentic calls will soon cost Flex Credits, at a rate Salesforce has not published. My advice: start read-only, grant access per person, and settle the budget line before the rollout.
+MCP (Model Context Protocol) is the standard way AI tools such as Claude, ChatGPT or Cursor work with Salesforce in 2026. The local Salesforce DX MCP Server reached end of life on 2 November 2026. Salesforce's hosted MCP servers have been GA since April 2026 and always act on behalf of a signed-in user. And agentic calls will soon cost Flex Credits, at a rate Salesforce has not published. My advice: start read-only, grant access per person, and settle the budget line before the rollout.
 
 ## What is MCP, and where does it sit in a Salesforce architecture?
 
@@ -40,7 +40,7 @@ Interfaces without MCP still matter: the Agent API, which lets other systems cal
 
 | Interface | Who calls whom | Identity | Status October 2026 |
 |---|---|---|---|
-| Salesforce DX MCP Server, local (`@salesforce/mcp`) | coding agent to org and project | existing sf CLI login, orgs on an allowlist | end of life on 2 November 2026 |
+| Salesforce DX MCP Server, local (`@salesforce/mcp`) | coding agent to org and project | existing sf CLI login, orgs on an allowlist | end of life since 2 November 2026 |
 | Claude Code plugin `salesforce-development` | Claude Code to metadata knowledge, Apex and SOQL language servers | local sf CLI login | released 19 August 2026 |
 | Hosted MCP, sObject servers | external AI to records | signed-in user, OAuth with PKCE | GA since 29 April 2026 |
 | Hosted MCP, custom servers | external AI to flows, Apex, API Catalog APIs, Agentforce agents | signed-in user | documented |
@@ -55,9 +55,9 @@ Sources: [DX MCP Server end-of-life notice](https://github.com/forcedotcom/mcp/i
 
 For a manufacturer three rows are urgent today: the DX MCP Server, because your partner probably uses it; the Hosted MCP Servers, because business teams will ask for Claude or ChatGPT on top of CRM data; and the route to the ERP, because order status, stock and prices live in SAP or proALPHA. Agentforce agents can only be exposed as MCP tools if they were built in the new Agent Script Builder; older agents have to be upgraded first.
 
-## 2 November 2026: what the DX MCP Server end of life means
+## Since 2 November 2026: what the DX MCP Server end of life means
 
-The maintainers' [end-of-life notice](https://github.com/forcedotcom/mcp/issues/46) says the local server `@salesforce/mcp` reaches end of life on 2 November 2026 and will then receive no more maintenance, support or new releases. The npm package will be marked deprecated but stays installable, so pinned setups such as version 0.30.15 keep working.
+The maintainers' [end-of-life notice](https://github.com/forcedotcom/mcp/issues/46) set 2 November 2026 as the end of life for the local server `@salesforce/mcp`. Since then it receives no more maintenance, support or new releases. npm has marked the package as deprecated since that day, but it stays installable, so pinned setups such as version 0.30.15 keep working.
 
 The notice names the open skills library `forcedotcom/sf-skills` as the replacement. Salesforce also published the [Claude Code plugin](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) with about 40 of those skills and three MCP servers (salesforce-api-context, salesforce-metadata-experts, salesforce-lsp), and Hosted MCP for data access. The plugin announcement does not mention the DX MCP end of life. Treating all three as the successors is my reading, not a Salesforce statement.
 
@@ -127,7 +127,7 @@ This is how I would approach it:
 
 | Step | What I would do |
 |---|---|
-| Partner first | Before 2 November, inventory the DX MCP entries, pin 0.30.15 and switch the sandboxes to the plugin and skills. No agent gets a production org. |
+| Partner first | Now inventory the DX MCP entries, pin 0.30.15 and switch the sandboxes to the plugin and skills. No agent gets a production org. |
 | Start read-only | Enable only `sobject-reads`, restrict the External Client App to a dedicated permission set, test in a sandbox first. For serial number lookups, use a Named Query instead of free SOQL. |
 | ERP stays deterministic | Order status and delivery dates from SAP come through a MuleSoft API in the API Catalog, not from a model interpreting tables. The route is described in [Agentforce and SAP order status](../../../blog/agentforce-sap-order-status-mulesoft/). |
 | Estimate volume | Assume 25 people, 20 questions a day, four tool calls per question and 21 working days: that is 42,000 calls a month. If every successful call counts, which is my assumption today, this is the number you multiply by the rate once Salesforce publishes it. |

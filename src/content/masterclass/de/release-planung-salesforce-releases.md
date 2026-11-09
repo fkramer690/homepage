@@ -7,6 +7,7 @@ course: devops
 translationKey: devops-08
 chapter: 8
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 short: "Release-Planung"
 summary: "Wie Sie Ihren Release-Kalender mit den drei Salesforce-Releases, Release Updates und Abschaltungen abstimmen."
 takeaways:
@@ -111,7 +112,7 @@ Abschaltungen sind Termine, an denen etwas aufhört zu funktionieren. Bis Summer
 | Termin | Was endet | Wen es trifft |
 |---|---|---|
 | 28. Oktober 2026 | `sf org display` gibt keine Access Tokens mehr aus, die Übergangslösung endet | Pipeline-Skripte, die das Token lesen |
-| 2. November 2026 | lokaler Salesforce DX MCP Server laut README am Ende seiner Lebensdauer | Coding-Agenten der Partner |
+| 2. November 2026 | lokaler Salesforce DX MCP Server hat laut README das Ende seiner Lebensdauer erreicht | Coding-Agenten der Partner |
 | 1. Dezember 2026 | SOAP login() braucht „Use Any API Auth“ | Integrationsbenutzer |
 | 20. Februar 2027 | OAuth-Username-Password-Flow für Connected Apps | Schnittstellen, Datenlader, Werkzeuge |
 | Summer '27 | SOAP login() in API 31.0 bis 64.0; API 31.0 bis 40.0 ohne Updates | ältere Schnittstellen |
