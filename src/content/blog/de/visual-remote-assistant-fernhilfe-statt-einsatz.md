@@ -26,11 +26,11 @@ faq:
   - q: "Kann ein Techniker vor Ort eine Videositzung mit einem Experten starten?"
     a: "Ja. Ein Techniker kann eine Sitzung am Arbeitsauftrag in der Field-Service-App starten, und die Sitzung hängt an diesem Datensatz. Experten können auch zu einer laufenden Sitzung dazukommen."
   - q: "Wo liegen die Videodaten?"
-    a: "Das Installationshandbuch nennt AWS Nordamerika als Standardregion und AWS Europa als Option. Für Kunden in der EU würde ich bei der Einrichtung die europäische Region wählen Das allein ist noch keine Datenschutzentscheidung: Aufzeichnungen, Bilder, SMS-Einladungen und Unterauftragnehmer gehören mit in die Prüfung. Die Region lässt sich nur ändern, solange das VRA-Konto inaktiv ist."
+    a: "Das Installationshandbuch nennt AWS Nordamerika als Standardregion und AWS Europa als Option. Die Region lässt sich nur ändern, solange das VRA-Konto inaktiv ist. Für Kunden in der EU würde ich bei der Einrichtung die europäische Region wählen. Diese Wahl allein ist noch keine Datenschutzentscheidung: Aufzeichnungen, Bilder, SMS-Einladungen und Unterauftragsverarbeiter gehören ebenfalls in die Prüfung."
 draft: false
 ---
 
-Visual Remote Assistance, also visuelle Fernunterstützung per Video, ersetzt einen Technikereinsatz, wenn der Bediener vor Ort den Fehler mit Anleitung selbst beheben kann: ein falscher Parameter, ein Bedienfehler, ein Reset, ein verschmutzter Sensor. In Salesforce heißt das Werkzeug dafür Visual Remote Assistant. Der Kunde bekommt einen Link per SMS oder E-Mail und öffnet ein Video im mobilen Browser, ohne App und Login, und Ihr Mitarbeiter zeichnet direkt ins Bild. Das Add-on kostet 50 € pro Nutzer und Monat zusätzlich zur Basislizenz und steckt in Agentforce 1 Field Service. Bei mechanischen Schäden spart das Video selten den Einsatz, kann aber den zweiten sparen.
+Visual Remote Assistance, also visuelle Fernunterstützung per Video, ersetzt einen Technikereinsatz, wenn der Bediener vor Ort den Fehler mit Anleitung selbst beheben kann: ein falscher Parameter, ein Bedienfehler, ein Reset, ein verschmutzter Sensor. In Salesforce heißt das Werkzeug dafür Visual Remote Assistant. Der Kunde bekommt einen Link per SMS oder E-Mail und startet damit im mobilen Browser eine Videoverbindung, ohne App und Login. Ihr Mitarbeiter zeichnet direkt ins Bild. Das Add-on kostet 50 € pro Nutzer und Monat zusätzlich zur Basislizenz und steckt in Agentforce 1 Field Service. Bei mechanischen Schäden spart das Video selten den Einsatz, kann aber den zweiten sparen.
 
 ## Was kann Visual Remote Assistant?
 
@@ -44,7 +44,7 @@ Während der Sitzung kann der Mitarbeiter laut [Trailhead](https://trailhead.sal
 - einen Folgetermin einplanen,
 - Barcodes und QR-Codes per Texterkennung (OCR) lesen, etwa um eine Artikelnummer nachzuschlagen.
 
-Die Produktseite nennt dazu die Aufzeichnung zur späteren Auswertung, seit Winter '27 auch [auf Abruf](https://help.salesforce.com/s/articleView?id=release-notes.rn_fieldservice_264_vra_ondemand_recording.htm&language=en_US&type=5), sodass nur wichtige Momente wie der Nachweis einer Installation aufgezeichnet werden, OCR, die passende Knowledge-Artikel vorschlägt, und eine Zufriedenheitsumfrage nach jeder Sitzung. Bildschirmfreigabe am Desktop gibt es ebenfalls.
+Die Produktseite nennt außerdem die Aufzeichnung zur späteren Auswertung. Seit Winter '27 ist sie auch [auf Abruf](https://help.salesforce.com/s/articleView?id=release-notes.rn_fieldservice_264_vra_ondemand_recording.htm&language=en_US&type=5) möglich, sodass der Mitarbeiter nur wichtige Momente wie den Nachweis einer Installation aufzeichnet. Hinzu kommen OCR, die passende Knowledge-Artikel vorschlägt, und eine Zufriedenheitsumfrage nach jeder Sitzung. Bildschirmfreigabe am Desktop gibt es ebenfalls.
 
 Zwei technische Details aus dem [Installations- und Konfigurationshandbuch](https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/vra_installation_configuration_manual.pdf) sind für Maschinenbauer wichtig; prüfen Sie sie am Handbuch Ihrer Paketversion, denn Salesforce unterstützt nur die aktuelle und die zwei vorherigen Versionen. Erstens startet jede Sitzung an einem Salesforce-Datensatz, etwa einem Case oder Arbeitsauftrag, und die Zusammenfassung mit den Bildern kann an diesem Datensatz gespeichert werden; Aufzeichnungen erscheinen nur, wenn die Aufzeichnung in der VRA-Konfiguration eingeschaltet und der Flow zum Abholen aktiv ist. Zweitens kann ein Techniker die Sitzung am Arbeitsauftrag in der Field-Service-App starten. Damit ist der zweite Anwendungsfall abgedeckt: Der Techniker vor Ort holt den Experten aus der Zentrale dazu.
 
@@ -56,9 +56,9 @@ Zwei technische Details aus dem [Installations- und Konfigurationshandbuch](http
 quelle: Salesforce-Produktseite Visual Remote Assistant und Preisseite Field Service, Stand Oktober 2026
 ```
 
-Die Produktseite nennt dieselben Beträge auch in Dollar. Die [Preisseite für Field Service](https://www.salesforce.com/service/field-service-management/pricing/) führt das Add-on nur in Dollar, mit denselben 50 Dollar, und listet Visual Remote Assistant als Bestandteil von Agentforce 1 Field Service. Trailhead nennt Service-Cloud- oder Field-Service-Lizenzen als Voraussetzung, die Lizenzen für Visual Remote Assistant kaufen Sie über den Account Executive.
+Die US-Produktseite nennt dieselben Zahlen in Dollar. Die [Preisseite für Field Service](https://www.salesforce.com/service/field-service-management/pricing/) führt das Add-on nur in Dollar, mit denselben 50 Dollar, und listet Visual Remote Assistant als Bestandteil von Agentforce 1 Field Service. Trailhead nennt Service-Cloud- oder Field-Service-Lizenzen als Voraussetzung, die Lizenzen für Visual Remote Assistant kaufen Sie über den Account Executive.
 
-Lizenziert werden die internen Nutzer, die Sitzungen starten oder führen: Hotline, Remote-Experten, vielleicht erfahrene Techniker. Externe Kunden kommen über den Link dazu und brauchen nichts. Acht Nutzer kosten zum Listenpreis zusätzlich 400 € im Monat oder 4.800 € im Jahr, auf ihre Service-Cloud- oder Field-Service-Lizenzen. Verglichen mit einer einzigen eingesparten Reise ins Ausland ist das wenig. Der eigentliche Aufwand liegt in der Einrichtung, in Netz- und Geräteprüfungen, in den Regeln für Ferndiagnosen und in der Schulung der Hotline.
+Lizenziert werden die internen Nutzer, die Sitzungen starten oder führen: Hotline, Remote-Experten, vielleicht erfahrene Techniker. Externe Kunden kommen über den Link dazu und brauchen nichts. Acht Nutzer kosten zum Listenpreis zusätzlich 400 € im Monat oder 4.800 € im Jahr, zusätzlich zu ihren Service-Cloud- oder Field-Service-Lizenzen. Verglichen mit einer einzigen eingesparten Reise ins Ausland ist das wenig. Der eigentliche Aufwand liegt in der Einrichtung, in Netz- und Geräteprüfungen, in den Regeln für Fehlerbehebungen per Video und in der Schulung der Hotline.
 
 ## Wann ersetzt Visual Remote Assistance den Einsatz?
 
@@ -69,7 +69,7 @@ Aus meiner Sicht passt Video beim Maschinenbauer in vier Situationen:
 - **Exportkunden weit weg.** Ein Einsatz auf einem anderen Kontinent kostet Tage. Sind solche Reisen häufig, kann sich ein Videoanruf, der auch nur jeden fünften Fall löst, schnell rechnen.
 - **Diagnose vor dem Einsatz.** Der Bediener zeigt Typenschild, Fehlermeldung und das beschädigte Teil. Der Techniker hat dann bessere Chancen, nur einmal zu fahren, mit dem richtigen Teil und dem passenden Skill.
 
-Keinen Einsatz ersetzt das Video, wenn die Arbeit Werkzeug, eine Elektrofachkraft oder eine unterschriebene Abnahme vor Ort braucht, oder wenn der Kunde in der Produktion keine Kameras erlaubt. In diesen Fällen verkürzt es den Einsatz. Dort liegt oft der größere Nutzen, denn ein zweiter Einsatz wegen eines fehlenden Teils kostet etwa so viel wie der erste.
+Das Video kann einen Einsatz nicht ersetzen, wenn die Arbeit Werkzeug, eine Elektrofachkraft oder eine unterschriebene Abnahme vor Ort erfordert oder wenn der Kunde in der Produktion keine Kameras erlaubt. In diesen Fällen verkürzt es den Einsatz. Dort liegt oft der größere Nutzen, denn ein zweiter Einsatz wegen eines fehlenden Teils kostet etwa so viel wie der erste.
 
 Visual Remote Assistant passt zur Triage, die ich für die [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/) beschreibe: Erst klären, ob die Maschine steht und was der Vertrag abdeckt, dann entscheiden, ob Video, ein Teileversand oder ein Techniker das Problem löst. Für den Experten hinter dem Video hilft der [Agent zur Fehlersuche](../ki-fehlersuche-handbuecher-aussendienst/) nur, wenn die Handbücher denselben Produktschlüssel tragen wie das Asset.
 
@@ -97,8 +97,8 @@ Nach drei Monaten zeigen zwei Zahlen, ob es funktioniert: der Anteil der Videosi
 
 ```schritte
 Störungen ordnen
-  Die Einsätze des letzten Jahres nach Ursache ordnen und die zählen, die weder Teil noch Werkzeug gebraucht haben, als erste Obergrenze.
-Pilot fahren | 3 Monate
+  Die Störungseinsätze des letzten Jahres nach Ursache ordnen und die zählen, für die weder Ersatzteil noch Werkzeug nötig war. Dieser Anteil ist eine erste Obergrenze.
+Pilotprojekt durchführen | 3 Monate
   Eine Produktlinie, eine Exportregion, zwei oder drei Nutzer.
 Messen und entscheiden
   Lösungsquote und erneute Anrufe auswerten, dann über den Rollout entscheiden.
