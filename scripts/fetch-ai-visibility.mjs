@@ -70,7 +70,8 @@ for (const [provider, preferred] of Object.entries(config.models)) {
 console.error(`models: ${JSON.stringify(models)}`);
 
 const answers = [];
-for (const { lang, prompt } of config.prompts) {
+for (const { lang, prompt, group } of config.prompts) {
+  const tag = group ? { group } : {};
   for (const [provider, model] of Object.entries(models)) {
     try {
       const [r] = await call(`ai_optimization/${provider}/llm_responses/live`, [
@@ -91,6 +92,7 @@ for (const { lang, prompt } of config.prompts) {
         model: r?.model_name ?? model.name,
         lang,
         prompt,
+        ...tag,
         cited: urls.some((u) => hostOf(u)?.endsWith(DOMAIN)),
         mentioned: NAMES.test(text),
         domains: [...new Set(urls.map(hostOf).filter(Boolean))],
@@ -98,7 +100,7 @@ for (const { lang, prompt } of config.prompts) {
       });
     } catch (err) {
       console.error(`${provider} "${prompt}" failed: ${err.message}`);
-      answers.push({ provider, model: model.name, lang, prompt, error: err.message });
+      answers.push({ provider, model: model.name, lang, prompt, ...tag, error: err.message });
     }
   }
 
@@ -114,6 +116,7 @@ for (const { lang, prompt } of config.prompts) {
       model: 'Google AI Mode',
       lang,
       prompt,
+      ...tag,
       cited: urls.some((u) => hostOf(u)?.endsWith(DOMAIN)),
       mentioned: NAMES.test(ai?.markdown ?? ''),
       domains: [...new Set(urls.map(hostOf).filter(Boolean))],
@@ -121,7 +124,7 @@ for (const { lang, prompt } of config.prompts) {
     });
   } catch (err) {
     console.error(`google_ai_mode "${prompt}" failed: ${err.message}`);
-    answers.push({ provider: 'google_ai_mode', model: 'Google AI Mode', lang, prompt, error: err.message });
+    answers.push({ provider: 'google_ai_mode', model: 'Google AI Mode', lang, prompt, ...tag, error: err.message });
   }
 }
 
