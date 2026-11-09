@@ -232,6 +232,14 @@ const schema = {
             <ul class="service-list">{notFit.map((item) => <li>{item}</li>)}</ul>
             <h3>{t.servicePage.alternatives}</h3>
             <p>{alternatives}</p>
+            {!isChange && (
+              <>
+                <h3>{t.servicePage.engagement}</h3>
+                <dl class="svc-terms">
+                  {t.servicePage.engagementRows.map((r) => <><dt>{r.t}</dt><dd>{r.d}</dd></>)}
+                </dl>
+              </>
+            )}
             <h3>{t.servicePage.afterCall}</h3>
             <p>{t.servicePage.afterCallText}</p>
           </section>

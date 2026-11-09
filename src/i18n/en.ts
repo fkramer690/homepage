@@ -402,6 +402,14 @@ export const en = {
     ],
   },
   servicePage: {
+    engagement: 'Typical engagement',
+    engagementRows: [
+      { t: 'Day rate', d: 'EUR 1,200 net for remote work. On site, a flat fee or travel expenses are added.' },
+      { t: 'Scope', d: 'At least 2 days a week, up to 5 at the start of a program, depending on the project situation.' },
+      { t: 'On site', d: 'More often at the start, later usually one block session a month. Mainly in North Rhine-Westphalia, Rhineland-Palatinate and Baden-Württemberg.' },
+      { t: 'Language', d: 'German and English. English is often the project language, so I also work with international teams.' },
+      { t: 'Independence', d: 'I take no commissions from Salesforce, tool vendors or implementation partners.' },
+    ],
     caseLabel: 'Project in focus',
     progress: 'How you see progress',
     note: 'Note',

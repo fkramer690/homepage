@@ -317,6 +317,7 @@
     "page:juliane-referenzen": {"title": "Partnerseite Juliane: Referenzen als Projekt im Fokus (Liste links, Panel mit Logo, Zeitraum, Rolle, Umfang, Aufgaben)", "proposal": 1, "rating": null},
     "page:projekt-im-fokus-leistung": {"title": "Leistungsseiten: Projekt im Fokus (eine Referenz der Startseite als Box unter „Was Sie bekommen“)", "proposal": 1, "rating": null, "note": "Hebel-Plan Punkt 7, 09.11.2026"},
     "page:fortschritt-leistung": {"title": "Leistungsseiten: Woran Sie Fortschritt sehen (nummerierte Messgrößen in weißer Box nach dem Ablauf)", "proposal": 1, "rating": null, "note": "Hebel-Plan Punkt 7, 09.11.2026"},
+    "page:typischer-einsatz": {"title": "Leistungsseiten: Typischer Einsatz (Tagessatz, Umfang, vor Ort, Sprache, Unabhängigkeit als Zeilen in weißer Box)", "proposal": 1, "rating": null, "note": "09.11.2026"},
     "page:referenzen": {"title": "Referenz-Karten (Projekt im Fokus)", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "bitte vorschlag machen", "todo": "docs/backlog.md G11 erledigt 2026-10-30 (Projekt im Fokus: Liste plus Panel mit Foto, Ausgangslage, Rolle, Ergebnis)"},
     "png:agent-context-engine": {"title": "agent-context-engine", "proposal": 3, "rating": 1, "ratedOn": "2026-10-30"},
     "png:agentforce-adoption": {"title": "agentforce-adoption", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},

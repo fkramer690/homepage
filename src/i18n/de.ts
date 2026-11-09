@@ -367,6 +367,14 @@ export const de: Dict = {
     ],
   },
   servicePage: {
+    engagement: 'Typischer Einsatz',
+    engagementRows: [
+      { t: 'Tagessatz', d: '1.200 Euro netto bei Arbeit remote. Vor Ort kommen eine Pauschale oder die Reisekosten dazu.' },
+      { t: 'Umfang', d: 'Mindestens 2 Tage pro Woche, zu Beginn eines Programms auch 5, je nach Projektsituation.' },
+      { t: 'Vor Ort', d: 'Am Anfang häufiger, später meist ein Blocktermin im Monat. Vor allem in NRW, Rheinland-Pfalz und Baden-Württemberg.' },
+      { t: 'Sprache', d: 'Deutsch und Englisch. Englisch ist oft die Projektsprache, deshalb arbeite ich auch mit internationalen Teams.' },
+      { t: 'Unabhängigkeit', d: 'Ich erhalte keine Provisionen von Salesforce, Tool-Anbietern oder Umsetzungspartnern.' },
+    ],
     caseLabel: 'Projekt im Fokus',
     progress: 'Woran Sie Fortschritt sehen',
     note: 'Hinweis',
