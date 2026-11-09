@@ -1,6 +1,6 @@
 ---
 title: "Rückrufaktionen in Salesforce: Servicekampagnen"
-description: "Wie Product Service Campaigns in Salesforce einen Rückruf oder ein Upgrade über Hunderte Maschinen und Händler organisieren und welche Daten Sie dafür brauchen."
+description: "Wie Product Service Campaigns in Salesforce einen Rückruf oder ein Upgrade über Hunderte Maschinen und Händler organisieren und welche Daten Sie brauchen, um die betroffenen Maschinen zu finden."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de
@@ -13,7 +13,7 @@ takeaways:
   - "Product Service Campaigns gibt es seit API 50.0, Posten seit 51.0. Beim Maschinenrückruf bekommt jede Einheit einen Posten mit eigenem Status."
   - "Seit API 65.0 kommen Seriennummernbereiche, Fertigungschargen, Verursacherteile, Partner und unverkaufter Händlerbestand dazu."
   - "Bevorzugte Partner führen die Arbeit je Region aus. Einsatzplanung und Techniker-App brauchen Field-Service-Lizenzen."
-  - "Kampagnen gehören zu Asset Service Lifecycle Management und brauchen das Add-on Industries Field Service. Paket und Preis gehören ins Angebot."
+  - "Kampagnen gehören zu Asset Service Lifecycle Management und brauchen das Add-on Industries Field Service. Lassen Sie sich Paket und Preis im Angebot bestätigen."
 faq:
   - q: "Was ist eine Product Service Campaign in Salesforce?"
     a: "Eine Product Service Campaign beschreibt Tätigkeiten an einer Gruppe von Assets, zum Beispiel einen Rückruf wegen Sicherheitsmängeln oder Produktfehlern, eine Nachbesserung oder ein Upgrade. Beim Maschinenrückruf wird jede betroffene Maschine ein Product Service Campaign Item mit eigenem Status. Die Kampagne gibt es ab API-Version 50.0, den Posten ab 51.0."
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Eine Product Service Campaign in Salesforce bündelt einen Rückruf, eine Nachbesserung oder ein Upgrade für eine festgelegte Gruppe von Assets: Die Kampagne beschreibt die Tätigkeit, beim Maschinenrückruf verfolgt ein Posten pro Einheit den Status. Seit API 65.0 hält sie auch das fehlerhafte Teil, Seriennummernbereiche, Chargen, Partner und Händlerbestand. Ob eine Rückrufaktion über Hunderte Maschinen funktioniert, entscheidet die Rückverfolgbarkeit: Ohne verlässliche Verbindung vom fehlerhaften Teil zur Maschine trifft sie zu viele Maschinen oder übersieht welche. Vor dem Bau würde ich klären, wer eine Kampagne auslöst, wer bezahlt und wie Händler jede Maschine melden.
+Eine Product Service Campaign in Salesforce bündelt einen Rückruf, eine Nachbesserung oder ein Upgrade für eine festgelegte Gruppe von Assets: Die Kampagne beschreibt die Tätigkeit, beim Maschinenrückruf verfolgt ein Posten pro Einheit den Status. Seit API 65.0 hält sie auch das fehlerhafte Teil, Seriennummernbereiche, Chargen, Partner und Händlerbestand. Ob eine Rückrufaktion über Hunderte Maschinen funktioniert, entscheidet die Rückverfolgbarkeit: Ohne verlässliche Verbindung vom fehlerhaften Teil zur Maschine trifft sie zu viele Maschinen oder übersieht welche. Vor der Umsetzung würde ich klären, wer eine Kampagne auslöst, wer bezahlt und wie Händler jede Maschine melden.
 
 ## Was ist eine Product Service Campaign?
 
@@ -62,17 +62,17 @@ Hier scheitern die meisten Rückrufe, in Salesforce wie anderswo. Die Definition
 
 Fehlt eines davon, wählen Sie zwischen zwei schlechten Varianten. Zu breit ausgewählt, bezahlen Sie Arbeit an Maschinen, die in Ordnung sind. Zu eng ausgewählt, bleiben fehlerhafte Maschinen im Feld. Ich würde die Auswahllogik an einem vergangenen Qualitätsfall testen, bevor ich ihr einen echten Rückruf anvertraue.
 
-## Rechenbeispiel: eine fehlerhafte Ventilcharge
+## Praxisbeispiel: eine fehlerhafte Ventilcharge
 
 Angenommen, ein Maschinenbauer erfährt, dass eine Ventilcharge eines Lieferanten fehlerhaft ist. Das Ventil steckt in 1.800 Maschinen zweier Baureihen, verkauft über 70 Händler. 120 dieser Maschinen stehen noch unverkauft beim Händler.
 
-Im Datenmodell wird daraus eine Kampagne und eine Group Definition. Das Causal Item ist das Ventil, Abhilfeart Replace, mit Rücksendung gegen Gutschrift als beabsichtigter Behandlung; der Anspruch gegen den Lieferanten läuft getrennt über den Lieferantenregress. Zwei Definitionen decken die beiden Baureihen ab, jeweils mit Produktionszeitraum, Seriennummernbereich und verknüpften Fertigungschargen. Eine Actionable List wählt die betroffenen Assets über die Chargenverknüpfung aus. Lieferant und 70 Händler sind zu informierende Group Definition Partner, die ausführenden Händler bevorzugte Partner für ihre Region. Die 120 unverkauften Maschinen erscheinen als Partner Inventory mit ihrer Menge; Verkaufssperre und Erledigungsnachweis pro Maschine müssen Sie zusätzlich aufsetzen, damit sie repariert werden, bevor sie beim Kunden ankommen.
+Im Datenmodell wird daraus eine Kampagne und eine Group Definition. Das Causal Item ist das Ventil. Als Abhilfeart ist Replace hinterlegt, als vorgesehene Behandlung die Rücksendung gegen Gutschrift; der Anspruch gegen den Lieferanten läuft getrennt über den Lieferantenregress. Zwei Definitionen decken die beiden Baureihen ab, jeweils mit Produktionszeitraum, Seriennummernbereich und verknüpften Fertigungschargen. Eine Actionable List wählt die betroffenen Assets über die Chargenverknüpfung aus. Lieferant und 70 Händler sind zu informierende Group Definition Partner, die ausführenden Händler bevorzugte Partner für ihre Region. Die 120 unverkauften Maschinen werden im Definition Partner Inventory mit der entsprechenden Menge erfasst; Verkaufssperre und Erledigungsnachweis pro Maschine müssen Sie zusätzlich aufsetzen, damit sie repariert werden, bevor sie beim Kunden ankommen.
 
 1.680 Maschinen bei Endkunden werden zu Kampagnenposten. Die Händler kontaktieren ihre Kunden, vereinbaren den Termin, tauschen das Ventil und melden jede Maschine als erledigt. Ist jeder Arbeitsauftrag mit dem ausführenden Händler verknüpft, sieht das Qualitätsteam pro Posten und pro Händler, wie weit die Kampagne ist. Alle Zahlen sind Annahmen, die das Vorgehen zeigen.
 
 ## Wer führt die Arbeit aus?
 
-Meist Händler und Servicepartner, manchmal eigene Techniker des Herstellers. Die Lizenzen teilen sich nach Rolle: Die Kampagne selbst braucht das Add-on für Asset Service Lifecycle Management, Arbeitsaufträge hängen am Basisprodukt, Disposition, Einsatzplanung und Techniker-App brauchen Field-Service-Lizenzen für Disponenten und Techniker. Wie Partnertechniker darin arbeiten, beschreiben der Beitrag zu [Servicepartnern in Field Service](../salesforce-field-service-servicepartner/) und das [Kapitel zu Assets und Teilen der Field-Service-Masterclass](../../masterclass/field-service/field-service-assets-wartung-teile/).
+Meist Händler und Servicepartner, manchmal eigene Techniker des Herstellers. Die Lizenzen teilen sich nach Rolle: Die Kampagne selbst braucht das Add-on für Asset Service Lifecycle Management, Ob Arbeitsaufträge verfügbar sind, hängt vom Basisprodukt ab; Disposition, Einsatzplanung und Techniker-App brauchen Field-Service-Lizenzen für Disponenten und Techniker. Wie Partnertechniker darin arbeiten, beschreiben der Beitrag zu [Servicepartnern in Field Service](../salesforce-field-service-servicepartner/) und das [Kapitel zu Assets und Teilen der Field-Service-Masterclass](../../masterclass/field-service/field-service-assets-wartung-teile/).
 
 Händler ohne Field Service können über ein Experience-Cloud-Portal melden, aber externe Lizenz, Objektrechte und Ablauf müssen Sie eigens planen und bestätigen lassen. Lizenzen für das Portal behandelt der Beitrag zum [Kundenportal der Manufacturing Cloud](../manufacturing-cloud-kundenportal/). Egal welcher Weg: Die Erledigung muss pro Maschine gemeldet werden, nicht als Zahl pro Händler, sonst ist der Kampagnenstatus in Salesforce Fiktion.
 
@@ -97,7 +97,7 @@ Für die Auswahl der Maschinen gilt in beiden Fällen dasselbe: Ohne saubere Ser
 
 ## Auslöser, Kosten und Meldeweg schriftlich klären
 
-Diese Fragen würde ich vor dem Bau schriftlich beantworten:
+Diese Fragen würde ich vor der Umsetzung schriftlich beantworten:
 
 1. **Wer löst eine Kampagne aus?** Meist die Qualität, bei Upgrades manchmal das Produktmanagement. Eine Rolle legt an, eine andere gibt frei.
 2. **Wer zahlt?** Teile, Arbeitszeit des Händlers, Anfahrt. Das Causal Item hält die beabsichtigte Gutschrift fest, der Lieferantenregress ist ein eigener Ablauf; ob Händler ihre Arbeitszeit über Garantieanträge oder pauschal vergütet bekommen, entscheiden Sie.
