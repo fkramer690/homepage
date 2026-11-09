@@ -9,7 +9,7 @@ topic: field-service
 categories: [field-service]
 tags: [field service, mobile, manufacturing, service, voice]
 takeaways:
-  - "According to Salesforce research, field workers spend about 18 percent of their time on admin, and 43 percent of organisations still use paper logs."
+  - "According to Salesforce research, field workers spend about 18 percent of their time on admin, and 43 percent of organizations still use paper logs."
   - "For manufacturers, complete service data counts: inspection results, measured values and parts reach the back office and the ERP without retyping."
   - "A quickly digitised paper form only helps with a sound data model behind it. Otherwise a bad form simply becomes digital."
   - "Voice input processes employees' speech, so it needs data protection and, where one exists, the works council on board early."
@@ -17,7 +17,7 @@ faq:
   - q: "What is new in the Salesforce Field Service mobile app?"
     a: "Salesforce announced a guided experience with step-by-step guidance that adapts to the job, a headless setup that creates digital forms from paper templates or existing mobile flows, and voice to form, which fills form fields from spoken input."
   - q: "When are the new Field Service mobile features available?"
-    a: "The announcement from 20 October 2026 does not state availability, editions or licences. Check the release notes and your account team before you plan a rollout."
+    a: "The announcement from 20 October 2026 does not state availability, editions or licenses. Check the release notes and your account team before you plan a rollout."
   - q: "How do manufacturers benefit from guided workflows in field service?"
     a: "Technicians get the right checks and questions for the actual situation, documentation happens during the job, and the back office receives complete, structured data for invoicing, warranty and quality analysis."
   - q: "What should be considered before using voice input for technicians?"
@@ -38,13 +38,13 @@ Salesforce backs this with its own research:
 
 ```kennzahlen
 18% | of field workers' time goes into admin by their own estimate, more than seven hours a week
-43% | of the organisations surveyed still use paper logs in the field
+43% | of the organizations surveyed still use paper logs in the field
 16% | say their field and back-office technology work together on one platform
 source: Salesforce research, cited in the blog post on guided mobile work of 20 October 2026
 ```
 
 ```hinweis offen
-The announcement shows demos, but does not state availability, editions or licences. Before planning a rollout, check the release notes and talk to your account team.
+The announcement shows demos, but does not state availability, editions or licenses. Before planning a rollout, check the release notes and talk to your account team.
 ```
 
 ## For manufacturers, complete service data is what counts
@@ -69,11 +69,11 @@ Guided workflows make the biggest difference where jobs vary and mistakes are ex
 - **Complex repairs**, where the scope changes on site and additional questions have to be documented, for example about safety or customer approval for extra work.
 - **New or less experienced technicians**, who benefit from guidance that experienced colleagues carry in their heads.
 
-The prerequisite is that the logic behind the guidance is well defined. Someone has to decide which steps apply to which asset, which values are mandatory and which results trigger follow-up actions. That is process and data work, and it belongs to the service organisation, not only to IT.
+The prerequisite is that the logic behind the guidance is well defined. Someone has to decide which steps apply to which asset, which values are mandatory and which results trigger follow-up actions. That is process and data work, and it belongs to the service organization, not only to IT.
 
 ## Quick digitising keeps the flaws of the paper form
 
-The headless setup promises to turn a paper form into a digital one in very little time. That is useful, because many service organisations have dozens of protocols and checklists that never made it into the system.
+The headless setup promises to turn a paper form into a digital one in very little time. That is useful, because many service organizations have dozens of protocols and checklists that never made it into the system.
 
 But a fast digital copy keeps every flaw of the paper form. Typical problems I would check first:
 
@@ -100,13 +100,13 @@ A pragmatic order for a manufacturer with field service:
 
 ```schritte
 Confirm availability
-  Confirm availability and licences for your org and editions.
+  Confirm availability and licenses for your org and editions.
 Pick one job type
   High volume and a clear protocol, for example annual maintenance of a common machine type.
 Clean up the data model
   For this job type: asset data, mandatory values, fault codes, link to spare parts.
 Build the guided workflow
-  Build it with the service organisation and test it with technicians from different experience levels.
+  Build it with the service organization and test it with technicians from different experience levels.
 Pilot voice input separately
   Only after data protection and the works council have agreed.
 Measure the effect

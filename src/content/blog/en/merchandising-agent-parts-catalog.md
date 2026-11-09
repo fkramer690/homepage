@@ -7,7 +7,7 @@ slug: merchandising-agent-parts-catalog
 translationKey: commerce-merchandising-agent
 topic: commerce
 categories: [b2b-commerce, ai]
-tags: [B2B Commerce, Merchandising Agent, Agentforce, search, spare parts, catalogue]
+tags: [B2B Commerce, Merchandising Agent, Agentforce, search, spare parts, catalog]
 takeaways:
   - "Both B2B Commerce editions, Growth and Advanced, list Merchant Agent under Agentforce on the Salesforce pricing page; no separate price is published."
   - "The Merchandising Agent for B2B is dated August 2026 and boosts or buries products in search, creates new products and manages buyer accounts in conversation."
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-The Merchandising Agent in Salesforce B2B Commerce does back office work in conversation: it boosts or buries products in search, creates products and manages buyer accounts, and its merchandising skills summarise order value and conversion and draft promotions. For a manufacturer's parts catalogue the useful part is search ranking: superseded parts down, current kits and wear parts up. Product master data stays in the ERP or PIM, and I would have every change the agent makes reviewed. Merchant Agent is listed in both editions; Salesforce dates the B2B Merchandising Agent to August 2026.
+The Merchandising Agent in Salesforce B2B Commerce does back office work in conversation: it boosts or buries products in search, creates products and manages buyer accounts, and its merchandising skills summarise order value and conversion and draft promotions. For a manufacturer's parts catalog the useful part is search ranking: superseded parts down, current kits and wear parts up. Product master data stays in the ERP or PIM, and I would have every change the agent makes reviewed. Merchant Agent is listed in both editions; Salesforce dates the B2B Merchandising Agent to August 2026.
 
 ## What is the Merchandising Agent?
 
@@ -42,15 +42,15 @@ Salesforce uses three names here, and they appear on different pages:
 Salesforce does not explain on these pages how the three relate in licensing. I would ask the account team in writing which skills the included Merchant Agent covers in your contract.
 ```
 
-## What can it do for a parts catalogue?
+## What can it do for a parts catalog?
 
-A parts catalogue is a store where search decides almost everything. Dealers type a part number, an old number or a short description, and they expect the current part at the top. Three of the agent's jobs fit this well.
+A parts catalog is a store where search decides almost everything. Dealers type a part number, an old number or a short description, and they expect the current part at the top. Three of the agent's jobs fit this well.
 
 **Boost and bury.** Boost and bury rules raise or lower products in search and category results. Salesforce's [July 2026 post on B2B Commerce](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) names the examples: high margin, surplus or promoted products up, low stock or end of life items down. For spare parts this means superseded numbers down, the successor part and complete repair kits up. Today a merchandiser sets these rules by hand; with the agent, a request like "bury all filters marked end of life" becomes a rule.
 
 **New products.** The agent can create products. That suits items that exist only in the store, such as a bundle of wear parts for a service interval. Parts that come from the ERP should keep arriving through the interface.
 
-**Buyer accounts.** The agent can manage buyer accounts. For a manufacturer that means requests like "add the new branch of dealer X as a buyer account". Which buyer group the account lands in decides what it sees and what it pays, so I would treat this skill with the most care. How buyer groups and entitlements are structured is the topic of the chapter [Catalogue, search, entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/).
+**Buyer accounts.** The agent can manage buyer accounts. For a manufacturer that means requests like "add the new branch of dealer X as a buyer account". Which buyer group the account lands in decides what it sees and what it pays, so I would treat this skill with the most care. How buyer groups and entitlements are structured is the topic of the chapter [Catalog, search, entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/).
 
 ## Summarise KPIs, draft promotions
 
@@ -99,9 +99,9 @@ Assume a manufacturer of compressors runs a B2B store with 60,000 spare parts fo
 
 With the agent, the merchandiser asks after each ERP update: "bury every part whose sales status is superseded and boost its successor". The agent proposes the rules, the merchandiser checks a sample and releases them. Once a month the merchandiser asks for the zero result searches of the last month and passes missing old numbers to the PIM team as synonyms or attributes. The search side of this is covered in [B2B Commerce search: finding parts by part number](../b2b-commerce-search-part-numbers/).
 
-## Clarify the licence and included skills
+## Clarify the license and included skills
 
-1. **Clarify the licence.** Ask which skills the included Merchant Agent covers and how usage is counted.
+1. **Clarify the license.** Ask which skills the included Merchant Agent covers and how usage is counted.
 2. **Fix the data first.** A clean sales status and successor part in the ERP are what make good boost and bury requests possible.
 3. **Start with search ranking.** It is reversible, stays within the store and shows results in zero result searches quickly.
 4. **Set review rules.** Promotions and buyer accounts only with a named approver.

@@ -43,7 +43,7 @@ For a machine builder the chain looks like this:
 5. **The agent** gets the topic and its actions in Agent Builder.
 
 ```hinweis achtung
-Two prerequisites are easy to miss: a trusted connection between the Anypoint organisation and a Salesforce org, with Agentforce enabled for Anypoint Platform, and API Catalog enabled in that org. If MuleSoft and Salesforce contracts sit with different departments, sort this out before the first sprint.
+Two prerequisites are easy to miss: a trusted connection between the Anypoint organization and a Salesforce org, with Agentforce enabled for Anypoint Platform, and API Catalog enabled in that org. If MuleSoft and Salesforce contracts sit with different departments, sort this out before the first sprint.
 ```
 
 I have not found an official Salesforce reference architecture for Agentforce with S/4HANA, only this generic MuleSoft pattern. So your partner's design is the architecture, and someone on your side should review it.

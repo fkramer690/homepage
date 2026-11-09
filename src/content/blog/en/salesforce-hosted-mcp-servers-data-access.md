@@ -43,7 +43,7 @@ The access model is set out in the [security best practices](https://developer.s
 
 ```vertiefung For admins
 title: Which scopes does the AI client request?
-The [official Claude setup](https://developer.salesforce.com/blogs/2026/05/connect-claude-with-salesforce-hosted-mcp-servers) requests the scopes `refresh_token, offline_access`, labelled "Perform requests at any time". After one login the client keeps working until the token is revoked or expires, so the refresh token policy matters.
+The [official Claude setup](https://developer.salesforce.com/blogs/2026/05/connect-claude-with-salesforce-hosted-mcp-servers) requests the scopes `refresh_token, offline_access`, labeled "Perform requests at any time". After one login the client keeps working until the token is revoked or expires, so the refresh token policy matters.
 
 On the positive side, the `mcp_api` scope gives access to MCP "but not our existing REST APIs", according to the GA post. A token stolen from an MCP client opens less than a classic API token.
 ```
@@ -93,7 +93,7 @@ Two statements need care. The [Claudeforce release](https://www.salesforce.com/a
 Ask Salesforce and Anthropic which contract backs the sentence "not retained by the model provider" from the AIforce announcement for your org.
 ```
 
-Until then your AI contract governs the data. For Claude Code, Anthropic's [data usage page](https://code.claude.com/docs/en/data-usage) says commercial prompts are not used for training, standard retention is 30 days, and zero data retention is enabled per organisation for eligible Enterprise accounts. These terms go to your data protection officer, and to the works council where employee data is involved, see [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
+Until then your AI contract governs the data. For Claude Code, Anthropic's [data usage page](https://code.claude.com/docs/en/data-usage) says commercial prompts are not used for training, standard retention is 30 days, and zero data retention is enabled per organization for eligible Enterprise accounts. These terms go to your data protection officer, and to the works council where employee data is involved, see [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
 
 ## Example: three requests at a machine builder
 
@@ -105,7 +105,7 @@ Assume a machine builder with Sales Cloud, Service Cloud, SAP, a dealer network 
 
 **The implementation partner.** A developer asks for `sobject-all` in production to merge duplicate assets with Claude. Decision: no. The calls would run under his production user, and a bulk change belongs in a reviewed data load. He gets `sobject-reads` in a sandbox to analyse the duplicates.
 
-Two of three go ahead, both narrower than asked. In my judgement that is the normal outcome of an access review.
+Two of three go ahead, both narrower than asked. In my judgment that is the normal outcome of an access review.
 
 ## Decide who may connect before the first connection
 

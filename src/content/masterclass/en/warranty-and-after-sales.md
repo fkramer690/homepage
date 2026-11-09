@@ -1,6 +1,6 @@
 ---
 title: "Warranty and after-sales in Manufacturing Cloud"
-description: "Warranty claims, recalls and the installed base in Manufacturing Cloud: what the service features do, who needs a licence and where Field Service takes over."
+description: "Warranty claims, recalls and the installed base in Manufacturing Cloud: what the service features do, who needs a license and where Field Service takes over."
 lang: en
 slug: warranty-and-after-sales
 course: manufacturing-cloud
@@ -19,14 +19,14 @@ articles: [manufacturing-cloud-service-vs-service-cloud, manufacturing-cloud-ins
 faq:
   - q: "What does Manufacturing Cloud for Service add to Service Cloud?"
     a: "The pricing page lists warranty lifecycle management, the Asset Service Console, the Service Console for Manufacturing and pre-work estimation, plus the manufacturing data model. Trailhead also lists product service campaigns. Cases, entitlements and knowledge come from Service Cloud."
-  - q: "Does every service user need a Manufacturing Cloud licence?"
+  - q: "Does every service user need a Manufacturing Cloud license?"
     a: "No. I would license by role: warranty adjudicators and the people who run recalls on Manufacturing Cloud, first-level agents who only handle cases on Service Cloud. Get the mix and the read access to warranty records confirmed in writing."
   - q: "What does the Warranty Claims Adjudication Agent need before it runs?"
-    a: "Assets with serial numbers and warranty start dates in Salesforce, warranty terms maintained as rules, an agreed threshold above which a person approves, and a dealer portal whose free text is treated as untrusted input. Salesforce has not published a licence or setup guide in the sources I could open."
+    a: "Assets with serial numbers and warranty start dates in Salesforce, warranty terms maintained as rules, an agreed threshold above which a person approves, and a dealer portal whose free text is treated as untrusted input. Salesforce has not published a license or setup guide in the sources I could open."
   - q: "Are product service campaigns part of Manufacturing Cloud?"
     a: "Trailhead lists them among the Manufacturing Cloud service capabilities, but the pricing page does not mention them. Ask Salesforce in writing which edition includes them before you plan a recall process on them."
-  - q: "Do field technicians need Manufacturing Cloud licences?"
-    a: "No. Technicians who work in the Field Service mobile app need Field Service licences. According to the Field Service pricing page, Field Service also requires at least one Service Cloud user licence in the org."
+  - q: "Do field technicians need Manufacturing Cloud licenses?"
+    a: "No. Technicians who work in the Field Service mobile app need Field Service licenses. According to the Field Service pricing page, Field Service also requires at least one Service Cloud user license in the org."
 draft: false
 ---
 
@@ -41,7 +41,7 @@ Two footnotes on the Manufacturing Cloud pricing page contradict each other: one
 The premium buys, according to the pricing page, Warranty Lifecycle Management, the Asset Service Console, the Service Console for Manufacturing and Pre-Work Estimation. The [Trailhead overview](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) adds product service campaigns, which the pricing page does not name. Service Cloud alone already covers cases, entitlements, knowledge and standard assets with serial numbers.
 
 ```hinweis tipp
-My rule: license by role. Warranty adjudicators and the quality team that runs recalls work on Manufacturing Cloud, a first-level hotline that opens cases and answers from knowledge stays on Service Cloud. One point belongs in the contract: which warranty records a Service Cloud user may read. How I frame the licence mix as a make-or-buy question is described under [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/), and the scope of the whole industry cloud is in [chapter 1](../scope-and-business-case/).
+My rule: license by role. Warranty adjudicators and the quality team that runs recalls work on Manufacturing Cloud, a first-level hotline that opens cases and answers from knowledge stays on Service Cloud. One point belongs in the contract: which warranty records a Service Cloud user may read. How I frame the license mix as a make-or-buy question is described under [make-or-buy and license forecasts](../../../services/make-or-buy-licences/), and the scope of the whole industry cloud is in [chapter 1](../scope-and-business-case/).
 ```
 
 ## After-sales starts with the installed base
@@ -78,11 +78,11 @@ Approved claim ..Recovery claim..> Supplier
 
 The dealer submits the claim in the partner portal with machine, fault, causal part and costs per item. The rules check warranty period, usage limit and covered part. For a purchased part, a supplier recovery claim goes back to the supplier, and finance books the credit note in the ERP.
 
-The credit note is easy to leave out of the plan. Without it the dealer sees an approved claim in the portal and is still waiting for the money. The objects, the supplier recovery and the portal licences for dealers are covered in [warranty claims from dealers](../../../blog/warranty-claims-dealers-salesforce/). Which portal licence dealers need was the topic of [chapter 3](../dealer-and-partner-channel/).
+The credit note is easy to leave out of the plan. Without it the dealer sees an approved claim in the portal and is still waiting for the money. The objects, the supplier recovery and the portal licenses for dealers are covered in [warranty claims from dealers](../../../blog/warranty-claims-dealers-salesforce/). Which portal license dealers need was the topic of [chapter 3](../dealer-and-partner-channel/).
 
 ### What does the adjudication agent add?
 
-Winter '27, [generally available since 12 October 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), brings a Warranty Claims Adjudication Agent. The [Manufacturing Cloud product page](https://www.salesforce.com/manufacturing/cloud/) describes it in one sentence: it "validates coverage and flags potential fraud". In the sources I could open, Salesforce has not published its licence, its fraud signals or a setup guide.
+Winter '27, [generally available since 12 October 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), brings a Warranty Claims Adjudication Agent. The [Manufacturing Cloud product page](https://www.salesforce.com/manufacturing/cloud/) describes it in one sentence: it "validates coverage and flags potential fraud". In the sources I could open, Salesforce has not published its license, its fraud signals or a setup guide.
 
 I would let rules decide coverage and let the agent work where rules are weak: reading the dealer's free-text fault description, comparing it with fault code and parts, spotting a serial number that came in twice, and drafting a request for missing data. Amounts above an agreed limit, every fraud flag, goodwill and claims with missing asset data go to a person. What to prepare, including a test set and the Flex Credits per claim, is in [the Warranty Claims Adjudication Agent](../../../blog/warranty-claims-adjudication-agent/). The wider agent picture for manufacturers is in the AI masterclass chapter [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/).
 
@@ -120,14 +120,14 @@ At the customer's door. Manufacturing Cloud settles whether damage is covered, w
 | Work orders, appointments, maintenance plans, van stock | Field Service |
 | Telemetry and asset health | Connected Assets add-on |
 
-Field technicians need Field Service licences in either case. The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) also requires "at least one (1) Service Cloud user license" and forbids Dispatcher and Technician licences for case management. Two add-ons appear here often: according to the [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/), Connected Assets costs $15,000 per org and month and Asset Service Lifecycle Management $75 per user and month, the latter with Field Service editions. Neither is needed for a clean installed base; whether telemetry pays off is covered in [predictive maintenance in Salesforce](../../../blog/predictive-maintenance-salesforce-data-needed/).
+Field technicians need Field Service licenses in either case. The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) also requires "at least one (1) Service Cloud user license" and forbids Dispatcher and Technician licenses for case management. Two add-ons appear here often: according to the [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/), Connected Assets costs $15,000 per org and month and Asset Service Lifecycle Management $75 per user and month, the latter with Field Service editions. Neither is needed for a clean installed base; whether telemetry pays off is covered in [predictive maintenance in Salesforce](../../../blog/predictive-maintenance-salesforce-data-needed/).
 
 The asset hierarchy, maintenance plans and service partners are the topic of the Field Service masterclass chapter [assets, maintenance, parts and partners](../../field-service/field-service-assets-maintenance-parts/). If you introduce both clouds, design the asset model once for both. Drawing that line is part of my [Salesforce architecture](../../../services/salesforce-architecture/) work.
 
 ## In which order would I introduce after-sales?
 
 1. **Count the gaps.** Take last year's warranty claims and check how many serial numbers exist as assets with owner and start date.
-2. **Settle the licence mix by role** and get read access for Service Cloud users in writing.
+2. **Settle the license mix by role** and get read access for Service Cloud users in writing.
 3. **Fix registration.** Make the dealer's handover registration a required step in the portal.
 4. **Run rules-based adjudication** and the ERP credit note before any agent.
 5. **Test a campaign** against one past quality case before a real recall depends on it.

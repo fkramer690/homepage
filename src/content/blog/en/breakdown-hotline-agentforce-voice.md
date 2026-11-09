@@ -19,7 +19,7 @@ faq:
   - q: "Can an Agentforce Voice agent book a field service technician on its own?"
     a: "Yes, Salesforce lists Autonomous Scheduling with Agentforce Voice in the Winter '27 release highlights. For breakdowns I would let it book only when the machine still runs, the entitlement covers the visit and the fault is classified."
   - q: "What does an Agentforce Voice call cost?"
-    a: "A voice action costs 30 Flex Credits, so a call with four actions costs 120 credits, $0.60 at US list price. Customers who bought Agentforce Voice Minutes pay 60 credits per minute instead. Telephony and the reps' voice licences come on top."
+    a: "A voice action costs 30 Flex Credits, so a call with four actions costs 120 credits, $0.60 at US list price. Customers who bought Agentforce Voice Minutes pay 60 credits per minute instead. Telephony and the reps' voice licenses come on top."
   - q: "What happens when the voice agent hands a call to a person?"
     a: "According to Salesforce, the native Salesforce Voice setup keeps the full transcript and session context across transfers, so the dispatcher sees what the caller already said. Escalation in Agent Script needs an active Omni-Channel connection."
   - q: "Should the voice agent read serial numbers from the caller?"
@@ -47,7 +47,7 @@ The caller is usually a maintenance technician standing next to a stopped line i
 
 - **Which machine.** Serial numbers are long and alphanumeric. The Salesforce developer blog warns that speech to text can mishear technical terms, and Salesforce's [Agentforce Voice guide](https://www.salesforce.com/agentforce/voice/agentforce-voice-guide-full/) advises checking in pre-launch testing how the agent pronounces product identifiers and numerical codes. I would identify the machine through caller number, contact, account and installed assets, and ask for the serial number only when the account has several machines of that type.
 - **Down or running.** "It makes a strange noise and we stopped it" can mean either. The LLM should not infer this from a story. The agent asks a closed question, "Is the machine standing still right now?", and stores the answer in a variable.
-- **What the contract promises.** The response time sits on the entitlement record. According to [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-salesforce-entitlements-and-milestones-in-service-cloud/), entitlements can be related to accounts, assets, cases and service contracts, and milestones count down within business hours. How to model this is in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/).
+- **What the contract promises.** The response time sits on the entitlement record. According to [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-salesforce-entitlements-and-milestones-in-service-cloud/), entitlements can be related to accounts, assets, cases and service contracts, and milestones count down within business hours. How to model this is in [modeling maintenance contracts](../salesforce-field-service-maintenance-contracts/).
 - **Safety.** Injury, fire, a leaking medium: the agent transfers at once and asks nothing except a callback number.
 
 ## How should triage decide what the agent books itself?
@@ -115,11 +115,11 @@ The credits are small either way. The gain is at night: the on-call engineer get
 
 ## First step: four weeks of night-time triage only
 
-Where this sits among the other Field Service agents is in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/), the licence side in [make-or-buy and licence planning](../../services/make-or-buy-licences/). I would introduce the voice agent itself in three stages:
+Where this sits among the other Field Service agents is in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/), the license side in [make-or-buy and license planning](../../services/make-or-buy-licences/). I would introduce the voice agent itself in three stages:
 
 ```schritte
 Nights, triage only | 4 weeks
-  The agent owns intake and triage outside business hours, with no booking. Compare its classification with the on-call engineer's judgement.
+  The agent owns intake and triage outside business hours, with no booking. Compare its classification with the on-call engineer's judgment.
 Booking when restricted
   Switch on booking for the restricted-but-running row.
 Booking in daytime

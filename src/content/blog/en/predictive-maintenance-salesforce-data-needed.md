@@ -45,9 +45,9 @@ The manufacturing announcement avoids the term predictive maintenance and speaks
 
 ## When is the service history enough for failure prediction?
 
-Salesforce describes Asset Service Prediction as a model that can "identify common issues based on current asset data and service history of similar assets". Its own example: a cooling fan failure on a certain generator model is often followed by fuel system service, so a technician handles both in one visit. That example only works because past work orders say which component failed. I check six points before talking about licences:
+Salesforce describes Asset Service Prediction as a model that can "identify common issues based on current asset data and service history of similar assets". Its own example: a cooling fan failure on a certain generator model is often followed by fuel system service, so a technician handles both in one visit. That example only works because past work orders say which component failed. I check six points before talking about licenses:
 
-- **Similar assets exist in the data.** Similarity is a modelling decision. If every special machine is its own product record, without series, variant and retrofit status, the model has no comparable units.
+- **Similar assets exist in the data.** Similarity is a modeling decision. If every special machine is its own product record, without series, variant and retrofit status, the model has no comparable units.
 - **Corrective work orders are linked to the asset.** Every repair carries the serial number. Old work orders with only an account and a free text field count for nothing. The groundwork is the one from [master data for Field Service](../salesforce-field-service-master-data/).
 - **Failure causes are coded.** Component and cause are picklists. A well-written job report in prose helps the customer and not the model.
 - **A usage axis exists.** Operating hours or cycles at the time of failure. Without them the model sees calendar age only, and a machine on three shifts wears out faster than one on a single shift.
@@ -87,7 +87,7 @@ Raw time series belong in the IoT platform or historian the machine builder alre
 
 Much of the value promised under "predictive" comes from two simpler things: no planned maintenance gets missed, and intervals follow real usage instead of the calendar. Field Service covers both without a prediction model.
 
-Maintenance plans generate the work orders, and maintenance work rules on the asset handle different intervals, as described in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/). The product page adds plans around asset use and condition, with service scheduled when "an asset's temperature exceeds a set threshold". The data model has an [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm) that "stores asset attributes to track and analyze asset conditions", available since API version 57.0. An operating hours counter written once a day from SAP, proALPHA or the IoT platform is enough for usage-based intervals.
+Maintenance plans generate the work orders, and maintenance work rules on the asset handle different intervals, as described in [modeling maintenance contracts](../salesforce-field-service-maintenance-contracts/). The product page adds plans around asset use and condition, with service scheduled when "an asset's temperature exceeds a set threshold". The data model has an [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm) that "stores asset attributes to track and analyze asset conditions", available since API version 57.0. An operating hours counter written once a day from SAP, proALPHA or the IoT platform is enough for usage-based intervals.
 
 The proactive maintenance agent then books the visit. If one booking takes five actions, that is 100 credits or $0.50.
 

@@ -71,9 +71,9 @@ The second risk is quieter. If the store shows a price calculated from a copy an
 
 ## When should the price come live from the ERP?
 
-B2B Commerce has extension points for this. According to the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html), Commerce_Domain_Pricing_Service uses Salesforce price books by default, and Commerce_Domain_Pricing_CartCalculator calculates prices for cart and checkout based on the pricing service. You extend the base class [PricingService](https://developer.salesforce.com/docs/commerce/salesforce-commerce/references/comm-apex-reference/PricingService.html) in Apex. It has two methods: processPrice for product prices and processTransactionalPrice for prices and totals, which starts from the catalogue price and then applies adjustments.
+B2B Commerce has extension points for this. According to the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html), Commerce_Domain_Pricing_Service uses Salesforce price books by default, and Commerce_Domain_Pricing_CartCalculator calculates prices for cart and checkout based on the pricing service. You extend the base class [PricingService](https://developer.salesforce.com/docs/commerce/salesforce-commerce/references/comm-apex-reference/PricingService.html) in Apex. It has two methods: processPrice for product prices and processTransactionalPrice for prices and totals, which starts from the catalog price and then applies adjustments.
 
-The [extension guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html) shows an example that fetches the price from an external service, and it strongly recommends calling super() when you only modify the default behaviour. One detail from the extensions list: if the store uses Faster Add-to-Cart, every product still needs an entry in a store price book, even with your own pricing logic.
+The [extension guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html) shows an example that fetches the price from an external service, and it strongly recommends calling super() when you only modify the default behavior. One detail from the extensions list: if the store uses Faster Add-to-Cart, every product still needs an entry in a store price book, even with your own pricing logic.
 
 The trade-offs are clear:
 
@@ -81,7 +81,7 @@ The trade-offs are clear:
 - **Replicated price books:** fast and independent of the ERP. In return, prices are as old as the last load, and the pricing logic exists twice.
 - **Mixed:** price books for list and tier prices on product pages, the live call where the price becomes binding. The documentation does not say which method runs on which page, so I would prove this split in a prototype before committing to it.
 
-A third option is Advanced Pricing powered by Revenue Cloud, a pricing engine inside Salesforce. When it is worth the extra licence is covered in [Advanced Pricing in B2B stores](../advanced-pricing-b2b-store-revenue-cloud/).
+A third option is Advanced Pricing powered by Revenue Cloud, a pricing engine inside Salesforce. When it is worth the extra license is covered in [Advanced Pricing in B2B stores](../advanced-pricing-b2b-store-revenue-cloud/).
 
 ## Worked example: compressor maker with 600 dealers
 

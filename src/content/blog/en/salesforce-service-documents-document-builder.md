@@ -10,7 +10,7 @@ categories: [field-service]
 tags: [field service, service documents, document builder, document generation, manufacturing]
 takeaways:
   - "Service Documents are PDFs that Field Service creates from work orders, line items and appointments, using templates built in Document Builder."
-  - "Document Builder comes with the Dispatcher and Mobile licences: 250 documents per user and month, plus a one-time extra 10,000."
+  - "Document Builder comes with the Dispatcher and Mobile licenses: 250 documents per user and month, plus a one-time extra 10,000."
   - "Its strength is the service report on site: customer signature, photos and creation in the mobile app, also offline."
   - "It only produces PDFs on three objects, with no documented conditional logic. Inspection reports, machine files and quotes usually need another tool."
   - "Check your existing reports, your iOS and Android devices and your document volume against the limits before you buy an extra tool."
@@ -18,14 +18,14 @@ faq:
   - q: "What are Salesforce Service Documents?"
     a: "Service Documents are PDF documents that Salesforce Field Service creates for a work order, work order line item or service appointment. The templates are designed in Document Builder, and the result is stored as a service report record on the job."
   - q: "Does Document Builder cost extra in Field Service?"
-    a: "No. Document Builder comes with the Field Service Dispatcher and Field Service Mobile permission set licences and includes 250 documents per user per month. Contractor and Contractor+ licences cannot use it."
+    a: "No. Document Builder comes with the Field Service Dispatcher and Field Service Mobile permission set licenses and includes 250 documents per user per month. Contractor and Contractor+ licenses cannot use it."
   - q: "Do Service Documents work offline in the Field Service mobile app?"
     a: "Yes. Technicians can create service documents in the mobile app without a connection, including signatures. On Android only service appointment templates are supported, on iOS also work order templates."
   - q: "When do I need Salesforce Document Generation instead of Document Builder?"
     a: "When you need Word templates with conditional sections, DOCX or PowerPoint output, documents on assets or custom objects, batch generation or a DocuSign integration. Document Builder covers none of these."
 ---
 
-Salesforce Service Documents are the PDFs that Field Service creates from a work order or a service appointment: the service report with working time, spare parts, photos and the customer's signature. The templates are built in Document Builder, which comes with the Field Service licences at no extra cost. For the classic service report on site, also offline, that is the right choice. For inspection reports with conditional logic, documents on the asset, Word output or batch runs it is not enough, and you need Salesforce Document Generation or a tool from the AppExchange.
+Salesforce Service Documents are the PDFs that Field Service creates from a work order or a service appointment: the service report with working time, spare parts, photos and the customer's signature. The templates are built in Document Builder, which comes with the Field Service licenses at no extra cost. For the classic service report on site, also offline, that is the right choice. For inspection reports with conditional logic, documents on the asset, Word output or batch runs it is not enough, and you need Salesforce Document Generation or a tool from the AppExchange.
 
 ## What are Salesforce Service Documents?
 
@@ -37,25 +37,25 @@ Salesforce introduced Service Documents in the Spring '24 release. The matching 
 
 Do not confuse the name with S-Docs. S-Docs is a separate product on the AppExchange and has nothing to do with this feature.
 
-## Document Builder comes with the Field Service licences
+## Document Builder comes with the Field Service licenses
 
-Nothing extra, as long as Field Service is licensed. According to the [Salesforce Help on permissions](https://help.salesforce.com/s/articleView?id=fs_document_builder_perm_sets.htm&language=en_US&type=5), users need either the Field Service Dispatcher or the Field Service Mobile permission set licence.
+Nothing extra, as long as Field Service is licensed. According to the [Salesforce Help on permissions](https://help.salesforce.com/s/articleView?id=fs_document_builder_perm_sets.htm&language=en_US&type=5), users need either the Field Service Dispatcher or the Field Service Mobile permission set license.
 
 ```hinweis achtung
-Contractor and Contractor+ licences are excluded, which matters if you plan to give documents to subcontractors.
+Contractor and Contractor+ licenses are excluded, which matters if you plan to give documents to subcontractors.
 ```
 
 The volume is limited:
 
 ```kennzahlen
-250 | documents per user per month with a Dispatcher, Dispatcher Plus or Mobile licence
+250 | documents per user per month with a Dispatcher, Dispatcher Plus or Mobile license
 10,000 | documents as a one-time extra allowance if the org needs more
 source: Salesforce Help on Document Builder and on Field Service limits
 ```
 
 A quick calculation: a technician with five jobs a day and 21 working days creates about 105 reports a month. That is well below the limit. It gets tight when every job produces several documents, for example a service report plus a checklist plus a corrected version after the customer complained.
 
-Setup takes about an hour. You create a permission set without a licence, activate the system permissions "Document Builder" and "Lightning SDK for Field Service Mobile", and assign it to dispatchers and technicians. The template field also has to be on the page layouts of work order and service appointment, otherwise nobody can pick a template.
+Setup takes about an hour. You create a permission set without a license, activate the system permissions "Document Builder" and "Lightning SDK for Field Service Mobile", and assign it to dispatchers and technicians. The template field also has to be on the page layouts of work order and service appointment, otherwise nobody can pick a template.
 
 ## What can Service Documents do in the field?
 
@@ -72,7 +72,7 @@ title: Document Builder: strong for the service report on site
 + Signature | customer and technician, also offline in the mobile app
 + Photos | image galleries, e.g. before and after the repair
 + German translation | one template for several countries
-+ Included | in the Field Service licence, 250 documents per user per month *
++ Included | in the Field Service license, 250 documents per user per month *
 - Format | PDF only and synchronous only
 - Objects | only work order, work order line item and service appointment
 - Android | only service appointment
@@ -96,16 +96,16 @@ What I miss most is conditional logic. Salesforce does not document conditional 
 
 ## What I see in tool selections
 
-I regularly support clients in make-or-buy decisions, and document generation with e-signature is one of the recurring topics. My approach is the same every time: first an inventory of all documents with volume, data source and who signs, then the long-term cost. That means licences for every user group, implementation, maintenance with every Salesforce release and the follow-up costs if you have to switch later.
+I regularly support clients in make-or-buy decisions, and document generation with e-signature is one of the recurring topics. My approach is the same every time: first an inventory of all documents with volume, data source and who signs, then the long-term cost. That means licenses for every user group, implementation, maintenance with every Salesforce release and the follow-up costs if you have to switch later.
 
-Applied to Field Service, the inventory splits into two groups. The service report from the field is the large group by volume, and Document Builder covers it. The smaller group contains the documents with logic: inspection reports, certificates, quotes, contract documents. For this group a second tool is often justified. The mistake I want to avoid is buying the large tool for everything because of the small group, and paying licences for every technician who only ever needs the service report.
+Applied to Field Service, the inventory splits into two groups. The service report from the field is the large group by volume, and Document Builder covers it. The smaller group contains the documents with logic: inspection reports, certificates, quotes, contract documents. For this group a second tool is often justified. The mistake I want to avoid is buying the large tool for everything because of the small group, and paying licenses for every technician who only ever needs the service report.
 
-Field Service itself pays off most when there are many short jobs, where scheduling and route optimisation improve the numbers. These are also the organisations with the most service reports, so the standard covers the bulk of the volume exactly where Field Service fits best.
+Field Service itself pays off most when there are many short jobs, where scheduling and route optimization improve the numbers. These are also the organizations with the most service reports, so the standard covers the bulk of the volume exactly where Field Service fits best.
 
 ## Which alternative fits which document?
 
 - **Classic service reports.** The older template editor in Field Service. Proven and simple, up to 20 signature blocks, but little design freedom. Section titles cannot be translated and the action is not available in the Salesforce mobile app.
-- **Salesforce Document Generation.** Word templates with tokens and conditional sections, for all standard and custom objects, output as PDF, DOCX or PPTX, synchronous and batch, DocuSign integration. Not available offline or on mobile. It needs its own licence; Salesforce compares the two in the [help article on Document Builder and Document Generation](https://help.salesforce.com/s/articleView?id=ind.sf_docgen_understand_doc_builder_and_doc_generation.htm&language=en_US&type=5).
+- **Salesforce Document Generation.** Word templates with tokens and conditional sections, for all standard and custom objects, output as PDF, DOCX or PPTX, synchronous and batch, DocuSign integration. Not available offline or on mobile. It needs its own license; Salesforce compares the two in the [help article on Document Builder and Document Generation](https://help.salesforce.com/s/articleView?id=ind.sf_docgen_understand_doc_builder_and_doc_generation.htm&language=en_US&type=5).
 - **OmniStudio Document Generation.** Like Document Generation, plus external data through DataRaptors and Integration Procedures. Requires OmniStudio, which comes with the industry clouds and some Revenue Cloud editions.
 - **AppExchange tools** such as S-Docs, Conga Composer or Nintex DocGen. Mature template logic, many formats, e-signature connectors. They cost extra per user and add a tool to your operations. Check offline support and prices with the vendor before you decide.
 

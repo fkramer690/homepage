@@ -1,6 +1,6 @@
 ---
 title: "Why DevOps decides Salesforce enterprise projects"
-description: "Change sets work for one admin. With several partners, global rollouts and three releases a year, DevOps decides whether a programme stays in control."
+description: "Change sets work for one admin. With several partners, global rollouts and three releases a year, DevOps decides whether a program stays in control."
 pubDate: 2026-10-23
 lang: en
 slug: why-devops-matters-salesforce-enterprise
@@ -10,10 +10,10 @@ categories: [devops]
 tags: [devops, release management, partner governance, sfdx-hardis]
 takeaways:
   - "As soon as several teams or partners work on one Salesforce org, DevOps decides whether releases stay safe and traceable."
-  - "Change sets lack version history, rollback, reviews and automated quality gates, so they don't scale to enterprise programmes."
+  - "Change sets lack version history, rollback, reviews and automated quality gates, so they don't scale to enterprise programs."
   - "Good Salesforce DevOps rests on Git as the source of truth, a clear branch strategy, pull request reviews, automated tests, delta deployments and monitoring."
   - "The repository and pipeline should belong to the client, not to an implementation partner."
-  - "Open-source tools like sfdx-hardis cover most building blocks without a commercial licence."
+  - "Open-source tools like sfdx-hardis cover most building blocks without a commercial license."
 faq:
   - q: "What is Salesforce DevOps?"
     a: "Salesforce DevOps means managing all metadata changes in version control and moving them through sandboxes to production with an automated, repeatable pipeline that includes reviews, tests and quality checks."
@@ -25,11 +25,11 @@ faq:
     a: "Yes. sfdx-hardis is an open-source toolkit maintained by Cloudity and its community. It runs on common CI/CD platforms such as GitHub, GitLab, Azure DevOps, Bitbucket and Jenkins."
 ---
 
-Salesforce is easy to start with. A few clicks in Setup, a change set, done. That ease is exactly why many enterprise programmes run into trouble a year later. As soon as several teams, partners and countries work on the same org, the question is no longer how to build something. It is how to get it into production safely, repeatedly and traceably. That is what DevOps is about, and in enterprise projects it decides whether a programme stays in control.
+Salesforce is easy to start with. A few clicks in Setup, a change set, done. That ease is exactly why many enterprise programs run into trouble a year later. As soon as several teams, partners and countries work on the same org, the question is no longer how to build something. It is how to get it into production safely, repeatedly and traceably. That is what DevOps is about, and in enterprise projects it decides whether a program stays in control.
 
-## What goes wrong when a Salesforce programme grows?
+## What goes wrong when a Salesforce program grows?
 
-In a small org, one admin knows every change. In an enterprise programme that picture is gone. I have steered programmes with up to eight project teams and more than 30 developers working on one platform. In that setting, a few things happen very reliably without a proper DevOps setup:
+In a small org, one admin knows every change. In an enterprise program that picture is gone. I have steered programs with up to eight project teams and more than 30 developers working on one platform. In that setting, a few things happen very reliably without a proper DevOps setup:
 
 - **Changes overwrite each other.** Team A deploys a page layout, Team B deploys the same object a day later with an older version. Nobody notices until users complain.
 - **Nobody knows what is in production.** If the org itself is the only source of truth, there is no history, no review and no easy way back.
@@ -87,9 +87,9 @@ quote: The pipeline belongs to the client, not to the partner. Whoever owns the 
 
 That last point matters a lot to me as an [architect on the client side](../../#about). A repository and pipeline under the client's control make partners comparable and replaceable, which is the basis for [partner steering and governance](../../services/partner-governance/). They also make onboarding a new partner much easier, because the standards are written down and enforced automatically.
 
-## What this looked like in a programme I joined
+## What this looked like in a program I joined
 
-In one programme I joined, a large enterprise ran Salesforce with several implementation partners and internal teams. Nobody had clearly defined who led which processes, objects and metadata. The result was predictable:
+In one program I joined, a large enterprise ran Salesforce with several implementation partners and internal teams. Nobody had clearly defined who led which processes, objects and metadata. The result was predictable:
 
 - Changes overwrote each other, because nobody coordinated who deployed what and when.
 - The technical approaches of the teams had drifted far apart, so similar problems were solved in very different ways.
@@ -129,7 +129,7 @@ For a steering committee this translates into a simple question: how confident a
 
 ## First step: production metadata into Git
 
-If your Salesforce programme still works with change sets or manual deployments, you don't need a big-bang migration. A pragmatic order:
+If your Salesforce program still works with change sets or manual deployments, you don't need a big-bang migration. A pragmatic order:
 
 ```schritte
 Repository

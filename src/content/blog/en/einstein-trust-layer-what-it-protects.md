@@ -81,12 +81,12 @@ What the Trust Layer contributes here: the model provider keeps no prompts, harm
 So the design carries the protection:
 
 - **Agent user.** The service agent's permission set gets read access to part number, description and availability. It gets no access to the price agreement object.
-- **Price action.** A Flow calls SAP with the dealer account taken from the logged-in portal user, never from text the model produced, and returns one price for one part. The pattern of keeping such decisions in code is described in [Agent Script rules instead of LLM judgement](../agent-script-deterministic-rules/).
+- **Price action.** A Flow calls SAP with the dealer account taken from the logged-in portal user, never from text the model produced, and returns one price for one part. The pattern of keeping such decisions in code is described in [Agent Script rules instead of LLM judgment](../agent-script-deterministic-rules/).
 - **Contract terms.** Payment terms and liability caps stay out of the agent. A question about them gets a handover to the key account manager.
 - **Employee agent.** It inherits the key account managers' rights, so their field-level security on margin fields is reviewed before go-live.
 - **Audit trail.** Read access to the audit data in Data 360 goes to three named people, with a retention period agreed with data protection.
 
-In my judgement this is the normal division of labour: the Trust Layer handles the model provider, your design handles who sees what.
+In my judgment this is the normal division of labour: the Trust Layer handles the model provider, your design handles who sees what.
 
 ## Configure masking, agent users and actions
 

@@ -10,7 +10,7 @@ pubDate: 2026-10-28
 short: "Mobile app and documents"
 summary: "What technicians need offline, how inspection reports work without paper, when the service report is enough and how to test every app update."
 takeaways:
-  - "Lightning web components run offline in the Field Service mobile app. The Salesforce mobile app needs the Mobile App Plus licence for that."
+  - "Lightning web components run offline in the Field Service mobile app. The Salesforce mobile app needs the Mobile App Plus license for that."
   - "Briefcase Builder decides which records each technician group holds offline. Size briefcases by role and test them with a partner user."
   - "Data Capture forms are built in Flow Builder and work offline. Voice to Form adds German and other languages in Winter '27."
   - "Document Builder covers the service report with signature. Inspection reports with conditional logic usually need a second tool."
@@ -18,15 +18,15 @@ takeaways:
 articles: [field-service-mobile-offline, field-service-data-capture-forms, field-service-mobile-guided-voice, service-documents-document-builder, document-builder-limits-workarounds, visual-remote-assistant-instead-of-visit, field-service-mobile-release-testing]
 faq:
   - q: "What is the difference between the Field Service mobile app and the Salesforce mobile app?"
-    a: "They are two separate apps in the App Store and Google Play. The Field Service app is built for technicians: appointments, work orders, parts, forms and service reports, also offline. According to Salesforce Developers, every Field Service org can opt into offline Lightning web components there, while the Salesforce mobile app needs the Mobile App Plus licence for them."
+    a: "They are two separate apps in the App Store and Google Play. The Field Service app is built for technicians: appointments, work orders, parts, forms and service reports, also offline. According to Salesforce Developers, every Field Service org can opt into offline Lightning web components there, while the Salesforce mobile app needs the Mobile App Plus license for them."
   - q: "Does the Salesforce Field Service app work without network?"
     a: "Yes. It has basic offline support out of the box. With Briefcase Builder an admin defines which records each group of technicians downloads, and performance priming syncs the most critical changes every five minutes while there is a connection."
   - q: "How many service reports does Document Builder include?"
-    a: "According to the Field Service limits in Salesforce Help, each user with a Field Service Dispatcher or Field Service Mobile licence brings 250 documents per month. For peak months the org gets a one-time allowance of 10,000 extra documents."
+    a: "According to the Field Service limits in Salesforce Help, each user with a Field Service Dispatcher or Field Service Mobile license brings 250 documents per month. For peak months the org gets a one-time allowance of 10,000 extra documents."
   - q: "Can technicians fill in forms by voice in German?"
     a: "Voice to Form became generally available with mobile release 260.0 in Spring '26. The Winter '27 release highlights add Spanish, Japanese, Italian, French and German. Clarify data protection and, where one exists, the works council before the pilot."
   - q: "How do I test a new version of the Field Service app?"
-    a: "Join the Field Service Mobile beta programme, which provides builds one month before major releases and one week before patches. Run a fixed routine on iOS and Android with offline work, a form, the service report and a partner user before the version reaches all devices."
+    a: "Join the Field Service Mobile beta program, which provides builds one month before major releases and one week before patches. Run a fixed routine on iOS and Android with offline work, a form, the service report and a partner user before the version reaches all devices."
 draft: false
 ---
 
@@ -36,7 +36,7 @@ The Field Service mobile app has to work where the network ends, so the first de
 
 Field Service, which Salesforce sells today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/), gives technicians their own app. [Chapter 2](../field-service-scheduling-dispatch/) covered how a job gets scheduled. This chapter starts when the technician opens the job.
 
-The Field Service mobile app is a separate app in the App Store and Google Play. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-mobile/work-from-anywhere), it gives technicians their jobs, customer details, work order updates and signature capture without calling the office. The Salesforce mobile app is the general app for sales and service staff. For a manufacturer the difference that matters most is offline: according to [Salesforce Developers](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/intro_enabled_apps.htm), any Field Service org can opt into offline Lightning web components in the Field Service app, while the Salesforce mobile app needs the Mobile App Plus licence for them. My rule: technicians work in the Field Service app, and dispatchers and inside service stay in the browser.
+The Field Service mobile app is a separate app in the App Store and Google Play. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-mobile/work-from-anywhere), it gives technicians their jobs, customer details, work order updates and signature capture without calling the office. The Salesforce mobile app is the general app for sales and service staff. For a manufacturer the difference that matters most is offline: according to [Salesforce Developers](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/intro_enabled_apps.htm), any Field Service org can opt into offline Lightning web components in the Field Service app, while the Salesforce mobile app needs the Mobile App Plus license for them. My rule: technicians work in the Field Service app, and dispatchers and inside service stay in the browser.
 
 ```praxis
 In my Field Service projects, technician acceptance was one of the stumbling blocks.
@@ -55,7 +55,7 @@ The [considerations for LWC Offline](https://developer.salesforce.com/docs/atlas
 | Issue | What happens |
 |---|---|
 | Tasks are not primed | A Task object in a briefcase triggers an error during priming. |
-| Partner users | A community licence user who opens a service appointment can get a missing record error. Partner technicians therefore need their own briefcase and their own test. |
+| Partner users | A community license user who opens a service appointment can get a missing record error. Partner technicians therefore need their own briefcase and their own test. |
 | iOS cold start | Changed Lightning web components load only after the app is fully closed and started again. |
 
 The briefcase per role, the full list of gaps and a day in a basement without network are in [Field Service mobile offline: which data goes on the device?](../../../blog/field-service-mobile-app-offline-data/).
@@ -81,10 +81,10 @@ German voice input makes the feature relevant for service teams in the DACH regi
 
 ## When is the service report from Document Builder enough?
 
-Document Builder creates the service report as a PDF from a work order, a work order line item or a service appointment. According to the [Field Service limits](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5), each user with a Field Service Dispatcher or Field Service Mobile licence brings 250 documents per month, and the org gets a one-time allowance of 10,000 extra documents for peak months. A technician with five jobs a day creates about 105 reports a month, well below the limit.
+Document Builder creates the service report as a PDF from a work order, a work order line item or a service appointment. According to the [Field Service limits](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5), each user with a Field Service Dispatcher or Field Service Mobile license brings 250 documents per month, and the org gets a one-time allowance of 10,000 extra documents for peak months. A technician with five jobs a day creates about 105 reports a month, well below the limit.
 
 ```kennzahlen
-250 | documents per user and month with a Field Service Dispatcher or Field Service Mobile licence
+250 | documents per user and month with a Field Service Dispatcher or Field Service Mobile license
 10,000 | extra documents per org, once, for peak months
 50 | pages and 100 MB at most per document
 source: Salesforce Help, Field Service limits
@@ -98,7 +98,7 @@ For the classic report at the machine, with working time, parts, photos and the 
 | Android is behind | On iOS documents come from work order and service appointment, on Android only from the service appointment. |
 | Size | At most 50 pages and 100 MB per document. |
 
-Plan for five smaller gaps in the standard report: template choice, file name, email, default values and styling. Flows and small components close them without another licence, as I describe in [Document Builder: five limits and workarounds](../../../blog/salesforce-document-builder-limits-workarounds/).
+Plan for five smaller gaps in the standard report: template choice, file name, email, default values and styling. Flows and small components close them without another license, as I describe in [Document Builder: five limits and workarounds](../../../blog/salesforce-document-builder-limits-workarounds/).
 
 ### When do you need a second tool?
 
@@ -108,7 +108,7 @@ Quotes are a separate case. When technicians spot extra work or a worn part and 
 
 ## When can a video call replace a visit?
 
-Visual Remote Assistant is a video tool for Service Cloud and Field Service. According to the [product page](https://salesforce.com/products/visual-remote-assistant), the customer taps a link sent by SMS or email, and a two-way video opens in the mobile browser, without app download, login or password. Sessions can be recorded. The add-on costs $50 per user and month on the [price list, October 2026](https://www.salesforce.com/service/field-service-management/pricing/), and it is included in Agentforce 1 Field Service. The customer needs no licence.
+Visual Remote Assistant is a video tool for Service Cloud and Field Service. According to the [product page](https://salesforce.com/products/visual-remote-assistant), the customer taps a link sent by SMS or email, and a two-way video opens in the mobile browser, without app download, login or password. Sessions can be recorded. The add-on costs $50 per user and month on the [price list, October 2026](https://www.salesforce.com/service/field-service-management/pricing/), and it is included in Agentforce 1 Field Service. The customer needs no license.
 
 In my view video replaces a visit when the operator can fix the fault with guidance: a changed parameter, an operating error, a reset. For mechanical repairs it saves the second visit instead, because the technician arrives with the right part.
 
@@ -120,7 +120,7 @@ How to estimate the potential from last year's breakdown visits is in [Visual Re
 
 ## How do you test every app version?
 
-Next to the three platform releases a year, the app has its own major and patch versions. According to the [Field Service Mobile beta programme](https://developer.salesforce.com/tools/field-service-mobile-beta), beta builds are available one month before major releases and one week before patch releases, and debug builds let developers test their own components in an emulator or simulator. The release post for 260.0 says Salesforce rolls out versions over several days, and some users get an update only seven days after general availability. For up to a week, technicians run different versions.
+Next to the three platform releases a year, the app has its own major and patch versions. According to the [Field Service Mobile beta program](https://developer.salesforce.com/tools/field-service-mobile-beta), beta builds are available one month before major releases and one week before patch releases, and debug builds let developers test their own components in an emulator or simulator. The release post for 260.0 says Salesforce rolls out versions over several days, and some users get an update only seven days after general availability. For up to a week, technicians run different versions.
 
 My routine per version, on iOS and Android, fits into half a day:
 

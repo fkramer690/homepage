@@ -11,7 +11,7 @@ tags: [field service, mobile, offline, briefcase builder, manufacturing]
 takeaways:
   - "Briefcase Builder decides what each technician group downloads. Performance priming syncs the most critical changes every five minutes."
   - "Salesforce documents gaps: tasks in a briefcase are not primed, and global quick actions get no record ID offline."
-  - "Community licence users can get an error when opening an appointment, so every offline test needs a partner technician's user."
+  - "Community license users can get an error when opening an appointment, so every offline test needs a partner technician's user."
   - "The device holds appointment, work order, asset with history, van stock and manual. Price lists and every asset of a territory stay online."
   - "Salesforce gives no upper limit for records offline. Cut the briefcase by role and measure the sync."
 faq:
@@ -22,7 +22,7 @@ faq:
   - q: "How often does the Field Service app sync offline data?"
     a: "With performance priming the app syncs the most critical changes every five minutes while the device is connected. Records changed offline are stored on the device and synced when the connection returns."
   - q: "Which offline problems should I test before go-live?"
-    a: "Salesforce lists five: tasks in a briefcase are not primed, global quick actions get no record ID, community licence users can get a missing record error, Appointment Assistant can conflict with LWC Offline, and on iOS changed components load only after a cold start."
+    a: "Salesforce lists five: tasks in a briefcase are not primed, global quick actions get no record ID, community license users can get a missing record error, Appointment Assistant can conflict with LWC Offline, and on iOS changed components load only after a cold start."
 draft: false
 ---
 
@@ -70,7 +70,7 @@ The [considerations for LWC Offline in the Field Service mobile app](https://dev
 
 1. **Tasks are not primed.** A Task object in a briefcase triggers an error during priming. The other objects are still primed. The fix is to remove tasks from the briefcase.
 2. **Global quick actions get no record ID.** Started from a record page, they do not know which record the technician is looking at. A custom action that should work on the current work order belongs on the object, not in the global actions.
-3. **Missing record error for community licence users.** When a user on a community licence opens a service appointment, the record can be missing.
+3. **Missing record error for community license users.** When a user on a community license opens a service appointment, the record can be missing.
 4. **Appointment Assistant and LWC Offline.** Salesforce names a conflict that can result in missing URLs.
 5. **iOS cold start.** Changes to Lightning web components load on iOS only after the app is fully closed and started again. A technician who never closes the app keeps the old version.
 

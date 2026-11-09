@@ -74,7 +74,7 @@ Individual prices are rarely a good reason for individual groups. At manufacture
 
 I build buyer groups from attributes that change rarely and that the ERP already holds in the customer master:
 
-1. **Country or sales organisation.** It decides assortment, language, currency and legal restrictions such as export control.
+1. **Country or sales organization.** It decides assortment, language, currency and legal restrictions such as export control.
 2. **Dealer tier.** For example service partner, sales partner or end customer. It decides the price book and sometimes visibility, such as service parts only for certified partners.
 3. **Brand or product line**, when dealers sell only one brand.
 
@@ -82,7 +82,7 @@ Entitlement policies then follow assortments, not customers: "spare parts genera
 
 Worked example: a manufacturer with 800 dealers in 12 countries, three dealer tiers and two brands. Country and tier give 36 buyer groups, the two brands two more. Each dealer account sits in two groups, well below 20. A common spare part is entitled to 36 groups instead of 800, and the policy "spare parts general" serves 36 groups instead of hitting 200. A new dealer means two memberships and no new policy.
 
-Exceptions stay exceptions. If one dealer needs a special part for a special machine, a small "special agreements" group is fine. Showing every dealer only the parts for the machines it owns is a different problem, which buyer groups do not solve. I describe the options in [show only parts for each machine](../spare-parts-shop-parts-per-machine/). And if countries or brands differ so much that catalogue or checkout differ, the question becomes [one store or several](../b2b-stores-countries-brands-dealers/).
+Exceptions stay exceptions. If one dealer needs a special part for a special machine, a small "special agreements" group is fine. Showing every dealer only the parts for the machines it owns is a different problem, which buyer groups do not solve. I describe the options in [show only parts for each machine](../spare-parts-shop-parts-per-machine/). And if countries or brands differ so much that catalog or checkout differ, the question becomes [one store or several](../b2b-stores-countries-brands-dealers/).
 
 ## When do rules beat manual upkeep?
 
@@ -90,7 +90,7 @@ Memberships and policy assignments are data that someone has to maintain. Salesf
 
 **Apex buyer group extension.** The extension point Commerce_Domain_BuyerGroup_EvaluationService is described in the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) as a way to "dynamically assign users to buyer groups by executing custom Apex business logic". Your code could read country and tier from the account at runtime. The [Apex reference](https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_class_CommerceBuyGrp_BuyerGroupEvaluationService.htm) names the condition: assignments may not take effect immediately while caching is active, so Salesforce asks you to disable the Salesforce CDN and Edge Network, sandbox first. For a store with dealers on several continents I would measure page load times before I accept that.
 
-**Qualification rules from Revenue Management.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_revenue_intro.htm&language=en_US&type=5), these rules "dynamically evaluate the product visibility for buyer groups based on their account data" and replace manually maintained entitlement policies. They require a Commerce Growth or Advanced licence plus Revenue Cloud Advanced. If sales already runs Revenue Cloud, that is worth a look. For visibility alone I would not buy it.
+**Qualification rules from Revenue Management.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_revenue_intro.htm&language=en_US&type=5), these rules "dynamically evaluate the product visibility for buyer groups based on their account data" and replace manually maintained entitlement policies. They require a Commerce Growth or Advanced license plus Revenue Cloud Advanced. If sales already runs Revenue Cloud, that is worth a look. For visibility alone I would not buy it.
 
 My default is simpler: the integration sets memberships from the ERP customer master, for example in a nightly job that maps country and tier fields to buyer groups. That is easy to test and easy to explain to the business. Rules only pay off when the number of combinations keeps growing.
 
@@ -103,4 +103,4 @@ Write the entitlement concept on one page before anyone loads data:
 - a matrix of which group gets which policy and price book,
 - a count against the limits above, for today and for three years from now.
 
-The ERP fields that drive membership then go into the interface list. This page is the first deliverable of the [chapter on catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) in my [B2B Commerce masterclass](../../masterclass/b2b-commerce/). Whether dealers then actually find the parts they are entitled to depends on search, covered in [finding parts by part number](../b2b-commerce-search-part-numbers/). Reviewing such concepts before a partner builds is part of my work on [Salesforce architecture](../../services/salesforce-architecture/).
+The ERP fields that drive membership then go into the interface list. This page is the first deliverable of the [chapter on catalog, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) in my [B2B Commerce masterclass](../../masterclass/b2b-commerce/). Whether dealers then actually find the parts they are entitled to depends on search, covered in [finding parts by part number](../b2b-commerce-search-part-numbers/). Reviewing such concepts before a partner builds is part of my work on [Salesforce architecture](../../services/salesforce-architecture/).

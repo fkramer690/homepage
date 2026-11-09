@@ -81,7 +81,7 @@ I would write this down per audience, the same way an object has one owner. The 
 
 ## A second agent is worth the hop only when it owns logic
 
-A data read with one right answer belongs in an API or an MCP tool. An agent asking another agent for an order status is an API call with two language models in between, and each of them can misread the question. Delegate to another agent only when it owns judgement and rules you do not want to rebuild, for example an SAP-side process that already runs with SAP's own checks.
+A data read with one right answer belongs in an API or an MCP tool. An agent asking another agent for an order status is an API call with two language models in between, and each of them can misread the question. Delegate to another agent only when it owns judgment and rules you do not want to rebuild, for example an SAP-side process that already runs with SAP's own checks.
 
 Every hop raises four questions before go-live:
 
@@ -105,7 +105,7 @@ One of three requests goes through A2A. For a first year, I consider that ratio 
 ## Name one owner agent per audience
 
 1. **Name one owner agent per audience** and channel: dealers, service customers, sales reps, back office.
-2. **List the questions that cross systems** and mark each as a data read (API or MCP) or delegated judgement (agent).
+2. **List the questions that cross systems** and mark each as a data read (API or MCP) or delegated judgment (agent).
 3. **Use multi-agent orchestration inside the org first.** It is GA and keeps identity, logs and billing in one place.
 4. **Check identity, timeout, cost and logging** for every cross-vendor hop before building it.
 5. **Pilot one read-only A2A hop** if MuleSoft already runs in your company, and ask SAP and Microsoft for the GA status of their side in writing.

@@ -58,7 +58,7 @@ Two differences matter more than the names, and a third point is open:
 - **Tax and payments are connected differently.** Tax runs through a TaxEngine record with a provider adapter and a named credential. Payments use standard Salesforce Payments objects with an external gateway. Your tax provider and payment provider both need to confirm the new connection.
 
 ```hinweis offen
-**Revenue recognition.** The package has objects such as blng__RevenueSchedule__c. In the Billing standard object list I found no revenue schedule object. If you recognise revenue in the package today, ask Salesforce in writing where that happens after the move.
+**Revenue recognition.** The package has objects such as blng__RevenueSchedule__c. In the Billing standard object list I found no revenue schedule object. If you recognize revenue in the package today, ask Salesforce in writing where that happens after the move.
 ```
 
 ## What happens to open invoices, schedules and payments?
@@ -111,10 +111,10 @@ How these configuration records move from sandbox to production is covered in [R
 
 A machine builder sells remote monitoring and maintenance subscriptions to 800 customers and invoices them quarterly from Salesforce Billing. Machine invoices come from SAP. The company moves quoting to Revenue Cloud. All figures are assumptions.
 
-The billing team plans the cutover for 31 March, the end of a quarter. The last invoice run in the package covers Q1. In April finance reconciles the subledger with SAP. 120 open invoices stay in the package until paid. Assets for the 800 subscriptions are migrated in March, and the first billing schedules in Revenue Cloud start on 1 April, so the first invoice run in July bills Q2. Closed invoices remain readable in the package until the CPQ and Billing licences end.
+The billing team plans the cutover for 31 March, the end of a quarter. The last invoice run in the package covers Q1. In April finance reconciles the subledger with SAP. 120 open invoices stay in the package until paid. Assets for the 800 subscriptions are migrated in March, and the first billing schedules in Revenue Cloud start on 1 April, so the first invoice run in July bills Q2. Closed invoices remain readable in the package until the CPQ and Billing licenses end.
 
 Before the cutover, finance checks one more topic: from 2027 German e-invoicing duties apply. Whether invoices should come from Revenue Cloud at all is covered in [Revenue Cloud Billing or SAP](../revenue-cloud-billing-or-sap-invoicing/) and [e-invoicing in Germany from 2027](../e-invoicing-germany-2027-revenue-cloud/).
 
 ## First step: finance signs the cutover checklist
 
-Finance signs off, not the CRM team. The decisions here are accounting decisions: opening balances, period close, tax treatment, journal entries to the ERP and invoice numbering. I would set up the cutover with a written checklist that finance signs, and plan the licence cost of Revenue Cloud Billing early; how it is charged is explained in [Revenue Cloud Billing costs](../revenue-cloud-billing-costs/). The overall migration order sits in [CPQ to Revenue Cloud migration](../cpq-to-revenue-cloud-migration-phases/) and in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/). The interfaces between Salesforce and SAP are part of my work in [Salesforce integration](../../services/salesforce-integration/).
+Finance signs off, not the CRM team. The decisions here are accounting decisions: opening balances, period close, tax treatment, journal entries to the ERP and invoice numbering. I would set up the cutover with a written checklist that finance signs, and plan the license cost of Revenue Cloud Billing early; how it is charged is explained in [Revenue Cloud Billing costs](../revenue-cloud-billing-costs/). The overall migration order sits in [CPQ to Revenue Cloud migration](../cpq-to-revenue-cloud-migration-phases/) and in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/). The interfaces between Salesforce and SAP are part of my work in [Salesforce integration](../../services/salesforce-integration/).

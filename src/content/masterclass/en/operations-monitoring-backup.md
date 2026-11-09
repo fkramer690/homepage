@@ -31,7 +31,7 @@ After go-live, operations decide whether your release process holds. Five things
 
 ## What does running Salesforce after go-live involve?
 
-The first eight chapters followed a change all the way to production, most recently [release planning around the three Salesforce releases](../release-planning-salesforce-releases/). The deployment does not end the work. In a programme with several partners, configuration, data and usage of the org change every week, and not every change comes through the pipeline.
+The first eight chapters followed a change all the way to production, most recently [release planning around the three Salesforce releases](../release-planning-salesforce-releases/). The deployment does not end the work. In a program with several partners, configuration, data and usage of the org change every week, and not every change comes through the pipeline.
 
 | Task | Question it answers | Example tool |
 |---|---|---|
@@ -42,7 +42,7 @@ The first eight chapters followed a change all the way to production, most recen
 | DORA metrics | How fast and how stable do we deliver? | sfdx-hardis DORA report, Gearset reporting |
 | Incidents and hotfixes | How does an urgent fix reach production safely? | your pipeline with a hotfix branch |
 
-Each row needs one person who owns it. In most programmes that is the release role from [chapter 2](../release-process-ownership-roles/), backed by the partners.
+Each row needs one person who owns it. In most programs that is the release role from [chapter 2](../release-process-ownership-roles/), backed by the partners.
 
 ## Org monitoring: what to check every day
 
@@ -51,7 +51,7 @@ Salesforce records Setup changes in the [Setup Audit Trail](https://developer.sa
 [sfdx-hardis monitoring](https://sfdx-hardis.cloudity.com/salesforce-monitoring-home/) answers it with a dedicated Git repository. Every night a CI job retrieves all metadata from the org and commits whenever something changed. Further checks run on top of that backup, most of them daily and the less urgent ones weekly:
 
 - **Daily:** Apex tests, Apex and Flow runtime errors, org limits, calls to deprecated API versions, suspect Setup actions by anyone other than the deployment user, analysis of deployments and validations, code quality through MegaLinter.
-- **Weekly:** Security Health Check, MFA configuration, licence usage, active users without a login for six months, upcoming Release Updates and the date of the next Salesforce upgrade.
+- **Weekly:** Security Health Check, MFA configuration, license usage, active users without a login for six months, upcoming Release Updates and the date of the next Salesforce upgrade.
 
 Results go to Slack, Microsoft Teams, email, or through an API to Grafana. According to the docs, sfdx-hardis replaces usernames and email addresses with stable pseudonyms in reports and notifications when monitoring runs in CI. That helps if your works council asks.
 
@@ -102,7 +102,7 @@ A list alone changes nothing. I recommend a separate backlog for technical debt,
 
 ## Which DORA metrics make sense for Salesforce?
 
-DORA (DevOps Research and Assessment) is the research programme behind the most widely used software delivery metrics. According to [dora.dev](https://dora.dev/guides/dora-metrics/), there are five today:
+DORA (DevOps Research and Assessment) is the research program behind the most widely used software delivery metrics. According to [dora.dev](https://dora.dev/guides/dora-metrics/), there are five today:
 
 | Metric | What it measures |
 |---|---|
@@ -114,7 +114,7 @@ DORA (DevOps Research and Assessment) is the research programme behind the most 
 
 The first three measure throughput, the last two instability. According to the [history of the metrics](https://dora.dev/guides/dora-metrics/history/), the former MTTR was renamed and redefined in 2023, and rework rate was added in 2024. Many tools still show the four older metrics.
 
-The sfdx-hardis [DORA report](https://sfdx-hardis.cloudity.com/hardis/doc/salesforce-devops-dora-report/) computes all five for each stage of the pipeline, from the deployment jobs and pull requests in your Git platform. Deployments outside the pipeline, such as change sets, do not count. For a client, the most useful part to me is how long changes wait at each stage. If user stories sit in UAT for three weeks because the service team has no time to test, you see it there. Gearset's [DevOps performance dashboard](https://docs.gearset.com/en/articles/11560575-measuring-your-devops-performance) shows the four classic metrics, with change failure rate based on bugs your team reports. It requires an Automation Platform licence at the Teams or Enterprise tier.
+The sfdx-hardis [DORA report](https://sfdx-hardis.cloudity.com/hardis/doc/salesforce-devops-dora-report/) computes all five for each stage of the pipeline, from the deployment jobs and pull requests in your Git platform. Deployments outside the pipeline, such as change sets, do not count. For a client, the most useful part to me is how long changes wait at each stage. If user stories sit in UAT for three weeks because the service team has no time to test, you see it there. Gearset's [DevOps performance dashboard](https://docs.gearset.com/en/articles/11560575-measuring-your-devops-performance) shows the four classic metrics, with change failure rate based on bugs your team reports. It requires an Automation Platform license at the Teams or Enterprise tier.
 
 I would set two rules. First, compare numbers only within one tool. sfdx-hardis measures lead time from the creation of the pull request, DORA from the commit. Second, measure the process, not the partners. A ranking makes teams slice changes thin to look good and label failures differently.
 

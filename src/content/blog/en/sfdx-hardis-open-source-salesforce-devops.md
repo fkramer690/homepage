@@ -13,22 +13,22 @@ takeaways:
   - "sfdx-hardis consists of a Salesforce CLI plugin and a VS Code extension and is led by Nicolas Vuillamy and Cloudity."
   - "It covers the full release lifecycle: CI/CD pipeline, delta deployments, quality checks, org monitoring, metadata backup and generated documentation."
   - "The pipeline runs on the client's existing Git platform, for example GitHub, GitLab, Azure DevOps, Bitbucket or Jenkins."
-  - "Compared with commercial tools like Gearset or Copado, there are no ongoing licence costs, but the team needs some Git and pipeline know-how."
+  - "Compared with commercial tools like Gearset or Copado, there are no ongoing license costs, but the team needs some Git and pipeline know-how."
   - "It fits best when the client wants to own its release process and has, or builds, internal DevOps skills."
 faq:
   - q: "What is sfdx-hardis?"
     a: "sfdx-hardis is a free, open-source toolkit for Salesforce DevOps. It consists of a Salesforce CLI plugin and a VS Code extension and provides a ready-made CI/CD pipeline, monitoring, backups and documentation."
   - q: "Is sfdx-hardis really free?"
-    a: "Yes. The tool itself is open source and has no licence fees. Costs come only from the Git platform and CI minutes the client already uses, and from the time to set it up and run it."
+    a: "Yes. The tool itself is open source and has no license fees. Costs come only from the Git platform and CI minutes the client already uses, and from the time to set it up and run it."
   - q: "Which Git platforms does sfdx-hardis support?"
     a: "sfdx-hardis supports GitHub, GitLab, Azure DevOps, Bitbucket and Jenkins, and provides Docker images for pipelines. The pipeline runs where the client's IT already works."
   - q: "Is sfdx-hardis suitable for admins, not only developers?"
     a: "Yes. The VS Code extension offers menus and buttons for the typical steps, so admins and consultants can work with branches, pull requests and deployments without memorising Git commands."
   - q: "How does sfdx-hardis compare to Gearset or Copado?"
-    a: "Gearset and Copado are commercial platforms with a managed interface and support, billed per user. sfdx-hardis has no licence costs and runs on the client's own Git platform, but needs more internal know-how."
+    a: "Gearset and Copado are commercial platforms with a managed interface and support, billed per user. sfdx-hardis has no license costs and runs on the client's own Git platform, but needs more internal know-how."
 ---
 
-sfdx-hardis is a free, open-source toolkit for Salesforce DevOps. It combines a Salesforce CLI plugin with a VS Code extension and gives teams a ready-made CI/CD pipeline, delta deployments, quality checks, org monitoring, metadata backups and generated documentation. It runs on the Git platform a company already uses. I use sfdx-hardis in client projects and rate it very highly, mainly because it delivers what most enterprise programmes need without ongoing licence costs.
+sfdx-hardis is a free, open-source toolkit for Salesforce DevOps. It combines a Salesforce CLI plugin with a VS Code extension and gives teams a ready-made CI/CD pipeline, delta deployments, quality checks, org monitoring, metadata backups and generated documentation. It runs on the Git platform a company already uses. I use sfdx-hardis in client projects and rate it very highly, mainly because it delivers what most enterprise programs need without ongoing license costs.
 
 This article is my overview of sfdx-hardis. Two articles go deeper: the [comparison of sfdx-hardis and DevOps Center](../sfdx-hardis-vs-devops-center-comparison/) shows when the native Salesforce tool is enough, and my [review of the free sfdx-hardis training](../sfdx-hardis-free-devops-training/) explains how to try the toolkit yourself in one day.
 
@@ -62,7 +62,7 @@ What I like most is where all of this lives. Because sfdx-hardis runs on the cli
 
 Commercial tools like Gearset or Copado have their place. They offer a managed web interface, vendor support and features like comparisons between orgs with a few clicks. For some teams that is worth the money. But there are trade-offs:
 
-- **Licence costs.** Commercial platforms are typically billed per user and year. In a programme with dozens of developers and admins across several partners, that adds up quickly, and it never stops. sfdx-hardis has no licence fees.
+- **License costs.** Commercial platforms are typically billed per user and year. In a program with dozens of developers and admins across several partners, that adds up quickly, and it never stops. sfdx-hardis has no license fees.
 - **Where the process lives.** With a commercial platform, part of the release process lives in the vendor's product. With sfdx-hardis it lives in the client's repository and pipeline configuration, in plain files.
 - **Know-how.** sfdx-hardis expects the team to understand Git, branches and pipelines, at least at a basic level. A commercial platform hides more of that. The VS Code extension closes much of the gap for admins, but not all of it.
 - **Support.** Open source means community support or paid consulting, not a vendor hotline. For most enterprise teams I work with, that is acceptable if at least one internal person owns the setup.
@@ -70,7 +70,7 @@ Commercial tools like Gearset or Copado have their place. They offer a managed w
 ```tabelle
 title: sfdx-hardis compared with commercial platforms
 columns: | sfdx-hardis * | Commercial platforms such as Gearset or Copado ~ Gearset, Copado and co.
-Licence costs | No licence fees | Typically billed per user and year
+License costs | No license fees | Typically billed per user and year
 Where the process lives | In the client's repository and pipeline configuration, in plain files | Partly in the vendor's product
 Know-how | Git basics needed. The VS Code extension closes much of the gap for admins | Hides more of Git behind a managed web interface
 Support | Community support or paid consulting | Vendor support
@@ -78,7 +78,7 @@ note: No tool is right for every team. Choose early, justify it, make it binding
 ```
 Salesforce's own DevOps Center is another free option. It is a good start for click-based teams, but covers less of the pipeline, monitoring and documentation side. The full comparison, including the supported Git platforms, is in [sfdx-hardis vs DevOps Center](../sfdx-hardis-vs-devops-center-comparison/).
 
-What matters most to me: no tool is right for every team. The choice should be made early, justified properly and then made binding for everyone involved, including every partner. A programme where each partner brings its own tool ends up with several release processes, and therefore with none.
+What matters most to me: no tool is right for every team. The choice should be made early, justified properly and then made binding for everyone involved, including every partner. A program where each partner brings its own tool ends up with several release processes, and therefore with none.
 
 ## When is sfdx-hardis the right choice?
 
@@ -90,7 +90,7 @@ pro: sfdx-hardis fits well when
 - the client wants to own the process and avoid lock-in to a partner or a tool vendor
 - the client already runs GitHub, GitLab or Azure DevOps and wants the pipeline there
 - there is, or will be, at least one internal person who takes ownership of the setup
-- licence budgets are tight, or better spent on people than on per-user fees
+- license budgets are tight, or better spent on people than on per-user fees
 contra: Less suitable when
 - nobody on the client side wants to touch Git at all
 - a team needs a fully managed tool with a contractual support line from day one
@@ -98,13 +98,13 @@ contra: Less suitable when
 
 In the second case a commercial platform can be the more honest answer.
 
-The point about licence budgets is often underestimated. The saved licence costs are best invested in an internal role that maintains the setup, onboards new teams and owns the release calendar. Without that role, even the best tool loses its effect after a few months. The same goes for development standards at partners, see [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/).
+The point about license budgets is often underestimated. The saved license costs are best invested in an internal role that maintains the setup, onboards new teams and owns the release calendar. Without that role, even the best tool loses its effect after a few months. The same goes for development standards at partners, see [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/).
 
 ## Get started with the free training
 
 The fastest way to understand sfdx-hardis is to try it. Cloudity offers a free, hands-on training with three levels and verified badges. I completed all three and wrote about my experience in [what I learned from the free sfdx-hardis training](../sfdx-hardis-free-devops-training/).
 
-Choosing the toolchain is part of [architecture and partner governance](../../services/partner-governance/), not a side decision for developers. For a running programme I recommend this order:
+Choosing the toolchain is part of [architecture and partner governance](../../services/partner-governance/), not a side decision for developers. For a running program I recommend this order:
 
 ```schritte
 Build the repository

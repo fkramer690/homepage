@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Credit limit checks, warranty eligibility and price approvals belong in Agent Script logic, not in the judgement of the language model. Since February 2026 the new Agentforce with hybrid reasoning is generally available: logic instructions execute as code, and the LLM is only called where you write prompt instructions. Use that split deliberately. A rule the model interprets can take a different path on the same input, and "the agent decided" does not hold up in an audit or a dispute with a dealer. Let the rule decide, and let the LLM understand the request and explain the result.
+Credit limit checks, warranty eligibility and price approvals belong in Agent Script logic, not in the judgment of the language model. Since February 2026 the new Agentforce with hybrid reasoning is generally available: logic instructions execute as code, and the LLM is only called where you write prompt instructions. Use that split deliberately. A rule the model interprets can take a different path on the same input, and "the agent decided" does not hold up in an audit or a dispute with a dealer. Let the rule decide, and let the LLM understand the request and explain the result.
 
 ## What is hybrid reasoning in Agent Script?
 
@@ -94,7 +94,7 @@ What remains for the model is the part it is good at: understanding "the hydraul
 
 ## What stays with the LLM?
 
-More than it sounds. The model recognises intent, fills required inputs from free text, summarises a case for a technician, explains a rejection politely in the dealer's language and decides when a conversation needs a human. Gartner recommends using agents [when decisions are needed](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) and automation for routine workflows. I read that the same way: the judgement about what the dealer wants belongs to the model, the rule that follows belongs to code.
+More than it sounds. The model recognises intent, fills required inputs from free text, summarises a case for a technician, explains a rejection politely in the dealer's language and decides when a conversation needs a human. Gartner recommends using agents [when decisions are needed](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) and automation for routine workflows. I read that the same way: the judgment about what the dealer wants belongs to the model, the rule that follows belongs to code.
 
 Agent Script is also not always the right place for the rule itself. If the rule has many variants, such as warranty terms per product family and part, it belongs in the data model or in the Business Rules Engine, which the [Manufacturing Cloud page](https://www.salesforce.com/manufacturing/cloud/) lists for claims, rebates and quoting. The script then calls it. If the ERP owns the rule, the script calls the ERP. Agent Script decides when a rule is checked and what happens with the result.
 

@@ -25,7 +25,7 @@ faq:
 draft: false
 ---
 
-In Revenue Cloud, discount and margin approvals run on Advanced Approvals: approval workflows with stages, serial and parallel approvers and an audit trail, which a rep starts from the quote. Keep the approval matrix short, with discount, margin and deal size as the triggers, and let the preview show the approvers before submission. Margin approvals need cost data from the ERP on every quote line. The thresholds belong in rules, never in an agent's judgement. If you come from Salesforce CPQ, plan approvals as a rebuild, because the Advanced Approvals package does not carry over.
+In Revenue Cloud, discount and margin approvals run on Advanced Approvals: approval workflows with stages, serial and parallel approvers and an audit trail, which a rep starts from the quote. Keep the approval matrix short, with discount, margin and deal size as the triggers, and let the preview show the approvers before submission. Margin approvals need cost data from the ERP on every quote line. The thresholds belong in rules, never in an agent's judgment. If you come from Salesforce CPQ, plan approvals as a rebuild, because the Advanced Approvals package does not carry over.
 
 ## What is Advanced Approvals in Revenue Cloud?
 

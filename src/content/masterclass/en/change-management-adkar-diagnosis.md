@@ -18,7 +18,7 @@ articles: [change-management-hub, salesforce-center-of-excellence, change-adopti
 faq:
   - q: "What is the ADKAR model?"
     a: "A model by Prosci with five stages every person goes through in a change: awareness, desire, knowledge, ability and reinforcement. When a rollout is stuck, one of these stages is usually missing, and each stage needs a different measure."
-  - q: "When should change management start in a Salesforce programme?"
+  - q: "When should change management start in a Salesforce program?"
     a: "During planning, before anything is built. Change management that starts two weeks before go-live can only inform. Which groups are affected and what changes for them even shapes the architecture, for example with a global template."
   - q: "Isn't good training enough?"
     a: "Only when knowledge or ability is missing. When a team does not know what a new process is for, or does not want to take part, another training session changes nothing. The group's own manager has to explain that."
@@ -29,7 +29,7 @@ Salesforce rollouts at manufacturers rarely fail on technology. They fail when s
 
 ## Why does Salesforce get stuck in daily work?
 
-A release is deployed in minutes. Whether anyone works differently afterwards is decided in the weeks that follow. The causes I see in Salesforce programmes almost always map to one ADKAR stage. Someone who first discovers a change in production had no awareness and builds a workaround. Someone who maintains opportunities only because it is mandatory does not know the purpose, such as the sales planning that depends on them. Without decisions from management every new rule stays optional, which hits desire and reinforcement. And when problems from daily work vanish into email instead of reaching the backlog, the feedback channel that grows knowledge and ability is missing. The full list of reasons is in the article [Salesforce change management: why rollouts fail](../../../blog/change-management-salesforce-rollout/).
+A release is deployed in minutes. Whether anyone works differently afterwards is decided in the weeks that follow. The causes I see in Salesforce programs almost always map to one ADKAR stage. Someone who first discovers a change in production had no awareness and builds a workaround. Someone who maintains opportunities only because it is mandatory does not know the purpose, such as the sales planning that depends on them. Without decisions from management every new rule stays optional, which hits desire and reinforcement. And when problems from daily work vanish into email instead of reaching the backlog, the feedback channel that grows knowledge and ability is missing. The full list of reasons is in the article [Salesforce change management: why rollouts fail](../../../blog/change-management-salesforce-rollout/).
 
 Prosci's long-running study shows the effort pays. For the 12th edition of [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), 2,668 people took part. The gap between good and poor change management is wide, and at the top of the success factors is management that carries the rollout actively and visibly.
 
@@ -40,11 +40,11 @@ Prosci's long-running study shows the effort pays. For the 12th edition of [Best
 source: Prosci, Best Practices in Change Management, 12th edition, executive summary
 ```
 
-The diagnosis applies to the technical side too. When a programme brings new rules for development and release, developer teams and implementation partners stand at the same stages as sales. [Chapter 5](../measure-adoption-and-reinforce/) covers that.
+The diagnosis applies to the technical side too. When a program brings new rules for development and release, developer teams and implementation partners stand at the same stages as sales. [Chapter 5](../measure-adoption-and-reinforce/) covers that.
 
-## The five ADKAR stages in a Salesforce programme
+## The five ADKAR stages in a Salesforce program
 
-The [ADKAR model](https://www.prosci.com/blog/adkar-model) breaks a change into five stages that each person takes one after the other. A missing stage blocks all later ones: no reason, no willingness; no willingness, only half the learning. For Salesforce programmes I read the stages like this:
+The [ADKAR model](https://www.prosci.com/blog/adkar-model) breaks a change into five stages that each person takes one after the other. A missing stage blocks all later ones: no reason, no willingness; no willingness, only half the learning. For Salesforce programs I read the stages like this:
 
 | Stage | What the person asks | How you spot the gap | Who closes it | Chapter |
 |---|---|---|---|---|
@@ -56,9 +56,9 @@ The [ADKAR model](https://www.prosci.com/blog/adkar-model) breaks a change into 
 
 Chapter 4 applies the same stages to a rollout across several countries and teams, because every wave goes through them again.
 
-The value lies in the diagnosis. When usage is low, many programmes book the next training session by reflex. With ADKAR we ask per group at which stage it is stuck instead. If sales does not know what well maintained opportunities are needed for, awareness is missing, and the head of sales has to explain that, not the trainer. If technicians know the app but cannot continue offline, ability is missing, and a technical change solves that.
+The value lies in the diagnosis. When usage is low, many programs book the next training session by reflex. With ADKAR we ask per group at which stage it is stuck instead. If sales does not know what well maintained opportunities are needed for, awareness is missing, and the head of sales has to explain that, not the trainer. If technicians know the app but cannot continue offline, ability is missing, and a technical change solves that.
 
-Prosci and ADKAR are registered trademarks of Prosci, Inc. I brought the model into Salesforce programmes together with [Juliane Winterscheid](../../../partners/juliane-winterscheid/), with whom I work on change management.
+Prosci and ADKAR are registered trademarks of Prosci, Inc. I brought the model into Salesforce programs together with [Juliane Winterscheid](../../../partners/juliane-winterscheid/), with whom I work on change management.
 
 ## Diagnosis with one row per group
 
@@ -76,7 +76,7 @@ I often hear "we do not need change management". The budget is spent, training i
 
 ## Change management runs in phases next to the release plan
 
-For the organisation as a whole, Prosci describes three phases, the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). In a Salesforce programme I tie them to the release plan:
+For the organization as a whole, Prosci describes three phases, the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). In a Salesforce program I tie them to the release plan:
 
 ```schritte
 Prepare approach | before the first release · client with sponsor
@@ -91,18 +91,18 @@ Timing decides. If change management starts two weeks before go-live, all that i
 
 ## Who owns change management?
 
-The client. An implementation partner builds the system, but cannot own the change inside your company, because it cannot tell a head of sales how their team will work in future. In the programmes I support, the roles split like this:
+The client. An implementation partner builds the system, but cannot own the change inside your company, because it cannot tell a head of sales how their team will work in future. In the programs I support, the roles split like this:
 
 | Role | Task |
 |---|---|
 | Sponsor in management | Visibly backs the rollout, decides conflicts between departments and asks about usage. More in [chapter 2](../sponsor-and-communication/). |
-| Product owner and programme lead | Keep the rollout plan per release together with the release plan. |
+| Product owner and program lead | Keep the rollout plan per release together with the release plan. |
 | Key users | Carry knowledge into the team and feedback into the project, see [chapter 3](../key-users-and-training/). |
-| Change manager | Plans the measures per group and stage and advises the sponsor and managers. In large programmes a dedicated person with method experience pays off. |
+| Change manager | Plans the measures per group and stage and advises the sponsor and managers. In large programs a dedicated person with method experience pays off. |
 | Architect | Makes sure decisions on template, required fields and releases take the people affected into account. |
 
 ## First step: name the sponsor for the next release
 
-Take the next release and write down three answers: which groups it affects, what changes for each in daily work and who in management visibly stands up for it. If the last answer is empty, start there. Then set the success measure, for example the share of quotes from Salesforce, and not the number of training sessions. How I set this up with you is on the page [Change management for Salesforce programmes](../../../services/change-management-salesforce/).
+Take the next release and write down three answers: which groups it affects, what changes for each in daily work and who in management visibly stands up for it. If the last answer is empty, start there. Then set the success measure, for example the share of quotes from Salesforce, and not the number of training sessions. How I set this up with you is on the page [Change management for Salesforce programs](../../../services/change-management-salesforce/).
 
 The next chapter covers the first two stages, awareness and desire, with the sponsor plan and communication per release. All chapters are on the [overview page](../).

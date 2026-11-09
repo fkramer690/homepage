@@ -94,7 +94,7 @@ The decision on day 90: order status stays and goes to the next dealer group. Sp
 
 ## When should you switch an agent off?
 
-Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be cancelled by the end of 2027, citing "escalating costs, unclear business value or inadequate risk controls". A stop rule written down before go-live makes that a routine decision. I would agree these triggers with the head of service and apply them per subagent:
+Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be canceled by the end of 2027, citing "escalating costs, unclear business value or inadequate risk controls". A stop rule written down before go-live makes that a routine decision. I would agree these triggers with the head of service and apply them per subagent:
 
 1. **Immediately:** a confirmed breach of a hard rule, such as a wrong warranty statement or another dealer's order data. The subagent stays off until the fix passes the regression tests from [testing before go-live](../testing-agentforce-agents-before-go-live/).
 2. **After two improvement cycles of 30 days:** escalation rate above 40 percent or task resolution below 40 percent.
@@ -112,4 +112,4 @@ The 40 percent values are my starting points, not Salesforce figures. Switching 
 5. **Book the sample reading** of 50 sessions a month into a named person's calendar.
 6. **Fix the review dates:** day 30, day 60, decision on day 90.
 
-The KPIs need a business case from before go-live, which is why I put [business value and data quality first](../agentforce-business-value-data-quality-first/). Deciding which agents are worth their costs is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/) work.
+The KPIs need a business case from before go-live, which is why I put [business value and data quality first](../agentforce-business-value-data-quality-first/). Deciding which agents are worth their costs is part of my [make-or-buy and license planning](../../services/make-or-buy-licences/) work.

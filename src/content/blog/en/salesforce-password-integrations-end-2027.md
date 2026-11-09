@@ -26,7 +26,7 @@ faq:
     a: "No. External Client Apps do not support the username-password flow at all. The external system itself has to switch to a supported flow such as client credentials or JWT bearer."
 ---
 
-Salesforce integrations that log in with a username, password and security token have an end date. On 20 February 2027, Salesforce retires the OAuth 2.0 username-password flow for connected apps, and those integrations will stop working. At the same time the SOAP API login gets stricter in several steps. For enterprise organisations with ERP connections, middleware, data loaders, backup tools and reporting extracts, this is a project with a fixed deadline, and the hardest part is finding every affected integration before it fails quietly.
+Salesforce integrations that log in with a username, password and security token have an end date. On 20 February 2027, Salesforce retires the OAuth 2.0 username-password flow for connected apps, and those integrations will stop working. At the same time the SOAP API login gets stricter in several steps. For enterprise organizations with ERP connections, middleware, data loaders, backup tools and reporting extracts, this is a project with a fixed deadline, and the hardest part is finding every affected integration before it fails quietly.
 
 ## What exactly changes, and when?
 
@@ -40,7 +40,7 @@ Salesforce lists the details in its [developer guide to Winter '27](https://deve
 
 ![Timeline of the Salesforce login changes for integrations: from 1 December 2026 SOAP login() needs the user permission Use Any API Auth, on 20 February 2027 the OAuth username-password flow for connected apps ends, in Summer '27 SOAP login() in API versions 31.0 to 64.0 is retired and API versions 31.0 to 40.0 get no more updates, and in Summer '28 SOAP, REST and Bulk API versions 31.0 to 40.0 fail. Query, create and update keep working; what changes is how integrations log in.](../../../assets/blog/password-flow-timeline-en.png)
 
-## Enterprise organisations are hit harder
+## Enterprise organizations are hit harder
 
 A small org has a handful of integrations, and the admin knows them. An enterprise org has grown over years. Typical sources of password-based logins are:
 

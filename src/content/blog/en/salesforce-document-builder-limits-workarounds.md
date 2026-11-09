@@ -29,11 +29,11 @@ The Salesforce Document Builder creates the service report in Field Service with
 
 ## The limits only show in the first test with technicians
 
-In [my first article on Service Documents](../salesforce-service-documents-document-builder/) I described what the Document Builder is, what it costs and when you need a document generation tool instead. The short version: for the service report on site it is the right choice, because it is included in the Field Service licence and works offline.
+In [my first article on Service Documents](../salesforce-service-documents-document-builder/) I described what the Document Builder is, what it costs and when you need a document generation tool instead. The short version: for the service report on site it is the right choice, because it is included in the Field Service license and works offline.
 
 The official limits list covers technical boundaries such as 50 pages per document or three supported objects. What it does not cover are the gaps you only notice in the first test with technicians and the service office. They are small, but they decide whether users accept the report. A technician who has to search for the right template after every job, or a service office that renames every PDF by hand, will soon ask for the old paper form.
 
-The Document Builder is, however, built on the same platform as everything else in Salesforce. Flows and Lightning Web Components (LWC, the standard way to build custom user interface components) can close every one of the five gaps without an additional licence.
+The Document Builder is, however, built on the same platform as everything else in Salesforce. Flows and Lightning Web Components (LWC, the standard way to build custom user interface components) can close every one of the five gaps without an additional license.
 
 ## Limit 1: picking the template needs a screen flow
 
@@ -53,7 +53,7 @@ The flow has to run asynchronously, shortly after creation. Only then does the f
 
 ## Limit 3: How do I send the service report by email?
 
-Out of the box, the Document Builder does not send the document. The technician creates the PDF, the customer signs, and then the report sits on the work order. In most service organisations the customer expects the report by email the same day, often as a basis for the invoice approval.
+Out of the box, the Document Builder does not send the document. The technician creates the PDF, the customer signs, and then the report sits on the work order. In most service organizations the customer expects the report by email the same day, often as a basis for the invoice approval.
 
 **Workaround:** A flow that starts when the document is complete and sends it as an attachment. You decide in the flow who gets it, for example the contact on the work order or a central service address of the customer, which email template is used and in which language. Combined with limit 2, the email arrives with a file name the customer can file away.
 

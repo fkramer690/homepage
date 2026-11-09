@@ -10,7 +10,7 @@ categories: [field-service]
 tags: [field service, KPIs, first-time fix, Operations Home, rollout, analytics]
 takeaways:
   - "I also measure how often dispatchers change the engine's proposals before release. It shows whether data and scheduling policy fit."
-  - "Operations Home shows 12 KPIs, Field Service Intelligence five dashboards with more than 30. Both run on Data 360 and need licences."
+  - "Operations Home shows 12 KPIs, Field Service Intelligence five dashboards with more than 30. Both run on Data 360 and need licenses."
   - "First-time fix needs a written definition: time window, same asset, same fault code and which follow-up visits do not count."
   - "Without a baseline from the old system, measured over three months with the same definitions, nobody can say whether Field Service helped."
 faq:
@@ -18,7 +18,7 @@ faq:
     a: "I use six: jobs per technician and day, share of travel time, first-time fix rate, response times met, arrivals within the arrival window and the share of engine proposals dispatchers change before release. They match the business case."
   - q: "What is Operations Home in Salesforce Field Service?"
     a: "A homepage for back-office staff with 12 out-of-the-box KPIs, including first-time fix rate, utilization, job duration and asset downtime. According to Salesforce it is powered by Tableau Next, Data Cloud and Agentforce."
-  - q: "Is Field Service Intelligence included in the Field Service licence?"
+  - q: "Is Field Service Intelligence included in the Field Service license?"
     a: "The price list shows Field Service Intelligence and Operations Home with 'available for purchase' entries, and Tableau Next is only included in Agentforce 1 Field Service. Ask your account team which line items your edition needs."
   - q: "How do you calculate the first-time fix rate?"
     a: "Share of work orders with no further visit to the same asset for the same fault within a fixed window, for example 14 days. Write down which planned follow-up visits, such as multiday commissioning, are excluded."
@@ -40,7 +40,7 @@ The KPIs after go-live are the four numbers I use to decide whether [Field Servi
 | Arrival within window | Actual start within the arrival window promised to the customer | Service appointment fields |
 | Dispatcher change rate | Share of proposals changed before the status Dispatched | Your own tracking |
 
-Two of these come almost for free. The service appointment object has fields for the [actual start time and the arrival window](https://developer.salesforce.com/docs/service/salesforce-scheduler-dev-guide/guide/sforce-api-objects-serviceappointment.html), so a standard report compares them. Response times come from milestones on work orders, which need an entitlement process of type Work Order, as described in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/).
+Two of these come almost for free. The service appointment object has fields for the [actual start time and the arrival window](https://developer.salesforce.com/docs/service/salesforce-scheduler-dev-guide/guide/sforce-api-objects-serviceappointment.html), so a standard report compares them. Response times come from milestones on work orders, which need an entitlement process of type Work Order, as described in [modeling maintenance contracts](../salesforce-field-service-maintenance-contracts/).
 
 The dispatcher change rate takes some effort, and it is the most useful number in the first months. In [how much scheduling should be automatic](../salesforce-field-service-scheduling-automation/) I recommend having dispatchers note why they change a proposal. A picklist with the reason on the appointment turns that into a report. A high rate means missing data or a policy that does not fit, and the reasons show which one.
 
@@ -53,7 +53,7 @@ Salesforce sells Field Service today as Field Service and Operations, and its an
 
 Salesforce Help describes [Field Service Intelligence](https://help.salesforce.com/s/articleView?id=service.ifs_intro.htm&language=en_US&type=5) as including Data 360, CRM Analytics and Agentforce Service. Its [Service data kit](https://help.salesforce.com/s/articleView?id=sf.ifs_install_data_kit.htm&language=en_US&type=5) deploys more than 20 data streams, and Help warns not to remove the installed objects, fields or mappings, because the dashboards rely on them. Tableau Next itself needs Data Cloud configured first, according to the [Tableau Next setup guide](https://help.tableau.com/current/tableau-next/en-us/tableau_next_setup_guide_configure_data_cloud.htm).
 
-The licence question is not obvious from the [price list](https://www.salesforce.com/service/field-service-management/pricing/). Its comparison table marks Tableau Next as "Available for Purchase" for Dispatcher, Technician and Field Service Plus, and Agentforce 1 Field Service includes it together with 2.5 million Data Cloud credits per org and year. Operations Home and Field Service Intelligence also appear with "Available for Purchase" entries.
+The license question is not obvious from the [price list](https://www.salesforce.com/service/field-service-management/pricing/). Its comparison table marks Tableau Next as "Available for Purchase" for Dispatcher, Technician and Field Service Plus, and Agentforce 1 Field Service includes it together with 2.5 million Data Cloud credits per org and year. Operations Home and Field Service Intelligence also appear with "Available for Purchase" entries.
 
 ```hinweis offen
 Have your account team confirm which line items your edition needs for Operations Home, Field Service Intelligence and Tableau Next before you promise anyone a dashboard.
@@ -105,7 +105,7 @@ Write the definitions
 Measure the baseline | three months
   In the old system, with the same definitions you will use after go-live.
 Start with standard reports
-  In the first wave; move to Operations Home or Field Service Intelligence once licences and definitions are clear.
+  In the first wave; move to Operations Home or Field Service Intelligence once licenses and definitions are clear.
 Review monthly per region
   Tie every outlier to a data or process fix.
 ```

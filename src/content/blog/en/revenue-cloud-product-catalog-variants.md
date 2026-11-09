@@ -1,5 +1,5 @@
 ---
-title: "Revenue Cloud product catalog: modelling machine variants"
+title: "Revenue Cloud product catalog: modeling machine variants"
 description: "How machine builders model variants, options and spare parts in the Revenue Cloud catalog with classifications, attributes and bundles, without copying SAP."
 pubDate: 2026-10-28
 lang: en
@@ -54,7 +54,7 @@ Everything else stays an attribute value on the base machine. A press brake with
 
 The classification carries the attributes per machine family. Trailhead shows the mechanism with a simple example: products inherit the attributes of their classification, and a WiFi tablet does not need the SIM type its category would give it, so the attribute is overridden. For a machine family this means one template with the attributes sales needs to ask about, and a few overrides for models where an attribute does not apply.
 
-Accessories and packages that carry their own material number belong in a bundle. The [Trailhead unit on bundles](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/create-a-product-bundle) explains the parts: product groups inside the bundle, local cardinality per component (required, included by default, quantity changeable or not) and group cardinality with a minimum and maximum number of products. Customers cannot change static bundles, configurable bundles can be customised during the sale. For a machine with tooling, a safety package and commissioning, that is a configurable bundle with three groups.
+Accessories and packages that carry their own material number belong in a bundle. The [Trailhead unit on bundles](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/create-a-product-bundle) explains the parts: product groups inside the bundle, local cardinality per component (required, included by default, quantity changeable or not) and group cardinality with a minimum and maximum number of products. Customers cannot change static bundles, configurable bundles can be customized during the sale. For a machine with tooling, a safety package and commissioning, that is a configurable bundle with three groups.
 
 Which combinations are allowed is decided by the configurator, not by the catalog. How its rules work is covered in [Revenue Cloud configurator: when constraint rules pay off](../revenue-cloud-configurator-constraint-rules/).
 

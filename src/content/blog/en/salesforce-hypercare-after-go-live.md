@@ -96,4 +96,4 @@ After the handover one task remains for change management: the collected questio
 
 ## Put team, meetings and exit criteria in writing
 
-Before the next go-live, put in writing who is on the hypercare team, how often it meets and on which criteria hypercare ends. Plan the person from support in from the start, so the handover to operations can happen step by step. How we set up hypercare in programmes is described under [Salesforce change management consulting](../../services/change-management-salesforce/).
+Before the next go-live, put in writing who is on the hypercare team, how often it meets and on which criteria hypercare ends. Plan the person from support in from the start, so the handover to operations can happen step by step. How we set up hypercare in programs is described under [Salesforce change management consulting](../../services/change-management-salesforce/).

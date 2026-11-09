@@ -1,6 +1,6 @@
 ---
 title: "Advanced Pricing in B2B stores: when Revenue Cloud?"
-description: "When a Salesforce B2B store needs Advanced Pricing powered by Revenue Cloud: licences, pricing procedures, contract prices, and when SAP pricing is enough."
+description: "When a Salesforce B2B store needs Advanced Pricing powered by Revenue Cloud: licenses, pricing procedures, contract prices, and when SAP pricing is enough."
 pubDate: 2026-10-28
 lang: en
 slug: advanced-pricing-b2b-store-revenue-cloud
@@ -17,8 +17,8 @@ takeaways:
 faq:
   - q: "What is Advanced Pricing for Commerce Powered by Revenue Cloud?"
     a: "It is the pricing engine of Revenue Cloud used inside a B2B Commerce store. Instead of only price books it calculates prices with pricing procedures, decision tables and contract prices, and Salesforce names it as the basis for features such as Request for Quote."
-  - q: "Which licences does Advanced Pricing in B2B Commerce need?"
-    a: "According to Salesforce Help, a Commerce Growth or Commerce Advanced licence together with a Revenue Cloud Advanced licence. Revenue Settings must be enabled. The licences are bought through the Salesforce account executive."
+  - q: "Which licenses does Advanced Pricing in B2B Commerce need?"
+    a: "According to Salesforce Help, a Commerce Growth or Commerce Advanced license together with a Revenue Cloud Advanced license. Revenue Settings must be enabled. The licenses are bought through the Salesforce account executive."
   - q: "Can a B2B store show contract prices from Revenue Cloud?"
     a: "Yes. Salesforce Help lists contract-based pricing for B2B stores under Advanced Pricing. In Revenue Cloud, contract prices live on Contract Item Price records and are applied by the pricing procedure once the contract is active."
   - q: "Do I need Revenue Cloud if SAP calculates my prices?"
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-A B2B store needs Advanced Pricing powered by Revenue Cloud when its prices follow rules that price books cannot express, and when those rules already live, or should live, in Salesforce. Salesforce sells it as Agentforce Revenue Management for B2B Commerce: a Commerce Growth or Advanced licence plus Revenue Cloud Advanced. It adds pricing procedures, decision tables, contract prices, volume tiers, configurable bundles and qualification rules, and Salesforce lists it as a requirement for Request for Quote. My rule: worth it when sales already prices in Revenue Cloud. If SAP is the price master, it mostly gives you a second pricing engine.
+A B2B store needs Advanced Pricing powered by Revenue Cloud when its prices follow rules that price books cannot express, and when those rules already live, or should live, in Salesforce. Salesforce sells it as Agentforce Revenue Management for B2B Commerce: a Commerce Growth or Advanced license plus Revenue Cloud Advanced. It adds pricing procedures, decision tables, contract prices, volume tiers, configurable bundles and qualification rules, and Salesforce lists it as a requirement for Request for Quote. My rule: worth it when sales already prices in Revenue Cloud. If SAP is the price master, it mostly gives you a second pricing engine.
 
 ## What does Advanced Pricing add to a B2B store?
 
@@ -45,7 +45,7 @@ Two terms explained, because the rest of the article uses them. A pricing proced
 
 ## Commerce Growth or Advanced plus Revenue Cloud Advanced
 
-According to Salesforce Help, the Revenue Management features for B2B Commerce are available in orgs with a Commerce Growth or Commerce Advanced licence together with a Revenue Cloud Advanced licence. Revenue Settings must be enabled, and you buy the licences through your account executive.
+According to Salesforce Help, the Revenue Management features for B2B Commerce are available in orgs with a Commerce Growth or Commerce Advanced license together with a Revenue Cloud Advanced license. Revenue Settings must be enabled, and you buy the licenses through your account executive.
 
 Two facts from the official pricing pages for budgeting. The [B2B Commerce editions](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) show "Contact for Pricing" and are charged as a share of gross merchandise value through the storefront; Salesforce publishes no percentage. The [Revenue Cloud pricing page](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) lists Revenue Cloud Advanced at $200 per user and month, billed annually, and describes it as a separate product bought in addition to a Sales Cloud subscription.
 
@@ -98,6 +98,6 @@ Change one assumption: the manufacturer quotes machines in SAP and has no Revenu
 
 ## Write down your pricing logic and contract prices
 
-Write down three things before you talk to Salesforce about licences: where your pricing logic lives today, who maintains contract prices, and whether you need Request for Quote or configured bundles in the store. If two of the three point to Salesforce, Advanced Pricing is worth a proof of concept with your real procedures. The licence question belongs in the same make-or-buy review I describe under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
+Write down three things before you talk to Salesforce about licenses: where your pricing logic lives today, who maintains contract prices, and whether you need Request for Quote or configured bundles in the store. If two of the three point to Salesforce, Advanced Pricing is worth a proof of concept with your real procedures. The license question belongs in the same make-or-buy review I describe under [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
 
 The wider picture of prices, quotes and checkout is in the chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/). How buyers turn a cart into a quote is covered in [Request for Quote in B2B Commerce](../request-for-quote-b2b-commerce-cart-to-quote/), and the dealer side of AI-built quotes in [AI Partner Sales Assistant](../ai-partner-sales-assistant-dealer-quotes/).

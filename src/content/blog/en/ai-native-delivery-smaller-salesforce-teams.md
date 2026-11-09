@@ -1,16 +1,16 @@
 ---
 title: "AI-native delivery: smaller Salesforce teams"
-description: "AI-native delivery shrinks Salesforce teams to pods of architect, builder-reviewer and domain lead. What changes in a manufacturer's programme organisation."
+description: "AI-native delivery shrinks Salesforce teams to pods of architect, builder-reviewer and domain lead. What changes in a manufacturer's program organization."
 pubDate: 2026-10-27
 lang: en
 slug: ai-native-delivery-smaller-salesforce-teams
 translationKey: smaller-teams-ai-native-delivery
 topic: governance
 categories: [architecture, ai]
-tags: [ai-native delivery, programme management, team setup, ai coding, partner governance, manufacturing]
+tags: [ai-native delivery, program management, team setup, ai coding, partner governance, manufacturing]
 takeaways:
   - "Coding agents draft, build and test, while people set the intent, review the output and own the result."
-  - "In McKinsey's 2026 survey, 79 percent of respondents at top-accelerating organisations reported smaller squads, with the median falling from ten to seven."
+  - "In McKinsey's 2026 survey, 79 percent of respondents at top-accelerating organizations reported smaller squads, with the median falling from ten to seven."
   - "The bottleneck moves to the manufacturer: each pod needs a domain lead from service, sales or after-sales who accepts working software every day."
   - "A short intent with testable acceptance criteria replaces the long specification for most stories; SAP interfaces and pricing rules still need precise specs."
   - "A named person owns every artifact, and the same pipeline gates apply to human and agent code."
@@ -18,7 +18,7 @@ faq:
   - q: "What is AI-native delivery in Salesforce projects?"
     a: "A delivery model built around coding agents from the start: agents draft stories, code, tests and runbooks, while people define the intent, review the output and own each artifact. Small pods replace the classic pyramid of many junior developers."
   - q: "Do AI-native Salesforce teams really need fewer people?"
-    a: "The evidence points that way but is thin. McKinsey reports that 79 percent of respondents at top-accelerating organisations saw smaller squads, median from about ten to seven, in a self-reported survey. Measure your own cycle times before you cut a team."
+    a: "The evidence points that way but is thin. McKinsey reports that 79 percent of respondents at top-accelerating organizations saw smaller squads, median from about ten to seven, in a self-reported survey. Measure your own cycle times before you cut a team."
   - q: "Who should be the domain lead in a pod at a manufacturer?"
     a: "Someone from the business who knows the process and may decide on it, for example a warranty specialist from after-sales or a dispatcher from field service. Plan around half of that person's time; without it, the pod builds on assumptions."
   - q: "Does a daily demo replace user acceptance testing?"
@@ -26,13 +26,13 @@ faq:
 draft: false
 ---
 
-AI-native delivery shrinks a Salesforce team to small pods: an architect, a builder-reviewer who steers the coding agents, and a domain lead from the business. For a manufacturer the larger change sits on its own side, not with the partner. Each pod needs someone from service, sales or after-sales who decides on the process every day and accepts working software in a daily demo. Short intents replace long specifications, and a named person owns every artifact. If your organisation cannot release those people, smaller partner teams will not make the programme faster.
+AI-native delivery shrinks a Salesforce team to small pods: an architect, a builder-reviewer who steers the coding agents, and a domain lead from the business. For a manufacturer the larger change sits on its own side, not with the partner. Each pod needs someone from service, sales or after-sales who decides on the process every day and accepts working software in a daily demo. Short intents replace long specifications, and a named person owns every artifact. If your organization cannot release those people, smaller partner teams will not make the program faster.
 
 ## What is AI-native delivery?
 
 AI-native delivery means designing the whole delivery lifecycle around AI agents rather than adding a coding assistant to the old process. The clearest description for Salesforce comes from a practitioner, not a study: Amit Chaudhary's [ApexHours article](https://www.apexhours.com/ai-native-delivery-for-salesforce/) of 19 October 2026. In his framework agents draft, build, test and document, while people "set intent and guardrails, review output, own the outcome". He calls the alternative "the old process with faster typing".
 
-The framework has five building blocks that matter for programme organisation:
+The framework has five building blocks that matter for program organization:
 
 - **Intents instead of specifications.** An intent is an outcome-first requirement: the expected outcome, why it matters, the users affected, constraints and guardrails, and success criteria.
 - **Small pods instead of a pyramid.** "Swap the big pyramid of junior developers for small pods: an architect, a builder-reviewer and a domain or BA lead."
@@ -47,7 +47,7 @@ I don't agree with every number or every step in this framework, but it points i
 McKinsey surveyed 334 product and engineering leaders in May 2026 and published the results in [Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) in August.
 
 ```kennzahlen
-79% | of respondents at top-accelerating organisations report smaller squads
+79% | of respondents at top-accelerating organizations report smaller squads
 7 | people per squad there at the median, down from about ten
 50 to 80% | shorter development cycles, reported by one global technology company
 source: McKinsey, Beyond the copilot, August 2026
@@ -55,13 +55,13 @@ source: McKinsey, Beyond the copilot, August 2026
 
 That technology company moved from product pods of 8 to 10 people to agentic teams of 4 to 6 and reported roughly twice the capacity. McKinsey sees two role families emerging: "definers who fuse product and design, and builders who fuse development, testing, and operations".
 
-Two caveats from the same source. The figures are self-reported by leaders, and 30 percent of respondents said team productivity fell. McKinsey also writes that "Speed is improving faster than quality". DORA's 2025 report found that AI adoption still has a [negative relationship with delivery stability](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), and DORA lists [working in small batches and a user-centric focus](https://dora.dev/capabilities/) among the seven capabilities that amplify AI's benefit. Small pods with daily feedback are a direct answer to both points. How to check whether your own programme gets faster is the topic of [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
+Two caveats from the same source. The figures are self-reported by leaders, and 30 percent of respondents said team productivity fell. McKinsey also writes that "Speed is improving faster than quality". DORA's 2025 report found that AI adoption still has a [negative relationship with delivery stability](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), and DORA lists [working in small batches and a user-centric focus](https://dora.dev/capabilities/) among the seven capabilities that amplify AI's benefit. Small pods with daily feedback are a direct answer to both points. How to check whether your own program gets faster is the topic of [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
 
-## In the programme organisation the business side becomes the bottleneck
+## In the program organization the business side becomes the bottleneck
 
 ### The business side becomes the bottleneck
 
-In a classic programme the business writes requirements, then waits weeks for UAT. In a pod, the domain lead looks at working software every day and decides on the spot. For a machine builder that means a warranty specialist from after-sales, a dispatcher from field service or someone from dealer sales who may decide on their process. In my judgement this person needs around half of their time for the pod. Heads of service rarely plan for that, and it is the first thing I would negotiate before any partner proposal.
+In a classic program the business writes requirements, then waits weeks for UAT. In a pod, the domain lead looks at working software every day and decides on the spot. For a machine builder that means a warranty specialist from after-sales, a dispatcher from field service or someone from dealer sales who may decide on their process. In my judgment this person needs around half of their time for the pod. Heads of service rarely plan for that, and it is the first thing I would negotiate before any partner proposal.
 
 ### Intents replace most of the specification
 
@@ -111,4 +111,4 @@ Measure and decide | 3 months
   Measure cycle time and rework, and only then decide on the other streams.
 ```
 
-The ten intents from the third step are also the yardstick for the measurement after three months. Planning streams, team setups and the business time behind them is the core of my [programme management for Salesforce programmes](../../services/program-management-nearshore/).
+The ten intents from the third step are also the yardstick for the measurement after three months. Planning streams, team setups and the business time behind them is the core of my [program management for Salesforce programs](../../services/program-management-nearshore/).

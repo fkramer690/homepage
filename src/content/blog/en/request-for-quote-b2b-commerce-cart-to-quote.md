@@ -1,6 +1,6 @@
 ---
 title: "Request for Quote in B2B Commerce: cart to quote"
-description: "How buyers in Salesforce B2B Commerce turn a cart into a quote request, how the approved quote comes back as a cart, and what the sales desk must organise."
+description: "How buyers in Salesforce B2B Commerce turn a cart into a quote request, how the approved quote comes back as a cart, and what the sales desk must organize."
 pubDate: 2026-10-28
 lang: en
 slug: request-for-quote-b2b-commerce-cart-to-quote
@@ -18,7 +18,7 @@ faq:
   - q: "What is Request for Quote in Salesforce B2B Commerce?"
     a: "A store feature that lets buyers request a quote for complex or high-value purchases directly from their cart, or for a single product from the product page. The request becomes a quote that the sales desk reviews in Sales Cloud or Agentforce Revenue Management."
   - q: "Does Request for Quote need Revenue Cloud?"
-    a: "Salesforce Help lists Advanced Pricing for Commerce Powered by Revenue Cloud as required for Request for Quote. The Apex reference for creating a quote from a product supports simple products with a B2B Commerce licence and bundles only with Revenue Cloud. Confirm your case with Salesforce."
+    a: "Salesforce Help lists Advanced Pricing for Commerce Powered by Revenue Cloud as required for Request for Quote. The Apex reference for creating a quote from a product supports simple products with a B2B Commerce license and bundles only with Revenue Cloud. Confirm your case with Salesforce."
   - q: "How does an approved quote get back to the buyer?"
     a: "With Quote to Cart, which Salesforce announced in June 2026: once a quote is negotiated and approved, the seller shares it with the buyer as a cart, and the buyer reviews it and checks out in the store."
   - q: "Can a buyer reject or renegotiate a quote in the store?"
@@ -34,7 +34,7 @@ Dealers do not only reorder known parts at known prices. They ask for a price on
 
 Request for Quote (RFQ) keeps that conversation in the store. Salesforce described it in its [Spring '26 B2B innovations post](https://www.salesforce.com/blog/b2b-commerce-innovations-spring-26/) as the step "from self-service to sales-assisted": buyers request a quote without leaving the storefront. The [June 2026 post](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) calls RFQ "already generally available". Salesforce now also markets the product as Agentforce Commerce for B2B; the feature is the same under both names.
 
-[Salesforce Help on pricing for B2B stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) describes it like this: buyers in B2B stores can request quotes for complex or high-value purchases directly from their cart, and you review and manage the quotes in Sales Cloud or Agentforce Revenue Management. The same page lists Advanced Pricing for Commerce Powered by Revenue Cloud as required for Request for Quote. When that is worth the licence is covered in [Advanced Pricing in B2B stores](../advanced-pricing-b2b-store-revenue-cloud/).
+[Salesforce Help on pricing for B2B stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) describes it like this: buyers in B2B stores can request quotes for complex or high-value purchases directly from their cart, and you review and manage the quotes in Sales Cloud or Agentforce Revenue Management. The same page lists Advanced Pricing for Commerce Powered by Revenue Cloud as required for Request for Quote. When that is worth the license is covered in [Advanced Pricing in B2B stores](../advanced-pricing-b2b-store-revenue-cloud/).
 
 ## How does a cart become a quote and the quote a cart again?
 
@@ -51,7 +51,7 @@ Order | Buyer
   With Quote to Cart, the approved quote comes back as a cart. The buyer checks out with the negotiated prices, usually with a purchase order number, as described in [B2B checkout: purchase order, card or invoice?](../b2b-checkout-purchase-order-card-invoice/).
 ```
 
-On step 4, the June 2026 post says: "once a quote is negotiated and approved, sellers can share it with customers as a cart". Salesforce calls this round-trip quoting. The June post presents Quote to Cart and round-trip quoting as part of a release labelled "GA June 2026", but it gives the explicit status "generally available" only for RFQ. Before you plan step 4 into a rollout, check in your org which of these parts are active.
+On step 4, the June 2026 post says: "once a quote is negotiated and approved, sellers can share it with customers as a cart". Salesforce calls this round-trip quoting. The June post presents Quote to Cart and round-trip quoting as part of a release labeled "GA June 2026", but it gives the explicit status "generally available" only for RFQ. Before you plan step 4 into a rollout, check in your org which of these parts are active.
 
 ## The CommerceQuotes APIs for custom components
 
@@ -72,7 +72,7 @@ Two details from the reference matter for design:
 The statuses are the hook for your process. Every quote in Draft is work for the sales desk, every Approved quote waits for the buyer, every Denied quote is a reason worth reading.
 
 ```hinweis offen
-**Licences per product type.** According to the Apex reference, simple products are supported with B2B Commerce or B2B Commerce and Revenue Cloud licences; static bundled products require B2B Commerce and Revenue Cloud. This reads less strict than the Help page, which lists Advanced Pricing as required for Request for Quote. Get the binding answer for your products from Salesforce in writing.
+**Licenses per product type.** According to the Apex reference, simple products are supported with B2B Commerce or B2B Commerce and Revenue Cloud licenses; static bundled products require B2B Commerce and Revenue Cloud. This reads less strict than the Help page, which lists Advanced Pricing as required for Request for Quote. Get the binding answer for your products from Salesforce in writing.
 ```
 
 ## Who answers the quote, and how fast?
@@ -99,6 +99,6 @@ The numbers are invented to show the method. What I would measure in the first t
 
 ## Set response time and price authority for the sales desk
 
-Start with the sales desk, not the component. Write down the response time, the queue owners and the price authority, and test the round trip with one buyer group that already sends many quote requests. Then check the licence question for your product types with Salesforce, because Help and the Apex reference read differently.
+Start with the sales desk, not the component. Write down the response time, the queue owners and the price authority, and test the round trip with one buyer group that already sends many quote requests. Then check the license question for your product types with Salesforce, because Help and the Apex reference read differently.
 
 The chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) shows how RFQ fits next to customer prices, checkout and reorders. How a quote in Revenue Cloud continues to contract and order is covered in the chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/) of the Revenue Cloud masterclass. Where RFQ touches several partners and teams, steering it is part of my work on [partner governance](../../services/partner-governance/).

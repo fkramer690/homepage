@@ -64,7 +64,7 @@ In my Field Service projects this gap hurts most. Technicians often have to pick
 There is no equal replacement. What Salesforce documents for Data Capture:
 
 - **Lookup component (Spring '26).** The technician searches for one or more records, for example assets, and selects them, also offline. This is the only documented multi-record selection. It works when the technician knows what to search for. It does not show a prepared list to tick off.
-- **Repeater with a data source (Summer '26).** A collection fills the rows in advance and the technician checks or edits each row. The repeater is meant for capturing data about several items, not for selecting them. A selection can be modelled with a checkbox per row and evaluated after the screen, within 30 rows.
+- **Repeater with a data source (Summer '26).** A collection fills the rows in advance and the technician checks or edits each row. The repeater is meant for capturing data about several items, not for selecting them. A selection can be modeled with a checkbox per row and evaluated after the screen, within 30 rows.
 
 Worked example: at the annual maintenance of a packaging line, the technician has to mark which of eight assemblies were inspected and which need a follow-up job. On the desktop that is one data table with eight checkboxes. In Data Capture it becomes either eight lookup searches or a repeater with eight prefilled rows and a checkbox each, with a loop after the screen that collects the ticked rows.
 
@@ -129,4 +129,4 @@ Test on both platforms
   On iOS and Android, online and in flight mode, with the patch version your users have.
 ```
 
-Which records a flow can read offline is decided in the briefcase, see [Field Service mobile offline: which data goes on the device?](../field-service-mobile-app-offline-data/). In Field Service programmes I decide with the team which mobile process belongs in Data Capture, in a mobile flow, in a normal record edit or in the back end; that is part of my [solution architecture](../../services/salesforce-architecture/) work.
+Which records a flow can read offline is decided in the briefcase, see [Field Service mobile offline: which data goes on the device?](../field-service-mobile-app-offline-data/). In Field Service programs I decide with the team which mobile process belongs in Data Capture, in a mobile flow, in a normal record edit or in the back end; that is part of my [solution architecture](../../services/salesforce-architecture/) work.

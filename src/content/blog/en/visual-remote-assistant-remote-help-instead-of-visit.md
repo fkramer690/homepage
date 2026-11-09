@@ -12,7 +12,7 @@ categories: [field-service]
 tags: [visual remote assistance, Visual Remote Assistant, field service, remote service, breakdown hotline, works council]
 takeaways:
   - "Visual Remote Assistant sends the customer a link by SMS or email; the two-way video opens in the mobile browser without an app, login or password."
-  - "The add-on costs $50 per user and month (October 2026) and is included in Agentforce 1 Field Service. The customer needs no licence."
+  - "The add-on costs $50 per user and month (October 2026) and is included in Agentforce 1 Field Service. The customer needs no license."
   - "Video replaces a visit for parameters, operating errors and resets. For mechanical faults it shortens the visit, because the right part comes along."
   - "Before the first session, settle recording consent, the works council and which faults may be closed remotely."
   - "Count the visits in your breakdown history that needed no part and no tool. That share is your realistic potential."
@@ -20,7 +20,7 @@ faq:
   - q: "What is visual remote assistance in field service?"
     a: "Visual remote assistance means a service expert sees the machine through the customer's phone camera and guides the operator by video and drawn markers. In Salesforce the product for it is Visual Remote Assistant, an add-on for Service Cloud and Field Service."
   - q: "What does Visual Remote Assistant cost?"
-    a: "According to the Salesforce product page, the add-on costs $50 or 50 € per user and month, billed annually (October 2026). It is included in the Agentforce 1 Field Service bundle. Only the people who run sessions need a licence; the customer joins through a link."
+    a: "According to the Salesforce product page, the add-on costs $50 or 50 € per user and month, billed annually (October 2026). It is included in the Agentforce 1 Field Service bundle. Only the people who run sessions need a license; the customer joins through a link."
   - q: "Does the customer need an app for Visual Remote Assistant?"
     a: "No. The agent sends a link by SMS or email, the customer taps it, accepts the terms and grants camera access. The video then runs in the mobile browser, without app download, login or password."
   - q: "Can a technician on site start a video session with an expert?"
@@ -56,7 +56,7 @@ $650 | per user and month for Agentforce 1 Field Service, add-on included
 source: Salesforce product page for Visual Remote Assistant and Field Service pricing page, October 2026
 ```
 
-The product page lists the add-on in euros too, at 50 €. The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) shows the same $50 as an add-on and lists Visual Remote Assistant as part of Agentforce 1 Field Service. Trailhead names Service Cloud or Field Service licences as the prerequisite, and the Visual Remote Assistant licences are bought through the account executive.
+The product page lists the add-on in euros too, at 50 €. The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) shows the same $50 as an add-on and lists Visual Remote Assistant as part of Agentforce 1 Field Service. Trailhead names Service Cloud or Field Service licenses as the prerequisite, and the Visual Remote Assistant licenses are bought through the account executive.
 
 You license the people who start sessions: hotline agents, remote experts, perhaps senior technicians. The customer joins through a link and needs nothing. Eight users cost $400 a month or $4,800 a year at list price. Compared with the cost of one avoided trip abroad, that is small. The real effort lies in setup, the rules for remote fixes and training the hotline.
 
@@ -104,4 +104,4 @@ Measure and decide
   Check the fix rate and repeat calls, then decide on the full rollout.
 ```
 
-How this fits with the mobile app and service documents is part of the [masterclass chapter on the mobile app](../../masterclass/field-service/field-service-mobile-app-documents/). Whether Field Service pays off at all is covered in [Salesforce Field Service: when is it worth it?](../salesforce-field-service-worth-it/), and the licence question as a whole under [make-or-buy and licences](../../services/make-or-buy-licences/).
+How this fits with the mobile app and service documents is part of the [masterclass chapter on the mobile app](../../masterclass/field-service/field-service-mobile-app-documents/). Whether Field Service pays off at all is covered in [Salesforce Field Service: when is it worth it?](../salesforce-field-service-worth-it/), and the license question as a whole under [make-or-buy and licenses](../../services/make-or-buy-licences/).

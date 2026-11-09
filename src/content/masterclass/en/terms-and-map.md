@@ -1,12 +1,12 @@
 ---
-title: "AI in Salesforce programmes: terms and map"
-description: "The four layers of AI in a Salesforce programme, the key terms from vibe coding to Flex Credits and the product names with dates, sorted for manufacturers."
+title: "AI in Salesforce programs: terms and map"
+description: "The four layers of AI in a Salesforce program, the key terms from vibe coding to Flex Credits and the product names with dates, sorted for manufacturers."
 lang: en
 slug: terms-and-map
 translationKey: masterclass-01
 chapter: 1
 short: "Terms and map"
-summary: "The four layers of AI in a Salesforce programme, what separates vibe coding from agentic engineering and which product name stands for what."
+summary: "The four layers of AI in a Salesforce program, what separates vibe coding from agentic engineering and which product name stands for what."
 takeaways:
   - "Each of the four layers has its own owners, its own risks and its own billing model, so each one needs its own decision."
   - "A coding agent such as Claude Code writes metadata and code, an Agentforce agent runs in the org. Mixing the two up leads to the wrong budget."
@@ -23,20 +23,20 @@ faq:
 draft: false
 ---
 
-AI in a Salesforce programme means four different things: AI that builds code and metadata, interfaces through which agents reach the org, AI that runs as an agent inside the org, and AI as a new interface, such as Salesforce in Claude or Slack. Almost every confusion in a steering committee comes from mixing these layers. Each layer has different owners, different risks and its own billing model. Separate them, always use product names with a date, and you can compare offers from Salesforce and partners on equal terms.
+AI in a Salesforce program means four different things: AI that builds code and metadata, interfaces through which agents reach the org, AI that runs as an agent inside the org, and AI as a new interface, such as Salesforce in Claude or Slack. Almost every confusion in a steering committee comes from mixing these layers. Each layer has different owners, different risks and its own billing model. Separate them, always use product names with a date, and you can compare offers from Salesforce and partners on equal terms.
 
-## The four layers of AI in a Salesforce programme
+## The four layers of AI in a Salesforce program
 
-I sort every AI topic in a Salesforce programme into one of four layers first. Only then is it worth asking about tools.
+I sort every AI topic in a Salesforce program into one of four layers first. Only then is it worth asking about tools.
 
 | Layer | Question | Typical products (October 2026) | Example at a manufacturer | How it is billed |
 |---|---|---|---|---|
-| A: AI for building | How are Apex, LWC, flows and metadata created? | Agentforce Vibes, Claude Code with the Salesforce plug-in, Codex, GitHub Copilot | The partner builds dealer portal components with a coding agent | Tokens or user licence, paid by the partner or by you, depending on the contract |
+| A: AI for building | How are Apex, LWC, flows and metadata created? | Agentforce Vibes, Claude Code with the Salesforce plug-in, Codex, GitHub Copilot | The partner builds dealer portal components with a coding agent | Tokens or user license, paid by the partner or by you, depending on the contract |
 | B: Interfaces | How does an agent reach the org, metadata and data? | sf CLI, skills, Hosted MCP Servers, MuleSoft APIs as MCP servers | An agent reads order status from SAP through a MuleSoft API | Integration work, Flex Credits for agentic calls in future |
 | C: AI in the product | Which AI runs for users inside the org? | Agentforce with Builder, Agent Script and the Atlas Reasoning Engine, Agentforce for Manufacturing | A service agent answers dealer questions about spare parts and delivery dates | Flex Credits per action |
 | D: AI as the interface | Where will users work with Salesforce? | AIforce: Salesforce in Claude, Slackforce, Agentforce Coworker | Key account managers prepare dealer visits in Claude | Still open, "subject to change" according to Salesforce |
 
-Billing differs sharply between the layers. Layer C is billed in Flex Credits per action according to [Salesforce](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/). Agentforce Vibes in layer A counts usage in token units according to its [billing documentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html), or runs on an unmetered licence with a cap for premium models. For agentic API and MCP calls in layer B, the [rate card of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) lists a "Headless Platform Interaction" meter without a fixed rate yet.
+Billing differs sharply between the layers. Layer C is billed in Flex Credits per action according to [Salesforce](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/). Agentforce Vibes in layer A counts usage in token units according to its [billing documentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html), or runs on an unmetered license with a cap for premium models. For agentic API and MCP calls in layer B, the [rate card of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) lists a "Headless Platform Interaction" meter without a fixed rate yet.
 
 ```kennzahlen
 20 | Flex Credits per Agentforce action in layer C
@@ -52,7 +52,7 @@ The layers are growing together. Salesforce describes a [development path for Ag
 
 Andrej Karpathy coined "vibe coding" in February 2025: you "fully give in to the vibes, embrace exponentials, and forget that the code even exists". Simon Willison [sharpened the term in May 2025](https://simonwillison.net/2025/May/1/not-vibe-coding/): vibe coding means generating code with AI without caring about the code that is produced. Not all AI-assisted programming counts.
 
-Since 21 May 2026 Martin Fowler has separated [vibe coding from "agentic engineering"](https://martinfowler.com/bliki/VibeCoding.html). In agentic engineering the LLM writes the code, but developers review it and care about its internal structure. Fowler sees vibe coding as appropriate for disposable software, personal tools and prototypes. The risks he names are security, because such apps can expose sensitive data or credentials, maintainability, and wrong behaviour that nobody notices.
+Since 21 May 2026 Martin Fowler has separated [vibe coding from "agentic engineering"](https://martinfowler.com/bliki/VibeCoding.html). In agentic engineering the LLM writes the code, but developers review it and care about its internal structure. Fowler sees vibe coding as appropriate for disposable software, personal tools and prototypes. The risks he names are security, because such apps can expose sensitive data or credentials, maintainability, and wrong behavior that nobody notices.
 
 For a manufacturer I draw the line like this:
 
@@ -61,7 +61,7 @@ For a manufacturer I draw the line like this:
 
 Where exactly the line runs, and which checks a prototype has to pass before it goes live, is covered in [vibe coding in Salesforce: prototype or production](../../../blog/vibe-coding-salesforce-prototype-vs-production/). The review rules for AI code itself are the topic of [chapter 8](../ai-code-best-practices/).
 
-A third term shows up in partner decks: "AI-native delivery". It describes a delivery process planned around coding agents from the start, with smaller teams and different roles. What that means for your programme organisation is in [chapter 9](../teamwork-and-delivery/).
+A third term shows up in partner decks: "AI-native delivery". It describes a delivery process planned around coding agents from the start, with smaller teams and different roles. What that means for your program organization is in [chapter 9](../teamwork-and-delivery/).
 
 ## Coding agent or Agentforce agent: the basic terms
 
@@ -122,7 +122,7 @@ Assume a machine builder with Sales Cloud, Service Cloud, SAP and a dealer netwo
 | Implementation partner | It wants to build the new dealer portal with coding agents and promises shorter sprints. That is layer A. What counts here are review rules, the rules file and the pipeline, whatever the tool is called. |
 | IT lead | Asks who reads which data when Claude, the partner's agent and the service agent all talk to the org at once. That is layer B, and it affects the other three. |
 
-Without the layers, these four requests land in one pot called "AI initiative" with one budget and one owner. With the layers they become four projects with four owners: sales with IT and data protection, service, programme management with partner governance, integration architecture. Only the second needs an Agentforce decision. Whether the service agent starts now or the data gets fixed first is answered in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/).
+Without the layers, these four requests land in one pot called "AI initiative" with one budget and one owner. With the layers they become four projects with four owners: sales with IT and data protection, service, program management with partner governance, integration architecture. Only the second needs an Agentforce decision. Whether the service agent starts now or the data gets fixed first is answered in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/).
 
 ## Where to read on in this masterclass
 
@@ -133,4 +133,4 @@ The following chapters take the layers one at a time:
 - **Layer C:** [chapter 10](../ai-agents-in-manufacturing/) deals with agents in service, field service and warranty.
 - **Across layers:** [chapter 6](../ai-tool-decision-matrix/) gives the decision matrix, [chapter 7](../costs-and-tokens/) the costs with worked examples.
 
-All chapters are listed on the [masterclass overview](../). Sorting the layers for your own programme is a typical starting point for my work on [Salesforce architecture](../../../services/salesforce-architecture/).
+All chapters are listed on the [masterclass overview](../). Sorting the layers for your own program is a typical starting point for my work on [Salesforce architecture](../../../services/salesforce-architecture/).

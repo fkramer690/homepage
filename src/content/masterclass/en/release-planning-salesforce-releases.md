@@ -32,7 +32,7 @@ Salesforce release planning means laying two calendars on top of each other. You
 
 ## What belongs in a Salesforce release calendar?
 
-A release calendar is the one view every team reads to see when it may deliver and when it may not. In a programme with several implementation partners on one org, each partner has its own sprint plan. The calendar therefore belongs to the client, maintained by the release manager from [chapter 2](../release-process-ownership-roles/), and the partners plan into it. With eight teams on one org, as in one of my programmes, it is the only place where all dates come together.
+A release calendar is the one view every team reads to see when it may deliver and when it may not. In a program with several implementation partners on one org, each partner has its own sprint plan. The calendar therefore belongs to the client, maintained by the release manager from [chapter 2](../release-process-ownership-roles/), and the partners plan into it. With eight teams on one org, as in one of my programs, it is the only place where all dates come together.
 
 Four layers go into it:
 
@@ -47,7 +47,7 @@ The fourth layer is the one people forget. A release on the last day of the quar
 
 ## A fixed cadence with freeze windows
 
-I recommend a fixed cadence over releases on demand. Every two or three weeks on the same weekday is a good start for most programmes. A fixed date forces partners to ship small packages, and the business knows when things change. Anything urgent that cannot wait goes through the hotfix path from [chapter 3](../environments-and-branching/), not through a special release.
+I recommend a fixed cadence over releases on demand. Every two or three weeks on the same weekday is a good start for most programs. A fixed date forces partners to ship small packages, and the business knows when things change. Anything urgent that cannot wait goes through the hotfix path from [chapter 3](../environments-and-branching/), not through a special release.
 
 A freeze window is a period in which nothing is deployed to production except approved hotfixes. Three kinds make sense on Salesforce:
 
@@ -128,7 +128,7 @@ The business notices a release whether it comes from you or from Salesforce. Sal
 What works without much effort:
 
 - **A calendar the business can see.** Release dates, freeze windows and the Salesforce upgrade, without technical detail.
-- **User release notes per release.** Organised by role: inside sales, service, field service, sales, dealers in the portal. One sentence per item on what changes for that role.
+- **User release notes per release.** Organized by role: inside sales, service, field service, sales, dealers in the portal. One sentence per item on what changes for that role.
 - **Key users test in the preview sandbox.** People who know the processes see within an hour whether a Salesforce release changes warranty handling or spare parts ordering.
 - **One channel for feedback.** Salesforce itself advises telling users where to report questions and problems.
 - **External users early.** Dealers in the portal do not plan their training around your sprint. They need a longer lead time.

@@ -20,13 +20,13 @@ faq:
   - q: "What is a machine page in a spare parts shop?"
     a: "A custom page in the store that lists the machines registered to the dealer's account and, for each machine, the spare parts that fit it. The parts list comes from asset records or live from PLM, and the dealer adds parts to the cart from there."
   - q: "What are Commerce endpoint extensions?"
-    a: "Apex classes that change the request or the response of one Commerce Connect API endpoint, for example product search. Salesforce lists Commerce_Endpoint_Search_ProductSearch and Commerce_Endpoint_Catalog_Products among them. They cannot replace the endpoint's default behaviour."
+    a: "Apex classes that change the request or the response of one Commerce Connect API endpoint, for example product search. Salesforce lists Commerce_Endpoint_Search_ProductSearch and Commerce_Endpoint_Catalog_Products among them. They cannot replace the endpoint's default behavior."
   - q: "Can dealers see assets in an Experience Cloud store?"
-    a: "Customer Community Plus and Partner Community licences include read, create and edit access to assets, according to Salesforce Help. Which assets a dealer sees is then a question of sharing, which should follow the account the machine is registered to."
+    a: "Customer Community Plus and Partner Community licenses include read, create and edit access to assets, according to Salesforce Help. Which assets a dealer sees is then a question of sharing, which should follow the account the machine is registered to."
 draft: false
 ---
 
-A Salesforce B2B Commerce store cannot filter spare parts by serial number out of the box. Entitlements decide visibility per buyer group, and hard limits rule out one group per machine. The way that works is a machine page: a custom component lists the machines registered to the dealer's account and shows the parts for each, from Salesforce assets or live from PLM, with an add-to-cart button. Filtering the normal search per machine is possible through endpoint extensions, but the base class is still labelled Beta. The data matters more than the component: without an as-built parts list per serial number, no store can answer the question.
+A Salesforce B2B Commerce store cannot filter spare parts by serial number out of the box. Entitlements decide visibility per buyer group, and hard limits rule out one group per machine. The way that works is a machine page: a custom component lists the machines registered to the dealer's account and shows the parts for each, from Salesforce assets or live from PLM, with an add-to-cart button. Filtering the normal search per machine is possible through endpoint extensions, but the base class is still labeled Beta. The data matters more than the component: without an as-built parts list per serial number, no store can answer the question.
 
 ## Why do entitlements not solve parts per machine?
 
@@ -72,7 +72,7 @@ The advantage of the machine page: it does not touch the standard search or prod
 
 ## Option B: filtering search and product lists per machine
 
-Salesforce offers endpoint extensions for exactly this kind of change. According to the [extensions guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html), they "modify the request and response of the Connect API endpoint" but cannot replace its default behaviour. The [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) includes `Commerce_Endpoint_Search_ProductSearch` for product search and `Commerce_Endpoint_Catalog_Products` for product lists. An after method could remove from the response every product that is not in the parts list of the machine the dealer selected.
+Salesforce offers endpoint extensions for exactly this kind of change. According to the [extensions guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html), they "modify the request and response of the Connect API endpoint" but cannot replace its default behavior. The [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) includes `Commerce_Endpoint_Search_ProductSearch` for product search and `Commerce_Endpoint_Catalog_Products` for product lists. An after method could remove from the response every product that is not in the parts list of the machine the dealer selected.
 
 I would use this only as a second step, for three reasons:
 
@@ -86,7 +86,7 @@ A middle way avoids extensions: the machine page sets a search filter on an attr
 
 This is the rule I would never relax: the dealer sees only machines registered to their own account. The serial number comes from the asset record shared with that account, never from a free text field. Otherwise one dealer reads the configuration of a machine another dealer sold.
 
-On the licence side, [Salesforce Help on Experience Cloud licences](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) lists read, create and edit access to assets for Customer Community Plus and Partner Community. Which assets a buyer actually sees is a question of sharing. In practice that means: the asset's account must be the buyer account, or the dealer relation must be modelled so that sharing follows it. Machines sold through a dealer but registered to the end customer need a clear rule before the store goes live. Which portal licence covers what in Manufacturing Cloud is described in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
+On the license side, [Salesforce Help on Experience Cloud licenses](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) lists read, create and edit access to assets for Customer Community Plus and Partner Community. Which assets a buyer actually sees is a question of sharing. In practice that means: the asset's account must be the buyer account, or the dealer relation must be modeled so that sharing follows it. Machines sold through a dealer but registered to the end customer need a clear rule before the store goes live. Which portal license covers what in Manufacturing Cloud is described in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
 
 ## Worked example: 6,000 machines and 150 dealers
 
@@ -109,4 +109,4 @@ Start with the machine page
   Consider search filtering only when dealers ask for it.
 ```
 
-The chapter [catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) places this in the store design. Which system leads for which data is the subject of [Salesforce integration](../../services/salesforce-integration/).
+The chapter [catalog, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) places this in the store design. Which system leads for which data is the subject of [Salesforce integration](../../services/salesforce-integration/).

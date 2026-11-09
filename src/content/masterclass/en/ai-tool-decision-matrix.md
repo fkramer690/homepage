@@ -25,7 +25,7 @@ faq:
 draft: false
 ---
 
-AI in a Salesforce programme follows one baseline rule: the agent works in a sandbox or scratch org, gets data read-only through Hosted MCP, and releases go only through the pipeline with review. Which tool your team or partner uses inside that rule is usually decided by customer contracts, data residency and the existing toolchain, and less often by model quality. For agents in production, ERP access and cost per action come on top. The matrix below turns this into twelve scenarios that actually come up at manufacturers, from workshop prototype to order status from SAP.
+AI in a Salesforce program follows one baseline rule: the agent works in a sandbox or scratch org, gets data read-only through Hosted MCP, and releases go only through the pipeline with review. Which tool your team or partner uses inside that rule is usually decided by customer contracts, data residency and the existing toolchain, and less often by model quality. For agents in production, ERP access and cost per action come on top. The matrix below turns this into twelve scenarios that actually come up at manufacturers, from workshop prototype to order status from SAP.
 
 ## Which question decides the tool choice?
 
@@ -58,7 +58,7 @@ Status as of 27 October 2026, based on the linked pages. Prices are US list pric
 | # | Scenario | Tool or approach | Why | Cost and governance |
 |---|---|---|---|---|
 | 9 | Agent that pre-checks warranty claims from dealers | Agentforce Builder with Agent Script, tests before go-live | Salesforce's rule: what [can be expressed as code belongs in logic](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) | [20 Flex Credits per action in production, 16 in a sandbox](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) |
-| 10 | Agent returns order status or availability from SAP S/4 | MuleSoft API, [synced to API Catalog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog), used as an agent action | Documented pattern, named credentials are created automatically | MuleSoft licence; integration user with minimal permissions |
+| 10 | Agent returns order status or availability from SAP S/4 | MuleSoft API, [synced to API Catalog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog), used as an agent action | Documented pattern, named credentials are created automatically | MuleSoft license; integration user with minimal permissions |
 | 11 | Old ERP or MES without an API | MuleSoft IDP with RPA, or the Systems Integration Agent | IDP routes documents under [80 percent confidence to a human](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce); the Systems Integration Agent has been [GA since Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) | RPA and the Systems Integration Agent work through the user interface; plan monitoring |
 | 12 | Sales wants to use Salesforce directly in Claude | Salesforce in Claude from the AIforce layer | [Available to all customers in beta](https://www.salesforce.com/news/stories/aiforce-announcement/) | "Pricing and packaging are subject to change"; pilot with a small group |
 
@@ -70,7 +70,7 @@ Row 6 looks harmless, but it is the point where an external model reads real cus
 
 ## Six questions in the right order
 
-The matrix is for looking things up. In a conversation with the IT lead and the programme manager I prefer to walk through these six questions in order, because early answers remove later options.
+The matrix is for looking things up. In a conversation with the IT lead and the program manager I prefer to walk through these six questions in order, because early answers remove later options.
 
 ```schritte
 Prototype or production?
@@ -95,7 +95,7 @@ Assume a machine builder with Sales Cloud and Service Cloud in an org that sits 
 
 **A prototype for the dealer portal.** Sales wants to show in a workshop how dealers could order spare parts. That is row 1. A separate Developer Edition org holds no customer data, so the partner can build there with Vibes or Claude Code, as long as data protection signs off on the test data. After the workshop the code is deleted, not reused.
 
-**The partner's coding agents.** Because the org sits in the EU Operating Zone, Vibes is out for project work (row 5). That leaves Copilot Enterprise on the existing GitHub licence (row 4) or Claude Code through Bedrock in an EU region (rows 3 and 5). With Bedrock, AWS bills the usage, so its price list belongs in the comparison, not Anthropic's. How I set up an approved-tools list, a cost estimate and a comparison on real backlog tasks is shown in the scenario in [chapter 4](../external-coding-agents/). The works council and the data processing agreement come before the decision, as described in [AI coding tools, works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/). Whatever the tool, agents work only in sandboxes, and the pipeline checks with Code Analyzer and Apex tests (row 7).
+**The partner's coding agents.** Because the org sits in the EU Operating Zone, Vibes is out for project work (row 5). That leaves Copilot Enterprise on the existing GitHub license (row 4) or Claude Code through Bedrock in an EU region (rows 3 and 5). With Bedrock, AWS bills the usage, so its price list belongs in the comparison, not Anthropic's. How I set up an approved-tools list, a cost estimate and a comparison on real backlog tasks is shown in the scenario in [chapter 4](../external-coding-agents/). The works council and the data processing agreement come before the decision, as described in [AI coding tools, works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/). Whatever the tool, agents work only in sandboxes, and the pipeline checks with Code Analyzer and Apex tests (row 7).
 
 **An agent for order status.** Dealers ask about delivery dates every day. A MuleSoft API to SAP S/4 exists, which is row 10. The agent calls it as an action, and the decision about which data a dealer may see sits in Agent Script. The details are in [Agentforce and SAP order status](../../../blog/agentforce-sap-order-status-mulesoft/). For the acquired plant without an API (row 11) I would not roll out the agent at first. RPA breaks when screens change, and I would test whether the Systems Integration Agent really copes with that on a copy of the system first. The options are in [legacy ERP without an API](../../../blog/legacy-erp-without-api-ai-agents/).
 

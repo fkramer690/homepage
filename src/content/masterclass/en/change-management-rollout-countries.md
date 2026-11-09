@@ -17,7 +17,7 @@ takeaways:
 articles: [change-global-rollout, global-template-country-deviations, manufacturing-cloud-global-rollout, field-service-rollout, commerce-dealer-rollout]
 faq:
   - q: "Is change management at headquarters enough in a global rollout?"
-    a: "No. At headquarters the goal of harmonisation is clear, in the countries often not. For a subsidiary with its own processes, the global template is first of all an outside requirement. It takes a person in the country whom employees listen to."
+    a: "No. At headquarters the goal of harmonization is clear, in the countries often not. For a subsidiary with its own processes, the global template is first of all an outside requirement. It takes a person in the country whom employees listen to."
   - q: "What does change management include per country?"
     a: "A sponsor from local management, a review of the country deviations, key users, communication in the local language, training on real cases, clarifying co-determination and a look at usage from the first month."
   - q: "How much time is needed between two waves?"

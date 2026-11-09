@@ -1,6 +1,6 @@
 ---
 title: "Audit trail for AI agents in Salesforce: which logs?"
-description: "Which Salesforce logs show what an agent or external AI tool did with a record, which need extra licences, and how long each one keeps its data."
+description: "Which Salesforce logs show what an agent or external AI tool did with a record, which need extra licenses, and how long each one keeps its data."
 pubDate: 2026-10-27
 lang: en
 slug: audit-trail-ai-agents-salesforce
@@ -39,7 +39,7 @@ At a machine builder they come up around warranty, dealer and service processes:
 - **The works council:** can these logs be used to evaluate individual service employees?
 - **The IT lead:** which records did an external AI tool read last week, and under which user?
 
-Each question points to a different log, licence and retention period:
+Each question points to a different log, license and retention period:
 
 | Log | What it answers | Prerequisite | Retention |
 |---|---|---|---|
@@ -80,13 +80,13 @@ Paid logs "cannot be retrieved retroactively for periods before the contract sta
 
 The paid tier adds event types such as [Unique Query](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_eventlogfile_unique_query_event_elf.htm), which captures the SOQL queries, filter IDs and report IDs that were processed. That is the event that shows whether an AI client asked for one dealer's price agreement or for all of them.
 
-Salesforce's logs end where the data leaves Salesforce. For Claude, [Anthropic's audit logs](https://support.claude.com/en/articles/9970975-access-audit-logs) exist for Enterprise organisations only. They record sign-ins, file uploads and conversations created, deleted or renamed, without chat content, and an export covers the past 180 days. I would ask every other AI vendor the same: which events, how long, which export.
+Salesforce's logs end where the data leaves Salesforce. For Claude, [Anthropic's audit logs](https://support.claude.com/en/articles/9970975-access-audit-logs) exist for Enterprise organizations only. They record sign-ins, file uploads and conversations created, deleted or renamed, without chat content, and an export covers the past 180 days. I would ask every other AI vendor the same: which events, how long, which export.
 
 ## Setup Audit Trail and field history show who changed the agent
 
 For configuration, the [Setup Audit Trail](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm) represents changes made in Setup "for at least the last 180 days". An audit of last year's warranty decision will not find the change there. I would keep agent definitions in version control and deploy them through a pipeline, as in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/), because a repository history does not expire.
 
-For data, field history tracking covers up to 20 fields per object for 18 to 24 months, according to the [Field Audit Trail guide](https://developer.salesforce.com/docs/platform/field-history-retention/guide/field-audit-trail.html). Field Audit Trail, available with Shield or its own licence, raises that to 200 fields per object and archives the history in a big object until you delete it. If an agent writes under its own user, field history on warranty status and approved amount shows which changes came from the agent.
+For data, field history tracking covers up to 20 fields per object for 18 to 24 months, according to the [Field Audit Trail guide](https://developer.salesforce.com/docs/platform/field-history-retention/guide/field-audit-trail.html). Field Audit Trail, available with Shield or its own license, raises that to 200 fields per object and archives the history in a big object until you delete it. If an agent writes under its own user, field history on warranty status and approved amount shows which changes came from the agent.
 
 ## How long should logs be kept?
 

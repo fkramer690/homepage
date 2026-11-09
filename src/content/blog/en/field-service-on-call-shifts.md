@@ -68,7 +68,7 @@ If the territory's operating hours end on Friday and no confirmed shift exists, 
 
 For the call to land on the on-call technician, these have to fit together:
 
-1. **The entitlement.** It carries the response time and can have its own operating hours for booking. How response times reach dispatching is described in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/).
+1. **The entitlement.** It carries the response time and can have its own operating hours for booking. How response times reach dispatching is described in [modeling maintenance contracts](../salesforce-field-service-maintenance-contracts/).
 2. **The shift.** A confirmed Extended shift for the weekend, with a filter that lets breakdowns through.
 3. **The policy.** The policy used for breakdowns has Overtime switched on in the Service Resource Availability rule.
 
@@ -76,7 +76,7 @@ If a voice agent takes the call outside business hours, the on-call technician g
 
 ## The works council co-determines under section 87 BetrVG
 
-On-call duty is working time, and in Germany that brings the works council in. [Section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) gives it a right of co-determination on, among other things, the start and end of daily working time and its distribution across the weekdays (no. 2), temporary extension of normal working hours (no. 3) and technical systems designed to monitor behaviour or performance (no. 6).
+On-call duty is working time, and in Germany that brings the works council in. [Section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) gives it a right of co-determination on, among other things, the start and end of daily working time and its distribution across the weekdays (no. 2), temporary extension of normal working hours (no. 3) and technical systems designed to monitor behavior or performance (no. 6).
 
 An on-call rota in Field Service touches all three. Shifts distribute working time, Extended shifts are overtime by design, and the system records who took which shift and when. I would discuss these points with the works council before go-live:
 

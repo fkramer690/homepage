@@ -25,14 +25,14 @@ faq:
     a: "Account forecasting uses one configuration for the whole org and plans only at customer, product and period level. Advanced account forecasting allows separate forecast sets per business unit, region or country, free dimensions such as product category, and custom calculations. Salesforce recommends the advanced version."
   - q: "Does Manufacturing Cloud replace sales and production planning in the ERP?"
     a: "No. It provides the sales view per customer and product. What gets produced, with which material and on which line, is still planned in the ERP or a planning system that takes the sales forecast as an input."
-  - q: "Does every feature in this chapter need its own licence?"
+  - q: "Does every feature in this chapter need its own license?"
     a: "Sales agreements, forecasts, program-based business and targets each have their own switches and permission sets. The pricing page does not say for every feature which edition contains it. Have the list confirmed in the quote."
 draft: false
 ---
 
-Sales planning in Manufacturing Cloud has four building blocks. Sales agreements hold framework contracts with quantities per customer, product and period and compare them with actuals. Account forecasting, today in its advanced version, combines them with orders and opportunities into a sales volume forecast. Program-based business derives component demand from OEM programmes for suppliers. Account manager targets distribute annual targets from sales leadership down to customer and product. All four only work when order history and actuals arrive reliably from the ERP and when target, forecast and actuals share one structure. Production and material planning stay in the ERP.
+Sales planning in Manufacturing Cloud has four building blocks. Sales agreements hold framework contracts with quantities per customer, product and period and compare them with actuals. Account forecasting, today in its advanced version, combines them with orders and opportunities into a sales volume forecast. Program-based business derives component demand from OEM programs for suppliers. Account manager targets distribute annual targets from sales leadership down to customer and product. All four only work when order history and actuals arrive reliably from the ERP and when target, forecast and actuals share one structure. Production and material planning stay in the ERP.
 
-## Why is the sales agreement at the centre?
+## Why is the sales agreement at the center?
 
 Many manufacturers earn their money with recurring business: a customer orders similar quantities month after month, often under a framework contract with an annual volume. This is called run-rate business. For it, one question matters most: is the customer on plan?
 
@@ -54,7 +54,7 @@ A sales agreement plans quantities per product. That sets a requirement for ever
 
 There is a standard route for the handover. The [Manufacturing Cloud Connect API](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/connect_resources_sales_agreement.htm) creates a sales agreement from a quote, an opportunity or a custom object, controlled by a mapping of type ConvertToSalesAgreement. The mapping has to settle account level, product, price and term cleanly. I approve the price once, on the quote, and not a second time on the agreement. The details are in [from quote to sales agreement](../../../blog/quote-to-sales-agreement-product-configurator/).
 
-The quote itself is outside Manufacturing Cloud. [Salesforce CPQ](https://www.salesforce.com/sales/cpq/end-of-life/) is no longer sold to new customers, and new features are built in Revenue Cloud. Catalogue, configurator and pricing are covered in the Revenue Cloud masterclass chapter [product catalogue, configurator and pricing](../../revenue-cloud/product-catalog-configurator-pricing/).
+The quote itself is outside Manufacturing Cloud. [Salesforce CPQ](https://www.salesforce.com/sales/cpq/end-of-life/) is no longer sold to new customers, and new features are built in Revenue Cloud. Catalog, configurator and pricing are covered in the Revenue Cloud masterclass chapter [product catalog, configurator and pricing](../../revenue-cloud/product-catalog-configurator-pricing/).
 
 ## Actuals: why the ERP interface decides everything
 
@@ -102,13 +102,13 @@ Two consequences for the architecture. First, account forecasting is an integrat
 
 Forecast sets, dimensions and cloned DPE definitions are configuration. They belong in the release process like any other change, as described in the DevOps chapter [data and configuration](../../devops-release-management/data-and-configuration/).
 
-## Program-based business for suppliers to OEM programmes
+## Program-based business for suppliers to OEM programs
 
-Program-based business is meant for suppliers whose parts go into series products of large customers. When an OEM launches a programme, the supplier has to estimate how many of its parts each variant needs long before the first order arrives.
+Program-based business is meant for suppliers whose parts go into series products of large customers. When an OEM launches a program, the supplier has to estimate how many of its parts each variant needs long before the first order arrives.
 
-According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business), programme and variant forecasts arrive as CSV files, often from external market data. Data Processing Engine templates calculate component forecasts from them, based on quantity per unit, minimum quantity and lead time of each component. An approved forecast becomes an opportunity through the Transformation API and, once won, a sales agreement through the Sales Agreement Connect API. Prerequisites are advanced account forecasting, Data Pipelines and the feature itself.
+According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business), program and variant forecasts arrive as CSV files, often from external market data. Data Processing Engine templates calculate component forecasts from them, based on quantity per unit, minimum quantity and lead time of each component. An approved forecast becomes an opportunity through the Transformation API and, once won, a sales agreement through the Sales Agreement Connect API. Prerequisites are advanced account forecasting, Data Pipelines and the feature itself.
 
-With a handful of programmes, or when a planning system already derives component demand, you get a second forecast instead of a better one. When it pays off is in [program-based business: forecasts for suppliers](../../../blog/program-based-business-supplier-forecasts/).
+With a handful of programs, or when a planning system already derives component demand, you get a second forecast instead of a better one. When it pays off is in [program-based business: forecasts for suppliers](../../../blog/program-based-business-supplier-forecasts/).
 
 ## Account manager targets: targets from the top down
 
@@ -124,7 +124,7 @@ More from the ERP than most workshops assume. The overview:
 |---|---|---|
 | Sales agreements | plan per customer, product and period | actuals and stock from the ERP, material numbers |
 | Account forecasting | opportunities, adjustments | order history from the ERP |
-| Program-based business | adjustments, opportunities | programme and variant forecasts, quantity per unit, lead times |
+| Program-based business | adjustments, opportunities | program and variant forecasts, quantity per unit, lead times |
 | Account manager targets | targets and distribution | actual revenue in the same structure, a maintained Manager field |
 
 The most important rule is in no table: target, forecast and actuals need the same customer level, the same product level and the same period type. If the target sits on products and the forecast on product categories, or the ERP books revenue to the sold-to party while the target hangs on the group, the monthly review compares three numbers that cannot match. I fix these three levels before the first feature is switched on.
@@ -139,7 +139,7 @@ Two decisions follow. There is one leading sales volume figure and a date on whi
 
 The Agentforce for Sales Planning agent template sits on top of sales agreements. [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.mfg_gen_ai_agentforce_sales_planning_agent.htm&language=en_US&type=5) names three subagents: Sales Agreement Management, Sales Agreement Bulk Update and Program Forecasts to Opportunities. The agent answers questions about agreements, writes summaries, helps with visits and emails and updates agreements in bulk. According to the description, none of the three works with account forecasts or targets.
 
-Every answer about a customer's shortfall rests on actuals from the ERP. If a subsidiary is missing from the data flow, the agent reports a shortfall that does not exist. What the template does and which licence it needs is in [Agentforce sales planning: what the agent really does](../../../blog/agentforce-sales-planning-agreements-forecasts/); the overview of agents in manufacturing is in [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/).
+Every answer about a customer's shortfall rests on actuals from the ERP. If a subsidiary is missing from the data flow, the agent reports a shortfall that does not exist. What the template does and which license it needs is in [Agentforce sales planning: what the agent really does](../../../blog/agentforce-sales-planning-agreements-forecasts/); the overview of agents in manufacturing is in [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/).
 
 ## Worked example: 200 framework contracts for industrial valves
 
@@ -160,7 +160,7 @@ Targets
   Only in the next fiscal year, once actuals and forecast share one structure.
 ```
 
-This manufacturer does not need program-based business, because it does not supply OEM programmes. I would evaluate the agent only after the actuals feed has run stably for a quarter.
+This manufacturer does not need program-based business, because it does not supply OEM programs. I would evaluate the agent only after the actuals feed has run stably for a quarter.
 
 ## Clarify the actuals feed from the ERP before the first sales agreement
 

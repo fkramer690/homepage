@@ -10,7 +10,7 @@ categories: [field-service]
 contactBrief: licences
 tags: [field service, ServiceMax, Asset 360, PTC, entitlements, asset management]
 takeaways:
-  - "Asset 360 sits on Field Service's standard objects. PTC requires Service Cloud and at least one Field Service licence."
+  - "Asset 360 sits on Field Service's standard objects. PTC requires Service Cloud and at least one Field Service license."
   - "Its core is an entitlement engine that picks the right warranty or service contract on cases, work orders and return orders, interactively or by rule."
   - "Since 2024 Salesforce has sold Asset Service Lifecycle Management at $75 per user. It overlaps on coverage, hierarchy and campaigns."
   - "Asset 360 ships twice a year, most recently 26R2 on 9 September 2026. According to PTC, patches only ship when agreed fixes are due."
@@ -19,21 +19,21 @@ faq:
   - q: "What is ServiceMax Asset 360?"
     a: "A managed package from PTC for Salesforce Field Service. It adds entitlement checks, maintenance plans based on time, condition or IoT data, technical attributes and guided workflows in the Field Service mobile app, stored on Salesforce's standard objects."
   - q: "Do I need Salesforce Field Service for Asset 360?"
-    a: "Yes. According to PTC's service description of February 2025, the customer needs Service Cloud, at least one Field Service licence and an active Salesforce agreement."
+    a: "Yes. According to PTC's service description of February 2025, the customer needs Service Cloud, at least one Field Service license and an active Salesforce agreement."
   - q: "Is ServiceMax Asset 360 the same as PTC Asset 360?"
     a: "No. PTC Asset 360 has been called PTC Orbit since June 2026 and combines asset data from PLM, ERP, CRM and field service. ServiceMax Asset 360 for Salesforce is the field service package on Salesforce."
   - q: "How much does ServiceMax Asset 360 cost?"
-    a: "PTC does not publish a price. The AppExchange listing says from $50 per user and month but was last updated in 2022. Ask for a quote and add the Field Service licences."
+    a: "PTC does not publish a price. The AppExchange listing says from $50 per user and month but was last updated in 2022. Ask for a quote and add the Field Service licenses."
 draft: false
 ---
 
-ServiceMax Asset 360 is a managed package from PTC that adds asset functions to Salesforce Field Service: an entitlement engine, maintenance plans based on time, condition or IoT data, technical attributes and more than 60 preconfigured workflows. It stores everything on Salesforce's standard objects and requires Service Cloud and at least one Field Service licence. Since 2024 Salesforce has sold its own add-on for similar tasks, Asset Service Lifecycle Management. I would look at Asset 360 when automatic entitlement checks or PTC PLM tip the balance, and evaluate the Salesforce add-on first otherwise.
+ServiceMax Asset 360 is a managed package from PTC that adds asset functions to Salesforce Field Service: an entitlement engine, maintenance plans based on time, condition or IoT data, technical attributes and more than 60 preconfigured workflows. It stores everything on Salesforce's standard objects and requires Service Cloud and at least one Field Service license. Since 2024 Salesforce has sold its own add-on for similar tasks, Asset Service Lifecycle Management. I would look at Asset 360 when automatic entitlement checks or PTC PLM tip the balance, and evaluate the Salesforce add-on first otherwise.
 
 ## What is ServiceMax Asset 360 for Salesforce?
 
 ServiceMax has two products on Salesforce. ServiceMax Core brings its own data model; I compare it with Salesforce Field Service in [ServiceMax vs Salesforce Field Service: which one?](../servicemax-vs-salesforce-field-service/). Asset 360 takes the other route. The [AppExchange listing](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000FN7u3UAD) describes it as natively built on Salesforce Field Service, and PTC's documentation shows how: the [work order](https://support.ptc.com/help/servicemax_asset360/en/articles/asset-360/work-order-object.html) is the standard WorkOrder object, and Asset 360 adds its own fields with the `SVMXA360` namespace.
 
-For you this means: dispatchers keep planning with Salesforce's scheduling engine, technicians keep working in the Salesforce Field Service mobile app. Asset 360 puts its workflows on top. The requirements are in the [ServiceMax SaaS Service Description](https://ptc-p-001.sitecorecontenthub.cloud/api/public/content/44a3614523d341ccb446db0c1b052c62?v=b6f25473) of 1 February 2025: Service Cloud, at least one Field Service licence and an active Salesforce agreement for the whole term.
+For you this means: dispatchers keep planning with Salesforce's scheduling engine, technicians keep working in the Salesforce Field Service mobile app. Asset 360 puts its workflows on top. The requirements are in the [ServiceMax SaaS Service Description](https://ptc-p-001.sitecorecontenthub.cloud/api/public/content/44a3614523d341ccb446db0c1b052c62?v=b6f25473) of 1 February 2025: Service Cloud, at least one Field Service license and an active Salesforce agreement for the whole term.
 
 ```zeitleiste
 2020-09 | Asset 360 for Salesforce launches on AppExchange
@@ -56,7 +56,7 @@ The [product page](https://www.ptc.com/en/products/servicemax/asset-360) names f
 - **Maintenance planning.** Plans based on time, frequency, condition or IoT data, with templates and automatically created work orders.
 - **Preconfigured workflows.** PTC names more than 60. Since release 24R1, Service Process Manager and wizards run in the Salesforce Field Service mobile app according to [PTC's blog](https://www.ptc.com/en/blogs/service/continuous-innovation-field-service-servicemax-enhancements), with technical attributes on site. Release 24R2 added [connections to Windchill and Servigistics](https://www.arcweb.com/node/152476).
 
-If you know the maintenance plans in the base licence, you see the overlap: Field Service handles maintenance by operating hours itself, see [usage-based maintenance](../field-service-usage-based-maintenance/). The added value of Asset 360 lies in entitlement checks and the ready-made workflows.
+If you know the maintenance plans in the base license, you see the overlap: Field Service handles maintenance by operating hours itself, see [usage-based maintenance](../field-service-usage-based-maintenance/). The added value of Asset 360 lies in entitlement checks and the ready-made workflows.
 
 ## Where does Asset 360 overlap with Asset Service Lifecycle Management?
 
@@ -102,5 +102,5 @@ If none of these applies, I would evaluate ASLM first. One vendor means less coo
 
 1. **List your asset workflows**: coverage checks, maintenance, campaigns, returns, depot.
 2. **Check where your entitlements sit today**: on the service contract, the asset or the account.
-3. **Request quotes for Asset 360 and ASLM** and ask which users need a licence in each case. The role logic of Field Service is in [Salesforce Field Service licences by role](../field-service-licences-by-role/).
-4. **Calculate both options over three years** including release testing. How I set up such comparisons is described under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
+3. **Request quotes for Asset 360 and ASLM** and ask which users need a license in each case. The role logic of Field Service is in [Salesforce Field Service licenses by role](../field-service-licences-by-role/).
+4. **Calculate both options over three years** including release testing. How I set up such comparisons is described under [make-or-buy and license forecasts](../../services/make-or-buy-licences/).

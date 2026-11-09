@@ -52,7 +52,7 @@ What to do:
 
 With Winter '27 the Developer Console no longer appears in the Setup menu by default. Its successor is the Web Console, which is generally available. In production orgs, Apex is read-only in the Web Console.
 
-For well-run programmes little changes. Editing code or running ad hoc changes directly in production has always been a risk: no review, no history, no way back. The new default pushes teams towards the way it should work anyway, with every change in the repository, reviewed in a pull request and deployed through the pipeline. I explain why that matters in [why pull request reviews are a must in enterprise projects](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+For well-run programs little changes. Editing code or running ad hoc changes directly in production has always been a risk: no review, no history, no way back. The new default pushes teams towards the way it should work anyway, with every change in the repository, reviewed in a pull request and deployed through the pipeline. I explain why that matters in [why pull request reviews are a must in enterprise projects](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 
 Some teams still use the Developer Console for quick queries, log analysis or anonymous Apex in production. Those habits need a replacement now. Agree on which tasks are allowed in production, who may do them and how they are documented.
 

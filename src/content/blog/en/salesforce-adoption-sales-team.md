@@ -79,7 +79,7 @@ Have two sales reps and the head of sales go through the fields of an opportunit
 
 ## The pipeline meeting decides whether data gets maintained
 
-In the end, leadership reinforces whether Salesforce gets maintained. When the head of sales opens the Salesforce dashboard in the weekly pipeline meeting and only discusses what is in it, the team maintains Salesforce. When they ask for an Excel list before the meeting, the team maintains the Excel list. This is the reinforcement stage, and it costs no licence and no development.
+In the end, leadership reinforces whether Salesforce gets maintained. When the head of sales opens the Salesforce dashboard in the weekly pipeline meeting and only discusses what is in it, the team maintains Salesforce. When they ask for an Excel list before the meeting, the team maintains the Excel list. This is the reinforcement stage, and it costs no license and no development.
 
 The same applies one level up. If the sales forecast for the management board comes from Salesforce, it gets maintained there. What a forecast from Salesforce can look like for manufacturers is covered in [Account forecasting for manufacturing sales](../account-forecasting-sales-volume-planning/).
 

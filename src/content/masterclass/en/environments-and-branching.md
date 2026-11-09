@@ -1,6 +1,6 @@
 ---
 title: "Salesforce sandbox strategy and branching"
-description: "Which sandboxes a Salesforce programme needs, when scratch orgs fit, which branch model holds up, and how to run refreshes and hotfixes cleanly."
+description: "Which sandboxes a Salesforce program needs, when scratch orgs fit, which branch model holds up, and how to run refreshes and hotfixes cleanly."
 lang: en
 slug: environments-and-branching
 course: devops
@@ -16,8 +16,8 @@ takeaways:
   - "A refresh replaces the sandbox with a new copy of production. Source tracking and undelivered changes are lost in the process."
 articles: [devops-salesforce-enterprise, sfdx-hardis-training, sandbox-data-ai-coding-agents]
 faq:
-  - q: "How many sandboxes does a Salesforce programme with several partners need?"
-    a: "At least one development environment per developer or story, plus an integration, a UAT and a staging sandbox. If you have no Partial Copy licence, UAT and staging share the Full sandbox, and you plan acceptance and the dress rehearsal one after the other."
+  - q: "How many sandboxes does a Salesforce program with several partners need?"
+    a: "At least one development environment per developer or story, plus an integration, a UAT and a staging sandbox. If you have no Partial Copy license, UAT and staging share the Full sandbox, and you plan acceptance and the dress rehearsal one after the other."
   - q: "Should we use scratch orgs instead of sandboxes?"
     a: "For new, well-contained packages, yes. An org that has grown over years often cannot be deployed in full from the repository into an empty scratch org. Developer sandboxes with source tracking are then the better workplace."
   - q: "What is a backpromote in sfdx-hardis?"
@@ -29,7 +29,7 @@ draft: false
 
 A workable Salesforce sandbox strategy gives every pipeline stage its own org and its own Git branch: development in developer sandboxes or scratch orgs, then integration, UAT, staging and production. Feature branches are short-lived and move through the stage branches by pull request. Two things decide day to day whether the model holds: developer sandboxes must regularly catch up with the team's work, and every hotfix must go back into the integration branch. Otherwise the next release overwrites the fix in production. Tools such as sfdx-hardis, Gearset, Copado or Flosum support both; you set the rules as the client.
 
-## Which sandboxes does a Salesforce programme need?
+## Which sandboxes does a Salesforce program need?
 
 Salesforce offers [four sandbox types](https://www.salesforce.com/platform/what-is-salesforce-sandbox/) with different data and refresh intervals:
 
@@ -40,7 +40,7 @@ Salesforce offers [four sandbox types](https://www.salesforce.com/platform/what-
 | Partial Copy | metadata plus a sample defined by a sandbox template | 5 GB | every 5 days |
 | Full | metadata, all data and files | same as production | every 29 days |
 
-How many of each type you have depends on your edition and the licences you bought. For a programme with several partners, I would assign the environments like this:
+How many of each type you have depends on your edition and the licenses you bought. For a program with several partners, I would assign the environments like this:
 
 | Stage | Org | Who works there | Data |
 |---|---|---|---|
@@ -50,7 +50,7 @@ How many of each type you have depends on your edition and the licences you boug
 | Staging (preprod) | Full | release manager, tests against the SAP QA system | all data |
 | Production | production | only the pipeline deploys | real data |
 
-Two rules are not negotiable for me. In integration, UAT, staging and production only the pipeline deploys, never a person through change sets or Setup. And which data may sit in which stage is a decision you make with your data protection officer; the details are in [sandbox customer data: what AI coding agents may read](../../../blog/sandbox-customer-data-ai-coding-agents/). If you have no Partial Copy licence, UAT and staging share the Full sandbox, and acceptance and the dress rehearsal have to run one after the other.
+Two rules are not negotiable for me. In integration, UAT, staging and production only the pipeline deploys, never a person through change sets or Setup. And which data may sit in which stage is a decision you make with your data protection officer; the details are in [sandbox customer data: what AI coding agents may read](../../../blog/sandbox-customer-data-ai-coding-agents/). If you have no Partial Copy license, UAT and staging share the Full sandbox, and acceptance and the dress rehearsal have to run one after the other.
 
 Who owns which org and who approves deployments to it is set out in [chapter 2 on ownership and roles](../release-process-ownership-roles/). The sandboxes belong to the client, even if a partner uses them every day.
 
@@ -65,7 +65,7 @@ The number is limited by the Dev Hub, which is your production org. According to
 | Enterprise | 40 | 80 |
 | Unlimited, Performance | 100 | 200 |
 
-Each scratch org has 500 MB of data and 50 MB of file storage. For a programme with 30 developers on Enterprise Edition that is enough, as long as expired orgs are deleted consistently.
+Each scratch org has 500 MB of data and 50 MB of file storage. For a program with 30 developers on Enterprise Edition that is enough, as long as expired orgs are deleted consistently.
 
 The real limit lies elsewhere. A scratch org contains only what is in the repository and can be deployed, plus the features and settings from the definition file, which Salesforce calls the org's "shape". In my assessment, an org that has grown over years with Service Cloud, Field Service, a dealer portal, managed packages and manual settings can rarely be deployed in full into an empty scratch org. Getting there is a project of its own.
 
@@ -88,7 +88,7 @@ preprod --Promotion--> main production
 
 From there, changes move up between stage branches by pull request. According to sfdx-hardis, such a pull request promotes everything merged into the source branch since its last promotion. Gearset also works with long-lived environment branches in its pipelines. The tools are compared in [chapter 4](../devops-tools-compared/).
 
-One honest caveat: DORA recommends [trunk-based development](https://dora.dev/capabilities/trunk-based-development/) for high-performing teams, with three or fewer active branches and merging to trunk at least once a day. A model with four stage branches goes against that. I still consider it right for programmes with business acceptance and several partners, because each stage stands for a different approval. You pay the price through long-lived feature branches. So my rule is: feature branches live for days, not weeks, and a story that does not fit into a sprint gets split.
+One honest caveat: DORA recommends [trunk-based development](https://dora.dev/capabilities/trunk-based-development/) for high-performing teams, with three or fewer active branches and merging to trunk at least once a day. A model with four stage branches goes against that. I still consider it right for programs with business acceptance and several partners, because each stage stands for a different approval. You pay the price through long-lived feature branches. So my rule is: feature branches live for days, not weeks, and a story that does not fit into a sprint gets split.
 
 Stories not yet accepted in UAT block a promotion from `uat` to `preprod`. sfdx-hardis offers [promotion branches](https://sfdx-hardis.cloudity.com/salesforce-devops-promotion-branches/) in beta for this, but calls them the exception path itself. The normal case is still to promote UAT as one tested version.
 
@@ -133,7 +133,7 @@ The timing of a refresh has one more side effect: it decides whether a sandbox s
 
 ## The hotfix path
 
-A defect in production cannot wait until UAT is accepted. So every programme needs a second, short path. In sfdx-hardis, according to the [hotfix documentation](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/), it looks like this: the developer starts a story targeting `preprod` in a sandbox cloned from production, the pull request goes to `preprod` and from there to `main`.
+A defect in production cannot wait until UAT is accepted. So every program needs a second, short path. In sfdx-hardis, according to the [hotfix documentation](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/), it looks like this: the developer starts a story targeting `preprod` in a sandbox cloned from production, the pull request goes to `preprod` and from there to `main`.
 
 ```hinweis achtung
 The second pull request to `main` promotes everything merged into `preprod` since its last promotion, not only the hotfix. So nothing half-finished may sit in `preprod`.

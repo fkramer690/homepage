@@ -22,7 +22,7 @@ faq:
   - q: "Which tool finds SOQL queries inside loops?"
     a: "Salesforce Code Analyzer runs PMD, whose rule OperationWithLimitsInLoop flags SOQL, DML and other limited operations inside loops. ApexGuru adds performance checks, for example for schema describe calls."
   - q: "Should partners disclose which code an AI agent generated?"
-    a: "Yes. Ask for the AI-generated parts to be marked in the pull request, together with the test run and the Code Analyzer result. Put that rule into the contract so it applies to every partner in the programme."
+    a: "Yes. Ask for the AI-generated parts to be marked in the pull request, together with the test run and the Code Analyzer result. Put that rule into the contract so it applies to every partner in the program."
 draft: false
 ---
 
@@ -41,7 +41,7 @@ Salesforce says it plainly in the documentation for its own coding agent, Agentf
 Salesforce lists most of these in its own checklists for agent output. Some are a job for the pipeline, the rest need a person who knows your org.
 
 1. **SOQL and DML inside loops.** The code works with one record and fails during a data load or a bulk update from the ERP. Salesforce's checklist asks whether queries in triggers "could hit the 100 SOQL limit in bulk operations". The PMD rule `OperationWithLimitsInLoop` flags queries, DML and other limited operations inside loops ([PMD performance rules](https://docs.pmd-code.org/latest/pmd_rules_apex_performance.html)). Pipeline.
-2. **Missing sharing and field-level security.** PMD flags classes with DML but no sharing declaration and data access without a permission check. Since API version 67.0, Apex runs in user mode by default. In my judgement, models trained mostly on older Apex will keep producing old patterns, and an agent may raise a class's API version on the side. Why that can make queries return fewer records is the topic of [API 67.0 and user mode](../api-67-apex-user-mode-fewer-records/). Pipeline for the declaration, person for the intent.
+2. **Missing sharing and field-level security.** PMD flags classes with DML but no sharing declaration and data access without a permission check. Since API version 67.0, Apex runs in user mode by default. In my judgment, models trained mostly on older Apex will keep producing old patterns, and an agent may raise a class's API version on the side. Why that can make queries return fewer records is the topic of [API 67.0 and user mode](../api-67-apex-user-mode-fewer-records/). Pipeline for the declaration, person for the intent.
 3. **Tests that prove nothing.** Salesforce requires 75 percent coverage for a deployment and says in the same guide "don't focus on the percentage" ([Apex testing best practices](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_testing_best_practices.htm)). An agent told to reach 75 percent reaches it. Salesforce's checklist for agent output names `System.assertNotEquals(null, result)` as an example of an assertion that is not meaningful. Person.
 4. **Invented or wrong fields.** Salesforce asks reviewers whether the code references "real fields and objects from your org (not placeholder names)" ([Workflow Patterns](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html)). A field that does not exist usually fails the validation deploy. The expensive case is a field that exists but is the wrong one, for example an old warranty date from a data migration next to the one your SAP interface maintains. Only someone who knows your data model sees that. Person.
 5. **Incomplete metadata.** New fields that are missing from the permission sets, or references to objects that are not part of the deployment. The validation deploy finds missing references; missing permissions show up when service reps report empty fields. Pipeline plus checklist.
@@ -68,7 +68,7 @@ The order of gates and open source options are in [quality gates for AI code](..
 
 You do not need to read every line. Once the pipeline is green, I would go through a pull request with AI-generated code in this order:
 
-1. **Tests first.** Do the assertions check business behaviour, including a negative case and a bulk case with at least 20 records, as Salesforce recommends? A test class that creates one record and checks for "not null" sends the pull request back.
+1. **Tests first.** Do the assertions check business behavior, including a negative case and a bulk case with at least 20 records, as Salesforce recommends? A test class that creates one record and checks for "not null" sends the pull request back.
 2. **Data access.** Every `without sharing` and every `WITH SYSTEM_MODE` needs a written reason. In a dealer portal this is the line that decides whether one dealer sees another dealer's data.
 3. **Fields and objects.** Are these the fields the business actually maintains? Are new fields in the right permission sets?
 4. **Scope.** Does the diff touch only what the story needs? An agent that "also tidied up" three other classes or raised their API version adds risk nobody asked for.

@@ -20,8 +20,8 @@ faq:
     a: "A REST API that gives access to Agentforce agents from anywhere that can call REST. A client creates a session for an agent, sends messages synchronously or as a stream and ends the session when done."
   - q: "Which agents can be called through the Agent API?"
     a: "Salesforce documents one exclusion: agents of type Agentforce (Default) are not supported. I would build a dedicated agent for the external app anyway, with only the topics and actions that app needs."
-  - q: "Do dealers in our own app need Salesforce licences to use the agent?"
-    a: "The setup guide only requires one run-as user with at least API Only access, which suits the Salesforce Integration user licence. The guide says nothing about the people typing into your app, so I would get the licence position confirmed in writing."
+  - q: "Do dealers in our own app need Salesforce licenses to use the agent?"
+    a: "The setup guide only requires one run-as user with at least API Only access, which suits the Salesforce Integration user license. The guide says nothing about the people typing into your app, so I would get the license position confirmed in writing."
   - q: "How long may an agent take to answer through the Agent API?"
     a: "The Agent API has a 120-second timeout and returns HTTP 500 when a call exceeds it. A session also handles one request at a time, so your app must wait for the answer before sending the next message."
   - q: "Can Claude or ChatGPT call our Agentforce agent instead of our own app?"
@@ -65,7 +65,7 @@ The second point is where [Agent Script and deterministic rules](../agent-script
 
 Audit follows the same logic. Salesforce logs the run-as user, so it cannot tell you which dealer asked. The session start takes an `externalSessionKey`, a UUID that, according to the setup guide, you can use to trace the conversation in the agent's event logs. I would write that key next to the dealer's user ID in your app's log, so a question from your data protection officer can be answered from both sides.
 
-For the run-as user I would use the [Salesforce Integration user licence](https://help.salesforce.com/s/articleView?language=en_US&id=platform.integration_user.htm&type=5) with its API-only profile and a permission set on top. Orgs get "a limited number" of these licences by default; the page gives no figure. One External Client App and one run-as user per external app keeps the damage small; token and IP controls are in [connected apps and OAuth for AI integrations](../connected-apps-oauth-ai-integrations/).
+For the run-as user I would use the [Salesforce Integration user license](https://help.salesforce.com/s/articleView?language=en_US&id=platform.integration_user.htm&type=5) with its API-only profile and a permission set on top. Orgs get "a limited number" of these licenses by default; the page gives no figure. One External Client App and one run-as user per external app keeps the damage small; token and IP controls are in [connected apps and OAuth for AI integrations](../connected-apps-oauth-ai-integrations/).
 
 ## Agent API, chat channel and hosted MCP compared
 
@@ -77,7 +77,7 @@ The Agent API is one of three ways out of Salesforce, and the one with the most 
 | Enhanced Chat v2 | visitors on a website | Salesforce channel | service agent on a website |
 | Hosted MCP tool | Claude, ChatGPT, Slackbot | signed-in Salesforce user | employees with their own AI client |
 
-Salesforce positions its [custom connections](https://developer.salesforce.com/docs/ai/agentforce/guide/custom-connections.html), which let your client render agent answers as cards or forms through the Agent API, for teams that "need to build a channel from the ground up", and points to Enhanced Chat v2 when an out-of-the-box channel is enough. If your dealers already log in to an Experience Cloud portal, that portal with its licences and sharing is often the simpler home for the agent; the trade-offs are in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
+Salesforce positions its [custom connections](https://developer.salesforce.com/docs/ai/agentforce/guide/custom-connections.html), which let your client render agent answers as cards or forms through the Agent API, for teams that "need to build a channel from the ground up", and points to Enhanced Chat v2 when an out-of-the-box channel is enough. If your dealers already log in to an Experience Cloud portal, that portal with its licenses and sharing is often the simpler home for the agent; the trade-offs are in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
 
 For employees the [hosted MCP page on agents](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/agentforce.html) describes the opposite model: the agent runs "in the authenticated user's context", with sharing and field-level security applied. Only agents built with the new Agent Script Builder qualify. The page states no release status; the [GA announcement of 29 April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) still said "soon". The MCP decisions for IT leads are in [MCP explained for IT leads](../mcp-salesforce-explained-for-it-leads/).
 

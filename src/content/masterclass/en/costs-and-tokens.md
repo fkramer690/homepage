@@ -12,7 +12,7 @@ takeaways:
   - "Prompt caching is the biggest lever for coding agents: an example session on Claude Opus 5.5 costs about $2.34 with caching and about $12.40 without."
   - "Anthropic puts Claude Code at around $13 per developer per active day. Seat prices now buy a usage budget, not unlimited use."
   - "Core, Advanced and Max include 500,000, 1 million and 2.75 million Flex Credits per org and year. One dealer agent can use about 3 million in year one."
-  - "Data 360 for spare part catalogues and the still unpriced Headless Platform Interactions meter are the items most often missing from estimates."
+  - "Data 360 for spare part catalogs and the still unpriced Headless Platform Interactions meter are the items most often missing from estimates."
 articles: [flex-credits-agentforce-costs, salesforce-editions-core-advanced-max, ai-coding-costs-salesforce-project, data-360-costs-for-agents]
 faq:
   - q: "What does a coding agent like Claude Code cost per developer?"
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-AI in a Salesforce programme costs in two currencies. Coding agents such as Claude Code, Codex, Copilot or Agentforce Vibes bill by tokens, and the context the agent re-sends at every step drives the bill harder than the prompt does. Agentforce agents at runtime bill by actions and prompts in Flex Credits, at half a cent per credit. Put both on one line and your estimate will be wrong. The biggest levers are prompt caching in development and, at runtime, Data 360 and test load, which many estimates leave out.
+AI in a Salesforce program costs in two currencies. Coding agents such as Claude Code, Codex, Copilot or Agentforce Vibes bill by tokens, and the context the agent re-sends at every step drives the bill harder than the prompt does. Agentforce agents at runtime bill by actions and prompts in Flex Credits, at half a cent per credit. Put both on one line and your estimate will be wrong. The biggest levers are prompt caching in development and, at runtime, Data 360 and test load, which many estimates leave out.
 
 ## Two currencies: tokens and Flex Credits
 
@@ -125,9 +125,9 @@ Without caching, 2.8 million input tokens at $4 cost $11.20 alone, **$12.40** wi
 
 Daily agentic users are better off on the flat fee, up to its cap; after that, work continues on Flex Credits or the included GPT-5.
 
-### Batch: an org assessment before the programme starts
+### Batch: an org assessment before the program starts
 
-Assume a ten-year-old org with 2,000 Apex classes to summarise before a restart, at 8,000 input and 1,000 output tokens per class on Sonnet 5.5 through the Batch API: 16 million × $1 + 2 million × $5 = **$26** instead of $52. Thinking may push output higher; even triple would not register in a programme budget.
+Assume a ten-year-old org with 2,000 Apex classes to summarise before a restart, at 8,000 input and 1,000 output tokens per class on Sonnet 5.5 through the Batch API: 16 million × $1 + 2 million × $5 = **$26** instead of $52. Thinking may push output higher; even triple would not register in a program budget.
 
 ## Agentforce at runtime: actions and prompts in Flex Credits
 
@@ -160,11 +160,11 @@ Assumption: 3,000 conversations a month about order status, delivery dates and s
 | Total | 204,000 credits = **$1,020 a month**, against $6,000 on the per-conversation model |
 | Twelve months | 2,448,000 credits, more than the Core and Advanced pools, just under Max |
 
-With 2,000 MB of spare part catalogues processed in Data 360 (300,000 credits) and sandbox tests, the first year comes to about 3 million credits or $15,000. The full calculation with test load and resolution pricing is in [Agentforce costs for manufacturers](../../../blog/flex-credits-agentforce-cost-per-action/).
+With 2,000 MB of spare part catalogs processed in Data 360 (300,000 credits) and sandbox tests, the first year comes to about 3 million credits or $15,000. The full calculation with test load and resolution pricing is in [Agentforce costs for manufacturers](../../../blog/flex-credits-agentforce-cost-per-action/).
 
 ### The two most common gaps
 
-**Data 360.** When an agent relies on manuals, exploded drawings or spare part catalogues, 1 GB of unstructured documents costs about 150,000 credits in the base tier, roughly $750, and four times that if exploded drawings need LLM-based Intelligent Processing at 600 credits per MB. In a sandbox there are no volume tiers. Test with a subset and remove outdated catalogue versions first. More in [Data 360 costs for AI agents](../../../blog/data-360-costs-for-ai-agents/).
+**Data 360.** When an agent relies on manuals, exploded drawings or spare part catalogs, 1 GB of unstructured documents costs about 150,000 credits in the base tier, roughly $750, and four times that if exploded drawings need LLM-based Intelligent Processing at 600 credits per MB. In a sandbox there are no volume tiers. Test with a subset and remove outdated catalog versions first. More in [Data 360 costs for AI agents](../../../blog/data-360-costs-for-ai-agents/).
 
 **Headless Platform Interactions.** When Claude, ChatGPT or other agents access Salesforce through MCP or API, every successful call by a registered agent is to count, according to [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), only in active production orgs and with 30 days' notice. Classic integrations keep their current pricing. Using Claude on Salesforce data then means paying twice: Anthropic for tokens, Salesforce for interactions. You can estimate the volume, as shown in [chapter 3](../mcp-and-interfaces/); the budget line is in [MCP and API calls to Salesforce as a budget risk](../../../blog/flex-credits-agentforce-cost-per-action/).
 
@@ -187,7 +187,7 @@ Assume a machine builder with 80 Service Cloud users on Core Edition, SAP S/4 an
 
 The 80 Core seats alone cost $187,200 a year at list price, so AI consumption is not the big number. The risks: a partner team defaulting to Opus instead of Sonnet can double the development line, and the HPI rate can change the back office bill later without anyone touching the system.
 
-## How do you budget AI costs in a Salesforce programme?
+## How do you budget AI costs in a Salesforce program?
 
 1. **Keep two budget lines:** tokens for development, Flex Credits for runtime, each with its own owner.
 2. **Count your own documents** with token counting instead of copying rules of thumb.
@@ -198,4 +198,4 @@ The 80 Core seats alone cost $187,200 a year at list price, so AI consumption is
 7. **Hold a reserve for open meters** until the billing above is confirmed.
 8. **Measure monthly:** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) shows Agentforce consumption by agent, action and channel and needs Data 360 turned on; for Claude use the spend report or Console.
 
-These questions are part of my [make-or-buy and licence planning](../../../services/make-or-buy-licences/). All chapters are on the [overview page](../).
+These questions are part of my [make-or-buy and license planning](../../../services/make-or-buy-licences/). All chapters are on the [overview page](../).

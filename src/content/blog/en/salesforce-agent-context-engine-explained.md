@@ -60,7 +60,7 @@ For enterprise architecture that matters. Many companies will not run all their 
 
 ## How are permissions and sensitive data handled?
 
-Salesforce states that context assembly applies existing Salesforce and Data 360 entitlements: object, field and row-level security, sharing rules and data classification. Sensitive content is masked or withheld before it reaches the agent, based on the classification policy and not on the model's judgement. Changes to systems of record still go through each system's own permissions.
+Salesforce states that context assembly applies existing Salesforce and Data 360 entitlements: object, field and row-level security, sharing rules and data classification. Sensitive content is masked or withheld before it reaches the agent, based on the classification policy and not on the model's judgment. Changes to systems of record still go through each system's own permissions.
 
 This is the right principle. It also means that agents inherit every weakness of the existing permission model. If sharing rules are too broad today, an agent will see too much tomorrow. If sensitive fields are not classified, they cannot be masked. Before an agent project, the permission model deserves the same attention as the agent design.
 

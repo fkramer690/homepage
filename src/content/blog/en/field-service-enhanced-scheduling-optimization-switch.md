@@ -10,7 +10,7 @@ categories: [field-service]
 tags: [Field Service, Enhanced Scheduling, Optimization, Scheduling Console, Dispatching]
 takeaways:
   - "New orgs have Enhanced Scheduling and Optimization on for all service territories. Existing orgs switch all territories at once or one by one."
-  - "The enhanced engine allows 250 instead of 100 skills per resource and 50,000 optimized appointments per 24 hours or 500 per scheduling licence."
+  - "The enhanced engine allows 250 instead of 100 skills per resource and 50,000 optimized appointments per 24 hours or 500 per scheduling license."
   - "Scheduling recipes go away; Salesforce points to the Fix Schedule Overlaps flow. Optimization Insights becomes the Optimization Hub."
   - "Several work rules treat empty fields differently, and an appointment without a territory gets candidates from all territories."
   - "The new Scheduling Console only works with the enhanced engine, so the engine decision also decides the dispatchers' screen."
@@ -43,13 +43,13 @@ The [limits for Enhanced Scheduling and Optimization](https://help.salesforce.co
 | Limit | Enhanced Scheduling and Optimization |
 |---|---|
 | Skills per service resource | 250, compared with 100 on the older engine |
-| Optimized service appointments | 50,000 per rolling 24 hours or 500 per Field Service Scheduling licence, whichever is higher |
+| Optimized service appointments | 50,000 per rolling 24 hours or 500 per Field Service Scheduling license, whichever is higher |
 | Horizon for absences and appointment changes | 30 days; changes beyond it get no travel time or lunch break update |
 | Service territories per scheduled job request | 100, or 1,000 with Dynamic Scaling |
 
 The skills limit is the one I would look at first. A service technician at a machine builder often carries skills per machine series, per control system, per safety training and per language. With 100 skills that gets tight in larger product ranges. With 250 there is room.
 
-The 50,000 appointments are rarely the bottleneck. A service organisation with 45 technicians stays far below that, and the figure applies until you have more than 100 scheduling licences. Consumption can be checked in Setup under Company Information.
+The 50,000 appointments are rarely the bottleneck. A service organization with 45 technicians stays far below that, and the figure applies until you have more than 100 scheduling licenses. Consumption can be checked in Setup under Company Information.
 
 The 30-day horizon matters for planned maintenance. If dispatchers book annual maintenance visits two months ahead, those bookings sit outside the window where the engine updates travel time. That is fine as long as optimization rearranges the plan once the appointments come into range.
 

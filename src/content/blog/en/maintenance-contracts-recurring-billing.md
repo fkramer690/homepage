@@ -63,7 +63,7 @@ A service manager who adds a machine to the contract on a call has not changed a
 
 ## What does Field Service need from the contract?
 
-Field Service works with its own objects. As I describe in [modelling maintenance contracts in Field Service](../salesforce-field-service-maintenance-contracts/), the service contract records what was sold, contract line items name the covered assets, the maintenance plan generates the planned visits and the entitlement holds the committed response time.
+Field Service works with its own objects. As I describe in [modeling maintenance contracts in Field Service](../salesforce-field-service-maintenance-contracts/), the service contract records what was sold, contract line items name the covered assets, the maintenance plan generates the planned visits and the entitlement holds the committed response time.
 
 Both clouds use the Asset object, but for different things. The Revenue Cloud asset is the sold subscription with quantity, price and term. The Field Service asset is the physical machine with serial number, location and history. I would keep them as separate records and not try to make the machine asset carry the subscription. How the two asset views meet is covered in [assets, amendments and renewals](../revenue-cloud-assets-amendments-renewals/).
 

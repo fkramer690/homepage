@@ -1,5 +1,5 @@
 ---
-title: "B2B Commerce: catalogue, search and entitlements"
+title: "B2B Commerce: catalog, search and entitlements"
 description: "How buyer groups, entitlement policies, product data and search work together in Salesforce B2B Commerce, and which hard limits shape the store design."
 lang: en
 slug: catalog-search-entitlements
@@ -7,13 +7,13 @@ course: b2b-commerce
 translationKey: commerce-02
 chapter: 2
 pubDate: 2026-10-28
-short: "Catalogue, search, entitlements"
+short: "Catalog, search, entitlements"
 summary: "How product data, buyer groups and search work together so every dealer finds the right parts."
 takeaways:
   - "Buyer groups and entitlement policies decide whether a dealer sees a product; product data and search settings decide whether the dealer finds it."
   - "A product should be entitled to no more than 2,000 buyer groups. Beyond that, the extra groups are missing from the search index, with no load error."
   - "Cut buyer groups by country, dealer tier and brand, never one group per dealer. Their number then stays stable when new dealers join."
-  - "A store has exactly one catalogue with up to 4 million products. A second brand with its own category tree therefore needs a second store."
+  - "A store has exactly one catalog with up to 4 million products. A second brand with its own category tree therefore needs a second store."
   - "Entitlements know nothing about serial numbers. Parts per machine come from a machine page fed by assets and PLM, not from a buyer group per machine."
 articles: [commerce-buyer-groups-entitlements, commerce-product-data-pim, commerce-search-part-numbers, commerce-stores-countries-brands, commerce-spare-parts-per-machine, spare-parts-serial-number-ai]
 faq:
@@ -30,7 +30,7 @@ faq:
 draft: false
 ---
 
-In Salesforce B2B Commerce, two separate mechanisms decide whether a dealer orders the right spare part. Buyer groups and entitlement policies set visibility: a buyer account belongs to buyer groups, which get products and price books assigned. Product data and search settings set findability: what is not in the product record, no search will find. Both sides have hard limits worth knowing before design, such as 2,000 buyer groups per product in the search index, one catalogue per store and 1 million searchable products. My advice: few buyer groups by country, tier and brand, one owner per product field, and the entitlement concept on one page before any data load.
+In Salesforce B2B Commerce, two separate mechanisms decide whether a dealer orders the right spare part. Buyer groups and entitlement policies set visibility: a buyer account belongs to buyer groups, which get products and price books assigned. Product data and search settings set findability: what is not in the product record, no search will find. Both sides have hard limits worth knowing before design, such as 2,000 buyer groups per product in the search index, one catalog per store and 1 million searchable products. My advice: few buyer groups by country, tier and brand, one owner per product field, and the entitlement concept on one page before any data load.
 
 ## How does B2B Commerce decide who sees which product?
 
@@ -56,7 +56,7 @@ Salesforce documents the limits on separate pages for [entitlements](https://dev
 | Buyer groups per buyer account | 20, 30 with the Apex extension | soft |
 | Buyer groups per entitlement policy | 200 | hard |
 | Buyer groups per product (buyer entitlements) | 2,000 | hard |
-| Catalogues per store | 1 | hard |
+| Catalogs per store | 1 | hard |
 | Products per store | 4 million, of which 1 million searchable | hard |
 | Variants per variation parent | 200 | hard |
 | Images per product | 9, plus 5 file attachments | hard |
@@ -76,7 +76,7 @@ The buyer group page also has a note with a different value than its table; I pl
 
 The idea is tempting because it mirrors the ERP: every customer has its own conditions, so every customer gets its own group. With 50 dealers that works. With 2,500 dealers, a spare part that everyone may buy is entitled to 2,500 groups and sits above the index limit. A policy "all spare parts" serves at most 200 groups and would have to be copied several times and kept identical. Every new dealer turns into a data project.
 
-I cut buyer groups by attributes that change rarely and that the ERP already holds in the customer master: country or sales organisation, dealer tier such as service partner or sales partner, and brand where dealers carry only one brand. Entitlement policies then follow assortments, not customers: "spare parts general", "spare parts for service partners", "consumables". How to set memberships from the ERP, and when assignment by Apex or by rule pays off, is covered in [buyer groups and entitlements](../../../blog/buyer-groups-entitlements-product-visibility/).
+I cut buyer groups by attributes that change rarely and that the ERP already holds in the customer master: country or sales organization, dealer tier such as service partner or sales partner, and brand where dealers carry only one brand. Entitlement policies then follow assortments, not customers: "spare parts general", "spare parts for service partners", "consumables". How to set memberships from the ERP, and when assignment by Apex or by rule pays off, is covered in [buyer groups and entitlements](../../../blog/buyer-groups-entitlements-product-visibility/).
 
 ```vergleich
 without: One buyer group per dealer
@@ -84,7 +84,7 @@ without: One buyer group per dealer
 - One policy serves at most 200 groups and has to be copied and kept in sync
 - Every new dealer becomes a data project
 with: Buyer groups by attribute
-- Country or sales organisation, dealer tier and brand
+- Country or sales organization, dealer tier and brand
 - Stable attributes the customer master in the ERP already carries
 - Entitlement policies follow assortments, not customers
 ```
@@ -112,7 +112,7 @@ The search limits per store:
 | Facets per query | 10 |
 | Results per page | 200 |
 
-Three rules follow for parts catalogues:
+Three rules follow for parts catalogs:
 
 1. **Old numbers go into a field.** Predecessor, supplier and cross-reference numbers sit in one searchable text field on the current product. The field counts as one of the 25 attributes, however many numbers it holds.
 2. **Synonyms are for words.** 100 rules cover "O-ring" and "seal ring", not 8,000 predecessor numbers.
@@ -129,11 +129,11 @@ I plan a second store in four cases:
 | Case | Why it needs its own store |
 |---|---|
 | Another brand with its own look | A dealer of brand B should not log into a shop that looks like brand A. |
-| Another category tree | One catalogue per store means one category tree. The other way round, according to Salesforce one catalogue can serve several stores, so two brands with the same parts can share product data. |
+| Another category tree | One catalog per store means one category tree. The other way round, according to Salesforce one catalog can serve several stores, so two brands with the same parts can share product data. |
 | Another checkout or another ERP | Extensions for pricing, inventory or order creation are mapped per store. |
 | Different buyers | End customers next to dealers get their own D2C store with shared product data. |
 
-The licence sets an earlier limit than the 100 stores per org. According to the [pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/), Growth Edition includes six storefronts and Advanced Edition ten. And every extra store brings its own pages, translations and its own regression test after each of the three Salesforce releases a year. The decision with an example is in [one B2B store or several](../../../blog/b2b-stores-countries-brands-dealers/).
+The license sets an earlier limit than the 100 stores per org. According to the [pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/), Growth Edition includes six storefronts and Advanced Edition ten. And every extra store brings its own pages, translations and its own regression test after each of the three Salesforce releases a year. The decision with an example is in [one B2B store or several](../../../blog/b2b-stores-countries-brands-dealers/).
 
 ## Parts per machine: where entitlements stop
 

@@ -94,7 +94,7 @@ sfdx-hardis uses the open-source plugin sfdx-git-delta for this and turns it on 
 
 ## Steps before and after the deployment
 
-Almost every release has steps that are not metadata: activating a flow, loading reference data, scheduling a batch job, freezing users before the release. In many programmes they sit in a spreadsheet that someone works through by hand at 10 pm. Once they are part of the pipeline, they run the same way in every environment and are traceable in the repository.
+Almost every release has steps that are not metadata: activating a flow, loading reference data, scheduling a batch job, freezing users before the release. In many programs they sit in a spreadsheet that someone works through by hand at 10 pm. Once they are part of the pipeline, they run the same way in every environment and are traceable in the repository.
 
 ```vertiefung For developers
 title: How do deployment actions work in sfdx-hardis?
@@ -133,7 +133,7 @@ For the ownership question from [chapter 2](../release-process-ownership-roles/)
 
 - a dedicated technical user per org for the pipeline, with only the permissions a deployment needs,
 - certificates, keys and pipeline variables in the client's vault and on the client's Git platform,
-- new certificates as soon as a partner leaves the programme.
+- new certificates as soon as a partner leaves the program.
 
 ## Notifications: who learns what?
 

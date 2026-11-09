@@ -21,7 +21,7 @@ faq:
   - q: "When does change management start in a Salesforce project?"
     a: "In planning, before anything is built. Which groups are affected and what changes for them also shapes the solution itself. Starting just before go-live leaves room only for information."
   - q: "What is a change impact assessment?"
-    a: "An overview per affected group of what changes for them, for example processes, systems, roles, behaviours or reporting lines. It is the basis for communication, training and the sponsor plan."
+    a: "An overview per affected group of what changes for them, for example processes, systems, roles, behaviors or reporting lines. It is the basis for communication, training and the sponsor plan."
   - q: "When does the change management process end?"
     a: "When the new way of working is measurably in use and internal roles have taken over ownership, so well after go-live. In a rollout in waves it starts again in every country."
 draft: false
@@ -47,7 +47,7 @@ The table describes a release with one big go-live. In a rollout in waves the se
 
 Planning decides the most, and this is exactly where change management is most often missing. Three outputs should be in place before anything is built.
 
-**An impact assessment per group.** Prosci looks at ten aspects of a change, among them processes, systems, tools, job roles, critical behaviours, reporting structure and performance reviews ([Prosci: Defining Change Impact](https://www.prosci.com/blog/defining-change-impact)). In a Salesforce project at a manufacturer it can look like this: inside sales creates quotes in the configurator instead of Word (process, tool). Sales maintains opportunities that feed the sales forecast (behaviour). Sales management discusses the pipeline from a dashboard instead of an Excel list (reporting). The more aspects change for a group, the more support it needs.
+**An impact assessment per group.** Prosci looks at ten aspects of a change, among them processes, systems, tools, job roles, critical behaviors, reporting structure and performance reviews ([Prosci: Defining Change Impact](https://www.prosci.com/blog/defining-change-impact)). In a Salesforce project at a manufacturer it can look like this: inside sales creates quotes in the configurator instead of Word (process, tool). Sales maintains opportunities that feed the sales forecast (behavior). Sales management discusses the pipeline from a dashboard instead of an Excel list (reporting). The more aspects change for a group, the more support it needs.
 
 **A sponsor plan.** It defines who in management carries the rollout and what that person visibly does when: explain in the sales meeting why forecasts will come from Salesforce, decide when departments disagree, ask about usage in the monthly report.
 
@@ -89,4 +89,4 @@ The process ends when the new way of working is measurably in use and nobody fro
 
 ## Write one change output into every project phase
 
-Take the project plan of your next Salesforce initiative and write down for every phase which change output should exist at its end. If planning is missing the impact assessment, the sponsor plan or the metrics, that is your first step. The hub article [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/) shows which topics belong to it. How we run the process in programmes is described under [Salesforce change management consulting](../../services/change-management-salesforce/).
+Take the project plan of your next Salesforce initiative and write down for every phase which change output should exist at its end. If planning is missing the impact assessment, the sponsor plan or the metrics, that is your first step. The hub article [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/) shows which topics belong to it. How we run the process in programs is described under [Salesforce change management consulting](../../services/change-management-salesforce/).

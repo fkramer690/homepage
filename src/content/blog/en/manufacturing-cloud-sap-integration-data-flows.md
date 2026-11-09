@@ -56,10 +56,10 @@ The [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufactu
 **Account and product and order sync.** According to the [use case page on Exchange](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/qrc-zzh/Use%20case%201%20-%20Account%20and%20product%20and%20order%20sync/), it extracts account, product and order data from SAP S/4HANA into Manufacturing Cloud, including account and product hierarchies. The sync is one way, SAP is the system of record, and it runs in real time or in batch. Three details are worth reading before you plan with it:
 
 - An order is linked to a sales agreement only if the agreement is active, the customer matches the agreement's account and the product or its primary category matches.
-- Only one product catalogue is supported.
+- Only one product catalog is supported.
 - The SAP side needs a communication arrangement for product hierarchies and a custom flag field on the product master.
 
-**Sales rebate management.** According to the [rebate use case](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/Use%20case%202%20-%20Sales%20rebate%20management/), Manufacturing Cloud is the system of record for rebate payouts. When a payout is approved, an event creates a draft credit memo in SAP. A scheduled job later marks payouts as paid once SAP has paid the credit memo. Sales orders flow from SAP into Manufacturing Cloud. How rebate programmes work on the Salesforce side is in [Rebate Management: dealer rebates without Excel](../rebate-management-dealer-rebates/).
+**Sales rebate management.** According to the [rebate use case](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/Use%20case%202%20-%20Sales%20rebate%20management/), Manufacturing Cloud is the system of record for rebate payouts. When a payout is approved, an event creates a draft credit memo in SAP. A scheduled job later marks payouts as paid once SAP has paid the credit memo. Sales orders flow from SAP into Manufacturing Cloud. How rebate programs work on the Salesforce side is in [Rebate Management: dealer rebates without Excel](../rebate-management-dealer-rebates/).
 
 What the accelerator does not cover: it creates no sales agreements, and it names no warranty flow. The approved amount from a warranty claim, which I would book in the ERP as a credit note to the dealer as described in [warranty claims from dealers](../warranty-claims-dealers-salesforce/), needs its own interface.
 
@@ -112,7 +112,7 @@ How I set up interfaces between ERP, middleware and Salesforce is described unde
 
 1. **Fill in the table** with your objects, leading system, direction and frequency.
 2. **Decide actuals as orders or totals** before the first sales agreement goes live.
-3. **Check the accelerator** against your SAP release and your product catalogue structure, and settle the customer master rule.
+3. **Check the accelerator** against your SAP release and your product catalog structure, and settle the customer master rule.
 4. **Plan the money flows back**: rebate payouts and warranty credits, each with a status that returns to Salesforce.
 5. **List every interface user** and its login method before 1 December 2026.
 

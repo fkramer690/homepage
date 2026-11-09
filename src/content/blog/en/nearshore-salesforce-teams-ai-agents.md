@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Nearshore Salesforce teams with AI agents produce more code per developer, and that moves the bottleneck to review. For a manufacturer the planning number becomes reviewer capacity with knowledge of your org and processes, not developer headcount. Onboarding gets faster at reading an unknown org but can skip the judgement a reviewer needs later. And every rotation in the team becomes an access event: tool accounts, org access and local agent transcripts have to be cleaned up per person. The rules from my nearshore article still hold; agents make breaking them more expensive.
+Nearshore Salesforce teams with AI agents produce more code per developer, and that moves the bottleneck to review. For a manufacturer the planning number becomes reviewer capacity with knowledge of your org and processes, not developer headcount. Onboarding gets faster at reading an unknown org but can skip the judgment a reviewer needs later. And every rotation in the team becomes an access event: tool accounts, org access and local agent transcripts have to be cleaned up per person. The rules from my nearshore article still hold; agents make breaking them more expensive.
 
 ## What changes for nearshore Salesforce teams with AI agents?
 
@@ -55,7 +55,7 @@ In a nearshore team this lands on very few people. The mix I recommend, a few se
 - **Two review stages.** A senior in the nearshore team reviews every pull request first, using the checks in [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/). Changes to shared objects, sharing, the data model or interfaces also need your code owner. GitHub [requests code owners automatically](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) when a pull request touches their files, and branch protection can make their approval mandatory. The [object ownership matrix](../salesforce-object-ownership-matrix/) defines which objects are shared.
 - **Reviewer hours in the contract.** A partner paid per head gains from adding developers, and with agents an extra developer mostly lengthens the review queue.
 - **Small pull requests with the agent's plan attached.** The plan answers the question a reviewer would otherwise ask across the time zone.
-- **Triage by risk.** McKinsey recommends that higher-risk changes "require stronger evidence and accountable human review": customer-facing behaviour, regulated data, security-sensitive code. For a machine builder, warranty rules, prices and anything that posts to SAP go to your reviewer; a label change in the dealer portal does not.
+- **Triage by risk.** McKinsey recommends that higher-risk changes "require stronger evidence and accountable human review": customer-facing behavior, regulated data, security-sensitive code. For a machine builder, warranty rules, prices and anything that posts to SAP go to your reviewer; a label change in the dealer portal does not.
 
 ## Steering an agent means more checking than typing
 
@@ -105,4 +105,4 @@ Whether the stream got faster stays open until cycle time and rework are compare
 5. **Plan onboarding time** and agree who pays.
 6. **Measure cycle time and rework** before and after.
 
-For point 1, a look at the open pull requests and how long they wait for a review on average is enough. Planning team setups, reviewer capacity and rotation rules is part of my [programme management for nearshore teams](../../services/program-management-nearshore/).
+For point 1, a look at the open pull requests and how long they wait for a review on average is enough. Planning team setups, reviewer capacity and rotation rules is part of my [program management for nearshore teams](../../services/program-management-nearshore/).

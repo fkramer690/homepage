@@ -19,7 +19,7 @@ faq:
   - q: "Why do technicians reject a new Field Service app?"
     a: "Usually for three reasons: they fear more control, for example over their location, they see more documentation instead of less, or the app does not work reliably on site, for example without signal."
   - q: "Does the works council have to be involved in the Field Service app?"
-    a: "In Germany, as a rule yes, as soon as the system can evaluate employees' behaviour or performance. In Field Service this mainly concerns location tracking and the visibility of hours and appointments."
+    a: "In Germany, as a rule yes, as soon as the system can evaluate employees' behavior or performance. In Field Service this mainly concerns location tracking and the visibility of hours and appointments."
   - q: "How do you involve technicians early?"
     a: "With a small group of experienced technicians who test forms and workflows on real jobs before the rollout and later remain the contacts in their region."
   - q: "How do you know whether technicians use the app?"

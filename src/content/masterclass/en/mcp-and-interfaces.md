@@ -90,7 +90,7 @@ The details are in [Salesforce DX MCP Server end of life](../../../blog/salesfor
 
 Salesforce released the Hosted MCP Servers on [29 April 2026 for every Enterprise Edition org and above](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available). They run on Salesforce infrastructure; an admin enables them in Setup under API Catalog and creates an External Client App with the `mcp_api` and `refresh_token` scopes. The [server reference](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html) lists four sObject servers (All, Reads, Mutations, Deletes) plus servers for Data 360, Tableau Next and Headless 360.
 
-The security model is strict, which works in manufacturers' favour. From the [security best practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html):
+The security model is strict, which works in manufacturers' favor. From the [security best practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html):
 
 | Topic | Rule |
 |---|---|

@@ -20,7 +20,7 @@ faq:
   - q: "Should Setup with Agentforce be used in production?"
     a: "For questions, access troubleshooting and user administration such as freezing users, yes. For metadata changes like fields, flows, pages or sharing rules I would not: they belong in a developer sandbox and reach production through the repository and the pipeline."
   - q: "Does Setup with Agentforce log its changes?"
-    a: "According to Trailhead, every change the agent makes can be reviewed in the Setup Audit Trail, which keeps at least the last 180 days. Whether an entry is labelled as made by the agent or only under the admin's name is not stated on the pages I checked."
+    a: "According to Trailhead, every change the agent makes can be reviewed in the Setup Audit Trail, which keeps at least the last 180 days. Whether an entry is labeled as made by the agent or only under the admin's name is not stated on the pages I checked."
   - q: "What does Setup with Agentforce cost?"
     a: "Salesforce's product page lists 500 free Setup agent actions per org and month, shared across all users, and says usage consumes Data 360 credits. The Admin blog calls Setup actions non-billable. A price for actions beyond the allowance is not published on those pages."
   - q: "What is the difference to Einstein for Flow?"
@@ -39,7 +39,7 @@ Setup with Agentforce is an admin agent with an "Ask Setup Agent" button on Setu
 - create custom objects and fields, create and manage flows
 - create custom report types and Lightning pages
 - create, modify and explain formulas
-- answer questions from Salesforce Help and report on org health, usage and licences
+- answer questions from Salesforce Help and report on org health, usage and licenses
 
 Three statements from Salesforce matter for governance. The same Trailhead unit says: "The agent only takes action when you approve." It also says the agent "only helps with tasks for which you have the correct permissions", and that every change it makes can be reviewed in the Setup Audit Trail. According to the [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm), that trail covers at least the last 180 days.
 
@@ -48,7 +48,7 @@ On cost the sources do not agree. The [product page](https://www.salesforce.com/
 ```hinweis offen
 On no Salesforce page I opened could I find whether flows the agent builds are saved active or inactive, or whether the Setup Audit Trail marks a change as agent-made or only shows the admin's name.
 
-Also open: whether behaviour or allowance differ between sandbox and production, what an action beyond the 500 costs, and whether the Data 360 change after Dreamforce happened.
+Also open: whether behavior or allowance differ between sandbox and production, what an action beyond the 500 costs, and whether the Data 360 change after Dreamforce happened.
 ```
 
 One independent test is worth knowing. Andy Engin Utkan tried the agent in a production org for [Salesforce Break in July 2026](https://salesforcebreak.com/2026/07/07/setup-with-agentforce-review/); it could not list users with View All Data or Modify All Data, and his verdict was "This feature launched before it was fully baked." That is one author's test, and he did not try flow creation. For the wider tool overview, see the masterclass chapter on [Salesforce AI development tools](../../masterclass/ai-salesforce/salesforce-ai-development-tools/).
@@ -57,7 +57,7 @@ Einstein for Flow is the narrower tool. According to [Salesforce Ben](https://ww
 
 ## An agent change in production breaks the release process
 
-A governed Salesforce programme rests on one rule: production contains what the repository contains, and every change gets there through the pipeline. I describe why in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/). A field, flow or Lightning page created directly in production breaks that rule, whether a person clicks it together or an agent does.
+A governed Salesforce program rests on one rule: production contains what the repository contains, and every change gets there through the pipeline. I describe why in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/). A field, flow or Lightning page created directly in production breaks that rule, whether a person clicks it together or an agent does.
 
 The agent makes it worse in three ways:
 
@@ -73,7 +73,7 @@ Yes, for a defined part of its work. I split by whether the action produces meta
 
 | Action | Production | Developer sandbox |
 |---|---|---|
-| Questions, help, org health, licence usage | allowed | allowed |
+| Questions, help, org health, license usage | allowed | allowed |
 | Troubleshoot why a user cannot see a record | allowed | allowed |
 | Freeze user, reset password, assign existing permission set | allowed, as today | allowed |
 | New permission set, sharing rule, org-wide default | not allowed | allowed, then pipeline |

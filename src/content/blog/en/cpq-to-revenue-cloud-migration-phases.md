@@ -10,14 +10,14 @@ categories: [revenue-cloud, devops]
 tags: [Salesforce CPQ, Revenue Cloud, migration, cutover, data migration]
 takeaways:
   - "According to Salesforce Help the data models differ significantly. Reports are rebuilt, not migrated."
-  - "There is no deadline, because CPQ has no end-of-life date. Your licence contract sets the date."
+  - "There is no deadline, because CPQ has no end-of-life date. Your license contract sets the date."
   - "Data moves in dependency order: catalog and attributes first, then selling models and prices, then assets from open subscriptions, billing data last."
   - "Migration tools from Forsys, IdeaHelix and Prodly speed up mapping. Price master, cutover date and the scope of history remain decisions for the client."
 faq:
   - q: "How long does a migration from Salesforce CPQ to Revenue Cloud take?"
     a: "Salesforce names 3 to 6 months from discovery to go-live as typical and says complex implementations can take longer. Salesforce Help sets no fixed timeframe and recommends a pace that fits the business and its complexity."
   - q: "Can Salesforce CPQ and Revenue Cloud run in the same org?"
-    a: "Salesforce Help lists coexistence during the transition and retaining the CPQ licence as operational topics to plan before configuration starts. In practice, CPQ keeps quoting in production while Revenue Cloud is built and tested in the same org."
+    a: "Salesforce Help lists coexistence during the transition and retaining the CPQ license as operational topics to plan before configuration starts. In practice, CPQ keeps quoting in production while Revenue Cloud is built and tested in the same org."
   - q: "Is there a tool that converts CPQ into Revenue Cloud automatically?"
     a: "No tool does it completely. Salesforce names Forsys RevRamp, IdeaHelix and Prodly for mapping and automation, and Salesforce Help states that tools do not replace human design decisions, especially for custom logic and integration remapping."
   - q: "Do CPQ reports and dashboards carry over?"
@@ -51,7 +51,7 @@ The Help article [Migrate to Revenue Management](https://help.salesforce.com/s/a
 
 ```schritte
 Prepare
-  Assess which Revenue Cloud capabilities you need, and settle operational planning. Help lists two practical requirements here that apply "regardless of your migration strategy": retaining the CPQ licence and coexistence during the transition.
+  Assess which Revenue Cloud capabilities you need, and settle operational planning. Help lists two practical requirements here that apply "regardless of your migration strategy": retaining the CPQ license and coexistence during the transition.
 Choose a strategy
   Decide the migration strategy, how transactional data moves and how rollout and cutover work. Help says these rollout decisions belong early, because they affect scope, integrations, cutover and change management.
 Execute
@@ -60,7 +60,7 @@ Execute
 
 Help sets no fixed timeframe. The CPQ page names 3 to 6 months as typical and adds that complex implementations can take longer. My reading: 3 months is realistic for a clean org with few price rules, and a grown org with years of custom scripts belongs at the upper end or beyond. A [technical debt assessment](../ai-org-assessment-technical-debt/) before the estimate tells you which one you have.
 
-The licence point matters for the budget. While you build, CPQ keeps quoting in production, so you pay for CPQ and Revenue Cloud in parallel for the length of the project. That is one more reason not to stretch the migration over years.
+The license point matters for the budget. While you build, CPQ keeps quoting in production, so you pay for CPQ and Revenue Cloud in parallel for the length of the project. That is one more reason not to stretch the migration over years.
 
 ## Data moves in the order of its dependencies
 
@@ -97,7 +97,7 @@ The plan could look like this:
 - **Weeks 1 to 4, prepare:** count rules and scripts, decide which logic disappears, set SAP as price master for list prices and Revenue Cloud for discounts.
 - **Weeks 5 to 8, strategy:** cutover per product line, starting with spare parts and service, machines last. Subscriptions move in batches, always before their renewal month.
 - **Months 3 to 5, execute:** catalog and pricing in the pipeline, assets for the first batch of subscriptions, reports rebuilt, sales trained per product line.
-- **Month 6:** last product line moves, CPQ goes read-only, the CPQ licence ends at the next renewal date.
+- **Month 6:** last product line moves, CPQ goes read-only, the CPQ license ends at the next renewal date.
 
 Since Billing is not in use, this scenario has no billing cutover. With Salesforce Billing it would add a period-end cutover and the sign-off from finance.
 
@@ -111,6 +111,6 @@ These decisions belong to you, not to the partner or the tool:
 - **Cutover model:** all at once, per product line or per country, and the date CPQ becomes read-only.
 - **History:** what moves, what is archived, what stays readable in CPQ.
 - **Ownership after go-live:** who maintains classifications, constraint rules and pricing procedures. An [object ownership matrix](../salesforce-object-ownership-matrix/) helps when several partners work in the same org.
-- **Licence end:** when the CPQ contract ends. CPQ has no end-of-life date, so this date is entirely yours.
+- **License end:** when the CPQ contract ends. CPQ has no end-of-life date, so this date is entirely yours.
 
 Whether you should move at all, or stay on CPQ for now, is the question of [keep Salesforce CPQ or move to Revenue Cloud](../keep-salesforce-cpq-or-revenue-cloud/). The whole topic is covered in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/), and steering several partners through such a move is part of my work in [partner governance](../../services/partner-governance/).

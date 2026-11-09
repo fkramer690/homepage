@@ -11,7 +11,7 @@ tags: [Manufacturing Cloud, Partner Visit Management, Dealers, Distributors, KPI
 takeaways:
   - "Every visit gets tasks with location, priority and KPIs that reps capture on their phone."
   - "Tasks carry context such as a sales agreement, an order or an asset, so the rep sees the right record at the dealer."
-  - "The switch enablePartnerVisitManagement exists since API 56.0. Trailhead documents neither the licence nor offline use."
+  - "The switch enablePartnerVisitManagement exists since API 56.0. Trailhead documents neither the license nor offline use."
   - "The feature pays off when many dealers are visited with the same checklist."
 faq:
   - q: "What is partner visit management in Salesforce?"
@@ -25,7 +25,7 @@ faq:
 draft: false
 ---
 
-Partner visit management can turn dealer visits into comparable data, provided you define the KPIs before the first visit. The Manufacturing Cloud feature plans visits with tasks, each task carries KPIs with an expected value, and reps record the actual values on their phone. The back office then compares expected and actual across all dealers instead of reading visit reports. Trailhead documents the process well. It does not document the licence for the reps or whether the app works offline, so those two points belong in the quote. With few dealers and no fixed checklist, a simple visit report object does the job.
+Partner visit management can turn dealer visits into comparable data, provided you define the KPIs before the first visit. The Manufacturing Cloud feature plans visits with tasks, each task carries KPIs with an expected value, and reps record the actual values on their phone. The back office then compares expected and actual across all dealers instead of reading visit reports. Trailhead documents the process well. It does not document the license for the reps or whether the app works offline, so those two points belong in the quote. With few dealers and no fixed checklist, a simple visit report object does the job.
 
 ## What does partner visit management do?
 
@@ -60,16 +60,16 @@ The rep opens the Partner Visits app from the App Launcher, sees scheduled visit
 
 The first unit also shows tasks linked to customer records, for example a warranty term on a warranty renewal task or an asset on a damage inspection. That is useful for dealers who handle [warranty claims](../warranty-claims-dealers-salesforce/): the rep sees the open warranty terms while standing in the workshop.
 
-## Switching it on is easy, licence and offline are open
+## Switching it on is easy, license and offline are open
 
 The feature has its own setting. In the [IndustriesManufacturingSettings metadata](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) it is `enablePartnerVisitManagement`, available since API version 56.0, next to `enablePartnerLeadManagement` and `enablePartnerPerformanceManagement`. All default to off. So "we have Manufacturing Cloud" does not mean visits are running.
 
 Two points are not documented in the sources I checked:
 
-- **Licence.** Trailhead links a help article on permission sets for partner visit management, but the units name no permission set and no licence. The [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) lists "Visit Management" in its feature list without showing per edition where it is included. Whether internal reps need a Manufacturing Cloud licence and whether dealer staff can execute visits on a portal licence: ask Salesforce.
+- **License.** Trailhead links a help article on permission sets for partner visit management, but the units name no permission set and no license. The [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) lists "Visit Management" in its feature list without showing per edition where it is included. Whether internal reps need a Manufacturing Cloud license and whether dealer staff can execute visits on a portal license: ask Salesforce.
 - **Offline.** The units speak of "their mobile app" and the Partner Visits app. The pricing page lists "Full Offline Mobile Functionality" in the same feature list, again without per edition availability, and says nothing about the visit app in particular. Dealer workshops and warehouses often have poor reception. Ask Salesforce whether visits, tasks and KPI capture work offline, and test it in a basement before rollout.
 
-How I would treat both points in the licence plan is described in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+How I would treat both points in the license plan is described in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
 ## Worked example: 60 dealers, quarterly, five KPIs
 
@@ -98,17 +98,17 @@ pro: Partner visit management pays off with
 - Context such as sales agreements, assets or warranty terms that the rep needs on site
 - Managed dealer performance, for example as input for [dealer rebates](../rebate-management-dealer-rebates/) or the [Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/)
 contra: What speaks for the simple report
-- It costs little to build and runs on the licences your sales team already has
+- It costs little to build and runs on the licenses your sales team already has
 - It is easy to report on
-- Licence and offline use of the visit app are not documented
+- License and offline use of the visit app are not documented
 ```
 
-The chapter on the [dealer and partner channel](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/) shows how visits sit next to rebates, portals and ship and debit. Whether to buy or build such a feature is part of my [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
+The chapter on the [dealer and partner channel](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/) shows how visits sit next to rebates, portals and ship and debit. Whether to buy or build such a feature is part of my [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
 
 ## Write down KPIs with expected values, then pilot one region
 
 1. **KPIs.** Write down five KPIs with definition, data type and expected value per dealer group.
-2. **Licence and offline.** Get both confirmed in writing for reps and, if planned, dealer staff.
+2. **License and offline.** Get both confirmed in writing for reps and, if planned, dealer staff.
 3. **Pilot.** One region, one quarter, one template.
 4. **Review.** After the quarter, check which KPIs were filled and which led to a decision.
 

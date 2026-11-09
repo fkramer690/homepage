@@ -20,7 +20,7 @@ faq:
     a: "A communication plan is an overview that defines for every affected group which message it receives, when, through which channel and from whom. It accompanies a change from the first announcement until after go-live."
   - q: "What should a change management communication plan include?"
     a: "At least audience, message, sender, channel, timing and owner. The purpose of each message, such as building awareness or passing on knowledge, and a way to ask questions are also useful."
-  - q: "Who should communicate change in an organisation?"
+  - q: "Who should communicate change in an organization?"
     a: "The reasons for the change are best explained by senior leadership or the sponsor. What changes for a team is explained by its direct manager. The project team supplies content and dates."
   - q: "How often should a change be communicated?"
     a: "Prosci recommends repeating key messages five to seven times, through different channels and senders. Something said only once does not reach most people."
@@ -113,10 +113,10 @@ Plan every key message at least three times, through different senders and chann
 - **No feedback channel.** If questions have no place to go, they end up in the kitchen and come back as rumours.
 - **Silence after go-live.** The hardest phase only starts after go-live. Going quiet then leaves the interpretation to those who are unhappy.
 
-Salesforce programmes with regular releases need a form of their own: every new version changes something for a business team and needs a short, targeted announcement. Fabian Kramer describes how that works in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
+Salesforce programs with regular releases need a form of their own: every new version changes something for a business team and needs a short, targeted announcement. Fabian Kramer describes how that works in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
 
 ## Support pays off when many groups and countries are affected
 
-For a change affecting one team, the template is enough. When many groups and countries are affected, when sensitive messages are due or when managers are unsure themselves, an outside view helps to sharpen messages and prepare managers. In Salesforce programmes I work with Fabian Kramer on this, see [Salesforce change management consulting](../../services/change-management-salesforce/) and [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
+For a change affecting one team, the template is enough. When many groups and countries are affected, when sensitive messages are due or when managers are unsure themselves, an outside view helps to sharpen messages and prepare managers. In Salesforce programs I work with Fabian Kramer on this, see [Salesforce change management consulting](../../services/change-management-salesforce/) and [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
 
 *Prosci and ADKAR are registered trademarks of Prosci, Inc.*
