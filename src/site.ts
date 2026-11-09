@@ -24,6 +24,8 @@ export const site = {
     href: 'tel:+4922198656758',
   },
   linkedin: 'https://www.linkedin.com/in/fabian-kramer-400500127',
+  // Speaker profile, linked on the speaking page and listed as sameAs.
+  sessionize: 'https://sessionize.com/fabian-kramer/',
   // Further profiles of Fabian, only listed as sameAs in the structured data.
   profiles: [
     'https://github.com/fkramer690',
@@ -35,6 +37,7 @@ export const site = {
     'https://www.salesforce.com/trailblazer/fkramer',
     'https://www.malt.com/profile/fabiankramer1',
     'https://salesforcebreak.com/author/fabiankramerbaaa9dc933/',
+    'https://sessionize.com/fabian-kramer/',
   ],
   // Profiles of the company, only listed as sameAs in the structured data.
   companyProfiles: [

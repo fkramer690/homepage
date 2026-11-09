@@ -151,6 +151,16 @@ export const moreAppearances: { icon: string; title: Text; text: Text; url?: str
       de: 'Weitere Vorträge auf nationalen Salesforce-Community-Events.',
     },
   },
+  {
+    icon: 'profile',
+    title: { en: 'Speaker profile on Sessionize', de: 'Speaker-Profil auf Sessionize' },
+    text: {
+      en: 'Organizers who run their call for papers on Sessionize can invite me to their event directly there.',
+      de: 'Wer den Call for Papers über Sessionize organisiert, kann mich dort direkt zu seinem Event einladen.',
+    },
+    url: 'https://sessionize.com/fabian-kramer/',
+    linkLabel: { en: 'Open speaker profile', de: 'Speaker-Profil öffnen' },
+  },
 ];
 
 export const copy = {

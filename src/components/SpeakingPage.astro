@@ -73,6 +73,7 @@ const schema = {
   mainEntity: {
     ...person,
     jobTitle: 'Salesforce Enterprise Architect',
+    sameAs: [site.linkedin, site.sessionize],
   },
   hasPart: talks.map(talkSchema),
 };
