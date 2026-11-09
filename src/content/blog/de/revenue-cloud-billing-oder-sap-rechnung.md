@@ -38,7 +38,7 @@ Revenue Cloud Billing ist das Abrechnungs-Add-on zu Revenue Cloud, das Salesforc
 - **Mahnwesen**, also automatische Nachverfolgung überfälliger Forderungen.
 - **Ein Nebenbuch** für Buchungssätze, Periodenabschluss und Währungsumrechnung.
 
-Die Abläufe hängen am Auftrag. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/generate-invoices) erzeugt die Aktivierung eines Auftrags Billing Schedule Groups und Billing Schedules, also Abrechnungspläne. Rechnungsläufe nehmen die Pläne, die zur Fakturierung bereit sind, und nutzen für große Mengen die Data Processing Engine. Rechnungsentwürfe zeigen die geschätzte Steuer. Beim Buchen einer Rechnung berechnet die externe Engine die tatsächliche Steuer. Das [Billing-Modul auf Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/generate-invoices-revenue) ergänzt Rechnungsvorschauen, Gutschriften, Zahlungsläufe und Rechnungs-PDFs, die an den Rechnungskontakt gemailt werden können.
+Die Abläufe hängen am Auftrag. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/generate-invoices) erzeugt die Aktivierung eines Auftrags Billing Schedule Groups, also Abrechnungsplangruppen, und Billing Schedules, also Abrechnungspläne. Rechnungsläufe nehmen die Pläne, die zur Fakturierung bereit sind, und nutzen für große Mengen die Data Processing Engine. Rechnungsentwürfe zeigen die geschätzte Steuer. Beim Buchen einer Rechnung berechnet die externe Engine die tatsächliche Steuer. Das [Billing-Modul auf Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/generate-invoices-revenue) ergänzt Rechnungsvorschauen, Gutschriften, Zahlungsläufe und Rechnungs-PDFs, die an den Rechnungskontakt gemailt werden können.
 
 Der [Developer Guide](https://developer.salesforce.com/docs/revenue/revenue-management/guide/billing-overview.html) beschreibt Standardobjekte für Abrechnungs- und Steuerkonfiguration, Gutschriften, Rechnungen und Buchungsperioden je Legal Entity, dazu Zahlungsobjekte, die die Revenue-Cloud-Billing-Lizenz voraussetzen. Den Preis nennt Salesforce nur auf Anfrage. Salesforce misst die Billing-Nutzung anhand der positiven Beträge gebuchter Rechnungspositionen. Einzelheiten stehen in [Revenue Cloud Billing: Kosten](../revenue-cloud-billing-kosten/).
 
@@ -46,7 +46,7 @@ Der [Developer Guide](https://developer.salesforce.com/docs/revenue/revenue-mana
 
 Salesforce schreibt, Billing erlaube es Salesforce, als "sub-ledger" zu arbeiten und dabei Buchungssätze zu synchronisieren. In der Praxis erfordert das Konfiguration: Die Erstellung von Transaction Journals ist standardmäßig deaktiviert und benötigt Regeln für die Zuordnung von Sachkonten. Die Übertragung an SAP mit Mapping, Fehlerbehandlung und Abstimmung ist eine Integration, die Sie entwickeln. Ein Nebenbuch führt die Einzelheiten der Forderungen, hier jede Rechnung, Gutschrift und Zahlung, und übergibt Buchungssätze an das Hauptbuch. Das Hauptbuch bleibt in SAP.
 
-Das klingt harmlos, bis man die Konfiguration sieht. Die [Liste der Billing-Objekte für Deployments](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_billing_objects.htm) beginnt mit LegalEntity und geht weiter mit Abrechnungsregeln, Steuer-Engines und Steuerregeln, Zahlungsbedingungen, AccountingPeriod, LegalEntityAccountingPeriod, GeneralLedgerAccount und Regeln für Buchungssätze. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/set-up-billing-basics) sagt es deutlich: In Billing hängen alle Vorgänge an Legal-Entity-Datensätzen, die abbilden, wie ein Unternehmen aufgebaut ist. Mehrere dieser Strukturen haben Entsprechungen in SAP, besonders Buchungskreise, Geschäftsjahresperioden, Sachkonten und Zahlungsbedingungen. Sie müssen trotzdem in Salesforce modelliert und ausdrücklich zugeordnet werden, und eine Legal Entity entspricht nicht automatisch genau einem Buchungskreis. Abrechnungsregeln und Buchungssatzregeln sind zusätzliche Salesforce-Konfiguration.
+Das klingt harmlos, bis man die Konfiguration sieht. Die [Liste der Billing-Objekte für Deployments](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_billing_objects.htm) beginnt mit LegalEntity und geht weiter mit Billing Policies, Tax Engines, Tax Policies, Zahlungsbedingungen, AccountingPeriod, LegalEntityAccountingPeriod, GeneralLedgerAccount und Regeln für Buchungssätze. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/set-up-billing-basics) sagt es deutlich: In Billing hängen alle Vorgänge an Legal-Entity-Datensätzen, die abbilden, wie ein Unternehmen aufgebaut ist. Mehrere dieser Strukturen haben Entsprechungen in SAP, besonders Buchungskreise, Geschäftsjahresperioden, Sachkonten und Zahlungsbedingungen. Sie müssen trotzdem in Salesforce modelliert und ausdrücklich zugeordnet werden, und eine Legal Entity entspricht nicht automatisch genau einem Buchungskreis. Abrechnungsregeln und Buchungssatzregeln sind zusätzliche Salesforce-Konfiguration.
 
 Finance muss also Fragen beantworten, die es mit dem CRM-Team vermutlich nie besprochen hat:
 
@@ -54,7 +54,7 @@ Finance muss also Fragen beantworten, die es mit dem CRM-Team vermutlich nie bes
 2. Wer schließt eine Buchungsperiode in Salesforce, und in welcher Reihenfolge zum Periodenabschluss in SAP? Laut Trailhead schließt eine Definition der Data Processing Engine die Periode je Legal Entity.
 3. Wer pflegt die Zuordnung der Sachkonten, wenn sich der Kontenplan ändert?
 4. Wie werden die Forderungen in Salesforce und SAP zum Monatsende abgestimmt, und wer klärt Differenzen?
-5. Wo liegen die verbindlichen offenen Posten, und wo werden Zahlungseingänge, Ausgleich, Mahnungen, Erstattungen, Streitfälle und Abschreibungen bearbeitet?
+5. In welchem System werden die maßgeblichen offenen Posten geführt, und wo werden Zahlungseingänge, Ausgleich, Mahnwesen, Erstattungen, Streitfälle und Forderungsausbuchungen bearbeitet?
 6. Erhält SAP Sammelbuchungen oder Posten auf Kundenebene?
 
 Trailhead nennt eine [Rolle Accounts Receivable Admin](https://trailhead.salesforce.com/content/learn/modules/billing-basics-in-revenue-cloud/explore-billing-features-and-roles), die Buchungsperioden, Buchungssätze und Finanzberichte verwaltet. Das Permission Set sagt nichts über die Abteilung aus. Finance muss die Bilanzierungsregeln und Entscheidungen zum Periodenabschluss verantworten, auch wenn ein Salesforce-Operations-Team Teile der Administration übernimmt. Übernimmt niemand in Finance diese Verantwortung, sollte Billing nicht live gehen.
@@ -65,7 +65,7 @@ Bei einmaligen Maschinenverkäufen lasse ich die Rechnung dort in SAP, wo Versan
 
 - **Die Lieferung bestimmt die Rechnung.** Maschinen werden oft nach Versand oder Abnahme fakturiert, und in vielen Unternehmen laufen Versand, Zoll und Abnahme in SAP.
 - **Anzahlungen und Meilensteine** werden üblicherweise gegen den SAP-Auftrag gebucht. Billing kennt im Datenmodell zwar Billing Milestone Plans, aber die Anzahlungsbuchhaltung für eine Produktlinie aus SAP herauszulösen, lohnt sich selten.
-- **Kosten.** Die Billing-Nutzung wird anhand der positiven Beträge gebuchter Rechnungspositionen gemessen. Eine Maschinenrechnung über 2 Millionen Euro, in Salesforce gebucht, verbraucht Billing Events für den vollen Betrag, für eine Rechnung, die SAP ohnehin erstellen könnte. Ob dadurch zusätzliche Kosten entstehen, hängt von den in Ihrem Vertrag enthaltenen Events ab.
+- **Kosten.** Die Billing-Nutzung wird anhand der positiven Beträge gebuchter Rechnungspositionen gemessen. Eine in Salesforce gebuchte Maschinenrechnung über 2 Millionen Euro verbraucht Billing Events für den vollen Betrag, obwohl SAP diese Rechnung ohnehin erstellen könnte. Ob dadurch zusätzliche Kosten entstehen, hängt von den in Ihrem Vertrag enthaltenen Events ab.
 - **E-Rechnung.** Ab dem 1. Januar 2027 entfällt für Rechnungsaussteller mit mehr als 800.000 Euro Vorjahresumsatz grundsätzlich die Übergangsoption, für inländische B2B-Umsätze Papier- oder unstrukturierte Rechnungen zu senden. Gesetzliche Ausnahmen und die EDI-Übergangsfrist bis Ende 2027 müssen weiterhin geprüft werden. Erzeugt SAP sie bereits, bedeutet ein zweites Fakturasystem ein zweites Compliance-Projekt. Einzelheiten stehen in [E-Rechnung ab 2027 und Revenue Cloud](../e-rechnung-pflicht-2027-revenue-cloud/).
 
 Dasselbe gilt für Ersatzteile, die mit der Lieferung fakturiert werden. Die Zahlung im B2B-Shop ist eine eigene Frage, beschrieben in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../b2b-checkout-bestellnummer-rechnung/).
@@ -76,7 +76,7 @@ Billing lohnt sich dort, wo die Rechnung eher dem Vertrag folgt als der Lieferun
 
 - **Abonnements** wie Fernüberwachung, Softwareoptionen oder Datendienste, monatlich oder quartalsweise abgerechnet.
 - **Service- und Wartungsverträge** mit fester Gebühr je Periode, die angepasst werden, wenn Maschinen dazukommen oder stillgelegt werden. Wie man sie abrechnet, steht in [Wartungsverträge wiederkehrend abrechnen](../wartungsvertraege-wiederkehrend-abrechnen/).
-- **Nutzungsbasierte Entgelte** wie Maschinenstunden oder Ausbringung, die Revenue Cloud bewertet und an Billing übergibt. Den Maschinenfall beschreibt [Pay-per-Use für Maschinen](../pay-per-use-maschinen-revenue-cloud/).
+- **Nutzungsbasierte Entgelte** wie Maschinenstunden oder Ausbringung, die Revenue Cloud bepreist und an Billing übergibt. Den Maschinenfall beschreibt [Pay-per-Use für Maschinen](../pay-per-use-maschinen-revenue-cloud/).
 - **Häufige Vertragsänderungen.** In Revenue Cloud erzeugt ein Nachtrag ein Angebot und einen Auftrag auf den bestehenden Assets, und die Abrechnungspläne ziehen nach. Fakturiert stattdessen SAP, muss jede Änderung vor dem nächsten Rechnungslauf über eine Schnittstelle in SAP ankommen.
 
 Das Signal, auf das ich achte: Wenn der Vertrieb jede Woche Verträge ändert und die Buchhaltung jeden Monat Rechnungen korrigiert, weil SAP von einer Änderung nichts wusste, spart Billing in Salesforce eine Übergabe. Ändern sich Verträge selten, ist die Nutzung gering und gibt es nur eine Rechnung im Jahr, reicht die Fakturierung aus SAP meistens. Die Zahl der Verträge allein entscheidet nicht. Änderungshäufigkeit, rückwirkende Änderungen, Nutzungsvolumen, Legal Entities und Abstimmungsaufwand sind wichtiger.
@@ -93,7 +93,7 @@ Ich würde so aufteilen:
 | Ersatzteile | SAP | Fakturiert mit der Lieferung |
 | Fernüberwachungs-Abo | Revenue Cloud Billing | In Salesforce verkauft, geändert und verlängert |
 | Wartungsgebühr | Revenue Cloud Billing | Feste Gebühr je Periode, Nachträge aus dem Vertrieb |
-| Nutzung über Inklusivstunden | Revenue Cloud Billing | In Salesforce bewertet |
+| Nutzung über Inklusivstunden | Revenue Cloud Billing | In Salesforce bepreist |
 
 Für Abo- und Vertragsrechnungen erzeugt Billing die Buchungssätze, sobald Transaction Journals und Kontenzuordnungsregeln konfiguriert sind, und SAP erhält sie über die Schnittstelle:
 
@@ -108,7 +108,7 @@ Lieferung SAP --> Rechnung SAP
 Rechnung SAP --> Hauptbuch SAP
 ```
 
-Der Kunde bekommt zwei Arten von Rechnungen, die der Kundenservice erklären können muss. Ist das nicht akzeptabel, bleibt jede Rechnung in SAP, und Revenue Cloud liefert die Abrechnungsdaten. Dafür braucht es eine verlässliche Schnittstelle für Nachträge. Welches System welches Objekt führt, steht in [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
+Der Kunde erhält zwei Arten von Rechnungen. Der Kundenservice muss beide erklären können. Ist das nicht akzeptabel, bleibt jede Rechnung in SAP, und Revenue Cloud liefert die Abrechnungsdaten. Dafür braucht es eine verlässliche Schnittstelle für Nachträge. Welches System welches Objekt führt, steht in [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
 
 ## Finance zieht die Grenze
 
@@ -117,7 +117,7 @@ Finance. Das CRM-Team kann zeigen, was Billing kann, aber die Folgen trägt die 
 Ich würde die Leitung Rechnungswesen in den ersten Architektur-Workshop holen, nicht erst in den Abnahmetest.
 
 ```hinweis offen
-Halten Sie mit Finance mindestens schriftlich fest: welche Umsatzarten Salesforce fakturiert, Rechnungsnummerierung und rechtlicher Aussteller, wer Perioden schließt, Stornierung und Korrektur, Verantwortung für Zahlungen und Ausgleich, Mahnwesen und Abschreibungen, Aufbewahrung von Dokumenten, Fehlerbehandlung der SAP-Schnittstelle und wie die Abstimmung mit SAP funktioniert.
+Halten Sie mit Finance mindestens schriftlich fest: welche Umsatzarten Salesforce fakturiert, Rechnungsnummerierung und rechtlicher Aussteller, wer Perioden schließt, Stornierung und Korrektur, Verantwortung für Zahlungen und Ausgleich, Mahnwesen und Forderungsausbuchungen, Aufbewahrung von Dokumenten, Fehlerbehandlung der SAP-Schnittstelle und wie die Abstimmung mit SAP funktioniert.
 ```
 
 Die Schnittstellen für Buchungssätze und Rechnungsstatus gehören zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).

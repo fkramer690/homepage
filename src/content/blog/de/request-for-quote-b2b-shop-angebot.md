@@ -12,12 +12,12 @@ tags: [B2B Commerce, Angebotsanfrage, Request for Quote, Revenue Cloud, Innendie
 takeaways:
   - "Angemeldete Käufer senden ihren Warenkorb oder ein einzelnes Produkt als Angebotsanfrage. Salesforce nennt die Funktion allgemein verfügbar."
   - "Einfache Produkte brauchen B2B Commerce, Bundles zusätzlich Revenue Cloud. Abonnements werden bei Request for Quote nicht unterstützt."
-  - "Beim seit Juni 2026 allgemein verfügbaren Round-Trip Quoting klickt der Käufer auf Accept & Buy und bestellt zu den verhandelten Preisen."
-  - "ConnectApi.CommerceCart wandelt Warenkorb und Angebot um; ConnectApi.CommerceQuotes listet und aktualisiert Angebote."
+  - "Seit Juni 2026 übernimmt der Käufer beim Round-Trip Quoting ein freigegebenes Angebot per Accept & Buy zu verhandelten Preisen in den Warenkorb und bestellt."
+  - "ConnectApi.CommerceCart wandelt Warenkörbe in Angebote und freigegebene Angebote in Warenkörbe um; CommerceQuotes listet und aktualisiert Angebote."
   - "Die Funktion trägt aus meiner Sicht nur mit veröffentlichter Antwortzeit; sonst gehen Käufer zurück zur E-Mail."
 faq:
   - q: "Was ist Request for Quote in Salesforce B2B Commerce?"
-    a: "Eine Store-Funktion, mit der Käufer für komplexe oder große Bestellungen direkt aus dem Warenkorb ein Angebot anfragen, oder für ein einzelnes Produkt von der Produktseite. Aus der Anfrage wird ein Angebot, das der Innendienst in Sales Cloud oder Agentforce Revenue Management bearbeitet."
+    a: "Eine Store-Funktion, mit der Käufer für komplexe oder hochpreisige Käufe direkt aus dem Warenkorb ein Angebot anfragen, oder für ein einzelnes Produkt von der Produktseite. Aus der Anfrage wird ein Angebot, das der Innendienst in Sales Cloud oder Agentforce Revenue Management bearbeitet."
   - q: "Braucht Request for Quote Revenue Cloud?"
     a: "Nicht für einfache Produkte. Laut Apex-Referenz werden einfache Produkte allein mit einer B2B-Commerce-Lizenz unterstützt, statische und dynamische Bundles brauchen B2B Commerce und Revenue Cloud. Abonnementprodukte werden nicht unterstützt. Lassen Sie sich die Antwort für Ihren Produktmix schriftlich von Salesforce bestätigen."
   - q: "Wie kommt ein freigegebenes Angebot zurück zum Käufer?"
@@ -33,9 +33,9 @@ In Salesforce B2B Commerce kann ein angemeldeter Käufer seinen Warenkorb als An
 
 Händler bestellen nicht nur bekannte Teile zu bekannten Preisen nach. Sie fragen nach einem Preis für 200 Stück statt 5, für ein Teil, das sie nie gekauft haben, oder für ein Projekt mit Liefertermin. Heute ist das eine E-Mail mit Excel-Liste an den Innendienst, und die Antwort ist ein PDF, das später jemand in einen Auftrag abtippt.
 
-Request for Quote (RFQ), auf Deutsch Angebotsanfrage, hält dieses Gespräch im Shop. Salesforce beschreibt es in seinem [Beitrag zu den B2B-Neuerungen für Spring '26](https://www.salesforce.com/blog/b2b-commerce-innovations-spring-26/) als Schritt "from self-service to sales-assisted": Käufer fragen ein Angebot an, ohne den Storefront zu verlassen. Der [Beitrag vom Juni 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) nennt RFQ "already generally available". Auch Trailhead nennt das Produkt "Agentforce Commerce for B2B"; die Funktion ist unter beiden Namen dieselbe.
+Request for Quote (RFQ), auf Deutsch Angebotsanfrage, hält dieses Gespräch im Shop. Salesforce beschreibt es in seinem [Beitrag zu den B2B-Neuerungen für Spring '26](https://www.salesforce.com/blog/b2b-commerce-innovations-spring-26/) als Schritt "from self-service to sales-assisted": Käufer fragen ein Angebot an, ohne den Shop zu verlassen. Der [Beitrag vom Juni 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) nennt RFQ "already generally available". Auch Trailhead nennt das Produkt "Agentforce Commerce for B2B"; die Funktion ist unter beiden Namen dieselbe.
 
-Die [Salesforce-Hilfe zu Preisen in B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) beschreibt es so: Käufer in B2B-Stores fragen Angebote für komplexe oder große Bestellungen direkt aus dem Warenkorb an, und Sie bearbeiten die Angebote in Sales Cloud oder Agentforce Revenue Management. Welche Produkte funktionieren, hängt von der Lizenz ab: Laut [Apex-Referenz für ConnectApi.CommerceCart](https://developer.salesforce.com/docs/platform/apex-ref/references/apex-ref/apex-connectapi-commercecart-static-methods.html) werden einfache Produkte allein mit B2B Commerce unterstützt, statische und dynamische Bundles nur mit B2B Commerce und Revenue Cloud und Abonnementprodukte gar nicht. Wann sich Revenue-Cloud-Preise im Shop lohnen, steht in [Advanced Pricing im B2B-Shop](../advanced-pricing-b2b-shop-revenue-cloud/).
+Die [Salesforce-Hilfe zu Preisen in B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) beschreibt es so: Käufer in B2B-Stores fragen Angebote für komplexe oder hochpreisige Käufe direkt aus dem Warenkorb an, und Sie bearbeiten die Angebote in Sales Cloud oder Agentforce Revenue Management. Welche Produkte funktionieren, hängt von der Lizenz ab: Laut [Apex-Referenz für ConnectApi.CommerceCart](https://developer.salesforce.com/docs/platform/apex-ref/references/apex-ref/apex-connectapi-commercecart-static-methods.html) werden einfache Produkte allein mit B2B Commerce unterstützt, statische und dynamische Bundles nur mit B2B Commerce und Revenue Cloud und Abonnementprodukte gar nicht. Wann sich Revenue-Cloud-Preise im Shop lohnen, steht in [Advanced Pricing im B2B-Shop](../advanced-pricing-b2b-shop-revenue-cloud/).
 
 ## Wie wird aus dem Warenkorb ein Angebot und daraus wieder ein Warenkorb?
 
@@ -64,8 +64,8 @@ Bauen Sie eigene Komponenten, sind zwei Apex-Klassen wichtig; ein Headless-Front
 
 | Methode | API-Version | Was sie tut |
 |---|---|---|
-| getQuotes | 66.0 | Alle Angebote eines Kontos, mit Sortierung, Seiten und Datumsfilter |
-| getQuoteDetail | 66.0 | Details eines Angebots für ein Konto |
+| getQuotes | 66.0 | Alle Angebote eines Accounts, mit Sortierung, Paginierung und Datumsfilter |
+| getQuoteDetail | 66.0 | Details eines Angebots für einen Account |
 | createQuoteFromProduct | 67.0 | Erzeugt ein Angebot von der Produktseite |
 | updateQuote | 67.0 | Freigegebenes Angebot nachverhandeln oder ablehnen |
 
@@ -87,18 +87,18 @@ Hier entscheidet sich RFQ, und nichts davon ist Konfiguration. Ein Käufer, der 
 Vor dem Go-live würde ich diese Punkte schriftlich festlegen:
 
 - **Antwortzeit.** Zum Beispiel eine Antwort innerhalb eines Arbeitstags für Ersatzteile und drei Tage für Projektmengen. Messen Sie das ab dem ersten Tag.
-- **Zuständigkeit.** Welches Team bekommt Anfragen welcher Käufergruppe oder welches Landes, und wer vertritt bei Abwesenheit. Eine Queue ohne Verantwortlichen ist ein Wartezimmer.
+- **Zuständigkeit.** Welches Team erhält die Anfragen aus welcher Käufergruppe oder welchem Land, und wer übernimmt bei Abwesenheit die Vertretung? Eine Queue ohne Verantwortlichen ist ein Wartezimmer.
 - **Preiskompetenz.** Bis zu welchem Rabatt der Innendienst allein freigibt und ab wann eine Führungskraft zustimmt. Laufen Freigaben in Revenue Cloud, gehören die Grenzen dort in Regeln.
 - **Gültigkeit.** Wie lange ein freigegebenes Angebot gilt, bevor Preise neu geprüft werden.
 - **Bestellweg.** Was passiert, wenn ein Käufer per E-Mail statt im Shop annimmt. Tippt der Innendienst den Auftrag dann von Hand ein, bricht der Kreislauf.
 
-Große Händler fragen außerdem über Außendienst und Partnerportale an. Baut dort ebenfalls eine KI Angebote, sollten derselbe Innendienst und dieselben Preisregeln beide Kanäle bedienen, wie ich es für den [Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschreibe.
+Große Händler fragen außerdem über Außendienst und Partnerportale an. Erstellt dort ebenfalls eine KI Angebote, sollten derselbe Innendienst und dieselben Preisregeln beide Kanäle bedienen, wie ich es für den [AI Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschreibe.
 
 ## Rechenbeispiel: 400 Systemintegratoren
 
 Angenommen, ein Hersteller von Fördertechnik-Komponenten verkauft an 400 Systemintegratoren. Die meisten Bestellungen sind Nachbestellungen zu Stufenpreisen, aber etwa jede zehnte ist Projektgeschäft mit größeren Mengen und einem Zielpreis. Der Innendienst bekommt diese Anfragen heute per E-Mail und antwortet im Schnitt nach vier Tagen.
 
-Mit RFQ legt der Integrator die Stückliste in den Warenkorb und fragt ein Angebot an, den Projektnamen im Kommentar. Das Angebot landet in einer Queue je Land, der Innendienst kalkuliert es mit der Revenue-Cloud-Procedure, die der Vertrieb schon für Maschinenangebote nutzt, und gibt es frei. Der Integrator sieht das Angebot unter My Quotes, bittet über Renegotiate um eine Änderung, bekommt das überarbeitete Angebot, klickt auf Accept & Buy und bestellt den Warenkorb. Der Auftrag erreicht SAP mit den verhandelten Preisen und der Angebotsnummer als Referenz.
+Mit RFQ legt der Integrator die Stückliste in den Warenkorb, fragt ein Angebot an und trägt den Projektnamen in das Kommentarfeld ein. Das Angebot landet in einer Queue je Land, der Innendienst kalkuliert es mit der Revenue-Cloud-Procedure, die der Vertrieb schon für Maschinenangebote nutzt, und gibt es frei. Der Integrator sieht das Angebot unter My Quotes, bittet über Renegotiate um eine Änderung, bekommt das überarbeitete Angebot, klickt auf Accept & Buy und bestellt den Warenkorb. Der Auftrag erreicht SAP mit den verhandelten Preisen und der Angebotsnummer als Referenz.
 
 Die Zahlen sind erfunden, um die Methode zu zeigen. Was ich in den ersten drei Monaten messen würde: Anteil der Angebotsanfragen über den Shop statt per E-Mail, Antwortzeit und Anteil der freigegebenen Angebote, die zu Aufträgen werden.
 

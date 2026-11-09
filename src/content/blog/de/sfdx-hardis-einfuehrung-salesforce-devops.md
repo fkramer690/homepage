@@ -10,7 +10,7 @@ topic: open-source
 categories: [devops]
 tags: [sfdx-hardis, DevOps, Open Source, Release-Management, CI/CD]
 takeaways:
-  - "sfdx-hardis besteht aus einem Plugin für die Salesforce CLI und einer VS-Code-Erweiterung und wird von Nicolas Vuillamy und Cloudity geführt."
+  - "sfdx-hardis besteht aus einem Plugin für die Salesforce CLI und einer VS-Code-Erweiterung und steht unter der Leitung von Nicolas Vuillamy und Cloudity."
   - "Es deckt den technischen Release-Prozess ab: CI/CD, optionale Delta-Deployments, Qualitätsprüfungen, Org-Monitoring, Metadaten-Backup und Dokumentation."
   - "Die Pipeline läuft auf der Git-Plattform, die der Kunde schon nutzt, zum Beispiel GitHub, GitLab, Azure DevOps, Bitbucket oder Jenkins."
   - "Anders als Gearset oder Copado hat sfdx-hardis selbst keine Lizenzgebühr, aber das Team braucht Git- und Pipeline-Wissen und verantwortet Upgrades."
@@ -30,11 +30,11 @@ faq:
 
 sfdx-hardis ist ein kostenloses Open-Source-Toolkit für Salesforce DevOps. Es verbindet ein Salesforce-CLI-Plugin mit einer VS-Code-Erweiterung und liefert eine fertige CI/CD-Pipeline, optionale Delta-Deployments, Qualitätsprüfungen, Org-Monitoring, Metadaten-Backups und automatisch erzeugte Dokumentation. Es läuft auf der Git-Plattform, die ein Unternehmen bereits nutzt. Ich setze sfdx-hardis in Kundenprojekten ein und halte es für sehr gut, vor allem weil es das liefert, was die meisten Enterprise-Programme brauchen, ohne Lizenzgebühren für das Tool selbst.
 
-Dieser Artikel ist mein Überblick zu sfdx-hardis. Zwei Artikel gehen tiefer: Der [Vergleich sfdx-hardis oder DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/) zeigt, wann das native Werkzeug von Salesforce reicht, und mein [Erfahrungsbericht zum kostenlosen sfdx-hardis-Training](../sfdx-hardis-kostenloses-devops-training/) beschreibt, wie Sie das Toolkit in einem Tag selbst ausprobieren.
+Dieser Artikel ist mein Überblick zu sfdx-hardis. Zwei Artikel gehen tiefer: Der [Vergleich von sfdx-hardis und DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/) zeigt, wann das native Werkzeug von Salesforce reicht, und mein [Erfahrungsbericht zum kostenlosen sfdx-hardis-Training](../sfdx-hardis-kostenloses-devops-training/) beschreibt, wie Sie das Toolkit in einem Tag selbst ausprobieren.
 
 ## Was ist sfdx-hardis?
 
-[sfdx-hardis](https://sfdx-hardis.cloudity.com/) wird von Nicolas Vuillamy und Cloudity, einem Salesforce-Beratungshaus, geführt, zusammen mit einer großen Community aus externen Mitwirkenden und Übersetzern. Technisch besteht es aus zwei Teilen:
+[sfdx-hardis](https://sfdx-hardis.cloudity.com/) steht unter der Leitung von Nicolas Vuillamy und Cloudity, einem Salesforce-Beratungshaus, zusammen mit einer großen Community aus externen Mitwirkenden und Übersetzern. Technisch besteht es aus zwei Teilen:
 
 - **Ein Salesforce-CLI-Plugin** mit Befehlen für Deployments, Monitoring, Dokumentation und Projekt-Setup. Die Befehle laufen lokal und in der Pipeline.
 - **Eine VS-Code-Erweiterung**, die diese Befehle hinter Menüs und Buttons legt. Sie funktioniert auch in VS-Code-Varianten wie Cursor.
@@ -49,9 +49,9 @@ Zur Transparenz: Ich unterstütze das Open-Source-Projekt, habe aber keine finan
 
 Der Umfang ist größer, als viele bei einem Open-Source-Tool erwarten. Die wichtigsten Bereiche:
 
-1. **CI/CD-Pipeline.** Eine vorkonfigurierte Pipeline für GitHub, GitLab, Azure DevOps, Bitbucket und Jenkins, mit Docker-Images für die Pipeline-Runner. Jeder Pull Request auf einen konfigurierten Haupt-Branch löst ein Validierungsdeployment, Apex-Tests und Qualitätsprüfungen aus.
+1. **CI/CD-Pipeline.** Eine vorkonfigurierte Pipeline für GitHub, GitLab, Azure DevOps, Bitbucket und Jenkins, mit Docker-Images für die Pipeline-Runner. Jeder Pull Request für einen konfigurierten Hauptbranch löst ein Validierungsdeployment, Apex-Tests und Qualitätsprüfungen aus.
 2. **Smart- und Delta-Deployments.** Sobald Delta-Deployments eingeschaltet sind, deployt sfdx-git-delta bei Pull Requests aus Feature-Branches nur die geänderten Metadaten. Überführungen zwischen Haupt-Branches bleiben standardmäßig vollständige Deployments. Schlägt ein Deployment fehl, zeigt sfdx-hardis Hinweise zur Behebung an, was viel Sucherei spart.
-3. **Deployment Actions.** Schritte vor und nach dem Deployment, etwa Datenkorrekturen oder Referenzdaten über SFDMU, ein Open-Source-Plugin der Salesforce CLI für Datenmigrationen, laufen als Teil der Pipeline statt aus einer Tabelle mit manuellen Schritten.
+3. **Deployment Actions.** Schritte vor und nach dem Deployment, etwa Datenkorrekturen oder das Laden von Referenzdaten mit SFDMU, laufen als Teil der Pipeline; eine Tabelle mit manuellen Arbeitsschritten entfällt.
 4. **Qualitätsprüfungen.** Die Ergebnisse im Pull Request enthalten statische Analysen über MegaLinter, sodass Qualitätsprobleme vor dem Merge sichtbar werden.
 5. **Org-Monitoring und Metadaten-Backup.** Geplante Jobs sichern Metadaten in Git und prüfen zum Beispiel auf Apex- und Flow-Fehler, Org-Limits, veraltete API-Versionen, inaktive Benutzer oder ausgewählte ungenutzte Metadaten. Das ist kein Backup Ihrer Geschäftsdaten. Die Ergebnisse gehen an Slack, Microsoft Teams, Google Chat oder per E-Mail und können in Dashboards einfließen.
 6. **Generierte Dokumentation.** Projektdokumentation inklusive Flows wird aus dem Repository erzeugt und lässt sich veröffentlichen, zum Beispiel in Confluence oder Salesforce.
@@ -62,12 +62,12 @@ Am meisten überzeugt mich, wo all das liegt. Weil sfdx-hardis auf der Git-Platt
 
 ## Wie unterscheidet sich sfdx-hardis von Gearset oder Copado?
 
-Kommerzielle Tools wie Gearset oder Copado haben ihre Berechtigung. Sie bieten eine verwaltete Weboberfläche, Herstellersupport und Funktionen wie Org-Vergleiche mit wenigen Klicks. Für manche Teams ist das sein Geld wert. Es gibt aber Abwägungen:
+Kommerzielle Tools wie Gearset oder Copado haben ihre Berechtigung. Sie bieten eine verwaltete Weboberfläche, Herstellersupport und Funktionen wie Org-Vergleiche mit wenigen Klicks. Für manche Teams rechtfertigt das die Kosten. Es gibt aber Abwägungen:
 
 - **Lizenzkosten.** Kommerzielle Plattformen werden meist pro Nutzer und Jahr abgerechnet. In einem Programm mit Dutzenden Entwicklern und Admins über mehrere Partner summiert sich das schnell. sfdx-hardis selbst hat keine Lizenzgebühren.
 - **Wo der Prozess liegt.** Bei einer kommerziellen Plattform liegt ein Teil des Release-Prozesses im Produkt des Herstellers. Bei sfdx-hardis liegt er im Repository und in der Pipeline-Konfiguration des Kunden, in einfachen Dateien.
 - **Wissen.** sfdx-hardis setzt voraus, dass das Team Git, Branches und Pipelines zumindest grundlegend versteht. Eine kommerzielle Plattform versteckt mehr davon. Die VS-Code-Erweiterung schließt für Admins einen großen Teil dieser Lücke, aber nicht alles.
-- **Support.** Kostenloser Support erfolgt nach Verfügbarkeit durch die Community. Cloudity verkauft außerdem monatliche und jährliche Support-Abonnements mit bevorzugter Bearbeitung. Für die meisten Enterprise-Teams, mit denen ich arbeite, ist das in Ordnung, solange mindestens eine interne Person das Setup verantwortet und dabei getestete Versionen festschreibt, statt immer die neueste einzusetzen.
+- **Support.** Die Community leistet kostenlosen Support nach dem Best-Effort-Prinzip. Cloudity verkauft außerdem monatliche und jährliche Support-Abonnements mit bevorzugter Bearbeitung. Für die meisten Enterprise-Teams, mit denen ich arbeite, ist das in Ordnung, solange mindestens eine interne Person das Setup verantwortet und dabei getestete Versionen festschreibt, statt immer die neueste einzusetzen.
 
 ```tabelle
 titel: sfdx-hardis im Vergleich mit kommerziellen Plattformen
@@ -78,7 +78,7 @@ Wissen | Git-Grundlagen nötig. Die VS-Code-Erweiterung schließt für Admins ei
 Support | Community-Support, bezahltes Support-Abonnement oder Beratung | Herstellersupport
 fazit: Kein Tool passt für jedes Team. Früh wählen, sauber begründen, für jeden Partner verbindlich machen.
 ```
-Das DevOps Center von Salesforce, das jetzt Lifecycle Center heißt, ist eine weitere kostenlose Option. Es ist ein guter Einstieg für Teams, die vor allem klicken, deckt aber weniger von Pipeline, Monitoring und Dokumentation ab. Den ausführlichen Vergleich, inklusive der unterstützten Git-Plattformen, finden Sie in [sfdx-hardis oder DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/).
+Das DevOps Center von Salesforce, das jetzt Lifecycle Center heißt, ist eine weitere kostenlose Option. Es ist ein guter Einstieg für Teams, die vor allem klicken, deckt aber weniger von Pipeline, Monitoring und Dokumentation ab. Den ausführlichen Vergleich, inklusive der unterstützten Git-Plattformen, finden Sie in [sfdx-hardis und DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/).
 
 Wichtig ist mir dabei: Es gibt kein Tool, das für jedes Team richtig ist. Entscheidend ist, dass die Wahl früh getroffen, sauber begründet und dann für alle Beteiligten verbindlich wird, auch für jeden Partner. Ein Programm, in dem jeder Partner sein eigenes Werkzeug mitbringt, hat am Ende mehrere Release-Prozesse und damit keinen.
 
@@ -100,11 +100,11 @@ contra: Weniger geeignet, wenn
 
 Im zweiten Fall kann eine kommerzielle Plattform die ehrlichere Antwort sein.
 
-Der Punkt mit den Lizenzbudgets wird oft unterschätzt. Die eingesparten Lizenzkosten sind am besten in eine interne Rolle investiert, die das Setup pflegt, neue Teams einarbeitet und den Release-Kalender verantwortet. Ohne diese Rolle verliert auch das beste Werkzeug nach einigen Monaten an Wirkung. Mit Entwicklungsstandards bei Partnern ist es genauso, siehe [Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/).
+Der Punkt mit den Lizenzbudgets wird oft unterschätzt. Die eingesparten Lizenzkosten investieren Sie am besten in eine interne Rolle, die das Setup pflegt, neue Teams einarbeitet und den Release-Kalender verantwortet. Ohne diese Rolle verliert auch das beste Werkzeug nach einigen Monaten an Wirkung. Mit Entwicklungsstandards bei Partnern ist es genauso, siehe [Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/).
 
 ## Mit dem kostenlosen Training einsteigen
 
-Am schnellsten verstehen Sie sfdx-hardis, indem Sie es ausprobieren. Cloudity bietet ein kostenloses Praxistraining mit drei Leveln und geprüften Badges an. Ich habe alle drei abgeschlossen und meine Erfahrungen in [was ich aus dem kostenlosen sfdx-hardis-Training mitgenommen habe](../sfdx-hardis-kostenloses-devops-training/) aufgeschrieben.
+Am schnellsten verstehen Sie sfdx-hardis, indem Sie es ausprobieren. Cloudity bietet ein kostenloses Praxistraining mit drei Levels und verifizierten Badges an. Ich habe alle drei abgeschlossen und meine Erfahrungen in [was ich aus dem kostenlosen sfdx-hardis-Training mitgenommen habe](../sfdx-hardis-kostenloses-devops-training/) aufgeschrieben.
 
 Die Wahl der Werkzeuge gehört zu [Architektur und Partnersteuerung](../../leistungen/partnersteuerung/) und ist keine Nebenentscheidung der Entwickler. Für ein laufendes Programm empfehle ich diese Reihenfolge:
 

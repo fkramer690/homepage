@@ -1,6 +1,6 @@
 ---
-title: "Commerce Extensions: Eigenentwicklung mit geringerem Releaserisiko"
-description: "Wie Sie eigene Preis-, Bestands- und Checkout-Logik in Salesforce B2B Commerce als Extensions bauen, damit sie weniger Releaserisiko birgt und einen Partnerwechsel übersteht."
+title: "Commerce Extensions: eigene Logik mit weniger Releaserisiko"
+description: "Eigene Preis-, Bestands- und Checkout-Logik in B2B Commerce als Extensions bauen, damit sie weniger Releaserisiko trägt und einen Partnerwechsel übersteht."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de
@@ -12,7 +12,7 @@ tags: [B2B Commerce, Extensions, Apex, SFDX, Release-Management, Partnersteuerun
 takeaways:
   - "Commerce Extensions sind Apex-Klassen an benannten Erweiterungspunkten, etwa für Preise, Bestand, Steuer, Versand oder Auftragsanlage."
   - "Domain Extensions erweitern oder ersetzen einen ganzen Dienst. Endpoint Extensions ändern nur Anfrage oder Antwort eines Connect-API-Endpunkts."
-  - "Verändert eine Domain Extension den Standard, empfiehlt Salesforce super(), damit Ergänzungen späterer Releases erhalten bleiben."
+  - "Verändert eine Domain Extension den Standard, empfiehlt Salesforce ausdrücklich, `super()` aufzurufen, damit Ergänzungen späterer Releases erhalten bleiben."
   - "Extensions sind der bevorzugte Weg. Cart Calculate Extensions und ältere Integrationen lassen sich in einem Store nicht mischen."
   - "Extension-Klassen, ihre Registrierung und ihr Mapping gehören in Repository und Pipeline des Kunden, damit jeder Partner sie übernehmen kann."
 faq:
@@ -29,13 +29,13 @@ faq:
 draft: false
 ---
 
-Eigene Shop-Logik in Salesforce B2B Commerce birgt das geringste Releaserisiko, wenn sie als Commerce Extensions gebaut ist, die den Standard ergänzen statt ihn zu ersetzen. Extensions sind Apex-Klassen, die Salesforce an benannten Erweiterungspunkten wie Preis, Bestand oder Auftragsanlage ausführt. Domain Extensions, die den Standard verändern, sollten ihn über super() aufrufen, wie Salesforce ausdrücklich empfiehlt, und nur davor oder danach ergänzen, was bei Ihnen anders ist. Endpoint Extensions ändern Anfrage oder Antwort einer API. Zahlungen sind nicht erweiterbar. Die zweite Hälfte der Antwort ist Eigentum: Code, Registrierung und Mapping gehören in Ihr Repository und Ihre Pipeline, nicht in die eines Partners.
+Eigene Shop-Logik in Salesforce B2B Commerce birgt das geringste Releaserisiko, wenn sie als Commerce Extensions gebaut ist, die den Standard ergänzen statt ihn zu ersetzen. Extensions sind Apex-Klassen, die Salesforce an benannten Erweiterungspunkten wie Preis, Bestand oder Auftragsanlage ausführt. Domain Extensions, die den Standard verändern, sollten ihn über super() aufrufen, wie Salesforce ausdrücklich empfiehlt, und nur davor oder danach ergänzen, was bei Ihnen anders ist. Endpoint Extensions ändern Anfrage oder Antwort einer API. Zahlungen lassen sich nicht über Extensions anpassen. Ebenso wichtig ist die Hoheit über die Anpassungen: Code, Registrierung und Mapping gehören in Ihr Repository und Ihre Pipeline und dürfen nicht ausschließlich beim Partner liegen.
 
 ## Was sind Commerce Extensions?
 
 Salesforce beschreibt [Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html) als Mechanismus, mit Apex die Funktionen anzupassen, die B2B- und B2C-Storefronts antreiben. Die Apex-Klasse heißt Extension Provider. Erreicht eine Käuferaktion, ein Connect-API-Aufruf oder eine andere Extension einen Erweiterungspunkt, prüft die Plattform, ob dem Namen dieses Erweiterungspunkts ein Provider zugeordnet ist, und führt ihn aus.
 
-Das gilt für Salesforce B2B Commerce auf der Core-Plattform, das zum Portfolio gehört, das Salesforce inzwischen als Agentforce Commerce vermarktet. Die Dokumentation spricht weiterhin von B2B Commerce. Die getrennte B2C-Commerce-Architektur nutzt stattdessen Hooks, ein Team mit B2C-Erfahrung findet dort also nicht denselben Mechanismus.
+Das gilt für Salesforce B2B Commerce auf der Core-Plattform, das zum Portfolio gehört, das Salesforce inzwischen als Agentforce Commerce vermarktet. Die Dokumentation spricht weiterhin von B2B Commerce. Die separate B2C-Commerce-Architektur nutzt stattdessen Hooks. Ein Team mit B2C-Erfahrung findet dort daher nicht denselben Mechanismus.
 
 Es gibt zwei Arten:
 
@@ -58,7 +58,7 @@ Eigene Zuordnung zu Käufergruppen | Auswertung der Käufergruppen | Domain
 Produkte und Suchergebnisse filtern oder anreichern | Produkt- und Suchendpunkte | Endpoint
 ```
 
-Die Seite nennt auch die Standards, die Sie ersetzen: Bestand kommt aus Omnichannel Inventory, Preise aus Salesforce-Preisbüchern, Steuer aus dem Salesforce-Steuerdienst, und Versand kostet nichts, bis Sie ihn erweitern.
+Die Seite nennt auch die Standards, die Sie ersetzen: Bestand kommt aus Omnichannel Inventory, Preise aus Salesforce-Preisbüchern, Steuer aus dem Salesforce-Steuerdienst, und für den Versand werden standardmäßig keine Gebühren berechnet, bis Sie den Versanddienst erweitern.
 
 ```hinweis achtung
 Nutzt der Store Faster Add-to-Cart, braucht laut derselben Seite jedes Produkt einen Eintrag in einem Store-Preisbuch, bevor Sie die Preis-Extension umsetzen, auch wenn der echte Preis später aus dem ERP kommt.
@@ -74,7 +74,7 @@ Salesforce schreibt, man empfehle ausdrücklich, super() aufzurufen, um die Komp
 2. Den Standard laufen lassen und das Ergebnis anpassen, etwa einen ERP-Rabatt auf den Standardpreis anwenden.
 3. Etwas tun, bevor der Standard läuft, etwa die ERP-Kundennummer des Käufers lesen, und dann den Standard laufen lassen.
 
-Variante 2 und 3 bergen weniger Releaserisiko. Ergänzt Salesforce den Standarddienst, etwa um ein neues Feld oder eine Promotion-Funktion, bekommt ein Provider, der den Standard laufen lässt, das automatisch. Ein Provider, der alles ersetzt, verzichtet bei den überschriebenen Methoden auf diese Änderungen. Testen Sie in beiden Fällen jede Extension vor jedem Release in einer Preview-Sandbox. Bei einem Review von Partnercode wäre ein kompletter Ersatz des Standards meine erste Frage. Manchmal ist er begründet, etwa wenn das ERP der einzige Preis-Master ist, aber dann gehört die Begründung in den Code und ins Architektur-Entscheidungslog.
+Die Varianten 2 und 3 bergen weniger Releaserisiko. Ergänzt Salesforce den Standarddienst, etwa um ein neues Feld oder eine Promotion-Funktion, bekommt ein Provider, der den Standard laufen lässt, das automatisch. Ein Provider, der alles ersetzt, verzichtet bei den überschriebenen Methoden auf diese Änderungen. Testen Sie in beiden Fällen jede Extension vor jedem Release in einer Preview-Sandbox. Bei einem Review von Partnercode würde ich zuerst fragen, warum der Standard vollständig ersetzt wurde. Manchmal ist er begründet, etwa wenn das ERP der einzige Preis-Master ist, aber dann gehört die Begründung in den Code und ins Architektur-Entscheidungslog.
 
 ```vertiefung Für Entwickler
 titel: Wie teste ich einen Provider, der super() aufruft?
@@ -113,7 +113,7 @@ Was ich in Vertrag und Pipeline festlegen würde:
 
 - Extension-Klassen, Tests und die Befehle für Registrierung und Mapping liegen im Repository des Kunden, wie ich es in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/) begründe.
 - Die Pipeline führt die CLI-Befehle pro Umgebung mit den Store-Namen und IDs der jeweiligen Umgebung aus, damit Mappings reproduzierbar sind. Salesforce weist darauf hin, dass für Extensions die neueste Salesforce CLI nötig ist, also legen Sie getestete Versionen der CLI und des Commerce-Plug-ins fest und aktualisieren Sie beide in einem festen Rhythmus.
-- Jede Änderung an einer Extension läuft durch ein [Pull-Request-Review](../warum-pull-request-reviews-pflicht-sind/), das prüft, ob der Standard noch läuft, und Timeouts der ERP-Aufrufe und echte Prüfungen in den Tests kontrolliert.
+- Jede Änderung an einer Extension durchläuft ein [Pull-Request-Review](../warum-pull-request-reviews-pflicht-sind/). Dabei wird geprüft, ob der Standard weiterläuft, welche Timeouts für ERP-Aufrufe gelten und ob die Tests aussagekräftige Assertions enthalten.
 - Manuelles Mapping in Produktion bleibt Notfällen vorbehalten, und am selben Tag folgt ein Commit.
 - Für jede Extension gibt es eine schriftliche Laufzeitregel: ERP-Timeout, Wiederholungsversuche, Fallback, Monitoring und die Anzeige für Käufer, wenn Live-Preis oder Bestand nicht verfügbar sind.
 

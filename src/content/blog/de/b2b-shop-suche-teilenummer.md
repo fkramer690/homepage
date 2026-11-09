@@ -12,12 +12,12 @@ tags: [B2B Commerce, Shopsuche, Ersatzteile, Teilenummern, Synonyme, Suchanalyse
 takeaways:
   - "Standardsuche findet nur ganze Begriffe. Partial SKU Search findet unvollständige SKUs und ignoriert Trennzeichen nur in Product SKU und Product Code."
   - "Ein Store erlaubt 25 durchsuchbare und 50 filterbare Merkmale sowie 100 Synonymregeln. Für Synonyme und Boost and Bury nennt die API-Seite niedrigere Werte."
-  - "Alte Nummern und Vergleichsnummern gehören in ein durchsuchbares Feld am aktuellen Produkt. Synonymregeln passen besser zu Begriffen wie O-Ring."
+  - "Alte Nummern und Vergleichsnummern gehören in ein durchsuchbares Feld am aktuellen Produkt. Synonymregeln passen für Paare wie O-Ring und Dichtring."
   - "Die im Juli 2026 angekündigte Suchanalyse über Data 360 zeigt Suchen ohne Treffer: eine Diagnoseliste für Daten, Zugriff, Index und Sortiment."
   - "Nach Änderungen an Produkten, Kategorien oder Entitlements braucht der Suchindex ein Update, bei neuen durchsuchbaren Feldern ein vollständiges Update."
 faq:
   - q: "Findet die Suche in B2B Commerce Teilenummern?"
-    a: "Ja. Die Produkt-SKU ist standardmäßig durchsuchbar, ebenso Name und Beschreibung. Die Standardsuche braucht ganze Begriffe, aber B2B-Stores können Partial SKU Search für Product SKU und Product Code aktivieren. Sie findet unvollständige SKUs ab drei Zeichen und ignoriert Bindestriche, Leerzeichen, Punkte, Unterstriche und Schrägstriche. Für alte Nummern in benutzerdefinierten Feldern gelten weiter die Standardregeln."
+    a: "Ja. Product SKU ist standardmäßig durchsuchbar, ebenso Name und Beschreibung. Die Standardsuche braucht ganze Begriffe, aber B2B-Stores können Partial SKU Search für Product SKU und Product Code aktivieren. Sie findet unvollständige SKUs ab drei Zeichen und ignoriert Bindestriche, Leerzeichen, Punkte, Unterstriche und Schrägstriche. Für alte Nummern in benutzerdefinierten Feldern gelten weiter die Standardregeln."
   - q: "Wie viele Synonymregeln erlaubt ein B2B-Commerce-Store?"
     a: "Die Seite zu den Suchgrenzen nennt 100 Synonymregeln pro Store als harte Grenze. Die Seite zur Search Settings API nennt 50 Regeln pro Store für ihre Include Rules. Prüfen Sie den Wert in Ihrer Org, bevor Sie damit planen."
   - q: "Wie finden Händler alte, ersetzte Teilenummern?"
@@ -31,7 +31,7 @@ Händler finden Ersatzteile in einem Shop auf Salesforce B2B Commerce, wenn die 
 
 ## Wie findet die Suche in B2B Commerce eine Teilenummer?
 
-Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet, baut pro Store einen Suchindex auf. B2B- und D2C-Stores auf der Kernplattform nutzen dieselbe Shopsuche, wie das [Suchdatenmodell](https://developer.salesforce.com/docs/platform/data-models/guide/b2b-commerce-d2c-commerce-search.html) zeigt. Produktname, Produktbeschreibung und Produkt-SKU sind standardmäßig durchsuchbar, weitere Felder lassen sich ergänzen. Die [Hinweise zur B2B-Suche](https://help.salesforce.com/s/articleView?id=commerce.comm_search_comm_admin_cons.htm&language=en_US&type=5) von Salesforce beschreiben diese Standardregeln für den Abgleich:
+Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet, baut pro Store einen Suchindex auf. B2B- und D2C-Stores auf der Kernplattform nutzen dieselbe Shopsuche, wie das [Suchdatenmodell](https://developer.salesforce.com/docs/platform/data-models/guide/b2b-commerce-d2c-commerce-search.html) zeigt. Produktname, Produktbeschreibung und Product SKU sind standardmäßig durchsuchbar, weitere Felder lassen sich ergänzen. Die [Hinweise zur B2B-Suche](https://help.salesforce.com/s/articleView?id=commerce.comm_search_comm_admin_cons.htm&language=en_US&type=5) von Salesforce beschreiben diese Standardregeln für den Abgleich:
 
 - Die Suche gleicht Wortstämme ab.
 - Ein Ergebnis erscheint nur, wenn alle Suchbegriffe darin vorkommen.
@@ -39,7 +39,7 @@ Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce
 
 Für Ersatzteile zählt die dritte Regel, und [Partial SKU Search](https://help.salesforce.com/s/articleView?id=commerce.comm_search_enable_partial_sku.htm&language=en_US&type=5), verfügbar seit Winter '26, ist die Antwort für aktuelle Nummern. Nach der Aktivierung unter Settings, Search findet sie eine SKU wie "123-57-ABC" über "ABC", "57-AB" oder "1235", ab drei Zeichen und bis zu 12 Zeichen der SKU. Dabei ignoriert sie Bindestriche, Unterstriche, Leerzeichen, Punkte und Schrägstriche. Sie funktioniert nur für Product SKU und Product Code und braucht ein vollständiges Index-Update. Für alte Nummern in einem benutzerdefinierten Feld gelten weiter die Standardregeln. Ich würde deshalb vor jeder Designentscheidung mit 50 echten aktuellen und alten Teilenummern testen.
 
-Zuerst kommt die Sichtbarkeit. Ein Händler findet nur Produkte, für die seine Buyer Groups berechtigt sind, und nur die ersten 2.000 Buyer Groups eines Produkts werden indiziert. Diese Grenze erkläre ich in [Buyer Groups und Entitlements](../buyer-groups-entitlements-sichtbarkeit/). Auch die Feldberechtigung zählt: Laut Trailhead kann ein Käufer ohne Zugriff auf ein indiziertes durchsuchbares Feld den Store gar nicht durchsuchen.
+Zuerst kommt die Sichtbarkeit. Ein Händler findet nur Produkte, für die seine Buyer Groups berechtigt sind, und nur die ersten 2.000 Buyer Groups eines Produkts werden indiziert. Diese Grenze erkläre ich in [Buyer Groups und Entitlements](../buyer-groups-entitlements-sichtbarkeit/). Auch die Sicherheit auf Feldebene ist relevant: Laut Trailhead kann ein Shopbenutzer ohne Zugriff auf ein indiziertes, durchsuchbares Feld den Store überhaupt nicht durchsuchen.
 
 ## 25 durchsuchbare Merkmale und 100 Synonymregeln pro Store
 
@@ -57,7 +57,7 @@ Salesforce führt die [Suchgrenzen](https://developer.salesforce.com/docs/commer
 | Produkte pro Ergebnisseite | 200 | hart |
 | Sprachen (Locales) im Index | 25 | hart |
 
-25 durchsuchbare Merkmale klingen nach viel, bis Sie aufschreiben, was Händler eintippen: aktuelle Nummer, alte Nummern, Vergleichsnummern, Maschinentyp, Bezeichnung, Kurztext, vielleicht eine EAN. Das passt, aber nicht ein Feld pro Sprache und Nummernart. Ich plane die durchsuchbaren Felder wie jede knappe Ressource und schreibe auf, warum jedes da ist.
+25 durchsuchbare Merkmale klingen nach viel, bis Sie aufschreiben, was Händler eintippen: aktuelle Nummer, alte Nummern, Vergleichsnummern, Maschinentyp, Bezeichnung, Kurztext, vielleicht eine EAN. Das lässt Spielraum, aber nicht für getrennte Felder nach Sprache und Nummernart. Ich plane die durchsuchbaren Felder wie jede knappe Ressource und schreibe auf, warum jedes da ist.
 
 ```hinweis offen
 Die [Seite zur Search Settings API](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-search-settings-apis.html) sagt, dass Synonyme über Include Rules angelegt werden und dass pro Store bis zu 50 Regeln möglich sind. Die Limitseite nennt 100 Synonymregeln. Für Boost and Bury nennt dieselbe API-Seite 25 Regeln pro Store, während die Limitseite 100 nennt. Prüfen Sie die Werte in Ihrer Org, bevor Sie nahe an eine der Zahlen planen.
@@ -65,7 +65,7 @@ Die [Seite zur Search Settings API](https://developer.salesforce.com/docs/commer
 
 ## Wohin gehören alte Nummern und Vergleichsnummern?
 
-Hersteller benennen Teile um. Eine Dichtung bekommt nach einer Konstruktionsänderung eine neue Nummer, ein Zukaufteil bekommt die Herstellernummer, ein Händler hat noch die Nummer aus einer 15 Jahre alten Ersatzteilliste. Händler tippen sie alle.
+Hersteller benennen Teile um. Eine Dichtung bekommt nach einer Konstruktionsänderung eine neue Nummer, ein Zukaufteil erhält eine eigene Nummer des Herstellers, ein Händler hat noch die Nummer aus einer 15 Jahre alten Ersatzteilliste. Händler tippen sie alle.
 
 Es gibt zwei Wege, eine alte Nummer auffindbar zu machen: eine Synonymregel pro Nummer, wobei die Search Settings API Synonyme aus einem und aus mehreren Wörtern unterstützt, oder ein durchsuchbares Textfeld "frühere und alternative Nummern" am aktuellen Produkt. Darin stehen alte Nummern, Lieferantennummern und Vergleichsnummern, getrennt durch Leerzeichen.
 
@@ -90,7 +90,7 @@ In den Sucheinstellungen des Stores lassen sich durchsuchbare Felder außerdem v
 
 **Boost and Bury, Facettenreihenfolge und Suchanalyse (Juli 2026).** Laut [Beitrag zum Juli-Release](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) können Merchandiser Produkte in Such- und Kategorieergebnissen nach oben oder unten schieben, die Reihenfolge von Werten innerhalb von Filtern wie Marke, Größe oder Material festlegen und über Data 360, früher Data Cloud, Suchanfragen, Klickraten, Conversion und Suchen ohne Treffer sehen. Das Dashboard Search Intelligence Analytics braucht Data 360 for B2B Commerce, das Commerce Data Kit, CRM Analytics und die passenden Permission Sets. Alles muss eingerichtet und mit Daten versorgt sein.
 
-**Erweiterbare Such-Endpunkte.** Die [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) enthält Endpoint Extensions für die Produktsuche (Commerce_Endpoint_Search_ProductSearch und Commerce_Endpoint_Search_Products) und ab API-Version 67.0 für Suchvorschläge. Damit ändern Entwickler die Anfrage vor der Suche oder die Antwort danach. Dort gehört Logik hin, die Sucheinstellungen nicht abbilden, etwa Prüfziffern oder unternehmensspezifische Nummernlogik für alte Nummern. Richten Sie zuerst Partial SKU Search ein und nutzen Sie eine Extension nur für eine nachgewiesene Lücke. Salesforce bevorzugt inzwischen den GET-Endpunkt search/products gegenüber dem älteren POST-Endpunkt product-search. Das ist Eigenentwicklung und gehört wie jeder andere Code in die Pipeline des Kunden.
+**Erweiterbare Such-Endpunkte.** Die [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) enthält Endpoint Extensions für die Produktsuche (Commerce_Endpoint_Search_ProductSearch und Commerce_Endpoint_Search_Products) und ab API-Version 67.0 für Suchvorschläge. Damit ändern Entwickler die Anfrage vor der Suche oder die Antwort danach. Dort gehört Logik hin, die sich mit den Sucheinstellungen nicht abbilden lässt, etwa Prüfziffern oder unternehmensspezifische Nummernlogik für alte Nummern. Richten Sie zuerst Partial SKU Search ein und nutzen Sie eine Extension nur für eine nachgewiesene Lücke. Salesforce bevorzugt inzwischen den GET-Endpunkt search/products gegenüber dem älteren POST-Endpunkt product-search. Das ist Eigenentwicklung und gehört wie jeder andere Code in die Pipeline des Kunden.
 
 ## Wie helfen Boost and Bury und Facetten bei Ersatzteilen?
 
@@ -102,7 +102,7 @@ Händlern nur Teile zu zeigen, die zu einer bestimmten Maschine passen, ist eine
 
 ## 200 Suchbegriffe aus dem Innendienst testen
 
-Sammeln Sie, was Händler eintippen, bevor Sie etwas einstellen. Der Innendienst hat E-Mails und Telefonnotizen voller Teilenummern, alter Nummern und Beschreibungen. Nehmen Sie 200 davon und lassen Sie sie gegen einen Test-Store mit Ihren echten Daten laufen. Jeder Fehltreffer deutet auf fehlende Daten, ein fehlendes durchsuchbares Feld, eine Schreibweise, fehlenden Zugriff oder fehlende Berechtigung, einen veralteten Index oder ein Teil, das Sie schlicht nicht verkaufen.
+Sammeln Sie, was Händler eintippen, bevor Sie etwas einstellen. Der Innendienst hat E-Mails und Telefonnotizen voller Teilenummern, alter Nummern und Beschreibungen. Nehmen Sie 200 davon und lassen Sie sie gegen einen Test-Store mit Ihren echten Daten laufen. Jeder Fehltreffer hat eine dieser Ursachen: fehlende Daten, ein fehlendes durchsuchbares Feld, eine nicht berücksichtigte Schreibweise, fehlender Zugriff oder fehlende Berechtigung, ein veralteter Index oder ein Teil, das Sie schlicht nicht verkaufen.
 
 Nach dem Go-live ist die Liste der Suchen ohne Treffer die Diagnoseliste für die nächste Bereinigung: Daten, Zugriff, Index, Sucheinstellungen und Sortiment. Prüfen Sie sie in den ersten Monaten jede Woche. Wie das zu anderen Kennzahlen passt, steht in [B2B-Shop-Kennzahlen nach dem Go-live](../b2b-shop-kennzahlen-nach-go-live/). Aktualisieren Sie nach Änderungen an Produkten, Kategorien oder Entitlement Policies den Suchindex. Dafür reicht ein partielles Update. Geänderte durchsuchbare Felder oder Sortierregeln brauchen ein vollständiges Update. In Produktions-Orgs prüft die automatische Aktualisierung alle fünf Minuten auf Änderungen.
 

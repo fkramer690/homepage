@@ -12,10 +12,10 @@ coAuthor: juliane
 contactBrief: partner-governance
 tags: [Reinforcement, Change Management, Partnersteuerung, Entwicklungsstandards]
 takeaways:
-  - "Bei Umsetzungspartnern sind Standards gefährdet, wenn Entwickler wechseln, der Termindruck steigt und Kontrollen schwächer werden."
+  - "Bei Implementierungspartnern sind Standards gefährdet, wenn Entwickler wechseln, der Termindruck steigt und Kontrollen schwächer werden."
   - "Kennen Entwickler die Namenskonventionen, aber weder Pipeline noch Review erkennen Abweichungen, ist das Reinforcement zu schwach."
   - "Was sich nicht automatisch prüfen lässt, verankern Pull-Request-Reviews und ein regelmäßiger Center-of-Excellence-Call mit den technischen Leads."
-  - "Verankert sind Standards erst, wenn ein interner Verantwortlicher sie führt, sonst enden sie mit dem Vertrag der externen Person."
+  - "Standards sind erst verankert, wenn ein interner Verantwortlicher sie dauerhaft betreut. Andernfalls enden sie mit dem Vertrag der externen Person."
 faq:
   - q: "Was bedeutet Reinforcement im Change Management?"
     a: "Reinforcement ist im ADKAR-Modell von Prosci das fünfte Element: Maßnahmen, die dafür sorgen, dass eine Veränderung bleibt und niemand in alte Gewohnheiten zurückfällt."
@@ -28,7 +28,7 @@ faq:
 draft: false
 ---
 
-Reinforcement ist das fünfte Element im ADKAR-Modell von Prosci: Es sorgt dafür, dass eine Veränderung bleibt. Dieser Artikel überträgt es auf Entwicklungsstandards bei mehreren Salesforce-Umsetzungspartnern. Dort ist es der schwierigste Teil, weil Standards nach einigen Monaten verwässern, wenn Entwickler wechseln und der Termindruck steigt. Drei Mechanismen leisten den Großteil der täglichen Arbeit: die Pipeline für alles, was sich automatisch prüfen lässt, das Pull-Request-Review für den Rest und ein regelmäßiger Center-of-Excellence-Call, in dem neue Randfälle besprochen werden. Einarbeitung, Vertrag und ein interner Verantwortlicher sorgen dafür, dass sie dauerhaft halten.
+Reinforcement ist das fünfte Element im ADKAR-Modell von Prosci: Es sorgt dafür, dass eine Veränderung bleibt. Dieser Artikel überträgt es auf Entwicklungsstandards bei mehreren Salesforce-Implementierungspartnern. Dort ist es der schwierigste Teil, weil Standards nach einigen Monaten verwässern, wenn Entwickler wechseln und der Termindruck steigt. Drei Mechanismen leisten den Großteil der täglichen Arbeit: die Pipeline für alles, was sich automatisch prüfen lässt, das Pull-Request-Review für den Rest und ein regelmäßiger Center-of-Excellence-Call, in dem neue Randfälle besprochen werden. Einarbeitung, Vertrag und ein interner Verantwortlicher sichern ihre dauerhafte Anwendung.
 
 ## Warum verwässern Standards bei Partnern?
 
@@ -38,10 +38,10 @@ Die erste Einführung neuer Standards läuft meist gut. Die Teams sind aufmerksa
 - **Der Termindruck steigt.** Vor einem wichtigen Release wird eine Ausnahme gemacht, „nur dieses Mal“. Wenn niemand prüft, wird aus der Ausnahme die Regel.
 - **Die Aufmerksamkeit lässt nach.** Wer anfangs jeden Pull Request geprüft hat, hat inzwischen andere Aufgaben.
 
-Im [ADKAR-Modell](../change-management-salesforce-einfuehrung/) fehlt dann nicht das Wissen, sondern die Verankerung. Ein Beispiel: Wenn die Entwickler eines Partners die Namenskonventionen kennen, aber weder die Pipeline noch das Review Abweichungen erkennen, ist das Reinforcement zu schwach. Eine weitere allgemeine Schulung hilft Personen nicht, die die Regel bereits kennen. Dann gehört eine automatische Prüfung in den Release-Prozess.
+Im [ADKAR-Modell](../change-management-salesforce-einfuehrung/) fehlt dann die Verankerung, obwohl das Wissen vorhanden ist. Ein Beispiel: Wenn die Entwickler eines Partners die Namenskonventionen kennen, aber weder die Pipeline noch das Review Abweichungen erkennen, ist das Reinforcement zu schwach. Eine weitere allgemeine Schulung hilft Personen nicht, die die Regel bereits kennen. Dann gehört eine automatische Prüfung in den Release-Prozess.
 
 ```praxis
-In meinem größten Programm mit mehr als 30 Entwicklern in acht Streams und fünf Umsetzungspartnern lief anfangs jeder Pull Request über meinen Schreibtisch. Das war eine bewusste Kalibrierungsphase. Bis die Standards gelebt wurden, hat es etwa drei Monate gedauert. Danach gingen die Reviews an qualifizierte Reviewer in den Streams über, und ich behielt diejenigen mit Auswirkungen auf die Architektur. Danach brachten wir neue Themen alle zwei Wochen in einem Center-of-Excellence-Call mit den technischen Leads der Streams auf den Tisch. Als der Prozess rund lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
+In meinem größten Programm mit mehr als 30 Entwicklern in acht Streams und fünf Implementierungspartnern prüfte ich anfangs jeden Pull Request selbst. Das war eine bewusste Kalibrierungsphase. Bis die Standards gelebt wurden, hat es etwa drei Monate gedauert. Danach gingen die Reviews an qualifizierte Reviewer in den Streams über, und ich behielt diejenigen mit Auswirkungen auf die Architektur. Danach brachten wir neue Themen alle zwei Wochen in einem Center-of-Excellence-Call mit den technischen Leads der Streams auf den Tisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
 ```
 
 ## Jeder Hebel verankert einen anderen Teil der Standards
@@ -61,13 +61,13 @@ Bei Verstößen, die sich wiederholen und objektiv erkennen lassen, ist die Pipe
 
 ## Der Center-of-Excellence-Call klärt neue Randfälle
 
-Standards sind nie fertig. Neue Fälle tauchen auf, etwa ein Stream, der ein Feld auf einem fremden Objekt braucht. Ohne festen Ort werden diese Fälle zwischen zwei Entwicklern entschieden, und jeder Partner entscheidet anders. Ein regelmäßiger Call mit den technischen Leads aller Streams, einem klaren Mandat und einem Entscheidungslog gibt ihnen einen Ort. Jede Entscheidung wird eingeordnet: als Änderung der Standards, als Architekturentscheidung oder als einmalige Ausnahme. Änderungen der Standards erhalten eine Version und ein Datum, ab dem sie gelten.
+Standards sind nie fertig. Neue Fälle tauchen auf, etwa wenn ein Stream ein Feld auf einem Objekt eines anderen Streams benötigt. Ohne festen Ort werden diese Fälle zwischen zwei Entwicklern entschieden, und jeder Partner entscheidet anders. Ein regelmäßiger Call mit den technischen Leads aller Streams, einem klaren Mandat und einem Entscheidungslog gibt ihnen einen Ort. Jede Entscheidung wird eingeordnet: als Änderung der Standards, als Architekturentscheidung oder als einmalige Ausnahme. Änderungen der Standards erhalten eine Version und ein Datum, ab dem sie gelten.
 
 Der Call hat einen zweiten Effekt, der für Reinforcement fast wichtiger ist: Die technischen Leads tragen die Entscheidungen in ihre Teams. Ein neuer Entwickler erfährt eine Regel dann von seinem eigenen Lead, nicht aus einem Dokument des Kunden. Format und Rhythmus beschreibe ich in [Salesforce Center of Excellence: Format und Rhythmus](../salesforce-center-of-excellence-format/).
 
 ## Wie arbeiten Sie neue Entwickler eines Partners ein?
 
-Jeder Personalwechsel beim Partner ist ein kleiner Neustart. Ich empfehle eine kurze, feste Einarbeitung, die der Partner verantwortet und der Kunde prüft: die geltenden Standards, die [Object Ownership Matrix](../object-ownership-matrix-salesforce/), der Weg eines Pull Requests durch die Pipeline und die wichtigsten Einträge aus dem Entscheidungslog. Der erste Pull Request eines neuen Entwicklers bekommt ein ausführlicheres Review als üblich, damit Missverständnisse früh auffallen. Meiner Erfahrung nach ist dieser zusätzliche Aufwand gering im Vergleich dazu, dasselbe Missverständnis über mehrere Releases hinweg zu korrigieren. Je öfter ein Partner Personen austauscht, desto mehr lohnt es sich, deshalb gehört die Einarbeitung als Pflicht in die Vereinbarung mit dem Partner.
+Jeder Personalwechsel beim Partner ist ein kleiner Neustart. Ich empfehle eine kurze, feste Einarbeitung, die der Partner verantwortet und der Kunde prüft: die geltenden Standards, die [Object Ownership Matrix](../object-ownership-matrix-salesforce/), der Weg eines Pull Requests durch die Pipeline und die wichtigsten Einträge aus dem Entscheidungslog. Der erste Pull Request eines neuen Entwicklers bekommt ein ausführlicheres Review als üblich, damit Missverständnisse früh auffallen. Meiner Erfahrung nach ist dieser zusätzliche Aufwand gering im Vergleich dazu, dasselbe Missverständnis über mehrere Releases hinweg zu korrigieren. Je häufiger ein Partner Personal austauscht, desto wichtiger wird diese Einarbeitung. Deshalb sollte sie als Pflicht in der Vereinbarung mit dem Partner stehen.
 
 ## Ausnahmen unter Termindruck brauchen eine Begründung und ein Ticket
 
@@ -83,7 +83,7 @@ Prüfen Sie, ob Ihre Partnerverträge auf die Standards verweisen, wie Änderung
 
 ## Woran erkennen Sie, dass Standards verankert sind?
 
-Drei Zeichen zeigen es, und jedes lässt sich zählen. Wiederkehrende Review-Feststellungen pro Pull Request gehen zurück, weil die Pipeline sie vorher findet. Neue Randfälle kommen im Center-of-Excellence-Call auf den Tisch, bevor sie gebaut sind, statt danach als Konflikt. Und neue Entwickler eines Partners halten die Regeln ein, ohne dass jemand sie einzeln erklärt. Ausnahmen ohne Datum und Verstöße, die nach einem Release gefunden werden, sind zwei weitere Kennzahlen, die sich zu verfolgen lohnen. In meinem Programm wurden späte Konflikte irgendwann selten, weil neue Randfälle angesprochen wurden, bevor sie gebaut waren.
+Drei Anzeichen zeigen es, und alle lassen sich zählen. Wiederkehrende Beanstandungen je Pull Request gehen zurück, weil die Pipeline sie früher erkennt. Neue Randfälle werden im Center-of-Excellence-Call besprochen, bevor sie umgesetzt werden und zu Konflikten führen. Und neue Entwickler eines Partners halten die Regeln ein, ohne dass jemand sie einzeln erklärt. Ausnahmen ohne Datum und Verstöße, die nach einem Release gefunden werden, sind zwei weitere Kennzahlen, die sich zu verfolgen lohnen. In meinem Programm wurden späte Konflikte irgendwann selten, weil neue Randfälle angesprochen wurden, bevor sie gebaut waren.
 
 ## Wiederkehrende Review-Anmerkungen zählen
 

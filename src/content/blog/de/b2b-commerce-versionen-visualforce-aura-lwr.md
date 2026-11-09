@@ -11,9 +11,9 @@ categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, Visualforce, Aura, LWR, CloudCraze, Migration]
 takeaways:
   - "B2B Commerce gibt es in drei Generationen: das Visualforce-Paket aus der CloudCraze-Übernahme 2018 und Stores mit Aura- oder LWR-Template."
-  - "Die neueste von Salesforce dokumentierte Hauptversion ist 4.13 aus Winter '21. Seit Summer '25 werden nur noch Patch Notes gepflegt."
+  - "Die neueste für B2B Commerce for Visualforce dokumentierte Hauptversion ist 4.13 aus Winter '21. Seit Summer '25 gibt es nur noch Patch Notes."
   - "Laut Migrationsleitfaden bekommen nur Orgs mit Commerce vor Spring '23 Aura-Templates. Für neue Stores wird LWR empfohlen."
-  - "Stand 9. November 2026 fand ich kein öffentliches Abkündigungsdatum. Planen Sie nach Funktionen und prüfen Sie auch Betriebsrisiken."
+  - "Stand 9. November 2026 fand ich kein öffentliches Abkündigungsdatum für Aura-Stores oder das Visualforce-Paket. Planen Sie nach Funktionen und Betriebsrisiken."
 faq:
   - q: "Was ist der Unterschied zwischen B2B Commerce for Visualforce und B2B Commerce auf Lightning?"
     a: "B2B Commerce for Visualforce ist das Managed Package, das mit CloudCraze kam, mit Shopseiten in Visualforce. B2B Commerce auf der Kernplattform baut den Shop als Experience-Cloud-Site mit Experience Builder, auf Basis eines Aura- oder LWR-Templates."
@@ -35,7 +35,7 @@ Salesforce B2B Commerce, das einige Salesforce-Inhalte wie Trailhead auch als "A
 | Generation | Technik | Stand Oktober 2026 |
 |---|---|---|
 | B2B Commerce for Visualforce | Managed Package aus CloudCraze (übernommen 2018), Visualforce-Seiten | Neueste dokumentierte Hauptversion 4.13 (Winter '21), nur noch Patch Notes |
-| B2B Commerce, Aura-Store | Kernplattform, Experience-Cloud-Site, Aura-Template | Neue Aura-Stores nur in Orgs, die vor Spring '23 aktiviert waren |
+| B2B Commerce, Aura-Store | Kernplattform, Experience-Cloud-Site, Aura-Template | Neue Aura-Stores nur in Orgs, in denen Commerce vor Spring '23 aktiviert war |
 | B2B Commerce, LWR-Store | Kernplattform, Experience-Cloud-Site, LWR-Template | Empfohlen für neue Stores |
 
 Salesforce hat den Abschluss der [Übernahme von CloudCraze](https://salesforce.com/news/stories/salesforce-completes-its-acquisition-of-cloudcraze/) am 6. April 2018 gemeldet und CloudCraze als B2B-Commerce-Plattform beschrieben, die nativ auf Salesforce gebaut ist. Dieses Produkt lief als B2B Commerce for Visualforce weiter. Später hat Salesforce B2B Commerce in die Kernplattform geholt, mit eigenen Objekten für Stores, Käufergruppen, Warenkörbe und Bestellungen und mit Storefronts als Experience-Cloud-Sites. Ältere Unterlagen in Hilfe und Trailhead nennen das "B2B Commerce on Lightning Experience", neuere einfach "B2B Commerce".
@@ -54,11 +54,11 @@ Die [Seite mit den Release Notes in der Salesforce-Hilfe](https://help.salesforc
 
 Eine frühere Trailhead-Einheit zu B2B Commerce on Lightning Experience beantwortete die Frage, ob Kunden wechseln müssen, mit Nein: Salesforce unterstützt die Visualforce-Variante weiter. Diese Einheit ist nicht mehr online und war nicht datiert, deshalb würde ich mich nicht allein darauf stützen. Ich halte aber auch fest, dass die neueste gelistete Hauptversion aus Winter '21 stammt und dass die jüngsten Ankündigungen, etwa die [Neuerungen vom Juni 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) mit Headless, Buyer Agent und Quote to Cart, das Visualforce-Paket nicht erwähnen.
 
-Meine Lesart: Ein Visualforce-Shop läuft weiter, aber die öffentliche Dokumentation verspricht weder einen regelmäßigen Patch-Zyklus noch eine weitere Hauptversion. Neue Fähigkeiten kommen auf der Kernplattform. Erfüllt Ihr Shop seinen Zweck und braucht Ihre Roadmap nichts Neues, gibt es keine funktionsbedingte Frist. Prüfen Sie trotzdem Sicherheitsbefunde, Partnerkompetenzen und Integrationen, bevor Sie sich für den Verbleib entscheiden. Wollen Sie Agenten, die neue Suche oder Headless, erwarte ich, dass der Weg zu einem Store auf der Kernplattform führt. Prüfen Sie aber für jede Funktion die unterstützte Store-Architektur in der Produktdokumentation. Den Wechsel würde ich als Neueinführung mit denselben fachlichen Anforderungen planen, nicht als Upgrade.
+Meine Lesart: Ein Visualforce-Shop läuft weiter, aber die öffentliche Dokumentation verspricht weder einen regelmäßigen Patch-Zyklus noch eine weitere Hauptversion. Neue Fähigkeiten kommen auf der Kernplattform. Erfüllt Ihr Shop seinen Zweck und braucht Ihre Roadmap nichts Neues, gibt es keine funktionsbedingte Frist. Prüfen Sie trotzdem Sicherheitsbefunde, Partnerkompetenzen und Integrationen, bevor Sie sich für den Verbleib entscheiden. Wollen Sie Agenten, die neue Suche oder Headless, erwarte ich, dass der Weg zu einem Store auf der Kernplattform führt. Prüfen Sie aber für jede Funktion die unterstützte Store-Architektur in der Produktdokumentation. Den Wechsel würde ich als Neueinführung auf Basis derselben fachlichen Anforderungen planen.
 
 ## Was unterscheidet Aura- und LWR-Stores?
 
-Beide laufen auf derselben Kernplattform mit denselben Commerce-Daten: Buyer Accounts, Käufergruppen, Entitlement Policies, Preisbücher, Warenkörbe und Bestellungen. Sie unterscheiden sich im Frontend. Die [Key Differences im Migrationsleitfaden](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/key-differences.html) nennen diese Punkte:
+Beide laufen auf derselben Kernplattform mit denselben Commerce-Daten: Buyer Accounts, Käufergruppen, Entitlement Policies, Preisbücher, Warenkörbe und Bestellungen. Sie unterscheiden sich im Frontend. Der [Migrationsleitfaden](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/key-differences.html) nennt folgende wesentliche Unterschiede:
 
 - **Komponenten.** Aura-Stores unterstützen Aura-Komponenten und Lightning Web Components. LWR-Stores unterstützen nur Lightning Web Components.
 - **Gestaltung.** In Aura schreiben Sie eigene CSS-Klassen. In LWR nutzen Komponenten Shadow DOM, gestaltet wird über "--dxp"-Styling-Hooks, die auf das Theme-Panel abgebildet sind.
@@ -71,7 +71,7 @@ Der [Migrationsleitfaden](https://developer.salesforce.com/docs/commerce/lwr-mig
 
 Keines, das ich finden konnte. Stand 9. November 2026 stehen weder Aura-Stores noch B2B Commerce for Visualforce in der [Liste der aktiven Produkt- und Funktionsabkündigungen](https://help.salesforce.com/s/articleView?id=000381744&language=en_US&type=1), und der Migrationsleitfaden nennt kein Datum. Diese Liste ist allerdings nicht vollständig: Salesforce kündigt Abkündigungen auch in Release Notes und direkten Kundenmitteilungen an. Prüfen Sie deshalb Ihren Vertrag und die Mitteilungen an Ihre Org, und handeln Sie nicht aufgrund von Gerüchten.
 
-Deshalb plane ich nach Funktionen, nicht aus Angst. Rechenbeispiel: Ein Hersteller betreibt seit 2022 einen Aura-Store für Ersatzteile, mit 15 eigenen Aura-Komponenten für die Teileliste pro Maschine und einem eigenen Checkout-Flow. Ein Wechsel zu LWR braucht dann einen konkreten Anlass:
+Deshalb orientiere ich meine Planung an Funktionen. Rechenbeispiel: Ein Hersteller betreibt seit 2022 einen Aura-Store für Ersatzteile, mit 15 eigenen Aura-Komponenten für die Teileliste pro Maschine und einem eigenen Checkout-Flow. Ein Wechsel zu LWR braucht dann einen konkreten Anlass:
 
 ```pro-contra
 pro: Aura-Store behalten
@@ -81,12 +81,12 @@ pro: Aura-Store behalten
 contra: Anlässe für LWR
 - Das Unternehmen will den Buyer Agent, der eigene Lizenzvoraussetzungen hat
 - Der nächste Partner soll nur noch Lightning Web Components bauen
-- Jede neue Aura-Erweiterung vergrößert die spätere Migration
+- Jede neue Aura-Erweiterung erhöht den späteren Migrationsaufwand
 ```
 
 Zwei Prüfungen gehören in jede Roadmap-Runde:
 
-- **Welche neue Funktion wollen wir, und dokumentiert Salesforce sie für unser Store-Template?** Die Ankündigungen vom Juni 2026 nennen kein Template. Lassen Sie sich vom Partner die Seite in Hilfe oder Entwicklerdoku zeigen, die Ihren Store-Typ bestätigt.
+- **Welche neue Funktion wollen wir, und dokumentiert Salesforce sie für unser Store-Template?** Die Ankündigungen vom Juni 2026 nennen kein Template. Lassen Sie sich vom Partner die Hilfe- oder Entwicklerseite zeigen, die bestätigt, dass die Funktion Ihren Store-Typ unterstützt.
 - **Wie viel eigenen Aura-Code haben wir?** Die [Migration](../b2b-store-aura-lwr-migrieren/) bedeutet einen neuen LWR-Store, und jede eigene Aura-Komponente muss ersetzt oder entfernt werden. Komponenten sind ein Kostentreiber, weitere sind Checkout, Integrationen, Gestaltung, URLs und Umstellung.
 
 ## In einer Stunde herausfinden, was Sie betreiben

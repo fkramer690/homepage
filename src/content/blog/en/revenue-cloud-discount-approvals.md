@@ -1,6 +1,6 @@
 ---
 title: "Discount approvals in Revenue Cloud: Advanced Approvals"
-description: "How to design discount and margin approvals with Advanced Approvals in Revenue Cloud so that sales stays fast, finance keeps control and every decision is traceable."
+description: "How to design discount and margin approvals with Advanced Approvals in Revenue Cloud so sales stays fast, finance keeps control and decisions are traceable."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: en

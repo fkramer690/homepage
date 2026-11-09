@@ -1,5 +1,5 @@
 ---
-title: "Audit-Trail für KI-Agenten in Salesforce: welche Logs?"
+title: "Audit-Trail für KI-Agenten in Salesforce: Welche Logs?"
 description: "Welche Salesforce-Logs zeigen, was ein Agent oder ein externes KI-Tool mit einem Datensatz tat, welche Lizenzen sie brauchen und wie lange sie Daten halten."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
@@ -33,7 +33,7 @@ Ein Audit-Trail für KI-Agenten in Salesforce setzt sich aus mindestens fünf Lo
 
 ## Welche Fragen stellen Revision, Datenschutz und Betriebsrat?
 
-Bei einem Maschinenbauer entstehen sie rund um Garantie, Händler und Kundendienst:
+Bei einem Maschinenbauer stellen sich diese Fragen in Garantie-, Händler- und Serviceprozessen:
 
 - **Interne Revision oder Kundenaudit:** Wer hat die Anweisungen des Agenten oder die Garantieregel vor der strittigen Entscheidung geändert?
 - **Datenschutzbeauftragte:** Welche personenbezogenen Daten von Händlermitarbeitenden, Endkunden und Technikern landen in Prompts und Logs, und wann werden sie gelöscht?
@@ -46,7 +46,7 @@ Jede Frage führt zu einem anderen Log, mit eigener Lizenz und eigener Aufbewahr
 |---|---|---|---|
 | Trust-Layer-Audit-Trail | Prompt, Antwort, Toxizitätswerte, Feedback | Data 360, Datenerfassung eingeschaltet | Auf den gelesenen Seiten nicht genannt |
 | Session Tracing | Subagent, Aktion, Eingabe, Ausgabe, Fehler pro Schritt | Data 360, Tracing eingeschaltet | Nicht genannt; Export-API (Beta) liest die letzten 72 Stunden |
-| API-Ereignisprotokolle | Welcher Benutzer welche Objekte über Hosted MCP oder einen anderen API-Client aufrief | Enthaltene Ereignistypen oder Event Monitoring | 1 Tag enthalten; bezahlt bis zu 1 Jahr |
+| API-Ereignisprotokolle | Welcher Benutzer über Hosted MCP oder einen anderen API-Client auf welche Objekte zugriff | Enthaltene Ereignistypen oder Event Monitoring | 1 Tag enthalten; bezahlt bis zu 1 Jahr |
 | Unique-Query-Ereignisse | Welche SOQL-Abfragen, Filter und Reports liefen | Event Monitoring oder Shield | Wie Event Monitoring |
 | Setup Audit Trail | Wer hat was im Setup geändert | Standard | Mindestens 180 Tage |
 | Feldhistorie | Welcher Feldwert sich wann durch wen änderte | Standard; Field Audit Trail als Add-on | 18 bis 24 Monate; Archiv bis zur Löschung |
@@ -62,7 +62,7 @@ Jede Frage führt zu einem anderen Log, mit eigener Lizenz und eigener Aufbewahr
 
 ```vertiefung Für Entwickler
 titel: Wie kommen Agenten-Traces ins SIEM?
-Für ein SIEM (das zentrale Log-System der Security) ist die [Session Trace OTel API](https://developer.salesforce.com/docs/ai/agentforce/guide/otel-api.md) in der Beta. Sie liefert Sessions, die in den letzten 72 Stunden begonnen haben, eine Session pro Abfrage; ein natives Push ist "planned".
+Für ein SIEM, das zentrale Log-System der Security, ist die [Session Trace OTel API](https://developer.salesforce.com/docs/ai/agentforce/guide/otel-api.md) als Beta verfügbar. Sie liefert Sessions, die innerhalb der letzten 72 Stunden begonnen haben, jeweils eine Session pro Abfrage; eine native Push-Funktion ist ‚planned‘.
 ```
 
 Diese Logs sind selbst ein Speicher personenbezogener Daten: Die Eingabe einer Aktion "Garantie prüfen" enthält Seriennummern, Händlernamen und manchmal den Endkunden. Fragen Sie Salesforce, welchen Data-360-Verbrauch diese Daten in Ihrem Vertrag verursachen, besonders bei Speicher über Ihr Kontingent hinaus.
@@ -73,7 +73,7 @@ Liest Claude, ChatGPT oder Cursor Salesforce-Daten über Hosted MCP, erscheinen 
 
 Schwierig wird es bei der Aufbewahrung. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/event_monitoring/event_monitoring_intro) erhalten Orgs der Enterprise, Unlimited und Performance Edition einige Ereignistypen kostenlos, darunter Login, Logout und API Total Usage, mit einem Tag Aufbewahrung. Nach meiner Lesart hat eine Org ohne Add-on, die diese Dateien nicht regelmäßig herunterlädt, gar keine MCP-Historie.
 
-Mit Shield oder dem Event-Monitoring-Add-on bleiben Logs laut [Event-Monitoring-FAQ](https://help.salesforce.com/s/articleView?id=000396295&language=en_US&type=1) standardmäßig 30 Tage und bis zu ein Jahr, während der [REST-API-Leitfaden](https://developer.salesforce.com/docs/platform/api-rest/guide/using-resources-event-log-files.html) ein Jahr als Standard nennt. Prüfen Sie die wirksame Einstellung in Ihrer Org. Die Angreifer im Fall Salesloft Drift waren [laut The Hacker News](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html) vom 8. August bis mindestens 18. August 2025 aktiv. Eine Frage an Tag zehn braucht also Logs ab Tag eins. Die Token-Seite dieses Vorfalls beschreibe ich in [Connected Apps und OAuth: Lehren aus Drift](../connected-apps-oauth-ki-integrationen/).
+Mit Shield oder dem Event-Monitoring-Add-on bleiben Logs laut [Event-Monitoring-FAQ](https://help.salesforce.com/s/articleView?id=000396295&language=en_US&type=1) standardmäßig 30 Tage und bis zu ein Jahr, während der [REST-API-Leitfaden](https://developer.salesforce.com/docs/platform/api-rest/guide/using-resources-event-log-files.html) ein Jahr als Standard nennt. Prüfen Sie die wirksame Einstellung in Ihrer Org. Die Angreifer im Fall Salesloft Drift waren [laut The Hacker News](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html) vom 8. August bis mindestens 18. August 2025 aktiv. Eine Frage an Tag zehn braucht also Logs ab Tag eins. Die Rolle der Tokens bei diesem Vorfall beschreibe ich in [Connected Apps und OAuth: Lehren aus Drift](../connected-apps-oauth-ki-integrationen/).
 
 ```hinweis achtung
 Bezahlte Logs "cannot be retrieved retroactively for periods before the contract start date". Event Monitoring, das Sie erst nach einem Vorfall kaufen, zeigt diesen Vorfall nicht.
@@ -87,7 +87,7 @@ Die Salesforce-Logs enden dort, wo die Daten Salesforce verlassen. Für Claude g
 
 Für die Konfiguration enthält der [Setup Audit Trail](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm) Änderungen im Setup "for at least the last 180 days". Er ist ein Hinweis auf Aktivitäten im Setup, keine vollständige Versionshistorie der Agentenanweisungen, und eine Prüfung der Garantieentscheidung vom letzten Jahr findet die Änderung dort nicht mehr. Ich würde Agentendefinitionen in einer Versionsverwaltung halten und über eine Pipeline ausrollen, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben, denn eine Repository-Historie läuft nicht ab. Das gilt nur, wenn niemand den Agenten direkt in Produktion ändert.
 
-Für Daten deckt die Feldhistorie laut [Field-Audit-Trail-Leitfaden](https://developer.salesforce.com/docs/platform/field-history-retention/guide/field-audit-trail.html) bis zu 20 Felder pro Objekt für 18 bis 24 Monate ab. Field Audit Trail, erhältlich mit Shield oder als eigene Lizenz, erweitert das auf 200 Felder pro Objekt und archiviert die Historie in einem Big Object, bis Sie sie löschen. Schreibt ein Agent unter eigenem Benutzer, zeigt die Feldhistorie auf Garantiestatus und genehmigtem Betrag, welche Änderungen vom Agenten kamen. Welche Person das Gespräch ausgelöst hat, steht nicht in der Feldhistorie; dafür verknüpfen Sie sie mit dem Session-Datensatz oder einer Korrelations-ID.
+Für Daten deckt die Feldhistorie laut [Field-Audit-Trail-Leitfaden](https://developer.salesforce.com/docs/platform/field-history-retention/guide/field-audit-trail.html) bis zu 20 Felder pro Objekt für 18 bis 24 Monate ab. Field Audit Trail, erhältlich mit Shield oder als eigene Lizenz, erweitert das auf 200 Felder pro Objekt und archiviert die Historie in einem Big Object, bis Sie sie löschen. Schreibt ein Agent unter einem eigenen Benutzerkonto, zeigt die Feldhistorie für Garantiestatus und genehmigten Betrag, welche Änderungen vom Agenten stammen. Welche Person das Gespräch ausgelöst hat, steht dort nicht; diese Zuordnung erfolgt über den Session-Datensatz oder eine Korrelations-ID.
 
 ## Wie lange sollten Logs aufbewahrt werden?
 
@@ -109,7 +109,7 @@ Nehmen wir einen Maschinenbauer mit 90 Händlern, einem Agentforce-Serviceagente
 
 1. **Auditdatenerfassung und Tracing einschalten**, bevor das erste produktive Gespräch läuft. Nachträglich wird nichts befüllt.
 2. **Ein Log-Inventar schreiben**: beantwortete Frage, Verantwortliche, Leserechte, Aufbewahrung, Löschung.
-3. **Über die API-Logs entscheiden**: regelmäßiger Export ins SIEM oder bezahltes Event Monitoring. Salesforce sagt, diese Dateien seien kein führendes System und könnten Lücken oder Duplikate enthalten. Den Preis fand ich auf keiner geöffneten Seite; fragen Sie Ihren Account Executive.
+3. **Über die API-Logs entscheiden**: regelmäßiger Export ins SIEM oder bezahltes Event Monitoring. Salesforce weist darauf hin, dass diese Dateien nicht als maßgebliches Aufzeichnungssystem dienen und Lücken oder Duplikate enthalten können. Den Preis fand ich auf keiner geöffneten Seite; fragen Sie Ihren Account Executive.
 4. **Die Felder protokollieren, die Agenten schreiben**, etwa Garantiestatus und genehmigten Betrag.
 5. **Agentendefinitionen außerhalb des Setups versionieren.**
 6. **Betriebsvereinbarung und Löschkonzept des Datenschutzes gemeinsam klären**, denn beide betreffen dieselben Logs.

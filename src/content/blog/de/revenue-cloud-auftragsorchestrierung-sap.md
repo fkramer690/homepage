@@ -12,14 +12,14 @@ contactBrief: integration
 tags: [Revenue Cloud, Dynamic Revenue Orchestrator, SAP, Auftragsabwicklung, Schnittstellen]
 takeaways:
   - "Die Dekomposition zerlegt kommerzielle Produkte in technische Produkte für nachgelagerte Systeme, gesteuert über Decomposition Rules."
-  - "Ein Plan nutzt fünf allgemeine Schritttypen plus Staged Assetize: Auto Task, Callout, Manual Task, Milestone und Pause. SAP ist ein Callout."
-  - "Fehlgeschlagene Schritte heißen Fallout. Eine passende Fallout Rule legt Wiederholungen und Queue fest. Ohne sie scheitert der Schritt final."
+  - "Ein Plan nutzt fünf allgemeine Schritttypen plus Staged Assetize: Auto Task, Callout, Manual Task, Milestone und Pause. Die Übergabe an SAP erfolgt als Callout."
+  - "Eine Fallout Rule steuert Wiederholungen und Queue. Ohne passende Fallout Rule scheitert der Schritt endgültig und wird nicht wiederholt."
   - "Geht ein Auftrag in einem Stück an SAP und passiert danach in Salesforce nichts mehr, reicht meist eine einfache Schnittstelle ohne DRO."
 faq:
   - q: "Was ist der Dynamic Revenue Orchestrator in Salesforce?"
     a: "Der Dynamic Revenue Orchestrator (DRO) ist die Auftragsabwicklung in Revenue Cloud für Aufträge, die Sie an ihn übergeben. Er zerlegt Aufträge in technische Produkte und führt einen Orchestrierungsplan mit Schritten in Salesforce und in externen Systemen wie einem ERP aus."
   - q: "Brauche ich DRO, um Aufträge aus Revenue Cloud an SAP zu senden?"
-    a: "Nein. Ein datensatzgesteuerter Flow oder ein Aufruf über Middleware kann einen aktivierten Auftrag direkt an SAP senden. DRO lohnt sich, wenn ein Auftrag mehrere abhängige Schritte mit Verantwortlichen und Fristen auslöst."
+    a: "Nein. Ein datensatzgetriggerter Flow oder ein Aufruf über Middleware kann einen aktivierten Auftrag direkt an SAP senden. DRO lohnt sich, wenn ein Auftrag mehrere abhängige Schritte mit Verantwortlichen und Fristen auslöst."
   - q: "Was kostet der Dynamic Revenue Orchestrator?"
     a: "Die Preisseite von Revenue Cloud führt Dynamic Revenue Orchestration als zukaufbar zu Revenue Cloud Advanced auf, mit dem Hinweis auf Freemium-Zugang, nennt aber keinen separaten Preis für DRO. Was dieser Zugang umfasst, steht dort nicht. Lassen Sie sich das schriftlich bestätigen, bevor Sie damit planen."
   - q: "Was passiert, wenn SAP einen Auftrag aus Revenue Cloud ablehnt?"
@@ -29,11 +29,11 @@ faq:
 draft: false
 ---
 
-In Revenue Cloud geht ein aktivierter Auftrag an den Dynamic Revenue Orchestrator (DRO), meist über einen datensatzgesteuerten Flow. DRO zerlegt die kommerziellen Produkte, die der Kunde gekauft hat, in technische Produkte und führt einen Orchestrierungsplan aus: Auto Tasks, Callouts, manuelle Aufgaben, Meilensteine, Pausen und weitere Schritte in fester Reihenfolge. Die Übergabe an SAP gehört in einen Callout, der die SAP-Auftragsnummer zurückschreibt, und Fehler landen als Fallout in einer Queue. DRO ist ein Add-on zu Revenue Cloud Advanced. Geht Ihr Auftrag in einem Stück an SAP und passiert danach in Salesforce nichts mehr, reicht eine einfache Schnittstelle.
+In Revenue Cloud geht ein aktivierter Auftrag an den Dynamic Revenue Orchestrator (DRO), meist über einen datensatzgetriggerten Flow. DRO zerlegt die kommerziellen Produkte, die der Kunde gekauft hat, in technische Produkte und führt einen Orchestrierungsplan aus: Auto Tasks, Callouts, manuelle Aufgaben, Meilensteine, Pausen und weitere Schritte in fester Reihenfolge. Die Übergabe an SAP gehört in einen Callout, der die SAP-Auftragsnummer zurückschreibt, und Fehler landen als Fallout in einer Queue. DRO ist ein Add-on zu Revenue Cloud Advanced. Geht Ihr Auftrag in einem Stück an SAP und passiert danach in Salesforce nichts mehr, reicht eine einfache Schnittstelle.
 
 ## Was macht der Dynamic Revenue Orchestrator?
 
-Der Dynamic Revenue Orchestrator ist der Teil von Revenue Cloud, der übernimmt, sobald ein Auftrag verkauft ist. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/meet-dynamic-revenue-orchestrator) nennt ihn die Engine für die Auftragsabwicklung von Anfang bis Ende und teilt ihn in zwei Teile: Die Dekomposition zerlegt den Auftrag in technische Produkte und Leistungen, die Orchestrierung bildet die Schritte zur Erfüllung über Systeme hinweg ab, samt Fallout-Management für fehlgeschlagene Schritte. Trailhead ordnet DRO unter "Agentforce Revenue Management" ein, dem Namen, den Salesforce jetzt für Revenue Cloud verwendet. Auf der Preisseite steht weiterhin Revenue Cloud, und das Add-on heißt dort "Dynamic Revenue Orchestration".
+Der Dynamic Revenue Orchestrator ist die Komponente von Revenue Cloud, die nach dem Verkauf die Abwicklung eines Auftrags übernimmt. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/meet-dynamic-revenue-orchestrator) nennt ihn die Engine für die Auftragsabwicklung von Anfang bis Ende und teilt ihn in zwei Teile: Die Dekomposition zerlegt den Auftrag in technische Produkte und Leistungen, die Orchestrierung bildet die Schritte zur Erfüllung über Systeme hinweg ab, samt Fallout-Management für fehlgeschlagene Schritte. Trailhead ordnet DRO unter "Agentforce Revenue Management" ein, dem Namen, den Salesforce jetzt für Revenue Cloud verwendet. Auf der Preisseite steht weiterhin Revenue Cloud, und das Add-on heißt dort "Dynamic Revenue Orchestration".
 
 Trailhead nennt drei Rollen, und ich würde sie vor dem ersten Sprint besetzen:
 
@@ -43,9 +43,9 @@ Trailhead nennt drei Rollen, und ich würde sie vor dem ersten Sprint besetzen:
 
 Die Operator-Rolle würde ich in der Auftragsabwicklung oder im Innendienst ansiedeln, nicht in der IT. Dort weiß man, warum ein Auftrag hängt. Jede dieser Personen braucht die Schulung, die Fulfillment User Permission Set License und das DRO Permission Set für ihre Rolle.
 
-## Ein datensatzgesteuerter Flow übergibt den Auftrag an DRO
+## Ein datensatzgetriggerter Flow übergibt den Auftrag an DRO
 
-Der Weg beginnt mit einem angenommenen Angebot, aus dem ein Auftrag wird. Laut [Trailhead zur Auftragsverwaltung](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders) legen Sie einen datensatzgesteuerten Flow an, der den Auftrag an DRO übergibt, zum Beispiel wenn sein Status auf Activated wechselt. Zwei Kontextdefinitionen transportieren die Daten: SalesTransactionContext enthält den Auftrag und seine Fulfillment-Positionen, FulfillmentAssetContext dient der Dekomposition und ist auf die Asset-Objekte gemappt.
+Der Weg beginnt mit einem angenommenen Angebot, aus dem ein Auftrag wird. Laut [Trailhead zur Auftragsverwaltung](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders) legen Sie einen datensatzgetriggerten Flow an, der den Auftrag an DRO übergibt, zum Beispiel wenn sein Status auf Activated wechselt. Zwei Kontextdefinitionen transportieren die Daten: SalesTransactionContext enthält den Auftrag und seine Fulfillment-Positionen, FulfillmentAssetContext dient der Dekomposition und ist auf die Asset-Objekte gemappt.
 
 Ohne einen solchen Flow erreicht nichts DRO, und einfache Aufträge können ihn bewusst umgehen. Die Aktivierung ist ein fachliches Ereignis. Legen Sie fest, wer einen Auftrag aktivieren darf und was vorher erfüllt sein muss: Freigaben abgeschlossen, Kunde in SAP angelegt, Kreditprüfung bestanden. Diese Prüfungen gehören in die Startbedingungen des Flows oder in Validierungsregeln, statt sich darauf zu verlassen, dass der Vertrieb daran denkt.
 
@@ -53,9 +53,9 @@ Ohne einen solchen Flow erreicht nichts DRO, und einfache Aufträge können ihn 
 
 Die Dekomposition trennt, was der Kunde sieht, von dem, was die Abwicklung braucht. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/discover-order-decomposition) ist ein kommerzielles Produkt jedes Produkt, das ein Kunde im Katalog findet. Ein technisches Produkt liegt ebenfalls im Katalog, ist für Kunden in der Regel verborgen und richtet sich nach den Anforderungen nachgelagerter Systeme wie Abrechnung, Fulfillment oder Logistik. Product Fulfillment Decomposition Rules ordnen eine Quelle, also ein Produkt oder eine Produktklassifizierung, einem technischen Produkt zu, inklusive Feldern und Attributen, und können Bedingungen enthalten.
 
-Ein Rechenbeispiel: Ein Kunde kauft "Verpackungslinie L200 mit Inbetriebnahme und Fernüberwachung". Die Dekomposition macht daraus drei technische Produkte: eine Kundenauftragsposition für SAP, einen Inbetriebnahme-Einsatz für den Service und die Freischaltung des Überwachungsdienstes. Weder der Kunde noch der Vertrieb sieht diese drei.
+Ein Rechenbeispiel: Ein Kunde kauft "Verpackungslinie L200 mit Inbetriebnahme und Fernüberwachung". Die Dekomposition erzeugt daraus drei technische Produkte: eine Kundenauftragsposition für SAP, einen Inbetriebnahme-Einsatz für den Service und die Freischaltung des Überwachungsdienstes. Diese drei technischen Produkte bleiben für den Kunden und den Vertrieb verborgen.
 
-Trailhead sagt auch, dass einfache Aufträge keine Dekomposition brauchen und direkt orchestriert werden können. Weil Regeln auf Produktklassifizierungen zeigen dürfen, deckt eine Regel eine ganze Produktfamilie ab statt jeder einzelnen Maschine. Das hält die Regeln pflegbar, auch wenn der Katalog Hunderte Varianten hat.
+Trailhead sagt auch, dass einfache Aufträge keine Dekomposition brauchen und direkt orchestriert werden können. Da sich Regeln auf Produktklassifizierungen beziehen können, lässt sich mit einer Regel eine ganze Produktfamilie abdecken, ohne für jede Maschine eine eigene Regel anzulegen. Das hält die Regeln pflegbar, auch wenn der Katalog Hunderte Varianten hat.
 
 ## Schritttypen im Orchestrierungsplan
 
@@ -73,7 +73,7 @@ Schritte liegen in Swimlanes, meist eine pro abwickelndem System, und können vo
 
 ## Die Übergabe an SAP gehört in einen Callout
 
-In einen Callout, früh im Plan. SAP braucht den Kundenauftrag, bevor es Produktion planen, liefern und fakturieren kann, also hängen die meisten anderen Schritte davon ab.
+Die Übergabe gehört in einen Callout früh im Plan. SAP braucht den Kundenauftrag, bevor es Produktion planen, liefern und fakturieren kann, also hängen die meisten anderen Schritte davon ab.
 
 Ein Referenzmuster von Salesforce für Revenue Cloud und SAP habe ich nicht gefunden. Am nächsten kommt der [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/minor/1.6/pages/Use%20case%203a%20-%20Quote-to-cash%20-%20Salesforce%20and%20SAP%20S4HANA/), 2021 für Sales Cloud und Salesforce CPQ dokumentiert, nicht für Revenue Cloud oder DRO: Das Anlegen des Auftrags in Salesforce löst den Auftrag in SAP S/4HANA aus, und die SAP-Auftragsnummer erscheint in Salesforce. Daraus übernehme ich nur die Ideen zur Korrelation und Auftragsnummer. Die übrigen Regeln sind meine eigenen Architekturentscheidungen:
 
@@ -103,7 +103,7 @@ Typische Ablehnungen aus SAP, als Annahme: Der Warenempfänger ist in SAP noch n
 
 ## Wann reicht eine einfache Schnittstelle ohne DRO?
 
-DRO lohnt sich, wenn ein Auftrag an mehreren Stellen Arbeit auslöst, die voneinander abhängt. Ein klassischer Maschinenverkauf ist oft einfacher: Der Auftrag geht in einem Stück an SAP, und Produktion, Lieferung und Rechnung passieren dort. Dann reicht ein datensatzgesteuerter Flow oder ein Middleware-Aufruf bei der Aktivierung, mit denselben Regeln für Referenz, Auftragsnummer und Fehlerbehandlung.
+DRO lohnt sich, wenn ein Auftrag mehrere voneinander abhängige Abwicklungsschritte in verschiedenen Systemen auslöst. Ein klassischer Maschinenverkauf ist oft einfacher: Der Auftrag geht in einem Stück an SAP, und Produktion, Lieferung und Rechnung passieren dort. Dann reicht ein datensatzgetriggerter Flow oder ein Middleware-Aufruf bei der Aktivierung, mit denselben Regeln für Referenz, Auftragsnummer und Fehlerbehandlung.
 
 Ich würde DRO prüfen, wenn mindestens zwei dieser Punkte zutreffen:
 

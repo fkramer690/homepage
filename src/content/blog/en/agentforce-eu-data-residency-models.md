@@ -1,6 +1,6 @@
 ---
 title: "Agentforce EU data residency: where do models run?"
-description: "Where Agentforce sends prompts with dealer data: Bedrock vs shared trust zone, geo-aware routing, the Hyperforce Operating Zone and what to get confirmed in writing."
+description: "Where Agentforce sends prompts with dealer data: Bedrock vs shared trust zone, geo-aware routing, the Hyperforce Operating Zone and what to confirm in writing."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: en

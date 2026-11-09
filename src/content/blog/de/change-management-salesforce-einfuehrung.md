@@ -30,23 +30,23 @@ faq:
 draft: false
 ---
 
-Eine technisch erfolgreiche Salesforce-Einführung kann trotzdem ihren Nutzen verfehlen. Sie scheitert, wenn Vertrieb, Service und Außendienst nach dem Go-live weiter so arbeiten wie vorher, mit Excel, E-Mail und eigenen Listen neben dem neuen System. Salesforce Change Management ist die Arbeit, die das verhindert: neue Prozesse, Standards und Releases so einführen, dass die Menschen sie nutzen. Ich orientiere mich dabei an Prosci und dem ADKAR-Modell, weil es zeigt, an welcher Stelle eine Einführung hängt. Eine weitere Schulung schafft Wissen. Sie hilft nicht, wenn niemand versteht, wozu das Ganze gut ist.
+Eine technisch erfolgreiche Salesforce-Einführung kann trotzdem ihren Nutzen verfehlen. Sie scheitert, wenn Vertrieb, Service und Field Service nach dem Go-live weiterarbeiten wie zuvor, mit Excel, E-Mail und eigenen Listen neben dem neuen System. Salesforce Change Management ist die Arbeit, die das verhindert: neue Prozesse, Standards und Releases so einführen, dass die Menschen sie nutzen. Ich orientiere mich dabei an Prosci und dem ADKAR-Modell, weil es zeigt, an welcher Stelle eine Einführung hängt. Eine weitere Schulung schafft Wissen. Sie hilft nicht, wenn niemand versteht, wozu das Ganze gut ist.
 
 ## Warum kommt Salesforce im Alltag nicht an?
 
-Das Deployment der Metadaten ist oft der kürzeste Teil eines Releases. Davor und danach entscheidet sich, ob jemand anders arbeitet. Häufige Gründe, warum das in Salesforce-Programmen nicht passiert, sind:
+Das Deployment der Metadaten ist oft der kürzeste Teil eines Releases. Was davor und danach geschieht, entscheidet darüber, ob sich die Arbeitsweise ändert. Häufige Gründe, warum das in Salesforce-Programmen nicht passiert, sind:
 
-- **Betroffene erfahren zu spät davon.** Wer eine Änderung erst in Produktion sieht, sucht sich einen Weg drumherum.
+- **Betroffene erfahren zu spät davon.** Wer eine Änderung erst in der Produktivumgebung sieht, sucht nach einer Möglichkeit, sie zu umgehen.
 - **Niemand erklärt, wozu.** Ein Vertriebsteam pflegt Opportunities, weil es muss, und weiß nicht, dass die Absatzplanung darauf aufbaut.
 - **Es fehlt der Rückhalt im Management.** Ohne Entscheidungen von oben bleiben neue Regeln eine Empfehlung.
 - **Es gibt keine strukturierte Rückkopplung.** Probleme aus dem Alltag landen in E-Mails und nicht im Backlog.
 
 Niedrige Akzeptanz kann auch auf echte Probleme in der Lösung hinweisen: zusätzliche Tipparbeit, irrelevante Pflichtfelder, schlechte mobile Nutzbarkeit oder fehlende Integrationen. Diese Probleme müssen behoben werden, statt mehr zu kommunizieren.
 
-Das gilt nicht nur für Fachbereiche. Wenn ein Programm neue Standards für Entwicklung und Release einführt, sind Entwicklerteams und Umsetzungspartner genauso Betroffene. Sie kennen die Regeln, legen sie aber unterschiedlich aus, solange niemand sie verankert.
+Das gilt ebenso für Fachanwender wie für Entwicklerteams und Implementierungspartner. Führt ein Programm neue Entwicklungs- und Release-Standards ein, sind auch diese Gruppen von der Veränderung betroffen. Sie kennen die Regeln, legen sie aber unterschiedlich aus, solange niemand sie verankert.
 
 ```praxis
-Viele Kunden meinen, sie bräuchten kein Change Management. Das Budget ist verteilt, die Schulungen sind geplant, und die Nutzer werden sich schon gewöhnen. Ich bringe es trotzdem immer wieder ins Gespräch, in der Planung, vor jedem Land und nach jedem Go-live. Beim weltweiten Manufacturing-Cloud-Rollout würde ich es heute noch früher und noch öfter tun.
+Viele Kunden meinen, sie bräuchten kein Change Management. Das Budget ist eingeplant, die Schulungen sind vorgesehen, und die Nutzer werden sich schon daran gewöhnen. Ich spreche das Thema dennoch immer wieder an: während der Planung, vor jedem Länder-Rollout und nach jedem Go-live. Beim weltweiten Manufacturing-Cloud-Rollout würde ich es heute noch früher und noch öfter tun.
 ```
 
 ## Was zeigt das ADKAR-Modell?
@@ -65,9 +65,9 @@ Das [ADKAR-Modell](https://www.prosci.com/blog/adkar-model) beschreibt fünf Ele
 
 Diese Zeichen sind Hypothesen, keine Diagnosen. Punkte in Pflichtfeldern können auch auf ein schlecht gestaltetes Feld hinweisen. Prüfen Sie das mit den betroffenen Nutzern. Der Nutzen liegt in der Diagnose. Statt bei niedriger Nutzung die nächste Schulung anzusetzen, fragen wir je betroffener Gruppe, welches Element fehlt. Wenn der Vertrieb nicht weiß, wofür gepflegte Opportunities gebraucht werden, fehlt Awareness, und das muss der Vertriebsleiter erklären, nicht der Trainer.
 
-Der Sponsor verdient einen eigenen Satz, weil er in Salesforce-Programmen am häufigsten fehlt. Gemeint ist eine Person aus dem Management, die sichtbar hinter der Einführung steht: Sie erklärt im Vertriebsmeeting, warum Prognosen künftig aus Salesforce kommen, entscheidet, wenn zwei Bereiche sich nicht einigen, und fragt im Monatsbericht nach der Nutzung. Ich schreibe deshalb einen Sponsor-Plan, der festlegt, was das Management wann sichtbar tut. Ohne diesen Plan wird aus „das Management steht dahinter“ eine Zeile auf der ersten Folie.
+Die Rolle des Sponsors verdient einen eigenen Absatz, weil sie in Salesforce-Programmen besonders häufig fehlt. Gemeint ist eine Person aus dem Management, die sichtbar hinter der Einführung steht: Sie erklärt im Vertriebsmeeting, warum Prognosen künftig aus Salesforce kommen, entscheidet, wenn zwei Bereiche sich nicht einigen, und fragt im Monatsbericht nach der Nutzung. Ich schreibe deshalb einen Sponsor-Plan, der festlegt, was das Management wann sichtbar tut. Ohne diesen Plan wird aus „das Management steht dahinter“ eine Zeile auf der ersten Folie.
 
-Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Das Vorgehen habe ich gemeinsam mit [Juliane Winterscheid](../../partner/juliane-winterscheid/) auf Salesforce-Programme übertragen, meiner Kooperationspartnerin für Change Management.
+Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Das Vorgehen habe ich gemeinsam mit meiner Kooperationspartnerin für Change Management, [Juliane Winterscheid](../../partner/juliane-winterscheid/), auf Salesforce-Programme übertragen.
 
 ## Diese Themen gehören zu Change Management in Salesforce-Programmen
 
@@ -105,4 +105,4 @@ Entscheidend ist der Zeitpunkt. Change Management, das zwei Wochen vor dem Go-li
 
 Beantworten Sie für Ihr nächstes Release drei Fragen schriftlich: Welche Gruppen sind betroffen? Was ändert sich für jede im Alltag? Wer im Management steht sichtbar dahinter? Fehlt die dritte Antwort, ist das der erste Schritt. Danach legen Sie fest, woran Sie Erfolg messen, statt Schulungen zu zählen: Akzeptanz, also ob die vorgesehenen Rollen den neuen Prozess nutzen, Kompetenz und Datenqualität, also ob sie ihn richtig nutzen, und das Geschäftsergebnis, etwa Prognosequalität oder die Erstlösungsquote.
 
-Wer die fünf Elemente einzeln durchgehen möchte, findet sie in der [Masterclass Change Management](../../masterclass/change-management/), ein Kapitel pro Stufe mit den passenden Artikeln. Wie Juliane Winterscheid und ich das in Programmen begleiten, steht unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).
+Wenn Sie die fünf Elemente einzeln durchgehen möchten, finden Sie in der [Masterclass Change Management](../../masterclass/change-management/) zu jeder Stufe ein Kapitel mit den passenden Artikeln. Wie Juliane Winterscheid und ich das in Programmen begleiten, steht unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).

@@ -12,7 +12,7 @@ contactBrief: architecture
 tags: [Datenqualität, Dubletten, Stammdaten, Agentforce]
 takeaways:
   - "Dubletten entstehen bei Herstellern meist an Schnittstellen und Ländergrenzen, etwa durch mehrfache ERP-Importe oder pro Land neu angelegte Kunden."
-  - "Vor dem Bereinigen steht die Frage nach dem führenden System und einem eindeutigen Schlüssel, etwa Quellsystem plus Kunden- oder Seriennummer."
+  - "Vor dem Bereinigen steht die Frage nach dem führenden System und einem eindeutigen Schlüssel, etwa ERP-Kundennummer plus Quellsystem oder Seriennummer."
   - "Salesforce bringt Matching Rules und Duplicate Rules mit. Sie verhindern neue Dubletten, bereinigen aber keine alten."
   - "Erhält ein Agent zwei plausible Accounts ohne eindeutige Auswahlregel, kann er den falschen nutzen. Deshalb kommt die Bereinigung zuerst."
 faq:
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Dubletten in Salesforce bereinigen Hersteller am besten in einer festen Reihenfolge: zuerst messen, dann das führende System und einen eindeutigen Schlüssel pro Objekt festlegen, dann zusammenführen und erst danach neue Dubletten verhindern. Bei Accounts ist der Schlüssel meist die ERP-Kundennummer plus Quellsystem, wo das nötig ist, bei Anlagen die Seriennummer. Salesforce bringt mit Matching Rules und Duplicate Rules Werkzeuge mit, die neue Dubletten beim Speichern abfangen. Alte Dubletten räumen sie nicht auf. Diese Arbeit gehört vor jeden KI-Agenten, denn ein Agent kann bei zwei plausiblen Accounts ohne klare Auswahlregel den falschen genauso sicher wählen wie den richtigen.
+Dubletten in Salesforce bereinigen Hersteller am besten in einer festen Reihenfolge: zuerst messen, dann das führende System und einen eindeutigen Schlüssel pro Objekt festlegen, dann zusammenführen und erst danach neue Dubletten verhindern. Bei Accounts ist der Schlüssel meist die ERP-Kundennummer plus Quellsystem, wo das nötig ist, bei Anlagen die Seriennummer. Salesforce bringt mit Matching Rules und Duplicate Rules Werkzeuge mit, die neue Dubletten beim Speichern abfangen. Alte Dubletten räumen sie nicht auf. Diese Arbeit muss vor dem Einsatz jedes KI-Agenten abgeschlossen sein, denn bei zwei plausiblen Accounts ohne klare Auswahlregel kann er den falschen Datensatz mit derselben Überzeugung wählen wie den richtigen.
 
 ## Woher kommen Dubletten bei Herstellern?
 
@@ -35,7 +35,7 @@ Dubletten entstehen selten, weil jemand schlampig arbeitet. Bei Herstellern sehe
 
 - **Schnittstellen, die anlegen statt aktualisieren.** Ein ERP-Import legt einen Kunden neu an, wenn er den vorhandenen nicht findet, etwa weil sich die Schreibweise geändert hat.
 - **Länder und Gesellschaften.** Ein Konzernkunde kauft in drei Ländern, und jede Vertriebsgesellschaft legt ihn selbst an, einmal mit „GmbH“, einmal mit „AG“, einmal unter dem Namen der Tochter.
-- **Händler und Endkunden.** Ein Endkunde kommt über zwei Händler und taucht zweimal auf, jeweils unter dem Händler.
+- **Händler und Endkunden.** Ein Endkunde kommt über zwei Händler und taucht zweimal auf, je einmal unter jedem Händler.
 - **Anlagen ohne eindeutige Kennung.** Seriennummern werden mit und ohne Präfix erfasst, oder Ersatzmaschinen bekommen die Nummer der alten.
 - **Portale.** Kontakte registrieren sich selbst und legen dabei einen neuen Kontakt an, statt sich mit dem vorhandenen zu verbinden. Die Duplicate Rules von Salesforce greifen nicht bei der Selbstregistrierung in Experience Cloud, deshalb braucht der Registrierungsprozess einen eigenen Kontaktabgleich.
 
@@ -47,7 +47,7 @@ Wie die installierte Basis aufgebaut sein sollte, beschreibe ich in [Asset-Hiera
 
 ## Warum kommt die Bereinigung vor dem KI-Agenten?
 
-Ein Mensch, der zwei ähnliche Accounts sieht, wird stutzig und fragt nach. Ein Agent tut, was seine Aktionen und Anweisungen erlauben: Liefert eine Suche zwei plausible Treffer und entscheidet nichts zwischen ihnen, nennt er womöglich den falschen Vertrag, schickt das Angebot an den falschen Ansprechpartner oder prüft eine Garantie gegen die falsche Anlage. Er tut das in einem überzeugenden Ton, und genau das macht den Fehler teuer. Neben der Bereinigung sollten Agentenaktionen präzise filtern, stabile Datensatz-IDs übergeben und bei mehreren Treffern nachfragen. Business Value und Datenqualität stehen deshalb bei mir vor jedem Agenten, siehe [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
+Ein Mensch, der zwei ähnliche Accounts sieht, wird stutzig und fragt nach. Ein Agent tut, was seine Aktionen und Anweisungen erlauben: Wenn eine Suche zwei plausible Treffer liefert und keine Regel die Auswahl bestimmt, nennt er womöglich den falschen Vertrag, schickt das Angebot an den falschen Ansprechpartner oder prüft eine Garantie gegen die falsche Anlage. Er tut das in einem überzeugenden Ton, und genau das macht den Fehler teuer. Neben der Bereinigung sollten Agentenaktionen präzise filtern, stabile Datensatz-IDs übergeben und bei mehreren Treffern nachfragen. Business Value und Datenqualität stehen deshalb bei mir vor jedem Agenten, siehe [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
 
 ## Wie bereinigen Sie Dubletten Schritt für Schritt?
 
@@ -64,9 +64,9 @@ Pflegen | dauerhaft · Datenverantwortliche
   Monatlicher Bericht über neue mögliche Dubletten mit einem Verantwortlichen pro Land.
 ```
 
-Der zweite Schritt ist der wichtigste und wird am häufigsten übersprungen. Wer zusammenführt, ohne zu wissen, welches System führt, führt in Salesforce zusammen, was das ERP beim nächsten Import wieder trennt.
+Der zweite Schritt ist der wichtigste und wird am häufigsten übersprungen. Wer Datensätze zusammenführt, ohne das führende System zu kennen, bereinigt in Salesforce Datensätze, die das ERP beim nächsten Import erneut getrennt anlegt.
 
-Beim Zusammenführen wählen Sie einen Hauptdatensatz, und Salesforce hängt die meisten verknüpften Datensätze wie Kontakte, Opportunities und Cases an ihn um. Es gibt Ausnahmen und Voraussetzungen, etwa bei Partner-Accounts, Experience-Cloud-Benutzern, Account Teams und Gebieten. In der Oberfläche gehen höchstens drei Datensätze auf einmal. Bei Hunderten von Paaren braucht es ein Werkzeug oder ein Skript, Testzusammenführungen und davor eine Sicherung.
+Beim Zusammenführen wählen Sie einen Hauptdatensatz, und Salesforce ordnet dem Hauptdatensatz die meisten verknüpften Datensätze wie Kontakte, Opportunities und Cases zu. Es gibt Ausnahmen und Voraussetzungen, etwa bei Partner-Accounts, Experience-Cloud-Benutzern, Account Teams und Gebieten. In der Benutzeroberfläche lassen sich höchstens drei Datensätze gleichzeitig zusammenführen. Bei Hunderten von Paaren braucht es ein Werkzeug oder ein Skript, Testzusammenführungen und davor eine Sicherung.
 
 ## Matching Rules und Duplicate Rules verhindern neue Dubletten, bereinigen aber keine alten
 
@@ -86,7 +86,7 @@ Starten Sie Duplicate Rules mit der Aktion „Warnen“ und einem Bericht. Nach 
 
 ## Ein Upsert über eine eindeutige External ID hält ERP-Dubletten fern
 
-Die wirksamste Maßnahme liegt in der Schnittstelle. Jeder Datensatz aus dem ERP trägt dessen Schlüssel in einem External-ID-Feld, und die Schnittstelle schreibt per Upsert: Gibt es den Schlüssel schon, wird aktualisiert, sonst angelegt. Markieren Sie das Feld als eindeutig, weisen Sie Datensätze ohne Schlüssel ab und überwachen Sie neu angelegte Datensätze. Dann erzeugt ein Import keine Dublette mehr, nur weil sich ein Name anders schreibt. Ein Upsert kann nicht entscheiden, ob zwei verschiedene ERP-Schlüssel für denselben Kunden stehen. Das bleibt eine fachliche Entscheidung. Welches System welche Daten führt, gehört in die Integrationsarchitektur, die ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/) beschreibe.
+Die wirksamste Maßnahme liegt in der Schnittstelle. Jeder Datensatz aus dem ERP trägt dessen Schlüssel in einem External-ID-Feld, und die Schnittstelle schreibt per Upsert: Gibt es den Schlüssel schon, wird aktualisiert, sonst angelegt. Markieren Sie das Feld als eindeutig, weisen Sie Datensätze ohne Schlüssel ab und überwachen Sie neu angelegte Datensätze. Dann erzeugt ein Import keine Dublette mehr, nur weil ein Name anders geschrieben ist. Ein Upsert kann nicht entscheiden, ob zwei verschiedene ERP-Schlüssel für denselben Kunden stehen. Das bleibt eine fachliche Entscheidung. Welches System welche Daten führt, gehört in die Integrationsarchitektur, die ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/) beschreibe.
 
 ## Wer ist für die Datenqualität verantwortlich?
 

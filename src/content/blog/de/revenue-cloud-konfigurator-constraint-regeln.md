@@ -10,7 +10,7 @@ topic: revenue
 categories: [revenue-cloud, architecture]
 tags: [Revenue Cloud, Produktkonfigurator, Constraint-Regeln, CML, SAP-Variantenkonfiguration]
 takeaways:
-  - "Es gibt zwei Regelwerke: Bedingungs-Aktions-Konfigurationsregeln und die Constraint Rules Engine; ein Transaktionsverarbeitungstyp wählt eines aus."
+  - "Es gibt zwei Regel-Engines: Konfigurationsregeln auf der Business Rules Engine und die Constraint Rules Engine; der Transaktionsverarbeitungstyp wählt eine aus."
   - "Constraint-Regeln lohnen sich bei voneinander abhängigen Attributen und vielen Optionen. Die Engine filtert ungültige Kombinationen in Echtzeit heraus."
   - "Constraint-Modelle werden in CML geschrieben. Für die Pflege brauchen Sie jemanden beim Hersteller, der modellieren kann."
   - "Salesforce nennt als Ziel unter 100 Millisekunden und unter 1.000 Backtracks pro Modelllauf. Jedes Modell braucht deshalb Performance-Tests."
@@ -27,13 +27,13 @@ faq:
 draft: false
 ---
 
-Der Konfigurator in Revenue Cloud mit der Constraint Rules Engine reicht für technische Produkte, wenn sich die Regeln als Beziehungen zwischen Attributen und Bestandteilen schreiben lassen und jemand beim Hersteller sie nach dem Go-live pflegt. Am meisten bringt er bei voneinander abhängigen Attributen, wo Wenn-dann-Regeln bei jeder Produktänderung brechen. Ein externer Konfigurator sollte bleiben, wenn die Regeln in der SAP-Variantenkonfiguration oder im PLM liegen und dort ohnehin geprüft werden, oder wenn die Konstruktion aus Zeichnungen konfiguriert. Prüfen Sie zuerst die Verfügbarkeit: Die Constraint Rules Engine erfordert Revenue Cloud Growth oder Advanced und ist weder in der Government Cloud noch in Orgs in der EU Operating Zone verfügbar.
+Der Konfigurator in Revenue Cloud mit der Constraint Rules Engine reicht für technische Produkte, wenn sich die Regeln als Beziehungen zwischen Attributen und Bestandteilen schreiben lassen und jemand beim Hersteller sie nach dem Go-live pflegt. Am meisten lohnt sich die Constraint Rules Engine bei voneinander abhängigen Attributen, deren Wenn-dann-Regeln nach Produktänderungen schnell inkonsistent werden. Ein externer Konfigurator sollte bleiben, wenn die Regeln in SAP-Variantenkonfiguration oder PLM liegen und dort geprüft werden oder Konstrukteure anhand von Zeichnungen konfigurieren. Prüfen Sie zuerst die Verfügbarkeit: Die Constraint Rules Engine erfordert Revenue Cloud Growth oder Advanced und ist weder in der Government Cloud noch in Orgs in der EU Operating Zone verfügbar.
 
 ## Was kann der Konfigurator in Revenue Cloud?
 
 Der Product Configurator ist die Oberfläche, in der der Vertrieb Optionen eines Bundles auswählt und Attributwerte setzt. Er übernimmt das konfigurierte Produkt in Angebot oder Auftrag, und Konfigurationen lassen sich speichern und wiederverwenden, so die [Trailhead-Einheit zum Konfigurator](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/get-started-with-product-configurator). Trailhead nennt drei Ansätze, die mit der Produktkomplexität wachsen: einfache Validierungsregeln, Auswahlregeln und Constraint-basierte Modellierung. (Salesforce Help nennt das Produkt inzwischen Revenue Management, Trailhead Agentforce Revenue Management, und die Lizenzen heißen weiterhin Revenue Cloud Growth und Advanced; der [Artikel zu den Produktnamen](../revenue-cloud-produktnamen-rlm-rca/) ordnet das.)
 
-Dahinter stehen zwei Regelwerke, die jeweils in den Revenue Settings eingeschaltet werden. Welches eine Transaktion auswertet, wird in ihrem Transaktionsverarbeitungstyp festgelegt, mit AdvancedConfigurator als Regel-Engine für Constraint-Regeln. Planen Sie das deshalb als Auswahl und Migration pro Produktlinie, nicht als zwei übereinanderliegende Ebenen:
+Dahinter stehen zwei Regel-Engines, die jeweils in den Revenue Settings aktiviert werden. Welches eine Transaktion auswertet, wird in ihrem Transaktionsverarbeitungstyp festgelegt, mit AdvancedConfigurator als Regel-Engine für Constraint-Regeln. Planen Sie das deshalb als Auswahl und Migration pro Produktlinie, nicht als zwei übereinanderliegende Ebenen:
 
 - **Konfigurationsregeln auf der Business Rules Engine.** Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/use-product-configurator-with-business-rules-engine) und [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.product_configurator_configuration_rule_details.htm&language=en_US&type=5) sind das Bedingungs-Aktions-Regeln: validieren, aufnehmen oder voraussetzen, ausschließen, automatisch hinzufügen und entfernen, ausblenden oder deaktivieren sowie Standardwerte, Mengen und Attributwerte setzen. Sie gelten auf Ebene der Transaktion, des Bundles oder des Produkts und werden per Klick gebaut.
 - **Die Constraint Rules Engine.** Salesforce nennt sie die Lösung "for complicated, high-volume configurations". Sie arbeitet mit Constraint-Modellen und prüft laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/explore-product-configurator-with-constraint-rules-engine) alle möglichen Kombinationen der Produktauswahl und filtert ungültige in Echtzeit heraus.
@@ -55,7 +55,7 @@ Trailhead vergleicht beide Ansätze in einer Tabelle, die ich hier zusammenfasse
 
 Für einen Maschinenbauer ist die Grenze recht klar. Eine Pumpe mit fünf Optionen und drei Ausschlüssen funktioniert gut mit Konfigurationsregeln, und viele Abhängigkeiten lassen sich weiterhin mit ihren Aktionen ausdrücken. Eine Maschine, bei der Rahmengröße, Antriebsleistung, Spannung, Steuerung und Sicherheitskategorie voneinander abhängen, braucht schnell Dutzende Wenn-dann-Regeln, die sich nach der nächsten Produktänderung widersprechen. Dort lohnt sich die Constraint Engine.
 
-Der Developer Guide zeigt ein passendes Beispiel mit einem Stromaggregat: Ein Tabellen-Constraint listet die gültigen Kombinationen aus Spannung und Betriebsart, und ein ungültiges Paar erzeugt die Meldung "Selected Voltage is not compatible with the required Duty Rating". Genau solche Verträglichkeitstabellen pflegen Anwendungstechniker in der Fertigung oft in Excel.
+Der Developer Guide zeigt ein passendes Beispiel mit einem Stromaggregat: Ein Tabellen-Constraint listet die gültigen Kombinationen aus Spannung und Betriebsart, und ein ungültiges Paar erzeugt die Meldung "Selected Voltage is not compatible with the required Duty Rating". Genau solche Kompatibilitätstabellen pflegen Anwendungstechniker in der Fertigung oft in Excel.
 
 ## Was ist CML, und wer schreibt es?
 
@@ -65,7 +65,7 @@ Es gibt zwei Editoren. Visual Builder ist eine No-Code-Oberfläche für einfache
 
 Meine Sicht: CML ist Code, auch wenn ein Teil davon zusammengeklickt wird. Ein Modell für eine Maschinenfamilie mit einigen hundert Zeilen braucht dieselbe Behandlung wie Apex: Versionskontrolle, Review und Tests. Wer es pflegt, muss in Typen, Wertebereichen und Kardinalitäten denken. In den meisten Fertigungsunternehmen ist das weder der klassische Admin noch der Anwendungstechniker, der die Regeln kennt. Planen Sie beide ein, als Team.
 
-Ein nützliches Detail: Tabellen-Constraints können ihre Zeilen laut Developer Guide aus einem Standard- oder Custom-Objekt in Salesforce importieren. Eine Verträglichkeitstabelle, die in SAP oder im PLM gepflegt wird, lässt sich so über die Schnittstelle in ein Custom-Objekt laden, statt sie von Hand in CML abzutippen. Das führende System bleibt draußen, die Prüfung läuft in Salesforce; prüfen Sie die dokumentierten Laufzeit- und Tabellengrenzen, bevor Sie große Tabellen laden.
+Ein nützliches Detail: Tabellen-Constraints können ihre Zeilen laut Developer Guide aus einem Standard- oder Custom-Objekt in Salesforce importieren. Eine Kompatibilitätstabelle, die in SAP oder im PLM gepflegt wird, lässt sich so über die Schnittstelle in ein Custom-Objekt laden, statt sie von Hand in CML abzutippen. Das führende System bleibt draußen, die Prüfung läuft in Salesforce; prüfen Sie die dokumentierten Laufzeit- und Tabellengrenzen, bevor Sie große Tabellen laden.
 
 ## Testziel: unter 100 Millisekunden pro Modelllauf
 
@@ -94,7 +94,7 @@ Wer ein Modell ohne diese Fälle ändert, findet den Fehler beim Kunden. Wie Tes
 
 ## Wann sollten Sie einen externen Konfigurator behalten?
 
-Laut Trailhead verbindet sich ein Drittanbieter-Konfigurator über APIs mit Salesforce und ermöglicht eigene Oberflächen und Abläufe. Salesforce kann je nach Integrationsmuster Preise, Produktdaten und Angebote weiter verantworten. Die Anbindung lässt sich in beide Richtungen bauen, die entscheidende Frage ist also, wo die Regeln leben sollen.
+Laut Trailhead verbindet sich ein Drittanbieter-Konfigurator über APIs mit Salesforce und ermöglicht eigene Oberflächen und Abläufe. Salesforce kann je nach Integrationsmuster weiterhin die Preisfindung, die Produktdaten und die Angebotserstellung übernehmen. Die Anbindung lässt sich in beide Richtungen bauen, die entscheidende Frage ist also, wo die Regeln leben sollen.
 
 Ich schaue zuerst darauf, wo sie heute liegen, dann auf Änderungshäufigkeit, Verantwortliche und Laufzeitanforderungen:
 
@@ -102,11 +102,11 @@ Ich schaue zuerst darauf, wo sie heute liegen, dann auf Änderungshäufigkeit, V
 - **In der SAP-Variantenkonfiguration.** Prüft SAP die Konfiguration beim Auftragseingang noch einmal, gibt es nach einem Nachbau in CML zwei Regelwerke. Sie laufen bei der ersten Änderung auseinander, die nur an einer Stelle gepflegt wird. Hier lasse ich entweder SAP führen und rufe es auf, oder ich verlege die Führung nach Salesforce, und SAP übernimmt das Ergebnis. Beides funktioniert, zwei führende Systeme für dieselbe Regel nicht. Eine Laufzeitkopie ist in Ordnung, wenn Synchronisierung und Versionierung ausdrücklich geregelt sind. Dasselbe Argument gilt für Agenten: Geschäftsregeln gehören an eine deterministische Stelle, wie in [Agent Script: Geschäftsregeln gehören nicht ins LLM](../agent-script-regeln-statt-llm/).
 - **Im PLM oder in einem Konstruktionskonfigurator**, der Zeichnungen oder Stücklisten erzeugt. Dann bleibt der externe Konfigurator, und Salesforce erhält das konfigurierte Produkt mit seinen preisrelevanten Attributen.
 
-Für Angebote mit KI hat das eine Nebenwirkung. Ein Agent kann nur Regeln einhalten, die er aufrufen kann. Liegen die Regeln außerhalb von Salesforce, lasse ich konfigurierte Maschinen beim Innendienst, wie in [KI-Angebote für Händler: Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschrieben.
+Für Angebote mit KI hat das eine Nebenwirkung. Ein Agent kann nur Regeln einhalten, die er aufrufen kann. Liegen die Regeln außerhalb von Salesforce, überlasse ich Angebote für konfigurierte Maschinen dem Innendienst, wie in [KI-Angebote für Händler: Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschrieben.
 
 ## Rechenbeispiel: drei Produktlinien, eine bleibt in SAP
 
-Ein Maschinenbauer hat drei Produktlinien. Zwei pflegen Anwendungstechniker in Excel mit rund 150 Verträglichkeitsregeln. Die dritte nutzt die SAP-Variantenkonfiguration mit Beziehungswissen, das die Fertigung bei jedem Auftrag prüft.
+Ein Maschinenbauer hat drei Produktlinien. Zwei pflegen Anwendungstechniker in Excel mit rund 150 Kompatibilitätsregeln. Die dritte nutzt die SAP-Variantenkonfiguration mit Beziehungswissen, das die Fertigung bei jedem Auftrag prüft.
 
 Meine Empfehlung in diesem Fall, vorausgesetzt die Org liegt nicht in der EU Operating Zone und die 150 Regeln lassen sich in Attribute und Tabellen gültiger Kombinationen normalisieren: Die beiden Excel-Linien gehen in Constraint-Modelle, mit Tabellen-Constraints aus einem Custom-Objekt, Regressionsfällen pro Linie und einem benannten Verantwortlichen im Produktmanagement. Die SAP-Linie behält vorerst ihren Konfigurator. Salesforce erhält das konfigurierte Ergebnis über eine Schnittstelle, bepreist es und erstellt das Angebot. Nach einem Jahr kann der Hersteller entscheiden, ob die dritte Linie folgt, auf Basis des echten Pflegeaufwands statt Annahmen.
 

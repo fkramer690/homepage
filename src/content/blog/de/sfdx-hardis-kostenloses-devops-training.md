@@ -11,7 +11,7 @@ categories: [devops]
 tags: [sfdx-hardis, DevOps-Training, Release-Management, DORA-Metriken]
 takeaways:
   - "In 27 Labs auf drei Leveln entsteht eine durchgängige Salesforce-Referenz-Pipeline auf kostenlosen Orgs, ohne bezahltes Abonnement."
-  - "Badges gibt es für echte Arbeit statt für Quizfragen: Ein Job prüft ein Level und alle darunterliegenden erneut am öffentlichen Repository."
+  - "Badges gibt es für praktische Arbeit statt für Quizfragen: Ein Job führt alle Checks bis zum jeweiligen Level am eigenen öffentlichen Repository erneut aus."
   - "Selbst mit rund zwei Jahren sfdx-hardis-Erfahrung und soliden Git-Kenntnissen habe ich für alle drei Badges fast einen ganzen Tag gebraucht."
   - "Für meine Arbeitsweise ist es der nützlichste Salesforce-DevOps-Kurs, den ich gemacht habe, vor Kursen von Gearset, Flosum und Copado."
   - "Level 3 ist der wertvollste Teil für alle, die Releases verantworten: Pull-Request-Reviews, UAT, Produktion, DORA-Metriken, Hotfixes und Monitoring."
@@ -21,7 +21,7 @@ faq:
   - q: "Wie lange dauert das sfdx-hardis-Training?"
     a: "Der Kurs nennt etwa 2 h 15 für Level 1, etwa 4 h für Level 2 und etwa 6 h 55 für Level 3. Zusammen sind das etwa 13 Stunden. Mit Vorerfahrung habe ich für alle drei fast einen Tag gebraucht."
   - q: "Für wen ist das sfdx-hardis-Training gedacht?"
-    a: "Level 1 und 2 richten sich an alle, die User Stories bauen und ausliefern, auch Admins und Berater. Level 3 richtet sich an Release Manager, die die Pipeline bis in die Produktion verantworten."
+    a: "Level 1 und 2 richten sich an alle, die User Stories umsetzen und bereitstellen, darunter Admins und Berater. Level 3 richtet sich an Release Manager, die die Pipeline bis in die Produktion verantworten."
   - q: "Ist das sfdx-hardis-Badge eine Zertifizierung?"
     a: "Nein. Cloudity beschreibt es ausdrücklich als Badge, nicht als Zertifizierung. Es ist ein stärkerer Nachweis praktischer Arbeit als ein Quiz, weil ein automatischer Job Ihr eigenes Repository prüft."
 ---
@@ -38,11 +38,11 @@ Wenn Sie das Tool noch nicht kennen, starten Sie mit meiner [Einführung in sfdx
 
 ## Was deckt das sfdx-hardis-Training ab?
 
-Das [Training](https://sfdx-hardis.cloudity.com/salesforce-devops-training/) stammt von Cloudity und läuft komplett auf kostenlosen Ressourcen: einem GitHub-Account, VS Code, Node.js, Salesforce CLI, GitHub CLI und kostenlosen Salesforce Developer Edition Orgs, für Level 3 ist eine zweite erforderlich. Wer auf dem eigenen Rechner keine Software installieren darf, kann Salesforce Agentforce Vibes IDE nutzen, früher Code Builder. Jedes Lab enthält Screenshots der echten Oberflächen. Der Kurs besteht aus drei aufeinanderfolgenden Leveln:
+Das [Training](https://sfdx-hardis.cloudity.com/salesforce-devops-training/) stammt von Cloudity und lässt sich ausschließlich mit kostenlosen Ressourcen absolvieren: einem GitHub-Account, VS Code, Node.js, Salesforce CLI, GitHub CLI und kostenlosen Salesforce Developer Edition Orgs, für Level 3 ist eine zweite erforderlich. Wenn Sie auf Ihrem Rechner keine Software installieren können, lässt sich das Training auch in Salesforce Agentforce Vibes IDE ausführen, dem früheren Code Builder. Jedes Lab enthält Screenshots der echten Oberflächen. Der Kurs besteht aus drei aufeinanderfolgenden Leveln:
 
 ```schritte
 Level 1, Contributor Basics | 7 Labs · etwa 2 h 15
-  VS Code, Git und sfdx-hardis installieren, Dev Hub, Scratch Orgs und Pipeline einrichten, auf einem Branch arbeiten, ein eigenes Feld bauen, die Änderung veröffentlichen, den Deployment-Check bestehen und mergen.
+  VS Code, Git und sfdx-hardis installieren, Dev Hub, Scratch Orgs und Pipeline einrichten, auf einem Branch arbeiten, ein benutzerdefiniertes Feld erstellen, die Änderung veröffentlichen, den Deployment-Check bestehen und mergen.
 Level 2, Contributor Advanced | 9 Labs · etwa 4 h
   Eine fehlende Abhängigkeit beheben, Deployment Actions für Datenkorrekturen und Referenzdaten, Quality Gate und Apex-Testabdeckung, Permission Sets und Profile, einen Merge-Konflikt lösen und einen Commit mit falschen Metadaten korrigieren.
 Level 3, Release Manager | 11 Labs · etwa 6 h 55
@@ -69,7 +69,7 @@ fazit: Jedes Badge prüft ein Job, der alle Checks am eigenen Repository erneut 
 
 ## Badges gibt es nur für geprüfte Arbeit
 
-Das unterscheidet den Kurs von anderen. Es gibt kein Multiple-Choice-Quiz. Am Ende jedes Levels klont ein Job Ihr öffentliches Repository und führt die Checks dieses Levels und aller darunterliegenden Level erneut aus. Nur wenn alles besteht, erhalten Sie das Badge, das Sie auf LinkedIn teilen können. Cloudity sagt klar, dass es ein Badge ist und keine Zertifizierung. Für mich ist das das ehrlichere Modell: Es ist ein stärkerer Nachweis praktischer Arbeit als jedes Quiz.
+Das unterscheidet den Kurs von anderen. Es gibt kein Multiple-Choice-Quiz. Am Ende jedes Levels klont ein Job Ihr öffentliches Repository und führt die Checks dieses Levels und aller darunterliegenden Level erneut aus. Nur wenn alle Checks erfolgreich sind, erhalten Sie das Badge, das Sie auf LinkedIn teilen können. Cloudity sagt klar, dass es ein Badge ist und keine Zertifizierung. Für mich ist das das ehrlichere Modell: Es ist ein stärkerer Nachweis praktischer Arbeit als jedes Quiz.
 
 Meine [drei Badges](https://sfdx-hardis-training.cloudity.com/badges/fkramer/) habe ich am 18. und 20. Oktober 2026 erhalten, mit allen Checks auf allen drei Leveln bestanden.
 
@@ -83,7 +83,7 @@ Auch mit Erfahrung war einiges neu oder hat mir einen frischen Blick gegeben:
 4. **Die DevOps-Pipeline-Seite.** Statt alles direkt im Repository zu prüfen, zeigt die Pipeline-Ansicht in der VS-Code-Erweiterung den Stand von Branches und Umgebungen an einer Stelle.
 5. **DORA-Metriken.** Zum ersten Mal habe ich mir die DORA-Metriken in sfdx-hardis angesehen: Deployment-Häufigkeit, Durchlaufzeit von Änderungen, Fehlerquote von Änderungen und Wiederherstellungszeit. Das sind Zahlen, die ein Lenkungsausschuss versteht.
 
-Ich werde nicht jedes Feature in jedem Projekt einsetzen. Aber zu wissen, was es gibt, hilft mir, besser zu beraten und für jedes Team den passenden Ansatz zu empfehlen. Gerade für Admins können einige dieser Helfer die tägliche Release-Arbeit deutlich erleichtern. Und wer Kunden bei der Auswahl ihrer DevOps-Werkzeuge berät, sollte die Optionen aus eigener Hand kennen und nicht nur aus Präsentationen.
+Ich werde nicht jedes Feature in jedem Projekt einsetzen. Aber zu wissen, was es gibt, hilft mir, besser zu beraten und für jedes Team den passenden Ansatz zu empfehlen. Gerade für Admins können einige dieser Helfer die tägliche Release-Arbeit deutlich erleichtern. Und wer Kunden bei der Auswahl ihrer DevOps-Werkzeuge berät, sollte die Optionen aus erster Hand und aus eigener praktischer Erfahrung kennen.
 
 ## Für wen lohnt sich das Training?
 
@@ -103,4 +103,4 @@ Die offiziellen Zeiten ergeben zusammen etwa 13 Stunden. Planen Sie mit Erfahrun
 Arbeiten Sie jedes Level am besten am Stück durch und nicht verteilt über Wochen, denn die Labs bauen direkt aufeinander auf und die Zusammenhänge zwischen Branch, Pull Request, Pipeline und Org werden so am deutlichsten.
 ```
 
-Der Kurs ist kostenlos und praxisnah, und das Badge hat Aussagekraft, weil es geprüft wird. Er ersetzt nicht Ihre eigene Enterprise-Konfiguration: geschützte Branches, Freigaberechte, Secrets, Datenschutz und mehrere echte Partner sind nicht Teil eines Trainingsprojekts. Badges erfordern ein öffentliches Repository. Verwenden Sie deshalb nur das fiktive Trainingsprojekt und niemals Kundenmetadaten oder Secrets. Wer in seinem Team Salesforce DevOps aufbauen will, findet hier einen guten Einstieg. Großes Lob und Dank an Nicolas Vuillamy und das Cloudity-Team.
+Der Kurs ist kostenlos und praxisnah, und das Badge hat Aussagekraft, weil es geprüft wird. Er ersetzt nicht Ihre eigene Enterprise-Konfiguration: geschützte Branches, Freigaberechte, Secrets, Datenschutz und mehrere echte Partner sind nicht Teil eines Trainingsprojekts. Badges erfordern ein öffentliches Repository. Verwenden Sie deshalb nur das fiktive Trainingsprojekt und niemals Kundenmetadaten oder Secrets. Großes Lob und Dank an Nicolas Vuillamy und das Cloudity-Team.

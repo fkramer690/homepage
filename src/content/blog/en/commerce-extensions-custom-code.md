@@ -1,6 +1,6 @@
 ---
 title: "Commerce extensions: custom code with less release risk"
-description: "How to build custom pricing, stock and checkout logic in Salesforce B2B Commerce with extensions, so it carries less release risk and survives a change of partner."
+description: "How to build custom pricing, stock and checkout logic in Salesforce B2B Commerce with extensions, so it carries less release risk and survives a partner change."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: en

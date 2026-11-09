@@ -15,7 +15,7 @@ takeaways:
   - "Jede Veränderung hat eine technische Seite, die Lösung selbst, und eine menschliche: ob die Menschen, die damit arbeiten sollen, sie annehmen."
   - "Projektmanagement liefert die Lösung, Change Management hilft den Menschen, sie anzunehmen. ITIL 4 Change Enablement steuert Änderungen an IT-Systemen."
   - "Prosci gliedert Change Management in drei Phasen: Vorgehen vorbereiten, Veränderung steuern, Ergebnisse sichern."
-  - "Im Prosci-Benchmarking erreichten Projekte mit sehr gutem Change Management ihre Ziele etwa siebenmal so oft wie solche mit schlechtem."
+  - "Im Prosci-Benchmarking erreichten Projekte mit hervorragendem Change Management ihre Ziele etwa siebenmal so oft wie solche mit schlechtem."
   - "Der wichtigste Erfolgsfaktor ist ein Sponsor im Management, der sichtbar hinter der Veränderung steht."
 faq:
   - q: "Was ist Change Management einfach erklärt?"
@@ -39,10 +39,10 @@ Jede Veränderung im Unternehmen hat zwei Seiten. Die technische Seite ist die L
 
 Dabei gibt es zwei Blickwinkel, die zusammengehören:
 
-- **Die einzelne Person.** Jeder Mensch durchläuft eine Veränderung für sich: Er muss verstehen, warum sich etwas ändert, mitmachen wollen, wissen, wie es geht, es im Alltag können und dabei bleiben. Das [ADKAR-Modell](https://www.prosci.com/blog/adkar-model) von Prosci beschreibt genau diese fünf Stufen.
+- **Die einzelne Person.** Menschen durchlaufen Veränderungen individuell: Sie müssen verstehen, warum sich etwas ändert, mitmachen wollen, wissen, wie es geht, es im Alltag umsetzen können und dabeibleiben. Das [ADKAR-Modell](https://www.prosci.com/blog/adkar-model) von Prosci beschreibt genau diese fünf Stufen.
 - **Die Organisation.** Ein Unternehmen braucht einen Plan, der alle betroffenen Gruppen erfasst: wer wann was erfährt, wer die Veränderung trägt, wie Schulungen und Kommunikation zusammenspielen und woran Erfolg gemessen wird.
 
-Typische Anlässe sind die Einführung einer neuen Software wie eines CRM- oder ERP-Systems, neue Prozesse in Vertrieb oder Service, eine Reorganisation, ein Standortwechsel oder eine Fusion. Veränderungsmanagement ist übrigens die deutsche Bezeichnung für dasselbe Fachgebiet.
+Typische Anlässe sind die Einführung einer neuen Software wie eines CRM- oder ERP-Systems, neue Prozesse in Vertrieb oder Service, eine Reorganisation, ein Standortwechsel oder eine Fusion.
 
 ## Worin unterscheidet sich Change Management von Projektmanagement?
 
@@ -50,16 +50,16 @@ Die drei Begriffe werden oft verwechselt, gerade in IT-Projekten. Sie beantworte
 
 | Disziplin | Leitfrage | Ergebnis, wenn es gelingt |
 |---|---|---|
-| Projektmanagement | Wird die Lösung in Zeit, Budget und Qualität fertig? | Die Lösung ist geliefert |
+| Projektmanagement | Wird die Lösung termingerecht, innerhalb des Budgets und in der vereinbarten Qualität bereitgestellt? | Die Lösung ist geliefert |
 | Change Management | Nehmen die Menschen die Lösung an und arbeiten damit? | Die Lösung wird genutzt |
 | Change Enablement nach ITIL 4, früher IT-Change-Management | Wird eine Änderung an einem System kontrolliert bewertet, freigegeben und eingeplant? | Die Systeme bleiben stabil |
 
 Projektmanagement und Change Management laufen parallel und brauchen einander. Ein Projekt kann pünktlich und im Budget fertig werden und trotzdem scheitern, weil nach dem Start alle weiter mit ihren alten Listen arbeiten. IT-Change-Management, das ITIL 4 heute Change Enablement nennt, ist ein eigenes Thema: Es bewertet Risiken, genehmigt Änderungen und plant sie für IT-Produkte und -Services ein. Wer im Netz nach „Change Management IT“ sucht, landet meist dort.
 
-Wie viel das organisatorische Change Management ausmacht, zeigt die Forschung von Prosci. Das Institut befragt seit 1998 Projekte nach ihren Erfahrungen mit Veränderungen. In der Zusammenfassung der 12. Ausgabe der Studie [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) erreichten Projekte mit sehr gutem Change Management ihre Ziele etwa siebenmal so oft wie Projekte mit schlechtem. Die zugrunde liegende Grafik beruht auf den kumulierten Benchmarking-Daten von Prosci mit mehr als 10.800 Befragten; an der 12. Ausgabe selbst nahmen 2.668 Personen teil.
+Wie viel das organisatorische Change Management ausmacht, zeigt die Forschung von Prosci. Das Institut untersucht seit 1998 die Erfahrungen aus Veränderungsprojekten. In der Zusammenfassung der 12. Ausgabe der Studie [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) erreichten Projekte mit hervorragendem Change Management ihre Ziele etwa siebenmal so oft wie Projekte mit schlechtem. Die zugrunde liegende Grafik beruht auf den kumulierten Benchmarking-Daten von Prosci mit mehr als 10.800 Befragten; an der 12. Ausgabe selbst nahmen 2.668 Personen teil.
 
 ```kennzahlen
-88 % | Projekte mit sehr gutem Change Management, die ihre Ziele erreichen oder übertreffen
+88 % | Projekte mit hervorragendem Change Management, die ihre Ziele erreichen oder übertreffen
 13 % | Projekte mit schlechtem Change Management, die ihre Ziele erreichen oder übertreffen
 10.800+ | Befragte in den kumulierten Benchmarking-Daten von Prosci
 quelle: Prosci, Best Practices in Change Management, Zusammenfassung der 12. Ausgabe (2023)
@@ -95,10 +95,10 @@ In Deutschland kommt eine Rolle hinzu, die in internationalen Leitfäden oft feh
 
 ## Wie sieht Change Management bei einer Software-Einführung aus?
 
-Nehmen wir die Einführung eines CRM-Systems wie Salesforce in einem Unternehmen mit Vertrieb, Innendienst und Service. Technisch ist das System nach einigen Monaten bereit. Ob es genutzt wird, entscheidet sich an anderer Stelle:
+Nehmen wir die Einführung eines CRM-Systems wie Salesforce in einem Unternehmen mit Außendienst, Innendienst und Service. Technisch ist das System nach einigen Monaten bereit. Ob es genutzt wird, entscheidet sich an anderer Stelle:
 
-1. **Gruppen und Änderungen festhalten.** Für jede Gruppe schriftlich: Was ändert sich im Alltag? Der Außendienst pflegt Besuchsberichte künftig in der App statt in einer Tabelle, der Innendienst erstellt Angebote im System statt in Word.
-2. **Den Sponsor sichtbar machen.** Die Vertriebsleitung erklärt im eigenen Meeting, warum Prognosen künftig aus dem System kommen, und fragt danach im Monatsbericht.
+1. **Gruppen und Änderungen festhalten.** Für jede Gruppe schriftlich: Was ändert sich im Alltag? Der Außendienst erfasst Besuchsberichte künftig in der App statt in einer Tabelle, der Innendienst erstellt Angebote im System statt in Word.
+2. **Den Sponsor sichtbar machen.** Die Vertriebsleitung erklärt in einer eigenen Besprechung, warum Forecasts künftig aus dem System kommen, und fordert diese im monatlichen Reporting ein.
 3. **Je Gruppe die ADKAR-Stufe prüfen.** Der Innendienst will mitmachen, kennt aber die neuen Abläufe nicht: Hier hilft Schulung am echten Fall. Der Außendienst sieht keinen Nutzen: Hier hilft ein Gespräch mit der Führungskraft, eine Schulung ändert nichts.
 4. **Nutzung messen.** Es zählt, ob Datensätze angelegt und gepflegt werden; die Zahl der Schulungen sagt darüber wenig. Berichte im System zeigen das zuverlässiger als eine Umfrage.
 
@@ -108,6 +108,6 @@ Welche Spannweite solche Projekte haben, zeigen zwei aus meiner Arbeit: ein welt
 
 Nicht jede Veränderung braucht eine externe Change-Managerin. Ändert sich für ein Team von zehn Personen ein einzelner Ablauf, reicht eine Führungskraft, die ADKAR als Checkliste nutzt und die fünf Fragen ehrlich beantwortet.
 
-Unterstützung von außen lohnt sich, wenn mehrere Gruppen oder Länder betroffen sind, wenn intern niemand Zeit und Erfahrung für die Planung hat oder wenn der Sponsor noch unklar ist. Dann hilft ein Blick von außen, der die Rollen klärt, die Führungskräfte begleitet und die Arbeit am Ende an interne Verantwortliche übergibt. Für Salesforce-Programme gibt es dafür die [Change Management Beratung für Salesforce](../../leistungen/change-management/).
+Unterstützung von außen lohnt sich, wenn mehrere Gruppen oder Länder betroffen sind, wenn intern niemand Zeit und Erfahrung für die Planung hat oder wenn der Sponsor noch unklar ist. Dann hilft ein Blick von außen, der die Rollen klärt, die Führungskräfte begleitet und die Arbeit am Ende an interne Verantwortliche übergibt. Für Salesforce-Programme gibt es dafür die [Change-Management-Beratung für Salesforce](../../leistungen/change-management/).
 
 *Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.*

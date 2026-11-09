@@ -10,7 +10,7 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [Revenue Cloud, Pay-per-Use, Usage Management, Abrechnung, IoT, Maschinenbau]
 takeaways:
-  - "Die eigentliche Arbeit liegt außerhalb von Salesforce: ein verlässlicher Zähler je Maschine, der Seriennummer zugeordnet und vor dem Rating geprüft."
+  - "Die eigentliche Arbeit liegt außerhalb von Salesforce: je Maschine ein verlässlicher Zähler, einer Seriennummer zugeordnet und vor dem Rating geprüft."
   - "Nach Salesforce gehen nur abrechnungsrelevante Nutzungsdaten, bei Stundenverträgen ein Satz je Maschine und Tag; Zeitreihen bleiben im IoT-System."
   - "Der Vertrag legt Nutzung, gültigen Zähler, Umgang mit Datenlücken und Mindestgebühr fest, bevor jemand eine Rate Card anlegt."
   - "Consumption, Wallets und Nutzungsrechnungen brauchen Revenue Cloud Billing zusätzlich zu Advanced, Preis auf Anfrage und Abrechnung in Billing Events."
@@ -18,15 +18,15 @@ faq:
   - q: "Kann Salesforce Revenue Cloud Betriebsstunden von Maschinen abrechnen?"
     a: "Technisch ja. Mit Usage Management definieren Sie eine Nutzungsressource wie Betriebsstunden, verkaufen sie mit einem Kontingent und einem Mehrpreis und bewerten die erfassten Stunden zu einer Liable Summary für die Abrechnung. Salesforce dokumentiert Beispiele aus Cloud-Speicher und Telekommunikation, die Anbindung der Maschinendaten ist Ihre eigene Integrationsarbeit."
   - q: "Was ist eine Liable Summary in Revenue Cloud?"
-    a: "Laut Trailhead ist die Liable Summary der Betrag, den ein Kunde für die Nutzung eines Zeitraums schuldet. Sie entsteht aus den bewerteten Nutzungsdatensätzen, etwa durch den geplanten Flow Orchestrate Usage Management, und geht an die Abrechnung für die Rechnung."
+    a: "Laut Trailhead ist die Liable Summary der Betrag, den ein Kunde für die Nutzung in einem Zeitraum schuldet. Sie entsteht aus den bewerteten Nutzungsdatensätzen, etwa durch den geplanten Flow Orchestrate Usage Management, und geht an die Abrechnung für die Rechnung."
   - q: "Woher kommen die Nutzungsdaten für Pay-per-Use?"
-    a: "Von der Maschine, meist über die Steuerung und eine IoT-Plattform oder einen Historian. Salesforce erhält Nutzungsdatensätze mit Zeitstempel, Account, Asset, Nutzungsressource, Menge und einer eindeutigen Kennung. Die Zuordnung jedes Zählers zur Seriennummer und die Prüfung auf Lücken und Zählerstände nach einem Tausch gehören zu Ihrer Schnittstelle."
+    a: "Von der Maschine, meist über die Steuerung und eine IoT-Plattform oder einen Historian. Salesforce erhält Nutzungsdatensätze mit Zeitstempel, Account, Asset, Nutzungsressource, Menge und einer eindeutigen Kennung. Die Zuordnung jedes Zählers zu einer Seriennummer und die Prüfung auf Lücken und Zählerrücksetzungen gehören zu Ihrer Schnittstelle."
   - q: "Welche Lizenz brauche ich für nutzungsbasierte Abrechnung in Revenue Cloud?"
     a: "Rate Management und Usage Selling sind in Revenue Cloud Growth und Advanced enthalten. Laut dem Salesforce-Lizenzvergleich brauchen Consumption und Wallet Management sowie nutzungsbasierte Rechnungen das Zusatzprodukt Revenue Cloud Billing, das außerdem Advanced voraussetzt und dessen Preis auf Anfrage genannt wird. Lassen Sie die Kombination im Bestellformular festhalten."
 draft: false
 ---
 
-Ein Maschinenbauer kann Betriebsstunden oder Stückzahlen mit Revenue Cloud nutzungsbasiert abrechnen. Usage Management legt fest, was gemessen wird, bewertet die Nutzung mit Kontingenten und Rate Cards, führt Guthaben in Wallets und übergibt eine Liable Summary an die Abrechnung. Salesforce erklärt das allerdings mit Cloud-Speicher und Mobilfunkverträgen. Bei Maschinen liegt die schwierige Arbeit außerhalb von Salesforce: ein verlässlicher Zähler je Maschine, der Seriennummer zugeordnet und vor dem Rating geprüft, und ein Vertrag, der sagt, was eine Stunde ist. Ich würde Pay-per-Use mit Revenue Cloud nur umsetzen, wenn diese Datenstrecke steht und die Nutzungsrechnung ohnehin aus Salesforce kommt.
+Ein Maschinenbauer kann Betriebsstunden oder Stückzahlen mit Revenue Cloud nutzungsbasiert abrechnen. Usage Management legt fest, was gemessen wird, bewertet die Nutzung mit Kontingenten und Rate Cards, führt Guthaben in Wallets und übergibt eine Liable Summary an die Abrechnung. Salesforce erklärt das allerdings mit Cloud-Speicher und Mobilfunkverträgen. Bei Maschinen liegt die schwierige Arbeit außerhalb von Salesforce: Sie brauchen je Maschine einen verlässlichen Zähler, der einer Seriennummer zugeordnet und vor dem Rating geprüft wird, sowie einen Vertrag, der definiert, was als Stunde zählt. Ich würde Pay-per-Use mit Revenue Cloud nur umsetzen, wenn diese Datenstrecke steht und die Nutzungsrechnung ohnehin aus Salesforce kommt.
 
 ## Was kann Revenue Cloud Usage Management?
 
@@ -38,7 +38,7 @@ Die [Einheit zu Komponenten und Rollen](https://trailhead.salesforce.com/content
 |---|---|
 | Usage Modeling | Verbrauchsprodukte, Nutzungsressourcen, Mengeneinheiten, Kontingente |
 | Rate Management | Regeln, die Nutzung in Beträge umrechnen |
-| Usage Selling | Nutzungsprodukte anbieten, bestellen und aktivieren |
+| Usage Selling | Nutzungsprodukte in Angeboten erfassen, bestellen und aktivieren |
 | Wallet Management | Wallets mit Guthaben je Nutzungsressource, gebunden an ein Asset, einen Account oder Vertrag |
 | Consumption Management | Verbrauch verfolgen, rechnungsfertige Zusammenfassungen erzeugen |
 
@@ -72,8 +72,8 @@ Liable Summary --> Rechnung
 
 Zwischen den beiden Systemen liegen die Prüfungen, an denen die Rechnung hängt:
 
-1. **Seriennummer zu Asset und Kunde.** Jeder Zähler muss auf das Asset zeigen, das an einen bestimmten Kunden verkauft wurde. Umgesetzte oder weiterverkaufte Maschinen brechen diese Zuordnung zuerst.
-2. **Zählerstände nach einem Tausch.** Nach einem Steuerungstausch beginnt der Zähler wieder bei null. Ein negativer Wert muss den Datensatz anhalten und darf keine Gutschrift erzeugen.
+1. **Seriennummer zu Asset und Account.** Jeder Zähler muss dem Asset und dem Account des Kunden zugeordnet sein, an den die Maschine verkauft wurde. Umgesetzte oder weiterverkaufte Maschinen brechen diese Zuordnung zuerst.
+2. **Zählerstände nach einem Tausch.** Nach einem Steuerungstausch beginnt der Zähler wieder bei null. Eine negative Differenz muss die Verarbeitung des Datensatzes stoppen und darf keine Gutschrift erzeugen.
 3. **Lücken.** Eine Maschine ist drei Tage offline, sendet nichts und danach einen großen Sprung. Ob das zulässig ist, regelt der Vertrag.
 4. **Dubletten.** Eine wiederholte Übertragung darf denselben Tag nicht zweimal abrechnen.
 
@@ -93,7 +93,7 @@ Bevor jemand eine Rate Card baut, müssen sich Recht, Finanzen und Vertrieb auf 
 
 - **Die Einheit.** Betriebsstunden, Laststunden, Zyklen oder Gutteile. Laststunden und Gutteile sind fairer für den Kunden und schwerer zu messen.
 - **Der maßgebliche Zähler.** Welches Gerät und welches System für die Rechnung zählen und wer korrigieren darf.
-- **Lücken und Ausfälle.** Schätzwert, letzter bekannter Wert oder keine Berechnung für Zeiträume ohne Daten.
+- **Lücken und Ausfälle.** Schätzwert, letzter bekannter Wert oder keine Abrechnung für Zeiträume ohne Daten.
 - **Mindestgebühr.** Eine Grundgebühr oder Mindestmenge sichert die Finanzierung der Maschine ab. Ohne sie kann ein Kunde die Maschine ein Quartal lang stehen lassen.
 - **Vorauszahlung oder nachträglich.** Ein vorausbezahltes Stundenpaket nutzt das Wallet als Budget; nach meiner Einschätzung ist nachträgliche Abrechnung für die meisten Industriekunden einfacher.
 - **Einwände.** Eine Frist, in der der Kunde widersprechen kann, und der Nutzungsnachweis, den Sie jeder Rechnung beilegen.

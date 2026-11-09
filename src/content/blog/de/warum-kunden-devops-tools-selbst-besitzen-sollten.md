@@ -1,6 +1,6 @@
 ---
 title: "Warum Kunden ihre DevOps-Tools selbst besitzen sollten"
-description: "Git-Repository, Pipeline, Jira, Miro: warum der Kunde und nicht der Umsetzungspartner die Arbeitsbereiche, Lizenzen und Zugriffsrechte eines Projekts kontrollieren sollte."
+description: "Git-Repository, Pipeline, Jira, Miro: warum der Kunde und nicht der Umsetzungspartner die Arbeitsbereiche, Lizenzen und Zugriffsrechte kontrollieren sollte."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09
 lang: de
@@ -13,13 +13,13 @@ takeaways:
   - "Arbeitsbereiche, Lizenzen, Admin-Rechte und Zugriffe gehören dem Kunden, vom Git-Repository und der Pipeline bis zu Jira, Confluence und Miro."
   - "Tools zu besitzen heißt nicht, eigene Server zu betreiben: Cloud-Dienste sind in Ordnung, solange Arbeitsbereich und Admin-Rechte beim Kunden liegen."
   - "Partner erhalten persönliche Zugriffe mit Rollen passend zu ihrer Aufgabe, für die Dauer der Zusammenarbeit, und ihre Arbeit bleibt in den Systemen des Kunden."
-  - "Tools im Besitz eines Partners schaffen Abhängigkeit, machen Partner schwer vergleichbar und gefährden die Historie beim Partnerwechsel."
+  - "Partnereigene Tools schaffen Abhängigkeiten, erschweren Partnervergleiche und gefährden Historie, Dokumentation und Entscheidungen am Ende der Zusammenarbeit."
   - "Kundeneigene Tools einzurichten kostet am Anfang wenig verglichen mit der späteren Korrektur bei einem Partnerausstieg."
 faq:
   - q: "Müssen Kunden ihre DevOps-Tools auf eigenen Servern betreiben?"
     a: "Nein. Cloud-Dienste wie GitHub, GitLab, Jira oder Miro sind in Ordnung. Entscheidend ist, dass Arbeitsbereich, Daten, Admin-Rechte und, soweit das Lizenzmodell es zulässt, der Vertrag beim Kunden liegen und nicht bei einem Umsetzungspartner."
-  - q: "Warum ist es ein Problem, wenn der Partner Jira oder das Git-Repository besitzt?"
-    a: "Dann hängt der Kunde für Zugriff, Historie und Dokumentation vom Partner ab. Endet die Zusammenarbeit oder kommt ein zweiter Partner dazu, müssen Daten migriert werden oder gehen verloren."
+  - q: "Warum ist es ein Problem, wenn die Jira-Site oder der Git-Arbeitsbereich dem Partner gehört?"
+    a: "Dann hängt der Kunde bei Zugriff, Historie und Dokumentation vom Partner ab. Endet die Zusammenarbeit oder kommt ein zweiter Partner hinzu, müssen Daten migriert werden oder gehen verloren. Außerdem lassen sich Partner nur schwer vergleichen."
   - q: "Welche Tools sollten dem Kunden gehören?"
     a: "Alles, was Projektwissen enthält oder Releases steuert: Salesforce-Orgs und Dev Hub, Git-Repository, CI/CD-Pipeline, Jira, Confluence, Miro, Passwort-Tresore, Integrationsuser und Zertifikate sowie Nebentools, in denen sich Wissen sammelt, etwa Chat-Kanäle und Arbeitsbereiche für API-Tests."
   - q: "Wie sollten Partner Zugriff erhalten?"
@@ -32,21 +32,21 @@ Kunden sollten ihre Salesforce-DevOps-Tools selbst besitzen, denn wer Arbeitsber
 
 Tools zu besitzen heißt, die Schlüssel in der Hand zu halten, egal wo die Software läuft. In der Praxis bedeutet das:
 
-- **Vertrag und Lizenzen** jedes Tools laufen auf den Kunden, soweit das Lizenzmodell es zulässt, und in jedem Fall behält der Kunde Admin-Kontrolle, Datenzugriff und Ausstiegsrechte,
+- **Die Verträge und Lizenzen** für jedes Tool laufen auf den Namen des Kunden, soweit das Lizenzmodell dies zulässt. In jedem Fall behält der Kunde die administrative Kontrolle, den Datenzugriff und die Ausstiegsrechte.
 - die **Admin-Rechte** liegen bei Mitarbeitenden des Kunden, nicht nur bei Partnern,
 - der **Arbeitsbereich** (die GitHub-Organisation, die Jira-Instanz, das Miro-Team) gehört dem Kunden,
 - **Partner werden eingeladen** in den Arbeitsbereich des Kunden, nicht umgekehrt.
 
 Eine leere GitHub-Organisation, eine Jira-Cloud-Instanz oder ein Miro-Team lassen sich an einem Nachmittag anlegen. Keine eigenen Server, kein Infrastrukturprojekt. Sie produktionsreif zu machen, mit Single Sign-on, Rollen und den Sicherheitsregeln des Kunden, braucht gezielte Vorbereitung. Der entscheidende Unterschied liegt aber darin, auf wessen Namen der Arbeitsbereich läuft und wer Zugriffe vergeben und entziehen kann.
 
-![Wem was in einem Salesforce-Programm gehört: Der Kunde besitzt Accounts, Lizenzen und Admin-Rechte, Git-Repository und CI/CD-Pipeline, Jira-, Confluence- und Miro-Bereiche, Salesforce-Orgs, Sandboxes und Dev Hub sowie Secrets, Integrationsuser und Zertifikate. Der Kunde vergibt und entzieht Zugriffe. Der Partner erhält persönliche, benannte Benutzer, Rollen passend zur Aufgabe und Zugriff nur für die Zusammenarbeit, die Arbeit bleibt in Kundensystemen. Verlässt ein Partner das Projekt, wird der Zugriff entzogen und nichts muss migriert werden.](../../../assets/blog/tool-ownership-de.png)
+![Wem was in einem Salesforce-Programm gehört: Der Kunde besitzt Accounts, Lizenzen und Admin-Rechte, Git-Repository und CI/CD-Pipeline, Jira-, Confluence- und Miro-Bereiche, Salesforce-Orgs, Sandboxes und Dev Hub sowie Secrets, Integrationsuser und Zertifikate. Der Kunde vergibt und entzieht Zugriffe. Der Partner erhält persönliche, namentlich zugeordnete Benutzerkonten und auf die Aufgabe beschränkte Rollen. Sein Zugriff gilt nur für die Dauer der Zusammenarbeit, und die Arbeit bleibt in den Systemen des Kunden. Verlässt ein Partner das Projekt, wird der Zugriff entzogen und nichts muss migriert werden.](../../../assets/blog/tool-ownership-de.png)
 
 ## Um welche Tools geht es?
 
 In einem typischen Salesforce-Programm verteilt sich Projektwissen und Kontrolle auf mehr Tools, als vielen bewusst ist:
 
 1. **Salesforce-Orgs, Sandboxes und Dev Hub.** Sie gehören meist schon dem Kunden. Prüfen Sie aber, wer die Systemadministrator-Accounts hält und ob sie persönlich sind. Der Dev Hub braucht besondere Aufmerksamkeit: Er besitzt Scratch-Orgs, Paketversionen und Namespaces. Für kundenspezifische Pakete gehört er deshalb in die Produktions-Org des Kunden und nicht in eine Developer Edition oder Trial-Org eines Partners.
-2. **Git-Repository und CI/CD-Pipeline.** Das Repository ist die Historie jeder Änderung, die Pipeline entscheidet, was in die Produktion kommt. Warum beides unverzichtbar ist, erkläre ich im Artikel [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/).
+2. **Git-Repository und CI/CD-Pipeline.** Das Repository enthält die Historie jeder Änderung. Die Pipeline entscheidet, was in die Produktion gelangt. Warum beides unverzichtbar ist, erkläre ich im Artikel [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/).
 3. **Jira oder Azure Boards.** User Stories, Akzeptanzkriterien, Fehler und Entscheidungen. Ohne sie kann später niemand erklären, warum etwas so gebaut wurde.
 4. **Confluence oder ein Wiki.** Architekturentscheidungen, Schnittstellenbeschreibungen, Betriebshandbücher.
 5. **Miro oder ähnliche Whiteboards.** Prozesslandkarten, Datenmodelle und Workshop-Ergebnisse, oft der einzige Ort, an dem das Zielbild je gezeichnet wurde.
@@ -59,7 +59,7 @@ Jedes dieser Tools kann im Account eines Partners landen, ohne dass es jemand en
 Solange die Zusammenarbeit gut läuft, merkt es niemand. Die Probleme zeigen sich, wenn sich etwas ändert:
 
 - **Die Zusammenarbeit endet.** Daten müssen exportiert und migriert werden. Je nach Tool und Migrationsweg können Konfigurationen, App-Daten, Verknüpfungen oder Versionshistorien verloren gehen. Manchmal hat der Export für einen scheidenden Partner schlicht keine Priorität.
-- **Ein zweiter Partner kommt dazu.** Dann braucht der neue Partner Zugriff auf den Arbeitsbereich eines Wettbewerbers, oder es entsteht ein zweiter Satz Tools. Standards driften auseinander und Teams überschreiben sich gegenseitig.
+- **Ein zweiter Partner kommt dazu.** Dann braucht der neue Partner Zugriff auf den Arbeitsbereich eines Wettbewerbers, oder es entsteht ein zweiter Satz Tools. Standards entwickeln sich auseinander, und die Teams überschreiben gegenseitig ihre Arbeit.
 - **Partner sind schwer vergleichbar.** Besitzt ein Partner Repository und Pipeline, besitzt er auch den Release-Prozess, und alle anderen Partner arbeiten nach seinen Regeln.
 - **Menschen gehen.** Ist der einzige Admin eines Tools ein Mitarbeiter des Partners, der den Job wechselt, tut sich sogar der Partner schwer, die Kontrolle zurückzubekommen.
 - **Sicherheit und Compliance.** Der Kunde kann einfache Audit-Fragen nicht beantworten: Wer hat Zugriff auf unseren Quellcode, unsere Anforderungen, unsere Zugangsdaten?
@@ -82,7 +82,7 @@ Das ist kein Vorwurf an Partner. Professionelle Partner können in einer vom Kun
 
 Als [Architekt auf Kundenseite](../../#about) ist eines meiner wichtigsten Ziele, Umsetzungspartner vergleichbar und austauschbar zu halten. Das funktioniert nur, wenn die Grundlagen dem Kunden gehören: Repository, Pipeline, Backlog und Dokumentation. Dann lässt sich ein neuer Partner in ein bekanntes Setup mit schriftlichen Standards einarbeiten, und ein scheidender Partner übergibt weiterhin Wissen, offene Risiken und laufende Aufgaben, aber keine Repositories oder Backlogs müssen aus seinen Systemen herausgelöst werden. Partner zu vergleichen erfordert außerdem gemeinsame Lieferstandards und Kennzahlen.
 
-Es ist auch die Voraussetzung, um internes Ownership aufzubauen. In dem Programm, das ich in meinem DevOps-Artikel beschreibe, wurde der Release-Prozess am Ende an einen internen Kollegen übergeben. Eine solche Übergabe ist nur realistisch, wenn Tools und Rechte bereits auf Kundenseite liegen. Sonst erbt die interne Person einen Prozess, der weiter an fremden Accounts hängt. Der Besitz der Tools ist die Grundlage guter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).
+Eigene Tools schaffen außerdem die Voraussetzung dafür, interne Verantwortung aufzubauen. In dem Programm, das ich in meinem DevOps-Artikel beschreibe, wurde der Release-Prozess am Ende an einen internen Kollegen übergeben. Eine solche Übergabe ist nur realistisch, wenn Tools und Rechte bereits auf Kundenseite liegen. Sonst erbt die interne Person einen Prozess, der weiter an fremden Accounts hängt. Der Besitz der Tools ist die Grundlage guter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).
 
 ## Regeln für die Praxis, bevor der erste Partner startet
 
@@ -103,4 +103,4 @@ Besitzt ein Partner bereits einige der Tools, planen Sie den Umzug früh und in 
 
 ## Alle Tools mit Vertrag und Admins auflisten
 
-Machen Sie eine einfache Liste: jedes Tool im Projekt, wer den Vertrag hält, wer die Admins sind, welche Mitarbeitenden von Partnern Zugriff haben, wie sich Daten exportieren lassen und wann die Zugriffe zuletzt überprüft wurden. Nehmen Sie auch Nebentools wie Chat-Kanäle des Partners und Arbeitsbereiche für API-Tests auf. In vielen Programmen zeigt schon diese Liste, wo die Risiken liegen. Jede Zeile, in der ein Partner den Vertrag oder die Admin-Rechte hält, bekommt ein Datum, bis zu dem sie auf Sie übertragen ist.
+Machen Sie eine einfache Liste: jedes Tool im Projekt, wer den Vertrag hält, wer die Admins sind, welche Mitarbeitenden von Partnern Zugriff haben, wie sich Daten exportieren lassen und wann die Zugriffe zuletzt überprüft wurden. Nehmen Sie auch Nebentools wie Chat-Kanäle des Partners und Arbeitsbereiche für API-Tests auf. In vielen Programmen zeigt schon diese Liste, wo die Risiken liegen. Legen Sie für jede Zeile, in der ein Partner den Vertrag oder die Admin-Rechte hält, einen Termin fest, bis zu dem diese auf Sie übertragen werden.
