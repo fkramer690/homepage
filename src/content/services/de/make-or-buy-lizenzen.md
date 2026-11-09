@@ -1,5 +1,5 @@
 ---
-title: "Salesforce Make-or-buy und Lizenzprognosen"
+title: "Salesforce-Lizenz-Check, Make-or-buy und Lizenzprognosen"
 headline: "Salesforce-Lizenzen prüfen, bevor Sie unterschreiben"
 description: "Industry Cloud, Eigenentwicklung oder anderes Tool? Make-or-buy-Entscheidungen und Salesforce-Lizenzprognosen auf Basis eines langfristigen ROI mit Wartung."
 lang: de
@@ -67,7 +67,7 @@ readMore: [salesforce-licence-types, salesforce-editions-core-advanced-max, manu
 masterclass: manufacturing-cloud
 ---
 
-Make-or-buy bei Salesforce heißt, für jede Anforderung zu entscheiden, ob sie ein Standardprodukt, eine Industry Cloud, eine Eigenentwicklung auf der Kernplattform oder ein separates Tool abdeckt. Die Lizenzprognose beantwortet die verwandte Frage, welche Lizenztypen die Nutzer brauchen. Beide Entscheidungen fallen früh und lassen sich nur teuer zurückdrehen, daher stütze ich sie auf einen langfristigen ROI-Case inklusive Wartung und Folgekosten. Das Lizenzmodell und die Preisgestaltung von Salesforce kenne ich gut aus der Pre-Sales-Arbeit gemeinsam mit Salesforce. Heute arbeite ich nur auf Kundenseite und verkaufe keine Lizenzen, deshalb nutze ich dieses Wissen, um Angebote zu prüfen.
+Ein Salesforce-Lizenz-Check prüft ein Angebot oder einen bestehenden Vertrag darauf, ob jede Nutzergruppe den Lizenztyp bekommt, den sie für ihre Arbeit braucht, und ob sich jedes Produkt über die Laufzeit rechnet. Make-or-buy bei Salesforce heißt, für jede Anforderung zu entscheiden, ob sie ein Standardprodukt, eine Industry Cloud, eine Eigenentwicklung auf der Kernplattform oder ein separates Tool abdeckt. Beide Entscheidungen lassen sich nur teuer zurückdrehen, daher stütze ich sie auf einen ROI-Case inklusive Wartung und Folgekosten. Lizenzmodell und Preise kenne ich aus der Pre-Sales-Arbeit mit Salesforce; heute verkaufe ich keine Lizenzen und prüfe mit diesem Wissen Angebote.
 
 ## Wann lohnt sich eine Industry Cloud?
 

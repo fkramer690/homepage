@@ -1,12 +1,12 @@
 ---
-title: "Salesforce integration with ERP, middleware and telephony"
-description: "Salesforce connected to SAP and other ERP systems, middleware and telephony such as Genesys or Teams Phone, with an integration architecture you own."
+title: "Salesforce SAP integration, ERP interfaces and telephony"
+description: "Salesforce SAP integration and links to other ERP systems, middleware and telephony such as Genesys or Teams Phone, with an integration architecture you own."
 lang: en
 slug: salesforce-integration
 translationKey: service-integration
 contactBrief: integration
 order: 5
-lead: "Salesforce is never the only system. Orders, prices, stock and invoices live in the ERP, and service runs on phone and email. I design the integration architecture on the client side and work with selected partners who have built integrations in large international programs."
+lead: "Salesforce is never the only system. Orders, prices, stock and invoices live in the ERP, at manufacturers mostly SAP, and service runs on phone and email. I design the integration architecture on the client side and work with selected partners who have built integrations in large international programs."
 situations:
   - "Salesforce needs data from SAP or another ERP, such as customers, products, prices, orders or invoices, and it is unclear which system leads for which data."
   - "Point-to-point interfaces have grown over the years, and every change in one system breaks something in another."
@@ -68,7 +68,7 @@ readMore: [manufacturing-cloud-erp-integration, revenue-cloud-sap-system-boundar
 masterclass: manufacturing-cloud
 ---
 
-Salesforce integration means connecting Salesforce to the systems the company already runs, so that data is entered once and processes work across system boundaries. At manufacturers that is almost always an ERP, very often SAP, sometimes systems such as proALPHA. In service it also means telephony and email, because these are still the core channels. I design the integration architecture on the client side and decide with the client which partner builds it.
+At manufacturers, Salesforce integration almost always means Salesforce SAP integration: Salesforce is connected to the ERP so that data is entered once and processes work across system boundaries. Sometimes the ERP is another system such as proALPHA. In service it also means telephony and email, because these are still the core channels. I design the integration architecture on the client side and decide with the client which partner builds it.
 
 ## Which system leads for which data?
 

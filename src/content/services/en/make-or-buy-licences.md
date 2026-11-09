@@ -1,5 +1,5 @@
 ---
-title: "Salesforce make-or-buy and license forecasts"
+title: "Salesforce license check, make-or-buy and forecasts"
 headline: "Check your Salesforce licenses before you sign"
 description: "Industry cloud, custom build or another tool? Make-or-buy decisions and Salesforce license forecasts, calculated on long-term ROI including maintenance."
 lang: en
@@ -67,7 +67,7 @@ readMore: [salesforce-licence-types, salesforce-editions-core-advanced-max, manu
 masterclass: manufacturing-cloud
 ---
 
-Make-or-buy on Salesforce means deciding, for each requirement, whether it is covered by a standard product, an industry cloud, a custom build on the core platform or a separate tool. License forecasting answers the related question of which license types the users need. Both decisions are made early and are expensive to reverse, so I base them on a long-term ROI case that includes maintenance and follow-up costs. I know the Salesforce license model and pricing well from pre-sales work alongside Salesforce. Today I work only on the client side and sell no licenses, so I use that knowledge to challenge offers.
+A Salesforce license check reviews an offer or an existing contract to see whether every user group gets the license type its work needs and every product pays for itself over the term. Make-or-buy on Salesforce means deciding, for each requirement, whether it is covered by a standard product, an industry cloud, a custom build on the core platform or a separate tool. Both decisions are expensive to reverse, so I base them on an ROI case that includes maintenance and follow-up costs. I know the license model and pricing from pre-sales work alongside Salesforce; today I sell no licenses and use that knowledge to challenge offers.
 
 ## When does an industry cloud pay off?
 
