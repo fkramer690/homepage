@@ -55,15 +55,9 @@ For the goal of the same way of working, the first model fits better. The second
 
 ## What do partners need technically?
 
-The steps are in [Salesforce Help on contractor access](https://help.salesforce.com/s/articleView?id=fs_contractor_access.htm&language=en_US&type=5). In short:
+The steps are in [Salesforce Help on contractor access](https://help.salesforce.com/s/articleView?id=fs_contractor_access.htm&language=en_US&type=5). In short: the partner company is an account, its people are contacts with users on an Experience Cloud site (Customer Community Plus or Partner Community), plus the permission set licenses Field Service Scheduling and Field Service Mobile and a permission set with the object rights. A profile and mobile settings of their own let you configure the app for partners without touching the internal version. Partner technicians become members of the territories where they work. If the partner manager should dispatch themselves, the Scheduling Console, which replaces the Classic Dispatch Console from Summer '26 on, can be added to the Experience Cloud site according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.fs_scheduling_console_parent.htm&language=en_US&type=5).
 
-- **Account and contacts.** The partner company is an account, its technicians and the partner manager are contacts.
-- **Experience Cloud license.** Partners work as users of an Experience Cloud site, with Customer Community Plus or Partner Community. According to [Salesforce](https://help.salesforce.com/s/articleView?id=005036403&language=en_US&type=1), the Contractor Plus package includes Partner Community licenses, not Customer Community Plus.
-- **Field Service permissions.** The permission set licenses Field Service Scheduling and Field Service Mobile, plus a permission set of its own with the object rights needed.
-- **Own profile and own mobile settings.** That way the app can be configured differently for partners without changing the internal version.
-- **Territories.** Partner technicians become members of the territories where they work, so the engine considers them there. A territory per partner company helps when the partner covers a region of their own. If they should dispatch themselves, the Scheduling Console, which replaces the Classic Dispatch Console from Summer '26 on, can according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.fs_scheduling_console_parent.htm&language=en_US&type=5) be added to the Experience Cloud site.
-
-Commercially there are two kinds of contractor packages, and they should not be confused with the technical licenses above. Partners who work regularly get licenses per user. For seasonal or rare work there are login-based packages; according to Salesforce, each unit provides 20 login-based community licenses. How to spread licenses sensibly across all roles is covered in [Salesforce licenses: does everyone need a full license?](../salesforce-licences-full-licence-needed/), and the Field Service roles in detail in [Salesforce Field Service licenses: who needs which?](../field-service-licences-by-role/).
+Commercially, Salesforce sells contractor packages per user for regular partners and login-based packages for seasonal work. According to [Salesforce](https://help.salesforce.com/s/articleView?id=005036403&language=en_US&type=1), Contractor Plus includes Partner Community licenses, not Customer Community Plus. How to spread licenses across all roles is covered in [Salesforce licenses: does everyone need a full license?](../salesforce-licences-full-licence-needed/) and in [Salesforce Field Service licenses: who needs which?](../field-service-licences-by-role/).
 
 ```hinweis achtung
 Contractor licenses are only for third-party contractors, not for your own employees.
@@ -82,6 +76,17 @@ The same way of working does not mean the same rights. I would separate three th
 - **Data access.** A partner technician sees their appointments, the asset and the history they need for the job. Contract details, prices and other customers stay hidden. A territory or a profile alone does not do that. The profile controls object and field rights, not which records someone sees. Separation needs private org-wide defaults and a deliberately set external sharing model, plus the Field Service sharing settings. According to [Salesforce](https://help.salesforce.com/s/articleView?id=002470705&language=en_US&type=1), sharing a service appointment with a territory can also share parent records such as accounts, assets and work orders; which of them is configurable. Test that with a partner user before go-live. Also agree with data protection which customer data a partner may see, and put that into the contract with the partner.
 - **Invoicing.** Internal jobs run through cost centers, partner jobs through an invoice. The feedback from the app, working time and parts used from [part 4](../salesforce-field-service-spare-parts-erp/), is the basis for checking that invoice.
 - **Proof of skills.** For your own technicians, HR maintains the skills. For partners it has to be clear who reports them and who checks them before the engine schedules the partner for a job.
+
+## What do you need to decide?
+
+Partner integration is not an IT project. These decisions belong to service management, purchasing and data protection:
+
+- **Which model for which partner.** The deciding question is who plans the individual technicians, and whether their skills, availability and feedback should live in Salesforce per person. If yes, the first model fits, even for a rarely used specialist. If the partner plans their people themselves, the second is enough. Decide per partner and document why.
+- **How data protection is settled.** The partner sees customer data. Responsibilities, the contractual basis, which data for which purpose and retention periods have to be settled with data protection before the first user is created, not after the first question from a customer.
+- **How the partner invoice is checked.** If working time and parts from the app are the basis, the partner contract has to say so.
+- **What happens when a partner leaves.** Asset history, service reports and measured values stay in your org, because the partner worked in your system. Deactivate their users, keep the service records and decide with data protection what happens to the personal data of the partner's people: retain, delete or anonymize. Keeping the service history is a strong argument for the first model.
+
+Three warning signs that the partner model does not hold: the dispatcher keeps a separate plan for partners, partner jobs have no service report on the asset, and the partner invoice can only be checked against handwritten reports.
 
 ## First step: write down how a job reaches your most important partner
 

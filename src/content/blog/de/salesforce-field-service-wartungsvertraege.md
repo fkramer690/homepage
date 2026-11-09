@@ -66,7 +66,7 @@ Ein Entitlement allein ändert an der Planung nichts. Es wird erst wirksam, wenn
 Milestones am Arbeitsauftrag brauchen einen Entitlement-Prozess vom Typ Work Order. Ein Prozess vom Typ Case läuft auf einem Arbeitsauftrag nicht, auch wenn derselbe Anspruch dahintersteht.
 ```
 
-**Priorität.** Field Service plant nach einem Prioritätsfeld. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.pfs_scheduling_priority_optimization.htm&language=en_US&type=5) liegt sie standardmäßig auf einer Skala von 1 bis 10, wobei 1 die höchste ist. Der Arbeitsauftrag bringt ein Feld Priority mit den Werten Low bis Critical mit, das eine Formel in Zahlen übersetzt. Sind Techniker knapp, plant die Optimierung Termine mit hoher Priorität zuerst und kann dafür Termine mit niedriger Priorität verdrängen.
+**Priorität.** Field Service plant nach einem Prioritätsfeld. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.pfs_scheduling_priority_optimization.htm&language=en_US&type=5) liegt sie standardmäßig auf einer Skala von 1 bis 10, wobei 1 die höchste ist; eine Formel übersetzt die Priorität des Arbeitsauftrags dorthin. Sind Techniker knapp, plant die Optimierung Termine mit hoher Priorität zuerst und kann dafür Termine mit niedriger Priorität verdrängen.
 
 Die Verbindung zwischen beiden baut man selbst, meist mit einem Flow: Ein Arbeitsauftrag mit einem Entitlement „Reaktion in 24 Stunden“ bekommt eine höhere Priorität als einer ohne Zusage. So landet die Zusage aus dem Vertrag direkt in der Entscheidung der Planungsengine, und der Disponent muss nicht bei jeder Störung im Vertrag nachsehen.
 
@@ -100,6 +100,16 @@ Wann der Milestone als erfüllt gilt, etwa mit dem Status In Progress vor Ort, l
 Legen Sie für jede Vertragsart fest, welcher der drei gilt, bevor ein Kunde fragt, warum sein 24-Stunden-Termin am Samstag nicht kam.
 
 **Klären Sie die Grenze zur Garantie.** Ob ein Einsatz unter Garantie, Vertrag oder gegen Rechnung läuft, entscheidet über die Abrechnung. Diese kaufmännische Seite gehört nicht in die Planung, muss aber am Arbeitsauftrag erkennbar sein. Sonst baut der Techniker ein Teil ein, das später niemand abrechnen kann, oder der Kunde bekommt eine Rechnung für einen Einsatz, der unter Garantie lief.
+
+## Vertrieb, Service und Finanzen entscheiden, was in die Objekte gehört
+
+Die Objekte sind Konfiguration. Was hineingehört, ist eine geschäftliche Entscheidung, und die gehört Serviceleitung, Vertrieb und Finanzen gemeinsam:
+
+- **Wie viele Service-Level der Vertrieb verkaufen darf.** Jede Stufe, die der Vertrieb zusagt, muss eingerichtet und gemessen werden. Eine Planungspriorität brauchen nur Stufen, die die Reihenfolge der Einsätze ändern sollen, und mehrere Stufen können sich eine teilen. Einigen Sie sich auf eine kurze Liste, bevor der erste Vertrag verhandelt wird, nicht danach.
+- **Was eine verfehlte Reaktionszeit kostet.** Vertragsstrafen, Gutschriften oder schlicht eine verlorene Verlängerung. Zusammen mit der Kritikalität der Anlage und möglichen Sicherheits- oder Rechtsfolgen entscheidet diese Zahl, wie viel Priorität eine Zusage in der Planung bekommt und wie viel es wert ist, sie verlässlich zu messen.
+- **Wer zwischen Garantie, Vertrag und Rechnung entscheidet.** Jemand muss das je Arbeitsauftrag festlegen, am besten vor dem Einsatz. Sonst streiten Service und Finanzen nach jedem Einsatz darüber.
+
+Drei Warnzeichen, dass das Vertragsmodell nicht trägt: Reaktionszeiten stehen in einem Textfeld, Disponenten schauen bei jeder Störung in den Vertrag, und niemand kann sagen, wie viele Zusagen im letzten Monat eingehalten wurden.
 
 ## Die drei häufigsten Vertragsarten aufschreiben
 
