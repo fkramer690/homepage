@@ -2,6 +2,7 @@
 title: "Penny Perfect Pricing: ERP prices in Salesforce?"
 description: "Penny Perfect Pricing brings an SAP-style pricing engine into Manufacturing Cloud. When it fits telesales orders, and why the ERP usually stays price master."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: penny-perfect-pricing-erp-prices
 translationKey: penny-perfect-pricing-erp-prices
@@ -11,27 +12,27 @@ tags: [Manufacturing Cloud, Penny Perfect Pricing, SAP, pricing, telesales, Wint
 takeaways:
   - "Penny Perfect Pricing also exists in Automotive Cloud and Consumer Goods Cloud. Its 19 objects arrived with API 68.0 (Winter '27)."
   - "Its objects mirror the SAP condition technique, from calculation schema and search strategy to condition records with scales."
-  - "It prices telesales orders; quotes belong to Revenue Cloud and store prices to B2B Commerce, so it does not replace either."
-  - "Before the first order, decide which system is price master and which price wins when they disagree."
+  - "In Manufacturing Cloud it prices telesales orders; quotes belong to Revenue Cloud and store prices to B2B Commerce, so it does not replace either."
+  - "Before the first order, decide who owns pricing rules, condition data, the order price and the invoice price."
 faq:
   - q: "What is Penny Perfect Pricing in Salesforce?"
     a: "A pricing engine that calculates real-time prices for advanced order line items, for example in telesales. Salesforce lists it under Winter '27 for Manufacturing Cloud and documents it for Manufacturing, Automotive and Consumer Goods Cloud."
   - q: "Does Penny Perfect Pricing replace SAP pricing?"
-    a: "Technically it can calculate prices with the same logic inside Salesforce. Whether it should depends on whether you can keep condition records in sync. For most manufacturers with SAP I would keep SAP as price master."
+    a: "It can reproduce supported ERP-style pricing patterns inside Salesforce, within documented limits such as 28 schema steps, and only if your custom SAP logic maps to them. Whether it should depends on whether you can keep condition records in sync. For most manufacturers with SAP I would keep SAP as price master."
   - q: "Is Penny Perfect Pricing included in the Manufacturing Cloud license?"
-    a: "I could not find that in any official source on 28 October 2026. The pricing page does not mention it, and the developer documentation has no license or permission set information. Ask your account executive in writing."
+    a: "It needs Enterprise or Unlimited Edition of Manufacturing, Automotive or Consumer Goods Cloud plus several add-ons that Salesforce Help lists, such as Core Pricing and the Manufacturing Foundation or Penny-Perfect Pricing add-on. Their prices are not public, so ask your account executive in writing."
   - q: "Can I use Penny Perfect Pricing for quotes or the B2B store?"
-    a: "The documentation describes it for advanced order line items, the telesales ordering flow. Quotes belong to Revenue Cloud and store prices to B2B Commerce, which have their own pricing."
+    a: "The documentation describes it for advanced order line items, the telesales ordering flow in Manufacturing Cloud. Quotes belong to Revenue Cloud and store prices to B2B Commerce, which have their own pricing."
 draft: false
 ---
 
-For most manufacturers with SAP, the ERP should stay price master, and Penny Perfect Pricing is worth a look only where orders are taken in Salesforce. Penny Perfect Pricing arrived with Winter '27 as a pricing engine for advanced order line items, the telesales ordering flow in Manufacturing Cloud. Its objects mirror the SAP condition technique, so it can calculate customer-specific prices without calling the ERP. The developer documentation names no license and no standard way to load SAP condition records. Two price engines drift apart unless one is the master, so decide that first and get the license question answered in writing.
+For most manufacturers with SAP, the ERP should stay price master, and Penny Perfect Pricing is worth a look only where orders are taken in Salesforce. With Winter '27 Penny Perfect Pricing came to Manufacturing Cloud as a pricing engine for advanced order line items, the telesales ordering flow; Consumer Goods Cloud used it before. Its objects mirror the SAP condition technique, so it can calculate customer-specific prices without calling the ERP. Salesforce documents the add-ons and a CSV load process, but no SAP connector and no public price. Two price engines drift apart unless the roles are clear, so decide them first.
 
 ## What is Penny Perfect Pricing?
 
-Salesforce introduces it in the [Winter '27 release highlights on Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-manfacturing-media-netzero-nonprofit) with one sentence: "Apply SAP-grade pricing precision across every manufacturing order, with multimarket, multi-unit of measure (UoM), calculation schema, and ERP integration built into Manufacturing Cloud." Winter '27 has been [generally available since 12 October 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/).
+Salesforce introduces it in the [Winter '27 release highlights on Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-manfacturing-media-netzero-nonprofit) with one sentence: "Apply SAP-grade pricing precision across every manufacturing order, with multimarket, multi-unit of measure (UoM), calculation schema, and ERP integration built into Manufacturing Cloud." Winter '27 has been [generally available since 12 October 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/). The name is not new: Consumer Goods Cloud already used Penny Perfect Pricing for its orders. New is the Manufacturing Cloud use and the shared object model from API 68.0.
 
-The [developer guide](https://developer.salesforce.com/docs/industries/penny-perfect-pricing/guide/overview.html) is more concrete. Penny Perfect Pricing "provides accurate, real-time pricing for advanced order line items". The REST APIs can:
+The [developer guide](https://developer.salesforce.com/docs/industries/penny-perfect-pricing/guide/overview.html) is more concrete. Penny Perfect Pricing "provides accurate, real-time pricing for advanced order line items". Penny Perfect Pricing and the APIs it works with can:
 
 - return instant prices for line items while an order is being built,
 - calculate the final prices for an order,
@@ -58,29 +59,30 @@ The [object reference](https://developer.salesforce.com/docs/industries/penny-pe
 
 Next to these come shared objects such as Account, Product2, account relations and internal organization units, which carry business unit specific settings per account.
 
-The similarity cuts both ways. Someone who knows SAP pricing will recognize the logic. It also means the same configuration effort: every condition type, every access and every condition record that SAP has would need a counterpart in Salesforce.
+The similarity cuts both ways. Someone who knows SAP pricing will recognize the logic. It also means similar configuration effort: every pricing rule, access and condition record relevant to the Salesforce order channel needs a supported counterpart, and custom SAP routines or formulas need an explicit answer.
 
 ## Where does Penny Perfect Pricing fit, and where not?
 
-It fits telesales. The [Advanced Orders for Telesales](https://developer.salesforce.com/docs/industries/advanced-orders-for-telesales/overview) APIs browse assortments and products, show previously ordered products, return valid delivery dates, get instant prices and place an order in one request. The [Manufacturing Cloud product page](https://www.salesforce.com/manufacturing/cloud/) lists a "unified telesales order view" under Winter '27. Penny Perfect Pricing is the price step in that flow.
+In Manufacturing Cloud, the clearest documented use case is telesales. The [Advanced Orders for Telesales](https://developer.salesforce.com/docs/industries/advanced-orders-for-telesales/overview) APIs browse assortments and products, show previously ordered products, return valid delivery dates, get instant prices and place an order in one request. The [Manufacturing Cloud product page](https://www.salesforce.com/manufacturing/cloud/) lists a "unified telesales order view" under Winter '27. Penny Perfect Pricing is the price step in that flow.
 
 It does not replace two other price engines:
 
 - **Quotes** with configuration, approval and contract terms belong to Revenue Cloud. Penny Perfect Pricing prices order lines, not quotes.
-- **Store prices** for dealers ordering online come from B2B Commerce price books or a live ERP call, as described in [customer prices in B2B Commerce](../b2b-commerce-customer-prices-price-books-erp/) and in the masterclass chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/).
+- **Store prices** for dealers ordering online come from B2B Commerce's own pricing: price books, pricing strategies, a custom pricing provider such as a live ERP call, or Advanced Pricing powered by Revenue Cloud, as described in [customer prices in B2B Commerce](../b2b-commerce-customer-prices-price-books-erp/) and in the masterclass chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/).
 
 Agents that build dealer quotes, such as the AI Partner Sales Assistant, have the same problem from the other side: if Salesforce holds only list prices, the agent quotes list prices. I describe that in [AI Partner Sales Assistant: dealer quotes with AI](../ai-partner-sales-assistant-dealer-quotes/).
 
-## What is not documented?
+## What is documented, and what is not?
 
-Three things I could not find in any official source on 28 October 2026:
+When I first wrote this article on 28 October 2026, I found no license and no load process. Salesforce Help now documents both, as I checked on 9 November 2026:
 
-1. **License.** The [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) does not mention Penny Perfect Pricing, and the developer pages have no license or permission set information.
-2. **Loading condition records from SAP.** The highlights promise "ERP integration", but the developer guide describes no import or sync of SAP condition records. The [Consumer Goods Trailhead module](https://trailhead.salesforce.com/content/learn/modules/penny-perfect-pricing-with-consumer-goods-cloud-offline-mobile-app/set-up-pricing-configuration) says pricing conditions from the ERP can be used and mentions an import of condition records, without describing how.
-3. **Multimarket and units of measure.** The highlights name both. The object reference I read does not explain how currencies or unit conversion are configured.
+1. **Editions and add-ons.** Penny Perfect Pricing runs in [Enterprise and Unlimited Edition](https://help.salesforce.com/s/articleView?id=xcloud.ppp_editions_permissions.htm&language=en_US&type=5) of Manufacturing, Automotive and Consumer Goods Cloud, plus [required add-ons](https://help.salesforce.com/s/articleView?id=xcloud.ppp_verify_addons.htm&language=en_US&type=5): Core Pricing Design Time, Core Pricing Run Time, Core Pricing Monthly Per Unit Entitlement, the Manufacturing Foundation or Penny-Perfect Pricing add-on, Industries Sales Excellence, Data Pipelines and Data Processing Engine. Permission set licenses and permission sets come on top. The [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) shows no price for these add-ons.
+2. **Loading condition records.** Salesforce [describes a load process](https://help.salesforce.com/s/articleView?id=xcloud.ppp_load_condition_data.htm&language=en_US&type=5): export the conditions from the ERP as CSV, import them with Data Loader into External Pricing Key Value and External Pricing Key Value Tier, then run the packaged Data Processing Engine job "External Pricing Key Value Consolidation". Orders can only be priced after that job has run successfully. Delta runs use the last sync date, and scheduling needs a flow. There is no SAP connector: extraction, mapping and monitoring remain integration work.
+3. **Limits.** The [considerations](https://help.salesforce.com/s/articleView?id=xcloud.ppp_considerations.htm&language=en_US&type=5) name up to 1,000 lines per order, 40 million condition records per sales organization, 28 calculation schema steps, 7 account and 5 product hierarchy levels, and 2, 4 or 6 decimal places. It calculates net prices only, posts no ledger entries, creates no tax invoices and does not work with standard Commerce or Loyalty promotions in this release.
+4. **Units, taxes and markets.** The [Manufacturing Cloud help](https://help.salesforce.com/s/articleView?id=ind.mfg_ppp_pointer.htm&language=en_US&type=5) mentions unit-of-measure conversion and primary and secondary taxes. How several markets map to sales organizations I would test in a sandbox before relying on it.
 
 ```hinweis offen
-So the ERP integration is yours to build, and the license is yours to ask about. Both belong in writing before a project plan depends on them.
+So the load process exists, but the SAP extraction and its monitoring are yours to build. Ask for the price of the add-ons in writing, and check the limits against your largest orders and your condition volume before a project plan depends on them.
 ```
 
 ## Two price engines drift apart because conditions change
@@ -92,23 +94,23 @@ Condition records change all the time. Pricing teams add customer discounts, end
 - **Rounding.** "Penny perfect" depends on identical rounding per step. One difference in the calculation order and invoice and order differ by a few cents per line, which customers notice on large orders.
 - **Which price wins.** When the order reaches SAP, does SAP take the Salesforce price as given or determine its own? If both calculate, the customer can get an order confirmation with one price and an invoice with another.
 
-These gaps are manageable once one price master and a rule for disagreements are set, before any rep relies on a Salesforce price.
+These gaps are manageable once four roles are set before any rep relies on a Salesforce price: who owns the pricing rules, who owns the condition data, which system calculates the order price and which one decides the invoice price, plus a rule for disagreements. SAP can stay master for rules and data while Salesforce calculates the order price from copies.
 
 ## Worked example: a telesales desk for spare parts
 
 Assume a machine builder with a telesales desk of ten people takes spare parts orders by phone. 30,000 spare parts, 2,500 customers, prices from SAP with four condition types: list price, customer discount, a small quantity surcharge and quantity scales. Orders should be entered in Salesforce, where the rep also sees the customer's installed base and open cases.
 
-**Option A: SAP stays price master.** Salesforce calls SAP for the price of each line while the order is built, through an API like the one in [order status from SAP via MuleSoft](../agentforce-sap-order-status-mulesoft/). Prices are always identical. The cost is a dependency: if SAP is in a maintenance window, the desk cannot price orders.
+**Option A: SAP stays price master.** Salesforce calls SAP for the price of each line while the order is built, through an API like the one in [order status from SAP via MuleSoft](../agentforce-sap-order-status-mulesoft/). Salesforce shows SAP's current price, and order and invoice match as long as SAP prices the order with the same partners, date and quantities. The cost is a dependency: if SAP is in a maintenance window, the desk cannot price orders.
 
-**Option B: Penny Perfect Pricing calculates.** The four condition types are rebuilt as pricing specifications, and the condition records for 2,500 customers are copied to External Pricing Key Values, with a delta run several times a day. Prices come instantly without SAP. The cost is the sync and one more pricing configuration that someone owns.
+**Option B: Penny Perfect Pricing calculates.** The four condition types are rebuilt as pricing specifications, and the condition records for 2,500 customers are copied to External Pricing Key Values, with a delta load and a consolidation run several times a day. The limits of 1,000 lines per order and 28 schema steps are no issue here, but they belong in the check. Prices come instantly without SAP. The cost is the sync and one more pricing configuration that someone owns.
 
-I would choose A when SAP answers fast and is reliably available, which is the more common case. I would look at B when the pricing logic is stable, condition changes are rare and the desk must keep working when SAP does not answer. Either way, SAP should decide the final invoice price, and the interface should flag any order where the two prices differ.
+I would choose A when SAP answers fast and is reliably available. I would look at B when the pricing logic is stable, condition changes are rare and the desk must keep working when SAP does not answer. Either way, SAP should decide the final invoice price, and the interface should flag any order where the two prices differ.
 
 ## Count condition types and fix the price master
 
 1. **Count your condition types** and how often condition records change per week.
-2. **Write down the price master** and which price wins when Salesforce and SAP disagree.
-3. **Ask Salesforce in writing**: which license includes Penny Perfect Pricing, and is there a supported way to load SAP condition records?
+2. **Write down the four roles**: who owns pricing rules and condition data, which system calculates the order price and which one decides the invoice price, and which price wins when Salesforce and SAP disagree.
+3. **Ask Salesforce in writing** what the required add-ons cost for your edition, and check the documented limits against your largest orders and your condition volume.
 4. **Plan the data flows** together with the rest of the SAP interface, as in [Manufacturing Cloud and SAP: which data flows where](../manufacturing-cloud-sap-integration-data-flows/).
 5. **Test with real orders**: 200 historical orders priced in both systems, compared line by line.
 
