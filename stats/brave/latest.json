@@ -1,0 +1,520 @@
+{
+  "generatedAt": "2026-11-09T09:57:14.583Z",
+  "domain": "fk-sd.de",
+  "requests": 178,
+  "summary": {
+    "keywordsFound": 0,
+    "keywords": 81,
+    "questionsFound": 0,
+    "questions": 15,
+    "indexedPages": 3
+  },
+  "keywords": {
+    "de": [
+      {
+        "keyword": "salesforce berater",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce freelancer",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce architekt freelancer",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce solution architect",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce beratung mittelstand",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce partnersteuerung",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce devops beratung",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce release management",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "sfdx-hardis",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce devops center",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce nearshore",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce lizenzen",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce field service",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce field service einführung",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "field service lizenzen salesforce",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce manufacturing cloud",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "manufacturing cloud funktionen",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce revenue cloud",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce cpq revenue cloud",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce cpq end of sale",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce b2b commerce",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "b2b commerce preise salesforce",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "agentforce hersteller",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "agentforce kosten",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "flex credits agentforce",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce sap integration",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce document builder",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce well-architected",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "sap to salesforce",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce implementation partner",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce partner deutschland",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce lizenz kosten",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "was ist agentforce",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce field service license",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce manufacturing cloud vs sales cloud",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce manufacturing cloud pricing",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce cpq end of life",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce field service implementation guide",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce change management",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management beratung",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management crm",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "crm einführung",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "adkar modell",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management masterclass",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "key user aufgaben",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "hypercare phase",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "juliane winterscheid",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management definition",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "was ist change management",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management modelle",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "stakeholder analyse",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "stakeholder analyse vorlage",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change kurve",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "veränderungskurve",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "kommunikationsplan",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "kommunikationsplan vorlage",
+        "position": null,
+        "url": null
+      }
+    ],
+    "en": [
+      {
+        "keyword": "salesforce solution architect freelance",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce consultant germany",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce partner governance",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce devops consulting",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "sfdx-hardis",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "sfdx-hardis vs devops center",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce field service implementation",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce manufacturing cloud features",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce revenue cloud pricing",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce cpq vs revenue cloud",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce b2b commerce pricing",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "agentforce flex credits",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce document builder limitations",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce well-architected framework",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce change management",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce change management consulting",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "adkar model",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce user adoption",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce adoption dashboard",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "what is change management",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management models",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "stakeholder analysis template",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change curve",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management communication plan",
+        "position": null,
+        "url": null
+      }
+    ]
+  },
+  "prompts": [
+    {
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "en",
+      "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "en",
+      "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "en",
+      "prompt": "How do I govern several Salesforce implementation partners in one program?",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "en",
+      "prompt": "Best practices for rolling out Salesforce Field Service in waves",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "position": null,
+      "url": null
+    }
+  ],
+  "indexed": [
+    "https://www.fk-sd.de/blog/salesforce-dubletten-stammdaten-bereinigen/",
+    "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+    "https://www.fk-sd.de/en/blog/revenue-cloud-discount-approvals/"
+  ]
+}
