@@ -1,5 +1,5 @@
 {
-  "fetched": "2026-11-03T09:57:28.462Z",
+  "fetched": "2026-11-09T12:53:27.470Z",
   "origin": "https://www.fk-sd.de",
   "results": [
     {
@@ -12,11 +12,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 1103,
+        "lcp_ms": 1151,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 1103,
-        "speed_index_ms": 4147
+        "fcp_ms": 1151,
+        "speed_index_ms": 3819
       },
       "field": null,
       "origin_field": null
@@ -31,11 +31,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 341,
-        "cls": 0,
+        "lcp_ms": 506,
+        "cls": 0.006,
         "tbt_ms": 0,
-        "fcp_ms": 341,
-        "speed_index_ms": 427
+        "fcp_ms": 321,
+        "speed_index_ms": 461
       },
       "field": null,
       "origin_field": null
@@ -44,17 +44,17 @@
       "path": "/en/",
       "strategy": "mobile",
       "scores": {
-        "performance": 98,
+        "performance": 100,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 1146,
+        "lcp_ms": 1101,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 1146,
-        "speed_index_ms": 3908
+        "fcp_ms": 1101,
+        "speed_index_ms": 1101
       },
       "field": null,
       "origin_field": null
@@ -69,11 +69,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 351,
+        "lcp_ms": 332,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 351,
-        "speed_index_ms": 385
+        "fcp_ms": 332,
+        "speed_index_ms": 375
       },
       "field": null,
       "origin_field": null
@@ -88,11 +88,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 941,
+        "lcp_ms": 932,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 941,
-        "speed_index_ms": 941
+        "fcp_ms": 932,
+        "speed_index_ms": 2360
       },
       "field": null,
       "origin_field": null
@@ -107,11 +107,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 303,
+        "lcp_ms": 264,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 303,
-        "speed_index_ms": 303
+        "fcp_ms": 264,
+        "speed_index_ms": 267
       },
       "field": null,
       "origin_field": null
@@ -120,17 +120,17 @@
       "path": "/blog/",
       "strategy": "mobile",
       "scores": {
-        "performance": 96,
+        "performance": 94,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 1750,
-        "cls": 0,
-        "tbt_ms": 85,
-        "fcp_ms": 1750,
-        "speed_index_ms": 4138
+        "lcp_ms": 1720,
+        "cls": 0.127,
+        "tbt_ms": 30,
+        "fcp_ms": 1720,
+        "speed_index_ms": 2701
       },
       "field": null,
       "origin_field": null
@@ -145,11 +145,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 427,
+        "lcp_ms": 510,
         "cls": 0,
-        "tbt_ms": 15,
-        "fcp_ms": 427,
-        "speed_index_ms": 485
+        "tbt_ms": 60,
+        "fcp_ms": 510,
+        "speed_index_ms": 662
       },
       "field": null,
       "origin_field": null
@@ -158,17 +158,17 @@
       "path": "/blog/salesforce-field-service-lohnt-sich/",
       "strategy": "mobile",
       "scores": {
-        "performance": 99,
+        "performance": 100,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 964,
+        "lcp_ms": 977,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 964,
-        "speed_index_ms": 3710
+        "fcp_ms": 977,
+        "speed_index_ms": 2169
       },
       "field": null,
       "origin_field": null
@@ -183,11 +183,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 292,
+        "lcp_ms": 490,
         "cls": 0,
-        "tbt_ms": 0,
-        "fcp_ms": 292,
-        "speed_index_ms": 292
+        "tbt_ms": 1,
+        "fcp_ms": 490,
+        "speed_index_ms": 831
       },
       "field": null,
       "origin_field": null
@@ -202,54 +202,54 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 1685,
+        "lcp_ms": 1692,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 936,
-        "speed_index_ms": 936
-      },
-      "field": null,
-      "origin_field": null
-    },
-    {
-      "path": "/masterclass/",
-      "strategy": "desktop",
-      "scores": {
-        "performance": 100,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100
-      },
-      "lab": {
-        "lcp_ms": 272,
-        "cls": 0,
-        "tbt_ms": 0,
-        "fcp_ms": 272,
-        "speed_index_ms": 272
-      },
-      "field": null,
-      "origin_field": null
-    },
-    {
-      "path": "/freiberuflicher-salesforce-architect/",
-      "strategy": "mobile",
-      "scores": {
-        "performance": 100,
-        "accessibility": 100,
-        "best-practices": 100,
-        "seo": 100
-      },
-      "lab": {
-        "lcp_ms": 947,
-        "cls": 0,
-        "tbt_ms": 0,
-        "fcp_ms": 947,
+        "fcp_ms": 957,
         "speed_index_ms": 957
       },
       "field": null,
       "origin_field": null
     },
     {
+      "path": "/masterclass/",
+      "strategy": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 279,
+        "cls": 0.009,
+        "tbt_ms": 0,
+        "fcp_ms": 279,
+        "speed_index_ms": 413
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/freiberuflicher-salesforce-architect/",
+      "strategy": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 989,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_ms": 989,
+        "speed_index_ms": 2337
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
       "path": "/freiberuflicher-salesforce-architect/",
       "strategy": "desktop",
       "scores": {
@@ -259,11 +259,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 307,
+        "lcp_ms": 277,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 307,
-        "speed_index_ms": 361
+        "fcp_ms": 277,
+        "speed_index_ms": 296
       },
       "field": null,
       "origin_field": null
