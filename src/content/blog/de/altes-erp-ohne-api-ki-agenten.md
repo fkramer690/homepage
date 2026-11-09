@@ -1,6 +1,6 @@
 ---
 title: "Altes ERP ohne API: Helfen KI-Agenten trotzdem?"
-description: "Altes ERP oder MES ohne Schnittstelle: drei Wege, wie ein Agentforce-Agent trotzdem Daten liest und schreibt, ihre Kostentreiber und wo sie brechen."
+description: "Altes ERP oder MES ohne API: drei Wege, wie ein Agentforce-Agent trotzdem Daten liest und schreibt, Kosten, Grenzen und wann eine API besser ist."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de
@@ -10,11 +10,11 @@ topic: data
 categories: [ai, architecture]
 tags: [Agentforce, ERP, Altsysteme, RPA, MuleSoft, Maschinenbau]
 takeaways:
-  - "Ein Agent erreicht ein ERP ohne API über eine Datenbankreplik hinter einer kleinen API, Dokumentenerkennung mit RPA oder den Systems Integration Agent."
+  - "Ein Agent erreicht ein ERP ohne API über eine Datenbankreplik hinter einer kleinen API, Dokumentenextraktion mit RPA oder den Systems Integration Agent."
   - "Für Auftragsstatus, Liefertermine und Bestand ist eine Replik hinter einer MuleSoft-API der stabilste Weg, und sie zieht beim ERP-Wechsel mit um."
   - "MuleSoft IDP schickt einen Beleg zur Prüfung, wenn ein Feld unter der Schwelle liegt oder ein Pflichtfeld fehlt; jede erneute Verarbeitung kostet voll."
   - "RPA und der Systems Integration Agent arbeiten über die Masken und brauchen deshalb Monitoring und einen Verantwortlichen."
-  - "Preise, Kreditlimits und Verfügbarkeitsprüfung bleiben im führenden System, hier im ERP. Ein Agent darf unter Kontrolle erfassen, aber nicht entscheiden."
+  - "Preise, Kreditlimits und Verfügbarkeitsprüfung bleiben im führenden System, hier im ERP. Ein Agent erfasst unter menschlicher Prüfung, entscheidet aber nicht."
 faq:
   - q: "Kann Agentforce an ein ERP ohne API angebunden werden?"
     a: "Ja, über einen Umweg. Lesen geht über eine Datenbankreplik hinter einer MuleSoft-API, Belege lassen sich mit MuleSoft IDP und RPA erfassen, und der Systems Integration Agent bedient browserbasierte Anwendungen über ihre Masken."
@@ -29,11 +29,11 @@ faq:
 draft: false
 ---
 
-KI-Agenten helfen auch bei einem alten ERP ohne API, aber nur über einen Umweg, und jeder Umweg hat seinen Preis. Zum Lesen von Auftragsstatus, Bestand oder Lieferterminen würde ich eine lesende Datenbankreplik hinter eine kleine API stellen und dem Agenten diese geben. Für die Auftragserfassung können Dokumentenerkennung mit RPA oder der Systems Integration Agent von Salesforce die ERP-Masken bedienen. Beide brechen leichter als eine API und brauchen Monitoring und einen Verantwortlichen. Bei den ersten beiden Wegen ist der Agent nur die Oberfläche. Kreditlimit und Preis bleiben im führenden System.
+KI-Agenten helfen auch bei einem alten ERP ohne API, aber nur über einen Umweg, und jeder Umweg hat seinen Preis. Zum Lesen von Auftragsstatus, Bestand oder Lieferterminen würde ich eine Datenbankreplik nur mit Lesezugriff hinter eine kleine API stellen und dem Agenten diese geben. Für die Auftragserfassung können Dokumentenextraktion mit RPA oder der Systems Integration Agent von Salesforce die ERP-Masken bedienen. Beide brechen leichter als eine API und brauchen Monitoring und einen Verantwortlichen. Bei den ersten beiden Wegen ist der Agent nur die Oberfläche. Kreditlimit und Preis bleiben im führenden System.
 
 ## Warum haben so viele Hersteller ein ERP ohne nutzbare API?
 
-Viele Maschinenbauer im Mittelstand betreiben ein ERP, das seit Jahren im eigenen Rechenzentrum läuft und unterwegs stark angepasst wurde. Eine ältere proALPHA-Installation oder ein altes SAP-Release sind typische Beispiele. Ob ein solches System eine nutzbare Schnittstelle bietet, hängt von Version, lizenzierten Modulen und dem Umfang der Anpassungen ab; eine pauschale Aussage über einen Hersteller treffe ich deshalb nicht. Der erste Schritt ist eine Frage an Ihren ERP-Hersteller oder Partner.
+Viele Maschinenbauer im Mittelstand betreiben ein ERP, das seit Jahren im eigenen Rechenzentrum läuft und im Lauf der Zeit stark angepasst wurde. Eine ältere proALPHA-Installation oder ein altes SAP-Release sind typische Beispiele. Ob ein solches System eine nutzbare Schnittstelle bietet, hängt von Version, lizenzierten Modulen und dem Umfang der Anpassungen ab; eine pauschale Aussage über einen Hersteller treffe ich deshalb nicht. Der erste Schritt ist eine Frage an Ihren ERP-Hersteller oder Partner.
 
 „Keine API“ heißt oft: Eine Schnittstelle gibt es, sie ist aber nicht lizenziert oder deckt Kunden und Artikel ab, Aufträge aber nicht. Die Prüfung kostet meist weit weniger als ein Umweg, der Pflege kostet, solange er läuft.
 
@@ -51,7 +51,7 @@ Zwei Regeln gelten. Gelesen wird aus einer Replik oder einem regelmäßigen Expo
 
 Der eigentliche Nutzen liegt in der Architektur. Der API-Vertrag, etwa „Auftragsstatus nach Auftragsnummer“, soll die Ablösung des alten ERP überstehen. Bleibt die fachliche Bedeutung von Statuscodes und Schlüsseln stabil, wechselt vor allem das Backend; Vertrags- und Regressionstests zeigen, wo der Agent trotzdem nachgezogen werden muss. Eine Regel fürs Händlerportal: Die API prüft serverseitig, ob der angemeldete Händler diesen Auftrag sehen darf, damit niemand fremde Auftragsnummern ausprobieren kann.
 
-### Weg 2: Dokumentenerkennung plus RPA zum Schreiben
+### Weg 2: Dokumentenextraktion plus RPA zum Schreiben
 
 Salesforce beschreibt genau diesen Fall im [Salesforce Admins Blog](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce) vom August 2025, am Beispiel eines fiktiven Lieferanten mit eingescannten PDF-Bestellungen und einem ERP ohne API. MuleSoft Intelligent Document Processing (IDP) liest Auftragsnummer, Positionen, Nettowert und Steuer aus und schickt einen Beleg laut [IDP-Dokumentation](https://docs.mulesoft.com/idp/reviewing-processed-documents) in die manuelle Prüfung, wenn ein sichtbares Feld unter der eingestellten Schwelle liegt, im Beispiel 80 Prozent, oder ein Pflichtfeld fehlt. Ein MuleSoft-RPA-Bot überwacht einen freigegebenen Ordner, ruft IDP auf und simuliert im ERP Mausklicks und Tastatureingaben. Zwei autolaunched Flows starten ihn und fragen seinen Status über eine Ausführungs-ID ab, und über das Agentforce-Topic „Order Upload“ (Salesforce nennt Topics inzwischen Subagents) starten Anwender den Upload im Chat und fragen nach dem Stand. Flow, IDP und RPA würden die Arbeit auch ohne Agenten erledigen.
 
@@ -69,13 +69,13 @@ RPA-Bot --erfasst Auftrag--> ERP-Maske
 RPA-Bot ..Status..> Autolaunched Flow
 ```
 
-Für einen Hersteller liegen Ersatzteilbestellungen von Händlern und Auftragsbestätigungen von Lieferanten als PDF nahe. Zwei Kostenpunkte gehören in den Plan. Laut [IDP-Dokumentation](https://docs.mulesoft.com/idp/) berechnet IDP Automation Credits pro Ausführung nach Seitenzahl, und jede erneute Einreichung oder Verarbeitung kostet voll, ohne Dublettenerkennung. Und [RPA-Bots](https://docs.mulesoft.com/rpa-bot/1.6/) brauchen einen Rechner, auf dem die Zielanwendungen installiert sind, am besten einen eigenen Windows-Rechner. Infrastruktur, Sitzungslizenzen, Patches, Regressionstests und Betrieb gehören deshalb in den Kostenplan.
+Für einen Hersteller liegen Ersatzteilbestellungen von Händlern und Auftragsbestätigungen von Lieferanten als PDF nahe. Zwei Kostenpunkte gehören in den Plan. Laut [IDP-Dokumentation](https://docs.mulesoft.com/idp/) berechnet IDP Automation Credits pro Ausführung nach Seitenzahl, und jede erneute Einreichung oder Verarbeitung kostet voll, ohne Dublettenerkennung. Und [RPA-Bots](https://docs.mulesoft.com/rpa-bot/1.6/) brauchen einen Rechner, auf dem die Zielanwendungen installiert sind, am besten einen eigenen Windows-Rechner. Infrastruktur, Sitzungslizenzen, Patches, Regressionstests und Support gehören deshalb in den Kostenplan.
 
 Ein Detail dieses Musters gefällt mir: Der Agent entscheidet nichts. Er ist ein Chat-Zugang zu einem deterministischen Ablauf.
 
 ### Weg 3: der Systems Integration Agent
 
-Zur Dreamforce 2026 hat Salesforce den Systems Integration Agent als Teil von Agentforce Operations vorgestellt, im selben Abschnitt wie den Back-Office-Agenten Marshall, der ganze Abschnitt gekennzeichnet als [GA](https://www.salesforce.com/blog/dreamforce-2026-announcements/). Laut [Produktblog](https://www.salesforce.com/blog/regrello/) lernt er eine browserbasierte Anwendung wie ein neuer Mitarbeiter in etwa 90 Minuten, ohne Code, APIs oder RPA, auch „customized SAP, Oracle, and homegrown systems“. Ändert sich eine Maske, lernt er diesen Teil laut Salesforce typischerweise in etwa 20 Minuten neu und protokolliert die Reparatur zur Prüfung durch einen Administrator. Die [Seite zu Agentforce Operations](https://www.salesforce.com/agentforce/operations/) nennt zusätzlich Audit Trail und erhaltene Berechtigungen und Freigaben und sagt, abgerechnet werde nach Blueprint-Paketen, vom Starter Pack mit 5 Blueprints bis Large mit mehr als 50, „not priced based on consumption“. Listenpreise habe ich keine gefunden.
+Zur Dreamforce 2026 hat Salesforce den Systems Integration Agent als Teil von Agentforce Operations vorgestellt, im selben Abschnitt wie den Back-Office-Agenten Marshall, der ganze Abschnitt gekennzeichnet als [GA](https://www.salesforce.com/blog/dreamforce-2026-announcements/). Laut [Produktblog](https://www.salesforce.com/blog/regrello/) lernt er eine browserbasierte Anwendung wie ein neuer Mitarbeiter in etwa 90 Minuten, ohne Code, APIs oder RPA, auch „customized SAP, Oracle, and homegrown systems“. Ändert sich eine Maske, lernt er diesen Teil laut Salesforce typischerweise in etwa 20 Minuten neu und protokolliert die Reparatur zur Prüfung durch einen Administrator. Die [Seite zu Agentforce Operations](https://www.salesforce.com/agentforce/operations/) nennt zusätzlich einen Audit Trail sowie die Beibehaltung von Berechtigungen und Freigabekontrollen und sagt, abgerechnet werde nach Blueprint-Paketen, vom Starter Pack mit 5 Blueprints bis Large mit mehr als 50, „not priced based on consumption“. Listenpreise habe ich keine gefunden.
 
 Für Hersteller entscheidet das Wort „browserbasiert“. Läuft Ihr ERP oder MES als Desktop-Client, prüfen Sie, ob es einen Web-Client gibt, bevor jemand mit diesem Agenten plant. Das sind Herstellerangaben aus dem Startmonat. Ich würde sie an Ihren eigenen Masken testen, inklusive eines ERP-Updates im Testsystem, bevor ich mich darauf verlasse.
 
@@ -87,13 +87,13 @@ GA sagt nicht, ob Ihr Vertrag, Ihre Region und Ihr Blueprint-Paket den Systems I
 
 Nehmen wir einen Maschinenbauer mit einem ERP im eigenen Rechenzentrum ohne nutzbare Schnittstelle, Service Cloud und einem Händlerportal auf Salesforce sowie 40 Händlern. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
-**Statusanfragen.** Angenommen sind 2.000 Händleranfragen im Monat zu Ersatzteilaufträgen. Eine Replik der relevanten ERP-Tabellen wird alle 15 Minuten aktualisiert, eine kleine MuleSoft-API bietet zwei Operationen: Auftragsstatus und Liefertermin. Bei zwei Aktionen pro Anfrage sind das 4.000 Aktionen zu 20 Flex Credits, also 80.000 Credits oder rund 400 € Verbrauch im Monat zum [Listenpreis von 500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/). Credits werden in Paketen zu 100.000 gekauft, ohne vorhandenes Kontingent kostet der Kauf also 500 €. Prompts, Tests und MuleSoft kommen dazu. Der Agent nennt immer den Datenstand, „Stand 10:15 Uhr“. Wie Sie den Rest schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
+**Statusanfragen.** Angenommen sind 2.000 Händleranfragen im Monat zu Ersatzteilaufträgen. Eine Replik der relevanten ERP-Tabellen wird alle 15 Minuten aktualisiert, eine kleine MuleSoft-API bietet zwei Operationen: Auftragsstatus und Liefertermin. Bei zwei Aktionen pro Anfrage sind das 4.000 Aktionen zu 20 Flex Credits, also 80.000 Credits oder rund 400 € Verbrauch im Monat zum [Listenpreis von 500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) (20 Credits je Aktion laut [Rate Card vom 3. November 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf)). Credits werden in Paketen zu 100.000 gekauft, ohne vorhandenes Kontingent kostet der Kauf also 500 €. Prompts, Tests und MuleSoft kommen dazu. Der Agent nennt immer den Datenstand, „Stand 10:15 Uhr“. Wie Sie den Rest schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
 
 **Auftragserfassung.** Angenommen sind 600 Ersatzteilbestellungen im Monat als PDF per E-Mail, im Schnitt zwei Seiten, die eine Kollegin im Innendienst heute in etwa sechs Minuten pro Stück abtippt, rund 60 Stunden im Monat. Mit IDP und RPA sind das 1.200 Seiten im Monat; bei [Automation Credits 2.0 oder 3.0](https://docs.mulesoft.com/general/automation-credits-usage-and-rates) mit 30 Credits je Seite sind das 36.000 Credits ohne Wiederholungen, dazu Bot-Laufzeit, bepreist in Ihrem MuleSoft-Vertrag. Gehen 15 Prozent in die Prüfung, landen weiterhin 90 Bestellungen im Monat bei einem Menschen. Weil IDP keine Dubletten erkennt, braucht der Bot einen festen Schlüssel aus Händler, Gesellschaft und Bestellnummer, einen Verarbeitungsstatus außerhalb des Bots und nach dem Speichern einen Abgleich mit der ERP-Auftragsnummer, damit ein Timeout keinen zweiten Auftrag erzeugt. Preis- und Kreditprüfung laufen im ERP, wenn der Bot den Auftrag speichert, wie bei manueller Erfassung.
 
 **Garantieprüfung mit Baudaten.** Angenommen liegt die Baukonfiguration je Seriennummer in einem alten MES mit reinem Desktop-Client. Der Systems Integration Agent deckt das nicht ab, und ein Bot für eine selten genutzte Maske rechnet sich nicht. Ein nächtlicher Export von Seriennummern und Konfiguration in die Assets in Salesforce ist günstiger und hilft auch dem Service.
 
-Keiner der drei Fälle brauchte ein ERP-Projekt. Ein Leseweg, ein Schreibweg unter Kontrolle und ein Export.
+Keiner der drei Fälle brauchte ein ERP-Projekt. Ein Leseweg, ein Schreibweg mit manueller Prüfung und ein Export.
 
 ## Welche Risiken gibt es, und wie begrenzen Sie sie?
 

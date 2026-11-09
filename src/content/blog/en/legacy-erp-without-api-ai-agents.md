@@ -1,6 +1,6 @@
 ---
 title: "Legacy ERP without an API: can AI agents still help?"
-description: "Old ERP or MES without an API: three ways an Agentforce agent can still read and write data, the cost drivers, where each breaks and when an API is the better bet."
+description: "Old ERP or MES without an API: three ways an Agentforce agent can still read and write data, cost drivers, limits and when an API is the better bet."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: en
