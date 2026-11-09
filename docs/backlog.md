@@ -138,7 +138,7 @@ Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier ne
 - B3. Center of Excellence auf Kundenseite: Format und Rhythmus. *Erledigt (#125).*
 - B4. MuleSoft oder Jitterbit: welche Middleware für Salesforce und das ERP? *Braucht Beispiel von Fabian.*
 - B5. Salesforce an proALPHA anbinden: was anders ist als bei SAP. *Braucht Beispiel von Fabian.*
-- B6. Technische Benutzer mit zu vielen Rechten: Integrationen aufräumen.
+- B6. Technische Benutzer mit zu vielen Rechten: Integrationen aufräumen. *Entwurf 3.11.2026 (PR #273).*
 - B7. Teams Phone als Telefonie für den Service (Folgeartikel zu Open CTI). *Braucht Erfahrung aus dem CTI-Rollout.*
 - B8. Spring '27: was ändert sich für Hersteller? (News, sobald die Release Notes erscheinen, ca. Mitte Januar 2027; passt zu L7.)
 - B9. Führendes System pro Objekt: Welches System führt Kunden, Preise und Anlagen, wenn SAP und Salesforce beide Daten halten? (Begriff aus der Homepage-Suche 29.10.2026, kommt auf Schnittstellen- und Architekturseite und in ca. 20 Artikeln vor; Abgrenzung zu L2 klären.)
@@ -152,6 +152,8 @@ Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier ne
 - B21. Schreibende Agentenaktionen ins ERP: Berechtigung, Plausibilität und Protokoll, bevor ein Agent Liefertermine oder Rücksendungen ändert (Folgeartikel zu L5). *Braucht Beispiel von Fabian.*
 - B22. Release Updates im Setup: welche erzwungenen Updates der nächsten Releases Hersteller-Orgs treffen und wie man sie vorab in der Sandbox testet (Folgeartikel zu L7, aus Release Notes recherchierbar). *Entwurf 9.11.2026 („Salesforce Release Updates vor der Durchsetzung testen“, ChatGPT-Review). Tabelle der Fristen je Release nachziehen.*
 - B23. Regressionstests für Salesforce-Releases automatisieren: welche Kernprozesse zuerst, wer sie pflegt (Folgeartikel zu L7). *Braucht Beispiel von Fabian.*
+- B24. External Client Apps statt Connected Apps: was sich für bestehende ERP- und Middleware-Schnittstellen ändert (Folgeartikel zu B6, aus Salesforce-Doku recherchierbar).
+- B25. Fragebogen an Schnittstellenanbieter: Objekte, IP-Adressen, Token-Speicherung und Notfallkontakt vor dem Go-live (Folgeartikel zu B6). *Braucht Beispiel von Fabian.*
 - B26. Discovery für Salesforce-Projekte: welche Randfälle vor dem Festpreis auf den Tisch müssen (Folgeartikel zu L1, Begriffe „salesforce discovery phase“, „Fit-Gap-Analyse Salesforce“ vorher prüfen). *Braucht Beispiel von Fabian.*
 - B27. Schlüsselperson des Partners geht: Übergabe planen, bevor die Qualität nachlässt (Folgeartikel zu L1). *Braucht Beispiel von Fabian.*
 - B28. Integrationsinventar: welche Angaben je Schnittstelle in die Liste gehören (Login-Methode, Integrationsuser, API-Version, Endpunkt, Verantwortlicher beider Seiten), damit Release Updates und Abschaltungen in Stunden statt Wochen bewertet sind (Folgeartikel zu B22). *Braucht Beispiel von Fabian.*

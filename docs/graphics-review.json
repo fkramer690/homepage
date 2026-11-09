@@ -212,6 +212,7 @@
     "card:servicemax-asset-360": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},
     "card:field-service-management-software": {"title": "Kartenskizze Field Service Management Software", "proposal": 2, "rating": null},
     "card:salesforce-release-schedule": {"title": "Kartenskizze Salesforce Release Schedule", "proposal": 2, "rating": null},
+    "card:salesforce-integration-users-cleanup": {"title": "Kartenskizze Integrationsbenutzer aufräumen", "proposal": 2, "rating": null},
     "card:salesforce-release-updates": {"title": "Kartenskizze Salesforce Release Updates testen", "proposal": 2, "rating": null},
     "card:what-is-agentforce": {"title": "Kartenskizze Was ist Agentforce", "proposal": 2, "rating": null},
     "card:servicemax-vs-salesforce-field-service": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},
