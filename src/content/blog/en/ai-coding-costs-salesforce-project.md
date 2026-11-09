@@ -85,7 +85,7 @@ These are budget scenarios, not prices for the same output: the allowances behin
 Agentforce Vibes is Salesforce's coding agent. Two points matter:
 
 1. **Metered Vibes uses your agents' Flex Credits.** The [Vibes pricing page](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) says metered use "consumes the same credits used by Agentforce". A partner team on metered Vibes draws from the pool you planned for a dealer service agent, see [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
-2. **The unit is 2,000 tokens.** The [billing documentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) counts input and output in units of 2,000 tokens, rounded up. Opus models count as Advanced prompts at 16 credits per unit on the [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) of 3 November 2026, $0.08 per unit.
+2. **The unit is 2,000 tokens.** The [billing documentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) counts input and output in units of 2,000 tokens, rounded up. Opus models count as Advanced prompts at 16 credits per unit on the [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) of November 3, 2026, $0.08 per unit.
 
 ```hinweis offen
 Salesforce does not say whether re-sent context counts in full. If it does, one Opus request with 70,000 tokens of context costs 560 credits or $2.80, more than the whole session above. I would measure a week in Digital Wallet first.

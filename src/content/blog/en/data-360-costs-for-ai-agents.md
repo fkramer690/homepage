@@ -46,7 +46,7 @@ Three meters follow from this:
 150 | credits per MB of Unstructured Processing, base tier
 600 | credits per MB of Intelligent Processing, base tier
 3 | credits per million rows queried, base tier
-source: [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf), as of 3 November 2026
+source: [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf), as of November 3, 2026
 ```
 
 Rates fall with volume: above 300,000 credits a month they drop in three steps to a fifth, for unstructured processing 30 credits per MB above 12.5 million credits. Tiers apply per usage type and reset on the first day of each calendar month. Flex Credits cost [$500 per 100,000](https://www.salesforce.com/agentforce/pricing/), and the same page notes for its Agentforce examples that Data 360 credits are not included. That is why these numbers rarely make it into the first estimate.
