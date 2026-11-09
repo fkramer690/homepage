@@ -9,7 +9,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was verdient ein Salesforce Consultant? | Wie viel verdient man bei Salesforce? | Was macht Salesforce genau? | Was ist ein Salesforce Consultant?"
+  "questions": ""
  },
  {
   "key": "de:salesforce freelancer",
@@ -27,10 +27,10 @@
   "key": "de:salesforce architekt freelancer",
   "lang": "DE",
   "keyword": "salesforce architekt freelancer",
-  "position": null,
+  "position": 27,
   "previous": null,
   "volume": null,
-  "page": null,
+  "page": "/",
   "aiOverview": "ja",
   "aiCited": "nein",
   "questions": ""
@@ -45,7 +45,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Is solutions architect a good role? | What is Salesforce architecture and what are its key features? | Is Salesforce hard to learn? | What is the salary range for a Salesforce Senior Solution Architect?"
+  "questions": ""
  },
  {
   "key": "de:salesforce beratung mittelstand",
@@ -67,7 +67,7 @@
   "previous": null,
   "volume": null,
   "page": null,
-  "aiOverview": "ja",
+  "aiOverview": "nein",
   "aiCited": "nein",
   "questions": ""
  },
@@ -99,10 +99,10 @@
   "key": "de:sfdx-hardis",
   "lang": "DE",
   "keyword": "sfdx-hardis",
-  "position": 14,
-  "previous": 41,
+  "position": null,
+  "previous": 14,
   "volume": 40,
-  "page": "/blog",
+  "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
   "questions": ""
@@ -141,7 +141,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was ist Salesforce? | Was ist besser, SAP oder Salesforce? | Welche Salesforce-Zertifizierungen gibt es? | Was verdient man als Salesforce Consultant?"
+  "questions": "Welche Produkte hat Salesforce? | Was ist besser, SAP oder Salesforce? | Welche kostengünstigen CRM-Tools gibt es? | Welche Alternativen gibt es zu Salesforce?"
  },
  {
   "key": "de:salesforce field service",
@@ -153,7 +153,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "What is Salesforce field service? | What are the limitations of Salesforce? | Is Salesforce a CRM or SAP? | How much does Salesforce Field Service cost?"
+  "questions": ""
  },
  {
   "key": "de:salesforce field service einführung",
@@ -171,13 +171,13 @@
   "key": "de:field service lizenzen salesforce",
   "lang": "DE",
   "keyword": "field service lizenzen salesforce",
-  "position": 19,
-  "previous": null,
+  "position": 17,
+  "previous": 19,
   "volume": null,
   "page": "/Blog",
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was ist Dynamics 365 Field Service? | Was ist Salesforce? | Was ist besser, SAP oder Salesforce? | Ist Trailhead kostenlos?"
+  "questions": "Was bietet Salesforce an? | Was ist besser, SAP oder Salesforce? | Was ist Dynamics 365 Field Service? | Was verdient man als Salesforce Consultant?"
  },
  {
   "key": "de:salesforce manufacturing cloud",
@@ -261,19 +261,19 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was ist Salesforce? | Was ist B2B-Commerce? | Was ist besser, SAP oder Salesforce? | Welche Alternativen gibt es zu Salesforce?"
+  "questions": ""
  },
  {
   "key": "de:agentforce hersteller",
   "lang": "DE",
   "keyword": "agentforce hersteller",
-  "position": null,
+  "position": 41,
   "previous": null,
   "volume": null,
-  "page": null,
-  "aiOverview": "ja",
+  "page": "/Blog",
+  "aiOverview": "nein",
   "aiCited": "nein",
-  "questions": "Was bedeutet Salesforce? | Was kostet Salesforce im Monat? | Was kann Agentforce? | Ist Salesforce wie SAP?"
+  "questions": ""
  },
  {
   "key": "de:agentforce kosten",
@@ -285,7 +285,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was kostet Salesforce im Monat? | Was kann Agentforce? | Ist Trailhead kostenlos? | Welche Produkte bietet Salesforce an?"
+  "questions": ""
  },
  {
   "key": "de:flex credits agentforce",
@@ -333,7 +333,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "What is a GCP well-architected framework? | What is the salary of a Technical Architect at Salesforce? | What is Salesforce architecture and what are its key features? | What is the difference between Hyperforce and Salesforce?"
+  "questions": ""
  },
  {
   "key": "de:sap to salesforce",
@@ -345,7 +345,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Which is better, Salesforce or SAP? | Why is Salesforce falling? | Who is Salesforce's biggest competitor? | How can I integrate SAP with Salesforce?"
+  "questions": "Is SAP ERP similar to Salesforce? | Why is Salesforce falling? | What is Salesforce used for? | Who is Salesforce's biggest competitor?"
  },
  {
   "key": "de:salesforce implementation partner",
@@ -381,7 +381,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was ist Salesforce? | Was ist besser, SAP oder Salesforce? | Welche kostengünstigen CRM-Tools gibt es? | Was verdient man als Salesforce Consultant?"
+  "questions": "Was bietet Salesforce an? | Was ist besser, SAP oder Salesforce? | Welche kostengünstigen CRM-Tools gibt es? | Welche Salesforce-Zertifizierungen gibt es?"
  },
  {
   "key": "de:was ist agentforce",
@@ -391,9 +391,9 @@
   "previous": null,
   "volume": 20,
   "page": null,
-  "aiOverview": "ja",
+  "aiOverview": "nein",
   "aiCited": "nein",
-  "questions": "Was bedeutet Salesforce? | Was versteht man unter Agent? | Warum ist Salesforce so stark gefallen? | Was kostet Salesforce im Monat?"
+  "questions": ""
  },
  {
   "key": "de:salesforce field service license",
@@ -405,7 +405,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "How much does Salesforce field service cost? | What is Salesforce field service? | What are the types of Salesforce licenses? | What is the use of fsl?"
  },
  {
   "key": "de:salesforce manufacturing cloud vs sales cloud",
@@ -429,7 +429,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "How much is a Salesforce license per month? | What is the pricing procedure in Salesforce? | How much does sales cloud cost? | How much do companies pay for Salesforce?"
  },
  {
   "key": "de:salesforce cpq end of life",
@@ -441,7 +441,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "Is Salesforce getting rid of CPQ? | What is the release cycle for Salesforce? | What is a renewal opportunity in Salesforce? | Is Salesforce CPQ hard?"
  },
  {
   "key": "de:salesforce field service implementation guide",
@@ -477,7 +477,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "Was bedeutet Change Management? | Was ist der Unterschied zwischen Organisationsentwicklung und Change Management? | Was macht ein Change Coach? | Was sind die 7 Phasen des Change-Managements?"
  },
  {
   "key": "de:change management crm",
@@ -489,7 +489,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "How to manage leads in CRM? | What are the four C's of change management? | What are the steps involved in the change control process? | What are the 5 P's of change management?"
+  "questions": "What are the different types of change management? | What does CRM stand for in property management software? | What are the 5 C's of organizational change? | How to do CRM management?"
  },
  {
   "key": "de:crm einführung",
@@ -501,7 +501,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "Für was braucht man ein CRM? | Welches CRM ist der Marktführer in Deutschland? | Was sind die 15 CRM-Prinzipien? | Was ist der Unterschied zwischen CRM und ERP?"
  },
  {
   "key": "de:adkar modell",
@@ -513,7 +513,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "Was gehört alles zu Change Management? | Was ist ADKAR? | Was ist das 5-Phasen-Modell? | Was sind die 7 Phasen des Change-Managements?"
  },
  {
   "key": "de:change management masterclass",
@@ -537,7 +537,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Welche 3 ERP-Systeme gibt es? | Was ist mit Key gemeint? | Welche ERP-Kenntnisse sind wichtig? | Welche Schulungen gibt es für SAP-Key-User?"
+  "questions": "Was ist ein SAP Key-User? | Welche Aufgaben hat ein ERP-System? | Was ist mit Key gemeint? | Wie viel verdient ein SAP Key-User?"
  },
  {
   "key": "de:hypercare phase",
@@ -549,7 +549,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Wie lange geht eine Hypercare-Phase? | Was ist die Definition einer Projektphase? | Was bedeutet Hypercare?"
+  "questions": "Was heißt Hypercare? | Wie lange geht eine Hypercare-Phase? | Was ist die Hypercare-Phase?"
  },
  {
   "key": "de:juliane winterscheid",
@@ -573,7 +573,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was bedeutet Change Management? | Wie viel verdient man als Change Manager? | Welche 7 Phasen des Change Managements gibt es? | Was sind Veränderungsprozesse?"
+  "questions": "Was bedeutet Change Management? | Was sind die 7 Phasen des Change-Managements? | Welche 4 Schritte gibt es im Change Management? | Wie kommt man ins Change Management?"
  },
  {
   "key": "de:change management definition",
@@ -597,7 +597,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Wie viel verdient man im Change Management? | Welche 7 Phasen des Change Managements gibt es? | Was ist das 5-Phasen-Modell des Change Managements? | Wie schreibt man change richtig?"
+  "questions": "Welche 4 Phasen gibt es im Change Management? | Wie viel verdient man als Change Manager? | Was sind die 7 Phasen des Change-Managements? | Welche 4 Schritte gibt es im Change Management?"
  },
  {
   "key": "de:change management modelle",
@@ -609,7 +609,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "Was ist das 3-Phasen-Modell von Kurt Lewin? | Was bedeutet Change Management? | Welche 4 Schritte gibt es im Change Management? | Was sind die 7 Phasen des Change-Managements?"
  },
  {
   "key": "de:stakeholder analyse",
@@ -621,7 +621,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Welche Methoden gibt es für die Stakeholderanalyse? | Was ist Stakeholder-Theorie? | Was ist das Interesse von Stakeholdern? | Wie erstellt man eine Stakeholder-Matrix?"
+  "questions": "Was bedeutet Stakeholder? | Was ist Stakeholdermanagement? | Was ist die Stakeholder-Matrix? | Wer sind die Stakeholder in einem Projekt?"
  },
  {
   "key": "de:stakeholder analyse vorlage",
@@ -645,7 +645,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Welche Change Management-Modelle gibt es? | Welche Stufen der Akzeptanz gibt es? | Was sind die 7 Phasen der Veränderung? | Was ist das 5-Phasen-Modell von Krüger?"
+  "questions": "Was ist die Change-Kurve? | Was sind die 7 Phasen der Veränderung? | Welche 4 Phasen gibt es im Change Management? | Was ist die Change-Kurve nach Elisabeth Kübler-Ross?"
  },
  {
   "key": "de:veränderungskurve",
@@ -657,7 +657,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was ist das 5-Phasen-Modell? | Welche Change Management-Modelle gibt es? | Welche Stufen der Akzeptanz gibt es? | Was sind die 7 Phasen der Veränderung?"
+  "questions": "Was gehört alles zu Change Management? | Was ist das 5-Phasen-Modell? | Welche Stufen der Akzeptanz gibt es? | Welche 4 Schritte gibt es im Change Management?"
  },
  {
   "key": "de:kommunikationsplan",
@@ -669,16 +669,16 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Wie erstellt man einen Kommunikationsplan? | Was sind die Ziele der Kommunikation? | Was ist ein Kommunikationskonzept? | Welche 6 Kommunikationsstrategien gibt es?"
+  "questions": "Was gehört zu einer Kommunikationsstrategie? | Welche Beispiele gibt es für Kommunikationspolitik? | Wie erstellt man einen Kommunikationsplan? | Was ist ein Kommunikationskonzept?"
  },
  {
   "key": "de:kommunikationsplan vorlage",
   "lang": "DE",
   "keyword": "kommunikationsplan vorlage",
-  "position": null,
+  "position": 28,
   "previous": null,
   "volume": 110,
-  "page": null,
+  "page": "/Blog",
   "aiOverview": "ja",
   "aiCited": "nein",
   "questions": ""
@@ -687,10 +687,10 @@
   "key": "en:salesforce solution architect freelance",
   "lang": "EN",
   "keyword": "salesforce solution architect freelance",
-  "position": null,
+  "position": 36,
   "previous": null,
   "volume": null,
-  "page": null,
+  "page": "/freelance-salesforce-architect",
   "aiOverview": "ja",
   "aiCited": "nein",
   "questions": ""
@@ -735,8 +735,8 @@
   "key": "en:sfdx-hardis",
   "lang": "EN",
   "keyword": "sfdx-hardis",
-  "position": 11,
-  "previous": null,
+  "position": 12,
+  "previous": 11,
   "volume": 40,
   "page": "/",
   "aiOverview": "ja",
@@ -885,7 +885,7 @@
   "page": null,
   "aiOverview": "nein",
   "aiCited": "nein",
-  "questions": "What is the Prosci ADKAR framework? | What are 7 effective change management models? | What is Kurt Lewin's 3 step model? | Is ADKAR still relevant today?"
+  "questions": "What is Prosci? | What are change management models? | What is ADKAR short for? | What are the benefits of the ADKAR model?"
  },
  {
   "key": "en:salesforce user adoption",
@@ -921,7 +921,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "What is change management in layman terms? | What are the 5 P's of change management? | What are the 7 C's of change management? | What are the key principles of change management?"
+  "questions": "What are the different types of change management? | Why is it vital for multinational companies to effectively manage change? | What are the 7 R's of change management? | What is agile change management?"
  },
  {
   "key": "en:change management models",
@@ -933,7 +933,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "What is Kotter's theory? | What is Lewin's 3-step model? | What are the 5 C's of change management? | Why is change management important?"
  },
  {
   "key": "en:stakeholder analysis template",
@@ -943,7 +943,7 @@
   "previous": null,
   "volume": 210,
   "page": null,
-  "aiOverview": "ja",
+  "aiOverview": "nein",
   "aiCited": "nein",
   "questions": ""
  },
@@ -957,7 +957,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "What is the change curve? | What are the four stages of the change curve? | What are the criticisms of the Kübler-Ross change curve? | What are the 7 steps of change?"
+  "questions": "What is the change curve? | What are change management strategies? | What are the 5 C's of organizational change? | What are the 7 challenges of managing change?"
  },
  {
   "key": "en:change management communication plan",
