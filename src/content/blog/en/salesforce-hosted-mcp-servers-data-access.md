@@ -60,7 +60,7 @@ If an external model should see less than the person, the standard sObject serve
 - **Custom servers.** Flows, invocable Apex, Apex REST and API Catalog endpoints can be bundled into a [custom server](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/custom-servers.html). Salesforce recommends focused, persona-specific servers, because "beyond a few dozen tools, an AI client struggles to select the right one". A Flow that returns a dealer overview without price fields answers the question and hides the rest.
 - **Dedicated users.** Salesforce's own example ties a data hygiene server to "a dedicated user profile that only data stewards can authenticate as".
 
-Custom servers cost build effort, but they also cut calls per question, which counts once Salesforce bills them, see [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
+Custom servers cost build effort, but they also cut calls per question, which counts once Salesforce bills them, see [MCP calls as a budget risk](../flex-credits-agentforce-cost-per-action/).
 
 ## Start with sobject-reads in a sandbox
 

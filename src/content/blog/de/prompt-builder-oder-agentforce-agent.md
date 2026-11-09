@@ -1,6 +1,7 @@
 ---
 title: "Prompt Builder oder Agentforce-Agent: was wann passt"
-description: "Wann ein Prompt-Builder-Template für Servicebericht, Fallzusammenfassung und Händlerantwort reicht, wann Sie einen Agenten brauchen und was beides kostet."
+metaTitle: "Prompt Builder vs. Agentforce-Agent: was wann passt"
+description: "Prompt Builder reicht, wenn ein Mensch den Text zuerst liest. Einen Agenten brauchen Sie, wenn das System den nächsten Schritt wählt. Beispiele und Kosten."
 pubDate: 2026-10-27
 lang: de
 slug: prompt-builder-oder-agentforce-agent
@@ -99,7 +100,7 @@ Die Serviceleitung möchte nun, dass Händler im Portal ohne Servicemitarbeiter 
 
 Hinzu kommen Tests. Eine Suite mit 100 Gesprächen zu je vier Aktionen à 16 Credits und zwei Prompts kostet 7.200 Credits pro Lauf. Zehn Läufe vor dem Go-live sind 72.000 Credits, etwa 360 €.
 
-Der Agent lohnt sich, wenn er mehr Arbeitszeit im Service spart als die zusätzlichen 600 € im Monat und die Tests kosten, etwa wenn Händler in anderen Zeitzonen heute bis zum nächsten Morgen warten. Antwortet Ihr Service ohnehin innerhalb einer Stunde, würde ich bei den Entwürfen bleiben. Die vollständige Rechnung für einen Auftragsstatus-Agenten finden Sie unter [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/).
+Der Agent lohnt sich, wenn er mehr Arbeitszeit im Service spart als die zusätzlichen 600 € im Monat und die Tests kosten, etwa wenn Händler in anderen Zeitzonen heute bis zum nächsten Morgen warten. Antwortet Ihr Service ohnehin innerhalb einer Stunde, würde ich bei den Entwürfen bleiben. Die vollständige Rechnung für einen Auftragsstatus-Agenten finden Sie unter [was ein Serviceagent für Händleranfragen kostet](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Ein Template testen Sie anders als einen Agenten
 

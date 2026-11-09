@@ -74,7 +74,7 @@ The announcements are bigger than what you can switch on. Status on 27 October 2
 source: Anthropic on Salesforce in Claude; Salesforce Flex Credits rate card of 31 August 2026
 ```
 
-On cost, the announcement says: "Pricing and packaging are subject to change." The rate card lists Headless Platform Interactions, the meter for agentic API and MCP calls, as "TBA". Why that becomes a budget line is explained in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
+On cost, the announcement says: "Pricing and packaging are subject to change." The rate card lists Headless Platform Interactions, the meter for agentic API and MCP calls, as "TBA". Why that becomes a budget line is explained in [MCP calls as a budget risk](../flex-credits-agentforce-cost-per-action/).
 
 ## For manufacturers, AIforce helps sales more than service today
 

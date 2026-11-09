@@ -180,10 +180,12 @@ examples to reuse in blog articles (backlog item 17).
   white with a cyan bar and a mono attribution line (`.role-quote`, `.compare-hit`).
   On phones the photo sits on top, the quote below. Needs a photo that is at least as
   wide as the photo half of the band.
-- **Principle card (variant A, not built):** a dashed cyan line runs from the "with"
-  column down into a dark full-width card: round photo (cyan ring), mono kicker
-  "Mein Grundsatz", the quote, mono attribution. More compact than the band; fits
-  when there is no good wide photo.
+- **Principle card (variant A, built for blog articles 2026-11-07):** a dashed cyan line
+  runs from the "with" column down into a dark full-width card: round photo (cyan
+  ring), mono kicker "Mein Grundsatz", the quote, mono attribution. More compact than
+  the band; fits the reading column. In articles without kicker and name line
+  (Fabian 2026-11-07: "Mein Grundsatz" did not fit, name and role not wanted). In articles it is the `vergleich` block with
+  `zitat:` (docs/content-blocks.md).
 
 Mockups of both: project files `homepage/rolle-zitat/`.
 
@@ -227,6 +229,11 @@ old card grids "sehr erschlagend"). Built in `src/components/MasterclassHub.astr
   topic text and the links in two columns; only the chosen topic is open.
 - Every section heading gets one or two sentences below it.
 - Fits: long, ordered content (courses, step plans) and many links grouped by topic.
+- Topic hub question list (variant B "kompakte Liste", 2026-11-07, backlog U2): a hub
+  that is also the topic hub for its product gets a section "Ihre Frage" right below the
+  figures (`.mc-qa`): one row per question with number, question, short answer and a link
+  to the one page that answers it in full (texts `questions` in the course texts,
+  resolved by `articleKey`; also emitted as FAQPage schema). First used for Field Service, then Manufacturing Cloud and B2B Commerce (2026-11-07).
 
 ## Photos of Fabian
 

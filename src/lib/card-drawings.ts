@@ -225,6 +225,11 @@ const drawings: Record<string, Drawing> = {
     ${box(222, 36, 82, 70)}${t(263, 52, l('AWS IRELAND', 'AWS IRLAND'), { fill: D, size: 7, anchor: 'middle' })}${t(227, 70, 'Service Board', { size: 7 })}${t(227, 84, l('Optimization', 'Optimierung'), { size: 7 })}
     ${tag(18, 128, 150, l('2 vendors · 2 calendars', '2 Hersteller · 2 Kalender'))}${t(178, 141, l('no PTC SLA for suites', 'keine PTC-SLA für Suiten'), { size: 7 })}`,
 
+  'field-service-management-software': (l) => `
+    ${t(18, 18, l('THE LEADING SYSTEM SETS THE SHORTLIST', 'DAS FÜHRENDE SYSTEM PRÄGT DIE SHORTLIST'), { fill: D, size: 7 })}
+    ${[['Service Cloud', 'Salesforce Field Service'], ['S/4HANA', 'SAP Field Service Mgmt.'], [l('IFS ERP / EAM', 'IFS-ERP / EAM'), 'IFS Cloud FSM'], ['ServiceNow CSM', 'ServiceNow FSM']].map(([a, b], i) => box(18, 28 + i * 22, 110, 18) + t(73, 40 + i * 22, a, { size: 7, anchor: 'middle' }) + arrow(132, 37 + i * 22, 150, i === 0 ? C : G) + box(150, 28 + i * 22, 152, 18, i === 0 ? C : G) + t(226, 40 + i * 22, b, { fill: i === 0 ? C : D, size: 7, anchor: 'middle' })).join('')}
+    ${tag(18, 128, 150, l('recurring risks', 'wiederkehrende Risiken'))}${t(178, 141, l('assets · technicians · ERP', 'Anlagen · Techniker · ERP'), { size: 7 })}`,
+
   'servicemax-asset-360': (l) => `
     ${t(18, 18, l('TWO ADD-ONS, SAME OBJECTS', 'ZWEI ERWEITERUNGEN, GLEICHE OBJEKTE'), { fill: D, size: 7 })}
     ${box(18, 28, 130, 50, C)}${t(83, 42, 'ASSET 360 · PTC', { fill: C, size: 7.5, anchor: 'middle' })}${t(28, 57, l('entitlement engine', 'Entitlement-Engine'), { size: 7 })}${t(28, 70, l('Windchill link', 'Windchill-Anbindung'), { size: 7 })}
@@ -282,6 +287,18 @@ const drawings: Record<string, Drawing> = {
     <path d="M18 126H302" stroke="${L}"/>
     ${t(18, 140, l('known gaps: tasks not primed, iOS loads LWC after cold start', 'bekannte Lücken: Tasks nicht geladen, iOS lädt LWC erst nach Kaltstart'), { size: 7 })}
     ${t(18, 153, l('test offline with a partner user (community licence)', 'offline mit Partnernutzer testen (Community-Lizenz)'), { fill: C, size: 7 })}`,
+
+  'field-service-mobile-flow-limits': (l) => `
+    ${t(18, 18, l('WHAT RUNS IN THE APP (HELP PAGES 11/2026)', 'WAS IN DER APP LÄUFT (HILFESEITEN 11/2026)'), { fill: D, size: 7 })}
+    ${box(134, 26, 72, 96)}${t(170, 40, l('FSM FLOW', 'FSM-FLOW'), { fill: D, size: 7, anchor: 'middle' })}
+    ${box(214, 26, 88, 96, C)}${t(258, 40, 'DATA CAPTURE', { fill: C, size: 7, anchor: 'middle' })}
+    ${[[l('data table', 'Data Table'), 'x'], ['Transform', 'x'], ['IN / NOT IN', '?'], [l('visibility rules', 'Sichtbarkeitsregeln'), 'v'], ['Section', 'v']].map(([s, dc], i) => {
+      const y = 56 + i * 14;
+      return t(18, y + 3, s, { size: 7 }) + cross(170, y) + (dc === 'x' ? cross(258, y) : dc === 'v' ? check(254, y - 1) : t(258, y + 3, '?', { size: 8, anchor: 'middle' }));
+    }).join('')}
+    <path d="M18 128H302" stroke="${L}"/>
+    ${t(18, 139, l("Winter '27: native runtime, limits list not updated", "Winter '27: native Laufzeit, Liste nicht angepasst"), { size: 7 })}
+    ${t(18, 151, l('multi-select: lookup or repeater in Data Capture', 'Mehrfachauswahl: Lookup oder Repeater in Data Capture'), { fill: C, size: 7 })}`,
 
   'field-service-mobile-release-testing': (l) => `
     ${t(18, 18, l('EACH APP VERSION', 'JEDE APP-VERSION'), { fill: D, size: 7 })}
@@ -1010,6 +1027,18 @@ const drawings: Record<string, Drawing> = {
     ${dot(290, 90)}${t(302, 106, l('to 20 Feb', 'bis 20.2.'), { fill: D, size: 7, anchor: 'end' })}${t(302, 117, l('production', 'Produktion'), { size: 6.5, anchor: 'end' })}
     ${tag(18, 128, 150, l('6 checks per release', '6 Prüfungen je Release'))}${t(178, 141, l('first wave: 8 days of preview', 'erste Welle: 8 Tage Preview'), { size: 6.5 })}`,
 
+  'salesforce-release-updates': (l) => `
+    ${t(18, 18, l('RELEASE UPDATES UP TO SUMMER 2027', 'RELEASE UPDATES BIS SOMMER 2027'), { fill: D, size: 7 })}
+    <path d="M30 34H290" stroke="${G}" stroke-width="1.2"/>
+    ${dot(30, 34, C)}${t(18, 50, l('1 Dec', '1.12.'), { fill: C, size: 7 })}${t(18, 61, 'SOAP login', { size: 6.5 })}
+    ${dot(117, 34)}${t(117, 50, l('20 Feb', '20.2.'), { fill: D, size: 7, anchor: 'middle' })}${t(117, 61, l('password flow', 'Passwort-Flow'), { size: 6.5, anchor: 'middle' })}
+    ${dot(203, 34)}${t(203, 50, "Spring '27", { fill: D, size: 7, anchor: 'middle' })}${t(203, 61, l('instance URLs', 'Instanz-URLs'), { size: 6.5, anchor: 'middle' })}
+    ${dot(290, 34)}${t(302, 50, "Summer '27", { fill: D, size: 7, anchor: 'end' })}${t(302, 61, l('API 31 to 64', 'API 31 bis 64'), { size: 6.5, anchor: 'end' })}
+    <path d="M18 76H302" stroke="${L}"/>
+    ${t(18, 92, l('TEST RUN AS', 'TESTLAUF ALS'), { fill: D, size: 7 })}
+    ${[l('integration user', 'Integrationsuser'), l('technician', 'Techniker'), l('sales rep', 'Vertrieb')].map((s, i) => box(18 + i * 98, 100, 88, 22) + t(62 + i * 98, 114, s, { size: 7, anchor: 'middle' })).join('')}
+    ${tag(18, 132, 150, l('activate on your date', 'selbst aktivieren'))}${t(178, 145, l('not on the upgrade weekend', 'nicht am Upgrade-Wochenende'), { size: 6.5 })}`,
+
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
     ${arrow(70, 43, 82)}${arrow(132, 43, 144)}
@@ -1301,14 +1330,6 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 146, l('changed documents: 195,000 credits', 'geänderte Dokumente: 195.000 Credits'), { fill: C, size: 7 })}
     ${tag(194, 128, 108, l('sandbox: no tiers', 'Sandbox: ohne Staffel'))}`,
 
-  'dealer-service-agent-costs': (l) => `
-    ${t(18, 18, l('3,000 DEALER CHATS / MONTH (SCENARIO)', '3.000 HÄNDLERGESPRÄCHE / MONAT (SZENARIO)'), { fill: D, size: 7 })}
-    ${[['Flex Credits', l('$1,020', '1.020 €'), 26, true], [l('per resolution, 60 %', 'pro Lösung, 60 %'), l('$3,600', '3.600 €'), 90, false], [l('per conversation', 'pro Gespräch'), l('$6,000', '6.000 €'), 150, false]]
-      .map(([a, b, w, hi], i) => t(18, 40 + i * 22, String(a), { size: 7 }) + `<rect x="108" y="${31 + i * 22}" width="${w}" height="12" rx="2" fill="${hi ? C : '#fff'}" fill-opacity="${hi ? 0.25 : 1}" stroke="${hi ? C : G}" stroke-width="1.1"/>` + t(114 + Number(w), 40 + i * 22, String(b), { fill: hi ? C : G, size: 7 })).join('')}
-    <path d="M18 104H302" stroke="${L}"/>
-    ${t(18, 120, l('1 chat = 3 actions + 2 prompts = 68 credits', '1 Gespräch = 3 Aktionen + 2 Prompts = 68 Credits'), { fill: D, size: 7.5 })}
-    ${t(18, 136, l('Data 360: 150 credits per MB of catalogue', 'Data 360: 150 Credits pro MB Katalog'), { size: 7 })}
-    ${t(18, 150, l('sandbox: 120 credits per MB, test a subset', 'Sandbox: 120 Credits pro MB, Ausschnitt testen'), { size: 7 })}`,
 
   'field-service-ai-agents-today': (l) => `
     ${t(18, 18, l('AVAILABLE TODAY', 'HEUTE VERFÜGBAR'), { fill: D, size: 7 })}${t(186, 18, l('MACHINE BUILDER', 'MASCHINENBAUER'), { fill: D, size: 7 })}
@@ -1326,6 +1347,15 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 118, l('SALESFORCE PARTNER INCENTIVES 2026', 'SALESFORCE-PARTNERANREIZE 2026'), { fill: D, size: 7 })}
     ${tag(18, 126, 138, l('active consumption', 'aktiver Verbrauch'))}${tag(164, 126, 138, l('agents in production', 'Agenten in Produktion'))}`,
 
+  'what-is-agentforce': (l) => `
+    ${t(18, 18, l('HOW AN AGENT WORKS', 'SO ARBEITET EIN AGENT'), { fill: D, size: 7 })}
+    ${box(18, 28, 64, 26)}${t(50, 44, l('Request', 'Anfrage'), { size: 7, anchor: 'middle' })}${arrow(82, 41, 98)}
+    ${box(98, 28, 124, 26, C)}${t(160, 44, 'Reasoning Engine', { fill: C, size: 7.5, anchor: 'middle' })}${arrow(222, 41, 238)}
+    ${box(238, 28, 64, 26)}${t(270, 44, l('Answer', 'Antwort'), { size: 7, anchor: 'middle' })}
+    <path d="M160 54V72M62 72H258M62 72V76M160 72V76M258 72V76" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${[[l('Subagents', 'Subagenten'), l('jobs', 'Aufgaben')], [l('Instructions', 'Anweisungen'), l('style, limits', 'Stil, Grenzen')], [l('Actions', 'Aktionen'), 'Flow · Apex · API']].map(([a, b], i) => box(18 + i * 98, 76, 88, 36) + t(62 + i * 98, 90, a, { fill: D, size: 7, anchor: 'middle' }) + t(62 + i * 98, 104, b, { size: 6.5, anchor: 'middle' })).join('')}
+    ${tag(18, 124, 150, l('Agent Script: fixed rules', 'Agent Script: feste Regeln'))}${t(178, 137, l('20 Flex Credits per action', '20 Flex Credits je Aktion'), { size: 7 })}`,
+
   'flex-credits-agentforce-costs': (l) => `
     ${t(18, 18, l('SCENARIO: CREDITS PER MONTH', 'SZENARIO: CREDITS PRO MONAT'), { fill: D, size: 7 })}${t(302, 18, l('218,000 ≈ $1,090', '218.000 ≈ 1.090 €'), { fill: D, size: 7.5, anchor: 'end' })}
     <rect x="18" y="28" width="156" height="22" rx="3" fill="${C}" fill-opacity="0.18" stroke="${C}" stroke-width="1.2"/>
@@ -1335,17 +1365,6 @@ const drawings: Record<string, Drawing> = {
     ${[l('action: 20 · sandbox 16', 'Aktion: 20 · Sandbox 16'), l('voice action: 30 · sandbox 24', 'Sprachaktion: 30 · Sandbox 24'), l('prompt / 2,000 tokens: 2 · 4 · 16', 'Prompt / 2.000 Tokens: 2 · 4 · 16'), l('Data 360: 150 credits per MB', 'Data 360: 150 Credits pro MB')].map((s, i) => dot(22, 99 + i * 14, G, 2) + t(30, 102 + i * 14, s, { size: 7 })).join('')}
     ${box(214, 96, 88, 50, C)}${t(258, 114, l('unused credits', 'ungenutzte Credits'), { fill: C, size: 7, anchor: 'middle' })}${t(258, 126, l('expire at', 'verfallen zum'), { fill: C, size: 7, anchor: 'middle' })}${t(258, 138, l('order end', 'Bestellende'), { fill: C, size: 7, anchor: 'middle' })}`,
 
-  'headless-platform-interactions-budget': (l) => `
-    ${box(18, 30, 80, 46)}${t(58, 50, l('EXTERNAL AGENT', 'EXTERNER AGENT'), { fill: D, size: 7, anchor: 'middle' })}${t(58, 64, 'Claude · ChatGPT', { size: 7, anchor: 'middle' })}
-    ${box(222, 30, 80, 46)}${t(262, 50, 'SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(262, 64, l('production org', 'Produktions-Org'), { size: 7, anchor: 'middle' })}
-    ${arrow(98, 44, 222, C)}${arrow(98, 52, 222, C)}${arrow(98, 60, 222, C)}
-    ${t(160, 36, l('MCP / agentic API', 'MCP / agentische API'), { fill: C, size: 7, anchor: 'middle' })}
-    ${tag(130, 66, 60, l('rate: TBA', 'Satz: TBA'))}
-    ${t(18, 102, l('1 successful call = 1 interaction', '1 erfolgreicher Aufruf = 1 Interaktion'), { fill: D, size: 7.5 })}
-    ${t(18, 116, l('sandbox not metered, 30 days notice', 'Sandbox ohne Zähler, 30 Tage Vorlauf'), { size: 7 })}
-    <path d="M18 126H302" stroke="${L}"/>
-    ${t(18, 142, l('scenario: 2 vs 8 calls per question', 'Szenario: 2 statt 8 Aufrufe pro Frage'), { fill: D, size: 7.5 })}
-    ${t(18, 154, l('tool design changes the bill by factor 4', 'Tool-Design ändert die Rechnung um Faktor 4'), { fill: C, size: 7 })}`,
 
   'hosted-mcp-servers-data-access': (l) => `
     ${box(14, 30, 92, 50)}${t(60, 48, 'SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(60, 61, 'hosted MCP', { size: 7, anchor: 'middle' })}${t(60, 73, 'sobject-reads', { size: 7, anchor: 'middle' })}
@@ -1818,14 +1837,6 @@ const drawings: Record<string, Drawing> = {
     ${t(14, 150, l('Siemens + Teamcenter: announced', 'Siemens + Teamcenter: angekündigt'), { size: 7 })}
     ${t(306, 150, l('3 actions = $0.30', '3 Aktionen = 0,30 €'), { fill: C, size: 7, anchor: 'end' })}`,
 
-  'aela-flat-fee-vs-credits': (l) => `
-    ${box(18, 28, 134, 58)}${t(28, 44, 'FLEX CREDITS', { fill: D, size: 7.5 })}${t(28, 58, l('$500 per 100K credits', '500 € je 100K Credits'), { size: 7 })}${t(28, 72, l('pay per use, no rollover', 'Verbrauch, kein Übertrag'), { size: 7 })}
-    ${box(168, 28, 134, 58, C)}${t(178, 44, 'AELA', { fill: D, size: 7.5 })}${t(178, 58, l('fixed fee, 2 or 3 years', 'Pauschale, 2 oder 3 Jahre'), { size: 7 })}${t(178, 72, l('price not public', 'Preis nicht öffentlich'), { fill: C, size: 7 })}
-    ${t(18, 106, l('PayGo or Pre-Commit', 'PayGo oder Pre-Commit'), { size: 7 })}
-    ${t(170, 100, l('term', 'Laufzeit'), { size: 7 })}${arrow(168, 106, 218, C)}${tag(220, 96, 82, l('RENEWAL', 'VERLÄNGERUNG'))}
-    <path d="M18 124H302" stroke="${L}"/>
-    ${t(18, 140, l('Scenario: $150K a year = 30M credits = 1.5M actions', 'Szenario: 150K € im Jahr = 30 Mio. Credits = 1,5 Mio. Aktionen'), { fill: D, size: 7.5 })}
-    ${t(18, 153, l('120+ AELAs sold in Q4 FY26 (earnings call)', '120+ AELAs verkauft in Q4 FY26 (Earnings Call)'), { size: 7 })}`,
 
   'agentforce-agents-release-pipeline': (l) => `
     ${[['Git PR', G], [l('validate', 'validieren'), G], [l('deploy', 'deployen'), G], ['publish', G], [l('activate', 'aktivieren'), C]]
@@ -1859,15 +1870,6 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 116, l('ASK IN WRITING BEFORE YOU PAY', 'VOR DEM KAUF SCHRIFTLICH FRAGEN'), { fill: D, size: 7 })}
     ${box(18, 124, 284, 24, C)}${t(160, 139, l('model · region · retention · cap · approval', 'Modell · Region · Speicherdauer · Limit · Freigabe'), { fill: C, size: 7.5, anchor: 'middle' })}`,
 
-  'digital-wallet-chargeback': (l) => `
-    ${t(18, 18, l('ONE ORG, ONE POOL (SCENARIO)', 'EINE ORG, EIN POOL (SZENARIO)'), { fill: D, size: 7 })}${t(302, 18, l('4.1M credits planned', '4,1 Mio. Credits geplant'), { fill: D, size: 7, anchor: 'end' })}
-    ${[[18, 125, l('DE 1.8M', 'DE 1,8 Mio.')], [143, 97, l('US 1.4M', 'US 1,4 Mio.')], [240, 41, l('APAC', 'Asien')], [281, 21, 'IT']]
-      .map(([x, w, s]) => `<rect x="${x}" y="28" width="${w}" height="22" fill="#fff" stroke="${G}" stroke-width="1.1"/>` + t(Number(x) + Number(w) / 2 - (Number(w) < 30 ? 3.5 : 0), 42, String(s), { size: Number(w) < 30 ? 6.5 : 7, anchor: 'middle' })).join('')}
-    <path d="M295 24V58" stroke="${D}" stroke-width="1.3" stroke-dasharray="3 2"/>${t(302, 68, l('pool 4.0M, +100K overage', 'Pool 4,0 Mio., +100K Mehrverbrauch'), { size: 7, anchor: 'end' })}
-    <path d="M18 80H302" stroke="${L}"/>
-    ${[l('1 org = 1 pool, 1 contract owner', '1 Org = 1 Pool, 1 Vertragspartner'), l('chargeback: $5 per 1,000 credits', 'Verrechnung: 5 € pro 1.000 Credits'), l('overage: billed in arrears', 'Mehrverbrauch: nachträglich'), l('alerts yes, stop not documented', 'Warnungen ja, Stopp nicht dokumentiert')]
-      .map((s, i) => dot(22, 95 + i * 15, G, 2) + t(30, 98 + i * 15, s, { size: 7 })).join('')}
-    ${box(206, 88, 96, 56, C)}${t(254, 105, l('APAC 4 months late', 'Asien 4 Monate später'), { fill: C, size: 6.5, anchor: 'middle' })}${t(254, 119, l('300K credits expire', '300K Credits verfallen'), { fill: C, size: 6.5, anchor: 'middle' })}${t(254, 133, l('= $1,500', '= 1.500 €'), { fill: C, size: 7.5, anchor: 'middle' })}`,
 
   'multilingual-dealer-agents': (l) => `
     ${t(18, 18, l('AGENTFORCE LANGUAGES', 'AGENTFORCE-SPRACHEN'), { fill: D, size: 7 })}${t(166, 18, l('KNOWLEDGE', 'WISSEN'), { fill: D, size: 7 })}

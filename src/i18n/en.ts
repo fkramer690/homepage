@@ -18,6 +18,22 @@ export type HubFigure =
     };
 const hubFigure = (figure: HubFigure | null) => figure;
 
+// Optional intro video of a masterclass hub (files in public/videos/<file>.mp4 + .jpg, rules:
+// docs/masterclass.md, "Intro video"). Only in the language it is spoken in; null elsewhere.
+// `landscape`: 16:9 instead of the 9:16 shorts of the blog. `watch`: text on the card.
+export type CourseVideo = {
+  file: string;
+  title: string;
+  duration: number;
+  uploadDate: string;
+  landscape: boolean;
+  watch: string;
+  transcript: string;
+  // Note on the voice, shown below the transcript (e.g. that it is AI-generated).
+  voice?: string;
+};
+const courseVideo = (video: CourseVideo | null) => video;
+
 export const en = {
   lang: 'en',
   meta: {
@@ -337,6 +353,9 @@ export const en = {
     searchNone: 'No results. Try other words or reset the filters.',
     authorFocus: { fabian: 'Salesforce architecture for manufacturers', juliane: 'Change management' },
     takeaways: 'Key takeaways',
+    callHintKicker: 'First call · 30 minutes',
+    callHintPrepKicker: 'To prepare',
+    callHintPrepTitle: 'Useful for a first call:',
     faq: 'Frequently asked questions',
     related: 'Related articles',
     series: 'Series',
@@ -391,8 +410,11 @@ export const en = {
     deliverables: 'What I do',
     results: 'What you get',
     phases: 'How we work together',
+    duration: 'Typical duration',
     faq: 'Frequently asked questions',
-    posts: 'Further reading',
+    posts: 'Articles on this topic',
+    readingCourse: 'Masterclass',
+    readingChapters: 'chapters, free',
   },
   masterclass: {
     name: 'AI masterclass',
@@ -451,6 +473,7 @@ export const en = {
   },
   masterclassDevops: {
     name: 'DevOps masterclass',
+    video: courseVideo(null),
     metaTitle: 'DevOps masterclass: Salesforce releases in manufacturing',
     metaDescription: 'Ten chapters on Salesforce DevOps and release management at manufacturing companies: ownership, environments, tools, pipeline, quality and operations.',
     eyebrow: 'Masterclass · October 2026',
@@ -507,11 +530,23 @@ export const en = {
   },
   masterclassCommerce: {
     name: 'B2B Commerce masterclass',
-    metaTitle: 'B2B Commerce masterclass: Salesforce shops in manufacturing',
-    metaDescription: 'Five chapters on Salesforce B2B Commerce for manufacturers: costs, catalogue, customer prices, checkout, ERP integration, Agentforce and rollout.',
-    eyebrow: 'Masterclass · October 2026',
-    title: 'Spare parts online with Salesforce B2B Commerce: from costs to rollout',
-    lead: 'Dealers and customers want to order spare parts and accessories themselves, at their prices and with real stock from the ERP. I show independently when Salesforce B2B Commerce fits, what it costs and what to decide before a partner builds.',
+    metaTitle: 'Salesforce B2B Commerce: costs, prices, ERP, rollout',
+    metaDescription: 'Salesforce B2B Commerce for manufacturers: store or portal, GMV pricing, customer prices, stock and orders with SAP, rollout. Short answers and every article.',
+    eyebrow: 'Topic hub and masterclass · November 2026',
+    title: 'Salesforce B2B Commerce for spare parts: from costs to rollout',
+    lead: 'Dealers and customers want to order spare parts and accessories themselves, at their prices and with real stock from the ERP. I show independently when Salesforce B2B Commerce fits, what it costs and what to decide before a partner builds. Below are the six questions manufacturers ask before a B2B store, each with a short answer and the page that answers it in full.',
+    questionsAnchor: 'questions',
+    questionsLabel: 'Your question',
+    questionsTitle: 'Six questions on B2B Commerce, one answer page each',
+    questionsText: 'The short answer is here, the full answer with figures and date on the page behind it.',
+    questions: [
+      { q: 'Store or dealer portal?', a: 'A store pays off when dealers reorder known part numbers in volume and much of it still arrives by phone or email.', articleKey: 'commerce-shop-or-portal', link: 'Store or portal' },
+      { q: 'What does B2B Commerce cost?', a: 'A percentage of gross merchandise value (GMV) that Salesforce does not publish. Buyer licences, implementation and ERP integration come on top.', articleKey: 'commerce-gmv-pricing', link: 'GMV pricing' },
+      { q: 'Where do customer prices come from?', a: 'From price books per buyer group, or live from the ERP through an extension. Which system is the price master belongs in writing first.', articleKey: 'commerce-customer-prices', link: 'Customer prices' },
+      { q: 'Stock live from SAP or as a copy?', a: 'A copy is fast and keeps running when SAP is down. Live is exact, but SAP has to answer during checkout. Dealers often only need a signal.', articleKey: 'commerce-stock-availability-erp', link: 'Stock and ERP' },
+      { q: 'Who owns the order after checkout?', a: 'At most manufacturers SAP. Status, deliveries and invoices flow back into the store and fill the order history.', articleKey: 'commerce-order-to-erp', link: 'Orders to the ERP' },
+      { q: 'How do I roll out the store?', a: 'In waves by buyer group, starting with dealers who reorder known parts often. Test each wave with a real buyer account first.', articleKey: 'commerce-dealer-rollout', link: 'Rollout in waves' },
+    ],
     toChapters: 'Go to the chapters',
     chaptersAnchor: 'chapters',
     deadlinesAnchor: 'deadlines',
@@ -614,11 +649,23 @@ export const en = {
   },
   masterclassManufacturing: {
     name: 'Manufacturing Cloud masterclass',
-    metaTitle: 'Manufacturing Cloud masterclass for manufacturers',
-    metaDescription: 'Five chapters on Salesforce Manufacturing Cloud: sales agreements, forecasts, dealer rebates, warranty, ERP integration, Agentforce and global rollout.',
-    eyebrow: 'Masterclass · October 2026',
-    title: 'Manufacturing Cloud for manufacturers: from business case to rollout',
-    lead: 'At list price Manufacturing Cloud costs $80 more per user and month than Sales Cloud, and it only pays off when sales agreements, dealer rebates or warranty processes match how you sell. Chapter by chapter I show which features exist, which data has to come from the ERP and what to decide before a partner starts building.',
+    metaTitle: 'Salesforce Manufacturing Cloud: features, costs, rollout',
+    metaDescription: 'Salesforce Manufacturing Cloud for manufacturers: price gap, add-ons, service, SAP integration, rollout. Short answers, five chapters and every article.',
+    eyebrow: 'Topic hub and masterclass · November 2026',
+    title: 'Salesforce Manufacturing Cloud: from business case to rollout',
+    lead: 'At list price Manufacturing Cloud costs $80 more per user and month than Sales Cloud, and it only pays off when sales agreements, dealer rebates or warranty processes match how you sell. Chapter by chapter I show which features exist, which data has to come from the ERP and what to decide before a partner starts building. Below are the six questions manufacturers ask before they decide, each with a short answer and the page that answers it in full.',
+    questionsAnchor: 'questions',
+    questionsLabel: 'Your question',
+    questionsTitle: 'Six questions on Manufacturing Cloud, one answer page each',
+    questionsText: 'The short answer is here, the full answer with figures and date on the page behind it.',
+    questions: [
+      { q: 'Is Manufacturing Cloud worth it?', a: 'When you sell through volume agreements, or when dealer rebates, warranty and a dealer portal carry the case. Otherwise the main reason is missing.', articleKey: 'manufacturing-cloud-worth-it', link: 'Manufacturing Cloud vs Sales Cloud' },
+      { q: 'How much more than Sales Cloud?', a: 'Sales Core at $275 instead of $195 per user and month, $192,000 a year for 200 users. Add-ons such as portal licences come on top.', articleKey: 'manufacturing-cloud-add-ons-costs', link: 'Add-ons and costs' },
+      { q: 'Which features are included?', a: 'Every sales and partner feature has its own setting and starts switched off. Ship and debit and Connected Assets cost extra.', articleKey: 'manufacturing-cloud-feature-map', link: 'Feature overview' },
+      { q: 'Manufacturing Cloud for Service or Service Cloud?', a: 'A plain hotline only needs Service Cloud. Warranty and service campaigns point to Manufacturing Cloud, and mixed licences are normal.', articleKey: 'manufacturing-cloud-service-vs-service-cloud', link: 'Service compared' },
+      { q: 'What does SAP own, what Salesforce?', a: 'Accounts, products, orders and actual volumes come from SAP. Approved rebates and warranty amounts go back, and SAP books them as credit notes.', articleKey: 'manufacturing-cloud-erp-integration', link: 'SAP integration' },
+      { q: 'In which order to roll out?', a: 'A large region early, so the global template is under load from the start. All countries work at least 80 percent the same way.', articleKey: 'manufacturing-cloud-global-rollout', link: 'Global rollout' },
+    ],
     toChapters: 'Go to the chapters',
     chaptersAnchor: 'chapters',
     deadlinesAnchor: 'deadlines',
@@ -657,11 +704,23 @@ export const en = {
   },
   masterclassFieldService: {
     name: 'Field Service masterclass',
-    metaTitle: 'Field Service masterclass: service teams in manufacturing',
-    metaDescription: 'Five chapters on Salesforce Field Service for manufacturers: licences, scheduling, the mobile app, assets and spare parts, AI agents and rollout.',
-    eyebrow: 'Masterclass · October 2026',
-    title: 'When Salesforce Field Service pays off for field teams',
-    lead: 'Field Service schedules technicians by skill, travel time and contract, puts jobs on the tablet offline and records parts and readings. I show when that pays off for machine and plant builders, what to decide before a partner starts building and where the ERP stays in charge.',
+    metaTitle: 'Salesforce Field Service: licences and implementation',
+    metaDescription: 'Salesforce Field Service for manufacturers: licences by role, rollout in waves, ERP and spare parts, scheduling. Short answers, five chapters, every article.',
+    eyebrow: 'Topic hub and masterclass · November 2026',
+    title: 'Salesforce Field Service for manufacturers: licences, implementation, operations',
+    lead: 'Field Service schedules technicians by skill, travel time and contract, puts jobs on the tablet offline and records parts and readings. Here are the six questions machine and plant builders ask before they start, each with a short answer and the page that answers it in full. Five chapters and every article follow.',
+    questionsAnchor: 'questions',
+    questionsLabel: 'Your question',
+    questionsTitle: 'Six questions on Salesforce Field Service, one answer page each',
+    questionsText: 'The short answer is here, the full answer with figures and date on the page behind it.',
+    questions: [
+      { q: 'Is Field Service worth it?', a: 'Yes for many short jobs per technician and day. For commissioning that runs for days, optimisation adds little.', articleKey: 'field-service-worth-it', link: 'Is Field Service worth it?' },
+      { q: 'Which role needs which licence?', a: 'Dispatcher and technician 175 € a month each, a hotline that also dispatches Field Service Plus, partner technicians Contractor Plus.', articleKey: 'field-service-licences-by-role', link: 'Field Service licences' },
+      { q: 'How do I implement Field Service?', a: 'In waves, region by region. The first wave tests everything, and the works council comes in before it.', articleKey: 'field-service-rollout', link: 'Field Service implementation' },
+      { q: 'What does the ERP own, what Salesforce?', a: 'The ERP owns stock and postings, Field Service keeps a copy for dispatch and the app and reports consumption back.', articleKey: 'field-service-spare-parts', link: 'Spare parts and ERP' },
+      { q: 'Salesforce, SAP FSM, IFS or ServiceNow?', a: 'The system that leads for customers, orders and assets narrows the shortlist, but it does not decide on its own.', articleKey: 'field-service-management-software', link: 'Software selection' },
+      { q: 'How much scheduling runs automatically?', a: 'To start, the engine schedules up to Scheduled and a dispatcher releases. More automation once dispatchers barely change the plan.', articleKey: 'field-service-scheduling-automation', link: 'Scheduling' },
+    ],
     toChapters: 'Go to the chapters',
     chaptersAnchor: 'chapters',
     deadlinesAnchor: 'deadlines',

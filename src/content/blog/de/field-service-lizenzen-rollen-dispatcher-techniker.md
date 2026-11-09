@@ -29,6 +29,8 @@ draft: false
 
 In Salesforce Field Service braucht jede Rolle der Serviceorganisation ihre eigene Lizenz, und die Preisliste setzt feste Regeln für den Mix. Disponenten und Techniker bekommen Dispatcher oder Technician für 175 € pro Nutzer und Monat. Die Hotline, die Cases bearbeitet, braucht Service Cloud, und wenn sie auch disponiert, Field Service Plus für 230 €. Techniker von Servicepartnern bekommen Contractor Plus für 80 € pro Nutzer oder 32 € pro Login. Zwei Regeln entscheiden die meisten Rechnungen: Dispatcher und Technician dürfen kein Case Management machen, und jede Org braucht mindestens eine Service-Cloud- und eine Dispatcher-Lizenz.
 
+Weitere Fragen zum Produkt, von der Einführung bis zum ERP, beantwortet der Themen-Hub [Salesforce Field Service für Hersteller](../../masterclass/field-service/).
+
 ## Was kosten die Field Service Lizenzen?
 
 Salesforce verkauft das Produkt heute als Field Service and Operations. Die [deutsche Preisseite](https://www.salesforce.com/de/products/field-service/pricing) nennt im Oktober 2026 diese Preise pro Nutzer und Monat, bei jährlicher Abrechnung und für die Enterprise Edition. Die [US-Preisseite](https://www.salesforce.com/service/field-service-management/pricing/) zeigt dieselben Zahlen in Dollar.

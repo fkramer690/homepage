@@ -13,7 +13,7 @@ takeaways:
   - "Anthropic puts Claude Code at around $13 per developer per active day. Seat prices now buy a usage budget, not unlimited use."
   - "Core, Advanced and Max include 500,000, 1 million and 2.75 million Flex Credits per org and year. One dealer agent can use about 3 million in year one."
   - "Data 360 for spare part catalogues and the still unpriced Headless Platform Interactions meter are the items most often missing from estimates."
-articles: [flex-credits-agentforce-costs, salesforce-editions-core-advanced-max, dealer-service-agent-costs, ai-coding-costs-salesforce-project, data-360-costs-for-agents, headless-platform-interactions-budget]
+articles: [flex-credits-agentforce-costs, salesforce-editions-core-advanced-max, ai-coding-costs-salesforce-project, data-360-costs-for-agents]
 faq:
   - q: "What does a coding agent like Claude Code cost per developer?"
     a: "For enterprise deployments Anthropic gives an average of around $13 per developer per active day and $150 to $250 a month, with 90 percent of users below $30 per active day. Team and Enterprise seats cap usage through a five-hour and a weekly window."
@@ -160,13 +160,13 @@ Assumption: 3,000 conversations a month about order status, delivery dates and s
 | Total | 204,000 credits = **$1,020 a month**, against $6,000 on the per-conversation model |
 | Twelve months | 2,448,000 credits, more than the Core and Advanced pools, just under Max |
 
-With 2,000 MB of spare part catalogues processed in Data 360 (300,000 credits) and sandbox tests, the first year comes to about 3 million credits or $15,000. The full calculation with test load and resolution pricing is in [Agentforce dealer service agent: cost per month](../../../blog/dealer-service-agent-cost-calculation/).
+With 2,000 MB of spare part catalogues processed in Data 360 (300,000 credits) and sandbox tests, the first year comes to about 3 million credits or $15,000. The full calculation with test load and resolution pricing is in [Agentforce costs for manufacturers](../../../blog/flex-credits-agentforce-cost-per-action/).
 
 ### The two most common gaps
 
 **Data 360.** When an agent relies on manuals, exploded drawings or spare part catalogues, 1 GB of unstructured documents costs about 150,000 credits in the base tier, roughly $750, and four times that if exploded drawings need LLM-based Intelligent Processing at 600 credits per MB. In a sandbox there are no volume tiers. Test with a subset and remove outdated catalogue versions first. More in [Data 360 costs for AI agents](../../../blog/data-360-costs-for-ai-agents/).
 
-**Headless Platform Interactions.** When Claude, ChatGPT or other agents access Salesforce through MCP or API, every successful call by a registered agent is to count, according to [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), only in active production orgs and with 30 days' notice. Classic integrations keep their current pricing. Using Claude on Salesforce data then means paying twice: Anthropic for tokens, Salesforce for interactions. You can estimate the volume, as shown in [chapter 3](../mcp-and-interfaces/); the budget line is in [MCP and API calls to Salesforce as a budget risk](../../../blog/mcp-api-calls-salesforce-budget-risk/).
+**Headless Platform Interactions.** When Claude, ChatGPT or other agents access Salesforce through MCP or API, every successful call by a registered agent is to count, according to [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), only in active production orgs and with 30 days' notice. Classic integrations keep their current pricing. Using Claude on Salesforce data then means paying twice: Anthropic for tokens, Salesforce for interactions. You can estimate the volume, as shown in [chapter 3](../mcp-and-interfaces/); the budget line is in [MCP and API calls to Salesforce as a budget risk](../../../blog/flex-credits-agentforce-cost-per-action/).
 
 ```hinweis offen
 The rate for Headless Platform Interactions is still TBA on the rate card. Get your account executive to confirm how the pool, multiple orgs and Headless Platform Interactions are billed.

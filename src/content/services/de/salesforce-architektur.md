@@ -36,6 +36,7 @@ phases:
   - title: "Architektur in der Umsetzung"
     icon: "architecture"
     text: "Während der Umsetzung prüfe ich Partner-Designs, halte das Entscheidungslog aktuell und greife ein, wenn sich der Bau vom Zielbild entfernt."
+duration: "Zielbild mit Datenmodell und Entscheidungslog 6 bis 10 Wochen, Solution Designs für die kritischen Bereiche weitere 4 bis 8 Wochen. Danach begleite ich die Umsetzung, meist 1 bis 2 Tage pro Woche."
 faq:
   - q: "Was macht ein Salesforce-Architekt auf Kundenseite?"
     a: "Er entwirft die Zielarchitektur im Interesse des Unternehmens und nicht eines Herstellers oder Partners: welche Clouds und Produkte nötig sind, wie das Datenmodell aussieht, wie Salesforce mit den anderen Systemen verbunden ist und welche Entscheidungen langfristig dokumentiert werden. In der Umsetzung prüft er, was Partner bauen, gegen dieses Bild."
@@ -44,6 +45,8 @@ faq:
   - q: "Was ist ein Entscheidungslog und warum ist es wichtig?"
     a: "Ein Entscheidungslog hält jede Architekturentscheidung mit ihren Optionen, den Gründen für die Wahl und ihren Folgen fest. Fragt zwei Jahre später jemand, warum ein Prozess so gebaut wurde, steht die Antwort dort, auch wenn die Beteiligten längst weitergezogen sind."
 blogTags: [architecture, architektur, data 360, data governance, agentforce, field service]
+readMore: [salesforce-well-architected-2026, revenue-cloud-vs-manufacturing-cloud-commerce, manufacturing-cloud-worth-it, salesforce-editions-core-advanced-max, architecture-decision-log, permission-concept-permission-sets, duplicates-master-data-cleanup]
+masterclass: manufacturing-cloud
 ---
 
 Salesforce-Architektur auf Kundenseite bedeutet, das Gesamtbild im Interesse des Unternehmens zu entwerfen: welche Clouds und Produkte es braucht, wie das Datenmodell aussieht, wie Salesforce mit ERP und anderen Systemen zusammenarbeitet und wie Entscheidungen dokumentiert werden. Meine Rolle ist unabhängig von Herstellern und Partnern, und das zählt vor allem dann, wenn ein Partner das nächste Produkt vorschlägt.

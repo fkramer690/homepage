@@ -73,11 +73,12 @@ without: Discovery only for the happy path
 - Only the standard case done by the book is discussed.
 - Devices without a serial number, orders spanning two plants or own framework agreements are missing.
 - Rules, data model and interfaces for them are in no estimate.
-- The edge cases come back later as change requests.
+- * The edge cases come back later as change requests.
 with: Discovery with edge cases
-- The list of special cases comes with the proposal.
+- * The list of special cases comes with the proposal.
 - Assumptions behind the estimate and open decisions are written down.
 - You see before the award what the price covers and what it does not.
+quote: For manufacturers, the effort sits in the edge cases, not in the standard case.
 ```
 
 So do not ask whether a discovery took place; ask to see this evidence. If the partner cannot show any of it, you have no evidence that edge cases were covered.

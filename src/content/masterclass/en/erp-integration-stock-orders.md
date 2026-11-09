@@ -134,8 +134,8 @@ For the ERP integration this means: extensions are triggered by Connect API call
 
 A machine builder with SAP S/4HANA plans a store on Growth Edition for 250 dealers and 15,000 spare parts. Phone and EDI orders stay in SAP. The interface list after the first workshop could look like this:
 
-1. Customer master to accounts and buyer accounts, nightly.
-2. Materials and product hierarchy to products and categories, nightly.
+1. Nightly, the customer master as accounts and buyer accounts.
+2. Nightly, the material master and product hierarchy as products and categories.
 3. List and tier prices into price books, nightly; contract prices of the 40 largest dealers live through the pricing extension.
 4. Stock status every 15 minutes into Omnichannel Inventory, confirmed date live in checkout.
 5. Credit and delivery block live in `validate`.

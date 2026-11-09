@@ -64,7 +64,7 @@ quelle: Salesforce Flex Credits Rate Card vom 31.08.2026,
 
 Ein Händlergespräch mit 2.500 Zeichen zu übersetzen kostet 10 Credits, 0,05 €. Drei Aktionen im selben Gespräch kosten 60 Credits.
 
-Unklar ist, wann der Zähler läuft. Der [Hilfeartikel zu abrechenbaren Nutzungsarten](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) misst Übersetzung nach verarbeiteten Zeichen und verweist auf die Dokumentation der jeweiligen Funktion. Die Preisseite sagt, Flex Credits gelten gleichermaßen für Aktionen, Prompts, Übersetzungen und Voice-Aktionen. Welche Agentenfunktionen den Translation-Zähler nutzen, habe ich auf keiner Salesforce-Seite gefunden. Fragen Sie Ihren Account Executive und beobachten Sie [Digital Wallet](../digital-wallet-agentforce-kostenkontrolle/).
+Unklar ist, wann der Zähler läuft. Der [Hilfeartikel zu abrechenbaren Nutzungsarten](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) misst Übersetzung nach verarbeiteten Zeichen und verweist auf die Dokumentation der jeweiligen Funktion. Die Preisseite sagt, Flex Credits gelten gleichermaßen für Aktionen, Prompts, Übersetzungen und Voice-Aktionen. Welche Agentenfunktionen den Translation-Zähler nutzen, habe ich auf keiner Salesforce-Seite gefunden. Fragen Sie Ihren Account Executive und beobachten Sie [Digital Wallet](../flex-credits-agentforce-kosten-pro-aktion/).
 
 Für Servicemitarbeitende gibt es eine eigene Funktion. [Real-Time Translations](https://help.salesforce.com/s/articleView?language=en_US&id=service.messaging_translate_2.htm&type=5) übersetzt Enhanced Chat und Messaging zwischen Händler und Mitarbeitenden. Sie braucht die Agentforce-for-Service-SKU plus eine Permission Set License und nimmt eigene Terminologie für bis zu 10 Sprachen an. Wie die Nutzung abgerechnet wird, steht auf den Hilfeseiten, die ich gelesen habe, nicht.
 
@@ -106,7 +106,7 @@ Nehmen wir einen Maschinenbauer mit Händlern in 20 Ländern und 13 Sprachen an.
 | Handbücher indexiert in 13 Sprachen, einmalig | 292.500 | 1.463 |
 | Sandbox-Tests, 13 × 40 Gespräche, einmalig | 29.120 | 146 |
 
-Die zusätzlichen Prompt-Einheiten unterstellen, dass einer von zwei Prompts pro Gespräch die Grenze von 2.000 Tokens überschreitet. Ein Testgespräch rechnet mit drei Aktionen zu 16 Sandbox-Credits und zwei Prompts zu je 4. Die vollständige Methode steht in [Agentforce-Serviceagent für Händler: Kosten pro Monat](../serviceagent-haendleranfragen-kosten/).
+Die zusätzlichen Prompt-Einheiten unterstellen, dass einer von zwei Prompts pro Gespräch die Grenze von 2.000 Tokens überschreitet. Ein Testgespräch rechnet mit drei Aktionen zu 16 Sandbox-Credits und zwei Prompts zu je 4. Die vollständige Methode steht in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/).
 
 Die Sprache kostet im Rechenbeispiel rund 112 € im Monat zusätzlich zu 1.200 € für Aktionen. Handbücher in allen 13 Sprachen zu indexieren kostet das Sechseinhalbfache des Index in zwei Sprachen, und jede Version braucht Pflege. Die Budgetfrage ist die Zahl der gepflegten Sprachen, nicht der Preis pro Zeichen.
 

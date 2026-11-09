@@ -39,16 +39,19 @@ phases:
   - title: "Übergabe"
     icon: "handshake"
     text: "Läuft der Prozess, übergebe ich ihn an einen internen Kollegen und arbeite ihn ein, damit der Kunde die Governance langfristig selbst verantwortet."
+duration: "Bestandsaufnahme 2 bis 4 Wochen. Die gemeinsamen Standards stehen nach etwa 3 Monaten. Mit Reviews und Center of Excellence bis zur Übergabe an Ihr Team meist 6 bis 12 Monate."
 faq:
   - q: "Was ist Salesforce-Partnersteuerung?"
     a: "Die Regeln, Rollen und Reviews, mit denen mehrere Umsetzungspartner auf gleiche Weise an einer Salesforce-Org arbeiten: gemeinsame Standards, klare Verantwortung für Objekte und Metadaten, ein Release-Prozess und ein technisches Review jeder Lieferung."
   - q: "Wie lange dauert es, Standards über mehrere Partner zu etablieren?"
-    a: "In meinem größten Programm etwa drei Monate. Die erste Version deckte rund 80 Prozent der Fälle ab, die restlichen Randfälle kamen Schritt für Schritt dazu, bis neue Themen früh in Center-of-Excellence-Calls angesprochen wurden."
+    a: "In meinem größten Programm etwa drei Monate. Schon die erste Fassung regelte rund 80 Prozent der Fälle. Den Rest haben wir nach und nach ergänzt, bis neue Themen in Center-of-Excellence-Calls auf den Tisch kamen, bevor sie Konflikte auslösten."
   - q: "Warum sollte der Kunde und nicht ein Partner die Governance verantworten?"
     a: "Legt ein Partner die Regeln fest, entscheidet er, wie alle anderen bauen, auch seine Wettbewerber. Liegen Standards, Repository und Freigaben beim Kunden, bleiben Partner vergleichbar und austauschbar."
   - q: "Was ist eine Object Ownership Matrix?"
-    a: "Eine einfache Tabelle, die festlegt, welcher Stream oder welches Team für jedes Salesforce-Objekt und seine Metadaten verantwortlich ist. Sie verhindert, dass zwei Teams dasselbe Objekt ohne Abstimmung ändern."
+    a: "Eine Tabelle mit einer Zeile pro Salesforce-Objekt, die einen verantwortlichen Stream benennt. Alle anderen Teams stimmen Änderungen an diesem Objekt vorher mit ihm ab."
 blogTags: [partner governance, partnersteuerung, pull request review, vendor lock-in, code quality, codequalität]
+readMore: [choose-salesforce-implementation-partner, object-ownership-matrix, development-standards-definition-of-done, sandbox-strategy-multiple-partners, salesforce-center-of-excellence, fixed-price-ai-salesforce-partners, ai-org-assessment-technical-debt, salesforce-freelancer-or-consultancy]
+masterclass: devops
 ---
 
 Partnersteuerung auf Kundenseite hält ein Salesforce-Programm mit mehreren Umsetzungspartnern unter Kontrolle. Dazu gehören gemeinsame Standards, klare Verantwortung für jedes Objekt und jeden Prozess, ein Release-Prozess und jemand, der jede Lieferung technisch prüft, bevor sie weitergeht. Ohne das optimiert jeder Partner seinen eigenen Bereich, und der Kunde bezahlt die Konflikte dazwischen. Diese Rolle übernehme ich als unabhängiger Architekt, ohne Bindung an Hersteller oder Partner.
@@ -68,21 +71,19 @@ mit: Mit Architekt auf Kundenseite | Jede Lieferung läuft über Standards und R
 quelle: mein größtes Programm als Architekt auf Kundenseite
 ```
 
-Zu Beginn dieses Programms hatte niemand festgelegt, wer für welche Prozesse, Objekte und Metadaten im Lead war. Änderungen überschrieben sich, und die technischen Ansätze der Teams lagen weit auseinander.
+Am Anfang dieses Programms gab es keine Zuständigkeiten pro Objekt. Teams überschrieben gegenseitig ihre Änderungen, und jedes baute nach eigenen Regeln.
 
-Als Erstes ging jede Änderung über einen Pull Request mit Review, und eine Zeit lang lief jeder einzelne über meinen Schreibtisch. Aus diesen Reviews haben wir Standards aufgeschrieben: Namenskonventionen, eine Automatisierung pro Objekt und Kontext, Testabdeckung. Den größten Unterschied haben die Object Ownership Matrix und die Regeln für Konfiguration gemacht. Die Matrix legte fest, welcher Stream für welches Objekt verantwortlich war, und bevor ein Team ein fremdes Objekt änderte, stimmte es sich mit dem Verantwortlichen ab. Die Konfigurationsregeln bestimmten, welche Werte in Custom Metadata Types oder Custom Labels gehören, damit sie nicht fest im Code stehen.
+Der erste Schritt: Jede Änderung kam als Pull Request mit Review in die Org, und eine Zeit lang habe ich alle selbst geprüft. Was in diesen Reviews immer wieder auffiel, wurde zum Standard, etwa Namenskonventionen, eine Automatisierung pro Objekt und Kontext und Regeln zur Testabdeckung. Am meisten bewirkt haben zwei Hebel:
 
-```tabelle matrix
-titel: Object Ownership Matrix, vereinfachtes Beispiel
-spalten: Objekt | Stream Vertrieb | Stream Service | Stream Field Service
-Account | Verantwortlich * | stimmt sich ab | stimmt sich ab
-Opportunity | Verantwortlich * | stimmt sich ab | stimmt sich ab
-Quote | Verantwortlich * | stimmt sich ab | stimmt sich ab
-Case | stimmt sich ab | Verantwortlich * | stimmt sich ab
-Asset | stimmt sich ab | Verantwortlich * | stimmt sich ab
-Work Order | stimmt sich ab | stimmt sich ab | Verantwortlich *
-fazit: Bevor ein Team ein fremdes Objekt ändert, stimmt es sich mit dem Verantwortlichen ab.
+```hebel
+Object Ownership Matrix | Ein verantwortlicher Stream pro Objekt
+  Will ein Team ein Objekt eines anderen Streams ändern, spricht es vorher mit dem Verantwortlichen.
+Konfigurationsregeln | Keine festen Werte im Code
+  Schwellenwerte, Texte und Schalter liegen in Custom Metadata Types oder Custom Labels.
 ```
+
+Aufbau und Beispiel der Matrix stehen in [Object Ownership Matrix: Wer ändert welches Objekt?](../../blog/object-ownership-matrix-salesforce/).
+
 Nach der ersten Version kamen in den folgenden Wochen neue Randfälle hinzu. Wir haben sie in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) besprochen, in denen anstehende Änderungen mit genug Vorlauf für alle Streams auf den Tisch kamen. Irgendwann fielen die Randfälle weg, weil Themen besprochen wurden, bevor sie zu Konflikten wurden. Als der Prozess rund lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
 
 ## Regeln und Werkzeuge gehören dem Kunden

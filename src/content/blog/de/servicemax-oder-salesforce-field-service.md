@@ -15,12 +15,12 @@ takeaways:
   - "ServiceMax bringt Depotreparatur, Retouren und regelbasierte Entitlements mit. Field Service hält Daten, Lizenzen, Releases und KI bei einem Hersteller."
   - "Die Verfügbarkeitszusage des PTC-Vertrags gilt für die ServiceMax-Suiten nicht. Klären Sie Betrieb, Haftung und Releasekalender vor der Auswahl."
 faq:
+  - q: "Gehört ServiceMax zu Salesforce?"
+    a: "Nein. ServiceMax gehört seit dem 4. Januar 2023 zu PTC, die Übernahme kostete laut Ankündigung 1,46 Milliarden Dollar. Salesforce ist Plattformanbieter und Wettbewerber mit eigenem Field Service."
   - q: "Läuft ServiceMax auf Salesforce?"
     a: "Ja, Stand Oktober 2026. ServiceMax Core und Asset 360 werden laut PTC in Salesforce-Rechenzentren betrieben, Core wird als Managed Package über AppExchange installiert. Service Board und Schedule Optimization betreibt PTC zusätzlich auf AWS in Irland."
   - q: "Brauche ich für ServiceMax Salesforce-Lizenzen?"
     a: "Ja. Die PTC-Doku ordnet die ServiceMax-Lizenz Nutzern mit Salesforce-, Salesforce-Platform- oder Community-Lizenz zu. Für Asset 360 verlangt PTC zusätzlich Service Cloud und mindestens eine Field-Service-Lizenz."
-  - q: "Gehört ServiceMax zu Salesforce?"
-    a: "Nein. ServiceMax gehört seit dem 4. Januar 2023 zu PTC, die Übernahme kostete laut Ankündigung 1,46 Milliarden Dollar. Salesforce ist Plattformanbieter und Wettbewerber mit eigenem Field Service."
   - q: "Was kostet ServiceMax?"
     a: "PTC veröffentlicht keine Preise. Rechnen Sie mit einem Angebot von PTC und zusätzlich mit den Salesforce-Lizenzen für jeden Nutzer, und vergleichen Sie beides mit den Listenpreisen von Salesforce Field Service."
 draft: false

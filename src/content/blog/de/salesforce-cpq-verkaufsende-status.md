@@ -1,5 +1,6 @@
 ---
 title: "Salesforce CPQ Verkaufsende: Was gilt im Oktober 2026?"
+metaTitle: "Salesforce CPQ End of Life: Was gilt wirklich?"
 description: "Was Salesforce zu CPQ und dem Billing-Paket angekündigt hat, was Bestandskunden weiter dürfen und was Sie bei der nächsten Verlängerung sichern sollten."
 pubDate: 2026-10-28
 lang: de
@@ -15,6 +16,8 @@ takeaways:
   - "Das oft genannte Datum März 2025 stammt aus Berichten Dritter. Die Salesforce-Seite selbst nennt kein Datum."
   - "Die nächste CPQ-Verlängerung ist der Zeitpunkt, um Laufzeit, Preisdeckel und den Parallelbetrieb mit Revenue Cloud zu sichern."
 faq:
+  - q: "Was ersetzt Salesforce CPQ?"
+    a: "Neukunden verweist Salesforce auf Revenue Cloud Advanced, für die Abrechnung auf Revenue Cloud Billing. Ein Retirement-Datum, ab dem CPQ abgeschaltet wird, gibt es nicht. Ob und wann sich der Wechsel für Bestandskunden lohnt, hängt an Vertragslaufzeit, Anpassungen und dem Abstand bei neuen Funktionen."
   - q: "Wird Salesforce CPQ abgeschaltet?"
     a: "Ein End-of-Life-Datum ist nicht angekündigt. Salesforce nennt CPQ „end of sale, not end of life“: Neukunden können es nicht mehr kaufen, Bestandskunden nutzen es weiter, kaufen Nutzer nach, verlängern und erhalten Support und kritische Fehlerbehebungen."
   - q: "Muss ich von Salesforce CPQ auf Revenue Cloud migrieren?"

@@ -64,7 +64,7 @@ Mit diesen Regeln würde ich starten. Jede Zeile ist ein Zweig in der Logik, kei
 | Maschine läuft, Fehler unklar | Legt einen Fall an, vereinbart Rückruf durch einen Servicetechniker | Servicetechniker |
 | Frage zu Handbuch, Ersatzteil oder Auftragsstatus | Antwortet oder legt einen Fall an | Agent |
 
-Warum soll der Agent Stillstände nicht auch selbst buchen? Eine stehende Presse mit vier Stunden Reaktionszeit kann bedeuten, einen Techniker aus einer Wartung abzuziehen. Diese Abwägung braucht den Tagesplan und einen Menschen, der den anderen Kunden anruft.
+Warum soll der Agent Stillstände nicht auch selbst buchen? Eine stehende Presse mit vier Stunden Reaktionszeit kann bedeuten, einen Techniker aus einer Wartung abzuziehen. Diese Abwägung braucht den Tagesplan und einen Menschen, der den anderen Kunden anruft. Ist der Fehler unklar, kann der Rückruf des Servicetechnikers ein Videoanruf sein: Mit [Visual Remote Assistance](../visual-remote-assistant-fernhilfe-statt-einsatz/) sieht er die Maschine, bevor jemand losfährt.
 
 In Agent Script gibt es die Bausteine dafür. Das [Fetch-Data-Muster](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-patterns-fetch-data.html) führt Aktionen aus, „to retrieve data before the LLM begins reasoning“, Anlage und Entitlement liegen also vor, bevor das Modell spricht. [Bedingungen](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-patterns-conditionals.html) werden laut Doku ausgewertet, bevor der Prompt das LLM erreicht. Mit [available when](https://developer.salesforce.com/sample-apps/agent-script-recipes/action-configuration/available-when-filtering) ist die Buchungsaktion für das LLM „completely hidden“, solange nicht gültiges Entitlement, laufende Maschine und bekannte Fehlerklasse zusammen zutreffen. Die Übergabe läuft über [`@utils.escalate`](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-ref-utils.html) und braucht eine aktive Omni-Channel-Verbindung. Dem Modell bleibt, was es gut kann: deutsche Sprache verstehen und die nächste Frage stellen. Die Begründung für diese Aufteilung steht in [Agent Script: Geschäftsregeln gehören nicht ins LLM](../agent-script-regeln-statt-llm/).
 
@@ -90,7 +90,7 @@ Ebenso offen ist, ob Disponenten, die weitergeleitete Anrufe annehmen, einen eig
 
 Für diese Arbeitsplätze nennt die [Preisseite von Salesforce Voice](https://www.salesforce.com/eu/service/call-center-integration/voice-pricing/) Contact Centre mit 125 € pro Nutzer und Monat inklusive unbegrenzter Plattform-Sprachminuten oder Partner Contact Centre mit 50 €, wenn Sie Ihren Telefonieanbieter behalten.
 
-Wie man Kosten pro Aktion grundsätzlich schätzt, steht in [Flex Credits: Agentforce-Kosten pro Aktion schätzen](../flex-credits-agentforce-kosten-pro-aktion/).
+Wie man Kosten pro Aktion grundsätzlich schätzt, steht in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Rechenbeispiel: 400 Hotline-Anrufe im Monat
 

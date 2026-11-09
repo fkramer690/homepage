@@ -2,6 +2,7 @@
 title: "sfdx-hardis oder DevOps Center: der Vergleich 2026"
 description: "sfdx-hardis und das DevOps Center, heute Lifecycle Center, im Vergleich: Git-Plattformen, Bedienung, Kosten, Monitoring und wann welches Tool passt."
 pubDate: 2026-10-28
+updatedDate: 2026-11-07
 lang: de
 slug: sfdx-hardis-oder-devops-center-vergleich
 translationKey: sfdx-hardis-vs-devops-center
@@ -26,7 +27,7 @@ faq:
     a: "Lifecycle Center ist für Admins der leichtere Einstieg, weil alles in Salesforce passiert. Die VS-Code-Erweiterung von sfdx-hardis nimmt Admins die meisten Git-Befehle ab, setzt aber VS Code und etwas Grundwissen zu Branches voraus."
 ---
 
-sfdx-hardis und das DevOps Center von Salesforce, das seit Oktober 2026 Lifecycle Center heißt, sind beide ohne Lizenzgebühren nutzbar und führen beide Änderungen über Git in die Produktion. Der Unterschied liegt darin, wo der Prozess lebt. Lifecycle Center ist eine native App in einer Salesforce-Org, mit Klickoberfläche, und arbeitet nur mit GitHub.com und Bitbucket Cloud. sfdx-hardis läuft als Pipeline in der CI des Kunden, auf GitHub, GitLab, Azure DevOps, Bitbucket oder Jenkins, und bringt Monitoring, Backup und Dokumentation mit. Meine Faustregel: Lifecycle Center für kleine, klickorientierte Teams, sfdx-hardis für Programme mit mehreren Partnern.
+[sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/) und das DevOps Center von Salesforce, das seit Oktober 2026 Lifecycle Center heißt, sind beide ohne Lizenzgebühren nutzbar und führen beide Änderungen über Git in die Produktion. Der Unterschied liegt darin, wo der Prozess lebt. Lifecycle Center ist eine native App in einer Salesforce-Org, mit Klickoberfläche, und arbeitet nur mit GitHub.com und Bitbucket Cloud. sfdx-hardis läuft als Pipeline in der CI des Kunden, auf GitHub, GitLab, Azure DevOps, Bitbucket oder Jenkins, und bringt Monitoring, Backup und Dokumentation mit. Meine Faustregel: Lifecycle Center für kleine, klickorientierte Teams, sfdx-hardis für Programme mit mehreren Partnern.
 
 ## Was ist der Unterschied zwischen sfdx-hardis und dem DevOps Center?
 

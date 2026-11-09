@@ -51,7 +51,7 @@ Dieselbe Preisseite nennt die Add-ons einzeln, und zwar nur in Dollar. Pro Nutze
 |---|---|
 | Field Service Plus | 230 Dollar |
 | Agentforce for Field Service and Operations | 125 Dollar |
-| Visual Remote Assistant | 50 Dollar |
+| [Visual Remote Assistant](../visual-remote-assistant-fernhilfe-statt-einsatz/) | 50 Dollar |
 | Appointment Assistant | 25 Dollar |
 | **Summe** | **430 Dollar** |
 | Agentforce 1 Field Service | 650 Dollar |
@@ -65,7 +65,7 @@ Das Agentforce-Add-on enthält bereits unbegrenzte Nutzung für Mitarbeitende. D
 
 Salesforce nennt für Flex Credits [500 Dollar pro 100.000](https://www.salesforce.com/agentforce/pricing/), und eine Standardaktion kostet laut [Ankündigung des Preismodells](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) 20 Credits. 1 Million Flex Credits sind also zum Listenpreis 5.000 Dollar im Jahr wert, oder 50.000 Standardaktionen. Meint die Zeile zum Scheduling Agent eine zweite Million, sind es 10.000 Dollar.
 
-Der Aufpreis gilt pro Nutzer, die Credits pro Org. 220 Dollar pro Nutzer und Monat sind 2.640 Dollar pro Nutzer und Jahr. 5.000 Dollar an Credits decken den Aufpreis für 1,9 Nutzer, 10.000 Dollar für 3,8 Nutzer. Ab dem fünften Nutzer rechtfertigen die Credits allein das Paket nie. Wie man Credits pro Prozess genauer schätzt, steht in [Flex Credits: Agentforce-Kosten pro Aktion schätzen](../flex-credits-agentforce-kosten-pro-aktion/).
+Der Aufpreis gilt pro Nutzer, die Credits pro Org. 220 Dollar pro Nutzer und Monat sind 2.640 Dollar pro Nutzer und Jahr. 5.000 Dollar an Credits decken den Aufpreis für 1,9 Nutzer, 10.000 Dollar für 3,8 Nutzer. Ab dem fünften Nutzer rechtfertigen die Credits allein das Paket nie. Wie man Credits pro Prozess genauer schätzt, steht in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Rechenbeispiel: 50 Nutzer und ein Buchungsagent
 
@@ -95,7 +95,7 @@ contra: Einzel-Add-ons gewinnen, wenn
 - Agenten für Kunden noch ein Pilot sind und der Credit-Bedarf unbekannt ist
 ```
 
-Ein dritter Weg liegt außerhalb beider Listen: ein Vertrag mit Pauschale für Agentforce, Data 360 und MuleSoft. Wann sich das lohnt, steht in [AELA: Agentforce-Pauschale oder Credits?](../aela-agentforce-pauschale-oder-credits/). Welche Agenten für Kunden, Disposition und Techniker heute tragen, steht in [KI-Agenten im Außendienst: Was funktioniert heute?](../ki-agenten-aussendienst-field-service/).
+Ein dritter Weg liegt außerhalb beider Listen: ein Vertrag mit Pauschale für Agentforce, Data 360 und MuleSoft. Wann sich das lohnt, steht in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/). Welche Agenten für Kunden, Disposition und Techniker heute tragen, steht in [KI-Agenten im Außendienst: Was funktioniert heute?](../ki-agenten-aussendienst-field-service/).
 
 ## KI-Funktionen pro Rolle aufschreiben und drei Spalten vergleichen
 

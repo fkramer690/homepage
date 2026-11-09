@@ -38,6 +38,7 @@ phases:
   - title: "Übergabe"
     icon: "handshake"
     text: "Interne Kollegen lernen, die Pipeline zu betreiben und zu erweitern. Die Dokumentation liegt im Repository des Kunden, direkt neben dem Code."
+duration: "Bestandsaufnahme und Zielprozess 1 bis 2 Wochen. Das erste Team arbeitet nach 4 bis 6 Wochen mit der Pipeline. Alle Teams sind nach 2 bis 4 Monaten umgestellt, je nach Zahl der Teams."
 faq:
   - q: "Auf welchen Git-Plattformen kann eine Salesforce-Pipeline laufen?"
     a: "Ich habe Salesforce-Pipelines auf GitHub, GitLab, Azure DevOps und Bitbucket gebaut. Jede Plattform hat ihre Eigenheiten, aber die Pipelines werden in YAML definiert, daher ist das Grundgerüst überall gleich. Am besten passt meist die Plattform, die das Unternehmen schon nutzt."
@@ -48,6 +49,8 @@ faq:
   - q: "Wie lange dauert die Einführung eines Git-basierten Release-Prozesses?"
     a: "Das hängt von der Zahl der Teams und vom Zustand der Org ab. Das erste Team arbeitet meist nach einigen Wochen mit dem neuen Prozess, weitere Teams folgen Schritt für Schritt, damit niemand über Nacht umstellen muss."
 blogTags: [devops, release management, release-management, sfdx-hardis, ci/cd, pull request review]
+readMore: [devops-salesforce-enterprise, sfdx-hardis-introduction, client-owned-devops-tools, pull-request-reviews-enterprise, sandbox-strategy-multiple-partners, salesforce-release-schedule, dora-metrics-salesforce-releases, quality-gates-ai-code-pipeline]
+masterclass: devops
 ---
 
 Salesforce DevOps bedeutet, dass jede Änderung über Git, einen Pull Request und eine automatische Pipeline läuft, bevor sie in Produktion ankommt. Release-Management ergänzt die Regeln darum: welche Branches es gibt, welche Prüfungen auf welcher Stufe laufen, wer freigibt und wann das Business neue Funktionen bekommt. In großen Orgs mit mehreren Teams macht genau das aus anstrengenden Release-Wochenenden Routine. Diesen Prozess setze ich auf Kundenseite auf, auf der Git-Plattform, die der Kunde schon besitzt.

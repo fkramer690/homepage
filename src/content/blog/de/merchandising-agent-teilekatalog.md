@@ -64,7 +64,7 @@ Zwei Kennzahlen zählen im Teileshop mehr als der Bestellwert: Suchen ohne Treff
 
 Trailhead nennt die Voraussetzungen: generative KI von Salesforce, Agentforce, Bots und Data 360, aktiviert für den Shop. Die Einrichtung läuft geführt in der Commerce-App, Themen und Aktionen sind für Commerce vorkonfiguriert. Für die Lizenzierung verweist Trailhead auf den Hilfeartikel von Salesforce zur Aktivierung der Agentforce Skills for Merchandising.
 
-Die Editionen enthalten laut Preisseite Data-Cloud-Credits: 250K in Growth und 500K in Advanced. Was der Agent pro Anfrage verbraucht, ist nicht veröffentlicht. Ich würde den Verbrauch deshalb vor dem Go-live in einer Sandbox mit echten Anfragen messen. Wie so eine Schätzung funktioniert, zeige ich in [Flex Credits: Agentforce-Kosten pro Aktion schätzen](../flex-credits-agentforce-kosten-pro-aktion/).
+Die Editionen enthalten laut Preisseite Data-Cloud-Credits: 250K in Growth und 500K in Advanced. Was der Agent pro Anfrage verbraucht, ist nicht veröffentlicht. Ich würde den Verbrauch deshalb vor dem Go-live in einer Sandbox mit echten Anfragen messen. Wie so eine Schätzung funktioniert, zeige ich in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/).
 
 Die Grenzen des Shops gelten auch für den Agenten, und die beiden Regelgrenzen sind hart:
 

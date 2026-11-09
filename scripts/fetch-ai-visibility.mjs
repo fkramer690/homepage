@@ -1,4 +1,4 @@
-// Monthly check whether AI assistants name or cite fk-sd.de: asks the questions in
+// Check (every second Monday) whether AI assistants name or cite fk-sd.de: asks the questions in
 // seo/ai-prompts.json to ChatGPT, Claude, Gemini and Perplexity (with web search)
 // and to Google AI Mode via DataForSEO. Printed as JSON; used by .github/workflows/ai-visibility.yml.
 import { readFile } from 'node:fs/promises';
@@ -50,6 +50,9 @@ const hostOf = (url) => {
   }
 };
 
+// The fk-sd.de pages an answer cites, so the dashboard can show which page was picked.
+const ownUrls = (urls) => [...new Set(urls.filter((u) => hostOf(u)?.endsWith(DOMAIN)))];
+
 const config = JSON.parse(await readFile(new URL('../seo/ai-prompts.json', import.meta.url), 'utf8'));
 
 // Pick the first preferred model DataForSEO offers with web search, else any such model.
@@ -91,6 +94,7 @@ for (const { lang, prompt } of config.prompts) {
         cited: urls.some((u) => hostOf(u)?.endsWith(DOMAIN)),
         mentioned: NAMES.test(text),
         domains: [...new Set(urls.map(hostOf).filter(Boolean))],
+        citedUrls: ownUrls(urls),
       });
     } catch (err) {
       console.error(`${provider} "${prompt}" failed: ${err.message}`);
@@ -113,6 +117,7 @@ for (const { lang, prompt } of config.prompts) {
       cited: urls.some((u) => hostOf(u)?.endsWith(DOMAIN)),
       mentioned: NAMES.test(ai?.markdown ?? ''),
       domains: [...new Set(urls.map(hostOf).filter(Boolean))],
+      citedUrls: ownUrls(urls),
     });
   } catch (err) {
     console.error(`google_ai_mode "${prompt}" failed: ${err.message}`);

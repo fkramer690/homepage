@@ -36,7 +36,7 @@ Salesforce B2B Commerce, das Salesforce laut [Trailhead](https://trailhead.sales
 
 Hat ein Käufer Zugriff auf mehrere Preisbücher, entscheidet die [Preisstrategie](https://help.salesforce.com/s/articleView?id=sf.comm_priority_pricing.htm&language=en_US&type=5):
 
-- **Best Price** zeigt den niedrigsten Preis aus allen Preisbüchern des Käufers.
+- **Best Price** nimmt von allen Preisbüchern, auf die der Käufer Zugriff hat, das günstigste.
 - **Priority Price** folgt der Reihenfolge, die Sie je Käufergruppe festlegen; die kleinere Zahl hat Vorrang.
 
 Ich würde mit Priority Price anfangen, wenn Händler in mehreren Käufergruppen stecken, etwa Land und Stufe. Best Price belohnt jede Überschneidung, die beim Datenladen versehentlich entsteht.
@@ -152,10 +152,10 @@ Die Zahlen sind erfunden, um die Methode zu zeigen. Ändern Sie eine Annahme, et
 
 Schreiben Sie eine Seite zur Preis-Master-Entscheidung, bevor jemand den Store gestaltet:
 
-1. Welches System berechnet den Preis je Käufergruppe: SAP, Preisbücher oder Revenue Cloud?
-2. Welcher Preis erscheint wo: Produktliste, Warenkorb, Auftragsbestätigung?
-3. Was zeigt der Shop, wenn der Live-Aufruf scheitert?
-4. Welcher Preis gilt, wenn Shop und ERP abweichen, und wer klärt das?
+1. Wer rechnet den Preis für jede Käufergruppe, SAP, die Preisbücher oder Revenue Cloud?
+2. Wo steht welcher Preis, in der Produktliste, im Warenkorb, in der Auftragsbestätigung?
+3. Was sieht der Händler, wenn SAP auf den Live-Aufruf nicht antwortet?
+4. Weichen Shop und ERP voneinander ab: Welcher Preis zählt, und wer räumt die Differenz aus?
 5. Welche Käufergruppen zahlen mit Bestellnummer, welche mit Karte, und wer prüft den Kredit?
 
 Diese Seite gehört neben Ihre [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/) und bestimmt die Schnittstellenliste für [Kapitel 4](../erp-integration-bestand-auftraege/). Den Entwurf der Preis- und Kreditaufrufe übernehme ich im Rahmen der [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/), die Lizenzfrage zu Revenue Cloud unter [Make-or-Buy und Lizenzen](../../../leistungen/make-or-buy-lizenzen/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).

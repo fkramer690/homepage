@@ -29,6 +29,8 @@ draft: false
 
 In Salesforce Field Service each role in the service organisation needs its own licence, and the price list sets hard rules for the mix. Dispatchers and technicians get Dispatcher or Technician at $175 per user and month. Hotline agents who work cases need Service Cloud, and if they also dispatch, Field Service Plus at $230. Partner technicians get Contractor Plus at $80 per user or $32 per login. Two rules decide most bills: Dispatcher and Technician licences may not be used for case management, and every org needs at least one Service Cloud licence and one Dispatcher licence.
 
+Further questions about the product, from implementation to the ERP, are answered in the topic hub [Salesforce Field Service for manufacturers](../../masterclass/field-service/).
+
 ## What do the Field Service licences cost?
 
 Salesforce sells the product today as Field Service and Operations. The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) lists these prices in October 2026, per user and month, on an annual contract and for Enterprise Edition. The [German pricing page](https://www.salesforce.com/de/products/field-service/pricing) shows the same figures in euros.

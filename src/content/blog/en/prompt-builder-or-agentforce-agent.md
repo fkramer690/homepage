@@ -1,6 +1,7 @@
 ---
 title: "Prompt Builder or Agentforce agent: when to use which"
-description: "When a Prompt Builder template is enough for service reports, case summaries and dealer replies, when you need an agent, and what each costs in Flex Credits."
+metaTitle: "Prompt Builder vs Agentforce agent: when to use which"
+description: "Prompt Builder is enough when a person reads the text first. You need an agent when the system picks the next step. Examples and Flex Credit costs."
 pubDate: 2026-10-27
 lang: en
 slug: prompt-builder-or-agentforce-agent
@@ -99,7 +100,7 @@ The head of service now wants dealers to get answers in the portal without a rep
 
 A test suite of 100 conversations with four actions at 16 credits and two prompts each costs 7,200 credits per run. Ten runs before go-live are 72,000 credits, about $360.
 
-The agent is worth it if it saves more rep time than the extra $600 a month and the tests cost, for example when dealers in other time zones wait until the next morning today. If reps answer within the hour anyway, I would keep the drafts. The full calculation for an order status agent is in [what a dealer service agent costs](../dealer-service-agent-cost-calculation/).
+The agent is worth it if it saves more rep time than the extra $600 a month and the tests cost, for example when dealers in other time zones wait until the next morning today. If reps answer within the hour anyway, I would keep the drafts. The full calculation for an order status agent is in [what a dealer service agent costs](../flex-credits-agentforce-cost-per-action/).
 
 ## You test a template differently from an agent
 

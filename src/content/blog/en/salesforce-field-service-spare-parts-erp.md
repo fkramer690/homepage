@@ -1,5 +1,5 @@
 ---
-title: "Field Service Spare Parts: ERP or Salesforce?"
+title: "Salesforce Field Service Spare Parts: ERP or Salesforce?"
 description: "Who should own spare parts stock in the service van, the ERP or Salesforce Field Service? Split of tasks, data flows and where the problems really come from."
 pubDate: 2026-10-27
 lang: en
@@ -10,27 +10,27 @@ categories: [field-service]
 series: { id: field-service, part: 4 }
 tags: [Field Service, Spare parts, ERP, Integration, Manufacturing]
 takeaways:
-  - "Field Service needs a copy of the stock so dispatchers and technicians see which part is where, offline in the app too."
+  - "Field Service needs a copy of the stock so dispatchers and technicians see which part is where. The app's Inventory tab does not work offline."
   - "The technician books consumed parts on the work order. Field Service lowers the van stock, and the interface reports consumption to the ERP."
   - "In my projects, problems came from data maintenance, not from the ERP leading. That is where the focus belongs before go-live."
-  - "Required parts can be stored on the work order. That way scheduling knows before the visit which part the technician must bring."
+  - "Required parts on the work order document the need. Checking them against van stock is a process of its own, not a default of the engine."
 faq:
   - q: "Should Salesforce Field Service or the ERP own spare parts stock?"
-    a: "The ERP. It values the stock, runs purchasing and transfers and is connected to accounting. Field Service holds a copy for scheduling and technicians and reports consumption back."
+    a: "In my projects, always the ERP. It values the stock, runs purchasing and transfers and is connected to accounting. In some companies a warehouse or service logistics system plays that role. Field Service holds a copy for dispatchers and technicians and reports consumption back."
   - q: "How does Field Service represent the stock in a service van?"
     a: "The van is a mobile location. The stock per part is a product item with the quantity at that location. When the technician records consumption on the work order, the quantity goes down automatically."
   - q: "What is the difference between products required and products consumed?"
-    a: "Products required are the parts a work order needs and help with preparation. Products consumed are the parts actually used, and they reduce the stock."
+    a: "Products required document the parts a work order needs and help with preparation. They do not reserve stock. Products consumed are the parts actually used, and they reduce the stock."
   - q: "Which data flows between the ERP and Field Service?"
     a: "From the ERP to Salesforce: material master and stock per location. From Salesforce to the ERP: consumption from work orders and part requests from technicians, which become transfers or purchase orders there."
 draft: false
 ---
 
-The ERP owns spare parts stock in field service, including the stock in the service van. In my projects it always did, and there were relatively few problems with that. Salesforce Field Service still needs a copy of the stock, so dispatchers and technicians can see which part is where, and it reports back which parts were used. Where problems came up, the split of tasks was not the cause. Data maintenance quality was.
+In my projects, the ERP always owned spare parts stock in field service, including the stock in the service van, and there were relatively few problems with that. That is also my recommendation, with one caveat: in some companies a warehouse or service logistics system leads instead of the ERP. What matters is that one system leads. Salesforce Field Service still needs a copy of the stock, so dispatchers and technicians can see which part is where, and it reports back which parts were used. Where problems came up, the split of tasks was not the cause. Data maintenance quality was.
 
 This article is part 4 of the series. In [part 2](../salesforce-field-service-master-data/), missing spare parts were one of the reasons for failed visits. In [part 3](../salesforce-field-service-scheduling-automation/), "part not in the van" was a typical reason for a dispatcher to change the scheduling proposal. This part is about how spare parts come together in Field Service and the ERP.
 
-## The ERP owns the stock
+## Why the ERP should own the stock
 
 In the ERP, a spare part is more than a quantity at a place. It has a value on the balance sheet, a purchasing process, minimum stock levels, suppliers and transfers between warehouses. Every withdrawal is a posting that reaches accounting. The ERP is built for this, and the processes there have usually run for years.
 
@@ -42,7 +42,7 @@ Field Service needs parts for two reasons: to prepare a visit and to document it
 
 - **Locations** are warehouses and vehicles. A service van is a mobile location with stock, as described in part 2.
 - **Product items** are the stock of one part at one location, such as "twelve seals in technician A's van".
-- **Products required** are the parts a work order needs. When they are recorded, the back office knows before the visit what has to go into the van.
+- **Products required** are the parts a work order needs. When they are recorded, the back office knows before the visit what has to go into the van. They document the need; they do not reserve stock, and the scheduling engine does not check them against the van by default. If scheduling should consider parts, that needs a defined process, for example a check by the dispatcher or your own automation.
 - **Products consumed** are the parts the technician actually used. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.fs_parts_guidelines.htm&language=en_US&type=5), the product item quantity goes down automatically.
 - **Product requests** are part requests, for example when van stock runs low or a job needs a specific part. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=fs_create_part_requests.htm&language=en_US&type=5) they can be linked to work orders and have a van as their destination.
 - **Product transfers** and **return orders** cover transfers and returns.
@@ -56,14 +56,14 @@ The split follows a simple rule: the ERP delivers master data and stock, Salesfo
 | Information | Direction | Timing |
 |---|---|---|
 | Material master (parts, numbers, descriptions) | ERP to Salesforce | on change |
-| Stock per warehouse and van | ERP to Salesforce | regularly, at least daily |
+| Stock per warehouse and van | ERP to Salesforce | depends on the scheduling horizon, see below |
 | Consumed parts on the work order | Salesforce to ERP | after the visit is completed |
 | Part requests from technicians | Salesforce to ERP | immediately, becomes a transfer or purchase order there |
 | Returns | depends on the process | with goods receipt in the ERP |
 
-Decide early how current stock in Salesforce needs to be. For planning the next day, a nightly sync is often enough. Anyone who reschedules on the day of service needs shorter intervals. A B2B store faces the same question with a different consumer, see [stock in the B2B store](../b2b-store-stock-availability-erp/). Then decide what happens offline. The mobile app works without a network. For the technician to see their van stock there, it has to sit in Salesforce as a copy. A pure live lookup from the ERP does not work in the basement of a factory hall. Which data the app keeps offline is covered in [Field Service mobile offline](../field-service-mobile-app-offline-data/).
+Decide early how current stock in Salesforce needs to be. For planning the next day, a nightly sync is often enough. Anyone who reschedules on the day of service needs shorter intervals, because a stock figure from last night creates false certainty. Also settle reservations and the order of postings: what happens when the ERP and the app book the same part at the same time. A B2B store faces the same question with a different consumer, see [stock in the B2B store](../b2b-store-stock-availability-erp/). Then decide what happens offline. The mobile app works without a network, but not everything in it does. According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.mfs_products_location.htm&type=5), the Inventory tab, where technicians see and update their van stock, is not available offline. What works offline depends on what the app primes with the work order or via Briefcase, such as the required parts. So plan which part information the technician needs on site and test it in the basement of a factory hall before go-live. A pure live lookup from the ERP does not work there either. Which data the app keeps offline is covered in [Field Service mobile offline](../field-service-mobile-app-offline-data/).
 
-A third question is volume. Every part at every location is its own record. 40 vans with 300 parts each are already 12,000 product items, plus the warehouses. That is no problem for Salesforce, but every record has to be synced and ends up offline on the technician's device. So I would only bring the locations into Salesforce that matter for field service: the vans and the warehouses that restock them. The rest of the company's stock stays in the ERP, and the back office looks it up there when needed.
+A third question is volume. Every part at every location is its own record. 40 vans with 300 parts each are already 12,000 product items, plus the warehouses. That is no problem for Salesforce, but every record has to be synced, and the app shows at most 1,000 products in its inventory lists. So I would only bring the locations into Salesforce that matter for field service: the vans and the warehouses that restock them. The rest of the company's stock stays in the ERP, and the back office looks it up there when needed.
 
 How to settle such interfaces and the question of which system leads is described on the page [Salesforce integration](../../services/salesforce-integration/).
 

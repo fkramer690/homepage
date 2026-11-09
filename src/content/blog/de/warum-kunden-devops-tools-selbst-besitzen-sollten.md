@@ -63,7 +63,17 @@ Solange die Zusammenarbeit gut läuft, merkt es niemand. Die Probleme zeigen sic
 - **Menschen gehen.** Ist der einzige Admin eines Tools ein Mitarbeiter des Partners, der den Job wechselt, tut sich sogar der Partner schwer, die Kontrolle zurückzubekommen.
 - **Sicherheit und Compliance.** Der Kunde kann einfache Audit-Fragen nicht beantworten: Wer hat Zugriff auf unseren Quellcode, unsere Anforderungen, unsere Zugangsdaten?
 
-> Partner kommen und gehen. Repository, Backlog und Architekturentscheidungen sollten bleiben.
+```vergleich
+ohne: Tools beim Partner
+- Beim Wechsel gehen Kommentare, Anhänge und Historie im Export verloren.
+- * Mit dem Partner gehen Repository, Backlog und Begründungen.
+- Der einzige Admin eines Tools arbeitet beim Partner.
+mit: Tools beim Kunden
+- Ein scheidender Partner gibt nur seine Benutzer ab.
+- * Repository, Backlog und Entscheidungen bleiben im Unternehmen.
+- Der Kunde beantwortet Audit-Fragen zu Zugriffen selbst.
+zitat: Partner kommen und gehen. Repository, Backlog und Architekturentscheidungen sollten bleiben.
+```
 
 Das ist kein Vorwurf an Partner. Die meisten guten Partner arbeiten lieber in den Tools des Kunden, weil das ihren eigenen Ausstieg sauber und ihre Arbeit sichtbar macht.
 

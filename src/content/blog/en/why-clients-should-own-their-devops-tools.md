@@ -63,7 +63,17 @@ As long as the collaboration runs well, nobody notices. The problems appear when
 - **People leave.** When the only admin of a tool is a partner employee who changes jobs, even the partner may struggle to regain control.
 - **Security and compliance.** The client can't answer simple audit questions: who has access to our source code, our requirements, our credentials?
 
-> Partners come and go. The repository, the backlog and the architecture decisions should stay.
+```vergleich
+without: Tools with the partner
+- On a change, comments, attachments and history get lost in the export.
+- * The repository, backlog and reasoning leave with the partner.
+- The only admin of a tool works for the partner.
+with: Tools with the client
+- A departing partner hands over nothing but its users.
+- * The repository, backlog and decisions stay in the company.
+- The client answers audit questions about access itself.
+quote: Partners come and go. The repository, the backlog and the architecture decisions should stay.
+```
 
 None of this is a reproach to partners. Most good partners prefer working in the client's tools, because it makes their own exit clean and their work visible.
 

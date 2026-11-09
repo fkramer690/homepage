@@ -65,7 +65,7 @@ Deflection ist die Zahl, die Anbieter gern zeigen, und die schwächste der fünf
 Wenn ein LLM Deflection und Abbruch bewertet, kann sich die Definition unter Ihrer Zeitreihe ändern. Notieren Sie die Prompt-Version neben jedem Monatswert.
 ```
 
-Die Abrechnung bringt eine dritte Definition. Bei der Abrechnung pro Lösung für den Help Agent gilt laut [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/) eine Messaging-Sitzung mit mehr als zwei Wortwechseln, ohne Feedback und ohne Eskalationswunsch, die länger als zwei Stunden läuft, als gelöst und wird berechnet. Den Vergleich mit Flex Credits rechne ich in [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/) durch.
+Die Abrechnung bringt eine dritte Definition. Bei der Abrechnung pro Lösung für den Help Agent gilt laut [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/) eine Messaging-Sitzung mit mehr als zwei Wortwechseln, ohne Feedback und ohne Eskalationswunsch, die länger als zwei Stunden läuft, als gelöst und wird berechnet. Den Vergleich mit Flex Credits rechne ich in [was ein Serviceagent für Händleranfragen kostet](../flex-credits-agentforce-kosten-pro-aktion/) durch.
 
 Ich zähle eine Anfrage deshalb nur als gelöst, wenn der Task-Resolution-Detektor das sagt, und eine erfahrene Servicekraft liest 50 Sitzungen im Monat. Findet die Stichprobe falsche Antworten in Sitzungen, die als gelöst markiert sind, ist die Kennzahl zu optimistisch, und diese Lücke gehört in den Bericht.
 

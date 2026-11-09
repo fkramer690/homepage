@@ -25,51 +25,41 @@ faq:
 draft: false
 ---
 
-In einem weltweiten Salesforce-Rollout durchläuft jedes Land die ADKAR-Stufen von vorn. Change Management gehört deshalb in jede Welle. Pro Land braucht es einen Sponsor aus der Landesleitung, Key User, die das Template kennen, Kommunikation in Landessprache, die erklärt, warum sich etwas ändert, die Klärung der Mitbestimmung und einen Blick auf die Nutzung nach dem Go-live. Die Liste der Abweichungswünsche eines Landes zeigt, wo Awareness fehlt. Die erste Welle ist für das Change Management genauso ein Test wie für die Technik: Was dort hakt, wird vor der nächsten Welle angepasst. Dasselbe gilt für Wellen nach Region im Außendienst oder für Händler.
+Ein weltweiter Salesforce-Rollout startet ADKAR in jedem Land neu. Was die Zentrale längst verstanden hat, muss jede Landesgesellschaft für sich erst erreichen: Awareness, Desire, Knowledge, Ability und Reinforcement. Deshalb plane ich Change Management für jede Welle. Dazu gehören ein Sponsor aus der Landesleitung, Key User, eine Botschaft in Landessprache, die früh geklärte Mitbestimmung und ein Blick auf die Nutzung nach dem Go-live. Wie viele Abweichungswünsche ein Land einreicht, verrät, auf welcher Stufe es steht. Die erste Welle prüft das Change Management genauso wie die Technik. Für Wellen nach Region im Außendienst oder für Händler gilt dasselbe.
 
 ## Warum reicht Change Management in der Zentrale nicht?
 
-Das strategische Ziel eines weltweiten Rollouts ist meist die Harmonisierung von Prozessen. In der Zentrale ist dieses Ziel klar, in den Ländern oft nicht. Für eine Landesgesellschaft, die seit Jahren erfolgreich mit eigenen Abläufen arbeitet, ist das globale Template zuerst eine Vorgabe von außen. Wer dort nicht erklärt, warum es sich lohnt, bekommt Abweichungswünsche statt Unterstützung.
+Hinter einem globalen Template steht fast immer der Wunsch, Prozesse zu vereinheitlichen. Die Zentrale kennt diesen Grund, die Landesgesellschaft oft nicht. Wer seit Jahren mit eigenen Abläufen gute Zahlen liefert, erlebt das Template zuerst als Vorgabe von außen. Bleibt die Begründung aus, schickt das Land Abweichungswünsche statt Unterstützung.
 
-Im ADKAR-Modell aus [Kapitel 1](../change-management-adkar-diagnose/) fehlen in dieser Lage die ersten beiden Stufen. Beide lassen sich nicht per Rundmail aus der Zentrale herstellen. Eine englische Rundmail erreicht die Leute, an die sie geht, aber sie überzeugt sie selten.
+Im ADKAR-Modell aus [Kapitel 1](../change-management-adkar-diagnose/) fehlen dann Awareness und Desire. Keine der beiden Stufen entsteht durch eine Rundmail aus der Zentrale. Eine englische Rundmail erreicht zwar alle Empfänger, überzeugt aber kaum einen davon.
 
 ```praxis
-Beim weltweiten Manufacturing-Cloud-Rollout stand vorher fest, dass das Ziel die Harmonisierung der Prozesse ist. Was ich heute anders machen würde: Change Management immer wieder ins Gespräch bringen, auch wenn der Kunde meint, er brauche keins. Pro Land gehörten mindestens Key User, Kommunikation vor dem Go-live und ein Blick auf die Nutzung danach dazu.
+Im weltweiten Manufacturing-Cloud-Rollout war die Harmonisierung der Prozesse von Anfang an gesetzt. Heute würde ich das Thema Change Management öfter auf den Tisch legen, auch gegen den Satz des Kunden, das brauche man nicht. Key User, eine Botschaft vor dem Go-live und der Blick auf die Nutzung danach gehörten in jedes Land.
 ```
 
-## Dieselben Bausteine in jedem Land
+## Welche Stufe fehlt in welchem Land?
 
-Ich plane für jedes Land dieselben Bausteine. Die Inhalte unterscheiden sich, die Liste nicht:
+Die Bausteine pro Land sind immer dieselben. Spannender ist die Frage, welche ADKAR-Stufe ein Land gerade braucht, denn danach richtet sich, wo Sponsor und Projektteam ihre Zeit einsetzen. Ich ordne die Bausteine deshalb den Stufen zu:
 
-| Baustein | Wer | Wann |
+| ADKAR-Stufe | Woran ich merke, dass sie im Land fehlt | Baustein, der sie herstellt |
 |---|---|---|
-| Sponsor im Land | Landesgeschäftsführung oder Vertriebsleitung | ab der Planung des Landes |
-| Prüfung der Landesabweichungen | Sponsor, Key User, Architekt | vor dem Bau der Landeskonfiguration |
-| Key User | ein bis zwei pro Team oder Standort | ab den ersten Workshops |
-| Kommunikation, warum sich etwas ändert | Sponsor, in Landessprache | Wochen vor dem Go-live |
-| Schulung am echten Fall | Key User mit Projektteam | kurz vor dem Go-live |
-| Mitbestimmung | Personalabteilung, Betriebsrat, wo vorhanden | vor der Einrichtung, je Land unterschiedlich |
-| Nutzung messen | Sponsor, Projektteam | ab dem ersten Monat nach dem Go-live |
+| Awareness | Viele Abweichungswünsche, Fragen nach dem Sinn des Templates | Sponsor aus der Landesleitung, Botschaft in Landessprache |
+| Desire | Das Template gilt als Projekt der Zentrale, Workshops bleiben leer | Sponsor prüft die Landesabweichungen mit, Mitbestimmung früh geklärt |
+| Knowledge | Nach dem Go-live dieselben Fragen in jedem Team | Key User ab den ersten Workshops, Schulung am echten Fall |
+| Ability | Alte Tabellen laufen parallel weiter | Key User vor Ort in den ersten Wochen |
+| Reinforcement | Die Nutzung sinkt nach dem ersten Monat | Nutzung messen, Auswertung vor der nächsten Welle |
 
-Am häufigsten unterschätzt werden der Sponsor im Land und die Mitbestimmung. Ein globaler Sponsor ersetzt nicht die Person, die im Land vor ihrem Team steht. Und ob und wie eine Arbeitnehmervertretung beteiligt wird, ist je Land anders und gehört früh geklärt. Die Bausteine im Detail stehen in [Change Management im weltweiten Salesforce-Rollout](../../../blog/change-management-weltweiter-rollout/), die Reihenfolge der Länder im Manufacturing-Cloud-Kapitel [ERP, KI und Rollout](../../manufacturing-cloud/erp-ki-und-rollout/).
+Zwei Bausteine fallen am häufigsten unter den Tisch: der Sponsor im Land und die Mitbestimmung. Ein globaler Sponsor kann nicht vor jedem Team stehen. Und wie eine Arbeitnehmervertretung beteiligt wird, regelt jedes Land anders, das gehört an den Anfang der Planung. Die vollständige Liste mit Rollen und Zeitpunkten steht in [Change Management im weltweiten Salesforce-Rollout](../../../blog/change-management-weltweiter-rollout/), die Reihenfolge der Länder im Manufacturing-Cloud-Kapitel [ERP, KI und Rollout](../../manufacturing-cloud/erp-ki-und-rollout/).
 
 ## Was muss die Botschaft im Land erklären?
 
-Kommunikation vor dem Go-live erklärt, was sich ändert und warum, nicht nur, wo man klickt. Ich gebe dem Sponsor jedes Landes diese Fragen mit, die seine Botschaft beantworten sollte:
-
-| Frage | Was die Botschaft sagt |
-|---|---|
-| Warum ändert sich etwas? | Der Grund in einem Satz, etwa eine weltweite Sicht auf Konzernkunden, die in mehreren Ländern kaufen. |
-| Was hat das Land davon? | Ein konkreter Nutzen für die Mitarbeitenden vor Ort, nicht nur für die Zentrale. |
-| Was ändert sich für wen? | Getrennt nach Gruppen, weil der Innendienst andere Fragen hat als der Außendienst. |
-| Was bleibt, wie es ist? | Das wird fast immer vergessen und nimmt viel Unsicherheit. |
-| Wo gibt es Hilfe? | Namen der Key User, nicht eine Adresse des Supports. |
+Die Botschaft vor dem Go-live zahlt auf Awareness und Desire ein. Sie sagt, warum sich etwas ändert, was das Land davon hat, was sich für welche Gruppe ändert, was gleich bleibt und wer vor Ort hilft. Der Punkt, was gleich bleibt, fehlt in fast jedem Entwurf, dabei nimmt gerade er die meiste Unsicherheit. Hilfe heißt hier: Namen von Key Usern, keine Support-Adresse. Absender ist die eigene Landesleitung, geschrieben in der Landessprache. Wie ich diese Fragen mit dem Sponsor durchgehe, beschreibt der Artikel zum weltweiten Rollout. Was der Sponsor sonst noch tut und wie ein Einführungsplan je Gruppe aussieht, steht in [Kapitel 2](../sponsor-und-kommunikation/).
 
 ## Abweichungswünsche zeigen, wo Awareness fehlt
 
-Jeder Wunsch nach Abweichung vom Template ist auch eine Frage des Change Managements. Wünsche aus Gewohnheit kommen fast immer mit einer fachlichen Begründung. Wenn der Sponsor im Land versteht, warum das Template so gebaut ist, kann er diese Wünsche einordnen, bevor sie beim Architekten ankommen.
+Ein Wunsch, vom Template abzuweichen, hat fast immer auch eine Change-Seite. Wer etwas aus Gewohnheit behalten will, liefert trotzdem eine fachliche Begründung mit. Kennt der Sponsor im Land den Grund für die Bauweise des Templates, sortiert er solche Wünsche aus, bevor sie beim Architekten landen.
 
-Umgekehrt zeigt die Liste der Abweichungen, wo das Change Management ansetzen muss. Wenn ein Land zwanzig Wünsche einreicht und die anderen drei, fehlt dort meist Awareness. Ich nehme die Abweichungsliste deshalb in jedes Gespräch mit dem Sponsor eines Landes mit. Wie Sie gesetzliche, geschäftliche und gewohnte Abweichungen trennen, steht in [Globales Salesforce-Template: wie viel Land verträgt es?](../../../blog/salesforce-globales-template-laenderabweichungen/).
+Die Liste wirkt auch in die andere Richtung. Reicht ein Land zwanzig Wünsche ein und die Nachbarländer je drei, liegt das selten am Geschäft, sondern an der Awareness. Deshalb liegt die Abweichungsliste bei jedem Termin mit dem Sponsor eines Landes auf dem Tisch. Wie Sie gesetzliche, geschäftliche und gewohnte Abweichungen trennen, steht in [Globales Salesforce-Template: wie viel Land verträgt es?](../../../blog/salesforce-globales-template-laenderabweichungen/).
 
 ## Wellen im Außendienst und bei Händlern folgen derselben Logik
 
@@ -77,14 +67,14 @@ Dieselbe Logik trägt bei Wellen, die nicht nach Land geschnitten sind. Field Se
 
 ## Nach der ersten Welle: Auswertung vor dem nächsten Land
 
-Nach dem Go-live des ersten Landes oder der ersten Region prüfe ich mit dem Sponsor und den Key Usern drei Fragen:
+Ist das erste Land oder die erste Region live, setze ich mich mit Sponsor und Key Usern zusammen. Drei Punkte stehen auf der Agenda:
 
-1. **Welche Fragen kamen am häufigsten?** Sie zeigen, wo Schulung oder Kommunikation gefehlt hat.
-2. **Wo wird neben Salesforce weiter mit eigenen Listen gearbeitet?** Das zeigt, welche Stufe gefehlt hat. Wie Sie das messen, steht in [Kapitel 5](../nutzung-messen-und-verankern/).
-3. **Was hätten die Key User gern früher gewusst?** Die Antwort geht direkt in den Plan für das nächste Land.
+1. **Die häufigsten Fragen seit dem Go-live.** Sie verraten, ob Knowledge gefehlt hat, also Schulung oder Botschaft zu dünn waren.
+2. **Listen, die neben Salesforce weiterlaufen.** Sie zeigen eine Lücke bei Ability oder Desire. Wie Sie das messen, steht in [Kapitel 5](../nutzung-messen-und-verankern/).
+3. **Was die Key User früher hätten wissen wollen.** Das übernehme ich unverändert in den Plan des nächsten Landes.
 
 ```hinweis tipp
-Lassen Sie Key User des nächsten Landes einige Tage im Land der laufenden Welle mitarbeiten. Sie sehen echte Fälle, lernen die Fragen nach dem Go-live kennen und bringen das in ihr eigenes Land mit.
+Schicken Sie die Key User des nächsten Landes für ein paar Tage in das Land, das gerade live gegangen ist. Dort erleben sie echte Fälle und die Fragen der ersten Wochen und nehmen beides mit nach Hause.
 ```
 
-Zwischen zwei Wellen braucht es dafür Luft. Wer die nächste Welle startet, während das erste Land noch Fragen hat, verteilt die Aufmerksamkeit des Projektteams zu dünn. Benennen Sie deshalb für jedes Land den Sponsor, bevor es in die Planung kommt, und planen Sie nach dem ersten Land eine Auswertung ein. Wie Key User und Schulung je Land laufen, beschreibt [Kapitel 3](../key-user-und-schulung/).
+Diese Auswertung kostet Zeit, und die muss zwischen den Wellen eingeplant sein. Startet das nächste Land, solange das erste noch Fragen hat, reicht die Aufmerksamkeit des Projektteams für keins von beiden. Benennen Sie den Sponsor eines Landes, bevor dessen Planung beginnt, und halten Sie nach dem ersten Land Zeit für die Auswertung frei. Wie Key User und Schulung je Land laufen, beschreibt [Kapitel 3](../key-user-und-schulung/).

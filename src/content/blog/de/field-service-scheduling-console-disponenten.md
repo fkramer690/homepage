@@ -23,6 +23,10 @@ faq:
     a: "Laut Trailhead funktionieren Anpassungen der Classic Dispatch Console in der Scheduling Console weiter, Gantt-Zustand und Nutzereinstellungen werden übernommen. Eigene Aktionen und Visualforce-Seiten würde ich trotzdem in einer Sandbox testen."
   - q: "Wird die Classic Dispatch Console abgeschaltet?"
     a: "Stand Oktober 2026 habe ich kein angekündigtes Abschaltdatum gefunden. Mit Summer '26 hat Salesforce den alten Tab in Classic Dispatch Console umbenannt, beide Konsolen lassen sich parallel nutzen."
+  - q: "Warum finde ich die alte Dispositionskonsole nicht mehr?"
+    a: "Seit Summer '26 (Managed-Package-Version 262) heißt ihr Tab Classic Dispatch Console. Suchen Sie diesen Namen im App Launcher oder nehmen Sie den Tab wieder in die Navigation der Field-Service-App auf."
+  - q: "Werden meine Listenansichten in die Scheduling Console übernommen?"
+    a: "Die Terminliste ist eine normale Salesforce-Listenansicht auf Servicetermine, dort angelegte Listenansichten erscheinen also darin. Filter aus Feldsätzen funktionieren anders: Laut einer Antwort in der Trailblazer Community unterstützt die neue Konsole sie noch nicht, testen Sie sie deshalb in einer Sandbox."
 draft: false
 ---
 

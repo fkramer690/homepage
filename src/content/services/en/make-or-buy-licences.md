@@ -36,6 +36,7 @@ phases:
   - title: "Decision and negotiation"
     icon: "contract"
     text: "The recommendation goes to the decision makers with the reasons behind it. If it leads to a Salesforce offer, I help prepare the negotiation."
+duration: "Make-or-buy decision with ROI case 3 to 6 weeks. A licence forecast before a contract renewal 2 to 3 weeks."
 faq:
   - q: "When is a custom solution better than a Salesforce industry cloud?"
     a: "When the industry cloud's core features do not match how the company works. In one manufacturing project, sales agreements, a central feature of Manufacturing Cloud, were not relevant for the business, so a custom solution on the core platform was the better choice. The ROI case decides, including maintenance over several years."
@@ -46,6 +47,8 @@ faq:
   - q: "Do you also assess tools outside Salesforce?"
     a: "Yes. Make-or-buy applies to the whole IT stack, for example document generation, e-signatures or the question whether a process belongs in Salesforce at all. I have no ties to any vendor, so the recommendation can also be a tool outside the Salesforce ecosystem."
 blogTags: [business case, agentforce, open source, vendor lock-in, licences]
+readMore: [salesforce-licence-types, salesforce-editions-core-advanced-max, manufacturing-cloud-worth-it, manufacturing-cloud-add-ons-costs, field-service-worth-it, revenue-cloud-worth-it-manufacturers, commerce-extensions-custom-code, flex-credits-agentforce-costs]
+masterclass: manufacturing-cloud
 ---
 
 Make-or-buy on Salesforce means deciding, for each requirement, whether it is covered by a standard product, an industry cloud, a custom build on the core platform or a separate tool. Licence forecasting answers the related question of which licence types the users need. Both decisions are made early and are expensive to reverse, so I base them on a long-term ROI case that includes maintenance and follow-up costs. I know the Salesforce licence model and pricing well from pre-sales work together with Salesforce.

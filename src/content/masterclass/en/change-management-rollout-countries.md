@@ -25,51 +25,41 @@ faq:
 draft: false
 ---
 
-In a global Salesforce rollout every country goes through the ADKAR stages from the start. So change management belongs in every wave. Per country you need a sponsor from local management, key users who know the template, communication in the local language explaining why something changes, clarity on co-determination and a look at usage after go-live. A country's list of deviation requests shows where awareness is missing. The first wave is as much a test for change management as for the technology: what goes wrong there is fixed before the next wave. The same applies to waves by region in field service or to dealers.
+A global Salesforce rollout restarts ADKAR in every country. What headquarters understood long ago, each subsidiary has to reach on its own: awareness, desire, knowledge, ability and reinforcement. That is why I plan change management for every wave. It includes a sponsor from local management, key users, a message in the local language, co-determination settled early and a look at usage after go-live. How many deviation requests a country submits tells you which stage it is at. The first wave tests change management just as much as the technology. The same holds for waves by region in field service or for dealers.
 
 ## Why is change management at headquarters not enough?
 
-The strategic goal of a global rollout is usually to harmonise processes. At headquarters that goal is clear, in the countries often not. For a subsidiary that has worked successfully with its own processes for years, the global template is first of all an outside requirement. Whoever does not explain there why it is worth it gets deviation requests instead of support.
+Behind a global template there is almost always the wish to align processes. Headquarters knows that reason, the subsidiary often does not. A team that has delivered good numbers with its own processes for years first sees the template as a rule imposed from outside. Without the reasoning, the country sends deviation requests instead of support.
 
-In the ADKAR model from [chapter 1](../change-management-adkar-diagnosis/), the first two stages are missing in this situation. Neither can be produced by a circular email from headquarters. An English email reaches the people it is sent to, but it rarely convinces them.
+In the ADKAR model from [chapter 1](../change-management-adkar-diagnosis/), awareness and desire are missing then. Neither stage comes from a circular email sent by headquarters. An English email may reach every recipient, but it convinces hardly any of them.
 
 ```praxis
-In the worldwide Manufacturing Cloud rollout it was clear from the start that the goal was to harmonise processes. What I would do differently today: keep bringing up change management, even when the client thinks they do not need it. Per country we needed at least key users, communication before go-live and a look at usage afterwards.
+In the worldwide Manufacturing Cloud rollout, harmonising the processes was set from day one. Today I would put change management on the table more often, even against the client saying they do not need it. Key users, a message before go-live and a look at usage afterwards belonged in every country.
 ```
 
-## The same building blocks in every country
+## Which stage is missing in which country?
 
-I plan the same building blocks for every country. The content differs, the list does not:
+The building blocks per country are always the same. The more useful question is which ADKAR stage a country needs right now, because that decides where the sponsor and the project team spend their time. So I map the building blocks to the stages:
 
-| Building block | Who | When |
+| ADKAR stage | How I notice it is missing in the country | Building block that creates it |
 |---|---|---|
-| Sponsor in the country | country managing director or head of sales | from the country's planning |
-| Review of country deviations | sponsor, key users, architect | before the country configuration is built |
-| Key users | one or two per team or site | from the first workshops |
-| Communication on why things change | sponsor, in the local language | weeks before go-live |
-| Training on real cases | key users with project team | shortly before go-live |
-| Co-determination | HR, works council where one exists | before setup, different per country |
-| Measuring usage | sponsor, project team | from the first month after go-live |
+| Awareness | Many deviation requests, questions about the point of the template | Sponsor from local management, message in the local language |
+| Desire | The template counts as a headquarters project, workshops stay empty | Sponsor reviews the country deviations, co-determination settled early |
+| Knowledge | The same questions in every team after go-live | Key users from the first workshops, training on real cases |
+| Ability | Old spreadsheets keep running in parallel | Key users on site in the first weeks |
+| Reinforcement | Usage drops after the first month | Measuring usage, review before the next wave |
 
-The two most underestimated are the sponsor in the country and co-determination. A global sponsor does not replace the person who stands in front of their team in the country. And whether and how employee representatives are involved differs per country and needs to be clarified early. The building blocks in detail are in [Change management in a global Salesforce rollout](../../../blog/change-management-global-salesforce-rollout/), the order of countries in the Manufacturing Cloud chapter [ERP, AI and rollout](../../manufacturing-cloud/erp-ai-and-rollout/).
+Two building blocks get dropped most often: the sponsor in the country and co-determination. A global sponsor cannot stand in front of every team. And each country handles the involvement of employee representatives differently, so it belongs at the start of planning. The full list with roles and timing is in [Change management in a global Salesforce rollout](../../../blog/change-management-global-salesforce-rollout/), the order of countries in the Manufacturing Cloud chapter [ERP, AI and rollout](../../manufacturing-cloud/erp-ai-and-rollout/).
 
 ## What must the message in the country explain?
 
-Communication before go-live explains what changes and why, not just where to click. I give each country's sponsor these questions their message should answer:
-
-| Question | What the message says |
-|---|---|
-| Why is anything changing? | The reason in one sentence, for example a global view of group customers who buy in several countries. |
-| What does the country gain? | A concrete benefit for the employees on site, not only for headquarters. |
-| What changes for whom? | Split by group, because inside sales has different questions from field sales. |
-| What stays as it is? | Almost always forgotten, and it removes a lot of uncertainty. |
-| Where is help? | Names of the key users, not a support address. |
+The message before go-live pays into awareness and desire. It says why something changes, what the country gains, what changes for which group, what stays the same and who helps on site. The point about what stays the same is missing from almost every draft, yet it removes the most uncertainty. Help here means names of key users, not a support address. The sender is the country's own management, writing in the local language. How I go through these questions with the sponsor is described in the article on the global rollout. What else the sponsor does and what a rollout plan per group looks like is in [chapter 2](../sponsor-and-communication/).
 
 ## Deviation requests show where awareness is missing
 
-Every request to deviate from the template is also a change management question. Requests out of habit almost always come with a business justification. When the sponsor in the country understands why the template is built the way it is, they can sort these requests before they reach the architect.
+A request to deviate from the template almost always has a change side too. Someone who wants to keep a habit still brings a business justification. When the sponsor in the country knows why the template is built the way it is, they sort out such requests before they land with the architect.
 
-The other way round, the list of deviations shows where change management has to start. When one country submits twenty requests and the others three, awareness is usually missing there. So I take the deviation list into every conversation with a country's sponsor. How to separate legal, business and habitual deviations is in [Global Salesforce template: how much local variation?](../../../blog/salesforce-global-template-country-deviations/).
+The list also works the other way. When one country submits twenty requests and its neighbours three each, the cause is rarely the business and usually awareness. That is why the deviation list is on the table at every meeting with a country's sponsor. How to separate legal, business and habitual deviations is in [Global Salesforce template: how much local variation?](../../../blog/salesforce-global-template-country-deviations/).
 
 ## Waves in field service and with dealers follow the same logic
 
@@ -77,14 +67,14 @@ The same logic holds for waves that are not cut by country. I roll out Field Ser
 
 ## After the first wave: a review before the next country
 
-After go-live in the first country or region, I review three questions with the sponsor and the key users:
+Once the first country or region is live, I sit down with the sponsor and the key users. Three points are on the agenda:
 
-1. **Which questions came up most often?** They show where training or communication was missing.
-2. **Where do people keep working with their own lists next to Salesforce?** That shows which stage was missing. How to measure it is in [chapter 5](../measure-adoption-and-reinforce/).
-3. **What would the key users have liked to know earlier?** The answer goes straight into the plan for the next country.
+1. **The most frequent questions since go-live.** They reveal whether knowledge was missing, meaning training or the message was too thin.
+2. **Lists that keep running next to Salesforce.** They point to a gap in ability or desire. How to measure it is in [chapter 5](../measure-adoption-and-reinforce/).
+3. **What the key users would have wanted to know earlier.** I take that unchanged into the plan for the next country.
 
 ```hinweis tipp
-Have key users of the next country work along for a few days in the country of the running wave. They see real cases, learn the questions that come after go-live and bring that back to their own country.
+Send the key users of the next country for a few days to the country that has just gone live. There they see real cases and the questions of the first weeks, and they take both home.
 ```
 
-That needs breathing room between two waves. Whoever starts the next wave while the first country still has questions spreads the project team's attention too thin. So name the sponsor for each country before it enters planning, and plan a review after the first country. How key users and training run per country is in [chapter 3](../key-users-and-training/).
+This review takes time, and that time has to be planned between the waves. If the next country starts while the first one still has questions, the project team's attention is enough for neither. Name a country's sponsor before its planning starts, and keep time free for the review after the first country. How key users and training run per country is in [chapter 3](../key-users-and-training/).

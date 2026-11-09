@@ -95,10 +95,8 @@ const aiClusters: Cluster[] = [
       text: 'Flex Credits, Editionen, Data 360 und KI-Coding: was es kostet und wie Sie es vorab rechnen.',
     },
     articles: [
-      'dealer-service-agent-costs',
       'flex-credits-agentforce-costs',
       'salesforce-editions-core-advanced-max',
-      'headless-platform-interactions-budget',
       'ai-coding-costs-salesforce-project',
       'data-360-costs-for-agents',
     ],

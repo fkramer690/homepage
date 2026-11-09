@@ -38,7 +38,7 @@ Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce
 
 ```vertiefung Für Admins
 titel: Welche Standardobjekte bilden die Kette?
-- **BuyerAccount:** ein normaler Account, der für den Einkauf freigeschaltet ist. Seine Kontakte werden Käufer oder Buyer Manager.
+- **BuyerAccount:** der Account des Händlers mit Einkaufsrecht im Shop. Aus seinen Kontakten werden Käufer oder Buyer Manager.
 - **BuyerGroup und BuyerGroupMember:** Die Gruppe bündelt Käuferaccounts mit gleichen Einstellungen, jede Mitgliedschaft ist ein eigener Datensatz.
 - **WebStoreBuyerGroup:** verbindet eine Buyer Group mit einem Store.
 - **CommerceEntitlementPolicy:** verbindet Buyer Groups mit Produkten und legt fest, ob Produkt und Preis sichtbar sind.
@@ -85,7 +85,7 @@ ohne: Eine Buyer Group pro Händler
 - Jeder neue Händler wird zum Datenprojekt
 mit: Buyer Groups nach Merkmalen
 - Land oder Verkaufsorganisation, Händlerstufe und Marke
-- Merkmale, die sich selten ändern und die das ERP im Kundenstamm schon hat
+- Stabile Merkmale, die der Kundenstamm im ERP schon führt
 - Entitlement Policies folgen Sortimenten, nicht Kunden
 ```
 
@@ -165,10 +165,10 @@ Ein Maschinenbauer verkauft Ersatzteile über 800 Händler in 12 Ländern, mit d
 
 Schreiben Sie das Entitlement-Konzept auf eine Seite, bevor jemand Daten lädt:
 
-- die Liste der Buyer Groups mit den Kriterien, die einen Account hineinbringen,
-- die Liste der Entitlement Policies mit dem Sortiment, das jede abdeckt,
-- eine Matrix, welche Gruppe welche Policy und welches Preisbuch bekommt,
-- eine Zählung gegen die Grenzen oben, für heute und für drei Jahre später,
+- jede Buyer Group mit der Regel, nach der ein Account in sie fällt,
+- jede Entitlement Policy mit dem Ausschnitt des Sortiments, den sie freigibt,
+- eine Kreuztabelle aus Gruppen, Policies und Preisbüchern,
+- die Mengen von heute und in drei Jahren, gemessen an den Grenzen oben,
 - 200 echte Suchbegriffe von Händlern aus E-Mails und Telefonnotizen, gegen einen Teststore geprüft.
 
 Die ERP-Felder, die Mitgliedschaften und Suche speisen, wandern danach in die Schnittstellenliste aus [Kapitel 4](../erp-integration-bestand-auftraege/). Solche Konzepte prüfe ich, bevor ein Partner baut, im Rahmen von [Salesforce-Architektur](../../../leistungen/salesforce-architektur/); welche Daten aus welchem System kommen, ist Teil von [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).

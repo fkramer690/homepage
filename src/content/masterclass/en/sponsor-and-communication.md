@@ -46,44 +46,36 @@ So I write a sponsor plan: a short list of dates when the sponsor appears, decis
 
 ## The rollout plan has one row per affected group
 
-With a clean release process, releases get smaller and more frequent. For business teams that means small changes more often instead of one big package a quarter. Whoever does not know something changed takes the change for a bug. The rollout plan prevents that. It has one row per affected group and is maintained together with the release plan:
+A good release process makes releases smaller and more frequent. The business then gets a steady flow of small changes instead of one big package per quarter. A change nobody knew about looks like a bug. The answer is the rollout plan, which I keep together with the release plan. For this masterclass I add one column: which ADKAR stage is at risk for this group right now. That decides whether an email is enough or the sponsor has to step in.
 
-| Group | What changes | Who informs | When |
+| Group | Change | Stage at risk | Who speaks |
 |---|---|---|---|
-| Inside sales Germany | new required field delivery date on the quote | team lead, key user | two weeks before |
-| Field service | new form for the maintenance report in the app | regional contact | before the next app update |
-| Sales, all countries | no visible change | nobody | not needed |
+| Inside sales Germany | delivery date becomes a required field on the quote | Desire, because the field means extra work | Sponsor before acceptance testing, then team lead |
+| Field service | new maintenance report in the app | Knowledge and ability | Key user of the region, before the app update |
+| Sales in all countries | nothing visible | none | nobody |
 
-The last row is meant seriously. Whoever gets release emails every week that do not concern them will not read the one that does. How the repository, pipeline and approvals behind this are organised is in the DevOps chapter [Release process: ownership, roles and approvals](../../devops-release-management/release-process-ownership-roles/).
+The empty row is the important one. Someone who gets release emails every week that have nothing to do with their work will eventually skip the one that does. How the repository, pipeline and approvals behind this are organised is in the DevOps chapter [Release process: ownership, roles and approvals](../../devops-release-management/release-process-ownership-roles/).
 
 ## What do release notes for users look like?
 
-Technical release notes list user stories, fields and flows. For business teams they are useless. Release notes for users answer five questions:
-
-- **What changes for me?** Split by group, with a screenshot when the screen changes.
-- **Why?** One sentence, for example: the delivery date becomes required because sales planning needs it.
-- **From when?** Release date.
-- **What stays the same?** That removes a lot of uncertainty and is almost always forgotten.
-- **Whom do I ask?** The team's key user, by name.
-
-More than half a page per group is too much. With subsidiaries in several countries, release notes come in the local language. A good test: a key user reads them without explanation and understands them. The full routine with examples is in [Communicating Salesforce releases to business teams](../../../blog/salesforce-release-communication-business/).
+User stories, fields and flows mean nothing to the business. Release notes for users are therefore a document of their own, and each of their questions pays into one ADKAR stage. What changes for my group, with a screenshot if needed, and from which date creates awareness. The reason in one sentence, for example that sales planning needs the delivery date, supports desire. What stays the same removes uncertainty and is almost always missing. The key user's name as contact secures knowledge. Half a page per group is enough, in several countries in each local language. As a test I hand the text to a key user without further explanation. The full routine with examples is in [Communicating Salesforce releases to business teams](../../../blog/salesforce-release-communication-business/).
 
 ```schritte
-Planning | when the scope is fixed · product owner with business team
-  Create the rollout plan per group, mark contested rows and discuss them with the sponsor.
-Before acceptance testing | about two weeks before · key users
-  Key users see the change, test it and prepare their team's questions.
-Shortly before the release | a few days before · team lead, key users
-  Release notes for users go to the groups affected, in the local language.
+Planning | once the scope is clear · product owner and business
+  One row per group in the rollout plan, contested rows go to the sponsor.
+Before acceptance testing | around two weeks ahead · key users
+  Key users try the change and collect what their team is going to ask.
+Shortly before the release | a few days ahead · team lead and key users
+  The affected groups receive their release notes in their own language.
 After the release | first week · key users, project team
-  Collect questions, check usage, take feedback into the backlog.
+  Key users gather questions, the project watches usage, feedback goes into the backlog.
 ```
 
 ## The sponsor explains contested changes before acceptance testing
 
 Some changes do not please everyone. A new required field creates work for inside sales and helps sales planning. Such changes should not become known through the release notes for the first time. I mark these rows in the rollout plan, and the sponsor explains before acceptance testing why the change is coming. This is where desire is decided: whoever knows the reason and knows their own leadership backs it fills in the field. Whoever does not fills it with a dot.
 
-The way back matters just as much. I set up one place for feedback, separate bugs from requests and make sure every piece of feedback gets a visible answer, even when the answer is no. A business team that sees its feedback implemented in the next release will read the next release notes too.
+Without a feedback channel all of this fades. Feedback gets one fixed place, bugs and requests are kept apart, and every piece of feedback gets a visible answer, a no included. A business team that sees its feedback implemented in the next release will read the next release notes too.
 
 ## When does the works council join?
 

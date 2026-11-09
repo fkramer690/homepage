@@ -92,7 +92,7 @@ Assume 2,000 order enquiries a month, each with up to three API calls: order sta
 
 In the worked example, the first test week brings three findings. Orders taken by phone carry no dealer purchase order number, so the agent must also search by SAP order number. Some dealers have several sold-to numbers for subsidiaries, so the account needs a mapping that someone maintains, the same problem as with [sales agreements and ERP actuals](../sales-agreements-volume-shortfall-erp/). And one plant does not maintain confirmed dates for spare parts, so for those items the agent can only say "not confirmed yet". That is a data problem, and no prompt fixes it.
 
-What a conversation costs in Flex Credits is calculated in [the dealer service agent cost calculation](../dealer-service-agent-cost-calculation/).
+What a conversation costs in Flex Credits is calculated in [the dealer service agent cost calculation](../flex-credits-agentforce-cost-per-action/).
 
 ## Live call or a copy in Salesforce?
 

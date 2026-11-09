@@ -62,7 +62,7 @@ Das sind Obergrenzen, denn die Rate Card rechnet mehr als Aktionen in Flex Credi
 - **Prompts** kosten je nach Modellklasse 2 bis 16 Credits.
 - **Sandbox-Tests** kosten 16 Credits pro Aktion; einen Agenten zu testen ist also nicht kostenlos.
 - **Data 360** berechnet im Basistarif 150 Credits pro MB für unstrukturierte Dokumente wie Handbücher und Ersatzteilkataloge. Die Seite der Manufacturing Cloud beschreibt die Core-Credits als „Flex credits for AI, Agentforce, Data, and more“.
-- **Headless Platform Interactions**, der Zähler für Agentenaufrufe über API oder MCP, stehen mit dem Satz „TBA“ in der Liste. Salesforce kündigt für Max künftig ein Kontingent an Headless-360-Kapazität an, ohne Datum. Warum daraus ein Budgetrisiko wird, beschreibe ich in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
+- **Headless Platform Interactions**, der Zähler für Agentenaufrufe über API oder MCP, stehen mit dem Satz „TBA“ in der Liste. Salesforce kündigt für Max künftig ein Kontingent an Headless-360-Kapazität an, ohne Datum. Warum daraus ein Budgetrisiko wird, beschreibe ich in [MCP-Zugriffe als Budgetrisiko](../flex-credits-agentforce-kosten-pro-aktion/).
 
 Zwei Vertragsdetails zählen. Credits müssen bis zum Ende der Bestellung verbraucht sein und werden nicht übertragen. Und die Preisseiten nennen den Pool pro Org, unabhängig von der Nutzerzahl: So wie sie dastehen, bekommt eine Org mit 30 Nutzern dieselben 500.000 Credits wie eine mit 3.000. Betreiben Sie getrennte Orgs für Vertrieb und Service oder für Regionen, fragen Sie, wie der Pool verteilt wird. Wie Sie den Verbrauch pro Aktion schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
 
@@ -85,7 +85,7 @@ Zusammen rund 1,47 Mio. Credits im Jahr. Zum Listenpreis für 200 Nutzer:
 | Advanced | 948.000 € | 1.000.000 | 470.000 für 2.350 € | 950.350 € |
 | Max | 1.320.000 € | 2.750.000 | keine, 1,28 Mio. verfallen | 1.320.000 € |
 
-Der Schritt von Core zu Advanced kostet 480.000 € im Jahr und bringt 500.000 Credits im Wert von 2.500 €. In dieser Größenordnung sind Credits kein Argument für eine Edition. Entscheidend sind die Funktionen: Braucht der Service Casey, nutzt der Vertrieb Sales Programs? Wenn ja, wechseln Sie wegen dieser Funktionen. Wenn nein, ist Core plus zugekaufte Credits günstiger. Eine vierte Option: auf Enterprise Edition zu unveränderten Preisen bleiben und die 1,47 Mio. Credits für rund 7.350 € zum Listenpreis zukaufen, plus die Agentforce-Lizenz, die Ihr Vertrag verlangt. Den Agenten selbst rechne ich ausführlich in [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/) durch.
+Der Schritt von Core zu Advanced kostet 480.000 € im Jahr und bringt 500.000 Credits im Wert von 2.500 €. In dieser Größenordnung sind Credits kein Argument für eine Edition. Entscheidend sind die Funktionen: Braucht der Service Casey, nutzt der Vertrieb Sales Programs? Wenn ja, wechseln Sie wegen dieser Funktionen. Wenn nein, ist Core plus zugekaufte Credits günstiger. Eine vierte Option: auf Enterprise Edition zu unveränderten Preisen bleiben und die 1,47 Mio. Credits für rund 7.350 € zum Listenpreis zukaufen, plus die Agentforce-Lizenz, die Ihr Vertrag verlangt. Den Agenten selbst rechne ich ausführlich in [was ein Serviceagent für Händleranfragen kostet](../flex-credits-agentforce-kosten-pro-aktion/) durch.
 
 ## Was gilt für Manufacturing Cloud und Field Service?
 

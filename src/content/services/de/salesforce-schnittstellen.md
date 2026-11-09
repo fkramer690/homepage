@@ -35,6 +35,7 @@ phases:
   - title: "Umsetzung und Test"
     icon: "check"
     text: "In der Umsetzung prüfe ich, ob Schnittstellen der Architektur folgen, ob Fehlerbehandlung und Monitoring existieren und ob End-to-End-Tests die echten Prozesse abdecken."
+duration: "Systemlandkarte und Integrationsarchitektur 4 bis 8 Wochen, Spezifikation je Schnittstelle 1 bis 3 Wochen. Umsetzung und Test mit dem Partner 3 bis 9 Monate, je nach Zahl der Schnittstellen."
 faq:
   - q: "Mit welchen Systemen wird Salesforce bei Herstellern meist verbunden?"
     a: "Fast immer mit einem ERP, sehr oft SAP, manchmal mit anderen Systemen wie proALPHA. Dazu kommen Telefonie und E-Mail für den Service, Produkt- und Preisdaten, Dokumentenerstellung und oft eine Datenplattform. Salesforce ist nie das einzige System."
@@ -43,6 +44,8 @@ faq:
   - q: "Wie wird Telefonie an die Service Cloud angebunden?"
     a: "Über eine CTI-Integration, die Anrufe in die Service Cloud bringt, sodass Agenten beim Klingeln den Kunden und die offenen Fälle sehen. Ich habe mit den CTI-Anbietern Genesys und Mirage gearbeitet, und Microsoft Teams wird als Telefonieplattform wichtiger. Telefon und E-Mail bleiben in den meisten Serviceorganisationen die Kernkanäle."
 blogTags: [integration, oauth, security, sicherheit, service cloud]
+readMore: [manufacturing-cloud-erp-integration, revenue-cloud-sap-system-boundaries, commerce-sap-data-flows, customer-prices-sap-or-salesforce-pricing, field-service-spare-parts, agentforce-sap-order-status, legacy-erp-without-api-agents, salesforce-password-integrations-2027]
+masterclass: manufacturing-cloud
 ---
 
 Salesforce-Integration heißt, Salesforce mit den Systemen zu verbinden, die das Unternehmen schon betreibt, damit Daten einmal erfasst werden und Prozesse über Systemgrenzen hinweg funktionieren. Bei Herstellern ist das fast immer ein ERP, sehr oft SAP, manchmal Systeme wie proALPHA. Im Service gehören auch Telefonie und E-Mail dazu, weil sie noch immer die Kernkanäle sind. Ich entwerfe die Integrationsarchitektur auf Kundenseite und entscheide mit dem Kunden, welcher Partner sie baut.

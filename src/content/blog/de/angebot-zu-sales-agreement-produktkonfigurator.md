@@ -2,6 +2,7 @@
 title: "Vom Angebot zum Sales Agreement: der Konfigurator"
 description: "Wie Hersteller konfigurierte Produkte aus dem Angebot in ein Sales Agreement übernehmen, was der Konfigurator klären muss und wo Freigaben hingehören."
 pubDate: 2026-10-26
+updatedDate: 2026-11-09
 lang: de
 slug: angebot-zu-sales-agreement-produktkonfigurator
 translationKey: manufacturing-cloud-quote-to-agreement
@@ -11,7 +12,7 @@ tags: [Manufacturing Cloud, Sales Agreements, CPQ, Produktkonfigurator, Fertigun
 series: { id: manufacturing-cloud, part: 2 }
 takeaways:
   - "Konfiguriert werden Eigenschaften mit Kostenwirkung, etwa physikalisch-chemische Kriterien, Rohstoffe oder Zertifikate."
-  - "Jede Variante, die im Sales Agreement geplant werden soll, braucht eine eigene Produktidentität, die auch das ERP kennt."
+  - "Jede Variante, die im Sales Agreement geplant werden soll, braucht eine Identität, die Salesforce und das ERP teilen."
   - "Die Connect API erzeugt ein Sales Agreement aus Angebot, Opportunity oder eigenem Objekt. Ein Mapping legt die Felder fest."
   - "Salesforce CPQ gibt es für Neukunden nicht mehr. Zur Wahl stehen Revenue Cloud Advanced, Partnerprodukte und ein eigener Ansatz."
 faq:
@@ -22,7 +23,7 @@ faq:
   - q: "Was konfiguriert ein Produktkonfigurator bei einem Hersteller?"
     a: "Alles, was dem Endkunden wichtig ist und Preis oder Kosten beim Hersteller beeinflusst. In meinem Projekt waren das physikalisch-chemische Kriterien wie der Mahlgrad, die Rohstoffe und Zertifikate wie Halal."
   - q: "Braucht jede Konfiguration ein eigenes Produkt?"
-    a: "Jede Variante, die in einem Sales Agreement geplant und gemessen wird, braucht eine eigene Produktidentität, weil das Agreement Mengen pro Produkt führt und die Ist-Mengen aus dem ERP einem Produkt zugeordnet werden müssen."
+    a: "Jede Variante, die in einem Sales Agreement geplant und gemessen wird, braucht eine Identität, die Salesforce und das ERP teilen, weil das Agreement Mengen pro Produkt führt und die Ist-Mengen aus dem ERP ihr zugeordnet werden müssen."
 draft: false
 ---
 
@@ -46,7 +47,7 @@ Für die Angebotserstellung gibt es heute drei Wege: Revenue Cloud Advanced von 
 
 Im Projekt haben wir einen eigenen CPQ-Ansatz verfolgt. Ob das heute wieder die richtige Wahl wäre, hängt von denselben Fragen ab, die ich bei jeder Make-or-buy-Entscheidung stelle:
 
-- **Wie gut passt das Standardmodell?** Konfiguratoren von der Stange sind oft für Optionen und Stücklisten gebaut. Produkteigenschaften mit Kostenwirkung, wie oben beschrieben, passen nicht immer in dieses Modell.
+- **Wie gut passt das Standardmodell?** Konfiguratoren von der Stange sind oft für Optionen und Stücklisten gebaut. Produkteigenschaften mit Kostenwirkung passen nicht immer in dieses Modell.
 - **Wer pflegt die Regeln?** Ein eigener Konfigurator ist eigener Code, der bei jedem Release mitgetestet und von jemandem gepflegt werden muss.
 - **Was kostet die Lizenz über mehrere Jahre?** Ein Standardprodukt kostet pro Nutzer, ein eigener Ansatz kostet Entwicklung und Wartung.
 
@@ -56,7 +57,7 @@ Wie ich solche Fälle rechne, beschreibe ich unter [Make-or-buy und Lizenzprogno
 
 Ein Sales Agreement plant Mengen pro Produkt. Laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_salesagreement.htm) hängt es an einem Account und einem Preisbuch, und für jedes Produkt wird eine Gesamtmenge eingetragen, die Salesforce auf die Zeiträume verteilt. Die Ist-Mengen, die später aus dem ERP kommen, werden ebenfalls einem Produkt zugeordnet.
 
-Daraus folgt: Jede konfigurierte Variante, die in einem Sales Agreement geplant und gemessen werden soll, braucht eine eigene Produktidentität. In Salesforce ist das ein Produktdatensatz, im ERP meist eine Materialnummer. Fehlt die Verbindung zwischen beiden, landen die Ist-Mengen beim falschen Produkt oder gar nicht im Agreement.
+Daraus folgt: Jede konfigurierte Variante, die in einem Sales Agreement geplant und gemessen werden soll, braucht eine Identität, die Salesforce und das ERP teilen. In meinem Projekt war das pro Variante ein Produktdatensatz in Salesforce und eine Materialnummer im ERP. Fehlt die Verbindung zwischen beiden, landen die Ist-Mengen beim falschen Produkt oder gar nicht im Agreement. Plant ein Unternehmen gröber, kann die Identität auch auf dieser Ebene liegen, solange sich die Ist-Mengen aus dem ERP ihr zuordnen lassen.
 
 Für das Design heißt das, früh zu entscheiden:
 
@@ -93,11 +94,11 @@ Die Zeile Laufzeit wird gern übersehen. Laut Trailhead berechnet Salesforce das
 
 Ein Sales Agreement startet laut Trailhead immer als Entwurf, wird freigegeben und aktiviert sich am Startdatum automatisch. Damit stellt sich die nächste Frage.
 
-## Der Preis wird an genau einer Stelle freigegeben
+## Jede kaufmännische Entscheidung wird einmal freigegeben
 
 Ein Angebot mit konfigurierten Produkten braucht oft eine Freigabe, weil der Preis von der Konfiguration und damit von den Kosten abhängt. Das Sales Agreement hat einen eigenen Freigabeschritt, den der Admin laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better) auch abschalten kann.
 
-Ich rate dazu, den Preis einmal freizugeben, am Angebot, wo die Konfiguration und ihre Kosten sichtbar sind. Wird das Agreement direkt aus dem freigegebenen Angebot erzeugt, kann seine eigene Freigabe schlanker sein oder entfallen. Zwei Freigaben für denselben Preis kosten Zeit und erzeugen die Frage, welche gilt, wenn sie sich unterscheiden.
+Ich rate dazu, den Preis einmal freizugeben, am Angebot, wo die Konfiguration und ihre Kosten sichtbar sind. Wird das Agreement direkt aus dem freigegebenen Angebot erzeugt, kann seine eigene Freigabe schlanker sein oder entfallen. Zwei Freigaben für denselben Preis kosten Zeit und erzeugen die Frage, welche gilt, wenn sie sich unterscheiden. Die Freigabe am Agreement behält die Entscheidungen, die nur das Agreement enthält, etwa Laufzeit, Mengenzusage und Verlängerung.
 
 Ändert sich später etwas, etwa eine neue Variante oder ein neuer Preis während der Laufzeit, wiederholt sich der Weg: Konfiguration, Angebot, Freigabe, Anpassung des Agreements. In meinem Projekt konnten Kunden neue Produkte und Preise auch selbst über das Kundenportal anfragen. Wie das Portal dazu passt, behandelt ein späterer Teil dieser Serie.
 

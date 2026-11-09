@@ -22,9 +22,9 @@ const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
       <p class="eyebrow mono">{t.nav.services}</p>
       <h1>{t.servicePage.indexTitle}</h1>
       <p class="service-lead">{t.servicePage.indexIntro}</p>
-      <p class="service-lead">{t.servicePage.indexIntro2}</p>
     </div>
   </header>
+  <div class="service-index-body">
   <section class="proof">
     <div class="container">
       <ProofBar t={t} />
@@ -47,10 +47,12 @@ const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
           </li>
         ))}
       </ul>
+      <p class="service-index-note">{t.servicePage.indexIntro2}</p>
       <div class="service-index-cta">
         <p>{t.servicePage.indexCta}</p>
         <a class="btn" href={contactHref(t.hero.mailSubject)} {...ctaAttrs}>{t.hero.ctaPrimary}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
       </div>
     </div>
   </section>
+  </div>
 </Page>

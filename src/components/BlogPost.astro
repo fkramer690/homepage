@@ -9,6 +9,8 @@ import ContactBrief from './ContactBrief.astro';
 import ReadingGrid from './ReadingGrid.astro';
 import VideoCard from './VideoCard.astro';
 import PostMeta from './PostMeta.astro';
+import CallHint from './CallHint.astro';
+import ProseWithHints from './ProseWithHints.astro';
 import { getContactBrief } from '../lib/contact-briefs';
 import { render } from 'astro:content';
 import { en } from '../i18n/en';
@@ -47,6 +49,8 @@ const url = new URL(postHref(post), Astro.site).href;
 const base = import.meta.env.BASE_URL;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const brief = getContactBrief(lang, post.data.contactBrief, post.data.categories[0]);
+// The booking box in the side column is left out: the two call hints in the text
+// (CallHint.astro) and the contact section at the end carry the booking link.
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 // Keep the <title> within the ~60 characters search results show.
 // metaTitle (optional) replaces the H1 in the search title only.
@@ -138,7 +142,7 @@ const schema = {
       )}
       <h1>{title}</h1>
       <PostMeta lang={lang} authors={coAuthorId ? [authorId, coAuthorId] : [authorId]} pubDate={pubDate} updatedDate={updatedDate} minutes={readingMinutes(post)} />
-      <ReadingGrid t={t} headings={toc} cta={title}>
+      <ReadingGrid t={t} headings={toc} cta={false}>
         {video && <VideoCard t={t} part="card" video={video} class="video-card-side" slot="side" />}
         <aside class="post-takeaways" aria-label={t.blog.takeaways}>
           <p class="label mono">{t.blog.takeaways}</p>
@@ -147,9 +151,11 @@ const schema = {
           </ul>
         </aside>
         {video && <VideoCard t={t} part="card" video={video} class="video-card-inline" />}
-        <div class="prose">
+        <ProseWithHints>
           <Content />
-        </div>
+          <CallHint slot="hint1" kicker={t.blog.callHintKicker} title={brief.title} text={brief.text} label={t.nav.cta} newTab={t.nav.newTab} subject={title} />
+          <CallHint slot="hint2" kicker={t.blog.callHintPrepKicker} title={t.blog.callHintPrepTitle} text={`${brief.bring[1] ?? brief.bring[0]}.`} label={t.nav.cta} newTab={t.nav.newTab} subject={title} />
+        </ProseWithHints>
         <section class="post-faq" aria-labelledby="faq">
           <h2 id="faq">{t.blog.faq}</h2>
           {faq.map(({ q, a }) => (
@@ -210,3 +216,17 @@ const schema = {
     </div>
   </section>
 </Page>
+
+<script>
+  // Source chips (src/lib/source-chips.mjs): a click on a number opens the collapsed
+  // source list before the browser jumps to the entry.
+  const sources = document.querySelector<HTMLDetailsElement>('details.post-sources');
+  if (sources) {
+    const open = () => {
+      if (/^#quelle-\d+$/.test(location.hash)) sources.open = true;
+    };
+    document.querySelectorAll('a.cite').forEach((a) => a.addEventListener('click', () => (sources.open = true)));
+    window.addEventListener('hashchange', open);
+    open();
+  }
+</script>

@@ -13,7 +13,7 @@ takeaways:
   - "Hosted MCP kennt keine Service Accounts und keine Machine-to-Machine-Flows. Nächtliche Agenten brauchen die Agent API oder eine klassische Integration."
   - "Ob der Einstein Trust Layer greift, wenn Claude über Hosted MCP Daten liest, sagt die Salesforce-Dokumentation nicht. Es zählt der Vertrag mit dem KI-Anbieter."
   - "Agentische MCP- und API-Aufrufe sollen als Headless Platform Interactions Flex Credits kosten. Der Satz steht auf der Rate Card noch als TBA."
-articles: [salesforce-dx-mcp-server-end-of-life, mcp-explained-salesforce-it-leads, hosted-mcp-servers-data-access, headless-platform-interactions-budget]
+articles: [salesforce-dx-mcp-server-end-of-life, mcp-explained-salesforce-it-leads, hosted-mcp-servers-data-access, flex-credits-agentforce-costs]
 faq:
   - q: "Was passiert am 2. November 2026 mit dem Salesforce DX MCP Server?"
     a: "Laut Hinweis der Maintainer (Issue 46 im Repository forcedotcom/mcp) gibt es für den lokalen Server danach keine Pflege, keinen Support und keine neuen Releases mehr. Das npm-Paket wird als deprecated markiert, bleibt aber installierbar. Pinnen Sie die Version 0.30.15 und planen Sie den Umstieg auf Skills, Plugin und Hosted MCP."
@@ -117,7 +117,7 @@ Dazu kommt Prompt Injection. Bei [ForcedLeak](https://thehackernews.com/2025/09/
 
 Die [Übersicht der Hosted MCP Servers](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) sagt: „intended only for customers with Flex Credits and you may be billed for server usage“. Auf der [Flex Credits Rate Card vom 31.08.2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) steht der Zähler „Headless Platform Interaction“ mit dem Satz TBA. Laut [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/) zählen erfolgreiche Aufrufe registrierter Agenten über MCP oder API, gemessen wird nur in aktiven Produktions-Orgs, Kunden erhalten 30 Tage Vorlauf, und bestehende API-Integrationen behalten ihre heutige Preislogik.
 
-Für die Planung heißt das: Den Preis kennen Sie nicht, die Menge können Sie schätzen. Zählen Sie Benutzer, Fragen pro Tag und Tool-Aufrufe pro Frage, denn ein Agent ruft für eine Antwort oft mehrere Tools auf. Die Rechnung mit Annahmen steht in [MCP-Zugriffe auf Salesforce als Budgetrisiko](../../../blog/mcp-zugriffe-salesforce-budgetrisiko/), die Kostenmodelle insgesamt in [Kapitel 7](../kosten-und-token/).
+Für die Planung heißt das: Den Preis kennen Sie nicht, die Menge können Sie schätzen. Zählen Sie Benutzer, Fragen pro Tag und Tool-Aufrufe pro Frage, denn ein Agent ruft für eine Antwort oft mehrere Tools auf. Die Rechnung mit Annahmen steht in [MCP-Zugriffe auf Salesforce als Budgetrisiko](../../../blog/flex-credits-agentforce-kosten-pro-aktion/), die Kostenmodelle insgesamt in [Kapitel 7](../kosten-und-token/).
 
 ## Durchgespielt: Servicedaten in Claude bei einem Maschinenbauer
 

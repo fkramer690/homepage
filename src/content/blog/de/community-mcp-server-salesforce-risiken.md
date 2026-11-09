@@ -84,7 +84,7 @@ Salesforce Hosted MCP Server sind [seit 29. April 2026 allgemein verfügbar](htt
 Hosted MCP hat Grenzen, und genau sie treiben Teams zu Community-Servern:
 
 - **Kein Maschine-zu-Maschine-Zugriff.** Die Sicherheitsempfehlungen sagen: "There are no service accounts, no machine-to-machine flows". Ein nächtlicher Agent kann Hosted MCP nicht nutzen.
-- **Edition und Kosten.** Laut [Übersicht](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) sind die Server "intended only for customers with Flex Credits and you may be billed for server usage". Warum daraus eine Budgetposition wird, steht in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
+- **Edition und Kosten.** Laut [Übersicht](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) sind die Server "intended only for customers with Flex Credits and you may be billed for server usage". Warum daraus eine Budgetposition wird, steht in [MCP-Zugriffe als Budgetrisiko](../flex-credits-agentforce-kosten-pro-aktion/).
 
 Keine der beiden Grenzen macht einen Community-Server zur Lösung. Ein nächtlicher Job ist eine Integration mit eigenem Benutzer und Client Credentials oder JWT Flow. Ist Agentforce der Client, beschreibt [Trailhead](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce), wie Sie Server von Drittanbietern in der Agentforce Registry registrieren, Werkzeuge auswählen und Aufrufe über das Agentforce Gateway begrenzen. Das regelt die Seite des Agenten. Der Server dahinter braucht trotzdem die sechs Prüfpunkte.
 
