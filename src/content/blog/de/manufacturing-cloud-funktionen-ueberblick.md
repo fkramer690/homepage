@@ -34,11 +34,11 @@ Die Manufacturing Cloud ist eine Industry Cloud auf Sales Cloud und Service Clou
 
 | Funktion | Was sie tut | Welche Frage sie beantwortet |
 |---|---|---|
-| Sales Agreements | Rahmenverträge mit geplanten Mengen, Preis, Kosten und Marge pro Zeitraum; Ist-Werte aus ERP oder Auftragsverwaltung | Welcher Kunde liegt hinter seiner Zusage? |
+| Sales Agreements | Rahmenverträge mit geplanten Mengen, Preis, Kosten und Marge pro Zeitraum; Ist-Werte aus ERP oder Auftragsverwaltung | Welcher Kunde bleibt hinter der zugesagten Menge zurück? |
 | Account Forecasting | Prognose über Neugeschäft und laufendes Geschäft, mit Formel-Editor und Übergabe an Absatz- und Finanzplanung | Was nimmt jeder Kunde pro Produkt und Monat ab? |
 | Programmgeschäft | Marktgröße pro Hersteller und Programm, externe Bedarfsdaten, Komponentenprognosen | Wie viele Komponenten braucht ein OEM-Programm? |
 | Account Manager Targets | Ziele von oben nach unten, nach Menge, Umsatz oder eigener Kennzahl | Liegt das Team pro Kunde, Produkt und Region im Plan? |
-| Besuchsmanagement | Besuche aus Vorlagen, Aufgaben und Kennzahlen mobil erfasst | Was hat der Vertrieb beim Kunden oder Händler geprüft? |
+| Besuchsmanagement | Besuche aus Aktionsplanvorlagen geplant, Aufgaben und Kennzahlen mobil erfasst | Was hat der Vertrieb beim Kunden oder Händler geprüft? |
 
 Prognosen gibt es zweimal: Die Einstellungen kennen einen Schalter für Account Forecasts und einen für Advanced Account Forecasting. Der Trailhead-Überblick nennt nur die erweiterte Variante. Wie sie arbeitet und wo sie endet, steht in [Account Forecasting für die Absatzprognose](../account-forecasting-absatzprognose-vertrieb/), das Programmgeschäft in [Programmgeschäft: Prognosen für Zulieferer](../programmgeschaeft-zulieferer-prognose/).
 
@@ -52,7 +52,7 @@ Die [Produktseite für den Service](https://salesforce.com/manufacturing/cloud/s
 - **Asset Service Console.** Eine Sicht pro Anlage mit Meilensteinen, Seriennummer, zugehörigen Accounts und Kontakten, Garantien, Fällen, Arbeitsaufträgen und Ansprüchen.
 - **Garantiemanagement.** Garantieprogramme nach Laufzeit, Nutzungsgrenzen und abgedeckten Teilen, Geschäftsregeln für die Freigabe von Ansprüchen und Ansprüche, die Partner und Kunden über Portale oder API einreichen.
 
-Trailhead ergänzt drei weitere: Servicekampagnen für Rückrufe und Nachrüstungen an einer festgelegten Menge von Anlagen, Prework Estimation, also die Schätzung von Arbeit, Teilen und Kosten vor dem Einsatz, und Bestandsfunktionen für Teileverfügbarkeit und Nachschub. Die Salesforce-Hilfe führt alle drei unter [Asset Service Lifecycle Management](https://help.salesforce.com/s/articleView?id=xcloud.aslm_psc_enable_aslm.htm&language=en_US&type=5), die Schätzung heißt dort Work Order Estimation. Die [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) verkauft dieses Add-on für 75 $ pro Nutzer und Monat für Field-Service-Editionen. Trailhead beschreibt Fähigkeiten, nicht den Lizenzumfang.
+Trailhead ergänzt drei weitere: Product Service Campaigns für Rückrufe und Nachrüstungen an einer definierten Gruppe von Assets, Prework Estimation, also die Schätzung von Arbeit, Teilen und Kosten vor Arbeitsbeginn, und Bestandsfunktionen für Teileverfügbarkeit und Nachschub. Die Salesforce-Hilfe führt alle drei unter [Asset Service Lifecycle Management](https://help.salesforce.com/s/articleView?id=xcloud.aslm_psc_enable_aslm.htm&language=en_US&type=5), die Schätzung heißt dort Work Order Estimation. Die [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) verkauft dieses Add-on für 75 $ pro Nutzer und Monat für Field-Service-Editionen. Trailhead beschreibt Fähigkeiten, nicht den Lizenzumfang.
 
 Die Preisseite verkauft den Service als eigene Edition, Service Core zu 275 $ pro Nutzer und Monat, und fasst beide Seiten nur in Sales & Service Max zu 700 $ zusammen. Die Vergleichstabelle ordnet Funktionen je Edition zu, die Häkchen waren in der Textfassung, die ich gelesen habe, aber nicht auslesbar; prüfen Sie die Tabelle auf der Seite und im Angebot. Die Einsatzplanung für Techniker und die mobile App im Außendienst sind Field Service mit eigenen Lizenzen, sofern kein Paket im Angebot sie enthält, wie in [lohnt sich Salesforce Field Service](../salesforce-field-service-lohnt-sich/) beschrieben.
 
@@ -68,7 +68,7 @@ Das [Trailhead-Modul zu Ship and Debit](https://trailhead.salesforce.com/content
 Partner Visit Management ist der umgekehrte Fall. Es hat einen eigenen Schalter in den Manufacturing-Einstellungen, neben Partner Lead Management und Partner Performance Management, steht bei Trailhead aber unter der Überschrift Channel Revenue Management. Die Salesforce-Hilfe beschreibt es als [Funktion der Manufacturing Cloud](https://help.salesforce.com/s/articleView?id=ind.mfg_pvm_container.htm&language=en_US&type=5) in Enterprise und Unlimited Edition, was gegen das Add-on spricht. Die Trailhead-Überschrift allein beweist weder das eine noch das andere.
 
 ```hinweis offen
-Lassen Sie im Bestellschein bestätigen, dass Ihre Edition die Berechtigungen für Partner Visit Management bereitstellt, bevor Sie Händlerbesuche darauf planen.
+Lassen Sie im Bestellschein bestätigen, dass Ihre Edition die Berechtigungssätze für Partner Visit Management bereitstellt, bevor Sie Händlerbesuche darauf planen.
 ```
 
 Rebate Management selbst beschreibe ich in [Teil 5 der Serie](../rebate-management-haendlerboni/). Die Salesforce-Hilfe knüpft die Rebate-Berechtigungen für Portalnutzer an eine Add-on-Lizenz für Rebate Management, planen Sie es also als Add-on, nicht als Teil der Edition. Die Preise, die sich widersprechen, stehen in [Manufacturing Cloud Add-ons: was extra kostet](../manufacturing-cloud-zusatzkosten-add-ons/).
@@ -89,13 +89,13 @@ Salesforce hat sie so gebaut. Die [Metadaten IndustriesManufacturingSettings](ht
 
 Für die ersten drei Felder nennt die Seite keine eigene Version, nur die 47.0 der Komponente.
 
-Lizenz und aktive Funktion sind zwei verschiedene Sachen. Eine nutzbare Funktion braucht vier Ebenen: Edition oder Add-on im Vertrag, die Einstellung in der Org, die Permission Set License des Nutzers und den Berechtigungssatz mit Datenzugriff. Externe Nutzer brauchen zusätzlich ihre Experience-Cloud-Lizenz. Eine Org kann jahrelang für die Manufacturing Cloud zahlen und nur Sales Agreements nutzen. Dazu hängen Funktionen voneinander ab: Das Programmgeschäft braucht laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business) Advanced Account Forecasting, Data Pipelines und eigene Berechtigungssätze. Und die Schalter sind Metadaten. Sie gehören in die Versionsverwaltung und den Release-Prozess wie jede andere Einstellung, nicht in einen Klick in der Produktion.
+Lizenz und aktive Funktion sind zwei verschiedene Sachen. Eine nutzbare Funktion braucht vier Ebenen: Edition oder Add-on im Vertrag, die Einstellung in der Org, die Permission Set License des Nutzers und den Berechtigungssatz mit Datenzugriff. Externe Nutzer brauchen zusätzlich ihre Experience-Cloud-Lizenz. Eine Org kann jahrelang für die Manufacturing Cloud zahlen und nur Sales Agreements nutzen. Dazu hängen Funktionen voneinander ab: Das Programmgeschäft braucht laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business) Advanced Account Forecasting, Data Pipelines und eigene Berechtigungssätze. Und die Schalter sind Metadaten. Sie gehören in die Versionsverwaltung und den Release-Prozess wie jede andere Einstellung, nicht als Klick direkt in der Produktionsumgebung.
 
 ## Manufacturing Cloud und Agentforce Manufacturing sind dasselbe Produkt
 
 Beide Namen gelten. Die Preisseite verkauft „Manufacturing Cloud Sales Core“, ihre Fußnoten sprechen von „Agentforce Manufacturing for Sales“. Trailhead nennt das ganze Produkt Agentforce Manufacturing. Es ist ein Produkt mit zwei Namen.
 
-Der Name macht in der Praxis Ärger. Trailhead führt „Agent-powered sales agreements“, die Beschreibung handelt aber von langfristigen Vereinbarungen über Preise und Produkte, eine Agentenaktion wird nicht genannt. „Agentforce for sales planning“ ist dagegen eine echte Agentenvorlage mit drei dokumentierten Subagenten, wie in [was der Sales-Planning-Agent wirklich tut](../agentforce-vertriebsplanung-rahmenvertraege/) beschrieben. Und die automatische Prognose für neue Produkte, die Trailhead Agentforce Manufacturing zuschreibt, ist eine geplante Berechnung.
+Die doppelte Benennung führt in der Praxis zu Verwechslungen. Trailhead führt „Agent-powered sales agreements“ auf. Die Beschreibung behandelt aber langfristige Vereinbarungen über Preise und Produkte, ohne eine Agentenaktion zu nennen. „Agentforce for sales planning“ ist dagegen eine echte Agentenvorlage mit drei dokumentierten Subagenten, wie in [was der Sales-Planning-Agent wirklich tut](../agentforce-vertriebsplanung-rahmenvertraege/) beschrieben. Und die automatische Prognose für neue Produkte, die Trailhead Agentforce Manufacturing zuschreibt, ist eine geplante Berechnung.
 
 In jedem Hersteller-Workshop würde ich deshalb dieselbe Frage stellen: welcher Subagent, welche Aktion, welche Lizenz? Achten Sie auf das kleine Wort: Agentforce Manufacturing ist das Produkt, Agentforce for Manufacturing sind die Agentenvorlagen. Für Core nennt die Preisseite Agentforce über Flex Credits, und die Add-on-Seite verkauft das Add-on Agentforce for Manufacturing Cloud für 150 $ pro Nutzer und Monat für Core und Advanced; die volle Agentforce-for-Industries-Ausstattung gibt es nur in den Max-Editionen.
 
@@ -117,7 +117,7 @@ Nur zwei der sechs Punkte sind mit der Edition klar erledigt, die Händlerbesuch
 
 1. **Jede Funktion aus dem Business Case mit Namen**, mit der Edition oder dem Add-on, das sie abdeckt.
 2. **Vertrieb oder Service pro Nutzergruppe**, damit Garantiesachbearbeiter nicht auf Sales Core landen.
-3. **Kanalfunktionen:** Rebate Management, Partner Visit und Partner Performance Management, enthalten oder Channel Revenue Management.
+3. **Kanalfunktionen:** Für Rebate Management, Partner Visit und Partner Performance Management festhalten, ob die Edition sie enthält oder Channel Revenue Management nötig ist.
 4. **Portallizenzen** pro externer Nutzergruppe.
 5. **Agentforce:** Add-on oder Max, und die Einheit, in der abgerechnet wird.
 6. **Permission Set Licenses** pro Nutzergruppe, denn sie entscheiden, wer eine Funktion tatsächlich nutzen kann.
