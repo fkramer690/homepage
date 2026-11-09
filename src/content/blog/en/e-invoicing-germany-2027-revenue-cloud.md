@@ -22,7 +22,7 @@ faq:
   - q: "Can Revenue Cloud Billing create XRechnung or ZUGFeRD invoices?"
     a: "I found no Salesforce documentation for native EN 16931, XRechnung or ZUGFeRD output from Revenue Cloud Billing as of 9 November 2026. Salesforce documents invoice PDFs. Ask Salesforce in writing and plan an e-invoicing service or SAP as the route."
   - q: "Does the German e-invoicing duty apply to export invoices?"
-    a: "The German duty covers domestic B2B transactions between businesses established in Germany. Invoices to customers abroad fall outside it, but other countries have their own rules, which your tax advisor should check."
+    a: "The German duty covers domestic B2B transactions between businesses established in Germany (seat, management or a permanent establishment involved in the supply). Invoices to customers abroad fall outside it, but other countries have their own rules, which your tax advisor should check."
 draft: false
 ---
 
