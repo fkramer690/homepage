@@ -30,7 +30,7 @@ const switchHref = alternates ? (lang === 'de' ? alternates.en : alternates.de) 
 ---
 <Base lang={lang} title={title} description={description} alternates={alternates} ogType={ogType} image={image} noindex={noindex}>
   <slot name="head" slot="head" />
-  <a class="skip-link" href="#main">{lang === 'de' ? 'Zum Inhalt springen' : 'Skip to content'}</a>
+  <a class="skip-link" href="#main" data-nosnippet>{lang === 'de' ? 'Zum Inhalt springen' : 'Skip to content'}</a>
   <Header t={t} home={home} switchHref={switchHref} />
   <main id="main" data-layout={layout}>
     <slot />
