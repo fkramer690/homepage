@@ -10,14 +10,14 @@ topic: field-service
 categories: [field-service, ai]
 tags: [Predictive Maintenance, Field Service, Data 360, Asset Service Prediction, Maschinenbau, Flex Credits]
 takeaways:
-  - "Asset Service Prediction schätzt aus früheren Reparaturen, wie wahrscheinlich Folgeaufträge sind, und braucht mindestens 400 davon. Verknüpfung zählt."
+  - "Asset Service Prediction schätzt aus früheren Reparaturen, wie wahrscheinlich Folgeaufträge sind, und braucht mindestens 400, verknüpft mit der Anlage."
   - "Die Salesforce-Hilfe beschreibt die Installation von Asset Service Prediction, die Produktseite nennt keinen Preis. Lassen Sie sich die SKU schriftlich geben."
   - "Streaming in Data 360 kostet 3.500 Flex Credits pro Million Zeilen. Intervall und Zeilenaufbau bestimmen die Rechnung: eine Zeile pro Signal oder pro Maschine."
   - "Bei wenigen hundert Maschinen pro Baureihe und Fehlercodes im Freitext sind Wartungspläne mit Nutzungs- und Zustandsauslösern die bessere Wahl."
   - "Rohe Zeitreihen gehören in IoT-Plattform oder Historian; Salesforce braucht Zähler, Aggregate und Schwellwertereignisse, aus denen eine Regel Work Orders macht."
 faq:
   - q: "Unterstützt Salesforce Field Service vorausschauende Wartung?"
-    a: "Salesforce bietet Asset Service Prediction, das mit KI und Data 360 aus früheren Reparaturen die Wahrscheinlichkeit künftiger Work Orders für eine Anlage schätzt. Installation und Einrichtung beschreibt die Salesforce-Hilfe. Die Produktseite nennt keinen Preis, klären Sie also, welches Add-on es für Ihre Edition enthält."
+    a: "Salesforce bietet Asset Service Prediction, das mit KI und Data 360 aus früheren Reparaturen die Wahrscheinlichkeit künftiger Work Orders für eine Anlage schätzt. Installation und Einrichtung beschreibt die Salesforce-Hilfe. Die Produktseite nennt keinen Preis. Klären Sie daher, in welchem Add-on Asset Service Prediction für Ihre Edition enthalten ist."
   - q: "Was kostet das Streaming von Maschinendaten in Data 360?"
     a: "Laut Flex Credits Rate Card vom 3. November 2026 kostet die Streaming Pipeline in der Basisstaffel 3.500 Credits pro Million Zeilen, die Real-Time Pipeline 250.000 Credits pro Million Ereignisse. Bei 500 € je 100.000 Credits kostet eine Million gestreamter Zeilen 17,50 € vor Mengenstaffeln."
   - q: "Wie viel Servicehistorie brauche ich für eine Ausfallprognose?"
@@ -27,11 +27,11 @@ faq:
 draft: false
 ---
 
-Ein Maschinenbauer hat genug Daten für Predictive Maintenance in Salesforce, wenn mindestens 400 historische Anlagenreparaturen vorliegen, das Minimum, das Salesforce für Asset Service Prediction nennt. Nach meiner Erfahrung brauchen die Reparaturen außerdem vergleichbare Maschinen pro Baureihe, eine Seriennummer und codierte Ursachen. Das Modell lernt aus dieser Servicehistorie, Sensordaten kommen erst danach. Ist die Historie dünn, sind [Wartungspläne mit nutzungs- und zustandsabhängigen Auslösern](../field-service-wartung-nach-betriebsstunden/) die bessere Wahl. Maschinendaten sind als Aggregate bezahlbar: Im Beispiel unten kosten Rohwerte im Sekundentakt von 300 Maschinen, eine Zeile pro Signal, rund 65.900 € im Monat an Flex Credits, 15-Minuten-Aggregate rund 180 €.
+Ein Maschinenbauer hat genug Daten für Predictive Maintenance in Salesforce, wenn mindestens 400 historische Anlagenreparaturen vorliegen, das Minimum, das Salesforce für Asset Service Prediction nennt. Nach meiner Erfahrung brauchen die Reparaturen außerdem vergleichbare Maschinen pro Baureihe, eine Verknüpfung über die Seriennummer und codierte Ausfallursachen. Das Modell lernt aus dieser Servicehistorie, Sensordaten kommen erst danach. Ist die Historie dünn, sind [Wartungspläne mit nutzungs- und zustandsabhängigen Auslösern](../field-service-wartung-nach-betriebsstunden/) die bessere Wahl. Maschinendaten sind als Aggregate bezahlbar: Im Beispiel unten kosten Rohwerte im Sekundentakt von 300 Maschinen, eine Zeile pro Signal, rund 65.900 € im Monat an Flex Credits, 15-Minuten-Aggregate rund 180 €.
 
 ## Was bietet Salesforce heute für vorausschauende Wartung?
 
-Salesforce verkauft unter dem Stichwort proaktiver Service mehrere Funktionen, und nur zwei davon sagen etwas voraus. Stand laut [Ankündigung zum Asset Management vom Juni 2024](https://www.salesforce.com/news/stories/field-service-asset-management-news/), der [Ankündigung von Agentforce for Manufacturing](https://salesforce.com/news/stories/agentforce-for-manufacturing-announcement) vom August 2025 und der aktuellen [Preisseite von Field Service](https://www.salesforce.com/service/field-service-management/pricing/):
+Salesforce verkauft unter dem Stichwort proaktiver Service mehrere Funktionen, und nur zwei davon sagen etwas voraus. Die folgende Übersicht basiert auf der [Ankündigung zum Asset Management vom Juni 2024](https://www.salesforce.com/news/stories/field-service-asset-management-news/), der [Ankündigung von Agentforce for Manufacturing](https://salesforce.com/news/stories/agentforce-for-manufacturing-announcement) vom August 2025 und der aktuellen [Preisseite von Field Service](https://www.salesforce.com/service/field-service-management/pricing/):
 
 | Funktion | Was sie tut | Status und Preis |
 |---|---|---|
@@ -42,7 +42,7 @@ Salesforce verkauft unter dem Stichwort proaktiver Service mehrere Funktionen, u
 | Asset Health Score | Bewertet Anlagen nach Alter, Nutzung, Telemetrie und Reparaturhistorie über Data 360 | Teil von Connected Assets, 15.000 $ pro Org und Monat (US-Listenpreis) |
 | Asset Service Prediction | Schätzt aus früheren Reparaturen die Wahrscheinlichkeit künftiger Work Orders | Installation in der Hilfe beschrieben, kein Preis auf der Produktseite |
 
-Die Manufacturing-Ankündigung vermeidet den Begriff Predictive Maintenance und spricht von Agenten, die Kunden und Serviceteams vor Problemen warnen, „before they happen“. Die [Seite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) führt Connected Assets mit 10.000 vernetzten digitalen Anlagen, dem Asset Health Score und einem „Actionable Telematics Framework“. Den Überblick über die Agentenfunktionen gibt [KI-Agenten im Außendienst: was Field Service heute kann](../ki-agenten-aussendienst-field-service/). Hier geht es um eine engere Frage: Tragen Ihre Daten die letzten beiden Zeilen? Beide Zeilen setzen auf den Maschinen als Assets auf, siehe [Installierte Basis in Manufacturing Cloud](../installierte-basis-asset-meilensteine/).
+Die Manufacturing-Ankündigung vermeidet den Begriff Predictive Maintenance und spricht von Agenten, die Kunden und Serviceteams auf Probleme hinweisen, bevor sie auftreten. Die [Seite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) führt Connected Assets mit 10.000 vernetzten digitalen Anlagen, dem Asset Health Score und einem „Actionable Telematics Framework“. Den Überblick über die Agentenfunktionen gibt [KI-Agenten im Außendienst: was Field Service heute kann](../ki-agenten-aussendienst-field-service/). Hier geht es um eine engere Frage: Sind Ihre Daten für die letzten beiden Funktionen geeignet? Beide setzen voraus, dass die Maschinen als Asset-Datensätze geführt werden, siehe [Installierte Basis in Manufacturing Cloud](../installierte-basis-asset-meilensteine/).
 
 ## Wann reicht die Servicehistorie für eine Ausfallprognose?
 
@@ -88,7 +88,7 @@ Rohe Zeitreihen gehören in die IoT-Plattform oder den Historian, den der Maschi
 
 ## Wann sind Wartungspläne die bessere Wahl?
 
-Ein großer Teil des Nutzens, der unter „predictive“ versprochen wird, kommt aus zwei einfacheren Dingen: Keine geplante Wartung geht verloren, und die Intervalle folgen der echten Nutzung statt dem Kalender. Beides deckt Field Service ohne Prognosemodell ab.
+Ein großer Teil des Nutzens, der unter „predictive“ versprochen wird, kommt aus zwei einfacheren Dingen: Geplante Wartungstermine werden eingehalten, und die Intervalle richten sich nach der Nutzung statt nach dem Kalender. Beides deckt Field Service ohne Prognosemodell ab.
 
 Wartungspläne erzeugen die Work Orders, und Maintenance Work Rules an der Anlage steuern abweichende Intervalle, wie in [Wartungsverträge in Field Service abbilden](../salesforce-field-service-wartungsvertraege/) beschrieben. Die Produktseite ergänzt Pläne nach Nutzung und Zustand, mit einem Einsatz, sobald „an asset's temperature exceeds a set threshold“. Das Datenmodell hat dafür das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm), das Anlagenattribute speichert, „to track and analyze asset conditions“. Ein Betriebsstundenzähler, den SAP, proALPHA oder die IoT-Plattform einmal am Tag schreibt, reicht für nutzungsabhängige Intervalle oft aus, solange ein Tag Verzögerung vertretbar ist.
 
@@ -119,6 +119,6 @@ Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und Field Service im Betr
 2. **Schließen Sie die Lücken**: Verknüpfung mit der Anlage, Auswahllisten für Ursachen, Meldepflichten für Händler und Servicepartner.
 3. **Legen Sie fest, wo Rohdaten liegen**, und welche Aggregate, Zähler und Ereignisse zu Salesforce gehen.
 4. **Schätzen Sie Credits pro Signal**, bevor die erste Maschine angebunden wird, etwa mit [Flex Credits und Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
-5. **Fragen Sie Salesforce schriftlich** welches Add-on Asset Service Prediction für Ihre Edition enthält und wie viel Data-360-Verbrauch es erzeugt.
+5. **Fragen Sie Salesforce schriftlich**, welches Add-on Asset Service Prediction für Ihre Edition enthält und wie viele Data-360-Credits die Funktion verbraucht.
 
 Wie Maschinendaten, ERP und Salesforce zusammenpassen, ist Teil meiner Arbeit an der [Schnittstellenarchitektur](../../leistungen/salesforce-schnittstellen/). Die Anbindung der Sensoren plane ich erst, wenn die Schritte 1 und 2 erledigt sind.
