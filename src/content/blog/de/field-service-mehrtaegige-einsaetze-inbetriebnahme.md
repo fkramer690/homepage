@@ -39,7 +39,7 @@ Field Service hat dafür drei Werkzeuge: mehrtägige Termine, Crews und Complex 
 
 ## Wie funktionieren mehrtägige Termine?
 
-Ein mehrtägiger Termin ist ein normaler Servicetermin (Service Appointment), bei dem das Feld Is MultiDay gesetzt ist. Laut [Salesforce-Hilfe zu mehrtägigen Einsätzen](https://help.salesforce.com/s/articleView?id=service.pfs_multiday.htm&language=en_US&type=5) schaltet ein Admin die Funktion in den Field-Service-Einstellungen ein. Disponenten bekommen eine Langzeitansicht. In der Classic Dispatch Console zeigt das Long-Term-Gantt bis zu sechs Monate und bis zu 1.000 Termine; diese Grenzen gehören zur klassischen Konsole. Die neuere Scheduling Console hat eigene Langzeitansichten und zeigt seit Winter '27 einen Einsatz über mehrere Tage als einen zusammenhängenden Auftrag.
+Ein mehrtägiger Termin ist ein normaler Servicetermin (Service Appointment), bei dem das Feld Is MultiDay gesetzt ist. Laut [Salesforce-Hilfe zu mehrtägigen Einsätzen](https://help.salesforce.com/s/articleView?id=service.pfs_multiday.htm&language=en_US&type=5) schaltet ein Admin die Funktion in den Field-Service-Einstellungen ein. Disponenten bekommen eine Langzeitansicht. In der Classic Dispatch Console zeigt das Long-Term-Gantt bis zu sechs Monate und bis zu 1.000 Termine; diese Grenzen gehören zur klassischen Konsole. Die neuere [Scheduling Console](../field-service-scheduling-console-disponenten/) hat eigene Langzeitansichten und zeigt seit Winter '27 einen Einsatz über mehrere Tage als einen zusammenhängenden Auftrag.
 
 Diese Regeln zählen in der Praxis:
 

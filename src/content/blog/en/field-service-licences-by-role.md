@@ -108,7 +108,7 @@ The point of the exercise is less the total than the decisions it forces. Who an
 - **Who does case management.** Every person who works cases and also plans technicians needs a Field Service+ edition. That is a process question first.
 - **How partners work.** Regular partner technicians on user licenses, occasional ones per login. Agree on the counting rule.
 - **Which edition.** The prices above apply to Enterprise Edition. On Unlimited Edition, Dispatcher and Technician cost $330.
-- **Which add-ons.** Agentforce for Field Service and Operations, Visual Remote Assistant and Appointment Assistant are sold as add-ons; since 5 November 2026 the pricing page shows no price for them, and Field Service Max includes several. Only the roles that use them need them.
+- **Which add-ons.** Agentforce for Field Service and Operations, [Visual Remote Assistant](../visual-remote-assistant-remote-help-instead-of-visit/) and Appointment Assistant are sold as add-ons; since 5 November 2026 the pricing page shows no price for them, and Field Service Max includes several. Only the roles that use them need them.
 - **Growth.** A license forecast for three years, by role and wave, avoids buying 45 technician licenses on day one when the first wave has 15.
 
 How all this fits into the overall business case for Field Service is covered in [part 1 of the series](../salesforce-field-service-worth-it/) and in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/). If the service organization also runs warranty claims, check the [Manufacturing Cloud chapter on warranty and after-sales](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) before you buy licenses for the same people twice.

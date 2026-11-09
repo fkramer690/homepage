@@ -1,6 +1,7 @@
 ---
 title: "Field Service Scheduling Console: move dispatchers now?"
-description: "Should dispatchers move from the Classic Dispatch Console to the new Field Service Scheduling Console? Requirements, what carries over, gaps and a test plan."
+metaTitle: "Field Service Scheduling Console vs. Dispatcher Console"
+description: "Should dispatchers move from the old Dispatcher Console, now Classic Dispatch Console, to the Field Service Scheduling Console? Requirements, gaps, test plan."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: en
@@ -31,7 +32,7 @@ faq:
 draft: false
 ---
 
-Dispatchers should move to the Field Service Scheduling Console step by step: first a small group in one territory, then the rest once the functions they use daily are there. The Scheduling Console puts the Gantt, the appointment list and the map on one screen, explains proposed slots with AI and, according to Trailhead, keeps the customizations of the Classic Dispatch Console. It only runs with Enhanced Scheduling and Optimization, and according to Salesforce the two consoles are not fully at parity yet. As of November 2026 I see no retirement date for the old console. That leaves room for a controlled move, but no reason to postpone the preparation.
+Dispatchers should move to the Field Service Scheduling Console step by step: first a small group in one territory, then the rest once the functions they use daily are there. The Scheduling Console puts the Gantt, the appointment list and the map on one screen, explains proposed slots with AI and, according to Trailhead, keeps the customizations of the Classic Dispatch Console, the former Dispatcher Console. It only runs with Enhanced Scheduling and Optimization, and according to Salesforce the two consoles are not fully at parity yet. As of November 2026 I see no retirement date for the old console, which leaves room for a controlled move.
 
 ## What is the Scheduling Console?
 
@@ -70,7 +71,7 @@ The first requirement is the engine. The Scheduling Console is available only wi
 
 The second requirement is setup. According to Trailhead, the console is switched on when Agentforce Field Service is enabled through Salesforce Go. Dispatchers still need access: in Salesforce Go an admin gives dispatchers Scheduling Console access and assigns the permission set that the system creates. That makes it easy to start with a small group, because only the users with the permission set see the new console.
 
-## What carries over, and what is still missing?
+## What carries over from the Dispatcher Console, and what is missing?
 
 Trailhead calls the move low risk: customizations applied to the Classic Dispatch Console continue to work in the Scheduling Console, and the Gantt state and user settings carry over. I would still test every custom action, every Visualforce page and every appointment list in a sandbox, because custom code and old filters are where surprises show up first.
 

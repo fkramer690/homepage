@@ -98,7 +98,7 @@ Ein Maschinenbauer schickt einen Techniker in die Produktionshalle eines Kunden.
 
 Das Szenario zeigt, was offline für die Planung bedeutet. Das Gerät arbeitet, aber der Plan bleibt auf dem Stand der letzten Synchronisation stehen. Disponenten müssen wissen, welche Techniker in Hallen ohne Netz arbeiten, und ein kurzer Anruf gehört zum Prozess.
 
-Der Servicebericht in diesem Szenario wird mit Document Builder erzeugt. Daten und Unterschrift werden offline erfasst, das fertige PDF kann aber von der Synchronisation abhängen, und eigene Komponenten in der Vorlage müssen ihre Daten ebenfalls offline lesen. Wie das geht, steht in [Salesforce Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/).
+Der Servicebericht in diesem Szenario wird mit [Document Builder](../salesforce-service-documents-document-builder-servicebericht/) erzeugt. Daten und Unterschrift werden offline erfasst, das fertige PDF kann aber von der Synchronisation abhängen, und eigene Komponenten in der Vorlage müssen ihre Daten ebenfalls offline lesen. Wie das geht, steht in [Salesforce Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/).
 
 ## Briefcases nach Rolle zuschneiden
 

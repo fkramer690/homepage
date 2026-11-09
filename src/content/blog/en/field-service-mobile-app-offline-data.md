@@ -98,7 +98,7 @@ A machine builder sends a technician to a customer's production hall. The compre
 
 The scenario shows what offline really means for planning. The device works, but the plan freezes at the last sync. Dispatchers need to know which technicians are in halls without network, and a short call is part of the process.
 
-The service document in this scenario is generated with Document Builder. Data and signature are captured offline, but the final PDF can depend on the sync, and custom components in its template have to read their data offline as well. How that works is shown in [Document Builder: five limits and workarounds](../salesforce-document-builder-limits-workarounds/).
+The service document in this scenario is generated with [Document Builder](../salesforce-service-documents-document-builder/). Data and signature are captured offline, but the final PDF can depend on the sync, and custom components in its template have to read their data offline as well. How that works is shown in [Document Builder: five limits and workarounds](../salesforce-document-builder-limits-workarounds/).
 
 ## Cut the briefcases by role
 

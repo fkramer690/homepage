@@ -1,5 +1,6 @@
 ---
 title: "Salesforce Service Documents: is Document Builder enough?"
+metaTitle: "Salesforce Document Builder for Field Service reports"
 description: "What Salesforce Service Documents and Document Builder do in Field Service, what they cost, where the limits are and when manufacturers need another tool."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09
@@ -24,6 +25,8 @@ faq:
     a: "Yes. Technicians can create service documents in the mobile app without a connection, including signatures. Salesforce Help is inconsistent on Android: the limits page allows only service appointment templates, the template page all three objects. Test it on your devices."
   - q: "When do I need Salesforce Document Generation instead of Document Builder?"
     a: "When you need Word templates with complex logic, DOCX or PowerPoint output, documents on assets or custom objects, batch generation or a DocuSign integration. Document Builder covers none of these; it can only show or hide components by criteria."
+  - q: "Can a flow create a Document Builder document?"
+    a: "Yes. The action createServiceDocument, available from API version 60.0, creates a service document from a flow or through the REST API. That helps when the report should be created automatically, for example when the work order is closed, and not only when the technician taps the button."
 ---
 
 Salesforce Service Documents are the PDFs that Field Service creates from a work order or a service appointment: the service report with working time, spare parts, photos and the customer's signature. The templates are built in Document Builder, which comes with the Field Service licenses at no extra cost. For the classic service report on site, even offline, that is the right choice. Simple conditions work too, because every component can be shown or hidden by criteria. For documents on the asset, Word output, batch runs or inspection reports whose logic goes beyond show and hide, you need Salesforce Document Generation or an AppExchange tool.
@@ -103,7 +106,7 @@ Applied to Field Service, the inventory splits into two groups. The service repo
 
 Organizations with many short jobs also produce the most service reports, so the standard covers the bulk of the volume where it matters most.
 
-## Which alternative fits which document?
+## Document Builder or Document Generation?
 
 - **Classic service reports.** The older template editor in Field Service. Proven and simple, up to 20 signature blocks, but little design freedom. Section titles cannot be translated and the action is not available in the Salesforce mobile app.
 - **Salesforce Document Generation.** Word templates with tokens and conditional sections, for all standard and custom objects, output as PDF, DOCX or PPTX, synchronous and batch, DocuSign integration. Not available offline or on mobile. Some SKUs include it, such as industry clouds and Revenue Cloud Advanced, otherwise it needs its own license; Salesforce compares the two in the [help article on Document Builder and Document Generation](https://help.salesforce.com/s/articleView?id=ind.sf_docgen_understand_doc_builder_and_doc_generation.htm&language=en_US&type=5).

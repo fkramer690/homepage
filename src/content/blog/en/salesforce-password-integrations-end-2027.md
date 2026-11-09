@@ -1,6 +1,6 @@
 ---
 title: "Salesforce password integrations end in 2027: check now"
-metaTitle: "Salesforce username-password flow ends February 20, 2027"
+metaTitle: "Salesforce username-password flow retirement: Feb 20, 2027"
 description: "Salesforce retires the OAuth username-password flow on February 20, 2027 and SOAP login() in Summer '27. How to find affected integrations and migrate them."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09
@@ -26,6 +26,8 @@ faq:
     a: "Filter Login History by the login subtype OAuth Username-Password or run the SOQL query Salesforce publishes for it, search integration code and middleware configuration for grant_type=password, and ask every vendor of managed packages and connectors to confirm in writing."
   - q: "Does moving to External Client Apps solve the problem?"
     a: "No. External Client Apps do not support the username-password flow at all. The external system itself has to switch to a supported flow such as client credentials or JWT bearer."
+  - q: "Can I test the retirement before February 2027?"
+    a: "Yes. In a full or partial copy sandbox, turn off the setting Allow OAuth Username-Password Flows and run your integrations against it. Salesforce Help also describes how to block the flow for the whole org, so you can switch it off in production on your own date before Salesforce does."
 ---
 
 Salesforce integrations that request a token with username and password (`grant_type=password`) have an end date. On February 20, 2027, Salesforce retires the OAuth 2.0 username-password flow for connected apps, and those integrations will stop working. At the same time the SOAP API login gets stricter in several steps. For enterprise organizations with ERP connections, middleware, data loaders, backup tools and reporting extracts, this is a project with a fixed deadline, and the hardest part is finding every affected integration before it fails.

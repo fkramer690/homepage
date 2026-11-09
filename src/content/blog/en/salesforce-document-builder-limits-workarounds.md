@@ -1,6 +1,7 @@
 ---
 title: "Salesforce Document Builder: five limits and workarounds"
-description: "Template choice, file names, email, defaults and styling: five limits of the Salesforce Document Builder in Field Service and how flows and LWCs close them."
+metaTitle: "Salesforce Document Builder limitations and workarounds"
+description: "Salesforce Document Builder limitations in Field Service: template choice, file names, email, defaults and styling, and how flows and LWCs close them."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09
 lang: en

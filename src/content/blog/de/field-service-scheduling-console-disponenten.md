@@ -1,6 +1,7 @@
 ---
 title: "Scheduling Console im Field Service: Disponenten umstellen?"
-description: "Sollen Disponenten von der Classic Dispatch Console auf die neue Scheduling Console im Field Service wechseln? Voraussetzungen, Lücken und ein Testplan."
+metaTitle: "Scheduling Console vs. Dispatcher Console im Field Service"
+description: "Sollen Disponenten von der alten Dispatcher Console, heute Classic Dispatch Console, auf die Scheduling Console wechseln? Voraussetzungen, Lücken, Testplan."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de
@@ -31,7 +32,7 @@ faq:
 draft: false
 ---
 
-Disponenten sollten Schritt für Schritt auf die Scheduling Console im Field Service wechseln: erst eine kleine Gruppe in einem Gebiet, dann der Rest, sobald die Funktionen da sind, die sie täglich brauchen. Die Scheduling Console zeigt Gantt, Terminliste und Karte auf einem Bildschirm, erklärt vorgeschlagene Termine mit KI und übernimmt laut Trailhead die Anpassungen der Classic Dispatch Console. Sie läuft nur mit Enhanced Scheduling and Optimization, und laut Salesforce sind beide Konsolen noch nicht ganz gleichwertig. Stand November 2026 sehe ich kein Abschaltdatum für die alte Konsole. Das lässt Raum für einen geplanten Umstieg statt einer Umstellung aller an einem Tag, ist aber kein Grund, die Vorbereitung aufzuschieben.
+Disponenten sollten Schritt für Schritt auf die Scheduling Console im Field Service wechseln: erst eine kleine Gruppe in einem Gebiet, dann der Rest, sobald die Funktionen da sind, die sie täglich brauchen. Die Scheduling Console zeigt Gantt, Terminliste und Karte auf einem Bildschirm, erklärt vorgeschlagene Termine mit KI und übernimmt laut Trailhead die Anpassungen der Classic Dispatch Console, der früheren Dispatcher Console. Sie läuft nur mit Enhanced Scheduling and Optimization, und laut Salesforce sind beide Konsolen noch nicht ganz gleichwertig. Stand November 2026 sehe ich kein Abschaltdatum für die alte Konsole. Das lässt Raum für einen geplanten Umstieg.
 
 ## Was ist die Scheduling Console?
 
@@ -70,7 +71,7 @@ Die erste Voraussetzung ist die Engine. Die Scheduling Console gibt es nur mit E
 
 Die zweite Voraussetzung ist die Einrichtung. Laut Trailhead schaltet sich die Konsole ein, wenn Agentforce Field Service über Salesforce Go aktiviert wird. Disponenten brauchen trotzdem Zugriff: In Salesforce Go gibt ein Admin den Disponenten Zugriff auf die Scheduling Console und weist das Permission Set zu, das das System anlegt. Das macht einen Start mit einer kleinen Gruppe einfach, weil nur Nutzer mit dem Permission Set die neue Konsole bekommen.
 
-## Was wird übernommen, und was fehlt noch?
+## Was aus der Dispatcher Console übernommen wird, und was fehlt
 
 Trailhead nennt den Umstieg risikoarm: Anpassungen der Classic Dispatch Console funktionieren in der Scheduling Console weiter, Gantt-Zustand und Nutzereinstellungen werden übernommen. Ich würde trotzdem jede eigene Aktion, jede Visualforce-Seite und jede Terminliste in einer Sandbox testen, weil Überraschungen zuerst im eigenen Code und in alten Filtern auftauchen.
 
