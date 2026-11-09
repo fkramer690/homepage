@@ -11,8 +11,8 @@ categories: [b2b-commerce, architecture]
 contactBrief: integration
 tags: [B2B Commerce, SAP, ERP-Anbindung, Commerce Extensions, MuleSoft, Schnittstellen]
 takeaways:
-  - "Daten fließen in vier Richtungen: Stammdaten per Batch, Live-Abfragen in Warenkorb und Checkout, der Auftrag zu SAP, Status und Rechnung zurück."
-  - "Accounts, Produkte, Kategorien, Preisbücher und Berechtigungen werden nach Salesforce kopiert, der Produktimport liest CSV-Dateien als asynchronen Job."
+  - "Daten fließen in vier Richtungen: Stammdaten per Batch, Live-Abfragen in Warenkorb und Checkout, der Auftrag zu SAP, Status, Lieferung und Rechnung zurück."
+  - "Accounts, Produkte, Kategorien, Preisbücher und Berechtigungen werden nach Salesforce kopiert; der Produktimport verarbeitet CSV-Dateien in asynchronen Jobs."
   - "Preis, Bestand, Steuer, Fracht und die Prüfung vor dem Absenden laufen über Extension Points wie Commerce_Domain_Pricing_Service."
   - "Salesforce empfiehlt seit Winter '24 Extensions vor den älteren Checkout-Integrationen. Zahlungen lassen sich nicht per Extension anpassen."
   - "Connected-App-Schnittstellen mit dem OAuth Username-Password Flow müssen vor dem 20. Februar 2027 umziehen, meist auf Client Credentials."
@@ -22,24 +22,24 @@ faq:
   - q: "Gibt es einen Standard-Konnektor zwischen B2B Commerce und SAP?"
     a: "Ein solcher Konnektor gehört nicht zu B2B Commerce. MuleSoft bietet einen Accelerator for SAP mit wiederverwendbaren SAP- und Salesforce-APIs und Vorlagen, darunter Quote-to-Cash zwischen Sales Cloud und S/4HANA, als Startpunkt. Die Shop-Seite bauen Sie mit Commerce Extensions und Import-APIs."
   - q: "Sollen Preise und Bestand nach Salesforce kopiert oder live aus SAP abgefragt werden?"
-    a: "Das entscheiden Sie pro Datum. Eine Kopie ist schnell und hält den Shop am Laufen, wenn SAP steht, eine Live-Abfrage ist genau, kostet aber Wartezeit und Last. Ich kopiere, wo ein gewisses Datenalter vertretbar ist, und frage live ab, wo die Antwort für den aktuellen Auftrag verbindlich sein muss."
+    a: "Das entscheiden Sie für jede Datenart. Eine Kopie ist schnell und hält den Shop am Laufen, wenn SAP steht, eine Live-Abfrage ist genau, kostet aber Wartezeit und Last. Ich kopiere, wo ein gewisses Datenalter vertretbar ist, und frage live ab, wo die Antwort für den aktuellen Auftrag verbindlich sein muss."
   - q: "Brauche ich MuleSoft für B2B Commerce und SAP?"
     a: "Nicht unbedingt. Direkte Apex-Callouts mit Named Credentials können für einen Shop mit wenigen schnellen Live-Abfragen reichen, wenn Timeouts, Wiederholungen und Monitoring bewusst geplant sind. Eine Middleware lohnt sich, wenn mehrere Salesforce Clouds und Agenten dieselben SAP-Daten nutzen."
 draft: false
 ---
 
-Zwischen Salesforce B2B Commerce und SAP fließen Daten in vier Richtungen. Stammdaten wie Accounts, Produkte, Preisbücher und Berechtigungen kommen per Batch nach Salesforce. In Warenkorb und Checkout fragt der Shop über Commerce Extensions live bei SAP nach Preis, Verfügbarkeit und Kredit. Der fertige Auftrag geht an SAP. Auftragsbestätigung, Lieferung und Rechnung kommen zurück, damit Händler den Status im Shop sehen. SAP bleibt führend für Preise, Bestand, Kredit und den Auftrag. Salesforce hält das Einkaufserlebnis und eine Kopie dessen, was es dafür braucht. Die eigentliche Arbeit ist die Entscheidung pro Datum: kopieren oder live abfragen.
+Zwischen Salesforce B2B Commerce und SAP fließen Daten in vier Richtungen. Stammdaten wie Accounts, Produkte, Preisbücher und Berechtigungen kommen per Batch nach Salesforce. In Warenkorb und Checkout fragt der Shop über Commerce Extensions live bei SAP nach Preis, Verfügbarkeit und Kredit. Der fertige Auftrag geht an SAP. Auftragsbestätigung, Lieferung und Rechnung kommen zurück, damit Händler den Status im Shop sehen. SAP bleibt führend für Preise, Bestand, Kredit und den Auftrag. Salesforce hält das Einkaufserlebnis und eine Kopie dessen, was es dafür braucht. Die eigentliche Arbeit ist die Entscheidung für jede Datenart: kopieren oder live abfragen.
 
 ## Welche Daten fließen zwischen B2B Commerce und SAP?
 
-Am Anfang jeder Schnittstellendiskussion zeichne ich dieselbe Landkarte. Für einen typischen B2B-Shop auf Salesforce hat sie vier Blöcke:
+Zu Beginn jeder Schnittstellendiskussion erstelle ich dieselbe Übersicht. Für einen typischen B2B-Shop auf Salesforce hat sie vier Blöcke:
 
 | Daten | Richtung | Wann | Typischer Weg |
 |---|---|---|---|
 | Kundenstämme, Käufer, Produkte, Kategorien, Preisbücher, Käufergruppen, Berechtigungen | SAP nach Salesforce | Batch, nachts oder bei Änderung | Import-APIs, Middleware |
 | Preis, Verfügbarkeit, Kredit, Steuer, Fracht | Shop fragt SAP | Live, in Warenkorb und Checkout | Commerce Extensions |
 | Auftrag mit Bestellnummer, Lieferadresse, Wunschtermin | Salesforce nach SAP | Beim Absenden | Auftragsexport nach dem Checkout |
-| Auftragsnummer, bestätigte Termine, Lieferung, Rechnung | SAP nach Salesforce | Bei Änderung | Order Summary und Positions-Summaries; Lieferungen und Rechnungen brauchen ein eigenes Modell |
+| Auftragsnummer, bestätigte Termine, Lieferung, Rechnung | SAP nach Salesforce | Bei Änderung | Order Summary und zugehörige Order Item Summaries; Lieferungen und Rechnungen brauchen ein eigenes Modell |
 
 Die Tabelle sieht einfach aus. Die Entscheidungen stecken in der zweiten Spalte jeder Zeile: Welches System schreibt, und wie alt dürfen die Daten im Shop sein?
 
@@ -47,7 +47,7 @@ Die Tabelle sieht einfach aus. Die Entscheidungen stecken in der zweiten Spalte 
 
 Kopieren Sie Daten, wo ein gewisses Datenalter vertretbar ist und der Shop weiterlaufen muss, wenn SAP langsam ist; fragen Sie live ab, wo die Antwort für den aktuellen Auftrag verbindlich sein muss. Das sind SAP-Kundenstämme, die in Salesforce zu Accounts und Buyer Accounts werden, Ansprechpartner, die zu Käufern werden, Materialien, die zu Produkten werden, Produkthierarchien, die zu Kategorien werden, und die Preise für den Shop.
 
-Für Produkte bietet Salesforce eine [Produktimport-API](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-import-apis.html). Sie liest eine CSV-Datei, deren Spaltenüberschriften auf Produkt-, Kategorie- und Preisbuchinformationen zeigen, und läuft als asynchroner Job mit abfragbarem Status. Preisbücher werden über die Import-Einstellungen desselben Jobs zugeordnet. Das reicht für die Erstbefüllung und für regelmäßige Updates aus einer Middleware, die die Datei schreibt.
+Für Produkte bietet Salesforce eine [Produktimport-API](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-import-apis.html). Sie liest eine CSV-Datei, deren Spaltenüberschriften Produkt-, Kategorie- und Preisbuchinformationen zugeordnet sind, und läuft als asynchroner Job mit abfragbarem Status. Preisbücher werden über die Import-Einstellungen desselben Jobs zugeordnet. Das reicht für die Erstbefüllung und für regelmäßige Updates aus einer Middleware, die die Datei schreibt.
 
 Käufergruppen (Buyer Groups) und Entitlement Policies, also die Regeln, wer welches Produkt sieht, stehen selten so in SAP. Sie müssen abgeleitet werden, zum Beispiel aus Verkaufsorganisation, Kundengruppe oder Marke. Schreiben Sie diese Ableitung als Regel auf. Sonst pflegt jemand die Käufergruppen von Hand in Salesforce, und der Shop läuft SAP innerhalb weniger Monate davon.
 
@@ -60,7 +60,7 @@ Salesforce B2B Commerce hat benannte Extension Points, an denen eigener Apex-Cod
 - **Commerce_Domain_Pricing_Service** für Preise. Standardmäßig nutzt er Salesforce-Preisbücher.
 - **Commerce_Domain_Inventory_Service** für Bestand. Standardmäßig nutzt er Omnichannel Inventory.
 - **Commerce_Domain_Tax_CartCalculator** und **Commerce_Domain_Shipping_CartCalculator** für Steuer und Fracht. Ohne Anpassung berechnet der Shop gar keine Fracht.
-- **Commerce_Domain_Checkout_PlaceOrder** mit der Methode `validate`, der Ort für eine Kredit- oder Liefersperrenprüfung direkt vor dem Absenden.
+- **Commerce_Domain_Checkout_PlaceOrder** mit der Methode `validate`, der Ort für eine Kreditprüfung oder Prüfung auf eine Auftragssperre direkt vor dem Absenden.
 - **Commerce_Domain_Checkout_CreateOrder**, der aus dem Warenkorb den Auftrag erzeugt.
 
 Jede Extension kann SAP live aufrufen. Jeder Live-Aufruf bedeutet aber Wartezeit für den Händler, Last auf SAP und eine Frage, die niemand gern beantwortet: Was macht der Shop, wenn SAP nicht antwortet?
@@ -71,7 +71,7 @@ Meine Regel: Live abfragen, wo ein falscher Wert Geld oder Vertrauen kostet, all
 
 Die [Seite zur Integrationsarchitektur](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-integration-architecture.html) ist eindeutig: Seit Winter '24 bietet Salesforce Commerce Extensions für Preise, Bestand, Fracht, Steuer und weitere Dienste an und empfiehlt sie gegenüber dem älteren Checkout-Integrations-Framework. Das alte Framework wird weiter unterstützt, ein Abschaltdatum nennt die Seite nicht.
 
-Eine Ausnahme gibt es. Laut [Extensions-Leitfaden](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html) lassen sich Zahlungen noch nicht per Extension anpassen, dafür bleiben die Integrationen der Weg. Mit SAP hat das selten zu tun, weil Händler meist auf Rechnung mit Bestellnummer kaufen.
+Eine Ausnahme gibt es. Laut [Extensions-Leitfaden](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html) lassen sich Zahlungen noch nicht per Extension anpassen, für Zahlungen bleibt das ältere Integrationsframework der Weg. Mit SAP hat das selten zu tun, weil Händler meist auf Rechnung mit Bestellnummer kaufen.
 
 Für neue Shops würde ich jeden synchronen SAP-Aufruf in Warenkorb und Checkout, etwa Preis, Bestand, Steuer und die Auftragsprüfung, als Extension bauen. Batch-Importe, der Auftragsexport und Rückmeldungen aus SAP laufen über Import-APIs, Middleware oder andere Integrationsmuster. Registrierung und Zuordnung zum Store laufen über die Salesforce CLI und können damit im Repository und in der Pipeline liegen. Mehr dazu in [Commerce Extensions: Eigenentwicklung, die Updates übersteht](../commerce-extensions-eigenentwicklung/).
 
@@ -115,11 +115,11 @@ Ein Maschinenbauer arbeitet mit SAP S/4HANA und will einen Shop für 300 Händle
 3. Listen- und Händlerstaffelpreise in Preisbücher, nachts.
 4. Vertragspreise der 40 größten Händler live über die Pricing-Extension.
 5. Bestandsstatus stündlich kopiert, bestätigter Termin live im Checkout.
-6. Kredit und Liefersperre live in `validate`.
+6. Kreditprüfung und Auftragssperre live in `validate`.
 7. Auftrag an SAP, Auftragsnummer und Status binnen Minuten zurück, Lieferungen und Rechnungen bei Änderung.
 
 Sieben Datenflüsse, drei davon mit Live-Abfragen, umgesetzt in mehr als sieben technischen Schnittstellen, wenn Erstbeladung, Deltas und Fehlerbehandlung mitzählen. In diesem Beispiel ist das ein überschaubarer Umfang für ein erstes Release, und jeder Fluss braucht einen Verantwortlichen auf Kundenseite.
 
 ## Erster Schritt: Object Ownership Matrix und Schnittstellenliste
 
-Schreiben Sie Object Ownership Matrix und Schnittstellenliste, bevor jemand die Shopseiten entwirft. Notieren Sie für jedes Datum das führende System, Kopie oder live, das maximale Alter und was passiert, wenn SAP nicht erreichbar ist. Das [Kapitel zur ERP-Anbindung der Masterclass B2B Commerce](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) bringt diese Entscheidungen in eine Reihenfolge, und eine unabhängige Prüfung von Schnittstellen gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Schreiben Sie Object Ownership Matrix und Schnittstellenliste, bevor jemand die Shopseiten entwirft. Notieren Sie für jede Datenart das führende System, Kopie oder live, das maximale Alter und was passiert, wenn SAP nicht erreichbar ist. Das [Kapitel zur ERP-Anbindung der Masterclass B2B Commerce](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) bringt diese Entscheidungen in eine Reihenfolge, und eine unabhängige Prüfung von Schnittstellen gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
