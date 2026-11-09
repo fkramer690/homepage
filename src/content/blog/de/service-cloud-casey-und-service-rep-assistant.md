@@ -1,6 +1,6 @@
 ---
 title: "Service Cloud: Casey und der Service Rep Assistant"
-description: "Casey antwortet Kunden, der Service Rep Assistant unterstützt Servicemitarbeitende, Agentforce Contact Center startet in Europa. Was das für den B2B-Service bedeutet."
+description: "Casey antwortet Kunden, der Service Rep Assistant hilft Servicemitarbeitenden, Agentforce Contact Center startet in Europa. Was das für B2B-Service heißt."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09
 lang: de

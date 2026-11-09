@@ -1,6 +1,6 @@
 ---
 title: "Revenue Cloud Deployments: Konfiguration in der Pipeline"
-description: "Wie Katalog, Pricing Procedures und Context Definitions von der Sandbox in die Produktion kommen, wenn Revenue-Cloud-Konfiguration meist aus Daten besteht, und was manuell bleibt."
+description: "Wie Katalog, Pricing Procedures und Context Definitions der Revenue Cloud in die Produktion kommen, wenn die Konfiguration aus Daten besteht."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de

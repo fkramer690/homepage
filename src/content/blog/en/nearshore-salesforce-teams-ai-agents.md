@@ -1,6 +1,6 @@
 ---
 title: "Nearshore Salesforce teams with AI agents: what changes"
-description: "What changes when nearshore and offshore Salesforce teams in Eastern Europe or India work with AI agents: review load, roles, onboarding and access rules for manufacturers."
+description: "What changes when nearshore and offshore Salesforce teams work with AI agents: review load, roles, onboarding and access rules for manufacturers."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: en

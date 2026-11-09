@@ -1,6 +1,6 @@
 ---
 title: "Nearshore-Salesforce-Teams mit KI-Agenten: was sich ändert"
-description: "Was sich ändert, wenn Nearshore- und Offshore-Teams für Salesforce in Osteuropa oder Indien mit KI-Agenten arbeiten: Review-Last, Rollen, Einarbeitung und Zugriffsregeln."
+description: "Was sich ändert, wenn Nearshore- und Offshore-Teams für Salesforce mit KI-Agenten arbeiten: Review-Last, Rollen, Einarbeitung und Zugriffsregeln."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de

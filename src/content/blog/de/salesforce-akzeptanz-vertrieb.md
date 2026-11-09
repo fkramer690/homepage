@@ -1,6 +1,6 @@
 ---
 title: "Vertriebsteam nutzt Salesforce nicht? Ursachen und Lösungen"
-description: "Warum der Vertrieb Salesforce nach dem Go-live umgeht, wie Sie Prozesslücken von ADKAR-Lücken trennen und welche vier Hebel bei Herstellern die Akzeptanz erhöhen."
+description: "Warum der Vertrieb Salesforce nach dem Go-live umgeht, wie Sie Prozesslücken von ADKAR-Lücken trennen und welche vier Hebel die Akzeptanz heben."
 pubDate: 2026-10-29
 updatedDate: 2026-11-09
 lang: de

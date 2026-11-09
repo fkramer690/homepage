@@ -1,6 +1,6 @@
 ---
 title: "API 67.0: Warum Apex im User Mode weniger sieht"
-description: "Ab API 67.0 laufen Apex-Datenbankzugriffe standardmäßig im User Mode, Klassen mit Sharing. Warum Datensätze verschwinden, KI-Code besonders betroffen ist und wie Sie umsteigen."
+description: "Ab API 67.0 läuft Apex standardmäßig im User Mode, Klassen mit Sharing. Warum Datensätze verschwinden, KI-Code besonders betroffen ist und wie Sie umsteigen."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de

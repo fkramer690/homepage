@@ -1,6 +1,6 @@
 ---
 title: "Schulungskonzept für die Salesforce-Einführung"
-description: "Wie ein Schulungskonzept für Salesforce aussieht, das im Alltag ankommt: nach Rollen, an realitätsnahen Fällen, mit Key Usern, Schulungs-Sandbox und Hilfe im System."
+description: "Wie ein Salesforce-Schulungskonzept im Alltag ankommt: nach Rollen, an realitätsnahen Fällen, mit Key Usern, Schulungs-Sandbox und Hilfe im System."
 pubDate: 2026-10-29
 updatedDate: 2026-11-09
 lang: de

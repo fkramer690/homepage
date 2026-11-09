@@ -1,6 +1,6 @@
 ---
 title: "Product recalls in Salesforce: service campaigns"
-description: "How product service campaigns in Salesforce organize a recall or upgrade across hundreds of machines and dealers, and which data you need to find the right ones."
+description: "How product service campaigns in Salesforce organize a recall or upgrade across hundreds of machines and dealers, and which data finds the right ones."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: en

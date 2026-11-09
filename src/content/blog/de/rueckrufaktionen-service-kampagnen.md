@@ -1,6 +1,6 @@
 ---
 title: "Rückrufaktionen in Salesforce: Servicekampagnen"
-description: "Wie Product Service Campaigns in Salesforce einen Rückruf oder ein Upgrade über Hunderte Maschinen und Händler organisieren und welche Daten Sie brauchen, um die betroffenen Maschinen zu finden."
+description: "Wie Product Service Campaigns in Salesforce einen Rückruf über Hunderte Maschinen und Händler organisieren und welche Daten Sie für die Auswahl brauchen."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de

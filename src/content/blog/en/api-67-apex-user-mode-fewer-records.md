@@ -1,6 +1,6 @@
 ---
 title: "API 67.0 user mode: why Apex sees fewer records"
-description: "From API 67.0, Apex database operations run in user mode and classes with sharing by default. Why a version bump hides records, why AI-written code is exposed and how to plan the move."
+description: "From API 67.0, Apex runs in user mode and classes with sharing by default. Why a version bump hides records, why AI-written code is exposed and how to plan."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: en

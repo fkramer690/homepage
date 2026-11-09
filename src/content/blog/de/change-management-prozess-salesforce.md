@@ -1,6 +1,6 @@
 ---
 title: "Change-Management-Prozess im Salesforce-Projekt"
-description: "Welche Change-Arbeit in welche Phase eines Salesforce-Projekts gehört, von der Planung über Konzeption, Umsetzung und Abnahmetest bis Go-live und Betrieb, mit Ergebnis je Phase."
+description: "Welche Change-Arbeit in welche Phase eines Salesforce-Projekts gehört, von Planung über Umsetzung und Abnahmetest bis Go-live und Betrieb, mit Ergebnissen."
 pubDate: 2026-10-29
 updatedDate: 2026-11-09
 lang: de

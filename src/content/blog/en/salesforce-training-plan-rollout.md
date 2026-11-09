@@ -1,6 +1,6 @@
 ---
 title: "Salesforce end user training plan for a rollout"
-description: "What a Salesforce training plan looks like that reaches daily work: by role, on realistic cases, with key users, a training environment and help inside the system."
+description: "What a Salesforce training plan looks like that reaches daily work: by role, on realistic cases, with key users, a training sandbox and in-app help."
 pubDate: 2026-10-29
 updatedDate: 2026-11-09
 lang: en

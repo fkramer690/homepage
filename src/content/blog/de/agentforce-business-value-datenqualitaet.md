@@ -1,6 +1,6 @@
 ---
 title: "Agentforce-Piloten: Business Value und Datenqualität zuerst"
-description: "Die meisten befragten Salesforce-Kunden haben Agentforce getestet, doch viele hängen im Pilot fest. Warum Business Value und Datenqualität entscheiden und wie der Einstieg gelingt."
+description: "Viele Salesforce-Kunden haben Agentforce getestet, doch viele hängen im Pilot fest. Warum Business Value und Datenqualität entscheiden, wie der Start gelingt."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09
 lang: de

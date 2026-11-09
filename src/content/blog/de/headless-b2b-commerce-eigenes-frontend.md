@@ -1,6 +1,6 @@
 ---
 title: "Headless B2B Commerce: eigenes Frontend, Salesforce-Kern"
-description: "Wann ein Hersteller Salesforce B2B Commerce headless hinter der eigenen Website oder App betreiben sollte, was in Salesforce bleibt und was Sie selbst bauen und betreiben."
+description: "Wann Hersteller Salesforce B2B Commerce headless hinter eigener Website oder App betreiben sollten, was in Salesforce bleibt und was Sie selbst bauen."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de

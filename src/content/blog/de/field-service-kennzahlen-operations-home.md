@@ -1,6 +1,6 @@
 ---
 title: "Field Service Kennzahlen nach dem Go-live: Was messen?"
-description: "Welche Kennzahlen nach dem Go-live zeigen, ob Salesforce Field Service wirkt, wie Sie die Erstlösungsquote definieren und was Operations Home und Dashboards beitragen."
+description: "Welche Kennzahlen nach dem Go-live zeigen, ob Field Service wirkt, wie Sie die Erstlösungsquote definieren und was Operations Home und Dashboards beitragen."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de

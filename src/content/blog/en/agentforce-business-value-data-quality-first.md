@@ -1,6 +1,6 @@
 ---
 title: "Agentforce pilots: business value and data quality first"
-description: "Most surveyed Salesforce customers have tried Agentforce, but many stall in pilot. Why business value and data quality decide success, and how to start the right way."
+description: "Most surveyed Salesforce customers have tried Agentforce, but many stall in pilot. Why business value and data quality decide success, and how to start."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09
 lang: en

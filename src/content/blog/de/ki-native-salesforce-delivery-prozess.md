@@ -1,6 +1,6 @@
 ---
 title: "KI-nativer Delivery-Prozess für Salesforce in 14 Schritten"
-description: "KI-nativer Delivery-Prozess für Salesforce vom Workshop bis zur Produktion: was der Agent macht, wo Personen an fünf Toren entscheiden und was die Pipeline prüft."
+description: "KI-nativer Delivery-Prozess für Salesforce vom Workshop bis zur Produktion: was der Agent macht, wo Personen an fünf Toren entscheiden, was die Pipeline prüft."
 pubDate: 2026-10-30
 updatedDate: 2026-11-09
 lang: de
