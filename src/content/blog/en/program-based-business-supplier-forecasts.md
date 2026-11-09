@@ -2,6 +2,7 @@
 title: "Program-based business: forecasts for suppliers"
 description: "How program-based business in Manufacturing Cloud turns OEM program forecasts into component forecasts and sales agreements, and when it is overkill."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: program-based-business-supplier-forecasts
 translationKey: manufacturing-cloud-program-based-business
@@ -11,7 +12,7 @@ tags: [Manufacturing Cloud, program-based business, forecasting, suppliers, sale
 takeaways:
   - "Program and variant forecasts arrive as CSV files. Four Data Processing Engine templates calculate the component forecasts."
   - "Each component needs quantity per unit, minimum quantity and lead time. That data usually lives in engineering or the ERP."
-  - "It needs Advanced Account Forecasting, Data Pipelines, Program Based Business and two permission sets. Trailhead names no license."
+  - "It needs Advanced Account Forecasting, Data Pipelines and Program Based Business, plus three permission sets and the matching permission set licenses."
   - "Approved component forecasts become an opportunity and a sales agreement in two API steps."
 faq:
   - q: "What is program-based business in Manufacturing Cloud?"
@@ -21,7 +22,7 @@ faq:
   - q: "How do component forecasts become sales agreements?"
     a: "The Transformation API converts finalised component forecasts into one opportunity with line items and schedules per period. Once the opportunity is won, the Sales Agreement Connect API converts it into a sales agreement with sales agreement products."
   - q: "Which permission sets does program-based business need?"
-    a: "Trailhead names Manufacturing Advanced Account Forecast and Manufacturing Program Based Business for users, and Data Pipelines Base User for admins who run Data Processing Engine definitions."
+    a: "Salesforce Help names Manufacturing Advanced Account Forecast and Manufacturing Program Based Business for users, and Data Pipelines Base User for admins who run Data Processing Engine definitions. Users also need the matching permission set licenses, and whoever creates sales agreements needs the sales agreement permissions."
 draft: false
 ---
 
@@ -62,7 +63,7 @@ Then people adjust. Forecast sets define adjustment periods: in the example, acc
 With four predefined Data Processing Engine templates, process type Program Based Business, according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/track-and-transform-component-forecasts):
 
 - **Generate Program Component Forecast** for the first run of a program, or when program and variant forecasts change.
-- **Calculate Program Component Forecast** recalculates every period, for example when new components or Product Related Material records appear.
+- **Recalculate Program Component Forecast** (Trailhead still says "Calculate") recalculates after components are added or removed or Product Related Material records change.
 - **Rollover Program Component Forecast** runs at month end: the first period expires, a new one is added.
 - **Regenerate Program Component Forecast** after changes to forecast sets, dimensions or period groups; it expires existing records and creates new ones.
 
@@ -71,14 +72,14 @@ Admins clone and customize the templates, and scheduled flows run them; weekly i
 Two consequences for the architecture. Cloned DPE definitions, forecast sets and flows are configuration that has to move through the release process like everything else, as described in [data and configuration in the pipeline](../../masterclass/devops-release-management/data-and-configuration/). And the record count grows with programs, variants, components, dimensions and periods.
 
 ```hinweis offen
-Account forecasting has documented limits for forecast records, described in [account forecasting for sales volume planning](../account-forecasting-sales-volume-planning/). Whether component forecasts count against the same limits I could not find documented; clarify it before the first large program.
+Salesforce documents [recommended volumes for program-based business](https://help.salesforce.com/s/articleView?id=ind.mfg_pbb_admin_considerations_large_volumes_concept.htm&language=en_US&type=5): for large orgs up to 150 programs, 60 periods and 58.5 million component forecast records. An org includes 1 GB of Data Processing Engine export per day, which the standard templates turn into about 3 million forecast records a day; more needs the Data Pipelines add-on.
 ```
 
 ## An approved forecast becomes a sales agreement in two steps
 
 There are two API steps. First, the Transformation API converts finalised component forecasts into an opportunity. The mappings are defined with the ObjectHierarchyRelationship metadata, usage type Transformation Mapping: component forecast to opportunity, to opportunity line item and to opportunity line item schedule, plus a support mapping from the program to the opportunity, because the account is not set automatically. The result is one opportunity with a line item per component and a schedule per period.
 
-Second, once the opportunity is won, the Sales Agreement Connect API converts opportunity and line items into a sales agreement with sales agreement products. From there, actuals from the ERP take over, as described in [sales agreements: spot customers behind on volume](../sales-agreements-volume-shortfall-erp/). If the agreement comes out of a configured quote instead, the path is in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
+Second, once the opportunity is won (a process rule I recommend, not a technical requirement), the Sales Agreement Connect API converts opportunity and line items into a sales agreement with sales agreement products. From there, actuals from the ERP take over, as described in [sales agreements: spot customers behind on volume](../sales-agreements-volume-shortfall-erp/). If the agreement comes out of a configured quote instead, the path is in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
 
 ```ablauf
 ext: Market data CSV
@@ -95,16 +96,16 @@ Trailhead describes no approval status for the forecast. Who declares a componen
 
 ## What do you need before you start?
 
-- **Features in Setup:** Advanced Account Forecasting, Data Pipelines and Program Based Business. The metadata switch for programs exists since API 54.0.
+- **Features in Setup:** Advanced Account Forecasting, Data Pipelines and Program Based Business. The metadata type for program templates exists since API 54.0, the program objects since API 55.0.
 - **Permission sets:** Manufacturing Advanced Account Forecast and Manufacturing Program Based Business for users, Data Pipelines Base User for admins.
-- **License:** Trailhead names none. Get it confirmed in the quote, as with every feature in [Manufacturing Cloud features: what is in the box](../manufacturing-cloud-features-overview/).
+- **License:** Salesforce Help lists the permission set licenses for Manufacturing Cloud users; get the exact set confirmed in the quote, as with every feature in [Manufacturing Cloud features: what is in the box](../manufacturing-cloud-features-overview/).
 - **Data:** a source for program and variant forecasts, Product Related Material from engineering or the ERP, and price book entries for selling prices.
 
 ## Worked example: hydraulic cylinders for 12 programs
 
 Assume a supplier of hydraulic cylinders delivers into 12 programs of four agricultural machinery OEMs. Each program has about four variants, each variant uses about ten of the supplier's parts, built in two plants. Today every key account manager keeps a spreadsheet per OEM.
 
-With 24 monthly periods, that is about 12 x 4 x 10 x 2 x 24 = 23,040 component forecast records per run, still few enough for the team to review the large deviations. The benefit lies in three places: one calculation logic instead of twelve spreadsheets, adjustments with a reason, and opportunities created from the forecast instead of typed in again. The cost lies in data: lead times and quantities per unit have to come from engineering, and market data for agricultural machinery programs has to be bought or collected.
+With 24 monthly periods, that is about 12 x 4 x 10 x 2 x 24 = 23,040 component forecast records under these simple assumptions, far below the recommended volumes. Nobody reviews them one by one; the team works through filtered deviations. The benefit lies in three places: one calculation logic instead of twelve spreadsheets, adjustments with a reason, and opportunities created from the forecast instead of typed in again. The cost lies in data: lead times and quantities per unit have to come from engineering, and market data for agricultural machinery programs has to be bought or collected.
 
 ## When is program-based business overkill?
 

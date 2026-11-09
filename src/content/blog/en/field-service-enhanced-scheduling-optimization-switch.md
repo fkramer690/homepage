@@ -2,6 +2,7 @@
 title: "Enhanced Scheduling and Optimization: switch now?"
 description: "Should an existing Field Service org move to Enhanced Scheduling and Optimization? Limits, what disappears, what behaves differently and how to test it."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: field-service-enhanced-scheduling-optimization-switch
 translationKey: field-service-enhanced-scheduling-eso
@@ -13,7 +14,7 @@ takeaways:
   - "The enhanced engine allows 250 instead of 100 skills per resource and 50,000 optimized appointments per 24 hours or 500 per scheduling license."
   - "Scheduling recipes go away; Salesforce points to the Fix Schedule Overlaps flow. Optimization Insights becomes the Optimization Hub."
   - "Several work rules treat empty fields differently, and an appointment without a territory gets candidates from all territories."
-  - "The new Scheduling Console only works with the enhanced engine, so the engine decision also decides the dispatchers' screen."
+  - "The new Scheduling Console only works with the enhanced engine, so staying on the older engine also rules out the new dispatcher screen."
 faq:
   - q: "What is Enhanced Scheduling and Optimization in Salesforce Field Service?"
     a: "It is the newer scheduling and optimization engine of Field Service. It assigns service appointments to technicians by scheduling policy, like the older engine, but with higher limits, different handling of some work rules and predictive point-to-point travel. New orgs have it on by default."
@@ -51,7 +52,7 @@ The skills limit is the one I would look at first. A service technician at a mac
 
 The 50,000 appointments are rarely the bottleneck. A service organization with 45 technicians stays far below that, and the figure applies until you have more than 100 scheduling licenses. Consumption can be checked in Setup under Company Information.
 
-The 30-day horizon matters for planned maintenance. If dispatchers book annual maintenance visits two months ahead, those bookings sit outside the window where the engine updates travel time. That is fine as long as optimization rearranges the plan once the appointments come into range.
+The 30-day horizon matters for planned maintenance. If dispatchers book annual maintenance visits two months ahead, those bookings sit outside the window where the engine updates travel time. In the pilot I would check that optimization rearranges those appointments once they come into range, and reschedule far-off bookings deliberately rather than assume it.
 
 According to the [considerations for Enhanced Scheduling and Optimization](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_considerations.htm&language=en_US&type=5), travel is calculated with point-to-point predictive routing, which needs map coverage in the regions where your technicians work. Optimization also needs no separate activation step, because it runs with a Platform Integration User.
 
@@ -80,7 +81,7 @@ One change helps manufacturers directly. Appointments that violate a rule could 
 
 Salesforce now has two dispatcher screens: the Classic Dispatch Console with the familiar Gantt, and the new Scheduling Console. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-quick-look/didispatch-smarter-with-the-scheduling-console), the Scheduling Console is available only with Enhanced Scheduling and Optimization.
 
-That links two decisions that look separate. An org that stays on the older engine also stays on the Classic Dispatch Console. New console features, such as AI explanations for proposed slots or multiday jobs shown as one connected job in Winter '27, then stay out of reach. Whether dispatchers should move now is covered in [the Field Service Scheduling Console: move dispatchers now?](../field-service-scheduling-console-dispatchers/).
+That links two decisions that look separate, in one direction. An org that stays on the older engine also stays on the Classic Dispatch Console, while an org on the enhanced engine can keep the Classic Dispatch Console during the transition. New console features, such as AI explanations for proposed slots or multiday jobs shown as one connected job in Winter '27, then stay out of reach. Whether dispatchers should move now is covered in [the Field Service Scheduling Console: move dispatchers now?](../field-service-scheduling-console-dispatchers/).
 
 ## Worked example: one pilot territory first
 
@@ -94,7 +95,7 @@ Rebuild recipes | 2 weeks
 Pilot | 4 weeks
   One territory with nine technicians switches to the enhanced engine. Dispatchers note every proposal they change and why, as they did when automation was introduced.
 Comparison
-  If the share of changed proposals in the pilot territory is no higher than in the others, the remaining territories follow one per week.
+  If the share of changed proposals in the pilot territory is no higher than in the others, and travel time, overtime and unscheduled appointments do not get worse, the remaining territories follow one per week.
 ```
 
 The configuration for this, the territory setting, scheduling policies and work rules, consists of records rather than metadata. It belongs in the pipeline as described in the DevOps masterclass chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/), otherwise the tested sandbox state and production drift apart.

@@ -1,7 +1,8 @@
 ---
 title: "Communicating Salesforce releases to the business"
-description: "How business users learn before every Salesforce release what changes for them: a rollout plan per release, release notes in plain words and a way back."
+description: "How business users learn before every Salesforce release what changes for them: a rollout plan per release, release notes in plain words, a feedback loop."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: en
 slug: salesforce-release-communication-business
 translationKey: change-release-communication
@@ -11,27 +12,27 @@ coAuthor: juliane
 contactBrief: change
 tags: [release management, change management, release notes, business users]
 takeaways:
-  - "Smaller, more frequent releases lower the technical risk, but they need a fixed path through which business users learn beforehand what changes."
+  - "Smaller, more frequent releases can lower the risk per release, but they need a fixed path through which business users learn beforehand what changes."
   - "Before every release the plan states which teams are affected, what changes for them and who informs them, before development is finished."
   - "Release notes for the business describe what changes in daily work, not which fields and flows were deployed."
-  - "Communication needs a way back: whatever does not fit in daily work lands in the backlog instead of an email."
+  - "Communication needs a feedback loop: whatever does not fit in daily work lands in triage and the backlog instead of an email."
 faq:
   - q: "How do you inform business users about a Salesforce release?"
     a: "With a rollout plan per release that names affected groups, changes and owners, with release notes in plain words, and through key users who pass the change on in their team."
   - q: "When should the business hear about a release?"
     a: "At the latest before the acceptance test, for larger changes already during planning. Whoever first sees a change in production looks for a way around it."
   - q: "What belongs in release notes for the business?"
-    a: "What changes for which group, why, from when, what stays the same and whom to ask. Technical details belong in the release notes for IT."
+    a: "What changes for which group, why, from when, what I need to do, what stays the same and whom to ask. Technical details belong in the release notes for IT."
   - q: "Do Salesforce's own releases affect the business too?"
-    a: "Yes. Salesforce publishes three releases a year that can change interfaces and features. Whatever affects your own users belongs in the same communication."
+    a: "Yes. Salesforce publishes three major seasonal releases a year, and some products update monthly. They can change interfaces and features. Whatever affects your own users belongs in the same communication, timed to the date Salesforce activates it."
 draft: false
 ---
 
-Business users should learn before every Salesforce release what changes for them, not afterwards. That takes a rollout plan per release that defines which teams are affected, what changes in their workflows and who informs them; release notes in plain words instead of a list of deployed components; and a way back through which users report what does not fit in daily work. With smaller, more frequent releases this matters more, because changes come more often. The plan is in place before development is finished.
+Business users should learn before every Salesforce release what changes for them, not afterwards. That takes a rollout plan per release that defines which teams are affected, what changes in their workflows and who informs them; release notes in plain words instead of a list of deployed components; and a feedback loop through which users report what does not fit in daily work. With smaller, more frequent releases this matters more, because changes come more often. The plan is in place before development is finished.
 
 ## Smaller releases need more communication
 
-With a clean release process, releases get smaller and more frequent. That lowers the risk of each release. For the business, though, it also means: small changes more often instead of one big package per quarter. Whoever does not know that something has changed takes the change for a defect, calls support or builds a workaround.
+With a clean release process, releases usually get smaller and more frequent. With automated tests and controlled dependencies, that can lower the risk of each release. For the business, though, it also means: small changes more often instead of one big package per quarter. Whoever does not know that something has changed takes the change for a defect, calls support or builds a workaround.
 
 In the [ADKAR model](../change-management-salesforce-rollout/) the first stage, awareness, is missing in this case. The user does not know that and why something changes. No training can make up for that if it only happens after the release.
 
@@ -53,11 +54,12 @@ The last row is not a joke. If a release does not affect a group, that group sho
 
 ## Release notes for the business describe daily work
 
-Technical release notes list user stories, fields and flows. For the business they are useless. Release notes for users answer five questions:
+Technical release notes list user stories, components, dependencies and deployment steps. On their own they do not work as communication for users. Release notes for users answer six questions:
 
 - **What changes for me?** Split by group, with a screenshot when the interface changes.
-- **Why?** One sentence, for example: the delivery date becomes required because demand planning needs it.
+- **Why?** One sentence, for example: the delivery date becomes required because demand planning needs it. Make a field required only once it is clear that the user knows the value at that point.
 - **From when?** Date of the release.
+- **What do I need to do?** For example fill in a new field, update the app or attend a short training.
 - **What stays the same?** That removes a lot of uncertainty.
 - **Whom do I ask?** The team's key user, by name.
 
@@ -78,25 +80,25 @@ After the release | first week · key users, project team
   Collect questions, check usage, take feedback into the backlog.
 ```
 
-For hints directly inside Salesforce the platform offers In-App Guidance: short prompts on a page that explain new fields or workflows. They do not replace release notes, but they help in the first week when a user sees the change for the first time.
+For hints directly inside Salesforce the platform offers In-App Guidance, with scope and limits depending on edition and licenses: short prompts on a page that explain new fields or workflows. They do not replace release notes, but they help in the first week when a user sees the change for the first time.
 
-## The way back leads into the backlog
+## The feedback loop leads into the backlog
 
-One-way communication is not enough. Otherwise problems from daily work end up in emails to individual people, and after a month nobody knows how often the same question came up. That is why I set up a fixed way back:
+One-way communication is not enough. Otherwise problems from daily work end up in emails to individual people, and after a month nobody knows how often the same question came up. That is why I set up a fixed feedback loop:
 
 - **One place for feedback**, such as a simple form or a category in the ticket system that key users and users know.
-- **A distinction between defect and request.** Defects go to support, requests go into the backlog, where the product owner assesses them.
+- **A short triage.** Defects go to support, questions and training needs to the key users, real change requests into the backlog, where the product owner assesses them.
 - **A visible answer.** Whoever reports something learns what happens with it, even if the answer is no.
 
-The way back is the part that builds trust. A business that sees its feedback implemented in the next release also reads the next release notes.
+The feedback loop is the part that builds trust. A business that sees its feedback implemented in the next release also reads the next release notes.
 
 ## What if a change is contested?
 
-Some changes do not please everyone, such as a new required field that creates work for inside sales and helps demand planning. Such changes should not become known for the first time through the release notes. This is where the sponsor steps in: they explain beforehand why the change is coming and decide when two departments cannot agree. In the rollout plan I mark these rows so they are discussed before the acceptance test.
+Some changes do not please everyone, such as a new required field that creates work for inside sales and helps demand planning. Such changes should not become known for the first time through the release notes. This is where the sponsor steps in: they explain beforehand why the change is coming and decide when the process owners of two departments cannot agree. In the rollout plan I mark these rows so they are discussed before the acceptance test.
 
 ## What about Salesforce's own releases?
 
-Salesforce publishes three releases a year: Spring, Summer and Winter. They can change interfaces, introduce features or switch old ones off. Most changes affect admins and developers, some affect users too. I described what mattered for the pipeline in [Winter '27](../salesforce-winter-27-what-changes-for-your-pipeline/). For the business the same path applies: whatever your own users see goes into the rollout plan of your next own release.
+Salesforce publishes three major seasonal releases a year, Spring, Summer and Winter, and some products and features also update monthly. They can change interfaces, introduce features or switch old ones off. Most changes affect admins and developers, some affect users too. I described what mattered for the pipeline in [Winter '27](../salesforce-winter-27-what-changes-for-your-pipeline/). For the business the same path applies, but the timing follows Salesforce: these changes reach production on Salesforce's date, and some are activated automatically or enforced later as release updates. I check the release notes and release updates, test in the preview sandbox and inform the affected users before the change becomes active, in the rollout plan of the release that comes first.
 
 ## First step: a rollout plan for your next release
 

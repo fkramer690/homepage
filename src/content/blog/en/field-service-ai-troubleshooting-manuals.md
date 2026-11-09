@@ -2,6 +2,7 @@
 title: "Field Service AI troubleshooting: fix the manuals first"
 description: "What a machine builder must do with manuals, bulletins and knowledge articles so the Field Service troubleshooting agent answers per variant and serial number."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: field-service-ai-troubleshooting-manuals
 translationKey: field-service-ai-troubleshooting-manuals
@@ -9,7 +10,7 @@ topic: field-service
 categories: [field-service, ai]
 tags: [field service, agentforce, knowledge, data 360, grounding, manufacturing]
 takeaways:
-  - "The agent finds text that matches the question. It only knows which manual belongs to the machine through the same product key on document and asset."
+  - "The agent finds text that matches the question. It only picks the right manual if document and asset share a key and the asset's key filters the search."
   - "Service bulletins and retrofits need a serial number range or build state as a field, otherwise the agent applies them to every machine of the type."
   - "Knowledge replaces the old version on republishing. A file library keeps every file until someone deletes it."
   - "A Data Library filters Knowledge only by data category. If variants share one index, you need filter fields in the advanced Data 360 setup."
@@ -18,7 +19,7 @@ faq:
   - q: "Which sources does the Field Service troubleshooting agent use?"
     a: "According to Salesforce's announcement of April 2025, it queries product manuals, similar repairs and sensor data plus previous chats and emails, and guides the technician step by step, also using photos. On-site troubleshooting was scheduled as generally available in June 2025."
   - q: "Can an Agentforce Data Library filter manuals by serial number?"
-    a: "Not per question on the pages I checked. A Knowledge library can limit search to selected data categories for the whole library. Filters on individual fields such as a variant key or serial range need retriever filters on a Data 360 search index with defined filter fields."
+    a: "Not per question on the pages I checked. A Knowledge library can limit search to selected data categories for the whole library. Filters on individual fields such as a variant key or serial range need retriever filters on a Data 360 search index with defined filter fields, whose values can be passed at runtime."
   - q: "Should old manual versions stay in the index?"
     a: "Only if machines in the field still run that build state, and then with a serial number range so the agent can tell them apart. Superseded versions and replaced service bulletins go out, because the agent cannot judge which version is current."
   - q: "Can the agent read wiring diagrams and exploded drawings?"
@@ -26,11 +27,11 @@ faq:
 draft: false
 ---
 
-A Field Service troubleshooting agent gives a technician the right answer only if it can tell which manual applies to the machine on site. Salesforce supplies the agent, the document model is the machine builder's job. Every manual, service bulletin and knowledge article needs the product key the asset already carries, plus a serial number range where a bulletin covers some units only. The index holds one valid version per variant. A Data Library is enough for one product line; once variants share an index, I would use the advanced Data 360 setup with filter fields.
+A Field Service troubleshooting agent answers correctly only if it can tell which manual applies to the machine on site. Salesforce supplies the agent; the document model is the manufacturer's job. Every manual, service bulletin and knowledge article needs the asset's product key, plus a serial number range where a bulletin covers some units only. The agent passes the asset's values to the search as filters. The index holds one valid version per variant and build state. A Data Library is enough while one current set of manuals applies to every machine in scope; once variants share an index, I would use the advanced Data 360 setup with filter fields.
 
 ## What does the Field Service troubleshooting agent read?
 
-Salesforce announced on-site troubleshooting in April 2025 as part of [Agentforce for Field Service](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/) and scheduled it as generally available in June 2025. According to the announcement, the agent queries "product manuals, similar repairs, and sensor data" as well as "previous chats and emails", and guides the technician through each step in a dialogue, photos included. The [Field Service product page](https://www.salesforce.com/service/field-service-management/) says Agentforce can "surface answers from your internal and external knowledge base". Which functions are live and what they cost is covered in [AI agents in Field Service: what works today](../field-service-ai-agents-what-works-today/).
+Salesforce announced on-site troubleshooting in April 2025 as part of [Agentforce for Field Service](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/) and scheduled it as generally available in June 2025; announcements carry a note that features may change, so check the current scope in your org. According to the announcement, the agent queries "product manuals, similar repairs, and sensor data" as well as "previous chats and emails", and guides the technician through each step in a dialogue, photos included. The [Field Service product page](https://www.salesforce.com/service/field-service-management/) says Agentforce can "surface answers from your internal and external knowledge base". Which functions are live and what they cost is covered in [AI agents in Field Service: what works today](../field-service-ai-agents-what-works-today/).
 
 None of the pages I opened explains how the agent picks the manual for a given asset. The mechanics are documented: according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/enable-trusted-agents-with-data-cloud), Data 360 chunks documents, embeds the chunks in a search index, and a retriever, "the link between the prompt and the search index", fetches the chunks closest to the question. Whether a chunk describes variant A or variant B plays no role unless the document carries that information as data.
 
@@ -40,7 +41,7 @@ A machine builder rarely has one manual per product. Take a machining center in 
 
 Two more traps are specific to industrial documents:
 
-- **Drawings.** The [help article on Data Libraries](https://help.salesforce.com/s/articleView?id=004333412&language=en_US&type=1) states that Data Cloud "only chunks on text and not images of your files", so wiring diagrams and exploded views stay invisible. LLM-based parsing sends the entire document to an LLM; the [billing notes](https://help.salesforce.com/s/articleView?id=data.c360_a_unstructured_data_billing_considerations.htm&language=en_US&type=5) count it as Intelligent Processing, 600 credits per MB on the [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) instead of 150. The cost side is in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
+- **Drawings.** The [help article on Data Libraries](https://help.salesforce.com/s/articleView?id=004333412&language=en_US&type=1) states that Data Cloud "only chunks on text and not images of your files", so wiring diagrams and exploded views stay invisible. LLM-based parsing sends the entire document to an LLM; the [billing notes](https://help.salesforce.com/s/articleView?id=data.c360_a_unstructured_data_billing_considerations.htm&language=en_US&type=5) count it as Intelligent Processing, 600 credits per MB on the [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) instead of 150. The cost side is in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
 - **Supplier components.** A gearbox inside the machine comes with the supplier's manual. It belongs to that component, which may sit in two of your product lines.
 
 ## How do you link manuals to the asset and serial number?
@@ -51,7 +52,7 @@ The asset is the anchor. According to [Trailhead](https://trailhead.salesforce.c
 |---|---|---|
 | Product or variant key | the code on the asset's product | narrows the search to the machine type |
 | Serial range or build state | 4100 to 4380 | bulletins and retrofits apply to some units only |
-| Document type | manual, bulletin, procedure | a bulletin overrides the manual |
+| Document type | manual, bulletin, procedure | a rule says which bulletin replaces which manual step |
 | Component | gearbox, control | supplier manuals follow the child asset |
 | Language | EN, DE | one answer language per technician |
 | Status and valid from | released, March 2026 | superseded states stay out |
@@ -77,15 +78,15 @@ Trailhead describes two paths. The Agentforce Data Library takes Knowledge artic
 ```pro-contra
 pro: Data Library
 - Quicker to set up than the advanced setup
-- Fits a pilot on one product line with one current state of its manuals
+- Fits a pilot where one current state of the manuals applies to every machine in scope
 contra: What you give up
 - The source of a library cannot be changed later, according to the [Trailhead unit on file-based libraries](https://trailhead.salesforce.com/content/learn/modules/agentforce-data-library-basics/build-a-file-based-data-library-for-an-agent)
 - At most 100 MB per PDF and 4 MB per text or HTML file, and PDFs with embedded content are not supported according to the help article
 - A Knowledge library filters by data category only for the whole library, not per question
-- Only a Data 360 retriever can "set filters to target specific subsets of your data", and [only if the search index has defined filter fields](https://trailhead.salesforce.com/content/learn/modules/agentforce-specialist-certification-maintenance-summer-25/learn-whats-new-with-agentforce-and-data-cloud), with up to 10 conditions on text or number fields
+- Only a Data 360 retriever can "set filters to target specific subsets of your data", and [only if the search index has defined filter fields](https://trailhead.salesforce.com/content/learn/modules/agentforce-specialist-certification-maintenance-summer-25/learn-whats-new-with-agentforce-and-data-cloud), with up to 10 conditions on text, Boolean, number or date fields, according to the [retriever filter reference](https://help.salesforce.com/s/articleView?id=data.c360_a_retriever_filter_reference.htm&language=en_US&type=5)
 ```
 
-My reading: once several variants share an index, variant key and serial range become filter fields in the advanced setup. Whether the filter value can come from the asset on the work order at runtime is not described on the pages I opened, so I would test it in a sandbox before committing. How Data 360 assembles context beyond documents is covered in [the Agent Context Engine explained](../salesforce-agent-context-engine-explained/).
+My reading: once several variants share an index, variant key and serial range become filter fields in the advanced setup. The filter reference documents dynamic filters whose values are passed at runtime, for example from a prompt template. What you still have to build and test is the chain from work order to asset to variant key and serial number into those filters. Serial ranges need care: the reference lists Greater Than and Less Than but no "or equal", so test the boundary values and the format of your serial numbers. How Data 360 assembles context beyond documents is covered in [the Agent Context Engine explained](../salesforce-agent-context-engine-explained/).
 
 ## Stock, prices and email threads stay out of the index
 
@@ -117,7 +118,7 @@ Define document attributes
 Remove superseded versions
   And name an owner per product line.
 Choose the path
-  Data Library for one product line, filter fields for several.
+  Data Library while one set of manuals fits all machines in scope, filter fields once variants or build states differ.
 Test with real faults
   Before any technician sees the agent.
 ```

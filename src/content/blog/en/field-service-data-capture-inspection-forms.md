@@ -2,6 +2,7 @@
 title: "Field Service Data Capture: inspection forms without paper"
 description: "How to turn a paper inspection or commissioning protocol into a Field Service Data Capture form whose results the back office and the ERP can actually use."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: field-service-data-capture-inspection-forms
 translationKey: field-service-data-capture-forms
@@ -9,17 +10,17 @@ topic: field-service
 categories: [field-service]
 tags: [field service, data capture, mobile, inspection, commissioning]
 takeaways:
-  - "Forms work offline and save every entry automatically. A technician can close a form and continue later."
-  - "Voice to Form has been generally available since app release 260.0, and Winter '27 adds German among other languages."
-  - "Readings, overall result and parts become fields on the asset or work order. The proof per checkpoint stays a form answer."
+  - "Forms work offline and save every entry; record changes run once the device is online. Pausing depends on how the form is launched."
+  - "Voice to Form is GA since app release 260.0 and supports German since Winter '27. It needs the Agentforce for Field Service license."
+  - "Readings and the overall result become fields, parts become products consumed. The proof per checkpoint stays a form answer."
   - "A protocol with 80 checkpoints for three variants becomes short forms per variant and job phase that can be tested one by one."
 faq:
   - q: "What is Data Capture in Salesforce Field Service?"
     a: "Data Capture is the form feature of the Field Service mobile app. Admins build the forms in Flow Builder with fields, checkboxes, lookups, signatures, photos and conditional sections, and technicians fill them in the app, also offline."
   - q: "Does Data Capture work offline?"
-    a: "Yes. According to Trailhead it uses an offline-first architecture, saves every entry automatically and logs each submission online or offline. The records a form needs must be in the technician's briefcase."
+    a: "Yes. According to Trailhead it uses an offline-first architecture, saves every entry automatically and logs each submission online or offline. Creating, updating or deleting records waits until the device is online again, and the records a form needs must be in the technician's briefcase."
   - q: "Is Voice to Form available in German?"
-    a: "Voice to Form became generally available with mobile release 260.0 in Spring '26. The Winter '27 release highlights add multilingual support for Spanish, Japanese, Italian, French and German."
+    a: "Voice to Form became generally available with mobile release 260.0 in Spring '26. The Winter '27 release highlights add multilingual support for Spanish, Japanese, Italian, French and German. Users need the Agentforce for Field Service license and the Einstein Field Service User permission."
   - q: "Should I rebuild every paper protocol as a Data Capture form?"
     a: "Not one to one. First decide which answers the back office, the ERP or maintenance planning needs as fields, remove questions whose answers already exist on the asset or work order, and split long protocols by variant."
 draft: false
@@ -47,8 +48,8 @@ Offline only works if the records the form reads are on the device. Which record
 
 The status changes with every mobile release, so it is worth knowing where it stands.
 
-- **Mobile release 260.0 (Spring '26).** The [Salesforce release post in the Trailblazer Community](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000j9vu70AA) marks Data Capture Voice to Form as GA. Technicians dictate, the app transcribes and fills the form fields. The same post lists a lookup component that also works offline, a multi-image preview and the option to launch forms from assets, custom objects and mobile timesheets. These carry no GA label in the post, so check their status in your org before you plan with them.
-- **Winter '27.** The [release highlights on Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) add Voice to Form in Spanish, Japanese, Italian, French and German.
+- **Mobile release 260.0 (Spring '26).** The [Salesforce release post in the Trailblazer Community](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000j9vu70AA) marks Data Capture Voice to Form as GA. Technicians dictate, the app transcribes and fills the form fields. The same post lists a lookup component that also works offline, a multi-image preview and the option to launch forms from assets, custom objects and mobile timesheets. Check their status in your org before you plan with them.
+- **Winter '27.** The [release highlights on Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) add Voice to Form in Spanish, Japanese, Italian, French and German. According to the [setup guide](https://help.salesforce.com/s/articleView?id=service.mfs_voice_to_form_setup.htm&language=en_US&type=5) users need the Agentforce for Field Service license and the Einstein Field Service User permission, so Voice to Form is a separate license decision.
 
 German voice input makes the feature relevant for many service organizations in the DACH region. It also processes employees' speech, which brings in data protection and, where one exists, the works council. I described those questions in [Salesforce Field Service mobile: guided work and voice](../salesforce-field-service-mobile-guided-voice/). For the form design it means: decide which fields may be filled by voice and which values the technician confirms by hand, for example a measured value that affects safety.
 
@@ -59,7 +60,7 @@ This is the decision I would make before the first form. A form answer is fine f
 | Answer in the protocol | Where it belongs | Why |
 |---|---|---|
 | Operating hours or counter reading | Field on the asset | Usage-based maintenance reads it |
-| Measured values that are trended (pressure, temperature) | Field on the asset or work order | Comparison across visits |
+| Measured values that are trended (pressure, temperature) | Field on the work order, or a record per measurement for long series | Comparison across visits |
 | Pass or fail per checkpoint | Form answer | Record of the inspection |
 | Overall result of the inspection | Field on the work order | Reporting and invoicing |
 | Defect found | New work order line item or follow-up work order | Gets planned and dispatched |
@@ -72,7 +73,7 @@ Readings on the asset connect the form to maintenance planning. How maintenance 
 
 ## How does the form relate to the service report?
 
-Data Capture collects the data. The PDF the customer receives comes from Document Builder. Document Builder works on work orders, work order line items and service appointments, as described in [Salesforce Service Documents: is Document Builder enough?](../salesforce-service-documents-document-builder/). If the customer needs the inspection results in the report, check in the first sprint how the answers reach the template. Values that are fields on the work order can be placed in the template directly.
+Data Capture collects the data. The PDF the customer receives comes from Document Builder or, in orgs that still use them, Service Reports. A PDF of the completed form itself is available only in Unlimited Edition and not for forms launched from a quick action, which create no form record. Document Builder works on work orders, work order line items and service appointments, as described in [Salesforce Service Documents: is Document Builder enough?](../salesforce-service-documents-document-builder/). If the customer needs the inspection results in the report, check in the first sprint how the answers reach the template. Values that are fields on the work order can be placed in the template directly.
 
 Inspection reports with a lot of conditional content can outgrow Document Builder. In that case a separate inspection document from Document Generation or an AppExchange tool is the better solution, and the form still provides the data.
 
@@ -86,9 +87,9 @@ Built as one form, it would contain every checkpoint of every variant, with cond
 - **Form 2, variant checks (35 points).** One form per variant, tied to the work order line item for the variant's commissioning step. Readings such as cycle rate and sealing temperature are written to fields on the asset.
 - **Form 3, acceptance (15 points).** Open points, customer instruction, signature. The overall result goes to a field on the work order.
 
-A machine therefore still gets 80 checkpoints, but each form is short enough to test. Defects found in form 2 become line items, so the dispatcher sees the follow-up work.
+A machine therefore still gets 80 checkpoints, but each form is short enough to test. Defects found in form 2 become line items; if another visit is needed, the process also creates a service appointment so the dispatcher can plan it.
 
-In this example the back office gains the most. After the sync the readings are on the asset, nobody types them in again, and the overall result on the work order shows when the invoice can go out. If a limit value changes for one variant, the admin changes only that variant's form and tests only that one.
+In this example the back office gains the most. After the sync the readings are on the asset and work order, nobody types them in again, and the overall result on the work order shows when the invoice can go out. If a limit value changes for one variant, the admin changes only that variant's form and tests only that one.
 
 ## Pick one high-volume protocol
 

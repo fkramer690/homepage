@@ -2,6 +2,7 @@
 title: "KI-Fehlersuche im Außendienst: erst die Handbücher"
 description: "Was Maschinenbauer mit Handbüchern, Bulletins und Wissensartikeln tun müssen, damit der Field-Service-Agent je Variante und Seriennummer richtig antwortet."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: de
 slug: ki-fehlersuche-handbuecher-aussendienst
 translationKey: field-service-ai-troubleshooting-manuals
@@ -9,7 +10,7 @@ topic: field-service
 categories: [field-service, ai]
 tags: [Field Service, Außendienst, Agentforce, Knowledge, Data 360, Maschinenbau]
 takeaways:
-  - "Der Agent findet Text, der zur Frage passt. Welches Handbuch zur Maschine gehört, weiß er nur über denselben Produktschlüssel an Dokument und Anlage."
+  - "Der Agent findet Text, der zur Frage passt. Das richtige Handbuch trifft er nur, wenn Dokument und Anlage einen Schlüssel teilen und dieser die Suche filtert."
   - "Service-Bulletins und Nachrüstungen brauchen einen Seriennummernbereich oder Baustand als Feld, sonst wendet der Agent sie auf jede Maschine des Typs an."
   - "Knowledge ersetzt beim erneuten Veröffentlichen die alte Fassung. Eine Datei-Bibliothek behält jede Datei, bis jemand sie löscht."
   - "Eine Data Library filtert Knowledge nur nach Datenkategorie. Teilen sich Varianten einen Index, braucht es Filterfelder im erweiterten Data-360-Setup."
@@ -18,7 +19,7 @@ faq:
   - q: "Welche Quellen nutzt der Agent für die Fehlersuche in Field Service?"
     a: "Laut der Salesforce-Ankündigung vom April 2025 fragt er Produkthandbücher, ähnliche Reparaturen und Sensordaten ab, dazu frühere Chats und E-Mails, und führt den Techniker Schritt für Schritt, auch anhand von Fotos. Die Fehlersuche vor Ort war für Juni 2025 als allgemein verfügbar angekündigt."
   - q: "Kann eine Agentforce Data Library Handbücher nach Seriennummer filtern?"
-    a: "Nicht pro Frage, soweit die von mir geprüften Seiten es beschreiben. Eine Knowledge-Bibliothek kann die Suche für die ganze Bibliothek auf ausgewählte Datenkategorien beschränken. Filter auf einzelne Felder wie Variantenschlüssel oder Seriennummernbereich brauchen Retriever-Filter auf einem Data-360-Suchindex mit definierten Filterfeldern."
+    a: "Nicht pro Frage, soweit die von mir geprüften Seiten es beschreiben. Eine Knowledge-Bibliothek kann die Suche für die ganze Bibliothek auf ausgewählte Datenkategorien beschränken. Filter auf einzelne Felder wie Variantenschlüssel oder Seriennummernbereich brauchen Retriever-Filter auf einem Data-360-Suchindex mit definierten Filterfeldern, deren Werte zur Laufzeit übergeben werden können."
   - q: "Sollen alte Handbuchstände im Index bleiben?"
     a: "Nur wenn Maschinen im Feld noch mit diesem Baustand laufen, und dann mit Seriennummernbereich, damit der Agent sie unterscheiden kann. Überholte Fassungen und ersetzte Service-Bulletins fliegen raus, denn der Agent kann nicht beurteilen, welche Fassung gilt."
   - q: "Kann der Agent Schaltpläne und Explosionszeichnungen lesen?"
@@ -26,21 +27,21 @@ faq:
 draft: false
 ---
 
-Ein KI-Agent für die Fehlersuche im Außendienst gibt dem Techniker nur dann die richtige Antwort, wenn er weiß, welches Handbuch zur Maschine vor Ort gehört. Den Agenten liefert Salesforce, das Dokumentenmodell ist Aufgabe des Maschinenbauers. Jedes Handbuch, jedes Service-Bulletin und jeder Wissensartikel braucht den Produktschlüssel, den die Anlage schon trägt, und einen Seriennummernbereich, wo ein Bulletin nur für einen Teil der Maschinen gilt. Im Index liegt je Variante eine gültige Fassung. Für eine Produktlinie reicht eine Data Library, teilen sich mehrere Varianten einen Index, würde ich das erweiterte Data-360-Setup mit Filterfeldern nehmen.
+Ein KI-Agent für die Fehlersuche im Außendienst antwortet dem Techniker nur dann richtig, wenn er weiß, welches Handbuch zur Maschine vor Ort gehört. Den Agenten liefert Salesforce, das Dokumentenmodell ist Aufgabe des Maschinenbauers. Jedes Handbuch, jedes Service-Bulletin und jeder Wissensartikel braucht den Produktschlüssel, den die Anlage schon trägt, und einen Seriennummernbereich, wo ein Bulletin nur für einen Teil der Maschinen gilt. Der Agent übergibt die Werte der Anlage als Filter an die Suche. Im Index liegt je Variante und Bauzustand eine gültige Fassung. Eine Data Library reicht, solange ein aktueller Handbuchstand für alle einbezogenen Maschinen gilt. Teilen sich Varianten einen Index, würde ich das erweiterte Data-360-Setup mit Filterfeldern nehmen.
 
 ## Was liest der Field-Service-Agent bei der Fehlersuche?
 
-Salesforce hat die Fehlersuche vor Ort im April 2025 mit [Agentforce for Field Service](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/) angekündigt und für Juni 2025 als allgemein verfügbar vorgesehen. Laut Ankündigung fragt der Agent „product manuals, similar repairs, and sensor data“ ab, dazu „previous chats and emails“, und führt den Techniker im Dialog durch jeden Schritt, auch anhand von Fotos. Die [Field-Service-Produktseite](https://www.salesforce.com/service/field-service-management/) verspricht Antworten „from your internal and external knowledge base“. Welche Funktionen heute live sind und was sie kosten, steht in [KI-Agenten im Außendienst: was Field Service heute kann](../ki-agenten-aussendienst-field-service/).
+Salesforce hat die Fehlersuche vor Ort im April 2025 mit [Agentforce for Field Service](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/) angekündigt und für Juni 2025 als allgemein verfügbar vorgesehen; Ankündigungen tragen den Hinweis, dass sich Funktionen ändern können, prüfen Sie den aktuellen Umfang also in Ihrer Org. Laut Ankündigung fragt der Agent „product manuals, similar repairs, and sensor data“ ab, dazu „previous chats and emails“, und führt den Techniker im Dialog durch jeden Schritt, auch anhand von Fotos. Die [Field-Service-Produktseite](https://www.salesforce.com/service/field-service-management/) verspricht Antworten „from your internal and external knowledge base“. Welche Funktionen heute live sind und was sie kosten, steht in [KI-Agenten im Außendienst: was Field Service heute kann](../ki-agenten-aussendienst-field-service/).
 
 Wie der Agent das Handbuch für eine bestimmte Anlage auswählt, erklärt keine der Seiten, die ich geöffnet habe. Die Technik dahinter ist dokumentiert: Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/enable-trusted-agents-with-data-cloud) zerlegt Data 360 Dokumente in Abschnitte (Chunks), legt sie als Vektoren in einen Suchindex, und ein Retriever, „the link between the prompt and the search index“, holt die Abschnitte, die der Frage am nächsten kommen. Ob ein Abschnitt Variante A oder Variante B beschreibt, spielt dabei keine Rolle, solange das Dokument diese Information nicht als Daten mitbringt.
 
 ## Handbücher im Maschinenbau verwirren einen Agenten
 
-Ein Maschinenbauer hat selten ein Handbuch pro Produkt. Nehmen Sie ein Bearbeitungszentrum in drei Varianten, mit neuer Steuerung ab einem bestimmten Baujahr, einer Nachrüstung an einem Teil der Maschinen und einem Service-Bulletin nur für die Seriennummern 4100 bis 4380. Ein Techniker fragt nach Spindelalarm 2041. Beschreiben drei Handbuchstände diesen Alarm unterschiedlich, liefert der Retriever den Abschnitt, der am besten zur Formulierung passt, und der Agent trägt die falsche Anleitung genauso überzeugt vor wie die richtige.
+Bei Maschinenbauern gibt es selten nur ein Handbuch pro Produkt. Nehmen Sie ein Bearbeitungszentrum in drei Varianten, mit neuer Steuerung ab einem bestimmten Baujahr, einer Nachrüstung an einem Teil der Maschinen und einem Service-Bulletin nur für die Seriennummern 4100 bis 4380. Ein Techniker fragt nach Spindelalarm 2041. Beschreiben drei Handbuchstände diesen Alarm unterschiedlich, liefert der Retriever den Abschnitt, der am besten zur Formulierung passt, und der Agent trägt die falsche Anleitung genauso überzeugt vor wie die richtige.
 
 Zwei weitere Fallen sind typisch für technische Dokumentation:
 
-- **Zeichnungen.** Der [Hilfeartikel zu Data Libraries](https://help.salesforce.com/s/articleView?id=004333412&language=en_US&type=1) sagt, Data Cloud „only chunks on text and not images of your files“. Schaltpläne und Explosionszeichnungen ohne Text bleiben unsichtbar. LLM-basiertes Parsing schickt das ganze Dokument an ein LLM, laut [Abrechnungshinweisen](https://help.salesforce.com/s/articleView?id=data.c360_a_unstructured_data_billing_considerations.htm&language=en_US&type=5) zählt das als Intelligent Processing: 600 Credits pro MB laut [Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) statt 150. Die Kostenseite steht in [Data-360-Kosten für KI-Agenten](../data-360-kosten-fuer-ki-agenten/).
+- **Zeichnungen.** Der [Hilfeartikel zu Data Libraries](https://help.salesforce.com/s/articleView?id=004333412&language=en_US&type=1) sagt, Data Cloud „only chunks on text and not images of your files“. Die Bildinhalte von Schaltplänen und Explosionszeichnungen bleiben unsichtbar. LLM-basiertes Parsing schickt das ganze Dokument an ein LLM, laut [Abrechnungshinweisen](https://help.salesforce.com/s/articleView?id=data.c360_a_unstructured_data_billing_considerations.htm&language=en_US&type=5) zählt das als Intelligent Processing: 600 Credits pro MB laut [Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) statt 150. Die Kostenseite steht in [Data-360-Kosten für KI-Agenten](../data-360-kosten-fuer-ki-agenten/).
 - **Zukaufkomponenten.** Ein Getriebe in der Maschine kommt mit dem Handbuch des Lieferanten. Es gehört zu dieser Komponente, die vielleicht in zwei Ihrer Produktlinien steckt.
 
 ## Wie verknüpfen Sie Handbücher mit Anlage und Seriennummer?
@@ -51,7 +52,7 @@ Der Anker ist die Anlage (Asset). Laut [Trailhead](https://trailhead.salesforce.
 |---|---|---|
 | Produkt- oder Variantenschlüssel | Code am Produkt der Anlage | grenzt die Suche auf den Maschinentyp ein |
 | Seriennummernbereich oder Baustand | 4100 bis 4380 | Bulletins und Nachrüstungen gelten nur für einen Teil |
-| Dokumentart | Handbuch, Bulletin, Anleitung | ein Bulletin geht dem Handbuch vor |
+| Dokumentart | Handbuch, Bulletin, Anleitung | eine Regel legt fest, welches Bulletin welchen Handbuchschritt ersetzt |
 | Komponente | Getriebe, Steuerung | Lieferantenhandbücher hängen an der Unteranlage |
 | Sprache | DE, EN | eine Antwortsprache je Techniker |
 | Status und gültig ab | freigegeben, März 2026 | überholte Stände bleiben draußen |
@@ -77,22 +78,22 @@ Trailhead beschreibt zwei Wege. Die Agentforce Data Library nimmt Wissensartikel
 ```pro-contra
 pro: Data Library
 - Schneller aufgesetzt als das erweiterte Setup
-- Passt für einen Piloten mit einer Produktlinie und einem aktuellen Handbuchstand
+- Passt für einen Piloten, in dem ein aktueller Handbuchstand für alle einbezogenen Maschinen gilt
 contra: Was Sie dafür aufgeben
 - Die Quelle einer Bibliothek lässt sich später nicht mehr ändern, so die [Trailhead-Einheit zu dateibasierten Bibliotheken](https://trailhead.salesforce.com/content/learn/modules/agentforce-data-library-basics/build-a-file-based-data-library-for-an-agent)
 - Höchstens 100 MB pro PDF und 4 MB pro Text- oder HTML-Datei, PDFs mit eingebetteten Inhalten laut Hilfeartikel nicht unterstützt
 - Eine Knowledge-Bibliothek filtert nach Datenkategorien nur für die ganze Bibliothek, nicht pro Frage
-- Filter auf Teilmengen setzt nur ein Data-360-Retriever, und [nur wenn der Suchindex Filterfelder definiert](https://trailhead.salesforce.com/content/learn/modules/agentforce-specialist-certification-maintenance-summer-25/learn-whats-new-with-agentforce-and-data-cloud), mit bis zu 10 Bedingungen auf Text- oder Zahlenfeldern
+- Filter auf Teilmengen setzt nur ein Data-360-Retriever, und [nur wenn der Suchindex Filterfelder definiert](https://trailhead.salesforce.com/content/learn/modules/agentforce-specialist-certification-maintenance-summer-25/learn-whats-new-with-agentforce-and-data-cloud), mit bis zu 10 Bedingungen auf Text-, Boolean-, Zahlen- oder Datumsfeldern laut [Referenz zu Retriever-Filtern](https://help.salesforce.com/s/articleView?id=data.c360_a_retriever_filter_reference.htm&language=en_US&type=5)
 ```
 
-So lese ich das: Teilen sich mehrere Varianten einen Index, werden Variantenschlüssel und Seriennummernbereich zu Filterfeldern im erweiterten Setup. Ob der Filterwert zur Laufzeit aus der Anlage am Arbeitsauftrag kommen kann, beschreiben die Seiten nicht, die ich geöffnet habe. Das würde ich in einer Sandbox testen, bevor ich mich festlege. Wie Data 360 über Dokumente hinaus Kontext zusammenstellt, steht in [die Agent Context Engine erklärt](../salesforce-agent-context-engine-erklaert/).
+So lese ich das: Teilen sich mehrere Varianten einen Index, werden Variantenschlüssel und Seriennummernbereich zu Filterfeldern im erweiterten Setup. Die Filterreferenz beschreibt dynamische Filter, deren Werte zur Laufzeit übergeben werden, etwa aus einem Prompt Template. Bauen und testen müssen Sie die Kette vom Arbeitsauftrag über die Anlage bis zu Variantenschlüssel und Seriennummer in diesen Filtern. Bei Seriennummernbereichen ist Vorsicht nötig: Die Referenz nennt Greater Than und Less Than, aber kein "oder gleich". Testen Sie also die Grenzwerte und das Format Ihrer Seriennummern. Wie Data 360 über Dokumente hinaus Kontext zusammenstellt, steht in [die Agent Context Engine erklärt](../salesforce-agent-context-engine-erklaert/).
 
 ## Bestände, Preise und E-Mail-Verläufe gehören nicht in den Index
 
 - **Bestände, Preise und Liefertermine.** Sie ändern sich täglich und gehören ins ERP. Warum das ERP den Ersatzteilbestand führt, steht in [Ersatzteile zwischen ERP und Field Service](../salesforce-field-service-ersatzteile-erp/).
 - **Überholte Fassungen und Entwürfe**, aus den Gründen oben.
 - **Rohe E-Mail-Verläufe und Chats.** Die Ankündigung nennt sie als Quelle. Ich würde stattdessen abgeschlossene Fälle mit sauberen Feldern für Fehler und Lösung indexieren. Das hält auch Kundenkontakte und Technikernamen aus dem Index.
-- **Dokumente an Datensätzen, die eine Schnittstelle aktualisiert.** Laut Abrechnungshinweisen gelten ein Data Model Object und alle seine Dateianhänge als eine Einheit, eine Änderung an einem Feld oder Anhang kann also eine Neuindexierung aller Anhänge auslösen.
+- **Dokumente an Datensätzen, die eine Schnittstelle aktualisiert.** Laut Abrechnungshinweisen werden ein Data Model Object und alle zugehörigen Dateianhänge als eine Einheit verarbeitet. Eine Änderung an einem Feld oder Anhang kann daher eine Neuindexierung aller Anhänge auslösen.
 - **Maschinen, die Sie nicht mehr betreuen.** Jedes Megabyte kostet Credits und liefert einen Kandidaten für einen falschen Treffer.
 
 ## Rechenbeispiel: vier Produktlinien, 1.500 Maschinen
@@ -117,7 +118,7 @@ Dokumentmerkmale festlegen
 Überholte Stände entfernen
   Und eine verantwortliche Person je Produktlinie benennen.
 Den Weg wählen
-  Data Library für eine Produktlinie, Filterfelder für mehrere.
+  Data Library, solange ein Handbuchstand für alle einbezogenen Maschinen passt, Filterfelder, sobald Varianten oder Bauzustände abweichen.
 Mit echten Störfällen testen
   Bevor ein Techniker den Agenten sieht.
 ```
