@@ -58,6 +58,10 @@ Every indexable page has a unique `<title>` of at most 60 characters, keyword fi
 
 On German pages the FAQ section is always called "Häufig gestellte Fragen" (English: "Frequently asked questions"), never "Häufige Fragen". `scripts/check-blog.mjs` fails on the old wording anywhere in `src/`.
 
+## Security
+
+Every page carries a Content Security Policy (meta tag, `scripts/csp-policy.mjs`, written by `scripts/add-csp.mjs` after `astro build`) and a referrer policy. No inline event handlers (`onclick=`), no `javascript:` links; a new outside service gets its host in `scripts/csp-policy.mjs`. `scripts/check-security.mjs` and `scripts/check-broken-links.mjs` run in `npm run build`; never weaken them. Actions stay pinned to commit SHAs (Dependabot updates them); workflows get only the permissions they need.
+
 ## Repository root
 
 Only project files live in the repository root; `scripts/check-root.mjs` fails the build on anything else. Card drawing previews go to `previews/` (git-ignored) via `npm run cards:export`; where every other kind of file belongs is listed under "Where files go" in README.md.

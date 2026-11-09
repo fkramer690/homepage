@@ -30,6 +30,8 @@ const abs = (path: string) => new URL(path, Astro.site).href;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- External sites see only the domain, never the page path (checked by scripts/check-security.mjs). -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>{title}</title>
     <link rel="preload" href={soraRegular} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={soraSemibold} as="font" type="font/woff2" crossorigin />

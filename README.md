@@ -63,6 +63,8 @@ Image alt texts: every `<img>` needs an `alt` with a value: a description for ph
 
 Page titles: `scripts/check-titles.mjs` runs after the sitemap check and fails if an indexable page has no `<title>`, a title longer than 60 characters, or the same title as another page (`npm run check:titles`). Articles, chapters and most pages add ` | FK Solution Design` only when it still fits in 60 characters, so the keyword stays at the front.
 
+Security: GitHub Pages sends no custom HTTP headers, so `scripts/add-csp.mjs` writes a Content Security Policy as the first tag after `<meta charset>` into every page after the build. The policy lives in `scripts/csp-policy.mjs`: own site plus Cloudflare Web Analytics and Web3Forms, inline scripts and styles by SHA-256 hash per page. `scripts/check-security.mjs` fails the build on a page without the policy, an inline script or style it does not cover, a script in an attribute (`onclick=`), a script from an unlisted host, a plain `http://` resource or a missing referrer policy (`npm run check:security`). A new outside service needs its host in `scripts/csp-policy.mjs`. `scripts/check-broken-links.mjs` fails the build on an internal link or resource that has no file in `dist/` (`npm run check:broken-links`). GitHub Actions are pinned to commit SHAs; Dependabot (`.github/dependabot.yml`) proposes updates monthly.
+
 ## Where files go
 
 The repository root holds only project files (`package.json`, configs, `README.md`, `CLAUDE.md`). `scripts/check-root.mjs` runs first in `npm run build` and fails on anything else there, such as an exported SVG (`npm run check:root`).
