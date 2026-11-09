@@ -25,6 +25,8 @@ faq:
     a: "Salesforce lists security guardrails against prompt injection among its Agentforce guardrails but does not say how complete they are. I would treat them as one layer next to narrow permissions and actions that return only the fields the agent needs."
   - q: "Does a Prompt Builder template still mask data when an agent calls it?"
     a: "No. Salesforce Help says masking follows the Trust Layer configuration when a template is used directly, for example in Service Replies, but is disabled when the template is called through an agent action."
+  - q: "What does the Einstein Trust Layer audit trail record?"
+    a: "According to Trailhead it stores prompt ID and user, the prompt text and the PII-masked prompt, safety and toxicity scores and user feedback, all in Data 360. That makes the audit trail itself sensitive data: settle access and retention before go-live."
 draft: false
 ---
 
@@ -40,6 +42,17 @@ Salesforce's [developer documentation](https://developer.salesforce.com/docs/ai/
 - **Grounding.** Selected CRM records and Data 360 content are added to the prompt so the model can base its answer on them. That improves relevance but does not guarantee a correct answer.
 
 Notice what is missing from that list: anything that decides which records an agent may read. Retrieval respects existing permissions, but it does not define them. They come from the agent's user.
+
+```tabelle
+title: Einstein Trust Layer at a glance
+columns: Component | Prompt template used directly | Agentforce agent
+Grounding | Adds CRM and Data 360 data to the prompt | Active; reads only what the agent user may see
+Data masking | Configurable per data type | Disabled *
+Zero data retention | Contract with the LLM partners | Active
+Toxicity detection | Score from 0 to 1 per response | Active
+Audit trail | Prompt, masked prompt, scores and feedback in Data 360 | Active once enabled; stores the prompt text
+note: As of November 2026, according to Salesforce Help and Trailhead. Check the masking state in the audit trail of your own org.
+```
 
 ```vertiefung For admins
 title: Which user does an agent read data as?

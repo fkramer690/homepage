@@ -39,7 +39,7 @@ Field Service has three tools for this: multiday appointments, crews and complex
 
 ## How do multiday appointments work?
 
-A multiday appointment is a normal service appointment with the field Is MultiDay set. According to [Salesforce Help on multiday work](https://help.salesforce.com/s/articleView?id=service.pfs_multiday.htm&language=en_US&type=5), an admin enables it in the Field Service settings, and dispatchers get a long-term view. In the Classic Dispatch Console, the Long-Term Gantt shows up to six months and up to 1,000 appointments; these limits belong to the classic console. The newer Scheduling Console has its own long-term views and, since Winter '27, shows a job that spans several days as one connected job.
+A multiday appointment is a normal service appointment with the field Is MultiDay set. According to [Salesforce Help on multiday work](https://help.salesforce.com/s/articleView?id=service.pfs_multiday.htm&language=en_US&type=5), an admin enables it in the Field Service settings, and dispatchers get a long-term view. In the Classic Dispatch Console, the Long-Term Gantt shows up to six months and up to 1,000 appointments; these limits belong to the classic console. The newer [Scheduling Console](../field-service-scheduling-console-dispatchers/) has its own long-term views and, since Winter '27, shows a job that spans several days as one connected job.
 
 The rules that matter in practice:
 

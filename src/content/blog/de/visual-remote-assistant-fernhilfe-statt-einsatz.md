@@ -83,6 +83,15 @@ Wichtiger als das Ziel ist die Methode. Vor dem Pilot zieht das Serviceteam die 
 
 Nach drei Monaten zeigen zwei Zahlen, ob es funktioniert: der Anteil der Videositzungen, die den Fall schließen, und der Anteil dieser Fälle mit erneutem Anruf innerhalb von sieben Tagen. Eine Lösung per Video, auf die zwei Tage später doch ein Einsatz folgt, hat keinen Einsatz gespart, auch wenn sie ihn verkürzt hat. Messen Sie den Nutzen für die Diagnose deshalb getrennt: Erstlösungsquote und Einsätze mit fehlendem Teil.
 
+## Visual Remote Assistant oder ein Drittanbieter?
+
+Salesforce ist nicht der einzige Anbieter. TechSee, SightCall und Zoho Lens verkaufen visuelle Fernunterstützung als eigenes Produkt, und TechSee führt eine App für Agentforce auf der AppExchange. Für einen Hersteller ist weniger die Frage, welches Video besser ist, als wo die Sitzung liegt.
+
+- **Visual Remote Assistant** läuft in Ihrer Salesforce-Org. Sitzungen starten am Fall oder am Arbeitsauftrag, und das Ergebnis bleibt an diesem Datensatz. Das passt, wenn der Service ohnehin in Service Cloud und Field Service arbeitet und Sie ein Lizenzgespräch führen wollen, nicht zwei.
+- **Ein Drittanbieter** passt, wenn Sie mehr brauchen als Video und Zeichnen, etwa Bilderkennung mit KI, Anleitungen mit Augmented Reality oder Fernhilfe für Kunden außerhalb Ihrer Salesforce-Prozesse. Dann gehört die Integration ins Projekt: Wer startet die Sitzung, wo landen Aufzeichnung und Ergebnis, und welche Daten verarbeitet der Anbieter?
+
+Meine Faustregel: Beginnen Sie mit dem Werkzeug, das die Sitzung dort ablegt, wo Ihr Serviceteam schon arbeitet. Wechseln Sie erst, wenn eine konkrete Anforderung fehlt, etwa eine AR-Anleitung für eine komplexe Baugruppe, und testen Sie den Kandidaten zuerst mit Ihren drei häufigsten Störungsarten.
+
 ## Vor der ersten Sitzung: Einwilligung, Betriebsrat, Abschlussregeln
 
 **Aufzeichnung und Datenschutz.** Die Aufzeichnung wird in der VRA-Konfiguration eingeschaltet, für ganze Sitzungen oder seit Winter '27 auf Abruf. Im Bild sind die Mitarbeitenden des Kunden und seine Produktionshalle. Eine Vereinbarung mit dem Kundenunternehmen ersetzt nicht die Rechtsgrundlage und die Information der Personen vor der Kamera; klären Sie mit Ihrem Datenschutzbeauftragten die Rechtsgrundlage für das Livevideo und getrennt für die Aufzeichnung, die Aufbewahrung und wer sie sieht. Manche Kunden werden ablehnen, der Prozess muss also auch ohne Aufzeichnung funktionieren.

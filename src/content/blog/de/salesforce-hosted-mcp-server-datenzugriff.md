@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Über die Hosted MCP Server von Salesforce liest ein KI-Client wie Claude oder ChatGPT, worauf der Benutzer per API zugreifen darf, der die Verbindung autorisiert hat. Auf der Salesforce-Seite ist das sauber gelöst: OAuth mit PKCE und jeder Aufruf wird unter dem Namen einer Person protokolliert. Angekündigte Agentenidentitäten werden Teile davon ändern. Die Schwachstelle liegt hinter dem Aufruf: Sobald die Datensätze beim externen Modell ankommen, schützt sie nach meiner Einschätzung der Einstein Trust Layer nicht mehr, und Ihr Vertrag mit dem KI-Anbieter entscheidet. Ich würde mit sobject-reads in einer Sandbox starten, mit einem Permission Set, das die Verbindungsberechtigten begrenzt, und einem geprüften KI-Vertrag.
+Über die Hosted MCP Server von Salesforce liest ein KI-Client wie Claude oder ChatGPT, worauf der Benutzer per API zugreifen darf, der die Verbindung autorisiert hat. Auf der Salesforce-Seite ist das sauber gelöst: OAuth mit PKCE und jeder Aufruf wird unter dem Namen einer Person protokolliert. Angekündigte Agentenidentitäten werden Teile davon ändern. Die Schwachstelle liegt hinter dem Aufruf: Sobald die Datensätze beim externen Modell ankommen, schützt sie nach meiner Einschätzung der [Einstein Trust Layer](../einstein-trust-layer-was-er-schuetzt/) nicht mehr, und Ihr Vertrag mit dem KI-Anbieter entscheidet. Ich würde mit sobject-reads in einer Sandbox starten, mit einem Permission Set, das die Verbindungsberechtigten begrenzt, und einem geprüften KI-Vertrag.
 
 ## Wie entscheiden Hosted MCP Server, wer was sieht?
 

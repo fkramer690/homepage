@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Through Salesforce hosted MCP servers, an AI client such as Claude or ChatGPT reads what the user who authorized the connection may access through the API. On the Salesforce side that is well designed: OAuth with PKCE and every call logged under a person's name. Announced agent identities will change parts of this. The weak point sits after the call: once the records reach the external model, in my assessment the Einstein Trust Layer no longer protects them, and your contract with the AI provider decides what happens. I would start with sobject-reads in a sandbox, a permission set that limits who may connect, and a reviewed AI contract.
+Through Salesforce hosted MCP servers, an AI client such as Claude or ChatGPT reads what the user who authorized the connection may access through the API. On the Salesforce side that is well designed: OAuth with PKCE and every call logged under a person's name. Announced agent identities will change parts of this. The weak point sits after the call: once the records reach the external model, in my assessment the [Einstein Trust Layer](../einstein-trust-layer-what-it-protects/) no longer protects them, and your contract with the AI provider decides what happens. I would start with sobject-reads in a sandbox, a permission set that limits who may connect, and a reviewed AI contract.
 
 ## How do hosted MCP servers decide who sees what?
 

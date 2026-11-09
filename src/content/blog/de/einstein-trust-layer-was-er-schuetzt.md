@@ -25,6 +25,8 @@ faq:
     a: "Salesforce führt Schutzmechanismen gegen Prompt Injection unter den Agentforce-Guardrails, sagt aber nicht, wie vollständig sie greifen. Ich behandle sie als eine Schicht neben engen Berechtigungen und Aktionen, die nur die nötigen Felder liefern."
   - q: "Maskiert eine Prompt-Builder-Vorlage noch, wenn ein Agent sie aufruft?"
     a: "Nein. Laut Salesforce-Hilfe folgt die Maskierung der Trust-Layer-Konfiguration, wenn eine Vorlage direkt genutzt wird, etwa in Service Replies. Ruft ein Agent sie über eine Aktion auf, ist die Maskierung abgeschaltet."
+  - q: "Was zeichnet der Audit Trail des Einstein Trust Layer auf?"
+    a: "Laut Trailhead speichert er Prompt-ID und Benutzer, den Prompttext und den PII-maskierten Prompt, Sicherheits- und Toxizitätswerte sowie Nutzerfeedback, alles in Data 360. Damit ist der Audit Trail selbst ein sensibler Datenbestand: Zugriff und Aufbewahrung klären Sie vor dem Go-live."
 draft: false
 ---
 
@@ -40,6 +42,17 @@ Die [Entwicklerdokumentation](https://developer.salesforce.com/docs/ai/agentforc
 - **Grounding.** Ausgewählte CRM-Datensätze und Data-360-Inhalte kommen in den Prompt, damit das Modell seine Antwort darauf stützen kann. Das verbessert die Relevanz, garantiert aber keine richtige Antwort.
 
 Auffällig ist, was in der Liste fehlt: alles, was festlegt, welche Datensätze ein Agent lesen darf. Der Abruf beachtet bestehende Berechtigungen, legt sie aber nicht fest. Sie kommen vom Benutzer des Agenten.
+
+```tabelle
+titel: Einstein Trust Layer im Überblick
+spalten: Baustein | Prompt-Vorlage direkt genutzt | Agentforce-Agent
+Grounding | Ergänzt den Prompt um CRM- und Data-360-Daten | Aktiv; liest nur, was der Agentenbenutzer sehen darf
+Datenmaskierung | Je Datentyp einstellbar | Abgeschaltet *
+Zero Data Retention | Vertrag mit den LLM-Partnern | Aktiv
+Toxizitätserkennung | Wert von 0 bis 1 je Antwort | Aktiv
+Audit Trail | Prompt, maskierter Prompt, Werte und Feedback in Data 360 | Aktiv, sobald eingeschaltet; speichert den Prompttext
+fazit: Stand November 2026 laut Salesforce Help und Trailhead. Den Maskierungsstand prüfen Sie im Audit Trail Ihrer eigenen Org.
+```
 
 ```vertiefung Für Admins
 titel: Unter welchem Benutzer liest ein Agent Daten?

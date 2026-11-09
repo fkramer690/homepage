@@ -1,5 +1,6 @@
 ---
 title: "Salesforce Service Documents: reicht der Document Builder?"
+metaTitle: "Salesforce Document Builder für den Servicebericht"
 description: "Was Salesforce Service Documents und der Document Builder im Field Service können, was sie kosten, wo die Grenzen liegen und wann Hersteller mehr brauchen."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09
@@ -24,6 +25,8 @@ faq:
     a: "Ja. Techniker erstellen Service Documents in der mobilen App auch ohne Verbindung, inklusive Unterschrift. Zu Android widerspricht sich die Salesforce-Hilfe: Die Limits-Seite erlaubt nur Vorlagen für Servicetermine, die Seite zum Anlegen von Vorlagen alle drei Objekte. Testen Sie es auf Ihren Geräten."
   - q: "Wann brauche ich Salesforce Document Generation statt Document Builder?"
     a: "Wenn Sie Word-Vorlagen mit komplexer Logik, Ausgabe als DOCX oder PowerPoint, Dokumente am Asset oder an Custom Objects, Massenerzeugung oder eine DocuSign-Anbindung brauchen. Das alles deckt der Document Builder nicht ab; er kann Komponenten nur nach Kriterien ein- oder ausblenden."
+  - q: "Kann ein Flow ein Document-Builder-Dokument erzeugen?"
+    a: "Ja. Die Aktion createServiceDocument, verfügbar ab API-Version 60.0, erzeugt ein Service Document aus einem Flow oder über die REST API. Das hilft, wenn der Bericht automatisch entstehen soll, zum Beispiel beim Abschluss des Arbeitsauftrags, und nicht erst, wenn der Techniker auf den Knopf tippt."
 ---
 
 Salesforce Service Documents sind die PDFs, die Field Service aus einem Arbeitsauftrag oder Servicetermin erzeugt: der Servicebericht mit Arbeitszeit, Ersatzteilen, Fotos und Kundenunterschrift. Die Vorlagen baut man im Document Builder, der ohne Aufpreis in den Field-Service-Lizenzen steckt. Für den klassischen Servicebericht im Außendienst, auch offline, ist das die richtige Wahl. Einfache Bedingungen gehen auch, denn jede Komponente lässt sich nach Kriterien ein- oder ausblenden. Für Dokumente am Asset, Word-Ausgabe, Massenläufe oder Prüfprotokolle mit mehr Logik als Ein- und Ausblenden reicht er nicht. Dann brauchen Sie Salesforce Document Generation oder ein Tool aus dem AppExchange.
@@ -103,7 +106,7 @@ Auf Field Service übertragen zerfällt die Bestandsaufnahme in zwei Gruppen. De
 
 Organisationen mit vielen kurzen Einsätzen erzeugen auch die meisten Serviceberichte. Der Standard deckt also den Großteil des Volumens dort ab, wo er am meisten zählt.
 
-## Welche Alternative passt zu welchem Dokument?
+## Document Builder oder Document Generation?
 
 - **Klassische Service Reports.** Der ältere Vorlageneditor in Field Service. Bewährt und einfach, bis zu 20 Unterschriftsblöcke, aber wenig Gestaltungsspielraum. Abschnittstitel lassen sich nicht übersetzen, und in der Salesforce Mobile App steht die Aktion nicht zur Verfügung.
 - **Salesforce Document Generation.** Word-Vorlagen mit Platzhaltern und bedingten Abschnitten, für alle Standard- und Custom Objects, Ausgabe als PDF, DOCX oder PPTX, synchron und als Massenlauf, DocuSign-Anbindung. Nicht offline und nicht mobil. Manche SKUs enthalten sie, etwa Industry Clouds und Revenue Cloud Advanced, sonst braucht sie eine eigene Lizenz; Salesforce vergleicht beide im [Hilfeartikel zu Document Builder und Document Generation](https://help.salesforce.com/s/articleView?id=ind.sf_docgen_understand_doc_builder_and_doc_generation.htm&language=en_US&type=5).

@@ -1,6 +1,6 @@
 ---
 title: "Salesforce: Passwort-Integrationen enden 2027"
-metaTitle: "Salesforce Username-Password Flow endet am 20. Februar 2027"
+metaTitle: "Salesforce Username-Password Flow: Abschaltung 20. Feb. 2027"
 description: "Salesforce schaltet den OAuth Username-Password Flow am 20. Februar 2027 ab und SOAP login() mit Summer '27. So finden Sie betroffene Integrationen."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09
@@ -26,6 +26,8 @@ faq:
     a: "Filtern Sie die Login History nach dem Login-Subtyp OAuth Username-Password oder nutzen Sie die SOQL-Abfrage, die Salesforce dafür veröffentlicht, durchsuchen Sie Code und Middleware-Konfigurationen nach grant_type=password und lassen Sie sich von allen Herstellern von Paketen und Konnektoren den Flow schriftlich bestätigen."
   - q: "Löst ein Umstieg auf External Client Apps das Problem?"
     a: "Nein. External Client Apps unterstützen den Username-Password Flow überhaupt nicht. Das externe System selbst muss auf einen unterstützten Flow wie Client Credentials oder JWT Bearer umgestellt werden."
+  - q: "Kann ich die Abschaltung vor Februar 2027 testen?"
+    a: "Ja. Schalten Sie in einer Full- oder Partial-Copy-Sandbox die Einstellung Allow OAuth Username-Password Flows aus und lassen Sie Ihre Integrationen dagegen laufen. Salesforce Help beschreibt außerdem, wie Sie den Flow für die ganze Org sperren. So schalten Sie ihn in Produktion zu Ihrem eigenen Termin ab, bevor Salesforce es tut."
 ---
 
 Salesforce-Integrationen, die ein Token mit Benutzername und Passwort anfordern (`grant_type=password`), haben ein Ablaufdatum. Am 20. Februar 2027 schaltet Salesforce den OAuth 2.0 Username-Password Flow für Connected Apps ab, und diese Integrationen funktionieren dann nicht mehr. Parallel wird der Login über die SOAP-API in mehreren Schritten strenger. Für Unternehmen mit ERP-Anbindungen, Middleware, Data Loadern, Backup-Tools und Reporting-Exporten ist das ein Projekt mit festem Termin, und der schwierigste Teil ist, jede betroffene Integration zu finden, bevor sie ausfällt.

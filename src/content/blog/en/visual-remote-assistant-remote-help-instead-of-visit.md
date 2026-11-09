@@ -83,6 +83,15 @@ The method matters more than the target. Before the pilot, the service team pull
 
 Two numbers show after three months whether it works: the share of video sessions that close the case, and the share of those cases with a repeat call within seven days. A video fix followed by a visit two days later avoided no dispatch, even if it made that visit shorter, so measure the diagnostic value separately: first-time fix rate and visits with missing parts.
 
+## Visual Remote Assistant or a third-party tool?
+
+Salesforce is not the only vendor. TechSee, SightCall and Zoho Lens sell visual remote assistance as their own product, and TechSee lists an app for Agentforce on the AppExchange. For a manufacturer the question is less which video is better than where the session lives.
+
+- **Visual Remote Assistant** runs in your Salesforce org. Sessions start from the case or the work order, and the result stays on that record. It fits when service already runs on Service Cloud and Field Service and you want one license conversation, not two.
+- **A third-party tool** fits when you need more than video and drawing, for example image recognition with AI, augmented reality guidance or remote help for customers outside your Salesforce processes. Then plan the integration as part of the project: who starts the session, where recording and result land, and which data the vendor processes.
+
+My rule of thumb: start with the tool that keeps the session where your service team already works. Switch only when a concrete requirement is missing, such as AR guidance for a complex assembly, and test the candidate with your three most frequent fault types first.
+
 ## Before the first session: consent, works council, closing rules
 
 **Recording and data protection.** Recording is switched on in the VRA configuration, for whole sessions or since Winter '27 on demand. The customer's staff appear in the video, and so does their production hall. An agreement with the customer company does not replace the legal basis and information for the people on camera; clarify the legal basis for live video and separately for recording, retention and who sees it with your data protection officer. Some customers will not allow it, so the process has to work without recording too.
