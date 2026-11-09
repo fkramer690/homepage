@@ -40,29 +40,14 @@
   "visits": 0
  },
  {
-  "page": "/homepage/",
-  "pageviews": 30,
-  "visits": 10
- },
- {
   "page": "/en/blog/",
   "pageviews": 30,
   "visits": 0
  },
  {
-  "page": "/masterclass/revenue-cloud/",
-  "pageviews": 20,
+  "page": "/homepage/",
+  "pageviews": 30,
   "visits": 10
- },
- {
-  "page": "/masterclass/ki-salesforce/",
-  "pageviews": 20,
-  "visits": 0
- },
- {
-  "page": "/en/partners/juliane-winterscheid/",
-  "pageviews": 20,
-  "visits": 0
  },
  {
   "page": "/en/blog/ai-native-salesforce-delivery-process/",
@@ -70,7 +55,7 @@
   "visits": 20
  },
  {
-  "page": "/leistungen/salesforce-architektur/",
+  "page": "/masterclass-ki/",
   "pageviews": 20,
   "visits": 0
  },
@@ -80,7 +65,22 @@
   "visits": 0
  },
  {
-  "page": "/masterclass-ki/",
+  "page": "/en/partners/juliane-winterscheid/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
+  "page": "/masterclass/ki-salesforce/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
+  "page": "/masterclass/revenue-cloud/",
+  "pageviews": 20,
+  "visits": 10
+ },
+ {
+  "page": "/leistungen/salesforce-architektur/",
   "pageviews": 20,
   "visits": 0
  },

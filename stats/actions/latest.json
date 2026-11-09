@@ -1,9 +1,9 @@
 {
- "generatedAt": "2026-11-08T05:02:29.578Z",
+ "generatedAt": "2026-11-09T05:02:34.275Z",
  "window": {
   "google": {
-   "from": "2026-10-11",
-   "to": "2026-11-07"
+   "from": "2026-10-12",
+   "to": "2026-11-08"
   },
   "bingWeek": "2026-11-06"
  },
@@ -47,35 +47,6 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/",
-   "path": "/en/",
-   "impressions": 22,
-   "clicks": 0,
-   "position": 8.7,
-   "title": null,
-   "file": null,
-   "topQueries": [
-    {
-     "query": "sfdx-hardis",
-     "impressions": 4,
-     "position": 18.3
-    },
-    {
-     "query": "fk solutions",
-     "impressions": 1,
-     "position": 9
-    },
-    {
-     "query": "solutions factory consulting gmbh",
-     "impressions": 1,
-     "position": 48
-    }
-   ],
-   "hint": "Antwort auf „sfdx-hardis“ in Description und ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
    "path": "/en/blog/flex-credits-agentforce-cost-per-action/",
    "impressions": 21,
@@ -85,6 +56,25 @@
    "file": "src/content/blog/en/flex-credits-agentforce-cost-per-action.md",
    "topQueries": [],
    "hint": "Title und Description schärfen, Antwort in den ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/",
+   "path": "/en/blog/",
+   "impressions": 20,
+   "clicks": 0,
+   "position": 8.9,
+   "title": null,
+   "file": null,
+   "topQueries": [
+    {
+     "query": "sfdx-hardis",
+     "impressions": 7,
+     "position": 13.4
+    }
+   ],
+   "hint": "Antwort auf „sfdx-hardis“ in Description und ersten Satz",
    "new": false
   },
   {
@@ -147,43 +137,11 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/",
-   "path": "/en/blog/",
-   "impressions": 18,
-   "clicks": 0,
-   "position": 7.9,
-   "title": null,
-   "file": null,
-   "topQueries": [
-    {
-     "query": "sfdx-hardis",
-     "impressions": 5,
-     "position": 11.6
-    }
-   ],
-   "hint": "Antwort auf „sfdx-hardis“ in Description und ersten Satz",
-   "new": false
-  },
-  {
-   "source": "bing",
-   "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
-   "path": "/en/blog/field-service-scheduling-console-dispatchers/",
-   "impressions": 15,
-   "clicks": 0,
-   "position": 6,
-   "title": "Field Service Scheduling Console: move dispatchers now?",
-   "file": "src/content/blog/en/field-service-scheduling-console-dispatchers.md",
-   "topQueries": [],
-   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/leistungen/",
    "path": "/leistungen/",
-   "impressions": 15,
+   "impressions": 16,
    "clicks": 0,
-   "position": 8.6,
+   "position": 8.7,
    "title": null,
    "file": null,
    "topQueries": [
@@ -204,6 +162,32 @@
     }
    ],
    "hint": "Antwort auf „salesforce architektur klagenfurt“ in Description und ersten Satz",
+   "new": false
+  },
+  {
+   "source": "bing",
+   "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
+   "path": "/en/blog/field-service-scheduling-console-dispatchers/",
+   "impressions": 15,
+   "clicks": 0,
+   "position": 6,
+   "title": "Field Service Scheduling Console: move dispatchers now?",
+   "file": "src/content/blog/en/field-service-scheduling-console-dispatchers.md",
+   "topQueries": [],
+   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "http://fk-sd.de/",
+   "path": "/",
+   "impressions": 12,
+   "clicks": 0,
+   "position": 5.4,
+   "title": null,
+   "file": null,
+   "topQueries": [],
+   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
    "new": false
   },
   {
@@ -234,19 +218,6 @@
   },
   {
    "source": "google",
-   "page": "http://fk-sd.de/",
-   "path": "/",
-   "impressions": 11,
-   "clicks": 0,
-   "position": 4.2,
-   "title": null,
-   "file": null,
-   "topQueries": [],
-   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/b2b-commerce-customer-prices-price-books-erp/",
    "path": "/en/blog/b2b-commerce-customer-prices-price-books-erp/",
    "impressions": 10,
@@ -264,16 +235,16 @@
    "source": "google",
    "page": "https://www.fk-sd.de/blog/",
    "path": "/blog/",
-   "impressions": 50,
+   "impressions": 55,
    "clicks": 1,
-   "position": 17.7,
+   "position": 18.7,
    "title": null,
    "file": null,
    "topQueries": [
     {
      "query": "sfdx-hardis",
-     "impressions": 7,
-     "position": 22.2
+     "impressions": 9,
+     "position": 23.5
     },
     {
      "query": "salesforce konfiguration",
@@ -291,26 +262,31 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/agentforce-agent-api-dealer-apps/",
-   "path": "/en/blog/agentforce-agent-api-dealer-apps/",
-   "impressions": 42,
+   "page": "https://www.fk-sd.de/en/",
+   "path": "/en/",
+   "impressions": 24,
    "clicks": 0,
-   "position": 19.7,
-   "title": "Agentforce Agent API: agents in your own dealer apps",
-   "file": "src/content/blog/en/agentforce-agent-api-dealer-apps.md",
+   "position": 10.1,
+   "title": null,
+   "file": null,
    "topQueries": [
     {
-     "query": "agentforce api",
-     "impressions": 11,
-     "position": 23.4
+     "query": "sfdx-hardis",
+     "impressions": 6,
+     "position": 20.7
     },
     {
-     "query": "salesforce agentforce api",
+     "query": "fk solutions",
      "impressions": 1,
-     "position": 45
+     "position": 9
+    },
+    {
+     "query": "solutions factory consulting gmbh",
+     "impressions": 1,
+     "position": 48
     }
    ],
-   "hint": "Abschnitt und interne Links zu „agentforce api“",
+   "hint": "Abschnitt und interne Links zu „sfdx-hardis“",
    "new": false
   },
   {
@@ -508,6 +484,30 @@
    ],
    "hint": "Abschnitt und interne Links zu „salesforce username password flow retirement“",
    "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
+   "path": "/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
+   "impressions": 10,
+   "clicks": 0,
+   "position": 15.3,
+   "title": "Salesforce Winter '27: what changes for your pipeline",
+   "file": "src/content/blog/en/salesforce-winter-27-what-changes-for-your-pipeline.md",
+   "topQueries": [
+    {
+     "query": "salesforce summer release 2027",
+     "impressions": 1,
+     "position": 47
+    },
+    {
+     "query": "salesforce winter 27 api version",
+     "impressions": 1,
+     "position": 10
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „salesforce summer release 2027“",
+   "new": true
   }
  ],
  "questions": [
@@ -600,17 +600,6 @@
    "new": false
   },
   {
-   "source": "bing",
-   "query": "wenn ich mein veränderungsprojekt mit kotter analysiere, brauche ich dann auch lewin?",
-   "impressions": 1,
-   "position": 4,
-   "page": null,
-   "path": null,
-   "file": null,
-   "covered": false,
-   "new": false
-  },
-  {
    "source": "google",
    "query": "what is ai force primarily built for",
    "impressions": 1,
@@ -618,17 +607,6 @@
    "page": "https://www.fk-sd.de/en/masterclass/ai-salesforce/aiforce-and-system-integrators/",
    "path": "/en/masterclass/ai-salesforce/aiforce-and-system-integrators/",
    "file": "src/content/masterclass/en/aiforce-and-system-integrators.md",
-   "covered": false,
-   "new": false
-  },
-  {
-   "source": "bing",
-   "query": "how can i see the weekends in field service dispatch 2 scheduling console like i can in the classic dispatch console in field service lightning",
-   "impressions": 1,
-   "position": 6,
-   "page": null,
-   "path": null,
-   "file": null,
    "covered": false,
    "new": false
   },
@@ -686,6 +664,17 @@
    "file": "src/content/masterclass/en/devops-tools-compared.md",
    "covered": false,
    "new": false
+  },
+  {
+   "source": "google",
+   "query": "what makes a salesforce devops platform enterprise-ready?",
+   "impressions": 1,
+   "position": 10,
+   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+   "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
+   "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
+   "covered": false,
+   "new": true
   },
   {
    "source": "google",
@@ -761,7 +750,7 @@
    },
    {
     "source": "bing",
-    "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
+    "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
     "impressions": 1
    },
    {
@@ -771,21 +760,21 @@
    },
    {
     "source": "bing",
-    "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
+    "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
     "impressions": 1
    },
    {
     "source": "bing",
-    "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
+    "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
     "impressions": 1
    }
   ]
  },
  "counts": {
-  "snippet": 13,
-  "nearPage1": 11,
-  "questions": 18,
-  "new": 0,
+  "snippet": 12,
+  "nearPage1": 12,
+  "questions": 17,
+  "new": 2,
   "spam": 13
  }
 }

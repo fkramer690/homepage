@@ -6305,6 +6305,14 @@
  },
  {
   "day": "2026-11-07",
+  "query": "commerce extensions",
+  "page": "https://www.fk-sd.de/en/blog/commerce-extensions-custom-code/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 22
+ },
+ {
+  "day": "2026-11-07",
   "query": "dispatching field service",
   "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
   "clicks": 0,
@@ -6337,6 +6345,46 @@
  },
  {
   "day": "2026-11-07",
+  "query": "juliane winterscheid",
+  "page": "https://www.fk-sd.de/blog/change-management-modelle/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 28
+ },
+ {
+  "day": "2026-11-07",
+  "query": "juliane winterscheid",
+  "page": "https://www.fk-sd.de/blog/change-management-weltweiter-rollout/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 45
+ },
+ {
+  "day": "2026-11-07",
+  "query": "juliane winterscheid",
+  "page": "https://www.fk-sd.de/leistungen/change-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 48
+ },
+ {
+  "day": "2026-11-07",
+  "query": "juliane winterscheid",
+  "page": "https://www.fk-sd.de/masterclass/change-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 39
+ },
+ {
+  "day": "2026-11-07",
+  "query": "juliane winterscheid",
+  "page": "https://www.fk-sd.de/partner/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "day": "2026-11-07",
   "query": "nearshore salesforce development",
   "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
   "clicks": 0,
@@ -6361,11 +6409,27 @@
  },
  {
   "day": "2026-11-07",
+  "query": "salesforce release cycle",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 48
+ },
+ {
+  "day": "2026-11-07",
   "query": "scalable b2b headless commerce",
   "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
   "clicks": 0,
   "impressions": 1,
   "position": 36
+ },
+ {
+  "day": "2026-11-07",
+  "query": "service pro vs ptc servicemax",
+  "page": "https://www.fk-sd.de/blog/servicemax-oder-salesforce-field-service/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  },
  {
   "day": "2026-11-07",
@@ -6411,6 +6475,230 @@
   "day": "2026-11-07",
   "query": "what makes a salesforce devops platform enterprise-ready?",
   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-08",
+  "query": "field engineer scheduling",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 95.8
+ },
+ {
+  "day": "2026-11-08",
+  "query": "how to automate technician scheduling and dispatch?",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 32
+ },
+ {
+  "day": "2026-11-08",
+  "query": "field service dispatcher",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 85.5
+ },
+ {
+  "day": "2026-11-08",
+  "query": "field service pricing",
+  "page": "https://www.fk-sd.de/blog/agentforce-1-field-service-paket-rechnung/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 88
+ },
+ {
+  "day": "2026-11-08",
+  "query": "field service scheduling",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 96.5
+ },
+ {
+  "day": "2026-11-08",
+  "query": "field service scheduling and dispatch",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 86
+ },
+ {
+  "day": "2026-11-08",
+  "query": "field service shift planning",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 90.5
+ },
+ {
+  "day": "2026-11-08",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 87.5
+ },
+ {
+  "day": "2026-11-08",
+  "query": "services scheduling dispatch",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 78
+ },
+ {
+  "day": "2026-11-08",
+  "query": "change management salesforce projekt",
+  "page": "https://www.fk-sd.de/leistungen/change-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 64
+ },
+ {
+  "day": "2026-11-08",
+  "query": "devops release management",
+  "page": "https://www.fk-sd.de/leistungen/devops-und-release-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 50
+ },
+ {
+  "day": "2026-11-08",
+  "query": "field service dispatch",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 88
+ },
+ {
+  "day": "2026-11-08",
+  "query": "field service management software deutschland",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 93
+ },
+ {
+  "day": "2026-11-08",
+  "query": "headless commerce solutions for b2b",
+  "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 70
+ },
+ {
+  "day": "2026-11-08",
+  "query": "key user schulung",
+  "page": "https://www.fk-sd.de/masterclass/change-management/key-user-und-schulung/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 43
+ },
+ {
+  "day": "2026-11-08",
+  "query": "salesforce b2b commerce sap",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-sap-data-flows/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 19
+ },
+ {
+  "day": "2026-11-08",
+  "query": "salesforce effizient nutzen",
+  "page": "https://www.fk-sd.de/blog/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 33
+ },
+ {
+  "day": "2026-11-08",
+  "query": "salesforce effizienz",
+  "page": "https://www.fk-sd.de/blog/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 33
+ },
+ {
+  "day": "2026-11-08",
+  "query": "salesforce erp schnittstelle",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-schnittstellen/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 23
+ },
+ {
+  "day": "2026-11-08",
+  "query": "salesforce mahnwesen",
+  "page": "https://www.fk-sd.de/blog/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 25
+ },
+ {
+  "day": "2026-11-08",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/blog/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 27
+ },
+ {
+  "day": "2026-11-08",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/en/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 24
+ },
+ {
+  "day": "2026-11-08",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/en/blog/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 17
+ },
+ {
+  "day": "2026-11-08",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/en/services/devops-release-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-08",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/en/speaking/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 20
+ },
+ {
+  "day": "2026-11-08",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/leistungen/devops-und-release-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 29
+ },
+ {
+  "day": "2026-11-08",
+  "query": "software field service",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 98
+ },
+ {
+  "day": "2026-11-08",
+  "query": "vertragsmanagement mit salesforce",
+  "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
   "clicks": 0,
   "impressions": 1,
   "position": 10
