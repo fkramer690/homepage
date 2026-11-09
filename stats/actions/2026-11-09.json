@@ -1,9 +1,9 @@
 {
- "generatedAt": "2026-11-09T05:02:34.275Z",
+ "generatedAt": "2026-11-09T14:06:27.679Z",
  "window": {
   "google": {
-   "from": "2026-10-12",
-   "to": "2026-11-08"
+   "from": "2026-10-13",
+   "to": "2026-11-09"
   },
   "bingWeek": "2026-11-06"
  },
@@ -179,6 +179,19 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-billing-costs/",
+   "path": "/en/blog/revenue-cloud-billing-costs/",
+   "impressions": 13,
+   "clicks": 0,
+   "position": 9.4,
+   "title": "Revenue Cloud Billing costs: what billing events mean",
+   "file": "src/content/blog/en/revenue-cloud-billing-costs.md",
+   "topQueries": [],
+   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
    "page": "http://fk-sd.de/",
    "path": "/",
    "impressions": 12,
@@ -199,19 +212,6 @@
    "position": 6,
    "title": "Salesforce Well-Architected Framework: the 5 new pillars",
    "file": "src/content/blog/en/salesforce-well-architected-framework-2026.md",
-   "topQueries": [],
-   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-billing-costs/",
-   "path": "/en/blog/revenue-cloud-billing-costs/",
-   "impressions": 12,
-   "clicks": 0,
-   "position": 9.6,
-   "title": "Revenue Cloud Billing costs: what billing events mean",
-   "file": "src/content/blog/en/revenue-cloud-billing-costs.md",
    "topQueries": [],
    "hint": "Title und Description schärfen, Antwort in den ersten Satz",
    "new": false
@@ -293,16 +293,16 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-free-devops-training/",
    "path": "/en/blog/sfdx-hardis-free-devops-training/",
-   "impressions": 19,
+   "impressions": 20,
    "clicks": 2,
-   "position": 10.2,
+   "position": 10.4,
    "title": "What I learned from the free sfdx-hardis training",
    "file": "src/content/blog/en/sfdx-hardis-free-devops-training.md",
    "topQueries": [
     {
      "query": "sfdx-hardis",
-     "impressions": 6,
-     "position": 15.7
+     "impressions": 7,
+     "position": 15.5
     }
    ],
    "hint": "Abschnitt und interne Links zu „sfdx-hardis“",
@@ -334,7 +334,7 @@
    "impressions": 19,
    "clicks": 0,
    "position": 17.2,
-   "title": "AI code best practices for Salesforce programmes",
+   "title": "AI code best practices for Salesforce programs",
    "file": "src/content/masterclass/en/ai-code-best-practices.md",
    "topQueries": [
     {
@@ -468,6 +468,19 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
+   "path": "/en/blog/agentforce-llm-choice-bring-your-own/",
+   "impressions": 10,
+   "clicks": 0,
+   "position": 11.4,
+   "title": "Agentforce LLM choice: default, Claude or your own model",
+   "file": "src/content/blog/en/agentforce-llm-choice-bring-your-own.md",
+   "topQueries": [],
+   "hint": "Interne Links von verwandten Seiten",
+   "new": true
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
    "path": "/en/blog/salesforce-password-integrations-end-2027/",
    "impressions": 10,
@@ -507,7 +520,7 @@
     }
    ],
    "hint": "Abschnitt und interne Links zu „salesforce summer release 2027“",
-   "new": true
+   "new": false
   }
  ],
  "questions": [
@@ -600,6 +613,17 @@
    "new": false
   },
   {
+   "source": "bing",
+   "query": "wenn ich mein veränderungsprojekt mit kotter analysiere, brauche ich dann auch lewin?",
+   "impressions": 1,
+   "position": 4,
+   "page": null,
+   "path": null,
+   "file": null,
+   "covered": false,
+   "new": true
+  },
+  {
    "source": "google",
    "query": "what is ai force primarily built for",
    "impressions": 1,
@@ -609,6 +633,17 @@
    "file": "src/content/masterclass/en/aiforce-and-system-integrators.md",
    "covered": false,
    "new": false
+  },
+  {
+   "source": "bing",
+   "query": "how can i see the weekends in field service dispatch 2 scheduling console like i can in the classic dispatch console in field service lightning",
+   "impressions": 1,
+   "position": 6,
+   "page": null,
+   "path": null,
+   "file": null,
+   "covered": false,
+   "new": true
   },
   {
    "source": "google",
@@ -674,7 +709,7 @@
    "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
    "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
    "covered": false,
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -701,7 +736,7 @@
  ],
  "spam": {
   "queries": 13,
-  "impressions": 49,
+  "impressions": 50,
   "list": [
    {
     "source": "google",
@@ -710,12 +745,12 @@
    },
    {
     "source": "google",
-    "query": "(eingesammelt or \"sichert sich\" or abgeschlossen or eingeworben) (seed or \"pre-seed\" or \"serie a\" or \"seed-finanzierung\") startup millionen",
-    "impressions": 7
+    "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
+    "impressions": 8
    },
    {
     "source": "google",
-    "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
+    "query": "(eingesammelt or \"sichert sich\" or abgeschlossen or eingeworben) (seed or \"pre-seed\" or \"serie a\" or \"seed-finanzierung\") startup millionen",
     "impressions": 7
    },
    {
@@ -755,6 +790,11 @@
    },
    {
     "source": "bing",
+    "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
+    "impressions": 1
+   },
+   {
+    "source": "bing",
     "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
     "impressions": 1
    },
@@ -762,19 +802,14 @@
     "source": "bing",
     "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
     "impressions": 1
-   },
-   {
-    "source": "bing",
-    "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
-    "impressions": 1
    }
   ]
  },
  "counts": {
   "snippet": 12,
-  "nearPage1": 12,
-  "questions": 17,
-  "new": 2,
+  "nearPage1": 13,
+  "questions": 19,
+  "new": 3,
   "spam": 13
  }
 }

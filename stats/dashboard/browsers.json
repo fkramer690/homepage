@@ -25,12 +25,12 @@
   "visits": 30
  },
  {
-  "browser": "Firefox",
-  "pageviews": 10,
-  "visits": 10
+  "browser": "ChromeDerivative",
+  "pageviews": 30,
+  "visits": 30
  },
  {
-  "browser": "ChromeDerivative",
+  "browser": "Firefox",
   "pageviews": 10,
   "visits": 10
  }

@@ -1,8 +1,8 @@
 [
  {
   "page": "/",
-  "pageviews": 300,
-  "visits": 110
+  "pageviews": 310,
+  "visits": 120
  },
  {
   "page": "/en/",
@@ -30,13 +30,13 @@
   "visits": 0
  },
  {
-  "page": "/fragen/",
+  "page": "/masterclass/",
   "pageviews": 40,
-  "visits": 0
+  "visits": 10
  },
  {
-  "page": "/masterclass/",
-  "pageviews": 30,
+  "page": "/fragen/",
+  "pageviews": 40,
   "visits": 0
  },
  {

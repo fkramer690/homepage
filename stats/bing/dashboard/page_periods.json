@@ -43,13 +43,6 @@
  },
  {
   "period": "2026-10-30",
-  "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
-  "period": "2026-10-30",
   "page": "https://www.fk-sd.de/blog/shop-bestellungen-erp-auftrag/",
   "clicks": 0,
   "impressions": 1,
@@ -61,5 +54,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 4
+ },
+ {
+  "period": "2026-10-30",
+  "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
  }
 ]

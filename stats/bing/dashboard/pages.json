@@ -36,12 +36,6 @@
   "position": 10
  },
  {
-  "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
   "page": "https://www.fk-sd.de/blog/shop-bestellungen-erp-auftrag/",
   "clicks": 0,
   "impressions": 1,
@@ -52,5 +46,11 @@
   "clicks": 0,
   "impressions": 1,
   "position": 4
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
  }
 ]
