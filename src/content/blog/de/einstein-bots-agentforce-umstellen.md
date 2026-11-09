@@ -2,6 +2,7 @@
 title: "Einstein Bot auf Agentforce umstellen oder Menü behalten?"
 description: "Soll der Einstein Bot im Händlerportal ein Agentforce Service Agent werden? Was Upgrade Agent leistet, was sich bei Kosten und Tests ändert, was Menü bleibt."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: de
 slug: einstein-bots-agentforce-umstellen
 translationKey: einstein-bots-to-agentforce
@@ -10,21 +11,21 @@ categories: [ai]
 tags: [Einstein Bots, Agentforce, Service Cloud, Händlerportal, Flex Credits, Maschinenbau]
 takeaways:
   - "Upgrade Agent baut aus einem Einstein Bot einen Agentforce Service Agent, während der Bot weiterläuft. Das Werkzeug ist laut Salesforce experimentell."
-  - "Ein Abschaltdatum für Einstein Bots habe ich nicht gefunden, die Umstellung ist also eine fachliche Entscheidung."
+  - "Einstein Bots haben kein Abschaltdatum, sind aber seit 17. August 2026 im Maintenance Mode: weiter unterstützt, ohne neue Funktionen."
   - "Ein Agent rechnet nach Verbrauch ab, mit 20 Flex Credits (0,10 €) pro Aktion oder 2 € pro Gespräch, aber nicht mit beidem in einer Org."
   - "Im Rechenbeispiel brauchen 4.000 Portalgespräche im Monat rund 2,9 Mio. Credits im Jahr für Aktionen, mehr als die 2,75 Mio. in Service Cloud Max."
   - "Identifikation, Garantieregistrierung, Sicherheitsmeldungen und Abfragen per Auftragsnummer bleiben im Menü, der Agent bekommt den Freitext."
 faq:
   - q: "Kündigt Salesforce die Einstein Bots ab?"
-    a: "Auf den Salesforce-Seiten, die ich bis zum 27. Oktober 2026 geprüft habe, steht kein Abschaltdatum für Einstein Bots. Für den alten Chat hatte Salesforce das Ende zum 14. Februar 2026 angekündigt, Bots auf diesem Kanal mussten also auf Messaging for In-App and Web umziehen."
+    a: "Ein Abschaltdatum nennt Salesforce nicht, aber Einstein Bots sind seit 17. August 2026 im Maintenance Mode: Bestehende Bots werden weiter unterstützt, neue Funktionen kommen in Agentforce. Legacy Chat wurde am 14. Februar 2026 abgeschaltet, Bots auf diesem Kanal mussten also auf Enhanced Chat umziehen, früher Messaging for In-App and Web."
   - q: "Was macht der Agentforce Upgrade Agent?"
     a: "Laut Salesforce wandelt er einen bestehenden Einstein Bot in wenigen Minuten in einen Agentforce Service Agent um, während der Bot weiterläuft. Er läuft in Agentforce Labs, das Salesforce als experimentell und Vorabversion beschreibt; das Ergebnis ist ein Entwurf."
   - q: "Können Einstein Bot und Agentforce-Agent parallel laufen?"
-    a: "Ja. Ein Beitrag im Salesforce Developers Blog vom Dezember 2025 beschreibt einen Bot, der Status- und Erfassungsanfragen selbst erledigt und komplexe Fragen über einen Omni-Channel-Flow mit Ausweich-Queue an einen Agentforce Service Agent übergibt."
+    a: "Ja. Ein Beitrag im Salesforce Developers Blog vom Dezember 2025 beschreibt einen Bot, der Status- und Erfassungsanfragen selbst erledigt und komplexe Fragen über einen Omni-Channel-Flow mit Fallback-Queue an einen Agentforce Service Agent übergibt. Der Beitrag beschreibt nur die Übergabe vom Bot zum Agenten, nicht den Rückweg."
   - q: "Ist ein Agentforce-Agent teurer als ein Einstein Bot?"
     a: "Pro Gespräch meist ja. Bot-Gespräche waren Teil des Lizenzkontingents, ein Agent verbraucht 20 Flex Credits pro Aktion. Im Rechenbeispiel kosten drei Aktionen pro Gespräch 0,30 €, und das Jahresvolumen übersteigt das Kontingent einer Max-Edition."
   - q: "Wie teste ich einen umgestellten Agenten?"
-    a: "Nutzen Sie die Beispielsätze, mit denen die Intents des Bots trainiert wurden, und die Protokolle gescheiterter Bot-Gespräche als Testfälle. Lassen Sie den Satz mehrmals laufen und vereinbaren Sie die Bestehensquote vor dem Go-live mit der Serviceleitung."
+    a: "Nutzen Sie die Beispielsätze, mit denen die Intents des Bots trainiert wurden, und die Protokolle gescheiterter Bot-Gespräche als Testfälle. Führen Sie den Testsatz mehrmals aus und vereinbaren Sie die Bestehensquote vor dem Go-live mit der Serviceleitung."
 draft: false
 ---
 
@@ -32,20 +33,20 @@ Stellen Sie einen Einstein Bot nur dort auf Agentforce um, wo Kunden Fragen eint
 
 ## Müssen Sie Ihren Einstein Bot jetzt ablösen?
 
-Eine Frist habe ich nicht gefunden. Auf den Salesforce-Seiten, die ich bis zum 27. Oktober 2026 geprüft habe, steht für Einstein Bots kein Abschaltdatum. Der Druck kam über den Kanal: Laut Entwicklerdokumentation war der alte Chat ["scheduled for retirement on February 14, 2026"](https://developer.salesforce.com/docs/atlas.en-us.live_agent_rest.meta/live_agent_rest), Nachfolger ist Messaging for In-App and Web. Der [Implementierungsleitfaden für kundenseitige Agenten](https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/agentforce_implementation_customer.pdf) setzt seinen Beispielagenten auf einen Enhanced Web Chat in einer Experience-Cloud-Site, also genau das Setup vieler Händler- und Kundenportale im Maschinenbau.
+Eine Frist gibt es nicht, aber ein klares Signal. Für Einstein Bots steht kein Abschaltdatum fest, doch laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=service.bots_service_enhanced.htm&language=en_US&type=5) gilt: "Starting August 17, 2026, Einstein Bots is in Maintenance Mode". Bestehende Bots werden weiter unterstützt, neue Funktionen kommen in Agentforce. Der frühere Druck kam über den Kanal: Legacy Chat wurde am [14. Februar 2026 abgeschaltet](https://developer.salesforce.com/docs/atlas.en-us.live_agent_rest.meta/live_agent_rest), Nachfolger ist Enhanced Chat, früher Messaging for In-App and Web. Der [Implementierungsleitfaden für kundenseitige Agenten](https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/agentforce_implementation_customer.pdf) setzt seinen Beispielagenten auf einen Enhanced Web Chat in einer Experience-Cloud-Site, also genau das Setup vieler Händler- und Kundenportale im Maschinenbau.
 
-Das Werkzeug selbst ist Punkt 20 in Salesforces Liste der [21 Ankündigungen der Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/): "Click Upgrade Agent on Agentforce Labs to convert an existing Einstein Bot into an Agentforce Service Agent." Der neue Agent entstehe in Minuten, "so your current bot keeps running while you review and adjust the upgraded version". Einen Status wie GA oder Beta nennt der Beitrag nicht. Zu [Agentforce Labs](https://www.salesforce.com/agentforce/labs/) schreibt Salesforce: "Everything in Labs is experimental and pre-release." Ich würde das Werkzeug in einer Sandbox laufen lassen und das Ergebnis als ersten Entwurf behandeln. Welche Teile des Bots übernommen werden, etwa Dialoge, Variablen oder Apex-Aktionen, beschreibt keine Seite, die ich öffnen konnte. Prüfen Sie das in Ihrer Org, bevor Sie Aufwand schätzen.
+Das Werkzeug selbst ist Punkt 20 in Salesforces Liste der [21 Ankündigungen der Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/): "Click Upgrade Agent on Agentforce Labs to convert an existing Einstein Bot into an Agentforce Service Agent." Der neue Agent entstehe in Minuten, "so your current bot keeps running while you review and adjust the upgraded version". Einen Status wie GA oder Beta nennt der Beitrag nicht. Zu [Agentforce Labs](https://www.salesforce.com/agentforce/labs/) schreibt Salesforce: "Everything in Labs is experimental and pre-release." Ich würde das Werkzeug in einer Sandbox laufen lassen und das Ergebnis als ersten Entwurf behandeln. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=service.bots_service_asa_how_it_works.htm&language=en_US&type=5) fasst das Werkzeug ähnliche Dialoge und Intents zu Subagents zusammen, erzeugt aus den Action Steps Agentenaktionen und übernimmt eigene Bedingungslogik in die Anweisungen; Schritte, die nur durch das Gespräch navigieren oder Feedback protokollieren, werden keine Aktionen. Wie Variablen übernommen werden, steht dort nicht. Prüfen Sie das in Ihrer Org, bevor Sie Aufwand schätzen.
 
 ## Aus dem Drehbuch wird ein Modell, das selbst entscheidet
 
 Ein Einstein Bot folgt einem Drehbuch. Salesforce beschrieb Dialoge als ["the basic 'unit' of conversation"](https://developer.salesforce.com/blogs/2018/06/summer18-einstein-bots-for-the-people), Intents als Beispielsätze je Dialog und Regeln als "conditional engine" für Entscheidungen zur Laufzeit; dazu kommen Menüs mit festen Optionen. Tippt ein Händler etwas, das zu keinem Intent passt, sagt der Bot, dass er nichts verstanden hat, und zeigt wieder das Menü. Lästig, aber sichtbar.
 
-Ein Agentforce Service Agent arbeitet mit Topics, Anweisungen und Aktionen, und ein Sprachmodell wählt die Aktion und formuliert die Antwort. Damit gehen Fragen wie: "Der Spindelmotor an Seriennummer 4711 ist wieder ausgefallen, ist das Teil am Lager und kann diese Woche ein Techniker kommen?" Es ändert aber auch, wie das System scheitert. Ein Agent sagt selten, dass er nichts versteht. Ist der Wissensartikel veraltet oder der Liefertermin aus SAP eine Woche alt, antwortet er flüssig und falsch. Im Maschinenbau sind die teuren Fälle Garantieaussagen, Lieferzusagen und alles, was die Sicherheit berührt.
+Ein Agentforce Service Agent arbeitet mit Topics, Anweisungen und Aktionen, und ein Sprachmodell wählt die Aktion und formuliert die Antwort. Damit lassen sich Fragen bearbeiten wie: "Der Spindelmotor an Seriennummer 4711 ist wieder ausgefallen, ist das Teil am Lager und kann diese Woche ein Techniker kommen?" Es ändert aber auch, wie das System scheitert. Wenn seine Anweisungen keine Rückfrage oder Übergabe erzwingen, antwortet ein Agent eher, als zuzugeben, dass er nichts versteht. Ist der Wissensartikel veraltet oder der Liefertermin aus SAP eine Woche alt, kann die Antwort flüssig und falsch sein. Im Maschinenbau sind die teuren Fälle Garantieaussagen, Lieferzusagen und alles, was die Sicherheit berührt.
 
 Zwei Folgen:
 
 - **Folgenreiche Entscheidungen wandern in feste Logik** hinter dem Agenten, etwa Garantieberechtigung oder Kulanzgrenzen. Wie das geht, beschreibe ich in [Agent Script: Regeln statt LLM](../agent-script-regeln-statt-llm/).
-- **Wissen wird ein Produktivsystem.** Ein Bot zeigte den einen Artikel, auf den ein Dialog verwies. Ein Agent liest und formuliert um, was er als Grundlage bekommt. Jedes Handbuch und jeder Artikel braucht deshalb eine verantwortliche Person und ein Prüfdatum.
+- **Wissen wird ein Produktivsystem.** Ein Bot zeigte Artikel über eingerichtete Dialoge und Article Answers. Ein Agent liest, kombiniert und formuliert um, was er als Grundlage bekommt. Jedes Handbuch und jeder Artikel braucht deshalb eine verantwortliche Person und ein Prüfdatum.
 
 ## Aus dem Kontingent wird Verbrauch
 
@@ -53,9 +54,9 @@ Einstein Bots liefen als Kontingent. Salesforces [Übersicht der Einstein-Funkti
 
 Agentforce rechnet nach Verbrauch ab. Die [EU-Preisseite für Agentforce](https://www.salesforce.com/eu/agentforce/pricing/) nennt 500 € je 100.000 Flex Credits und 2 € pro Gespräch. Laut Salesforces [Ankündigung vom Mai 2025](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) verbraucht eine Aktion 20 Flex Credits, in Euro also 0,10 €. Die [US-Preisseite](https://www.salesforce.com/agentforce/pricing/) stellt klar, dass Flex Credits und Gesprächsabrechnung "will not be supported in the same org". Prompts und Data-360-Grounding kommen zu den Aktionen hinzu; die Aufschlüsselung steht in [Flex Credits: Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
 
-Es gibt ein drittes Modell. Die [Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) führt Help Agent Resolutions mit 400 Credits, und laut [Salesforce-Pressemitteilung vom Juni 2026](https://www.salesforce.com/de/news/press-releases/2026/06/30/salesforce-agentforce-help-agent/) fällt keine Gebühr an, wenn der Kunde an einen Menschen übergeben wird. Einen Euro-Preis pro Lösung nennt die EU-Preisseite nicht. Salesforce hat dieses Modell für Help Agent angekündigt, heute Casey, den ich in [Casey und Service Rep Assistant](../service-cloud-casey-und-service-rep-assistant/) beschreibe. Dass es für einen eigenen, aus dem Bot erzeugten Service Agent gilt, habe ich nirgends gefunden.
+Es gibt ein drittes Modell. Die [Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) (Stand 3. November 2026) führt Help Agent Resolutions mit 400 Credits, und laut [Salesforce-Pressemitteilung vom Juni 2026](https://www.salesforce.com/de/news/press-releases/2026/06/30/salesforce-agentforce-help-agent/) fällt keine Gebühr an, wenn der Kunde an einen Menschen übergeben wird. Einen Euro-Preis pro Lösung nennt die EU-Preisseite nicht. Salesforce hat dieses Modell für Help Agent angekündigt, heute Casey, den ich in [Casey und Service Rep Assistant](../service-cloud-casey-und-service-rep-assistant/) beschreibe. Laut Dreamforce-Beitrag kann Upgrade Agent einen Bot auch in einen Help Agent umwandeln; für einfache Serviceportale ist das eine dritte Option, die Sie durchrechnen sollten. Für einen eigenen, aus dem Bot erzeugten Service Agent gilt das Lösungsmodell nicht.
 
-Die Edition setzt den Rahmen. Die [Service-Cloud-Preisseite](https://www.salesforce.com/service/pricing/) nennt für Max "2.75M Flex Credits per org per year". Dieses Kontingent teilen sich alle Agenten und alle Data-360-Jobs der Org.
+Die Edition setzt den Rahmen. Die [Service-Cloud-Preisseite](https://www.salesforce.com/service/pricing/) nennt für Max "2.75M Flex Credits per org per year". Dieses Kontingent teilen sich alle Agenten der Org; ob auch Data-360-Jobs daraus schöpfen, hängt davon ab, ob Ihr Vertrag zusätzlich Data Services Credits enthält.
 
 ## Rechenbeispiel: Bot im Händlerportal mit 4.000 Gesprächen
 
@@ -81,28 +82,28 @@ quelle: Rechenbeispiel mit angenommenen Werten; 20 Credits pro Aktion laut Sales
 ```
 
 ```hinweis offen
-Ich nehme an, dass die Bot-Pfade im bestehenden Lizenzkontingent bleiben. Klären Sie das mit Ihrem Account Executive, denn ein Wechsel auf die neuen Editionen kann daran etwas ändern.
+Ich nehme an, dass die Bot-Pfade im bestehenden Lizenzkontingent bleiben. Rechnen Sie das nach: Bei 25 Bot-Gesprächen pro Nutzer und Monat brauchen 4.000 Gespräche 160 lizenzierte Nutzer; darunter kostete laut Übersicht von 2024 jeder Block von 100 Gesprächen 50 US-Dollar im Monat. Klären Sie das mit Ihrem Account Executive, denn ein Wechsel auf die neuen Editionen kann daran etwas ändern.
 ```
 
-Die Kosten sind das kleinere Argument für Variante 2: Im Freitext scheitert der Bot heute, die Menüpfade funktionieren bereits. Ein Beitrag im Salesforce Developers Blog vom Dezember 2025 zur Übergabe von Einstein Enhanced Bots an Agentforce-Agenten, geschrieben von zwei Salesforce-Mitarbeitenden, beschreibt dieses Muster mit Einstein Enhanced Bots: Der Bot "triages transactions (Log/Status) and routes complex knowledge to an Agentforce Service agent", über ein Feld auf der Messaging Session, einen ausgehenden Omni-Channel-Flow und eine Ausweich-Queue. Der Beitrag behandelt nur die Übergabe vom Bot an den Agenten, nicht den Rückweg.
+Die Kosten sind das kleinere Argument für Variante 2: Im Freitext scheitert der Bot heute, die Menüpfade funktionieren bereits. Ein Beitrag im Salesforce Developers Blog vom Dezember 2025 zur Übergabe von Einstein Enhanced Bots an Agentforce-Agenten, geschrieben von zwei Salesforce-Mitarbeitenden, beschreibt dieses Muster mit Einstein Enhanced Bots: Der Bot "triages transactions (Log/Status) and routes complex knowledge to an Agentforce Service agent", über ein Feld auf der Messaging Session, einen ausgehenden Omni-Channel-Flow und eine Fallback-Queue. Der Beitrag behandelt nur die Übergabe vom Bot an den Agenten, nicht den Rückweg.
 
 ## Welche Pfade sollten im Menü bleiben?
 
 Meine Kriterien, in dieser Reihenfolge:
 
-- **Identifikation und Prüfung.** Kundennummer, Händler-ID und Seriennummer entscheiden, was das Gespräch sehen darf. Das sollte nicht davon abhängen, wie ein Modell einen Satz liest, und Freitextfelder sind der Einstieg für [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
+- **Identifikation und Prüfung.** Kundennummer, Händler-ID und Seriennummer entscheiden, was das Gespräch sehen darf. Das sollte nicht davon abhängen, wie ein Modell einen Satz liest, und Freitextfelder sind ein Einstieg für [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/). Ein Menü ersetzt aber keine Berechtigungsprüfung: Der Server prüft jeden Wert gegen den angemeldeten Portalnutzer.
 - **Erfassung mit rechtlichem Gewicht.** Garantieregistrierung, Inbetriebnahmedatum, Ansprechpartner für Sicherheitshinweise. Ein Menü oder Formular erfasst genau die Pflichtfelder.
-- **Sicherheitsrelevante Meldungen.** Ein Ausfall mit Gefahr für Menschen geht direkt in eine Queue mit Seriennummer und Fotos, ohne Zusammenfassung dazwischen. Für den Telefonkanal behandle ich dieselbe Frage in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/).
-- **Einzelabfragen mit einem Schlüssel.** Auftragsstatus per Auftragsnummer ist ein SAP-Aufruf. Ein Agent kann das auch, wie in [Agentforce und SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/) beschrieben, verbraucht aber zwei oder mehr Aktionen für eine Antwort, die das Menü mit zwei Klicks liefert.
+- **Sicherheitsrelevante Meldungen.** Ein Ausfall mit Gefahr für Menschen geht mit Seriennummer und Fotos direkt an eine von Menschen besetzte Queue, ohne Zusammenfassung dazwischen. Für den Telefonkanal behandle ich dieselbe Frage in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/).
+- **Einzelabfragen mit einem Schlüssel.** Auftragsstatus per Auftragsnummer ist ein SAP-Aufruf. Ein Agent kann das auch, wie in [Agentforce und SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/) beschrieben, verbraucht je nach Aufbau aber eine oder mehr abrechenbare Aktionen für eine Antwort, die das Menü mit zwei Klicks liefert.
 - **Zusagen mit Haftung**, etwa bestätigte Liefertermine.
 
 Auf den Agenten gehören: Fehlersuche anhand von Handbüchern, gemischte Fragen, Händler, die in ihrer eigenen Sprache schreiben, und Rückfragen im selben Gespräch.
 
-Wer trotzdem alles auf Agentforce umstellt, kann die festen Pfade als Agent-Script-Logik im Agenten abbilden. Jeder Schritt läuft dann aber über den Zähler des Agenten.
+Wer trotzdem alles auf Agentforce umstellt, kann die festen Pfade als Agent-Script-Logik im Agenten abbilden. Jede Aktion, die das Script aufruft, läuft dann aber über den Zähler des Agenten.
 
 ## Wie ändern sich Tests und Go-live?
 
-Einen Bot testen Sie, indem Sie jeden Dialogpfad einmal durchgehen: gleiche Eingabe, gleiche Ausgabe. Ein Agent braucht einen Testsatz, der mehrmals gegen eine vereinbarte Bestehensquote läuft. Der Implementierungsleitfaden bewertet die Antwortqualität von 0 bis 5 und wertet 3 oder mehr als bestanden, Topic- und Aktionsprüfungen sind bestanden oder nicht. Schwellen und Werkzeuge beschreibe ich in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/). Testläufe in der Sandbox kosten laut Rate Card 16 Credits pro Aktion.
+Einen Bot testen Sie entlang seiner Dialogpfade, einschließlich unverstandener Eingaben und Backend-Fehler, und dieselbe Eingabe führt über denselben Pfad. Ein Agent braucht einen Testsatz, der mehrmals gegen eine vereinbarte Bestehensquote läuft. Der Implementierungsleitfaden bewertet die Antwortqualität von 0 bis 5 und wertet 3 oder mehr als bestanden, Topic- und Aktionsprüfungen sind bestanden oder nicht. Schwellen und Werkzeuge beschreibe ich in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/). Testläufe in der Sandbox kosten laut Rate Card 16 Credits pro Aktion.
 
 Der Bot verschafft Ihnen einen Vorsprung. Die Beispielsätze, mit denen jeder Intent trainiert wurde, und die Protokolle des Pfads "Etwas anderes" sind ein fertiger Testsatz aus echten Händlerfragen.
 
@@ -118,7 +119,7 @@ Entwurf erzeugen
 Tests bauen
   Tests aus Intent-Sätzen und Protokollen bauen und die Bestehensquote mit der Serviceleitung vereinbaren.
 Freitextpfad starten | 4 Wochen
-  Nur den Freitextpfad über Omni-Channel mit Ausweich-Queue an den Agenten leiten und Digital Wallet beobachten.
+  Nur den Freitextpfad über Omni-Channel mit Fallback-Queue an den Agenten leiten und Digital Wallet beobachten.
 Nächsten Pfad wählen
   Mit diesen Zahlen über den nächsten Pfad entscheiden.
 ```
