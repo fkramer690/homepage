@@ -67,6 +67,18 @@ Grundlage: „AI Search Checklist“ der Agentur Contact (81 Punkte: Seitenbaust
 | KS3 | Auswahl- und Vergleichsartikel (z. B. L1 Partnerwahl) nennen die Kriterien, nach denen die Empfehlung entsteht | mittel | klein | Claude | erledigt 07.11.2026: Regel in docs/blog-guidelines.md (KI-Suche); L1 erfüllt sie bereits mit Tabellen und Vergleich |
 | KS4 | Eigenes kleines Werkzeug als zitierfähige Ressource, z. B. Flex-Credits-Rechner oder Make-or-Buy-Check (DE + EN) | mittel | mittel | Claude schlägt vor, Fabian entscheidet | offen |
 
+## Sichtbarkeit in Claude (Prüfung 09.11.2026)
+
+Lauf vom 09.11.2026: Claude 0 von 15 Fragen, Perplexity 9 von 15 mit denselben Seiten. Technisch ist nichts blockiert: robots.txt erlaubt alle Crawler (also auch ClaudeBot, Claude-SearchBot und Claude-User), die Seiten sind statisches HTML, llms.txt ist da. Claudes Websuche nutzt nach übereinstimmenden Berichten den Index von Brave Search (Anthropic nennt den Anbieter nicht selbst). Was dort nicht oben steht, zitiert Claude nicht. Bei 5 der 15 Fragen hat Claude gar nicht gesucht, dort zählt nur, was im Trainingsstand über Fabian steht, also Erwähnungen auf anderen Seiten. Zitiert hat Claude vor allem Verzeichnisse (freelance.de, GULP, consultingheads, bilarna, Software-Vergleichsportale), Salesforce-Doku, sfdx-hardis-Doku und GitHub, Salesforce Ben und Salesforce Dictionary.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| CL1 | Brave-Abdeckung prüfen: auf search.brave.com `site:fk-sd.de` sowie die Kernbegriffe der 15 Fragen aus `seo/ai-prompts.json` suchen und notieren, ob und wo fk-sd.de steht. Fehlende Hauptseiten über search.brave.com/submit-url melden (Start DE/EN, Partnersteuerung, Freiberuflicher Salesforce Architect, Document-Builder-Artikel, sfdx-hardis-Vergleich, Field-Service-Rollout). Automatisch geht das nicht: Brave sperrt Abfragen ohne API-Schlüssel | hoch | klein | Fabian (Browser) | offen |
+| CL2 | Brave-Positionen automatisch im KI-Such-Lauf mitschreiben: Brave Search API, Schlüssel als GitHub-Secret `BRAVE_SEARCH_API_KEY`, je Lauf 15 Abfragen | mittel | klein | Fabian legt Schlüssel an, Claude baut ein | offen |
+| CL3 | Quellen, die Claude zitiert, zuerst angehen (aus QM): sfdx-hardis-Doku-PR (Claude zitiert sfdx-hardis.cloudity.com und GitHub zur sfdx-hardis-Frage), Salesforce Dictionary (zitiert zu DevOps) | hoch | klein | Fabian | offen |
+| CL4 | Profile bei freelance.de und GULP (von Claude zur Frage „independent Salesforce architect Germany“ zitiert): Titel und erster Satz gleich wie auf der Website („Salesforce Enterprise Architect für Hersteller, Kundenseite, Partnersteuerung“), Firmenname FK Solution Design im Text, soweit das Portal es erlaubt (Links sind dort nicht möglich) | mittel | klein | Fabian | offen |
+| CL5 | Wirkung prüfen: Claude-Treffer und Brave-Positionen in den nächsten zwei KI-Such-Läufen (23.11. und 07.12.2026) vergleichen | mittel | klein | Claude | ab 23.11.2026 |
+
 ## Befunde Jev-Analyse und jev-seo-Audit (29.10.2026)
 
 Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite und 392 Blog-URLs sowie jev-seo-Audit (450 URLs), beide 29.10.2026. Bericht: https://claude.ai/artifact/4d9jFTDK2EbewV53cLymFN. Fehlalarme ohne Maßnahme: HTTPS-Weiterleitung, 110 kaputte Links und 37 Seiten mit 404 (jev-seo löst relative Links falsch auf), noindex auf Impressum und Datenschutz (gewollt). Reihenfolge nach Impact und Aufwand.
