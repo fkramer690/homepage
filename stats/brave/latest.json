@@ -1,13 +1,15 @@
 {
-  "generatedAt": "2026-11-09T09:57:14.583Z",
+  "generatedAt": "2026-11-09T10:34:55.821Z",
   "domain": "fk-sd.de",
-  "requests": 178,
+  "requests": 203,
   "summary": {
     "keywordsFound": 0,
     "keywords": 81,
     "questionsFound": 0,
     "questions": 15,
-    "indexedPages": 3
+    "indexedPages": 3,
+    "submittedIndexed": 0,
+    "submitted": 25
   },
   "keywords": {
     "de": [
@@ -516,5 +518,132 @@
     "https://www.fk-sd.de/blog/salesforce-dubletten-stammdaten-bereinigen/",
     "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
     "https://www.fk-sd.de/en/blog/revenue-cloud-discount-approvals/"
+  ],
+  "submitted": [
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/leistungen/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/services/partner-governance/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/blog/salesforce-field-service-rollout/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/masterclass/devops-release-management/devops-werkzeuge-vergleich/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/blog/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/masterclass/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/services/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/freelance-salesforce-architect/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/leistungen/partnersteuerung/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/fragen/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/kundenpreise-sap-konditionen-oder-salesforce-pricing/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/salesforce-field-service-einfuehrung/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/blog/visual-remote-assistant-remote-help-instead-of-visit/",
+      "indexed": false
+    }
   ]
 }
