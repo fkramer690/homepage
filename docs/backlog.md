@@ -79,6 +79,14 @@ Lauf vom 09.11.2026: Claude 0 von 15 Fragen, Perplexity 9 von 15 mit denselben S
 | CL4 | Profile auf den Plattformen, die die Assistenten am 09.11.2026 zitiert haben, gleich formulieren wie die Website (Titel und erster Satz „Salesforce Enterprise Architect für Hersteller, Kundenseite, Partnersteuerung“, Firmenname FK Solution Design, soweit erlaubt): freelance.de (von allen vier Assistenten mit Websuche zitiert, Claude, ChatGPT, Perplexity, Google AI Mode), GULP (Claude, Perplexity), freelancermap und Fratch (Perplexity, Google AI Mode), LinkedIn. Profil fehlt noch bei consultingheads (Claude, Google AI Mode; Profile nicht öffentlich, siehe QM), Upwork und 9am.works (je Google AI Mode, nur prüfen). AppExchange und partners.salesforce.com siehe QI. Nicht sinnvoll: bilarna, softwarefinder, find-your-software, G2 (Software, keine Berater) | hoch | klein | Fabian | offen |
 | CL5 | Wirkung prüfen: Claude-Treffer und Brave-Positionen in den nächsten zwei KI-Such-Läufen (23.11. und 07.12.2026) vergleichen | mittel | klein | Claude | ab 23.11.2026 |
 
+## Auftritt bei Bing (Prüfung 09.11.2026)
+
+Bing zeigte am 09.11.2026 für „fk-sd.de“ und „FK Solution Design GmbH“ die englische Startseite (/en/) und darunter Registerseiten (Creditreform, North Data, Handelsregister), kein Firmenpanel. Umgesetzt: Sprachsignal `content-language` und vollständigere Firmendaten im Schema (#334), Registereinträge als sameAs (#335). Bing-Places-Eintrag am 09.11.2026 über Google-Sync angelegt, Veröffentlichung laut Bing in 7 bis 12 Tagen; Adresse (Hans-Keul-Weg 27) und Telefon im internationalen Format im Google-Profil ergänzt und neu synchronisiert.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| BI1 | Bing-Auftritt nachprüfen: Ist der Bing-Places-Eintrag veröffentlicht (Dashboard „Veröffentlicht“, Pin auf bing.com/maps mit Adresse, E-Mail eingetragen)? Zeigt Bing bei „fk-sd.de“ und „FK Solution Design GmbH“ jetzt die deutsche Startseite und ein Firmenpanel? Link zum Bing-Maps-Eintrag als sameAs in `site.companyProfiles` aufnehmen | mittel | klein | Fabian (Bing-Suche und Places-Dashboard), Claude (sameAs) | ab 23.11.2026 |
+
 ## Befunde Jev-Analyse und jev-seo-Audit (29.10.2026)
 
 Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite und 392 Blog-URLs sowie jev-seo-Audit (450 URLs), beide 29.10.2026. Bericht: https://claude.ai/artifact/4d9jFTDK2EbewV53cLymFN. Fehlalarme ohne Maßnahme: HTTPS-Weiterleitung, 110 kaputte Links und 37 Seiten mit 404 (jev-seo löst relative Links falsch auf), noindex auf Impressum und Datenschutz (gewollt). Reihenfolge nach Impact und Aufwand.
