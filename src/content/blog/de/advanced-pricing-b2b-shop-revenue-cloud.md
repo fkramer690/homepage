@@ -1,6 +1,6 @@
 ---
 title: "Advanced Pricing im B2B-Shop: Wann Revenue Cloud?"
-description: "Wann ein Salesforce-B2B-Shop Advanced Pricing powered by Revenue Cloud braucht: Lizenzen, Pricing Procedures, Vertragspreise und wann die SAP-Preisfindung reicht."
+description: "Wann ein B2B-Shop Advanced Pricing powered by Revenue Cloud braucht: Lizenzen, Pricing Procedures, Vertragspreise und wann die SAP-Preisfindung reicht."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de

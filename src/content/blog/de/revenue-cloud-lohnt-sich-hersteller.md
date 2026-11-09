@@ -1,6 +1,6 @@
 ---
 title: "Revenue Cloud für Hersteller: Wann lohnt es sich?"
-description: "Wann sich Revenue Cloud für Maschinen- und Komponentenhersteller lohnt, wann Sales Cloud und SAP reichen, was es kostet und was vor der Partnerauswahl feststehen muss."
+description: "Wann sich Revenue Cloud für Maschinenbauer und Zulieferer lohnt, wann Sales Cloud und SAP reichen, was es kostet und was vor der Partnerwahl feststeht."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de

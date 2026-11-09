@@ -1,6 +1,6 @@
 ---
 title: "Kundenpreise: SAP-Konditionen oder Salesforce Pricing?"
-description: "Sollen Händler- und Kundenpreise aus SAP-Konditionen kommen oder in Revenue Cloud neu entstehen? Drei Wege im Vergleich, mit Aufwand, Risiken und einer Entscheidungsregel."
+description: "Sollen Händler- und Kundenpreise aus SAP-Konditionen kommen oder in Revenue Cloud neu entstehen? Drei Wege mit Aufwand, Risiken und Entscheidungsregel."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de

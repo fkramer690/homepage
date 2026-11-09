@@ -1,6 +1,6 @@
 ---
 title: "Salesforce CPQ vs. Revenue Cloud: Die echten Unterschiede"
-description: "Was die CPQ- und Billing-Pakete aus SteelBrick von Revenue Cloud trennt: Datenmodell, Konfigurator, Preise, Verlängerungen, Abrechnung und warum es kein Upgrade ist."
+description: "Was CPQ und Billing aus SteelBrick von Revenue Cloud trennt: Datenmodell, Konfigurator, Preise, Verlängerungen, Abrechnung und warum es kein Upgrade ist."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de

@@ -1,6 +1,6 @@
 ---
 title: "Ein B2B-Store oder mehrere: Länder, Marken, Händler"
-description: "Wann ein Hersteller in Salesforce B2B Commerce mehrere Stores statt eines einzigen braucht: Store-Limits, enthaltene Storefronts, Käufergruppen und Aufwand pro Store."
+description: "Wann ein Hersteller in Salesforce B2B Commerce mehrere Stores statt einem braucht: Store-Limits, enthaltene Storefronts, Käufergruppen und Aufwand."
 pubDate: 2026-10-28
 updatedDate: 2026-11-09
 lang: de
