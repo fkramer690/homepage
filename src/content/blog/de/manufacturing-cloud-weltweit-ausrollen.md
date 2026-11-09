@@ -19,7 +19,7 @@ faq:
   - q: "Mit welchem Land sollte ein weltweiter Salesforce-Rollout beginnen?"
     a: "Mit einem großen Land mit angemessener Komplexität. Es muss groß genug sein, um das globale Template ernsthaft zu prüfen, und darf nicht so speziell sein, dass seine Sonderfälle das Template für alle anderen prägen."
   - q: "Wie viel darf ein Land vom globalen Template abweichen?"
-    a: "Mein Richtwert: Alle Länder arbeiten zu mindestens 80 Prozent identisch, und das Delta pro Land wird aktiv klein gehalten. Rechtliche Vorgaben sind gesetzt, alles andere wird begründet und entschieden."
+    a: "Mein Richtwert: Alle Länder arbeiten in den Kernprozessen und den Säulen der Implementierung zu mindestens 80 Prozent identisch, und das Delta pro Land wird aktiv klein gehalten. Rechtliche Vorgaben sind gesetzt, alles andere wird begründet und entschieden."
   - q: "Braucht ein Salesforce-Rollout Change Management?"
     a: "Ja. Ein Rollout mit dem Ziel, Prozesse zu harmonisieren, ändert die Arbeit von Menschen in jedem Land. Ich bringe Change Management deshalb immer wieder ins Gespräch, auch wenn der Kunde es zunächst nicht für nötig hält."
 draft: false
@@ -79,7 +79,7 @@ Ich nehme die Marke deshalb als eigene Frage ins Template auf, auch wenn das ers
 
 ## Jedes Land arbeitet zu mindestens 80 Prozent gleich
 
-Dafür gibt es einen Richtwert und einen Prozess. Der Richtwert: Alle Länder arbeiten zu mindestens 80 Prozent identisch, und pro Land wird versucht, das Delta zu minimieren. Andere Länder als das erste sollten nur marginale Abweichungen haben.
+Dafür gibt es einen Richtwert und einen Prozess. Der Richtwert: Alle Länder arbeiten zu mindestens 80 Prozent identisch, gemessen an den Kernprozessen und den Säulen der Implementierung, nicht an jeder Maske oder jedem Feld. Pro Land wird versucht, das Delta zu minimieren. Andere Länder als das erste sollten nur marginale Abweichungen haben.
 
 Der Prozess dazu ist einfach, braucht aber Disziplin:
 

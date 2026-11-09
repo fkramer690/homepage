@@ -19,7 +19,7 @@ faq:
   - q: "Which country should a global Salesforce rollout start with?"
     a: "With a large country of reasonable complexity. It has to be big enough to test the global template seriously and must not be so special that its edge cases shape the template for everyone else."
   - q: "How much may a country deviate from the global template?"
-    a: "My rule of thumb: all countries work at least 80 percent identically, and the delta per country is actively kept small. Legal requirements are given, everything else is justified and decided."
+    a: "My rule of thumb: all countries work at least 80 percent identically in their core processes and the main pillars of the implementation, and the delta per country is actively kept small. Legal requirements are given, everything else is justified and decided."
   - q: "Does a Salesforce rollout need change management?"
     a: "Yes. A rollout aimed at harmonizing processes changes how people work in every country. So I keep bringing change management up, even when the client does not think it is needed at first."
 draft: false
@@ -79,7 +79,7 @@ So I put the brand into the template as its own question, even if the first coun
 
 ## Every country works at least 80 percent the same way
 
-There is a rule of thumb and a process for it. The rule of thumb: all countries work at least 80 percent identically, and for each country the aim is to minimize the delta. Countries after the first should only show marginal deviations.
+There is a rule of thumb and a process for it. The rule of thumb: all countries work at least 80 percent identically, measured on the core processes and the main pillars of the implementation, not on every screen or field. For each country the aim is to minimize the delta. Countries after the first should only show marginal deviations.
 
 The process is simple but needs discipline:
 
