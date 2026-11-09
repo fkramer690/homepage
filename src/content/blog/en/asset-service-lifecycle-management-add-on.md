@@ -43,7 +43,7 @@ Salesforce sells Field Service today as Field Service and Operations. Until 5 No
 | Depot Repair | Creates work orders from return order lines for repairs in a depot | Repair center |
 | Advanced Exchange and Service Parts Return | Handles return and replacement of defective parts | Parts desk |
 | Inventory functions | Allocation, batches, search and transfer, counts, replenishment | Warehouse, technicians |
-| Timesheets and Labor Cost Optimization | Timesheets with labour rules | Technicians, payroll |
+| Timesheets and Labor Cost Optimization | Timesheets with labor rules | Technicians, payroll |
 | Agentforce for ASLM | Agent templates for asset service, inventory and upsell; they need separate Agentforce licenses and credits | Several roles |
 
 Two details matter for planning. Work Order Estimation runs as a configurable flow, according to the [setup guide](https://help.salesforce.com/s/articleView?id=sf.aslm_woe_setup_configure.htm&language=en_US&type=5). Field Service is required; Omnistudio document generation for the proposal and Salesforce Pricing for coverage-based discounts are optional. With pricing it becomes a real setup project with pricing procedures and lookup tables. And Help lists the ASLM features as [available with Field Service and several industry clouds](https://help.salesforce.com/s/articleView?id=xcloud.aslm_editions.htm&language=en_US&type=5), Manufacturing Cloud and Automotive Cloud among them, in Enterprise, Unlimited and Developer Editions.

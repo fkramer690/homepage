@@ -52,11 +52,11 @@ Note the exact app version with every mobile ticket, together with platform, ope
 
 The [Field Service Mobile Beta and Early Adopters Program](https://developer.salesforce.com/tools/field-service-mobile-beta) is open to customers. According to Salesforce, beta releases are available one month before major releases and one week before as-needed patch releases. The 262.3 dates match that: beta on 26 August, release on 4 September.
 
-Two limits matter for planning. First, the beta is tied to the matching preview: according to the 260.0 post, that beta could only be used with Spring '26 sandbox orgs. Technicians cannot test it in their daily work against production. Second, Salesforce describes the beta as a way to test compatibility and prepare your own customisations ahead of the rollout to workers, so it belongs on test devices.
+Two limits matter for planning. First, the beta is tied to the matching preview: according to the 260.0 post, that beta could only be used with Spring '26 sandbox orgs. Technicians cannot test it in their daily work against production. Second, Salesforce describes the beta as a way to test compatibility and prepare your own customizations ahead of the rollout to workers, so it belongs on test devices.
 
 One date belongs in every calendar now: according to the [release note](https://help.salesforce.com/s/articleView?id=release-notes.rn_fieldservice_264_mobile_refresh_token.htm&language=en_US&type=5), version 264.1 and later use refresh token rotation, and devices on older versions face periodic forced logouts from 18 January 2027, losing unsynced work.
 
-Debug builds are the developers' tool. Salesforce offers them for major and patch releases, to test your own customisations in sandboxes. They run in the Android emulator or the iOS simulator, so they need a developer machine and not a technician's device.
+Debug builds are the developers' tool. Salesforce offers them for major and patch releases, to test your own customizations in sandboxes. They run in the Android emulator or the iOS simulator, so they need a developer machine and not a technician's device.
 
 ## Which test routine should run for each version?
 
@@ -77,7 +77,7 @@ Write the steps as scripts with expected results, the same way as test cases for
 
 ## Who owns app versions and devices?
 
-App versions sit between two teams. The Salesforce team knows the org and the customisations. Device management knows the devices, the operating system versions and the rules for app updates. Neither of them sees the whole picture alone.
+App versions sit between two teams. The Salesforce team knows the org and the customizations. Device management knows the devices, the operating system versions and the rules for app updates. Neither of them sees the whole picture alone.
 
 I would make one person responsible for each app version, usually the release manager of the Salesforce program. That person follows the release posts, starts the beta test, collects results and decides together with device management whether anything has to wait. Operating system updates on the devices belong in the same plan, because a major iOS or Android update can change sign-in, background processing and offline behavior. Before each test cycle, compare the device fleet with Salesforce's list of supported operating systems.
 

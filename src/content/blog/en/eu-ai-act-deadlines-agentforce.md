@@ -70,10 +70,10 @@ Annex III lists stand-alone high-risk uses. In a manufacturer's Salesforce org, 
 
 - **In scope, 4(a) recruitment:** ranking candidates, scoring applicant answers, targeted job ads.
 - **In scope, 4(b) work relationships:** assigning shifts or on-call windows based on worker performance, evaluating performance.
-- **Exempt under Art. 6(3):** scheduling interviews, acknowledgement emails, organising CV data, as narrow procedural or preparatory tasks.
+- **Exempt under Art. 6(3):** scheduling interviews, acknowledgment emails, organizing CV data, as narrow procedural or preparatory tasks.
 - **Never exempt:** systems that profile natural persons.
 
-The field service angle is easy to miss. 4(b) covers allocating tasks based on individual behavior or personal traits. Assigning jobs by certified skill, territory and availability is not automatically high-risk, but skills are personal characteristics, so it needs the same check. Ranking technicians by first-time fix rate and assigning work accordingly comes close to allocating tasks based on individual behavior, although whether a rule-based optimiser is an AI system at all is a separate question. How the engine decides is in [scheduling automation in Field Service](../salesforce-field-service-scheduling-automation/).
+The field service angle is easy to miss. 4(b) covers allocating tasks based on individual behavior or personal traits. Assigning jobs by certified skill, territory and availability is not automatically high-risk, but skills are personal characteristics, so it needs the same check. Ranking technicians by first-time fix rate and assigning work accordingly comes close to allocating tasks based on individual behavior, although whether a rule-based optimizer is an AI system at all is a separate question. How the engine decides is in [scheduling automation in Field Service](../salesforce-field-service-scheduling-automation/).
 
 If an agent is high-risk, [Art. 26](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26) gives you as deployer concrete duties from 2 December 2027: use it according to the provider's instructions, assign human oversight to competent people with authority, check the input data you control, monitor operation, keep automatically generated logs for at least six months unless other law provides otherwise, and inform workers' representatives and affected workers before use. In Germany the works council is involved much earlier anyway; that path is in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
 
