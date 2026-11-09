@@ -38,6 +38,7 @@ export const site = {
     'https://www.malt.com/profile/fabiankramer1',
     'https://salesforcebreak.com/author/fabiankramerbaaa9dc933/',
     'https://sessionize.com/fabian-kramer/',
+    'https://salesforcedictionary.com/u/fabian_kramer',
   ],
   // Profiles of the company, only listed as sameAs in the structured data.
   companyProfiles: [
