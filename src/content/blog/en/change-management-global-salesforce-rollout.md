@@ -9,15 +9,15 @@ topic: governance
 categories: [change-management, architecture, manufacturing-cloud]
 coAuthor: juliane
 contactBrief: change
-tags: [change management, rollout, global template, harmonisation]
+tags: [change management, rollout, global template, harmonization]
 takeaways:
   - "Change management belongs in every wave of a global rollout, not only the first, because different habits change in every country."
-  - "Every country needs a sponsor from local management. The global sponsor is not enough if the country does not share the reason for harmonisation."
+  - "Every country needs a sponsor from local management. The global sponsor is not enough if the country does not share the reason for harmonization."
   - "Per country you need at least key users, communication before go-live and a look at usage afterwards."
   - "The first wave is also the test for change management: whatever gets stuck there is adjusted before the next wave."
 faq:
   - q: "Why does a global template need change management?"
-    a: "Because harmonisation means that processes, reports and habits change in every country. A sales team that used to track its volumes in its own spreadsheet does not automatically work with the new process just because it is live."
+    a: "Because harmonization means that processes, reports and habits change in every country. A sales team that used to track its volumes in its own spreadsheet does not automatically work with the new process just because it is live."
   - q: "Who is responsible for the rollout in the country?"
     a: "A sponsor from local management who visibly backs the change, and key users who know the template. The central project team supports them but cannot replace these roles."
   - q: "Should communication be in the local language?"
@@ -91,4 +91,4 @@ Let key users of the next country work for a few days in the country of the curr
 
 ## Name a sponsor per country before planning starts
 
-Name a sponsor for every country before the country enters planning, and have them review the list of country deviations. Define key users per country and agree their time with their managers, as described in [key users in Salesforce rollouts](../salesforce-key-user-network/). After the first country, plan a review before the second one starts. A country without a named sponsor does not enter planning, even when the schedule is tight. How we set this up in programmes is described under [change management for Salesforce programmes](../../services/change-management-salesforce/).
+Name a sponsor for every country before the country enters planning, and have them review the list of country deviations. Define key users per country and agree their time with their managers, as described in [key users in Salesforce rollouts](../salesforce-key-user-network/). After the first country, plan a review before the second one starts. A country without a named sponsor does not enter planning, even when the schedule is tight. How we set this up in programs is described under [change management for Salesforce programs](../../services/change-management-salesforce/).

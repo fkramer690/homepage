@@ -13,7 +13,7 @@ takeaways:
   - "Work types are templates for kinds of jobs with duration and skills, and they can create the service appointment automatically."
   - "The hotline decides with entitlement and triage checklist whether remote help, a parts shipment or a technician solves the problem."
   - "Maintenance plans create work orders without a case. Planned and unplanned work therefore compete for the same technicians."
-  - "Whoever works cases in the contact centre cannot do that on a Dispatcher or Technician licence. The record chain decides the licence mix too."
+  - "Whoever works cases in the contact center cannot do that on a Dispatcher or Technician license. The record chain decides the license mix too."
 faq:
   - q: "What is the difference between a case and a work order in Salesforce?"
     a: "A case records the customer's problem and the communication around it. A work order describes the job that has to be done in the field. A work order can reference the case it belongs to."
@@ -78,13 +78,13 @@ Planned maintenance enters through a different door. According to the [Trailhead
 
 The consequence: planned and unplanned work land in the same dispatch queue and compete for the same technicians. If the planned maintenance for the next four weeks is already booked, a machine-down call on Tuesday has to push something out. Priorities and service objectives decide what moves, and somebody has to own that rule.
 
-## The record chain also decides the licence mix
+## The record chain also decides the license mix
 
 ```hinweis achtung
-According to the [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/), Dispatcher and Technician licences may not be used for contact centre, call centre or customer case management. Whoever works cases needs Service Cloud or Field Service Plus.
+According to the [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/), Dispatcher and Technician licenses may not be used for contact center, call center or customer case management. Whoever works cases needs Service Cloud or Field Service Plus.
 ```
 
-In practice this hits the small service team where the dispatcher also answers the hotline. That person needs Field Service Plus at $230 instead of Dispatcher at $175 (price list, October 2026). The full role matrix is in [Salesforce Field Service licences: who needs which?](../field-service-licences-by-role/).
+In practice this hits the small service team where the dispatcher also answers the hotline. That person needs Field Service Plus at $230 instead of Dispatcher at $175 (price list, October 2026). The full role matrix is in [Salesforce Field Service licenses: who needs which?](../field-service-licences-by-role/).
 
 ## Worked example: a "machine down" call
 
@@ -109,4 +109,4 @@ Steps 3 and 4 are where the data model pays off. Without the work type, the agen
 
 ## Map your three most common call types
 
-Draw the path for your three most common call types, from the first call to the closed work order, and write down who creates which record. That drawing answers the licence question and shows which work types you need. How this fits into the business case is covered in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
+Draw the path for your three most common call types, from the first call to the closed work order, and write down who creates which record. That drawing answers the license question and shows which work types you need. How this fits into the business case is covered in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).

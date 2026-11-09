@@ -51,7 +51,7 @@ That check is a short script, about an afternoon of work. Against it stands pipe
 
 ## The partner's own checks are not enough
 
-The [2025 DORA report](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) found that AI adoption increases delivery throughput but still has a negative relationship with delivery stability. Its explanation: "Without robust control systems, like strong automated testing, mature version control practices, and fast feedback loops, an increase in change volume leads to instability." In a Salesforce programme, the pipeline is that control system.
+The [2025 DORA report](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) found that AI adoption increases delivery throughput but still has a negative relationship with delivery stability. Its explanation: "Without robust control systems, like strong automated testing, mature version control practices, and fast feedback loops, an increase in change volume leads to instability." In a Salesforce program, the pipeline is that control system.
 
 Salesforce's own skills for Claude Code already check a lot on the developer's machine. According to the [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills), they reject database queries inside loops, run Code Analyzer and the Apex tests and ensure 75 percent coverage before they finish. The same post still tells developers to "run Salesforce Code Analyzer manually as an extra safety check".
 
@@ -69,7 +69,7 @@ Rules for agents | Unrequested version changes, hard-coded addresses | Yes * | C
 Test deployment | Invented fields, missing dependencies, failing tests | Yes * | Pipeline, integration sandbox
 ApexGuru | Slow code under real load | No, report only | Release manager per release
 Merge block | Merging a red build, even by an admin | Yes * | Code owner on the client side
-note: Assumed setup for a programme with several partners. Thresholds and owners belong in the partner contract.
+note: Assumed setup for a program with several partners. Thresholds and owners belong in the partner contract.
 ```
 
 **Code analysis.** [Salesforce Code Analyzer](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engines.html) checks Apex, Lightning components and flows for known security and performance problems. By default it only writes a report. I would let it block from severity High on day one and report everything below. Blocking everything on an org with ten years of Apex produces hundreds of old findings, and partners start switching rules off instead of fixing them.
@@ -103,7 +103,7 @@ ApexGuru and org-specific rules such as the version check are not part of the do
 
 ## Write the checks into every partner contract
 
-Setting up these checks for programmes with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work. The order matters, because a partner can switch off any threshold as long as the pipeline belongs to them.
+Setting up these checks for programs with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work. The order matters, because a partner can switch off any threshold as long as the pipeline belongs to them.
 
 1. **Own the pipeline.** Repository, pipeline and thresholds sit with you, as described in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
 2. **Let code analysis block from High** and publish the full report on every pull request.

@@ -73,7 +73,7 @@ The second requirement is setup. According to Trailhead, the console is switched
 
 Trailhead calls the move low risk: customisations applied to the Classic Dispatch Console continue to work in the Scheduling Console, and the Gantt state and user settings carry over. I would still test every custom action and every Visualforce page in a sandbox, because custom code is where surprises show up first.
 
-Both consoles are not identical yet. In a [Trailblazer Community thread](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pMqC00AK) from May 2026, a customer reported after the Summer '26 upgrade that colour palettes were missing and that the new console offered views from one day to one week, while the classic Gantt also had views such as Utilization and Long-Term. A Salesforce team member answered that both consoles are not 100 percent at parity yet and that these features are not forgotten, without a date.
+Both consoles are not identical yet. In a [Trailblazer Community thread](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pMqC00AK) from May 2026, a customer reported after the Summer '26 upgrade that color palettes were missing and that the new console offered views from one day to one week, while the classic Gantt also had views such as Utilization and Long-Term. A Salesforce team member answered that both consoles are not 100 percent at parity yet and that these features are not forgotten, without a date.
 
 For a manufacturer this is the important point. Dispatchers who plan annual maintenance weeks ahead or watch utilization across a whole territory work in exactly those long views. Dispatchers who mostly handle breakdowns for today and tomorrow barely miss them. Which group you have decides how fast the move can go.
 
@@ -83,7 +83,7 @@ The figures are assumed. A component maker with four dispatchers and three servi
 
 ```schritte
 Inventory | 1 week · admin and dispatchers
-  The admin lists every customisation of the Classic Dispatch Console: custom actions, Visualforce pages, filters, colour rules. Each dispatcher writes down which Gantt views they use every day.
+  The admin lists every customisation of the Classic Dispatch Console: custom actions, Visualforce pages, filters, color rules. Each dispatcher writes down which Gantt views they use every day.
 Pilot | 6 weeks · two dispatchers
   Two dispatchers get the permission set and plan one territory in the Scheduling Console. The other two stay on the Classic Dispatch Console for the remaining territories.
 Weekly check | weekly · pilot dispatchers

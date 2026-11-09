@@ -44,6 +44,12 @@ faq:
     a: "Sales Cloud und Service Cloud gehören zu fast jedem Enterprise-Projekt. Field Service lohnt sich am meisten bei vielen kurzen Einsätzen, bei denen Routen- und Terminoptimierung die Kennzahlen verbessert, weniger bei wenigen langen Projekten. Experience Cloud passt zu kundennahen Prozessen und Self-Service. Manufacturing Cloud ergibt nur bei klarem Fit Sinn, der im ROI-Case gerechnet ist."
   - q: "Was ist ein Entscheidungslog und warum ist es wichtig?"
     a: "Ein Entscheidungslog hält jede Architekturentscheidung mit ihren Optionen, den Gründen für die Wahl und ihren Folgen fest. Fragt zwei Jahre später jemand, warum ein Prozess so gebaut wurde, steht die Antwort dort, auch wenn die Beteiligten längst weitergezogen sind."
+  - q: "Ersetzen Sie unseren Umsetzungspartner?"
+    a: "Nein. Ihre Partner bauen weiter, ich steuere sie auf Kundenseite nach gemeinsamen Regeln. Wenn Sie einen Partner ablösen wollen, helfe ich dabei, ohne Wissensverlust und ohne Verzögerung im Programm."
+  - q: "Wie vermeiden Sie, dass Sie zum Engpass werden?"
+    a: "Ich arbeite transparent. Entscheidungen, Standards und Review-Kriterien sind so dokumentiert, dass Ihr Team und Ihre Partner sie sehen, damit niemand auf mich warten muss und die Arbeit nicht an mir hängt."
+  - q: "Arbeiten Sie vor Ort oder remote?"
+    a: "Beides. Ich arbeite vor Ort mit Ihren Teams und remote, je nachdem, was die Phase des Programms braucht."
 blogTags: [architecture, architektur, data 360, data governance, agentforce, field service]
 readMore: [salesforce-well-architected-2026, revenue-cloud-vs-manufacturing-cloud-commerce, manufacturing-cloud-worth-it, salesforce-editions-core-advanced-max, architecture-decision-log, permission-concept-permission-sets, duplicates-master-data-cleanup]
 masterclass: manufacturing-cloud
@@ -65,7 +71,7 @@ basis: Sales Cloud, Service Cloud | In fast jedem Enterprise-Projekt gesetzt
 + Field Service | Passt bei vielen kurzen Einsätzen, bei denen Routen- und Terminoptimierung die Kennzahlen deutlich verbessert. Bei wenigen langen Projekten viel kleinerer Nutzen.
 + Experience Cloud | Passt zu kundennahen Prozessen. Self-Service-Portale sparen interne Kapazität.
 + Manufacturing Cloud | Nur wenn die Funktionen dazu passen, wie das Unternehmen verkauft. Der Fit wird im ROI-Case gerechnet.
-fazit: Sales Cloud und Service Cloud sind gesetzt, entschieden wird bei den Add-ons.
+fazit: Sales Cloud und Service Cloud sind meist gesetzt, entschieden wird bei den Add-ons.
 ```
 
 Bei Field Service zählen neben der Art der Arbeit auch die Standorte und die Dauer der Einsätze. Über die aktuellen mobilen Funktionen habe ich in [Field Service Mobile im Außendienst](../../blog/salesforce-field-service-mobile-aussendienst/) geschrieben. Experience Cloud spart Kapazität, weil Kunden Antworten selbst finden und Anfragen selbst stellen. Den Fit der Manufacturing Cloud rechne ich im ROI-Case, den ich auf der Seite [Make-or-buy und Lizenzen](../make-or-buy-lizenzen/) beschreibe.

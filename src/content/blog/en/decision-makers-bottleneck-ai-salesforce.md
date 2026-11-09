@@ -1,14 +1,14 @@
 ---
 title: "Decision makers as the bottleneck in AI Salesforce projects"
 metaTitle: "Client decisions slow AI-driven Salesforce projects"
-description: "With coding agents the team builds faster than the client decides. Why decision makers become the bottleneck and how to organise decisions instead."
+description: "With coding agents the team builds faster than the client decides. Why decision makers become the bottleneck and how to organize decisions instead."
 pubDate: 2026-11-05
 lang: en
 slug: decision-makers-bottleneck-ai-salesforce
 translationKey: decision-makers-bottleneck-ai
 topic: governance
 categories: [architecture, ai, change-management]
-tags: [ai-native delivery, product owner, programme management, decisions, change management, manufacturing]
+tags: [ai-native delivery, product owner, program management, decisions, change management, manufacturing]
 takeaways:
   - "When an agent builds a story in a day but the answer to a question takes three, waiting for the client sets the pace of the project."
   - "Decision makers are tied up in daily business, processes are not agreed internally, and rarely does one person know the users' work and own the scope."
@@ -33,7 +33,7 @@ In an AI-driven Salesforce project the development team is no longer the bottlen
 
 A project is as fast as its slowest step. As long as developers needed weeks for a stream, nobody noticed that questions to the business sat for a few days. Coding agents shrink the build time, the waiting time stays. I describe the flow in which the agent does the legwork and people decide at fixed gates in [AI-native Salesforce delivery process](../ai-native-salesforce-delivery-process/). It is my target picture; I already use single steps, not yet end to end. Even in that sketch, three of the five gates sit with the client.
 
-The DORA report 2025 calls AI an amplifier: it magnifies the strengths of good organisations and the dysfunctions of the others. Google's [DORA post from December 2025](https://cloud.google.com/blog/products/ai-machine-learning/from-adoption-to-impact-putting-the-dora-ai-capabilities-model-to-work?hl=en) warns that speed gains in single steps only pile up work in front of the next one. An older figure from the Standish Group shows how much decision speed decides projects:
+The DORA report 2025 calls AI an amplifier: it magnifies the strengths of good organizations and the dysfunctions of the others. Google's [DORA post from December 2025](https://cloud.google.com/blog/products/ai-machine-learning/from-adoption-to-impact-putting-the-dora-ai-capabilities-model-to-work?hl=en) warns that speed gains in single steps only pile up work in front of the next one. An older figure from the Standish Group shows how much decision speed decides projects:
 
 ```kennzahlen
 75 % | of projects with decisions in hours or days were successful
@@ -59,7 +59,7 @@ Many of the team's questions are ones the company has not answered for itself ye
 
 ### The person who can do both is rare
 
-A product owner needs two things that pull apart in many organisations. They need to be close to the daily work of dispatchers or inside sales, or they decide past what those people need. And they need the mandate to cut scope and defend priorities against other departments. People close to daily business usually lack that mandate. People who have it are usually far from daily work.
+A product owner needs two things that pull apart in many organizations. They need to be close to the daily work of dispatchers or inside sales, or they decide past what those people need. And they need the mandate to cut scope and defend priorities against other departments. People close to daily business usually lack that mandate. People who have it are usually far from daily work.
 
 ## More pressure on decision makers speeds up nothing
 
@@ -67,7 +67,7 @@ Management hears that AI speeds up development and expects shorter, cheaper proj
 
 A worked example with assumed figures shows why looking at development alone misleads. A story used to take five days of development and testing. On top, the business has to answer three of the team's questions, each of which waits two days: six days. Lead time is eleven days. With a coding agent, build and review drop to a day and a half, lead time to seven and a half. That is a gain. If the next tool leap halves the build time again, lead time only drops to just under seven days, because 80 percent of it is waiting. Costs behave the same way: the partner books fewer developer hours, but the hours for workshops, alignment and rework after late decisions stay.
 
-For management this means the saving at the partner is only half of the calculation. The other half is time from your own staff that never stood in a budget, because it was spread across a long project. With coding agents it falls into a few weeks and becomes visible. If you do not plan for it, you get a project that is cheaper on paper and takes longer in the calendar. How to measure whether a programme gets faster with AI is in [Measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
+For management this means the saving at the partner is only half of the calculation. The other half is time from your own staff that never stood in a budget, because it was spread across a long project. With coding agents it falls into a few weeks and becomes visible. If you do not plan for it, you get a project that is cheaper on paper and takes longer in the calendar. How to measure whether a program gets faster with AI is in [Measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
 
 ## What helps against the bottleneck at the client?
 
@@ -96,7 +96,7 @@ Steering committee | Conflicts between departments, releasing people * | Daily d
 note: A key user network only takes load off the product owner when it has its own rights.
 ```
 
-How to build such a network is in [Salesforce key user network](../salesforce-key-user-network/). For the decision makers their own role changes, and that is a change like any other in the project. It needs communication and backing from the top. That is why it belongs in the [change management of my Salesforce programmes](../../services/change-management-salesforce/), which I run together with Juliane Winterscheid.
+How to build such a network is in [Salesforce key user network](../salesforce-key-user-network/). For the decision makers their own role changes, and that is a change like any other in the project. It needs communication and backing from the top. That is why it belongs in the [change management of my Salesforce programs](../../services/change-management-salesforce/), which I run together with Juliane Winterscheid.
 
 ## First step: measure the waiting time for decisions for two weeks
 
@@ -111,4 +111,4 @@ Show it to the steering committee | next meeting
   Build time and waiting time side by side, with the request for released time and deadlines.
 ```
 
-The analysis usually also shows which processes are not settled internally: that is where the questions pile up. Those processes are the first candidates for clarification before the next sprint, and the measurement is part of my [programme management for Salesforce programmes](../../services/program-management-nearshore/).
+The analysis usually also shows which processes are not settled internally: that is where the questions pile up. Those processes are the first candidates for clarification before the next sprint, and the measurement is part of my [program management for Salesforce programs](../../services/program-management-nearshore/).

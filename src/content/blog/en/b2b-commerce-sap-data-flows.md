@@ -13,7 +13,7 @@ takeaways:
   - "Data flows four ways: master data in by batch, live calls during cart and checkout, the order out to SAP, and status, delivery and invoice back."
   - "Accounts, products, categories, price books and entitlements are copied into Salesforce; the product import reads CSV files as asynchronous jobs."
   - "Price, stock, tax, shipping and the check before an order is placed run through extension points such as Commerce_Domain_Pricing_Service."
-  - "Since Winter '24, Salesforce recommends extensions over the older checkout integrations. Payments cannot be customised with an extension."
+  - "Since Winter '24, Salesforce recommends extensions over the older checkout integrations. Payments cannot be customized with an extension."
   - "Every interface that still logs in to Salesforce with username and password has to move to another OAuth flow before 20 February 2027."
 faq:
   - q: "Which data does Salesforce B2B Commerce need from SAP?"
@@ -50,7 +50,7 @@ Everything that changes less often than a buyer clicks belongs in a copy. That c
 
 For products Salesforce offers a [product import API](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-import-apis.html). It reads a CSV file whose column headings map to product, category and price book information, and it runs as an asynchronous job with a status you can query. Price books are mapped through the import settings of the same job. That is enough for a first load and for regular updates from a middleware that writes the file.
 
-Buyer groups and entitlement policies decide who sees which product. They are rarely in SAP as such. They have to be derived, for example from sales organisation, customer group or brand. Write that derivation down as a rule, because otherwise someone maintains buyer groups by hand in Salesforce and the store drifts away from SAP within months.
+Buyer groups and entitlement policies decide who sees which product. They are rarely in SAP as such. They have to be derived, for example from sales organization, customer group or brand. Write that derivation down as a rule, because otherwise someone maintains buyer groups by hand in Salesforce and the store drifts away from SAP within months.
 
 Who owns which object is the question my [object ownership matrix](../salesforce-object-ownership-matrix/) answers. For a store I add one column: copied or live.
 
@@ -72,7 +72,7 @@ My rule: call live where a wrong value costs money or trust, copy everything els
 
 The [integration architecture page](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-integration-architecture.html) is clear: since Winter '24 Salesforce has offered Commerce extensions for pricing, inventory, shipping, tax and other services and recommends them over the older checkout integrations framework. The older framework is still supported, and the page names no date for retiring it.
 
-There is one exception. According to the [extensions guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html), payments cannot be customised with an extension yet; for those the integrations remain the way. In practice that rarely touches SAP, because dealers usually buy on account with a purchase order.
+There is one exception. According to the [extensions guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html), payments cannot be customized with an extension yet; for those the integrations remain the way. In practice that rarely touches SAP, because dealers usually buy on account with a purchase order.
 
 For new stores I would build every SAP call as an extension. Registration and store mapping run through the Salesforce CLI, so they can live in the repository and the pipeline. More on that in [Commerce extensions: custom code that survives updates](../commerce-extensions-custom-code/).
 

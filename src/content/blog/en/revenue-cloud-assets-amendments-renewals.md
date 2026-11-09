@@ -44,7 +44,7 @@ An interface from SAP should never overwrite quantities on lifecycle-managed ass
 
 ## How does an amendment work?
 
-Every amendment is a quote, and every quote becomes an order. Trailhead's example: a customer has five licences and needs eight more. The rep selects the asset, clicks Amend and sets an amendment date, the day the change takes effect. Revenue Cloud creates an amendment quote with three quantities:
+Every amendment is a quote, and every quote becomes an order. Trailhead's example: a customer has five licenses and needs eight more. The rep selects the asset, clicks Amend and sets an amendment date, the day the change takes effect. Revenue Cloud creates an amendment quote with three quantities:
 
 ```kennzahlen
 5 | Start quantity: what the customer has today
@@ -72,9 +72,9 @@ Decide early who triggers renewals. Automatic renewal suits service contracts th
 
 ## How do Revenue Cloud assets fit with Field Service?
 
-Field Service works on the same Asset object. There the asset is the machine at the customer site, with serial number, a hierarchy of assemblies through the Parent Asset field, linked work orders and maintenance plans. Which data Field Service needs is described in [Field Service master data](../salesforce-field-service-master-data/), and how service contracts and maintenance plans hang on assets in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/).
+Field Service works on the same Asset object. There the asset is the machine at the customer site, with serial number, a hierarchy of assemblies through the Parent Asset field, linked work orders and maintenance plans. Which data Field Service needs is described in [Field Service master data](../salesforce-field-service-master-data/), and how service contracts and maintenance plans hang on assets in [modeling maintenance contracts](../salesforce-field-service-maintenance-contracts/).
 
-The two views count differently. Revenue Cloud counts quantities: Trailhead's five licences are one asset with quantity 5. Field Service needs one record per serial number, because a technician repairs one machine. Two models are possible:
+The two views count differently. Revenue Cloud counts quantities: Trailhead's five licenses are one asset with quantity 5. Field Service needs one record per serial number, because a technician repairs one machine. Two models are possible:
 
 | | One record per machine | Separate records, linked |
 |---|---|---|
@@ -95,4 +95,4 @@ There are two ways out. Either you sell monitoring per machine, one line per ser
 
 ## List the products that live on after the order
 
-List the products you sell that live on after the order: subscriptions, service contracts, software licences, monitoring. For each one decide whether it is counted or tied to a serial number, who may amend and renew it, and which record Field Service uses. Write the decision into the ownership matrix before the first sprint on either cloud. The chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/) shows where assets sit between quote and SAP.
+List the products you sell that live on after the order: subscriptions, service contracts, software licenses, monitoring. For each one decide whether it is counted or tied to a serial number, who may amend and renew it, and which record Field Service uses. Write the decision into the ownership matrix before the first sprint on either cloud. The chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/) shows where assets sit between quote and SAP.

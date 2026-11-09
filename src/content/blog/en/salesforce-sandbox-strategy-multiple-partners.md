@@ -1,6 +1,6 @@
 ---
 title: "Salesforce sandbox strategy for multiple partners"
-description: "Which sandboxes a Salesforce programme with several partners needs, who owns them, which data goes into them and how often you should refresh them."
+description: "Which sandboxes a Salesforce program with several partners needs, who owns them, which data goes into them and how often you should refresh them."
 pubDate: 2026-10-29
 lang: en
 slug: salesforce-sandbox-strategy-multiple-partners
@@ -15,7 +15,7 @@ takeaways:
   - "A refresh overwrites everything in the sandbox. Whatever is not in Git is gone afterwards, so only the pipeline moves changes through the environments."
   - "All sandboxes belong to the client and sit in one list with purpose, owner and refresh date."
 faq:
-  - q: "How many sandboxes does a Salesforce programme need?"
+  - q: "How many sandboxes does a Salesforce program need?"
     a: "One development environment per developer, one shared integration sandbox, a Partial Copy for interface tests and a Full Copy for UAT. More environments only pay off when each has its own purpose and an owner."
   - q: "How often can a Full Copy sandbox be refreshed?"
     a: "Salesforce allows a Full Copy refresh every 29 days, a Partial Copy refresh every 5 days and a Developer sandbox refresh once a day."
@@ -82,7 +82,7 @@ So I keep a simple list that the client owns:
 - Which external systems it is connected to
 - Next planned refresh
 
-A sandbox without an entry in this list gets deleted after notice. That sounds strict, but it saves licences and stops forgotten environments full of customer data from lying around. What AI coding agents may read in such environments is covered in [sandbox customer data and AI coding agents](../sandbox-customer-data-ai-coding-agents/).
+A sandbox without an entry in this list gets deleted after notice. That sounds strict, but it saves licenses and stops forgotten environments full of customer data from lying around. What AI coding agents may read in such environments is covered in [sandbox customer data and AI coding agents](../sandbox-customer-data-ai-coding-agents/).
 
 ## How often should you refresh your sandboxes?
 

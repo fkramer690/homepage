@@ -30,7 +30,7 @@ In Salesforce UAT (user acceptance testing) the business checks whether a new fe
 
 ## What is UAT, and what is it not?
 
-A Salesforce programme has several kinds of testing that often get mixed up:
+A Salesforce program has several kinds of testing that often get mixed up:
 
 | Test | Who | Question |
 |---|---|---|
@@ -44,7 +44,7 @@ UAT is the only stage in which the people who will later work with the system do
 
 ## With several partners, UAT often turns into a bug hunt
 
-In many programmes partner deliveries are accepted without a technical review, and the problems only show up in UAT or in production. With several partners two effects add to that:
+In many programs partner deliveries are accepted without a technical review, and the problems only show up in UAT or in production. With several partners two effects add to that:
 
 - **Everyone tests their own part.** Partner A tests the quoting process, partner B the order handover to the ERP. The path from quote to order in the ERP is first tested by the business in UAT.
 - **UAT is the first shared state.** If every partner tests in their own environment, the changes only meet in the UAT sandbox. A [sandbox strategy with one shared integration environment](../salesforce-sandbox-strategy-multiple-partners/) brings that moment forward.
@@ -92,7 +92,7 @@ Write down in the partner contract what "accepted" means: who agrees, in which f
 
 ## Automation covers what comes before and after UAT
 
-UAT itself cannot be automated, because it is about the judgement of business users. What comes before and after it can be: regression tests for the most important processes that run with every release, and preparing the sandbox after a refresh. A good start are the five processes where most money is at stake, such as quote, order and invoice. The more of this the pipeline takes over, the more time testers have for the new features. This matters most for mobile apps in field service, because every app version can change how technicians work, see [testing Field Service app updates](../field-service-mobile-app-updates-testing/).
+UAT itself cannot be automated, because it is about the judgment of business users. What comes before and after it can be: regression tests for the most important processes that run with every release, and preparing the sandbox after a refresh. A good start are the five processes where most money is at stake, such as quote, order and invoice. The more of this the pipeline takes over, the more time testers have for the new features. This matters most for mobile apps in field service, because every app version can change how technicians work, see [testing Field Service app updates](../field-service-mobile-app-updates-testing/).
 
 ## Separate system test and acceptance test in the next release
 

@@ -15,12 +15,12 @@ takeaways:
   - "The metrics help improve the release process, not rank partners. If you measure partners by them, you get polished numbers."
 faq:
   - q: "What are DORA metrics?"
-    a: "DORA metrics are key figures from the research of the DevOps Research and Assessment programme. They measure how fast changes reach production and how often they cause problems."
+    a: "DORA metrics are key figures from the research of the DevOps Research and Assessment program. They measure how fast changes reach production and how often they cause problems."
   - q: "How many DORA metrics are there?"
     a: "For a long time there were four: deployment frequency, lead time for changes, change fail rate and recovery time. In 2024 the deployment rework rate was added, the share of unplanned deployments to fix bugs."
   - q: "Can you measure DORA metrics in Salesforce?"
     a: "Yes, if changes run through Git and a pipeline. Tools such as sfdx-hardis provide a report on the metrics; without a pipeline there is no reliable data."
-  - q: "Which DORA metric matters most for Salesforce programmes?"
+  - q: "Which DORA metric matters most for Salesforce programs?"
     a: "For the steering committee usually the change fail rate, because it shows how often a release disrupts operations. For the team the lead time, because it shows where work is waiting."
 draft: false
 ---
@@ -29,7 +29,7 @@ DORA metrics show IT leadership whether Salesforce releases are getting faster a
 
 ## What are DORA metrics?
 
-DORA stands for DevOps Research and Assessment, a research programme that has studied since 2014 what makes good software delivery. Today the metrics are split into two groups ([dora.dev: History of DORA's software delivery metrics](https://dora.dev/guides/dora-metrics/history/)):
+DORA stands for DevOps Research and Assessment, a research program that has studied since 2014 what makes good software delivery. Today the metrics are split into two groups ([dora.dev: History of DORA's software delivery metrics](https://dora.dev/guides/dora-metrics/history/)):
 
 | Metric | Meaning | Group |
 |---|---|---|
@@ -60,11 +60,11 @@ Changes made directly in the production org do not show up in any Git statistics
 
 ## Salesforce has its own traps that distort the numbers
 
-Salesforce programmes have a few peculiarities that distort the numbers:
+Salesforce programs have a few peculiarities that distort the numbers:
 
-- **Fixed release dates.** If you deploy once a month, most of the lead time is waiting for the next date. That is a decision of the programme, not a problem of the developers. The number still shows what this decision costs.
+- **Fixed release dates.** If you deploy once a month, most of the lead time is waiting for the next date. That is a decision of the program, not a problem of the developers. The number still shows what this decision costs.
 - **Manual steps.** A deployment counts as successful, but afterwards someone has to activate three flows by hand. If that goes wrong, it is a failure that never appears as a failed deployment in any statistic.
-- **Data instead of metadata.** Product catalogues, pricing rules or configurator rules are stored as records in some clouds. If they are changed by hand, they are missing from the metrics.
+- **Data instead of metadata.** Product catalogs, pricing rules or configurator rules are stored as records in some clouds. If they are changed by hand, they are missing from the metrics.
 - **Large packages.** A release with 200 changes that has one defect counts as one failed deployment. Smaller releases make the change fail rate more meaningful.
 
 ## IT leadership looks at the trend, not the single value
@@ -73,7 +73,7 @@ I recommend three rules:
 
 1. **Trend instead of single value.** One month says little. Only over three to six months can you see whether smaller releases, more automation or reviews have an effect.
 2. **No comparison with software companies.** The top values in the DORA reports come from teams that deploy several times a day. A manufacturer with a monthly Salesforce release compares itself with itself.
-3. **No ranking of partners.** With several partners it is tempting to measure every partner by their change fail rate. Then hotfixes get renamed and defects get logged as new requirements. The metrics belong to the programme; the quality of single deliveries is what the [pull request review](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) is for.
+3. **No ranking of partners.** With several partners it is tempting to measure every partner by their change fail rate. Then hotfixes get renamed and defects get logged as new requirements. The metrics belong to the program; the quality of single deliveries is what the [pull request review](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) is for.
 
 ```pro-contra
 pro: DORA metrics in the steering committee
@@ -88,14 +88,14 @@ contra: What to keep in mind
 
 ## Which lever improves which number?
 
-The metrics are only useful if a bad number leads to an action. This mapping fits Salesforce programmes, because every lever sits in the release process itself and not in a budget for new tools:
+The metrics are only useful if a bad number leads to an action. This mapping fits Salesforce programs, because every lever sits in the release process itself and not in a budget for new tools:
 
 - **Long lead time:** where does the change wait? Usually for the review, for UAT or for the release date. Smaller pull requests and agreed review response times help with the first cause, a shorter release cycle with the last.
 - **Low deployment frequency:** releases are too big or too much work. Automated post-deployment steps make a release cheaper and so possible more often.
 - **High change fail rate:** defects slip past the tests. A [UAT with test users per role](../salesforce-uat-business-acceptance-testing/) and regression tests for the most important processes catch most of them.
 - **Long recovery time:** there is no fast path for fixes. A hotfix environment with the production state and a dedicated hotfix branch shorten it.
 
-Worked example: a programme with twelve releases a year, four of which needed a hotfix, has a change fail rate of 33 percent. This number alone tells the steering committee more than a list of open tickets, and it can be checked again after every measure.
+Worked example: a program with twelve releases a year, four of which needed a hotfix, has a change fail rate of 33 percent. This number alone tells the steering committee more than a list of open tickets, and it can be checked again after every measure.
 
 ## First step: deployment frequency and change fail rate
 

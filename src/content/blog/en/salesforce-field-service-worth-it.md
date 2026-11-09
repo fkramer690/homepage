@@ -9,7 +9,7 @@ translationKey: field-service-worth-it
 topic: field-service
 categories: [field-service]
 series: { id: field-service, part: 1 }
-tags: [field service, licences, make-or-buy, manufacturing, service]
+tags: [field service, licenses, make-or-buy, manufacturing, service]
 takeaways:
   - "Scheduling and route optimization pay off most when technicians run many short jobs a day: more jobs, less travel."
   - "With few long jobs such as multi-day commissioning, routing adds little. Then mobile work, documentation, contracts or partners must carry the case."

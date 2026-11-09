@@ -32,11 +32,11 @@ Vibe coding in Salesforce pays off where the code is meant to be thrown away: a 
 
 Andrej Karpathy coined the term in February 2025: you "fully give in to the vibes" and "forget that the code even exists". Simon Willison [narrowed it down](https://simonwillison.net/2025/May/1/not-vibe-coding/) to "generating code with AI without caring about the code that is produced" and stressed that this differs from using AI tools to build production code responsibly. In May 2026 Martin Fowler gave the responsible version its own name. In his [bliki entry](https://martinfowler.com/bliki/VibeCoding.html), programmers who let an LLM write the code but still review it "aren't forgetting the code exists", and he calls that agentic engineering.
 
-So the line runs along one question: does anyone read the code? The Agentforce Vibes session can be vibe coding in a Developer Edition and agentic engineering in a scratch org built from your repository. The terms and the four layers of AI in a Salesforce programme are covered in [chapter 1 of the AI masterclass](../../masterclass/ai-salesforce/terms-and-map/); here the question is what the line means for your projects.
+So the line runs along one question: does anyone read the code? The Agentforce Vibes session can be vibe coding in a Developer Edition and agentic engineering in a scratch org built from your repository. The terms and the four layers of AI in a Salesforce program are covered in [chapter 1 of the AI masterclass](../../masterclass/ai-salesforce/terms-and-map/); here the question is what the line means for your projects.
 
 ## Where does vibe coding help a manufacturer?
 
-Fowler names disposable software and prototypes as fitting uses: "Experienced programmers may also find it handy for rapid development of disposable software or prototypes." In a manufacturing programme I would consider four candidates:
+Fowler names disposable software and prototypes as fitting uses: "Experienced programmers may also find it handy for rapid development of disposable software or prototypes." In a manufacturing program I would consider four candidates:
 
 - **Dealer-portal mock-ups.** A page where a dealer orders spare parts for a machine by serial number, shown to a few dealers in a workshop before anyone writes a user story. What the real portal involves is in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
 - **A service cockpit LWC.** One screen with open cases, installed base, next maintenance date and the assigned field technician, so the head of service can point at what is missing. Agentforce Vibes 2.0 offers [live previews for Lightning Web Components](https://developer.salesforce.com/developer-centers/agentforce-vibes/announcements/agentforce-vibes-4-1-0), which makes this quick.
@@ -78,7 +78,7 @@ In Salesforce, a workshop prototype typically carries the same gaps:
 - It has no tests, or tests written only to reach coverage.
 - Its metadata lives in a Developer Edition, outside your repository and outside any review.
 
-Fowler adds maintainability: unreviewed code grows into code that is hard to change, for people and for LLMs alike. In my judgement, closing these gaps one by one inside the prototype takes longer than building the feature properly. Which defects to look for in AI code is the topic of [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/).
+Fowler adds maintainability: unreviewed code grows into code that is hard to change, for people and for LLMs alike. In my judgment, closing these gaps one by one inside the prototype takes longer than building the feature properly. Which defects to look for in AI code is the topic of [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/).
 
 ## The path from prototype to production
 
@@ -113,4 +113,4 @@ The production build therefore starts from the repository: three user stories, e
 2. **Disable Agentforce Vibes in production** and keep production deployments in the pipeline.
 3. **Define the hand-over:** screens, acceptance criteria and open questions leave the workshop; prototype Apex does not.
 4. **Make plans visible.** Ask your partner to attach the approved plan to the pull request.
-5. **Own the pipeline.** Setting it up for programmes with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work.
+5. **Own the pipeline.** Setting it up for programs with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work.

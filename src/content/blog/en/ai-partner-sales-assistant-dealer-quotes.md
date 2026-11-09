@@ -9,7 +9,7 @@ topic: ai
 categories: [manufacturing-cloud, ai]
 tags: [agentforce, manufacturing cloud, dealers, quoting, pricing, ai agents]
 takeaways:
-  - "Setup, licence and price of both agents were in no Salesforce source I could open on 27 October 2026. Ask in writing before you budget."
+  - "Setup, license and price of both agents were in no Salesforce source I could open on 27 October 2026. Ask in writing before you budget."
   - "If dealer prices live only as SAP conditions, the agent quotes list prices. Decide the price master first."
   - "Configured machines stay with the sales desk until the agent can call the rules. I start with accessories and standard machines."
   - "An AI quote is ready when your sales desk would sign it unchanged."
@@ -21,7 +21,7 @@ faq:
   - q: "Which data must be clean before dealers get AI quotes?"
     a: "One product record per sellable variant with a description a dealer can search, links between accessories and the machines they fit, price books per market and dealer tier from the ERP, configuration rules and discount limits stored as rules."
   - q: "What does an AI-built dealer quote cost?"
-    a: "Salesforce has not published a price for these agents in the sources I could open. A standard Agentforce action costs 20 Flex Credits ($0.10) in production and 16 in a sandbox; the licence for partner users is the open item."
+    a: "Salesforce has not published a price for these agents in the sources I could open. A standard Agentforce action costs 20 Flex Credits ($0.10) in production and 16 in a sandbox; the license for partner users is the open item."
 draft: false
 ---
 
@@ -34,7 +34,7 @@ Both appear on the [Manufacturing Cloud product page](https://www.salesforce.com
 The release material adds a little. The [Winter '27 highlights on Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-manfacturing-media-netzero-nonprofit) describe Sales Concierge for Customers as an AI buying experience on your Experience Cloud site, where customers "search assets, locate dealers, and request quotes". A Sales Concierge for Manufacturing with product and accessory search, dealer search and quick quote creation was already listed in the [Spring '26 highlights](https://trailhead.salesforce.com/it/content/learn/modules/spring-26-release-highlights/see-whats-new-agentforce-manufacturing-media-public-sector-nonprofit). For the Partner Sales Assistant I found no entry in the [Summer '26 Manufacturing highlights](https://trailhead.salesforce.com/content/learn/modules/summer-26-release-highlights/see-whats-new-manufacturing-media-nonprofit-and-agentforce-net-zero), which name warranty claims assistance, sample management and purchase orders.
 
 ```hinweis offen
-Setup guides, licence terms and prices for both agents were not in the sources I could open on 27 October 2026. Ask Salesforce before you budget.
+Setup guides, license terms and prices for both agents were not in the sources I could open on 27 October 2026. Ask Salesforce before you budget.
 ```
 
 One difference matters for a decision. "Request quotes" and "builds quotes" are different things: a request lands with your sales desk, a built quote carries a price the dealer will hold you to.
@@ -59,11 +59,11 @@ I would choose by where your quote lives today. If you already quote in Revenue 
 
 For machine builders with dealers, the Sales Concierge raises a commercial question before a technical one. If an end customer finds a machine on your site and gets a price, which dealer receives the lead, and may that price undercut what the dealer quotes? Settle routing and price visibility with the head of sales before go-live.
 
-## Catalogue, prices, rules and discount limits must be right first
+## Catalog, prices, rules and discount limits must be right first
 
 An agent that builds a quote reads the same records your sales desk reads. What an experienced desk corrects by habit, the agent passes straight to the dealer.
 
-### A catalogue a dealer can search
+### A catalog a dealer can search
 
 Every sellable variant and accessory needs its own product record with a correct active flag, and superseded products need a pointer to the successor. ERP short texts are written for internal staff; a dealer types "quick coupler for 8 tonne excavator". Accessories need a link to the machine models they fit, or the agent offers an attachment that does not fit the coupler. Count the share of accessories with such a link before anything else.
 
@@ -81,7 +81,7 @@ The tier discount is part of the price; anything above it is a decision. The mod
 
 ### Dealers, territories and the installed base
 
-The Sales Concierge locates dealers and searches assets. That needs dealer accounts with territories and the product lines each dealer may sell, and assets with serial numbers so a customer finds parts for their own machine. Partner users should see only their own price book and customers, and every field a dealer or customer types is outside input for the agent, as I describe in [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/). Which portal licence covers quotes is part of [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
+The Sales Concierge locates dealers and searches assets. That needs dealer accounts with territories and the product lines each dealer may sell, and assets with serial numbers so a customer finds parts for their own machine. Partner users should see only their own price book and customers, and every field a dealer or customer types is outside input for the agent, as I describe in [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/). Which portal license covers quotes is part of [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
 
 ## Worked example: 140 dealers and one sales desk
 
@@ -95,21 +95,21 @@ Assume a maker of compact construction machinery with 140 dealers in 12 countrie
 
 **Consumption.** If the agent bills like other Agentforce actions, assume eight actions per quote. According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), an action costs 20 credits in production and 16 in a sandbox, and Flex Credits cost [$500 per 100,000](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/). For the 1,260 simple quotes: 1,260 × 8 × 20 = 201,600 credits, about $1,008 a month. A test set of 300 real dealer requests costs 300 × 8 × 16 = 38,400 credits, or $192 per sandbox run.
 
-The consumption is small next to six people on a desk. The work sits in four months of catalogue and price data, and the open item is the licence for partner users.
+The consumption is small next to six people on a desk. The work sits in four months of catalog and price data, and the open item is the license for partner users.
 
-## Pick one channel and measure the catalogue
+## Pick one channel and measure the catalog
 
 ```schritte
 Pick one channel first
   Dealers through the Partner Sales Assistant or end customers through the Sales Concierge.
-Measure the catalogue
+Measure the catalog
   Share of accessories linked to machine models, share of products with a description a dealer would search for.
 Decide the price master
   Get tier prices into price books with validity dates.
 Write discount limits as rules
   With an owner in sales and finance.
 Ask Salesforce in writing
-  Licence per partner user, which actions the agent calls, consumption model, and how it relates to the Revenue Management agent.
+  License per partner user, which actions the agent calls, consumption model, and how it relates to the Revenue Management agent.
 Build a test set
   From real dealer requests, including wrong part numbers and unbuildable combinations, as in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
 ```

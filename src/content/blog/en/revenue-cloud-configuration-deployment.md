@@ -86,7 +86,7 @@ I would set this up before the first configuration record is created, as a field
 
 ## Which tool moves the data?
 
-Any data tool that loads related records in order and matches on external IDs. The DevOps masterclass chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/) compares SFDMU, the open-source Salesforce CLI plugin, with the data modules of Gearset, Copado and Flosum. For Revenue Cloud, Gearset recommends its data deployment templates. Which tool fits your programme overall is decided in [DevOps tools compared](../../masterclass/devops-release-management/devops-tools-compared/).
+Any data tool that loads related records in order and matches on external IDs. The DevOps masterclass chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/) compares SFDMU, the open-source Salesforce CLI plugin, with the data modules of Gearset, Copado and Flosum. For Revenue Cloud, Gearset recommends its data deployment templates. Which tool fits your program overall is decided in [DevOps tools compared](../../masterclass/devops-release-management/devops-tools-compared/).
 
 One rule applies whatever the tool: the data templates, the SFDMU workspaces and the tool account belong to the client. Revenue Cloud configuration is your price logic and your catalog. If it lives in a partner's Gearset account, a partner change becomes a migration project. The reasons are in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
 

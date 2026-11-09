@@ -34,7 +34,7 @@ Scheduling in Salesforce Field Service rests on four things: clean master data, 
 
 ## What does scheduling need before the engine runs?
 
-Field Service, which Salesforce sells today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/), decides with the data it has. Chapter 1 covered whether it pays off and which licences each role needs, in [business case and licences](../field-service-business-case-licences/). This chapter starts where the first technician gets planned.
+Field Service, which Salesforce sells today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/), decides with the data it has. Chapter 1 covered whether it pays off and which licenses each role needs, in [business case and licenses](../field-service-business-case-licences/). This chapter starts where the first technician gets planned.
 
 The engine needs six kinds of master data, described in detail in [what data Field Service scheduling needs](../../../blog/salesforce-field-service-master-data/):
 
@@ -71,7 +71,7 @@ These points decide the effort:
 
 | Point | What it means |
 |---|---|
-| Higher limits | According to the [ESO limits](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_limits.htm&language=en_US&type=5), a technician can carry 250 skills instead of 100, and optimization handles 50,000 appointments per rolling 24 hours or 500 per scheduling licence. Machine builders with skills per series, control system and safety training need the room. |
+| Higher limits | According to the [ESO limits](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_limits.htm&language=en_US&type=5), a technician can carry 250 skills instead of 100, and optimization handles 50,000 appointments per rolling 24 hours or 500 per scheduling license. Machine builders with skills per series, control system and safety training need the room. |
 | What disappears | Scheduling recipes are not available; Salesforce Help names the Fix Schedule Overlaps flow as the replacement. Optimization Insights becomes the Optimization Hub. |
 | What behaves differently | According to the [ESO considerations](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_considerations.htm&language=en_US&type=5), several work rules treat empty fields differently, and an appointment without a territory gets candidates from all territories. Data gaps that were harmless before now change results. |
 
@@ -103,7 +103,7 @@ Field Service was built for many short jobs per day. Commissioning, overhauls an
 | Crews | A service resource of type Crew. Absences and efficiency count only on the crew, not on its members, and members get no assignment notification. |
 | Complex work | Links appointments in a fixed order. With ESO, a dependency group of up to five appointments is scheduled all or none. Multiday appointments cannot be part of it. |
 
-The last limit hits commissioning hardest: a site survey cannot be linked to the two-week installation that follows it. Capacity-based resources cannot take multiday jobs either, so a partner company modelled only as capacity drops out. My rule: the project plan with phases and milestones stays in the ERP or a project tool, and Field Service carries the work on site, the time and the documentation. The setup is in [Field Service multiday jobs: commissioning and crews](../../../blog/field-service-multiday-jobs-crews-commissioning/).
+The last limit hits commissioning hardest: a site survey cannot be linked to the two-week installation that follows it. Capacity-based resources cannot take multiday jobs either, so a partner company modeled only as capacity drops out. My rule: the project plan with phases and milestones stays in the ERP or a project tool, and Field Service carries the work on site, the time and the documentation. The setup is in [Field Service multiday jobs: commissioning and crews](../../../blog/field-service-multiday-jobs-crews-commissioning/).
 
 ## On-call duty and overtime
 

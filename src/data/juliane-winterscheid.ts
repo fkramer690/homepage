@@ -143,7 +143,7 @@ export const juliane = {
       'Juliane Winterscheid, Prosci certified change manager from Cologne, supports Salesforce rollouts with Fabian Kramer: ADKAR, sponsors, key users and reinforcement.',
     eyebrow: 'Partner · Change management',
     back: 'All partners',
-    lead: 'Juliane Winterscheid is a senior human centered change consultant with more than ten years in management, leadership and consulting. She makes sure people adopt new processes; I make sure the architecture and the releases support them. We work together on change management in Salesforce programmes.',
+    lead: 'Juliane Winterscheid is a senior human centered change consultant with more than ten years in management, leadership and consulting. She makes sure people adopt new processes; I make sure the architecture and the releases support them. We work together on change management in Salesforce programs.',
     promises: ['Prosci change practitioner', 'Salesforce rollouts across countries', 'German · English'],
     ctaPrimary: 'Request a call',
     ctaSecondary: 'See projects',
@@ -152,8 +152,8 @@ export const juliane = {
     box: {
       label: 'Change management with Juliane Winterscheid',
       role: 'Senior human centered change consultant · Prosci certified change practitioner',
-      text: 'I adapted the approach of this masterclass to Salesforce programmes together with Juliane, and we work together in programmes. She guides sponsors, managers and key users through the change; I make sure the architecture and the releases fit. Juliane has supported global Salesforce rollouts with more than 500 users as change manager.',
-      textBlog: 'I deliver change management in Salesforce programmes together with Juliane. She guides sponsors, managers and key users through the change; I make sure the architecture and the releases fit.',
+      text: 'I adapted the approach of this masterclass to Salesforce programs together with Juliane, and we work together in programs. She guides sponsors, managers and key users through the change; I make sure the architecture and the releases fit. Juliane has supported global Salesforce rollouts with more than 500 users as change manager.',
+      textBlog: 'I deliver change management in Salesforce programs together with Juliane. She guides sponsors, managers and key users through the change; I make sure the architecture and the releases fit.',
       link: 'Profile and references',
     },
     author: {
@@ -184,7 +184,7 @@ export const juliane = {
     },
     split: {
       label: 'Working together',
-      title: 'Who does what in a Salesforce programme',
+      title: 'Who does what in a Salesforce program',
       intro: 'Change management and architecture belong together: every deviation from the template is also a question of habit, every release a change for people. So we plan both together.',
       leftTitle: 'Juliane: people and change',
       left: [
@@ -192,7 +192,7 @@ export const juliane = {
         { icon: 'steer', t: 'Sponsor plan', d: 'What management visibly does and when, so that backing is more than a slide.' },
         { icon: 'interview', t: 'Communication and coaching', d: 'Messages per group and country, coaching for managers and sponsors.' },
         { icon: 'team', t: 'Key users and training', d: 'Selection, role and training on real cases, so knowledge reaches daily work.' },
-        { icon: 'feedback', t: 'Involve the works council early', d: 'Agree with the works council what Salesforce reports on performance and behaviour, before it derails the timeline.' },
+        { icon: 'feedback', t: 'Involve the works council early', d: 'Agree with the works council what Salesforce reports on performance and behavior, before it derails the timeline.' },
       ] as Point[],
       rightTitle: 'Fabian: architecture and releases',
       right: [
@@ -212,11 +212,11 @@ export const juliane = {
       tasksLabel: 'Tasks',
       intro: 'A selection of Juliane\'s projects, with role, scope and tasks as stated in her profile.',
       items: [
-        { logo: 'hdi', t: 'HDI Versicherungen AG: global IT transformation (cloudification, data centre closure)' },
+        { logo: 'hdi', t: 'HDI Versicherungen AG: global IT transformation (cloudification, data center closure)' },
         { logo: 'danone', t: 'Danone Deutschland GmbH: agile transformation in the DACH region' },
         { logo: 'septodont', t: 'Septodont GmbH: Salesforce Maps rollout' },
         { logo: 'aak', t: 'AAK AB: global Salesforce Sales Cloud rollout' },
-        { logo: 'deutsche-telekom', t: 'Deutsche Telekom AG: Salesforce process optimisation' },
+        { logo: 'deutsche-telekom', t: 'Deutsche Telekom AG: Salesforce process optimization' },
         { logo: 'karo-heiko', t: 'KaRo / Heiko Companies: Microsoft Dynamics 365 transformation' },
         { logo: 'landal', t: 'Landal GreenParks GmbH: restructuring the HR department' },
         { logo: 'hologic', t: 'Hologic Deutschland GmbH: merging three sites into one' },
@@ -243,7 +243,7 @@ export const juliane = {
       label: 'Read on',
       links: [
         { t: 'Change management masterclass', d: 'Five chapters along the ADKAR stages for Salesforce rollouts.', href: 'masterclass/change-management/' },
-        { t: 'Change management service', d: 'How we set up change management in your programme.', href: 'services/change-management-salesforce/' },
+        { t: 'Change management service', d: 'How we set up change management in your program.', href: 'services/change-management-salesforce/' },
         { t: 'Salesforce change management: why rollouts fail', d: 'The starting point with ADKAR and the six topics behind it.', href: 'blog/change-management-salesforce-rollout/' },
       ],
     },
@@ -316,11 +316,11 @@ export const julianeProjectDetails: Record<'de' | 'en', Record<string, ProjectDe
     aak: { short: 'AAK', period: '04/2024 – 09/2024', sector: 'Food manufacturing', scope: '4,000+ employees · 500+ users', role: 'Senior human centered change consultant', bullets: [
       'Change strategy, communication plan and train-the-trainer concept for the global Sales Cloud rollout',
       'Impact analysis and stakeholder assessment, turned into plans to win over managers and remove adoption barriers',
-      'Closely aligned with global programme leadership and the Salesforce IT team',
+      'Closely aligned with global program leadership and the Salesforce IT team',
       'Coaching the internal project manager on change management',
     ] },
     'deutsche-telekom': { short: 'Telekom', period: '02/2024 – 04/2024', sector: 'Telecommunications', scope: '120,000+ employees worldwide', role: 'Human centered change strategy consultant', bullets: [
-      'Advised the project team on the rollout strategy for harmonised sales and service interfaces',
+      'Advised the project team on the rollout strategy for harmonized sales and service interfaces',
       'Sharpened the change story, reworked the communication plan with milestones and concrete steps',
       'Readiness assessment with interviews and surveys',
       'Action plan from the findings, presented to the steering committee and built into the rollout strategy',
@@ -334,7 +334,7 @@ export const julianeProjectDetails: Record<'de' | 'en', Record<string, ProjectDe
       'Supported the Salesforce implementation from kick-off to rollout',
     ] },
     hdi: { short: 'HDI', period: 'since 12/2025', sector: 'Insurance', scope: '20,000+ employees · 19 countries', role: 'Senior change manager', bullets: [
-      'Change management and communication for the data centre closure, from planning to delivery',
+      'Change management and communication for the data center closure, from planning to delivery',
       'Built global change networks, key user communities and multipliers',
       'Measures impact with KPIs and keeps sharpening the activities',
       'Formats per target group, digital and on site',
@@ -350,7 +350,7 @@ export const julianeProjectDetails: Record<'de' | 'en', Record<string, ProjectDe
       'Responsible for the pillar "systems, processes and new ways of working" of the agile transformation',
       'Partner to the PMO and stream leads, strategic advice from a change management view',
       'Workshops on change strategy, impact analysis, stakeholders, resistance, kick-offs and retrospectives',
-      'Managed and rolled out training and enablement programmes',
+      'Managed and rolled out training and enablement programs',
     ] },
     hologic: { short: 'Hologic', period: '06/2022 – 12/2022', sector: 'Medical technology', scope: 'Three sites into one · 150+ employees', role: 'Interim HR operations manager DACH', bullets: [
       'Merged three entities into one new site, fully responsible for the HR side',

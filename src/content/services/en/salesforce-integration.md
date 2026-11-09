@@ -1,21 +1,21 @@
 ---
 title: "Salesforce integration with ERP, middleware and telephony"
-description: "Salesforce connected to SAP and other ERP systems, middleware and telephony such as Genesys or Microsoft Teams, with an integration architecture you own."
+description: "Salesforce connected to SAP and other ERP systems, middleware and telephony such as Genesys or Teams Phone, with an integration architecture you own."
 lang: en
 slug: salesforce-integration
 translationKey: service-integration
 contactBrief: integration
 order: 4
-lead: "Salesforce is never the only system. Orders, prices, stock and invoices live in the ERP, and service runs on phone and email. I design the integration architecture on the client side and work with selected partners who have built integrations in large international programmes."
+lead: "Salesforce is never the only system. Orders, prices, stock and invoices live in the ERP, and service runs on phone and email. I design the integration architecture on the client side and work with selected partners who have built integrations in large international programs."
 situations:
   - "Salesforce needs data from SAP or another ERP, such as customers, products, prices, orders or invoices, and it is unclear which system leads for which data."
   - "Point-to-point interfaces have grown over the years, and every change in one system breaks something in another."
-  - "The contact centre uses a telephony platform that is not connected to Service Cloud, so agents copy data between screens."
+  - "The contact center uses a telephony platform that is not connected to Service Cloud, so agents copy data between screens."
   - "Integrations still log in with a username and password, and nobody has planned the move to modern authentication."
 deliverables:
   - "I map which systems exist, which data they hold and where existing interfaces cause problems."
   - "I decide with you whether a middleware is needed or a direct integration is enough."
-  - "I bring in a specialised integration partner if you do not have one, and review its design before anything is built."
+  - "I bring in a specialized integration partner if you do not have one, and review its design before anything is built."
   - "During implementation I check error handling, monitoring and end-to-end tests against the real processes."
 results:
   - "A system map with the leading system for each type of data"
@@ -42,7 +42,13 @@ faq:
   - q: "Do we need a middleware for Salesforce integration?"
     a: "It depends on the size of the company and the number of systems. With a few stable interfaces, direct integration can be enough. With many systems, several teams and frequent changes, a middleware makes interfaces easier to change, monitor and reuse."
   - q: "How is telephony connected to Service Cloud?"
-    a: "Through a CTI integration that brings calls into Service Cloud, so agents see the customer and the open cases when the phone rings. I have worked with the CTI providers Genesys and Mirage, and Microsoft Teams is becoming more relevant as a telephony platform. Phone and email remain the core channels in most service organisations."
+    a: "Through a CTI integration that brings calls into Service Cloud, so agents see the customer and the open cases when the phone rings. I have worked with the CTI providers Genesys and Mirage, and Microsoft Teams is becoming more relevant as a telephony platform. Phone and email remain the core channels in most service organizations."
+  - q: "Do you replace our implementation partner?"
+    a: "No. Your partners keep building, and I steer them on the client side by common rules. If you want to replace a partner, I help you do it without losing knowledge and without delaying the program."
+  - q: "How do you avoid becoming a bottleneck?"
+    a: "I keep my work transparent. Decisions, standards and review criteria are documented where your team and your partners can see them, so nobody has to wait for me and the work does not depend on me."
+  - q: "Do you work on site or remotely?"
+    a: "Both. I work on site with your teams and remotely, depending on what the phase of the program needs."
 blogTags: [integration, oauth, security, sicherheit, service cloud]
 readMore: [manufacturing-cloud-erp-integration, revenue-cloud-sap-system-boundaries, commerce-sap-data-flows, customer-prices-sap-or-salesforce-pricing, field-service-spare-parts, agentforce-sap-order-status, legacy-erp-without-api-agents, salesforce-password-integrations-2027]
 masterclass: manufacturing-cloud
@@ -80,11 +86,11 @@ contra: When it does not pay off
 - The interfaces are stable and rarely change.
 ```
 
-For the build I work with selected partners who have integration experience from large international programmes. That gives the client a partner that fits the size of the task, while the architecture and the specifications stay on the client side.
+For the build I work with selected partners who have integration experience from large international programs. That gives the client a partner that fits the size of the task, while the architecture and the specifications stay on the client side.
 
 ## When the phone rings, the agent sees the customer in Service Cloud
 
-In most service organisations, phone and email are still the main channels. A CTI integration brings calls into Service Cloud, so agents see the customer, the installed products and the open cases when the phone rings.
+In most service organizations, phone and email are still the main channels. A CTI integration brings calls into Service Cloud, so agents see the customer, the installed products and the open cases when the phone rings.
 
 ```ablauf
 ext: Call, Telephony platform

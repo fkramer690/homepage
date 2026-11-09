@@ -12,7 +12,7 @@ summary: "Seven phases from change sets to a client-owned pipeline, with trainin
 takeaways:
   - "A DevOps rollout works in phases with a checkable result: ownership, Git, validation, quality gates, data, release calendar and operations."
   - "One stream or partner goes first as a pilot, the others follow on dates from the contract. A cut-off date ends change sets for UAT and production."
-  - "The most important investment is an internal release role. Licence savings from the tool choice are better spent there than on partner days."
+  - "The most important investment is an internal release role. License savings from the tool choice are better spent there than on partner days."
   - "Measure against a baseline: the DORA metrics plus your own figures, such as manual steps in the release plan and waiting time until the first review."
   - "Coding agents come after the quality gates, with a rules file in your repository and the same checks as for people."
 articles: [sfdx-hardis-training, quality-gates-ai-code-pipeline, agentforce-agents-release-pipeline, ai-rules-file-salesforce-repo, nearshore-teams-with-ai-agents]
@@ -57,7 +57,7 @@ The nine chapters before this one each describe one building block. For the roll
 ## How do you enable your team and your partners?
 
 ```hinweis tipp
-The most important investment is a person: an internal release role that owns the pipeline, the calendar and the approvals. If you pick an open-source tool or a cheaper package, the licence savings are better spent there than on extra partner days. Without that role, the process effectively belongs to whichever partner knows it best again.
+The most important investment is a person: an internal release role that owns the pipeline, the calendar and the approvals. If you pick an open-source tool or a cheaper package, the license savings are better spent there than on extra partner days. Without that role, the process effectively belongs to whichever partner knows it best again.
 ```
 
 Training comes next, and it should be hands-on. I have used sfdx-hardis in client projects for about two years and completed all three levels of the [free sfdx-hardis training](https://sfdx-hardis.cloudity.com/salesforce-devops-training/) in October 2026. In 27 labs you build a complete pipeline on free Developer Edition orgs and a GitHub account, and you only get a badge once a job has checked the work in your own repository. Even with prior experience it took me almost a day. My notes are in [what I learned from the sfdx-hardis training](../../../blog/sfdx-hardis-free-devops-training/).
@@ -75,11 +75,11 @@ I would treat partners like internal teams and require in the contract that ever
 
 ## These mistakes slow the rollout down
 
-These patterns follow from the structure of a programme with several partners, which is why they keep coming back:
+These patterns follow from the structure of a program with several partners, which is why they keep coming back:
 
-- **The tool comes before the process.** A licence does not replace a branch model, an approval rule or a release manager.
-- **The first partner sets everything up.** Repository and pipeline then sit in their organisation, and a partner change turns into a migration project.
-- **All streams switch at once.** A pipeline fault then stops the whole programme instead of one pilot.
+- **The tool comes before the process.** A license does not replace a branch model, an approval rule or a release manager.
+- **The first partner sets everything up.** Repository and pipeline then sit in their organization, and a partner change turns into a migration project.
+- **All streams switch at once.** A pipeline fault then stops the whole program instead of one pilot.
 - **Production stays open.** A quick fix in production Setup creates drift, and the next deployment either overwrites it or fails.
 - **Gates block everything from day one.** The result is switched-off rules and `// NOPMD` comments instead of better code.
 - **Only developers get trained.** Admins keep building in Setup because nobody showed them pull requests.
@@ -93,9 +93,9 @@ Mandatory reviews belong in from the start, even while the pipeline is still sim
 
 DORA now describes [five metrics](https://dora.dev/guides/dora-metrics-four-keys/) for software delivery: change lead time, deployment frequency, failed deployment recovery time, change fail rate, and deployment rework rate, the share of unplanned deployments caused by a production incident. The first three measure throughput, the last two instability.
 
-The tools provide part of this. According to its documentation, the [sfdx-hardis DORA report](https://sfdx-hardis.cloudity.com/hardis/doc/salesforce-devops-dora-report/) computes all five per major branch, as described in [chapter 9](../operations-monitoring-backup/), and the [overview](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) rates the classic four against industry benchmarks. Gearset has a [DevOps performance dashboard](https://docs.gearset.com/en/articles/11560575-measuring-your-devops-performance) with the same four, which requires a Teams or Enterprise Automation Platform licence and Pipelines with the promotion branch strategy; change failure rate and time to restore are based on bugs your team reports in promotions. Both figures are therefore reliable only if incidents are reported consistently.
+The tools provide part of this. According to its documentation, the [sfdx-hardis DORA report](https://sfdx-hardis.cloudity.com/hardis/doc/salesforce-devops-dora-report/) computes all five per major branch, as described in [chapter 9](../operations-monitoring-backup/), and the [overview](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) rates the classic four against industry benchmarks. Gearset has a [DevOps performance dashboard](https://docs.gearset.com/en/articles/11560575-measuring-your-devops-performance) with the same four, which requires a Teams or Enterprise Automation Platform license and Pipelines with the promotion branch strategy; change failure rate and time to restore are based on bugs your team reports in promotions. Both figures are therefore reliable only if incidents are reported consistently.
 
-For a programme in rollout, I would add four figures of my own, because they show progress earlier than DORA:
+For a program in rollout, I would add four figures of my own, because they show progress earlier than DORA:
 
 1. **Share of deployments through the pipeline** among all deployments to UAT and production. The target is 100 percent by the cut-off date.
 2. **Manual steps in the release plan.** Every line someone executes by hand in Setup is a risk on release night.

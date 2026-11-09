@@ -1,6 +1,6 @@
 ---
 title: "Salesforce editions Core, Advanced, Max for manufacturers"
-description: "What the Salesforce editions Core, Advanced and Max mean for a manufacturer's licence plan, how far the Flex Credit pools go and why credits rarely justify Max."
+description: "What the Salesforce editions Core, Advanced and Max mean for a manufacturer's license plan, how far the Flex Credit pools go and why credits rarely justify Max."
 pubDate: 2026-10-27
 lang: en
 slug: salesforce-editions-core-advanced-max
@@ -8,13 +8,13 @@ translationKey: salesforce-editions-core-advanced-max
 topic: governance
 categories: [architecture, ai]
 contactBrief: licences
-tags: [licences, editions, flex credits, agentforce, make-or-buy, manufacturing]
+tags: [licenses, editions, flex credits, agentforce, make-or-buy, manufacturing]
 takeaways:
   - "Core, Advanced and Max cost $195, $395 and $550 per user and month, and existing customers keep the pricing of their legacy editions."
   - "The pools hold 500,000, 1 million and 2.75 million Flex Credits per org and year, worth $2,500, $5,000 and $13,750 at list price."
   - "One dealer service agent with 1,500 enquiries a month and three actions each uses 1.08 million credits a year, more than the Advanced pool."
   - "Moving 200 users from Core to Advanced costs $480,000 a year more for credits worth $2,500, so choose the edition by features."
-  - "Industries edition pricing for Manufacturing Cloud was still open on 27 October 2026, and Field Service keeps its own licence model."
+  - "Industries edition pricing for Manufacturing Cloud was still open on 27 October 2026, and Field Service keeps its own license model."
 faq:
   - q: "Do existing Salesforce customers have to move to Core, Advanced or Max?"
     a: "No. Salesforce says existing customer pricing on legacy editions remains unchanged. Whether Enterprise and Unlimited will still be offered at every renewal is not confirmed, so ask your account executive before the renewal talks start."
@@ -23,13 +23,13 @@ faq:
   - q: "How many Agentforce actions does the Core pool cover?"
     a: "500,000 credits cover 25,000 standard actions at 20 credits each, about 2,080 a month. Prompts, sandbox tests and Data 360 processing are also billed in Flex Credits, so the real number of actions is lower."
   - q: "Is the Max edition worth it for a manufacturer?"
-    a: "Max is worth it when you need its features, such as the full Agentforce for Industries suite in Manufacturing Cloud or Service Rep Assistant and contact centre functions in Service Cloud. For credits alone it is far too expensive: 2.25 million extra credits cost about $11,250 at list price."
+    a: "Max is worth it when you need its features, such as the full Agentforce for Industries suite in Manufacturing Cloud or Service Rep Assistant and contact center functions in Service Cloud. For credits alone it is far too expensive: 2.25 million extra credits cost about $11,250 at list price."
   - q: "What does Manufacturing Cloud cost in the new editions?"
     a: "The pricing page shows Sales Core and Service Core at $275 and the Max editions at $650 or $700 per user and month, billed annually. Salesforce announced new Industries pricing for later this fall; on 27 October 2026 it was not yet published."
 draft: false
 ---
 
-The Salesforce editions Core, Advanced and Max change a manufacturer's licence plan mainly at the next renewal. Pricing on legacy editions stays unchanged, and the included Flex Credit pools are small next to the seat costs: the 500,000 credits in Core are worth $2,500 at list price. A single dealer service agent can use more than the Advanced pool. I would therefore choose the edition by the features your sales and service teams need and plan agent consumption as its own budget line. For Manufacturing Cloud the new Industries pricing is still open.
+The Salesforce editions Core, Advanced and Max change a manufacturer's license plan mainly at the next renewal. Pricing on legacy editions stays unchanged, and the included Flex Credit pools are small next to the seat costs: the 500,000 credits in Core are worth $2,500 at list price. A single dealer service agent can use more than the Advanced pool. I would therefore choose the edition by the features your sales and service teams need and plan agent consumption as its own budget line. For Manufacturing Cloud the new Industries pricing is still open.
 
 ## What changed with Core, Advanced and Max?
 
@@ -43,11 +43,11 @@ On 3 September 2026 Salesforce [announced three editions](https://www.salesforce
 
 The announcement does not say whether the pools apply per org or per year. The [Sales Cloud pricing page](https://www.salesforce.com/sales-cloud/pricing/) does: its comparison table lists "500K Flex Credits/org/year" up to "2.75M Flex Credits/org/year", and the [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) shows the same wording for Max. All three editions are billed annually. The value column uses the list price of [$500 per 100,000 credits](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/).
 
-Every edition bundles Slack, Tableau Next, data security and the Premier Success Plan. The differences that matter for a manufacturer sit in the AI and service features. In Service Cloud, Advanced adds Casey, the help agent, and Max adds the full Agentforce for Service suite with Service Rep Assistant, unmetered Agentforce Coworker and contact centre functions such as workforce engagement. In Sales Cloud, Max adds Agentforce for Sales, Sales Planning and Salesforce Maps. What Casey and Service Rep Assistant do for a service team is in [Service Cloud AI assistants](../service-cloud-casey-service-rep-assistant/).
+Every edition bundles Slack, Tableau Next, data security and the Premier Success Plan. The differences that matter for a manufacturer sit in the AI and service features. In Service Cloud, Advanced adds Casey, the help agent, and Max adds the full Agentforce for Service suite with Service Rep Assistant, unmetered Agentforce Coworker and contact center functions such as workforce engagement. In Sales Cloud, Max adds Agentforce for Sales, Sales Planning and Salesforce Maps. What Casey and Service Rep Assistant do for a service team is in [Service Cloud AI assistants](../service-cloud-casey-service-rep-assistant/).
 
 For existing customers Salesforce writes that "existing customer pricing on legacy editions remains unchanged", and Agentforce 1 Edition customers can move to Max at no extra cost. For new buyers the Sales Cloud pricing page already lists only Free, Starter, Pro Suite, Core, Advanced and Max. Whether Enterprise and Unlimited stay available at your renewal is [not confirmed](https://www.salesforceben.com/salesforce-announces-3-replacement-editions-bundling-ai-slack-and-security/). The claimed "70% more value" of Core over Enterprise only counts if your teams use what is bundled.
 
-The edition question only concerns users who need a full CRM licence. Readers, approvers and dealers often do not, as described in [does everyone need a full licence](../salesforce-licences-full-licence-needed/). I would settle that first, because every user on a Platform or portal licence is one you do not pay Core or Max for.
+The edition question only concerns users who need a full CRM license. Readers, approvers and dealers often do not, as described in [does everyone need a full license](../salesforce-licences-full-licence-needed/). I would settle that first, because every user on a Platform or portal license is one you do not pay Core or Max for.
 
 ## A Flex Credit pool covers 25,000 to 137,500 actions a year
 
@@ -61,7 +61,7 @@ These are upper limits, because the rate card bills more than actions in Flex Cr
 
 - **Prompts** cost 2 to 16 credits each, depending on the model class.
 - **Sandbox tests** cost 16 credits per action, so testing an agent is not free.
-- **Data 360** charges 150 credits per MB at the base tier to process unstructured documents such as manuals and spare part catalogues. The Manufacturing Cloud page describes the Core credits as "Flex credits for AI, Agentforce, Data, and more".
+- **Data 360** charges 150 credits per MB at the base tier to process unstructured documents such as manuals and spare part catalogs. The Manufacturing Cloud page describes the Core credits as "Flex credits for AI, Agentforce, Data, and more".
 - **Headless Platform Interactions**, the meter for agent calls through API or MCP, are listed with the rate "TBA". Salesforce says Max will include an allocation of Headless 360 capacity in the future, without a date. Why this becomes a budget risk is in [MCP access as a budget item](../flex-credits-agentforce-cost-per-action/).
 
 Two contract details matter. Credits must be used before the order end date and do not roll over. And the pricing pages state the pool per org, independent of seats: as listed, an org with 30 users gets the same 500,000 credits as one with 3,000. If you run separate orgs for sales and service or for regions, ask how the pool is allocated. How to estimate consumption per action is in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
@@ -85,7 +85,7 @@ That is about 1.47 million credits a year. Compared at list price for 200 users:
 | Advanced | $948,000 | 1,000,000 | 470,000 for $2,350 | $950,350 |
 | Max | $1,320,000 | 2,750,000 | none, 1.28 million expire | $1,320,000 |
 
-The step from Core to Advanced costs $480,000 a year and brings 500,000 credits worth $2,500. At this scale credits are no argument for an edition. The decision rests on features: does service need Casey, does sales use Sales Programs? If yes, upgrade for those. If not, Core plus purchased credits is cheaper. A fourth option is to stay on Enterprise Edition at unchanged pricing and buy the 1.47 million credits for about $7,350 at list price, plus whatever Agentforce licence your contract requires. The dealer agent itself is calculated in detail in [what a dealer service agent costs](../flex-credits-agentforce-cost-per-action/).
+The step from Core to Advanced costs $480,000 a year and brings 500,000 credits worth $2,500. At this scale credits are no argument for an edition. The decision rests on features: does service need Casey, does sales use Sales Programs? If yes, upgrade for those. If not, Core plus purchased credits is cheaper. A fourth option is to stay on Enterprise Edition at unchanged pricing and buy the 1.47 million credits for about $7,350 at list price, plus whatever Agentforce license your contract requires. The dealer agent itself is calculated in detail in [what a dealer service agent costs](../flex-credits-agentforce-cost-per-action/).
 
 ## What about Manufacturing Cloud and Field Service?
 
@@ -95,7 +95,7 @@ The step from Core to Advanced costs $480,000 a year and brings 500,000 credits 
 If your renewal falls in the coming months, I would not sign three years of Manufacturing Cloud seats before the Industries prices are out, unless the order lets you switch editions once they are.
 ```
 
-**Field Service.** The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) shows no Core, Advanced or Max. Dispatcher and Technician cost $175, Field Service Plus $230 and Agentforce 1 Field Service $650 per user and month. Only the last includes credits: "1M Flex Credits & 2.5M Data Cloud Credits per org every year". On the other licences the Scheduling Agent "requires Flex Credits". A machine builder with field technicians therefore plans two models side by side: editions for the office, classic licences plus purchased credits for the field. Whether Field Service pays off at all is in [is Salesforce Field Service worth it](../salesforce-field-service-worth-it/).
+**Field Service.** The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) shows no Core, Advanced or Max. Dispatcher and Technician cost $175, Field Service Plus $230 and Agentforce 1 Field Service $650 per user and month. Only the last includes credits: "1M Flex Credits & 2.5M Data Cloud Credits per org every year". On the other licenses the Scheduling Agent "requires Flex Credits". A machine builder with field technicians therefore plans two models side by side: editions for the office, classic licenses plus purchased credits for the field. Whether Field Service pays off at all is in [is Salesforce Field Service worth it](../salesforce-field-service-worth-it/).
 
 **Revenue Cloud.** For quoting and billing, Revenue Cloud has its own editions, covered in [Revenue Cloud pricing: Growth, Advanced and add-ons](../revenue-cloud-editions-pricing/).
 
@@ -105,7 +105,7 @@ Max is worth it for its features, never for its credits.
 
 ```pro-contra
 pro: Max can make sense when
-- Service needs **Service Rep Assistant and contact centre functions** anyway
+- Service needs **Service Rep Assistant and contact center functions** anyway
 - Manufacturing Cloud users need the **full Agentforce for Industries suite**, which the pricing page lists only in Max
 - You are on **Agentforce 1 Edition** today; the move to Max costs nothing extra
 - Many employees use **Agentforce Coworker**, which the Service Cloud page lists as unmetered in Max
@@ -114,11 +114,11 @@ contra: What the credits do not make up for
 - The price difference for 200 users is $852,000 a year
 ```
 
-If only a small group of power users needs AI features, ask whether that group can be licensed on its own instead of lifting all 200 users. These trade-offs are the core of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
+If only a small group of power users needs AI features, ask whether that group can be licensed on its own instead of lifting all 200 users. These trade-offs are the core of my [make-or-buy and license planning](../../services/make-or-buy-licences/).
 
 ## Clean up the user base before the renewal
 
-1. **Clean up the user base.** Decide who needs a full licence at all before you compare editions.
+1. **Clean up the user base.** Decide who needs a full license at all before you compare editions.
 2. **List features per user group** that exist only in Advanced or Max, and today's add-ons an edition would replace.
 3. **Estimate credits per agent and year,** with prompts, sandbox tests and Data 360, not only production actions.
 4. **Get three answers in writing:** pool per org and year, allocation across several orgs, and what happens to unused credits at the order end date.

@@ -20,8 +20,8 @@ faq:
     a: "According to Trailhead, the liable summary is the final amount a customer owes for usage in a period. It is created from the rated usage records, for example by the scheduled Orchestrate Usage Management flow, and is passed to billing for the invoice."
   - q: "Where does the usage data for pay-per-use come from?"
     a: "From the machine, usually through the controller and an IoT platform or historian. Salesforce receives time-stamped usage records with account, product, resource and quantity. Mapping each counter to a serial number and checking it for gaps and resets is part of your integration."
-  - q: "Which licence do I need for usage-based billing in Revenue Cloud?"
-    a: "The pricing pages list Consumption & Invoicing in Revenue Cloud Advanced and Usage Rating & Digital Wallet in the Revenue Cloud Billing add-on, which is priced on request. Confirm in the order form which licence covers rating and invoicing in your case."
+  - q: "Which license do I need for usage-based billing in Revenue Cloud?"
+    a: "The pricing pages list Consumption & Invoicing in Revenue Cloud Advanced and Usage Rating & Digital Wallet in the Revenue Cloud Billing add-on, which is priced on request. Confirm in the order form which license covers rating and invoicing in your case."
 draft: false
 ---
 
@@ -35,7 +35,7 @@ The [components and personas unit](https://trailhead.salesforce.com/content/lear
 
 | Component | What it does |
 |---|---|
-| Usage modelling | Consumable products, usage resources, units of measure, usage grants |
+| Usage modeling | Consumable products, usage resources, units of measure, usage grants |
 | Rate management | Rules that turn usage into charges |
 | Usage selling | Quote, order and activate usage products |
 | Wallet management | One wallet per purchased usage resource and account, with balances |

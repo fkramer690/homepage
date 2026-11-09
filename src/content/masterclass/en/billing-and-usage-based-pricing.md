@@ -81,7 +81,7 @@ source: Revenue Cloud EU pricing page and Revenue Cloud Billing rate sheet of Fe
 
 Worked example: a machine builder invoices €18 million a year of subscriptions and maintenance fees from Billing, without tax. At an assumed 1.15 dollars per euro that is $20.7 million, or 414,000 billing events a year. Put €120 million of machine invoices through Billing as well and the count grows more than sevenfold, for invoices SAP creates anyway. Scope drives the cost more than anything you negotiate.
 
-What to settle on the order form, how rounding and credit memos might count and how to ramp the entitlement over the term is in [Revenue Cloud Billing costs](../../../blog/revenue-cloud-billing-costs/). Licence forecasts like this are part of my [make-or-buy and licence](../../../services/make-or-buy-licences/) work.
+What to settle on the order form, how rounding and credit memos might count and how to ramp the entitlement over the term is in [Revenue Cloud Billing costs](../../../blog/revenue-cloud-billing-costs/). License forecasts like this are part of my [make-or-buy and license](../../../services/make-or-buy-licences/) work.
 
 ## What does German e-invoicing from 2027 require?
 
@@ -107,7 +107,7 @@ If Billing invoices go out after 1 January 2027, they need a structured route fr
 
 ## Pay-per-use with Usage Management needs a counter per machine
 
-Usage Management is the part of Revenue Cloud for consumption-based products. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/usage-management-foundations/explore-components-and-personas) names five components: usage modelling, rate management, usage selling, wallet management and consumption management. Raw usage events land in the transaction journal. Rated usage ends up in a liable summary, the final amount the customer owes, which goes to billing for the invoice.
+Usage Management is the part of Revenue Cloud for consumption-based products. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/usage-management-foundations/explore-components-and-personas) names five components: usage modeling, rate management, usage selling, wallet management and consumption management. Raw usage events land in the transaction journal. Rated usage ends up in a liable summary, the final amount the customer owes, which goes to billing for the invoice.
 
 ```ablauf
 ext: IoT platform
@@ -125,7 +125,7 @@ For a machine that translates directly. Operating hours become a usage resource,
 | Checks before rating | Serial number to asset and account, counter resets after a controller swap, gaps when a machine was offline, duplicates from retried transfers. |
 | A contract that defines the unit | Operating hours, load hours or good parts; which counter is binding; how gaps are handled; the minimum fee that protects the financing of the machine. |
 
-The same daily counter often drives maintenance by operating hours in Field Service, so one feed can serve both; the [Field Service chapter on assets and maintenance](../../field-service/field-service-assets-maintenance-parts/) covers that side. Rating sits in the Billing add-on as "Usage Rating & Digital Wallet", so confirm in the order form which licence covers it. The scenario and the contract checklist are in [pay-per-use for machines](../../../blog/pay-per-use-machines-revenue-cloud/).
+The same daily counter often drives maintenance by operating hours in Field Service, so one feed can serve both; the [Field Service chapter on assets and maintenance](../../field-service/field-service-assets-maintenance-parts/) covers that side. Rating sits in the Billing add-on as "Usage Rating & Digital Wallet", so confirm in the order form which license covers it. The scenario and the contract checklist are in [pay-per-use for machines](../../../blog/pay-per-use-machines-revenue-cloud/).
 
 If all invoices stay in SAP, I would think twice before rating usage in Salesforce. I did not find a documented standard hand-over of rated usage to an external billing system.
 

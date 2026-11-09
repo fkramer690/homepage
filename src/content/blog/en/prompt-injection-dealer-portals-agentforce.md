@@ -57,7 +57,7 @@ Simon Willison named the pattern the [lethal trifecta](https://simonwillison.net
 
 - **Web-to-Lead** for quote and spare part requests on your website. No login needed.
 - **Email-to-Case** on the service mailbox. Anyone who knows the address can create a case.
-- **The dealer portal** on Experience Cloud: case descriptions, comments, warranty claims with a free-text fault description. These need a login, but a hundred dealer organisations each bring their own staff turnover and password habits.
+- **The dealer portal** on Experience Cloud: case descriptions, comments, warranty claims with a free-text fault description. These need a login, but a hundred dealer organizations each bring their own staff turnover and password habits.
 - **Service partner reports** in Field Service, written by external technicians.
 - **Distributor imports** such as order notes or claim lists.
 
@@ -94,7 +94,7 @@ The first design review finds all three legs. The agent's running user is a copy
 
 The fixes are dull. The running user gets read access only to claims, assets and the submitting dealer's account; rebate agreements and margin fields drop out. The email action moves to a separate step that a clerk triggers after reading the summary. The Trusted URLs list, assumed at 14 entries, shrinks to 6, each with a named owner. Eligibility checks run as deterministic logic against serial number and warranty start, the way the [Warranty Claims Adjudication Agent](../warranty-claims-adjudication-agent/) is meant to work as well.
 
-After that, a hidden instruction in a fault description can still distort one summary. It cannot reach data outside that claim and has no way out. The remaining risk is a misleading summary, and the clerk catches it because claims above an agreed amount are always read in full. In my judgement that residual risk is acceptable. An agent with broad read rights and an email action is not.
+After that, a hidden instruction in a fault description can still distort one summary. It cannot reach data outside that claim and has no way out. The remaining risk is a misleading summary, and the clerk catches it because claims above an agreed amount are always read in full. In my judgment that residual risk is acceptable. An agent with broad read rights and an email action is not.
 
 ## Spend half a day on the fields outsiders can write
 

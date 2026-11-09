@@ -1,7 +1,7 @@
 ---
 title: "Salesforce Well-Architected: What the new framework changes"
 metaTitle: "Salesforce Well-Architected Framework: the 5 new pillars"
-description: "The Salesforce Well-Architected Framework has five pillars and an agentic lens since September 2026. What changed and how to use it in your programme."
+description: "The Salesforce Well-Architected Framework has five pillars and an agentic lens since September 2026. What changed and how to use it in your program."
 pubDate: 2026-10-23
 updatedDate: 2026-10-27
 lang: en
@@ -14,7 +14,7 @@ takeaways:
   - "Salesforce stopped maintaining Well-Architected after Dreamforce 2024, announced its return in August 2025 and published a new framework on 14 September 2026."
   - "Three pillars (Trusted, Easy, Adaptable) became five: Trust, Reliability, Operational Excellence, Resource and Cost Optimization, and Fairness."
   - "A new Agentic Enterprise lens adds an agent variant to every pillar, and agents have to meet the same bar as any other solution."
-  - "Cost is now a pillar of its own, covering licences, sandboxes and build versus buy; for clients this is the most useful change."
+  - "Cost is now a pillar of its own, covering licenses, sandboxes and build versus buy; for clients this is the most useful change."
   - "The framework is a good shared language for design reviews with several partners, but the client still has to make the trade-offs between pillars."
 faq:
   - q: "What is the Salesforce Well-Architected Framework?"
@@ -29,13 +29,13 @@ faq:
     a: "No. The five pillars apply to every Salesforce solution. The agentic lens adds to them for Agentforce and other AI agents and does not replace them."
 ---
 
-The Salesforce Well-Architected Framework has been rebuilt: since 14 September 2026 it has five pillars instead of three, namely Trust, Reliability, Operational Excellence, Resource and Cost Optimization, and Fairness, plus a lens for solutions with AI agents. Before that, the programme had been dormant for almost a year. For CIOs and heads of CRM in manufacturing, one thing is new above all: cost and operations now have pillars of their own. That makes the framework usable as a shared standard for design reviews with several implementation partners. It does not make the trade-offs between the pillars for you.
+The Salesforce Well-Architected Framework has been rebuilt: since 14 September 2026 it has five pillars instead of three, namely Trust, Reliability, Operational Excellence, Resource and Cost Optimization, and Fairness, plus a lens for solutions with AI agents. Before that, the program had been dormant for almost a year. For CIOs and heads of CRM in manufacturing, one thing is new above all: cost and operations now have pillars of their own. That makes the framework usable as a shared standard for design reviews with several implementation partners. It does not make the trade-offs between the pillars for you.
 
 ## What happened since the relaunch?
 
 The history is short, but it explains why the framework looks different today:
 
-- **After Dreamforce 2024** the website stopped being updated, as [Salesforce Ben reported](https://www.salesforceben.com/salesforce-well-architected-set-to-return-community-news-and-validating-data-models/). The programme was effectively shut down.
+- **After Dreamforce 2024** the website stopped being updated, as [Salesforce Ben reported](https://www.salesforceben.com/salesforce-well-architected-set-to-return-community-news-and-validating-data-models/). The program was effectively shut down.
 - **On 8 August 2025** Chief Architect Emin Gerba and Christophe Coenraets announced its return on the [Salesforce blog](https://www.salesforce.com/blog/relaunching-well-architected-program/). Remarkably frank: many architects had told them that ending it was a mistake.
 - **For Dreamforce 2025, from 13 October,** the reworked [Architecture Center](https://www.salesforce.com/blog/relaunching-salesforce-architecture-program/) went live, with new decision guides (for example on Data 360, event-driven architecture and asynchronous processing) and new fundamentals on Agentforce and the Agentic Enterprise. Only parts of Trusted and Adaptable in the framework itself were refreshed.
 - **On 14 September 2026** Salesforce published the [new Well-Architected Framework](https://www.salesforce.com/blog/new-well-architected-framework/). According to Salesforce, hundreds of architects contributed through focus groups, surveys and community events.
@@ -50,7 +50,7 @@ The old framework had three pillars with eight qualities in total: Trusted (secu
 1. **Trust:** security, access, privacy, data governance and integration security.
 2. **Reliability:** availability, recovery and scaling, including disaster recovery and load testing.
 3. **Operational Excellence:** monitoring, DevOps, automation, incident management and continuous improvement.
-4. **Resource and Cost Optimization:** code organisation, packaging, data lifecycle, performance, build versus buy, licences and sandboxes.
+4. **Resource and Cost Optimization:** code organization, packaging, data lifecycle, performance, build versus buy, licenses and sandboxes.
 5. **Fairness:** accessibility, transparency, non-discrimination and AI ethics.
 
 Salesforce did not throw the old content away; it re-sorted it. The [Legacy Framework Mapping](https://architect.salesforce.com/docs/architect/well-architected/guide/tea-pillar-mapping.html) page shows where each part went. Some examples: monitoring used to sit under Reliable and now belongs to Operational Excellence. Disaster recovery used to sit under Resilient and now belongs to Reliability. Business value and ROI used to sit under Automated and now belong to Resource and Cost Optimization. Accessibility and privacy rights sit under Fairness, while legal compliance and data residency stay with Trust. Messaging, eventing and API management moved out of the framework into the Integration Patterns.
@@ -64,7 +64,7 @@ title: Well-Architected: from three to five pillars
 Trust | Security < Secure | Legal, data residency < Compliant
 Reliability | Availability, scaling < Reliable | Disaster recovery < Resilient
 Operational Excellence | Monitoring < Reliable | Strategy, governance < Intentional | Automation < Automated | ALM, incidents < Resilient
-Resource and Cost Optimization * | Performance < Reliable | ROI, maintainability < Automated, Intentional | Licences, sandboxes < 2026 framework
+Resource and Cost Optimization * | Performance < Reliable | ROI, maintainability < Automated, Intentional | Licenses, sandboxes < 2026 framework
 Fairness | Ethics, privacy rights < Compliant | Accessibility < Engaging
 note: **New:** Agentic Enterprise lens for every pillar.
 note: **Moved out:** messaging, eventing and APIs to the Integration Patterns.
@@ -95,7 +95,7 @@ The key sentence is in the announcement blog: "Agents don't get their own rulebo
 
 From the point of view of a client-side architect, three changes matter.
 
-**Cost has its own pillar.** In the old framework cost only appeared at the edges. Now licences, sandboxes and build versus buy have a pillar of their own. That was overdue. From my pre-sales work with Salesforce I know that full licences are offered by default, even though many users do not need them. For one client that easily adds up to six figures a year. An architecture review that ignores this is incomplete.
+**Cost has its own pillar.** In the old framework cost only appeared at the edges. Now licenses, sandboxes and build versus buy have a pillar of their own. That was overdue. From my pre-sales work with Salesforce I know that full licenses are offered by default, even though many users do not need them. For one client that easily adds up to six figures a year. An architecture review that ignores this is incomplete.
 
 **Operations sit next to design as equals.** Operational Excellence bundles DevOps, monitoring and incident management. That puts operations into every architecture review instead of leaving them for after go-live. Having DORA metrics in the official framework gives clients an argument with partners who still deploy by hand. Why I insist on this is in [Why DevOps matters in Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
 
@@ -110,12 +110,12 @@ For all the agreement: it is still a vendor document.
 - **The Architect Agent is not tangible yet.** Salesforce showed it at Dreamforce but did not state availability or pricing. I would test it before trusting it with architecture questions.
 - **It does not replace a decision.** The framework provides questions and patterns. Whether you need 99.5 percent availability or 99, whether you build or buy, depends on your business model and not on the document.
 
-## How I use the framework in a programme with several partners
+## How I use the framework in a program with several partners
 
 I already used the old framework with Trusted, Easy and Adaptable in client projects and presented it in user group talks.
 
 ```praxis
-In my largest programme so far, more than 30 developers in 8 streams worked for 5 implementation partners in the same org. It took us about three months to settle the shared standards: naming conventions, one automation per object, test coverage rules, a matrix of which stream owns which object, and rules for what belongs in custom metadata types or custom labels. 80 percent were in place after the first round, the rest was added over the following months.
+In my largest program so far, more than 30 developers in 8 streams worked for 5 implementation partners in the same org. It took us about three months to settle the shared standards: naming conventions, one automation per object, test coverage rules, a matrix of which stream owns which object, and rules for what belongs in custom metadata types or custom labels. 80 percent were in place after the first round, the rest was added over the following months.
 ```
 
 With the new framework I would sort these standards along the five pillars today. Naming conventions, packaging and object ownership are Resource and Cost Optimization and Operational Excellence. Permissions and integration users are Trust. The advantage: every partner knows the framework, so the discussion does not start from zero, and every deviation can be assigned to a pillar.
@@ -125,9 +125,9 @@ In practice that means:
 1. **Structure design reviews by pillar.** Every partner answers the same five blocks of questions for larger changes.
 2. **Log trade-offs.** Where one pillar gives way to another, it goes into the decision log with a reason.
 3. **Do not treat agents separately.** Agentforce work goes through the same review, extended by the agent variant of each pillar.
-4. **Take the cost pillar seriously.** Check licences and sandboxes against actual use once a year.
+4. **Take the cost pillar seriously.** Check licenses and sandboxes against actual use once a year.
 
-How I set up standards and reviews in such programmes is part of my [work on partner governance and architecture](../../services/partner-governance/).
+How I set up standards and reviews in such programs is part of my [work on partner governance and architecture](../../services/partner-governance/).
 
 ## Check your development standards against the five pillars
 

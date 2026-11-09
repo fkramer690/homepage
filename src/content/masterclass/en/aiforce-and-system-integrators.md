@@ -35,7 +35,7 @@ Anyone asking about "SI Force" or "AI Force" in October 2026 usually means one o
 | Reading | What it refers to | Who it affects |
 |---|---|---|
 | AIforce (SIForce according to the CEO) | Interface layer that makes Salesforce usable from Claude, Slack and Lightning | IT lead, sales, service, data protection |
-| SI as system integrator | The implementation partner who introduces and runs Salesforce for you | Programme manager, procurement, business units |
+| SI as system integrator | The implementation partner who introduces and runs Salesforce for you | Program manager, procurement, business units |
 
 The two are linked. Your partner is expected to deliver the new layer, and since 2026 Salesforce pays partners differently for doing so. That is why this chapter covers both readings. The basic terms and the four layers of AI around Salesforce are in [chapter 1](../terms-and-map/); the coding agents partners build with today are in [chapter 4](../external-coding-agents/).
 
@@ -88,7 +88,7 @@ The announcement gives no start date for the new tiers. On 15 April 2026 Salesfo
 
 ### What the new incentives mean for you as a client
 
-The logic has shifted from "licence sold, project billed by the hour" to "agent in production, consumption running". Partly that is good for you, but there is a conflict.
+The logic has shifted from "license sold, project billed by the hour" to "agent in production, consumption running". Partly that is good for you, but there is a conflict.
 
 ```pro-contra
 pro: What works for you
@@ -138,4 +138,4 @@ After that the two offers can be compared, because AI use, access and consumptio
 - **Write AI rules into the contract**: disclosure of tools, no production access, human review, IP in the code.
 - **Check industry depth.** Ask for agents in production for warranty, spare parts or dealer sales, not for certificates or the FDE network logo.
 
-These points are part of my work in [partner governance](../../../services/partner-governance/). Which tool fits which purpose is the subject of the next chapter, the [decision matrix](../ai-tool-decision-matrix/); how teams organise themselves around AI is covered in [chapter 9](../teamwork-and-delivery/). All chapters are listed on the [masterclass overview](../).
+These points are part of my work in [partner governance](../../../services/partner-governance/). Which tool fits which purpose is the subject of the next chapter, the [decision matrix](../ai-tool-decision-matrix/); how teams organize themselves around AI is covered in [chapter 9](../teamwork-and-delivery/). All chapters are listed on the [masterclass overview](../).

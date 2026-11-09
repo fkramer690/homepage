@@ -20,8 +20,8 @@ faq:
     a: "They can replace the distribution part: who has which target for which customer, product and month. They do not calculate commissions, and they only show attainment if actuals arrive in Salesforce in the same structure."
   - q: "What happens to targets when an account manager leaves?"
     a: "According to Trailhead, the assignments become invalid. The manager then reassigns them to another team member, moves them to team assignments, changes the owner or deletes them."
-  - q: "Which licence do account manager targets need?"
-    a: "The developer guide says the Update Account Manager Target Values action requires a Manufacturing Cloud licence. The pricing page lists the feature without showing per edition which one includes it, so ask Salesforce to confirm it for your edition."
+  - q: "Which license do account manager targets need?"
+    a: "The developer guide says the Update Account Manager Target Values action requires a Manufacturing Cloud license. The pricing page lists the feature without showing per edition which one includes it, so ask Salesforce to confirm it for your edition."
 draft: false
 ---
 
@@ -55,7 +55,7 @@ Two details matter in practice. First, the assigned values do not have to add up
 
 ```vertiefung For developers
 title: Updating targets from a flow
-For automation there is the [Update Account Manager Target Values action](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_account_manager_target.htm), available since API version 49.0. It takes the ID of a target record and updates the assignment values "based on the parent's target value and percentage". A flow can call it when the board changes the yearly target in March. The developer guide notes that the action requires a Manufacturing Cloud licence.
+For automation there is the [Update Account Manager Target Values action](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_account_manager_target.htm), available since API version 49.0. It takes the ID of a target record and updates the assignment values "based on the parent's target value and percentage". A flow can call it when the board changes the yearly target in March. The developer guide notes that the action requires a Manufacturing Cloud license.
 ```
 
 ## What happens after a reorganisation?
@@ -81,7 +81,7 @@ The same structure. Salesforce promises to "track business performance from targ
 
 If targets are set per product and the forecast runs per product category, the review compares two numbers that cannot match. The same happens when the ERP books revenue on the sold-to party and the target sits on a parent account. I would fix one customer level, one product level and one period type for all three before anyone enters a target. How the actuals feed from SAP should look is part of my work on [integration with ERP and middleware](../../services/salesforce-integration/).
 
-For the comparison itself, Trailhead describes the [dashboards of the CRM Analytics template](https://trailhead.salesforce.com/content/learn/modules/crm-analytics-dashboards-for-account-manager-targets/explore-sales-targets) for targets, including a Team Performance dashboard for the account manager target record page. It compares targets with actual data for the current and the last year and shows the unassigned share. It comes from the CRM Analytics app for Manufacturing Cloud, and its content depends on the objects the admin selects when creating the app. The unit names no licence. The current [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) lists Tableau Next per edition and does not mention CRM Analytics, so ask Salesforce whether your edition includes the dashboard.
+For the comparison itself, Trailhead describes the [dashboards of the CRM Analytics template](https://trailhead.salesforce.com/content/learn/modules/crm-analytics-dashboards-for-account-manager-targets/explore-sales-targets) for targets, including a Team Performance dashboard for the account manager target record page. It compares targets with actual data for the current and the last year and shows the unassigned share. It comes from the CRM Analytics app for Manufacturing Cloud, and its content depends on the objects the admin selects when creating the app. The unit names no license. The current [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) lists Tableau Next per edition and does not mention CRM Analytics, so ask Salesforce whether your edition includes the dashboard.
 
 ## Worked example: 40 account managers and a record limit
 
@@ -108,6 +108,6 @@ The Sales Planning agent does not work on targets either. Which subagents Salesf
 1. **Hierarchy.** Manager hierarchy or forecasts hierarchy, and who keeps the Manager field correct.
 2. **Levels.** One customer level, one product level, one period type for targets, forecasts and actuals.
 3. **Records.** Expected period records against the limit in the quote.
-4. **Licence.** Feature and dashboard confirmed for your edition in writing.
+4. **License.** Feature and dashboard confirmed for your edition in writing.
 
 I settle the levels in one meeting with the head of sales and controlling, because controlling delivers the actuals. Only then do I calculate the period records and have the limit confirmed in the quote.

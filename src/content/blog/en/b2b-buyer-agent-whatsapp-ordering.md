@@ -1,6 +1,6 @@
 ---
 title: "B2B Buyer Agent: ordering through WhatsApp and SMS"
-description: "What the Salesforce B2B Buyer Agent does for dealers today, what WhatsApp and SMS ordering needs, which licences apply and why prices must come from systems."
+description: "What the Salesforce B2B Buyer Agent does for dealers today, what WhatsApp and SMS ordering needs, which licenses apply and why prices must come from systems."
 pubDate: 2026-10-28
 lang: en
 slug: b2b-buyer-agent-whatsapp-ordering
@@ -11,7 +11,7 @@ tags: [B2B Commerce, Buyer Agent, Agentforce, WhatsApp, dealers, reorder]
 takeaways:
   - "The Buyer Agent (B2B) template comes with five subagents, among them product search, orders with status and reorder, and account switching."
   - "Salesforce names WhatsApp and SMS as channels. Closing the whole order in the chat, payment included, is announced as Carter for Buyers for January 2027."
-  - "Licences: Agentforce Commerce for B2B, Service Cloud or Sales and Service edition, Agentforce, Einstein for Service and Einstein generative AI."
+  - "Licenses: Agentforce Commerce for B2B, Service Cloud or Sales and Service edition, Agentforce, Einstein for Service and Einstein generative AI."
   - "Contract prices, discounts and credit decisions must come from the store's pricing or the ERP; the language model only phrases what those systems return."
   - "Start with order status and reorder for a pilot group on a store that already works, and treat every dealer message as untrusted input."
 faq:
@@ -19,14 +19,14 @@ faq:
     a: "The Buyer Agent is an Agentforce agent for B2B Commerce stores. Built from the Buyer Agent (B2B) template, it searches products, shows order status and items, reorders past orders and lets a buyer switch between the accounts they may buy for."
   - q: "Can dealers order through WhatsApp with Salesforce B2B Commerce?"
     a: "Salesforce names WhatsApp and SMS as Buyer Agent channels in its June 2026 announcement. The full order in the chat, including confirmation and payment at contract price, is listed as Carter for Buyers with general availability in January 2027."
-  - q: "Which licences does the B2B Buyer Agent need?"
+  - q: "Which licenses does the B2B Buyer Agent need?"
     a: "Trailhead lists Agentforce Commerce for B2B, Service Cloud or Sales and Service edition (EE, UE or PXE), the add-ons Agentforce and Einstein for Service, and Einstein generative AI, which includes setting up Data 360."
   - q: "What does the B2B Buyer Agent cost?"
     a: "I found no separate price for the Buyer Agent on the official pages. The Agentforce add-on is a prerequisite, so ask how agent usage is counted in your contract and calculate it with your own number of dealer conversations."
 draft: false
 ---
 
-With the B2B Buyer Agent, dealers can already search products, check order status and reorder past orders in a chat. Closing the whole order through WhatsApp or SMS, including confirmation and payment at contract price, is announced as Carter for Buyers for January 2027. So I would start with order status and reorder for a pilot group of dealers and add the rest once the answers are reliable. It needs a working B2B store with correct buyer groups and prices, the licences Trailhead lists, and systems that supply contract prices and credit decisions.
+With the B2B Buyer Agent, dealers can already search products, check order status and reorder past orders in a chat. Closing the whole order through WhatsApp or SMS, including confirmation and payment at contract price, is announced as Carter for Buyers for January 2027. So I would start with order status and reorder for a pilot group of dealers and add the rest once the answers are reliable. It needs a working B2B store with correct buyer groups and prices, the licenses Trailhead lists, and systems that supply contract prices and credit decisions.
 
 ## What can the B2B Buyer Agent do today?
 
@@ -42,7 +42,7 @@ You can add your own subagents, for example an escalation to inside sales or a f
 
 The [introduction unit on Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping) lists the same core: product search by name, category or specification, an overview of past and current orders, reorders and order status from placement to delivery. Salesforce's [June 2026 blog post on B2B Commerce](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) lists the Buyer Agent in the section "B2B Commerce innovations (GA June 2026)" and calls it a 24/7 buying assistant.
 
-For a manufacturer this means: the agent covers the questions inside sales answers most often by phone, "where is my order" and "same as last time". It does not replace a store. Every answer comes from the catalogue, entitlements and orders the store already holds.
+For a manufacturer this means: the agent covers the questions inside sales answers most often by phone, "where is my order" and "same as last time". It does not replace a store. Every answer comes from the catalog, entitlements and orders the store already holds.
 
 ## WhatsApp and SMS today, Carter for Buyers from January 2027
 
@@ -52,15 +52,15 @@ On the [Commerce innovations page](https://www.salesforce.com/ca/commerce/innova
 
 My reading: web chat in the store is documented today. For WhatsApp and SMS, ask your account team which setup is supported for B2B in your org, and plan the complete ordering flow with payment for 2027. I would also clarify early with data protection and the works council whether orders may run through WhatsApp at all, and which phone numbers belong to which buyer account.
 
-## Which licences does the Buyer Agent need?
+## Which licenses does the Buyer Agent need?
 
 The introduction unit on Trailhead names these prerequisites:
 
 | Item | Requirement |
 |---|---|
-| Commerce licence | Agentforce Commerce for B2B |
+| Commerce license | Agentforce Commerce for B2B |
 | Edition | Service Cloud or Sales & Service Edition: EE, UE or PXE |
-| Add-on licences | Agentforce and Einstein for Service |
+| Add-on licenses | Agentforce and Einstein for Service |
 | Platform | Einstein generative AI, set up together with Data 360 |
 
 Two things stand out. First, the Buyer Agent needs Service Cloud, so a company that runs only Sales Cloud next to the store buys more than the agent. Second, I found no separate price for the Buyer Agent on the official pages. Usage runs on the Agentforce add-on, so the cost depends on your contract and your volume. How such a calculation works for a dealer service agent is shown in [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/).
@@ -111,7 +111,7 @@ Only when these answers are reliable would I add a messaging channel such as Wha
 ## Check the store without an agent
 
 1. **Check the store first.** Buyer groups, entitlements, prices and order status must be correct without an agent. An agent makes errors in this data visible faster, it does not fix them.
-2. **Check the licences.** Service Cloud edition, Agentforce and Einstein for Service add-ons and Data 360 setup, as listed on Trailhead.
+2. **Check the licenses.** Service Cloud edition, Agentforce and Einstein for Service add-ons and Data 360 setup, as listed on Trailhead.
 3. **Pick two jobs.** Order status and reorder, with a test set of real dealer questions and an escalation path.
 4. **Decide the channel.** Web chat in the store first; WhatsApp and SMS after the questions of identity, data protection and support are answered.
 5. **Write down what code decides.** Price, credit, delivery date and order creation stay in the store and the ERP.

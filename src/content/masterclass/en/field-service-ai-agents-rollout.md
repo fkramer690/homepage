@@ -26,7 +26,7 @@ faq:
   - q: "Which KPIs show whether Field Service works after go-live?"
     a: "Jobs per technician and day, travel share, first-time fix rate, response times met, arrivals within the promised window and the share of engine proposals dispatchers change. Measure them for three months in the old system first, with the same definitions."
   - q: "Does the works council have to be involved in a Field Service rollout?"
-    a: "In Germany usually yes. Section 87 of the Works Constitution Act gives it co-determination on technical systems that can monitor behaviour or performance, and location tracking, timesheets and voice input touch that. Bring it in before the first wave, not after the app is on the devices."
+    a: "In Germany usually yes. Section 87 of the Works Constitution Act gives it co-determination on technical systems that can monitor behavior or performance, and location tracking, timesheets and voice input touch that. Bring it in before the first wave, not after the app is on the devices."
 draft: false
 ---
 
@@ -107,7 +107,7 @@ The review table per plan section is in [Field Service setup by AI assistant: wh
 
 I recommend rolling out Field Service in waves, region by region or country by country. Each wave brings its own master data, dispatchers, technicians and partners, and the first wave tests everything the later ones rely on. If skills or visiting hours are missing, it hits one territory and not the whole field service.
 
-The works council belongs in the planning of the first wave. In Germany, [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) gives it co-determination on technical systems that can monitor behaviour or performance. Field Service touches that with timesheets, with location tracking in the mobile app and with voice input. According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.mfs_resource_tracking.htm&type=5), location tracking can be set by interval and accuracy, and single technicians can be excluded. Those settings are what you negotiate, per country if needed. The wave content and the settings table are in [Rolling out Salesforce Field Service: why in waves?](../../../blog/salesforce-field-service-rollout/). The release pipeline that carries each wave's configuration should be in place before wave one; the DevOps chapter [rollout roadmap and metrics](../../devops-release-management/rollout-roadmap/) shows how to get there.
+The works council belongs in the planning of the first wave. In Germany, [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) gives it co-determination on technical systems that can monitor behavior or performance. Field Service touches that with timesheets, with location tracking in the mobile app and with voice input. According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.mfs_resource_tracking.htm&type=5), location tracking can be set by interval and accuracy, and single technicians can be excluded. Those settings are what you negotiate, per country if needed. The wave content and the settings table are in [Rolling out Salesforce Field Service: why in waves?](../../../blog/salesforce-field-service-rollout/). The release pipeline that carries each wave's configuration should be in place before wave one; the DevOps chapter [rollout roadmap and metrics](../../devops-release-management/rollout-roadmap/) shows how to get there.
 
 Agents fit into the same waves. I would switch on an agent in a region that has been live for a few months, so its effect can be told apart from the effect of Field Service itself.
 
@@ -157,7 +157,7 @@ Troubleshooting waits until manuals carry the asset's product key, the spare par
 | Decision | What it covers |
 |---|---|
 | First agent | With a measurable target such as the share of maintenance visits booked without a dispatcher. |
-| Add-on or Agentforce 1 Field Service | A licence question I handle in [make-or-buy and licence planning](../../../services/make-or-buy-licences/). |
+| Add-on or Agentforce 1 Field Service | A license question I handle in [make-or-buy and license planning](../../../services/make-or-buy-licences/). |
 | Wave order | With works council timing per country. |
 | KPI definitions and baseline | Before go-live. |
 | Owners | Plus the rule that AI-built configuration reaches production only through the pipeline, as in my [DevOps and release management](../../../services/devops-release-management/) work. |

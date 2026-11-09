@@ -33,7 +33,7 @@ Data and configuration that is not metadata slips through many Salesforce pipeli
 
 ## Which data counts as configuration, and which does not?
 
-[Chapter 6](../quality-tests-reviews/) covered how metadata reaches production with checks. A Salesforce org also depends on records that drive behaviour. I split them into four groups, because each one needs a different route:
+[Chapter 6](../quality-tests-reviews/) covered how metadata reaches production with checks. A Salesforce org also depends on records that drive behavior. I split them into four groups, because each one needs a different route:
 
 | Group | Manufacturing examples | Source of truth | Route into the orgs |
 |---|---|---|---|
@@ -62,7 +62,7 @@ In an existing org I would not rebuild every custom setting. I would write into 
 
 ## Configuration data runs through the same pipeline
 
-**External IDs instead of Salesforce IDs.** A work rule has a different Salesforce ID in every org. A data step has to recognise the record by a business key, or it creates duplicates on the second run. I give every configuration object a field marked as external ID, holding a readable code such as `WR_SKILL_HYDRAULICS`.
+**External IDs instead of Salesforce IDs.** A work rule has a different Salesforce ID in every org. A data step has to recognize the record by a business key, or it creates duplicates on the second run. I give every configuration object a field marked as external ID, holding a readable code such as `WR_SKILL_HYDRAULICS`.
 
 **The data lives in the repository.** Then the same rules apply as for code: pull request, review, history. A changed threshold shows up in the diff, and nobody has to guess who changed it and when.
 
@@ -89,11 +89,11 @@ The commercial platforms have their own data modules with a user interface. Acco
 
 | Tool | What it does with data | Keep in mind |
 |---|---|---|
-| [Gearset data deployments](https://docs.gearset.com/en/articles/2529745-running-your-first-data-deployment) | dependencies up to 15 levels deep, matching on external ID, masking with fake values, flows, triggers and validation rules can be switched off during the run, [templates](https://gearset.com/blog/data-deployment-templates/), [CPQ and Vlocity configuration](https://gearset.com/product/data-deploy) | part of the "Sandbox seeding & compliance" add-on, not the deployment licence; per [Gearset](https://docs.gearset.com/en/articles/1376661-data-deployments-with-gearset) no rollback, no deletion, production disabled by default |
-| [Copado Data Deploy](https://www.copado.com/platform/deliver/) | data templates for configuration records with complex relationships, ready-made templates from the DevOps Exchange, masking of sensitive values | in Copado Essentials, per its [documentation](https://docs.essentials.copado.com/en/articles/6325474-how-to-deploy-relational-data-with-data-deploy-essentials), an Essentials Plus option with a per-user licence |
+| [Gearset data deployments](https://docs.gearset.com/en/articles/2529745-running-your-first-data-deployment) | dependencies up to 15 levels deep, matching on external ID, masking with fake values, flows, triggers and validation rules can be switched off during the run, [templates](https://gearset.com/blog/data-deployment-templates/), [CPQ and Vlocity configuration](https://gearset.com/product/data-deploy) | part of the "Sandbox seeding & compliance" add-on, not the deployment license; per [Gearset](https://docs.gearset.com/en/articles/1376661-data-deployments-with-gearset) no rollback, no deletion, production disabled by default |
+| [Copado Data Deploy](https://www.copado.com/platform/deliver/) | data templates for configuration records with complex relationships, ready-made templates from the DevOps Exchange, masking of sensitive values | in Copado Essentials, per its [documentation](https://docs.essentials.copado.com/en/articles/6325474-how-to-deploy-relational-data-with-data-deploy-essentials), an Essentials Plus option with a per-user license |
 | [Flosum Data Migrator](https://docs.flosum.com/data-migrator) | templates with objects, fields and filters, relationships preserved, masking, triggers can be switched off | error report per failed record |
 
-What these tools do well: an admin sees before the run which related records will go along and does not have to write an `export.json`. For CPQ configuration with many nested objects, that is a real advantage. Which tool fits your programme overall is decided in [chapter 4](../devops-tools-compared/); for data the same rule applies as for metadata. The tool runs in your name, and the data templates sit with you, not in a partner's account. The reasons are in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
+What these tools do well: an admin sees before the run which related records will go along and does not have to write an `export.json`. For CPQ configuration with many nested objects, that is a real advantage. Which tool fits your program overall is decided in [chapter 4](../devops-tools-compared/); for data the same rule applies as for metadata. The tool runs in your name, and the data templates sit with you, not in a partner's account. The reasons are in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
 
 One point applies to every tool:
 

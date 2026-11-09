@@ -64,12 +64,12 @@ For a manufacturer this has two sides. A partner paid at go-live has less intere
 |---|---|---|---|
 | Time and materials | person-days worked | you, if the partner reports honestly | discovery, undocumented ERP or MES interfaces, production support |
 | Fixed price per work package | an accepted result | the partner | dealer portal forms, warranty claim intake, Flows and Apex with testable criteria |
-| Price catalogue per story size | stories sized S, M or L | shared, if you reprice regularly | continuous change after go-live |
+| Price catalog per story size | stories sized S, M or L | shared, if you reprice regularly | continuous change after go-live |
 | Outcome component | a measured business result | shared | agents with a metric you measure yourself |
 
 **Fixed price needs a specification you can test.** "A dealer submits a warranty claim with serial number, fault code and photos; the claim is checked against the warranty start date of the asset and passed to SAP for the credit note" can be accepted. "Improve dealer service" cannot. AI makes building cheaper; it does nothing for an unclear requirement. Under German law, [CMS points out](https://cms.law/de/deu/legal-updates/meilensteine-und-abnahme-in-it-projekten) that software development is often treated as a contract for work with formal acceptance, while a service contract, the usual form of T&M, has no statutory acceptance. That difference is what moves risk to the partner.
 
-**A price catalogue suits run and change.** You agree prices per story size once, the partner profits from every efficiency, and you get predictable costs. One condition comes with it: review the catalogue every six months against measured cycle times, or the partner keeps the gain forever.
+**A price catalog suits run and change.** You agree prices per story size once, the partner profits from every efficiency, and you get predictable costs. One condition comes with it: review the catalog every six months against measured cycle times, or the partner keeps the gain forever.
 
 **Outcome components work as a share, not as the whole fee.** No partner controls your asset data, the availability of your SAP system or how many dealers use the portal. A fee that depends entirely on adoption is a gamble for both sides. In my view, 10 to 20 percent of the fee tied to a metric is a range worth discussing.
 

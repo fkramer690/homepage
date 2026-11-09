@@ -36,7 +36,7 @@ Most coding tools now sell a seat with a budget and bill usage above it per toke
 - **Claude Code at API rates.** Anthropic [reports](https://code.claude.com/docs/en/costs) about $13 per developer per active day and $150 to $250 per month across enterprise deployments, with 90 percent of users below $30 per active day.
 - **Claude Team and Enterprise.** Team Standard costs $25 per seat and month ($20 annually), Premium $125 ($100 annually), Enterprise $20 per seat plus usage at API rates, according to [Anthropic's pricing page](https://claude.com/pricing). Seat usage draws from an allowance that resets in a five-hour and a weekly window. Its size in tokens is not published.
 - **OpenAI Codex.** The [Codex rate card](https://help.openai.com/en/articles/20001106-codex-rate-card-2) gives an average of about $100 to $200 per developer per month. OpenAI lists Codex among the features of [ChatGPT Business](https://openai.com/business/pricing/) at $25 per standard seat ($20 annually).
-- **GitHub Copilot.** Business costs [$19 per user with 1,900 AI credits](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan), Enterprise $39 with 3,900. One credit is $0.01, credits are [pooled across the organisation](https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/billing/organizations-and-enterprises/usage-based-billing), and code completions are not billed.
+- **GitHub Copilot.** Business costs [$19 per user with 1,900 AI credits](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan), Enterprise $39 with 3,900. One credit is $0.01, credits are [pooled across the organization](https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/billing/organizations-and-enterprises/usage-based-billing), and code completions are not billed.
 - **Agentforce Vibes.** Flat fee of $125 per user and month or metered Flex Credits, see below.
 
 The seat price says little about the bill. GitHub converts tokens into credits at the model's rate, so $19 of included usage covers only a handful of the agent sessions below.
@@ -90,22 +90,22 @@ Agentforce Vibes is Salesforce's coding agent. Two points matter:
 Salesforce does not say whether re-sent context counts in full. If it does, one Opus request with 70,000 tokens of context costs 560 credits or $2.80, more than the whole session above. I would measure a week in Digital Wallet first.
 ```
 
-The flat fee caps premium models at 2,500 requests or 36 million tokens per 30 days, and Opus is only available metered. Vibes is not available in the EU Operating Zone. In its favour, the licence sits in the client's org, and the [FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) says data stays within Salesforce's trust boundary. The tool choice itself is covered in [Agentforce Vibes, Claude Code or Copilot](../agentforce-vibes-claude-code-copilot/).
+The flat fee caps premium models at 2,500 requests or 36 million tokens per 30 days, and Opus is only available metered. Vibes is not available in the EU Operating Zone. In its favor, the license sits in the client's org, and the [FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) says data stays within Salesforce's trust boundary. The tool choice itself is covered in [Agentforce Vibes, Claude Code or Copilot](../agentforce-vibes-claude-code-copilot/).
 
 ## Who should pay for AI coding: client or partner?
 
 The answer follows the commercial model. In time and materials the client pays for days; when the partner's developers get faster, the client pays for fewer days, so the client should pay for the tokens too. In a fixed price the partner keeps the gain and carries the cost. Three setups exist:
 
-- **The client provides the accounts.** Partner developers work with seats in the client's Claude, ChatGPT or GitHub organisation, or a Vibes licence in the client's org. The client sets limits, sees spend per person and removes access when the partner leaves. This is the logic of [client-owned DevOps tools](../why-clients-should-own-their-devops-tools/).
+- **The client provides the accounts.** Partner developers work with seats in the client's Claude, ChatGPT or GitHub organization, or a Vibes license in the client's org. The client sets limits, sees spend per person and removes access when the partner leaves. This is the logic of [client-owned DevOps tools](../why-clients-should-own-their-devops-tools/).
 - **The partner brings its own tools.** The cost sits in the rate, and so does the consumption risk. But your source code then runs through a contract you have never read, so the contract must name the allowed tools, models and data rules, as in [contract rules for partners coding with AI](../partners-using-ai-coding-contract-rules/).
 - **Pass-through at cost.** The partner invoices tokens monthly. I would accept this only with a cap per developer, a usage report per person and no mark-up, or nobody has a reason to pick Sonnet over Opus.
 
-In time and materials I prefer the first setup: for $650 to $1,500 a month, the client controls data, limits and offboarding. In a German company the works council has a say, see [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/). Whether to buy seats at all is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
+In time and materials I prefer the first setup: for $650 to $1,500 a month, the client controls data, limits and offboarding. In a German company the works council has a say, see [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/). Whether to buy seats at all is part of my [make-or-buy and license planning](../../services/make-or-buy-licences/).
 
 ## Decide who pays before the first sprint
 
 1. **Decide who pays before the first sprint** and write it into the statement of work.
-2. **Set limits.** Claude Team and Enterprise have spend limits per organisation, group and member for usage beyond the seat allowance, the Claude Console has workspace limits, and GitHub has budgets per user and cost centre.
+2. **Set limits.** Claude Team and Enterprise have spend limits per organization, group and member for usage beyond the seat allowance, the Claude Console has workspace limits, and GitHub has budgets per user and cost center.
 3. **Default to Sonnet.** Anthropic recommends Sonnet for most coding tasks and Opus for complex architectural decisions.
 4. **Keep the rules file short.** Anthropic advises keeping CLAUDE.md under 200 lines, see [the AI rules file for your repository](../ai-rules-file-salesforce-repository/).
 5. **Pilot with two developers for two weeks** and read the real spend.

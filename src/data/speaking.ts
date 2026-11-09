@@ -63,7 +63,7 @@ export const talks: Talk[] = [
     title: 'Salesforce Flow vs OmniScript – who is the king of the hill?',
     short: 'Flow vs OmniScript',
     abstract: {
-      en: 'Many orgs with Industries licences have both: Flow from the core platform and OmniScript from OmniStudio. Teams then build the same guided process twice, or pick the tool the last consultant knew. In this session I compare the two side by side: what each does better, where they overlap, what they cost in licences and skills, and where Salesforce is taking both on its roadmap. You leave with a rule of thumb for which tool fits which process.',
+      en: 'Many orgs with Industries licenses have both: Flow from the core platform and OmniScript from OmniStudio. Teams then build the same guided process twice, or pick the tool the last consultant knew. In this session I compare the two side by side: what each does better, where they overlap, what they cost in licenses and skills, and where Salesforce is taking both on its roadmap. You leave with a rule of thumb for which tool fits which process.',
       de: 'Viele Orgs mit Industries-Lizenzen haben beides: Flow aus der Kernplattform und OmniScript aus OmniStudio. Dann baut ein Team denselben geführten Prozess zweimal, oder es nimmt das Werkzeug, das der letzte Berater kannte. In dieser Session vergleiche ich beide direkt: was jedes besser kann, wo sie sich überschneiden, was sie an Lizenzen und Know-how kosten und wohin Salesforce beide laut Roadmap entwickelt. Am Ende steht eine Faustregel, welches Werkzeug zu welchem Prozess passt.',
     },
     points: {
@@ -137,7 +137,7 @@ export const moreAppearances: { icon: string; title: Text; text: Text; url?: str
     icon: 'team',
     title: { en: 'Salesforce User Group Cologne', de: 'Salesforce User Group Köln' },
     text: {
-      en: 'Co-leader of the Cologne Trailblazer Community Group. I organise meetups and regularly give talks there myself.',
+      en: 'Co-leader of the Cologne Trailblazer Community Group. I organize meetups and regularly give talks there myself.',
       de: 'Co-Leader der Kölner Trailblazer Community Group. Ich organisiere die Treffen mit und halte dort regelmäßig selbst Vorträge.',
     },
     url: 'https://trailblazercommunitygroups.com/salesforce-user-group-cologne-germany/',

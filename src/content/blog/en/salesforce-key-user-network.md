@@ -19,7 +19,7 @@ faq:
   - q: "What is a key user?"
     a: "A key user is a business user who gets to know the new system before everyone else, takes part in testing and is the first point of contact for questions in their team after go-live."
   - q: "How many key users does a Salesforce rollout need?"
-    a: "At least one per team, site or country who knows daily work there. In large sales or service organisations two are better, so holidays and sick leave do not leave a gap."
+    a: "At least one per team, site or country who knows daily work there. In large sales or service organizations two are better, so holidays and sick leave do not leave a gap."
   - q: "How much time do key users need?"
     a: "Clearly more before and shortly after go-live than in operations. How much exactly depends on the scope; what matters is that the time is agreed with their manager in advance."
   - q: "What is the difference between a key user and an admin?"
@@ -65,11 +65,11 @@ The most common choice is the worst: whoever has time becomes a key user. They a
 - **Curiosity rather than enthusiasm.** A key user does not have to love Salesforce. Critical key users find the weaknesses earlier, and once they are convinced, they convince others.
 - **Staying for a while.** Whoever changes jobs in three months takes the knowledge with them.
 
-In large organisations one key user per team, site or country pays off, two in critical areas. If the only key user of a country is out sick in the week after go-live, the support for the whole country is out.
+In large organizations one key user per team, site or country pays off, two in critical areas. If the only key user of a country is out sick in the week after go-live, the support for the whole country is out.
 
 ## What is a key user not?
 
-A key user replaces neither support nor the admin. They answer questions about usage, but they do not change configuration and do not fix interface errors. Defects keep going through the ticket system so they get counted and prioritised. A key user is not a trainer who runs whole training programmes either. They show on a real case how it works. If you do not draw these lines, the role is overloaded within a few weeks and the key user stops answering questions.
+A key user replaces neither support nor the admin. They answer questions about usage, but they do not change configuration and do not fix interface errors. Defects keep going through the ticket system so they get counted and prioritized. A key user is not a trainer who runs whole training programs either. They show on a real case how it works. If you do not draw these lines, the role is overloaded within a few weeks and the key user stops answering questions.
 
 ## How much time does the business need to free up?
 
@@ -85,8 +85,8 @@ Agree the key users' time in writing with their manager, with weeks and hours, a
 
 A network of key users needs a fixed slot. I recommend a short exchange where key users bring in their most important feedback and learn in advance what the next release changes. That turns every key user into a channel in both directions: changes reach the team through them, and problems from the team reach the project through them. What this path looks like before a release is in [communicating Salesforce releases to the business](../salesforce-release-communication-business/).
 
-It also matters that the role is visibly recognised. Whoever takes on extra work for the project should find it in their annual review. That costs nothing and decides whether anyone volunteers for the next project.
+It also matters that the role is visibly recognized. Whoever takes on extra work for the project should find it in their annual review. That costs nothing and decides whether anyone volunteers for the next project.
 
 ## Ask whom the team turns to today
 
-Ask every affected team: whom do you ask today when you get stuck in the system? The names that come up several times are your candidates. Then agree the time with the managers and bring the key users into the first workshops, before anything is built. If no name comes up in a team, nobody there carries the topic yet, and that team needs more support during training. How we build the network in programmes is described under [change management for Salesforce programmes](../../services/change-management-salesforce/).
+Ask every affected team: whom do you ask today when you get stuck in the system? The names that come up several times are your candidates. Then agree the time with the managers and bring the key users into the first workshops, before anything is built. If no name comes up in a team, nobody there carries the topic yet, and that team needs more support during training. How we build the network in programs is described under [change management for Salesforce programs](../../services/change-management-salesforce/).

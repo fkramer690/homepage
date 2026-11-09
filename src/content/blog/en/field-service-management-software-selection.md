@@ -11,7 +11,7 @@ contactBrief: make-or-buy
 tags: [field service management, FSM software, SAP Field Service Management, IFS, ServiceNow, Salesforce Field Service]
 takeaways:
   - "The system that already leads for customers, orders or assets narrows the shortlist. It does not make the decision on its own."
-  - "Behind the same feature names sit different packages, add-ons and ERP integrations. Check what the quoted licence actually includes."
+  - "Behind the same feature names sit different packages, add-ons and ERP integrations. Check what the quoted license actually includes."
   - "For manufacturers, the tests are installed base, multi-day jobs, contracts and warranty, spare parts and the feedback to the ERP."
   - "In my projects, the risks sat in asset data quality, technician acceptance and ERP interfaces. They recur with every product; their size does not."
   - "Compare two vendors on your own jobs, with dispatchers, back office and technicians, instead of on feature lists."
@@ -36,7 +36,7 @@ The vendors use the same words: scheduling, mobile app, assets, parts. Behind th
 ```tabelle
 title: What to test in a field service selection
 columns: Area | What it covers | What to test
-Scheduling and dispatch | Jobs by skill, availability, travel time; manual or optimised | Your job mix, crews and multi-day jobs
+Scheduling and dispatch | Jobs by skill, availability, travel time; manual or optimized | Your job mix, crews and multi-day jobs
 Mobile app | Order, asset and history, also offline; time, material, photos, signature | Technicians use it themselves on real jobs
 Installed base | Which machine is where, in which configuration, with which history | Real asset hierarchies from the ERP
 Contracts and warranty | What is covered, entitlements, SLAs, maintenance plans | Your contract types and warranty rules
@@ -44,17 +44,17 @@ Spare parts | Stock in the warehouse and van, reservation, returns | Reservation
 Reports and checklists | Service report, measurements, acceptance by the customer | Your report and the signature on site
 Service partners | External technicians and subcontractors | Partner access, assignment, confirmation and settlement
 ERP feedback | Time, material and travel back for billing | Which data flows, in which package, at what effort
-note: That a feature exists is not enough. What counts is the licence or add-on it needs and how much you still build.
+note: That a feature exists is not enough. What counts is the license or add-on it needs and how much you still build.
 ```
 
-Billing usually stays in the ERP at manufacturers; in the programmes I have seen, it always did. That is why the interface to the ERP is part of the selection for every product, including the one from the ERP vendor.
+Billing usually stays in the ERP at manufacturers; in the programs I have seen, it always did. That is why the interface to the ERP is part of the selection for every product, including the one from the ERP vendor.
 
 ## Four platforms for the shortlist
 
 ```tabelle
 title: Four platforms for manufacturers
 columns: Product | Basis | Natural shortlist candidate when
-Salesforce Field Service | Salesforce platform, closely tied to Service Cloud; own licences for dispatchers, technicians, contractors | Customer service and sales already run in Salesforce
+Salesforce Field Service | Salesforce platform, closely tied to Service Cloud; own licenses for dispatchers, technicians, contractors | Customer service and sales already run in Salesforce
 SAP Field Service Management | SAP cloud solution next to a backend such as S/4HANA or SAP Service Cloud | S/4HANA leads for service orders and billing
 IFS Cloud Field Service Management | Part of IFS Cloud, alongside ERP and asset management | IFS is already the ERP or asset management system
 ServiceNow Field Service Management | ServiceNow platform, part of its customer service offering | Customer service already runs on ServiceNow, not only IT service management
@@ -65,9 +65,9 @@ Salesforce customers also come across ServiceMax, which now belongs to PTC and b
 
 ## Salesforce Field Service fits when customer contact runs in Salesforce
 
-Salesforce Field Service uses the Salesforce platform and is closely tied to Service Cloud: a work order can link to the case, the account and the asset. If the data model, integration and permissions are set up for it, a customer reports a breakdown in the portal, the service team turns it into a work order, and the technician sees the same history. I describe this path in [from case to work order](../field-service-case-to-work-order/). According to the [Salesforce pricing page](https://www.salesforce.com/service/field-service-management/pricing/), dispatchers, technicians and contractors need their own licences, and some functions, such as asset service lifecycle management, are add-ons; Salesforce now sells the product as Field Service and Operations.
+Salesforce Field Service uses the Salesforce platform and is closely tied to Service Cloud: a work order can link to the case, the account and the asset. If the data model, integration and permissions are set up for it, a customer reports a breakdown in the portal, the service team turns it into a work order, and the technician sees the same history. I describe this path in [from case to work order](../field-service-case-to-work-order/). According to the [Salesforce pricing page](https://www.salesforce.com/service/field-service-management/pricing/), dispatchers, technicians and contractors need their own licenses, and some functions, such as asset service lifecycle management, are add-ons; Salesforce now sells the product as Field Service and Operations.
 
-In my cost calculation, scheduling optimisation paid off most with many short jobs per day; with few long jobs, the benefit was smaller. The assumptions are in [Salesforce Field Service: is it worth it?](../salesforce-field-service-worth-it/)
+In my cost calculation, scheduling optimization paid off most with many short jobs per day; with few long jobs, the benefit was smaller. The assumptions are in [Salesforce Field Service: is it worth it?](../salesforce-field-service-worth-it/)
 
 The trade-off: the media break between customer service and field service can disappear. In the architectures I have seen, the ERP kept leading for spare parts, installed base and billing, so data had to be integrated or replicated. Which data flows is shown in [spare parts from the ERP in Field Service](../salesforce-field-service-spare-parts-erp/).
 
@@ -85,7 +85,7 @@ If sales and customer service run in Salesforce but field service runs in SAP, t
 
 **ServiceNow** offers [field service management](https://www.servicenow.com/products/field-service-management/pricing.html) in two packages, as of November 2026. FSM Advanced includes dispatch, mobile apps, planned work, parts and contractor management; FSM Prime adds Schedule Optimization and Workforce Optimization. Prices are on request. Using ServiceNow for IT tickets is not enough on its own; it becomes a natural candidate when customer service already runs on its Customer Service Management.
 
-For scheduling, what differs is which constraints the optimisation handles, such as crews, parts or multi-day jobs, how it replans during the day and how dispatchers can override it. Test that on your own jobs.
+For scheduling, what differs is which constraints the optimization handles, such as crews, parts or multi-day jobs, how it replans during the day and how dispatchers can override it. Test that on your own jobs.
 
 ```praxis
 In my Field Service projects with maintenance, breakdown jobs and commissioning, spare parts and installed base came from the ERP, and scheduling ran automatically. The stumbling blocks were asset data quality, technician acceptance and the interfaces to the ERP. These three risks recur with every product, but how big they get depends on the product and architecture. They belong in every selection.
@@ -103,11 +103,11 @@ Shortlist | 2 weeks · client
 Scenarios | 4 to 6 weeks · client and vendors
   Real jobs with dispatchers, back office, parts logistics and technicians.
 Calculation | 2 weeks · client
-  Licences, add-ons, implementation, integration and operation over years.
+  Licenses, add-ons, implementation, integration and operation over years.
 ```
 
-Three jobs work well as scenarios: a planned maintenance, a breakdown with a spare part and a commissioning over several days. Let technicians use the mobile app themselves and let dispatchers replan a day. Use a released, representative extract of real asset data from the ERP, anonymised where needed and deleted after the test, to see what the [asset hierarchy](../field-service-asset-hierarchy-machines/) looks like in the new system.
+Three jobs work well as scenarios: a planned maintenance, a breakdown with a spare part and a commissioning over several days. Let technicians use the mobile app themselves and let dispatchers replan a day. Use a released, representative extract of real asset data from the ERP, anonymized where needed and deleted after the test, to see what the [asset hierarchy](../field-service-asset-hierarchy-machines/) looks like in the new system.
 
 Real jobs provide the evidence for the functional decision. Alongside them, check security and permissions, data residency, offline sync with large data volumes, monitoring of failed interfaces and the vendor's release model. Weight the test areas from the table before the first demo, so that the result does not depend on the best presentation.
 
-The calculation includes licences by role for dispatchers, technicians and service partners, add-ons such as optimisation, implementation, data migration, integration, test environments, training and the internal team that runs the platform. For Salesforce, I broke down the licences in [Field Service licences by role](../field-service-licences-by-role/). How I prepare such decisions with clients is described under [make or buy and licence forecasts](../../services/make-or-buy-licences/).
+The calculation includes licenses by role for dispatchers, technicians and service partners, add-ons such as optimization, implementation, data migration, integration, test environments, training and the internal team that runs the platform. For Salesforce, I broke down the licenses in [Field Service licenses by role](../field-service-licences-by-role/). How I prepare such decisions with clients is described under [make or buy and license forecasts](../../services/make-or-buy-licences/).

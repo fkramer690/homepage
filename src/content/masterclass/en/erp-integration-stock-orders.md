@@ -23,8 +23,8 @@ faq:
     a: "Not if SAP fulfils the order. The store then creates unmanaged order summaries and the integration keeps them current. Order Management pays off when Salesforce itself should allocate, ship, cancel and handle returns."
   - q: "Where does B2B Commerce take stock and prices from by default?"
     a: "According to the extensions documentation, stock comes from Omnichannel Inventory and prices from Salesforce price books. Shipping is free without an extension. Each of these sources can be replaced by an ERP call through an extension."
-  - q: "Can I customise payments with a Commerce extension?"
-    a: "No. Salesforce states that payments currently cannot be customised with an extension. Payment gateways still use the payment integration. In manufacturing, though, dealers mostly buy on account with a purchase order number."
+  - q: "Can I customize payments with a Commerce extension?"
+    a: "No. Salesforce states that payments currently cannot be customized with an extension. Payment gateways still use the payment integration. In manufacturing, though, dealers mostly buy on account with a purchase order number."
   - q: "Is a headless B2B store worth it for a manufacturer?"
     a: "Only if buyers already use a website or customer app and a team will run it for years. For a first store, an LWR store is cheaper because Salesforce hosts and scales it."
 draft: false
@@ -47,7 +47,7 @@ Every interface discussion I lead starts with the same map of four blocks:
 
 The table looks simple. The decisions sit in two questions per row: which system writes, and how old may the data in the store be? The detailed version, with the product import API and how to derive buyer groups from SAP, is in [B2B Commerce and SAP: which data flows where?](../../../blog/b2b-commerce-sap-data-flows/).
 
-Buyer groups and entitlement policies almost never exist as such in the ERP. They are derived from sales organisation, customer group or brand, as described in [chapter 2](../catalog-search-entitlements/). Write that derivation down as a rule. Otherwise someone maintains the groups by hand and the store drifts away from the ERP.
+Buyer groups and entitlement policies almost never exist as such in the ERP. They are derived from sales organization, customer group or brand, as described in [chapter 2](../catalog-search-entitlements/). Write that derivation down as a rule. Otherwise someone maintains the groups by hand and the store drifts away from the ERP.
 
 ## Copy or call live: the rule
 
@@ -71,7 +71,7 @@ Commerce extensions are Apex classes that Salesforce runs at named extension poi
 | Credit, delivery block | `Commerce_Domain_Checkout_PlaceOrder`, method `validate` | standard cart validations |
 | Shape the order | `Commerce_Domain_Checkout_CreateOrder` | order created from the cart |
 
-According to the [integration architecture page](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-integration-architecture.html), extensions for pricing, inventory, shipping and tax have existed since Winter '24, and Salesforce recommends them over the older checkout integrations framework, which remains supported. Payments cannot be customised with an extension, according to the [extensions guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html).
+According to the [integration architecture page](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-integration-architecture.html), extensions for pricing, inventory, shipping and tax have existed since Winter '24, and Salesforce recommends them over the older checkout integrations framework, which remains supported. Payments cannot be customized with an extension, according to the [extensions guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html).
 
 ```vertiefung For developers
 title: Keeping extensions maintainable: `super()` and registration in the repository
@@ -126,9 +126,9 @@ One deadline applies to every batch integration. Salesforce retires the [OAuth u
 
 ## When does a headless store pay off?
 
-Headless means your own website or app is the store, and Salesforce delivers catalogue, prices, cart, checkout and orders through the Commerce Connect REST APIs. The [Commerce innovations page](https://www.salesforce.com/ca/commerce/innovations/) lists Headless B2B Commerce as available today, with a React B2B Storefront Blueprint. The [developer guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-journey-overview.html) points to a reference app in the GitHub repository `commerce-b2b-headless`.
+Headless means your own website or app is the store, and Salesforce delivers catalog, prices, cart, checkout and orders through the Commerce Connect REST APIs. The [Commerce innovations page](https://www.salesforce.com/ca/commerce/innovations/) lists Headless B2B Commerce as available today, with a React B2B Storefront Blueprint. The [developer guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-journey-overview.html) points to a reference app in the GitHub repository `commerce-b2b-headless`.
 
-For the ERP integration this means: extensions are triggered by Connect API calls, so the same price and stock logic applies in the LWR store and in your app. The costs sit in the frontend. Hosting, login, pipeline and regression tests against every Salesforce release are yours. I would only recommend headless when a website or customer app that buyers use already exists and a team will run it for years. I did not find in the documentation which licence headless buyers need; get that confirmed in writing. More in [Headless B2B Commerce: own frontend, Salesforce core](../../../blog/headless-b2b-commerce-own-frontend/).
+For the ERP integration this means: extensions are triggered by Connect API calls, so the same price and stock logic applies in the LWR store and in your app. The costs sit in the frontend. Hosting, login, pipeline and regression tests against every Salesforce release are yours. I would only recommend headless when a website or customer app that buyers use already exists and a team will run it for years. I did not find in the documentation which license headless buyers need; get that confirmed in writing. More in [Headless B2B Commerce: own frontend, Salesforce core](../../../blog/headless-b2b-commerce-own-frontend/).
 
 ## Worked example: an interface list for 250 dealers
 

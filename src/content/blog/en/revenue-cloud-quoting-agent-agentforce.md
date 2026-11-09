@@ -19,9 +19,9 @@ faq:
   - q: "What do I need before using the quoting agent?"
     a: "Revenue Cloud with a maintained product catalog, pricing data synced through Salesforce Pricing, Agentforce enabled and an employee agent with the Quote Management subagent. In practice also discount limits as rules and approval workflows that catch what the agent must not decide."
   - q: "Can dealers and customers use the quoting agent?"
-    a: "Salesforce announced self-service quoting for customer buyers and integrated quoting for partners with Winter '27, generally available since 12 October 2026. Help also documents community and partner access for Agentforce in Revenue Management. Licences for external users need to be clarified separately."
+    a: "Salesforce announced self-service quoting for customer buyers and integrated quoting for partners with Winter '27, generally available since 12 October 2026. Help also documents community and partner access for Agentforce in Revenue Management. Licenses for external users need to be clarified separately."
   - q: "What does the quoting agent cost?"
-    a: "Agent actions are billed in Flex Credits: 20 credits per standard action, with credits listed at $500 per 100,000. Prompts are billed on top depending on the model tier. You also need Revenue Cloud licences for the users the agent works for."
+    a: "Agent actions are billed in Flex Credits: 20 credits per standard action, with credits listed at $500 per 100,000. Prompts are billed on top depending on the model tier. You also need Revenue Cloud licenses for the users the agent works for."
 draft: false
 ---
 
@@ -59,14 +59,14 @@ The [Winter '27 announcement](https://www.salesforce.com/news/stories/winter-202
 For manufacturers, renewal drafts are the most interesting part. Maintenance and remote monitoring subscriptions renew every year, and preparing the renewal quote is routine work. Partner and self-service quoting raise commercial questions first: which prices a dealer sees, and whether a customer's self-service quote may undercut the dealer.
 
 ```hinweis offen
-Help documents a setup page for community and partner access to Agentforce in Revenue Management. The licences for external users are a separate item to clarify.
+Help documents a setup page for community and partner access to Agentforce in Revenue Management. The licenses for external users are a separate item to clarify.
 ```
 
 If your dealers quote in Manufacturing Cloud instead, look at the [AI Partner Sales Assistant for dealer quotes](../ai-partner-sales-assistant-dealer-quotes/). Two quoting agents on two quote models is the setup I would avoid.
 
 ## What does the quoting agent cost?
 
-Two cost blocks apply. First the Revenue Cloud licences for the users the agent works for. Second the agent's consumption in Flex Credits, at the rates on the [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/):
+Two cost blocks apply. First the Revenue Cloud licenses for the users the agent works for. Second the agent's consumption in Flex Credits, at the rates on the [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/):
 
 ```kennzahlen
 $500 | per 100,000 Flex Credits

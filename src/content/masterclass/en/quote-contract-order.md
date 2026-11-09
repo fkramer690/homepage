@@ -26,7 +26,7 @@ faq:
   - q: "Is Salesforce Contracts enough for customer contracts?"
     a: "For contracts from the sales process on your own paper, usually yes: templates, a clause library, Word through Microsoft 365, DocuSign and obligation tracking. If legal manages purchasing, NDAs and group contracts centrally, its own CLM tool stays."
   - q: "Can dealers and customers use the quoting agent?"
-    a: "With Winter '27, generally available since 12 October 2026, Salesforce announced self-service quoting for customer buyers and integrated quoting for partners. Clarify the licences for external users separately before a dealer sees an agent quote."
+    a: "With Winter '27, generally available since 12 October 2026, Salesforce announced self-service quoting for customer buyers and integrated quoting for partners. Clarify the licenses for external users separately before a dealer sees an agent quote."
 draft: false
 ---
 
@@ -51,7 +51,7 @@ For architects one point matters most: there is no side entrance. A change in qu
 
 Reps work on the quote in the Transaction Line Editor, a table that behaves much like a spreadsheet. According to [Trailhead on working with quotes](https://trailhead.salesforce.com/content/learn/modules/efficient-sales-with-revenue-cloud/work-with-quotes), it offers inline editing, also for several lines at once, filters, search and frozen columns. Bundles are configured from the line's action menu. Hovering over the net unit price shows the price waterfall, every step from list price to final price.
 
-Two points matter for manufacturers with long parts lists. Quote lines can be organised in groups, by hand or automatically by a column such as product category or site. And for Winter '27 Salesforce names up to 15,000 transaction lines per deal in its [release highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management). A spare parts quote for a whole plant fits into one quote.
+Two points matter for manufacturers with long parts lists. Quote lines can be organized in groups, by hand or automatically by a column such as product category or site. And for Winter '27 Salesforce names up to 15,000 transaction lines per deal in its [release highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management). A spare parts quote for a whole plant fits into one quote.
 
 I would build groups along a structure the customer recognises: one group per line or per plant. Later amendments can then be assigned to the right place, and the customer finds their own equipment in the quote.
 

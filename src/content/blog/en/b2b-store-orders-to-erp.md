@@ -68,9 +68,9 @@ The pricing page does not spell out what Lite leaves out compared to the full ve
 
 I see three reasons in manufacturing.
 
-**Most orders do not come through the store.** Phone, email, EDI and field sales orders land in SAP today, and they will for years. If Salesforce Order Management ran only the store orders, inside sales would work in two systems. Making it run all orders needs the standalone licence and a migration of order processes that rarely pays off for a store project.
+**Most orders do not come through the store.** Phone, email, EDI and field sales orders land in SAP today, and they will for years. If Salesforce Order Management ran only the store orders, inside sales would work in two systems. Making it run all orders needs the standalone license and a migration of order processes that rarely pays off for a store project.
 
-**Fulfilment is in SAP.** Availability check, delivery, picking, goods issue and invoicing are configured there, often with years of customer-specific logic. Rebuilding that in Salesforce is a programme of its own.
+**Fulfilment is in SAP.** Availability check, delivery, picking, goods issue and invoicing are configured there, often with years of customer-specific logic. Rebuilding that in Salesforce is a program of its own.
 
 **Credit, prices and taxes are in SAP.** The order is only final when SAP has accepted it. My article on [distributor replenishment](../distributor-inventory-replenishment-agentforce/) follows the same rule: a request becomes a binding order only once the ERP has accepted it and returned an order number.
 
@@ -107,7 +107,7 @@ Dealers who want status in a chat need the same data. An [agent reading order st
 
 ## Shape the order for SAP with CreateOrder
 
-The extension point **Commerce_Domain_Checkout_CreateOrder** "creates an order from cart information during checkout", according to the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html). That is where you add what SAP needs and the standard order does not have, such as a sales organisation, an order type or a shipping condition. The check before the order exists, credit or order block, belongs in **Commerce_Domain_Checkout_PlaceOrder**, as described in [B2B checkout with purchase order](../b2b-checkout-purchase-order-card-invoice/).
+The extension point **Commerce_Domain_Checkout_CreateOrder** "creates an order from cart information during checkout", according to the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html). That is where you add what SAP needs and the standard order does not have, such as a sales organization, an order type or a shipping condition. The check before the order exists, credit or order block, belongs in **Commerce_Domain_Checkout_PlaceOrder**, as described in [B2B checkout with purchase order](../b2b-checkout-purchase-order-card-invoice/).
 
 Keep the order lean. Each extra field is a mapping that has to be tested in every Salesforce release.
 
@@ -116,7 +116,7 @@ Keep the order lean. Each extra field is a mapping that has to be tested in ever
 A manufacturer of compressors starts a store on Growth Edition for 180 dealers. Phone and EDI orders stay in SAP. The design could look like this:
 
 1. The store creates unmanaged order summaries. Order Management Lite stays unused at first.
-2. The CreateOrder extension adds sales organisation and order type.
+2. The CreateOrder extension adds sales organization and order type.
 3. Middleware sends the order to SAP and writes the sales order number back within two minutes.
 4. Deliveries and invoices are written back on change; cancellations by inside sales too.
 5. Buyers see one order history for store orders. Phone orders stay invisible in the store in the first release, which inside sales knows and explains.

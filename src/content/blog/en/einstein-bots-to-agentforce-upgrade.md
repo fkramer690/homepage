@@ -22,13 +22,13 @@ faq:
   - q: "Can an Einstein Bot and an Agentforce agent run side by side?"
     a: "Yes. A Salesforce Developers blog post from December 2025 describes a bot that handles status and logging requests and routes complex questions to an Agentforce Service agent through an outbound Omni-Channel flow with a fallback queue."
   - q: "Is an Agentforce agent more expensive than an Einstein Bot?"
-    a: "Usually per conversation, yes. Bot conversations were part of the licence allowance, while an agent consumes 20 Flex Credits per action. In the worked example, three actions per conversation cost $0.30, and the yearly volume exceeds a Max edition pool."
+    a: "Usually per conversation, yes. Bot conversations were part of the license allowance, while an agent consumes 20 Flex Credits per action. In the worked example, three actions per conversation cost $0.30, and the yearly volume exceeds a Max edition pool."
   - q: "How do I test an upgraded agent?"
     a: "Reuse the example phrases the bot's intents were trained with and the transcripts of failed bot conversations as test cases, run the set several times and agree a pass rate with the head of service before go-live."
 draft: false
 ---
 
-Convert an Einstein Bot to Agentforce only where customers type questions the bot never understood, and keep short, rule-bound paths menu-driven. Salesforce's Upgrade Agent, announced at Dreamforce 2026, builds an Agentforce Service Agent from your bot in minutes while the bot keeps running, but it is a Labs tool and its output is a draft. The bigger changes sit around the tool: cost moves from a licence allowance to Flex Credits per action, behaviour moves from scripted dialogs to a model that decides, and testing moves from clicking through paths to pass rates.
+Convert an Einstein Bot to Agentforce only where customers type questions the bot never understood, and keep short, rule-bound paths menu-driven. Salesforce's Upgrade Agent, announced at Dreamforce 2026, builds an Agentforce Service Agent from your bot in minutes while the bot keeps running, but it is a Labs tool and its output is a draft. The bigger changes sit around the tool: cost moves from a license allowance to Flex Credits per action, behavior moves from scripted dialogs to a model that decides, and testing moves from clicking through paths to pass rates.
 
 ## Do you have to replace your Einstein Bot now?
 
@@ -81,7 +81,7 @@ source: worked example with assumed values; 20 credits per action from Salesforc
 ```
 
 ```hinweis offen
-I assume the bot paths stay inside the existing licence allowance. Confirm that with your account executive, because a move to the new editions may change it.
+I assume the bot paths stay inside the existing license allowance. Confirm that with your account executive, because a move to the new editions may change it.
 ```
 
 Cost is the smaller argument for option 2: the free-text bucket is where the bot fails today, while the menu paths already work. A December 2025 post on the Salesforce Developers blog about handing off from Einstein Enhanced Bots to Agentforce agents, written by two Salesforce employees, describes this pattern with Einstein Enhanced Bots: the bot "triages transactions (Log/Status) and routes complex knowledge to an Agentforce Service agent", using a field on the Messaging Session, an outbound Omni-Channel flow and a fallback queue. The post covers only the handoff from bot to agent, not the way back.

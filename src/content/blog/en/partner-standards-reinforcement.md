@@ -21,7 +21,7 @@ faq:
   - q: "Why do partners not stick to agreed standards?"
     a: "Usually not on purpose. New developers do not know the standards, under deadline pressure exceptions are made, and if nobody checks, the exception becomes the rule."
   - q: "How long does it take until standards are lived across several partners?"
-    a: "In my largest programme with five partners about three months. After that only single edge cases were added, discussed in the Center of Excellence call."
+    a: "In my largest program with five partners about three months. After that only single edge cases were added, discussed in the Center of Excellence call."
   - q: "Do standards belong in the partner contract?"
     a: "Yes, as a reference to the current version held by the client. That makes clear that a delivery that breaks the standards is not accepted."
 draft: false
@@ -40,7 +40,7 @@ The first introduction of new standards usually goes well. Teams pay attention, 
 In the [ADKAR model](../change-management-salesforce-rollout/) what is missing then is not knowledge but reinforcement. An example: if a partner's developers know the naming conventions but nobody checks them in the pipeline, reinforcement is missing. Another training session changes nothing. Then an automatic check belongs in the release process.
 
 ```praxis
-In my largest programme with more than 30 developers in eight streams and five implementation partners, every pull request went across my desk at the start. It took about three months until the standards were lived. After that we brought new topics to the table every two weeks in a Center of Excellence call with the technical leads of the streams. Once the process ran smoothly, I handed it over to an internal colleague who has owned it since.
+In my largest program with more than 30 developers in eight streams and five implementation partners, every pull request went across my desk at the start. It took about three months until the standards were lived. After that we brought new topics to the table every two weeks in a Center of Excellence call with the technical leads of the streams. Once the process ran smoothly, I handed it over to an internal colleague who has owned it since.
 ```
 
 ## Each lever anchors a different part of the standards
@@ -53,7 +53,7 @@ Together the levers leave little room for quiet erosion:
 | Pull request review | design, ownership of objects, fit with the architecture | reviewer on the client side |
 | Center of Excellence call | new edge cases, upcoming changes with lead time | technical leads of the streams |
 | Onboarding of new developers | knowledge of the current version | partner, checked by the client |
-| Contract | standards as an acceptance criterion | procurement, programme management |
+| Contract | standards as an acceptance criterion | procurement, program management |
 | Handover to an internal owner | continuity after the project | client |
 
 The pipeline is the cheapest lever, because it never gets tired. Whatever it checks, no reviewer has to comment on any more. Which rules belong in the standards and which of them can be automated is described in [Salesforce development standards for several partners](../salesforce-development-standards-definition-of-done/).
@@ -82,7 +82,7 @@ Check whether your partner contracts refer to the standards and whether a violat
 
 ## How do you know standards are anchored?
 
-Three signs show it. Reviewers comment on the same points less often, because the pipeline finds them first. New edge cases come to the Center of Excellence call before they are built, instead of afterwards as a conflict. And a partner's new developers follow the rules without anyone explaining them one by one. In my programme the edge cases eventually disappeared, because topics were discussed before they turned into conflicts.
+Three signs show it. Reviewers comment on the same points less often, because the pipeline finds them first. New edge cases come to the Center of Excellence call before they are built, instead of afterwards as a conflict. And a partner's new developers follow the rules without anyone explaining them one by one. In my program the edge cases eventually disappeared, because topics were discussed before they turned into conflicts.
 
 ## Count the review comments that repeat
 

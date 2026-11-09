@@ -82,7 +82,7 @@ None of them knows everything. A worked example with assumed numbers: a machine 
 | Installation date, location | Commissioning report | Service |
 | Operating hours | Dealer, customer or telemetry | Depends on the warranty terms |
 
-In this scenario the warranty start date depends on the dealer. If registration is optional, a large share of machines has no start date, and every claim on them turns into a manual check. I would make registration a required step in the portal, ideally tied to something the dealer wants, such as the first warranty claim being accepted only for registered machines. Which licence dealers need for that is covered in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
+In this scenario the warranty start date depends on the dealer. If registration is optional, a large share of machines has no start date, and every claim on them turns into a manual check. I would make registration a required step in the portal, ideally tied to something the dealer wants, such as the first warranty claim being accepted only for registered machines. Which license dealers need for that is covered in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
 
 The owner column is the actual work. Write it down per field, as in the [object ownership matrix](../salesforce-object-ownership-matrix/), and plan the ERP interface accordingly. I help with that under [Salesforce integration](../../services/salesforce-integration/).
 

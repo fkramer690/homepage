@@ -1,6 +1,6 @@
 ---
 title: "Measuring Salesforce adoption and reinforcing standards"
-description: "Reinforcement in Salesforce programmes: measure usage on four levels, spot shadow lists and anchor standards with partners through the pipeline and a CoE call."
+description: "Reinforcement in Salesforce programs: measure usage on four levels, spot shadow lists and anchor standards with partners through the pipeline and a CoE call."
 lang: en
 slug: measure-adoption-and-reinforce
 course: change-management
@@ -25,7 +25,7 @@ faq:
 draft: false
 ---
 
-Reinforcement, the last stage of the ADKAR model, makes sure a change sticks. In Salesforce programmes that means two things. With business teams you measure usage on four levels, activity, use of the process, data quality and outcome, against a baseline from before go-live, and the sponsor discusses the figures every month. With developer teams and partners, the pipeline, pull request reviews and a regular Center of Excellence call anchor the standards. Both only last once an internal owner leads them.
+Reinforcement, the last stage of the ADKAR model, makes sure a change sticks. In Salesforce programs that means two things. With business teams you measure usage on four levels, activity, use of the process, data quality and outcome, against a baseline from before go-live, and the sponsor discusses the figures every month. With developer teams and partners, the pipeline, pull request reviews and a regular Center of Excellence call anchor the standards. Both only last once an internal owner leads them.
 
 ## Why does usage drop after go-live?
 
@@ -65,7 +65,7 @@ In the steering committee two or three figures per process from use and outcome 
 Change management also affects developer teams and implementation partners. New standards for development and release water down after a few months, when new developers join, deadline pressure rises and attention fades. Then knowledge is not what is missing; reinforcement is.
 
 ```praxis
-In my largest programme with more than 30 developers in eight streams and five implementation partners, every pull request went across my desk at the start. It took about three months until the standards were lived. After that we brought new topics to the table every two weeks in a Center of Excellence call with the technical leads of the streams. Once the process ran smoothly, I handed it over to an internal colleague.
+In my largest program with more than 30 developers in eight streams and five implementation partners, every pull request went across my desk at the start. It took about three months until the standards were lived. After that we brought new topics to the table every two weeks in a Center of Excellence call with the technical leads of the streams. Once the process ran smoothly, I handed it over to an internal colleague.
 ```
 
 Each lever covers a different part:
@@ -80,6 +80,6 @@ There will be exceptions under deadline pressure. They need a justification in t
 
 ## The change lasts when it holds without the people who introduced it
 
-With business teams, the figures at process level stay stable after six months, and new colleagues learn the process from key users instead of from old lists. With partners, reviewers flag the same points less often, new edge cases come to the call before they are built, and new developers follow the rules without anyone explaining them one by one. In both cases the change is anchored when it holds without the person who introduced it. So plan from the start who takes over on the client side. How I support you with this is on the page [Change management for Salesforce programmes](../../../services/change-management-salesforce/).
+With business teams, the figures at process level stay stable after six months, and new colleagues learn the process from key users instead of from old lists. With partners, reviewers flag the same points less often, new edge cases come to the call before they are built, and new developers follow the rules without anyone explaining them one by one. In both cases the change is anchored when it holds without the person who introduced it. So plan from the start who takes over on the client side. How I support you with this is on the page [Change management for Salesforce programs](../../../services/change-management-salesforce/).
 
 This chapter ends the masterclass. All chapters and articles are on the [overview page](../).

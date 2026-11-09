@@ -25,7 +25,7 @@ faq:
   - q: "Does SAP stay in place with Revenue Cloud?"
     a: "Yes, in every manufacturing setup I would plan. SAP usually keeps the material master, the sales order for delivery and the machine invoice. Which system calculates customer prices has to be decided once, for every price type."
   - q: "Should a new customer still buy Salesforce CPQ?"
-    a: "That is no longer possible. Salesforce does not sell new CPQ licences to new customers. Existing customers can keep using CPQ, add users and renew, and there is no forced migration."
+    a: "That is no longer possible. Salesforce does not sell new CPQ licenses to new customers. Existing customers can keep using CPQ, add users and renew, and there is no forced migration."
 draft: false
 ---
 
@@ -48,15 +48,15 @@ Revenue Cloud covers everything from the product catalog to the invoice and uses
 | Dynamic Revenue Orchestrator | Everything after the order, up to fulfilment |
 | Invoice Management | Invoices for delivered products and services |
 
-The [product page](https://www.salesforce.com/uk/products/revenue-cycle-management) sums it up as one product that "unifies pricing, quoting, contracting, and billing on a single data model", with "a single, attribute-based catalogue" across all channels. Trailhead adds that composable APIs let other clouds use the catalog and pricing, with Agentforce Manufacturing as the example. For Winter '27, the [release highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management) name up to 15,000 transaction lines per deal and agents for buyer self-service, partner quoting and renewal preparation.
+The [product page](https://www.salesforce.com/uk/products/revenue-cycle-management) sums it up as one product that "unifies pricing, quoting, contracting, and billing on a single data model", with "a single, attribute-based catalog" across all channels. Trailhead adds that composable APIs let other clouds use the catalog and pricing, with Agentforce Manufacturing as the example. For Winter '27, the [release highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management) name up to 15,000 transaction lines per deal and agents for buyer self-service, partner quoting and renewal preparation.
 
-For the first decision, two points matter. Revenue Cloud is a different product from Salesforce CPQ, which the [CPQ end-of-sale page](https://www.salesforce.com/sales/cpq/end-of-life/) describes as a managed package around seller-led quoting, with Revenue Cloud Advanced as its successor "built natively on the Salesforce platform". And Salesforce no longer sells CPQ licences to new customers, so a new project chooses between Revenue Cloud, a partner product and a custom approach.
+For the first decision, two points matter. Revenue Cloud is a different product from Salesforce CPQ, which the [CPQ end-of-sale page](https://www.salesforce.com/sales/cpq/end-of-life/) describes as a managed package around seller-led quoting, with Revenue Cloud Advanced as its successor "built natively on the Salesforce platform". And Salesforce no longer sells CPQ licenses to new customers, so a new project chooses between Revenue Cloud, a partner product and a custom approach.
 
 ## When does Revenue Cloud pay off for a manufacturer?
 
 I look for these signals in the current quoting process:
 
-| Signal | How you recognise it |
+| Signal | How you recognize it |
 |---|---|
 | Variants with rules | Machines with dozens of options that require or exclude each other. A configurator that checks combinations saves rework in order processing. |
 | Service on the same quote | A spare parts package, a maintenance contract and a remote monitoring subscription sold together with the machine. |
@@ -99,10 +99,10 @@ Worked example at list price: assume 50 quote creators work with Revenue Cloud A
 The number of users moves the budget more than the edition does. I group users by what they do with quotes: create, approve, only read, maintain the catalog, or quote as a dealer.
 
 ```hinweis offen
-For every group except the users who create quotes, get the licence requirement from Salesforce in writing.
+For every group except the users who create quotes, get the license requirement from Salesforce in writing.
 ```
 
-Add-ons, Billing Events and the licence forecast are in [Revenue Cloud pricing: Growth, Advanced and add-ons](../../../blog/revenue-cloud-editions-pricing/), and an independent check of a quote is part of [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/).
+Add-ons, Billing Events and the license forecast are in [Revenue Cloud pricing: Growth, Advanced and add-ons](../../../blog/revenue-cloud-editions-pricing/), and an independent check of a quote is part of [make-or-buy and license forecasts](../../../services/make-or-buy-licences/).
 
 ## These tasks stay in SAP
 
@@ -133,7 +133,7 @@ If invoices do move, [Revenue Cloud Billing](https://www.salesforce.com/sales/re
 Three other Salesforce products touch the same deals:
 
 - **Manufacturing Cloud** measures run-rate business: sales agreements with plan against actuals, account forecasts and rebates. A configured quote from Revenue Cloud can become a sales agreement. That side is covered in the chapter [agreements and forecasting](../../manufacturing-cloud/agreements-and-forecasting/) of the Manufacturing Cloud masterclass.
-- **B2B Commerce** lets dealers and customers reorder known items in a store. For rule-based prices, configurable bundles and Request for Quote, [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_revenue_intro.htm&language=en_US&type=5) names a Commerce Growth or Advanced licence together with Revenue Cloud Advanced. When a store pays off is in the chapter [is B2B Commerce worth it?](../../b2b-commerce/b2b-commerce-worth-it-overview/).
+- **B2B Commerce** lets dealers and customers reorder known items in a store. For rule-based prices, configurable bundles and Request for Quote, [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_revenue_intro.htm&language=en_US&type=5) names a Commerce Growth or Advanced license together with Revenue Cloud Advanced. When a store pays off is in the chapter [is B2B Commerce worth it?](../../b2b-commerce/b2b-commerce-worth-it-overview/).
 - **Field Service** maintains the installed machines. Revenue Cloud keeps what was sold as assets, Field Service works on the machine with its serial number. How the two meet is part of chapter 3.
 
 The overlaps are catalog, price and quote. One catalog, one price master and one quote model, with exactly one product leading each process step. The decision table is in [Revenue Cloud, Manufacturing Cloud or B2B Commerce?](../../../blog/revenue-cloud-vs-manufacturing-cloud-b2b-commerce/).
@@ -180,4 +180,4 @@ A partner asks about features. The decisions that cost and timeline depend on ar
 | Invoice owner | SAP or Revenue Cloud Billing. Finance decides, not the CRM team. |
 | CPQ coexistence | Existing CPQ customers are under no time pressure: the CPQ page says "There is no forced migration", but also that CPQ "will not receive new features". A typical migration runs three to six months according to the same page. The details are in chapter 5, [from CPQ to Revenue Cloud](../from-cpq-to-revenue-cloud/). |
 
-Write these four answers into the decision log before you ask for estimates. They are part of my work on [Salesforce architecture](../../../services/salesforce-architecture/). With them settled, [chapter 2 on catalog, configurator and pricing](../product-catalog-configurator-pricing/) covers how the products and prices are modelled; all chapters are on the [overview page](../).
+Write these four answers into the decision log before you ask for estimates. They are part of my work on [Salesforce architecture](../../../services/salesforce-architecture/). With them settled, [chapter 2 on catalog, configurator and pricing](../product-catalog-configurator-pricing/) covers how the products and prices are modeled; all chapters are on the [overview page](../).

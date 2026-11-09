@@ -9,7 +9,7 @@ translationKey: salesforce-cpq-end-of-sale-status
 topic: revenue
 categories: [revenue-cloud]
 contactBrief: licences
-tags: [Salesforce CPQ, Salesforce Billing, Revenue Cloud, end of sale, licences, renewal]
+tags: [Salesforce CPQ, Salesforce Billing, Revenue Cloud, end of sale, licenses, renewal]
 takeaways:
   - "Salesforce has announced no end-of-life date for CPQ. CPQ receives support and critical fixes, but no new features."
   - "For the Salesforce Billing package there is no separate end-of-sale statement. A Salesforce spokesperson said current customers keep full access."
@@ -24,7 +24,7 @@ faq:
     a: "Not now. Salesforce states that there is no forced migration. CPQ will not receive new features, so the gap to Revenue Cloud grows with every release."
   - q: "Is Salesforce Billing also end of sale?"
     a: "Salesforce has published no separate end-of-sale page for the Billing package. A Salesforce spokesperson said in 2025 that current CPQ and Billing customers keep full access, and new customers are directed to Revenue Cloud Advanced and Revenue Cloud Billing."
-  - q: "Can I still buy additional CPQ licences?"
+  - q: "Can I still buy additional CPQ licenses?"
     a: "Yes, as an existing customer. According to Salesforce you can keep using CPQ under your current contracts, buy additional users and renew. The conditions of the renewal are set by your contract, not by the status page."
   - q: "When did Salesforce stop selling CPQ?"
     a: "Salesforce's own page gives no date. Third-party reports date the end of sale to March 2025, for example a SalesforceBen article updated on 27 March 2025. That is a report, not a Salesforce statement."
@@ -99,7 +99,7 @@ For me the renewal is the real deadline, because that is when you still have som
 4. **User growth.** If you expect more quoting users, agree the price for additional CPQ users now.
 5. **Billing.** If you also run the Billing package, renew it together with CPQ and on the same terms, so the two products do not end up with different notice periods.
 
-A worked example: a machine builder with 60 CPQ users renews in spring 2027 and expects to move to Revenue Cloud in about two years. A two-year term with a cap on increases and a written option to run Revenue Cloud next to CPQ for six months fits this plan. A three-year term without that option would force a decision at the wrong time. How I prepare such negotiations is described under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/), and which users need which licence at all is covered in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+A worked example: a machine builder with 60 CPQ users renews in spring 2027 and expects to move to Revenue Cloud in about two years. A two-year term with a cap on increases and a written option to run Revenue Cloud next to CPQ for six months fits this plan. A three-year term without that option would force a decision at the wrong time. How I prepare such negotiations is described under [make-or-buy and license forecasts](../../services/make-or-buy-licences/), and which users need which license at all is covered in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
 ## Does end of sale mean you should move now?
 

@@ -90,7 +90,7 @@ Take a company that introduces a CRM system such as Salesforce for sales and ser
 | IT operations | medium | medium | supportive | plan the handover to operations | Head of IT |
 | Finance | low | medium | neutral | inform about new reports | Project manager |
 
-The works council says "unknown", which is more honest than a guess. In Germany it has a right of co-determination for software that can evaluate employees' behaviour or performance, so this conversation belongs at the start. Field sales is the most critical group: highly affected, with enough informal influence to work around the system, and sceptical. A circular email will not help here; their own manager will, and colleagues acting as [key users](../salesforce-key-user-network/). And every row has an owner, and that is rarely the change manager.
+The works council says "unknown", which is more honest than a guess. In Germany it has a right of co-determination for software that can evaluate employees' behavior or performance, so this conversation belongs at the start. Field sales is the most critical group: highly affected, with enough informal influence to work around the system, and sceptical. A circular email will not help here; their own manager will, and colleagues acting as [key users](../salesforce-key-user-network/). And every row has an owner, and that is rarely the change manager.
 
 I left out the ADKAR stage column in the example; the template contains it. It shows where a group stands right now: is awareness of why something changes missing, or the knowledge of how it works? Depending on the answer, the action is a completely different one. How the model works is explained in [Change management models compared](../change-management-models/).
 
@@ -123,6 +123,6 @@ These are the typical ones:
 
 ## Outside support pays off for unclear attitudes and difficult conversations
 
-For an initiative with three or four groups, the project manager can build the analysis alone with the template. Support pays off when many groups or countries are affected, when the attitude of important groups is unclear, or when nobody inside can hold the difficult conversations, for example with the works council or a sceptical manager. In Salesforce programmes I work together with Fabian Kramer; how we set this up is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/) and on the page [Salesforce change management consulting](../../services/change-management-salesforce/).
+For an initiative with three or four groups, the project manager can build the analysis alone with the template. Support pays off when many groups or countries are affected, when the attitude of important groups is unclear, or when nobody inside can hold the difficult conversations, for example with the works council or a sceptical manager. In Salesforce programs I work together with Fabian Kramer; how we set this up is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/) and on the page [Salesforce change management consulting](../../services/change-management-salesforce/).
 
 *Prosci and ADKAR are registered trademarks of Prosci, Inc.*

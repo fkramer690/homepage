@@ -9,20 +9,20 @@ topic: ai
 categories: [ai, architecture]
 tags: [Agentforce, AI agents, Agent Script, subagents, Salesforce AI, IT leadership]
 takeaways:
-  - "A flow runs a process modelled in advance. An agent interprets each request and chooses actions within set limits, and only its actions act."
+  - "A flow runs a process modeled in advance. An agent interprets each request and chooses actions within set limits, and only its actions act."
   - "You configure subagents, instructions and actions. The reasoning engine and trust layer run underneath; Data 360 adds native knowledge and monitoring."
   - "Agent Script fixes order and conditions. Checks such as warranty or price belong in deterministic actions, not in the language model."
-  - "With Flex Credits, a standard action costs 20 credits, $0.10 or €0.10 at list price. There are also per-user licences, conversations and flat fees."
+  - "With Flex Credits, a standard action costs 20 credits, $0.10 or €0.10 at list price. There are also per-user licenses, conversations and flat fees."
   - "For manufacturers, ERP data and the question of who may see which installed base decide whether an agent helps or harms."
 faq:
   - q: "What is Agentforce?"
     a: "Agentforce is Salesforce's platform for building and running AI agents. An agent combines a language model that interprets requests with logic and actions you define, such as flows, Apex or interfaces."
   - q: "What is the difference between Agentforce and an Einstein Bot?"
-    a: "An Einstein Bot runs dialogues modelled in advance, optionally with intent recognition. An Agentforce agent chooses subagents and actions dynamically. According to Salesforce, Einstein Bots have been in maintenance mode since 17 August 2026."
+    a: "An Einstein Bot runs dialogues modeled in advance, optionally with intent recognition. An Agentforce agent chooses subagents and actions dynamically. According to Salesforce, Einstein Bots have been in maintenance mode since 17 August 2026."
   - q: "What are subagents in Agentforce?"
     a: "Subagents describe the jobs an agent takes on, such as looking up order status or creating a service case. Salesforce used to call them topics. Each subagent has its own instructions and actions."
   - q: "How much does Agentforce cost?"
-    a: "It depends on the licence model. With Flex Credits, Salesforce lists $500 or €500 per 100,000 credits, and a standard action uses 20 credits, or $0.10 or €0.10 at list price. There are also per-user licences, conversation pricing and flat-fee agreements."
+    a: "It depends on the license model. With Flex Credits, Salesforce lists $500 or €500 per 100,000 credits, and a standard action uses 20 credits, or $0.10 or €0.10 at list price. There are also per-user licenses, conversation pricing and flat-fee agreements."
 draft: false
 ---
 
@@ -32,7 +32,7 @@ Agentforce is Salesforce's platform for AI agents: software that uses generative
 
 In its [Agentforce Guide](https://www.salesforce.com/agentforce/guide/), Salesforce describes Agentforce as a platform for building agents that go beyond simple chat interactions. According to Salesforce, an agent is a type of software that uses generative AI to make decisions about what to do next and how to do it.
 
-The difference from earlier automation lies in that decision. A flow runs a process whose paths and criteria were modelled in advance. An agent receives a request in natural language, such as "When will my spare parts order arrive?", recognises the task, picks an action and writes the answer. Agents work in customer service, in sales or for employees. They can be called from chat and portal, from Flow or Apex, and through an API, as described in [Agentforce Agent API](../agentforce-agent-api-dealer-apps/).
+The difference from earlier automation lies in that decision. A flow runs a process whose paths and criteria were modeled in advance. An agent receives a request in natural language, such as "When will my spare parts order arrive?", recognises the task, picks an action and writes the answer. Agents work in customer service, in sales or for employees. They can be called from chat and portal, from Flow or Apex, and through an API, as described in [Agentforce Agent API](../agentforce-agent-api-dealer-apps/).
 
 ## What you configure and what runs underneath
 
@@ -58,11 +58,11 @@ The permissions depend on the agent type. An employee agent can run in the conte
 
 How to protect such a portal against manipulated input is covered in [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/).
 
-Salesforce has renamed topics to subagents. Older Trailhead modules and articles, including some of my own, still say "topics". They mean the same thing. Whether a planned action needs an extra licence depends on what it calls, for example a product-specific standard action. Check this per action before you estimate costs.
+Salesforce has renamed topics to subagents. Older Trailhead modules and articles, including some of my own, still say "topics". They mean the same thing. Whether a planned action needs an extra license depends on what it calls, for example a product-specific standard action. Check this per action before you estimate costs.
 
 ## Which parts of an agent are deterministic?
 
-A common objection to AI agents is that their behaviour is not predictable. Salesforce's answer is Agent Script, its own language for agents. According to the Agentforce Guide, it combines decisions by the language model with rules-based execution. The deterministic part is what you model as logic in the script: order of steps, conditions, transitions. Prompt instructions and generated answers are still interpreted by the language model.
+A common objection to AI agents is that their behavior is not predictable. Salesforce's answer is Agent Script, its own language for agents. According to the Agentforce Guide, it combines decisions by the language model with rules-based execution. The deterministic part is what you model as logic in the script: order of steps, conditions, transitions. Prompt instructions and generated answers are still interpreted by the language model.
 
 For manufacturers, this suggests a division of work. Whether a warranty applies, which price a dealer gets or whether a spare part fits an asset are checks for a deterministic action, such as a flow, Apex or a call to the ERP. Agent Script makes sure the agent calls that check before it answers, and the language model phrases the answer.
 
@@ -75,7 +75,7 @@ Agentforce does not replace every AI feature in Salesforce. Three tools are ofte
 ```tabelle
 title: Einstein Bot, Prompt Builder and Agentforce agent
 columns: Tool | How it works | Fits when
-Einstein Bot | Dialogues modelled in advance, optionally with intent recognition and actions | Existing bots; in maintenance mode since 17 August 2026
+Einstein Bot | Dialogues modeled in advance, optionally with intent recognition and actions | Existing bots; in maintenance mode since 17 August 2026
 Prompt Builder | Generates output from a template; Flow, Apex or an app controls the process | The process is fixed and only the text varies *
 Agentforce agent | Chooses subagents and actions per request, reads and changes data | Requests vary and need data from several places
 note: Many tasks in service and sales do not need an agent. A flow with a prompt template is usually simpler to test.
@@ -85,7 +85,7 @@ According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.b
 
 ## What does Agentforce cost?
 
-Salesforce sells Agentforce in several models: Flex Credits by consumption, conversation pricing, per-user licences with included use and flat-fee agreements. In the Flex Credits model, the [pricing page](https://www.salesforce.com/agentforce/pricing/) lists $500 or €500 per 100,000 credits. According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-02.23.2026.pdf), each action uses:
+Salesforce sells Agentforce in several models: Flex Credits by consumption, conversation pricing, per-user licenses with included use and flat-fee agreements. In the Flex Credits model, the [pricing page](https://www.salesforce.com/agentforce/pricing/) lists $500 or €500 per 100,000 credits. According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-02.23.2026.pdf), each action uses:
 
 ```kennzahlen
 20 | Flex Credits per standard action in production
@@ -95,7 +95,7 @@ $0.10 | per standard action at $500 per 100,000 credits
 source: Salesforce Agentforce pricing page and Flex Credits rate card, list prices as of November 2026
 ```
 
-These are list prices, not contract prices. Depending on licence and context, prompts by model tier and Data 360 processing can come on top. How to estimate this for one agent is shown in [Flex Credits: Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), which also compares flat fees such as the AELA.
+These are list prices, not contract prices. Depending on license and context, prompts by model tier and Data 360 processing can come on top. How to estimate this for one agent is shown in [Flex Credits: Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), which also compares flat fees such as the AELA.
 
 Also on the table early: which language model answers and where it runs, covered in [Agentforce data residency](../agentforce-eu-data-residency-models/).
 

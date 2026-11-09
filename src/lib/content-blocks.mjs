@@ -25,7 +25,7 @@ const labels = {
     tipp: 'Tip', achtung: 'Warning', offen: 'Get it confirmed in writing', praxis: 'From my practice', entry: 'Entry',
     quelle: 'Source', next: 'next date', risiko: 'Biggest risk', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'adjacent process' },
     diagram: 'Flow diagram', grenzen: 'Limits', besser: 'Better suited', aus: 'from', gesetzt: 'given', addon: 'add-on', level: 'Level', tor: 'Gate',
-    ctrl: 'Control centre', sichtbar: 'Visible', darunter: 'Below: the real costs',
+    ctrl: 'Control center', sichtbar: 'Visible', darunter: 'Below: the real costs',
   },
 };
 const variants = ['tipp', 'achtung', 'offen'];
@@ -407,7 +407,7 @@ export function parseChain(content) {
   return out;
 }
 
-// Control centre: two sides "seite: Name | control centre | Stage, Stage, Stage" (EN "side:"),
+// Control center: two sides "seite: Name | control center | Stage, Stage, Stage" (EN "side:"),
 // each followed by two "- Role | Name | detail | link label" boxes below it and an optional
 // "fazit:" (EN "note:") as the caption of that side.
 export function parseControl(content) {
@@ -634,7 +634,7 @@ export function validateBlock(block) {
     if (unknown) errs.push(`steuerzentrale: cannot read "${unknown}"`);
     between(sides.length, 2, 2, 'sides ("seite:" / "side:")');
     for (const x of sides) {
-      if (!x.name || !x.ctrl) errs.push('steuerzentrale: every side needs "Name | control centre | Stage, Stage"');
+      if (!x.name || !x.ctrl) errs.push('steuerzentrale: every side needs "Name | control center | Stage, Stage"');
       if (x.stages.length < 2 || x.stages.length > 4) errs.push(`steuerzentrale: "${x.name}" needs 2 to 4 stages`);
       if (x.boxes.length !== 2) errs.push(`steuerzentrale: "${x.name}" needs exactly two "- Role | Name | detail | link" boxes`);
       if (x.boxes.some((b) => !b.role || !b.name || !b.link)) errs.push(`steuerzentrale: every box of "${x.name}" needs role, name and link label`);

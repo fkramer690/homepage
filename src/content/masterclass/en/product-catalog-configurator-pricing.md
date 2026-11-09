@@ -34,7 +34,7 @@ In Revenue Cloud, three parts decide what sales can quote. The product catalog d
 
 ## How do catalog, configurator and pricing work together?
 
-The catalog holds products, attributes and bundle structure. The configurator checks which options and attribute values fit together. Salesforce Pricing takes the configured line and calculates the net price step by step. A badly modelled catalog makes rules and pricing harder, so the catalog design comes first.
+The catalog holds products, attributes and bundle structure. The configurator checks which options and attribute values fit together. Salesforce Pricing takes the configured line and calculates the net price step by step. A badly modeled catalog makes rules and pricing harder, so the catalog design comes first.
 
 ```ablauf
 erp: SAP
@@ -60,7 +60,7 @@ Product Catalog Management holds the products and their structure. According to 
 - **Product classifications**, templates with a set of attributes. A product created from a classification inherits them and can override single ones.
 - **Simple products and bundles**. Simple products stand alone, bundles have a hierarchy of items.
 
-For a machine builder this means one classification per machine family, with the attributes sales has to ask about, such as working width, drive, control and voltage. The base machines are created from it. The decision that shapes the whole catalog is when a variant becomes its own product. I use three tests: the ERP has its own material number for it, it is planned in a sales agreement, or it is stocked and serviced separately. Everything else stays an attribute value. Accessories with their own material number become components of a configurable bundle. With that rule, a catalog for 40 base machines stays at a few hundred records. The details, including a worked example, are in [Revenue Cloud product catalog: modelling machine variants](../../../blog/revenue-cloud-product-catalog-variants/).
+For a machine builder this means one classification per machine family, with the attributes sales has to ask about, such as working width, drive, control and voltage. The base machines are created from it. The decision that shapes the whole catalog is when a variant becomes its own product. I use three tests: the ERP has its own material number for it, it is planned in a sales agreement, or it is stocked and serviced separately. Everything else stays an attribute value. Accessories with their own material number become components of a configurable bundle. With that rule, a catalog for 40 base machines stays at a few hundred records. The details, including a worked example, are in [Revenue Cloud product catalog: modeling machine variants](../../../blog/revenue-cloud-product-catalog-variants/).
 
 ### Which product data comes from the ERP?
 
@@ -77,7 +77,7 @@ Attribute values need a mapping to the SAP characteristic values. If "control" h
 
 ## The configurator: which rule engine for which product?
 
-The Product Configurator is the screen in which sales picks bundle options and sets attribute values; the configured product then goes to the quote or order. Trailhead names [three approaches that grow with product complexity](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/get-started-with-product-configurator): basic validation rules, selection rules and constraint-based modelling.
+The Product Configurator is the screen in which sales picks bundle options and sets attribute values; the configured product then goes to the quote or order. Trailhead names [three approaches that grow with product complexity](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/get-started-with-product-configurator): basic validation rules, selection rules and constraint-based modeling.
 
 Behind them are two engines. Configuration rules work with explicit if-then logic and suit simple to moderate products. The constraint rules engine, which Salesforce calls its solution "for complicated, high-volume configurations", uses a constraint-based model, evaluates all possible combinations and [filters out invalid ones in real time](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/explore-product-configurator-with-constraint-rules-engine). A pump with five options and three exclusions needs no constraint model. A machine where frame size, drive power, voltage and safety category depend on each other does.
 

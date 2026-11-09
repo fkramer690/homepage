@@ -26,7 +26,7 @@ faq:
   - q: "What happens to the Salesforce Billing package?"
     a: "A Salesforce spokesperson said in March 2025 that current CPQ and Billing customers keep full access including support; new customers are directed to Revenue Cloud Advanced and Revenue Cloud Billing. I found no separate end-of-sale page for the Billing package."
   - q: "Can CPQ and Revenue Cloud run in the same org?"
-    a: "Yes, during the migration. Salesforce Help lists retaining the CPQ licence and coexistence during the transition as planning topics. CPQ keeps quoting in production while Revenue Cloud is built, so both licences overlap for the length of the project."
+    a: "Yes, during the migration. Salesforce Help lists retaining the CPQ license and coexistence during the transition as planning topics. CPQ keeps quoting in production while Revenue Cloud is built, so both licenses overlap for the length of the project."
 draft: false
 ---
 
@@ -61,7 +61,7 @@ Both products configure, price, quote and bill, and underneath they share almost
 | What lives in CPQ today | What it becomes in Revenue Cloud | Effort |
 |---|---|---|
 | Quotes, contracts and subscriptions in package objects | Records on Quote, Order and Asset, with history | high |
-| Product rules as if-then records | Attributes and constraints in CML, modelled again | high |
+| Product rules as if-then records | Attributes and constraints in CML, modeled again | high |
 | Price rules and JavaScript in the quote calculator plugin | A pricing procedure with decision tables, some branches dropped | high |
 | Reports and dashboards on package objects | Rebuilt on the standard objects | medium |
 | Approvals in the Advanced Approvals package | Approvals through invocable actions and business APIs | medium |
@@ -85,7 +85,7 @@ Staying is allowed and often right for now, at a price: every release adds to Re
 - **Wait** when the quoting process is stable, prices come from SAP anyway, an S/4HANA migration ties up the same people, or there is no budget for a redesign this year. Use the time to delete unused rules and document the price logic.
 - **Check a third route**, a partner product or a custom approach, when configuration rules live in SAP variant configuration, a PLM system or with application engineers and Salesforce would only display the result.
 
-According to the CPQ page, about 15 percent of Revenue Cloud Advanced customers migrated from CPQ. Migrations happen, and nobody is out of time. The full decision matrix is in [Keep Salesforce CPQ or move to Revenue Cloud?](../../../blog/keep-salesforce-cpq-or-revenue-cloud/), and a licence comparison of both routes over several years is part of [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/).
+According to the CPQ page, about 15 percent of Revenue Cloud Advanced customers migrated from CPQ. Migrations happen, and nobody is out of time. The full decision matrix is in [Keep Salesforce CPQ or move to Revenue Cloud?](../../../blog/keep-salesforce-cpq-or-revenue-cloud/), and a license comparison of both routes over several years is part of [make-or-buy and license forecasts](../../../services/make-or-buy-licences/).
 
 ## How does the migration run?
 
@@ -100,7 +100,7 @@ Execute
   Migrate product, asset and billing data, rebuild reports, and run change management in parallel from the start.
 ```
 
-Help says "There's no set time frame". The CPQ page names 3 to 6 months from discovery to go-live as typical. I would plan 3 months only for a clean org; an [org assessment](../../../blog/ai-org-assessment-technical-debt/) before the estimate shows which kind you have. Both licences run in parallel during that time, so do not stretch the project. Coexistence also needs sandboxes in which both run with realistic data, a point for the [environments and branching](../../devops-release-management/environments-and-branching/) plan.
+Help says "There's no set time frame". The CPQ page names 3 to 6 months from discovery to go-live as typical. I would plan 3 months only for a clean org; an [org assessment](../../../blog/ai-org-assessment-technical-debt/) before the estimate shows which kind you have. Both licenses run in parallel during that time, so do not stretch the project. Coexistence also needs sandboxes in which both run with realistic data, a point for the [environments and branching](../../devops-release-management/environments-and-branching/) plan.
 
 The CPQ page names three partner offerings: Forsys RevRamp, IdeaHelix and Prodly. They speed up mapping and loading, and Help sets the limit: "tools don't replace human design decisions, particularly for custom logic and integration remapping". Ask each partner how many product rules, price rules and scripts they counted in your org and what they plan for each; partner selection is covered in the AI masterclass chapter on [AIforce and system integrators](../../ai-salesforce/aiforce-and-system-integrators/).
 

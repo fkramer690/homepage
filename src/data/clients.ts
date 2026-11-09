@@ -1,12 +1,12 @@
 // Client logos for the logo band in the references section of the start page.
 // Originals live in public/clients/; the band shows one-colour versions from
 // public/clients/mono/, made by scripts/logos-mono.mjs (run it after adding or
-// replacing a logo). Logos are deliberately not linked to the anonymised
+// replacing a logo). Logos are deliberately not linked to the anonymized
 // project cards.
 //   light: the company only publishes a white logo; it is negated first.
 //   mono: settings for the one-colour version:
-//     mode 'cutout': light lettering on a coloured box, the lettering is kept.
-//     mode 'colour': coloured mark on a grey or metallic box, only the colour is kept.
+//     mode 'cutout': light lettering on a colored box, the lettering is kept.
+//     mode 'colour': colored mark on a grey or metallic box, only the color is kept.
 //     range: ink thresholds [lo, hi] on 0..1 (default [0.06, 0.45]).
 //   weight: manual optical correction on top of the automatic one (default 1).
 // The band sizes every logo to roughly the same area instead of the same height,

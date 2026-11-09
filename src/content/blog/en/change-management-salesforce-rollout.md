@@ -22,7 +22,7 @@ faq:
     a: "A model by Prosci with five stages every person goes through in a change: awareness, desire, knowledge, ability and reinforcement. When an adoption stalls, one of these stages is usually missing."
   - q: "Does every Salesforce project need change management?"
     a: "Every project that changes how people work. Many clients think they do not need it because training is planned. Training only covers knowledge and ability, not awareness, desire and reinforcement."
-  - q: "Who is responsible for change management in a Salesforce programme?"
+  - q: "Who is responsible for change management in a Salesforce program?"
     a: "The client, with a sponsor in management who visibly backs the change. Partners build the system; they cannot own the change inside the company."
   - q: "Is change management the same as IT change management?"
     a: "No. IT change management in the ITIL sense controls changes to systems: who requests, reviews and approves a change. In Salesforce that is the job of release management and deployment. Change management in the sense of this article makes sure people adopt the change. A CRM rollout needs both."
@@ -33,14 +33,14 @@ Salesforce rollouts rarely fail because of the technology. They fail when sales,
 
 ## Why does Salesforce not take hold in daily work?
 
-A release is rolled out technically in minutes. What happens afterwards decides whether anyone works differently. In Salesforce programmes the reasons why they do not are almost always the same:
+A release is rolled out technically in minutes. What happens afterwards decides whether anyone works differently. In Salesforce programs the reasons why they do not are almost always the same:
 
 - **The people affected hear about it too late.** Whoever first sees a change in production looks for a way around it.
 - **Nobody explains why.** A sales team maintains opportunities because it has to and does not know that demand planning depends on them.
 - **Management backing is missing.** Without decisions from the top, new rules stay a recommendation.
 - **There is no way back.** Problems from daily work end up in emails, not in the backlog.
 
-This does not only apply to business users. When a programme introduces new standards for development and release, development teams and implementation partners are just as affected. They know the rules but interpret them differently as long as nobody anchors them.
+This does not only apply to business users. When a program introduces new standards for development and release, development teams and implementation partners are just as affected. They know the rules but interpret them differently as long as nobody anchors them.
 
 ```praxis
 Many clients think they do not need change management. The budget is allocated, training is planned, and users will get used to it. I keep bringing it up anyway, during planning, before every country and after every go-live. In the worldwide Manufacturing Cloud rollout I would do it even earlier and more often today.
@@ -50,7 +50,7 @@ Many clients think they do not need change management. The budget is allocated, 
 
 Prosci has surveyed projects about their experience with change since 1998. In the 12th edition of its study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) with 2,668 participants, projects with excellent change management met their objectives in 88 percent of cases, projects with poor change management in 13 percent. Participants named active and visible sponsorship by management as the most important success factor.
 
-The [ADKAR model](https://www.prosci.com/blog/adkar-model) describes five stages every person goes through in a change. For a Salesforce programme I translate them like this:
+The [ADKAR model](https://www.prosci.com/blog/adkar-model) describes five stages every person goes through in a change. For a Salesforce program I translate them like this:
 
 | Stage | Question | Typical sign it is missing | Who helps |
 |---|---|---|---|
@@ -62,13 +62,13 @@ The [ADKAR model](https://www.prosci.com/blog/adkar-model) describes five stages
 
 The value lies in the diagnosis. Instead of scheduling the next training when usage is low, we ask for each affected group at which stage it is stuck. If sales does not know what maintained opportunities are needed for, awareness is missing, and the head of sales has to explain that, not the trainer.
 
-The sponsor deserves a sentence of its own, because it is the role most often missing in Salesforce programmes. It means a person from management who visibly backs the change: they explain in the sales meeting why forecasts will come from Salesforce from now on, decide when two departments cannot agree, and ask about usage in the monthly report. That is why I write a sponsor plan that defines what management does visibly and when. Without it, "management supports this" becomes a line on the first slide.
+The sponsor deserves a sentence of its own, because it is the role most often missing in Salesforce programs. It means a person from management who visibly backs the change: they explain in the sales meeting why forecasts will come from Salesforce from now on, decide when two departments cannot agree, and ask about usage in the monthly report. That is why I write a sponsor plan that defines what management does visibly and when. Without it, "management supports this" becomes a line on the first slide.
 
-Prosci and ADKAR are registered trademarks of Prosci, Inc. I adapted the approach to Salesforce programmes together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), my cooperation partner for change management.
+Prosci and ADKAR are registered trademarks of Prosci, Inc. I adapted the approach to Salesforce programs together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), my cooperation partner for change management.
 
-## These topics belong to change management in Salesforce programmes
+## These topics belong to change management in Salesforce programs
 
-Change management is not a single work step. The same topics come up again and again in Salesforce programmes at manufacturers. Each one has its own article:
+Change management is not a single work step. The same topics come up again and again in Salesforce programs at manufacturers. Each one has its own article:
 
 1. **[Building up key users](../salesforce-key-user-network/):** who answers the first questions in the business and how much time that takes.
 2. **[Change management in a global rollout](../change-management-global-salesforce-rollout/):** what each country needs when a global template is rolled out.
@@ -85,7 +85,7 @@ The general tools behind this are explained by Juliane Winterscheid in her own a
 
 ## Change management runs in three phases alongside delivery
 
-Prosci structures the work at the level of the organisation in three phases, the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). In a Salesforce programme they run alongside the release plan:
+Prosci structures the work at the level of the organization in three phases, the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). In a Salesforce program they run alongside the release plan:
 
 ```schritte
 Prepare approach | before the first release · client with sponsor
@@ -102,4 +102,4 @@ Timing is what matters. Change management that starts two weeks before go-live c
 
 For your next release, answer three questions in writing: which groups are affected? What changes for each in their daily work? Who in management visibly backs it? If the third answer is missing, that is the first step. Then decide how you measure success, for example by usage numbers in Salesforce instead of the number of training sessions.
 
-If you want to go through the five stages in order, the [change management masterclass](../../masterclass/change-management/) has a chapter per stage with the matching articles. How Juliane Winterscheid and I support this in programmes is described under [Salesforce change management consulting](../../services/change-management-salesforce/).
+If you want to go through the five stages in order, the [change management masterclass](../../masterclass/change-management/) has a chapter per stage with the matching articles. How Juliane Winterscheid and I support this in programs is described under [Salesforce change management consulting](../../services/change-management-salesforce/).

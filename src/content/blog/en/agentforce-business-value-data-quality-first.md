@@ -53,7 +53,7 @@ The projects that are now in implementation are built on these conditions, and t
 
 ## Why does business value come first?
 
-An AI agent costs money in several ways: licences or consumption credits, implementation, testing, maintenance and the time of the people who supervise it. Salesforce bundles consumption credits into its editions, and partners and customers are still discussing how agentic API and MCP calls are charged. That makes a clear business case more important, not less.
+An AI agent costs money in several ways: licenses or consumption credits, implementation, testing, maintenance and the time of the people who supervise it. Salesforce bundles consumption credits into its editions, and partners and customers are still discussing how agentic API and MCP calls are charged. That makes a clear business case more important, not less.
 
 A good Agentforce business case answers a few simple questions:
 

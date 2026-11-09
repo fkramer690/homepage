@@ -12,7 +12,7 @@ tags: [sfdx-hardis, DevOps Center, Lifecycle Center, release management, CI/CD, 
 takeaways:
   - "Lifecycle Center supports only GitHub.com cloud plans and Bitbucket Cloud. Teams on Azure DevOps or GitLab cannot use it today."
   - "sfdx-hardis runs in the client's CI on GitHub, GitLab, Azure DevOps, Bitbucket or Jenkins and adds monitoring, backup and documentation."
-  - "Lifecycle Center suits small, click-based teams, sfdx-hardis suits programmes with several partners or another Git platform."
+  - "Lifecycle Center suits small, click-based teams, sfdx-hardis suits programs with several partners or another Git platform."
   - "Exactly one tool per repository should decide on merges and promotions, otherwise you end up with two release processes."
 faq:
   - q: "What is the difference between sfdx-hardis and DevOps Center?"
@@ -20,14 +20,14 @@ faq:
   - q: "Does DevOps Center support GitLab or Azure DevOps?"
     a: "No. Lifecycle Center supports GitHub.com cloud plans, including GitHub Enterprise Cloud, and Bitbucket Cloud. Salesforce has named GitLab and Azure DevOps as a priority, but without a date."
   - q: "Is sfdx-hardis free?"
-    a: "Yes, sfdx-hardis is open source and has no licence fees. You pay for the Git platform, CI minutes, the setup and a person who owns it. Paid help is available from Cloudity."
+    a: "Yes, sfdx-hardis is open source and has no license fees. You pay for the Git platform, CI minutes, the setup and a person who owns it. Paid help is available from Cloudity."
   - q: "Can sfdx-hardis and Lifecycle Center be used together?"
     a: "Technically both can point at the same org. I would still let only one tool per repository decide on merges and promotions, otherwise two release processes work against each other."
   - q: "Which tool is better for admins?"
     a: "Lifecycle Center is the easier start for admins, because everything happens in Salesforce. The sfdx-hardis VS Code extension takes most Git commands off admins' hands, but it needs VS Code and some basic knowledge of branches."
 ---
 
-[sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) and Salesforce DevOps Center, called Lifecycle Center since October 2026, both come without licence fees and both take changes to production through Git. The difference is where the process lives. Lifecycle Center is a native app in a Salesforce org with a click-based interface, and it works only with GitHub.com and Bitbucket Cloud. sfdx-hardis runs as a pipeline in the client's CI, on GitHub, GitLab, Azure DevOps, Bitbucket or Jenkins, and adds monitoring, backup and documentation. My rule of thumb: Lifecycle Center for small, click-based teams, sfdx-hardis for programmes with several partners.
+[sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) and Salesforce DevOps Center, called Lifecycle Center since October 2026, both come without license fees and both take changes to production through Git. The difference is where the process lives. Lifecycle Center is a native app in a Salesforce org with a click-based interface, and it works only with GitHub.com and Bitbucket Cloud. sfdx-hardis runs as a pipeline in the client's CI, on GitHub, GitLab, Azure DevOps, Bitbucket or Jenkins, and adds monitoring, backup and documentation. My rule of thumb: Lifecycle Center for small, click-based teams, sfdx-hardis for programs with several partners.
 
 ## What is the difference between sfdx-hardis and DevOps Center?
 
@@ -35,7 +35,7 @@ faq:
 
 **sfdx-hardis** is an open source toolkit from Cloudity and a large community. It consists of a Salesforce CLI plugin, a VS Code extension and Docker images for the pipeline. The process sits in configuration files in the repository and in the client's CI pipeline. What it covers is in my [introduction to sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/).
 
-In short: with Lifecycle Center, Salesforce is the control centre and Git is the storage. With sfdx-hardis, the Git platform is the control centre and Salesforce is the target.
+In short: with Lifecycle Center, Salesforce is the control center and Git is the storage. With sfdx-hardis, the Git platform is the control center and Salesforce is the target.
 
 ```steuerzentrale
 title: Where the release process is controlled
@@ -97,7 +97,7 @@ In Lifecycle Center, projects, pipelines and work items are records in the hub o
 ```vertiefung For IT
 title: What IT should know before connecting Lifecycle Center
 - The GitHub connection runs through a Salesforce OAuth app that requests access to all repositories of the account.
-- Repositories of a GitHub organisation only show up once an owner of that organisation approves the app.
+- Repositories of a GitHub organization only show up once an owner of that organization approves the app.
 - If the Git platform has IP restrictions, the Lifecycle Center addresses need to go on the allowlist.
 ```
 
@@ -107,25 +107,25 @@ For operations this means: Lifecycle Center needs an admin in the hub org, sfdx-
 
 ## The cost sits in the release role
 
-Neither has licence fees. The costs are elsewhere:
+Neither has license fees. The costs are elsewhere:
 
 - **Lifecycle Center:** you need GitHub or Bitbucket Cloud, with their per-user costs. According to Salesforce, the AI features through MCP tools can be used together with services that consume paid credits. Setup is quick, because nothing is installed.
 - **sfdx-hardis:** CI minutes on the Git platform, setting up the pipeline and a person who maintains it. Cloudity offers paid help, but you do not need it.
 
 ```eisberg
 title: What both tools really cost
-visible: Licence: €0 | for both tools
+visible: License: €0 | for both tools
 - Git platform | Cost per user on GitHub, Bitbucket or your platform | both
 - CI minutes and credits | Minutes for the pipeline, credits for AI services | per tool
 - Setup | quick for Lifecycle Center, building the pipeline for sfdx-hardis | both
 - Release role | an admin who clicks, or someone who maintains the pipeline | biggest item *
 ```
 
-In the programmes I support, the cost of a responsible release role is always higher than the cost of the tool. So choose the tool by the role you can fill: an admin who clicks, or someone who is at home with pipelines.
+In the programs I support, the cost of a responsible release role is always higher than the cost of the tool. So choose the tool by the role you can fill: an admin who clicks, or someone who is at home with pipelines.
 
 ## What I see in projects
 
-I have used sfdx-hardis in client projects for about two years, and in October 2026 I completed all three levels of the [free sfdx-hardis training](../sfdx-hardis-free-devops-training/). In programmes with several implementation partners, what counts most for me is that the process is binding: every partner works through the same pipeline, every pull request is validated the same way, and [reviews are mandatory](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) before anything is merged. Monitoring and generated documentation come along without a separate project.
+I have used sfdx-hardis in client projects for about two years, and in October 2026 I completed all three levels of the [free sfdx-hardis training](../sfdx-hardis-free-devops-training/). In programs with several implementation partners, what counts most for me is that the process is binding: every partner works through the same pipeline, every pull request is validated the same way, and [reviews are mandatory](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) before anything is merged. Monitoring and generated documentation come along without a separate project.
 
 ```partnerfluss review
 without: Every partner on its own path | Changes only meet in the org, conflicts show up late.

@@ -62,7 +62,7 @@ For your own documents I would write "AIforce" and add "(announced by the CEO as
 
 The announcements are bigger than what you can switch on. Status on 27 October 2026:
 
-- **Salesforce in Claude** is a beta. According to [Anthropic's setup guide](https://support.claude.com/en/articles/16952184-set-up-salesforce-in-claude-for-your-organization), it runs on paid Claude plans for organisations that Salesforce approves through its beta sign-up, needs the latest Sales Cloud enterprise edition and works in chat and Claude Cowork on web and desktop. Claude acts as the user's own Salesforce account and by default asks for approval before each change is written.
+- **Salesforce in Claude** is a beta. According to [Anthropic's setup guide](https://support.claude.com/en/articles/16952184-set-up-salesforce-in-claude-for-your-organization), it runs on paid Claude plans for organizations that Salesforce approves through its beta sign-up, needs the latest Sales Cloud enterprise edition and works in chat and Claude Cowork on web and desktop. Claude acts as the user's own Salesforce account and by default asks for approval before each change is written.
 - **Agentforce Coworker** is "instantly available" according to the announcement. Salesforce's own [Coworker blog](https://www.salesforce.com/blog/agentforce-coworker-salesforce-ai-teammate/) says both "Generally Available" and "in beta", and lists Microsoft Teams, ChatGPT, Claude and a desktop app as "coming later this year". The [setup documentation](https://developer.salesforce.com/docs/data/agentforce-coworker/guide/agentforce-coworker-turn-on-infrastructure.html) requires Enterprise, Unlimited or Agentforce 1 Edition plus Data Cloud or Data 360.
 - **Slackforce** is listed as GA in October in the [Dreamforce 2026 roundup](https://www.salesforce.com/blog/dreamforce-2026-announcements/); I found no separate release note confirming it. Slackbot actions already have fixed prices in Flex Credits, per Slack workspace, according to the [rate card of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf).
 - **Hosted MCP servers**, through which external AI tools such as Claude reach an org, have been [generally available since 29 April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) for Enterprise Edition and above. The current documentation adds that they are intended for customers with Flex Credits and that usage may be billed. Who may read what through them is the topic of [hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/).
@@ -93,11 +93,11 @@ Assume a machine builder with 80 Sales Cloud users in sales and dealer managemen
 The IT lead sorts the four AIforce parts:
 
 - **Salesforce in Claude:** the pilot candidate for ten key account managers, provided the edition qualifies for the beta and the company buys a paid Claude plan. Before the pilot, the sharing model for cases and price agreements is reviewed, and approval before each write stays on.
-- **Agentforce Coworker:** waits. The company has no Data 360 licence, and Teams support is announced for later.
+- **Agentforce Coworker:** waits. The company has no Data 360 license, and Teams support is announced for later.
 - **Slackforce:** not relevant, the company works in Teams.
 - **Headless Toolkit:** relevant for IT and the implementation partner, because hosted MCP servers and the Claude Code plug-in are the developer path. What partners may do with it belongs in the contract.
 
-The outcome is one small pilot in sales and a week of permission clean-up. In my judgement that is the right size for a beta whose prices Salesforce has not fixed.
+The outcome is one small pilot in sales and a week of permission clean-up. In my judgment that is the right size for a beta whose prices Salesforce has not fixed.
 
 ## Find the shadow use, then check permissions and contracts
 
@@ -105,7 +105,7 @@ The outcome is one small pilot in sales and a week of permission clean-up. In my
 2. **Assign one interface per user group.** For example Lightning for service agents, Claude for key account managers, Teams for everyone else. Five parallel AI surfaces mean five support topics.
 3. **Review sharing and field-level security** for cases, warranty claims, price agreements and dealer accounts before any chat tool reads them.
 4. **Read your Claude contract.** Salesforce promises that business data "is not retained by the model provider". Check data processing, training settings and hosting region in your own agreement with Anthropic, because that is where the data goes.
-5. **Budget a pilot.** Prices are subject to change and the MCP rate is open. Whether Data 360 is worth buying for Coworker, or Claude seats for the sales team, is a question for [make-or-buy and licence planning](../../services/make-or-buy-licences/).
+5. **Budget a pilot.** Prices are subject to change and the MCP rate is open. Whether Data 360 is worth buying for Coworker, or Claude seats for the sales team, is a question for [make-or-buy and license planning](../../services/make-or-buy-licences/).
 6. **Keep the name AIforce in your documentation** until Salesforce confirms SIForce in writing.
 
 Whether to build your own Agentforce agents is a separate decision, covered in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/). For AIforce itself the order of the list above applies: permissions, data and contracts first, then the interface.

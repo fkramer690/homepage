@@ -61,7 +61,7 @@ Formally, Art. 50(1) is a provider duty. Whether that means Salesforce or you, t
 The machine-readable marking under Art. 50(2) is a provider duty for generative output; ask Salesforce in writing how it covers its features.
 ```
 
-The labelling of published text under Art. 50(4) concerns information to the public on matters of public interest, not a delivery date for a dealer.
+The labeling of published text under Art. 50(4) concerns information to the public on matters of public interest, not a delivery date for a dealer.
 
 ## When does an Agentforce agent become high-risk?
 
@@ -72,13 +72,13 @@ Annex III lists stand-alone high-risk uses. In a manufacturer's Salesforce org, 
 - **Exempt under Art. 6(3):** scheduling interviews, acknowledgement emails, organising CV data, as narrow procedural or preparatory tasks.
 - **Never exempt:** systems that profile natural persons.
 
-The field service angle is easy to miss. Assigning jobs by skill, territory and availability is far from 4(b). Ranking technicians by first-time fix rate and assigning work accordingly comes close to allocating tasks based on individual behaviour, although whether a rule-based optimiser is an AI system at all is a separate question. How the engine decides is in [scheduling automation in Field Service](../salesforce-field-service-scheduling-automation/).
+The field service angle is easy to miss. Assigning jobs by skill, territory and availability is far from 4(b). Ranking technicians by first-time fix rate and assigning work accordingly comes close to allocating tasks based on individual behavior, although whether a rule-based optimiser is an AI system at all is a separate question. How the engine decides is in [scheduling automation in Field Service](../salesforce-field-service-scheduling-automation/).
 
 If an agent is high-risk, [Art. 26](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26) gives you as deployer concrete duties from 2 December 2027: use it according to the provider's instructions, assign human oversight to competent people with authority, check the input data you control, monitor operation, keep automatically generated logs for at least six months unless other law provides otherwise, and inform workers' representatives and affected workers before use. In Germany the works council is involved much earlier anyway; that path is in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
 
 ## Annex I concerns the machine, not the CRM agent
 
-Annex I covers AI in products under EU harmonisation law. For machine builders, [Cuatrecasas](https://www.cuatrecasas.com/en/spain/intellectual-property/art/digital-omnibus-ai-has-been-published) reports the key change: the Machinery Regulation (EU) 2023/1230 moves from section A to section B of Annex I. Only a few AI Act provisions then apply directly to AI in machinery. The substantive high-risk requirements are to be added to the Machinery Regulation through delegated acts, which the Commission must adopt by 2 August 2028 at the latest. Until those delegated acts or the corresponding harmonised standards exist, manufacturers can, according to Cuatrecasas, keep referring to the harmonised standards or common specifications adopted under the AI Act to show presumption of conformity.
+Annex I covers AI in products under EU harmonization law. For machine builders, [Cuatrecasas](https://www.cuatrecasas.com/en/spain/intellectual-property/art/digital-omnibus-ai-has-been-published) reports the key change: the Machinery Regulation (EU) 2023/1230 moves from section A to section B of Annex I. Only a few AI Act provisions then apply directly to AI in machinery. The substantive high-risk requirements are to be added to the Machinery Regulation through delegated acts, which the Commission must adopt by 2 August 2028 at the latest. Until those delegated acts or the corresponding harmonized standards exist, manufacturers can, according to Cuatrecasas, keep referring to the harmonized standards or common specifications adopted under the AI Act to show presumption of conformity.
 
 This concerns AI in machine control or safety functions and belongs with product engineering and legal, not with your Agentforce agents. The new [Art. 6(1a)](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-6) also states that AI systems "solely used for non-safety related aspects of user assistance" are not safety components. Art. 6(1b) takes precedence: AI whose failure or malfunctioning would endanger health and safety is a safety component. An agent that suggests a spare part to a technician is user assistance in that sense.
 
@@ -92,7 +92,7 @@ Assume a machine builder with SAP, Service Cloud, Field Service with 60 technici
 
 **Applicant pre-screening for service technicians.** HR wants an agent that ranks applications. Clearly Annex III 4(a), and under Art. 25 the company likely becomes the provider. The alternative is an agent that only schedules interviews and sends acknowledgements, both listed among the Art. 6(3) exceptions.
 
-**Condition monitoring in the next machine generation.** Product engineering embeds a model that detects wear. Annex I applies only if it acts as a safety component; pure maintenance support could fall under Art. 6(1a), unless its failure would endanger health and safety under Art. 6(1b). Either way a workstream for product engineering, outside the CRM programme.
+**Condition monitoring in the next machine generation.** Product engineering embeds a model that detects wear. Annex I applies only if it acts as a safety component; pure maintenance support could fall under Art. 6(1a), unless its failure would endanger health and safety under Art. 6(1b). Either way a workstream for product engineering, outside the CRM program.
 
 One idea is overdue, two get redesigned to stay out of high-risk, and one belongs to another team.
 

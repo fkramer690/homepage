@@ -40,7 +40,7 @@ Trailhead names three roles, and I would staff them before the first sprint:
 - **Fulfilment designer:** builds decomposition rules and orchestration plans and tests them.
 - **Fulfilment operator:** works the manual tasks in the queues and resolves failed steps.
 
-I would put the operator role in order management or inside sales, not in IT. These are the people who know why an order is stuck, and they need the training and the licence.
+I would put the operator role in order management or inside sales, not in IT. These are the people who know why an order is stuck, and they need the training and the license.
 
 ## A record-triggered flow hands the order to DRO
 

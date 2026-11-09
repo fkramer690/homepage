@@ -49,6 +49,10 @@ faq:
     a: "Legt ein Partner die Regeln fest, entscheidet er, wie alle anderen bauen, auch seine Wettbewerber. Liegen Standards, Repository und Freigaben beim Kunden, bleiben Partner vergleichbar und austauschbar."
   - q: "Was ist eine Object Ownership Matrix?"
     a: "Eine Tabelle mit einer Zeile pro Salesforce-Objekt, die einen verantwortlichen Stream benennt. Alle anderen Teams stimmen Änderungen an diesem Objekt vorher mit ihm ab."
+  - q: "Ersetzen Sie unseren Umsetzungspartner?"
+    a: "Nein. Ihre Partner bauen weiter, ich steuere sie auf Kundenseite nach gemeinsamen Regeln. Wenn Sie einen Partner ablösen wollen, helfe ich dabei, ohne Wissensverlust und ohne Verzögerung im Programm."
+  - q: "Wie vermeiden Sie, dass Sie zum Engpass werden?"
+    a: "Ich arbeite transparent. Entscheidungen, Standards und Review-Kriterien sind so dokumentiert, dass Ihr Team und Ihre Partner sie sehen, damit niemand auf mich warten muss und die Arbeit nicht an mir hängt."
 blogTags: [partner governance, partnersteuerung, pull request review, vendor lock-in, code quality, codequalität]
 readMore: [choose-salesforce-implementation-partner, object-ownership-matrix, development-standards-definition-of-done, sandbox-strategy-multiple-partners, salesforce-center-of-excellence, fixed-price-ai-salesforce-partners, ai-org-assessment-technical-debt, salesforce-freelancer-or-consultancy]
 masterclass: devops
@@ -73,13 +77,13 @@ quelle: mein größtes Programm als Architekt auf Kundenseite
 
 Am Anfang dieses Programms gab es keine Zuständigkeiten pro Objekt. Teams überschrieben gegenseitig ihre Änderungen, und jedes baute nach eigenen Regeln.
 
-Der erste Schritt: Jede Änderung kam als Pull Request mit Review in die Org, und eine Zeit lang habe ich alle selbst geprüft. Was in diesen Reviews immer wieder auffiel, wurde zum Standard, etwa Namenskonventionen, eine Automatisierung pro Objekt und Kontext und Regeln zur Testabdeckung. Am meisten bewirkt haben zwei Hebel:
+Der erste Schritt: Jede Änderung kam als Pull Request mit Review in die Org, und eine Zeit lang habe ich alle selbst geprüft. Was in diesen Reviews immer wieder auffiel, wurde zum Standard, etwa Namenskonventionen, ein Einstiegspunkt für Automatisierung pro Objekt und Kontext und Regeln zur Testabdeckung. Am meisten bewirkt haben zwei Hebel:
 
 ```hebel
 Object Ownership Matrix | Ein verantwortlicher Stream pro Objekt
   Will ein Team ein Objekt eines anderen Streams ändern, spricht es vorher mit dem Verantwortlichen.
 Konfigurationsregeln | Keine festen Werte im Code
-  Schwellenwerte, Texte und Schalter liegen in Custom Metadata Types oder Custom Labels.
+  Schwellenwerte und Schalter liegen in Custom Metadata Types, Texte in Custom Labels.
 ```
 
 Aufbau und Beispiel der Matrix stehen in [Object Ownership Matrix: Wer ändert welches Objekt?](../../blog/object-ownership-matrix-salesforce/).
@@ -90,7 +94,7 @@ Nach der ersten Version kamen in den folgenden Wochen neue Randfälle hinzu. Wir
 
 Auch ein Partner kann gute Standards schreiben. Legt er die Regeln fest, entscheidet er aber, wie alle anderen bauen, auch seine Wettbewerber. Liegen dazu Repository, Pipeline und Tools wie Jira oder Miro bei ihm, wird jeder Partnerwechsel teuer.
 
-Gehören Standards, Freigaberechte und Tools dem Kunden, startet ein neuer Partner mit denselben Regeln, Tools und Rechten wie alle anderen, und ein Partner, der geht, gibt nur seine Benutzer ab. Angebote lassen sich dann fair vergleichen, weil alle unter denselben Bedingungen liefern. Mehr dazu in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/). Was Sie schon bei der Auswahl eines Partners dazu fragen sollten, steht in [Salesforce-Implementierungspartner auswählen](../../blog/salesforce-implementierungspartner-auswaehlen/).
+Gehören Standards, Freigaberechte und Tools dem Kunden, startet ein neuer Partner mit denselben Regeln, Tools und Rechten wie alle anderen, und ein Partner, der geht, übergibt offene Arbeit und Wissen, während Repository, Pipeline und Standards bleiben, wo sie sind. Angebote lassen sich dann fair vergleichen, weil alle unter denselben Bedingungen liefern. Mehr dazu in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/). Was Sie schon bei der Auswahl eines Partners dazu fragen sollten, steht in [Salesforce-Implementierungspartner auswählen](../../blog/salesforce-implementierungspartner-auswaehlen/).
 
 ## Wie passen Reviews hinein, ohne das Programm auszubremsen?
 

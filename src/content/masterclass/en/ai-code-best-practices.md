@@ -1,5 +1,5 @@
 ---
-title: "AI code best practices for Salesforce programmes"
+title: "AI code best practices for Salesforce programs"
 description: "Which rules, checks and access limits AI-generated Salesforce code needs, from the rules file and API 67.0 to the quality gates in your pipeline."
 lang: en
 slug: ai-code-best-practices
@@ -55,11 +55,11 @@ Salesforce documents the weak spots itself. The [review checklist for Agentforce
 
 The last row is Salesforce's own advice: according to the [Vibes workflow patterns](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html), permission sets, profiles, page layouts and sharing rules should be set up by hand in Setup, and code for encryption, authentication and permission logic deserves a line-by-line review. At a manufacturer, those are exactly the places that make sure dealers see only their own orders and warranty cases.
 
-On coverage: Salesforce requires 75 percent for a deployment, but its testing guide explicitly says not to focus on the percentage. An agent optimises for whatever check you give it. Give it only the 75 percent and you get tests that run through lines and prove nothing. How to have such code reviewed as the client is covered in [reviewing AI-generated Salesforce code](../../../blog/reviewing-ai-generated-salesforce-code/), and why every pull request needs a review in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+On coverage: Salesforce requires 75 percent for a deployment, but its testing guide explicitly says not to focus on the percentage. An agent optimizes for whatever check you give it. Give it only the 75 percent and you get tests that run through lines and prove nothing. How to have such code reviewed as the client is covered in [reviewing AI-generated Salesforce code](../../../blog/reviewing-ai-generated-salesforce-code/), and why every pull request needs a review in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 
 ## The API 67.0 trap
 
-With Summer '26, Salesforce changed Apex's default behaviour. According to the [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm), code saved at API 67.0 runs in user context, classes without a sharing declaration run with the current user's sharing, and `WITH SECURITY_ENFORCED` is no longer allowed in SOQL. The [Summer '26 architect blog](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) adds two points: triggers always run in system mode, but the handler classes they call are affected if they lack a declaration. And classes still using the old clause will not compile on 67.0.
+With Summer '26, Salesforce changed Apex's default behavior. According to the [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm), code saved at API 67.0 runs in user context, classes without a sharing declaration run with the current user's sharing, and `WITH SECURITY_ENFORCED` is no longer allowed in SOQL. The [Summer '26 architect blog](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) adds two points: triggers always run in system mode, but the handler classes they call are affected if they lack a declaration. And classes still using the old clause will not compile on 67.0.
 
 ```hinweis achtung
 The change is tied to each class's own API version. Code on 66.0 behaves as before until someone raises the version. That is where the risk sits: a query silently returns fewer records, with no error.
@@ -126,7 +126,7 @@ Before the gate, the way of working decides how much fails. Three habits work, i
 
 Simon Willison describes the ["lethal trifecta"](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/): access to private data, exposure to untrusted content and a way to communicate externally. A coding agent signed in through the sf CLI to an org with real dealer and customer data, reading tickets and web pages, with network access, has all three. In its [guide to secure deployment](https://code.claude.com/docs/en/agent-sdk/secure-deployment), Anthropic itself gives the example of a README with unusual instructions that the agent might follow.
 
-My minimum rules for every programme:
+My minimum rules for every program:
 
 1. Agents work only against scratch orgs and developer sandboxes without real customer data.
 2. Agentforce Vibes is [disabled](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes) for production orgs in Setup under "Agentforce Vibes Extensions".

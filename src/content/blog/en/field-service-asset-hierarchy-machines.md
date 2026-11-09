@@ -51,7 +51,7 @@ My rule of thumb has three questions. If one of them is answered yes, the compon
 - **Does it have its own maintenance?** A spindle with its own interval in operating hours, a filter unit with its own inspection. Maintenance work rules hang on assets, so the component needs one.
 - **Does it have its own warranty?** A supplier part with a warranty that starts at a different date than the machine. Without its own asset, nobody can tell whether the claim goes to the supplier.
 
-Everything else stays in the parts list: screws, seals, cables, standard parts. The technician still needs to find them, but that is a question for PLM and the spare parts catalogue. In [spare parts by serial number](../spare-parts-by-serial-number-ai/) I recommend the same split: Salesforce holds the machine and its service-relevant main assemblies, the full as-built parts list stays in PLM and is read live.
+Everything else stays in the parts list: screws, seals, cables, standard parts. The technician still needs to find them, but that is a question for PLM and the spare parts catalog. In [spare parts by serial number](../spare-parts-by-serial-number-ai/) I recommend the same split: Salesforce holds the machine and its service-relevant main assemblies, the full as-built parts list stays in PLM and is read live.
 
 ## Fields or asset attributes for machine data?
 
@@ -92,7 +92,7 @@ The same applies to dealer portals: every asset a dealer may see has to be share
 
 ## Worked example: a packaging line
 
-All numbers are assumptions. A packaging machine builder delivers a line with 6 machines. They contain 40 serialised assemblies, such as servo drives, robots and labelling units, and around 900 other parts.
+All numbers are assumptions. A packaging machine builder delivers a line with 6 machines. They contain 40 serialised assemblies, such as servo drives, robots and labeling units, and around 900 other parts.
 
 **Full copy.** Line, machines, assemblies and parts as assets: about 947 records per line. That is well within the 10,000 limit, but above the 500 the tree grid can show, and 900 records per line have to stay in step with PLM.
 

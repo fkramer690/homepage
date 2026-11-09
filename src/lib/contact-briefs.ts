@@ -3,7 +3,7 @@ import type { Category } from './categories';
 // Closing call to action under every blog article and service page: what the
 // reader should bring to the 30-minute call and what we clarify in it.
 // An article gets the brief of its main category (the first in `categories`); `contactBrief` in the frontmatter
-// overrides it (e.g. licence articles in the architecture category). Every
+// overrides it (e.g. license articles in the architecture category). Every
 // service page sets `contactBrief` in its frontmatter.
 // scripts/check-blog.mjs runs the same wording checks on this file as on articles.
 interface Brief {
@@ -121,14 +121,14 @@ export const contactBriefs = {
     },
     en: {
       title: 'Is a Salesforce offer or renewal coming up?',
-      text: 'Before you sign, we check in 30 minutes whether licence mix, edition and term match how you actually use Salesforce.',
+      text: 'Before you sign, we check in 30 minutes whether license mix, edition and term match how you actually use Salesforce.',
       bring: [
         'The current offer or running contract with line items and quantities',
         'Your users by role: who works in sales or service and who only reads or approves',
         'The date by which you are asked to sign, or the end of your contract',
       ],
       clarify: [
-        'Which users really need a full licence and where a cheaper one is enough',
+        'Which users really need a full license and where a cheaper one is enough',
         'Whether edition and add-ons fit what you need over the next two to three years',
         'Where you still have room to negotiate before signing',
       ],
@@ -151,7 +151,7 @@ export const contactBriefs = {
     },
     en: {
       title: 'Does Field Service pay off for your technicians?',
-      text: 'Whether scheduling and route optimisation pay off depends on a few numbers. With them I can give you a first assessment in 30 minutes.',
+      text: 'Whether scheduling and route optimization pay off depends on a few numbers. With them I can give you a first assessment in 30 minutes.',
       bring: [
         'The typical job duration: closer to one hour or to several days per job',
         'Travel time to the customer and how many jobs a technician completes per day',
@@ -159,7 +159,7 @@ export const contactBriefs = {
       ],
       clarify: [
         'Whether your jobs benefit from Field Service or a leaner setup is enough',
-        'Which KPIs scheduling and route optimisation can improve',
+        'Which KPIs scheduling and route optimization can improve',
         'Which master data and interfaces, for example to the ERP, have to be in place first',
       ],
     },
@@ -185,7 +185,7 @@ export const contactBriefs = {
       bring: [
         'How you manage framework agreements, committed volumes and sales forecasts today',
         'Which ERP holds the orders and how it is connected to Salesforce',
-        'The offer or licence line item, if you already have one',
+        'The offer or license line item, if you already have one',
       ],
       clarify: [
         'Whether Sales Agreements and Account Forecasting fit your business',
@@ -275,7 +275,7 @@ export const contactBriefs = {
       bring: [
         'The use case: which request or task the agent should take over and how often it occurs',
         'Where the data for it lives: in Salesforce, in the ERP or in documents',
-        'Your licence situation for Agentforce and Data 360, if known',
+        'Your license situation for Agentforce and Data 360, if known',
       ],
       clarify: [
         'Whether an agent is the right approach or a flow with fixed rules is enough',
@@ -331,14 +331,14 @@ export const contactBriefs = {
     },
     en: {
       title: 'Planning or running a nearshore team?',
-      text: 'In 30 minutes we check whether team size, mix and steering fit your programme.',
+      text: 'In 30 minutes we check whether team size, mix and steering fit your program.',
       bring: [
         'Size and mix of the team, locations and seniority',
         'How often people have changed in recent months',
         'How requirements reach the team today and who accepts the results',
       ],
       clarify: [
-        'Whether team size and mix fit your programme',
+        'Whether team size and mix fit your program',
         'Which steering is missing on your side',
         'What you should agree with the provider on staffing and rotation',
       ],
@@ -361,11 +361,11 @@ export const contactBriefs = {
     },
     en: {
       title: 'Build or buy?',
-      text: 'In 30 minutes we sort your options, looking at licences, operation and follow-up costs over several years.',
+      text: 'In 30 minutes we sort your options, looking at licenses, operation and follow-up costs over several years.',
       bring: [
         'The process or problem that needs solving',
         'The options already on the table, with offers if you have them',
-        'Your existing Salesforce licences and the systems around them',
+        'Your existing Salesforce licenses and the systems around them',
       ],
       clarify: [
         'Which option pays off over the years, maintenance included',

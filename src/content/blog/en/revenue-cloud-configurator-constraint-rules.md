@@ -30,14 +30,14 @@ The Revenue Cloud configurator with the constraint rules engine is enough for te
 
 ## What can the Revenue Cloud configurator do?
 
-The Product Configurator is the interface in which sales picks options for a bundle and sets attribute values. It adds the configured product to the quote or order, and configurations can be saved and reused, according to the [Trailhead unit on the configurator](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/get-started-with-product-configurator). Trailhead names three approaches that grow with product complexity: basic validation rules, selection rules and constraint-based modelling. (Trailhead calls the product Agentforce Revenue Management, salesforce.com Revenue Cloud; the [product names article](../revenue-cloud-product-names-rlm-rca/) sorts this out.)
+The Product Configurator is the interface in which sales picks options for a bundle and sets attribute values. It adds the configured product to the quote or order, and configurations can be saved and reused, according to the [Trailhead unit on the configurator](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/get-started-with-product-configurator). Trailhead names three approaches that grow with product complexity: basic validation rules, selection rules and constraint-based modeling. (Trailhead calls the product Agentforce Revenue Management, salesforce.com Revenue Cloud; the [product names article](../revenue-cloud-product-names-rlm-rca/) sorts this out.)
 
 Behind it are two rule engines, each switched on in Revenue Settings:
 
 - **Configuration rules on the Business Rules Engine.** According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/use-product-configurator-with-business-rules-engine) there are validation rules that block invalid selections, exclusion rules for mutually exclusive products and requirement rules that add necessary products or attributes. They apply at transaction, bundle or product level and are built with clicks.
 - **The Constraint Rules Engine.** Salesforce calls it the solution "for complicated, high-volume configurations". It uses constraint models and, per [Trailhead](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/explore-product-configurator-with-constraint-rules-engine), evaluates all possible combinations of product selections and filters out invalid ones in real time.
 
-The configurator works on the catalog: classifications, attributes and bundles. If the catalog is modelled badly, no rule engine fixes it. How I model it is in [Revenue Cloud product catalog: modelling machine variants](../revenue-cloud-product-catalog-variants/).
+The configurator works on the catalog: classifications, attributes and bundles. If the catalog is modeled badly, no rule engine fixes it. How I model it is in [Revenue Cloud product catalog: modeling machine variants](../revenue-cloud-product-catalog-variants/).
 
 ## When do constraint rules pay off?
 

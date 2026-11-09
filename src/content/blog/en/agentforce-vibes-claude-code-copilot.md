@@ -22,7 +22,7 @@ faq:
   - q: "Is there an EU option for Claude Code?"
     a: "Not through Anthropic's own API, which offers US or global inference only. Claude Code can run through Amazon Bedrock in an EU region, or Claude models can be used through Copilot with EU data residency enabled."
   - q: "Should the partner bring its own coding agent?"
-    a: "I would not allow that by default. If the partner works with its own accounts, you do not control data residency, retention or offboarding. Give partner developers seats in your own GitHub, Claude or ChatGPT organisation, or a Vibes licence in your org."
+    a: "I would not allow that by default. If the partner works with its own accounts, you do not control data residency, retention or offboarding. Give partner developers seats in your own GitHub, Claude or ChatGPT organization, or a Vibes license in your org."
 draft: false
 ---
 
@@ -69,8 +69,8 @@ For Vibes, Salesforce states no processing region. I would get it from Salesforc
 
 The tools differ less in price than in who sees the spend:
 
-- **Copilot** includes credits worth the seat price, [$19 or $39 per user](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan), pooled across the enterprise, then $0.01 per credit. Admins set [budgets per enterprise, cost centre and user](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/).
-- **Claude Team and Enterprise** draw on a seat allowance. Usage beyond it needs usage credits with spend limits per organisation, group or member.
+- **Copilot** includes credits worth the seat price, [$19 or $39 per user](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan), pooled across the enterprise, then $0.01 per credit. Admins set [budgets per enterprise, cost center and user](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/).
+- **Claude Team and Enterprise** draw on a seat allowance. Usage beyond it needs usage credits with spend limits per organization, group or member.
 - **Claude Code on Bedrock** shows up in the AWS bill. Anthropic's analytics do not cover it, so per-user figures need OpenTelemetry or a gateway.
 - **Vibes metered** draws from the same Flex Credit pool as your production agents. A partner team can eat the budget you planned for a dealer service agent.
 
@@ -80,7 +80,7 @@ The numbers for a full team, and whether client or partner should pay, are in [w
 
 - **Identity and audit.** Claude Enterprise adds SCIM, audit logs, a compliance API and custom retention to the SSO that Team already has. ChatGPT Business has SSO but no SCIM, no role-based access and no compliance API; Enterprise has all three.
 - **Scope of use.** OpenAI lets admins [govern Codex Local and Codex Cloud separately](https://help.openai.com/en/articles/11369540), so you can allow the CLI and block delegated cloud tasks. Vibes can be [disabled for a production org](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes) in Setup.
-- **Training and retention.** Anthropic [does not train on code sent under commercial terms](https://code.claude.com/docs/en/data-usage) and retains it for 30 days; zero data retention for Claude Code is enabled per organisation by the account team. OpenAI does not use business inputs for training by default.
+- **Training and retention.** Anthropic [does not train on code sent under commercial terms](https://code.claude.com/docs/en/data-usage) and retains it for 30 days; zero data retention for Claude Code is enabled per organization by the account team. OpenAI does not use business inputs for training by default.
 - **One rules file.** The Copilot coding agent [reads AGENTS.md and CLAUDE.md](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions). One file in your repository can steer several tools, see [the AI rules file for your Salesforce repository](../ai-rules-file-salesforce-repository/).
 
 ## Worked example: two approved tools instead of four
@@ -91,7 +91,7 @@ The requests on the table: the admins want Vibes, the internal developers want C
 
 How I would decide:
 
-1. **Copilot Enterprise as the default for all nine developers**, with EU data residency enabled. It runs on the existing GitHub contract, partner developers get seats in the client's organisation, and Claude Sonnet 5.5 is available under EU processing. I take Enterprise over Business because agent sessions burn credits and Enterprise includes $39 instead of $19 per seat. At list price: 9 × $39 = $351 a month including pooled credits, with 10 percent more credits per request.
+1. **Copilot Enterprise as the default for all nine developers**, with EU data residency enabled. It runs on the existing GitHub contract, partner developers get seats in the client's organization, and Claude Sonnet 5.5 is available under EU processing. I take Enterprise over Business because agent sessions burn credits and Enterprise includes $39 instead of $19 per seat. At list price: 9 × $39 = $351 a month including pooled credits, with 10 percent more credits per request.
 2. **Vibes flat fee for the two admins** at 2 × $125 = $250 a month, on one condition: Salesforce confirms the processing region in writing. Until then the admins use Copilot.
 3. **No partner accounts.** If the partner insists on Claude Code for the official plugin, it runs through the client's AWS account in an EU region, with a budget and OpenTelemetry.
 4. **No Codex for now.** ChatGPT Business has no data residency, and Enterprise would be a third contract for one developer.

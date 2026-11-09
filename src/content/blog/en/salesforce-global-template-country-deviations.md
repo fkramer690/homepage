@@ -8,7 +8,7 @@ translationKey: global-template-country-deviations
 topic: governance
 categories: [architecture, manufacturing-cloud]
 contactBrief: architecture
-tags: [global template, rollout, harmonisation, Salesforce architecture]
+tags: [global template, rollout, harmonization, Salesforce architecture]
 takeaways:
   - "My guideline: every country is at least 80 percent identical to the template, and the delta per country is kept as small as possible."
   - "Deviations from law, tax, language and real differences in the business are justified. Habit alone is not a reason."
@@ -39,7 +39,7 @@ Each exception is small. Together they have three consequences:
 - **New countries get slower.** Instead of adopting the template, every new country picks the variant it likes best.
 
 ```praxis
-In the worldwide Manufacturing Cloud rollout I accompanied as architect, it was clear from the start that the goal was to harmonise processes. We started with a large country with reasonable complexity, and the other countries only had marginal deviations. My guideline since then: all countries at least 80 percent identical, minimise the delta per country. What I would do differently: keep bringing up change management, even when the client thinks they do not need it.
+In the worldwide Manufacturing Cloud rollout I accompanied as architect, it was clear from the start that the goal was to harmonise processes. We started with a large country with reasonable complexity, and the other countries only had marginal deviations. My guideline since then: all countries at least 80 percent identical, minimize the delta per country. What I would do differently: keep bringing up change management, even when the client thinks they do not need it.
 ```
 
 I describe the order of countries in detail in [Manufacturing Cloud global rollout](../manufacturing-cloud-global-rollout/). This article is about the question every country asks again: may this deviation go into the system?
@@ -97,4 +97,4 @@ The 80 percent is a guideline, not an exact measurement. Still, the direction is
 
 ## Write down the goal before the first country
 
-Before the first country, decide what the goal is and write it down. If it is harmonisation, the guideline for the match and the request path for deviations follow from it. Then keep a list of deviations per country, with reason and approval date. The list should also say what each deviation costs in operation, such as an extra test case in every release. In the steering committee it shows at a glance whether the template holds. How countries take up the template is also a question of [change management](../../services/change-management-salesforce/).
+Before the first country, decide what the goal is and write it down. If it is harmonization, the guideline for the match and the request path for deviations follow from it. Then keep a list of deviations per country, with reason and approval date. The list should also say what each deviation costs in operation, such as an extra test case in every release. In the steering committee it shows at a glance whether the template holds. How countries take up the template is also a question of [change management](../../services/change-management-salesforce/).

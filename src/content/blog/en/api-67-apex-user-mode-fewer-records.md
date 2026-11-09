@@ -10,7 +10,7 @@ topic: release
 categories: [devops]
 tags: [apex, api 67.0, user mode, ai coding, release management, manufacturing]
 takeaways:
-  - "Code saved at 66.0 or earlier keeps the old behaviour until someone raises its version; the risk sits in the version bump."
+  - "Code saved at 66.0 or earlier keeps the old behavior until someone raises its version; the risk sits in the version bump."
   - "Records hidden by sharing disappear from query results without an error, while a missing field permission makes a user-mode query fail with a QueryException."
   - "WITH SECURITY_ENFORCED no longer compiles at 67.0. WITH USER_MODE also checks polymorphic fields and WHERE, so replaced queries need a test."
   - "AI coding agents raise API versions as a side effect and test without System.runAs(). A version bump therefore needs its own pull request."
@@ -33,13 +33,13 @@ Apex code can see fewer records after you raise its API version to 67.0, because
 
 ## What changes in Apex with API version 67.0?
 
-Summer '26 reached production orgs between 15 May and 13 June 2026, depending on the instance, and brought API version 67.0 ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release)). The [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm) lists three versioned behaviour changes for Apex:
+Summer '26 reached production orgs between 15 May and 13 June 2026, depending on the instance, and brought API version 67.0 ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release)). The [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm) lists three versioned behavior changes for Apex:
 
 - **User mode by default.** SOQL, SOSL, DML and Database methods enforce the running user's object permissions and field-level security. Up to 66.0, system mode was the default and the code had to enforce these checks itself.
 - **With sharing by default.** A class without a sharing declaration runs in the current user's sharing context. Up to 66.0, such a class ran without sharing if it was an entry point, or took the mode of its caller. Aura controllers and @AuraEnabled methods called from Lightning web components already ran with sharing.
 - **WITH SECURITY_ENFORCED is gone.** A query that uses it no longer compiles, and the deployment fails with "WITH SECURITY_ENFORCED is no longer supported, use WITH USER_MODE instead". The Developers Blog adds that WITH USER_MODE also checks polymorphic fields and the WHERE clause, so the replacement can be stricter than the original.
 
-The word "versioned" carries the risk. Each class and trigger stores its own API version in its metadata, and the new behaviour applies only to code saved at 67.0 or later. A class at 62.0 keeps running in system mode until somebody raises the version. One side effect is easy to miss: according to the [sharing documentation](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_classes_keywords_sharing.htm), an older class without a declaration runs with sharing as soon as any class in its inheritance chain is saved at 67.0. Bumping a base class can change classes nobody touched.
+The word "versioned" carries the risk. Each class and trigger stores its own API version in its metadata, and the new behavior applies only to code saved at 67.0 or later. A class at 62.0 keeps running in system mode until somebody raises the version. One side effect is easy to miss: according to the [sharing documentation](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_classes_keywords_sharing.htm), an older class without a declaration runs with sharing as soon as any class in its inheritance chain is saved at 67.0. Bumping a base class can change classes nobody touched.
 
 ```vertiefung For developers
 title: Do triggers run in user mode from API 67.0?
@@ -57,7 +57,7 @@ Two mechanisms are at work, and they show up very differently.
 **Permissions fail loudly.** In user mode, a query that selects a field the user cannot read fails. The [access mode documentation](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/apexref/apex_classes_enforce_usermode.htm) describes getInaccessibleFields() on the QueryException, which lists every field concerned, and getDmlFieldNames() for DML. That hurts in UAT, but someone notices.
 
 ```hinweis achtung
-A database operation in user mode "always respects the user's sharing rules", says the same page. At 67.0, without sharing on the class is therefore not enough for a query without an access mode. Keeping the old behaviour deliberately takes both, the class keyword and WITH SYSTEM_MODE.
+A database operation in user mode "always respects the user's sharing rules", says the same page. At 67.0, without sharing on the class is therefore not enough for a query without an access mode. Keeping the old behavior deliberately takes both, the class keyword and WITH SYSTEM_MODE.
 ```
 
 For a manufacturer, who runs the code matters more than the code itself:
@@ -70,9 +70,9 @@ For a manufacturer, who runs the code matters more than the code itself:
 
 **The models learned the old patterns.** Most public Apex predates Summer '26 and uses WITH SECURITY_ENFORCED or quietly relies on system mode. The first fails to compile at 67.0, which is the good case. The second compiles and fails only against real data. Salesforce's [guide on securing Apex for Lightning web components](https://developer.salesforce.com/docs/platform/lwc/guide/apex-security) now builds on WITH USER_MODE and Security.stripInaccessible().
 
-**Agents pick the version.** An agent writes the API version into every -meta.xml file it creates and likes to tidy up metadata while it changes a class. Salesforce itself recommends the latest API version and as few versions as possible in one codebase, ideally one. In my judgement an agent following that advice blindly will bump classes as a side effect of unrelated user stories.
+**Agents pick the version.** An agent writes the API version into every -meta.xml file it creates and likes to tidy up metadata while it changes a class. Salesforce itself recommends the latest API version and as few versions as possible in one codebase, ideally one. In my judgment an agent following that advice blindly will bump classes as a side effect of unrelated user stories.
 
-**Generated tests do not test visibility.** An agent asked for 75 percent coverage writes tests that create their own records and run as a user who sees everything. The architect highlights state that tests passing at 66.0 do not guarantee the behaviour at 67.0 and recommend testing as restricted users. Without System.runAs() and a realistic profile, the missing records never show up.
+**Generated tests do not test visibility.** An agent asked for 75 percent coverage writes tests that create their own records and run as a user who sees everything. The architect highlights state that tests passing at 66.0 do not guarantee the behavior at 67.0 and recommend testing as restricted users. Without System.runAs() and a realistic profile, the missing records never show up.
 
 **Guardrails solve half the problem.** Salesforce's own skills for Claude Code "force the sharing keyword on all classes" ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills)). An explicit declaration beats the default, but an agent that writes with sharing on an SAP integration service has made a business decision nobody reviewed. The typical defects of AI code are covered in [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/); the point here is that the version number belongs on the review list.
 

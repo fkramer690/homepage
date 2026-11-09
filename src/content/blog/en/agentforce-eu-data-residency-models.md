@@ -87,7 +87,7 @@ Koa, Salesforce's own CRM reasoning model, comes to the US first. According to t
 
 I am a Salesforce architect, not a lawyer, and this is not legal advice. As I read it, GDPR does not demand that data stays in the EU, and Salesforce's privacy FAQ says all Salesforce services, Agentforce included, are covered by the EU Standard Contractual Clauses, with Binding Corporate Rules for processors on top. Whether that is enough is your data protection officer's call. A data protection officer may still ask for EU processing when prompts carry dealer contacts, technician names or warranty cases.
 
-Three neighbouring topics follow other rules: the [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/), [AI coding tools under works council and GDPR](../ai-coding-tools-works-council-gdpr/), and external models reading Salesforce data through [hosted MCP servers](../salesforce-hosted-mcp-servers-data-access/), where Salesforce's retention agreements do not reach.
+Three neighboring topics follow other rules: the [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/), [AI coding tools under works council and GDPR](../ai-coding-tools-works-council-gdpr/), and external models reading Salesforce data through [hosted MCP servers](../salesforce-hosted-mcp-servers-data-access/), where Salesforce's retention agreements do not reach.
 
 ## Worked example: dealer enquiries from five countries
 
@@ -101,7 +101,7 @@ Assume a machine builder in Germany with 300 dealers in France, Italy, Austria, 
 
 **Koa.** The evaluation is postponed until an EU date exists.
 
-Waiting for the written confirmation delays go-live by about three weeks. In my judgement that is cheaper than explaining the data flow afterwards.
+Waiting for the written confirmation delays go-live by about three weeks. In my judgment that is cheaper than explaining the data flow afterwards.
 
 ## Get model, region and failover confirmed in writing per agent
 

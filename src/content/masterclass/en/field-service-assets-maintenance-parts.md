@@ -133,7 +133,7 @@ Products Consumed --Consumed parts--> ERP
 Part request --> ERP
 ```
 
-Many spare parts calls need no visit. If customers order a known part for their machine themselves, the hotline has less to do; the B2B Commerce chapter on [catalogue, search and entitlements](../../b2b-commerce/catalog-search-entitlements/) shows how parts per machine become visible in a store.
+Many spare parts calls need no visit. If customers order a known part for their machine themselves, the hotline has less to do; the B2B Commerce chapter on [catalog, search and entitlements](../../b2b-commerce/catalog-search-entitlements/) shows how parts per machine become visible in a store.
 
 ## Where does warranty belong?
 
@@ -149,13 +149,13 @@ My rule: if dealers submit warranty claims, Manufacturing Cloud owns warranty, a
 
 ## Service partners work in the same process
 
-Partners belong in the same process as your own technicians: same plan, same app, same service report. Salesforce's [architecture guide on contractor sharing](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns) describes two models. A named contractor is treated much like an employee and needs a user licence of their own. A contractor company can be modelled as a capacity-based resource, and the partner assigns its own people. The guide uses the service territory as the main security boundary, with a child territory per contractor company.
+Partners belong in the same process as your own technicians: same plan, same app, same service report. Salesforce's [architecture guide on contractor sharing](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns) describes two models. A named contractor is treated much like an employee and needs a user license of their own. A contractor company can be modeled as a capacity-based resource, and the partner assigns its own people. The guide uses the service territory as the main security boundary, with a child territory per contractor company.
 
-I prefer the first model for regular partners and the second for partners who step in at peaks. Contractor Plus costs $80 per user or $32 per login and month according to the price list, so per user wins above 2.5 logins a month. Roles and licence rules are in [Field Service licences by role](../../../blog/field-service-licences-by-role/), the setup and what stays deliberately different in [how to bring in service partners](../../../blog/salesforce-field-service-service-partners/).
+I prefer the first model for regular partners and the second for partners who step in at peaks. Contractor Plus costs $80 per user or $32 per login and month according to the price list, so per user wins above 2.5 logins a month. Roles and license rules are in [Field Service licenses by role](../../../blog/field-service-licences-by-role/), the setup and what stays deliberately different in [how to bring in service partners](../../../blog/salesforce-field-service-service-partners/).
 
 ## Worked example: 1,200 machines in three series
 
-A builder of machining centres has 1,200 machines in the field in three series. The service contract says: service every 2,000 operating hours or every 12 months, whichever comes first. 700 machines are connected, 500 are not. Two partner companies cover Scandinavia.
+A builder of machining centers has 1,200 machines in the field in three series. The service contract says: service every 2,000 operating hours or every 12 months, whichever comes first. 700 machines are connected, 500 are not. Two partner companies cover Scandinavia.
 
 | Area | Decision in the scenario |
 |---|---|
