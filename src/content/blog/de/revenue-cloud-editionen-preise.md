@@ -47,6 +47,8 @@ Drei Details derselben Seite sind für das Budget wichtig:
 
 Eine kostenlose Testversion gibt es nicht. Die FAQ verweist stattdessen auf praktische Workshops.
 
+Wie sich die beiden Editionen zu Salesforce CPQ und dem älteren Revenue Cloud von 2020 verhalten, zeigt [Revenue Cloud Advanced, Revenue Cloud und CPQ](../revenue-cloud-produktnamen-rlm-rca/).
+
 ## Die Funktionsliste pro Edition gehört ins Angebot
 
 Die Editionskarten auf der Preisseite nennen drei Funktionen für Growth und drei weitere für Advanced, wie in der Tabelle oben. Darunter steht eine Vergleichstabelle mit diesen Zeilen: Produktkatalog und Preisverwaltung, Produktkonfigurator, Preis und Angebot, Auftragsverwaltung, Abonnement- und Asset-Lebenszyklus, Advanced Approvals, Advanced Doc Gen, Usage Selling, Contract Lifecycle Management, Revenue Management Intelligence, Agentforce-Vorlagen, Dynamic Revenue Orchestration, Invoice Management und External User Support.

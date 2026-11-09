@@ -1,7 +1,9 @@
 ---
 title: "Salesforce Field Service Scheduling: How Much to Automate?"
-description: "How much scheduling in Salesforce Field Service should run automatically: scheduling policies, the dispatcher's role and a path to more automation."
+metaTitle: "Automate Salesforce Field Service scheduling and dispatch"
+description: "How to automate technician scheduling and dispatch in Salesforce Field Service: scheduling policies, the dispatcher's role and when dispatch runs automatically."
 pubDate: 2026-10-26
+updatedDate: 2026-11-09
 lang: en
 slug: salesforce-field-service-scheduling-automation
 translationKey: field-service-scheduling-automation
@@ -23,6 +25,8 @@ faq:
     a: "Field Service ships four default policies: Customer First, High Intensity for peak periods, Soft Boundaries for work across territories and Emergency for urgent jobs. They are a starting point and usually get adjusted."
   - q: "Can Field Service release appointments to technicians automatically?"
     a: "Yes. Scheduled jobs can change appointments from Scheduled to Dispatched automatically. With drip feed, Field Service keeps only a set number of appointments in each technician's queue."
+  - q: "How do you automate technician scheduling and dispatch in Salesforce Field Service?"
+    a: "In four steps. Let a shipped scheduling policy schedule appointments up to Scheduled while a dispatcher releases each one. Have dispatchers note for four weeks why they change proposals and turn those reasons into data or work rules. Once proposals hardly change, dispatch simple work types automatically with drip feed."
 draft: false
 ---
 
@@ -84,7 +88,9 @@ According to the [Salesforce data model](https://developer.salesforce.com/docs/a
 
 That way automation grows with proven quality, and not by a plan someone fixed before the project. Which role spare parts play in this, meaning who knows whether the part is in the van, is the topic of the next part of the series.
 
-## Start with the dispatcher releasing every appointment
+## Automate technician scheduling and dispatch in four steps
+
+The first step keeps the dispatcher releasing every appointment:
 
 ```schritte
 Start with release

@@ -47,6 +47,8 @@ Three details from the same page matter for the budget:
 
 There is no free trial. The FAQ points to hands-on workshops instead.
 
+How the two editions relate to Salesforce CPQ and the older Revenue Cloud of 2020 is in [Revenue Cloud Advanced vs Revenue Cloud vs CPQ](../revenue-cloud-product-names-rlm-rca/).
+
 ## Get the feature list per edition in the quote
 
 The edition cards on the pricing page name three features for Growth and three more for Advanced, as listed in the table above. Below them the page has a comparison table with these rows: product catalog and price management, product configurator, price and quote, order management, subscription and asset lifecycle, Advanced Approvals, Advanced Doc Gen, usage selling, Contract Lifecycle Management, Revenue Management Intelligence, Agentforce templates, Dynamic Revenue Orchestration, Invoice Management and External User Support.

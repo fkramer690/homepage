@@ -43,6 +43,19 @@ The history explains most of the confusion. In short:
 
 One remark on the table: the Spring '24 Developer Guide is the oldest version I found, titled Revenue Lifecycle Management Developer Guide. The two packages still carry their names and namespaces today, which is why "CPQ" in a conversation almost always means the SBQQ package.
 
+## Revenue Cloud Advanced vs Revenue Cloud vs CPQ at a glance
+
+Revenue Cloud Advanced is the larger edition of today's Revenue Cloud, next to Revenue Cloud Growth, so the two names describe one product. The real comparison is with Salesforce CPQ, the older managed package that Salesforce names Revenue Cloud Advanced the successor of.
+
+| | Salesforce CPQ | Revenue Cloud Growth | Revenue Cloud Advanced |
+|---|---|---|---|
+| What it is | Managed package from SteelBrick | Smaller edition of today's Revenue Cloud | Larger edition of today's Revenue Cloud |
+| Data model | Package objects with the SBQQ namespace | Core platform objects | Core platform objects |
+| Scope | Configure, price, quote; billing is the separate blng package | Quoting and configurator, order capture, subscriptions | Everything in Growth plus contracts and orders, consumption and invoicing, AI and analytics |
+| New customers | No longer sold | €150 per user and month | €200 per user and month |
+
+Prices are list prices from the pricing page in October 2026, on top of Sales Cloud. Moving from CPQ to either edition means a new implementation, because there is no upgrade path. The differences in data model, configurator, pricing and renewals are in [Salesforce CPQ vs Revenue Cloud: the real differences](../salesforce-cpq-vs-revenue-cloud-differences/), prices and add-ons in [Revenue Cloud pricing](../revenue-cloud-editions-pricing/).
+
 ## Why do Salesforce sources use different names?
 
 Because they were updated at different times. As of late October 2026:

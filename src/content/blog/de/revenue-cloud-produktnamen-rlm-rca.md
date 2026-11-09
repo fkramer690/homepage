@@ -43,6 +43,19 @@ Die Geschichte erklärt den größten Teil der Verwirrung. Kurz gefasst:
 
 Eine Anmerkung zur Tabelle: Der Developer Guide zu Spring '24 ist die älteste Version, die ich gefunden habe, mit dem Titel Revenue Lifecycle Management Developer Guide. Die beiden Pakete tragen ihre Namen und Namespaces bis heute, deshalb meint "CPQ" im Gespräch fast immer das SBQQ-Paket.
 
+## Revenue Cloud Advanced, Revenue Cloud und CPQ im Vergleich
+
+Revenue Cloud Advanced ist die größere Edition des heutigen Revenue Cloud, neben Revenue Cloud Growth. Beide Namen beschreiben also ein Produkt. Der eigentliche Vergleich ist der mit Salesforce CPQ, dem älteren Managed Package, als dessen Nachfolger Salesforce Revenue Cloud Advanced nennt.
+
+| | Salesforce CPQ | Revenue Cloud Growth | Revenue Cloud Advanced |
+|---|---|---|---|
+| Was es ist | Managed Package von SteelBrick | Kleinere Edition des heutigen Revenue Cloud | Größere Edition des heutigen Revenue Cloud |
+| Datenmodell | Paketobjekte mit dem Namespace SBQQ | Standardobjekte der Plattform | Standardobjekte der Plattform |
+| Umfang | Konfigurieren, Preise, Angebote; Abrechnung ist das eigene Paket blng | Angebote mit Konfigurator, Auftragserfassung, Abonnements | Alles aus Growth plus Verträge und Aufträge, Verbrauch und Rechnungsstellung, KI und Analytics |
+| Neukunden | Nicht mehr erhältlich | 150 Euro pro Nutzer und Monat | 200 Euro pro Nutzer und Monat |
+
+Die Preise sind Listenpreise der Preisseite im Oktober 2026, zusätzlich zu Sales Cloud. Der Weg von CPQ zu einer der beiden Editionen bedeutet eine Neueinführung, weil es keinen Upgrade-Pfad gibt. Die Unterschiede bei Datenmodell, Konfigurator, Preisfindung und Verlängerungen stehen in [Salesforce CPQ vs. Revenue Cloud: die echten Unterschiede](../salesforce-cpq-revenue-cloud-unterschiede/), Preise und Add-ons in [Revenue Cloud Preise](../revenue-cloud-editionen-preise/).
+
 ## Warum verwenden Salesforce-Quellen verschiedene Namen?
 
 Weil sie zu verschiedenen Zeitpunkten aktualisiert wurden. Stand Ende Oktober 2026:

@@ -2,6 +2,7 @@
 title: "Agentforce Sales Planning: What the Agent Really Does"
 description: "What the Agentforce for Sales Planning template does with sales agreements and forecasts, what Salesforce leaves undocumented and which ERP data comes first."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: agentforce-sales-planning-agreements-forecasts
 translationKey: sales-planning-agent-agreements
@@ -23,7 +24,7 @@ faq:
   - q: "Where does the agent get actual quantities from?"
     a: "From the actual values stored on sales agreement product schedules. When orders live in SAP or proALPHA, an integration has to load them, for example through Bulk API in the mode Manually using API upload, and a daily job refreshes the agreements."
   - q: "Is Sales Planning included with Agentforce for Sales?"
-    a: "No. Salesforce Help ties the Agentforce for Sales Planning template to the Agentforce for Manufacturing add-on or Agentforce 1 Manufacturing Edition. Salesforce also sells a Sales Planning product for territory and quota planning, so check which of the two your quote names."
+    a: "The agent template is not. Salesforce Help ties Agentforce for Sales Planning to the Agentforce for Manufacturing add-on or Agentforce 1 Manufacturing Edition. The separate Sales Planning product for territory and quota planning is included in Agentforce 1 Sales Edition, the Sales Cloud Max edition, and an add-on for the other editions."
 draft: false
 ---
 
@@ -56,6 +57,14 @@ Trailhead now calls the product itself Agentforce Manufacturing. The [Trailhead 
 The same naming shows up in the forecast settings. Trailhead writes that "Agentforce Manufacturing also generates forecasts automatically for new products at the start of each adjustment period". In the [same unit](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/define-account-forecast-settings) this is the forecast recalculation at the start of each adjustment period, a scheduled calculation. No subagent or prompt is involved.
 
 I do not mind the branding. It becomes a problem in a vendor workshop when "the agent forecasts your new products" ends up in the business case. My question in such a meeting is always the same: which subagent, which action, which license, and where is it in the help pages?
+
+## Is Sales Planning included with Agentforce for Sales?
+
+The agent template Agentforce for Sales Planning is not included with Agentforce for Sales or any Sales Cloud edition. The [help page for the template](https://help.salesforce.com/s/articleView?id=ind.mfg_gen_ai_agentforce_sales_planning_agent.htm&language=en_US&type=5) ties it to the Agentforce for Manufacturing add-on or Agentforce 1 Manufacturing Edition, so it needs Manufacturing Cloud.
+
+The confusion comes from a second product with almost the same name. Sales Planning is Salesforce's tool for territory, quota and capacity planning. According to its [pricing page](https://www.salesforce.com/sales/sales-planning/pricing/) it is included in Agentforce 1 Sales Edition and otherwise costs $75 per user and month as an add-on. The [Sales Cloud pricing page](https://www.salesforce.com/uk/sales/pricing/) lists it as included in Max and available for purchase in Starter, Pro Suite and Core (as of November 2026). It plans territories and quotas. It does not read sales agreements.
+
+So when a quote says "Sales Planning", ask which one it means: the manufacturing agent or the planning product.
 
 ## How far does the agent really work on sales agreements and account forecasts?
 

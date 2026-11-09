@@ -61,7 +61,7 @@ Die Engine vergibt Termine nach einer Scheduling Policy. Work Rules filtern Tech
 
 Die zweite Entscheidung betrifft die Reichweite der Automatik. Ein Termin wandert von None zu Scheduled, sobald er Techniker und Zeitfenster hat, und zu Dispatched, wenn er in der App des Technikers freigegeben ist. Zwischen Scheduled und Dispatched kann ein Disponent noch eingreifen. Für Hersteller empfehle ich genau diese Aufteilung zum Start: Die Engine plant, der Disponent prüft und gibt frei. Er weiß, dass ein Kunde vor der Wartung eine Linie abschalten muss, und das steht in keinem Feld.
 
-Die Automatik wächst, wenn Disponenten die Vorschläge kaum noch ändern. Dafür notieren sie vier Wochen lang, warum sie einen Vorschlag geändert haben, und aus jedem Grund wird ein Datum oder eine Work Rule. Den ganzen Weg bis zur automatischen Freigabe mit Drip Feed beschreibe ich in [wie viel Planung im Field Service automatisch laufen darf](../../../blog/salesforce-field-service-terminplanung-automatisieren/).
+Die Automatik wächst, wenn Disponenten die Vorschläge kaum noch ändern. Dafür notieren sie vier Wochen lang, warum sie einen Vorschlag geändert haben, und aus jedem Grund wird ein Datum oder eine Work Rule. Den ganzen Weg bis zur automatischen Freigabe mit Drip Feed beschreibe ich in [Terminplanung und Dispatch Schritt für Schritt automatisieren](../../../blog/salesforce-field-service-terminplanung-automatisieren/).
 
 ## Sollten Sie auf Enhanced Scheduling and Optimization umstellen?
 

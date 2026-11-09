@@ -34,7 +34,7 @@ Salesforce CPQ is end of sale, not end of life. Existing customers keep using it
 
 ## What has Salesforce committed to for CPQ and Billing?
 
-Salesforce CPQ and Salesforce Billing come from SteelBrick, which Salesforce bought for $360 million in December 2015, according to [SiliconANGLE](https://siliconangle.com/2015/12/24/salesforce-confirms-360m-acquisition-of-quote-to-cash-startup-steelbrick/). Both are managed packages, with the namespaces `SBQQ` and `blng`. The successor appeared from Spring '24 as Revenue Lifecycle Management; Help now says "Revenue Management (formerly Revenue Cloud)", the CPQ page says Agentforce Revenue Management, and salesforce.com sells it as Revenue Cloud. [Chapter 1](../revenue-cloud-overview/) sorts out the names.
+Salesforce CPQ and Salesforce Billing come from SteelBrick, which Salesforce bought for $360 million in December 2015, according to [SiliconANGLE](https://siliconangle.com/2015/12/24/salesforce-confirms-360m-acquisition-of-quote-to-cash-startup-steelbrick/). Both are managed packages, with the namespaces `SBQQ` and `blng`. The successor appeared from Spring '24 as Revenue Lifecycle Management; Help now says "Revenue Management (formerly Revenue Cloud)", the CPQ page says Agentforce Revenue Management, and salesforce.com sells it as Revenue Cloud. [Chapter 1](../revenue-cloud-overview/) sorts out the names, and [Revenue Cloud Advanced vs Revenue Cloud vs CPQ](../../../blog/revenue-cloud-product-names-rlm-rca/) compares them in one table.
 
 The binding source for CPQ is the Salesforce page [Navigating the Future of Salesforce CPQ](https://www.salesforce.com/sales/cpq/end-of-life/). As of October 2026 it says:
 
