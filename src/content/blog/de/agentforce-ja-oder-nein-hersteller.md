@@ -1,6 +1,6 @@
 ---
 title: "Agentforce für Hersteller: jetzt starten oder warten?"
-description: "Sollten Hersteller jetzt mit Agentforce starten? Fünf Kriterien vom Prozessvolumen über den ERP-Zugriff bis zur Edition, und wo Salesforce nicht die Antwort ist."
+description: "Sollten Hersteller jetzt mit Agentforce starten? Fünf Kriterien vom Prozessvolumen über ERP-Zugriff bis zur Edition, und wo Salesforce nicht die Antwort ist."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de

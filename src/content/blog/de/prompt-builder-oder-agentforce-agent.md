@@ -1,7 +1,7 @@
 ---
 title: "Prompt Builder oder Agentforce-Agent: was wann passt"
 metaTitle: "Prompt Builder vs. Agentforce-Agent: was wann passt"
-description: "Prompt Builder reicht, wenn ein Mensch den Text zuerst liest. Einen Agenten brauchen Sie, wenn das System den nächsten Schritt wählt. Beispiele und Flex-Credit-Kosten."
+description: "Prompt Builder reicht, wenn ein Mensch den Text zuerst liest. Einen Agenten brauchen Sie, wenn das System den nächsten Schritt wählt. Mit Beispielen und Kosten."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de
