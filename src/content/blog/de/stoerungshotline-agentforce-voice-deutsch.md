@@ -10,7 +10,7 @@ topic: field-service
 categories: [field-service, ai]
 tags: [Agentforce Voice, Field Service, Außendienst, Störungshotline, Entitlements, Flex Credits]
 takeaways:
-  - "Rufnummer, Kontakt und installierte Anlagen liefern dem Agenten Kandidaten; der Anrufer bestätigt die Maschine vor Fall oder Buchung."
+  - "Rufnummer, Kontakt und installierte Anlagen liefern mögliche Maschinen; der Anrufer bestätigt sie, bevor der Agent einen Fall anlegt oder bucht."
   - "Selbst bucht der Agent nur, wenn die Maschine läuft, das Entitlement den Einsatz abdeckt und die Fehlerklasse bekannt ist. Stillstände gehen an die Disposition."
   - "Entitlement-Prüfung und Buchungssperre gehören in Agent-Script-Bedingungen, damit nie das LLM entscheidet, was der Vertrag zusagt."
   - "Ein Anruf mit vier Sprachaktionen kostet 120 Flex Credits, also 0,60 €. Mit Agentforce Voice Minutes sind es 60 Credits pro Minute."
@@ -24,7 +24,7 @@ faq:
   - q: "Was passiert, wenn der Sprachagent an einen Menschen übergibt?"
     a: "Laut Salesforce behält die native Telefonie mit Salesforce Voice das vollständige Gesprächsprotokoll und den Sitzungskontext auch bei Weiterleitungen. Die Disposition sieht also, was der Anrufer schon gesagt hat. Die Übergabe in Agent Script braucht eine aktive Omni-Channel-Verbindung."
   - q: "Sollte der Sprachagent Seriennummern abfragen?"
-    a: "Nur als Rückfalllösung. Suchen Sie über Rufnummer, Kontakt, Account und installierte Anlagen nach Kandidaten, lassen Sie Standort und Maschinentyp bestätigen, und lassen Sie eine gesprochene Seriennummer vorlesen und bestätigen, weil Spracherkennung Codes oft falsch versteht."
+    a: "Nur als Rückfalllösung. Suchen Sie über Rufnummer, Kontakt, Account und installierte Anlagen nach Kandidaten, lassen Sie Standort und Maschinentyp bestätigen, und lassen Sie den Agenten eine gesprochene Seriennummer zurücklesen und vom Anrufer bestätigen, weil Spracherkennung Codes oft falsch versteht."
 draft: false
 ---
 
@@ -38,13 +38,13 @@ Für den Aufbau der Hotline zählen diese Fakten zur Plattform:
 
 - **Telefonie.** Laut [Salesforce-Developer-Blog](https://developer.salesforce.com/blogs/2026/10/agentforce-voice-for-agent-script-voice-enabling-best-practices) läuft Agentforce Voice auf Salesforce Voice with Telephony Providers, früher Service Cloud Voice. [Trailhead](https://trailhead.salesforce.com/de/content/learn/modules/agentforce-voice-quick-look/meet-agentforce-voice) nennt zwei Wege: native Telefonie mit Salesforce Voice oder Ihren bestehenden Telefonieanbieter.
 - **Übergabe.** Der native Weg behält laut derselben Trailhead-Einheit vollständige Gesprächsprotokolle und den Sitzungskontext während der gesamten Interaktion bei, auch bei Weiterleitungen. Die Disposition bekommt Protokoll und Kontext, kritische Kennungen muss sie unter Umständen trotzdem bestätigen lassen.
-- **Buchung per Telefon.** Die [Winter-'27-Highlights](https://trailhead.salesforce.com/de/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) führen Autonomous Scheduling with Agentforce Voice für Field Service. Die [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=service.fs_agentforce_autonomous_scheduling_customer_initiated_create_agent_voice_studio.htm&language=en_US&type=5) beschreibt die Einrichtung: Field Service mit Foundations, Autonomous Scheduling, Partner-Telefonie und ein Omni-Channel-Flow für die Übergabe. Gastbenutzer werden nicht unterstützt, und der Agent verifiziert Anrufer per E-Mail an den Kontakt hinter ihrer Rufnummer.
+- **Buchung per Telefon.** Die [Winter-'27-Highlights](https://trailhead.salesforce.com/de/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) führen Autonomous Scheduling with Agentforce Voice für Field Service. Die [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=service.fs_agentforce_autonomous_scheduling_customer_initiated_create_agent_voice_studio.htm&language=en_US&type=5) beschreibt die Einrichtung: Field Service mit Foundations, Autonomous Scheduling, Partner-Telefonie und ein Omni-Channel-Flow für die Übergabe. Gastbenutzer werden nicht unterstützt, und der Agent verifiziert den Anrufer per E-Mail an den Kontakt, den er über dessen Rufnummer findet.
 
 Die Beispiele von Salesforce sind geplante Termine: Die [Winter-'27-Ankündigung](https://salesforce.com/news/stories/winter-2027-product-release-announcement) verspricht, „15-minute booking calls“ auf Sekunden zu verkürzen. Ein Störungsanruf ist die schwierigere Aufgabe. Den allgemeinen Serviceagenten beschreibe ich in [Casey und der Service Rep Assistant](../service-cloud-casey-und-service-rep-assistant/).
 
 ## Ein Störungsanruf ist schwieriger als eine Terminbuchung
 
-Am Telefon ist meist ein Instandhalter, der neben einer stehenden Linie in einer lauten Halle steht. Er will einen Techniker, kein Menü. Vier Dinge entscheiden über den nächsten Schritt, und keines davon sagt der Anrufer in einer Form, mit der ein System arbeiten kann:
+Am Telefon ist meist ein Instandhalter, der neben einer stehenden Linie in einer lauten Halle steht. Er will einen Techniker, kein Menü. Vier Angaben entscheiden über den nächsten Schritt, doch der Anrufer liefert sie selten in einer Form, die ein System verarbeiten kann:
 
 - **Welche Maschine.** Seriennummern sind lang und alphanumerisch. Der Developer-Blog warnt, dass Spracherkennung Fachbegriffe falsch versteht, und der [Agentforce-Voice-Leitfaden](https://www.salesforce.com/agentforce/voice/agentforce-voice-guide-full/) von Salesforce rät, im Test vor dem Start zu prüfen, wie der Agent Produktkennungen und Zahlencodes ausspricht. Rufnummer, Kontakt, Account und installierte Anlagen würde ich nur zur Kandidatensuche nutzen, denn eine Werksnummer oder das Handy eines Fremddienstleisters kann mehrere Standorte abdecken. Der Anrufer bestätigt Standort und Maschinentyp, bevor der Agent einen Fall anlegt oder bucht, und nennt die Seriennummer, wenn der Account mehrere Maschinen dieses Typs hat.
 - **Stillstand oder Betrieb.** „Sie macht ein komisches Geräusch, wir haben sie abgeschaltet“ kann beides heißen. Das LLM sollte das nicht aus einer Erzählung ableiten. Der Agent stellt eine geschlossene Frage, „Steht die Maschine gerade still?“, und speichert die Antwort in einer Variablen.
@@ -58,7 +58,7 @@ Mit diesen Regeln würde ich starten. Jede Zeile ist ein Zweig in der Logik, kei
 | Lage im Gespräch | Was der Agent tut | Wer entscheidet |
 |---|---|---|
 | Sicherheitsthema | Leitet sofort weiter | Mensch |
-| Anrufer oder Maschine unklar | Leitet mit dem Bekannten weiter | Disposition |
+| Anrufer oder Maschine unklar | Leitet mit den bereits erfassten Angaben weiter | Disposition |
 | Stillstand, Entitlement mit Reaktionszeit | Legt einen Fall mit hoher Priorität und Entitlement an der Anlage an, damit der Entitlement-Prozess den Milestone startet, verbindet live | Disposition |
 | Stillstand, Vertragsdeckung nicht bestätigt | Legt einen Fall an, sagt, dass Kosten nach Prüfung anfallen können, verbindet oder vereinbart Rückruf | Disposition |
 | Maschine läuft eingeschränkt, Entitlement gültig, Fehlerklasse bekannt | Bucht einen Termin aus der Field-Service-Planung, der den Milestone einhält | Agent |
@@ -73,7 +73,7 @@ In Agent Script gibt es die Bausteine dafür. Das [Fetch-Data-Muster](https://de
 
 Die [Flex-Credits-Rate-Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) vom 3. November 2026 setzt für eine Standard- oder Custom-Sprachaktion 30 Credits in Produktion und 24 in der Sandbox an. Das Sprachbeispiel auf der [EU-Preisseite von Agentforce](https://www.salesforce.com/eu/agentforce/pricing/) rechnet für ein Reservierungsszenario mit vier Sprachaktionen pro Anruf, also 120 Credits; ein Störungsanruf mit sechs Aktionen braucht 180. Beim Listenpreis von 500 € je 100.000 Credits sind das 0,60 € und 0,90 € pro Anruf.
 
-Eine Fußnote der Rate Card sagt, dass für bestimmte Kunden stattdessen die Nutzungsart Agentforce Voice Minutes gilt. Die [ergänzende Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Agentforce-Voice-Minutes-Supplemental-Rate-Card-02.03.2026.pdf) setzt dafür 60 Credits pro Minute an, 48 in der Sandbox. Ein Störungsanruf von fünf Minuten kostet dann 300 Credits oder 1,50 €, einer von sechs Minuten 1,80 €. Wo Voice Minutes gelten, ersetzen sie die Zählung nach Aktionen. Triage-Gespräche dauern, fragen Sie also, welches Modell Ihr Vertrag nutzt.
+Eine Fußnote der Rate Card sagt, dass für bestimmte Kunden stattdessen die Nutzungsart Agentforce Voice Minutes gilt. Die [ergänzende Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Agentforce-Voice-Minutes-Supplemental-Rate-Card-02.03.2026.pdf) setzt dafür 60 Credits pro Minute an, 48 in der Sandbox. Ein Störungsanruf von fünf Minuten kostet dann 300 Credits oder 1,50 €, einer von sechs Minuten 1,80 €. Wo Voice Minutes gelten, ersetzen sie die Zählung nach Aktionen. Triage-Gespräche dauern oft länger, klären Sie also, welches Abrechnungsmodell Ihr Vertrag nutzt.
 
 ```kennzahlen
 30 Credits | pro Sprachaktion in Produktion, 24 in der Sandbox
@@ -112,7 +112,7 @@ Unter diesen Annahmen sind die Flex Credits nicht der größte Kostentreiber; Sp
 2. **Entitlements als Datensätze.** Liegen die Verträge in SAP, replizieren Sie die Reaktionszeiten nach Salesforce. Der Agentforce-Voice-Leitfaden nennt einen „2-second action latency benchmark“, und eine Live-Abfrage im ERP während des Gesprächs gefährdet ihn.
 3. **Fehlerklassen.** Die Buchungssperre braucht eine kurze Liste von Klassen, für die ein Techniker planen kann.
 4. **Tests auf Deutsch mit echtem Ton.** Salesforce führt Voice and Conversation Testing in den Dreamforce-Ankündigungen als Beta. Nehmen Sie Testanrufe mit Hallenlärm und Dialekt auf. Sprachaktionen kosten in der Sandbox 24 Credits; wie das Beta-Testwerkzeug abrechnet, habe ich in keiner Salesforce-Quelle gefunden, fragen Sie also nach. Mehr in [Agentforce-Agenten testen](../agentforce-agenten-testen-freigeben/).
-5. **Datenschutz und Kennzeichnung.** Trailhead nennt Vereinbarungen zur Null-Datenspeicherung mit OpenAI, Deepgram und ElevenLabs. Das deckt nur die Modellanbieter ab: Aufbewahrung von Protokollen und Aufnahmen in Salesforce, Zugriffsrechte und der Betriebsrat brauchen eine eigene Entscheidung. Die Begrüßung sollte sagen, dass eine KI antwortet; die rechtliche Seite steht in [EU AI Act: Was die neuen Fristen für Agentforce bedeuten](../eu-ai-act-fristen-agentforce/).
+5. **Datenschutz und Kennzeichnung.** Trailhead nennt Richtlinien zur Null-Datenspeicherung bei OpenAI, Deepgram und ElevenLabs. Das deckt nur die Modellanbieter ab: Aufbewahrung von Protokollen und Aufnahmen in Salesforce, Zugriffsrechte und der Betriebsrat brauchen eine eigene Entscheidung. Die Begrüßung sollte sagen, dass eine KI antwortet; die rechtliche Seite steht in [EU AI Act: Was die neuen Fristen für Agentforce bedeuten](../eu-ai-act-fristen-agentforce/).
 
 ## Erster Schritt: vier Wochen nachts nur Triage
 
