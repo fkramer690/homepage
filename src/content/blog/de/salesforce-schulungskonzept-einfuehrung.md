@@ -1,6 +1,6 @@
 ---
 title: "Schulungskonzept für die Salesforce-Einführung"
-description: "Wie ein Schulungskonzept für Salesforce aussieht, das im Alltag ankommt: nach Rollen, am eigenen Fall, mit Key Usern, Schulungs-Sandbox und Hilfe im System."
+description: "Wie ein Schulungskonzept für Salesforce aussieht, das im Alltag ankommt: nach Rollen, an realitätsnahen Fällen, mit Key Usern, Schulungs-Sandbox und Hilfe im System."
 pubDate: 2026-10-29
 updatedDate: 2026-11-09
 lang: de
@@ -13,7 +13,7 @@ contactBrief: change
 tags: [Schulungskonzept, Salesforce-Schulung, Change Management, Key User, Train the Trainer]
 takeaways:
   - "Schulung baut im ADKAR-Modell vor allem Wissen auf und beginnt Fähigkeit durch Übung. Fehlen Bewusstsein oder Bereitschaft, hilft sie wenig."
-  - "Geschult wird an typischen Fällen in einer Schulungsumgebung mit synthetischen oder geprüft maskierten Daten, nah am Go-live der Rolle."
+  - "Geschult wird an typischen Fällen in einer Schulungsumgebung mit synthetischen oder geprüft maskierten Daten, nah am Go-live statt Monate vorher."
   - "Key User sind oft die besten Trainer für ihr Team, wenn sie gründlich geschult wurden, eine Probeschulung gehalten haben und gemeinsame Unterlagen nutzen."
   - "Der Erfolg einer Schulung zeigt sich in Fragen, Aufgabenchecks und Nutzungszahlen der ersten Wochen, nicht in der Teilnahme allein."
 faq:
@@ -24,7 +24,7 @@ faq:
   - q: "Was ist Train the Trainer in Salesforce-Projekten?"
     a: "Das Projektteam schult zuerst die Key User gründlich, mit Probeschulung und gemeinsamen Unterlagen, und die Key User schulen danach ihre Teams. So lernen Anwender von Kollegen, die ihren Alltag kennen und auch nach dem Go-live erreichbar sind."
   - q: "Brauche ich eine eigene Sandbox für Schulungen?"
-    a: "Meist ja, wenn der Abnahmetest parallel läuft, viele Personen schulen oder die Übungsdaten zurückgesetzt werden müssen. Schulungen in Produktion erzeugen echte Datensätze, die E-Mails, Freigaben oder ERP-Buchungen auslösen können. Eine Partial Copy Sandbox ist oft ein Kandidat, abhängig von Edition, freien Sandboxes und Datenschutz; sie maskiert kopierte Daten nicht von selbst."
+    a: "Meist ja, wenn der Abnahmetest parallel läuft, viele Personen geschult werden oder die Übungsdaten zurückgesetzt werden müssen. Schulungen in Produktion erzeugen echte Datensätze, die E-Mails, Freigaben oder ERP-Buchungen auslösen können. Eine Partial Copy Sandbox ist oft ein Kandidat, abhängig von Edition, freien Sandboxes und Datenschutz; sie maskiert kopierte Daten nicht von selbst."
 draft: false
 ---
 
@@ -44,8 +44,8 @@ Ein Funktionsrundgang durch Salesforce zeigt alles und bleibt bei niemandem hän
 |---|---|---|---|
 | Key User | alle Abläufe der eigenen Gruppe, auch Sonderfälle | mehrtägig mit Projektteam, eigene UAT-Rolle, danach Train the Trainer mit Probeschulung | vor dem Abnahmetest |
 | Vertrieb | Besuch, Opportunity, Angebot | 2 bis 3 Stunden an typischen Kunden | kurz vor dem Go-live |
-| Innendienst | Angebot, Auftrag, Rahmenvertrag | halber Tag mit Übungsfällen | kurz vor dem Go-live |
-| Disponent | Einsatzplanung, Umplanung, Notfall | halber Tag, danach Zuschauen in laufender Region | vor der eigenen Welle |
+| Innendienst | Angebot, Auftrag, Rahmenvertrag (Sales Agreement) | halber Tag mit Übungsfällen | kurz vor dem Go-live |
+| Disponent | Einsatzplanung, Umplanung, Notfall | halber Tag, danach Hospitation in einer produktiven Region | vor der eigenen Welle |
 | Techniker | Auftrag annehmen, Bericht, Ersatzteile | am eingerichteten Gerät, online und offline, inklusive Synchronisation | vor der eigenen Welle |
 | Führungskraft | Dashboards, Prognose, Pipeline-Meeting | eine Stunde | vor dem Go-live |
 
@@ -58,17 +58,17 @@ Anwender lernen oft lieber von Kollegen, die dieselben Kunden, Maschinen und Aus
 Der Ansatz hat Voraussetzungen. Key User brauchen die freigestellte Zeit, fertige Schulungsunterlagen, einen Trainerleitfaden und Übungsfälle, die das Projekt vorbereitet, dazu eine Probeschulung, die das Projektteam abnimmt. Nicht jeder Key User ist ein guter Trainer; bei kritischen Abläufen würde ich Key User und Projekttrainer gemeinsam schulen lassen. Ohne diese Vorbereitung improvisiert jeder Key User anders, gibt eigene Umwege weiter, und die Teams lernen unterschiedliche Wege.
 
 ```praxis
-Ich habe Schulungen in allen diesen Formen umgesetzt, je nach Wunsch des Kunden: Train the Trainer über Key User, eine eigene Schulungs-Sandbox und Schulungen je Rolle. In Field-Service-Einführungen hilft es außerdem, wenn Disponenten der nächsten Welle vorher in der laufenden Region zuschauen. Echte Fälle aus dem Alltag einer Kollegin bringen ihnen mehr als eine Übung im Schulungsraum.
+Ich habe Schulungen in allen diesen Formen umgesetzt, je nach Wunsch des Kunden: Train the Trainer über Key User, eine eigene Schulungs-Sandbox und Schulungen je Rolle. In Field-Service-Einführungen hilft es außerdem, wenn Disponenten der nächsten Welle vorher bei Kollegen in einer bereits produktiven Region hospitieren. Echte Fälle aus dem Alltag einer Kollegin bringen ihnen mehr als eine Übung im Schulungsraum.
 ```
 
 ## Wo sollte geschult werden?
 
 Meist in einer eigenen Schulungs-Sandbox. Salesforce nennt Schulung ausdrücklich als einen der Zwecke von [Sandboxes](https://help.salesforce.com/s/articleView?id=platform.deploy_sandboxes_parent.htm&type=5). Schulungen in der Test-Sandbox können den Abnahmetest stören, wenn beides gleichzeitig läuft, und Schulungen in Produktion erzeugen echte Angebote und Aufträge, die E-Mails, Freigaben oder ERP-Buchungen auslösen können. Eine gemeinsame Umgebung funktioniert nur mit getrennten Zeitfenstern, Benutzern und Datensätzen und klarer Verantwortung.
 
-Eine Partial Copy Sandbox ist oft ein Kandidat. Sie enthält einen per Sandbox-Vorlage gewählten Ausschnitt der Produktionsdaten, bis 5 GB Datenspeicher, und lässt sich laut [Salesforce-Dokumentation](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/deploy_sandboxes.pdf) alle fünf Tage neu aufbauen. Ob eine frei ist, hängt von Edition und Sandbox-Lizenzen ab; die Enterprise Edition enthält eine, die oft schon für den Abnahmetest gebraucht wird. Für eine kleinere Einführung kann eine Developer Pro Sandbox mit synthetischen Daten reichen. Eine Full Sandbox geht nur alle 29 Tage, deshalb reservieren viele Programme sie für produktionsnahe Szenarien wie End-to-End-Tests, Abnahmetest, Staging oder Lasttests. Wie die Schulungsumgebung neben Entwicklungs- und Test-Sandboxes in die Landschaft passt, beschreibe ich in der [Sandbox-Strategie bei mehreren Partnern](../salesforce-sandbox-strategie-mehrere-partner/).
+Eine Partial Copy Sandbox ist oft ein Kandidat. Sie enthält einen per Sandbox-Vorlage gewählten Ausschnitt der Produktionsdaten, bis zu 5 GB Daten, und lässt sich laut [Salesforce-Dokumentation](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/deploy_sandboxes.pdf) alle fünf Tage neu aufbauen. Ob eine frei ist, hängt von Edition und Sandbox-Lizenzen ab; die Enterprise Edition enthält eine, die oft schon für den Abnahmetest gebraucht wird. Für eine kleinere Einführung kann eine Developer Pro Sandbox mit synthetischen Daten reichen. Eine Full Sandbox lässt sich nur alle 29 Tage aktualisieren, deshalb reservieren viele Programme sie für produktionsnahe Szenarien wie End-to-End-Tests, Abnahmetest, Staging oder Lasttests. Wie Sie die Schulungsumgebung mit Entwicklungs- und Test-Sandboxes abstimmen, beschreibe ich in der [Sandbox-Strategie bei mehreren Partnern](../salesforce-sandbox-strategie-mehrere-partner/).
 
 ```hinweis achtung
-Eine Partial Copy maskiert kopierte Produktionsdaten nicht von selbst. Nutzen Sie synthetische Übungsdaten oder einen freigegebenen, geprüft maskierten Datenbestand, etwa mit Salesforce Data Mask & Seed, und denken Sie an Freitexte, Anhänge und E-Mails. Klären Sie das vorher mit dem Datenschutz. Testen Sie außerdem Schulungsbenutzer, Permission Sets, Anmeldung, Geräte und App-Versionen, und schalten Sie ausgehende E-Mails und Schnittstellen ab oder binden Sie sie kontrolliert an.
+Eine Partial Copy maskiert kopierte Produktionsdaten nicht von selbst. Nutzen Sie synthetische Übungsdaten oder einen freigegebenen, geprüft maskierten Datenbestand, etwa mit Salesforce Data Mask & Seed, und denken Sie an Freitexte, Anhänge und E-Mails. Klären Sie das vorher mit dem Datenschutz. Testen Sie außerdem Schulungsbenutzer, Permission Sets, Anmeldung, Geräte und App-Versionen, und deaktivieren Sie ausgehende E-Mails. Schnittstellen schalten Sie ab oder binden sie kontrolliert an.
 ```
 
 Jede Übung braucht einen Fall, der für den Alltag der Teilnehmenden typisch ist: ein typischer Kunde, eine typische Maschine, eine typische Störung. Wer seine eigenen Abläufe wiedererkennt, überträgt das Gelernte schneller in den Alltag.
@@ -81,7 +81,7 @@ Dazu kommen kurze Anleitungen pro Ablauf, die im System verlinkt sind, und die K
 
 ## Woran messen Sie, ob die Schulung gewirkt hat?
 
-Nicht an der Teilnahme allein. Teilnahme- und Abschlussquoten zeigen die Abdeckung, die für die Einsatzbereitschaft zählt, aber nicht, ob jemand den Ablauf beherrscht. Ergänzen Sie kurze Aufgabenchecks und zwei Quellen aus den ersten Wochen: die Fragen, die Key User und Support sammeln, und die Nutzungszahlen pro Gruppe im Vergleich zu dem, was der Ablauf erzeugen sollte. Sie zeigen, wo Sie hinschauen sollten, nicht die Ursache. Häufen sich Fragen zu einem Ablauf, kann Wissen fehlen, aber auch ein klarer Prozess, eine verständliche Seite oder eine Berechtigung. Bleiben Datensätze aus, obwohl niemand fragt, kann Bereitschaft fehlen, aber auch ein Parallelsystem, eine Schnittstelle oder Zeit. Kurze Gespräche oder Zuschauen bei der Arbeit trennen das. Wie Sie diese Zahlen aufbauen, beschreibe ich in [Salesforce-Nutzung nach dem Go-live messen](../salesforce-nutzung-messen-nach-go-live/).
+Nicht an der Teilnahme allein. Teilnahme- und Abschlussquoten zeigen die Abdeckung, die für die Einsatzbereitschaft zählt, aber nicht, ob jemand den Ablauf beherrscht. Ergänzen Sie kurze Aufgabenchecks und zwei Quellen aus den ersten Wochen: die Fragen, die Key User und Support sammeln, und die Nutzungszahlen pro Gruppe im Vergleich zu dem, was der Ablauf erzeugen sollte. Sie zeigen, wo Sie hinschauen sollten, nicht die Ursache. Häufen sich Fragen zu einem Ablauf, kann Wissen fehlen; ebenso möglich sind ein unklarer Prozess, eine unübersichtliche Seite oder fehlende Berechtigungen. Bleiben Datensätze aus, obwohl niemand fragt, können fehlende Bereitschaft, ein Parallelsystem, eine Integrationslücke oder Zeitdruck die Ursache sein. Kurze Gespräche oder Beobachtungen bei der Arbeit helfen, das zu unterscheiden. Wie Sie diese Zahlen aufbauen, beschreibe ich in [Salesforce-Nutzung nach dem Go-live messen](../salesforce-nutzung-messen-nach-go-live/).
 
 ## Rollen und ihre Abläufe für den ersten Tag auflisten
 

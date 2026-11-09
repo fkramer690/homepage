@@ -11,9 +11,9 @@ categories: [field-service]
 contactBrief: licences
 tags: [Field Service, ServiceMax, Asset 360, PTC, Entitlements, Asset Management]
 takeaways:
-  - "Asset 360 baut auf Standardobjekten von Field Service auf und ergänzt eigene Felder und Objekte. PTC setzt Service Cloud und Field Service voraus."
-  - "Der Kern ist eine Entitlement-Engine. Sie wählt an Case, Arbeitsauftrag und Retourenauftrag per Regel die passende Garantie oder den Vertrag."
-  - "Salesforce listet Asset Service Lifecycle Management mit 75 Dollar pro Nutzer und Monat. Es überschneidet sich bei Deckung, Hierarchie, Kampagnen und Depot."
+  - "Asset 360 baut auf Field-Service-Objekten auf und ergänzt eigene. PTC setzt Service Cloud und mindestens eine Field-Service-Lizenz voraus."
+  - "Der Kern ist eine Entitlement-Engine. Sie ermittelt für Cases, Arbeitsaufträge und Retourenaufträge per Regel die passende Garantie oder den Servicevertrag."
+  - "ASLM kostet laut Salesforce 75 Dollar pro Nutzer und Monat und überschneidet sich bei Leistungsabdeckung, Asset-Hierarchie, Kampagnen und Depot-Reparatur."
   - "Asset 360 hatte 2026 zwei Hauptreleases, zuletzt 26R2 am 9. September. Ab 2027 stellt PTC ServiceMax auf einen Quartalsrhythmus um."
   - "PTC Asset 360 heißt seit Juni 2026 PTC Orbit und ist ein anderes Produkt. Prüfen Sie in jedem Angebot, welches gemeint ist."
 faq:
@@ -57,11 +57,11 @@ Die [Produktseite](https://www.ptc.com/en/products/servicemax/asset-360) nennt v
 - **Wartungsplanung.** Pläne nach Zeit, Häufigkeit, Zustand oder IoT-Daten, mit Vorlagen und automatisch erzeugten Arbeitsaufträgen.
 - **Vorkonfigurierte Abläufe.** PTC nennt [über 60 fertige Prozessvorlagen und Transaktionen](https://support.ptc.com/help/servicemax_asset360/en/articles/asset-360/about-servicemax-asset360-suite.html). Seit Release 24R1 laufen Service Process Manager und Assistenten laut [PTC-Blog](https://www.ptc.com/en/blogs/service/continuous-innovation-field-service-servicemax-enhancements) in der Salesforce Field Service App, mit technischen Attributen vor Ort. PTC dokumentiert eine [Windchill-Integration](https://support.ptc.com/help/servicemax_asset360/en/articles/asset-360/product-integration.html) für Problemmeldungen und Produktfeedback, die es als Beta kennzeichnet, und eine Servigistics-Integration für die Ersatzteilplanung, für die mehrere Datenflüsse einzurichten sind.
 
-Wer die Wartungspläne der Basislizenz kennt, sieht die Überschneidung: Wartung nach Betriebsstunden kann Field Service selbst, siehe [Wartung nach Betriebsstunden](../field-service-wartung-nach-betriebsstunden/). Auch bei Ansprüchen gibt es Überschneidung: Seit Winter '26 kann Salesforce [Entitlements per Regel automatisch zuordnen](https://help.salesforce.com/s/articleView?id=service.auto_mapping_entitlements.htm&language=en_US&type=5), an Cases, Arbeitsaufträgen und Incidents, allerdings nur beim Anlegen des Datensatzes und nur für Entitlements mit SLA Policy. Der Mehrwert von Asset 360 liegt im Umfang seiner Anspruchslogik, etwa an Retouren und bei der Wahl zwischen Garantie und Vertrag, und in den fertigen Vorlagen.
+Wer die Wartungspläne der Basislizenz kennt, sieht die Überschneidung: Wartung nach Betriebsstunden kann Field Service selbst, siehe [Wartung nach Betriebsstunden](../field-service-wartung-nach-betriebsstunden/). Auch bei Ansprüchen gibt es Überschneidung: Seit Winter '26 kann Salesforce Cases, Arbeitsaufträgen und Incidents beim Anlegen [per Regel automatisch Entitlements zuordnen](https://help.salesforce.com/s/articleView?id=service.auto_mapping_entitlements.htm&language=en_US&type=5), allerdings nur Entitlements mit SLA Policy. Der Mehrwert von Asset 360 liegt im Umfang seiner Anspruchslogik, etwa an Retouren und bei der Wahl zwischen Garantie und Vertrag, und in den fertigen Vorlagen.
 
 ## Wo überschneidet sich Asset 360 mit Asset Service Lifecycle Management?
 
-An mehreren Stellen. Salesforce hat im Juni 2024 Asset Service Lifecycle Management (ASLM) als Add-on angekündigt und listet es mit 75 Dollar pro Nutzer und Monat bei jährlicher Abrechnung (Stand 9.11.2026), mit Editions- und Lizenzvoraussetzungen. Neben Deckung, Hierarchie und Kampagnen enthält es Work Order Estimation, Advanced Exchange, Lagerfunktionen und Teilerückgaben, die Überschneidung ist also größer, als die Tabelle zeigt. Was drin ist, steht in [Asset Service Lifecycle Management: Lohnt das Add-on?](../asset-service-lifecycle-management-zusatz/). Der Vergleich nach den Unterlagen beider Hersteller:
+An mehreren Stellen. Salesforce hat im Juni 2024 Asset Service Lifecycle Management (ASLM) als Add-on angekündigt und listet es mit 75 Dollar pro Nutzer und Monat bei jährlicher Abrechnung (Stand 9.11.2026), es gelten Editions- und weitere Voraussetzungen. Neben Deckung, Hierarchie und Kampagnen enthält es Work Order Estimation, Advanced Exchange, Lagerfunktionen und Ersatzteilrückgaben, die Überschneidung ist also größer, als die Tabelle zeigt. Was drin ist, steht in [Asset Service Lifecycle Management: Lohnt das Add-on?](../asset-service-lifecycle-management-zusatz/). Der Vergleich nach den Unterlagen beider Hersteller:
 
 | Bereich | ServiceMax Asset 360 | Salesforce ASLM |
 |---|---|---|
@@ -79,14 +79,14 @@ Beide nutzen Teile des Field-Service-Datenmodells, Asset 360 ergänzt aber eigen
 ## Was ich bei der Anspruchsprüfung gesehen habe
 
 ```praxis
-In einem Field-Service-Projekt waren Entitlements Teil des Umfangs und haben die Priorisierung im Dispatching beeinflusst. Den Ersatzteilbestand führte in meinen Projekten immer das ERP, Probleme kamen von der Pflegequalität der Daten.
+In einem Field-Service-Projekt waren Entitlements Teil des Umfangs und haben die Priorisierung im Dispatching beeinflusst. Den Ersatzteilbestand führte in meinen Projekten immer das ERP, Probleme entstanden durch mangelhafte Datenqualität.
 ```
 
 Asset 360 habe ich selbst nicht eingeführt. Aus dieser Erfahrung leite ich zwei Prüfpunkte ab. Erstens: Hängen Ihre Ansprüche heute direkt am Asset oder Account ohne Servicevertrag, passt die Engine laut Doku nicht ohne Umbau. Zweitens: Retouren- und Lagerabläufe in Asset 360 treffen auf ein ERP, das den Bestand führt. Wie ich diese Grenze ziehe, steht in [Ersatzteile zwischen ERP und Salesforce](../salesforce-field-service-ersatzteile-erp/).
 
 ## Ein zweites Managed Package bringt einen eigenen Releasezyklus
 
-Asset 360 hatte laut [Releaseplan](https://support.ptc.com/help/servicemax_asset360/en/articles/servicemax-asset-360-release-notes/releases.html) 2026 zwei Hauptreleases: 26R1 am 5. März, 26R2 am 9. September, mit Push-Upgrades auf Sandboxes und Produktion in den Wochen danach. Ab 2027 stellt PTC ServiceMax auf einen [Quartalsrhythmus](https://support.ptc.com/help/servicemaxcore/en/articles/release_notes/release-schedule.html) mit Full-Stack-Preview um, in der Asset 360 aufgeführt ist; die Termine 2027 für das Asset-360-Paket lassen Sie sich von PTC bestätigen. Salesforce liefert dreimal im Jahr. PTC veröffentlicht für jede Runde eine [Bewertung der Salesforce Release Updates](https://support.ptc.com/help/servicemax_asset360/en/articles/servicemax-asset-360-release-notes/salesforce-release-updates.html). Sie deckt das Managed Package ab, nicht Ihre Anpassungen, Ihr Team testet also beides gegen jeden Salesforce-Release.
+Asset 360 hatte laut [Releaseplan](https://support.ptc.com/help/servicemax_asset360/en/articles/servicemax-asset-360-release-notes/releases.html) 2026 zwei Hauptreleases: 26R1 am 5. März, 26R2 am 9. September, mit Push-Upgrades auf Sandboxes und Produktion in den Wochen danach. Ab 2027 stellt PTC ServiceMax auf einen [Quartalsrhythmus](https://support.ptc.com/help/servicemaxcore/en/articles/release_notes/release-schedule.html) mit Full-Stack-Preview um, in der Asset 360 aufgeführt ist; die Termine 2027 für das Asset-360-Paket lassen Sie sich von PTC bestätigen. Salesforce liefert dreimal im Jahr. PTC veröffentlicht zu jedem Salesforce-Release eine [Bewertung der Salesforce Release Updates](https://support.ptc.com/help/servicemax_asset360/en/articles/servicemax-asset-360-release-notes/salesforce-release-updates.html). Sie deckt das Managed Package ab, nicht Ihre Anpassungen. Deshalb testet Ihr Team beides bei jedem Salesforce-Release.
 
 Dazu kommen die Vertragspunkte aus der Leistungsbeschreibung. Das Standard-SLA des PTC-Rahmenvertrags gilt für die ServiceMax-Suiten nicht; PTC sagt wirtschaftlich angemessene Anstrengungen für die Verfügbarkeit zu, mit genannten Ausnahmen, und für die Salesforce-Umgebung ist Salesforce verantwortlich. PTC lizenziert Asset 360 je registriertem Nutzer, und laut Leistungsbeschreibung braucht jeder eine Lizenz, der auf Suite-Daten zugreift oder sie erhält, egal auf welchem Weg. Das betrifft Schnittstellen und Portale. Einen öffentlichen Preis gibt es nicht. Das AppExchange-Listing nennt ab 50 Dollar pro Nutzer und Monat, wurde aber zuletzt 2022 aktualisiert. Ich würde mit dieser Zahl nicht rechnen.
 
@@ -98,7 +98,7 @@ Aus meiner Sicht in drei Fällen:
 2. **Ihr PLM und Ihre Ersatzteilplanung kommen von PTC.** Dann können die Integrationen mit Windchill und Servigistics ein Vorteil sein, wenn Sie Beta-Status und Einrichtungsaufwand einrechnen.
 3. **Sie wollen fertige Abläufe statt Eigenbau.** Über 60 fertige Vorlagen und Transaktionen sparen Aufbauzeit, wenn Ihre Prozesse dazu passen.
 
-Trifft keiner davon zu, würde ich zuerst ASLM bewerten. Ein Hersteller bedeutet weniger Abstimmung, und es gibt kein zweites Managed Package mit eigenem Releasezyklus zu testen.
+Trifft keiner davon zu, würde ich zuerst ASLM bewerten. Ein Hersteller bedeutet weniger Abstimmung, und Sie müssen kein zweites Managed Package mit eigenem Releasezyklus testen.
 
 ## Die eigenen Asset-Abläufe auflisten
 

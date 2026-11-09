@@ -35,7 +35,7 @@ Am 13. Oktober 2026 hat Salesforce [zehn Neuerungen in der Service Cloud](https:
 - **Agentforce Contact Center in Europa.** Ab 16. Oktober 2026 in mehr als 30 europäischen Ländern als allgemein verfügbar angekündigt, Australien und Neuseeland folgen im November. Es verbindet Telefon, digitale Kanäle, CRM-Daten und KI-Agenten in einem System.
 - **Service Rep Assistant.** Wertet Stimmung und Fallkontext in Echtzeit aus und erstellt oder passt einen Aktionsplan für den Mitarbeitenden an, wenn sich das Gespräch verändert.
 - **Slack Swarming.** Der Service Rep Assistant kann für einen schwierigen Fall einen eigenen Slack-Kanal öffnen, Experten hinzuziehen und den Fallkontext teilen. Das ist in der offenen Beta.
-- **Workforce Engagement Management.** Planung für gemischte Teams aus Menschen und KI-Agenten, mit Echtzeitüberwachung der Einsatzpläne, Prognosen und Planungsvorschlägen in natürlicher Sprache.
+- **Workforce Engagement Management.** Planung für gemischte Teams aus Menschen und KI-Agenten, mit Echtzeitüberwachung der Planeinhaltung sowie Prognosen und Planungsvorschlägen in natürlicher Sprache.
 - **Kundensignale und Themen-Clustering.** Live-Stimmung und Auswertungen über Fälle, Telefon und Chat sowie eine automatische Rangfolge der häufigsten Kontaktgründe.
 - **Neue Kanäle.** WhatsApp mit Verkauf und Zahlung im Gespräch sowie RCS für Rich Media in nativen Nachrichtenverläufen, jeweils abhängig von Land, Edition, Add-on, Mobilfunkanbieter und Zahlungsdienstleister.
 
@@ -57,18 +57,18 @@ In den Demos von Salesforce ist die Einrichtung bewusst einfach gehalten:
 
 Gezeigt wurden zwei verwandte Funktionen, die Casey für den Service in Unternehmen interessanter machen. Für die erste habe ich keine Produktdokumentation gefunden, deshalb behandle ich beide als Ankündigung, bis Ihre Org sie zeigt:
 
-- **Freigaben für Agenten.** In der Dreamforce-Demo erreichte Casey eine Richtliniengrenze, etwa einen Rabatt oder eine Kulanzleistung über einem Schwellenwert, und schickte eine Freigabeanfrage an einen Menschen, der sie in der Konsole freigab oder ablehnte. Einen solchen Freigabeschritt für Entscheidungen über festen Schwellen können Sie auch selbst bauen.
-- **Agent Optimizer.** Analysiert Gespräche und gruppiert Kontaktgründe. In Agentforce Builder sucht er nach vorhandenen Aktionen, Flows und Apex und legt einen Platzhalter an, wo nichts passt, den dann jemand fertig baut. Salesforce führt ihn in Winter '27 als Beta, die Casey-spezifische Optimierung war für November 2026 angekündigt.
+- **Freigaben für Agenten.** In der Dreamforce-Demo erreichte Casey eine Richtliniengrenze, etwa einen Rabatt oder eine Kulanzleistung über einem Schwellenwert, und schickte eine Freigabeanfrage an einen Menschen, der sie in der Konsole freigab oder ablehnte. Einen solchen Freigabeschritt für Entscheidungen oberhalb festgelegter Schwellenwerte können Sie auch selbst umsetzen.
+- **Agent Optimizer.** Analysiert Gespräche und gruppiert Kontaktgründe. In Agentforce Builder sucht er nach vorhandenen Aktionen, Flows und Apex und legt einen Platzhalter an, wo nichts passt; ein Entwickler vervollständigt ihn anschließend. Salesforce führt ihn in Winter '27 als Beta, die Casey-spezifische Optimierung war für November 2026 angekündigt.
 
 ## Der Service Rep Assistant arbeitet neben dem Menschen
 
-Casey spricht mit dem Kunden. Der Service Rep Assistant arbeitet neben dem Menschen. Er verfolgt das Gespräch, erkennt die Stimmung, behält den Fallkontext im Blick und schlägt die nächsten Schritte vor. In der Demo hat Salesforce außerdem eine neu gebaute Servicekonsole gezeigt, die Arbeit nach Kundenwert und Abwanderungsrisiko priorisierte und nicht nur nach dem Alter eines Falls; prüfen Sie, ob Ihre Edition das als Standard bietet.
+Casey spricht mit dem Kunden. Der Service Rep Assistant arbeitet neben dem Menschen. Er verfolgt das Gespräch, erkennt die Stimmung, behält den Fallkontext im Blick und schlägt die nächsten Schritte vor. In der Demo hat Salesforce außerdem eine neu gestaltete Servicekonsole gezeigt, die Arbeit nach Kundenwert und Abwanderungsrisiko priorisierte und nicht nur nach dem Alter eines Falls; prüfen Sie, ob Ihre Edition das als Standard bietet.
 
 Für viele B2B-Serviceorganisationen ist der Assistent der leichtere Einstieg, sofern Ihre Edition ihn enthält (bei den neuen Editionen ist das Max) oder Sie ihn als Add-on kaufen. Der Mitarbeitende bleibt für die Antwort verantwortlich, und die KI spart Zeit beim Suchen, Zusammenfassen und Dokumentieren. Ein Mensch kann Vorschläge prüfen und korrigieren, bevor sie den Kunden erreichen.
 
 ## Was bedeutet das für den B2B-Service in der Fertigung?
 
-Service in der Fertigung unterscheidet sich vom Endkundenservice. Kunden sind Unternehmen, Fragen sind oft technisch, und es steht mehr auf dem Spiel: Eine stehende Maschine kostet den Kunden jede Stunde Geld. Das bestimmt, wo Casey und der Assistent passen.
+Service in der Fertigung unterscheidet sich vom Endkundenservice. Kunden sind Unternehmen, Fragen sind oft technisch, und es steht mehr auf dem Spiel: Ein Maschinenstillstand kostet den Kunden mit jeder Stunde Geld. Das bestimmt, wo Casey und der Assistent passen.
 
 **Gute Kandidaten für Casey:**
 
@@ -93,10 +93,10 @@ Aus Architektursicht entscheiden diese Punkte, ob Casey und der Assistent helfen
 
 1. **Verlässliches Wissen.** Casey antwortet aus Wissensartikeln und Dokumenten. Veraltete, widersprüchliche oder verwaiste Artikel führen zu falschen Antworten. Meine Regel: Jeder Artikel braucht einen Verantwortlichen und ein Prüfdatum.
 2. **Klare Freigaberegeln.** Legen Sie fest, welche Entscheidungen Casey allein treffen darf, welche eine Freigabe brauchen und bis zu welchem Betrag. Schreiben Sie sie vor dem ersten Gespräch auf.
-3. **Saubere Daten.** Auftragsstatus, Anlagendaten und Verträge müssen in Salesforce aktuell oder zuverlässig aus dem ERP verfügbar sein. Sonst gibt der Agent überzeugte, aber veraltete Antworten.
+3. **Saubere Daten.** Auftragsstatus, Anlagendaten und Verträge müssen in Salesforce aktuell oder zuverlässig aus dem ERP verfügbar sein. Sonst gibt der Agent selbstsicher formulierte, aber veraltete Antworten.
 4. **Identität und Rechte.** Welcher Portalnutzer darf welche Aufträge, Assets, Verträge und Preise sehen, und welche Aktionen (lesen, ändern, stornieren, gutschreiben) darf der Agent für ihn ausführen. Ein Agent darf einem Kunden nie Daten eines anderen zeigen.
-5. **Überwachung und Rückfallebene.** Antworten, Aktionen und Übergaben werden protokolliert, und der Agent weiß, was zu tun ist, wenn das ERP ausfällt oder Quellen sich widersprechen. PDFs und Webseiten als Quellen bringen außerdem das Risiko der [Prompt Injection](../prompt-injection-haendlerportal-agentforce/).
-6. **Messbare Ziele.** Zum Beispiel der Anteil der Anfragen ohne Mitarbeitende, die Erstlösungsquote oder die Zeit bis zur ersten Antwort, gemessen vorher und nachher.
+5. **Überwachung und Ausweichverfahren.** Antworten, Aktionen und Übergaben werden protokolliert, und der Agent weiß, was zu tun ist, wenn das ERP ausfällt oder Quellen sich widersprechen. PDFs und Webseiten als Quellen bringen außerdem das Risiko der [Prompt Injection](../prompt-injection-haendlerportal-agentforce/).
+6. **Messbare Ziele.** Zum Beispiel der Anteil der Anfragen, die ohne Servicemitarbeitende gelöst werden, die Erstlösungsquote oder die Zeit bis zur ersten Antwort, gemessen vorher und nachher.
 
 Diese Punkte gelten für jeden KI-Agenten, und deshalb plädiere ich dafür, [Business Value und Datenqualität an die erste Stelle zu setzen](../agentforce-business-value-datenqualitaet/). Sie erklären auch, warum KI-Funktionen in die Zielarchitektur gehören und nicht nur in einen Piloten.
 
