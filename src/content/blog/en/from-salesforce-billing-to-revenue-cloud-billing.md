@@ -68,7 +68,7 @@ Salesforce Help lists billing data as its own topic in the [migration guide](htt
 - **Closed invoices and paid history:** usually not migrated. Keep them readable in the package for the retention period or export them to an archive that finance can search. If finance wants the full history in the new system, generate historical posted invoices as documented.
 - **Open invoices:** either migrate them with their lines, due dates and tax, or finish them in the package and collect the payments there. Moving only the open amount as a balance with a reference to the old invoice number is the minimal option; it loses aging and line detail in the new system.
 - **Open credit notes:** apply them before the cutover where possible. What remains is migrated as a credit memo or handled like an open invoice.
-- **Billing schedules for active contracts:** rebuild them through one of the three routes above. The first invoice run in Revenue Cloud must start exactly after the last billed period in the package, otherwise a customer gets billed twice or not at all.
+- **Billing schedules for active contracts:** rebuild them from migrated orders, assets or through APIs. The first invoice run in Revenue Cloud must start exactly after the last billed period in the package, otherwise a customer gets billed twice or not at all.
 - **Stored payment methods:** clarify with your payment provider whether tokens can be reused in the new connection.
 
 ## The cutover belongs at a period end

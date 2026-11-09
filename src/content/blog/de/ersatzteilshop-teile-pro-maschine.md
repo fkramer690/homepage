@@ -2,6 +2,7 @@
 title: "Ersatzteilshop: nur Teile zur eigenen Maschine zeigen"
 description: "Wie ein Store in Salesforce B2B Commerce Händlern nur die Ersatzteile zur installierten Maschine zeigt: Entitlement-Limits, Maschinenseite, Endpoint Extensions."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: de
 slug: ersatzteilshop-teile-pro-maschine
 translationKey: commerce-spare-parts-per-machine
@@ -10,23 +11,23 @@ categories: [b2b-commerce, field-service]
 tags: [B2B Commerce, Ersatzteile, installierte Basis, Assets, PLM, Endpoint Extensions]
 takeaways:
   - "Entitlements wirken pro Käufergruppe, nicht pro Seriennummer. Sie beantworten deshalb nicht, welche Teile zu einer bestimmten Maschine passen."
-  - "Eine Käufergruppe pro Maschine scheitert an festen Limits: 2.000 Buyer Entitlements pro Produkt und standardmäßig 20 Käufergruppen pro Käuferkonto."
+  - "Eine Käufergruppe pro Maschine scheitert an Limits: 2.000 Käufergruppen pro Produkt (fest) und standardmäßig 20 Käufergruppen pro Käuferkonto."
   - "Robust ist eine Maschinenseite: Eine eigene Komponente listet die Anlagen des Händlers und die Ersatzteile zu jeder davon, aus Salesforce oder dem PLM."
   - "Suche pro Maschine filtern geht über Endpoint Extensions. Die Basisklasse ist aber Beta, und nachträgliches Filtern reißt Lücken in Ergebnisseiten."
-  - "Der Händler sieht nur Maschinen, die auf sein eigenes Konto registriert sind, gelesen aus dem Asset-Datensatz und nie als Freitext eingegeben."
+  - "Der Händler sieht nur Maschinen seines eigenen Kontos. Der Server prüft jedes Asset und jede Seriennummer gegen dieses Konto."
 faq:
   - q: "Können Entitlements in B2B Commerce Teile nach Seriennummer einschränken?"
     a: "Nein. Entitlement Policies geben Käufergruppen Zugriff auf Produkte. Eine Seriennummer gehört zu einer installierten Maschine, meist einem Asset-Datensatz, und in der Dokumentation zu B2B Commerce habe ich keine Standardverbindung zwischen Assets und Entitlements gefunden."
   - q: "Was ist eine Maschinenseite in einem Ersatzteilshop?"
     a: "Eine eigene Seite im Store, die die auf das Händlerkonto registrierten Maschinen zeigt und zu jeder Maschine die passenden Ersatzteile. Die Teileliste kommt aus Asset-Datensätzen oder live aus dem PLM, und der Händler legt die Teile von dort in den Warenkorb."
   - q: "Was sind Commerce Endpoint Extensions?"
-    a: "Apex-Klassen, die Anfrage oder Antwort eines einzelnen Commerce-Connect-API-Endpunkts ändern, zum Beispiel der Produktsuche. Salesforce nennt unter anderem Commerce_Endpoint_Search_ProductSearch und Commerce_Endpoint_Catalog_Products. Das Standardverhalten des Endpunkts ersetzen sie nicht."
+    a: "Apex-Klassen, die Anfrage oder Antwort eines einzelnen Commerce-Connect-API-Endpunkts ändern, zum Beispiel der Produktsuche. Salesforce nennt unter anderem Commerce_Endpoint_Search_Products, Commerce_Endpoint_Search_ProductSearch, Commerce_Endpoint_Catalog_Product und Commerce_Endpoint_Catalog_Products. Das Standardverhalten des Endpunkts ersetzen sie nicht."
   - q: "Können Händler im Experience-Cloud-Store Assets sehen?"
-    a: "Laut Salesforce-Hilfe enthalten die Lizenzen Customer Community Plus und Partner Community Lese-, Anlage- und Bearbeitungsrechte auf Assets. Welche Assets ein Händler sieht, ist dann eine Frage der Freigabe, die dem Konto folgen sollte, auf das die Maschine registriert ist."
+    a: "Laut Salesforce-Hilfe erlauben unter anderem die Lizenzen Customer Community Plus und Partner Community Lese-, Anlage- und Bearbeitungsrechte auf Assets. Welche Assets ein Händler sieht, ist dann eine Frage der Freigabe, die dem Konto folgen sollte, auf das die Maschine registriert ist."
 draft: false
 ---
 
-Ein Store in Salesforce B2B Commerce kann Ersatzteile im Standard nicht nach Seriennummer filtern. Entitlements regeln die Sichtbarkeit pro Käufergruppe, und feste Limits schließen eine Gruppe pro Maschine aus. Was funktioniert, ist eine Maschinenseite: Eine eigene Komponente zeigt die Maschinen, die auf das Händlerkonto registriert sind, und zu jeder die Teile, aus Salesforce-Assets oder live aus dem PLM, mit Button für den Warenkorb. Die normale Suche pro Maschine zu filtern geht über Endpoint Extensions, deren Basisklasse aber noch als Beta markiert ist. Wichtiger als die Komponente sind die Daten: Ohne Stückliste pro Seriennummer kann kein Shop die Frage beantworten.
+Ein Store in Salesforce B2B Commerce kann Ersatzteile im Standard nicht nach Seriennummer filtern. Entitlements regeln die Sichtbarkeit pro Käufergruppe, und die Limits schließen eine Gruppe pro Maschine aus. Was funktioniert, ist eine Maschinenseite: Eine eigene Komponente zeigt die Maschinen, die auf das Händlerkonto registriert sind, und zu jeder die Teile, aus Salesforce-Assets oder live aus dem PLM. Die normale Suche pro Maschine zu filtern erfordert Endpoint Extensions, deren Basisklasse aber noch Beta ist. Wichtiger als die Komponente sind die Daten: Ohne As-built-Stückliste pro Seriennummer oder Regeln, die sie präzise aus Variante und Revision ableiten, kann kein Shop die Frage beantworten.
 
 ## Warum lösen Entitlements das Thema Teile pro Maschine nicht?
 
@@ -37,13 +38,13 @@ In Salesforce B2B Commerce, das Salesforce laut [Trailhead](https://trailhead.sa
 Der naheliegende Umweg ist eine Käufergruppe pro Maschine. Die [Entitlement-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-entitlement-limits.html) und die [Käufergruppen-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html) beenden das schnell:
 
 ```kennzahlen
-2.000 | Buyer Entitlements pro Produkt, festes Limit
-20 | Käufergruppen pro Käuferkonto, standardmäßig
-30 | Käufergruppen pro Käuferkonto mit Apex-Extension
+2.000 | Käufergruppen pro Produkt, festes Limit
+20 | Käufergruppen pro Käuferkonto, standardmäßig, durch Support erhöhbar
+30 | Käufergruppen pro Käuferkonto mit Apex-Extension, ebenfalls ein Soft Limit
 quelle: Salesforce Commerce Developer Guide, Entitlement-Limits und Käufergruppen-Limits
 ```
 
-Bei der Suchindexierung werden nur die ersten 2.000 Käufergruppen eines Produkts in den Index übernommen. Eine Standardschraube, die in 6.000 Maschinen verbaut ist, wäre nur für ein Drittel davon auffindbar. Und ein Händler mit 40 Maschinen passt in keine der beiden Grenzen pro Käuferkonto.
+Bei der Suchindexierung werden nur die ersten 2.000 Käufergruppen eines Produkts in den Index übernommen. Eine Standardschraube, die in 6.000 Maschinen verbaut ist, wäre nur für ein Drittel davon auffindbar. Und ein Händler mit 40 Maschinen passt nicht in das Standardlimit pro Käuferkonto. Die Apex-Extension erfordert außerdem, Salesforce CDN und Edge Network für den Store zu deaktivieren.
 
 Entitlements bleiben also bei dem, was sie gut können: welche Länder, Stufen und Marken welche Teile kaufen dürfen. Wie man diese Gruppen schneidet, steht in [Buyer Groups und Entitlements](../buyer-groups-entitlements-sichtbarkeit/).
 
@@ -55,7 +56,7 @@ Drei Quellen, dieselben wie beim [KI-Agenten für Ersatzteile per Seriennummer](
 - **As-built-Stückliste aus dem PLM.** Die Stückliste der ausgelieferten Maschine mit den tatsächlich verbauten Varianten und Revisionen, dazu ein Kennzeichen für ersatzteilrelevante Positionen.
 - **Materialdaten aus dem ERP.** Materialnummer, Nachfolgematerial und Vertriebsstatus. Preise und Verfügbarkeit kommen über den üblichen Weg für Preise und Bestand in den Store.
 
-Die dritte Quelle vergessen Projekte gern. Ein Teil, das laut PLM verbaut ist, kann seit Jahren ersetzt sein. Wird der Nachfolger nicht aufgelöst, bevor der Shop das Teil zeigt, bestellt der Händler etwas, das es nicht mehr gibt. Auch verbrauchte Teile auf abgeschlossenen Arbeitsaufträgen verändern die Maschine mit der Zeit. Warum sie ins System gehören, erklärt [Ersatzteile im Außendienst: ERP oder Salesforce](../salesforce-field-service-ersatzteile-erp/).
+Die dritte Quelle vergessen Projekte gern. Ein Teil, das laut PLM verbaut ist, kann seit Jahren ersetzt sein. Wird der Nachfolger nicht aufgelöst, bevor der Shop das Teil zeigt, bestellt der Händler etwas, das es nicht mehr gibt. Auch bestätigte Teilewechsel auf abgeschlossenen Arbeitsaufträgen verändern die Maschine mit der Zeit. Verbrauchtes Material allein ist kein Beleg, weil ein Teil mitgenommen, aber nicht eingebaut worden sein kann. Warum Teile ins System gehören, erklärt [Ersatzteile im Außendienst: ERP oder Salesforce](../salesforce-field-service-ersatzteile-erp/).
 
 ## Option A: eine Maschinenseite mit eigener Komponente
 
@@ -64,29 +65,29 @@ Mit der Maschinenseite würde ich anfangen. Eine Lightning-Web-Komponente auf ei
 Woher die Teileliste kommt, bestimmt den Aufwand:
 
 - **Aus Salesforce.** Ersatzteilrelevante Positionen liegen pro Asset oder pro Maschinentyp vor, etwa als untergeordnete Assets oder in einem eigenen Objekt. Schnell und einfach, aber jede Position ist ein Datensatz, der geladen und mit dem PLM synchron gehalten werden muss.
-- **Live aus dem PLM.** Die Komponente ruft eine Apex-Methode auf, die eine Teile-API im PLM oder in der Middleware für die Seriennummer abfragt. Keine Kopie, immer aktuell, aber das PLM muss in der Zeit antworten, die ein Händler auf eine Seite wartet.
+- **Live aus dem PLM.** Die Komponente ruft eine Apex-Methode auf, die eine Teile-API im PLM oder in der Middleware für die Seriennummer abfragt. Keine replizierte Kopie in Salesforce, aber das PLM muss in der Zeit antworten, die ein Händler auf eine Seite wartet, und die Seite braucht eine klare Meldung, wenn es das nicht tut.
 
-In beiden Fällen liefert die Komponente nur Teilenummern. Ob der Händler ein Teil kaufen darf und zu welchem Preis, kommt weiter aus den Entitlements und der Preisfindung des Stores. Ein Teil, das das PLM nennt, für das die Käufergruppe des Händlers aber nicht freigeschaltet ist, sollte als "auf Anfrage" erscheinen, statt kommentarlos zu verschwinden.
+In beiden Fällen liefert die Komponente nur Teilenummern. Jede davon muss dem Store-Produkt zugeordnet werden, und ob der Händler sie kaufen darf und zu welchem Preis, muss im Kontext des Käufers aus den Standard-APIs von Commerce für Produkte und Preise kommen. Eine eigene Apex-Methode, die rohe Produktdaten liefert, würde Entitlements umgehen. Ein Teil, das das PLM nennt, für das die Käufergruppe des Händlers aber nicht freigeschaltet ist, sollte als "auf Anfrage" erscheinen, statt kommentarlos zu verschwinden.
 
-Der Vorteil der Maschinenseite: Sie greift nicht in Standardsuche und Produktseiten ein, Salesforce-Releases brechen sie also selten. Der Nachteil: Wer eine Teilenummer ins Suchfeld tippt, sieht weiterhin jedes Teil, das seine Käufergruppe kaufen darf, ob es passt oder nicht.
+Der Vorteil der Maschinenseite: Sie ändert Standardsuche und Produktseiten nicht und bleibt dadurch weniger an deren Verhalten gekoppelt. Der Nachteil: Wer eine Teilenummer ins Suchfeld tippt, sieht weiterhin jedes Teil, das seine Käufergruppe kaufen darf, ob es passt oder nicht.
 
 ## Option B: Suche und Produktlisten pro Maschine filtern
 
-Für genau solche Änderungen bietet Salesforce Endpoint Extensions. Laut [Extensions Guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html) ändern sie Anfrage und Antwort eines Connect-API-Endpunkts, ersetzen sein Standardverhalten aber nicht. Die [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) enthält `Commerce_Endpoint_Search_ProductSearch` für die Produktsuche und `Commerce_Endpoint_Catalog_Products` für Produktlisten. Eine After-Methode könnte aus der Antwort jedes Produkt entfernen, das nicht in der Teileliste der vom Händler gewählten Maschine steht.
+Für genau solche Änderungen bietet Salesforce Endpoint Extensions. Laut [Extensions Guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html) ändern sie Anfrage und Antwort eines Connect-API-Endpunkts, ersetzen sein Standardverhalten aber nicht. Die [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) enthält `Commerce_Endpoint_Search_Products` und das ältere `Commerce_Endpoint_Search_ProductSearch` für die Produktsuche, `Commerce_Endpoint_Search_Suggestions` für Suchvorschläge sowie `Commerce_Endpoint_Catalog_Product` und `Commerce_Endpoint_Catalog_Products` für Produktdetails und Produktlisten. Eine After-Methode könnte aus der Antwort jedes Produkt entfernen, das nicht in der Teileliste der vom Händler gewählten Maschine steht. Das funktioniert nur, wenn die gewählte Maschine für jede Anfrage auf dem Server gespeichert oder validiert wird und jeder dieser Endpunkte abgedeckt ist. Nur die Suche zu filtern lässt Produktseiten weiterhin per URL erreichbar.
 
 Ich würde das nur als zweiten Schritt nutzen, aus drei Gründen:
 
 1. **Beta-Status.** Die [Apex-Referenz](https://developer.salesforce.com/docs/commerce/salesforce-commerce/references/comm-apex-reference/BaseEndpointExtension.html) nennt die Basisklasse "BaseEndpointExtension (Beta)", auch für API-Version 67.0. Salesforce garantiert nicht, dass Beta-Funktionen allgemein verfügbar werden.
 2. **Verzerrte Ergebnisse.** Die Suche liefert laut [Such-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html) höchstens 200 Ergebnisse pro Seite. Entfernt die Extension danach 150 davon, zeigt die Seite 50, und nach meiner Einschätzung passen Facettenzahlen und Trefferzahl nicht mehr zu dem, was der Händler sieht.
-3. **Geschwindigkeit.** Jede Suche braucht dann die Teileliste der gewählten Maschine. Ohne Zwischenspeicher in Salesforce landet jeder Tastendruck im PLM.
+3. **Geschwindigkeit.** Jede Suche braucht dann die Teileliste der gewählten Maschine. Ohne Zwischenspeicher in Salesforce landen häufige Suchanfragen und Suchvorschläge synchron im PLM.
 
 Ein Mittelweg kommt ohne Extensions aus: Die Maschinenseite setzt einen Suchfilter auf ein Attribut wie die Baureihe. Das funktioniert nur, wenn Teile die Baureihe als filterbares Attribut tragen und die Baureihe genau genug ist. Wie Attribute und Synonyme für Teilenummern eingerichtet werden, steht in [B2B-Shop-Suche: Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/).
 
 ## Wer darf welche Maschine sehen?
 
-Diese Regel würde ich nie lockern: Der Händler sieht nur Maschinen, die auf sein eigenes Konto registriert sind. Die Seriennummer kommt aus dem Asset-Datensatz, der für dieses Konto freigegeben ist, nie aus einem Freitextfeld. Sonst liest ein Händler die Konfiguration einer Maschine, die ein anderer verkauft hat.
+Diese Regel würde ich nie lockern: Der Händler sieht nur Maschinen, die auf sein eigenes Konto registriert sind. Ob die Seriennummer aus einer Liste oder einem Textfeld kommt, der Server löst sie zum Asset auf und prüft sie gegen die Assets, die für das Käuferkonto freigegeben sind, bevor er das PLM aufruft. Eine Auswahl allein im Browser lässt sich manipulieren. Sonst liest ein Händler die Konfiguration einer Maschine, die ein anderer verkauft hat.
 
-Auf der Lizenzseite nennt die [Salesforce-Hilfe zu Experience-Cloud-Lizenzen](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) Lese-, Anlage- und Bearbeitungsrechte auf Assets für Customer Community Plus und Partner Community. Welche Assets ein Käufer tatsächlich sieht, ist eine Frage der Freigabe. Praktisch heißt das: Das Konto des Assets muss das Käuferkonto sein, oder die Händlerbeziehung muss so modelliert sein, dass die Freigabe ihr folgt. Maschinen, die über einen Händler verkauft, aber auf den Endkunden registriert sind, brauchen vor dem Go-live eine klare Regel. Welche Portallizenz in Manufacturing Cloud was abdeckt, steht im Beitrag zum [Kundenportal in Manufacturing Cloud](../manufacturing-cloud-kundenportal/).
+Auf der Lizenzseite nennt die [Salesforce-Hilfe zu Experience-Cloud-Lizenzen](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) unter anderem Lese-, Anlage- und Bearbeitungsrechte auf Assets für Customer Community Plus und Partner Community. Welche Assets ein Käufer tatsächlich sieht, ist eine Frage der Freigabe. Praktisch heißt das: Das Konto des Assets muss das Käuferkonto sein, oder die Händlerbeziehung muss so modelliert sein, dass die Freigabe ihr folgt. Maschinen, die über einen Händler verkauft, aber auf den Endkunden registriert sind, brauchen vor dem Go-live eine klare Regel. Welche Portallizenz in Manufacturing Cloud was abdeckt, steht im Beitrag zum [Kundenportal in Manufacturing Cloud](../manufacturing-cloud-kundenportal/).
 
 ## Rechenbeispiel: 6.000 Maschinen und 150 Händler
 
@@ -94,7 +95,7 @@ Angenommen, ein Maschinenbauer hat 6.000 installierte Maschinen in acht Baureihe
 
 Eine Käufergruppe pro Maschine scheidet an den Limits oben aus. Eine Käufergruppe pro Baureihe ergäbe bis zu acht Gruppen pro Händler, innerhalb der 20, grenzt die Liste aber nur auf die Baureihe ein, nicht auf die Variante in einer bestimmten Maschine.
 
-Die Entscheidung im Szenario: Käufergruppen bleiben pro Land und Händlerstufe. Eine Maschinenseite zeigt die Assets des Händlers und fragt für die gewählte Maschine die ersatzteilrelevanten Positionen live im PLM ab, das Ergebnis wird einen Tag am Asset zwischengespeichert. Für Maschinen, die älter als zehn Jahre sind, fällt die Seite auf die Teileliste der Baureihe zurück und sagt das auch. Das Filtern der Suche per Extension wird verschoben, bis die Klasse allgemein verfügbar ist.
+Die Entscheidung im Szenario: Käufergruppen bleiben pro Land und Händlerstufe. Eine Maschinenseite zeigt die Assets des Händlers und fragt für die gewählte Maschine die ersatzteilrelevanten Positionen live im PLM ab. Die As-built-Liste wird einen Tag am Asset zwischengespeichert, während Preis, Bestand und Vertriebsstatus frisch aus dem Store kommen. Für Maschinen, die älter als zehn Jahre sind, fällt die Seite auf die Teileliste der Baureihe zurück und sagt das auch. Das Filtern der Suche per Extension wird verschoben, bis die Klasse allgemein verfügbar ist.
 
 ## 20 Bestellungen bis zur As-built-Stückliste prüfen
 

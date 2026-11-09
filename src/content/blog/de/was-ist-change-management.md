@@ -2,6 +2,7 @@
 title: "Was ist Change Management? Definition, Phasen, Beispiel"
 description: "Was ist Change Management? Definition nach Prosci, die drei Phasen, wer verantwortlich ist und wie es bei einer Software-Einführung im Unternehmen aussieht."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: de
 slug: was-ist-change-management
 translationKey: change-basics-definition
@@ -12,15 +13,15 @@ author: juliane
 tags: [Change Management, Prosci, ADKAR, Veränderungsmanagement]
 takeaways:
   - "Jede Veränderung hat eine technische Seite, die Lösung selbst, und eine menschliche: ob die Menschen, die damit arbeiten sollen, sie annehmen."
-  - "Projektmanagement liefert die Lösung, Change Management sorgt für ihre Nutzung. IT-Change-Management nach ITIL meint die Freigabe von Systemänderungen."
+  - "Projektmanagement liefert die Lösung, Change Management hilft den Menschen, sie anzunehmen. ITIL 4 Change Enablement steuert Änderungen an IT-Systemen."
   - "Prosci gliedert Change Management in drei Phasen: Vorgehen vorbereiten, Veränderung steuern, Ergebnisse sichern."
-  - "In der Prosci-Studie (2.668 Teilnehmende) erreichten Projekte mit sehr gutem Change Management in 88 Prozent ihre Ziele, mit schlechtem in 13 Prozent."
+  - "Im Prosci-Benchmarking erreichten Projekte mit sehr gutem Change Management ihre Ziele etwa siebenmal so oft wie solche mit schlechtem."
   - "Der wichtigste Erfolgsfaktor ist ein Sponsor im Management, der sichtbar hinter der Veränderung steht."
 faq:
   - q: "Was ist Change Management einfach erklärt?"
     a: "Change Management bereitet die Menschen auf eine Veränderung vor, begleitet sie hindurch und sorgt dafür, dass niemand in die alte Arbeitsweise zurückfällt. Gemessen wird es daran, ob nach der Einführung anders gearbeitet wird."
-  - q: "Was ist der Unterschied zwischen Change Management und Veränderungsmanagement?"
-    a: "Es gibt keinen. Veränderungsmanagement ist die deutsche Bezeichnung für dasselbe Fachgebiet. In Unternehmen und Stellenanzeigen hat sich der englische Begriff durchgesetzt."
+  - q: "Was ist der Unterschied zwischen Change Management und organisatorischem Veränderungsmanagement?"
+    a: "Die Begriffe werden oft synonym verwendet. Organisatorisches Veränderungsmanagement macht deutlich, dass es um die menschliche Seite geht, nicht um ITIL Change Enablement, das Änderungen an IT-Systemen steuert."
   - q: "Welche Phasen hat Change Management?"
     a: "Nach Prosci drei: Vorgehen vorbereiten, Veränderung steuern und Ergebnisse sichern. Auf Ebene der einzelnen Person beschreibt das ADKAR-Modell fünf Stufen: Bewusstsein, Bereitschaft, Wissen, Fähigkeit und Verankerung."
   - q: "Wer ist im Unternehmen für Change Management verantwortlich?"
@@ -51,17 +52,17 @@ Die drei Begriffe werden oft verwechselt, gerade in IT-Projekten. Sie beantworte
 |---|---|---|
 | Projektmanagement | Wird die Lösung in Zeit, Budget und Qualität fertig? | Die Lösung ist geliefert |
 | Change Management | Nehmen die Menschen die Lösung an und arbeiten damit? | Die Lösung wird genutzt |
-| IT-Change-Management nach ITIL | Wird eine Änderung an einem System kontrolliert beantragt, geprüft und freigegeben? | Die Systeme bleiben stabil |
+| Change Enablement nach ITIL 4, früher IT-Change-Management | Wird eine Änderung an einem System kontrolliert bewertet, freigegeben und eingeplant? | Die Systeme bleiben stabil |
 
-Projektmanagement und Change Management laufen parallel und brauchen einander. Ein Projekt kann pünktlich und im Budget fertig werden und trotzdem scheitern, weil nach dem Start alle weiter mit ihren alten Listen arbeiten. IT-Change-Management ist ein eigenes Thema aus dem IT-Betrieb: Es steuert, wer eine Änderung an Servern oder Anwendungen vornehmen darf. Wer im Netz nach „Change Management IT“ sucht, landet meist dort.
+Projektmanagement und Change Management laufen parallel und brauchen einander. Ein Projekt kann pünktlich und im Budget fertig werden und trotzdem scheitern, weil nach dem Start alle weiter mit ihren alten Listen arbeiten. IT-Change-Management, das ITIL 4 heute Change Enablement nennt, ist ein eigenes Thema: Es bewertet Risiken, genehmigt Änderungen und plant sie für IT-Produkte und -Services ein. Wer im Netz nach „Change Management IT“ sucht, landet meist dort.
 
-Wie viel das organisatorische Change Management ausmacht, zeigt die Forschung von Prosci. Das Institut befragt seit 1998 Projekte nach ihren Erfahrungen mit Veränderungen. In der 12. Ausgabe der Studie [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) erreichten Projekte mit sehr gutem Change Management ihre Ziele siebenmal so oft wie Projekte mit schlechtem.
+Wie viel das organisatorische Change Management ausmacht, zeigt die Forschung von Prosci. Das Institut befragt seit 1998 Projekte nach ihren Erfahrungen mit Veränderungen. In der Zusammenfassung der 12. Ausgabe der Studie [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) erreichten Projekte mit sehr gutem Change Management ihre Ziele etwa siebenmal so oft wie Projekte mit schlechtem. Die zugrunde liegende Grafik beruht auf den kumulierten Benchmarking-Daten von Prosci mit mehr als 10.800 Befragten; an der 12. Ausgabe selbst nahmen 2.668 Personen teil.
 
 ```kennzahlen
-88 % | Projekte mit sehr gutem Change Management, die ihre Ziele erreichen
-13 % | Projekte mit schlechtem Change Management, die ihre Ziele erreichen
-2.668 | Teilnehmende der Studie
-quelle: Prosci, Best Practices in Change Management, 12. Ausgabe
+88 % | Projekte mit sehr gutem Change Management, die ihre Ziele erreichen oder übertreffen
+13 % | Projekte mit schlechtem Change Management, die ihre Ziele erreichen oder übertreffen
+10.800+ | Befragte in den kumulierten Benchmarking-Daten von Prosci
+quelle: Prosci, Best Practices in Change Management, Zusammenfassung der 12. Ausgabe (2023)
 ```
 
 ## Prosci gliedert Change Management in drei Phasen
@@ -77,7 +78,7 @@ Ergebnisse sichern | nach dem Start · Führungskräfte und interne Verantwortli
   Messen, ob die neue Arbeitsweise genutzt wird, Lücken schließen, Erfolge sichtbar machen und die Verantwortung dauerhaft im Unternehmen verankern.
 ```
 
-Der häufigste Fehler liegt in der ersten Phase: Change Management beginnt zu spät. Wenn die Kommunikation zwei Wochen vor dem Start losgeht, kann sie nur noch informieren. Wer betroffen ist und was sich für jede Gruppe ändert, gehört an den Anfang, weil es auch die Lösung selbst beeinflusst. Das Werkzeug dafür ist die [Stakeholder-Analyse](../stakeholder-analyse/), aus der dann der [Kommunikationsplan](../kommunikationsplan-change-management/) folgt.
+Ein häufiger und kostspieliger Fehler liegt in der ersten Phase: Change Management beginnt zu spät. Wenn die Kommunikation zwei Wochen vor dem Start losgeht, kann sie nur noch informieren. Wer betroffen ist und was sich für jede Gruppe ändert, gehört an den Anfang, weil es auch die Lösung selbst beeinflusst. Das Werkzeug dafür ist die [Stakeholder-Analyse](../stakeholder-analyse/), aus der dann der [Kommunikationsplan](../kommunikationsplan-change-management/) folgt.
 
 Auf Ebene der einzelnen Person hilft das ADKAR-Modell bei der Diagnose. Stockt eine Einführung, fehlt meist eine der fünf Stufen, und jede braucht eine andere Maßnahme. Eine weitere Schulung hilft nur, wenn Wissen oder Fähigkeit fehlt. Wenn niemand verstanden hat, wozu die Veränderung gut ist, muss das die Führungskraft erklären. Wie sich ADKAR von anderen bekannten Modellen unterscheidet, beschreibe ich in [Change-Management-Modelle im Vergleich](../change-management-modelle/).
 
@@ -90,7 +91,7 @@ Change Management ist Teamarbeit, mit klar verteilten Rollen:
 - **Die Change-Managerin oder der Change-Manager.** Plant das Vorgehen, berät Sponsor und Führungskräfte, bereitet Kommunikation und Schulung vor und misst den Fortschritt. Die Verantwortung für das Ergebnis trägt sie nicht allein, die bleibt im Unternehmen.
 - **Multiplikatoren.** In Software-Einführungen meist [Key User](../salesforce-key-user-netzwerk/): Kolleginnen und Kollegen aus dem Fachbereich, die früh eingebunden sind und im Alltag die ersten Fragen beantworten.
 
-In Deutschland kommt eine Rolle hinzu, die in internationalen Leitfäden oft fehlt: der Betriebsrat. Bei der Einführung technischer Einrichtungen, die dazu bestimmt sind, das Verhalten oder die Leistung der Beschäftigten zu überwachen, hat er nach [§ 87 Abs. 1 Nr. 6 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) ein Mitbestimmungsrecht. Weil fast jede Software protokolliert, wer was wann tut, ist das bei neuen Systemen fast immer ein Thema. Wer den Betriebsrat früh einbindet, gewinnt einen wichtigen Fürsprecher; wer es spät tut, verliert Monate.
+In Deutschland kommt eine Rolle hinzu, die in internationalen Leitfäden oft fehlt: der Betriebsrat. Bei der Einführung technischer Einrichtungen, die dazu bestimmt sind, das Verhalten oder die Leistung der Beschäftigten zu überwachen, hat er nach [§ 87 Abs. 1 Nr. 6 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) ein Mitbestimmungsrecht. Nach dem Bundesarbeitsgericht genügt es, dass ein System objektiv geeignet ist, individuelles Verhalten oder individuelle Leistung zu erfassen, und viele betriebliche Systeme protokollieren, wer was wann tut. Deshalb sollte das bei jedem neuen System früh geprüft werden. Eine frühe Einbindung des Betriebsrats garantiert keine Einigung, ermöglicht es aber, Regeln für Daten und Überwachung vor dem Start zu gestalten; wer ihn spät einbindet, verliert Monate.
 
 ## Wie sieht Change Management bei einer Software-Einführung aus?
 

@@ -2,6 +2,7 @@
 title: "Kommunikationsplan im Change Management: mit Vorlage"
 description: "Kommunikationsplan im Change Management: was hineingehört, wer welche Botschaft überbringt, ein Beispiel aus einer CRM-Einführung und eine Excel-Vorlage."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: de
 slug: kommunikationsplan-change-management
 translationKey: change-basics-communication
@@ -23,7 +24,7 @@ faq:
   - q: "Wer sollte Veränderungen im Unternehmen kommunizieren?"
     a: "Die Gründe für die Veränderung erklärt am besten die Unternehmensleitung oder der Sponsor. Was sich für das eigene Team ändert, erklärt die direkte Führungskraft. Das Projektteam liefert Inhalte und Termine zu."
   - q: "Wie oft muss man eine Veränderung kommunizieren?"
-    a: "Prosci empfiehlt, Kernbotschaften fünf- bis siebenmal zu wiederholen, über verschiedene Kanäle und Absender. Was nur einmal gesagt wurde, kommt bei den meisten nicht an."
+    a: "Prosci empfiehlt, dass die bevorzugten Absender Kernbotschaften fünf- bis siebenmal wiederholen. Formate und Kanäle können variieren, doch die Kernbotschaft bleibt gleich. Was nur einmal gesagt wurde, kommt bei den meisten nicht an."
   - q: "Was ist der Unterschied zwischen Kommunikationsplan und Change Story?"
     a: "Die Change Story ist die eine Erzählung, warum sich etwas ändert und wohin es geht. Der Kommunikationsplan legt fest, wie diese Erzählung und die Botschaften je Gruppe über die Zeit verteilt werden."
 draft: false
@@ -88,14 +89,14 @@ Für die Einführung eines CRM-Systems wie Salesforce im Vertrieb könnte ein Au
 | −12 | Alle im Vertrieb | Bewusstsein | Warum wir ein gemeinsames CRM einführen und was sonst passiert | Geschäftsführung | Townhall |
 | −11 | Führungskräfte Vertrieb | Bereitschaft | Ihre Rolle, Ihre Fragen, Ihre Botschaften fürs Team | Sponsor | Briefing |
 | −10 | Außendienst | Bewusstsein | Was sich bei Besuchsberichten und Prognosen ändert | Vertriebsleitung Region | Regionalmeeting |
-| −8 | Betriebsrat | Bewusstsein | Welche Auswertungen das System erlaubt und welche nicht | Sponsor | Gespräch |
+| −8 | Betriebsrat | Information und Mitbestimmung | Geplante Prozesse, Daten, Auswertungen, Zugriffsrechte und ob Verhalten oder Leistung überwacht werden könnten | Sponsor, Arbeitgebervertretung | Arbeitssitzung |
 | −4 | Innendienst | Wissen | Neuer Ablauf für Angebote, Termine der Schulung | Projektteam | Mail und Intranet |
 | −2 | Alle Betroffenen | Wissen | Was am Starttag passiert, wen Sie fragen | Key User | Teammeeting |
 | +2 | Alle Betroffenen | Verankerung | Erste Erfolge, häufigste Fragen, was wir verbessern | Vertriebsleitung | Teammeeting und Mail |
 
 Auffällig ist, wie wenige Zeilen vom Projektteam stammen, und dass die Kommunikation mit dem Start nicht endet. Die Nachricht in Woche +2 ist eine der wichtigsten: In dieser Zeit sinken Stimmung und Produktivität oft, wie die [Change-Kurve](../change-kurve/) beschreibt, und sichtbare Erfolge helfen durch das Tal.
 
-Bei einer weltweiten Einführung kommt eine Dimension hinzu. Wenn wie bei einem Rollout der Salesforce Sales Cloud, den ich begleitet habe, Länder in den USA, Asien und Europa beteiligt sind, braucht jedes Land eigene Absender in der eigenen Sprache. Eine Botschaft der Zentrale auf Englisch ersetzt nicht die Landesleitung, die im eigenen Meeting erklärt, warum.
+Bei einer weltweiten Einführung kommt eine Dimension hinzu. Wenn wie bei einem Rollout der Salesforce Sales Cloud, den ich begleitet habe, Teams in den USA, Asien und Europa beteiligt sind, braucht jedes Land in der Regel eigene Absender und Botschaften in der eigenen Sprache. Eine Botschaft der Zentrale auf Englisch ersetzt nicht die Landesleitung, die im eigenen Meeting erklärt, warum.
 
 ## Vorlage für den Kommunikationsplan
 
@@ -113,7 +114,7 @@ Planen Sie jede Kernbotschaft mindestens dreimal ein, über verschiedene Absende
 - **Kein Rückkanal.** Wenn Fragen keinen Ort haben, landen sie in der Kaffeeküche und kommen als Gerücht zurück.
 - **Schluss mit dem Start.** Nach dem Start fängt die schwierigste Phase erst an. Wer dann verstummt, überlässt die Deutung den Unzufriedenen.
 
-Für Salesforce-Programme mit regelmäßigen Releases gibt es eine eigene Form: Jede neue Version ändert etwas für einen Fachbereich und braucht eine kurze, gezielte Ankündigung. Wie das funktioniert, beschreibt Fabian Kramer in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
+Für Salesforce-Programme mit regelmäßigen Releases gibt es eine eigene Form: Salesforce veröffentlicht drei saisonale Releases pro Jahr, und das Programm spielt zusätzlich eigene Änderungen ein. Nur was Prozesse, Oberflächen oder Verantwortlichkeiten eines Fachbereichs verändert, braucht eine kurze, gezielte Ankündigung. Wie das funktioniert, beschreibt Fabian Kramer in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
 
 ## Unterstützung lohnt sich bei vielen Gruppen und Ländern
 
