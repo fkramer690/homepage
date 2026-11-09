@@ -2,6 +2,7 @@
 title: "Manufacturing Cloud weltweit ausrollen: die Reihenfolge"
 description: "In welcher Reihenfolge Hersteller die Manufacturing Cloud in Ländern einführen, warum 80 Prozent gleich sein sollten und warum Change Management dazugehört."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: de
 slug: manufacturing-cloud-weltweit-ausrollen
 translationKey: manufacturing-cloud-global-rollout
@@ -24,7 +25,7 @@ faq:
 draft: false
 ---
 
-Ein weltweiter Rollout der Manufacturing Cloud beginnt mit einer Entscheidung, die vor jeder Konfiguration steht: Welches strategische Ziel soll er erreichen? Meistens ist es die Harmonisierung von Prozessen. Daraus folgt, wie ich den Rollout plane: mit einem großen Land mit angemessener Komplexität beginnen, eine der größten Regionen in die ersten zwei Phasen aufnehmen und alle Länder zu mindestens 80 Prozent identisch halten. Das sind meine Lehren aus dem ersten weltweiten Rollout der Manufacturing Cloud, den ich begleitet habe. Die wichtigste davon klingt am wenigsten technisch: Change Management gehört dazu, auch wenn niemand danach fragt.
+Ein weltweiter Rollout der Manufacturing Cloud beginnt mit einer Entscheidung, die vor jeder Konfiguration steht: Welches strategische Ziel soll er erreichen? Meistens ist es die Harmonisierung von Prozessen. Daraus folgt, wie ich den Rollout plane: mit einem großen Land mit angemessener Komplexität beginnen, eine der größten Regionen in die ersten zwei Phasen aufnehmen und alle Länder zu mindestens 80 Prozent identisch halten. Das sind meine Lehren aus einer Premiere: dem ersten weltweiten Rollout der Manufacturing Cloud, den Salesforce überhaupt durchgeführt hat. Die wichtigste davon klingt am wenigsten technisch: Change Management gehört dazu, auch wenn niemand danach fragt.
 
 ## Was muss vor dem ersten Land feststehen?
 
@@ -39,6 +40,8 @@ Aus diesem Ziel ergibt sich ein globales Template, also die gemeinsame Konfigura
 ```hinweis achtung
 Diese Punkte lassen sich nach dem ersten Land kaum noch ändern, ohne alle bereits eingeführten Länder anzufassen. Jede davon gehört deshalb ins Entscheidungslog, bevor das erste Land live geht.
 ```
+
+Später ändern lassen sie sich trotzdem, aber dann ist es eine neue Version des globalen Templates: mit einem Verantwortlichen, einer Folgenabschätzung, Regressionstests in jedem eingeführten Land und einem Datum, ab dem die nächsten Länder darauf ausgerollt werden. Ohne diese Versionierung tragen sich die Fehler des ersten Landes in jedes weitere.
 
 Wie ich dieses Log führe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
