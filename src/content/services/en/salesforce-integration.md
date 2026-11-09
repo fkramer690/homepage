@@ -40,6 +40,16 @@ notFit:
   - "It is about a single standard connection with a ready-made connector."
   - "You are only looking for someone to code the interface."
 alternatives: "An integration partner alone is enough when the system map is already clear. An internal integration architect from the ERP team fits when they know Salesforce limits such as API limits."
+progress:
+  - measure: "Stuck messages"
+    how: "How many messages between Salesforce and the ERP do not arrive and who notices."
+  - measure: "Time to fix"
+    how: "How long an error in an integration stays open."
+  - measure: "Data maintained twice"
+    how: "Which data is still maintained by hand in two systems."
+  - measure: "Permissions of integration users"
+    how: "How many integration users have more permissions than their integration needs."
+reference: cti
 faq:
   - q: "Which systems does Salesforce usually connect to at manufacturers?"
     a: "Almost always an ERP, very often SAP, sometimes other systems such as proALPHA. On top of that come telephony and email for service, product and pricing data, document generation and often a data platform. Salesforce is never the only system."

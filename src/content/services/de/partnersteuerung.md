@@ -44,6 +44,16 @@ notFit:
   - "Nur ein Partner arbeitet an der Org, und die Zusammenarbeit funktioniert."
   - "Das Unternehmen ist nicht bereit, Regeln gegenüber Partnern auch durchzusetzen."
 alternatives: "Ein interner Plattform-Owner mit technischem Hintergrund kann das langfristig selbst, wenn es ihn gibt. Einen Generalunternehmer zu beauftragen, der die anderen Partner steuert, funktioniert nur, solange seine Interessen und Ihre gleich sind."
+progress:
+  - measure: "Objekte mit verantwortlichem Stream"
+    how: "Wie viele Objekte in der Object Ownership Matrix einen verantwortlichen Stream haben."
+  - measure: "Konflikte zwischen Streams"
+    how: "Wie oft sich Änderungen verschiedener Teams in der Org gegenseitig überschreiben."
+  - measure: "Wartezeit auf das Review"
+    how: "Wie lange ein Pull Request auf das Review wartet."
+  - measure: "Wiederkehrende Befunde"
+    how: "Ob dieselben Fehler seltener auftauchen, seit sie im Standard stehen."
+reference: governance
 faq:
   - q: "Was ist Salesforce-Partnersteuerung?"
     a: "Die Regeln, Rollen und Reviews, mit denen mehrere Umsetzungspartner auf gleiche Weise an einer Salesforce-Org arbeiten: gemeinsame Standards, klare Verantwortung für Objekte und Metadaten, ein Release-Prozess und ein technisches Review jeder Lieferung."
@@ -88,6 +98,15 @@ Object Ownership Matrix | Ein verantwortlicher Stream pro Objekt
   Will ein Team ein Objekt eines anderen Streams ändern, spricht es vorher mit dem Verantwortlichen.
 Konfigurationsregeln | Keine festen Werte im Code
   Schwellenwerte und Schalter liegen in Custom Metadata Types, Texte in Custom Labels.
+```
+
+```tabelle matrix
+titel: Object Ownership Matrix, Auszug als Muster
+spalten: Objekt | Stream Vertrieb | Stream Service | Stream Field Service
+Opportunity | Verantwortlich * | stimmt sich ab | stimmt sich ab
+Case | stimmt sich ab | Verantwortlich * | stimmt sich ab
+Asset | stimmt sich ab | Verantwortlich * | stimmt sich ab
+Work Order | stimmt sich ab | stimmt sich ab | Verantwortlich *
 ```
 
 Aufbau und Beispiel der Matrix stehen in [Object Ownership Matrix: Wer ändert welches Objekt?](../../blog/object-ownership-matrix-salesforce/).

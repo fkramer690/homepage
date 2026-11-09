@@ -28,7 +28,7 @@ interface Props {
   service: Service;
 }
 const { service } = Astro.props;
-const { lang, title, headline, description, lead, situations, deliverables, results, phases, duration, notFit, alternatives, faq, order, note, notePartner, section, masterclass } = service.data;
+const { lang, title, headline, description, lead, situations, deliverables, results, phases, duration, notFit, alternatives, faq, order, note, notePartner, section, masterclass, progress, reference } = service.data;
 // section: change-management adds the team (Fabian and Juliane) above the reading grid and
 // the change management articles instead of the related articles; "wir" there are Fabian and
 // Juliane, so the deliverables heading and the author box name both (src/data/change-management.ts).
@@ -40,6 +40,9 @@ const t = lang === 'de' ? de : en;
 // column (src/lib/service-intro-plugin.mjs takes it out of Content); situations,
 // deliverables and results follow it, then the rest of the body, the phases and the FAQ
 // (order chosen by Fabian 2026-10-31, docs/service-pages.md).
+// "Projekt im Fokus": one confirmed reference from the start page (references.items in src/i18n).
+const caseRef = reference ? t.references.items.find((r) => r.key === reference) : undefined;
+if (reference && !caseRef) throw new Error(`${service.id}: reference "${reference}" not found in references.items`);
 const { Content, headings, remarkPluginFrontmatter } = await render(service);
 const intro: string = remarkPluginFrontmatter.serviceIntro;
 const photo = servicePhotos[service.data.translationKey];
@@ -49,6 +52,7 @@ const toc = [
   ...headings.filter((h) => h.depth === 2),
   ...(isChange ? [] : [{ slug: 'reading', text: t.servicePage.posts }]),
   { slug: 'phases', text: t.servicePage.phases },
+  { slug: 'progress', text: t.servicePage.progress },
   { slug: 'fit', text: t.servicePage.fit },
   { slug: 'faq', text: t.servicePage.faq }, ...(isChange ? [{ slug: 'articles', text: changeSection[lang].articles.title }] : [])];
 const translation = await getServiceTranslation(service);
@@ -155,6 +159,21 @@ const schema = {
               <ul class="service-list">{results.map((item) => <li>{item}</li>)}</ul>
             </section>
           </div>
+          {caseRef && (
+            <aside class="svc-case" aria-label={t.servicePage.caseLabel}>
+              <p class="label mono">{t.servicePage.caseLabel}</p>
+              <div class="rf-body">
+                <p class="ref-sector">{caseRef.sector}</p>
+                <h3>{caseRef.title}</h3>
+                <dl>
+                  <dt class="mono">{t.references.startLabel}</dt><dd>{caseRef.start}</dd>
+                  <dt class="mono">{t.references.roleLabel}</dt><dd>{caseRef.role}</dd>
+                  <dt class="mono">{t.references.resultLabel}</dt><dd>{caseRef.result}</dd>
+                </dl>
+                <ul class="tags tags-small">{caseRef.tags.map((tag) => <li>{tag}</li>)}</ul>
+              </div>
+            </aside>
+          )}
           <div class="prose">
             <Content />
           </div>
@@ -189,6 +208,19 @@ const schema = {
                   <span class="phase-no mono">{String(i + 1).padStart(2, '0')}</span>
                   <h3>{phase.title}</h3>
                   <p>{phase.text}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          <section class="service-block" aria-labelledby="progress">
+            <h2 id="progress">{t.servicePage.progress}</h2>
+            <ol class="svc-progress">
+              {progress.map((p, i) => (
+                <li>
+                  <span class="svc-progress-n mono">{String(i + 1).padStart(2, '0')}</span>
+                  <strong>{p.measure}</strong>
+                  <span>{p.how}</span>
                 </li>
               ))}
             </ol>

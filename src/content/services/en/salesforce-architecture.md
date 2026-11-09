@@ -41,6 +41,14 @@ notFit:
   - "It is about a single cloud without interfaces, such as Sales Cloud for 20 users."
   - "The implementation partner has already built it, and nobody is willing to change decisions any more."
 alternatives: "An internal architect with experience from several programmes is better in the long run, and I help build up that role. The implementation partner alone is enough for small, clearly scoped projects. A freelancer for configuration does not replace a target architecture."
+progress:
+  - measure: "Open architecture decisions"
+    how: "How many questions on clouds, data model and integrations still have no entry in the decision log."
+  - measure: "Partner designs checked against the target"
+    how: "Which partner designs were reviewed before anyone builds them."
+  - measure: "Rework on the data model"
+    how: "How often fields and objects have to be rebuilt after go-live."
+reference: manufacturing-cloud
 faq:
   - q: "What does a Salesforce architect on the client side do?"
     a: "They design the target architecture in the interest of the company, not of a vendor or partner: which clouds and products are needed, how the data model looks, how Salesforce connects to the other systems, and which decisions are documented for the long term. During delivery they review what partners build against that picture."
@@ -60,10 +68,6 @@ masterclass: manufacturing-cloud
 ---
 
 Salesforce architecture on the client side means designing the overall picture in the interest of the company: which clouds and products it needs, how the data model looks, how Salesforce works with ERP and other systems, and how decisions are documented. My role is independent from vendors and partners, which matters most when a partner proposes the next product.
-
-```praxis
-I have had this role at global manufacturers, including the first worldwide Manufacturing Cloud rollout with CPQ, a product configurator and a customer portal.
-```
 
 ## Which clouds does the company need?
 

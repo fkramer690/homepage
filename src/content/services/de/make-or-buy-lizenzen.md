@@ -41,6 +41,14 @@ notFit:
   - "Der Vertrag ist schon unterschrieben, und keine Verlängerung steht an."
   - "Die Entscheidung ist politisch gefallen, und es wird nur noch eine Begründung gesucht."
 alternatives: "Ein Lizenzberater oder Software-Asset-Manager kennt Rabatte, aber selten, was Nutzer in Salesforce tatsächlich brauchen. Der Account Executive von Salesforce rechnet ebenfalls, aber für Salesforce."
+progress:
+  - measure: "Lizenztyp je Nutzergruppe"
+    how: "Ob jede Nutzergruppe den Lizenztyp hat, den sie für ihre Arbeit braucht."
+  - measure: "Genutzte Funktionen"
+    how: "Welche bezahlten Funktionen im Alltag wirklich genutzt werden."
+  - measure: "Wartung eigener Lösungen"
+    how: "Wie viel Aufwand eigener Code bei jedem Salesforce-Release verursacht."
+reference: after-sales
 faq:
   - q: "Wann ist eine eigene Lösung besser als eine Salesforce Industry Cloud?"
     a: "Wenn die Kernfunktionen der Industry Cloud nicht dazu passen, wie das Unternehmen arbeitet. In einem Fertigungsprojekt waren Sales Agreements, eine zentrale Funktion der Manufacturing Cloud, für das Geschäft nicht relevant, daher war eine eigene Lösung auf der Kernplattform die bessere Wahl. Der ROI-Case entscheidet, inklusive Wartung über mehrere Jahre."

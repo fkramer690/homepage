@@ -43,6 +43,16 @@ notFit:
   - "Ein einzelner Admin macht Änderungen von Hand, und das reicht."
   - "Ein kommerzielles DevOps-Tool läuft gut, und niemand will wechseln."
 alternatives: "Ein kommerzielles Tool wie Gearset oder Copado ist schneller eingerichtet, kostet aber Lizenzen pro Nutzer. Ein interner DevOps-Engineer kann die Pipeline übernehmen, sobald sie steht. Bei mehreren Partnern fehlt ihm oft die Rolle, Regeln durchzusetzen."
+progress:
+  - measure: "Manuelle Schritte pro Release"
+    how: "Was beim Deployment noch von Hand passiert."
+  - measure: "Release-Rhythmus"
+    how: "Wie oft Änderungen live gehen und wie groß ein Release ist."
+  - measure: "Korrekturen nach dem Release"
+    how: "Wie viele Hotfixes ein Release nach sich zieht."
+  - measure: "Zeit bis zur Produktion"
+    how: "Wie lange eine fertige Änderung auf ihr Release wartet."
+reference: governance
 faq:
   - q: "Auf welchen Git-Plattformen kann eine Salesforce-Pipeline laufen?"
     a: "Ich habe Salesforce-Pipelines auf GitHub, GitLab, Azure DevOps und Bitbucket gebaut. Jede Plattform braucht ihre eigene Pipeline-Definition, aber die Deployment-Schritte und Prüfungen dahinter sind überall gleich. Am besten passt meist die Plattform, die das Unternehmen schon nutzt."

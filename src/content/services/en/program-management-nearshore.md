@@ -41,6 +41,13 @@ notFit:
   - "You only need individual developers for a limited time."
   - "Management sees nearshore only as a way to cut costs and plans no time for onboarding."
 alternatives: "A German partner delivers with less coordination but costs more per day. Freelancers from portals close short-term gaps but do not build a stable team."
+progress:
+  - measure: "Stable staffing"
+    how: "How many developers leave or join the team per quarter."
+  - measure: "Delivery against plan"
+    how: "How many of the planned user stories are done in the sprint."
+  - measure: "Wait time for the client"
+    how: "How long teams wait for answers and approvals."
 faq:
   - q: "How large should a nearshore Salesforce team be?"
     a: "At most eight developers. If more capacity is needed, I plan another team with its own area of responsibility, because in a large team coordination grows faster than output."

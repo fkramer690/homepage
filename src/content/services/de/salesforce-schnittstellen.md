@@ -40,6 +40,16 @@ notFit:
   - "Es geht um eine einzelne Standardanbindung mit fertigem Connector."
   - "Sie suchen nur jemanden, der die Schnittstelle programmiert."
 alternatives: "Ein Integrationspartner allein reicht, wenn die Systemlandkarte schon klar ist. Ein interner Integrationsarchitekt aus dem ERP-Team passt, wenn er Salesforce-Grenzen wie API-Limits kennt."
+progress:
+  - measure: "Hängende Übertragungen"
+    how: "Wie viele Nachrichten zwischen Salesforce und ERP nicht ankommen und wer das bemerkt."
+  - measure: "Zeit bis zur Korrektur"
+    how: "Wie lange ein Fehler in einer Schnittstelle offen bleibt."
+  - measure: "Doppelt gepflegte Daten"
+    how: "Welche Daten noch in zwei Systemen von Hand gepflegt werden."
+  - measure: "Rechte der Integrationsbenutzer"
+    how: "Wie viele Integrationsbenutzer mehr Rechte haben, als ihre Schnittstelle braucht."
+reference: cti
 faq:
   - q: "Mit welchen Systemen wird Salesforce bei Herstellern meist verbunden?"
     a: "Fast immer mit einem ERP, sehr oft SAP, manchmal mit anderen Systemen wie proALPHA. Dazu kommen Telefonie und E-Mail für den Service, Produkt- und Preisdaten, Dokumentenerstellung und oft eine Datenplattform. Salesforce ist nie das einzige System."

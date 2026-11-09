@@ -125,6 +125,7 @@ export const de: Dict = {
     logosText: 'Über die Details eines Projekts sagen sie wenig. Über Größenordnung und Komplexität dafür umso mehr.',
     items: [
       {
+        key: 'manufacturing-cloud',
         sector: 'Globaler Hersteller von Lebensmittelzutaten',
         title: 'Erster weltweiter Rollout der Salesforce Manufacturing Cloud',
         short: 'Manufacturing Cloud',
@@ -134,6 +135,7 @@ export const de: Dict = {
         tags: ['Manufacturing Cloud', 'CPQ', 'Experience Cloud'],
       },
       {
+        key: 'after-sales',
         sector: 'Großes deutsches Werftunternehmen',
         title: 'After-Sales-Optimierung und Subunternehmer-Portal',
         short: 'After-Sales-Portal',
@@ -143,6 +145,7 @@ export const de: Dict = {
         tags: ['Experience Cloud', 'Service Cloud', 'Make-or-Buy'],
       },
       {
+        key: 'cti',
         sector: 'Hersteller von Heizungs-, Klima- und Sanitärsystemen',
         title: 'Globaler CTI-Rollout',
         short: 'Globales CTI',
@@ -152,6 +155,7 @@ export const de: Dict = {
         tags: ['Service Cloud Voice', 'Genesys', 'MuleSoft', 'Microsoft Teams'],
       },
       {
+        key: 'embedded-chat',
         sector: 'Globaler Fertigungskonzern',
         title: 'Proof of Concept für Embedded Chat',
         short: 'Embedded Chat',
@@ -161,6 +165,7 @@ export const de: Dict = {
         tags: ['Service Cloud', 'Messaging', 'Rollout-Planung'],
       },
       {
+        key: 'governance',
         sector: 'Enterprise-Programm',
         title: 'Governance über mehrere Implementierungspartner',
         short: 'Multi-Partner-Governance',
@@ -362,6 +367,8 @@ export const de: Dict = {
     ],
   },
   servicePage: {
+    caseLabel: 'Projekt im Fokus',
+    progress: 'Woran Sie Fortschritt sehen',
     note: 'Hinweis',
     indexTitle: 'Leistungen',
     metaTitle: 'Leistungen: Salesforce-Architektur | FK Solution Design',

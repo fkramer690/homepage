@@ -43,6 +43,13 @@ notFit:
   - "It is only about training on new features."
   - "Management is not willing to stand up visibly for the change itself."
 alternatives: "An internal change team or the HR department fits if it has experience with IT rollouts. Large consultancies bring method, but rarely Salesforce knowledge."
+progress:
+  - measure: "Use of the new processes"
+    how: "Whether business teams use the new processes in Salesforce, visible in the records created there."
+  - measure: "Workarounds"
+    how: "How much still runs through Excel, email or legacy systems."
+  - measure: "Questions after a release"
+    how: "Which questions key users and support get after a release and whether they become fewer."
 faq:
   - q: "Why do you follow Prosci?"
     a: "Because to me Prosci is the gold standard in change management. The approach rests on surveys since 1998 with more than 10,000 participants and is widely used in the industry. It gives structure to the part of a Salesforce program that is often left to chance: whether people actually work differently."
