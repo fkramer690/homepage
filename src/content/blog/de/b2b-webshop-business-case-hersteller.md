@@ -2,6 +2,7 @@
 title: "B2B-Webshop Business Case für Hersteller"
 description: "Wie ein Hersteller rechnet, ob sich ein B2B-Shop auf Salesforce lohnt: GMV-Gebühr, Käuferlizenzen, Innendienstzeit pro Bestellposition und ein Dreijahresmodell."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: de
 slug: b2b-webshop-business-case-hersteller
 translationKey: commerce-business-case
@@ -9,10 +10,10 @@ topic: commerce
 categories: [b2b-commerce]
 tags: [B2B Commerce, Business Case, Ersatzteile, Innendienst, GMV, Make-or-Buy]
 takeaways:
-  - "Die meisten Schätzungen vergessen mindestens zwei von fünf Kostenposten. Die GMV-Gebühr steigt genau dann, wenn der Shop Erfolg hat."
+  - "Fünf Kernposten gehören ins Modell. Die GMV-Gebühr steigt mit dem Shop-Umsatz, egal wie viel Aufwand oder Marge eine Bestellung bringt."
   - "Die GMV-Gebühr wächst mit dem Wert jeder Position, die Zeitersparnis mit der Zahl der Positionen. Bei teuren Teilen frisst die Gebühr den Großteil."
-  - "Im Rechenbeispiel mit 40.000 Positionen und 2 Prozent GMV-Gebühr decken Zeit- und Fehlerersparnis nur rund 37 Prozent der Dreijahreskosten."
-  - "Ein Shop rechnet sich meist über zusätzlichen Umsatz, etwa Bestellungen nach Feierabend. Diese Zahl braucht die strengste Prüfung."
+  - "Im Rechenbeispiel mit 40.000 Positionen und 2 Prozent GMV-Gebühr deckt der Wert von Zeit und Fehlern nur rund 37 Prozent der Dreijahreskosten."
+  - "Im Beispiel rechnet sich der Shop nur über zusätzliche Marge oder Kapazität, die wirklich anders eingesetzt wird. Diese Zahl braucht die strengste Prüfung."
   - "Die von Salesforce beauftragte Forrester-TEI-Studie beruht auf einem zusammengesetzten Unternehmen. Sie zeigt Hebel, nicht das Ergebnis Ihres Shops."
 faq:
   - q: "Wie rechne ich den Business Case für einen B2B-Webshop?"
@@ -22,20 +23,20 @@ faq:
   - q: "Wie belastbar ist die Forrester-Studie zu Salesforce B2B Commerce?"
     a: "Es ist eine Total-Economic-Impact-Studie von Forrester Consulting im Auftrag von Salesforce aus dem April 2024. Befragt wurden vier Kundenvertreter, zusammengefasst zu einem fiktiven Hersteller mit 1 Milliarde Dollar Umsatz. Forrester selbst empfiehlt, mit eigenen Schätzungen zu rechnen."
   - q: "Sollen Händler im B2B-Store Mitglieds- oder Login-Lizenzen bekommen?"
-    a: "Laut Preisliste für Experience Cloud for Manufacturing kostet Customer Community Plus 35 € pro Mitglied oder 15 € pro Login im Monat. Ein Händler, der sich an weniger als drei Tagen im Monat anmeldet, ist mit Login-Lizenz günstiger, weil mehrere Logins an einem Tag als einer zählen."
+    a: "Zuerst die Lizenzart: Laut Salesforce-Hilfe brauchen normale Käufer External Apps oder höher, Buyer Manager und Accountwechsler Customer Community Plus. Customer Community Plus kostet 35 € pro Mitglied oder 15 € pro Login im Monat; wer sich an weniger als drei Tagen im Monat anmeldet, ist mit Logins günstiger."
 draft: false
 ---
 
-Ein Hersteller rechnet einen B2B-Shop auf Salesforce über drei Jahre: GMV-Gebühr, Käuferlizenzen, Umsetzung, ERP-Anbindung und Betrieb auf der einen Seite, eingesparte Innendienstzeit, weniger Erfassungsfehler und zusätzlicher Umsatz auf der anderen. Wichtig ist, dass die GMV-Gebühr mit dem Umsatz des Shops wächst, die Kosten steigen also genau dann, wenn der Shop Erfolg hat. Im Rechenbeispiel unten decken Zeit- und Fehlerersparnis allein nur rund ein Drittel der Kosten. Ein Shop rechnet sich meist über zusätzlichen Umsatz und über Innendienstkapazität, die Sie tatsächlich anders einsetzen. Beides braucht ehrliche Zahlen, keine Durchschnittswerte von Herstellern.
+Ein Hersteller rechnet einen B2B-Shop auf Salesforce über drei Jahre: GMV-Gebühr, Käuferlizenzen, Umsetzung, ERP-Anbindung und Betrieb auf der einen Seite, eingesparte Innendienstzeit, weniger Erfassungsfehler und zusätzlicher Umsatz auf der anderen. Wichtig ist, dass die GMV-Gebühr mit dem Umsatz des Shops wächst, die Kosten steigen also genau dann, wenn der Shop Erfolg hat. Im Rechenbeispiel unten decken Zeit- und Fehlerersparnis allein nur rund ein Drittel der Kosten. In diesem Beispiel rechnet sich der Shop nur über zusätzliche Marge und über Innendienstkapazität, die Sie tatsächlich anders einsetzen. Beides braucht ehrliche Zahlen, keine Durchschnittswerte von Herstellern.
 
-## Fünf Kostenposten, von denen meist zwei fehlen
+## Fünf Kernposten in einem vereinfachten Modell
 
-Fünf Posten, und die meisten Schätzungen vergessen mindestens zwei:
+Diese fünf Posten bilden den Kern des Modells; Schulung, Händler-Onboarding, Produktinhalte und ein Success Plan können dazukommen:
 
 1. **GMV-Gebühr.** Salesforce berechnet einen Prozentsatz des Bruttowarenwerts, also des Store-Umsatzes abzüglich Steuern und Versand. Die [Preisseite](https://www.salesforce.com/de/commerce/b2b-ecommerce/pricing/) zeigt für Growth und Advanced "Preisangebot anfordern" und nennt keinen Prozentsatz. Details stehen in [B2B Commerce Preise: Was das GMV-Modell kostet](../b2b-commerce-preise-gmv-modell/).
-2. **Käuferlizenzen.** Käufer brauchen Customer Community Plus. Laut [Preisliste für Experience Cloud for Manufacturing](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) kostet sie 35 € pro Mitglied oder 15 € pro Login im Monat, jährlich abgerechnet.
+2. **Käuferlizenzen.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=commerce.comm_b2b_licenses.htm&language=en_US&type=5) brauchen normale Käufer eine External-Apps-Lizenz oder höher; Buyer Manager, Accountwechsler und geteilte Warenkörbe brauchen Customer Community Plus. Laut [Preisliste für Experience Cloud for Manufacturing](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) kostet Customer Community Plus 35 € pro Mitglied oder 15 € pro Login im Monat, jährlich abgerechnet, Stand 9. November 2026. Für External Apps steht dort kein Preis.
 3. **Umsetzung.** Store-Einrichtung, Katalog, Käufergruppen, Sichtbarkeitsregeln, Preisbücher, Checkout, Tests.
-4. **ERP-Anbindung.** Preis- und Bestandsaufrufe, Auftragsübergabe, Status und Rechnungen zurück. In der Fertigung ist das oft größer als der Store selbst.
+4. **ERP-Anbindung.** Preis- und Bestandsaufrufe, Auftragsübergabe, Status und Rechnungen zurück. In komplexen Fertigungsprogrammen kann das größer sein als der Store selbst.
 5. **Betrieb.** Katalogpflege, Support für Händler, drei Salesforce-Releases im Jahr mit Regressionstests.
 
 ## Was gehört auf die Nutzenseite?
@@ -45,7 +46,7 @@ Vier Posten, in der Reihenfolge, in der ich ihnen traue:
 1. **Innendienstzeit pro Bestellposition.** Messen Sie, wie lange das Erfassen einer Position heute dauert, einschließlich der Rückfrage, wenn eine Teilenummer falsch ist. Das ist die verlässlichste Zahl, weil Sie die Zeit stoppen können.
 2. **Erfassungsfehler.** Falsches Teil, falsche Menge, falsche Adresse. Jeder Fehler kostet eine Retoure, eine Gutschrift und eine zweite Lieferung.
 3. **Weniger Statusanrufe.** Sehen Händler Auftragsstatus und Historie im Store, fallen manche Anrufe weg.
-4. **Zusätzlicher Umsatz.** Bestellungen nachts oder am Wochenende, Händler, die vorher bei einem Dritten gekauft haben, Aufträge, die nie kamen, weil die E-Mail liegen blieb. Das ist der größte und unsicherste Posten.
+4. **Zusätzlicher Umsatz.** Bestellungen nachts oder am Wochenende, Händler, die vorher bei einem Dritten gekauft haben, Aufträge, die nie kamen, weil die E-Mail liegen blieb. Das ist möglicherweise der größte und sicher der unsicherste Posten.
 
 Eine Regel für Posten 1: Eingesparte Zeit ist erst dann Geld, wenn Sie sie nutzen. Behält der Innendienst dieselbe Besetzung und dieselbe Arbeit, bleibt die Ersparnis auf dem Papier. Legen Sie vorher fest, was mit der frei werdenden Kapazität passiert, zum Beispiel aktive Anrufe bei Händlern, die weniger bestellen als im Vorjahr.
 
@@ -53,11 +54,11 @@ Eine Regel für Posten 1: Eingesparte Zeit ist erst dann Geld, wenn Sie sie nutz
 
 Angenommen, ein Hersteller von Förderanlagen verkauft Ersatzteile über 250 Händler. Die Zahlen:
 
-- 40.000 Ersatzteil-Bestellpositionen im Jahr, durchschnittlich 150 Euro pro Position, also 6 Millionen Euro netto.
+- 40.000 Ersatzteil-Bestellpositionen im Jahr, durchschnittlich 150 Euro pro Position, also 6 Millionen Euro Shop-GMV (Umsatz ohne Steuer und Versand).
 - Der Innendienst braucht 4 Minuten pro Position bei Vollkosten von 55 Euro pro Stunde: rund 3,67 Euro pro Position.
 - 2 Prozent der manuell erfassten Positionen enthalten einen Fehler, dessen Korrektur 60 Euro kostet: 1,20 Euro pro Position.
 - Die GMV-Gebühr ist mit 2 Prozent angenommen.
-- Eine Mitgliedslizenz pro aktivem Händler zu 35 Euro im Monat.
+- Ein benannter Käufer pro aktivem Händler mit Customer-Community-Plus-Mitgliedslizenz zu 35 Euro im Monat. Das ist der vorsichtige Fall: Händler, deren Käufer keine Managerrechte brauchen, kommen eventuell mit External Apps aus, Händler mit mehreren Käufern brauchen mehr Nutzer.
 - Umsetzung einschließlich ERP-Anbindung 250.000 Euro, Betrieb 40.000 Euro im Jahr.
 
 ```hinweis offen
@@ -66,13 +67,13 @@ Den GMV-Satz von 2 Prozent nennen Integratoren, Salesforce bestätigt ihn nicht.
 
 Bei einem digitalen Anteil, der über drei Jahre von 25 auf 70 Prozent steigt, sieht das so aus:
 
-| Jahr | Store-Anteil | Positionen im Store | Zeit- und Fehlerersparnis | GMV-Gebühr | Käuferlizenzen | Betrieb | Kosten |
+| Jahr | Store-Anteil | Positionen im Store | Wert von Zeit und Fehlern | GMV-Gebühr | Käuferlizenzen | Betrieb | Kosten |
 |---|---|---|---|---|---|---|---|
 | 1 | 25 % | 10.000 | 48.700 € | 30.000 € | 42.000 € (100 Händler) | 40.000 € | 112.000 € |
 | 2 | 50 % | 20.000 | 97.300 € | 60.000 € | 73.500 € (175 Händler) | 40.000 € | 173.500 € |
 | 3 | 70 % | 28.000 | 136.300 € | 84.000 € | 105.000 € (250 Händler) | 40.000 € | 229.000 € |
 
-Über drei Jahre spart der Store rund 282.000 Euro. Die Kosten liegen bei 514.500 Euro plus 250.000 Euro Umsetzung, also 764.500 Euro. Die Ersparnis deckt rund 37 Prozent. Um die Lücke von etwa 482.000 Euro zu schließen, muss der Store rund 160.000 Euro zusätzlichen Deckungsbeitrag im Jahr bringen. Bei einem Deckungsbeitrag von 30 Prozent nach GMV-Gebühr sind das etwa 536.000 Euro mehr Ersatzteilumsatz im Jahr, fast 9 Prozent auf 6 Millionen.
+Über drei Jahre liegt der Wert von Zeit und Fehlern bei rund 282.000 Euro, nicht abgezinst. Das ist Kapazität, kein Geld, solange sich Personal oder Neueinstellungen nicht ändern. Die Kosten liegen bei 514.500 Euro plus 250.000 Euro Umsetzung, also 764.500 Euro. Dieser Wert deckt rund 37 Prozent. Um die Lücke von etwa 482.000 Euro zu schließen, muss der Store rund 160.000 Euro zusätzlichen Deckungsbeitrag im Jahr bringen. Bei einem zusätzlichen Deckungsbeitrag von 30 Prozent nach Wareneinsatz, Versand, Rabatten und GMV-Gebühr sind das etwa 536.000 Euro mehr Ersatzteilumsatz im Jahr ab dem ersten Jahr, fast 9 Prozent auf 6 Millionen. Wächst der Zusatzumsatz erst mit dem Store-Anteil, muss das dritte Jahr deutlich mehr bringen.
 
 Das kann durchaus realistisch sein. Aber auf dieser Zahl ruht die Entscheidung, und sie sollte aus dem Vertrieb kommen, mit einer Begründung je Händlergruppe, nicht von einer Folie.
 
