@@ -1,6 +1,6 @@
 ---
 title: "Agentforce LLM-Auswahl: Default, Claude oder eigenes Modell"
-description: "Welches LLM sollte Ihren Agentforce-Agenten antreiben? Salesforce Default, Claude, GPT oder Gemini pro Subagent oder BYOLLM über Ihren eigenen Azure-Vertrag."
+description: "Welches LLM sollte Ihren Agentforce-Agenten antreiben? Salesforce Default, ein festgelegtes Claude-, GPT- oder Gemini-Modell pro Subagent oder BYOLLM mit Ihrem Azure-Vertrag."
 pubDate: 2026-10-27
 updatedDate: 2026-11-09
 lang: de
@@ -14,7 +14,7 @@ takeaways:
   - "Agent Script legt das Modell pro Agent, Subagent und Router fest; mit Agenten getestet sind GPT 4.1, Claude Haiku 4.5 und Gemini 3.5 Flash."
   - "Je 2.000 Tokens Ein- und Ausgabe kosten 2 Flex Credits auf Basic, 4 auf Standard, 16 auf Advanced und 2 auf dem eigenen Modell, plus Anbieterrechnung."
   - "Mit BYOLLM läuft die Anfrage weiter durch den Trust Layer; nur die Inferenz läuft bei Ihrem Anbieter, unter Ihrem eigenen Vertrag."
-  - "Seit Oktober 2026 führt Salesforce Claude Opus 5.5, Sonnet 5.5 und GPT-6-Modelle. Sie kommen Org für Org, prüfen Sie also, was Ihre Org anbietet."
+  - "Seit Oktober 2026 führt Salesforce Claude Opus 5.5, Sonnet 5.5 und GPT-6-Modelle. Sie kommen schrittweise pro Org. Prüfen Sie, was Ihre Org anbietet."
 faq:
   - q: "Welches LLM nutzt Agentforce standardmäßig?"
     a: "Standard ist Salesforce Default, laut Supported-Models-Seite ein verwalteter Mix vertrauenswürdiger Modelle, der derzeit GPT-4o enthält. Was im Mix steckt, entscheidet Salesforce; legen Sie das Modell deshalb pro Agent oder Subagent fest. Das schützt vor Änderungen am Standard, nicht vor einer Umleitung abgekündigter Modelle durch Salesforce."
@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Für die meisten Fertigungsunternehmen ist die richtige Agentforce LLM-Auswahl ein fest eingestelltes, von Salesforce verwaltetes Modell pro Subagent, gewählt aus den wenigen Modellen, die Salesforce mit Agenten getestet hat. Ein teureres Modell gibt es nur dort, wo Tests eine Qualitätslücke zeigen. Salesforce Default ist ein Mix, den Sie nicht steuern. Ein eigenes Modell über Bring Your Own LLM, etwa über einen bestehenden Azure-OpenAI-Vertrag, passt zu Prompt-Vorlagen und eigenen Aktionen, kostet weniger Flex Credits pro Prompt und stellt die Inferenz beim Anbieter unter Ihren eigenen Vertrag. Neue Modelle kommen Org für Org, prüfen Sie also die Liste Ihrer Org, bevor Sie damit planen.
+Für die meisten Fertigungsunternehmen ist die richtige Agentforce LLM-Auswahl ein fest eingestelltes, von Salesforce verwaltetes Modell pro Subagent, gewählt aus den wenigen Modellen, die Salesforce mit Agenten getestet hat. Ein teureres Modell gibt es nur dort, wo Tests eine Qualitätslücke zeigen. Salesforce Default ist ein Mix, den Sie nicht steuern. Ein eigenes Modell über Bring Your Own LLM, etwa über einen bestehenden Azure-OpenAI-Vertrag, passt zu Prompt-Vorlagen und eigenen Aktionen, kostet weniger Flex Credits pro Prompt, und die Inferenz beim Anbieter fällt unter Ihren eigenen Vertrag. Neue Modelle werden schrittweise pro Org bereitgestellt. Prüfen Sie deshalb die Liste Ihrer Org, bevor Sie mit einem Modell planen.
 
 ## Welche Modelle kann ein Agentforce-Agent heute nutzen?
 
@@ -53,7 +53,7 @@ Ich würde das Modell auch dann festlegen, wenn der Standard funktioniert. Sales
 
 ## Was kostet die Modellstufe?
 
-Salesforce ordnet jedes verwaltete Modell auf seiner [Seite zur Modellunterstützung](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5) einer Abrechnungsstufe zu. Die [Rate Card mit Stand 3. November 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) berechnet den Prompt je nach Stufe, Prompts an Ihr eigenes Modell heißen dort „Starter Prompts“. Laut [Hilfeartikel zur abrechenbaren Nutzung](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) wird die Nutzung in Blöcken von 2.000 Tokens aus Ein- und Ausgabe zusammen gezählt, aufgerundet. Laut Rate Card gelten diese Prompt-Zähler für Agentforce 1, Agentforce for Sales, Service oder Industries und andere Produkte ohne Einstein Requests, zusätzlich zu den Aktionen. Beim [Listenpreis von 500 € pro 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) kostet ein Advanced-Prompt 0,08 €.
+Salesforce ordnet jedes verwaltete Modell auf seiner [Seite zur Modellunterstützung](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5) einer Abrechnungsstufe zu. Die [Rate Card mit Stand 3. November 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) berechnet den Prompt je nach Stufe, Prompts an Ihr eigenes Modell heißen dort „Starter Prompts“. Laut [Hilfeartikel zur abrechenbaren Nutzung](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) werden die Tokens aus Ein- und Ausgabe zusammengerechnet und auf Blöcke von jeweils 2.000 Tokens aufgerundet. Laut Rate Card gelten diese Prompt-Zähler für Agentforce 1, Agentforce for Sales, Service oder Industries und andere Produkte ohne Einstein Requests, zusätzlich zu den Aktionen. Beim [Listenpreis von 500 € pro 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) kostet ein Advanced-Prompt 0,08 €.
 
 ```kennzahlen
 2 | Flex Credits pro Prompt auf Basic
@@ -65,7 +65,7 @@ quelle: Flex Credits Rate Card, Stand 3. November 2026
 
 Die getesteten Modelle liegen in verschiedenen Stufen: Gemini 3.5 Flash ist Basic, Claude Haiku 4.5 und GPT 4.1 sind Standard. Die Claude-Opus-Modelle bis 4.8 und GPT 5.6 Sol sind Advanced. Wer einen Subagenten von Haiku auf Opus umstellt, vervierfacht dessen Promptkosten.
 
-Dieser Hilfeartikel sagt nicht, ob die eigenen LLM-Aufrufe der Reasoning Engine zusätzlich zu den 20 Credits pro Aktion als Prompts zählen. Für Prompt-Vorlagen gilt die Stufe sicher, für das Reasoning würde ich im Pilot mit Digital Wallet messen. Alle Zähler stehen in [Flex Credits: Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), die Seite der Vorlagen in [Prompt Builder oder Agentforce-Agent](../prompt-builder-oder-agentforce-agent/).
+Dieser Hilfeartikel sagt nicht, ob die LLM-Aufrufe der Reasoning Engine zusätzlich zu den 20 Credits pro Aktion als Prompts abgerechnet werden. Für Prompt-Vorlagen gilt die Stufe sicher, für das Reasoning würde ich im Pilot mit Digital Wallet messen. Alle Zähler stehen in [Flex Credits: Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), die Seite der Vorlagen in [Prompt Builder oder Agentforce-Agent](../prompt-builder-oder-agentforce-agent/).
 
 ## Wann lohnt sich Bring Your Own LLM?
 
@@ -79,11 +79,11 @@ Ob ein eigenes Modell über BYOLLM auch das Reasoning des Agenten übernehmen da
 
 **Wer für die Daten verantwortlich ist.** Die Trust-Layer-Funktionen werden laut Supported-Models-Seite auch bei BYOLLM „fully supported“. Die Vertragsseite ändert sich. Das [Agentforce-Datenschutz-FAQ](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/Privacy/agentforce-privacy-FAQ.pdf) von Salesforce (Juni 2025) sagt, seine Antworten „do not apply to BYO LLM“, der Anbieter sei „a Non-SFDC Application“ und der Kunde müsse „its own contract with the LLM provider“ einhalten. Aufbewahrung, Trainingsnutzung und Region richten sich dann nach Ihrem Azure- oder AWS-Vertrag. Hat Ihre IT diesen Vertrag samt Auftragsverarbeitung bereits verhandelt, kann genau das der Grund für BYOLLM sein; für alle anderen ist es zusätzliche Vertragsarbeit. Das ist meine Lesart der Dokumente und keine Rechtsberatung.
 
-**Was es spart.** Starter Prompts kosten 2 Credits statt 4 auf Standard, Die Supported-Models-Seite spricht zudem von „30% fewer Einstein Requests“; das ist der ältere Zähler, keine zweite Ersparnis zusätzlich zu den Flex Credits. Die Tokens rechnet Ihr Anbieter zusätzlich ab.
+**Was es spart.** Starter Prompts kosten 2 Credits statt 4 auf Standard. Die Supported-Models-Seite spricht zudem von „30% fewer Einstein Requests“; das ist der ältere Zähler, keine zweite Ersparnis zusätzlich zu den Flex Credits. Die Tokens rechnet Ihr Anbieter zusätzlich ab.
 
 ## Die Modellliste in Ihrer Org prüfen, nicht nur beim Hersteller
 
-Die [Modellübersicht von Anthropic](https://platform.claude.com/docs/en/about-claude/models/overview) und die Supported-Models-Seite von Salesforce sind zwei getrennte Listen. Claude Opus 5.5 kam ab der Woche des 12. Oktober 2026 als allgemein verfügbar in Agentforce, schrittweise Org für Org. Ich rechne nie einen Business Case mit einem Modell, das nicht auf der Salesforce-Liste steht und in der Org aktiv ist.
+Die [Modellübersicht von Anthropic](https://platform.claude.com/docs/en/about-claude/models/overview) und die Supported-Models-Seite von Salesforce sind zwei getrennte Listen. Claude Opus 5.5 ist in Agentforce allgemein verfügbar und wird seit der Woche des 12. Oktober 2026 schrittweise pro Org bereitgestellt. Ich rechne nie einen Business Case mit einem Modell, das nicht auf der Salesforce-Liste steht und in der Org aktiv ist.
 
 Modelle verschwinden auch wieder. Ein abgekündigtes Modell funktioniert noch eine Weile und kann dann auf einen Nachfolger umgeleitet werden, etwa Claude Sonnet 4 auf Sonnet 4.6, oder abgeschaltet, wie Gemini 3 Pro (Beta) am 23. April 2026. Die Modellseite nennt Abkündigungs- und Umleitungsdaten, eine Vorlaufzeit habe ich nicht gefunden. Eine Umleitung ist ein Modellwechsel, den Ihre Tests nie gesehen haben, deshalb teste ich den Nachfolger, sobald die Abkündigung angekündigt ist.
 
