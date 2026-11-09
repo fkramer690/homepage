@@ -28,7 +28,7 @@ interface Props {
   service: Service;
 }
 const { service } = Astro.props;
-const { lang, title, headline, description, lead, situations, deliverables, results, phases, duration, faq, order, note, notePartner, section, masterclass } = service.data;
+const { lang, title, headline, description, lead, situations, deliverables, results, phases, duration, notFit, alternatives, faq, order, note, notePartner, section, masterclass } = service.data;
 // section: change-management adds the team (Fabian and Juliane) above the reading grid and
 // the change management articles instead of the related articles; "wir" there are Fabian and
 // Juliane, so the deliverables heading and the author box name both (src/data/change-management.ts).
@@ -49,6 +49,7 @@ const toc = [
   ...headings.filter((h) => h.depth === 2),
   ...(isChange ? [] : [{ slug: 'reading', text: t.servicePage.posts }]),
   { slug: 'phases', text: t.servicePage.phases },
+  { slug: 'fit', text: t.servicePage.fit },
   { slug: 'faq', text: t.servicePage.faq }, ...(isChange ? [{ slug: 'articles', text: changeSection[lang].articles.title }] : [])];
 const translation = await getServiceTranslation(service);
 // Curated reading list in the reading flow (backlog U3, docs/service-pages.md); the change
@@ -191,6 +192,16 @@ const schema = {
                 </li>
               ))}
             </ol>
+          </section>
+
+          <section class="service-block service-fit" aria-labelledby="fit">
+            <h2 id="fit">{t.servicePage.fit}</h2>
+            <h3>{t.servicePage.notFit}</h3>
+            <ul class="service-list">{notFit.map((item) => <li>{item}</li>)}</ul>
+            <h3>{t.servicePage.alternatives}</h3>
+            <p>{alternatives}</p>
+            <h3>{t.servicePage.afterCall}</h3>
+            <p>{t.servicePage.afterCallText}</p>
           </section>
 
           <section class="post-faq" aria-labelledby="faq">

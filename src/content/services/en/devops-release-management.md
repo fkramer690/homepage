@@ -39,6 +39,10 @@ phases:
     icon: "handshake"
     text: "Internal colleagues learn to run and extend the pipeline. The documentation stays in the client's repository, next to the code."
 duration: "Assessment and target process 1 to 2 weeks. The first team works with the pipeline after 4 to 6 weeks. All teams have switched after 2 to 4 months, depending on how many there are."
+notFit:
+  - "A single admin makes changes by hand, and that is enough."
+  - "A commercial DevOps tool works well, and nobody wants to switch."
+alternatives: "A commercial tool such as Gearset or Copado is set up faster but costs licences per user. An internal DevOps engineer can take over the pipeline once it runs. With several partners, that person often lacks the role to enforce rules."
 faq:
   - q: "Which Git platforms can a Salesforce pipeline run on?"
     a: "I have built Salesforce pipelines on GitHub, GitLab, Azure DevOps and Bitbucket. Each platform needs its own pipeline definition, but the deployment steps and checks behind it are the same on all of them. The best choice is usually the platform the company already uses."

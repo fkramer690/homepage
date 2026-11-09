@@ -40,6 +40,10 @@ phases:
     icon: "handshake"
     text: "Läuft der Prozess, übergebe ich ihn an einen internen Kollegen und arbeite ihn ein, damit der Kunde die Governance langfristig selbst verantwortet."
 duration: "Bestandsaufnahme 2 bis 4 Wochen. Die gemeinsamen Standards stehen nach etwa 3 Monaten. Mit Reviews und Center of Excellence bis zur Übergabe an Ihr Team meist 6 bis 12 Monate."
+notFit:
+  - "Nur ein Partner arbeitet an der Org, und die Zusammenarbeit funktioniert."
+  - "Das Unternehmen ist nicht bereit, Regeln gegenüber Partnern auch durchzusetzen."
+alternatives: "Ein interner Plattform-Owner mit technischem Hintergrund kann das langfristig selbst, wenn es ihn gibt. Einen Generalunternehmer zu beauftragen, der die anderen Partner steuert, funktioniert nur, solange seine Interessen und Ihre gleich sind."
 faq:
   - q: "Was ist Salesforce-Partnersteuerung?"
     a: "Die Regeln, Rollen und Reviews, mit denen mehrere Umsetzungspartner auf gleiche Weise an einer Salesforce-Org arbeiten: gemeinsame Standards, klare Verantwortung für Objekte und Metadaten, ein Release-Prozess und ein technisches Review jeder Lieferung."

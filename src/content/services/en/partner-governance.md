@@ -40,6 +40,10 @@ phases:
     icon: "handshake"
     text: "Once the process runs, I hand it over to an internal colleague and train them, so the client owns governance long term."
 duration: "Assessment 2 to 4 weeks. The shared standards are in place after about 3 months. With reviews and the Center of Excellence up to the handover to your team, usually 6 to 12 months."
+notFit:
+  - "Only one partner works on the org, and the collaboration works."
+  - "The company is not willing to enforce rules towards its partners."
+alternatives: "An internal platform owner with a technical background can do this long term, if you have one. Hiring a general contractor to steer the other partners only works as long as its interests and yours are the same."
 faq:
   - q: "What is Salesforce partner governance?"
     a: "It is the set of rules, roles and reviews that makes several implementation partners work on one Salesforce org in the same way: shared standards, clear ownership of objects and metadata, one release process and a technical review of every delivery."

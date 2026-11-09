@@ -39,6 +39,10 @@ phases:
     icon: "check"
     text: "We check where gaps remain, anchor new rules in the pipeline, reports and Center of Excellence calls, and hand ownership over to internal owners."
 duration: "Preparation 2 to 4 weeks. Support up to the rollout usually takes 3 to 9 months, securing the results 1 to 2 months after go-live."
+notFit:
+  - "It is only about training on new features."
+  - "Management is not willing to stand up visibly for the change itself."
+alternatives: "An internal change team or the HR department fits if it has experience with IT rollouts. Large consultancies bring method, but rarely Salesforce knowledge."
 faq:
   - q: "Why do you follow Prosci?"
     a: "Because to me Prosci is the gold standard in change management. The approach rests on surveys since 1998 with more than 10,000 participants and is widely used in the industry. It gives structure to the part of a Salesforce program that is often left to chance: whether people actually work differently."
