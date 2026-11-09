@@ -13,9 +13,11 @@ Service pages follow the content rules of the [blog guidelines](blog-guidelines.
 3. **Intro: the first paragraph of the body** (it answers "what is this service")
 4. Typical situations (`situations`)
 5. What you get (`deliverables`) and results (`results`), side by side
+5a. "Projekt im Fokus" / "Project in focus": the reference named in `reference` (sector, title, starting point, role, result, tags from `references.items` in `src/i18n`, the same anonymised projects as on the start page). Only where a confirmed reference fits; the body then does not repeat it (2026-11-09)
 6. **The rest of the body (Markdown)**
 6a. "Artikel zum Thema" / "Articles on this topic": the curated reading list from `readMore` (5 to 8 blog articles in reading order, numbered, with their category) and the masterclass from `masterclass` as a tinted row below it. It sits in the reading flow and in the contents column (backlog U3, 2026-11-07). Not on the change management page, which lists its articles by author
 7. How I work (`phases`, 3–4 steps) as a vertical timeline, with the typical duration (`duration`) above it
+7a. "Woran Sie Fortschritt sehen" / "How you see progress" (`progress`): 3 to 4 measures the client can follow during the engagement (2026-11-09)
 8. FAQ, collapsible (`faq`), author box. With `section: change-management` the page shows the team cards (Fabian, Juliane Winterscheid, the joint plan) in a grey band below the reading grid and, instead of the curated reading list, the change management articles grouped by author (newest four per group, the rest linked in the filtered blog), the heading "Was wir machen" and the shared author box of Fabian and Juliane (`src/components/ChangeTeam.astro`, `ChangeArticles.astro`, texts in `src/data/change-management.ts`). On that page "ich" is Fabian and "wir" are Fabian and Juliane; the first paragraph says so
 9. Contact section with "Book a call" and the contact form, subject set to the service. Heading, text and the lists "What to bring" / "What we clarify" come from the brief named in the required frontmatter field `contactBrief` (`src/lib/contact-briefs.ts`)
 
@@ -38,6 +40,8 @@ Blog articles link back to the best matching service automatically (`getPostServ
 | `phases` | 3–4 items with `title` (max. 40), `icon` (file name in `src/icons/`, shown in the ring of the phase timeline) and `text` (max. 260) |
 | `duration` | 40–260 characters, the typical duration of the engagement per phase or stage, shown as "Typische Dauer" above the phase timeline. Only values Fabian confirmed (2026-11-07) |
 | `notFit` | 2–3 items, max. 160 characters: when the service does not fit. Shown with `alternatives` and the shared text "Nach dem ersten Gespräch" (`servicePage.afterCallText` in `src/i18n`) in the section "Passt das zu Ihrem Vorhaben?" after the phases (KS1, confirmed by Fabian 2026-11-09) |
+| `progress` | 3–4 items with `measure` (max. 60) and `how` (max. 180): what the client can watch during the engagement and how it shows. Measures only, never promised target values |
+| `reference` | optional key from `references.items` in `src/i18n` (`manufacturing-cloud`, `after-sales`, `cti`, `embedded-chat`, `governance`): the confirmed project shown as "Projekt im Fokus". New projects go into the start page references first |
 | `alternatives` | 80–420 characters: which alternatives (internal role, partner alone, freelancer, tool) fit better and when |
 | `faq` | 2–6 questions, answers up to 600 characters |
 | `note`, `notePartner` | optional, max. 240 characters: note shown at the very top, e.g. who the approach was developed with. `notePartner` is a name from `partnerPage.partners` in `src/i18n` and must appear in `note`; it is linked to the partner page and LinkedIn |

@@ -44,6 +44,16 @@ notFit:
   - "Only one partner works on the org, and the collaboration works."
   - "The company is not willing to enforce rules towards its partners."
 alternatives: "An internal platform owner with a technical background can do this long term, if you have one. Hiring a general contractor to steer the other partners only works as long as its interests and yours are the same."
+progress:
+  - measure: "Objects with an owning stream"
+    how: "How many objects in the object ownership matrix have an owning stream."
+  - measure: "Conflicts between streams"
+    how: "How often changes from different teams overwrite each other in the org."
+  - measure: "Wait time for review"
+    how: "How long a pull request waits for its review."
+  - measure: "Recurring findings"
+    how: "Whether the same mistakes show up less often once they are in the standard."
+reference: governance
 faq:
   - q: "What is Salesforce partner governance?"
     a: "It is the set of rules, roles and reviews that makes several implementation partners work on one Salesforce org in the same way: shared standards, clear ownership of objects and metadata, one release process and a technical review of every delivery."
@@ -88,6 +98,15 @@ Object ownership matrix | One owning stream per object
   A team that wants to change another stream's object talks to the owner first.
 Configuration rules | No fixed values in code
   Thresholds and switches live in custom metadata types, texts in custom labels.
+```
+
+```tabelle matrix
+title: Object ownership matrix, sample excerpt
+columns: Object | Sales stream | Service stream | Field service stream
+Opportunity | Owner * | coordinates | coordinates
+Case | coordinates | Owner * | coordinates
+Asset | coordinates | Owner * | coordinates
+Work Order | coordinates | coordinates | Owner *
 ```
 
 How the matrix is built, with an example, is in [Salesforce Object Ownership Matrix: Who Owns What?](../../blog/salesforce-object-ownership-matrix/).

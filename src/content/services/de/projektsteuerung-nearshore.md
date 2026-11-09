@@ -41,6 +41,13 @@ notFit:
   - "Sie brauchen nur einzelne Entwickler auf Zeit."
   - "Das Management sieht Nearshore nur als Kostensenkung und plant keine Zeit für Einarbeitung ein."
 alternatives: "Ein deutscher Partner liefert mit weniger Abstimmung, kostet aber mehr pro Tag. Freelancer über Portale schließen kurzfristige Lücken, bauen aber kein stabiles Team auf."
+progress:
+  - measure: "Stabile Besetzung"
+    how: "Wie viele Entwickler pro Quartal das Team wechseln."
+  - measure: "Lieferung gegen Plan"
+    how: "Wie viele der geplanten User Stories im Sprint fertig werden."
+  - measure: "Wartezeit auf den Kunden"
+    how: "Wie lange Teams auf Antworten und Freigaben warten."
 faq:
   - q: "Wie groß sollte ein Nearshore-Team für Salesforce sein?"
     a: "Höchstens acht Entwickler. Wird mehr Kapazität gebraucht, plane ich ein weiteres Team mit eigenem Verantwortungsbereich, weil in einem großen Team die Abstimmung schneller wächst als die Leistung."

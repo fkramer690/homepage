@@ -98,6 +98,12 @@ const services = defineCollection({
     // when the service does not fit, and which alternatives fit better when.
     notFit: z.array(z.string().max(160)).min(2).max(3),
     alternatives: z.string().min(80).max(420),
+    // "Woran Sie Fortschritt sehen" after the phases (2026-11-09): 3 to 4 measures the client can
+    // follow during the engagement, each with how it is observed. No promised target values.
+    progress: z.array(z.object({ measure: z.string().max(60), how: z.string().max(180) })).min(3).max(4),
+    // "Projekt im Fokus" box after the results (2026-11-09): key of a reference from
+    // references.items in src/i18n (start page), so the page only repeats confirmed project facts.
+    reference: z.enum(['manufacturing-cloud', 'after-sales', 'cti', 'embedded-chat', 'governance']).optional(),
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).min(2).max(6),
     // Blog tags that link an article back to its best matching service (getPostService).
     blogTags: z.array(z.string()).min(1).max(8),

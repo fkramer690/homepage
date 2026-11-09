@@ -41,6 +41,14 @@ notFit:
   - "The contract is already signed, and no renewal is coming up."
   - "The decision has been made politically, and only a justification is wanted."
 alternatives: "A licence consultant or software asset manager knows discounts, but rarely what users actually need in Salesforce. The Salesforce account executive does the maths too, but for Salesforce."
+progress:
+  - measure: "License type per user group"
+    how: "Whether every user group has the license type its work needs."
+  - measure: "Features in use"
+    how: "Which paid features are actually used day to day."
+  - measure: "Upkeep of custom solutions"
+    how: "How much effort custom code causes with every Salesforce release."
+reference: after-sales
 faq:
   - q: "When is a custom solution better than a Salesforce industry cloud?"
     a: "When the industry cloud's core features do not match how the company works. In one manufacturing project, sales agreements, a central feature of Manufacturing Cloud, were not relevant for the business, so a custom solution on the core platform was the better choice. The ROI case decides, including maintenance over several years."

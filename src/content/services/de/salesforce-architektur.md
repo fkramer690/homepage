@@ -41,6 +41,14 @@ notFit:
   - "Es geht nur um eine einzelne Cloud ohne Schnittstellen, etwa Sales Cloud für 20 Nutzer."
   - "Der Umsetzungspartner hat schon gebaut, und niemand ist bereit, Entscheidungen noch zu ändern."
 alternatives: "Ein interner Architekt mit Erfahrung aus mehreren Programmen ist auf Dauer besser, ich helfe dann beim Aufbau. Der Umsetzungspartner allein reicht bei kleinen, klar umrissenen Projekten. Ein Freelancer für Konfiguration ersetzt keine Zielarchitektur."
+progress:
+  - measure: "Offene Architekturentscheidungen"
+    how: "Wie viele Fragen zu Clouds, Datenmodell und Schnittstellen noch keinen Eintrag im Entscheidungslog haben."
+  - measure: "Partnerkonzepte gegen das Zielbild"
+    how: "Welche Konzepte der Partner geprüft sind, bevor gebaut wird."
+  - measure: "Umbauten am Datenmodell"
+    how: "Wie oft Felder und Objekte nach dem Go-live wieder umgebaut werden müssen."
+reference: manufacturing-cloud
 faq:
   - q: "Was macht ein Salesforce-Architekt auf Kundenseite?"
     a: "Er entwirft die Zielarchitektur im Interesse des Unternehmens und nicht eines Herstellers oder Partners: welche Clouds und Produkte nötig sind, wie das Datenmodell aussieht, wie Salesforce mit den anderen Systemen verbunden ist und welche Entscheidungen langfristig dokumentiert werden. In der Umsetzung prüft er, was Partner bauen, gegen dieses Bild."
@@ -60,10 +68,6 @@ masterclass: manufacturing-cloud
 ---
 
 Salesforce-Architektur auf Kundenseite bedeutet, das Gesamtbild im Interesse des Unternehmens zu entwerfen: welche Clouds und Produkte es braucht, wie das Datenmodell aussieht, wie Salesforce mit ERP und anderen Systemen zusammenarbeitet und wie Entscheidungen dokumentiert werden. Meine Rolle ist unabhängig von Herstellern und Partnern, und das zählt vor allem dann, wenn ein Partner das nächste Produkt vorschlägt.
-
-```praxis
-Diese Rolle hatte ich bei globalen Fertigungsunternehmen, darunter beim ersten weltweiten Manufacturing-Cloud-Rollout mit CPQ, Produktkonfigurator und Kundenportal.
-```
 
 ## Welche Clouds braucht das Unternehmen?
 

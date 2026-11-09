@@ -159,6 +159,7 @@ export const en = {
     logosText: 'They say little about the details of a project, and a lot about its scale and complexity.',
     items: [
       {
+        key: 'manufacturing-cloud',
         sector: 'Global food ingredients manufacturer',
         title: 'First worldwide Salesforce Manufacturing Cloud rollout',
         short: 'Manufacturing Cloud',
@@ -168,6 +169,7 @@ export const en = {
         tags: ['Manufacturing Cloud', 'CPQ', 'Experience Cloud'],
       },
       {
+        key: 'after-sales',
         sector: 'Major German shipbuilder',
         title: 'After-sales optimization and subcontractor portal',
         short: 'After-sales portal',
@@ -177,6 +179,7 @@ export const en = {
         tags: ['Experience Cloud', 'Service Cloud', 'Make-or-buy'],
       },
       {
+        key: 'cti',
         sector: 'HVAC and sanitary systems manufacturer',
         title: 'Global CTI rollout',
         short: 'Global CTI',
@@ -186,6 +189,7 @@ export const en = {
         tags: ['Service Cloud Voice', 'Genesys', 'MuleSoft', 'Microsoft Teams'],
       },
       {
+        key: 'embedded-chat',
         sector: 'Global manufacturing group',
         title: 'Embedded chat proof of concept',
         short: 'Embedded chat',
@@ -195,6 +199,7 @@ export const en = {
         tags: ['Service Cloud', 'Messaging', 'Rollout planning'],
       },
       {
+        key: 'governance',
         sector: 'Enterprise program',
         title: 'Governance across several implementation partners',
         short: 'Multi-partner governance',
@@ -397,6 +402,8 @@ export const en = {
     ],
   },
   servicePage: {
+    caseLabel: 'Project in focus',
+    progress: 'How you see progress',
     note: 'Note',
     indexTitle: 'Services',
     metaTitle: 'Services: Salesforce architecture | FK Solution Design',

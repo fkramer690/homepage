@@ -43,6 +43,13 @@ notFit:
   - "Es geht nur um eine Schulung zu neuen Funktionen."
   - "Das Management ist nicht bereit, selbst sichtbar für die Veränderung einzustehen."
 alternatives: "Ein internes Change-Team oder die HR-Abteilung passt, wenn sie Erfahrung mit IT-Einführungen hat. Große Beratungen bringen Methode, aber selten Salesforce-Wissen."
+progress:
+  - measure: "Nutzung der neuen Prozesse"
+    how: "Ob die Fachbereiche die neuen Prozesse in Salesforce nutzen, sichtbar an den Datensätzen, die dort entstehen."
+  - measure: "Umgehungslösungen"
+    how: "Wie viel noch über Excel, E-Mail oder Altsysteme läuft."
+  - measure: "Fragen nach dem Release"
+    how: "Welche Fragen Key User und Support nach einem Release bekommen und ob sie weniger werden."
 faq:
   - q: "Warum orientieren Sie sich an Prosci?"
     a: "Weil Prosci für mich der Goldstandard im Change Management ist. Das Vorgehen beruht auf Befragungen seit 1998 mit über 10.000 Teilnehmenden und ist in der Branche weit verbreitet. Es gibt dem Teil eines Salesforce-Programms eine Struktur, der sonst oft dem Zufall überlassen bleibt: ob die Menschen anders arbeiten."

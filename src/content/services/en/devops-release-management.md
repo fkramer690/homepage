@@ -43,6 +43,16 @@ notFit:
   - "A single admin makes changes by hand, and that is enough."
   - "A commercial DevOps tool works well, and nobody wants to switch."
 alternatives: "A commercial tool such as Gearset or Copado is set up faster but costs licences per user. An internal DevOps engineer can take over the pipeline once it runs. With several partners, that person often lacks the role to enforce rules."
+progress:
+  - measure: "Manual steps per release"
+    how: "What still happens by hand during a deployment."
+  - measure: "Release rhythm"
+    how: "How often changes go live and how big a release is."
+  - measure: "Fixes after a release"
+    how: "How many hotfixes a release causes."
+  - measure: "Time to production"
+    how: "How long a finished change waits for its release."
+reference: governance
 faq:
   - q: "Which Git platforms can a Salesforce pipeline run on?"
     a: "I have built Salesforce pipelines on GitHub, GitLab, Azure DevOps and Bitbucket. Each platform needs its own pipeline definition, but the deployment steps and checks behind it are the same on all of them. The best choice is usually the platform the company already uses."
