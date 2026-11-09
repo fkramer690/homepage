@@ -10,7 +10,7 @@ topic: commerce
 categories: [b2b-commerce]
 tags: [B2B Commerce, Einführung, Händler, Buyer Groups, Buyer Manager, Change Management]
 takeaways:
-  - "Führen Sie den Shop in Wellen nach Buyer Group ein, zuerst mit Händlern, die oft nachbestellen. Bei einem Big Bang sehen alle Händler jeden Datenfehler gleichzeitig."
+  - "Führen Sie den Shop in Wellen nach Buyer Group ein, zuerst mit Händlern, die oft nachbestellen. Ein Big Bang zeigt jeden Datenfehler allen Händlern zugleich."
   - "Eine Welle ist eine festgelegte Menge von Händlerkonten und Benutzern, mit den Buyer Groups, Entitlements und Preisbüchern für den Store."
   - "Mit delegierter Administration legen Buyer Manager Benutzer ihres Kontos an, setzen Passwörter zurück und deaktivieren Benutzer. Das entlastet den Service Desk."
   - "Der Innendienst nimmt weiter Bestellungen per Telefon und E-Mail an. Händler wechseln, weil der Shop schneller ist, nicht weil das Telefon schweigt."
