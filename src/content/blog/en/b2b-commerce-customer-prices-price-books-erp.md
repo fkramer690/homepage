@@ -1,7 +1,9 @@
 ---
 title: "Customer prices in B2B Commerce: price books or ERP?"
-description: "How Salesforce B2B Commerce shows buyer-specific prices: price books, pricing strategy, limits, and when a live ERP call via the pricing extension is better."
+metaTitle: "Salesforce B2B Commerce: SAP prices or price books?"
+description: "When price books in Salesforce B2B Commerce are enough and when SAP should deliver customer prices live: limits, risks and a mixed model for manufacturers."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: b2b-commerce-customer-prices-price-books-erp
 translationKey: commerce-customer-prices
@@ -10,19 +12,19 @@ categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, pricing, price books, SAP, ERP integration, commerce extensions]
 takeaways:
   - "Prices come from price books assigned to the store and to buyer groups. The pricing strategy, Best Price or Priority Price, decides which one wins."
-  - "A store can have 5 price books, a price book up to 350,000 entries, and a pricing call evaluates only the first 25 valid price books. The last limit is hard."
+  - "Up to 5 price books can be assigned directly to a store, more through buyer groups. A pricing call evaluates at most 25 valid price books."
   - "SAP condition logic with customer prices, group discounts and surcharges rarely maps one to one to price books, which hold one price per product per book."
-  - "The extension Commerce_Domain_Pricing_Service replaces price books with your own logic, such as a live ERP call, and the ERP must then answer fast."
+  - "Commerce_Domain_Pricing_Service extends or replaces default pricing, for example with a live ERP call, separately for product pages and checkout."
   - "Decide in writing which system is the price master before any buyer sees a price, and what happens when store price and order price differ."
 faq:
   - q: "Where do customer prices in Salesforce B2B Commerce come from?"
     a: "By default from price books: a standard price book, store price books and buyer group price books. If a buyer has several, the pricing strategy decides: Best Price shows the lowest, Priority Price follows the priority you set per buyer group."
   - q: "How many price books can a B2B store use?"
-    a: "5 price books can be assigned to a store, and a price book holds up to 350,000 entries (soft limit). Per pricing call only the first 25 active price books in the buyer's currency are evaluated; that limit is hard."
+    a: "5 price books can be assigned directly to a store, and more come in through buyer groups. A price book holds up to 350,000 entries (soft limit). Per pricing call only the first 25 active price books in the buyer's currency are evaluated; that limit is hard."
   - q: "Can B2B Commerce take prices live from SAP?"
-    a: "Yes, through the pricing extension point Commerce_Domain_Pricing_Service, which uses price books by default and can be replaced with Apex logic that calls the ERP. The cart uses a separate pricing cart calculator."
-  - q: "How many price books can one buyer group have?"
-    a: "The Salesforce limits page states both values: 50 in the table and 25 in a note on the same page. Confirm the figure with Salesforce before you design one price book per buyer."
+    a: "Yes, through the pricing extension point Commerce_Domain_Pricing_Service, which uses price books by default and can be extended or replaced in Apex, for example with a call to SAP. processPrice affects product lists and product pages, processTransactionalPrice cart and checkout. Depending on the feature you still need price book entries, for example for Faster Add-to-Cart."
+  - q: "What does the store show when SAP cannot be reached for a price?"
+    a: "The pricing architecture has to decide that up front. Options are a non-binding cached price, a \"price on request\" note, or a blocked checkout. A price that may be wrong should never appear as binding without anyone noticing."
 draft: false
 ---
 
@@ -30,7 +32,7 @@ Customer prices in Salesforce B2B Commerce come from price books by default. Sto
 
 ## How do price books work in a B2B store?
 
-Salesforce B2B Commerce, which Salesforce now also markets as Agentforce Commerce for B2B, uses the same price book objects as Sales Cloud. Every product needs an entry in the standard price book before it can go into another price book. On top of that you assign custom price books to the store or to buyer groups. A buyer group is a set of buyer accounts that share visibility and prices, such as all gold-tier dealers in Germany. According to [Salesforce Help on pricing for B2B stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5), a new store automatically gets a default price book and a default strikethrough price book. The strikethrough price book shows a reference price crossed out next to the buyer's price.
+Salesforce B2B Commerce uses the same price book objects as Sales Cloud. Every product needs an entry in the standard price book before it can go into another price book. On top of that you assign custom price books to the store or to buyer groups. A buyer group is a set of buyer accounts that share visibility and prices, such as all gold-tier dealers in Germany. According to [Salesforce Help on pricing for B2B stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5), a new store automatically gets a default price book and a default strikethrough price book. The strikethrough price book shows a reference price crossed out next to the buyer's price.
 
 If a buyer has access to several price books, the store needs a rule. [Salesforce Help on pricing strategies](https://help.salesforce.com/s/articleView?id=sf.comm_priority_pricing.htm&language=en_US&type=5) offers two:
 
@@ -41,7 +43,7 @@ For volume discounts there is tiered pricing. The pricing data model contains Pr
 
 Salesforce Help names three typical designs: one buyer group, entitlement policy and price book per dealer tier; one price book and buyer group per buyer when you want buyer-specific prices; and buyer groups per product group to steer visibility. The first one is what I would start with.
 
-## 5 price books per store, 25 per pricing call
+## 5 price books on the store, 25 per pricing call
 
 The [price book data limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-price-book-limits.html) decide early whether price books are realistic for you:
 
@@ -55,7 +57,7 @@ The [price book data limits](https://developer.salesforce.com/docs/commerce/sale
 | Price book entries per org | 50 million | soft |
 | Price books per buyer group | 50 or 25 | unclear |
 
-The 25 per call matters most. Only the first 25 valid price books are evaluated, meaning active and in the buyer's currency; anything beyond is ignored without an error. A buyer who belongs to many buyer groups, each with several price books, can therefore see a price that is not the one you intended. A buyer account can belong to up to 20 buyer groups by default.
+The 25 per call matters most. Only the first 25 valid price books are evaluated, meaning active and in the buyer's currency; according to Salesforce, anything beyond is not evaluated. Do not rely on a wrong assignment being noticed in operations. A buyer who belongs to many buyer groups, each with several price books, can therefore see a price that is not the one you intended. A buyer account can belong to up to 20 buyer groups by default.
 
 ```hinweis offen
 The last row is a documentation problem. The same Salesforce page states 50 price books per buyer group in the table and 25 in a note. If your design depends on that number, get the answer from Salesforce in writing.
@@ -79,7 +81,7 @@ The trade-offs are clear:
 
 - **Live call:** the buyer sees the SAP net price. In return, the ERP and the middleware must answer in a time a buyer accepts on a product list, and you need a rule for what the store shows when SAP is down.
 - **Replicated price books:** fast and independent of the ERP. In return, prices are as old as the last load, and the pricing logic exists twice.
-- **Mixed:** price books for list and tier prices on product pages, the live call where the price becomes binding. The documentation does not say which method runs on which page, so I would prove this split in a prototype before committing to it.
+- **Mixed:** price books for list and tier prices on product pages, the live call where the price becomes binding. The guide separates this cleanly: processPrice runs on product lists and product pages, processTransactionalPrice affects cart and checkout. I would still test response times, price jumps between product page and cart, and behavior during outages in a prototype before committing to it.
 
 A third option is Advanced Pricing powered by Revenue Cloud, a pricing engine inside Salesforce. When it is worth the extra license is covered in [Advanced Pricing in B2B stores](../advanced-pricing-b2b-store-revenue-cloud/).
 
@@ -87,7 +89,7 @@ A third option is Advanced Pricing powered by Revenue Cloud, a pricing engine in
 
 Assume a maker of compressors sells spare parts to 600 dealers in 9 countries. SAP holds a list price per country, a discount per dealer tier and material group, and customer prices for about 40 large dealers. Around 25,000 parts are sold online.
 
-I would split it. For the roughly 560 dealers on tier discounts, a nightly job calculates the net prices into one price book per country and tier; with 9 countries and 3 tiers that is 27 price books of at most 25,000 entries each, and each buyer sees exactly one of them. For the 40 large dealers with customer prices, the pricing extension asks SAP live in the cart. Freight and minimum quantity surcharges come from SAP at checkout for everyone. The order that goes back to SAP carries the price the buyer saw, and SAP checks it against its own result with a defined tolerance.
+I would split it. For the roughly 560 dealers on tier discounts, a nightly job calculates the net prices into one price book per country and tier; with 9 countries and 3 tiers that is 27 price books of at most 25,000 entries each. They hang on buyer groups per country and tier, not directly on the store, and each buyer sees exactly one of them. For the 40 large dealers with customer prices, the pricing extension asks SAP live in the cart; on product lists and product pages they see a note that their price is calculated in the cart. Freight and minimum quantity surcharges come from SAP at checkout for everyone, through the cart calculators responsible for them and not through the pricing extension. The order that goes back to SAP carries the price the buyer saw, and SAP checks it against its own result with a defined tolerance.
 
 ```ablauf
 sf: Store price books, Pricing extension, Cart

@@ -1,7 +1,9 @@
 ---
 title: "Stakeholder analysis: matrix, example and template"
-description: "Stakeholder analysis in five steps: a matrix by influence and impact, an example from a CRM rollout and a free template as an Excel file to download."
+metaTitle: "Stakeholder analysis: matrix, example and Excel template"
+description: "Stakeholder analysis in five steps: a matrix by influence and impact, a filled-in CRM rollout example and a free Excel template, no sign-up needed."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: en
 slug: stakeholder-analysis
 translationKey: change-basics-stakeholders
@@ -12,7 +14,7 @@ author: juliane
 tags: [stakeholder analysis, stakeholder matrix, change management, template]
 takeaways:
   - "I sort groups by influence and impact, because the most affected groups are the ones who make the change work in daily life."
-  - "The classic power-interest grid often puts the future users into \"monitor\", although they decide whether the change succeeds."
+  - "The classic power-interest grid can underrate the future users when they have little formal power, although they decide whether the change succeeds."
   - "A good analysis does not end with the matrix. It ends with an action and an owner for every group."
   - "The analysis is never finished: attitudes shift with every decision, so it belongs back on the table in every project phase."
 faq:
@@ -45,7 +47,7 @@ The answers show who needs which kind of involvement. The terms are often mixed 
 
 ## How do you do a stakeholder analysis?
 
-I work in five steps. The effort is manageable: for an initiative with five to ten groups, a half-day workshop with the sponsor, the project manager and the most important line managers is usually enough, plus follow-up.
+I work in five steps. The effort is manageable: for a first draft with five to ten groups, a half-day workshop with the sponsor, the project manager and the most important line managers is usually enough, plus follow-up. In programs across divisions and countries the number of groups grows quickly, and the workshop delivers assumptions that you then check in conversations.
 
 ```schritte
 List the groups | 1 hour · project manager and line managers
@@ -64,7 +66,7 @@ The third step is the tricky one. Attitude tends to be guessed instead of asked.
 
 ## What does a stakeholder matrix look like?
 
-The best known form is the power-interest grid, which goes back to Aubrey Mendelow and is therefore also called Mendelow's matrix. It has four fields, and each stands for a strategy. The Nielsen Norman Group explains the method clearly in its [guide to stakeholder analysis](https://www.nngroup.com/articles/stakeholder-analysis/).
+The best known form is the power-interest grid, which is often attributed to Aubrey Mendelow and is therefore also called Mendelow's matrix. It has four fields, and each stands for a strategy. The Nielsen Norman Group explains the method clearly in its [guide to stakeholder analysis](https://www.nngroup.com/articles/stakeholder-analysis/).
 
 | Field | Power | Interest | Strategy | Example in a CRM rollout |
 |---|---|---|---|---|
@@ -73,7 +75,7 @@ The best known form is the power-interest grid, which goes back to Aubrey Mendel
 | Keep informed | low | high | keep up to date, collect feedback | Inside sales |
 | Monitor | low | low | check from time to time whether anything changes | Purchasing |
 
-For project management this matrix is often enough. In change management it misses an axis. The group that has to use a new system every day often has little formal power and, at first, little interest. In the classic matrix it ends up in "monitor". Yet this group decides whether the change arrives in daily work.
+For project management this matrix is often enough. In change management it misses an axis. The group that has to use a new system every day often has little formal power and, at first, little interest. In the classic matrix it can easily end up in "monitor". Yet this group decides whether the change arrives in daily work.
 
 That is why in change management I work with a second view: **influence times impact**. Groups with high impact always need a plan of their own, whatever their influence. Groups with high influence and low impact mainly need information and the occasional decision. This turns the stakeholder analysis into the basis for the change plan per group, as I describe in [What is change management?](../what-is-change-management/).
 
@@ -86,11 +88,11 @@ Take a company that introduces a CRM system such as Salesforce for sales and ser
 | Head of sales | medium | high | supportive | make visible as sponsor, forecast in the monthly report from the system | Project manager |
 | Field sales | high | medium | sceptical | show the benefit in their own day, key user per region | Head of sales |
 | Inside sales | high | low | open | training on real cases, early testing | Change manager |
-| Works council | low | high | unknown | meeting in the first month, disclose reports | Sponsor |
+| Works council | low | high | unknown | meeting before reports and analyses are defined | Sponsor |
 | IT operations | medium | medium | supportive | plan the handover to operations | Head of IT |
 | Finance | low | medium | neutral | inform about new reports | Project manager |
 
-The works council says "unknown", which is more honest than a guess. In Germany it has a right of co-determination for software that can evaluate employees' behavior or performance, so this conversation belongs at the start. Field sales is the most critical group: highly affected, with enough informal influence to work around the system, and sceptical. A circular email will not help here; their own manager will, and colleagues acting as [key users](../salesforce-key-user-network/). And every row has an owner, and that is rarely the change manager.
+The works council says "unknown", which is more honest than a guess. In Germany it has a right of co-determination for technical systems that are suitable for monitoring employees' behavior or performance ([section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html)), so this conversation belongs at the start, before activity reports and analyses are configured. Field sales is the most critical group: highly affected, with enough informal influence to work around the system, and sceptical. A circular email will not help here; their own manager will, and colleagues acting as [key users](../salesforce-key-user-network/). And every row has an owner, and that is rarely the change manager.
 
 I left out the ADKAR stage column in the example; the template contains it. It shows where a group stands right now: is awareness of why something changes missing, or the knowledge of how it works? Depending on the answer, the action is a completely different one. How the model works is explained in [Change management models compared](../change-management-models/).
 

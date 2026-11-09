@@ -1,7 +1,9 @@
 ---
 title: "B2B Commerce pricing: what the GMV model costs"
-description: "How Salesforce prices B2B Commerce as a share of GMV, what Growth and Advanced include and which costs come on top: buyer licenses, Order Management, pricing."
+metaTitle: "Salesforce B2B Commerce pricing: what the GMV model costs"
+description: "Salesforce publishes no rate for B2B Commerce. How manufacturers model the GMV fee, Growth or Advanced, buyer licenses and the costs on top."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: b2b-commerce-pricing-gmv-model
 translationKey: commerce-gmv-pricing
@@ -13,7 +15,7 @@ takeaways:
   - "B2B Commerce comes as Growth and Advanced Edition. The fee is a percentage of gross merchandise value (GMV), and Salesforce publishes no rate."
   - "GMV is store revenue minus tax and shipping. Only orders through the commerce storefront count, not orders from EDI, phone or other channels."
   - "Growth includes 6 storefronts, Order Management Lite and 250K Data Cloud credits, Advanced 10 storefronts, full Order Management and 500K credits."
-  - "Not in the fee: buyer licenses, Revenue Cloud Advanced for pricing logic, standalone Order Management, implementation and ERP integration."
+  - "Not in the fee: licenses for external users by role, Revenue Cloud Advanced for pricing logic, standalone Order Management, implementation and ERP integration."
   - "Get the GMV definition, rate, minimum and true-up rule in writing. The 1 to 2 percent figures come from integrators, not from Salesforce."
 faq:
   - q: "How much does Salesforce B2B Commerce cost?"
@@ -23,7 +25,7 @@ faq:
   - q: "What is the difference between B2B Commerce Growth and Advanced?"
     a: "Growth includes 6 storefronts, Order Management Lite, 250K Data Cloud credits and 3 CRM Analytics users. Advanced includes 10 storefronts, full Order Management, 500K credits and 5 users. Both include 20 inventory locations and Merchant Agent."
   - q: "Do I need extra licenses for buyers in B2B Commerce?"
-    a: "Yes. According to Trailhead, buyers and buyer managers need a Customer Community Plus license. On the Experience Cloud for Manufacturing price list it costs $35 per member or $15 per login per month, billed annually, on top of the GMV fee."
+    a: "Yes, depending on the role. According to Salesforce Help, buyers need an External Apps license or higher, buyer managers and account switchers Customer Community Plus or higher. On the Experience Cloud for Manufacturing price list, Customer Community Plus costs $35 per member or $15 per login per month, on top of the GMV fee."
   - q: "Is it true that B2B Commerce costs 1 or 2 percent of GMV?"
     a: "Integrators report about 1 percent for Growth and 2 percent for Advanced. Salesforce does not confirm these figures on its pricing page, which only says \"Contact for Pricing\". Use them as a rough starting point and replace them with the rate in your quote."
 draft: false
@@ -38,7 +40,7 @@ The [B2B Commerce pricing page](https://www.salesforce.com/editions-pricing/comm
 That has three consequences for a manufacturer:
 
 - **Only store orders count.** Orders that still arrive by EDI, email or phone and are entered in the ERP are not GMV. Neither are orders that sales places on behalf of a dealer outside the store, as long as they do not go through the storefront.
-- **Tax and shipping are out.** The base is the net merchandise value.
+- **Tax and shipping are out.** How discounts, cancellations, returns and credit notes count, the pricing page does not say. The contract has to settle it.
 - **The fee grows with adoption.** Every dealer you move from email to the store raises the bill. That is the point of the model, and it belongs in the business case.
 
 Salesforce now also markets the product as "Agentforce Commerce for B2B", according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping). On the pricing page the editions are still called Commerce Cloud B2B Growth Edition and Commerce Cloud B2B Advanced Edition.
@@ -58,7 +60,7 @@ The pricing page lists these items (October 2026):
 | CRM Analytics | 3 users | 5 users |
 | Knowledge Management | 3 users | 5 users |
 
-For most manufacturers the decisive line is Order Management. [Order Management](https://trailhead.salesforce.com/content/learn/modules/scom-order-management/scom-som-get-started) is the Salesforce solution that processes an order after checkout: allocation to a location, fulfilment, changes and returns. If the ERP stays the owner of the order, which is the normal case with SAP, full Order Management in Salesforce adds little. The storefront count matters when you run separate stores per brand or legal entity. For countries and dealer tiers, buyer groups in one store are usually enough.
+For most manufacturers the decisive line is Order Management. [Order Management](https://trailhead.salesforce.com/content/learn/modules/scom-order-management/scom-som-get-started) is the Salesforce solution that processes an order after checkout: allocation to a location, fulfillment, changes and returns. If the ERP stays the owner of the order, which is the normal case with SAP, and allocation, cancellations and returns are not meant to run in Salesforce, full Order Management usually adds little. What decides is which process steps Salesforce should take over. The storefront count matters when you run separate stores per brand or legal entity. For countries and dealer tiers, buyer groups in one store are usually enough.
 
 One rule applies to existing customers: the pricing page says customers who already use Order Management "will need to renew on Commerce Cloud Advanced". Upgrades during the contract term are possible.
 
@@ -66,11 +68,11 @@ One rule applies to existing customers: the pricing page says customers who alre
 
 This is where estimates go wrong most often. The GMV fee covers the store and the items above. These come on top:
 
-1. **Buyer licenses.** According to Salesforce, buyers and buyer managers need Customer Community Plus. The [Experience Cloud for Manufacturing price list](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) shows $35 per member or $15 per login per month, billed annually. Merchandisers need the "B2B and D2C Commerce" license.
+1. **Licenses for external users.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.commerce_buyer_and_buyer_mgr_perm_sets.htm&language=en_US&type=5), buyers need an External Apps license or higher, buyer managers and account switchers Customer Community Plus or higher. For Customer Community Plus the [Experience Cloud for Manufacturing price list](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) shows $35 per member or $15 per login per month, billed annually. Internal merchandisers and commerce admins get a permission set that, according to [Help](https://help.salesforce.com/s/articleView?id=sf.comm_personas.htm&language=en_US&type=5), can be paired with an Identity license.
 2. **Advanced pricing.** Contract prices, pricing procedures and Request for Quote come with Agentforce Revenue Management for B2B Commerce. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_revenue_intro.htm&language=en_US&type=5) it needs a Commerce Growth or Advanced license plus a Revenue Cloud Advanced license.
 3. **Order Management for other channels.** Orders from other channels or third-party systems that should run through Salesforce Order Management need a standalone Order Management purchase, says the pricing page.
 4. **Implementation and ERP integration.** Catalog, entitlements, price calls, stock and order transfer to SAP are project work, usually the largest one-off item.
-5. **Agent consumption beyond the included credits.** Data Cloud credits are included, but how far 250K or 500K go depends on your use. How Flex Credits and Data 360 consumption add up is in the [masterclass chapter on costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
+5. **Consumption.** The editions include Data Cloud credits and list Merchant Agent. That does not mean every Agentforce use is covered. Have the offer show separately which Data 360 and Agentforce allowances are included and what overage costs. How Flex Credits and Data 360 consumption add up is in the [masterclass chapter on costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
 
 ## What do the 1 to 2 percent figures mean?
 
@@ -82,7 +84,7 @@ Salesforce does not confirm these figures: its pricing page shows "Contact for P
 
 What I would rather do is calculate with the rate as a variable. Worked example: a manufacturer expects 15 million euros of spare parts revenue through the store in year three, net of tax and shipping. Every percentage point of GMV is then 150,000 euros a year. The difference between a quote at 1 percent and one at 2 percent is the salary of more than one inside sales employee. That is why the rate, not the license count, is what you negotiate.
 
-Buyer licenses are still not small change. In the same scenario with 250 dealers and one buyer each on a member license, that is 250 times $35 times 12, so $105,000 a year at list price. If some dealers only order on a few days a month, the login license at $15 can be cheaper, because according to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) several logins on the same day consume only one login. Work out that split before the quote, not after it.
+Licenses for external users are still not small change, and the role mix decides. In the same scenario with 250 dealers: if each dealer got one buyer manager on a Customer Community Plus member license, that is 250 times $35 times 12, so $105,000 a year at list price. Where External Apps is enough for most buyers, it costs less. If some dealers only order on a few days a month, a login license can be cheaper, because according to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) several logins on the same day consume only one login. Work out that split before the quote, not after it.
 
 ## What should be in the contract?
 
@@ -93,9 +95,10 @@ Before signing, I would get these points in writing:
 - **Minimum and true-up.** Whether there is a committed GMV, and what happens when the store sells more or less than planned. The pricing page says nothing about minimums.
 - **Orders entered by sales.** Whether orders that inside sales places in the store on behalf of a dealer count as GMV.
 - **Renewal.** Which edition you renew on, especially if Order Management is part of the plan.
+- **Support.** Which Success Plan is included and what a higher one costs.
 
 How the editions of the core platform affect a license plan is described in [Salesforce editions Core, Advanced, Max](../salesforce-editions-core-advanced-max/). Which license type each user group needs is in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
 ## Calculate the fee at 1, 2 and 3 percent
 
-Estimate store GMV for three years with a rising digital share, then calculate the fee at 1, 2 and 3 percent next to buyer licenses and implementation. If the business case only works at the lowest rate, you know your negotiating position before the first call. The full calculation is in the [B2B webshop business case for manufacturers](../b2b-webshop-business-case-manufacturers/), and the place of pricing in the overall decision is in the [masterclass chapter on whether B2B Commerce is worth it](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/). An independent check of quotes is part of my work on [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
+Estimate store GMV for three years with a rising digital share, then calculate the fee at 1, 2 and 3 percent next to licenses for external users, support and implementation. If the business case only works at the lowest rate, you know your negotiating position before the first call. The full calculation is in the [B2B webshop business case for manufacturers](../b2b-webshop-business-case-manufacturers/), and the place of pricing in the overall decision is in the [masterclass chapter on whether B2B Commerce is worth it](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/). An independent check of quotes is part of my work on [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
