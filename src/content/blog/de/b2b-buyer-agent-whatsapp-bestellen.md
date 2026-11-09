@@ -14,7 +14,7 @@ takeaways:
   - "Enhanced WhatsApp und SMS sind dokumentierte Kanäle, nur eingehend. Bestellen mit Zahlung im Chat plant Salesforce als Carter for Buyers für Januar 2027."
   - "Salesforce rechnet den Agenten nach Verbrauch ab: Messaging-Gespräche in 24-Stunden-Fenstern, Einstein Requests oder Flex Credits und Data 360."
   - "Vertragspreise, Rabatte und Kreditentscheidungen kommen aus der Preisfindung des Shops oder dem ERP. Das Sprachmodell formuliert nur, was diese Systeme liefern."
-  - "Starten Sie mit Status und Nachbestellung für eine Pilotgruppe auf einem funktionierenden Shop, und behandeln Sie jede Händlernachricht als nicht vertrauenswürdige Eingabe."
+  - "Starten Sie mit Status und Nachbestellung für eine Pilotgruppe auf einem laufenden Shop. Jede Händlernachricht ist nicht vertrauenswürdige Eingabe."
 faq:
   - q: "Was ist der B2B Buyer Agent von Salesforce?"
     a: "Der Buyer Agent ist ein Agentforce-Agent für Shops in B2B Commerce. Er wird aus der Vorlage Agentforce for Guided Shopping - B2B angelegt, sucht Produkte, zeigt Produktdetails, füllt den Warenkorb, zeigt Auftragsstatus und Positionen, bestellt frühere Aufträge nach und lässt Käufer zwischen den Accounts wechseln, für die sie bestellen dürfen."

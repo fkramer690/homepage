@@ -11,7 +11,7 @@ categories: [b2b-commerce]
 tags: [B2B Commerce, Business Case, Ersatzteile, Innendienst, GMV, Make-or-Buy]
 takeaways:
   - "Fünf Kernposten gehören ins Modell. Die GMV-Gebühr steigt mit dem Shop-Umsatz, egal wie viel Aufwand oder Marge eine Bestellung bringt."
-  - "Die GMV-Gebühr wächst mit dem Wert jeder Position, die Zeitersparnis mit der Zahl der Positionen. Bei teuren Teilen frisst die Gebühr den Großteil der Ersparnis."
+  - "Die GMV-Gebühr wächst mit dem Wert jeder Position, die Zeitersparnis mit der Zahl der Positionen. Bei teuren Teilen frisst die Gebühr fast alles."
   - "Im Rechenbeispiel mit 40.000 Positionen und 2 Prozent GMV-Gebühr deckt der Wert von Zeit und Fehlern nur rund 37 Prozent der Dreijahreskosten."
   - "Im Beispiel rechnet sich der Shop nur über zusätzliche Marge oder Kapazität, die wirklich anders eingesetzt wird. Diese Zahl braucht die strengste Prüfung."
   - "Die von Salesforce beauftragte Forrester-TEI-Studie beruht auf einem zusammengesetzten Unternehmen. Sie zeigt Hebel, nicht das Ergebnis Ihres Shops."
