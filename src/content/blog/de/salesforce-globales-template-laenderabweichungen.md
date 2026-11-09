@@ -2,6 +2,7 @@
 title: "Globales Salesforce-Template: wie viel Land verträgt es?"
 description: "Wie viel Landesabweichung ein globales Salesforce-Template verträgt, welche Abweichungen berechtigt sind und wie Sie das Delta pro Land klein halten."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: de
 slug: salesforce-globales-template-laenderabweichungen
 translationKey: global-template-country-deviations
@@ -12,13 +13,13 @@ tags: [globales Template, Rollout, Harmonisierung, Salesforce-Architektur]
 takeaways:
   - "Mein Richtwert: Jedes Land ist mindestens zu 80 Prozent identisch mit dem Template, und das Delta pro Land bleibt so klein wie möglich."
   - "Berechtigt sind Abweichungen aus Recht, Steuern, Sprache und echten Unterschieden im Geschäft. Gewohnheit allein ist kein Grund."
-  - "Landesunterschiede gehören in Konfiguration, etwa Custom Metadata pro Land, nicht in eigene Flows oder eigenen Code pro Land."
+  - "Landesunterschiede gehören in Konfiguration, etwa Custom Metadata pro Land; Code pro Land nur mit dokumentiertem rechtlichem oder Schnittstellengrund."
   - "Über Abweichungen entscheidet ein globaler Prozessverantwortlicher mit dem Architekten auf Kundenseite, und jede Entscheidung kommt ins Log."
 faq:
   - q: "Was ist ein globales Template in Salesforce?"
     a: "Ein globales Template ist der gemeinsame Stand aus Prozessen, Datenmodell, Automatisierung und Rechten, den alle Länder eines weltweiten Rollouts übernehmen. Landesspezifisches kommt als kleine, dokumentierte Ergänzung dazu."
   - q: "Wie viel darf ein Land vom Template abweichen?"
-    a: "Ich halte mindestens 80 Prozent Übereinstimmung pro Land für den richtigen Richtwert. Jede Abweichung braucht einen Grund aus Recht, Steuern, Sprache oder Geschäftsmodell und eine Freigabe."
+    a: "Aus meinen Programmen halte ich mindestens 80 Prozent gemeinsamen Prozess pro Land für einen brauchbaren Richtwert, keinen Salesforce-Maßstab. Jede Abweichung braucht einen Grund aus Recht, Steuern, Sprache oder Geschäftsmodell und eine Freigabe."
   - q: "Wer entscheidet über Abweichungen vom Template?"
     a: "Ein globaler Verantwortlicher für den Prozess zusammen mit dem Architekten auf Kundenseite. Das Land beantragt, begründet und trägt die Folgekosten der Abweichung."
   - q: "Mit welchem Land sollte ein globales Template starten?"
@@ -50,8 +51,8 @@ Ich sortiere jeden Wunsch nach Abweichung in eine von fünf Gruppen:
 
 | Grund | Beispiel | Ins Template? |
 |---|---|---|
-| Recht und Steuern | E-Rechnungspflicht, Steuernummer, Aufbewahrungsfristen | ja, als Landeskonfiguration |
-| Sprache und Formate | Übersetzungen, Adressformate, Währung | ja, über Standardfunktionen |
+| Recht und Steuern | E-Rechnungspflicht, Steuernummer, Aufbewahrungsfristen | ja, wo möglich als Konfiguration; E-Rechnung oder Archiv brauchen eventuell eine Schnittstelle oder ein anderes System |
+| Sprache und Formate | Übersetzungen, Adressformate, Währung | ja, über Standardfunktionen, soweit sie reichen |
 | Marke und Gesellschaft | Gesellschaft tritt unter anderem Namen auf | ja, als Stammdatum, nicht als Prozess |
 | Anderes Geschäft | Land verkauft über Händler statt direkt | ja, wenn es mehrere Länder betrifft, sonst prüfen |
 | Gewohnheit | „Bei uns war das Feld immer oben“ | nein |
@@ -62,12 +63,12 @@ Bei der vierten Gruppe lohnt ein zweiter Blick. Verkauft ein Land über Händler
 
 ## Landesunterschiede gehören in Konfiguration, nicht in Code
 
-Die technische Regel ist einfach: Landesunterschiede gehören in Konfiguration, nicht in Code oder eigene Flows pro Land.
+Die technische Regel ist einfach: Landesunterschiede gehören in Konfiguration, nicht in Code oder eigene Flows pro Land. Ausnahmen brauchen einen dokumentierten rechtlichen, Schnittstellen- oder Sicherheitsgrund, etwa eine E-Rechnungs-Schnittstelle.
 
-- **Werte pro Land in Custom Metadata Types.** Freigabegrenzen, Mehrwertsteuersätze oder Pflichtfelder pro Land stehen in einer Tabelle. Die Automatisierung liest den Wert für das Land des Datensatzes. Ein neues Land ist dann ein neuer Eintrag, kein neues Release.
+- **Werte pro Land in Custom Metadata Types.** Freigabegrenzen, Routing-Parameter oder Pflichtfelder pro Land stehen in einer Tabelle. Eine Validierungsregel oder ein Flow liest den Wert für das Land des Datensatzes und setzt ihn durch. Ein neues Land bringt dann neue Einträge statt neuer Automatisierung, getestet und ausgerollt wie jede Änderung. Steuersätze bleiben im ERP oder Steuersystem, das sie führt.
 - **Übersetzungen über die Übersetzungsfunktionen von Salesforce**, nicht über eigene Felder pro Sprache.
-- **Datensatztypen nur für echte Prozessvarianten**, nicht pro Land. Zehn Länder mit je einem Datensatztyp sind zehn Seitenlayouts, die auseinanderlaufen.
-- **Sichtbarkeit nach Land über Rollen und Freigaberegeln**, wie im [Berechtigungskonzept](../salesforce-berechtigungskonzept-permission-sets/) beschrieben.
+- **Datensatztypen nur für echte Prozessvarianten**, nicht pro Land. Zehn Länder mit je einem Datensatztyp vervielfachen Layouts, Picklistenwerte und Tests, die auseinanderlaufen.
+- **Sichtbarkeit nach Land, Gesellschaft oder Region über Rollen, Territorien und Freigaberegeln**, wie im [Berechtigungskonzept](../salesforce-berechtigungskonzept-permission-sets/) beschrieben.
 
 Diese Regeln gehören in die [Entwicklungsstandards](../salesforce-entwicklungsstandards-definition-of-done/), damit jeder Partner sie kennt, der ein Land einführt.
 

@@ -1,7 +1,8 @@
 ---
 title: "AI-native delivery: smaller Salesforce teams"
-description: "AI-native delivery shrinks Salesforce teams to pods of architect, builder-reviewer and domain lead. What changes in a manufacturer's program organization."
+description: "AI-native delivery can shrink Salesforce teams to pods of architect, builder-reviewer and domain lead. What changes in a manufacturer's program organization."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: ai-native-delivery-smaller-salesforce-teams
 translationKey: smaller-teams-ai-native-delivery
@@ -12,7 +13,7 @@ takeaways:
   - "Coding agents draft, build and test, while people set the intent, review the output and own the result."
   - "In McKinsey's 2026 survey, 79 percent of respondents at top-accelerating organizations reported smaller squads, with the median falling from ten to seven."
   - "The bottleneck moves to the manufacturer: each pod needs a domain lead from service, sales or after-sales who accepts working software every day."
-  - "A short intent with testable acceptance criteria replaces the long specification for most stories; SAP interfaces and pricing rules still need precise specs."
+  - "Intent, testable acceptance criteria and technical context replace long prose specs; SAP interfaces, sharing and pricing rules still need precise specs."
   - "A named person owns every artifact, and the same pipeline gates apply to human and agent code."
 faq:
   - q: "What is AI-native delivery in Salesforce projects?"
@@ -22,11 +23,11 @@ faq:
   - q: "Who should be the domain lead in a pod at a manufacturer?"
     a: "Someone from the business who knows the process and may decide on it, for example a warranty specialist from after-sales or a dispatcher from field service. Plan around half of that person's time; without it, the pod builds on assumptions."
   - q: "Does a daily demo replace user acceptance testing?"
-    a: "For most stories it replaces the long wait for UAT, because the domain lead accepts in the sandbox every day. Processes that post into SAP, such as credit notes for warranty claims, still need an end-to-end test before release."
+    a: "No. It cuts late rework, because the domain lead sees working software in the sandbox every day. Release acceptance with regression, roles and sharing stays, and processes that post into SAP, such as credit notes for warranty claims, need an end-to-end test before release."
 draft: false
 ---
 
-AI-native delivery shrinks a Salesforce team to small pods: an architect, a builder-reviewer who steers the coding agents, and a domain lead from the business. For a manufacturer the larger change sits on its own side, not with the partner. Each pod needs someone from service, sales or after-sales who decides on the process every day and accepts working software in a daily demo. Short intents replace long specifications, and a named person owns every artifact. If your organization cannot release those people, smaller partner teams will not make the program faster.
+AI-native delivery can shrink a Salesforce team to small pods, in the model I look at here: an architect, a builder-reviewer who steers the coding agents, and a domain lead from the business. For a manufacturer the larger change sits on its own side, not with the partner. Each pod needs someone from service, sales or after-sales who decides on the process every day and accepts working software in a daily demo. Short intents with testable acceptance criteria replace long prose specifications, and a named person owns every artifact. If your organization cannot release those people, smaller partner teams will not make the program faster.
 
 ## What is AI-native delivery?
 
@@ -38,7 +39,7 @@ The framework has five building blocks that matter for program organization:
 - **Small pods instead of a pyramid.** "Swap the big pyramid of junior developers for small pods: an architect, a builder-reviewer and a domain or BA lead."
 - **A daily demo instead of a status stand-up.** The team shows the product owner working software built since the day before.
 - **Named ownership.** "A named human owns every artifact." Agents work only in allowlisted sandboxes and scratch orgs, never in production.
-- **The same gates for everyone.** PMD, Code Analyzer and ApexGuru run in CI for human and agent code alike.
+- **The same gates for everyone.** Salesforce Code Analyzer with its engines, such as PMD, runs in CI for human and agent code alike.
 
 I don't agree with every number or every step in this framework, but it points in the right direction. And no template fits every customer one to one.
 
@@ -59,17 +60,17 @@ Two caveats from the same source. The figures are self-reported by leaders, and 
 
 ## In the program organization the business side becomes the bottleneck
 
-### The business side becomes the bottleneck
+### Domain decisions happen inside the pod
 
 In a classic program the business writes requirements, then waits weeks for UAT. In a pod, the domain lead looks at working software every day and decides on the spot. For a machine builder that means a warranty specialist from after-sales, a dispatcher from field service or someone from dealer sales who may decide on their process. In my judgment this person needs around half of their time for the pod. Heads of service rarely plan for that, and it is the first thing I would negotiate before any partner proposal.
 
 ### Intents replace most of the specification
 
-A good intent for a dealer portal story fits on half a page: dealers see the delivery date of their spare part order without calling, measured by fewer phone enquiries; constraints are dealer-specific prices and sharing by account. McKinsey adds that specifications should be clear enough "for an agent to act on", which I read as testable acceptance criteria, not as more prose. Two things keep a precise specification: interfaces to SAP or proALPHA, because the ERP team works on its own release plan, and rules with financial effect such as warranty eligibility or price approval.
+A good intent for a dealer portal story fits on half a page: dealers see the delivery date of their spare part order without calling, measured by fewer phone enquiries; constraints are dealer-specific prices and sharing by account. McKinsey adds that specifications should be clear enough "for an agent to act on", which I read as testable acceptance criteria plus the technical context the agent needs, such as field API names, sharing and existing automation, not as more prose. Several things keep a precise specification: interfaces to SAP or proALPHA, because the ERP team works on its own release plan, rules with financial effect such as warranty eligibility or price approval, and changes to sharing, personal data or the shared data model.
 
 ### Status meetings turn into demos
 
-The daily demo replaces the stand-up and much of the steering report. A steering committee that sees the warranty claim form working in the sandbox needs fewer traffic lights. McKinsey lists two-day sprints as an illustrative marker. I would not copy that while SAP transports move in fixed windows; a short cycle in Salesforce with a release rhythm that matches the ERP works better.
+The daily demo replaces the stand-up and part of the status reporting. A steering committee that sees the warranty claim form working in the sandbox needs fewer traffic lights, but budget, risks, dependencies between partners and release planning still need it. McKinsey lists two-day sprints as an illustrative marker. I would not copy that while SAP transports move in fixed windows; a short cycle in Salesforce with a release rhythm that matches the ERP works better.
 
 ### Ownership has to be written down
 
@@ -79,15 +80,15 @@ With fewer people, each one carries more knowledge, and an agent owns nothing. T
 
 Assume a machine builder with Sales Cloud, Service Cloud, Field Service and an SAP integration. Its partner works with a classic team of twelve: one architect, one project lead, two business analysts, six developers (four of them junior) and two testers. All numbers here are assumptions to show the method. Three streams are planned: warranty claims from dealers, spare part ordering in the dealer portal, and field service work orders with spare part reservations.
 
-The partner proposes three pods. Each pod gets an architect and a builder-reviewer from the partner; one platform and DevOps engineer serves all three. That is seven partner people, down from twelve. The domain leads come from the manufacturer: a warranty specialist, a dealer sales coordinator and a field service dispatcher, each at about half time, so 1.5 full-time equivalents the business did not give before.
+The partner proposes three pods. Each pod gets an architect and a builder-reviewer from the partner; one platform and DevOps engineer serves all three. That is seven partner people, down from twelve. The domain leads come from the manufacturer: a warranty specialist, a dealer sales coordinator and a field service dispatcher, each at about half time, so 1.5 full-time equivalents the business did not give before. The honest comparison is twelve against at least 8.5, plus tooling and model costs.
 
 Three decisions make or break this setup:
 
 - **No domain lead, no pod.** If the head of service cannot release the dispatcher, the field service pod waits. Without daily acceptance it builds on guesses, and the demo becomes a show for the partner.
-- **One lead architect across the pods.** Three pod architects would each design their own Account and Asset model. I would keep data model, sharing and the SAP interface with one architect on the client side.
-- **Formal testing stays where SAP posts.** Warranty credit notes go to SAP, so that stream keeps an end-to-end test before each release. The portal stream releases after daily acceptance.
+- **One lead architect across the pods.** Three pod architects would each design their own Account and Asset model. I would keep data model, sharing and the SAP interface with one lead architect on the client side, who sets the frame for the pod architects.
+- **Formal testing stays where SAP posts.** Warranty credit notes go to SAP, so that stream keeps an end-to-end test before each release. The portal stream releases after daily acceptance plus automated regression and a sharing check, because dealer prices and orders must stay with the right dealer.
 
-Whether seven people deliver what twelve did is an open question until cycle times are measured. The partner's price for the new setup belongs in the commercial model, see [fixed price vs time and materials](../fixed-price-vs-time-and-materials-ai/).
+Whether seven people deliver what twelve did is an open question until cycle times, rework, escaped defects and total cost are measured. The partner's price for the new setup belongs in the commercial model, see [fixed price vs time and materials](../fixed-price-vs-time-and-materials-ai/).
 
 ## Where does the pod model not fit yet?
 
