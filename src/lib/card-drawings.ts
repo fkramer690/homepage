@@ -952,7 +952,7 @@ const drawings: Record<string, Drawing> = {
     ${check(18, 104)}${t(30, 110, l('pipeline on your licence', 'Pipeline auf eigener Lizenz'), { size: 7 })}
     ${check(170, 92)}${t(182, 98, l('own integration users', 'eigene Integrationsbenutzer'), { size: 7 })}
     ${check(170, 104)}${t(182, 110, l('decision log', 'Entscheidungslog'), { size: 7 })}
-    ${tag(18, 128, 170, l('4 to 8 weeks overlap', '4 bis 8 Wochen Überlappung'))}`,
+    ${tag(18, 128, 170, l('hard cut on a fixed date', 'harter Cut zum Stichtag'))}`,
 
   'salesforce-architect-or-system-integrator': (l) => `
     ${t(18, 20, l('SAME SKILLS, OTHER EMPLOYER', 'GLEICHES WISSEN, ANDERER AUFTRAG'), { fill: D, size: 7 })}
