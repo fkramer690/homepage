@@ -133,6 +133,7 @@ Nutzung in Deutschland (Bitkom 2026, unter KI-Nutzern): ChatGPT 71 %, Gemini 50 
 | MP7 | AppExchange-Consultant-Listing (QI) vorziehen: AppExchange wird bei 6 der 22 Anfragen zitiert, öfter als jede Wettbewerberseite | hoch | groß | Fabian | offen |
 | MP8 | LinkedIn-Headline EN um „multi-vendor Salesforce governance“ ergänzen (bei dieser Anfrage zitieren die Assistenten nur LinkedIn-Profile); Sortlist-Profil prüfen | mittel | klein | Fabian | offen |
 | MP9 | Die 22 Anfragen einmal im Monat mitmessen (ca. 2,70 USD je Lauf), getrennt von den 15 Wissensfragen | mittel | klein | Claude | offen |
+| MP10 | Seite „Salesforce Field Service Berater“ (DE + EN, /salesforce-field-service-berater/, /en/salesforce-field-service-consultant/) für die zwei Field-Service-Kaufanfragen („Field Service Einführung Berater Maschinenbau“, „Field Service implementation consultant Germany“), bei denen fk-sd.de nirgends zitiert wird; Rollen Kundenseite gegen Partner, Ergebnisse, Konditionen | hoch | mittel | Claude, Fabian prüft | Seite gebaut 10.11.2026, Fabian prüft |
 
 ## Befunde Jev-Analyse und jev-seo-Audit (29.10.2026)
 

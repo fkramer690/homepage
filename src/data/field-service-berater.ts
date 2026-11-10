@@ -1,0 +1,225 @@
+// "Salesforce Field Service Berater": consultant page /salesforce-field-service-berater/ (DE) and
+// /en/salesforce-field-service-consultant/ (EN). Built for the buying questions AI assistants
+// answer with consultant and service pages ("Salesforce Field Service Einführung Berater",
+// "Salesforce Field Service implementation consultant Germany"); money prompts, backlog MP10.
+// The topic hub /masterclass/field-service/ answers the product questions, this page the question
+// who accompanies the rollout. Rendered by src/components/FreelanceArchitectPage.astro.
+// Only confirmed experience: the praxis blocks of the Field Service articles and the engagement terms.
+
+import type { freelanceArchitect } from './freelance-architect';
+
+export const fieldServiceBeraterPaths = {
+  de: 'salesforce-field-service-berater/',
+  en: 'salesforce-field-service-consultant/',
+} as const;
+
+export const fieldServiceBerater: typeof freelanceArchitect = {
+  de: {
+    title: 'Salesforce-Field-Service-Berater für Hersteller',
+    metaTitle: 'Salesforce-Field-Service-Berater für die Einführung',
+    description:
+      'Unabhängiger Salesforce-Field-Service-Berater auf Kundenseite: Business Case, Anlagenmodell, Terminplanung, ERP-Schnittstellen und Einführung in Wellen.',
+    eyebrow: 'Field Service · Kundenseite',
+    lead: 'Ich begleite Hersteller bei der Einführung von Salesforce Field Service, auf Kundenseite und unabhängig vom Implementierungspartner. Als zertifizierter Field Service Consultant und Salesforce-Architekt prüfe ich zuerst, ob sich Field Service für Ihre Einsätze rechnet. Danach lege ich das Anlagenmodell, die Planungsregeln und die ERP-Schnittstellen fest, steuere den Partner und führe das System in Wellen ein, Region für Region.',
+    ctaPrimary: '30 Minuten sprechen',
+    ctaSecondary: 'Typische Anlässe',
+    promises: ['Zertifizierter Field Service Consultant', 'Nur auf Kundenseite', 'Keine Provisionen'],
+    portraitAlt: 'Porträt von Fabian Kramer',
+    facts: [
+      { value: '8', label: 'Jahre Salesforce' },
+      { value: '20+', label: 'Enterprise-Projekte' },
+      { value: '25', label: 'Zertifikate, darunter Field Service Consultant' },
+      { value: 'DE · EN', label: 'Projektsprachen' },
+    ],
+    situations: {
+      label: 'Typische Anlässe',
+      title: 'Wobei ein Field-Service-Berater auf Kundenseite hilft',
+      intro: 'In meinen Projekten waren die Stolpersteine einer Einführung die Anlagendaten, die Akzeptanz der Techniker und die ERP-Schnittstellen. Wer diese Themen vor der Konfiguration klärt, vermeidet teure Nacharbeit.',
+      cards: [
+        { icon: 'budget', t: 'Entscheidung vor dem Lizenzvertrag', d: 'Terminplanung und Optimierung haben den größten Nutzen, wenn Techniker viele kurze Einsätze am Tag erledigen. Bei langen Inbetriebnahmen müssen App, Dokumentation, Verträge oder Servicepartner den Business Case tragen. Diese Rechnung erstelle ich vor der Vertragsunterschrift.', link: 'blog/salesforce-field-service-lohnt-sich/', linkText: 'Lohnt sich Field Service?' },
+        { icon: 'license', t: 'Lizenzen nach Rollen', d: 'Die Lizenztypen Dispatcher und Technician dürfen nicht für die Fallbearbeitung genutzt werden. Wer an der Hotline auch disponiert, braucht Field Service Plus. Jede Org braucht zudem mindestens eine Service-Cloud-Lizenz. Maßgeblich ist, was eine Person im System tut.', link: 'blog/field-service-lizenzen-rollen-dispatcher-techniker/', linkText: 'Field-Service-Lizenzen je Rolle' },
+        { icon: 'factory', t: 'Anlagen und Stammdaten', d: 'Sechs Datenbereiche entscheiden über die Qualität der Planung: Servicegebiete, Qualifikationen, Arbeitstypen, Anlagen, Öffnungszeiten und Abwesenheiten. Sind Qualifikationen oder Verfügbarkeit eines Technikers falsch gepflegt, plant das System ihn für Einsätze ein, die er nicht erledigen kann.', link: 'blog/salesforce-field-service-stammdaten/', linkText: 'Welche Daten die Planung braucht' },
+        { icon: 'calendar', t: 'Automatische Terminplanung', d: 'Zum Einstieg plant die Automatik bis zum Status Scheduled, und ein Disponent gibt jeden Termin an den Techniker frei. Mehr Automatik folgt, wenn die Kennzahlen dafür sprechen: Disponenten ändern nur wenige Vorschläge, Reaktionszeiten werden eingehalten, der Plan bleibt stabil.', link: 'blog/salesforce-field-service-terminplanung-automatisieren/', linkText: 'Wie viel Planung automatisch?' },
+        { icon: 'integration', t: 'Ersatzteile und Installed Base aus dem ERP', d: 'In meinen Projekten war das ERP das führende System für Ersatzteile und Bestände. Die Aufteilung zwischen den Systemen verursachte selten Schwierigkeiten, Mängel in der Datenpflege dagegen oft.', link: 'blog/salesforce-field-service-ersatzteile-erp/', linkText: 'Ersatzteile: ERP oder Salesforce?' },
+        { icon: 'team', t: 'Techniker und Betriebsrat', d: 'Eine App, die im Keller ohne Netz versagt, verliert schnell das Vertrauen der Techniker. Deshalb teste ich den Kernablauf vorab offline mit ihnen. Standortverfolgung und die Frage, wer welche Arbeitszeiten sehen kann, kläre ich vor der Konfiguration offen mit dem Betriebsrat.', link: 'blog/field-service-app-akzeptanz-techniker/', linkText: 'Wie Techniker die App annehmen' },
+      ],
+    },
+    compare: {
+      label: 'Rollen',
+      title: 'Was ich übernehme, was der Implementierungspartner übernimmt',
+      intro: 'Ich ersetze den Implementierungspartner nicht. Der Partner konfiguriert und setzt um. Ich sorge dafür, dass er nach Ihren Regeln arbeitet und dass Daten, Planung, App und Rückmeldungen an das ERP im Alltag von Disposition und Technikern funktionieren.',
+      colMe: 'Ich auf Kundenseite',
+      colPartner: 'Implementierungspartner',
+      rows: [
+        { k: 'Business Case', me: 'stelle den Nutzen den Lizenz- und Folgekosten gegenüber, je Rolle und Einsatzart', partner: 'kalkuliert den Aufwand für die Umsetzung' },
+        { k: 'Anlagen und Stammdaten', me: 'lege Anlagenmodell und Pflegeregeln fest und prüfe die Datenqualität je Region', partner: 'richtet die Objekte ein und migriert die Daten' },
+        { k: 'Terminplanung', me: 'lege mit der Disposition Planungsregeln und Zielkennzahlen fest', partner: 'konfiguriert die Scheduling Policy und die Optimierung' },
+        { k: 'ERP-Schnittstelle', me: 'lege fest, welches System für Teile, Bestände, Anlagen und Einsatzrückmeldungen führend ist', partner: 'setzt die Schnittstelle in der Middleware um' },
+        { k: 'Mobile App', me: 'lege fest, welche Daten offline auf dem Gerät verfügbar sein müssen, und teste den Kernablauf mit Technikern', partner: 'erstellt Flows und Formulare und richtet die Offline-Konfiguration ein' },
+        { k: 'Rollout', me: 'plane die Wellen, wähle die erste Region aus und prüfe den gelieferten Stand vor jedem Go-live', partner: 'setzt jede Welle um, schult im vereinbarten Umfang und begleitet den Go-live' },
+      ],
+      more: 'Was in jede Einführungswelle gehört:',
+      moreLink: 'blog/salesforce-field-service-einfuehrung/',
+      moreText: 'Salesforce Field Service in Wellen einführen',
+      more2: 'Und wenn es nicht Salesforce sein muss:',
+      moreLink2: 'blog/servicemax-oder-salesforce-field-service/',
+      moreText2: 'ServiceMax oder Salesforce Field Service?',
+    },
+    deliverables: {
+      label: 'Ergebnisse',
+      title: 'Was Sie konkret erhalten',
+      items: [
+        { icon: 'budget', t: 'Business Case mit Lizenzmatrix', d: 'Nutzen je Einsatzart im Vergleich zu Lizenz- und Folgekosten, mit einer Lizenz je Rolle nach tatsächlicher Nutzung: Disponenten, Techniker, Hotline, Servicepartner.' },
+        { icon: 'design', t: 'Anlagenmodell und Pflegeregeln', d: 'Anlagenhierarchie, Standorte, Qualifikationen und Servicegebiete, mit klarer Zuständigkeit für jede Datenart.' },
+        { icon: 'calendar', t: 'Planungsregeln und Kennzahlen', d: 'Welche Einsätze automatisch eingeplant werden, nach welchen Regeln das geschieht und welche Kennzahlen gelten, etwa Termintreue, Fahrzeit und Erstlösungsquote, gemessen vor und nach dem Go-live.' },
+        { icon: 'integration', t: 'ERP-Schnittstellenkonzept', d: 'Welches System für Ersatzteile, Bestände, Anlagen und Einsatzrückmeldungen führend ist, in welche Richtung die Daten fließen und wie oft.' },
+        { icon: 'target', t: 'Wellenplan für die Einführung', d: 'Regionen oder Länder in fester Reihenfolge, Kriterien für die erste Welle und Prüfpunkte aus jeder Welle für die nächste.' },
+        { icon: 'steer', t: 'Standards und Reviews für den Partner', d: 'Regeln für Konfiguration und Entwicklung und ein Review, bevor etwas in Produktion geht.' },
+      ],
+    },
+    practice: {
+      label: 'Aus meiner Praxis',
+      title: 'Aus meinen Field-Service-Projekten',
+      text: 'In meinen Field-Service-Projekten ging es um Wartung, Störungseinsätze und Inbetriebnahmen. Ersatzteile und Installed Base stammten aus dem ERP, die Terminplanung war automatisiert. Die Stolpersteine waren die Datenqualität der Anlagen, die Akzeptanz der Techniker und die Schnittstellen zum ERP. Alle drei lassen sich in einer Region leichter beherrschen als gleichzeitig im gesamten Außendienst, deshalb führe ich Field Service in Wellen ein. Wie viel Planung automatisiert wurde, entschied am Ende das Vertrauen des Kunden in die Technik: Wer die Planung über Jahre in erfahrenen Händen hatte, überlässt sie nicht am ersten Tag einer Software.',
+      facts: [
+        { value: '3', label: 'Einsatzarten: Wartung, Störungseinsatz, Inbetriebnahme' },
+        { value: '3', label: 'Stolpersteine: Anlagendaten, Akzeptanz, ERP' },
+        { value: '5', label: 'Implementierungspartner in einer Salesforce-Org' },
+        { value: '32', label: 'Entwickler in einem gemeinsamen Release-Prozess' },
+      ],
+    },
+    process: {
+      label: 'Zusammenarbeit',
+      title: 'So fangen wir an',
+      steps: [
+        { icon: 'message', t: '30 Minuten', d: 'Sie schildern Ihren Außendienst: Einsatzarten, Techniker, Systeme und wo die Planung heute an Grenzen stößt. Fällt Ihr Thema nicht unter Lizenzen, Daten, Planung, ERP-Schnittstelle oder Einführung, sage ich Ihnen das im Gespräch.' },
+        { icon: 'analyse', t: 'Prüfung', d: 'Einsätze pro Tag, Fahrzeitanteil, Fehlzuordnungen bei Qualifikationen und Ersatzteilen sowie Erstlösungsquote. Das Ergebnis ist ein Business Case mit Lizenzmatrix.' },
+        { icon: 'architecture', t: 'Konzept', d: 'Anlagenmodell, Planungsregeln, ERP-Schnittstellen und Wellenplan als Grundlage für die Ausschreibung oder das Briefing des Partners.' },
+        { icon: 'implement', t: 'Einführung steuern', d: 'Standards und Reviews für den Partner, Offline-Tests mit Technikern und Begleitung jeder Welle bis zur Übergabe an Ihr Team. Nach jeder Welle fließen die Kennzahlen und offenen Datenprobleme in die nächste ein.' },
+      ],
+      termsLabel: 'Konditionen',
+      terms: [
+        { t: 'Nach Aufwand', d: 'Tagessatz 1.200 Euro netto für Remote-Arbeit, vor Ort zuzüglich Pauschale oder Reisekosten. Mindestens zwei Tage pro Woche, zum Start bis zu fünf.' },
+        { t: 'Vor Ort', d: 'Von Köln aus vor allem in NRW, Rheinland-Pfalz und Baden-Württemberg. Zum Start öfter, später meist ein Blocktermin im Monat.' },
+        { t: 'Unabhängig', d: 'Keine Provisionen von Salesforce, Toolherstellern oder Implementierungspartnern.', link: 'freiberuflicher-salesforce-architect/', linkText: 'Mehr zur Rolle' },
+      ],
+    },
+    faqTitle: 'Häufig gestellte Fragen',
+    faq: [
+      { q: 'Was macht ein Salesforce-Field-Service-Berater auf Kundenseite?', a: 'Er vertritt Ihre Interessen gegenüber Salesforce und dem Implementierungspartner. Ich prüfe, ob sich Field Service für Ihre Einsätze rechnet, lege Anlagenmodell, Planungsregeln und ERP-Schnittstellen fest und prüfe, was der Partner liefert. Ich verkaufe keine Umsetzung und habe deshalb kein Interesse an einem größeren Umfang als nötig.' },
+      { q: 'Brauche ich zusätzlich einen Implementierungspartner?', a: 'Bei einer Einführung über mehrere Regionen in der Regel ja, denn Konfiguration, Datenmigration und Schnittstellen erfordern ein Team, das umsetzt und testet. Ich sorge dafür, dass dieses Team nach Ihren Regeln arbeitet, und helfe bei Ausschreibung und Auswahl, wenn noch kein Partner feststeht.' },
+      { q: 'In welcher Reihenfolge wird Field Service eingeführt?', a: 'Region für Region oder Land für Land. Jede Welle umfasst eigene Stammdaten, Servicegebiete, Disponenten, Techniker und Partner, und die Fehler der ersten Welle werden zu Prüfpunkten für die nächste. Wellen nach Ländern erlauben, die Konfiguration an die Regeln des jeweiligen Landes anzupassen. Den Betriebsrat binde ich vor der Konfiguration ein: Intervall und Genauigkeit der Standortverfolgung sind einstellbar, für einzelne Techniker lässt sie sich abschalten.' },
+      { q: 'Was kostet Salesforce Field Service?', a: 'Laut deutscher Salesforce-Preisseite (Stand 9. November 2026, Enterprise Edition, jährliche Abrechnung) kosten die Lizenzen Dispatcher und Technician jeweils 175 Euro pro Nutzer und Monat, Field Service Plus 230 Euro und Contractor Plus für Servicepartner 80 Euro pro Nutzer oder 32 Euro pro Login. 40 Techniker und 4 Disponenten kosten damit 92.400 Euro im Jahr zum Listenpreis. Hinzu kommen mindestens eine Service-Cloud-Lizenz und die Kosten für Einführung, Schnittstellen und Betrieb.' },
+      { q: 'Was kostet Ihre Begleitung?', a: 'Ich arbeite nach Aufwand: 1.200 Euro netto pro Tag für Remote-Arbeit, mindestens zwei Tage pro Woche. Nach dem ersten Gespräch erhalten Sie innerhalb von zwei Arbeitstagen eine einseitige Zusammenfassung mit Umfang, Dauer, Aufwand und Preis.' },
+      { q: 'Arbeiten Sie auch vor Ort?', a: 'Ja. Ich arbeite von Köln aus, vor Ort vor allem in NRW, Rheinland-Pfalz und Baden-Württemberg. Zum Start bin ich öfter vor Ort, etwa bei der Disposition und den Technikern, später reicht meist ein Blocktermin im Monat. Projektsprache ist oft Englisch, weil die Teams international sind.' },
+    ],
+    ctaTitle: 'Planen Sie die Einführung von Salesforce Field Service?',
+    ctaText: 'Schildern Sie mir kurz Ihren Außendienst: wie viele Techniker, welche Einsatzarten, welche Systeme und welche Entscheidung Sie treffen müssen. Dann sage ich Ihnen, ob und wie ich helfen kann.',
+    formSubject: 'Anfrage Salesforce Field Service',
+    footerLink: 'Field-Service-Beratung',
+  },
+  en: {
+    title: 'Salesforce Field Service consultant for manufacturers',
+    metaTitle: 'Salesforce Field Service Implementation Consultant',
+    description:
+      'Independent Salesforce Field Service implementation consultant in Germany, on the client side: business case, asset model, scheduling, ERP interfaces, rollout.',
+    eyebrow: 'Field Service · Client-side',
+    lead: 'I help manufacturers roll out Salesforce Field Service, on the client side and independent of the implementation partner. As a certified Field Service Consultant and Salesforce architect based in Cologne, Germany, I first check whether Field Service pays off for your service operations. Then I define the asset model, scheduling rules and ERP interfaces, manage the partner on your behalf and roll the system out in waves, region by region.',
+    ctaPrimary: 'Talk for 30 minutes',
+    ctaSecondary: 'Typical situations',
+    promises: ['Certified Field Service Consultant', 'Client-side only', 'No commissions'],
+    portraitAlt: 'Portrait of Fabian Kramer',
+    facts: [
+      { value: '8', label: 'years of Salesforce experience' },
+      { value: '20+', label: 'enterprise projects' },
+      { value: '25', label: 'certifications, incl. Field Service Consultant' },
+      { value: 'DE · EN', label: 'project languages' },
+    ],
+    situations: {
+      label: 'Typical situations',
+      title: 'How a client-side Field Service consultant helps',
+      intro: 'In my projects, the stumbling blocks in a rollout were asset data, technician adoption and the ERP interfaces. Clarifying these issues before configuration avoids costly rework.',
+      cards: [
+        { icon: 'budget', t: 'The decision before signing the licence agreement', d: 'Scheduling and route optimisation pay off most when technicians handle many short jobs a day. With long commissioning jobs, the app, documentation, contracts or service partners have to support the business case. I prepare this calculation before the contract is signed.', link: 'blog/salesforce-field-service-worth-it/', linkText: 'Is Field Service worth it?' },
+        { icon: 'license', t: 'Licences by role', d: 'Dispatcher and Technician licences must not be used for case handling. Anyone who handles support calls and also dispatches needs Field Service Plus. Every org also needs at least one Service Cloud licence. What counts is what a person does in the system.', link: 'blog/field-service-licences-by-role/', linkText: 'Field Service licences by role' },
+        { icon: 'factory', t: 'Assets and master data', d: 'Six data areas decide how well scheduling works: service territories, skills, work types, assets, operating hours and absences. If a technician\'s skills or availability are recorded incorrectly, the system assigns them jobs they cannot complete.', link: 'blog/salesforce-field-service-master-data/', linkText: 'What data scheduling needs' },
+        { icon: 'calendar', t: 'Automatic scheduling', d: 'At the start, automation schedules appointments only up to Scheduled status, and a dispatcher reviews each one before dispatching it to the technician. More automation follows when the KPIs support it: dispatchers change few proposals, response times are met and the plan stays stable.', link: 'blog/salesforce-field-service-scheduling-automation/', linkText: 'How much scheduling can run automatically?' },
+        { icon: 'integration', t: 'Spare parts and installed base from the ERP', d: 'In my projects, the ERP was the system of record for spare parts and stock. Splitting the data between the systems rarely caused problems, but poor data maintenance often did.', link: 'blog/salesforce-field-service-spare-parts-erp/', linkText: 'Spare parts: ERP or Salesforce?' },
+        { icon: 'team', t: 'Technicians and works council', d: 'An app that fails in a basement without signal quickly loses the trust of technicians. That is why I test the core flow offline with them beforehand. I clarify location tracking and who can see working-time data openly with the works council before configuration.', link: 'blog/field-service-app-technician-adoption/', linkText: 'How technicians adopt the app' },
+      ],
+    },
+    compare: {
+      label: 'Roles',
+      title: 'What I take on, what the implementation partner takes on',
+      intro: 'I do not replace the implementation partner. The partner configures and implements. I make sure they follow your rules and that data, scheduling, the app and updates to the ERP work in the daily routine of dispatchers and technicians.',
+      colMe: 'My role on the client side',
+      colPartner: 'Implementation partner',
+      rows: [
+        { k: 'Business case', me: 'compare the benefit with licence and ongoing costs, per role and job type', partner: 'estimates the implementation effort' },
+        { k: 'Assets and master data', me: 'define the asset model and maintenance rules and check data quality per region', partner: 'sets up the objects and migrates the data' },
+        { k: 'Scheduling', me: 'define scheduling rules and target KPIs together with the dispatch team', partner: 'configures the scheduling policy and optimisation' },
+        { k: 'ERP interface', me: 'define which system is the system of record for parts, stock, assets and job completion data', partner: 'implements the interface in the middleware' },
+        { k: 'Mobile app', me: 'define what data must be available offline on the device and test the core flow with technicians', partner: 'builds flows and forms and configures offline access' },
+        { k: 'Rollout', me: 'plan the waves, pick the first region and review the delivered work before each go-live', partner: 'implements each wave, trains users as defined in the scope and supports the go-live' },
+      ],
+      more: 'What each rollout wave includes:',
+      moreLink: 'blog/salesforce-field-service-rollout/',
+      moreText: 'Rolling out Salesforce Field Service in waves',
+      more2: 'And if it does not have to be Salesforce:',
+      moreLink2: 'blog/servicemax-vs-salesforce-field-service/',
+      moreText2: 'ServiceMax or Salesforce Field Service?',
+    },
+    deliverables: {
+      label: 'Results',
+      title: 'What you get',
+      items: [
+        { icon: 'budget', t: 'Business case with licence matrix', d: 'Benefit per job type compared with licence and ongoing costs, with one licence for each role based on actual use: dispatchers, technicians, hotline agents, service partners.' },
+        { icon: 'design', t: 'Asset model and maintenance rules', d: 'Asset hierarchy, locations, skills and service territories, with a clear owner for each type of data.' },
+        { icon: 'calendar', t: 'Scheduling rules and KPIs', d: 'Which jobs are scheduled automatically, according to which rules, and which KPIs apply, such as on-time rate, travel time and first-time fix rate, measured before and after go-live.' },
+        { icon: 'integration', t: 'ERP interface concept', d: 'Which system is the system of record for spare parts, stock, assets and job completion data, in which direction the data flows and how often.' },
+        { icon: 'target', t: 'Wave plan for the rollout', d: 'Regions or countries in a fixed order, criteria for the first wave and checkpoints from each wave for the next one.' },
+        { icon: 'steer', t: 'Standards and reviews for the partner', d: 'Rules for configuration and development and a review before anything goes into production.' },
+      ],
+    },
+    practice: {
+      label: 'From my project work',
+      title: 'From my Field Service projects',
+      text: 'My Field Service projects covered maintenance, breakdown jobs and commissioning. Spare parts and installed base came from the ERP, and scheduling was automated. The stumbling blocks were asset data quality, technician adoption and the ERP interfaces. All three are easier to control in one region than across the entire field service organisation at once, which is why I roll out Field Service in waves. How much of the scheduling was automated ultimately depended on the client\'s trust in the technology: if scheduling had been in experienced hands for years, nobody handed it over to a system on day one.',
+      facts: [
+        { value: '3', label: 'job types: maintenance, breakdown repair, commissioning' },
+        { value: '3', label: 'stumbling blocks: asset data, adoption, ERP' },
+        { value: '5', label: 'implementation partners in one Salesforce org' },
+        { value: '32', label: 'developers in a single release process' },
+      ],
+    },
+    process: {
+      label: 'Working together',
+      title: 'How we get started',
+      steps: [
+        { icon: 'message', t: '30 minutes', d: 'You describe your field service: job types, technicians, systems and where scheduling falls short today. If your issue falls outside licences, data, scheduling, ERP integration or rollout, I will tell you in the call.' },
+        { icon: 'analyse', t: 'Assessment', d: 'Jobs per day, share of travel time, skill mismatches, wrong or missing parts, and first-time fix rate. The result is a business case with a licence matrix.' },
+        { icon: 'architecture', t: 'Concept', d: 'Asset model, scheduling rules, ERP interfaces and a wave plan as the basis for the tender or the partner briefing.' },
+        { icon: 'implement', t: 'Overseeing the rollout', d: 'Standards and reviews for the partner, offline tests with technicians and support for every wave until the handover to your team. After each wave, the KPIs and unresolved data issues feed into the next one.' },
+      ],
+      termsLabel: 'Terms',
+      terms: [
+        { t: 'Time and materials', d: 'Day rate EUR 1,200 net for remote work; for on-site days, a flat fee or travel costs are added. At least two days a week, up to five at the start.' },
+        { t: 'On site', d: 'From Cologne, mainly in North Rhine-Westphalia, Rhineland-Palatinate and Baden-Württemberg. More often at the start, later usually one block session a month.' },
+        { t: 'Independent', d: 'No commissions from Salesforce, tool vendors or implementation partners.', link: 'freelance-salesforce-architect/', linkText: 'More about the role' },
+      ],
+    },
+    faqTitle: 'Frequently asked questions',
+    faq: [
+      { q: 'What does a client-side Salesforce Field Service consultant do?', a: 'They represent your interests in dealings with Salesforce and the implementation partner. I check whether Field Service pays off for your service operations, define the asset model, scheduling rules and ERP interfaces, and review what the partner delivers. I do not sell implementation services, so I have no interest in a larger scope than necessary.' },
+      { q: 'Do I still need an implementation partner?', a: 'For a rollout across several regions, usually yes, because configuration, data migration and interfaces need a team that implements and tests the solution. I make sure that team follows your rules and help with the tender and selection if no partner has been chosen yet.' },
+      { q: 'In what order is Field Service rolled out?', a: 'Region by region or country by country. Each wave has its own master data, service territories, dispatchers, technicians and partners, and the issues from the first wave become checkpoints for the next. Waves by country make it possible to adapt the configuration to each country\'s rules. In Germany, I involve the works council before configuration: the interval and accuracy of location tracking can be configured, and tracking can be switched off for individual technicians.' },
+      { q: 'How much does Salesforce Field Service cost?', a: 'According to the German Salesforce pricing page (9 November 2026, Enterprise Edition, billed annually), the Dispatcher and Technician licences each cost EUR 175 per user per month, Field Service Plus EUR 230 and Contractor Plus for service partners EUR 80 per user or EUR 32 per login. 40 technicians and 4 dispatchers therefore cost EUR 92,400 a year at list price. In addition, you need at least one Service Cloud licence, plus the costs of rollout, interfaces and operations.' },
+      { q: 'What does your support cost?', a: 'I work on a time and materials basis: EUR 1,200 net per day for remote work, at least two days a week. After the first call, you receive a one-page summary with scope, duration, effort and price within two working days.' },
+      { q: 'Do you work on site in Germany?', a: 'Yes. I am based in Cologne and work on site mainly in North Rhine-Westphalia, Rhineland-Palatinate and Baden-Württemberg. At the start, I am on site more often, for example with the dispatch team and technicians; later, one block session a month is usually enough. The project language is often English because the teams are international.' },
+    ],
+    ctaTitle: 'Planning a Salesforce Field Service rollout?',
+    ctaText: 'Briefly describe your field service: how many technicians, which job types, which systems and what decision needs to be made. I will tell you whether and how I can help.',
+    formSubject: 'Request Salesforce Field Service',
+    footerLink: 'Field Service consulting',
+  },
+};

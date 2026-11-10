@@ -315,6 +315,7 @@
     "page:quellen-chips": {"title": "Blog: nummerierte Quellen-Chips im Text, eingeklappte Quellenliste vor der FAQ (Muster von 21st.dev, Variante A)", "proposal": 1, "rating": null},
     "page:blog-video": {"title": "Blog: Video-Karte im Seitenrand mit Overlay und Transkript (Variante B)", "proposal": 1, "rating": null},
     "page:maschinenbau": {"title": "Branchenseite Salesforce für Maschinen- und Anlagenbau (Aufbau wie Seite freiberuflicher Architekt, Foto 04 Service an der Maschine)", "proposal": 1, "rating": null},
+    "page:field-service-berater": {"title": "Seite Salesforce Field Service Berater (Aufbau wie Seite freiberuflicher Architekt, Foto 12 Prozessaufnahme Lager, Tabelle Rollen Kundenseite und Partner)", "proposal": 1, "rating": null},
     "page:mc-intro-video": {"title": "Masterclass DevOps: Intro-Video (16:9, Stimme OpenAI Onyx, Untertitel) mit Karte im Hub und Overlay", "proposal": 1, "rating": null},
     "page:rolle-zitat": {"title": "Rolle: Vergleichspaar markiert, Zitat als Bühnenband", "proposal": 1, "rating": null},
     "page:juliane-referenzen": {"title": "Partnerseite Juliane: Referenzen als Projekt im Fokus (Liste links, Panel mit Logo, Zeitraum, Rolle, Umfang, Aufgaben)", "proposal": 1, "rating": null},
