@@ -36,16 +36,16 @@
   "position": 4.6
  },
  {
-  "page": "https://www.fk-sd.de/blog/stakeholder-analyse/",
-  "clicks": 0,
-  "impressions": 5,
-  "position": 6
- },
- {
   "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
   "clicks": 0,
   "impressions": 5,
   "position": 4
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/stakeholder-analyse/",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 6
  },
  {
   "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
@@ -72,19 +72,13 @@
   "position": 5
  },
  {
-  "page": "https://www.fk-sd.de/blog/salesforce-uat-abnahmetest-fachbereich/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
   "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
   "clicks": 0,
   "impressions": 2,
   "position": 9
  },
  {
-  "page": "https://www.fk-sd.de/blog/merchandising-agent-teilekatalog/",
+  "page": "https://www.fk-sd.de/blog/salesforce-uat-abnahmetest-fachbereich/",
   "clicks": 0,
   "impressions": 2,
   "position": 4
@@ -100,6 +94,12 @@
   "clicks": 0,
   "impressions": 2,
   "position": 7
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/merchandising-agent-teilekatalog/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
  },
  {
   "page": "https://www.fk-sd.de/blog/b2b-commerce-preise-gmv-modell/",
@@ -126,19 +126,13 @@
   "position": 4
  },
  {
-  "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
- },
- {
   "page": "https://www.fk-sd.de/en/ai-masterclass/aiforce-and-system-integrators/",
   "clicks": 0,
   "impressions": 1,
   "position": 10
  },
  {
-  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
+  "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
   "clicks": 0,
   "impressions": 1,
   "position": 2
@@ -150,10 +144,16 @@
   "position": 8
  },
  {
-  "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
   "clicks": 0,
   "impressions": 1,
   "position": 2
+ },
+ {
+  "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  },
  {
   "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",

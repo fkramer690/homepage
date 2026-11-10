@@ -6833,6 +6833,14 @@
  },
  {
   "day": "2026-11-09",
+  "query": "agentforce",
+  "page": "https://www.fk-sd.de/blog/was-ist-agentforce/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 33.3
+ },
+ {
+  "day": "2026-11-09",
   "query": "field engineer scheduling",
   "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
   "clicks": 0,
@@ -6849,11 +6857,11 @@
  },
  {
   "day": "2026-11-09",
-  "query": "agentforce",
-  "page": "https://www.fk-sd.de/blog/was-ist-agentforce/",
+  "query": "service pro vs ptc servicemax",
+  "page": "https://www.fk-sd.de/blog/servicemax-oder-salesforce-field-service/",
   "clicks": 0,
-  "impressions": 3,
-  "position": 38.7
+  "impressions": 4,
+  "position": 7.5
  },
  {
   "day": "2026-11-09",
@@ -6862,6 +6870,14 @@
   "clicks": 0,
   "impressions": 3,
   "position": 29
+ },
+ {
+  "day": "2026-11-09",
+  "query": "kommunikationsplan",
+  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 94.3
  },
  {
   "day": "2026-11-09",
@@ -6945,11 +6961,27 @@
  },
  {
   "day": "2026-11-09",
-  "query": "kommunikationsplan",
-  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "query": "nearshore teamerweiterung",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
   "clicks": 0,
   "impressions": 2,
-  "position": 92.5
+  "position": 78.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "nearshore teams",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 58.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 86
  },
  {
   "day": "2026-11-09",
@@ -6958,14 +6990,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 87.5
- },
- {
-  "day": "2026-11-09",
-  "query": "service pro vs ptc servicemax",
-  "page": "https://www.fk-sd.de/blog/servicemax-oder-salesforce-field-service/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 7.5
  },
  {
   "day": "2026-11-09",
@@ -6990,6 +7014,14 @@
   "clicks": 0,
   "impressions": 2,
   "position": 5.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-agent-api-dealer-apps/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
  },
  {
   "day": "2026-11-09",
@@ -7265,14 +7297,6 @@
  },
  {
   "day": "2026-11-09",
-  "query": "nearshore teams",
-  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 59
- },
- {
-  "day": "2026-11-09",
   "query": "salesforce agentforce",
   "page": "https://www.fk-sd.de/blog/was-ist-agentforce/",
   "clicks": 0,
@@ -7289,11 +7313,27 @@
  },
  {
   "day": "2026-11-09",
-  "query": "salesforce commerce product data",
-  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "query": "salesforce architektur klagenfurt",
+  "page": "https://www.fk-sd.de/leistungen/",
   "clicks": 0,
   "impressions": 1,
-  "position": 76
+  "position": 20
+ },
+ {
+  "day": "2026-11-09",
+  "query": "salesforce architektur salzburg",
+  "page": "https://www.fk-sd.de/leistungen/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 49
+ },
+ {
+  "day": "2026-11-09",
+  "query": "salesforce b2b commerce sap",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-sap-data-flows/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
  },
  {
   "day": "2026-11-09",
@@ -7310,6 +7350,14 @@
   "clicks": 0,
   "impressions": 1,
   "position": 76
+ },
+ {
+  "day": "2026-11-09",
+  "query": "sap order in mulesoft",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-sap-order-status-mulesoft/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
  },
  {
   "day": "2026-11-09",
@@ -7438,5 +7486,13 @@
   "clicks": 0,
   "impressions": 1,
   "position": 18
+ },
+ {
+  "day": "2026-11-10",
+  "query": "key user training",
+  "page": "https://www.fk-sd.de/masterclass/change-management/key-user-und-schulung/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 53
  }
 ]

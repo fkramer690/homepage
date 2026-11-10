@@ -20,7 +20,17 @@
   "visits": 0
  },
  {
+  "page": "/masterclass/",
+  "pageviews": 40,
+  "visits": 10
+ },
+ {
   "page": "/fragen/",
+  "pageviews": 40,
+  "visits": 0
+ },
+ {
+  "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
   "pageviews": 40,
   "visits": 0
  },
@@ -30,38 +40,13 @@
   "visits": 10
  },
  {
-  "page": "/masterclass/",
-  "pageviews": 40,
-  "visits": 10
- },
- {
-  "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
-  "pageviews": 40,
-  "visits": 0
- },
- {
-  "page": "/en/blog/",
-  "pageviews": 30,
-  "visits": 0
- },
- {
   "page": "/homepage/",
   "pageviews": 30,
   "visits": 10
  },
  {
-  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
-  "pageviews": 20,
-  "visits": 20
- },
- {
-  "page": "/leistungen/salesforce-schnittstellen/",
-  "pageviews": 20,
-  "visits": 20
- },
- {
-  "page": "/masterclass/ki-salesforce/",
-  "pageviews": 20,
+  "page": "/en/blog/",
+  "pageviews": 30,
   "visits": 0
  },
  {
@@ -70,14 +55,14 @@
   "visits": 20
  },
  {
-  "page": "/en/partners/juliane-winterscheid/",
-  "pageviews": 20,
-  "visits": 0
- },
- {
   "page": "/impressum/",
   "pageviews": 20,
   "visits": 20
+ },
+ {
+  "page": "/en/partners/juliane-winterscheid/",
+  "pageviews": 20,
+  "visits": 0
  },
  {
   "page": "/leistungen/salesforce-architektur/",
@@ -90,7 +75,22 @@
   "visits": 0
  },
  {
+  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
+  "pageviews": 20,
+  "visits": 20
+ },
+ {
   "page": "/masterclass-ki/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
+  "page": "/leistungen/salesforce-schnittstellen/",
+  "pageviews": 20,
+  "visits": 20
+ },
+ {
+  "page": "/masterclass/ki-salesforce/",
   "pageviews": 20,
   "visits": 0
  },

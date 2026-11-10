@@ -4950,6 +4950,13 @@
  },
  {
   "day": "2026-11-09",
+  "query": "agentforce",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 33.3
+ },
+ {
+  "day": "2026-11-09",
   "query": "field engineer scheduling",
   "clicks": 0,
   "impressions": 4,
@@ -4964,10 +4971,10 @@
  },
  {
   "day": "2026-11-09",
-  "query": "agentforce",
+  "query": "service pro vs ptc servicemax",
   "clicks": 0,
-  "impressions": 3,
-  "position": 38.7
+  "impressions": 4,
+  "position": 7.5
  },
  {
   "day": "2026-11-09",
@@ -4975,6 +4982,13 @@
   "clicks": 0,
   "impressions": 3,
   "position": 29
+ },
+ {
+  "day": "2026-11-09",
+  "query": "kommunikationsplan",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 94.3
  },
  {
   "day": "2026-11-09",
@@ -5048,10 +5062,24 @@
  },
  {
   "day": "2026-11-09",
-  "query": "kommunikationsplan",
+  "query": "nearshore teamerweiterung",
   "clicks": 0,
   "impressions": 2,
-  "position": 92.5
+  "position": 78.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 58.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "salesforce commerce product data",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 86
  },
  {
   "day": "2026-11-09",
@@ -5059,13 +5087,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 87.5
- },
- {
-  "day": "2026-11-09",
-  "query": "service pro vs ptc servicemax",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 7.5
  },
  {
   "day": "2026-11-09",
@@ -5094,6 +5115,13 @@
   "clicks": 0,
   "impressions": 2,
   "position": 5.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
  },
  {
   "day": "2026-11-09",
@@ -5335,13 +5363,6 @@
  },
  {
   "day": "2026-11-09",
-  "query": "nearshore teams",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 59
- },
- {
-  "day": "2026-11-09",
   "query": "salesforce agentforce",
   "clicks": 0,
   "impressions": 1,
@@ -5356,10 +5377,24 @@
  },
  {
   "day": "2026-11-09",
-  "query": "salesforce commerce product data",
+  "query": "salesforce architektur klagenfurt",
   "clicks": 0,
   "impressions": 1,
-  "position": 76
+  "position": 20
+ },
+ {
+  "day": "2026-11-09",
+  "query": "salesforce architektur salzburg",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 49
+ },
+ {
+  "day": "2026-11-09",
+  "query": "salesforce b2b commerce sap",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
  },
  {
   "day": "2026-11-09",
@@ -5374,6 +5409,13 @@
   "clicks": 0,
   "impressions": 1,
   "position": 76
+ },
+ {
+  "day": "2026-11-09",
+  "query": "sap order in mulesoft",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
  },
  {
   "day": "2026-11-09",
@@ -5472,5 +5514,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 18
+ },
+ {
+  "day": "2026-11-10",
+  "query": "key user training",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 53
  }
 ]

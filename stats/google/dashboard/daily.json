@@ -92,7 +92,13 @@
  {
   "day": "2026-11-09",
   "clicks": 2,
-  "impressions": 161,
-  "position": 32.4
+  "impressions": 195,
+  "position": 31.6
+ },
+ {
+  "day": "2026-11-10",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 17
  }
 ]
