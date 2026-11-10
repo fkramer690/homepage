@@ -20,17 +20,17 @@ faq:
   - q: "Ist SIForce der offizielle neue Name von AIforce?"
     a: "Bisher nicht belegt. Salesforce Ben berichtet über einen Post von Marc Benioff auf X vom 9. Oktober 2026, fand aber keine offizielle Ankündigung. Bis zum 27. Oktober 2026 habe ich kein Salesforce-Dokument mit dem Namen SIForce gefunden; ich schreibe deshalb weiter AIforce."
   - q: "Was ändert das neue Partnerprogramm für meinen Implementierungspartner?"
-    a: "Laut Salesforce-Meldung vom März 2026 gibt es zwei Stufen, Summit und Select, und 28 Kompetenzen statt 170 Auszeichnungen. Anreize hängen an aktivem Verbrauch statt an Lizenzen, und Agentforce-Fähigkeit muss in einer Sandbox nachgewiesen werden. Ihr Partner hat damit ein Interesse daran, dass Ihre Agenten live gehen und viel genutzt werden."
+    a: "Laut Salesforce-Meldung vom März 2026 gibt es zwei Stufen, Summit und Select, und 28 Kompetenzen statt 170 Auszeichnungen. Anreize richten sich nach aktivem Verbrauch statt nach Lizenzen, und Agentforce-Fähigkeit muss in einer Sandbox nachgewiesen werden. Ihr Partner hat damit ein Interesse daran, dass Ihre Agenten in Produktion gehen und viel genutzt werden."
   - q: "Muss mein Partner im FDE Partner Network sein?"
     a: "Nein. Das Netzwerk ist eine exklusive Auswahl, angeführt von großen Beratungen wie Accenture und Deloitte. Für einen Mittelständler zählt mehr, ob der Partner Agenten in vergleichbaren Prozessen in Produktion gebracht hat und das ERP-Umfeld eines Herstellers kennt."
 draft: false
 ---
 
-„SI / AI Force“ hat im Herbst 2026 zwei Bedeutungen. AIforce ist die Schicht, die Salesforce am 15. September 2026 vorgestellt hat, damit Daten und Workflows aus Claude, Slack und Lightning nutzbar werden. Die Umbenennung in SIForce kennt bisher nur die Sekundärpresse, ein Salesforce-Dokument dazu fehlt. SI steht außerdem für Systemintegrator, und dessen Anreize hat Salesforce neu geordnet: Partner verdienen an Verbrauch und an Agenten in Produktion. Für Hersteller heißt das: AIforce als Namen behalten, klein pilotieren und den Partner an Ergebnissen, Kostenobergrenzen und klaren KI-Regeln messen.
+„SI / AI Force“ hat im Herbst 2026 zwei Bedeutungen. AIforce ist die Schicht, die Salesforce am 15. September 2026 vorgestellt hat, damit Daten und Workflows aus Claude, Slack und Lightning nutzbar werden. Über die Umbenennung in SIForce berichtet bisher nur die Sekundärpresse, ein Salesforce-Dokument dazu fehlt. SI steht außerdem für Systemintegrator, und dessen Anreize hat Salesforce neu geordnet: Partner verdienen an Verbrauch und an Agenten in Produktion. Für Hersteller heißt das: AIforce als Namen behalten, klein pilotieren und den Partner an Ergebnissen, Kostenobergrenzen und klaren KI-Regeln messen.
 
 ## Was bedeutet „SI / AI Force“?
 
-Wer im Oktober 2026 nach „SI Force“ oder „AI Force“ fragt, meint meistens eine von zwei Sachen, oft beide durcheinander:
+Wer im Oktober 2026 nach „SI Force“ oder „AI Force“ fragt, meint meistens eines von zwei Themen und wirft oft beide durcheinander:
 
 | Lesart | Was gemeint ist | Wer davon betroffen ist |
 |---|---|---|
@@ -41,7 +41,7 @@ Beide hängen zusammen. Ihr Partner soll die neue Schicht liefern, und Salesforc
 
 ## AIforce: die Interface-Schicht über Agentforce
 
-Salesforce beschreibt AIforce als „a live interface layer that brings the full power of Salesforce to wherever people and agents work“ ([Ankündigung vom 15. September 2026](https://www.salesforce.com/news/stories/aiforce-announcement/)). Im Architekturbild liegt AIforce über Data 360, Customer 360 und Agentforce. Anfragen laufen über die bestehenden Berechtigungen des Nutzers, ein neues Berechtigungsmodell gibt es laut Salesforce nicht. Der Modellanbieter soll Geschäftsdaten nicht speichern.
+Salesforce beschreibt AIforce als „a live interface layer that brings the full power of Salesforce to wherever people and agents work“ ([Ankündigung vom 15. September 2026](https://www.salesforce.com/news/stories/aiforce-announcement/)). Im Architekturbild liegt AIforce über Data 360, Customer 360 und Agentforce. Anfragen nutzen die bestehenden Berechtigungen des Nutzers, ein neues Berechtigungsmodell gibt es laut Salesforce nicht. Der Modellanbieter soll Geschäftsdaten nicht speichern.
 
 | Bestandteil | Inhalt | Stand laut Salesforce |
 |---|---|---|
@@ -50,7 +50,7 @@ Salesforce beschreibt AIforce als „a live interface layer that brings the full
 | Agentforce Coworker | KI-Teammitglied in Lightning | verfügbar, laut Salesforce 100.000 Aktivierungen in 35 Tagen |
 | Headless Toolkit | MCPs, APIs, Plugins, Skills und Entwicklerwerkzeuge | ohne Statusangabe |
 
-Für einen Hersteller ist das heute vor allem ein Vertriebsthema. Die 37 Skills sind Vertriebs-Skills, Aftersales und Außendienst (Field Service) haben noch nichts zu testen. Zu den Kosten schreibt Salesforce selbst: „Pricing and packaging are subject to change.“ Die [Flex Credits Rate Card vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) führt den Zähler Headless Platform Interactions für agentische Zugriffe weiter mit „TBA“. Wie Externe über MCP auf Ihre Org zugreifen, beschreibe ich in [Kapitel 3](../mcp-und-schnittstellen/), die Kostenseite in [Kapitel 7](../kosten-und-token/).
+Für einen Hersteller ist das heute vor allem ein Vertriebsthema. Die 37 Skills sind Vertriebs-Skills, Für Aftersales und Außendienst (Field Service) gibt es noch nichts zu testen. Zu den Kosten schreibt Salesforce selbst: „Pricing and packaging are subject to change.“ Die [Flex Credits Rate Card vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) führt den Zähler Headless Platform Interactions für agentische Zugriffe weiter mit „TBA“. Wie Externe über MCP auf Ihre Org zugreifen, beschreibe ich in [Kapitel 3](../mcp-und-schnittstellen/), die Kostenseite in [Kapitel 7](../kosten-und-token/).
 
 Eine Unterscheidung spart viele Missverständnisse in Workshops. In der [Claudeforce-Meldung vom 27. August 2026](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) ist Claude ein Reasoning-Modell der Atlas Reasoning Engine und Standardmodell in Agentforce Vibes, Agentforce Coworker und Slack. Das ist Claude in Salesforce. Salesforce in Claude ist die Gegenrichtung: CRM-Daten erscheinen in der Claude-App Ihrer Mitarbeitenden. Für den Datenschutz sind das zwei getrennte Prüfungen. Was die IT-Leitung konkret tun sollte, steht im Artikel [AIforce: Salesforce in Claude und Slack erklärt](../../../blog/aiforce-salesforce-in-claude-und-slack/).
 
@@ -62,7 +62,7 @@ Salesforce Ben beschreibt die Namensfolge als Headless 360 zur TDX im April, AIf
 
 Belegt ist nur ein Post. Am 9. Oktober 2026 schrieb Marc Benioff auf X: „The era of Super Intelligence is here. AIForce is officially SIForce.“ Den Post selbst konnte ich nicht öffnen. Die Umbenennung stützt sich deshalb allein auf Sekundärpresse. [Salesforce Ben berichtete am 12. Oktober](https://www.salesforceben.com/salesforce-renames-aiforce-to-siforce-after-trump-order/), es gebe offenbar keine offizielle Ankündigung von Salesforce, und man habe um eine Stellungnahme gebeten. Bis zum 27. Oktober 2026 habe ich weder eine Pressemitteilung noch einen Hilfeartikel von Salesforce gefunden, der SIForce verwendet.
 
-Der Anlass ist dagegen als Primärquelle nachlesbar. Die [Executive Order 14434](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/) vom 29. September 2026 weist die Ministerien und Behörden der US-Exekutive an, in eigenen Dokumenten „Super Intelligence“ statt „Artificial Intelligence“ zu schreiben. Bestehende Verordnungen bleiben unverändert, einklagbare Rechte entstehen nicht, private Unternehmen kommen nicht vor. Salesforce musste also nichts umbenennen, die Entscheidung war freiwillig. Dass US-Bundesbehörden Salesforce-Kunden sind und künftig „SI“ schreiben müssen, ist ein naheliegendes Motiv, aber meine Vermutung.
+Der Anlass ist dagegen als Primärquelle nachlesbar. Die [Executive Order 14434](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/) vom 29. September 2026 weist die Ministerien und Behörden der US-Exekutive an, in eigenen Dokumenten „Super Intelligence“ statt „Artificial Intelligence“ zu schreiben. Bestehende Verordnungen bleiben unverändert, einklagbare Rechte entstehen nicht, private Unternehmen werden nicht erwähnt. Salesforce musste also nichts umbenennen, die Entscheidung war freiwillig. Dass US-Bundesbehörden Salesforce-Kunden sind und künftig „SI“ schreiben müssen, ist ein naheliegendes Motiv, aber meine Vermutung.
 
 ```zeitleiste
 2026-04 | Headless 360 zur TDX, laut Salesforce Ben
@@ -80,11 +80,11 @@ Die zweite Lesart betrifft Ihren Implementierungspartner. Salesforce hat das [Pa
 
 - Zwei Stufen, Summit und Select.
 - 28 Kernkompetenzen, bisher waren es 170 Auszeichnungen, darunter die stärker nachgefragten für Agentforce und Data 360.
-- Anreize hängen an aktivem Verbrauch statt an bereitgestellten Lizenzen.
+- Anreize richten sich nach aktivem Verbrauch statt nach bereitgestellten Lizenzen.
 - Agentforce-Fähigkeit wird in einer Sandbox nachgewiesen, nicht nur per Wissenstest.
 - KI-Governance und Sicherheitsvorgaben sind Pflicht.
 
-Ein Startdatum für die neuen Stufen nennt die Meldung nicht. Am 15. April 2026 folgte das [Forward Deployed Engineer Partner Network](https://www.salesforce.com/news/stories/salesforce-launches-forward-deployed-engineer-partner-network-announcement/), kurz FDE-Netzwerk. Es ist eine exklusive Auswahl mit Accenture und Deloitte als Launch-Partnern, dazu Capgemini, Cognizant, IBM Consulting, KPMG, PwC, Slalom, TCS und kleinere Regionalfirmen. Die Partner bekommen einen direkten Draht zu den Produktteams und Einblick in die Roadmap. Salesforce knüpft ihre Anreize daran, dass Agenten in Produktion gehen, und nennt Branchenwissen ausdrücklich als Kriterium, darunter Manufacturing. Die Aussage, diese Firmen hätten ein Drittel aller erfolgreichen Agentforce-Einführungen getragen, ist Salesforces eigene Zahl ohne offengelegte Methode.
+Ein Startdatum für die neuen Stufen nennt die Meldung nicht. Am 15. April 2026 folgte das [Forward Deployed Engineer Partner Network](https://www.salesforce.com/news/stories/salesforce-launches-forward-deployed-engineer-partner-network-announcement/), kurz FDE-Netzwerk. Es ist eine exklusive Auswahl mit Accenture und Deloitte als Launch-Partnern, dazu Capgemini, Cognizant, IBM Consulting, KPMG, PwC, Slalom, TCS und kleinere Regionalfirmen. Die Partner erhalten direkten Zugang zu den Produktteams und Einblick in die Roadmap. Salesforce knüpft ihre Anreize daran, dass Agenten in Produktion gehen, und nennt Branchenwissen ausdrücklich als Kriterium, darunter Manufacturing. Die Aussage, diese Firmen hätten ein Drittel aller erfolgreichen Agentforce-Einführungen getragen, ist Salesforces eigene Zahl ohne offengelegte Methode.
 
 ### Was die neuen Anreize für Sie als Kunde bedeuten
 
@@ -100,7 +100,7 @@ contra: Wo der Konflikt liegt
 - Drei Aktionen statt einer sind für Sie teurer, für den Partner kein Nachteil
 ```
 
-Dazu kommt, dass Partner selbst mit Coding-Agenten bauen. Das verkürzt Arbeit, die bisher nach Stunden abgerechnet wurde. Ob deshalb Festpreis oder ergebnisbasierte Verträge besser passen, untersuche ich in [Festpreis statt Aufwand](../../../blog/festpreis-statt-aufwand-ki-salesforce/). Was im Vertrag stehen muss, wenn ein Partner mit KI programmiert, also Offenlegung, Datenumgang, Rechte am Code, kein Zugriff auf Produktion und Review, steht in [Partner mit KI-Coding: Regeln für den Vertrag](../../../blog/partner-ki-coding-regeln-vertrag/).
+Hinzu kommt, dass Partner selbst mit Coding-Agenten bauen. Das verkürzt Arbeit, die bisher nach Stunden abgerechnet wurde. Ob deshalb Festpreis oder ergebnisbasierte Verträge besser passen, untersuche ich in [Festpreis statt Aufwand](../../../blog/festpreis-statt-aufwand-ki-salesforce/). Was im Vertrag stehen muss, wenn ein Partner mit KI programmiert, also Offenlegung, Datenumgang, Rechte am Code, kein Zugriff auf Produktion und Review, steht in [Partner mit KI-Coding: Regeln für den Vertrag](../../../blog/partner-ki-coding-regeln-vertrag/).
 
 ## Rechenbeispiel: zwei Angebote für einen Händleragenten
 

@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-In autumn 2026 "SI / AI Force" means two things. AIforce is the layer Salesforce launched on 15 September 2026 to make its data and workflows usable from Claude, Slack and Lightning. The rename to SIForce is so far known only from secondary press; no Salesforce document confirms it. SI also stands for system integrator, and Salesforce has rewired those incentives: partners now earn on consumption and on agents in production. For manufacturers that means keeping the name AIforce, piloting small, and measuring partners on outcomes, cost caps and clear AI rules.
+In autumn 2026 "SI / AI Force" means two things. AIforce is the layer Salesforce launched on 15 September 2026 to make its data and workflows usable from Claude, Slack and Lightning. The rename to SIForce is so far known only from secondary press; no Salesforce document confirms it. SI also stands for system integrator, and Salesforce has restructured those incentives: partners now earn on consumption and on agents in production. For manufacturers that means keeping the name AIforce, piloting small, and measuring partners on outcomes, cost caps and clear AI rules.
 
 ## What does "SI / AI Force" mean?
 
@@ -41,7 +41,7 @@ The two are linked. Your partner is expected to deliver the new layer, and since
 
 ## AIforce: the interface layer above Agentforce
 
-Salesforce describes AIforce as "a live interface layer that brings the full power of Salesforce to wherever people and agents work" ([announcement of 15 September 2026](https://www.salesforce.com/news/stories/aiforce-announcement/)). In Salesforce's architecture picture AIforce sits above Data 360, Customer 360 and Agentforce. Requests run on the user's existing permissions; Salesforce says there is no new permissions model. The model provider is not supposed to retain business data.
+Salesforce describes AIforce as "a live interface layer that brings the full power of Salesforce to wherever people and agents work" ([announcement of 15 September 2026](https://www.salesforce.com/news/stories/aiforce-announcement/)). In Salesforce's architecture picture AIforce sits above Data 360, Customer 360 and Agentforce. Requests use the user's existing permissions; Salesforce says there is no new permissions model. The model provider is not supposed to retain business data.
 
 | Component | Contents | Status according to Salesforce |
 |---|---|---|
@@ -84,7 +84,7 @@ The second reading concerns your implementation partner. Salesforce [rebuilt its
 - Agentforce capability is proven through sandbox validation, not just a knowledge test.
 - AI governance and security guardrails are required.
 
-The announcement gives no start date for the new tiers. On 15 April 2026 Salesforce added the [Forward Deployed Engineer Partner Network](https://www.salesforce.com/news/stories/salesforce-launches-forward-deployed-engineer-partner-network-announcement/), the FDE network for short. It is an exclusive group with Accenture and Deloitte as launch partners, plus Capgemini, Cognizant, IBM Consulting, KPMG, PwC, Slalom, TCS and smaller regional firms. Members get a direct link to Salesforce's product teams and insight into the roadmap. Salesforce ties their incentives to agents reaching production and names industry depth as a criterion, manufacturing included. The claim that these firms drove one third of all successful Agentforce implementations is Salesforce's own figure with no published method.
+The announcement gives no start date for the new tiers. On 15 April 2026 Salesforce added the [Forward Deployed Engineer Partner Network](https://www.salesforce.com/news/stories/salesforce-launches-forward-deployed-engineer-partner-network-announcement/), the FDE network for short. It is an exclusive group with Accenture and Deloitte as launch partners, plus Capgemini, Cognizant, IBM Consulting, KPMG, PwC, Slalom, TCS and smaller regional firms. Members get direct access to Salesforce's product teams and insight into the roadmap. Salesforce ties their incentives to agents reaching production and names industry depth as a criterion, manufacturing included. The claim that these firms drove one third of all successful Agentforce implementations is Salesforce's own figure with no published method.
 
 ### What the new incentives mean for you as a client
 
@@ -100,7 +100,7 @@ contra: Where the conflict lies
 - Three actions instead of one cost you more and the partner nothing
 ```
 
-On top of that, partners now build with coding agents themselves. That shortens work that used to be billed by the hour. Whether fixed price or outcome-based contracts fit better as a result is the subject of [fixed price vs. time and materials with AI](../../../blog/fixed-price-vs-time-and-materials-ai/). What belongs in the contract when a partner codes with AI, meaning disclosure, data handling, IP, no production access and review, is in [partners using AI coding: contract rules](../../../blog/partners-using-ai-coding-contract-rules/).
+In addition, partners now build with coding agents themselves. That shortens work that used to be billed by the hour. Whether fixed price or outcome-based contracts fit better as a result is the subject of [fixed price vs. time and materials with AI](../../../blog/fixed-price-vs-time-and-materials-ai/). What belongs in the contract when a partner codes with AI, meaning disclosure, data handling, IP, no production access and review, is in [partners using AI coding: contract rules](../../../blog/partners-using-ai-coding-contract-rules/).
 
 ## Worked example: two offers for a dealer agent
 

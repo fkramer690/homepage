@@ -22,7 +22,7 @@ faq:
   - q: "How many products can a B2B Commerce store search?"
     a: "According to the Salesforce limits page, a store holds up to 4 million products, of which 1 million are supported by native search. If you need more, talk to your Salesforce account team or use a third-party search provider."
   - q: "Do I need one store per country?"
-    a: "Usually not. One store supports up to 25 languages, and assortment and prices per country run through buyer groups. A separate store makes sense when the brand, category tree, checkout or the ERP behind it really differ."
+    a: "Usually not. One store supports up to 25 languages, and assortment and prices per country are controlled through buyer groups. A separate store makes sense when the brand, category tree, checkout or the ERP behind it really differ."
   - q: "How do dealers find old part numbers in the store?"
     a: "Through a searchable text field on the current product that holds every predecessor and cross-reference number. At 100 per store, synonym rules are too few for numbers and better used for terms like O-ring and seal."
   - q: "Can B2B Commerce filter spare parts by serial number?"
@@ -30,7 +30,7 @@ faq:
 draft: false
 ---
 
-In Salesforce B2B Commerce, two separate mechanisms decide whether a dealer orders the right spare part. Buyer groups and entitlement policies set visibility: a buyer account belongs to buyer groups, which get products and price books assigned. Product data and search settings set findability: what is not in the product record, no search will find. Both sides have hard limits worth knowing before design, such as 2,000 buyer groups per product in the search index, one catalog per store and 1 million searchable products. My advice: few buyer groups by country, tier and brand, one owner per product field, and the entitlement concept on one page before any data load.
+In Salesforce B2B Commerce, two separate mechanisms decide whether a dealer orders the right spare part. Buyer groups and entitlement policies set visibility: a buyer account belongs to buyer groups that hold products and price books. Product data and search settings set findability: what is not in the product record, no search will find. Both sides have hard limits worth knowing before design, such as 2,000 buyer groups per product in the search index, one catalog per store and 1 million searchable products. My advice: few buyer groups by country, tier and brand, one owner per product field, and the entitlement concept on one page before any data load.
 
 ## How does B2B Commerce decide who sees which product?
 
@@ -45,7 +45,7 @@ title: Which standard objects form the chain?
 - **BuyerGroupPricebook:** attaches price books to the buyer group.
 ```
 
-Visibility and price therefore hang on the same groups. If you cut buyer groups for the assortment only, you find out in [chapter 3](../prices-cart-checkout/) that prices would need a different split. That is why I design both together. What B2B Commerce is and what it costs is covered in [chapter 1](../b2b-commerce-worth-it-overview/).
+Visibility and price therefore depend on the same groups. If you cut buyer groups for the assortment only, you find out in [chapter 3](../prices-cart-checkout/) that prices would need a different split. That is why I design both together. What B2B Commerce is and what it costs is covered in [chapter 1](../b2b-commerce-worth-it-overview/).
 
 ## The limits that shape the design
 
@@ -64,10 +64,10 @@ Salesforce documents the limits on separate pages for [entitlements](https://dev
 | Stores per org | 100 | hard |
 | Price books per store | 5 | hard |
 
-The 2,000 buyer groups per product have the nastiest effect.
+The limit of 2,000 buyer groups per product has the most unpleasant effect.
 
 ```hinweis achtung
-According to Salesforce, search indexing includes only the first 2,000 buyer groups of a product, and the limit is not enforced when you load data. So the import runs through, and some dealers simply stop finding the part.
+According to Salesforce, search indexing includes only the first 2,000 buyer groups of a product, and the limit is not enforced when you load data. So the import completes without errors, and some dealers simply stop finding the part.
 ```
 
 The buyer group page also has a note with a different value than its table; I plan with the 20 from the table.
@@ -118,11 +118,11 @@ Three rules follow for parts catalogs:
 2. **Synonyms are for words.** 100 rules cover "O-ring" and "seal ring", not 8,000 predecessor numbers.
 3. **Rebuild the index after every change.** Trailhead names changed searchable fields, products, categories and entitlement policies as reasons to rebuild the search index.
 
-Salesforce added more in 2026. With its [June 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) release, Salesforce describes B2B search where buyers describe a part in their own words instead of knowing its name or SKU. July brought boost and bury, the order of filter groups and search analytics through Data Cloud with click-through, conversion and zero-result searches. After go-live, those zero-result searches are the best list of missing product data. Setup and limits in detail are in [B2B Commerce search: finding parts by part number](../../../blog/b2b-commerce-search-part-numbers/).
+Salesforce extended search in 2026. With its [June 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) release, Salesforce describes B2B search where buyers describe a part in their own words instead of knowing its name or SKU. July brought boost and bury, the order of filter groups and search analytics through Data Cloud with click-through, conversion and zero-result searches. After go-live, those zero-result searches are the best list of missing product data. Setup and limits in detail are in [B2B Commerce search: finding parts by part number](../../../blog/b2b-commerce-search-part-numbers/).
 
 ## One store or several?
 
-Most manufacturers need one store per brand, or per legal unit with its own checkout, and buyer groups for everything else. Countries and dealer tiers rarely justify their own store: one store supports up to 25 languages, and assortment and prices per country run through buyer groups and their price books.
+Most manufacturers need one store per brand, or per legal unit with its own checkout, and buyer groups for everything else. Countries and dealer tiers rarely justify their own store: one store supports up to 25 languages, and assortment and prices per country are controlled through buyer groups and their price books.
 
 I plan a second store in four cases:
 
@@ -133,13 +133,13 @@ I plan a second store in four cases:
 | Another checkout or another ERP | Extensions for pricing, inventory or order creation are mapped per store. |
 | Different buyers | End customers next to dealers get their own D2C store with shared product data. |
 
-The license sets an earlier limit than the 100 stores per org. According to the [pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/), Growth Edition includes six storefronts and Advanced Edition ten. And every extra store brings its own pages, translations and its own regression test after each of the three Salesforce releases a year. The decision with an example is in [one B2B store or several](../../../blog/b2b-stores-countries-brands-dealers/).
+The license caps the number of stores well before the limit of 100 stores per org. According to the [pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/), Growth Edition includes six storefronts and Advanced Edition ten. And every extra store brings its own pages, translations and its own regression test after each of the three Salesforce releases a year. The decision with an example is in [one B2B store or several](../../../blog/b2b-stores-countries-brands-dealers/).
 
 ## Parts per machine: where entitlements stop
 
 "May this dealer buy this part?" is what entitlements answer. "Does this part fit this machine?" they cannot answer, because a serial number does not appear anywhere in the chain. One buyer group per machine fails on the limits: a standard screw in 6,000 machines would sit far above 2,000 groups, and a dealer with 40 machines would need more than 20 groups.
 
-The robust route is a machine page. A custom Lightning web component shows the machines registered to the dealer's account and, for each one, the spare-relevant positions, from Salesforce assets or live from PLM. Price and the right to buy still come from entitlements and price books. Filtering the normal search per machine is possible through endpoint extensions such as `Commerce_Endpoint_Search_ProductSearch` from the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html), but the [Apex reference](https://developer.salesforce.com/docs/commerce/salesforce-commerce/references/comm-apex-reference/BaseEndpointExtension.html) still labels the base class as beta. I would wait with that.
+The robust route is a machine page. A custom Lightning web component shows the machines registered to the dealer's account and, for each one, the items relevant for spare parts, from Salesforce assets or live from PLM. Price and the right to buy still come from entitlements and price books. Filtering the normal search per machine is possible through endpoint extensions such as `Commerce_Endpoint_Search_ProductSearch` from the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html), but the [Apex reference](https://developer.salesforce.com/docs/commerce/salesforce-commerce/references/comm-apex-reference/BaseEndpointExtension.html) still labels the base class as beta. I would hold off on that.
 
 ```ablauf
 sf: Dealer account, Machine as asset, Machine page, Entitlements and prices
@@ -156,9 +156,9 @@ The data matters more than the component: without an as-built parts list per ser
 
 A machine builder sells spare parts through 800 dealers in 12 countries, with three dealer tiers and two brands. All details are assumptions.
 
-- Country and tier give 36 buyer groups, the brands two more. Each dealer account sits in two groups, well below 20, and a common part is entitled to 36 groups instead of 800.
+- Country and tier give 36 buyer groups, the brands two more. Each dealer account belongs to two groups, well below 20, and a common part is entitled to 36 groups instead of 800.
 - Both brands have their own category trees, so two stores. That fits into the six storefronts of Growth Edition.
-- 30,000 active spare parts come from SAP, 8,000 of them with predecessor numbers. Those go into a searchable field; synonym rules stay for terms.
+- 30,000 active spare parts come from SAP, 8,000 of them with predecessor numbers. Those go into a searchable field, and synonym rules are kept for terms.
 - Parts per machine start with a machine page for the three most important machine series.
 
 ## Write the entitlement concept on one page
@@ -171,4 +171,4 @@ Put the entitlement concept on a single page before the first data load:
 - the volumes of today and in three years, measured against the limits above,
 - 200 real search terms from dealers, taken from emails and phone notes and tested against a test store.
 
-The ERP fields that feed memberships and search then go into the interface list from [chapter 4](../erp-integration-stock-orders/). I review such concepts before a partner builds as part of [Salesforce architecture](../../../services/salesforce-architecture/); which data comes from which system is part of [Salesforce integration](../../../services/salesforce-integration/). All chapters are on the [overview page](../).
+The ERP fields that feed memberships and search are then added to the interface list from [chapter 4](../erp-integration-stock-orders/). I review such concepts before a partner builds as part of [Salesforce architecture](../../../services/salesforce-architecture/); which data comes from which system is part of [Salesforce integration](../../../services/salesforce-integration/). All chapters are on the [overview page](../).
