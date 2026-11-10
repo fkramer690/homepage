@@ -18,7 +18,7 @@ faq:
   - q: "Welche Lizenz brauchen Kunden für ein Portal auf der Manufacturing Cloud?"
     a: "Salesforce bietet Customer Community Plus for Manufacturing für Kunden und Partner Community for Manufacturing für Händler und Lieferanten. In meinem Projekt hatten die Kunden Customer Community Plus for Manufacturing. Was genau eine Lizenz abdeckt, lassen Sie sich im Angebot schriftlich bestätigen."
   - q: "Können Kunden ihre Sales Agreements im Portal sehen?"
-    a: "Ja, in meinem Projekt sahen Kunden ihre Sales Agreements in einer reduzierten Listenansicht, mit weniger Details als interne Mitarbeiter. Die Daten blieben im Standardobjekt Sales Agreement, angezeigt hat sie eine Lightning Web Component im Portal. Interne Felder wie Marge und Kosten bleiben dabei ausgeblendet."
+    a: "Ja, in meinem Projekt sahen Kunden ihre Sales Agreements in einer reduzierten Listenansicht, mit weniger Details als interne Mitarbeiter. Die Daten blieben im Standardobjekt Sales Agreement und wurden im Portal über eine Lightning Web Component angezeigt. Interne Felder wie Marge und Kosten bleiben dabei ausgeblendet."
   - q: "Können Kunden ihre Stammdaten im Portal selbst ändern?"
     a: "Für ausgewählte Felder ja, etwa die Rechnungsadresse. Die Änderung wird zuerst in Salesforce gespeichert und dann ins ERP synchronisiert. Welche Felder Kunden ändern dürfen, sollte eine Liste festlegen, die IT und Fachbereich gemeinsam pflegen."
 draft: false
@@ -35,10 +35,10 @@ Im Projekt hatte das Portal zwei Arten von Funktionen. Kunden konnten sehen:
 - **Ihre Stammdaten**, etwa Adressen.
 - **Ihre Cases**, also Anfragen und Reklamationen an den Service.
 
-Und Kunden konnten handeln:
+Außerdem konnten Kunden selbst aktiv werden:
 
 - **Neue Produkte und Preise anfragen.** Die Anfrage landet im Angebotsprozess, den ich in [Teil 2: Vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/) beschreibe.
-- **Bestellungen aufgeben.** Eine einfache Auftragserfassung geht im Portal. Sollen Kunden einen großen Katalog mit ihren eigenen Preisen, Warenkorb und Checkout nutzen, ist das meist ein B2B-Shop; wann ein Portal reicht, steht in [Kapitel 1 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/).
+- **Bestellungen aufgeben.** Eine einfache Auftragserfassung ist im Portal möglich. Sollen Kunden einen großen Katalog mit eigenen Preisen sowie Warenkorb und Checkout nutzen, ist das meist ein B2B-Shop; wann ein Portal reicht, steht in [Kapitel 1 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/).
 - **Bestimmte Stammdaten selbst pflegen**, etwa die Rechnungsadresse.
 
 Für den Hersteller hat das einen einfachen Nutzen: Fragen wie „Wie viel habe ich von meinem Rahmenvertrag schon abgerufen?“ oder „Wo steht meine Bestellung?“ beantwortet der Kunde selbst, ohne E-Mail an den Innendienst. Damit das trägt, müssen die Zahlen im Portal stimmen. Woher die Ist-Mengen im Sales Agreement kommen, behandle ich in [Teil 3: Sales Agreements, fehlende Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/).
@@ -54,7 +54,7 @@ Salesforce bietet für die Manufacturing Cloud zwei Portallizenzen an. Laut [Sal
 
 In der Hilfe steht außerdem, dass Customer Community Plus for Manufacturing keine Leads, Opportunities, Kampagnen und Angebote mit externen Nutzern teilt. Sales Agreements nennt die Hilfe für diese Lizenz nicht ausdrücklich. Die [Permission Set License für Sales Agreements in Experience Cloud](https://help.salesforce.com/s/articleView?id=ind.mfg_experience_cloud_psl.htm&language=en_US&type=5) ist für Partnernutzer dokumentiert.
 
-In meinem Projekt hatten die Kunden Customer Community Plus for Manufacturing und sahen ihre Sales Agreements in einer reduzierten Listenansicht. Technisch blieben die Daten im Standardobjekt Sales Agreement, angezeigt hat sie eine Lightning Web Component, die wir für das Portal gebaut haben. Das ist ein anderer Weg als der, den die Hilfe für Partner beschreibt: Sie arbeiten direkt auf Standardseiten mit Sales Agreements, mit eigener Permission Set License. Die Hilfe beschreibt den Standardzugriff pro Lizenz, nicht, was eine eigene Komponente anzeigen kann. Welcher Weg zu Ihrem Vertrag passt, würde ich nicht allein entscheiden.
+In meinem Projekt hatten die Kunden Customer Community Plus for Manufacturing und sahen ihre Sales Agreements in einer reduzierten Listenansicht. Technisch blieben die Daten im Standardobjekt Sales Agreement und wurden über eine Lightning Web Component angezeigt, die wir für das Portal gebaut haben. Das ist ein anderer Weg als der, den die Hilfe für Partner beschreibt: Partner arbeiten direkt auf Standardseiten mit Sales Agreements und eigener Permission Set License. Die Hilfe beschreibt den Standardzugriff pro Lizenz, nicht, was eine eigene Komponente anzeigen kann. Welcher Weg zu Ihrem Vertrag passt, würde ich nicht allein entscheiden.
 
 ```hinweis offen
 Wenn Kunden Sales Agreements im Portal sehen sollen, gehört das als Anforderung ins Angebot, mit dem geplanten Weg (Standardseiten oder eigene Komponente) und schriftlicher Bestätigung von Salesforce, dass die gewählte Lizenz das abdeckt.
@@ -64,11 +64,11 @@ Was Portallizenzen kosten und wie sie sich von internen Lizenzen unterscheiden, 
 
 ## Kunden sehen weniger vom Sales Agreement als der Vertrieb
 
-Weniger als interne Mitarbeiter. Im Projekt sahen Kunden ihre Sales Agreements in einer abgespeckten Listenansicht, nicht im Detailgrad, mit dem der Vertrieb arbeitet.
+Im Projekt sahen Kunden ihre Sales Agreements in einer abgespeckten Listenansicht, nicht mit dem Detailgrad, mit dem der Vertrieb arbeitet.
 
 Dafür gibt es einen technischen Grund. Laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_salesagreement.htm) liegen im Sales Agreement Felder wie geplante und tatsächliche Marge in Prozent und geplante und tatsächliche Kosten. Diese Werte gehören zum Vertrag, sind aber nichts, was ein Kunde sehen darf. Dasselbe gilt für interne Prognosen und Notizen des Account Managers.
 
-Ich lege deshalb vor dem Bau eine Liste an, welche Felder des Sales Agreements nach außen gehen. Ein Feld in der Komponente auszublenden reicht nicht: Freigaben und Feldberechtigungen der Portalnutzer müssen es ebenfalls schützen, und eine eigene Komponente muss sie beachten, was ich mit mehreren Kunden-Accounts teste. Bewährt hat sich die Frage, was der Kunde für seine eigene Planung braucht:
+Ich lege deshalb vor dem Bau eine Liste an, welche Felder des Sales Agreements nach außen gehen. Ein Feld in der Komponente auszublenden reicht nicht: Freigaben und Feldberechtigungen der Portalnutzer müssen es ebenfalls schützen. Eine eigene Komponente muss diese Berechtigungen beachten; das teste ich mit mehreren Kunden-Accounts. Bewährt hat sich die Frage, was der Kunde für seine eigene Planung braucht:
 
 - **Was er zugesagt hat:** Produkte, Mengen, Laufzeit, Preise.
 - **Was er schon abgenommen hat:** Ist-Mengen pro Zeitraum.
@@ -88,7 +88,7 @@ Das klingt nach einem Detail, verschiebt aber die Rollen der Systeme. Für Kunde
 
 1. **Eine Liste der Felder, die Kunden ändern dürfen.** Rechnungsadresse ja, Zahlungsbedingungen nein. Die Liste pflegen IT und Fachbereich gemeinsam.
 2. **Eine Richtung pro Feld.** Ein Feld, das der Kunde im Portal ändert, darf nicht gleichzeitig im ERP geändert und zurückgeschrieben werden, sonst überschreiben sich die Systeme gegenseitig.
-3. **Sichtbare Fehler.** Lehnt das ERP eine Änderung ab, etwa weil eine Adresse unvollständig ist, muss das jemand sehen. Sonst zeigt das Portal eine Adresse, die im ERP nie angekommen ist, und die nächste Rechnung geht an die alte.
+3. **Sichtbare Fehler.** Lehnt das ERP eine Änderung ab, etwa weil eine Adresse unvollständig ist, muss das jemand sehen. Sonst zeigt das Portal eine Adresse, die im ERP nie angekommen ist, und die nächste Rechnung geht an die alte Adresse.
 4. **Status für den Kunden.** Manche Änderungen brauchen eine Prüfung, bevor sie gelten, etwa ein neuer Rechnungsempfänger oder eine andere Gesellschaft. Der Kunde sollte sehen, ob eine Änderung offen, übernommen oder abgelehnt ist.
 
 Wie ich das führende System für Kunden, Produkte, Preise und Aufträge festlege, beschreibe ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/).
@@ -110,15 +110,15 @@ Sales Agreement --> Anzeige im Portal
 
 Anfragen nach neuen Produkten oder Preisen gehen einen anderen Weg. Sie landen beim Vertrieb und laufen durch Konfiguration, Angebot und Freigabe. Für den Kunden zählt dabei vor allem, dass er den Stand seiner Anfrage sieht, statt nachzufragen.
 
-Cases sind im Portal der vertrauteste Teil. Hier hilft die Manufacturing Cloud mit Bezügen zu Aufträgen und Assets, die laut Hilfe zur Kundenlizenz gehören. Wie Garantieansprüche über Händler laufen, steht in [Teil 6](../garantieansprueche-haendler-salesforce/).
+Cases sind im Portal der vertrauteste Teil. Hier hilft die Manufacturing Cloud mit Bezügen zu Aufträgen und Assets. Diese gehören laut Hilfe zur Kundenlizenz. Wie Garantieansprüche über Händler laufen, steht in [Teil 6](../garantieansprueche-haendler-salesforce/).
 
 ## Funktionsliste gegen die Lizenz prüfen
 
 Bevor das Portal gebaut wird, klären Sie diese Punkte:
 
 1. **Was sehen und tun Kunden?** Eine Liste der Funktionen: was Kunden nur sehen (Sales Agreements, Bestellungen, Cases) und was sie selbst tun (anfragen, bestellen, Stammdaten pflegen).
-2. **Welche Lizenz deckt das ab?** Schriftlich bestätigt, vor allem für Sales Agreements.
-3. **Welche Felder gehen nach außen?** Für das Sales Agreement und die Stammdaten, ohne Marge und Kosten.
-4. **Welche Daten fließen zurück ins ERP?** Pro Feld eine Richtung und eine Fehlerbehandlung.
+2. **Welche Lizenz deckt das ab?** Lassen Sie sich das schriftlich bestätigen, vor allem für Sales Agreements.
+3. **Welche Felder gehen nach außen?** Legen Sie das für das Sales Agreement und die Stammdaten fest, ohne Marge und Kosten.
+4. **Welche Daten fließen zurück ins ERP?** Legen Sie pro Feld eine Richtung und eine Fehlerbehandlung fest.
 
 Die Funktionsliste aus Punkt 1 lege ich Salesforce vor und lasse mir pro Zeile bestätigen, welche Portallizenz sie abdeckt. Was offen bleibt, kommt nicht ins erste Release.
