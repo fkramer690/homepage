@@ -14,7 +14,7 @@ author: juliane
 tags: [Stakeholder-Analyse, Stakeholder-Matrix, Change Management, Vorlage]
 takeaways:
   - "Ich ordne Gruppen nach Einfluss und Betroffenheit, weil die stark Betroffenen die Veränderung im Alltag umsetzen müssen."
-  - "Die Matrix nach Einfluss und Interesse kann künftige Nutzer unterschätzen, die wenig formellen Einfluss haben, aber über den Erfolg entscheiden."
+  - "Die Matrix nach Einfluss und Interesse übersieht leicht künftige Nutzer, die wenig formellen Einfluss haben, aber über den Erfolg entscheiden."
   - "Eine gute Analyse endet nicht mit der Matrix, sondern mit einer Maßnahme und einer verantwortlichen Person je Gruppe."
   - "Die Analyse ist nie fertig: Haltungen ändern sich mit jeder Entscheidung, deshalb gehört sie in jede Projektphase neu auf den Tisch."
 faq:
@@ -23,15 +23,15 @@ faq:
   - q: "Was ist der Unterschied zwischen Stakeholder-Analyse und Stakeholder-Matrix?"
     a: "Die Stakeholder-Analyse ist das ganze Vorgehen, vom Sammeln der Gruppen bis zu den Maßnahmen. Die Stakeholder-Matrix ist ein Werkzeug darin: ein Raster mit zwei Achsen, in das die Gruppen eingeordnet werden."
   - q: "Wie oft sollte man eine Stakeholder-Analyse aktualisieren?"
-    a: "Mindestens zu jedem Phasenwechsel und nach jeder großen Entscheidung, etwa nach der Auswahl eines Systems oder vor dem Start. In größeren Vorhaben lohnt ein kurzer Blick im monatlichen Steuerkreis."
+    a: "Mindestens zu jedem Phasenwechsel und nach jeder großen Entscheidung, etwa nach der Auswahl eines Systems oder vor dem Start. In größeren Vorhaben lohnt sich ein kurzer Blick im monatlichen Steuerkreis."
   - q: "Wer erstellt die Stakeholder-Analyse?"
-    a: "Meist die Projektleitung oder die Change-Managerin, aber nie allein. Die Einschätzung von Haltung und Einfluss braucht Führungskräfte, die ihre Teams kennen, und den Sponsor, der die Machtverhältnisse im Unternehmen kennt."
+    a: "Meist die Projektleitung oder die Change-Managerin, aber nie allein. Für die Einschätzung von Haltung und Einfluss braucht es Führungskräfte, die ihre Teams kennen, und den Sponsor, der die Machtverhältnisse im Unternehmen kennt."
   - q: "Gibt es eine kostenlose Vorlage für die Stakeholder-Analyse?"
-    a: "Ja, auf dieser Seite als Excel-Datei mit Spalten für Gruppe, Einfluss, Betroffenheit, Haltung, ADKAR-Stufe, Maßnahme und verantwortliche Person, dazu ein ausgefülltes Beispiel."
+    a: "Ja, auf dieser Seite finden Sie eine Excel-Datei mit Spalten für Gruppe, Einfluss, Betroffenheit, Haltung, ADKAR-Stufe, Maßnahme und verantwortliche Person, dazu ein ausgefülltes Beispiel."
 draft: false
 ---
 
-Eine Stakeholder-Analyse hält fest, wer von einer Veränderung betroffen ist, wer Einfluss darauf hat und wie diese Personen und Gruppen dazu stehen. Ihr Ergebnis ist eine Stakeholder-Matrix und, wichtiger, eine Liste von Maßnahmen: Wen binden Sie wie ein, wer kümmert sich darum, und bis wann? In Projekten ordne ich die Gruppen nicht nur nach Einfluss, sondern auch nach Betroffenheit, weil die stark Betroffenen die Veränderung am Ende umsetzen müssen. Eine Vorlage als Excel-Datei mit einem ausgefüllten Beispiel finden Sie weiter unten.
+Eine Stakeholder-Analyse hält fest, wer von einer Veränderung betroffen ist, wer Einfluss darauf hat und wie diese Personen und Gruppen dazu stehen. Ihr Ergebnis ist eine Stakeholder-Matrix und, wichtiger noch, eine Liste von Maßnahmen: Wen binden Sie wie ein, wer kümmert sich darum und bis wann? In Projekten ordne ich die Gruppen nicht nur nach Einfluss, sondern auch nach Betroffenheit, weil die stark Betroffenen die Veränderung am Ende umsetzen müssen. Eine Vorlage als Excel-Datei mit einem ausgefüllten Beispiel finden Sie weiter unten.
 
 ## Was ist eine Stakeholder-Analyse?
 
@@ -47,7 +47,7 @@ Aus den Antworten ergibt sich, wer welche Art von Einbindung braucht. Die Begrif
 
 ## Wie führt man eine Stakeholder-Analyse durch?
 
-Ich gehe in fünf Schritten vor. Der Aufwand ist überschaubar: Für einen ersten Entwurf mit fünf bis zehn Gruppen reicht meist ein halber Tag Workshop mit Sponsor, Projektleitung und den wichtigsten Führungskräften, plus Nacharbeit. In Programmen über Bereiche und Länder werden es schnell mehr Gruppen, und der Workshop liefert Annahmen, die Sie danach in Gesprächen prüfen.
+Ich gehe in fünf Schritten vor. Der Aufwand ist überschaubar: Für einen ersten Entwurf mit fünf bis zehn Gruppen reicht meist ein halber Tag Workshop mit Sponsor, Projektleitung und den wichtigsten Führungskräften, plus Nacharbeit. In bereichs- und länderübergreifenden Programmen werden es schnell mehr Gruppen, und der Workshop liefert Annahmen, die Sie danach in Gesprächen prüfen.
 
 ```schritte
 Gruppen sammeln | 1 Stunde · Projektleitung und Führungskräfte
@@ -92,17 +92,17 @@ Nehmen wir ein Unternehmen, das ein CRM-System wie Salesforce für Vertrieb und 
 | IT-Betrieb | mittel | mittel | unterstützend | Betriebsübergabe planen | IT-Leitung |
 | Controlling | niedrig | mittel | neutral | über neue Berichte informieren | Projektleitung |
 
-Beim Betriebsrat steht „unbekannt“, und das ist ehrlicher als eine Schätzung. Bei technischen Einrichtungen, die geeignet sind, Verhalten oder Leistung der Beschäftigten zu überwachen, hat er in Deutschland ein Mitbestimmungsrecht nach [§ 87 Abs. 1 Nr. 6 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html), deshalb gehört das Gespräch an den Anfang, bevor Aktivitätsberichte und Auswertungen konfiguriert sind. Der Außendienst ist die kritischste Gruppe: stark betroffen, mit genug informellem Einfluss, um das System zu umgehen, und skeptisch. Hier hilft keine Rundmail, sondern die eigene Führungskraft und Kolleginnen und Kollegen als [Key User](../salesforce-key-user-netzwerk/). Und jede Zeile hat eine verantwortliche Person, und das ist selten die Change-Managerin.
+Beim Betriebsrat steht „unbekannt“; das ist ehrlicher als eine Schätzung. Bei technischen Einrichtungen, die geeignet sind, Verhalten oder Leistung der Beschäftigten zu überwachen, hat er in Deutschland ein Mitbestimmungsrecht nach [§ 87 Abs. 1 Nr. 6 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html), deshalb gehört das Gespräch an den Anfang, bevor Aktivitätsberichte und Auswertungen konfiguriert werden. Der Außendienst ist die kritischste Gruppe: stark betroffen, mit genug informellem Einfluss, um das System zu umgehen, und skeptisch. Hier hilft keine Rundmail, sondern die eigene Führungskraft sowie Kolleginnen und Kollegen als [Key User](../salesforce-key-user-netzwerk/). Für jede Zeile ist eine Person verantwortlich, und das ist selten die Change-Managerin.
 
 Die Spalte ADKAR-Stufe habe ich im Beispiel weggelassen, in der Vorlage ist sie enthalten. Sie zeigt, wo eine Gruppe im Moment steht: Fehlt das Bewusstsein, warum sich etwas ändert, oder fehlt das Wissen, wie es geht? Je nach Antwort ist die Maßnahme eine ganz andere. Wie das Modell funktioniert, steht in [Change-Management-Modelle im Vergleich](../change-management-modelle/).
 
-In größeren Vorhaben wächst die Tabelle schnell. Bei einem weltweiten Rollout der Salesforce Sales Cloud mit mehr als 500 Anwenderinnen und Anwendern in den USA, Asien und Europa, den ich begleitet habe, ist jede Gruppe zusätzlich nach Land aufzuteilen, weil Führung, Sprache und Haltung je Land verschieden sind. Bei einer IT-Transformation mit mehr als 20.000 Betroffenen in 19 Ländern arbeitet man mit Gruppen je Funktion und Region, nicht mit Einzelpersonen.
+In größeren Vorhaben wächst die Tabelle schnell. Bei einem weltweiten Rollout der Salesforce Sales Cloud mit mehr als 500 Anwenderinnen und Anwendern in den USA, Asien und Europa, den ich begleitet habe, musste jede Gruppe zusätzlich nach Land aufgeteilt werden, weil Führung, Sprache und Haltung je Land verschieden sind. Bei einer IT-Transformation mit mehr als 20.000 Betroffenen in 19 Ländern arbeitet man mit Gruppen je Funktion und Region, nicht mit Einzelpersonen.
 
 ## Vorlage für die Stakeholder-Analyse
 
 Die [Vorlage als Excel-Datei](../../downloads/stakeholder-analyse-vorlage.xlsx) enthält zwei Blätter: eine leere Tabelle mit allen Spalten und das Beispiel von oben, um die ADKAR-Stufe ergänzt. Die Spalten:
 
-- **Gruppe oder Person:** so fein, dass eine Maßnahme passt.
+- **Gruppe oder Person:** so fein abgegrenzt, dass eine Maßnahme passt.
 - **Was ändert sich:** ein Satz zum Alltag nach der Veränderung.
 - **Betroffenheit und Einfluss:** jeweils 1 bis 3.
 - **Haltung heute:** unterstützend, neutral, skeptisch, ablehnend oder unbekannt.
@@ -117,7 +117,7 @@ Wenn eine Stakeholder-Analyse Namen und Einschätzungen zu einzelnen Personen en
 
 Typisch sind diese:
 
-- **Die Analyse wird einmal gemacht und dann vergessen.** Haltungen ändern sich mit jeder Entscheidung. Wer im Kick-off neutral war, kann nach der Systemauswahl dagegen sein. Schauen Sie sich die Tabelle deshalb zu jedem Phasenwechsel neu an.
+- **Die Analyse wird einmal gemacht und dann vergessen.** Haltungen ändern sich mit jeder Entscheidung. Wer beim Kick-off neutral war, kann nach der Systemauswahl dagegen sein. Schauen Sie sich die Tabelle deshalb zu jedem Phasenwechsel neu an.
 - **Gruppen sind zu grob.** „Vertrieb“ ist keine Gruppe, wenn Außendienst, Innendienst und Key Account Management völlig unterschiedlich betroffen sind.
 - **Haltung wird geraten.** Wenn niemand mit einer Gruppe gesprochen hat, steht dort „unbekannt“ und eine Maßnahme, die das ändert.
 - **Die stark Betroffenen fehlen in der Strategie.** Die klassische Matrix übersieht sie, weil sie wenig formellen Einfluss haben.

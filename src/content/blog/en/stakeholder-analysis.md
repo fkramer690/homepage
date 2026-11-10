@@ -14,28 +14,28 @@ author: juliane
 tags: [stakeholder analysis, stakeholder matrix, change management, template]
 takeaways:
   - "I sort groups by influence and impact, because the most affected groups are the ones who make the change work in daily life."
-  - "The classic power-interest grid can underrate the future users when they have little formal power, although they decide whether the change succeeds."
+  - "The classic power-interest grid can underrate future users with little formal power, even though they decide whether the change succeeds."
   - "A good analysis does not end with the matrix. It ends with an action and an owner for every group."
   - "The analysis is never finished: attitudes shift with every decision, so it belongs back on the table in every project phase."
 faq:
   - q: "What is a stakeholder analysis?"
-    a: "A stakeholder analysis is a structured overview of all people and groups that are affected by an initiative or can influence it. It rates influence, impact and attitude and derives how each group is involved."
+    a: "A stakeholder analysis is a structured overview of all people and groups that are affected by an initiative or can influence it. It rates influence, impact and attitude, then uses those ratings to decide how each group should be involved."
   - q: "What is the difference between a stakeholder analysis and a stakeholder matrix?"
-    a: "The stakeholder analysis is the whole method, from listing the groups to the actions. The stakeholder matrix is one tool within it: a grid with two axes in which the groups are placed."
+    a: "The stakeholder analysis is the whole method, from listing the groups to defining the actions. The stakeholder matrix is one tool within it: a grid with two axes on which the groups are placed."
   - q: "How often should a stakeholder analysis be updated?"
     a: "At least at every phase change and after every major decision, such as selecting a system or before go-live. In larger initiatives a short review in the monthly steering committee pays off."
   - q: "Who creates the stakeholder analysis?"
-    a: "Usually the project manager or the change manager, but never alone. Judging attitude and influence needs managers who know their teams and a sponsor who knows how power works in the company."
+    a: "Usually the project manager or the change manager, but never alone. Assessing attitude and influence requires managers who know their teams and a sponsor who understands how power works in the company."
   - q: "Is there a free stakeholder analysis template?"
     a: "Yes, on this page as an Excel file with columns for group, influence, impact, attitude, ADKAR stage, action and owner, plus a filled-in example."
 draft: false
 ---
 
-A stakeholder analysis records who is affected by a change, who has influence over it and where these people and groups stand on it. Its result is a stakeholder matrix and, more importantly, a list of actions: whom do you involve how, who takes care of it and by when? In projects I do not only sort groups by influence but also by impact, because the most affected groups are the ones who have to make the change work in daily life. A free template as an Excel file with a filled-in example is further down.
+A stakeholder analysis records who is affected by a change, who has influence over it and where these people and groups stand on it. The result is a stakeholder matrix and, more importantly, a list of actions: who should be involved, how, who owns the action and by when? In projects I do not only sort groups by influence but also by impact, because the most affected groups are the ones who have to make the change work in daily life. A free template as an Excel file with a filled-in example is further down.
 
 ## What is a stakeholder analysis?
 
-Stakeholders are all people and groups with an interest in an initiative or affected by it. In a software rollout these are not only the future users but also management, IT, the works council, finance, partners and sometimes customers.
+Stakeholders are all people and groups with an interest in an initiative or who are affected by it. In a software rollout these are not only the future users but also management, IT, the works council, finance, partners and sometimes customers.
 
 A stakeholder analysis answers three questions for each of these groups:
 
@@ -43,11 +43,11 @@ A stakeholder analysis answers three questions for each of these groups:
 2. **How much can they move or block?** That is the influence, often called power.
 3. **Where do they stand today?** That is the attitude, from support through neutral to opposition.
 
-The answers show who needs which kind of involvement. The terms are often mixed up. The stakeholder analysis is the whole method. The stakeholder matrix is the grid with two axes in which you place the groups. A stakeholder map is usually a visual variant, often with circles around the project in the middle.
+The answers show what kind of involvement each group needs. The terms are often mixed up. The stakeholder analysis is the whole method. The stakeholder matrix is the grid with two axes on which you place the groups. A stakeholder map is usually a visual variant, often with the project in the centre and stakeholder groups arranged around it.
 
 ## How do you do a stakeholder analysis?
 
-I work in five steps. The effort is manageable: for a first draft with five to ten groups, a half-day workshop with the sponsor, the project manager and the most important line managers is usually enough, plus follow-up. In programs across divisions and countries the number of groups grows quickly, and the workshop delivers assumptions that you then check in conversations.
+I work in five steps. The effort is manageable: for a first draft with five to ten groups, a half-day workshop with the sponsor, the project manager and the most important line managers is usually enough, plus follow-up. In programs across divisions and countries, the number of groups grows quickly, and the workshop produces assumptions that you then check in conversations.
 
 ```schritte
 List the groups | 1 hour · project manager and line managers
@@ -62,7 +62,7 @@ Define actions | 1 hour · everyone
   One concrete action per group, an owner and a date. Without this step the analysis stays a slide.
 ```
 
-The third step is the tricky one. Attitude tends to be guessed instead of asked. If you do not know where a group stands, write that into the table and plan a conversation. A wrong assumption about an influential group costs more later than two interviews today.
+The third step is the tricky one. Teams tend to guess attitudes instead of asking about them. If you do not know where a group stands, record that in the table and plan a conversation. A wrong assumption about an influential group costs more later than two interviews today.
 
 ## What does a stakeholder matrix look like?
 
@@ -75,9 +75,9 @@ The best known form is the power-interest grid, which is often attributed to Aub
 | Keep informed | low | high | keep up to date, collect feedback | Inside sales |
 | Monitor | low | low | check from time to time whether anything changes | Purchasing |
 
-For project management this matrix is often enough. In change management it misses an axis. The group that has to use a new system every day often has little formal power and, at first, little interest. In the classic matrix it can easily end up in "monitor". Yet this group decides whether the change arrives in daily work.
+For project management, this matrix is often enough. In change management it misses an axis. The group that has to use a new system every day often has little formal power and, at first, little interest. In the classic matrix it can easily end up in "monitor". Yet this group decides whether the change takes hold in day-to-day work.
 
-That is why in change management I work with a second view: **influence times impact**. Groups with high impact always need a plan of their own, whatever their influence. Groups with high influence and low impact mainly need information and the occasional decision. This turns the stakeholder analysis into the basis for the change plan per group, as I describe in [What is change management?](../what-is-change-management/).
+That is why, in change management, I work with a second view: **influence multiplied by impact**. Groups with high impact always need a plan of their own, whatever their influence. Groups with high influence and low impact mainly need information and the occasional decision. This turns the stakeholder analysis into the basis for a change plan for each group, as I describe in [What is change management?](../what-is-change-management/).
 
 ## Example: stakeholder analysis for a CRM rollout
 
@@ -92,18 +92,18 @@ Take a company that introduces a CRM system such as Salesforce for sales and ser
 | IT operations | medium | medium | supportive | plan the handover to operations | Head of IT |
 | Finance | low | medium | neutral | inform about new reports | Project manager |
 
-The works council says "unknown", which is more honest than a guess. In Germany it has a right of co-determination for technical systems that are suitable for monitoring employees' behavior or performance ([section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html)), so this conversation belongs at the start, before activity reports and analyses are configured. Field sales is the most critical group: highly affected, with enough informal influence to work around the system, and sceptical. A circular email will not help here; their own manager will, and colleagues acting as [key users](../salesforce-key-user-network/). And every row has an owner, and that is rarely the change manager.
+The works council row says "unknown", which is more honest than a guess. In Germany it has a right of co-determination for technical systems that are suitable for monitoring employees' behavior or performance ([section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html)), so this conversation belongs at the start, before activity reports and analyses are configured. Field sales is the most critical group: strongly affected, sceptical and with enough informal influence to work around the system. A circular email will not help here; their own manager and colleagues acting as [key users](../salesforce-key-user-network/) will. Every row has an owner, and that owner is rarely the change manager.
 
-I left out the ADKAR stage column in the example; the template contains it. It shows where a group stands right now: is awareness of why something changes missing, or the knowledge of how it works? Depending on the answer, the action is a completely different one. How the model works is explained in [Change management models compared](../change-management-models/).
+I left out the ADKAR stage column in the example; the template contains it. It shows where a group stands right now: is the group missing awareness of why something is changing, or knowledge of how it works? Depending on the answer, a completely different action is needed. How the model works is explained in [Change management models compared](../change-management-models/).
 
-In larger initiatives the table grows quickly. In a global rollout of Salesforce Sales Cloud with more than 500 users in the US, Asia and Europe that I supported, every group also has to be split by country, because leadership, language and attitude differ per country. In an IT transformation with more than 20,000 affected people in 19 countries you work with groups by function and region, not with individuals.
+In larger initiatives the table grows quickly. In a global rollout of Salesforce Sales Cloud with more than 500 users in the US, Asia and Europe that I supported, every group also had to be split by country, because leadership, language and attitude differ from country to country. In an IT transformation with more than 20,000 affected people in 19 countries you work with groups by function and region, not with individuals.
 
 ## Stakeholder analysis template
 
 The [template as an Excel file](../../../downloads/stakeholder-analysis-template.xlsx) contains two sheets: an empty table with all columns and the example from above, extended by the ADKAR stage. The columns:
 
-- **Group or person:** fine enough that one action fits.
-- **What changes:** one sentence on daily work after the change.
+- **Group or person:** granular enough for one action to fit.
+- **What changes:** one sentence about daily work after the change.
 - **Impact and influence:** each from 1 to 3.
 - **Attitude today:** supportive, neutral, sceptical, opposed or unknown.
 - **ADKAR stage:** where the group stands right now.
@@ -119,12 +119,12 @@ These are the typical ones:
 
 - **The analysis is done once and then forgotten.** Attitudes shift with every decision. A group that was neutral at kick-off can oppose the change after the system has been selected. So review the table at every phase change.
 - **Groups are too coarse.** "Sales" is not one group if field sales, inside sales and key account management are affected in completely different ways.
-- **Attitude is guessed.** If nobody has talked to a group, the table says "unknown" and lists an action that changes that.
+- **Attitude is guessed.** If nobody has talked to a group, the table says "unknown" and lists an action to clarify its attitude.
 - **The most affected groups are missing from the strategy.** The classic matrix overlooks them because they have little formal power.
-- **There is no link to the communication plan.** The analysis tells you who hears what, when and from whom. How to build that is in the article on the [change management communication plan](../change-management-communication-plan/).
+- **There is no link to the communication plan.** The analysis tells you who needs to hear what, when and from whom. How to build that is in the article on the [change management communication plan](../change-management-communication-plan/).
 
 ## Outside support pays off for unclear attitudes and difficult conversations
 
-For an initiative with three or four groups, the project manager can build the analysis alone with the template. Support pays off when many groups or countries are affected, when the attitude of important groups is unclear, or when nobody inside can hold the difficult conversations, for example with the works council or a sceptical manager. In Salesforce programs I work together with Fabian Kramer; how we set this up is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/) and on the page [Salesforce change management consulting](../../services/change-management-salesforce/).
+For an initiative with three or four groups, the project manager can build the analysis alone using the template. Support pays off when many groups or countries are affected, when the attitude of important groups is unclear, or when nobody inside the organisation can handle the difficult conversations, for example with the works council or a sceptical manager. In Salesforce programs I work together with Fabian Kramer; how we set this up is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/) and on the page [Salesforce change management consulting](../../services/change-management-salesforce/).
 
 *Prosci and ADKAR are registered trademarks of Prosci, Inc.*

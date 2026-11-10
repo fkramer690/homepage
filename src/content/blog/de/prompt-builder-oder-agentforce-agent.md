@@ -11,26 +11,26 @@ topic: ai
 categories: [ai]
 tags: [Prompt Builder, Agentforce, Flex Credits, KI-Agenten, Maschinenbau, Governance]
 takeaways:
-  - "Serviceberichtstext, Fallzusammenfassung, Antwortentwurf und nächtliche Garantieübersicht erledigt ein Template, weil ein Mensch den Text zuerst liest."
+  - "Für Serviceberichtstext, Fallzusammenfassung, Antwortentwurf und nächtliche Garantieübersicht reicht ein Template, weil ein Mensch den Text zuerst liest."
   - "Einen Agenten mit Aktionen brauchen Sie, wenn das System den nächsten Schritt zur Laufzeit wählt, einen Dialog führt oder ohne Mensch dazwischen handelt."
   - "Auf einem Standard-Modell kostet ein Prompt 4 Flex Credits pro 2.000 Tokens, eine Agentenaktion 20 Credits, ein aufgerufenes Template inklusive."
   - "Prompt Builder bietet JSON-Ausgabe und asynchrone Batches: 1.000 Einträge pro Apex-Job, 10.000 mit Modellen, die native Batch-Verarbeitung unterstützen."
-  - "Ein getestetes Flex-Template kann zur Referenzaktion werden, wenn später ein Agent kommt; Eingaben, Ausgaben und Maskierung testen Sie dann neu."
+  - "Ein getestetes Flex-Template kann zur Referenzaktion werden, wenn später ein Agent hinzukommt; Eingaben, Ausgaben und Maskierung testen Sie dann neu."
 faq:
   - q: "Was ist der Unterschied zwischen Prompt Builder und einem Agentforce-Agenten?"
     a: "Prompt Builder erstellt wiederverwendbare Prompt-Templates, die ein Button, ein Flow, Apex oder ein Agent für genau einen Generierungsschritt aufruft. Ein Agentforce-Agent entscheidet zur Laufzeit, welche Aktion er ausführt, führt ein Gespräch und ändert Datensätze nur über vordefinierte Aktionen."
   - q: "Kann ein Agentforce-Agent ein Prompt-Template nutzen?"
-    a: "Ja. Ein Prompt-Template kann neben Flow und Apex die Referenzaktion hinter einer eigenen Agentenaktion sein. Salesforce bezeichnet Flow- und Apex-Aktionen als deterministisch und Template-Aktionen als Aktionen mit einem gewissen Grad an Zufall."
+    a: "Ja. Neben Flow und Apex kann auch ein Prompt-Template die Referenzaktion hinter einer eigenen Agentenaktion sein. Salesforce bezeichnet Flow- und Apex-Aktionen als deterministisch und Template-Aktionen als Aktionen mit einem gewissen Grad an Zufall."
   - q: "Was kostet ein Prompt-Template pro Aufruf?"
     a: "Salesforce zählt Prompts pro Aufruf des LLM-Gateways in Einheiten von bis zu 2.000 Tokens, aufgerundet. Eine Einheit kostet 2 Credits bei Basic-, 4 bei Standard- und 16 bei Advanced-Modellen. Bei 500 € pro 100.000 Credits kostet eine Zusammenfassung mit 5.000 Tokens auf einem Standard-Modell 0,06 €."
   - q: "Wird ein Prompt-Template doppelt berechnet, wenn ein Agent es aufruft?"
     a: "Nein. Laut Salesforce-Hilfe werden Template-Aktionen eines Agenten als Agentenaktionen abgerechnet, und die Prompt-Nutzungsarten gelten nicht für Aktionen, die ein Agentforce-Agent ausführt. Ein Aufruf kostet in Produktion 20 Credits."
   - q: "Wie teste ich ein Prompt-Template im Vergleich zu einem Agenten?"
-    a: "Agententests laufen nur in Sandboxes, verbrauchen Credits und können Daten ändern. Für Templates hat Salesforce auf der Dreamforce 2026 Batch Prompt Testing als Beta angekündigt, das ein Template in einem Durchlauf gegen viele echte Eingaben laufen lässt."
+    a: "Agententests laufen nur in Sandboxes, verbrauchen Credits und können Daten ändern. Für Templates hat Salesforce auf der Dreamforce 2026 Batch Prompt Testing als Beta angekündigt, mit dem sich ein Template in einem Durchlauf mit vielen echten Eingaben testen lässt."
 draft: false
 ---
 
-Nehmen Sie Prompt Builder, wenn ein Datensatz hineingeht, ein Text herauskommt und ein Mensch ihn liest, bevor etwas passiert; einen Agentforce-Agenten, wenn das System seinen nächsten Schritt selbst wählen muss. Serviceberichtstexte, Fallzusammenfassungen, Antwortentwürfe für Händler und eine nächtliche Übersicht offener Garantiefälle passen in dieses Muster. Der Agent passt auch, wenn er ohne Mensch dazwischen einen Dialog mit einem Händler führt. Ein Standard-Prompt kostet 4 Flex Credits pro 2.000 Tokens, eine Agentenaktion 20 Credits. Ich starte mit dem Template und ergänze den Agenten nur, wo der Dialog sich rechnet.
+Nehmen Sie Prompt Builder, wenn ein Datensatz hineingeht, ein Text herauskommt und ein Mensch ihn liest, bevor etwas passiert; einen Agentforce-Agenten, wenn das System seinen nächsten Schritt selbst wählen muss. Serviceberichtstexte, Fallzusammenfassungen, Antwortentwürfe für Händler und eine nächtliche Übersicht offener Garantiefälle passen in dieses Muster. Der Agent passt auch, wenn er ohne menschliches Eingreifen einen Dialog mit einem Händler führt. Ein Standard-Prompt kostet 4 Flex Credits pro 2.000 Tokens, eine Agentenaktion 20 Credits. Ich starte mit dem Template und ergänze den Agenten nur, wo der Dialog sich rechnet.
 
 ## Was unterscheidet ein Prompt-Template von einem Agenten?
 
@@ -44,10 +44,10 @@ Die eigentliche Frage lautet also: Wer entscheidet über den nächsten Schritt? 
 
 Vier typische Aufgaben im After-Sales-Service funktionieren gut mit einem Template:
 
-- **Serviceberichtstext.** Aus den Notizen des Technikers und den verbauten Ersatzteilen am Arbeitsauftrag wird ein lesbarer Text für den Kunden. Ein Field-Generation-Template schreibt in ein Feld vom Typ Textbereich (Lang); schreibgeschützte Felder unterstützt es laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/prompt-builder-basics/build-a-field-generation-prompt-template) nicht. Der Techniker im Außendienst korrigiert den Text, bevor der Bericht rausgeht.
+- **Serviceberichtstext.** Aus den Notizen des Technikers und den verbauten Ersatzteilen am Arbeitsauftrag wird ein lesbarer Text für den Kunden. Ein Field-Generation-Template schreibt in ein Feld vom Typ Textbereich (Lang); schreibgeschützte Felder unterstützt es laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/prompt-builder-basics/build-a-field-generation-prompt-template) nicht. Der Techniker im Außendienst korrigiert den Text, bevor der Bericht versendet wird.
 - **Fallzusammenfassung.** Ein Record-Summary-Template fasst einen Fall mit E-Mails und Verlauf zusammen, wenn der Second-Level-Support oder Field Service übernimmt. Der Leser ist ein Kollege, der die Maschine kennt.
 - **Antwortentwurf für Händler.** Ein Sales-Email- oder Flex-Template entwirft die Antwort auf die Frage eines Händlers nach einem Ersatzteil oder Liefertermin. Die Servicemitarbeiterin prüft und versendet ihn.
-- **Nächtliche Übersicht offener Garantiefälle.** Der [Salesforce-Entwicklerblog vom Oktober 2025](https://developer.salesforce.com/blogs/2025/10/build-and-optimize-agents-with-new-agentforce-360-features) nennt für Winter '26 die Batch-Verarbeitung: Prompts laufen asynchron und werden aus einem Flow oder über einen `AiJobRun`-Datensatz in Apex gestartet. Derselbe Beitrag ergänzt JSON-Ausgabe mit Syntaxprüfung, die ein Flow oder Apex dann in Felder schreibt; für eine stabile Struktur empfiehlt Salesforce einen Lightning Type als Schema. Die Garantiesachbearbeitung startet morgens mit einem kurzen Stand pro Fall. Den Prozess dahinter beschreibe ich in [Garantieansprüche von Händlern](../garantieansprueche-haendler-salesforce/).
+- **Nächtliche Übersicht offener Garantiefälle.** Der [Salesforce-Entwicklerblog vom Oktober 2025](https://developer.salesforce.com/blogs/2025/10/build-and-optimize-agents-with-new-agentforce-360-features) nennt für Winter '26 die Batch-Verarbeitung: Prompts laufen asynchron und werden aus einem Flow oder über einen `AiJobRun`-Datensatz in Apex gestartet. Derselbe Beitrag ergänzt eine JSON-Ausgabe mit Syntaxprüfung; die Ausgabe schreibt ein Flow oder Apex dann in Felder. Für eine stabile Struktur empfiehlt Salesforce einen Lightning Type als Schema. Die Garantiesachbearbeitung startet morgens mit einem kurzen Stand pro Fall. Den Prozess dahinter beschreibe ich in [Garantieansprüche von Händlern](../garantieansprueche-haendler-salesforce/).
 
 Die aktuelle [Hilfeseite zur Batch-Verarbeitung](https://help.salesforce.com/s/articleView?id=ai.prompt_builder_batch_processing.htm&language=en_US&type=5) nennt die Grenzen: 1.000 Einträge pro Apex-Job, mit Modellen, die native Batch-Verarbeitung unterstützen, 10.000 Einträge pro Job und bis zu 50.000 Generierungen pro Tag aus einem Flow.
 
@@ -62,7 +62,7 @@ Ich würde einen Agenten nur bauen, wenn mindestens eine dieser Bedingungen gilt
 3. **Was geschrieben wird, hängt vom Gespräch ab.** Ein Flow kann auf einem festen Pfad nach einem Prompt ein Feld schreiben. Entscheidet erst die Nachricht des Händlers, ob ein Fall, ein Außendiensttermin oder eine Ersatzteilbestellung entsteht, ist das eine Agentenaktion.
 4. **Das Gespräch hat mehrere Runden.** Rückfragen wie "und der Dichtungssatz?" brauchen Kontext über mehrere Nachrichten.
 
-Trifft keine Bedingung zu, bringt der Agent Kosten und Testaufwand ohne Mehrwert. Eine SAP-Abfrage plus ein Text ist ein Flow, der ein Template aufruft.
+Trifft keine Bedingung zu, bringt der Agent Kosten und Testaufwand ohne Mehrwert. Für eine SAP-Abfrage plus Text genügt ein Flow, der ein Template aufruft.
 
 ## Was kostet ein Prompt im Vergleich zu einer Agentenaktion?
 
@@ -77,7 +77,7 @@ Salesforce zählt Prompts pro Aufruf des LLM-Gateways. Laut [Hilfeartikel zu den
 
 Die Euro-Werte beruhen auf dem Listenpreis von 500 € pro 100.000 Credits auf der [EU-Preisseite von Agentforce](https://www.salesforce.com/eu/agentforce/pricing/). Prompts kosten in der Sandbox genauso viel wie in Produktion. Das gilt für gezählte Prompts, etwa aus einem Flow oder Batch; ob ein Prompt, den ein angemeldeter Benutzer startet, gezählt wird, hängt von Vertrag und ausführendem Benutzer ab.
 
-Eine Fallzusammenfassung mit 5.000 Tokens ist auf einem Standard-Modell drei Prompts, also 12 Credits. Auf einem Advanced-Modell kostet dieselbe Zusammenfassung 48 Credits, mehr als zwei Agentenaktionen. Günstig macht ein Template erst die Modellstufe, die Sie wählen.
+Eine Fallzusammenfassung mit 5.000 Tokens ist auf einem Standard-Modell drei Prompts, also 12 Credits. Auf einem Advanced-Modell kostet dieselbe Zusammenfassung 48 Credits, mehr als zwei Agentenaktionen. Wie günstig ein Template ist, hängt vor allem von der gewählten Modellstufe ab.
 
 ```hinweis tipp
 Ein Template, das ein Agent aufruft, wird nicht doppelt berechnet. Laut [Hilfeartikel zur Abrechnung](https://help.salesforce.com/s/articleView?id=ai.help_agent_billing.htm&language=en_US&type=5) gilt: "Prompt-Template agent actions are billed as agent actions". Die Prompt-Nutzungsarten gelten nicht für Aktionen, die ein Agentforce-Agent ausführt.
@@ -97,19 +97,19 @@ Nehmen wir einen Maschinenbauer mit Service Cloud, Field Service, Händlerportal
 | Garantie-Batch | 80 geänderte Fälle × 20 Nächte × 2 Prompts × 4 | 12.800 |
 | **Templates gesamt** | | **53.600, etwa 268 €** |
 
-Die Serviceleitung möchte nun, dass Händler im Portal ohne Servicemitarbeiter Antworten bekommen. Angenommen, der Agent führt pro Gespräch vier Aktionen aus, eine davon ist das Antwort-Template. 1.500 Gespräche kosten dann 1.500 × 80 = 120.000 Credits, etwa 600 € im Monat. Das ist das Zehnfache der 60 € für die Entwürfe.
+Die Serviceleitung möchte nun, dass Händler im Portal ohne Beteiligung von Servicemitarbeitern Antworten bekommen. Angenommen, der Agent führt pro Gespräch vier Aktionen aus, eine davon ist das Antwort-Template. 1.500 Gespräche kosten dann 1.500 × 80 = 120.000 Credits, etwa 600 € im Monat. Das ist das Zehnfache der 60 € für die Entwürfe.
 
-Hinzu kommen Tests. Eine Suite mit 100 Gesprächen zu je vier Aktionen à 16 Credits kostet 6.400 Credits pro Lauf. Zehn Läufe vor dem Go-live sind 64.000 Credits, etwa 320 €.
+Hinzu kommen Tests. Eine Suite mit 100 Gesprächen zu je vier Aktionen à 16 Credits kostet 6.400 Credits pro Lauf. Zehn Läufe vor dem Go-live verbrauchen 64.000 Credits, etwa 320 €.
 
-Der Agent lohnt sich, wenn der Wert der eingesparten Arbeitszeit im Service die zusätzlichen 540 € im Monat und die Testkosten übersteigt, etwa wenn Händler in anderen Zeitzonen heute bis zum nächsten Morgen warten. Antwortet Ihr Service ohnehin innerhalb einer Stunde, würde ich bei den Entwürfen bleiben. Die vollständige Rechnung für einen Auftragsstatus-Agenten finden Sie unter [was ein Serviceagent für Händleranfragen kostet](../flex-credits-agentforce-kosten-pro-aktion/).
+Der Agent lohnt sich, wenn der Wert der eingesparten Arbeitszeit im Service die zusätzlichen 540 € im Monat und die Testkosten übersteigt, etwa wenn Händler in anderen Zeitzonen sonst bis zum nächsten Morgen warten müssten. Antwortet Ihr Service ohnehin innerhalb einer Stunde, würde ich bei den Entwürfen bleiben. Die vollständige Rechnung für einen Auftragsstatus-Agenten finden Sie unter [was ein Serviceagent für Händleranfragen kostet](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Ein Template testen Sie anders als einen Agenten
 
-Ein Template ist ein abgegrenzter Generierungsschritt, also testen Sie es mit echten Datensätzen. Salesforce hat auf der [Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) Batch Prompt Testing als Beta angekündigt, das ein Template in einem Durchlauf gegen viele echte Eingaben laufen lässt. Reference Visibility ist GA und zeigt vor einer Änderung jeden Flow und jede Aktion, die von einem Template abhängt. Templates sind Metadaten vom Typ [GenAiPromptTemplate](https://developer.salesforce.com/docs/atlas.en-us.252.0.api_meta.meta/api_meta/meta_genaiprompttemplate.htm), gehören also ins Repository und durch die Pipeline; planen Sie die Pipeline um die Entwurfs- und veröffentlichten Versionen eines Templates herum.
+Ein Template ist ein abgegrenzter Generierungsschritt, also testen Sie es mit echten Datensätzen. Salesforce hat auf der [Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) Batch Prompt Testing als Beta angekündigt, mit dem sich ein Template in einem Durchlauf mit vielen echten Eingaben testen lässt. Reference Visibility ist GA und zeigt vor einer Änderung jeden Flow und jede Aktion, die von einem Template abhängt. Templates sind Metadaten vom Typ [GenAiPromptTemplate](https://developer.salesforce.com/docs/atlas.en-us.252.0.api_meta.meta/api_meta/meta_genaiprompttemplate.htm), gehören also ins Repository und müssen die Pipeline durchlaufen; berücksichtigen Sie in der Pipeline die Entwurfs- und veröffentlichten Versionen eines Templates.
 
-Ein Agent braucht mehr. [Agententests laufen nur in Sandboxes](https://developer.salesforce.com/docs/ai/agentforce/guide/testing-api-get-started.html), und Salesforce warnt: "running tests consumes requests and credits and can modify data". Sie testen Aktionswahl und Antworten, legen Erfolgsquoten fest und entscheiden, unter welchem Benutzer der Agent läuft, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben. Für einen Entwurf, den der Service ohnehin korrigiert, steht dieser Aufwand in keinem Verhältnis.
+Ein Agent braucht mehr. [Agententests laufen nur in Sandboxes](https://developer.salesforce.com/docs/ai/agentforce/guide/testing-api-get-started.html), und Salesforce warnt: "running tests consumes requests and credits and can modify data". Sie testen Aktionswahl und Antworten, legen Erfolgsquoten fest und entscheiden, unter welchem Benutzer der Agent läuft, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben. Für einen Entwurf, den der Service ohnehin korrigiert, stehen Aufwand und Nutzen in keinem Verhältnis.
 
-Ein Flex-Template funktioniert auch außerhalb von Salesforce. [Hosted MCP Servers](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/prompt-builder.html) veröffentlichen es als MCP-Prompt, den ein Benutzer in Claude oder Cursor auswählt, mit dessen Berechtigungen und demselben Credit-Verbrauch wie in der Salesforce-Oberfläche. ChatGPT unterstützt MCP-Prompts laut dieser Seite nicht, kann die Werkzeuge der Hosted MCP Server aber trotzdem nutzen.
+Ein Flex-Template funktioniert auch außerhalb von Salesforce. [Hosted MCP Servers](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/prompt-builder.html) veröffentlichen es als MCP-Prompt, den ein Benutzer in Claude oder Cursor auswählt; der Prompt läuft mit den Berechtigungen dieses Benutzers und verursacht denselben Credit-Verbrauch wie in der Salesforce-Oberfläche. ChatGPT unterstützt MCP-Prompts laut dieser Seite nicht, kann die Werkzeuge der Hosted MCP Server aber trotzdem nutzen.
 
 ## Mit den Textaufgaben in Service und Vertrieb beginnen
 
