@@ -15,10 +15,10 @@ situations:
   - "Partnerlieferungen werden ohne technisches Review abgenommen, und Probleme zeigen sich erst in UAT oder Produktion."
   - "Repository, Pipeline oder Backlog liegen bei einem Partner, und Partner lassen sich dadurch schwer vergleichen oder austauschen."
 deliverables:
-  - "Ich prüfe jede Partnerlieferung im Pull Request, bevor sie in die nächste Umgebung geht."
-  - "Ich schreibe die Standards mit den Teams auf, aus dem, was in den Reviews immer wieder auffällt."
+  - "Ich prüfe jede Partnerlieferung im Pull Request, bevor sie in die nächste Umgebung deployt wird."
+  - "Aus dem, was in den Reviews immer wieder auffällt, schreibe ich mit den Teams die Standards."
   - "Ich kläre Konflikte, wenn zwei Streams dasselbe Objekt ändern wollen."
-  - "Ich leite die Center-of-Excellence-Calls, in denen anstehende Änderungen auf den Tisch kommen."
+  - "Ich leite die Center-of-Excellence-Calls, in denen wir anstehende Änderungen früh besprechen."
   - "Ich arbeite neue Partner in das dokumentierte Setup ein."
 results:
   - "Einen Governance- und Release-Rahmen, der für alle Partner und internen Teams gilt"
@@ -29,21 +29,21 @@ results:
 phases:
   - title: "Bestandsaufnahme"
     icon: "analyse"
-    text: "Ich schaue mir an, wie die Teams heute bauen: Repository, Deployments, Pull Requests, Verantwortlichkeiten und die wichtigsten Konflikte zwischen Streams."
+    text: "Ich analysiere, wie die Teams heute arbeiten: Repository, Deployments, Pull Requests, Verantwortlichkeiten und die wichtigsten Konflikte zwischen Streams."
   - title: "Rahmen und Standards"
     icon: "design"
-    text: "Gemeinsam mit den Teams schreibe ich Standards, die Object Ownership Matrix und die Review-Regeln auf. Die erste Version deckt die meisten Fälle ab, Randfälle folgen."
+    text: "Gemeinsam mit den Teams schreibe ich Standards, die Object Ownership Matrix und die Review-Regeln auf. Die erste Version deckt die meisten Fälle ab, Randfälle ergänzen wir danach."
   - title: "Reviews und Center of Excellence"
     icon: "team"
-    text: "Jede Änderung geht über einen Pull Request mit Review. Regelmäßige Center-of-Excellence-Calls bringen neue Themen früh auf den Tisch, mit genug Vorlauf für alle Streams."
+    text: "Jede Änderung durchläuft einen Pull Request mit Review. In regelmäßigen Center-of-Excellence-Calls besprechen wir neue Themen früh, mit genug Vorlauf für alle Streams."
   - title: "Übergabe"
     icon: "handshake"
-    text: "Läuft der Prozess, übergebe ich ihn an einen internen Kollegen und arbeite ihn ein, damit der Kunde die Governance langfristig selbst verantwortet."
-duration: "Bestandsaufnahme 2 bis 4 Wochen. Die gemeinsamen Standards stehen nach etwa 3 Monaten. Mit Reviews und Center of Excellence bis zur Übergabe an Ihr Team meist 6 bis 12 Monate."
+    text: "Sobald der Prozess stabil läuft, arbeite ich einen internen Kollegen ein und übergebe ihm den Prozess, damit der Kunde die Governance langfristig selbst verantwortet."
+duration: "Bestandsaufnahme 2 bis 4 Wochen. Die gemeinsamen Standards stehen nach etwa 3 Monaten. Bis zur Übergabe an Ihr Team vergehen mit Reviews und Center of Excellence meist 6 bis 12 Monate."
 notFit:
   - "Nur ein Partner arbeitet an der Org, und die Zusammenarbeit funktioniert."
   - "Das Unternehmen ist nicht bereit, Regeln gegenüber Partnern auch durchzusetzen."
-alternatives: "Ein interner Plattform-Owner mit technischem Hintergrund kann das langfristig selbst, wenn es ihn gibt. Einen Generalunternehmer zu beauftragen, der die anderen Partner steuert, funktioniert nur, solange seine Interessen und Ihre gleich sind."
+alternatives: "Ein interner Plattform-Owner mit technischem Hintergrund kann diese Aufgabe langfristig selbst übernehmen, sofern es ihn gibt. Einen Generalunternehmer zu beauftragen, der die anderen Partner steuert, funktioniert nur, solange seine Interessen mit Ihren übereinstimmen."
 progress:
   - measure: "Objekte mit verantwortlichem Stream"
     how: "Wie viele Objekte in der Object Ownership Matrix einen verantwortlichen Stream haben."
@@ -56,9 +56,9 @@ progress:
 reference: governance
 faq:
   - q: "Was ist Salesforce-Partnersteuerung?"
-    a: "Die Regeln, Rollen und Reviews, mit denen mehrere Umsetzungspartner auf gleiche Weise an einer Salesforce-Org arbeiten: gemeinsame Standards, klare Verantwortung für Objekte und Metadaten, ein Release-Prozess und ein technisches Review jeder Lieferung."
+    a: "Die Regeln, Rollen und Reviews, mit denen mehrere Umsetzungspartner nach denselben Regeln an einer Salesforce-Org arbeiten: gemeinsame Standards, klare Verantwortung für Objekte und Metadaten, ein Release-Prozess und ein technisches Review jeder Lieferung."
   - q: "Wie lange dauert es, Standards über mehrere Partner zu etablieren?"
-    a: "In meinem größten Programm etwa drei Monate. Schon die erste Fassung regelte rund 80 Prozent der Fälle. Den Rest haben wir nach und nach ergänzt, bis neue Themen in Center-of-Excellence-Calls auf den Tisch kamen, bevor sie Konflikte auslösten."
+    a: "In meinem größten Programm etwa drei Monate. Schon die erste Fassung regelte rund 80 Prozent der Fälle. Den Rest haben wir nach und nach ergänzt. Mit der Zeit wurden neue Themen in Center-of-Excellence-Calls besprochen, bevor sie Konflikte auslösten."
   - q: "Warum sollte der Kunde und nicht ein Partner die Governance verantworten?"
     a: "Legt ein Partner die Regeln fest, entscheidet er, wie alle anderen bauen, auch seine Wettbewerber. Liegen Standards, Repository und Freigaben beim Kunden, bleiben Partner vergleichbar und austauschbar."
   - q: "Was ist eine Object Ownership Matrix?"
@@ -66,13 +66,13 @@ faq:
   - q: "Ersetzen Sie unseren Umsetzungspartner?"
     a: "Nein. Ihre Partner bauen weiter, ich steuere sie auf Kundenseite nach gemeinsamen Regeln. Wenn Sie einen Partner ablösen wollen, helfe ich dabei, ohne Wissensverlust und ohne Verzögerung im Programm."
   - q: "Wie vermeiden Sie, dass Sie zum Engpass werden?"
-    a: "Ich arbeite transparent. Entscheidungen, Standards und Review-Kriterien sind so dokumentiert, dass Ihr Team und Ihre Partner sie sehen, damit niemand auf mich warten muss und die Arbeit nicht an mir hängt."
+    a: "Ich arbeite transparent. Entscheidungen, Standards und Review-Kriterien sind so dokumentiert, dass Ihr Team und Ihre Partner jederzeit darauf zugreifen können. So muss niemand auf mich warten, und die Arbeit hängt nicht an mir."
 blogTags: [partner governance, partnersteuerung, pull request review, vendor lock-in, code quality, codequalität]
 readMore: [choose-salesforce-implementation-partner, object-ownership-matrix, development-standards-definition-of-done, sandbox-strategy-multiple-partners, salesforce-center-of-excellence, fixed-price-ai-salesforce-partners, ai-org-assessment-technical-debt, salesforce-freelancer-or-consultancy]
 masterclass: devops
 ---
 
-Partnersteuerung auf Kundenseite hält ein Salesforce-Programm mit mehreren Umsetzungspartnern unter Kontrolle. Dazu gehören gemeinsame Standards, klare Verantwortung für jedes Objekt und jeden Prozess, ein Release-Prozess und jemand, der jede Lieferung technisch prüft, bevor sie weitergeht. Ohne das optimiert jeder Partner seinen eigenen Bereich, und der Kunde bezahlt die Konflikte dazwischen. Diese Rolle übernehme ich als unabhängiger Architekt, ohne Bindung an Hersteller oder Partner.
+Partnersteuerung auf Kundenseite hält ein Salesforce-Programm mit mehreren Umsetzungspartnern unter Kontrolle. Dazu gehören gemeinsame Standards, klare Verantwortung für jedes Objekt und jeden Prozess, ein Release-Prozess und jemand, der jede Lieferung technisch prüft, bevor sie freigegeben wird. Ohne das optimiert jeder Partner seinen eigenen Bereich, und der Kunde bezahlt die Konflikte dazwischen. Diese Rolle übernehme ich als unabhängiger Architekt, ohne Bindung an Hersteller oder Partner.
 
 ```partnerfluss architekt
 ohne: Ohne Verantwortung beim Kunden | Jeder Partner liefert seinen Teil, Konflikte zeigen sich erst in der Org.
@@ -91,7 +91,7 @@ quelle: mein größtes Programm als Architekt auf Kundenseite
 
 Am Anfang dieses Programms gab es keine Zuständigkeiten pro Objekt. Teams überschrieben gegenseitig ihre Änderungen, und jedes baute nach eigenen Regeln.
 
-Der erste Schritt: Jede Änderung kam als Pull Request mit Review in die Org, und eine Zeit lang habe ich alle selbst geprüft. Was in diesen Reviews immer wieder auffiel, wurde zum Standard, etwa Namenskonventionen, ein Einstiegspunkt für Automatisierung pro Objekt und Kontext und Regeln zur Testabdeckung. Am meisten bewirkt haben zwei Hebel:
+Im ersten Schritt haben wir festgelegt, dass jede Änderung nur über einen Pull Request mit Review in die Org gelangt, und eine Zeit lang habe ich alle selbst geprüft. Was in diesen Reviews immer wieder auffiel, wurde zum Standard, etwa Namenskonventionen, ein Einstiegspunkt für Automatisierung pro Objekt und Kontext und Regeln zur Testabdeckung. Am meisten bewirkt haben zwei Hebel:
 
 ```hebel
 Object Ownership Matrix | Ein verantwortlicher Stream pro Objekt
@@ -111,17 +111,17 @@ Work Order | stimmt sich ab | stimmt sich ab | Verantwortlich *
 
 Aufbau und Beispiel der Matrix stehen in [Object Ownership Matrix: Wer ändert welches Objekt?](../../blog/object-ownership-matrix-salesforce/).
 
-Nach der ersten Version kamen in den folgenden Wochen neue Randfälle hinzu. Wir haben sie in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) besprochen, in denen anstehende Änderungen mit genug Vorlauf für alle Streams auf den Tisch kamen. Irgendwann fielen die Randfälle weg, weil Themen besprochen wurden, bevor sie zu Konflikten wurden. Als der Prozess rund lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
+In den Wochen nach der ersten Version tauchten neue Randfälle auf. Wir haben sie in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) besprochen, in denen wir anstehende Änderungen mit genug Vorlauf für alle Streams vorgestellt haben. Mit der Zeit gab es kaum noch neue Randfälle, weil Themen besprochen wurden, bevor sie zu Konflikten wurden. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
 
 ## Regeln und Werkzeuge gehören dem Kunden
 
 Auch ein Partner kann gute Standards schreiben. Legt er die Regeln fest, entscheidet er aber, wie alle anderen bauen, auch seine Wettbewerber. Liegen dazu Repository, Pipeline und Tools wie Jira oder Miro bei ihm, wird jeder Partnerwechsel teuer.
 
-Gehören Standards, Freigaberechte und Tools dem Kunden, startet ein neuer Partner mit denselben Regeln, Tools und Rechten wie alle anderen, und ein Partner, der geht, übergibt offene Arbeit und Wissen, während Repository, Pipeline und Standards bleiben, wo sie sind. Angebote lassen sich dann fair vergleichen, weil alle unter denselben Bedingungen liefern. Mehr dazu in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/). Was Sie schon bei der Auswahl eines Partners dazu fragen sollten, steht in [Salesforce-Implementierungspartner auswählen](../../blog/salesforce-implementierungspartner-auswaehlen/).
+Gehören Standards, Freigaberechte und Tools dem Kunden, startet ein neuer Partner mit denselben Regeln, Tools und Rechten wie alle anderen. Ein Partner, der geht, übergibt offene Arbeit und Wissen, während Repository, Pipeline und Standards bleiben, wo sie sind. Angebote lassen sich dann fair vergleichen, weil alle unter denselben Bedingungen liefern. Mehr dazu in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/). Was Sie schon bei der Auswahl eines Partners dazu fragen sollten, steht in [Salesforce-Implementierungspartner auswählen](../../blog/salesforce-implementierungspartner-auswaehlen/).
 
 ## Wie passen Reviews hinein, ohne das Programm auszubremsen?
 
-Reviews machen aus schriftlichen Standards tägliche Praxis. Sie bremsen nicht, wenn die Pull Requests klein sind, die Pipeline alles Wiederholbare prüft und jeder weiß, bis wann das Review kommt:
+Reviews machen aus schriftlichen Standards tägliche Praxis. Sie bremsen nicht, wenn die Pull Requests klein sind, die Pipeline alles Wiederholbare prüft und jeder weiß, bis wann das Review erledigt ist:
 
 ```stufen
 1 | Kleine Pull Requests | Partner-Teams | Jede Änderung ist klein genug für ein schnelles Review.

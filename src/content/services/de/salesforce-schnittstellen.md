@@ -6,16 +6,16 @@ slug: salesforce-schnittstellen
 translationKey: service-integration
 contactBrief: integration
 order: 5
-lead: "Salesforce ist nie das einzige System. Aufträge, Preise, Bestände und Rechnungen liegen im ERP, bei Herstellern meist in SAP, und der Service läuft über Telefon und E-Mail. Ich entwerfe die Integrationsarchitektur auf Kundenseite und arbeite mit ausgewählten Partnern mit Erfahrung aus großen internationalen Programmen."
+lead: "Salesforce ist nie das einzige System. Aufträge, Preise, Bestände und Rechnungen liegen im ERP, bei Herstellern meist in SAP, und der Service läuft über Telefon und E-Mail. Ich entwerfe die Integrationsarchitektur auf Kundenseite und arbeite mit ausgewählten Partnern zusammen, die große internationale Programme kennen."
 situations:
   - "Salesforce braucht Daten aus SAP oder einem anderen ERP, etwa Kunden, Produkte, Preise, Aufträge oder Rechnungen, und es ist unklar, welches System für welche Daten führt."
-  - "Punkt-zu-Punkt-Schnittstellen sind über Jahre gewachsen, und jede Änderung in einem System bricht etwas in einem anderen."
+  - "Punkt-zu-Punkt-Schnittstellen sind über Jahre gewachsen, und jede Änderung in einem System verursacht Fehler in einem anderen."
   - "Das Contact Center nutzt eine Telefonieplattform ohne Anbindung an die Service Cloud, und Agenten kopieren Daten zwischen Bildschirmen."
   - "Schnittstellen melden sich noch mit Benutzername und Passwort an, und niemand hat den Umstieg auf moderne Authentifizierung geplant."
 deliverables:
-  - "Ich nehme auf, welche Systeme es gibt, welche Daten sie halten und wo bestehende Schnittstellen Probleme machen."
+  - "Ich nehme auf, welche Systeme es gibt, welche Daten sie halten und wo bestehende Schnittstellen Probleme verursachen."
   - "Ich entscheide mit Ihnen, ob eine Middleware nötig ist oder eine direkte Anbindung reicht."
-  - "Ich hole einen spezialisierten Integrationspartner dazu, wenn Sie keinen haben, und prüfe sein Design, bevor gebaut wird."
+  - "Ich ziehe einen spezialisierten Integrationspartner hinzu, wenn Sie keinen haben, und prüfe sein Design, bevor gebaut wird."
   - "In der Umsetzung prüfe ich Fehlerbehandlung, Monitoring und End-to-End-Tests gegen die echten Prozesse."
 results:
   - "Eine Systemlandkarte mit dem führenden System für jede Art von Daten"
@@ -25,13 +25,13 @@ results:
 phases:
   - title: "Systemlandkarte"
     icon: "analyse"
-    text: "Ich halte fest, welche Systeme es gibt, welche Daten sie halten, welche Schnittstellen schon laufen und wo sie Probleme machen."
+    text: "Ich halte fest, welche Systeme es gibt, welche Daten sie halten, welche Schnittstellen schon laufen und wo sie Probleme verursachen."
   - title: "Integrationsarchitektur"
     icon: "integration"
-    text: "Wir legen das führende System pro Objekt fest, die Integrationsmuster und ob eine Middleware nötig ist. Der Ansatz hängt von der Größe des Unternehmens und der Zahl der Systeme ab."
+    text: "Wir legen das führende System pro Objekt und die Integrationsmuster fest und klären, ob eine Middleware nötig ist. Der Ansatz hängt von der Größe des Unternehmens und der Zahl der Systeme ab."
   - title: "Spezifikation und Partner"
     icon: "contract"
-    text: "Ich schreibe die Schnittstellenspezifikationen und hole einen passenden Integrationspartner dazu, falls der Kunde keinen hat. Das Design prüfe ich, bevor gebaut wird."
+    text: "Ich schreibe die Schnittstellenspezifikationen und ziehe einen passenden Integrationspartner hinzu, falls der Kunde keinen hat. Das Design prüfe ich, bevor gebaut wird."
   - title: "Umsetzung und Test"
     icon: "check"
     text: "In der Umsetzung prüfe ich, ob Schnittstellen der Architektur folgen, ob Fehlerbehandlung und Monitoring existieren und ob End-to-End-Tests die echten Prozesse abdecken."
@@ -56,13 +56,13 @@ faq:
   - q: "Brauchen wir eine Middleware für die Salesforce-Integration?"
     a: "Das hängt von der Größe des Unternehmens und der Zahl der Systeme ab. Bei wenigen stabilen Schnittstellen kann eine direkte Anbindung reichen. Bei vielen Systemen, mehreren Teams und häufigen Änderungen macht eine Middleware Schnittstellen leichter änderbar, überwachbar und wiederverwendbar."
   - q: "Wie wird Telefonie an die Service Cloud angebunden?"
-    a: "Über eine CTI-Integration, die Anrufe in die Service Cloud bringt, sodass Agenten beim Klingeln den Kunden und die offenen Fälle sehen. Ich habe mit den CTI-Anbietern Genesys und Mirage gearbeitet, und Microsoft Teams wird als Telefonieplattform wichtiger. Telefon und E-Mail bleiben in den meisten Serviceorganisationen die Kernkanäle."
+    a: "Über eine CTI-Integration, die eingehende Anrufe mit der Service Cloud verbindet, sodass Agenten beim Klingeln den Kunden und die offenen Fälle sehen. Ich habe mit den CTI-Anbietern Genesys und Mirage gearbeitet, und Microsoft Teams wird als Telefonieplattform wichtiger. Telefon und E-Mail bleiben in den meisten Serviceorganisationen die Kernkanäle."
   - q: "Ersetzen Sie unseren Umsetzungspartner?"
     a: "Nein. Ihre Partner bauen weiter, ich steuere sie auf Kundenseite nach gemeinsamen Regeln. Wenn Sie einen Partner ablösen wollen, helfe ich dabei, ohne Wissensverlust und ohne Verzögerung im Programm."
   - q: "Wie vermeiden Sie, dass Sie zum Engpass werden?"
-    a: "Ich arbeite transparent. Entscheidungen, Standards und Review-Kriterien sind so dokumentiert, dass Ihr Team und Ihre Partner sie sehen, damit niemand auf mich warten muss und die Arbeit nicht an mir hängt."
+    a: "Ich arbeite transparent. Entscheidungen, Standards und Review-Kriterien sind so dokumentiert, dass Ihr Team und Ihre Partner jederzeit darauf zugreifen können. So muss niemand auf mich warten, und die Arbeit hängt nicht an mir."
   - q: "Arbeiten Sie vor Ort oder remote?"
-    a: "Beides. Ich arbeite vor Ort mit Ihren Teams und remote, je nachdem, was die Phase des Programms braucht."
+    a: "Beides. Ich arbeite vor Ort mit Ihren Teams und remote, je nachdem, was die aktuelle Phase des Programms erfordert."
 blogTags: [integration, oauth, security, sicherheit, service cloud]
 readMore: [manufacturing-cloud-erp-integration, revenue-cloud-sap-system-boundaries, commerce-sap-data-flows, customer-prices-sap-or-salesforce-pricing, field-service-spare-parts, agentforce-sap-order-status, legacy-erp-without-api-agents, salesforce-password-integrations-2027]
 masterclass: manufacturing-cloud
@@ -72,7 +72,7 @@ Salesforce-Integration heißt bei Herstellern fast immer Salesforce-SAP-Integrat
 
 ## Welches System führt für welche Daten?
 
-Die meisten Integrationsprobleme beginnen mit einer unklaren Antwort auf diese Frage. Können sowohl Salesforce als auch das ERP eine Kundenadresse oder einen Preis ändern, sind sich die beiden Systeme früher oder später uneinig. Der erste Schritt ist deshalb eine Systemlandkarte mit einem führenden System für jede Art von Daten. Eine typische Aufteilung sieht so aus:
+Die meisten Integrationsprobleme beginnen mit einer unklaren Antwort auf diese Frage. Können sowohl Salesforce als auch das ERP eine Kundenadresse oder einen Preis ändern, widersprechen sich die Daten der beiden Systeme früher oder später. Der erste Schritt ist deshalb eine Systemlandkarte mit einem führenden System für jede Art von Daten. Eine typische Aufteilung sieht so aus:
 
 ```tabelle
 titel: Systemlandkarte: welches System bei welchen Daten führt
@@ -100,11 +100,11 @@ contra: Wann sie sich nicht lohnt
 - Die Schnittstellen sind stabil und ändern sich selten.
 ```
 
-Für die Umsetzung arbeite ich mit ausgewählten Partnern, die Integrationserfahrung aus großen internationalen Programmen haben. So bekommt der Kunde einen Partner, der zur Größe der Aufgabe passt, während Architektur und Spezifikationen auf Kundenseite bleiben.
+Für die Umsetzung arbeite ich mit ausgewählten Partnern, die Integrationserfahrung aus großen internationalen Programmen haben. So erhält der Kunde einen Partner, der zur Größe der Aufgabe passt, während Architektur und Spezifikationen auf Kundenseite bleiben.
 
 ## Beim Klingeln sieht der Agent den Kunden in der Service Cloud
 
-In den meisten Serviceorganisationen sind Telefon und E-Mail noch die wichtigsten Kanäle. Eine CTI-Integration bringt Anrufe in die Service Cloud, sodass Agenten beim Klingeln den Kunden, die installierten Produkte und die offenen Fälle sehen.
+In den meisten Serviceorganisationen sind Telefon und E-Mail noch die wichtigsten Kanäle. Eine CTI-Integration verbindet eingehende Anrufe mit der Service Cloud, sodass Agenten beim Klingeln den Kunden, die installierten Produkte und die offenen Fälle sehen.
 
 ```ablauf
 ext: Anruf, Telefonieplattform
@@ -120,7 +120,7 @@ Ich habe mit den CTI-Anbietern Genesys und Mirage gearbeitet, und Microsoft Team
 
 ## Integrationsbenutzer brauchen weniger Rechte und eine neue Anmeldung
 
-Jede Schnittstelle hat einen technischen Benutzer, und diese Benutzer haben oft mehr Rechte als nötig. Auch die Authentifizierung ändert sich: Schnittstellen, die sich mit Benutzername und Passwort anmelden, müssen auf moderne Verfahren umsteigen, wie in [Salesforce-Passwort-Integrationen enden 2027](../../blog/salesforce-passwort-integrationen-2027/) beschrieben. Integrationsbenutzer, ihre Rechte und ihre Authentifizierung prüfe ich als Teil der Architektur. Die Termine für die Anmeldung von Integrationen:
+Jede Schnittstelle hat einen technischen Benutzer, und diese Benutzer haben oft mehr Rechte als nötig. Auch die Authentifizierung ändert sich: Schnittstellen, die sich mit Benutzername und Passwort anmelden, müssen auf moderne Verfahren umsteigen, wie in [Salesforce-Passwort-Integrationen enden 2027](../../blog/salesforce-passwort-integrationen-2027/) beschrieben. Integrationsbenutzer, ihre Rechte und ihre Authentifizierung prüfe ich als Teil der Architektur. Die wichtigsten Termine für die Anmeldung von Integrationen:
 
 ```zeitleiste
 2026-12-01 | SOAP login() braucht die Berechtigung Use Any API Auth
