@@ -14,13 +14,13 @@ takeaways:
   - "The Field Service Scheduling Console puts the Gantt, the appointment list and the map on one screen and opens as a tab in the Field Service app."
   - "The Scheduling Console is available only with Enhanced Scheduling and Optimization. Orgs on the older engine have to switch the engine first."
   - "Candidate search shows readable recommendations instead of grades. Why? explains a suggestion with AI and needs the Einstein Field Service User permission set."
-  - "Customizations and settings carry over according to Trailhead. Custom actions and list filters still need a test before you switch."
-  - "I let two dispatchers test the new console in one territory. The others stay on the classic console until the gaps that matter to them are closed."
+  - "According to Trailhead, customizations and settings carry over. Custom actions and list filters still need a test before you switch."
+  - "I would let two dispatchers test the new console in one territory. The others stay on the classic console until the gaps that matter to them are closed."
 faq:
   - q: "What is the Field Service Scheduling Console?"
     a: "It is the new dispatcher workspace in Salesforce Field Service. It shows the Gantt, the service appointment list and a map on one screen, built on Lightning Web Components, and suggests candidates with AI explanations."
   - q: "What do I need for the Scheduling Console?"
-    a: "Enhanced Scheduling and Optimization. Admins set up the console through Salesforce Go and give dispatchers access with the permission set that Salesforce Go creates. The AI explanation behind Why? is an Agentforce feature on top: it needs the Einstein Field Service User permission set and the license behind it."
+    a: "Enhanced Scheduling and Optimization. Admins set up the console through Salesforce Go and give dispatchers access with the permission set that Salesforce Go creates. The AI explanation behind Why? is an additional Agentforce feature: it needs the Einstein Field Service User permission set and the underlying license."
   - q: "Do customizations of the old dispatcher console still work?"
     a: "According to Trailhead, customizations applied to the Classic Dispatch Console continue to work in the Scheduling Console, and the Gantt state and user settings carry over. I would still test every custom action, Visualforce page and appointment list in a sandbox, because tabs and navigation that point to the old label can break."
   - q: "Is the Classic Dispatch Console being retired?"
@@ -28,19 +28,19 @@ faq:
   - q: "Why can I no longer find the classic dispatcher console?"
     a: "Since Summer '26 (managed package version 262) its tab is called Classic Dispatch Console. Search for that name in the App Launcher or add the tab to the navigation of the Field Service app again."
   - q: "Do my list views carry over to the Scheduling Console?"
-    a: "The appointment list is a standard Salesforce list view on service appointments, so standard list views on service appointments appear in it. Custom lists from the Classic Dispatch Console are a different thing and do not show up just because of that. Filters from field sets also work differently: a Trailblazer Community answer says the new console does not support them yet, so rebuild and test your lists in a sandbox."
+    a: "The appointment list is a standard Salesforce list view on service appointments, so standard list views on service appointments appear in it. Custom lists from the Classic Dispatch Console are different and do not appear automatically. Filters from field sets also work differently: a Trailblazer Community answer says the new console does not support them yet, so rebuild and test your lists in a sandbox."
 draft: false
 ---
 
-Dispatchers should move to the Field Service Scheduling Console step by step: first a small group in one territory, then the rest once the functions they use daily are there. The Scheduling Console puts the Gantt, the appointment list and the map on one screen, explains proposed slots with AI and, according to Trailhead, keeps the customizations of the Classic Dispatch Console, the former Dispatcher Console. It only runs with Enhanced Scheduling and Optimization, and according to Salesforce the two consoles are not fully at parity yet. As of November 2026 I see no retirement date for the old console, which leaves room for a controlled move.
+Dispatchers should move to the Field Service Scheduling Console step by step: first a small group in one territory, then the rest once the functions they use daily are available. The Scheduling Console puts the Gantt, the appointment list and the map on one screen, explains proposed slots with AI and, according to Trailhead, preserves the customizations from the Classic Dispatch Console, the former Dispatcher Console. It only runs with Enhanced Scheduling and Optimization, and according to Salesforce the two consoles are not fully at parity yet. As of November 2026 I see no retirement date for the old console, which leaves room for a controlled move.
 
 ## What is the Scheduling Console?
 
-The Scheduling Console is the new dispatcher workspace in Salesforce Field Service. According to the Trailhead unit [Get to know the Scheduling Console](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-basics/get-to-know-the-scheduling-console), it opens as a tab in the Field Service app, where dispatchers also reach accounts and service resources. It is built on Lightning Web Components and uses server-side filtering and lazy loading for large data volumes. The list and the global search still have limits, such as 50 results per search, which dispatchers should know.
+The Scheduling Console is the new dispatcher workspace in Salesforce Field Service. According to the Trailhead unit [Get to know the Scheduling Console](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-basics/get-to-know-the-scheduling-console), it opens as a tab in the Field Service app, where dispatchers can also access accounts and service resources. It is built on Lightning Web Components and uses server-side filtering and lazy loading for large data volumes. The list and the global search still have limits, such as 50 results per search, which dispatchers should know.
 
 The screen has three parts:
 
-- **Gantt.** Service resources as rows, their appointments as blocks. Dispatchers filter resources by name, type or skill, move appointments, assign absences and widen the view to several days.
+- **Gantt.** Service resources as rows, their appointments as blocks. Dispatchers filter resources by name, type or skill, move appointments, assign absences and expand the view to cover several days.
 - **Service appointment list.** Open and scheduled appointments in a standard Salesforce list view with custom columns and filters. Appointments are dragged from the list onto the Gantt.
 - **Map.** Resources and appointments for the selected day, with layers for planned routes, traffic and geocoded appointment locations, kept in sync with the Gantt and the list. Actual routes depend on location tracking being switched on.
 
@@ -52,18 +52,18 @@ If Visualforce pages, custom tabs or navigation rules point to the old label, th
 
 ## The new console explains its proposals
 
-The biggest change for dispatchers is candidate search. According to the Trailhead unit [Dispatch smarter with the Scheduling Console](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-quick-look/didispatch-smarter-with-the-scheduling-console), the console shows readable recommendations instead of numeric grades. A **Why?** next to a candidate gives an AI-generated explanation of why that slot was suggested. According to the Trailhead unit [Work with the service appointment list](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-basics/work-with-the-service-appointment-list), these explanations are an Agentforce feature that an admin turns on by assigning the Einstein Field Service User permission set. Check that license before you promise Why? to your dispatchers.
+The biggest change for dispatchers is candidate search. According to the Trailhead unit [Dispatch smarter with the Scheduling Console](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-quick-look/didispatch-smarter-with-the-scheduling-console), the console shows plain-language recommendations instead of numeric grades. A **Why?** link next to a candidate gives an AI-generated explanation of why that slot was suggested. According to the Trailhead unit [Work with the service appointment list](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-basics/work-with-the-service-appointment-list), these explanations are an Agentforce feature that an admin turns on by assigning the Einstein Field Service User permission set. Check that license before you promise the Why? feature to your dispatchers.
 
-That matters more than it sounds. In the Classic Dispatch Console a dispatcher sees a grade and has to guess which service objective drove it. An experienced dispatcher who overrides proposals because they do not trust the grade is exactly the pattern I describe in [how much Field Service scheduling should be automatic](../salesforce-field-service-scheduling-automation/). An explanation in plain words makes it easier to see whether the engine is wrong or whether data is missing.
+That matters more than it sounds. In the Classic Dispatch Console a dispatcher sees a grade and has to guess which service objective drove it. When an experienced dispatcher overrides proposals because they do not trust the grade, that is exactly the pattern I describe in [how much Field Service scheduling should be automatic](../salesforce-field-service-scheduling-automation/). An explanation in plain words makes it easier to see whether the engine is wrong or whether data is missing.
 
-Trailhead names further changes:
+Trailhead lists further changes:
 
-- **Drag and drop** from the list to the Gantt, also across two monitors.
+- **Drag and drop** from the list to the Gantt, including across two monitors.
 - **Global search** for appointments across territories, date ranges and list filters, with results in a temporary list of up to 50 records.
 - **Hover details** on appointments, resources and absences, without opening the record.
 - **Live updates** when the list is synced with the Gantt's territories, so no manual refresh.
 
-For Winter '27, Salesforce lists [Scheduling Console Enhancements](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center): appointments that span several visits or days appear as one connected job and move with a single drag. For machine builders with commissioning or overhauls over several days, that is the most useful addition so far.
+For Winter '27, Salesforce lists [Scheduling Console Enhancements](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center): appointments that span several visits or days appear as one connected job and move with a single drag. For machine builders with commissioning projects or overhauls that take several days, that is the most useful addition so far.
 
 ## The Scheduling Console needs the enhanced engine
 
@@ -75,9 +75,9 @@ The second requirement is setup. According to Trailhead, the console is switched
 
 Trailhead calls the move low risk: customizations applied to the Classic Dispatch Console continue to work in the Scheduling Console, and the Gantt state and user settings carry over. I would still test every custom action, every Visualforce page and every appointment list in a sandbox, because custom code and old filters are where surprises show up first.
 
-Both consoles are not identical yet. In a [Trailblazer Community thread](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pMqC00AK) from May 2026, a customer reported after the Summer '26 upgrade that color palettes were missing and that the new console offered views from one day to one week, while the classic Gantt also had views such as Utilization and Long-Term. A Salesforce team member answered that both consoles are not 100 percent at parity yet and that these features are not forgotten, without a date. Since then Salesforce has closed part of that gap: the Winter '27 release note [Navigate Long-Term Schedules Effortlessly in the Scheduling Console](https://help.salesforce.com/s/articleView?language=en_US&id=release-notes.rn_fieldservice_264_long_views.htm&release=264&type=5) adds long-term views. Check in your own org which of the gaps from May 2026 still apply before you plan the move.
+The two consoles are not identical yet. In a [Trailblazer Community thread](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pMqC00AK) from May 2026, a customer reported after the Summer '26 upgrade that color palettes were missing and that the new console offered views from one day to one week, while the classic Gantt also had views such as Utilization and Long-Term. A Salesforce team member answered that the two consoles do not yet have 100 percent feature parity and that these features have not been forgotten, but did not give a date. Since then Salesforce has closed part of that gap: the Winter '27 release note [Navigate Long-Term Schedules Effortlessly in the Scheduling Console](https://help.salesforce.com/s/articleView?language=en_US&id=release-notes.rn_fieldservice_264_long_views.htm&release=264&type=5) adds long-term views. Check in your own org which of the gaps from May 2026 still apply before you plan the move.
 
-For a manufacturer this is the important point. Dispatchers who plan annual maintenance weeks ahead or watch utilization across a whole territory work in exactly those long views, so test them with your own data volumes. Dispatchers who mostly handle breakdowns for today and tomorrow barely miss them. Which group you have decides how fast the move can go.
+For a manufacturer this is the important point. Dispatchers who plan annual maintenance work weeks in advance or watch utilization across a whole territory work in exactly those long views, so test them with your own data volumes. Dispatchers who mostly handle breakdowns for today and tomorrow barely miss them. The group you have determines how fast the move can go.
 
 ## Worked example: two dispatchers test first
 
@@ -94,8 +94,8 @@ Decision
   The criteria are set before the pilot starts: every critical task works, no blocking gap remains, and only a small share of cases, for example under 5 percent, needs the Classic Dispatch Console. Then the other two dispatchers follow. If a view the maintenance planner needs is still missing, that planner keeps the Classic Dispatch Console for that task.
 ```
 
-The note on Why? is worth collecting. If dispatchers use it often and then change the proposal anyway, that is a signal to check for missing data, a policy that does not fit, knowledge the dispatcher has that the system lacks, or an explanation that is not clear enough. That is useful input long before any AI agent schedules on its own. Which agents work for dispatchers today is covered in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/), and the wider picture in the AI masterclass chapter on [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
+The note on Why? is worth collecting. If dispatchers use it often and then change the proposal anyway, that is a signal to check for missing data, a policy that does not fit, knowledge the dispatcher has that the system lacks, or an explanation that is not clear enough. That is useful input long before any AI agent schedules on its own. The question of which agents work for dispatchers today is covered in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/), and the wider picture is covered in the AI masterclass chapter on [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
 ## First step: check which engine you run
 
-Check the engine first. If it is still the older one, the console question waits until the switch to Enhanced Scheduling and Optimization. If it already is the enhanced engine, give two dispatchers the permission set and let them plan one territory for a few weeks. Engine, console and policy owner are the three decisions of the masterclass chapter on [scheduling and dispatch](../../masterclass/field-service/field-service-scheduling-dispatch/).
+Check the engine first. If it is still the older one, postpone the console decision until the switch to Enhanced Scheduling and Optimization. If it is already the enhanced engine, give two dispatchers the permission set and let them plan one territory for a few weeks. Engine, console and policy owner are the three decisions covered in the masterclass chapter on [scheduling and dispatch](../../masterclass/field-service/field-service-scheduling-dispatch/).

@@ -19,7 +19,7 @@ faq:
   - q: "Ist das sfdx-hardis-Training wirklich kostenlos?"
     a: "Ja. Das Training ist kostenlos und öffentlich verfügbar. Sie brauchen einen kostenlosen GitHub-Account, kostenlose Salesforce Developer Edition Orgs und kostenlose Tools wie Node.js, Salesforce CLI und GitHub CLI. Ein bezahltes Abonnement oder eine Kreditkarte ist nicht erforderlich."
   - q: "Wie lange dauert das sfdx-hardis-Training?"
-    a: "Der Kurs nennt etwa 2 h 15 für Level 1, etwa 4 h für Level 2 und etwa 6 h 55 für Level 3. Zusammen sind das etwa 13 Stunden. Mit Vorerfahrung habe ich für alle drei fast einen Tag gebraucht."
+    a: "Der Kurs gibt etwa 2 h 15 für Level 1, etwa 4 h für Level 2 und etwa 6 h 55 für Level 3 an. Zusammen sind das etwa 13 Stunden. Mit Vorerfahrung habe ich für alle drei fast einen Tag gebraucht."
   - q: "Für wen ist das sfdx-hardis-Training gedacht?"
     a: "Level 1 und 2 richten sich an alle, die User Stories umsetzen und bereitstellen, darunter Admins und Berater. Level 3 richtet sich an Release Manager, die die Pipeline bis in die Produktion verantworten."
   - q: "Ist das sfdx-hardis-Badge eine Zertifizierung?"
@@ -38,7 +38,7 @@ Wenn Sie das Tool noch nicht kennen, starten Sie mit meiner [Einführung in sfdx
 
 ## Was deckt das sfdx-hardis-Training ab?
 
-Das [Training](https://sfdx-hardis.cloudity.com/salesforce-devops-training/) stammt von Cloudity und lässt sich ausschließlich mit kostenlosen Ressourcen absolvieren: einem GitHub-Account, VS Code, Node.js, Salesforce CLI, GitHub CLI und kostenlosen Salesforce Developer Edition Orgs, für Level 3 ist eine zweite erforderlich. Wenn Sie auf Ihrem Rechner keine Software installieren können, lässt sich das Training auch in Salesforce Agentforce Vibes IDE ausführen, dem früheren Code Builder. Jedes Lab enthält Screenshots der echten Oberflächen. Der Kurs besteht aus drei aufeinanderfolgenden Leveln:
+Das [Training](https://sfdx-hardis.cloudity.com/salesforce-devops-training/) stammt von Cloudity und lässt sich ausschließlich mit kostenlosen Ressourcen absolvieren: einem GitHub-Account, VS Code, Node.js, Salesforce CLI, GitHub CLI und kostenlosen Salesforce Developer Edition Orgs. Für Level 3 ist eine zweite Org erforderlich. Wenn Sie auf Ihrem Rechner keine Software installieren können, lässt sich das Training auch in der Salesforce Agentforce Vibes IDE absolvieren, dem früheren Code Builder. Jedes Lab enthält Screenshots der echten Oberflächen. Der Kurs besteht aus drei aufeinanderfolgenden Leveln:
 
 ```schritte
 Level 1, Contributor Basics | 7 Labs · etwa 2 h 15
@@ -71,7 +71,7 @@ fazit: Jedes Badge prüft ein Job, der alle Checks am eigenen Repository erneut 
 
 Das unterscheidet den Kurs von anderen. Es gibt kein Multiple-Choice-Quiz. Am Ende jedes Levels klont ein Job Ihr öffentliches Repository und führt die Checks dieses Levels und aller darunterliegenden Level erneut aus. Nur wenn alle Checks erfolgreich sind, erhalten Sie das Badge, das Sie auf LinkedIn teilen können. Cloudity sagt klar, dass es ein Badge ist und keine Zertifizierung. Für mich ist das das ehrlichere Modell: Es ist ein stärkerer Nachweis praktischer Arbeit als jedes Quiz.
 
-Meine [drei Badges](https://sfdx-hardis-training.cloudity.com/badges/fkramer/) habe ich am 18. und 20. Oktober 2026 erhalten, mit allen Checks auf allen drei Leveln bestanden.
+Meine [drei Badges](https://sfdx-hardis-training.cloudity.com/badges/fkramer/) habe ich am 18. und 20. Oktober 2026 erhalten; auf allen drei Leveln waren alle Checks erfolgreich.
 
 ## Meine fünf Takeaways
 
@@ -79,7 +79,7 @@ Auch mit Erfahrung war einiges neu oder hat mir einen frischen Blick gegeben:
 
 1. **GitHub statt GitLab und Azure DevOps.** In meinen Projekten habe ich bisher vor allem GitLab und Azure DevOps genutzt. Den Kurs auf GitHub zu machen, war eine schöne Abwechslung. Kleines Detail, großes Lächeln: GitHub zeigt den Validierungsstatus eines Pull Requests direkt im Icon des Browser-Tabs.
 2. **Post-Deployment-Schritte und SFDMU in der Pipeline.** Deployment Actions und Datenladungen mit SFDMU, dem Open-Source-Plugin für Datenmigrationen, über eine hardis-gestützte Pipeline laufen zu lassen, zeigt, wie viel manuelle Release-Arbeit aus Tabellen verschwinden kann.
-3. **Promotion Branches.** Ein neues Beta-Feature, nach dem ich Nicolas Vuillamy immer wieder gefragt hatte, um es dann selbst einen Monat lang nicht zu testen. Ich habe mich gefühlt wie ein typischer Endkunde.
+3. **Promotion Branches.** Das ist ein neues Beta-Feature, um das ich Nicolas Vuillamy immer wieder gebeten hatte, das ich dann aber selbst einen Monat lang nicht getestet habe. Ich habe mich gefühlt wie ein typischer Endkunde.
 4. **Die DevOps-Pipeline-Seite.** Statt alles direkt im Repository zu prüfen, zeigt die Pipeline-Ansicht in der VS-Code-Erweiterung den Stand von Branches und Umgebungen an einer Stelle.
 5. **DORA-Metriken.** Zum ersten Mal habe ich mir die DORA-Metriken in sfdx-hardis angesehen: Deployment-Häufigkeit, Durchlaufzeit von Änderungen, Fehlerquote von Änderungen und Wiederherstellungszeit. Das sind Zahlen, die ein Lenkungsausschuss versteht.
 
@@ -93,7 +93,7 @@ Ich empfehle es drei Gruppen:
 - **Entwickler und Tech Leads**, die Git kennen, aber noch keine vollständige Salesforce-Pipeline mit Deployment Actions, Quality Gates und Monitoring gesehen haben.
 - **Release Manager und Architekten**, die den Release-Prozess verantworten. Level 3 würde ich für diese Rolle zur Pflicht machen, gerade in Programmen mit mehreren Partnern, in denen [Pull-Request-Reviews](../warum-pull-request-reviews-pflicht-sind/) und ein klarer Release-Rhythmus den Unterschied machen.
 
-Für Kunden ist das Training außerdem ein lizenzfreier Weg, internes DevOps-Wissen aufzubauen, mit einem tatsächlichen Zeitaufwand von etwa 13 Stunden pro Person. Das ist die Grundlage dafür, den Release-Prozess selbst zu besitzen, statt ihn einem Partner zu überlassen. Dieses Thema zieht sich durch einen Großteil meiner [Arbeit an Architektur und Governance](../../leistungen/partnersteuerung/).
+Für Kunden ist das Training außerdem ein lizenzfreier Weg, internes DevOps-Wissen aufzubauen. Der tatsächliche Zeitaufwand liegt bei etwa 13 Stunden pro Person. Das ist die Grundlage dafür, den Release-Prozess selbst in der Hand zu behalten, statt ihn einem Partner zu überlassen. Dieses Thema zieht sich durch einen Großteil meiner [Arbeit an Architektur und Governance](../../leistungen/partnersteuerung/).
 
 ## Mein Fazit: mit Erfahrung einen Tag einplanen, ohne zwei
 
@@ -103,4 +103,4 @@ Die offiziellen Zeiten ergeben zusammen etwa 13 Stunden. Planen Sie mit Erfahrun
 Arbeiten Sie jedes Level am besten am Stück durch und nicht verteilt über Wochen, denn die Labs bauen direkt aufeinander auf und die Zusammenhänge zwischen Branch, Pull Request, Pipeline und Org werden so am deutlichsten.
 ```
 
-Der Kurs ist kostenlos und praxisnah, und das Badge hat Aussagekraft, weil es geprüft wird. Er ersetzt nicht Ihre eigene Enterprise-Konfiguration: geschützte Branches, Freigaberechte, Secrets, Datenschutz und mehrere echte Partner sind nicht Teil eines Trainingsprojekts. Badges erfordern ein öffentliches Repository. Verwenden Sie deshalb nur das fiktive Trainingsprojekt und niemals Kundenmetadaten oder Secrets. Großes Lob und Dank an Nicolas Vuillamy und das Cloudity-Team.
+Der Kurs ist kostenlos und praxisnah, und das Badge hat Aussagekraft, weil die Arbeit geprüft wird. Er ersetzt nicht Ihre eigene Enterprise-Konfiguration: geschützte Branches, Freigaberechte, Secrets, Datenschutz und mehrere echte Partner sind nicht Teil eines Trainingsprojekts. Badges erfordern ein öffentliches Repository. Verwenden Sie deshalb nur das fiktive Trainingsprojekt und niemals Kundenmetadaten oder Secrets. Großes Lob und Dank an Nicolas Vuillamy und das Cloudity-Team.

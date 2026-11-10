@@ -10,24 +10,24 @@ topic: data
 categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, Produktdaten, PIM, ERP, Katalog, Datenqualität]
 takeaways:
-  - "Das ERP führt Materialnummer, Mengeneinheit und Vertriebsstatus, ein PIM Texte, Merkmale und Bilder. Salesforce hält eine Kopie."
-  - "Ein Store hat genau einen Katalog und fasst 4 Mio. Produkte, davon 1 Mio. durchsuchbar. Ein Variantenträger kann 200 Varianten haben."
-  - "Pro Produkt sind 9 Bilder und 5 Dateianhänge möglich. Seit Juli 2026 können Produktmedien auch von externen URLs kommen, für alle Stores der Org."
+  - "Das ERP führt Materialnummer, Mengeneinheit und Vertriebsstatus, ein PIM führt Texte, Merkmale und Bilder. Salesforce hält eine Kopie."
+  - "Ein Store hat genau einen Katalog und fasst 4 Mio. Produkte, von denen 1 Mio. durchsuchbar ist. Ein Variantenträger kann 200 Varianten haben."
+  - "Pro Produkt sind 9 Bilder und 5 Dateianhänge möglich. Externe Medien-URLs gibt es seit Juli 2026, die Einstellung gilt dann für alle Stores der Org."
   - "Name, Beschreibung, SKU, Produktcode und Kategoriename sind standardmäßig durchsuchbar, Elternprodukte von Varianten nicht. Die Datenqualität entscheidet."
-  - "Legen Sie pro Produktfeld einen Owner fest, bevor der erste Import läuft. Änderungen, die der nächste ERP-Lauf überschreibt, kosten mehr als der Import."
+  - "Legen Sie pro Produktfeld einen Owner fest, bevor der erste Import läuft. Änderungen, die der nächste ERP-Lauf überschreibt, kosten mehr Aufwand als der Import."
 faq:
   - q: "Brauche ich ein PIM für Salesforce B2B Commerce?"
     a: "Nicht immer. Bei einigen tausend Ersatzteilen mit Texten aus dem ERP kann das ERP die einzige Quelle sein. Ein PIM lohnt sich, wenn für einen großen Katalog Marketingtexte, viele technische Merkmale, Bilder und mehrere Sprachen gepflegt werden müssen."
   - q: "Wie viele Produkte fasst ein B2B-Commerce-Store?"
-    a: "Laut Limitseite von Salesforce 4 Mio. Produkte pro Store, davon werden bis zu 1 Mio. von der Suche unterstützt. Ein Store hat einen Produktkatalog mit bis zu 3 Mio. Produkten."
+    a: "Laut Limitseite von Salesforce fasst ein Store 4 Mio. Produkte, davon werden bis zu 1 Mio. von der Suche unterstützt. Ein Store hat einen Produktkatalog mit bis zu 3 Mio. Produkten."
   - q: "Wie viele Bilder kann ein Produkt in B2B Commerce haben?"
-    a: "9 Bilder und bis zu 5 Dateianhänge pro Produkt. Seit Juli 2026 können Produktmedien auch von externen URLs kommen; die Einstellung gilt für alle Stores der Org. Reichere Inhalte wie 3D-Modelle brauchen eine Einbindung über LWC."
+    a: "Ein Produkt kann 9 Bilder und bis zu 5 Dateianhänge haben. Seit Juli 2026 lassen sich Produktmedien auch über externe URLs einbinden; die Einstellung gilt für alle Stores der Org. Umfangreichere Inhalte wie 3D-Modelle brauchen eine Einbindung über LWC."
   - q: "Sollen Merchandiser Produktdaten direkt in Salesforce ändern?"
-    a: "Nur Felder, die Salesforce gehören, etwa Shop-Kategorien oder Sucheinstellungen. Felder aus ERP oder PIM sollten in Salesforce schreibgeschützt sein, sonst überschreibt der nächste Lauf die Änderung."
+    a: "Nur Felder, für die Salesforce führend ist, etwa Shop-Kategorien oder Sucheinstellungen. Felder aus dem ERP oder PIM sollten in Salesforce schreibgeschützt sein, sonst überschreibt der nächste Lauf die Änderung."
 draft: false
 ---
 
-Produktdaten, die ERP oder PIM führen, sollten nicht in Salesforce gepflegt werden. Das ERP führt, was es heute schon führt: Materialnummer, Mengeneinheit, Vertriebsstatus und den Bezug zu Preis und Bestand. Ein PIM, falls vorhanden, führt Texte, technische Merkmale, Bilder und Übersetzungen. Salesforce hält von beidem eine Kopie und ergänzt nur, was zum Shop gehört, etwa Kategorien und Sucheinstellungen. Die Grenzen des Stores sind weniger wichtig als diese Aufteilung: ein Katalog pro Store, 4 Mio. Produkte, davon 1 Mio. durchsuchbar, 200 Varianten pro Variantenträger, 9 Bilder pro Produkt. Händler finden, was die Daten hergeben.
+Produktdaten, die ERP oder PIM führen, sollten nicht in Salesforce gepflegt werden. Das ERP verwaltet, was dort heute schon liegt: Materialnummer, Mengeneinheit, Vertriebsstatus und den Bezug zu Preis und Bestand. Ein PIM, falls vorhanden, führt Texte, technische Merkmale, Bilder und Übersetzungen. Salesforce hält von beidem eine Kopie und ergänzt nur, was zum Shop gehört, etwa Kategorien und Sucheinstellungen. Die Grenzen des Stores sind weniger wichtig als diese Aufteilung: ein Katalog pro Store, 4 Mio. Produkte, davon 1 Mio. durchsuchbar, 200 Varianten pro Variantenträger, 9 Bilder pro Produkt. Händler finden, was die Daten hergeben.
 
 ## Was braucht ein B2B-Shop an Produktdaten?
 
@@ -45,7 +45,7 @@ Preise kommen aus Salesforce-Preisbüchern oder über eine Commerce Extension vo
 
 ## Wer sollte welche Produktdaten führen?
 
-Meine Regel ist ein Owner pro Feld, und der Owner ist das System, in dem die Daten entstehen. Bei den meisten Herstellern ergibt das diese Aufteilung:
+Meine Regel lautet: ein Owner pro Feld, und der Owner ist das System, in dem die Daten entstehen. Bei den meisten Herstellern ergibt das diese Aufteilung:
 
 | Daten | Owner | In Salesforce |
 |---|---|---|
@@ -55,9 +55,9 @@ Meine Regel ist ein Owner pro Feld, und der Owner ist das System, in dem die Dat
 | Bilder, Zeichnungen, Datenblätter | PIM oder DAM | Verweis oder Kopie |
 | Shop-Kategorien, Sucheinstellungen, Sortierung | Salesforce | Hier gepflegt |
 
-In dieser Aufteilung ist die letzte Zeile die einzige, die Merchandiser im Shop pflegen; shopspezifische Felder wie Badges oder SEO-Texte können Sie bewusst dazunehmen. Alles andere kommt über eine Schnittstelle, und diese Schnittstelle muss festlegen, welche Seite gewinnt. Korrigiert ein Merchandiser einen Tippfehler in Salesforce und der nächtliche ERP-Lauf überschreibt ihn, sieht der Händler am nächsten Tag wieder den Fehler, und der Merchandiser verliert das Vertrauen in den Shop. Dasselbe Prinzip gilt für jedes Objekt in einer Salesforce-Org. Ich beschreibe es in der [Object Ownership Matrix](../object-ownership-matrix-salesforce/).
+In dieser Aufteilung ist die letzte Zeile die einzige, die Merchandiser im Shop pflegen; shopspezifische Felder wie Badges oder SEO-Texte können Sie bewusst dazunehmen. Alles andere kommt über eine Schnittstelle, und diese Schnittstelle muss festlegen, welche Seite bei Konflikten führend ist. Korrigiert ein Merchandiser einen Tippfehler in Salesforce und der nächtliche ERP-Lauf überschreibt ihn, sieht der Händler am nächsten Tag wieder den Fehler, und der Merchandiser verliert das Vertrauen in den Shop. Dasselbe Prinzip gilt für jedes Objekt in einer Salesforce-Org. Ich beschreibe es in der [Object Ownership Matrix](../object-ownership-matrix-salesforce/).
 
-Brauchen Sie ein PIM? Nicht für jeden Shop. Rechenbeispiel: ein Hersteller mit 6.000 Ersatzteilen, deutschen und englischen Texten aus dem ERP und einem Foto pro Teil. Hier kann das ERP die einzige Quelle sein. Ein PIM brächte ein System mehr, aber keine Daten mehr. Bei 60.000 Teilen, 15 Sprachen, technischen Merkmalen für Filter und mehreren Bildern pro Teil würde ich ein PIM wollen, weil ERP-Materialstämme selten für diese Anreicherung gebaut sind. Die Zahlen sind Beispiele; Sprachen, Merkmale und Freigabeprozesse entscheiden, nicht die Zahl der Teile allein.
+Brauchen Sie ein PIM? Nicht für jeden Shop. Rechenbeispiel: ein Hersteller mit 6.000 Ersatzteilen, deutschen und englischen Texten aus dem ERP und einem Foto pro Teil. Hier kann das ERP die einzige Quelle sein. Ein PIM würde ein zusätzliches System bringen, aber keine zusätzlichen Daten. Bei 60.000 Teilen, 15 Sprachen, technischen Merkmalen für Filter und mehreren Bildern pro Teil würde ich ein PIM wollen, weil ERP-Materialstämme selten für diese Anreicherung gebaut sind. Die Zahlen sind Beispiele; Sprachen, Merkmale und Freigabeprozesse entscheiden, nicht die Zahl der Teile allein.
 
 ## Ein Katalog, 4 Millionen Produkte, 1 Million durchsuchbar
 
@@ -74,13 +74,13 @@ Salesforce führt die [Grenzen für Produkte und Kategorien](https://developer.s
 | Kategorietiefe | 5 Ebenen | soft |
 | Kategorien pro Katalog | 15.000 | soft |
 
-Zwei davon prägen das Design. Ein Katalog pro Store heißt: Ein zweites Sortiment mit eigener Kategoriestruktur braucht einen zweiten Store, während unterschiedliche Sortimente für Kundengruppen über Buyer Groups und Entitlements in einem Store funktionieren; das bespreche ich in [ein B2B-Store oder mehrere](../b2b-store-laender-marken-haendler/). Und der Abstand zwischen 4 Mio. Produkten und 1 Mio. durchsuchbaren zählt für Hersteller mit großem Ersatzteilsortiment.
+Zwei davon prägen das Design. Ein Katalog pro Store heißt: Ein zweites Sortiment mit eigener Kategoriestruktur braucht einen zweiten Store, während unterschiedliche Sortimente für Kundengruppen über Buyer Groups und Entitlements in einem Store funktionieren; das bespreche ich in [ein B2B-Store oder mehrere](../b2b-store-laender-marken-haendler/). Für Hersteller mit großem Ersatzteilsortiment ist außerdem wichtig, dass von 4 Mio. Produkten nur 1 Mio. durchsuchbar ist.
 
 ```hinweis achtung
 Salesforce schreibt, dass nur bis zu 1 Mio. Produkte von der Suche unterstützt werden, und bittet, für mehr als eine Million SKUs den Account Representative anzusprechen. Mit einem Suchanbieter eines Drittherstellers wie Coveo, Algolia oder Bloomreach gilt die Grenze von 4 Mio. nicht.
 ```
 
-Die Kategorietiefe von 5 ist für Ersatzteile selten ein Problem. ERP-Warengruppen sind oft tiefer, aber Käufer klicken sich nicht durch acht Ebenen. Ich würde sie auf drei oder vier Ebenen verflachen und den Rest der Suche und den Filtern überlassen.
+Die Kategorietiefe von 5 ist für Ersatzteile selten ein Problem. ERP-Warengruppen sind oft tiefer, aber Käufer klicken sich nicht durch acht Ebenen. Ich würde die Struktur auf drei oder vier Ebenen verflachen und den Rest der Suche und den Filtern überlassen.
 
 ## Bis zu 200 Varianten pro Variantenträger
 
@@ -94,10 +94,10 @@ Für viele Ersatzteile brauchen Sie gar keine Varianten. Ein Händler sucht meis
 
 9 Bilder pro Produkt reichen für die meisten Ersatzteile. Zeichnungen, Datenblätter und Zertifikate sind etwas anderes: Sie ändern sich mit Revisionen und liegen oft schon in einem DAM- oder PLM-System. Eine Kopie in Salesforce erzeugt einen zweiten Datenstand, der schnell veraltet.
 
-Mit dem Release im Juli 2026 hat Salesforce die Product Media Extensibility ausgeliefert. Laut [Salesforce-Blog](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) lassen sich damit externe DAM-Plattformen (Digital Asset Management), 3D-Modelle, technische Daten und gehostete CMS-Videos anbinden und über LWC-Wrapper auf Produktdetailseiten zeigen. Die Richtung stimmt: Medien bleiben im System, das Revisionen verwaltet, und der Shop zeigt sie an.
+Mit dem Release im Juli 2026 hat Salesforce die Product Media Extensibility ausgeliefert. Laut [Salesforce-Blog](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) lassen sich damit externe DAM-Plattformen (Digital Asset Management) anbinden und 3D-Modelle, technische Daten sowie gehostete CMS-Videos über LWC-Wrapper auf Produktdetailseiten zeigen. Die Richtung stimmt: Medien bleiben im System, das Revisionen verwaltet, und der Shop zeigt sie an.
 
 ```hinweis offen
-Externe URLs für Produktmedien sind eine [Einstellung im Setup](https://help.salesforce.com/s/articleView?id=commerce.comm_productmediaurls.htm&language=en_US&type=5), die für alle Stores der Org gilt. Beim Einschalten werden über Salesforce CMS eingebundene Produktmedien ausgeblendet, also erst in einer Sandbox testen.
+Externe URLs für Produktmedien lassen sich über eine [Einstellung im Setup](https://help.salesforce.com/s/articleView?id=commerce.comm_productmediaurls.htm&language=en_US&type=5) aktivieren; die Einstellung gilt für alle Stores der Org. Beim Einschalten werden über Salesforce CMS eingebundene Produktmedien ausgeblendet. Testen Sie die Einstellung deshalb zuerst in einer Sandbox.
 ```
 
 ## Die Suche findet nur, was in den Daten steht
@@ -107,12 +107,12 @@ Die Shopsuche findet nur, was in den Daten steht. Laut [Salesforce-Hilfe](https:
 Für einen Teilekatalog hat das direkte Folgen:
 
 - Ein Händler, der "Dichtung 50" eingibt, findet nichts, wenn im Namen "O-Ring" steht und der Durchmesser in einem nicht durchsuchbaren Feld liegt.
-- Eine Teilenummer mit anderem Trennzeichen passt erst mit eingeschalteter Teilsuche nach SKU; ob fehlende führende Nullen passen, hängt von SKU und Einrichtung ab.
+- Eine Teilenummer mit anderem Trennzeichen wird erst mit eingeschalteter Teilsuche nach SKU gefunden; ob fehlende führende Nullen gefunden werden, hängt von SKU und Einrichtung ab.
 - Eine alte Teilenummer, die nur in der ERP-Historie steht, ist gar nicht zu finden.
-- Text, der nur am Elternprodukt einer Variante steht, wird nicht gefunden.
+- Text, der nur beim Elternprodukt einer Variante hinterlegt ist, wird nicht gefunden.
 
-Behoben wird all das in den Produktdaten und in der Sucheinrichtung, beschrieben in [Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/).
+All das lässt sich in den Produktdaten und in der Sucheinrichtung beheben. Wie das geht, beschreibe ich in [Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/).
 
 ## 200 Ersatzteile aus dem ERP prüfen
 
-Nehmen Sie eine Stichprobe von 200 typischen Ersatzteilen aus dem ERP und prüfen Sie jedes gegen die Liste oben: Gibt es eine brauchbare Bezeichnung, ein Bild, die Merkmale, nach denen ein Händler filtern würde, einen sauberen Vertriebsstatus? Das Ergebnis zeigt, wie viel Datenarbeit vor dem Shop liegt. Schreiben Sie dann die Owner-Tabelle für Produktfelder und nehmen Sie sie in die Schnittstellenliste auf. Welche Daten wie oft von SAP in den Shop fließen, steht in [B2B Commerce und SAP: Datenflüsse](../b2b-commerce-sap-datenfluesse/), und das ganze Thema gehört zum [Kapitel zu Katalog, Suche und Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) meiner Masterclass B2B Commerce. Solche Schnittstellen zu entwerfen, gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Nehmen Sie eine Stichprobe von 200 typischen Ersatzteilen aus dem ERP und prüfen Sie jedes anhand der Liste oben: Gibt es eine brauchbare Bezeichnung, ein Bild, die Merkmale, nach denen ein Händler filtern würde, und einen sauberen Vertriebsstatus? Das Ergebnis zeigt, wie viel Datenarbeit vor dem Start des Shops liegt. Erstellen Sie dann die Owner-Tabelle für Produktfelder und nehmen Sie sie in die Schnittstellenliste auf. Welche Daten wie oft von SAP in den Shop fließen, steht in [B2B Commerce und SAP: Datenflüsse](../b2b-commerce-sap-datenfluesse/). Das Thema gehört außerdem zum [Kapitel zu Katalog, Suche und Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) meiner Masterclass B2B Commerce. Solche Schnittstellen zu entwerfen, gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
