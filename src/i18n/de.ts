@@ -93,6 +93,10 @@ export const de: Dict = {
         title: 'Make-or-Buy & Lizenzprognosen',
         text: 'Gehört das überhaupt in Salesforce? Best-of-Breed-Alternativen und Lizenzkosten, bewertet bevor die Entscheidung fällt.',
       },
+      {
+        title: 'Projektrettung',
+        text: 'Ein Salesforce-Projekt, das bei Qualität oder Zeitplan aus dem Ruder läuft, gemeinsam mit Kunde und Partner zurück auf Kurs bringen.',
+      },
     ],
     more: 'Mehr erfahren',
     featured: 4,
@@ -103,6 +107,7 @@ export const de: Dict = {
       { order: 5, text: 'Salesforce mit ERP, Middleware und Telefonie verbinden.' },
       { order: 6, text: 'Programme planen und steuern, Nearshore-Teams koordinieren.' },
       { order: 7, text: 'Gehört das in Salesforce? Alternativen und Lizenzkosten vorher bewertet.' },
+      { order: 8, text: 'Ein Salesforce-Projekt, das aus dem Ruder läuft, zurück auf Kurs bringen.' },
     ],
     focusLabel: 'Schwerpunkte',
     focus: [

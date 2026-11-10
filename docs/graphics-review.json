@@ -32,6 +32,7 @@
     "card:ai-native-delivery-process": {"title": "Kartenskizze KI-nativer Delivery-Prozess", "proposal": 1, "rating": null},
     "card:decision-makers-bottleneck-ai": {"title": "Kartenskizze Entscheider als Engpass", "proposal": 1, "rating": null},
     "card:choose-salesforce-implementation-partner": {"title": "Kartenskizze Implementierungspartner auswählen", "proposal": 1, "rating": null},
+    "card:gearset-copado-alternatives": {"title": "Kartenskizze Gearset- und Copado-Alternativen", "proposal": 1, "rating": null},
     "card:switch-salesforce-partner": {"title": "Kartenskizze Salesforce-Partner wechseln", "proposal": 1, "rating": null},
     "card:salesforce-architect-or-system-integrator": {"title": "Kartenskizze Salesforce-Architekt oder Systemintegrator", "proposal": 1, "rating": null},
     "card:agent-api-own-apps": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},

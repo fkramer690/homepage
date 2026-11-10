@@ -127,6 +127,10 @@ export const en = {
         title: 'Make-or-buy & license forecasts',
         text: 'Should this be built in Salesforce at all? Best-of-breed alternatives and license costs, assessed before the decision is made.',
       },
+      {
+        title: 'Project rescue',
+        text: 'Bring a Salesforce project that has gone off track on quality or timeline back on course, together with client and partner.',
+      },
     ],
     more: 'Learn more',
     featured: 4,
@@ -137,6 +141,7 @@ export const en = {
       { order: 5, text: 'Connect Salesforce with ERP, middleware and telephony.' },
       { order: 6, text: 'Plan and steer programs, coordinate nearshore teams.' },
       { order: 7, text: 'Does it belong in Salesforce? Alternatives and license costs assessed first.' },
+      { order: 8, text: 'Bring a Salesforce project that has gone off track back on course.' },
     ],
     focusLabel: 'Focus areas',
     focus: [
