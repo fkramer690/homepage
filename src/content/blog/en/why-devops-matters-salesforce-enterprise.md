@@ -21,23 +21,23 @@ faq:
   - q: "Are change sets enough for enterprise Salesforce projects?"
     a: "No. Change sets work for small, isolated changes. With several teams, partners and environments they lack version history, rollback, code review and tests that run automatically on every change. Apex tests do run when a change set with Apex is deployed to production."
   - q: "Who should own the Salesforce release pipeline?"
-    a: "The client. A repository and pipeline under the client's control keep implementation partners comparable and replaceable and make it easier to onboard new partners."
+    a: "The client. A repository and pipeline under the client's control make it easier to compare and replace implementation partners and to onboard new partners."
   - q: "Is sfdx-hardis free to use?"
     a: "Yes, there are no license fees. sfdx-hardis is an open-source toolkit under the AGPL 3.0 license, maintained by Cloudity and its community. It runs on common CI/CD platforms such as GitHub, GitLab, Azure DevOps, Bitbucket and Jenkins."
 ---
 
-Salesforce is easy to start with. A few clicks in Setup, a change set, done. That ease is exactly why many enterprise programs run into trouble a year later. As soon as several teams, partners and countries work on the same org, the question is no longer how to build something. It is how to get it into production safely, repeatedly and traceably. That is what DevOps is about, and in enterprise projects it decides whether a program stays in control.
+Salesforce is easy to start with. You make a few clicks in Setup, create a change set, and you are done. That ease is exactly why many enterprise programs run into trouble a year later. As soon as several teams, partners and countries work on the same org, the question is no longer how to build something. It is how to get it into production safely, repeatedly and traceably. That is what DevOps is about, and in enterprise projects it decides whether a program stays in control.
 
 ## What goes wrong when a Salesforce program grows?
 
-In a small org, one admin knows every change. In an enterprise program that picture is gone. I have steered programs with up to eight project teams and more than 30 developers working on one platform. In that setting, a few things happen very reliably without a proper DevOps setup:
+In a small org, one admin knows about every change. In an enterprise program, that picture no longer holds. I have led programs with up to eight project teams and more than 30 developers working on one platform. In that setting, a few things almost inevitably happen without a proper DevOps setup:
 
 - **Changes overwrite each other.** Team A deploys a page layout, Team B deploys the same object a day later with an older version. Nobody notices until users complain.
 - **Nobody knows what is in production.** If the org itself is the only source of truth, there is no history, no review and no easy way back.
 - **Releases become events.** Deployments happen late in the evening, with manual pre- and post-steps in a spreadsheet, and the whole team holds its breath.
 - **Partners become hard to replace.** If the deployment knowledge sits in the heads and tools of one implementation partner, the client depends on that partner.
 
-None of this is a tooling problem first. It is a governance problem, and tooling enforces the rules once they are agreed.
+None of this is a tooling problem first. It is a governance problem, and tooling enforces the rules once they have been agreed upon.
 
 ## Why don't change sets scale?
 
@@ -57,9 +57,9 @@ A solid setup does not need to be complicated. In my projects these building blo
 
 1. **Git as the source of truth.** All metadata that the Metadata API supports lives in a repository. Every change is a commit with an author, a reason and a link to the user story.
 2. **A defined branch and environment strategy.** For example: developer sandboxes, integration, UAT, production, plus a fast path for hotfixes. Every team knows where its work goes next.
-3. **Pull requests with review.** Changes are reviewed before they move on, with a clear owner for architecture decisions.
-4. **Automated quality gates.** Validation deployments, Apex tests and static code analysis run on every pull request. A green pipeline is the requirement for a merge, not a nice-to-have.
-5. **Delta deployments.** Only what changed is deployed. That keeps deployments fast, but dependencies and deletions need care, and a full deployment stays possible.
+3. **Pull requests with review.** Changes are reviewed before they move to the next environment, with a clear owner for architecture decisions.
+4. **Automated quality gates.** Validation deployments, Apex tests and static code analysis run on every pull request. A green pipeline is required for a merge, not a nice-to-have.
+5. **Delta deployments.** Only what changed is deployed. That keeps deployments fast, but dependencies and deletions must be handled carefully, and a full deployment remains possible.
 6. **Monitoring and backup.** Regular metadata backups and checks show changes made directly in production, outdated API versions or unused components.
 
 ```pipeline
@@ -77,7 +77,7 @@ note: Git repository: single source of truth for all metadata
 ```vergleich
 without: Pipeline with the partner
 - * The partner decides when and how releases happen.
-- Further partners work by the first partner's rules.
+- Additional partners work by the first partner's rules.
 - Changing partners means rebuilding the pipeline.
 with: Pipeline with the client
 - * The client sets the pace and the rules for every partner.
@@ -86,44 +86,44 @@ with: Pipeline with the client
 quote: The pipeline belongs to the client, not to the partner. Whoever owns the release process owns the platform.
 ```
 
-That last point matters a lot to me as an [architect on the client side](../../#about). A repository and pipeline under the client's control make partners comparable and replaceable, which is the basis for [partner steering and governance](../../services/partner-governance/). They also make onboarding a new partner much easier, because the standards are written down and enforced automatically.
+That last point matters a lot to me as an [architect on the client side](../../#about). A repository and pipeline under the client's control make it easier to compare and replace partners, which is the basis for [partner steering and governance](../../services/partner-governance/). They also make onboarding a new partner much easier, because the standards are written down and enforced automatically.
 
 ## What this looked like in a program I joined
 
-In one program I joined, a large enterprise ran Salesforce with several implementation partners and internal teams. Nobody had clearly defined who led which processes, objects and metadata. The result was predictable:
+In one program I joined, a large enterprise ran Salesforce with several implementation partners and internal teams. Nobody had clearly defined who owned which processes, objects and metadata. The result was predictable:
 
 - Changes overwrote each other, because nobody coordinated who deployed what and when.
 - The technical approaches of the teams had drifted far apart, so similar problems were solved in very different ways.
 - Every release was a risk, and errors often surfaced only when users ran into them.
 
-We changed this in a few steps. Every change went through a pull request with a review. We wrote down development and architecture standards and enforced them in those reviews. And the pipeline became the only regular way to move changes from one org to the next, with a documented emergency path whose changes go back into Git afterwards.
+We changed this in a few steps. Every change went through a pull request with a review. We wrote down development and architecture standards and enforced them in those reviews. The pipeline became the only regular way to move changes from one org to the next, with a documented emergency path and a rule that emergency changes are committed back to Git afterwards.
 
 ```praxis
 For a while, every single pull request crossed my desk. Once the process was stable, I handed it over to an internal colleague who now owns it.
 ```
 
-The effect was clear. Results became predictable, and validation runs in the pipeline caught missing dependencies and errors before any user saw them. On top of that came the classic DevOps benefits: we could restore an earlier state from Git, trace every change made through the pipeline and stopped losing work.
+The effect was clear. Results became predictable, and validation runs in the pipeline caught missing dependencies and errors before any user saw them. On top of that came the classic DevOps benefits: we could restore an earlier state from Git, trace every change made through the pipeline and stop losing work.
 
 ## sfdx-hardis as an open-source example
 
-You don't have to buy a commercial platform to get there. A good example is [sfdx-hardis](https://sfdx-hardis.cloudity.com/), an open-source toolkit maintained by Cloudity together with an active community. It bundles many of the building blocks above:
+You don't have to buy a commercial platform to get there. A good example is [sfdx-hardis](https://sfdx-hardis.cloudity.com/), an open-source toolkit maintained by Cloudity and an active community. It bundles many of the building blocks above:
 
 - **A ready-made CI/CD pipeline** for GitHub, GitLab, Azure DevOps, Bitbucket and Jenkins, so the pipeline runs where the client's IT already works.
-- **Delta and smart deployments** based on sfdx-git-delta, which only deploy changed metadata.
+- **Delta and smart deployments** based on sfdx-git-delta, which deploy only changed metadata.
 - **Org monitoring and metadata backup**, with notifications to Slack, Microsoft Teams or other channels.
 - **Generated documentation** of the project, including flows, straight from the repository.
-- **A VS Code extension** that gives admins and consultants a visual way into the Git workflow, so DevOps is not only for developers.
+- **A VS Code extension** that gives admins and consultants a visual entry point into the Git workflow, so DevOps is not only for developers.
 
-Salesforce's own DevOps Center is another option without extra license fees in Professional, Enterprise, Performance, Unlimited and Developer Edition. It brings source control to teams that mostly work with clicks, but it has no org monitoring or generated documentation like sfdx-hardis; the direct comparison with sfdx-hardis is in [sfdx-hardis vs DevOps Center](../sfdx-hardis-vs-devops-center-comparison/). Commercial tools like Gearset or Copado have their place too, especially when a team wants a fully managed interface. The choice depends on the team, the existing toolchain and the budget. What matters is that a decision is made early and enforced for everyone, including every partner.
+Salesforce's own DevOps Center is another option without extra license fees in Professional, Enterprise, Performance, Unlimited and Developer Edition. It brings source control to teams that mostly work through the Salesforce UI, but it has no org monitoring or generated documentation like sfdx-hardis; you can find a direct comparison with sfdx-hardis in [sfdx-hardis vs DevOps Center](../sfdx-hardis-vs-devops-center-comparison/). Commercial tools like Gearset or Copado have their place too, especially when a team wants a fully managed interface. The choice depends on the team, the existing toolchain and the budget. What matters is that a decision is made early and enforced for everyone, including every partner.
 
 ## What does the business side gain?
 
 DevOps sounds like a topic for developers. In practice the business side often benefits most:
 
-- **Predictable releases.** A fixed release calendar replaces "we'll deploy when it's ready". Departments can plan training and communication around it. What that looks like per release is described in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
+- **Predictable releases.** A fixed release calendar replaces "we'll deploy when it's ready". Departments can plan training and communication around it. What this can look like for each release is described in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
 - **Faster fixes.** When a bug hits production, a hotfix can move through the same tested pipeline without waiting for the next big release.
 - **Fewer surprises at go-live.** Every change has already been deployed and tested in integration and UAT through the same pipeline that takes it to production.
-- **Traceability for audits.** For every change made through the pipeline you can show who changed it, when, why and who approved it. Direct changes in production you find in the Setup Audit Trail.
+- **Traceability for audits.** For every change made through the pipeline you can show who changed it, when, why and who approved it. You can find direct changes in production in the Setup Audit Trail.
 - **Lower dependency on individuals.** Knowledge lives in the repository and the pipeline, not in the head of one admin or one partner's lead developer.
 
 For a steering committee this translates into a simple question: how confident are we that the next release will not disrupt sales or service operations? Without DevOps, the answer is often a guess.
@@ -145,4 +145,4 @@ Operations
   Add monitoring, metadata backups and generated documentation.
 ```
 
-In my experience, the first two steps, plus clear ownership and access rules, should be in place before the second partner starts working on the org. How I set this up with open source is in the [introduction to sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/).
+In my experience, the first two steps, plus clear ownership and access rules, should be in place before the second partner starts working on the org. I explain how I set this up with open source in the [introduction to sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/).

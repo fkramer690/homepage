@@ -17,11 +17,11 @@ takeaways:
   - "Open-Source-Tools wie sfdx-hardis decken die meisten Bausteine ohne Lizenzgebühren ab; Git-Plattform, Runner und Betrieb kosten trotzdem."
 faq:
   - q: "Was ist Salesforce-DevOps?"
-    a: "Salesforce-DevOps bedeutet, alle Metadaten-Änderungen in einer Versionsverwaltung zu führen und sie über eine automatisierte, wiederholbare Pipeline mit Reviews, Tests und Qualitätsprüfungen von den Sandboxes bis in Produktion zu bringen."
+    a: "Salesforce-DevOps bedeutet, alle Metadaten-Änderungen in einer Versionsverwaltung zu führen und sie über eine automatisierte, wiederholbare Pipeline mit Reviews, Tests und Qualitätsprüfungen von den Sandboxes bis in die Produktion zu bringen."
   - q: "Reichen Change Sets für Salesforce-Großprojekte?"
-    a: "Nein. Change Sets funktionieren für kleine, isolierte Änderungen. Mit mehreren Teams, Partnern und Umgebungen fehlen Versionshistorie, Rollback, Code-Review und Tests, die bei jeder Änderung automatisch laufen. Apex-Tests laufen beim Deployment eines Change Sets mit Apex in Produktion."
+    a: "Nein. Change Sets funktionieren für kleine, isolierte Änderungen. Mit mehreren Teams, Partnern und Umgebungen fehlen Versionshistorie, Rollback, Code-Review und Tests, die bei jeder Änderung automatisch laufen. Apex-Tests laufen, wenn ein Change Set mit Apex in Produktion deployt wird."
   - q: "Wem sollte die Salesforce-Release-Pipeline gehören?"
-    a: "Dem Kunden. Ein Repository und eine Pipeline unter Kontrolle des Kunden halten Implementierungspartner vergleichbar und austauschbar und erleichtern das Onboarding neuer Partner."
+    a: "Dem Kunden. Ein Repository und eine Pipeline unter Kontrolle des Kunden machen Implementierungspartner vergleichbar und austauschbar und erleichtern das Onboarding neuer Partner."
   - q: "Ist sfdx-hardis kostenlos?"
     a: "Ja, Lizenzgebühren fallen nicht an. sfdx-hardis ist ein Open-Source-Toolkit unter der Lizenz AGPL 3.0, das Cloudity mit seiner Community pflegt. Es läuft auf gängigen CI/CD-Plattformen wie GitHub, GitLab, Azure DevOps, Bitbucket und Jenkins."
 ---
@@ -37,7 +37,7 @@ In einer kleinen Org kennt ein Admin jede Änderung. In einem Enterprise-Program
 - **Releases werden zu Ereignissen.** Deployments finden spät abends statt, mit manuellen Vor- und Nacharbeiten aus einer Excel-Liste, und das ganze Team hält die Luft an.
 - **Partner werden schwer austauschbar.** Liegt das Wissen über Deployments in den Köpfen und Tools eines Implementierungspartners, hängt der Kunde von diesem Partner ab.
 
-Nichts davon ist zuerst ein Tool-Problem. Es ist ein Governance-Problem, und Tools setzen die Regeln durch, sobald sie vereinbart sind.
+Nichts davon ist in erster Linie ein Tool-Problem. Es ist ein Governance-Problem, und Tools setzen die Regeln durch, sobald sie vereinbart sind.
 
 ## Warum skalieren Change Sets nicht?
 
@@ -56,11 +56,11 @@ Dazu kommen drei große saisonale Salesforce-Releases pro Jahr, bei manchen Prod
 Ein solides Setup muss nicht kompliziert sein. In meinen Projekten sind diese Bausteine am wichtigsten:
 
 1. **Git als Quelle der Wahrheit.** Alle Metadaten, die die Metadata API unterstützt, liegen in einem Repository. Jede Änderung ist ein Commit mit Autor, Begründung und Verweis auf die User Story.
-2. **Eine klare Branch- und Umgebungsstrategie.** Zum Beispiel Entwickler-Sandboxes, Integration, UAT, Produktion und ein schneller Weg für Hotfixes. Jedes Team weiß, wohin seine Arbeit als Nächstes geht.
+2. **Eine klare Branch- und Umgebungsstrategie.** Zum Beispiel Entwickler-Sandboxes, Integration, UAT, Produktion und ein schneller Weg für Hotfixes. Jedes Team weiß, in welche Umgebung seine Arbeit als Nächstes überführt wird.
 3. **Pull Requests mit Review.** Änderungen werden geprüft, bevor sie weiterwandern, mit einer klaren Verantwortung für Architekturentscheidungen.
 4. **Automatisierte Qualitätsschranken.** Validierungs-Deployments, Apex-Tests und statische Code-Analyse laufen bei jedem Pull Request. Eine grüne Pipeline ist Voraussetzung für den Merge, keine Kür.
-5. **Delta-Deployments.** Es wird nur deployt, was sich geändert hat. Das hält Deployments schnell, Abhängigkeiten und Löschungen brauchen aber Sorgfalt, und ein vollständiges Deployment bleibt möglich.
-6. **Monitoring und Backup.** Regelmäßige Metadaten-Backups und Prüfungen zeigen Änderungen direkt in Produktion, veraltete API-Versionen oder ungenutzte Komponenten.
+5. **Delta-Deployments.** Es wird nur deployt, was sich geändert hat. Das sorgt für schnelle Deployments; Abhängigkeiten und Löschungen brauchen aber Sorgfalt. Ein vollständiges Deployment bleibt möglich.
+6. **Monitoring und Backup.** Regelmäßige Metadaten-Backups und Prüfungen machen direkte Änderungen in Produktion, veraltete API-Versionen oder ungenutzte Komponenten sichtbar.
 
 ```pipeline
 titel: Salesforce-Release-Pipeline
@@ -92,17 +92,17 @@ Dieser letzte Punkt ist mir als [Architekt auf Kundenseite](../../#about) besond
 
 In einem Programm, in das ich eingestiegen bin, betrieb ein großes Unternehmen Salesforce mit mehreren Implementierungspartnern und internen Teams. Niemand hatte klar festgelegt, wer für welche Prozesse, Objekte und Metadaten federführend verantwortlich war. Das Ergebnis war absehbar:
 
-- Änderungen überschrieben sich, weil niemand abstimmte, wer was wann deployt.
+- Änderungen überschrieben sich, weil niemand abstimmte, wer was wann deployen sollte.
 - Die technischen Ansätze der Teams hatten sich weit auseinanderentwickelt, ähnliche Probleme wurden sehr unterschiedlich gelöst.
 - Jedes Release war ein Risiko, und Fehler fielen oft erst auf, wenn Anwender darauf stießen.
 
-Wir haben das in wenigen Schritten geändert. Zuerst lief jede Änderung über einen Pull Request mit Review. Dann haben wir Entwicklungs- und Architekturstandards aufgeschrieben und in diesen Reviews durchgesetzt. Am Ende wurde die Pipeline der einzige reguläre Weg, Änderungen von einer Org in die nächste zu bringen, mit einem dokumentierten Notfallweg, dessen Änderungen anschließend in Git nachgeführt werden.
+Wir haben das in wenigen Schritten geändert. Zuerst lief jede Änderung über einen Pull Request mit Review. Dann haben wir Entwicklungs- und Architekturstandards aufgeschrieben und in diesen Reviews durchgesetzt. Am Ende wurde die Pipeline der einzige reguläre Weg, Änderungen von einer Org in die nächste zu bringen, mit einem dokumentierten Notfallweg, bei dem die Änderungen anschließend in Git nachgeführt werden.
 
 ```praxis
 Eine Zeit lang ging jeder einzelne Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben, der ihn heute verantwortet.
 ```
 
-Die Wirkung war deutlich. Ergebnisse wurden planbar, und Validierungsläufe in der Pipeline haben fehlende Abhängigkeiten und Fehler erkannt, bevor ein Anwender sie gesehen hat. Dazu kamen die klassischen DevOps-Vorteile: Wir konnten einen früheren Stand aus Git wiederherstellen, jede Änderung über die Pipeline nachvollziehen, und es ging keine Arbeit mehr verloren.
+Die Wirkung war deutlich. Ergebnisse wurden planbar, und Validierungsläufe in der Pipeline haben fehlende Abhängigkeiten und Fehler erkannt, bevor ein Anwender sie gesehen hätte. Dazu kamen die klassischen DevOps-Vorteile: Wir konnten einen früheren Stand aus Git wiederherstellen, jede Änderung über die Pipeline nachvollziehen, und es ging keine Arbeit mehr verloren.
 
 ## sfdx-hardis als Open-Source-Beispiel
 
@@ -114,7 +114,7 @@ Um dorthin zu kommen, muss man keine kommerzielle Plattform kaufen. Ein gutes Be
 - **Generierte Dokumentation** des Projekts, einschließlich Flows, direkt aus dem Repository.
 - **Eine VS-Code-Erweiterung**, die Admins und Beratern einen visuellen Zugang zum Git-Workflow gibt. So ist DevOps nicht nur etwas für Entwickler.
 
-Das DevOps Center von Salesforce selbst ist eine weitere Option ohne zusätzliche Lizenzgebühr in Professional, Enterprise, Performance, Unlimited und Developer Edition. Es bringt Versionsverwaltung auch zu Teams, die vor allem mit Klicks arbeiten, hat aber kein Org-Monitoring und keine generierte Dokumentation wie sfdx-hardis; den direkten Vergleich mit sfdx-hardis finden Sie in [sfdx-hardis oder DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/). Kommerzielle Tools wie Gearset oder Copado haben ebenfalls ihre Berechtigung, vor allem wenn ein Team eine komplett verwaltete Oberfläche möchte. Die Wahl hängt vom Team, der vorhandenen Toolchain und dem Budget ab. Entscheidend ist, dass früh entschieden und für alle verbindlich durchgesetzt wird, auch für jeden Partner.
+Das DevOps Center von Salesforce selbst ist eine weitere Option ohne zusätzliche Lizenzgebühr in Professional, Enterprise, Performance, Unlimited und Developer Edition. Es macht Versionsverwaltung auch für Teams zugänglich, die vor allem mit Klicks arbeiten, hat aber kein Org-Monitoring und keine generierte Dokumentation wie sfdx-hardis; den direkten Vergleich mit sfdx-hardis finden Sie in [sfdx-hardis oder DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/). Kommerzielle Tools wie Gearset oder Copado haben ebenfalls ihre Berechtigung, vor allem wenn ein Team eine komplett verwaltete Oberfläche möchte. Die Wahl hängt vom Team, der vorhandenen Toolchain und dem Budget ab. Entscheidend ist, dass früh entschieden und für alle verbindlich durchgesetzt wird, auch für jeden Partner.
 
 ## Was gewinnt der Fachbereich?
 
@@ -123,7 +123,7 @@ DevOps klingt nach einem Thema für Entwickler. In der Praxis profitiert oft der
 - **Planbare Releases.** Ein fester Release-Kalender ersetzt „wir deployen, wenn es fertig ist“. Fachbereiche können Schulungen und Kommunikation darauf ausrichten. Wie das pro Release aussieht, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
 - **Schnellere Korrekturen.** Tritt ein Fehler in Produktion auf, kann ein Hotfix durch dieselbe getestete Pipeline laufen, statt auf das nächste große Release zu warten.
 - **Weniger Überraschungen beim Go-live.** Jede Änderung wurde in Integration und UAT bereits über dieselbe Pipeline deployt und getestet, die sie in Produktion bringt.
-- **Nachvollziehbarkeit für Audits.** Für jede Änderung über die Pipeline lässt sich zeigen, wer sie wann und warum gemacht und wer sie freigegeben hat. Direkte Änderungen in Produktion finden Sie im Setup Audit Trail.
+- **Nachvollziehbarkeit für Audits.** Für jede über die Pipeline vorgenommene Änderung lässt sich zeigen, wer sie wann und warum gemacht und wer sie freigegeben hat. Direkte Änderungen in Produktion finden Sie im Setup Audit Trail.
 - **Weniger Abhängigkeit von Einzelnen.** Das Wissen liegt im Repository und in der Pipeline, nicht im Kopf eines Admins oder des Lead-Entwicklers eines Partners.
 
 Für einen Lenkungsausschuss läuft das auf eine einfache Frage hinaus: Wie sicher sind wir, dass das nächste Release Vertrieb oder Service nicht stört? Ohne DevOps ist die Antwort darauf oft eine Schätzung.
@@ -145,4 +145,4 @@ Betrieb
   Monitoring, Metadaten-Backups und generierte Dokumentation ergänzen.
 ```
 
-Nach meiner Erfahrung sollten die ersten beiden Schritte, dazu klare Verantwortung und Zugriffsregeln, stehen, bevor der zweite Partner an der Org arbeitet. Wie ich das mit Open Source aufsetze, steht in der [Einführung in sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/).
+Nach meiner Erfahrung sollten die ersten beiden Schritte sowie klare Verantwortlichkeiten und Zugriffsregeln geklärt sein, bevor der zweite Partner an der Org arbeitet. Wie ich das mit Open Source aufsetze, steht in der [Einführung in sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/).

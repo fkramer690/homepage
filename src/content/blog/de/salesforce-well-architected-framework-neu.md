@@ -11,10 +11,10 @@ topic: governance
 categories: [architecture]
 tags: [Well-Architected, Architektur, Governance, Agentforce, Kosten]
 takeaways:
-  - "Nach der Dreamforce 2024 pflegte Salesforce Well-Architected nicht mehr, im August 2025 kam die Ankündigung, am 14. September 2026 das neue Framework."
+  - "Nach der Dreamforce 2024 aktualisierte Salesforce Well-Architected nicht mehr. Im August 2025 folgte die Ankündigung, am 14. September 2026 das neue Framework."
   - "Aus drei Säulen (Trusted, Easy, Adaptable) wurden fünf: Trust, Reliability, Operational Excellence, Resource and Cost Optimization und Fairness."
   - "Neu ist eine Agentic-Enterprise-Linse: Für jede Säule gibt es eine Agenten-Variante, und Agenten müssen dieselben Anforderungen erfüllen wie jede andere Lösung."
-  - "Kosten stecken jetzt in einer eigenen Säule, Resource and Cost Optimization, mit Lizenzen, Sandboxes und Make-or-Buy. Für Kunden die nützlichste Änderung."
+  - "Kosten stecken jetzt in einer eigenen Säule, Resource and Cost Optimization, mit Lizenzen, Sandboxes und Make-or-Buy. Für Kunden ist das am nützlichsten."
   - "Das Framework ist eine gute gemeinsame Sprache für Design Reviews mit mehreren Partnern, die Abwägungen zwischen den Säulen trifft aber der Kunde."
 faq:
   - q: "Was ist das Salesforce Well-Architected Framework?"
@@ -22,9 +22,9 @@ faq:
   - q: "Welche fünf Säulen hat das neue Well-Architected Framework?"
     a: "Trust, Reliability, Operational Excellence, Resource and Cost Optimization und Fairness. Dazu kommt für jede Säule eine Variante für die Agentic Enterprise, also für Lösungen mit KI-Agenten."
   - q: "Was ist mit Trusted, Easy und Adaptable passiert?"
-    a: "Salesforce hat die meisten alten Inhalte auf die fünf neuen Säulen verteilt und dokumentiert die Zuordnung auf der Seite Legacy Framework Mapping. Einige Bereiche wurden auf mehrere Säulen aufgeteilt, Messaging, Eventing und API-Management sind ganz in die Integration Patterns gewandert."
-  - q: "Gibt es ein Tool, das eine Org gegen das Well-Architected Framework prüft?"
-    a: "Eine einzelne automatische Prüfung mit bestanden oder nicht bestanden gehört nicht zum Framework. Werkzeuge wie Health Check, Scale Center und Event Monitoring decken einzelne Bereiche ab, ein vollständiges Review braucht aber Geschäftsziele, Architekturnachweise und Entscheidungen von Menschen. Auf der Dreamforce 2026 hat Salesforce zudem einen Architect Agent gezeigt, der Architekturfragen auf Basis dieser Inhalte beantwortet, ohne Verfügbarkeit und Preis zu nennen."
+    a: "Salesforce hat die meisten alten Inhalte auf die fünf neuen Säulen verteilt und dokumentiert die Zuordnung auf der Seite Legacy Framework Mapping. Einige Bereiche wurden auf mehrere Säulen aufgeteilt, Messaging, Eventing und API-Management wurden vollständig in die Integration Patterns verschoben."
+  - q: "Gibt es ein Tool, das eine Org anhand des Well-Architected Frameworks prüft?"
+    a: "Eine einzelne automatische Prüfung mit dem Ergebnis „bestanden“ oder „nicht bestanden“ gehört nicht zum Framework. Werkzeuge wie Health Check, Scale Center und Event Monitoring decken einzelne Bereiche ab, ein vollständiges Review braucht aber Geschäftsziele, Architekturnachweise und Entscheidungen von Menschen. Auf der Dreamforce 2026 hat Salesforce zudem einen Architect Agent gezeigt, der Architekturfragen auf Basis dieser Inhalte beantwortet. Verfügbarkeit und Preis nannte Salesforce nicht."
   - q: "Ist das Well-Architected Framework nur für Agentforce gedacht?"
     a: "Nein. Die fünf Säulen gelten für jede Salesforce-Lösung. Die Agenten-Linse ergänzt sie für Agentforce und andere KI-Agenten, ersetzt sie aber nicht."
 ---
@@ -36,9 +36,9 @@ Das Salesforce Well-Architected Framework ist neu aufgebaut: Seit dem 14. Septem
 Die Geschichte ist kurz, aber sie erklärt, warum das Framework heute anders aussieht:
 
 - **Nach der Dreamforce 2024** wurde die Website nicht mehr aktualisiert, wie [Salesforce Ben berichtete](https://www.salesforceben.com/salesforce-well-architected-set-to-return-community-news-and-validating-data-models/). Das Programm war faktisch eingestellt.
-- **Am 8. August 2025** kündigten Chief Architect Emin Gerba und Christophe Coenraets im [Salesforce-Blog](https://www.salesforce.com/blog/relaunching-well-architected-program/) die Rückkehr an. Bemerkenswert offen: Viele Architekten hätten ihnen gesagt, das Ende sei ein Fehler gewesen.
+- **Am 8. August 2025** kündigten Chief Architect Emin Gerba und Christophe Coenraets im [Salesforce-Blog](https://www.salesforce.com/blog/relaunching-well-architected-program/) die Rückkehr an. Bemerkenswert offen war die Aussage: Viele Architekten hätten ihnen gesagt, das Ende sei ein Fehler gewesen.
 - **Zur Dreamforce 2025 im Oktober** ging das überarbeitete [Architecture Center](https://www.salesforce.com/blog/relaunching-salesforce-architecture-program/) online, mit neuen Decision Guides (etwa zu Data 360, Event-Driven Architecture und Asynchronous Processing) und neuen Grundlagen zu Agentforce und zur Agentic Enterprise. Am Framework selbst wurden nur Teile von Trusted und Adaptable aufgefrischt.
-- **Am 14. September 2026** veröffentlichte Salesforce das [neue Well-Architected Framework](https://www.salesforce.com/blog/new-well-architected-framework/). Laut Salesforce haben Hunderte Architekten über Fokusgruppen, Umfragen und Community-Events mitgearbeitet.
+- **Am 14. September 2026** veröffentlichte Salesforce das [neue Well-Architected Framework](https://www.salesforce.com/blog/new-well-architected-framework/). Laut Salesforce haben Hunderte Architekten in Fokusgruppen, Umfragen und Community-Events mitgearbeitet.
 - **Auf der Dreamforce 2026** kam laut [Salesforce Ben](https://www.salesforceben.com/new-well-architected-framework-and-agent-revealed-at-dreamforce-26/) ein Architect Agent dazu, ein KI-Assistent im Architecture Center, der auf diesen Inhalten aufsetzt.
 
 Der eigentliche Umbau ist also die Version von September 2026. Der Relaunch 2025 hat vor allem die Plattform drumherum neu aufgestellt.
@@ -53,7 +53,7 @@ Das alte Framework hatte drei Säulen mit zusammen acht Eigenschaften: Trusted (
 4. **Resource and Cost Optimization:** Codeorganisation, Packaging, Datenlebenszyklus, Performance, Make-or-Buy, Lizenzen und Sandboxes.
 5. **Fairness:** Barrierefreiheit, Transparenz, Nichtdiskriminierung und KI-Ethik.
 
-Salesforce hat die alten Inhalte nicht weggeworfen, sondern umsortiert. Die Seite [Legacy Framework Mapping](https://architect.salesforce.com/docs/architect/well-architected/guide/tea-pillar-mapping.html) zeigt, wohin was gewandert ist. Einige Beispiele: Monitoring lag früher unter Reliable und gehört jetzt zu Operational Excellence. Disaster Recovery lag unter Resilient und gehört jetzt zu Reliability. Business Value und ROI lagen unter Automated und gehören jetzt zu Resource and Cost Optimization. Barrierefreiheit und Datenschutzrechte stehen unter Fairness, rechtliche Vorgaben und Data Residency bleiben bei Trust. Messaging, Eventing und API-Management sind ganz aus dem Framework in die Integration Patterns gezogen.
+Salesforce hat die alten Inhalte nicht weggeworfen, sondern umsortiert. Die Seite [Legacy Framework Mapping](https://architect.salesforce.com/docs/architect/well-architected/guide/tea-pillar-mapping.html) zeigt, wohin was gewandert ist. Einige Beispiele: Monitoring lag früher unter Reliable und gehört jetzt zu Operational Excellence. Disaster Recovery lag unter Resilient und gehört jetzt zu Reliability. Business Value und ROI lagen unter Automated und gehören jetzt zu Resource and Cost Optimization. Barrierefreiheit und Datenschutzrechte stehen unter Fairness, rechtliche Vorgaben und Data Residency bleiben bei Trust. Messaging, Eventing und API-Management wurden vollständig aus dem Framework in die Integration Patterns verschoben.
 
 ```saeulenwechsel
 bisher: Bisher: drei Säulen
@@ -85,7 +85,7 @@ Weitere Beispiele aus dem Text:
 - **DevOps:** DORA-Metriken messen (Deployment-Häufigkeit, Durchlaufzeit, Fehlerquote bei Änderungen, Wiederherstellungszeit, Nacharbeit) und regelmäßig prüfen, ob Produktion vom Stand in der Versionsverwaltung abweicht.
 - **Barrierefreiheit:** Tests gegen WCAG 2.2 AA.
 
-Beide Zahlen sind Planungshilfen, keine Vorschriften. Salesforce selbst nennt die 70-Prozent-Grenze eine verbreitete Best Practice aus der Community und keine offizielle Spezifikation, und 99,5 Prozent ist ein Beispiel aus einer Spanne von 99 bis 99,99 Prozent, je nachdem, wie kritisch der Prozess ist.
+Beide Zahlen sind Planungshilfen, keine Vorschriften. Salesforce selbst nennt die 70-Prozent-Grenze eine verbreitete Best Practice aus der Community und keine offizielle Spezifikation. Der Wert von 99,5 Prozent ist ein Beispiel aus einer Spanne von 99 bis 99,99 Prozent, je nachdem, wie kritisch der Prozess ist.
 
 ## Was bedeutet die Agentic-Enterprise-Linse?
 
@@ -97,37 +97,37 @@ Der wichtigste Satz dazu steht im Ankündigungsblog: „Agents don't get their o
 
 Aus Sicht eines Architekten auf Kundenseite sind drei Änderungen relevant.
 
-**Kosten stecken in einer eigenen Säule.** Im alten Framework tauchten Kosten nur am Rand auf. Jetzt stehen Lizenzen, Sandboxes und Make-or-Buy in Resource and Cost Optimization, neben Performance und Wartbarkeit. Das ist überfällig. In meiner Pre-Sales-Arbeit mit Salesforce begannen Angebote meist mit vollen Lizenzen für alle, obwohl viele Nutzer sie nicht brauchten. In einer größeren Organisation sind das schnell sechsstellige Beträge pro Jahr. Eine Architekturprüfung, die das nicht ansieht, ist unvollständig.
+**Kosten stecken in einer eigenen Säule.** Im alten Framework tauchten Kosten nur am Rand auf. Jetzt stehen Lizenzen, Sandboxes und Make-or-Buy in Resource and Cost Optimization, neben Performance und Wartbarkeit. Das ist überfällig. In meiner Pre-Sales-Arbeit mit Salesforce wurden Angebote meist zunächst mit vollen Lizenzen für alle kalkuliert, obwohl viele Nutzer sie nicht brauchten. In einer größeren Organisation sind das schnell sechsstellige Beträge pro Jahr. Eine Architekturprüfung, die das nicht berücksichtigt, ist unvollständig.
 
-**Betrieb steht gleichberechtigt neben dem Design.** Operational Excellence bündelt DevOps, Monitoring und Incident Management. Damit gehört der Betrieb in jede Architekturprüfung und nicht erst in die Zeit nach dem Go-live. Dass DORA-Metriken jetzt im offiziellen Framework stehen, gibt Kunden ein Argument gegenüber Partnern, die Deployments noch von Hand machen. Warum ich darauf bestehe, steht in [Warum DevOps in Salesforce-Enterprise-Projekten zählt](../warum-devops-salesforce-enterprise-projekte/).
+**Betrieb steht gleichberechtigt neben dem Design.** Operational Excellence bündelt DevOps, Monitoring und Incident Management. Damit gehört der Betrieb in jede Architekturprüfung und darf nicht erst nach dem Go-live Thema werden. Dass DORA-Metriken jetzt im offiziellen Framework stehen, gibt Kunden ein Argument gegenüber Partnern, die Deployments noch manuell durchführen. Warum ich darauf bestehe, steht in [Warum DevOps in Salesforce-Enterprise-Projekten zählt](../warum-devops-salesforce-enterprise-projekte/).
 
-**Das Framework benennt Zielkonflikte.** Mehr Verschlüsselung und Audit-Logs kosten Geld. Höhere Verfügbarkeit kostet Geld. Mehr Autonomie für Agenten erhöht das Risiko unfairer Entscheidungen. Salesforce schreibt dazu: „The goal is not to maximize every pillar simultaneously." Genau diese Abwägungen gehören in ein Entscheidungsprotokoll, und zwar mit Namen dessen, der entschieden hat.
+**Das Framework benennt Zielkonflikte.** Mehr Verschlüsselung und Audit-Logs kosten Geld. Höhere Verfügbarkeit kostet Geld. Mehr Autonomie für Agenten erhöht das Risiko unfairer Entscheidungen. Salesforce schreibt dazu: „The goal is not to maximize every pillar simultaneously." Genau diese Abwägungen gehören in ein Entscheidungsprotokoll, und zwar mit dem Namen der Person, die entschieden hat.
 
 ## Wo hat das Framework Grenzen?
 
 Bei aller Zustimmung: Es bleibt ein Herstellerdokument.
 
-- **Es empfiehlt Salesforce-Werkzeuge.** Shield Platform Encryption, Event Monitoring und Field Audit Trail werden als Lösungen genannt. Diese Produkte sind lizenzpflichtige Zusatzprodukte. Ich behandle genannte Produkte als Optionen, nicht als Pflicht guter Architektur: zuerst festlegen, welche Kontrolle Sie brauchen, dann Standardfunktionen, Zusatzprodukte und externe Werkzeuge vergleichen.
-- **Das Change Log hat keine Daten.** Es listet, was veröffentlicht oder erweitert wurde, aber nicht wann. Wer Architekturentscheidungen auf eine bestimmte Empfehlung stützt, sollte den Stand mit Datum im eigenen Entscheidungsprotokoll festhalten.
+- **Es empfiehlt Salesforce-Werkzeuge.** Shield Platform Encryption, Event Monitoring und Field Audit Trail werden als Lösungen genannt. Dabei handelt es sich um lizenzpflichtige Zusatzprodukte. Ich behandle genannte Produkte als Optionen, nicht als Pflicht guter Architektur: zuerst festlegen, welche Kontrolle Sie brauchen, dann Standardfunktionen, Zusatzprodukte und externe Werkzeuge vergleichen.
+- **Das Change Log enthält keine Datumsangaben.** Es listet, was veröffentlicht oder erweitert wurde, aber nicht wann. Wer Architekturentscheidungen auf eine bestimmte Empfehlung stützt, sollte den Stand mit Datum im eigenen Entscheidungsprotokoll festhalten.
 - **Der Architect Agent ist noch nicht greifbar.** Salesforce hat ihn auf der Dreamforce gezeigt, Verfügbarkeit und Preis aber nicht genannt. Ich würde ihn testen, bevor ich ihm Architekturfragen anvertraue.
-- **Es ersetzt keine Entscheidung.** Das Framework liefert Fragen und Muster. Ob Sie 99,5 Prozent Verfügbarkeit brauchen oder 99, ob Sie Make oder Buy wählen, entscheidet Ihr Geschäftsmodell und nicht das Dokument.
+- **Es ersetzt keine Entscheidung.** Das Framework liefert Fragen und Muster. Ob Sie 99,5 Prozent Verfügbarkeit brauchen oder 99 Prozent, ob Sie Make oder Buy wählen, entscheidet Ihr Geschäftsmodell und nicht das Dokument.
 
 ## So nutze ich das Framework in einem Programm mit mehreren Partnern
 
 Ich habe schon das alte Framework mit Trusted, Easy und Adaptable in Kundenprojekten genutzt und in User-Group-Vorträgen vorgestellt.
 
 ```praxis
-In meinem bisher größten Programm arbeiteten über 30 Entwickler in 8 Streams für 5 Umsetzungspartner in derselben Org. Wir haben rund drei Monate gebraucht, bis die gemeinsamen Standards standen: Namenskonventionen, eine Automatisierung pro Objekt, Vorgaben zur Testabdeckung, eine Matrix, welcher Stream welches Objekt verantwortet, und Regeln, was in Custom Metadata Types oder Custom Labels gehört. 80 Prozent standen nach der ersten Runde, der Rest kam über die Monate dazu.
+In meinem bisher größten Programm arbeiteten über 30 Entwickler in 8 Streams von 5 Umsetzungspartnern in derselben Org. Wir haben rund drei Monate gebraucht, bis die gemeinsamen Standards standen: Namenskonventionen, eine Automatisierung pro Objekt, Vorgaben zur Testabdeckung, eine Matrix, welcher Stream welches Objekt verantwortet, und Regeln, was in Custom Metadata Types oder Custom Labels gehört. 80 Prozent standen nach der ersten Runde, der Rest kam über die Monate dazu.
 ```
 
-Mit dem neuen Framework würde ich diese Standards heute entlang der fünf Säulen ordnen. Namenskonventionen, Packaging und Objektverantwortung sind Resource and Cost Optimization und Operational Excellence. Berechtigungen und Integrationsbenutzer sind Trust. Der Vorteil: Das Framework ist eine veröffentlichte Referenz, die keinem einzelnen Partner gehört, die Diskussion beginnt also nicht bei null, und Abweichungen lassen sich einer Säule zuordnen. Das funktioniert aber nur, wenn der Kunde daraus verbindliche Review-Fragen und Abnahmekriterien macht.
+Mit dem neuen Framework würde ich diese Standards heute entlang der fünf Säulen ordnen. Namenskonventionen, Packaging und Objektverantwortung gehören zu Resource and Cost Optimization und Operational Excellence. Berechtigungen und Integrationsbenutzer sind Trust. Der Vorteil: Das Framework ist eine veröffentlichte Referenz, die keinem einzelnen Partner gehört. Die Diskussion beginnt also nicht bei null, und Abweichungen lassen sich einer Säule zuordnen. Das funktioniert aber nur, wenn der Kunde daraus verbindliche Review-Fragen und Abnahmekriterien macht.
 
 Konkret heißt das:
 
-1. **Design Reviews nach Säulen gliedern.** Für eine größere Änderung reicht der vorschlagende Partner vorab eine Seite ein: betroffene Nutzer, Systeme und Schnittstellen, Nachweise je relevanter Säule, verworfene Alternativen, zusätzliche Lizenz- und Betriebskosten und wer Monitoring und Wiederherstellung verantwortet. Das Review endet mit einem von vier Ergebnissen: freigegeben, freigegeben mit Auflagen, Nacharbeit oder Eskalation für eine Geschäftsentscheidung.
-2. **Zielkonflikte protokollieren.** Wo eine Säule zugunsten einer anderen nachgibt, kommt das mit Begründung ins Entscheidungsprotokoll.
+1. **Design Reviews nach Säulen gliedern.** Für eine größere Änderung reicht der vorschlagende Partner vorab eine Seite ein: betroffene Nutzer, Systeme und Schnittstellen, Nachweise zu jeder relevanten Säule, verworfene Alternativen, zusätzliche Lizenz- und Betriebskosten sowie die Information, wer Monitoring und Wiederherstellung verantwortet. Das Review endet mit einem der vier Ergebnisse: Freigabe, Freigabe mit Auflagen, Nacharbeit oder Eskalation für eine Geschäftsentscheidung.
+2. **Zielkonflikte protokollieren.** Wo Anforderungen einer Säule zugunsten einer anderen zurückstehen, kommt das mit Begründung ins Entscheidungsprotokoll.
 3. **Agenten nicht separat behandeln.** Agentforce-Vorhaben laufen durch dasselbe Review, ergänzt um die Agenten-Variante jeder Säule.
-4. **Kostensäule ernst nehmen.** Salesforce schlägt monatlich einen Blick auf Kostenausreißer vor, vierteljährlich eine Prüfung von Lizenzzuweisungen und Kapazität und einmal im Jahr eine vollständige Kostenprüfung.
+4. **Kostensäule ernst nehmen.** Salesforce empfiehlt, monatlich Kostenausreißer zu prüfen, vierteljährlich Lizenzzuweisungen und Kapazität zu überprüfen und einmal im Jahr eine vollständige Kostenprüfung vorzunehmen.
 
 Wie ich Standards und Reviews in solchen Programmen aufsetze, gehört zu meiner [Arbeit an Partnersteuerung und Architektur](../../leistungen/partnersteuerung/).
 
