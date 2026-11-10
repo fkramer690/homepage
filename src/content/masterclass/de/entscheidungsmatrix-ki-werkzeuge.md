@@ -9,7 +9,7 @@ short: "Wann nutze ich was"
 summary: "Welches KI-Werkzeug zu welcher Aufgabe passt, in zwölf Szenarien für Hersteller, von Prototyp über ERP-Agent bis EU-Datenresidenz."
 takeaways:
   - "Welcher Coding-Agent passt, entscheiden meist Verträge, Datenresidenz und vorhandene Werkzeuge, seltener die Modellqualität."
-  - "Agentforce Vibes gibt es nicht in der Hyperforce EU Operating Zone. Claude mit EU-Verarbeitung bekommen Sie etwa über Amazon Bedrock."
+  - "Agentforce Vibes gibt es nicht in der Hyperforce EU Operating Zone. Claude mit EU-Verarbeitung erhalten Sie etwa über Amazon Bedrock."
   - "Regeln wie Garantieberechtigung oder Kreditlimit gehören in deterministische Logik, das Sprachmodell übernimmt Sprache und Absicht."
   - "Hat das ERP keine API, bleiben Dokumentenerkennung mit RPA oder der Systems Integration Agent. Beide arbeiten über die Oberfläche und brauchen Tests."
 articles: [agentforce-yes-or-no-manufacturers, vibes-claude-code-copilot-comparison, agentforce-sap-order-status, legacy-erp-without-api-agents]
@@ -17,21 +17,21 @@ faq:
   - q: "Welcher Coding-Agent ist der beste für Salesforce?"
     a: "Einen Apex-Benchmark, der das entscheidet, gibt es nicht. Ich wähle nach Vertrag und Umfeld: Agentforce Vibes, wenn Flex Credits schon im Salesforce-Vertrag sind, Copilot bei einem GitHub-Enterprise-Kunden, Claude Code mit dem offiziellen Salesforce-Plugin bei freier Wahl und großen Änderungen."
   - q: "Darf ein KI-Agent direkt in der Produktivorg arbeiten?"
-    a: "Für Entwicklung nein. Coding-Agenten arbeiten in Sandboxes und Scratch-Orgs, Änderungen gehen über Pull Request, automatische Prüfungen und die Pipeline in Produktion. Lesender Datenzugriff über Hosted MCP mit einem benannten Nutzer ist die Ausnahme, die ich nach Prüfung zulasse."
-  - q: "Wie bekomme ich EU-Datenverarbeitung für KI-Coding?"
+    a: "Für Entwicklung nein. Coding-Agenten arbeiten in Sandboxes und Scratch-Orgs, Änderungen gelangen über Pull Request, automatische Prüfungen und die Pipeline in Produktion. Lesender Datenzugriff über Hosted MCP mit einem benannten Nutzer ist die Ausnahme, die ich nach Prüfung zulasse."
+  - q: "Wie erhalte ich EU-Datenverarbeitung für KI-Coding?"
     a: "Die Claude API von Anthropic kennt direkt nur US- und globale Verarbeitung. Claude über Amazon Bedrock in einer EU-Region, OpenAI-API-Projekte mit EU-Residenz oder GitHub-Angebote mit Datenresidenz sind Wege dorthin. Agentforce Vibes ist in der Hyperforce EU Operating Zone nicht verfügbar."
   - q: "Wann brauche ich Agentforce und wann nur einen Coding-Agenten?"
     a: "Ein Coding-Agent hilft Ihrem Team, Salesforce zu bauen. Agentforce ist ein Agent im Betrieb, der zum Beispiel Händleranfragen beantwortet und pro Aktion Flex Credits kostet. Beides wird getrennt entschieden, budgetiert und getestet."
 draft: false
 ---
 
-Für KI im Salesforce-Projekt gilt eine Grundregel: Der Agent arbeitet in Sandbox oder Scratch-Org, Daten bekommt er lesend über Hosted MCP, Releases laufen nur über die Pipeline mit Review. Welches Werkzeug Ihr Team oder Ihr Partner dabei nutzt, entscheiden meist Kundenverträge, Datenresidenz und die vorhandene Toolchain, seltener die Modellqualität. Für Agenten im Betrieb kommen ERP-Zugriff und Kosten pro Aktion dazu. Die Matrix unten übersetzt das in zwölf Szenarien, die bei Herstellern tatsächlich auftauchen, von Workshop-Prototyp bis Auftragsstatus aus SAP.
+Für KI im Salesforce-Projekt gilt eine Grundregel: Der Agent arbeitet in Sandbox oder Scratch-Org, Daten erhält er lesend über Hosted MCP, Releases erfolgen nur über die Pipeline mit Review. Welches Werkzeug Ihr Team oder Ihr Partner dabei nutzt, entscheiden meist Kundenverträge, Datenresidenz und die vorhandene Toolchain, seltener die Modellqualität. Für Agenten im Betrieb kommen ERP-Zugriff und Kosten pro Aktion hinzu. Die Matrix unten übersetzt das in zwölf Szenarien, die bei Herstellern tatsächlich auftauchen, von Workshop-Prototyp bis Auftragsstatus aus SAP.
 
 ## Welche Frage entscheidet die Werkzeugwahl?
 
-Die erste Frage ist, ob Sie über Bauen oder über Betreiben sprechen. Das klingt banal, aber in Workshops landen beide Themen oft auf derselben Folie.
+Die erste Frage ist, ob Sie über Bauen oder über Betreiben sprechen. Das klingt banal, aber in Workshops stehen beide Themen oft auf derselben Folie.
 
-- **Bauen:** Ein Coding-Agent wie Agentforce Vibes, Claude Code, Codex oder Copilot schreibt Apex, LWC, Flows und Metadaten. Abgerechnet wird nach Tokens oder pro Nutzer. Das Ergebnis ist Code, der durch Review und Pipeline muss.
+- **Bauen:** Ein Coding-Agent wie Agentforce Vibes, Claude Code, Codex oder Copilot schreibt Apex, LWC, Flows und Metadaten. Abgerechnet wird nach Tokens oder pro Nutzer. Das Ergebnis ist Code, der Review und Pipeline durchlaufen muss.
 - **Betreiben:** Ein Agentforce-Agent beantwortet Händleranfragen, prüft Garantieanträge oder liest Auftragsstatus aus dem ERP. Abgerechnet wird pro Aktion in Flex Credits. Das Ergebnis ist eine Antwort an einen Kunden oder Händler.
 
 Für beide Welten gibt es eigene Kriterien, eigene Budgets und eigene Tests. Die Begriffe dahinter erkläre ich in [Kapitel 1](../begriffe-und-landkarte/), die Salesforce-eigenen Werkzeuge in [Kapitel 2](../salesforce-werkzeuge-ki-entwicklung/) und die externen Coding-Agenten in [Kapitel 4](../externe-coding-agenten/).
@@ -45,7 +45,7 @@ Stand 27. Oktober 2026, gestützt auf die verlinkten Seiten. Preise von Salesfor
 | # | Szenario | Werkzeug oder Ansatz | Warum | Kosten und Governance |
 |---|---|---|---|---|
 | 1 | Klickbarer Prototyp für einen Workshop, etwa ein Händlerportal als LWC | Vibe Coding mit Agentforce Vibes in einer Developer Edition oder Claude Code gegen eine Scratch-Org | Wegwerfcode, Tempo zählt, keine Kundendaten; Martin Fowler sieht Vibe Coding bei [Software für einen kleinen Kreis](https://martinfowler.com/bliki/VibeCoding.html) | Developer Edition: [110 Requests oder 1,5 Mio. Tokens](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html), einen Monat lang, ohne Auffrischung; Code danach verwerfen |
-| 2 | Features im Projekt, Flex Credits sind schon im Salesforce-Vertrag | [Agentforce Vibes 2.0](https://developer.salesforce.com/developer-centers/agentforce-vibes/announcements/agentforce-vibes-4-1-0) mit Regeldateien und Plan Mode | Läuft im Salesforce-Vertrag, Abrechnung über Flex Credits | Flat Fee [125 € pro Nutzer und Monat](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/), Premium-Modell dabei [bis 2.500 Requests oder 36 Mio. Tokens](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) je 30 Tage |
+| 2 | Features im Projekt, Flex Credits sind schon im Salesforce-Vertrag | [Agentforce Vibes 2.0](https://developer.salesforce.com/developer-centers/agentforce-vibes/announcements/agentforce-vibes-4-1-0) mit Regeldateien und Plan Mode | Teil des Salesforce-Vertrags, Abrechnung über Flex Credits | Flat Fee [125 € pro Nutzer und Monat](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/), Premium-Modell dabei [bis 2.500 Requests oder 36 Mio. Tokens](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) je 30 Tage |
 | 3 | Große Refactorings, Features über viele Metadaten, Architektur-Reviews | Claude Code mit dem [Plugin salesforce-development](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) | Rund 40 Salesforce-Skills, Apex-Sprachserver, Hooks zur Deploy-Validierung, Agent für Architektur-Reviews | Anthropic nennt [rund 13 $ pro Entwickler und aktivem Tag](https://code.claude.com/docs/en/costs), 150 bis 250 $ im Monat; Datenvertrag klären |
 | 4 | Kunde arbeitet mit GitHub Enterprise und Copilot | Copilot oder Claude und Codex über [Agent HQ](https://github.blog/news-insights/company-news/pick-your-agent-use-claude-and-codex-on-agent-hq/), dazu die offene Salesforce-Skills-Bibliothek | Admins steuern erlaubte Agenten und Modelle, Audit-Logs vorhanden | Enterprise [39 $ pro Nutzer mit 39 $ AI Credits](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/); Claude und Codex in Agent HQ waren zum Start im Februar 2026 Public Preview |
 | 5 | Org liegt in der Hyperforce EU Operating Zone oder EU-Verarbeitung ist Pflicht | Claude Code über Amazon Bedrock in einer EU-Region oder OpenAI-API-Projekte mit EU-Residenz | Vibes ist [in der EU Operating Zone nicht verfügbar](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html); die Claude API kennt direkt [nur „us“ und „global“](https://platform.claude.com/docs/en/manage-claude/data-residency) | Auftragsverarbeitung, Betriebsrat, keine Produktivdaten im Prompt |
@@ -59,7 +59,7 @@ Stand 27. Oktober 2026, gestützt auf die verlinkten Seiten. Preise von Salesfor
 |---|---|---|---|---|
 | 9 | Agent für die Garantie-Vorprüfung von Händleranträgen | Agentforce Builder mit Agent Script, Tests vor dem Go-live | Salesforce rät: was sich [als Code ausdrücken lässt, gehört in Logik](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) | [20 Flex Credits pro Aktion in Produktion, 16 in der Sandbox](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) |
 | 10 | Agent liefert Auftragsstatus oder Verfügbarkeit aus SAP S/4 | MuleSoft-API, [synchronisiert in den API Catalog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog), als Agenten-Aktion | Dokumentiertes Muster, Named Credentials entstehen automatisch | MuleSoft-Lizenz; Integrationsnutzer mit minimalen Rechten |
-| 11 | Altes ERP oder MES ohne API | MuleSoft IDP mit RPA oder der Systems Integration Agent | IDP gibt Dokumente unter [80 Prozent Konfidenz an Menschen](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce); der Systems Integration Agent ist [seit der Dreamforce 2026 GA](https://www.salesforce.com/blog/dreamforce-2026-announcements/) | RPA und der Systems Integration Agent arbeiten über die Oberfläche; Monitoring einplanen |
+| 11 | Altes ERP oder MES ohne API | MuleSoft IDP mit RPA oder der Systems Integration Agent | IDP übergibt Dokumente unter [80 Prozent Konfidenz an Menschen](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce); der Systems Integration Agent ist [seit der Dreamforce 2026 GA](https://www.salesforce.com/blog/dreamforce-2026-announcements/) | RPA und der Systems Integration Agent arbeiten über die Oberfläche; Monitoring einplanen |
 | 12 | Vertrieb will Salesforce direkt in Claude nutzen | Salesforce in Claude aus der AIforce-Schicht | Für alle Kunden [als Beta verfügbar](https://www.salesforce.com/news/stories/aiforce-announcement/) | „Pricing and packaging are subject to change“; Pilot mit kleinem Kreis |
 
 ```hinweis achtung
@@ -82,12 +82,12 @@ Welche Verträge und Werkzeuge gibt es schon?
 Was ist die Aufgabe?
   Code geht an den Coding-Agenten, Metadaten-Wissen an den API-Context-Server, Daten an Hosted MCP, Geschäftsregeln eines Laufzeit-Agenten an Agent Script, Releases an die Pipeline.
 Welches Kostenmodell passt?
-  Viel und gleichmäßige Nutzung spricht für Pauschalen pro Nutzer, wenig oder schwankende Nutzung für Abrechnung nach Verbrauch. Die Rechnung dazu steht in [Kapitel 7](../kosten-und-token/).
+  Hohe und gleichmäßige Nutzung spricht für Pauschalen pro Nutzer, wenig oder schwankende Nutzung für Abrechnung nach Verbrauch. Die Rechnung dazu steht in [Kapitel 7](../kosten-und-token/).
 Welche Prüfungen sind deterministisch?
   Code Analyzer, Apex-Tests, Validierungs-Deploy und ein menschlicher Review stehen vor jedem Merge, egal welcher Agent den Code geschrieben hat. Wie diese Prüfungen aussehen, beschreibt [Kapitel 8](../best-practices-ki-code/).
 ```
 
-Für Agenten im Betrieb kommt eine siebte Frage vor alle anderen: Lohnt sich der Prozess überhaupt? Volumen, Datenqualität, ERP-Zugriff, Kostenmodell und Edition prüfe ich in [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/).
+Für Agenten im Betrieb steht eine siebte Frage vor allen anderen: Lohnt sich der Prozess überhaupt? Volumen, Datenqualität, ERP-Zugriff, Kostenmodell und Edition prüfe ich in [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/).
 
 ## Beispiel: drei Vorhaben bei einem Maschinenbauer
 
@@ -113,4 +113,4 @@ Drei Fragen beantwortet keine Tabelle.
 | Verantwortung | Wer die Regeldatei im Repository pflegt, wer Hosted-MCP-Zugänge freigibt und wer Flex Credits bezahlt, ist eine Vertragsfrage zwischen Ihnen und Ihrem Partner. Das habe ich in [Kapitel 5](../aiforce-und-systemintegratoren/) behandelt. |
 | Ob Salesforce der richtige Ort ist | Entscheidungen, die SAP schon trifft, gehören nicht in einen Agenten in Salesforce. Ein Flow oder ein ERP-Job ist für Routine ohne Sprache oft günstiger als jeder Agent. |
 
-Wenn Sie diese Entscheidungen für Ihre Org und Ihre Partner sortieren möchten, gehört das zu meiner Arbeit in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Wo Agenten in der Fertigung heute tragen, behandelt [Kapitel 10](../ki-agenten-in-der-fertigung/); alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
+Wenn Sie diese Entscheidungen für Ihre Org und Ihre Partner sortieren möchten, gehört das zu meiner Arbeit in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Wo Agenten in der Fertigung heute Nutzen bringen, behandelt [Kapitel 10](../ki-agenten-in-der-fertigung/); alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
