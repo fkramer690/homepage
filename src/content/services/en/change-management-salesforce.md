@@ -10,18 +10,18 @@ section: change-management
 order: 4
 note: "I developed this approach together with Juliane Winterscheid, my cooperation partner for change management. Juliane is Prosci certified."
 notePartner: "Juliane Winterscheid"
-lead: "A new Salesforce release is rolled out quickly. Whether business teams, developers and partners work differently afterwards is another question. Together with Juliane Winterscheid I plan the introduction of new processes and standards following Prosci and ADKAR, so they reach daily work and stay there."
+lead: "A new Salesforce release is rolled out quickly. Whether business teams, developers and partners work differently afterwards is another question. Together with Juliane Winterscheid I plan the introduction of new processes and standards following Prosci and ADKAR, so they are used in daily work for good."
 situations:
   - "Salesforce is live, but parts of the business still work with Excel, email and their own lists."
-  - "Training has taken place, yet usage stays low, and nobody can say exactly where it gets stuck."
+  - "Training has taken place, yet usage stays low, and nobody can say exactly why."
   - "New standards for development and release have been agreed, but every partner and team reads them differently."
   - "Releases become smaller and more frequent, and business teams learn about changes only once they are in production."
-  - "Management expects results from the program but is rarely there when decisions about the rollout are due."
+  - "Management expects results from the program but is rarely present when decisions about the rollout are due."
 deliverables:
   - "For each affected group we use the ADKAR model to assess at which of the five stages the rollout is stuck."
   - "We introduce new standards in stages and start with the most common cases."
   - "We set up a fixed format in which business teams, developers and partners see upcoming changes early and can have a say."
-  - "We measure usage in Salesforce and adjust where it gets stuck."
+  - "We measure usage in Salesforce and adjust where it falls behind."
 results:
   - "Agreed success measures from Salesforce reports, for example on records created and maintained"
   - "A rollout plan per release that shows which groups are affected, what changes for them and when they hear about it"
@@ -34,39 +34,39 @@ phases:
     text: "We define how success is measured, which groups are affected and what changes for each of them in daily work. That includes the risks and who in management sponsors the rollout."
   - title: "Manage the change"
     icon: "steer"
-    text: "Each group gets a plan along the ADKAR stages, tied to the release plan. The most common cases come first. We measure usage in Salesforce and adjust where it gets stuck."
+    text: "Each group gets a plan along the ADKAR stages, tied to the release plan. We settle the most common cases first. We measure usage in Salesforce and adjust where it falls behind."
   - title: "Sustain the outcomes"
     icon: "check"
     text: "We check where gaps remain, anchor new rules in the pipeline, reports and Center of Excellence calls, and hand ownership over to internal owners."
-duration: "Preparation 2 to 4 weeks. Support up to the rollout usually takes 3 to 9 months, securing the results 1 to 2 months after go-live."
+duration: "Preparation 2 to 4 weeks. Support through to the rollout usually takes 3 to 9 months, securing the results 1 to 2 months after go-live."
 notFit:
-  - "It is only about training on new features."
+  - "The task is only training on new features."
   - "Management is not willing to stand up visibly for the change itself."
-alternatives: "An internal change team or the HR department fits if it has experience with IT rollouts. Large consultancies bring method, but rarely Salesforce knowledge."
+alternatives: "An internal change team or the HR department fits if it has experience with IT rollouts. Large consultancies bring a method, but rarely Salesforce knowledge."
 progress:
   - measure: "Use of the new processes"
     how: "Whether business teams use the new processes in Salesforce, visible in the records created there."
   - measure: "Workarounds"
-    how: "How much still runs through Excel, email or legacy systems."
+    how: "How much work is still done in Excel, email or legacy systems."
   - measure: "Questions after a release"
-    how: "Which questions key users and support get after a release and whether they become fewer."
+    how: "Which questions key users and support get after a release and whether their number goes down."
 faq:
   - q: "Why do you follow Prosci?"
-    a: "Because to me Prosci is the gold standard in change management. The approach rests on surveys since 1998 with more than 10,000 participants and is widely used in the industry. It gives structure to the part of a Salesforce program that is often left to chance: whether people actually work differently."
+    a: "Because to me Prosci is the gold standard in change management. The approach rests on surveys conducted since 1998 with more than 10,000 participants and is widely used in the industry. It gives structure to the part of a Salesforce program that is often left to chance: whether people work differently afterwards."
   - q: "What is the ADKAR model?"
     a: "ADKAR is a Prosci model with five stages each person goes through in a change: Awareness, Desire, Knowledge, Ability and Reinforcement. When a rollout stalls, one of these stages is usually missing. The model shows which one."
   - q: "How long does it take to introduce new standards in a large program?"
     a: "In my largest program, with more than 30 developers and five implementation partners, it took about three months. The first version covered around 80 percent of the cases, and the edge cases were added over time."
   - q: "Who has to take part in change management?"
-    a: "Everyone the change affects or who carries it: business teams, developer teams, partners and management. Without backing from management, decisions and attention are missing, and new rules become a recommendation that not everyone follows."
+    a: "Everyone who is affected by the change or who drives it: business teams, developer teams, partners and management. Without backing from management, decisions and attention are missing, and new rules become a recommendation that not everyone follows."
   - q: "What changes with smaller, more frequent releases?"
-    a: "Business teams get small changes more often instead of rare large packages. That lowers the risk of each release but needs a fixed route on which the people affected learn in advance what is coming."
+    a: "Business teams get small changes more often instead of rare large packages. That lowers the risk of each release but needs a fixed route through which the people affected learn in advance what is changing."
   - q: "Do you replace our implementation partner?"
-    a: "No. Your partners keep building. We work on the client side, alongside them, and I steer them by common rules. If you want to replace a partner, I help you do it without losing knowledge and without delaying the program."
+    a: "No. Your partners keep building. We work on the client side, alongside them, and I steer them according to shared rules. If you want to replace a partner, I help you do it without losing knowledge and without delaying the program."
 blogTags: [change management, Partner governance, Governance, DevOps training, Release management]
 ---
 
-Change management in a Salesforce program means introducing new processes, standards and releases so that the people who work with them actually use them. That applies to the business teams who do their daily work in Salesforce as much as to the developer teams and implementation partners who are meant to build by common rules. Juliane Winterscheid and I take on this work on the client side: Juliane guides the people through the change, I make sure architecture, partner governance and releases fit with it. Wherever this page says "we", it means the two of us. Our approach follows Prosci, and further down you can read why.
+Change management in a Salesforce program means introducing new processes, standards and releases so that the people who work with them actually use them. That applies to the business teams who do their daily work in Salesforce as much as to the developer teams and implementation partners who are meant to build by shared rules. Juliane Winterscheid and I take on this work on the client side: Juliane guides the people through the change, and I make sure architecture, partner governance and releases fit with it. Wherever this page says "we", it means the two of us. Our approach follows Prosci, and further down you can read why.
 
 ## Why do new processes not reach daily work?
 
@@ -74,9 +74,9 @@ Deploying a release is the technical part. What happens next decides whether any
 
 ```pro-contra
 pro: What we do about it
-- A rollout plan per release sets who hears about it and when.
+- A rollout plan per release defines who hears about it and when.
 - The first version covers the most common cases, edge cases come later.
-- New rules come from management, not only from the project team.
+- Management backs new rules itself, not only the project team.
 - The old way is closed as soon as the new one works.
 contra: Where it fails
 - **The people affected hear about it too late** and look for a way around it.
@@ -99,9 +99,9 @@ case: Awareness is missing | A sales team does not know what the maintained oppo
 case: Reinforcement is missing | A partner's developers know the naming conventions, but nobody checks them in the pipeline. | Then an automatic check belongs in the [release process](../devops-release-management/).
 ```
 
-Salesforce helps with measuring. Whether a new process is used shows more reliably in reports on created and maintained records than in a survey. We define these figures in the first phase and look at them regularly in the second. I describe the individual topics, from key users to measuring adoption, in [Salesforce change management: why rollouts fail](../../blog/change-management-salesforce-rollout/). The [change management masterclass](../../masterclass/change-management/) goes through the five stages chapter by chapter.
+Salesforce helps with measuring. Reports on created and maintained records show more reliably than a survey whether a new process is used. We define these figures in the first phase and look at them regularly in the second. I describe the individual topics, from key users to measuring adoption, in [Salesforce change management: why rollouts fail](../../blog/change-management-salesforce-rollout/). The [change management masterclass](../../masterclass/change-management/) goes through the five stages chapter by chapter.
 
-## Common standards for five partners in three months
+## Shared standards for five partners in three months
 
 ```kennzahlen
 30+ | developers in eight streams
@@ -111,17 +111,17 @@ Salesforce helps with measuring. Whether a new process is used shows more reliab
 source: my largest program as architect on the client side
 ```
 
-At the start of this program, the technical approaches of the teams had drifted far apart. So we introduced common standards for naming conventions, one automation entry point per object, test coverage and an [object ownership matrix](../../blog/salesforce-object-ownership-matrix/) in stages.
+At the start of this program, the technical approaches of the teams had drifted far apart. So we introduced shared standards for naming conventions, one automation entry point per object, test coverage and an [object ownership matrix](../../blog/salesforce-object-ownership-matrix/) in stages.
 
-The first version covered around 80 percent of the cases. The edge cases were added step by step as they came up in the project. Later we raised new topics in the program with lead time in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), before they turned into problems. At some point hardly any new edge cases came up. I describe the rules for several partners under [partner governance](../partner-governance/).
+The first version covered around 80 percent of the cases. We added the edge cases step by step as they came up in the project. Later we discussed new topics with lead time in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), before they turned into problems. Over time, hardly any new edge cases came up. I describe the rules for several partners under [partner governance](../partner-governance/).
 
 ## Smaller releases need a fixed route into the business
 
-With a clean release process, releases become smaller and more frequent. For business teams this means small changes more often instead of one large package per quarter. For that to work, they need a fixed route on which they learn in advance what changes, and a route back on which they report what does not fit their daily work. Before each release I clarify with the owners in the business which teams are affected, what changes in their processes and who informs them. That goes into the release plan before development is finished. After the release I check whether the new processes are used and bring feedback from daily work into the backlog.
+With a clean release process, releases become smaller and more frequent. For business teams this means small changes more often instead of one large package per quarter. For that to work, they need a fixed route through which they learn in advance what changes, and a route back through which they report what does not fit their daily work. Before each release I clarify with the owners in the business which teams are affected, what changes in their processes and who informs them. That goes into the release plan before development is finished. After the release I check whether the new processes are used and add feedback from daily work to the backlog.
 
 ## Prosci is built on research since 1998
 
-To me, Prosci is the gold standard in change management. The reason is the research behind it: Prosci has surveyed projects about their experience with change since 1998.
+To me, Prosci is the gold standard in change management. The reason is the research behind it: Prosci has surveyed project leaders about their experience with change since 1998.
 
 ```kennzahlen
 88 % | of projects with excellent change management met their objectives
