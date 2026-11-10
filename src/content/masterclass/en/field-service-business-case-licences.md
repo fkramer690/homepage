@@ -21,13 +21,13 @@ faq:
   - q: "Can a dispatcher on a Dispatcher license also run the hotline?"
     a: "No. According to the price list, Dispatcher and Technician licenses may not be used for contact center, call center or customer case management. Anyone who works cases and dispatches needs Field Service Plus at $230."
   - q: "When does Contractor Plus per login beat per user?"
-    a: "$80 per user divided by $32 per login is 2.5. A partner technician who logs in at most twice a month is cheaper per login, from three logins a month the user license wins."
+    a: "$80 per user divided by $32 per login is 2.5. A partner technician who logs in at most twice a month is cheaper per login, from three logins a month the user license is cheaper."
   - q: "When is Salesforce Field Service not enough, or too much?"
     a: "With few long jobs such as commissioning over several weeks, optimization adds little. Then I first check Service Cloud without Field Service licenses, a portal for partners or planning in the ERP."
 draft: false
 ---
 
-Salesforce Field Service pays off for manufacturers whose technicians run many short jobs a day, with a high share of travel time and many skills that have to match. With few long jobs, such as commissioning over weeks, optimization adds little. The license follows the role: dispatchers get Dispatcher, your own technicians Technician, at $175 per user and month each. Anyone who works cases and also dispatches needs Field Service Plus at $230, partner technicians get Contractor Plus. Before a partner starts building, four numbers, the path from case to technician and a license matrix by role should be settled.
+Salesforce Field Service pays off for manufacturers whose technicians handle many short jobs a day, with a high share of travel time and many skills that have to match. With few long jobs, such as commissioning over weeks, optimization adds little. The license follows the role: dispatchers get Dispatcher, your own technicians Technician, at $175 per user and month each. Anyone who works cases and also dispatches needs Field Service Plus at $230, partner technicians get Contractor Plus. Before a partner starts building, four numbers, the path from case to technician and a license matrix by role should be settled.
 
 ## What is Salesforce Field Service today?
 
@@ -70,7 +70,7 @@ A customer request passes through four records in Salesforce before a technician
 
 A work type is the template for a kind of job, such as annual maintenance, breakdown repair or commissioning. According to [Trailhead](https://trailhead.salesforce.com/content/learn/projects/modify-the-field-service-center/create-a-work-type), it carries the estimated duration and the required skills. With the Auto-Create Service Appointment option, every work order with this work type gets a service appointment automatically. Without it, someone creates the appointment by hand, and that is exactly the step that gets forgotten.
 
-Planned maintenance comes through a different door. Maintenance plans create work orders without a case, manually or automatically three times a day according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field_service_maint/field-service-generate-work-orders). Planned and unplanned work therefore land in the same dispatch queue and compete for the same technicians. Who decides which maintenance visit has to make way for a machine-down call should be settled before the start.
+Planned maintenance enters by a different route. Maintenance plans create work orders without a case, manually or automatically three times a day according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field_service_maint/field-service-generate-work-orders). Planned and unplanned work therefore share the same dispatch queue and compete for the same technicians. Who decides which maintenance visit has to make way for a machine-down call should be settled before the start.
 
 Not every case needs a technician. I recommend a short triage at the hotline: remote help, part shipment or visit. Only a visit creates a work order. The full path of a machine-down call is in [Field Service work orders: from case to technician](../../../blog/field-service-case-to-work-order/).
 
@@ -102,11 +102,11 @@ In smaller service teams the same people often answer the breakdown line in the 
 Doing both on a Dispatcher license breaches the license terms, even if the system technically lets them open the case.
 ```
 
-For this mixed role the price list names Field Service Plus. Compared with Service Cloud Core it costs $35 more per month, and that difference buys the right to dispatch. If you separate hotline and dispatch cleanly, Service Cloud for one group and Dispatcher for the other is enough.
+For this mixed role the price list names Field Service Plus. Compared with Service Cloud Core it costs $35 more per month, and that premium covers the right to dispatch. If you separate hotline and dispatch cleanly, Service Cloud for one group and Dispatcher for the other is enough.
 
 ### Contractor Plus per user or per login?
 
-$80 divided by $32 is 2.5. A partner technician who logs in three or more times a month is cheaper on a user license, below that per login wins.
+$80 divided by $32 is 2.5. A partner technician who logs in three or more times a month is cheaper on a user license, below that, per-login billing is cheaper.
 
 ```hinweis offen
 The pricing page refers to sales for login-based contractor licenses, so I would have the counting rule written into the order form.
@@ -128,13 +128,13 @@ The pricing page lists five add-ons:
 
 According to the pricing page, Agentforce 1 Field Service at $650 contains Field Service Plus, unlimited Agentforce use for employees, Appointment Assistant, Visual Remote Assistant, Digital Channels, Slack and Tableau Next, plus 1 million Flex Credits and 2.5 million Data Cloud credits per org and year. Built from parts, Field Service Plus and the three add-ons for Agentforce, Visual Remote Assistant and Appointment Assistant cost $430. The bundle therefore costs $220 more per user and month, and the credits per org cover that premium for only about two users.
 
-My rule: the bundle pays off when Slack, Tableau Next, Digital Channels and Data Cloud would be bought for the same users anyway. For technicians who only need the AI add-on, single licenses win clearly. The calculation with 50 users and a booking agent is in [Agentforce 1 Field Service: when does the bundle pay off?](../../../blog/agentforce-1-field-service-edition-worth-it/), and how Flex Credits work in general is in the AI masterclass chapter [AI costs: tokens, Flex Credits, budget](../../ai-salesforce/costs-and-tokens/).
+My rule: the bundle pays off when Slack, Tableau Next, Digital Channels and Data Cloud would be bought for the same users anyway. For technicians who only need the AI add-on, single licenses are clearly cheaper. The calculation with 50 users and a booking agent is in [Agentforce 1 Field Service: when does the bundle pay off?](../../../blog/agentforce-1-field-service-edition-worth-it/), and how Flex Credits work in general is in the AI masterclass chapter [AI costs: tokens, Flex Credits, budget](../../ai-salesforce/costs-and-tokens/).
 
 ## Where is Salesforce Field Service not the right answer?
 
 Not every field team needs a planning product. I check three alternatives before any license:
 
-- **The service module in the ERP**, if orders, parts and invoicing run there anyway and technicians have few, long jobs.
+- **The service module in the ERP**, if orders, parts and invoicing are handled there anyway and technicians have few, long jobs.
 - **A lean scheduling tool** next to the CRM, if only dispatch is missing and assets, contracts and history are maintained cleanly elsewhere.
 - **Service Cloud without Field Service licenses**, if mainly case handling and documentation are missing and appointments are simple to agree.
 
@@ -152,7 +152,7 @@ A component maker has three people who run hotline and dispatch together, two pu
 | Back office | 1 | Service Cloud Core at $195 | $195 |
 | Partner technicians | 4 | Contractor Plus per user at $80 | $320 |
 
-That is $5,930 a month and $71,160 a year at list price, without implementation and the ERP interface. The partner technicians log in about three times a month each. Per login that would be 12 logins at $32, so $384 instead of $320. At this usage the user license wins by a small margin; at two logins per person it would be the other way round.
+That is $5,930 a month and $71,160 a year at list price, without implementation and the ERP interface. The partner technicians log in about three times a month each. Per login that would be 12 logins at $32, so $384 instead of $320. At this usage the user license is slightly cheaper; at two logins per person it would be the other way round.
 
 If the hotline is also to get an AI agent, the five office seats cost $625 more a month with the Agentforce add-on. The same five seats on Agentforce 1 Field Service cost $3,250 a month, against $1,665 built from parts. Without planned demand for Slack, Tableau Next and Data Cloud, nothing here speaks for the bundle.
 
