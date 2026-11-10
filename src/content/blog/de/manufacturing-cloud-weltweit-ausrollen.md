@@ -25,7 +25,7 @@ faq:
 draft: false
 ---
 
-Ein weltweiter Rollout der Manufacturing Cloud beginnt mit einer Entscheidung, die vor jeder Konfiguration steht: Welches strategische Ziel soll er erreichen? Meistens ist es die Harmonisierung von Prozessen. Daraus folgt, wie ich den Rollout plane: mit einem großen Land mit angemessener Komplexität beginnen, eine der größten Regionen in die ersten zwei Phasen aufnehmen und alle Länder zu mindestens 80 Prozent identisch halten. Das sind meine Lehren aus einer Premiere: dem ersten weltweiten Rollout der Manufacturing Cloud, den Salesforce überhaupt durchgeführt hat. Die wichtigste davon klingt am wenigsten technisch: Change Management gehört dazu, auch wenn niemand danach fragt.
+Ein weltweiter Rollout der Manufacturing Cloud beginnt mit einer Entscheidung, die vor jeder Konfiguration steht: Welches strategische Ziel soll er erreichen? Meistens ist es die Harmonisierung von Prozessen. Daraus folgt meine Rolloutplanung: Ich beginne mit einem großen Land mit angemessener Komplexität, nehme eine der größten Regionen in die ersten zwei Phasen auf und sorge dafür, dass alle Länder zu mindestens 80 Prozent identisch arbeiten. Das sind meine Lehren aus einer Premiere: dem ersten weltweiten Rollout der Manufacturing Cloud, den Salesforce überhaupt durchgeführt hat. Die wichtigste davon klingt am wenigsten technisch: Change Management gehört dazu, auch wenn niemand danach fragt.
 
 ## Was muss vor dem ersten Land feststehen?
 
@@ -38,10 +38,10 @@ Aus diesem Ziel ergibt sich ein globales Template, also die gemeinsame Konfigura
 - **Was Kunden im Portal sehen**, aus [Teil 7](../manufacturing-cloud-kundenportal/).
 
 ```hinweis achtung
-Diese Punkte lassen sich nach dem ersten Land kaum noch ändern, ohne alle bereits eingeführten Länder anzufassen. Jede davon gehört deshalb ins Entscheidungslog, bevor das erste Land live geht.
+Diese Punkte lassen sich nach dem ersten Land kaum noch ändern, ohne alle bereits eingeführten Länder anzufassen. Jeder davon gehört deshalb ins Entscheidungslog, bevor das erste Land live geht.
 ```
 
-Später ändern lassen sie sich trotzdem, aber dann ist es eine neue Version des globalen Templates: mit einem Verantwortlichen, einer Folgenabschätzung, Regressionstests in jedem eingeführten Land und einem Datum, ab dem die nächsten Länder darauf ausgerollt werden. Ohne diese Versionierung tragen sich die Fehler des ersten Landes in jedes weitere.
+Sie lassen sich später trotzdem ändern, aber dann ist es eine neue Version des globalen Templates: mit einem Verantwortlichen, einer Folgenabschätzung, Regressionstests in jedem eingeführten Land und einem Datum, ab dem die nächsten Länder auf dieser Grundlage ausgerollt werden. Ohne diese Versionierung werden die Fehler des ersten Landes in jedes weitere Land weitergetragen.
 
 Wie ich dieses Log führe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
@@ -49,37 +49,37 @@ Wie ich dieses Log führe, beschreibe ich unter [Salesforce-Architektur](../../l
 
 Ich fange mit einem großen Land mit angemessener Komplexität an. Beides zählt:
 
-- **Groß genug**, damit das Template reale Mengen, viele Nutzer und die Sonderfälle aus dem Alltag sieht. Ein kleines Pilotland bestätigt ein Template, das später am ersten großen Land scheitert.
+- **Groß genug**, damit das Template mit realen Mengen, vielen Nutzern und den Sonderfällen aus dem Alltag geprüft wird. Ein kleines Pilotland bestätigt ein Template, das später am ersten großen Land scheitert.
 - **Nicht zu speziell**, damit seine Eigenheiten nicht das Template für alle anderen prägen. Ein Land mit ungewöhnlichem Vertriebsmodell oder einer eigenen Produktlinie ist ein schlechter Startpunkt, auch wenn es groß ist.
 
-Dazu kommt eine zweite Regel: Eine der größten Regionen sollte in den ersten zwei Phasen dabei sein. Kommt sie erst in Phase fünf, stößt sie auf ein Template, das an kleineren Ländern gewachsen ist, und fordert Änderungen, die alle schon eingeführten Länder betreffen. Je früher die große Region dabei ist, desto günstiger sind diese Änderungen.
+Dazu kommt eine zweite Regel: Eine der größten Regionen sollte in den ersten zwei Phasen dabei sein. Kommt sie erst in Phase fünf, stößt sie auf ein Template, das mit kleineren Ländern gewachsen ist, und fordert Änderungen, die alle schon eingeführten Länder betreffen. Je früher die große Region dabei ist, desto günstiger sind diese Änderungen.
 
 ## Prozesse, Business Units und IT-Landschaft bestimmen die Reihenfolge
 
 Drei Fragen werden für jedes Land anders beantwortet:
 
-1. **Wie ähnlich sind die Prozesse?** Länder, die schon heute ähnlich verkaufen und abrechnen, gehen schneller. Länder mit eigenen Abläufen brauchen mehr Zeit für die Harmonisierung.
-2. **Welche Business Units gibt es dort?** Eine Gesellschaft mit mehreren Geschäftsbereichen ist ein größerer Schritt als eine mit einem.
+1. **Wie ähnlich sind die Prozesse?** Länder, die schon heute ähnlich verkaufen und abrechnen, lassen sich schneller einführen. Länder mit eigenen Abläufen brauchen mehr Zeit für die Harmonisierung.
+2. **Welche Business Units gibt es dort?** Eine Gesellschaft mit mehreren Geschäftsbereichen ist ein größerer Schritt als eine Gesellschaft mit nur einem Geschäftsbereich.
 3. **Wie sieht die IT-Landschaft aus?** Ein Land mit eigenem ERP, eigener Middleware oder eigenen Altsystemen braucht neue Schnittstellen. Teilt es das ERP mit einem schon eingeführten Land, ist der Weg kürzer.
 
 Daraus entsteht keine Formel, aber eine Reihenfolge, die sich begründen lässt. Ich lege sie in einer Tabelle mit einer Zeile pro Land und einer Spalte pro Frage fest. Damit wird sichtbar, warum ein Land in Phase zwei kommt und ein anderes in Phase vier, und die Diskussion darüber wird sachlicher.
 
 ## Was tun, wenn Gesellschaften unter anderen Marken auftreten?
 
-Es einplanen. Bei manchen Unternehmen treten Gesellschaften in verschiedenen Ländern unter anderen Marken oder Namen auf, oft nach Übernahmen. Für den Kunden ist das eine andere Firma, intern dieselbe Gruppe.
+Planen Sie das ein. Bei manchen Unternehmen treten Gesellschaften in verschiedenen Ländern unter anderen Marken oder Namen auf, oft nach Übernahmen. Für den Kunden ist das eine andere Firma, intern gehört sie zur selben Gruppe.
 
 In Salesforce betrifft das mehr, als man im ersten Workshop denkt:
 
 - **Kundenportal:** Welche Marke sieht der Kunde, wenn er sich anmeldet?
 - **Dokumente und E-Mails:** Angebote, Auftragsbestätigungen und Benachrichtigungen tragen Logo und Namen der richtigen Gesellschaft.
-- **Berichte:** Die Zentrale will über Marken hinweg auswerten, das Land nach seiner eigenen Marke.
-- **Daten:** Die Marke muss irgendwo im Datenmodell stehen, damit Portal, Dokumente und Berichte sie kennen.
+- **Berichte:** Die Zentrale will über Marken hinweg auswerten, das Land will nach seiner eigenen Marke auswerten.
+- **Daten:** Die Marke muss irgendwo im Datenmodell stehen, damit Portal, Dokumente und Berichte darauf zugreifen können.
 
 Ich nehme die Marke deshalb als eigene Frage ins Template auf, auch wenn das erste Land nur eine hat. Kommt die zweite Marke erst im dritten Land, ist sie sonst eine Abweichung, die alle anderen Länder mittragen müssen.
 
 ## Jedes Land arbeitet zu mindestens 80 Prozent gleich
 
-Dafür gibt es einen Richtwert und einen Prozess. Der Richtwert: Alle Länder arbeiten zu mindestens 80 Prozent identisch, gemessen an den Kernprozessen und den Säulen der Implementierung, nicht an jeder Maske oder jedem Feld. Pro Land wird versucht, das Delta zu minimieren. Andere Länder als das erste sollten nur marginale Abweichungen haben.
+Dafür gibt es einen Richtwert und einen Prozess. Der Richtwert: Alle Länder arbeiten zu mindestens 80 Prozent identisch, gemessen an den Kernprozessen und den Säulen der Implementierung, nicht an jeder Maske oder jedem Feld. Für jedes Land wird versucht, das Delta zu minimieren. Alle weiteren Länder sollten nur marginale Abweichungen haben.
 
 Der Prozess dazu ist einfach, braucht aber Disziplin:
 
@@ -88,7 +88,7 @@ Der Prozess dazu ist einfach, braucht aber Disziplin:
 3. **Alles andere wird entschieden**, von einer Stelle, die für das Template verantwortlich ist. Entweder kommt die Anforderung ins Template für alle, oder sie wird eine lokale Ausnahme, oder sie wird abgelehnt.
 4. **Ausnahmen werden gezählt.** Wer die Ausnahmen pro Land kennt, sieht früh, wenn ein Land aus dem Template driftet.
 
-Bei mehreren Implementierungspartnern, etwa einem pro Region, gehört diese Entscheidung auf die Kundenseite. Sonst baut jeder Partner sein eigenes Template. Wie ich mehrere Partner unter einem Rahmen führe, steht unter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).
+Bei mehreren Implementierungspartnern, etwa einem pro Region, muss diese Entscheidung auf Kundenseite liegen. Sonst baut jeder Partner sein eigenes Template. Wie ich mehrere Partner in einem gemeinsamen Rahmen führe, steht unter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).
 
 ## Warum Change Management, auch wenn niemand danach fragt?
 
@@ -104,7 +104,7 @@ Pro Land gehört mindestens dazu:
 - **Kommunikation vor dem Go-live**, die erklärt, was sich ändert und warum, nicht nur, wo man klickt.
 - **Ein Blick auf die Nutzung nach dem Go-live**, damit auffällt, wenn ein Land neben Salesforce weiter mit eigenen Listen arbeitet.
 
-Wie ich die Einführung neuer Prozesse auf Kundenseite plane, beschreibe ich unter [Change Management Beratung für Salesforce](../../leistungen/change-management/). Was pro Land dazugehört, steht in [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/), der Überblick in [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
+Wie ich die Einführung neuer Prozesse auf Kundenseite plane, beschreibe ich unter [Change Management Beratung für Salesforce](../../leistungen/change-management/). Was pro Land dazugehört, steht in [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/), den Überblick finden Sie in [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
 
 ## Das Ziel des Rollouts schriftlich festlegen
 
