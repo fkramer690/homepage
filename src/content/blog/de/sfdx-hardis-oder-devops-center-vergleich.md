@@ -16,26 +16,26 @@ takeaways:
   - "Pro Repository sollte genau ein Werkzeug über Merges und Promotions entscheiden, sonst entstehen zwei Release-Prozesse."
 faq:
   - q: "Was ist der Unterschied zwischen sfdx-hardis und dem DevOps Center?"
-    a: "Das DevOps Center, heute Lifecycle Center, ist eine native Salesforce-App mit Klickoberfläche, in der Work Items durch eine Pipeline wandern. sfdx-hardis ist ein Open-Source-Toolkit aus CLI-Plugin und VS-Code-Erweiterung, das als Pipeline auf der Git-Plattform des Kunden läuft und zusätzlich Monitoring, Metadaten-Backup und Dokumentation liefert."
+    a: "Das DevOps Center, heute Lifecycle Center, ist eine native Salesforce-App mit Klickoberfläche, in der Work Items durch eine Pipeline befördert werden. sfdx-hardis ist ein Open-Source-Toolkit aus CLI-Plugin und VS-Code-Erweiterung, das als Pipeline auf der Git-Plattform des Kunden läuft und zusätzlich Monitoring, Metadaten-Backup und Dokumentation liefert."
   - q: "Unterstützt das DevOps Center GitLab oder Azure DevOps?"
     a: "Nein. Lifecycle Center unterstützt GitHub.com-Cloud-Pläne einschließlich GitHub Enterprise Cloud sowie Bitbucket Cloud. Für GitLab und Azure DevOps nennt die aktuelle Einrichtungsdokumentation von Salesforce keinen Termin."
   - q: "Ist sfdx-hardis kostenlos?"
-    a: "Ja, sfdx-hardis ist Open Source unter der Lizenz AGPL-3.0 und hat keine Lizenzgebühren. Kosten entstehen für die Git-Plattform, CI-Minuten, Einrichtung und eine Person, die das Setup verantwortet. Bezahlte Unterstützung gibt es bei Cloudity. Unternehmen mit Open-Source-Richtlinie sollten die Nutzung unter AGPL prüfen lassen."
+    a: "Ja, sfdx-hardis ist Open Source unter der Lizenz AGPL-3.0, und es fallen keine Lizenzgebühren an. Kosten entstehen durch die Git-Plattform, CI-Minuten, die Einrichtung und den Aufwand für eine Person, die das Setup verantwortet. Bezahlte Unterstützung gibt es bei Cloudity. Unternehmen mit Open-Source-Richtlinie sollten die Nutzung unter AGPL prüfen lassen."
   - q: "Kann man sfdx-hardis und Lifecycle Center zusammen nutzen?"
-    a: "Technisch kann man beide auf dieselbe Org zeigen lassen. Ich würde aber pro Repository nur ein Werkzeug über Merges und Promotions entscheiden lassen, sonst arbeiten zwei Release-Prozesse gegeneinander."
+    a: "Technisch können beide mit derselben Org verbunden werden. Ich würde aber pro Repository nur ein Werkzeug über Merges und Promotions entscheiden lassen, sonst arbeiten zwei Release-Prozesse gegeneinander."
   - q: "Ersetzt sfdx-hardis ein Salesforce-Backup?"
-    a: "Nein. sfdx-hardis sichert die Metadaten mit Historie in Git. Geschäftsdaten, Dateien und eine vollständige Wiederherstellung brauchen eine eigene Backup-Lösung, etwa Salesforce Backup oder ein Produkt eines Drittanbieters."
+    a: "Nein. sfdx-hardis sichert die Metadaten mit Historie in Git. Für Geschäftsdaten, Dateien und eine vollständige Wiederherstellung brauchen Sie eine eigene Backup-Lösung, etwa Salesforce Backup oder ein Produkt eines Drittanbieters."
   - q: "Welches Tool ist besser für Admins?"
-    a: "Lifecycle Center ist für Admins der leichtere Einstieg, weil der Arbeitsalltag größtenteils in Salesforce beginnt; Pull Requests werden trotzdem auf GitHub oder Bitbucket geprüft. Die VS-Code-Erweiterung von sfdx-hardis nimmt Admins die meisten Git-Befehle ab, setzt aber VS Code und etwas Grundwissen zu Branches voraus."
+    a: "Lifecycle Center ist für Admins der leichtere Einstieg, weil sie den Großteil der Arbeit in Salesforce erledigen; Pull Requests werden trotzdem auf GitHub oder Bitbucket geprüft. Die VS-Code-Erweiterung von sfdx-hardis nimmt Admins die meisten Git-Befehle ab, setzt aber VS Code und etwas Grundwissen zu Branches voraus."
 ---
 
-[sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/) und das DevOps Center von Salesforce, das seit Oktober 2026 Lifecycle Center heißt, sind beide ohne eigene Lizenzgebühr nutzbar und führen beide Änderungen über Git in die Produktion. Der Unterschied liegt darin, wo der Prozess lebt. Lifecycle Center ist eine native App in einer Salesforce-Org, mit Klickoberfläche, und arbeitet nur mit GitHub.com und Bitbucket Cloud. sfdx-hardis läuft als Pipeline in der CI des Kunden, auf GitHub, GitLab, Azure DevOps, Bitbucket oder Jenkins, und bringt Monitoring, Metadaten-Backup und Dokumentation mit. Meine Faustregel aus den Programmen, die ich betreue: Lifecycle Center für klickorientierte Teams ohne mehrere Partner, sfdx-hardis für Programme mit mehreren Partnern.
+[sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/) und das DevOps Center von Salesforce, das seit Oktober 2026 Lifecycle Center heißt, sind beide ohne eigene Lizenzgebühr nutzbar und führen beide Änderungen über Git in die Produktion. Der Unterschied liegt darin, wo der Prozess angesiedelt ist. Lifecycle Center ist eine native App mit Klickoberfläche in einer Salesforce-Org und arbeitet nur mit GitHub.com und Bitbucket Cloud. sfdx-hardis läuft als Pipeline in der CI des Kunden, auf GitHub, GitLab, Azure DevOps, Bitbucket oder Jenkins, und bringt Monitoring, Metadaten-Backup und Dokumentation mit. Meine Faustregel aus den Programmen, die ich betreue: Lifecycle Center für klickorientierte Teams ohne mehrere Partner, sfdx-hardis für Programme mit mehreren Partnern.
 
 ## Was ist der Unterschied zwischen sfdx-hardis und dem DevOps Center?
 
-**Lifecycle Center** ist das, was bis vor Kurzem Next Generation DevOps Center hieß. Salesforce hat die App 2026 in die Plattform geholt: Sie öffnen sie aus dem App Launcher, ein Paket wird nicht installiert. Die Org, in der sie läuft, nennt Salesforce Hub-Org. Dort legen Sie Projekte, Pipelines und Work Items an. Ein Work Item ist eine fachliche Änderung, die Sie per Klick von Stufe zu Stufe befördern, im Hintergrund erzeugt die App Branches, Pull Requests und Deployments. Das alte DevOps Center als Managed Package läuft bei Bestandskunden weiter, Salesforce empfiehlt aber den Wechsel und rät, immer nur eine der beiden Varianten zu nutzen. Die Einzelheiten zum Umstieg stehen in der [Salesforce-Hilfe zu Lifecycle Center](https://help.salesforce.com/s/articleView?id=platform.devops_center_overview.htm&language=en_US&type=5).
+**Lifecycle Center** ist das, was bis vor Kurzem Next Generation DevOps Center hieß. Salesforce hat die App 2026 in die Plattform integriert: Sie öffnen sie aus dem App Launcher, ein Paket wird nicht installiert. Die Org, in der sie läuft, nennt Salesforce Hub-Org. Dort legen Sie Projekte, Pipelines und Work Items an. Ein Work Item ist eine fachliche Änderung, die Sie per Klick von Stufe zu Stufe befördern, im Hintergrund erzeugt die App Branches, Pull Requests und Deployments. Das alte DevOps Center als Managed Package läuft bei Bestandskunden weiter, Salesforce empfiehlt aber den Wechsel und rät, immer nur eine der beiden Varianten zu nutzen. Die Einzelheiten zum Umstieg stehen in der [Salesforce-Hilfe zu Lifecycle Center](https://help.salesforce.com/s/articleView?id=platform.devops_center_overview.htm&language=en_US&type=5).
 
-**sfdx-hardis** ist ein Open-Source-Toolkit von Cloudity und einer großen Community. Es besteht aus einem Plugin für die Salesforce CLI, einer VS-Code-Erweiterung und Docker-Images für die Pipeline. Der Prozess steckt in Konfigurationsdateien im Repository und in der CI-Pipeline des Kunden. Was es alles abdeckt, habe ich in meiner [Einführung in sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/) beschrieben.
+**sfdx-hardis** ist ein Open-Source-Toolkit von Cloudity und einer großen Community. Es besteht aus einem Plugin für die Salesforce CLI, einer VS-Code-Erweiterung und Docker-Images für die Pipeline. Der Prozess ist in Konfigurationsdateien im Repository und in der CI-Pipeline des Kunden abgelegt. Welche Funktionen es abdeckt, habe ich in meiner [Einführung in sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/) beschrieben.
 
 Kurz gesagt: Bei Lifecycle Center wird der Prozess aus Salesforce gesteuert, und das Repository hält den versionierten Stand der Metadaten. Bei sfdx-hardis liegen Prozess und Pipeline auf der Git-Plattform, und Salesforce ist das Ziel.
 
@@ -67,15 +67,15 @@ KI | MCP-Tools im Salesforce DX MCP Server, Governance (Beta) | Coding-Agenten f
 marke: Stärke
 ```
 
-Zur Herkunft: Lifecycle Center kommt von Salesforce und läuft mit Salesforce-Support. sfdx-hardis kommt von Cloudity und der Community, bezahlte Unterstützung gibt es über Cloudity.
+Zur Herkunft: Lifecycle Center stammt von Salesforce und wird von Salesforce unterstützt. sfdx-hardis stammt von Cloudity und der Community, bezahlte Unterstützung gibt es über Cloudity.
 
 Die Quellen für Lifecycle Center sind die Salesforce-Hilfe und die Release Notes zu Winter '27, für sfdx-hardis die [Projektdokumentation](https://sfdx-hardis.cloudity.com/) und die [Übersicht zu Version 8](https://sfdx-hardis.cloudity.com/sfdx-hardis-v8/), Stand Oktober 2026.
 
 ## Welche Git-Plattformen werden unterstützt?
 
-In vielen Unternehmen entscheidet sich die Frage schon hier. Laut den [Hinweisen zur Einrichtung von Lifecycle Center](https://help.salesforce.com/s/articleView?id=platform.next_gen_devops_center_setup_considerations.htm&language=en_US&type=5) funktionieren nur GitHub.com-Cloud-Pläne, einschließlich GitHub Enterprise Cloud, und Bitbucket Cloud. GitHub Enterprise Server, Bitbucket Data Center, GitLab und Azure DevOps fallen heraus. Für GitLab und Azure DevOps nennt die aktuelle Einrichtungsdokumentation keinen Termin. Schon beim Start des DevOps Center 2022 wurden weitere Anbieter in Aussicht gestellt, gekommen ist bisher nur Bitbucket Cloud.
+In vielen Unternehmen fällt die Entscheidung bereits an dieser Stelle. Laut den [Hinweisen zur Einrichtung von Lifecycle Center](https://help.salesforce.com/s/articleView?id=platform.next_gen_devops_center_setup_considerations.htm&language=en_US&type=5) funktionieren nur GitHub.com-Cloud-Pläne, einschließlich GitHub Enterprise Cloud, und Bitbucket Cloud. GitHub Enterprise Server, Bitbucket Data Center, GitLab und Azure DevOps werden nicht unterstützt. Für GitLab und Azure DevOps nennt die aktuelle Einrichtungsdokumentation keinen Termin. Schon beim Start des DevOps Center 2022 wurden weitere Anbieter in Aussicht gestellt, hinzugekommen ist bisher nur Bitbucket Cloud.
 
-sfdx-hardis bringt fertige Pipelines für GitHub, GitLab, Azure DevOps, Bitbucket und Jenkins mit. Weil die Pipeline in der CI des Kunden läuft, kommt die Verbindung von innen: Der Runner holt sich das Repository und deployt in die Org. Ob Ihre selbst gehostete Variante damit vollständig abgedeckt ist, etwa bei Kommentaren in Pull Requests, prüfen Sie am besten in einem kurzen Test. Bei Lifecycle Center ist die Antwort für selbst gehostete Plattformen dagegen eindeutig nein.
+sfdx-hardis bringt fertige Pipelines für GitHub, GitLab, Azure DevOps, Bitbucket und Jenkins mit. Weil die Pipeline in der CI des Kunden läuft, geht die Verbindung von innen aus: Der Runner holt sich das Repository und deployt in die Org. Ob Ihre selbst gehostete Variante damit vollständig abgedeckt ist, etwa bei Kommentaren in Pull Requests, prüfen Sie am besten in einem kurzen Test. Bei Lifecycle Center ist die Antwort für selbst gehostete Plattformen dagegen eindeutig nein.
 
 ```tabelle matrix
 titel: Welche Git-Plattform mit welchem Werkzeug funktioniert
@@ -94,18 +94,18 @@ Wer auf Azure DevOps arbeitet, wie viele Industrieunternehmen mit Microsoft-Land
 
 ## Wo liegt der Release-Prozess, und wem gehört er?
 
-Bei Lifecycle Center liegen Projekte, Pipelines und Work Items als Daten in der Hub-Org. Das Repository bleibt beim Kunden, der Prozess drumherum lebt in Salesforce.
+Bei Lifecycle Center liegen Projekte, Pipelines und Work Items als Daten in der Hub-Org. Das Repository bleibt beim Kunden, der zugehörige Prozess liegt in Salesforce.
 
 ```vertiefung Für die IT
 titel: Was die IT vor der Anbindung von Lifecycle Center wissen sollte
-- Die GitHub-Anbindung läuft über eine OAuth-App von Salesforce, die Zugriff auf alle Repositories des Accounts anfragt.
+- Die GitHub-Anbindung erfolgt über eine OAuth-App von Salesforce, die Zugriff auf alle Repositories des Accounts anfragt.
 - Repositories einer GitHub-Organisation erscheinen erst, wenn ein Owner der Organisation die App freigibt.
 - Hat die Git-Plattform IP-Beschränkungen, müssen die Adressen von Lifecycle Center in die Allowlist.
 ```
 
 Bei sfdx-hardis liegt alles in Dateien im Repository und in der Pipeline-Konfiguration. Mit Branch-Schutz ändert ein Partner sie nur per Pull Request, den der Kunde freigibt. Das passt zu meiner Grundregel, dass [Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/): Wer Repository und Pipeline kontrolliert, kontrolliert den Release-Prozess.
 
-Für den Betrieb heißt das: Lifecycle Center braucht einen Admin in der Hub-Org, sfdx-hardis braucht jemanden, der die Pipeline versteht. Beides ist eine Rolle, die jemand beim Kunden übernehmen sollte.
+Für den Betrieb heißt das: Lifecycle Center braucht einen Admin in der Hub-Org, sfdx-hardis braucht jemanden, der die Pipeline versteht. In beiden Fällen sollte jemand beim Kunden diese Rolle übernehmen.
 
 ## Die Kosten stecken in der Release-Rolle
 
@@ -123,24 +123,24 @@ sichtbar: Lizenz: 0 € | bei beiden Werkzeugen
 - Release-Rolle | ein Admin, der klickt, oder jemand, der die Pipeline pflegt | größter Posten *
 ```
 
-In Programmen, die ich begleite, sind die Personalkosten für eine verantwortliche Release-Rolle immer größer als die Werkzeugkosten. Das Werkzeug sollte also danach gewählt werden, welche Rolle Sie wirklich besetzen können: einen Admin, der klickt, oder jemanden, der mit Pipelines umgeht.
+In Programmen, die ich begleite, sind die Personalkosten für eine verantwortliche Release-Rolle immer größer als die Werkzeugkosten. Das Werkzeug sollte also danach gewählt werden, welche Rolle Sie wirklich besetzen können: einen Admin, der mit der Klickoberfläche arbeitet, oder jemanden, der mit Pipelines umgeht.
 
 ## Was ich in Projekten sehe
 
-Ich setze sfdx-hardis seit rund zwei Jahren in Kundenprojekten ein und habe im Oktober 2026 alle drei Level des [kostenlosen sfdx-hardis-Trainings](../sfdx-hardis-kostenloses-devops-training/) abgeschlossen. In Programmen mit mehreren Implementierungspartnern zählt für mich vor allem die Verbindlichkeit: Jeder Partner arbeitet über dieselbe Pipeline, jeder Pull Request wird gleich validiert, und [Reviews sind Pflicht](../warum-pull-request-reviews-pflicht-sind/), bevor etwas gemergt wird. Monitoring und generierte Dokumentation kommen ohne eigenes Projekt dazu.
+Ich setze sfdx-hardis seit rund zwei Jahren in Kundenprojekten ein und habe im Oktober 2026 alle drei Level des [kostenlosen sfdx-hardis-Trainings](../sfdx-hardis-kostenloses-devops-training/) abgeschlossen. In Programmen mit mehreren Implementierungspartnern zählt für mich vor allem die Verbindlichkeit: Jeder Partner arbeitet über dieselbe Pipeline, jeder Pull Request wird einheitlich validiert, und [Reviews sind Pflicht](../warum-pull-request-reviews-pflicht-sind/), bevor Änderungen zusammengeführt werden. Monitoring und generierte Dokumentation sind ohne eigenes Projekt inklusive.
 
 ```partnerfluss review
 ohne: Jeder Partner auf eigenem Weg | Änderungen treffen erst in der Org aufeinander, Konflikte fallen spät auf.
 mit: Eine Pipeline für alle Partner | Jeder Pull Request wird gleich validiert und reviewt, bevor er gemergt wird.
 ```
 
-Mit Lifecycle Center habe ich keine Projekterfahrung, die ich hier anführen könnte. Den folgenden Fall beschreibe ich deshalb als Annahme: Ein mittelständischer Maschinenbauer betreibt eine Salesforce-Org mit zwei Admins, ohne eigene Entwickler, und hat bereits GitHub für ein anderes Team. Für diesen Kunden wäre Lifecycle Center ein guter Schritt weg von Change Sets. Die Admins bleiben in Salesforce, Versionskontrolle kommt trotzdem dazu, und Quality Gates sowie Testläufe sind eingebaut. sfdx-hardis wäre dort vermutlich mehr Werkzeug, als das Team braucht.
+Mit Lifecycle Center habe ich keine Projekterfahrung, die ich hier anführen könnte. Den folgenden Fall beschreibe ich deshalb als Annahme: Ein mittelständischer Maschinenbauer betreibt eine Salesforce-Org mit zwei Admins, ohne eigene Entwickler, und hat bereits GitHub für ein anderes Team. Für diesen Kunden wäre Lifecycle Center ein guter Schritt weg von Change Sets. Die Admins bleiben in Salesforce, eine Versionskontrolle wird trotzdem eingeführt, und Quality Gates sowie Testläufe sind eingebaut. sfdx-hardis wäre dort vermutlich mehr Werkzeug, als das Team braucht.
 
 ## Wann passt welches Tool?
 
 Lifecycle Center passt, wenn
 
-- vor allem Admins und Berater klicken und wenig Code entsteht,
+- vor allem Admins und Berater mit Klickoberflächen arbeiten und wenig Code entsteht,
 - GitHub.com oder Bitbucket Cloud bereits gesetzt ist,
 - ein Team an einer Org arbeitet, ohne mehrere Partner,
 - die Org nicht in der EU Operating Zone oder Government Cloud Plus liegt, denn dort ist Lifecycle Center nicht verfügbar.
@@ -152,15 +152,15 @@ sfdx-hardis passt, wenn
 - Monitoring, Metadaten-Backup und Dokumentation gebraucht werden,
 - jemand beim Kunden die Pipeline verantworten kann oder diese Rolle aufgebaut wird.
 
-Brauchen Sie dagegen einen vollständig verwalteten Dienst mit Org-Vergleichen und vertraglichem Support, gehören kommerzielle Plattformen wie Gearset oder Copado ebenfalls auf die Liste. Wie diese Anbieter gerade KI-Agenten in ihre Produkte bauen, habe ich in [Copado, Gearset und Provar mit KI-Agenten](../copado-gearset-provar-ki-agenten/) zusammengefasst.
+Brauchen Sie dagegen einen vollständig verwalteten Dienst mit Org-Vergleichen und vertraglichem Support, gehören kommerzielle Plattformen wie Gearset oder Copado ebenfalls auf die Liste. Wie diese Anbieter derzeit KI-Agenten in ihre Produkte integrieren, habe ich in [Copado, Gearset und Provar mit KI-Agenten](../copado-gearset-provar-ki-agenten/) zusammengefasst.
 
 ## Nicht beide Werkzeuge über Promotions entscheiden lassen
 
-Technisch können beide auf dieselbe Org und sogar dasselbe Repository zeigen. Lifecycle Center kennt Merges, die außerhalb der App passieren, und sfdx-hardis validiert jeden Pull Request, egal woher er kommt. Über Promotions würde ich trotzdem nicht beide entscheiden lassen. Wenn zwei Werkzeuge über dieselben Stage-Branches entscheiden, gibt es zwei Release-Prozesse, und am Ende weiß niemand, welcher Stand in der Produktion gilt.
+Technisch können beide mit derselben Org und sogar mit demselben Repository verbunden werden. Lifecycle Center kennt Merges, die außerhalb der App stattfinden, und sfdx-hardis validiert jeden Pull Request, unabhängig von seiner Herkunft. Über Promotions würde ich trotzdem nicht beide entscheiden lassen. Wenn zwei Werkzeuge über dieselben Stage-Branches entscheiden, gibt es zwei Release-Prozesse, und am Ende weiß niemand, welcher Stand in der Produktion gilt.
 
-Entscheiden Sie pro Repository, welches Werkzeug Merges und Promotions verantwortet. Wechseln Sie später, dann als geplanter Schnitt, nicht als schleichender Übergang.
+Entscheiden Sie pro Repository, welches Werkzeug Merges und Promotions verantwortet. Wenn Sie später wechseln, sollte dies als geplanter Schnitt erfolgen, nicht als schleichender Übergang.
 
-Für Teams, die Coding-Agenten einsetzen, wird diese Frage wichtiger. Lifecycle Center baut eine Governance-Schicht für Agenten in der Hub-Org, sfdx-hardis setzt auf die Prüfungen in der Pipeline. Welche [Quality Gates KI-generierten Code aufhalten sollten](../quality-gates-ki-code-salesforce-pipeline/), gilt für beide Werkzeuge gleich.
+Für Teams, die Coding-Agenten einsetzen, wird diese Frage wichtiger. Lifecycle Center stellt eine Governance-Schicht für Agenten in der Hub-Org bereit, sfdx-hardis setzt auf die Prüfungen in der Pipeline. Welche [Quality Gates KI-generierten Code aufhalten sollten](../quality-gates-ki-code-salesforce-pipeline/), gilt für beide Werkzeuge gleich.
 
 ## Git-Plattform, Teams und Release-Rolle klären
 
