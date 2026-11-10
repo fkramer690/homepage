@@ -10,7 +10,7 @@ topic: field-service
 categories: [field-service, ai]
 tags: [Predictive Maintenance, Field Service, Data 360, Asset Service Prediction, Maschinenbau, Flex Credits]
 takeaways:
-  - "Asset Service Prediction schätzt aus früheren Reparaturen, wie wahrscheinlich Folgeaufträge sind, und braucht mindestens 400, verknüpft mit der Anlage."
+  - "Asset Service Prediction schätzt aus früheren Reparaturen, wie wahrscheinlich Folgeaufträge sind, und braucht dafür mindestens 400 mit der Anlage verknüpfte."
   - "Die Salesforce-Hilfe beschreibt die Installation von Asset Service Prediction, die Produktseite nennt keinen Preis. Lassen Sie sich die SKU schriftlich geben."
   - "Streaming in Data 360 kostet 3.500 Flex Credits pro Million Zeilen. Intervall und Zeilenaufbau bestimmen die Rechnung: eine Zeile pro Signal oder pro Maschine."
   - "Bei wenigen hundert Maschinen pro Baureihe und Fehlercodes im Freitext sind Wartungspläne mit Nutzungs- und Zustandsauslösern die bessere Wahl."
@@ -21,13 +21,13 @@ faq:
   - q: "Was kostet das Streaming von Maschinendaten in Data 360?"
     a: "Laut Flex Credits Rate Card vom 3. November 2026 kostet die Streaming Pipeline in der Basisstaffel 3.500 Credits pro Million Zeilen, die Real-Time Pipeline 250.000 Credits pro Million Ereignisse. Bei 500 € je 100.000 Credits kostet eine Million gestreamter Zeilen 17,50 € vor Mengenstaffeln."
   - q: "Wie viel Servicehistorie brauche ich für eine Ausfallprognose?"
-    a: "Laut Salesforce-Hilfe braucht Einstein Studio mindestens 400 historische Anlagenreparaturen, um ein Modell zu erzeugen. Meine eigene Faustregel zusätzlich: pro Baureihe und Ausfallart einige Dutzend dokumentierte Ausfälle mit codierter Ursache, auf Work Orders, die über die Seriennummer mit der Anlage verknüpft sind."
+    a: "Laut Salesforce-Hilfe braucht Einstein Studio mindestens 400 historische Anlagenreparaturen, um ein Modell zu erzeugen. Meine zusätzliche Faustregel: Pro Baureihe und Ausfallart sollten einige Dutzend dokumentierte Ausfälle mit codierter Ursache vorliegen, auf Work Orders, die über die Seriennummer mit der Anlage verknüpft sind."
   - q: "Was ist die Alternative zu Predictive Maintenance in Salesforce?"
     a: "Wartungspläne und Maintenance Work Rules erzeugen Work Orders im Intervall, und Salesforce beschreibt vorbeugende Pläne nach Nutzung, Zustand und Kriterien wie einem Temperaturschwellwert. Für August 2025 hat Salesforce einen Agenten angekündigt, der diese Termine mit dem Kunden bucht."
 draft: false
 ---
 
-Ein Maschinenbauer hat genug Daten für Predictive Maintenance in Salesforce, wenn mindestens 400 historische Anlagenreparaturen vorliegen, das Minimum, das Salesforce für Asset Service Prediction nennt. Nach meiner Erfahrung brauchen die Reparaturen außerdem vergleichbare Maschinen pro Baureihe, eine Verknüpfung über die Seriennummer und codierte Ausfallursachen. Das Modell lernt aus dieser Servicehistorie, Sensordaten kommen erst danach. Ist die Historie dünn, sind [Wartungspläne mit nutzungs- und zustandsabhängigen Auslösern](../field-service-wartung-nach-betriebsstunden/) die bessere Wahl. Maschinendaten sind als Aggregate bezahlbar: Im Beispiel unten kosten Rohwerte im Sekundentakt von 300 Maschinen, eine Zeile pro Signal, rund 65.900 € im Monat an Flex Credits, 15-Minuten-Aggregate rund 180 €.
+Ein Maschinenbauer hat genug Daten für Predictive Maintenance in Salesforce, wenn mindestens 400 historische Anlagenreparaturen vorliegen, das Minimum, das Salesforce für Asset Service Prediction nennt. Nach meiner Erfahrung müssen die Reparaturen außerdem zu vergleichbaren Maschinen pro Baureihe gehören, über die Seriennummer verknüpft sein und codierte Ausfallursachen enthalten. Das Modell lernt aus dieser Servicehistorie, Sensordaten kommen erst danach. Ist die Historie dünn, sind [Wartungspläne mit nutzungs- und zustandsabhängigen Auslösern](../field-service-wartung-nach-betriebsstunden/) die bessere Wahl. Maschinendaten sind als Aggregate bezahlbar: Im Beispiel unten kosten Rohwerte im Sekundentakt von 300 Maschinen, eine Zeile pro Signal, rund 65.900 € im Monat an Flex Credits, 15-Minuten-Aggregate rund 180 €.
 
 ## Was bietet Salesforce heute für vorausschauende Wartung?
 
@@ -42,7 +42,7 @@ Salesforce verkauft unter dem Stichwort proaktiver Service mehrere Funktionen, u
 | Asset Health Score | Bewertet Anlagen nach Alter, Nutzung, Telemetrie und Reparaturhistorie über Data 360 | Teil von Connected Assets, 15.000 $ pro Org und Monat (US-Listenpreis) |
 | Asset Service Prediction | Schätzt aus früheren Reparaturen die Wahrscheinlichkeit künftiger Work Orders | Installation in der Hilfe beschrieben, kein Preis auf der Produktseite |
 
-Die Manufacturing-Ankündigung vermeidet den Begriff Predictive Maintenance und spricht von Agenten, die Kunden und Serviceteams auf Probleme hinweisen, bevor sie auftreten. Die [Seite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) führt Connected Assets mit 10.000 vernetzten digitalen Anlagen, dem Asset Health Score und einem „Actionable Telematics Framework“. Den Überblick über die Agentenfunktionen gibt [KI-Agenten im Außendienst: was Field Service heute kann](../ki-agenten-aussendienst-field-service/). Hier geht es um eine engere Frage: Sind Ihre Daten für die letzten beiden Funktionen geeignet? Beide setzen voraus, dass die Maschinen als Asset-Datensätze geführt werden, siehe [Installierte Basis in Manufacturing Cloud](../installierte-basis-asset-meilensteine/).
+Die Manufacturing-Ankündigung vermeidet den Begriff Predictive Maintenance und spricht von Agenten, die Kunden und Serviceteams auf Probleme hinweisen, bevor sie auftreten. Die [Seite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) führt Connected Assets mit 10.000 vernetzten digitalen Anlagen, dem Asset Health Score und einem „Actionable Telematics Framework“. Einen Überblick über die Agentenfunktionen gibt [KI-Agenten im Außendienst: was Field Service heute kann](../ki-agenten-aussendienst-field-service/). Hier geht es um eine engere Frage: Sind Ihre Daten für die letzten beiden Funktionen geeignet? Beide setzen voraus, dass die Maschinen als Asset-Datensätze geführt werden, siehe [Installierte Basis in Manufacturing Cloud](../installierte-basis-asset-meilensteine/).
 
 ## Wann reicht die Servicehistorie für eine Ausfallprognose?
 
@@ -53,7 +53,7 @@ Salesforce beschreibt Asset Service Prediction als Modell, das häufige Probleme
 - **Ausfallursachen sind codiert.** Bauteil und Ursache sind Auswahllisten. Ein Einsatzbericht in Prosa hilft dem Kunden; für das Modell muss er erst aufbereitet werden.
 - **Es gibt eine Nutzungsachse.** Betriebsstunden oder Zyklen zum Zeitpunkt des Ausfalls. Ohne sie sieht das Modell nur das Kalenderalter, und eine Maschine im Dreischichtbetrieb verschleißt schneller als eine im Einschichtbetrieb.
 - **Reparaturen durch Dritte werden gemeldet.** Reparieren Händler oder [Servicepartner](../salesforce-field-service-servicepartner/) in ihren Ländern und melden nur Garantiefälle, hat die Historie Lücken genau dort, wo die Flotte am größten ist.
-- **Genug Reparaturen.** Salesforce nennt 400 historische Anlagenreparaturen als Minimum für ein Modell. Meine eigene Faustregel zusätzlich: einige Dutzend dokumentierte, codierte Ausfälle pro Baureihe und Ausfallart, bevor eine Prognose die Disposition steuert.
+- **Genug Reparaturen.** Salesforce nennt 400 historische Anlagenreparaturen als Minimum für ein Modell. Meine zusätzliche Faustregel: Es sollten einige Dutzend dokumentierte, codierte Ausfälle pro Baureihe und Ausfallart vorliegen, bevor eine Prognose die Disposition steuert.
 
 Ein Bericht über Störungs-Work-Orders pro Baureihe und Fehlercode zeigt an einem Nachmittag, ob eine Prognose realistisch ist.
 
@@ -64,7 +64,7 @@ Die [Flex Credits Rate Card vom 3. November 2026](https://www.salesforce.com/en-
 - **Streaming Pipeline:** 3.500 Credits pro Million Zeilen in der Basisstaffel, bei höheren Monatsmengen 2.800, 1.400 und 700. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=data.c360_a_data_usage_types.htm&language=en_US&type=5) zählt die Streaming-Variante der Ingestion API hierzu.
 - **Real-Time Pipeline:** 250.000 Credits pro Million Ereignisse, pro Einheit rund 71 Mal der Streaming-Satz. Gezählt werden Ereignisse nur, wenn sie zu einem Real-Time Data Graph gehören.
 
-Die Staffeln gelten je Nutzungsart und beginnen am Monatsersten neu. Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/). Die [Streaming Ingestion API](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-streaming-ingestion.htm) verarbeitet Daten „approximately every 3 minutes“. Für die Wartung, bei der eine Work Order Stunden oder Tage vor dem Einsatz entsteht, ist das schnell genug, und ich sehe keinen Grund, den Real-Time-Satz zu bezahlen. Die [Bulk-Variante](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-salesforce-cdp-ingestion.htm) passt für tägliche oder wöchentliche Ladungen. Die Hilfe verbucht sie als Batch Data Pipeline, ein Name, den die Rate Card vom November nicht zeigt.
+Die Staffeln gelten je Nutzungsart und beginnen am Monatsersten neu. Flex Credits kosten [500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/). Die [Streaming Ingestion API](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-streaming-ingestion.htm) verarbeitet Daten „approximately every 3 minutes“. Für die Wartung, bei der eine Work Order Stunden oder Tage vor dem Einsatz entsteht, ist das schnell genug, und ich sehe keinen Grund, den Real-Time-Satz zu bezahlen. Die [Bulk-Variante](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-salesforce-cdp-ingestion.htm) passt für tägliche oder wöchentliche Ladungen. Die Hilfe führt sie als Batch Data Pipeline, eine Bezeichnung, die die Rate Card vom November nicht aufführt.
 
 Rechnen wir mit 300 vernetzten Maschinen und je 12 Signalen:
 
@@ -90,28 +90,28 @@ Rohe Zeitreihen gehören in die IoT-Plattform oder den Historian, den der Maschi
 
 Ein großer Teil des Nutzens, der unter „predictive“ versprochen wird, kommt aus zwei einfacheren Dingen: Geplante Wartungstermine werden eingehalten, und die Intervalle richten sich nach der Nutzung statt nach dem Kalender. Beides deckt Field Service ohne Prognosemodell ab.
 
-Wartungspläne erzeugen die Work Orders, und Maintenance Work Rules an der Anlage steuern abweichende Intervalle, wie in [Wartungsverträge in Field Service abbilden](../salesforce-field-service-wartungsvertraege/) beschrieben. Die Produktseite ergänzt Pläne nach Nutzung und Zustand, mit einem Einsatz, sobald „an asset's temperature exceeds a set threshold“. Das Datenmodell hat dafür das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm), das Anlagenattribute speichert, „to track and analyze asset conditions“. Ein Betriebsstundenzähler, den SAP, proALPHA oder die IoT-Plattform einmal am Tag schreibt, reicht für nutzungsabhängige Intervalle oft aus, solange ein Tag Verzögerung vertretbar ist.
+Wartungspläne erzeugen die Work Orders, und Maintenance Work Rules an der Anlage steuern abweichende Intervalle, wie in [Wartungsverträge in Field Service abbilden](../salesforce-field-service-wartungsvertraege/) beschrieben. Die Produktseite ergänzt Pläne nach Nutzung und Zustand, die einen Einsatz auslösen, sobald „an asset's temperature exceeds a set threshold“. Das Datenmodell hat dafür das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm), das Anlagenattribute speichert, „to track and analyze asset conditions“. Ein Betriebsstundenzähler, den SAP, proALPHA oder die IoT-Plattform einmal am Tag schreibt, reicht für nutzungsabhängige Intervalle oft aus, solange ein Tag Verzögerung vertretbar ist.
 
-Den Termin bucht dann der Agent für proaktive Wartung. Bei angenommen fünf Aktionen pro Buchung sind das 100 Credits oder 0,50 € für die Aktionen; Prompts kommen dazu, messen Sie sie in der Digital Wallet.
+Den Termin bucht dann der Agent für proaktive Wartung. Bei angenommenen fünf Aktionen pro Buchung sind das 100 Credits oder 0,50 € für die Aktionen. Prompts kommen dazu; messen Sie sie in der Digital Wallet.
 
-Für mich ist das die richtige Antwort, wenn Baureihen klein sind, Maschinen kundenspezifisch gebaut werden, Fehlercodes bis vor kurzem Freitext waren oder Händler keine Reparaturen melden. Ein Pilot zur Ausfallprognose lohnt sich, wenn eine Baureihe viele hundert Maschinen hat, die codierte Historie mehrere Jahre abdeckt und ungeplanter Stillstand unter einer Verfügbarkeitszusage im Servicevertrag echtes Geld kostet.
+Für mich ist das die richtige Antwort, wenn Baureihen klein sind, Maschinen kundenspezifisch gebaut werden, Fehlercodes bis vor kurzem Freitext waren oder Händler keine Reparaturen melden. Ein Pilot zur Ausfallprognose lohnt sich, wenn eine Baureihe viele hundert Maschinen hat, die codierte Historie mehrere Jahre abdeckt und ungeplanter Stillstand bei einer Verfügbarkeitszusage im Servicevertrag echtes Geld kostet.
 
 ## Rechenbeispiel: 1.400 Maschinen in fünf Baureihen
 
 Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und Field Service im Betrieb. Alle Zahlen sind Annahmen, um die Methode zu zeigen.
 
-1.400 Maschinen stehen beim Kunden, verteilt auf fünf Baureihen, die größte mit 350 Einheiten. 300 Maschinen sind über das eigene IoT-Gateway angebunden. Work Orders hängen seit einer Datenmigration 2022 an den Anlagen, Fehlercodes sind seit 2024 Auswahllisten. Händler in drei Ländern betreuen ihre Kunden selbst und melden nur Garantiefälle.
+1.400 Maschinen stehen bei Kunden, verteilt auf fünf Baureihen, die größte mit 350 Einheiten. 300 Maschinen sind über das eigene IoT-Gateway angebunden. Work Orders hängen seit einer Datenmigration 2022 an den Anlagen, Fehlercodes sind seit 2024 Auswahllisten. Händler in drei Ländern betreuen ihre Kunden selbst und melden nur Garantiefälle.
 
-**Die Prüfung.** Die größte Baureihe zeigt 14 Spindeltausche in vier Jahren, fünf davon mit codierter Ursache, keiner aus den Händlerländern. Das liegt weit unter den 400 Reparaturen, die Salesforce für ein Modell braucht, und ist zu dünn für eine Prognose, der die Disposition vertrauen würde.
+**Die Prüfung.** Für die größte Baureihe gibt es 14 Spindeltausche in vier Jahren, fünf davon mit codierter Ursache, keinen aus den Händlerländern. Das liegt weit unter den 400 Reparaturen, die Salesforce für ein Modell braucht, und ist zu dünn für eine Prognose, der die Disposition vertrauen würde.
 
 **Die Entscheidung.**
 
-1. **Nutzungsabhängige Intervalle.** Die IoT-Plattform schreibt einmal am Tag die Betriebsstunden an die Anlage. Die Maintenance Work Rules wechseln von halbjährlich auf alle 2.000 Betriebsstunden. Dafür braucht es keine Data-360-Credits.
-2. **Drei Zustandssignale.** Spindeltemperatur, Vibration und Kühlmitteldruck gehen als 15-Minuten-Aggregate in Data 360, eine Zeile pro Signal: 2,6 Mio. Zeilen, 9.072 Credits, rund 45 € im Monat. Ein Flow schreibt die Werte an die Anlage zurück und legt eine Work Order an, wenn ein Schwellwert überschritten ist.
+1. **Nutzungsabhängige Intervalle.** Die IoT-Plattform schreibt einmal am Tag die Betriebsstunden auf den Anlagendatensatz. Die Maintenance Work Rules wechseln von halbjährlich auf alle 2.000 Betriebsstunden. Dafür braucht es keine Data-360-Credits.
+2. **Drei Zustandssignale.** Spindeltemperatur, Vibration und Kühlmitteldruck gehen als 15-Minuten-Aggregate in Data 360, eine Zeile pro Signal: 2,6 Mio. Zeilen, 9.072 Credits, rund 45 € im Monat. Ein Flow schreibt die Werte auf den Anlagendatensatz zurück und legt eine Work Order an, wenn ein Schwellwert überschritten ist.
 3. **Buchung durch den Agenten.** 250 Termine im Monat mit je fünf Aktionen: 25.000 Credits, rund 125 €.
-4. **Erst die Historie.** Codierte Fehlercodes werden für Händler Pflicht, als Teil des Garantieprozesses. 2028 zählt der Maschinenbauer erneut.
+4. **Erst die Historie.** Codierte Fehlerursachen werden für Händler Pflicht, als Teil des Garantieprozesses. 2028 zählt der Maschinenbauer die Fälle erneut.
 
-Übernahme und Agentenaktionen ergeben rund 34.000 Credits, etwa 170 € im Monat; Datenaufbereitung, Abfragen und Prompts kommen dazu. Connected Assets für 15.000 $ pro Org und Monat (US-Listenpreis) rechnet sich erst, wenn der Health Score Entscheidungen trägt, die Schwellwerte nicht treffen können.
+Datenübernahme und Agentenaktionen ergeben rund 34.000 Credits, etwa 170 € im Monat; Datenaufbereitung, Abfragen und Prompts kommen dazu. Connected Assets für 15.000 $ pro Org und Monat (US-Listenpreis) rechnet sich erst, wenn der Health Score Entscheidungen stützt, die sich mit Schwellwerten nicht zuverlässig treffen lassen.
 
 ## Störungs-Work-Orders pro Baureihe zählen
 
