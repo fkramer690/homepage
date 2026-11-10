@@ -33,6 +33,20 @@ Stand 28.10.2026. Grundlage: Ranking-Lauf, KI-Check und OnPage-Crawl vom 28.10.2
 
 Ausgangswerte 28.10.2026: „document builder limitations“ (EN) Platz 6, „field service lizenzen salesforce“ 11 (rankt mit „lohnt sich“), „salesforce field service“ 27 (170 Suchen), „field service einführung“ 29 (rankt mit „lohnt sich“), „manufacturing cloud vs sales cloud“ 30, „salesforce field service license“ 38, „salesforce document builder“ 39. KI-Übersichten bei 51 von 52 Begriffen, fk-sd.de in keiner zitiert. KI-Assistenten (ChatGPT, Claude, Perplexity, Google AI Mode): 0 Nennungen.
 
+## Hebel-Plan bei höchstens 2 neuen Artikeln pro Woche (09.11.2026)
+
+Grundlage: Search Console 13.10. bis 09.11.2026 (2.698 Impressionen, 24 Klicks, davon 598 Impressionen auf Platz 1 bis 10; Impressionen pro Tag von rund 440 am 30.10. auf rund 80 gefallen; 81 von 542 Sitemap-Seiten nicht indexiert) und KI-Suche vom 09.11.2026 (Perplexity 9 von 15, ChatGPT 3, Gemini 2, Google AI Mode 1, Claude 0). Ziel sind die vier KPI: qualifizierte Anfragen, Impressionen auf Platz 1 bis 10, Zitate in der KI-Suche und Suchklicks auf Inhaltsseiten. Überarbeitungen zählen nicht gegen die 2 neuen Artikel pro Woche (U1). Neue Artikel nur mit Praxis von Fabian (L2 bis L4, B13).
+
+| # | Maßnahme | KPI | Wer | Status |
+|---|---|---|---|---|
+| HP1 | Geldseiten in den Index bringen: Indexierung beantragt für Partnersteuerung DE und EN, Salesforce-Architektur DE, /fragen/, Zertifizierungen DE und EN, /masterclass/, Manufacturing-Cloud-Hub DE und EN, Object Ownership Matrix, Agentforce ja oder nein, Agentforce-Kosten-Leitfaden, Field-Service-Einführung (13 Seiten) | Anfragen, Klicks | Fabian beantragt, Claude prüft | beantragt 09. und 10.11.2026, Prüfung am 17.11.2026 |
+| HP2 | Seiten auf Platz 11 bis 20 nachschärfen, 3 bis 5 pro Woche | Impressionen Platz 1 bis 10 | Claude | läuft als D20 |
+| HP3 | Praxis-Kästen in die 15 schwächsten Artikel (Fragen aus IG1 beantworten, ca. 20 Minuten pro Woche für 5 Artikel) | alle drei Suchkennzahlen | Fabian liefert, Claude baut ein | = IG2, wartet auf Fabians Antworten |
+| HP4 | Seite-1-Treffer ohne Klick: Titel und Description schärfen, Antwort in den ersten Satz (Liste „snippet“ in `stats/actions/latest.json`, montags) | Klicks | Claude | laufend aus der Montagsliste |
+| HP5 | KI-Zitate über fremde Quellen: sfdx-hardis-Doku-PR, Gastartikel bei Foundry (CIO.de), gleiche Profiltexte | KI-Zitate | Fabian, Claude | = QM, CL3, CL4, KA2 |
+| HP6 | Die drei fertigen LinkedIn-Pulse-Entwürfe veröffentlichen (Partnerwahl, Field Service lohnt sich, Document Builder) und im Artikel verlinken | Anfragen, KI-Zitate | Fabian veröffentlicht, Claude verlinkt | = R1, Entwürfe in den Projektdateien |
+| HP7 | Leistungsseiten mit Kaufsicherheit: Reihenfolge (Partnersteuerung auf 2), Projekt im Fokus, Muster-Ergebnis, Woran Sie Fortschritt sehen, Typischer Einsatz mit Tagessatz und Unabhängigkeit; Tagessatz auch auf Freiberufler- und Recruiter-Seite. Review mit ChatGPT vom 09.11.2026 | Anfragen | Claude | erledigt 09.11.2026 (PR #355, #356, #357); offen bleibt J8 Kundenstimmen |
+
 ## Lehren aus dem Google Spam Update September 2026 (Prüfung 02.11.2026)
 
 Grundlage: Video-Analyse der Gewinner und Verlierer des Spam Updates (abgeschlossen 08.10.2026) und Prüfung von fk-sd.de dagegen, Bericht: https://claude.ai/artifact/HqLpKNj5Gj4u9AgrQUEBA3. Schon erfüllt: Aussage und Termin-Button mobil auf dem ersten Bildschirm (Start, Leistungsseiten, Freiberufler-Seite, Masterclass-Hubs), Artikel starten mit den Kernaussagen, Zitat-Test ohne fremde Treffer, kaum Content Drift.
