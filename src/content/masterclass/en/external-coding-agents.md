@@ -18,15 +18,15 @@ faq:
   - q: "Which coding agent is best for Salesforce?"
     a: "Nobody can show that publicly, because there is no independent Apex benchmark. Salesforce using Claude internally and in Agentforce Vibes is a signal. Decide after a short test on your own code, and on contract, data residency and cost."
   - q: "May our partner use its own AI tools on our org?"
-    a: "Yes, if the contract states which tools and models are allowed, where data is processed, that work happens in sandboxes only and that every change goes through review and the pipeline. Without these rules you do not know where your code and test data end up."
+    a: "Yes, if the contract states which tools and models are allowed, where data is processed, that work happens in sandboxes only and that every change goes through review and the pipeline. Without these rules you do not know where your code and test data are processed."
   - q: "Can Claude Code process data in the EU?"
-    a: "Not through Anthropic's first-party API, which offers only US and global inference. Amazon Bedrock and Google Cloud offer regional endpoints, which Anthropic says carry a 10 percent premium. Check with the cloud provider which models run in which EU region."
+    a: "Not through Anthropic's first-party API, which offers only US and global inference. Amazon Bedrock and Google Cloud offer regional endpoints, which Anthropic says carry a 10 percent premium. Check with the cloud provider which models are available in which EU region."
   - q: "Does a German works council have to approve coding agents?"
     a: "As a rule, yes. According to CMS, AI systems are regularly objectively capable of collecting behavior or performance data, which triggers co-determination under section 87(1) no. 6 of the Works Constitution Act. Plan for it before the pilot."
 draft: false
 ---
 
-In 2026 every major coding agent can do Salesforce work, from Claude Code to OpenAI Codex and GitHub Copilot. The reason sits with Salesforce: its skills and hosted MCP servers work with any compatible agent. Which tool your team or your partner uses therefore matters less for code quality than the rules file, the review and the pipeline. For a manufacturer, four questions drive the choice: where code and data are processed, what the contract says, how usage is billed and who controls the rules. There is no independent Apex benchmark that names a winning model.
+In 2026 every major coding agent can do Salesforce work, from Claude Code to OpenAI Codex and GitHub Copilot. The reason lies with Salesforce: its skills and hosted MCP servers work with any compatible agent. Which tool your team or your partner uses therefore matters less for code quality than the rules file, the review and the pipeline. For a manufacturer, four questions drive the choice: where code and data are processed, what the contract says, how usage is billed and who controls the rules. There is no independent Apex benchmark that names a winning model.
 
 ## Which coding agents can work with Salesforce?
 
@@ -51,7 +51,7 @@ In practice, Claude Code ships the most ready-made Salesforce setup today. With 
 
 At TDX 2026 Salesforce announced that everything on the platform becomes an API, an MCP tool or a CLI command, and according to [SalesforceBen](https://www.salesforceben.com/salesforce-headless-360-and-agentforce-vibes-2-0-revealed-at-tdx-2026/) it named Claude Code, Cursor, Codex and Windsurf explicitly. An agent's Salesforce knowledge therefore comes from skills, MCP servers and your project rules more than from the tool itself.
 
-The rules live in a rules file in the repository, such as `CLAUDE.md` or `AGENTS.md`. It describes naming conventions, forbidden patterns and the definition of done. According to the [GitHub changelog](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions), the Copilot coding agent reads `AGENTS.md`, `CLAUDE.md` and `GEMINI.md` alongside GitHub's own formats. One well-kept file in the client's repository therefore works across several tools. Why that file should belong to the client is covered in [the AI rules file in your Salesforce repository](../../../blog/ai-rules-file-salesforce-repository/), and the general principle in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
+The rules are stored in a rules file in the repository, such as `CLAUDE.md` or `AGENTS.md`. It describes naming conventions, forbidden patterns and the definition of done. According to the [GitHub changelog](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions), the Copilot coding agent reads `AGENTS.md`, `CLAUDE.md` and `GEMINI.md` alongside GitHub's own formats. One well-kept file in the client's repository therefore works across several tools. Why that file should belong to the client is covered in [the AI rules file in your Salesforce repository](../../../blog/ai-rules-file-salesforce-repository/), and the general principle in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
 
 ### No benchmark for Apex
 
@@ -93,14 +93,14 @@ A manufacturer's repository holds more than people think: pricing logic, discoun
 | Claude Code on Team or Enterprise seats | no EU option found in the sources checked | clarify contractually with Anthropic |
 | OpenAI API with an EU project | in-region processing, requests and responses not stored | OpenAI does not say there whether Codex is covered |
 | ChatGPT Enterprise with an EU workspace | storage in Europe, optional in-region inference since January 2026 | same question for Codex |
-| GitHub Copilot | GitHub Enterprise Cloud with data residency exists | ask GitHub where Copilot model calls run |
+| GitHub Copilot | GitHub Enterprise Cloud with data residency exists | ask GitHub where Copilot model calls are processed |
 
 Sources: [Anthropic data residency](https://platform.claude.com/docs/en/manage-claude/data-residency), [Anthropic pricing](https://platform.claude.com/docs/en/about-claude/pricing), [OpenAI data residency in Europe](https://openai.com/index/introducing-data-residency-in-europe/), [GitHub changelog, September 2026](https://github.blog/changelog/month/09-2026/).
 
-German labour law adds another step. According to [CMS](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten), AI systems are generally capable of evaluating performance or behavior data, so introducing them usually requires a works agreement, and using them without one is not permitted. How to bring in the works council and GDPR early is covered in [AI coding tools, works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/).
+German labor law adds another step. According to [CMS](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten), AI systems are generally capable of evaluating performance or behavior data, so introducing them usually requires a works agreement, and using them without one is not permitted. How to bring in the works council and GDPR early is covered in [AI coding tools, works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/).
 
 ```hinweis offen
-In my reading, coding agents with usage statistics fall under this co-determination. Have your labour lawyer confirm it for your set-up.
+In my reading, coding agents with usage statistics fall under this co-determination. Have your labor lawyer confirm it for your setup.
 ```
 
 ## What do coding agents cost per developer?
@@ -138,7 +138,7 @@ This is how I would approach it:
 
 | Step | Approach |
 |---|---|
-| Set the approved list | Copilot stays, Claude Code is added, but through an account the client owns, either Enterprise seats or Bedrock with a regional endpoint. I rule out the partner's own accounts, because then nobody knows where code and logs end up. |
+| Set the approved list | Copilot stays, Claude Code is added, but through an account the client owns, either Enterprise seats or Bedrock with a regional endpoint. I rule out the partner's own accounts, because then nobody knows where code and logs are processed. |
 | Rules file in the client's repository | An `AGENTS.md` as the shared base that Copilot reads, plus a short `CLAUDE.md` that points to it. The internal architect owns it, not the partner. |
 | Limit where agents work | Agents work only in developer sandboxes without production data. Dealer data from the full-copy sandbox does not go into prompts. |
 | Estimate cost realistically | Eight developers with an assumed 15 active days cost about $1,560 a month at Anthropic's $13 average. If all eight had Copilot Business, the seat price would be $152, but the pooled 15,200 credits cover only $152 of model usage. With similarly intensive agentic work, both tools end up in the same range. |

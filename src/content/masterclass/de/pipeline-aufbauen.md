@@ -28,9 +28,9 @@ faq:
 draft: false
 ---
 
-Eine Salesforce-Pipeline bringt jede Änderung auf demselben Weg in Produktion: Feature-Branch, Pull Request, Validierungs-Deployment gegen die Zielorg mit Apex-Tests, Review, Merge, Deployment. Für Produktion ist `RunLocalTests` das richtige Testlevel, und nach dem Merge übernimmt ein Quick Deploy die bereits bestandene Validierung. Delta-Deployments halten die Läufe kurz. Schritte vor und nach dem Deployment stehen in der Pipeline statt in einer Excel-Liste, Löschungen laufen über destruktive Manifeste. Die Pipeline meldet sich per JWT mit Zertifikat an, nie mit Passwort, und schreibt Ergebnisse in den Pull Request und den Teamkanal. sfdx-hardis liefert diese Bausteine als Open Source, Gearset, Copado und Flosum als kommerzielle Plattform.
+Eine Salesforce-Pipeline bringt jede Änderung auf demselben Weg in Produktion: Feature-Branch, Pull Request, Validierungs-Deployment gegen die Zielorg mit Apex-Tests, Review, Merge, Deployment. Für Produktion ist `RunLocalTests` das richtige Testlevel, und nach dem Merge übernimmt ein Quick Deploy die bereits bestandene Validierung. Delta-Deployments halten die Läufe kurz. Schritte vor und nach dem Deployment stehen in der Pipeline statt in einer Excel-Liste, Löschungen erfolgen über destruktive Manifeste. Die Pipeline meldet sich per JWT mit Zertifikat an, nie mit Passwort, und schreibt Ergebnisse in den Pull Request und den Teamkanal. sfdx-hardis liefert diese Bausteine als Open Source, Gearset, Copado und Flosum als kommerzielle Plattform.
 
-## Wie läuft ein Pull Request durch die Pipeline?
+## Wie durchläuft ein Pull Request die Pipeline?
 
 Eine Pipeline ist eine feste Folge automatischer Schritte, die eine Änderung aus dem Repository in eine Org bringt. Welche Umgebungen und Branches es gibt, steht in [Kapitel 3](../umgebungen-und-branching/), welches Werkzeug Sie wählen, in [Kapitel 4](../devops-werkzeuge-vergleich/). Hier geht es um die Strecke selbst. Für eine Änderung sieht sie so aus:
 
@@ -41,7 +41,7 @@ Eine Pipeline ist eine feste Folge automatischer Schritte, die eine Änderung au
 5. Ein Mensch prüft Architektur, Datenmodell und Seiteneffekte. Warum ich dieses Review für Pflicht halte, steht in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/).
 6. Gemergt wird nur mit grüner Validierung und Freigabe. Das erzwingt der Branch-Schutz Ihrer Git-Plattform, nicht die Disziplin der Teams.
 7. Nach dem Merge deployt die Pipeline in die Org, wenn möglich als Quick Deploy, und führt die Schritte vor und nach dem Deployment aus.
-8. Team und Ticket erfahren das Ergebnis.
+8. Das Team erfährt das Ergebnis, und das Ticket wird aktualisiert.
 
 ```ablauf
 sf: Feature-Branch, Validierung, Review, Merge, Deployment
@@ -67,7 +67,7 @@ sfdx-hardis versucht laut [Befehlsreferenz](https://sfdx-hardis.cloudity.com/har
 
 Das Testlevel legt fest, welche Apex-Tests ein Deployment ausführt. Die [CLI-Referenz zu `project deploy start`](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_start.html) nennt fünf Werte:
 
-| Testlevel | Was läuft | Mein Einsatz |
+| Testlevel | Was ausgeführt wird | Mein Einsatz |
 |---|---|---|
 | `NoTestRun` | keine Tests; nur für Entwicklungsumgebungen, dort Standard | Rückabgleich in Entwickler-Sandboxes |
 | `RunSpecifiedTests` | nur die genannten Testklassen; 75 % pro deployter Klasse und Trigger | schnelle Validierung im Feature-Pull-Request, wenn die Zuordnung von Tests gepflegt ist |
@@ -75,7 +75,7 @@ Das Testlevel legt fest, welche Apex-Tests ein Deployment ausführt. Die [CLI-Re
 | `RunAllTestsInOrg` | zusätzlich die Tests installierter Pakete | selten sinnvoll |
 | `RunRelevantTests` (Beta) | nur Tests, die zu den deployten Dateien passen | in einer Integrations-Sandbox ausprobieren |
 
-`RunRelevantTests` ist mit Spring '26 gekommen. Im [Metadata API Developer Guide zu Winter '27](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_deploy_run_relevant_tests.htm) ist die Funktion noch als Beta markiert, die 75 Prozent gelten pro Klasse und Trigger. Der Salesforce-Blog sagt deutlich, dass sie noch nicht in Produktions-Pipelines gehört. Daran würde ich mich halten.
+`RunRelevantTests` wurde mit Spring '26 eingeführt. Im [Metadata API Developer Guide zu Winter '27](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_deploy_run_relevant_tests.htm) ist die Funktion noch als Beta markiert, die 75 Prozent gelten pro Klasse und Trigger. Der Salesforce-Blog sagt deutlich, dass sie noch nicht in Produktions-Pipelines gehört. Daran würde ich mich halten.
 
 ```vertiefung Für Entwickler
 titel: Wie wählt RunRelevantTests die Tests aus?
@@ -84,7 +84,7 @@ Die Plattform wählt die Tests laut [Salesforce-Blog](https://www.salesforce.com
 Dafür gibt es zwei Annotationen: `@IsTest(testFor=...)` bindet eine Testklasse an bestimmte Klassen, `@IsTest(critical=true)` lässt sie bei jedem Deployment laufen.
 ```
 
-sfdx-hardis kennt zusätzlich `RunRepositoryTests`, das alle Testklassen aus dem Repository erkennt und ausführt. Das hilft, wenn in der Org alte Tests liegen, die nicht im Repository verwaltet werden. Warum 75 Prozent Abdeckung nur die Untergrenze sind, behandelt [Kapitel 6](../qualitaet-tests-reviews/).
+sfdx-hardis kennt zusätzlich `RunRepositoryTests`, das alle Testklassen aus dem Repository erkennt und ausführt. Das hilft, wenn die Org alte Tests enthält, die nicht im Repository verwaltet werden. Warum 75 Prozent Abdeckung nur die Untergrenze sind, behandelt [Kapitel 6](../qualitaet-tests-reviews/).
 
 ## Delta-Deployments: nur deployen, was sich geändert hat
 
@@ -107,21 +107,21 @@ In sfdx-hardis heißen sie [Deployment Actions](https://sfdx-hardis.cloudity.com
 - **Nachweis:** Die Ergebnisse stehen in einem eigenen Kommentar „Deployment Actions“ im Pull Request.
 ```
 
-Die kommerziellen Werkzeuge lösen dasselbe Problem mit eigener Oberfläche. Gearset hängt laut [Dokumentation](https://docs.gearset.com/en/articles/9859659-pre-and-post-deployment-steps-in-gearset-pipelines) manuelle Schritte vor und nach dem Deployment sowie automatische Schritte nach dem Deployment an den Pull Request, darunter Flows, Agenten und Bots aktivieren. Gut gelöst finde ich, dass ein Pull Request erst weitergeht, wenn die Vorab-Schritte erledigt sind. Die Funktion hängt an den Stufen Automation Starter, Teams und Enterprise Add-on. Copado führt in seiner [Dokumentation](https://docs.copado.com/article/7y7p18g4ef-deployment-steps) eigene Deployment Steps, die an der User Story hängen, darunter Schritte mit Apex. Wie sie in Ihrer Edition aussehen, klären Sie am besten in einer Demo mit Ihrer eigenen Org. Wie Sie Referenz- und Konfigurationsdaten sauber bewegen, behandelt [Kapitel 7](../daten-und-konfiguration/).
+Die kommerziellen Werkzeuge lösen dasselbe Problem mit eigener Oberfläche. Gearset hängt laut [Dokumentation](https://docs.gearset.com/en/articles/9859659-pre-and-post-deployment-steps-in-gearset-pipelines) manuelle Schritte vor und nach dem Deployment sowie automatische Schritte nach dem Deployment an den Pull Request, darunter Flows, Agenten und Bots aktivieren. Gut gelöst finde ich, dass ein Pull Request erst in die nächste Stufe übernommen wird, wenn die Vorab-Schritte erledigt sind. Die Funktion ist an die Stufen Automation Starter, Teams und Enterprise Add-on gebunden. Copado führt in seiner [Dokumentation](https://docs.copado.com/article/7y7p18g4ef-deployment-steps) eigene Deployment Steps, die an der User Story hinterlegt sind, darunter Schritte mit Apex. Wie sie in Ihrer Edition aussehen, klären Sie am besten in einer Demo mit Ihrer eigenen Org. Wie Sie Referenz- und Konfigurationsdaten sauber bewegen, behandelt [Kapitel 7](../daten-und-konfiguration/).
 
 ## Destruktive Änderungen: Löschen mit Plan
 
-Löschen ist in Salesforce ein eigenes Deployment. Laut [Salesforce-Dokumentation](https://developer.salesforce.com/docs/platform/salesforce-migration-guide/guide/daas-destructive-changes.html) beschreibt ein Manifest `destructiveChanges.xml` die zu löschenden Komponenten. Mit `destructiveChangesPre.xml` wird vor dem Deployment gelöscht, mit `destructiveChangesPost.xml` danach. Das klassische Beispiel: Ein eigenes Objekt, das eine Apex-Klasse noch referenziert, lässt sich erst löschen, wenn die Klasse angepasst ist; beides geht in einem Deployment, mit der Löschung im Post-Manifest. Die CLI kennt dafür `--pre-destructive-changes` und `--post-destructive-changes`.
+Löschen ist in Salesforce ein eigenes Deployment. Laut [Salesforce-Dokumentation](https://developer.salesforce.com/docs/platform/salesforce-migration-guide/guide/daas-destructive-changes.html) beschreibt ein Manifest `destructiveChanges.xml` die zu löschenden Komponenten. Mit `destructiveChangesPre.xml` wird vor dem Deployment gelöscht, mit `destructiveChangesPost.xml` danach. Das klassische Beispiel: Ein eigenes Objekt, das eine Apex-Klasse noch referenziert, lässt sich erst löschen, wenn die Klasse angepasst ist; beides ist in einem Deployment möglich, mit der Löschung im Post-Manifest. Die CLI kennt dafür `--pre-destructive-changes` und `--post-destructive-changes`.
 
-Zwei Details aus derselben Seite sollte jeder Release Manager kennen. Mit `purgeOnDelete` landen gelöschte Komponenten nicht im Papierkorb. Und Roll-up-Summary-Felder landen beim Löschen über die Metadata API nie im Papierkorb.
+Zwei Details aus derselben Seite sollte jeder Release Manager kennen. Mit `purgeOnDelete` werden gelöschte Komponenten nicht in den Papierkorb verschoben. Und Roll-up-Summary-Felder umgehen beim Löschen über die Metadata API immer den Papierkorb.
 
 sfdx-hardis führt eine `manifest/destructiveChanges.xml` in einem eigenen Schritt aus und löscht Flows über die Tooling API. Flosum kennt laut [Dokumentation der Branch Actions](https://docs.flosum.com/devops/code/branch-actions) destruktive Änderungen vor oder nach dem Deployment pro Branch. In Copados Advanced-Edition lässt sich ein Deployment laut [Dokumentation](https://docs.essentials.copado.com/en/articles/8596017-deploying-destructive-changes-using-copado-essentials) als „Destructive“ oder „Standard Destructive“ anlegen; bei Git-Repositories entfernt Copado die Metadaten dabei auch aus dem Branch.
 
-Meine Regel: Ein gelöschtes Feld löscht auch seine Daten. Nehmen Sie ein Feld am Asset, das die SAP-Equipmentnummer installierter Maschinen hält. Löschungen von Feldern und Objekten bekommen deshalb einen eigenen Pull Request mit Freigabe durch den Architekten und den fachlich Verantwortlichen. Und ich empfehle, in zwei Releases zu löschen: erst alle Referenzen entfernen und beobachten, dann im nächsten Release löschen.
+Meine Regel: Ein gelöschtes Feld löscht auch seine Daten. Nehmen Sie ein Feld am Asset, das die SAP-Equipmentnummer installierter Maschinen hält. Löschungen von Feldern und Objekten erhalten deshalb einen eigenen Pull Request mit Freigabe durch den Architekten und den fachlich Verantwortlichen. Und ich empfehle, in zwei Releases zu löschen: erst alle Referenzen entfernen und beobachten, dann im nächsten Release löschen.
 
 ## Wie meldet sich die Pipeline ohne Passwort an?
 
-Die Pipeline braucht für jede Org einen Login, und der darf kein Passwort sein. Der [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-auth-jwt-flow.html) beschreibt dafür den JWT Bearer Flow: Die Pipeline signiert ein Token mit einem privaten Schlüssel, Salesforce prüft es mit dem Zertifikat einer External Client App. Für einen Dev Hub, der Scratch Orgs oder Sandboxes anlegt, braucht es laut Guide eine Connected App. Der Befehl lautet `sf org login jwt` mit Client-ID, Schlüsseldatei und Benutzername.
+Die Pipeline braucht für jede Org einen Login, und der darf kein Passwort sein. Der [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-auth-jwt-flow.html) beschreibt dafür den JWT Bearer Flow: Die Pipeline signiert ein Token mit einem privaten Schlüssel, Salesforce prüft es mit dem Zertifikat einer External Client App. Für einen Dev Hub, der Scratch Orgs oder Sandboxes anlegt, ist laut Guide eine Connected App nötig. Der Befehl lautet `sf org login jwt` mit Client-ID, Schlüsseldatei und Benutzername.
 
 ```hinweis achtung
 Der OAuth Username-Password Flow endet am 20. Februar 2027. Wer seine Pipeline noch mit Benutzer, Passwort und Security Token anmeldet, findet die Details in [Passwort-Integrationen enden 2027](../../../blog/salesforce-passwort-integrationen-2027/).
@@ -151,8 +151,8 @@ Ein Hersteller von Industrieanlagen nutzt Field Service und eine Schnittstelle z
 
 - Der Pull Request in den Integrations-Branch validiert per Delta mit `RunSpecifiedTests`, weil das Team seine Testklassen sauber zugeordnet hat.
 - Eine Deployment Action nach dem Deployment lädt den Work Type per SFDMU, mit Geltungsbereich nur für diesen Pull Request.
-- Ein altes Garantiefeld wird nicht mitgelöscht. Die Referenzen verschwinden jetzt, die Löschung folgt im nächsten Release mit eigener Freigabe.
+- Ein altes Garantiefeld wird nicht mitgelöscht. Die Referenzen werden jetzt entfernt, die Löschung folgt im nächsten Release mit eigener Freigabe.
 - Gegen UAT und Produktion validiert die Pipeline vollständig mit `RunLocalTests`. Die Produktionsvalidierung läuft am Vormittag, am Abend folgt der Quick Deploy.
-- Die Pipeline meldet sich per JWT an, das Service-Team bekommt eine Nachricht in seinem Teams-Kanal.
+- Die Pipeline meldet sich per JWT an, das Service-Team erhält eine Nachricht in seinem Teams-Kanal.
 
 Nichts davon braucht ein teures Werkzeug, aber jemand muss es einrichten und pflegen. Ich setze sfdx-hardis seit rund zwei Jahren in Kundenprojekten ein; wie es aufgebaut ist, steht in der [Einführung in sfdx-hardis](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/), und wer die Strecke einmal selbst bauen will, findet im [kostenlosen sfdx-hardis-Training](../../../blog/sfdx-hardis-kostenloses-devops-training/) genau diese Schritte als Labs. Bei der Einrichtung unterstütze ich im Rahmen von [DevOps und Release-Management](../../../leistungen/devops-und-release-management/), alle Kapitel finden Sie auf der [Übersichtsseite](../).

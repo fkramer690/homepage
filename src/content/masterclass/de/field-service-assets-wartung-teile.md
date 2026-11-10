@@ -14,11 +14,11 @@ takeaways:
   - "Ein Wartungsvertrag besteht aus Servicevertrag für das Verkaufte, Wartungsplan für geplante Einsätze und Entitlement für die zugesagte Reaktionszeit."
   - "Wartung nach Betriebsstunden braucht einen täglich gefüllten Zähler am Asset und eine kriterienbasierte Regel für „2.000 Stunden oder 12 Monate“."
   - "Das ERP führt Ersatzteilbestand und Materialstamm; Field Service hält eine Kopie für Fahrzeuge und Techniker und meldet verbaute Teile zurück."
-  - "Servicepartner arbeiten im selben Prozess, wenn jeder Partnertechniker eine eigene Serviceressource ist und jede Partnerfirma ein eigenes Servicegebiet bekommt."
+  - "Servicepartner arbeiten im selben Prozess, wenn jeder Partnertechniker eine eigene Serviceressource ist und jede Partnerfirma ein eigenes Servicegebiet erhält."
 articles: [field-service-asset-hierarchy, field-service-maintenance-contracts, field-service-usage-based-maintenance, predictive-maintenance-data-readiness, asset-service-lifecycle-management-addon, field-service-spare-parts, field-service-service-partners]
 faq:
   - q: "Wie tief sollte ein Maschinenbauer Assets in Salesforce Field Service abbilden?"
-    a: "So tief, wie der Service es nutzt. Ich mache eine Komponente zum Asset, wenn sie eine eigene Seriennummer, eine eigene Wartung oder eine eigene Garantie hat. Salesforce erlaubt 50 Ebenen und 10.000 Assets pro Hierarchie, die Baumansicht zeigt aber nur 500, und jedes weitere Asset kostet Pflege."
+    a: "So tief, wie der Service es nutzt. Ich mache eine Komponente zum Asset, wenn sie eine eigene Seriennummer, eine eigene Wartung oder eine eigene Garantie hat. Salesforce erlaubt 50 Ebenen und 10.000 Assets pro Hierarchie, die Baumansicht zeigt aber nur 500, und jedes weitere Asset erhöht den Pflegeaufwand."
   - q: "Kann Field Service Wartung nach Betriebsstunden auslösen?"
     a: "Ja. Maintenance Work Rules können kalenderbasiert, nutzungsbasiert oder kriterienbasiert sein. Nutzungs- und Kriterienregeln lesen ein Feld am Asset, etwa einen Betriebsstundenzähler, und erzeugen einen Arbeitsauftrag, sobald der Schwellwert erreicht ist."
   - q: "Brauche ich Asset Service Lifecycle Management für Wartungspläne?"
@@ -30,15 +30,15 @@ faq:
 draft: false
 ---
 
-Für einen Maschinenbauer funktioniert Salesforce Field Service am besten mit einer flachen installierten Basis: Die Maschine und die Baugruppen mit eigener Seriennummer, eigener Wartung oder eigener Garantie werden Assets, alles andere bleibt im PLM. Ein Wartungsvertrag verteilt sich auf Servicevertrag, Wartungsplan und Entitlement. Gewartet wird nach Kalender, nach Betriebsstunden oder nach Kriterien wie „2.000 Stunden oder 12 Monate“, gespeist von einem täglichen Zähler aus ERP oder IoT-Plattform. Den Ersatzteilbestand führt das ERP, Field Service hält eine Kopie für die Fahrzeuge. Servicepartner bekommen eine Ressource pro Techniker und ein Gebiet pro Firma. Add-ons wie Asset Service Lifecycle Management kommen zuletzt, wenn diese Grundlagen stehen.
+Für einen Maschinenbauer funktioniert Salesforce Field Service am besten mit einer flachen installierten Basis: Die Maschine und die Baugruppen mit eigener Seriennummer, eigener Wartung oder eigener Garantie werden Assets, alles andere bleibt im PLM. Ein Wartungsvertrag verteilt sich auf Servicevertrag, Wartungsplan und Entitlement. Gewartet wird nach Kalender, nach Betriebsstunden oder nach Kriterien wie „2.000 Stunden oder 12 Monate“, gespeist von einem täglichen Zähler aus ERP oder IoT-Plattform. Den Ersatzteilbestand führt das ERP, Field Service hält eine Kopie für die Fahrzeuge. Für Servicepartner gibt es eine Ressource pro Techniker und ein Gebiet pro Firma. Add-ons wie Asset Service Lifecycle Management folgen erst, wenn diese Grundlagen stehen.
 
 ## Wie tief sollte die installierte Basis gehen?
 
-Field Service, das Salesforce heute als [Field Service and Operations](https://www.salesforce.com/de/products/field-service/pricing/) verkauft, hängt fast alles in diesem Kapitel am Asset auf. [Kapitel 3](../field-service-mobile-app-dokumente/) hat gezeigt, wie Techniker ihre Arbeit in der App dokumentieren. Hier geht es darum, woran sie sie dokumentieren.
+Field Service, das Salesforce heute als [Field Service and Operations](https://www.salesforce.com/de/products/field-service/pricing/) verkauft, baut fast alles in diesem Kapitel auf dem Asset auf. [Kapitel 3](../field-service-mobile-app-dokumente/) hat gezeigt, wie Techniker ihre Arbeit in der App dokumentieren. Hier geht es darum, woran sie sie dokumentieren.
 
 Ein Asset ist ein Produkt, das ein Kunde gekauft oder installiert hat, verknüpft mit einem Account, einem Kontakt oder beidem. Das Feld Parent Asset baut die Hierarchie. Die [Field-Service-Limits](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5) in der Salesforce-Hilfe erlauben 2.000 untergeordnete Assets pro Asset, 50 Ebenen und 10.000 Assets pro Hierarchie, die Baumansicht zeigt Hierarchien bis 500 Assets.
 
-Diese Limits greifen selten zuerst. Tiefe kostet bei der Datenpflege, bei Wartungsplänen und auf den Tablets der Techniker. Meine Faustregel hat drei Fragen, und ein Ja macht eine Komponente zum Asset:
+Diese Limits sind selten der erste Engpass. Tiefe kostet schon früher Aufwand, bei der Datenpflege, bei Wartungsplänen und auf den Tablets der Techniker. Meine Faustregel hat drei Fragen, und ein Ja macht eine Komponente zum Asset:
 
 | Frage | Warum sie zählt |
 |---|---|
@@ -46,19 +46,19 @@ Diese Limits greifen selten zuerst. Tiefe kostet bei der Datenpflege, bei Wartun
 | Eigene Wartung? | Maintenance Work Rules hängen an Assets, eine Spindel mit eigenem Intervall braucht also eines. |
 | Eigene Garantie? | Ein Zukaufteil, dessen Garantie an einem anderen Tag beginnt als die der Maschine. |
 
-Alles andere bleibt in der Stückliste im PLM. Bei den meisten Maschinen bleiben so zwei oder drei Ebenen. Die Rechnung für eine Verpackungslinie mit 6 Maschinen, 40 Baugruppen mit Seriennummer und 900 Teilen steht in [Asset-Hierarchie: Wie tief pro Maschine?](../../../blog/field-service-asset-hierarchie-maschinen/).
+Alles andere bleibt in der Stückliste im PLM. Bei den meisten Maschinen ergeben sich so zwei oder drei Ebenen. Die Rechnung für eine Verpackungslinie mit 6 Maschinen, 40 Baugruppen mit Seriennummer und 900 Teilen steht in [Asset-Hierarchie: Wie tief pro Maschine?](../../../blog/field-service-asset-hierarchie-maschinen/).
 
-Zwei Entscheidungen gehören vor den ersten Import aus dem ERP. Erstens: Werte, die sich je Baureihe unterscheiden, etwa eine Firmware-Version, kommen in Asset-Attribute. Das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm), verfügbar seit API-Version 57.0, speichert einen Wert pro Asset zu einer Attributdefinition, eine neue Baureihe braucht also kein neues Feld. Zähler, die Wartung auslösen, bleiben Zahlenfelder am Asset. Zweitens: Jemand verantwortet den Baum nach der Auslieferung. Das ERP liefert die installierte Basis, aber ein Jahr später tauscht ein Techniker ein Getriebe oder ein Händler rüstet einen Roboter nach. Ab dann muss ein System führen. Eine Mischung aus beiden ergibt eine Hierarchie, der niemand traut.
+Zwei Entscheidungen gehören vor den ersten Import aus dem ERP. Erstens: Werte, die sich je Baureihe unterscheiden, etwa eine Firmware-Version, werden als Asset-Attribute gespeichert. Das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm), verfügbar seit API-Version 57.0, speichert einen Wert pro Asset zu einer Attributdefinition, eine neue Baureihe braucht also kein neues Feld. Zähler, die Wartung auslösen, bleiben Zahlenfelder am Asset. Zweitens: Jemand verantwortet den Baum nach der Auslieferung. Das ERP liefert die installierte Basis, aber ein Jahr später tauscht ein Techniker ein Getriebe oder ein Händler rüstet einen Roboter nach. Ab dann muss ein System führend sein. Eine Mischung aus beiden ergibt eine Hierarchie, der niemand traut.
 
 ```praxis
-In meinen Field-Service-Projekten kamen Ersatzteile und installierte Basis aus dem ERP, und genau dort lagen zwei Stolpersteine, die Datenqualität der Assets und die ERP-Schnittstellen.
+In meinen Field-Service-Projekten stammten Ersatzteile und installierte Basis aus dem ERP, und genau dort lagen zwei Stolpersteine: die Datenqualität der Assets und die ERP-Schnittstellen.
 ```
 
 Prüfen Sie Seriennummern und Standorte, bevor Wartungspläne darauf aufbauen.
 
 ## Servicevertrag, Wartungsplan, Entitlement: ein Objekt je Aufgabe
 
-Ein Wartungsvertrag steckt nicht in einem Objekt. In Field Service verteilt er sich auf drei:
+Ein Wartungsvertrag lässt sich nicht in einem einzigen Objekt abbilden. In Field Service verteilt er sich auf drei:
 
 | Objekt | Beantwortet | Beispiel |
 |---|---|---|
@@ -66,13 +66,13 @@ Ein Wartungsvertrag steckt nicht in einem Objekt. In Field Service verteilt er s
 | Wartungsplan mit Maintenance Work Rules | Wann geplante Wartung stattfindet | Service alle 2.000 Betriebsstunden |
 | Entitlement mit Entitlement-Prozess und Meilensteinen | Worauf der Kunde Anspruch hat und ob es eingehalten wurde | Techniker innerhalb von 24 Stunden vor Ort |
 
-Der Wartungsplan erzeugt Arbeitsaufträge für geplante Einsätze im Voraus. Das Entitlement zählt bei Störungen: Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/entitlement-management-for-lightning-experience/use-entitlements-with-work-orders) laufen Entitlement-Prozesse nur auf Datensätzen ihres Typs, Arbeitsaufträge brauchen also einen eigenen Prozess vom Typ Work Order. Ein Flow kann dann die Priorität eines Arbeitsauftrags mit zugesagter Reaktionszeit anheben, und die Engine plant ihn zuerst ein. Wie die drei Objekte zusammenspielen, samt Prioritätslogik, steht in [Wie bildet man Wartungsverträge ab?](../../../blog/salesforce-field-service-wartungsvertraege/).
+Der Wartungsplan erzeugt Arbeitsaufträge für geplante Einsätze im Voraus. Das Entitlement greift bei Störungen: Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/entitlement-management-for-lightning-experience/use-entitlements-with-work-orders) gelten Entitlement-Prozesse nur für Datensätze ihres Typs, Arbeitsaufträge brauchen also einen eigenen Prozess vom Typ Work Order. Ein Flow kann dann die Priorität eines Arbeitsauftrags mit zugesagter Reaktionszeit anheben, und die Engine plant ihn zuerst ein. Wie die drei Objekte zusammenspielen, samt Prioritätslogik, steht in [Wie bildet man Wartungsverträge ab?](../../../blog/salesforce-field-service-wartungsvertraege/).
 
 Die kaufmännische Seite ist eine eigene Frage. Wenn Sie Wartungsverträge als Abonnement verkaufen und quartalsweise abrechnen, kann Revenue Cloud die Abrechnung übernehmen, und Field Service weiß von diesen Abonnements nichts. Die Übergabe zwischen beiden beschreiben [Wartungsverträge wiederkehrend abrechnen](../../../blog/wartungsvertraege-wiederkehrend-abrechnen/) und das Revenue-Cloud-Kapitel zu [Abrechnung und nutzungsbasierten Preisen](../../revenue-cloud/abrechnung-und-nutzungsbasierte-preise/).
 
 ## Kalender oder Betriebsstunden: Welcher Auslöser passt?
 
-Ein Halbjahreskalender ist für Maschinen, die beim einen Kunden einschichtig und beim anderen dreischichtig laufen, doppelt falsch. Der Wenignutzer bekommt Einsätze, die er nicht braucht, der Vielnutzer wartet zu lange. Laut Salesforce-Hilfe zur [vorbeugenden Wartung](https://help.salesforce.com/s/articleView?id=service.fs_preventive_maintenance.htm&language=en_US&type=5) arbeiten Maintenance Work Rules auch mit Nutzung und Kriterien:
+Ein Halbjahreskalender ist für Maschinen, die beim einen Kunden einschichtig und beim anderen dreischichtig laufen, doppelt falsch. Der Wenignutzer erhält Einsätze, die er nicht braucht, der Vielnutzer wartet zu lange. Laut Salesforce-Hilfe zur [vorbeugenden Wartung](https://help.salesforce.com/s/articleView?id=service.fs_preventive_maintenance.htm&language=en_US&type=5) arbeiten Maintenance Work Rules auch mit Nutzung und Kriterien:
 
 | Regeltyp | Liest | Passt für |
 |---|---|---|
@@ -82,7 +82,7 @@ Ein Halbjahreskalender ist für Maschinen, die beim einen Kunden einschichtig un
 
 Drei Details prägen das Design. Eine kriterienbasierte Regel erzeugt keinen neuen Arbeitsauftrag, solange ihr letzter noch offen ist, so die Hilfeseite zur [kriterienbasierten Wartung](https://help.salesforce.com/s/articleView?id=sf.fs_rfc_create_any_criteria.htm&language=en_US&type=5). Dieselbe Seite zeigt, dass eine Kriterienregel und eine Kalenderregel unabhängig voneinander Arbeitsaufträge erzeugen, auch mit demselben vorgeschlagenen Datum. „2.000 Stunden oder 12 Monate“ gehört deshalb in eine Regel mit ODER-Verknüpfung. Und die Bedingung muss nach dem Einsatz zurückgesetzt werden, etwa mit einem Flow, der beim Abschluss des Arbeitsauftrags den Zählerstand speichert.
 
-Die Limits, die zählen: Ein Generierungslauf erzeugt höchstens 2.600 Arbeitsaufträge und Positionen pro Plan, ein Plan mit zählbasierter Regel nimmt höchstens 2.000 Assets auf, und Salesforce empfiehlt höchstens fünf Maintenance Work Rules pro Plan oder Asset.
+Die relevanten Limits: Ein Generierungslauf erzeugt höchstens 2.600 Arbeitsaufträge und Positionen pro Plan, ein Plan mit zählbasierter Regel nimmt höchstens 2.000 Assets auf, und Salesforce empfiehlt höchstens fünf Maintenance Work Rules pro Plan oder Asset.
 
 ```kennzahlen
 2.600 | Arbeitsaufträge und Positionen höchstens pro Plan und Generierungslauf
@@ -93,15 +93,15 @@ quelle: Salesforce-Hilfe, Field-Service-Limits und vorbeugende Wartung
 
 Ich teile Pläne nach Baureihe oder Region, damit jeder deutlich darunter bleibt und einen Verantwortlichen hat.
 
-Der Zähler kommt aus drei Quellen: von der IoT-Plattform für vernetzte Maschinen, aus dem ERP, wenn es Zählerstände ohnehin bekommt, oder vom Techniker, der ihn vor Ort abliest. Für Intervalle in Hunderten von Stunden reicht ein Wert pro Tag. Die Einrichtung Schritt für Schritt, mit dem Flow zum Zurücksetzen, steht in [Wartung nach Betriebsstunden einrichten](../../../blog/field-service-wartung-nach-betriebsstunden/).
+Der Zählerstand stammt aus einer von drei Quellen: von der IoT-Plattform für vernetzte Maschinen, aus dem ERP, wenn es Zählerstände ohnehin erhält, oder vom Techniker, der ihn vor Ort abliest. Für Intervalle in Hunderten von Stunden reicht ein Wert pro Tag. Die Einrichtung Schritt für Schritt, mit dem Flow zum Zurücksetzen, steht in [Wartung nach Betriebsstunden einrichten](../../../blog/field-service-wartung-nach-betriebsstunden/).
 
 ## Wann ist Predictive Maintenance realistisch?
 
-Vorausschauende Wartung braucht eine Servicehistorie mehr als Sensoren. Salesforce hat Asset Service Prediction im [Juni 2024](https://www.salesforce.com/news/stories/field-service-asset-management-news/) als KI-Modell angekündigt, das vorhersagt, wann und warum ein Asset ausfallen kann, auf Basis aktueller Asset-Daten und der Servicehistorie ähnlicher Assets, mit einer offenen Beta für den folgenden Winter. Die aktuelle [Seite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) beschreibt die Funktion ohne Status. Lassen Sie sich die Verfügbarkeit in Ihrer Edition schriftlich bestätigen.
+Vorausschauende Wartung braucht eher eine Servicehistorie als Sensoren. Salesforce hat Asset Service Prediction im [Juni 2024](https://www.salesforce.com/news/stories/field-service-asset-management-news/) als KI-Modell angekündigt, das vorhersagt, wann und warum ein Asset ausfallen kann, auf Basis aktueller Asset-Daten und der Servicehistorie ähnlicher Assets, mit einer offenen Beta für den folgenden Winter. Die aktuelle [Seite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) beschreibt die Funktion ohne Status. Lassen Sie sich die Verfügbarkeit in Ihrer Edition schriftlich bestätigen.
 
 Das Modell kann nur lernen, was Ihre Arbeitsaufträge enthalten. Hängen Störungsaufträge nicht an einer Seriennummer, stehen Ausfallursachen im Freitext und melden Händler nur Garantiefälle, gibt es nichts zu lernen. Dann empfehle ich die Nutzungs- und Kriterienregeln aus dem vorigen Abschnitt und einige verdichtete Zustandssignale.
 
-Maschinendaten kosten Geld, sobald sie in Data 360 landen. Die [Flex-Credits-Preisliste vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) setzt für die Streaming Pipeline in der Grundstufe 3.500 Credits pro Million Zeilen an. 300 Maschinen mit je 12 Signalen erzeugen als Sekundenwerte rund 9,3 Milliarden Zeilen im Monat, als 15-Minuten-Verdichtung rund 10,4 Millionen, also 900-mal weniger. Rohe Zeitreihen gehören in die IoT-Plattform oder das Historian-System. Den Datencheck in sechs Punkten und die volle Kostenrechnung finden Sie in [Predictive Maintenance in Salesforce: die Datenbasis](../../../blog/predictive-maintenance-salesforce-datenbasis/).
+Maschinendaten kosten Geld, sobald sie in Data 360 gespeichert werden. Die [Flex-Credits-Preisliste vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) setzt für die Streaming Pipeline in der Grundstufe 3.500 Credits pro Million Zeilen an. 300 Maschinen mit je 12 Signalen erzeugen als Sekundenwerte rund 9,3 Milliarden Zeilen im Monat, als 15-Minuten-Verdichtung rund 10,4 Millionen, also 900-mal weniger. Rohe Zeitreihen gehören in die IoT-Plattform oder das Historian-System. Den Datencheck in sechs Punkten und die volle Kostenrechnung finden Sie in [Predictive Maintenance in Salesforce: die Datenbasis](../../../blog/predictive-maintenance-salesforce-datenbasis/).
 
 ## Brauchen Sie Asset Service Lifecycle Management oder Connected Assets?
 
@@ -122,7 +122,7 @@ Mehrere ASLM-Funktionen betreffen den Bestand: Reservierung, Chargen, Inventur, 
 
 Im ERP hat ein Ersatzteil einen Wert, einen Einkaufsprozess, Mindestbestände und Buchungen in die Finanzbuchhaltung. Field Service hält Mengen je Standort und protokolliert Bewegungen, und mehr soll es auch nicht tun. Laut [Datenmodell für die Lagerverwaltung](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_soap_inventory.htm) hält ein Product Item den Bestand eines Teils an einem Standort, Products Required listen, was ein Auftrag braucht, und Products Consumed erfassen, was verbaut wurde. Die Menge am Product Item passt sich dabei automatisch an. Eine [Location](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_location.htm) kann ein Lager oder ein Servicefahrzeug sein.
 
-Die Datenflüsse folgen einer Regel: Das ERP schickt Materialstamm und Bestand, Salesforce meldet zurück, was vor Ort passiert ist. Verbaute Teile gehen nach Abschluss des Einsatzes ans ERP, Teileanforderungen werden dort zu Umlagerungen oder Bestellungen. Holen Sie nur die Fahrzeuge und die Lager nach Salesforce, die sie auffüllen. 40 Fahrzeuge mit je 300 Teilen sind schon 12.000 Product Items, und jedes davon landet offline auf einem Gerät. Welche Daten die App offline halten sollte, steht in [Field Service App offline](../../../blog/field-service-app-offline-briefcase/), die Aufgabenteilung in [Ersatzteile: ERP oder Salesforce?](../../../blog/salesforce-field-service-ersatzteile-erp/).
+Die Datenflüsse folgen einer Regel: Das ERP schickt Materialstamm und Bestand, Salesforce meldet zurück, was vor Ort passiert ist. Verbaute Teile werden nach Abschluss des Einsatzes ans ERP gemeldet, Teileanforderungen werden dort zu Umlagerungen oder Bestellungen. Übertragen Sie nur die Fahrzeuge und die Lager nach Salesforce, die diese auffüllen. 40 Fahrzeuge mit je 300 Teilen sind schon 12.000 Product Items, und jedes davon wird offline auf einem Gerät gespeichert. Welche Daten die App offline halten sollte, steht in [Field Service App offline](../../../blog/field-service-app-offline-briefcase/), die Aufgabenteilung in [Ersatzteile: ERP oder Salesforce?](../../../blog/salesforce-field-service-ersatzteile-erp/).
 
 ```ablauf
 sf: Product Item, Products Consumed, Teileanforderung
@@ -137,7 +137,7 @@ Viele Ersatzteilanfragen brauchen gar keinen Einsatz. Wenn Kunden ein bekanntes 
 
 ## Wohin gehört die Garantie?
 
-Garantie berührt drei Produkte, deshalb legen Sie den Verantwortlichen vor dem Kauf fest:
+Garantie betrifft drei Produkte, deshalb legen Sie vor dem Kauf fest, welches Produkt sie verantwortet:
 
 | Produkt | Was es für die Garantie mitbringt |
 |---|---|
@@ -145,13 +145,13 @@ Garantie berührt drei Produkte, deshalb legen Sie den Verantwortlichen vor dem 
 | ASLM | Deckungsansicht und Kampagnen |
 | Manufacturing Cloud | [Warranty Lifecycle Management](https://trailhead.salesforce.com/content/learn/modules/warranty-administration-and-claims-management-in-manufacturing-cloud/get-started-with-warranty-lifecycle-management) mit Garantiebedingungen auf mehreren Produktebenen und Ansprüchen, die Partner und Distributoren über ein Portal einreichen |
 
-Meine Regel: Reichen Händler Garantieansprüche ein, gehört die Garantie in die Manufacturing Cloud, wie im Manufacturing-Cloud-Kapitel zu [Garantie und After-Sales](../../manufacturing-cloud/garantie-und-after-sales/) beschrieben. Müssen nur Ihre eigenen Techniker bei der Terminbuchung die Deckung sehen, reicht das Entitlement am Asset, und die Ansprüche bleiben im ERP. Zwei Garantiemodelle am selben Asset geben demselben Kunden zwei Antworten.
+Meine Regel: Reichen Händler Garantieansprüche ein, gehört die Garantie in die Manufacturing Cloud, wie im Manufacturing-Cloud-Kapitel zu [Garantie und After-Sales](../../manufacturing-cloud/garantie-und-after-sales/) beschrieben. Müssen nur Ihre eigenen Techniker bei der Terminbuchung die Deckung sehen, reicht das Entitlement am Asset, und die Ansprüche bleiben im ERP. Zwei Garantiemodelle am selben Asset liefern demselben Kunden zwei verschiedene Antworten.
 
 ## Servicepartner arbeiten im selben Prozess
 
 Partner gehören in denselben Prozess wie Ihre eigenen Techniker: derselbe Plan für den Disponenten, dieselbe App, derselbe Servicebericht, dieselbe Asset-Historie. Der [Architekturleitfaden von Salesforce zu Subunternehmern](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns) beschreibt zwei Modelle. Ein namentlich geführter Subunternehmer wird ähnlich wie ein Mitarbeiter behandelt und braucht eine eigene Benutzerlizenz. Eine Partnerfirma lässt sich als kapazitätsbasierte Ressource abbilden, und der Partner teilt seine Leute selbst ein. Der Leitfaden nutzt das Servicegebiet als wichtigste Sicherheitsgrenze, mit einem Untergebiet pro Partnerfirma.
 
-Für gleiche Arbeitsweise bevorzuge ich das erste Modell für regelmäßige Partner und das zweite für Partner, die bei Spitzen einspringen. Contractor Plus kostet laut Preisliste 80 Euro pro Nutzer oder 32 Euro pro Login und Monat, ab 2,5 Logins im Monat ist die Nutzerlizenz günstiger. Rollen und Lizenzregeln stehen in [Field Service Lizenzen nach Rolle](../../../blog/field-service-lizenzen-rollen-dispatcher-techniker/), Einrichtung und was bewusst anders bleibt in [Servicepartner einbinden](../../../blog/salesforce-field-service-servicepartner/).
+Damit alle gleich arbeiten, bevorzuge ich das erste Modell für regelmäßige Partner und das zweite für Partner, die bei Spitzen einspringen. Contractor Plus kostet laut Preisliste 80 Euro pro Nutzer oder 32 Euro pro Login und Monat, ab 2,5 Logins im Monat ist die Nutzerlizenz günstiger. Rollen und Lizenzregeln stehen in [Field Service Lizenzen nach Rolle](../../../blog/field-service-lizenzen-rollen-dispatcher-techniker/), die Einrichtung und die bewussten Unterschiede in [Servicepartner einbinden](../../../blog/salesforce-field-service-servicepartner/).
 
 ## Rechenbeispiel: 1.200 Maschinen in drei Baureihen
 
@@ -159,10 +159,10 @@ Ein Hersteller von Bearbeitungszentren hat 1.200 Maschinen in drei Baureihen im 
 
 | Bereich | Entscheidung im Szenario |
 |---|---|
-| Installierte Basis | Jede Maschine hat sechs Baugruppen mit Seriennummer und eigener Garantie oder eigenem Intervall: 8.400 Assets in zwei Ebenen, bei Auslieferung aus SAP geladen. Techniker erfassen getauschte Baugruppen in der App, die Änderung geht an SAP zurück, SAP bleibt führend. |
+| Installierte Basis | Jede Maschine hat sechs Baugruppen mit Seriennummer und eigener Garantie oder eigenem Intervall: 8.400 Assets in zwei Ebenen, bei Auslieferung aus SAP geladen. Techniker erfassen getauschte Baugruppen in der App, die Änderung wird an SAP zurückgemeldet, SAP bleibt führend. |
 | Wartung | Eine kriterienbasierte Regel pro Maschine mit zwei ODER-verknüpften Bedingungen. Die IoT-Plattform schreibt die Stunden jede Nacht, bei nicht vernetzten Maschinen trägt der Techniker den Stand ein. Sechs Pläne, einer pro Baureihe und Region, mit höchstens 250 Maschinen. |
-| Wirkung | Angenommen, 300 Maschinen laufen zweischichtig mit rund 4.000 Stunden im Jahr und bekommen zwei Services, die 900 einschichtigen Maschinen fallen auf die 12-Monats-Bedingung zurück. Das sind 1.500 Einsätze im Jahr statt 2.400 mit festem Halbjahresrhythmus. |
-| Teile und Partner | 30 Fahrzeuge als Locations in Salesforce, Bestand nächtlich aus SAP. Die zwei Partner bekommen je ein Gebiet, regelmäßige Techniker Contractor Plus pro Nutzer. |
+| Wirkung | Angenommen, 300 Maschinen laufen zweischichtig mit rund 4.000 Stunden im Jahr und erhalten zwei Services. Für die 900 einschichtigen Maschinen greift die 12-Monats-Bedingung. Das sind 1.500 Einsätze im Jahr statt 2.400 mit festem Halbjahresrhythmus. |
+| Teile und Partner | 30 Fahrzeuge als Locations in Salesforce, Bestand nächtlich aus SAP. Die zwei Partner erhalten je ein Gebiet, ihre regelmäßigen Techniker Contractor Plus pro Nutzer. |
 | Add-ons | Im ersten Jahr keine. Connected Assets würde 180.000 US-Dollar im Jahr kosten und keine Entscheidung ändern, die ein täglicher Zähler nicht auch trifft. |
 
 ## Asset-Tiefe pro Maschinentyp festlegen
@@ -172,7 +172,7 @@ Ein Hersteller von Bearbeitungszentren hat 1.200 Maschinen in drei Baureihen im 
 | Asset-Tiefe pro Maschinentyp | Mit den Fragen oben bestimmt, dazu welches System die installierte Basis nach Auslieferung führt. |
 | Vertragstypen | Jeder mit seinen Objekten: was verkauft wurde, welche Wartung, welche Reaktionszeit. |
 | Zählerquelle pro Baureihe | Woher der Zähler kommt und welche Regel gilt, wenn ERP und Techniker abweichen. |
-| Bestandsführung | Welches System den Bestand führt und welche Standorte nach Salesforce kommen. |
+| Bestandsführung | Welches System den Bestand führt und welche Standorte nach Salesforce übertragen werden. |
 | Verantwortung für Garantie | Field Service, ASLM oder Manufacturing Cloud. |
 | Partnermodell | Eines pro Partnerfirma. |
 
