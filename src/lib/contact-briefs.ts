@@ -77,10 +77,10 @@ export const contactBriefs = {
   'project-rescue': {
     de: {
       title: 'Ihr Projekt läuft aus dem Ruder?',
-      text: 'In 30 Minuten ordnen wir ein, wo Ihr Projekt gerade hängt und ob Sie bereit sind, die nötigen Entscheidungen zu treffen.',
+      text: 'In 30 Minuten ordnen wir ein, wo Ihr Projekt gerade steht und ob Sie bereit sind, die nötigen Entscheidungen zu treffen.',
       bring: [
         'Den aktuellen Projektstand: Termine, Budget und was bis zum Go-live noch offen ist',
-        'Zwei oder drei Beispiele, an denen Qualität oder Zeitplan zuletzt gekippt sind',
+        'Zwei oder drei Beispiele, bei denen zuletzt Qualität oder Zeitplan nicht eingehalten wurden',
         'Wer im Management das Projekt verantwortet und wie viel Zeit Ihre Fachbereiche dafür haben',
       ],
       clarify: [
@@ -91,10 +91,10 @@ export const contactBriefs = {
     },
     en: {
       title: 'Is your project going off track?',
-      text: 'In 30 minutes we sort out where your project is stuck and whether you are ready to take the decisions it needs.',
+      text: 'In 30 minutes we sort out where your project stands and whether you are ready to take the decisions it needs.',
       bring: [
         'The current project status: dates, budget and what is still open until go-live',
-        'Two or three examples where quality or timeline recently slipped',
+        'Two or three recent examples where quality or timeline was not met',
         'Who in management owns the project and how much time your business teams have for it',
       ],
       clarify: [
