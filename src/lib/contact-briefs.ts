@@ -81,7 +81,7 @@ export const contactBriefs = {
       bring: [
         'Den aktuellen Projektstand: Termine, Budget und was bis zum Go-live noch offen ist',
         'Zwei oder drei Beispiele, bei denen zuletzt Qualität oder Zeitplan nicht eingehalten wurden',
-        'Wer im Management das Projekt verantwortet und wie viel Zeit Ihre Fachbereiche dafür haben',
+        'Wer im Management das Projekt verantwortet und wie viel Zeit Ihre Fachbereiche dafür einplanen können',
       ],
       clarify: [
         'Wo die Hauptprobleme liegen, bei Ihnen, beim Partner oder dazwischen',
@@ -95,7 +95,7 @@ export const contactBriefs = {
       bring: [
         'The current project status: dates, budget and what is still open until go-live',
         'Two or three recent examples where quality or timeline was not met',
-        'Who in management owns the project and how much time your business teams have for it',
+        'Who in management owns the project and how much time your business teams can set aside for it',
       ],
       clarify: [
         'Where the main problems are: with you, with the partner or in between',
