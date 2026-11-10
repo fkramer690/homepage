@@ -1,27 +1,57 @@
 [
  {
-  "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
+  "page": "https://www.fk-sd.de/blog/change-kurve/",
   "clicks": 0,
-  "impressions": 15,
-  "position": 6
+  "impressions": 45,
+  "position": 7
  },
  {
   "page": "https://www.fk-sd.de/en/blog/salesforce-well-architected-framework-2026/",
   "clicks": 0,
-  "impressions": 12,
-  "position": 6
+  "impressions": 24,
+  "position": 6.5
  },
  {
   "page": "https://www.fk-sd.de/blog/change-management-modelle/",
-  "clicks": 0,
-  "impressions": 4,
+  "clicks": 1,
+  "impressions": 19,
   "position": 5
+ },
+ {
+  "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
+  "clicks": 0,
+  "impressions": 17,
+  "position": 6.2
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/hypercare-phase-salesforce-go-live/",
+  "clicks": 0,
+  "impressions": 7,
+  "position": 9
  },
  {
   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
   "clicks": 0,
-  "impressions": 3,
-  "position": 5
+  "impressions": 5,
+  "position": 4.6
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/stakeholder-analyse/",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 6
+ },
+ {
+  "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 4
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 7
  },
  {
   "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
@@ -30,10 +60,52 @@
   "position": 4
  },
  {
-  "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
+  "page": "https://www.fk-sd.de/blog/salesforce-berechtigungskonzept-permission-sets/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 10
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/salesforce-key-user-netzwerk/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 5
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/salesforce-uat-abnahmetest-fachbereich/",
   "clicks": 0,
   "impressions": 2,
-  "position": 10
+  "position": 4
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 9
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/merchandising-agent-teilekatalog/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
+ },
+ {
+  "page": "https://www.fk-sd.de/en/blog/salesforce-hypercare-after-go-live/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7
+ },
+ {
+  "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/b2b-commerce-preise-gmv-modell/",
+  "clicks": 1,
+  "impressions": 1,
+  "position": 4
  },
  {
   "page": "https://www.fk-sd.de/blog/shop-bestellungen-erp-auftrag/",
@@ -42,15 +114,51 @@
   "position": 8
  },
  {
+  "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-product-names-rlm-rca/",
   "clicks": 0,
   "impressions": 1,
   "position": 4
  },
  {
-  "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
+  "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
   "clicks": 0,
   "impressions": 1,
-  "position": 5
+  "position": 10
+ },
+ {
+  "page": "https://www.fk-sd.de/en/ai-masterclass/aiforce-and-system-integrators/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/ship-and-debit-preisschutz-haendler/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
+ },
+ {
+  "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
  }
 ]

@@ -1,18 +1,18 @@
 [
  {
   "browser": "Chrome",
-  "pageviews": 820,
+  "pageviews": 890,
+  "visits": 190
+ },
+ {
+  "browser": "Unknown",
+  "pageviews": 170,
   "visits": 120
  },
  {
   "browser": "MobileSafari",
   "pageviews": 150,
   "visits": 20
- },
- {
-  "browser": "Unknown",
-  "pageviews": 140,
-  "visits": 90
  },
  {
   "browser": "ChromeMobile",

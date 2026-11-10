@@ -8,8 +8,14 @@
  {
   "query": "how to automate technician scheduling and dispatch?",
   "clicks": 0,
-  "impressions": 38,
-  "position": 42.6
+  "impressions": 41,
+  "position": 41.6
+ },
+ {
+  "query": "field engineer scheduling",
+  "clicks": 0,
+  "impressions": 31,
+  "position": 93.3
  },
  {
   "query": "b2b portal",
@@ -24,22 +30,22 @@
   "position": 50.1
  },
  {
-  "query": "field engineer scheduling",
-  "clicks": 0,
-  "impressions": 27,
-  "position": 93.7
- },
- {
   "query": "salesforce commerce product data",
   "clicks": 0,
-  "impressions": 25,
-  "position": 66.1
+  "impressions": 26,
+  "position": 66.5
  },
  {
   "query": "sfdx-hardis",
   "clicks": 1,
-  "impressions": 24,
-  "position": 10.6
+  "impressions": 25,
+  "position": 10.4
+ },
+ {
+  "query": "field service pricing",
+  "clicks": 0,
+  "impressions": 25,
+  "position": 87.2
  },
  {
   "query": "cad vertriebsdaten",
@@ -48,34 +54,28 @@
   "position": 68.2
  },
  {
-  "query": "field service pricing",
-  "clicks": 0,
-  "impressions": 23,
-  "position": 87.1
- },
- {
   "query": "field service scheduling and dispatch",
   "clicks": 0,
-  "impressions": 22,
-  "position": 84.2
+  "impressions": 24,
+  "position": 84.5
  },
  {
   "query": "field service shift planning",
   "clicks": 0,
+  "impressions": 23,
+  "position": 76.3
+ },
+ {
+  "query": "field service scheduling",
+  "clicks": 0,
   "impressions": 21,
-  "position": 75.8
+  "position": 90.1
  },
  {
   "query": "(\"nearshore development center\" or \"nearshore partner\" or \"nearshore team\" or \"build delivery center poland\") (enterprise or \"mid-size\" or corporation) (europe or uk or germany or netherlands or scandinavia) -site:linkedin.com -site:twitter.com",
   "clicks": 0,
   "impressions": 19,
   "position": 6.9
- },
- {
-  "query": "field service scheduling",
-  "clicks": 0,
-  "impressions": 19,
-  "position": 89.8
  },
  {
   "query": "b2b portal software pricing",
@@ -96,16 +96,22 @@
   "position": 43.7
  },
  {
+  "query": "services scheduling dispatch",
+  "clicks": 0,
+  "impressions": 17,
+  "position": 76.5
+ },
+ {
+  "query": "field service dispatcher",
+  "clicks": 0,
+  "impressions": 16,
+  "position": 76.8
+ },
+ {
   "query": "b2b dealer portal",
   "clicks": 0,
   "impressions": 15,
   "position": 81.3
- },
- {
-  "query": "services scheduling dispatch",
-  "clicks": 0,
-  "impressions": 15,
-  "position": 76.5
  },
  {
   "query": "stakeholder analysis matrix",
@@ -120,10 +126,10 @@
   "position": 57.6
  },
  {
-  "query": "field service dispatcher",
+  "query": "headless commerce solutions for b2b",
   "clicks": 0,
-  "impressions": 14,
-  "position": 75
+  "impressions": 12,
+  "position": 73.8
  },
  {
   "query": "agentforce api",
@@ -138,10 +144,10 @@
   "position": 37.9
  },
  {
-  "query": "headless commerce solutions for b2b",
+  "query": "field service dispatch",
   "clicks": 0,
   "impressions": 11,
-  "position": 74.1
+  "position": 90.3
  },
  {
   "query": "b2b commerce platform with negotiable quotes",
@@ -160,12 +166,6 @@
   "clicks": 0,
   "impressions": 10,
   "position": 53.7
- },
- {
-  "query": "field service dispatch",
-  "clicks": 0,
-  "impressions": 10,
-  "position": 91.6
  },
  {
   "query": "revenue cloud",
@@ -216,6 +216,12 @@
   "position": 7.3
  },
  {
+  "query": "b2b checkout",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 44.3
+ },
+ {
   "query": "cpq revenue cloud integration",
   "clicks": 0,
   "impressions": 8,
@@ -226,6 +232,12 @@
   "clicks": 0,
   "impressions": 8,
   "position": 37
+ },
+ {
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 56.5
  },
  {
   "query": "revenue cloud advanced vs revenue cloud",
@@ -256,12 +268,6 @@
   "clicks": 0,
   "impressions": 7,
   "position": 55
- },
- {
-  "query": "nearshore teams",
-  "clicks": 0,
-  "impressions": 7,
-  "position": 56.1
  },
  {
   "query": "salesforce manufacturing cloud",
@@ -304,12 +310,6 @@
   "clicks": 0,
   "impressions": 6,
   "position": 6.5
- },
- {
-  "query": "b2b checkout",
-  "clicks": 0,
-  "impressions": 6,
-  "position": 42.7
  },
  {
   "query": "b2b handel portal",
@@ -358,6 +358,12 @@
   "clicks": 0,
   "impressions": 6,
   "position": 38.8
+ },
+ {
+  "query": "service field management software",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 89.3
  },
  {
   "query": "wechsel von cpq zu revenue cloud",
@@ -444,6 +450,12 @@
   "position": 38
  },
  {
+  "query": "agentforce",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 36.5
+ },
+ {
   "query": "b2b dealer portal erp",
   "clicks": 0,
   "impressions": 4,
@@ -468,6 +480,18 @@
   "position": 74.5
  },
  {
+  "query": "dispatching field service",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 99
+ },
+ {
+  "query": "exzellentes field service management",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 41
+ },
+ {
   "query": "faceted search for distributors",
   "clicks": 0,
   "impressions": 4,
@@ -478,6 +502,12 @@
   "clicks": 0,
   "impressions": 4,
   "position": 34.5
+ },
+ {
+  "query": "field service software",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 79.3
  },
  {
   "query": "manufacturing customer portal",
@@ -534,6 +564,18 @@
   "position": 74.5
  },
  {
+  "query": "salesforce implementierungspartner",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 26.5
+ },
+ {
+  "query": "salesforce nearshore development",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 74.8
+ },
+ {
   "query": "salesforce revenue cloud",
   "clicks": 0,
   "impressions": 4,
@@ -546,10 +588,10 @@
   "position": 58.3
  },
  {
-  "query": "service field management software",
+  "query": "service pro vs ptc servicemax",
   "clicks": 0,
   "impressions": 4,
-  "position": 90.3
+  "position": 8.5
  },
  {
   "query": "syteline salesforce warranty claim handoff",
@@ -588,12 +630,6 @@
   "position": 46.3
  },
  {
-  "query": "exzellentes field service management",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 40.3
- },
- {
   "query": "fakturierung cloud",
   "clicks": 0,
   "impressions": 3,
@@ -628,6 +664,12 @@
   "clicks": 0,
   "impressions": 3,
   "position": 8
+ },
+ {
+  "query": "manufacturing cloud vs service cloud",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 4.7
  },
  {
   "query": "predictive maintenance salesforce",
@@ -666,12 +708,6 @@
   "position": 94.3
  },
  {
-  "query": "salesforce nearshore development",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 74.3
- },
- {
   "query": "salesforce predictive maintenance",
   "clicks": 0,
   "impressions": 3,
@@ -682,12 +718,6 @@
   "clicks": 0,
   "impressions": 3,
   "position": 33
- },
- {
-  "query": "service pro vs ptc servicemax",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 9
  },
  {
   "query": "servicemax integration with salesforce",
@@ -724,6 +754,12 @@
   "clicks": 0,
   "impressions": 3,
   "position": 7.3
+ },
+ {
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 7
  },
  {
   "query": "which vendor can verify part numbers and provide documentation?",
@@ -792,6 +828,12 @@
   "position": 47.5
  },
  {
+  "query": "commerce extensions",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 15
+ },
+ {
   "query": "contracts in salesforce",
   "clicks": 0,
   "impressions": 2,
@@ -810,12 +852,6 @@
   "position": 63
  },
  {
-  "query": "dispatching field service",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 98.5
- },
- {
   "query": "einsatzplanung serviceaufträge",
   "clicks": 0,
   "impressions": 2,
@@ -826,6 +862,18 @@
   "clicks": 0,
   "impressions": 2,
   "position": 39.5
+ },
+ {
+  "query": "erp field service",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 67.5
+ },
+ {
+  "query": "field management software",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 72
  },
  {
   "query": "field service",
@@ -840,10 +888,22 @@
   "position": 84
  },
  {
+  "query": "field service erp",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 76.5
+ },
+ {
   "query": "field service lightning scheduling",
   "clicks": 0,
   "impressions": 2,
   "position": 87.5
+ },
+ {
+  "query": "field service management saas",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 38
  },
  {
   "query": "field service management salesforce",
@@ -852,16 +912,16 @@
   "position": 57.5
  },
  {
+  "query": "field service management software deutsch",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 93.5
+ },
+ {
   "query": "field service mobile forms",
   "clicks": 0,
   "impressions": 2,
   "position": 73
- },
- {
-  "query": "field service software",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 76.5
  },
  {
   "query": "how does gearset position its agent and ai solutions?",
@@ -888,10 +948,10 @@
   "position": 52.5
  },
  {
-  "query": "manufacturing cloud vs service cloud",
+  "query": "kommunikationsplan",
   "clicks": 0,
   "impressions": 2,
-  "position": 5.5
+  "position": 92.5
  },
  {
   "query": "offline field service app",
@@ -904,6 +964,12 @@
   "clicks": 0,
   "impressions": 2,
   "position": 22.5
+ },
+ {
+  "query": "salesforce architecture planning",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 86
  },
  {
   "query": "salesforce architektur klagenfurt",
@@ -996,6 +1062,12 @@
   "position": 53
  },
  {
+  "query": "what does a typical salesforce devops rollout look like?",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 5.5
+ },
+ {
   "query": "what ensures that agentforce protects your company’s data and detects toxicity? a data 360 b einstein trust layer c external apis d external human audits",
   "clicks": 0,
   "impressions": 2,
@@ -1026,10 +1098,22 @@
   "position": 23
  },
  {
-  "query": "agentforce",
+  "query": "agentforce beratung",
   "clicks": 0,
   "impressions": 1,
-  "position": 30
+  "position": 51
+ },
+ {
+  "query": "agentforce consulting",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 59
+ },
+ {
+  "query": "agentforce operations",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 52
  },
  {
   "query": "agents factory",
@@ -1054,6 +1138,18 @@
   "clicks": 0,
   "impressions": 1,
   "position": 9
+ },
+ {
+  "query": "all-in-one-plattform oder speziallösung für field-service-management-software für unternehmen ab 500 mitarbeitenden",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "query": "alternative zu einsatzplanung auf papier mit field-service-management-software für enterprise-unternehmen",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
  },
  {
   "query": "app field service",
@@ -1128,6 +1224,18 @@
   "position": 64
  },
  {
+  "query": "bestbewertete field-service-management-software für international tätige konzerne",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "query": "beste field-service-management-software im vergleich",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
   "query": "casey help agent",
   "clicks": 0,
   "impressions": 1,
@@ -1146,10 +1254,10 @@
   "position": 61
  },
  {
-  "query": "commerce extensions",
+  "query": "click field service management software",
   "clicks": 0,
   "impressions": 1,
-  "position": 22
+  "position": 70
  },
  {
   "query": "customserverpro.com",
@@ -1174,6 +1282,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 11
+ },
+ {
+  "query": "dsgvo-konformes field-service-management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 35
  },
  {
   "query": "e-rechnung 2027",
@@ -1212,12 +1326,6 @@
   "position": 71
  },
  {
-  "query": "field management software",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 85
- },
- {
   "query": "field management solutions",
   "clicks": 0,
   "impressions": 1,
@@ -1248,22 +1356,40 @@
   "position": 98
  },
  {
-  "query": "field service management saas",
+  "query": "field service management cloud",
   "clicks": 0,
   "impressions": 1,
-  "position": 38
+  "position": 77
  },
  {
-  "query": "field service management software deutsch",
+  "query": "field service management service",
   "clicks": 0,
   "impressions": 1,
-  "position": 100
+  "position": 95
  },
  {
   "query": "field service management software deutschland",
   "clicks": 0,
   "impressions": 1,
   "position": 93
+ },
+ {
+  "query": "field service management software saas",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 34
+ },
+ {
+  "query": "field service management software vergleich",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "query": "field service manager software",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 57
  },
  {
   "query": "field service mgmt",
@@ -1290,16 +1416,88 @@
   "position": 49
  },
  {
+  "query": "field services software",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 50
+ },
+ {
   "query": "field workforce scheduling",
   "clicks": 0,
   "impressions": 1,
   "position": 63
  },
  {
+  "query": "field-service-management-software all-in-one speziallösung vergleich für unternehmen bis 50 mitarbeitende",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "query": "field-service-management-software all-in-one speziallösung vergleich für unternehmen mit 51 bis 499 mitarbeitenden",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "query": "field-service-management-software anbieter vergleich im b2b",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 12
+ },
+ {
+  "query": "field-service-management-software bewertungen für unternehmen bis 50 mitarbeitende",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
+ },
+ {
+  "query": "field-service-management-software bewertungen für unternehmen mit 51 bis 499 mitarbeitenden",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "query": "field-service-management-software kaufentscheidung für kleine teams ohne eigene it-abteilung",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "query": "field-service-management-software kaufentscheidung für wachsende unternehmen mit rund 200 mitarbeitenden",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
+ },
+ {
+  "query": "field-service-management-software mit flexiblen integrationen für unternehmen",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
+  "query": "field-service-management-software mit transparenten kosten für kleine unternehmen",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 17
+ },
+ {
+  "query": "field-service-management-software-anbieter für international tätige konzerne vergleichen",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
+ },
+ {
   "query": "fieldserviceiq.ai",
   "clicks": 0,
   "impressions": 1,
   "position": 67
+ },
+ {
+  "query": "finale anbieterauswahl für field-service-management-software für international tätige konzerne",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
  },
  {
   "query": "fk solutions",
@@ -1476,6 +1674,12 @@
   "position": 30
  },
  {
+  "query": "salesforce agentforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 58
+ },
+ {
   "query": "salesforce agentforce api",
   "clicks": 0,
   "impressions": 1,
@@ -1492,12 +1696,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 33
- },
- {
-  "query": "salesforce architecture planning",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 89
  },
  {
   "query": "salesforce architektur dortmund",
@@ -1596,10 +1794,10 @@
   "position": 19
  },
  {
-  "query": "salesforce implementierungspartner",
+  "query": "salesforce key user training",
   "clicks": 0,
   "impressions": 1,
-  "position": 74
+  "position": 22
  },
  {
   "query": "salesforce lizenzen",
@@ -1722,6 +1920,24 @@
   "position": 50
  },
  {
+  "query": "software field service management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 100
+ },
+ {
+  "query": "software für field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 80
+ },
+ {
+  "query": "sollte ein unternehmen ab 500 mitarbeitenden bei field-service-management-software eine speziallösung oder eine all-in-one-plattform wählen?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
   "query": "solutions factory consulting gmbh",
   "clicks": 0,
   "impressions": 1,
@@ -1746,16 +1962,70 @@
   "position": 85
  },
  {
+  "query": "top field-service-management-software-anbieter für unternehmen mit 51 bis 499 mitarbeitenden",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "query": "top-anbieter für field-service-management-software im b2b",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
+ },
+ {
+  "query": "unabhängige bewertungen zu field-service-management-software",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 12
+ },
+ {
   "query": "vf portal b2b",
   "clicks": 0,
   "impressions": 1,
   "position": 18
  },
  {
+  "query": "wann lohnt sich für ein unternehmen mit 51 bis 499 mitarbeitenden der wechsel von einsatzplanung auf papier zu einer field-service-management-software?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
+ },
+ {
   "query": "was für salesforce lizenzen brauche ich, um service tätigkeiten optimieren zu können?",
   "clicks": 0,
   "impressions": 1,
   "position": 11
+ },
+ {
+  "query": "welche field-service-management-software eignet sich für ein kleines unternehmen?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
+ },
+ {
+  "query": "welche field-service-management-software für internationale rollouts und hohe compliance-anforderungen eignet sich für einen international tätigen konzern?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "query": "welche field-service-management-software ist für ein kleines unternehmen am besten geeignet?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 14
+ },
+ {
+  "query": "welche field-service-management-software mit crm- und erp-integration eignet sich für ein unternehmen mit 51 bis 499 mitarbeitenden?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
+ },
+ {
+  "query": "welche field-service-management-software mit transparenten kosten eignet sich für ein kleines unternehmen?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
  },
  {
   "query": "welche kriterien sollte ein unternehmen mit bis zu 50 mitarbeitenden vor der kaufentscheidung für field-service-management-software prüfen?",
@@ -1782,12 +2052,6 @@
   "position": 6
  },
  {
-  "query": "what makes a salesforce devops platform enterprise-ready?",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
- },
- {
   "query": "what permissions does an mcp server get on my machine?",
   "clicks": 0,
   "impressions": 1,
@@ -1798,5 +2062,17 @@
   "clicks": 0,
   "impressions": 1,
   "position": 8
+ },
+ {
+  "query": "worauf sollte ein b2b-unternehmen bei der auswahl einer field-service-management-software achten?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "query": "worauf sollte ein unternehmen ab 500 mitarbeitenden bei der auswahl einer field-service-management-software achten?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
  }
 ]

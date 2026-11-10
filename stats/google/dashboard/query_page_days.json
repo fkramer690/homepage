@@ -6633,6 +6633,14 @@
  },
  {
   "day": "2026-11-08",
+  "query": "commerce extensions",
+  "page": "https://www.fk-sd.de/en/blog/commerce-extensions-custom-code/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "day": "2026-11-08",
   "query": "devops release management",
   "page": "https://www.fk-sd.de/leistungen/devops-und-release-management/",
   "clicks": 0,
@@ -6825,6 +6833,422 @@
  },
  {
   "day": "2026-11-09",
+  "query": "field engineer scheduling",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 90.8
+ },
+ {
+  "day": "2026-11-09",
+  "query": "salesforce implementierungspartner",
+  "page": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 26.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "agentforce",
+  "page": "https://www.fk-sd.de/blog/was-ist-agentforce/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 38.7
+ },
+ {
+  "day": "2026-11-09",
+  "query": "how to automate technician scheduling and dispatch?",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 29
+ },
+ {
+  "day": "2026-11-09",
+  "query": "b2b checkout",
+  "page": "https://www.fk-sd.de/en/blog/b2b-checkout-purchase-order-card-invoice/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 49
+ },
+ {
+  "day": "2026-11-09",
+  "query": "dispatching field service",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 99.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "erp field service",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 67.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service dispatcher",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 89.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service erp",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 76.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service pricing",
+  "page": "https://www.fk-sd.de/blog/agentforce-1-field-service-paket-rechnung/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 89
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service scheduling",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 92.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service scheduling and dispatch",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 87
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service shift planning",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 82
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service software",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 82
+ },
+ {
+  "day": "2026-11-09",
+  "query": "kommunikationsplan",
+  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 92.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "service field management software",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 87.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "service pro vs ptc servicemax",
+  "page": "https://www.fk-sd.de/blog/servicemax-oder-salesforce-field-service/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "services scheduling dispatch",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 77
+ },
+ {
+  "day": "2026-11-09",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 5.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 5.5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "agentforce beratung",
+  "page": "https://www.fk-sd.de/blog/was-ist-agentforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 51
+ },
+ {
+  "day": "2026-11-09",
+  "query": "agentforce consulting",
+  "page": "https://www.fk-sd.de/blog/was-ist-agentforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 59
+ },
+ {
+  "day": "2026-11-09",
+  "query": "agentforce operations",
+  "page": "https://www.fk-sd.de/blog/was-ist-agentforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 52
+ },
+ {
+  "day": "2026-11-09",
+  "query": "all-in-one-plattform oder speziallösung für field-service-management-software für unternehmen ab 500 mitarbeitenden",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "day": "2026-11-09",
+  "query": "alternative zu einsatzplanung auf papier mit field-service-management-software für enterprise-unternehmen",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "day": "2026-11-09",
+  "query": "bestbewertete field-service-management-software für international tätige konzerne",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "day": "2026-11-09",
+  "query": "beste field-service-management-software im vergleich",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "day": "2026-11-09",
+  "query": "click field service management software",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 70
+ },
+ {
+  "day": "2026-11-09",
+  "query": "dsgvo-konformes field-service-management",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 35
+ },
+ {
+  "day": "2026-11-09",
+  "query": "exzellentes field service management",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 43
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field management software",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 59
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service dispatch",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 77
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service management cloud",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 77
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service management saas",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 38
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service management service",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 95
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service management software deutsch",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 87
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service management software saas",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 34
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service management software vergleich",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field service manager software",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 57
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field services software",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 50
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field-service-management-software all-in-one speziallösung vergleich für unternehmen bis 50 mitarbeitende",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field-service-management-software all-in-one speziallösung vergleich für unternehmen mit 51 bis 499 mitarbeitenden",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field-service-management-software anbieter vergleich im b2b",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 12
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field-service-management-software bewertungen für unternehmen bis 50 mitarbeitende",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field-service-management-software bewertungen für unternehmen mit 51 bis 499 mitarbeitenden",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field-service-management-software kaufentscheidung für kleine teams ohne eigene it-abteilung",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field-service-management-software kaufentscheidung für wachsende unternehmen mit rund 200 mitarbeitenden",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field-service-management-software mit flexiblen integrationen für unternehmen",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field-service-management-software mit transparenten kosten für kleine unternehmen",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 17
+ },
+ {
+  "day": "2026-11-09",
+  "query": "field-service-management-software-anbieter für international tätige konzerne vergleichen",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
+ },
+ {
+  "day": "2026-11-09",
+  "query": "finale anbieterauswahl für field-service-management-software für international tätige konzerne",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
+ },
+ {
+  "day": "2026-11-09",
+  "query": "headless commerce solutions for b2b",
+  "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 70
+ },
+ {
+  "day": "2026-11-09",
   "query": "kommunikationsplan vorlage",
   "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
   "clicks": 0,
@@ -6833,19 +7257,59 @@
  },
  {
   "day": "2026-11-09",
-  "query": "salesforce implementierungspartner",
-  "page": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+  "query": "manufacturing cloud vs service cloud",
+  "page": "https://www.fk-sd.de/en/blog/manufacturing-cloud-service-vs-service-cloud/",
   "clicks": 0,
   "impressions": 1,
-  "position": 74
+  "position": 3
  },
  {
   "day": "2026-11-09",
-  "query": "service pro vs ptc servicemax",
-  "page": "https://www.fk-sd.de/blog/servicemax-oder-salesforce-field-service/",
+  "query": "nearshore teams",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
   "clicks": 0,
   "impressions": 1,
-  "position": 8
+  "position": 59
+ },
+ {
+  "day": "2026-11-09",
+  "query": "salesforce agentforce",
+  "page": "https://www.fk-sd.de/blog/was-ist-agentforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 58
+ },
+ {
+  "day": "2026-11-09",
+  "query": "salesforce architecture planning",
+  "page": "https://www.fk-sd.de/en/services/salesforce-architecture/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 83
+ },
+ {
+  "day": "2026-11-09",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 76
+ },
+ {
+  "day": "2026-11-09",
+  "query": "salesforce key user training",
+  "page": "https://www.fk-sd.de/masterclass/change-management/key-user-und-schulung/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 22
+ },
+ {
+  "day": "2026-11-09",
+  "query": "salesforce nearshore development",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 76
  },
  {
   "day": "2026-11-09",
@@ -6854,5 +7318,125 @@
   "clicks": 0,
   "impressions": 1,
   "position": 14
+ },
+ {
+  "day": "2026-11-09",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/en/speaking/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-09",
+  "query": "software field service management",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 100
+ },
+ {
+  "day": "2026-11-09",
+  "query": "software für field service",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 80
+ },
+ {
+  "day": "2026-11-09",
+  "query": "sollte ein unternehmen ab 500 mitarbeitenden bei field-service-management-software eine speziallösung oder eine all-in-one-plattform wählen?",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "day": "2026-11-09",
+  "query": "top field-service-management-software-anbieter für unternehmen mit 51 bis 499 mitarbeitenden",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "day": "2026-11-09",
+  "query": "top-anbieter für field-service-management-software im b2b",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
+ },
+ {
+  "day": "2026-11-09",
+  "query": "unabhängige bewertungen zu field-service-management-software",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 12
+ },
+ {
+  "day": "2026-11-09",
+  "query": "wann lohnt sich für ein unternehmen mit 51 bis 499 mitarbeitenden der wechsel von einsatzplanung auf papier zu einer field-service-management-software?",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
+ },
+ {
+  "day": "2026-11-09",
+  "query": "welche field-service-management-software eignet sich für ein kleines unternehmen?",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
+ },
+ {
+  "day": "2026-11-09",
+  "query": "welche field-service-management-software für internationale rollouts und hohe compliance-anforderungen eignet sich für einen international tätigen konzern?",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "day": "2026-11-09",
+  "query": "welche field-service-management-software ist für ein kleines unternehmen am besten geeignet?",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 14
+ },
+ {
+  "day": "2026-11-09",
+  "query": "welche field-service-management-software mit crm- und erp-integration eignet sich für ein unternehmen mit 51 bis 499 mitarbeitenden?",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
+ },
+ {
+  "day": "2026-11-09",
+  "query": "welche field-service-management-software mit transparenten kosten eignet sich für ein kleines unternehmen?",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "day": "2026-11-09",
+  "query": "worauf sollte ein b2b-unternehmen bei der auswahl einer field-service-management-software achten?",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "day": "2026-11-09",
+  "query": "worauf sollte ein unternehmen ab 500 mitarbeitenden bei der auswahl einer field-service-management-software achten?",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
  }
 ]
