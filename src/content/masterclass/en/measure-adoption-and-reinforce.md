@@ -10,18 +10,18 @@ pubDate: 2026-10-29
 short: "Measure and reinforce"
 summary: "Reinforcement: measure usage on four levels, spot shadow lists and keep standards in place with partners for good."
 takeaways:
-  - "Whether a process has arrived shows in records created and maintained per group and country, not in logins or the number of training sessions."
+  - "Whether a process is used shows in records created and maintained per group and country, not in logins or the number of training sessions."
   - "I measure on four levels: activity, use of the process, data quality and outcome, each against a baseline from before go-live."
   - "Measure monthly for at least six months; whether a process sticks only shows after three to six months."
   - "With partners, the pipeline, pull request reviews and a Center of Excellence call anchor the standards; they only last with an internal owner."
 articles: [change-adoption-metrics, change-reinforcement-standards, salesforce-center-of-excellence, development-standards-definition-of-done, field-service-kpis-after-go-live]
 faq:
   - q: "Which figures show whether Salesforce is used?"
-    a: "Figures at the level of the process, such as the share of quotes created in Salesforce or of work orders completed in the app. Add data quality such as new duplicates. Logins alone say little, because someone who only exports also counts."
+    a: "Figures at the level of the process, such as the share of quotes created in Salesforce or of work orders completed in the app. Add data quality such as new duplicates. Logins alone say little, because they also count people who only export."
   - q: "How do you spot shadow lists next to Salesforce?"
     a: "By gaps between logins and records created, by bulk updates just before reporting dates and by frequent exports to Excel. None of these signs is proof, but each is a reason to talk to the team."
   - q: "How do development standards stay in place with partners?"
-    a: "Whatever can be checked automatically goes into the pipeline. The rest runs through pull request reviews on the client side and a regular call with the technical leads. The contract refers to the current version of the standards, and an internal owner takes them over."
+    a: "Whatever can be checked automatically is checked in the pipeline. Pull request reviews on the client side and a regular call with the technical leads cover the rest. The contract refers to the current version of the standards, and an internal owner takes them over."
 draft: false
 ---
 
@@ -52,7 +52,7 @@ Record before go-live how many quotes are created per month today, in whatever t
 
 ## How do you spot shadow lists?
 
-Low usage gets most expensive when a separate list lives on next to Salesforce. It gives itself away in three ways. High login figures with few new records mean the team looks things up and works elsewhere. Large waves of updates just before the monthly report to management mean records are filled in afterwards. And reports exported to Excel on a regular basis often feed exactly that list.
+Low usage gets most expensive when a separate list is still kept next to Salesforce. It gives itself away in three ways. High login figures with few new records mean the team looks things up and works elsewhere. Large waves of updates just before the monthly report to management mean records are filled in afterwards. And reports exported to Excel on a regular basis often feed exactly that list.
 
 None of this proves anything, but each sign is a reason for a conversation with the team, ideally through the key user from [chapter 3](../key-users-and-training/). Then the diagnosis from [chapter 1](../change-management-adkar-diagnosis/) follows: at which stage is the group stuck?
 
@@ -65,7 +65,7 @@ In the steering committee two or three figures per process from use and outcome 
 Change management also affects developer teams and implementation partners. New standards for development and release water down after a few months, when new developers join, deadline pressure rises and attention fades. Then knowledge is not what is missing; reinforcement is.
 
 ```praxis
-In my largest program with more than 30 developers in eight streams and five implementation partners, every pull request went across my desk at the start. It took about three months until the standards were lived. After that we brought new topics to the table every two weeks in a Center of Excellence call with the technical leads of the streams. Once the process ran smoothly, I handed it over to an internal colleague.
+In my largest program with more than 30 developers in eight streams and five implementation partners, I reviewed every pull request myself at the start. It took about three months until the standards were followed in daily work. After that we discussed new topics every two weeks in a Center of Excellence call with the technical leads of the streams. Once the process ran smoothly, I handed it over to an internal colleague.
 ```
 
 Each lever covers a different part:
@@ -80,6 +80,6 @@ There will be exceptions under deadline pressure. They need a justification in t
 
 ## The change lasts when it holds without the people who introduced it
 
-With business teams, the figures at process level stay stable after six months, and new colleagues learn the process from key users instead of from old lists. With partners, reviewers flag the same points less often, new edge cases come to the call before they are built, and new developers follow the rules without anyone explaining them one by one. In both cases the change is anchored when it holds without the person who introduced it. So plan from the start who takes over on the client side. How I support you with this is on the page [Change management for Salesforce programs](../../../services/change-management-salesforce/).
+With business teams, the figures at process level stay stable after six months, and new colleagues learn the process from key users instead of from old lists. With partners, reviewers flag the same points less often, new edge cases are raised in the call before they are built, and new developers follow the rules without anyone explaining them one by one. In both cases the change is anchored when it holds without the person who introduced it. So plan from the start who takes over on the client side. How I support you with this is on the page [Change management for Salesforce programs](../../../services/change-management-salesforce/).
 
 This chapter ends the masterclass. All chapters and articles are on the [overview page](../).

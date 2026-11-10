@@ -12,8 +12,8 @@ summary: "Awareness and desire: what the sponsor visibly does, what a rollout pl
 takeaways:
   - "Awareness and desire come from the group's own leadership. It explains why something changes and decides when departments disagree."
   - "A sponsor plan states what management visibly does and when, so that \"management is behind it\" is more than a line on the first slide."
-  - "A rollout plan per release has one row per affected group: what changes, who informs and when. It stands before development is finished."
-  - "Release notes for users answer five questions in plain language and come in the local language, at most half a page per group."
+  - "A rollout plan per release has one row per affected group: what changes, who informs and when. It is ready before development is finished."
+  - "Release notes for users answer five questions in plain language and are written in the local language, at most half a page per group."
   - "In Germany, location data, working times and evaluations of individuals are agreed with the works council before anything is set up."
 articles: [change-release-communication, change-management-hub, ai-coding-works-council-gdpr]
 faq:
@@ -42,7 +42,7 @@ analyse | Asking | In the monthly report | They ask about their teams' usage. Th
 basis: Written down in the sponsor plan
 ```
 
-So I write a sponsor plan: a short list of dates when the sponsor appears, decisions that sit with them and the figures they receive each month. Without this plan, "management is behind it" turns into a line on the first slide.
+So I write a sponsor plan: a short list of dates when the sponsor appears, decisions that rest with them and the figures they receive each month. Without this plan, "management is behind it" turns into a line on the first slide.
 
 ## The rollout plan has one row per affected group
 
@@ -58,28 +58,28 @@ The empty row is the important one. Someone who gets release emails every week t
 
 ## What do release notes for users look like?
 
-User stories, fields and flows mean nothing to the business. Release notes for users are therefore a document of their own, and each of their questions pays into one ADKAR stage. What changes for my group, with a screenshot if needed, and from which date creates awareness. The reason in one sentence, for example that sales planning needs the delivery date, supports desire. What stays the same removes uncertainty and is almost always missing. The key user's name as contact secures knowledge. Half a page per group is enough, in several countries in each local language. As a test I hand the text to a key user without further explanation. The full routine with examples is in [Communicating Salesforce releases to business teams](../../../blog/salesforce-release-communication-business/).
+User stories, fields and flows mean nothing to the business. Release notes for users are therefore a document of their own, and each of their questions strengthens one ADKAR stage. What changes for my group, with a screenshot if needed, and from which date creates awareness. The reason in one sentence, for example that sales planning needs the delivery date, supports desire. What stays the same removes uncertainty and is almost always missing. The key user's name as contact secures knowledge. Half a page per group is enough, in several countries in each local language. As a test I hand the text to a key user without further explanation. The full routine with examples is in [Communicating Salesforce releases to business teams](../../../blog/salesforce-release-communication-business/).
 
 ```schritte
 Planning | once the scope is clear · product owner and business
-  One row per group in the rollout plan, contested rows go to the sponsor.
+  One row per group in the rollout plan, the sponsor takes the contested rows.
 Before acceptance testing | around two weeks ahead · key users
   Key users try the change and collect what their team is going to ask.
 Shortly before the release | a few days ahead · team lead and key users
   The affected groups receive their release notes in their own language.
 After the release | first week · key users, project team
-  Key users gather questions, the project watches usage, feedback goes into the backlog.
+  Key users gather questions, the project team watches usage, feedback is added to the backlog.
 ```
 
 ## The sponsor explains contested changes before acceptance testing
 
-Some changes do not please everyone. A new required field creates work for inside sales and helps sales planning. Such changes should not become known through the release notes for the first time. I mark these rows in the rollout plan, and the sponsor explains before acceptance testing why the change is coming. This is where desire is decided: whoever knows the reason and knows their own leadership backs it fills in the field. Whoever does not fills it with a dot.
+Some changes do not please everyone. A new required field creates work for inside sales and helps sales planning. Such changes should not become known through the release notes for the first time. I mark these rows in the rollout plan, and the sponsor explains before acceptance testing why the change is needed. This is where desire is decided: whoever knows the reason and knows their own leadership backs it fills in the field. Whoever does not fills it with a dot.
 
 Without a feedback channel all of this fades. Feedback gets one fixed place, bugs and requests are kept apart, and every piece of feedback gets a visible answer, a no included. A business team that sees its feedback implemented in the next release will read the next release notes too.
 
 ## When does the works council join?
 
-In Germany the works council has a right of co-determination under [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) for technical systems that can monitor behavior or performance. Salesforce touches that in several places: location data in the Field Service app, timesheets, evaluations of individuals and AI tools. For change management, openness counts as much as the legal question. A technician who hears from the works council that their location is only transmitted while travelling to a job reacts differently from one who discovers it on a map in the office.
+In Germany the works council has a right of co-determination under [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) for technical systems that can monitor behavior or performance. Salesforce affects that in several places: location data in the Field Service app, timesheets, evaluations of individuals and AI tools. For change management, openness counts as much as the legal question. A technician who hears from the works council that their location is only transmitted while traveling to a job reacts differently from one who discovers it on a map in the office.
 
 ```hinweis achtung
 Agree location data, working times and evaluations of individuals with the works council before they are set up, and put the result in plain words into the communication before go-live. Agreeing afterwards costs weeks and trust.
