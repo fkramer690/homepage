@@ -11,19 +11,19 @@ categories: [ai]
 tags: [AIforce, Claude, Slack, Agentforce Coworker, MCP, Maschinenbau]
 takeaways:
   - "AIforce startete mit Claudeforce (Salesforce in Claude), Slackforce und Agentforce Coworker, technisch getragen vom Headless Toolkit."
-  - "SIForce beruht nur auf einem X-Post von Marc Benioff vom 9. Oktober 2026 ohne Pressemitteilung. Unterlagen bleiben deshalb beim Namen AIforce."
-  - "Salesforce in Claude ist eine Beta mit 37 Vertriebs-Skills, ohne Service-Skills. Der Service kann stattdessen Coworker mit CRM-Daten testen."
-  - "Salesforce in Claude und nutzergebundene MCP-Aufrufe laufen mit den Rechten des Nutzers, zu weite Freigaben werden also im Chatfenster sichtbar."
-  - "Coworker kostet 50 US-Dollar je Nutzer, der MCP-Satz steht auf TBA, und Preise können sich ändern. Budgetieren Sie einen Piloten, keinen Rollout."
+  - "SIForce beruht nur auf einem X-Post von Marc Benioff vom 9. Oktober 2026; eine Pressemitteilung fehlt. Unterlagen bleiben deshalb bei AIforce."
+  - "Salesforce in Claude ist eine Beta mit 37 Vertriebs-Skills und hat keine Service-Skills. Der Service kann stattdessen Coworker mit CRM-Daten testen."
+  - "Salesforce in Claude und nutzergebundene MCP-Aufrufe laufen mit den Rechten des Nutzers; zu weite Freigaben werden also im Chatfenster sichtbar."
+  - "Coworker kostet 50 US-Dollar je Nutzer, der MCP-Satz ist mit TBA angegeben, und Preise können sich ändern. Budgetieren Sie einen Piloten, keinen Rollout."
 faq:
   - q: "Was ist AIforce bei Salesforce?"
     a: "AIforce ist eine Interface-Schicht, die Salesforce zur Dreamforce am 15. September 2026 angekündigt hat. Sie macht Salesforce-Daten, Workflows und Berechtigungen aus Claude, Slack und der Lightning-Oberfläche nutzbar. Gestartet ist sie mit Claudeforce (Salesforce in Claude), Slackforce und Agentforce Coworker, technisch getragen vom Headless Toolkit."
   - q: "Heißt AIforce jetzt SIForce?"
-    a: "Marc Benioff hat am 9. Oktober 2026 auf X geschrieben, AIforce heiße offiziell SIForce. Salesforce Ben und andere Medien haben darüber berichtet, eine Pressemitteilung von Salesforce gab es aber nicht. Am 9. November 2026 verwenden die Produkt-, Hilfe- und Preisseiten von Salesforce weiter AIforce."
+    a: "Marc Benioff hat am 9. Oktober 2026 auf X geschrieben, AIforce heiße offiziell SIForce. Salesforce Ben und andere Medien haben darüber berichtet; eine Pressemitteilung von Salesforce gab es aber nicht. Am 9. November 2026 verwenden die Produkt-, Hilfe- und Preisseiten von Salesforce weiter AIforce."
   - q: "Was brauche ich für Salesforce in Claude?"
-    a: "Die Salesforce-Hilfe nennt Enterprise, Performance, Unlimited und Developer Edition sowie ein direktes Anthropic-Abonnement (Claude Enterprise, Team oder Console), eine Tabelle dort allerdings nur Claude Enterprise. Dazu kommt die Freigabe über die Beta-Anmeldung. Ein Salesforce-Admin aktiviert den MCP-Server und stellt eine External Client App bereit, ein Claude-Owner richtet den Connector ein."
+    a: "Die Salesforce-Hilfe nennt Enterprise, Performance, Unlimited und Developer Edition sowie ein direktes Anthropic-Abonnement (Claude Enterprise, Team oder Console); in der Tabelle dort steht allerdings nur Claude Enterprise. Dazu kommt die Freigabe über die Beta-Anmeldung. Ein Salesforce-Admin aktiviert den MCP-Server und stellt eine External Client App bereit, und ein Claude-Owner richtet den Connector ein."
   - q: "Brauchen wir Slack, um AIforce zu nutzen?"
-    a: "Nein. Salesforce in Claude und Agentforce Coworker funktionieren ohne Slack, und Coworker in Microsoft Teams führt Salesforce ab November 2026 als allgemein verfügbar. Slackforce ist nur relevant, wenn Ihr Unternehmen schon in Slack arbeitet; in einem Teams-Unternehmen würde ich Slack dafür nicht kaufen."
+    a: "Nein. Salesforce in Claude und Agentforce Coworker funktionieren ohne Slack, und Salesforce gibt Coworker in Microsoft Teams ab November 2026 als allgemein verfügbar an. Slackforce ist nur relevant, wenn Ihr Unternehmen schon in Slack arbeitet; in einem Teams-Unternehmen würde ich Slack dafür nicht kaufen."
   - q: "Braucht Agentforce Coworker Data 360?"
     a: "Ja. Die Einrichtungsdokumentation nennt Data Cloud oder Data 360 als Voraussetzung für nutzungsbasierten und sitzbasierten Zugang, dazu Enterprise, Unlimited oder Agentforce 1 Edition. CRM-Daten kommen automatisch als Quelle hinzu; zusätzliche Data-360-Quellen und Indexierung verbrauchen Credits."
 draft: false
@@ -61,7 +61,7 @@ In Ihren eigenen Unterlagen würde ich „AIforce“ schreiben und einmal „(vo
 
 ## Stand November 2026: vieles ist noch angekündigt
 
-Die Ankündigungen sind größer als das, was sich einschalten lässt. Stand 9. November 2026:
+Die Ankündigungen reichen weiter als das, was sich derzeit einschalten lässt. Stand 9. November 2026:
 
 - **Salesforce in Claude** ist eine Beta. Laut [Anthropics Einrichtungsanleitung](https://support.claude.com/en/articles/16952184-set-up-salesforce-in-claude-for-your-organization) läuft es für Organisationen, die Salesforce über die Beta-Anmeldung freigibt, und funktioniert im Chat und in Claude Cowork im Web und auf dem Desktop. Die [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=platform.set_up_salesforce_in_claude.htm&language=en_US&type=5) nennt Enterprise, Performance, Unlimited und Developer Edition und verlangt ein direktes Anthropic-Abonnement (Claude Enterprise, Team oder Console), ihre Editionstabelle dagegen nur Claude Enterprise; klären Sie das mit der Beta-Freigabe. Claude greift mit dem Salesforce-Konto und den Berechtigungen des Nutzers zu und fragt standardmäßig vor jedem Schreibvorgang nach Freigabe.
 - **Agentforce Coworker** ist laut Ankündigung „instantly available“. Salesforces eigener [Coworker-Blog](https://www.salesforce.com/blog/agentforce-coworker-salesforce-ai-teammate/) schreibt sowohl „Generally Available“ als auch „in beta“ und nannte Microsoft Teams, ChatGPT, Claude und eine Desktop-App als „coming later this year“. Das [Update vom 4. November 2026](https://www.salesforce.com/news/stories/agentforce-coworker-surpasses-185k-users/) führt Teams als allgemein verfügbar im November und die Field-Service-App als erwartet im Dezember 2026; die eigenständige [Coworker-Nutzerlizenz](https://www.salesforce.com/agentforce/coworker/) kostet 50 US-Dollar pro Nutzer und Monat mit 30 MB Indexierung pro Nutzer. Prüfen Sie jede Oberfläche in Ihrer Org. Die [Einrichtungsdokumentation](https://developer.salesforce.com/docs/data/agentforce-coworker/guide/agentforce-coworker-turn-on-infrastructure.html) verlangt Enterprise, Unlimited oder Agentforce 1 Edition sowie Data Cloud oder Data 360.
@@ -75,7 +75,7 @@ Die Ankündigungen sind größer als das, was sich einschalten lässt. Stand 9. 
 quelle: Anthropic zu Salesforce in Claude; Salesforce Flex Credits Rate Card vom 03.11.2026
 ```
 
-Zu den Kosten sagt die Ankündigung: „Pricing and packaging are subject to change.“ Die Rate Card führt Headless Platform Interactions, den Zähler für agentische API- und MCP-Aufrufe, als „TBA“. Das heißt, es gibt noch keine Zahl, nicht dass die Aufrufe kostenlos bleiben. Warum daraus ein Budgetposten wird, steht in [MCP-Zugriffe als Budgetrisiko](../flex-credits-agentforce-kosten-pro-aktion/).
+Zu den Kosten sagt die Ankündigung: „Pricing and packaging are subject to change.“ Die Rate Card führt Headless Platform Interactions, den Zähler für agentische API- und MCP-Aufrufe, als „TBA“. Das heißt, es gibt noch keine Zahl, nicht aber, dass die Aufrufe kostenlos bleiben. Warum daraus ein Budgetposten wird, steht in [MCP-Zugriffe als Budgetrisiko](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Für Hersteller hilft AIforce heute dem Vertrieb mehr als dem Service
 
@@ -83,22 +83,22 @@ Im Moment hilft AIforce dem Vertrieb mehr als dem Service. Laut [Anthropic](http
 
 Der zweite Punkt ist das ERP. Salesforce in Claude liest Salesforce. Stehen Auftragsstatus, Liefertermine und Bestände nur in SAP oder proALPHA, bekommt ein Vertriebsmitarbeiter auf die Frage „Welche Aufträge dieses Händlers sind verspätet?“ eine Antwort auf unvollständiger Datenbasis, vorgetragen mit voller Überzeugung. Welche ERP-Daten nach Salesforce gehören oder hinter eine API, die der Agent aufrufen kann, muss geklärt sein, bevor jemand ein Chatfenster öffnet.
 
-Der dritte Punkt ist das Kollaborationswerkzeug. Viele Maschinenbauer arbeiten in Microsoft Teams. Dort bringt Slackforce nichts, Coworker in Teams führt Salesforce dagegen ab November 2026 als allgemein verfügbar. Slack würde ich nicht kaufen, um eine KI-Oberfläche zu bekommen.
+Der dritte Punkt ist das Kollaborationswerkzeug. Viele Maschinenbauer arbeiten in Microsoft Teams. Dort bringt Slackforce nichts; Salesforce gibt Coworker in Teams dagegen ab November 2026 als allgemein verfügbar an. Slack würde ich nicht kaufen, um eine KI-Oberfläche zu bekommen.
 
-Der vierte Punkt sind die Berechtigungen. „Every transaction runs as the authenticated user“, schreibt Salesforce zu Hosted MCP. Das gilt für Salesforce in Claude und nutzergebundene Verbindungen; registrierte Agenten können stattdessen mit eigener Identität und engeren Berechtigungssätzen laufen. Im nutzergebundenen Fall liegt das Risiko. Sehen Ihre Vertriebsmitarbeitenden alle Cases, Garantieanträge und Händler-Preisvereinbarungen, weil die Freigaben vor Jahren zu großzügig gesetzt wurden, zeigt ein Chat das in Sekunden statt nach zehn Klicks.
+Der vierte Punkt betrifft die Berechtigungen. „Every transaction runs as the authenticated user“, schreibt Salesforce zu Hosted MCP. Das gilt für Salesforce in Claude und nutzergebundene Verbindungen; registrierte Agenten können stattdessen mit eigener Identität und engeren Berechtigungssätzen laufen. Genau im nutzergebundenen Fall liegt aber das Risiko. Sehen Ihre Vertriebsmitarbeitenden alle Cases, Garantieanträge und Händler-Preisvereinbarungen, weil die Freigaben vor Jahren zu großzügig gesetzt wurden, zeigt ein Chat das in Sekunden statt nach zehn Klicks.
 
 ## Rechenbeispiel: ein Maschinenbauer mit Teams und SAP
 
-Nehmen wir einen Maschinenbauer mit 80 Sales-Cloud-Nutzern in Vertrieb und Händlerbetreuung, Service Cloud im Aftersales, SAP als ERP und Microsoft Teams für die Zusammenarbeit. Alle Zahlen und Umstände sind Annahmen. Einige Vertriebsmitarbeitende kopieren schon heute Account-Daten in private KI-Werkzeuge.
+Nehmen wir einen Maschinenbauer mit 80 Sales-Cloud-Nutzern in Vertrieb und Händlerbetreuung, Service Cloud im Aftersales, SAP als ERP und Microsoft Teams für die Zusammenarbeit. Alle Zahlen und Rahmenbedingungen sind Annahmen. Einige Vertriebsmitarbeitende kopieren schon heute Account-Daten in private KI-Werkzeuge.
 
 Die IT-Leitung sortiert die vier AIforce-Teile:
 
-- **Salesforce in Claude:** Pilotkandidat für zehn Key Account Manager, sofern die Edition für die Beta qualifiziert und das Unternehmen Plätze in Claude Enterprise oder Team kauft. Vor dem Piloten wird das Freigabemodell für Cases und Preisvereinbarungen geprüft, und die Freigabe vor jedem Schreibvorgang bleibt eingeschaltet.
+- **Salesforce in Claude:** Pilotkandidat für zehn Key Account Manager, sofern die Edition für die Beta zugelassen ist und das Unternehmen Plätze in Claude Enterprise oder Team kauft. Vor dem Piloten wird das Freigabemodell für Cases und Preisvereinbarungen geprüft, und die Freigabe vor jedem Schreibvorgang bleibt eingeschaltet.
 - **Agentforce Coworker:** zweiter Schritt. Es braucht Data 360 und dazu Flex Credits mit Foundations oder eine Benutzerlizenz für 50 US-Dollar pro Nutzer und Monat. Sobald Teams in der Org verfügbar ist, bietet sich ein Test mit dem Service Desk anhand von Cases an.
-- **Slackforce:** nicht relevant, das Unternehmen arbeitet in Teams.
+- **Slackforce:** nicht relevant, weil das Unternehmen in Teams arbeitet.
 - **Headless Toolkit:** relevant für die IT und den Implementierungspartner, denn Hosted MCP Server und das Claude-Code-Plugin sind der Entwicklerpfad. Was Partner damit dürfen, gehört in den Vertrag.
 
-Heraus kommen ein kleiner Pilot im Vertrieb und eine Woche Aufräumen bei den Berechtigungen. Nach meiner Einschätzung ist das die richtige Größe für eine Beta, deren MCP-Satz Salesforce noch nicht veröffentlicht hat.
+Daraus ergeben sich ein kleiner Pilot im Vertrieb und eine Woche für das Aufräumen der Berechtigungen. Nach meiner Einschätzung ist das die richtige Größe für eine Beta, für die Salesforce den MCP-Satz noch nicht veröffentlicht hat.
 
 ## Die Schattennutzung finden, dann Rechte und Verträge prüfen
 
