@@ -20,13 +20,13 @@ faq:
   - q: "Was ist ein Kommunikationsplan im Change Management?"
     a: "Ein Kommunikationsplan ist eine Übersicht, die für jede betroffene Gruppe festlegt, welche Botschaft sie wann, über welchen Kanal und von wem erhält. Er begleitet eine Veränderung von der Ankündigung bis nach dem Go-live."
   - q: "Was gehört in einen Kommunikationsplan?"
-    a: "Mindestens Zielgruppe, Botschaft, Absender, Kanal, Zeitpunkt und verantwortliche Person. Hilfreich sind außerdem das Ziel der Nachricht, etwa Bewusstsein schaffen oder Wissen vermitteln, und ein Weg für Rückfragen."
+    a: "In einen Kommunikationsplan gehören mindestens Zielgruppe, Botschaft, Absender, Kanal, Zeitpunkt und verantwortliche Person. Hilfreich sind außerdem das Ziel der Nachricht, etwa Bewusstsein schaffen oder Wissen vermitteln, und ein Weg für Rückfragen."
   - q: "Wer sollte Veränderungen im Unternehmen kommunizieren?"
     a: "Die Gründe für die Veränderung erklärt am besten die Unternehmensleitung oder der Sponsor. Was sich für das eigene Team ändert, erklärt die direkte Führungskraft. Das Projektteam liefert Inhalte und Termine zu."
   - q: "Wie oft muss man eine Veränderung kommunizieren?"
     a: "Prosci empfiehlt, dass die bevorzugten Absender Kernbotschaften fünf- bis siebenmal wiederholen. Formate und Kanäle können variieren, doch die Kernbotschaft bleibt gleich. Was nur einmal gesagt wurde, kommt bei den meisten nicht an."
   - q: "Was ist der Unterschied zwischen Kommunikationsplan und Change Story?"
-    a: "Die Change Story ist die eine Erzählung, warum sich etwas ändert und wohin es geht. Der Kommunikationsplan legt fest, wie diese Erzählung und die Botschaften je Gruppe über die Zeit verteilt werden."
+    a: "Die Change Story ist die zentrale Erzählung dazu, warum sich etwas ändert und wohin es geht. Der Kommunikationsplan legt fest, wie diese Erzählung und die Botschaften je Gruppe über die Zeit verteilt werden."
 draft: false
 ---
 
@@ -44,10 +44,10 @@ Ein Kommunikationsplan ist eine Tabelle, keine Strategie auf zwanzig Folien. Jed
 | Absender | Wer sagt es? | Vertriebsleitung |
 | Kanal | Wie? | Regionalmeeting, danach kurze Zusammenfassung per Mail |
 | Zeitpunkt | Wann? | 10 Wochen vor dem Go-live |
-| Verantwortlich | Wer bereitet es vor und sorgt dafür, dass es passiert? | Change-Managerin |
+| Verantwortlich | Wer bereitet die Nachricht vor und sorgt dafür, dass sie versendet wird? | Change-Managerin |
 | Rückkanal | Wo landen Fragen? | Key User der Region, Sammelpostfach |
 
-Die Spalte Ziel ist die wichtigste und fehlt am häufigsten. Sie verbindet die Nachricht mit der Stufe, an der eine Gruppe gerade steht. Im [ADKAR-Modell](../change-management-modelle/) sind das Bewusstsein, Bereitschaft, Wissen, Fähigkeit und Verankerung. Eine Nachricht, die Bewusstsein schaffen soll, sieht ganz anders aus als eine, die Wissen vermittelt. Wer beides in dieselbe Rundmail packt, erreicht meist keins von beidem.
+Die Spalte Ziel ist die wichtigste und fehlt am häufigsten. Sie verbindet die Nachricht mit der Stufe, auf der eine Gruppe gerade steht. Im [ADKAR-Modell](../change-management-modelle/) sind das Bewusstsein, Bereitschaft, Wissen, Fähigkeit und Verankerung. Eine Nachricht, die Bewusstsein schaffen soll, sieht ganz anders aus als eine, die Wissen vermittelt. Wer beides in dieselbe Rundmail packt, erreicht meist keins von beidem.
 
 ## Die Leitung erklärt das Warum, die Führungskraft die Folgen
 
@@ -61,7 +61,7 @@ Der Absender entscheidet darüber, ob eine Botschaft ernst genommen wird. Prosci
 
 In der Praxis wird oft alles vom Projektteam verschickt, weil es die Inhalte kennt. Das ist bequem und wirkt schwach. Eine Rundmail des Projektteams zur Frage „Warum machen wir das?“ hat weniger Gewicht als eine Erklärung der Geschäftsführung in einer Townhall. Die Frage „Was heißt das für mich?“ kann nur jemand beantworten, der das Team kennt. Deshalb entwirft das Projektteam die Inhalte, und die Führungskräfte vermitteln sie.
 
-Daraus folgt eine Aufgabe, die gern übersehen wird: Führungskräfte müssen ihre Botschaften erhalten, bevor sie mit ihrem Team darüber sprechen. Ein kurzes Briefing mit den wichtigsten Fragen und Antworten, eine Woche vor dem Teammeeting, macht aus einer zögerlichen Führungskraft eine glaubwürdige.
+Daraus folgt eine Aufgabe, die gern übersehen wird: Führungskräfte müssen ihre Botschaften kennen, bevor sie mit ihrem Team darüber sprechen. Ein kurzes Briefing mit den wichtigsten Fragen und Antworten, eine Woche vor dem Teammeeting, macht eine zögerliche Führungskraft glaubwürdiger.
 
 ## Wie erstellt man einen Kommunikationsplan?
 
@@ -94,9 +94,9 @@ Für die Einführung eines CRM-Systems wie Salesforce im Vertrieb könnte ein Au
 | −2 | Alle Betroffenen | Wissen | Was am Tag des Go-lives passiert, wen Sie fragen | Key User | Teammeeting |
 | +2 | Alle Betroffenen | Verankerung | Erste Erfolge, häufigste Fragen, was wir verbessern | Vertriebsleitung | Teammeeting und Mail |
 
-Auffällig ist, wie wenige Zeilen vom Projektteam stammen, und dass die Kommunikation mit dem Go-live nicht endet. Die Nachricht in Woche +2 ist eine der wichtigsten: In dieser Zeit sinken Stimmung und Produktivität oft, wie die [Change-Kurve](../change-kurve/) beschreibt, und sichtbare Erfolge helfen durch das Tal.
+Auffällig ist, wie wenige Zeilen vom Projektteam stammen, und dass die Kommunikation mit dem Go-live nicht endet. Die Nachricht in Woche +2 ist eine der wichtigsten: In dieser Zeit sinken Stimmung und Produktivität oft, wie die [Change-Kurve](../change-kurve/) beschreibt, und sichtbare Erfolge helfen, das Tal zu durchqueren.
 
-Bei einer weltweiten Einführung kommt eine Dimension hinzu. Wenn wie bei einem Rollout der Salesforce Sales Cloud, den ich begleitet habe, Teams in den USA, Asien und Europa beteiligt sind, braucht jedes Land in der Regel eigene Absender und Botschaften in der eigenen Sprache. Eine englische Botschaft aus der Zentrale reicht nicht aus. Die Landesleitung sollte die Gründe im eigenen Meeting erläutern.
+Bei einer weltweiten Einführung kommt eine Dimension hinzu. Wenn, wie bei einem Rollout der Salesforce Sales Cloud, den ich begleitet habe, Teams in den USA, Asien und Europa beteiligt sind, braucht jedes Land in der Regel eigene Absender und Botschaften in der eigenen Sprache. Eine englische Botschaft aus der Zentrale reicht nicht aus. Die Landesleitung sollte die Gründe in einem eigenen Meeting erläutern.
 
 ## Vorlage für den Kommunikationsplan
 
@@ -109,15 +109,15 @@ Planen Sie jede Kernbotschaft mindestens dreimal ein, über verschiedene Absende
 ## Welche Fehler passieren bei der Change-Kommunikation?
 
 - **Zu spät.** Die Kommunikation beginnt zwei Wochen vor dem Go-live und kann dann nur noch informieren. Bewusstsein und Bereitschaft brauchen Wochen, nicht Tage.
-- **Ein Absender für alles.** Das Projektteam verschickt alles, die Führungskräfte schweigen. Für das Team sieht das so aus, als stünden sie nicht dahinter.
-- **Nur Inhalte, keine Gründe.** Schulungstermine und Anleitungen ohne Erklärung, warum sich etwas ändert, beantworten die falsche Frage.
+- **Ein Absender für alles.** Das Projektteam verschickt alles, die Führungskräfte schweigen. Für das Team sieht das so aus, als stünden die Führungskräfte nicht dahinter.
+- **Nur Inhalte, keine Gründe.** Wer Schulungstermine und Anleitungen ohne Erklärung verschickt, warum sich etwas ändert, beantwortet die falsche Frage.
 - **Kein Rückkanal.** Wenn Fragen keinen Ort haben, landen sie in der Kaffeeküche und kommen als Gerücht zurück.
 - **Funkstille nach dem Go-live.** Nach dem Go-live fängt die schwierigste Phase erst an. Wer dann verstummt, überlässt die Deutung den Unzufriedenen.
 
-Für Salesforce-Programme mit regelmäßigen Releases gibt es eine eigene Form: Salesforce veröffentlicht drei saisonale Releases pro Jahr, und das Programm spielt zusätzlich eigene Änderungen ein. Nur was Prozesse, Oberflächen oder Verantwortlichkeiten eines Fachbereichs verändert, braucht eine kurze, gezielte Ankündigung. Wie das funktioniert, beschreibt Fabian Kramer in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
+Für Salesforce-Programme mit regelmäßigen Releases gibt es eine eigene Form: Salesforce veröffentlicht drei saisonale Releases pro Jahr, und das Programm spielt zusätzlich eigene Änderungen ein. Nur Änderungen, die Prozesse, Oberflächen oder Verantwortlichkeiten eines Fachbereichs verändern, brauchen eine kurze, gezielte Ankündigung. Wie das funktioniert, beschreibt Fabian Kramer in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
 
 ## Unterstützung lohnt sich bei vielen Gruppen und Ländern
 
-Bei einer Veränderung für ein Team reicht die Vorlage. Wenn viele Gruppen und Länder betroffen sind, wenn heikle Botschaften anstehen oder wenn Führungskräfte selbst noch unsicher sind, hilft ein Blick von außen, der Botschaften schärft und Führungskräfte vorbereitet. In Salesforce-Programmen arbeite ich dafür mit Fabian Kramer zusammen, siehe [Change Management Beratung für Salesforce](../../leistungen/change-management/) und [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
+Bei einer Veränderung für ein Team reicht die Vorlage. Wenn viele Gruppen und Länder betroffen sind, wenn heikle Botschaften anstehen oder wenn Führungskräfte selbst noch unsicher sind, hilft ein Blick von außen, der Botschaften schärft und Führungskräfte vorbereitet. In Salesforce-Programmen arbeite ich dafür mit Fabian Kramer zusammen. Mehr dazu finden Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/) und [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
 
 *Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.*
