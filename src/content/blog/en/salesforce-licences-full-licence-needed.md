@@ -109,7 +109,7 @@ In existing orgs the login history and recently edited records help. A user with
 
 For infrequent users, there is also a usage-based option: Salesforce sells [Platform logins](https://www.salesforce.com/platform/enterprise-app-development/pricing/) with roughly the same rights as Platform Starter. For approvers who log in a few times a year, compare this option with named licenses.
 
-Timing matters too. Salesforce's [fiscal year](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Fourth-Quarter-Fiscal-2026-Results/default.aspx) ends on 31 January. That can affect commercial timing, but discounts and bundle terms are account-specific. I would add roadmap products early only if ramp dates, reduction rights and expected usage improve the total contract value; otherwise they become shelfware.
+Timing matters too. Salesforce's [fiscal year](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Fourth-Quarter-Fiscal-2026-Results/default.aspx) ends on 31 January. That can affect commercial timing, but discounts and bundle terms are account-specific. I would add roadmap products early only if ramp dates, reduction rights and expected usage improve the total contract value; otherwise they become shelfware. What the Main Services Agreement says about notice, reductions and re-pricing is covered in [Salesforce renewal negotiation](../salesforce-renewal-negotiation/).
 
 ## When is the full license still right?
 
