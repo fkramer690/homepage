@@ -21,16 +21,16 @@ faq:
   - q: "What should an Agentforce business case contain?"
     a: "One clear process, the current volume and cost, a measurable target such as shorter handling time or more cases solved without escalation, the expected consumption costs and who owns the result on the business side."
   - q: "How important is data quality for AI agents?"
-    a: "Very important, but not sufficient on its own. An agent answers and acts based on CRM data, knowledge articles and connected systems, so duplicates, outdated records or contradictory articles raise the risk of wrong answers or actions. Retrieval, instructions, permissions, actions and testing decide reliability too."
+    a: "Very important, but not sufficient on its own. An agent answers and acts based on CRM data, knowledge articles and connected systems, so duplicates, outdated records or contradictory articles raise the risk of wrong answers or actions. Retrieval, instructions, permissions, actions and testing also determine reliability."
   - q: "Which use case is a good first Agentforce project?"
-    a: "A narrow, frequent and well-documented process with clear rules, for example answering standard service questions from maintained knowledge articles or preparing case summaries for service reps."
+    a: "A narrow, frequent and well-documented process with clear rules, for example answering standard service questions using maintained knowledge articles or preparing case summaries for service reps."
 ---
 
-Agentforce projects succeed when business value and data quality come first and the technology comes second. Most Salesforce customers in a recent survey have tried Agentforce, yet many projects never leave the pilot phase. In the projects I see today, the reason is less often the agent itself. It is a missing business case, data the agent can't trust and access rules nobody thought through. My own first Agentforce pilot was what we call a green banana in German: a product delivered before it was ripe. Today several Agentforce projects I am involved in are being implemented, and the difference lies largely in how they started.
+Agentforce projects succeed when business value and data quality come first and the technology comes second. Most Salesforce customers in a recent survey have tried Agentforce, yet many projects never leave the pilot phase. In the projects I see today, the agent itself is less often the problem. The bigger issues are a missing business case, data the agent can't trust and access rules nobody thought through. My own first Agentforce pilot was what we call a green banana in German: a product delivered before it was ripe. Today several Agentforce projects I am involved in are being implemented, and the difference lies largely in how they started.
 
 ## 85 percent tested or deployed, nearly half still in pilot
 
-The numbers from October 2026 show a split picture. An Oppenheimer survey of Salesforce customers, [reported by Salesforce Ben](https://www.salesforceben.com/85-of-customers-have-tried-agentforce-but-demand-hasnt-picked-up-why/), found that 85 percent of the customers who responded had tested or deployed Agentforce. It covers the customers who answered, not the whole customer base. In the same survey nearly half said they were still in the pilot or testing stage. Salesforce reported more than 29,000 Agentforce deals since launch as of January 31, 2026, without saying how many were paid; the last separate figure was more than 9,500 paid deals as of October 31, 2025.
+The October 2026 numbers show a mixed picture. An Oppenheimer survey of Salesforce customers, [reported by Salesforce Ben](https://www.salesforceben.com/85-of-customers-have-tried-agentforce-but-demand-hasnt-picked-up-why/), found that 85 percent of the customers who responded had tested or deployed Agentforce. The figure covers the customers who answered, not the whole customer base. In the same survey nearly half said they were still in the pilot or testing stage. Salesforce reported more than 29,000 Agentforce deals since launch as of January 31, 2026, without saying how many were paid; the last separate figure was more than 9,500 paid deals as of October 31, 2025.
 
 At the same time, demand for Agentforce skills is growing fast. According to the 10K talent report, also [covered by Salesforce Ben](https://www.salesforceben.com/agentforce-jobs-are-booming-while-projects-stall-in-pilot/), mentions of Agentforce in Salesforce job listings rose by 63 percent year on year, while overall Salesforce talent demand fell by 13 percent.
 
@@ -47,18 +47,18 @@ The first Agentforce pilot I was involved in was simply too early. The platform 
 Three conditions have to be in place before a business pilot with real users starts. A short technical spike can come earlier, precisely to find out what is missing:
 
 - **A measurable goal.** "Try out AI in service" is not a goal. Without a number to improve, nobody can decide whether the pilot was a success.
-- **Reliable data.** An agent reads knowledge articles and CRM records that were usually never maintained with an automated reader in mind. Duplicates and outdated content show up in the answers immediately.
-- **Clear ownership on the business side.** If IT runs the pilot alone and nobody in the department owns the result, the pilot ends as a demo.
+- **Reliable data.** An agent reads knowledge articles and CRM records that were usually never maintained for automated reading. Duplicates and outdated content show up in the answers immediately.
+- **Clear ownership on the business side.** If IT runs the pilot alone and nobody in the department owns the result, the pilot ends up as a demo.
 
-The projects that are now in implementation are built on these conditions, and they are moving.
+The projects now being implemented are built on these conditions, and they are progressing.
 
 ## Why does business value come first?
 
-An AI agent costs money in several ways: licenses or consumption credits, implementation, testing, maintenance and the time of the people who supervise it. Depending on the product, Salesforce charges per user, through Flex Credits, per conversation or resolution, or includes usage in certain editions and add-ons. Agent actions, prompts, Data 360 services, voice, test and sandbox runs can each consume units, and Salesforce has announced Flex Credit charges for agentic MCP and API calls; check the current rate card for each. That makes a clear business case more important, not less.
+An AI agent costs money in several ways: licenses or consumption credits, implementation, testing, maintenance and the time of the people who supervise it. Depending on the product, Salesforce charges per user, through Flex Credits, per conversation or resolution, or includes usage in certain editions and add-ons. Agent actions, prompts, Data 360 services, voice usage, test runs and sandbox runs can each consume units, and Salesforce has announced Flex Credit charges for agentic MCP and API calls; check the current rate card for each. That makes a clear business case more important, not less.
 
 A good Agentforce business case answers a few simple questions:
 
-1. **Which process?** One process, described concretely, for example "answering questions about delivery status from B2B customers".
+1. **Which process?** One process, described concretely, for example "answering B2B customers' questions about delivery status".
 2. **How big is it today?** Volume per month, average handling time, cost per case, error rate.
 3. **What should change?** One primary target number, for example 30 percent of requests answered without a service rep, or two minutes less handling time per case, plus guardrails such as escalation rate, reopened cases and cost per successful outcome, so that the agent does not trade quality for speed.
 4. **What does it cost?** Implementation, expected consumption including tests and Data 360, and the effort for maintaining knowledge and testing.
@@ -68,16 +68,16 @@ If a use case can't answer these questions, it is not ready for an agent. That i
 
 ## Why is data quality the second deciding factor?
 
-An agent answers and acts on the basis of what it can read: CRM records, knowledge articles, documents and data from connected systems. Poor or contradictory data raises the risk of a wrong answer or a wrong action, delivered with great confidence. Good data is necessary, not sufficient: retrieval, instructions, permissions and actions decide too.
+An agent answers and acts on the basis of what it can read: CRM records, knowledge articles, documents and data from connected systems. Poor or contradictory data raises the risk of a wrong answer or wrong action that is delivered with great confidence. Good data is necessary, but not sufficient: retrieval, instructions, permissions and actions also affect reliability.
 
 In practice I check these points before an agent goes live:
 
 - **Master data.** Are accounts, contacts and assets free of duplicates? Is it clear which record is the right one? An agent that picks the wrong account sends the wrong information to the wrong customer.
 - **Knowledge.** Are knowledge articles current, consistent and owned by someone? Two articles with contradictory return policies will produce contradictory answers.
 - **Process data.** Are statuses, dates and fields maintained reliably? If the delivery date in Salesforce is only updated once a week, the agent will give outdated answers.
-- **Access rights.** What may the agent see, and what may it show to whom? Sharing rules, field-level security and data classification must be right before an agent works with them. Which user context applies depends on the agent type: employee agents can run with the logged-in user's rights, while external service agents often run as a dedicated agent user. A customer ID passed in a context variable does not restrict record access by itself, so flows and actions must scope the data to the verified customer.
+- **Access rights.** What may the agent see, and what may it show to whom? Sharing rules, field-level security and data classification must be configured correctly before an agent works with them. Which user context applies depends on the agent type: employee agents can run with the logged-in user's rights, while external service agents often run as a dedicated agent user. A customer ID passed in a context variable does not restrict record access by itself, so flows and actions must scope the data to the verified customer.
 
-Salesforce is building more tooling for this, such as the Agent Context Engine, whose availability you should check before planning with it, which assembles governed context for agents from Data 360. I describe it in more detail in [the Agent Context Engine explained](../salesforce-agent-context-engine-explained/). But even the best context layer can only pass on what is in the data.
+Salesforce is building more tooling for this, such as the Agent Context Engine, which assembles governed context for agents from Data 360. Check its availability before planning with it. I describe it in more detail in [the Agent Context Engine explained](../salesforce-agent-context-engine-explained/). But even the best context layer can only pass on what the data contains.
 
 Cleaning up data is not glamorous work, and it is easy to push it to "later" or to someone else. In the projects that move forward, it is part of the project plan from the start.
 
