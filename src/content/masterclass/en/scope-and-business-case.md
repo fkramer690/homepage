@@ -14,7 +14,7 @@ takeaways:
   - "At list price Manufacturing Cloud Sales Core costs $275 per user and month and Sales Cloud Core $195. For 120 sales users that is $115,200 extra per year."
   - "Max costs $650 instead of $275 and brings 2.75 million instead of 500,000 Flex Credits per org and year plus the full Agentforce for Industries suite."
   - "Portal licenses, the Agentforce add-on, Channel Revenue Management and Connected Assets are not in the edition and belong in the calculation early."
-  - "Without volume agreements, dealer rebates or partner warranty claims, the industry license has no reason. Then I compare Sales Cloud plus a custom build."
+  - "Without volume agreements, dealer rebates or partner warranty claims, nothing justifies the industry license. Then I compare Sales Cloud plus a custom build."
 articles: [manufacturing-cloud-worth-it, manufacturing-cloud-feature-map, manufacturing-cloud-add-ons-costs, salesforce-editions-core-advanced-max, salesforce-licence-types]
 faq:
   - q: "What is Salesforce Manufacturing Cloud?"
@@ -22,7 +22,7 @@ faq:
   - q: "Is Agentforce Manufacturing the same as Manufacturing Cloud?"
     a: "Yes. The product and pricing pages say Manufacturing Cloud, for example Manufacturing Cloud Sales Core. Trailhead and the pricing page footnotes call the same product Agentforce Manufacturing."
   - q: "How much does Manufacturing Cloud cost?"
-    a: "According to the pricing page in October 2026, Sales Core and Service Core cost $275 per user and month each, Sales Max and Service Max $650 and Sales & Service Max $700, all on annual contracts. Two footnotes on Enterprise and Unlimited Edition contradict each other, so the binding price only shows up in the quote."
+    a: "According to the pricing page in October 2026, Sales Core and Service Core cost $275 per user and month each, Sales Max and Service Max $650 and Sales & Service Max $700, all on annual contracts. Two footnotes on Enterprise and Unlimited Edition contradict each other, so only the quote shows the binding price."
   - q: "Do all users need a Manufacturing Cloud license?"
     a: "Not automatically. I assign users by what they do in the system: agreements and forecasts, warranty claims, reading and approving. Whether a mixed license set is allowed in your org is something to get confirmed in writing in the quote."
   - q: "Does Manufacturing Cloud include a quoting system with a configurator?"
@@ -73,7 +73,7 @@ $115,200 | Premium per year for 120 sales users
 source: Manufacturing Cloud and Sales Cloud pricing pages, list prices October 2026
 ```
 
-One uncertainty belongs in every calculation. The pricing page has two footnotes that contradict each other. One says the prices are for Enterprise Edition and Unlimited costs $425. The other says they are for Unlimited Edition and Enterprise costs $275. Which price applies to your edition only shows up in the quote. On top of that, Salesforce [announced in September 2026](https://www.salesforce.com/in/news/?p=14535) that "new pricing for Agentforce Industry Editions will go into effect later this fall". The Manufacturing Cloud page already uses Core and Max, but its footnotes still speak of Enterprise and Unlimited. How the new editions differ is in [Salesforce editions Core, Advanced and Max](../../../blog/salesforce-editions-core-advanced-max/). If your renewal is due now, keep the option to switch editions once the industry prices are final.
+One uncertainty belongs in every calculation. The pricing page has two footnotes that contradict each other. One says the prices are for Enterprise Edition and Unlimited costs $425. The other says they are for Unlimited Edition and Enterprise costs $275. Only the quote shows which price applies to your edition. On top of that, Salesforce [announced in September 2026](https://www.salesforce.com/in/news/?p=14535) that "new pricing for Agentforce Industry Editions will go into effect later this fall". The Manufacturing Cloud page already uses Core and Max, but its footnotes still speak of Enterprise and Unlimited. How the new editions differ is in [Salesforce editions Core, Advanced and Max](../../../blog/salesforce-editions-core-advanced-max/). If your renewal is due now, keep the option to switch editions once the industry prices are final.
 
 ### Core or Max: what changes besides the price
 
@@ -89,9 +89,9 @@ The gap between Core and Max is large, and it buys more than agents. The pricing
 
 Flex Credits are the consumption currency Salesforce uses to bill agent actions, prompts and data processing. How far a pool goes is calculated in the chapter [costs and tokens](../../ai-salesforce/costs-and-tokens/) of the AI masterclass. The pools apply per org, regardless of the number of users.
 
-For manufacturers the call limits often matter more than the credits. Omnistudio builds guided processes, the Business Rules Engine evaluates rules, for example when approving warranty claims. If warranty, rebates and portal processes all run on these engines, 10,000 rule calls a month go quickly. In my view only a feature need that Core does not cover justifies Max. For extra credits alone, Max is too expensive.
+For manufacturers the call limits often matter more than the credits. Omnistudio builds guided processes, the Business Rules Engine evaluates rules, for example when approving warranty claims. If warranty, rebates and portal processes all run on these engines, 10,000 rule calls a month are used up quickly. In my view only a feature need that Core does not cover justifies Max. For extra credits alone, Max is too expensive.
 
-## Add-ons that show up in the quote later
+## Add-ons that appear late in the quote
 
 The edition is the first line of a quote. The following add-ons are on the add-ons page and belong in the calculation from the start, not in the last round of negotiation:
 
@@ -111,7 +111,7 @@ What this adds up to in an assumed scenario with 150 users and 400 dealers is ca
 A quote from a partner or account team often assumes that every user gets the industry license. Instead, I build a license forecast by activity:
 
 1. **Sales with agreements and forecasts** needs Sales Core or Sales Max.
-2. **Back office for warranty claims and recalls** works with service features, so Service Core or Service Max. Anyone who needs both sides ends up on Sales & Service Max at $700.
+2. **Back office for warranty claims and recalls** works with service features, so Service Core or Service Max. Users who work on both sides need Sales & Service Max at $700.
 3. **Reading, approving, reporting** often needs no full license. Whether a Platform license may see the objects involved, a sales agreement for example, has to be clarified before you buy. The limits and prices of Platform licenses are in [Salesforce licenses: does everyone need a full one?](../../../blog/salesforce-licences-full-licence-needed/).
 4. **Dealers and customers** get portal licenses, member licenses for frequent use, login licenses for occasional use.
 5. **Interfaces** to the ERP run on integration users without a user interface.
@@ -132,7 +132,7 @@ The third case: the real problem sits in the quote, with many variants and confi
 
 Only if another feature carries the premium on its own. A machine builder often sells individual machines in project business, without recurring quantities. Then the main reason is gone, and three candidates remain:
 
-- **Warranty through dealers.** Claims come in from outside through a portal and are checked by hand today. Warranty lifecycle management with approval rules can carry the case. It is a service feature, so the users need Service Core.
+- **Warranty through dealers.** Claims arrive through a portal and are checked by hand today. Warranty lifecycle management with approval rules can carry the case. It is a service feature, so the users need Service Core.
 - **Recalls and retrofits** across many delivered machines. Product service campaigns need a maintained installed base with serial numbers.
 - **Dealer rebates** that are calculated in spreadsheets today.
 
@@ -144,7 +144,7 @@ Choosing between an industry cloud and a custom build is a make-or-buy question 
 
 1. **Licenses per user group**, with expected growth and the add-ons on the roadmap.
 2. **Implementation** by internal teams and partners. An industry cloud also has to be configured, integrated and tested.
-3. **Maintenance and releases.** Custom code causes effort with each of the three Salesforce releases a year. Salesforce develops a standard feature further.
+3. **Maintenance and releases.** Custom code needs work with each of the three Salesforce releases a year. Salesforce develops a standard feature further.
 4. **Follow-up costs**, such as a later switch or add-ons that only become necessary in year three.
 
 Worked example: a component maker with 120 sales users wants to see plan against actuals per customer and product. The list prices come from the pricing pages, all other numbers are assumptions.
@@ -156,7 +156,7 @@ Worked example: a component maker with 120 sales users wants to see plan against
 | Maintenance and releases | $50,000 | $150,000 |
 | **Total** | **$706,000** | **$300,000** |
 
-For a lean plan against actuals view the custom build wins clearly. The picture turns once renewals, approvals, forecasts, dealer access and rebates are added. Each of them raises implementation and maintenance of the custom build, while the license premium stays the same. So calculate the feature scope you will need in three years, not just the first step.
+For a lean plan against actuals view the custom build wins clearly. The picture changes once renewals, approvals, forecasts, dealer access and rebates are added. Each of them raises implementation and maintenance of the custom build, while the license premium stays the same. So calculate the feature scope you will need in three years, not just the first step.
 
 The result belongs in a decision log: which features were checked, which numbers applied, who decided. After a partner change it is often the only document that explains why the org looks the way it does. How I build these calculations is described under [make-or-buy and license forecasts](../../../services/make-or-buy-licences/); fitting the result into the overall architecture is part of [Salesforce architecture](../../../services/salesforce-architecture/).
 

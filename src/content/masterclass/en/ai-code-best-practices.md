@@ -24,7 +24,7 @@ faq:
 draft: false
 ---
 
-For AI-generated Salesforce code, every major tool vendor recommends the same pattern in 2026: a short rules file in the repository, a plan before the code, and checks that do not depend on the model's goodwill. Salesforce adds typical defects that a machine can mostly find: queries in loops, missing field and object permissions, tests without real asserts, invented field names. And API 67.0 changes the permission defaults per class. As the client you do not need to read code. You should own the rules file, the pipeline and org access, and no agent touches production.
+For AI-generated Salesforce code, every major tool vendor recommends the same pattern in 2026: a short rules file in the repository, a plan before the code, and checks that do not depend on the model's goodwill. On Salesforce there are also typical defects that tools can mostly find: queries in loops, missing field and object permissions, tests without real asserts, invented field names. On top of that, API 67.0 changes the permission defaults per class. As the client you do not need to read code. You should own the rules file, the pipeline and org access, and no agent should have access to production.
 
 ## What does the evidence say about AI-generated code?
 
@@ -148,9 +148,9 @@ Rules file
 Plan
   The agent writes a plan first, and a developer approves it.
 Test
-  The plan includes raising an existing selector class from 62.0 to 67.0, so the rules file requires a `runAs` test. The test as a restricted dealer user shows that other dealers' assets disappear, which is intended, but so does the parts master data, which is not. Caught in the validation deployment instead of in the portal.
+  The plan includes raising an existing selector class from 62.0 to 67.0, so the rules file requires a `runAs` test. The test as a restricted dealer user shows that other dealers' assets disappear, which is intended, but so does the parts master data, which is not. The problem surfaces in the validation deployment instead of in the portal.
 Code Analyzer
-  Code Analyzer reports a query inside a loop over 200 order lines, and the pull request goes back.
+  Code Analyzer reports a query inside a loop over 200 order lines, and the pull request is sent back.
 Review
   The reviewer checks the sharing model, not the formatting.
 ```

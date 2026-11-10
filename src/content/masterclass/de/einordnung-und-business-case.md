@@ -13,7 +13,7 @@ takeaways:
   - "Manufacturing Cloud ist eine Branchenlösung auf Sales Cloud und Service Cloud mit eigenem Datenmodell. Trailhead nennt sie Agentforce Manufacturing."
   - "Laut Preisliste kostet Sales Core 275 statt 195 Dollar pro Nutzer und Monat. Bei 120 Vertriebsnutzern sind das 115.200 Dollar Aufschlag im Jahr."
   - "Max kostet 650 statt 275 Dollar und bringt 2,75 Millionen statt 500.000 Flex Credits pro Org und Jahr sowie die volle Agentforce-for-Industries-Suite."
-  - "Portallizenzen, das Agentforce-Add-on, Channel Revenue Management und Connected Assets stehen nicht in der Edition und kommen oft erst spät ins Angebot."
+  - "Portallizenzen, das Agentforce-Add-on, Channel Revenue Management und Connected Assets stehen nicht in der Edition und erscheinen oft erst spät im Angebot."
   - "Ohne Rahmenverträge, Händlerboni oder Garantie über Partner fehlt der Grund für die Branchenlizenz. Dann rechne ich Sales Cloud mit Eigenbau dagegen."
 articles: [manufacturing-cloud-worth-it, manufacturing-cloud-feature-map, manufacturing-cloud-add-ons-costs, salesforce-editions-core-advanced-max, salesforce-licence-types]
 faq:
@@ -34,7 +34,7 @@ Salesforce Manufacturing Cloud lohnt sich, wenn Ihr Geschäft auf Rahmenverträg
 
 ## Was ist Salesforce Manufacturing Cloud?
 
-Manufacturing Cloud ist eine Industry Cloud, also ein Paket für eine Branche, das Salesforce auf Sales Cloud und Service Cloud setzt. Es bringt ein eigenes Datenmodell für Hersteller und Funktionen mit, die die Standardprodukte nicht haben. Trailhead beschreibt es im [Quick Look zu Agentforce Manufacturing](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) als Erweiterung der Kernprodukte Agentforce Sales und Agentforce Service, so heißen dort Sales Cloud und Service Cloud.
+Manufacturing Cloud ist eine Industry Cloud, also ein Paket für eine Branche, das Salesforce auf Sales Cloud und Service Cloud aufsetzt. Es bringt ein eigenes Datenmodell für Hersteller und Funktionen mit, die die Standardprodukte nicht haben. Trailhead beschreibt es im [Quick Look zu Agentforce Manufacturing](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) als Erweiterung der Kernprodukte Agentforce Sales und Agentforce Service, so heißen dort Sales Cloud und Service Cloud.
 
 Damit ist auch die Namensfrage beantwortet. Die [Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) verkauft „Manufacturing Cloud Sales Core“, ihre Fußnoten sprechen von „Agentforce Manufacturing for Sales“. Es ist ein Produkt mit zwei Namen. Ich schreibe in dieser Masterclass Manufacturing Cloud, weil das Angebot so heißen wird. Wichtiger ist eine Folge des neuen Namens: Nicht jede Funktion mit „Agentforce“ im Namen ist ein Agent. Fragen Sie bei jeder nach Subagent, Aktion und Lizenz.
 
@@ -93,7 +93,7 @@ Flex Credits sind die Verbrauchswährung, in der Salesforce Agentenaktionen, Pro
 
 Für Hersteller zählen die Aufrufgrenzen oft mehr als die Credits. Omnistudio baut geführte Prozesse, die Business Rules Engine prüft Regeln, etwa bei der Freigabe von Garantieansprüchen. Laufen Garantie, Boni und Portalprozesse auf diesen Engines, sind 10.000 Regelaufrufe im Monat schnell erreicht. Für Max spricht aus meiner Sicht nur ein Bedarf an Funktionen, den Core nicht abdeckt. Für mehr Credits allein ist Max zu teuer.
 
-## Add-ons, die später ins Angebot kommen
+## Add-ons, die erst spät im Angebot auftauchen
 
 Die Edition ist die erste Zeile eines Angebots. Die folgenden Add-ons stehen auf der Add-on-Seite und gehören von Anfang an in die Kalkulation, nicht erst in die letzte Angebotsrunde:
 
@@ -110,16 +110,16 @@ Wie viel das in einem angenommenen Szenario mit 150 Nutzern und 400 Händlern au
 
 ## Wer braucht welche Lizenz?
 
-Das Angebot eines Partners oder Account Teams geht oft davon aus, dass alle Nutzer die Branchenlizenz bekommen. Ich baue stattdessen eine Lizenzprognose nach Tätigkeit:
+Das Angebot eines Partners oder Account Teams geht oft davon aus, dass alle Nutzer die Branchenlizenz erhalten. Ich baue stattdessen eine Lizenzprognose nach Tätigkeit:
 
 1. **Vertrieb mit Rahmenverträgen und Prognosen** braucht Sales Core oder Sales Max.
-2. **Sachbearbeitung für Garantieansprüche und Rückrufe** arbeitet mit Servicefunktionen, also Service Core oder Service Max. Wer beide Seiten braucht, landet bei Sales & Service Max für 700 Dollar.
+2. **Sachbearbeitung für Garantieansprüche und Rückrufe** arbeitet mit Servicefunktionen, also Service Core oder Service Max. Wer auf beiden Seiten arbeitet, benötigt Sales & Service Max für 700 Dollar.
 3. **Lesen, Freigeben, Berichte** braucht oft keine volle Lizenz. Ob eine Platform-Lizenz die nötigen Objekte sehen darf, etwa einen Rahmenvertrag, klären Sie vor dem Kauf. Grenzen und Preise der Platform-Lizenzen stehen in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../../../blog/salesforce-lizenzen-volle-lizenz/).
-4. **Händler und Kunden** bekommen Portallizenzen, Mitglied bei häufiger Nutzung, Login bei seltener.
+4. **Händler und Kunden** erhalten Portallizenzen, Mitglied bei häufiger Nutzung, Login bei seltener.
 5. **Schnittstellen** zum ERP laufen über Integrationsnutzer ohne Oberfläche.
 
 ```hinweis offen
-Welche Funktionen ein Sales-Core-Nutzer aus dem Servicebereich nutzen darf, steht nicht auf der Preisseite. Ob ein gemischter Bestand aus Core, Max und Sales Cloud in einer Org zulässig ist, ebenfalls nicht. Beides lassen Sie sich schriftlich bestätigen, bevor die Lizenzzahl in den Vertrag geht.
+Welche Funktionen ein Sales-Core-Nutzer aus dem Servicebereich nutzen darf, steht nicht auf der Preisseite. Ob ein gemischter Bestand aus Core, Max und Sales Cloud in einer Org zulässig ist, ebenfalls nicht. Beides lassen Sie sich schriftlich bestätigen, bevor die Lizenzzahl in den Vertrag aufgenommen wird.
 ```
 
 ## Wann ist Manufacturing Cloud die falsche Wahl?
@@ -134,7 +134,7 @@ Der dritte Fall: Das eigentliche Problem liegt im Angebot, mit vielen Varianten 
 
 Nur, wenn eine andere Funktion den Aufschlag allein trägt. Ein Maschinenbauer verkauft oft Einzelanlagen im Projektgeschäft, ohne wiederkehrende Mengen. Dann fällt der Hauptgrund weg, und drei Kandidaten bleiben:
 
-- **Garantie über Händler.** Ansprüche kommen von außen über ein Portal und werden heute von Hand geprüft. Warranty Lifecycle Management mit Regeln für die Freigabe kann das tragen. Das ist eine Servicefunktion, die Nutzer brauchen also Service Core.
+- **Garantie über Händler.** Ansprüche gehen über ein Portal ein und werden heute von Hand geprüft. Warranty Lifecycle Management mit Regeln für die Freigabe kann das tragen. Das ist eine Servicefunktion, die Nutzer brauchen also Service Core.
 - **Rückrufe und Nachrüstungen** über viele ausgelieferte Maschinen. Product Service Campaigns setzen eine gepflegte installierte Basis mit Seriennummern voraus.
 - **Händlerboni**, die heute in Tabellen berechnet werden.
 
