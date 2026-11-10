@@ -16,9 +16,9 @@ takeaways:
 articles: [salesforce-dx-mcp-server-end-of-life, mcp-explained-salesforce-it-leads, hosted-mcp-servers-data-access, flex-credits-agentforce-costs]
 faq:
   - q: "What happens to the Salesforce DX MCP Server on 2 November 2026?"
-    a: "According to the maintainers' notice (issue 46 in the forcedotcom/mcp repository), the local server then gets no more maintenance, support or releases. The npm package is marked deprecated but stays installable. Pin version 0.30.15 and plan the move to skills, the plugin and Hosted MCP."
+    a: "According to the maintainers' notice (issue 46 in the forcedotcom/mcp repository), the local server will then receive no more maintenance, support or releases. The npm package is marked deprecated but stays installable. Pin version 0.30.15 and plan the move to skills, the plugin and Hosted MCP."
   - q: "Can an AI agent read all Salesforce data through Hosted MCP?"
-    a: "No. Every call runs with the object permissions, field-level security and sharing of the user who authorised the connection. The agent sees exactly what that person sees, and every action is attributed to them in the audit trail."
+    a: "No. Every call runs with the object permissions, field-level security and sharing of the user who authorized the connection. The agent sees exactly what that person sees, and every action is attributed to them in the audit trail."
   - q: "Do MCP calls to Salesforce cost extra?"
     a: "Salesforce says Hosted MCP Servers are intended only for customers with Flex Credits and that usage may be billed. The Headless Platform Interaction rate is not published yet; according to SalesforceBen, customers get 30 days' notice before metering starts."
 draft: false
@@ -30,9 +30,9 @@ MCP (Model Context Protocol) is the standard way AI tools such as Claude, ChatGP
 
 MCP is an open protocol that lets an AI tool call other systems as tools: read records, run a query, start an action. The server describes which tools it offers; the client (Claude, ChatGPT, Cursor or Agentforce) decides when to use which. Since 2025 Salesforce has added MCP almost everywhere. For architecture work it helps to separate three directions:
 
-1. **Coding agent to project and org.** A developer at your partner works with Claude Code, Codex, Cursor or Agentforce Vibes, and the agent reads metadata, deploys and runs tests. This is where the local DX MCP Server and the MCP servers in Salesforce's Claude Code plugin sit.
-2. **External AI to your data.** Someone in your service back office asks Claude about the open cases for a machine. This is where the Hosted MCP Servers and "Salesforce in Claude" sit.
-3. **Agentforce to other systems.** An Agentforce agent calls a tool outside Salesforce, such as an order lookup in the ERP. This is where Agentforce's MCP client and the route through MuleSoft and the API Catalog sit.
+1. **Coding agent to project and org.** A developer at your partner works with Claude Code, Codex, Cursor or Agentforce Vibes, and the agent reads metadata, deploys and runs tests. This is where the local DX MCP Server and the MCP servers in Salesforce's Claude Code plugin come in.
+2. **External AI to your data.** Someone in your service back office asks Claude about the open cases for a machine. This is where the Hosted MCP Servers and "Salesforce in Claude" come in.
+3. **Agentforce to other systems.** An Agentforce agent calls a tool outside Salesforce, such as an order lookup in the ERP. This is where Agentforce's MCP client and the route through MuleSoft and the API Catalog come in.
 
 Interfaces without MCP still matter: the Agent API, which lets other systems call an Agentforce agent, the Models API for LLM calls from Apex, and the sf CLI, which runs deployments in the pipeline. MCP replaces none of them. [Chapter 1](../terms-and-map/) sorts out the terms, and [MCP and Salesforce explained for IT leads](../../../blog/mcp-salesforce-explained-for-it-leads/) covers the decisions that sit with IT.
 
@@ -67,7 +67,7 @@ As the client, the question that matters most is which permissions the old serve
 title: How the local DX MCP Server reaches orgs
 According to the [Salesforce documentation](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_mcp.htm), it reads existing encrypted auth files and only reaches orgs allowlisted at start-up.
 
-- In the [README](https://github.com/salesforcecli/mcp), `ALLOW_ALL_ORGS` grants access to all authorised orgs, production included, and Salesforce advises using it with caution.
+- In the [README](https://github.com/salesforcecli/mcp), `ALLOW_ALL_ORGS` grants access to all authorized orgs, production included, and Salesforce advises using it with caution.
 - `DEFAULT_TARGET_ORG` is resolved again on every tool call: if the developer switches their default org, the agent silently works in the other one.
 ```
 
@@ -95,7 +95,7 @@ The security model is strict, which works in manufacturers' favor. From the [sec
 | Topic | Rule |
 |---|---|
 | Activation | Servers are off by default and have to be enabled deliberately. |
-| Permissions | Every tool call runs with the object permissions, field-level security and sharing rules of the user who authorised the connection, and is attributed to that user in the audit trail. |
+| Permissions | Every tool call runs with the object permissions, field-level security and sharing rules of the user who authorized the connection, and is attributed to that user in the audit trail. |
 | User context | There are no service accounts, no machine-to-machine flows and no operation outside a user context. |
 | Access | External Client Apps can be restricted to profiles and permission sets. |
 | Logging | MCP traffic can be isolated in the API logs with `API_CLIENT_CATEGORY = SALESFORCE_HOSTED_MCP`. |
@@ -127,9 +127,9 @@ This is how I would approach it:
 
 | Step | What I would do |
 |---|---|
-| Partner first | Before 2 November, inventory the DX MCP entries, pin 0.30.15 and switch the sandboxes to the plugin and skills. No agent gets a production org. |
+| Partner first | Before 2 November, inventory the DX MCP entries, pin 0.30.15 and switch the sandboxes to the plugin and skills. No agent is given access to a production org. |
 | Start read-only | Enable only `sobject-reads`, restrict the External Client App to a dedicated permission set, test in a sandbox first. For serial number lookups, use a Named Query instead of free SOQL. |
-| ERP stays deterministic | Order status and delivery dates from SAP come through a MuleSoft API in the API Catalog, not from a model interpreting tables. The route is described in [Agentforce and SAP order status](../../../blog/agentforce-sap-order-status-mulesoft/). |
+| ERP stays deterministic | Order status and delivery dates from SAP are retrieved through a MuleSoft API in the API Catalog, not from a model interpreting tables. The route is described in [Agentforce and SAP order status](../../../blog/agentforce-sap-order-status-mulesoft/). |
 | Estimate volume | Assume 25 people, 20 questions a day, four tool calls per question and 21 working days: that is 42,000 calls a month. If every successful call counts, which is my assumption today, this is the number you multiply by the rate once Salesforce publishes it. |
 | Settle data protection | The contract with Anthropic and sign-off from data protection and the works council come before the start, because in my reading the Trust Layer does not apply here. |
 
@@ -139,8 +139,8 @@ Salesforce puts the setup at under 30 minutes. The real work is in five decision
 
 | Decision | Question |
 |---|---|
-| Servers | Which servers get enabled, and who may enable new ones? |
-| Users | Which users get access, through which permission set? |
+| Servers | Which servers are enabled, and who may enable new ones? |
+| Users | Which users are given access, through which permission set? |
 | Data | Which data is readable, which is writable, and where does a Named Query do the job? |
 | Models and contracts | Which are approved: Claude, ChatGPT, a model through a cloud provider in the EU? |
 | Budget | Who pays for Headless Platform Interactions, the business unit or IT? |
