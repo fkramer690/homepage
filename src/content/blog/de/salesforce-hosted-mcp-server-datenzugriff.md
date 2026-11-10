@@ -11,13 +11,13 @@ categories: [ai]
 tags: [MCP, Hosted MCP, Datenschutz, Einstein Trust Layer, Claude, Maschinenbau]
 takeaways:
   - "Heute läuft jeder Aufruf als der Benutzer, der die Verbindung autorisiert hat, mit seinen Objekt- und Feldrechten und Freigaben; keine Service Accounts."
-  - "Was jemand per API abrufen darf, kann ein externes Modell erreichen. Soll Claude weniger sehen, braucht es Custom Server statt sObject-Server."
-  - "Starten Sie mit dem Server sobject-reads in einer Sandbox; er schließt Änderungen an Datensätzen aus, aber nicht, dass Daten über den KI-Client abfließen."
+  - "Was jemand per API abrufen darf, kann auch ein externes Modell abrufen. Soll Claude weniger sehen, braucht es Custom Server statt sObject-Server."
+  - "Starten Sie mit dem Server sobject-reads in einer Sandbox; er verhindert Änderungen an Datensätzen, aber nicht, dass Daten über den KI-Client abfließen."
   - "Nach meiner Einschätzung schützt der Einstein Trust Layer keine Datensätze, die ein externes Modell über die sObject-Server von Hosted MCP liest."
   - "Begrenzen Sie per Permission Set, wer die External Client App nutzen darf, halten Sie Admins heraus und klären Sie vorab den KI-Vertrag."
 faq:
   - q: "Kann Claude über Hosted MCP alle unsere Salesforce-Daten lesen?"
-    a: "Nein. Claude kann lesen, worauf der Benutzer zugreifen darf, der die Verbindung autorisiert hat, denn jeder Aufruf läuft mit dessen Objektrechten, Feldrechten und Freigaberegeln. Das kann mehr sein, als seine Seitenlayouts zeigen. Ist dieser Benutzer Administrator, kann es fast die ganze Org sein."
+    a: "Nein. Claude kann lesen, worauf der Benutzer zugreifen darf, der die Verbindung autorisiert hat, denn jeder Aufruf läuft mit dessen Objektrechten, Feldrechten und Freigaberegeln. Das kann mehr sein, als die Seitenlayouts ihm anzeigen. Ist dieser Benutzer Administrator, kann Claude fast die ganze Org lesen."
   - q: "Maskiert der Einstein Trust Layer Daten, die Claude über MCP liest?"
     a: "Das sagt Salesforce nicht. Der Trust Layer ist für LLM-Aufrufe dokumentiert, die Salesforce selbst macht, etwa über die Models API, Prompt Templates oder Agentforce. Liest ein externer Client Datensätze über die sObject-Server, verarbeitet sein eigenes Modell die Ergebnisse; ich gehe davon aus, dass Maskierung und die Zero-Data-Retention-Vereinbarungen von Salesforce dann nicht greifen und Ihr KI-Vertrag zählt. Ein Custom MCP Tool, das in Salesforce ein Prompt Template aufruft, ist ein anderer Fall."
   - q: "Können wir einen nächtlichen KI-Agenten über Hosted MCP betreiben?"
@@ -29,11 +29,11 @@ faq:
 draft: false
 ---
 
-Über die Hosted MCP Server von Salesforce liest ein KI-Client wie Claude oder ChatGPT, worauf der Benutzer per API zugreifen darf, der die Verbindung autorisiert hat. Auf der Salesforce-Seite ist das sauber gelöst: OAuth mit PKCE und jeder Aufruf wird unter dem Namen einer Person protokolliert. Angekündigte Agentenidentitäten werden Teile davon ändern. Die Schwachstelle liegt hinter dem Aufruf: Sobald die Datensätze beim externen Modell ankommen, schützt sie nach meiner Einschätzung der [Einstein Trust Layer](../einstein-trust-layer-was-er-schuetzt/) nicht mehr, und Ihr Vertrag mit dem KI-Anbieter entscheidet. Ich würde mit sobject-reads in einer Sandbox starten, mit einem Permission Set, das die Verbindungsberechtigten begrenzt, und einem geprüften KI-Vertrag.
+Über die Hosted MCP Server von Salesforce liest ein KI-Client wie Claude oder ChatGPT, worauf der Benutzer, der die Verbindung autorisiert hat, per API zugreifen darf. Auf der Salesforce-Seite ist das sauber gelöst: OAuth mit PKCE und jeder Aufruf wird unter dem Namen einer Person protokolliert. Angekündigte Agentenidentitäten werden Teile dieses Modells ändern. Die Schwachstelle liegt hinter dem Aufruf: Sobald die Datensätze beim externen Modell ankommen, schützt sie nach meiner Einschätzung der [Einstein Trust Layer](../einstein-trust-layer-was-er-schuetzt/) nicht mehr, und Ihr Vertrag mit dem KI-Anbieter entscheidet. Ich würde mit sobject-reads in einer Sandbox starten, mit einem Permission Set, das den Kreis der Verbindungsberechtigten begrenzt, und mit einem geprüften KI-Vertrag.
 
 ## Wie entscheiden Hosted MCP Server, wer was sieht?
 
-Salesforce hat die Hosted MCP Server [am 29. April 2026 allgemein verfügbar gemacht](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available), für jede Org ab Enterprise Edition. MCP (Model Context Protocol) ist der offene Standard, über den ein KI-Client Tools in einem anderen System aufruft; die Grundlagen stehen in [MCP und Salesforce, erklärt für die IT-Leitung](../mcp-salesforce-erklaert-it-leitung/). Die Server sind aus, bis ein Administrator sie aktiviert. Die [Server-Referenz](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html) nennt unter anderem vier sObject-Server (All, Reads, Mutations, Deletes), Data 360, Tableau Next, Content-Server und mehrere Beta-Server; die aktuelle Liste steht in der Referenz. Salesforce sieht Hosted MCP für Kunden mit Flex Credits vor, und die Nutzung kann abgerechnet werden.
+Salesforce hat die Hosted MCP Server [am 29. April 2026 allgemein verfügbar gemacht](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available), für jede Org ab Enterprise Edition. MCP (Model Context Protocol) ist der offene Standard, über den ein KI-Client Tools in einem anderen System aufruft; die Grundlagen stehen in [MCP und Salesforce, erklärt für die IT-Leitung](../mcp-salesforce-erklaert-it-leitung/). Die Server sind deaktiviert, bis ein Administrator sie aktiviert. Die [Server-Referenz](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html) nennt unter anderem vier sObject-Server (All, Reads, Mutations, Deletes), Data 360, Tableau Next, Content-Server und mehrere Beta-Server; die aktuelle Liste steht in der Referenz. Salesforce sieht Hosted MCP für Kunden mit Flex Credits vor, und die Nutzung kann abgerechnet werden.
 
 Das Zugriffsmodell beschreiben die [Security Best Practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html):
 
@@ -46,7 +46,7 @@ Das Zugriffsmodell beschreiben die [Security Best Practices](https://developer.s
 titel: Welche Scopes fordert der KI-Client an?
 Die [offizielle Anleitung für Claude](https://developer.salesforce.com/blogs/2026/05/connect-claude-with-salesforce-hosted-mcp-servers) fordert die Scopes `refresh_token, offline_access` an, beschriftet mit „Perform requests at any time“. Nach einer Anmeldung arbeitet der Client weiter, bis das Token widerrufen wird oder abläuft. Laut [Security Guide](https://developer.salesforce.com/blogs/2026/06/how-to-secure-salesforce-hosted-mcp-servers) gilt das Standard-Token ein Jahr, verkürzen Sie deshalb die Refresh-Token-Richtlinie in Produktion.
 
-Positiv: Der Scope `mcp_api` gibt laut GA-Ankündigung Zugriff auf MCP, „but not our existing REST APIs“. Ein Token, das aus einem MCP-Client gestohlen wird, öffnet weniger als ein klassisches API-Token.
+Positiv: Der Scope `mcp_api` gibt laut GA-Ankündigung Zugriff auf MCP, „but not our existing REST APIs“. Ein Token, das aus einem MCP-Client gestohlen wird, eröffnet weniger Zugriff als ein klassisches API-Token.
 ```
 
 ## Rechte gelten pro Person, nicht pro Kanal
@@ -57,9 +57,9 @@ Feldrechte hängen am Benutzer, nicht am Kanal. Dürfen Ihre Vertriebsmitarbeite
 
 Soll ein externes Modell weniger sehen als die Person, helfen die Standard-sObject-Server nicht, denn ihre Tools lassen sich nicht ändern. Laut [Security Guide](https://developer.salesforce.com/blogs/2026/06/how-to-secure-salesforce-hosted-mcp-servers) können Sie eine External Client App außerdem nicht auf einen bestimmten MCP-Server beschränken: Wer sich verbinden darf, erreicht jeden von Ihnen aktivierten Server. Eingrenzen bedeutet deshalb, für diese Gruppe nur die engeren Server zu aktivieren. Drei Wege helfen:
 
-- **Named Queries.** Ein Admin gibt eine vordefinierte, parametrisierte SOQL-Abfrage als API frei, angelegt im Setup oder in VS Code laut [REST-API-Handbuch](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_named_query_intro.htm). Eine Abfrage „offene Fälle zur Seriennummer X“ mit fünf Feldern ersetzt freies SOQL, solange `sobject-reads` nicht daneben aktiviert ist.
+- **Named Queries.** Ein Admin gibt eine vordefinierte, parametrisierte SOQL-Abfrage als API frei, angelegt im Setup oder in VS Code laut [REST-API-Handbuch](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_named_query_intro.htm). Eine Abfrage „offene Fälle zur Seriennummer X“ mit fünf Feldern ersetzt freies SOQL, solange `sobject-reads` nicht parallel aktiviert ist.
 - **Custom Server.** Flows, Invocable Apex, Apex REST und Endpunkte aus dem API Catalog lassen sich zu einem [Custom Server](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/custom-servers.html) bündeln. Salesforce empfiehlt fokussierte Server pro Persona, weil ein KI-Client „beyond a few dozen tools“ das richtige Tool schlechter findet. Ein Flow, der eine Händlerübersicht ohne Preisfelder liefert, beantwortet die Frage und verbirgt den Rest.
-- **Eigene Profile.** Salesforce bindet im eigenen Beispiel einen Server für Datenpflege an ein Profil, als das sich nur Data Stewards anmelden können. Das sind weiterhin namentlich bekannte Personen, keine gemeinsam genutzten technischen Benutzer, die Salesforce als Anti-Pattern bezeichnet.
+- **Eigene Profile.** Salesforce bindet im eigenen Beispiel einen Server für Datenpflege an ein Profil, das nur Data Stewards verwenden können. Das sind weiterhin namentlich bekannte Personen, keine gemeinsam genutzten technischen Benutzer, die Salesforce als Anti-Pattern bezeichnet.
 
 Custom Server kosten Aufwand, senken aber die Aufrufe pro Frage. Das wird zählen: Salesforce plant, jeden erfolgreichen Aufruf eines registrierten Agenten als Headless Platform Interaction in Flex Credits zu messen. Der Preis ist weiterhin als TBA aufgeführt, und vor Beginn der Messung gilt eine Ankündigungsfrist von 30 Tagen, siehe [MCP-Zugriffe auf Salesforce als Budgetrisiko](../flex-credits-agentforce-kosten-pro-aktion/).
 
@@ -77,7 +77,7 @@ Salesforce hat diesen Fall nicht dokumentiert; was folgt, ist meine Lesart, kein
 
 Die [Dokumentation zum Trust Layer](https://developer.salesforce.com/docs/ai/agentforce/guide/trust.html) nennt Schutzfunktionen „when interfacing with LLMs“: Grounding, Maskierung sensibler Daten, Toxizitätserkennung, Audit Trail und Zero-Data-Retention-Vereinbarungen mit LLM-Partnern. Trailhead beschreibt [den Weg](https://trailhead.salesforce.com/content/learn/modules/the-einstein-trust-layer/follow-the-response-journey): Personenbezogene Daten werden maskiert, bevor der Prompt Salesforce verlässt, er passiert das Secure LLM Gateway, und „no customer data including the prompt text and generated responses are stored outside of Salesforce“. Alle Aufrufe der [Models API](https://developer.salesforce.com/docs/ai/agentforce/guide/models-api.html) laufen durch den Trust Layer, und wenn Agentforce der MCP-Client ist, [sagt Trailhead](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce) Trust Layer und Zero Data Retention ebenfalls zu.
 
-Hosted MCP dreht die Richtung um. Claude, ChatGPT oder Cursor ist der Client und bringt sein eigenes Modell mit. Salesforce prüft Token und Rechte, führt die Abfrage aus und gibt Datensätze zurück, die der Client dann in einen Prompt für sein Modell packt. Salesforce macht auf diesem Weg keinen LLM-Aufruf. Es gibt also keinen Gateway-Schritt, in dem Maskierung greifen könnte. Die Zero-Data-Retention-Vereinbarungen von Salesforce gelten für die Aufrufe, die Salesforce an seine LLM-Partner richtet. Sie gelten nicht automatisch für ein Modell, das Sie selbst lizenzieren. Die Dokumente passen zu dieser Lesart: Übersicht, Security-Seite, GA-Ankündigung und Claude-Anleitung behandeln Anmeldung, Rechte und Protokollierung, keine erwähnt den Trust Layer.
+Hosted MCP dreht die Richtung um. Claude, ChatGPT oder Cursor ist jeweils der Client und bringt das eigene Modell mit. Salesforce prüft Token und Rechte, führt die Abfrage aus und gibt Datensätze zurück, die der Client dann in einen Prompt für sein Modell packt. Salesforce macht auf diesem Weg keinen LLM-Aufruf. Es gibt also keinen Gateway-Schritt, in dem Maskierung greifen könnte. Die Zero-Data-Retention-Vereinbarungen von Salesforce gelten für die Aufrufe, die Salesforce an seine LLM-Partner richtet. Sie gelten nicht automatisch für ein Modell, das Sie selbst lizenzieren. Die Dokumente passen zu dieser Lesart: Übersicht, Security-Seite, GA-Ankündigung und Claude-Anleitung behandeln Anmeldung, Rechte und Protokollierung, keine erwähnt den Trust Layer.
 
 ```ablauf
 ext: KI-Client, Externes Modell
@@ -88,29 +88,29 @@ sObject-Abfrage ..Datensätze..> KI-Client
 KI-Client --Prompt--> Externes Modell
 ```
 
-Zwei Aussagen brauchen Sorgfalt. Die [Claudeforce-Meldung](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) sagt, dass Claude über Amazon Bedrock innerhalb der Salesforce Trust Boundary verfügbar ist. Das betrifft Claude als Modell in Salesforce, nicht die Claude-App auf dem Laptop eines Vertriebsmitarbeiters. Die [AIforce-Ankündigung](https://www.salesforce.com/news/stories/aiforce-announcement/) schreibt, Geschäftsdaten seien „not retained by the model provider“, Anthropics Einrichtungsanleitung sagt zur Speicherung nichts.
+Zwei Aussagen brauchen Sorgfalt. Die [Claudeforce-Meldung](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) sagt, dass Claude über Amazon Bedrock innerhalb der Salesforce Trust Boundary verfügbar ist. Das betrifft Claude als Modell in Salesforce, nicht die Claude-App auf dem Laptop eines Vertriebsmitarbeiters. Die [AIforce-Ankündigung](https://www.salesforce.com/news/stories/aiforce-announcement/) schreibt, Geschäftsdaten seien „not retained by the model provider“, Anthropics Einrichtungsanleitung enthält keine Angaben zur Speicherung.
 
 ```hinweis offen
 Fragen Sie Salesforce und Anthropic, welche vertragliche Regelung die Aussage „not retained by the model provider“ aus der AIforce-Ankündigung für Ihre Org abdeckt.
 ```
 
-Bis dahin regelt Ihr KI-Vertrag die Daten, und er unterscheidet sich je nach Produkt. Für Claude Code schreibt Anthropic auf der [Seite zur Datennutzung](https://code.claude.com/docs/en/data-usage), dass Prompts unter kommerziellen Bedingungen nicht zum Training genutzt werden, die Standardaufbewahrung 30 Tage beträgt und Zero Data Retention pro Organisation für berechtigte Enterprise-Konten freigeschaltet wird. Chats in Claude Enterprise können aufbewahrt werden, bis der Kunde sie löscht. Prüfen Sie deshalb die Bedingungen für die Oberfläche, die Ihre Mitarbeitenden tatsächlich nutzen. Diese Bedingungen sollten Ihr Datenschutzbeauftragter und, bei Beschäftigtendaten, der Betriebsrat prüfen, siehe [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
+Bis dahin regelt Ihr KI-Vertrag den Umgang mit den Daten, und er unterscheidet sich je nach Produkt. Für Claude Code schreibt Anthropic auf der [Seite zur Datennutzung](https://code.claude.com/docs/en/data-usage), dass Prompts unter kommerziellen Bedingungen nicht zum Training genutzt werden, die Standardaufbewahrung 30 Tage beträgt und Zero Data Retention pro Organisation für berechtigte Enterprise-Konten freigeschaltet wird. Chats in Claude Enterprise können aufbewahrt werden, bis der Kunde sie löscht. Prüfen Sie deshalb die Bedingungen für die Oberfläche, die Ihre Mitarbeitenden tatsächlich nutzen. Diese Bedingungen sollten Ihr Datenschutzbeauftragter und, bei Beschäftigtendaten, der Betriebsrat prüfen, siehe [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
 
 ## Beispiel: drei Anfragen bei einem Maschinenbauer
 
-Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, SAP, einem Händlernetz und Claude Enterprise. Alle Zahlen sind Annahmen. In einem Monat erreichen die IT drei Anfragen.
+Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, SAP, einem Händlernetz und Claude Enterprise. Alle Zahlen sind Annahmen. In einem Monat gehen bei der IT drei Anfragen ein.
 
 **Händlerbetreuung im Vertrieb.** Zwölf Personen möchten Händlerbesuche mit Claude vorbereiten. Ihr Profil darf die Einkaufspreise in den Händlerpreisvereinbarungen lesen. Entscheidung: ein Custom Server „Händlerbesuch“, dessen Flow die Übersicht ohne Preisfelder liefert, beschränkt auf ein Permission Set für diese zwölf.
 
-**Serviceinnendienst.** Dreißig Personen möchten Fälle, installierte Basis und Garantiestatus per Seriennummer abfragen. Entscheidung: ein Custom Server mit einer Named Query nach Seriennummer, wobei `sobject-reads` für sie in Produktion nicht aktiviert ist. Ein Teil der Fallbeschreibungen kommt aus dem Händlerportal, deshalb bleibt der Webzugriff in ihrem Claude-Arbeitsbereich aus.
+**Serviceinnendienst.** Dreißig Personen möchten Fälle, installierte Basis und Garantiestatus per Seriennummer abfragen. Entscheidung: ein Custom Server mit einer Named Query nach Seriennummer, wobei `sobject-reads` für sie in Produktion nicht aktiviert ist. Ein Teil der Fallbeschreibungen kommt aus dem Händlerportal; deshalb bleibt der Webzugriff in ihrem Claude-Arbeitsbereich deaktiviert.
 
 **Der Implementierungspartner.** Ein Entwickler möchte `sobject-all` in Produktion, um doppelte Anlagen mit Claude zusammenzuführen. Entscheidung: nein. Die Aufrufe liefen unter seinem Produktionsbenutzer, und eine Massenänderung gehört in einen geprüften Datenimport. Er bekommt `sobject-reads` in einer Sandbox, um die Dubletten zu analysieren.
 
-Zwei von drei Anfragen gehen durch, beide enger als beantragt. Nach meiner Einschätzung ist das das normale Ergebnis einer Zugriffsprüfung.
+Zwei von drei Anfragen werden genehmigt, beide enger als beantragt. Nach meiner Einschätzung ist das das normale Ergebnis einer Zugriffsprüfung.
 
 ## Vor der ersten Verbindung festlegen, wer sich verbinden darf
 
-1. **Festlegen, wer sich verbinden darf.** Jede External Client App auf ein Permission Set beschränken, mit der OAuth-Richtlinie „Admin approved users are pre-authorized“. Das begrenzt, wer sich verbindet, nicht, was diese Personen lesen können. Administratoren bleiben draußen: Ein Admin, der Claude autorisiert, gibt ihm fast die ganze Org.
+1. **Festlegen, wer sich verbinden darf.** Jede External Client App auf ein Permission Set beschränken, mit der OAuth-Richtlinie „Admin approved users are pre-authorized“. Das begrenzt, wer sich verbindet, nicht, was diese Personen lesen können. Administratoren bleiben draußen: Ein Admin, der Claude autorisiert, gibt Claude Zugriff auf fast die ganze Org.
 2. **Freigaben und Feldrechte prüfen** für Fälle, Anlagen, Garantieanträge, Preisvereinbarungen und Kontakte.
 3. **Nur `sobject-reads` aktivieren**, zuerst in einer Sandbox.
 4. **Mit Named Queries oder Custom Servern eingrenzen**, wo die Person mehr sieht, als das Modell sehen soll.
@@ -118,4 +118,4 @@ Zwei von drei Anfragen gehen durch, beide enger als beantragt. Nach meiner Einsc
 6. **Den KI-Vertrag klären**: Training, Aufbewahrung, Zero Data Retention, Hosting-Region.
 7. **Die API-Logs beobachten**: Wer liest welche Objekte in welcher Menge? Exportieren Sie sie, denn ohne Event Monitoring werden sie einen Tag aufbewahrt.
 
-Das gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/): Ein MCP-Server ist eine Schnittstelle und braucht einen Verantwortlichen. Hosted MCP setzt die Berechtigungen zuverlässig durch. Sie entscheiden, welche Personen und Felder Sie zulassen und welchem KI-Vertrag Sie Ihre Daten anvertrauen.
+Das gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/): Ein MCP-Server ist eine Schnittstelle und braucht einen Verantwortlichen. Hosted MCP setzt die Berechtigungen zuverlässig durch. Sie entscheiden, welche Personen Sie zulassen, welche Felder freigegeben werden und welchem KI-Vertrag Sie Ihre Daten anvertrauen.
