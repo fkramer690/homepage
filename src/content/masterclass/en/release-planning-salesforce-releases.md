@@ -10,7 +10,7 @@ pubDate: 2026-10-28
 short: "Release planning"
 summary: "How to align your release calendar with the three Salesforce releases, release updates and retirements."
 takeaways:
-  - "The release calendar lays your cadence with freeze windows over Salesforce's calendar of releases, release updates and retirements."
+  - "The release calendar combines your cadence and freeze windows with Salesforce's calendar of releases, release updates and retirements."
   - "Whether a sandbox gets a release early depends on its instance. Only a refresh before the cutoff changes that, for Winter '27 on 27 August 2026."
   - "Sandboxes on the preview release do not belong in the deployment path to production, because they work with a newer API version than production."
   - "Release updates carry a date by which you should complete their steps. A test run enables the change immediately, so it belongs in a sandbox first."
@@ -28,7 +28,7 @@ faq:
 draft: false
 ---
 
-Salesforce release planning means laying two calendars on top of each other. Your own calendar sets the cadence in which changes reach production, when you freeze and who informs the business. Salesforce's calendar brings three releases a year, each with a sandbox preview, release updates and a new API version, plus retirements with fixed dates. In autumn 2026 those include 28 October for the Salesforce CLI, 1 December for SOAP logins and 20 February 2027 for the password flow. A release manager on the client side keeps both calendars in one place and makes them binding for every partner.
+Salesforce release planning means combining two calendars. Your own calendar sets the cadence in which changes reach production, when changes are frozen and who informs the business. Salesforce's calendar brings three releases a year, each with a sandbox preview, release updates and a new API version, plus retirements with fixed dates. In autumn 2026 those include 28 October for the Salesforce CLI, 1 December for SOAP logins and 20 February 2027 for the password flow. A release manager on the client side keeps both calendars in one place and makes them binding for every partner.
 
 ## What belongs in a Salesforce release calendar?
 
@@ -92,15 +92,15 @@ For the Salesforce CLI, which sfdx-hardis builds on, the [Salesforce documentati
 
 ### Release updates: changes with an enforcement date
 
-Release updates are changes that Salesforce announces and enforces with a set release, because they can change how existing customisations behave. They sit in Setup under [Release Updates](https://help.salesforce.com/s/articleView?language=en_US&id=sf.release_updates.htm&type=5), sorted into Needs Action, Due Soon, Overdue and Archived. Each update shows a Complete Steps By date and the release in which Salesforce enforces it. Many offer a test run. According to Salesforce Help, the change is then "immediately enabled in your org", and in sandboxes the test period may end earlier.
+Release updates are changes that Salesforce announces and enforces with a set release, because they can change how existing customizations behave. They sit in Setup under [Release Updates](https://help.salesforce.com/s/articleView?language=en_US&id=sf.release_updates.htm&type=5), sorted into Needs Action, Due Soon, Overdue and Archived. Each update shows a Complete Steps By date and the release in which Salesforce enforces it. Many offer a test run. According to Salesforce Help, the change is then "immediately enabled in your org", and in sandboxes the test period may end earlier.
 
-That makes a fixed slot in the calendar: after every Salesforce release the release manager goes through the list, gives each update an owner, starts the test run in the preview or integration sandbox first and activates the update in production on a date of your choosing, before Salesforce does. Two current examples: the new "Use Any API Auth" permission for SOAP logins from 1 December 2026 can be tested in advance through the release update in Setup, according to Salesforce. The end of the OAuth password flow is also published as a [release update](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5).
+This becomes a fixed slot in the calendar: after every Salesforce release the release manager goes through the list, gives each update an owner, starts the test run in the preview or integration sandbox first and activates the update in production on a date of your choosing, before Salesforce does. Two current examples: the new "Use Any API Auth" permission for SOAP logins from 1 December 2026 can be tested in advance through the release update in Setup, according to Salesforce. The end of the OAuth password flow is also published as a [release update](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5).
 
 If you do not want to check the list by hand: according to its [documentation](https://sfdx-hardis.cloudity.com/salesforce-monitoring-home/), sfdx-hardis monitoring gathers warnings about upcoming and overdue release updates every week and reports the instance's next upgrade date. More on monitoring in [chapter 9](../operations-monitoring-backup/).
 
 ### API versions: every release brings a new one
 
-Every release brings a new API version, Winter '27 brought 68.0. That alone changes nothing in your code, because every Apex class and trigger stores its own version. The risk lies in raising it. From API 67.0, Apex classes run in user mode and with sharing, and queries then silently return fewer records. Why that happens and how to plan the move is in [API 67.0 user mode: why Apex sees fewer records](../../../blog/api-67-apex-user-mode-fewer-records/). Coding agents like to raise versions in passing, so a rule for this also belongs in the rules file from [chapter 8 of the AI masterclass](../../ai-salesforce/ai-code-best-practices/).
+Every release brings a new API version. With Winter '27 it was 68.0. That alone changes nothing in your code, because every Apex class and trigger stores its own version. The risk lies in raising it. From API 67.0, Apex classes run in user mode and with sharing, and queries then silently return fewer records. Why that happens and how to plan the move is in [API 67.0 user mode: why Apex sees fewer records](../../../blog/api-67-apex-user-mode-fewer-records/). Coding agents like to raise versions in passing, so a rule for this also belongs in the rules file from [chapter 8 of the AI masterclass](../../ai-salesforce/ai-code-best-practices/).
 
 My suggestion for the calendar: once a year, a planned package that raises `sourceApiVersion` and the classes in batches by business domain, with tests as real users. It includes the classes the compiler has warned about since Winter '27 because they are saved at versions 9.0 to 19.0.
 
@@ -150,4 +150,4 @@ Share the calendar | with every partner
   The partners get the calendar in writing. Anyone who wants to deliver during a freeze needs her approval.
 ```
 
-None of these steps needs a new tool. It needs someone on the client side who owns the calendar, and partners who are contractually bound to plan into it. How such rules get into partner contracts is part of my [partner governance](../../../services/partner-governance/) work; the data side of a release is covered in [chapter 7](../data-and-configuration/), and all chapters are on the [overview page](../).
+None of these steps needs a new tool. It needs someone on the client side who owns the calendar, and partners who are contractually bound to plan into it. Building such rules into partner contracts is part of my [partner governance](../../../services/partner-governance/) work; the data side of a release is covered in [chapter 7](../data-and-configuration/), and all chapters are on the [overview page](../).

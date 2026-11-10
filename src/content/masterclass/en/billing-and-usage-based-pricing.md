@@ -32,7 +32,7 @@ For a manufacturer, the machine invoice usually stays in SAP. Revenue Cloud Bill
 
 ## Which invoices belong in Revenue Cloud Billing?
 
-Billing can invoice almost any revenue type. What decides is which system already knows everything the invoice depends on.
+Billing can invoice almost any revenue type. The deciding question is which system already holds everything the invoice depends on.
 
 A machine invoice depends on shipment, acceptance and down payments, and all three run in SAP. A remote monitoring subscription depends on the quote, the term and every amendment since, and in Revenue Cloud all of those live in Salesforce. That is why I split by revenue type:
 
@@ -44,7 +44,7 @@ A machine invoice depends on shipment, acceptance and down payments, and all thr
 | Maintenance contract fees | Revenue Cloud Billing | Same amount every period, changes come from sales |
 | Usage above an allowance | Revenue Cloud Billing | Rated in Salesforce |
 
-The signal I look for: sales changes contracts every week, and finance corrects invoices every month because SAP did not hear about a change. Then Billing in Salesforce removes a hand-over. If the recurring business is a few hundred contracts with one invoice a year, SAP is enough. The full reasoning is in [Revenue Cloud Billing or SAP](../../../blog/revenue-cloud-billing-or-sap-invoicing/), and the system boundary for the whole process from [chapter 1](../revenue-cloud-overview/) is in [who owns what in quote to cash](../../../blog/revenue-cloud-sap-quote-to-cash-ownership/).
+The signal I look for: sales changes contracts every week, and finance corrects invoices every month because SAP was not informed of a change. Then Billing in Salesforce removes a hand-over. If the recurring business is a few hundred contracts with one invoice a year, SAP is enough. The full reasoning is in [Revenue Cloud Billing or SAP](../../../blog/revenue-cloud-billing-or-sap-invoicing/), and the system boundary for the whole process from [chapter 1](../revenue-cloud-overview/) is in [who owns what in quote to cash](../../../blog/revenue-cloud-sap-quote-to-cash-ownership/).
 
 Payment in a B2B store is a separate boundary. Dealers who order spare parts in the shop usually pay on account, and the ERP issues the invoice; the [B2B Commerce chapter on prices, cart and checkout](../../b2b-commerce/prices-cart-checkout/) covers that side.
 
@@ -107,7 +107,7 @@ If Billing invoices go out after 1 January 2027, they need a structured route fr
 
 ## Pay-per-use with Usage Management needs a counter per machine
 
-Usage Management is the part of Revenue Cloud for consumption-based products. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/usage-management-foundations/explore-components-and-personas) names five components: usage modeling, rate management, usage selling, wallet management and consumption management. Raw usage events land in the transaction journal. Rated usage ends up in a liable summary, the final amount the customer owes, which goes to billing for the invoice.
+Usage Management is the part of Revenue Cloud for consumption-based products. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/usage-management-foundations/explore-components-and-personas) names five components: usage modeling, rate management, usage selling, wallet management and consumption management. Raw usage events are stored in the transaction journal. Rated usage ends up in a liable summary, the final amount the customer owes, from which Billing creates the invoice.
 
 ```ablauf
 ext: IoT platform
@@ -117,7 +117,7 @@ Transaction journal --Rate card--> Liable summary
 Liable summary --> Billing invoice
 ```
 
-For a machine that translates directly. Operating hours become a usage resource, the sold product carries a grant of, say, 300 hours per month, and a rate card prices the hours above the grant in tiers. Each customer gets a wallet per resource when the order is activated. Salesforce's own examples are cloud storage and mobile plans, though, and the hard part for machines lies outside Salesforce:
+For a machine that translates directly. Operating hours become a usage resource, the sold product carries a grant of, say, 300 hours per month, and a rate card prices the hours above the grant in tiers. Each customer receives a wallet per resource when the order is activated. Salesforce's own examples are cloud storage and mobile plans, though, and the hard part for machines lies outside Salesforce:
 
 | Prerequisite | What it includes |
 |---|---|
@@ -127,7 +127,7 @@ For a machine that translates directly. Operating hours become a usage resource,
 
 The same daily counter often drives maintenance by operating hours in Field Service, so one feed can serve both; the [Field Service chapter on assets and maintenance](../../field-service/field-service-assets-maintenance-parts/) covers that side. Rating sits in the Billing add-on as "Usage Rating & Digital Wallet", so confirm in the order form which license covers it. The scenario and the contract checklist are in [pay-per-use for machines](../../../blog/pay-per-use-machines-revenue-cloud/).
 
-If all invoices stay in SAP, I would think twice before rating usage in Salesforce. I did not find a documented standard hand-over of rated usage to an external billing system.
+If all invoices stay in SAP, I would weigh carefully whether to rate usage in Salesforce. I did not find a documented standard hand-over of rated usage to an external billing system.
 
 ## Maintenance contracts as recurring revenue
 

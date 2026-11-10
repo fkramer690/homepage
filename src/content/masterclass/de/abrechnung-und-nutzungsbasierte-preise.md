@@ -13,12 +13,12 @@ takeaways:
   - "Revenue Cloud Billing lohnt sich für Abonnements, Wartungsverträge und Nutzungsentgelte, die in Salesforce verkauft und geändert werden."
   - "Billing macht Salesforce zum Nebenbuch mit Legal Entities, Buchungsperioden und Buchungssätzen. Entscheidung und Periodenabschluss verantwortet Finance."
   - "Billing ist ein Add-on mit Preis auf Anfrage und verbraucht ein Billing Event je 50 Dollar Rechnungssumme ohne Steuern. Ungenutzte Events verfallen."
-  - "Ab 2027 schicken deutsche Unternehmen über 800.000 Euro Vorjahresumsatz Geschäftskunden im Inland E-Rechnungen. Der Weg steht vor der ersten Billing-Rechnung."
+  - "Ab 2027 brauchen deutsche Firmen über 800.000 Euro Vorjahresumsatz E-Rechnungen an inländische Geschäftskunden. Klären Sie den Weg vor dem Start."
   - "Pay-per-Use braucht einen verlässlichen Zähler je Maschine und einen Vertrag über Einheit, Datenlücken und Mindestentgelt, bevor jemand eine Rate Card baut."
 articles: [revenue-cloud-billing-or-erp-invoicing, revenue-cloud-billing-costs-billing-events, e-invoicing-germany-revenue-cloud, usage-based-pricing-machines-revenue-cloud, service-contracts-recurring-billing]
 faq:
   - q: "Sollte ein Maschinenbauer aus Revenue Cloud Billing oder aus SAP fakturieren?"
-    a: "Maschinen und Ersatzteile werden mit Lieferung, Abnahme und Anzahlungen fakturiert, und die laufen in SAP. Deren Rechnungen bleiben deshalb meist dort. Abonnements, Wartungsverträge und Nutzungsentgelte, die der Vertrieb in Salesforce oft ändert, sind die Kandidaten für Revenue Cloud Billing."
+    a: "Maschinen und Ersatzteile werden mit Lieferung, Abnahme und Anzahlungen fakturiert, und diese Prozesse laufen in SAP. Ihre Rechnungen bleiben deshalb meist dort. Abonnements, Wartungsverträge und Nutzungsentgelte, die der Vertrieb in Salesforce oft ändert, sind die Kandidaten für Revenue Cloud Billing."
   - q: "Wie wird Revenue Cloud Billing abgerechnet?"
     a: "Billing ist ein Add-on mit Preis auf Anfrage. Laut Rate Sheet vom Februar 2026 verbraucht es 0,02 Billing Events je Dollar Rechnungssumme, also ein Event je 50 Dollar. Steuern zählen nicht, Versandkosten schon, und ungenutzte Events werden nicht übertragen."
   - q: "Kann Revenue Cloud Billing XRechnung oder ZUGFeRD erzeugen?"
@@ -32,9 +32,9 @@ Bei einem Hersteller bleibt die Maschinenrechnung in der Regel in SAP. Revenue C
 
 ## Welche Rechnungen gehören in Revenue Cloud Billing?
 
-Billing kann fast jede Umsatzart fakturieren. Entscheidend ist, welches System schon alles weiß, wovon die Rechnung abhängt.
+Billing kann fast jede Umsatzart fakturieren. Entscheidend ist, welches System bereits alle Informationen hat, von denen die Rechnung abhängt.
 
-Eine Maschinenrechnung hängt an Versand, Abnahme und Anzahlungen, und alle drei laufen in SAP. Ein Abonnement für Fernüberwachung hängt am Angebot, an der Laufzeit und an jedem Nachtrag seitdem, und in Revenue Cloud liegt all das in Salesforce. Deshalb trenne ich nach Umsatzart:
+Eine Maschinenrechnung hängt von Versand, Abnahme und Anzahlungen ab, und alle drei laufen in SAP. Ein Abonnement für Fernüberwachung hängt vom Angebot, von der Laufzeit und von jedem späteren Nachtrag ab, und in Revenue Cloud liegt all das in Salesforce. Deshalb trenne ich nach Umsatzart:
 
 | Umsatzart | Rechnung aus | Grund |
 |---|---|---|
@@ -46,22 +46,22 @@ Eine Maschinenrechnung hängt an Versand, Abnahme und Anzahlungen, und alle drei
 
 Das Signal, auf das ich achte: Der Vertrieb ändert jede Woche Verträge, und die Buchhaltung korrigiert jeden Monat Rechnungen, weil SAP von einer Änderung nichts erfahren hat. Dann spart Billing in Salesforce eine Übergabe. Besteht das wiederkehrende Geschäft aus ein paar hundert Verträgen mit einer Rechnung im Jahr, reicht SAP. Die ganze Abwägung steht in [Revenue Cloud Billing oder SAP](../../../blog/revenue-cloud-billing-oder-sap-rechnung/), die Systemgrenze für den gesamten Prozess aus [Kapitel 1](../revenue-cloud-ueberblick/) in [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../../../blog/revenue-cloud-sap-quote-to-cash-aufteilung/).
 
-Die Zahlung in einem B2B-Shop ist eine eigene Grenze. Händler, die Ersatzteile im Shop bestellen, zahlen meist auf Rechnung, und die Rechnung kommt aus dem ERP. Das behandelt das [B2B-Commerce-Kapitel zu Preisen, Warenkorb und Checkout](../../b2b-commerce/preise-warenkorb-checkout/).
+Die Zahlung in einem B2B-Shop ist eine eigene Grenze. Händler, die Ersatzteile im Shop bestellen, zahlen meist auf Rechnung, und die Rechnung wird im ERP erstellt. Das behandelt das [B2B-Commerce-Kapitel zu Preisen, Warenkorb und Checkout](../../b2b-commerce/preise-warenkorb-checkout/).
 
 ## Revenue Cloud Billing macht Salesforce zum Nebenbuch
 
 Revenue Cloud Billing ist das Abrechnungs-Add-on zu Revenue Cloud. Die Salesforce-Hilfe und der [Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/billing_overview.htm) zu Winter '27 nennen die Produktfamilie Revenue Management, Trailhead sagt Agentforce Revenue Management, und der frühere Name war Revenue Lifecycle Management. Suchen Sie unter allen Namen.
 
-Die Abläufe folgen dem Auftrag aus [Kapitel 3](../angebot-vertrag-auftrag/). Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/generate-invoices) erzeugt die Aktivierung eines Auftrags Billing Schedule Groups und je Auftragsposition einen Billing Schedule, also einen Abrechnungsplan, für Neuverkauf, Nachtrag, Verlängerung und Kündigung gleichermaßen. Invoice Scheduler nehmen die Pläne, die zur Fakturierung bereit sind, und der Rechnungslauf nutzt für große Mengen die Data Processing Engine. Die Steuer berechnet eine externe Steuer-Engine über Steuerregeln.
+Die Abläufe folgen dem Auftrag aus [Kapitel 3](../angebot-vertrag-auftrag/). Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/generate-invoices) erzeugt die Aktivierung eines Auftrags Billing Schedule Groups und je Auftragsposition einen Billing Schedule, also einen Abrechnungsplan, für Neuverkauf, Nachtrag, Verlängerung und Kündigung gleichermaßen. Invoice Scheduler verarbeiten die Pläne, die zur Fakturierung bereit sind, und der Rechnungslauf nutzt für große Mengen die Data Processing Engine. Die Steuer berechnet eine externe Steuer-Engine über Steuerregeln.
 
 Die [Produktseite](https://www.salesforce.com/sales/revenue-cloud-billing/) nennt dazu Zahlungen über Payment Gateways, Mahnwesen mit automatischen Erinnerungen und eine Buchhaltungsbasis für Buchungssätze, Periodenabschluss und Währungsumrechnung. Salesforce formuliert, Billing erlaube es Salesforce, als "sub-ledger" zu arbeiten und dabei Buchungssätze zu synchronisieren. Wegen dieses Satzes muss Finance mit am Tisch sitzen.
 
 ## Wer schließt die Periode: Finance oder das CRM-Team?
 
-Im Nebenbuch stehen die Forderungen im Detail, jede Rechnung, jede Gutschrift, jede Zahlung. An das Hauptbuch in SAP gehen nur die Buchungssätze. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/set-up-billing-basics) ordnen Legal Entities jede Abrechnungsbuchung der richtigen Buchungsperiode und dem richtigen Sachkonto zu. All das gibt es in SAP schon, als Buchungskreise, Geschäftsjahresperioden und Sachkonten.
+Im Nebenbuch stehen die Forderungen im Detail, jede Rechnung, jede Gutschrift, jede Zahlung. An das Hauptbuch in SAP werden nur die Buchungssätze übergeben. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/set-up-billing-basics) ordnen Legal Entities jede Abrechnungsbuchung der richtigen Buchungsperiode und dem richtigen Sachkonto zu. All das gibt es in SAP schon, als Buchungskreise, Geschäftsjahresperioden und Sachkonten.
 
 ```hinweis offen
-Bevor ein Partner etwas einrichtet, klärt Finance die Abbildung von SAP in Salesforce: welcher Buchungskreis welcher Legal Entity entspricht und welche davon aus Salesforce fakturieren, wer die Buchungsperiode in Salesforce schließt und ob das vor oder nach dem SAP-Abschluss passiert, wer die Sachkontenzuordnung nachzieht, wenn sich der Kontenplan ändert, und wer zum Monatsende die Forderungen beider Systeme abgleicht und Differenzen klärt.
+Bevor ein Partner etwas einrichtet, klärt Finance die Abbildung von SAP in Salesforce: welcher Buchungskreis welcher Legal Entity entspricht und welche davon aus Salesforce fakturieren, wer die Buchungsperiode in Salesforce schließt und ob das vor oder nach dem SAP-Abschluss geschieht, wer die Sachkontenzuordnung anpasst, wenn sich der Kontenplan ändert, und wer zum Monatsende die Forderungen beider Systeme abgleicht und Differenzen klärt.
 ```
 
 Trailhead beschreibt eine Rolle [Accounts Receivable Admin](https://trailhead.salesforce.com/content/learn/modules/billing-basics-in-revenue-cloud/explore-billing-features-and-roles), für Buchungsperioden, Buchungssätze und Finanzberichte. Beim Hersteller gehört sie in die Buchhaltung, und ohne jemanden dort, der sie ausfüllt, nehme ich Billing nicht in Betrieb. Die Schnittstellen für Buchungssätze und Rechnungsstatus gehören zu meiner Arbeit an [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/).
@@ -95,19 +95,19 @@ Laut [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-
 
 Eine E-Rechnung wird in einem strukturierten Format nach EN 16931 ausgestellt, übermittelt und empfangen. Eine per E-Mail versandte PDF-Rechnung gilt seit 2025 nicht mehr als E-Rechnung. Die [IHK Stuttgart](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496) nennt XRechnung und ZUGFeRD ab Version 2.0.1 als zulässige Formate.
 
-Für einen typischen Maschinenbauer heißt das: 1. Januar 2027, und zwar für jede Rechnung an einen deutschen Geschäftskunden, ob Maschine, Ersatzteil, Wartungspauschale oder Abonnement.
+Für einen typischen Maschinenbauer gilt die Pflicht damit ab dem 1. Januar 2027, und zwar für jede Rechnung an einen deutschen Geschäftskunden, ob Maschine, Ersatzteil, Wartungspauschale oder Abonnement.
 
 Auf der Salesforce-Seite dokumentiert [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/generate-invoices-revenue) Rechnungs-PDFs aus Billing, erzeugt je Rechnungslauf oder einzeln und per E-Mail an den Rechnungskontakt versandt. Die Produktseite erwähnt die E-Rechnung nicht, und eine Salesforce-Dokumentation zu nativer Ausgabe nach EN 16931, XRechnung oder ZUGFeRD habe ich im Oktober 2026 nicht gefunden. Es bleiben drei Wege:
 
-- **Rechnung aus SAP.** Revenue Cloud liefert die Abrechnungsdaten, SAP stellt die E-Rechnung aus. Ein Compliance-Setup, aber jeder Nachtrag muss vor dem nächsten Rechnungslauf in SAP ankommen.
-- **E-Rechnungsdienst.** Billing bucht die Rechnung, eine Middleware bildet sie auf das strukturierte Format ab, ein Dienst prüft und versendet sie. Ich bevorzuge einen Dienst, der auch die SAP-Rechnungen übernimmt, damit Kunden alles über einen Kanal bekommen.
+- **Rechnung aus SAP.** Revenue Cloud liefert die Abrechnungsdaten, SAP stellt die E-Rechnung aus. Ein Compliance-Setup, aber jeder Nachtrag muss vor dem nächsten Rechnungslauf in SAP vorliegen.
+- **E-Rechnungsdienst.** Billing bucht die Rechnung, eine Middleware bildet sie auf das strukturierte Format ab, ein Dienst prüft und versendet sie. Ich bevorzuge einen Dienst, der auch die SAP-Rechnungen übernimmt, damit Kunden alles über einen Kanal erhalten.
 - **Partner-App in der Org.** Hält die Logik in Salesforce und bringt einen weiteren Anbieter in jedes Release.
 
-Gehen Billing-Rechnungen nach dem 1. Januar 2027 hinaus, brauchen sie ab der ersten Rechnung einen strukturierten Weg. Starten Sie nicht mit PDFs, um das Format später nachzuziehen. Checkliste und rechtliche Details stehen in [E-Rechnung ab 2027](../../../blog/e-rechnung-pflicht-2027-revenue-cloud/). Lassen Sie das Setup von Ihrer Steuerberatung bestätigen; ich beschreibe die Systemseite, nicht das Steuerrecht.
+Werden Billing-Rechnungen nach dem 1. Januar 2027 versendet, brauchen sie ab der ersten Rechnung einen strukturierten Weg. Starten Sie nicht mit PDFs, um das Format später nachzuziehen. Checkliste und rechtliche Details stehen in [E-Rechnung ab 2027](../../../blog/e-rechnung-pflicht-2027-revenue-cloud/). Lassen Sie das Setup von Ihrer Steuerberatung bestätigen; ich beschreibe die Systemseite, nicht das Steuerrecht.
 
 ## Pay-per-Use mit Usage Management braucht einen Zähler je Maschine
 
-Usage Management ist der Teil von Revenue Cloud für verbrauchsbasierte Produkte. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/usage-management-foundations/explore-components-and-personas) nennt fünf Bausteine: Usage Modelling, Rate Management, Usage Selling, Wallet Management und Consumption Management. Rohe Nutzungsereignisse landen im Transaction Journal. Bewertete Nutzung endet in einer Liable Summary, dem Betrag, den der Kunde schuldet, und die geht zur Rechnung an Billing.
+Usage Management ist der Teil von Revenue Cloud für verbrauchsbasierte Produkte. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/usage-management-foundations/explore-components-and-personas) nennt fünf Bausteine: Usage Modelling, Rate Management, Usage Selling, Wallet Management und Consumption Management. Rohe Nutzungsereignisse werden im Transaction Journal gespeichert. Bewertete Nutzung fließt in eine Liable Summary, den Betrag, den der Kunde schuldet, und daraus erstellt Billing die Rechnung.
 
 ```ablauf
 ext: IoT-Plattform
@@ -117,17 +117,17 @@ Transaction Journal --Rate Card--> Liable Summary
 Liable Summary --> Billing-Rechnung
 ```
 
-Für eine Maschine lässt sich das direkt übertragen. Betriebsstunden werden zur Nutzungsressource, das verkaufte Produkt trägt ein Kontingent von zum Beispiel 300 Stunden im Monat, und eine Rate Card bepreist die Stunden darüber in Staffeln. Jeder Kunde bekommt mit der Auftragsaktivierung ein Wallet je Ressource. Die Beispiele von Salesforce sind allerdings Cloud-Speicher und Mobilfunktarife, und der schwierige Teil liegt bei Maschinen außerhalb von Salesforce:
+Für eine Maschine lässt sich das direkt übertragen. Betriebsstunden werden zur Nutzungsressource, das verkaufte Produkt trägt ein Kontingent von zum Beispiel 300 Stunden im Monat, und eine Rate Card bepreist die Stunden darüber in Staffeln. Jeder Kunde erhält mit der Auftragsaktivierung ein Wallet je Ressource. Die Beispiele von Salesforce sind allerdings Cloud-Speicher und Mobilfunktarife, und der schwierige Teil liegt bei Maschinen außerhalb von Salesforce:
 
 | Voraussetzung | Was dazu gehört |
 |---|---|
-| Ein verlässlicher Zähler je Maschine | Die Steuerung meldet an eine IoT-Plattform oder einen Historian, der die Zeitreihen hält. Salesforce bekommt einen Datensatz je Maschine und Tag, nie Rohwerte. |
+| Ein verlässlicher Zähler je Maschine | Die Steuerung meldet an eine IoT-Plattform oder einen Historian, der die Zeitreihen hält. Salesforce erhält einen Datensatz je Maschine und Tag, nie Rohwerte. |
 | Prüfungen vor der Bewertung | Seriennummer zu Asset und Account, Zählerrücksprünge nach einem Steuerungstausch, Lücken, wenn eine Maschine offline war, Dubletten aus wiederholten Übertragungen. |
 | Ein Vertrag, der die Einheit festlegt | Betriebsstunden, Laststunden oder Gutteile; welcher Zähler verbindlich ist; wie Lücken behandelt werden; das Mindestentgelt, das die Finanzierung der Maschine absichert. |
 
 Derselbe Tageszähler steuert oft auch die Wartung nach Betriebsstunden in Field Service, ein Datenstrom kann also beides bedienen. Die Field-Service-Sicht steht im [Kapitel zu Assets und Wartung](../../field-service/field-service-assets-wartung-teile/). Die Bewertung steckt als "Usage Rating & Digital Wallet" im Billing-Add-on; klären Sie im Order Form, welche Lizenz sie abdeckt. Szenario und Vertrags-Checkliste stehen in [Pay-per-Use für Maschinen](../../../blog/pay-per-use-maschinen-revenue-cloud/).
 
-Bleiben alle Rechnungen in SAP, würde ich zweimal überlegen, ob die Nutzung in Salesforce bewertet werden soll. Eine dokumentierte Standardübergabe bewerteter Nutzung an ein externes Abrechnungssystem habe ich nicht gefunden.
+Bleiben alle Rechnungen in SAP, würde ich genau prüfen, ob die Nutzung in Salesforce bewertet werden soll. Eine dokumentierte Standardübergabe bewerteter Nutzung an ein externes Abrechnungssystem habe ich nicht gefunden.
 
 ## Wartungsverträge als wiederkehrender Umsatz
 
@@ -136,16 +136,16 @@ Die meisten Maschinenbauer haben den wiederkehrenden Umsatz, für den Billing ge
 Field Service liest keine Revenue-Cloud-Abonnements. Servicevertrag, Vertragspositionen, Wartungsplan und Entitlement liefern die Einsätze, und eine dokumentierte Standardverbindung vom verkauften Abonnement zum Servicevertrag habe ich nicht gefunden. Planen Sie einen Flow bei Auftragsaktivierung, der sie anlegt oder aktualisiert. Meine Regel für die Datensätze:
 
 - Das Revenue-Cloud-Asset beantwortet, was verkauft wurde, für wie lange und zu welchem Preis.
-- Der Field-Service-Servicevertrag beantwortet, welche Maschinen welchen Service-Level bekommen.
+- Der Field-Service-Servicevertrag beantwortet, welche Maschinen welchen Service-Level erhalten.
 - Das Maschinen-Asset mit Seriennummer gehört dem Service und kommt meist aus dem ERP.
 
 Die Details, mit einem Szenario über 800 quartalsweise abgerechnete Maschinen, stehen in [Wartungsverträge wiederkehrend abrechnen](../../../blog/wartungsvertraege-wiederkehrend-abrechnen/).
 
 ## Finance legt den Rechnungssteller je Umsatzart fest
 
-Ein angenommenes Beispiel: Ein Maschinenbauer mit SAP S/4HANA erstellt Angebote für Maschinen, Ersatzteile, Fernüberwachung und Wartungsverträge in Revenue Cloud. Maschinen und Ersatzteile fakturiert SAP, das bereits E-Rechnungen erzeugt. Abonnements, Wartungspauschalen und zusätzliche Betriebsstunden gehen an Billing, angebunden an den E-Rechnungsdienst, den SAP schon nutzt. Der Kunde bekommt zwei Arten von Rechnungen über einen Kanal, und der Kundendienst kann erklären, warum.
+Ein angenommenes Beispiel: Ein Maschinenbauer mit SAP S/4HANA erstellt Angebote für Maschinen, Ersatzteile, Fernüberwachung und Wartungsverträge in Revenue Cloud. Maschinen und Ersatzteile fakturiert SAP, das bereits E-Rechnungen erzeugt. Abonnements, Wartungspauschalen und zusätzliche Betriebsstunden rechnet Billing ab, angebunden an den E-Rechnungsdienst, den SAP schon nutzt. Der Kunde erhält zwei Arten von Rechnungen über einen Kanal, und der Kundendienst kann erklären, warum.
 
-Damit das klappt, legt der Kunde diese Punkte selbst fest, bevor der Partner konfiguriert:
+Damit das funktioniert, legt der Kunde diese Punkte selbst fest, bevor der Partner konfiguriert:
 
 | Festlegung | Was dazu gehört |
 |---|---|
