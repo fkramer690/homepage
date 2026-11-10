@@ -10,13 +10,13 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [Revenue Cloud, product catalog, variants, product classification, bundles, SAP]
 takeaways:
-  - "Products created from a classification inherit its attributes and can override them. A machine family usually starts with one template."
-  - "A separate material number alone does not force a separate product. Several ERP SKUs can map to one commercial product with attributes."
-  - "Categories, bundles and selling models need records in Salesforce and an owner, whichever system is their master."
+  - "Products created from a classification inherit its attributes, and those attributes can be overridden. A machine family usually starts with one template."
+  - "A separate material number alone does not require a separate product. Several ERP SKUs can map to one commercial product with attributes."
+  - "Categories, bundles and selling models need records in Salesforce and an owner, regardless of which system is their master."
   - "Catalog records move through the pipeline as data, with the Developer Guide sequence as the dependency baseline."
 faq:
   - q: "What is a product classification in Revenue Cloud?"
-    a: "A product classification is a template with a set of attributes, for example motor power, voltage and control type for one machine family. Products created from the classification inherit these attributes and can override single ones that do not apply."
+    a: "A product classification is a template with a set of attributes, for example motor power, voltage and control type for one machine family. Products created from the classification inherit these attributes, and individual attributes that do not apply can be overridden."
   - q: "Should every machine variant be its own product in Salesforce?"
     a: "No. I keep a variant as an attribute value on the base machine as long as sales sells it as one offer. If SAP needs distinct material numbers, Dynamic Revenue Orchestrator can map the attribute selection to them. A separate product makes sense when the variant has its own price list, its own service model or its own lifecycle. Sales agreements can hold the same product several times with different attribute values."
   - q: "Do I have to copy the SAP material master into Revenue Cloud?"
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-In the Revenue Cloud product catalog, a machine builder models the sales view, not the ERP material master. Each machine family gets a product classification, a template with attributes such as press force or control type. The base machines inherit these attributes, and options stay attribute values as long as sales sells them as one offer. Accessories that are chosen separately become components of a configurable bundle. SAP typically delivers material numbers and list prices, Salesforce holds categories, selling attributes and bundle structure. That keeps the quote catalog at around 140 product records instead of thousands of variants.
+In the Revenue Cloud product catalog, a machine builder models the sales view, not the ERP material master. Each machine family is given a product classification, a template with attributes such as press force or control type. The base machines inherit these attributes, and options stay attribute values as long as sales sells them as one offer. Accessories that are chosen separately become components of a configurable bundle. SAP typically provides material numbers and list prices, while Salesforce holds categories, selling attributes and bundle structure. That keeps the quote catalog at around 140 product records instead of thousands of variants.
 
 ## What does the Revenue Cloud product catalog consist of?
 
@@ -35,13 +35,13 @@ Product Catalog Management is the part of Agentforce Revenue Management, formerl
 The building blocks, per the [Trailhead module on product catalog management](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/get-started-with-product-catalog-management):
 
 - **Catalogs** hold the products and bundles a company offers. You can create several, for example one for products and one for services.
-- **Categories and subcategories** group products for browsing and search. A product can sit in several categories.
-- **Attributes** describe products. An attribute is defined once and reused across products, picklists are reusable too, and attribute categories group related attributes.
+- **Categories and subcategories** group products for browsing and search. A product can belong to several categories.
+- **Attributes** describe products. An attribute is defined once and reused across products. Picklists are reusable too, and attribute categories group related attributes.
 - **Product classifications** are templates with a set of attributes. A product created from a classification inherits them, and single attributes can be overridden.
-- **Simple products and bundles.** Simple products stand alone, bundles have a hierarchy of several items.
+- **Simple products and bundles.** Simple products stand alone, while bundles have a hierarchy of several items.
 - **Product selling models** define how a product is sold, for example as a one-time sale, an evergreen subscription or a term-defined subscription. They are optional for a basic catalog, and a product can have several, according to the [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/api/sforce_api_objects_productsellingmodel.htm).
 
-All of these are Salesforce standard objects provided by Product Catalog Management, from ProductCatalog and ProductClassification to ProductRelatedComponent and ProductSellingModel, as the [data model](https://developer.salesforce.com/docs/platform/data-models/guide/product-catalog-mgmt.html) shows. You get them with the Revenue Cloud license and feature enablement, not with every org.
+All of these are Salesforce standard objects provided by Product Catalog Management, from ProductCatalog and ProductClassification to ProductRelatedComponent and ProductSellingModel, as the [data model](https://developer.salesforce.com/docs/platform/data-models/guide/product-catalog-mgmt.html) shows. They are available with the Revenue Cloud license and feature enablement, not in every org.
 
 ## How do you model machine variants without thousands of products?
 
@@ -60,15 +60,15 @@ Sales agreements do not force separate products either. The [help article](https
 
 I give a variant its own product when it has its own price list, its own service model or its own lifecycle. A serial number alone is not a reason, because it identifies one installed machine, not a product definition. A press brake with three bending lengths, two controls and an optional backgauge is one product with three attributes.
 
-The classification carries the attributes per machine family. Trailhead shows the mechanism with a simple example: products inherit the attributes of their classification, and a WiFi tablet does not need the SIM type its category would give it, so the attribute is overridden. For a machine family this usually means one template with the attributes sales needs to ask about, and a few overrides for models where an attribute does not apply. If models need very different attribute sets, separate classifications are the cleaner choice.
+The classification contains the attributes for each machine family. Trailhead shows the mechanism with a simple example: products inherit the attributes of their classification, and a WiFi tablet does not need the SIM type its category would assign to it, so the attribute is overridden. For a machine family this usually means one template with the attributes sales needs to ask about, and a few overrides for models where an attribute does not apply. If models need very different attribute sets, separate classifications are the cleaner choice.
 
-Accessories and packages that sales chooses, prices or counts separately belong in a bundle. The [Trailhead unit on bundles](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/create-a-product-bundle) explains the parts: product groups inside the bundle, local cardinality per component (required, included by default, quantity changeable or not, with default, minimum and maximum quantity) and group cardinality with a minimum and maximum number of products. Customers cannot change static bundles, configurable bundles can be customized during the sale. For a machine with tooling, a safety package and commissioning, that is a configurable bundle with three groups.
+Accessories and packages that sales chooses, prices or counts separately belong in a bundle. The [Trailhead unit on bundles](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/create-a-product-bundle) explains the parts: product groups inside the bundle, local cardinality per component (required, included by default, whether the quantity can be changed, with default, minimum and maximum quantity) and group cardinality with a minimum and maximum number of products. Customers cannot change static bundles, while configurable bundles can be customized during the sale. For a machine with tooling, a safety package and commissioning, that is a configurable bundle with three groups.
 
-Which combinations are allowed is decided by the configurator, not by the catalog. How its rules work is covered in [Revenue Cloud configurator: when constraint rules pay off](../revenue-cloud-configurator-constraint-rules/).
+The configurator, not the catalog, determines which combinations are allowed. How its rules work is covered in [Revenue Cloud configurator: when constraint rules pay off](../revenue-cloud-configurator-constraint-rules/).
 
 ## Which data comes from the ERP and which lives only in Salesforce?
 
-The first mistake I would avoid in a catalog design is copying the material master. Salesforce needs its own records for catalogs, categories, bundles and selling models in any case; which system is the master for them is a decision you make explicitly. Salesforce needs the sellable products, not the plant data, purchasing data or bills of materials. A bill of materials describes how a machine is built. The bundle describes how it is sold. The two look similar and are maintained by different people.
+The first mistake I would avoid in a catalog design is copying the material master. Salesforce needs its own records for catalogs, categories, bundles and selling models in any case; you need to decide explicitly which system is the master for them. Salesforce needs the sellable products, not the plant data, purchasing data or bills of materials. A bill of materials describes how a machine is built. The bundle describes how it is sold. The two look similar and are maintained by different people.
 
 | Data | Typical master | Note |
 |---|---|---|
@@ -84,20 +84,20 @@ The first mistake I would avoid in a catalog design is copying the material mast
 The fifth row needs care.
 
 ```hinweis achtung
-When the attribute "control" has the value "S2" in Salesforce, that value must map to a valid characteristic value or technical product in SAP, or the order fails at hand-over. The codes do not have to be identical, but the mapping must be complete. I would keep a mapping table per attribute and let the integration check it before the order is activated.
+When the attribute "control" has the value "S2" in Salesforce, that value must map to a valid characteristic value or a technical product in SAP, or the order fails at handover. The codes do not have to be identical, but the mapping must be complete. I would keep a mapping table per attribute and let the integration check it before the order is activated.
 ```
 
-Who owns each object in the org is set in an [object ownership matrix](../salesforce-object-ownership-matrix/). How prices then come from the price book is covered in [Salesforce Pricing: how Revenue Cloud calculates prices](../revenue-cloud-pricing-procedures-explained/).
+Who owns each object in the org is set in an [object ownership matrix](../salesforce-object-ownership-matrix/). How prices are then determined from the price book is covered in [Salesforce Pricing: how Revenue Cloud calculates prices](../revenue-cloud-pricing-procedures-explained/).
 
 ## Should spare parts and services get their own catalog?
 
-Often, yes. A machine builder sells a few dozen machines and often tens of thousands of spare parts. In a quote, the sales rep needs the machines, their options and the accessories. Spare parts mostly come up in service and in the dealer business. Trailhead explicitly mentions several catalogs, for example a product catalog and a service catalog, and products can sit in several categories when one item is needed in both places.
+Often, yes. A machine builder sells a few dozen machines and often tens of thousands of spare parts. In a quote, the sales rep needs the machines, their options and the accessories. Spare parts mostly matter in service and in the dealer business. Trailhead explicitly mentions several catalogs, for example a product catalog and a service catalog, and products can belong to several categories when one item is needed in both places.
 
-Recurring services such as maintenance contracts or remote monitoring typically use a term-defined or evergreen selling model; one-off services can use a one-time model. Whether they get a separate catalog depends on who searches for them, through which channel, with which price book and in which quote process. Different owners in product and service management are an additional argument, not the only one.
+Recurring services such as maintenance contracts or remote monitoring typically use a term-defined or evergreen selling model; one-off services can use a one-time model. Whether they receive a separate catalog depends on who searches for them, through which channel, with which price book and in which quote process. Different owners in product and service management are an additional argument, not the only one.
 
 ## Worked example: 40 base machines with options
 
-A machine builder sells 40 base machines in four families, each with around a dozen selling options, plus 60 accessories with their own material numbers and around 8,000 spare parts. Without a model, someone suggests creating every sold combination as a product, which quickly runs into the thousands.
+A machine builder sells 40 base machines in four families, each with around a dozen selling options, plus 60 accessories with their own material numbers and around 8,000 spare parts. Without a model, someone suggests creating every sold combination as a product, so the number of products quickly runs into the thousands.
 
 With the catalog model it looks like this:
 
@@ -106,7 +106,7 @@ With the catalog model it looks like this:
 - **60 accessory products** as simple products, used as bundle components.
 - **A spare parts catalog** with the 8,000 parts, loaded from SAP, and a service catalog with three subscription products.
 
-The assortment for machine sales then holds around 140 product records. The org still contains the 8,000 spare parts and the related catalog records, but every combination a customer can order is described without a product per combination.
+The catalog for machine sales then contains around 140 product records. The org still contains the 8,000 spare parts and the related catalog records, but every combination a customer can order is described without creating a separate product for each combination.
 
 ## Catalog data is configuration and needs an owner
 
@@ -123,8 +123,8 @@ The owner should be product management at the manufacturer, not the implementati
 
 1. **List the machine families** and the questions sales asks per family. They become classifications and attributes.
 2. **Choose the model for every variant**: attribute value, product variation, bundle component or decomposition to ERP SKUs.
-3. **Agree the attribute mapping with SAP** before the first data load.
+3. **Agree on the attribute mapping with SAP** before the first data load.
 4. **Separate machines, spare parts and services** into catalogs with different owners.
 5. **Name the catalog owner** and put the catalog under version control as data.
 
-Point 2 decides the size of the catalog: a variant without its own price list, service model or lifecycle stays an attribute and gets no product record of its own. The whole chapter is in the masterclass part [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/), and drawing the line between SAP and Salesforce is part of my [Salesforce architecture](../../services/salesforce-architecture/) work.
+Point 2 decides the size of the catalog: a variant without its own price list, service model or lifecycle stays an attribute and receives no product record of its own. The full chapter is in the masterclass section [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/), and drawing the line between SAP and Salesforce is part of my [Salesforce architecture](../../services/salesforce-architecture/) work.
