@@ -114,7 +114,7 @@ With a handful of programs, or when a planning system already derives component 
 
 Account manager targets replace the distribution part of the target spreadsheet. According to the [object reference](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target.htm), sales leadership creates an annual target on revenue, quantity or a custom measure and distributes it through the manager or forecast hierarchy. Each level distributes further to customers, products and months; Salesforce converts a revenue target per product into units using the list price from the default price book chosen in setup.
 
-Changes do not flow down on their own. A manager propagates them, or a flow calls the [Update Account Manager Target Values](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_account_manager_target.htm) action. After a reorganisation, assignments become invalid and have to be redistributed. The feature calculates no commission. The details, including the record limit, are in [account manager targets: sales targets per customer](../../../blog/account-manager-targets-sales-targets/).
+Changes do not flow down on their own. A manager propagates them, or a flow calls the [Update Account Manager Target Values](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_account_manager_target.htm) action. After a reorganization, assignments become invalid and have to be redistributed. The feature calculates no commission. The details, including the record limit, are in [account manager targets: sales targets per customer](../../../blog/account-manager-targets-sales-targets/).
 
 ## Which data does sales volume planning in Salesforce need?
 
@@ -127,7 +127,7 @@ More from the ERP than most workshops assume. The overview:
 | Program-based business | adjustments, opportunities | program and variant forecasts, quantity per unit, lead times |
 | Account manager targets | targets and distribution | actual revenue in the same structure, a maintained Manager field |
 
-The most important rule is in no table: target, forecast and actuals need the same customer level, the same product level and the same period type. If the target sits on products and the forecast on product categories, or the ERP books revenue to the sold-to party while the target hangs on the group, the monthly review compares three numbers that cannot match. I fix these three levels before the first feature is switched on.
+The most important rule is in no table: target, forecast and actuals need the same customer level, the same product level and the same period type. If the target sits on products and the forecast on product categories, or the ERP books revenue to the sold-to party while the target is set at group level, the monthly review compares three numbers that cannot match. I fix these three levels before the first feature is switched on.
 
 ## Where does planning in Salesforce end?
 

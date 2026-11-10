@@ -82,7 +82,7 @@ Partner Community for Manufacturing. The [add-ons page](https://www.salesforce.c
 | Partner Community for Manufacturing | $20 | $50 | Dealers, distributors, suppliers |
 | Customer Community Plus for Manufacturing | $15 | $35 | Customers |
 
-Salesforce Help describes what each license covers; I summarised that overview in [the Manufacturing Cloud customer portal](../../../blog/manufacturing-cloud-customer-portal/). For the partner license, Help names sales agreements, account forecasts, leads, quotes, warranty and rebate claims and visits, among others. For Customer Community Plus, it names cases, knowledge articles, orders, assets and warranties. So a dealer who should see their rebate status, submit ship and debit claims or work on leads needs the partner license. The cheaper customer license only saves money where dealers are treated like customers.
+Salesforce Help describes what each license covers; I summarized that overview in [the Manufacturing Cloud customer portal](../../../blog/manufacturing-cloud-customer-portal/). For the partner license, Help names sales agreements, account forecasts, leads, quotes, warranty and rebate claims and visits, among others. For Customer Community Plus, it names cases, knowledge articles, orders, assets and warranties. So a dealer who should see their rebate status, submit ship and debit claims or work on leads needs the partner license. The cheaper customer license only saves money where dealers are treated like customers.
 
 Three decisions come before the build:
 
@@ -96,7 +96,7 @@ How I compare licenses against a custom build over five years is described under
 
 Partner visit management plans visits to dealers and distributors and makes them comparable. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/partner-visit-management-for-dealers-and-distributors/get-started-with-partner-visit-management), a visit has a location, special instructions and an assigned field rep. Tasks give the visit a purpose, such as discussing quarterly targets or auditing inventory, and carry KPIs such as spare parts count, scrap percentage or safety training dates. Reps capture actual values on their phone, and the back office compares them with expected values.
 
-The feature has its own switch. In the [IndustriesManufacturingSettings](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) metadata it is `enablePartnerVisitManagement`, available since API version 56.0, next to `enablePartnerLeadManagement` and `enablePartnerPerformanceManagement`. All three default to off. So "we have Manufacturing Cloud" does not yet mean that visits, partner leads or partner performance are running. The quote should say which of these features the partner sets up.
+The feature has its own switch. In the [IndustriesManufacturingSettings](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) metadata it is `enablePartnerVisitManagement`, available since API version 56.0, next to `enablePartnerLeadManagement` and `enablePartnerPerformanceManagement`. All three default to off. So "we have Manufacturing Cloud" does not yet mean that visits, partner leads or partner performance are active. The quote should say which of these features the partner sets up.
 
 ```hinweis offen
 Two points are open in the sources: which license reps need for the visits app, and whether it works offline. Get both clarified in writing before you plan.
@@ -114,11 +114,11 @@ The [CRM Analytics template for Manufacturing Cloud](https://trailhead.salesforc
 
 For ship and debit, the [Trailhead unit](https://trailhead.salesforce.com/content/learn/modules/ship-and-debit-process-management/get-to-know-ship-and-debit) also mentions CRM Analytics dashboards. Which CRM Analytics license they require, the units do not say.
 
-Each of these dashboards shows only the data that arrives. Invoices as transactions come from the ERP; sell-through and distributor stock come from the distributors themselves, by upload, EDI or an interface. If a dealer reports weekly, every figure is up to seven days old, and the dashboard should show the date of the last report. Which data flows between ERP and Salesforce is something I decide as part of [integration architecture](../../../services/salesforce-integration/).
+Each of these dashboards shows only the data that is actually delivered. Invoices as transactions come from the ERP; sell-through and distributor stock come from the distributors themselves, by upload, EDI or an interface. If a dealer reports weekly, every figure is up to seven days old, and the dashboard should show the date of the last report. Which data flows between ERP and Salesforce is something I decide as part of [integration architecture](../../../services/salesforce-integration/).
 
 ## Agents in the channel: read first, write later
 
-For the channel, Salesforce names two agent features. According to the [product page](https://www.salesforce.com/manufacturing/cloud/), the AI Partner Sales Assistant from Summer '26 finds products and builds quotes; for the same release the page lists automated distributor procurement. What the assistant needs in catalog, prices per dealer tier and discount limits is in [AI Partner Sales Assistant: dealer quotes with AI](../../../blog/ai-partner-sales-assistant-dealer-quotes/). The inventory template of Agentforce for Manufacturing searches and summarises inventory and creates replenishment requests; the details are in [Agentforce for distributor stock and replenishment](../../../blog/distributor-inventory-replenishment-agentforce/).
+For the channel, Salesforce names two agent features. According to the [product page](https://www.salesforce.com/manufacturing/cloud/), the AI Partner Sales Assistant from Summer '26 finds products and builds quotes; for the same release the page lists automated distributor procurement. What the assistant needs in catalog, prices per dealer tier and discount limits is in [AI Partner Sales Assistant: dealer quotes with AI](../../../blog/ai-partner-sales-assistant-dealer-quotes/). The inventory template of Agentforce for Manufacturing searches and summarizes inventory and creates replenishment requests; the details are in [Agentforce for distributor stock and replenishment](../../../blog/distributor-inventory-replenishment-agentforce/).
 
 The Agentforce for Manufacturing Cloud Add-on is listed at $150 per user and month on the [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/), available with Core and Advanced. Which license dealers in the portal need to use the agents, I could not find in the sources.
 
@@ -143,7 +143,7 @@ Both run on Experience Cloud and can live in one org. The question is who builds
 
 ## Worked example: compact machines through 80 dealers
 
-A maker of compact machinery sells through 80 dealers in Germany, Austria and Switzerland, each with three portal users. Spare parts also go through six distributors. All numbers are assumptions.
+A maker of compact machinery sells through 80 dealers in Germany, Austria and Switzerland, each with three portal users. Spare parts are also sold through six distributors. All numbers are assumptions.
 
 - **Rebate management:** yes. Three tiers, quarterly, calculated in a spreadsheet by inside sales today. Invoices arrive from SAP in the Transaction Journal every night.
 - **Partner portal:** 240 dealer users on Partner Community for Manufacturing. As member licenses at list price that is 240 × 50 × 12 = $144,000 a year, before anyone has talked about login licenses or discounts.
