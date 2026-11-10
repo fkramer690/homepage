@@ -13,7 +13,7 @@ tags: [Salesforce CPQ, Revenue Cloud, migration, make-or-buy, decision]
 takeaways:
   - "Reasons to move are agent-based quoting, newer consumption models such as wallets and commitments, or a product model that is being redesigned anyway."
   - "Reasons to wait are a stable quoting process, prices from the ERP, an ERP migration under way or no budget for a redesign this year."
-  - "A partner product or a custom approach fits when configuration rules live in the ERP or in engineering."
+  - "A partner product or a custom approach fits when configuration rules are kept in the ERP or in engineering."
   - "The decision starts with an assessment of your CPQ org: rules, price logic, customisations and integrations show how big the redesign would be."
 faq:
   - q: "Should I stay on Salesforce CPQ or move to Revenue Cloud?"
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-You can stay on Salesforce CPQ, and it is often the right choice for now. Existing customers renew, add users and get support, and Salesforce has announced neither an end-of-life date nor a forced migration. Move to Revenue Cloud (now Agentforce Revenue Management) when you need capabilities that are only being added there, such as agent-based quoting or newer consumption models, or when you are redesigning your product model anyway. Wait when your process is stable or a larger project has priority. And check a third route, a partner product or a custom approach, when your configuration rules live outside Salesforce. Start with an honest assessment of your CPQ org.
+You can stay on Salesforce CPQ, and it is often the right choice for now. Existing customers renew, add users and receive support, and Salesforce has announced neither an end-of-life date nor a forced migration. Move to Revenue Cloud (now Agentforce Revenue Management) when you need capabilities that are only being added there, such as agent-based quoting or newer consumption models, or when you are redesigning your product model anyway. Wait when your process is stable or a larger project has priority. And check a third route, a partner product or a custom approach, when your configuration rules are outside Salesforce. Start with an honest assessment of your CPQ org.
 
 ## Can you simply stay on CPQ?
 
@@ -41,9 +41,9 @@ pro: What you keep
 - Support and critical fixes
 - No end-of-life date and, according to Salesforce, "no forced migration"
 contra: What you give up
-- No new features: Salesforce directs new revenue innovation to Revenue Cloud, and CPQ gets none
+- No new features: Salesforce directs new revenue innovation to Revenue Cloud, and CPQ receives none
 - I expect partners to build Revenue Cloud teams rather than CPQ teams
-- So the expertise needed to maintain a heavily customized CPQ org will not get cheaper
+- So the expertise needed to maintain a heavily customized CPQ org will not become cheaper
 ```
 
 I would make the decision deliberately and write down when you will look at it again, instead of letting it drift.
@@ -52,7 +52,7 @@ I would make the decision deliberately and write down when you will look at it a
 
 These triggers point to a move in the next one to two years:
 
-- **You need capabilities that are only being added to Revenue Cloud.** Salesforce announced Agentforce quoting in July 2025 as part of [Revenue Cloud](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/), with sellers creating quotes from a plain-language request. CPQ will not get such features.
+- **You need capabilities that are only being added to Revenue Cloud.** Salesforce announced Agentforce quoting in July 2025 as part of [Revenue Cloud](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/), with sellers creating quotes from a plain-language request. CPQ will not receive such features.
 - **New consumption models.** Subscriptions, renewals and simple usage billing also work with CPQ plus the Salesforce Billing package. If remote monitoring subscriptions or pay-per-use need to include commitments, grants and wallets, Revenue Cloud has consumption and wallet management; usage-based invoicing requires the separate Revenue Cloud Billing license.
 - **The product model changes anyway.** A new product generation, a new variant structure or a catalog clean-up is a redesign. Doing it twice, once in CPQ and later again in Revenue Cloud, wastes effort.
 - **Org relaunch or partner change.** When the org is rebuilt or a new partner takes over, the move fits into a project that is happening anyway. An [AI org assessment](../ai-org-assessment-technical-debt/) helps to see what is actually in the old org.
@@ -71,9 +71,9 @@ Waiting does not mean doing nothing. Delete unused rules, document the price log
 
 ## The third route: partner product or custom approach
 
-Yes, and I would always check it before signing anything. Besides Revenue Cloud there are partner products, custom approaches on the platform, quoting in the ERP or engineering configuration with Salesforce as the front end, and mixed setups during a transition. It helps to decide separately where selling, configuration, pricing and billing are led; for manufacturers these do not have to sit in one product. How a custom approach with its own product configurator feeds quotes and sales agreements is described in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
+Yes, and I would always check it before signing anything. Besides Revenue Cloud there are partner products, custom approaches on the platform, quoting in the ERP or engineering configuration with Salesforce as the front end, and mixed setups during a transition. It helps to decide separately where selling, configuration, pricing and billing are led; for manufacturers these do not have to be handled by one product. How a custom approach with its own product configurator feeds quotes and sales agreements is described in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
 
-A third route fits when your configuration rules live in SAP variant configuration, in a PLM system or with application engineers, and Salesforce would only display the result. Then a full constraint model in Revenue Cloud duplicates rules that someone has to keep in sync. The make-or-buy questions are the same as for any product: how well does the standard fit, who maintains the rules, and what do license and maintenance cost over several years. I describe how I calculate that in [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
+A third route fits when your configuration rules are kept in SAP variant configuration, in a PLM system or with application engineers, and Salesforce would only display the result. Then a full constraint model in Revenue Cloud duplicates rules that someone has to keep in sync. The make-or-buy questions are the same as for any product: how well does the standard fit, who maintains the rules, and what do license and maintenance cost over several years. I describe how I calculate that in [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
 
 Salesforce's own numbers give some context. According to the CPQ page, about 15 percent of Revenue Cloud Advanced customers migrated from CPQ. That is a share of Advanced customers, not the share of the CPQ installed base that has moved. The figure shows that migrations happen. It does not show that CPQ customers are running out of time.
 

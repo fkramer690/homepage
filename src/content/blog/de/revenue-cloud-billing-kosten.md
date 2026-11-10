@@ -73,7 +73,7 @@ Laut Salesforce-Hilfe zählen die positiven Beträge gebuchter Rechnungsposition
 
 ## Wie schätzen Sie die Kosten?
 
-Die Formel für eine erste Schätzung ist einfach: Multiplizieren Sie die positiven Beträge gebuchter Rechnungen pro Jahr in Dollar mit 0,02. Schwierig ist das Rechnungsvolumen.
+Die Formel für eine erste Schätzung ist einfach: Multiplizieren Sie die positiven Beträge gebuchter Rechnungen pro Jahr in Dollar mit 0,02. Schwierig ist die Schätzung des Rechnungsvolumens.
 
 Rechenbeispiel: Ein Maschinenbauer will Fernüberwachungs-Abos und Wartungsverträge mit Revenue Cloud Billing fakturieren, 18 Millionen Euro im Jahr ohne Steuer. Für die Schätzung nehme ich einen Kurs von 1,15 Dollar je Euro an. Das ist eine Annahme, keine Prognose.
 

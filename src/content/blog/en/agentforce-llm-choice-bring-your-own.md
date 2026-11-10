@@ -85,7 +85,7 @@ Ask Salesforce to confirm in writing whether a BYOLLM model may also run the age
 
 Anthropic's [model overview](https://platform.claude.com/docs/en/about-claude/models/overview) and Salesforce's Supported Models page are two separate lists. Claude Opus 5.5 reached Agentforce as generally available from the week of 12 October 2026, on a rolling basis per org. I never build a business case around a model that is not on the Salesforce list and active in the org.
 
-Models also leave. A deprecated model keeps working for a while and can then be rerouted to a replacement, for example Claude Sonnet 4 to Sonnet 4.6, or retired, as Gemini 3 Pro (Beta) was on 23 April 2026. The model page lists deprecation and reroute dates, and I found no stated notice period. A reroute is a model change that your tests have not covered, so I test the replacement as soon as the deprecation is announced.
+Models are also withdrawn. A deprecated model keeps working for a while and can then be rerouted to a replacement, for example Claude Sonnet 4 to Sonnet 4.6, or retired, as Gemini 3 Pro (Beta) was on 23 April 2026. The model page lists deprecation and reroute dates, and I found no stated notice period. A reroute is a model change that your tests have not covered, so I test the replacement as soon as the deprecation is announced.
 
 Region is the third check. Managed models "eventually re-route to a US region" when a request fails in the designated region, unless an admin turns on "Enable In-Region Model Requests Only", which covers "some models". The help page listed `eu` inference profiles for Claude Sonnet 5 and Opus 4.8, and only the United States for GPT 5.6 Terra. More in [Agentforce EU data residency](../agentforce-eu-data-residency-models/).
 

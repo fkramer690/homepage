@@ -20,7 +20,7 @@ faq:
   - q: "Where do customer prices in Salesforce B2B Commerce come from?"
     a: "By default, they come from price books: a standard price book, store price books and buyer group price books. If a buyer has several, the pricing strategy decides: Best Price shows the lowest, Priority Price follows the priority you set per buyer group."
   - q: "How many price books can a B2B store use?"
-    a: "5 price books can be assigned directly to a store, and more come in through buyer groups. A price book holds up to 350,000 entries (soft limit). For each pricing call, only the first 25 active price books in the buyer's currency are evaluated; that limit is hard."
+    a: "5 price books can be assigned directly to a store, and more can be added through buyer groups. A price book holds up to 350,000 entries (soft limit). For each pricing call, only the first 25 active price books in the buyer's currency are evaluated; that limit is hard."
   - q: "Can B2B Commerce take prices live from SAP?"
     a: "Yes, through the pricing extension point Commerce_Domain_Pricing_Service, which uses price books by default and can be extended or replaced in Apex, for example with a call to SAP. processPrice affects product lists and product pages, while processTransactionalPrice affects cart and checkout. Depending on the feature you still need price book entries, for example for Faster Add-to-Cart."
   - q: "What does the store show when SAP cannot be reached for a price?"
@@ -69,7 +69,7 @@ A price book entry is one price for one product in one price book, with a curren
 
 To bring that into price books, you have to calculate the result in advance for every combination a buyer can see. With four dealer tiers and a stable price list that is easy: four price books, one nightly load. With prices negotiated per customer, the number of combinations grows quickly, and every change in SAP needs a new load before the store shows the right price. Temporary promotions, freight surcharges and minimum quantity surcharges are usually where replication fails first.
 
-The second risk is more subtle. If the store shows a price calculated from a copy and SAP calculates a different one when the order arrives, someone has to decide which one applies. If nobody decided it before go-live, that question lands with inside sales, one order at a time. I describe the same risk for AI-built quotes in [AI Partner Sales Assistant: dealer quotes with AI](../ai-partner-sales-assistant-dealer-quotes/).
+The second risk is more subtle. If the store shows a price calculated from a copy and SAP calculates a different one when the order arrives, someone has to decide which one applies. If nobody decided it before go-live, inside sales has to settle that question, one order at a time. I describe the same risk for AI-built quotes in [AI Partner Sales Assistant: dealer quotes with AI](../ai-partner-sales-assistant-dealer-quotes/).
 
 ## When should the price be retrieved live from the ERP?
 
@@ -89,7 +89,7 @@ A third option is Advanced Pricing powered by Revenue Cloud, a pricing engine in
 
 Assume a compressor manufacturer sells spare parts to 600 dealers in 9 countries. SAP holds a list price per country, a discount per dealer tier and material group, and customer prices for about 40 large dealers. Around 25,000 parts are sold online.
 
-I would split the pricing approach. For the roughly 560 dealers on tier discounts, a nightly job calculates the net prices into one price book per country and tier; with 9 countries and 3 tiers that is 27 price books of at most 25,000 entries each. They are attached to buyer groups per country and tier, not directly to the store, and each buyer sees exactly one of them. For the 40 large dealers with customer prices, the pricing extension asks SAP live in the cart; on product lists and product pages they see a note that their price is calculated in the cart. Freight and minimum quantity surcharges come from SAP at checkout for everyone, through the relevant cart calculators and not through the pricing extension. The order that goes back to SAP carries the price the buyer saw, and SAP checks it against its own result with a defined tolerance.
+I would split the pricing approach. For the roughly 560 dealers on tier discounts, a nightly job calculates the net prices into one price book per country and tier; with 9 countries and 3 tiers that is 27 price books of at most 25,000 entries each. They are attached to buyer groups per country and tier, not directly to the store, and each buyer sees exactly one of them. For the 40 large dealers with customer prices, the pricing extension asks SAP live in the cart; on product lists and product pages they see a note that their price is calculated in the cart. Freight and minimum quantity surcharges come from SAP at checkout for everyone, through the relevant cart calculators and not through the pricing extension. The order sent back to SAP carries the price the buyer saw, and SAP checks it against its own result with a defined tolerance.
 
 ```ablauf
 sf: Store price books, Pricing extension, Cart

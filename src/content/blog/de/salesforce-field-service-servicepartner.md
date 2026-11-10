@@ -13,7 +13,7 @@ takeaways:
   - "Disponent und Techniker sollen gleich arbeiten, egal ob ein interner oder ein externer Techniker den Einsatz übernimmt."
   - "Entweder ist jeder Partnertechniker eine eigene Service Resource, oder der Partner ist eine Kapazitätsressource. Für gleiche Arbeit passt das erste besser."
   - "Partnertechniker nutzen dieselbe App. Sie brauchen eine Experience-Cloud-Lizenz und Field-Service-Permission-Set-Licenses; Contractor Plus bündelt das."
-  - "Ein Gebiet pro Partner trennt Daten nur zusammen mit privaten Freigabeeinstellungen und einer Prüfung, welche übergeordneten Datensätze mitgehen."
+  - "Ein Gebiet pro Partner trennt Daten nur zusammen mit privaten Freigabeeinstellungen und einer Prüfung, welche übergeordneten Datensätze mit freigegeben werden."
   - "Bewusst getrennt bleiben Datenzugriff und Abrechnung. Ein Partner sieht nur, was er für seinen Einsatz braucht."
 faq:
   - q: "Wie bindet man Subunternehmer in Salesforce Field Service ein?"

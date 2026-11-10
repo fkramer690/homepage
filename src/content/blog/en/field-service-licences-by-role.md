@@ -74,17 +74,17 @@ I build the license matrix from what a person does in the system, not from their
 
 Service Cloud itself now comes in new editions. The [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) lists Core at $195 per user per month and says Core replaces Enterprise. For the hotline, that is the comparison price: $195 for Service Cloud Core versus $250 for Field Service+ Core. The $55 difference is the price gap between two bundles; have the exact rights confirmed in the order form.
 
-The back office is the role I check most carefully. People who only invoice in the ERP need no Salesforce license at all. People who read service reports or maintain contracts may get by with a cheaper license, depending on which objects they edit. How to test that without rebuilding standard functions is covered in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+The back office is the role I check most carefully. People who only invoice in the ERP need no Salesforce license at all. People who read service reports or maintain contracts may need only a cheaper license, depending on which objects they edit. How to test that without rebuilding standard functions is covered in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
 ## When does Contractor Plus per login pay off?
 
-Contractor Plus costs $80 per user per month or $32 per login. The break-even is simple: $80 divided by $32 is 2.5. A partner technician who logs in more than two or three times a month is cheaper with a user license. Below that, per login wins.
+Contractor Plus costs $80 per user per month or $32 per login. The break-even is simple: $80 divided by $32 is 2.5. A partner technician who logs in more than two or three times a month is cheaper with a user license. Below that, per-login licensing is cheaper.
 
 ```hinweis offen
 The pricing page says contractor licenses are also available based on monthly logins and refers to sales for details, so I would have the counting rule written into the order form.
 ```
 
-Salesforce's [architecture guide on contractor sharing](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns.html) describes a contractor company as a third-party entity that manages its own workforce. That is who these licenses are for: your service partners, not your own staff on a cheaper ticket. How partner technicians get their own service resource and territory is covered in [Field Service: how to bring in service partners](../salesforce-field-service-service-partners/).
+Salesforce's [architecture guide on contractor sharing](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns.html) describes a contractor company as a third-party entity that manages its own workforce. That is who these licenses are for: your service partners, not a cheaper way to license your own staff. How partner technicians get their own service resource and territory is covered in [Field Service: how to bring in service partners](../salesforce-field-service-service-partners/).
 
 ## Worked example: hotline, dispatch, internal technicians and two partners
 

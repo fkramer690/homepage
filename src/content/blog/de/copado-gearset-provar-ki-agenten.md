@@ -10,7 +10,7 @@ topic: devops
 categories: [devops, ai]
 tags: [Copado, Gearset, Provar, KI-Agenten, DevOps, Due Diligence]
 takeaways:
-  - "Agentia steckt in Advanced und Pro, Agentia Headless ist seit 20. Oktober GA, Cam gibt es auf Anfrage, Provar MCP für Provar-Automation-Kunden ohne Aufpreis."
+  - "Agentia ist in Advanced und Pro enthalten, Agentia Headless seit 20. Oktober GA, Cam gibt es auf Anfrage, Provar MCP für Provar-Automation-Kunden ohne Aufpreis."
   - "Copado nennt Vertex AI mit Gemini und Claude, aber kein Modell je Agent; Gearsets KI-Bedingungen nennen OpenAI, AWS, US-Rechenzentren und 90 Tage Aufbewahrung."
   - "Fragen Sie vor dem Kauf schriftlich nach Modell, Datenregion, Aufbewahrung, Verbrauchsdeckel und wer freigibt, was der Agent liefert."
   - "Ein Team mit Open-Source-DevOps-Werkzeugen wie sfdx-hardis deckt mit einem allgemeinen Coding-Agenten und einem selbst gewählten Anbieter Teile davon ab."
@@ -34,7 +34,7 @@ Copado Agentia, Cam als Gearset Agent und Provar MCP sind die KI-Angebote, die d
 
 Die Beschreibungen unten stammen von den Herstellern selbst; einen unabhängigen Test bei Salesforce Ben oder in vergleichbarer Salesforce-Fachpresse habe ich nicht gefunden.
 
-- **Copado Agentia.** Angekündigt am 13. April 2026 in [Copados Pressemitteilung](https://www.copado.com/resources/blog/copado-introduces-agentia-tm-bringing-context-aware-ai-agents-to-salesforce-devops). Ein Context Hub verbindet Org-Metadaten, Abhängigkeiten, Pipelines und Historie mit Ihrer eigenen Dokumentation und Ihren Richtlinien. Darauf bauen Agenten für Planung, Entwicklung, Test, Release und Betrieb auf, ein Orchestrate Agent koordiniert sie, und mit Agentia Studio bauen Sie eigene Abläufe und Agentforce-Agenten. Was davon in welcher Edition steckt, lassen Sie sich im Angebot bestätigen. Als eingebaute Governance nennt Copado richtlinienbasierte Kontrollen, automatisierte Tests, Freigabeschritte, Audit Trails und rollenbasierte Zugriffe.
+- **Copado Agentia.** Angekündigt am 13. April 2026 in [Copados Pressemitteilung](https://www.copado.com/resources/blog/copado-introduces-agentia-tm-bringing-context-aware-ai-agents-to-salesforce-devops). Ein Context Hub verbindet Org-Metadaten, Abhängigkeiten, Pipelines und Historie mit Ihrer eigenen Dokumentation und Ihren Richtlinien. Darauf bauen Agenten für Planung, Entwicklung, Test, Release und Betrieb auf, ein Orchestrate Agent koordiniert sie, und mit Agentia Studio bauen Sie eigene Abläufe und Agentforce-Agenten. Was davon in welcher Edition enthalten ist, lassen Sie sich im Angebot bestätigen. Als eingebaute Governance nennt Copado richtlinienbasierte Kontrollen, automatisierte Tests, Freigabeschritte, Audit Trails und rollenbasierte Zugriffe.
 - **Cam, der Gearset Agent.** Laut [Gearsets Ankündigung vom 2. September 2026](https://assets.gearset.com/2026/09/01112431/Gearset-2026-Cam-Announcement.pdf) übernimmt Cam ein Ticket, fragt bei unklaren Anforderungen nach, plant und baut die Änderung und prüft, ob sie deploybar ist, bevor ein Pull Request entsteht. Die Arbeit durchläuft mit Audit Trail den bestehenden Release-Prozess des Teams, mit denselben Tests und Reviews wie menschliche Änderungen.
 - **Provar MCP.** Veröffentlicht am 1. Juli 2026 im [Provar-Blog](https://provar.com/blog/product/provar-mcp-bringing-ai-to-salesforce-test-automation/). Provar MCP ist kein eigener Agent. Es dient als "AI-assisted quality layer" in der Provar DX CLI: ein MCP-Server, über den ein KI-Assistent wie Claude, GitHub Copilot oder Cursor Org-Metadaten liest, Provar-Tests und Page Objects erzeugt, sie gegen Qualitätsregeln prüft, ausführt und Fehlschläge analysiert. Der Blog nennt mehr als 240 Regeln, die aktuelle Dokumentation 170+; fragen Sie Provar, welche Zahl gilt.
 
@@ -61,11 +61,11 @@ Die einzige harte Zahl liefert Gearset:
 quelle: Gearset-Ankündigung vom 2. September 2026
 ```
 
-Die Zahlen stammen von einem Kunden, wurden vom Hersteller gemessen und beziehen sich auf eine Woche. Es zeigt, dass Cam in einer echten Org mergefähige Pull Requests erzeugen kann, mehr nicht. Ob das übrige Viertel im Review scheiterte, noch offen war oder verworfen wurde, sagt die Ankündigung nicht. Jeder Pull Request durchlief das Review des Teams.
+Die Zahlen stammen von einem Kunden, wurden vom Hersteller gemessen und beziehen sich auf eine Woche. Sie zeigen, dass Cam in einer echten Org mergefähige Pull Requests erzeugen kann, mehr nicht. Ob das übrige Viertel im Review scheiterte, noch offen war oder verworfen wurde, sagt die Ankündigung nicht. Jeder Pull Request durchlief das Review des Teams.
 
 ## Modell, Region und Aufbewahrung unterscheiden die drei am stärksten
 
-Hier unterscheiden sich die drei Produkte am stärksten, und hier sollte ein Hersteller mit DSGVO-Pflichten und Betriebsrat zuerst hinschauen.
+Hier unterscheiden sich die drei Produkte am stärksten, und hier sollte ein Hersteller mit DSGVO-Pflichten und Betriebsrat zuerst genau prüfen.
 
 **Gearset** veröffentlicht allgemeine KI-Bedingungen in seinen [Product and Location Specific Terms](https://gearset.com/legal/product-and-location-terms/), in einer Fassung gültig ab 15. September 2026. Cam wird darin nicht namentlich genannt, die Regeln gelten aber für Gearsets KI-Funktionen insgesamt:
 
@@ -90,7 +90,7 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud für den Händlervertrieb, Field
 Copado bietet ein Upgrade auf Agentia an. So würde ich vorgehen:
 
 1. **Bauen und Steuern trennen.** Der Coding-Agent schreibt schon Apex und Flows. Die Frage an Agentia lautet, ob Context Hub und Freigabeschritte etwas leisten, das die bestehende Pipeline und die [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) nicht leisten.
-2. **Die vier Antworten schriftlich holen.** Modell und Anbieter, Verarbeitungsregion, Aufbewahrung sowie Abrechnung und Obergrenze des Verbrauchs. Bis sie auf Papier stehen, sieht Agentia nur eine Developer Sandbox ohne Kunden- und Händlerdaten.
+2. **Die vier Antworten schriftlich holen.** Modell und Anbieter, Verarbeitungsregion, Aufbewahrung sowie Abrechnung und Obergrenze des Verbrauchs. Bis sie schriftlich vorliegen, sieht Agentia nur eine Developer Sandbox ohne Kunden- und Händlerdaten.
 3. **Einen engen Tickettyp pilotieren.** Etwa 20 kleine Änderungen am Objekt für Gewährleistungsanträge: neue Felder, Picklist-Werte, eine Validierungsregel. Messen Sie, wie viele Pull Requests ohne Nacharbeit gemergt werden und wie lange das Review dauert. Vergleichen Sie die Ergebnisse mit gleichartigen Tickets, die der Coding-Agent allein erledigt.
 4. **Provar MCP ergänzen, wenn Provar schon lizenziert ist.** Die Regressionstests für das Händlerportal sind das naheliegende Ziel. Eine eigene Gebühr fällt nicht an, aber die Anbindung an den Coding-Agenten ist ein neuer Datenfluss, der eine eigene Freigabe braucht.
 5. **Nach sechs Wochen entscheiden**, auf Basis von Zahlen aus Ihrer eigenen Org, nicht anhand der 44 und 75 Prozent des Herstellers.
@@ -101,7 +101,7 @@ Mit Gearset bleiben die Schritte gleich; Schritt 2 beginnt bei Gearsets veröffe
 
 Ein Team, das bereits [sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/) nutzt, erhält Teile dessen, was bezahlte DevOps-Agenten bieten, ohne zweiten KI-Vertrag, nicht aber deren Kontext-, Test- und Governance-Schichten. Laut der [KI-Einrichtungsanleitung von sfdx-hardis](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/) erklärt es Deployment-Fehler und beschreibt Flows und Apex-Klassen. Als Anbieter kommen Agentforce, OpenAI, Anthropic, Google oder ein lokales Ollama-Modell in Frage. Die Anbindung wird über Umgebungsvariablen eingestellt oder über ein firmeneigenes Gateway geleitet. Sie wählen den Anbieter und, wo Anbieter und Vertrag es zulassen, die Region; ein lokales Modell hält die Inferenz lokal. Die automatische Fehlerkorrektur per Coding-Agent befindet sich in der Beta-Phase, und die Anleitung verlangt, dass ein Experte diese Änderungen vor dem Merge prüft.
 
-Kombinieren Sie das mit Claude Code, Codex oder Copilot für die Entwicklung, verglichen in [Agentforce Vibes, Claude Code, Codex oder Copilot](../agentforce-vibes-claude-code-copilot-vergleich/), und eine Pipeline in Ihrem Besitz entscheidet, was in Produktion geht. Dafür übernimmt Ihr Team Setup und Support selbst.
+Kombinieren Sie das mit Claude Code, Codex oder Copilot für die Entwicklung, verglichen in [Agentforce Vibes, Claude Code, Codex oder Copilot](../agentforce-vibes-claude-code-copilot-vergleich/), und eine Pipeline in Ihrem Besitz entscheidet, was in Produktion gelangt. Dafür übernimmt Ihr Team Setup und Support selbst.
 
 ```pro-contra
 pro: Ein bezahlter DevOps-Agent passt, wenn

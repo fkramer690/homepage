@@ -82,7 +82,7 @@ Das ist in der Praxis die wichtigste Frage. "Revenue Cloud" hat zwei verschieden
 Ein Partner, der von "30 Revenue-Cloud-Projekten" spricht, meint vielleicht CPQ-Projekte aus den Jahren 2020 bis 2023. Diese Erfahrung ist für eine CPQ-Migration wertvoll, sagt über das neue Datenmodell aber wenig. Ich stelle drei Fragen:
 
 1. Welches Datenmodell hatten die Referenzprojekte: CPQ-Objekte mit Namespace SBQQ oder Standardobjekte?
-2. Wie viele Projekte wurden seit Spring '24 mit Revenue Lifecycle Management oder Revenue Cloud Advanced?
+2. Wie viele Projekte wurden seit Spring '24 mit Revenue Lifecycle Management oder Revenue Cloud Advanced umgesetzt?
 3. Wer im vorgeschlagenen Team hat im neuen Produkt Preisprozeduren und Konfiguratorregeln gebaut?
 
 ```hinweis achtung

@@ -59,7 +59,7 @@ No, and this is where most of the money in service is saved or lost. Before a wo
 **What solves the problem?** I recommend a short triage checklist that sorts calls into three outcomes:
 
 - **Remote help.** The issue is operator error, a parameter setting or a reset. The case is closed without a work order. With [visual remote assistance](../visual-remote-assistant-remote-help-instead-of-visit/) the agent sees the machine through the customer's phone camera instead of guessing from a description.
-- **Part shipment.** The fault is clear and the customer's staff can swap the part. The order goes to the ERP, and the case waits for confirmation.
+- **Part shipment.** The fault is clear and the customer's staff can swap the part. The order is passed to the ERP, and the case stays open until confirmation.
 - **Technician visit.** Only then is a work order created.
 
 On a breakdown hotline, a voice agent can take over the intake and triage. Where it should stop and hand over to a person is covered in [Breakdown hotline with Agentforce Voice](../breakdown-hotline-agentforce-voice/). For human agents working in the console, [Casey and the Service Rep Assistant](../service-cloud-casey-service-rep-assistant/) describes what Service Cloud adds.
@@ -77,7 +77,7 @@ On a breakdown hotline, a voice agent can take over the intake and triage. Where
 
 Planned maintenance follows a different path. According to the [Trailhead unit on generating work orders](https://trailhead.salesforce.com/content/learn/modules/field_service_maint/field-service-generate-work-orders), a maintenance plan creates work orders manually or automatically, and automatic generation "runs 3 times a day". Depending on the generation method and the auto-create option on the work type, these work orders come with an appointment. No case is involved.
 
-The consequence: if planned and unplanned work use the same territories and technicians, they compete for the same capacity. If the planned maintenance for the next four weeks is already booked, a machine-down call on Tuesday has to push something out. Priorities and service objectives decide what moves, and somebody has to own that rule.
+The consequence: if planned and unplanned work use the same territories and technicians, they compete for the same capacity. If the planned maintenance for the next four weeks is already booked, a machine-down call on Tuesday has to displace something. Priorities and service objectives decide what moves, and somebody has to own that rule.
 
 ## The record chain also determines the license mix
 

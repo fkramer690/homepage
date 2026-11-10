@@ -14,11 +14,11 @@ takeaways:
   - "Nach der Dreamforce 2024 aktualisierte Salesforce Well-Architected nicht mehr. Im August 2025 folgte die Ankündigung, am 14. September 2026 das neue Framework."
   - "Aus drei Säulen (Trusted, Easy, Adaptable) wurden fünf: Trust, Reliability, Operational Excellence, Resource and Cost Optimization und Fairness."
   - "Neu ist eine Agentic-Enterprise-Linse: Für jede Säule gibt es eine Agenten-Variante, und Agenten müssen dieselben Anforderungen erfüllen wie jede andere Lösung."
-  - "Kosten stecken jetzt in einer eigenen Säule, Resource and Cost Optimization, mit Lizenzen, Sandboxes und Make-or-Buy. Für Kunden ist das am nützlichsten."
+  - "Kosten haben jetzt eine eigene Säule, Resource and Cost Optimization, mit Lizenzen, Sandboxes und Make-or-Buy. Für Kunden ist das am nützlichsten."
   - "Das Framework ist eine gute gemeinsame Sprache für Design Reviews mit mehreren Partnern, die Abwägungen zwischen den Säulen trifft aber der Kunde."
 faq:
   - q: "Was ist das Salesforce Well-Architected Framework?"
-    a: "Ein Leitfaden von Salesforce, nach dem Architekten Lösungen auf der Plattform entwerfen und prüfen. Es liefert Fragen, Muster und ein gemeinsames Vokabular und liegt kostenlos im Salesforce Architecture Center auf architect.salesforce.com."
+    a: "Ein Leitfaden von Salesforce, nach dem Architekten Lösungen auf der Plattform entwerfen und prüfen. Es liefert Fragen, Muster und ein gemeinsames Vokabular und ist kostenlos im Salesforce Architecture Center auf architect.salesforce.com verfügbar."
   - q: "Welche fünf Säulen hat das neue Well-Architected Framework?"
     a: "Trust, Reliability, Operational Excellence, Resource and Cost Optimization und Fairness. Dazu kommt für jede Säule eine Variante für die Agentic Enterprise, also für Lösungen mit KI-Agenten."
   - q: "Was ist mit Trusted, Easy und Adaptable passiert?"
@@ -29,7 +29,7 @@ faq:
     a: "Nein. Die fünf Säulen gelten für jede Salesforce-Lösung. Die Agenten-Linse ergänzt sie für Agentforce und andere KI-Agenten, ersetzt sie aber nicht."
 ---
 
-Das Salesforce Well-Architected Framework ist neu aufgebaut: Seit dem 14. September 2026 hat es fünf Säulen statt drei, nämlich Trust, Reliability, Operational Excellence, Resource and Cost Optimization und Fairness, dazu eine Linse für Lösungen mit KI-Agenten. Die meisten Inhalte aus Trusted, Easy und Adaptable sind in diese Säulen umsortiert. Für CIOs und CRM-Verantwortliche in der Fertigung ist vor allem eins neu: Kosten und Betrieb haben jetzt eigene Säulen. Damit taugt das Framework als gemeinsamer Maßstab für Design Reviews mit mehreren Umsetzungspartnern. Die Abwägungen nimmt es Ihnen nicht ab; unten zeige ich, wie ich ein solches Review führe.
+Das Salesforce Well-Architected Framework ist neu aufgebaut: Seit dem 14. September 2026 hat es fünf Säulen statt drei, nämlich Trust, Reliability, Operational Excellence, Resource and Cost Optimization und Fairness, dazu eine Linse für Lösungen mit KI-Agenten. Die meisten Inhalte aus Trusted, Easy und Adaptable wurden in diese Säulen umsortiert. Für CIOs und CRM-Verantwortliche in der Fertigung ist vor allem eins neu: Kosten und Betrieb haben jetzt eigene Säulen. Damit taugt das Framework als gemeinsamer Maßstab für Design Reviews mit mehreren Umsetzungspartnern. Die Abwägungen nimmt es Ihnen nicht ab; unten zeige ich, wie ich ein solches Review führe.
 
 ## Was ist seit dem Relaunch passiert?
 
@@ -37,11 +37,11 @@ Die Geschichte ist kurz, aber sie erklärt, warum das Framework heute anders aus
 
 - **Nach der Dreamforce 2024** wurde die Website nicht mehr aktualisiert, wie [Salesforce Ben berichtete](https://www.salesforceben.com/salesforce-well-architected-set-to-return-community-news-and-validating-data-models/). Das Programm war faktisch eingestellt.
 - **Am 8. August 2025** kündigten Chief Architect Emin Gerba und Christophe Coenraets im [Salesforce-Blog](https://www.salesforce.com/blog/relaunching-well-architected-program/) die Rückkehr an. Bemerkenswert offen war die Aussage: Viele Architekten hätten ihnen gesagt, das Ende sei ein Fehler gewesen.
-- **Zur Dreamforce 2025 im Oktober** ging das überarbeitete [Architecture Center](https://www.salesforce.com/blog/relaunching-salesforce-architecture-program/) online, mit neuen Decision Guides (etwa zu Data 360, Event-Driven Architecture und Asynchronous Processing) und neuen Grundlagen zu Agentforce und zur Agentic Enterprise. Am Framework selbst wurden nur Teile von Trusted und Adaptable aufgefrischt.
+- **Zur Dreamforce 2025 im Oktober** wurde das überarbeitete [Architecture Center](https://www.salesforce.com/blog/relaunching-salesforce-architecture-program/) veröffentlicht, mit neuen Decision Guides (etwa zu Data 360, Event-Driven Architecture und Asynchronous Processing) und neuen Grundlagen zu Agentforce und zur Agentic Enterprise. Am Framework selbst wurden nur Teile von Trusted und Adaptable aufgefrischt.
 - **Am 14. September 2026** veröffentlichte Salesforce das [neue Well-Architected Framework](https://www.salesforce.com/blog/new-well-architected-framework/). Laut Salesforce haben Hunderte Architekten in Fokusgruppen, Umfragen und Community-Events mitgearbeitet.
 - **Auf der Dreamforce 2026** stellte Salesforce laut [Salesforce Ben](https://www.salesforceben.com/new-well-architected-framework-and-agent-revealed-at-dreamforce-26/) zusätzlich einen Architect Agent vor, einen KI-Assistenten im Architecture Center, der auf diesen Inhalten aufsetzt.
 
-Der eigentliche Umbau ist also die Version von September 2026. Der Relaunch 2025 hat vor allem die Plattform drumherum neu aufgestellt.
+Der eigentliche Umbau ist also die Version von September 2026. Der Relaunch 2025 hat vor allem die Plattform um das Framework herum neu aufgestellt.
 
 ## Was hat sich am Well-Architected Framework geändert?
 
@@ -53,7 +53,7 @@ Das alte Framework hatte drei Säulen mit zusammen acht Eigenschaften: Trusted (
 4. **Resource and Cost Optimization:** Codeorganisation, Packaging, Datenlebenszyklus, Performance, Make-or-Buy, Lizenzen und Sandboxes.
 5. **Fairness:** Barrierefreiheit, Transparenz, Nichtdiskriminierung und KI-Ethik.
 
-Salesforce hat die alten Inhalte nicht weggeworfen, sondern umsortiert. Die Seite [Legacy Framework Mapping](https://architect.salesforce.com/docs/architect/well-architected/guide/tea-pillar-mapping.html) zeigt, wohin welche Inhalte verschoben wurden. Einige Beispiele: Monitoring lag früher unter Reliable und gehört jetzt zu Operational Excellence. Disaster Recovery lag unter Resilient und gehört jetzt zu Reliability. Business Value und ROI lagen unter Automated und gehören jetzt zu Resource and Cost Optimization. Barrierefreiheit und Datenschutzrechte stehen unter Fairness, rechtliche Vorgaben und Data Residency bleiben bei Trust. Messaging, Eventing und API-Management wurden vollständig aus dem Framework in die Integration Patterns verschoben.
+Salesforce hat die alten Inhalte nicht verworfen, sondern umsortiert. Die Seite [Legacy Framework Mapping](https://architect.salesforce.com/docs/architect/well-architected/guide/tea-pillar-mapping.html) zeigt, wohin welche Inhalte verschoben wurden. Einige Beispiele: Monitoring lag früher unter Reliable und gehört jetzt zu Operational Excellence. Disaster Recovery lag unter Resilient und gehört jetzt zu Reliability. Business Value und ROI lagen unter Automated und gehören jetzt zu Resource and Cost Optimization. Barrierefreiheit und Datenschutzrechte stehen unter Fairness, rechtliche Vorgaben und Data Residency bleiben bei Trust. Messaging, Eventing und API-Management wurden vollständig aus dem Framework in die Integration Patterns verschoben.
 
 ```saeulenwechsel
 bisher: Bisher: drei Säulen
@@ -97,7 +97,7 @@ Der wichtigste Satz dazu steht im Ankündigungsblog: „Agents don't get their o
 
 Aus Sicht eines Architekten auf Kundenseite sind drei Änderungen relevant.
 
-**Kosten stecken in einer eigenen Säule.** Im alten Framework tauchten Kosten nur am Rand auf. Jetzt stehen Lizenzen, Sandboxes und Make-or-Buy in Resource and Cost Optimization, neben Performance und Wartbarkeit. Das ist überfällig. In meiner Pre-Sales-Arbeit mit Salesforce wurden Angebote meist zunächst mit vollen Lizenzen für alle kalkuliert, obwohl viele Nutzer sie nicht brauchten. In einer größeren Organisation sind das schnell sechsstellige Beträge pro Jahr. Eine Architekturprüfung, die das nicht berücksichtigt, ist unvollständig.
+**Kosten stecken in einer eigenen Säule.** Im alten Framework wurden Kosten nur am Rand behandelt. Jetzt stehen Lizenzen, Sandboxes und Make-or-Buy in Resource and Cost Optimization, neben Performance und Wartbarkeit. Das ist überfällig. In meiner Pre-Sales-Arbeit mit Salesforce wurden Angebote meist zunächst mit vollen Lizenzen für alle kalkuliert, obwohl viele Nutzer sie nicht brauchten. In einer größeren Organisation sind das schnell sechsstellige Beträge pro Jahr. Eine Architekturprüfung, die das nicht berücksichtigt, ist unvollständig.
 
 **Betrieb steht gleichberechtigt neben dem Design.** Operational Excellence bündelt DevOps, Monitoring und Incident Management. Damit gehört der Betrieb in jede Architekturprüfung und darf nicht erst nach dem Go-live Thema werden. Dass DORA-Metriken jetzt im offiziellen Framework stehen, gibt Kunden ein Argument gegenüber Partnern, die Deployments noch manuell durchführen. Warum ich darauf bestehe, steht in [Warum DevOps in Salesforce-Enterprise-Projekten zählt](../warum-devops-salesforce-enterprise-projekte/).
 

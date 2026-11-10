@@ -37,7 +37,7 @@ The history is short, but it explains why the framework looks different today:
 
 - **After Dreamforce 2024** the website stopped being updated, as [Salesforce Ben reported](https://www.salesforceben.com/salesforce-well-architected-set-to-return-community-news-and-validating-data-models/). The program was effectively shut down.
 - **On 8 August 2025** Chief Architect Emin Gerba and Christophe Coenraets announced its return on the [Salesforce blog](https://www.salesforce.com/blog/relaunching-well-architected-program/). They were remarkably frank: many architects had told them that ending it was a mistake.
-- **For Dreamforce 2025 in October,** the reworked [Architecture Center](https://www.salesforce.com/blog/relaunching-salesforce-architecture-program/) went live, with new decision guides (for example on Data 360, event-driven architecture and asynchronous processing) and new fundamentals on Agentforce and the Agentic Enterprise. Only parts of the framework's Trusted and Adaptable content were refreshed.
+- **For Dreamforce 2025 in October,** the reworked [Architecture Center](https://www.salesforce.com/blog/relaunching-salesforce-architecture-program/) was launched, with new decision guides (for example on Data 360, event-driven architecture and asynchronous processing) and new fundamentals on Agentforce and the Agentic Enterprise. Only parts of the framework's Trusted and Adaptable content were refreshed.
 - **On 14 September 2026** Salesforce published the [new Well-Architected Framework](https://www.salesforce.com/blog/new-well-architected-framework/). According to Salesforce, hundreds of architects contributed through focus groups, surveys and community events.
 - **At Dreamforce 2026**, according to [Salesforce Ben](https://www.salesforceben.com/new-well-architected-framework-and-agent-revealed-at-dreamforce-26/), Salesforce added an Architect Agent, an AI assistant in the Architecture Center grounded in this content.
 
@@ -53,7 +53,7 @@ The old framework had three pillars with eight qualities in total: Trusted (secu
 4. **Resource and Cost Optimization:** code organization, packaging, data lifecycle, performance, build versus buy, licenses and sandboxes.
 5. **Fairness:** accessibility, transparency, non-discrimination and AI ethics.
 
-Salesforce did not throw the old content away; it reorganized it. The [Legacy Framework Mapping](https://architect.salesforce.com/docs/architect/well-architected/guide/tea-pillar-mapping.html) page shows where each part went. Some examples: monitoring used to sit under Reliable and now belongs to Operational Excellence. Disaster recovery used to sit under Resilient and now belongs to Reliability. Business value and ROI used to sit under Automated and now belong to Resource and Cost Optimization. Accessibility and privacy rights sit under Fairness, while legal compliance and data residency stay with Trust. Messaging, eventing and API management moved out of the framework into the Integration Patterns.
+Salesforce did not discard the old content; it reorganized it. The [Legacy Framework Mapping](https://architect.salesforce.com/docs/architect/well-architected/guide/tea-pillar-mapping.html) page shows where each part went. Some examples: monitoring was previously part of Reliable and now belongs to Operational Excellence. Disaster recovery was previously part of Resilient and now belongs to Reliability. Business value and ROI were previously part of Automated and now belong to Resource and Cost Optimization. Accessibility and privacy rights are part of Fairness, while legal compliance and data residency stay with Trust. Messaging, eventing and API management moved out of the framework into the Integration Patterns.
 
 ```saeulenwechsel
 before: Previously: three pillars
@@ -97,7 +97,7 @@ The key sentence is in the announcement blog: "Agents don't get their own rulebo
 
 From the point of view of a client-side architect, three changes matter.
 
-**Cost is part of a pillar.** In the old framework cost only appeared at the edges. Now licenses, sandboxes and build versus buy sit in Resource and Cost Optimization, next to performance and maintainability. That was overdue. In my pre-sales work with Salesforce, proposals usually started with full licenses for everyone, even though many users did not need them. In a larger organization that easily adds up to six figures a year. An architecture review that ignores this is incomplete.
+**Cost is part of a pillar.** In the old framework cost was only covered at the margins. Now licenses, sandboxes and build versus buy are part of Resource and Cost Optimization, next to performance and maintainability. That was overdue. In my pre-sales work with Salesforce, proposals usually started with full licenses for everyone, even though many users did not need them. In a larger organization that easily adds up to six figures a year. An architecture review that ignores this is incomplete.
 
 **Operations sit next to design as equals.** Operational Excellence bundles DevOps, monitoring and incident management. That puts operations into every architecture review instead of leaving them until after go-live. Having DORA metrics in the official framework gives clients an argument to use with partners who still deploy by hand. I explain why I insist on this in [Why DevOps matters in Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
 
@@ -125,7 +125,7 @@ With the new framework I would sort these standards along the five pillars today
 In practice, that means:
 
 1. **Structure design reviews by pillar.** For a larger change, the proposing partner submits a one-page brief before the meeting: affected users, systems and integrations, evidence per relevant pillar, rejected alternatives, extra license and operating cost, and who owns monitoring and recovery. The review ends with one of four outcomes: approved, approved with conditions, rework, or escalated for a business decision.
-2. **Log trade-offs.** Where one pillar gives way to another, it goes into the decision log with a reason.
+2. **Log trade-offs.** Where one pillar gives way to another, it is recorded in the decision log with a reason.
 3. **Do not treat agents separately.** Agentforce work goes through the same review, extended by the agent variant of each pillar.
 4. **Take the cost pillar seriously.** Salesforce suggests a monthly review of spending anomalies, a quarterly audit of license assignments and capacity, and a full cost review once a year.
 

@@ -14,7 +14,7 @@ takeaways:
   - "Ein Testfall prüft Subagent, Aktionen und Ergebnis. Das Ergebnis bewertet ein Sprachmodell, harte Geschäftsregeln brauchen exakte Prüfungen auf Daten."
   - "Ob Testläufe Credits kosten, sollten Sie schriftlich klären: Laut Leitfaden zur Test-API verbrauchen sie Requests und Credits."
   - "Ich empfehle 100 Prozent für harte Regeln und kritische Fälle, rund 90 Prozent je Lauf für die Antwortqualität und eine menschliche Prüfung."
-  - "Session Traces, Health-Metriken und ein gestufter Rollout laufen ab dem ersten Tag, und typische fehlgeschlagene Gespräche werden neue Testfälle."
+  - "Session Traces, Health-Metriken und ein gestufter Rollout sind ab dem ersten Tag aktiv, und typische fehlgeschlagene Gespräche werden neue Testfälle."
 faq:
   - q: "Was ist das Agentforce Testing Center?"
     a: "Das Testing Center ist das Salesforce-Werkzeug, um Agenten vor dem Go-live zu testen. Es erzeugt synthetische Testanfragen, führt sie parallel in einer Sandbox aus und prüft Routing, Aktionen und Antworten. Entwickler nutzen dieselbe Art von Tests über die Befehle sf agent test in der CLI."
@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Wer Agentforce-Agenten testet, braucht am Ende eine Zahl, die über den Go-live entscheidet. Ein Agent ist produktionsreif, wenn er einen vereinbarten Testsatz mit einer vereinbarten Passrate besteht, über mehrere Läufe, in einer Sandbox, und wenn das Monitoring läuft, bevor der erste Händler ihm schreibt. Diese Schwelle ist notwendig, aber nicht hinreichend: Berechtigungen, Datenschutz, Fallbacks, Lastverhalten und eine Abschaltmöglichkeit müssen ebenfalls geprüft werden. Salesforce liefert die Werkzeuge, nicht die Schwelle. Die Fachseite, etwa die Serviceleitung, legt sie mit IT, Security und Datenverantwortlichen fest, und ich würde sie vor dem Piloten schriftlich festhalten.
+Wer Agentforce-Agenten testet, braucht am Ende eine Zahl, die über den Go-live entscheidet. Ein Agent ist produktionsreif, wenn er einen vereinbarten Testsatz mit einer vereinbarten Passrate besteht, über mehrere Läufe, in einer Sandbox, und wenn das Monitoring aktiv ist, bevor der erste Händler ihm schreibt. Diese Schwelle ist notwendig, aber nicht hinreichend: Berechtigungen, Datenschutz, Fallbacks, Lastverhalten und eine Abschaltmöglichkeit müssen ebenfalls geprüft werden. Salesforce liefert die Werkzeuge, nicht die Schwelle. Die Fachseite, etwa die Serviceleitung, legt sie mit IT, Security und Datenverantwortlichen fest, und ich würde sie vor dem Piloten schriftlich festhalten.
 
 ## Warum testet man einen KI-Agenten anders als Apex?
 
@@ -41,7 +41,7 @@ Die Frage lautet also: Wie oft besteht er, und mit welchen Fehlern können wir l
 
 Salesforce hat das [Agentforce Testing Center](https://www.salesforce.com/news/?p=83400) im November 2024 vorgestellt. Es erzeugt Hunderte synthetische Anfragen aus einer Beschreibung in normaler Sprache und führt sie parallel in einer Sandbox aus. Für Teams mit Versionsverwaltung bietet [Agentforce DX](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx.html) dasselbe über VS Code, CLI-Befehle und eine Test-API.
 
-Salesforce hat derzeit zwei Testwege. Das bisherige Testing Center und die Test-API, auf die sich der größte Teil der unten genannten Dokumentation bezieht, speichern Tests als `AiEvaluationDefinition`. Das neuere Testing Center in Agentforce Studio nutzt eigene Testdefinitionen und einen eigenen Runner (`--test-runner agentforce-studio` in der CLI) und ist in der Salesforce-Hilfe als Beta gekennzeichnet. Im Pro-Code-Ansatz des bisherigen Modells ist ein Test eine YAML-Datei. Laut [Salesforce Developers Blog vom Juni 2026](https://developer.salesforce.com/blogs/2026/06/master-the-agentic-development-lifecycle-for-agentforce) enthält jeder Testfall eine Nutzeranfrage und bis zu drei Erwartungen: den Subagenten, an den das Gespräch gehen soll, die Aktionen, die ausgeführt werden sollen, und eine Beschreibung des richtigen Ergebnisses in normaler Sprache. Dieses Ergebnis bewertet ein Sprachmodell als Prüfer, im Englischen „LLM as a judge“. `sf agent test create` lädt die Spezifikation in die Org, `sf agent test run` führt sie aus.
+Salesforce hat derzeit zwei Testwege. Das bisherige Testing Center und die Test-API, auf die sich der größte Teil der unten genannten Dokumentation bezieht, speichern Tests als `AiEvaluationDefinition`. Das neuere Testing Center in Agentforce Studio nutzt eigene Testdefinitionen und einen eigenen Runner (`--test-runner agentforce-studio` in der CLI) und ist in der Salesforce-Hilfe als Beta gekennzeichnet. Im Pro-Code-Ansatz des bisherigen Modells ist ein Test eine YAML-Datei. Laut [Salesforce Developers Blog vom Juni 2026](https://developer.salesforce.com/blogs/2026/06/master-the-agentic-development-lifecycle-for-agentforce) enthält jeder Testfall eine Nutzeranfrage und bis zu drei Erwartungen: den Subagenten, an den das Gespräch übergeben werden soll, die Aktionen, die ausgeführt werden sollen, und eine Beschreibung des richtigen Ergebnisses in normaler Sprache. Dieses Ergebnis bewertet ein Sprachmodell als Prüfer, im Englischen „LLM as a judge“. `sf agent test create` lädt die Spezifikation in die Org, `sf agent test run` führt sie aus.
 
 ```vertiefung Für Entwickler
 titel: Was eine Testspezifikation außerdem prüft
@@ -63,7 +63,7 @@ Wenn eine Aktion in einem angebundenen Test-ERP ein Teil reserviert, geschieht d
 Salesforce liefert Bewertungen, aber keine Schwelle, ab der ein Agent als „bereit“ gilt. Der Lifecycle-Beitrag vom Juni 2026 nennt keine, die Testdokumentation auch nicht. Die Schwellen sind also eine Projektentscheidung, und ich teile sie nach Risiko auf:
 
 1. **Geschäftsregeln: 100 Prozent, exakt geprüft.** Garantieberechtigung, Kreditlimits, Rabattfreigaben. Sie gehören in deterministische Logik, wie in [Agent Script: Regeln statt LLM](../agent-script-regeln-statt-llm/) beschrieben, und Sie testen sie mit Aktionsprüfungen und eigenen Prüfungen ohne Interpretationsspielraum. Ein Fehler stoppt das Release.
-2. **Routing und Aktionen: nahe 100 Prozent.** Geht eine Ersatzteilfrage an den falschen Subagenten oder wird die Auftragsabfrage nicht ausgeführt, kann die Antwort nicht stimmen. Diese Prüfungen sind binär und günstig zu wiederholen.
+2. **Routing und Aktionen: nahe 100 Prozent.** Wird eine Ersatzteilfrage an den falschen Subagenten geleitet oder wird die Auftragsabfrage nicht ausgeführt, kann die Antwort nicht stimmen. Diese Prüfungen sind binär und günstig zu wiederholen.
 3. **Antwortqualität: eine Passrate über mehrere Läufe.** Für das vom LLM bewertete Ergebnis starte ich mit 90 Prozent in jedem von drei vollständigen Läufen und schaue, welche Fälle scheitern: Ein Fall, der in jedem Lauf scheitert, ist ein Befund, auch wenn die Gesamtquote über 90 Prozent bleibt. Das ist mein Ausgangswert, keine Salesforce-Vorgabe; die Fachseite bestätigt oder ändert ihn.
 4. **Schutzfälle: keine Fehler.** Anfragen außerhalb des Auftrags, Fragen nach Aufträgen eines anderen Händlers, versteckte Anweisungen in Freitext. Händlerportale und Garantieformulare sind Einfallstore für Prompt Injection, das beschreibe ich in [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
 
@@ -83,7 +83,7 @@ Die meisten Fehler in so einem Lauf weisen auf Daten und Schnittstellen hin. Des
 
 ## Nach dem Go-live läuft das Monitoring ab dem ersten Tag
 
-Tests decken die Fragen ab, an die Sie gedacht haben. Händler stellen andere. Deshalb läuft das Monitoring ab dem ersten Tag:
+Tests decken die Fragen ab, an die Sie gedacht haben. Händler stellen andere. Deshalb ist das Monitoring ab dem ersten Tag aktiv:
 
 - **Session Traces.** Mit [Agentforce 3](https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement) hat Salesforce auf Basis von OpenTelemetry ein Datenmodell für Session Tracing in Data Cloud eingeführt, heute Data 360. Mit der Session Trace OTel API (Beta) lassen sich Traces pro Sitzung abrufen und an Werkzeuge wie Splunk oder Datadog weiterleiten; sie setzt Data 360 voraus. Traces enthalten Nachrichten und Aktionseingaben, deshalb muss der Zugriff darauf beschränkt sein.
 - **Zustand und Alarme.** Agentforce Observability zeigt Latenz, Eskalations- und Fehlerquoten. Alarme für jede Metrik richten Sie in Agentforce Studio ein. Agent Health Monitoring mit mindestens 16 eingebauten Metriken ist seit der Dreamforce 2026 GA.
@@ -94,7 +94,7 @@ Testen Sie neu, sobald sich etwas unter dem Agenten ändert: ein Subagent, ein F
 
 ## Die Tests gehören dem Kunden
 
-Umsetzungspartner können die Tests schreiben und ausführen, aber Testsatz, Schwellen und Go-live-Entscheidung gehören dem Unternehmen, das gegenüber seinen Händlern geradesteht. Das ist das Prinzip aus [DevOps in Enterprise-Projekten](../warum-devops-salesforce-enterprise-projekte/): Agententests liegen im selben Repository und laufen in derselben Pipeline, mit JUnit-Ausgabe und einer Regel, die das Deployment stoppt, wenn die Passrate unter der Schwelle liegt. Das aufzusetzen gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
+Umsetzungspartner können die Tests schreiben und ausführen, aber Testsatz, Schwellen und Go-live-Entscheidung gehören dem Unternehmen, das gegenüber seinen Händlern verantwortlich ist. Das ist das Prinzip aus [DevOps in Enterprise-Projekten](../warum-devops-salesforce-enterprise-projekte/): Agententests liegen im selben Repository und laufen in derselben Pipeline, mit JUnit-Ausgabe und einer Regel, die das Deployment stoppt, wenn die Passrate unter der Schwelle liegt. Das aufzusetzen gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
 
 ```schritte
 Inakzeptable Fehler benennen

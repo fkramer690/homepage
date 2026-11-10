@@ -10,7 +10,7 @@ topic: field-service
 categories: [field-service, ai]
 tags: [predictive maintenance, field service, data 360, asset service prediction, manufacturing, flex credits]
 takeaways:
-  - "Asset Service Prediction scores the likelihood of follow-up work orders based on past repairs and needs at least 400. Linked work orders matter most."
+  - "Asset Service Prediction scores the likelihood of follow-up work orders based on past repairs and needs at least 400 repairs linked to the asset."
   - "Salesforce Help now documents how to install Asset Service Prediction, but the product page does not list a price. Get the SKU for your edition in writing."
   - "Streaming into Data 360 costs 3,500 Flex Credits per million rows. Interval and row layout determine the bill: one row per signal or one per machine."
   - "With a few hundred units per series and fault codes in free text, maintenance plans with usage and condition triggers are the better choice."
@@ -107,9 +107,9 @@ Assume a machine builder with SAP, Service Cloud and Field Service already live.
 **The decision.**
 
 1. **Usage-based intervals.** The IoT platform writes operating hours to the asset once a day. Maintenance work rules switch from every six months to every 2,000 operating hours. No Data 360 credits are needed for this.
-2. **Three condition signals.** Spindle temperature, vibration and coolant pressure go to Data 360 as 15-minute aggregates, one row per signal: 2.6 million rows, 9,072 credits, about $45 a month. A flow writes the values back to the asset and creates a work order when a threshold is crossed.
+2. **Three condition signals.** Spindle temperature, vibration and coolant pressure are sent to Data 360 as 15-minute aggregates, one row per signal: 2.6 million rows, 9,072 credits, about $45 a month. A flow writes the values back to the asset and creates a work order when a threshold is crossed.
 3. **Booking by agent.** 250 visits a month at five actions each: 25,000 credits, about $125.
-4. **History first.** Coded fault codes become mandatory for dealers as part of the warranty process. In 2028 the builder counts again.
+4. **History first.** Coded failure causes become mandatory for dealers as part of the warranty process. In 2028 the builder counts again.
 
 Ingestion and agent actions come to about 34,000 credits, roughly $170 a month; data preparation, queries and prompts are extra. Connected Assets at $15,000 per org per month only pays off once the health score drives decisions that thresholds cannot.
 
@@ -117,7 +117,7 @@ Ingestion and agent actions come to about 34,000 credits, roughly $170 a month; 
 
 1. **Count** corrective work orders per series and coded failure cause for the last three years.
 2. **Close the gaps**: asset links, picklists for causes, reporting duties for dealers and service partners.
-3. **Decide where raw data lives** and define which aggregates, counters and events go to Salesforce.
+3. **Decide where raw data lives** and define which aggregates, counters and events are sent to Salesforce.
 4. **Estimate credits per signal** before the first machine is connected, using [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
 5. **Ask Salesforce in writing** which add-on includes Asset Service Prediction for your edition and how much Data 360 usage it consumes.
 

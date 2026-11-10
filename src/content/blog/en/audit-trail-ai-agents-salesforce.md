@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-An audit trail for AI agents in Salesforce is assembled from at least five logs, and none of them answers every question on its own. The Trust Layer audit trail and Session Tracing record agent conversations in Data 360. Calls from external AI tools through hosted MCP land in the API logs, which Salesforce keeps for one day in the event types available at no extra cost. Setup Audit Trail covers configuration changes for at least 180 days, while field history covers 18 to 24 months. I would decide per log, before go-live, who may read it, how long it stays and who pays for the retention.
+An audit trail for AI agents in Salesforce is assembled from at least five logs, and none of them answers every question on its own. The Trust Layer audit trail and Session Tracing record agent conversations in Data 360. Calls from external AI tools through hosted MCP are recorded in the API logs, which Salesforce keeps for one day in the event types available at no extra cost. Setup Audit Trail covers configuration changes for at least 180 days, while field history covers 18 to 24 months. I would decide per log, before go-live, who may read it, how long it is kept and who pays for the retention.
 
 ## Which questions do auditors, the data protection officer and the works council ask?
 
@@ -99,11 +99,11 @@ I still use six months as the benchmark, and the table shows the gaps: one day f
 
 Assume a machine builder with 90 dealers, an Agentforce service agent in the dealer portal that answers warranty status questions and opens claims, and 25 service back office users working with Claude Enterprise through hosted MCP. The company has not bought Event Monitoring. All numbers are assumptions.
 
-**Week 3, data protection.** The DPO asks where the names of dealer staff end up: in the audit trail, which stores the response unmasked, and in the step inputs and outputs of Session Tracing. Because Salesforce documents no retention period, the company sets six months as its target and first clarifies with Salesforce how deletion can be enforced in Data 360. IT also starts a daily export of the API logs into the SIEM that rechecks the last three days, because Salesforce can deliver or replace daily files up to three days later.
+**Week 3, data protection.** The DPO asks where the names of dealer staff are stored: in the audit trail, which stores the response unmasked, and in the step inputs and outputs of Session Tracing. Because Salesforce documents no retention period, the company sets six months as its target and first clarifies with Salesforce how deletion can be enforced in Data 360. IT also starts a daily export of the API logs into the SIEM that rechecks the last three days, because Salesforce can deliver or replace daily files up to three days later.
 
 **Week 7, works council.** The agreement allows monthly reports aggregated by department; person-level analysis is allowed only after a security incident, with the works council informed.
 
-**Week 11, a dealer complaint.** A dealer says a competitor knew his net prices. Who read his price agreement through MCP in the past 40 days? Without the export, only yesterday's file would still be available. With the export, filtering on `SALESFORCE_HOSTED_MCP` returns three users from dealer management who accessed the price agreement object, and the investigation moves on to those users.
+**Week 11, a dealer complaint.** A dealer says a competitor knew its net prices. Who read its price agreement through MCP in the past 40 days? Without the export, only yesterday's file would still be available. With the export, filtering on `SALESFORCE_HOSTED_MCP` returns three users from dealer management who accessed the price agreement object, and the investigation moves on to those users.
 
 ## Switch on audit data and tracing before the first conversation
 

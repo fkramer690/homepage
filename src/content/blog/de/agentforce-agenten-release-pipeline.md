@@ -12,7 +12,7 @@ tags: [Agentforce, Release-Management, DevOps, Agent Script, Partnersteuerung, M
 takeaways:
   - "Die Agent-Script-Datei liegt in einem Authoring Bundle in Git und durchläuft Pull Request, Validierung und gezieltes Deployment."
   - "Seit API v68 wird der Agent in der Quell-Org veröffentlicht und die festgeschriebene Version deployt. Pro Agent kann höchstens eine Version aktiv sein."
-  - "Festgeschriebene Versionen lassen sich nicht bearbeiten. Ein Schnellfix im Builder der Produktion lässt die Orgs auseinanderlaufen und blockiert Deployments."
+  - "Festgeschriebene Versionen lassen sich nicht bearbeiten. Ein Schnellfix im Builder der Produktion führt zu abweichenden Orgs und blockiert Deployments."
   - "Es gibt kein atomares Rollback. Am schnellsten ist es, die vorherige Version zu aktivieren; Flows und Apex brauchen ein eigenes Revert."
   - "Der Partner baut und testet, der Release Manager des Kunden deployt und aktiviert, der Fachverantwortliche gibt die Aktivierung frei."
 faq:
@@ -80,7 +80,7 @@ Der v68-Leitfaden zum Umzug von Agenten nennt sie:
 
 Derselbe Leitfaden nennt zwei Regeln: Ein festgeschriebener Agent lässt sich nicht bearbeiten, und die Agenten in Quell- und Ziel-Org müssen übereinstimmen, sonst werden weitere Deployments blockiert. Eine Änderung in Produktion bedeutet also eine neue Version in Produktion, und das nächste Deployment aus der Pipeline ist blockiert, bis jemand eine passende Version in der Quell-Org anlegt.
 
-Meine Regel, festgelegt vor dem ersten Go-live: In Produktion hat niemand Rechte zum Deployen oder Aktivieren außer dem Pipeline-User, dem Release Manager und einer benannten Vertretung. Auch ein Hotfix wird in der Quell-Org gebaut und durch einen beschleunigten Pipeline-Lauf gebracht. Erzwingt eine Störung doch einmal eine Änderung in Produktion, ist das eine dokumentierte Break-Glass-Ausnahme, und noch am selben Tag wird eine passende neue Version in der Quell-Org angelegt.
+Meine Regel, festgelegt vor dem ersten Go-live: In Produktion hat niemand Rechte zum Deployen oder Aktivieren außer dem Pipeline-User, dem Release Manager und einer benannten Vertretung. Auch ein Hotfix wird in der Quell-Org gebaut und über einen beschleunigten Pipeline-Lauf ausgeliefert. Erzwingt eine Störung doch einmal eine Änderung in Produktion, ist das eine dokumentierte Break-Glass-Ausnahme, und noch am selben Tag wird eine passende neue Version in der Quell-Org angelegt.
 
 ## Wie macht man ein Rollback eines Agentforce-Agenten?
 
@@ -94,7 +94,7 @@ Deaktivieren ist die Notbremse, und zwar eine harte. Laut [Agentforce-DX-Dokumen
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, SAP, Händlerportal und einer Produktiv-Org. Ein Partner hat den Serviceagenten für Händleranfragen gebaut; ein internes Team aus vier Personen verantwortet Git und Pipeline, alle zwei Wochen gibt es ein Release. Alle Zahlen sind Annahmen.
 
-Version 3 des Agenten beantwortet in Produktion Fragen zu Auftragsstatus und Garantie. Für Release 4 ergänzt der Partner einen Subagenten für Ersatzteile und erweitert den Auftragsstatus-Flow, damit er für ein abgelöstes Teil auch dessen Nachfolgeteil zurückgibt. Der Architekt des Kunden prüft zwei Pull Requests, einen für den Flow und einen für die .agent-Datei; die Pipeline validiert, veröffentlicht Version 4 in der Integrations-Sandbox, deployt sie in die UAT-Sandbox und lässt 60 Testfälle laufen, und die Serviceleitung gibt die Ergebnisse frei. Am Release-Tag wird dieselbe Version 4 inaktiv in Produktion deployt, und um 7 Uhr aktiviert die Pipeline sie mit der Versionsnummer aus der freigegebenen Release Note.
+Version 3 des Agenten beantwortet in Produktion Fragen zu Auftragsstatus und Garantie. Für Release 4 ergänzt der Partner einen Subagenten für Ersatzteile und erweitert den Auftragsstatus-Flow, damit er für ein abgelöstes Teil auch dessen Nachfolgeteil zurückgibt. Der Architekt des Kunden prüft zwei Pull Requests, einen für den Flow und einen für die .agent-Datei; die Pipeline validiert, veröffentlicht Version 4 in der Integrations-Sandbox, deployt sie in die UAT-Sandbox und führt 60 Testfälle aus, und die Serviceleitung gibt die Ergebnisse frei. Am Release-Tag wird dieselbe Version 4 inaktiv in Produktion deployt, und um 7 Uhr aktiviert die Pipeline sie mit der Versionsnummer aus der freigegebenen Release Note.
 
 Zwei Tage später empfiehlt der Ersatzteil-Subagent für eine Produktlinie das falsche Nachfolgeteil. Der Release Manager aktiviert innerhalb von 15 Minuten wieder Version 3; Auskünfte zum Auftragsstatus und zur Garantie sind weiterhin verfügbar. Auch Version 3 ruft den erweiterten Flow auf, aber das zusätzliche Feld schadet nicht, also bleibt der Flow, und die Korrektur folgt als Version 5 auf dem normalen Weg. Produktionsrechte hat der Partner dabei nie gebraucht.
 
@@ -117,5 +117,5 @@ Unternehmensgruppen mit einer Produktiv-Org je Tochtergesellschaft stehen vor ei
 2. Nehmen Sie sf agent validate authoring-bundle und gezielte Deployments in die Pipeline auf.
 3. Entziehen Sie in Produktion allen außer dem Pipeline-User, dem Release Manager und einer Vertretung die Rechte zum Deployen und Aktivieren.
 4. Führen Sie ein Versionsprotokoll pro Org: Git-Commit, Versionsnummer, Datum, Freigabe.
-5. Schreiben Sie ein Rollback-Runbook: welche Version wieder aktiviert wird, welche Flows zurückgedreht werden, wohin Händler weitergeleitet werden, wenn der Agent aus ist.
+5. Schreiben Sie ein Rollback-Runbook: welche Version wieder aktiviert wird, welche Flows zurückgedreht werden, wohin Händler weitergeleitet werden, wenn der Agent deaktiviert ist.
 6. Prüfen Sie, ob die Salesforce CLI aktuell ist und das Projekt und die Manifeste API 68.0 mit den neuen Agenten-Metadatentypen verwenden.

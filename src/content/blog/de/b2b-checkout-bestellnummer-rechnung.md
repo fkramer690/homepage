@@ -11,7 +11,7 @@ categories: [b2b-commerce]
 tags: [B2B Commerce, Checkout, Bestellnummer, Zahlung, Kreditlimit, ERP]
 takeaways:
   - "Eine Bestellnummer (Purchase Order) gilt im Shop als Zahlungsform, löst aber keine Zahlung aus. Die Nummer wird für die Rechnung ans ERP übergeben."
-  - "Eine Bestellung geht nur raus, wenn für den Warenkorb eine Zahlungsautorisierung oder eine Bestellnummer vorliegt. Jeder Checkout endet mit einem davon."
+  - "Eine Bestellung wird nur abgeschickt, wenn für den Warenkorb eine Zahlungsautorisierung oder eine Bestellnummer vorliegt. Jeder Checkout endet mit einem davon."
   - "Die Purchase-Order-Komponente braucht kein Payment Gateway. Dual Payment bietet Karte und Bestellnummer, Salesforce Payments nutzt Stripe oder Adyen."
   - "Zahlungen lassen sich nicht mit einer Commerce Extension anpassen. Eigene Zahlungslogik braucht einen Apex-Adapter oder eine eigene Komponente."
   - "Kreditlimit und Auftragssperre gehören ins ERP. Die validate-Methode der PlaceOrder-Extension fragt das ERP, bevor die Bestellung entsteht."
@@ -56,7 +56,7 @@ Für das Gateway nennt die [Seite zu den Gateway-Optionen](https://developer.sal
 
 ```vertiefung Für Entwickler
 titel: Wohin gehört die eigene Zahlungslogik?
-Das Extension-Framework, das Preise, Bestand, Steuer, Versand und Auftragserzeugung abdeckt, gilt nicht für Zahlungen: "Currently, payments can't be customized with an extension" ([Salesforce Developers, Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html)). Sonderregeln für Zahlungen gehören deshalb in den Apex-Adapter oder in einer eigenen Komponente, und beides ist Code, den Ihr Team über jedes Release hinweg verantwortet.
+Das Extension-Framework, das Preise, Bestand, Steuer, Versand und Auftragserzeugung abdeckt, gilt nicht für Zahlungen: "Currently, payments can't be customized with an extension" ([Salesforce Developers, Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html)). Sonderregeln für Zahlungen gehören deshalb in den Apex-Adapter oder in eine eigene Komponente, und beides ist Code, den Ihr Team über jedes Release hinweg verantwortet.
 ```
 
 Im Flow-basierten Checkout wählen Käufer auf der Bestellübersicht zwischen Bestellnummer und Karte. Wer die Bestellnummer wählt, gibt PO-Nummer und Rechnungsadresse ein ([Salesforce Developers, Purchase Order oder Kreditkarte](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-checkout-choose-po-or-cc.html)).
@@ -71,7 +71,7 @@ Meine Sicht: In einem Ersatzteilshop eines Herstellers ist die Karte die Ausnahm
 
 Jede Kartenzahlung verursacht Aufwand, der bei einer Bestellung mit Bestellnummer entfällt. Jemand muss die Zahlung im ERP gegen die Rechnung buchen, und jemand muss Erstattungen und Rückbuchungen bearbeiten. Salesforce schreibt, dass Salesforce Payments und manche AppExchange-Anbieter mit Order Management "may be interoperable" sind; das ist ein Hinweis zum Prüfen, keine Zusage für Ihr ERP.
 
-Ich empfehle daher die Purchase-Order-Komponente, wenn der Shop nur für bekannte Händler gedacht ist, und Dual Payment oder Salesforce Payments mit Bestellnummer, wenn eine klar umrissene Gruppe per Karte zahlen soll. Wer mit der Karte anfängt, weil Endkundenshops das so machen, holt sich Gateway, Gebühren und einen Abstimmungsprozess für Bestellungen, die ohnehin auf Rechnung bezahlt worden wären.
+Ich empfehle daher die Purchase-Order-Komponente, wenn der Shop nur für bekannte Händler gedacht ist, und Dual Payment oder Salesforce Payments mit Bestellnummer, wenn eine klar umrissene Gruppe per Karte zahlen soll. Wer mit der Karte anfängt, weil Endkundenshops das so machen, nimmt Gateway, Gebühren und einen Abstimmungsprozess in Kauf, und das für Bestellungen, die ohnehin auf Rechnung bezahlt worden wären.
 
 ## Kreditlimit und Auftragssperre prüft die PlaceOrder-Extension
 

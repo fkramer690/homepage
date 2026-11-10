@@ -43,7 +43,7 @@ Three roles matter, according to the [architecture overview](https://modelcontex
 
 A server offers tools the AI can execute (a query, a record update, a Flow), resources with context data, and prompt templates. The model decides during the conversation which tool it calls. Servers run locally on the user's machine or remotely over HTTP, for which the protocol recommends OAuth.
 
-One sentence in the overview is worth reading twice: MCP covers only the exchange of context and does not dictate how the AI application uses the model or the context. Where your CRM data goes once Claude or ChatGPT has read it is a question for your contract with the AI vendor.
+One sentence in the overview is worth reading twice: MCP covers only the exchange of context and does not dictate how the AI application uses the model or the context. What happens to your CRM data once Claude or ChatGPT has read it is a question for your contract with the AI vendor.
 
 ## Where does MCP show up in a Salesforce org?
 
@@ -87,7 +87,7 @@ Because every call runs as the named user, your sharing model becomes the bounda
 
 ### 3. Which data may the tools reach?
 
-Start with `sobject-reads`, the read-only server that Salesforce calls "a great place to start". I would run it in a sandbox first. The next level is narrower than any standard server: Named Queries expose predefined SOQL instead of free queries, and a Flow "machine history by serial number" returns exactly the fields a service agent needs. The MCP project lists wildcard scopes as a common mistake, and the same logic applies to tools. Order status, stock and prices from SAP or proALPHA stay behind a deterministic API, as described in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/).
+Start with `sobject-reads`, the read-only server that Salesforce calls "a great place to start". I would test it in a sandbox first. The next level is narrower than any standard server: Named Queries expose predefined SOQL instead of free queries, and a Flow "machine history by serial number" returns exactly the fields a service agent needs. The MCP project lists wildcard scopes as a common mistake, and the same logic applies to tools. Order status, stock and prices from SAP or proALPHA stay behind a deterministic API, as described in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/).
 
 ### 4. Which AI clients and agents do you approve?
 
@@ -112,4 +112,4 @@ Hosted MCP Servers use per-user OAuth: a named user authorises each connection, 
 
 - **Unattended agents.** A nightly job that pre-sorts warranty claims has no user who could authorise it. The [Agent API](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html) works with client credentials and a run-as user, which I would treat like any integration user.
 - **System-to-system integration.** The SAP order sync belongs in middleware.
-- **Mass operations.** Checking thousands of records is a report or a batch job. Salesforce says hosted servers are ["intended only for customers with Flex Credits"](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) and usage may be billed. I explain why that becomes a budget line in [MCP calls as a budget risk](../flex-credits-agentforce-cost-per-action/).
+- **Mass operations.** Checking thousands of records is a job for a report or a batch job. Salesforce says hosted servers are ["intended only for customers with Flex Credits"](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) and usage may be billed. I explain why that becomes a budget line in [MCP calls as a budget risk](../flex-credits-agentforce-cost-per-action/).

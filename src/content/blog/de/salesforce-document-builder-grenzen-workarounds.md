@@ -11,7 +11,7 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Außendienst, Document Builder, Service Documents, Flow, LWC]
 takeaways:
-  - "Fünf Lücken tauchen in meinen Projekten auf: Vorlagenwahl, Dateiname, E-Mail, Vorbelegung und Styling. Für übliche Serviceberichte braucht es kein Zusatztool."
+  - "Fünf Lücken zeigen sich in meinen Projekten: Vorlagenwahl, Dateiname, E-Mail, Vorbelegung und Styling. Für übliche Serviceberichte braucht es kein Zusatztool."
   - "Das Vorlagenfeld enthält nur eine ID. Salesforce nimmt den Wert vom Datensatz, vom Arbeitstyp oder den Standard; für Ausnahmen braucht es einen Screen Flow."
   - "Den Dateinamen setzt ein asynchroner Flow, die E-Mail verschickt ein weiterer Flow, denn Salesforce macht beides nicht selbst."
   - "Ein Flow kann die Sprache am Arbeitsauftrag und die Vorlage am Arbeitsauftrag oder Servicetermin vorbelegen, damit niemand auswählen muss."
@@ -57,7 +57,7 @@ Der Flow muss asynchron laufen, also kurz nach der Erstellung. Nur dann existier
 
 Im Standard verschickt der Document Builder das Dokument nicht. Der Techniker erstellt das PDF, der Kunde unterschreibt, und anschließend liegt der Bericht am Arbeitsauftrag. In den meisten Serviceorganisationen erwartet der Kunde den Bericht noch am selben Tag per E-Mail, oft als Grundlage für die Rechnungsfreigabe.
 
-**Workaround:** Ein Flow, der startet, wenn das Dokument fertig ist, und es als Anhang verschickt. Im Flow legen Sie fest, an wen es geht, zum Beispiel an den Kontakt am Arbeitsauftrag oder an eine zentrale Serviceadresse des Kunden, welche E-Mail-Vorlage genutzt wird und in welcher Sprache. Zusammen mit Grenze 2 trägt der Anhang einen Dateinamen, unter dem der Kunde ihn ablegen kann.
+**Workaround:** Ein Flow, der startet, wenn das Dokument fertig ist, und es als Anhang verschickt. Im Flow legen Sie fest, an wen es verschickt wird, zum Beispiel an den Kontakt am Arbeitsauftrag oder an eine zentrale Serviceadresse des Kunden, welche E-Mail-Vorlage genutzt wird und in welcher Sprache. Zusammen mit Grenze 2 trägt der Anhang einen Dateinamen, unter dem der Kunde ihn ablegen kann.
 
 ## Grenze 4: Lassen sich Sprache und Vorlage vorbelegen?
 

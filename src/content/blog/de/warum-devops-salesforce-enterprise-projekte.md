@@ -57,7 +57,7 @@ Ein solides Setup muss nicht kompliziert sein. In meinen Projekten sind diese Ba
 
 1. **Git als Quelle der Wahrheit.** Alle Metadaten, die die Metadata API unterstützt, liegen in einem Repository. Jede Änderung ist ein Commit mit Autor, Begründung und Verweis auf die User Story.
 2. **Eine klare Branch- und Umgebungsstrategie.** Zum Beispiel Entwickler-Sandboxes, Integration, UAT, Produktion und ein schneller Weg für Hotfixes. Jedes Team weiß, in welche Umgebung seine Arbeit als Nächstes überführt wird.
-3. **Pull Requests mit Review.** Änderungen werden geprüft, bevor sie weiterwandern, mit einer klaren Verantwortung für Architekturentscheidungen.
+3. **Pull Requests mit Review.** Änderungen werden geprüft, bevor sie die nächste Umgebung erreichen, mit einer klaren Verantwortung für Architekturentscheidungen.
 4. **Automatisierte Qualitätsschranken.** Validierungs-Deployments, Apex-Tests und statische Code-Analyse laufen bei jedem Pull Request. Eine grüne Pipeline ist Voraussetzung für den Merge, keine Kür.
 5. **Delta-Deployments.** Es wird nur deployt, was sich geändert hat. Das sorgt für schnelle Deployments; Abhängigkeiten und Löschungen brauchen aber Sorgfalt. Ein vollständiges Deployment bleibt möglich.
 6. **Monitoring und Backup.** Regelmäßige Metadaten-Backups und Prüfungen machen direkte Änderungen in Produktion, veraltete API-Versionen oder ungenutzte Komponenten sichtbar.
@@ -99,7 +99,7 @@ In einem Programm, in das ich eingestiegen bin, betrieb ein großes Unternehmen 
 Wir haben das in wenigen Schritten geändert. Zuerst wurde jede Änderung über einen Pull Request mit Review eingebracht. Dann haben wir Entwicklungs- und Architekturstandards aufgeschrieben und in diesen Reviews durchgesetzt. Am Ende wurde die Pipeline der einzige reguläre Weg, Änderungen von einer Org in die nächste zu bringen, mit einem dokumentierten Notfallweg, bei dem die Änderungen anschließend in Git nachgeführt werden.
 
 ```praxis
-Eine Zeit lang ging jeder einzelne Pull Request über meinen Schreibtisch. Als der Prozess stabil funktionierte, habe ich ihn an einen internen Kollegen übergeben, der ihn heute verantwortet.
+Eine Zeit lang habe ich jeden einzelnen Pull Request selbst geprüft. Als der Prozess stabil funktionierte, habe ich ihn an einen internen Kollegen übergeben, der ihn heute verantwortet.
 ```
 
 Die Wirkung war deutlich. Ergebnisse wurden planbar, und Validierungsläufe in der Pipeline haben fehlende Abhängigkeiten und Fehler erkannt, bevor ein Anwender sie gesehen hätte. Hinzu kamen die klassischen DevOps-Vorteile: Wir konnten einen früheren Stand aus Git wiederherstellen, jede Änderung über die Pipeline nachvollziehen, und es ging keine Arbeit mehr verloren.

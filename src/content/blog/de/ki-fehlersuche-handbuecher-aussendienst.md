@@ -63,12 +63,12 @@ Wartungsanleitungen mit festen Schritten brauchen gar keine Suche. Wissensartike
 
 ## Welche Handbuchstände darf der Agent sehen?
 
-Salesforce Salesforce Knowledge verwaltet Versionen besser als eine Datei-Bibliothek. Laut [Knowledge-Entwicklerhandbuch](https://developer.salesforce.com/docs/service/salesforce-knowledge-dev-guide/guide/knowledge-development-object-managing-articles.html) entsteht beim Ändern eines veröffentlichten Artikels ein Entwurf, der die bisherige Fassung beim Veröffentlichen ersetzt. Der Hilfeartikel zu Data Libraries ergänzt: Mit „Use Public Knowledge Articles“ liefert die Bibliothek nur Abschnitte aus veröffentlichten Artikeln. Für eine Datei-Bibliothek habe ich keinen solchen Mechanismus gefunden. Ein hochgeladenes PDF bleibt, bis jemand es entfernt.
+Salesforce Knowledge verwaltet Versionen besser als eine Datei-Bibliothek. Laut [Knowledge-Entwicklerhandbuch](https://developer.salesforce.com/docs/service/salesforce-knowledge-dev-guide/guide/knowledge-development-object-managing-articles.html) entsteht beim Ändern eines veröffentlichten Artikels ein Entwurf, der die bisherige Fassung beim Veröffentlichen ersetzt. Der Hilfeartikel zu Data Libraries ergänzt: Mit „Use Public Knowledge Articles“ liefert die Bibliothek nur Abschnitte aus veröffentlichten Artikeln. Für eine Datei-Bibliothek habe ich keinen solchen Mechanismus gefunden. Ein hochgeladenes PDF bleibt, bis jemand es entfernt.
 
 Die Regeln, die ich festlegen würde:
 
 - **Eine gültige Fassung je Variante und Baustand.** Ein älterer Stand bleibt nur, solange Maschinen im Feld damit laufen, und dann mit eigenem Seriennummernbereich.
-- **Überholte Bulletins werden entfernt** oder werden ins aktuelle Handbuch übernommen.
+- **Überholte Bulletins werden entfernt** oder ins aktuelle Handbuch übernommen.
 - **Eine verantwortliche Person je Produktlinie** im Service gibt Dokumentänderungen frei wie Stammdaten.
 
 ## Data Library oder erweitertes Data-360-Setup?

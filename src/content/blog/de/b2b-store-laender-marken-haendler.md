@@ -16,7 +16,7 @@ takeaways:
   - "Growth enthält 6 Storefronts, Advanced 10, weitere kosten extra. Jeder Store bringt Einstellungen, Extensions und Regressionstests nach jedem Release mit."
 faq:
   - q: "Wie viele Stores kann eine Salesforce-Org für B2B Commerce haben?"
-    a: "Laut Store-Limits sind 100 B2B-Stores pro Org als festes Limit erlaubt. Das enthaltene Kontingent ist früher erreicht: Commerce Cloud B2B Growth enthält 6 Storefronts, Advanced 10. Weitere Storefronts gibt es als Add-on ohne veröffentlichten Preis."
+    a: "Laut Store-Limits sind 100 B2B-Stores pro Org als festes Limit erlaubt. Das enthaltene Kontingent ist früher erreicht: Commerce Cloud B2B Growth enthält 6 Storefronts, Advanced 10. Weitere Storefronts sind als Add-on ohne veröffentlichten Preis erhältlich."
   - q: "Brauche ich pro Land einen eigenen B2B-Store?"
     a: "Meistens nicht. Ein Store unterstützt bis zu 25 Sprachen, Warenkörbe in der Standardwährung des Käuferkontos oder einer anderen unterstützten Währung sowie länderspezifische Sortimente und Preise über Käufergruppen. Ein eigener Store pro Land lohnt sich nur, wenn Checkout oder ERP abweichen."
   - q: "Können zwei B2B-Stores einen Katalog teilen?"
@@ -55,7 +55,7 @@ Diese Limits stammen von den Salesforce-Developers-Seiten zu [Store-Limits](http
 | Käufergruppen pro Käuferkonto | 20 (ein Hinweis nennt 100; 30 mit Apex-Extension) | weich |
 | Produkte pro Store | 4 Millionen, davon 1 Million mit der Salesforce-Suche | fest (nicht bei externer Suche) |
 
-Weiche Limits kann der Salesforce-Support anheben, feste nicht. Die 100 Stores sind für jeden Hersteller, den ich mir vorstellen kann, weit weg. In der Praxis werden der eine Katalog und die fünf Store-Preisbücher früher zum limitierenden Faktor. Eine Marke, die einen eigenen, getrennt veröffentlichten Kategoriebaum braucht, passt schlecht in einen gemeinsamen Store. Eine Preisstruktur mit vielen Listen gehört in Käufergruppen-Preisbücher statt in Store-Preisbücher. Pro Preisaufruf werden höchstens 25 gültige Preisbücher ausgewertet. Woher die Preise selbst stammen sollten, behandelt [Kundenpreise: Preisbücher oder ERP](../kundenpreise-b2b-commerce-preisbuecher-erp/).
+Weiche Limits kann der Salesforce-Support anheben, feste nicht. Die 100 Stores erreicht kein Hersteller, den ich mir vorstellen kann. In der Praxis werden der eine Katalog und die fünf Store-Preisbücher früher zum limitierenden Faktor. Eine Marke, die einen eigenen, getrennt veröffentlichten Kategoriebaum braucht, passt schlecht in einen gemeinsamen Store. Eine Preisstruktur mit vielen Listen gehört in Käufergruppen-Preisbücher statt in Store-Preisbücher. Pro Preisaufruf werden höchstens 25 gültige Preisbücher ausgewertet. Woher die Preise selbst stammen sollten, behandelt [Kundenpreise: Preisbücher oder ERP](../kundenpreise-b2b-commerce-preisbuecher-erp/).
 
 ```hinweis offen
 Die Limit-Seiten widersprechen sich stellenweise: 50 oder 25 Preisbücher pro Käufergruppe, 20 oder 100 Käufergruppen pro Käuferkonto. Erreicht Ihr Design annähernd eine dieser Zahlen, lassen Sie sich den Wert für Ihre Org von Salesforce bestätigen.

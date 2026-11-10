@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Für die meisten Fertigungsunternehmen ist die richtige Agentforce LLM-Auswahl ein fest eingestelltes, von Salesforce verwaltetes Modell pro Subagent, gewählt aus den wenigen Modellen, die Salesforce mit Agenten getestet hat. Ein teureres Modell gibt es nur dort, wo Tests eine Qualitätslücke zeigen. Salesforce Default ist ein Mix, den Sie nicht steuern. Ein eigenes Modell über Bring Your Own LLM, etwa über einen bestehenden Azure-OpenAI-Vertrag, eignet sich für Prompt-Vorlagen und eigene Aktionen, kostet weniger Flex Credits pro Prompt, und die Inferenz beim Anbieter fällt unter Ihren eigenen Vertrag. Neue Modelle werden schrittweise pro Org bereitgestellt. Prüfen Sie deshalb die Modellliste Ihrer Org, bevor Sie mit einem Modell planen.
+Für die meisten Fertigungsunternehmen ist die richtige Agentforce LLM-Auswahl ein fest eingestelltes, von Salesforce verwaltetes Modell pro Subagent, gewählt aus den wenigen Modellen, die Salesforce mit Agenten getestet hat. Ein teureres Modell setze ich nur dort ein, wo Tests eine Qualitätslücke zeigen. Salesforce Default ist ein Mix, den Sie nicht steuern. Ein eigenes Modell über Bring Your Own LLM, etwa über einen bestehenden Azure-OpenAI-Vertrag, eignet sich für Prompt-Vorlagen und eigene Aktionen, kostet weniger Flex Credits pro Prompt, und die Inferenz beim Anbieter fällt unter Ihren eigenen Vertrag. Neue Modelle werden schrittweise pro Org bereitgestellt. Prüfen Sie deshalb die Modellliste Ihrer Org, bevor Sie mit einem Modell planen.
 
 ## Welche Modelle kann ein Agentforce-Agent heute nutzen?
 

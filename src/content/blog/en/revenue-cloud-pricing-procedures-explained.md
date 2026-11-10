@@ -24,7 +24,7 @@ faq:
   - q: "Can other systems use Revenue Cloud pricing?"
     a: "Yes. The Salesforce Pricing Business APIs include a headless pricing resource that builds a context and prices it in one call, plus resources for the price waterfall. A portal or an agent can ask for a price without creating a quote."
   - q: "How do you test a change to a pricing procedure?"
-    a: "Test single cases with the simulation in the Pricing Procedure Builder, and test the whole change against a fixed set of reference quotes with documented expected net prices. The change goes live only when all of them match."
+    a: "Test single cases with the simulation in the Pricing Procedure Builder, and test the whole change against a fixed set of reference quotes with documented expected net prices. The change is activated only when all of them match."
 draft: false
 ---
 
@@ -34,14 +34,14 @@ Revenue Cloud calculates prices with Salesforce Pricing. The price book holds th
 
 Salesforce Pricing is the pricing part of Revenue Cloud, which Salesforce's documentation currently also calls Revenue Management or Agentforce Revenue Management. You work in the Price Management app. The Trailhead unit [Configure Pricing for Products](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/configure-pricing-for-products) names price books, price adjustments, pricing procedures and pricing recipes as the foundation; the recipe determines which decision tables a procedure can use. For how a price is calculated, four parts matter:
 
-- **Price books** hold the product prices. A product must be in the standard price book before it can go into a custom one, as [Explore Salesforce Pricing](https://trailhead.salesforce.com/content/learn/modules/price-management-with-revenue-cloud/explore-salesforce-pricing) explains.
+- **Price books** hold the product prices. A product must be in the standard price book before it can be added to a custom one, as [Explore Salesforce Pricing](https://trailhead.salesforce.com/content/learn/modules/price-management-with-revenue-cloud/explore-salesforce-pricing) explains.
 - **Decision tables** are the bridge to the data. The standard lookup elements of a pricing procedure do not read price book entries directly; rules in decision tables fetch the values from the underlying tables. Custom elements can also use formulas or other objects.
-- **Context definitions** describe which data goes in and comes out. Revenue Cloud includes SalesTransactionContext, which connects sales transactions to quotes, assets and orders. A pricing admin can extend it with custom fields.
+- **Context definitions** describe which data serves as input and output. Revenue Cloud includes SalesTransactionContext, which connects sales transactions to quotes, assets and orders. A pricing admin can extend it with custom fields.
 - **Pricing procedures** are the calculation itself.
 
 On top of that, there are price adjustment schedules for volume tiers, contract prices on Contract Item Price records and [derived prices](https://trailhead.salesforce.com/content/learn/modules/advanced-price-management-with-revenue-cloud/implement-derived-pricing), where one product's price is derived from another, such as an accessory at 10 percent of the main product's list price.
 
-If you come from Salesforce CPQ, you have to rebuild in pricing procedures what price rules and the quote calculator plugin did there. Migration tools can help with price books, discount schedules and analysis, but the logic of price rules and the plugin is redesigned by hand. The other differences are in [Salesforce CPQ vs Revenue Cloud](../salesforce-cpq-vs-revenue-cloud-differences/).
+If you are moving from Salesforce CPQ, you have to rebuild in pricing procedures what price rules and the quote calculator plugin did there. Migration tools can help with price books, discount schedules and analysis, but the logic of price rules and the plugin is redesigned by hand. The other differences are in [Salesforce CPQ vs Revenue Cloud](../salesforce-cpq-vs-revenue-cloud-differences/).
 
 ## How does a pricing procedure calculate a price?
 
@@ -94,14 +94,14 @@ A pricing procedure changes prices on every quote. I treat it like code, even th
 
 - **One owner.** Usually a pricing admin in sales operations, with controlling signing off on changes. The implementation partner builds, but does not decide.
 - **Versions.** Each change becomes a new version with a short note on what changed and why.
-- **Regression cases.** A fixed set of reference quotes with documented expected net prices: standard products, each volume tier, contract customers, attribute discounts, manual discounts above and below approval thresholds. Every change runs against all of them before it goes live.
+- **Regression cases.** A fixed set of reference quotes with documented expected net prices: standard products, each volume tier, contract customers, attribute discounts, manual discounts above and below approval thresholds. Every change runs against all of them before it is activated.
 - **Deployment.** Procedures move between orgs as metadata, while price books, tiers and contract prices are data. According to [Gearset's documentation](https://docs.gearset.com/en/articles/10776213-how-to-deploy-pricing-procedures), pricing procedures are ExpressionSetDefinitions in the Metadata API, a deployment creates a new version in the target org, and the decision tables need a refresh afterwards. Context definitions and decision tables have to exist in the target before the procedure, so deploy in that order. How this fits into a pipeline is covered in [Revenue Cloud deployments](../revenue-cloud-configuration-deployment/).
 
 The chapter [quality, tests and reviews](../../masterclass/devops-release-management/quality-tests-reviews/) in the DevOps masterclass covers how tests and reviews fit into the release process in general.
 
 ## Worked example: pump manufacturer with dealers and contract prices
 
-A pump manufacturer sells 60 product families through its own sales force and through dealers. List prices come from SAP into the standard price book every night. Dealers get a volume discount, 20 key accounts have contract prices for two years, and a version with a simpler control unit is 8 percent cheaper.
+A pump manufacturer sells 60 product families through its own sales force and through dealers. List prices are loaded from SAP into the standard price book every night. Dealers receive a volume discount, 20 key accounts have contract prices for two years, and a version with a simpler control unit is 8 percent cheaper.
 
 The procedure would contain a list price step with contract-based pricing, an attribute discount for the control unit, the volume discount, the manual discount and an aggregate per product family. The nightly job loads the prices and then runs the sync. The regression set has 25 reference quotes, covering each product group, each volume tier and several contract customers. When sales asks for a promotion, the pricing admin builds a new version in a sandbox, runs the 25 cases, controlling checks the differences in the waterfall and, for the aggregates, in the output JSON, and only then is the version activated in production.
 

@@ -60,11 +60,11 @@ Salesforce now calls the product family Revenue Management, while the pricing pa
 
 ```pro-contra
 pro: Growth may be enough if
-- the order goes to SAP and the invoice stays in SAP FI
+- the order is passed to SAP and the invoice stays in SAP FI
 - you need quoting with configured products
 - usage-based products only need to be sold, not invoiced
 contra: Advanced or Billing is the starting point if
-- contracts are to run in Salesforce (Advanced)
+- contracts are to be managed in Salesforce (Advanced)
 - orders are to be orchestrated into fulfilment steps (Advanced)
 - usage, milestones or payments are to be invoiced in Salesforce (Billing)
 ```

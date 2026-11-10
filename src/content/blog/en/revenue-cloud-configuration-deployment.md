@@ -74,7 +74,7 @@ Some parts can be moved only with care. From the Developer Guide and Gearset:
 The release point is the easiest one to miss:
 
 ```hinweis achtung
-During the Salesforce preview window, sandboxes run the new release weeks before production. A context definition built in a preview sandbox then cannot go to production until production has the same release.
+During the Salesforce preview window, sandboxes run the new release weeks before production. A context definition built in a preview sandbox then cannot be deployed to production until production has the same release.
 ```
 
 Which sandbox runs which release is part of the [environments and branching](../../masterclass/devops-release-management/environments-and-branching/) plan.

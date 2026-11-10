@@ -35,7 +35,7 @@ In a small org, one admin knows about every change. In an enterprise program, th
 - **Changes overwrite each other.** Team A deploys a page layout, Team B deploys the same object a day later with an older version. Nobody notices until users complain.
 - **Nobody knows what is in production.** If the org itself is the only source of truth, there is no history, no review and no easy way back.
 - **Releases become events.** Deployments happen late in the evening, with manual pre- and post-steps in a spreadsheet, and the whole team holds its breath.
-- **Partners become hard to replace.** If the deployment knowledge sits in the heads and tools of one implementation partner, the client depends on that partner.
+- **Partners become hard to replace.** If the deployment knowledge resides in the heads and tools of one implementation partner, the client depends on that partner.
 
 None of this is a tooling problem first. It is a governance problem, and tooling enforces the rules once they have been agreed upon.
 
@@ -56,7 +56,7 @@ Add Salesforce's three seasonal major releases per year, plus monthly releases f
 A solid setup does not need to be complicated. In my projects these building blocks matter most:
 
 1. **Git as the source of truth.** All metadata that the Metadata API supports lives in a repository. Every change is a commit with an author, a reason and a link to the user story.
-2. **A defined branch and environment strategy.** For example: developer sandboxes, integration, UAT, production, plus a fast path for hotfixes. Every team knows where its work goes next.
+2. **A defined branch and environment strategy.** For example: developer sandboxes, integration, UAT, production, plus a fast path for hotfixes. Every team knows which environment its work moves to next.
 3. **Pull requests with review.** Changes are reviewed before they move to the next environment, with a clear owner for architecture decisions.
 4. **Automated quality gates.** Validation deployments, Apex tests and static code analysis run on every pull request. A green pipeline is required for a merge, not a nice-to-have.
 5. **Delta deployments.** Only what changed is deployed. That keeps deployments fast, but dependencies and deletions must be handled carefully, and a full deployment remains possible.
@@ -99,7 +99,7 @@ In one program I joined, a large enterprise ran Salesforce with several implemen
 We changed this in a few steps. Every change went through a pull request with a review. We wrote down development and architecture standards and enforced them in those reviews. The pipeline became the only regular way to move changes from one org to the next, with a documented emergency path and a rule that emergency changes are committed back to Git afterwards.
 
 ```praxis
-For a while, every single pull request crossed my desk. Once the process was stable, I handed it over to an internal colleague who now owns it.
+For a while, I reviewed every single pull request myself. Once the process was stable, I handed it over to an internal colleague who now owns it.
 ```
 
 The effect was clear. Results became predictable, and validation runs in the pipeline caught missing dependencies and errors before any user saw them. We also gained the classic DevOps benefits: we could restore an earlier state from Git, trace every change made through the pipeline and stop losing work.
@@ -121,10 +121,10 @@ Salesforce's own DevOps Center is another option without extra license fees in P
 DevOps sounds like a topic for developers. In practice the business side often benefits most:
 
 - **Predictable releases.** A fixed release calendar replaces "we'll deploy when it's ready". Departments can plan training and communication around it. What this can look like for each release is described in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
-- **Faster fixes.** When a bug hits production, a hotfix can move through the same tested pipeline without waiting for the next big release.
+- **Faster fixes.** When a bug occurs in production, a hotfix can move through the same tested pipeline without waiting for the next big release.
 - **Fewer surprises at go-live.** Every change has already been deployed and tested in integration and UAT through the same pipeline that takes it to production.
 - **Traceability for audits.** For every change made through the pipeline you can show who changed it, when, why and who approved it. You can find direct changes in production in the Setup Audit Trail.
-- **Lower dependency on individuals.** Knowledge lives in the repository and the pipeline, not in the head of one admin or one partner's lead developer.
+- **Lower dependency on individuals.** Knowledge is held in the repository and the pipeline, not in the head of one admin or one partner's lead developer.
 
 For a steering committee this translates into a simple question: how confident are we that the next release will not disrupt sales or service operations? Without DevOps, the answer is often a guess.
 

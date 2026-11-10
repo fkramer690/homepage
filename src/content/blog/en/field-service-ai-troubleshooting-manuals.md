@@ -68,7 +68,7 @@ Salesforce Knowledge handles versions better than files. According to the [Knowl
 The rules I would set:
 
 - **One valid version per variant and build state.** An older version stays only while machines in the field are still on that build state, and then with its own serial range.
-- **Superseded bulletins are removed** or are merged into the current manual.
+- **Superseded bulletins are removed** or merged into the current manual.
 - **One owner per product line** in service releases document changes like master data.
 
 ## Data Library or advanced Data 360 setup?

@@ -11,7 +11,7 @@ categories: [devops, ai]
 tags: [setup with agentforce, agentforce for flow, release management, governance, devops, manufacturing]
 takeaways:
   - "Since May 2026, the Setup agent has been able to create objects, fields, flows, Lightning pages, permission sets and sharing rules after approval."
-  - "The approval click comes from the same person who asked. Metadata built by the agent therefore goes through repository and pipeline like any other change."
+  - "The approval click comes from the same person who asked. Metadata built by the agent therefore passes through repository and pipeline like any other change."
   - "In production I would allow the Setup agent for questions, access troubleshooting and user administration, and keep metadata changes in developer sandboxes."
   - "The agent can only do what the admin may do. In production, what counts is who holds Manage Flows, Customize Application and similar rights."
   - "The Audit Trail names the admin and the agent. 500 free actions a month apply only with Flex Credits; otherwise Einstein Requests are used."
@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Setup with Agentforce and Agentforce for Flow belong in a developer sandbox as faster ways to produce metadata that then goes through the repository and the pipeline like any other change. In production I would allow the Setup agent for questions, access troubleshooting and user administration, and nothing that creates or changes metadata. The agent asks for approval before it acts, but that approval comes from the same admin who asked. It replaces neither a second reviewer nor the object ownership matrix nor the deployment that keeps production and the repository in step.
+Setup with Agentforce and Agentforce for Flow belong in a developer sandbox as faster ways to produce metadata that then passes through the repository and the pipeline like any other change. In production I would allow the Setup agent for questions, access troubleshooting and user administration, and nothing that creates or changes metadata. The agent asks for approval before it acts, but that approval comes from the same admin who asked. It replaces neither a second reviewer nor the object ownership matrix nor the deployment that keeps production and the repository in step.
 
 ## What can the Setup agent change, and what does Salesforce document?
 
@@ -68,7 +68,7 @@ Then the next deployment arrives. A partner deploys a Lightning record page and 
 
 ## Should the Setup agent be allowed in production?
 
-Yes, for a defined part of its work. I split by whether the action produces metadata that should live in the repository.
+Yes, for a defined part of its work. I split by whether the action produces metadata that belongs in the repository.
 
 | Action | Production | Developer sandbox |
 |---|---|---|
@@ -80,7 +80,7 @@ Yes, for a defined part of its work. I split by whether the action produces meta
 | Objects, fields, formulas, report types | not allowed | allowed, then pipeline |
 | Flows, Lightning pages | not allowed | allowed, then pipeline |
 
-Routine user administration is already done in production in most orgs and never travels through a repository. Salesforce Help lists limitations for access troubleshooting, for example when sharing is controlled by parent, so treat its answers as a diagnosis, not a security decision. Everything below that line is metadata and follows the release process.
+Routine user administration is already done in production in most orgs and never passes through a repository. Salesforce Help lists limitations for access troubleshooting, for example when sharing is controlled by parent, so treat its answers as a diagnosis, not a security decision. Everything below that line is metadata and follows the release process.
 
 You enforce this through permissions, not through a policy document. Salesforce says the agent can only do what the admin is allowed to do. So the question is who holds the task-specific rights in production: Manage Flows for flows, Customize Application for objects and fields, Manage Profiles and Permission Sets, Manage Sharing, and the user management rights. If only the release user and one emergency admin hold the metadata rights, no other admin can have the Setup agent build a flow in production, whatever options its button offers. Who may use the agent at all is controlled by the Setup with Agentforce User permission set group.
 
@@ -104,7 +104,7 @@ Write the rule down
 Check production rights
   List who holds Manage Flows, Customize Application and comparable permissions. The Setup agent inherits exactly that list.
 Sandboxes first
-  Enable the agent in developer sandboxes first. [Source tracking](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html) works only in Developer and Developer Pro sandboxes, so supported metadata changes by the agent can be retrieved and land in a pull request.
+  Enable the agent in developer sandboxes first. [Source tracking](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html) works only in Developer and Developer Pro sandboxes, so supported metadata changes by the agent can be retrieved and added to a pull request.
 Run the same gates
   Agent-built flows and fields pass the same checks as partner code, as described in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
 Read the audit trail

@@ -11,7 +11,7 @@ categories: [devops, ai]
 tags: [Setup with Agentforce, Agentforce for Flow, Release-Management, Governance, DevOps, Maschinenbau]
 takeaways:
   - "Seit Mai 2026 legt der Setup-Agent nach Freigabe Objekte, Felder, Flows, Lightning-Seiten, Permission Sets und Freigaberegeln an."
-  - "Die Freigabe klickt dieselbe Person, die gefragt hat. Metadaten aus dem Agenten gehen deshalb über Repository und Pipeline wie jede andere Änderung."
+  - "Die Freigabe erteilt dieselbe Person, die gefragt hat. Metadaten aus dem Agenten durchlaufen deshalb Repository und Pipeline wie jede andere Änderung."
   - "In Produktion würde ich den Setup-Agenten nur für Fragen, Fehlerbehebung bei Zugriffsproblemen und Benutzerverwaltung erlauben."
   - "Der Agent kann nur, was der Admin darf. In Produktion zählt, wer Manage Flows, Customize Application und ähnliche Rechte hat."
   - "Der Audit Trail nennt Admin und Agent. 500 kostenlose Aktionen pro Monat gibt es nur mit Flex Credits, sonst werden Einstein Requests verbraucht."
@@ -80,7 +80,7 @@ Ja, für einen festgelegten Teil seiner Arbeit. Ich unterscheide danach, ob eine
 | Objekte, Felder, Formeln, Berichtstypen | nicht erlaubt | erlaubt, dann Pipeline |
 | Flows, Lightning-Seiten | nicht erlaubt | erlaubt, dann Pipeline |
 
-Routinemäßige Benutzerverwaltung passiert in den meisten Orgs ohnehin in Produktion und wird nie über ein Repository abgewickelt. Die Salesforce-Hilfe nennt Grenzen der Fehlerbehebung bei Zugriffsproblemen, zum Beispiel bei Freigaben mit Controlled by Parent. Behandeln Sie die Antworten des Agenten deshalb als Diagnose, nicht als Sicherheitsentscheidung. Alle weiteren in der Tabelle aufgeführten Aktionen betreffen Metadaten und folgen dem Release-Prozess.
+Routinemäßige Benutzerverwaltung erfolgt in den meisten Orgs ohnehin in Produktion und wird nie über ein Repository abgewickelt. Die Salesforce-Hilfe nennt Grenzen der Fehlerbehebung bei Zugriffsproblemen, zum Beispiel bei Freigaben mit Controlled by Parent. Behandeln Sie die Antworten des Agenten deshalb als Diagnose, nicht als Sicherheitsentscheidung. Alle weiteren in der Tabelle aufgeführten Aktionen betreffen Metadaten und folgen dem Release-Prozess.
 
 Durchsetzen lässt sich das über Berechtigungen, nicht über ein Richtliniendokument. Salesforce sagt, der Agent kann nur, was der Admin darf. Die Frage lautet also, wer in Produktion die aufgabenspezifischen Rechte hat: Manage Flows für Flows, Customize Application für Objekte und Felder, Manage Profiles and Permission Sets, Manage Sharing und die Rechte zur Benutzerverwaltung. Wenn nur der Release-User und ein Notfall-Admin die Metadatenrechte haben, kann kein anderer Admin den Setup-Agenten in Produktion einen Flow bauen lassen, was auch immer der Button anbietet. Wer den Agenten überhaupt nutzen darf, wird über die Permission Set Group Setup with Agentforce User gesteuert.
 
@@ -92,7 +92,7 @@ Die Serviceleitung möchte, dass die Hotline vor einer Messekampagne auf der Anl
 
 Am Donnerstag deployt Partner A sein Sprint-Release, darin die Asset-Datensatzseite und ihre Aktivierung aus dem Repository. Die Hotline sieht wieder die Seite von Partner A, ohne das neue Feld. Der Flow läuft weiter, parallel zum Flow von Partner A, der das Garantieende schon aus dem Installationsdatum berechnet. In der Woche darauf nennt die Hotline einem Händler zwei verschiedene Garantiedaten. Der Setup Audit Trail zeigt die Änderungen, aber kein Ticket und keinen Grund.
 
-Dieselbe Anfrage in einer Developer-Sandbox mit Source Tracking hätte ebenfalls fünfzehn Minuten gedauert. Die Administratorin holt die Änderungen in einen Branch, öffnet einen Pull Request, Partner A prüft ihn als Owner von Asset und führt die beiden Flows zu einem zusammen. Das Feld gelangt mit dem nächsten Release in Produktion, rund eine Woche später.
+Dieselbe Anfrage in einer Developer-Sandbox mit Source Tracking hätte ebenfalls fünfzehn Minuten gedauert. Die Administratorin übernimmt die Änderungen in einen Branch, öffnet einen Pull Request, Partner A prüft ihn als Owner von Asset und führt die beiden Flows zu einem zusammen. Das Feld gelangt mit dem nächsten Release in Produktion, rund eine Woche später.
 
 ## Die Pipeline-Regel neben die Ownership Matrix schreiben
 

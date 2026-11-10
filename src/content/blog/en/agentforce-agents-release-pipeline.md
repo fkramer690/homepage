@@ -10,7 +10,7 @@ topic: release
 categories: [devops, ai]
 tags: [agentforce, release management, devops, agent script, partner governance, manufacturing]
 takeaways:
-  - "The Agent Script file lives in an authoring bundle in Git and goes through a pull request, validation and a scoped deployment like a Flow."
+  - "The Agent Script file is stored in an authoring bundle in Git and passes through a pull request, validation and a scoped deployment like a Flow."
   - "Since API v68 you publish once in the source org and deploy that committed version; activation stays a separate step, one active version per agent."
   - "Committed versions cannot be edited. A quick fix in the production Builder causes the orgs to drift apart and blocks future deployments."
   - "There is no atomic rollback. Reactivating the previous version is the fastest fallback; Flows and Apex changes must be reverted separately."
@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-An Agentforce agent belongs in the release pipeline like any other metadata. Its Agent Script file sits in an authoring bundle in Git, goes through a pull request and is validated; since API v68 the version is published once in the source org and that committed version is deployed to the next org. Activation is a separate step, and only one version per agent can be active. For a manufacturer whose implementation partner builds the agent, my answer to "who releases it?" is short: the partner builds and tests, the client deploys and activates, and the accountable business owner approves, for a dealer service agent the head of service.
+An Agentforce agent belongs in the release pipeline like any other metadata. Its Agent Script file is stored in an authoring bundle in Git, passes through a pull request and is validated; since API v68 the version is published once in the source org and that committed version is deployed to the next org. Activation is a separate step, and only one version per agent can be active. For a manufacturer whose implementation partner builds the agent, my answer to "who releases it?" is short: the partner builds and tests, the client deploys and activates, and the accountable business owner approves, for a dealer service agent the head of service.
 
 ## What does an Agentforce agent consist of in the repository?
 
@@ -39,7 +39,7 @@ According to the [Salesforce Developers Blog from May 2026](https://developer.sa
 - **GenAiPlannerBundle:** subagents, instructions and actions of one published version.
 - **The actions underneath:** Flows, Apex and prompt templates, ordinary metadata components with their own lifecycles.
 
-For a decision maker, this means: the logic that decides what a dealer is told about warranty or spare parts is now a text file that can be reviewed and reverted, which matters once rules such as warranty eligibility sit in [Agent Script instead of the LLM](../agent-script-deterministic-rules/).
+For a decision maker, this means: the logic that decides what a dealer is told about warranty or spare parts is now a text file that can be reviewed and reverted, which matters once rules such as warranty eligibility are defined in [Agent Script instead of the LLM](../agent-script-deterministic-rules/).
 
 One detail matters now. The [Metadata API reference](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_aiauthoringbundle.htm) lists Winter '27 as API 68.0, and the [Agentforce DX guide for moving agents between orgs](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx-deploy-metadata.html) says agent metadata changed in v68: both orgs must be on v68 to move agents with the new types (AiAgentDefinition in the example manifests). With v68 you list a committed version in the manifest as Agent#n, retrieve it from the source org and deploy it to the target org. The planner and version metadata described above apply to v67 and earlier. Other changes in that release are covered in [what Winter '27 changes for your pipeline](../salesforce-winter-27-what-changes-for-your-pipeline/).
 
@@ -80,7 +80,7 @@ The v68 guide on moving agents lists them:
 
 The same guide states two rules: "You can't edit a committed agent", and "the agents in both your source and target orgs must match or future deployments will be blocked". A change in production therefore creates a new version in production, and the next pipeline deployment is blocked until someone creates a matching version in the source org.
 
-My rule is set before the first go-live: nobody has deployment or activation rights in production except the pipeline user, the release manager and a named deputy. Even a hotfix is built in the source org and goes through an expedited pipeline run. If an incident ever forces a change in production, it is a documented break-glass exception, and a matching new version is created in the source org the same day.
+My rule is set before the first go-live: nobody has deployment or activation rights in production except the pipeline user, the release manager and a named deputy. Even a hotfix is built in the source org and is delivered through an expedited pipeline run. If an incident ever forces a change in production, it is a documented break-glass exception, and a matching new version is created in the source org the same day.
 
 ## How do you roll back an Agentforce agent?
 
@@ -96,7 +96,7 @@ Assume a machine builder with Service Cloud, SAP, a dealer portal and one produc
 
 Version 3 of the agent answers order status and warranty questions in production. For release 4 the partner adds a spare parts subagent and extends the order status Flow so it also returns the successor part for a superseded part. The client architect reviews two pull requests, one for the Flow and one for the .agent file; the pipeline validates, publishes version 4 in the integration sandbox, deploys it to the UAT sandbox and runs 60 test cases, and the head of service approves the results. On release day the same version 4 is deployed to production as inactive, and at 7 a.m. the pipeline activates it with the version number from the approved release note.
 
-Two days later the spare parts subagent recommends the wrong successor part for one product line. The release manager reactivates version 3 within 15 minutes; order status and warranty answers keep working. Version 3 also calls the extended Flow, but the extra field does no harm, so the Flow stays and the fix is delivered as version 5 through the normal path. The partner never needed production rights.
+Two days later the spare parts subagent recommends the wrong successor part for one product line. The release manager reactivates version 3 within 15 minutes; order status and warranty answers remain available. Version 3 also calls the extended Flow, but the extra field does no harm, so the Flow stays and the fix is delivered as version 5 through the normal path. The partner never needed production rights.
 
 ## The client releases, even in a shared org
 
@@ -107,7 +107,7 @@ The client releases, with clear lines between the roles:
 - **Client release manager:** owns the pipeline, controls the deployment and activates in production, with a technical pipeline user for the deployment itself.
 - **Business owner, for example the head of service:** approves activation on the basis of test results and decides on rollbacks with the release manager, without technical activation rights.
 
-Each agent gets exactly one owner in the [object ownership matrix](../salesforce-object-ownership-matrix/), so two partners never build versions of the same agent. The pipeline and repository belong to the client, as argued in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/); setting them up is part of my [DevOps and release management](../../services/devops-release-management/) work.
+Each agent is assigned exactly one owner in the [object ownership matrix](../salesforce-object-ownership-matrix/), so two partners never build versions of the same agent. The pipeline and repository belong to the client, as argued in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/); setting them up is part of my [DevOps and release management](../../services/devops-release-management/) work.
 
 Groups with one production org per subsidiary face a gap. The [agent command reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_agent_commands_unified.htm) lists an agent template for second-generation managed packages, which fits ISVs better than a group with its own orgs. I would treat each org as its own release target, with the same source version but its own tests, agent user, permissions, activation and version log.
 

@@ -35,7 +35,7 @@ Dubletten entstehen selten, weil jemand schlampig arbeitet. Bei Herstellern sehe
 
 - **Schnittstellen, die anlegen statt aktualisieren.** Ein ERP-Import legt einen Kunden neu an, wenn er den vorhandenen nicht findet, etwa weil sich die Schreibweise geändert hat.
 - **Länder und Gesellschaften.** Ein Konzernkunde kauft in drei Ländern, und jede Vertriebsgesellschaft legt ihn selbst an, einmal mit „GmbH“, einmal mit „AG“, einmal unter dem Namen der Tochter.
-- **Händler und Endkunden.** Ein Endkunde kauft über zwei Händler und taucht zweimal auf, je einmal unter jedem Händler.
+- **Händler und Endkunden.** Ein Endkunde kauft über zwei Händler und erscheint zweimal, je einmal unter jedem Händler.
 - **Anlagen ohne eindeutige Kennung.** Seriennummern werden mit und ohne Präfix erfasst, oder Ersatzmaschinen erhalten die Nummer der alten.
 - **Portale.** Personen registrieren sich selbst und legen dabei einen neuen Kontaktdatensatz an, statt dem vorhandenen zugeordnet zu werden. Die Duplicate Rules von Salesforce greifen nicht bei der Selbstregistrierung in Experience Cloud, deshalb braucht der Registrierungsprozess einen eigenen Kontaktabgleich.
 

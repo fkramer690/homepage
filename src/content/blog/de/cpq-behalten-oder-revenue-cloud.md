@@ -17,7 +17,7 @@ takeaways:
   - "Die Entscheidung beginnt mit einer Analyse Ihrer CPQ-Org: Regeln, Preislogik, Anpassungen und Schnittstellen zeigen, wie groß der Neuentwurf wäre."
 faq:
   - q: "Soll ich bei Salesforce CPQ bleiben oder zu Revenue Cloud wechseln?"
-    a: "Bleiben Sie vorerst, wenn Ihr Angebotsprozess stabil ist und Sie keine neuen Funktionen brauchen. Wechseln Sie, wenn Sie Funktionen brauchen, die nur Revenue Cloud erhält, etwa agentenbasierte Angebote oder Verbrauchsmanagement mit Wallets, oder wenn Sie Produkte und Prozesse ohnehin neu gestalten. Einfache Nutzungsabrechnung geht auch mit CPQ und Salesforce Billing."
+    a: "Bleiben Sie vorerst, wenn Ihr Angebotsprozess stabil ist und Sie keine neuen Funktionen brauchen. Wechseln Sie, wenn Sie Funktionen brauchen, die nur Revenue Cloud erhält, etwa agentenbasierte Angebote oder Verbrauchsmanagement mit Wallets, oder wenn Sie Produkte und Prozesse ohnehin neu gestalten. Einfache Nutzungsabrechnung ist auch mit CPQ und Salesforce Billing möglich."
   - q: "Wie lange dauert eine Migration von CPQ zu Revenue Cloud?"
     a: "Die CPQ-Seite von Salesforce nennt drei bis sechs Monate von der Analyse bis zum Go-live als typische Dauer. Der Migrationsleitfaden legt dagegen keinen festen Zeitrahmen fest. Bei Herstellern mit ERP-Preisen, komplexen Katalogen oder Daten zur installierten Basis würde ich vor einer Analyse nicht mit dieser Spanne planen."
   - q: "Wie viele Unternehmen sind von CPQ zu Revenue Cloud gewechselt?"
@@ -53,7 +53,7 @@ Ich würde bewusst entscheiden und festhalten, wann Sie die Frage wieder aufnehm
 Diese Auslöser sprechen für einen Wechsel in den nächsten ein bis zwei Jahren:
 
 - **Sie brauchen Funktionen, die nur Revenue Cloud erhält.** Salesforce hat im Juli 2025 Agentforce-Funktionen für Angebote als Teil von [Revenue Cloud](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/) angekündigt, mit denen Vertriebsmitarbeitende Angebote aus einer Anfrage in natürlicher Sprache erstellen. CPQ erhält solche Funktionen nicht.
-- **Neue Verbrauchsmodelle.** Abos, Verlängerungen und einfache Nutzungsabrechnung gehen auch mit CPQ und dem Paket Salesforce Billing. Sollen Fernüberwachungs-Abos oder Pay-per-Use mit Mindestabnahmen, Kontingenten und Wallets abgebildet werden, bringt Revenue Cloud Verbrauchs- und Wallet-Management; nutzungsbasierte Rechnungen brauchen die separate Revenue-Cloud-Billing-Lizenz.
+- **Neue Verbrauchsmodelle.** Abos, Verlängerungen und einfache Nutzungsabrechnung sind auch mit CPQ und dem Paket Salesforce Billing möglich. Sollen Fernüberwachungs-Abos oder Pay-per-Use mit Mindestabnahmen, Kontingenten und Wallets abgebildet werden, bringt Revenue Cloud Verbrauchs- und Wallet-Management; nutzungsbasierte Rechnungen brauchen die separate Revenue-Cloud-Billing-Lizenz.
 - **Das Produktmodell ändert sich ohnehin.** Eine neue Produktgeneration, eine neue Variantenstruktur oder eine Katalogbereinigung ist ein Neuentwurf. Ihn zweimal zu machen, erst in CPQ und später noch einmal in Revenue Cloud, verschwendet Arbeit.
 - **Org-Neustart oder Partnerwechsel.** Wenn die Org neu aufgebaut wird oder ein neuer Partner übernimmt, passt der Wechsel in ein Projekt, das ohnehin ansteht. Eine [KI-gestützte Org-Analyse](../ki-org-analyse-technische-schulden/) hilft zu sehen, was wirklich in der alten Org steckt.
 - **CPQ-Anpassungen sind fragil.** Wenn bei jedem Release-Test etwas im Quote Calculator Plugin bricht und nur eine Person die Logik versteht, verringert ein Neuentwurf dieses Risiko.
@@ -64,8 +64,8 @@ Abwarten ist sinnvoll, wenn
 
 - **der Angebotsprozess stabil ist** und niemand neue Funktionen fordert,
 - **die Preise ohnehin aus dem ERP stammen.** Wenn CPQ vor allem einen Nettopreis aus SAP holt und ein Angebot druckt, bringt Revenue Cloud für diesen Schritt wenig,
-- **ein größeres Projekt Vorrang hat.** Eine S/4HANA-Migration oder ein Manufacturing-Cloud-Rollout bindet dieselben Leute. Zwei Neuentwürfe parallel umzusetzen geht selten gut,
-- **in diesem Jahr kein Budget für einen Neuentwurf da ist.** Eine halb finanzierte Migration ist schlechter als eine gut betriebene CPQ-Org.
+- **ein größeres Projekt Vorrang hat.** Eine S/4HANA-Migration oder ein Manufacturing-Cloud-Rollout bindet dieselben Leute. Zwei Neuentwürfe parallel umzusetzen gelingt selten,
+- **in diesem Jahr kein Budget für einen Neuentwurf vorhanden ist.** Eine halb finanzierte Migration ist schlechter als eine gut betriebene CPQ-Org.
 
 Abwarten heißt nicht, nichts zu tun. Löschen Sie ungenutzte Regeln, dokumentieren Sie die Preislogik und sichern Sie sich bei der Verlängerung den späteren Parallelbetrieb. Das macht einen späteren Wechsel günstiger.
 

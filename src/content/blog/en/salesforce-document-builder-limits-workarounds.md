@@ -45,7 +45,7 @@ The template field on the work order, work order line item and service appointme
 
 ## Limit 2: the file name is fixed
 
-The Document Builder assigns the generated file name automatically. You cannot define a pattern such as work order number, customer and date. For the service office this is annoying, because the PDF ends up in the customer's mailbox, in the ERP or in a document archive, and nobody can tell from the file name which job it belongs to.
+The Document Builder assigns the generated file name automatically. You cannot define a pattern such as work order number, customer and date. For the service office this is annoying, because the PDF is filed in the customer's mailbox, in the ERP or in a document archive, and nobody can tell from the file name which job it belongs to.
 
 **Workaround:** A record-triggered flow with an asynchronous path. It starts when the document has been created and renames the file shortly afterwards. The naming rule then lives in one place and can be changed by an admin without code.
 
@@ -57,7 +57,7 @@ The flow has to run asynchronously, shortly after creation. Only then does the f
 
 Out of the box, the Document Builder does not send the document by email. The technician creates the PDF, the customer signs, and then the report remains on the work order. In most service organizations, the customer expects the report by email the same day, often as a basis for invoice approval.
 
-**Workaround:** A flow that starts when the document is complete and sends it as an attachment. You decide in the flow who gets it, for example the contact on the work order or a central service address of the customer, which email template is used and in which language. Combined with limit 2, the email arrives with a file name the customer can file away.
+**Workaround:** A flow that starts when the document is complete and sends it as an attachment. You decide in the flow who receives it, for example the contact on the work order or a central service address of the customer, which email template is used and in which language. Combined with limit 2, the email arrives with a file name the customer can file away.
 
 ## Limit 4: Can language and template be preset?
 

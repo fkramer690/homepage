@@ -22,7 +22,7 @@ faq:
   - q: "Can Manufacturing Cloud use the Revenue Cloud product catalog?"
     a: "It can. Trailhead describes a central product model with headless composable APIs and says Agentforce Manufacturing can use the product and pricing information from the catalog. That still needs the Revenue Cloud license, configuration and a clear data model; it does not happen automatically."
   - q: "Which product should a machine builder buy first?"
-    a: "The one for the step that hurts most today. Configured quotes point to Revenue Cloud, volume agreements to Manufacturing Cloud, dealer rebates to Channel Revenue Management, spare parts orders by email to B2B Commerce. Buying all three at once for a roadmap slide rarely pays off."
+    a: "The one for the step that causes the most problems today. Configured quotes point to Revenue Cloud, volume agreements to Manufacturing Cloud, dealer rebates to Channel Revenue Management, spare parts orders by email to B2B Commerce. Buying all three at once for a roadmap slide rarely pays off."
 draft: false
 ---
 
@@ -30,7 +30,7 @@ Revenue Cloud, Manufacturing Cloud and B2B Commerce cover different parts of a m
 
 ## What does each product do?
 
-**Revenue Cloud** is Salesforce's quote-to-cash product. Salesforce has renamed it Agentforce Revenue Management (formerly Revenue Cloud); the old name lives on in licenses such as Revenue Cloud Advanced, so I use it here. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management), it consists of Product Catalog Management, Product Configurator, Salesforce Pricing and Rate Management, Transaction Management for quotes, orders and assets, Dynamic Revenue Orchestrator, Salesforce Contracts and billing. The [product page](https://www.salesforce.com/uk/products/revenue-cycle-management) promises "a single, attribute-based catalog" that exposes products across all channels. Revenue Cloud Advanced is listed at €200 per user per month on the [pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/), billed annually, as of 9 November 2026. Advanced covers only part of billing: according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.revenue_licenses_areas_and_features.htm&language=en_US&type=5), invoice PDFs and email delivery, usage-based invoices, payments, refunds and collections need the separate Revenue Cloud Billing license.
+**Revenue Cloud** is Salesforce's quote-to-cash product. Salesforce has renamed it Agentforce Revenue Management (formerly Revenue Cloud); the old name remains in licenses such as Revenue Cloud Advanced, so I use it here. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management), it consists of Product Catalog Management, Product Configurator, Salesforce Pricing and Rate Management, Transaction Management for quotes, orders and assets, Dynamic Revenue Orchestrator, Salesforce Contracts and billing. The [product page](https://www.salesforce.com/uk/products/revenue-cycle-management) promises "a single, attribute-based catalog" that exposes products across all channels. Revenue Cloud Advanced is listed at €200 per user per month on the [pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/), billed annually, as of 9 November 2026. Advanced covers only part of billing: according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.revenue_licenses_areas_and_features.htm&language=en_US&type=5), invoice PDFs and email delivery, usage-based invoices, payments, refunds and collections need the separate Revenue Cloud Billing license.
 
 **Manufacturing Cloud** is the industry cloud for run-rate business. Salesforce now brands it Agentforce Manufacturing, while editions such as Sales Core keep the Manufacturing Cloud name. The [product page](https://www.salesforce.com/manufacturing/cloud/) describes run-rate agreements and demand forecasts in Sales Core. The core is the sales agreement: planned and actual quantities per customer, product and period. Whether that fits your business is covered in [Manufacturing Cloud: is it worth it?](../salesforce-manufacturing-cloud-is-it-worth-it/). Dealer rebates are no longer part of Manufacturing Cloud for new purchases: according to [Salesforce](https://help.salesforce.com/s/articleView?id=005393495&language=en_US&type=1), Rebate Management has not been renewable since 18 August 2026, and its successor is Channel Revenue Management, a separate product. Background on dealer rebates is in [rebate management for dealers](../rebate-management-dealer-rebates/).
 
@@ -82,11 +82,11 @@ All three products could fit, and I would introduce them one after the other:
 
 ```schritte
 B2B Commerce with price books
-  Comes first, because the email ordering of spare parts is the biggest pain.
+  Comes first, because the email ordering of spare parts causes the most problems.
 Revenue Cloud
-  Compressor quotes are the second candidate. If configuration errors cost money today, Revenue Cloud follows, and from then on the store uses its catalog and, once contract prices live in Salesforce, its pricing.
+  Compressor quotes are the second candidate. If configuration errors cost money today, Revenue Cloud follows, and from then on the store uses its catalog and, once contract prices are maintained in Salesforce, its pricing.
 Manufacturing Cloud
-  Only comes in when the volume agreements of ten key accounts justify the license for the users who manage them; until then, a report on ERP actuals may do. The rebate spreadsheet is a separate decision about Channel Revenue Management.
+  Follows only when the volume agreements of ten key accounts justify the license for the users who manage them; until then, a report on ERP actuals may do. The rebate spreadsheet is a separate decision about Channel Revenue Management.
 ```
 
 The order matters less than the rule behind it: decide before implementing the first product which system is the master for catalog and prices (Revenue Cloud or the ERP), and make every later product reuse it.

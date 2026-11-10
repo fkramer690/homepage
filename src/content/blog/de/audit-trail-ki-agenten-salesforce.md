@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Ein Audit-Trail für KI-Agenten in Salesforce setzt sich aus mindestens fünf Logs zusammen, und keines beantwortet jede Frage allein. Der Audit-Trail des Trust Layers und Session Tracing protokollieren Agentengespräche in Data 360. Zugriffe externer KI-Tools über Hosted MCP landen in den API-Logs; bei den ohne Aufpreis verfügbaren Ereignistypen bewahrt Salesforce diese Logs einen Tag lang auf. Der Setup Audit Trail deckt Konfigurationsänderungen für mindestens 180 Tage ab, die Feldhistorie 18 bis 24 Monate. Ich würde vor dem Go-live pro Log festlegen, wer es lesen darf, wie lange es aufbewahrt wird und wer die Aufbewahrung bezahlt.
+Ein Audit-Trail für KI-Agenten in Salesforce setzt sich aus mindestens fünf Logs zusammen, und keines beantwortet jede Frage allein. Der Audit-Trail des Trust Layers und Session Tracing protokollieren Agentengespräche in Data 360. Zugriffe externer KI-Tools über Hosted MCP werden in den API-Logs protokolliert; bei den ohne Aufpreis verfügbaren Ereignistypen bewahrt Salesforce diese Logs einen Tag lang auf. Der Setup Audit Trail deckt Konfigurationsänderungen für mindestens 180 Tage ab, die Feldhistorie 18 bis 24 Monate. Ich würde vor dem Go-live pro Log festlegen, wer es lesen darf, wie lange es aufbewahrt wird und wer die Aufbewahrung bezahlt.
 
 ## Welche Fragen stellen Revision, Datenschutz und Betriebsrat?
 
@@ -79,7 +79,7 @@ Mit Shield oder dem Event-Monitoring-Add-on werden Logs laut [Event-Monitoring-F
 Bezahlte Logs "cannot be retrieved retroactively for periods before the contract start date". Event Monitoring, das Sie erst nach einem Vorfall kaufen, zeigt diesen Vorfall nicht.
 ```
 
-Die bezahlte Stufe umfasst Ereignistypen wie [Unique Query](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_eventlogfile_unique_query_event_elf.htm), das verarbeitete SOQL-Abfragen, Filter-IDs und Report-IDs erfasst. Daran können Sie sehen, ob die Abfrage eines KI-Clients auf die Preisvereinbarung eines Händlers oder die aller Händler zielte, aber nicht, welche Datensätze zurückkamen.
+Die bezahlte Stufe umfasst Ereignistypen wie [Unique Query](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_eventlogfile_unique_query_event_elf.htm), das verarbeitete SOQL-Abfragen, Filter-IDs und Report-IDs erfasst. Daran können Sie sehen, ob die Abfrage eines KI-Clients auf die Preisvereinbarung eines Händlers oder die aller Händler zielte, aber nicht, welche Datensätze zurückgegeben wurden.
 
 Die Salesforce-Logs enden dort, wo die Daten Salesforce verlassen. Für Claude gibt es [Audit-Logs von Anthropic](https://support.claude.com/en/articles/9970975-access-audit-logs) nur für Enterprise-Organisationen. Sie erfassen Anmeldungen, Datei-Uploads und angelegte, gelöschte oder umbenannte Unterhaltungen, ohne Chatinhalte, und ein Export umfasst die letzten 180 Tage. Für den Chatinhalt selbst müssen Sie die Compliance-Werkzeuge von Anthropic separat prüfen. Jedem anderen KI-Anbieter würde ich dieselben Fragen stellen: welche Ereignisse erfasst werden, wie lange sie aufbewahrt werden und welcher Export verfügbar ist.
 

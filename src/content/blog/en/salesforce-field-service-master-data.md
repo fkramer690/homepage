@@ -13,7 +13,7 @@ takeaways:
   - "Six data areas determine how well Field Service schedules: territories, skills, work types, assets, visiting hours and absences."
   - "A technician without a recorded skill is not eligible for jobs that require it. A technician with an incorrect skill may be scheduled incorrectly."
   - "Customer opening hours are only considered when the visiting hours work rule is active. Without it, Field Service books visits when nobody can open the door."
-  - "Before go-live, decide for each kind of data which system leads and who maintains it. Most of it already sits in the ERP, in HR or with dispatchers."
+  - "Before go-live, decide for each kind of data which system leads and who maintains it. Most of it is already held in the ERP, in HR or with dispatchers."
   - "The failed visits of the last few months show which data has to be cleaned up first."
 faq:
   - q: "What master data does Salesforce Field Service need?"
@@ -34,7 +34,7 @@ Whether Field Service is worthwhile for your field service operation is the topi
 ## Missing data leads to failed visits
 
 ```praxis
-In service projects I have seen the same pattern again and again. Technicians were on site and could not do their job. Sometimes the spare parts were not there. Sometimes the machine was not accessible. Sometimes the wrong technician arrived at the equipment, or the right technician was not able to do the work. Sometimes the cause was on the customer side; sometimes it was how technicians had been scheduled.
+In service projects I have seen the same pattern again and again. Technicians were on site and could not do their job. Sometimes the spare parts were missing. Sometimes the machine was not accessible. Sometimes the wrong technician arrived at the equipment, or the right technician was not able to do the work. Sometimes the cause was on the customer side; sometimes it was how technicians had been scheduled.
 ```
 
 Every one of these failed visits costs a trip, a technician day and usually a second appointment. Not every failed visit is caused by bad data. But many can be traced back to a piece of information that was missing when the visit was planned. Possible causes:
@@ -64,7 +64,7 @@ Four details from Salesforce Help decide whether this works in practice:
 - **Territories.** According to the [guidelines for service territories](https://help.salesforce.com/s/articleView?id=service.fs_territory_guidelines.htm&language=en_US&type=5), each technician has exactly one primary territory plus optional secondary ones, and Salesforce recommends up to 50 technicians per territory.
 - **Skills.** The level ranges from 0 to 99.99 according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=fs_required_skills.htm&language=en_US&type=5), and the company decides what it means. Only the [Match Skills](https://help.salesforce.com/s/articleView?id=pfs_optimization_theory_work_rules_match_skills.htm&language=en_US&type=5) work rule enforces them; a technician without skills is then not eligible for any job that requires one.
 - **Visiting hours.** They are recorded as operating hours on the account and copied to each new work order according to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5). They are only considered when the visiting hours work rule is active.
-- **Absences.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_create_absences.htm&type=5), optimization does not assign technicians to appointments that conflict with them, but only if leave and training actually arrive in Salesforce.
+- **Absences.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_create_absences.htm&type=5), optimization does not assign technicians to appointments that conflict with them, but only if leave and training are actually recorded in Salesforce.
 
 How a case becomes a work order with the right work type is covered in [from case to technician](../field-service-case-to-work-order/). Parts and van stock are covered in [their own part](../salesforce-field-service-spare-parts-erp/) in this series.
 
@@ -75,7 +75,7 @@ The table above is a proposal. The decisions behind it belong to service managem
 - **An owner for each data area.** Someone has to be accountable when skills are out of date or an asset is missing. Without a name in the table, data quality becomes nobody's job after go-live.
 - **Interface or manual maintenance.** Maintaining assets and skills by hand in Salesforce works for a pilot but breaks down in day-to-day operation. Every interface costs money to build and run; every manual list costs time and creates errors. Decide for each area, based on volume and rate of change. The page [Salesforce integration](../../services/salesforce-integration/) describes how to decide which system is the system of record.
 - **Which cause of failed visits to fix first.** Not all six areas can be clean on day one. The failed visits in your own region show where money is being lost.
-- **Employee data.** Skills and absences are data about employees. Agree early with the data protection team and, where applicable, the works council on which of these data points may go into Salesforce. The same applies to the app features in [Field Service Mobile: guided flows and voice](../salesforce-field-service-mobile-guided-voice/).
+- **Employee data.** Skills and absences are data about employees. Agree early with the data protection team and, where applicable, the works council on which of these data points may be stored in Salesforce. The same applies to the app features in [Field Service Mobile: guided flows and voice](../salesforce-field-service-mobile-guided-voice/).
 
 Three warning signs that the data architecture will not hold up: dispatchers keep a private list of who can do what, skills are only updated when a visit has already failed, and nobody can say which system is authoritative when Salesforce and the ERP disagree about an asset.
 
@@ -83,4 +83,4 @@ Three warning signs that the data architecture will not hold up: dispatchers kee
 
 Take the failed visits of the last three months in one region. Assign each one a cause: parts, access, skills, availability or something else. The cause with the most failed visits shows which data you need to clean up first. If there is no list of failed visits, that is a result too: then the metric you will later use to measure Field Service is missing.
 
-Then check each of the six data areas: does it exist, where does it live, who maintains it? Once those questions are answered, it makes sense to set up scheduling itself. That is the topic of the next part of this series.
+Then check each of the six data areas: does it exist, where is it stored, who maintains it? Once those questions are answered, it makes sense to set up scheduling itself. That is the topic of the next part of this series.
