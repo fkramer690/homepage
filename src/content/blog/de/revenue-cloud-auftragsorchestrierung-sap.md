@@ -13,17 +13,17 @@ tags: [Revenue Cloud, Dynamic Revenue Orchestrator, SAP, Auftragsabwicklung, Sch
 takeaways:
   - "Die Dekomposition zerlegt kommerzielle Produkte in technische Produkte für nachgelagerte Systeme, gesteuert über Decomposition Rules."
   - "Ein Plan nutzt fünf allgemeine Schritttypen plus Staged Assetize: Auto Task, Callout, Manual Task, Milestone und Pause. Die Übergabe an SAP erfolgt als Callout."
-  - "Eine Fallout Rule steuert Wiederholungen und Queue. Ohne passende Fallout Rule scheitert der Schritt endgültig und wird nicht wiederholt."
+  - "Eine Fallout Rule steuert Wiederholungen und die Zuweisung an eine Queue. Ohne passende Fallout Rule scheitert der Schritt endgültig und wird nicht wiederholt."
   - "Geht ein Auftrag in einem Stück an SAP und passiert danach in Salesforce nichts mehr, reicht meist eine einfache Schnittstelle ohne DRO."
 faq:
   - q: "Was ist der Dynamic Revenue Orchestrator in Salesforce?"
-    a: "Der Dynamic Revenue Orchestrator (DRO) ist die Auftragsabwicklung in Revenue Cloud für Aufträge, die Sie an ihn übergeben. Er zerlegt Aufträge in technische Produkte und führt einen Orchestrierungsplan mit Schritten in Salesforce und in externen Systemen wie einem ERP aus."
+    a: "Der Dynamic Revenue Orchestrator (DRO) übernimmt die Auftragsabwicklung in Revenue Cloud für Aufträge, die Sie an ihn übergeben. Er zerlegt Aufträge in technische Produkte und führt einen Orchestrierungsplan mit Schritten in Salesforce und in externen Systemen wie einem ERP aus."
   - q: "Brauche ich DRO, um Aufträge aus Revenue Cloud an SAP zu senden?"
     a: "Nein. Ein datensatzgetriggerter Flow oder ein Aufruf über Middleware kann einen aktivierten Auftrag direkt an SAP senden. DRO lohnt sich, wenn ein Auftrag mehrere abhängige Schritte mit Verantwortlichen und Fristen auslöst."
   - q: "Was kostet der Dynamic Revenue Orchestrator?"
-    a: "Die Preisseite von Revenue Cloud führt Dynamic Revenue Orchestration als zukaufbar zu Revenue Cloud Advanced auf, mit dem Hinweis auf Freemium-Zugang, nennt aber keinen separaten Preis für DRO. Was dieser Zugang umfasst, steht dort nicht. Lassen Sie sich das schriftlich bestätigen, bevor Sie damit planen."
+    a: "Die Preisseite von Revenue Cloud führt Dynamic Revenue Orchestration als zukaufbare Option zu Revenue Cloud Advanced auf und weist auf einen Freemium-Zugang hin, nennt aber keinen separaten Preis für DRO. Was dieser Zugang umfasst, steht dort nicht. Lassen Sie sich das schriftlich bestätigen, bevor Sie damit planen."
   - q: "Was passiert, wenn SAP einen Auftrag aus Revenue Cloud ablehnt?"
-    a: "In DRO wird der Schritt zum Fallout. Mit einer passenden Fallout Rule wird er wie eingestellt wiederholt und dann einer Queue zugewiesen, in der jemand die Daten korrigiert und den Schritt neu startet. Ohne passende Regel scheitert er final ohne Wiederholung. Ein manueller Abschluss sollte eine genehmigte Ausnahme sein."
+    a: "In DRO wird der Schritt zum Fallout. Mit einer passenden Fallout Rule wird er gemäß Konfiguration wiederholt und anschließend einer Queue zugewiesen, in der jemand die Daten korrigiert und den Schritt neu startet. Ohne passende Regel scheitert er endgültig und wird nicht wiederholt. Ein manueller Abschluss sollte eine genehmigte Ausnahme sein."
   - q: "Welche Schritttypen hat ein Orchestrierungsplan?"
     a: "Sechs: Ein Auto Task startet einen Flow, ein Callout ruft ein externes System auf, ein Manual Task wartet auf eine Person, ein Milestone markiert einen Meilenstein, eine Pause hält den Plan an, bis eine Resume-On-Regel erfüllt ist, und Staged Assetize erzeugt Assets für einige Positionen, während andere noch bearbeitet werden."
 draft: false
@@ -41,13 +41,13 @@ Trailhead nennt drei Rollen, und ich würde sie vor dem ersten Sprint besetzen:
 - **Fulfillment Designer:** baut Dekompositionsregeln und Orchestrierungspläne und testet sie.
 - **Fulfillment Operator:** bearbeitet manuelle Aufgaben in den Queues und löst fehlgeschlagene Schritte.
 
-Die Operator-Rolle würde ich in der Auftragsabwicklung oder im Innendienst ansiedeln, nicht in der IT. Dort weiß man, warum ein Auftrag hängt. Jede dieser Personen braucht die Schulung, die Fulfillment User Permission Set License und das DRO Permission Set für ihre Rolle.
+Die Operator-Rolle würde ich in der Auftragsabwicklung oder im Innendienst ansiedeln, nicht in der IT. Dort weiß man, warum ein Auftrag hängt. Jede dieser Personen muss geschult sein und benötigt die Fulfillment User Permission Set License sowie das DRO Permission Set für ihre Rolle.
 
 ## Ein datensatzgetriggerter Flow übergibt den Auftrag an DRO
 
 Der Weg beginnt mit einem angenommenen Angebot, aus dem ein Auftrag wird. Laut [Trailhead zur Auftragsverwaltung](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders) legen Sie einen datensatzgetriggerten Flow an, der den Auftrag an DRO übergibt, zum Beispiel wenn sein Status auf Activated wechselt. Zwei Kontextdefinitionen transportieren die Daten: SalesTransactionContext enthält den Auftrag und seine Fulfillment-Positionen, FulfillmentAssetContext dient der Dekomposition und ist auf die Asset-Objekte gemappt.
 
-Ohne einen solchen Flow erreicht nichts DRO, und einfache Aufträge können ihn bewusst umgehen. Die Aktivierung ist ein fachliches Ereignis. Legen Sie fest, wer einen Auftrag aktivieren darf und was vorher erfüllt sein muss: Freigaben abgeschlossen, Kunde in SAP angelegt, Kreditprüfung bestanden. Diese Prüfungen gehören in die Startbedingungen des Flows oder in Validierungsregeln, statt sich darauf zu verlassen, dass der Vertrieb daran denkt.
+Ohne einen solchen Flow erreicht kein Auftrag DRO, und einfache Aufträge können ihn bewusst umgehen. Die Aktivierung ist ein fachliches Ereignis. Legen Sie fest, wer einen Auftrag aktivieren darf und was vorher erfüllt sein muss: Freigaben abgeschlossen, Kunde in SAP angelegt, Kreditprüfung bestanden. Diese Prüfungen gehören in die Startbedingungen des Flows oder in Validierungsregeln. Verlassen Sie sich nicht darauf, dass der Vertrieb daran denkt.
 
 ## Was bedeutet Dekomposition eines Auftrags?
 
@@ -59,7 +59,7 @@ Trailhead sagt auch, dass einfache Aufträge keine Dekomposition brauchen und di
 
 ## Schritttypen im Orchestrierungsplan
 
-Ein Orchestrierungsplan teilt die Abwicklung in Schritte, die in festgelegter Reihenfolge laufen. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/explore-order-orchestration) nennt fünf Schritttypen. Die aktuelle [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.fulfillment_step_types.htm&language=en_US&type=5) ergänzt mit Staged Assetize einen sechsten. Er erzeugt Assets für abgeschlossene Positionen, während andere noch bearbeitet werden. Die Beispiele in der rechten Spalte sind meine Annahmen für einen Maschinenbauer:
+Ein Orchestrierungsplan teilt die Abwicklung in Schritte, die in festgelegter Reihenfolge laufen. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/explore-order-orchestration) nennt fünf Schritttypen. Die aktuelle [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.fulfillment_step_types.htm&language=en_US&type=5) ergänzt die Liste um Staged Assetize als sechsten Schritttyp. Er erzeugt Assets für abgeschlossene Positionen, während andere noch bearbeitet werden. Die Beispiele in der rechten Spalte sind meine Annahmen für einen Maschinenbauer:
 
 | Schritttyp | Was er tut | Beispiel aus der Fertigung |
 |---|---|---|
@@ -69,17 +69,17 @@ Ein Orchestrierungsplan teilt die Abwicklung in Schritte, die in festgelegter Re
 | Milestone | Markiert einen Meilenstein für Abhängigkeiten | Maschine geliefert |
 | Pause | Hält den Plan an, bis eine Resume-On-Regel erfüllt ist | Warten, bis der Inbetriebnahmestatus der Position auf abgeschlossen gesetzt ist |
 
-Schritte liegen in Swimlanes, meist eine pro abwickelndem System, und können voneinander abhängen. Muss ein Schritt nur auf einen anderen warten, reicht eine Abhängigkeit, und eine Pause ist nicht nötig. Der Scope eines Schritts legt fest, ob er einmal pro Plan, pro Bundle, pro Position oder pro benutzerdefinierter Gruppierung entsteht, etwa ein SAP-Auftrag pro Werk oder Standort. Jeder Schritt kann eine geschätzte Dauer als SLA tragen und eine Jeopardy-Schwelle, die warnt, bevor das SLA reißt: Im Trailhead-Beispiel wird ein 24-Stunden-Schritt nach 23 Stunden markiert.
+Schritte liegen in Swimlanes, meist eine pro abwickelndem System, und können voneinander abhängen. Muss ein Schritt nur auf einen anderen warten, reicht eine Abhängigkeit, und eine Pause ist nicht nötig. Der Scope eines Schritts legt fest, ob er einmal pro Plan, pro Bundle, pro Position oder pro benutzerdefinierter Gruppierung entsteht, etwa ein SAP-Auftrag pro Werk oder Standort. Für jeden Schritt kann eine geschätzte Dauer als SLA hinterlegt werden, ebenso eine Jeopardy-Schwelle, die warnt, bevor das SLA verletzt wird: Im Trailhead-Beispiel wird ein 24-Stunden-Schritt nach 23 Stunden markiert.
 
 ## Die Übergabe an SAP gehört in einen Callout
 
-Die Übergabe gehört in einen Callout früh im Plan. SAP braucht den Kundenauftrag, bevor es Produktion planen, liefern und fakturieren kann, also hängen die meisten anderen Schritte davon ab.
+Die Übergabe gehört früh im Plan in einen Callout. SAP braucht den Kundenauftrag, bevor es Produktion planen, liefern und fakturieren kann, also hängen die meisten anderen Schritte davon ab.
 
-Ein Referenzmuster von Salesforce für Revenue Cloud und SAP habe ich nicht gefunden. Am nächsten kommt der [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/minor/1.6/pages/Use%20case%203a%20-%20Quote-to-cash%20-%20Salesforce%20and%20SAP%20S4HANA/), 2021 für Sales Cloud und Salesforce CPQ dokumentiert, nicht für Revenue Cloud oder DRO: Das Anlegen des Auftrags in Salesforce löst den Auftrag in SAP S/4HANA aus, und die SAP-Auftragsnummer erscheint in Salesforce. Daraus übernehme ich nur die Ideen zur Korrelation und Auftragsnummer. Die übrigen Regeln sind meine eigenen Architekturentscheidungen:
+Ein Referenzmuster von Salesforce für Revenue Cloud und SAP habe ich nicht gefunden. Am nächsten kommt der [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/minor/1.6/pages/Use%20case%203a%20-%20Quote-to-cash%20-%20Salesforce%20and%20SAP%20S4HANA/), 2021 für Sales Cloud und Salesforce CPQ dokumentiert, nicht für Revenue Cloud oder DRO: Das Anlegen des Auftrags in Salesforce stößt den Auftrag in SAP S/4HANA an, und die SAP-Auftragsnummer erscheint in Salesforce. Daraus übernehme ich nur die Ideen zur Korrelation und Auftragsnummer. Die übrigen Regeln sind meine eigenen Architekturentscheidungen:
 
 1. Der Callout schickt einen stabilen Idempotenzschlüssel mit, etwa die Salesforce-Auftrags-ID, und die Integrationsschicht oder SAP prüft ihn, bevor ein Auftrag angelegt wird. Nur die ID zu senden verhindert keine Duplikate.
 2. Die SAP-Auftragsnummer kommt zurück und wird am Salesforce-Auftrag gespeichert, entweder in der synchronen Antwort oder bei einem asynchronen Muster durch einen späteren Callback. Nach einem HTTP 202 bleibt der Callout in Bearbeitung, bis das Ergebnis eintrifft.
-3. In der hier angenommenen Architektur führt SAP nach der Übergabe Lieferung, bestätigte Termine und Rechnung. Salesforce zeigt den Status an und ändert ihn nicht.
+3. In der hier angenommenen Architektur ist SAP nach der Übergabe für Lieferung, bestätigte Termine und Rechnung verantwortlich. Salesforce zeigt den Status an und ändert ihn nicht.
 4. Änderungen nach der Übergabe brauchen ein explizites Nachtragsdesign. Revenue Cloud kann einen verknüpften Zusatzauftrag anlegen, DRO gleicht den laufenden Plan ab und kann Kompensationsschritte ausführen. Ob SAP eine Änderung, eine Stornierung oder einen Ersatzauftrag erhält, ist eine Integrationsentscheidung. Wie Nachträge auf der Asset-Seite funktionieren, steht in [Assets, Nachträge und Verlängerungen](../revenue-cloud-assets-nachtraege-verlaengerungen/).
 
 ```ablauf
@@ -93,13 +93,13 @@ SAP-Kundenauftrag --> Lieferung
 Lieferung --> Rechnung
 ```
 
-Welches System welchen Schritt vom Angebot bis zur Rechnung führt, behandelt [Revenue Cloud und SAP: Wer führt was?](../revenue-cloud-sap-quote-to-cash-aufteilung/). Dieselbe Aufteilung gehört in Ihre [Object Ownership Matrix](../object-ownership-matrix-salesforce/), damit kein Partner einen zweiten Weg zu SAP baut. Wie Händler den Auftragsstatus aus SAP abfragen, steht in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/).
+Welches System welchen Schritt vom Angebot bis zur Rechnung verantwortet, behandelt [Revenue Cloud und SAP: Wer führt was?](../revenue-cloud-sap-quote-to-cash-aufteilung/). Dieselbe Aufteilung gehört in Ihre [Object Ownership Matrix](../object-ownership-matrix-salesforce/), damit kein Partner einen zweiten Weg zu SAP baut. Wie Händler den Auftragsstatus aus SAP abfragen, steht in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/).
 
 ## Was passiert, wenn SAP den Auftrag ablehnt?
 
-Dann wird der Schritt zum Fallout. Trailhead beschreibt Fallout als Auftrag, der wegen fehlenden Bestands, falscher Angaben, eines Systemfehlers oder aus einem anderen Grund gescheitert ist. Eine [Fallout Rule](https://help.salesforce.com/s/articleView?id=sf.dro_fallout_design_and_management.htm&language=en_US&type=5) legt Anzahl und Intervall der Wiederholungen sowie die Queue für endgültig fehlgeschlagene Schritte fest. Ohne passende Regel wird der Schritt als final fehlgeschlagen markiert und nicht wiederholt. In der Queue löst jemand das Problem und startet den Schritt neu. Der Schritt kann auch manuell als erledigt markiert werden, wodurch der Plan trotz des Fehlers weiterläuft. Das würde ich nur als genehmigte Ausnahme mit Begründung zulassen, nie für einen abgelehnten SAP-Auftrag, von dem spätere Schritte abhängen. Das [Datenmodell für die Designzeit](https://developer.salesforce.com/docs/platform/data-models/guide/dro-design-time.html) enthält eigene Objekte für Fallout-Regeln, Jeopardy-Regeln und Zuweisungsregeln für Aufgaben. Das ist also Konfiguration und kein eigener Code.
+Dann wird der Schritt zum Fallout. Trailhead beschreibt Fallout als Auftrag, der wegen fehlenden Bestands, falscher Angaben, eines Systemfehlers oder aus einem anderen Grund gescheitert ist. Eine [Fallout Rule](https://help.salesforce.com/s/articleView?id=sf.dro_fallout_design_and_management.htm&language=en_US&type=5) legt Anzahl und Intervall der Wiederholungen sowie die Queue für endgültig fehlgeschlagene Schritte fest. Ohne passende Regel wird der Schritt als endgültig fehlgeschlagen markiert und nicht wiederholt. In der Queue löst jemand das Problem und startet den Schritt neu. Der Schritt kann auch manuell als erledigt markiert werden, wodurch der Plan trotz des Fehlers weiterläuft. Das würde ich nur als genehmigte Ausnahme mit Begründung zulassen, nie für einen abgelehnten SAP-Auftrag, von dem spätere Schritte abhängen. Das [Datenmodell für die Designzeit](https://developer.salesforce.com/docs/platform/data-models/guide/dro-design-time.html) enthält eigene Objekte für Fallout-Regeln, Jeopardy-Regeln und Zuweisungsregeln für Aufgaben. Das ist also Konfiguration und kein eigener Code.
 
-Typische Ablehnungen aus SAP, als Annahme: Der Warenempfänger ist in SAP noch nicht angelegt, ein Material ist für den Vertrieb gesperrt, oder der Kunde hat eine Kreditsperre. Eine Wiederholung hilft bei keinem davon. Die Queue braucht deshalb eine verantwortliche Person in der Auftragsabwicklung, eine Zielzeit und eine kurze Liste, was zu prüfen ist. Die Zuweisung eines Schritts an eine Fallout-Queue versendet keine E-Mail und legt keine Aufgabe an. Dafür brauchen Sie eine eigene Benachrichtigung. Sonst wird Fallout zu einer Liste, die niemand liest, während der Kunde wartet.
+Typische Ablehnungen aus SAP, als Annahme: Der Warenempfänger ist in SAP noch nicht angelegt, ein Material ist für den Vertrieb gesperrt, oder der Kunde hat eine Kreditsperre. Eine Wiederholung hilft bei keinem davon. Die Queue braucht deshalb eine verantwortliche Person in der Auftragsabwicklung, eine Zielzeit und eine kurze Prüfliste. Die Zuweisung eines Schritts an eine Fallout-Queue versendet keine E-Mail und legt keine Aufgabe an. Dafür brauchen Sie eine eigene Benachrichtigung. Sonst wird Fallout zu einer Liste, die niemand liest, während der Kunde wartet.
 
 ## Wann reicht eine einfache Schnittstelle ohne DRO?
 
@@ -114,12 +114,12 @@ Ich würde DRO prüfen, wenn mindestens zwei dieser Punkte zutreffen:
 
 Prüfen Sie bei großen konfigurierten Aufträgen auch die aktuellen [DRO-Limits](https://help.salesforce.com/s/articleView?id=ind.dro_dynamic_revenue_orchestrator_limits.htm&language=en_US&type=5), die sich für synchrone und asynchrone Übergaben unterscheiden.
 
-Zu den Kosten: Die [Preisseite von Revenue Cloud](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) führt Revenue Cloud Advanced mit 200 Euro pro Nutzer und Monat bei jährlicher Abrechnung auf, Stand 9. November 2026. Das ist der Preis des Basisprodukts, nicht der Preis für DRO. Dynamic Revenue Orchestration ist separat als zukaufbar aufgeführt, mit dem Hinweis "Freemium access available".
+Zu den Kosten: Die [Preisseite von Revenue Cloud](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) führt Revenue Cloud Advanced mit 200 Euro pro Nutzer und Monat bei jährlicher Abrechnung auf, Stand 9. November 2026. Das ist der Preis des Basisprodukts, nicht der Preis für DRO. Dynamic Revenue Orchestration ist als separat zukaufbare Option aufgeführt, mit dem Hinweis "Freemium access available".
 
 ```hinweis offen
-Was dieser Freemium-Zugang umfasst, steht auf der Preisseite nicht. Lassen Sie es sich schriftlich geben, bevor Ihr Design davon abhängt.
+Was dieser Freemium-Zugang umfasst, steht auf der Preisseite nicht. Lassen Sie sich den Umfang schriftlich bestätigen, bevor Ihr Design davon abhängt.
 ```
 
 ## Die fünf häufigsten Auftragsarten skizzieren
 
-Nehmen Sie Ihre fünf häufigsten Auftragsarten und skizzieren Sie für jede, was nach der Unterschrift passiert: welches System, welches Team, in welcher Reihenfolge. Endet jede Skizze mit "den Rest macht SAP", beginnen Sie mit einer einfachen Schnittstelle. Sehen Sie mehrere Systeme und Abhängigkeiten, bilden Sie zuerst eine Auftragsart in DRO ab, samt Callout an SAP und Fallout-Queue, und testen Sie die Ablehnungen vor dem Normalfall. Das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/) zeigt, wo dieser Schritt im Gesamtprozess sitzt, und das Schnittstellendesign gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Nehmen Sie Ihre fünf häufigsten Auftragsarten und skizzieren Sie für jede, was nach der Unterschrift passiert: welches System und welches Team in welcher Reihenfolge beteiligt sind. Endet jede Skizze mit "den Rest macht SAP", beginnen Sie mit einer einfachen Schnittstelle. Sehen Sie mehrere Systeme und Abhängigkeiten, bilden Sie zuerst eine Auftragsart in DRO ab, samt Callout an SAP und Fallout-Queue, und testen Sie die Ablehnungen vor dem Normalfall. Das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/) zeigt, wo dieser Schritt im Gesamtprozess sitzt, und das Schnittstellendesign gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
