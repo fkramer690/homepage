@@ -13,14 +13,14 @@ takeaways:
   - "B2B Commerce holds the buying experience and a copy of what the store needs. The ERP owns prices, stock, credit and the order."
   - "Decide per data item whether it is copied into Salesforce or called live: copy what changes rarely, call live where a wrong value costs money or trust."
   - "Live calls run through Commerce extensions for price and stock. Salesforce has recommended them over the older checkout integrations since Winter '24."
-  - "Store orders become unmanaged order summaries, SAP fulfils them, and the integration writes back order number, dates, deliveries and invoices."
+  - "Store orders become unmanaged order summaries, SAP fulfills them, and the integration writes back order number, dates, deliveries and invoices."
   - "Every integration that still logs in to Salesforce with the OAuth username-password flow must be switched before 20 February 2027."
 articles: [commerce-sap-data-flows, commerce-stock-availability-erp, commerce-order-to-erp, commerce-extensions-custom-code, commerce-headless-b2b, agentforce-sap-order-status, legacy-erp-without-api-agents, salesforce-password-integrations-2027]
 faq:
   - q: "Is there a ready-made connector between Salesforce B2B Commerce and SAP?"
     a: "No, B2B Commerce does not include one. The MuleSoft Accelerator for SAP brings API templates, including a quote-to-cash use case between Sales Cloud and S/4HANA. You build the store side with Commerce extensions and the import and order summary APIs."
   - q: "Do I need Salesforce Order Management for a B2B store?"
-    a: "Not if SAP fulfils the order. The store then creates unmanaged order summaries and the integration keeps them current. Order Management pays off when Salesforce itself should allocate, ship, cancel and handle returns."
+    a: "Not if SAP fulfills the order. The store then creates unmanaged order summaries and the integration keeps them current. Order Management pays off when Salesforce itself should allocate, ship, cancel and handle returns."
   - q: "Where does B2B Commerce take stock and prices from by default?"
     a: "According to the extensions documentation, stock comes from Omnichannel Inventory and prices from Salesforce price books. Shipping is free without an extension. Each of these sources can be replaced by an ERP call through an extension."
   - q: "Can I customize payments with a Commerce extension?"
@@ -30,7 +30,7 @@ faq:
 draft: false
 ---
 
-In a B2B store on Salesforce, the ERP stays master for prices, stock, credit and the order. Salesforce B2B Commerce holds the buying experience and a copy of what the store needs for it. The real work is one decision per data item: copy or call live. Master data comes in by batch, the store asks the ERP live for price, availability and credit through Commerce extensions, the order goes to SAP, and status, delivery and invoice come back. Write the object ownership matrix and the interface list before anyone designs store pages. Every password login of an integration must be replaced before 20 February 2027.
+In a B2B store on Salesforce, the ERP stays master for prices, stock, credit and the order. Salesforce B2B Commerce holds the buying experience and a copy of what the store needs for it. The real work is one decision per data item: copy or call live. Master data is loaded by batch, the store asks the ERP live for price, availability and credit through Commerce extensions, the order is passed to SAP, and status, delivery and invoice flow back. Write the object ownership matrix and the interface list before anyone designs store pages. Every password login of an integration must be replaced before 20 February 2027.
 
 ## Which data flows between the store and the ERP?
 
@@ -45,7 +45,7 @@ Every interface discussion I lead starts with the same map of four blocks:
 | Order with PO number, ship-to address, requested date | Salesforce to ERP | On submit |
 | Order number, confirmed dates, delivery, invoice | ERP to Salesforce | On change |
 
-The table looks simple. The decisions sit in two questions per row: which system writes, and how old may the data in the store be? The detailed version, with the product import API and how to derive buyer groups from SAP, is in [B2B Commerce and SAP: which data flows where?](../../../blog/b2b-commerce-sap-data-flows/).
+The table looks simple. The decisions lie in two questions per row: which system writes, and how old may the data in the store be? The detailed version, with the product import API and how to derive buyer groups from SAP, is in [B2B Commerce and SAP: which data flows where?](../../../blog/b2b-commerce-sap-data-flows/).
 
 Buyer groups and entitlement policies almost never exist as such in the ERP. They are derived from sales organization, customer group or brand, as described in [chapter 2](../catalog-search-entitlements/). Write that derivation down as a rule. Otherwise someone maintains the groups by hand and the store drifts away from the ERP.
 
@@ -75,7 +75,7 @@ According to the [integration architecture page](https://developer.salesforce.co
 
 ```vertiefung For developers
 title: Keeping extensions maintainable: `super()` and registration in the repository
-Two points from the same guide decide how maintainable this is. Salesforce strongly recommends calling `super()` in domain extensions, so your code adds to the default and later releases still reach you. And registering and mapping a class to the store is easiest with the Salesforce CLI and its Commerce plug-in, or through the `RegisteredExternalService` and `StoreIntegratedService` objects. That means code, registration and mapping can live in the client's repository and pipeline. How to review partner code against this is in [Commerce extensions: custom code that survives updates](../../../blog/commerce-extensions-custom-code/); how store configuration moves through environments is in the DevOps masterclass chapter [Data and configuration](../../devops-release-management/data-and-configuration/).
+Two points from the same guide decide how maintainable this is. Salesforce strongly recommends calling `super()` in domain extensions, so your code adds to the default and later releases still take effect. And registering and mapping a class to the store is easiest with the Salesforce CLI and its Commerce plug-in, or through the `RegisteredExternalService` and `StoreIntegratedService` objects. That means code, registration and mapping can live in the client's repository and pipeline. How to review partner code against this is in [Commerce extensions: custom code that survives updates](../../../blog/commerce-extensions-custom-code/); how store configuration moves through environments is in the DevOps masterclass chapter [Data and configuration](../../devops-release-management/data-and-configuration/).
 ```
 
 My rule for existing stores: new logic goes into extensions, working old integrations stay until the code has to change anyway.
@@ -84,9 +84,9 @@ My rule for existing stores: new logic goes into extensions, working old integra
 
 By default the store reads stock from Omnichannel Inventory. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/omnichannel-inventory/get-started-with-omnichannel-inventory) describes the service as near real-time availability at location level and also says it does not replace the inventory system of record, nor the ERP. So SAP has to fill the copy. The [B2B pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) lists 20 inventory locations for both Growth and Advanced. A manufacturer with many plants and regional warehouses should clarify before signing how Salesforce counts locations.
 
-The alternative is the inventory extension calling the availability check in SAP. It returns a confirmed date that a stock copy never knows, because SAP can, depending on customising, also consider planned receipts and existing requirements. I would not rebuild that logic in Salesforce.
+The alternative is the inventory extension calling the availability check in SAP. It returns a confirmed date that a stock copy never knows, because SAP can, depending on customizing, also consider planned receipts and existing requirements. I would not rebuild that logic in Salesforce.
 
-My recommendation is a mix: product list and product page read the copy and show "available" or "on request", and checkout asks SAP live for the date. Dealers rarely need exact quantities. Details and a comparison table are in [Stock in the B2B store: live from the ERP or copied?](../../../blog/b2b-store-stock-availability-erp/). An agent telling dealers their order status follows the same rule and passes on only the confirmed date from SAP, as described in [Agentforce and SAP: order status through MuleSoft](../../../blog/agentforce-sap-order-status-mulesoft/).
+My recommendation is a mix: product list and product page read the copy and show "available" or "on request", and checkout queries the date live in SAP. Dealers rarely need exact quantities. Details and a comparison table are in [Stock in the B2B store: live from the ERP or copied?](../../../blog/b2b-store-stock-availability-erp/). An agent telling dealers their order status follows the same rule and passes on only the confirmed date from SAP, as described in [Agentforce and SAP: order status through MuleSoft](../../../blog/agentforce-sap-order-status-mulesoft/).
 
 ## Who owns the order?
 
@@ -98,7 +98,7 @@ The editions differ clearly here. Growth includes Order Management Lite, Advance
 The pricing page does not list what Order Management Lite in Growth leaves out. Get that in writing before you choose an edition.
 ```
 
-According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scom-order-management/scom-som-get-started), Order Management covers allocation, fulfilment and servicing with cancellations, returns and exchanges, and exports invoices to the ERP. A machine builder with SAP SD, warehouse management and billing already has all of that. On top come phone, email and EDI orders that keep landing in SAP. That is why for most manufacturers SAP should stay the order owner: the store takes the order, SAP fulfils it, and the integration writes back order number, dates, deliveries and invoices. The reasoning and what the return path must carry at minimum are in [B2B store orders to the ERP: who owns the order?](../../../blog/b2b-store-orders-to-erp/).
+According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scom-order-management/scom-som-get-started), Order Management covers allocation, fulfillment and servicing with cancellations, returns and exchanges, and exports invoices to the ERP. A machine builder with SAP SD, warehouse management and billing already has all of that. On top of that, phone, email and EDI orders continue to be entered directly in SAP. That is why for most manufacturers SAP should stay the order owner: the store takes the order, SAP fulfills it, and the integration writes back order number, dates, deliveries and invoices. The reasoning and what the return path must carry at minimum are in [B2B store orders to the ERP: who owns the order?](../../../blog/b2b-store-orders-to-erp/).
 
 ```ablauf
 sf: Checkout, Order summary
@@ -118,7 +118,7 @@ Plan the way back as carefully as the way out. A dealer who sees "order received
 
 For a store with two or three live calls and one order export, direct Apex callouts with named credentials are enough. Middleware pays off when the same SAP data also feeds service, Field Service and agents. Then one order status API serves the store, the agent and inside sales, and all show the same date. Why agents should reuse existing APIs is covered in the AI masterclass chapter [MCP and interfaces](../../ai-salesforce/mcp-and-interfaces/).
 
-The [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/) contains a quote-to-cash use case that syncs order, inventory and customer data between Sales Cloud and S/4HANA, and one for B2B EDI. These are API templates to start from. A finished integration for a B2B Commerce store they are not.
+The [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/) contains a quote-to-cash use case that syncs order, inventory and customer data between Sales Cloud and S/4HANA, and one for B2B EDI. These are API templates to start from. They are not a finished integration for a B2B Commerce store.
 
 ```hinweis achtung
 One deadline applies to every batch integration. Salesforce retires the [OAuth username-password flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) for connected apps on 20 February 2027. A nightly product import that logs in with a password stops working, often without anyone noticing right away. How to find and switch these integrations is in [Password integrations end in 2027](../../../blog/salesforce-password-integrations-end-2027/).
@@ -128,7 +128,7 @@ One deadline applies to every batch integration. Salesforce retires the [OAuth u
 
 Headless means your own website or app is the store, and Salesforce delivers catalog, prices, cart, checkout and orders through the Commerce Connect REST APIs. The [Commerce innovations page](https://www.salesforce.com/ca/commerce/innovations/) lists Headless B2B Commerce as available today, with a React B2B Storefront Blueprint. The [developer guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-journey-overview.html) points to a reference app in the GitHub repository `commerce-b2b-headless`.
 
-For the ERP integration this means: extensions are triggered by Connect API calls, so the same price and stock logic applies in the LWR store and in your app. The costs sit in the frontend. Hosting, login, pipeline and regression tests against every Salesforce release are yours. I would only recommend headless when a website or customer app that buyers use already exists and a team will run it for years. I did not find in the documentation which license headless buyers need; get that confirmed in writing. More in [Headless B2B Commerce: own frontend, Salesforce core](../../../blog/headless-b2b-commerce-own-frontend/).
+For the ERP integration this means: extensions are triggered by Connect API calls, so the same price and stock logic applies in the LWR store and in your app. The costs lie in the frontend. Hosting, login, pipeline and regression tests against every Salesforce release are yours. I would only recommend headless when a website or customer app that buyers use already exists and a team will run it for years. I did not find in the documentation which license headless buyers need; get that confirmed in writing. More in [Headless B2B Commerce: own frontend, Salesforce core](../../../blog/headless-b2b-commerce-own-frontend/).
 
 ## Worked example: an interface list for 250 dealers
 
@@ -141,7 +141,7 @@ A machine builder with SAP S/4HANA plans a store on Growth Edition for 250 deale
 5. Credit and delivery block live in `validate`.
 6. Order to SAP, order number back within minutes, deliveries and invoices on change, as unmanaged order summaries.
 
-Six interfaces, three of them live, all through an integration user with a certificate instead of a password. If SAP does not answer in time during checkout, the store accepts the order with "date to follow". Every interface gets an owner on the client side.
+Six interfaces, three of them live, all through an integration user with a certificate instead of a password. If SAP does not answer in time during checkout, the store accepts the order with "date to follow". Every interface is assigned an owner on the client side.
 
 ## Write the ownership matrix and the interface list before the store design
 

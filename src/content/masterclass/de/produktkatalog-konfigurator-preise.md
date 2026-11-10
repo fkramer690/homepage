@@ -34,7 +34,7 @@ In Revenue Cloud entscheiden drei Bausteine, was der Vertrieb anbieten kann. Der
 
 ## Wie spielen Katalog, Konfigurator und Preisfindung zusammen?
 
-Der Katalog hält Produkte, Attribute und die Bundle-Struktur. Der Konfigurator prüft, welche Optionen und Attributwerte zusammenpassen. Salesforce Pricing nimmt die konfigurierte Position und rechnet den Nettopreis Schritt für Schritt aus. Ein schlecht modellierter Katalog macht Regeln und Preisfindung schwerer, deshalb steht das Katalogdesign am Anfang.
+Der Katalog enthält Produkte, Attribute und die Bundle-Struktur. Der Konfigurator prüft, welche Optionen und Attributwerte zusammenpassen. Salesforce Pricing übernimmt die konfigurierte Position und berechnet den Nettopreis Schritt für Schritt. Ein schlecht modellierter Katalog macht Regeln und Preisfindung schwerer, deshalb steht das Katalogdesign am Anfang.
 
 ```ablauf
 erp: SAP
@@ -46,13 +46,13 @@ Pricing --Nettopreis--> Angebot
 Angebot --Preis übernommen--> Sales Agreement
 ```
 
-Alle drei laufen auf Standardobjekten der Core-Plattform und nicht in einem Managed Package. Zu den Namen: salesforce.com sagt Revenue Cloud, Trailhead sagt Agentforce Revenue Management, und der Developer Guide für Winter '27 heißt Revenue Management Developer Guide. Die [Übersicht der Produktnamen](../../../blog/revenue-cloud-produktnamen-rlm-rca/) ordnet das ein.
+Alle drei basieren auf Standardobjekten der Core-Plattform und nicht in einem Managed Package. Zu den Namen: salesforce.com spricht von Revenue Cloud, Trailhead von Agentforce Revenue Management, und der Developer Guide für Winter '27 heißt Revenue Management Developer Guide. Die [Übersicht der Produktnamen](../../../blog/revenue-cloud-produktnamen-rlm-rca/) ordnet das ein.
 
 Wer von Salesforce CPQ kommt, kann die Zuordnung schnell aufschreiben und braucht lange, um sie umzusetzen. Produktregeln werden zu Konfigurationsregeln oder Constraint-Modellen. Preisregeln und das Quote Calculator Plugin werden zu Pricing Procedures. Automatisch umgewandelt wird nichts; die weiteren Unterschiede stehen in [Salesforce CPQ vs. Revenue Cloud](../../../blog/salesforce-cpq-revenue-cloud-unterschiede/). Ob Revenue Cloud überhaupt zu Ihrem Geschäft passt, klärt [Kapitel 1](../revenue-cloud-ueberblick/).
 
 ## Der Produktkatalog: Klassifizierungen statt tausender Produkte
 
-Product Catalog Management hält die Produkte und ihre Struktur. Laut [Trailhead-Modul zum Produktkatalog](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/get-started-with-product-catalog-management) sind das die Bausteine:
+Product Catalog Management verwaltet die Produkte und ihre Struktur. Laut [Trailhead-Modul zum Produktkatalog](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/get-started-with-product-catalog-management) sind das die Bausteine:
 
 - **Kataloge**, zum Beispiel einer für Produkte und einer für Services.
 - **Kategorien und Unterkategorien** zum Navigieren; ein Produkt kann in mehreren stehen.
@@ -73,11 +73,11 @@ Den Materialstamm würde ich nicht kopieren. Salesforce braucht die verkaufsfäh
 | Bundle-Struktur und Kardinalität | Salesforce |
 | Stückliste | ERP oder PLM |
 
-Attributwerte brauchen eine Zuordnung zu den Merkmalswerten in SAP. Hat das Attribut „Steuerung“ in Salesforce den Wert „S2“, muss SAP denselben Wert kennen, sonst scheitert der Auftrag bei der Übergabe. Ersatzteile und Services kommen in eigene Kataloge mit eigenen Verantwortlichen.
+Attributwerte brauchen eine Zuordnung zu den Merkmalswerten in SAP. Hat das Attribut „Steuerung“ in Salesforce den Wert „S2“, muss SAP denselben Wert kennen, sonst scheitert der Auftrag bei der Übergabe. Ersatzteile und Services gehören in eigene Kataloge mit eigenen Verantwortlichen.
 
 ## Der Konfigurator: welches Regelwerk für welches Produkt?
 
-Der Product Configurator ist die Oberfläche, in der der Vertrieb Bundle-Optionen auswählt und Attributwerte setzt; das konfigurierte Produkt geht dann ins Angebot oder in den Auftrag. Trailhead nennt [drei Ansätze, die mit der Komplexität der Produkte wachsen](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/get-started-with-product-configurator): einfache Validierungsregeln, Auswahlregeln und Constraint-basierte Modellierung.
+Der Product Configurator ist die Oberfläche, in der der Vertrieb Bundle-Optionen auswählt und Attributwerte setzt; das konfigurierte Produkt wird dann ins Angebot oder in den Auftrag übernommen. Trailhead nennt [drei Ansätze, die mit der Komplexität der Produkte wachsen](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/get-started-with-product-configurator): einfache Validierungsregeln, Auswahlregeln und Constraint-basierte Modellierung.
 
 Dahinter stehen zwei Regelwerke. Konfigurationsregeln arbeiten mit expliziter Wenn-dann-Logik und passen zu einfachen bis mittleren Produkten. Die Constraint Rules Engine, laut Salesforce die Lösung „for complicated, high-volume configurations“, arbeitet mit einem Constraint-Modell, wertet alle möglichen Kombinationen aus und [filtert ungültige in Echtzeit heraus](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/explore-product-configurator-with-constraint-rules-engine). Eine Pumpe mit fünf Optionen und drei Ausschlüssen braucht kein Constraint-Modell. Eine Maschine, bei der Baugröße, Antriebsleistung, Spannung und Sicherheitskategorie voneinander abhängen, braucht eines.
 
@@ -89,9 +89,9 @@ Diese Frage entscheidet den Weg stärker als die Funktionsliste:
 
 | Wo die Regeln liegen | Was daraus folgt |
 |---|---|
-| In Tabellen und in den Köpfen der Anwendungstechnik | Der beste Fall für Revenue Cloud. Die Regeln müssen ohnehin aufgeschrieben werden, und CML gibt ihnen ein Zuhause mit Tests. |
-| In der SAP-Variantenkonfiguration | Prüft SAP jeden Auftrag erneut, entsteht mit einem Nachbau in CML ein zweites Regelwerk, das sich vom ersten entfernt. Entweder bleibt SAP führend und Salesforce übernimmt das Ergebnis, oder die Führung wandert nach Salesforce und SAP übernimmt die Konfiguration. |
-| Im PLM oder in einem technischen Konfigurator | Der Zeichnungen oder Stücklisten erzeugt. Dann bleibt dieses Werkzeug, und Salesforce bekommt das konfigurierte Produkt mit seinen preisrelevanten Attributen. |
+| In Tabellen und in den Köpfen der Anwendungstechnik | Der beste Fall für Revenue Cloud. Die Regeln müssen ohnehin aufgeschrieben werden, und CML gibt ihnen einen festen Ort mit Tests. |
+| In der SAP-Variantenkonfiguration | Prüft SAP jeden Auftrag erneut, entsteht mit einem Nachbau in CML ein zweites Regelwerk, das sich vom ersten entfernt. Entweder bleibt SAP führend und Salesforce übernimmt das Ergebnis, oder die Führung geht auf Salesforce über und SAP übernimmt die Konfiguration. |
+| Im PLM oder in einem technischen Konfigurator, der Zeichnungen oder Stücklisten erzeugt | Dieses Werkzeug bleibt, und Salesforce erhält das konfigurierte Produkt mit seinen preisrelevanten Attributen. |
 
 Welchen Weg Sie auch wählen: Benennen Sie vor dem Projektstart, wer die Regeln nach dem Go-live pflegt.
 
@@ -111,14 +111,14 @@ Die [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atl
 
 ## Welche Preise sollten aus SAP kommen?
 
-SAP rechnet Kundenpreise mit der Konditionstechnik: Preislisten, Kundenpreise, Rabatte pro Materialgruppe, Zuschläge und Staffeln, jeweils mit Gültigkeit. Revenue Cloud kann dieselben Preise rechnen. Ärger entsteht, wenn beide es für denselben Preis tun, weil Angebot und SAP-Auftragsbestätigung dann früher oder später voneinander abweichen und der Vertriebsinnendienst das Auftrag für Auftrag klärt.
+SAP rechnet Kundenpreise mit der Konditionstechnik: Preislisten, Kundenpreise, Rabatte pro Materialgruppe, Zuschläge und Staffeln, jeweils mit Gültigkeit. Revenue Cloud kann dieselben Preise rechnen. Probleme entstehen, wenn beide denselben Preis berechnen, weil Angebot und SAP-Auftragsbestätigung dann früher oder später voneinander abweichen und der Vertriebsinnendienst das Auftrag für Auftrag klären muss.
 
 Es gibt drei Wege, und Sie können pro Preisart wählen:
 
 | Weg | Führend | Passt, wenn |
 |---|---|---|
-| A: SAP rechnet, Salesforce fragt per API | SAP | Konditionen auch für Aufträge ohne Salesforce gelten |
-| B: Konditionen in Salesforce Pricing nachbauen | Salesforce | die Preishoheit dauerhaft in den Vertrieb wandert und SAP den Preis übernimmt |
+| A: SAP rechnet, Salesforce fragt per API ab | SAP | Konditionen auch für Aufträge ohne Salesforce gelten |
+| B: Konditionen in Salesforce Pricing nachbauen | Salesforce | die Preishoheit dauerhaft auf den Vertrieb übergeht und SAP den Preis übernimmt |
 | C: Listenpreise aus SAP, Rabatte in Salesforce | geteilt | der Vertrieb Rabatte pro Geschäft verhandelt |
 
 Für Weg A beschreibt der [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/minor/1.6/pages/Use%20case%203a%20-%20Quote-to-cash%20-%20Salesforce%20and%20SAP%20S4HANA/) das Muster mit der SAP-Auftragssimulation, allerdings für Sales Cloud und Salesforce CPQ, nicht für Revenue Cloud. Für Revenue Cloud bauen Sie den Aufruf selbst und testen die Antwortzeit mit echten Angebotsgrößen. Meine übliche Aufteilung, als Annahme für einen typischen Maschinenbauer: Maschinen über Weg C, Ersatzteile und Händlerkonditionen über Weg A, weil sie auch für EDI-Aufträge gelten. Den vollständigen Vergleich finden Sie in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../../../blog/kundenpreise-sap-konditionen-oder-salesforce-pricing/), die gesamte Aufteilung von Quote-to-Cash zwischen beiden Systemen in [Kapitel 1](../revenue-cloud-ueberblick/).
@@ -127,7 +127,7 @@ Für Weg A beschreibt der [MuleSoft Accelerator for SAP](https://anypoint.muleso
 
 Im Seriengeschäft wird das konfigurierte Produkt in einem Sales Agreement in Manufacturing Cloud geplant, mit Mengen pro Produkt und Periode. Daraus folgen zwei Dinge. Jede Variante, die in einem Rahmenvertrag geplant wird, braucht eine eigene Produktidentität, die auch SAP kennt; das ist der zweite der drei Katalogtests oben. Und der Preis wird einmal freigegeben, am Angebot, und in den Rahmenvertrag übernommen, sodass das Sales Agreement keine eigene Preislogik braucht.
 
-Wie konfigurierte Produkte vom Angebot in den Rahmenvertrag kommen und was der Konfigurator vorher klären muss, beschreibt [Vom Angebot zum Sales Agreement: der Produktkonfigurator](../../../blog/angebot-zu-sales-agreement-produktkonfigurator/). Die Seite des Rahmenvertrags behandelt das Manufacturing-Cloud-Kapitel [Rahmenverträge und Prognosen](../../manufacturing-cloud/rahmenvertraege-und-prognosen/).
+Wie konfigurierte Produkte vom Angebot in den Rahmenvertrag gelangen und was der Konfigurator vorher klären muss, beschreibt [Vom Angebot zum Sales Agreement: der Produktkonfigurator](../../../blog/angebot-zu-sales-agreement-produktkonfigurator/). Die Seite des Rahmenvertrags behandelt das Manufacturing-Cloud-Kapitel [Rahmenverträge und Prognosen](../../manufacturing-cloud/rahmenvertraege-und-prognosen/).
 
 ## Wie testen Sie Preise und Regeln?
 
@@ -144,13 +144,13 @@ Katalog, Constraint-Modelle und Pricing Procedures ändern, was jeder Vertriebsm
 quelle: [CML User Guide](https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/CML_User_Guide.pdf)
 ```
 
-Wie Konfigurationsdaten durch eine Pipeline wandern, behandelt das DevOps-Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/), wie Tests in den Release-Prozess gehören, das Kapitel [Qualität, Tests und Reviews](../../devops-release-management/qualitaet-tests-reviews/).
+Wie Konfigurationsdaten eine Pipeline durchlaufen, behandelt das DevOps-Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/), wie Tests in den Release-Prozess gehören, das Kapitel [Qualität, Tests und Reviews](../../devops-release-management/qualitaet-tests-reviews/).
 
 ## Rechenbeispiel: 30 Verpackungsmaschinen in drei Familien
 
 Ein Hersteller von Verpackungsmaschinen verkauft 30 Grundmaschinen in drei Familien über den Direktvertrieb und Ersatzteile über Händler. Zwei Familien haben ihre Verträglichkeitsregeln in Tabellen der Anwendungstechnik, die dritte nutzt die SAP-Variantenkonfiguration.
 
-Drei Klassifizierungen mit je etwa einem Dutzend Attributen, 30 Grundmaschinen, konfigurierbare Bundles für Werkzeuge und Sicherheitspakete, ein eigener Ersatzteilkatalog, der aus SAP geladen wird. Constraint-Modelle für die beiden Tabellenfamilien, mit Verträglichkeitstabellen aus einem eigenen Objekt und Regressionsfällen pro Familie. Die SAP-Familie behält vorerst ihren Konfigurator, Salesforce übernimmt das Ergebnis über eine Schnittstelle. Maschinenpreise laufen über Weg C, mit Listenpreisen aus SAP jede Nacht und dem Sync direkt nach dem Laden. Händlerpreise für Ersatzteile laufen über Weg A. Das Produktmanagement verantwortet Katalog und Constraint-Modelle, eine Pricing-Administration in Sales Operations die Prozeduren, und das Controlling gibt jede Preisänderung frei.
+Drei Klassifizierungen mit je etwa einem Dutzend Attributen, 30 Grundmaschinen, konfigurierbare Bundles für Werkzeuge und Sicherheitspakete, ein eigener Ersatzteilkatalog, der aus SAP geladen wird. Constraint-Modelle für die beiden Tabellenfamilien, mit Verträglichkeitstabellen aus einem eigenen Objekt und Regressionsfällen pro Familie. Die SAP-Familie behält vorerst ihren Konfigurator, Salesforce übernimmt das Ergebnis über eine Schnittstelle. Maschinenpreise folgen Weg C, mit Listenpreisen aus SAP jede Nacht und dem Sync direkt nach dem Laden. Händlerpreise für Ersatzteile folgen Weg A. Das Produktmanagement verantwortet Katalog und Constraint-Modelle, eine Pricing-Administration in Sales Operations die Prozeduren, und das Controlling gibt jede Preisänderung frei.
 
 ## Eine verantwortliche Person für den Katalog benennen
 

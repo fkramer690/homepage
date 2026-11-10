@@ -17,7 +17,7 @@ takeaways:
 articles: [commerce-shop-or-portal, commerce-gmv-pricing, commerce-business-case, commerce-buyer-licences, commerce-versions-visualforce-aura-lwr, manufacturing-cloud-customer-portal, salesforce-licence-types]
 faq:
   - q: "What is Salesforce B2B Commerce?"
-    a: "Salesforce B2B Commerce is the Salesforce shop for business customers. The store runs as an Experience Cloud site and its data lives on the core platform: buyer accounts, buyer groups, entitlement policies, price books, cart, checkout and order summaries. Salesforce now also markets the product as Agentforce Commerce for B2B."
+    a: "Salesforce B2B Commerce is the Salesforce shop for business customers. The store is an Experience Cloud site and its data lives on the core platform: buyer accounts, buyer groups, entitlement policies, price books, cart, checkout and order summaries. Salesforce now also markets the product as Agentforce Commerce for B2B."
   - q: "How much does Salesforce B2B Commerce cost?"
     a: "Salesforce publishes no price. Growth and Advanced Edition both show \"Contact for Pricing\", and the fee is a percentage of gross merchandise value through the store. On top come buyer licenses, which the Experience Cloud for Manufacturing price list shows at $35 per member or $15 per login per month for Customer Community Plus, plus implementation and ERP integration."
   - q: "Is a dealer portal enough instead of a B2B store?"
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Salesforce B2B Commerce pays off for manufacturers whose dealers and customers reorder known items in volume: spare parts, consumables, accessories. For configured machines it does not replace sales. The store runs as an Experience Cloud site, and buyer groups and price books control visibility and prices. Salesforce charges a share of store revenue and publishes no percentage; on top come buyer licenses, implementation and the ERP integration, which in manufacturing is often the largest item. A portal is enough when dealers mostly ask rather than buy. Before a partner builds, settle who owns prices and stock, which buyer groups exist and which ERP calls run live.
+Salesforce B2B Commerce pays off for manufacturers whose dealers and customers reorder known items in volume: spare parts, consumables, accessories. For configured machines it does not replace sales. The store is an Experience Cloud site, and buyer groups and price books control visibility and prices. Salesforce charges a share of store revenue and publishes no percentage; on top come buyer licenses, implementation and the ERP integration, which in manufacturing is often the largest item. A portal is enough when dealers mostly send requests rather than buy. Before a partner builds, settle who owns prices and stock, which buyer groups exist and which ERP calls run live.
 
 ## The path through the masterclass
 
@@ -43,11 +43,11 @@ If you have one question, jump straight to the matching chapter. If you face the
 
 ## What is Salesforce B2B Commerce?
 
-Salesforce B2B Commerce is the Salesforce shop for business customers. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5), you create the store from a template and design it in Experience Builder, while checkout and configuration use standard platform tools. Technically the store is an Experience Cloud site, and its data sits in the same objects as your CRM.
+Salesforce B2B Commerce is the Salesforce shop for business customers. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5), you create the store from a template and design it in Experience Builder, while checkout and configuration use standard platform tools. Technically the store is an Experience Cloud site, and its data is stored in the same objects as your CRM.
 
 ```vertiefung For admins
 title: What does the data model look like?
-The data model in one paragraph, as [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) describes it: a **buyer account** is a normal account whose contacts are enabled as buyers. **Buyer groups** bundle similar buyer accounts, for example all premium dealers in one country, and connect them to a store. **Entitlement policies** decide which products a buyer group sees, **price books** which prices it gets. The buyer puts products in the **cart**, completes the **checkout**, and the order appears as an **order summary** in the order history. According to the [developer docs](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html), an external system can own the lifecycle of that order summary; changes made there must then flow back into Salesforce. For manufacturers with SAP this is the normal case, more on it in chapter 4.
+The data model in one paragraph, as [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) describes it: a **buyer account** is a normal account whose contacts are enabled as buyers. **Buyer groups** bundle similar buyer accounts, for example all premium dealers in one country, and connect them to a store. **Entitlement policies** decide which products a buyer group sees, **price books** which prices it receives. The buyer puts products in the **cart**, completes the **checkout**, and the order appears as an **order summary** in the order history. According to the [developer docs](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html), an external system can own the lifecycle of that order summary; changes made there must then flow back into Salesforce. For manufacturers with SAP this is the normal case, more on it in chapter 4.
 ```
 
 The advantage over a separate shop system is that accounts, contacts, cases and sales data are already in Salesforce. Inside sales sees the same orders as the dealer, and a service agent sees in the case what the customer bought last.
@@ -86,7 +86,7 @@ The pricing page lists this scope:
 | Data Cloud credits | 250,000 | 500,000 |
 | Agentforce | Merchant Agent | Merchant Agent |
 
-For most manufacturers the Order Management row matters less than expected, because SAP owns the order. Orders from other channels that should run through Salesforce Order Management need a standalone Order Management purchase, according to the pricing page.
+For most manufacturers the Order Management row matters less than expected, because SAP owns the order. Orders from other channels that should be processed by Salesforce Order Management need a standalone Order Management purchase, according to the pricing page.
 
 What the GMV fee does not cover:
 
@@ -98,7 +98,7 @@ What the GMV fee does not cover:
 | Consumption beyond the included credits | How Data Cloud and Flex Credits add up is explained in the [costs and tokens](../../ai-salesforce/costs-and-tokens/) chapter of the AI masterclass. |
 
 ```hinweis tipp
-The GMV fee grows with the store's success. Every dealer you move from email into the shop raises the bill. So I always model three years with a rising digital share and the rate as a variable at 1, 2 and 3 percent. The detail is in [B2B Commerce pricing: what the GMV model costs](../../../blog/b2b-commerce-pricing-gmv-model/), and the full calculation with inside sales time and error costs in the [B2B webshop business case for manufacturers](../../../blog/b2b-webshop-business-case-manufacturers/). An assumed scenario there also shows that time savings alone rarely carry a shop. It usually pays off through additional revenue.
+The GMV fee grows with the store's success. Every dealer you move from email into the shop raises the bill. So I always model three years with a rising digital share and the rate as a variable at 1, 2 and 3 percent. The detail is in [B2B Commerce pricing: what the GMV model costs](../../../blog/b2b-commerce-pricing-gmv-model/), and the full calculation with inside sales time and error costs in the [B2B webshop business case for manufacturers](../../../blog/b2b-webshop-business-case-manufacturers/). An assumed scenario there also shows that time savings alone rarely justify a shop. It usually pays off through additional revenue.
 ```
 
 ## Portal or shop: what do your dealers need?
@@ -128,7 +128,7 @@ Creating a store from the template is the smallest part of the project. The deci
 
 | Decision | What you clarify |
 |---|---|
-| Who owns prices and stock? | Do dealer prices come from price books in Salesforce or live from SAP conditions? Is stock copied or called live? Chapters 3 and 4 answer this; decide it in writing before the first sprint. |
+| Who owns prices and stock? | Do dealer prices come from price books in Salesforce or live from SAP conditions? Is stock copied or queried live? Chapters 3 and 4 answer this; decide it in writing before the first sprint. |
 | Which buyer groups exist? | Group by country, dealer tier and brand, never one group per account. The limits are in chapter 2. |
 | Which store template? | LWR for new stores, a feature-based decision for existing Aura stores. |
 | Which ERP calls run live? | Price, availability, credit check and order handover need an ERP that answers fast. Settle this with the SAP team before the store design is fixed. |
