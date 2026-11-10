@@ -11,9 +11,9 @@ series: { id: field-service, part: 5 }
 tags: [Field Service, Außendienst, Wartungsverträge, Entitlements, Fertigung]
 takeaways:
   - "Ein Wartungsvertrag nutzt meist drei Objekte: Service Contract (was verkauft wurde), Maintenance Plan (Wartungen) und Entitlement (Service-Level)."
-  - "Entitlements können auch aus einer Garantie oder einem Supportpaket kommen. Sie beschreiben, worauf ein Kunde Anspruch hat."
+  - "Entitlements können auch aus einer Garantie oder einem Supportpaket stammen. Sie beschreiben, worauf ein Kunde Anspruch hat."
   - "Maintenance Plans erzeugen Wartungsaufträge im Voraus. Bemessen Sie große Pläne nach Anlagen, Regeln und Vorlauf, denn jeder Lauf hat eine Grenze."
-  - "Entitlements wirken auf die Planung, wenn eine Automatisierung den Service-Level in eine Priorität übersetzt. Termine mit hoher Priorität kommen zuerst."
+  - "Entitlements wirken auf die Planung, wenn eine Automatisierung den Service-Level in eine Priorität übersetzt. Termine mit hoher Priorität haben Vorrang."
   - "Reaktionszeiten aus dem Vertrag werden über Entitlement-Prozesse mit Milestones am Arbeitsauftrag gemessen und damit nachweisbar."
 faq:
   - q: "Was ist der Unterschied zwischen Service Contract und Entitlement?"
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Ein Wartungsvertrag nutzt in Salesforce Field Service typischerweise drei getrennte Objekte. Der Service Contract hält fest, was verkauft wurde. Der Maintenance Plan erzeugt die geplanten Wartungen. Das Entitlement beschreibt, auf welchen Service-Level der Kunde Anspruch hat, etwa eine Reaktionszeit. Entitlements haben dabei mit Wartungsverträgen nur bedingt zu tun, denn ein Anspruch kann auch aus einer Garantie oder einem Supportpaket kommen. In einem Projekt waren Entitlements Teil des Projektumfangs und haben die Priorisierung im Dispatching beeinflusst. Von selbst tun sie das nicht: Eine Automatisierung muss den Service-Level in eine Planungspriorität übersetzen. Genau dort zeigt sich der Wert für den Außendienst.
+Ein Wartungsvertrag nutzt in Salesforce Field Service typischerweise drei getrennte Objekte. Der Service Contract hält fest, was verkauft wurde. Der Maintenance Plan erzeugt die geplanten Wartungen. Das Entitlement beschreibt, auf welchen Service-Level der Kunde Anspruch hat, etwa eine Reaktionszeit. Entitlements haben dabei mit Wartungsverträgen nur bedingt zu tun, denn ein Anspruch kann auch aus einer Garantie oder einem Supportpaket stammen. In einem Projekt waren Entitlements Teil des Projektumfangs und haben die Priorisierung im Dispatching beeinflusst. Von selbst tun sie das nicht: Eine Automatisierung muss den Service-Level in eine Planungspriorität übersetzen. Genau dort zeigt sich der Wert für den Außendienst.
 
 Dieser Artikel ist Teil 5 der Serie. Wie Field Service plant und was der Disponent prüft, steht in [Teil 3](../salesforce-field-service-terminplanung-automatisieren/). Welche Stammdaten, etwa Anlagen und Öffnungszeiten, dafür nötig sind, steht in [Teil 2](../salesforce-field-service-stammdaten/).
 
@@ -68,7 +68,7 @@ Milestones am Arbeitsauftrag brauchen einen Entitlement-Prozess vom Typ Work Ord
 
 **Priorität.** Field Service plant nach einem Prioritätsfeld. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.pfs_scheduling_priority_optimization.htm&language=en_US&type=5) liegt sie standardmäßig auf einer Skala von 1 bis 10, wobei 1 die höchste ist; eine Formel übersetzt die Priorität des Arbeitsauftrags dorthin. Sind Techniker knapp, plant die Optimierung Termine mit hoher Priorität zuerst und kann dafür Termine mit niedriger Priorität verdrängen.
 
-Die Verbindung zwischen Entitlement und Priorität baut man selbst, meist mit einem Flow: Ein Arbeitsauftrag mit einem Entitlement „Reaktion in 24 Stunden“ bekommt eine höhere Priorität als einer ohne Zusage. So fließt die Zusage aus dem Vertrag direkt in die Entscheidung der Planungsengine ein, und der Disponent muss nicht bei jeder Störung im Vertrag nachsehen.
+Die Verbindung zwischen Entitlement und Priorität baut man selbst, meist mit einem Flow: Ein Arbeitsauftrag mit einem Entitlement „Reaktion in 24 Stunden“ erhält eine höhere Priorität als einer ohne Zusage. So fließt die Zusage aus dem Vertrag direkt in die Entscheidung der Planungsengine ein, und der Disponent muss nicht bei jeder Störung im Vertrag nachsehen.
 
 Einmal durchgespielt: Bei einem Kunden mit Premium-Vertrag fällt eine Presse aus.
 
@@ -87,7 +87,7 @@ Wann der Milestone als erfüllt gilt, etwa mit dem Status In Progress vor Ort, l
 
 ## Objekte trennen, Stufen klein halten, Zeiten und Garantie klären
 
-**Trennen Sie die Objekte von Anfang an sauber.** Wer Reaktionszeiten als Textfeld am Service Contract pflegt, kann sie weder messen noch in die Planung bringen. Wer Wartungsintervalle in Entitlements versteckt, bekommt keine automatisch erzeugten Aufträge.
+**Trennen Sie die Objekte von Anfang an sauber.** Wer Reaktionszeiten als Textfeld am Service Contract pflegt, kann sie weder messen noch in die Planung bringen. Wer Wartungsintervalle in Entitlements versteckt, erhält keine automatisch erzeugten Aufträge.
 
 **Halten Sie die Zahl der Service-Level klein.** Mehrere Stufen können sich einen Entitlement-Prozess teilen, wenn Milestones mit unterschiedlichen Kriterien ausreichen. Ein eigener Prozess lohnt sich, wenn sich Stufen in Geschäftszeiten, Start- oder Endlogik unterscheiden. Jede Stufe braucht trotzdem ihre Milestones und ihre Prioritätsregel. Drei Stufen lassen sich erklären und prüfen, zehn nicht.
 
@@ -95,22 +95,22 @@ Wann der Milestone als erfüllt gilt, etwa mit dem Status In Progress vor Ort, l
 
 - **Die SLA-Uhr.** Geschäftszeiten im Entitlement-Prozess und in seinen Milestones entscheiden, ob eine 24-Stunden-Zusage den Samstag mitzählt.
 - **Das Buchungsfenster.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=fs_oh_considerations.htm&language=en_US&type=5) legen Arbeitszeiten am Entitlement die Ankunftsfenster fest, die dem Kunden angeboten werden, etwa zwei statt vier Stunden für Premium-Kunden.
-- **Die Verfügbarkeit des Kunden.** Die Besuchszeiten am Account aus Teil 2, die auf den Arbeitsauftrag übernommen werden, geben an, wann der Techniker an die Maschine kommt.
+- **Die Verfügbarkeit des Kunden.** Die Besuchszeiten am Account aus Teil 2, die auf den Arbeitsauftrag übernommen werden, geben an, wann der Techniker an die Maschine darf.
 
-Legen Sie für jede Vertragsart fest, welcher der drei gilt, bevor ein Kunde fragt, warum sein 24-Stunden-Termin am Samstag nicht kam.
+Legen Sie für jede Vertragsart fest, welcher der drei gilt, bevor ein Kunde fragt, warum sein 24-Stunden-Termin am Samstag nicht stattfand.
 
-**Klären Sie die Grenze zur Garantie.** Ob ein Einsatz unter Garantie, Vertrag oder gegen Rechnung läuft, entscheidet über die Abrechnung. Diese kaufmännische Seite gehört nicht in die Planung, muss aber am Arbeitsauftrag erkennbar sein. Sonst baut der Techniker ein Teil ein, das später niemand abrechnen kann, oder der Kunde bekommt eine Rechnung für einen Einsatz, der unter Garantie lief.
+**Klären Sie die Grenze zur Garantie.** Ob ein Einsatz unter Garantie, Vertrag oder gegen Rechnung erfolgt, entscheidet über die Abrechnung. Diese kaufmännische Seite gehört nicht in die Planung, muss aber am Arbeitsauftrag erkennbar sein. Sonst baut der Techniker ein Teil ein, das später niemand abrechnen kann, oder der Kunde erhält eine Rechnung für einen Einsatz, der unter Garantie erfolgte.
 
 ## Vertrieb, Service und Finanzen entscheiden, was in die Objekte gehört
 
 Die Objekte werden konfiguriert. Was hineingehört, ist eine geschäftliche Entscheidung, die Serviceleitung, Vertrieb und Finanzen gemeinsam treffen sollten:
 
 - **Wie viele Service-Level der Vertrieb verkaufen darf.** Jede Stufe, die der Vertrieb zusagt, muss eingerichtet und gemessen werden. Eine Planungspriorität brauchen nur Stufen, die die Reihenfolge der Einsätze ändern sollen, und mehrere Stufen können sich eine teilen. Einigen Sie sich auf eine kurze Liste, bevor der erste Vertrag verhandelt wird, nicht danach.
-- **Was eine verfehlte Reaktionszeit kostet.** Vertragsstrafen, Gutschriften oder schlicht eine verlorene Verlängerung. Zusammen mit der Kritikalität der Anlage und möglichen Sicherheits- oder Rechtsfolgen entscheidet diese Zahl, wie viel Priorität eine Zusage in der Planung bekommt und welcher Aufwand für eine verlässliche Messung gerechtfertigt ist.
+- **Was eine verfehlte Reaktionszeit kostet.** Vertragsstrafen, Gutschriften oder schlicht eine verlorene Verlängerung. Zusammen mit der Kritikalität der Anlage und möglichen Sicherheits- oder Rechtsfolgen entscheidet diese Zahl, wie viel Priorität eine Zusage in der Planung erhält und welcher Aufwand für eine verlässliche Messung gerechtfertigt ist.
 - **Wer zwischen Garantie, Vertrag und Rechnung entscheidet.** Jemand muss das für jeden Arbeitsauftrag festlegen, am besten vor dem Einsatz. Sonst streiten Service und Finanzen nach jedem Einsatz darüber.
 
 Drei Warnzeichen, dass das Vertragsmodell nicht trägt: Reaktionszeiten stehen in einem Textfeld, Disponenten schauen bei jeder Störung in den Vertrag, und niemand kann sagen, wie viele Zusagen im letzten Monat eingehalten wurden.
 
 ## Die drei häufigsten Vertragsarten aufschreiben
 
-Nehmen Sie Ihre drei häufigsten Vertragsarten und schreiben Sie für jede auf, was der Kunde gekauft hat, welche Wartungen geplant sind und welche Reaktionszeit zugesagt ist. Daraus ergeben sich Service Contracts, Maintenance Plans und Entitlements fast von selbst. Danach legen Sie fest, welche Priorität jede Zusage in der Planung bekommt. Wie Servicepartner und Subunternehmer in dieselbe Planung eingebunden werden, zeigt der [nächste Teil der Serie](../salesforce-field-service-servicepartner/).
+Nehmen Sie Ihre drei häufigsten Vertragsarten und schreiben Sie für jede auf, was der Kunde gekauft hat, welche Wartungen geplant sind und welche Reaktionszeit zugesagt ist. Daraus ergeben sich Service Contracts, Maintenance Plans und Entitlements fast von selbst. Danach legen Sie fest, welche Priorität jede Zusage in der Planung erhält. Wie Servicepartner und Subunternehmer in dieselbe Planung eingebunden werden, zeigt der [nächste Teil der Serie](../salesforce-field-service-servicepartner/).

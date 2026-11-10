@@ -59,7 +59,7 @@ I would only build an agent when at least one of these conditions holds:
 
 1. **Nobody reads the answer first.** A dealer asks a question in the portal at 10 p.m. and the reply goes out directly, so you need guardrails, tests and an escalation path.
 2. **The order of steps depends on the answer.** Identify the dealer, check the entitlement, read the order status from SAP, offer an alternative part. A Flow can do that when the path is fixed; an agent is useful when the dealer's question decides the path.
-3. **What gets written depends on the conversation.** A Flow can write to a field after a prompt on a fixed path. When the dealer's message decides whether to create a case, a field service appointment or a spare parts order, that is an agent action.
+3. **What is written depends on the conversation.** A Flow can write to a field after a prompt on a fixed path. When the dealer's message decides whether to create a case, a field service appointment or a spare parts order, that is an agent action.
 4. **The conversation has several turns.** Follow-up questions such as "and the seal kit?" need context across messages.
 
 If none of these applies, the agent adds cost and test effort without adding value. One SAP lookup plus one text is a Flow that calls a template.

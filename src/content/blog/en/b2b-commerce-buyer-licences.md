@@ -42,7 +42,7 @@ Salesforce B2B Commerce, which Salesforce now calls "Agentforce Commerce for B2B
 | Merchandiser | Runs the catalog, store features and launches | Salesforce standard or Identity license | Merchandiser or Commerce Admin permission set |
 | Developer, front-end builder | Loads product data, builds checkout and pages | Internal Salesforce license, depending on the task | Customize Application, Author Apex, Create and Set Up Experiences |
 
-The [B2B Commerce pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) lists 6 or 10 storefronts, 20 inventory locations, Order Management, Data Cloud credits, the Merchant Agent and 3 or 5 users each for CRM Analytics and Knowledge. Buyer licenses do not appear there; ask whether your edition includes any. Otherwise they come on top of the GMV fee, which I cover in [B2B Commerce pricing: what the GMV model costs](../b2b-commerce-pricing-gmv-model/).
+The [B2B Commerce pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) lists 6 or 10 storefronts, 20 inventory locations, Order Management, Data Cloud credits, the Merchant Agent and 3 or 5 users each for CRM Analytics and Knowledge. Buyer licenses do not appear there; ask whether your edition includes any. Otherwise they are charged on top of the GMV fee, which I cover in [B2B Commerce pricing: what the GMV model costs](../b2b-commerce-pricing-gmv-model/).
 
 ## Buyer managers need Customer Community Plus, plain buyers do not
 

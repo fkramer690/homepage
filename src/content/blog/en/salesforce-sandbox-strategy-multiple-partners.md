@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-A Salesforce sandbox strategy defines for every test environment what it is for, who works in it, which data it holds and when it gets refreshed. When several implementation partners work on one org, I recommend a fixed chain: each developer has their own development environment, followed by one shared integration sandbox, a Partial Copy for tests with the ERP and a Full Copy for UAT and the dress rehearsal before each release. Changes only move through this chain via the pipeline. Without these rules every partner builds their own world, and the differences only show up in production.
+A Salesforce sandbox strategy defines for every test environment what it is for, who works in it, which data it holds and when it is refreshed. When several implementation partners work on one org, I recommend a fixed chain: each developer has their own development environment, followed by one shared integration sandbox, a Partial Copy for tests with the ERP and a Full Copy for UAT and the dress rehearsal before each release. Changes only move through this chain via the pipeline. Without these rules every partner builds their own world, and the differences only show up in production.
 
 ## Which sandbox types does Salesforce offer?
 
@@ -61,7 +61,7 @@ The strategy follows the path of a change. Every stage has a purpose and an owne
 
 1. **Development.** Ideally, every developer has their own Developer sandbox or scratch org, or at least every active stream has one, within the available entitlements. Test data is loaded from the repository as a seed data set. This environment is allowed to break.
 2. **Integration.** One shared sandbox, often a Developer Pro, sized for the data the tests need. Pull requests are validated and tested before the merge; after the merge, their changes are deployed here, and the streams test together for the first time. Partners have read access, but they cannot change anything there directly.
-3. **Interface tests.** A Partial Copy connected to the ERP test system. The sample comes from a sandbox template that defines which objects are copied. Personal data gets masked.
+3. **Interface tests.** A Partial Copy connected to the ERP test system. The sample comes from a sandbox template that defines which objects are copied. Personal data is masked.
 4. **UAT and dress rehearsal.** The Full Copy. Business users test here with real data volumes, and the release is played through once completely, including post-deployment steps, in an agreed window after UAT. Personal data is masked here too, access is restricted, and the sandbox is approved for use after each refresh.
 5. **Hotfix.** A sandbox with the production metadata and a branch from production, so an urgent defect can be fixed without dragging half-finished features along.
 
@@ -87,7 +87,7 @@ So I keep a simple list that the client owns:
 - Preview or non-preview status around Salesforce releases
 - Data classification and masking status
 
-A sandbox without an entry in this list gets deleted after notice. That sounds strict, but it frees an allocated sandbox for a real purpose and stops forgotten environments full of customer data from lying around. What AI coding agents may read in such environments is covered in [sandbox customer data and AI coding agents](../sandbox-customer-data-ai-coding-agents/).
+A sandbox without an entry in this list is deleted after notice. That sounds strict, but it frees an allocated sandbox for a real purpose and stops forgotten environments full of customer data from lying around. What AI coding agents may read in such environments is covered in [sandbox customer data and AI coding agents](../sandbox-customer-data-ai-coding-agents/).
 
 ## How often should you refresh your sandboxes?
 

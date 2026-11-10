@@ -47,7 +47,7 @@ Die Änderungsquote der Disposition kostet etwas Aufwand und ist in den ersten M
 
 ## Operations Home und Field Service Intelligence laufen auf Data 360
 
-Salesforce verkauft Field Service heute als Agentforce Field Service and Operations. Die Auswertungen kommen in zwei Teilen. Laut [Salesforce-Blog vom September 2025](https://www.salesforce.com/blog/how-to-transform-field-service-operations-with-agentic-analytics/):
+Salesforce verkauft Field Service heute als Agentforce Field Service and Operations. Die Auswertungen bestehen aus zwei Teilen. Laut [Salesforce-Blog vom September 2025](https://www.salesforce.com/blog/how-to-transform-field-service-operations-with-agentic-analytics/):
 
 - **Operations Home** ist die Startseite für den Innendienst, mit 12 fertigen Kennzahlen, darunter Erstlösungsquote, Auslastung, Einsatzdauer und Stillstandszeit der Assets. Sie basiert auf Tableau Next, Data Cloud und Agentforce, Concierge beantwortet Fragen in natürlicher Sprache.
 - **Field Service Intelligence** hat fünf fertige Dashboards zu Arbeitsaufträgen, Terminen, Assets, Ersatzteilbestand und Ressourcen, mit mehr als 30 Kennzahlen.

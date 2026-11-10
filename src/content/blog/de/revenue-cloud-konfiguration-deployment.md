@@ -14,7 +14,7 @@ takeaways:
   - "Salesforce hat kein eigenes Deployment-Werkzeug speziell für Revenue Management. Der Guide gibt die Reihenfolge vor: Metadaten zuerst, Eltern vor Kindern."
   - "Eigene Context Definitions lassen sich deployen, Sie müssen sie aber von Hand aktivieren. Ein Deployment in eine Org mit älterem Release ist nicht möglich."
   - "Die meisten Deployments brauchen Nacharbeit, etwa Decision Tables aktualisieren oder den Produktindex neu aufbauen, je nach Änderung."
-  - "Konfigurationsdatensätze brauchen eine stabile eindeutige ID. Führt SAP Produkte oder Preise, kommen sie über die Schnittstelle in die Produktion."
+  - "Konfigurationsdatensätze brauchen eine stabile eindeutige ID. Führt SAP Produkte oder Preise, gelangen sie über die Schnittstelle in die Produktion."
 faq:
   - q: "Lässt sich Revenue-Cloud-Konfiguration mit Change Sets oder der Metadata API deployen?"
     a: "Nur zum Teil. Decision Tables, Pricing Recipes, Context Definitions, Product Specification Types, Flows und Felder sind Metadaten, Katalog, Attribute, Verkaufsmodelle, Preisbucheinträge und Billing Policies dagegen Datensätze. Dafür brauchen Sie ein Daten-Deployment mit SFDMU, Gearset, Copado oder einem ähnlichen Werkzeug."
@@ -27,13 +27,13 @@ faq:
 draft: false
 ---
 
-Die meiste Konfiguration in Revenue Cloud liegt als Daten vor: Attributdefinitionen, Produktklassifizierungen, Produkte, Verkaufsmodelle, Preisbucheinträge, Preisanpassungen und Billing Policies sind Datensätze auf Standardobjekten. Ein anderer Teil, etwa Decision Tables, Pricing Recipes, Context Definitions und Product Specification Types, besteht aus Metadaten. Ein eigenes Deployment-Werkzeug für Revenue Cloud bietet Salesforce nicht an, dokumentiert aber für jeden Bereich eine Reihenfolge: Metadaten zuerst, Elterndatensätze vor Kindern. Mehrere Schritte bleiben manuell, etwa das Aktivieren von Context Definitions und je nach Änderung das Aktualisieren von Decision Tables oder der Neuaufbau des Produktindex. Meine Regel: Konfigurationsdaten liegen im Repository des Kunden, haben eine stabile, eindeutige ID, und ERP-Stammdaten kommen über die Schnittstelle.
+Die meiste Konfiguration in Revenue Cloud liegt als Daten vor: Attributdefinitionen, Produktklassifizierungen, Produkte, Verkaufsmodelle, Preisbucheinträge, Preisanpassungen und Billing Policies sind Datensätze auf Standardobjekten. Ein anderer Teil, etwa Decision Tables, Pricing Recipes, Context Definitions und Product Specification Types, besteht aus Metadaten. Ein eigenes Deployment-Werkzeug für Revenue Cloud bietet Salesforce nicht an, dokumentiert aber für jeden Bereich eine Reihenfolge: Metadaten zuerst, Elterndatensätze vor Kindern. Mehrere Schritte bleiben manuell, etwa das Aktivieren von Context Definitions und je nach Änderung das Aktualisieren von Decision Tables oder der Neuaufbau des Produktindex. Meine Regel: Konfigurationsdaten liegen im Repository des Kunden, haben eine stabile, eindeutige ID, und ERP-Stammdaten werden über die Schnittstelle übertragen.
 
 ## Warum ist Revenue-Cloud-Konfiguration meist Daten?
 
 In Salesforce CPQ sind Preisregeln, Produktregeln und Optionen Datensätze in Paketobjekten. Revenue Cloud, das Salesforce inzwischen Agentforce Revenue Management nennt (im Developer Guide Revenue Management), folgt demselben Prinzip auf Standardobjekten. Ich bleibe beim alten Namen, weil er in Lizenzen wie Revenue Cloud Advanced weiterlebt. Gearset fasst es in seinem [Vergleich von CPQ und Revenue Cloud](https://docs.gearset.com/en/articles/11169961-how-to-compare-and-deploy-revenue-cloud-advanced) zusammen: In beiden Produkten liegt die meiste Konfiguration als Daten vor. Für Revenue Cloud heißt es dort: "Most configuration is stored as data, not metadata."
 
-Für Teams, die von CPQ kommen, sehen die Unterschiede so aus:
+Für Teams, die von CPQ umsteigen, sehen die Unterschiede so aus:
 
 | Thema | Salesforce CPQ | Revenue Cloud |
 |---|---|---|
@@ -64,7 +64,7 @@ Für Billing gilt eine eigene Reihenfolge, von Rechtseinheit und Billing Policy 
 
 ## Was deployt die Pipeline, und was bleibt manuell?
 
-Einige Teile wandern nur mit Sorgfalt. Aus dem Developer Guide und der Gearset-Dokumentation ergeben sich folgende Punkte:
+Einige Teile lassen sich nur mit Sorgfalt übertragen. Aus dem Developer Guide und der Gearset-Dokumentation ergeben sich folgende Punkte:
 
 - **Context Definitions.** Laut [Gearset](https://docs.gearset.com/en/articles/11384495-how-to-deploy-context-definitions) lassen sich nur eigene Context Definitions abrufen und deployen, Standarddefinitionen nicht. Scheitert ein Deployment, weil das Ziel nicht synchron ist, klicken Sie in der Ziel-Org auf der Seite Context Service auf Sync und deployen erneut. Die [Hinweise von Salesforce zum Context Service](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-context-service-additional-info.html) ergänzen: Aktivieren und Deaktivieren ist ein manueller Schritt außerhalb des Deployments, und ein Deployment vom aktuellen Release in ein älteres wird nicht unterstützt.
 - **Pricing.** Laut den [Hinweisen zu Salesforce Pricing](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-salesforce-pricing-additional-info.html) müssen Decision Tables und Pricing Procedures aktiviert werden, eine Decision Table muss für jeden neuen oder geänderten Datensatz aktualisiert werden, und ein aktives oder inaktives Product Selling Model lässt sich nicht zurück auf Draft setzen. Prüfen Sie außerdem die Konstanten der Pricing Procedures: Laut Salesforce können sie Datensatz-IDs aus der Sandbox enthalten, auch IDs von Preisanpassungsplänen, die Sie durch die IDs der Ziel-Org ersetzen müssen.
@@ -93,7 +93,7 @@ Eine Regel gilt für jedes Werkzeug: Data Templates, SFDMU-Arbeitsbereiche und d
 
 ## Wo verläuft die Grenze zwischen Konfiguration und ERP-Stammdaten?
 
-Die Deployment-Referenz führt Product2 und PriceBookEntry als Konfigurationsobjekte. Bei einem Hersteller stimmt das nur zur Hälfte. Kommen Materialnummern und Listenpreise aus SAP, erreichen sie die Produktion über die Schnittstelle, und eine Sandbox bekommt einen Grundbestand dieser Daten. Ein Deployment von der Sandbox in die Produktion wäre ein zweiter, konkurrierender Weg.
+Die Deployment-Referenz führt Product2 und PriceBookEntry als Konfigurationsobjekte. Bei einem Hersteller stimmt das nur zur Hälfte. Stammen Materialnummern und Listenpreise aus SAP, erreichen sie die Produktion über die Schnittstelle, und eine Sandbox erhält einen Grundbestand dieser Daten. Ein Deployment von der Sandbox in die Produktion wäre ein zweiter, konkurrierender Weg.
 
 Meine Aufteilung:
 
@@ -104,6 +104,6 @@ Welche Preise SAP führen sollte, behandelt [Kundenpreise: SAP-Konditionen oder 
 
 ## Praxisbeispiel: ein Release mit neuem Attributaufschlag
 
-Ein Maschinenbauer betreibt Revenue Cloud mit drei Sandboxes und der Produktion. 300 Produkte und Listenpreise kommen aus SAP, 45 Attribute, 12 Klassifizierungen, 4 Verkaufsmodelle und 6 Pricing Procedures werden in Salesforce gepflegt. Alle Zahlen sind Annahmen.
+Ein Maschinenbauer betreibt Revenue Cloud mit drei Sandboxes und der Produktion. 300 Produkte und Listenpreise stammen aus SAP, 45 Attribute, 12 Klassifizierungen, 4 Verkaufsmodelle und 6 Pricing Procedures werden in Salesforce gepflegt. Alle Zahlen sind Annahmen.
 
-Ein Release, das einen neuen attributbasierten Aufschlag einführt, läuft dann so: Der Pull Request enthält die Attributdefinition, die Änderung der Klassifizierung und die neue Anpassungsregel als SFDMU-Datensätze mit externen IDs, dazu die geänderte Decision Table als Metadaten. Die Pipeline deployt erst Metadaten, dann Daten, in der Reihenfolge der Referenztabellen. Den Rest regelt die Release-Checkliste: Sandbox-IDs in den Konstanten der Pricing Procedure ersetzen, Procedure aktivieren, betroffene Decision Tables aktualisieren, Produktindex neu aufbauen, falls sich Katalog oder Suche geändert haben, und fünf Angebote als Regressionstest berechnen. Eine solche Pipeline aufzusetzen gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Die Migration davor beschreiben [CPQ zu Revenue Cloud migrieren](../cpq-migration-revenue-cloud-phasen/) und das Masterclass-Kapitel [Von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
+Ein Release, das einen neuen attributbasierten Aufschlag einführt, sieht dann so aus: Der Pull Request enthält die Attributdefinition, die Änderung der Klassifizierung und die neue Anpassungsregel als SFDMU-Datensätze mit externen IDs, dazu die geänderte Decision Table als Metadaten. Die Pipeline deployt erst Metadaten, dann Daten, in der Reihenfolge der Referenztabellen. Den Rest regelt die Release-Checkliste: Sandbox-IDs in den Konstanten der Pricing Procedure ersetzen, Procedure aktivieren, betroffene Decision Tables aktualisieren, Produktindex neu aufbauen, falls sich Katalog oder Suche geändert haben, und fünf Angebote als Regressionstest berechnen. Eine solche Pipeline aufzusetzen gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Die Migration davor beschreiben [CPQ zu Revenue Cloud migrieren](../cpq-migration-revenue-cloud-phasen/) und das Masterclass-Kapitel [Von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).

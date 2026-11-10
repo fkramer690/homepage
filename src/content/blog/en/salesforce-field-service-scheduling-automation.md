@@ -22,7 +22,7 @@ faq:
   - q: "What is a scheduling policy?"
     a: "A scheduling policy defines the rules and objectives Field Service uses to assign appointments to technicians. Work rules exclude unsuitable technicians, and service objectives rank the rest using weights."
   - q: "Which scheduling policies come with Salesforce Field Service?"
-    a: "Field Service ships four default policies: Customer First, High Intensity for peak periods, Soft Boundaries for work across territories and Emergency for urgent jobs. They are a starting point and usually get adjusted."
+    a: "Field Service ships four default policies: Customer First, High Intensity for peak periods, Soft Boundaries for work across territories and Emergency for urgent jobs. They are a starting point and are usually adjusted."
   - q: "Can Field Service release appointments to technicians automatically?"
     a: "Yes. Scheduled jobs can change appointments from Scheduled to Dispatched automatically. With drip feed, Field Service keeps only a set number of appointments in each technician's queue."
   - q: "How do you automate technician scheduling and dispatch in Salesforce Field Service?"
@@ -53,7 +53,7 @@ The engine assigns appointments using a scheduling policy. According to [Salesfo
 
 Salesforce ships four policies. Customer First balances customer preference and short travel time. High Intensity puts technician productivity above customer preferences and is meant for peak periods. Soft Boundaries lets technicians work across territory borders. Emergency is for urgent jobs. Which one to start from depends on your main goal: committed response times, short travel, customer preference, utilization or scarce specialists. Whatever you pick, start from a shipped policy and adjust the weights instead of building one from scratch.
 
-Optimization comes on top of that. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) it can rearrange the plan for one or more territories over several days, for example every night. On the day of service, in-day optimization absorbs short-notice changes, and a separate optimization option handles a single technician when an appointment is canceled or runs late. Whether to switch to the newer engine is covered in [Enhanced Scheduling and Optimization: switch now?](../field-service-enhanced-scheduling-optimization-switch/). The full picture of engine, console and rules is in [chapter 2 of the Field Service masterclass](../../masterclass/field-service/field-service-scheduling-dispatch/).
+Optimization is added on top of that. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) it can rearrange the plan for one or more territories over several days, for example every night. On the day of service, in-day optimization absorbs short-notice changes, and a separate optimization option handles a single technician when an appointment is canceled or runs late. Whether to switch to the newer engine is covered in [Enhanced Scheduling and Optimization: switch now?](../field-service-enhanced-scheduling-optimization-switch/). The full picture of engine, console and rules is in [chapter 2 of the Field Service masterclass](../../masterclass/field-service/field-service-scheduling-dispatch/).
 
 ## The dispatcher adds what is not in the data
 

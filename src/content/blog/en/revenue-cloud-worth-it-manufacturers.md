@@ -85,7 +85,7 @@ The [pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-managem
 
 The FAQ on the same page states that Revenue Cloud is a paid add-on bought in addition to a Sales Cloud subscription. "Invoicing" in Advanced means basic invoicing; usage billing, payments and collections come with Revenue Cloud Billing, a separate add-on with pricing available on request.
 
-An example calculation at list price: 50 sales users who create quotes get Revenue Cloud Advanced. That is 50 × €200 × 12 = €120,000 a year. If these users do not have Sales Cloud yet and Sales Cloud Core is the chosen base edition, Core at €195 per user per month adds €117,000 a year. Implementation, the SAP integration and maintenance come on top. A license forecast clarifies who really needs a license, as described in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/). Editions and add-ons are covered in detail in [Revenue Cloud pricing: Growth, Advanced and add-ons](../revenue-cloud-editions-pricing/).
+An example calculation at list price: 50 sales users who create quotes get Revenue Cloud Advanced. That is 50 × €200 × 12 = €120,000 a year. If these users do not have Sales Cloud yet and Sales Cloud Core is the chosen base edition, Core at €195 per user per month adds €117,000 a year. Implementation, the SAP integration and maintenance are extra. A license forecast clarifies who really needs a license, as described in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/). Editions and add-ons are covered in detail in [Revenue Cloud pricing: Growth, Advanced and add-ons](../revenue-cloud-editions-pricing/).
 
 ## Worked example: 400 quotes a month, one in ten is a project
 

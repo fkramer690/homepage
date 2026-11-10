@@ -21,13 +21,13 @@ faq:
   - q: "Was ist ein Servicetermin in Field Service?"
     a: "Ein Servicetermin (Service Appointment) ist der Einsatz, der geplant und einem Techniker zugewiesen wird. Sein übergeordneter Datensatz ist meist ein Arbeitsauftrag oder eine Arbeitsauftragsposition."
   - q: "Kann Salesforce den Servicetermin automatisch anlegen?"
-    a: "Ja. Ist im Work Type die Option Auto-Create Service Appointment gesetzt, entsteht automatisch ein Servicetermin, wenn dieser Work Type auf einen Arbeitsauftrag oder eine Position ohne Termin angewendet wird. Datensätze, die vor dem Einschalten angelegt wurden, bekommen keinen Servicetermin."
+    a: "Ja. Ist im Work Type die Option Auto-Create Service Appointment gesetzt, entsteht automatisch ein Servicetermin, wenn dieser Work Type auf einen Arbeitsauftrag oder eine Position ohne Termin angewendet wird. Datensätze, die vor dem Einschalten angelegt wurden, erhalten keinen Servicetermin."
   - q: "Erzeugen Wartungspläne Cases?"
     a: "Im Standard nicht. Wartungspläne erzeugen Arbeitsaufträge laut Trailhead entweder manuell oder automatisch dreimal am Tag. Ein Case ist dabei nicht beteiligt."
 draft: false
 ---
 
-In Salesforce Field Service durchläuft eine typische Störungsmeldung bis zu vier Datensätze, bevor ein Techniker kommt; Case und Positionen sind optional. Der Case dokumentiert das Problem des Kunden, der Arbeitsauftrag die auszuführende Arbeit, Arbeitsauftragspositionen die Teilschritte und der Servicetermin den Einsatz, der geplant wird. Die Hotline legt den Case an und entscheidet, ob überhaupt ein Einsatz nötig ist. Wenn ja, legt sie einen Arbeitsauftrag an, und ein passend eingestellter Work Type erzeugt den Termin automatisch. Die Disposition oder die Planungsengine weist dann einen Techniker zu. Geplante Wartung nimmt eine Abkürzung: Wartungspläne erzeugen Arbeitsaufträge ganz ohne Case.
+In Salesforce Field Service durchläuft eine typische Störungsmeldung bis zu vier Datensätze, bevor ein Techniker anrückt; Case und Positionen sind optional. Der Case dokumentiert das Problem des Kunden, der Arbeitsauftrag die auszuführende Arbeit, Arbeitsauftragspositionen die Teilschritte und der Servicetermin den Einsatz, der geplant wird. Die Hotline legt den Case an und entscheidet, ob überhaupt ein Einsatz nötig ist. Wenn ja, legt sie einen Arbeitsauftrag an, und ein passend eingestellter Work Type erzeugt den Termin automatisch. Die Disposition oder die Planungsengine weist dann einen Techniker zu. Geplante Wartung nimmt eine Abkürzung: Wartungspläne erzeugen Arbeitsaufträge ganz ohne Case.
 
 ## Welche Datensätze bilden einen Außendiensteinsatz ab?
 
@@ -62,7 +62,7 @@ Nein, und hier wird im Service das meiste Geld gespart oder verloren. Bevor ein 
 - **Teileversand.** Der Fehler ist klar, und das Personal des Kunden kann das Teil tauschen. Der Auftrag geht ins ERP, der Case bleibt bis zur Bestätigung offen.
 - **Technikereinsatz.** Erst dann entsteht ein Arbeitsauftrag.
 
-An einer Störungshotline kann ein Sprachagent die Aufnahme des Falls und die Triage übernehmen. Wo er an seine Grenzen kommt und an einen Menschen übergeben sollte, steht in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/). Welche Funktionen Service Cloud für die Mitarbeitenden in der Konsole ergänzt, beschreibt [Casey und der Service Rep Assistant](../service-cloud-casey-und-service-rep-assistant/).
+An einer Störungshotline kann ein Sprachagent die Aufnahme des Falls und die Triage übernehmen. Wo er an seine Grenzen stößt und an einen Menschen übergeben sollte, steht in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/). Welche Funktionen Service Cloud für die Mitarbeitenden in der Konsole ergänzt, beschreibt [Casey und der Service Rep Assistant](../service-cloud-casey-und-service-rep-assistant/).
 
 ## Wer legt welchen Datensatz an?
 
@@ -75,7 +75,7 @@ An einer Störungshotline kann ein Sprachagent die Aufnahme des Falls und die Tr
 | Zugewiesene Ressource (Assigned Resource) | Disposition oder Planungsengine | Terminstatus wechselt auf Scheduled, dann Dispatched |
 | Arbeitsauftrag ohne Case | Wartungsplan | Geplante Wartung |
 
-Geplante Wartung entsteht auf einem anderen Weg. Laut der [Trailhead-Einheit zum Erzeugen von Arbeitsaufträgen](https://trailhead.salesforce.com/content/learn/modules/field_service_maint/field-service-generate-work-orders) erzeugt ein Wartungsplan Arbeitsaufträge manuell oder automatisch, und die automatische Erzeugung läuft dreimal am Tag. Je nach Erzeugungsmethode und Auto-Create-Option am Work Type bekommen diese Arbeitsaufträge gleich einen Termin. Ein Case ist nicht beteiligt.
+Geplante Wartung entsteht auf einem anderen Weg. Laut der [Trailhead-Einheit zum Erzeugen von Arbeitsaufträgen](https://trailhead.salesforce.com/content/learn/modules/field_service_maint/field-service-generate-work-orders) erzeugt ein Wartungsplan Arbeitsaufträge manuell oder automatisch, und die automatische Erzeugung erfolgt dreimal am Tag. Je nach Erzeugungsmethode und Auto-Create-Option am Work Type erhalten diese Arbeitsaufträge gleich einen Termin. Ein Case ist nicht beteiligt.
 
 Die Folge: Nutzen geplante und ungeplante Arbeit dieselben Gebiete und Techniker, konkurrieren sie um dieselbe Kapazität. Ist die geplante Wartung der nächsten vier Wochen schon gebucht, muss für einen Maschinenstillstand am Dienstag etwas weichen. Prioritäten und Planungsziele entscheiden, was verschoben wird, und für diese Regel braucht es einen Verantwortlichen.
 
@@ -97,7 +97,7 @@ Case anlegen | Hotline
 Triage | Hotline
   Der Fehlercode deutet auf einen defekten Sensor, der Kunde hat keinen Ersatz. Fernhilfe löst es nicht.
 Arbeitsauftrag anlegen | Hotline
-  Die Hotline legt aus dem Case einen Arbeitsauftrag mit dem Work Type "Störungsbehebung Sensor" an. Der Work Type trägt 3 Stunden Dauer und den Skill "Sensorik Baureihe B". Eine Position für den Probelauf kommt dazu.
+  Die Hotline legt aus dem Case einen Arbeitsauftrag mit dem Work Type "Störungsbehebung Sensor" an. Der Work Type trägt 3 Stunden Dauer und den Skill "Sensorik Baureihe B". Hinzu kommt eine Position für den Probelauf.
 Termin entsteht | Work Type und Hotline
   Der Work Type legt den Servicetermin automatisch an. Die Hotline setzt das Fälligkeitsdatum so, dass die 8 Stunden Reaktionszeit eingehalten werden.
 Einplanen | Disposition

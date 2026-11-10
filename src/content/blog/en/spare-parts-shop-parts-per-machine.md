@@ -54,7 +54,7 @@ A parts list per machine needs three sources, the same as for the [spare parts a
 
 - **Installed base in Salesforce.** The machine as an asset with serial number, account and machine type, ideally as an asset hierarchy with main assemblies. This is the anchor for the dealer: which machines are mine?
 - **As-built parts list from PLM.** The bill of materials of the delivered machine, with the variants and revisions actually installed, and a flag for spare-relevant positions.
-- **Material data from the ERP.** Material number, successor material and sales status. Prices and availability come into the store through the usual pricing and inventory route.
+- **Material data from the ERP.** Material number, successor material and sales status. Prices and availability reach the store through the usual pricing and inventory route.
 
 The third source is the one projects forget. A part that PLM lists as built in may have been superseded years ago. If the successor is not resolved before the store shows the part, the dealer orders a part that no longer exists. Confirmed part replacements on completed work orders also change the machine over time. Consumed material alone is not proof, because a part may have been taken along and not installed. Why parts belong in the system is explained in [Field Service spare parts: ERP or Salesforce](../salesforce-field-service-spare-parts-erp/).
 

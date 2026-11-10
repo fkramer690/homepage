@@ -26,13 +26,13 @@ faq:
 draft: false
 ---
 
-Agentforce ist die Plattform von Salesforce für KI-Agenten: Software, die mit generativer KI eine Anfrage deutet, in festgelegten Grenzen den nächsten Schritt wählt und ihn über Aktionen in Salesforce oder angebundenen Systemen ausführt. Wer „was ist Agentforce“ fragt, bekommt oft Marketingbegriffe als Antwort. Für die IT-Leitung zählt, woraus ein Agent technisch besteht, welche Teile sich vorhersehbar verhalten, mit welchen Rechten er läuft, was er kostet und welche Daten er braucht. Dieser Artikel ordnet das.
+Agentforce ist die Plattform von Salesforce für KI-Agenten: Software, die mit generativer KI eine Anfrage deutet, in festgelegten Grenzen den nächsten Schritt wählt und ihn über Aktionen in Salesforce oder angebundenen Systemen ausführt. Wer „was ist Agentforce“ fragt, erhält oft Marketingbegriffe als Antwort. Für die IT-Leitung zählt, woraus ein Agent technisch besteht, welche Teile sich vorhersehbar verhalten, mit welchen Rechten er läuft, was er kostet und welche Daten er braucht. Dieser Artikel ordnet das.
 
 ## Was ist Agentforce?
 
 Im [Agentforce Guide](https://www.salesforce.com/agentforce/guide/) beschreibt Salesforce Agentforce als Plattform für Agenten, die über einfache Chats hinausgehen. Laut Salesforce ist ein Agent eine Software, die mit generativer KI entscheidet, was als Nächstes zu tun ist und wie.
 
-Der Unterschied zu früherer Automatisierung liegt in dieser Entscheidung. Ein Flow führt einen Prozess aus, dessen Pfade und Kriterien vorab modelliert sind. Ein Agent bekommt eine Anfrage in natürlicher Sprache, etwa „Wann kommt meine Ersatzteilbestellung?“, erkennt die Aufgabe, wählt eine Aktion und formuliert die Antwort. Agenten arbeiten im Kundenservice, im Vertrieb oder für Mitarbeitende. Sie lassen sich aus einem Chat oder Portal, aus Flow oder Apex und über eine API aufrufen, wie in [Agentforce Agent API](../agentforce-agent-api-eigene-apps/) beschrieben.
+Der Unterschied zu früherer Automatisierung liegt in dieser Entscheidung. Ein Flow führt einen Prozess aus, dessen Pfade und Kriterien vorab modelliert sind. Ein Agent erhält eine Anfrage in natürlicher Sprache, etwa „Wann kommt meine Ersatzteilbestellung?“, erkennt die Aufgabe, wählt eine Aktion und formuliert die Antwort. Agenten arbeiten im Kundenservice, im Vertrieb oder für Mitarbeitende. Sie lassen sich aus einem Chat oder Portal, aus Flow oder Apex und über eine API aufrufen, wie in [Agentforce Agent API](../agentforce-agent-api-eigene-apps/) beschrieben.
 
 ## Was Sie konfigurieren und was darunter läuft
 
@@ -64,7 +64,7 @@ Salesforce hat Topics in Subagenten umbenannt. Ältere Trailhead-Module und Arti
 
 Ein häufiger Einwand gegen KI-Agenten lautet, ihr Verhalten sei nicht vorhersehbar. Die Antwort von Salesforce ist Agent Script, eine eigene Sprache für Agenten. Laut Agentforce Guide verbindet sie Entscheidungen des Sprachmodells mit regelbasierter Ausführung. Deterministisch ist, was Sie im Script als Logik modellieren: Reihenfolge der Schritte, Bedingungen, Übergänge. Anweisungen im Prompt und erzeugte Antworten deutet weiterhin das Sprachmodell.
 
-Für Hersteller ergibt sich daraus eine Arbeitsteilung. Ob eine Garantie gilt, welchen Preis ein Händler bekommt oder ob ein Ersatzteil zu einer Anlage passt, sind Prüfungen für eine deterministische Aktion, etwa einen Flow, Apex oder einen Aufruf ins ERP. Agent Script sorgt dafür, dass der Agent diese Prüfungen vor der Antwort aufruft, und das Sprachmodell formuliert die Antwort.
+Für Hersteller ergibt sich daraus eine Arbeitsteilung. Ob eine Garantie gilt, welchen Preis ein Händler erhält oder ob ein Ersatzteil zu einer Anlage passt, sind Prüfungen für eine deterministische Aktion, etwa einen Flow, Apex oder einen Aufruf ins ERP. Agent Script sorgt dafür, dass der Agent diese Prüfungen vor der Antwort aufruft, und das Sprachmodell formuliert die Antwort.
 
 Für das Testen gilt dieselbe Logik. Das Testing Center führt festgelegte Testfälle wiederholt aus und bewertet die Wahl von Subagenten und Aktionen sowie die Ergebnisse. Es unterstützt die Freigabe, ersetzt aber keine fachliche Abnahme, keine Integrations- und keine Sicherheitstests. Wie Sie einen Agenten auf die Produktion vorbereiten, steht in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
 
@@ -95,7 +95,7 @@ Salesforce verkauft Agentforce in mehreren Modellen: Flex Credits nach Verbrauch
 quelle: Agentforce-Preisseite und Flex-Credits-Preisliste von Salesforce, Listenpreise Stand November 2026
 ```
 
-Das sind Listenpreise, keine Vertragspreise. Je nach Lizenz und Kontext kommen Kosten für Prompts je nach Modellstufe und für Verarbeitung in Data 360 hinzu. Wie Sie das für einen Agenten schätzen, zeigt der Artikel [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/). Er vergleicht auch Pauschalen wie die AELA.
+Das sind Listenpreise, keine Vertragspreise. Je nach Lizenz und Kontext fallen zusätzlich Kosten für Prompts je nach Modellstufe und für Verarbeitung in Data 360 an. Wie Sie das für einen Agenten schätzen, zeigt der Artikel [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/). Er vergleicht auch Pauschalen wie die AELA.
 
 Früh geklärt werden sollte auch, welches Sprachmodell antwortet und wo es läuft. Das beschreibt [Agentforce-Datenresidenz](../agentforce-eu-datenresidenz-modelle/).
 
@@ -105,7 +105,7 @@ Ein Agent im Händlerportal, der den Auftragsstatus nicht kennt, hilft niemandem
 
 Drei Fragen entscheiden, ob das funktioniert. Welcher Händler darf welche Anlagen und Preise sehen? Was sagt der Agent, wenn das ERP ausfällt oder die Daten alt sind? Und welche Termine darf der Agent weitergeben? Vor dem Go-live ist zu klären, welches System für den Liefertermin führend ist, welchen Status der Termin hat, ob dieser Status an Kunden weitergegeben werden darf und wann ein Mensch den Vorgang freigeben muss, etwa bei einer Rücksendung. Lesende Aktionen sind der einfachere Einstieg. Sobald ein Agent im ERP etwas ändert, braucht die Schnittstelle dieselben Prüfungen wie bei einer Person im Innendienst: Berechtigung, Plausibilität und Protokoll.
 
-Ebenso wichtig ist die Qualität der Daten in Salesforce. Sind Anlagen dem falschen Kunden zugeordnet, gibt der Agent falsche Antworten, nur schneller und höflicher. Warum Geschäftsnutzen und Datenqualität zuerst kommen, steht in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
+Ebenso wichtig ist die Qualität der Daten in Salesforce. Sind Anlagen dem falschen Kunden zugeordnet, gibt der Agent falsche Antworten, nur schneller und höflicher. Warum Geschäftsnutzen und Datenqualität Vorrang haben, steht in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
 
 ## Für den ersten Agenten einen Prozess mit Zielwert wählen
 

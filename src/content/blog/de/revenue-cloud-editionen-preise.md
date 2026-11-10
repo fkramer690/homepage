@@ -64,7 +64,7 @@ pro: Growth kann reichen, wenn
 - Angebote mit konfigurierten Produkten gebraucht werden
 - verbrauchsabhängige Produkte nur verkauft, nicht abgerechnet werden
 contra: Advanced oder Billing ist der Ausgangspunkt, wenn
-- Verträge in Salesforce laufen sollen (Advanced)
+- Verträge in Salesforce verwaltet werden sollen (Advanced)
 - Aufträge über Erfüllungsschritte orchestriert werden sollen (Advanced)
 - Verbrauch, Meilensteine oder Zahlungen in Salesforce abgerechnet werden sollen (Billing)
 ```

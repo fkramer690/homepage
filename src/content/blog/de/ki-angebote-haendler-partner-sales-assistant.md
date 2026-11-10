@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Der AI Partner Sales Assistant (Summer '26) hilft Händlern in der Manufacturing Cloud, Produkte zu finden und Angebote zu erstellen. Der AI Sales Concierge (Winter '27) macht dasselbe für Kunden auf Ihrer Experience-Cloud-Site. Beide Bezeichnungen sind Marketingnamen; die Salesforce-Hilfe dokumentiert die Vorlagen dahinter als Industries Sales Assistance und Sales Concierge for Partners. Sie sind eine neue Oberfläche für Ihre bestehenden Angebotsdaten. Diese Daten entscheiden. Bevor ein Händler ein KI-Angebot bekommt, braucht jede verkaufsfähige Variante einen auffindbaren Produktdatensatz, einen Preis je Markt und Händlerstufe, eine Regel dafür, was baubar ist, und eine Rabattgrenze, die kein Modell aufweicht.
+Der AI Partner Sales Assistant (Summer '26) hilft Händlern in der Manufacturing Cloud, Produkte zu finden und Angebote zu erstellen. Der AI Sales Concierge (Winter '27) macht dasselbe für Kunden auf Ihrer Experience-Cloud-Site. Beide Bezeichnungen sind Marketingnamen; die Salesforce-Hilfe dokumentiert die Vorlagen dahinter als Industries Sales Assistance und Sales Concierge for Partners. Sie sind eine neue Oberfläche für Ihre bestehenden Angebotsdaten. Diese Daten entscheiden. Bevor ein Händler ein KI-Angebot erhält, braucht jede verkaufsfähige Variante einen auffindbaren Produktdatensatz, einen Preis je Markt und Händlerstufe, eine Regel dafür, was baubar ist, und eine Rabattgrenze, die kein Modell aufweicht.
 
 ## Was leisten AI Partner Sales Assistant und AI Sales Concierge?
 
@@ -38,7 +38,7 @@ Die Release-Unterlagen ergänzen wenig. Die [Winter '27 Highlights auf Trailhead
 Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=ind.mfg_gen_ai_agentforce_overview.htm&language=en_US&type=5) sind die Vorlagen in der Enterprise, Performance und Unlimited Edition verfügbar, und jeder Benutzer, der die Aktionen nutzt, braucht das Add-on Agentforce for Manufacturing oder die Agentforce 1 Manufacturing Edition. Ob und wie das für externe Partnerbenutzer gilt, lassen Sie sich vor der Budgetplanung schriftlich bestätigen.
 ```
 
-Für die Entscheidung zählt ein Unterschied. „Angebot anfragen“ und „Angebot erstellen“ sind verschiedene Dinge: Eine Anfrage landet im Vertriebsinnendienst. Ein erstelltes Angebot weckt eine konkrete Preiserwartung, die der Händler Ihrem Unternehmen zurechnet, auch bevor es rechtlich bindend ist.
+Für die Entscheidung zählt ein Unterschied. „Angebot anfragen“ und „Angebot erstellen“ sind verschiedene Dinge: Eine Anfrage geht an den Vertriebsinnendienst. Ein erstelltes Angebot weckt eine konkrete Preiserwartung, die der Händler Ihrem Unternehmen zurechnet, auch bevor es rechtlich bindend ist.
 
 ```vertiefung Für Admins
 titel: Welche Agentenaktionen liegen darunter?
@@ -92,9 +92,9 @@ Nehmen wir einen Hersteller von Kompaktbaumaschinen mit 140 Händlern in 12 Län
 
 **Datencheck.** 35 Prozent der 8.000 Zubehörteile sind keinem Maschinenmodell zugeordnet. Salesforce kennt nur Listenpreise, drei Händlerstufen stehen als Konditionen in SAP. Zusatzrabatte werden per E-Mail freigegeben.
 
-**Reihenfolge.** Zuerst kommen Zuordnungen aus dem Produktmanagement, Stufenpreise aus SAP in Preisbücher je Land mit nächtlicher Synchronisation und eine Freigaberegel für jeden Rabatt über der Stufe. Angenommen sind vier Monate. Danach folgt ein Pilot mit 15 Händlern, nur für Anbaugeräte.
+**Reihenfolge.** Zuerst folgen Zuordnungen aus dem Produktmanagement, Stufenpreise aus SAP in Preisbücher je Land mit nächtlicher Synchronisation und eine Freigaberegel für jeden Rabatt über der Stufe. Angenommen sind vier Monate. Danach folgt ein Pilot mit 15 Händlern, nur für Anbaugeräte.
 
-**Verbrauch.** Falls der Agent wie andere Agentforce-Aktionen abgerechnet wird, nehmen wir acht Aktionen pro Angebot an. Laut [Flex-Credits-Preisliste vom 3. November 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) verbraucht eine Aktion 20 Credits in Produktion und 16 in einer Sandbox, für Agentforce-for-Industries-Kunden kommen Prompts dazu, und Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/) (Listenpreis). Für die 1.260 einfachen Angebote: 1.260 × 8 × 20 = 201.600 Credits, rund 1.008 € im Monat vor Prompts. Prüfen Sie die echte Zahl im Sandbox-Trace und in Digital Wallet. Ein Testsatz aus 300 echten Händleranfragen kostet 300 × 8 × 16 = 38.400 Credits, also 192 € pro Sandbox-Lauf.
+**Verbrauch.** Falls der Agent wie andere Agentforce-Aktionen abgerechnet wird, nehmen wir acht Aktionen pro Angebot an. Laut [Flex-Credits-Preisliste vom 3. November 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) verbraucht eine Aktion 20 Credits in Produktion und 16 in einer Sandbox, für Agentforce-for-Industries-Kunden fallen zusätzlich Prompts an, und Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/) (Listenpreis). Für die 1.260 einfachen Angebote: 1.260 × 8 × 20 = 201.600 Credits, rund 1.008 € im Monat vor Prompts. Prüfen Sie die echte Zahl im Sandbox-Trace und in Digital Wallet. Ein Testsatz aus 300 echten Händleranfragen kostet 300 × 8 × 16 = 38.400 Credits, also 192 € pro Sandbox-Lauf.
 
 Der Verbrauch ist klein im Vergleich zu sechs Personen im Innendienst. Der größere Lizenzblock kann das Add-on sein: Braucht jeder Angebotsnutzer der Händler es für 150 US-Dollar im Monat, übersteigt das allein den Verbrauch. Die Arbeit steckt in vier Monaten Katalog- und Preisdaten.
 

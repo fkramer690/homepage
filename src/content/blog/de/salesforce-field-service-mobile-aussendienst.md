@@ -11,7 +11,7 @@ categories: [field-service]
 tags: [Field Service, Außendienst, Mobile, Fertigung, Spracheingabe]
 takeaways:
   - "Salesforce-Umfragen: US-Mobilbeschäftigte schätzen 18 % Zeitverlust durch Verwaltung; 43 % der Organisationen nutzen im Außendienst weiter Papierprotokolle."
-  - "Für Hersteller zählen vollständige Servicedaten: Mit sauberem Datenmodell und ERP-Anbindung kommen Ergebnisse und Ersatzteile ohne Abtippen im Innendienst an."
+  - "Für Hersteller zählen vollständige Servicedaten: Mit sauberem Datenmodell und ERP-Anbindung erreichen Ergebnisse und Ersatzteile den Innendienst ohne Abtippen."
   - "Ein schnell digitalisiertes Papierformular hilft nur mit sauberem Datenmodell dahinter. Sonst wird ein schlechtes Formular einfach digital."
   - "Spracheingaben und Transkripte können personenbezogene Daten enthalten und je Techniker ausgewertet werden. Binden Sie Datenschutz und Betriebsrat früh ein."
 faq:
@@ -20,7 +20,7 @@ faq:
   - q: "Wann sind die neuen Field-Service-Funktionen verfügbar?"
     a: "Das hängt von der jeweiligen Funktion ab. Voice to Form erfordert Enterprise, Unlimited oder Developer Edition, die Field Service Mobile User License, die Agentforce for Field Service SKU und das Einstein Field Service User Permission Set. Für Formulare in einer Guided Experience sind Workforce Scheduling, Discovery Framework und App-Version 264 oder höher dokumentiert. Für das Headless-Setup habe ich mit Stand vom 9. November 2026 keine Setup-Dokumentation gefunden."
   - q: "Wie profitieren Hersteller von geführten Abläufen im Außendienst?"
-    a: "Wenn die Logik hinter der Führung sauber definiert ist, bekommen Techniker die passenden Prüfungen und Fragen für die tatsächliche Situation, die Dokumentation entsteht während des Einsatzes, und der Innendienst erhält vollständigere, strukturierte Daten für Abrechnung, Gewährleistung und Qualitätsanalyse."
+    a: "Wenn die Logik hinter der Führung sauber definiert ist, erhalten Techniker die passenden Prüfungen und Fragen für die tatsächliche Situation, die Dokumentation entsteht während des Einsatzes, und der Innendienst erhält vollständigere, strukturierte Daten für Abrechnung, Gewährleistung und Qualitätsanalyse."
   - q: "Was ist vor dem Einsatz von Spracheingabe für Techniker zu beachten?"
     a: "Klären Sie Datenschutz, Speicherung und Zweck der Sprachdaten, beziehen Sie einen vorhandenen Betriebsrat ein, testen Sie die unterstützten Sprachen mit echten Technikern und legen Sie fest, welche Felder per Sprache gefüllt werden dürfen."
 ---
@@ -58,7 +58,7 @@ In der Fertigung entscheidet sich die Kundenbeziehung oft im Außendienst. Techn
 - **Ersatzteile und Logistik**, die wissen müssen, was verbraucht wurde und nachbestellt werden muss.
 - **Vertrieb**, der aus Serviceberichten erfährt, welche Maschinen sich dem Ende ihrer Lebensdauer nähern.
 
-Kommen diese Informationen als Freitext, auf Papier oder Tage später an, leidet jeder dieser Prozesse. Geführte Abläufe und Spracheingabe zielen genau auf diesen Punkt: bessere Daten, erfasst während des Einsatzes, mit weniger Aufwand für den Techniker. Diese Funktionen füllen Felder in Salesforce. Um die Daten ins ERP zu übertragen, braucht es weiterhin eine eigene Integration, ein Mapping und eine Fehlerbehandlung.
+Treffen diese Informationen als Freitext, auf Papier oder Tage später ein, leidet jeder dieser Prozesse. Geführte Abläufe und Spracheingabe zielen genau auf diesen Punkt: bessere Daten, erfasst während des Einsatzes, mit weniger Aufwand für den Techniker. Diese Funktionen füllen Felder in Salesforce. Um die Daten ins ERP zu übertragen, braucht es weiterhin eine eigene Integration, ein Mapping und eine Fehlerbehandlung.
 
 ![Ein Servicebericht speist fünf Prozesse: Der Techniker vor Ort erfasst Arbeitszeit, Anfahrt, Ersatzteile, Fehlerursache, Fehlercodes und Messwerte. Daraus speisen sich Abrechnung, Gewährleistung und Kulanz, Qualitäts- und Produktmanagement, Ersatzteilmanagement und Logistik sowie der Vertrieb, der von Maschinen erfährt, die sich dem Ende ihrer Lebensdauer nähern. Kommen die Informationen als Freitext, auf Papier oder Tage später an, leidet jeder dieser Prozesse.](../../../assets/blog/field-service-report-de.png)
 

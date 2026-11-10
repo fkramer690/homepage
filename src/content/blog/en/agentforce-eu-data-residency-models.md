@@ -13,7 +13,7 @@ takeaways:
   - "Claude and Amazon models run on Amazon Bedrock inside the Salesforce trust boundary; other models run with partners or at the LLM provider."
   - "Outside the US, GPT requests go to the Azure OpenAI endpoint closest to your platform region, with a US fallback you can switch off."
   - "Geo-aware routing covers OpenAI, Anthropic and Gemini models, but batch requests and failover follow their own rules."
-  - "The Hyperforce Operating Zone FAQ says select Einstein features are not available, without naming Agentforce; Koa comes to US regions first."
+  - "The Hyperforce Operating Zone FAQ says select Einstein features are not available, without naming Agentforce; Koa is released in US regions first."
   - "Before go-live, get the following in writing for each agent: model, processing region, failover path, batch use, sub-processor and retention."
 faq:
   - q: "Does Agentforce process data in the EU?"
@@ -82,7 +82,7 @@ Salesforce [launched](https://www.salesforce.com/news/press-releases/2023/03/02/
 If your org runs in the Hyperforce Operating Zone, I would treat Agentforce agents as unconfirmed there until Salesforce confirms the scope of your contract or SKU in writing.
 ```
 
-Koa, Salesforce's own CRM reasoning model, comes to the US first. According to the [investor release](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx) of 15 September 2026, it is "Available to select pilot customers now", with general availability "expected Winter 2026 in U.S. regions", and Salesforce runs inference "entirely within its own trust boundary". No general availability in European regions has been announced, and Salesforce does not publish the pilot regions.
+Koa, Salesforce's own CRM reasoning model, is released in the US first. According to the [investor release](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx) of 15 September 2026, it is "Available to select pilot customers now", with general availability "expected Winter 2026 in U.S. regions", and Salesforce runs inference "entirely within its own trust boundary". No general availability in European regions has been announced, and Salesforce does not publish the pilot regions.
 
 ## Is EU processing a legal requirement?
 

@@ -12,17 +12,17 @@ categories: [revenue-cloud]
 contactBrief: licences
 tags: [Salesforce CPQ, Salesforce Billing, Revenue Cloud, Verkaufsende, Lizenzen, Vertragsverlängerung]
 takeaways:
-  - "Ein End-of-Life-Datum für CPQ hat Salesforce nicht angekündigt. CPQ bekommt Support und kritische Fehlerbehebungen, aber keine neuen Funktionen."
+  - "Ein End-of-Life-Datum für CPQ hat Salesforce nicht angekündigt. CPQ erhält Support und kritische Fehlerbehebungen, aber keine neuen Funktionen."
   - "Für das Paket Salesforce Billing hat Salesforce keine vergleichbare Aussage veröffentlicht. Ein Sprecher sagte nur, Bestandskunden behalten vollen Zugang."
   - "Das oft genannte Datum März 2025 stammt aus Berichten Dritter. Die Salesforce-Seite selbst nennt kein Datum."
   - "Vor der nächsten CPQ-Verlängerung verhandeln Sie am besten Laufzeit, Preisdeckel und Bedingungen für den Parallelbetrieb mit Revenue Cloud."
 faq:
   - q: "Was ersetzt Salesforce CPQ?"
-    a: "Salesforce verweist Neukunden auf Revenue Cloud Advanced. Je nach Umfang von Rechnungsstellung, nutzungsbasierter Abrechnung, Zahlungen und Mahnwesen kommt Revenue Cloud Billing hinzu. Ein Retirement-Datum, ab dem CPQ abgeschaltet wird, gibt es nicht. Ob und wann sich der Wechsel für Bestandskunden lohnt, hängt von der Vertragslaufzeit, den Anpassungen und dem wachsenden Funktionsabstand ab."
+    a: "Salesforce verweist Neukunden auf Revenue Cloud Advanced. Je nach Umfang von Rechnungsstellung, nutzungsbasierter Abrechnung, Zahlungen und Mahnwesen ist zusätzlich Revenue Cloud Billing nötig. Ein Retirement-Datum, ab dem CPQ abgeschaltet wird, gibt es nicht. Ob und wann sich der Wechsel für Bestandskunden lohnt, hängt von der Vertragslaufzeit, den Anpassungen und dem wachsenden Funktionsabstand ab."
   - q: "Wird Salesforce CPQ abgeschaltet?"
     a: "Ein End-of-Life-Datum ist nicht angekündigt. Salesforce nennt CPQ „end of sale, not end of life“: Neukunden können es nicht mehr kaufen, Bestandskunden nutzen es weiter, kaufen Nutzer nach, verlängern und erhalten Support und kritische Fehlerbehebungen."
   - q: "Muss ich von Salesforce CPQ auf Revenue Cloud migrieren?"
-    a: "Derzeit nicht. Salesforce schreibt, dass es keine erzwungene Migration gibt. CPQ bekommt aber keine neuen Funktionen mehr; der Abstand zu Revenue Cloud wächst also mit jedem Release."
+    a: "Derzeit nicht. Salesforce schreibt, dass es keine erzwungene Migration gibt. CPQ erhält aber keine neuen Funktionen mehr; der Abstand zu Revenue Cloud wächst also mit jedem Release."
   - q: "Gilt das Verkaufsende auch für Salesforce Billing?"
     a: "Die öffentlichen Salesforce-Seiten sagen es nicht. Eine Seite wie die zu CPQ gibt es für das Billing-Paket nicht. Ein Salesforce-Sprecher sagte 2025, dass CPQ- und Billing-Bestandskunden vollen Zugang behalten. Neukunden verweist Salesforce auf Revenue Cloud Advanced und Revenue Cloud Billing. Die Verlängerung und den Nachkauf von Nutzern für Billing sollten Sie schriftlich bestätigen lassen."
   - q: "Kann ich noch zusätzliche CPQ-Lizenzen kaufen?"
@@ -32,7 +32,7 @@ faq:
 draft: false
 ---
 
-Salesforce CPQ ist laut Salesforce "end of sale, not end of life", also Verkaufsende ohne Abschaltung. Neukunden können CPQ nicht mehr kaufen. Bestandskunden nutzen es im Rahmen ihrer laufenden Verträge weiter, kaufen Nutzer nach, verlängern und erhalten Support und kritische Fehlerbehebungen. Neue Funktionen kommen nicht mehr. Salesforce hat kein End-of-Life-Datum angekündigt und erklärt, dass es keine erzwungene Migration gibt. Für das Paket Salesforce Billing fehlt eine vergleichbare Aussage auf einer Salesforce-Seite; es gibt nur die Zusage eines Sprechers, dass Bestandskunden vollen Zugang behalten. Eine Migrationsfrist setzt Salesforce also nicht. Die Zeit vor der nächsten CPQ-Verlängerung ist aber die beste Gelegenheit, die Bedingungen für einen späteren Umstieg auf Revenue Cloud festzulegen.
+Salesforce CPQ ist laut Salesforce "end of sale, not end of life", also Verkaufsende ohne Abschaltung. Neukunden können CPQ nicht mehr kaufen. Bestandskunden nutzen es im Rahmen ihrer laufenden Verträge weiter, kaufen Nutzer nach, verlängern und erhalten Support und kritische Fehlerbehebungen. Neue Funktionen erscheinen nicht mehr. Salesforce hat kein End-of-Life-Datum angekündigt und erklärt, dass es keine erzwungene Migration gibt. Für das Paket Salesforce Billing fehlt eine vergleichbare Aussage auf einer Salesforce-Seite; es gibt nur die Zusage eines Sprechers, dass Bestandskunden vollen Zugang behalten. Eine Migrationsfrist setzt Salesforce also nicht. Die Zeit vor der nächsten CPQ-Verlängerung ist aber die beste Gelegenheit, die Bedingungen für einen späteren Umstieg auf Revenue Cloud festzulegen.
 
 ## Was hat Salesforce zu CPQ genau angekündigt?
 
@@ -96,7 +96,7 @@ Für mich ist die Zeit vor der Verlängerung das wichtigste Entscheidungsfenster
 
 1. **Laufzeit.** Eine längere Laufzeit gibt Planungssicherheit, wenn die Migration zwei oder drei Jahre entfernt ist. Eine kürzere hält Sie beweglich, wenn Revenue Cloud schon auf der Roadmap steht. Entscheiden Sie, was Sie brauchen, bevor das Account-Team etwas vorschlägt.
 2. **Preisdeckel.** Für ein Produkt ohne neue Funktionen würde ich keine offenen Preiserhöhungen bei den nächsten Verlängerungen akzeptieren.
-3. **Parallelbetrieb.** Der [Migrationsleitfaden von Salesforce](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5) nennt "Retain CPQ License" und "Coexistence During Transition" als Planungsthemen. Während einer Migration laufen CPQ und Revenue Cloud eine Zeit lang nebeneinander. Der Leitfaden beschreibt den Parallelbetrieb operativ, die kaufmännischen Bedingungen für die Lizenzierung beider Produkte legt er nicht fest. Diese verhandeln Sie selbst, und der Vertrag sollte den Parallelbetrieb erlauben, ohne dass Sie länger als nötig für jeden Nutzer doppelt zahlen.
+3. **Parallelbetrieb.** Der [Migrationsleitfaden von Salesforce](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5) nennt "Retain CPQ License" und "Coexistence During Transition" als Planungsthemen. Während einer Migration werden CPQ und Revenue Cloud eine Zeit lang parallel betrieben. Der Leitfaden beschreibt den Parallelbetrieb operativ, die kaufmännischen Bedingungen für die Lizenzierung beider Produkte legt er nicht fest. Diese verhandeln Sie selbst, und der Vertrag sollte den Parallelbetrieb erlauben, ohne dass Sie länger als nötig für jeden Nutzer doppelt zahlen.
 4. **Nutzerwachstum.** Wenn Sie mehr Nutzer im Angebotsprozess erwarten, vereinbaren Sie den Preis für zusätzliche CPQ-Nutzer jetzt.
 5. **Billing.** Wenn Sie auch das Billing-Paket nutzen, verlängern Sie es zusammen mit CPQ und zu gleichen Bedingungen, damit die Verträge für die beiden Produkte nicht zu unterschiedlichen Kündigungsterminen enden.
 

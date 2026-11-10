@@ -22,7 +22,7 @@ faq:
   - q: "Was ist Piper in der Siemens-Ankündigung?"
     a: "Piper ist ein KI-SDR-Agent auf der Plattform von Qualified, der eingehende Gespräche auf der Website führt. Bei Siemens ist er für potenzielle Vertriebspartner geplant; die Meldung leitet ihn mit \"Looking ahead\" ein."
   - q: "Mit welchem KI-Anwendungsfall sollte ein mittelständischer Hersteller starten?"
-    a: "Mit einem Prozess mit hohem Volumen, erreichbaren Daten und Fehlern, die leicht auffallen und sich korrigieren lassen, oft Händleranfragen zu Auftragsstatus und Lieferterminen aus dem ERP. Schreibende Schritte in SAP oder proALPHA kommen meist später, je nach Risiko, Umkehrbarkeit und Kontrollen."
+    a: "Mit einem Prozess mit hohem Volumen, erreichbaren Daten und Fehlern, die leicht auffallen und sich korrigieren lassen, oft Händleranfragen zu Auftragsstatus und Lieferterminen aus dem ERP. Schreibende Schritte in SAP oder proALPHA folgen meist später, je nach Risiko, Umkehrbarkeit und Kontrollen."
 draft: false
 ---
 
@@ -41,7 +41,7 @@ Die [Meldung auf der Investor-Seite von Salesforce](https://investor.salesforce.
 
 In sich ist die Meldung nicht ganz stimmig. Über Fragen, die früher an die Konstruktion weitergeleitet wurden, heißt es dort auch, sie "can now be answered in seconds", also schon heute. Ohne Termin, Nutzerzahl oder Kennzahl für den Teamcenter-Teil gehe ich davon aus, dass die Antworten aus Engineering-Daten noch nicht im breiten Produktivbetrieb sind. Das ist meine Lesart des Textes, keine Aussage von Siemens.
 
-Die Meldung ist nicht die einzige Quelle. Eine [Fallstudie von Salesforce](https://www.salesforce.com/customer-stories/siemens/agentic-sales-leads/) vom 14. September 2026 ist genauer: "100% process coverage of approximately 2,500 in-scope inbound leads per month", eine Engagement-Rate von 11 Prozent, eine Qualifizierungsrate von 6 Prozent, Reaktionszeit "from days to minutes" und 80 Prozent der Interaktionen, die mit gut oder sehr gut bewertet wurden. Sie nennt außerdem einen Partner-Management-Agenten für über 14.500 Partner, der in sechs Wochen vom Prototyp in Produktion ging. "Engages 100%" heißt also: Jeder Lead im Scope wird kontaktiert, nicht jeder antwortet. Dieser Artikel behandelt die vier Teile der Meldung, nicht alles, was bei Siemens läuft.
+Die Meldung ist nicht die einzige Quelle. Eine [Fallstudie von Salesforce](https://www.salesforce.com/customer-stories/siemens/agentic-sales-leads/) vom 14. September 2026 ist genauer: "100% process coverage of approximately 2,500 in-scope inbound leads per month", eine Engagement-Rate von 11 Prozent, eine Qualifizierungsrate von 6 Prozent, Reaktionszeit "from days to minutes" und 80 Prozent der Interaktionen, die mit gut oder sehr gut bewertet wurden. Sie nennt außerdem einen Partner-Management-Agenten für über 14.500 Partner, der in sechs Wochen vom Prototyp in Produktion ging. "Engages 100%" heißt also: Jeder Lead im Scope wird kontaktiert, nicht jeder antwortet. Dieser Artikel behandelt die vier Teile der Meldung, nicht alles, was bei Siemens im Einsatz ist.
 
 Den Fokus auf den Service begründet die Meldung mit einer "industry analysis": Das Aftermarket-Geschäft wachse rund sechsmal schneller als der Neumaschinenverkauf und bringe etwa die vierfache Marge. Eine Quelle dafür fehlt. Ich würde diese Zahl erst in einen eigenen Business Case übernehmen, wenn Sie sie mit Ihrem eigenen Serviceanteil am Umsatz abgeglichen haben.
 
@@ -51,7 +51,7 @@ Warum Siemens diesen Fall gewählt hat, erklärt Siemens nicht. Nach meiner Lesa
 
 - **Volumen.** Siemens erhielt laut Meldung über 2.500 unqualifizierte Leads im Monat und konnte nicht erkennen, welche die Zeit der Vertriebler wert waren.
 - **Erreichbare Daten.** Das Gespräch stützt sich auf Lead, Kontakt und Account in der Sales Cloud. Der weitere Kundenkontext ist aber nicht trivial: Laut Fallstudie liest Data 360 per Zero-Copy-Integration aus Snowflake, dahinter stehen harmonisierte CRM-, ERP- und Installed-Base-Daten.
-- **Fehler, die auffallen.** Ein zu hoch bewerteter Lead landet bei einem Vertriebler, der den Fehler bemerkt. Ein zu niedrig bewerteter ist gefährlicher: Leads unter dem Schwellenwert laufen in einen vordefinierten Abschlusspfad, eine falsche Ablehnung kann also verlorenes Geschäft bedeuten. Trotzdem verschickt niemand ein falsches Ersatzteil oder genehmigt einen falschen Garantiefall.
+- **Fehler, die auffallen.** Ein zu hoch bewerteter Lead geht an einen Vertriebler, der den Fehler bemerkt. Ein zu niedrig bewerteter ist gefährlicher: Leads unter dem Schwellenwert gehen in einen vordefinierten Abschlusspfad, eine falsche Ablehnung kann also verlorenes Geschäft bedeuten. Trotzdem verschickt niemand ein falsches Ersatzteil oder genehmigt einen falschen Garantiefall.
 - **Eine klare Übergabe.** Der Engagement-Agent spricht den Lead an, fasst bis zu zweimal nach und gibt Interessierte an den Qualifizierungsagenten weiter, der die besten an einen Vertriebler übergibt.
 
 Im Aufbau steckt eine zweite Lehre. Siemens setzt zwei eng begrenzte Agenten hintereinander ein statt eines Agenten, der alles macht. Jeder hat eine eng begrenzte Aufgabe und eine klare Übergabe. Allein der Qualifizierungsagent arbeitet mit rund 50 vordefinierten Regeln und BANT-Fragen, also können Sie die Qualifizierungskriterien, auch die abgelehnten Leads, getrennt vom Ton der Ansprache testen. Wie ich solche Tests aufsetzen würde, steht in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
@@ -74,7 +74,7 @@ Die anderen Industriereferenzen folgen demselben Muster. In der [Ankündigung vo
 
 Nehmen wir einen Maschinenbauer mit 1.100 Beschäftigten, SAP S/4HANA, Sales Cloud und Service Cloud, 140 Händlern in 35 Ländern und 9.000 Maschinen in der installierten Basis. Alle Zahlen sind Annahmen, um die Methode zu zeigen. Vier Ideen aus der Siemens-Meldung liegen auf dem Tisch.
 
-**Händleranfragen zu Auftragsstatus und Lieferterminen.** Angenommen, es sind 1.400 im Monat, die heute von vier Personen im Innendienst beantwortet werden. Eine MuleSoft-API zu SAP gibt es, und der Agent liest nur. Das ist dasselbe Profil wie der Lead-Fall bei Siemens: hohes Volumen, erreichbare Daten, eine Person übernimmt, wenn die Antwort unklar ist. Dieser Fall kommt zuerst. Den Integrationsweg beschreibe ich in [Agentforce und der SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/).
+**Händleranfragen zu Auftragsstatus und Lieferterminen.** Angenommen, es sind 1.400 im Monat, die heute von vier Personen im Innendienst beantwortet werden. Eine MuleSoft-API zu SAP gibt es, und der Agent liest nur. Das ist dasselbe Profil wie der Lead-Fall bei Siemens: hohes Volumen, erreichbare Daten, eine Person übernimmt, wenn die Antwort unklar ist. Dieser Fall hat Vorrang. Den Integrationsweg beschreibe ich in [Agentforce und der SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/).
 
 **Eingehende Leads.** Angenommen, es sind 180 im Monat aus Website und Messen, also etwa neun pro Arbeitstag. Das schaffen wahrscheinlich eine Bewertungsregel im Flow und eine Person im Vertriebsinnendienst, sofern Sie nicht rund um die Uhr in vielen Sprachen antworten müssen. Siemens meldet allein für die Leads im Scope rund das Vierzehnfache und dazu 18.000 Vertriebler, die auf qualifizierte Leads warten. Vor einem Agenten würde ich die Vollkosten der Person mit Verbrauchskosten, Lizenzen und Bauaufwand vergleichen. In diesem Szenario würde ich die Idee zurückstellen, bis das Lead-Volumen wächst.
 
@@ -90,13 +90,13 @@ Aus dem Szenario leite ich diese Reihenfolge ab:
 Nur lesen, hohes Volumen
   Händleranfragen, Auftragsstatus, Liefertermine, und eine Person übernimmt. Nehmen Sie den Prozess in Ihrem Haus mit den meisten gleichartigen Anfragen.
 Aus dem ERP per API lesen
-  Weiterhin ohne Schreibrechte. Bestand, Preise und Kreditstatus kommen aus SAP oder proALPHA; der Agent erklärt, er rechnet nicht neu.
+  Weiterhin ohne Schreibrechte. Bestand, Preise und Kreditstatus stammen aus SAP oder proALPHA; der Agent erklärt, er rechnet nicht neu.
 Antworten aus PLM und Seriennummern
   Sobald das Datenprojekt vom ersten Tag geliefert hat. Hier liegt der Wert im Aftermarket, und hier ist die Datenarbeit am größten.
 Schreibende Schritte ins ERP
   Meist zuletzt, mit Regeln in Logik, einer Freigabe durch einen Menschen für finanziell, rechtlich oder operativ wesentliche Schritte und einem vorab vereinbarten Testset. Ein validierter, umkehrbarer Schreibschritt kann risikoärmer sein als eine automatische Lead-Ablehnung; entscheiden Sie nach Risiko und Kontrollen, nicht nur nach Lesen oder Schreiben.
 ```
 
-Bevor einer dieser Fälle live geht, vereinbaren Sie eine Ergebniskennzahl jenseits der Aktivität, etwa den Anteil der Händleranfragen, die ohne Antwort des Innendienstes abgeschlossen werden. Siemens hat Aktivitäts- und Trichterzahlen veröffentlicht; Ihre Geschäftsführung wird nach einem Ergebnis fragen. Die fünf Kriterien hinter dieser Reihenfolge stehen in [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/), das Gesamtbild dessen, was heute läuft, im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
+Bevor einer dieser Fälle live geht, vereinbaren Sie eine Ergebniskennzahl jenseits der Aktivität, etwa den Anteil der Händleranfragen, die ohne Antwort des Innendienstes abgeschlossen werden. Siemens hat Aktivitäts- und Trichterzahlen veröffentlicht; Ihre Geschäftsführung wird nach einem Ergebnis fragen. Die fünf Kriterien hinter dieser Reihenfolge stehen in [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/), das Gesamtbild dessen, was heute im Einsatz ist, im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
 Wenn in Ihrem Haus jemand sagt "Siemens macht das schon", stellen Sie diese Fragen: In welcher Zeitform spricht die Quelle, ist die Zahl ein Ausgangswert oder ein Ergebnis, wessen Zahl ist es, und nennt sie eine Quelle. Das vor einer Budgetentscheidung zu klären, gehört zu meiner Arbeit in [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/).

@@ -23,7 +23,7 @@ faq:
   - q: "Können wir einen nächtlichen KI-Agenten über Hosted MCP betreiben?"
     a: "Nicht als saubere Integration. Hosted MCP unterstützt nur den OAuth Authorization Code Flow mit angemeldetem Benutzer und kennt keine Service Accounts oder Machine-to-Machine-Flows. Ein Refresh Token hält einen Client am Laufen, aber unter dem Namen einer Person. Hintergrundagenten brauchen die Agent API oder eine klassische Integration mit eigenem Integrationsbenutzer. Salesforce hat die Registrierung von Agenten mit eigenen Agentenidentitäten angekündigt, was dies ändern könnte."
   - q: "Welchen Hosted MCP Server sollten wir zuerst aktivieren?"
-    a: "Salesforce empfiehlt sobject-reads in einer Sandbox. Dem schließe ich mich an und würde vor der Produktion jede Nutzergruppe auf einen Custom Server mit Named Queries oder Flows umstellen, damit das externe Modell nur die Felder bekommt, die diese Gruppe braucht. Das grenzt den Zugriff nur ein, wenn die Gruppe nicht zugleich sobject-reads nutzen kann."
+    a: "Salesforce empfiehlt sobject-reads in einer Sandbox. Dem schließe ich mich an und würde vor der Produktion jede Nutzergruppe auf einen Custom Server mit Named Queries oder Flows umstellen, damit das externe Modell nur die Felder erhält, die diese Gruppe braucht. Das grenzt den Zugriff nur ein, wenn die Gruppe nicht zugleich sobject-reads nutzen kann."
   - q: "Wie sehen wir, was ein KI-Client in Salesforce getan hat?"
     a: "Hosted-MCP-Aufrufe erscheinen in den Ereignisprotokollen des Typs API Total Usage mit Benutzer, Operation, Objekt und Zeitstempel. Filtern Sie nach `API_CLIENT_CATEGORY = SALESFORCE_HOSTED_MCP`. Ohne kostenpflichtiges Event Monitoring werden sie einen Tag aufbewahrt. Die Logs zeigen, auf welche Objekte zugegriffen wurde, nicht jeden zurückgegebenen Datensatz oder was das Modell danach damit gemacht hat."
 draft: false
@@ -39,7 +39,7 @@ Das Zugriffsmodell beschreiben die [Security Best Practices](https://developer.s
 
 - **Named User.** Stand November 2026 läuft jeder Tool-Aufruf mit Objektrechten, Feldrechten und Freigaben des Benutzers, der die Verbindung autorisiert hat, und steht unter seinem Namen in den Audit-Daten.
 - **Keine technischen Benutzer.** „There are no service accounts, no machine-to-machine flows.“ Es meldet sich immer eine Person an.
-- **OAuth mit PKCE.** Die Anmeldung läuft über den Authorization Code Flow im Browser. PKCE (Proof Key for Code Exchange) ist Pflicht und verhindert, dass ein abgefangener Autorisierungscode von jemand anderem eingelöst wird.
+- **OAuth mit PKCE.** Die Anmeldung erfolgt über den Authorization Code Flow im Browser. PKCE (Proof Key for Code Exchange) ist Pflicht und verhindert, dass ein abgefangener Autorisierungscode von jemand anderem eingelöst wird.
 - **Keine Selbstregistrierung.** Ein Admin legt für jeden KI-Client eine External Client App an und kann sie auf Profile und Permission Sets beschränken.
 
 ```vertiefung Für Admins
@@ -67,7 +67,7 @@ Custom Server kosten Aufwand, senken aber die Aufrufe pro Frage. Das wird zähle
 
 Die GA-Ankündigung empfiehlt `sobject-reads` in einer Sandbox und nennt ihn „read-only, risk-free, and immediately useful“. Dem Startpunkt stimme ich zu, dem „risk-free“ nicht. Die Security-Seite ist genauer: Der lesende Server beseitigt das Risiko von Änderungen. Gegen Daten, die über den Client abfließen, tut er nichts.
 
-Simon Willison nennt die gefährliche Kombination die [„lethal trifecta“](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/): Zugriff auf private Daten, Kontakt mit nicht vertrauenswürdigen Inhalten und eine Möglichkeit zur Kommunikation nach außen. MCP fördert laut Willison genau das Kombinieren von Tools aus verschiedenen Quellen. Eine Claude-Sitzung mit `sobject-reads`, Webzugriff und einem E-Mail-Server hat alle drei. Bei Herstellern kommen fremde Texte über Händlerportale, Web-to-Lead, Email-to-Case und Garantieanträge ins CRM, siehe [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
+Simon Willison nennt die gefährliche Kombination die [„lethal trifecta“](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/): Zugriff auf private Daten, Kontakt mit nicht vertrauenswürdigen Inhalten und eine Möglichkeit zur Kommunikation nach außen. MCP fördert laut Willison genau das Kombinieren von Tools aus verschiedenen Quellen. Eine Claude-Sitzung mit `sobject-reads`, Webzugriff und einem E-Mail-Server hat alle drei. Bei Herstellern gelangen fremde Texte über Händlerportale, Web-to-Lead, Email-to-Case und Garantieanträge ins CRM, siehe [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
 
 Meine Reihenfolge: `sobject-reads` in einer Sandbox für eine kleine Gruppe; Named Queries oder ein Custom Server pro Persona vor der Produktion; `sobject-mutations` nur für einen definierten Prozess mit Freigabe im Client. Das Produkt Salesforce in Claude verlangt diese Freigabe laut [Anthropics Einrichtungsanleitung](https://support.claude.com/en/articles/16952184-set-up-salesforce-in-claude-for-your-organization) standardmäßig. Andere MCP-Clients tun das möglicherweise nicht; eine Bestätigung im Client ist eine Komfortfunktion, keine Kontrolle. `sobject-deletes` und `sobject-all` würde ich Fachanwendern gar nicht geben.
 
@@ -102,9 +102,9 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, SAP, einem Händ
 
 **Händlerbetreuung im Vertrieb.** Zwölf Personen möchten Händlerbesuche mit Claude vorbereiten. Ihr Profil darf die Einkaufspreise in den Händlerpreisvereinbarungen lesen. Entscheidung: ein Custom Server „Händlerbesuch“, dessen Flow die Übersicht ohne Preisfelder liefert, beschränkt auf ein Permission Set für diese zwölf.
 
-**Serviceinnendienst.** Dreißig Personen möchten Fälle, installierte Basis und Garantiestatus per Seriennummer abfragen. Entscheidung: ein Custom Server mit einer Named Query nach Seriennummer, wobei `sobject-reads` für sie in Produktion nicht aktiviert ist. Ein Teil der Fallbeschreibungen kommt aus dem Händlerportal; deshalb bleibt der Webzugriff in ihrem Claude-Arbeitsbereich deaktiviert.
+**Serviceinnendienst.** Dreißig Personen möchten Fälle, installierte Basis und Garantiestatus per Seriennummer abfragen. Entscheidung: ein Custom Server mit einer Named Query nach Seriennummer, wobei `sobject-reads` für sie in Produktion nicht aktiviert ist. Ein Teil der Fallbeschreibungen stammt aus dem Händlerportal; deshalb bleibt der Webzugriff in ihrem Claude-Arbeitsbereich deaktiviert.
 
-**Der Implementierungspartner.** Ein Entwickler möchte `sobject-all` in Produktion, um doppelte Anlagen mit Claude zusammenzuführen. Entscheidung: nein. Die Aufrufe liefen unter seinem Produktionsbenutzer, und eine Massenänderung gehört in einen geprüften Datenimport. Er bekommt `sobject-reads` in einer Sandbox, um die Dubletten zu analysieren.
+**Der Implementierungspartner.** Ein Entwickler möchte `sobject-all` in Produktion, um doppelte Anlagen mit Claude zusammenzuführen. Entscheidung: nein. Die Aufrufe liefen unter seinem Produktionsbenutzer, und eine Massenänderung gehört in einen geprüften Datenimport. Er erhält `sobject-reads` in einer Sandbox, um die Dubletten zu analysieren.
 
 Zwei von drei Anfragen werden genehmigt, beide enger als beantragt. Nach meiner Einschätzung ist das das normale Ergebnis einer Zugriffsprüfung.
 

@@ -23,7 +23,7 @@ faq:
   - q: "Können Rechnungen aus Revenue Cloud Billing kommen, während SAP das Hauptbuch bleibt?"
     a: "Ja. Salesforce beschreibt Revenue Cloud Billing als Nebenbuch, das Buchungssätze und Periodenabschlüsse unterstützt und Abrechnungsdaten an das ERP überträgt. Die Finanzabteilung muss Legal Entities und Buchungsperioden abstimmen sowie festlegen, wer die Periode abschließt."
   - q: "Gibt es eine Referenzarchitektur von Salesforce für Revenue Cloud mit SAP S/4HANA?"
-    a: "Ich habe keine gefunden. Der MuleSoft Accelerator for SAP beschreibt Quote-to-Cash mit SAP S/4HANA für Sales Cloud und Salesforce CPQ. Das Muster lässt sich übertragen, das Design für Revenue Cloud muss aber von Ihrem Partner kommen und auf Ihrer Seite geprüft werden."
+    a: "Ich habe keine gefunden. Der MuleSoft Accelerator for SAP beschreibt Quote-to-Cash mit SAP S/4HANA für Sales Cloud und Salesforce CPQ. Das Muster lässt sich übertragen, das Design für Revenue Cloud muss aber von Ihrem Partner stammen und auf Ihrer Seite geprüft werden."
 draft: false
 ---
 
@@ -35,9 +35,9 @@ Das nächstliegende offizielle Muster ist [Use Case 3a des MuleSoft Accelerator 
 
 Drei Details auf dieser Seite sind für Hersteller wichtig:
 
-- **Produkte kommen im Accelerator aus einem PIM**, globale IDs liegen in einem MDM-System. Liegt Ihr Materialstamm in SAP, kann SAP diese Rolle für Materialnummer und Status übernehmen, aber das ist Ihre Designentscheidung und nicht Teil des Accelerators.
-- **Komplexe Preisfindung ist ausgeklammert**, ausdrücklich auch die SAP-Variantenkonfiguration. Wer Maschinen heute in SAP konfiguriert, bekommt hier keine Antwort.
-- **Revenue Cloud kommt nicht vor.** Der Accelerator deckt Sales Cloud und Salesforce CPQ ab; die verlinkte Version 1.6 stammt vom Dezember 2021.
+- **Produkte stammen im Accelerator aus einem PIM**, globale IDs liegen in einem MDM-System. Liegt Ihr Materialstamm in SAP, kann SAP diese Rolle für Materialnummer und Status übernehmen, aber das ist Ihre Designentscheidung und nicht Teil des Accelerators.
+- **Komplexe Preisfindung ist ausgeklammert**, ausdrücklich auch die SAP-Variantenkonfiguration. Wer Maschinen heute in SAP konfiguriert, erhält hier keine Antwort.
+- **Revenue Cloud fehlt.** Der Accelerator deckt Sales Cloud und Salesforce CPQ ab; die verlinkte Version 1.6 stammt vom Dezember 2021.
 
 Das fachliche Muster lässt sich trotzdem auf Revenue Cloud übertragen. Salesforce nennt den Bereich inzwischen Revenue Management; begonnen hat er als Revenue Lifecycle Management. Revenue Cloud arbeitet auf Standardobjekten: Das [Datenmodell für Angebote](https://developer.salesforce.com/docs/platform/data-models/guide/transaction-management-quote.html) und das [Datenmodell für Aufträge](https://developer.salesforce.com/docs/platform/data-models/guide/transaction-mgmt-order.html) nennen Quote, Quote Line Item, Order, Order Item, Asset, Product2 und Pricebook Entry. Die Schnittstellenpunkte liegen also auf bekannten Standardobjekten, aber der CPQ-Accelerator ist keine Implementierungsvorlage: Revenue Cloud ist kein Upgrade von CPQ, und Objektzuordnungen, APIs, Orchestrierung und Fehlerbehandlung müssen neu entworfen werden. Das Design stammt von Ihrem Partner, und jemand auf Ihrer Seite sollte es prüfen.
 
@@ -74,7 +74,7 @@ Ein Schnitt nach Prozessschritten reicht nicht. Partner bauen auf Objekten, also
 | Asset | Revenue Cloud für das Verkaufte und seine Laufzeit | Seriennummer aus SAP oder Field Service |
 | Invoice | SAP in Schnitt 1 und 2; Revenue Cloud Billing in Schnitt 3 | Rechnungsstatus zurück oder Buchungen an SAP |
 
-Die Preiszeile macht den meisten Ärger. Zwei Systeme, die beide denselben Kundenpreis rechnen, kommen früher oder später zu unterschiedlichen Ergebnissen, und der Kunde merkt es, wenn die Auftragsbestätigung aus SAP vom Angebots-PDF abweicht. Welcher Weg zu Ihren Konditionen passt, steht in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/).
+Die Preiszeile macht den meisten Ärger. Zwei Systeme, die beide denselben Kundenpreis rechnen, gelangen früher oder später zu unterschiedlichen Ergebnissen, und der Kunde merkt es, wenn die Auftragsbestätigung aus SAP vom Angebots-PDF abweicht. Welcher Weg zu Ihren Konditionen passt, steht in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/).
 
 ## Was bedeutet Revenue Cloud Billing für die Finanzabteilung?
 
@@ -85,15 +85,15 @@ SAP hat für jeden dieser Datensätze ein Gegenstück, aber selten eine Eins-zu-
 1. **Welche Gesellschaften aus Salesforce heraus fakturieren** und welche in SAP bleiben.
 2. **Wie die Buchungsperioden in Salesforce an den SAP-Perioden ausgerichtet werden** und wer sie schließt.
 3. **Wie die Sachkonten zugeordnet werden** und wer die Zuordnung ändert, wenn sich der Kontenplan ändert.
-4. **In welchem Format der Kunde die Rechnung bekommt.** Ab 2027 dürfen laut [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) nur noch Unternehmen mit bis zu 800.000 Euro Vorjahresumsatz inländischen Geschäftskunden mit deren Zustimmung ein PDF schicken, ab 2028 gelten die Anforderungen an die E-Rechnung für praktisch alle inländischen B2B-Rechnungen. Klären Sie außerdem, welches System das strukturierte Format erzeugt und wer es validiert. Was das für Revenue Cloud heißt, steht in [E-Rechnung ab 2027](../e-rechnung-pflicht-2027-revenue-cloud/).
+4. **In welchem Format der Kunde die Rechnung erhält.** Ab 2027 dürfen laut [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) nur noch Unternehmen mit bis zu 800.000 Euro Vorjahresumsatz inländischen Geschäftskunden mit deren Zustimmung ein PDF schicken, ab 2028 gelten die Anforderungen an die E-Rechnung für praktisch alle inländischen B2B-Rechnungen. Klären Sie außerdem, welches System das strukturierte Format erzeugt und wer es validiert. Was das für Revenue Cloud heißt, steht in [E-Rechnung ab 2027](../e-rechnung-pflicht-2027-revenue-cloud/).
 
-Saß die Finanzabteilung bei diesen vier Punkten nicht mit am Tisch, ist Schnitt 3 nicht reif.
+War die Finanzabteilung an diesen vier Punkten nicht beteiligt, ist Schnitt 3 nicht reif.
 
 ## Rechenbeispiel: Maschinen, Ersatzteile und Fernüberwachung
 
 Ein Maschinenbauer mit SAP S/4HANA verkauft 40 Grundmaschinen mit Optionen, Ersatzteile und pro Maschine ein Abonnement für Fernüberwachung. Kundenpreise für Ersatzteile werden seit Jahren als SAP-Konditionen gepflegt. Maschinenpreise folgen Listenpreisen plus Aufpreisen für Optionen.
 
-Ich würde Schnitt 2 wählen. Revenue Cloud führt Katalog, Konfiguration und Angebot für Maschinen und Abonnements. Die Maschinenpreise berechnet es anhand der aus SAP synchronisierten Listenpreise. Für Ersatzteile im selben Angebot wird der Nettopreis per API aus SAP abgerufen, denn diese Konditionen sollte niemand nachbauen. Der aktivierte Auftrag geht per Callout an SAP, die SAP-Auftragsnummer kommt zurück. Das Abonnement bleibt ein Asset in Salesforce; Verlängerungen und Nachträge beginnen dort. Die Rechnung für Maschine und Abonnement kommt im ersten Jahr aus SAP. Billing in Salesforce wird erst ein Thema, wenn die Abonnements zu einem eigenen Geschäft wachsen.
+Ich würde Schnitt 2 wählen. Revenue Cloud führt Katalog, Konfiguration und Angebot für Maschinen und Abonnements. Die Maschinenpreise berechnet es anhand der aus SAP synchronisierten Listenpreise. Für Ersatzteile im selben Angebot wird der Nettopreis per API aus SAP abgerufen, denn diese Konditionen sollte niemand nachbauen. Der aktivierte Auftrag geht per Callout an SAP, die SAP-Auftragsnummer wird zurückgemeldet. Das Abonnement bleibt ein Asset in Salesforce; Verlängerungen und Nachträge beginnen dort. Die Rechnung für Maschine und Abonnement stammt im ersten Jahr aus SAP. Billing in Salesforce wird erst ein Thema, wenn die Abonnements zu einem eigenen Geschäft wachsen.
 
 ```ablauf
 sf: Angebot, Auftrag, Abonnement-Asset
@@ -116,7 +116,7 @@ Die Tabelle passt auf eine Seite, sodass ein neuer Partner sie in zehn Minuten v
 - **Pro Prozessschritt:** welches System führt, vom Katalog bis zum Zahlungseingang.
 - **Pro Objekt:** das führende System wie in der Tabelle oben, dazu eine benannte Person.
 - **Pro Schnittstelle:** Richtung, Auslöser, live oder per Batch, und was passiert, wenn SAP nicht antwortet.
-- **Pro Fehler:** wer einen Auftrag repariert, den SAP ablehnt. Fehlerhafte Aufträge ohne verantwortliche Person landen beim Vertrieb, der sie nicht beheben kann.
+- **Pro Fehler:** wer einen Auftrag repariert, den SAP ablehnt. Fehlerhafte Aufträge ohne verantwortliche Person gehen an den Vertrieb, der sie nicht beheben kann.
 - **Unterschrift:** Vertriebsleitung, Finanzleitung und IT-Leitung, festgehalten im Decision Log.
 
 Diese Schnittstellen zu entwerfen, ist ein großer Teil meiner Arbeit im Bereich [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/). Die größere Frage, ob Revenue Cloud überhaupt passt, behandelt das Masterclass-Kapitel [Revenue Cloud: Überblick und Entscheidung](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/).

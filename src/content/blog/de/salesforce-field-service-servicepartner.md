@@ -17,7 +17,7 @@ takeaways:
   - "Bewusst getrennt bleiben Datenzugriff und Abrechnung. Ein Partner sieht nur, was er für seinen Einsatz braucht."
 faq:
   - q: "Wie bindet man Subunternehmer in Salesforce Field Service ein?"
-    a: "Die Partnerfirma wird als Account mit Kontakten angelegt, die Techniker bekommen Experience-Cloud-Benutzer mit Field-Service-Berechtigungen und werden als Service Resources den Gebieten zugeordnet, in denen sie arbeiten. Dann plant die Engine sie wie interne Techniker ein. Den Datenzugriff regelt das Sharing-Modell gesondert."
+    a: "Die Partnerfirma wird als Account mit Kontakten angelegt, die Techniker erhalten Experience-Cloud-Benutzer mit Field-Service-Berechtigungen und werden als Service Resources den Gebieten zugeordnet, in denen sie arbeiten. Dann plant die Engine sie wie interne Techniker ein. Den Datenzugriff regelt das Sharing-Modell gesondert."
   - q: "Welche Lizenz brauchen externe Techniker für Field Service?"
     a: "Technisch brauchen sie eine Experience-Cloud-Lizenz (Customer Community Plus oder Partner Community), die Permission Set Licenses Field Service Scheduling und Field Service Mobile für die App sowie ein Permission Set mit den Objektrechten. Kaufmännisch verkauft Salesforce Contractor-Pakete pro Nutzer oder pro Login; laut Salesforce enthält Contractor Plus Partner-Community-Lizenzen."
   - q: "Was ist eine kapazitätsbasierte Ressource in Field Service?"
@@ -33,9 +33,9 @@ Dieser Artikel ist Teil 6 der Serie. Die Lizenzpreise für Subunternehmer finden
 
 ## Interne und externe Techniker arbeiten gleich
 
-Viele Hersteller decken Spitzen, entfernte Regionen oder bestimmte Gewerke mit Partnern ab. Wird der Partner nebenher gesteuert, per E-Mail, Telefon und eigener Excel-Liste, entstehen zwei Welten. Der Disponent hat zwei Pläne. Der Kunde bekommt zwei Arten von Serviceberichten. Informationen zu Ersatzteilen und Arbeitszeit des Partners kommen erst mit der Rechnung an, und die Anlagenhistorie hat Lücken.
+Viele Hersteller decken Spitzen, entfernte Regionen oder bestimmte Gewerke mit Partnern ab. Wird der Partner nebenher gesteuert, per E-Mail, Telefon und eigener Excel-Liste, entstehen zwei Welten. Der Disponent hat zwei Pläne. Der Kunde erhält zwei Arten von Serviceberichten. Informationen zu Ersatzteilen und Arbeitszeit des Partners treffen erst mit der Rechnung ein, und die Anlagenhistorie hat Lücken.
 
-Wenn beide Welten gleich arbeiten, fällt das weg. Der Disponent sieht interne und externe Techniker im selben Plan, die Engine wählt nach denselben Regeln, und jeder Einsatz endet mit derselben Dokumentation an derselben Anlage. Auch der Partner hat etwas davon. Er bekommt Einsätze mit allen Informationen zur Anlage, statt bei jedem Auftrag nachzufragen, und er weiß früher, was in den nächsten Tagen auf ihn zukommt. Dadurch kann er verlässlicher planen, auch für seine eigenen Leute. Die Stammdaten aus [Teil 2](../salesforce-field-service-stammdaten/) gelten dann auch für Partner: Qualifikationen, Gebiete und Abwesenheiten.
+Wenn beide Welten gleich arbeiten, fällt das weg. Der Disponent sieht interne und externe Techniker im selben Plan, die Engine wählt nach denselben Regeln, und jeder Einsatz endet mit derselben Dokumentation an derselben Anlage. Auch der Partner hat etwas davon. Er erhält Einsätze mit allen Informationen zur Anlage, statt bei jedem Auftrag nachzufragen, und er weiß früher, was in den nächsten Tagen auf ihn zukommt. Dadurch kann er verlässlicher planen, auch für seine eigenen Leute. Die Stammdaten aus [Teil 2](../salesforce-field-service-stammdaten/) gelten dann auch für Partner: Qualifikationen, Gebiete und Abwesenheiten.
 
 ## Welche Modelle bietet Field Service?
 
@@ -74,7 +74,7 @@ Für den Kunden sieht der Einsatz damit genauso aus wie einer mit eigenem Techni
 Gleiche Arbeitsweise heißt nicht gleiche Rechte. Drei Dinge würde ich bewusst trennen:
 
 - **Datenzugriff.** Ein Partnertechniker sieht seine Termine sowie die Anlage und die Historie, die er für den Einsatz braucht. Vertragsdetails, Preise und andere Kunden sieht er nicht. Ein Servicegebiet oder ein Profil allein leistet das nicht. Das Profil steuert Objekt- und Feldrechte, nicht, welche Datensätze jemand sieht. Für die Trennung braucht es private organisationsweite Standards und ein bewusst gesetztes externes Sharing-Modell, dazu die Freigabeeinstellungen von Field Service. Laut [Salesforce](https://help.salesforce.com/s/articleView?id=002470705&language=en_US&type=1) kann das Teilen eines Termins mit einem Gebiet auch übergeordnete Datensätze wie Accounts, Anlagen und Arbeitsaufträge freigeben; welche das sind, lässt sich einstellen. Testen Sie das vor dem Start mit einem Partnerbenutzer. Klären Sie außerdem mit dem Datenschutz, welche Kundendaten ein Partner sehen darf, und halten Sie das im Vertrag mit dem Partner fest.
-- **Abrechnung.** Interne Einsätze laufen über Kostenstellen, Partnereinsätze über eine Rechnung. Die Rückmeldung aus der App, also Arbeitszeit und verbaute Teile aus [Teil 4](../salesforce-field-service-ersatzteile-erp/), ist die Grundlage, um diese Rechnung zu prüfen.
+- **Abrechnung.** Interne Einsätze werden über Kostenstellen abgerechnet, Partnereinsätze über eine Rechnung. Die Rückmeldung aus der App, also Arbeitszeit und verbaute Teile aus [Teil 4](../salesforce-field-service-ersatzteile-erp/), ist die Grundlage, um diese Rechnung zu prüfen.
 - **Qualifikationsnachweise.** Bei eigenen Technikern pflegt die Personalabteilung die Qualifikationen. Beim Partner muss festgelegt sein, wer sie meldet und wer sie prüft, bevor die Engine den Partner für einen Einsatz einplant.
 
 ## Was müssen Sie entscheiden?
@@ -90,4 +90,4 @@ Drei Warnzeichen, dass das Partnermodell nicht trägt: Der Disponent führt eine
 
 ## Erster Schritt: aufschreiben, wie ein Einsatz zum wichtigsten Partner kommt
 
-Nehmen Sie Ihren wichtigsten Partner und schreiben Sie auf, wie ein Einsatz heute an ihn übergeben wird und wie die Rückmeldung erfolgt. Jeder Schritt, der anders läuft als bei internen Technikern, ist ein Kandidat für die Angleichung. Starten Sie mit einem Partner und einem Servicegebiet, bevor Sie alle anbinden. Mischformen sind erlaubt: Ein großer Stammpartner arbeitet im ersten Modell, ein kleiner Partner für Spitzenzeiten im zweiten. Wichtig ist, dass die Entscheidung je Partner bewusst fällt und dokumentiert ist. Wie die Einführung danach in Wellen läuft, zeigt der [letzte Teil der Serie](../salesforce-field-service-einfuehrung/).
+Nehmen Sie Ihren wichtigsten Partner und schreiben Sie auf, wie ein Einsatz heute an ihn übergeben wird und wie die Rückmeldung erfolgt. Jeder Schritt, der anders abläuft als bei internen Technikern, ist ein Kandidat für die Angleichung. Starten Sie mit einem Partner und einem Servicegebiet, bevor Sie alle anbinden. Mischformen sind erlaubt: Ein großer Stammpartner arbeitet im ersten Modell, ein kleiner Partner für Spitzenzeiten im zweiten. Wichtig ist, dass die Entscheidung je Partner bewusst fällt und dokumentiert ist. Wie die Einführung danach in Wellen erfolgt, zeigt der [letzte Teil der Serie](../salesforce-field-service-einfuehrung/).

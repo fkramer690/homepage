@@ -39,7 +39,7 @@ Die Geschichte ist kurz, aber sie erklärt, warum das Framework heute anders aus
 - **Am 8. August 2025** kündigten Chief Architect Emin Gerba und Christophe Coenraets im [Salesforce-Blog](https://www.salesforce.com/blog/relaunching-well-architected-program/) die Rückkehr an. Bemerkenswert offen war die Aussage: Viele Architekten hätten ihnen gesagt, das Ende sei ein Fehler gewesen.
 - **Zur Dreamforce 2025 im Oktober** ging das überarbeitete [Architecture Center](https://www.salesforce.com/blog/relaunching-salesforce-architecture-program/) online, mit neuen Decision Guides (etwa zu Data 360, Event-Driven Architecture und Asynchronous Processing) und neuen Grundlagen zu Agentforce und zur Agentic Enterprise. Am Framework selbst wurden nur Teile von Trusted und Adaptable aufgefrischt.
 - **Am 14. September 2026** veröffentlichte Salesforce das [neue Well-Architected Framework](https://www.salesforce.com/blog/new-well-architected-framework/). Laut Salesforce haben Hunderte Architekten in Fokusgruppen, Umfragen und Community-Events mitgearbeitet.
-- **Auf der Dreamforce 2026** kam laut [Salesforce Ben](https://www.salesforceben.com/new-well-architected-framework-and-agent-revealed-at-dreamforce-26/) ein Architect Agent dazu, ein KI-Assistent im Architecture Center, der auf diesen Inhalten aufsetzt.
+- **Auf der Dreamforce 2026** stellte Salesforce laut [Salesforce Ben](https://www.salesforceben.com/new-well-architected-framework-and-agent-revealed-at-dreamforce-26/) zusätzlich einen Architect Agent vor, einen KI-Assistenten im Architecture Center, der auf diesen Inhalten aufsetzt.
 
 Der eigentliche Umbau ist also die Version von September 2026. Der Relaunch 2025 hat vor allem die Plattform drumherum neu aufgestellt.
 
@@ -53,7 +53,7 @@ Das alte Framework hatte drei Säulen mit zusammen acht Eigenschaften: Trusted (
 4. **Resource and Cost Optimization:** Codeorganisation, Packaging, Datenlebenszyklus, Performance, Make-or-Buy, Lizenzen und Sandboxes.
 5. **Fairness:** Barrierefreiheit, Transparenz, Nichtdiskriminierung und KI-Ethik.
 
-Salesforce hat die alten Inhalte nicht weggeworfen, sondern umsortiert. Die Seite [Legacy Framework Mapping](https://architect.salesforce.com/docs/architect/well-architected/guide/tea-pillar-mapping.html) zeigt, wohin was gewandert ist. Einige Beispiele: Monitoring lag früher unter Reliable und gehört jetzt zu Operational Excellence. Disaster Recovery lag unter Resilient und gehört jetzt zu Reliability. Business Value und ROI lagen unter Automated und gehören jetzt zu Resource and Cost Optimization. Barrierefreiheit und Datenschutzrechte stehen unter Fairness, rechtliche Vorgaben und Data Residency bleiben bei Trust. Messaging, Eventing und API-Management wurden vollständig aus dem Framework in die Integration Patterns verschoben.
+Salesforce hat die alten Inhalte nicht weggeworfen, sondern umsortiert. Die Seite [Legacy Framework Mapping](https://architect.salesforce.com/docs/architect/well-architected/guide/tea-pillar-mapping.html) zeigt, wohin welche Inhalte verschoben wurden. Einige Beispiele: Monitoring lag früher unter Reliable und gehört jetzt zu Operational Excellence. Disaster Recovery lag unter Resilient und gehört jetzt zu Reliability. Business Value und ROI lagen unter Automated und gehören jetzt zu Resource and Cost Optimization. Barrierefreiheit und Datenschutzrechte stehen unter Fairness, rechtliche Vorgaben und Data Residency bleiben bei Trust. Messaging, Eventing und API-Management wurden vollständig aus dem Framework in die Integration Patterns verschoben.
 
 ```saeulenwechsel
 bisher: Bisher: drei Säulen
@@ -91,7 +91,7 @@ Beide Zahlen sind Planungshilfen, keine Vorschriften. Salesforce selbst nennt di
 
 Die zweite große Änderung ist die Agentic-Enterprise-Linse. Sie ist keine sechste Säule. Für jede der fünf Säulen gibt es eine Variante, die beschreibt, was zusätzlich gilt, wenn KI-Agenten eigenständig entscheiden und handeln: Berechtigungen und Prüfpfade für Agenten, Umgang mit Fehlern in der Orchestrierung mehrerer Agenten, der Agent Development Lifecycle, Token-Verbrauch und Nachvollziehbarkeit von Entscheidungen.
 
-Der wichtigste Satz dazu steht im Ankündigungsblog: „Agents don't get their own rulebook." Ein Agent muss also dieselben Anforderungen an Sicherheit, Stabilität und Kosten erfüllen wie jede andere Lösung in Ihrer Org. Das passt zu meiner Haltung aus Agentforce-Projekten: Business Value und Datenqualität kommen vor dem Agenten. Mehr dazu in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
+Der wichtigste Satz dazu steht im Ankündigungsblog: „Agents don't get their own rulebook." Ein Agent muss also dieselben Anforderungen an Sicherheit, Stabilität und Kosten erfüllen wie jede andere Lösung in Ihrer Org. Das passt zu meiner Haltung aus Agentforce-Projekten: Business Value und Datenqualität haben Vorrang vor dem Agenten. Mehr dazu in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
 
 ## Für CIOs zählen Kosten, Betrieb und benannte Zielkonflikte
 
@@ -117,7 +117,7 @@ Bei aller Zustimmung: Es bleibt ein Herstellerdokument.
 Ich habe schon das alte Framework mit Trusted, Easy und Adaptable in Kundenprojekten genutzt und in User-Group-Vorträgen vorgestellt.
 
 ```praxis
-In meinem bisher größten Programm arbeiteten über 30 Entwickler in 8 Streams von 5 Umsetzungspartnern in derselben Org. Wir haben rund drei Monate gebraucht, bis die gemeinsamen Standards standen: Namenskonventionen, eine Automatisierung pro Objekt, Vorgaben zur Testabdeckung, eine Matrix, welcher Stream welches Objekt verantwortet, und Regeln, was in Custom Metadata Types oder Custom Labels gehört. 80 Prozent standen nach der ersten Runde, der Rest kam über die Monate dazu.
+In meinem bisher größten Programm arbeiteten über 30 Entwickler in 8 Streams von 5 Umsetzungspartnern in derselben Org. Wir haben rund drei Monate gebraucht, bis die gemeinsamen Standards standen: Namenskonventionen, eine Automatisierung pro Objekt, Vorgaben zur Testabdeckung, eine Matrix, welcher Stream welches Objekt verantwortet, und Regeln, was in Custom Metadata Types oder Custom Labels gehört. 80 Prozent standen nach der ersten Runde, der Rest folgte im Lauf der Monate.
 ```
 
 Mit dem neuen Framework würde ich diese Standards heute entlang der fünf Säulen ordnen. Namenskonventionen, Packaging und Objektverantwortung gehören zu Resource and Cost Optimization und Operational Excellence. Berechtigungen und Integrationsbenutzer sind Trust. Der Vorteil: Das Framework ist eine veröffentlichte Referenz, die keinem einzelnen Partner gehört. Die Diskussion beginnt also nicht bei null, und Abweichungen lassen sich einer Säule zuordnen. Das funktioniert aber nur, wenn der Kunde daraus verbindliche Review-Fragen und Abnahmekriterien macht.
@@ -125,8 +125,8 @@ Mit dem neuen Framework würde ich diese Standards heute entlang der fünf Säul
 Konkret heißt das:
 
 1. **Design Reviews nach Säulen gliedern.** Für eine größere Änderung reicht der vorschlagende Partner vorab eine Seite ein: betroffene Nutzer, Systeme und Schnittstellen, Nachweise zu jeder relevanten Säule, verworfene Alternativen, zusätzliche Lizenz- und Betriebskosten sowie die Information, wer Monitoring und Wiederherstellung verantwortet. Das Review endet mit einem der vier Ergebnisse: Freigabe, Freigabe mit Auflagen, Nacharbeit oder Eskalation für eine Geschäftsentscheidung.
-2. **Zielkonflikte protokollieren.** Wo Anforderungen einer Säule zugunsten einer anderen zurückstehen, kommt das mit Begründung ins Entscheidungsprotokoll.
-3. **Agenten nicht separat behandeln.** Agentforce-Vorhaben laufen durch dasselbe Review, ergänzt um die Agenten-Variante jeder Säule.
+2. **Zielkonflikte protokollieren.** Wo Anforderungen einer Säule zugunsten einer anderen zurückstehen, wird das mit Begründung im Entscheidungsprotokoll festgehalten.
+3. **Agenten nicht separat behandeln.** Agentforce-Vorhaben durchlaufen dasselbe Review, ergänzt um die Agenten-Variante jeder Säule.
 4. **Kostensäule ernst nehmen.** Salesforce empfiehlt, monatlich Kostenausreißer zu prüfen, vierteljährlich Lizenzzuweisungen und Kapazität zu überprüfen und einmal im Jahr eine vollständige Kostenprüfung vorzunehmen.
 
 Wie ich Standards und Reviews in solchen Programmen aufsetze, gehört zu meiner [Arbeit an Partnersteuerung und Architektur](../../leistungen/partnersteuerung/).

@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Für die Roadmap zählt: Salesforce B2B Commerce gibt es in drei Generationen. Die älteste ist B2B Commerce for Visualforce, ein Managed Package, das mit der Übernahme von CloudCraze 2018 kam. Die beiden neueren Generationen laufen auf der Kernplattform als Experience-Cloud-Stores, gebaut mit einem Aura- oder einem LWR-Template. Laut Migrationsleitfaden erhalten nur Orgs Aura-Templates, in denen Commerce vor Spring '23 aktiviert war, und für neue Stores empfiehlt Salesforce LWR. Stand 9. November 2026 fand ich kein öffentliches Abkündigungsdatum für Aura-Stores oder das Visualforce-Paket. Welche Generation Sie betreiben, entscheidet, wie viel von der aktuellen Roadmap bei Ihrem Shop ankommt.
+Für die Roadmap zählt: Salesforce B2B Commerce gibt es in drei Generationen. Die älteste ist B2B Commerce for Visualforce, ein Managed Package, das mit der Übernahme von CloudCraze 2018 zu Salesforce kam. Die beiden neueren Generationen laufen auf der Kernplattform als Experience-Cloud-Stores, gebaut mit einem Aura- oder einem LWR-Template. Laut Migrationsleitfaden erhalten nur Orgs Aura-Templates, in denen Commerce vor Spring '23 aktiviert war, und für neue Stores empfiehlt Salesforce LWR. Stand 9. November 2026 fand ich kein öffentliches Abkündigungsdatum für Aura-Stores oder das Visualforce-Paket. Welche Generation Sie betreiben, entscheidet, wie viel von der aktuellen Roadmap bei Ihrem Shop ankommt.
 
 ## Welche Generationen von B2B Commerce gibt es?
 
@@ -38,7 +38,7 @@ Salesforce B2B Commerce, das in einigen Salesforce-Inhalten wie Trailhead auch "
 | B2B Commerce, Aura-Store | Kernplattform, Experience-Cloud-Site, Aura-Template | Neue Aura-Stores nur in Orgs, in denen Commerce vor Spring '23 aktiviert war |
 | B2B Commerce, LWR-Store | Kernplattform, Experience-Cloud-Site, LWR-Template | Empfohlen für neue Stores |
 
-Salesforce hat den Abschluss der [Übernahme von CloudCraze](https://salesforce.com/news/stories/salesforce-completes-its-acquisition-of-cloudcraze/) am 6. April 2018 gemeldet und CloudCraze als B2B-Commerce-Plattform beschrieben, die nativ auf Salesforce basiert. Dieses Produkt lief als B2B Commerce for Visualforce weiter. Später hat Salesforce B2B Commerce in die Kernplattform geholt, mit eigenen Objekten für Stores, Käufergruppen, Warenkörbe und Bestellungen und mit Storefronts als Experience-Cloud-Sites. Ältere Unterlagen in der Hilfe und in Trailhead nennen das "B2B Commerce on Lightning Experience", neuere einfach "B2B Commerce".
+Salesforce hat den Abschluss der [Übernahme von CloudCraze](https://salesforce.com/news/stories/salesforce-completes-its-acquisition-of-cloudcraze/) am 6. April 2018 gemeldet und CloudCraze als B2B-Commerce-Plattform beschrieben, die nativ auf Salesforce basiert. Dieses Produkt wurde als B2B Commerce for Visualforce weitergeführt. Später hat Salesforce B2B Commerce in die Kernplattform geholt, mit eigenen Objekten für Stores, Käufergruppen, Warenkörbe und Bestellungen und mit Storefronts als Experience-Cloud-Sites. Ältere Unterlagen in der Hilfe und in Trailhead nennen das "B2B Commerce on Lightning Experience", neuere einfach "B2B Commerce".
 
 ```zeitleiste
 2018-04-06 | Salesforce schließt die Übernahme von CloudCraze ab

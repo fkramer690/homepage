@@ -52,10 +52,10 @@ Ich würde bewusst entscheiden und festhalten, wann Sie die Frage wieder aufnehm
 
 Diese Auslöser sprechen für einen Wechsel in den nächsten ein bis zwei Jahren:
 
-- **Sie brauchen Funktionen, die nur Revenue Cloud erhält.** Salesforce hat im Juli 2025 Agentforce-Funktionen für Angebote als Teil von [Revenue Cloud](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/) angekündigt, mit denen Vertriebsmitarbeitende Angebote aus einer Anfrage in natürlicher Sprache erstellen. CPQ bekommt solche Funktionen nicht.
+- **Sie brauchen Funktionen, die nur Revenue Cloud erhält.** Salesforce hat im Juli 2025 Agentforce-Funktionen für Angebote als Teil von [Revenue Cloud](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/) angekündigt, mit denen Vertriebsmitarbeitende Angebote aus einer Anfrage in natürlicher Sprache erstellen. CPQ erhält solche Funktionen nicht.
 - **Neue Verbrauchsmodelle.** Abos, Verlängerungen und einfache Nutzungsabrechnung gehen auch mit CPQ und dem Paket Salesforce Billing. Sollen Fernüberwachungs-Abos oder Pay-per-Use mit Mindestabnahmen, Kontingenten und Wallets abgebildet werden, bringt Revenue Cloud Verbrauchs- und Wallet-Management; nutzungsbasierte Rechnungen brauchen die separate Revenue-Cloud-Billing-Lizenz.
 - **Das Produktmodell ändert sich ohnehin.** Eine neue Produktgeneration, eine neue Variantenstruktur oder eine Katalogbereinigung ist ein Neuentwurf. Ihn zweimal zu machen, erst in CPQ und später noch einmal in Revenue Cloud, verschwendet Arbeit.
-- **Org-Neustart oder Partnerwechsel.** Wenn die Org neu aufgebaut wird oder ein neuer Partner übernimmt, passt der Wechsel in ein Projekt, das ohnehin läuft. Eine [KI-gestützte Org-Analyse](../ki-org-analyse-technische-schulden/) hilft zu sehen, was wirklich in der alten Org steckt.
+- **Org-Neustart oder Partnerwechsel.** Wenn die Org neu aufgebaut wird oder ein neuer Partner übernimmt, passt der Wechsel in ein Projekt, das ohnehin ansteht. Eine [KI-gestützte Org-Analyse](../ki-org-analyse-technische-schulden/) hilft zu sehen, was wirklich in der alten Org steckt.
 - **CPQ-Anpassungen sind fragil.** Wenn bei jedem Release-Test etwas im Quote Calculator Plugin bricht und nur eine Person die Logik versteht, verringert ein Neuentwurf dieses Risiko.
 
 ## Abwarten passt bei stabilem Prozess und Preisen aus dem ERP
@@ -63,7 +63,7 @@ Diese Auslöser sprechen für einen Wechsel in den nächsten ein bis zwei Jahren
 Abwarten ist sinnvoll, wenn
 
 - **der Angebotsprozess stabil ist** und niemand neue Funktionen fordert,
-- **die Preise ohnehin aus dem ERP kommen.** Wenn CPQ vor allem einen Nettopreis aus SAP holt und ein Angebot druckt, bringt Revenue Cloud für diesen Schritt wenig,
+- **die Preise ohnehin aus dem ERP stammen.** Wenn CPQ vor allem einen Nettopreis aus SAP holt und ein Angebot druckt, bringt Revenue Cloud für diesen Schritt wenig,
 - **ein größeres Projekt Vorrang hat.** Eine S/4HANA-Migration oder ein Manufacturing-Cloud-Rollout bindet dieselben Leute. Zwei Neuentwürfe parallel umzusetzen geht selten gut,
 - **in diesem Jahr kein Budget für einen Neuentwurf da ist.** Eine halb finanzierte Migration ist schlechter als eine gut betriebene CPQ-Org.
 
@@ -103,11 +103,11 @@ Die Lizenzkosten sind der einfachere Teil, hängen aber nicht allein von der Nut
 quelle: Salesforce Revenue Cloud Preisseite, Stand 9. November 2026, Add-on zu Sales Cloud
 ```
 
-Salesforce nennt Advanced als Nachfolger von CPQ; Growth fehlen Verträge, Dynamic Revenue Orchestrator und Agentforce for Revenue Management, für viele CPQ-Orgs ist es also kein gleichwertiger Ersatz. Als Annahme kosten 50 Nutzer im Angebotsprozess auf Advanced zusätzlich 120.000 Euro pro Jahr zum Listenpreis, zu Sales Cloud dazu. Die Revenue-Cloud-Billing-Lizenz und verbrauchsabhängige Credits für einige Funktionen kommen hinzu. Ihr aktueller CPQ-Preis hängt von Ihrem Vertrag ab, lassen Sie sich deshalb beide Zahlen vom Account-Team geben.
+Salesforce nennt Advanced als Nachfolger von CPQ; Growth fehlen Verträge, Dynamic Revenue Orchestrator und Agentforce for Revenue Management, für viele CPQ-Orgs ist es also kein gleichwertiger Ersatz. Als Annahme kosten 50 Nutzer im Angebotsprozess auf Advanced zusätzlich 120.000 Euro pro Jahr zum Listenpreis, zu Sales Cloud dazu. Die Revenue-Cloud-Billing-Lizenz und verbrauchsabhängige Credits für einige Funktionen fallen zusätzlich an. Ihr aktueller CPQ-Preis hängt von Ihrem Vertrag ab, lassen Sie sich deshalb beide Zahlen vom Account-Team geben.
 
 Der größere Kostenblock ist der Neuentwurf. Die CPQ-Seite von Salesforce nennt drei bis sechs Monate als typische Migrationsdauer, der [Migrationsleitfaden](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5) legt aber keinen festen Zeitrahmen fest und stellt klar, dass Werkzeuge keine Designentscheidungen für eigene Logik und Schnittstellen ersetzen. Warum das so ist, erkläre ich in [Salesforce CPQ vs. Revenue Cloud: Die echten Unterschiede](../salesforce-cpq-revenue-cloud-unterschiede/).
 
-Ein Rechenbeispiel: Ein Maschinenbauer hat 50 CPQ-Nutzer, 200 Produktregeln, ein Quote Calculator Plugin und muss CPQ in neun Monaten verlängern. Die Preise kommen aus SAP, die Konfigurationsregeln teilweise aus der Konstruktion. Hier würde ich mir von Salesforce zuerst eine Verlängerung und einen lizenzierten Parallelbetrieb anbieten lassen, mit ausreichend Zeit für Analyse, Umsetzung und Umstellung. Außerdem würde ich die Regeln jetzt aufräumen und einen Proof of Concept für die zehn wichtigsten Maschinen in Revenue Cloud bauen, bevor eine Migration beauftragt wird.
+Ein Rechenbeispiel: Ein Maschinenbauer hat 50 CPQ-Nutzer, 200 Produktregeln, ein Quote Calculator Plugin und muss CPQ in neun Monaten verlängern. Die Preise stammen aus SAP, die Konfigurationsregeln teilweise aus der Konstruktion. Hier würde ich mir von Salesforce zuerst eine Verlängerung und einen lizenzierten Parallelbetrieb anbieten lassen, mit ausreichend Zeit für Analyse, Umsetzung und Umstellung. Außerdem würde ich die Regeln jetzt aufräumen und einen Proof of Concept für die zehn wichtigsten Maschinen in Revenue Cloud bauen, bevor eine Migration beauftragt wird.
 
 ## Die CPQ-Org analysieren
 

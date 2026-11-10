@@ -58,13 +58,13 @@ Eigene Zuordnung zu Käufergruppen | Auswertung der Käufergruppen | Domain
 Produkte und Suchergebnisse filtern oder anreichern | Produkt- und Suchendpunkte | Endpoint
 ```
 
-Die Seite nennt auch die Standards, die Sie ersetzen: Bestand kommt aus Omnichannel Inventory, Preise aus Salesforce-Preisbüchern, Steuer aus dem Salesforce-Steuerdienst, und für den Versand werden standardmäßig keine Gebühren berechnet, bis Sie den Versanddienst erweitern.
+Die Seite nennt auch die Standards, die Sie ersetzen: Bestand stammt aus Omnichannel Inventory, Preise aus Salesforce-Preisbüchern, Steuer aus dem Salesforce-Steuerdienst, und für den Versand werden standardmäßig keine Gebühren berechnet, bis Sie den Versanddienst erweitern.
 
 ```hinweis achtung
-Nutzt der Store Faster Add-to-Cart, benötigt laut derselben Seite jedes Produkt einen Eintrag in einem Store-Preisbuch, bevor Sie die Preis-Extension umsetzen, auch wenn der echte Preis später aus dem ERP kommt.
+Nutzt der Store Faster Add-to-Cart, benötigt laut derselben Seite jedes Produkt einen Eintrag in einem Store-Preisbuch, bevor Sie die Preis-Extension umsetzen, auch wenn der echte Preis später aus dem ERP stammt.
 ```
 
-Welche Daten live aus dem ERP kommen und welche nach Salesforce kopiert werden, ist eine eigene Designentscheidung. Sie steht in [B2B Commerce und SAP: Welche Daten fließen wohin?](../b2b-commerce-sap-datenfluesse/).
+Welche Daten live aus dem ERP abgerufen werden und welche nach Salesforce kopiert werden, ist eine eigene Designentscheidung. Sie steht in [B2B Commerce und SAP: Welche Daten fließen wohin?](../b2b-commerce-sap-datenfluesse/).
 
 ## Warum sollte eine Domain Extension den Standard weiterlaufen lassen?
 
@@ -99,7 +99,7 @@ Zahlungen sind die Ausnahme. Salesforce schreibt: Zahlungen können derzeit nich
 
 Registrierung und Mapping sind zwei getrennte Schritte, und beides ist Konfiguration, die jemand in jeder Umgebung nachbauen muss. Salesforce empfiehlt, beides über die Salesforce-Kommandozeile zu erledigen, die auch in einer Pipeline laufen kann; alternativ lassen sich die Connect API oder die Administrationsoberfläche nutzen, und dort können die Shop-Verantwortlichen Domain Extensions selbst zuordnen.
 
-Gerade diese letzte Möglichkeit birgt ein Risiko. Ein Mapping, das von Hand in Produktion geändert wurde, ist in Git unsichtbar. Angenommen, ein Partner ordnet direkt in der Produktion einen neuen Preis-Provider zu, um einen dringenden Preisfehler zu beheben. Die Änderung kommt nie ins Repository, und die Pipeline wendet beim nächsten Deployment das Mapping aus dem Repository an, also den alten Provider. Niemand merkt es, bis Händler sich über falsche Preise beschweren.
+Gerade diese letzte Möglichkeit birgt ein Risiko. Ein Mapping, das von Hand in Produktion geändert wurde, ist in Git unsichtbar. Angenommen, ein Partner ordnet direkt in der Produktion einen neuen Preis-Provider zu, um einen dringenden Preisfehler zu beheben. Die Änderung gelangt nie ins Repository, und die Pipeline wendet beim nächsten Deployment das Mapping aus dem Repository an, also den alten Provider. Niemand merkt es, bis Händler sich über falsche Preise beschweren.
 
 ```vertiefung Für Entwickler
 titel: Klassennamen, Namen der Erweiterungspunkte und CLI-Befehle
@@ -121,4 +121,4 @@ Wie Store-Konfiguration gemeinsam mit den Metadaten übertragen wird, beschreibt
 
 ## Jede eigene Logik einem Erweiterungspunkt zuordnen
 
-Listen Sie jede eigene Logik in Ihrem Store auf und ordnen Sie sie einem Erweiterungspunkt, einer alten Integration oder einer eigenen Komponente zu. Beachten Sie dabei, dass die Warenkorbberechnung entweder mit Extensions oder mit Integrationen läuft. Markieren Sie jeden Domain Provider, der den Standard ersetzt, und fragen Sie nach dem Grund. Prüfen Sie dann, ob sich Registrierung und Mapping aus dem Repository in einer frischen Sandbox wieder aufbauen lassen. Klappt das nicht, haben Sie Ihre größte Abhängigkeit vom aktuellen Partner gefunden. Die ERP-Perspektive auf dieselben Entscheidungen ist Teil des Kapitels [ERP-Anbindung](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/), und dieselben Extensions lassen sich auch für eine [headless Storefront](../headless-b2b-commerce-eigenes-frontend/) nutzen.
+Listen Sie jede eigene Logik in Ihrem Store auf und ordnen Sie sie einem Erweiterungspunkt, einer alten Integration oder einer eigenen Komponente zu. Beachten Sie dabei, dass die Warenkorbberechnung entweder mit Extensions oder mit Integrationen arbeitet. Markieren Sie jeden Domain Provider, der den Standard ersetzt, und fragen Sie nach dem Grund. Prüfen Sie dann, ob sich Registrierung und Mapping aus dem Repository in einer frischen Sandbox wieder aufbauen lassen. Klappt das nicht, haben Sie Ihre größte Abhängigkeit vom aktuellen Partner gefunden. Die ERP-Perspektive auf dieselben Entscheidungen ist Teil des Kapitels [ERP-Anbindung](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/), und dieselben Extensions lassen sich auch für eine [headless Storefront](../headless-b2b-commerce-eigenes-frontend/) nutzen.

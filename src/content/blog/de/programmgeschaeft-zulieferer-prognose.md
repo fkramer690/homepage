@@ -10,7 +10,7 @@ topic: data
 categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Programmgeschäft, Absatzprognose, Zulieferer, Sales Agreements, Data Processing Engine]
 takeaways:
-  - "Programm- und Variantenprognosen kommen als CSV-Dateien, etwa aus externen Marktdaten. Komponentenprognosen berechnen vier Vorlagen der Data Processing Engine."
+  - "Programm- und Variantenprognosen werden als CSV importiert, etwa aus Marktdaten. Komponentenprognosen berechnen vier Vorlagen der Data Processing Engine."
   - "Jede Komponente braucht Menge pro Einheit, Mindestmenge und Vorlaufzeit. Diese Daten liegen meist in der Konstruktion oder im ERP."
   - "Nötig sind Advanced Account Forecasting, Data Pipelines und Program Based Business, dazu drei Berechtigungssätze und die passenden Permission Set Licenses."
   - "Freigegebene Komponentenprognosen werden in zwei API-Schritten zu einer Opportunity und einem Sales Agreement."
@@ -30,7 +30,7 @@ Das Programmgeschäft in der Manufacturing Cloud hilft Zulieferern, die Komponen
 
 ## Was ist das Programmgeschäft in der Manufacturing Cloud?
 
-[Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business) beschreibt die Zulieferpyramide: oben der OEM, darunter Tier-1-, Tier-2- und Tier-3-Zulieferer. Startet der OEM eine neue Produktlinie, ein Programm, muss jeder Zulieferer darunter schätzen, wie viele seiner Teile dieses Programm pro Variante und Monat braucht, lange bevor der erste Auftrag kommt.
+[Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business) beschreibt die Zulieferpyramide: oben der OEM, darunter Tier-1-, Tier-2- und Tier-3-Zulieferer. Startet der OEM eine neue Produktlinie, ein Programm, muss jeder Zulieferer darunter schätzen, wie viele seiner Teile dieses Programm pro Variante und Monat braucht, lange bevor der erste Auftrag eingeht.
 
 Die [Produktseite für den Vertrieb](https://salesforce.com/manufacturing/cloud/sales) nennt, was die Funktion abdeckt: Marktgröße pro Hersteller und Programm, externe Bedarfsdaten mit IHS und Dodge als Beispielen, Margen und die Wirkung von Mengenänderungen auf die Fixkostenverteilung sowie Verbauraten und Preise für technische Änderungen. Das Beispiel bei Trailhead ist ein Fahrzeugprogramm, das Modell passt aber zu jedem Zulieferer, dessen Teile in Serienprodukte einiger weniger Großkunden gehen.
 
@@ -54,7 +54,7 @@ Diesen Datensatz würde ich zuerst klären. Menge pro Einheit und Vorlaufzeit st
 
 ## Programm- und Variantenzahlen kommen aus Dateien
 
-Account Manager importieren Programm- und Variantenprognosen als CSV-Dateien in die beiden Prognoseobjekte, mit „Add and Update Records“. Abgeglichen wird über das Feld ExternalReferenceNumber; die nächste Datei aktualisiert also bestehende Prognosen, statt sie zu verdoppeln. Im Trailhead-Beispiel kommen die Daten von IHS Markit und werden vor dem Import bereinigt.
+Account Manager importieren Programm- und Variantenprognosen als CSV-Dateien in die beiden Prognoseobjekte, mit „Add and Update Records“. Abgeglichen wird über das Feld ExternalReferenceNumber; die nächste Datei aktualisiert also bestehende Prognosen, statt sie zu verdoppeln. Im Trailhead-Beispiel stammen die Daten von IHS Markit und werden vor dem Import bereinigt.
 
 Danach werden die Prognosen von Menschen angepasst. Forecast Sets legen Anpassungszeiträume fest: Im Beispiel dürfen Account Manager in den ersten fünf Tagen jedes Monats ändern, Konstruktionsleiter in den fünf Tagen danach. Jede Änderung wird zusammen mit einer Notiz festgehalten. Erfährt ein Account Manager vom Einkauf des OEM, dass sich eine Variante besser verkauft als die Marktdaten sagen, kann er die Zahl erhöhen, und der Grund bleibt sichtbar.
 
@@ -64,7 +64,7 @@ Komponentenprognosen werden laut [Trailhead](https://trailhead.salesforce.com/co
 
 - **Generate Program Component Forecast** für den ersten Lauf eines Programms oder wenn sich Programm- und Variantenprognosen ändern.
 - **Recalculate Program Component Forecast** (Trailhead sagt noch "Calculate") rechnet neu, wenn Komponenten dazukommen oder wegfallen oder sich Product-Related-Material-Datensätze ändern.
-- **Rollover Program Component Forecast** läuft zum Monatsende: Die erste Periode läuft ab, eine neue kommt dazu.
+- **Rollover Program Component Forecast** läuft zum Monatsende: Die erste Periode läuft ab, eine neue wird angehängt.
 - **Regenerate Program Component Forecast** nach Änderungen an Forecast Sets, Dimensionen oder Periodengruppen; bestehende Datensätze laufen ab, neue entstehen.
 
 Admins klonen die Vorlagen und passen sie an; geplante Flows starten die Vorlagen, im Beispiel wöchentlich. Die Engine liest Programme, Variantenprognosen, Product Related Material, Produkte, Preisbucheinträge und Perioden und schreibt prognostizierte Menge und Umsatz pro Komponente und Periode.
@@ -92,7 +92,7 @@ Opportunity --gewonnen--> Sales Agreement
 ERP ..Ist-Mengen..> Sales Agreement
 ```
 
-Einen Freigabestatus für die Prognose beschreibt Trailhead nicht. Sie müssen selbst festlegen, wer eine Komponentenprognose wann für abgeschlossen erklärt. Der Sales-Planning-Agent hat einen dokumentierten Subagenten, der Programmkomponentenprognosen in Opportunities umwandelt, beschrieben in [was der Sales-Planning-Agent wirklich tut](../agentforce-vertriebsplanung-rahmenvertraege/). Laufen lassen würde ich ihn erst, wenn dieser Freigabeschritt existiert.
+Einen Freigabestatus für die Prognose beschreibt Trailhead nicht. Sie müssen selbst festlegen, wer eine Komponentenprognose wann für abgeschlossen erklärt. Der Sales-Planning-Agent hat einen dokumentierten Subagenten, der Programmkomponentenprognosen in Opportunities umwandelt, beschrieben in [was der Sales-Planning-Agent wirklich tut](../agentforce-vertriebsplanung-rahmenvertraege/). Einsetzen würde ich ihn erst, wenn dieser Freigabeschritt existiert.
 
 ## Was brauchen Sie, bevor Sie anfangen?
 
@@ -105,7 +105,7 @@ Einen Freigabestatus für die Prognose beschreibt Trailhead nicht. Sie müssen s
 
 Angenommen, ein Hersteller von Hydraulikzylindern liefert Teile für 12 Programme von vier Landmaschinen-OEMs. Jedes Programm hat etwa vier Varianten, jede Variante nutzt etwa zehn Teile des Zulieferers, gefertigt in zwei Werken. Heute führt jeder Key Account Manager eine Tabelle pro OEM.
 
-Bei 24 Monatsperioden sind das unter diesen vereinfachten Annahmen etwa 12 x 4 x 10 x 2 x 24 = 23.040 Komponentenprognose-Datensätze und damit weit weniger als die empfohlenen Mengen. Einzeln prüft die niemand; das Team arbeitet gefilterte Abweichungen ab. Der Nutzen liegt an drei Stellen: eine Rechenlogik statt zwölf Tabellen, Anpassungen mit Begründung und Opportunities, die aus der Prognose entstehen, statt neu abgetippt zu werden. Der Aufwand steckt in den Daten: Vorlaufzeiten und Mengen pro Einheit müssen aus der Konstruktion kommen, und Marktdaten zu Landmaschinenprogrammen müssen gekauft oder gesammelt werden.
+Bei 24 Monatsperioden sind das unter diesen vereinfachten Annahmen etwa 12 x 4 x 10 x 2 x 24 = 23.040 Komponentenprognose-Datensätze und damit weit weniger als die empfohlenen Mengen. Einzeln prüft die niemand; das Team arbeitet gefilterte Abweichungen ab. Der Nutzen liegt an drei Stellen: eine Rechenlogik statt zwölf Tabellen, Anpassungen mit Begründung und Opportunities, die aus der Prognose entstehen, statt neu abgetippt zu werden. Der Aufwand steckt in den Daten: Vorlaufzeiten und Mengen pro Einheit müssen aus der Konstruktion stammen, und Marktdaten zu Landmaschinenprogrammen müssen gekauft oder gesammelt werden.
 
 ## Wann ist das Programmgeschäft zu viel?
 

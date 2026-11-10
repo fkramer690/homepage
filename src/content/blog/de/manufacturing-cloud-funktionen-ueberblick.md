@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Die Salesforce Manufacturing Cloud enthält drei Gruppen von Funktionen: Sales Agreements, Prognosen, Programme, Ziele und Besuche für den Vertrieb, Garantie und zwei Konsolen für den Service sowie Partnerfunktionen für den Händlerkanal. Die zentralen Vertriebs- und Partnerfunktionen werden einzeln eingeschaltet. Der Satz „Wir haben die Manufacturing Cloud“ sagt deshalb wenig darüber, was tatsächlich läuft. Einige Funktionen, die Salesforce direkt daneben aufführt, werden extra verkauft, darunter Boni, Ship and Debit, Rückrufkampagnen und Connected Assets. Bevor ein Angebot unterschrieben wird, sollte jede Funktion, von der der Business Case abhängt, darin stehen, zusammen mit der Lizenz, die sie abdeckt.
+Die Salesforce Manufacturing Cloud enthält drei Gruppen von Funktionen: Sales Agreements, Prognosen, Programme, Ziele und Besuche für den Vertrieb, Garantie und zwei Konsolen für den Service sowie Partnerfunktionen für den Händlerkanal. Die zentralen Vertriebs- und Partnerfunktionen werden einzeln eingeschaltet. Der Satz „Wir haben die Manufacturing Cloud“ sagt deshalb wenig darüber, was tatsächlich im Einsatz ist. Einige Funktionen, die Salesforce direkt daneben aufführt, werden extra verkauft, darunter Boni, Ship and Debit, Rückrufkampagnen und Connected Assets. Bevor ein Angebot unterschrieben wird, sollte jede Funktion, von der der Business Case abhängt, darin stehen, zusammen mit der Lizenz, die sie abdeckt.
 
 ## Was enthält die Manufacturing Cloud für den Vertrieb?
 
@@ -101,7 +101,7 @@ In jedem Hersteller-Workshop würde ich deshalb dieselbe Frage stellen: Welcher 
 
 ## Rechenbeispiel: Angebot für einen Hydraulikhersteller
 
-Angenommen, ein Hersteller von Hydraulikkomponenten bekommt ein Angebot über 120 Nutzer für Sales Core und 40 Nutzer für Service Core. Der Business Case nennt sechs Punkte: Sales Agreements mit Händlern, Ziele pro Account Manager, quartalsweise Besuche bei 60 Händlern, Garantieansprüche von Händlern über ein Portal, Preisschutz für Distributoren und einen Agenten für Fragen zu Rahmenverträgen.
+Angenommen, ein Hersteller von Hydraulikkomponenten erhält ein Angebot über 120 Nutzer für Sales Core und 40 Nutzer für Service Core. Der Business Case nennt sechs Punkte: Sales Agreements mit Händlern, Ziele pro Account Manager, quartalsweise Besuche bei 60 Händlern, Garantieansprüche von Händlern über ein Portal, Preisschutz für Distributoren und einen Agenten für Fragen zu Rahmenverträgen.
 
 Abgeglichen mit den Funktionslisten:
 
@@ -111,12 +111,12 @@ Abgeglichen mit den Funktionslisten:
 4. **Preisschutz:** Channel Revenue Management, 30.000 $ pro Org und Jahr.
 5. **Agent:** Add-on Agentforce for Manufacturing für 150 $ pro Nutzer und Monat für Core-Nutzer oder eine Max-Edition.
 
-Nur zwei der sechs Punkte sind mit der Edition klar abgedeckt, die Händlerbesuche sehr wahrscheinlich ebenfalls. Garantie, Preisschutz und Agent brauchen jeweils eine eigene Zeile, und die Experience-Cloud-Lizenzen der Händler kommen dazu.
+Nur zwei der sechs Punkte sind mit der Edition klar abgedeckt, die Händlerbesuche sehr wahrscheinlich ebenfalls. Garantie, Preisschutz und Agent brauchen jeweils eine eigene Zeile, und hinzu kommen die Experience-Cloud-Lizenzen der Händler.
 
 ## Was sollte im Angebot ausdrücklich stehen?
 
 1. **Jede Funktion aus dem Business Case mit Namen**, mit der Edition oder dem Add-on, das sie abdeckt.
-2. **Vertrieb oder Service pro Nutzergruppe**, damit Garantiesachbearbeiter nicht auf Sales Core landen.
+2. **Vertrieb oder Service pro Nutzergruppe**, damit Garantiesachbearbeiter nicht Sales Core zugeordnet werden.
 3. **Kanalfunktionen:** Für Rebate Management, Partner Visit und Partner Performance Management festhalten, ob die Edition sie enthält oder Channel Revenue Management nötig ist.
 4. **Portallizenzen** pro externer Nutzergruppe.
 5. **Agentforce:** Add-on oder Max, und die Einheit, in der abgerechnet wird.

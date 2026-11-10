@@ -28,7 +28,7 @@ faq:
 draft: false
 ---
 
-Bei Produkten, die Assets erzeugen sollen, legt Revenue Cloud für das Gekaufte ein Asset am Kundenkonto an, sobald der Auftrag verarbeitet ist, meist bei dessen Aktivierung. Im Standardablauf laufen alle späteren Nachträge, Verlängerungen und Kündigungen über ein neues Angebot und einen neuen Auftrag auf dieses Asset. Salesforce erfasst jede Änderung als Asset Action und hält Menge, Betrag und monatlich wiederkehrenden Umsatz je Zeitraum in Asset State Periods fest. Field Service nutzt dasselbe Asset-Objekt für die installierte Maschine mit Seriennummer. Den meisten Maschinenbauern empfehle ich zwei Arten von Asset-Datensätzen, einen für das Verkaufte und einen für die physische Maschine, mit einer festgelegten Verknüpfung.
+Bei Produkten, die Assets erzeugen sollen, legt Revenue Cloud für das Gekaufte ein Asset am Kundenkonto an, sobald der Auftrag verarbeitet ist, meist bei dessen Aktivierung. Im Standardablauf durchlaufen alle späteren Nachträge, Verlängerungen und Kündigungen ein neues Angebot und einen neuen Auftrag auf dieses Asset. Salesforce erfasst jede Änderung als Asset Action und hält Menge, Betrag und monatlich wiederkehrenden Umsatz je Zeitraum in Asset State Periods fest. Field Service nutzt dasselbe Asset-Objekt für die installierte Maschine mit Seriennummer. Den meisten Maschinenbauern empfehle ich zwei Arten von Asset-Datensätzen, einen für das Verkaufte und einen für die physische Maschine, mit einer festgelegten Verknüpfung.
 
 ## Wie entstehen Assets in Revenue Cloud?
 

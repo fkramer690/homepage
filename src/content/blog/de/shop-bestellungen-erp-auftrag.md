@@ -46,7 +46,7 @@ Die [Salesforce-Hilfe zu den Lifecycle-Typen](https://help.salesforce.com/s/arti
 Welcher Typ beim Checkout gesetzt wird, hängt vom Store ab. Laut einem [Salesforce-Knowledge-Artikel](https://help.salesforce.com/s/articleView?id=000395308&type=1) legen LWR-Stores managed Order Summaries an. Stellen Sie den WebStore über das Feld `OrderLifeCycleType` auf unmanaged um, bevor der erste echte Auftrag entsteht. Prüfen Sie den Wert in Ihrem Store, statt sich auf einen Standard zu verlassen.
 ```
 
-Dieses eine Feld beantwortet die Frage im Titel, zumindest technisch. Die organisatorische Antwort muss vorher kommen.
+Dieses eine Feld beantwortet die Frage im Titel, zumindest technisch. Die organisatorische Antwort muss vorher feststehen.
 
 Zum Namen: Salesforce vermarktet B2B Commerce inzwischen auch als "Agentforce Commerce for B2B". Am Auftragsmodell ändert das nichts.
 
@@ -76,7 +76,7 @@ Was Lite gegenüber der vollen Version weglässt, schlüsselt die Preisseite nic
 
 Ich sehe in der Fertigung drei Gründe.
 
-**Die meisten Aufträge kommen nicht über den Shop.** Telefon, E-Mail, EDI und Außendienst landen heute in SAP und werden es noch jahrelang tun. Würde Salesforce Order Management nur die Shop-Aufträge führen, müsste der Innendienst in zwei Systemen arbeiten. Sollen alle Aufträge in Salesforce Order Management hinein, braucht es die separate Lizenz und eine Umstellung der Auftragsprozesse, die sich für ein Shop-Projekt selten rechnet.
+**Die meisten Aufträge gehen nicht über den Shop ein.** Aufträge per Telefon, E-Mail, EDI und Außendienst werden heute in SAP erfasst und werden es noch jahrelang tun. Würde Salesforce Order Management nur die Shop-Aufträge führen, müsste der Innendienst in zwei Systemen arbeiten. Sollen alle Aufträge in Salesforce Order Management hinein, braucht es die separate Lizenz und eine Umstellung der Auftragsprozesse, die sich für ein Shop-Projekt selten rechnet.
 
 **Die Abwicklung liegt in SAP.** Verfügbarkeitsprüfung, Lieferung, Kommissionierung, Warenausgang und Fakturierung sind dort eingerichtet, oft mit jahrelang gewachsener kundenspezifischer Logik. Das in Salesforce nachzubauen, ist ein eigenes Programm.
 

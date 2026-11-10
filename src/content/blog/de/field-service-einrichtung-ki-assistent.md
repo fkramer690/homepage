@@ -30,7 +30,7 @@ Bei der Headless-Einrichtung von Field Service liest ein KI-Assistent wie Gemini
 
 ## Was heißt Headless-Einrichtung bei Field Service?
 
-Salesforce nennt das Produkt jetzt Agentforce Field Service and Operations, verwendet in der Dokumentation aber weiterhin Field Service als Kurzform. Im April 2026 hat Salesforce [Headless 360 vorgestellt](https://www.salesforce.com/news/?p=93116): Funktionen der Plattform stehen als API, als MCP-Tool oder als CLI-Befehl bereit, damit Menschen und KI-Agenten mit Salesforce arbeiten können, ohne die Browseroberfläche zu öffnen. MCP, das Model Context Protocol, ist der offene Standard, über den ein KI-Werkzeug Funktionen in einem anderen System aufruft. Wo es in einer Salesforce-Architektur sitzt, beschreibt das Masterclass-Kapitel [MCP und Salesforce-Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
+Salesforce nennt das Produkt jetzt Agentforce Field Service and Operations, verwendet in der Dokumentation aber weiterhin Field Service als Kurzform. Im April 2026 hat Salesforce [Headless 360 vorgestellt](https://www.salesforce.com/news/?p=93116): Funktionen der Plattform stehen als API, als MCP-Tool oder als CLI-Befehl bereit, damit Menschen und KI-Agenten mit Salesforce arbeiten können, ohne die Browseroberfläche zu öffnen. MCP, das Model Context Protocol, ist der offene Standard, über den ein KI-Werkzeug Funktionen in einem anderen System aufruft. Wo es in einer Salesforce-Architektur steht, beschreibt das Masterclass-Kapitel [MCP und Salesforce-Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
 Die [Trailhead-Einheit zur Headless-Einrichtung von Field Service](https://trailhead.salesforce.com/content/learn/modules/headless-360-use-cases-in-action/set-up-field-service-headlessly) wendet das auf Field Service an. Sie nennt drei Stufen von Headless Skills:
 
@@ -98,7 +98,7 @@ Angenommen, ein Maschinenbauer hat 45 Techniker in Deutschland, Österreich und 
 
 **Der Vorschlag.** In einer zweistündigen Sitzung schlägt der Assistent 14 Gebiete vor, eins pro Standort, 22 Arbeitstypen aus den Produktseiten und eine Scheduling Policy auf Basis von Customer First.
 
-**Der Schnitt.** Die Serviceleitung reduziert den Vorschlag auf 6 Gebiete, orientiert an den drei Depots und den Fahrzeiten, mit je 6 bis 10 Technikern. Vier Standorte sind reine Vertriebsbüros ohne Techniker. Die Arbeitstypen schrumpfen auf 9, mit Dauern aus den Serviceaufträgen des Vorjahrs im ERP. Die Skills kommen über eine Schnittstelle aus der Schulungsmatrix, niemand tippt sie ein.
+**Der Schnitt.** Die Serviceleitung reduziert den Vorschlag auf 6 Gebiete, orientiert an den drei Depots und den Fahrzeiten, mit je 6 bis 10 Technikern. Vier Standorte sind reine Vertriebsbüros ohne Techniker. Die Arbeitstypen schrumpfen auf 9, mit Dauern aus den Serviceaufträgen des Vorjahrs im ERP. Die Skills werden über eine Schnittstelle aus der Schulungsmatrix übernommen, niemand tippt sie ein.
 
 **Die Vertagung.** Die mobilen Formulare werden erst umgesetzt, wenn das Datenmodell für Prüfprotokolle abgestimmt ist und der Betriebsrat die Spracheingabe geprüft hat.
 

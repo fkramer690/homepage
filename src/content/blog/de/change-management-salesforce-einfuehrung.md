@@ -39,7 +39,7 @@ Das Deployment der Metadaten ist oft der kürzeste Teil eines Releases. Was davo
 - **Betroffene erfahren zu spät davon.** Wer eine Änderung erst in der Produktivumgebung sieht, sucht nach einer Möglichkeit, sie zu umgehen.
 - **Niemand erklärt, wozu die Änderung dient.** Ein Vertriebsteam pflegt Opportunities, weil es muss, und weiß nicht, dass die Absatzplanung darauf aufbaut.
 - **Es fehlt der Rückhalt im Management.** Ohne Entscheidungen von oben bleiben neue Regeln eine Empfehlung.
-- **Es gibt keine strukturierte Rückkopplung.** Probleme aus dem Alltag landen in E-Mails und nicht im Backlog.
+- **Es gibt keine strukturierte Rückkopplung.** Probleme aus dem Alltag werden per E-Mail gemeldet und nicht im Backlog erfasst.
 
 Niedrige Akzeptanz kann auch auf echte Probleme in der Lösung hinweisen: zusätzliche Tipparbeit, irrelevante Pflichtfelder, schlechte mobile Nutzbarkeit oder fehlende Integrationen. Diese Probleme müssen behoben werden, statt mehr zu kommunizieren.
 
@@ -65,7 +65,7 @@ Das [ADKAR-Modell](https://www.prosci.com/blog/adkar-model) beschreibt fünf Ele
 
 Diese Zeichen sind Hypothesen, keine Diagnosen. Punkte in Pflichtfeldern können auch auf ein schlecht gestaltetes Feld hinweisen. Prüfen Sie das mit den betroffenen Nutzern. Der Nutzen liegt in der Diagnose. Statt bei niedriger Nutzung die nächste Schulung anzusetzen, fragen wir für jede betroffene Gruppe, welches Element fehlt. Wenn der Vertrieb nicht weiß, wofür gepflegte Opportunities gebraucht werden, fehlt Awareness, und das muss der Vertriebsleiter erklären, nicht der Trainer.
 
-Die Rolle des Sponsors verdient einen eigenen Absatz, weil sie in Salesforce-Programmen besonders häufig fehlt. Gemeint ist eine Person aus dem Management, die sichtbar hinter der Einführung steht: Sie erklärt im Vertriebsmeeting, warum Prognosen künftig aus Salesforce kommen, entscheidet, wenn zwei Bereiche sich nicht einigen, und fragt im Monatsbericht nach der Nutzung. Ich erstelle deshalb einen Plan für den Sponsor, der festlegt, wann das Management mit welchen sichtbaren Maßnahmen auftritt. Ohne diesen Plan wird aus „das Management steht dahinter“ eine Zeile auf der ersten Folie.
+Die Rolle des Sponsors verdient einen eigenen Absatz, weil sie in Salesforce-Programmen besonders häufig fehlt. Gemeint ist eine Person aus dem Management, die sichtbar hinter der Einführung steht: Sie erklärt im Vertriebsmeeting, warum Prognosen künftig aus Salesforce stammen, entscheidet, wenn zwei Bereiche sich nicht einigen, und fragt im Monatsbericht nach der Nutzung. Ich erstelle deshalb einen Plan für den Sponsor, der festlegt, wann das Management mit welchen sichtbaren Maßnahmen auftritt. Ohne diesen Plan wird aus „das Management steht dahinter“ eine Zeile auf der ersten Folie.
 
 Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Das Vorgehen habe ich gemeinsam mit meiner Kooperationspartnerin für Change Management, [Juliane Winterscheid](../../partner/juliane-winterscheid/), auf Salesforce-Programme übertragen.
 
@@ -88,7 +88,7 @@ Die allgemeinen Werkzeuge dahinter erklärt Juliane Winterscheid in eigenen Grun
 
 ## Change Management läuft in drei Phasen neben der Umsetzung
 
-Prosci gliedert die Arbeit auf Ebene der Organisation in drei Phasen, den [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). In einem Salesforce-Programm laufen sie neben dem Release-Plan:
+Prosci gliedert die Arbeit auf Ebene der Organisation in drei Phasen, den [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). In einem Salesforce-Programm verlaufen sie parallel zum Release-Plan:
 
 ```schritte
 Vorgehen vorbereiten | vor dem ersten Release · Kunde mit Sponsor

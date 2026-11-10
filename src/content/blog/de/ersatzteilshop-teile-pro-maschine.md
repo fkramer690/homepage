@@ -19,7 +19,7 @@ faq:
   - q: "Können Entitlements in B2B Commerce Teile nach Seriennummer einschränken?"
     a: "Nein. Entitlement Policies geben Käufergruppen Zugriff auf Produkte. Eine Seriennummer gehört zu einer installierten Maschine, meist einem Asset-Datensatz, und in der Dokumentation zu B2B Commerce habe ich keine Standardverbindung zwischen Assets und Entitlements gefunden."
   - q: "Was ist eine Maschinenseite in einem Ersatzteilshop?"
-    a: "Das ist eine eigene Seite im Store, die die auf das Händlerkonto registrierten Maschinen und zu jeder Maschine die passenden Ersatzteile zeigt. Die Teileliste kommt aus Asset-Datensätzen oder live aus dem PLM, und der Händler legt die Teile von dort in den Warenkorb."
+    a: "Das ist eine eigene Seite im Store, die die auf das Händlerkonto registrierten Maschinen und zu jeder Maschine die passenden Ersatzteile zeigt. Die Teileliste stammt aus Asset-Datensätzen oder live aus dem PLM, und der Händler legt die Teile von dort in den Warenkorb."
   - q: "Was sind Commerce Endpoint Extensions?"
     a: "Das sind Apex-Klassen, die die Anfrage oder die Antwort eines einzelnen Commerce-Connect-API-Endpunkts ändern, zum Beispiel bei der Produktsuche. Salesforce nennt unter anderem Commerce_Endpoint_Search_Products, Commerce_Endpoint_Search_ProductSearch, Commerce_Endpoint_Catalog_Product und Commerce_Endpoint_Catalog_Products. Das Standardverhalten des Endpunkts ersetzen sie nicht."
   - q: "Können Händler im Experience-Cloud-Store Assets sehen?"
@@ -62,12 +62,12 @@ Die dritte Quelle vergessen Projekte gern. Ein laut PLM verbautes Teil kann bere
 
 Mit der Maschinenseite würde ich anfangen. Eine Lightning-Web-Komponente auf einer eigenen Store-Seite listet die Assets des Kontos, zu dem der angemeldete Käufer gehört. Der Händler wählt eine Maschine, sieht ihre Hauptbaugruppen und die ersatzteilrelevanten Positionen und legt Teile in den Warenkorb. LWR-Stores, die Salesforce für neue Stores empfiehlt, unterstützen laut [LWR-Migrationsleitfaden](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/key-differences.html) nur Lightning Web Components. Deshalb wird die Komponente von Anfang an als Lightning Web Component entwickelt.
 
-Woher die Teileliste kommt, bestimmt den Aufwand:
+Woher die Teileliste stammt, bestimmt den Aufwand:
 
 - **Aus Salesforce.** Ersatzteilrelevante Positionen liegen pro Asset oder pro Maschinentyp vor, etwa als untergeordnete Assets oder in einem eigenen Objekt. Schnell und einfach, aber jede Position ist ein Datensatz, der geladen und mit dem PLM synchron gehalten werden muss.
 - **Live aus dem PLM.** Die Komponente ruft eine Apex-Methode auf, die für die Seriennummer eine Teile-API im PLM oder in der Middleware abfragt. Keine replizierte Kopie in Salesforce, aber das PLM muss innerhalb der Zeit antworten, die ein Händler beim Laden einer Seite akzeptiert, und die Seite braucht eine klare Meldung, wenn das PLM nicht rechtzeitig antwortet.
 
-In beiden Fällen liefert die Komponente nur Teilenummern. Jede davon muss einem Store-Produkt zugeordnet werden. Ob der Händler es kaufen darf und zu welchem Preis, muss im Kontext des Käufers aus den Standard-APIs von Commerce für Produkte und Preise kommen. Eine eigene Apex-Methode, die rohe Produktdaten liefert, würde Entitlements umgehen. Nennt das PLM ein Teil, für das die Käufergruppe des Händlers nicht freigeschaltet ist, sollte es als "auf Anfrage" erscheinen, statt kommentarlos zu verschwinden.
+In beiden Fällen liefert die Komponente nur Teilenummern. Jede davon muss einem Store-Produkt zugeordnet werden. Ob der Händler es kaufen darf und zu welchem Preis, muss im Kontext des Käufers aus den Standard-APIs von Commerce für Produkte und Preise stammen. Eine eigene Apex-Methode, die rohe Produktdaten liefert, würde Entitlements umgehen. Nennt das PLM ein Teil, für das die Käufergruppe des Händlers nicht freigeschaltet ist, sollte es als "auf Anfrage" erscheinen, statt kommentarlos zu verschwinden.
 
 Der Vorteil der Maschinenseite: Sie ändert die Standardsuche und die Produktseiten nicht und bleibt dadurch weniger an deren Verhalten gekoppelt. Der Nachteil: Wer eine Teilenummer ins Suchfeld tippt, sieht weiterhin jedes Teil, das seine Käufergruppe kaufen darf, ob es passt oder nicht.
 
@@ -85,7 +85,7 @@ Ein Mittelweg kommt ohne Extensions aus: Die Maschinenseite wendet einen Suchfil
 
 ## Wer darf welche Maschine sehen?
 
-Diese Regel würde ich nie lockern: Der Händler sieht nur Maschinen, die auf sein eigenes Konto registriert sind. Egal ob die Seriennummer aus einer Liste oder einem Textfeld kommt: Der Server löst sie zum Asset auf und prüft sie gegen die Assets, die für das Käuferkonto freigegeben sind, bevor er das PLM aufruft. Eine Auswahl allein im Browser lässt sich manipulieren, und dann liest ein Händler die Konfiguration einer Maschine, die ein anderer Händler verkauft hat.
+Diese Regel würde ich nie lockern: Der Händler sieht nur Maschinen, die auf sein eigenes Konto registriert sind. Egal ob die Seriennummer aus einer Liste oder einem Textfeld stammt: Der Server löst sie zum Asset auf und prüft sie gegen die Assets, die für das Käuferkonto freigegeben sind, bevor er das PLM aufruft. Eine Auswahl allein im Browser lässt sich manipulieren, und dann liest ein Händler die Konfiguration einer Maschine, die ein anderer Händler verkauft hat.
 
 Auf der Lizenzseite nennt die [Salesforce-Hilfe zu Experience-Cloud-Lizenzen](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) unter anderem Lese-, Anlage- und Bearbeitungsrechte auf Assets für Customer Community Plus und Partner Community. Welche Assets ein Käufer tatsächlich sieht, ist eine Frage der Freigabe. Praktisch heißt das: Das Konto des Assets muss das Käuferkonto sein, oder die Händlerbeziehung muss so modelliert sein, dass die Freigabe ihr folgt. Maschinen, die über einen Händler verkauft, aber auf den Endkunden registriert sind, brauchen vor dem Go-live eine klare Regel. Welche Portallizenz in Manufacturing Cloud welche Funktionen abdeckt, steht im Beitrag zum [Kundenportal in Manufacturing Cloud](../manufacturing-cloud-kundenportal/).
 

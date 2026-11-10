@@ -88,7 +88,7 @@ Raw time series belong in the IoT platform or historian the machine builder alre
 
 ## When are maintenance plans the better choice?
 
-Much of the value promised under "predictive" comes from two simpler things: no planned maintenance gets missed, and intervals follow real usage instead of the calendar. Field Service covers both without a prediction model.
+Much of the value promised under "predictive" comes from two simpler things: no planned maintenance is missed, and intervals follow real usage instead of the calendar. Field Service covers both without a prediction model.
 
 Maintenance plans generate the work orders, and maintenance work rules on the asset handle different intervals, as described in [modeling maintenance contracts](../salesforce-field-service-maintenance-contracts/). The product page adds plans around asset use and condition, with service scheduled when "an asset's temperature exceeds a set threshold". The data model has an [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm) that "stores asset attributes to track and analyze asset conditions". An operating hours counter written once a day from SAP, proALPHA or the IoT platform is often enough for usage-based intervals, as long as a day of delay is acceptable.
 
@@ -111,7 +111,7 @@ Assume a machine builder with SAP, Service Cloud and Field Service already live.
 3. **Booking by agent.** 250 visits a month at five actions each: 25,000 credits, about $125.
 4. **History first.** Coded fault codes become mandatory for dealers as part of the warranty process. In 2028 the builder counts again.
 
-Ingestion and agent actions come to about 34,000 credits, roughly $170 a month; data preparation, queries and prompts come on top. Connected Assets at $15,000 per org per month only pays off once the health score drives decisions that thresholds cannot.
+Ingestion and agent actions come to about 34,000 credits, roughly $170 a month; data preparation, queries and prompts are extra. Connected Assets at $15,000 per org per month only pays off once the health score drives decisions that thresholds cannot.
 
 ## Count corrective work orders per series
 

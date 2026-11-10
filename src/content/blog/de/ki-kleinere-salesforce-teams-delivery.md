@@ -12,7 +12,7 @@ tags: [KI-native Delivery, Programmsteuerung, Teamaufstellung, KI-Coding, Partne
 takeaways:
   - "Coding-Agenten entwerfen, bauen und testen, Menschen geben die Absicht vor, prüfen das Ergebnis und verantworten es."
   - "Bei McKinsey meldeten 79 Prozent der Befragten aus Organisationen mit dem größten Tempogewinn kleinere Teams, im Median sieben statt etwa zehn Personen."
-  - "Der Engpass wandert zum Hersteller: Jeder Pod braucht einen Fachexperten aus Service, Vertrieb oder After-Sales, der täglich laufende Software abnimmt."
+  - "Der Engpass verlagert sich zum Hersteller: Jeder Pod braucht einen Fachexperten aus Service, Vertrieb oder After-Sales, der täglich laufende Software abnimmt."
   - "Intent, prüfbare Akzeptanzkriterien und technischer Kontext ersetzen Lastenhefte; SAP-Schnittstellen, Freigabemodell und Preisregeln brauchen Spezifikationen."
   - "Jedes Artefakt hat einen benannten Verantwortlichen, und für Menschen- und Agentencode gelten dieselben Pipeline-Prüfungen."
 faq:
@@ -70,7 +70,7 @@ Ein guter Intent für eine Story im Händlerportal passt auf eine halbe Seite: H
 
 ### Statusrunden werden zu Demos
 
-Die tägliche Demo ersetzt das Standup und einen Teil des Statusberichts. Ein Lenkungsausschuss, der das Garantieantragsformular in der Sandbox laufen sieht, braucht weniger Ampelberichte. Für Budget, Risiken, Abhängigkeiten zwischen Partnern und Releaseplanung braucht er sie weiterhin. McKinsey nennt zweitägige Sprints als illustrativen Richtwert. Das würde ich nicht übernehmen, solange SAP-Transporte in festen Fenstern laufen; ein kurzer Zyklus in Salesforce mit einem Release-Rhythmus, der zum ERP passt, funktioniert besser.
+Die tägliche Demo ersetzt das Standup und einen Teil des Statusberichts. Ein Lenkungsausschuss, der das Garantieantragsformular in der Sandbox laufen sieht, braucht weniger Ampelberichte. Für Budget, Risiken, Abhängigkeiten zwischen Partnern und Releaseplanung braucht er sie weiterhin. McKinsey nennt zweitägige Sprints als illustrativen Richtwert. Das würde ich nicht übernehmen, solange SAP-Transporte in festen Fenstern erfolgen; ein kurzer Zyklus in Salesforce mit einem Release-Rhythmus, der zum ERP passt, funktioniert besser.
 
 ### Verantwortung muss aufgeschrieben werden
 

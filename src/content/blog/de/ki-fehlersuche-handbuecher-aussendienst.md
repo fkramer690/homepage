@@ -68,7 +68,7 @@ Salesforce Salesforce Knowledge verwaltet Versionen besser als eine Datei-Biblio
 Die Regeln, die ich festlegen würde:
 
 - **Eine gültige Fassung je Variante und Baustand.** Ein älterer Stand bleibt nur, solange Maschinen im Feld damit laufen, und dann mit eigenem Seriennummernbereich.
-- **Überholte Bulletins werden entfernt** oder wandern ins aktuelle Handbuch.
+- **Überholte Bulletins werden entfernt** oder werden ins aktuelle Handbuch übernommen.
 - **Eine verantwortliche Person je Produktlinie** im Service gibt Dokumentänderungen frei wie Stammdaten.
 
 ## Data Library oder erweitertes Data-360-Setup?
@@ -104,7 +104,7 @@ Die Bestandsaufnahme findet zwei bis vier Stände je Handbuch, 1.100 MB davon si
 
 Die Reihenfolge: diese Anlagen den Produkten zuordnen, die 1.100 MB mit Variantenschlüssel, Seriennummernbereich, Dokumentart und Sprache versehen, die 120 gültigen Bulletins mit Seriennummernfeldern nach Knowledge übernehmen und die 25 Standard-Wartungsanleitungen an ihre Work Types hängen.
 
-1.100 statt 3.000 MB mit dem Standard-Parser zu indexieren, kostet 165.000 statt 450.000 Credits pro vollem Lauf bei 150 Credits pro MB, bei [500 € pro 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) also 825 € statt 2.250 € vor Mengenstaffeln. Der größere Effekt zeigt sich im Test mit 50 echten Störfällen je Produktlinie, deren richtige Antworten bekannt sind, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben. Der Pilot läuft mit einer Data Library auf der Produktlinie mit den besten Dokumenten. Die zweite Produktlinie macht den Wechsel ins erweiterte Setup nötig.
+1.100 statt 3.000 MB mit dem Standard-Parser zu indexieren, kostet 165.000 statt 450.000 Credits pro vollem Lauf bei 150 Credits pro MB, bei [500 € pro 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) also 825 € statt 2.250 € vor Mengenstaffeln. Der größere Effekt zeigt sich im Test mit 50 echten Störfällen je Produktlinie, deren richtige Antworten bekannt sind, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben. Der Pilot startet mit einer Data Library auf der Produktlinie mit den besten Dokumenten. Die zweite Produktlinie macht den Wechsel ins erweiterte Setup nötig.
 
 ## Dokumente je Produktlinie zählen, bevor der Agent startet
 

@@ -30,7 +30,7 @@ faq:
 draft: false
 ---
 
-Über die Agentforce Agent API sprechen Ihre eigene Händler-App, Ihr Maschinenportal oder Ihre Service-App per REST mit einem Agentforce-Agenten. Ihr Backend holt ein Token über den Client Credentials Flow, öffnet eine Session, sendet Nachrichten und streamt die Antwort auf den Bildschirm. Schwierig wird es bei der Identität. Jeder Händler in Ihrer App kommt bei Salesforce unter derselben Identität an, die Salesforce-Freigaben halten Händler A also nicht mehr von den Aufträgen von Händler B fern. Ich würde das nur bauen, wenn Ihr Backend die Händler selbst anmeldet, deren Account als feste Variable übergibt und die Aktionen des Agenten danach filtern.
+Über die Agentforce Agent API sprechen Ihre eigene Händler-App, Ihr Maschinenportal oder Ihre Service-App per REST mit einem Agentforce-Agenten. Ihr Backend holt ein Token über den Client Credentials Flow, öffnet eine Session, sendet Nachrichten und streamt die Antwort auf den Bildschirm. Schwierig wird es bei der Identität. Jeder Händler in Ihrer App erscheint bei Salesforce unter derselben Identität, die Salesforce-Freigaben halten Händler A also nicht mehr von den Aufträgen von Händler B fern. Ich würde das nur bauen, wenn Ihr Backend die Händler selbst anmeldet, deren Account als feste Variable übergibt und die Aktionen des Agenten danach filtern.
 
 ## Was leistet die Agent API?
 
@@ -57,7 +57,7 @@ Diese Frage würde ich klären, bevor jemand Code schreibt. Mit Client Credentia
 
 Salesforces eigene Architekten warnen vor genau diesem Muster. In einem [Salesforce-Blogbeitrag vom 19. Mai 2026](https://www.salesforce.com/blog/headless-trust-model-agentic-architecture/) über Agenten, die Salesforce aufrufen, schreibt Miriam McCabe: „The client credentials flow would create a service account pattern where all calls run as one identity, losing per-user permissions and the audit trail.“ Der Beitrag behandelt MCP-Clients mit menschlichen Benutzern, die Agent-API-Anleitung schreibt Client Credentials vor. Sie sollten wissen, welchen Schutz Sie damit aufgeben.
 
-Sie geben die Freigaben als Grenze zwischen Händlern auf. Die Identität, unter der die Aktionen laufen, meist der Agent-User, braucht Lesezugriff auf Aufträge, Anlagen und Garantiefälle aller Händler, sonst kann der Agent niemandem antworten. Die Grenze wandert an zwei Stellen, die Ihnen gehören:
+Sie geben die Freigaben als Grenze zwischen Händlern auf. Die Identität, unter der die Aktionen laufen, meist der Agent-User, braucht Lesezugriff auf Aufträge, Anlagen und Garantiefälle aller Händler, sonst kann der Agent niemandem antworten. Die Grenze verlagert sich an zwei Stellen, die Sie verantworten:
 
 - **Ihr Backend.** Es meldet den Händler über Ihr eigenes Login an, ordnet ihn einer Salesforce-Account-ID zu und verwahrt das Client Secret. Das Secret gehört nie in eine mobile App oder einen Browser.
 - **Die Aktionen des Agenten.** Das Backend übergibt die Account-ID beim Session-Start. Laut [Leitfaden zu Agent-API-Variablen](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-variables.html) sind viele Variablen schreibgeschützt und nur beim Start setzbar, und eine Variable muss das Setzen per API ausdrücklich erlauben. Binden Sie diese Variable an den Account-Eingabeparameter jeder Aktion, ob Flow oder Apex-Klasse, damit das Modell diesen Parameter nicht selbst füllt, und lassen Sie die Aktion den Filter noch einmal durchsetzen. Dann entscheidet das Sprachmodell nie, welchen Account eine Abfrage nutzt.
@@ -66,7 +66,7 @@ Beim zweiten Punkt zahlen sich [Agent Script und feste Regeln](../agent-script-r
 
 Für die Nachvollziehbarkeit gilt dasselbe. Salesforce sieht den Agent-User oder den Token-User und weiß nicht, welcher Händler gefragt hat. Der Session-Start nimmt einen `externalSessionKey` entgegen, eine UUID, mit der sich laut Anleitung das Gespräch in den Event Logs des Agenten nachverfolgen lässt. Ich würde diesen Schlüssel im Log Ihrer App neben die User-ID des Händlers schreiben. So lässt sich eine Frage Ihres Datenschutzbeauftragten von beiden Seiten beantworten.
 
-Technisch passt die [Salesforce Integration User Lizenz](https://help.salesforce.com/s/articleView?language=en_US&id=platform.integration_user.htm&type=5) mit ihrem API-Only-Profil zum Run-As-User. Salesforce sieht sie für Integrationen von System zu System vor. Ob sie für eine App genutzt werden darf, deren Fragen von Händlern kommen, ist eine Vertragsfrage; lassen Sie sich das in der Order Form bestätigen. Eine External Client App und ein Run-As-User pro externer App halten den möglichen Schaden klein; Token- und IP-Kontrollen stehen in [Connected Apps und OAuth für KI-Integrationen](../connected-apps-oauth-ki-integrationen/).
+Technisch passt die [Salesforce Integration User Lizenz](https://help.salesforce.com/s/articleView?language=en_US&id=platform.integration_user.htm&type=5) mit ihrem API-Only-Profil zum Run-As-User. Salesforce sieht sie für Integrationen von System zu System vor. Ob sie für eine App genutzt werden darf, deren Fragen von Händlern stammen, ist eine Vertragsfrage; lassen Sie sich das in der Order Form bestätigen. Eine External Client App und ein Run-As-User pro externer App halten den möglichen Schaden klein; Token- und IP-Kontrollen stehen in [Connected Apps und OAuth für KI-Integrationen](../connected-apps-oauth-ki-integrationen/).
 
 ## Agent API, Chat-Kanal und Hosted MCP im Vergleich
 
@@ -86,7 +86,7 @@ Für Mitarbeitende beschreibt die [Hosted-MCP-Seite zu Agenten](https://develope
 
 Nehmen wir einen Maschinenbauer mit 250 Händlern, einer eigenen Händler-App für Aufträge und Ersatzteile und einem Portal, in dem Endkunden ihre installierten Maschinen sehen. Beide laufen auf dem eigenen Backend mit eigenem Login. Alle Zahlen sind Annahmen.
 
-Die Händler-App bekommt einen Agenten für Auftragsstatus und offene Garantiefälle, das Maschinenportal einen für die Frage „Welches Ersatzteilset passt zu meiner Maschine?“. Das Backend übergibt die Account-ID des Händlers oder die Asset-IDs des Kunden, und die Aktionen fragen Daten nur innerhalb dieser IDs ab.
+Die Händler-App erhält einen Agenten für Auftragsstatus und offene Garantiefälle, das Maschinenportal einen für die Frage „Welches Ersatzteilset passt zu meiner Maschine?“. Das Backend übergibt die Account-ID des Händlers oder die Asset-IDs des Kunden, und die Aktionen fragen Daten nur innerhalb dieser IDs ab.
 
 Angenommen sind 5.000 Sessions im Monat mit je drei Aktionen. Bei [20 Flex Credits pro Aktion](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) sind das 300.000 Credits im Monat und 3,6 Millionen im Jahr. Zum Listenpreis von [500 € pro 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) kosten allein die Aktionen 1.500 € im Monat; Prompts und Data-360-Grounding können hinzukommen, je nachdem, wie der Agent gebaut ist. Schon die Händler-App allein übersteigt die 2,75 Millionen Flex Credits, die die [Max Edition](https://www.salesforce.com/service/pricing/) pro Org und Jahr enthält.
 

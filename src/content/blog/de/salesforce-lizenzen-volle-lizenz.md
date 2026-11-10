@@ -29,7 +29,7 @@ faq:
   - q: "Wann ist der beste Zeitpunkt, Salesforce-Lizenzen zu verhandeln?"
     a: "Das Geschäftsjahr von Salesforce endet am 31. Januar. Das kann den Zeitpunkt beeinflussen, die Konditionen sind aber kundenspezifisch. Roadmap-Produkte beziehe ich nur frühzeitig ein, wenn Startdaten und erwartete Nutzung den Gesamtvertrag günstiger machen."
   - q: "Wo kaufe ich Salesforce-Lizenzen?"
-    a: "In der Regel direkt bei Salesforce über den zuständigen Account Executive, kleinere Editionen auch online. Preis und Vertrag kommen von Salesforce. Welche Rolle welche Lizenz braucht, klären Sie auf Kundenseite mit Zuarbeit des Implementierungspartners."
+    a: "In der Regel direkt bei Salesforce über den zuständigen Account Executive, kleinere Editionen auch online. Preis und Vertrag stammen von Salesforce. Welche Rolle welche Lizenz braucht, klären Sie auf Kundenseite mit Zuarbeit des Implementierungspartners."
 draft: false
 ---
 
@@ -76,7 +76,7 @@ Ein Rechenbeispiel mit Listenpreisen: 100 Nutzer lesen Accounts und Kontakte und
 quelle: Salesforce-Preisseiten für Sales Cloud und Platform, Listenpreise Stand Oktober 2026
 ```
 
-Bei externen Nutzern ist der Fehler noch teurer. Für Händler oder Kunden, die mit internen Lizenzen arbeiten, weil ein Portal „später“ kommen sollte, fällt ein Vielfaches der Kosten einer Portallizenz an. Käufer, die in einem B2B-Shop bestellen, brauchen einen eigenen Lizenztyp, siehe [B2B Commerce Lizenzen für Käufer: Wer braucht welche?](../b2b-commerce-lizenzen-kaeufer/).
+Bei externen Nutzern ist der Fehler noch teurer. Für Händler oder Kunden, die mit internen Lizenzen arbeiten, weil ein Portal „später“ folgen sollte, fällt ein Vielfaches der Kosten einer Portallizenz an. Käufer, die in einem B2B-Shop bestellen, brauchen einen eigenen Lizenztyp, siehe [B2B Commerce Lizenzen für Käufer: Wer braucht welche?](../b2b-commerce-lizenzen-kaeufer/).
 
 ## Keine Opportunities, wenige Custom Objects: die Grenzen der Platform-Lizenz
 
@@ -100,7 +100,7 @@ Nutzer nach Tätigkeit gruppieren
 Objekte pro Gruppe festhalten
   Welche Objekte liest und bearbeitet die Gruppe? Daraus ergibt sich die kleinste Lizenz, die passt.
 Wachstum schätzen
-  Etwa neue Länder, neue Geschäftsbereiche oder ein Portal, das in zwei Jahren kommt.
+  Etwa neue Länder, neue Geschäftsbereiche oder ein Portal, das in zwei Jahren folgt.
 Gegen das Angebot legen
   Weicht das Angebot ab, gibt es eine Begründung oder einen Verhandlungspunkt.
 ```
@@ -115,10 +115,10 @@ Der Zeitpunkt zählt auch. Das [Geschäftsjahr von Salesforce](https://investor.
 
 Sparen um jeden Preis ist auch falsch. Eine volle Lizenz ist richtig, wenn ein Nutzer Leads, Opportunities oder Forecasts bearbeitet oder als Servicemitarbeiter Fälle bearbeitet, auch wenn er das nur gelegentlich tut. Sie ist auch richtig, wenn absehbar ist, dass eine Gruppe in einem Jahr mehr Funktionen braucht. Ein Lizenzwechsel mitten in der Vertragslaufzeit kostet Verhandlungszeit, und ein Prozess, der um eine zu kleine Lizenz herumgebaut wurde, kostet Wartung.
 
-Dieselbe Abwägung gilt bei Industry Clouds. Wann sich zum Beispiel die Manufacturing Cloud gegenüber Sales Cloud lohnt, ist eine eigene Make-or-buy-Frage, die ich unter [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/) beschreibe. Bei KI-Funktionen kommen je nach Produkt Kosten pro Nutzer oder verbrauchsabhängige Kosten dazu, und dort zählt zuerst der Nutzen, wie in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) beschrieben.
+Dieselbe Abwägung gilt bei Industry Clouds. Wann sich zum Beispiel die Manufacturing Cloud gegenüber Sales Cloud lohnt, ist eine eigene Make-or-buy-Frage, die ich unter [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/) beschreibe. Bei KI-Funktionen fallen je nach Produkt zusätzlich Kosten pro Nutzer oder verbrauchsabhängige Kosten an, und dort zählt zuerst der Nutzen, wie in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) beschrieben.
 
 ## Prüfen, wer im letzten Jahr an Opportunities oder Fällen gearbeitet hat
 
-Liegt eine Verlängerung oder ein neues Angebot an, beginnen Sie mit drei Fragen: Wie viele Nutzer mit voller Lizenz haben in den letzten zwölf Monaten an Opportunities oder Fällen gearbeitet? Welche externen Nutzer arbeiten heute mit internen Lizenzen? Welche Schnittstellen laufen über einen Benutzer mit voller Lizenz?
+Liegt eine Verlängerung oder ein neues Angebot an, beginnen Sie mit drei Fragen: Wie viele Nutzer mit voller Lizenz haben in den letzten zwölf Monaten an Opportunities oder Fällen gearbeitet? Welche externen Nutzer arbeiten heute mit internen Lizenzen? Welche Schnittstellen nutzen einen Benutzer mit voller Lizenz?
 
 Die Antworten zeigen, wie viel Spielraum im Angebot steckt. Als erster Anhaltspunkt hilft neben der Login-Historie ein Bericht über Opportunities und Fälle, gruppiert nach „Zuletzt geändert von“. Er zeigt nur den letzten Bearbeiter. Deshalb sind bei Lesern, Freigebern und saisonalen Nutzern Gespräche mit den Prozessverantwortlichen nötig, bevor jemand eine Lizenz ändert.

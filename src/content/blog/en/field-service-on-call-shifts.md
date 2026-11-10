@@ -33,7 +33,7 @@ On-call duty, weekend service and overtime are planned in Salesforce Field Servi
 
 Operating hours are the weekday time slots during which a service territory works. Technicians inherit them through their territory membership, unless the membership has its own operating hours. This is part of the master data that scheduling needs, as described in [what data scheduling needs](../salesforce-field-service-master-data/).
 
-Shifts cover what does not fit into this pattern. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/shift-creation-assignment/get-to-know-shifts) defines a shift as "any set of working hours that are not normal operating hours". It can come on top of operating hours, as with overtime, or overlap with them. Shift is a core Salesforce object, but the full function needs the Field Service managed package. Before the first shift, territories, service resources and operating hours have to be set up.
+Shifts cover what does not fit into this pattern. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/shift-creation-assignment/get-to-know-shifts) defines a shift as "any set of working hours that are not normal operating hours". It can be added to operating hours, as with overtime, or overlap with them. Shift is a core Salesforce object, but the full function needs the Field Service managed package. Before the first shift, territories, service resources and operating hours have to be set up.
 
 [Salesforce Help on shift availability](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_shifts_guidelines.htm&type=5) adds three rules that matter for on-call duty:
 
@@ -55,7 +55,7 @@ According to [Salesforce Help on creating shifts](https://help.salesforce.com/s/
 | Job Profile | With a Match Skills rule, only technicians with the profile's skills qualify for automatic assignment to the shift | Breakdown skills of the region |
 | Non-Standard | Marks evening or on-call shifts | Set, so shift scheduling rules can limit or balance them |
 
-The link between Extended shifts and overtime is in the scheduling policy. Help states that the Overtime field on the Service Resource Availability work rule controls whether appointments can be scheduled on Extended shifts. Appointments scheduled with a planned-maintenance policy that has Overtime switched off therefore never land on an on-call shift, while those scheduled with the emergency policy, with Overtime switched on, do. For shift designations and filter criteria to be applied, the policy also needs the Timeslot Designated work rule.
+The link between Extended shifts and overtime is in the scheduling policy. Help states that the Overtime field on the Service Resource Availability work rule controls whether appointments can be scheduled on Extended shifts. Appointments scheduled with a planned-maintenance policy that has Overtime switched off are therefore never assigned to an on-call shift, while those scheduled with the emergency policy, with Overtime switched on, do. For shift designations and filter criteria to be applied, the policy also needs the Timeslot Designated work rule.
 
 Shifts do not have to be created one by one. [Trailhead on templates and patterns](https://trailhead.salesforce.com/content/learn/modules/shift-creation-assignment/simplify-shift-creation-with-templates-and-patterns) shows shift templates that prefill fields, for example a template "Weekly on Call", and shift patterns that repeat templates over a length in days. Using New from Pattern, you choose a start date and an end date or a number of occurrences. If the service resource field is left blank, the shift can be assigned later, manually or by the scheduling tools.
 
@@ -98,7 +98,7 @@ The setup I would choose:
 2. **A pattern with a length of 7 days** and one entry on the Saturday. A template has no territory, and each New from Pattern run takes only one territory, so I run it once per region, each with 13 occurrences. That creates the shifts for a quarter, 39 in total.
 3. **Assignment** by the service manager per region, status Tentative until the procedure agreed with the works council is complete, then Confirmed.
 4. **Two policies.** Planned maintenance with Overtime off, breakdowns with Overtime on.
-5. **A test on a Saturday in the sandbox**: a breakdown work order with a premium entitlement must land on the on-call technician, a maintenance appointment must not. I would also test two breakdowns in a row and a night call-out followed by another job.
+5. **A test on a Saturday in the sandbox**: a breakdown work order with a premium entitlement must be assigned to the on-call technician, a maintenance appointment must not. I would also test two breakdowns in a row and a night call-out followed by another job.
 
 The 36-hour shift is scheduling availability, not 36 hours of permitted work. Define how call-outs, travel, maximum working time and rest periods reduce further availability. The data model is small. The effort lies in agreeing the rota and in keeping shifts confirmed every quarter.
 

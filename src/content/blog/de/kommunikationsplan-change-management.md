@@ -15,7 +15,7 @@ takeaways:
   - "Der Plan ist eine Tabelle und keine Strategie auf zwanzig Folien. Jede Zeile ist eine Nachricht an eine Gruppe."
   - "Laut Prosci wollen Menschen die Gründe von der Unternehmensleitung hören und von ihrer Führungskraft erfahren, was die Veränderung für sie bedeutet."
   - "Prosci empfiehlt, Kernbotschaften fünf- bis siebenmal zu wiederholen. Eine einzige Rundmail zur Ankündigung reicht nicht."
-  - "Grundlage des Plans ist die Stakeholder-Analyse: Jede stark betroffene Gruppe bekommt eigene Botschaften und einen eigenen Absender."
+  - "Grundlage des Plans ist die Stakeholder-Analyse: Jede stark betroffene Gruppe erhält eigene Botschaften und einen eigenen Absender."
 faq:
   - q: "Was ist ein Kommunikationsplan im Change Management?"
     a: "Ein Kommunikationsplan ist eine Übersicht, die für jede betroffene Gruppe festlegt, welche Botschaft sie wann, über welchen Kanal und von wem erhält. Er begleitet eine Veränderung von der Ankündigung bis nach dem Go-live."
@@ -67,7 +67,7 @@ Daraus folgt eine Aufgabe, die gern übersehen wird: Führungskräfte müssen ih
 
 ```schritte
 Gruppen aus der Stakeholder-Analyse übernehmen | 1 Stunde · Change-Managerin
-  Jede stark betroffene Gruppe bekommt eigene Zeilen. Gruppen mit hohem Einfluss und wenig Betroffenheit werden gezielt informiert.
+  Jede stark betroffene Gruppe erhält eigene Zeilen. Gruppen mit hohem Einfluss und wenig Betroffenheit werden gezielt informiert.
 Kernbotschaften formulieren | 2 bis 3 Stunden · Sponsor und Change-Managerin
   Eine Change Story für alle, warum sich etwas ändert, und je Gruppe ein bis zwei Sätze, was sich für sie ändert.
 Absender und Kanäle festlegen | 1 Stunde · Projektleitung
@@ -78,7 +78,7 @@ Rückkanal einrichten und nachsteuern | laufend · Change-Managerin
   Fragen sammeln, häufige Fragen in die nächste Nachricht aufnehmen, den Plan anpassen, wenn eine Gruppe die Veränderung nicht mitträgt.
 ```
 
-Ein Kommunikationsplan lebt. Wenn nach einer Ankündigung immer wieder dieselbe Frage kommt, gehört die Antwort in die nächste Nachricht, und vielleicht fehlt eine Zeile für eine Gruppe, die Sie unterschätzt haben. Die Grundlage dafür liefert die [Stakeholder-Analyse](../stakeholder-analyse/).
+Ein Kommunikationsplan lebt. Wenn nach einer Ankündigung immer wieder dieselbe Frage gestellt wird, gehört die Antwort in die nächste Nachricht, und vielleicht fehlt eine Zeile für eine Gruppe, die Sie unterschätzt haben. Die Grundlage dafür liefert die [Stakeholder-Analyse](../stakeholder-analyse/).
 
 ## Beispiel: Kommunikationsplan für eine CRM-Einführung
 
@@ -111,7 +111,7 @@ Planen Sie jede Kernbotschaft mindestens dreimal ein, über verschiedene Absende
 - **Zu spät.** Die Kommunikation beginnt zwei Wochen vor dem Go-live und kann dann nur noch informieren. Bewusstsein und Bereitschaft brauchen Wochen, nicht Tage.
 - **Ein Absender für alles.** Das Projektteam verschickt alles, die Führungskräfte schweigen. Für das Team sieht das so aus, als stünden die Führungskräfte nicht dahinter.
 - **Nur Inhalte, keine Gründe.** Wer Schulungstermine und Anleitungen ohne Erklärung verschickt, warum sich etwas ändert, beantwortet die falsche Frage.
-- **Kein Rückkanal.** Wenn Fragen keinen Ort haben, landen sie in der Kaffeeküche und kommen als Gerücht zurück.
+- **Kein Rückkanal.** Wenn Fragen keinen Ort haben, werden sie in der Kaffeeküche besprochen und kehren als Gerücht zurück.
 - **Funkstille nach dem Go-live.** Nach dem Go-live fängt die schwierigste Phase erst an. Wer dann verstummt, überlässt die Deutung den Unzufriedenen.
 
 Für Salesforce-Programme mit regelmäßigen Releases gibt es eine eigene Form: Salesforce veröffentlicht drei saisonale Releases pro Jahr, und das Programm spielt zusätzlich eigene Änderungen ein. Nur Änderungen, die Prozesse, Oberflächen oder Verantwortlichkeiten eines Fachbereichs verändern, brauchen eine kurze, gezielte Ankündigung. Wie das funktioniert, beschreibt Fabian Kramer in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).

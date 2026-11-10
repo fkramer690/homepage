@@ -10,7 +10,7 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Data Capture, Außendienst, Prüfprotokoll, Inbetriebnahme]
 takeaways:
-  - "Formulare funktionieren offline und speichern jede Eingabe; Datensatzänderungen laufen, sobald das Gerät online ist. Ob Pausieren geht, hängt vom Startweg ab."
+  - "Formulare funktionieren offline und speichern jede Eingabe; Datensätze ändern sie, sobald das Gerät online ist. Ob Pausieren geht, hängt vom Startweg ab."
   - "Voice to Form ist seit App-Release 260.0 allgemein verfügbar und kann seit Winter '27 Deutsch. Nötig ist die Lizenz Agentforce for Field Service."
   - "Messwerte und Gesamtergebnis werden als Felder abgebildet, Teile als Products Consumed. Der Nachweis pro Prüfpunkt bleibt Formularantwort."
   - "Ein Protokoll mit 80 Prüfpunkten für drei Varianten wird zu kurzen Formularen je Variante und Einsatzphase, die sich einzeln testen lassen."
@@ -73,7 +73,7 @@ Messwerte am Asset verbinden das Formular mit der Wartungsplanung. Wie Wartungsp
 
 ## Wie hängt das Formular mit dem Servicebericht zusammen?
 
-Data Capture sammelt die Daten. Das PDF, das der Kunde bekommt, entsteht im Document Builder oder, in Orgs, die diese noch nutzen, über Service Reports. Ein PDF des abgeschlossenen Formulars selbst gibt es nur in der Unlimited Edition und nicht für Formulare, die per Quick Action starten, denn diese legen keinen Formular-Datensatz an. Der Document Builder arbeitet mit Arbeitsaufträgen, Arbeitsauftragspositionen und Serviceterminen, wie in [Salesforce Service Documents: reicht der Document Builder?](../salesforce-service-documents-document-builder-servicebericht/) beschrieben. Braucht der Kunde die Prüfergebnisse im Bericht, klären Sie im ersten Sprint, wie die Antworten in die Vorlage kommen. Werte, die als Feld am Arbeitsauftrag stehen, lassen sich direkt in die Vorlage setzen.
+Data Capture sammelt die Daten. Das PDF, das der Kunde erhält, entsteht im Document Builder oder, in Orgs, die diese noch nutzen, über Service Reports. Ein PDF des abgeschlossenen Formulars selbst gibt es nur in der Unlimited Edition und nicht für Formulare, die per Quick Action starten, denn diese legen keinen Formular-Datensatz an. Der Document Builder arbeitet mit Arbeitsaufträgen, Arbeitsauftragspositionen und Serviceterminen, wie in [Salesforce Service Documents: reicht der Document Builder?](../salesforce-service-documents-document-builder-servicebericht/) beschrieben. Braucht der Kunde die Prüfergebnisse im Bericht, klären Sie im ersten Sprint, wie die Antworten in die Vorlage gelangen. Werte, die als Feld am Arbeitsauftrag stehen, lassen sich direkt in die Vorlage setzen.
 
 Prüfberichte mit viel bedingtem Inhalt können über den Document Builder hinauswachsen. Dann ist ein eigenes Prüfdokument mit Document Generation oder einem AppExchange-Tool die bessere Lösung, und das Formular liefert weiterhin die Daten.
 
@@ -84,10 +84,10 @@ Alle Zahlen sind Annahmen. Ein Maschinenbauer nimmt Verpackungsmaschinen in drei
 In einem einzigen Formular wären alle Prüfpunkte jeder Variante enthalten, und die bedingte Sichtbarkeit würde die meisten ausblenden. Jede Änderung an einer Variante würde das Formular für alle drei Varianten betreffen. Ich würde es aufteilen:
 
 - **Formular 1, allgemeine Prüfungen (30 Punkte).** Aufstellort, Stromversorgung, Schutzeinrichtungen, Not-Halt. Für jede Variante gleich, am Servicetermin.
-- **Formular 2, Variantenprüfung (35 Punkte).** Ein Formular pro Variante, an der Arbeitsauftragsposition für den Inbetriebnahmeschritt dieser Variante. Messwerte wie Taktzahl und Siegeltemperatur landen in Feldern am Asset.
+- **Formular 2, Variantenprüfung (35 Punkte).** Ein Formular pro Variante, an der Arbeitsauftragsposition für den Inbetriebnahmeschritt dieser Variante. Messwerte wie Taktzahl und Siegeltemperatur werden in Feldern am Asset gespeichert.
 - **Formular 3, Abnahme (15 Punkte).** Offene Punkte, Einweisung des Kunden, Unterschrift. Das Gesamtergebnis geht in ein Feld am Arbeitsauftrag.
 
-Eine Maschine bekommt damit weiterhin 80 Prüfpunkte, aber jedes Formular ist kurz genug, um es zu testen. Mängel aus Formular 2 werden als Arbeitsauftragspositionen angelegt; braucht es einen weiteren Einsatz, legt der Prozess auch einen Servicetermin an, damit die Disposition ihn planen kann.
+Eine Maschine hat damit weiterhin 80 Prüfpunkte, aber jedes Formular ist kurz genug, um es zu testen. Mängel aus Formular 2 werden als Arbeitsauftragspositionen angelegt; braucht es einen weiteren Einsatz, legt der Prozess auch einen Servicetermin an, damit die Disposition ihn planen kann.
 
 Den größten Gewinn hat in diesem Beispiel der Innendienst. Nach der Synchronisation stehen die Messwerte am Asset und am Arbeitsauftrag, niemand tippt sie mehr ab, und das Gesamtergebnis am Arbeitsauftrag zeigt, ab wann die Rechnung gestellt werden kann. Ändert sich bei einer Variante ein Grenzwert, passt der Admin nur das Formular dieser Variante an und testet nur dieses.
 

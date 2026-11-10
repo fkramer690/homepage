@@ -41,7 +41,7 @@ Unternehmen experimentieren, und Agentforce taucht in Salesforce-Stellenanzeigen
 ## Mein erster Pilot kam zu früh
 
 ```praxis
-Der erste Agentforce-Pilot, an dem ich beteiligt war, kam schlicht zu früh. Die Plattform war jung und für unser Vorhaben noch nicht reif genug. Das ist ein normales Risiko bei neuer Technik, und es hat mich gelehrt, genauer auf die Bedingungen rund um einen Agenten zu schauen als auf den Agenten selbst.
+Der erste Agentforce-Pilot, an dem ich beteiligt war, startete schlicht zu früh. Die Plattform war jung und für unser Vorhaben noch nicht reif genug. Das ist ein normales Risiko bei neuer Technik, und es hat mich gelehrt, genauer auf die Bedingungen rund um einen Agenten zu schauen als auf den Agenten selbst.
 ```
 
 Drei Bedingungen müssen erfüllt sein, bevor ein fachlicher Pilot mit echten Nutzern startet. Ein kurzer technischer Test kann früher erfolgen, gerade um herauszufinden, was fehlt:
@@ -50,7 +50,7 @@ Drei Bedingungen müssen erfüllt sein, bevor ein fachlicher Pilot mit echten Nu
 - **Verlässliche Daten.** Ein Agent liest Wissensartikel und CRM-Datensätze, die meist nie für einen automatischen Leser gepflegt wurden. Dubletten und veraltete Inhalte tauchen sofort in den Antworten auf.
 - **Klare Verantwortung im Fachbereich.** Betreibt die IT den Piloten allein und verantwortet niemand in der Abteilung das Ergebnis, endet der Pilot als Demo.
 
-Die Projekte, die jetzt in der Umsetzung sind, bauen auf diesen Bedingungen auf, und sie kommen voran.
+Die Projekte, die jetzt in der Umsetzung sind, bauen auf diesen Bedingungen auf, und sie machen Fortschritte.
 
 ## Warum steht der Business Value an erster Stelle?
 
@@ -93,7 +93,7 @@ Ist-Zustand messen
 Daten aufräumen
   Für genau diesen Prozess, inklusive Wissen, Stammdaten und Berechtigungen.
 Mit menschlicher Prüfung arbeiten
-  Bei risikoreichen, finanziell bedeutenden oder unumkehrbaren Entscheidungen, etwa größeren Rabatten, Erstattungen oder Vertragsänderungen, mit festen Schwellenwerten für Fälle mit geringem Risiko. Die Freigabe kann über bestehende Salesforce-Genehmigungsprozesse oder Flow laufen oder über Produkte wie Agentforce Operations; Verfügbarkeit und Lizenzen hängen vom Weg ab.
+  Bei risikoreichen, finanziell bedeutenden oder unumkehrbaren Entscheidungen, etwa größeren Rabatten, Erstattungen oder Vertragsänderungen, mit festen Schwellenwerten für Fälle mit geringem Risiko. Die Freigabe kann über bestehende Salesforce-Genehmigungsprozesse oder Flow erfolgen oder über Produkte wie Agentforce Operations; Verfügbarkeit und Lizenzen hängen vom Weg ab.
 Mit echten Fällen testen
   Auch mit den unangenehmen, und festlegen, was der Agent nicht tun darf.
 Begrenzt live gehen

@@ -19,14 +19,14 @@ faq:
   - q: "Müssen Kunden ihre DevOps-Tools auf eigenen Servern betreiben?"
     a: "Nein. Cloud-Dienste wie GitHub, GitLab, Jira oder Miro sind in Ordnung. Entscheidend ist, dass Arbeitsbereich, Daten, Admin-Rechte und, soweit das Lizenzmodell es zulässt, der Vertrag beim Kunden liegen und nicht bei einem Umsetzungspartner."
   - q: "Warum ist es ein Problem, wenn die Jira-Site oder der Git-Arbeitsbereich dem Partner gehört?"
-    a: "Dann hängt der Kunde bei Zugriffen, Historie und Dokumentation vom Partner ab. Endet die Zusammenarbeit oder kommt ein zweiter Partner hinzu, müssen Daten migriert werden oder gehen verloren. Außerdem lassen sich Partner nur schwer vergleichen."
+    a: "Dann hängt der Kunde bei Zugriffen, Historie und Dokumentation vom Partner ab. Endet die Zusammenarbeit oder steigt ein zweiter Partner ein, müssen Daten migriert werden oder gehen verloren. Außerdem lassen sich Partner nur schwer vergleichen."
   - q: "Welche Tools sollten dem Kunden gehören?"
     a: "Alles, was Projektwissen enthält oder Releases steuert: Salesforce-Orgs und Dev Hub, Git-Repository, CI/CD-Pipeline, Jira, Confluence, Miro, Passwort-Tresore, Integrationsuser und Zertifikate sowie Nebentools, in denen sich Wissen sammelt, etwa Chat-Kanäle und Arbeitsbereiche für API-Tests."
   - q: "Wie sollten Partner Zugriff erhalten?"
     a: "Über persönliche, benannte Identitäten in den Tools des Kunden, meist über eigene Accounts, die in den Arbeitsbereich des Kunden eingeladen werden. Die Rollen passen zur Aufgabe, und der Zugriff endet mit der Zusammenarbeit. Der Kunde muss diesen Zugriff selbst vergeben und entziehen können. Geteilte oder anonyme Accounts sollten tabu sein."
 ---
 
-Kunden sollten ihre Salesforce-DevOps-Tools selbst besitzen, denn wer Arbeitsbereiche, Lizenzen und Zugriffsrechte kontrolliert, kontrolliert das Projekt. Das gilt für Git-Repository und CI/CD-Pipeline genauso wie für Jira, Confluence und Miro. Selbst besitzen heißt nicht, eigene Server zu betreiben. Cloud-Dienste sind in Ordnung, solange Arbeitsbereiche und Admin-Rechte dem Kunden gehören und auch über jede Partnerschaft hinaus beim Kunden bleiben. Partner bekommen persönliche Zugänge mit den Rechten, die sie für ihre Aufgabe brauchen.
+Kunden sollten ihre Salesforce-DevOps-Tools selbst besitzen, denn wer Arbeitsbereiche, Lizenzen und Zugriffsrechte kontrolliert, kontrolliert das Projekt. Das gilt für Git-Repository und CI/CD-Pipeline genauso wie für Jira, Confluence und Miro. Selbst besitzen heißt nicht, eigene Server zu betreiben. Cloud-Dienste sind in Ordnung, solange Arbeitsbereiche und Admin-Rechte dem Kunden gehören und auch über jede Partnerschaft hinaus beim Kunden bleiben. Partner erhalten persönliche Zugänge mit den Rechten, die sie für ihre Aufgabe brauchen.
 
 ## Was heißt es, die eigenen DevOps-Tools zu besitzen?
 
@@ -37,7 +37,7 @@ Tools zu besitzen heißt, die Schlüssel in der Hand zu halten, egal wo die Soft
 - Der **Arbeitsbereich** (die GitHub-Organisation, die Jira-Instanz, das Miro-Team) gehört dem Kunden.
 - **Partner werden eingeladen** in den Arbeitsbereich des Kunden, nicht umgekehrt.
 
-Eine leere GitHub-Organisation, eine Jira-Cloud-Instanz oder ein Miro-Team lassen sich an einem Nachmittag anlegen. Keine eigenen Server, kein Infrastrukturprojekt. Sie mit Single Sign-on, Rollen und den Sicherheitsregeln des Kunden produktionsreif zu machen, braucht gezielte Vorbereitung. Der entscheidende Unterschied liegt aber darin, auf wessen Namen der Arbeitsbereich läuft und wer Zugriffe vergeben und entziehen kann.
+Eine leere GitHub-Organisation, eine Jira-Cloud-Instanz oder ein Miro-Team lassen sich an einem Nachmittag anlegen. Keine eigenen Server, kein Infrastrukturprojekt. Sie mit Single Sign-on, Rollen und den Sicherheitsregeln des Kunden produktionsreif zu machen, braucht gezielte Vorbereitung. Der entscheidende Unterschied liegt aber darin, auf wessen Namen der Arbeitsbereich registriert ist und wer Zugriffe vergeben und entziehen kann.
 
 ![Was wem in einem Salesforce-Programm gehört: Der Kunde besitzt Accounts, Lizenzen und Admin-Rechte, Git-Repository und CI/CD-Pipeline, Jira-, Confluence- und Miro-Bereiche, Salesforce-Orgs, Sandboxes und Dev Hub sowie Secrets, Integrationsuser und Zertifikate. Der Kunde vergibt und entzieht Zugriffe. Der Partner erhält persönliche, namentlich zugeordnete Benutzerkonten und auf die Aufgabe beschränkte Rollen. Sein Zugriff gilt nur für die Dauer der Zusammenarbeit, und die Arbeit bleibt in den Systemen des Kunden. Verlässt ein Partner das Projekt, wird der Zugriff entzogen und nichts muss migriert werden.](../../../assets/blog/tool-ownership-de.png)
 
@@ -52,14 +52,14 @@ In einem typischen Salesforce-Programm verteilen sich Projektwissen und Kontroll
 5. **Miro oder ähnliche Whiteboards.** Dort liegen Prozesslandkarten, Datenmodelle und Workshop-Ergebnisse. Oft ist dies der einzige Ort, an dem das Zielbild je gezeichnet wurde.
 6. **Secrets und technische Benutzer.** Dazu gehören Integrationsuser, Zertifikate, API-Schlüssel und der Passwort-Tresor, in dem sie liegen.
 
-Jedes dieser Tools kann im Account eines Partners landen, ohne dass jemand diese Entscheidung bewusst getroffen hat. Ein Partner startet schnell, nutzt seine eigene Jira-Instanz und seine eigene Git-Organisation, und ein Jahr später liegt die Projekthistorie des Kunden im System eines Dritten.
+Jedes dieser Tools kann im Account eines Partners enden, ohne dass jemand diese Entscheidung bewusst getroffen hat. Ein Partner startet schnell, nutzt seine eigene Jira-Instanz und seine eigene Git-Organisation, und ein Jahr später liegt die Projekthistorie des Kunden im System eines Dritten.
 
 ## Was geht schief, wenn der Partner die Tools besitzt?
 
-Solange die Zusammenarbeit gut läuft, merkt es niemand. Die Probleme zeigen sich, wenn sich etwas ändert:
+Solange die Zusammenarbeit gut funktioniert, merkt es niemand. Die Probleme zeigen sich, wenn sich etwas ändert:
 
 - **Die Zusammenarbeit endet.** Daten müssen exportiert und migriert werden. Je nach Tool und Migrationsweg können Konfigurationen, App-Daten, Verknüpfungen oder Versionshistorien verloren gehen. Manchmal hat der Export bei einem scheidenden Partner schlicht keine Priorität.
-- **Ein zweiter Partner kommt dazu.** Dann braucht der neue Partner Zugriff auf den Arbeitsbereich eines Wettbewerbers, oder es entsteht ein zweiter Satz Tools. Standards entwickeln sich auseinander, und die Teams überschreiben gegenseitig ihre Arbeit.
+- **Ein zweiter Partner steigt ein.** Dann braucht der neue Partner Zugriff auf den Arbeitsbereich eines Wettbewerbers, oder es entsteht ein zweiter Satz Tools. Standards entwickeln sich auseinander, und die Teams überschreiben gegenseitig ihre Arbeit.
 - **Partner sind schwer vergleichbar.** Besitzt ein Partner Repository und Pipeline, besitzt er auch den Release-Prozess, und alle anderen Partner arbeiten nach seinen Regeln.
 - **Menschen gehen.** Ist der einzige Admin eines Tools ein Mitarbeiter des Partners, der den Job wechselt, hat sogar der Partner Schwierigkeiten, die Kontrolle zurückzubekommen.
 - **Sicherheit und Compliance.** Der Kunde kann einfache Audit-Fragen nicht beantworten: Wer hat Zugriff auf unseren Quellcode, unsere Anforderungen, unsere Zugangsdaten?
@@ -90,8 +90,8 @@ Diese Regeln haben sich bewährt und sollten möglichst gelten, bevor der erste 
 
 1. **Der Kunde legt die Arbeitsbereiche an.** GitHub- oder GitLab-Organisation, Jira- und Confluence-Instanz, Miro-Team: Alles wird vom Kunden eingerichtet, mit Lizenzen im Vertrag des Kunden.
 2. **Mindestens zwei Admins des Kunden pro Tool.** Es sollte nie nur einen einzelnen Admin geben und nie ausschließlich Partner als Admins. Dazu kommt ein getestetes Verfahren für den Notfall. Weitreichende Admin-Rechte gibt es nur, wenn zeitlich begrenzte Rechte nicht ausreichen.
-3. **Nur persönliche, benannte Identitäten.** Jeder Mitarbeitende eines Partners bekommt eine eigene Identität, meist einen eigenen Account, der in den Arbeitsbereich des Kunden eingeladen wird. Keine geteilten Logins, damit Zugriffe nachvollziehbar sind und einzeln entzogen werden können.
-4. **Rollen passend zur Aufgabe.** Entwickler bekommen Schreibrechte auf das Repository, keine Admin-Rechte auf die Organisation. Änderungen an Pipeline-Sicherheit und Branch-Schutz brauchen die Zustimmung des Kunden, auch wenn ein autorisierter Spezialist des Partners sie ausführt.
+3. **Nur persönliche, benannte Identitäten.** Jeder Mitarbeitende eines Partners erhält eine eigene Identität, meist einen eigenen Account, der in den Arbeitsbereich des Kunden eingeladen wird. Keine geteilten Logins, damit Zugriffe nachvollziehbar sind und einzeln entzogen werden können.
+4. **Rollen passend zur Aufgabe.** Entwickler erhalten Schreibrechte auf das Repository, keine Admin-Rechte auf die Organisation. Änderungen an Pipeline-Sicherheit und Branch-Schutz brauchen die Zustimmung des Kunden, auch wenn ein autorisierter Spezialist des Partners sie ausführt.
 5. **Starke Authentifizierung.** Admins auf beiden Seiten verwenden phishingresistente MFA. In Salesforce ist das seit Juli 2026 für privilegierte Benutzer verpflichtend, in Produktionsumgebungen und Sandboxes sowie bei Single Sign-on.
 6. **Zugriffe haben ein Enddatum.** Partner-Accounts werden regelmäßig überprüft und entfernt, wenn die Zusammenarbeit oder die Rolle der Person endet.
 7. **Secrets bleiben im Tresor des Kunden.** Jede Integration hat einen eigenen, vom Kunden verwalteten Integrationsuser mit minimalen Rechten. Zugangsdaten und Schlüssel werden erneuert, wenn Mitarbeitende eines Partners darauf Zugriff hatten.

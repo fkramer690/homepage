@@ -74,7 +74,7 @@ An mehreren Stellen. Salesforce hat im Juni 2024 Asset Service Lifecycle Managem
 | Hersteller | PTC und Salesforce | Salesforce |
 | Preis | Nicht veröffentlicht | 75 Dollar pro Nutzer und Monat |
 
-Beide nutzen Teile des Field-Service-Datenmodells, Asset 360 ergänzt aber eigene Felder und Objekte. Wer beide kauft, bekommt zwei Lösungen für die Deckungsprüfung in einer Org. Entscheiden Sie pro Ablauf, welche Lösung ihn führt.
+Beide nutzen Teile des Field-Service-Datenmodells, Asset 360 ergänzt aber eigene Felder und Objekte. Wer beide kauft, erhält zwei Lösungen für die Deckungsprüfung in einer Org. Entscheiden Sie pro Ablauf, welche Lösung ihn führt.
 
 ## Was ich bei der Anspruchsprüfung gesehen habe
 
@@ -95,7 +95,7 @@ Dazu kommen die Vertragspunkte aus der Leistungsbeschreibung. Das Standard-SLA d
 Aus meiner Sicht in drei Fällen:
 
 1. **Die Anspruchslogik geht über Regeln beim Anlegen hinaus.** Wenn Hotline und Disposition bei Cases, Arbeitsaufträgen und Retouren zwischen Garantie und Vertrag wählen sollen und die regelbasierte Zuordnung von Salesforce nicht reicht, ist die Engine die größte Stärke.
-2. **Ihr PLM und Ihre Ersatzteilplanung kommen von PTC.** Dann können die Integrationen mit Windchill und Servigistics ein Vorteil sein, wenn Sie Beta-Status und Einrichtungsaufwand berücksichtigen.
+2. **Ihr PLM und Ihre Ersatzteilplanung stammen von PTC.** Dann können die Integrationen mit Windchill und Servigistics ein Vorteil sein, wenn Sie Beta-Status und Einrichtungsaufwand berücksichtigen.
 3. **Sie wollen fertige Abläufe statt Eigenbau.** Über 60 fertige Vorlagen und Transaktionen sparen Aufbauzeit, wenn Ihre Prozesse dazu passen.
 
 Trifft keiner dieser Fälle zu, würde ich zuerst ASLM bewerten. Nur ein Hersteller bedeutet weniger Abstimmung, und Sie müssen kein zweites Managed Package mit eigenem Releasezyklus testen.

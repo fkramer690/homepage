@@ -13,7 +13,7 @@ takeaways:
   - "Vibe Coding passt zu Workshop-Prototypen wie einem Händlerportal-Mock-up, gebaut in einer Developer Edition mit erfundenen Testdaten und danach verworfen."
   - "Code für eine Org mit Händler-, Garantie- oder Servicedaten braucht agentic engineering: Ein Mensch prüft, Tests und Pipeline-Gates entscheiden."
   - "Der Prototyp wird zur Spezifikation mit Masken und Abnahmekriterien. Die Produktivumsetzung beginnt neu im Repository des Kunden."
-  - "Eine Developer Edition hat einen Monat lang 110 Vibes-Anfragen oder 1,5 Mio. Tokens; eine Scratch Org läuft standardmäßig 7, höchstens 30 Tage."
+  - "Eine Developer Edition hat einen Monat lang 110 Vibes-Anfragen oder 1,5 Mio. Tokens; eine Scratch Org besteht standardmäßig 7, höchstens 30 Tage."
   - "Modelle schreiben fast immer syntaktisch korrekten Code, aber im Veracode-Test vom Oktober 2026 bestanden nur 62 Prozent die Sicherheitsprüfung."
 faq:
   - q: "Was ist Vibe Coding in Salesforce?"
@@ -69,7 +69,7 @@ Diese Regeln gehören auch in den Vertrag mit Ihrem Partner, wie in [Regeln für
 
 ## Warum gehört ein Vibe-Coding-Prototyp nicht in Produktion?
 
-Ein Prototyp zeigt, dass eine Maske sinnvoll ist, aber nicht, ob der Code mit Ihren Daten, Ihren Nutzern und Ihrem Sharing-Modell funktioniert. Der [GenAI Code Security Report 2026](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) von Veracode ergab, dass Modelle zu etwa 100 Prozent syntaktisch korrekten Code schreiben, aber nur 56 Prozent der Ergebnisse die Sicherheitstests bestehen. Die [Aktualisierung vom 29. Oktober 2026](https://www.veracode.com/blog/fall-2026-genai-code-security) hob den Wert auf 62 Prozent; getestet wurden Python, C#, JavaScript und Java gegen vier Schwachstellentypen, nicht Apex. Mitgründer Chris Wysopal formuliert es so: „scan it, fix it, and never ship it blind.“ Code, der läuft, ist der leichte Teil.
+Ein Prototyp zeigt, dass eine Maske sinnvoll ist, aber nicht, ob der Code mit Ihren Daten, Ihren Nutzern und Ihrem Sharing-Modell funktioniert. Der [GenAI Code Security Report 2026](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) von Veracode ergab, dass Modelle zu etwa 100 Prozent syntaktisch korrekten Code schreiben, aber nur 56 Prozent der Ergebnisse die Sicherheitstests bestehen. Die [Aktualisierung vom 29. Oktober 2026](https://www.veracode.com/blog/fall-2026-genai-code-security) hob den Wert auf 62 Prozent; getestet wurden Python, C#, JavaScript und Java gegen vier Schwachstellentypen, nicht Apex. Mitgründer Chris Wysopal formuliert es so: „scan it, fix it, and never ship it blind.“ Code, der funktioniert, ist der leichte Teil.
 
 In Salesforce hat ein Workshop-Prototyp typischerweise dieselben Lücken:
 
@@ -102,9 +102,9 @@ Eine Ausnahme akzeptiere ich: HTML-Template und CSS einer Mock-up-LWC dürfen ü
 
 ## Rechenbeispiel: zwei Tage Workshop bei einem Maschinenbauer
 
-Nehmen wir einen Maschinenbauer mit Service Cloud, SAP S/4 und 400 Händlern, der ein Händlerportal und ein neues Service-Cockpit plant. Alle Zahlen sind Annahmen. In einem zweitägigen Anforderungsworkshop baut ein Entwickler beide Mock-ups mit Agentforce Vibes in einer frischen Developer Edition. Die Portalseite dauert etwa drei Stunden, das Cockpit etwa zwei, zusammen rund 40 der 110 Anfragen. Händler und Serviceleitung korrigieren die Masken live: Das Cockpit bekommt eine Spalte für das Garantieende, das Portal verliert einen Filter, den niemand nutzt.
+Nehmen wir einen Maschinenbauer mit Service Cloud, SAP S/4 und 400 Händlern, der ein Händlerportal und ein neues Service-Cockpit plant. Alle Zahlen sind Annahmen. In einem zweitägigen Anforderungsworkshop baut ein Entwickler beide Mock-ups mit Agentforce Vibes in einer frischen Developer Edition. Die Portalseite dauert etwa drei Stunden, das Cockpit etwa zwei, zusammen rund 40 der 110 Anfragen. Händler und Serviceleitung korrigieren die Masken live: Das Cockpit erhält eine Spalte für das Garantieende, das Portal verliert einen Filter, den niemand nutzt.
 
-Nach dem Workshop liest der Architekt den Prototyp-Code einmal, als Referenz. Die Auftragsabfrage ignoriert die Händlerzuordnung, weil der Entwickler als Administrator angemeldet war. Liefertermine kommen aus einer fest eingetragenen Liste. Das Cockpit setzt pro Fall eine eigene Abfrage ab.
+Nach dem Workshop liest der Architekt den Prototyp-Code einmal, als Referenz. Die Auftragsabfrage ignoriert die Händlerzuordnung, weil der Entwickler als Administrator angemeldet war. Liefertermine stammen aus einer fest eingetragenen Liste. Das Cockpit setzt pro Fall eine eigene Abfrage ab.
 
 Die Produktivumsetzung startet deshalb im Repository: drei User Stories, jeweils mit freigegebenem Plan, einem `runAs`-Test als Händlernutzer und einem SAP-Aufruf über die vorhandene MuleSoft-API. Ich nehme dafür zwei Sprints für ein dreiköpfiges Partnerteam an. Ohne den Workshop wäre nach meiner Schätzung der erste Sprint dafür draufgegangen, herauszufinden, was die Masken zeigen sollen. Der Prototyp hat sich über die Anforderungen bezahlt gemacht und keine Zeile Apex beigesteuert. Was die KI-Werkzeuge für ein solches Team kosten, steht in [KI-Coding-Kosten im Salesforce-Projekt](../ki-coding-kosten-salesforce-projekt/).
 

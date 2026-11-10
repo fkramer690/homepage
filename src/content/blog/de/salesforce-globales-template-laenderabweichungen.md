@@ -14,10 +14,10 @@ takeaways:
   - "Mein Richtwert: Jedes Land ist mindestens zu 80 Prozent identisch mit dem Template, und das Delta pro Land bleibt so klein wie möglich."
   - "Berechtigt sind Abweichungen aus Recht, Steuern, Sprache und echten Unterschieden im Geschäft. Gewohnheit allein ist kein Grund."
   - "Landesunterschiede gehören in die Konfiguration, etwa Custom Metadata pro Land; Code pro Land nur mit dokumentiertem rechtlichem oder Schnittstellengrund."
-  - "Über Abweichungen entscheidet ein globaler Prozessverantwortlicher gemeinsam mit dem Architekten auf Kundenseite; jede Entscheidung kommt ins Log."
+  - "Über Abweichungen entscheidet ein globaler Prozessverantwortlicher gemeinsam mit dem Architekten auf Kundenseite; jede Entscheidung wird im Log festgehalten."
 faq:
   - q: "Was ist ein globales Template in Salesforce?"
-    a: "Ein globales Template ist die gemeinsame Basis aus Prozessen, Datenmodell, Automatisierung und Rechten, die alle Länder eines weltweiten Rollouts übernehmen. Landesspezifisches kommt als kleine, dokumentierte Ergänzung dazu."
+    a: "Ein globales Template ist die gemeinsame Basis aus Prozessen, Datenmodell, Automatisierung und Rechten, die alle Länder eines weltweiten Rollouts übernehmen. Landesspezifisches wird als kleine, dokumentierte Ergänzung hinzugefügt."
   - q: "Wie viel darf ein Land vom Template abweichen?"
     a: "Auf Basis meiner Programme halte ich einen gemeinsamen Prozessanteil von mindestens 80 Prozent pro Land für einen brauchbaren Richtwert, nicht für einen Salesforce-Maßstab. Jede Abweichung braucht einen Grund aus Recht, Steuern, Sprache oder Geschäftsmodell und eine Freigabe."
   - q: "Wer entscheidet über Abweichungen vom Template?"
@@ -31,7 +31,7 @@ Ein globales Salesforce-Template ist der gemeinsame Kern aus Prozessen, Datenmod
 
 ## Warum zerfällt ein globales Template?
 
-Das strategische Ziel eines weltweiten Rollouts ist meist die Harmonisierung von Prozessen. Am Anfang sind alle dafür. Ab dem zweiten Land kommen die Ausnahmen: In Frankreich braucht der Innendienst ein zusätzliches Feld, in Italien läuft die Freigabe von Angeboten über eine weitere Stufe, und in den USA firmiert die Gesellschaft anders und tritt unter einer anderen Marke auf.
+Das strategische Ziel eines weltweiten Rollouts ist meist die Harmonisierung von Prozessen. Am Anfang sind alle dafür. Ab dem zweiten Land entstehen die Ausnahmen: In Frankreich braucht der Innendienst ein zusätzliches Feld, in Italien durchläuft die Freigabe von Angeboten eine weitere Stufe, und in den USA firmiert die Gesellschaft anders und tritt unter einer anderen Marke auf.
 
 Jede einzelne Ausnahme ist klein. Zusammen haben sie drei Folgen:
 
@@ -57,7 +57,7 @@ Ich sortiere jeden Wunsch nach Abweichung in eine von fünf Gruppen:
 | Anderes Geschäft | Land verkauft über Händler statt direkt | ja, wenn es mehrere Länder betrifft, sonst prüfen |
 | Gewohnheit | „Bei uns war das Feld immer oben“ | nein |
 
-Die letzte Gruppe ist die größte und die schwierigste, weil sie selten so heißt. Ein Wunsch aus Gewohnheit kommt fast immer mit einer fachlichen Begründung. Eine gute Prüffrage ist: Was kostet es das Land, wenn es den Prozess des Templates übernimmt? Ist die Antwort „Umgewöhnung“, ist es Gewohnheit. Ist die Antwort „eine Rechnung, die das Finanzamt nicht akzeptiert“, ist es Recht.
+Die letzte Gruppe ist die größte und die schwierigste, weil sie selten so heißt. Ein Wunsch aus Gewohnheit wird fast immer fachlich begründet. Eine gute Prüffrage ist: Was kostet es das Land, wenn es den Prozess des Templates übernimmt? Ist die Antwort „Umgewöhnung“, ist es Gewohnheit. Ist die Antwort „eine Rechnung, die das Finanzamt nicht akzeptiert“, ist es Recht.
 
 Bei der vierten Gruppe lohnt ein zweiter Blick. Verkauft ein Land über Händler und die anderen direkt, ist das eine zweite Variante des Vertriebsprozesses. Taucht dieselbe Variante in mehreren Ländern auf, gehört sie ins Template, und zwar einmal.
 
@@ -67,7 +67,7 @@ Die technische Regel ist einfach: Landesunterschiede gehören in die Konfigurati
 
 - **Werte pro Land in Custom Metadata Types.** Freigabegrenzen, Routing-Parameter oder Pflichtfelder pro Land stehen in einer Tabelle. Eine Validierungsregel oder ein Flow liest den Wert für das Land des Datensatzes aus und setzt ihn durch. Für ein neues Land werden dann neue Einträge statt neuer Automatisierung angelegt; sie werden wie jede Änderung getestet und ausgerollt. Steuersätze bleiben im ERP oder Steuersystem, das sie führt.
 - **Übersetzungen über die Übersetzungsfunktionen von Salesforce**, nicht über eigene Felder pro Sprache.
-- **Datensatztypen nur für echte Prozessvarianten**, nicht pro Land. Bei zehn Ländern mit je einem Datensatztyp vervielfachen sich Layouts, Picklistenwerte und Tests, und sie laufen auseinander.
+- **Datensatztypen nur für echte Prozessvarianten**, nicht pro Land. Bei zehn Ländern mit je einem Datensatztyp vervielfachen sich Layouts, Picklistenwerte und Tests, und sie weichen voneinander ab.
 - **Sichtbarkeit nach Land, Gesellschaft oder Region über Rollen, Territorien und Freigaberegeln**, wie im [Berechtigungskonzept](../salesforce-berechtigungskonzept-permission-sets/) beschrieben.
 
 Diese Regeln gehören in die [Entwicklungsstandards](../salesforce-entwicklungsstandards-definition-of-done/), damit jeder Partner sie kennt, der den Rollout in einem Land übernimmt.
@@ -84,7 +84,7 @@ contra: Was Sie dafür aufgeben
 
 ## Wer entscheidet über Abweichungen?
 
-Ein Land beantragt eine Abweichung schriftlich: was es braucht, warum es das braucht und was es kostet, wenn es das Template übernimmt. Darüber entscheidet ein globaler Prozessverantwortlicher zusammen mit dem Architekten auf Kundenseite. Die Entscheidung kommt ins [Entscheidungslog](../salesforce-architektur-entscheidungslog/), damit das nächste Land dieselbe Frage nicht noch einmal stellt.
+Ein Land beantragt eine Abweichung schriftlich: was es braucht, warum es das braucht und was es kostet, wenn es das Template übernimmt. Darüber entscheidet ein globaler Prozessverantwortlicher zusammen mit dem Architekten auf Kundenseite. Die Entscheidung wird im [Entscheidungslog](../salesforce-architektur-entscheidungslog/), festgehalten, damit das nächste Land dieselbe Frage nicht noch einmal stellt.
 
 Zwei Regeln helfen dabei. Erstens trägt das Land die Folgekosten seiner Abweichung, auch die Tests bei jedem künftigen Release. Das macht viele Wünsche kleiner. Zweitens wird jede Abweichung nach einem Jahr geprüft: Wird sie noch gebraucht, oder kann das Land zum Template zurück? Viele Wünsche entstehen aus Gewohnheit. Versteht der Sponsor im Land, warum das Template so aufgebaut ist, kann er diese Wünsche einordnen, bevor sie beim Architekten ankommen. Mehr dazu steht in [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/).
 

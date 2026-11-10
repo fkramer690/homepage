@@ -13,10 +13,10 @@ takeaways:
   - "Eine Full-Copy-Sandbox enthält alle Produktivdaten. Ich behandle sie wie Produktion: Menschen für UAT und Lasttests, keine Logins für Coding-Agenten."
   - "Agenten arbeiten in Scratch Orgs und Developer-Sandboxes mit Seed-Daten, eine maskierte Partial Copy dient den Integrationstests."
   - "Maskierung kostet Testrealismus: Zufallspreise zerstören Rabattlogik, und seltene Fälle gibt es nur, wenn jemand sie in die Seed-Daten schreibt."
-  - "Der Einstein Trust Layer maskiert personenbezogene und Kartendaten, aber keine Händlerpreise, und Claude Code läuft gar nicht über ihn."
+  - "Der Einstein Trust Layer maskiert personenbezogene und Kartendaten, aber keine Händlerpreise, und Claude Code nutzt ihn gar nicht."
 faq:
   - q: "Darf ein KI-Coding-Agent in einer Full-Copy-Sandbox arbeiten?"
-    a: "Technisch ja. Ich würde es nicht erlauben. Eine Full Copy enthält alle Produktivdaten, und jeder Datensatz, den der Agent abfragt, landet im Prompt und im lokalen Sitzungsprotokoll. Nutzen Sie Scratch Orgs oder Developer-Sandboxes mit Seed-Testdaten."
+    a: "Technisch ja. Ich würde es nicht erlauben. Eine Full Copy enthält alle Produktivdaten, und jeder Datensatz, den der Agent abfragt, gelangt in den Prompt und ins lokale Sitzungsprotokoll. Nutzen Sie Scratch Orgs oder Developer-Sandboxes mit Seed-Testdaten."
   - q: "Schützt Salesforce Data Mask Händlerpreise?"
     a: "Data Mask kann Zahlenfelder durch Zufallswerte in einem festgelegten Bereich ersetzen. Preise lassen sich also maskieren. Dabei geht der Zusammenhang zwischen Listenpreis, Rabatt und Nettopreis verloren, deshalb braucht Preislogik eine eigens gebaute Testpreisliste."
   - q: "Welche Feldtypen kann Data Mask nicht maskieren?"
@@ -28,11 +28,11 @@ faq:
 draft: false
 ---
 
-Sandbox-Kundendaten sollten maskiert oder ganz außer Reichweite sein, bevor sich der KI-Coding-Agent eines Partners mit einer Salesforce-Sandbox verbindet, denn alles, was der Agent liest, landet in einem Prompt. Eine Full-Copy-Sandbox enthält dieselben Händlerpreise, Verträge und Servicefälle wie die Produktion. Meine Regel: Agenten arbeiten in Scratch Orgs und Developer-Sandboxes mit Seed-Testdaten; eine maskierte Partial Copy dient den Integrationstests, und die Full Copy bleibt Menschen vorbehalten. Der Preis dafür ist weniger Testrealismus. Maskierung zerstört Preislogik und seltene Datenkonstellationen, also muss jemand einen Seed-Datensatz gezielt erstellen.
+Sandbox-Kundendaten sollten maskiert oder ganz außer Reichweite sein, bevor sich der KI-Coding-Agent eines Partners mit einer Salesforce-Sandbox verbindet, denn alles, was der Agent liest, gelangt in einen Prompt. Eine Full-Copy-Sandbox enthält dieselben Händlerpreise, Verträge und Servicefälle wie die Produktion. Meine Regel: Agenten arbeiten in Scratch Orgs und Developer-Sandboxes mit Seed-Testdaten; eine maskierte Partial Copy dient den Integrationstests, und die Full Copy bleibt Menschen vorbehalten. Der Preis dafür ist weniger Testrealismus. Maskierung zerstört Preislogik und seltene Datenkonstellationen, also muss jemand einen Seed-Datensatz gezielt erstellen.
 
 ## Mit einem Coding-Agent wird die Full-Copy-Sandbox zum Datenleck
 
-Ein Coding-Agent wie Claude Code, Cursor oder Agentforce Vibes liest Code, und er kann die Org abfragen, in der er angemeldet ist. Fragt ein Entwickler, warum Garantieanträge eines Händlers an der Validierung scheitern, setzt der Agent eine SOQL-Abfrage ab und bekommt zwanzig Anträge mit Fehlerbeschreibung, Händlername und Nettopreis zurück. Diese Datensätze sind jetzt Teil des Gesprächs mit dem Modell.
+Ein Coding-Agent wie Claude Code, Cursor oder Agentforce Vibes liest Code, und er kann die Org abfragen, in der er angemeldet ist. Fragt ein Entwickler, warum Garantieanträge eines Händlers an der Validierung scheitern, setzt der Agent eine SOQL-Abfrage ab und erhält zwanzig Anträge mit Fehlerbeschreibung, Händlername und Nettopreis zurück. Diese Datensätze sind jetzt Teil des Gesprächs mit dem Modell.
 
 Salesforce beschreibt [vier Sandbox-Typen](https://www.salesforce.com/platform/what-is-salesforce-sandbox/):
 
@@ -78,7 +78,7 @@ Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/salesfor
 ```
 
 ```hinweis achtung
-Bis der Maskierungsjob nach einem Refresh gelaufen ist, behandle ich eine Sandbox als unmaskiert. Agenten-Logins gibt es erst, wenn das Ausführungsprotokoll den Lauf als abgeschlossen ausweist.
+Bis der Maskierungsjob nach einem Refresh abgeschlossen ist, behandle ich eine Sandbox als unmaskiert. Agenten-Logins gibt es erst, wenn das Ausführungsprotokoll den Lauf als abgeschlossen ausweist.
 ```
 
 Scratch Orgs sind standardmäßig leer. Für kleine Mengen empfiehlt Salesforce die [data-tree-Befehle](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_test_data.htm), die für weniger als 3.000 Datensätze geeignet sind. Liegt ein solcher Seed-Datensatz im Repository, starten alle Entwickler und Agenten vom selben Stand.

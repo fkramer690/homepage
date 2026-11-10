@@ -13,7 +13,7 @@ series: { id: manufacturing-cloud, part: 8 }
 takeaways:
   - "Ich nehme eine der größten Regionen in die ersten zwei Phasen auf, damit das globale Template früh unter Last steht."
   - "Alle Länder sollten zu mindestens 80 Prozent identisch arbeiten. Jede Abweichung pro Land wird begründet und so klein wie möglich gehalten."
-  - "Unterschiedliche Prozesse, Business Units, IT-Landschaften und Marken pro Land bestimmen, welches Land wann kommt."
+  - "Unterschiedliche Prozesse, Business Units, IT-Landschaften und Marken pro Land bestimmen, welches Land wann an die Reihe kommt."
   - "Change Management gehört in jeden Rollout, auch wenn der Kunde meint, er brauche keins."
 faq:
   - q: "Mit welchem Land sollte ein weltweiter Salesforce-Rollout beginnen?"
@@ -62,7 +62,7 @@ Drei Fragen werden für jedes Land anders beantwortet:
 2. **Welche Business Units gibt es dort?** Eine Gesellschaft mit mehreren Geschäftsbereichen ist ein größerer Schritt als eine Gesellschaft mit nur einem Geschäftsbereich.
 3. **Wie sieht die IT-Landschaft aus?** Ein Land mit eigenem ERP, eigener Middleware oder eigenen Altsystemen braucht neue Schnittstellen. Teilt es das ERP mit einem schon eingeführten Land, ist der Weg kürzer.
 
-Daraus entsteht keine Formel, aber eine Reihenfolge, die sich begründen lässt. Ich lege sie in einer Tabelle mit einer Zeile pro Land und einer Spalte pro Frage fest. Damit wird sichtbar, warum ein Land in Phase zwei kommt und ein anderes in Phase vier, und die Diskussion darüber wird sachlicher.
+Daraus entsteht keine Formel, aber eine Reihenfolge, die sich begründen lässt. Ich lege sie in einer Tabelle mit einer Zeile pro Land und einer Spalte pro Frage fest. Damit wird sichtbar, warum ein Land in Phase zwei startet und ein anderes in Phase vier, und die Diskussion darüber wird sachlicher.
 
 ## Was tun, wenn Gesellschaften unter anderen Marken auftreten?
 
@@ -75,7 +75,7 @@ In Salesforce betrifft das mehr, als man im ersten Workshop denkt:
 - **Berichte:** Die Zentrale will über Marken hinweg auswerten, das Land will nach seiner eigenen Marke auswerten.
 - **Daten:** Die Marke muss irgendwo im Datenmodell stehen, damit Portal, Dokumente und Berichte darauf zugreifen können.
 
-Ich nehme die Marke deshalb als eigene Frage ins Template auf, auch wenn das erste Land nur eine hat. Kommt die zweite Marke erst im dritten Land, ist sie sonst eine Abweichung, die alle anderen Länder mittragen müssen.
+Ich nehme die Marke deshalb als eigene Frage ins Template auf, auch wenn das erste Land nur eine hat. Erscheint die zweite Marke erst im dritten Land, ist sie sonst eine Abweichung, die alle anderen Länder mittragen müssen.
 
 ## Jedes Land arbeitet zu mindestens 80 Prozent gleich
 
@@ -85,7 +85,7 @@ Der Prozess dazu ist einfach, braucht aber Disziplin:
 
 1. **Jede lokale Anforderung wird erfasst**, mit Begründung.
 2. **Rechtliche Vorgaben sind gesetzt.** Steuern, Rechnungsstellung oder Datenschutz unterscheiden sich, und darüber wird nicht diskutiert.
-3. **Alles andere wird entschieden**, von einer Stelle, die für das Template verantwortlich ist. Entweder kommt die Anforderung ins Template für alle, oder sie wird eine lokale Ausnahme, oder sie wird abgelehnt.
+3. **Alles andere wird entschieden**, von einer Stelle, die für das Template verantwortlich ist. Entweder wird die Anforderung ins Template für alle übernommen, oder sie wird eine lokale Ausnahme, oder sie wird abgelehnt.
 4. **Ausnahmen werden gezählt.** Wer die Ausnahmen pro Land kennt, sieht früh, wenn ein Land aus dem Template driftet.
 
 Bei mehreren Implementierungspartnern, etwa einem pro Region, muss diese Entscheidung auf Kundenseite liegen. Sonst baut jeder Partner sein eigenes Template. Wie ich mehrere Partner in einem gemeinsamen Rahmen führe, steht unter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).

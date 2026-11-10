@@ -33,7 +33,7 @@ Apex-Code kann nach dem Anheben auf API-Version 67.0 weniger Datensätze sehen, 
 
 ## Was ändert sich in Apex mit API-Version 67.0?
 
-Summer '26 kam je nach Instanz zwischen dem 15. Mai und dem 13. Juni 2026 in die Produktivorgs und brachte die API-Version 67.0 ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release)). Der [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm) nennt drei versionierte Verhaltensänderungen:
+Summer '26 erschien je nach Instanz zwischen dem 15. Mai und dem 13. Juni 2026 in die Produktivorgs und brachte die API-Version 67.0 ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release)). Der [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm) nennt drei versionierte Verhaltensänderungen:
 
 - **User Mode als Standard.** SOQL, SOSL, DML und Database-Methoden erzwingen die Objektberechtigungen und die Feldsicherheit (Field-Level Security) des ausführenden Benutzers. Bis 66.0 war der System Mode Standard, und der Code musste diese Prüfungen selbst übernehmen.
 - **With Sharing als Standard.** Eine Klasse ohne Sharing-Deklaration läuft im Sharing-Kontext des aktuellen Benutzers. Bis 66.0 lief eine solche Klasse ohne Sharing, wenn sie ein Einstiegspunkt war, oder übernahm den Modus ihres Aufrufers. Aura-Controller und @AuraEnabled-Methoden, die eine Lightning Web Component aufruft, liefen schon vorher mit Sharing.
@@ -80,7 +80,7 @@ Es gibt vier Gründe, und jeder hängt mit der heutigen Arbeitsweise von Coding-
 
 ## Beispiel: API-Versionen bei einem Maschinenbauer vereinheitlichen
 
-Nehmen wir einen Maschinenbauer mit Service Cloud, einem Händlerportal und SAP S/4, angebunden über Apex-REST-Services. Alle Zahlen sind Annahmen. Nach den Compiler-Warnungen für sehr alte API-Versionen aus Winter '27, beschrieben in [Salesforce Winter '27: Was sich für Ihre Pipeline ändert](../salesforce-winter-27-aenderungen-pipeline/), beschließt die IT, 220 Apex-Klassen mit Versionen zwischen 38.0 und 62.0 auf die aktuelle Version 68.0 zu heben. Der Partner arbeitet mit einem Coding-Agenten. Der Agent hebt die Versionen an, ersetzt in 15 Abfragen WITH SECURITY_ENFORCED durch WITH USER_MODE und behebt jeden Kompilierfehler. Alle Tests laufen durch, die Abdeckung bleibt bei 84 Prozent.
+Nehmen wir einen Maschinenbauer mit Service Cloud, einem Händlerportal und SAP S/4, angebunden über Apex-REST-Services. Alle Zahlen sind Annahmen. Nach den Compiler-Warnungen für sehr alte API-Versionen aus Winter '27, beschrieben in [Salesforce Winter '27: Was sich für Ihre Pipeline ändert](../salesforce-winter-27-aenderungen-pipeline/), beschließt die IT, 220 Apex-Klassen mit Versionen zwischen 38.0 und 62.0 auf die aktuelle Version 68.0 zu heben. Der Partner arbeitet mit einem Coding-Agenten. Der Agent hebt die Versionen an, ersetzt in 15 Abfragen WITH SECURITY_ENFORCED durch WITH USER_MODE und behebt jeden Kompilierfehler. Alle Tests sind grün, die Abdeckung bleibt bei 84 Prozent.
 
 Der Abnahmetest findet drei Probleme:
 
@@ -95,11 +95,11 @@ Zwei von drei Problemen melden sich selbst. Das dritte wäre live gegangen und h
 Ich würde den Umstieg als kleines Projekt mit eigenem Releaseplan aufsetzen:
 
 1. **Bestand aufnehmen.** Klassen und Trigger nach API-Version auflisten und markieren: ohne Sharing-Deklaration, mit WITH SECURITY_ENFORCED, aufgerufen von Integrationsusern, dem Portal oder Trigger-Handlern.
-2. **Versionssprünge nebenbei verbieten.** Eine Versionsänderung bekommt einen eigenen Pull Request. Den Rest fängt eine Pipeline-Prüfung ab, die API-Versionen in geänderten Metadaten-Dateien vergleicht, wie in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) beschrieben. Die Regel gehört außerdem in die [KI-Regeldatei Ihres Repositorys](../ki-regeldatei-salesforce-repository/), damit Agenten sie vorher kennen.
-3. **Absicht im Code erklären.** Jede angefasste Klasse bekommt ein explizites Sharing-Schlüsselwort, jede SOQL-, SOSL-, DML- und Database-Operation einen expliziten Zugriffsmodus. Systemzugriff braucht eine schriftliche Begründung in der Klasse, siehe Kasten unten.
+2. **Versionssprünge nebenbei verbieten.** Eine Versionsänderung erhält einen eigenen Pull Request. Den Rest fängt eine Pipeline-Prüfung ab, die API-Versionen in geänderten Metadaten-Dateien vergleicht, wie in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) beschrieben. Die Regel gehört außerdem in die [KI-Regeldatei Ihres Repositorys](../ki-regeldatei-salesforce-repository/), damit Agenten sie vorher kennen.
+3. **Absicht im Code erklären.** Jede angefasste Klasse erhält ein explizites Sharing-Schlüsselwort, jede SOQL-, SOSL-, DML- und Database-Operation einen expliziten Zugriffsmodus. Systemzugriff braucht eine schriftliche Begründung in der Klasse, siehe Kasten unten.
 
 4. **Mit echten Benutzern testen.** Pro Fachbereich mindestens ein Test mit System.runAs() als Techniker, Händler und Integrationsuser, der Datensatzanzahlen prüft und nicht nur „nicht null“.
-5. **Berechtigungssätze der Integrationsuser zuerst prüfen.** Entscheiden Sie vor dem Versionssprung für jede Lücke, ob der Integrationsuser mehr Feldzugriff bekommt oder nur die betroffene Operation im System Mode läuft, damit der Fehler nicht erst in der Produktion auffällt. Erweitern Sie den Berechtigungssatz nicht reflexhaft.
+5. **Berechtigungssätze der Integrationsuser zuerst prüfen.** Entscheiden Sie vor dem Versionssprung für jede Lücke, ob der Integrationsuser mehr Feldzugriff erhält oder nur die betroffene Operation im System Mode läuft, damit der Fehler nicht erst in der Produktion auffällt. Erweitern Sie den Berechtigungssatz nicht reflexhaft.
 
 ```vertiefung Für Entwickler
 titel: Wie ein erklärter Systemzugriff im Code aussieht

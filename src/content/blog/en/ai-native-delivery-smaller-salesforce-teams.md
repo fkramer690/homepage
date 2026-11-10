@@ -74,7 +74,7 @@ The daily demo replaces the stand-up and part of the status reporting. A steerin
 
 ### Ownership has to be written down
 
-With fewer people, each one carries more knowledge, and an agent owns nothing. The idea of a named owner per artifact fits the [object ownership matrix](../salesforce-object-ownership-matrix/) I use when several partners share one org: one team owns each object, and one person owns each Flow, class and agent. The pipeline gates come on top. See [quality gates for AI code in the Salesforce pipeline](../quality-gates-for-ai-code-salesforce-pipeline/).
+With fewer people, each one carries more knowledge, and an agent owns nothing. The idea of a named owner per artifact fits the [object ownership matrix](../salesforce-object-ownership-matrix/) I use when several partners share one org: one team owns each object, and one person owns each Flow, class and agent. The pipeline gates are added on top. See [quality gates for AI code in the Salesforce pipeline](../quality-gates-for-ai-code-salesforce-pipeline/).
 
 ## Worked example: from one large partner team to three pods
 

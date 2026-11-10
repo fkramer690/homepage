@@ -19,7 +19,7 @@ faq:
   - q: "Was ist Setup with Agentforce?"
     a: "Setup with Agentforce ist ein Admin-Agent im Salesforce-Setup. Admins beschreiben eine Aufgabe in natürlicher Sprache, der Agent schlägt eine Lösung vor und setzt sie nach Freigabe um, zum Beispiel ein benutzerdefiniertes Objekt mit Feldern, einen Flow, ein Permission Set oder eine Lightning-Seite."
   - q: "Darf Setup with Agentforce in Produktion eingesetzt werden?"
-    a: "Für Fragen, Fehlerbehebung bei Zugriffsproblemen und Benutzerverwaltung wie das Einfrieren von Benutzern ja. Für Metadatenänderungen wie Felder, Flows, Seiten oder Freigaberegeln würde ich es nicht erlauben: Sie gehören in eine Developer-Sandbox und kommen über Repository und Pipeline in Produktion."
+    a: "Für Fragen, Fehlerbehebung bei Zugriffsproblemen und Benutzerverwaltung wie das Einfrieren von Benutzern ja. Für Metadatenänderungen wie Felder, Flows, Seiten oder Freigaberegeln würde ich es nicht erlauben: Sie gehören in eine Developer-Sandbox und gelangen über Repository und Pipeline in Produktion."
   - q: "Protokolliert Setup with Agentforce seine Änderungen?"
     a: "Ja. Laut Salesforce-Hilfe erscheinen unterstützte Setup-Änderungen durch den Agenten im Setup Audit Trail mit dem Admin in der Spalte User sowie dem Namen und der ID des Agenten in der Spalte AI Agent. Einträge werden nach 180 Tagen gelöscht. Exportieren Sie sie, wenn Sie sie länger brauchen."
   - q: "Was kostet Setup with Agentforce?"
@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Setup with Agentforce und Agentforce for Flow gehören in eine Developer-Sandbox. Dort sind sie ein schneller Weg, Metadaten zu bauen, die danach wie jede andere Änderung über Repository und Pipeline laufen. In Produktion würde ich den Setup-Agenten für Fragen, Fehlerbehebung bei Zugriffsproblemen und Benutzerverwaltung erlauben, nicht aber für Aktionen, die Metadaten anlegen oder ändern. Der Agent fordert vor jeder Aktion eine Freigabe an. Diese erteilt derselbe Admin, der die Anfrage gestellt hat. Sie ersetzt weder die Prüfung durch eine zweite Person noch die Object Ownership Matrix noch das Deployment, das die Produktivumgebung und das Repository synchron hält.
+Setup with Agentforce und Agentforce for Flow gehören in eine Developer-Sandbox. Dort sind sie ein schneller Weg, Metadaten zu bauen, die danach wie jede andere Änderung Repository und Pipeline durchlaufen. In Produktion würde ich den Setup-Agenten für Fragen, Fehlerbehebung bei Zugriffsproblemen und Benutzerverwaltung erlauben, nicht aber für Aktionen, die Metadaten anlegen oder ändern. Der Agent fordert vor jeder Aktion eine Freigabe an. Diese erteilt derselbe Admin, der die Anfrage gestellt hat. Sie ersetzt weder die Prüfung durch eine zweite Person noch die Object Ownership Matrix noch das Deployment, das die Produktivumgebung und das Repository synchron hält.
 
 ## Was kann der Setup-Agent ändern, und was dokumentiert Salesforce?
 
@@ -56,7 +56,7 @@ Agentforce for Flow, früher Einstein for Flow, ist das enger gefasste Werkzeug.
 
 ## Eine Agentenänderung in Produktion bricht den Release-Prozess
 
-Ein geregeltes Salesforce-Programm beruht auf einer Regel: In Produktion steht, was im Repository steht, und jede Änderung kommt über die Pipeline dorthin. Warum, beschreibe ich in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/). Ein Feld, ein Flow oder eine Lightning-Seite, direkt in Produktion angelegt, bricht diese Regel, egal ob ein Mensch klickt oder ein Agent.
+Ein geregeltes Salesforce-Programm beruht auf einer Regel: In Produktion steht, was im Repository steht, und jede Änderung gelangt über die Pipeline dorthin. Warum, beschreibe ich in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/). Ein Feld, ein Flow oder eine Lightning-Seite, direkt in Produktion angelegt, bricht diese Regel, egal ob ein Mensch klickt oder ein Agent.
 
 Der Agent verschärft das auf drei Wegen:
 
@@ -64,7 +64,7 @@ Der Agent verschärft das auf drei Wegen:
 - **Die Freigabe sieht aus wie ein Review.** Der Admin, der den Prompt geschrieben hat, bestätigt auch den Vorschlag. Niemand sonst prüft, ob das Objekt laut [Object Ownership Matrix](../object-ownership-matrix-salesforce/) einem anderen Stream gehört, ob auf dem Objekt schon ein Flow läuft oder ob das Permission Set zu weit geht.
 - **Der Audit Trail zeigt was, nicht warum.** Er zeigt die unterstützte Setup-Änderung, den Admin, den Agenten und einen Zeitstempel. User Story, Reviewer und Tests fehlen, und nach 180 Tagen brauchen Sie einen eigenen Export.
 
-Dann kommt das nächste Deployment. Ein Partner deployt eine Lightning-Datensatzseite und ihre Aktivierung aus dem Repository, und die in Produktion erstellte Seite verliert ihre Zuweisung. Die Validierung der Pipeline läuft gegen eine Sandbox ohne den neuen Flow und testet damit eine andere Org als die, in die sie deployt.
+Dann folgt das nächste Deployment. Ein Partner deployt eine Lightning-Datensatzseite und ihre Aktivierung aus dem Repository, und die in Produktion erstellte Seite verliert ihre Zuweisung. Die Validierung der Pipeline läuft gegen eine Sandbox ohne den neuen Flow und testet damit eine andere Org als die, in die sie deployt.
 
 ## Sollte der Setup-Agent in Produktion erlaubt sein?
 
@@ -80,7 +80,7 @@ Ja, für einen festgelegten Teil seiner Arbeit. Ich unterscheide danach, ob eine
 | Objekte, Felder, Formeln, Berichtstypen | nicht erlaubt | erlaubt, dann Pipeline |
 | Flows, Lightning-Seiten | nicht erlaubt | erlaubt, dann Pipeline |
 
-Routinemäßige Benutzerverwaltung passiert in den meisten Orgs ohnehin in Produktion und läuft nie über ein Repository. Die Salesforce-Hilfe nennt Grenzen der Fehlerbehebung bei Zugriffsproblemen, zum Beispiel bei Freigaben mit Controlled by Parent. Behandeln Sie die Antworten des Agenten deshalb als Diagnose, nicht als Sicherheitsentscheidung. Alle weiteren in der Tabelle aufgeführten Aktionen betreffen Metadaten und folgen dem Release-Prozess.
+Routinemäßige Benutzerverwaltung passiert in den meisten Orgs ohnehin in Produktion und wird nie über ein Repository abgewickelt. Die Salesforce-Hilfe nennt Grenzen der Fehlerbehebung bei Zugriffsproblemen, zum Beispiel bei Freigaben mit Controlled by Parent. Behandeln Sie die Antworten des Agenten deshalb als Diagnose, nicht als Sicherheitsentscheidung. Alle weiteren in der Tabelle aufgeführten Aktionen betreffen Metadaten und folgen dem Release-Prozess.
 
 Durchsetzen lässt sich das über Berechtigungen, nicht über ein Richtliniendokument. Salesforce sagt, der Agent kann nur, was der Admin darf. Die Frage lautet also, wer in Produktion die aufgabenspezifischen Rechte hat: Manage Flows für Flows, Customize Application für Objekte und Felder, Manage Profiles and Permission Sets, Manage Sharing und die Rechte zur Benutzerverwaltung. Wenn nur der Release-User und ein Notfall-Admin die Metadatenrechte haben, kann kein anderer Admin den Setup-Agenten in Produktion einen Flow bauen lassen, was auch immer der Button anbietet. Wer den Agenten überhaupt nutzen darf, wird über die Permission Set Group Setup with Agentforce User gesteuert.
 
@@ -92,7 +92,7 @@ Die Serviceleitung möchte, dass die Hotline vor einer Messekampagne auf der Anl
 
 Am Donnerstag deployt Partner A sein Sprint-Release, darin die Asset-Datensatzseite und ihre Aktivierung aus dem Repository. Die Hotline sieht wieder die Seite von Partner A, ohne das neue Feld. Der Flow läuft weiter, parallel zum Flow von Partner A, der das Garantieende schon aus dem Installationsdatum berechnet. In der Woche darauf nennt die Hotline einem Händler zwei verschiedene Garantiedaten. Der Setup Audit Trail zeigt die Änderungen, aber kein Ticket und keinen Grund.
 
-Dieselbe Anfrage in einer Developer-Sandbox mit Source Tracking hätte ebenfalls fünfzehn Minuten gedauert. Die Administratorin holt die Änderungen in einen Branch, öffnet einen Pull Request, Partner A prüft ihn als Owner von Asset und führt die beiden Flows zu einem zusammen. Das Feld kommt mit dem nächsten Release in Produktion, rund eine Woche später.
+Dieselbe Anfrage in einer Developer-Sandbox mit Source Tracking hätte ebenfalls fünfzehn Minuten gedauert. Die Administratorin holt die Änderungen in einen Branch, öffnet einen Pull Request, Partner A prüft ihn als Owner von Asset und führt die beiden Flows zu einem zusammen. Das Feld gelangt mit dem nächsten Release in Produktion, rund eine Woche später.
 
 ## Die Pipeline-Regel neben die Ownership Matrix schreiben
 
@@ -100,7 +100,7 @@ Release-Prozess und Rechtemodell für Admin-KI aufzusetzen ist Teil meiner Arbei
 
 ```schritte
 Die Regel aufschreiben
-  Metadatenänderungen kommen nur über die Pipeline in Produktion, egal ob ein Mensch, ein Partner oder ein Agent sie gebaut hat. Sie gehört neben die Ownership Matrix.
+  Metadatenänderungen gelangen nur über die Pipeline in Produktion, egal ob ein Mensch, ein Partner oder ein Agent sie gebaut hat. Sie gehört neben die Ownership Matrix.
 Rechte in Produktion prüfen
   Listen Sie auf, wer Manage Flows, Customize Application und vergleichbare Berechtigungen hat. Genau diese Liste erbt der Setup-Agent.
 Erst in Developer-Sandboxes

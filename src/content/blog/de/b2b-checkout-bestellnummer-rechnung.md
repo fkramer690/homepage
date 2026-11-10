@@ -12,7 +12,7 @@ tags: [B2B Commerce, Checkout, Bestellnummer, Zahlung, Kreditlimit, ERP]
 takeaways:
   - "Eine Bestellnummer (Purchase Order) gilt im Shop als Zahlungsform, löst aber keine Zahlung aus. Die Nummer wird für die Rechnung ans ERP übergeben."
   - "Eine Bestellung geht nur raus, wenn für den Warenkorb eine Zahlungsautorisierung oder eine Bestellnummer vorliegt. Jeder Checkout endet mit einem davon."
-  - "Die Purchase-Order-Komponente braucht kein Payment Gateway. Dual Payment bietet Karte und Bestellnummer, Salesforce Payments läuft über Stripe oder Adyen."
+  - "Die Purchase-Order-Komponente braucht kein Payment Gateway. Dual Payment bietet Karte und Bestellnummer, Salesforce Payments nutzt Stripe oder Adyen."
   - "Zahlungen lassen sich nicht mit einer Commerce Extension anpassen. Eigene Zahlungslogik braucht einen Apex-Adapter oder eine eigene Komponente."
   - "Kreditlimit und Auftragssperre gehören ins ERP. Die validate-Methode der PlaceOrder-Extension fragt das ERP, bevor die Bestellung entsteht."
 faq:
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Ein B2B-Shop für Händler, die auf Rechnung kaufen, braucht zuerst die Bestellnummer als Zahlart und erst danach, wenn überhaupt, die Karte. Salesforce B2B Commerce bietet eine Purchase-Order-Komponente ohne Payment Gateway, eine Dual-Payment-Komponente für Karte und Bestellnummer sowie Salesforce Payments auf Basis von Stripe oder Adyen, wobei Salesforce Payments in B2B-Shops ebenfalls eine Bestellnummer anbieten kann. Eine Bestellnummer löst in Salesforce keine Zahlung aus, die Rechnungsstellung erfolgt im ERP. Was der Shop ergänzen muss, ist die Prüfung, ob der Händler überhaupt bestellen darf, also Kreditlimit und Auftragssperre. Diese Entscheidung muss vor der Bestellung aus dem ERP kommen.
+Ein B2B-Shop für Händler, die auf Rechnung kaufen, braucht zuerst die Bestellnummer als Zahlart und erst danach, wenn überhaupt, die Karte. Salesforce B2B Commerce bietet eine Purchase-Order-Komponente ohne Payment Gateway, eine Dual-Payment-Komponente für Karte und Bestellnummer sowie Salesforce Payments auf Basis von Stripe oder Adyen, wobei Salesforce Payments in B2B-Shops ebenfalls eine Bestellnummer anbieten kann. Eine Bestellnummer löst in Salesforce keine Zahlung aus, die Rechnungsstellung erfolgt im ERP. Was der Shop ergänzen muss, ist die Prüfung, ob der Händler überhaupt bestellen darf, also Kreditlimit und Auftragssperre. Diese Entscheidung muss vor der Bestellung aus dem ERP vorliegen.
 
 ## Was heißt Bezahlen in einem B2B-Shop?
 
@@ -55,8 +55,8 @@ Das Entwicklerhandbuch nennt für B2B-Shops diese Optionen, verfügbar in Enterp
 Für das Gateway nennt die [Seite zu den Gateway-Optionen](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-payment-gateway-options.html) drei Wege: ein Anbieterpaket vom AppExchange, Salesforce Payments als native Stripe-Integration oder ein eigenes Gateway. Inzwischen hat Salesforce Payments auch eine [native Integration mit Adyen](https://www.salesforce.com/blog/salesforce-native-integration-adyen/). Bei AppExchange-Paketen sollen Sie laut Salesforce prüfen, ob das Paket B2B-Shops unterstützt. Ein eigenes serverseitiges Gateway braucht einen Apex-Adapter.
 
 ```vertiefung Für Entwickler
-titel: Wo landet die eigene Zahlungslogik?
-Das Extension-Framework, das Preise, Bestand, Steuer, Versand und Auftragserzeugung abdeckt, gilt nicht für Zahlungen: "Currently, payments can't be customized with an extension" ([Salesforce Developers, Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html)). Sonderregeln für Zahlungen landen deshalb im Apex-Adapter oder in einer eigenen Komponente, und beides ist Code, den Ihr Team über jedes Release hinweg verantwortet.
+titel: Wohin gehört die eigene Zahlungslogik?
+Das Extension-Framework, das Preise, Bestand, Steuer, Versand und Auftragserzeugung abdeckt, gilt nicht für Zahlungen: "Currently, payments can't be customized with an extension" ([Salesforce Developers, Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html)). Sonderregeln für Zahlungen gehören deshalb in den Apex-Adapter oder in einer eigenen Komponente, und beides ist Code, den Ihr Team über jedes Release hinweg verantwortet.
 ```
 
 Im Flow-basierten Checkout wählen Käufer auf der Bestellübersicht zwischen Bestellnummer und Karte. Wer die Bestellnummer wählt, gibt PO-Nummer und Rechnungsadresse ein ([Salesforce Developers, Purchase Order oder Kreditkarte](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-checkout-choose-po-or-cc.html)).
@@ -102,7 +102,7 @@ Ich würde Kreditlimits nicht nachts nach Salesforce kopieren, um den Live-Aufru
 
 Ein Pumpenhersteller verkauft Ersatzteile über 300 Händler in Deutschland, Österreich und der Schweiz. Alle Händler haben ein Debitorenkonto in SAP und zahlen innerhalb von 30 Tagen. Dazu bestellen rund 50 kleine Servicewerkstätten pro Jahr ein- oder zweimal und haben kein Debitorenkonto.
 
-Hier würde ich Salesforce Payments oder Dual Payment wählen, mit Bestellnummer für die Käufergruppe der Händler und Karte für die Werkstätten. Jede Bestellung auf Rechnung läuft durch die validate-Prüfung gegen SAP. Kartenbestellungen überspringen die Prüfung des Kreditlimits, nicht die der Sperre. Die Zahlung muss an die Buchhaltung in SAP übergeben werden, das ist eine Schnittstelle mehr. Vor der Entscheidung würde ich die Buchhaltung fragen, welche Händler Rechnungen ohne eigene Bestellnummer zurückweisen; bei diesen Händlern kann die validate-Methode auch ein leeres Bestellnummernfeld ablehnen.
+Hier würde ich Salesforce Payments oder Dual Payment wählen, mit Bestellnummer für die Käufergruppe der Händler und Karte für die Werkstätten. Jede Bestellung auf Rechnung durchläuft die validate-Prüfung gegen SAP. Kartenbestellungen überspringen die Prüfung des Kreditlimits, nicht die der Sperre. Die Zahlung muss an die Buchhaltung in SAP übergeben werden, das ist eine Schnittstelle mehr. Vor der Entscheidung würde ich die Buchhaltung fragen, welche Händler Rechnungen ohne eigene Bestellnummer zurückweisen; bei diesen Händlern kann die validate-Methode auch ein leeres Bestellnummernfeld ablehnen.
 
 Sind es am Ende weniger Werkstätten als gedacht, ist die einfachere Alternative ein Shop mit ausschließlich der Purchase-Order-Komponente und ein Vertriebsprozess, der vor der ersten Bestellung ein Debitorenkonto anlegt.
 
@@ -110,7 +110,7 @@ Sind es am Ende weniger Werkstätten als gedacht, ist die einfachere Alternative
 
 Eine Bestellung im Shop erzeugt in Salesforce eine Order Summary. Order Summaries, die B2B Commerce selbst anlegt, haben den Lebenszyklustyp unmanaged, solche aus Salesforce Order Management sind managed. Bei unmanaged gilt: Änderungen im externen System "must be reflected in Salesforce" ([Salesforce Developers, managed und unmanaged Order Summaries](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html)). Die Bestellung mit Bestellnummer, Rechnungsadresse und Zahlungsinformation wird ans ERP übertragen, das den Kundenauftrag und später die Rechnung erzeugt.
 
-Wer ab diesem Zeitpunkt für den Auftrag verantwortlich ist, beschreibe ich in [Shop-Bestellungen ins ERP](../shop-bestellungen-erp-auftrag/), welche Daten zwischen Shop und SAP fließen, in [B2B Commerce und SAP](../b2b-commerce-sap-datenfluesse/). Wie Händler mit alten Bestellungen und Vorlagen schneller zum Checkout kommen, steht in [Nachbestellen im B2B-Shop](../nachbestellen-b2b-shop-vorlagen/).
+Wer ab diesem Zeitpunkt für den Auftrag verantwortlich ist, beschreibe ich in [Shop-Bestellungen ins ERP](../shop-bestellungen-erp-auftrag/), welche Daten zwischen Shop und SAP fließen, in [B2B Commerce und SAP](../b2b-commerce-sap-datenfluesse/). Wie Händler mit alten Bestellungen und Vorlagen schneller zum Checkout gelangen, steht in [Nachbestellen im B2B-Shop](../nachbestellen-b2b-shop-vorlagen/).
 
 ## Bei der Buchhaltung fragen, wie Händler zahlen
 

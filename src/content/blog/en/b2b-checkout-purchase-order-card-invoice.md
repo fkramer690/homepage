@@ -71,7 +71,7 @@ My view: for a manufacturer's spare parts store, card payment is the exception. 
 
 Each card payment creates work that a purchase order does not. Someone has to book the card payment in the ERP against the invoice, and someone has to handle refunds and chargebacks. Salesforce writes that Salesforce Payments and some AppExchange providers "may be interoperable" with Order Management; that is a prompt to check, not a promise about your ERP.
 
-So I recommend the Purchase Order component when the store is for known dealers only, and Dual Payment or Salesforce Payments with the PO option when a defined group of buyers should pay by card. Starting with card payments because consumer webshops do it adds a gateway, fees and a reconciliation process for orders that would have come in on account anyway.
+So I recommend the Purchase Order component when the store is for known dealers only, and Dual Payment or Salesforce Payments with the PO option when a defined group of buyers should pay by card. Starting with card payments because consumer webshops do it adds a gateway, fees and a reconciliation process for orders that would have been placed on account anyway.
 
 ## The PlaceOrder extension checks credit limit and order block
 

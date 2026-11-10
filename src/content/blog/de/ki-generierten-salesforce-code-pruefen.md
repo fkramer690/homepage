@@ -17,7 +17,7 @@ takeaways:
   - "KI-Reviewer geben dem Partner Hinweise. Die Freigabe für Datenmodell, Sharing und Portalzugriff bleibt bei einer Person auf Kundenseite."
 faq:
   - q: "Muss ich jede Zeile KI-generierten Salesforce-Codes lesen?"
-    a: "Nein. Mit Code Analyzer, Apex-Tests und Validierungsdeployment als Merge-Voraussetzung konzentriert sich das menschliche Review auf Tests, Datenzugriff, Feldwahl, Umfang und Geschäftsregeln. Änderungen an Sharing, Datenmodell und Schnittstellen sollten immer eine menschliche Freigabe auf Kundenseite bekommen."
+    a: "Nein. Mit Code Analyzer, Apex-Tests und Validierungsdeployment als Merge-Voraussetzung konzentriert sich das menschliche Review auf Tests, Datenzugriff, Feldwahl, Umfang und Geschäftsregeln. Änderungen an Sharing, Datenmodell und Schnittstellen sollten immer eine menschliche Freigabe auf Kundenseite erhalten."
   - q: "Darf ein KI-Werkzeug Pull Requests in unserem Repository freigeben?"
     a: "GitHub kann Copilot-Freigaben auf die Pflichtfreigaben anrechnen. Die Funktion ist aber Public Preview und standardmäßig deaktiviert. Für eine Org mit Kunden- und Händlerdaten würde ich diese Funktion nicht nutzen und KI-Reviews nur als Hinweise für den Partner verwenden."
   - q: "Welches Werkzeug findet SOQL-Abfragen in Schleifen?"

@@ -32,7 +32,7 @@ In Salesforce UAT (user acceptance testing) the business checks whether a new fe
 
 ## What is UAT, and what is it not?
 
-A Salesforce program has several kinds of testing that often get mixed up:
+A Salesforce program has several kinds of testing that are often confused:
 
 | Test | Who | Question |
 |---|---|---|
@@ -49,7 +49,7 @@ Business users can be involved earlier, for example in prototypes or demos. By U
 In many programs partner deliveries are accepted without a technical review, and the problems only show up in UAT or in production. With several partners, two more effects come into play:
 
 - **Everyone tests their own part.** Partner A tests the quoting process, partner B the order handover to the ERP. The business is the first to test the path from quote to order in the ERP, in UAT.
-- **UAT is the first shared environment.** If every partner tests in their own environment, the changes only come together in the UAT sandbox. A [sandbox strategy with one shared integration environment](../salesforce-sandbox-strategy-multiple-partners/) brings that moment forward.
+- **UAT is the first shared environment.** If every partner tests in their own environment, the changes are only combined in the UAT sandbox. A [sandbox strategy with one shared integration environment](../salesforce-sandbox-strategy-multiple-partners/) brings that moment forward.
 
 So the client sets the rules, and every delivery is checked before it moves on. The path across several partners needs a named owner: a client-side test lead, a lead partner or program management, responsible for coordinating the end-to-end test and deciding when UAT starts. A feature only goes to UAT once these entry criteria are met:
 
@@ -83,14 +83,14 @@ On the business side, three factors determine whether this works:
 
 ## How much time does the business need to plan?
 
-There is no fixed number, but there is a simple calculation. Count the test cases for the release, estimate the time per test case for running and documenting it, and multiply by the number of roles that have to test it. Add a buffer for retests, because every fix gets checked again. As a worked example, 40 test cases at 20 minutes each, with two roles per test case, add up to about 27 hours of pure test time. With a 20 percent retest buffer that is about 32 hours, or four person-days. Preparation and defect triage are additional. These days have to be in the testers' calendars before the release is planned, not afterwards.
+There is no fixed number, but there is a simple calculation. Count the test cases for the release, estimate the time per test case for running and documenting it, and multiply by the number of roles that have to test it. Add a buffer for retests, because every fix is checked again. As a worked example, 40 test cases at 20 minutes each, with two roles per test case, add up to about 27 hours of pure test time. With a 20 percent retest buffer that is about 32 hours, or four person-days. Preparation and defect triage are additional. These days have to be in the testers' calendars before the release is planned, not afterwards.
 
 ## Who decides whether a defect stops the release?
 
 The business assesses the process impact of a defect. The partner can judge how much work a fix will take, but not whether inside sales can work without the field. IT and data protection also assess defects involving permissions, privacy or data integrity, such as a duplicate posting in the ERP; these are never cosmetic. I recommend three levels:
 
 - **Blocking:** the process cannot be carried out without a fix. The release does not go live.
-- **Major:** there is a workaround users can live with for a few weeks. The release goes live, the fix comes with the next release.
+- **Major:** there is a workaround users can live with for a few weeks. The release goes live, the fix ships with the next release.
 - **Cosmetic:** labels, order, purely visual differences that do not affect use or understanding. Goes into the backlog.
 
 ```hinweis offen

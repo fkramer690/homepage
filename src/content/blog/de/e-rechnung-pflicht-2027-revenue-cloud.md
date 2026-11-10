@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Ab 1. Januar 2027 müssen Unternehmen mit mehr als 800.000 Euro Umsatz im Jahr 2026 ihren inländischen Geschäftskunden E-Rechnungen schicken; ab 1. Januar 2028 gilt das grundsätzlich für alle inländischen B2B-Rechnungen. Eine E-Rechnung ist eine strukturierte Datei, in der Regel nach EN 16931, etwa XRechnung oder ZUGFeRD. Ein PDF per E-Mail zählt nicht mehr. Kommen Ihre Rechnungen aus SAP, übernimmt SAP die Formatierung. Kommen sie aus Revenue Cloud Billing, brauchen Sie einen Plan: Salesforce dokumentiert Rechnungs-PDFs, eine native Ausgabe nach EN 16931 habe ich in der öffentlichen Dokumentation mit Stand 9. November 2026 nicht gefunden. Legen Sie den Weg fest, bevor die erste Rechnung Salesforce verlässt.
+Ab 1. Januar 2027 müssen Unternehmen mit mehr als 800.000 Euro Umsatz im Jahr 2026 ihren inländischen Geschäftskunden E-Rechnungen schicken; ab 1. Januar 2028 gilt das grundsätzlich für alle inländischen B2B-Rechnungen. Eine E-Rechnung ist eine strukturierte Datei, in der Regel nach EN 16931, etwa XRechnung oder ZUGFeRD. Ein PDF per E-Mail zählt nicht mehr. Stammen Ihre Rechnungen aus SAP, übernimmt SAP die Formatierung. Stammen sie aus Revenue Cloud Billing, brauchen Sie einen Plan: Salesforce dokumentiert Rechnungs-PDFs, eine native Ausgabe nach EN 16931 habe ich in der öffentlichen Dokumentation mit Stand 9. November 2026 nicht gefunden. Legen Sie den Weg fest, bevor die erste Rechnung Salesforce verlässt.
 
 ## Was verlangt die E-Rechnungspflicht?
 
@@ -60,7 +60,7 @@ Behandeln Sie die E-Rechnung also als Lücke, die Sie schließen müssen, und bi
 
 ## SAP, E-Rechnungsdienst oder Partner-App
 
-Ich sehe drei Wege, und welcher passt, hängt davon ab, woher Ihre Rechnungen heute kommen.
+Ich sehe drei Wege, und welcher passt, hängt davon ab, woher Ihre Rechnungen heute stammen.
 
 | Weg | Wie es funktioniert | Wann es passt |
 |---|---|---|
@@ -68,7 +68,7 @@ Ich sehe drei Wege, und welcher passt, hängt davon ab, woher Ihre Rechnungen he
 | E-Rechnungsdienst | Billing bucht die Rechnung, Middleware bildet die Daten auf XRechnung oder ZUGFeRD ab, ein Dienst prüft die E-Rechnung und stellt sie zu | Billing fakturiert wiederkehrende Umsätze, und alle Rechnungen sollen über einen Kanal laufen |
 | Partner-App | Eine App in der Org erzeugt aus der Rechnung die strukturierte Datei | Eine App deckt Ihre Formate ab, und ein weiterer Anbieter in der Org ist akzeptabel |
 
-Bei **Rechnung aus SAP** bleibt die Compliance in einem Fakturasystem. SAP bietet die E-Rechnung für Deutschland in [SAP Document and Reporting Compliance](https://blogs.sap.com/2022/08/05/meet-your-german-customers-request-electronic-invoices-attached-to-e-mails/) an, darunter XRechnung per E-Mail und über Peppol. Was unterstützt wird, hängt von SAP-Release, Betriebsmodell und Einrichtung ab. Fragen Sie Ihr SAP-Team, welches Szenario lizenziert ist und läuft. Kundendaten, Versandwege und Monitoring betreffen trotzdem beide Systeme. Der Preis: Jede Vertragsänderung in Revenue Cloud muss vor dem nächsten Rechnungslauf in SAP ankommen. Die Abwägung steht in [Revenue Cloud Billing oder SAP](../revenue-cloud-billing-oder-sap-rechnung/).
+Bei **Rechnung aus SAP** bleibt die Compliance in einem Fakturasystem. SAP bietet die E-Rechnung für Deutschland in [SAP Document and Reporting Compliance](https://blogs.sap.com/2022/08/05/meet-your-german-customers-request-electronic-invoices-attached-to-e-mails/) an, darunter XRechnung per E-Mail und über Peppol. Was unterstützt wird, hängt von SAP-Release, Betriebsmodell und Einrichtung ab. Fragen Sie Ihr SAP-Team, welches Szenario lizenziert und im Einsatz ist. Kundendaten, Versandwege und Monitoring betreffen trotzdem beide Systeme. Der Preis: Jede Vertragsänderung in Revenue Cloud muss vor dem nächsten Rechnungslauf in SAP ankommen. Die Abwägung steht in [Revenue Cloud Billing oder SAP](../revenue-cloud-billing-oder-sap-rechnung/).
 
 Mit **einem E-Rechnungsdienst** bleibt Billing das Fakturasystem. Ich würde einen Dienst wählen, der auch die Rechnungen aus SAP verarbeitet, damit jede Rechnung dieselbe Prüfung, dasselbe Routing und dasselbe Monitoring durchläuft, egal über welchen Kanal ein Kunde sie erhält. Die Anbindung ist ein normales Schnittstellenprojekt mit Verantwortlichem, Monitoring und Fehlerbehandlung, also die Arbeit, die ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/) beschreibe.
 
@@ -78,12 +78,12 @@ Mit **einem E-Rechnungsdienst** bleibt Billing das Fakturasystem. Ich würde ein
 
 Ein Maschinenbauer mit 60 Millionen Euro Umsatz fakturiert Maschinen und Ersatzteile aus SAP, das bereits E-Rechnungen ausstellt. Ab Mitte 2027 will er Fernüberwachungs-Abos aus Revenue Cloud Billing fakturieren.
 
-Die Pflicht gilt schon, wenn die erste Billing-Rechnung versendet wird, für den neuen Prozess gibt es also keine Übergangszeit. Ich würde Billing-Rechnungen nicht als PDF starten und das Format später nachziehen. Entweder laufen die Abo-Rechnungen im ersten Jahr über SAP, oder Billing wird an den E-Rechnungsdienst angebunden, der bereits für die SAP-Rechnungen genutzt wird. Was davon passt, hängt davon ab, wie oft sich Abos ändern. Mehr dazu steht in [Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
+Die Pflicht gilt schon, wenn die erste Billing-Rechnung versendet wird, für den neuen Prozess gibt es also keine Übergangszeit. Ich würde Billing-Rechnungen nicht als PDF starten und das Format später nachziehen. Entweder werden die Abo-Rechnungen im ersten Jahr über SAP erstellt, oder Billing wird an den E-Rechnungsdienst angebunden, der bereits für die SAP-Rechnungen genutzt wird. Was davon passt, hängt davon ab, wie oft sich Abos ändern. Mehr dazu steht in [Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
 
 ## Grenze und Rechnungsquelle je Gesellschaft klären
 
 1. **Grenze je Rechnungsaussteller.** Welche deutschen Gesellschaften stellen Rechnungen aus, bilden einige eine Organschaft, und gilt für jede die Pflicht ab 2027 oder ab 2028?
-2. **Rechnungsquelle je Umsatzart.** Welche Rechnungen kommen aus Salesforce, welche aus SAP.
+2. **Rechnungsquelle je Umsatzart.** Welche Rechnungen stammen aus Salesforce, welche aus SAP.
 3. **Format und Kanal je Kunde.** XRechnung oder ZUGFeRD, E-Mail, Peppol oder Portal, abgestimmt mit den wichtigsten Kunden.
 4. **Feldzuordnung.** Ordnen Sie mit Ihrem Anbieter oder Steuerberater jede Pflichtangabe ihrer Quelle zu: Salesforce, SAP, Steuer-Engine oder E-Rechnungsdienst.
 5. **Prüfung und Fehler.** Vor dem Versand validieren und festlegen, wer eine abgelehnte Rechnung korrigiert.

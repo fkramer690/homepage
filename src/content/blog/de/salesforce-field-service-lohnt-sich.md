@@ -101,7 +101,7 @@ Diese Zahlen lassen sich meist dem ERP oder der bestehenden Einsatzplanung entne
 
 Der Business Case selbst braucht beide Seiten. Auf der Nutzenseite stehen Kosten eines Fehleinsatzes, Wiederholungsbesuche, Aufwand der Disposition, Überstunden, verfehlte Reaktionszeiten mit ihren Vertragsfolgen und der Aufwand für Serviceberichte. Auf der Kostenseite stehen Lizenzen, Umsetzung, Integration, Betrieb und bestehende Systeme, die abgelöst werden oder bleiben. Rechnen Sie über die erwartete Nutzungsdauer, nicht nur für das erste Jahr.
 
-Danach kommt die Frage nach den Daten. Field Service plant nur mit gepflegten Anlagen, Standorten, Qualifikationen und Verfügbarkeiten. Ein Techniker, dessen Qualifikationen nirgends hinterlegt sind, wird von der Engine falsch eingeplant. Welche Daten das genau sind, beschreibe ich in [Teil 2 dieser Serie](../salesforce-field-service-stammdaten/).
+Danach folgt die Frage nach den Daten. Field Service plant nur mit gepflegten Anlagen, Standorten, Qualifikationen und Verfügbarkeiten. Ein Techniker, dessen Qualifikationen nirgends hinterlegt sind, wird von der Engine falsch eingeplant. Welche Daten das genau sind, beschreibe ich in [Teil 2 dieser Serie](../salesforce-field-service-stammdaten/).
 
 ## Vier Zahlen für einen Monat und eine Region erheben
 

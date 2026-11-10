@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Wenn Hersteller Field Service Management Software suchen, landen meist vier Plattformen auf dem Tisch: Salesforce Field Service, SAP Field Service Management, IFS Cloud Field Service Management und ServiceNow Field Service Management. Es gibt weitere, etwa Microsoft Dynamics 365 Field Service, Oracle Field Service oder ServiceMax. Das heute führende System für Kunden, Aufträge oder Anlagen grenzt die Vorauswahl ein, weil es stark beeinflusst, wie viel Integration Sie brauchen. Entscheiden sollten Sie aber anhand Ihrer eigenen Einsätze. Ich arbeite mit Salesforce und habe die anderen drei nicht eingeführt; ich beschreibe sie nach Herstellerangaben, geprüft am 6. November 2026.
+Wenn Hersteller Field Service Management Software suchen, kommen meist vier Plattformen in die engere Wahl: Salesforce Field Service, SAP Field Service Management, IFS Cloud Field Service Management und ServiceNow Field Service Management. Es gibt weitere, etwa Microsoft Dynamics 365 Field Service, Oracle Field Service oder ServiceMax. Das heute führende System für Kunden, Aufträge oder Anlagen grenzt die Vorauswahl ein, weil es stark beeinflusst, wie viel Integration Sie brauchen. Entscheiden sollten Sie aber anhand Ihrer eigenen Einsätze. Ich arbeite mit Salesforce und habe die anderen drei nicht eingeführt; ich beschreibe sie nach Herstellerangaben, geprüft am 6. November 2026.
 
 ## Was muss eine Field Service Management Software für Hersteller leisten?
 
@@ -88,7 +88,7 @@ Laufen Vertrieb und Kundenservice in Salesforce, der Außendienst aber in SAP, i
 Bei der Terminplanung unterscheiden sich die Produkte darin, welche Bedingungen die Optimierung berücksichtigt, etwa Teams, Ersatzteile oder mehrtägige Einsätze, wie sie im Tagesverlauf neu plant und wie Disponenten eingreifen können. Testen Sie das an Ihren eigenen Einsätzen.
 
 ```praxis
-In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetriebnahmen kamen Ersatzteile und installierte Basis aus dem ERP, und die Terminplanung lief automatisch. Die Stolpersteine waren die Qualität der Anlagendaten, die Akzeptanz bei den Technikern und die Schnittstellen zum ERP. Diese drei Risiken gibt es bei jedem Produkt; wie groß sie werden, hängt von Produkt und Architektur ab. Sie gehören in jede Auswahl.
+In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetriebnahmen stammten Ersatzteile und installierte Basis aus dem ERP, und die Terminplanung erfolgte automatisch. Die Stolpersteine waren die Qualität der Anlagendaten, die Akzeptanz bei den Technikern und die Schnittstellen zum ERP. Diese drei Risiken gibt es bei jedem Produkt; wie groß sie werden, hängt von Produkt und Architektur ab. Sie gehören in jede Auswahl.
 ```
 
 ## Zwei Anbieter anhand echter Einsätze vergleichen

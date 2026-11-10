@@ -45,7 +45,7 @@ Das Vorlagenfeld am Arbeitsauftrag, an der Arbeitsauftragsposition und am Servic
 
 ## Grenze 2: Der Dateiname steht fest
 
-Der Document Builder benennt die erzeugte Datei selbst. Ein Muster wie Auftragsnummer, Kunde und Datum lässt sich nicht hinterlegen. Für den Innendienst ist das lästig, denn das PDF landet im Postfach des Kunden, im ERP oder in einem Dokumentenarchiv, und niemand erkennt am Dateinamen, zu welchem Einsatz es gehört.
+Der Document Builder benennt die erzeugte Datei selbst. Ein Muster wie Auftragsnummer, Kunde und Datum lässt sich nicht hinterlegen. Für den Innendienst ist das lästig, denn das PDF wird im Postfach des Kunden, im ERP oder in einem Dokumentenarchiv abgelegt, und niemand erkennt am Dateinamen, zu welchem Einsatz es gehört.
 
 **Workaround:** Ein datensatzgesteuerter Flow mit asynchronem Pfad. Er startet, wenn das Dokument erstellt wurde, und benennt die Datei kurz danach um. Die Namensregel liegt dann an einer Stelle, und ein Admin kann sie ohne Code ändern.
 
@@ -57,13 +57,13 @@ Der Flow muss asynchron laufen, also kurz nach der Erstellung. Nur dann existier
 
 Im Standard verschickt der Document Builder das Dokument nicht. Der Techniker erstellt das PDF, der Kunde unterschreibt, und anschließend liegt der Bericht am Arbeitsauftrag. In den meisten Serviceorganisationen erwartet der Kunde den Bericht noch am selben Tag per E-Mail, oft als Grundlage für die Rechnungsfreigabe.
 
-**Workaround:** Ein Flow, der startet, wenn das Dokument fertig ist, und es als Anhang verschickt. Im Flow legen Sie fest, an wen es geht, zum Beispiel an den Kontakt am Arbeitsauftrag oder an eine zentrale Serviceadresse des Kunden, welche E-Mail-Vorlage genutzt wird und in welcher Sprache. Zusammen mit Grenze 2 kommt der Anhang mit einem Dateinamen an, unter dem der Kunde ihn ablegen kann.
+**Workaround:** Ein Flow, der startet, wenn das Dokument fertig ist, und es als Anhang verschickt. Im Flow legen Sie fest, an wen es geht, zum Beispiel an den Kontakt am Arbeitsauftrag oder an eine zentrale Serviceadresse des Kunden, welche E-Mail-Vorlage genutzt wird und in welcher Sprache. Zusammen mit Grenze 2 trägt der Anhang einen Dateinamen, unter dem der Kunde ihn ablegen kann.
 
 ## Grenze 4: Lassen sich Sprache und Vorlage vorbelegen?
 
-Ja, per Flow. Im Standard werden Sprache und Vorlage nicht vom Kunden abgeleitet: Die Vorlage kommt vom Datensatz, vom Arbeitstyp oder aus dem Standard, die Sprache wird nur am Arbeitsauftrag gesetzt und gilt für alle seine Servicetermine. Setzt niemand die Sprache, bekommt ein Kunde in Frankreich einen deutschen Bericht.
+Ja, per Flow. Im Standard werden Sprache und Vorlage nicht vom Kunden abgeleitet: Die Vorlage stammt vom Datensatz, vom Arbeitstyp oder aus dem Standard, die Sprache wird nur am Arbeitsauftrag gesetzt und gilt für alle seine Servicetermine. Setzt niemand die Sprache, erhält ein Kunde in Frankreich einen deutschen Bericht.
 
-**Workaround:** Setzen Sie per Flow die Sprache am Arbeitsauftrag und die Vorlage am Arbeitsauftrag oder Servicetermin. Die Sprache kann vom Account oder vom Servicegebiet kommen, die Vorlage vom Arbeitstyp oder vom Asset. Der Techniker prüft dann nur noch die Vorschau und holt die Unterschrift ein.
+**Workaround:** Setzen Sie per Flow die Sprache am Arbeitsauftrag und die Vorlage am Arbeitsauftrag oder Servicetermin. Die Sprache kann vom Account oder vom Servicegebiet stammen, die Vorlage vom Arbeitstyp oder vom Asset. Der Techniker prüft dann nur noch die Vorschau und holt die Unterschrift ein.
 
 ## Grenze 5: Wie weit kommt man beim Styling?
 

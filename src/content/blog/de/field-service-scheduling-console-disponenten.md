@@ -69,7 +69,7 @@ Für Winter '27 nennt Salesforce [Scheduling Console Enhancements](https://trail
 
 Die erste Voraussetzung ist die Engine. Die Scheduling Console gibt es nur mit Enhanced Scheduling and Optimization. Orgs, die mit der älteren Engine live gegangen sind, müssen zuerst umstellen, und dieser Wechsel hat eigene Hausaufgaben: Scheduling Recipes fallen weg, und mehrere Work Rules behandeln leere Felder anders. Die Einzelheiten stehen in [Enhanced Scheduling and Optimization: jetzt umstellen?](../field-service-enhanced-scheduling-umstellen/).
 
-Die zweite Voraussetzung ist die Einrichtung. Laut Trailhead wird die Konsole aktiviert, wenn Agentforce Field Service über Salesforce Go aktiviert wird. Disponenten brauchen trotzdem Zugriff: In Salesforce Go gibt ein Admin den Disponenten Zugriff auf die Scheduling Console und weist das Permission Set zu, das das System anlegt. Das macht einen Start mit einer kleinen Gruppe einfach, weil nur Nutzer mit dem Permission Set die neue Konsole bekommen.
+Die zweite Voraussetzung ist die Einrichtung. Laut Trailhead wird die Konsole aktiviert, wenn Agentforce Field Service über Salesforce Go aktiviert wird. Disponenten brauchen trotzdem Zugriff: In Salesforce Go gibt ein Admin den Disponenten Zugriff auf die Scheduling Console und weist das Permission Set zu, das das System anlegt. Das macht einen Start mit einer kleinen Gruppe einfach, weil nur Nutzer mit dem Permission Set die neue Konsole erhalten.
 
 ## Was aus der Dispatcher Console übernommen wird und was fehlt
 
@@ -87,7 +87,7 @@ Die Zahlen sind angenommen. Ein Komponentenhersteller mit vier Disponenten und d
 Bestandsaufnahme | 1 Woche · Admin und Disponenten
   Der Admin listet jede Anpassung der Classic Dispatch Console auf: eigene Aktionen, Visualforce-Seiten, Filter, Farbregeln. Jeder Disponent notiert, welche Gantt-Ansichten er täglich nutzt.
 Pilot | 6 Wochen · zwei Disponenten
-  Zwei Disponenten bekommen das Permission Set und planen ein Gebiet in der Scheduling Console. Die anderen beiden bleiben für die übrigen Gebiete bei der Classic Dispatch Console.
+  Zwei Disponenten erhalten das Permission Set und planen ein Gebiet in der Scheduling Console. Die anderen beiden bleiben für die übrigen Gebiete bei der Classic Dispatch Console.
 Wöchentlicher Abgleich | wöchentlich · Pilot-Disponenten
   Die Pilot-Disponenten notieren, was sie in der neuen Konsole nicht erledigen konnten und in der alten tun mussten, wie lange typische Aufgaben dauerten und wie oft sie Why? genutzt haben, um einen Vorschlag zu verstehen.
 Entscheidung

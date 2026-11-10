@@ -46,13 +46,13 @@ Im Setup hat die Funktion einen eigenen Schalter, und Nutzer brauchen das Permis
 
 Die Verteilung erfolgt von oben nach unten. Das Objekt [AcctMgrTarget](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target.htm) speichert dafür Kennzahl, Zielwert und den Prozentsatz des übergeordneten Ziels: Die Vertriebsleitung legt ein Umsatzziel für das Jahr an und weist den direkten Mitarbeitenden Prozentsätze zu, zum Beispiel 35, 35 und 30 Prozent. Wenn ein Prozentsatz eingetragen wird, berechnet Salesforce den Wert, und umgekehrt. Jede Ebene kann einen Teil behalten und den Rest weitergeben.
 
-Unterhalb der Teamebene kommen drei weitere Dimensionen dazu; die [Verteilung](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target_distribution.htm) speichert dafür Kunde, Produkt und Preisbuch:
+Unterhalb der Teamebene gibt es drei weitere Dimensionen; die [Verteilung](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target_distribution.htm) speichert dafür Kunde, Produkt und Preisbuch:
 
 1. **Nach Kunde.** Ein Anteil des Ziels geht an einen Schlüsselkunden, Salesforce füllt den Betrag aus.
 2. **Nach Produkt.** Ein Anteil geht an ein Produkt. Salesforce trägt den Listenpreis aus dem gewählten Preisbuch ein; eine Umrechnung des Betrags in eine Stückzahl beschreibt die Hilfe nicht.
 3. **Nach Monat.** Das Ziel wird gleichmäßig auf zwölf Monate verteilt, jeder Monat lässt sich ändern.
 
-Zwei Details zählen in der Praxis. Erstens müssen die verteilten Werte nicht genau das Elternziel ergeben. Trailhead nennt das eine Funktion, weil ein Manager einen Teil behalten kann. Für das Controlling heißt es: Lücken oder Überdeckungen fallen nur auf, wenn ein Bericht sie zeigt. Zweitens laufen Änderungen nicht von selbst nach unten. Der Manager klickt auf Propagate to Assignments, und Salesforce benachrichtigt die Betroffenen in der App.
+Zwei Details zählen in der Praxis. Erstens müssen die verteilten Werte nicht genau das Elternziel ergeben. Trailhead nennt das eine Funktion, weil ein Manager einen Teil behalten kann. Für das Controlling heißt es: Lücken oder Überdeckungen fallen nur auf, wenn ein Bericht sie zeigt. Zweitens werden Änderungen nicht von selbst nach unten weitergegeben. Der Manager klickt auf Propagate to Assignments, und Salesforce benachrichtigt die Betroffenen in der App.
 
 ```vertiefung Für Entwickler
 titel: Ziele per Flow aktualisieren

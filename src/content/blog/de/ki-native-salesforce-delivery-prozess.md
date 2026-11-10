@@ -17,7 +17,7 @@ takeaways:
   - "Rückmeldungen aus dem Abnahmetest ordnet der Agent mit Beleg aus dem Protokoll als Bug, Change Request oder Klärungsbedarf ein."
 faq:
   - q: "Was ist der Unterschied zwischen KI-gestützter und KI-nativer Salesforce-Delivery?"
-    a: "KI-gestützt heißt, einzelne Tätigkeiten im bestehenden Prozess bekommen KI-Hilfe. KI-nativ heißt, Übergaben an Agenten, maschinenlesbare Spezifikationen, Berechtigungen und Tore gehören von Anfang an zum Prozessdesign: Der Agent analysiert, protokolliert, entwirft und programmiert, Personen kuratieren und entscheiden an festen Toren."
+    a: "KI-gestützt heißt, einzelne Tätigkeiten im bestehenden Prozess erhalten KI-Hilfe. KI-nativ heißt, Übergaben an Agenten, maschinenlesbare Spezifikationen, Berechtigungen und Tore gehören von Anfang an zum Prozessdesign: Der Agent analysiert, protokolliert, entwirft und programmiert, Personen kuratieren und entscheiden an festen Toren."
   - q: "Darf ein KI-Agent in die Produktion deployen?"
     a: "Nein. Validierung gegen Produktion und Deployment laufen nur über die Pipeline mit eigener technischer Identität: Sie validiert das Release-Artefakt gegen Produktion und rollt genau diese Validierungs-ID innerhalb von zehn Tagen per Quick Deploy aus. Der Agent arbeitet in Scratch Orgs und Sandboxes und hat keine Produktionszugänge auf seinem Rechner."
   - q: "Dürfen Workshops mit dem Kunden aufgezeichnet werden?"
@@ -38,11 +38,11 @@ dach: KI-native Delivery
 contract | Ticket | ist die Spezifikation | Ein Agent setzt eine Story nur so gut um, wie ihre Akzeptanzkriterien geschrieben sind.
 ai | Agent | macht die Fleißarbeit | Org-Analyse, Protokoll, Stories, Prototyp, Code, Tests und Release Notes entwirft der Agent.
 pipeline | Pipeline | prüft deterministisch | Sie validiert und deployt, ohne dass irgendwo ein Modell entscheidet.
-team | Personen | entscheiden an Toren | Sie führen jedes Gespräch mit dem Kunden selbst, der Agent sitzt in keinem Termin.
+team | Personen | entscheiden an Toren | Sie führen jedes Gespräch mit dem Kunden selbst, der Agent nimmt an keinem Termin teil.
 basis: Ein Prozess, um den Agenten herum gebaut
 ```
 
-Der Unterschied zur KI-gestützten Delivery besteht darin, dass einzelne Tätigkeiten im bestehenden Prozess KI-Hilfe bekommen. Hier sind Übergaben an Agenten, maschinenlesbare Spezifikationen, Berechtigungen und Tore von Anfang an eingeplant. Der Agent liefert Protokoll, Stories und einen Prototyp, und jede Rückmeldung wird gegen das bestätigte Protokoll eingeordnet.
+Der Unterschied zur KI-gestützten Delivery besteht darin, dass einzelne Tätigkeiten im bestehenden Prozess KI-Hilfe erhalten. Hier sind Übergaben an Agenten, maschinenlesbare Spezifikationen, Berechtigungen und Tore von Anfang an eingeplant. Der Agent liefert Protokoll, Stories und einen Prototyp, und jede Rückmeldung wird gegen das bestätigte Protokoll eingeordnet.
 
 ## Wie läuft der Prozess vom Workshop bis zur Produktion?
 
@@ -86,7 +86,7 @@ tor: Entwickler reviewt und merged
 
 Erst wenn Business Analyst und Architekt eine Story auf „Ready for Agent“ setzen, beginnt die Umsetzung. Der Agent liest das Ticket, legt einen Feature-Branch an, schreibt einen Umsetzungsplan und setzt ihn erst nach Freigabe durch den Entwickler um: Apex, Lightning Web Components oder Flow, jeweils mit Tests. Bei unklaren Anforderungen liest er die verlinkte Stelle im Transkript, statt zu raten. Er schreibt die Beschreibung des Pull Requests mit Ticket-Link und Komponentenliste, ein KI-Reviewer kommentiert vorab.
 
-Vor jedem Merge läuft die Pipeline als Pflichtprüfung am Pull Request. Sie erstellt ein Delta-Paket, etwa mit dem Drittanbieter-Werkzeug `sfdx-git-delta` in fester Version und mit vollständigem Deployment als Fallback, führt ein Check-only-Deploy gegen die Integrations-Sandbox aus, startet definierte Tests und prüft ein Gate mit Code Analyzer v5, dessen Regeln und Schwellen versioniert im Repository liegen. Schlägt sie fehl, bekommt der Agent das Log und darf einen Fix-Commit liefern, höchstens zwei Versuche. Danach übernimmt der Entwickler.
+Vor jedem Merge läuft die Pipeline als Pflichtprüfung am Pull Request. Sie erstellt ein Delta-Paket, etwa mit dem Drittanbieter-Werkzeug `sfdx-git-delta` in fester Version und mit vollständigem Deployment als Fallback, führt ein Check-only-Deploy gegen die Integrations-Sandbox aus, startet definierte Tests und prüft ein Gate mit Code Analyzer v5, dessen Regeln und Schwellen versioniert im Repository liegen. Schlägt sie fehl, erhält der Agent das Log und darf einen Fix-Commit liefern, höchstens zwei Versuche. Danach übernimmt der Entwickler.
 
 Gemergt wird nur mit grüner Pipeline und nach dem Review durch einen Entwickler. Der Entwickler reviewt in diesem Prozess mehr, als er schreibt. Warum ich auf dieses Tor nie verzichte, steht in [Warum Pull-Request-Reviews Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
 
@@ -163,7 +163,7 @@ Der Prozess hängt an keinem bestimmten Coding-Agenten. Er braucht vier Verbindu
 - **Jira als gemeinsames Ticketsystem.** Agent und Pipeline laufen nicht in Jira, sie lesen und schreiben nur dieselben Tickets. Der Agent läuft auf dem Rechner des Entwicklers und greift über den Atlassian Rovo MCP Server auf Jira zu; laut [Atlassian](https://www.atlassian.com/blog/jira/mcp-enhancements) liest er dort auch das Development-Panel mit verknüpften Branches, Pull Requests und Commits. Die Pipeline läuft auf der Git-Plattform und setzt den Ticketstatus nach jedem Lauf selbst, damit niemand ihn von Hand pflegt.
 - **Zugriff auf die Sandboxes.** Skills aus [sf-skills](https://github.com/forcedotcom/sf-skills) liefern Anweisungen, die Salesforce CLI führt Org-Aktionen aus, und das [Claude-Code-Plugin von Salesforce](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) ergänzt MCP-Server, die Kontext liefern. Der lokale Salesforce DX MCP Server hat am 2. November 2026 sein End of Life erreicht; was das für Ihre Partner heißt, steht in [Salesforce DX MCP Server: Ende am 2. November 2026](../salesforce-dx-mcp-server-ende/). Der Agent erreicht jede Org, deren Zugangsdaten die CLI auf seinem Rechner gespeichert hat. Ein Sandbox-Alias ist keine Sicherheitsgrenze, deshalb läuft der Agent unter eigener Identität ohne Produktionszugangsdaten, mit begrenzten Befehlen und Protokollierung.
 - **Eine Git-Pipeline**, die ohne KI validiert und deployt, mit Produktionszugang nur für die Identität der Pipeline. Wie ich sie aufsetze, beschreibe ich unter [DevOps und Release Management](../../leistungen/devops-und-release-management/).
-- **Transkription im Tenant des Kunden**, etwa über die Aufzeichnung in Teams, die beim Organisator landet; deshalb sollte ein Mitarbeiter des Kunden zum Termin einladen. Diese Lösung regelt nur die Ablage: Der Modellanbieter, der das Transkript liest, braucht ebenfalls einen Auftragsverarbeitungsvertrag, eine festgelegte Verarbeitungsregion und den Ausschluss der Daten vom Training. Einwilligung und Betriebsrat behandle ich in [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
+- **Transkription im Tenant des Kunden**, etwa über die Aufzeichnung in Teams, die beim Organisator gespeichert wird; deshalb sollte ein Mitarbeiter des Kunden zum Termin einladen. Diese Lösung regelt nur die Ablage: Der Modellanbieter, der das Transkript liest, braucht ebenfalls einen Auftragsverarbeitungsvertrag, eine festgelegte Verarbeitungsregion und den Ausschluss der Daten vom Training. Einwilligung und Betriebsrat behandle ich in [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
 
 ## Wo stolpert der Prozess?
 
@@ -175,7 +175,7 @@ Der Prozess hängt an keinem bestimmten Coding-Agenten. Er braucht vier Verbindu
 
 **In der Salesforce-Strecke:**
 
-- **Klickentwicklung.** Admins bauen Flows und Layouts weiterhin in Sandboxes. Der Prozess braucht einen Schritt, in dem der Agent solche Änderungen abruft und committet, sonst laufen Git und Org auseinander.
+- **Klickentwicklung.** Admins bauen Flows und Layouts weiterhin in Sandboxes. Der Prozess braucht einen Schritt, in dem der Agent solche Änderungen abruft und committet, sonst weichen Git und Org voneinander ab.
 - **Profile, Permission Sets, Destructive Changes.** Die klassischen Deploy-Fallen gehören als ausdrückliche Regeln in die Regeldatei.
 - **Konfigurationsdaten.** Konfiguration, die nur als Datensätze existiert, etwa große Teile von CPQ oder Datensätze in Custom Settings, braucht eine eigene Datenstrecke. Bei Field Service ist ein Teil deploybare Metadaten und ein Teil Daten; entscheiden Sie deshalb pro Artefakttyp.
 

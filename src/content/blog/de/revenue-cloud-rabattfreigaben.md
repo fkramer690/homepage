@@ -12,7 +12,7 @@ tags: [Revenue Cloud, Advanced Approvals, Rabatte, Marge, Angebot, CPQ-Migration
 takeaways:
   - "Die Freigabevorschau zeigt nur konfigurierte Beispielwerte, nicht die konkrete Freigabekette. Testen Sie die Freigabeketten mit echten Angeboten."
   - "Margenfreigaben brauchen verlässliche Kostendaten an jeder relevanten Angebotsposition, meist aus dem ERP. Sonst geben Sie nach Rabatt und Auftragsgröße frei."
-  - "Seit September 2026 reicht der Approval Agent Freigaben ein, verfolgt sie und fasst sie zusammen. Schwelle und Freigebender kommen aus dem Workflow."
+  - "Seit September 2026 reicht der Approval Agent Freigaben ein, verfolgt sie und fasst sie zusammen. Schwelle und Freigebender stammen aus dem Workflow."
   - "Planen Sie keine Übernahme von Advanced Approvals aus Salesforce CPQ. Gestalten Sie Regeln, Ketten und Freigebende in der Migration neu und testen Sie sie."
 faq:
   - q: "Was ist Advanced Approvals in Revenue Cloud?"
@@ -20,13 +20,13 @@ faq:
   - q: "Sieht der Vertrieb vor dem Absenden, wer einen Rabatt freigeben muss?"
     a: "Noch nicht verlässlich. Salesforce dokumentiert eine Vorschau von Freigabe-Workflows, aber laut einem Knowledge-Artikel vom 8. Oktober 2026 zeigt sie nur die Beispielwerte aus Configure Test Output, und zwar bei jedem Angebot dieselben. Die echten Freigebenden erscheinen nach dem Absenden. Bis sich das ändert, würde ich die Freigabematrix dort veröffentlichen, wo der Vertrieb sie sehen kann."
   - q: "Kann ich CPQ-Freigaberegeln nach Revenue Cloud migrieren?"
-    a: "Planen Sie keine Kopie. CPQ-Freigaben kommen aus dem separaten Paket Advanced Approvals, und laut Salesforce-Hilfe unterscheiden sich die Datenmodelle von CPQ und Revenue Cloud deutlich. Salesforce empfiehlt eine Neugestaltung. Planen Sie Regeln, Ketten und Freigebende als Neubau mit eigenen Testfällen, sofern Ihr Migrationstool nicht das Gegenteil belegt."
+    a: "Planen Sie keine Kopie. CPQ-Freigaben stammen aus dem separaten Paket Advanced Approvals, und laut Salesforce-Hilfe unterscheiden sich die Datenmodelle von CPQ und Revenue Cloud deutlich. Salesforce empfiehlt eine Neugestaltung. Planen Sie Regeln, Ketten und Freigebende als Neubau mit eigenen Testfällen, sofern Ihr Migrationstool nicht das Gegenteil belegt."
   - q: "Sollte ein KI-Agent Rabatte freigeben?"
     a: "Nicht nach eigenem Ermessen. Schwelle und zuständiger Freigebender sollten im Freigabe-Workflow bestimmt werden, die Entscheidung sollte beim Freigebenden liegen. Seit September 2026 können Prüfende mit dem Approval Agent dank KI-Zusammenfassungen schneller freigeben oder ablehnen. Die Entscheidung trifft weiter der Mensch, der Agent führt sie aus."
 draft: false
 ---
 
-In Revenue Cloud laufen Rabatt- und Margenfreigaben über Advanced Approvals. Dabei starten Vertriebsmitarbeitende für ein Angebot einen Freigabe-Workflow mit Stufen, sequenziellen und parallelen Freigebenden sowie einem Audit Trail. Halten Sie die Freigabematrix kurz, mit Rabatt, Marge und Auftragsgröße als Auslöser, und machen Sie sie für den Vertrieb sichtbar, denn die Vorschau zeigt derzeit nur Beispielwerte. Margenfreigaben brauchen verlässliche Kostendaten, meist aus dem ERP, an jeder relevanten Angebotsposition. Die Schwellen gehören in Regeln und dürfen nie vom Urteil eines Agenten abhängen. Wer von Salesforce CPQ kommt, plant Freigaben als Neubau, denn das Paket Advanced Approvals verwendet ein anderes Modell.
+In Revenue Cloud werden Rabatt- und Margenfreigaben über Advanced Approvals abgewickelt. Dabei starten Vertriebsmitarbeitende für ein Angebot einen Freigabe-Workflow mit Stufen, sequenziellen und parallelen Freigebenden sowie einem Audit Trail. Halten Sie die Freigabematrix kurz, mit Rabatt, Marge und Auftragsgröße als Auslöser, und machen Sie sie für den Vertrieb sichtbar, denn die Vorschau zeigt derzeit nur Beispielwerte. Margenfreigaben brauchen verlässliche Kostendaten, meist aus dem ERP, an jeder relevanten Angebotsposition. Die Schwellen gehören in Regeln und dürfen nie vom Urteil eines Agenten abhängen. Wer von Salesforce CPQ umsteigt, plant Freigaben als Neubau, denn das Paket Advanced Approvals verwendet ein anderes Modell.
 
 ## Was ist Advanced Approvals in Revenue Cloud?
 
@@ -41,7 +41,7 @@ Technisch basiert Advanced Approvals auf Flow Approval Processes und wird von Fl
 
 Der [Hilfeartikel zu Freigaben im Angebot](https://help.salesforce.com/s/articleView?language=en_US&id=ind.approvals_use_advanced_approvals_in_a_quote.htm&type=5) beschreibt den Ablauf aus Sicht des Vertriebs. Der Vertriebsmitarbeiter speichert das Angebot nach allen Preisänderungen und klickt auf Submit for Approval. Der Workflow startet, und die Freigebenden sehen ihre Work Items beim nächsten Login. Im Beispiel von Salesforce gibt bei einem Rabatt ab 25 Prozent ein Vertriebsmanager frei, bei über 50 Prozent zusätzlich ein Vice President Sales.
 
-Um diesen Kern herum dokumentiert derselbe Hilfebereich mehrere Funktionen, die bestimmen, wie zügig Freigaben im Alltag laufen:
+Um diesen Kern herum dokumentiert derselbe Hilfebereich mehrere Funktionen, die bestimmen, wie zügig Freigaben im Alltag erfolgen:
 
 - **Vorschau.** Sie soll dem Vertrieb vor dem Absenden zeigen, welche Freigabeschritte greifen. Laut einem [Knowledge-Artikel vom 8. Oktober 2026](https://help.salesforce.com/s/articleView?id=005461444&language=en_US&type=1) liefert sie derzeit nur die Beispielwerte aus Configure Test Output, und zwar bei jedem Angebot dieselben.
 - **Serielle und parallele Freigebende.** Finanzbereich und Vertriebsleitung prüfen gleichzeitig statt nacheinander.
@@ -65,7 +65,7 @@ Eine Freigabematrix ist die Tabelle, die festlegt, welche Abweichung welchen Fre
 
 Drei Regeln halten eine solche Matrix handhabbar. Jeder Auslöser hat genau einen Verantwortlichen, der die Schwelle ändern darf. Die Schwellen stehen auch außerhalb von Salesforce schriftlich fest, damit Vertrieb und Controlling über die Regel streiten und nicht über einen Flow. Und jeder neue Auslöser muss sich gegenüber den bestehenden rechtfertigen, sonst wächst die Matrix, bis jedes Angebot drei Unterschriften braucht.
 
-Der Rabatt selbst kommt aus der Preisfindung. Wie Revenue Cloud Listenpreis, Mengenrabatt und manuellen Rabatt nacheinander berechnet, steht in [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](../revenue-cloud-preisprozeduren/). Die Freigabe sollte das Ergebnis dieser Berechnung prüfen und nicht selbst neu rechnen.
+Der Rabatt selbst stammt aus der Preisfindung. Wie Revenue Cloud Listenpreis, Mengenrabatt und manuellen Rabatt nacheinander berechnet, steht in [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](../revenue-cloud-preisprozeduren/). Die Freigabe sollte das Ergebnis dieser Berechnung prüfen und nicht selbst neu rechnen.
 
 ## Die Marge braucht Kostendaten aus dem ERP
 

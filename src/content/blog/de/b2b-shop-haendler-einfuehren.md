@@ -27,13 +27,13 @@ faq:
 draft: false
 ---
 
-Führen Sie einen B2B-Shop für Händler in Wellen nach Buyer Group ein und beginnen Sie mit Pilothändlern, die bekannte Teile oft nachbestellen. In Salesforce B2B Commerce kommen Käufer über Buyer Groups in den Store, deshalb ist jede Welle eine festgelegte Menge von Händlerkonten und Benutzern mit ihren Buyer Groups, Preisen und ERP-Daten. Testen Sie genau diese Daten vor dem Start mit einem Testkäufer. Geben Sie jedem Händler einen Buyer Manager für die eigenen Benutzer und lassen Sie den Innendienst weiter Telefonbestellungen annehmen, bis der Shop sich bewährt hat. Die Reihenfolge richtet sich nach dem Nachbestellvolumen und danach, ob die Daten bereit sind, nicht nach dem Organigramm.
+Führen Sie einen B2B-Shop für Händler in Wellen nach Buyer Group ein und beginnen Sie mit Pilothändlern, die bekannte Teile oft nachbestellen. In Salesforce B2B Commerce erhalten Käufer über Buyer Groups Zugang zum Store, deshalb ist jede Welle eine festgelegte Menge von Händlerkonten und Benutzern mit ihren Buyer Groups, Preisen und ERP-Daten. Testen Sie genau diese Daten vor dem Start mit einem Testkäufer. Geben Sie jedem Händler einen Buyer Manager für die eigenen Benutzer und lassen Sie den Innendienst weiter Telefonbestellungen annehmen, bis der Shop sich bewährt hat. Die Reihenfolge richtet sich nach dem Nachbestellvolumen und danach, ob die Daten bereit sind, nicht nach dem Organigramm.
 
 ## Warum in Wellen statt mit einem Go-live?
 
 Ein B2B-Shop zeigt jedem Händler seinen eigenen Katalog und seine eigenen Preise. Darin liegt sein Nutzen und auch sein Risiko. Ein falsches Entitlement blendet Teile aus, die ein Händler braucht. Ein falsches Preisbuch zeigt einen Preis, den der Vertrieb nie vereinbart hat. Bei einem Big Bang treten diese Fehler bei allen Händlern am selben Tag auf, und der Innendienst verbringt die ersten Wochen mit Erklären statt mit Verkaufen.
 
-Das Datenmodell von Salesforce macht Wellen naheliegend. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) sind Käufer über Buyer Groups mit Stores verbunden. Eine Buyer Group bündelt Käuferkonten mit gleichen Anforderungen und ist mit Entitlement Policies verknüpft, die festlegen, welche Produkte die Käufer sehen, sowie mit Preisbüchern. Ein Store kann mehrere Buyer Groups haben. Eine Welle ist also eine festgelegte Menge von Konten und Benutzern mit ihren Buyer Groups, und Sie können diese Gruppen testen, bevor die Händler Zugang bekommen. Für den Zugang reicht die Gruppenzuordnung allein nicht: Das Konto muss als Käuferkonto aktiviert sein, und jeder Kontakt braucht einen Benutzer mit passender Lizenz und passenden Permission Sets. Wie Sie diese Gruppen strukturieren, steht in [Buyer Groups und Entitlements](../buyer-groups-entitlements-sichtbarkeit/).
+Das Datenmodell von Salesforce macht Wellen naheliegend. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) sind Käufer über Buyer Groups mit Stores verbunden. Eine Buyer Group bündelt Käuferkonten mit gleichen Anforderungen und ist mit Entitlement Policies verknüpft, die festlegen, welche Produkte die Käufer sehen, sowie mit Preisbüchern. Ein Store kann mehrere Buyer Groups haben. Eine Welle ist also eine festgelegte Menge von Konten und Benutzern mit ihren Buyer Groups, und Sie können diese Gruppen testen, bevor die Händler Zugang erhalten. Für den Zugang reicht die Gruppenzuordnung allein nicht: Das Konto muss als Käuferkonto aktiviert sein, und jeder Kontakt braucht einen Benutzer mit passender Lizenz und passenden Permission Sets. Wie Sie diese Gruppen strukturieren, steht in [Buyer Groups und Entitlements](../buyer-groups-entitlements-sichtbarkeit/).
 
 Dieselbe Logik gilt für jede Einführung, die ich plane. Für Salesforce Field Service habe ich sie in [Einführung in Wellen](../salesforce-field-service-einfuehrung/) beschrieben, für Manufacturing Cloud in [Manufacturing Cloud weltweit ausrollen](../manufacturing-cloud-weltweit-ausrollen/). Bei einem Händlershop sind die Wellen oft kleiner und schneller abgeschlossen, weil jede Welle weniger Benutzer umfasst.
 
@@ -43,7 +43,7 @@ Pilothändler wähle ich nach vier Kriterien:
 
 - **Viele Wiederholbestellungen bekannter Teile.** Ersatzteile, Verbrauchsmaterial und Zubehör, die der Händler nach Teilenummer bestellt. Diese Händler merken in einer Woche, ob Suche und Nachbestellung funktionieren.
 - **Ein Ansprechpartner, der ehrlich Rückmeldung gibt.** Eine Einkaufsleiterin, die sagt, was sie stört, ist mehr wert als das größte Konto.
-- **Wenige Sonderkonditionen.** Händler mit komplexer Preislogik kommen in eine spätere Welle, wenn die Preislogik an einfachen Fällen getestet ist.
+- **Wenige Sonderkonditionen.** Händler mit komplexer Preislogik gehören in eine spätere Welle, wenn die Preislogik an einfachen Fällen getestet ist.
 - **Saubere Daten.** Korrekte Kontohierarchie im ERP, gepflegte Kontakte, bekannte Lieferadressen.
 
 Nehmen Sie den größten Händler nicht in den Pilot auf, wenn er diese Kriterien nicht erfüllt. Ein schlechter erster Eindruck beim wichtigsten Konto ist schwer zu reparieren.
@@ -70,10 +70,10 @@ Admin-Benutzer sehen alles; ein Test mit Admin-Rechten beweist also nichts über
 1. **Entitlements.** Sieht der Käufer die Teile, die er heute kauft, und nicht die Teile anderer Gruppen?
 2. **Preise.** Zeigen zehn typische Artikel den Preis, den der Händler heute zahlt, einschließlich Staffelpreisen? Werden Preise live aus dem ERP abgerufen, antwortet der Aufruf schnell genug?
 3. **Bestand und Liefertermine.** Passen die Verfügbarkeitsangaben zu dem, was das ERP sagt?
-4. **Checkout.** Kommt eine Bestellung mit Bestellnummer, richtiger Lieferadresse und richtigen Zahlungsbedingungen im ERP an?
+4. **Checkout.** Erreicht eine Bestellung mit Bestellnummer, richtiger Lieferadresse und richtigen Zahlungsbedingungen das ERP?
 5. **Bestellhistorie und Status.** Erscheint die Bestellung im Shop mit dem Status aus dem ERP?
 
-Eine Welle geht erst live, wenn alle fünf Prüfungen für den Testkäufer bestanden sind und offene Fehler behoben sind oder für sie ein vereinbarter Workaround vorliegt. Jede Welle bringt neue Daten, deshalb bekommt jede Welle diesen Test, nicht nur die erste. Behandeln Sie Buyer Groups, Entitlement Policies und Preisbücher als Konfiguration, die durch Ihre Pipeline läuft, wie im DevOps-Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/) beschrieben.
+Eine Welle geht erst live, wenn alle fünf Prüfungen für den Testkäufer bestanden sind und offene Fehler behoben sind oder für sie ein vereinbarter Workaround vorliegt. Jede Welle bringt neue Daten, deshalb durchläuft jede Welle diesen Test, nicht nur die erste. Behandeln Sie Buyer Groups, Entitlement Policies und Preisbücher als Konfiguration, die Ihre Pipeline durchläuft, wie im DevOps-Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/) beschrieben.
 
 ## Der Innendienst nimmt weiter Bestellungen an
 

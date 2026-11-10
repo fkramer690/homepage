@@ -38,7 +38,7 @@ The release material adds a little. The [Winter '27 highlights on Trailhead](htt
 According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.mfg_gen_ai_agentforce_overview.htm&language=en_US&type=5), the templates run on Enterprise, Performance and Unlimited Edition, and each user who accesses the actions needs the Agentforce for Manufacturing add-on or Agentforce 1 Manufacturing Edition. Before you budget, get in writing how that applies to external partner users.
 ```
 
-One difference matters for a decision. "Request quotes" and "builds quotes" are different things: a request lands with your sales desk, a built quote creates a concrete price expectation the dealer will treat as yours, even before it is legally binding.
+One difference matters for a decision. "Request quotes" and "builds quotes" are different things: a request goes to your sales desk, a built quote creates a concrete price expectation the dealer will treat as yours, even before it is legally binding.
 
 ```vertiefung For admins
 title: Which agent actions sit underneath?

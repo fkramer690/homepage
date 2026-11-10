@@ -28,7 +28,7 @@ faq:
 draft: false
 ---
 
-In Salesforce Field Service richtet sich die Lizenz danach, was eine Person im System tut, nicht nach der Stellenbezeichnung, und die Preisliste setzt feste Regeln für den Mix. Disponenten und Techniker bekommen Dispatcher oder Technician für 175 € pro Nutzer und Monat. Die Hotline, die Cases bearbeitet, braucht Service Cloud, und wenn sie auch disponiert, Field Service Plus für 230 €. Techniker von Servicepartnern bekommen Contractor Plus für 80 € pro Nutzer oder 32 € pro Login. Zwei Regeln entscheiden die meisten Rechnungen: Dispatcher und Technician dürfen kein Case Management machen, und die Planung in Salesforce braucht mindestens eine Service-Cloud-Lizenz und Dispatcher-Rechte in der Org.
+In Salesforce Field Service richtet sich die Lizenz danach, was eine Person im System tut, nicht nach der Stellenbezeichnung, und die Preisliste setzt feste Regeln für den Mix. Disponenten und Techniker erhalten Dispatcher oder Technician für 175 € pro Nutzer und Monat. Die Hotline, die Cases bearbeitet, braucht Service Cloud, und wenn sie auch disponiert, Field Service Plus für 230 €. Techniker von Servicepartnern erhalten Contractor Plus für 80 € pro Nutzer oder 32 € pro Login. Zwei Regeln entscheiden die meisten Rechnungen: Dispatcher und Technician dürfen kein Case Management machen, und die Planung in Salesforce braucht mindestens eine Service-Cloud-Lizenz und Dispatcher-Rechte in der Org.
 
 Weitere Fragen zum Produkt, von der Einführung bis zur ERP-Anbindung, beantwortet der Themen-Hub [Salesforce Field Service für Hersteller](../../masterclass/field-service/).
 
@@ -52,7 +52,7 @@ In der Unlimited Edition kosten Dispatcher und Technician laut Fußnote 330 Doll
 
 Drei Fußnoten der Preisliste sind wichtiger als die Preise selbst.
 
-1. **Mindestens eine Service-Cloud-Nutzerlizenz.** Field Service läuft auf Service Cloud. Eine Org ohne einen einzigen Service-Cloud-Nutzer erfüllt die Bedingung nicht. Field Service Plus enthält Service-Funktionen und zählt mit.
+1. **Mindestens eine Service-Cloud-Nutzerlizenz.** Field Service setzt Service Cloud voraus. Eine Org ohne einen einzigen Service-Cloud-Nutzer erfüllt die Bedingung nicht. Field Service Plus enthält Service-Funktionen und zählt mit.
 2. **Mindestens eine Dispatcher-Lizenz.** Für Techniker und Contractors muss mindestens ein Dispatcher in der Org vorhanden sein, damit das Planungswerkzeug genutzt werden kann. Ein reiner Techniker-Rollout mit Planung in Salesforce braucht deshalb eine Dispatcher-Lizenz oder ein Paket mit Dispatcher-Rechten.
 3. **Kein Case Management mit Dispatcher oder Technician.** Laut Preisliste dürfen diese beiden Lizenzen nicht für Contact Center, Call Center oder Case Management genutzt werden. Field Service Plus darf das.
 
@@ -85,7 +85,7 @@ Contractor Plus kostet 80 € pro Nutzer und Monat oder 32 € pro Login. Die Sc
 Die Preisseite schreibt, dass Contractor-Lizenzen auch auf Basis monatlicher Logins erhältlich sind, und verweist für Details an den Vertrieb. Die Zählregel würde ich deshalb im Bestellformular festhalten lassen.
 ```
 
-Der [Architektur-Leitfaden von Salesforce zu Servicepartnern](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns.html) beschreibt eine Contractor-Firma als Drittunternehmen, das seine eigenen Leute steuert. Diese Lizenzen sind für Ihre Servicepartner gedacht, nicht für eigene Mitarbeitende, die günstiger lizenziert werden sollen. Wie Partnertechniker eine eigene Ressource und ein eigenes Gebiet bekommen, steht in [Field Service: Servicepartner einbinden](../salesforce-field-service-servicepartner/).
+Der [Architektur-Leitfaden von Salesforce zu Servicepartnern](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns.html) beschreibt eine Contractor-Firma als Drittunternehmen, das seine eigenen Leute steuert. Diese Lizenzen sind für Ihre Servicepartner gedacht, nicht für eigene Mitarbeitende, die günstiger lizenziert werden sollen. Wie Partnertechniker eine eigene Ressource und ein eigenes Gebiet erhalten, steht in [Field Service: Servicepartner einbinden](../salesforce-field-service-servicepartner/).
 
 ## Rechenbeispiel: Hotline, Disposition, eigene Techniker und zwei Partner
 

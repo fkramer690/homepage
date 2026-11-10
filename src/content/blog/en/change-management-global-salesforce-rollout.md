@@ -22,7 +22,7 @@ faq:
   - q: "Who is responsible for the rollout in the country?"
     a: "A sponsor with decision rights, usually from local management, who visibly backs the change, and key users who know the template. The central project team supports them but cannot replace these roles."
   - q: "Should communication be in the local language?"
-    a: "Usually yes. Explanations of why something changes land better in the local language and from local management than in an English email from headquarters. Where English is the working language, local management should at least review central texts and add its own examples."
+    a: "Usually yes. Explanations of why something changes are better received in the local language and from local management than in an English email from headquarters. Where English is the working language, local management should at least review central texts and add its own examples."
   - q: "When does change management start for a country?"
     a: "When the country enters planning, not two weeks before go-live. The question of what changes for each group belongs in the review of country deviations."
   - q: "How do you measure usage after go-live in each country?"

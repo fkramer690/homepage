@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Revenue Cloud, Manufacturing Cloud und B2B Commerce decken unterschiedliche Teile des Vertriebs eines Herstellers ab. Revenue Cloud konfiguriert und bepreist Produkte, erstellt Angebote und führt das Geschäft bis zum Auftrag und, mit einer weiteren Lizenz, bis zur Abrechnung. Manufacturing Cloud plant und misst das Seriengeschäft mit Sales Agreements und Account Forecasts. B2B Commerce lässt Händler und Kunden bekannte Artikel im Shop nachbestellen. Die drei überschneiden sich bei Katalog, Preis und Angebot, und genau dort laufen Projekte schief. Meine Regel: ein Katalog, ein Preismaster, ein Angebotsmodell und pro Prozessschritt ein Produkt, das führt.
+Revenue Cloud, Manufacturing Cloud und B2B Commerce decken unterschiedliche Teile des Vertriebs eines Herstellers ab. Revenue Cloud konfiguriert und bepreist Produkte, erstellt Angebote und führt das Geschäft bis zum Auftrag und, mit einer weiteren Lizenz, bis zur Abrechnung. Manufacturing Cloud plant und misst das Seriengeschäft mit Sales Agreements und Account Forecasts. B2B Commerce lässt Händler und Kunden bekannte Artikel im Shop nachbestellen. Die drei überschneiden sich bei Katalog, Preis und Angebot, und genau dort scheitern Projekte. Meine Regel: ein Katalog, ein Preismaster, ein Angebotsmodell und pro Prozessschritt ein Produkt, das führt.
 
 ## Was leistet welches Produkt?
 
@@ -76,17 +76,17 @@ Vier Konstellationen würde ich in keinem Design-Review durchgehen lassen:
 
 ## Praxisbeispiel: Kompressorenhersteller mit 200 Händlern
 
-Ein Hersteller von Industriekompressoren verkauft konfigurierte Maschinen über einen Innendienst und 200 Händler. Händler bestellen Filter und Ersatzteile per E-Mail nach. Zehn Großkunden haben Jahresmengenverträge, und Händler bekommen einen Jahresbonus, der in Tabellen berechnet wird.
+Ein Hersteller von Industriekompressoren verkauft konfigurierte Maschinen über einen Innendienst und 200 Händler. Händler bestellen Filter und Ersatzteile per E-Mail nach. Zehn Großkunden haben Jahresmengenverträge, und Händler erhalten einen Jahresbonus, der in Tabellen berechnet wird.
 
 Alle drei Produkte könnten passen, und ich würde sie nacheinander einführen:
 
 ```schritte
 B2B Commerce mit Preisbüchern
-  Kommt zuerst, weil die Ersatzteilbestellungen per E-Mail am meisten schmerzen.
+  Steht an erster Stelle, weil die Ersatzteilbestellungen per E-Mail am meisten schmerzen.
 Revenue Cloud
   Die Kompressorangebote sind der zweite Kandidat. Kosten Konfigurationsfehler heute Geld, folgt Revenue Cloud, und ab dann nutzt der Shop dessen Katalog und, sobald Vertragspreise in Salesforce liegen, dessen Preislogik.
 Manufacturing Cloud
-  Kommt erst dazu, wenn die Mengenverträge von zehn Großkunden die Lizenz für die Nutzer rechtfertigen, die sie betreuen. Bis dahin kann ein Bericht auf den Istwerten aus dem ERP reichen. Die Bonustabelle ist eine eigene Entscheidung über Channel Revenue Management.
+  Folgt erst, wenn die Mengenverträge von zehn Großkunden die Lizenz für die Nutzer rechtfertigen, die sie betreuen. Bis dahin kann ein Bericht auf den Istwerten aus dem ERP reichen. Die Bonustabelle ist eine eigene Entscheidung über Channel Revenue Management.
 ```
 
 Die Reihenfolge ist weniger wichtig als die Regel dahinter: Legen Sie vor dem ersten Produkt fest, welches System Master für Katalog und Preise ist (Revenue Cloud oder das ERP), und jedes weitere Produkt nutzt ihn.

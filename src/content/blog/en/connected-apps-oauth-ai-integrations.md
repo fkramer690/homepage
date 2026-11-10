@@ -82,7 +82,7 @@ ECAs also do not support the username-password flow. What that means for older E
 
 This is what I would require for every connected app and ECA in production, starting with the AI tools:
 
-1. **An inventory with owners.** Connected Apps OAuth Usage in Setup lists each app, its users and whether it is installed. Every entry gets a business owner and a purpose. Apps nobody claims get blocked, which ends their sessions immediately, so announce the change first.
+1. **An inventory with owners.** Connected Apps OAuth Usage in Setup lists each app, its users and whether it is installed. Every entry gets a business owner and a purpose. Apps nobody claims are blocked, which ends their sessions immediately, so announce the change first.
 2. **Install and pre-authorize.** Set "Admin approved users are pre-authorized" and grant access through one permission set per app.
 3. **One dedicated integration user per server-side app**, where the vendor and the required licenses support it. The Salesforce Integration user license with the "Minimum Access - API Only Integrations" profile allows API access only, according to the [Help documentation](https://help.salesforce.com/s/articleView?language=en_US&id=platform.integration_user.htm&type=5). API-only access cannot be switched off, but other parts of the profile can be configured; I would grant the app's rights through permission sets on top of it. A website chatbot needs to create leads and cases, not read opportunities.
 4. **API Enabled only through permission sets**, as GTIG recommends, so a standard user cannot authorize an API client by accident.

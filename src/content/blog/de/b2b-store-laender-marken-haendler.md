@@ -34,7 +34,7 @@ Der Store ist die Nabe von Salesforce B2B Commerce, das Salesforce laut [Trailhe
 
 Drei Objekte entscheiden, ob ein Store reicht:
 
-- **Käufergruppen** verbinden Käuferkonten mit einem Store. Ein Store kann viele Käufergruppen haben, und jede Gruppe bekommt eigene Entitlement Policies und Preisbücher.
+- **Käufergruppen** verbinden Käuferkonten mit einem Store. Ein Store kann viele Käufergruppen haben, und jede Gruppe erhält eigene Entitlement Policies und Preisbücher.
 - **Entitlement Policies** legen fest, welche Produkte eine Käufergruppe sehen und kaufen darf.
 - **Der Katalog** enthält den Kategoriebaum und die Produkte. Ein Store hat genau einen Katalog, laut [Produkt- und Katalogdatenmodell](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-product-catalog.html) kann derselbe Katalog aber mehrere Stores bedienen.
 
@@ -55,10 +55,10 @@ Diese Limits stammen von den Salesforce-Developers-Seiten zu [Store-Limits](http
 | Käufergruppen pro Käuferkonto | 20 (ein Hinweis nennt 100; 30 mit Apex-Extension) | weich |
 | Produkte pro Store | 4 Millionen, davon 1 Million mit der Salesforce-Suche | fest (nicht bei externer Suche) |
 
-Weiche Limits kann der Salesforce-Support anheben, feste nicht. Die 100 Stores sind für jeden Hersteller, den ich mir vorstellen kann, weit weg. In der Praxis werden der eine Katalog und die fünf Store-Preisbücher früher zum limitierenden Faktor. Eine Marke, die einen eigenen, getrennt veröffentlichten Kategoriebaum braucht, passt schlecht in einen gemeinsamen Store. Eine Preisstruktur mit vielen Listen gehört in Käufergruppen-Preisbücher statt in Store-Preisbücher. Pro Preisaufruf werden höchstens 25 gültige Preisbücher ausgewertet. Woher die Preise selbst kommen sollten, behandelt [Kundenpreise: Preisbücher oder ERP](../kundenpreise-b2b-commerce-preisbuecher-erp/).
+Weiche Limits kann der Salesforce-Support anheben, feste nicht. Die 100 Stores sind für jeden Hersteller, den ich mir vorstellen kann, weit weg. In der Praxis werden der eine Katalog und die fünf Store-Preisbücher früher zum limitierenden Faktor. Eine Marke, die einen eigenen, getrennt veröffentlichten Kategoriebaum braucht, passt schlecht in einen gemeinsamen Store. Eine Preisstruktur mit vielen Listen gehört in Käufergruppen-Preisbücher statt in Store-Preisbücher. Pro Preisaufruf werden höchstens 25 gültige Preisbücher ausgewertet. Woher die Preise selbst stammen sollten, behandelt [Kundenpreise: Preisbücher oder ERP](../kundenpreise-b2b-commerce-preisbuecher-erp/).
 
 ```hinweis offen
-Die Limit-Seiten widersprechen sich stellenweise: 50 oder 25 Preisbücher pro Käufergruppe, 20 oder 100 Käufergruppen pro Käuferkonto. Kommt Ihr Design in die Nähe einer dieser Zahlen, lassen Sie sich den Wert für Ihre Org von Salesforce bestätigen.
+Die Limit-Seiten widersprechen sich stellenweise: 50 oder 25 Preisbücher pro Käufergruppe, 20 oder 100 Käufergruppen pro Käuferkonto. Erreicht Ihr Design annähernd eine dieser Zahlen, lassen Sie sich den Wert für Ihre Org von Salesforce bestätigen.
 ```
 
 ## Wann reicht ein Store mit Käufergruppen?
@@ -84,17 +84,17 @@ Teilen sich zwei Marken die meisten Teile, hilft der gemeinsame Katalog: zwei St
 
 ## Jeder weitere Store kostet Pflege nach jedem Release
 
-Die Lizenzfrage ist schnell erklärt. Die [B2B-Preisseite](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) nennt 6 Storefronts in Growth und 10 in Advanced. Die [Add-on-Seite für Commerce](https://www.salesforce.com/commerce/pricing/add-ons/) führt zusätzliche Storefronts mit "Request a Quote" und ohne Preis. Kommt Ihre Planung in die Nähe des enthaltenen Kontingents, gehören die Zahl der Storefronts und der Preis für zusätzliche Storefronts in den Vertrag. Die GMV-Gebühr fällt für den Umsatz über die Storefronts an. Ein zweiter Store ändert sie also nur, wenn er neue Bestellungen bringt, siehe [B2B Commerce Preise und das GMV-Modell](../b2b-commerce-preise-gmv-modell/).
+Die Lizenzfrage ist schnell erklärt. Die [B2B-Preisseite](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) nennt 6 Storefronts in Growth und 10 in Advanced. Die [Add-on-Seite für Commerce](https://www.salesforce.com/commerce/pricing/add-ons/) führt zusätzliche Storefronts mit "Request a Quote" und ohne Preis. Erreicht Ihre Planung annähernd das enthaltene Kontingent, gehören die Zahl der Storefronts und der Preis für zusätzliche Storefronts in den Vertrag. Die GMV-Gebühr fällt für den Umsatz über die Storefronts an. Ein zweiter Store ändert sie also nur, wenn er neue Bestellungen bringt, siehe [B2B Commerce Preise und das GMV-Modell](../b2b-commerce-preise-gmv-modell/).
 
 Beim Aufwand ist die Liste länger. Jeder Store hat eigene Extension-Zuordnungen und Einstellungen und meist auch eigene Seiten, Navigation und Übersetzungen, sofern er keine bestehende Site mitnutzt. Nach jedem der drei Salesforce-Releases im Jahr braucht jeder Store seinen Regressionstest, und jede eigene Komponente wird in jedem Store getestet, der sie nutzt. Wie man diesen Rhythmus plant, steht im DevOps-Kapitel zur [Release-Planung](../../masterclass/devops-release-management/release-planung-salesforce-releases/). Zwei Stores sind nicht doppelt so viel Arbeit wie einer, aber deutlich mehr als ein Store mit zwei Käufergruppen.
 
 ## Rechenbeispiel: zwei Marken in 14 Ländern
 
-Angenommen, ein Maschinenbauer verkauft Ersatzteile unter zwei Marken. Marke A ist in 9 Ländern vertreten, Marke B, vor einigen Jahren zugekauft, in 5 Ländern. Marke B läuft noch auf einem eigenen ERP-Mandanten. Die Händler von Marke A haben drei Stufen, die von Marke B zwei.
+Angenommen, ein Maschinenbauer verkauft Ersatzteile unter zwei Marken. Marke A ist in 9 Ländern vertreten, Marke B, vor einigen Jahren zugekauft, in 5 Ländern. Marke B nutzt noch einen eigenen ERP-Mandanten. Die Händler von Marke A haben drei Stufen, die von Marke B zwei.
 
 Ein Store pro Land ergäbe 14 Stores, mehr als die 10 in Advanced enthaltenen Storefronts, und 14 Regressionstests pro Release. Ein Store für alles würde Händler der Marke B in einen Shop führen, der den Auftritt und die ERP-Aufrufe von Marke A nutzt.
 
-Im Szenario ist der Schnitt klar: zwei Stores, einer pro Marke. Marke A bekommt eine kombinierte Käufergruppe pro Land und Stufe, 9 × 3 = 27 insgesamt, Marke B 5 × 2 = 10. Jedes Käuferkonto ist ein oder zwei Gruppen zugeordnet, also weit unter den 20 pro Konto. Einen gemeinsamen Katalog nutzen beide Stores nur, wenn die Kategoriebäume passen. Im Szenario tun sie das nicht, es gibt also zwei Kataloge. Zwei Stores passen bequem in die 6 Storefronts von Growth.
+Im Szenario ist der Schnitt klar: zwei Stores, einer pro Marke. Marke A erhält eine kombinierte Käufergruppe pro Land und Stufe, 9 × 3 = 27 insgesamt, Marke B 5 × 2 = 10. Jedes Käuferkonto ist ein oder zwei Gruppen zugeordnet, also weit unter den 20 pro Konto. Einen gemeinsamen Katalog nutzen beide Stores nur, wenn die Kategoriebäume passen. Im Szenario tun sie das nicht, es gibt also zwei Kataloge. Zwei Stores passen bequem in die 6 Storefronts von Growth.
 
 Das folgt derselben Logik wie ein [weltweiter Rollout von Manufacturing Cloud](../manufacturing-cloud-weltweit-ausrollen/): Die Marke muss vom ersten Tag an im Template berücksichtigt werden, auch wenn das erste Land nur eine hat.
 
@@ -104,7 +104,7 @@ Das folgt derselben Logik wie ein [weltweiter Rollout von Manufacturing Cloud](.
 Alles auf eine Seite
   Eine Zeile pro Marke, Gesellschaft, ERP-Mandant, Land, Währung, Sprache und Händlerstufe.
 Echte Unterschiede markieren
-  Nur Zeilen, die sich in Auftritt, Katalogstruktur, Checkout oder ERP unterscheiden, bekommen einen eigenen Store. Alles andere wird eine Käufergruppe.
+  Nur Zeilen, die sich in Auftritt, Katalogstruktur, Checkout oder ERP unterscheiden, erhalten einen eigenen Store. Alles andere wird eine Käufergruppe.
 Limits prüfen
   Sprachen pro Store, Store-Preisbücher und Käufergruppen pro Käuferkonto gegen die Tabelle oben zählen.
 Das Kaufmännische klären

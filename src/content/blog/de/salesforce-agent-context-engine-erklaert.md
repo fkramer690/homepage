@@ -32,7 +32,7 @@ Die Salesforce Agent Context Engine gibt KI-Agenten den Kontext, den sie für ei
 
 ## Welches Problem löst die Agent Context Engine?
 
-Was ein KI-Agent nicht bekommt, kann er nicht berücksichtigen. Die nötigen Informationen verteilen sich in einem typischen Unternehmen auf CRM-Objekte, Data Warehouses, ERP-Systeme, Wissensdatenbanken und frühere Gespräche. Ohne gemeinsame Schicht löst jedes Agentenprojekt dieselben Probleme von vorn:
+Was ein KI-Agent nicht erhält, kann er nicht berücksichtigen. Die nötigen Informationen verteilen sich in einem typischen Unternehmen auf CRM-Objekte, Data Warehouses, ERP-Systeme, Wissensdatenbanken und frühere Gespräche. Ohne gemeinsame Schicht löst jedes Agentenprojekt dieselben Probleme von vorn:
 
 - **Welche Daten sind relevant** für diese Aufgabe und welche sind Rauschen?
 - **Welcher Kunde** ist gemeint, wenn dasselbe Unternehmen mehrfach in verschiedenen Systemen existiert?
@@ -57,13 +57,13 @@ Die Engine baut auf Data 360 auf und übernimmt dessen Echtzeit-Pipeline, Zero-C
 
 ## Auch Agenten außerhalb von Agentforce können sie nutzen
 
-Das ist einer der interessanteren Punkte. Die Agent Context Engine ist nicht auf Agentforce beschränkt. Salesforce hat angekündigt, dass auch Agenten auf Google ADK, AWS Bedrock, LangGraph oder dem OpenAI SDK sie nutzen können, über ein SDK, APIs oder MCP-Tools und begrenzt auf ihren erlaubten Bereich. Die Entwicklerdokumentation beschreibt die Engine als API-first. Ob jede Plattform in der Preview denselben Funktionsumfang bekommt, sollte man testen und nicht voraussetzen.
+Das ist einer der interessanteren Punkte. Die Agent Context Engine ist nicht auf Agentforce beschränkt. Salesforce hat angekündigt, dass auch Agenten auf Google ADK, AWS Bedrock, LangGraph oder dem OpenAI SDK sie nutzen können, über ein SDK, APIs oder MCP-Tools und begrenzt auf ihren erlaubten Bereich. Die Entwicklerdokumentation beschreibt die Engine als API-first. Ob jede Plattform in der Preview denselben Funktionsumfang erhält, sollte man testen und nicht voraussetzen.
 
 Für die Unternehmensarchitektur ist das wichtig. Viele Unternehmen werden nicht alle Agenten auf einer Plattform betreiben. Eine gemeinsame Kontextschicht, die mehrere Agentenplattformen nutzen können, erspart es, dieselbe Datenzugriffslogik in jeder einzelnen Plattform aufzubauen. Gleichzeitig macht sie Data 360 zu einem zentralen Teil der KI-Architektur, und das ist eine strategische Entscheidung für sich.
 
 ## Wie werden Berechtigungen und sensible Daten behandelt?
 
-Salesforce gibt an, dass beim Zusammenstellen des Kontexts die bestehenden Berechtigungen aus Salesforce und Data 360 gelten: Objekt-, Feld- und Datensatzberechtigungen, Freigaberegeln und Datenklassifizierung. Sensible Inhalte werden maskiert oder zurückgehalten, bevor sie den Agenten erreichen, auf Basis der Klassifizierungsrichtlinie und nicht nach Einschätzung des Modells. Änderungen an führenden Systemen laufen weiterhin über deren eigene Berechtigungen.
+Salesforce gibt an, dass beim Zusammenstellen des Kontexts die bestehenden Berechtigungen aus Salesforce und Data 360 gelten: Objekt-, Feld- und Datensatzberechtigungen, Freigaberegeln und Datenklassifizierung. Sensible Inhalte werden maskiert oder zurückgehalten, bevor sie den Agenten erreichen, auf Basis der Klassifizierungsrichtlinie und nicht nach Einschätzung des Modells. Änderungen an führenden Systemen unterliegen weiterhin deren eigenen Berechtigungen.
 
 Der Zugriff hängt außerdem von den Identitäten ab, die der aufrufende Agent mitgibt. Laut [Entwicklerdokumentation zur Governance der Erinnerungen](https://developer.salesforce.com/docs/data/agentic-memory-context/guide/agentic-memory-governance.html) muss jede Anfrage die Identität des Endnutzers enthalten, bei Kunden die Individual-ID, bei Mitarbeitenden die User-ID. Die Identität des Agenten selbst ist optional. Fehlt sie, werden die Ergebnisse nicht nach Agent gefiltert, und jeder Agent, der diesen Kunden bedient, kann dieselben Erinnerungen zu diesem Kunden lesen.
 

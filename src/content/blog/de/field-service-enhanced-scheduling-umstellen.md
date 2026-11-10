@@ -35,7 +35,7 @@ Enhanced Scheduling and Optimization, kurz ESO, ist die neuere Engine hinter der
 
 Die [Release Notes zu Summer '23](https://resources.docs.salesforce.com/244/latest/en-us/sfdc/pdf/salesforce_summer23_release_notes.pdf) beschreiben die neue Engine als standardmäßig verfügbar für neue Nutzer. Der aktuelle [Field-Service-Leitfaden](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/support_field_service.pdf) sagt es deutlich: In neuen Orgs ist Enhanced Scheduling and Optimization für alle Servicegebiete aktiviert, bestehende Orgs können alle Gebiete umstellen oder die Engine pro Gebiet aktivieren.
 
-Offen ist die Frage also nur für Orgs, die mit der älteren Engine live gegangen sind. Für sie ändert sich nichts von selbst. Die Engine läuft weiter wie bisher, bis jemand den Wechsel beschließt, und ohne Frist wird diese Entscheidung gern verschoben.
+Offen ist die Frage also nur für Orgs, die mit der älteren Engine live gegangen sind. Für sie ändert sich nichts von selbst. Die Engine arbeitet weiter wie bisher, bis jemand den Wechsel beschließt, und ohne Frist wird diese Entscheidung gern verschoben.
 
 ## Höhere Limits für Skills und optimierte Termine
 
@@ -68,7 +68,7 @@ titel: Welche Work Rules verhalten sich anders?
 - **Match Boolean** greift nicht, wenn das Boolean-Feld an der Serviceressource leer ist.
 - **Match Territory** öffnet einen Termin ohne Servicegebiet für Ressourcen aus allen Gebieten.
 - **Working Territories**: Sekundäre Gebietszuordnungen werden anders behandelt.
-- **Match Skills** bekommt zusätzlich die Option "mindestens ein Skill passt".
+- **Match Skills** erhält zusätzlich die Option "mindestens ein Skill passt".
 - **Kapazitätsbasierte Ressourcen:** Die Unterstützung für Abwesenheiten und Ressourceneffizienz entfällt.
 - **In-Day-Optimierung** hat eine andere Laufzeit.
 ```
@@ -85,7 +85,7 @@ Damit sind zwei scheinbar getrennte Entscheidungen verknüpft, allerdings nur in
 
 ## Rechenbeispiel: erst ein Pilotgebiet
 
-Die Zahlen sind fiktiv. Ein Maschinenbauer hat 45 Techniker in fünf Servicegebieten, Field Service läuft seit 2021 mit der älteren Engine, außerdem gibt es vier Disponenten und zwei Scheduling Recipes für verspätete Termine. Alle Zahlen sind Annahmen, um die Methode zu zeigen.
+Die Zahlen sind fiktiv. Ein Maschinenbauer hat 45 Techniker in fünf Servicegebieten, Field Service ist seit 2021 mit der älteren Engine im Einsatz, außerdem gibt es vier Disponenten und zwei Scheduling Recipes für verspätete Termine. Alle Zahlen sind Annahmen, um die Methode zu zeigen.
 
 ```schritte
 Datenprüfung | 2 Wochen
@@ -98,7 +98,7 @@ Vergleich
   Liegt der Anteil geänderter Vorschläge im Pilotgebiet nicht höher als in den anderen und werden Fahrzeit, Überstunden und ungeplante Termine nicht schlechter, folgen die übrigen Gebiete, eines pro Woche.
 ```
 
-Die Konfiguration dafür, also die Einstellungen pro Gebiet, Scheduling Policies und Work Rules, besteht aus Datensätzen, nicht aus Metadaten. Sie gehört in die Pipeline, wie im Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass beschrieben. Sonst laufen der getestete Sandbox-Stand und die Produktion auseinander.
+Die Konfiguration dafür, also die Einstellungen pro Gebiet, Scheduling Policies und Work Rules, besteht aus Datensätzen, nicht aus Metadaten. Sie gehört in die Pipeline, wie im Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass beschrieben. Sonst weichen der getestete Sandbox-Stand und die Produktion voneinander ab.
 
 ## Termine ohne Gebiet, Work Rules und Recipes auflisten
 

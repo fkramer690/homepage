@@ -38,7 +38,7 @@ This works for low-code as well. Flows, page layouts, permission sets and custom
 In a small org with one admin, that admin knows every change. In an enterprise program that knowledge is spread across many people. I have worked in programs with up to eight project teams and more than 30 developers on one platform. Without reviews, the same problems show up again and again:
 
 - **Teams overwrite each other's work.** One team changes a validation rule, another deploys an older version of the same object a day later.
-- **Technical approaches drift apart.** One partner builds logic in Apex, another in flows, a third in a managed package. Similar problems get solved in completely different ways.
+- **Technical approaches drift apart.** One partner builds logic in Apex, another in flows, a third in a managed package. Similar problems are solved in completely different ways.
 - **Hidden side effects.** A new trigger or flow fires on an object that another team also automates, and record saves start failing or slowing down.
 - **Security gaps.** Permissions are granted too broadly because it is quicker, and nobody notices until an audit.
 - **Knowledge stays in one head.** If only the author has ever seen a change, the program depends on that person.

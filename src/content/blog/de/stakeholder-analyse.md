@@ -51,7 +51,7 @@ Ich gehe in fünf Schritten vor. Der Aufwand ist überschaubar: Für einen erste
 
 ```schritte
 Gruppen sammeln | 1 Stunde · Projektleitung und Führungskräfte
-  Alle Personen und Gruppen auflisten, die betroffen sind oder Einfluss haben. Lieber zu fein als zu grob: Außendienst und Innendienst sind zwei Gruppen, auch wenn sie im selben Bereich sitzen.
+  Alle Personen und Gruppen auflisten, die betroffen sind oder Einfluss haben. Lieber zu fein als zu grob: Außendienst und Innendienst sind zwei Gruppen, auch wenn sie zum selben Bereich gehören.
 Betroffenheit bewerten | 1 Stunde · Führungskräfte
   Je Gruppe festhalten, was sich im Alltag konkret ändert, und auf einer Skala von 1 bis 3 bewerten.
 Einfluss und Haltung einschätzen | 1 Stunde · Sponsor und Projektleitung
@@ -75,7 +75,7 @@ Die bekannteste Form ist die Einfluss-Interesse-Matrix, die häufig Aubrey Mende
 | Informieren | niedrig | hoch | laufend auf dem Stand halten, Rückmeldung einholen | Innendienst |
 | Beobachten | niedrig | niedrig | in größeren Abständen prüfen, ob sich etwas ändert | Einkauf |
 
-Für das Projektmanagement reicht diese Matrix oft. Im Change Management fehlt ihr eine Achse. Die Gruppe, die eine neue Software jeden Tag nutzen muss, hat oft wenig formellen Einfluss und am Anfang auch wenig Interesse. In der klassischen Matrix landet sie dann leicht bei „Beobachten“. Genau diese Gruppe entscheidet aber, ob die Veränderung im Alltag ankommt.
+Für das Projektmanagement reicht diese Matrix oft. Im Change Management fehlt ihr eine Achse. Die Gruppe, die eine neue Software jeden Tag nutzen muss, hat oft wenig formellen Einfluss und am Anfang auch wenig Interesse. In der klassischen Matrix wird sie dann leicht „Beobachten“ zugeordnet. Genau diese Gruppe entscheidet aber, ob die Veränderung im Alltag ankommt.
 
 Deshalb arbeite ich im Change Management mit einer zweiten Sicht: **Einfluss mal Betroffenheit**. Gruppen mit hoher Betroffenheit brauchen immer einen eigenen Plan, unabhängig von ihrem Einfluss. Gruppen mit hohem Einfluss und geringer Betroffenheit brauchen vor allem Information und gelegentlich eine Entscheidung. So wird aus der Stakeholder-Analyse die Grundlage für den Change-Plan je Gruppe, wie ich ihn in [Was ist Change Management?](../was-ist-change-management/) beschreibe.
 
