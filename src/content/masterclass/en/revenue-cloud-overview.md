@@ -44,8 +44,8 @@ Revenue Cloud covers everything from the product catalog to the invoice and uses
 | Transaction Management | Quotes and order capture across channels |
 | Configure, Price & Quote | A spreadsheet-like quote editor that groups products |
 | Asset Lifecycle Management | The installed base of what was sold, with recurring revenue |
-| Salesforce Contracts | Contracts, obligations and digitised legacy contracts |
-| Dynamic Revenue Orchestrator | Everything after the order, up to fulfilment |
+| Salesforce Contracts | Contracts, obligations and digitized legacy contracts |
+| Dynamic Revenue Orchestrator | Everything after the order, up to fulfillment |
 | Invoice Management | Invoices for delivered products and services |
 
 The [product page](https://www.salesforce.com/uk/products/revenue-cycle-management) sums it up as one product that "unifies pricing, quoting, contracting, and billing on a single data model", with "a single, attribute-based catalog" across all channels. Trailhead adds that composable APIs let other clouds use the catalog and pricing, with Agentforce Manufacturing as the example. For Winter '27, the [release highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management) name up to 15,000 transaction lines per deal and agents for buyer self-service, partner quoting and renewal preparation.
@@ -94,9 +94,9 @@ The [pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-managem
 
 The FAQ on that page says Revenue Cloud is a paid add-on to a Sales Cloud subscription. The comparison table marks four add-ons as "Available for purchase": Contract Lifecycle Management for Growth, and Dynamic Revenue Orchestration, Invoice Management and External User Support for Advanced. The two in the middle carry the note "Freemium access available", without saying what is included. Revenue Cloud Billing has no published list price. According to the [Billing rate sheet from February 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf), it consumes one Billing Event per $50 of invoice amount, with no rollover past the order end date.
 
-Worked example at list price: assume 50 quote creators work with Revenue Cloud Advanced, then that costs 50 × €200 × 12, so €120,000 per year. If they do not have Sales Cloud yet, Sales Cloud Core at €195 per user and month according to the [Sales Cloud pricing page](https://www.salesforce.com/eu/sales/pricing/) adds €117,000. Implementation, the SAP integration and operations come on top.
+Worked example at list price: if 50 quote creators work with Revenue Cloud Advanced, that costs 50 × €200 × 12, so €120,000 per year. If they do not have Sales Cloud yet, Sales Cloud Core at €195 per user and month according to the [Sales Cloud pricing page](https://www.salesforce.com/eu/sales/pricing/) adds €117,000. Implementation, the SAP integration and operations come on top.
 
-The number of users moves the budget more than the edition does. I group users by what they do with quotes: create, approve, only read, maintain the catalog, or quote as a dealer.
+The number of users affects the budget more than the edition does. I group users by what they do with quotes: create, approve, only read, maintain the catalog, or quote as a dealer.
 
 ```hinweis offen
 For every group except the users who create quotes, get the license requirement from Salesforce in writing.
@@ -136,11 +136,11 @@ Three other Salesforce products touch the same deals:
 - **B2B Commerce** lets dealers and customers reorder known items in a store. For rule-based prices, configurable bundles and Request for Quote, [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_revenue_intro.htm&language=en_US&type=5) names a Commerce Growth or Advanced license together with Revenue Cloud Advanced. When a store pays off is in the chapter [is B2B Commerce worth it?](../../b2b-commerce/b2b-commerce-worth-it-overview/).
 - **Field Service** maintains the installed machines. Revenue Cloud keeps what was sold as assets, Field Service works on the machine with its serial number. How the two meet is part of chapter 3.
 
-The overlaps are catalog, price and quote. One catalog, one price master and one quote model, with exactly one product leading each process step. The decision table is in [Revenue Cloud, Manufacturing Cloud or B2B Commerce?](../../../blog/revenue-cloud-vs-manufacturing-cloud-b2b-commerce/).
+The overlaps are catalog, price and quote. The rule: one catalog, one price master and one quote model, with exactly one product leading each process step. The decision table is in [Revenue Cloud, Manufacturing Cloud or B2B Commerce?](../../../blog/revenue-cloud-vs-manufacturing-cloud-b2b-commerce/).
 
 ## When is Salesforce the wrong answer?
 
-For some manufacturers Revenue Cloud is too much. I check which of the three building blocks from this chapter would actually get work:
+For some manufacturers Revenue Cloud is too much. I check which of the three building blocks from this chapter would actually be used:
 
 | Building block | Stays unused when | Then this is enough |
 |---|---|---|
@@ -171,7 +171,7 @@ Invoices stay in SAP in year one; Billing becomes a question once subscriptions 
 
 ## First step: price, rules and invoice into the decision log
 
-A partner asks about features. The decisions that cost and timeline depend on are made by the company itself:
+A partner asks about features. But the company itself makes the decisions that cost and timeline depend on:
 
 | Decision | What it includes |
 |---|---|

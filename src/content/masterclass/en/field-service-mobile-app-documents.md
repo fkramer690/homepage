@@ -19,10 +19,10 @@ articles: [field-service-mobile-offline, field-service-data-capture-forms, field
 faq:
   - q: "What is the difference between the Field Service mobile app and the Salesforce mobile app?"
     a: "They are two separate apps in the App Store and Google Play. The Field Service app is built for technicians: appointments, work orders, parts, forms and service reports, also offline. According to Salesforce Developers, every Field Service org can opt into offline Lightning web components there, while the Salesforce mobile app needs the Mobile App Plus license for them."
-  - q: "Does the Salesforce Field Service app work without network?"
+  - q: "Does the Salesforce Field Service app work without a network connection?"
     a: "Yes. It has basic offline support out of the box. With Briefcase Builder an admin defines which records each group of technicians downloads, and performance priming syncs the most critical changes every five minutes while there is a connection."
   - q: "How many service reports does Document Builder include?"
-    a: "According to the Field Service limits in Salesforce Help, each user with a Field Service Dispatcher or Field Service Mobile license brings 250 documents per month. For peak months the org gets a one-time allowance of 10,000 extra documents."
+    a: "According to the Field Service limits in Salesforce Help, each user with a Field Service Dispatcher or Field Service Mobile license includes 250 documents per month. For peak months the org gets a one-time allowance of 10,000 extra documents."
   - q: "Can technicians fill in forms by voice in German?"
     a: "Voice to Form became generally available with mobile release 260.0 in Spring '26. The Winter '27 release highlights add Spanish, Japanese, Italian, French and German. Clarify data protection and, where one exists, the works council before the pilot."
   - q: "How do I test a new version of the Field Service app?"
@@ -36,7 +36,7 @@ The Field Service mobile app has to work where the network ends, so the first de
 
 Field Service, which Salesforce sells today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/), gives technicians their own app. [Chapter 2](../field-service-scheduling-dispatch/) covered how a job gets scheduled. This chapter starts when the technician opens the job.
 
-The Field Service mobile app is a separate app in the App Store and Google Play. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-mobile/work-from-anywhere), it gives technicians their jobs, customer details, work order updates and signature capture without calling the office. The Salesforce mobile app is the general app for sales and service staff. For a manufacturer the difference that matters most is offline: according to [Salesforce Developers](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/intro_enabled_apps.htm), any Field Service org can opt into offline Lightning web components in the Field Service app, while the Salesforce mobile app needs the Mobile App Plus license for them. My rule: technicians work in the Field Service app, and dispatchers and inside service stay in the browser.
+The Field Service mobile app is a separate app in the App Store and Google Play. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-mobile/work-from-anywhere), it gives technicians their jobs, customer details, work order updates and signature capture without calling the office. The Salesforce mobile app is the general app for sales and service staff. For a manufacturer the difference that matters most is offline: according to [Salesforce Developers](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/intro_enabled_apps.htm), any Field Service org can opt into offline Lightning web components in the Field Service app, while the Salesforce mobile app needs the Mobile App Plus license for them. My rule: technicians work in the Field Service app, and dispatchers and back office staff stay in the browser.
 
 ```praxis
 In my Field Service projects, technician acceptance was one of the stumbling blocks.
@@ -68,7 +68,7 @@ Building the form is quick. The decision before it takes longer: which answers b
 
 ### Voice to Form and guided work: what is available?
 
-The status moves with every mobile release, so I keep it apart from the form design:
+The status changes with every mobile release, so I keep it apart from the form design:
 
 | Feature | Status, October 2026 | Source |
 |---|---|---|
@@ -81,7 +81,7 @@ German voice input makes the feature relevant for service teams in the DACH regi
 
 ## When is the service report from Document Builder enough?
 
-Document Builder creates the service report as a PDF from a work order, a work order line item or a service appointment. According to the [Field Service limits](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5), each user with a Field Service Dispatcher or Field Service Mobile license brings 250 documents per month, and the org gets a one-time allowance of 10,000 extra documents for peak months. A technician with five jobs a day creates about 105 reports a month, well below the limit.
+Document Builder creates the service report as a PDF from a work order, a work order line item or a service appointment. According to the [Field Service limits](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5), each user with a Field Service Dispatcher or Field Service Mobile license includes 250 documents per month, and the org gets a one-time allowance of 10,000 extra documents for peak months. A technician with five jobs a day creates about 105 reports a month, well below the limit.
 
 ```kennzahlen
 250 | documents per user and month with a Field Service Dispatcher or Field Service Mobile license
@@ -95,7 +95,7 @@ For the classic report at the machine, with working time, parts, photos and the 
 | Limit | What it means |
 |---|---|
 | Three objects only | No document on the asset or on a custom object. |
-| Android is behind | On iOS documents come from work order and service appointment, on Android only from the service appointment. |
+| Android is limited | On iOS documents come from work order and service appointment, on Android only from the service appointment. |
 | Size | At most 50 pages and 100 MB per document. |
 
 Plan for five smaller gaps in the standard report: template choice, file name, email, default values and styling. Flows and small components close them without another license, as I describe in [Document Builder: five limits and workarounds](../../../blog/salesforce-document-builder-limits-workarounds/).
@@ -104,7 +104,7 @@ Plan for five smaller gaps in the standard report: template choice, file name, e
 
 Inspection reports with conditional sections, machine files on the asset, certificates and Word output go beyond Document Builder. For these I would license Salesforce Document Generation or an AppExchange tool for the office users who need it, and leave the service report in Document Builder. The comparison is in [Salesforce Service Documents: is Document Builder enough?](../../../blog/salesforce-service-documents-document-builder/).
 
-Quotes are a separate case. When technicians spot extra work or a worn part and the customer wants a price on site, the quote belongs in the sales process with its approvals. How quotes, contracts and orders run there is covered in the Revenue Cloud masterclass chapter on [quote, contract and order](../../revenue-cloud/quote-contract-order/).
+Quotes are a separate case. When technicians spot extra work or a worn part and the customer wants a price on site, the quote belongs in the sales process with its approvals. How quotes, contracts and orders are handled there is covered in the Revenue Cloud masterclass chapter on [quote, contract and order](../../revenue-cloud/quote-contract-order/).
 
 ## When can a video call replace a visit?
 
@@ -120,7 +120,7 @@ How to estimate the potential from last year's breakdown visits is in [Visual Re
 
 ## How do you test every app version?
 
-Next to the three platform releases a year, the app has its own major and patch versions. According to the [Field Service Mobile beta program](https://developer.salesforce.com/tools/field-service-mobile-beta), beta builds are available one month before major releases and one week before patch releases, and debug builds let developers test their own components in an emulator or simulator. The release post for 260.0 says Salesforce rolls out versions over several days, and some users get an update only seven days after general availability. For up to a week, technicians run different versions.
+Next to the three platform releases a year, the app has its own major and patch versions. According to the [Field Service Mobile beta program](https://developer.salesforce.com/tools/field-service-mobile-beta), beta builds are available one month before major releases and one week before patch releases, and debug builds let developers test their own components in an emulator or simulator. The release post for 260.0 says Salesforce rolls out versions over several days, and some users receive an update only seven days after general availability. For up to a week, your technicians may therefore use different versions.
 
 My routine per version, on iOS and Android, fits into half a day:
 
@@ -136,28 +136,28 @@ My routine per version, on iOS and Android, fits into half a day:
 
 The pilot group, the calendar and who owns app versions are in [Field Service app updates: how to test each release](../../../blog/field-service-mobile-app-updates-testing/). App versions belong in the same calendar as the platform releases, described in the DevOps masterclass chapter on [release planning](../../devops-release-management/release-planning-salesforce-releases/). How such scripted tests fit into quality gates is in the chapter on [quality, tests and reviews](../../devops-release-management/quality-tests-reviews/).
 
-## Worked example: the commissioning protocol leaves paper
+## Worked example: the commissioning protocol goes paperless
 
 A machine builder with 60 technicians commissions packaging machines in three variants. The paper protocol has 80 checkpoints. The technician fills it in by hand, scans it in the evening, and the back office types the readings into the ERP. All numbers are assumptions to show the order of decisions.
 
 ```schritte
 Data model | Weeks 1 and 2 · service, back office, ERP team
-  Mark every checkpoint as field, form answer, follow-up line item or already known. Twelve questions disappear because serial number, customer and machine type are on the asset already.
+  Mark every checkpoint as field, form answer, follow-up line item or already known. Twelve questions are dropped because serial number, customer and machine type are on the asset already.
 Briefcase | Week 3
   One briefcase for internal technicians, one for the two partner companies, both filtered on territory and date.
 Forms | Weeks 4 to 7
-  General checks on the service appointment, one variant form per machine type on the line item, acceptance with signature. Readings such as cycle rate go to fields on the asset.
+  General checks on the service appointment, one variant form per machine type on the line item, acceptance with signature. Readings such as cycle rate are stored in fields on the asset.
 Report | Week 8
   The service report template shows the overall result from the work order field. The detailed inspection report with variant logic stays a separate document from the office.
 Pilot | Weeks 9 and 10 · eight technicians
   Including one partner. They run real commissioning jobs and the test routine on both platforms.
 ```
 
-Voice to Form waits until data protection and the works council have agreed. After the pilot the readings are on the asset the evening of the job, and nobody types them in again.
+Voice to Form is put on hold until data protection and the works council have agreed. After the pilot the readings are on the asset the evening of the job, and nobody types them in again.
 
 ## Set the target data model for service data before the first form
 
-Four decisions need a name next to them before a partner builds forms:
+Four decisions need a named owner before a partner builds forms:
 
 | Decision | What it covers |
 |---|---|

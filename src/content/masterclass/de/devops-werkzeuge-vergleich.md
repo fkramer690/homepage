@@ -14,7 +14,7 @@ takeaways:
   - "Change Sets funktionieren nur zwischen Orgs derselben Produktion und haben weder Daten noch Versionskontrolle. Für mehrere Partner reichen sie nicht."
   - "Lifecycle Center, bis Oktober 2026 DevOps Center, unterstützt nur GitHub.com-Cloud-Pläne und Bitbucket Cloud und fehlt in der EU Operating Zone."
   - "Die Git-Plattform Ihrer IT kann Lifecycle Center ausschließen und Hosting-Optionen einschränken. Klären Sie sie vor jeder Produktdemo."
-  - "Ein kommerzielles Werkzeug passt zum Kundeneigentum, solange Vertrag, Admin-Rechte und Repository auf Ihren Namen laufen."
+  - "Ein kommerzielles Werkzeug passt zum Kundeneigentum, solange Vertrag, Admin-Rechte und Repository bei Ihnen liegen."
 articles: [sfdx-hardis-vs-devops-center, sfdx-hardis-introduction, devops-ai-agents-copado-gearset, client-owned-devops-tools]
 faq:
   - q: "Reichen Change Sets für ein Salesforce-Programm mit mehreren Partnern?"
@@ -26,11 +26,11 @@ faq:
   - q: "Ist ein kommerzielles DevOps-Werkzeug besser als sfdx-hardis?"
     a: "Es löst eine andere Frage. Gearset, Copado und Flosum verkaufen Oberfläche, Zusatzmodule und Herstellersupport. sfdx-hardis hat keine Lizenzkosten, verlangt aber jemanden beim Kunden, der die Pipeline versteht. Welche Rolle Sie besetzen können, entscheidet mehr als die Funktionsliste."
   - q: "Wer sollte den Vertrag für das DevOps-Werkzeug unterschreiben?"
-    a: "Der Kunde. Lizenzen, Admin-Rechte und Repository gehören auf Ihren Namen, Partner bekommen benannte Benutzer. Dann bleibt der Release-Prozess bei Ihnen, auch wenn ein Partner geht."
+    a: "Der Kunde. Lizenzen, Admin-Rechte und Repository gehören auf Ihren Namen, Partner erhalten benannte Benutzer. Dann bleibt der Release-Prozess bei Ihnen, auch wenn ein Partner das Programm verlässt."
 draft: false
 ---
 
-Für Salesforce DevOps gibt es drei Wege: den Standard von Salesforce mit Change Sets, Salesforce CLI und Lifecycle Center (bis Oktober 2026 DevOps Center), Open Source mit sfdx-hardis und kommerzielle Plattformen wie Gearset, Copado und Flosum. Change Sets reichen für ein Programm mit mehreren Partnern nicht, weil sie keine Versionskontrolle kennen. Lifecycle Center passt zu Teams auf GitHub.com oder Bitbucket Cloud, die einen nativen, klickbasierten Prozess wollen. sfdx-hardis passt, wenn Sie die Pipeline selbst besitzen und betreiben wollen. Die kommerziellen Plattformen lohnen sich, wenn Sie Oberfläche, Zusatzmodule und Herstellersupport einkaufen wollen. Entscheiden sollten Git-Plattform, Team, Partner, Eigentum, Kosten und Support, in dieser Reihenfolge.
+Für Salesforce DevOps gibt es drei Wege: den Standard von Salesforce mit Change Sets, Salesforce CLI und Lifecycle Center (bis Oktober 2026 DevOps Center), Open Source mit sfdx-hardis und kommerzielle Plattformen wie Gearset, Copado und Flosum. Change Sets reichen für ein Programm mit mehreren Partnern nicht, weil sie keine Versionskontrolle kennen. Lifecycle Center passt zu Teams auf GitHub.com oder Bitbucket Cloud, die einen nativen, klickbasierten Prozess wollen. sfdx-hardis passt, wenn Sie die Pipeline selbst besitzen und betreiben wollen. Die kommerziellen Plattformen lohnen sich, wenn Sie Oberfläche, Zusatzmodule und Herstellersupport einkaufen wollen. Entscheidend sind Git-Plattform, Team, Partner, Eigentum, Kosten und Support, in dieser Reihenfolge.
 
 ## Was bringt Salesforce selbst mit?
 
@@ -41,7 +41,7 @@ Salesforce liefert drei Werkzeuge ohne zusätzliche Lizenz. Sie bauen aufeinande
 Ein Change Set überträgt Anpassungen von einer Org in eine andere, typischerweise aus einer Sandbox in die Produktion. Laut [Salesforce-Hilfe zu Change Sets](https://help.salesforce.com/apex/HTViewHelpDoc?id=changesets.htm) gelten drei Grenzen: Change Sets enthalten nur Änderungen, die man über das Setup-Menü machen kann, sie enthalten keine Daten, und sie funktionieren nur zwischen Orgs, die zur selben Produktion gehören und über eine Deployment-Verbindung verknüpft sind. Ein eingehendes Change Set wird immer als Ganzes deployt.
 
 ```hinweis achtung
-Für einen Admin, der alle paar Wochen ein Feld und eine Validierungsregel überträgt, ist das ausreichend. Für ein Programm mit mehreren Teams fehlt das Wesentliche: Es gibt keinen Verlauf in Git, keinen Pull Request, kein Review und keinen Vergleich, welcher Stand wo liegt. Wenn zwei Partner dasselbe Page Layout oder dieselbe Flow-Version anfassen, gewinnt, wer zuletzt deployt. Genau diesen Zustand beschreibt [Kapitel 1](../release-management-grundlagen/) als Ausgangspunkt des Reifegrads.
+Für einen Admin, der alle paar Wochen ein Feld und eine Validierungsregel überträgt, ist das ausreichend. Für ein Programm mit mehreren Teams fehlt das Wesentliche: Es gibt keinen Verlauf in Git, keinen Pull Request, kein Review und keinen Vergleich, welcher Stand wo liegt. Wenn zwei Partner dasselbe Page Layout oder dieselbe Flow-Version ändern, gewinnt, wer zuletzt deployt. Genau diesen Zustand beschreibt [Kapitel 1](../release-management-grundlagen/) als Ausgangspunkt des Reifegrads.
 ```
 
 ### Salesforce CLI
@@ -65,10 +65,10 @@ contra: Was Sie vorher prüfen
 - Als Git-Plattform funktionieren nur GitHub.com-Cloud-Pläne, einschließlich GitHub Enterprise Cloud, und Bitbucket Cloud. GitLab und Azure hat Salesforce im [Admin-Blog](https://admin.salesforce.com/blog/2026/the-future-of-salesforce-devops-is-here-whats-new-for-admins) als Priorität genannt, ohne Termin.
 - In der EU Operating Zone und in Government Cloud Plus ist Lifecycle Center nicht verfügbar.
 - Die Hub-Org darf keine Sandbox sein, und es kann nur Lifecycle Center oder das alte DevOps Center als Managed Package aktiv sein.
-- Die Migration von Projekten aus dem Managed Package ist eine Developer Preview. Für produktive Projekte würde ich darauf nicht bauen, bis sie allgemein verfügbar ist.
+- Die Migration von Projekten aus dem Managed Package ist eine Developer Preview. Für produktive Projekte würde ich mich darauf nicht verlassen, bis sie allgemein verfügbar ist.
 ```
 
-Wie Lifecycle Center im Detail gegen sfdx-hardis steht, habe ich im [Vergleich sfdx-hardis oder DevOps Center](../../../blog/sfdx-hardis-oder-devops-center-vergleich/) beschrieben. Kurz: Lifecycle Center liefert Ablauf und Kontrollen, das angebundene Git-Repository bleibt die verbindliche Quelle.
+Wie sich Lifecycle Center im Detail von sfdx-hardis unterscheidet, habe ich im [Vergleich sfdx-hardis oder DevOps Center](../../../blog/sfdx-hardis-oder-devops-center-vergleich/) beschrieben. Kurz: Lifecycle Center liefert Ablauf und Kontrollen, das angebundene Git-Repository bleibt die verbindliche Quelle.
 
 ## sfdx-hardis: der Open-Source-Weg
 
@@ -76,7 +76,7 @@ Wie Lifecycle Center im Detail gegen sfdx-hardis steht, habe ich im [Vergleich s
 
 Ich setze sfdx-hardis seit rund zwei Jahren in Kundenprojekten ein. Für Programme mit mehreren Implementierungspartnern zählt für mich, dass der ganze Prozess als Konfiguration im Repository des Kunden liegt. Mit Branch-Schutz ändert ihn ein Partner nur per Pull Request, den der Kunde freigibt.
 
-Der Preis dafür ist Know-how. Lizenzgebühren fallen nicht an, wohl aber CI-Minuten, die Einrichtung und eine Person beim Kunden, die die Pipeline versteht. Unterstützung bietet Cloudity als Dienstleister an, nötig ist sie nicht. Was das Toolkit alles abdeckt, steht in meiner [Einführung in sfdx-hardis](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/).
+Dafür braucht es Know-how. Lizenzgebühren fallen nicht an, wohl aber CI-Minuten, die Einrichtung und eine Person beim Kunden, die die Pipeline versteht. Unterstützung bietet Cloudity als Dienstleister an, nötig ist sie nicht. Was das Toolkit alles abdeckt, steht in meiner [Einführung in sfdx-hardis](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/).
 
 ## Was können Gearset, Copado und Flosum besser?
 
@@ -91,7 +91,7 @@ ab 550 USD | Automatisierungspaket mit Pipelines und CI/CD, pro Team und Monat
 quelle: Gearset-Preisliste, Stand Oktober 2026
 ```
 
-**Copado** beschreibt sich auf seiner [Website](https://www.copado.com/) als Salesforce-native DevOps-Lösung und bietet seit April 2026 die Editionen Agentia Advanced und Agentia Pro an. Laut [Copado-Dokumentation](https://docs.copado.com/) richtet sich die Edition Agentia Advanced an Teams mit einer Produktions-Org und 3 bis 10 Personen, Agentia Pro an Unternehmen mit mehreren Orgs, mit Quality Gates, Governance und dem Orchestrate Agent. Dazu kommen Robotic Testing und ein Context Hub für die KI-Agenten. Als Git-Plattformen nennt die Dokumentation der Advanced-Edition [GitHub, GitLab, Bitbucket und Azure](https://docs.essentials.copado.com/en/articles/4109764-setup-git-connections), jeweils auch selbst gehostet. Eine öffentliche Preisliste habe ich bei Copado nicht gefunden.
+**Copado** beschreibt sich auf seiner [Website](https://www.copado.com/) als Salesforce-native DevOps-Lösung und bietet seit April 2026 die Editionen Agentia Advanced und Agentia Pro an. Laut [Copado-Dokumentation](https://docs.copado.com/) richtet sich die Edition Agentia Advanced an Teams mit einer Produktions-Org und 3 bis 10 Personen, Agentia Pro an Unternehmen mit mehreren Orgs, mit Quality Gates, Governance und dem Orchestrate Agent. Hinzu kommen Robotic Testing und ein Context Hub für die KI-Agenten. Als Git-Plattformen nennt die Dokumentation der Advanced-Edition [GitHub, GitLab, Bitbucket und Azure](https://docs.essentials.copado.com/en/articles/4109764-setup-git-connections), jeweils auch selbst gehostet. Eine öffentliche Preisliste habe ich bei Copado nicht gefunden.
 
 **Flosum** ist laut [Hersteller](https://www.flosum.com/products/devops) ebenfalls Salesforce-native und hat eine eigene, metadatenbewusste Versionskontrolle. Git ist dort ausdrücklich optional; angebunden werden können GitHub, GitLab, Bitbucket und Azure DevOps. Flosum betont Nachweise für Audits, die direkt in der Pipeline entstehen, und nennt Regelwerke wie SOX und GxP. Das ist für Hersteller von Medizintechnik oder Laborgeräten interessant. Neben DevOps gibt es Backup and Archive, einen Data Migrator und ein Trust Center. Die Preise sind laut Flosum angebotsbasiert.
 
@@ -101,10 +101,10 @@ Weitere Anbieter wie AutoRABIT oder Blue Canvas habe ich für dieses Kapitel nic
 
 Ich gehe die Kriterien in dieser Reihenfolge durch, weil die ersten am meisten ausschließen.
 
-1. **Git-Plattform.** Welche Plattform betreibt Ihre IT schon? Auf Azure DevOps oder einem selbst gehosteten GitLab fällt Lifecycle Center heute weg. Die Git-Plattform wechselt man nicht für ein Release-Werkzeug.
+1. **Git-Plattform.** Welche Plattform betreibt Ihre IT schon? Auf Azure DevOps oder einem selbst gehosteten GitLab scheidet Lifecycle Center heute aus. Die Git-Plattform wechselt man nicht für ein Release-Werkzeug.
 2. **Team.** Wer arbeitet täglich mit dem Werkzeug: Admins, die klicken, oder Entwickler, die mit VS Code und Branches umgehen? Und gibt es beim Kunden jemanden, der eine Pipeline verantworten kann?
 3. **Partner.** Wie viele Teams und Implementierungspartner arbeiten an derselben Org? Ab dem zweiten Partner brauchen Sie Pull Requests mit [Pflicht-Review](../../../blog/warum-pull-request-reviews-pflicht-sind/) und einen Prozess, den alle gleich nutzen.
-4. **Eigentum.** Läuft der Vertrag auf Sie, haben Ihre Mitarbeitenden Admin-Rechte, liegt das Repository in Ihrer Organisation? Warum das zählt, steht in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
+4. **Eigentum.** Ist der Vertrag auf Sie ausgestellt, haben Ihre Mitarbeitenden Admin-Rechte, liegt das Repository in Ihrer Organisation? Warum das zählt, steht in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 5. **Kosten.** Lizenz, CI-Minuten, Einrichtung und vor allem die Release-Rolle. Nach meiner Einschätzung kostet diese Rolle in einem Programm mit mehreren Partnern mehr als die Lizenz des Werkzeugs.
 6. **Support.** Brauchen Sie einen Vertrag mit Reaktionszeiten, oder reichen Community und ein Dienstleister bei Bedarf?
 
@@ -130,7 +130,7 @@ Zwei Dinge zeigt die Matrix nicht. Erstens die Qualität des Supports, die Sie n
 
 Ein Maschinenbauer betreibt Sales Cloud für den Händlervertrieb, Service Cloud und Field Service für den Außendienst und eine SAP-Schnittstelle für Ersatzteile. Zwei Implementierungspartner arbeiten an derselben Org, einer davon mit einem Nearshore-Team. Die IT hat Azure DevOps für alle anderen Anwendungen. Bisher wird mit Change Sets deployt.
 
-Die Git-Plattform schließt Lifecycle Center aus. Change Sets scheiden wegen der zwei Partner aus. Es bleiben sfdx-hardis, Gearset, Copado und Flosum. Hat der Hersteller jemanden, der eine Pipeline auf Azure DevOps verantworten kann oder diese Rolle aufbauen will, würde ich mit sfdx-hardis starten und die gesparten Lizenzkosten in genau diese interne Release-Rolle stecken. Fehlt diese Person und soll sie auch nicht entstehen, ist eine kommerzielle Plattform mit Herstellersupport die ehrlichere Wahl. Dann zählt, dass der Vertrag auf den Hersteller läuft und nicht auf einen der Partner.
+Die Git-Plattform schließt Lifecycle Center aus. Change Sets scheiden wegen der zwei Partner aus. Es bleiben sfdx-hardis, Gearset, Copado und Flosum. Hat der Hersteller jemanden, der eine Pipeline auf Azure DevOps verantworten kann oder diese Rolle aufbauen will, würde ich mit sfdx-hardis starten und die gesparten Lizenzkosten in genau diese interne Release-Rolle investieren. Fehlt diese Person und soll die Rolle auch nicht aufgebaut werden, ist eine kommerzielle Plattform mit Herstellersupport die ehrlichere Wahl. Dann muss der Vertrag auf den Hersteller ausgestellt sein, nicht auf einen der Partner.
 
 ## Wie machen Sie die Entscheidung verbindlich?
 
