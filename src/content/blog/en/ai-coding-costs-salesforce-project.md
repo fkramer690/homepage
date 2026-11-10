@@ -11,32 +11,32 @@ categories: [devops, ai]
 tags: [ai coding, claude code, github copilot, agentforce vibes, partner governance, costs]
 takeaways:
   - "Anthropic reports about $13 per developer per active day for Claude Code; caching makes repeated context cheap, output and thinking are expensive."
-  - "In the worked example, AI tools for a partner team of eight cost about $650 to $1,500 a month, around one percent of the team's day rates."
+  - "In the worked example, AI tools for a partner team of eight cost about $650 to $1,500 a month, around one percent of the team's monthly day-rate spend."
   - "Metered Agentforce Vibes draws on the same Flex Credits as your production agents; Opus models cost 16 credits per 2,000 tokens."
   - "My preferred split: in time and materials the client owns the accounts and pays for tokens; in a fixed price the partner pays."
 faq:
   - q: "What does Claude Code cost per developer per month?"
     a: "Anthropic reports an average of about $13 per developer per active day and $150 to $250 per developer per month in enterprise deployments at API rates. A Claude Team Premium seat costs $125 a month, or $100 billed annually, with a usage allowance instead of a token bill."
   - q: "Is GitHub Copilot cheaper than Claude Code for Salesforce work?"
-    a: "The seat is cheaper: Copilot Business costs $19 per user and month and includes 1,900 AI credits, worth $19 of model usage. Agent sessions consume credits at the model's token rates, and above the pooled credits each credit costs $0.01, so heavy agent use narrows the gap."
+    a: "The seat price is lower: Copilot Business costs $19 per user per month and includes 1,900 AI credits, worth $19 of model usage. Agent sessions consume credits at the model's token rates, and above the pooled credits each credit costs $0.01, so heavy agent use narrows the gap."
   - q: "Should the client or the implementation partner pay for AI coding tools?"
-    a: "My preference follows the commercial model. In time and materials the client gets the productivity gain only through fewer billed days, so the client should own the accounts and pay. In a fixed price the partner keeps the gain and should carry the token cost, although the client may still own the accounts for security reasons."
+    a: "My preference follows the commercial model. In time and materials the client benefits from the productivity gain only through fewer billed days, so the client should own the accounts and pay. In a fixed price the partner keeps the gain and should carry the token cost, although the client may still own the accounts for security reasons."
   - q: "Does Agentforce Vibes use my Agentforce Flex Credits?"
-    a: "Metered Vibes does. Salesforce says it consumes the same credits as Agentforce, counted in units of 2,000 tokens. The unmetered add-on at $125 per user and month covers GPT-5 as included model and Claude Sonnet 4.6 as premium model up to 2,500 requests or 36 million tokens per 30 days. Opus models are only available metered."
+    a: "Metered Vibes does. Salesforce says it consumes the same credits as Agentforce, counted in units of 2,000 tokens. The unmetered add-on at $125 per user per month covers GPT-5 as the included model and Claude Sonnet 4.6 as the premium model up to 2,500 requests or 36 million tokens per 30 days. Opus models are only available metered."
   - q: "Why does prompt caching matter so much for AI coding costs?"
     a: "A coding agent re-sends the whole conversation with every step. On Claude Opus 5.5 and Sonnet 5.5 a cache read costs 5 percent of the normal input price, which turns a session of about $9.80 into one of about $2.20 in the worked example."
 draft: false
 ---
 
-AI coding costs in a Salesforce project are lower than most budget discussions assume. Seats start at $19 per developer and month, and Anthropic and OpenAI report typical agent use of roughly $100 to $250 per developer and month; heavy metered use can exceed that. In my worked example a partner team of eight lands at roughly $650 to $1,500 a month, about one percent of its day rates. The harder question is who holds the accounts and carries the consumption risk. My preferred split: in time and materials the client pays, in a fixed price the partner.
+AI coding costs in a Salesforce project are lower than most budget discussions assume. Seats start at $19 per developer per month, and Anthropic and OpenAI report typical agent usage costs of roughly $100 to $250 per developer per month; heavy metered use can exceed that. In my worked example, a partner team of eight costs roughly $650 to $1,500 a month for AI tools, about one percent of its monthly day-rate spend. The harder question is who holds the accounts and carries the consumption risk. My preferred split: in time and materials the client pays, in a fixed price the partner.
 
 ## What does AI coding cost per developer and month?
 
-The products combine seats, included allowances and metered usage in different ways, and usage above the allowance is not always switched on automatically. List prices on 27 October 2026, reviewed on 9 November 2026:
+The products combine seats, included allowances and metered usage in different ways, and usage above the allowance is not always enabled automatically. List prices on 27 October 2026, reviewed on 9 November 2026:
 
 - **Claude Code at API rates.** Anthropic [reports](https://code.claude.com/docs/en/costs) about $13 per developer per active day and $150 to $250 per month across enterprise deployments, with 90 percent of users below $30 per active day.
-- **Claude Team and Enterprise.** Team Standard costs $25 per seat and month ($20 annually), Premium $125 ($100 annually), Enterprise $20 per seat plus usage at API rates, according to [Anthropic's pricing page](https://claude.com/pricing). Seat usage draws from an allowance that resets in a five-hour and a weekly window. Its size in tokens is not published.
-- **OpenAI Codex.** The [Codex rate card](https://help.openai.com/en/articles/20001106-codex-rate-card-2) gives an average of about $100 to $200 per developer per month. OpenAI lists Codex among the features of [ChatGPT Business](https://openai.com/business/pricing/) at $25 per standard seat ($20 annually).
+- **Claude Team and Enterprise.** Team Standard costs $25 per seat per month ($20 annually), Premium $125 ($100 annually), Enterprise $20 per seat plus usage at API rates, according to [Anthropic's pricing page](https://claude.com/pricing). Seat usage draws from an allowance that resets in five-hour and weekly windows. Its size in tokens is not published.
+- **OpenAI Codex.** The [Codex rate card](https://help.openai.com/en/articles/20001106-codex-rate-card-2) gives an average cost of about $100 to $200 per developer per month. OpenAI lists Codex among the features of [ChatGPT Business](https://openai.com/business/pricing/) at $25 per standard seat ($20 annually).
 - **GitHub Copilot.** Business costs [$19 per user with 1,900 AI credits](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan), Enterprise $39 with 3,900. One credit is $0.01, credits are [pooled across the organization](https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/billing/organizations-and-enterprises/usage-based-billing), and code completions are not billed.
 - **Agentforce Vibes.** Metered Flex Credits, or an unmetered add-on at $125 per user and month with limits, see below.
 
@@ -44,7 +44,7 @@ The seat price says little about the bill. GitHub converts tokens into credits a
 
 ## How tokens turn into a bill
 
-A token is the unit models are billed in, roughly a piece of a word or of code. A coding agent works in a loop: it reads files, runs a command and sends everything back to the model. In a Salesforce repository that context holds the rules file, Apex classes, metadata XML and test output. Three rules on [Anthropic's pricing page](https://platform.claude.com/docs/en/about-claude/pricing) decide the price:
+A token is the unit in which models are billed, roughly a fragment of a word or code. A coding agent works in a loop: it reads files, runs a command and sends everything back to the model. In a Salesforce repository that context holds the rules file, Apex classes, metadata XML and test output. Three rules on [Anthropic's pricing page](https://platform.claude.com/docs/en/about-claude/pricing) determine the price:
 
 - **Caching.** Context already sent is read from the prompt cache. On Claude Opus 5.5 a cache read costs $0.20 per million tokens instead of $4, 5 percent of the input price. Writing to the five-minute cache costs 1.25 times the input price.
 - **Output and thinking.** Output costs $20 per million tokens on Opus 5.5, five times input. Thinking tokens are billed as output, and on Opus 5.5 and Sonnet 5.5 thinking [cannot be switched off](https://code.claude.com/docs/en/costs).
@@ -55,30 +55,30 @@ A token is the unit models are billed in, roughly a piece of a word or of code. 
 Assume a developer asks the agent for a trigger handler for warranty claims, including tests. The session has 30 model calls, the context grows from 25,000 to about 115,000 tokens, and each call returns 2,000 output tokens including thinking. These numbers are assumptions.
 
 - Cache writes: 115,000 tokens at $5 per million = $0.58
-- Cache reads: 30 calls of about 68,000 tokens, 2.04 million at $0.20 per million = $0.41
+- Cache reads: 30 calls of about 68,000 tokens, for a total of 2.04 million at $0.20 per million = $0.41
 - Output: 60,000 tokens at $20 per million = $1.20
 
 ```kennzahlen
 $2.20 | Session on Opus 5.5 with caching
 $1.10 | Same session on Sonnet 5.5
 $9.80 | Same session on Opus 5.5 without caching
-source: own calculation with the list prices on Anthropic's pricing page, as of 27 October 2026
+source: own calculation based on the list prices on Anthropic's pricing page, as of 27 October 2026
 ```
 
-Without caching, the 2.16 million input tokens alone cost $8.62. Output is under 3 percent of the tokens and more than half the cost. Six such sessions per active day give about $13, Anthropic's average.
+Without caching, the 2.16 million input tokens alone cost $8.62. Output is under 3 percent of the tokens and more than half the cost. Six such sessions per active day result in about $13, Anthropic's average.
 
-Two effects push this up: Claude 4.7 and later produce about 30 percent more tokens for the same text, and agent teams use about 7 times more tokens than a standard session in plan mode.
+Two effects increase the cost: Claude 4.7 and later produce about 30 percent more tokens for the same text, and agent teams use about 7 times more tokens than a standard session in plan mode.
 
 ## Worked example: a partner team of eight builds service processes
 
-Assume a machine builder with SAP, Service Cloud, Field Service for its service technicians and a dealer portal. A nearshore partner team of eight builds the next release: six developers who use a coding agent on 18 days a month, plus a lead consultant and a project manager with chat seats. All volumes are assumptions; prices are the list prices above.
+Assume a machine builder uses SAP, Service Cloud, Field Service for its service technicians and a dealer portal. A nearshore partner team of eight builds the next release: six developers who use a coding agent on 18 days a month, plus a lead consultant and a project manager with chat seats. All usage volumes are assumptions; prices are the list prices above.
 
-- **Claude Code at API rates:** 6 × 18 × $13 = $1,404, plus two Standard seats, about $1,450 a month, with no ceiling unless someone sets one.
+- **Claude Code at API rates:** 6 × 18 × $13 = $1,404, plus two Standard seats, about $1,450 a month, with no ceiling unless a limit is configured.
 - **Claude Team:** six Premium and two Standard seats = $800 a month, $640 annually. Predictable, but a developer who exhausts the allowance waits for the reset unless usage credits are enabled.
 - **Codex in ChatGPT Business:** eight Business seats with included usage, plus workspace credits for developers who exceed it. OpenAI's average of $100 to $200 per developer gives a rough benchmark of $600 to $1,200 a month for the six developers, not a list price.
-- **Copilot Business:** eight seats = $152 with a pool of 15,200 credits. If the sessions run on Claude Opus 5.5 at Anthropic's list rates, the pool lasts about 70 sessions, two working days at six sessions per developer and day. After that every credit is billed, and the month ends near $1,400.
+- **Copilot Business:** eight seats = $152 with a pool of 15,200 credits. If the sessions use Claude Opus 5.5 at Anthropic's list rates, the pool lasts about 70 sessions, two working days at six sessions per developer per day. After that, every credit is billed, and the monthly cost is about $1,400.
 
-These are budget scenarios, not prices for the same output: the allowances behind the seats are not published in tokens. At an assumed blended rate of $800 per person and day, the team itself costs 8 × 18 × $800 = $115,200 a month. AI coding adds about one percent. McKinsey [writes](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) that spending on tokens, compute, infrastructure and AI Ops can rise to as much as 20 percent of existing labour costs as agents take on more work. In my view the bigger risks today are a meter without limits and the open question of who gets the productivity gain.
+These are budget scenarios, not prices for the same output: the allowances behind the seats are not published in tokens. At an assumed blended rate of $800 per person and day, the team itself costs 8 × 18 × $800 = $115,200 a month. AI coding adds about one percent. McKinsey [writes](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) that spending on tokens, compute, infrastructure and AI Ops can rise to as much as 20 percent of existing labour costs as agents take on more work. In my view the bigger risks today are a meter without limits and the open question of who keeps the productivity gain.
 
 ## Agentforce Vibes needs its own calculation
 
@@ -88,18 +88,18 @@ Agentforce Vibes is Salesforce's coding agent. Two points matter:
 2. **The unit is 2,000 tokens.** The [billing documentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) counts input and output in units of 2,000 tokens, rounded up. Opus models count as Advanced prompts at 16 credits per unit on the [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) of November 3, 2026, $0.08 per unit.
 
 ```hinweis offen
-Salesforce does not say whether re-sent context counts in full. If it does, one Opus request with 70,000 tokens of context costs 560 credits or $2.80, more than the whole session above. I would measure a week in Digital Wallet first.
+Salesforce does not say whether re-sent context counts in full. If it does, one Opus request with 70,000 tokens of context costs 560 credits or $2.80, more than the whole session above. I would measure one week of usage in Digital Wallet first.
 ```
 
-The unmetered add-on covers GPT-5 as included model and Claude Sonnet 4.6 as premium model up to 2,500 requests or 36 million tokens per 30 days. After that you switch to metered Flex Credits or to the included model, and Opus is only available metered. Vibes is not available in the EU Operating Zone. In its favor, the license sits in the client's org, and the [FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) says data stays within Salesforce's trust boundary. That does not settle data residency, retention or which source code may be processed; I would check those separately. The tool choice itself is covered in [Agentforce Vibes, Claude Code or Copilot](../agentforce-vibes-claude-code-copilot/).
+The unmetered add-on covers GPT-5 as the included model and Claude Sonnet 4.6 as the premium model up to 2,500 requests or 36 million tokens per 30 days. After that, usage switches to metered Flex Credits or to the included model, and Opus is only available metered. Vibes is not available in the EU Operating Zone. One advantage is that the license is held in the client's org, and the [FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) says data stays within Salesforce's trust boundary. That does not settle data residency, retention or which source code may be processed; I would check those separately. The tool choice itself is covered in [Agentforce Vibes, Claude Code or Copilot](../agentforce-vibes-claude-code-copilot/).
 
 ## Who should pay for AI coding: client or partner?
 
-My preferred split follows the commercial model. In time and materials the client pays for days; when the partner's developers get faster, the client pays for fewer days, so the client should pay for the tokens too. In a fixed price the partner keeps the gain and carries the cost. Who signs the tool contract, whose organization holds code and usage data, and who carries the cost are separate questions, though. Three setups exist:
+My preferred split follows the commercial model. In time and materials the client pays for days; when the partner's developers become faster, the client pays for fewer days, so the client should pay for the tokens too. In a fixed price the partner keeps the gain and carries the cost. Who signs the tool contract, whose organization holds code and usage data, and who carries the cost are separate questions, though. Three setups exist:
 
 - **The client provides the accounts.** Partner developers work with seats in the client's Claude, ChatGPT or GitHub organization, or a Vibes license in the client's org. The client sets limits, sees spend per person and removes access when the partner leaves. This is the logic of [client-owned DevOps tools](../why-clients-should-own-their-devops-tools/).
-- **The partner brings its own tools.** The cost sits in the rate, and so does the consumption risk. But your source code then runs through a contract you have never read, so the contract must name the allowed tools, models and data rules, as in [contract rules for partners coding with AI](../partners-using-ai-coding-contract-rules/).
-- **Pass-through at cost.** The partner invoices tokens monthly. I would accept this only with a cap per developer, a usage report per person and no mark-up, or nobody has a reason to pick Sonnet over Opus.
+- **The partner brings its own tools.** The cost is included in the rate, as is the consumption risk. But your source code is then processed under a contract you have never read, so the contract must name the allowed tools, models and data rules, as in [contract rules for partners coding with AI](../partners-using-ai-coding-contract-rules/).
+- **Pass-through at cost.** The partner invoices tokens monthly. I would accept this only with a cap per developer, a usage report per person and no mark-up; otherwise, nobody has a reason to pick Sonnet over Opus.
 
 In time and materials I prefer the first setup: for $650 to $1,500 a month, the client controls data, limits and offboarding. In Germany the works council must be informed and consulted when AI changes work processes, and co-determination can apply where usage data allows monitoring of employees, see [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/). Whether to buy seats at all is part of my [make-or-buy and license planning](../../services/make-or-buy-licences/).
 
@@ -110,4 +110,4 @@ In time and materials I prefer the first setup: for $650 to $1,500 a month, the 
 3. **Default to Sonnet.** Anthropic recommends Sonnet for most coding tasks and Opus for complex architectural decisions.
 4. **Keep the rules file short.** Anthropic advises keeping CLAUDE.md under 200 lines, see [the AI rules file for your repository](../ai-rules-file-salesforce-repository/).
 5. **Pilot with two developers for two weeks** and read the real spend.
-6. **Budget the review.** A human reviewer for generated Apex costs more than the tokens, see [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/).
+6. **Budget the review.** A human reviewer for generated Apex costs more than the token usage, see [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/).
