@@ -8,7 +8,7 @@ chapter: 9
 short: "Teamwork and delivery"
 summary: "How manufacturers set up roles, review gates, metrics and works council approval when partners and in-house teams deliver with coding agents."
 takeaways:
-  - "With coding agents, the bottleneck moves from writing code to verification and business acceptance. That is where manufacturers should plan capacity."
+  - "With coding agents, the bottleneck shifts from writing code to verification and business acceptance. That is where manufacturers should plan capacity."
   - "According to a 2026 McKinsey survey, teams save 11.8 percent of time but cut rework by only 6.2 percent, and 30 percent report falling productivity."
   - "Every agent-generated change needs a named human owner, fixed review gates with clear decision makers and a written Definition of Done."
   - "According to CMS, AI systems generally trigger co-determination under section 87(1) no. 6 BetrVG. Coding agents with per-person statistics qualify."
@@ -22,13 +22,13 @@ faq:
   - q: "Does a German works council have to approve coding agents?"
     a: "As a rule, yes. According to CMS, the objective possibility of monitoring performance or behavior is enough; no intent is required. Without consent or a conciliation committee ruling, the employer may not introduce the system. This is not legal advice."
   - q: "How do I measure whether AI makes my Salesforce program faster?"
-    a: "With cycle time per story, defect escape rate, rework and the DORA metrics, measured against a baseline from before the tools arrived. Self-reports do not work: in the METR study developers were 19 percent slower and believed they were 20 percent faster."
+    a: "With cycle time per story, defect escape rate, rework and the DORA metrics, measured against a baseline from before the tools arrived. Self-reports are not reliable: in the METR study developers were 19 percent slower and believed they were 20 percent faster."
 draft: false
 ---
 
 When coding agents write code in a Salesforce program, writing becomes cheap and verification becomes expensive. Teamwork and delivery with AI therefore come down to smaller teams with clear roles, a named person who owns every change, fixed review gates up to business acceptance, and metrics measured against a baseline. For manufacturers the biggest change sits on their own side. Service, sales or after-sales have to decide and accept work every day, and the works council and data protection come before the pilot, not after it.
 
-## The bottleneck moves from writing to verification
+## The bottleneck shifts from writing to verification
 
 Three sources describe the same pattern from different angles. The most detailed description for Salesforce comes from a practitioner: on 19 October 2026 Amit Chaudhary outlined "AI-native delivery" on [ApexHours](https://www.apexhours.com/ai-native-delivery-for-salesforce/), a delivery process built around AI agents from day one. It is a practice framework without measured data; the numbers come from McKinsey and DORA.
 
@@ -48,7 +48,7 @@ For a manufacturer's Salesforce program I read this as follows: if you only buy 
 
 ## Which roles does a Salesforce team with coding agents need?
 
-Roles get broader and accountability gets sharper. ApexHours sums up the governance in one sentence: "A named human owns every artifact." Agents draft, people decide. This is how I would cut the roles at a manufacturer:
+Roles get broader and accountability gets sharper. ApexHours sums up the governance in one sentence: "A named human owns every artifact." Agents draft, people decide. This is how I would define the roles at a manufacturer:
 
 | Role | Responsibility | Who at a manufacturer |
 |---|---|---|
@@ -58,11 +58,11 @@ Roles get broader and accountability gets sharper. ApexHours sums up the governa
 | Platform and DevOps (shared) | pipeline, org strategy, tool approvals, cost monitoring | internal IT or partner with a clear handover |
 | Coding agent | drafts, code, tests, documentation, runbooks | works only in scratch orgs and sandboxes |
 
-In my view the domain lead is the most critical role at a manufacturer. Without someone who decides every day whether a warranty workflow or a spare part reservation is right, a fast team quickly builds past the need. The head of service has to release that time before the partner restructures its team.
+In my view the domain lead is the most critical role at a manufacturer. Without someone who decides every day whether a warranty workflow or a spare part reservation is right, a fast team quickly builds something nobody needs. The head of service has to release that time before the partner restructures its team.
 
 ### Nearshore teams and partners
 
-In nearshore teams the load also moves to review. More code per developer means more pull requests per reviewer, and that is exactly where many teams lack seniority. Why I cap nearshore teams at about eight developers anyway is explained in [Salesforce nearshore teams: why eight developers at most](../../../blog/salesforce-nearshore-teams-eight-developers/). What changes with agents in roles, onboarding and access rules is covered in [nearshore Salesforce teams with AI agents](../../../blog/nearshore-salesforce-teams-ai-agents/).
+In nearshore teams the load also shifts to review. More code per developer means more pull requests per reviewer, and that is exactly where many teams lack seniority. Why I cap nearshore teams at about eight developers anyway is explained in [Salesforce nearshore teams: why eight developers at most](../../../blog/salesforce-nearshore-teams-eight-developers/). What changes with agents in roles, onboarding and access rules is covered in [nearshore Salesforce teams with AI agents](../../../blog/nearshore-salesforce-teams-ai-agents/).
 
 When a partner works with agents, the ground rules belong in the contract. ApexHours lists permitted tools, data handling without production or personal data, IP ownership and disclosure of AI use, all settled before kickoff. My checklist is in [partners coding with AI: what belongs in the contract](../../../blog/partners-using-ai-coding-contract-rules/); how partner incentives are shifting is in [chapter 5](../aiforce-and-system-integrators/).
 
@@ -73,7 +73,7 @@ ApexHours replaces the classic specification with an "intent": an outcome-first 
 This leads to a workflow I recommend for Salesforce programs:
 
 1. **Capture the intent**, plus data model, real field API names, sharing requirements and data volumes.
-2. **Let the agent read the org**: it analyses metadata in a sandbox and reports dependencies.
+2. **Let the agent read the org**: it analyzes metadata in a sandbox and reports dependencies.
 3. **Approve the plan**: the architect checks that it covers the intent and the non-goals.
 4. **Build in small steps** in a scratch org or feature sandbox without customer data, tests first.
 5. **Pull request** with the AI share labeled, review by the code owner, checks in the pipeline.
@@ -96,7 +96,7 @@ Which automated checks belong in the pipeline is covered in [chapter 8](../ai-co
 
 G2 is deliberately non-blocking. A second agent spots anomalies; accountability stays with G3.
 
- Why every pull request needs a human review no matter who wrote the code is explained in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). For Agentforce agents themselves a test gate with Testing Center comes on top, described in [testing Agentforce agents before go-live](../../../blog/testing-agentforce-agents-before-go-live/).
+Why every pull request needs a human review no matter who wrote the code is explained in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). For Agentforce agents themselves a test gate with Testing Center is added, described in [testing Agentforce agents before go-live](../../../blog/testing-agentforce-agents-before-go-live/).
 
 ### Definition of Done: a recommendation
 
@@ -124,11 +124,11 @@ Self-reports are no evidence. In the [METR study](https://metr.org/blog/2025-07-
 | DORA metrics | change lead time, deployment frequency, failed deployment recovery time, change fail rate, deployment rework rate | comparable across teams and partners |
 | AI cost per story | tool and token costs divided by stories delivered | budget control |
 
-The five DORA metrics are defined in the [DORA guide](https://dora.dev/guides/dora-metrics/). The baseline is what matters: record the values before the first agent arrives, and report them as a trend, never as a ranking of individuals. Why a ranking is also a problem under German labour law follows in the next section. How to set up the measurement and which numbers mislead is in [measuring AI productivity in Salesforce projects](../../../blog/measuring-ai-productivity-salesforce-projects/). The cost side is in [chapter 7](../costs-and-tokens/).
+The five DORA metrics are defined in the [DORA guide](https://dora.dev/guides/dora-metrics/). The baseline is what matters: record the values before the first agent is introduced, and report them as a trend, never as a ranking of individuals. Why a ranking is also a problem under German labor law is explained in the next section. How to set up the measurement and which numbers mislead is in [measuring AI productivity in Salesforce projects](../../../blog/measuring-ai-productivity-salesforce-projects/). The cost side is in [chapter 7](../costs-and-tokens/).
 
 ### Learning time belongs in the budget
 
-According to McKinsey, about 38 percent of respondents name lack of time to learn as a top barrier, and embedded coaching is about 30 percent more common among top accelerators. I recommend a four-week onboarding: set up the tool with an org allowlist and read the rules file, then bug fixes with a test first under guidance, then a first feature with a plan and a labeled pull request, and finally reviews of other people's agent pull requests. Those weeks belong in the project plan, not on the side.
+According to McKinsey, about 38 percent of respondents name lack of time to learn as a top barrier, and embedded coaching is about 30 percent more common among top accelerators. I recommend a four-week onboarding: set up the tool with an org allowlist and read the rules file, then bug fixes with a test first under guidance, then a first feature with a plan and a labeled pull request, and finally reviews of other people's agent pull requests. Those weeks belong in the project plan, not as a side task.
 
 ## Works council, GDPR and the EU AI Act
 
@@ -136,11 +136,11 @@ According to McKinsey, about 38 percent of respondents name lack of time to lear
 
 This part applies to German companies. According to [CMS](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten), AI systems "as a rule" trigger co-determination rights under section 87(1) no. 6 of the Works Constitution Act (BetrVG). What counts is the objective possibility of monitoring, even without any intent. Without the works council's consent or a conciliation committee ruling, the employer may not introduce the system. CMS recommends framework works agreements that set the procedure for IT and AI applications.
 
-How concrete this gets with coding agents shows in [Claude Code usage analytics](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics): admins see each team member's lines of code accepted per month, and in beta also merged pull requests per person. That is exactly the kind of performance data section 87 is about. So I would schedule the works council before the pilot. It applies directly to your own developers, admins and reviewers. This is my view as an architect, not legal advice.
+[Claude Code usage analytics](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics) show how concrete this gets with coding agents: admins see each team member's lines of code accepted per month, and in beta also merged pull requests per person. That is exactly the kind of performance data section 87 is about. So I would schedule the works council agreement before the pilot. It applies directly to your own developers, admins and reviewers. This is my view as an architect, not legal advice.
 
 ### GDPR
 
-Production data and personal data do not belong in a coding agent's context. Agents work in scratch orgs and sandboxes with anonymized test data; dealer and customer master data from the full copy sandbox stays out. For model routes: according to the [data residency documentation](https://platform.claude.com/docs/en/manage-claude/data-residency), the Anthropic API offers only "us" and "global" for inference, with no EU option. Through Amazon Bedrock or Google Cloud, the regional endpoint determines the location. [Chapter 4](../external-coding-agents/) compares the vendors' options, and [AI coding tools, works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/) walks through the approval path.
+Production data and personal data do not belong in a coding agent's context. Agents work in scratch orgs and sandboxes with anonymized test data; dealer and customer master data from the full copy sandbox is kept out. For model routes: according to the [data residency documentation](https://platform.claude.com/docs/en/manage-claude/data-residency), the Anthropic API offers only "us" and "global" for inference, with no EU option. Through Amazon Bedrock or Google Cloud, the regional endpoint determines the location. [Chapter 4](../external-coding-agents/) compares the vendors' options, and [AI coding tools, works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/) walks through the approval path.
 
 ### EU AI Act
 
@@ -153,7 +153,7 @@ According to [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibu
 | Most Art. 50 transparency obligations | since 2 August 2026 | White & Case |
 | Art. 50(2) marking for generative systems on the market before 2 August 2026 | 2 December 2026 | [Cuatrecasas](https://www.cuatrecasas.com/en/spain/intellectual-property/art/digital-omnibus-ai-has-been-published) |
 
-In my judgment, coding assistants in a Salesforce project are as a rule not high-risk systems. An Agentforce agent that pre-sorts job applications, on the other hand, could fall under Annex III. Machine builders have a second, separate topic: according to Cuatrecasas, the Machinery Regulation moves to section B of Annex I, and the substantive high-risk requirements are to come through delegated acts by 2 August 2028 at the latest. That concerns AI in your machines, not your CRM, and belongs with product engineering and legal. What the deadlines mean for Agentforce projects is in [EU AI Act deadlines for Agentforce](../../../blog/eu-ai-act-deadlines-agentforce/); agents in service and sales are covered in [chapter 10](../ai-agents-in-manufacturing/).
+In my judgment, coding assistants in a Salesforce project are as a rule not high-risk systems. An Agentforce agent that pre-sorts job applications, on the other hand, could fall under Annex III. Machine builders have a second, separate topic: according to Cuatrecasas, the Machinery Regulation is moved to section B of Annex I, and the substantive high-risk requirements are to follow through delegated acts by 2 August 2028 at the latest. That concerns AI in your machines, not your CRM, and belongs with product engineering and legal. What the deadlines mean for Agentforce projects is in [EU AI Act deadlines for Agentforce](../../../blog/eu-ai-act-deadlines-agentforce/); agents in service and sales are covered in [chapter 10](../ai-agents-in-manufacturing/).
 
 ## Assumed: the first eight weeks at a machine builder
 
@@ -163,15 +163,15 @@ This is how I would set up the first eight weeks:
 
 ```schritte
 Baseline and works council | weeks 1 to 2 · program office
-  Three months of history from Jira and Git: an assumed 35 stories a month, 16 working days cycle time, 10 percent rework. In parallel a draft framework agreement goes to the works council, with no per-person evaluation as the core commitment.
+  Three months of history from Jira and Git: an assumed 35 stories a month, 16 working days cycle time, 10 percent rework. In parallel the works council receives a draft framework agreement, with no per-person evaluation as the core commitment.
 Contract and rules | week 2 · partner and internal architect
   The partner discloses tools and model routes; agents get access only to scratch orgs and developer sandboxes. The rules file lives in the manufacturer's repository, owned by the internal architect.
 One stream as pilot | weeks 3 to 6 · domain lead
-  Spare part ordering in the dealer portal, because the process is clear and little depends on SAP postings. A coordinator from spare parts sales is released half time and accepts work daily. Gates G0 to G6 apply from the first pull request.
+  Spare part ordering in the dealer portal, because the process is clear and hardly depends on SAP postings. A coordinator from spare parts sales is released half time and accepts work daily. Gates G0 to G6 apply from the first pull request.
 Onboarding | weeks 3 to 6 · two partner developers
   Two developers go through the four weeks; the others keep working as before for now. That also gives a comparison group.
 Evaluation | weeks 7 to 8
   Assume cycle time in the pilot stream falls to 12 days, but rework rises to 13 percent because pull requests grew. Consequence: smaller pull requests as a rule, a second reviewer on the client side, then the next stream.
 ```
 
-The warranty stream comes later, because credit notes are posted in SAP and an end-to-end test before each release stays there. This sequencing is part of what I set up in [program management for Salesforce programs](../../../services/program-management-nearshore/); getting business time released and communicating with the team belong to [change management](../../../services/change-management-salesforce/). All chapters are on the [masterclass overview](../).
+The warranty stream follows later, because credit notes are posted in SAP and still need an end-to-end test before each release. This sequencing is part of what I set up in [program management for Salesforce programs](../../../services/program-management-nearshore/); getting business time released and communicating with the team belong to [change management](../../../services/change-management-salesforce/). All chapters are on the [masterclass overview](../).

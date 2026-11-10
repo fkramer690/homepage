@@ -11,7 +11,7 @@ short: "Environments and branches"
 summary: "How sandboxes, scratch orgs and branches fit together so developer orgs stay current and hotfixes do not get lost."
 takeaways:
   - "Scratch orgs live for 30 days at most and start empty. In a mature client org, developer sandboxes with source tracking are often more practical."
-  - "Developer sandboxes fall behind with every merge. sfdx-hardis backpromote, Gearset and the back promotions in Copado and Flosum bring them back."
+  - "Developer sandboxes fall behind with every merge. sfdx-hardis backpromote, Gearset and the back promotions in Copado and Flosum bring them up to date."
   - "A hotfix is finished only when a retrofit has put it into the integration branch too. Otherwise the next release overwrites the fix in production."
   - "A refresh replaces the sandbox with a new copy of production. Source tracking and undelivered changes are lost in the process."
 articles: [devops-salesforce-enterprise, sfdx-hardis-training, sandbox-data-ai-coding-agents]
@@ -50,7 +50,7 @@ How many of each type you have depends on your edition and the licenses you boug
 | Staging (preprod) | Full | release manager, tests against the SAP QA system | all data |
 | Production | production | only the pipeline deploys | real data |
 
-Two rules are not negotiable for me. In integration, UAT, staging and production only the pipeline deploys, never a person through change sets or Setup. And which data may sit in which stage is a decision you make with your data protection officer; the details are in [sandbox customer data: what AI coding agents may read](../../../blog/sandbox-customer-data-ai-coding-agents/). If you have no Partial Copy license, UAT and staging share the Full sandbox, and acceptance and the dress rehearsal have to run one after the other.
+Two rules are not negotiable for me. In integration, UAT, staging and production only the pipeline deploys, never a person through change sets or Setup. And which data may be stored in which stage is a decision you make with your data protection officer; the details are in [sandbox customer data: what AI coding agents may read](../../../blog/sandbox-customer-data-ai-coding-agents/). If you have no Partial Copy license, UAT and staging share the Full sandbox, and acceptance and the dress rehearsal have to take place one after the other.
 
 Who owns which org and who approves deployments to it is set out in [chapter 2 on ownership and roles](../release-process-ownership-roles/). The sandboxes belong to the client, even if a partner uses them every day.
 
@@ -86,9 +86,9 @@ uat --Promotion--> preprod
 preprod --Promotion--> main production
 ```
 
-From there, changes move up between stage branches by pull request. According to sfdx-hardis, such a pull request promotes everything merged into the source branch since its last promotion. Gearset also works with long-lived environment branches in its pipelines. The tools are compared in [chapter 4](../devops-tools-compared/).
+From there, changes are promoted up the stage branches by pull request. According to sfdx-hardis, such a pull request promotes everything merged into the source branch since its last promotion. Gearset also works with long-lived environment branches in its pipelines. The tools are compared in [chapter 4](../devops-tools-compared/).
 
-One honest caveat: DORA recommends [trunk-based development](https://dora.dev/capabilities/trunk-based-development/) for high-performing teams, with three or fewer active branches and merging to trunk at least once a day. A model with four stage branches goes against that. I still consider it right for programs with business acceptance and several partners, because each stage stands for a different approval. You pay the price through long-lived feature branches. So my rule is: feature branches live for days, not weeks, and a story that does not fit into a sprint gets split.
+One honest caveat: DORA recommends [trunk-based development](https://dora.dev/capabilities/trunk-based-development/) for high-performing teams, with three or fewer active branches and merging to trunk at least once a day. A model with four stage branches goes against that. I still consider it right for programs with business acceptance and several partners, because each stage stands for a different approval. The risk lies in long-lived feature branches. So my rule is: feature branches live for days, not weeks, and a story that does not fit into a sprint is split.
 
 Stories not yet accepted in UAT block a promotion from `uat` to `preprod`. sfdx-hardis offers [promotion branches](https://sfdx-hardis.cloudity.com/salesforce-devops-promotion-branches/) in beta for this, but calls them the exception path itself. The normal case is still to promote UAT as one tested version.
 
@@ -100,7 +100,7 @@ The process is called back promotion or backpromote: changes from a higher stage
 
 ```vertiefung Tools
 title: Back promotion in sfdx-hardis, Gearset, Copado and Flosum
-- **sfdx-hardis.** The [backpromote](https://sfdx-hardis.cloudity.com/salesforce-devops-backpromote/) deploys into a developer sandbox or scratch org what has been merged into the parent branch since the last run, including deletions and deployment actions. Before it runs, it shows each item compared with the sandbox; where they differ, you choose between overwriting, keeping and merging. It refuses production and the orgs of major branches, never runs a deployment action twice in the same sandbox, and runs from the VS Code extension or as `sf hardis:work:backpromote`. According to Cloudity the feature is in beta.
+- **sfdx-hardis.** The [backpromote](https://sfdx-hardis.cloudity.com/salesforce-devops-backpromote/) deploys into a developer sandbox or scratch org what has been merged into the parent branch since the last run, including deletions and deployment actions. Before it runs, it shows each item compared with the sandbox; where they differ, you choose between overwriting, keeping and merging. It refuses production and the orgs of major branches, never runs a deployment action twice in the same sandbox, and is started from the VS Code extension or as `sf hardis:work:backpromote`. According to Cloudity the feature is in beta.
 - **Gearset.** [Developer sandbox updates](https://docs.gearset.com/en/articles/9729558-getting-started-with-developer-sandbox-updates-in-pipelines) list each promotion to the base branch as an update you deploy to the sandbox. Before that, Gearset captures uncommitted work in the sandbox and merges it with the updates.
 - **Copado.** [Back promotions](https://docs.essentials.copado.com/en/articles/8098362-back-promotions-with-copado-essentials) show which deployments an environment is missing and deploy them back together, without a refresh.
 - **Flosum.** A [backpromotion pipeline](https://flosum.com/blog/keep-all-your-salesforce-sandboxes-in-sync-using-flosum-pipelines) brings production changes into the sandboxes.
@@ -110,7 +110,7 @@ The commercial tools make this convenient and usable with little Git knowledge; 
 
 ## Sandbox refresh without surprises
 
-A refresh replaces the sandbox with a new copy of production. According to [Salesforce Help on users and contacts in sandboxes](https://help.salesforce.com/s/articleView?id=platform.data_sandbox_users_and_contacts.htm&language=en_US&type=5), user email addresses get `.invalid` appended when a sandbox is created or refreshed. Salesforce does not change other email addresses, such as those on contacts, though; at a manufacturer with thousands of dealer contacts in a Full sandbox, that is a real risk of accidental emails. Source tracking is [deleted](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html) by a refresh. With the Salesforce CLI, a refresh runs with [`sf org refresh sandbox`](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_org_refresh_sandbox.html), which activates the sandbox automatically by default.
+A refresh replaces the sandbox with a new copy of production. According to [Salesforce Help on users and contacts in sandboxes](https://help.salesforce.com/s/articleView?id=platform.data_sandbox_users_and_contacts.htm&language=en_US&type=5), user email addresses have `.invalid` appended when a sandbox is created or refreshed. Salesforce does not change other email addresses, such as those on contacts, though; at a manufacturer with thousands of dealer contacts in a Full sandbox, that is a real risk of accidental emails. Source tracking is [deleted](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html) by a refresh. With the Salesforce CLI, you start a refresh with [`sf org refresh sandbox`](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_org_refresh_sandbox.html), which activates the sandbox automatically by default.
 
 My checklist for every refresh of a stage sandbox:
 
@@ -129,7 +129,7 @@ Reconnect the pipeline
 
 Developer sandboxes are simpler: after the refresh, run a backpromote and the developer is up to date. sfdx-hardis then marks earlier runs as "Before refresh" and treats deployment actions as not yet run.
 
-The timing of a refresh has one more side effect: it decides whether a sandbox sits on a [preview instance](https://trailhead.salesforce.com/content/learn/modules/sf_releases/sf-releases-sandbox-preview) and gets the next Salesforce release about four to six weeks before production. How to plan for that is covered in [chapter 8 on release planning](../release-planning-salesforce-releases/).
+The timing of a refresh has one more side effect: it decides whether a sandbox is on a [preview instance](https://trailhead.salesforce.com/content/learn/modules/sf_releases/sf-releases-sandbox-preview) and receives the next Salesforce release about four to six weeks before production. How to plan for that is covered in [chapter 8 on release planning](../release-planning-salesforce-releases/).
 
 ## The hotfix path
 
@@ -139,9 +139,9 @@ A defect in production cannot wait until UAT is accepted. So every program needs
 The second pull request to `main` promotes everything merged into `preprod` since its last promotion, not only the hotfix. So nothing half-finished may sit in `preprod`.
 ```
 
-The critical step comes afterwards. The stage branches below were cut before the fix and hold the old version of the same metadata. Once they are promoted, the fix disappears from production again. sfdx-hardis calls the way back a [retrofit](https://sfdx-hardis.cloudity.com/salesforce-devops-retrofit/): `main` is merged into a `retrofit/from-main` branch and brought to `integration` by pull request, and right away, because a delayed retrofit turns into a growing conflict. After a hotfix into `main`, Gearset automatically creates [back propagation pull requests](https://docs.gearset.com/en/articles/9773388-org-syncing-with-pipelines) for the lower environments, but does not promote them itself. Someone still has to review and merge them.
+The critical step follows afterwards. The stage branches below were cut before the fix and hold the old version of the same metadata. Once they are promoted, the fix disappears from production again. sfdx-hardis calls the way back a [retrofit](https://sfdx-hardis.cloudity.com/salesforce-devops-retrofit/): `main` is merged into a `retrofit/from-main` branch and brought to `integration` by pull request, and right away, because a delayed retrofit turns into a growing conflict. After a hotfix into `main`, Gearset automatically creates [back propagation pull requests](https://docs.gearset.com/en/articles/9773388-org-syncing-with-pipelines) for the lower environments, but does not promote them itself. Someone still has to review and merge them.
 
-The same logic applies to changes someone made by hand in production. They come back into the repository from the bottom as a normal story. How you notice such changes at all is covered in [chapter 9 on operations and monitoring](../operations-monitoring-backup/).
+The same logic applies to changes someone made by hand in production. They return to the repository as a normal story, starting from the lowest stage. How you notice such changes at all is covered in [chapter 9 on operations and monitoring](../operations-monitoring-backup/).
 
 ## Example: three partners on one service org
 
@@ -153,4 +153,4 @@ A machine builder runs Service Cloud, Field Service and a dealer portal on one o
 - **One Full sandbox** for staging and end-to-end tests against the SAP QA system, refreshed after each of the company's quarterly releases.
 - **One hotfix path** through `preprod`, with the retrofit on the same day.
 
-The rules for this are in the contract with every partner: backpromote before every story, no changes in Setup of a stage org, no feature branch older than two weeks. How the pipeline runs between these stages technically is described in [chapter 5](../building-the-pipeline/). I design such models as part of my work in [DevOps and release management](../../../services/devops-release-management/).
+The rules for this are in the contract with every partner: backpromote before every story, no changes in Setup of a stage org, no feature branch older than two weeks. How the pipeline works technically between these stages is described in [chapter 5](../building-the-pipeline/). I design such models as part of my work in [DevOps and release management](../../../services/devops-release-management/).

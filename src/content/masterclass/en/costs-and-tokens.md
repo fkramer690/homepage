@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-AI in a Salesforce program costs in two currencies. Coding agents such as Claude Code, Codex, Copilot or Agentforce Vibes bill by tokens, and the context the agent re-sends at every step drives the bill harder than the prompt does. Agentforce agents at runtime bill by actions and prompts in Flex Credits, at half a cent per credit. Put both on one line and your estimate will be wrong. The biggest levers are prompt caching in development and, at runtime, Data 360 and test load, which many estimates leave out.
+AI in a Salesforce program is billed in two currencies. Coding agents such as Claude Code, Codex, Copilot or Agentforce Vibes bill by tokens, and the context the agent re-sends at every step drives the bill more than the prompt does. Agentforce agents at runtime bill by actions and prompts in Flex Credits, at half a cent per credit. Put both on one line and your estimate will be wrong. The biggest levers are prompt caching in development and, at runtime, Data 360 and test load, which many estimates leave out.
 
 ## Two currencies: tokens and Flex Credits
 
@@ -40,7 +40,7 @@ The two cost worlds side by side:
 | Biggest lever | Caching, model choice, short sessions | Actions per conversation, document volume, tests |
 | Typical blind spot | Output and thinking tokens | Data 360, Headless Platform Interactions |
 
-Agentforce Vibes sits in between. According to its [billing documentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) it counts tokens in 2,000-token increments, rounded up, but you pay in Flex Credits or through a flat fee per user.
+Agentforce Vibes falls in between. According to its [billing documentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) it counts tokens in 2,000-token increments, rounded up, but you pay in Flex Credits or through a flat fee per user.
 
 For coding tools, 2026 turned request counters into token budgets. GitHub Copilot bills in AI credits at $0.01 each, with each token priced "based on the model used" ([GitHub docs](https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/billing/billing-for-individuals)). Codex has billed in credits per million tokens since 2 April 2026 ([OpenAI](https://help.openai.com/en/articles/20001106-codex-rate-card-2)). The seat price buys a budget, and the API price table becomes the common denominator. Which tool fits which task is in [chapter 6](../ai-tool-decision-matrix/), the vendors themselves in [chapter 4](../external-coding-agents/).
 
@@ -119,7 +119,7 @@ Without caching, 2.8 million input tokens at $4 cost $11.20 alone, **$12.40** wi
 ### Worked example: Agentforce Vibes metered or flat fee
 
 1. A request with 6,500 tokens counts as four units; the example comes from the billing documentation.
-2. On a Standard model such as Sonnet 4.6: 4 × 4 credits = 16 credits = **$0.08**. Opus runs as Advanced: 4 × 16 = 64 credits = **$0.32**.
+2. On a Standard model such as Sonnet 4.6: 4 × 4 credits = 16 credits = **$0.08**. Opus is billed as Advanced: 4 × 16 = 64 credits = **$0.32**.
 3. An agentic request with 30,000 tokens: 15 units × 4 = 60 credits = **$0.30**.
 4. Flat fee break-even: $125 ÷ $0.30 ≈ **417 requests a month**, about 20 per working day. In tokens: 25,000 credits ÷ 4 × 2,000 = **12.5 million tokens** on Standard models.
 
@@ -127,7 +127,7 @@ Daily agentic users are better off on the flat fee, up to its cap; after that, w
 
 ### Batch: an org assessment before the program starts
 
-Assume a ten-year-old org with 2,000 Apex classes to summarise before a restart, at 8,000 input and 1,000 output tokens per class on Sonnet 5.5 through the Batch API: 16 million × $1 + 2 million × $5 = **$26** instead of $52. Thinking may push output higher; even triple would not register in a program budget.
+Assume a ten-year-old org with 2,000 Apex classes to summarize before a restart, at 8,000 input and 1,000 output tokens per class on Sonnet 5.5 through the Batch API: 16 million × $1 + 2 million × $5 = **$26** instead of $52. Thinking may push output higher; even triple would not register in a program budget.
 
 ## Agentforce at runtime: actions and prompts in Flex Credits
 
@@ -143,7 +143,7 @@ Agentforce bills in Flex Credits, listed on the [Agentforce pricing page](https:
 | Data 360 queries, base tier | 3 / 2.4 per million rows | $0.015 |
 | Headless Platform Interaction | TBA | open |
 
-According to the [Salesforce model support page](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5), Claude Sonnet 4.6, Sonnet 5 and GPT-5 run as Standard, Claude Opus and GPT 5.5 as Advanced. The same summary costs four times as much on Opus. According to the pricing page, unused Flex Credits do not roll over into the next subscription term. Flex Credits and the $2 per conversation model are not supported in the same org. Agentforce add-ons cost $125 per user and month, the Agentforce User License $5 plus Flex Credits. For large customers, [Forrester](https://www.forrester.com/blogs/ai-agents-become-economic-actors-salesforce-rewrites-the-rules-of-pricing) describes the AELA, a fixed fee over two or three years, without contract terms in that post. How to estimate per action is in [Flex Credits and Agentforce cost per action](../../../blog/flex-credits-agentforce-cost-per-action/).
+According to the [Salesforce model support page](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5), Claude Sonnet 4.6, Sonnet 5 and GPT-5 count as Standard, Claude Opus and GPT 5.5 as Advanced. The same summary costs four times as much on Opus. According to the pricing page, unused Flex Credits do not roll over into the next subscription term. Flex Credits and the $2 per conversation model are not supported in the same org. Agentforce add-ons cost $125 per user and month, the Agentforce User License $5 plus Flex Credits. For large customers, [Forrester](https://www.forrester.com/blogs/ai-agents-become-economic-actors-salesforce-rewrites-the-rules-of-pricing) describes the AELA, a fixed fee over two or three years, without contract terms in that post. How to estimate per action is in [Flex Credits and Agentforce cost per action](../../../blog/flex-credits-agentforce-cost-per-action/).
 
 ### What the editions include
 
