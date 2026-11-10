@@ -13,12 +13,12 @@ takeaways:
   - "According to Salesforce Help the data models differ significantly. Reports on CPQ objects are rebuilt, not migrated."
   - "CPQ has no end-of-life date, so you choose the cutover. Keep at least one CPQ license while CPQ data is still in use."
   - "Data moves in dependency order: attributes and catalog first, then selling models and prices, then assets with their order history, then billing data."
-  - "Migration tools from Forsys, IdeaHelix and Prodly speed up mapping. Price master, cutover date and the scope of history remain decisions for the client."
+  - "Migration tools from Forsys, IdeaHelix and Prodly speed up mapping. Price master, cutover date and the scope of history remain client decisions."
 faq:
   - q: "How long does a migration from Salesforce CPQ to Revenue Cloud take?"
-    a: "Salesforce names 3 to 6 months from discovery to go-live as typical and says complex implementations can take longer. Salesforce Help sets no fixed timeframe and recommends a pace that fits the business and its complexity."
+    a: "Salesforce gives 3 to 6 months from discovery to go-live as typical and says complex implementations can take longer. Salesforce Help sets no fixed timeframe and recommends a pace that fits the business and its complexity."
   - q: "Can Salesforce CPQ and Revenue Cloud run in the same org?"
-    a: "Yes, if the org has the Revenue Cloud Advanced licenses that the documented coexistence requires. Salesforce Help also allows a new org. In the same-org setup, CPQ keeps quoting in production while Revenue Cloud is built and tested."
+    a: "Yes, if the org has the Revenue Cloud Advanced licenses that the documented coexistence requires. Salesforce Help also allows for a new org. In the same-org setup, CPQ keeps quoting in production while Revenue Cloud is built and tested."
   - q: "Is there a tool that converts CPQ into Revenue Cloud automatically?"
     a: "No tool does it completely. Salesforce names Forsys RevRamp, IdeaHelix and Prodly for mapping and automation, and Salesforce Help states that tools do not replace human design decisions, especially for custom logic and integration remapping."
   - q: "Do CPQ reports and dashboards carry over?"
@@ -48,7 +48,7 @@ The detailed comparison is in [Salesforce CPQ vs Revenue Cloud: the real differe
 
 ## Salesforce puts three readiness phases before the migration
 
-The Help article [Migrate to Revenue Management](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5) sets out the frame. Readiness runs in [three phases](https://help.salesforce.com/s/articleView?id=ind.rev_migration_phases.htm&language=en_US&type=5), and Salesforce asks you to "complete all the tasks of each phase in the mentioned sequence before moving to the next phase". The data migration itself follows afterwards:
+The Help article [Migrate to Revenue Management](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5) sets out the framework. Readiness runs in [three phases](https://help.salesforce.com/s/articleView?id=ind.rev_migration_phases.htm&language=en_US&type=5), and Salesforce asks you to "complete all the tasks of each phase in the mentioned sequence before moving to the next phase". The data migration itself follows afterwards:
 
 ```schritte
 Understand your current state
@@ -61,13 +61,13 @@ Migrate
   Move product data, asset data and billing data, rebuild reporting and run change management as a parallel workstream from the start.
 ```
 
-Help sets no fixed timeframe. The CPQ page names 3 to 6 months as typical and adds that complex implementations can take longer. My reading: 3 months is realistic for a clean org with few price rules, and a grown org with years of custom scripts belongs at the upper end or beyond. A [technical debt assessment](../ai-org-assessment-technical-debt/) before the estimate tells you which one you have.
+Salesforce Help gives no fixed timeframe. The CPQ page gives 3 to 6 months as typical and adds that complex implementations can take longer. My reading: 3 months is realistic for a clean org with few price rules, while an org that has grown over years with custom scripts belongs at the upper end or beyond. A [technical debt assessment](../ai-org-assessment-technical-debt/) before the estimate tells you which one you have.
 
 The license point matters for the budget. Help asks you to [retain at least one active CPQ license](https://help.salesforce.com/s/articleView?id=ind.rev_migration_operational_considerations_cpq_license.htm&language=en_US&type=5) throughout the migration and as long as CPQ data is still referenced; without one you lose access to historical CPQ data and reports. While you build, CPQ usually keeps quoting in production, so plan for overlapping license costs and confirm the commercial terms with Salesforce. That is one more reason not to stretch the migration over years.
 
 ## Data moves in the order of its dependencies
 
-Help names three groups: product data, asset data and billing data. The order inside them follows the dependencies that the Revenue Cloud Developer Guide lists in its [object deployment reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm). Parents before children, metadata before records. The list below is a simplified view of that reference:
+Salesforce Help identifies three groups: product data, asset data and billing data. The order within those groups follows the dependencies that the Revenue Cloud Developer Guide lists in its [object deployment reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm). Parents before children, metadata before records. The list below is a simplified view of that reference:
 
 1. **Catalog structure:** attribute picklists and their values, attribute definitions, product classifications, then the products themselves.
 2. **Selling and pricing:** product selling models and their options, price books, cost books, price book entries, then price adjustments.
@@ -78,18 +78,18 @@ Help names three groups: product data, asset data and billing data. The order in
 ```hinweis tipp
 Two rules from my side. First, **if a renewal is meant to run in Revenue Cloud, migrate the subscription before its renewal date.** A contract that renews in CPQ two weeks after go-live creates exactly the double work you want to avoid.
 
-Second, **leave closed quotes behind**, as Help says is typical, unless audit or reporting needs them. They stay in CPQ as read-only history, which needs a CPQ license, or go to an archive.
+Second, **leave closed quotes behind**, as Help says is typical, unless audit or reporting needs them. They either stay in CPQ as read-only history, which requires a CPQ license, or go to an archive.
 ```
 
 How catalog and prices then move from sandbox to production is a separate topic: [Revenue Cloud deployments](../revenue-cloud-configuration-deployment/).
 
-## What do migration tools do, and what do they not?
+## What do migration tools do, and what don't they do?
 
 On its CPQ page, Salesforce names three partner offerings: Forsys RevRamp for data transformation and schema mapping, IdeaHelix with automation across the migration lifecycle, and Prodly, which analyses the existing CPQ setup. Salesforce also says that about 15% of Revenue Cloud Advanced customers are companies that migrated from CPQ.
 
-These tools save time on products, price book entries and subscriptions. Help is clear about the limit: tools do not replace human design decisions, "especially for custom logic and integration remapping". A price rule that fixes a historical rounding problem, a script that reads a field from SAP, an approval chain with exceptions for one country: someone has to decide whether that logic is still needed and how it looks in a pricing procedure.
+These tools save time on products, price book entries and subscriptions. Salesforce Help is clear about the limit: tools do not replace human design decisions, "especially for custom logic and integration remapping". A price rule that fixes a historical rounding problem, a script that reads a field from SAP, an approval chain with exceptions for one country: someone has to decide whether that logic is still needed and how it should be represented in a pricing procedure.
 
-When you compare partner offers, I would ask each partner for the same three numbers: how many price rules, product rules and scripts they counted in your org, and what they plan for each. A partner who quotes without counting is selling a range. How to set up such a comparison and which commercial model fits is covered in [fixed price vs time and materials](../fixed-price-vs-time-and-materials-ai/) and in the AI masterclass chapter on [AIforce and system integrators](../../masterclass/ai-salesforce/aiforce-and-system-integrators/).
+When you compare partner offers, I would ask each partner for the same three numbers: how many price rules, product rules and scripts they found in your org, and what they plan to do with each. A partner who quotes without counting is selling a range. How to set up such a comparison and which commercial model fits is covered in [fixed price vs time and materials](../fixed-price-vs-time-and-materials-ai/) and in the AI masterclass chapter on [AIforce and system integrators](../../masterclass/ai-salesforce/aiforce-and-system-integrators/).
 
 ## Worked example: a component maker on CPQ since 2018
 
@@ -102,7 +102,7 @@ The plan could look like this:
 - **Months 3 to 5, execute:** catalog and pricing in the pipeline, assets for the first batch of subscriptions, reports rebuilt, sales trained per product line.
 - **Month 6:** last product line moves and CPQ goes read-only. One CPQ license stays as long as quotes and subscriptions in CPQ are still referenced; the rest end at the next renewal date.
 
-Since Billing is not in use, this scenario has no billing cutover. With Salesforce Billing it would add a period-end cutover and the sign-off from finance.
+Since Billing is not in use, this scenario has no billing cutover. With Salesforce Billing, the plan would also include a period-end cutover and sign-off from finance.
 
 Training per product line covers only part of the change management that Help asks for as a parallel workstream. 60 users who have quoted in CPQ for years also need to understand why their tool is changing. Why training alone rarely does it is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
 
@@ -114,6 +114,6 @@ These decisions belong to you, not to the partner or the tool:
 - **Cutover model:** all at once, per product line or per country, and the date CPQ becomes read-only.
 - **History:** what moves, what is archived, what stays readable in CPQ.
 - **Ownership after go-live:** who maintains classifications, constraint rules and pricing procedures. An [object ownership matrix](../salesforce-object-ownership-matrix/) helps when several partners work in the same org.
-- **License end:** when the CPQ contract ends. CPQ has no end-of-life date, so this date is yours, within your contract terms and the need to keep CPQ data readable.
+- **License end:** when the CPQ contract ends. CPQ has no end-of-life date, so this date is yours to choose, subject to your contract terms and the need to keep CPQ data readable.
 
 Whether you should move at all, or stay on CPQ for now, is the question of [keep Salesforce CPQ or move to Revenue Cloud](../keep-salesforce-cpq-or-revenue-cloud/). The whole topic is covered in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/), and steering several partners through such a move is part of my work in [partner governance](../../services/partner-governance/).

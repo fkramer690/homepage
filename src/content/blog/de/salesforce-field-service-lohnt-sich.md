@@ -22,40 +22,40 @@ faq:
   - q: "Was kostet Salesforce Field Service?"
     a: "Laut Salesforce-Preisseite (Stand Oktober 2026) kosten Dispatcher und Technician je 175 € pro Nutzer und Monat in der Enterprise Edition, Field Service Plus 230 €. In der Unlimited Edition nennt die Fußnote 330 und 380 US-Dollar, jeweils mit Jahresvertrag."
   - q: "Brauche ich für Field Service eine Service-Cloud-Lizenz?"
-    a: "Ja, Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und Techniker brauchen mindestens eine Dispatcher-Lizenz, damit die Terminplanung funktioniert. Field Service Plus erfüllt die Service-Cloud-Voraussetzung selbst."
+    a: "Ja, Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und zusätzlich wird mindestens eine Dispatcher-Lizenz benötigt, damit die Terminplanung funktioniert. Field Service Plus erfüllt die Service-Cloud-Voraussetzung selbst."
   - q: "Gibt es Lizenzen für externe Servicepartner?"
     a: "Ja. Für Subunternehmer gibt es Contractor-Plus-Lizenzen für 80 € pro Nutzer und Monat oder 32 € pro Login. Sie lohnen sich für Partner, die nur gelegentlich Einsätze übernehmen."
 draft: false
 ---
 
-Die Planung in Salesforce Field Service lohnt sich vor allem für Hersteller, deren Techniker viele kurze Einsätze am Tag fahren. Dort verbessern Termin- und Routenoptimierung die Kennzahlen: mehr Einsätze pro Tag, weniger Fahrzeit, mehr Termine eingehalten. Bei wenigen langen Einsätzen, etwa Inbetriebnahmen über Tage oder Wochen, bringt die Routenoptimierung wenig. Dann müssen die mobile App mit Offline-Arbeit und Dokumentation oder die Steuerung von Anlagen, Verträgen, Teilen und Partnern den Business Case tragen, und die Lizenzkosten von 175 € pro Techniker und Monat tragen sich schwerer. Bevor ein Angebot unterschrieben wird, sollte deshalb klar sein, welche Art von Außendienst das Unternehmen tatsächlich hat und welchen dieser drei Nutzen es braucht.
+Die Planung in Salesforce Field Service lohnt sich vor allem für Hersteller, deren Techniker viele kurze Einsätze am Tag fahren. Dort verbessern Termin- und Routenoptimierung die Kennzahlen: mehr Einsätze pro Tag, weniger Fahrzeit, mehr eingehaltene Termine. Bei wenigen langen Einsätzen, etwa Inbetriebnahmen über Tage oder Wochen, bringt die Routenoptimierung wenig. Dann müssen die mobile App mit Offline-Arbeit und Dokumentation oder die Steuerung von Anlagen, Verträgen, Teilen und Partnern den Business Case tragen. Die Lizenzkosten von 175 € pro Techniker und Monat lassen sich dann schwerer rechtfertigen. Bevor ein Angebot unterschrieben wird, sollte deshalb klar sein, welche Art von Außendienst das Unternehmen tatsächlich hat und welchen dieser drei Nutzen es braucht.
 
 ## Was macht Salesforce Field Service?
 
-Salesforce Field Service ist das Produkt für den Außendienst auf Basis der Service Cloud. Die Salesforce-Hilfe nennt es inzwischen [Agentforce Field Service and Operations](https://help.salesforce.com/s/articleView?id=fs_overview.htm&language=en_US&type=5), vormals Field Service; in Projekten sagen die meisten weiter Field Service. Es deckt drei Teile ab:
+Salesforce Field Service ist das Produkt für den Außendienst auf Basis der Service Cloud. Die Salesforce-Hilfe nennt es inzwischen [Agentforce Field Service and Operations](https://help.salesforce.com/s/articleView?id=fs_overview.htm&language=en_US&type=5), vormals Field Service; in Projekten nennen die meisten es weiterhin Field Service. Es deckt drei Teile ab:
 
 - **Terminplanung und Optimierung.** Eine Planungsengine wählt für jeden Einsatz einen passenden Techniker und ein Zeitfenster.
 - **Mobile App.** Techniker sehen ihre Einsätze, Anlagen und Historie, auch offline, und erfassen Arbeitszeit, Material, Fotos und Unterschrift.
-- **Dokumentation.** Serviceberichte entstehen direkt aus der App. Was der Standard dabei kann und wo er Grenzen hat, beschreibe ich in [Service Documents: reicht der Document Builder?](../salesforce-service-documents-document-builder-servicebericht/).
+- **Dokumentation.** Serviceberichte werden direkt in der App erzeugt. Was der Standard dabei kann und wo er Grenzen hat, beschreibe ich in [Service Documents: reicht der Document Builder?](../salesforce-service-documents-document-builder-servicebericht/).
 
 Der Kern ist die Planung. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies) arbeitet sie mit zwei Arten von Regeln. Work Rules filtern Techniker aus, die einen Einsatz nicht übernehmen können, etwa weil eine Qualifikation fehlt. Service Objectives bewerten die übrigen Kandidaten, zum Beispiel nach geringster Fahrzeit, frühestem Termin oder bevorzugtem Techniker. Beides zusammen ergibt eine Scheduling Policy.
 
 ## Field Service lohnt sich bei vielen kurzen Einsätzen
 
-Die Optimierung bringt dort am meisten, wo es viel zu optimieren gibt. Nach meiner Erfahrung hängt das an der Art der Arbeit, den Standorten und der Dauer der Einsätze. Den größten Nutzen sehe ich bei:
+Die Optimierung bringt dort am meisten, wo es viel zu optimieren gibt. Nach meiner Erfahrung hängt der Nutzen von der Art der Arbeit, den Standorten und der Dauer der Einsätze ab. Den größten Nutzen sehe ich bei:
 
 - **Vielen kurzen Einsätzen pro Tag**, etwa Wartung, Störungsbehebung oder Prüfungen. Ein typisches Beispiel sind Telekommunikationsunternehmen, deren Techniker bis zu 16 Termine am Tag haben.
 - **Einem hohen Anteil Fahrzeit**, weil Kunden über eine Region verteilt sind.
 - **Vielen Qualifikationen**, die zusammenpassen müssen, damit der richtige Techniker kommt. Ob das richtige Teil im Fahrzeug ist, ist eine eigene Prüfung vor der Freigabe, siehe Teil 4.
 - **Zugesagten Reaktionszeiten** aus Serviceverträgen, die eingehalten und nachgewiesen werden müssen.
 
-Salesforce zeigt in dieselbe Richtung. In einem [Beitrag zur Terminplanung](https://www.salesforce.com/blog/field-service-scheduling/) von 2025 zitiert Salesforce eigene Forschung: Planung sei der größte Effizienzblocker für Techniker, und 47 Prozent ihrer Termine verliefen nicht wie geplant. Stichprobe und Methode nennt der Beitrag nicht, und es ist Herstellerforschung. Ich lese die Zahl deshalb als Hinweis, nicht als Beleg für einen Business Case. Entscheidend ist der Anteil Ihrer eigenen Termine, die umgeplant werden.
+Die Aussagen von Salesforce weisen in dieselbe Richtung. In einem [Beitrag zur Terminplanung](https://www.salesforce.com/blog/field-service-scheduling/) von 2025 zitiert Salesforce eigene Forschung: Planung sei das größte Hindernis für die Effizienz von Technikern, und 47 Prozent ihrer Termine verliefen nicht wie geplant. Stichprobe und Methode nennt der Beitrag nicht, und es ist Herstellerforschung. Ich lese die Zahl deshalb als Hinweis, nicht als Beleg für einen Business Case. Entscheidend ist der Anteil Ihrer eigenen Termine, die umgeplant werden.
 
 ## Bei wenigen langen Einsätzen bringt die Planung wenig
 
 Bei wenigen langen Einsätzen ist der Nutzen der Planung viel kleiner. Ein Techniker, der eine Anlage über zwei Wochen in Betrieb nimmt, braucht keine Routenoptimierung. Er braucht einen Projektplan, Zugang zu Zeichnungen und eine saubere Dokumentation am Ende.
 
-Typisch dafür sind Inbetriebnahmen, Umbauten oder Revisionen, bei denen ein Team tagelang an einem Ort arbeitet. Der Unterschied zu 16 Terminen am Tag ist groß: Dort zählen Zugang zu Unterlagen, Abstimmung mit dem Kunden und eine vollständige Abnahme mehr als die Frage, welcher Techniker am Nachmittag wo ist. Field Service unterstützt solche Arbeit mit mehrtägigen Terminen und Teams (Crews), siehe [mehrtägige Einsätze und Teams](../field-service-mehrtaegige-einsaetze-inbetriebnahme/). Der Business Case muss dann aus Offline-Dokumentation, Anlagenhistorie, Wartungsverträgen, Teilen oder der Steuerung von Partnern kommen, nicht aus Routen.
+Typisch dafür sind Inbetriebnahmen, Umbauten oder Revisionen, bei denen ein Team tagelang an einem Ort arbeitet. Der Unterschied zu 16 Terminen am Tag ist groß: Bei solchen langen Einsätzen zählen Zugang zu Unterlagen, Abstimmung mit dem Kunden und eine vollständige Abnahme mehr als die Frage, welcher Techniker am Nachmittag wo ist. Field Service unterstützt solche Arbeit mit mehrtägigen Terminen und Teams (Crews), siehe [mehrtägige Einsätze und Teams](../field-service-mehrtaegige-einsaetze-inbetriebnahme/). Der Business Case muss sich dann aus Offline-Dokumentation, Anlagenhistorie, Wartungsverträgen, Teilen oder der Steuerung von Partnern ergeben, nicht aus der Routenoptimierung.
 
 Für solche Fälle gibt es Alternativen, die ich vor einer Field-Service-Lizenz prüfe:
 
@@ -80,7 +80,7 @@ In der Unlimited Edition kosten Dispatcher und Technician laut Fußnote 330 US-D
 
 Ein Rechenbeispiel mit Listenpreisen: 40 Techniker und 4 Disponenten in der Enterprise Edition sind 44 Lizenzen zu 175 €, also 7.700 € pro Monat oder 92.400 € pro Jahr. Dazu kommen Umsetzung, Integration mit dem ERP und Wartung.
 
-Zwei Bedingungen aus dem Kleingedruckten zählen für die Lizenzplanung. Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und Techniker brauchen mindestens eine Dispatcher-Lizenz, damit die Planung funktioniert. Die zweite betrifft den Innendienst:
+Für die Lizenzplanung sind vor allem diese Bedingungen aus dem Kleingedruckten wichtig: Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, außerdem wird mindestens eine Dispatcher-Lizenz benötigt, damit die Planung funktioniert. Eine weitere Bedingung betrifft den Innendienst:
 
 ```hinweis achtung
 Dispatcher- und Technician-Lizenzen dürfen nicht für Contact Center oder Fallbearbeitung genutzt werden. Wer im Innendienst Fälle bearbeitet und zugleich Einsätze plant, braucht Field Service Plus.
@@ -94,15 +94,15 @@ Ich beginne mit vier Zahlen aus dem eigenen Außendienst, noch bevor es um das P
 
 1. **Einsätze pro Techniker und Tag.** Liegen sie im Schnitt deutlich über eins, gibt es etwas zu optimieren.
 2. **Anteil der Fahrzeit an der Arbeitszeit.** Je höher, desto mehr bringt Routenoptimierung.
-3. **Qualifikationen und Teile, die zusammenpassen müssen.** Entscheidend ist nicht die Anzahl, sondern wie oft der falsche Techniker oder das falsche Teil ankommt. Je mehr Kombinationen es gibt, desto schwerer ist die Planung von Hand.
-4. **Erstlösungsquote**, also wie oft ein Einsatz beim ersten Besuch erledigt ist. Ist sie niedrig, weil Teile oder Qualifikation fehlen, hilft bessere Planung direkt.
+3. **Qualifikationen und Teile, die zusammenpassen müssen.** Entscheidend ist nicht die Anzahl, sondern wie oft der falsche Techniker kommt oder das falsche Teil vor Ort ist. Je mehr Kombinationen es gibt, desto schwerer ist die Planung von Hand.
+4. **Erstlösungsquote**, also wie oft ein Einsatz beim ersten Besuch erledigt ist. Ist sie niedrig, weil Teile oder Qualifikationen fehlen, hilft bessere Planung direkt.
 
-Diese Zahlen lassen sich meist aus dem ERP oder der bestehenden Einsatzplanung ziehen. Sind sie unbekannt, ist das schon ein Ergebnis: Dann fehlt die Grundlage für jeden Business Case, egal mit welchem Produkt.
+Diese Zahlen lassen sich meist dem ERP oder der bestehenden Einsatzplanung entnehmen. Sind sie unbekannt, ist das schon ein Ergebnis: Dann fehlt die Grundlage für jeden Business Case, egal mit welchem Produkt.
 
-Der Business Case selbst braucht beide Seiten. Auf der Nutzenseite: Kosten eines Fehleinsatzes, Wiederholungsbesuche, Aufwand der Disposition, Überstunden, verfehlte Reaktionszeiten mit ihren Vertragsfolgen und der Aufwand für Serviceberichte. Auf der Kostenseite: Lizenzen, Umsetzung, Integration, Betrieb und bestehende Systeme, die abgelöst werden oder bleiben. Rechnen Sie über die erwartete Nutzungsdauer, nicht nur für das erste Jahr.
+Der Business Case selbst braucht beide Seiten. Auf der Nutzenseite stehen Kosten eines Fehleinsatzes, Wiederholungsbesuche, Aufwand der Disposition, Überstunden, verfehlte Reaktionszeiten mit ihren Vertragsfolgen und der Aufwand für Serviceberichte. Auf der Kostenseite stehen Lizenzen, Umsetzung, Integration, Betrieb und bestehende Systeme, die abgelöst werden oder bleiben. Rechnen Sie über die erwartete Nutzungsdauer, nicht nur für das erste Jahr.
 
-Danach kommt die Frage nach den Daten. Field Service plant mit den Anlagen, Standorten, Qualifikationen und Verfügbarkeiten, die gepflegt sind, und mit keinen anderen. Ein Techniker, dessen Qualifikationen nirgends hinterlegt sind, wird von der Engine falsch eingeplant. Welche Daten das genau sind, beschreibe ich in [Teil 2 dieser Serie](../salesforce-field-service-stammdaten/).
+Danach kommt die Frage nach den Daten. Field Service plant nur mit gepflegten Anlagen, Standorten, Qualifikationen und Verfügbarkeiten. Ein Techniker, dessen Qualifikationen nirgends hinterlegt sind, wird von der Engine falsch eingeplant. Welche Daten das genau sind, beschreibe ich in [Teil 2 dieser Serie](../salesforce-field-service-stammdaten/).
 
 ## Vier Zahlen für einen Monat und eine Region erheben
 
-Erheben Sie die vier Zahlen für einen Monat und eine Region. Zeigen sie viele kurze Einsätze mit viel Fahrzeit, rechnen Sie den Business Case für Field Service mit Lizenzen, Umsetzung und Wartung über mehrere Jahre. Wie die Einführung danach Region für Region abläuft, beschreibe ich in [Salesforce Field Service Einführung: Warum in Wellen?](../salesforce-field-service-einfuehrung/). Zeigen sie wenige lange Einsätze, prüfen Sie zuerst, ob Service Cloud, ein Portal oder das ERP die Lücke schließen. Was die mobile App heute für Techniker kann, steht in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/).
+Erheben Sie die vier Zahlen für einen Monat und eine Region. Zeigen sie viele kurze Einsätze mit viel Fahrzeit, rechnen Sie den Business Case für Field Service mit Lizenzen, Umsetzung und Wartung über mehrere Jahre. Wie die Einführung danach Region für Region abläuft, beschreibe ich in [Salesforce Field Service Einführung: Warum in Wellen?](../salesforce-field-service-einfuehrung/). Zeigen sie wenige lange Einsätze, prüfen Sie zuerst, ob Service Cloud, ein Portal oder das ERP die Lücke schließen. Was die mobile App heute für Techniker leistet, steht in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/).
