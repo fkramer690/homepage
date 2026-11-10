@@ -20,7 +20,7 @@ faq:
   - q: "What is a key user in a Salesforce rollout?"
     a: "A business user who knows the new system before everyone else, takes part in workshops and tests, and is the first point of contact for questions in their team after go-live. They also carry feedback from daily work back into the project."
   - q: "How many key users does a manufacturer need?"
-    a: "One per team, site or country, two for critical areas. If the only key user of a country is out in the week after go-live, support for the whole country is out."
+    a: "One per team, site or country, two for critical areas. If the only key user of a country is absent in the week after go-live, the whole country loses its support."
   - q: "Does a key user replace support?"
     a: "No. They answer questions about usage but do not change configuration or fix interface errors. Bugs still go through the ticket system so they are counted and prioritized."
 draft: false
@@ -70,7 +70,7 @@ Recognition that others can see costs nothing and works. The project work belong
 
 ## Training shortly before go-live, with cases from the team's own work
 
-Training two months before go-live is forgotten by the time the system arrives. Training with invented sample data shows the function but not the team's own case. So I plan training by three rules:
+Training two months before go-live is forgotten by the time the system goes live. Training with invented sample data shows the function but not the team's own case. So I plan training by three rules:
 
 1. **Shortly before go-live.** A few days to two weeks before, so the knowledge lasts until the first real case.
 2. **On real cases.** Inside sales creates a quote for a customer they know, with the products they sell. That needs realistic data in the training environment.
@@ -83,10 +83,10 @@ After that the first week decides. During that time key users should be reachabl
 Service technicians are rarely in the office, often attend training only once and have little patience with software that does not work at the customer's site. If the app fails twice in the first week, the team considers it useless. With technicians, ability is often what is missing, for example when the app has no data in a basement without signal, and that is solved by a technical change, not by training.
 
 ```praxis
-In my Field Service projects with maintenance, breakdown jobs and commissioning, the stumbling blocks were in three places: data quality of the assets, acceptance by the technicians and the interfaces to the ERP. All three are easier to get under control in one region than in the whole field service at once.
+In my Field Service projects with maintenance, breakdown jobs and commissioning, the stumbling blocks were in three places: data quality of the assets, acceptance by the technicians and the interfaces to the ERP. All three are easier to get under control in one region than across the whole field service at once.
 ```
 
-I recommend three to five experienced technicians per region who work along before the rollout. They test forms on real jobs, take the app where there is no signal, train their colleagues and remain contacts afterwards, like key users in inside sales. What matters is that their feedback leads to visible changes. What keeps technicians from the app and how to handle location data openly is in [Field Service app: how technicians adopt it](../../../blog/field-service-app-technician-adoption/), the rollout in waves in the Field Service chapter [AI agents, rollout and KPIs](../../field-service/field-service-ai-agents-rollout/).
+I recommend three to five experienced technicians per region who work with the project before the rollout. They test forms on real jobs, take the app where there is no signal, train their colleagues and remain contacts afterwards, like key users in inside sales. What matters is that their feedback leads to visible changes. What keeps technicians from the app and how to handle location data openly is in [Field Service app: how technicians adopt it](../../../blog/field-service-app-technician-adoption/), the rollout in waves in the Field Service chapter [AI agents, rollout and KPIs](../../field-service/field-service-ai-agents-rollout/).
 
 ## Ask whom each team goes to for advice today
 

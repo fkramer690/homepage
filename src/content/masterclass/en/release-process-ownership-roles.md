@@ -86,7 +86,7 @@ GitLab offers [Code Owners](https://docs.gitlab.com/user/project/codeowners) in 
 
 ### In the DevOps tools
 
-The commercial platforms bring their own approvals. According to its [docs](https://docs.gearset.com/en/articles/9927191-gearset-security-roles), Gearset offers custom roles with permissions on pipelines, CI jobs and orgs from "Deployment Teams and Automation Starter", and suggests as an example a "Production Deployment" role assigned only when needed. Copado Essentials Plus has an [approval process](https://docs.essentials.copado.com/en/articles/6887394-approval-process-with-copado-essentials) in which users with the Owner or Team Lead role approve deployments from an org. With sfdx-hardis, approvals run through the Git platform's pull requests, so through the branch protection above.
+The commercial platforms bring their own approvals. According to its [docs](https://docs.gearset.com/en/articles/9927191-gearset-security-roles), Gearset offers custom roles with permissions on pipelines, CI jobs and orgs from "Deployment Teams and Automation Starter", and suggests as an example a "Production Deployment" role assigned only when needed. Copado Essentials Plus has an [approval process](https://docs.essentials.copado.com/en/articles/6887394-approval-process-with-copado-essentials) in which users with the Owner or Team Lead role approve deployments from an org. With sfdx-hardis, approvals are handled through the Git platform's pull requests, so through the branch protection above.
 
 ### In the Salesforce org
 

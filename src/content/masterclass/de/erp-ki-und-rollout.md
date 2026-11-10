@@ -10,7 +10,7 @@ pubDate: 2026-10-28
 short: "ERP, KI und Rollout"
 summary: "Welche Daten zwischen SAP und Manufacturing Cloud fließen, wann Agentforce sich lohnt und in welcher Reihenfolge Länder live gehen."
 takeaways:
-  - "SAP führt Accounts, Produkte, Aufträge und meist Preise. Die Manufacturing Cloud bekommt täglich Ist-Mengen und schickt Boni und Garantie als Gutschrift zurück."
+  - "SAP führt Accounts, Produkte, Aufträge und meist Preise. Die Manufacturing Cloud erhält täglich Ist-Mengen und schickt Boni und Garantie als Gutschrift zurück."
   - "Ab 1. Dezember 2026 braucht jeder Schnittstellennutzer mit SOAP login() die Berechtigung Use Any API Auth. Summer '27 schaltet es in API 31.0 bis 64.0 ab."
   - "Agentforce lohnt sich zuerst bei lesenden Prozessen mit Volumen und API zum ERP, etwa Händleranfragen zum Auftragsstatus. Eine Aktion kostet 20 Flex Credits."
   - "Ein weltweiter Rollout beginnt mit einem großen Land mit angemessener Komplexität und hält alle Länder zu mindestens 80 Prozent identisch."
@@ -20,7 +20,7 @@ faq:
   - q: "Brauche ich MuleSoft, um SAP an die Manufacturing Cloud anzubinden?"
     a: "Nein. Der MuleSoft Accelerator for Manufacturing liefert Vorlagen für den Abgleich von Accounts, Produkten und Aufträgen aus SAP S/4HANA und für Bonus-Gutschriften. Sales Agreements und Garantie deckt er nicht ab. Jede Middleware, die die Salesforce-APIs bedient, kann dieselbe Arbeit leisten."
   - q: "Sollten Preise in Salesforce oder in SAP berechnet werden?"
-    a: "Bei den meisten Herstellern mit SAP würde ich SAP als Preis-Master behalten. Penny Perfect Pricing aus Winter '27 rechnet Preise für Telesales-Aufträge in Salesforce, aber Lizenz und Import von SAP-Konditionssätzen sind nicht dokumentiert, und zwei Preisfindungen laufen auseinander."
+    a: "Bei den meisten Herstellern mit SAP würde ich SAP als Preis-Master behalten. Penny Perfect Pricing aus Winter '27 rechnet Preise für Telesales-Aufträge in Salesforce, aber Lizenz und Import von SAP-Konditionssätzen sind nicht dokumentiert, und zwei Preisfindungen weichen mit der Zeit voneinander ab."
   - q: "Ist Agentforce in der Manufacturing Cloud enthalten?"
     a: "Die volle Agentforce-for-Industries-Ausstattung nennt die Preisseite nur in den Max-Editionen ab 650 $ pro Nutzer und Monat. Zu Core gibt es das Agentforce for Manufacturing Cloud Add-on ab 150 $ im Monat; die Einheit unterscheidet sich zwischen zwei Salesforce-Seiten, lassen Sie sie schriftlich bestätigen."
   - q: "Mit welchem Land sollte ein weltweiter Rollout der Manufacturing Cloud beginnen?"
@@ -30,11 +30,11 @@ faq:
 draft: false
 ---
 
-Nach dem Funktionsdesign entscheiden drei Fragen über ein Manufacturing-Cloud-Projekt: welches System welche Daten führt, wo Agentforce wirklich Arbeit abnimmt und in welcher Reihenfolge die Länder live gehen. SAP bleibt führend für Accounts, Produkte, Aufträge und meist auch Preise. Die Manufacturing Cloud bekommt Ist-Mengen täglich und schickt freigegebene Boni und Garantiebeträge als Gutschrift zurück. Agentforce lohnt sich zuerst bei lesenden Prozessen mit hohem Volumen und einer API zum ERP. Der Rollout beginnt mit einem großen Land mit angemessener Komplexität, alle Länder arbeiten zu mindestens 80 Prozent gleich. Und keine Schnittstelle sollte sich nach dem 1. Dezember 2026 noch ungeprüft per SOAP login() anmelden.
+Nach dem Funktionsdesign entscheiden drei Fragen über ein Manufacturing-Cloud-Projekt: welches System welche Daten führt, wo Agentforce wirklich Arbeit abnimmt und in welcher Reihenfolge die Länder live gehen. SAP bleibt führend für Accounts, Produkte, Aufträge und meist auch Preise. Die Manufacturing Cloud erhält Ist-Mengen täglich und schickt freigegebene Boni und Garantiebeträge als Gutschrift zurück. Agentforce lohnt sich zuerst bei lesenden Prozessen mit hohem Volumen und einer API zum ERP. Der Rollout beginnt mit einem großen Land mit angemessener Komplexität, alle Länder arbeiten zu mindestens 80 Prozent gleich. Und keine Schnittstelle sollte sich nach dem 1. Dezember 2026 noch ungeprüft per SOAP login() anmelden.
 
 ## Welches System führt welches Objekt?
 
-Bevor jemand eine Schnittstelle baut, braucht jedes Objekt ein führendes System und eine verantwortliche Person. Die Manufacturing Cloud erzeugt die meisten ihrer Zahlen nicht selbst. Ein Sales Agreement aus [Kapitel 2](../rahmenvertraege-und-prognosen/) vergleicht Plan und Ist, und das Ist entsteht in SAP. Bei Boni und Garantie aus [Kapitel 3](../haendler-und-partnerkanal/) und [Kapitel 4](../garantie-und-after-sales/) läuft es andersherum: Salesforce gibt frei, SAP zahlt.
+Bevor jemand eine Schnittstelle baut, braucht jedes Objekt ein führendes System und eine verantwortliche Person. Die Manufacturing Cloud erzeugt die meisten ihrer Zahlen nicht selbst. Ein Sales Agreement aus [Kapitel 2](../rahmenvertraege-und-prognosen/) vergleicht Plan und Ist, und das Ist entsteht in SAP. Bei Boni und Garantie aus [Kapitel 3](../haendler-und-partnerkanal/) und [Kapitel 4](../garantie-und-after-sales/) ist es umgekehrt: Salesforce gibt frei, SAP zahlt.
 
 So würde ich die Verantwortung bei einem typischen Hersteller mit SAP aufteilen:
 
@@ -52,7 +52,7 @@ Für Objekte innerhalb der Org nutze ich die [Object Ownership Matrix](../../../
 
 ## Datenflüsse zwischen SAP und der Manufacturing Cloud
 
-Nach Salesforce fließen Stammdaten und Ist-Mengen, zurück fließt Geld. Den Takt bestimmt die Frage, die die Daten beantworten. Sales Agreements laufen über Monate, für ihre Ist-Mengen reicht ein täglicher Lauf. Ein Händler, der nach seinem Auftrag fragt, will den Stand von heute; diesen Status frage ich live in SAP ab, statt ihn zu kopieren, wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](../../../blog/agentforce-sap-auftragsstatus/). Alle Flüsse mit Richtung und Takt stehen in [Manufacturing Cloud und SAP: welche Daten wohin](../../../blog/manufacturing-cloud-sap-integration-datenfluesse/).
+Nach Salesforce fließen Stammdaten und Ist-Mengen, zurück fließt Geld. Den Takt bestimmt die Frage, die die Daten beantworten. Sales Agreements haben Laufzeiten von Monaten, für ihre Ist-Mengen reicht ein täglicher Lauf. Ein Händler, der nach seinem Auftrag fragt, will den Stand von heute; diesen Status frage ich live in SAP ab, statt ihn zu kopieren, wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](../../../blog/agentforce-sap-auftragsstatus/). Alle Flüsse mit Richtung und Takt stehen in [Manufacturing Cloud und SAP: welche Daten wohin](../../../blog/manufacturing-cloud-sap-integration-datenfluesse/).
 
 ```ablauf
 erp: Stammdaten SAP, Aufträge SAP, Gutschrift SAP
@@ -64,7 +64,7 @@ Händleranfrage --live--> Aufträge SAP
 Aufträge SAP ..Status..> Händleranfrage
 ```
 
-Der [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufacturing/latest/) liefert Vorlagen für zwei dieser Flüsse: den Abgleich von Accounts, Produkten und Aufträgen aus SAP S/4HANA und Gutschriften für freigegebene Bonusauszahlungen. Sales Agreements legt er nicht an, einen Garantiefluss nennt er nicht. Salesforce führt MuleSoft auf der [Seite mit den Add-ons](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) nur mit "Request a quote". Läuft MuleSoft bei Ihnen schon, sparen die Vorlagen Designzeit. Nur dafür zu kaufen, lohnt sich selten.
+Der [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufacturing/latest/) liefert Vorlagen für zwei dieser Flüsse: den Abgleich von Accounts, Produkten und Aufträgen aus SAP S/4HANA und Gutschriften für freigegebene Bonusauszahlungen. Sales Agreements legt er nicht an, einen Garantiefluss nennt er nicht. Salesforce führt MuleSoft auf der [Seite mit den Add-ons](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) nur mit "Request a quote". Läuft MuleSoft bei Ihnen schon, sparen die Vorlagen Designzeit. Es nur dafür zu kaufen, lohnt sich selten.
 
 Für verspätete Aufträge und Korrekturen gibt es die Aktion [Refresh Actuals Calculation](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_refresh_actuals_calculation.htm). Sie ist seit API-Version 47.0 verfügbar und berechnet die Ist-Mengen eines Sales Agreements für den aktuellen, vergangene oder künftige Zeiträume neu. Bucht SAP eine Retoure für den Vormonat, ruft die Middleware sie für die betroffenen Agreements auf. Sonst rufen Account Manager Kunden wegen eines Rückstands an, den es nicht mehr gibt.
 
@@ -77,18 +77,18 @@ Viele ERP-Schnittstellen melden sich noch mit technischem Nutzer und Passwort an
 ```zeitleiste
 2026-12-01 | Wer sich per SOAP API login() anmeldet, braucht die Berechtigung Use Any API Auth, sonst gibt es einen Fehler
 Summer '27 | SOAP login() entfällt in den API-Versionen 31.0 bis 64.0
-Summer '27 | SOAP-, REST- und Bulk-API 31.0 bis 40.0 bekommen keine Korrekturen mehr
+Summer '27 | SOAP-, REST- und Bulk-API 31.0 bis 40.0 erhalten keine Korrekturen mehr
 Summer '28 | Aufrufe an SOAP-, REST- und Bulk-API 31.0 bis 40.0 schlagen fehl
 ```
 
-Ein Ist-Mengen-Lauf, der still ausfällt, ist das Risiko dabei: Der Vertrieb sieht einen alten Rückstand und glaubt ihm. Wie Sie betroffene Schnittstellen finden, steht in [Salesforce-Passwort-Integrationen enden 2027](../../../blog/salesforce-passwort-integrationen-2027/).
+Das Risiko dabei ist ein Ist-Mengen-Lauf, der unbemerkt ausfällt: Der Vertrieb sieht einen alten Rückstand und glaubt ihm. Wie Sie betroffene Schnittstellen finden, steht in [Salesforce-Passwort-Integrationen enden 2027](../../../blog/salesforce-passwort-integrationen-2027/).
 
 ## Wer führt die Preise: SAP oder Penny Perfect Pricing?
 
 Mit Winter '27, [allgemein verfügbar seit 12. Oktober 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), bietet Salesforce eine eigene Preisfindung für Aufträge an. Penny Perfect Pricing berechnet laut [Developer Guide](https://developer.salesforce.com/docs/industries/penny-perfect-pricing/guide/overview.html) Preise für Positionen von Advanced Orders, also für den Telesales-Bestellablauf, und beschreibt 19 Objekte ab API-Version 68.0. Kalkulationsschema, Suchstrategien und Konditionssätze mit Staffeln erinnern stark an die SAP-Konditionstechnik.
 
 ```hinweis tipp
-Ich würde bei den meisten Herstellern trotzdem SAP als Preis-Master behalten. Zwei Preisfindungen laufen auseinander, sobald die Preisabteilung in SAP eine Kondition ändert und die Kopie erst nachts ankommt. Dazu kommen zwei offene Punkte: Die Entwicklerdokumentation nennt keine Lizenz und keinen Standardweg, SAP-Konditionssätze zu laden. Beides sollten Sie schriftlich klären, bevor ein Projektplan davon abhängt. Die Abwägung mit einem Szenario für Ersatzteil-Telesales steht in [Penny Perfect Pricing: ERP-Preise in Salesforce?](../../../blog/penny-perfect-pricing-erp-preise/).
+Ich würde bei den meisten Herstellern trotzdem SAP als Preis-Master behalten. Zwei Preisfindungen weichen voneinander ab, sobald die Preisabteilung in SAP eine Kondition ändert und die Kopie erst nachts ankommt. Hinzu kommen zwei offene Punkte: Die Entwicklerdokumentation nennt keine Lizenz und keinen Standardweg, SAP-Konditionssätze zu laden. Beides sollten Sie schriftlich klären, bevor ein Projektplan davon abhängt. Die Abwägung mit einem Szenario für Ersatzteil-Telesales steht in [Penny Perfect Pricing: ERP-Preise in Salesforce?](../../../blog/penny-perfect-pricing-erp-preise/).
 ```
 
 Die Grenzen bleiben wie in den anderen Kapiteln: Angebote mit Konfigurator gehören zu Revenue Cloud, siehe [Katalog, Konfigurator, Preise](../../revenue-cloud/produktkatalog-konfigurator-preise/), und Shoppreise zu B2B Commerce, siehe [Preise, Warenkorb, Checkout](../../b2b-commerce/preise-warenkorb-checkout/).
@@ -106,7 +106,7 @@ Für die Kosten zählen zwei Zahlen. Eine Standard- oder Custom-Aktion kostet la
 quelle: Salesforce Flex Credits Rate Card, Agentforce-Preisseite und Preisseite der Manufacturing Cloud
 ```
 
-Die sichtbarste Industriereferenz zeigt, wo man anfängt. In der [Meldung von Siemens und Salesforce](https://www.salesforce.com/news/press-releases/2026/09/15/siemens-agentforce-redefine-industrial-sales-service/) vom 15. September 2026 sind zwei Agenten für eingehende Leads live, für 18.000 Vertriebsmitarbeitende in 132 Ländern. Teamcenter-Antworten für den Service und das Lieferanten-Onboarding in SAP stehen im Futur. In [Siemens und Agentforce: Lehren für den Mittelstand](../../../blog/siemens-agentforce-lehren-mittelstand/) leite ich daraus eine Reihenfolge ab: erst nur lesen bei hohem Volumen, dann aus dem ERP lesen, dann Antworten aus PLM und Seriennummern, schreibende Schritte ins ERP zuletzt. Welche Agenten es für Vertrieb, Service und Garantie heute gibt, zeigt das Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/).
+Die sichtbarste Industriereferenz zeigt, wo man anfängt. In der [Meldung von Siemens und Salesforce](https://www.salesforce.com/news/press-releases/2026/09/15/siemens-agentforce-redefine-industrial-sales-service/) vom 15. September 2026 sind zwei Agenten für eingehende Leads live, für 18.000 Vertriebsmitarbeitende in 132 Ländern. Teamcenter-Antworten für den Service und das Lieferanten-Onboarding in SAP sind erst angekündigt. In [Siemens und Agentforce: Lehren für den Mittelstand](../../../blog/siemens-agentforce-lehren-mittelstand/) leite ich daraus eine Reihenfolge ab: erst nur lesen bei hohem Volumen, dann aus dem ERP lesen, dann Antworten aus PLM und Seriennummern, schreibende Schritte ins ERP zuletzt. Welche Agenten es für Vertrieb, Service und Garantie heute gibt, zeigt das Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/).
 
 ## Ein Agent für Händler in vielen Sprachen
 
@@ -116,7 +116,7 @@ Teurer ist das Wissen. Laut demselben Leitfaden filtert der Retriever Wissensart
 
 ## In welcher Reihenfolge rollt man Manufacturing Cloud weltweit aus?
 
-Zuerst steht das Ziel fest, meistens die Harmonisierung von Prozessen. Daraus folgt ein globales Template mit den Entscheidungen, die sich nach dem ersten Land kaum noch ändern lassen: die Account-Ebene der Sales Agreements, die Regel, wann eine Konfiguration ein eigenes Produkt wird, und was Kunden und Händler im Portal sehen. In [Manufacturing Cloud weltweit ausrollen](../../../blog/manufacturing-cloud-weltweit-ausrollen/) beschreibe ich die Regeln, die ich daraus ableite:
+Zuerst muss das Ziel feststehen, meistens die Harmonisierung von Prozessen. Daraus folgt ein globales Template mit den Entscheidungen, die sich nach dem ersten Land kaum noch ändern lassen: die Account-Ebene der Sales Agreements, die Regel, wann eine Konfiguration ein eigenes Produkt wird, und was Kunden und Händler im Portal sehen. In [Manufacturing Cloud weltweit ausrollen](../../../blog/manufacturing-cloud-weltweit-ausrollen/) beschreibe ich die Regeln, die ich daraus ableite:
 
 | Regel | Was sie bedeutet |
 |---|---|
@@ -130,7 +130,7 @@ Die ERP-Spalte hat das meiste Gewicht. Ein Land mit eigenem SAP-System oder eige
 
 ## Nach jedem Salesforce-Release neu testen
 
-Salesforce bringt drei Releases im Jahr, und Preview-Sandboxes bekommen jedes davon vor der Produktion. Wie Sie das mit dem eigenen Release-Kalender abstimmen, beschreibt das Kapitel [Release-Planung](../../devops-release-management/release-planung-salesforce-releases/) der DevOps-Masterclass. In einer Manufacturing-Cloud-Org gehören vor allem die Teile in den Regressionstest, die Zahlen erzeugen:
+Salesforce veröffentlicht drei Releases im Jahr, und Preview-Sandboxes erhalten jedes davon vor der Produktion. Wie Sie das mit dem eigenen Release-Kalender abstimmen, beschreibt das Kapitel [Release-Planung](../../devops-release-management/release-planung-salesforce-releases/) der DevOps-Masterclass. In einer Manufacturing-Cloud-Org gehören vor allem die Teile in den Regressionstest, die Zahlen erzeugen:
 
 | Was | Warum es nach jedem Release getestet wird |
 |---|---|
@@ -139,8 +139,8 @@ Salesforce bringt drei Releases im Jahr, und Preview-Sandboxes bekommen jedes da
 | Expression Sets der Business Rules Engine | Der Metadatentyp heißt [ExpressionSetDefinition](https://developer.salesforce.com/docs/atlas.en-us.264.0.api_meta.meta/api_meta/meta_expressionsetdefinition.htm); in vielen Orgs stecken darin Garantie- und Bonusregeln. |
 | ERP-Schnittstellen | Jede neue API-Version ist ein Anlass, die API-Versionen Ihrer Schnittstellen gegen die Fristen oben zu prüfen. |
 
-Mein Test pro Release ist bewusst klein: eine Neugenerierung der Prognose, eine Neuberechnung der Ist-Mengen für drei Sales Agreements, ein Garantieanspruch durch das Expression Set und ein Bonuslauf für einen Zeitraum, jeweils in der Preview-Sandbox und verglichen mit Produktion. Weicht eine Zahl ab, wissen Sie es vor Ihren Account Managern. Damit diese Definitionen zwischen Orgs wandern wie jede andere Konfiguration, gehören sie ins Repository, wie im Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/) beschrieben.
+Mein Test pro Release ist bewusst klein: eine Neugenerierung der Prognose, eine Neuberechnung der Ist-Mengen für drei Sales Agreements, ein Garantieanspruch durch das Expression Set und ein Bonuslauf für einen Zeitraum, jeweils in der Preview-Sandbox und verglichen mit Produktion. Weicht eine Zahl ab, wissen Sie es vor Ihren Account Managern. Damit diese Definitionen wie jede andere Konfiguration zwischen Orgs übertragen werden, gehören sie ins Repository, wie im Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/) beschrieben.
 
 ## Erster Schritt: die Objektliste mit dem SAP-Team abstimmen
 
-Stimmen Sie mit dem SAP-Team ab, welches System welches Objekt führt, bevor die erste Schnittstelle gebaut wird, und legen Sie das Template im ersten großen Land fest, bevor das zweite Land plant. Dieses Kapitel schließt die Masterclass ab. Es setzt die Entscheidungen aus Business Case, Rahmenverträgen, Händlerkanal und Garantie voraus und klärt, was sie im Betrieb und in vielen Ländern brauchen. Davor kam [Kapitel 4 zu Garantie und After-Sales](../garantie-und-after-sales/), alle fünf Kapitel finden Sie auf der [Übersichtsseite](../).
+Stimmen Sie mit dem SAP-Team ab, welches System welches Objekt führt, bevor die erste Schnittstelle gebaut wird, und legen Sie das Template im ersten großen Land fest, bevor die Planung für das zweite Land beginnt. Dieses Kapitel schließt die Masterclass ab. Es setzt die Entscheidungen aus Business Case, Rahmenverträgen, Händlerkanal und Garantie voraus und klärt, was sie im Betrieb und in vielen Ländern brauchen. Das vorherige Kapitel ist [Kapitel 4 zu Garantie und After-Sales](../garantie-und-after-sales/), alle fünf Kapitel finden Sie auf der [Übersichtsseite](../).
