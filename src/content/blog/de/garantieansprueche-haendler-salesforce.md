@@ -13,7 +13,7 @@ series: { id: manufacturing-cloud, part: 6 }
 takeaways:
   - "Eine Garantie besteht aus vier Datensätzen: Bedingung, Anpassung pro Teil, Verknüpfung mit dem Produkt und Garantie der einzelnen Anlage."
   - "Händler reichen Garantieansprüche über ein Portal ein, mit Teilen, Arbeitszeit und Kosten."
-  - "Ein Prüfer passt Beträge an und gibt sie frei. Ein Agent kann die Prüfung vorbereiten, aber ohne Seriennummer, Startdatum und Nutzung auch nicht sauber prüfen."
+  - "Ein Prüfer passt Beträge an und gibt sie frei. Ein Agent kann die Prüfung vorbereiten, ohne Seriennummer, Startdatum und Nutzung aber nicht verlässlich prüfen."
   - "Aus einem Garantieanspruch erzeugt Salesforce pro verursachendem Teil einen Regressanspruch an den Lieferanten."
   - "Die Garantie entscheidet über die Deckung. Reparatur, Wartungsverträge und Reaktionszeiten gehören zu Field Service."
 faq:
@@ -86,7 +86,7 @@ Laut der Übersicht der Portallizenzen, die ich in [Teil 7](../manufacturing-clo
 
 Der Regress beim Lieferanten. Geht ein Garantiefall auf ein zugekauftes Teil zurück, holt sich der Hersteller die Kosten vom Lieferanten zurück. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.mfg_warranties_suppliers_create_claims.htm&language=en_US&type=5) erzeugt Salesforce über eine Aktion am Garantieanspruch pro verursachendem Teil einen Regressanspruch als Entwurf. Er wird geprüft und an den Lieferanten eingereicht.
 
-Damit das funktioniert, muss das verursachende Teil im Anspruch sauber erfasst sein, mit Fehlercode und Zuordnung zum Lieferanten. Das ist der Teil des Prozesses, der Händler am wenigsten interessiert, weil er ihnen nichts bringt. Ein Pflichtfeld im Portal und eine Prüfung durch den Sachbearbeiter sind deshalb mehr wert als eine spätere Auswertung.
+Damit das funktioniert, muss das verursachende Teil im Anspruch sauber erfasst sein, mit Fehlercode und Zuordnung zum Lieferanten. Das ist der Teil des Prozesses, der Händler am wenigsten interessiert, weil er ihnen keinen Nutzen bringt. Ein Pflichtfeld im Portal und eine Prüfung durch den Sachbearbeiter sind deshalb mehr wert als eine spätere Auswertung.
 
 ## Wo endet die Garantie, wo beginnt Field Service?
 

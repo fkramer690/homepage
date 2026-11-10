@@ -21,7 +21,7 @@ faq:
   - q: "Does the Einstein Trust Layer mask data that Claude reads through MCP?"
     a: "Salesforce does not say so. The Trust Layer is documented for LLM calls Salesforce makes itself, such as the Models API, prompt templates or Agentforce. When an external client reads records through the sObject servers, its own model processes the results, so I assume masking and Salesforce's zero data retention agreements do not apply and your AI contract governs the data. A custom MCP tool that calls a prompt template inside Salesforce is a different case."
   - q: "Can we run a nightly AI agent through hosted MCP?"
-    a: "Not as a proper integration. Hosted MCP supports only the OAuth authorization code flow with a logged-in user and has no service accounts or machine-to-machine flows; a refresh token keeps a client running, but under a person's name. Background agents need the Agent API or a classic integration with its own integration user. Salesforce has announced agent registration with separate agent identities, which may change this."
+    a: "Not as a proper integration. Hosted MCP supports only the OAuth authorization code flow with a logged-in user and has no service accounts or machine-to-machine flows; a refresh token keeps a client connected, but under a person's name. Background agents need the Agent API or a classic integration with its own integration user. Salesforce has announced agent registration with separate agent identities, which may change this."
   - q: "Which hosted MCP server should we enable first?"
     a: "Salesforce recommends sobject-reads in a sandbox. I agree, and before production I would give each user group a custom server with Named Queries or flows, so the external model only receives the fields that group needs. That only narrows access if the group cannot also use sobject-reads."
   - q: "How do we see what an AI client did in Salesforce?"
@@ -65,7 +65,7 @@ Custom servers require development effort, but they also reduce the number of ca
 
 ## Start with sobject-reads in a sandbox
 
-The GA post recommends `sobject-reads` in a sandbox and calls it "read-only, risk-free, and immediately useful". I agree with the starting point, not with "risk-free". The security guide is more precise: the read-only server removes modification risk. It does nothing about data leaving through the client.
+The GA post recommends `sobject-reads` in a sandbox and calls it "read-only, risk-free, and immediately useful". I agree with the starting point, not with "risk-free". The security guide is more precise: the read-only server removes modification risk. It does not prevent data from leaving through the client.
 
 Simon Willison calls the dangerous combination the [lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/): access to private data, exposure to untrusted content and a way to communicate externally, and he notes that MCP encourages mixing tools from different sources. A Claude session with `sobject-reads`, web access and an email server has all three. At a manufacturer, untrusted text reaches the CRM through dealer portals, web-to-lead, email-to-case and warranty forms, see [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/).
 
@@ -77,7 +77,7 @@ Salesforce has not documented this case; what follows is my reading, not a Sales
 
 The [Trust Layer documentation](https://developer.salesforce.com/docs/ai/agentforce/guide/trust.html) lists protections "when interfacing with LLMs": grounding, masking of sensitive data, toxicity detection, audit trail and zero data retention agreements with third-party LLM partners. Trailhead describes [the path](https://trailhead.salesforce.com/content/learn/modules/the-einstein-trust-layer/follow-the-response-journey): personal data is masked before the prompt leaves Salesforce, passes the Secure LLM Gateway, and "no customer data including the prompt text and generated responses are stored outside of Salesforce". All [Models API](https://developer.salesforce.com/docs/ai/agentforce/guide/models-api.html) calls go through the Trust Layer, and when Agentforce is the MCP client, [Trailhead promises](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce) the Trust Layer and zero data retention as well.
 
-Hosted MCP reverses the direction. Claude, ChatGPT or Cursor is the client and brings its own model. Salesforce checks the token and permissions, runs the query and returns records, which the client then puts into a prompt for its model. Salesforce makes no LLM call on this path, so there is no gateway step where masking could be applied, and its zero data retention agreements apply to Salesforce's LLM partners when Salesforce makes the calls, not to a model you license yourself. The documents fit this reading: the hosted MCP overview, the security guide, the GA post and the Claude setup post cover authentication, permissions and logging, and none mentions the Trust Layer.
+Hosted MCP reverses the direction. Claude, ChatGPT or Cursor is the client and brings its own model. Salesforce checks the token and permissions, runs the query and returns records, which the client then inserts into a prompt for its model. Salesforce makes no LLM call on this path, so there is no gateway step where masking could be applied, and its zero data retention agreements apply to Salesforce's LLM partners when Salesforce makes the calls, not to a model you license yourself. The documents fit this reading: the hosted MCP overview, the security guide, the GA post and the Claude setup post cover authentication, permissions and logging, and none mentions the Trust Layer.
 
 ```ablauf
 ext: AI client, External model
@@ -102,15 +102,15 @@ Assume a machine builder with Sales Cloud, Service Cloud, SAP, a dealer network 
 
 **Dealer managers.** Twelve users want Claude to prepare dealer visits. Their profile can read purchase prices in the dealer price agreements. Decision: use a custom server "dealer visit" whose Flow returns the overview without price fields, restricted to a permission set for these twelve.
 
-**Service back office.** Thirty users want to look up cases, installed base and warranty status by serial number. Decision: use a custom server with a Named Query by serial number, and do not enable `sobject-reads` for them in production. Some case descriptions come from the dealer portal, so web access in their Claude workspace stays off.
+**Service back office.** Thirty users want to look up cases, installed base and warranty status by serial number. Decision: use a custom server with a Named Query by serial number, and do not enable `sobject-reads` for them in production. Some case descriptions come from the dealer portal, so web access in their Claude workspace remains disabled.
 
-**The implementation partner.** A developer asks for `sobject-all` in production to merge duplicate assets with Claude. Decision: no. The calls would run as his production user, and a bulk change belongs in a reviewed data load. He gets `sobject-reads` in a sandbox to analyse the duplicates.
+**The implementation partner.** A developer asks for `sobject-all` in production to merge duplicate assets with Claude. Decision: no. The calls would run as that developer's production user, and a bulk change belongs in a reviewed data load. The developer receives `sobject-reads` in a sandbox to analyse the duplicates.
 
 Two of the three requests go ahead, both in a narrower form than requested. In my judgment that is the normal outcome of an access review.
 
 ## Decide who may connect before the first connection
 
-1. **Decide who may connect.** Restrict each External Client App to a permission set with the OAuth policy "Admin approved users are pre-authorized". That limits who connects, not what they can read. Keep administrators out: an admin who authorizes Claude hands it almost the whole org.
+1. **Decide who may connect.** Restrict each External Client App to a permission set with the OAuth policy "Admin approved users are pre-authorized". That limits who connects, not what they can read. Keep administrators out: an admin who authorizes Claude gives it access to almost the whole org.
 2. **Review sharing and field-level security** for cases, assets, warranty claims, price agreements and contacts.
 3. **Enable only `sobject-reads`**, first in a sandbox.
 4. **Narrow with Named Queries or custom servers** wherever the person sees more than the model should.

@@ -47,7 +47,7 @@ A note on the table: the Spring '24 Developer Guide is the oldest version I foun
 
 ## Revenue Cloud Advanced vs Revenue Cloud vs CPQ at a glance
 
-Revenue Cloud Advanced is the larger edition of today's Revenue Cloud, next to Revenue Cloud Growth, so the two names describe one product. The real comparison is with Salesforce CPQ, the older managed package that Salesforce names Revenue Cloud Advanced as the successor to.
+Revenue Cloud Advanced is the larger edition of today's Revenue Cloud, next to Revenue Cloud Growth, so the two names describe one product. The real comparison is with Salesforce CPQ, the older managed package whose successor, according to Salesforce, is Revenue Cloud Advanced.
 
 | | Salesforce CPQ | Revenue Cloud Growth | Revenue Cloud Advanced |
 |---|---|---|---|
@@ -111,4 +111,4 @@ Each source has its own name, so you miss half of the material if you search for
 - **Partner blogs and forums:** add "RLM" and "RCA", the abbreviations used most there.
 - **Watch out for other vendors:** Certinia, a vendor built on the Salesforce platform, runs its own product area called Revenue Management with its own [release notes](https://help.certinia.com/main/2026.1/Content/RevenueManagement/Release/WhatsNew/WhatsNew.htm). Results from help.certinia.com describe a different product.
 
-What the product covers, under whatever name, is covered in [Revenue Cloud for manufacturers: when is it worth it?](../revenue-cloud-worth-it-manufacturers/), and what it costs is covered in [Revenue Cloud pricing: Growth, Advanced and add-ons](../revenue-cloud-editions-pricing/). The [overview chapter of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/) brings these topics together.
+What the product covers, under whatever name, is explained in [Revenue Cloud for manufacturers: when is it worth it?](../revenue-cloud-worth-it-manufacturers/), and what it costs in [Revenue Cloud pricing: Growth, Advanced and add-ons](../revenue-cloud-editions-pricing/). The [overview chapter of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/) brings these topics together.

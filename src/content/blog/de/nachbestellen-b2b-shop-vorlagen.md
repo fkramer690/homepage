@@ -11,14 +11,14 @@ topic: commerce
 categories: [b2b-commerce]
 tags: [B2B Commerce, Nachbestellung, Bestellvorlagen, Warenkorb, Ersatzteile, Händler]
 takeaways:
-  - "Nachbestellen geht auf vier Wegen: alte Bestellung, Bestellvorlage, CSV-Datei und Reorder Portal. Geteilte Warenkörbe helfen bei der Freigabe im Team."
+  - "Nachbestellen ist auf vier Wegen möglich: alte Bestellung, Bestellvorlage, CSV-Datei und Reorder Portal. Geteilte Warenkörbe helfen bei der Freigabe im Team."
   - "Die Add Order to Cart API kopiert alle Positionen einer früheren Order Summary in den aktuellen Warenkorb und legt einen an, wenn keiner aktiv ist."
   - "Bestellvorlagen sind seit September 2026 allgemein verfügbar. Warenkorb-Import und -Export erschienen im Juli 2026; die Hilfe dokumentiert CSV."
   - "Ein Warenkorb fasst meist 500 Positionen, mit Large-Cart-Unterstützung 2.000. Käufer können bis zu 15 Warenkörbe in 48 Stunden per CSV importieren."
   - "Warenkörbe lassen sich schon heute im Händlerkonto teilen, mit Rechten zum Ansehen, Bearbeiten und Checkout. Echtzeit ist für Januar 2027 angekündigt."
 faq:
   - q: "Wie bestellt ein Händler in Salesforce B2B Commerce eine frühere Bestellung nach?"
-    a: "Die Add Order to Cart API legt alle Positionen einer früheren Order Summary in den aktuellen Warenkorb und erzeugt einen neuen Warenkorb, wenn keiner aktiv ist. Danach ändert der Käufer Mengen und geht wie gewohnt zum Checkout."
+    a: "Die Add Order to Cart API legt alle Positionen einer früheren Order Summary in den aktuellen Warenkorb und erzeugt einen neuen Warenkorb, wenn keiner aktiv ist. Danach ändert der Käufer Mengen und schließt wie gewohnt den Checkout ab."
   - q: "Was sind Bestellvorlagen in B2B Commerce?"
     a: "Mit Bestellvorlagen (Order Templates) können Käufer und Vertriebsmitarbeiter häufige Bestellungen erstellen, speichern und später wiederverwenden. Sie sind seit September 2026 allgemein verfügbar; ältere Shops brauchen dafür eventuell neue Komponenten auf den Seiten."
   - q: "Wie viele Positionen passen in einen B2B-Commerce-Warenkorb?"
@@ -34,7 +34,7 @@ Händler bestellen in Salesforce B2B Commerce am schnellsten nach, wenn der Shop
 
 ## Warum entscheidet das Nachbestellen, ob Händler den Shop nutzen?
 
-Viele Ersatzteile und Verbrauchsmaterialien, die ein Händler kauft, hat er schon einmal gekauft. Er kennt die Teilenummer, oft die Menge, und will die Bestellung in einer Minute erledigt haben. Muss er jedes Teil im Shop neu suchen, geht er zurück zu E-Mail und Telefon, und der Innendienst tippt die Bestellung wie bisher ins ERP.
+Viele Ersatzteile und Verbrauchsmaterialien, die ein Händler kauft, hat er schon einmal gekauft. Er kennt die Teilenummer, oft die Menge, und will die Bestellung in einer Minute erledigt haben. Muss er jedes Teil im Shop neu suchen, kehrt er zu E-Mail und Telefon zurück, und der Innendienst tippt die Bestellung wie bisher ins ERP.
 
 Deshalb schaue ich mir in einem B2B-Shop eines Herstellers die Wege zum Nachbestellen an, bevor ich die Produktdetailseite betrachte. Suche und Katalog sind für neue Teile wichtig, ein großer Teil des Volumens entfällt aber auf Nachbestellungen. Salesforce vermarktet das Produkt inzwischen auch als "Agentforce Commerce for B2B"; alle Funktionen unten gehören zum selben Produkt.
 
@@ -74,7 +74,7 @@ Die [Warenkorblimits](https://developer.salesforce.com/docs/commerce/salesforce-
 quelle: Salesforce Developer Documentation, Cart Limits, Stand Oktober 2026
 ```
 
-500 Positionen wirken viel, bis ein Händler die Jahresbestellung für eine neue Filiale importiert. Bevor jemand "Laden Sie Ihre ganze Liste hoch" verspricht, würde ich aus dem ERP holen, wie lang die längsten Bestellungen wirklich sind, und mit dieser Zahl über Large Carts entscheiden. Lange Warenkörbe führen im Checkout auch zu umfangreichen Preis- und Bestandsabfragen an das ERP, und diese Abfragen haben eigene Grenzen bei der Antwortzeit.
+500 Positionen wirken viel, bis ein Händler die Jahresbestellung für eine neue Filiale importiert. Bevor jemand "Laden Sie Ihre ganze Liste hoch" verspricht, würde ich im ERP prüfen, wie lang die längsten Bestellungen wirklich sind, und mit dieser Zahl über Large Carts entscheiden. Lange Warenkörbe führen im Checkout auch zu umfangreichen Preis- und Bestandsabfragen an das ERP, und diese Abfragen haben eigene Grenzen bei der Antwortzeit.
 
 ## Wie geben Händlerteams einen Warenkorb gemeinsam frei?
 
@@ -96,4 +96,4 @@ Für diese Mischung würde ich alle drei Wege einschalten: frühere Bestellungen
 
 ## Bestellpositionen der letzten zwölf Monate sortieren
 
-Holen Sie die Bestellpositionen der letzten zwölf Monate aus dem ERP und sortieren Sie sie in Wiederholungen, feste Körbe und lange Listen. Daran sehen Sie, welcher Weg am meisten zählt und ob 500 Positionen reichen. Wie die Bestellung danach mit Bestellnummer und Kreditprüfung den Shop verlässt, steht in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../b2b-checkout-bestellnummer-rechnung/). Nachbestellen im Chat über WhatsApp ist Thema von [B2B Buyer Agent](../b2b-buyer-agent-whatsapp-bestellen/), Nachschubvorschläge aus Händlerbeständen beschreibe ich in [Agentforce für Händlerbestand und Nachschub](../haendlerbestand-nachschub-agentforce/). Das Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) bringt diese Entscheidungen zusammen, und das Zielbild für Shop, ERP und Vertrieb gehört zu meiner Arbeit an der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+Exportieren Sie die Bestellpositionen der letzten zwölf Monate aus dem ERP und sortieren Sie sie in Wiederholungen, feste Körbe und lange Listen. Daran sehen Sie, welcher Weg am meisten zählt und ob 500 Positionen reichen. Wie die Bestellung danach mit Bestellnummer und Kreditprüfung den Shop verlässt, steht in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../b2b-checkout-bestellnummer-rechnung/). Nachbestellen im Chat über WhatsApp ist Thema von [B2B Buyer Agent](../b2b-buyer-agent-whatsapp-bestellen/), Nachschubvorschläge aus Händlerbeständen beschreibe ich in [Agentforce für Händlerbestand und Nachschub](../haendlerbestand-nachschub-agentforce/). Das Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) bringt diese Entscheidungen zusammen, und das Zielbild für Shop, ERP und Vertrieb gehört zu meiner Arbeit an der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).

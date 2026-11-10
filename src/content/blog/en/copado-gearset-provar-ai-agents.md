@@ -10,7 +10,7 @@ topic: devops
 categories: [devops, ai]
 tags: [copado, gearset, provar, ai agents, devops, due diligence]
 takeaways:
-  - "Agentia is in Copado's Advanced and Pro editions, Agentia Headless is GA since October 20, Cam is sold by quote, and Provar MCP is free for Provar customers."
+  - "Copado's Advanced and Pro editions include Agentia, Agentia Headless has been GA since October 20, Cam is sold by quote and Provar MCP is free for Provar users."
   - "Copado names Vertex AI with Gemini and Claude but not the model per agent; Gearset's AI terms name OpenAI, AWS, US data centers and 90 days of retention."
   - "Before paying, ask in writing which model runs, where data is processed, how long it is kept, how usage is capped and who approves what the agent produces."
   - "A team already using open-source DevOps tooling such as sfdx-hardis covers parts of the workflow with a general coding agent and a provider it chooses itself."
@@ -76,7 +76,7 @@ This is where the three products differ most, and it is where a manufacturing co
 - The customer "may not use the AI functionality to replace or substantially replace human decision making".
 
 ```hinweis achtung
-US data centers mean a third-country transfer your data protection officer must assess before production metadata goes in.
+US data centers mean a third-country transfer your data protection officer must assess before production metadata is processed there.
 ```
 
 **Copado** names Google Cloud Vertex AI, "which incorporates third party models like Google Gemini and Anthropic's Claude Models", as the backend of its AI features in its [privacy notice](https://www.copado.com/legal/privacy) effective August 5, 2026, and its developer site lists API endpoints in the US (default), the EU and three other regions. It does not say which model each Agentia function uses or whether using the EU endpoint keeps processing in the EU. I would make sure the order form confirms that these terms apply to the edition you buy.
@@ -90,7 +90,7 @@ Assume a machine builder with Sales Cloud for dealer sales, Field Service for it
 Copado offers an upgrade to Agentia. This is how I would handle it:
 
 1. **Separate building changes from governing them.** The coding agent already writes Apex code and builds Flows. The question for Agentia is whether its Context Hub and approval gates add something the existing pipeline and the [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/) do not.
-2. **Get the four answers in writing.** Ask for the model and provider, the processing region, the retention period, and how usage is metered and capped. Until they are on paper, Agentia only sees a developer sandbox without customer or dealer data.
+2. **Get the four answers in writing.** Ask for the model and provider, the processing region, the retention period, and how usage is metered and capped. Until they are confirmed in writing, Agentia only sees a developer sandbox without customer or dealer data.
 3. **Pilot one narrow ticket type.** For example 20 small changes on the warranty claim object: new fields, picklist values, a validation rule. Measure merges without rework and review time, and compare them with similar tickets done by the coding agent alone.
 4. **Add Provar MCP if Provar is already licensed.** The regression tests for the dealer portal are the obvious target. There is no separate fee, but connecting it to the coding agent is a new data flow that needs its own approval.
 5. **Decide after six weeks** on numbers from your own org, not on the vendor's 44 and 75 percent.

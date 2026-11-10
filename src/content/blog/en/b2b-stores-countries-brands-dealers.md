@@ -30,11 +30,11 @@ Most manufacturers need one Salesforce B2B Commerce store per brand or per legal
 
 ## What decides the number of B2B stores?
 
-According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping), Salesforce B2B Commerce is now called "Agentforce Commerce for B2B"; the store is its hub. Around the store sit the catalog, the buyer groups, the entitlement policies and the price books. [Trailhead on the data model](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) describes these objects as spokes around a hub and says that a company can create several stores "to serve different business areas or regions".
+According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping), Salesforce B2B Commerce is now called "Agentforce Commerce for B2B"; the store is its hub. The store is surrounded by the catalog, the buyer groups, the entitlement policies and the price books. [Trailhead on the data model](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) describes these objects as spokes around a hub and says that a company can create several stores "to serve different business areas or regions".
 
 Three objects decide whether one store is enough:
 
-- **Buyer groups** connect buyer accounts to a store. A store can have many buyer groups, and each group gets its own entitlement policies and price books.
+- **Buyer groups** connect buyer accounts to a store. A store can have many buyer groups, and each group has its own entitlement policies and price books.
 - **Entitlement policies** define which products a buyer group may see and buy.
 - **The catalog** holds the category tree and the products. A store has exactly one catalog, but the [product and catalog data model](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-product-catalog.html) allows the same catalog to serve several stores.
 
@@ -75,8 +75,8 @@ My rule for segmentation: buyer groups by country and dealer tier, not one group
 
 I would plan a second store in four cases:
 
-1. **Another brand with its own look and domain.** Each store is designed in Experience Builder, and the [B2B Commerce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5) lists custom domain setup and publishing as steps for each store. A brand B dealer should not log into a shop that looks like brand A. Branding sets can change colors and logos inside one site, but it is easier to give a separate brand experience with its own domain and content its own store.
-2. **Another catalog structure.** One catalog per store means one category tree. If brand B sorts its parts by machine series and brand A by function, two catalogs and therefore two stores are the cleaner design. The products themselves can still be shared, because the same product can sit in the categories of both catalogs.
+1. **Another brand with its own look and domain.** Each store is designed in Experience Builder, and the [B2B Commerce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5) lists custom domain setup and publishing as steps for each store. A brand B dealer should not log into a shop that looks like brand A. Branding sets can change colors and logos inside one site, but a separate brand experience with its own domain and content is easier to build as its own store.
+2. **Another catalog structure.** One catalog per store means one category tree. If brand B sorts its parts by machine series and brand A by function, two catalogs and therefore two stores are the cleaner design. The products themselves can still be shared, because the same product can be assigned to categories in both catalogs.
 3. **Another checkout or ERP.** Commerce extensions for pricing, inventory, tax or order creation are mapped to a store with `sf commerce:extension:map`, according to the [extensions guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html). An extension can route calls by account or legal entity, but a legal unit that sells through a different ERP with its own checkout and order process is usually easier to run as its own store.
 4. **Different buyers.** The Help page says a company can operate a B2B and a D2C channel from one org with shared data. End customers alongside dealers therefore mean a separate D2C store, with the product data shared.
 
@@ -84,7 +84,7 @@ If two brands share most parts, a shared catalog helps: two storefronts, one set
 
 ## Every extra store costs upkeep after each release
 
-Licensing is simple. The [B2B pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) includes 6 storefronts in Growth and 10 in Advanced. The [Commerce add-ons page](https://www.salesforce.com/commerce/pricing/add-ons/) lists additional storefronts with "Request a Quote" and no price. If your plan gets close, include the number of storefronts and the price of additional ones in the contract. The GMV fee is charged on revenue through the storefronts, so a second store changes the GMV only if it brings new orders. For details, see [B2B Commerce pricing and the GMV model](../b2b-commerce-pricing-gmv-model/).
+Licensing is simple. The [B2B pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) includes 6 storefronts in Growth and 10 in Advanced. The [Commerce add-ons page](https://www.salesforce.com/commerce/pricing/add-ons/) lists additional storefronts with "Request a Quote" and no price. If your plan comes close to the included number, include the number of storefronts and the price of additional ones in the contract. The GMV fee is charged on revenue through the storefronts, so a second store changes the GMV only if it brings new orders. For details, see [B2B Commerce pricing and the GMV model](../b2b-commerce-pricing-gmv-model/).
 
 The effort is more substantial. Every store has its own extension mappings and settings, and usually its own pages, navigation and translations, unless it shares an existing site. After each of the three Salesforce releases a year, every store needs a regression test, and every custom component must be tested in every store that uses it. How to plan that rhythm is covered in the DevOps chapter on [Salesforce release planning](../../masterclass/devops-release-management/release-planning-salesforce-releases/). Two stores are not twice the work of one, but they are clearly more than one store with two buyer groups.
 
@@ -94,7 +94,7 @@ Assume a machine builder sells spare parts under two brands. Brand A is sold in 
 
 One store per country would mean 14 stores, which is above the 10 storefronts included in Advanced, and would require 14 regression tests per release. One store for everything would send brand B dealers to a shop with brand A's look and brand A's ERP calls.
 
-The design in this scenario: two stores, one per brand. Brand A gets one combined buyer group per country and tier, 9 × 3 = 27 in total; brand B gets 5 × 2 = 10. Each buyer account belongs to one or two groups, far below the 20 per account. Both stores share the catalog for common parts only if the category trees match; in this scenario they do not, so there are two catalogs. Two stores fit easily within the 6 storefronts included in Growth.
+The design in this scenario: two stores, one per brand. Brand A uses one combined buyer group per country and tier, 9 × 3 = 27 in total; brand B uses 5 × 2 = 10. Each buyer account belongs to one or two groups, far below the 20 per account. Both stores share the catalog for common parts only if the category trees match; in this scenario they do not, so there are two catalogs. Two stores fit easily within the 6 storefronts included in Growth.
 
 This follows the same sequencing as a [global Manufacturing Cloud rollout](../manufacturing-cloud-global-rollout/): brand decisions must be part of the template from day one, even if the first country has only one brand.
 

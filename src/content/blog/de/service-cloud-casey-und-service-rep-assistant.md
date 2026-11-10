@@ -75,7 +75,7 @@ Service in der Fertigung unterscheidet sich vom Endkundenservice. Kunden sind Un
 - Auftrags- und Lieferstatus, wenn die Daten in Salesforce aktuell sind.
 - Anfragen nach Dokumentation, Handbüchern, Zertifikaten oder Ersatzteilinformationen.
 - Standardfragen zu Rückgaberegeln, Servicezeiten oder Vertragsbedingungen.
-- Das Erfassen der richtigen Informationen, bevor ein Fall an einen Techniker geht, etwa Seriennummer, Fehlercode und Fotos.
+- Das Erfassen der richtigen Informationen, bevor ein Fall an einen Techniker übergeben wird, etwa Seriennummer, Fehlercode und Fotos.
 
 **Besser bei Menschen, unterstützt durch den Assistenten:**
 
@@ -106,7 +106,7 @@ Welche Bausteine der Service Cloud passen, kläre ich im Rahmen von [Architektur
 
 ```schritte
 Lizenzen prüfen
-  Ob Service Rep Assistant und Casey in Ihrer Edition stecken oder ein Add-on oder der Wechsel auf Max nötig ist.
+  Ob Service Rep Assistant und Casey in Ihrer Edition enthalten sind oder ein Add-on oder der Wechsel auf Max nötig ist.
 Mit dem Service Rep Assistant starten
   In einem Team, damit Menschen die Kontrolle behalten, während die Organisation lernt.
 Wissen aufräumen

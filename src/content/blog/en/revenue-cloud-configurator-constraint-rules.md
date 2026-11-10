@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-The Revenue Cloud configurator with the constraint rules engine is enough for technical products when the rules can be written as relationships between attributes and components, and when someone at the manufacturer maintains them after go-live. It pays off most with interdependent attributes, where if-then rules break with every product change. An external configurator should stay when the rules live in SAP variant configuration or PLM and are checked there anyway, or when engineers configure from drawings. Check availability first: the Constraint Rules Engine needs Revenue Cloud Growth or Advanced and is not available in Government Cloud or in orgs in the EU Operating Zone.
+The Revenue Cloud configurator with the constraint rules engine is enough for technical products when the rules can be written as relationships between attributes and components, and when someone at the manufacturer maintains them after go-live. It pays off most with interdependent attributes, where if-then rules break with every product change. An external configurator should stay when the rules are kept in SAP variant configuration or PLM and are checked there anyway, or when engineers configure from drawings. Check availability first: the Constraint Rules Engine needs Revenue Cloud Growth or Advanced and is not available in Government Cloud or in orgs in the EU Operating Zone.
 
 ## What can the Revenue Cloud configurator do?
 
@@ -94,7 +94,7 @@ Whoever changes a model without these cases discovers errors in front of the cus
 
 ## When should you keep an external configurator?
 
-According to Trailhead, a third-party configurator connects to Salesforce through APIs and supports custom interfaces and workflows. Salesforce can keep pricing, product data and quoting, depending on the integration pattern. The integration can be built either way, so the deciding question is where the rules should live.
+According to Trailhead, a third-party configurator connects to Salesforce through APIs and supports custom interfaces and workflows. Salesforce can keep pricing, product data and quoting, depending on the integration pattern. The integration can be built either way, so the deciding question is where the rules should be maintained.
 
 I look first at where they are today, then at change frequency, owners and runtime needs:
 
@@ -102,7 +102,7 @@ I look first at where they are today, then at change frequency, owners and runti
 - **In SAP variant configuration.** If SAP checks the configuration again when the order arrives, rebuilding the rules in CML creates two rule sets. They drift apart with the first change that is maintained in only one place. Here I either keep SAP as the master and call SAP, or I move the master to Salesforce and let SAP accept the result. Both work. Two masters of the same rule do not. A runtime copy is fine if synchronization and versioning are explicit. The same argument applies to agents: business rules belong in one deterministic place, as in [Agent Script: why business rules don't belong in the LLM](../agent-script-deterministic-rules/).
 - **In PLM or in an engineering configurator** that produces drawings or bills of materials. Then the external configurator stays, and Salesforce receives the configured product with its price-relevant attributes.
 
-There is a side effect for AI quoting. An agent can only respect rules it can call. If the rules live outside Salesforce, I keep configured machines with the sales desk, as described in [AI Partner Sales Assistant: dealer quotes with AI](../ai-partner-sales-assistant-dealer-quotes/).
+There is a side effect for AI quoting. An agent can only respect rules it can call. If the rules are kept outside Salesforce, I keep configured machines with the sales desk, as described in [AI Partner Sales Assistant: dealer quotes with AI](../ai-partner-sales-assistant-dealer-quotes/).
 
 ## Worked example: three product lines, one stays in SAP
 
@@ -112,8 +112,8 @@ My recommendation in that case, assuming the org is not in the EU Operating Zone
 
 ## Inventory the rules and pick a pilot family
 
-1. **Inventory the rules**: how many, where they live, who changes them and how often.
-2. **Pick one product family** as a pilot, ideally one whose rules sit in spreadsheets.
+1. **Inventory the rules**: how many, where they are kept, who changes them and how often.
+2. **Pick one product family** as a pilot, ideally one whose rules are kept in spreadsheets.
 3. **Write the test cases first**, valid and invalid configurations with expected messages.
 4. **Decide the master** per product line: Revenue Cloud, SAP or an external configurator, never two for the same rule.
 5. **Name the owner** who maintains the model after go-live.

@@ -10,7 +10,7 @@ topic: field-service
 categories: [field-service, ai]
 tags: [Predictive Maintenance, Field Service, Data 360, Asset Service Prediction, Maschinenbau, Flex Credits]
 takeaways:
-  - "Asset Service Prediction schätzt aus früheren Reparaturen, wie wahrscheinlich Folgeaufträge sind, und braucht dafür mindestens 400 mit der Anlage verknüpfte."
+  - "Asset Service Prediction schätzt aus früheren Reparaturen die Wahrscheinlichkeit von Folgeaufträgen und braucht mindestens 400 anlagenbezogene Reparaturen."
   - "Die Salesforce-Hilfe beschreibt die Installation von Asset Service Prediction, die Produktseite nennt keinen Preis. Lassen Sie sich die SKU schriftlich geben."
   - "Streaming in Data 360 kostet 3.500 Flex Credits pro Million Zeilen. Intervall und Zeilenaufbau bestimmen die Rechnung: eine Zeile pro Signal oder pro Maschine."
   - "Bei wenigen hundert Maschinen pro Baureihe und Fehlercodes im Freitext sind Wartungspläne mit Nutzungs- und Zustandsauslösern die bessere Wahl."
@@ -107,7 +107,7 @@ Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und Field Service im Betr
 **Die Entscheidung.**
 
 1. **Nutzungsabhängige Intervalle.** Die IoT-Plattform schreibt einmal am Tag die Betriebsstunden auf den Anlagendatensatz. Die Maintenance Work Rules wechseln von halbjährlich auf alle 2.000 Betriebsstunden. Dafür braucht es keine Data-360-Credits.
-2. **Drei Zustandssignale.** Spindeltemperatur, Vibration und Kühlmitteldruck gehen als 15-Minuten-Aggregate in Data 360, eine Zeile pro Signal: 2,6 Mio. Zeilen, 9.072 Credits, rund 45 € im Monat. Ein Flow schreibt die Werte auf den Anlagendatensatz zurück und legt eine Work Order an, wenn ein Schwellwert überschritten ist.
+2. **Drei Zustandssignale.** Spindeltemperatur, Vibration und Kühlmitteldruck werden als 15-Minuten-Aggregate an Data 360 übertragen, eine Zeile pro Signal: 2,6 Mio. Zeilen, 9.072 Credits, rund 45 € im Monat. Ein Flow schreibt die Werte auf den Anlagendatensatz zurück und legt eine Work Order an, wenn ein Schwellwert überschritten ist.
 3. **Buchung durch den Agenten.** 250 Termine im Monat mit je fünf Aktionen: 25.000 Credits, rund 125 €.
 4. **Erst die Historie.** Codierte Fehlerursachen werden für Händler Pflicht, als Teil des Garantieprozesses. 2028 zählt der Maschinenbauer die Fälle erneut.
 
@@ -117,7 +117,7 @@ Datenübernahme und Agentenaktionen ergeben rund 34.000 Credits, etwa 170 € im
 
 1. **Zählen** Sie Störungs-Work-Orders pro Baureihe und codierter Ursache für die letzten drei Jahre.
 2. **Schließen Sie die Lücken**: Verknüpfung mit der Anlage, Auswahllisten für Ursachen, Meldepflichten für Händler und Servicepartner.
-3. **Legen Sie fest, wo Rohdaten liegen**, und welche Aggregate, Zähler und Ereignisse zu Salesforce gehen.
+3. **Legen Sie fest, wo Rohdaten liegen**, und welche Aggregate, Zähler und Ereignisse an Salesforce übertragen werden.
 4. **Schätzen Sie Credits pro Signal**, bevor die erste Maschine angebunden wird, etwa mit [Flex Credits und Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
 5. **Fragen Sie Salesforce schriftlich**, welches Add-on Asset Service Prediction für Ihre Edition enthält und wie viele Data-360-Credits die Funktion verbraucht.
 

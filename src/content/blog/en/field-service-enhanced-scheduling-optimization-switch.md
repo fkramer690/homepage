@@ -35,7 +35,7 @@ Enhanced Scheduling and Optimization, often shortened to ESO, is the newer engin
 
 The [Summer '23 release notes](https://resources.docs.salesforce.com/244/latest/en-us/sfdc/pdf/salesforce_summer23_release_notes.pdf) say that the enhanced engine is available for new users by default. The current [Field Service guide](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/support_field_service.pdf) says it plainly: new orgs have Enhanced Scheduling and Optimization enabled for all service territories, and existing orgs can switch all territories or enable it per territory.
 
-So the question remains open only for orgs that went live with the older engine. For them nothing changes automatically. The engine keeps running as before until someone decides to switch, and without a deadline that decision tends to be postponed.
+So the question remains open only for orgs that started on the older engine. For them nothing changes automatically. The engine keeps running as before until someone decides to switch, and without a deadline that decision tends to be postponed.
 
 ## Higher limits for skills and optimized appointments
 
@@ -52,13 +52,13 @@ The skills limit is the one I would look at first. A service technician at a mac
 
 The limit of 50,000 appointments is rarely the bottleneck. A service organization with 45 technicians stays far below that, and the figure applies until you have more than 100 scheduling licenses. Consumption can be checked in Setup under Company Information.
 
-The 30-day horizon matters for planned maintenance. If dispatchers book annual maintenance visits two months ahead, those bookings fall outside the window in which the engine updates travel time. In the pilot I would check that optimization rearranges those appointments once they come into range, and reschedule far-off bookings deliberately rather than assume this will happen automatically.
+The 30-day horizon matters for planned maintenance. If dispatchers book annual maintenance visits two months ahead, those bookings fall outside the window in which the engine updates travel time. In the pilot I would check that optimization rearranges those appointments once they fall within the window, and reschedule far-off bookings deliberately rather than assume this will happen automatically.
 
 According to the [considerations for Enhanced Scheduling and Optimization](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_considerations.htm&language=en_US&type=5), travel is calculated with point-to-point predictive routing, which needs map coverage in the regions where your technicians work. Optimization also does not need a separate activation step, because it runs with a Platform Integration User.
 
 ## What disappears and what behaves differently?
 
-Two things go away. Scheduling recipes, the automations that certain events trigger to solve overlaps in the schedule, are not available. Salesforce Help identifies the Fix Schedule Overlaps automated flow as the replacement. Optimization Insights is replaced by the Optimization Hub. If your dispatchers rely on recipes today, the replacement has to be designed and tested before the switch, not after it.
+Two things are removed. Scheduling recipes, the automations that certain events trigger to solve overlaps in the schedule, are not available. Salesforce Help identifies the Fix Schedule Overlaps automated flow as the replacement. Optimization Insights is replaced by the Optimization Hub. If your dispatchers rely on recipes today, the replacement has to be designed and tested before the switch, not after it.
 
 Then there are work rules that give different results with the same data. The same Help article lists them.
 

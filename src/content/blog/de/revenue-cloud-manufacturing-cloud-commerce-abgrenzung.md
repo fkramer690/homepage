@@ -20,9 +20,9 @@ faq:
   - q: "Brauche ich Revenue Cloud für B2B Commerce?"
     a: "Nicht für einen Shop mit Preisbüchern. Die Salesforce-Hilfe nennt für Agentforce Revenue Management for B2B Commerce eine Commerce-Growth- oder Commerce-Advanced-Lizenz plus eine Revenue-Cloud-Advanced-Lizenz. Diese Lizenzkombination ergänzt den Shop um Preisprozeduren, konfigurierbare Bundles, Abonnements und Request for Quote."
   - q: "Kann Manufacturing Cloud den Produktkatalog von Revenue Cloud nutzen?"
-    a: "Das geht. Trailhead beschreibt ein zentrales Produktmodell mit Headless-Composable-APIs und schreibt, dass Agentforce Manufacturing die Produkt- und Preisinformationen aus dem Katalog nutzen kann. Dafür sind die Revenue-Cloud-Lizenz, Konfiguration und ein klares Datenmodell nötig; automatisch passiert das nicht."
+    a: "Das geht. Trailhead beschreibt ein zentrales Produktmodell mit Headless-Composable-APIs und schreibt, dass Agentforce Manufacturing die Produkt- und Preisinformationen aus dem Katalog nutzen kann. Dafür sind die Revenue-Cloud-Lizenz, Konfiguration und ein klares Datenmodell nötig; automatisch geschieht das nicht."
   - q: "Welches Produkt sollte ein Maschinenbauer zuerst einführen?"
-    a: "Das Produkt für den Schritt, der heute am meisten wehtut. Konfigurierte Angebote sprechen für Revenue Cloud, Rahmenverträge für Manufacturing Cloud, Händlerboni für Channel Revenue Management, Ersatzteilbestellungen per E-Mail für B2B Commerce. Alle drei auf einmal für eine Roadmap-Folie zu kaufen, lohnt sich selten."
+    a: "Das Produkt für den Schritt, der heute die meisten Probleme verursacht. Konfigurierte Angebote sprechen für Revenue Cloud, Rahmenverträge für Manufacturing Cloud, Händlerboni für Channel Revenue Management, Ersatzteilbestellungen per E-Mail für B2B Commerce. Alle drei auf einmal für eine Roadmap-Folie zu kaufen, lohnt sich selten."
 draft: false
 ---
 
@@ -30,7 +30,7 @@ Revenue Cloud, Manufacturing Cloud und B2B Commerce decken unterschiedliche Teil
 
 ## Was leistet welches Produkt?
 
-**Revenue Cloud** ist das Quote-to-Cash-Produkt von Salesforce. Salesforce hat es in Agentforce Revenue Management umbenannt (vormals Revenue Cloud); der alte Name lebt in Lizenzen wie Revenue Cloud Advanced weiter, deshalb nutze ich ihn hier. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management) besteht es aus Product Catalog Management, Product Configurator, Salesforce Pricing und Rate Management, Transaction Management für Angebote, Aufträge und Assets, dem Dynamic Revenue Orchestrator, Salesforce Contracts und der Abrechnung. Die [Produktseite](https://www.salesforce.com/uk/products/revenue-cycle-management) verspricht einen einzigen, attributbasierten Katalog, der Produkte in allen Kanälen bereitstellt. Revenue Cloud Advanced wird auf der [Preisseite](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) mit 200 Euro pro Nutzer und Monat bei jährlicher Abrechnung ausgewiesen, Stand 9. November 2026. Advanced deckt die Abrechnung nur teilweise ab: Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=ind.revenue_licenses_areas_and_features.htm&language=en_US&type=5) brauchen Rechnungs-PDFs und ihr Versand per E-Mail, nutzungsbasierte Rechnungen, Zahlungen, Erstattungen und Mahnwesen die separate Revenue-Cloud-Billing-Lizenz.
+**Revenue Cloud** ist das Quote-to-Cash-Produkt von Salesforce. Salesforce hat es in Agentforce Revenue Management umbenannt (vormals Revenue Cloud); der alte Name bleibt in Lizenzen wie Revenue Cloud Advanced erhalten, deshalb nutze ich ihn hier. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management) besteht es aus Product Catalog Management, Product Configurator, Salesforce Pricing und Rate Management, Transaction Management für Angebote, Aufträge und Assets, dem Dynamic Revenue Orchestrator, Salesforce Contracts und der Abrechnung. Die [Produktseite](https://www.salesforce.com/uk/products/revenue-cycle-management) verspricht einen einzigen, attributbasierten Katalog, der Produkte in allen Kanälen bereitstellt. Revenue Cloud Advanced wird auf der [Preisseite](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) mit 200 Euro pro Nutzer und Monat bei jährlicher Abrechnung ausgewiesen, Stand 9. November 2026. Advanced deckt die Abrechnung nur teilweise ab: Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=ind.revenue_licenses_areas_and_features.htm&language=en_US&type=5) brauchen Rechnungs-PDFs und ihr Versand per E-Mail, nutzungsbasierte Rechnungen, Zahlungen, Erstattungen und Mahnwesen die separate Revenue-Cloud-Billing-Lizenz.
 
 **Manufacturing Cloud** ist die Industry Cloud für das Seriengeschäft. Die [Produktseite](https://www.salesforce.com/manufacturing/cloud/) nennt für Sales Core Rahmenvereinbarungen ("run-rate agreements") und Bedarfsprognosen. Salesforce vermarktet sie inzwischen als Agentforce Manufacturing, Editionen wie Sales Core tragen weiter den Namen Manufacturing Cloud. Im Kern steht das Sales Agreement: geplante und tatsächliche Mengen pro Kunde, Produkt und Periode. Ob das zu Ihrem Geschäft passt, lesen Sie in [Manufacturing Cloud vs. Sales Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/). Händlerboni sind beim Neukauf kein Manufacturing-Cloud-Thema mehr: Laut [Salesforce](https://help.salesforce.com/s/articleView?id=005393495&language=en_US&type=1) ist Rebate Management seit 18. August 2026 nicht mehr verlängerbar, Nachfolger ist Channel Revenue Management, ein eigenes Produkt. Hintergrund zu Händlerboni finden Sie in [Rebate Management für Händlerboni](../rebate-management-haendlerboni/).
 
@@ -67,7 +67,7 @@ Die Rechnungszeile ist eine eigene Entscheidung, die ich in [Revenue Cloud und S
 
 ## Vier Konstellationen, die ich im Design-Review stoppe
 
-Vier Konstellationen würde ich in keinem Design-Review durchgehen lassen:
+Vier Konstellationen würde ich in keinem Design-Review akzeptieren:
 
 1. **Zwei Kataloge.** Produkte und Attribute werden einmal für Revenue Cloud und einmal für den Shop oder für Manufacturing Cloud gepflegt. Jede neue Variante muss dann doppelt angelegt werden, und eine davon fehlt irgendwann.
 2. **Zwei Preismaster.** Es gibt Preisbücher für den Shop, Preisprozeduren für das Angebot und Konditionen in SAP. Der Händler sieht im Shop einen Preis und im Angebot einen anderen.
@@ -82,7 +82,7 @@ Alle drei Produkte könnten passen, und ich würde sie nacheinander einführen:
 
 ```schritte
 B2B Commerce mit Preisbüchern
-  Steht an erster Stelle, weil die Ersatzteilbestellungen per E-Mail am meisten schmerzen.
+  Steht an erster Stelle, weil die Ersatzteilbestellungen per E-Mail die meisten Probleme verursachen.
 Revenue Cloud
   Die Kompressorangebote sind der zweite Kandidat. Kosten Konfigurationsfehler heute Geld, folgt Revenue Cloud, und ab dann nutzt der Shop dessen Katalog und, sobald Vertragspreise in Salesforce liegen, dessen Preislogik.
 Manufacturing Cloud

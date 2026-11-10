@@ -43,7 +43,7 @@ Laut [Architekturübersicht](https://modelcontextprotocol.io/docs/learn/architec
 
 Ein Server bietet Tools an, die die KI ausführen kann (eine Abfrage, eine Datensatzänderung, einen Flow), außerdem Ressourcen mit Kontextdaten und Prompt-Vorlagen. Welches Tool aufgerufen wird, entscheidet das Modell im Gespräch. Server laufen lokal auf dem Rechner oder remote über HTTP; dort empfiehlt das Protokoll OAuth.
 
-Ein Satz in der Übersicht verdient eine zweite Lektüre: MCP regelt nur den Austausch von Kontext und schreibt nicht vor, wie die KI-Anwendung das Sprachmodell oder den erhaltenen Kontext nutzt. Wohin Ihre CRM-Daten gehen, nachdem Claude oder ChatGPT sie gelesen hat, sagt das Protokoll also nicht. Das regelt Ihr Vertrag mit dem KI-Anbieter.
+Ein Satz in der Übersicht verdient eine zweite Lektüre: MCP regelt nur den Austausch von Kontext und schreibt nicht vor, wie die KI-Anwendung das Sprachmodell oder den erhaltenen Kontext nutzt. Was mit Ihren CRM-Daten geschieht, nachdem Claude oder ChatGPT sie gelesen hat, sagt das Protokoll also nicht. Das regelt Ihr Vertrag mit dem KI-Anbieter.
 
 ## Wo taucht MCP in einer Salesforce-Org auf?
 
@@ -83,11 +83,11 @@ Community-Server von npm oder GitHub sind die dritte Option. Die [Security Best 
 
 ### 2. Welche Benutzer dürfen sich verbinden?
 
-Weil jeder Aufruf als angemeldeter Benutzer läuft, wird Ihr Freigabemodell zur Grenze. Sehen Servicemitarbeitende Händlerpreisvereinbarungen, weil die Freigaben vor Jahren zu weit geöffnet wurden, zeigt ein Chatfenster sie in Sekunden. Salesforce erlaubt, die External Client App an bestimmte Profile und Permission Sets zu binden. Die External Client App lässt sich nicht auf einen einzelnen MCP-Server beschränken; die aktiven Server bestimmen also, welche Tools erreichbar sind. So wird MCP-Zugriff ein eigenes Permission Set statt Nebenwirkung eines Profils. Im Piloten würde ich Admins und Benutzer mit View All Data ganz aus MCP heraushalten.
+Weil jeder Aufruf als angemeldeter Benutzer läuft, wird Ihr Freigabemodell zur Grenze. Sehen Servicemitarbeitende Händlerpreisvereinbarungen, weil die Freigaben vor Jahren zu weit geöffnet wurden, zeigt ein Chatfenster sie in Sekunden. Salesforce erlaubt, die External Client App an bestimmte Profile und Permission Sets zu binden. Die External Client App lässt sich nicht auf einen einzelnen MCP-Server beschränken; die aktiven Server bestimmen also, welche Tools erreichbar sind. So erhält der MCP-Zugriff ein eigenes Permission Set und ist keine Nebenwirkung eines Profils. Im Piloten würde ich Admins und Benutzer mit View All Data ganz aus MCP heraushalten.
 
 ### 3. Auf welche Daten dürfen die Tools zugreifen?
 
-Starten Sie mit `sobject-reads`, dem lesenden Server, den Salesforce als „a great place to start“ bezeichnet. Ich würde ihn zuerst in einer Sandbox laufen lassen. Die nächste Stufe ist enger begrenzt als jeder Standardserver: Named Queries geben vordefinierte SOQL-Abfragen frei, statt freie Abfragen zuzulassen, und ein Flow „Maschinenhistorie nach Seriennummer“ liefert genau die Felder, die der Serviceinnendienst braucht. Das MCP-Projekt nennt Wildcard-Scopes als typischen Fehler, und für Tools gilt dieselbe Logik. Auftragsstatus, Bestand und Preise aus SAP oder proALPHA bleiben hinter einer deterministischen API, wie in [Agentforce und SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/) beschrieben.
+Starten Sie mit `sobject-reads`, dem lesenden Server, den Salesforce als „a great place to start“ bezeichnet. Ich würde ihn zuerst in einer Sandbox testen. Die nächste Stufe ist enger begrenzt als jeder Standardserver: Named Queries geben vordefinierte SOQL-Abfragen frei, statt freie Abfragen zuzulassen, und ein Flow „Maschinenhistorie nach Seriennummer“ liefert genau die Felder, die der Serviceinnendienst braucht. Das MCP-Projekt nennt Wildcard-Scopes als typischen Fehler, und für Tools gilt dieselbe Logik. Auftragsstatus, Bestand und Preise aus SAP oder proALPHA bleiben hinter einer deterministischen API, wie in [Agentforce und SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/) beschrieben.
 
 ### 4. Welche KI-Clients und Agenten lassen Sie zu?
 

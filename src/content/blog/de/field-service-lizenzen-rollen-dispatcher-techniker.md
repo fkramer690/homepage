@@ -46,7 +46,7 @@ Salesforce verkauft das Produkt heute als Field Service and Operations. Die [deu
 
 In der Unlimited Edition kosten Dispatcher und Technician laut Fußnote 330 Dollar, das Plus-Paket 380 Dollar. Ob sich das Paket für 650 € rechnet, ist eine eigene Rechnung, die ich in [Agentforce 1 Field Service: Wann rechnet sich das Paket?](../agentforce-1-field-service-paket-rechnung/) aufmache.
 
-**Stand 9. November 2026:** Die [US-Preisseite](https://www.salesforce.com/service/field-service-management/pricing/) hat am 5. November 2026 umgestellt: Statt Field Service Plus und Agentforce 1 Field Service stehen dort Field Service+ Core (250 $), Field Service+ Advanced (450 $) und Field Service Max (650 $), Dispatcher und Technician bleiben bei 175 $. Die deutsche Seite zeigt noch das alte Modell. Ich würde im Angebot klären, welches Modell für Ihren Vertrag gilt und ob Field Service+ Core das Recht zum Case Management hat.
+**Stand 9. November 2026:** Die [US-Preisseite](https://www.salesforce.com/service/field-service-management/pricing/) wurde am 5. November 2026 umgestellt: Statt Field Service Plus und Agentforce 1 Field Service stehen dort Field Service+ Core (250 $), Field Service+ Advanced (450 $) und Field Service Max (650 $), Dispatcher und Technician bleiben bei 175 $. Die deutsche Seite zeigt noch das alte Modell. Ich würde im Angebot klären, welches Modell für Ihren Vertrag gilt und ob Field Service+ Core das Recht zum Case Management hat.
 
 ## Das Kleingedruckte ändert die Rechnung
 
@@ -89,7 +89,7 @@ Der [Architektur-Leitfaden von Salesforce zu Servicepartnern](https://architect.
 
 ## Rechenbeispiel: Hotline, Disposition, eigene Techniker und zwei Partner
 
-Die Zahlen sind angenommen. Ein Maschinenbauer hat eine Hotline mit 6 Mitarbeitenden, 4 Disponenten, 45 eigene Techniker und zwei Servicepartner. Partner A schickt 5 Techniker, die etwa zehn Tage im Monat für den Maschinenbauer arbeiten. Partner B hat 3 Techniker, die nur in Spitzen aushelfen, jeder etwa zwei Tage im Monat.
+Die Zahlen sind angenommen. Ein Maschinenbauer beschäftigt 6 Mitarbeitende in der Hotline, 4 Disponenten und 45 eigene Techniker und arbeitet mit zwei Servicepartnern. Partner A schickt 5 Techniker, die etwa zehn Tage im Monat für den Maschinenbauer arbeiten. Partner B hat 3 Techniker, die nur in Spitzen aushelfen, jeder etwa zwei Tage im Monat.
 
 | Rolle | Anzahl | Lizenz | Pro Monat |
 |---|---|---|---|

@@ -34,7 +34,7 @@ Ob sich Field Service für Ihren Außendienst überhaupt lohnt, beschreibe ich i
 ## Fehlende Daten führen zu Fehleinsätzen
 
 ```praxis
-In Serviceprojekten habe ich immer wieder dasselbe Muster gesehen. Techniker waren vor Ort und konnten ihren Job nicht ausführen. Mal waren die Ersatzteile nicht da. Mal war die Maschine nicht zugänglich. Mal stand der falsche Techniker vor der Anlage, oder der richtige war nicht einsatzfähig. Teils lag es am Kunden, teils an der Einsatzplanung.
+In Serviceprojekten habe ich immer wieder dasselbe Muster gesehen. Techniker waren vor Ort und konnten ihre Arbeit nicht erledigen. Mal fehlten die Ersatzteile. Mal war die Maschine nicht zugänglich. Mal stand der falsche Techniker vor der Anlage, oder der richtige war nicht einsatzfähig. Teils lag es am Kunden, teils an der Einsatzplanung.
 ```
 
 Jeder dieser Fehleinsätze kostet eine Anfahrt, einen Technikertag und meist einen zweiten Termin. Nicht jeder hat eine Datenursache. Hinter vielen steckt aber eine Information, die bei der Planung gefehlt hat. Mögliche Ursachen:
@@ -64,7 +64,7 @@ Vier Details aus der Salesforce-Hilfe entscheiden, ob das in der Praxis trägt:
 - **Servicegebiete.** Laut den [Richtlinien für Servicegebiete](https://help.salesforce.com/s/articleView?id=service.fs_territory_guidelines.htm&language=en_US&type=5) hat jeder Techniker genau ein primäres Gebiet und optional sekundäre, und Salesforce empfiehlt bis zu 50 Techniker pro Gebiet.
 - **Qualifikationen.** Das Level liegt laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=fs_required_skills.htm&language=en_US&type=5) zwischen 0 und 99,99, und was es bedeutet, legt das Unternehmen fest. Durchgesetzt werden sie erst über die Work Rule [Match Skills](https://help.salesforce.com/s/articleView?id=pfs_optimization_theory_work_rules_match_skills.htm&language=en_US&type=5); ein Techniker ohne Skills ist dann für keinen Einsatz mit Skill-Anforderung mehr Kandidat.
 - **Öffnungszeiten.** Sie werden als Arbeitszeiten am Account gepflegt und laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5) in jeden neuen Arbeitsauftrag übernommen. Sie zählen nur, wenn die Work Rule für Besuchszeiten aktiv ist.
-- **Abwesenheiten.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_create_absences.htm&type=5) plant die Optimierung Techniker nicht für Termine ein, die mit ihren Abwesenheiten kollidieren, aber nur, wenn Urlaub und Schulungen tatsächlich in Salesforce ankommen.
+- **Abwesenheiten.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_create_absences.htm&type=5) plant die Optimierung Techniker nicht für Termine ein, die mit ihren Abwesenheiten kollidieren, aber nur, wenn Urlaub und Schulungen tatsächlich in Salesforce erfasst sind.
 
 Wie aus einem Case ein Arbeitsauftrag mit dem passenden Arbeitstyp wird, steht in [vom Case zum Techniker](../field-service-case-zu-arbeitsauftrag/). Teile und Fahrzeugbestand behandle ich in [einem eigenen Teil](../salesforce-field-service-ersatzteile-erp/) dieser Serie.
 
@@ -72,8 +72,8 @@ Wie aus einem Case ein Arbeitsauftrag mit dem passenden Arbeitstyp wird, steht i
 
 Die Tabelle oben ist ein Vorschlag. Die Entscheidungen dahinter gehören Serviceleitung und IT gemeinsam, und niemand sonst wird sie treffen:
 
-- **Ein Verantwortlicher je Datenbereich.** Jemand muss geradestehen, wenn Qualifikationen veraltet sind oder eine Anlage fehlt. Ohne Namen in der Tabelle wird Datenqualität nach dem Start niemandes Aufgabe.
-- **Schnittstelle oder Handpflege.** Anlagen und Qualifikationen von Hand in Salesforce zu pflegen, geht für einen Piloten, aber nicht für den Betrieb. Jede Schnittstelle kostet Aufbau und Betrieb, jede Handliste kostet Zeit und verursacht Fehler. Entscheiden Sie je Bereich nach Menge und Änderungshäufigkeit. Wie man klärt, welches System führt, beschreibe ich auf der Seite [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+- **Ein Verantwortlicher je Datenbereich.** Jemand muss verantwortlich sein, wenn Qualifikationen veraltet sind oder eine Anlage fehlt. Ohne Namen in der Tabelle wird Datenqualität nach dem Start niemandes Aufgabe.
+- **Schnittstelle oder Handpflege.** Anlagen und Qualifikationen von Hand in Salesforce zu pflegen, reicht für einen Piloten, aber nicht für den Betrieb. Jede Schnittstelle kostet Aufbau und Betrieb, jede Handliste kostet Zeit und verursacht Fehler. Entscheiden Sie je Bereich nach Menge und Änderungshäufigkeit. Wie man klärt, welches System führt, beschreibe ich auf der Seite [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 - **Welche Ursache für Fehleinsätze Sie zuerst angehen.** Nicht alle sechs Bereiche können am ersten Tag sauber sein. Die Fehleinsätze Ihrer eigenen Region zeigen, wo das Geld verloren geht.
 - **Daten über Mitarbeitende.** Qualifikationen und Abwesenheiten sind Daten über Mitarbeitende. Klären Sie früh mit den Datenschutzverantwortlichen und, wo vorhanden, mit dem Betriebsrat, welche davon in Salesforce gespeichert werden dürfen. Das gilt auch für die Funktionen der App in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/).
 

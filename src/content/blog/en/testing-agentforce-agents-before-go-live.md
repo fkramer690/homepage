@@ -47,7 +47,7 @@ Salesforce currently has two test paths. The legacy Testing Center and the testi
 title: What else a test spec can check
 - **Quality metrics.** Coherence, completeness and conciseness, each as pass or fail, plus latency in milliseconds, according to the [test spec documentation](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx-test-customize.html).
 - **Custom evaluations.** Exact string or number comparisons on data that an action produced, selected with a JSONPath expression. Salesforce [shows](https://developer.salesforce.com/blogs/2025/10/test-your-agentforce-agents-with-custom-evaluation-criteria) `string_comparison` and `numeric_comparison`. This is the deterministic part of agent testing in the legacy model, and I would use it for every rule that must hold without exception. The newer custom scorers in Agentforce Studio use an LLM as judge, so they are no replacement for an exact check.
-- **CI output.** Results come as JSON, TAP or JUnit, according to the [documentation for test runs](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx-test-run.html), so a pipeline reads them like Apex test results.
+- **CI output.** Results are returned as JSON, TAP or JUnit, according to the [documentation for test runs](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx-test-run.html), so a pipeline reads them like Apex test results.
 ```
 
 The tooling is changing quickly. The [TDX 2026 roundup](https://www.salesforce.com/blog/tdx-2026-roundup-agentforce-edition/) announced GA for Testing Center enhancements with custom scoring and multi-turn tests for May 2026, but Salesforce Help still labels the Agentforce Studio experience as beta. At [Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) Salesforce added conversation testing with a task resolution metric (beta) and custom scorers (API GA, user interface in beta). The developer docs I cite still describe the legacy test process, not the newer Testing Center in Agentforce Studio, so check the current status and beta terms in your org. Keep your test cases as plain files in Git, so they survive the next tool change.
@@ -83,18 +83,18 @@ Most failures in such a run point to data and interfaces, which is why I put [bu
 
 ## After go-live, monitoring runs from day one
 
-Tests cover the questions you thought of. Dealers will ask others, so monitoring runs from day one:
+Tests cover the questions you thought of. Dealers will ask others, so monitoring is active from day one:
 
 - **Session traces.** With [Agentforce 3](https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement) Salesforce introduced a session tracing data model in Data Cloud, now Data 360, built on OpenTelemetry. With the Session Trace OTel API (beta), traces can be pulled per session and forwarded to tools such as Splunk or Datadog; it requires Data 360. Traces contain messages and action inputs, so restrict access to them.
 - **Health and alerts.** Agentforce Observability shows latency, escalation and error rates, and alerts per metric are configured in Agentforce Studio. Agent Health Monitoring with 16 or more built-in metrics has been GA since Dreamforce 2026.
-- **Staged rollout.** Publishing creates an inactive agent version; activating it is a separate step. Start with one dealer group and expand the rollout when the numbers hold.
+- **Staged rollout.** Publishing creates an inactive agent version; activating it is a separate step. Start with one dealer group and expand the rollout when the numbers remain stable.
 - **Feedback loop.** Triage failed conversations, remove duplicates and personal data, and add representative or high-risk failures to the regression suite.
 
 Retest whenever something the agent depends on changes: a subagent, a Flow, knowledge articles, a Salesforce release, the SAP API.
 
 ## The client owns the tests
 
-Delivery partners may write and run the tests, but the test set, the thresholds and the go-live decision belong to the company that answers to its dealers. It is the principle from [DevOps for enterprise projects](../why-devops-matters-salesforce-enterprise/): agent tests live in the same repository and pipeline, with JUnit output and a gate that blocks the deployment when results fall below the threshold. Setting this up is part of my [DevOps and release management](../../services/devops-release-management/) work.
+Delivery partners may write and run the tests, but the test set, the thresholds and the go-live decision belong to the company that is accountable to its dealers. It is the principle from [DevOps for enterprise projects](../why-devops-matters-salesforce-enterprise/): agent tests are kept in the same repository and pipeline, with JUnit output and a gate that blocks the deployment when results fall below the threshold. Setting this up is part of my [DevOps and release management](../../services/devops-release-management/) work.
 
 ```schritte
 Name unacceptable failures

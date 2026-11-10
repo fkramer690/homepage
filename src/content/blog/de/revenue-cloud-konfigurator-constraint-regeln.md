@@ -65,7 +65,7 @@ Es gibt zwei Editoren. Visual Builder ist eine No-Code-Oberfläche für einfache
 
 Meine Sicht: CML ist Code, auch wenn ein Teil davon zusammengeklickt wird. Ein Modell für eine Maschinenfamilie mit einigen hundert Zeilen braucht dieselbe Behandlung wie Apex: Versionskontrolle, Review und Tests. Wer es pflegt, muss in Typen, Wertebereichen und Kardinalitäten denken. In den meisten Fertigungsunternehmen ist das weder der klassische Admin noch der Anwendungstechniker, der die Regeln kennt. Planen Sie beide als Team ein.
 
-Ein nützliches Detail: Tabellen-Constraints können ihre Zeilen laut Developer Guide aus einem Standard- oder Custom-Objekt in Salesforce importieren. Eine Kompatibilitätstabelle, die in SAP oder im PLM gepflegt wird, lässt sich so über die Schnittstelle in ein Custom-Objekt laden, statt sie von Hand in CML abzutippen. Das führende System bleibt außerhalb von Salesforce, die Prüfung läuft in Salesforce; prüfen Sie die dokumentierten Laufzeit- und Tabellengrenzen, bevor Sie große Tabellen laden.
+Ein nützliches Detail: Tabellen-Constraints können ihre Zeilen laut Developer Guide aus einem Standard- oder Custom-Objekt in Salesforce importieren. Eine Kompatibilitätstabelle, die in SAP oder im PLM gepflegt wird, lässt sich so über die Schnittstelle in ein Custom-Objekt laden, statt sie von Hand in CML abzutippen. Das führende System bleibt außerhalb von Salesforce, geprüft wird in Salesforce; prüfen Sie die dokumentierten Laufzeit- und Tabellengrenzen, bevor Sie große Tabellen laden.
 
 ## Testziel: unter 100 Millisekunden pro Modelllauf
 
@@ -94,7 +94,7 @@ Wer ein Modell ohne diese Fälle ändert, findet den Fehler beim Kunden. Wie Tes
 
 ## Wann sollten Sie einen externen Konfigurator behalten?
 
-Laut Trailhead verbindet sich ein Drittanbieter-Konfigurator über APIs mit Salesforce und ermöglicht eigene Oberflächen und Abläufe. Salesforce kann je nach Integrationsmuster weiterhin die Preisfindung, die Produktdaten und die Angebotserstellung übernehmen. Die Anbindung lässt sich in beide Richtungen bauen, die entscheidende Frage ist also, wo die Regeln leben sollen.
+Laut Trailhead verbindet sich ein Drittanbieter-Konfigurator über APIs mit Salesforce und ermöglicht eigene Oberflächen und Abläufe. Salesforce kann je nach Integrationsmuster weiterhin die Preisfindung, die Produktdaten und die Angebotserstellung übernehmen. Die Anbindung lässt sich in beide Richtungen bauen, die entscheidende Frage ist also, wo die Regeln gepflegt werden sollen.
 
 Ich schaue zuerst darauf, wo sie heute liegen, dann auf Änderungshäufigkeit, Verantwortliche und Laufzeitanforderungen:
 

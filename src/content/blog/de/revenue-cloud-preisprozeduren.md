@@ -24,7 +24,7 @@ faq:
   - q: "Können andere Systeme die Preisberechnung von Revenue Cloud nutzen?"
     a: "Ja. Die Salesforce Pricing Business APIs enthalten eine Ressource für Headless Pricing, die einen Kontext anlegt und ihn in einem Aufruf bepreist, sowie Ressourcen für den Preiswasserfall. Ein Portal oder ein Agent kann so einen Preis abfragen, ohne ein Angebot anzulegen."
   - q: "Wie testen Sie eine Änderung an einer Pricing Procedure?"
-    a: "Testen Sie Einzelfälle mit der Simulation im Pricing Procedure Builder und prüfen Sie die gesamte Änderung anhand eines festen Satzes von Referenzangeboten mit dokumentierten Soll-Nettopreisen. Die Änderung geht erst live, wenn alle Fälle stimmen."
+    a: "Testen Sie Einzelfälle mit der Simulation im Pricing Procedure Builder und prüfen Sie die gesamte Änderung anhand eines festen Satzes von Referenzangeboten mit dokumentierten Soll-Nettopreisen. Die Änderung wird erst aktiviert, wenn alle Fälle stimmen."
 draft: false
 ---
 
@@ -65,7 +65,7 @@ Eine von Grund auf neue Prozedur beginnt als leere Version V1; jedes hinzugefüg
 Dieser Schritt wird in den ersten Wochen besonders leicht vergessen. Ändern Sie einen Preisbucheintrag oder eine Mengenstaffel, rechnet das Angebot weiter mit dem alten Wert, bis die Decision Table aktualisiert ist. Trailhead zeigt zwei Wege: Sync Pricing Data im Salesforce Pricing Setup ausführen oder einzelne Decision Tables im Setup aktualisieren, etwa Volume Discount Entries oder für Vertragspreise Contract Pricing Entries und Contract Pricing Volume Tiers.
 
 ```hinweis achtung
-Liefert SAP bei einem Hersteller jede Nacht die Listenpreise, gehört die Aktualisierung in den Ladejob. Der Ladevorgang ist erst fertig, wenn die Decision Tables aktuell sind. Ich würde danach eine Prüfung einbauen, die einige Referenzpreise vergleicht, denn eine vergessene Aktualisierung führt meist nicht zu einem Fehler im Angebot, sondern nur zu veralteten Preisen.
+Liefert SAP bei einem Hersteller jede Nacht die Listenpreise, gehört die Aktualisierung in den Ladejob. Der Ladevorgang ist erst abgeschlossen, wenn die Decision Tables aktuell sind. Ich würde danach eine Prüfung einbauen, die einige Referenzpreise vergleicht, denn eine vergessene Aktualisierung führt meist nicht zu einem Fehler im Angebot, sondern nur zu veralteten Preisen.
 ```
 
 ## Was zeigt der Preiswasserfall?
@@ -94,7 +94,7 @@ Eine Pricing Procedure ändert Preise in jedem Angebot. Ich behandle sie wie Cod
 
 - **Eine verantwortliche Person.** Meist ein Pricing-Admin im Vertriebsinnendienst oder in Sales Operations, Änderungen gibt das Controlling frei. Der Implementierungspartner setzt die Änderungen um, entscheidet aber nicht.
 - **Versionen.** Jede Änderung erhält eine neue Version mit einer kurzen Notiz, was sich geändert hat und warum.
-- **Regressionsfälle.** Ein fester Satz von Referenzangeboten mit dokumentierten Soll-Nettopreisen: Standardprodukte, jede Mengenstaffel, Vertragskunden, Attributrabatte, manuelle Rabatte über und unter den Freigabegrenzen. Jede Änderung wird gegen alle Fälle geprüft, bevor sie live geht.
+- **Regressionsfälle.** Ein fester Satz von Referenzangeboten mit dokumentierten Soll-Nettopreisen: Standardprodukte, jede Mengenstaffel, Vertragskunden, Attributrabatte, manuelle Rabatte über und unter den Freigabegrenzen. Jede Änderung wird gegen alle Fälle geprüft, bevor sie aktiviert wird.
 - **Deployment.** Prozeduren werden als Metadaten zwischen Orgs übertragen, Preisbücher, Staffeln und Vertragspreise dagegen sind Daten. Laut der [Gearset-Dokumentation](https://docs.gearset.com/en/articles/10776213-how-to-deploy-pricing-procedures) sind Pricing Procedures in der Metadata API ExpressionSetDefinitions, ein Deployment legt in der Ziel-Org eine neue Version an, und danach müssen die Decision Tables aktualisiert werden. Kontextdefinitionen und Decision Tables müssen in der Ziel-Org vor der Prozedur vorliegen; stellen Sie sie also in dieser Reihenfolge bereit. Wie das in eine Pipeline passt, steht in [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/).
 
 Wie Tests und Reviews allgemein in den Release-Prozess gehören, behandelt das Kapitel [Qualität, Tests und Reviews](../../masterclass/devops-release-management/qualitaet-tests-reviews/) der DevOps-Masterclass.

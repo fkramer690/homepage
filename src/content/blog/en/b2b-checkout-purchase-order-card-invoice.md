@@ -56,7 +56,7 @@ For the gateway, the [gateway options page](https://developer.salesforce.com/doc
 
 ```vertiefung For developers
 title: Where does custom payment logic go?
-The extension framework that covers pricing, inventory, tax, shipping and order creation does not cover payments: "Currently, payments can't be customized with an extension" ([Salesforce Developers, extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html)). Special payment rules therefore end up in the Apex adapter or a custom component, and in both cases your team has to own that code through every release.
+The extension framework that covers pricing, inventory, tax, shipping and order creation does not cover payments: "Currently, payments can't be customized with an extension" ([Salesforce Developers, extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html)). Special payment rules therefore belong in the Apex adapter or a custom component, and in both cases your team has to own that code through every release.
 ```
 
 In the flow-based checkout, buyers choose between purchase order and card on the order summary page. When they choose purchase order, they are asked for the PO number and the billing address ([Salesforce Developers, purchase order or credit card flows](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-checkout-choose-po-or-cc.html)).
@@ -108,7 +108,7 @@ If the workshops turn out to be fewer than expected, the simpler alternative is 
 
 ## What happens after the order is placed?
 
-When an order is placed in the store, Salesforce creates an order summary. Order summaries created by B2B Commerce itself have the lifecycle type unmanaged; those created by Salesforce Order Management are managed. For unmanaged order summaries, updates from the external system "must be reflected in Salesforce" ([Salesforce Developers, managed and unmanaged order summaries](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html)). The order with the PO number, billing address and payment information goes to the ERP, which creates the sales order and later the invoice.
+When an order is placed in the store, Salesforce creates an order summary. Order summaries created by B2B Commerce itself have the lifecycle type unmanaged; those created by Salesforce Order Management are managed. For unmanaged order summaries, updates from the external system "must be reflected in Salesforce" ([Salesforce Developers, managed and unmanaged order summaries](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html)). The order with the PO number, billing address and payment information is transferred to the ERP, which creates the sales order and later the invoice.
 
 Who owns the order from that point on is covered in [B2B store orders to the ERP](../b2b-store-orders-to-erp/), and which data flows between store and SAP in [B2B Commerce and SAP: which data flows where?](../b2b-commerce-sap-data-flows/). How dealers get to the checkout faster, with past orders and templates, is the topic of [reorders in B2B Commerce](../b2b-commerce-reorder-order-templates/).
 

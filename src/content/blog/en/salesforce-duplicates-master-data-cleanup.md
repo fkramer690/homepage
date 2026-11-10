@@ -11,10 +11,10 @@ categories: [architecture, ai]
 contactBrief: architecture
 tags: [data quality, duplicates, master data, Agentforce]
 takeaways:
-  - "At manufacturers, duplicates mostly come from interfaces and country borders, such as repeated ERP imports or customers created again in each country."
+  - "At manufacturers, duplicates mostly originate at interfaces and country borders, such as repeated ERP imports or customers created again in each country."
   - "Before cleaning up, decide which system owns the record and which key makes it unique, such as source system plus customer number or serial number."
   - "Salesforce comes with matching rules and duplicate rules. They prevent new duplicates, but they do not clean up old ones."
-  - "If an agent gets two plausible accounts without a deterministic selection rule, it may use the wrong one. That is why cleanup comes first."
+  - "If an agent receives two plausible accounts without a deterministic selection rule, it may use the wrong one. That is why cleanup comes first."
 faq:
   - q: "How do I find duplicates in Salesforce?"
     a: "In Performance and Unlimited Edition, use duplicate jobs, which scan existing accounts, contacts and leads against a matching rule. Otherwise, duplicate reports only show what duplicate rules logged when records were saved. In other editions, or for objects such as assets, export the data and analyze it outside or use a dedicated tool."
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Manufacturers should clean up duplicates in Salesforce in a fixed order: measure first, then define the leading system and a unique key per object, then merge, and only then prevent new duplicates. For accounts the key is usually the ERP customer number plus source system where needed, for assets the serial number. With matching rules and duplicate rules, Salesforce provides tools that catch new duplicates on save. They do not clean up old ones. This work belongs before any AI agent, because an agent that gets two plausible accounts without a clear selection rule can pick the wrong one just as confidently as the right one.
+Manufacturers should clean up duplicates in Salesforce in a fixed order: measure first, then define the leading system and a unique key per object, then merge, and only then prevent new duplicates. For accounts the key is usually the ERP customer number plus source system where needed, for assets the serial number. With matching rules and duplicate rules, Salesforce provides tools that catch new duplicates on save. They do not clean up old ones. This work belongs before any AI agent, because an agent that receives two plausible accounts without a clear selection rule can pick the wrong one just as confidently as the right one.
 
 ## Where do duplicates come from in manufacturing companies?
 
@@ -35,7 +35,7 @@ Duplicates rarely appear because someone works sloppily. In manufacturing compan
 
 - **Interfaces that create instead of update.** An ERP import creates a customer again when it cannot find the existing one, for example because the spelling changed.
 - **Countries and legal entities.** A group customer buys in three countries, and each sales subsidiary creates its own account, once with "GmbH", once with "AG", once under the name of the subsidiary.
-- **Dealers and end customers.** An end customer is handled through two dealers and shows up twice, once under each dealer.
+- **Dealers and end customers.** An end customer is handled through two dealers and appears twice, once under each dealer.
 - **Assets without a unique identifier.** Serial numbers are captured with and without a prefix, or replacement machines are given the number of the old machine.
 - **Portals.** Contacts register themselves and create a new contact instead of linking to the existing one. Salesforce's duplicate rules do not run on Experience Cloud self-registration, so the registration process needs its own contact matching.
 
@@ -47,7 +47,7 @@ How the installed base should be structured is described in [asset hierarchy in 
 
 ## Why does the cleanup come before the AI agent?
 
-A person who sees two similar accounts gets suspicious and asks. An agent does what its actions and instructions allow: if a lookup returns two plausible results and nothing decides between them, it may name the wrong contract, send the quote to the wrong contact or check a warranty against the wrong machine. It does so in a convincing tone, and that is exactly what makes the mistake expensive. Besides the cleanup, agent actions should filter precisely, pass stable record IDs and ask for clarification when several records match. That is why, in my view, business value and data quality come before any agent; see [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
+A person who sees two similar accounts becomes suspicious and asks. An agent does what its actions and instructions allow: if a lookup returns two plausible results and nothing decides between them, it may name the wrong contract, send the quote to the wrong contact or check a warranty against the wrong machine. It does so in a convincing tone, and that is exactly what makes the mistake expensive. Besides the cleanup, agent actions should filter precisely, pass stable record IDs and ask for clarification when several records match. That is why, in my view, business value and data quality come before any agent; see [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
 
 ## How do you clean up duplicates step by step?
 
@@ -86,13 +86,13 @@ Start with duplicate rules set to the action "alert" and use a report. After two
 
 ## An upsert on a unique external ID keeps ERP duplicates out
 
-The most effective measure sits in the interface. Every record from the ERP carries the ERP's key in an external ID field, and the interface writes with an upsert: if the key exists, the record is updated, otherwise it is created. Mark the field as unique, reject records without a key and watch newly created records. Then an import no longer creates a duplicate because a name is spelled differently. What an upsert cannot decide is whether two different ERP keys stand for the same customer; that remains a business decision. Which system owns which data should be defined in the integration architecture I describe under [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
+The most effective measure lies in the interface. Every record from the ERP carries the ERP's key in an external ID field, and the interface writes with an upsert: if the key exists, the record is updated, otherwise it is created. Mark the field as unique, reject records without a key and watch newly created records. Then an import no longer creates a duplicate because a name is spelled differently. What an upsert cannot decide is whether two different ERP keys stand for the same customer; that remains a business decision. Which system owns which data should be defined in the integration architecture I describe under [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
 
 ## Who is responsible for data quality?
 
 The business owns data quality: it decides what counts as the same customer and which record is the golden record. IT and architecture own the key model, integration logic, validation and monitoring, and internal teams or partners implement it. The partner can build rules and change interfaces, but cannot decide whether "Sample Engineering GmbH" and "Sample Engineering AG" are the same customer. The sales team in that country knows.
 
-So I recommend one responsible person on the client side per country and per object. They get the monthly report on new possible duplicates, decide on merges and report when an interface keeps producing the same errors. For the installed base this is often the service back office, because it knows the machines best. Without this role, the cleanup starts from scratch after a year.
+So I recommend one responsible person on the client side per country and per object. They receive the monthly report on new possible duplicates, decide on merges and report when an interface keeps producing the same errors. For the installed base this is often the service back office, because it knows the machines best. Without this role, the cleanup starts from scratch after a year.
 
 ## Check your 100 most important customers
 

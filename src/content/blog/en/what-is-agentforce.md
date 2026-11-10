@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Agentforce is Salesforce's platform for AI agents: software that uses generative AI to interpret a request and choose the next step within limits you define, then carries it out through actions in Salesforce or connected systems. Asking "what is Agentforce" often gets you marketing terms as an answer. For IT leaders, what matters is the agent's technical makeup, which parts behave predictably, whose permissions it runs under, what it costs and which data it needs. This article organizes those questions.
+Agentforce is Salesforce's platform for AI agents: software that uses generative AI to interpret a request and choose the next step within limits you define, then carries it out through actions in Salesforce or connected systems. Asking "what is Agentforce" often yields marketing terms as an answer. For IT leaders, what matters is the agent's technical makeup, which parts behave predictably, whose permissions it runs under, what it costs and which data it needs. This article organizes those questions.
 
 ## What is Agentforce?
 
@@ -103,7 +103,7 @@ Another question to address early is which language model answers and where it r
 
 An agent in the dealer portal that does not know the order status does not help anyone. For manufacturers, the data customers and dealers ask about is often in the ERP or the installed base: order status and confirmed delivery dates, stock, customer-specific prices, serial numbers and the spare parts that fit a machine. The agent needs actions that query these sources, for example through MuleSoft, as in [Agentforce and SAP: order status via MuleSoft](../agentforce-sap-order-status-mulesoft/).
 
-Three questions determine whether that works. Which dealer may see which assets and prices? What does the agent say when the ERP is down or the data is old? And which dates may the agent pass on? Which system is the system of record for the delivery date, which status the delivery date has, whether that status may be shared with a customer and when a person has to approve, for example for a return, must be decided for each status before go-live. Read-only actions are the easier start. As soon as an agent changes something in the ERP, the interface needs the same checks as for someone in inside sales: permission, plausibility and a log.
+Three questions determine whether that works. Which dealer may see which assets and prices? What does the agent say when the ERP is down or the data is old? And which dates may the agent pass on? Before go-live, decide which system is the system of record for the delivery date, which status the date has, whether that status may be shared with a customer and when a person has to approve, for example for a return. Read-only actions are the easier start. As soon as an agent changes something in the ERP, the interface needs the same checks as for someone in inside sales: permission, plausibility and a log.
 
 The quality of the data in Salesforce matters just as much. If assets are assigned to the wrong customer, the agent gives wrong answers, only faster and more politely. Why business value and data quality come first is in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
 

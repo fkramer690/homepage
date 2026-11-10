@@ -13,7 +13,7 @@ series: { id: manufacturing-cloud, part: 6 }
 takeaways:
   - "A warranty is built from four records: the term, coverage per part, the link to the product and the warranty for the individual asset."
   - "Dealers submit warranty claims through a portal, including parts, labor and other costs."
-  - "An adjudicator approves the amounts. An agent can prepare the check, but without serial number, start date and usage it cannot complete it either."
+  - "An adjudicator approves the amounts. An agent can prepare the check, but without serial number, start date and usage it cannot complete it reliably."
   - "From a warranty claim, Salesforce creates one supplier recovery claim per causal part."
   - "Warranty decides coverage. The repair itself, maintenance contracts and response times belong to Field Service."
 faq:

@@ -46,7 +46,7 @@ The [B2B Commerce pricing page](https://www.salesforce.com/editions-pricing/comm
 
 ## Buyer managers need Customer Community Plus, plain buyers do not
 
-The dividing line is access to other buyers. According to Help, "B2B Commerce requires a Customer Community Plus or higher license to access other buyers." A dealer's central purchaser who orders for several branches, or a buyer manager who manages colleagues, therefore needs Customer Community Plus. A buyer who only orders for their own account gets by with External Apps. According to [Salesforce Help on external user licenses](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5), Customer Community Plus is meant for external users who need reports, dashboards and standard sharing. Partner Community is described there for business-to-business sites that need sales data, such as partner relationship management. Trailhead does not mention Partner Community for the store.
+The dividing line is access to other buyers. According to Help, "B2B Commerce requires a Customer Community Plus or higher license to access other buyers." A dealer's central purchaser who orders for several branches, or a buyer manager who manages colleagues, therefore needs Customer Community Plus. A buyer who only orders for their own account needs only External Apps. According to [Salesforce Help on external user licenses](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5), Customer Community Plus is meant for external users who need reports, dashboards and standard sharing. Partner Community is described there for business-to-business sites that need sales data, such as partner relationship management. Trailhead does not mention Partner Community for the store.
 
 ```hinweis offen
 If your dealers already have Partner Community licenses for a partner portal, I would ask Salesforce in writing whether these users can buy in the store with the license they have. Two licenses for the same person at the same dealer are the most expensive solution.
@@ -71,9 +71,9 @@ The [Experience Cloud for Manufacturing page](https://www.salesforce.com/manufac
 | Customer Community Plus | $35 | $15 |
 | Partner Community | $50 | $20 |
 
-The break-even is simple. A buyer with two login days a month costs $30 with login licensing and $35 as a member. From three login days, at $45, the member license is cheaper. As a rule of thumb, a buyer manager who works weekly gets a member license, while one who logs in a few times a year gets a login license.
+The break-even is simple. A buyer with two login days a month costs $30 with login licensing and $35 as a member. From three login days, at $45, the member license is cheaper. As a rule of thumb, a buyer manager who works weekly should have a member license, while one who logs in a few times a year should have a login license.
 
-Worked example: a manufacturer with 250 dealers, each with one buyer manager and two buyers, so 750 users. The 500 buyers order only for their own account and get External Apps, with pricing set in the quote. The 250 buyer managers need Customer Community Plus: 100 work weekly and use member licenses, at 100 × $35 = $3,500 a month; the other 150 log in about once a month, at 150 logins × $15 = $2,250. Together that is $5,750 a month, or $69,000 a year at list price. Customer Community Plus member licenses for all 750 users would cost $26,250 a month, or $315,000 a year.
+Worked example: a manufacturer with 250 dealers, each with one buyer manager and two buyers, so 750 users. The 500 buyers order only for their own account and are assigned External Apps, with pricing set in the quote. The 250 buyer managers need Customer Community Plus: 100 work weekly and use member licenses, at 100 × $35 = $3,500 a month; the other 150 log in about once a month, at 150 logins × $15 = $2,250. Together that is $5,750 a month, or $69,000 a year at list price. Customer Community Plus member licenses for all 750 users would cost $26,250 a month, or $315,000 a year.
 
 ```hinweis achtung
 A login day is any day someone logs in, including a day when they only check an order status. If the store is where dealers look up delivery dates, login days rise even when orders do not.
@@ -81,12 +81,12 @@ A login day is any day someone logs in, including a day when they only check an 
 
 ## Roles and the Account Switcher limit the plan
 
-Some limits sit next to the license and show up late if nobody checks them. The [Commerce developer guide on buyer limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html) and Help list the following:
+Some limits apply in addition to the license and surface late if nobody checks them. The [Commerce developer guide on buyer limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html) and Help list the following:
 
 - **Roles.** Customer Community Plus and Partner Community need roles for external users. The default limit is 50,000 roles across all portals in an org. According to the developer guide, Salesforce can extend this for B2B, and above one million shoppers, you should talk to your account team. Help also mentions account role optimization, which creates a role only when an account has a second user.
 - **Buyer users.** 1.5 million buyers and buyer managers combined, as a soft limit.
 - **Account Switcher.** A buyer who orders for several accounts, for example a central purchasing team at a dealer group with many branches, switches between them. The soft limit is 200 accounts. Beyond that, performance degrades, and at 2,000 accounts the switcher fails. Above 200 you need your own switcher.
-- **Report subscriptions.** Customer Community Plus does not include them. A buyer manager who expects a weekly report by email will not get it this way.
+- **Report subscriptions.** Customer Community Plus does not include them. A buyer manager who expects a weekly report by email will not receive it this way.
 
 ## What about sales reps and inside sales?
 

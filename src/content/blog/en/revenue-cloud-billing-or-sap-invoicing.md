@@ -61,12 +61,12 @@ Trailhead lists an [Accounts Receivable Admin role](https://trailhead.salesforce
 
 ## The machine invoice stays in SAP
 
-For one-off machine sales I would keep the invoice in SAP, where shipment, acceptance, down payments and milestones are controlled in SAP. The reasons are practical:
+For one-off machine sales I would keep the invoice in SAP when shipment, acceptance, down payments and milestones are controlled there. The reasons are practical:
 
 - **Delivery drives the invoice.** Machines are often invoiced after shipment or acceptance, and in many companies shipping, customs and acceptance are handled in SAP.
 - **Down payments and milestones** are usually booked against the SAP order. Billing has billing milestone plans in its data model, but moving down payment accounting out of SAP for one product line rarely pays off.
 - **Cost.** Billing usage is measured by the positive amounts of posted invoice lines. A €2 million machine invoice posted in Salesforce uses up billing events for the full amount, even though SAP could create the invoice anyway. Whether that costs extra depends on the events included in your contract.
-- **E-invoicing.** From 1 January 2027, issuers with more than €800,000 prior-year turnover generally lose the transitional option to send paper or unstructured invoices for domestic B2B transactions. Statutory exceptions and the EDI transition until the end of 2027 still have to be checked. If SAP already produces them, a second invoicing system means a second compliance project. Details are in [e-invoicing in Germany from 2027](../e-invoicing-germany-2027-revenue-cloud/).
+- **E-invoicing.** From 1 January 2027, issuers with more than €800,000 prior-year turnover generally lose the transitional option to send paper or unstructured invoices for domestic B2B transactions. Statutory exceptions and the EDI transition until the end of 2027 still have to be checked. If SAP already produces e-invoices, a second invoicing system means a second compliance project. Details are in [e-invoicing in Germany from 2027](../e-invoicing-germany-2027-revenue-cloud/).
 
 The same applies to spare parts that are invoiced with the delivery. Payment in a B2B store is a separate question, covered in [B2B checkout: purchase order, card or invoice](../b2b-checkout-purchase-order-card-invoice/).
 

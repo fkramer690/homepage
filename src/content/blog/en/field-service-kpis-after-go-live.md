@@ -76,7 +76,7 @@ The third decision only works with coded faults. If fault causes are stored as f
 
 ## How do you get a baseline from the old system?
 
-Measure before go-live with the same definitions you will use afterwards, over a period long enough to cover seasonal swings; three months is a minimum, a year of history is better if the old system has it. The data usually sits in the ERP's service orders or the old scheduling tool: completed jobs per technician, travel from timesheets or vehicle logs, repeat visits per machine. If nobody can produce these numbers, that is already a finding, and it weakens every business case.
+Measure before go-live with the same definitions you will use afterwards, over a period long enough to cover seasonal swings; three months is a minimum, a year of history is better if the old system has it. The data is usually found in the ERP's service orders or the old scheduling tool: completed jobs per technician, travel from timesheets or vehicle logs, repeat visits per machine. If nobody can produce these numbers, that is already a finding, and it weakens every business case.
 
 Then compare results by region and by wave. The [rollout in waves](../salesforce-field-service-rollout/) gives you a comparison group: regions that are not live yet still run on the old process. If comparable regions had similar trends before go-live and only the live region improves, that strengthens the case that the rollout contributed. It is not proof, because regions differ in customers, staff and season.
 
