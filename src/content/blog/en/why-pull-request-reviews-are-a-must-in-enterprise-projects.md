@@ -16,13 +16,13 @@ takeaways:
   - "Reviews should be owned by the client side, with clear rules, small pull requests and a defined response time."
 faq:
   - q: "What is a pull request review?"
-    a: "A pull request review means that a second person checks a change before it is merged into a shared branch and deployed further. With branch protection and required checks configured, only approved changes with a green pipeline move on."
+    a: "A pull request review means that a second person checks a change before it is merged into a shared branch and deployed to the next environment. With branch protection and required checks configured, only approved changes with a green pipeline move on."
   - q: "Do pull request reviews slow down Salesforce projects?"
-    a: "Not when pull requests are small and response times are agreed. A small, well prepared pull request can often be reviewed in minutes; complex changes take longer. Fixing an unreviewed change in UAT or production often takes days and involves several teams."
+    a: "Not when pull requests are small and response times have been agreed in advance. A small, well-prepared pull request can often be reviewed in minutes; complex changes take longer. Fixing an unreviewed change in UAT or production often takes days and involves several teams."
   - q: "Who should review pull requests in a multi-partner program?"
-    a: "The client side should own the review rules and approve architecture-relevant changes. Partners can review each other, but the final say on standards should not sit with one implementation partner."
+    a: "The client side should own the review rules and approve architecture-relevant changes. Partners can review each other, but the final say on standards should not rest with one implementation partner."
   - q: "Can low-code changes like flows be reviewed?"
-    a: "Yes, if the change is retrieved completely into the repository. Flows, page layouts, permission sets and custom fields are metadata and show up in the pull request like code. Reviewers check them for naming, logic, performance and security, for complex flows best with a visual comparison."
+    a: "Yes, if the change is fully retrieved into the repository. Flows, page layouts, permission sets and custom fields are metadata and show up in the pull request like code. Reviewers check them for naming, logic, performance and security, ideally with a visual comparison for complex flows."
 ---
 
 A pull request review is a must in enterprise projects because it is one of the last points where a change can be stopped cheaply before it enters a shared branch. Before a change is merged, a second person checks whether it fits the architecture, follows the agreed standards and does not break someone else's work. In a Salesforce program with several partners and internal teams on one org, that single step catches architecture and cross-team issues that automated tests do not cover and that would otherwise surface weeks later in UAT. It also keeps teams aligned without a meeting.
@@ -31,7 +31,7 @@ A pull request review is a must in enterprise projects because it is one of the 
 
 A pull request is a request to merge a set of changes from one branch into another, for example from a feature branch into the integration branch. A pull request review means that at least one other person looks at those changes and approves them before the merge. In a proper [Salesforce DevOps setup](../why-devops-matters-salesforce-enterprise/) the pipeline also runs a validation deployment, Apex tests and static code analysis on every pull request. On sandboxes that is a dry run with `sf project deploy start --dry-run`; `sf project deploy validate` is meant for production. With branch protection and required status checks, the change can move on only when the review is approved and the pipeline is green.
 
-This works for low-code as well. Flows, page layouts, permission sets and custom fields are metadata in the repository. Once the change is retrieved completely from the org, they appear in the pull request like any other file.
+This works for low-code as well. Flows, page layouts, permission sets and custom fields are metadata in the repository. Once the change is fully retrieved from the org, they appear in the pull request like any other file.
 
 ## Enterprise projects need reviews more than a small org
 
@@ -52,37 +52,37 @@ with: With pull request reviews | Every change goes through a review before it r
 
 ## What should a good review check?
 
-A review is not a style check. Formatting, naming and known anti-patterns are things a machine can check faster and more reliably, as far as the rules are configured in the pipeline. The human reviewer should focus on what tools can't judge. In my reviews I look at these points:
+A review is not a style check. Formatting, naming and known anti-patterns are things a machine can check faster and more reliably, provided the rules are configured in the pipeline. The human reviewer should focus on what tools can't judge. In my reviews I look at these points:
 
-1. **Fit with the architecture.** Does the change follow the agreed patterns? Is it built in the right place, for example configuration before code, one automation entry point per object with a defined execution order?
+1. **Fit with the architecture.** Does the change follow the agreed patterns? Is it built in the right place? Does it use configuration before code, with one automation entry point per object and a defined execution order?
 2. **Data model.** Are new fields and objects really needed, named consistently and in line with the reporting and integration requirements?
-3. **Automation and side effects.** Which flows, triggers and validation rules already run on this object? What happens with bulk data loads or integrations?
-4. **Security and access.** Are permissions granted through permission sets, as narrow as possible? Does a permission set file remove or widen unrelated permissions? Do Apex and flows enforce object permissions, field-level security and sharing, and is user mode or system mode chosen deliberately?
+3. **Automation and side effects.** Which flows, triggers and validation rules already run on this object? What happens during bulk data loads or integrations?
+4. **Security and access.** Are permissions granted through permission sets, as narrow as possible? Does a permission set file remove or broaden unrelated permissions? Do Apex and flows enforce object permissions, field-level security and sharing, and is user mode or system mode chosen deliberately?
 5. **Tests and quality.** Do the tests cover the business logic, including negative cases, or do they only push coverage over the 75 percent deployment threshold?
 6. **Traceability.** Does the pull request link to the user story, and does the description explain why the change was made, not only what?
 
-The repeatable part should be automated: static code analysis, project-specific naming rules, a check against outdated API versions and the validation deployment. A reviewer who has to point out missing descriptions or wrong indentation has less attention left for the questions that matter.
+The repeatable part should be automated: static code analysis, project-specific naming rules, a check against outdated API versions and the validation deployment. A reviewer who has to point out missing descriptions or wrong indentation has less attention to spare for the questions that matter.
 
 ![Pull request review in four steps: one user story per pull request; the pipeline automatically checks the validation deployment, Apex tests, static code analysis, naming conventions and API versions; a human reviewer checks fit with the architecture, data model, automation and side effects, security and access, tests and quality, and traceability; the merge happens only when the change is approved and the pipeline is green. Machines check the repeatable part, people check what tools can't judge.](../../../assets/blog/pull-request-review-split-en.png)
 
 ## What reviews changed in a program with several partners
 
-In one program I joined, several implementation partners and internal teams worked on the same Salesforce org. Nobody had clearly defined who led which processes, objects and metadata. Changes overwrote each other because nobody coordinated who deployed what and when, and the technical approaches of the teams had drifted far apart.
+In one program I joined, several implementation partners and internal teams worked on the same Salesforce org. It was not clearly defined who owned which processes, objects and metadata. Changes overwrote each other because nobody coordinated who deployed what and when, and the teams' technical approaches had drifted far apart.
 
 ```praxis
 The first and most effective step was a simple rule: every change goes through a pull request with a review. For a while, every single pull request crossed my desk. That sounds like a bottleneck, and for a few weeks it was a lot of work. But it gave us something no workshop could: a concrete view of how each team actually built things. From those reviews we wrote down development and architecture standards, and from then on the reviews enforced them.
 
-After a few weeks the number of review comments dropped noticeably, because the teams knew the standards. Releases became predictable, and the pipeline's validation runs caught many missing dependencies before users ever saw them. Once the process was stable, I handed it over to an internal colleague and trained them, so the client now owns the review process themselves.
+After a few weeks the number of review comments dropped noticeably, because the teams knew the standards. Releases became predictable, and the pipeline's validation runs caught many missing dependencies before users ever saw them. Once the process was stable, I handed it over to an internal colleague and trained them, so the client now owns the review process internally.
 ```
 
 ```vergleich
 without: Without reviews
-- * Every team builds by its own rules.
-- Changes overwrite each other because nobody agrees who deploys what.
+- * Every team builds according to its own rules.
+- Changes overwrite each other because there is no agreement on who deploys what.
 - Missing dependencies only show up after the release.
 with: Every pull request reviewed
 - * The reviews turn into written standards for all teams.
-- Conflicts between teams more often show up before the merge.
+- Conflicts between teams are more likely to show up before the merge.
 - The pipeline finds many missing dependencies before a user sees them.
 quote: Reviews are how a program with many teams agrees on one way of building things.
 ```
@@ -92,21 +92,21 @@ quote: Reviews are how a program with many teams agrees on one way of building t
 The most common objection is speed. In my experience reviews slow a project down only when they are introduced badly. These rules keep them fast:
 
 - **Small pull requests.** One coherent change per pull request; a large user story may need several. Keep the logical scope small, because file count alone says little: Salesforce source format splits one change across many files.
-- **Agreed response times.** For example, a first review within one working day. Then nobody waits in uncertainty.
+- **Agreed response times.** For example, a first review within one working day. That way, nobody is left waiting in uncertainty.
 - **Clear ownership.** Define who may approve what. Architecture-relevant changes such as new objects, integrations or sharing changes need approval from the client's architect. Smaller changes can be reviewed by another developer.
-- **Written standards.** Reviewers refer to a document, not to personal taste. That makes comments easier to accept and faster to resolve.
+- **Written standards.** Reviewers base comments on a document, not on personal taste. That makes comments easier to accept and faster to resolve.
 - **Automation first.** Required status checks block merging until the pipeline is green. The reviewer only looks at changes that have already passed the automated checks.
 - **Reviews as knowledge transfer.** Junior developers and new partners learn the standards fastest by reading and receiving reviews.
 
 ## The client owns the review process
 
-This matters to me as an [architect on the client side](../../#about). If one implementation partner owns the review rules, that partner decides how everyone else builds, including its competitors. When the client owns the rules and the approval for architecture-relevant changes, partners stay comparable and replaceable. That is the basis of good [partner steering and governance](../../services/partner-governance/).
+This matters to me as an [architect on the client side](../../#about). If one implementation partner owns the review rules, that partner decides how everyone else builds, including its competitors. When the client owns the rules and approval rights for architecture-relevant changes, partners stay comparable and replaceable. That is the basis of good [partner steering and governance](../../services/partner-governance/).
 
 This does not mean the client has to review every line personally. Partners can and should review each other's work. But the standards, the approval rights and the repository should sit with the client, ideally with an internal person who takes over the process long term.
 
 ## First step: protect the main branches
 
-If your program still merges or deploys without reviews, start small:
+If your program still allows merges or deployments without reviews, start small:
 
 ```schritte
 Protect the branches
