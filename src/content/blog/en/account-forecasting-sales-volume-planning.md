@@ -91,7 +91,7 @@ That requires a fixed cadence in sales. After three months, a forecast that is a
 
 ## Sales forecasting ends where production planning begins
 
-Sales forecasting ends when the question is what gets produced. Account forecasting provides what sales expects: which customer will buy which quantity of which product in which month. Whether that quantity can be produced, with which materials and on which line, is decided by planning in the ERP or a dedicated planning system. How forecasts, sales agreements and targets fit together is covered in [chapter 2 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/agreements-and-forecasting/).
+Sales forecasting ends when the question is what is produced. Account forecasting provides what sales expects: which customer will buy which quantity of which product in which month. Whether that quantity can be produced, with which materials and on which line, is decided by planning in the ERP or a dedicated planning system. How forecasts, sales agreements and targets fit together is covered in [chapter 2 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/agreements-and-forecasting/).
 
 Two points matter for the architecture:
 

@@ -111,7 +111,7 @@ For a parts catalog, that has direct consequences:
 - An old part number that only exists in the ERP history cannot be found at all.
 - Text that exists only on a variation parent is not found.
 
-All of this gets fixed in the product data and in the search setup, which I cover in [finding parts by part number](../b2b-commerce-search-part-numbers/).
+All of this is fixed in the product data and in the search setup, which I cover in [finding parts by part number](../b2b-commerce-search-part-numbers/).
 
 ## Check 200 spare parts from the ERP
 

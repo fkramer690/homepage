@@ -23,7 +23,7 @@ faq:
   - q: "Wie bildet Field Service die Qualifikationen von Technikern ab?"
     a: "Qualifikationen sind Skills, die einem Techniker mit einem Level von 0 bis 99,99 zugeordnet werden. Arbeitstypen und Arbeitsaufträge enthalten die benötigten Skills. Die Work Rule Match Skills sorgt dafür, dass nur passende Techniker eingeplant werden."
   - q: "Woher kommen die Daten für Field Service?"
-    a: "Anlagen kommen meist aus dem ERP, Qualifikationen und Abwesenheiten aus Personal- und Schulungssystemen, Servicegebiete und Arbeitstypen aus der Serviceleitung. Wichtig ist, für jede Datenart ein führendes System und einen Verantwortlichen festzulegen."
+    a: "Anlagen stammen meist aus dem ERP, Qualifikationen und Abwesenheiten aus Personal- und Schulungssystemen, Servicegebiete und Arbeitstypen aus der Serviceleitung. Wichtig ist, für jede Datenart ein führendes System und einen Verantwortlichen festzulegen."
 draft: false
 ---
 
@@ -39,7 +39,7 @@ In Serviceprojekten habe ich immer wieder dasselbe Muster gesehen. Techniker war
 
 Jeder dieser Fehleinsätze kostet eine Anfahrt, einen Technikertag und meist einen zweiten Termin. Nicht jeder hat eine Datenursache. Hinter vielen steckt aber eine Information, die bei der Planung gefehlt hat. Mögliche Ursachen:
 
-- **Ersatzteile nicht da:** Niemand wusste, welche Anlage genau beim Kunden steht und welches Teil dafür gebraucht wird, oder das Teil war nicht im Fahrzeug. Teile und Bestand bekommen einen eigenen Teil in dieser Serie.
+- **Ersatzteile nicht da:** Niemand wusste, welche Anlage genau beim Kunden steht und welches Teil dafür gebraucht wird, oder das Teil war nicht im Fahrzeug. Teile und Bestand behandle ich in einem eigenen Teil dieser Serie.
 - **Maschine nicht zugänglich:** Die Zeiten, zu denen der Kunde Zugang gewährt, waren nirgends hinterlegt, oder der Termin wurde nie mit dem Kunden bestätigt.
 - **Falscher Techniker:** Die Qualifikationen der Techniker waren nicht oder nicht aktuell gepflegt.
 - **Techniker nicht einsatzfähig:** Abwesenheiten, fehlende Sicherheitsunterweisungen oder Arbeitserlaubnisse waren der Planung nicht bekannt. Kurzfristige Krankheit verhindern auch die besten Daten nicht.
@@ -66,7 +66,7 @@ Vier Details aus der Salesforce-Hilfe entscheiden, ob das in der Praxis trägt:
 - **Öffnungszeiten.** Sie werden als Arbeitszeiten am Account gepflegt und laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5) in jeden neuen Arbeitsauftrag übernommen. Sie zählen nur, wenn die Work Rule für Besuchszeiten aktiv ist.
 - **Abwesenheiten.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_create_absences.htm&type=5) plant die Optimierung Techniker nicht für Termine ein, die mit ihren Abwesenheiten kollidieren, aber nur, wenn Urlaub und Schulungen tatsächlich in Salesforce ankommen.
 
-Wie aus einem Case ein Arbeitsauftrag mit dem passenden Arbeitstyp wird, steht in [vom Case zum Techniker](../field-service-case-zu-arbeitsauftrag/). Teile und Fahrzeugbestand bekommen [einen eigenen Teil](../salesforce-field-service-ersatzteile-erp/) in dieser Serie.
+Wie aus einem Case ein Arbeitsauftrag mit dem passenden Arbeitstyp wird, steht in [vom Case zum Techniker](../field-service-case-zu-arbeitsauftrag/). Teile und Fahrzeugbestand behandle ich in [einem eigenen Teil](../salesforce-field-service-ersatzteile-erp/) dieser Serie.
 
 ## Was müssen Sie entscheiden, bevor die Planung startet?
 
@@ -75,7 +75,7 @@ Die Tabelle oben ist ein Vorschlag. Die Entscheidungen dahinter gehören Service
 - **Ein Verantwortlicher je Datenbereich.** Jemand muss geradestehen, wenn Qualifikationen veraltet sind oder eine Anlage fehlt. Ohne Namen in der Tabelle wird Datenqualität nach dem Start niemandes Aufgabe.
 - **Schnittstelle oder Handpflege.** Anlagen und Qualifikationen von Hand in Salesforce zu pflegen, geht für einen Piloten, aber nicht für den Betrieb. Jede Schnittstelle kostet Aufbau und Betrieb, jede Handliste kostet Zeit und verursacht Fehler. Entscheiden Sie je Bereich nach Menge und Änderungshäufigkeit. Wie man klärt, welches System führt, beschreibe ich auf der Seite [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 - **Welche Ursache für Fehleinsätze Sie zuerst angehen.** Nicht alle sechs Bereiche können am ersten Tag sauber sein. Die Fehleinsätze Ihrer eigenen Region zeigen, wo das Geld verloren geht.
-- **Daten über Mitarbeitende.** Qualifikationen und Abwesenheiten sind Daten über Mitarbeitende. Klären Sie früh mit den Datenschutzverantwortlichen und, wo vorhanden, mit dem Betriebsrat, welche davon in Salesforce landen dürfen. Das gilt auch für die Funktionen der App in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/).
+- **Daten über Mitarbeitende.** Qualifikationen und Abwesenheiten sind Daten über Mitarbeitende. Klären Sie früh mit den Datenschutzverantwortlichen und, wo vorhanden, mit dem Betriebsrat, welche davon in Salesforce gespeichert werden dürfen. Das gilt auch für die Funktionen der App in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/).
 
 Drei Warnzeichen, dass die Datenarchitektur nicht trägt: Disponenten führen eine private Liste, wer was kann, Qualifikationen werden erst nach einem Fehleinsatz nachgepflegt, und niemand kann sagen, welches System recht hat, wenn Salesforce und ERP bei einer Anlage abweichen.
 

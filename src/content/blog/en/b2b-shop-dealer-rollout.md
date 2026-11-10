@@ -43,7 +43,7 @@ I choose pilot dealers by four criteria:
 
 - **Many repeat orders of known parts.** Spare parts, consumables and accessories that the dealer orders by part number. These dealers find out in a week whether search and reorder work.
 - **A contact who gives honest feedback.** A purchasing lead who tells you what annoys them is worth more than the biggest account.
-- **Few special conditions.** Dealers with complex pricing come in a later wave, after the price logic has been tested on simpler cases.
+- **Few special conditions.** Dealers with complex pricing join in a later wave, after the price logic has been tested on simpler cases.
 - **A clean data basis.** Correct account hierarchy in the ERP, maintained contacts, known delivery addresses.
 
 Leave the largest dealer out of the pilot unless it fits these criteria. A bad first impression with the most important account is hard to repair.
@@ -68,7 +68,7 @@ source: Salesforce, Experience Cloud for Manufacturing page (list prices, billed
 Admin users see everything, so tests with an admin prove nothing about a dealer. Before each wave, log in as a dedicated test buyer configured to match the dealers in that wave, not with a real dealer's login, and check:
 
 1. **Entitlements.** Does the buyer see the parts they buy today, and not the parts reserved for other groups?
-2. **Prices.** Do ten typical items show the price the dealer pays today, including tier prices? If prices come live from the ERP, does the call respond fast enough?
+2. **Prices.** Do ten typical items show the price the dealer pays today, including tier prices? If prices are fetched live from the ERP, does the call respond fast enough?
 3. **Stock and delivery dates.** Do availability messages match what the ERP says?
 4. **Checkout.** Does an order with a purchase order number reach the ERP, with the correct delivery address and payment terms?
 5. **Order history and status.** Does the order appear in the store with the status from the ERP?

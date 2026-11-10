@@ -57,7 +57,7 @@ Measure | 1 to 2 weeks · client
 Leading system and key | before the cleanup · architect and business
   Decide per object which system leads and which field makes the record unique, such as the ERP customer number or the serial number.
 Merge | depends on volume · business per country
-  Review and merge pairs, most important customers first. What is duplicated in the ERP gets cleaned up there, not only in Salesforce.
+  Review and merge pairs, most important customers first. What is duplicated in the ERP is cleaned up there, not only in Salesforce.
 Prevent | in parallel · partner
   Activate duplicate rules, switch interfaces to upsert with a unique external ID, build contact matching into the portal registration.
 Maintain | ongoing · data owners

@@ -14,7 +14,7 @@ takeaways:
   - "Dubletten entstehen bei Herstellern meist an Schnittstellen und Ländergrenzen, etwa durch mehrfache ERP-Importe oder pro Land neu angelegte Kunden."
   - "Vor dem Bereinigen steht die Frage nach dem führenden System und einem eindeutigen Schlüssel, etwa ERP-Kundennummer plus Quellsystem oder Seriennummer."
   - "Salesforce bringt Matching Rules und Duplicate Rules mit. Sie verhindern neue Dubletten, bereinigen aber keine alten."
-  - "Erhält ein Agent zwei plausible Accounts ohne eindeutige Auswahlregel, kann er den falschen nutzen. Deshalb kommt die Bereinigung zuerst."
+  - "Erhält ein Agent zwei plausible Accounts ohne eindeutige Auswahlregel, kann er den falschen nutzen. Deshalb steht die Bereinigung am Anfang."
 faq:
   - q: "Wie finde ich Dubletten in Salesforce?"
     a: "In der Performance Edition und der Unlimited Edition finden Sie Dubletten mit Duplicate Jobs, die vorhandene Accounts, Kontakte und Leads anhand einer Matching Rule durchsuchen. Duplicate Reports zeigen dagegen nur, was Duplicate Rules beim Speichern protokolliert haben. In anderen Editionen oder bei Objekten wie Anlagen exportieren Sie die Daten und analysieren sie außerhalb oder nutzen ein spezialisiertes Werkzeug."
@@ -35,12 +35,12 @@ Dubletten entstehen selten, weil jemand schlampig arbeitet. Bei Herstellern sehe
 
 - **Schnittstellen, die anlegen statt aktualisieren.** Ein ERP-Import legt einen Kunden neu an, wenn er den vorhandenen nicht findet, etwa weil sich die Schreibweise geändert hat.
 - **Länder und Gesellschaften.** Ein Konzernkunde kauft in drei Ländern, und jede Vertriebsgesellschaft legt ihn selbst an, einmal mit „GmbH“, einmal mit „AG“, einmal unter dem Namen der Tochter.
-- **Händler und Endkunden.** Ein Endkunde kommt über zwei Händler und taucht zweimal auf, je einmal unter jedem Händler.
-- **Anlagen ohne eindeutige Kennung.** Seriennummern werden mit und ohne Präfix erfasst, oder Ersatzmaschinen bekommen die Nummer der alten.
+- **Händler und Endkunden.** Ein Endkunde kauft über zwei Händler und taucht zweimal auf, je einmal unter jedem Händler.
+- **Anlagen ohne eindeutige Kennung.** Seriennummern werden mit und ohne Präfix erfasst, oder Ersatzmaschinen erhalten die Nummer der alten.
 - **Portale.** Personen registrieren sich selbst und legen dabei einen neuen Kontaktdatensatz an, statt dem vorhandenen zugeordnet zu werden. Die Duplicate Rules von Salesforce greifen nicht bei der Selbstregistrierung in Experience Cloud, deshalb braucht der Registrierungsprozess einen eigenen Kontaktabgleich.
 
 ```praxis
-In meinen Field-Service-Projekten kam die installierte Basis aus dem ERP, und die Datenqualität der Assets war einer der Stolpersteine. Eine Anlage, die zweimal existiert, hat zwei halbe Servicehistorien, und der Techniker sieht vor Ort nur eine davon.
+In meinen Field-Service-Projekten stammte die installierte Basis aus dem ERP, und die Datenqualität der Assets war einer der Stolpersteine. Eine Anlage, die zweimal existiert, hat zwei halbe Servicehistorien, und der Techniker sieht vor Ort nur eine davon.
 ```
 
 Wie die installierte Basis aufgebaut sein sollte, beschreibe ich in [Asset-Hierarchie im Field Service](../field-service-asset-hierarchie-maschinen/) und in [Field Service Stammdaten](../salesforce-field-service-stammdaten/).
@@ -92,7 +92,7 @@ Die wirksamste Maßnahme liegt in der Schnittstelle. Jeder Datensatz aus dem ERP
 
 Der Fachbereich verantwortet die Datenqualität: Er entscheidet, was als derselbe Kunde gilt und welcher Datensatz der führende Datensatz ist. IT und Architektur verantworten Schlüsselmodell, Integrationslogik, Validierung und Überwachung; interne Teams oder Partner setzen die Maßnahmen um. Der Partner kann Regeln bauen und Schnittstellen umstellen, aber er kann nicht entscheiden, ob „Muster Maschinenbau GmbH“ und „Muster Maschinenbau AG“ derselbe Kunde sind. Das weiß der Vertrieb im jeweiligen Land.
 
-Ich empfehle deshalb pro Land und pro Objekt eine verantwortliche Person auf Kundenseite. Sie bekommt den monatlichen Bericht über neue mögliche Dubletten, entscheidet über das Zusammenführen und meldet, wenn eine Schnittstelle immer wieder dieselben Fehler erzeugt. Für die installierte Basis ist das oft der Serviceinnendienst, weil er die Anlagen am besten kennt. Ohne diese Rolle beginnt die Bereinigung nach einem Jahr von vorn.
+Ich empfehle deshalb pro Land und pro Objekt eine verantwortliche Person auf Kundenseite. Sie erhält den monatlichen Bericht über neue mögliche Dubletten, entscheidet über das Zusammenführen und meldet, wenn eine Schnittstelle immer wieder dieselben Fehler erzeugt. Für die installierte Basis ist das oft der Serviceinnendienst, weil er die Anlagen am besten kennt. Ohne diese Rolle beginnt die Bereinigung nach einem Jahr von vorn.
 
 ## Die 100 wichtigsten Kunden prüfen
 

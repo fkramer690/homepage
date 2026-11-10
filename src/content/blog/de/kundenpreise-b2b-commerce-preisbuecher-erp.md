@@ -11,7 +11,7 @@ topic: commerce
 categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, Kundenpreise, Preisbücher, SAP, ERP-Anbindung, Commerce Extensions]
 takeaways:
-  - "Preise kommen aus Preisbüchern, die Store und Käufergruppen zugeordnet sind. Die Preisstrategie Best Price oder Priority Price entscheidet, welches Buch gilt."
+  - "Preise stammen aus Preisbüchern, die Store und Käufergruppen zugeordnet sind. Die Preisstrategie Best Price oder Priority Price entscheidet, welches Buch gilt."
   - "Einem Store lassen sich bis zu 5 Preisbücher direkt zuordnen, weitere über Käufergruppen. Ein Preisaufruf wertet höchstens 25 gültige Preisbücher aus."
   - "SAP-Konditionen mit Kundenpreisen, Gruppenrabatten und Zuschlägen passen selten eins zu eins in Preisbücher, die einen Preis pro Produkt und Buch speichern."
   - "Mit Commerce_Domain_Pricing_Service erweitern oder ersetzen Sie die Preisfindung, etwa per Live-Aufruf an das ERP, getrennt für Produktseiten und Checkout."
@@ -20,7 +20,7 @@ faq:
   - q: "Woher kommen Kundenpreise in Salesforce B2B Commerce?"
     a: "Im Standard aus Preisbüchern: dem Standardpreisbuch, Store-Preisbüchern und Preisbüchern je Käufergruppe. Hat ein Käufer Zugriff auf mehrere Preisbücher, entscheidet die Preisstrategie: Best Price zeigt den niedrigsten Preis, Priority Price folgt der Priorität, die Sie je Käufergruppe setzen."
   - q: "Wie viele Preisbücher kann ein B2B-Store nutzen?"
-    a: "Einem Store lassen sich 5 Preisbücher direkt zuordnen, weitere kommen über Käufergruppen dazu. Ein Preisbuch fasst bis zu 350.000 Einträge (weiches Limit). Pro Preisaufruf werden nur die ersten 25 aktiven Preisbücher in der Währung des Käufers ausgewertet; dieses Limit ist hart."
+    a: "Einem Store lassen sich 5 Preisbücher direkt zuordnen, weitere lassen sich über Käufergruppen ergänzen. Ein Preisbuch fasst bis zu 350.000 Einträge (weiches Limit). Pro Preisaufruf werden nur die ersten 25 aktiven Preisbücher in der Währung des Käufers ausgewertet; dieses Limit ist hart."
   - q: "Kann B2B Commerce Preise live aus SAP holen?"
     a: "Ja, über den Extension Point Commerce_Domain_Pricing_Service. Der Dienst nutzt im Standard Preisbücher und lässt sich in Apex erweitern oder ersetzen, etwa durch einen Aufruf an SAP. processPrice wirkt auf Produktliste und Produktseite, processTransactionalPrice auf Warenkorb und Checkout. Preisbucheinträge sind je nach Funktion trotzdem erforderlich, etwa für Faster Add-to-Cart."
   - q: "Was zeigt der Shop, wenn SAP bei der Preisabfrage nicht erreichbar ist?"
@@ -28,11 +28,11 @@ faq:
 draft: false
 ---
 
-Kundenpreise in Salesforce B2B Commerce kommen im Standard aus Preisbüchern. Store-Preisbücher und Preisbücher je Käufergruppe decken Listenpreise, Händlerstaffeln und Mengenstaffeln gut ab. Entstehen Ihre Händlerpreise dagegen aus SAP-Konditionen mit Kundenpreisen, Gruppenrabatten, Zuschlägen und Gültigkeiten, haben Sie zwei Wege: Sie übertragen die berechneten Nettopreise in Preisbücher oder fragen das ERP über die Pricing Extension live ab. Beides funktioniert. Welcher Weg passt, hängt davon ab, wie viele Preiskombinationen es gibt und wie schnell Ihr ERP antwortet. Legen Sie den Preis-Master schriftlich fest, bevor ein Käufer einen Preis sieht.
+Kundenpreise in Salesforce B2B Commerce stammen im Standard aus Preisbüchern. Store-Preisbücher und Preisbücher je Käufergruppe decken Listenpreise, Händlerstaffeln und Mengenstaffeln gut ab. Entstehen Ihre Händlerpreise dagegen aus SAP-Konditionen mit Kundenpreisen, Gruppenrabatten, Zuschlägen und Gültigkeiten, haben Sie zwei Wege: Sie übertragen die berechneten Nettopreise in Preisbücher oder fragen das ERP über die Pricing Extension live ab. Beides funktioniert. Welcher Weg passt, hängt davon ab, wie viele Preiskombinationen es gibt und wie schnell Ihr ERP antwortet. Legen Sie den Preis-Master schriftlich fest, bevor ein Käufer einen Preis sieht.
 
 ## Wie funktionieren Preisbücher im B2B-Store?
 
-Salesforce B2B Commerce nutzt dieselben Preisbuch-Objekte wie Sales Cloud. Jedes Produkt braucht einen Eintrag im Standardpreisbuch, bevor es in ein anderes Preisbuch kommt. Darüber ordnen Sie eigene Preisbücher dem Store oder Käufergruppen zu. Eine Käufergruppe (Buyer Group) ist eine Menge von Käuferkonten mit gleicher Sichtbarkeit und gleichen Preisen, etwa alle Gold-Händler in Deutschland. Laut [Salesforce-Hilfe zu Preisen in B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) bekommt ein neuer Store automatisch ein Standard-Preisbuch und ein Streichpreis-Preisbuch. Das Streichpreis-Preisbuch zeigt einen durchgestrichenen Vergleichspreis neben dem für den Käufer geltenden Preis.
+Salesforce B2B Commerce nutzt dieselben Preisbuch-Objekte wie Sales Cloud. Jedes Produkt braucht einen Eintrag im Standardpreisbuch, bevor es in ein anderes Preisbuch aufgenommen wird. Darüber ordnen Sie eigene Preisbücher dem Store oder Käufergruppen zu. Eine Käufergruppe (Buyer Group) ist eine Menge von Käuferkonten mit gleicher Sichtbarkeit und gleichen Preisen, etwa alle Gold-Händler in Deutschland. Laut [Salesforce-Hilfe zu Preisen in B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) erhält ein neuer Store automatisch ein Standard-Preisbuch und ein Streichpreis-Preisbuch. Das Streichpreis-Preisbuch zeigt einen durchgestrichenen Vergleichspreis neben dem für den Käufer geltenden Preis.
 
 Hat ein Käufer Zugriff auf mehrere Preisbücher, braucht der Store eine Regel. Die [Salesforce-Hilfe zu Preisstrategien](https://help.salesforce.com/s/articleView?id=sf.comm_priority_pricing.htm&language=en_US&type=5) nennt zwei Optionen:
 
@@ -81,7 +81,7 @@ Die Abwägung ist klar:
 
 - **Live-Aufruf:** Der Käufer sieht den SAP-Nettopreis. Dafür müssen ERP und Middleware so schnell antworten, wie Käufer es auf einer Produktliste erwarten, und Sie brauchen eine Regel dafür, was der Shop zeigt, wenn SAP nicht erreichbar ist.
 - **Replizierte Preisbücher:** schnell und unabhängig vom ERP. Dafür entsprechen die Preise dem Stand der letzten Ladung, und die Preislogik existiert zweimal.
-- **Gemischt:** Preisbücher für Listen- und Staffelpreise auf Produktseiten, der Live-Aufruf dort, wo der Preis verbindlich wird. Der Leitfaden trennt das sauber: processPrice läuft auf Produktliste und Produktseite, processTransactionalPrice wirkt auf Warenkorb und Checkout. Antwortzeiten, Preissprünge zwischen Produktseite und Warenkorb und das Verhalten bei Ausfällen würde ich trotzdem in einem Prototyp prüfen, bevor ich mich festlege.
+- **Gemischt:** Preisbücher für Listen- und Staffelpreise auf Produktseiten, der Live-Aufruf dort, wo der Preis verbindlich wird. Der Leitfaden trennt das sauber: processPrice wirkt auf Produktliste und Produktseite, processTransactionalPrice wirkt auf Warenkorb und Checkout. Antwortzeiten, Preissprünge zwischen Produktseite und Warenkorb und das Verhalten bei Ausfällen würde ich trotzdem in einem Prototyp prüfen, bevor ich mich festlege.
 
 Eine dritte Option ist Advanced Pricing powered by Revenue Cloud, eine Preis-Engine innerhalb von Salesforce. Wann sich die zusätzliche Lizenz lohnt, steht in [Advanced Pricing im B2B-Shop](../advanced-pricing-b2b-shop-revenue-cloud/).
 

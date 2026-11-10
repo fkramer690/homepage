@@ -62,7 +62,7 @@ Legen Sie vor dem Go-live einen Ausgangswert fest, etwa wie viele Angebote heute
 Die teuerste Form niedriger Nutzung ist die Liste neben dem System. Ein Vertrieb, der seine Mengen bisher in einer eigenen Tabelle geführt hat, arbeitet nicht automatisch mit dem neuen Prozess, nur weil er live ist. Drei Zeichen deuten auf eine Schattenlösung hin:
 
 - **Lücken zwischen Aktivität und Prozess.** Ein Team meldet sich täglich an, legt aber kaum Datensätze an. Dann wird gelesen und anderswo gearbeitet.
-- **Nachträgliche Massenpflege.** Datensätze werden einmal im Monat in großen Mengen aktualisiert, kurz vor dem Bericht an die Geschäftsführung. Die Arbeit findet woanders statt, Salesforce bekommt nur das Ergebnis. Um das im Zeitverlauf zu erkennen, brauchen Sie Feldhistorie, Snapshots oder Ereignisdaten, weil das Datum der letzten Änderung nur die jüngste Änderung zeigt.
+- **Nachträgliche Massenpflege.** Datensätze werden einmal im Monat in großen Mengen aktualisiert, kurz vor dem Bericht an die Geschäftsführung. Die Arbeit findet woanders statt, Salesforce erhält nur das Ergebnis. Um das im Zeitverlauf zu erkennen, brauchen Sie Feldhistorie, Snapshots oder Ereignisdaten, weil das Datum der letzten Änderung nur die jüngste Änderung zeigt.
 - **Häufige Exporte.** Berichte, die regelmäßig nach Excel exportiert werden, sind oft die Grundlage einer eigenen Liste. Das Ereignis Report Export im kostenpflichtigen Event Monitoring, das einzeln oder als Teil von Salesforce Shield erhältlich ist, zeigt solche Exporte.
 
 Keines dieser Zeichen ist ein Beweis. Es ist ein Grund, mit dem Team zu sprechen, am besten über den Key User, wie in [Key User in Salesforce-Einführungen](../salesforce-key-user-netzwerk/) beschrieben.

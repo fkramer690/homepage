@@ -28,7 +28,7 @@ faq:
 draft: false
 ---
 
-Between Salesforce B2B Commerce and SAP, data flows four ways. Master data such as accounts, products, price books and entitlements comes into Salesforce in batches. In the cart and at checkout, the store makes live calls to SAP for price, availability and credit through Commerce extensions. The finished order goes out to SAP. Order confirmation, delivery and invoice come back so buyers see the status in the store. SAP stays the master for prices, stock, credit and the order. Salesforce holds the buying experience and a copy of what it needs for that. The real design work is deciding, per data item, whether it is copied or called live.
+Between Salesforce B2B Commerce and SAP, data flows four ways. Master data such as accounts, products, price books and entitlements is loaded into Salesforce in batches. In the cart and at checkout, the store makes live calls to SAP for price, availability and credit through Commerce extensions. The finished order goes out to SAP. Order confirmation, delivery and invoice come back so buyers see the status in the store. SAP stays the master for prices, stock, credit and the order. Salesforce holds the buying experience and a copy of what it needs for that. The real design work is deciding, per data item, whether it is copied or called live.
 
 ## What flows between B2B Commerce and SAP?
 

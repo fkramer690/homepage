@@ -42,7 +42,7 @@ Drei Änderungen überlagern sich und werden leicht verwechselt:
 
 Die Details stehen im [Entwickler-Leitfaden zu Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release). Normale Datenoperationen über die SOAP-API, also Abfragen, Anlegen oder Ändern, funktionieren weiter. Es ändert sich, wie sich Integrationen anmelden.
 
-![Zeitstrahl der Salesforce-Login-Änderungen für Integrationen: Ab 1. Dezember 2026 braucht SOAP login() die Berechtigung Use Any API Auth, am 20. Februar 2027 endet der OAuth Username-Password Flow für Connected Apps, mit Summer '27 entfällt SOAP login() in den API-Versionen 31.0 bis 64.0 und die Versionen 31.0 bis 40.0 bekommen keine Updates mehr, mit Summer '28 fallen SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 aus. Abfragen, Anlegen und Ändern funktionieren weiter, es ändert sich, wie sich Integrationen anmelden.](../../../assets/blog/password-flow-timeline-de.png)
+![Zeitstrahl der Salesforce-Login-Änderungen für Integrationen: Ab 1. Dezember 2026 braucht SOAP login() die Berechtigung Use Any API Auth, am 20. Februar 2027 endet der OAuth Username-Password Flow für Connected Apps, mit Summer '27 entfällt SOAP login() in den API-Versionen 31.0 bis 64.0 und die Versionen 31.0 bis 40.0 erhalten keine Updates mehr, mit Summer '28 fallen SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 aus. Abfragen, Anlegen und Ändern funktionieren weiter, es ändert sich, wie sich Integrationen anmelden.](../../../assets/blog/password-flow-timeline-de.png)
 
 ## Enterprise-Organisationen trifft es stärker
 
@@ -54,7 +54,7 @@ Eine kleine Org hat eine Handvoll Integrationen, und der Admin kennt sie. Eine E
 - **Backup-, Archiv- und Reporting-Tools**, die jede Nacht Daten abziehen.
 - **Managed Packages und Konnektoren** von Herstellern, die selbst entscheiden, welchen Flow sie nutzen.
 
-Das gemeinsame Problem: Niemand hat eine vollständige Liste. Integrationen wurden von verschiedenen Partnern gebaut, an verschiedenen Orten dokumentiert und laufen oft mit einem technischen Benutzer, den sich mehrere Systeme teilen. Wird der Flow abgeschaltet, scheitert die Token-Anfrage mit einer klaren Fehlermeldung, aber oft schaut niemand hin. Ein nächtlicher Job aktualisiert keine Datensätze mehr, ein Bericht zeigt die Zahlen von gestern, und jemand merkt es Tage später, wenn Vertrieb oder Service mit veralteten Daten arbeiten.
+Das gemeinsame Problem: Niemand hat eine vollständige Liste. Integrationen wurden von verschiedenen Partnern gebaut, an verschiedenen Orten dokumentiert und nutzen oft einen technischen Benutzer, den sich mehrere Systeme teilen. Wird der Flow abgeschaltet, scheitert die Token-Anfrage mit einer klaren Fehlermeldung, aber oft schaut niemand hin. Ein nächtlicher Job aktualisiert keine Datensätze mehr, ein Bericht zeigt die Zahlen von gestern, und jemand merkt es Tage später, wenn Vertrieb oder Service mit veralteten Daten arbeiten.
 
 Deshalb sehe ich das vor allem als Governance-Aufgabe und weniger als technische. Die technische Umstellung pro Integration ist beherrschbar. Das Risiko liegt in dem, was niemand kennt.
 
@@ -97,7 +97,7 @@ Integrationen verbinden die Systeme des Kunden, und die Zugangsdaten gehören in
 - **Ein benannter Verantwortlicher pro Integration** auf Kundenseite, auch wenn ein Partner die technische Arbeit macht.
 - **Ein eigener Integrationsuser pro System oder Vertrauensgrenze**, nur mit den Rechten, die er braucht. Getrennte Benutzer lohnen sich, wo Verantwortliche, Rechte, Kritikalität oder Secret-Rotation verschieden sind. Geteilte technische Benutzer machen es unmöglich zu erkennen, welches System was tut.
 - **Secrets und Zertifikate im Tresor des Kunden**, erneuert beim Partnerwechsel. Das grundsätzliche Prinzip erkläre ich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/).
-- **Änderungen laufen über den normalen Release-Prozess**, mit der Konfiguration der neuen Connected App oder External Client App im Repository und Deployment über die Pipeline.
+- **Änderungen folgen dem normalen Release-Prozess**, mit der Konfiguration der neuen Connected App oder External Client App im Repository und Deployment über die Pipeline.
 
 ## Erster Schritt: Bestandsaufnahme bis Ende November 2026
 

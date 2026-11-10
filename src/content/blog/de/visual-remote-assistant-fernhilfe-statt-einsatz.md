@@ -11,7 +11,7 @@ topic: field-service
 categories: [field-service]
 tags: [Visual Remote Assistance, Visual Remote Assistant, Field Service, Fernservice, Störungshotline, Betriebsrat]
 takeaways:
-  - "Der Kunde bekommt einen Link per SMS oder E-Mail. Die beidseitige Videoverbindung öffnet sich im Browser, ohne App, Login oder Passwort."
+  - "Der Kunde erhält einen Link per SMS oder E-Mail. Die beidseitige Videoverbindung öffnet sich im Browser, ohne App, Login oder Passwort."
   - "Das Add-on kostet 50 € pro Nutzer und Monat zusätzlich zur Basislizenz und ist in Agentforce 1 Field Service enthalten. Externe Kunden brauchen keine Lizenz."
   - "Video ersetzt den Einsatz bei Parametern, Bedienfehlern und Resets. Bei mechanischen Schäden kann es ihn verkürzen."
   - "Vorher klären Sie die Einwilligung zur Aufzeichnung, die Einbindung des Betriebsrats und welche Fehler ohne Einsatz geschlossen werden dürfen."
@@ -20,7 +20,7 @@ faq:
   - q: "Was ist Visual Remote Assistance im Field Service?"
     a: "Visual Remote Assistance, auf Deutsch visuelle Fernunterstützung, bedeutet: Ein Serviceexperte sieht die Maschine über die Handykamera des Kunden und leitet den Bediener per Video und mit Markierungen im Bild an. In Salesforce heißt das Produkt dafür Visual Remote Assistant, ein Add-on für Service Cloud (inzwischen auch Agentforce Service genannt) und Field Service."
   - q: "Was kostet Visual Remote Assistant?"
-    a: "Laut Salesforce-Produktseite kostet das Add-on 50 € oder 50 Dollar pro Nutzer und Monat bei jährlicher Abrechnung (geprüft am 9. November 2026), zusätzlich zur Basislizenz für Service Cloud oder Field Service. Im Paket Agentforce 1 Field Service ist es enthalten. Interne Nutzer, die Sitzungen starten oder führen, brauchen eine Lizenz und die entsprechenden Berechtigungen; externe Eingeladene kommen über einen Link dazu und brauchen keine Lizenz."
+    a: "Laut Salesforce-Produktseite kostet das Add-on 50 € oder 50 Dollar pro Nutzer und Monat bei jährlicher Abrechnung (geprüft am 9. November 2026), zusätzlich zur Basislizenz für Service Cloud oder Field Service. Im Paket Agentforce 1 Field Service ist es enthalten. Interne Nutzer, die Sitzungen starten oder führen, brauchen eine Lizenz und die entsprechenden Berechtigungen; externe Eingeladene nehmen über einen Link teil und brauchen keine Lizenz."
   - q: "Braucht der Kunde eine App für Visual Remote Assistant?"
     a: "Nein. Der Mitarbeiter schickt einen Link per SMS oder E-Mail, der Kunde tippt darauf, akzeptiert die Nutzungsbedingungen und gibt die Kamera frei. Die Videoverbindung läuft dann im mobilen Browser, ohne App-Download, Login oder Passwort."
   - q: "Kann ein Techniker vor Ort eine Videositzung mit einem Experten starten?"
@@ -30,7 +30,7 @@ faq:
 draft: false
 ---
 
-Visual Remote Assistance, also visuelle Fernunterstützung per Video, ersetzt einen Technikereinsatz, wenn der Bediener vor Ort den Fehler mit Anleitung selbst beheben kann: ein falscher Parameter, ein Bedienfehler, ein Reset, ein verschmutzter Sensor. In Salesforce heißt das Werkzeug dafür Visual Remote Assistant. Der Kunde bekommt einen Link per SMS oder E-Mail und startet damit im mobilen Browser eine Videoverbindung, ohne App und Login. Ihr Mitarbeiter zeichnet direkt ins Bild. Das Add-on kostet 50 € pro Nutzer und Monat zusätzlich zur Basislizenz und ist in Agentforce 1 Field Service enthalten. Bei mechanischen Schäden erspart das Video selten den Einsatz, oft aber einen zweiten.
+Visual Remote Assistance, also visuelle Fernunterstützung per Video, ersetzt einen Technikereinsatz, wenn der Bediener vor Ort den Fehler mit Anleitung selbst beheben kann: ein falscher Parameter, ein Bedienfehler, ein Reset, ein verschmutzter Sensor. In Salesforce heißt das Werkzeug dafür Visual Remote Assistant. Der Kunde erhält einen Link per SMS oder E-Mail und startet damit im mobilen Browser eine Videoverbindung, ohne App und Login. Ihr Mitarbeiter zeichnet direkt ins Bild. Das Add-on kostet 50 € pro Nutzer und Monat zusätzlich zur Basislizenz und ist in Agentforce 1 Field Service enthalten. Bei mechanischen Schäden erspart das Video selten den Einsatz, oft aber einen zweiten.
 
 ## Was kann Visual Remote Assistant?
 
@@ -58,7 +58,7 @@ quelle: Salesforce-Produktseite Visual Remote Assistant und Preisseite Field Ser
 
 Die US-Produktseite nennt dieselben Zahlen in Dollar. Die [Preisseite für Field Service](https://www.salesforce.com/service/field-service-management/pricing/) führt das Add-on nur in Dollar mit denselben 50 Dollar auf und listet Visual Remote Assistant als Bestandteil von Agentforce 1 Field Service. Trailhead nennt Service-Cloud- oder Field-Service-Lizenzen als Voraussetzung; die Lizenzen für Visual Remote Assistant selbst kaufen Sie über Ihren Account Executive.
 
-Lizenziert werden die internen Nutzer, die Sitzungen starten oder führen: Hotline, Remote-Experten, vielleicht erfahrene Techniker. Externe Kunden kommen über den Link dazu und brauchen keine Lizenz. Acht Nutzer kosten zum Listenpreis 400 € im Monat oder 4.800 € im Jahr, zusätzlich zu ihren Service-Cloud- oder Field-Service-Lizenzen. Verglichen mit einer einzigen eingesparten Reise ins Ausland ist das wenig. Der eigentliche Aufwand liegt in der Einrichtung, in Netz- und Geräteprüfungen, in den Regeln für Fehlerbehebungen per Video und in der Schulung der Hotline.
+Lizenziert werden die internen Nutzer, die Sitzungen starten oder führen: Hotline, Remote-Experten, vielleicht erfahrene Techniker. Externe Kunden nehmen über den Link teil und brauchen keine Lizenz. Acht Nutzer kosten zum Listenpreis 400 € im Monat oder 4.800 € im Jahr, zusätzlich zu ihren Service-Cloud- oder Field-Service-Lizenzen. Verglichen mit einer einzigen eingesparten Reise ins Ausland ist das wenig. Der eigentliche Aufwand liegt in der Einrichtung, in Netz- und Geräteprüfungen, in den Regeln für Fehlerbehebungen per Video und in der Schulung der Hotline.
 
 ## Wann ersetzt Visual Remote Assistance den Einsatz?
 
@@ -98,7 +98,7 @@ Meine Faustregel: Beginnen Sie mit dem Werkzeug, das die Sitzung dort ablegt, wo
 
 **Betriebsrat für eigene Mitarbeitende.** Auch ohne Aufzeichnung machen Sitzungszeiten, Dauer, Notizen und VRA-Berichte pro Nutzer das System zu einer technischen Einrichtung, mit der sich die Leistung überwachen lässt. Hier redet der Betriebsrat von Anfang an mit, auch bei Zugriffen, Berichten und Aufbewahrung. Ich würde das Thema zusammen mit Zeiterfassung und Standortdaten im Rahmen der [Field-Service-Einführung](../salesforce-field-service-einfuehrung/) einbringen.
 
-**Region für das Hosting.** Das Installationshandbuch nennt AWS Nordamerika als Standard und AWS Europa als Option. Die Sitzungsdomains verwenden techsee.me, SMS-Einladungen laufen über Gateway-Anbieter. Ihr Datenschutzbeauftragter sollte darüber vor dem ersten Kundengespräch informiert sein, und Ihre IT prüft Firewall-Regeln, Browser und die Kamerafreigabe auf Kundengeräten.
+**Region für das Hosting.** Das Installationshandbuch nennt AWS Nordamerika als Standard und AWS Europa als Option. Die Sitzungsdomains verwenden techsee.me, SMS-Einladungen werden über Gateway-Anbieter versendet. Ihr Datenschutzbeauftragter sollte darüber vor dem ersten Kundengespräch informiert sein, und Ihre IT prüft Firewall-Regeln, Browser und die Kamerafreigabe auf Kundengeräten.
 
 **Welche Fehler ohne Einsatz geschlossen werden dürfen.** Legen Sie schriftlich fest, welche Fehlerklassen eine Videositzung ohne Einsatzbericht schließen darf und wie die Anweisung an den Bediener am Case dokumentiert wird. Wenn der Bediener einer falschen Anweisung folgt und die Maschine beschädigt, müssen Sie wissen, was gesagt wurde.
 

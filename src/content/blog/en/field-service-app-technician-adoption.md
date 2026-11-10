@@ -15,7 +15,7 @@ takeaways:
   - "Technicians accept the app when it takes work off their hands on site: asset history, spare parts and short forms instead of paper."
   - "In my projects, location tracking and who can see working hours data were the most sensitive topics. Raise them openly before setup, with the works council."
   - "An app that fails in a basement without a signal quickly loses the technicians' trust. Test the core job offline with primed data before the rollout."
-  - "If feedback receives a quick, visible response and small fixes follow fast, word gets around. If nothing happens, the required field gets filled with dots."
+  - "If feedback receives a quick, visible response and small fixes follow fast, word gets around. If nothing happens, the required field is filled with dots."
 faq:
   - q: "Why do technicians reject a new Field Service app?"
     a: "In my projects, usually for three reasons: they fear more control, for example over their location; they see more documentation instead of less; or the app does not work reliably on site, for example without signal."
@@ -80,7 +80,7 @@ It matters that this group can bring about real changes. If their feedback disap
 
 The first weeks after a region goes live are when technicians have the most questions about the app. During this phase the project team should be available rather than already starting the next region. After that, reinforcement counts: app updates can change workflows. Test major releases and relevant patches in the beta program, where a preview of about 30 days or 7 days is available, and define a separate response for emergency releases that come without a beta, as described in [testing Field Service app updates](../field-service-mobile-app-updates-testing/).
 
-A short feedback route matters just as much. A technician who notices on site that a required field does not fit should be able to report it in a minute, ideally straight from the app or through their contact in the region. If the feedback is acknowledged and classified within a set time, small fixes follow quickly and larger ones get a clear decision and date. Word spreads in the team, and that works better than a training session. If nothing happens, the required field soon gets filled with dots.
+A short feedback route matters just as much. A technician who notices on site that a required field does not fit should be able to report it in a minute, ideally straight from the app or through their contact in the region. If the feedback is acknowledged and classified within a set time, small fixes follow quickly and larger ones receive a clear decision and date. Word spreads in the team, and that works better than a training session. If nothing happens, the required field is soon filled with dots.
 
 The numbers show whether the app has caught on: service appointments or work orders completed in the app on time instead of entered later in the office, and service reports ready on the day of the job. Because required fields can force entries, add quality signals: rework in the back office, missing or invalid entries, sync errors and phone calls to the office. For how to set up such numbers, see [measuring Salesforce adoption after go-live](../salesforce-adoption-metrics-after-go-live/).
 

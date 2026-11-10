@@ -30,7 +30,7 @@ faq:
 draft: false
 ---
 
-Channel Revenue Management lohnt sich für Ship and Debit, wenn ein Hersteller viele Sonderpreisansprüche von Distributoren bekommt und heute von Hand prüft. Ship and Debit heißt: Der Distributor verkauft an einen benannten Endkunden unter seinem eigenen Einkaufspreis und fordert die Differenz ein. Salesforce prüft solche Ansprüche gegen Programmregeln und Transaktionsdaten und ergänzt Preisschutz für sinkende Listenpreise. Das Add-on steht mit 30.000 Dollar pro Org und Jahr in der Preisliste. Partnerzugang kommt extra dazu. Es trägt sich nur, wenn Abverkaufs- und Bestandsdaten der Distributoren ankommen, denn ohne sie prüft die Validierung vor allem, ob die Belege zum Programm passen.
+Channel Revenue Management lohnt sich für Ship and Debit, wenn ein Hersteller viele Sonderpreisansprüche von Distributoren erhält und heute von Hand prüft. Ship and Debit heißt: Der Distributor verkauft an einen benannten Endkunden unter seinem eigenen Einkaufspreis und fordert die Differenz ein. Salesforce prüft solche Ansprüche gegen Programmregeln und Transaktionsdaten und ergänzt Preisschutz für sinkende Listenpreise. Das Add-on steht mit 30.000 Dollar pro Org und Jahr in der Preisliste. Der Partnerzugang kostet extra. Es trägt sich nur, wenn Abverkaufs- und Bestandsdaten der Distributoren ankommen, denn ohne sie prüft die Validierung vor allem, ob die Belege zum Programm passen.
 
 ## Was ist Ship and Debit?
 
@@ -59,7 +59,7 @@ Abrechnen | Finanzabteilung
   Prüfen, korrigieren und erstatten. Das Transaction Journal hält freigegebene Auszahlungen für die Prüfung fest.
 ```
 
-Flows steuern Einreichung und Freigabe, die Data Processing Engine verarbeitet große Mengen. Das zentrale Objekt ist der Rebate Partner Special Pricing Term. Er enthält Sonderpreis, Referenzpreis, erstattungsfähige Differenz, Mengenschwellen, Berechtigungen und Produkte. Ein Anspruch, der alle Prüfungen besteht, bekommt den Status System Processed. Die erste Unit nennt außerdem CRM-Analytics-Dashboards und vordefinierte Workflows für die Prüfung. Voraussetzung ist außerdem das Modul Business Rules Engine.
+Flows steuern Einreichung und Freigabe, die Data Processing Engine verarbeitet große Mengen. Das zentrale Objekt ist der Rebate Partner Special Pricing Term. Er enthält Sonderpreis, Referenzpreis, erstattungsfähige Differenz, Mengenschwellen, Berechtigungen und Produkte. Ein Anspruch, der alle Prüfungen besteht, erhält den Status System Processed. Die erste Unit nennt außerdem CRM-Analytics-Dashboards und vordefinierte Workflows für die Prüfung. Voraussetzung ist außerdem das Modul Business Rules Engine.
 
 Die Zahlung bleibt, wo sie heute ist. In der typischen Zielarchitektur rechnet Salesforce und gibt frei, die Gutschrift bucht das ERP; Salesforce ersetzt die Buchhaltung nicht. Ob die Übergabe beim freigegebenen Anspruch oder bei der Auszahlung ansetzt, legt das Lösungsdesign fest. Das ist dieselbe Aufteilung wie beim [Rebate Management](../rebate-management-haendlerboni/), und die Schnittstelle, die freigegebene Beträge nach SAP bringt, sollte gleich mitgeplant werden.
 
@@ -72,7 +72,7 @@ Salesforce veröffentlicht zwei unterschiedliche Sichten:
 | [Add-ons der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) | Channel Revenue Management for Manufacturing, 30.000 Dollar pro Org und Jahr, verfügbar mit den Sales-Editionen und Max |
 | [Preisseite Channel Revenue Management](https://www.salesforce.com/sales/channel-revenue-management/pricing/) | Kein Preis, Angebot auf Anfrage. Setzt eine Sales-Cloud- oder CRM-Lizenz voraus. Enthält 10 Channel-Manager-Admin-Nutzer, Kanalbestandsverfolgung, Deal- und Design-Registrierung, Rebate-, Ship-and-Debit- und Preisschutz-Management. Partnerzugang, weitere Nutzer und Auszahlungen zukaufbar |
 
-Die 30.000 Dollar sind also der Listenpreis des Add-ons für die Org, nicht zwingend der Vertragswert. Partnerzugang für Distributoren kommt dazu; welche externe Lizenz dafür passt, lässt sich aus den öffentlichen Seiten nicht eindeutig ableiten. Die [Experience-Cloud-Seite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) nennt für Partner Community for Manufacturing 20 Dollar pro Login oder 50 Dollar pro Mitglied und Monat.
+Die 30.000 Dollar sind also der Listenpreis des Add-ons für die Org, nicht zwingend der Vertragswert. Partnerzugang für Distributoren kostet extra; welche externe Lizenz dafür passt, lässt sich aus den öffentlichen Seiten nicht eindeutig ableiten. Die [Experience-Cloud-Seite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) nennt für Partner Community for Manufacturing 20 Dollar pro Login oder 50 Dollar pro Mitglied und Monat.
 
 ```hinweis offen
 Auszahlungen werden gezählt: Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=xcloud.chrm_payout_usage.htm&language=en_US&type=5) richtet sich der Verbrauch nach dem Gesamtwert aller Auszahlungen aus Boni, Ship and Debit, Preisschutz und Lagerrotation in der Vertragslaufzeit. Wie viel davon enthalten ist, sagen die Seiten nicht. Lassen Sie sich von Salesforce schriftlich geben, welcher Preis und welches Auszahlungsvolumen für Ihren Vertrag gelten.
@@ -82,9 +82,9 @@ Wie ich daraus einen Vergleich über fünf Jahre gegen den heutigen Prozess mach
 
 ## Was unterscheidet Ship and Debit von Händlerboni?
 
-Boni belohnen abgesetzte Mengen. Ein Händler erreicht über ein Quartal oder ein Jahr eine Staffel und bekommt nachträglich einen Prozentsatz zurück, wie in [Rebate Management für Händlerboni](../rebate-management-haendlerboni/) beschrieben. Ship and Debit gleicht Preisdifferenzen aus, Geschäft für Geschäft, für einen bestimmten Endkunden. Preisschutz gleicht ebenfalls Preisdifferenzen aus, ausgelöst durch eine Listenpreisänderung statt durch ein Geschäft.
+Boni belohnen abgesetzte Mengen. Ein Händler erreicht über ein Quartal oder ein Jahr eine Staffel und erhält nachträglich einen Prozentsatz zurück, wie in [Rebate Management für Händlerboni](../rebate-management-haendlerboni/) beschrieben. Ship and Debit gleicht Preisdifferenzen aus, Geschäft für Geschäft, für einen bestimmten Endkunden. Preisschutz gleicht ebenfalls Preisdifferenzen aus, ausgelöst durch eine Listenpreisänderung statt durch ein Geschäft.
 
-Dieser Unterschied ändert, wer mit dem System arbeitet. Boni berechnen Programmverantwortliche am Periodenende. Ship-and-Debit-Ansprüche kommen laufend, von Sachbearbeitern bei Distributoren, und beim Hersteller muss sie jemand innerhalb weniger Tage bearbeiten. Trailhead verspricht Erstattungen innerhalb von Stunden statt Wochen für Ansprüche, die die automatische Prüfung bestehen. Für die anderen braucht es weiterhin einen Menschen.
+Dieser Unterschied ändert, wer mit dem System arbeitet. Boni berechnen Programmverantwortliche am Periodenende. Ship-and-Debit-Ansprüche gehen laufend ein, von Sachbearbeitern bei Distributoren, und beim Hersteller muss sie jemand innerhalb weniger Tage bearbeiten. Trailhead verspricht Erstattungen innerhalb von Stunden statt Wochen für Ansprüche, die die automatische Prüfung bestehen. Für die anderen braucht es weiterhin einen Menschen.
 
 Nach meiner Einschätzung brauchen viele Hersteller, die über Händler verkaufen, nur Bonusprogramme. Ship and Debit wird wichtig, wenn Distributoren Lager halten und Projekte für Endkunden anbieten, die Ihnen ebenfalls bekannt sind. Das ist typisch für Komponenten, Elektronik oder Industriebedarf im zweistufigen Vertrieb.
 
@@ -96,11 +96,11 @@ Entscheidend sind Abverkauf und Bestand. Ein Anspruch sagt: Ich habe 1.200 Stüc
 - **Dass die Ware aus Ihrer Lieferung stammt.** Kanalbestand pro Distributor, damit ein Anspruch über 1.200 Stück nicht über dem liegt, was der Distributor gekauft hat.
 - **Dass der Endkunde berechtigt war.** Saubere Kundenstammdaten, damit „Kunde X GmbH“ und „Kunde X GmbH & Co. KG“ als dieselbe Firma erkannt werden, sofern sie identisch sind.
 
-Fehlen strukturierte Abverkaufsdaten, prüft die Validierung vor allem, ob die Belege zum Programm passen. Fehlt der Bestand, prüft sie nicht, ob die beanspruchte Menge zu Lieferungen, Retouren und dem Lagerbestand des Distributors passt. Genau dieser Abgleich deckt Doppel- und Überzahlungen auf. Überzahlungen beim Preisschutz entstehen aus derselben Lücke: Ein Distributor meldet Lagerbestand zum alten Preis, den er nicht mehr hat. Die Kanalbestandsverfolgung ist im Paket enthalten, die Daten müssen trotzdem von den Distributoren kommen. Wie Distributorbestand nach Salesforce kommt und wie alt er dann ist, beschreibe ich in [Händlerbestand und Nachschub mit Agentforce](../haendlerbestand-nachschub-agentforce/).
+Fehlen strukturierte Abverkaufsdaten, prüft die Validierung vor allem, ob die Belege zum Programm passen. Fehlt der Bestand, prüft sie nicht, ob die beanspruchte Menge zu Lieferungen, Retouren und dem Lagerbestand des Distributors passt. Genau dieser Abgleich deckt Doppel- und Überzahlungen auf. Überzahlungen beim Preisschutz entstehen aus derselben Lücke: Ein Distributor meldet Lagerbestand zum alten Preis, den er nicht mehr hat. Die Kanalbestandsverfolgung ist im Paket enthalten, die Daten müssen trotzdem die Distributoren liefern. Wie Distributorbestand nach Salesforce gelangt und wie alt er dann ist, beschreibe ich in [Händlerbestand und Nachschub mit Agentforce](../haendlerbestand-nachschub-agentforce/).
 
 ## Beispiel: 15 Distributoren und 600 Ansprüche im Monat
 
-Die Zahlen sind Annahmen. Ein Hersteller elektronischer Komponenten verkauft über 15 Distributoren in Europa. Pro Monat kommen 600 Ship-and-Debit-Ansprüche per E-Mail, mit Excel-Listen im Anhang. Zwei Personen im Vertriebsinnendienst prüfen sie gegen Sonderpreisfreigaben in einem gemeinsamen Ordner und geben freigegebene Beträge an die Buchhaltung.
+Die Zahlen sind Annahmen. Ein Hersteller elektronischer Komponenten verkauft über 15 Distributoren in Europa. Pro Monat gehen 600 Ship-and-Debit-Ansprüche per E-Mail ein, mit Excel-Listen im Anhang. Zwei Personen im Vertriebsinnendienst prüfen sie gegen Sonderpreisfreigaben in einem gemeinsamen Ordner und geben freigegebene Beträge an die Buchhaltung.
 
 Mit Channel Revenue Management werden Sonderpreise als Preiskonditionen abgebildet, Distributoren reichen Ansprüche über das Portal ein, und die Prüfung lehnt Dubletten und Ansprüche über der freigegebenen Menge ab, bevor ein Mensch sie prüft. Angenommen, 80 Prozent bestehen automatisch. Die beiden Personen bearbeiten dann 120 Ausnahmen statt 600 Ansprüche. Die 80 Prozent sind keine Salesforce-Kennzahl. Für einen Business Case würde ich vorher 100 bis 200 historische Ansprüche mit den geplanten Regeln prüfen und die echte Quote messen.
 
@@ -112,4 +112,4 @@ Dagegen stehen 30.000 Dollar im Jahr für das Add-on, Portallizenzen für 15 Dis
 2. **Daten.** Prüfen, welche Distributoren Abverkauf und Bestand als Datei liefern können und wie oft.
 3. **Test.** 100 bis 200 historische Ansprüche gegen die geplanten Regeln prüfen und zählen, wie viele automatisch durchgehen.
 4. **Preis.** Add-on, Partnerzugang und Auszahlungsvolumen schriftlich im Angebot festhalten lassen.
-5. **Prozess.** Festlegen, wer Ausnahmen freigibt und wie freigegebene Beträge ins ERP kommen.
+5. **Prozess.** Festlegen, wer Ausnahmen freigibt und wie freigegebene Beträge ins ERP gelangen.

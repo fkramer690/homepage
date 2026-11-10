@@ -13,7 +13,7 @@ tags: [B2B Commerce, SAP, ERP-Anbindung, Commerce Extensions, MuleSoft, Schnitts
 takeaways:
   - "Daten fließen in vier Richtungen: Stammdaten per Batch, Live-Abfragen in Warenkorb und Checkout, der Auftrag zu SAP, Status, Lieferung und Rechnung zurück."
   - "Accounts, Produkte, Kategorien, Preisbücher und Berechtigungen werden nach Salesforce kopiert; der Produktimport verarbeitet CSV-Dateien in asynchronen Jobs."
-  - "Preis, Bestand, Steuer, Fracht und die Prüfung vor dem Absenden laufen über Extension Points wie Commerce_Domain_Pricing_Service."
+  - "Preis, Bestand, Steuer, Fracht und die Prüfung vor dem Absenden nutzen Extension Points wie Commerce_Domain_Pricing_Service."
   - "Salesforce empfiehlt seit Winter '24 Extensions gegenüber den älteren Checkout-Integrationen. Zahlungen lassen sich nicht per Extension anpassen."
   - "Connected-App-Schnittstellen mit dem OAuth Username-Password Flow müssen vor dem 20. Februar 2027 umgestellt werden, meist auf Client Credentials."
 faq:
@@ -28,7 +28,7 @@ faq:
 draft: false
 ---
 
-Zwischen Salesforce B2B Commerce und SAP fließen Daten in vier Richtungen. Stammdaten wie Accounts, Produkte, Preisbücher und Berechtigungen kommen per Batch nach Salesforce. In Warenkorb und Checkout fragt der Shop über Commerce Extensions live bei SAP nach Preis, Verfügbarkeit und Kredit. Der fertige Auftrag geht an SAP. Auftragsbestätigung, Lieferung und Rechnung kommen zurück, damit Händler den Status im Shop sehen. SAP bleibt führend für Preise, Bestand, Kredit und den Auftrag. Salesforce bildet das Einkaufserlebnis ab und hält eine Kopie der Daten, die es dafür braucht. Die eigentliche Arbeit besteht darin, für jede Datenart zu entscheiden: kopieren oder live abfragen.
+Zwischen Salesforce B2B Commerce und SAP fließen Daten in vier Richtungen. Stammdaten wie Accounts, Produkte, Preisbücher und Berechtigungen werden per Batch nach Salesforce übertragen. In Warenkorb und Checkout fragt der Shop über Commerce Extensions live bei SAP nach Preis, Verfügbarkeit und Kredit. Der fertige Auftrag geht an SAP. Auftragsbestätigung, Lieferung und Rechnung werden zurückgemeldet, damit Händler den Status im Shop sehen. SAP bleibt führend für Preise, Bestand, Kredit und den Auftrag. Salesforce bildet das Einkaufserlebnis ab und hält eine Kopie der Daten, die es dafür braucht. Die eigentliche Arbeit besteht darin, für jede Datenart zu entscheiden: kopieren oder live abfragen.
 
 ## Welche Daten fließen zwischen B2B Commerce und SAP?
 
@@ -49,7 +49,7 @@ Kopieren Sie Daten, wo ein gewisses Datenalter vertretbar ist und der Shop weite
 
 Für Produkte bietet Salesforce eine [Produktimport-API](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-import-apis.html). Sie liest eine CSV-Datei, deren Spaltenüberschriften Produkt-, Kategorie- und Preisbuchinformationen zugeordnet sind, und läuft als asynchroner Job mit abfragbarem Status. Preisbücher werden über die Import-Einstellungen desselben Jobs zugeordnet. Das reicht für die Erstbefüllung und für regelmäßige Updates aus einer Middleware, die die Datei schreibt.
 
-Käufergruppen (Buyer Groups) und Entitlement Policies, also die Regeln, wer welches Produkt sieht, stehen selten so in SAP. Sie müssen abgeleitet werden, zum Beispiel aus Verkaufsorganisation, Kundengruppe oder Marke. Schreiben Sie diese Ableitung als Regel auf. Sonst pflegt jemand die Käufergruppen von Hand in Salesforce, und der Shop läuft SAP innerhalb weniger Monate davon.
+Käufergruppen (Buyer Groups) und Entitlement Policies, also die Regeln, wer welches Produkt sieht, stehen selten so in SAP. Sie müssen abgeleitet werden, zum Beispiel aus Verkaufsorganisation, Kundengruppe oder Marke. Schreiben Sie diese Ableitung als Regel auf. Sonst pflegt jemand die Käufergruppen von Hand in Salesforce, und der Shop weicht innerhalb weniger Monate von SAP ab.
 
 Wem welches Objekt gehört, beantwortet meine [Object Ownership Matrix](../object-ownership-matrix-salesforce/). Für einen Shop ergänze ich eine Spalte: kopiert oder live.
 
@@ -73,11 +73,11 @@ Die [Seite zur Integrationsarchitektur](https://developer.salesforce.com/docs/co
 
 Eine Ausnahme gibt es. Laut [Extensions-Leitfaden](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html) lassen sich Zahlungen noch nicht per Extension anpassen, für Zahlungen bleibt das ältere Integrationsframework der Weg. Mit SAP hat das selten zu tun, weil Händler meist auf Rechnung mit Bestellnummer kaufen.
 
-Für neue Shops würde ich jeden synchronen SAP-Aufruf im Warenkorb und Checkout, etwa für Preis, Bestand, Steuer und die Auftragsprüfung, als Extension bauen. Batch-Importe, der Auftragsexport und Rückmeldungen aus SAP laufen über Import-APIs, Middleware oder andere Integrationsmuster. Registrierung und Zuordnung zum Store laufen über die Salesforce CLI und können damit im Repository und in der Pipeline liegen. Mehr dazu in [Commerce Extensions: Eigenentwicklung, die Updates übersteht](../commerce-extensions-eigenentwicklung/).
+Für neue Shops würde ich jeden synchronen SAP-Aufruf im Warenkorb und Checkout, etwa für Preis, Bestand, Steuer und die Auftragsprüfung, als Extension bauen. Batch-Importe, der Auftragsexport und Rückmeldungen aus SAP nutzen Import-APIs, Middleware oder andere Integrationsmuster. Registrierung und Zuordnung zum Store erfolgen über die Salesforce CLI und können damit im Repository und in der Pipeline liegen. Mehr dazu in [Commerce Extensions: Eigenentwicklung, die Updates übersteht](../commerce-extensions-eigenentwicklung/).
 
 ## Wie kommt der Auftrag zu SAP, und was kommt zurück?
 
-Sendet der Händler die Bestellung ab, legt B2B Commerce in Salesforce einen Auftrag und eine Order Summary an. Die Order Summary hat ein Feld `OrderLifeCycleType`. Laut [Developer Guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html) kennzeichnet "unmanaged" eine von B2B Commerce angelegte Summary, deren Lebenszyklus in einem externen System läuft, und Änderungen dort "must be reflected in Salesforce". B2B Commerce legt standardmäßig Unmanaged Orders an. Der Lifecycle-Typ lässt sich nach Anlage der Summary nicht mehr ändern, und die meisten Funktionen von Salesforce Order Management greifen bei Unmanaged Orders nicht. Entscheiden Sie also früh, wem der Auftrag gehört.
+Sendet der Händler die Bestellung ab, legt B2B Commerce in Salesforce einen Auftrag und eine Order Summary an. Die Order Summary hat ein Feld `OrderLifeCycleType`. Laut [Developer Guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html) kennzeichnet "unmanaged" eine von B2B Commerce angelegte Summary, deren Lebenszyklus ein externes System steuert, und Änderungen dort "must be reflected in Salesforce". B2B Commerce legt standardmäßig Unmanaged Orders an. Der Lifecycle-Typ lässt sich nach Anlage der Summary nicht mehr ändern, und die meisten Funktionen von Salesforce Order Management greifen bei Unmanaged Orders nicht. Entscheiden Sie also früh, wem der Auftrag gehört.
 
 Bei SAP-Anbindungen ist eine Unmanaged Order der Normalfall. Der Auftrag wird exportiert, SAP legt den Kundenauftrag an, und die Schnittstelle schreibt den Status zurück. Behandeln Sie den Auftragsexport als eigenen Integrationsprozess, meist asynchron nach Anlage des Salesforce-Auftrags, mit Wiederholungslogik, einer Dublettenprüfung, die verhindert, dass SAP den Auftrag doppelt anlegt, und einer Regel für Aufträge, die SAP ablehnt:
 
@@ -103,7 +103,7 @@ MuleSoft bietet einen [Accelerator for SAP](https://anypoint.mulesoft.com/exchan
 Direkte Apex-Callouts mit Named Credentials können für einen Shop mit wenigen schnellen Live-Abfragen reichen, wenn Timeouts, Wiederholungen und Monitoring bewusst geplant sind; Apex bietet keine garantierte Zustellung und hat standardmäßig ein Timeout von zehn Sekunden pro Callout. Der Auftragsexport profitiert auch bei einem einzelnen Shop oft von einem asynchronen Muster mit Warteschlange. Eine Middleware lohnt sich, wenn dieselben SAP-Daten auch Field Service, Manufacturing Cloud oder Agentforce-Agenten versorgen. Dann bedient eine Auftragsstatus-API den Shop, den [Auftragsstatus-Agenten](../agentforce-sap-auftragsstatus/) und den Service. Warum Agenten solche APIs mitnutzen sollten, statt eigene APIs zu erhalten, erklärt die KI-Masterclass im Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
 ```hinweis achtung
-Eine Frist gilt für viele Batch-Schnittstellen. Salesforce schaltet den [OAuth Username-Password Flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) für Connected Apps am 20. Februar 2027 ab. Ein nächtlicher Produktimport mit diesem Flow bekommt dann kein Access Token mehr. Für Server-zu-Server-Schnittstellen empfiehlt Salesforce den Client Credentials Flow. Anmeldungen über SOAP `login()` folgen einem eigenen Zeitplan und brauchen eine eigene Prüfung. Wie Sie diese Schnittstellen finden und umstellen, steht in [Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
+Eine Frist gilt für viele Batch-Schnittstellen. Salesforce schaltet den [OAuth Username-Password Flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) für Connected Apps am 20. Februar 2027 ab. Ein nächtlicher Produktimport mit diesem Flow erhält dann kein Access Token mehr. Für Server-zu-Server-Schnittstellen empfiehlt Salesforce den Client Credentials Flow. Anmeldungen über SOAP `login()` folgen einem eigenen Zeitplan und brauchen eine eigene Prüfung. Wie Sie diese Schnittstellen finden und umstellen, steht in [Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
 ```
 
 ## Rechenbeispiel: S/4HANA und 300 Händler in Europa

@@ -41,7 +41,7 @@ Salesforce Pricing ist die Preisfindung in Revenue Cloud; in der Salesforce-Doku
 
 Dazu kommen Preisanpassungspläne für Mengenstaffeln, Vertragspreise in Contract-Item-Price-Datensätzen und [abgeleitete Preise](https://trailhead.salesforce.com/content/learn/modules/advanced-price-management-with-revenue-cloud/implement-derived-pricing), bei denen sich der Preis eines Produkts aus dem Preis eines anderen Produkts ergibt, etwa ein Zubehörteil mit 10 Prozent vom Listenpreis des Hauptprodukts.
 
-Wer von Salesforce CPQ kommt: Die Aufgaben, die dort Price Rules und das Quote Calculator Plugin erledigt haben, müssen in Pricing Procedures neu gebaut werden. Migrationswerkzeuge helfen bei Preisbüchern, Rabattplänen und der Analyse, die Logik von Price Rules und Plugin wird aber von Hand neu entworfen. Die übrigen Unterschiede stehen in [Salesforce CPQ und Revenue Cloud: die Unterschiede](../salesforce-cpq-revenue-cloud-unterschiede/).
+Für alle, die von Salesforce CPQ umsteigen: Die Aufgaben, die dort Price Rules und das Quote Calculator Plugin erledigt haben, müssen in Pricing Procedures neu gebaut werden. Migrationswerkzeuge helfen bei Preisbüchern, Rabattplänen und der Analyse, die Logik von Price Rules und Plugin wird aber von Hand neu entworfen. Die übrigen Unterschiede stehen in [Salesforce CPQ und Revenue Cloud: die Unterschiede](../salesforce-cpq-revenue-cloud-unterschiede/).
 
 ## Wie berechnet eine Pricing Procedure einen Preis?
 
@@ -54,7 +54,7 @@ In den Trailhead-Beispielen besteht eine Prozedur aus diesen Elementen:
 3. **Volume Discount** liest die Staffeln eines Preisanpassungsplans nach Menge und Gültigkeitsdatum. Das [Trailhead-Beispiel](https://trailhead.salesforce.com/content/learn/modules/price-management-with-revenue-cloud/add-volume-and-manual-discounts) nutzt 10 Prozent ab 100 Stück und 25 Prozent ab 300.
 4. **Attributrabatt** passt den Preis abhängig von Produktattributen an, zum Beispiel für eine günstigere Variante mit einfacher Steuerung.
 5. **Manual Discount** übernimmt den Rabatt, den der Vertrieb nach Art und Wert eingibt.
-6. **Aggregate Price** [fasst Werte über mehrere Positionen zusammen](https://trailhead.salesforce.com/content/learn/modules/advanced-price-management-with-revenue-cloud/apply-aggregate-pricing), etwa je Produktfamilie. Das Ergebnis landet auf den Positionen; Revenue Cloud schreibt diese Summen nicht in den Angebotskopf, und die Simulation zeigt es im Output-JSON, nicht im Preiswasserfall.
+6. **Aggregate Price** [fasst Werte über mehrere Positionen zusammen](https://trailhead.salesforce.com/content/learn/modules/advanced-price-management-with-revenue-cloud/apply-aggregate-pricing), etwa je Produktfamilie. Das Ergebnis wird auf den Positionen gespeichert; Revenue Cloud schreibt diese Summen nicht in den Angebotskopf, und die Simulation zeigt es im Output-JSON, nicht im Preiswasserfall.
 
 Die Reihenfolge ist Geschäftslogik. Ob ein manueller Betragsrabatt vor oder nach einem prozentualen Mengenrabatt greift, verändert den Nettopreis, ebenso, ob ein Vertragspreis den Listenpreis ersetzt, bevor Staffeln wirken. Das entscheiden Vertriebsleitung und Controlling, nicht die Person, die die Prozedur baut.
 
@@ -65,14 +65,14 @@ Eine von Grund auf neue Prozedur beginnt als leere Version V1; jedes hinzugefüg
 Dieser Schritt wird in den ersten Wochen besonders leicht vergessen. Ändern Sie einen Preisbucheintrag oder eine Mengenstaffel, rechnet das Angebot weiter mit dem alten Wert, bis die Decision Table aktualisiert ist. Trailhead zeigt zwei Wege: Sync Pricing Data im Salesforce Pricing Setup ausführen oder einzelne Decision Tables im Setup aktualisieren, etwa Volume Discount Entries oder für Vertragspreise Contract Pricing Entries und Contract Pricing Volume Tiers.
 
 ```hinweis achtung
-Kommen bei einem Hersteller die Listenpreise jede Nacht aus SAP, gehört die Aktualisierung in den Ladejob. Der Ladevorgang ist erst fertig, wenn die Decision Tables aktuell sind. Ich würde danach eine Prüfung einbauen, die einige Referenzpreise vergleicht, denn eine vergessene Aktualisierung führt meist nicht zu einem Fehler im Angebot, sondern nur zu veralteten Preisen.
+Liefert SAP bei einem Hersteller jede Nacht die Listenpreise, gehört die Aktualisierung in den Ladejob. Der Ladevorgang ist erst fertig, wenn die Decision Tables aktuell sind. Ich würde danach eine Prüfung einbauen, die einige Referenzpreise vergleicht, denn eine vergessene Aktualisierung führt meist nicht zu einem Fehler im Angebot, sondern nur zu veralteten Preisen.
 ```
 
 ## Was zeigt der Preiswasserfall?
 
 Der Preiswasserfall zeigt die Preisanpassungen vom Listenpreis bis zum Endpreis. Manche Ergebnisse, etwa der Aggregate Price, stehen nur im Output-JSON der Simulation. Den Wasserfall sehen Sie an zwei Stellen: in der Simulation im Pricing Procedure Builder und an der Angebotsposition, wenn Sie mit der Maus über den Nettostückpreis fahren. Im Beispiel zu Vertragspreisen zeigt er den Vertragspreis als Basis und den darauf angewendeten Mengenrabatt.
 
-Für den Vertrieb beantwortet er die Frage "Warum ist der Preis so?" ohne Ticket an die IT. Für das Controlling dokumentiert er, wie ein Preis zustande kam. Für Tests ist er das nützlichste Werkzeug: Die Simulation bietet einen vereinfachten Modus mit Eingabefeldern und einen erweiterten Modus mit JSON-Eingabe. Trailhead merkt an, dass Entwickler meist den JSON-Modus bevorzugen, und ich sehe das genauso, denn ein JSON-Fall lässt sich speichern und nach jeder Änderung wieder ausführen, von Hand im Builder oder automatisiert über die Headless Pricing API.
+Für den Vertrieb beantwortet er die Frage "Warum ist der Preis so?" ohne Ticket an die IT. Für das Controlling dokumentiert er, wie ein Preis zustande gekommen ist. Für Tests ist er das nützlichste Werkzeug: Die Simulation bietet einen vereinfachten Modus mit Eingabefeldern und einen erweiterten Modus mit JSON-Eingabe. Trailhead merkt an, dass Entwickler meist den JSON-Modus bevorzugen, und ich sehe das genauso, denn ein JSON-Fall lässt sich speichern und nach jeder Änderung wieder ausführen, von Hand im Builder oder automatisiert über die Headless Pricing API.
 
 ## Können andere Systeme Revenue Cloud nach einem Preis fragen?
 
@@ -93,7 +93,7 @@ Das ist wichtig, wenn derselbe Preis in einem Händlerportal, einem B2B-Shop ode
 Eine Pricing Procedure ändert Preise in jedem Angebot. Ich behandle sie wie Code, auch wenn sie per Klick gebaut wird:
 
 - **Eine verantwortliche Person.** Meist ein Pricing-Admin im Vertriebsinnendienst oder in Sales Operations, Änderungen gibt das Controlling frei. Der Implementierungspartner setzt die Änderungen um, entscheidet aber nicht.
-- **Versionen.** Jede Änderung bekommt eine neue Version mit einer kurzen Notiz, was sich geändert hat und warum.
+- **Versionen.** Jede Änderung erhält eine neue Version mit einer kurzen Notiz, was sich geändert hat und warum.
 - **Regressionsfälle.** Ein fester Satz von Referenzangeboten mit dokumentierten Soll-Nettopreisen: Standardprodukte, jede Mengenstaffel, Vertragskunden, Attributrabatte, manuelle Rabatte über und unter den Freigabegrenzen. Jede Änderung wird gegen alle Fälle geprüft, bevor sie live geht.
 - **Deployment.** Prozeduren werden als Metadaten zwischen Orgs übertragen, Preisbücher, Staffeln und Vertragspreise dagegen sind Daten. Laut der [Gearset-Dokumentation](https://docs.gearset.com/en/articles/10776213-how-to-deploy-pricing-procedures) sind Pricing Procedures in der Metadata API ExpressionSetDefinitions, ein Deployment legt in der Ziel-Org eine neue Version an, und danach müssen die Decision Tables aktualisiert werden. Kontextdefinitionen und Decision Tables müssen in der Ziel-Org vor der Prozedur vorliegen; stellen Sie sie also in dieser Reihenfolge bereit. Wie das in eine Pipeline passt, steht in [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/).
 
@@ -101,7 +101,7 @@ Wie Tests und Reviews allgemein in den Release-Prozess gehören, behandelt das K
 
 ## Rechenbeispiel: Pumpenhersteller mit Händlern und Vertragspreisen
 
-Ein Pumpenhersteller verkauft 60 Produktfamilien über den eigenen Vertrieb und über Händler. Die Listenpreise kommen jede Nacht aus SAP ins Standardpreisbuch. Händler bekommen einen Mengenrabatt, 20 Großkunden haben Vertragspreise für zwei Jahre, und eine Variante mit einfacher Steuerung ist 8 Prozent günstiger.
+Ein Pumpenhersteller verkauft 60 Produktfamilien über den eigenen Vertrieb und über Händler. Die Listenpreise werden jede Nacht aus SAP ins Standardpreisbuch geladen. Händler erhalten einen Mengenrabatt, 20 Großkunden haben Vertragspreise für zwei Jahre, und eine Variante mit einfacher Steuerung ist 8 Prozent günstiger.
 
 Die Prozedur enthielte den Listenpreis mit vertragsbasierter Preisfindung, einen Attributrabatt für die Steuerung, den Mengenrabatt, den manuellen Rabatt und ein Aggregat je Produktfamilie. Der Nachtjob lädt die Preise und startet danach den Sync. Der Regressionssatz umfasst 25 Referenzangebote, die jede Produktgruppe, jede Mengenstaffel und mehrere Vertragskunden abdecken. Wünscht der Vertrieb eine Aktion, baut der Pricing-Admin eine neue Version in einer Sandbox, führt die 25 Fälle aus, das Controlling prüft die Abweichungen im Preiswasserfall und bei Aggregaten im Output-JSON, und erst dann wird die Version in der Produktion aktiviert.
 

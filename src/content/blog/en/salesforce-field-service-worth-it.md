@@ -49,7 +49,7 @@ Optimization helps most where there is a lot to optimize. In my experience that 
 - **Many skills** that have to match, so the right technician arrives. Whether the right part is in the van is a separate check before dispatch. See part 4.
 - **Committed response times** from service contracts that have to be met and proven.
 
-Salesforce points in the same direction. In an [article on scheduling](https://www.salesforce.com/blog/field-service-scheduling/) from 2025, it cites its own research: scheduling is the biggest efficiency blocker for technicians, and 47 percent of their appointments do not go as planned. The article names neither the sample nor the method, and it is vendor research, so I read it as an indicator, not as proof of a business case. What counts is the share of your own appointments that get rescheduled.
+Salesforce points in the same direction. In an [article on scheduling](https://www.salesforce.com/blog/field-service-scheduling/) from 2025, it cites its own research: scheduling is the biggest efficiency blocker for technicians, and 47 percent of their appointments do not go as planned. The article names neither the sample nor the method, and it is vendor research, so I read it as an indicator, not as proof of a business case. What counts is the share of your own appointments that are rescheduled.
 
 ## With few long jobs, scheduling adds little
 

@@ -21,7 +21,7 @@ faq:
   - q: "Was ist ein Key User?"
     a: "Ein Key User ist ein Fachanwender, der das neue System vor allen anderen kennenlernt, an Tests mitwirkt und nach dem Go-live die erste Anlaufstelle für Fragen in seinem Team ist."
   - q: "Wie viele Key User braucht eine Salesforce-Einführung?"
-    a: "So viele, dass alle wichtigen Prozesse, Benutzergruppen, Standorte und Sprachen abgedeckt sind. Ein Key User pro Land reicht nur, wenn dort ein weitgehend einheitlicher Prozess läuft. Für kritische Bereiche lieber zwei, damit Urlaub und Krankheit keine Lücke reißen."
+    a: "So viele, dass alle wichtigen Prozesse, Benutzergruppen, Standorte und Sprachen abgedeckt sind. Ein Key User pro Land reicht nur, wenn dort ein weitgehend einheitlicher Prozess gilt. Für kritische Bereiche lieber zwei, damit Urlaub und Krankheit keine Lücke reißen."
   - q: "Wie viel Zeit brauchen Key User?"
     a: "Planen Sie als erste Annahme rund acht Arbeitstage je Key User für Workshops, Abnahmetest und die ersten zwei Wochen nach dem Go-live ein, im Betrieb dann wenige Stunden im Monat. Das ist ein Erfahrungswert, kein Benchmark: Umfang, Wellen und Schulungsbedarf ändern ihn. Wichtig ist, dass die Zeit vorher mit der Führungskraft vereinbart ist."
   - q: "Was ist der Unterschied zwischen Key User und Admin?"
@@ -53,7 +53,7 @@ Vor dem Go-live | Tests · Key User
 Erste Wochen | Alltag · Key User vor Ort
   Erste Anlaufstelle für Fragen, Probleme sammeln und gebündelt ans Projekt melden.
 Betrieb | laufend · Key User und Admin
-  Neue Kollegen einarbeiten, vor jedem Release erfahren, was kommt, und es im Team weitergeben.
+  Neue Kollegen einarbeiten, vor jedem Release erfahren, was sich ändert, und es im Team weitergeben.
 ```
 
 Key User gehören in den Abnahmetest, weil sie wissen, welche Fälle und Ausnahmen in ihrem Team vorkommen. Sie prüfen vorab festgelegte Abläufe von Anfang bis Ende mit realistischen Daten; die formale Freigabe bleibt bei den benannten Fachverantwortlichen. Wie UAT aufgebaut sein sollte, beschreibe ich in [Salesforce UAT: Wer testet vor dem Release?](../salesforce-uat-abnahmetest-fachbereich/).
@@ -63,7 +63,7 @@ Key User gehören in den Abnahmetest, weil sie wissen, welche Fälle und Ausnahm
 Die häufigste Auswahlmethode ist die schlechteste: Wer gerade Zeit hat, wird Key User. Das sind selten die Personen, die das Team bei Fragen ohnehin anspricht. Ich achte auf andere Kriterien:
 
 - **Ansehen im Team.** Kollegen fragen diese Person schon heute um Rat, unabhängig vom System.
-- **Kenntnis des Prozesses.** Sie weiß, wie ein Angebot, ein Auftrag oder ein Serviceeinsatz im eigenen Team läuft, inklusive der Ausnahmen.
+- **Kenntnis des Prozesses.** Sie weiß, wie ein Angebot, ein Auftrag oder ein Serviceeinsatz im eigenen Team abläuft, inklusive der Ausnahmen.
 - **Neugier statt Begeisterung.** Ein Key User muss nicht von Salesforce begeistert sein. Kritische Key User finden die Schwächen früher, und wenn sie überzeugt sind, überzeugen sie andere.
 - **Bleibt eine Weile.** Wer in drei Monaten die Stelle wechselt, nimmt das Wissen mit.
 
@@ -71,7 +71,7 @@ Planen Sie das Netzwerk nicht pauschal nach Ländern, sondern so, dass jede wich
 
 ## Was ist ein Key User nicht?
 
-Ein Key User ersetzt weder den Support noch den Admin. Der Key User vertritt die fachliche Sicht seines Bereichs, während der Admin die Plattform betreibt und sich um Benutzer, Berechtigungen, Konfiguration und Releases kümmert. Der Key User beantwortet Fragen zur Nutzung, ändert aber keine Konfiguration und behebt keine Fehler in Schnittstellen. Fehler laufen weiterhin über das Ticketsystem, damit sie gezählt und priorisiert werden. Auch das Schulungsprogramm sollte nicht allein auf ihm liegen: Kurze Einweisungen und Sprechstunden am echten Fall passen gut zur Rolle, Planung und Durchführung ganzer Schulungen nicht. Ohne diese Grenzen ist die Rolle nach wenigen Wochen überlastet, und der Key User hört auf, Fragen zu beantworten.
+Ein Key User ersetzt weder den Support noch den Admin. Der Key User vertritt die fachliche Sicht seines Bereichs, während der Admin die Plattform betreibt und sich um Benutzer, Berechtigungen, Konfiguration und Releases kümmert. Der Key User beantwortet Fragen zur Nutzung, ändert aber keine Konfiguration und behebt keine Fehler in Schnittstellen. Fehler werden weiterhin über das Ticketsystem gemeldet, damit sie gezählt und priorisiert werden. Auch das Schulungsprogramm sollte nicht allein auf ihm liegen: Kurze Einweisungen und Sprechstunden am echten Fall passen gut zur Rolle, Planung und Durchführung ganzer Schulungen nicht. Ohne diese Grenzen ist die Rolle nach wenigen Wochen überlastet, und der Key User hört auf, Fragen zu beantworten.
 
 ## Wie viel Zeit muss der Fachbereich freistellen?
 
@@ -85,7 +85,7 @@ Vereinbaren Sie die Zeit der Key User schriftlich mit der Führungskraft, einsch
 
 ## Das Netzwerk braucht einen festen Termin
 
-Ein Netzwerk aus Key Usern lebt von regelmäßigen Treffen. Ich empfehle einen kurzen Austausch, in dem Key User ihre wichtigsten Rückmeldungen einbringen und vorab erfahren, was das nächste Release ändert. So wird jeder Key User zum Kanal in beide Richtungen: Änderungen kommen über ihn ins Team, und Probleme aus dem Team kommen über ihn ins Projekt. Wie dieser Weg vor einem Release aussieht, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
+Ein Netzwerk aus Key Usern lebt von regelmäßigen Treffen. Ich empfehle einen kurzen Austausch, in dem Key User ihre wichtigsten Rückmeldungen einbringen und vorab erfahren, was das nächste Release ändert. So wird jeder Key User zum Kanal in beide Richtungen: Änderungen gelangen über ihn ins Team, und Probleme aus dem Team gelangen über ihn ins Projekt. Wie dieser Weg vor einem Release aussieht, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
 
 Wichtig ist auch, dass die Rolle sichtbar anerkannt wird. Wer zusätzliche Arbeit für das Projekt übernimmt, sollte diese Arbeit im Jahresgespräch und in angepassten Tageszielen wiederfinden. Das entscheidet darüber, ob sich beim nächsten Projekt wieder jemand meldet.
 

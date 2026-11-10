@@ -17,7 +17,7 @@ takeaways:
   - "The agent classifies UAT feedback as a bug, a change request or an open question, with evidence from the confirmed minutes."
 faq:
   - q: "What is the difference between AI-assisted and AI-native Salesforce delivery?"
-    a: "AI-assisted means individual activities get AI support inside the existing process. AI-native means that agent handovers, machine-readable specifications, permissions and human gates are part of the process design from the start: the agent analyzes, takes minutes, drafts and codes, while people curate the output and make decisions at fixed gates."
+    a: "AI-assisted means individual activities are supported by AI inside the existing process. AI-native means that agent handovers, machine-readable specifications, permissions and human gates are part of the process design from the start: the agent analyzes, takes minutes, drafts and codes, while people curate the output and make decisions at fixed gates."
   - q: "May an AI agent deploy to production?"
     a: "No. Production validation and deployment run only through the pipeline with its own technical identity: it validates the release artifact against production and uses that validation ID for a quick deploy within ten days. The agent works in scratch orgs and sandboxes and has no production credentials on its machine."
   - q: "May workshops with the client be recorded?"

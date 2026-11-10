@@ -10,8 +10,8 @@ topic: field-service
 categories: [field-service, devops]
 tags: [Field Service, Außendienst, mobile App, Release-Management, Test, Beta]
 takeaways:
-  - "Neben drei Plattform-Releases im Jahr hat die App eigene Haupt-, Patch- und Notfallversionen, die über App Store und Google Play zu Technikern kommen."
-  - "Das Beta-Programm liefert Builds etwa einen Monat vor Hauptversionen und eine Woche vor Patches; Notfallkorrekturen kommen ohne Beta."
+  - "Neben drei Plattform-Releases im Jahr hat die App eigene Haupt-, Patch- und Notfallversionen, die über App Store und Google Play an Techniker verteilt werden."
+  - "Das Beta-Programm liefert Builds etwa einen Monat vor Hauptversionen und eine Woche vor Patches; Notfallkorrekturen erscheinen ohne Beta."
   - "Salesforce verteilt Versionen über mehrere Tage, bis zu einer Woche laufen also verschiedene Versionen parallel. Das ist ein Risiko, kein Testfenster."
   - "Pro Version werden unter iOS und Android acht Testfälle nach Skript durchgeführt, mit Offline-Priming, Data-Capture-Formular, Servicebericht und Partnernutzer."
   - "Eine Pilotgruppe, die vor jeder Hauptversion zwei Wochen mit der Beta arbeitet, findet die Fehler, die Admins im Büro übersehen."
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Ein Hersteller sollte jede neue Version der Salesforce Field Service App testen, bevor sie bei den Technikern im Außendienst ankommt, und hat dafür drei Werkzeuge. Das Beta-Programm liefert Builds einen Monat vor Hauptversionen und eine Woche vor Patches. Mit Debug-Builds prüfen Entwickler ihre eigenen Komponenten in einer Sandbox. Eine feste Routine aus acht Testfällen nach Skript unter iOS und Android deckt Offline-Arbeit, Formulare, Servicebericht und einen Partnernutzer ab. Notfall-Releases kommen ohne Beta; nach der Veröffentlichung folgt ein kurzer Smoke-Test. Die Verteilung über mehrere Tage mischt Versionen, ist aber kein Testfenster.
+Ein Hersteller sollte jede neue Version der Salesforce Field Service App testen, bevor sie bei den Technikern im Außendienst ankommt, und hat dafür drei Werkzeuge. Das Beta-Programm liefert Builds einen Monat vor Hauptversionen und eine Woche vor Patches. Mit Debug-Builds prüfen Entwickler ihre eigenen Komponenten in einer Sandbox. Eine feste Routine aus acht Testfällen nach Skript unter iOS und Android deckt Offline-Arbeit, Formulare, Servicebericht und einen Partnernutzer ab. Notfall-Releases erscheinen ohne Beta; nach der Veröffentlichung folgt ein kurzer Smoke-Test. Die Verteilung über mehrere Tage mischt Versionen, ist aber kein Testfenster.
 
 ## Wie oft ändert sich die Field Service App?
 
@@ -42,7 +42,7 @@ Die App hat zusätzlich zu den Plattform-Releases eigene Versionsnummern: Die Ha
 
 Der [Beitrag zu 262.3](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pPWBC0A4) zeigt, warum Patches wichtig sind. Unter iOS konnte die App Nutzer unerwartet abmelden, nachdem sie im Hintergrund gelaufen war, und eine Startüberwachung rechnete die Zeit im Hintergrund mit und meldete falsche Zeitüberschreitungen. Unter Android konnten Nutzer bei der Anmeldung im App-internen Browser hängen bleiben. Genau solche Fehler halten einen Techniker vor der Tür des Kunden auf.
 
-In beiden Beiträgen steht außerdem, dass Salesforce Haupt- und Patch-Versionen über mehrere Tage verteilt und Updates unter Umständen erst sieben Tage nach der allgemeinen Verfügbarkeit alle Nutzer erreichen. Für eine Serviceorganisation heißt das: Bis zu einer Woche arbeiten manche Techniker mit der alten und manche mit der neuen Version. Salesforce sagt nicht zu, dass Ihre Pilotgruppe das Update zuerst bekommt; die Verteilung ist also kein zusätzliches Testfenster. Mit Winter '27 hat Salesforce außerdem begonnen, mobile Flows auf eine native Laufzeit umzustellen. Auch mobile Flows gehören deshalb in die Testroutine, siehe [Field Service Mobile App: Flow-Grenzen](../field-service-mobile-flows-grenzen/).
+In beiden Beiträgen steht außerdem, dass Salesforce Haupt- und Patch-Versionen über mehrere Tage verteilt und Updates unter Umständen erst sieben Tage nach der allgemeinen Verfügbarkeit alle Nutzer erreichen. Für eine Serviceorganisation heißt das: Bis zu einer Woche arbeiten manche Techniker mit der alten und manche mit der neuen Version. Salesforce sagt nicht zu, dass Ihre Pilotgruppe das Update zuerst erhält; die Verteilung ist also kein zusätzliches Testfenster. Mit Winter '27 hat Salesforce außerdem begonnen, mobile Flows auf eine native Laufzeit umzustellen. Auch mobile Flows gehören deshalb in die Testroutine, siehe [Field Service Mobile App: Flow-Grenzen](../field-service-mobile-flows-grenzen/).
 
 ```hinweis tipp
 Notieren Sie bei jedem Ticket zur App die genaue App-Version, dazu Plattform, Betriebssystem, Netzzustand und Schritte zur Reproduktion. Die Version steht in der App unter Profil, Einstellungen, Info.
@@ -71,7 +71,7 @@ Eine gute Routine ist kurz genug für einen halben Tag und deckt die Stellen ab,
 7. **Partnernutzer.** Schritte 1 bis 3 mit einem echten Partnernutzer wiederholen: Experience-Cloud-Lizenz, Field-Service-Mobile-Lizenz, Berechtigungssätze und Freigaben wie in Produktion.
 8. **Innendienst und ERP.** Nach der Synchronisation prüfen, ob Verbrauchsbuchungen und Bericht angekommen sind, einschließlich der Schnittstelle ins ERP.
 
-Die Schritte 2 und 7 zielen auf die bekannten Offline-Lücken, beschrieben in [Field Service App offline: Welche Daten aufs Gerät?](../field-service-app-offline-briefcase/). Schritt 4 ist wichtig, weil Data Capture häufig neue Funktionen und Korrekturen bekommt, siehe [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/). Schritt 5 mit [Document Builder](../salesforce-service-documents-document-builder-servicebericht/) testet die eigenen Komponenten in Ihren Vorlagen; typische Grenzen habe ich in [Salesforce Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/) beschrieben.
+Die Schritte 2 und 7 zielen auf die bekannten Offline-Lücken, beschrieben in [Field Service App offline: Welche Daten aufs Gerät?](../field-service-app-offline-briefcase/). Schritt 4 ist wichtig, weil Data Capture häufig neue Funktionen und Korrekturen erhält, siehe [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/). Schritt 5 mit [Document Builder](../salesforce-service-documents-document-builder-servicebericht/) testet die eigenen Komponenten in Ihren Vorlagen; typische Grenzen habe ich in [Salesforce Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/) beschrieben.
 
 Schreiben Sie die Schritte als Skripte mit erwartetem Ergebnis, genauso wie Testfälle für ein Plattform-Release. Das [Kapitel zu Qualität und Tests in der DevOps-Masterclass](../../masterclass/devops-release-management/qualitaet-tests-reviews/) erklärt, wie solche Tests in Quality Gates passen.
 
@@ -89,7 +89,7 @@ Ein Maschinenbauer beschäftigt 100 Techniker, 70 mit iPads und 30 mit Android-T
 
 ```schritte
 Preview-Sandbox | vor dem Stichtag für die Sandbox-Vorschau · Release-Manager
-  Der Release-Manager sorgt rechtzeitig dafür, dass eine Sandbox auf einer Preview-Instanz liegt, und lädt Testdaten von drei typischen Maschinen. Sobald die Beta etwa vier Wochen vor der Hauptversion kommt, bekommen die Pilotgeräte sie.
+  Der Release-Manager sorgt rechtzeitig dafür, dass eine Sandbox auf einer Preview-Instanz liegt, und lädt Testdaten von drei typischen Maschinen. Sobald die Beta etwa vier Wochen vor der Hauptversion erscheint, erhalten die Pilotgeräte sie.
 Routine durchspielen | Woche eins und zwei der Beta · Pilottechniker und Entwickler
   Die Pilottechniker spielen die Routine einmal pro Woche durch, jeweils etwa zwei Stunden, auf Ersatzgeräten mit der Beta. Parallel testen Entwickler die eigenen Komponenten mit Debug-Builds.
 Fehler beheben | zwei Wochen vor der Veröffentlichung · Entwickler
@@ -108,6 +108,6 @@ Die übrigen Techniker sollten vor dem Update wissen, was sich für sie ändert 
 2. **Die Routine schreiben**, als acht Skripte mit erwartetem Ergebnis, dazu ein kurzer Smoke-Test für Notfall-Releases.
 3. **Die Pilotgruppe benennen**, mit beiden Plattformen und mindestens einem Partnertechniker.
 4. **App-Versionen in den Release-Kalender aufnehmen**, neben die Plattform-Releases.
-5. **Mit dem Gerätemanagement klären**, wie App- und Betriebssystem-Updates auf die Geräte kommen.
+5. **Mit dem Gerätemanagement klären**, wie App- und Betriebssystem-Updates auf die Geräte gelangen.
 
 App-Tests gehören zu [Kapitel 3 der Masterclass Field Service](../../masterclass/field-service/field-service-mobile-app-dokumente/). Einen Release-Prozess aufzusetzen, der sie abdeckt, gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).

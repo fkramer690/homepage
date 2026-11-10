@@ -10,7 +10,7 @@ topic: security
 categories: [ai]
 tags: [agentforce, prompt injection, security, dealer portal, experience cloud, manufacturing]
 takeaways:
-  - "Fields that outsiders can write to, from a warranty fault description to Email-to-Case, become instructions once their content lands in an agent's context."
+  - "Fields that outsiders can write to, from a warranty fault description to Email-to-Case, become instructions once their content reaches an agent's context."
   - "ForcedLeak leaked lead data through an expired allowlisted domain; SalesBleed bypassed the Trusted URLs redaction in 2026. Both are fixed."
   - "Prompt filters are probabilistic. Plan as if they miss and make sure a successful injection can do little harm."
   - "Break the lethal trifecta: narrow the read rights for the agent's execution context, give it no way out and put decisions in deterministic logic."
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Prompt injection in dealer portals is one of the most direct ways an Agentforce agent at a manufacturer can be turned against you. Fields that a dealer, customer or website visitor can write to, from a warranty fault description to Web-to-Lead and Email-to-Case, become text your agent reads once that text lands in its context. ForcedLeak in 2025 and SalesBleed in 2026 showed that hidden instructions in such a field could make Agentforce send CRM data out. Probabilistic filters give no hard boundary, so protection is an architecture decision: limit what the agent can see, remove its ways to send data out and keep decisions in deterministic logic.
+Prompt injection in dealer portals is one of the most direct ways an Agentforce agent at a manufacturer can be turned against you. Fields that a dealer, customer or website visitor can write to, from a warranty fault description to Web-to-Lead and Email-to-Case, become text your agent reads once that text reaches its context. ForcedLeak in 2025 and SalesBleed in 2026 showed that hidden instructions in such a field could make Agentforce send CRM data out. Probabilistic filters give no hard boundary, so protection is an architecture decision: limit what the agent can see, remove its ways to send data out and keep decisions in deterministic logic.
 
 ## What did ForcedLeak show?
 

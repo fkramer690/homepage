@@ -12,18 +12,18 @@ tags: [Field Service, Außendienst, Mehrtägige Einsätze, Crews, Inbetriebnahme
 takeaways:
   - "Ein mehrtägiger Termin darf bis zu acht Kalenderwochen umfassen. Automatische Planung und Optimierung erfassen aber nur Einsätze, die ganz in 30 Tage passen."
   - "Mehrtägige Termine lassen sich nicht mit Complex Work kombinieren und nicht Kapazitätsressourcen zuweisen. Ein reiner Kapazitätspartner fällt also aus."
-  - "Eine Crew ist eine eigene Serviceressource. Die Planung sieht nur ihre Abwesenheiten, und Mitglieder bekommen keine Zuweisungsbenachrichtigung."
+  - "Eine Crew ist eine eigene Serviceressource. Die Planung sieht nur ihre Abwesenheiten, und Mitglieder erhalten keine Zuweisungsbenachrichtigung."
   - "ESO plant eine Abhängigkeitsgruppe von bis zu fünf Terminen ganz oder gar nicht ein. Nur Optimierungsläufe dürfen mehrtägige Termine verschieben oder entfernen."
   - "Bei Inbetriebnahmen plane ich Vorabbesichtigung und Haupteinsatz als getrennte Termine und halte den Projektplan außerhalb des Gantt-Diagramms."
 faq:
   - q: "Wie lang darf ein mehrtägiger Termin in Salesforce Field Service sein?"
     a: "Laut Salesforce-Hilfe kann ein mehrtägiger Termin bis zu acht Kalenderwochen umfassen. Appointment Booking, Schedule und Optimierung erfassen nur bis zu 30 Tage, weil ihr Suchhorizont 30 Tage beträgt. Längere Einsätze planen Disponenten von Hand."
   - q: "Kann eine Crew einen mehrtägigen Termin übernehmen?"
-    a: "Ja. Eine Crew ist eine Serviceressource vom Typ Crew und kann einen mehrtägigen Termin wie ein einzelner Techniker bekommen. Die Planung nutzt dann Abwesenheiten, Effizienz und Heimatstandort der Crew, nicht die der Mitglieder."
+    a: "Ja. Eine Crew ist eine Serviceressource vom Typ Crew und kann einen mehrtägigen Termin wie ein einzelner Techniker erhalten. Die Planung nutzt dann Abwesenheiten, Effizienz und Heimatstandort der Crew, nicht die der Mitglieder."
   - q: "Kann ich einen mehrtägigen Termin per Complex Work mit anderen Terminen verknüpfen?"
     a: "Nein. Die Salesforce-Hilfe schreibt, dass mehrtägige Planung und Complex Work nicht kombinierbar sind. Deshalb muss der Disponent oder eine eigene Automatisierung eine vorgelagerte Besichtigung in die richtige Reihenfolge bringen, etwa indem der Haupteinsatz erst nach abgeschlossener Besichtigung zur Planung freigegeben wird."
   - q: "Werden Crew-Mitglieder über eine Zuweisung informiert?"
-    a: "Nein. Laut Salesforce-Hilfe bekommen Crew-Mitglieder keine Zuweisungsbenachrichtigung und werden nicht automatisch als Follower eingetragen. Eigene Push-Benachrichtigungen schließen diese Lücke."
+    a: "Nein. Laut Salesforce-Hilfe erhalten Crew-Mitglieder keine Zuweisungsbenachrichtigung und werden nicht automatisch als Follower eingetragen. Eigene Push-Benachrichtigungen schließen diese Lücke."
 draft: false
 ---
 
@@ -39,7 +39,7 @@ Field Service hat dafür drei Werkzeuge: mehrtägige Termine, Crews und Complex 
 
 ## Wie funktionieren mehrtägige Termine?
 
-Ein mehrtägiger Termin ist ein normaler Servicetermin (Service Appointment), bei dem das Feld Is MultiDay gesetzt ist. Laut [Salesforce-Hilfe zu mehrtägigen Einsätzen](https://help.salesforce.com/s/articleView?id=service.pfs_multiday.htm&language=en_US&type=5) schaltet ein Admin die Funktion in den Field-Service-Einstellungen ein. Disponenten bekommen eine Langzeitansicht. In der Classic Dispatch Console zeigt das Long-Term-Gantt bis zu sechs Monate und bis zu 1.000 Termine; diese Grenzen gehören zur klassischen Konsole. Die neuere [Scheduling Console](../field-service-scheduling-console-disponenten/) hat eigene Langzeitansichten und zeigt seit Winter '27 einen Einsatz über mehrere Tage als einen zusammenhängenden Auftrag.
+Ein mehrtägiger Termin ist ein normaler Servicetermin (Service Appointment), bei dem das Feld Is MultiDay gesetzt ist. Laut [Salesforce-Hilfe zu mehrtägigen Einsätzen](https://help.salesforce.com/s/articleView?id=service.pfs_multiday.htm&language=en_US&type=5) schaltet ein Admin die Funktion in den Field-Service-Einstellungen ein. Disponenten erhalten eine Langzeitansicht. In der Classic Dispatch Console zeigt das Long-Term-Gantt bis zu sechs Monate und bis zu 1.000 Termine; diese Grenzen gehören zur klassischen Konsole. Die neuere [Scheduling Console](../field-service-scheduling-console-disponenten/) hat eigene Langzeitansichten und zeigt seit Winter '27 einen Einsatz über mehrere Tage als einen zusammenhängenden Auftrag.
 
 Diese Regeln zählen in der Praxis:
 
@@ -59,7 +59,7 @@ Eine Crew ist eine Gruppe von Technikern, die von der Planung als eine Einheit b
 - Abwesenheiten werden nur für die Crew-Ressource berücksichtigt. Ist ein Mitglied im Urlaub, sieht die Planung das nicht.
 - Die Effizienz der Crew bestimmt das geplante Ende. Die Effizienz der Mitglieder wird ignoriert.
 - Nur der Standort des Crew-Leiters wird verfolgt; für die Fahrzeit gilt der Heimatstandort der Crew-Ressource.
-- Mitglieder bekommen keine Zuweisungsbenachrichtigung und werden beim Dispatch nicht als Follower eingetragen.
+- Mitglieder erhalten keine Zuweisungsbenachrichtigung und werden beim Dispatch nicht als Follower eingetragen.
 - Arbeitstypen, Arbeitsaufträge und Positionen tragen eine minimale und eine empfohlene Crew-Größe. Nur das Minimum wirkt auf die Planung.
 - Mit Skill Grouping berücksichtigt die Planung die Qualifikationen aller Mitglieder zusammen.
 
@@ -89,11 +89,11 @@ Die Grenze, die Inbetriebnahmen am stärksten trifft: Mehrtägige Planung und Co
 
 ## Rechenbeispiel: eine Verpackungslinie in 12 Arbeitstagen
 
-Die Zahlen sind angenommen. Ein Hersteller von Verpackungsmaschinen nimmt beim Kunden eine Linie in Betrieb. Die Inbetriebnahme dauert 12 Arbeitstage mit einer Crew aus drei Personen: Crew-Leiter, Mechaniker und Elektriker. Zwei Wochen vorher findet eine eintägige Besichtigung statt. Der Elektriker kommt von einem Servicepartner.
+Die Zahlen sind angenommen. Ein Hersteller von Verpackungsmaschinen nimmt beim Kunden eine Linie in Betrieb. Die Inbetriebnahme dauert 12 Arbeitstage mit einer Crew aus drei Personen: Crew-Leiter, Mechaniker und Elektriker. Zwei Wochen vorher findet eine eintägige Besichtigung statt. Der Elektriker stammt von einem Servicepartner.
 
 So würde ich das in Field Service aufsetzen:
 
-1. **Besichtigung als eigener Termin.** Sie bekommt einen Arbeitstyp mit der Qualifikation "Vor-Ort-Besichtigung" und wird normal geplant. Weil keine Abhängigkeit zum mehrtägigen Termin möglich ist, wird die Inbetriebnahme bis zur abgeschlossenen Besichtigung nicht für die automatische Planung freigegeben. Dann setzt ein Flow ihren frühestmöglichen Start auf den Folgetag, und der Disponent plant sie ein. Verschiebt sich die Besichtigung, während die Inbetriebnahme schon geplant ist, verschiebt der Flow die Inbetriebnahme nicht automatisch mit; der Disponent muss umplanen.
+1. **Besichtigung als eigener Termin.** Sie erhält einen Arbeitstyp mit der Qualifikation "Vor-Ort-Besichtigung" und wird normal geplant. Weil keine Abhängigkeit zum mehrtägigen Termin möglich ist, wird die Inbetriebnahme bis zur abgeschlossenen Besichtigung nicht für die automatische Planung freigegeben. Dann setzt ein Flow ihren frühestmöglichen Start auf den Folgetag, und der Disponent plant sie ein. Verschiebt sich die Besichtigung, während die Inbetriebnahme schon geplant ist, verschiebt der Flow die Inbetriebnahme nicht automatisch mit; der Disponent muss umplanen.
 2. **Inbetriebnahme als mehrtägiger Termin.** Bei einer Fünftagewoche ohne Feiertage umfassen 12 Arbeitstage etwa 16 Kalendertage. Das passt in den 30-Tage-Horizont. Die Planung kann die Crew also noch vorschlagen.
 3. **Crew mit fester Mitgliedschaft.** Der Elektriker des Partners ist eine eigene Serviceressource, wie in [Wie bindet man Servicepartner ein?](../salesforce-field-service-servicepartner/) beschrieben. Ein Partner, der nur als Kapazität abgebildet ist, könnte an diesem Einsatz nicht teilnehmen.
 4. **Benachrichtigungen.** Eine eigene Push-Benachrichtigung informiert beim Dispatch alle drei Mitglieder, weil Field Service das für Crew-Mitglieder nicht tut.
@@ -103,7 +103,7 @@ Dauerte die Inbetriebnahme sechs Wochen, würde ich den Termin von Hand planen o
 
 ## Wann sollten lange Einsätze außerhalb von Field Service bleiben?
 
-Meine Regel, als Architekturempfehlung und nicht als Produktgrenze: Besteht Ihr Außendienst überwiegend aus Inbetriebnahmen und Revisionen, lohnt sich Field Service für die Planung allein selten. Die Optimierung mehrtägiger Arbeit hilft, wenn lange und kurze Einsätze um dieselben Leute konkurrieren; ist ein Team einfach zwei Wochen gebucht, hat die Engine wenig zu optimieren. Projektcontrolling, Kosten, Materialtermine, Abnahmen und Änderungsanträge liegen meist ohnehin im ERP oder einem Projektwerkzeug. Field Service verdient seinen Platz, wenn dieselben Techniker zwischen den Projekten auch Wartungen und Störungseinsätze fahren, weil dann beide Arten von Arbeit in einem Plan landen.
+Meine Regel, als Architekturempfehlung und nicht als Produktgrenze: Besteht Ihr Außendienst überwiegend aus Inbetriebnahmen und Revisionen, lohnt sich Field Service für die Planung allein selten. Die Optimierung mehrtägiger Arbeit hilft, wenn lange und kurze Einsätze um dieselben Leute konkurrieren; ist ein Team einfach zwei Wochen gebucht, hat die Engine wenig zu optimieren. Projektcontrolling, Kosten, Materialtermine, Abnahmen und Änderungsanträge liegen meist ohnehin im ERP oder einem Projektwerkzeug. Field Service verdient seinen Platz, wenn dieselben Techniker zwischen den Projekten auch Wartungen und Störungseinsätze fahren, weil dann beide Arten von Arbeit in einem Plan stehen.
 
 Zwei Entscheidungen gehören in das Design, bevor ein Partner etwas baut. Die erste: Welches System führt den Projektplan mit Phasen und Terminen, und wie werden die Termine mit dem Service Appointment verknüpft? Die zweite: Wie schützen Disponenten lange Einsätze vor kurzen? Die Scheduling Policy aus [Wie viel Planung darf automatisch laufen?](../salesforce-field-service-terminplanung-automatisieren/) braucht dafür eine klare Regel. Wo die Architekturfrage über Field Service hinausgeht, beschreibe ich mein Vorgehen unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 

@@ -49,7 +49,7 @@ Laut [Anleitung zur Modellkonfiguration](https://developer.salesforce.com/docs/a
 
 Drei Modelle nennt Salesforce als „thoroughly tested with agents“: GPT 4.1, Claude Haiku 4.5 und Gemini 3.5 Flash. Neue Agenten aus der Vorlage des Agentforce Service Agent nutzen für das Routing EinsteinHyperClassifier, ein Salesforce-Modell, das nur klassifiziert und keine anderen Tools aufrufen kann.
 
-Ich würde das Modell auch dann festlegen, wenn der Standard funktioniert. Salesforce kann den Mix ändern, und ein Agent, der im Mai seine Tests bestanden hat, antwortet im November womöglich anders, ohne dass Sie etwas geändert haben. Auch Standards ändern sich von selbst: Salesforce [stellt Agenten aus dem Legacy Builder von GPT-4o auf GPT-5.6 Luna um](https://help.salesforce.com/s/articleView?id=release-notes.rn_einstein_models_legacy_builder_model_change.htm&language=en_US&type=5), als Vorbereitung auf die Abkündigung von GPT-4o im Frühjahr 2027. Ein festgelegtes Modell gehört zur Agentenversion, ein Modellwechsel läuft dann durch dieselben Freigaben wie jede andere Änderung, beschrieben in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
+Ich würde das Modell auch dann festlegen, wenn der Standard funktioniert. Salesforce kann den Mix ändern, und ein Agent, der im Mai seine Tests bestanden hat, antwortet im November womöglich anders, ohne dass Sie etwas geändert haben. Auch Standards ändern sich von selbst: Salesforce [stellt Agenten aus dem Legacy Builder von GPT-4o auf GPT-5.6 Luna um](https://help.salesforce.com/s/articleView?id=release-notes.rn_einstein_models_legacy_builder_model_change.htm&language=en_US&type=5), als Vorbereitung auf die Abkündigung von GPT-4o im Frühjahr 2027. Ein festgelegtes Modell gehört zur Agentenversion, ein Modellwechsel durchläuft dann dieselben Freigaben wie jede andere Änderung, beschrieben in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
 
 ## Was kostet die Modellstufe?
 
@@ -106,7 +106,7 @@ Dazu schreibt eine Prompt-Vorlage eine Fallzusammenfassung für den Techniker im
 | BYOLLM über Azure OpenAI (Starter) | 3.000 × 3 × 2 = 18.000 | 90 € plus Azure-Tokens |
 | Verwaltetes Advanced-Modell | 3.000 × 3 × 16 = 144.000 | 720 € |
 
-Die Tabelle zeigt nur Prompt-Kosten. Läuft die Zusammenfassung als eigene Aktion eines Agenten, kommen pro Lauf 20 Flex Credits dazu, also 60.000 im Monat oder 300 € bei jeder Variante. BYOLLM spart höchstens 90 € im Monat, rund 1.080 € im Jahr, vor der Token-Rechnung von Azure. Das allein rechtfertigt keinen zweiten Vertragsweg; der Wechsel der Modellstufe macht einen Faktor vier aus. Ich würde hier verwaltete Modelle für den Agenten empfehlen, BYOLLM nur, wenn der Azure-Vertrag der von der IT freigegebene Datenweg für Servicedaten ist, und Opus für die Fehlersuche nur, wenn der Test eine klare Lücke zeigt.
+Die Tabelle zeigt nur Prompt-Kosten. Läuft die Zusammenfassung als eigene Aktion eines Agenten, fallen pro Lauf zusätzlich 20 Flex Credits an, also 60.000 im Monat oder 300 € bei jeder Variante. BYOLLM spart höchstens 90 € im Monat, rund 1.080 € im Jahr, vor der Token-Rechnung von Azure. Das allein rechtfertigt keinen zweiten Vertragsweg; der Wechsel der Modellstufe macht einen Faktor vier aus. Ich würde hier verwaltete Modelle für den Agenten empfehlen, BYOLLM nur, wenn der Azure-Vertrag der von der IT freigegebene Datenweg für Servicedaten ist, und Opus für die Fehlersuche nur, wenn der Test eine klare Lücke zeigt.
 
 ## Das Modell pro Subagent festlegen und dokumentieren
 

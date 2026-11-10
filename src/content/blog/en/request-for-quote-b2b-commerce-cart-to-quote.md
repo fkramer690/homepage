@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-In Salesforce B2B Commerce, a signed-in buyer can send the cart as a quote request, or request a quote for a single product from its product page. The request lands as a quote that your sales desk reviews in Sales Cloud or Agentforce Revenue Management. Once the quote is approved, the buyer accepts it in the store and checks out the resulting cart at the negotiated prices; Salesforce calls this round-trip quoting. Simple products need only B2B Commerce, bundles also need Revenue Cloud, and subscriptions are not supported. In my experience, Request for Quote works only if your sales desk answers within a published response time.
+In Salesforce B2B Commerce, a signed-in buyer can send the cart as a quote request, or request a quote for a single product from its product page. The request arrives as a quote that your sales desk reviews in Sales Cloud or Agentforce Revenue Management. Once the quote is approved, the buyer accepts it in the store and checks out the resulting cart at the negotiated prices; Salesforce calls this round-trip quoting. Simple products need only B2B Commerce, bundles also need Revenue Cloud, and subscriptions are not supported. In my experience, Request for Quote works only if your sales desk answers within a published response time.
 
 ## Why does a B2B store need Request for Quote?
 
@@ -98,7 +98,7 @@ Large dealers also request quotes through sales reps and partner portals. If AI 
 
 Assume a manufacturer of conveyor components sells to 400 system integrators. Most orders are reorders at tier prices, but about one order in ten is project business with larger quantities and a target price. Inside sales gets these requests by email today and takes an average of four days to respond.
 
-With RFQ, the integrator puts the parts list into the cart and requests a quote with the project name in the comment. The quote lands in a queue for the relevant country, the desk prices it using the Revenue Cloud procedure that sales already uses for machine quotes, and approves it. The integrator gets the quote in My Quotes, asks for one change through Renegotiate, receives the revised quote, clicks Accept & Buy and checks out the cart. The order reaches SAP with the negotiated prices and the quote number as a reference.
+With RFQ, the integrator puts the parts list into the cart and requests a quote with the project name in the comment. The quote is placed in a queue for the relevant country, the desk prices it using the Revenue Cloud procedure that sales already uses for machine quotes, and approves it. The integrator gets the quote in My Quotes, asks for one change through Renegotiate, receives the revised quote, clicks Accept & Buy and checks out the cart. The order reaches SAP with the negotiated prices and the quote number as a reference.
 
 The numbers are invented to show the method. In the first three months, I would measure the share of quote requests that come through the store instead of email, the response time, and the share of approved quotes that become orders.
 

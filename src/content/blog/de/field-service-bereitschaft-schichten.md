@@ -12,7 +12,7 @@ tags: [Field Service, Außendienst, Rufbereitschaft, Schichten, Terminplanung, B
 takeaways:
   - "Arbeitszeiten beschreiben die wiederkehrende Arbeitszeit. Schichten ergänzen Verfügbarkeit an bestimmten Tagen, etwa Bereitschaft, Wochenende oder Überstunden."
   - "Nur bestätigte Schichten zählen. Eine Extended-Schicht nimmt Termine nur an, wenn die Work Rule Service Resource Availability Überstunden erlaubt."
-  - "Filterkriterien begrenzen eine Schicht auf bestimmte Termine. So bekommt der Wochenendtechniker nur Störungen und keine geplanten Wartungen."
+  - "Filterkriterien begrenzen eine Schicht auf bestimmte Termine. So erhält der Wochenendtechniker nur Störungen und keine geplanten Wartungen."
   - "Eine Störung am Samstag braucht Verfügbarkeit, meist eine bestätigte Bereitschaftsschicht. Ohne sie findet die Planung keinen Techniker."
   - "In Deutschland unterliegen Bereitschaftspläne und Überstunden meist der Mitbestimmung des Betriebsrats nach § 87 BetrVG, wie Timesheets und Standortdaten."
 faq:
@@ -33,7 +33,7 @@ Rufbereitschaft, Wochenendservice und Überstunden planen Sie in Salesforce Fiel
 
 Arbeitszeiten sind die Zeitfenster pro Wochentag, in denen ein Servicegebiet arbeitet. Techniker übernehmen sie über ihre Mitgliedschaft im Servicegebiet, sofern die Mitgliedschaft keine eigenen Arbeitszeiten hat. Das gehört zu den Stammdaten, die die Planung braucht, beschrieben in [Welche Daten braucht die Planung?](../salesforce-field-service-stammdaten/).
 
-Schichten decken ab, was nicht in dieses Raster passt. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/shift-creation-assignment/get-to-know-shifts) definiert eine Schicht als "any set of working hours that are not normal operating hours", also jede Arbeitszeit außerhalb der normalen Arbeitszeiten. Sie kann zusätzlich zu den Arbeitszeiten kommen, wie bei Überstunden, oder sich mit ihnen überschneiden. Shift ist ein Standardobjekt von Salesforce; für den vollen Funktionsumfang ist aber das Field Service Managed Package erforderlich. Vor der ersten Schicht müssen Servicegebiete, Serviceressourcen und Arbeitszeiten eingerichtet sein.
+Schichten decken ab, was nicht in dieses Raster passt. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/shift-creation-assignment/get-to-know-shifts) definiert eine Schicht als "any set of working hours that are not normal operating hours", also jede Arbeitszeit außerhalb der normalen Arbeitszeiten. Sie kann zusätzlich zu den Arbeitszeiten gelten, wie bei Überstunden, oder sich mit ihnen überschneiden. Shift ist ein Standardobjekt von Salesforce; für den vollen Funktionsumfang ist aber das Field Service Managed Package erforderlich. Vor der ersten Schicht müssen Servicegebiete, Serviceressourcen und Arbeitszeiten eingerichtet sein.
 
 Die [Salesforce-Hilfe zur Verfügbarkeit von Schichten](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_shifts_guidelines.htm&type=5) nennt drei Regeln, die für Bereitschaft zählen:
 
@@ -67,13 +67,13 @@ Das ist eine typische Überraschung nach dem Go-live. Ein Kunde mit dem Vertrag 
 Haben weder das Gebiet noch die Mitgliedschaft des Technikers Arbeitszeiten am Samstag und gibt es keine passende bestätigte Schicht, ist niemand verplanbar. Der Termin bleibt im Status None, und die Reaktionszeit läuft weiter.
 ```
 
-Damit die Störung beim Bereitschaftstechniker landet, muss Folgendes zusammenpassen:
+Damit die Störung beim Bereitschaftstechniker ankommt, muss Folgendes zusammenpassen:
 
-1. **Entitlement und Terminfenster.** Der Milestone des Entitlements überwacht die Reaktionszeit, begrenzt die Planung aber nicht von selbst. Eine Automatisierung muss die Reaktionszeit in Earliest Start Permitted und Due Date des Servicetermins übersetzen. Wie Reaktionszeiten in die Disposition kommen, steht in [Wie bildet man Wartungsverträge ab?](../salesforce-field-service-wartungsvertraege/).
+1. **Entitlement und Terminfenster.** Der Milestone des Entitlements überwacht die Reaktionszeit, begrenzt die Planung aber nicht von selbst. Eine Automatisierung muss die Reaktionszeit in Earliest Start Permitted und Due Date des Servicetermins übersetzen. Wie Reaktionszeiten in die Disposition einfließen, steht in [Wie bildet man Wartungsverträge ab?](../salesforce-field-service-wartungsvertraege/).
 2. **Die Schicht.** Eine bestätigte Extended-Schicht für das Wochenende, mit einem Filter, der Störungen durchlässt.
 3. **Die Policy.** In der Policy für Störungen ist Overtime in der Work Rule Service Resource Availability eingeschaltet; außerdem enthält sie die Work Rule Timeslot Designated.
 
-Nimmt außerhalb der Geschäftszeiten ein Sprachagent den Anruf an, bekommt der Bereitschaftstechniker einen klassifizierten Case statt eines rohen Anrufs. Wie ich die Triage an der Hotline aufsetzen würde, steht in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/). Buchen kann der Agent aber nichts, wenn keine Verfügbarkeit dahintersteht.
+Nimmt außerhalb der Geschäftszeiten ein Sprachagent den Anruf an, erhält der Bereitschaftstechniker einen klassifizierten Case statt eines rohen Anrufs. Wie ich die Triage an der Hotline aufsetzen würde, steht in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/). Buchen kann der Agent aber nichts, wenn keine Verfügbarkeit dahintersteht.
 
 ## Der Betriebsrat bestimmt nach § 87 BetrVG mit
 
@@ -98,7 +98,7 @@ So würde ich es aufsetzen:
 2. **Ein Muster mit 7 Tagen Länge** und einem Eintrag am Samstag. Eine Vorlage hat kein Servicegebiet, und ein Lauf von New from Pattern kann nur ein Gebiet verwenden. Deshalb starte ich ihn einmal pro Region, jeweils mit 13 Wiederholungen. Das legt die Schichten für ein Quartal an, insgesamt 39.
 3. **Zuweisung** durch die Serviceleitung jeder Region. Der Status ist Tentative, bis das mit dem Betriebsrat vereinbarte Verfahren abgeschlossen ist, danach Confirmed.
 4. **Zwei Policies.** Für geplante Wartung ist Overtime ausgeschaltet, für Störungen ist Overtime eingeschaltet.
-5. **Ein Test an einem Samstag in der Sandbox:** Ein Störungsauftrag mit Premium-Entitlement muss beim Bereitschaftstechniker landen, ein Wartungstermin darf dort nicht landen. Ich würde auch zwei Störungen hintereinander und einen nächtlichen Einsatz mit Folgetermin testen.
+5. **Ein Test an einem Samstag in der Sandbox:** Ein Störungsauftrag mit Premium-Entitlement muss dem Bereitschaftstechniker zugewiesen werden, ein Wartungstermin darf das nicht. Ich würde auch zwei Störungen hintereinander und einen nächtlichen Einsatz mit Folgetermin testen.
 
 Die 36-Stunden-Schicht stellt Verfügbarkeit für die Planung dar; sie bedeutet nicht, dass 36 Stunden Arbeit zulässig sind. Legen Sie fest, wie Einsätze, Fahrten, Höchstarbeitszeit und Ruhezeiten die weitere Verfügbarkeit verringern. Das Datenmodell ist klein. Der Aufwand liegt in der Abstimmung des Plans und darin, die Schichten jedes Quartal zu bestätigen.
 

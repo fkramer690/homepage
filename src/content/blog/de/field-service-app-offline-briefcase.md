@@ -12,7 +12,7 @@ tags: [Field Service, Außendienst, mobile App, offline, Briefcase Builder]
 takeaways:
   - "Briefcases legen fest, was jede Technikergruppe lädt. Performance Priming bringt wichtige Änderungen etwa alle fünf Minuten, den Rest binnen 24 Stunden."
   - "Salesforce dokumentiert Lücken: Aufgaben im Briefcase werden nicht geladen, und globale Quick Actions erhalten offline keine Datensatz-ID."
-  - "Nutzer mit Community-Lizenz können offline beim Öffnen eines Termins einen Fehler bekommen. Sind Partner dabei, testen Sie mit einem Partnertechniker."
+  - "Nutzer mit Community-Lizenz können offline beim Öffnen eines Termins einen Fehler erhalten. Sind Partner dabei, testen Sie mit einem Partnertechniker."
   - "Mein Zielbild: Termin, Arbeitsauftrag, Asset mit Historie, Fahrzeuglager und Handbuch aufs Gerät. Preislisten und alle Assets eines Gebiets bleiben online."
   - "Salesforce nennt je nach Briefcase-Typ 50.000 bis 400.000 Datensätze pro Nutzer. Planen Sie deutlich darunter und messen Sie die Synchronisation."
 faq:
@@ -21,7 +21,7 @@ faq:
   - q: "Was ist Briefcase Builder in Salesforce Field Service?"
     a: "Briefcase Builder ist die Setup-Seite, auf der Sie festlegen, welche Datensätze für welche Nutzer und mit welchen Filtern offline verfügbar sind. Performance Priming arbeitet mit Briefcases, die Salesforce automatisch pro Profil erzeugt, und lädt die Datensätze und Metadaten, die das Profil eines Technikers braucht."
   - q: "Wie oft synchronisiert die Field Service App Offline-Daten?"
-    a: "Mit Performance Priming kommen wichtige Änderungen etwa alle fünf Minuten, solange das Gerät verbunden ist. Andere von Performance Priming abgedeckte Daten und Objekte ohne Change Data Capture werden mindestens alle 24 Stunden aktualisiert. Offline geänderte Datensätze bleiben auf dem Gerät und werden übertragen, wenn die Verbindung zurück ist; dabei können Validierungsfehler oder eine falsche Geräteuhr stören."
+    a: "Mit Performance Priming werden wichtige Änderungen etwa alle fünf Minuten übertragen, solange das Gerät verbunden ist. Andere von Performance Priming abgedeckte Daten und Objekte ohne Change Data Capture werden mindestens alle 24 Stunden aktualisiert. Offline geänderte Datensätze bleiben auf dem Gerät und werden übertragen, wenn die Verbindung zurück ist; dabei können Validierungsfehler oder eine falsche Geräteuhr stören."
   - q: "Welche Offline-Probleme sollte ich vor dem Go-live testen?"
     a: "Für LWC Offline nennt Salesforce fünf Punkte: Aufgaben im Briefcase werden nicht geladen, globale Quick Actions erhalten keine Datensatz-ID, Nutzer mit Community-Lizenz können einen Fehler wegen fehlender Datensätze sehen, Appointment Assistant kann mit LWC Offline kollidieren, und unter iOS laden geänderte Komponenten erst nach einem Kaltstart. Dazu kommen Synchronisationsfehler, Geräteuhrzeit, Flows mit nicht geladenen Daten und verknüpfte Datensätze, die Sie vor Ort öffnen."
 draft: false
@@ -35,7 +35,7 @@ Das [Trailhead-Modul zu Offline-Briefcases](https://trailhead.salesforce.com/con
 
 - **Grundausstattung.** Die App funktioniert ohne Netz von Haus aus und hält eine begrenzte Menge an Datensätzen auf dem Gerät vor.
 - **Briefcases.** In Briefcase Builder wählt ein Admin Objekte, Filter und die Nutzer oder Gruppen, für die ein Standard-Briefcase gilt. Auch benutzerdefinierte Objekte können so offline verfügbar werden.
-- **Performance Priming.** Es arbeitet mit Profil-Briefcases, die Salesforce automatisch erzeugt, lädt die Datensätze und Metadaten, die das Profil eines Technikers braucht, und hält mehr Datensätze als Standard-Priming. Laut [Hilfeartikel](https://help.salesforce.com/s/articleView?id=service.wfs_mobile_work_with_performance_priming.htm&language=en_US&type=5) kommen wichtige Änderungen etwa alle fünf Minuten, übrige Daten mindestens einmal am Tag. Voraussetzungen sind Enterprise oder Unlimited Edition, Winter '26 oder neuer, App-Version 264 oder neuer und Field-Service-Mobile-Lizenzen.
+- **Performance Priming.** Es arbeitet mit Profil-Briefcases, die Salesforce automatisch erzeugt, lädt die Datensätze und Metadaten, die das Profil eines Technikers braucht, und hält mehr Datensätze als Standard-Priming. Laut [Hilfeartikel](https://help.salesforce.com/s/articleView?id=service.wfs_mobile_work_with_performance_priming.htm&language=en_US&type=5) werden wichtige Änderungen etwa alle fünf Minuten übertragen, übrige Daten mindestens einmal am Tag. Voraussetzungen sind Enterprise oder Unlimited Edition, Winter '26 oder neuer, App-Version 264 oder neuer und Field-Service-Mobile-Lizenzen.
 
 Das Produkt heißt inzwischen Agentforce Field Service and Operations; App und große Teile der Dokumentation verwenden weiterhin Field Service.
 
@@ -69,7 +69,7 @@ Handbücher brauchen einen zweiten Blick. Ein Agent zur Fehlersuche findet das r
 
 ## Welche Offline-Lücken dokumentiert Salesforce?
 
-Die [Hinweise zu LWC Offline in der Field Service App](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sfs_gs_lwc_considerations.htm) nennen fünf bekannte Probleme. Eine vollständige Liste aller Offline-Probleme ist das nicht; die Synchronisationsfehler von oben kommen dazu. In einem ersten Test mit einem Admin-Nutzer werden diese fünf Punkte leicht übersehen, deshalb nehme ich alle in den Testplan auf.
+Die [Hinweise zu LWC Offline in der Field Service App](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sfs_gs_lwc_considerations.htm) nennen fünf bekannte Probleme. Eine vollständige Liste aller Offline-Probleme ist das nicht; hinzu kommen die Synchronisationsfehler von oben. In einem ersten Test mit einem Admin-Nutzer werden diese fünf Punkte leicht übersehen, deshalb nehme ich alle in den Testplan auf.
 
 1. **Aufgaben werden nicht geladen.** Ein Task-Objekt im Briefcase löst beim Priming einen Fehler aus. Die übrigen Objekte werden trotzdem geladen. Abhilfe: Aufgaben aus dem Briefcase entfernen.
 2. **Globale Quick Actions erhalten keine Datensatz-ID.** Von einer Datensatzseite gestartet, wissen sie nicht, welchen Datensatz der Techniker gerade ansieht. Eine eigene Aktion, die den aktuellen Arbeitsauftrag verwenden soll, gehört deshalb ans Objekt und nicht zu den globalen Aktionen.
@@ -94,7 +94,7 @@ Ein Maschinenbauer schickt einen Techniker in die Produktionshalle eines Kunden.
 - **7:00 Uhr, auf dem Parkplatz.** Die App lädt drei Termine für den Tag: Jahreswartung an zwei Kompressoren und eine Undichtigkeit an einem dritten. Die Asset-Historie zeigt ein vor vier Monaten getauschtes Ventil am dritten Kompressor.
 - **9:30 Uhr, an der Maschine.** Der Techniker prüft im Fahrzeuglager einen Dichtungssatz, bucht ihn als verbraucht, füllt das Prüfformular aus und holt die Unterschrift des Kunden auf dem Servicebericht. Die Daten liegen auf dem Gerät.
 - **11:00 Uhr, im Innendienst.** Die Disponentin plant einen vierten Einsatz beim selben Kunden. Der Techniker sieht ihn nicht, weil das Gerät keine Verbindung hat. Die Disponentin muss den Ansprechpartner vor Ort anrufen.
-- **16:30 Uhr, zurück im Auto.** Die App synchronisiert. Der Verbrauch wird an Salesforce übertragen und über die Schnittstelle ins ERP weitergegeben, der Servicebericht wird erzeugt und kommt im Innendienst an, und der vierte Einsatz erscheint, sofern kein Datensatz bei der Übertragung abgelehnt wird.
+- **16:30 Uhr, zurück im Auto.** Die App synchronisiert. Der Verbrauch wird an Salesforce übertragen und über die Schnittstelle ins ERP weitergegeben, der Servicebericht wird erzeugt und erreicht den Innendienst, und der vierte Einsatz erscheint, sofern kein Datensatz bei der Übertragung abgelehnt wird.
 
 Das Szenario zeigt, was offline für die Planung bedeutet. Das Gerät arbeitet, aber der Plan bleibt auf dem Stand der letzten Synchronisation stehen. Disponenten müssen wissen, welche Techniker in Hallen ohne Netz arbeiten, und ein kurzer Anruf gehört zum Prozess.
 

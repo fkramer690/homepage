@@ -33,7 +33,7 @@ This article is part 5 of the series. How Field Service schedules and what the d
 
 ## Which object covers what?
 
-The terms sound alike and often get mixed up in projects. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.entitlements_terms.htm&language=en_US&type=5):
+The terms sound alike and are often confused in projects. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.entitlements_terms.htm&language=en_US&type=5):
 
 | Object | What it covers | Example |
 |---|---|---|

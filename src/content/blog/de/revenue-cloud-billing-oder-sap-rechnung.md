@@ -63,7 +63,7 @@ Trailhead nennt eine [Rolle Accounts Receivable Admin](https://trailhead.salesfo
 
 Bei einmaligen Maschinenverkäufen lasse ich die Rechnung in SAP, wenn Versand, Abnahme, Anzahlungen und Meilensteine dort gesteuert werden. Die Gründe sind praktisch:
 
-- **Die Lieferung bestimmt die Rechnung.** Maschinen werden oft nach Versand oder Abnahme fakturiert, und in vielen Unternehmen laufen Versand, Zoll und Abnahme in SAP.
+- **Die Lieferung bestimmt die Rechnung.** Maschinen werden oft nach Versand oder Abnahme fakturiert, und in vielen Unternehmen werden Versand, Zoll und Abnahme in SAP abgewickelt.
 - **Anzahlungen und Meilensteine** werden üblicherweise gegen den SAP-Auftrag gebucht. Billing kennt im Datenmodell zwar Billing Milestone Plans, aber die Anzahlungsbuchhaltung für eine Produktlinie aus SAP herauszulösen, lohnt sich selten.
 - **Kosten.** Die Billing-Nutzung wird anhand der positiven Beträge gebuchter Rechnungspositionen gemessen. Eine in Salesforce gebuchte Maschinenrechnung über 2 Millionen Euro verbraucht Billing Events für den vollen Betrag, obwohl SAP diese Rechnung ohnehin erstellen könnte. Ob dadurch zusätzliche Kosten entstehen, hängt von den in Ihrem Vertrag enthaltenen Events ab.
 - **E-Rechnung.** Ab dem 1. Januar 2027 entfällt für Rechnungsaussteller mit mehr als 800.000 Euro Vorjahresumsatz grundsätzlich die Übergangsoption, für inländische B2B-Umsätze Papier- oder unstrukturierte Rechnungen zu senden. Gesetzliche Ausnahmen und die EDI-Übergangsfrist bis Ende 2027 müssen weiterhin geprüft werden. Erzeugt SAP E-Rechnungen bereits, bedeutet ein zweites Fakturasystem ein zweites Compliance-Projekt. Einzelheiten stehen in [E-Rechnung ab 2027 und Revenue Cloud](../e-rechnung-pflicht-2027-revenue-cloud/).
@@ -112,7 +112,7 @@ Der Kunde erhält zwei Arten von Rechnungen. Der Kundenservice muss beide erklä
 
 ## Finance zieht die Grenze
 
-Die Entscheidung liegt bei Finance. Das CRM-Team kann zeigen, was Billing kann, aber die Folgen trägt die Finanzabteilung: ein zweites Debitorenbuch, ein zweiter Periodenabschluss und ein weiterer Prozess, den sich Wirtschaftsprüfer ansehen. Die [Object Ownership Matrix](../object-ownership-matrix-salesforce/) hilft auch hier: Jedes Billing-Objekt braucht einen Owner, und bei Legal Entities, Buchungsperioden und Sachkonten sitzt dieser Owner in der Buchhaltung.
+Die Entscheidung liegt bei Finance. Das CRM-Team kann zeigen, was Billing kann, aber die Folgen trägt die Finanzabteilung: ein zweites Debitorenbuch, ein zweiter Periodenabschluss und ein weiterer Prozess, den sich Wirtschaftsprüfer ansehen. Die [Object Ownership Matrix](../object-ownership-matrix-salesforce/) hilft auch hier: Jedes Billing-Objekt braucht einen Owner, und bei Legal Entities, Buchungsperioden und Sachkonten gehört dieser Owner zur Buchhaltung.
 
 Ich würde die Leitung des Rechnungswesens in den ersten Architektur-Workshop holen, nicht erst in den Abnahmetest.
 

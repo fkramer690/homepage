@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Ein Maschinenbauer hat genug Daten für Predictive Maintenance in Salesforce, wenn mindestens 400 historische Anlagenreparaturen vorliegen, das Minimum, das Salesforce für Asset Service Prediction nennt. Nach meiner Erfahrung müssen die Reparaturen außerdem zu vergleichbaren Maschinen pro Baureihe gehören, über die Seriennummer verknüpft sein und codierte Ausfallursachen enthalten. Das Modell lernt aus dieser Servicehistorie, Sensordaten kommen erst danach. Ist die Historie dünn, sind [Wartungspläne mit nutzungs- und zustandsabhängigen Auslösern](../field-service-wartung-nach-betriebsstunden/) die bessere Wahl. Maschinendaten sind als Aggregate bezahlbar: Im Beispiel unten kosten Rohwerte im Sekundentakt von 300 Maschinen, eine Zeile pro Signal, rund 65.900 € im Monat an Flex Credits, 15-Minuten-Aggregate rund 180 €.
+Ein Maschinenbauer hat genug Daten für Predictive Maintenance in Salesforce, wenn mindestens 400 historische Anlagenreparaturen vorliegen, das Minimum, das Salesforce für Asset Service Prediction nennt. Nach meiner Erfahrung müssen die Reparaturen außerdem zu vergleichbaren Maschinen pro Baureihe gehören, über die Seriennummer verknüpft sein und codierte Ausfallursachen enthalten. Das Modell lernt aus dieser Servicehistorie, Sensordaten folgen erst danach. Ist die Historie dünn, sind [Wartungspläne mit nutzungs- und zustandsabhängigen Auslösern](../field-service-wartung-nach-betriebsstunden/) die bessere Wahl. Maschinendaten sind als Aggregate bezahlbar: Im Beispiel unten kosten Rohwerte im Sekundentakt von 300 Maschinen, eine Zeile pro Signal, rund 65.900 € im Monat an Flex Credits, 15-Minuten-Aggregate rund 180 €.
 
 ## Was bietet Salesforce heute für vorausschauende Wartung?
 
@@ -88,11 +88,11 @@ Rohe Zeitreihen gehören in die IoT-Plattform oder den Historian, den der Maschi
 
 ## Wann sind Wartungspläne die bessere Wahl?
 
-Ein großer Teil des Nutzens, der unter „predictive“ versprochen wird, kommt aus zwei einfacheren Dingen: Geplante Wartungstermine werden eingehalten, und die Intervalle richten sich nach der Nutzung statt nach dem Kalender. Beides deckt Field Service ohne Prognosemodell ab.
+Ein großer Teil des Nutzens, der unter „predictive“ versprochen wird, ergibt sich aus zwei einfacheren Dingen: Geplante Wartungstermine werden eingehalten, und die Intervalle richten sich nach der Nutzung statt nach dem Kalender. Beides deckt Field Service ohne Prognosemodell ab.
 
 Wartungspläne erzeugen die Work Orders, und Maintenance Work Rules an der Anlage steuern abweichende Intervalle, wie in [Wartungsverträge in Field Service abbilden](../salesforce-field-service-wartungsvertraege/) beschrieben. Die Produktseite ergänzt Pläne nach Nutzung und Zustand, die einen Einsatz auslösen, sobald „an asset's temperature exceeds a set threshold“. Das Datenmodell hat dafür das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm), das Anlagenattribute speichert, „to track and analyze asset conditions“. Ein Betriebsstundenzähler, den SAP, proALPHA oder die IoT-Plattform einmal am Tag schreibt, reicht für nutzungsabhängige Intervalle oft aus, solange ein Tag Verzögerung vertretbar ist.
 
-Den Termin bucht dann der Agent für proaktive Wartung. Bei angenommenen fünf Aktionen pro Buchung sind das 100 Credits oder 0,50 € für die Aktionen. Prompts kommen dazu; messen Sie sie in der Digital Wallet.
+Den Termin bucht dann der Agent für proaktive Wartung. Bei angenommenen fünf Aktionen pro Buchung sind das 100 Credits oder 0,50 € für die Aktionen. Hinzu kommen Prompts; messen Sie sie in der Digital Wallet.
 
 Für mich ist das die richtige Antwort, wenn Baureihen klein sind, Maschinen kundenspezifisch gebaut werden, Fehlercodes bis vor kurzem Freitext waren oder Händler keine Reparaturen melden. Ein Pilot zur Ausfallprognose lohnt sich, wenn eine Baureihe viele hundert Maschinen hat, die codierte Historie mehrere Jahre abdeckt und ungeplanter Stillstand bei einer Verfügbarkeitszusage im Servicevertrag echtes Geld kostet.
 
@@ -111,7 +111,7 @@ Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und Field Service im Betr
 3. **Buchung durch den Agenten.** 250 Termine im Monat mit je fünf Aktionen: 25.000 Credits, rund 125 €.
 4. **Erst die Historie.** Codierte Fehlerursachen werden für Händler Pflicht, als Teil des Garantieprozesses. 2028 zählt der Maschinenbauer die Fälle erneut.
 
-Datenübernahme und Agentenaktionen ergeben rund 34.000 Credits, etwa 170 € im Monat; Datenaufbereitung, Abfragen und Prompts kommen dazu. Connected Assets für 15.000 $ pro Org und Monat (US-Listenpreis) rechnet sich erst, wenn der Health Score Entscheidungen stützt, die sich mit Schwellwerten nicht zuverlässig treffen lassen.
+Datenübernahme und Agentenaktionen ergeben rund 34.000 Credits, etwa 170 € im Monat; hinzu kommen Datenaufbereitung, Abfragen und Prompts. Connected Assets für 15.000 $ pro Org und Monat (US-Listenpreis) rechnet sich erst, wenn der Health Score Entscheidungen stützt, die sich mit Schwellwerten nicht zuverlässig treffen lassen.
 
 ## Störungs-Work-Orders pro Baureihe zählen
 

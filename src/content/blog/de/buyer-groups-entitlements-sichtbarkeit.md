@@ -41,7 +41,7 @@ Salesforce B2B Commerce, das in Teilen der Salesforce-Dokumentation auch "Agentf
 - **Entitlement Policy** (CommerceEntitlementPolicy): verbindet Buyer Groups mit Produkten. Laut [Übersicht zum Datenmodell](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-dev-data-model.html) hat sie die Felder CanViewProduct und CanViewPrice.
 - **Preisbuch der Buyer Group** (BuyerGroupPricebook): ordnet Preisbücher den Buyer Groups zu.
 
-Sichtbarkeit und Preis hängen also an denselben Buyer Groups. Store-Preisbücher, Vertragspreise und ein eigener Pricing Service sind weitere Preisquellen. Deshalb plane ich beides zusammen. Wie die Preisseite funktioniert und wann Preise besser live aus dem ERP kommen, steht in [Kundenpreise in B2B Commerce](../kundenpreise-b2b-commerce-preisbuecher-erp/).
+Sichtbarkeit und Preis hängen also an denselben Buyer Groups. Store-Preisbücher, Vertragspreise und ein eigener Pricing Service sind weitere Preisquellen. Deshalb plane ich beides zusammen. Wie die Preisseite funktioniert und wann Preise besser live aus dem ERP abgerufen werden, steht in [Kundenpreise in B2B Commerce](../kundenpreise-b2b-commerce-preisbuecher-erp/).
 
 ## 20, 200 und 2.000: die Grenzen für das Design
 
@@ -67,7 +67,7 @@ Bei den 200 Buyer Groups pro Policy warnt Salesforce, dass ein Überschreiten zu
 
 ## Warum nicht eine Buyer Group pro Händler?
 
-Die Idee liegt nahe, weil sie das ERP abbildet: Jeder Kunde hat eigene Konditionen, also bekommt jeder Kunde eine eigene Buyer Group, eine eigene Policy und ein eigenes Preisbuch. Mit 50 Händlern geht das. Sobald die Händlergruppen auch die gemeinsamen Policies tragen, kippt die Rechnung mit wachsender Händlerzahl:
+Die Idee liegt nahe, weil sie das ERP abbildet: Jeder Kunde hat eigene Konditionen, also erhält jeder Kunde eine eigene Buyer Group, eine eigene Policy und ein eigenes Preisbuch. Mit 50 Händlern geht das. Sobald die Händlergruppen auch die gemeinsamen Policies tragen, kippt die Rechnung mit wachsender Händlerzahl:
 
 - Ein Ersatzteil, das jeder Händler kaufen darf, ist so vielen Buyer Groups zugeordnet, wie es Händler gibt. Bei 2.000 Händlern stößt jedes gängige Teil an die Suchgrenze.
 - Eine Policy wie "alle Ersatzteile" bedient höchstens 200 Buyer Groups. Mit 1.000 Händlergruppen brauchen Sie mindestens fünf Kopien derselben Policy und müssen sie synchron halten.
@@ -75,7 +75,7 @@ Die Idee liegt nahe, weil sie das ERP abbildet: Jeder Kunde hat eigene Kondition
 
 Eine Händlergruppe, der nur ein Preisbuch zugeordnet ist, ist ein anderer Fall. Salesforce beschreibt dieses Muster: eine gemeinsame Gruppe und Policy für das Sortiment, dazu je Käufer eine Gruppe mit Preisbuch. Das stößt nicht an die Produktgrenze, bedeutet aber weiterhin eine Gruppe und ein Preisbuch pro Händler, die jemand pflegt.
 
-Individuelle Preise sind selten ein guter Grund für individuelle Gruppen. In den SAP-geprägten Programmen, die ich sehe, kommen Nettopreise aus Konditionen pro Kunde. Die gehören in einen Live-Preisaufruf, in accountbezogene Vertragspreise oder in wenige Preisbücher pro Stufe, nicht in ein Preisbuch pro Händler.
+Individuelle Preise sind selten ein guter Grund für individuelle Gruppen. In den SAP-geprägten Programmen, die ich sehe, stammen Nettopreise aus Konditionen pro Kunde. Die gehören in einen Live-Preisaufruf, in accountbezogene Vertragspreise oder in wenige Preisbücher pro Stufe, nicht in ein Preisbuch pro Händler.
 
 ## Buyer Groups nach Land, Händlerstufe und Marke schneiden
 
@@ -87,7 +87,7 @@ Ich bilde Buyer Groups aus Merkmalen, die sich selten ändern und die im ERP-Kun
 
 Entitlement Policies folgen dann Sortimenten, nicht Kunden: "Ersatzteile allgemein", "Ersatzteile für Servicepartner", "Verbrauchsmaterial", "Zubehör Marke B".
 
-Rechenbeispiel: ein Hersteller mit 800 Händlern in 12 Ländern, drei Händlerstufen und zwei Marken. Land und Stufe ergeben 36 Buyer Groups, für die zwei Marken kommen zwei weitere hinzu. Jeder Händleraccount steckt in zwei Gruppen, weit unter 20. Ein Punkt ist dabei wichtig: Buyer Groups addieren sich. Ein Händler in "Deutschland Servicepartner" und "Marke B" bekommt die Policies beider Gruppen, die Markengruppe filtert die andere nicht. Soll ein Produkt nur für Servicepartner in Deutschland mit Marke B sichtbar sein, braucht es eine kombinierte Gruppe oder eine Policy, die schon nur diese Schnittmenge enthält. Ein gängiges Ersatzteil ist 36 Gruppen zugeordnet statt 800, und die Policy "Ersatzteile allgemein" bedient 36 Gruppen, weit unter 200. Ein neuer Händler bedeutet zwei Mitgliedschaften und keine neue Policy.
+Rechenbeispiel: ein Hersteller mit 800 Händlern in 12 Ländern, drei Händlerstufen und zwei Marken. Land und Stufe ergeben 36 Buyer Groups, für die zwei Marken kommen zwei weitere hinzu. Jeder Händleraccount steckt in zwei Gruppen, weit unter 20. Ein Punkt ist dabei wichtig: Buyer Groups addieren sich. Ein Händler in "Deutschland Servicepartner" und "Marke B" erhält die Policies beider Gruppen, die Markengruppe filtert die andere nicht. Soll ein Produkt nur für Servicepartner in Deutschland mit Marke B sichtbar sein, braucht es eine kombinierte Gruppe oder eine Policy, die schon nur diese Schnittmenge enthält. Ein gängiges Ersatzteil ist 36 Gruppen zugeordnet statt 800, und die Policy "Ersatzteile allgemein" bedient 36 Gruppen, weit unter 200. Ein neuer Händler bedeutet zwei Mitgliedschaften und keine neue Policy.
 
 Ausnahmen bleiben Ausnahmen. Braucht ein Händler ein Sonderteil für eine Sondermaschine, ist eine kleine Gruppe "Sondervereinbarungen" in Ordnung. Jedem Händler nur die Teile seiner eigenen Maschinen zu zeigen, ist ein anderes Problem, das Buyer Groups nicht lösen. Die Wege dafür beschreibe ich in [nur Teile zur eigenen Maschine zeigen](../ersatzteilshop-teile-pro-maschine/). Und wenn Länder oder Marken so verschieden sind, dass sich Katalog oder Checkout unterscheiden, lautet die Frage [ein B2B-Store oder mehrere](../b2b-store-laender-marken-haendler/).
 
@@ -105,9 +105,9 @@ Mein Standard ist einfacher: Die Schnittstelle legt Mitgliedschaften auf Basis d
 
 Schreiben Sie das Berechtigungskonzept auf eine Seite, bevor jemand Daten lädt:
 
-- die Liste der Buyer Groups mit den Kriterien, nach denen ein Account in die Gruppe kommt,
+- die Liste der Buyer Groups mit den Kriterien, nach denen ein Account der Gruppe zugeordnet wird,
 - die Liste der Entitlement Policies mit dem Sortiment, das jede abdeckt,
-- eine Matrix, welche Gruppe welche Policy und welches Preisbuch bekommt,
+- eine Matrix, welche Gruppe welche Policy und welches Preisbuch erhält,
 - einen Abgleich mit den Grenzen für Accounts, Policies und Produkte, für heute und für den Stand in drei Jahren.
 
-Die ERP-Felder, die über die Mitgliedschaft entscheiden, kommen dann in die Schnittstellenliste. Diese Seite ist das erste Ergebnis im [Kapitel zu Katalog, Suche und Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) meiner [Masterclass B2B Commerce](../../masterclass/b2b-commerce/). Ob Händler die Teile, die sie sehen dürfen, dann auch finden, entscheidet die Suche, beschrieben in [Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/). Solche Konzepte zu prüfen, bevor ein Partner baut, gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+Die ERP-Felder, die über die Mitgliedschaft entscheiden, gehören dann in die Schnittstellenliste. Diese Seite ist das erste Ergebnis im [Kapitel zu Katalog, Suche und Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) meiner [Masterclass B2B Commerce](../../masterclass/b2b-commerce/). Ob Händler die Teile, die sie sehen dürfen, dann auch finden, entscheidet die Suche, beschrieben in [Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/). Solche Konzepte zu prüfen, bevor ein Partner baut, gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).

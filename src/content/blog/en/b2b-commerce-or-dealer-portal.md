@@ -12,7 +12,7 @@ tags: [B2B Commerce, Experience Cloud, dealer portal, Manufacturing Cloud, spare
 takeaways:
   - "A portal shows data and accepts requests. B2B Commerce adds a catalog, visibility per buyer group, buyer prices, a cart and a checkout out of the box."
   - "A standard store buyer needs an External Apps license or higher. Buyer managers and account switchers need Customer Community Plus."
-  - "A store pays off when dealers reorder known part numbers in large volumes and a large share of those orders still comes in by phone or email."
+  - "A store pays off when dealers reorder known part numbers in large volumes and a large share of those orders still arrives by phone or email."
   - "Machines that need engineering stay in the quoting process. Standard options and bundles can be sold through B2B Commerce with Revenue Management."
   - "In the worked example with 250 dealers and 30,000 order lines a year, the volume makes a store a good fit; the payback requires its own business case."
 faq:

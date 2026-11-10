@@ -149,7 +149,7 @@ contra: Nicht unterschreiben
 - Ohne geregelte Verlängerung.
 ```
 
-Die Finanzchefin von Salesforce sprach im selben Call davon, AELA-Kunden später in ein verbrauchsbasiertes Modell zu überführen. Was die AELA kostet, entscheidet sich deshalb im zweiten Vertrag. Schreiben Sie in den ersten Vertrag: Preismodell und Preisdeckel ab Jahr vier, jährliche Ausstiegspunkte (der Vertrag des [US-Veteranenministeriums](https://www.salesforce.com/news/press-releases/2026/07/24/missionforce-transforms-veteran-care/) läuft ein Jahr plus zwei optionale Verlängerungen), Umfang und Fair-Use-Regeln. Das ist eine kaufmännische Checkliste, keine Rechtsberatung.
+Die Finanzchefin von Salesforce sprach im selben Call davon, AELA-Kunden später in ein verbrauchsbasiertes Modell zu überführen. Was die AELA kostet, entscheidet sich deshalb im zweiten Vertrag. Schreiben Sie in den ersten Vertrag: Preismodell und Preisdeckel ab Jahr vier, jährliche Ausstiegspunkte (der Vertrag des [US-Veteranenministeriums](https://www.salesforce.com/news/press-releases/2026/07/24/missionforce-transforms-veteran-care/) hat eine Laufzeit von einem Jahr plus zwei optionalen Verlängerungen), Umfang und Fair-Use-Regeln. Das ist eine kaufmännische Checkliste, keine Rechtsberatung.
 
 ## Erster Schritt: ein Verbrauchsplan pro Agent über drei Jahre
 

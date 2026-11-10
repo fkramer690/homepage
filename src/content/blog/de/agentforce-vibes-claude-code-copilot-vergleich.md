@@ -17,7 +17,7 @@ takeaways:
   - "Ich empfehle höchstens zwei freigegebene Coding-Agenten, Konten im Besitz des Kunden und eine führende Regeldatei im Kunden-Repository."
 faq:
   - q: "Welcher Coding-Agent ist für die Salesforce-Entwicklung am besten?"
-    a: "Mir ist kein öffentlicher Benchmark bekannt, der das für Apex, LWC oder Flow klärt. Salesforce hat sein erstes offizielles Plugin für Claude Code gebaut, Agentforce Vibes läuft in Ihrem Salesforce-Vertrag, Copilot in GitHub. Entscheiden Sie nach Vertrag, Datenresidenz und Governance und testen Sie dann an Aufgaben aus Ihrem Backlog."
+    a: "Mir ist kein öffentlicher Benchmark bekannt, der das für Apex, LWC oder Flow klärt. Salesforce hat sein erstes offizielles Plugin für Claude Code gebaut, Agentforce Vibes ist Teil Ihres Salesforce-Vertrags, Copilot wird über GitHub abgerechnet. Entscheiden Sie nach Vertrag, Datenresidenz und Governance und testen Sie dann an Aufgaben aus Ihrem Backlog."
   - q: "Können wir Agentforce Vibes in der EU nutzen?"
     a: "Ja, für Orgs außerhalb der Hyperforce EU Operating Zone. Laut Salesforce ist Vibes in der EU Operating Zone nicht verfügbar; Daten bleiben in der Trust Boundary von Salesforce und werden nach der Sitzung nicht gespeichert. Die Abrechnungsseite sagt allerdings, dass Vibes Daten in Data Cloud speichert, lassen Sie sich die Aufbewahrung also schriftlich bestätigen."
   - q: "Gibt es Claude Code mit Verarbeitung in der EU?"
@@ -41,9 +41,9 @@ Mir ist kein öffentlicher, Salesforce-spezifischer Beleg bekannt, der die Werkz
 
 Jede Option hängt an einem Vertrag, den Sie vielleicht bereits haben:
 
-- **Agentforce Vibes** läuft über Ihren Salesforce-Vertrag: Laut [Preisseite](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) als Flat Fee für 125 $ pro Nutzer und Monat oder nach Verbrauch mit Flex Credits, also mit „the same credits used by Agentforce“.
-- **GitHub Copilot** läuft über GitHub. Seit Februar 2026 sind Claude und Codex [als Coding-Agenten in Copilot Business verfügbar](https://github.blog/changelog/2026-02-26-claude-and-codex-now-available-for-copilot-business-pro-users/), nach Enterprise und Pro+, sobald ein Admin „Partner Agents“ freischaltet. Ein Vertrag gibt dann Zugang zu drei Agenten, aber die Partner Agents sind Integrationen in GitHub, nicht dasselbe wie Claude Code mit dem Salesforce-Plugin oder die Codex-CLI.
-- **Claude Code** ist in jedem bezahlten Claude-Plan enthalten. [Claude Enterprise](https://claude.com/pricing) kostet 20 $ pro Seat und Monat bei jährlicher Abrechnung, mindestens 20 Seats (US-Listenpreis); der Seat deckt nur den Zugang, [die gesamte Nutzung läuft zu API-Preisen](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan). Über Amazon Bedrock wird es [pro Token über Ihr AWS-Konto abgerechnet](https://code.claude.com/docs/en/costs).
+- **Agentforce Vibes** wird über Ihren Salesforce-Vertrag abgerechnet: Laut [Preisseite](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) als Flat Fee für 125 $ pro Nutzer und Monat oder nach Verbrauch mit Flex Credits, also mit „the same credits used by Agentforce“.
+- **GitHub Copilot** wird über GitHub abgerechnet. Seit Februar 2026 sind Claude und Codex [als Coding-Agenten in Copilot Business verfügbar](https://github.blog/changelog/2026-02-26-claude-and-codex-now-available-for-copilot-business-pro-users/), nach Enterprise und Pro+, sobald ein Admin „Partner Agents“ freischaltet. Ein Vertrag gibt dann Zugang zu drei Agenten, aber die Partner Agents sind Integrationen in GitHub, nicht dasselbe wie Claude Code mit dem Salesforce-Plugin oder die Codex-CLI.
+- **Claude Code** ist in jedem bezahlten Claude-Plan enthalten. [Claude Enterprise](https://claude.com/pricing) kostet 20 $ pro Seat und Monat bei jährlicher Abrechnung, mindestens 20 Seats (US-Listenpreis); der Seat deckt nur den Zugang, [die gesamte Nutzung wird zu API-Preisen abgerechnet](https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan). Über Amazon Bedrock wird es [pro Token über Ihr AWS-Konto abgerechnet](https://code.claude.com/docs/en/costs).
 - **Codex** gehört zu [ChatGPT Business und Enterprise](https://openai.com/business/pricing/).
 
 Besteht einer dieser Verträge schon, sind Einkauf, Auftragsverarbeitungsvertrag und SSO oft erledigt. Das spart Wochen.
@@ -92,7 +92,7 @@ Auf dem Tisch liegen vier Wünsche: Die Admins wollen Vibes, die internen Entwic
 
 So würde ich entscheiden:
 
-1. **Copilot Enterprise als Standard für alle neun Entwickler**, mit aktivierter EU-Datenresidenz. Es läuft über den bestehenden GitHub-Vertrag, Partnerentwickler bekommen Seats in der Organisation des Kunden, und Claude Sonnet 5.5 steht mit EU-Verarbeitung bereit. Enterprise statt Business, weil Agentensitzungen Credits verbrauchen und Enterprise Credits im Wert von 39 $ statt 19 $ pro Seat enthält. Zum US-Listenpreis: 9 × 39 $ = 351 $ im Monat inklusive gepoolter Credits, mit 10 Prozent mehr Credits pro Anfrage.
+1. **Copilot Enterprise als Standard für alle neun Entwickler**, mit aktivierter EU-Datenresidenz. Es wird über den bestehenden GitHub-Vertrag abgerechnet, Partnerentwickler erhalten Seats in der Organisation des Kunden, und Claude Sonnet 5.5 steht mit EU-Verarbeitung bereit. Enterprise statt Business, weil Agentensitzungen Credits verbrauchen und Enterprise Credits im Wert von 39 $ statt 19 $ pro Seat enthält. Zum US-Listenpreis: 9 × 39 $ = 351 $ im Monat inklusive gepoolter Credits, mit 10 Prozent mehr Credits pro Anfrage.
 2. **Vibes als Flat Fee für die zwei Admins**, 2 × 125 $ = 250 $ im Monat, unter einer Bedingung: Salesforce bestätigt die Verarbeitungsregion schriftlich. Bis dahin nutzen die Admins Copilot.
 3. **Keine Partnerkonten.** Besteht der Partner wegen des offiziellen Plugins auf Claude Code, läuft es über das AWS-Konto des Kunden in einer EU-Region, mit Budget und OpenTelemetry.
 4. **Vorerst kein Codex.** ChatGPT Business hat keine Datenresidenz, und Enterprise wäre ein dritter Vertrag für einen Entwickler.

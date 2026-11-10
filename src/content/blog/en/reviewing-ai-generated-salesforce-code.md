@@ -103,7 +103,7 @@ Write a review checklist
 Require evidence
   Require test output, the Code Analyzer result and the AI-generated parts marked in the pull request.
 Keep pull requests small
-  One story per pull request; a 400-line agent diff is reviewable, a 4,000-line one gets waved through.
+  One story per pull request; a 400-line agent diff is reviewable, a 4,000-line one is waved through.
 Count findings
   Count review findings by category. After a few sprints you know which rules belong in the [AI rules file of your repository](../ai-rules-file-salesforce-repository/) and which gate is missing.
 ```

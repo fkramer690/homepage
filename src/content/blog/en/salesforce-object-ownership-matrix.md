@@ -77,7 +77,7 @@ It took about three months until the standards were stable. The first version co
 
 The matrix should stay small enough that anyone can read it in two minutes. I recommend these columns:
 
-1. **Object**, with its API name so nothing gets mixed up.
+1. **Object**, with its API name so nothing is confused.
 2. **Owning stream** and a named person as contact.
 3. **Automation entry point**, meaning whether the object is automated through Flow or an Apex trigger framework.
 4. **Streams that use it**, so the owner knows who a change affects.

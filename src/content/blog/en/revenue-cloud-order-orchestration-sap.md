@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-In Revenue Cloud, an activated order is handed to Dynamic Revenue Orchestrator (DRO), usually by a record-triggered flow. DRO breaks the commercial products the customer bought into technical products and runs an orchestration plan of auto tasks, callouts, manual tasks, milestones, pauses and other steps in a defined order. The hand-over to SAP belongs in a callout step that writes the SAP order number back, and failures land as fallout in a queue. DRO is an add-on for Revenue Cloud Advanced. If your order goes to SAP in one piece and nothing else happens in Salesforce, a plain integration is enough.
+In Revenue Cloud, an activated order is handed to Dynamic Revenue Orchestrator (DRO), usually by a record-triggered flow. DRO breaks the commercial products the customer bought into technical products and runs an orchestration plan of auto tasks, callouts, manual tasks, milestones, pauses and other steps in a defined order. The hand-over to SAP belongs in a callout step that writes the SAP order number back, and failures appear as fallout in a queue. DRO is an add-on for Revenue Cloud Advanced. If your order goes to SAP in one piece and nothing else happens in Salesforce, a plain integration is enough.
 
 ## What does Dynamic Revenue Orchestrator do?
 

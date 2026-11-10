@@ -20,9 +20,9 @@ faq:
   - q: "Was kostet Manufacturing Cloud for Service?"
     a: "Die Preisseite nennt Manufacturing Cloud Service Core mit 275 und Service Max mit 650 US-Dollar pro Nutzer und Monat bei jährlicher Abrechnung, Sales and Service Max mit 700. Zwei Fußnoten widersprechen sich in der Frage, ob diese Preise für die Enterprise oder die Unlimited Edition gelten. Prüfen Sie daher das Angebot."
   - q: "Was unterscheidet Manufacturing Cloud for Service von Service Cloud?"
-    a: "Manufacturing Cloud for Service ergänzt den Service um Funktionen für Hersteller: Warranty Lifecycle Management, Asset Service Console, Service Console for Manufacturing, Pre-Work Estimation und ein Fertigungs-Datenmodell. Case-Management, Entitlements und Knowledge kommen aus der Service Cloud."
+    a: "Manufacturing Cloud for Service ergänzt den Service um Funktionen für Hersteller: Warranty Lifecycle Management, Asset Service Console, Service Console for Manufacturing, Pre-Work Estimation und ein Fertigungs-Datenmodell. Case-Management, Entitlements und Knowledge stammen aus der Service Cloud."
   - q: "Kann ich Lizenzen von Manufacturing Cloud und Service Cloud in einer Org mischen?"
-    a: "In meinen Programmen prüfe ich zuerst einen Mix nach Rolle. Zugriff auf Garantieobjekte und Objekte für Garantieansprüche kommt über Permission Set Licenses wie Warranty Lifecycle Management und Claims Management Foundation; ein Service-Cloud-Nutzer kann sie also nicht einfach lesen, nur weil sie in derselben Org liegen. Lassen Sie sich Mix, Permission Set Licenses und Zugriffsrechte vor der Unterschrift schriftlich bestätigen."
+    a: "In meinen Programmen prüfe ich zuerst einen Mix nach Rolle. Zugriff auf Garantieobjekte und Objekte für Garantieansprüche erfolgt über Permission Set Licenses wie Warranty Lifecycle Management und Claims Management Foundation; ein Service-Cloud-Nutzer kann sie also nicht einfach lesen, nur weil sie in derselben Org liegen. Lassen Sie sich Mix, Permission Set Licenses und Zugriffsrechte vor der Unterschrift schriftlich bestätigen."
   - q: "Brauchen Techniker im Außendienst Lizenzen der Manufacturing Cloud?"
     a: "Nein. Techniker, die mit der mobilen App von Field Service arbeiten, brauchen Field-Service-Lizenzen, Technician kostet 175 US-Dollar pro Nutzer und Monat in der Enterprise Edition. Field Service setzt außerdem mindestens eine Service-Cloud-Lizenz in der Org voraus, Bestandskunden der Service Cloud brauchen mindestens eine Dispatcher-Lizenz, und Techniker brauchen für die Planung einen Dispatcher."
 draft: false
@@ -60,11 +60,11 @@ Was diese Funktionen leisten:
 
 Mehr als viele erwarten. Für die Edition Service Cloud Core nennt Salesforce Case-Management und ein Self-Service-Hilfecenter. Klären Sie im Angebot, ob Core das Schreiben von Knowledge-Artikeln abdeckt oder nur das Lesen. Die Vergleichstabelle der Preisseite führt außerdem Serviceverträge und Entitlements, Knowledge Management sowie Asset Management und Product Tracking. Assets mit Seriennummern und Hierarchien sind Standardobjekte von Salesforce.
 
-Eine Hotline, die Anrufe annimmt, Cases anlegt, einen Servicevertrag prüft und mit Knowledge-Artikeln antwortet, läuft also auf Service Cloud. Was fehlt, ist die Fertigungsschicht: Garantiebedingungen pro Produkt und Teil, Garantieansprüche mit Zahlungsdetails je Position, Asset-Meilensteine, Beteiligte und Flotten, Kampagnen mit Verursacherteilen. Wenn Sie dem Agenten nur ein Garantieende am Asset zeigen wollen und das ERP es verlässlich berechnet, reicht ein eigenes Feld.
+Eine Hotline, die Anrufe annimmt, Cases anlegt, einen Servicevertrag prüft und mit Knowledge-Artikeln antwortet, arbeitet also mit Service Cloud. Was fehlt, ist die Fertigungsschicht: Garantiebedingungen pro Produkt und Teil, Garantieansprüche mit Zahlungsdetails je Position, Asset-Meilensteine, Beteiligte und Flotten, Kampagnen mit Verursacherteilen. Wenn Sie dem Agenten nur ein Garantieende am Asset zeigen wollen und das ERP es verlässlich berechnet, reicht ein eigenes Feld.
 
 ## Rechenbeispiel: 45 Nutzer im Service
 
-Ich würde nach Rolle entscheiden, nicht nach Abteilung. Als Beispiel dient ein fiktiver Maschinenbauer mit 45 Nutzern im Service. Es ist ein reiner Listenpreisvergleich unter zwei Annahmen: Service Core enthält die Garantiefunktionen, und die Hotline bekommt Lesezugriff auf Garantiedaten ohne Lizenz der Manufacturing Cloud. Beides muss bestätigt werden.
+Ich würde nach Rolle entscheiden, nicht nach Abteilung. Als Beispiel dient ein fiktiver Maschinenbauer mit 45 Nutzern im Service. Es ist ein reiner Listenpreisvergleich unter zwei Annahmen: Service Core enthält die Garantiefunktionen, und die Hotline erhält Lesezugriff auf Garantiedaten ohne Lizenz der Manufacturing Cloud. Beides muss bestätigt werden.
 
 | Rolle | Nutzer | Lizenz |
 |---|---|---|
@@ -81,14 +81,14 @@ Drei Gruppen sind in dieser Tabelle nicht enthalten:
 - **Führungskräfte, die nur Berichte lesen**, brauchen eventuell gar keine volle Lizenz, siehe [Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 
 ```hinweis offen
-Einen Punkt würde ich immer schriftlich festhalten: welche Datensätze der Manufacturing Cloud, etwa Garantieansprüche oder Asset-Garantien, ein Service-Cloud-Nutzer sehen darf. Zugriff kommt über [Permission Set Licenses](https://help.salesforce.com/s/articleView?id=mfg_permission_set_licenses.htm&language=en_US&type=5): Warranty Lifecycle Management, Claims Management Foundation und Industry Service Excellence für die Konsolen. Die Hotline muss Garantiedaten meist lesen, auch wenn sie sie nie bearbeitet.
+Einen Punkt würde ich immer schriftlich festhalten: welche Datensätze der Manufacturing Cloud, etwa Garantieansprüche oder Asset-Garantien, ein Service-Cloud-Nutzer sehen darf. Zugriff erfolgt über [Permission Set Licenses](https://help.salesforce.com/s/articleView?id=mfg_permission_set_licenses.htm&language=en_US&type=5): Warranty Lifecycle Management, Claims Management Foundation und Industry Service Excellence für die Konsolen. Die Hotline muss Garantiedaten meist lesen, auch wenn sie sie nie bearbeitet.
 ```
 
 ## Wie entscheide ich?
 
 Eine kurze Regel, die für die meisten Hersteller passt:
 
-- **Garantieansprüche kommen von außen:** Manufacturing Cloud for Service für die Menschen, die damit arbeiten.
+- **Garantieansprüche gehen von außen ein:** Manufacturing Cloud for Service für die Menschen, die damit arbeiten.
 - **Nur Rückrufe und Upgrades:** Service Cloud plus Asset Service Lifecycle Management mit Manufacturing Cloud vergleichen.
 - **Service heißt Cases, Verträge und Antworten:** Service Cloud, bei Bedarf mit einem eigenen Feld für das Garantieende.
 - **Viele Techniker im Außendienst:** Field Service gesondert entscheiden, aber die nötige Service-Basislizenz und die Dispatcher-Regel prüfen.

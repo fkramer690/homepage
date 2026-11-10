@@ -80,7 +80,7 @@ Service in der Fertigung unterscheidet sich vom Endkundenservice. Kunden sind Un
 **Besser bei Menschen, unterstützt durch den Assistenten:**
 
 - Technische Diagnose komplexer Störungen.
-- Gewährleistungs- und Kulanzentscheidungen, die über Freigaben mit klaren Schwellenwerten laufen sollten.
+- Gewährleistungs- und Kulanzentscheidungen, die über Freigaben mit klaren Schwellenwerten erfolgen sollten.
 - Eskalationen von Schlüsselkunden, bei denen die Beziehung wichtiger ist als die Geschwindigkeit.
 
 ![Wer im B2B-Service was beantwortet: Casey beantwortet Kundenfragen zu Auftrags- und Lieferstatus, Dokumentation, Handbüchern, Zertifikaten und Ersatzteilinformationen sowie Standardfragen zu Rückgaben, Servicezeiten und Verträgen und erfasst Seriennummer, Fehlercode und Fotos. Bei einem Rabatt oder einer Kulanzleistung oberhalb des Schwellenwerts schickt Casey eine Freigabeanfrage an Servicemitarbeitende. Diese übernehmen, unterstützt vom Service Rep Assistant, die technische Diagnose komplexer Störungen, Gewährleistungs- und Kulanzentscheidungen sowie Eskalationen von Schlüsselkunden und genehmigen Freigabeanfragen in der Konsole oder lehnen sie ab. Vor dem Go-live: verlässliches Wissen, klare Freigaberegeln, saubere Daten, messbare Ziele.](../../../assets/blog/casey-or-service-rep-de.png)

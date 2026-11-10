@@ -30,7 +30,7 @@ Der Angebotsagent in Revenue Cloud macht aus einer Anfrage in normaler Sprache e
 
 ## Was kann der Angebotsagent in Revenue Cloud?
 
-Salesforce hat Angebote per Agent für Revenue Cloud im Juli 2025 angekündigt; die erweiterten Angebotsaktionen kamen im Herbst mit dem Release Winter '26. In der [Ankündigung](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/) beschreibt ein Vertriebsmitarbeiter, was er braucht, und der Agent erzeugt das Angebot, "automatically pulling the correct products, pricing, and terms". Die Schlagzeilenzahlen stammen aus dem eigenen Vertrieb von Salesforce: 75 Prozent weniger Zeit für Angebote und 87 Prozent weniger Klicks. Das ist eine Herstellerangabe aus einem einzigen Unternehmen und seinem eigenen Vertrieb. In den Business Case eines Maschinenbauers würde ich sie nicht schreiben.
+Salesforce hat Angebote per Agent für Revenue Cloud im Juli 2025 angekündigt; die erweiterten Angebotsaktionen folgten im Herbst mit dem Release Winter '26. In der [Ankündigung](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/) beschreibt ein Vertriebsmitarbeiter, was er braucht, und der Agent erzeugt das Angebot, "automatically pulling the correct products, pricing, and terms". Die Schlagzeilenzahlen stammen aus dem eigenen Vertrieb von Salesforce: 75 Prozent weniger Zeit für Angebote und 87 Prozent weniger Klicks. Das ist eine Herstellerangabe aus einem einzigen Unternehmen und seinem eigenen Vertrieb. In den Business Case eines Maschinenbauers würde ich sie nicht schreiben.
 
 Der [Trailhead-Quick-Start zum Angebotsagenten](https://trailhead.salesforce.com/content/learn/projects/quick-start-build-an-agent-to-create-quotes-fast/build-your-first-agentforce-quoting-agent) beschreibt den Umfang genauer. Der Agent
 
@@ -55,7 +55,7 @@ Ich würde zuerst zählen, welcher Anteil der Produkte sich mit den Worten finde
 
 ## Winter '27 bringt Self-Service, Partner und Verlängerungen
 
-Mit dem Release [Winter '27](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), allgemein verfügbar seit dem 12. Oktober 2026, kündigt Salesforce Angebote per Agent für drei Gruppen an: "self-service quoting for customer buyers, integrated quoting for partners, and automated renewal package assembly for account executives". Kunden bestellen ohne Vertriebsmitarbeiter, Partner erstellen Angebote, ohne ihren Arbeitsbereich zu verlassen, und Account Executives bekommen vor einer Verlängerung "a drafted quote and risk signals".
+Mit dem Release [Winter '27](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), allgemein verfügbar seit dem 12. Oktober 2026, kündigt Salesforce Angebote per Agent für drei Gruppen an: "self-service quoting for customer buyers, integrated quoting for partners, and automated renewal package assembly for account executives". Kunden bestellen ohne Vertriebsmitarbeiter, Partner erstellen Angebote, ohne ihren Arbeitsbereich zu verlassen, und Account Executives erhalten vor einer Verlängerung "a drafted quote and risk signals".
 
 Verlängerungsangebote selbst konnte der Agent schon vorher anlegen; neu ist das vorbereitete Verlängerungspaket mit Risikosignalen. Prüfen Sie in den Release Notes für jede der drei Funktionen, für welche Edition und welche Nutzer sie gilt. Für Hersteller ist der Verlängerungsentwurf der interessanteste Teil. Wartungs- und Fernüberwachungsabos verlängern sich jedes Jahr, und das Verlängerungsangebot vorzubereiten ist Routinearbeit. Partner- und Self-Service-Angebote werfen zuerst kaufmännische Fragen auf: Welche Preise sieht ein Händler, und darf das Self-Service-Angebot eines Kunden das Angebot des Händlers unterbieten?
 
@@ -84,9 +84,9 @@ Eine grobe Schätzung, als Annahme: Ein Angebotsdialog braucht fünf Aktionen, e
 
 In vier Fällen würde ich ihn nicht oder noch nicht einsetzen:
 
-1. **Auftragsbezogene Konstruktion.** Wird jede Maschine für den Auftrag konstruiert, kommt das Angebot aus der Konstruktion und nicht aus einem Katalog.
+1. **Auftragsbezogene Konstruktion.** Wird jede Maschine für den Auftrag konstruiert, stammt das Angebot aus der Konstruktion und nicht aus einem Katalog.
 2. **Regeln außerhalb von Salesforce.** Liegt die Konfigurationslogik in der SAP-Variantenkonfiguration oder im PLM, bietet der Agent Kombinationen an, die sich nicht bauen lassen.
-3. **Preise nur in SAP-Konditionen.** Hält Salesforce nur Listenpreise und kommt der Nettopreis aus SAP, nennt der Agent den falschen Preis, solange die Preisfindung SAP nicht abfragt.
+3. **Preise nur in SAP-Konditionen.** Hält Salesforce nur Listenpreise und stammt der Nettopreis aus SAP, nennt der Agent den falschen Preis, solange die Preisfindung SAP nicht abfragt.
 4. **Wenige Angebote mit hohem Wert.** Bei zehn Angeboten im Monat mit wochenlanger Verhandlung zählt ein guter Vertriebsingenieur mehr als ein Agent.
 
 ## Rechenbeispiel: Ersatzteil- und Nachrüstangebote im Innendienst

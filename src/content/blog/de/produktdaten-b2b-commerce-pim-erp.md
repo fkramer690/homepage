@@ -41,7 +41,7 @@ Für einen Händler, der Ersatzteile bestellt, braucht der Shop pro Produkt:
 - **Medien:** mindestens ein Bild, oft eine Zeichnung oder ein Datenblatt.
 - **Navigation:** Kategorie im Shop-Katalog.
 
-Preise kommen aus Salesforce-Preisbüchern oder über eine Commerce Extension von einem anderen Preisanbieter wie dem ERP; der Bestand kommt aus Omnichannel Inventory oder einem eigenen Anbieter. Ich behandle sie getrennt im Kapitel zur ERP-Anbindung.
+Preise stammen aus Salesforce-Preisbüchern oder über eine Commerce Extension von einem anderen Preisanbieter wie dem ERP; der Bestand stammt aus Omnichannel Inventory oder einem eigenen Anbieter. Ich behandle sie getrennt im Kapitel zur ERP-Anbindung.
 
 ## Wer sollte welche Produktdaten führen?
 
@@ -55,7 +55,7 @@ Meine Regel lautet: ein Owner pro Feld, und der Owner ist das System, in dem die
 | Bilder, Zeichnungen, Datenblätter | PIM oder DAM | Verweis oder Kopie |
 | Shop-Kategorien, Sucheinstellungen, Sortierung | Salesforce | Hier gepflegt |
 
-In dieser Aufteilung ist die letzte Zeile die einzige, die Merchandiser im Shop pflegen; shopspezifische Felder wie Badges oder SEO-Texte können Sie bewusst dazunehmen. Alles andere kommt über eine Schnittstelle, und diese Schnittstelle muss festlegen, welche Seite bei Konflikten führend ist. Korrigiert ein Merchandiser einen Tippfehler in Salesforce und der nächtliche ERP-Lauf überschreibt ihn, sieht der Händler am nächsten Tag wieder den Fehler, und der Merchandiser verliert das Vertrauen in den Shop. Dasselbe Prinzip gilt für jedes Objekt in einer Salesforce-Org. Ich beschreibe es in der [Object Ownership Matrix](../object-ownership-matrix-salesforce/).
+In dieser Aufteilung ist die letzte Zeile die einzige, die Merchandiser im Shop pflegen; shopspezifische Felder wie Badges oder SEO-Texte können Sie bewusst dazunehmen. Alles andere wird über eine Schnittstelle übertragen, und diese Schnittstelle muss festlegen, welche Seite bei Konflikten führend ist. Korrigiert ein Merchandiser einen Tippfehler in Salesforce und der nächtliche ERP-Lauf überschreibt ihn, sieht der Händler am nächsten Tag wieder den Fehler, und der Merchandiser verliert das Vertrauen in den Shop. Dasselbe Prinzip gilt für jedes Objekt in einer Salesforce-Org. Ich beschreibe es in der [Object Ownership Matrix](../object-ownership-matrix-salesforce/).
 
 Brauchen Sie ein PIM? Nicht für jeden Shop. Rechenbeispiel: ein Hersteller mit 6.000 Ersatzteilen, deutschen und englischen Texten aus dem ERP und einem Foto pro Teil. Hier kann das ERP die einzige Quelle sein. Ein PIM würde ein zusätzliches System bringen, aber keine zusätzlichen Daten. Bei 60.000 Teilen, 15 Sprachen, technischen Merkmalen für Filter und mehreren Bildern pro Teil würde ich ein PIM wollen, weil ERP-Materialstämme selten für diese Anreicherung gebaut sind. Die Zahlen sind Beispiele; Sprachen, Merkmale und Freigabeprozesse entscheiden, nicht die Zahl der Teile allein.
 

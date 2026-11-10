@@ -15,7 +15,7 @@ takeaways:
   - "Salesforce veröffentlicht keinen Preis pro Billing Event. Preis, Staffel und Mehrverbrauch gehören vor der Unterschrift ins Order Form."
   - "Gezählt wird die Zwischensumme gebuchter Rechnungen ohne Steuer, aber mit Versand. Andere Währungen werden zum Tagesdurchschnittskurs in Dollar umgerechnet."
   - "Billing Events verfallen zum Ende der Bestellung und werden nicht übertragen. Prüfen Sie, ob ein Mehrjahresvertrag einen Pool oder Jahrespools hat."
-  - "Was über Billing läuft, bestimmt die Kosten: Maschinenrechnungen mit hohen Beträgen verbrauchen weit mehr Events als Abo- und Servicerechnungen."
+  - "Was über Billing abgerechnet wird, bestimmt die Kosten: Maschinenrechnungen mit hohen Beträgen verbrauchen weit mehr Events als Abo- und Servicerechnungen."
 faq:
   - q: "Was kostet Revenue Cloud Billing?"
     a: "Salesforce führt Revenue Cloud Billing als Add-on mit der Angabe 'Request a Quote' und veröffentlicht keinen Preis pro Billing Event. Öffentlich ist der Verbrauch: laut Rate Sheet vom Februar 2026 ein Billing Event je 50 Dollar Rechnungsbetrag."

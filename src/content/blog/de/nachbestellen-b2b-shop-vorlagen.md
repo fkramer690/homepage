@@ -13,7 +13,7 @@ tags: [B2B Commerce, Nachbestellung, Bestellvorlagen, Warenkorb, Ersatzteile, H�
 takeaways:
   - "Nachbestellen geht auf vier Wegen: alte Bestellung, Bestellvorlage, CSV-Datei und Reorder Portal. Geteilte Warenkörbe helfen bei der Freigabe im Team."
   - "Die Add Order to Cart API kopiert alle Positionen einer früheren Order Summary in den aktuellen Warenkorb und legt einen an, wenn keiner aktiv ist."
-  - "Bestellvorlagen sind seit September 2026 allgemein verfügbar. Warenkorb-Import und -Export kamen im Juli 2026; die Hilfe dokumentiert CSV."
+  - "Bestellvorlagen sind seit September 2026 allgemein verfügbar. Warenkorb-Import und -Export erschienen im Juli 2026; die Hilfe dokumentiert CSV."
   - "Ein Warenkorb fasst meist 500 Positionen, mit Large-Cart-Unterstützung 2.000. Käufer können bis zu 15 Warenkörbe in 48 Stunden per CSV importieren."
   - "Warenkörbe lassen sich schon heute im Händlerkonto teilen, mit Rechten zum Ansehen, Bearbeiten und Checkout. Echtzeit ist für Januar 2027 angekündigt."
 faq:
@@ -36,7 +36,7 @@ Händler bestellen in Salesforce B2B Commerce am schnellsten nach, wenn der Shop
 
 Viele Ersatzteile und Verbrauchsmaterialien, die ein Händler kauft, hat er schon einmal gekauft. Er kennt die Teilenummer, oft die Menge, und will die Bestellung in einer Minute erledigt haben. Muss er jedes Teil im Shop neu suchen, geht er zurück zu E-Mail und Telefon, und der Innendienst tippt die Bestellung wie bisher ins ERP.
 
-Deshalb schaue ich mir in einem B2B-Shop eines Herstellers die Wege zum Nachbestellen an, bevor ich die Produktdetailseite betrachte. Suche und Katalog sind für neue Teile wichtig, ein großer Teil des Volumens kommt aber über Nachbestellungen. Salesforce vermarktet das Produkt inzwischen auch als "Agentforce Commerce for B2B"; alle Funktionen unten gehören zum selben Produkt.
+Deshalb schaue ich mir in einem B2B-Shop eines Herstellers die Wege zum Nachbestellen an, bevor ich die Produktdetailseite betrachte. Suche und Katalog sind für neue Teile wichtig, ein großer Teil des Volumens entfällt aber auf Nachbestellungen. Salesforce vermarktet das Produkt inzwischen auch als "Agentforce Commerce for B2B"; alle Funktionen unten gehören zum selben Produkt.
 
 ## Vier Wege zum Nachbestellen in Salesforce B2B Commerce
 

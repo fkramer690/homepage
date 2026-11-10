@@ -14,7 +14,7 @@ takeaways:
   - "Eine Agentur liefert Umsetzungskapazität, also ein Team, das baut, testet und betreibt, und ein einzelner Freelancer ersetzt dieses Team nicht."
   - "Ein freiberuflicher Architekt auf Kundenseite lohnt sich, wenn Entscheidungen und Standards beim Kunden liegen sollen, nicht beim Partner, der daran verdient."
   - "Die Warnungen vor Freelancern treffen zu, wenn ein Freelancer als günstigerer Ersatz für ein Entwicklerteam eingesetzt wird, nicht für die Architektenrolle."
-  - "In meinem größten Programm bauten 5 Partner mit über 30 Entwicklern in 8 Streams; die Standards dafür kamen von der Kundenseite."
+  - "In meinem größten Programm bauten 5 Partner mit über 30 Entwicklern in 8 Streams; die Standards dafür stammten von der Kundenseite."
   - "Gegen das Ausfallrisiko eines Freelancers helfen ein Entscheidungslog, dokumentierte Standards und ein interner Kollege als Vertretung."
 faq:
   - q: "Ist ein Salesforce-Freelancer günstiger als eine Agentur?"
@@ -39,7 +39,7 @@ Wer nach Salesforce-Freelancern sucht, findet weit oben Artikel von Agenturen, d
 - **Qualität schwer zu prüfen.** Profile auf Portalen sind oft anonym, Zertifikate sagen wenig über Projekterfahrung.
 - **Keine Verantwortung für ein Gesamtergebnis.** Bei Abrechnung nach Aufwand trägt der Kunde den Großteil des Umsetzungsrisikos; ein kleiner Anbieter kann zwar ein definiertes Werk vereinbaren, seine Kapazität bleibt aber begrenzt.
 
-Alle vier Punkte treffen zu, wenn ein Hersteller einen Freelancer als günstigeren Ersatz für ein Entwicklerteam einsetzt. Dann sitzt eine Person dort, wo ein Team hingehört, und der Kunde wundert sich, dass es nicht vorangeht.
+Alle vier Punkte treffen zu, wenn ein Hersteller einen Freelancer als günstigeren Ersatz für ein Entwicklerteam einsetzt. Dann arbeitet eine Person dort, wo ein Team hingehört, und der Kunde wundert sich, dass es nicht vorangeht.
 
 Für die Rolle, in der ich selbst arbeite, stellen sich andere Fragen. Ein Architekt auf Kundenseite baut nicht die Einführung. Er sorgt dafür, dass alle Umsetzungsteams nach denselben Regeln bauen und dass der Kunde die Entscheidungen trifft, die er treffen muss.
 
@@ -91,7 +91,7 @@ In den meisten Programmen, in denen ich arbeite, gibt es beides: Partner, die ba
 | Lizenzen und Verträge | verhandelt | ermittelt Bedarf und berechnet Varianten | liefert Mengengerüst |
 
 ```praxis
-In meinem größten Programm haben 5 Implementierungspartner mit über 30 Entwicklern in 8 Streams an derselben Org gebaut. Die Standards dafür, von Namenskonventionen über einen Einstiegspunkt für Automatisierung pro Objekt bis zur Object Ownership Matrix, haben rund drei Monate gebraucht. 80 Prozent standen nach der ersten Runde, die Randfälle kamen nach und nach dazu. Später wurden Änderungen mit Vorlauf im alle zwei Wochen stattfindenden technischen CoE-Call vorgestellt, bis neue Randfälle kaum noch auftraten.
+In meinem größten Programm haben 5 Implementierungspartner mit über 30 Entwicklern in 8 Streams an derselben Org gebaut. Die Standards dafür, von Namenskonventionen über einen Einstiegspunkt für Automatisierung pro Objekt bis zur Object Ownership Matrix, haben rund drei Monate gebraucht. 80 Prozent standen nach der ersten Runde, die Randfälle folgten nach und nach. Später wurden Änderungen mit Vorlauf im alle zwei Wochen stattfindenden technischen CoE-Call vorgestellt, bis neue Randfälle kaum noch auftraten.
 ```
 
 Kein einzelner Partner hätte diese Rolle übernehmen können, ohne Regeln für seine Wettbewerber festzulegen. Und kein Freelancer hätte die Arbeit der 30 Entwickler leisten können. Wie das passende Gremium aussieht, steht in [Salesforce Center of Excellence: Format und Rhythmus](../salesforce-center-of-excellence-format/).
@@ -103,7 +103,7 @@ Wenn Sie einen Architekten für Ihre Seite des Tisches suchen, helfen andere Fra
 - **Welche Entscheidung hat er zuletzt vorbereitet, und wie ist sie dokumentiert?** Lassen Sie sich ein anonymisiertes [Entscheidungslog](../salesforce-architektur-entscheidungslog/) zeigen. Wer keines führt, hinterlässt Ihnen später nur seine Erinnerung.
 - **Wie viele Partner hat er gleichzeitig gesteuert?** Ein Architekt, der nur innerhalb eines Partners gearbeitet hat, kennt die Konflikte zwischen Partnern nicht aus eigener Anschauung.
 - **Wo sagt er Nein?** Fragen Sie nach einer Rolle, die er abgelehnt hat. Ich nehme zum Beispiel keine reinen Admin- oder Entwicklerrollen an und keine Rollen, in denen die Architektur schon feststeht und nur noch abgenommen werden soll.
-- **Wie regelt er Ausfälle?** Auf Kollegen als Vertretung kann ein Freelancer nicht ohne Weiteres zurückgreifen, außer es ist eine benannte Vertretung vereinbart. Was es geben muss: dokumentierte Standards, ein Entscheidungslog und einen internen Kollegen, der Reviews und Calls übernehmen kann. In einem Programm ging anfangs jeder Pull Request über meinen Schreibtisch; sobald der Prozess stabil lief, habe ich das an einen internen Kollegen übergeben.
+- **Wie regelt er Ausfälle?** Auf Kollegen als Vertretung kann ein Freelancer nicht ohne Weiteres zurückgreifen, außer es ist eine benannte Vertretung vereinbart. Was es geben muss: dokumentierte Standards, ein Entscheidungslog und einen internen Kollegen, der Reviews und Calls übernehmen kann. In einem Programm ging anfangs jeder Pull Request über meinen Schreibtisch; sobald der Prozess stabil funktionierte, habe ich das an einen internen Kollegen übergeben.
 - **Wer ist Vertragspartner?** Bei mir ist das die FK Solution Design GmbH, abgerechnet wird monatlich nach Aufwand. Viele Kunden beauftragen mich über einen Personaldienstleister, auch das ist möglich.
 
 ## Aufschreiben, welche Rolle fehlt

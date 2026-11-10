@@ -102,7 +102,7 @@ We changed this in a few steps. Every change went through a pull request with a 
 For a while, every single pull request crossed my desk. Once the process was stable, I handed it over to an internal colleague who now owns it.
 ```
 
-The effect was clear. Results became predictable, and validation runs in the pipeline caught missing dependencies and errors before any user saw them. On top of that came the classic DevOps benefits: we could restore an earlier state from Git, trace every change made through the pipeline and stop losing work.
+The effect was clear. Results became predictable, and validation runs in the pipeline caught missing dependencies and errors before any user saw them. We also gained the classic DevOps benefits: we could restore an earlier state from Git, trace every change made through the pipeline and stop losing work.
 
 ## sfdx-hardis as an open-source example
 

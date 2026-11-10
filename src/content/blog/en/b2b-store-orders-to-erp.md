@@ -76,7 +76,7 @@ The pricing page does not spell out what Lite leaves out compared to the full ve
 
 I see three reasons in manufacturing.
 
-**Most orders do not come through the store.** Phone, email, EDI and field sales orders land in SAP today, and will do so for years. If Salesforce Order Management ran only the store orders, inside sales would work in two systems. Using it for all orders requires the standalone license and a migration of order processes that rarely pays off for a store project.
+**Most orders do not come through the store.** Phone, email, EDI and field sales orders are entered in SAP today, and will do so for years. If Salesforce Order Management ran only the store orders, inside sales would work in two systems. Using it for all orders requires the standalone license and a migration of order processes that rarely pays off for a store project.
 
 **Fulfillment is in SAP.** Availability check, delivery, picking, goods issue and invoicing are configured there, often with years of customer-specific logic. Rebuilding that in Salesforce is a program of its own.
 

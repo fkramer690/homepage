@@ -19,7 +19,7 @@ faq:
   - q: "What is the difference between a case and a work order in Salesforce?"
     a: "A case records the customer's problem and the communication around it. A work order describes the job that has to be done in the field. A work order can reference the case it belongs to."
   - q: "What is a service appointment in Field Service?"
-    a: "A service appointment is the visit that gets scheduled and assigned to a technician. Its parent is usually a work order or a work order line item."
+    a: "A service appointment is the visit that is scheduled and assigned to a technician. Its parent is usually a work order or a work order line item."
   - q: "Can Salesforce create the service appointment automatically?"
     a: "Yes. If the work type has the Auto-Create Service Appointment option, a service appointment is created when that work type is applied to a work order or line item that has no appointment yet. Records created before the option was switched on do not get an appointment."
   - q: "Do maintenance plans create cases?"
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-In Salesforce Field Service a typical break-fix request passes through up to four records before a technician arrives; case and line items are optional. The case holds the customer's problem, the work order describes the job, line items the subtasks, and the service appointment the visit that gets scheduled. The hotline creates the case and decides whether a visit is needed at all. If so, it creates a work order, and a work type with the right setting creates the appointment automatically. The dispatch team or the scheduling engine then assigns a technician. Planned maintenance takes a shortcut: maintenance plans create work orders without any case.
+In Salesforce Field Service a typical break-fix request passes through up to four records before a technician arrives; case and line items are optional. The case holds the customer's problem, the work order describes the job, line items the subtasks, and the service appointment the visit that is scheduled. The hotline creates the case and decides whether a visit is needed at all. If so, it creates a work order, and a work type with the right setting creates the appointment automatically. The dispatch team or the scheduling engine then assigns a technician. Planned maintenance takes a shortcut: maintenance plans create work orders without any case.
 
 ## Which records carry a field service job?
 

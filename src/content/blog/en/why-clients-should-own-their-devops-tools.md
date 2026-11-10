@@ -58,7 +58,7 @@ Each of these can end up in a partner's account without anyone deciding that it 
 
 As long as the collaboration runs well, nobody notices. The problems appear when something changes:
 
-- **The engagement ends.** Data has to be exported and migrated. Depending on the tool and the migration path, configurations, app data, links or version history can get lost. Sometimes the export is simply not a priority for a partner who is leaving.
+- **The engagement ends.** Data has to be exported and migrated. Depending on the tool and the migration path, configurations, app data, links or version history can be lost. Sometimes the export is simply not a priority for a partner who is leaving.
 - **A second partner joins.** Now the new partner needs access to a competitor's workspace, or a second set of tools appears. Standards drift and teams overwrite each other's work.
 - **Partners are hard to compare.** If one partner owns the repository and the pipeline, they also own the release process, and every other partner works by their rules.
 - **People leave.** When the only admin of a tool is a partner employee who changes jobs, even the partner may struggle to regain control.
@@ -66,7 +66,7 @@ As long as the collaboration runs well, nobody notices. The problems appear when
 
 ```vergleich
 without: Tools with the partner
-- On a change, configuration, links and history can get lost in the export.
+- On a change, configuration, links and history can be lost in the export.
 - * The repository, backlog and reasoning leave with the partner.
 - The only admin of a tool works for the partner.
 with: Tools with the client

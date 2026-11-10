@@ -108,7 +108,7 @@ Confirmation ..Actual quantity..> Sales agreement
 Sales agreement --> Portal view
 ```
 
-Requests for new products or prices take a different route. They go to sales and run through configuration, quote and approval. What matters most to the customer is seeing the status of the request instead of having to chase it.
+Requests for new products or prices take a different route. Sales handles them through configuration, quote and approval. What matters most to the customer is seeing the status of the request instead of having to chase it.
 
 Cases are the most familiar part of the portal. Manufacturing Cloud helps here with links to orders and assets, which Salesforce Help lists for the customer license. How warranty claims run through dealers is covered in [part 6](../warranty-claims-dealers-salesforce/).
 

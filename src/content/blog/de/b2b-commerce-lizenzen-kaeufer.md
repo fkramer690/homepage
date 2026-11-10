@@ -42,7 +42,7 @@ Salesforce B2B Commerce ist inzwischen in "Agentforce Commerce for B2B" umbenann
 | Merchandiser | Pflegt Katalog, Store-Funktionen und Einführungen | Salesforce-Standard- oder Identity-Lizenz | Berechtigungssatz Merchandiser oder Commerce Admin |
 | Entwickler, Frontend-Builder | Lädt Produktdaten, baut Checkout und Seiten | Interne Salesforce-Lizenz, je nach Aufgabe | Customize Application, Author Apex, Create and Set Up Experiences |
 
-Die [Preisseite für B2B Commerce](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) nennt 6 oder 10 Storefronts, 20 Lagerorte, Order Management, Data-Cloud-Credits, den Merchant Agent und je 3 oder 5 Nutzer für CRM Analytics und Knowledge. Käuferlizenzen tauchen dort nicht auf; fragen Sie, ob Ihre Edition welche enthält. Sonst kommen sie zur GMV-Gebühr dazu, die ich in [B2B Commerce Preise: Was das GMV-Modell kostet](../b2b-commerce-preise-gmv-modell/) beschreibe.
+Die [Preisseite für B2B Commerce](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) nennt 6 oder 10 Storefronts, 20 Lagerorte, Order Management, Data-Cloud-Credits, den Merchant Agent und je 3 oder 5 Nutzer für CRM Analytics und Knowledge. Käuferlizenzen tauchen dort nicht auf; fragen Sie, ob Ihre Edition welche enthält. Sonst fallen sie zusätzlich zur GMV-Gebühr an, die ich in [B2B Commerce Preise: Was das GMV-Modell kostet](../b2b-commerce-preise-gmv-modell/) beschreibe.
 
 ## Buyer Manager brauchen Customer Community Plus, einfache Käufer nicht
 
@@ -71,9 +71,9 @@ Die [Seite zu Experience Cloud for Manufacturing](https://www.salesforce.com/man
 | Customer Community Plus | 35 € | 15 € |
 | Partner Community | 50 € | 20 € |
 
-Die Schwelle ist schnell gerechnet. Ein Käufer mit zwei Login-Tagen im Monat kostet per Login 30 € und als Mitglied 35 €. Ab drei Login-Tagen, also 45 €, ist die Member-Lizenz günstiger. Als Faustregel bekommt ein Buyer Manager, der wöchentlich arbeitet, eine Member-Lizenz; einer, der sich nur ein paar Mal im Jahr anmeldet, bekommt eine Login-Lizenz.
+Die Schwelle ist schnell gerechnet. Ein Käufer mit zwei Login-Tagen im Monat kostet per Login 30 € und als Mitglied 35 €. Ab drei Login-Tagen, also 45 €, ist die Member-Lizenz günstiger. Als Faustregel erhält ein Buyer Manager, der wöchentlich arbeitet, eine Member-Lizenz; einer, der sich nur ein paar Mal im Jahr anmeldet, erhält eine Login-Lizenz.
 
-Rechenbeispiel: Ein Hersteller hat 250 Händler, jeder mit einem Buyer Manager und zwei Käufern, also 750 Nutzer. Die 500 Käufer bestellen nur für ihren eigenen Account und bekommen External Apps; der Preis steht im Angebot. Die 250 Buyer Manager brauchen Customer Community Plus: 100 arbeiten wöchentlich mit Member-Lizenz, 100 × 35 € = 3.500 € im Monat, die übrigen 150 melden sich etwa einmal im Monat an, 150 Logins × 15 € = 2.250 €. Zusammen sind das 5.750 € im Monat oder 69.000 € im Jahr zum Listenpreis. Customer Community Plus als Mitgliedslizenz für alle 750 Nutzer käme auf 26.250 € im Monat oder 315.000 € im Jahr.
+Rechenbeispiel: Ein Hersteller hat 250 Händler, jeder mit einem Buyer Manager und zwei Käufern, also 750 Nutzer. Die 500 Käufer bestellen nur für ihren eigenen Account und erhalten External Apps; der Preis steht im Angebot. Die 250 Buyer Manager brauchen Customer Community Plus: 100 arbeiten wöchentlich mit Member-Lizenz, 100 × 35 € = 3.500 € im Monat, die übrigen 150 melden sich etwa einmal im Monat an, 150 Logins × 15 € = 2.250 €. Zusammen sind das 5.750 € im Monat oder 69.000 € im Jahr zum Listenpreis. Customer Community Plus als Mitgliedslizenz für alle 750 Nutzer käme auf 26.250 € im Monat oder 315.000 € im Jahr.
 
 ```hinweis achtung
 Ein Login-Tag ist jeder Tag, an dem sich jemand anmeldet, auch wenn es nur um einen Lieferstatus geht. Wird der Shop zum Ort, an dem Händler Liefertermine nachsehen, steigen die Login-Tage, auch wenn die Bestellungen gleich bleiben.
@@ -86,7 +86,7 @@ Neben der Lizenz gibt es Grenzen, die spät auffallen, wenn niemand sie prüft. 
 - **Rollen.** Customer Community Plus und Partner Community brauchen Rollen für externe Nutzer. Standardmäßig sind es 50.000 Rollen über alle Portale einer Org. Laut Entwicklerleitfaden kann Salesforce das für B2B erweitern. Ab einer Million Käufer sollten Sie mit Ihrem Account-Team sprechen. Die Hilfe nennt außerdem Account Role Optimization; dabei wird eine Rolle erst angelegt, wenn ein Account einen zweiten Nutzer hat.
 - **Käufer.** 1,5 Millionen Käufer und Buyer Manager zusammen, als weiches Limit.
 - **Account Switcher.** Ein Käufer, der für mehrere Accounts bestellt, etwa der Zentraleinkauf einer Händlergruppe mit vielen Filialen, wechselt zwischen ihnen. Das weiche Limit liegt bei 200 Accounts. Darüber sinkt die Leistung, bei 2.000 Accounts fällt der Switcher aus. Bei mehr als 200 Accounts brauchen Sie einen eigenen Switcher.
-- **Berichtsabos.** Customer Community Plus enthält keine Report Subscriptions. Ein Buyer Manager, der wöchentlich einen Bericht per E-Mail erwartet, bekommt ihn auf diesem Weg nicht.
+- **Berichtsabos.** Customer Community Plus enthält keine Report Subscriptions. Ein Buyer Manager, der wöchentlich einen Bericht per E-Mail erwartet, erhält ihn auf diesem Weg nicht.
 
 ## Was gilt für Vertrieb und Innendienst?
 

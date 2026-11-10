@@ -26,11 +26,11 @@ faq:
   - q: "Kann Field Service Termine automatisch an Techniker freigeben?"
     a: "Ja. Geplante Jobs können Termine automatisch von Scheduled auf Dispatched setzen. Mit Drip Feed hält Field Service dabei nur eine festgelegte Zahl von Terminen in der Warteschlange jedes Technikers."
   - q: "Wie automatisiert man Terminplanung und Dispatch in Salesforce Field Service?"
-    a: "Das gelingt in vier Schritten. Eine mitgelieferte Scheduling Policy plant Termine bis zum Status Scheduled, ein Disponent gibt jeden Termin frei. Die Disponenten notieren vier Wochen lang, warum sie Vorschläge ändern, und leiten daraus Daten oder Work Rules ab. Ändern sie kaum noch etwas, laufen einfache Arbeitstypen mit Drip Feed automatisch in den Dispatch."
+    a: "Das gelingt in vier Schritten. Eine mitgelieferte Scheduling Policy plant Termine bis zum Status Scheduled, ein Disponent gibt jeden Termin frei. Die Disponenten notieren vier Wochen lang, warum sie Vorschläge ändern, und leiten daraus Daten oder Work Rules ab. Ändern sie kaum noch etwas, gehen einfache Arbeitstypen mit Drip Feed automatisch in den Dispatch."
 draft: false
 ---
 
-Wie viel Terminplanung in Salesforce Field Service automatisch laufen sollte, hängt vor allem davon ab, wie viel Vertrauen das Unternehmen in die Technik hat, und dieses Vertrauen sollte auf gemessener Planungsqualität beruhen. Ein guter Einstieg ist eine Arbeitsteilung: Die Automatik plant Termine bis zum Status Scheduled. Ein Disponent schaut über den Plan, korrigiert, wo nötig, und gibt jeden Termin mit dem Status Dispatched an den Techniker frei. Wenn die Zahlen die Planungsqualität bestätigen, übernimmt die Automatik mehr, bis einfache Einsätze ganz ohne Disponent laufen.
+Wie viel Terminplanung in Salesforce Field Service automatisch laufen sollte, hängt vor allem davon ab, wie viel Vertrauen das Unternehmen in die Technik hat, und dieses Vertrauen sollte auf gemessener Planungsqualität beruhen. Ein guter Einstieg ist eine Arbeitsteilung: Die Automatik plant Termine bis zum Status Scheduled. Ein Disponent schaut über den Plan, korrigiert, wo nötig, und gibt jeden Termin mit dem Status Dispatched an den Techniker frei. Wenn die Zahlen die Planungsqualität bestätigen, übernimmt die Automatik mehr, bis einfache Einsätze ganz ohne Disponent geplant werden.
 
 Dieser Artikel ist Teil 3 der Serie. Ob sich Field Service lohnt, steht in [Teil 1](../salesforce-field-service-lohnt-sich/). Welche Stammdaten die Planung braucht, steht in [Teil 2](../salesforce-field-service-stammdaten/). Ohne diese Daten plant auch die beste Automatik falsch.
 
@@ -40,7 +40,7 @@ Ein Termin (Service Appointment) durchläuft in Field Service mehrere Status. La
 
 - **None:** Der Termin ist angelegt, aber keinem Techniker und keiner Zeit zugeordnet.
 - **Scheduled:** Die Planung hat einen Techniker und ein Zeitfenster gewählt. Der Plan steht, ist aber noch nicht freigegeben.
-- **Dispatched:** Der Termin ist an den Techniker freigegeben. Mit passenden Einstellungen in der mobilen App bekommt er eine Benachrichtigung.
+- **Dispatched:** Der Termin ist an den Techniker freigegeben. Mit passenden Einstellungen in der mobilen App erhält er eine Benachrichtigung.
 
 Zwischen Scheduled und Dispatched liegt die Stelle, an der ein Mensch noch eingreifen kann, bevor der Techniker sich auf einen Plan verlässt. Genau dort setzt die Arbeitsteilung an. Was der Techniker sieht, steuert aber nicht der Status allein, sondern die Freigabe (Sharing). Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=service.fs_sharing.htm&language=en_US&type=5) bieten die Field-Service-Einstellungen dafür „Share dispatched service appointments with their assigned resources“, damit Disponenten den Zugriff steuern, bis der Plan steht. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-dispatcher-console-for-dispatchers/manage-service-appointments) lassen sich Termine zudem als privat markieren, bis sie freigegeben sind. Klären Sie beides vor dem Start, sonst sehen Techniker den vorläufigen Plan.
 
@@ -100,5 +100,5 @@ Mit Freigabe starten
 Gründe in Daten übersetzen
   Aus der Liste werden Arbeitszeiten, Skills, Abwesenheiten, Resource Preferences oder Work Rules.
 Dispatch automatisieren
-  Ändert der Disponent die Vorschläge kaum noch und halten Reaktionszeiten und Erstlösungsquote, laufen einfache Arbeitstypen wie planbare Wartungen ohne ihn.
+  Ändert der Disponent die Vorschläge kaum noch und halten Reaktionszeiten und Erstlösungsquote, werden einfache Arbeitstypen wie planbare Wartungen ohne ihn disponiert.
 ```

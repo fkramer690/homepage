@@ -21,7 +21,7 @@ faq:
   - q: "How many technicians belong in one service territory?"
     a: "Salesforce recommends up to 50 service resources per service territory. Larger territories with many technicians and dispatchers make optimization and dispatching harder."
   - q: "How does Field Service handle technician skills?"
-    a: "Skills are assigned to a technician with a level from 0 to 99.99. Work types and work orders specify the required skills. The Match Skills work rule makes sure only matching technicians get scheduled."
+    a: "Skills are assigned to a technician with a level from 0 to 99.99. Work types and work orders specify the required skills. The Match Skills work rule makes sure only matching technicians are scheduled."
   - q: "Where does the data for Field Service come from?"
     a: "Assets usually come from the ERP, skills and absences from HR and training systems, territories and work types from service management. What matters is having a system of record and an owner for each kind of data."
 draft: false

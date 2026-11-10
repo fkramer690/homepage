@@ -12,7 +12,7 @@ tags: [Salesforce CPQ, Revenue Cloud, Migration, Cutover, Datenmigration]
 takeaways:
   - "Laut Salesforce-Hilfe unterscheiden sich die Datenmodelle deutlich. Berichte auf CPQ-Objekten werden neu gebaut, nicht migriert."
   - "CPQ hat kein End-of-Life-Datum, den Umstieg terminieren Sie. Behalten Sie mindestens eine CPQ-Lizenz, solange CPQ-Daten genutzt werden."
-  - "Zuerst wandern Attribute und Katalog, dann Verkaufsmodelle und Preise, dann Assets mit ihrer Auftragshistorie, danach Billing-Daten."
+  - "Zuerst werden Attribute und Katalog migriert, dann Verkaufsmodelle und Preise, dann Assets mit ihrer Auftragshistorie, danach Billing-Daten."
   - "Migrationswerkzeuge von Forsys, IdeaHelix und Prodly beschleunigen das Mapping. Über Preisführung, Cutover-Termin und Umfang der Historie entscheidet der Kunde."
 faq:
   - q: "Wie lange dauert eine Migration von Salesforce CPQ zu Revenue Cloud?"
@@ -72,7 +72,7 @@ Die Hilfe nennt drei Gruppen: Produktdaten, Asset-Daten und Billing-Daten. Die R
 1. **Katalogstruktur:** Attribut-Picklisten und ihre Werte, Attributdefinitionen, Produktklassifizierungen, dann die Produkte selbst.
 2. **Verkauf und Preise:** Product Selling Models und ihre Optionen, Preisbücher, Kostenbücher, Preisbucheinträge, danach Preisanpassungen.
 3. **Bundles und Kataloge:** Komponentengruppen und zugeordnete Komponenten, Kataloge und Kategorien.
-4. **Assets:** CPQ-Abos werden zu Assets, und laut Hilfe ist die vollständige Historienkette nötig. Empfohlen ist, Assets aus historischen Aufträgen zu erzeugen; Assets direkt anzulegen ist die Alternative, wenn sich die Auftragshistorie nicht nachbauen lässt. Ohne diese Kette funktionieren Vertragsänderungen und Verlängerungen nicht. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/asset-lifecycle-management-with-revenue-cloud/manage-customer-asset-amendments) beginnt jeder Nachtrag an einem Asset und läuft über ein Angebot und einen Auftrag.
+4. **Assets:** CPQ-Abos werden zu Assets, und laut Hilfe ist die vollständige Historienkette nötig. Empfohlen ist, Assets aus historischen Aufträgen zu erzeugen; Assets direkt anzulegen ist die Alternative, wenn sich die Auftragshistorie nicht nachbauen lässt. Ohne diese Kette funktionieren Vertragsänderungen und Verlängerungen nicht. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/asset-lifecycle-management-with-revenue-cloud/manage-customer-asset-amendments) beginnt jeder Nachtrag an einem Asset und führt über ein Angebot und einen Auftrag.
 5. **Billing-Daten:** nur, wenn Sie heute Salesforce Billing nutzen, mit eigener Methode und eigenem Cutover-Plan. Dazu gibt es einen eigenen Beitrag: [von Salesforce Billing zu Revenue Cloud Billing](../von-salesforce-billing-zu-revenue-cloud-billing/).
 
 ```hinweis tipp
@@ -81,7 +81,7 @@ Ich empfehle dafür zwei Regeln. Erstens: **Wenn eine Verlängerung in Revenue C
 Die zweite Regel lautet: **Lassen Sie abgeschlossene Angebote zurück**, wie es laut Hilfe üblich ist, sofern sie nicht für Prüfung oder Berichte gebraucht werden. Sie bleiben als schreibgeschützte Historie in CPQ, was eine CPQ-Lizenz voraussetzt, oder werden archiviert.
 ```
 
-Wie Katalog und Preise danach von der Sandbox in die Produktion kommen, ist ein eigenes Thema: [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/).
+Wie Katalog und Preise danach von der Sandbox in die Produktion gelangen, ist ein eigenes Thema: [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/).
 
 ## Was leisten Migrationswerkzeuge, und was nicht?
 
@@ -93,12 +93,12 @@ Beim Vergleich von Partnerangeboten würde ich jeden Partner nach denselben drei
 
 ## Rechenbeispiel: ein Komponentenhersteller mit CPQ seit 2018
 
-Angenommen, ein Komponentenhersteller nutzt Salesforce CPQ seit 2018. Er hat 60 Nutzer, die Angebote erstellen, 1.200 Produkte, 40 Preisregeln, ein Quote Calculator Plugin mit über Jahre gewachsener Logik und 3.500 aktive Service-Abos für Fernüberwachung. Rechnungen kommen aus SAP. Alle Zahlen sind Annahmen.
+Angenommen, ein Komponentenhersteller nutzt Salesforce CPQ seit 2018. Er hat 60 Nutzer, die Angebote erstellen, 1.200 Produkte, 40 Preisregeln, ein Quote Calculator Plugin mit über Jahre gewachsener Logik und 3.500 aktive Service-Abos für Fernüberwachung. Rechnungen stammen aus SAP. Alle Zahlen sind Annahmen.
 
 Der Plan könnte so aussehen:
 
 - **Wochen 1 bis 4, vorbereiten:** Regeln und Skripte zählen, entscheiden, welche Logik entfällt, SAP als Preisführer für Listenpreise und Revenue Cloud für Rabatte festlegen.
-- **Wochen 5 bis 8, Strategie:** Umstellung je Produktlinie, zuerst Ersatzteile und Service, Maschinen zuletzt. Abos wandern in Paketen, immer vor ihrem Verlängerungsmonat.
+- **Wochen 5 bis 8, Strategie:** Umstellung je Produktlinie, zuerst Ersatzteile und Service, Maschinen zuletzt. Abos werden in Paketen migriert, immer vor ihrem Verlängerungsmonat.
 - **Monate 3 bis 5, umsetzen:** Katalog und Preise in der Pipeline, Assets für das erste Abo-Paket, Berichte neu gebaut, Vertrieb je Produktlinie geschult.
 - **Monat 6:** Die letzte Produktlinie zieht um, CPQ wird schreibgeschützt. Eine CPQ-Lizenz bleibt bestehen, solange Angebote und Abos in CPQ noch gebraucht werden; die übrigen Lizenzen enden zum nächsten Verlängerungstermin.
 
@@ -110,7 +110,7 @@ Die Schulung je Produktlinie deckt nur einen Teil des Change Managements ab, das
 
 Diese Entscheidungen gehören Ihnen, nicht dem Partner und nicht dem Werkzeug:
 
-- **Preisführung:** welche Preise aus SAP kommen und welche in Revenue Cloud berechnet werden. Jeder Preisbestandteil braucht eine Quelle.
+- **Preisführung:** welche Preise aus SAP stammen und welche in Revenue Cloud berechnet werden. Jeder Preisbestandteil braucht eine Quelle.
 - **Cutover-Modell:** alles auf einmal, je Produktlinie oder je Land, und der Tag, ab dem CPQ schreibgeschützt ist.
 - **Historie:** was migriert wird, was ins Archiv geht und was in CPQ lesbar bleibt.
 - **Verantwortung nach dem Go-live:** wer Klassifizierungen, Constraint-Regeln und Pricing Procedures pflegt. Eine [Object Ownership Matrix](../object-ownership-matrix-salesforce/) hilft, wenn mehrere Partner in derselben Org arbeiten.

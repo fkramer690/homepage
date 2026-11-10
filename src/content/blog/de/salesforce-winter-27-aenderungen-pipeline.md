@@ -23,7 +23,7 @@ faq:
   - q: "Muss ich für die höheren Apex-Heap-Limits etwas tun?"
     a: "Nein. Die neuen Limits von 10 MB für synchronen und 25 MB für asynchronen Apex-Code gelten automatisch. Trotzdem lohnt es sich, Code zu prüfen, der auf die alten Limits zugeschnitten wurde."
   - q: "Welche API-Versionen sind von den Abschaltungen aus Winter '27 betroffen?"
-    a: "SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt mit Summer '27, und die SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 bekommen ab Summer '27 keine Updates mehr und werden mit Summer '28 abgeschaltet."
+    a: "SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt mit Summer '27, und die SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 erhalten ab Summer '27 keine Updates mehr und werden mit Summer '28 abgeschaltet."
 ---
 
 Winter '27 ist seit Oktober 2026 vollständig ausgerollt, und zusammen mit den wöchentlichen CLI-Releases rundherum bringt es Änderungen, die eine CI/CD-Pipeline brechen können. Am dringendsten: Seit 28. Oktober gibt die Salesforce CLI mit org display auch mit der alten Übergangslösung keine Access Tokens mehr aus, und die CLI braucht jetzt Node.js 22. Dazu ist die Developer Console im Setup-Menü ausgeblendet, die Apex-Heap-Limits steigen und die ersten API-Abschaltungen sind wenige Wochen entfernt. Die CLI-Änderungen können CI schon jetzt brechen, die API-Termine können später die Integrationen gefährden. Diese Übersicht basiert auf dem [Entwickler-Leitfaden von Salesforce zu Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) und ist nach Dringlichkeit sortiert.
@@ -50,7 +50,7 @@ Was zu tun ist:
 
 ## Die Developer Console ist im Setup ausgeblendet
 
-Mit Winter '27 erscheint die Developer Console standardmäßig nicht mehr im Setup-Menü. Laut [Release Note](https://help.salesforce.com/s/articleView?id=release-notes.rn_developer_console.htm&language=en_US&type=5) ist sie im Wartungsmodus, bekommt nur noch Fixes für schwere Sicherheitslücken, und ein Admin kann sie wieder einschalten. Ihr Nachfolger ist die Web Console, die allgemein verfügbar ist. In Produktions-Orgs ist Apex in der Web Console nur lesbar.
+Mit Winter '27 erscheint die Developer Console standardmäßig nicht mehr im Setup-Menü. Laut [Release Note](https://help.salesforce.com/s/articleView?id=release-notes.rn_developer_console.htm&language=en_US&type=5) ist sie im Wartungsmodus, erhält nur noch Fixes für schwere Sicherheitslücken, und ein Admin kann sie wieder einschalten. Ihr Nachfolger ist die Web Console, die allgemein verfügbar ist. In Produktions-Orgs ist Apex in der Web Console nur lesbar.
 
 Für gut geführte Programme ändert sich damit wenig. Code direkt in der Produktion zu ändern oder Ad-hoc-Änderungen dort auszuführen, war schon immer ein Risiko: kein Review, keine Historie, kein Weg zurück. Die neue Voreinstellung unterstützt die Vorgehensweise, die ohnehin richtig ist: Jede Code- und Metadatenänderung gehört ins Repository, wird in einem Pull Request geprüft und über die Pipeline deployt. Warum das wichtig ist, erkläre ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
 
@@ -62,7 +62,7 @@ Mehrere Änderungen helfen Entwicklern, einige davon automatisch:
 
 - **Höhere Heap-Limits.** Das Apex-Heap-Limit steigt von 6 auf 10 MB für synchronen und von 12 auf 25 MB für asynchronen Code. Das gilt automatisch. Batch- oder asynchronen Code würde ich nicht nur wegen des höheren Limits umbauen, denn Transaktionsgrenzen und Fehlerbehandlung ändern sich mit. Prüfen Sie ihn mit Performancetests, wenn Sie ihn ohnehin anfassen.
 - **Warnungen für sehr alte API-Versionen.** Der Compiler warnt jetzt bei Klassen und Triggern, die mit den API-Versionen 9.0 bis 19.0 gespeichert sind. In älteren Enterprise-Orgs gibt es solche Klassen noch. Sie sind gute Kandidaten zum Aufräumen.
-- **Neue Apex-Funktionen in Preview und Beta.** Integrationstests gibt es als Developer Preview. FORMULA() in SOQL, die Apex Symbol API und Cursor für Data-360-Objekte sind als Beta verfügbar. Beta-Funktionen sollten nicht ohne bewusste Entscheidung in Produktionscode landen.
+- **Neue Apex-Funktionen in Preview und Beta.** Integrationstests gibt es als Developer Preview. FORMULA() in SOQL, die Apex Symbol API und Cursor für Data-360-Objekte sind als Beta verfügbar. Beta-Funktionen sollten nicht ohne bewusste Entscheidung in Produktionscode gelangen.
 - **LWC-Verbesserungen.** Komplexe Template-Ausdrücke, lwc:external für Web Components von Drittanbietern und refresh() für State Manager sind allgemein verfügbar.
 - **CLI-Vorlagen.** Die CLI hat neue Vorlagen für Batchable- und Queueable-Klassen und neue Debug-Optionen für apex run.
 
@@ -76,19 +76,19 @@ Winter '27 bringt die API-Version 68.0. Keine der folgenden Abschaltungen greift
 2027-01-31 | Produktion: dieselben zwei Regeln für SOAP login()
 2027-02-20 | Der OAuth Username-Password Flow endet
 Summer '27 | SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt
-Summer '27 | SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 bekommen keine Updates mehr
+Summer '27 | SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 erhalten keine Updates mehr
 Summer '28 | SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 fallen aus
 ```
 
-Die Berechtigung deckt nur den 1. Dezember ab. Selten laufende Jobs, etwa Jahresläufe oder Notfallprozesse, brauchen vor dem 15. Dezember eine Prüfung, denn die Sechs-Monats-Prüfung läuft einmalig. Zusammen mit dem Ende des Username-Password Flow ist das echte Arbeit für Integrationsteams. Die Bestandsaufnahme und Umstellung beschreibe ich in [Salesforce: Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
+Die Berechtigung deckt nur den 1. Dezember ab. Selten laufende Jobs, etwa Jahresläufe oder Notfallprozesse, brauchen vor dem 15. Dezember eine Prüfung, denn die Sechs-Monats-Prüfung findet einmalig statt. Zusammen mit dem Ende des Username-Password Flow ist das echte Arbeit für Integrationsteams. Die Bestandsaufnahme und Umstellung beschreibe ich in [Salesforce: Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
 
 ## Was Release Manager außerdem wissen sollten
 
 Drei kleinere Punkte mit Auswirkungen auf die Governance:
 
-- **Die Agentforce-Plattform ist in Orgs, deren Lizenzen schon Agentforce-Zugriff enthalten, standardmäßig eingeschaltet**. Legen Sie fest, wer Agenten bauen und aktivieren darf, und sorgen Sie dafür, dass Agenten-Konfiguration durch denselben Release-Prozess läuft wie andere Metadaten.
+- **Die Agentforce-Plattform ist in Orgs, deren Lizenzen schon Agentforce-Zugriff enthalten, standardmäßig eingeschaltet**. Legen Sie fest, wer Agenten bauen und aktivieren darf, und sorgen Sie dafür, dass Agenten-Konfiguration denselben Release-Prozess durchläuft wie andere Metadaten.
 - **Umleitung von Gemini-Modellen.** Ab der Woche des 20. Oktober 2026 hat Salesforce Anfragen an Gemini 2.5 Pro, Flash und Flash-Lite auf neuere Gemini-Modelle umgeleitet. Verlassen sich Prompt Templates oder Agenten auf ein bestimmtes Modell, testen Sie ihre Ergebnisse erneut.
-- **Multi-Agent-Orchestrierung ist allgemein verfügbar** (Rollout seit August, die Agentforce-Release-Notes werden monatlich ergänzt), und Agent Script hat Funktionen und else if-Ketten bekommen. Beides macht Agentenlogik leistungsfähiger und ist ein Grund mehr, sie wie Code zu reviewen.
+- **Multi-Agent-Orchestrierung ist allgemein verfügbar** (Rollout seit August, die Agentforce-Release-Notes werden monatlich ergänzt), und Agent Script hat Funktionen und else if-Ketten erhalten. Beides macht Agentenlogik leistungsfähiger und ist ein Grund mehr, sie wie Code zu reviewen.
 
 ## Checkliste für Winter '27, beginnend mit den Token-Skripten
 

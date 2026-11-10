@@ -24,7 +24,7 @@ faq:
   - q: "Was ersetzt die CPQ-Produktregeln?"
     a: "Der Product Configurator mit Produktklassifizierungen und Attributen sowie bei komplexen Produkten die Constraint Rules Engine mit der Constraint Modeling Language (CML). Für einfache Abhängigkeiten können Wenn-dann-Konfigurationsregeln genügen, komplexe Abhängigkeiten werden als deklarative Bedingungen formuliert."
   - q: "Können CPQ und Revenue Cloud in derselben Org laufen?"
-    a: "Ja. Die Salesforce-Hilfe dokumentiert den Parallelbetrieb, wenn das CPQ-Paket installiert und Revenue Cloud bereitgestellt ist, und nennt das Behalten der CPQ-Lizenz als Planungsthema einer Migration. Bei einem schrittweisen Umstieg laufen beide eine Zeit lang nebeneinander. Planen Sie also, welche Produkte und Kunden zuerst migriert werden."
+    a: "Ja. Die Salesforce-Hilfe dokumentiert den Parallelbetrieb, wenn das CPQ-Paket installiert und Revenue Cloud bereitgestellt ist, und nennt das Behalten der CPQ-Lizenz als Planungsthema einer Migration. Bei einem schrittweisen Umstieg werden beide eine Zeit lang parallel betrieben. Planen Sie also, welche Produkte und Kunden zuerst migriert werden."
 draft: false
 ---
 
@@ -71,7 +71,7 @@ Revenue Cloud beginnt beim Katalog. Laut [Trailhead](https://trailhead.salesforc
 
 Für die Regeln bietet Revenue Cloud die [Constraint Rules Engine](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/explore-product-configurator-with-constraint-rules-engine). Sie setzt deklarative Beziehungen zwischen Optionen durch und lässt während der Konfiguration nur gültige Werte und Kombinationen zu. Regeln entstehen in der Constraint Modeling Language (CML), entweder direkt im CML-Editor oder ohne Code im Visual Builder. Trailhead beschreibt den Unterschied selbst: Regelbasierte Ansätze arbeiten mit ausdrücklicher Wenn-dann-Logik, constraint-basierte mit deklarativen Bedingungen zwischen Optionen und brauchen für komplexe Produkte weniger Regeln.
 
-Meine Einschätzung: Für einen Hersteller ist das die größte Änderung. Dreihundert Produktregeln werden nicht zu dreihundert Constraints. Jemand muss verstehen, was die Regeln technisch bedeuten, und sie neu modellieren. Diese Person sitzt meist im Produktmanagement oder in der Konstruktion, selten im CRM-Team.
+Meine Einschätzung: Für einen Hersteller ist das die größte Änderung. Dreihundert Produktregeln werden nicht zu dreihundert Constraints. Jemand muss verstehen, was die Regeln technisch bedeuten, und sie neu modellieren. Diese Person arbeitet meist im Produktmanagement oder in der Konstruktion, selten im CRM-Team.
 
 ## Preisprozeduren ersetzen Preisregeln und Plugin
 
@@ -79,7 +79,7 @@ In CPQ automatisieren [Preisregeln](https://trailhead.salesforce.com/content/lea
 
 Revenue Cloud rechnet mit [Salesforce Pricing](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/configure-pricing-for-products). Eine Context Definition übergibt die Produktdaten aus dem Angebot an eine Preisprozedur. Die Prozedur führt ihre Preiselemente in festgelegter Reihenfolge aus, meist holen Decision Tables die Preisdaten, und das Ergebnis geht zurück ins Angebot. Ist ein Preis-Wasserfall aktiviert und in der Prozedur abgebildet, zeigt er jeden Schritt vom Listenpreis bis zum Nettopreis. Für Controlling und Prüfungen ist das ein echter Fortschritt, weil die Frage "warum dieser Preis?" auf dem Bildschirm beantwortet wird.
 
-Für ein Quote Calculator Plugin gibt es kein direktes Gegenstück. Seine Logik muss auf Prozedurelemente, Decision Tables oder einen externen Aufruf verteilt werden. Ein Rechenbeispiel mit angenommenen Zahlen: Ein Komponentenhersteller hat 40 Preisregeln und ein Plugin mit einigen hundert Zeilen JavaScript für Händlerrabatte. Jede Regel und jeder Zweig im Plugin wird zur Designentscheidung: Wird dieser Punkt noch gebraucht, gehört er in eine Prozedur, oder sollte der Preis aus SAP kommen?
+Für ein Quote Calculator Plugin gibt es kein direktes Gegenstück. Seine Logik muss auf Prozedurelemente, Decision Tables oder einen externen Aufruf verteilt werden. Ein Rechenbeispiel mit angenommenen Zahlen: Ein Komponentenhersteller hat 40 Preisregeln und ein Plugin mit einigen hundert Zeilen JavaScript für Händlerrabatte. Jede Regel und jeder Zweig im Plugin wird zur Designentscheidung: Wird dieser Punkt noch gebraucht, gehört er in eine Prozedur, oder sollte der Preis aus SAP stammen?
 
 ## Wie unterscheiden sich Verträge, Nachträge und Verlängerungen?
 
@@ -103,7 +103,7 @@ Daraus ziehe ich für Hersteller drei Schlüsse:
 
 1. **Budgetieren Sie die Umstellung einer angepassten Org wie eine Neueinführung.** Migrationswerkzeuge bewegen Daten; Regeln, Preise und Freigaben werden aber neu entworfen. Die [CPQ-Seite von Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/) nennt drei bis sechs Monate als typisch und ergänzt, dass komplexe Implementierungen länger dauern. Mit dieser Spanne würde ich nur bei einer aufgeräumten Org planen.
 2. **Räumen Sie vorher auf.** Jede ungenutzte Produktregel, jede ungenutzte Preisregel und jeder Plugin-Zweig, die Sie vor der Migration löschen, sind eine Designentscheidung weniger. Eine [Org-Analyse](../ki-org-analyse-technische-schulden/) zeigt, was tatsächlich genutzt wird.
-3. **Planen Sie Deployments für Daten.** Katalog, Preise und Konfiguration sind auch in Revenue Cloud Datensätze. Wie solche Daten durch die Pipeline kommen, beschreibt das DevOps-Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/).
+3. **Planen Sie Deployments für Daten.** Katalog, Preise und Konfiguration sind auch in Revenue Cloud Datensätze. Wie solche Daten durch die Pipeline gelangen, beschreibt das DevOps-Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/).
 
 Ob sich der Wechsel überhaupt lohnt, ist eine eigene Frage. Die beantworte ich in [CPQ behalten oder zu Revenue Cloud wechseln?](../cpq-behalten-oder-revenue-cloud/).
 

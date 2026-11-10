@@ -13,7 +13,7 @@ takeaways:
   - "Dispatchers and technicians should work the same way, whether an internal or an external technician takes the job."
   - "Either each partner technician is a service resource of their own, or the partner is a capacity-based resource. For the same way of working, the first fits."
   - "Partner technicians use the same app. They need an Experience Cloud license plus Field Service permission set licenses; Contractor Plus bundles them."
-  - "A territory per partner only separates data together with private sharing settings and a check of which parent records get shared."
+  - "A territory per partner only separates data together with private sharing settings and a check of which parent records are shared."
   - "Data access and invoicing are deliberately kept separate. A partner sees only what they need for their job."
 faq:
   - q: "How do you bring subcontractors into Salesforce Field Service?"

@@ -13,7 +13,7 @@ tags: [Sandbox-Strategie, DevOps, Release-Management, Partnersteuerung]
 takeaways:
   - "Ein Refresh kann Produktionsendpunkte in die Sandbox übernehmen, Secrets aber nicht. Ein Post-Refresh-Skript legt die Zielsysteme fest."
   - "Das Zielbild: isolierte Entwicklung je aktivem Stream, eine gemeinsame Integration, eine Partial Copy für ERP-Tests und eine Full Copy für UAT."
-  - "Ein Refresh ersetzt die Sandbox durch eine neue Org. Metadaten außerhalb von Git sind danach weg, deshalb laufen Änderungen nur über die Pipeline."
+  - "Ein Refresh ersetzt die Sandbox durch eine neue Org. Metadaten außerhalb von Git sind danach weg, deshalb gelangen Änderungen nur über die Pipeline in die Orgs."
   - "Alle Sandboxes gehören dem Kunden und stehen in einer Liste mit Zweck, Verantwortlichem und Refresh-Termin."
 faq:
   - q: "Wie viele Sandboxes braucht ein Salesforce-Programm?"
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Eine Salesforce-Sandbox-Strategie legt für jede Testumgebung fest, wozu sie dient, wer darin arbeitet, welche Daten sie enthält und wann sie aktualisiert wird. Arbeiten mehrere Umsetzungspartner an einer Org, empfehle ich eine feste Kette: eine eigene Entwicklungsumgebung pro Entwickler, eine gemeinsame Integrations-Sandbox, eine Partial Copy für Tests mit dem ERP und eine Full Copy für UAT und die Generalprobe vor dem Release. Änderungen wandern nur über die Pipeline durch diese Kette. Ohne diese Regeln baut jeder Partner seine eigene Welt, und die Unterschiede zeigen sich erst im Produktivsystem.
+Eine Salesforce-Sandbox-Strategie legt für jede Testumgebung fest, wozu sie dient, wer darin arbeitet, welche Daten sie enthält und wann sie aktualisiert wird. Arbeiten mehrere Umsetzungspartner an einer Org, empfehle ich eine feste Kette: eine eigene Entwicklungsumgebung pro Entwickler, eine gemeinsame Integrations-Sandbox, eine Partial Copy für Tests mit dem ERP und eine Full Copy für UAT und die Generalprobe vor dem Release. Änderungen durchlaufen diese Kette nur über die Pipeline. Ohne diese Regeln baut jeder Partner seine eigene Welt, und die Unterschiede zeigen sich erst im Produktivsystem.
 
 ## Welche Sandbox-Typen gibt es in Salesforce?
 
@@ -48,34 +48,34 @@ Wie viele Sandboxes welcher Art im Vertrag enthalten sind, hängt von Edition un
 
 In einer kleinen Org mit einem Admin gibt es selten Ärger mit Sandboxes. Mit mehreren Partnern sehe ich immer wieder dieselben Ursachen:
 
-- **Änderungen direkt in der Sandbox.** Ein Entwickler passt in der UAT-Sandbox ein Feld an, damit der Test durchläuft. Im Repository steht die Änderung nicht, und das nächste Deployment überschreibt sie oder die Produktion bekommt sie nie.
+- **Änderungen direkt in der Sandbox.** Ein Entwickler passt in der UAT-Sandbox ein Feld an, damit der Test durchläuft. Im Repository steht die Änderung nicht, und das nächste Deployment überschreibt sie oder die Produktion erhält sie nie.
 - **Jeder Partner hat seine eigene Integrationsumgebung.** Jeder testet gegen seinen Stand, nicht gegen den Stand der anderen. Konflikte zwischen zwei Streams fallen erst auf, wenn beide in UAT ankommen.
 - **Niemand weiß, wofür eine Sandbox da ist.** Nach zwei Jahren hat eine Org zwanzig Sandboxes mit Namen wie `test2` und `partnerneu`, und keiner traut sich, eine zu löschen.
 - **Refresh ohne Plan.** Jemand aktualisiert eine Sandbox, und eine Schnittstellenkonfiguration verweist danach noch auf das produktive ERP, während die Zugangsdaten für das Test-ERP fehlen, weil Secrets nicht kopiert werden.
 
-Die Symptome sind immer gleich: Ein Feature läuft in UAT und fällt im Produktivsystem aus. Mehr zu den Ursachen steht in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/).
+Die Symptome sind immer gleich: Ein Feature funktioniert in UAT und fällt im Produktivsystem aus. Mehr zu den Ursachen steht in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/).
 
 ## Wie sieht eine Sandbox-Strategie für mehrere Partner aus?
 
 Die Strategie folgt dem Weg einer Änderung. Jede Stufe hat einen Zweck und einen Verantwortlichen.
 
-1. **Entwicklung.** Idealerweise arbeitet jeder Entwickler in einer eigenen Developer-Sandbox oder Scratch Org. Wenn die verfügbaren Sandbox-Kontingente dafür nicht reichen, sollte mindestens jeder aktive Stream eine eigene Umgebung haben. Testdaten kommen als Seed-Datensatz aus dem Repository. Diese Umgebung darf kaputtgehen.
+1. **Entwicklung.** Idealerweise arbeitet jeder Entwickler in einer eigenen Developer-Sandbox oder Scratch Org. Wenn die verfügbaren Sandbox-Kontingente dafür nicht reichen, sollte mindestens jeder aktive Stream eine eigene Umgebung haben. Testdaten stammen als Seed-Datensatz aus dem Repository. Diese Umgebung darf kaputtgehen.
 2. **Integration.** Eine gemeinsame Sandbox, oft eine Developer Pro, deren Größe zu den für die Tests benötigten Daten passt. Pull Requests werden vor dem Merge validiert und getestet. Nach dem Merge werden die Änderungen hier deployt, und die Streams testen zum ersten Mal gemeinsam. Partner haben Leserechte, aber kein Recht, dort direkt etwas zu ändern.
-3. **Schnittstellentest.** Eine Partial Copy, verbunden mit dem Testsystem des ERP. Die Stichprobe kommt aus einer Sandbox-Vorlage, die festlegt, welche Objekte kopiert werden. Personenbezogene Daten werden maskiert.
+3. **Schnittstellentest.** Eine Partial Copy, verbunden mit dem Testsystem des ERP. Die Stichprobe stammt aus einer Sandbox-Vorlage, die festlegt, welche Objekte kopiert werden. Personenbezogene Daten werden maskiert.
 4. **UAT und Generalprobe.** Die Full Copy. Fachbereiche testen hier mit echten Datenmengen, und das Release wird nach UAT in einem vereinbarten Zeitfenster einmal vollständig durchgespielt, inklusive Post-Deployment-Schritten. Personenbezogene Daten werden auch hier maskiert, der Zugang ist eingeschränkt, und nach jedem Refresh wird die Umgebung für die Nutzung freigegeben.
 5. **Hotfix.** Eine Sandbox mit den Metadaten der Produktion und einem Branch vom Produktionsstand, damit ein dringender Fehler behoben werden kann, ohne halbfertige Features mitzunehmen.
 
 Größere Programme mit parallel laufenden Releases können eine zweite Integrations- oder Staging-Strecke benötigen. Rund um jedes Salesforce-Release erhalten Preview-Sandboxes die neue Version etwa sechs Wochen vor der Produktion. Legen Sie fest, in welcher Sandbox das neue Release getestet wird und welche Sandbox auf der Produktionsversion bleibt.
 
 ```hinweis achtung
-Ein Refresh erstellt aus der Quell-Org, meist der Produktion, eine neue Org mit einer neuen Org-ID und ersetzt bei der Aktivierung die alte. Alles, was nur in der Sandbox gebaut wurde, ist danach weg. Deshalb gilt: Jede Änderung liegt zuerst in Git und kommt über die Pipeline in die Sandbox. Daten, Secrets, geplante Jobs und Verbindungen liegen nicht in Git und brauchen die Post-Refresh-Schritte.
+Ein Refresh erstellt aus der Quell-Org, meist der Produktion, eine neue Org mit einer neuen Org-ID und ersetzt bei der Aktivierung die alte. Alles, was nur in der Sandbox gebaut wurde, ist danach weg. Deshalb gilt: Jede Änderung liegt zuerst in Git und gelangt über die Pipeline in die Sandbox. Daten, Secrets, geplante Jobs und Verbindungen liegen nicht in Git und brauchen die Post-Refresh-Schritte.
 ```
 
 Mit einer Pipeline auf der Git-Plattform des Kunden ist sichtbar, welches Release zuletzt in welche Umgebung deployt wurde. Trotzdem muss regelmäßig geprüft werden, ob es Abweichungen durch direkte Änderungen gibt. Diesen Teil setze ich im Rahmen von [DevOps und Release-Management](../../leistungen/devops-und-release-management/) um.
 
 ## Die Sandboxes gehören dem Kunden
 
-Alle Sandboxes sind der Produktions-Org zugeordnet und gehören damit technisch immer dem Kunden. In der Praxis entscheidet aber oft ein Partner, wer Zugang bekommt und wann aktualisiert wird. Das halte ich für einen Fehler, aus demselben Grund, aus dem [Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/): Wer die Umgebungen steuert, bestimmt den Takt aller anderen.
+Alle Sandboxes sind der Produktions-Org zugeordnet und gehören damit technisch immer dem Kunden. In der Praxis entscheidet aber oft ein Partner, wer Zugang erhält und wann aktualisiert wird. Das halte ich für einen Fehler, aus demselben Grund, aus dem [Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/): Wer die Umgebungen steuert, bestimmt den Takt aller anderen.
 
 Ich führe deshalb eine einfache Liste, die der Kunde besitzt:
 
@@ -95,10 +95,10 @@ Der Refresh-Kalender folgt dem Release-Kalender. Ich empfehle diesen Rhythmus:
 
 - **Full Copy** nach jedem Produktions-Release, damit UAT mit dem Stand testet, den die Anwender haben. Prüfen Sie die Termine: Die 29 Tage zählen ab der Refresh-Anfrage, ein Vier-Wochen-Rhythmus hat nur 28 Tage, und ein Full-Copy-Refresh kann mehrere Tage dauern.
 - **Partial Copy** vor jeder größeren Testphase der Schnittstellen.
-- **Integration** nur, wenn sie zu weit von der Produktion abweicht. Weil alle Metadaten aus Git kommen, lässt sie sich neu aufbauen. Daten und Integrationseinstellungen kommen aus den Post-Refresh-Schritten.
+- **Integration** nur, wenn sie zu weit von der Produktion abweicht. Weil alle Metadaten aus Git stammen, lässt sie sich neu aufbauen. Daten und Integrationseinstellungen stammen aus den Post-Refresh-Schritten.
 - **Developer-Sandboxes** so oft, wie der Entwickler es braucht. Scratch Orgs entstehen ohnehin für jede Aufgabe neu.
 
-Nach jedem Refresh laufen dieselben Schritte: Endpunkte der Schnittstellen auf das Test-ERP umstellen und ihre Zugangsdaten einrichten; prüfen, dass die E-Mail-Zustellbarkeit weiterhin auf „Nur System-E-Mail“ steht, und festlegen, wer das ändern darf; Testnutzer anlegen, Daten maskieren, Jobs neu einplanen und Referenzdaten laden. Salesforce erlaubt dafür eine Apex-Klasse namens SandboxPostCopy, die nach dem Erstellen oder Aktualisieren einer Sandbox automatisch läuft. Sie läuft unter dem Nutzer Automated Process mit eingeschränkten Rechten. Deshalb müssen einige Schritte über die Pipeline oder in einem geprüften manuellen Schritt ausgeführt werden. Salesforce Data Mask & Seed kann Maskierungsrichtlinien nach einem Refresh automatisch ausführen. Referenzdaten lassen sich mit SFDMU, einem Open-Source-Plugin der Salesforce CLI (`sf sfdmu run`), aus dem Repository laden. Stehen diese Schritte nur auf einer Checkliste, ist jeder Refresh von der einen Person abhängig, die sie kennt.
+Nach jedem Refresh folgen dieselben Schritte: Endpunkte der Schnittstellen auf das Test-ERP umstellen und ihre Zugangsdaten einrichten; prüfen, dass die E-Mail-Zustellbarkeit weiterhin auf „Nur System-E-Mail“ steht, und festlegen, wer das ändern darf; Testnutzer anlegen, Daten maskieren, Jobs neu einplanen und Referenzdaten laden. Salesforce erlaubt dafür eine Apex-Klasse namens SandboxPostCopy, die nach dem Erstellen oder Aktualisieren einer Sandbox automatisch läuft. Sie läuft unter dem Nutzer Automated Process mit eingeschränkten Rechten. Deshalb müssen einige Schritte über die Pipeline oder in einem geprüften manuellen Schritt ausgeführt werden. Salesforce Data Mask & Seed kann Maskierungsrichtlinien nach einem Refresh automatisch ausführen. Referenzdaten lassen sich mit SFDMU, einem Open-Source-Plugin der Salesforce CLI (`sf sfdmu run`), aus dem Repository laden. Stehen diese Schritte nur auf einer Checkliste, ist jeder Refresh von der einen Person abhängig, die sie kennt.
 
 ```pro-contra
 pro: Feste Kette mit einer gemeinsamen Integration
@@ -112,4 +112,4 @@ contra: Was Sie dafür aufgeben
 
 ## Alle Sandboxes mit Verantwortlichem auflisten
 
-Fangen Sie mit der Liste an. Schreiben Sie jede vorhandene Sandbox mit Zweck und Verantwortlichem auf und löschen Sie die, für die sich niemand meldet. Danach legen Sie die Kette fest und sperren direkte Änderungen in Integration und UAT. Der Refresh-Kalender kommt zuletzt, wenn die Post-Refresh-Schritte als Skript vorliegen.
+Fangen Sie mit der Liste an. Schreiben Sie jede vorhandene Sandbox mit Zweck und Verantwortlichem auf und löschen Sie die, für die sich niemand meldet. Danach legen Sie die Kette fest und sperren direkte Änderungen in Integration und UAT. Der Refresh-Kalender folgt zuletzt, wenn die Post-Refresh-Schritte als Skript vorliegen.

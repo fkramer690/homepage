@@ -31,11 +31,11 @@ faq:
 draft: false
 ---
 
-Die Manufacturing Cloud lohnt sich für Hersteller, deren Vertrieb über Rahmenverträge mit geplanten Mengen läuft und die Plan gegen Ist pro Kunde und Produkt in Salesforce steuern wollen. Laut Preisliste kostet sie im Vertrieb 80 € pro Nutzer und Monat mehr als Sales Cloud. Für die meisten Hersteller mit wiederkehrenden Mengen sind Sales Agreements der klarste Grund für diesen Aufpreis. Garantie und Rebates sind eigene Entscheidungen, weil Salesforce sie über die Servicevariante und ein separates Produkt lizenziert. Ich habe beide Varianten erlebt: einen weltweiten Rollout mit der Manufacturing Cloud und ein Projekt, in dem eine Eigenentwicklung auf der Kernplattform die bessere Wahl war.
+Die Manufacturing Cloud lohnt sich für Hersteller, deren Vertrieb über Rahmenverträge mit geplanten Mengen erfolgt und die Plan gegen Ist pro Kunde und Produkt in Salesforce steuern wollen. Laut Preisliste kostet sie im Vertrieb 80 € pro Nutzer und Monat mehr als Sales Cloud. Für die meisten Hersteller mit wiederkehrenden Mengen sind Sales Agreements der klarste Grund für diesen Aufpreis. Garantie und Rebates sind eigene Entscheidungen, weil Salesforce sie über die Servicevariante und ein separates Produkt lizenziert. Ich habe beide Varianten erlebt: einen weltweiten Rollout mit der Manufacturing Cloud und ein Projekt, in dem eine Eigenentwicklung auf der Kernplattform die bessere Wahl war.
 
 ## Was ist die Salesforce Manufacturing Cloud?
 
-Die Manufacturing Cloud ist das Branchenangebot von Salesforce für Hersteller. Laut Salesforce-Hilfe ist sie kein Managed Package. Sie erweitert die Salesforce Platform, Sales Cloud und Service Cloud um lizenzierte Funktionen. Sie bringt ein eigenes Datenmodell für Hersteller mit und eine Reihe von Funktionen, die es in der Kernplattform nicht gibt. Welche Funktionen Sie bekommen, hängt von der Variante ab. Die [Funktionszuordnung in der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.mfg_feature_mapping.htm&language=en_US&type=5) teilt sie so auf:
+Die Manufacturing Cloud ist das Branchenangebot von Salesforce für Hersteller. Laut Salesforce-Hilfe ist sie kein Managed Package. Sie erweitert die Salesforce Platform, Sales Cloud und Service Cloud um lizenzierte Funktionen. Sie bringt ein eigenes Datenmodell für Hersteller mit und eine Reihe von Funktionen, die es in der Kernplattform nicht gibt. Welche Funktionen Sie erhalten, hängt von der Variante ab. Die [Funktionszuordnung in der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.mfg_feature_mapping.htm&language=en_US&type=5) teilt sie so auf:
 
 - **Manufacturing Cloud for Sales:** Sales Agreements für langfristige Vereinbarungen über Preise und Mengen, Account Forecasting, Zielvorgaben für Account Manager, Program-Based Business und Partnerbesuche.
 - **Manufacturing Cloud for Service:** Garantieabwicklung mit Garantieansprüchen und Lieferantenregress, Produktservicekampagnen, Rücksendungen von Serviceteilen und Funktionen rund um Anlagen.
@@ -64,7 +64,7 @@ Rechnen wir mit den Core-Preisen. Der Aufpreis liegt bei 80 € pro Nutzer und M
 
 Ein Sales Agreement ist eine langfristige Vereinbarung zwischen Hersteller und Kunde über Preise und Mengen von Produkten. Laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_salesagreement.htm) teilt es die Laufzeit in einmalige, wöchentliche, monatliche, quartalsweise oder jährliche Zeiträume auf. Für jeden Zeitraum und jedes Produkt stehen geplante und tatsächliche Mengen und Umsätze nebeneinander.
 
-Die tatsächlichen Werte kommen laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better) auf drei Wegen ins System: automatisch aus direkten Aufträgen, automatisch aus Aufträgen über Verträge oder manuell per API. Bei vielen Herstellern liegen die führenden Aufträge im ERP oder einem Order-Management-System. In der Praxis heißt das: Die Aufträge oder ihre Summen müssen aus SAP oder einem anderen ERP nach Salesforce, sonst zeigt das Sales Agreement einen Plan ohne Ist.
+Die tatsächlichen Werte gelangen laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better) auf drei Wegen ins System: automatisch aus direkten Aufträgen, automatisch aus Aufträgen über Verträge oder manuell per API. Bei vielen Herstellern liegen die führenden Aufträge im ERP oder einem Order-Management-System. In der Praxis heißt das: Die Aufträge oder ihre Summen müssen aus SAP oder einem anderen ERP nach Salesforce, sonst zeigt das Sales Agreement einen Plan ohne Ist.
 
 Gedacht ist das für das sogenannte Run-Rate-Geschäft. Ein Kunde nimmt über ein oder mehrere Jahre regelmäßig dieselben Produkte ab, und der Vertrieb will sehen, ob der Kunde seine Zusagen einhält. Unterschreitet ein Kunde die vereinbarte Menge, ist das der Anlass für ein Gespräch über Preis und Rabatt.
 
@@ -86,7 +86,7 @@ Die Manufacturing Cloud for Sales lohnt sich nach meiner Erfahrung, wenn Rahmenv
 
 Für die übrigen Funktionen braucht es jeweils einen eigenen Business Case:
 
-- **Garantie über Händler und Partner.** Ansprüche kommen von außen, und die Prüfung kostet heute viel Handarbeit. Das ist die Manufacturing Cloud for Service, verglichen wird also mit Service Cloud, nicht mit Sales Cloud.
+- **Garantie über Händler und Partner.** Ansprüche gehen von außen ein, und die Prüfung kostet heute viel Handarbeit. Das ist die Manufacturing Cloud for Service, verglichen wird also mit Service Cloud, nicht mit Sales Cloud.
 - **Ein Händlerkanal mit Bonusprogrammen.** Rebates werden heute in Tabellen berechnet, und Händler fragen regelmäßig nach ihrem Stand. Das ist ein separates Produkt mit eigenem Preis, heute Channel Revenue Management.
 - **Die Roadmap sieht die Funktionen in zwei bis drei Jahren vor.** Dann lohnt es sich, Preisbindungen oder optionale Positionen mit Aktivierungsdatum ins erste Angebot zu verhandeln, statt Lizenzen Jahre vor der Nutzung zu kaufen.
 
@@ -109,6 +109,6 @@ Ein Punkt gehört noch dazu: Wer die Manufacturing Cloud wegen der Agenten kauft
 
 ## Vertrieb und Service befragen
 
-Bevor ein Angebot auf dem Tisch liegt, helfen drei Fragen an den eigenen Vertrieb und Service: Wie viel Prozent des Umsatzes laufen über Rahmenverträge mit Mengen? Wie werden Händlerboni heute gerechnet? Wer prüft Garantieansprüche, und wie lange dauert das? Die Antworten zeigen früher als eine Demo, ob die Manufacturing Cloud zu Ihrem Geschäft passt.
+Bevor ein Angebot auf dem Tisch liegt, helfen drei Fragen an den eigenen Vertrieb und Service: Wie viel Prozent des Umsatzes entfallen auf Rahmenverträge mit Mengen? Wie werden Händlerboni heute gerechnet? Wer prüft Garantieansprüche, und wie lange dauert das? Die Antworten zeigen früher als eine Demo, ob die Manufacturing Cloud zu Ihrem Geschäft passt.
 
 Danach gehört die Frage in die [Salesforce-Architektur](../../leistungen/salesforce-architektur/), mit einem Eintrag im Entscheidungslog, damit die Gründe auch nach einem Partnerwechsel nachvollziehbar bleiben. Das vollständige Bild aus Funktionen, Add-ons und Lizenzen steht in [Kapitel 1 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/einordnung-und-business-case/).

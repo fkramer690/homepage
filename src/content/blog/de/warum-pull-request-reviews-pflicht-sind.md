@@ -47,7 +47,7 @@ All das lässt sich im Pull Request günstig beheben; später wird es teuer. Hat
 
 ```partnerfluss review
 ohne: Ohne Review | Jedes Team deployt auf eigenem Weg, Konflikte fallen erst in UAT oder Produktion auf.
-mit: Mit Pull-Request-Review | Jede Änderung geht durch ein Review, bevor sie in die Org kommt.
+mit: Mit Pull-Request-Review | Jede Änderung geht durch ein Review, bevor sie in die Org gelangt.
 ```
 
 ## Was sollte ein gutes Review prüfen?
@@ -70,9 +70,9 @@ Den wiederholbaren Teil sollten Sie automatisieren: statische Codeanalyse, proje
 In einem Programm, zu dem ich dazukam, arbeiteten mehrere Umsetzungspartner und interne Teams an derselben Salesforce-Org. Niemand hatte klar festgelegt, wer für welche Prozesse, Objekte und Metadaten federführend verantwortlich war. Änderungen überschrieben sich, weil nicht abgestimmt war, wer was wann deployt, und die technischen Ansätze der Teams lagen weit auseinander.
 
 ```praxis
-Der erste und wirksamste Schritt war eine einfache Regel: Jede Änderung geht über einen Pull Request mit Review. Eine Zeit lang lief jeder einzelne Pull Request über meinen Schreibtisch. Das klingt nach Flaschenhals, und ein paar Wochen lang war es viel Arbeit. Aber es gab uns etwas, das kein Workshop liefern konnte: einen konkreten Blick darauf, wie jedes Team tatsächlich baut. Auf Basis dieser Reviews haben wir Entwicklungs- und Architekturstandards aufgeschrieben, und ab dann wurden sie in den Reviews durchgesetzt.
+Der erste und wirksamste Schritt war eine einfache Regel: Jede Änderung geht über einen Pull Request mit Review. Eine Zeit lang ging jeder einzelne Pull Request über meinen Schreibtisch. Das klingt nach Flaschenhals, und ein paar Wochen lang war es viel Arbeit. Aber es gab uns etwas, das kein Workshop liefern konnte: einen konkreten Blick darauf, wie jedes Team tatsächlich baut. Auf Basis dieser Reviews haben wir Entwicklungs- und Architekturstandards aufgeschrieben, und ab dann wurden sie in den Reviews durchgesetzt.
 
-Nach einigen Wochen ging die Zahl der Review-Kommentare deutlich zurück, weil die Teams die Standards kannten. Releases wurden planbar, und die Validierungsläufe der Pipeline fanden viele fehlende Abhängigkeiten, bevor ein Anwender sie sah. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben und den Kollegen eingearbeitet. Seitdem verantwortet der Kunde den Review-Prozess selbst.
+Nach einigen Wochen ging die Zahl der Review-Kommentare deutlich zurück, weil die Teams die Standards kannten. Releases wurden planbar, und die Validierungsläufe der Pipeline fanden viele fehlende Abhängigkeiten, bevor ein Anwender sie sah. Als der Prozess stabil funktionierte, habe ich ihn an einen internen Kollegen übergeben und den Kollegen eingearbeitet. Seitdem verantwortet der Kunde den Review-Prozess selbst.
 ```
 
 ```vergleich

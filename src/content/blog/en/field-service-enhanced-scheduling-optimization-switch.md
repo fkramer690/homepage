@@ -35,7 +35,7 @@ Enhanced Scheduling and Optimization, often shortened to ESO, is the newer engin
 
 The [Summer '23 release notes](https://resources.docs.salesforce.com/244/latest/en-us/sfdc/pdf/salesforce_summer23_release_notes.pdf) say that the enhanced engine is available for new users by default. The current [Field Service guide](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/support_field_service.pdf) says it plainly: new orgs have Enhanced Scheduling and Optimization enabled for all service territories, and existing orgs can switch all territories or enable it per territory.
 
-So the question remains open only for orgs that went live with the older engine. For them nothing changes automatically. The engine keeps running as before until someone decides to switch, and without a deadline that decision tends to get postponed.
+So the question remains open only for orgs that went live with the older engine. For them nothing changes automatically. The engine keeps running as before until someone decides to switch, and without a deadline that decision tends to be postponed.
 
 ## Higher limits for skills and optimized appointments
 
@@ -91,7 +91,7 @@ Assume a machine builder with 45 technicians in five service territories, four d
 Data check | 2 weeks
   A report lists appointments without a territory, resources with empty fields used in Match Fields or Match Boolean rules and technicians with secondary territory memberships. The result: 6 percent of open appointments have no territory, mostly breakdowns created from cases.
 Rebuild recipes | 2 weeks
-  The two recipes get rebuilt with the Fix Schedule Overlaps flow and tested in a full sandbox.
+  The two recipes are rebuilt with the Fix Schedule Overlaps flow and tested in a full sandbox.
 Pilot | 4 weeks
   One territory with nine technicians switches to the enhanced engine. Dispatchers note every proposal they change and why, as they did when automation was introduced.
 Comparison

@@ -36,7 +36,7 @@ Ein Audit-Trail für KI-Agenten in Salesforce setzt sich aus mindestens fünf Lo
 Bei einem Maschinenbauer stellen sich diese Fragen in Garantie-, Händler- und Serviceprozessen:
 
 - **Interne Revision oder Kundenaudit:** Wer hat die Anweisungen des Agenten oder die Garantieregel vor der strittigen Entscheidung geändert?
-- **Datenschutzbeauftragte:** Welche personenbezogenen Daten von Händlermitarbeitenden, Endkunden und Technikern landen in Prompts und Logs, und wann werden sie gelöscht?
+- **Datenschutzbeauftragte:** Welche personenbezogenen Daten von Händlermitarbeitenden, Endkunden und Technikern gelangen in Prompts und Logs, und wann werden sie gelöscht?
 - **Betriebsrat:** Lassen sich diese Logs nutzen, um einzelne Servicemitarbeitende auszuwerten?
 - **IT-Leitung:** Welche Datensätze hat ein externes KI-Tool letzte Woche gelesen, und unter welchem Benutzer?
 
@@ -99,7 +99,7 @@ Sechs Monate nehme ich trotzdem als Richtwert, und die Tabelle zeigt die Lücken
 
 Nehmen wir einen Maschinenbauer mit 90 Händlern, einem Agentforce-Serviceagenten im Händlerportal, der Fragen zum Garantiestatus beantwortet und Anträge anlegt, und 25 Mitarbeitenden im Service-Innendienst, die über Hosted MCP mit Claude Enterprise arbeiten. Event Monitoring ist nicht gekauft. Alle Zahlen sind Annahmen.
 
-**Woche 3, Datenschutz.** Die Datenschutzbeauftragte fragt, wo die Namen von Händlermitarbeitenden landen: im Audit-Trail, der die Antwort unmaskiert speichert, und in den Schrittein- und -ausgaben von Session Tracing. Mangels dokumentierter Aufbewahrung setzt das Unternehmen sechs Monate als Ziel und klärt zuerst mit Salesforce, wie sich die Löschung in Data 360 umsetzen lässt. Die IT startet außerdem einen täglichen Export der API-Logs ins SIEM, bei dem die letzten drei Tage erneut geprüft werden, weil Salesforce tägliche Dateien bis zu drei Tage später liefern oder ersetzen kann.
+**Woche 3, Datenschutz.** Die Datenschutzbeauftragte fragt, wo die Namen von Händlermitarbeitenden gespeichert werden: im Audit-Trail, der die Antwort unmaskiert speichert, und in den Schrittein- und -ausgaben von Session Tracing. Mangels dokumentierter Aufbewahrung setzt das Unternehmen sechs Monate als Ziel und klärt zuerst mit Salesforce, wie sich die Löschung in Data 360 umsetzen lässt. Die IT startet außerdem einen täglichen Export der API-Logs ins SIEM, bei dem die letzten drei Tage erneut geprüft werden, weil Salesforce tägliche Dateien bis zu drei Tage später liefern oder ersetzen kann.
 
 **Woche 7, Betriebsrat.** Die Betriebsvereinbarung erlaubt monatliche Auswertungen je Abteilung; personenbezogene Auswertungen nur nach einem Sicherheitsvorfall und mit Information an den Betriebsrat.
 
@@ -107,7 +107,7 @@ Nehmen wir einen Maschinenbauer mit 90 Händlern, einem Agentforce-Serviceagente
 
 ## Auditdaten und Tracing vor dem ersten Gespräch einschalten
 
-1. **Auditdatenerfassung und Tracing einschalten**, bevor das erste produktive Gespräch läuft. Nachträglich wird nichts befüllt.
+1. **Auditdatenerfassung und Tracing einschalten**, bevor das erste produktive Gespräch stattfindet. Nachträglich wird nichts befüllt.
 2. **Ein Log-Inventar schreiben**: beantwortete Frage, Verantwortliche, Leserechte, Aufbewahrung, Löschung.
 3. **Über die API-Logs entscheiden**: regelmäßiger Export ins SIEM oder bezahltes Event Monitoring. Salesforce weist darauf hin, dass diese Dateien nicht als maßgebliches Aufzeichnungssystem dienen und Lücken oder Duplikate enthalten können. Auf den geprüften Seiten fand ich keinen Preis; fragen Sie Ihren Account Executive.
 4. **Die Felder protokollieren, die Agenten schreiben**, etwa Garantiestatus und genehmigten Betrag.

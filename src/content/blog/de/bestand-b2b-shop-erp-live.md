@@ -22,13 +22,13 @@ faq:
   - q: "Ist Omnichannel Inventory das führende System für den Bestand?"
     a: "Nein. Salesforce schreibt, dass Omnichannel Inventory das führende Bestandssystem, das ERP oder die Lagerverwaltung nicht ersetzt. Es hält eine Kopie, die das ERP über Import- oder Update-APIs aktuell halten muss."
   - q: "Sollte ein B2B-Shop exakte Bestandsmengen zeigen?"
-    a: "Meist nicht. Händler müssen wissen, ob ein Teil sofort, auf Anfrage oder zu einem bestätigten Termin kommt. Exakte Mengen führen zu Rückfragen wegen reservierter Bestände und verraten Wettbewerbern mehr als nötig."
+    a: "Meist nicht. Händler müssen wissen, ob ein Teil sofort, auf Anfrage oder zu einem bestätigten Termin lieferbar ist. Exakte Mengen führen zu Rückfragen wegen reservierter Bestände und verraten Wettbewerbern mehr als nötig."
   - q: "Wie viele Lagerorte sind in B2B Commerce enthalten?"
     a: "Die Preisseite nennt für Growth und Advanced Edition jeweils 20 Lagerorte (Inventory Locations). Wenn Sie mehr Werke oder Lager planen, klären Sie vor Vertragsabschluss mit Salesforce, wie Lagerorte gezählt werden."
 draft: false
 ---
 
-Ein B2B-Shop auf Salesforce sollte beim Stöbern eine Kopie des Bestands zeigen und das ERP nur dort live fragen, wo eine Lieferzusage entsteht, nämlich im Checkout. Ist Bestand eingerichtet, nutzt der Standarddienst von B2B Commerce Omnichannel Inventory, einen Salesforce-Dienst, den SAP befüllen muss. Mit der Inventory-Extension kann der Shop stattdessen die Verfügbarkeitsprüfung in SAP aufrufen. Sie liefert bestätigte Mengen und Termine, kostet aber Antwortzeit und belastet SAP. Händler brauchen selten exakte Mengen. Sie müssen wissen, ob ein Teil sofort, auf Anfrage oder zu einem bestätigten Termin kommt. SAP bleibt in jedem Fall führend für den Bestand.
+Ein B2B-Shop auf Salesforce sollte beim Stöbern eine Kopie des Bestands zeigen und das ERP nur dort live fragen, wo eine Lieferzusage entsteht, nämlich im Checkout. Ist Bestand eingerichtet, nutzt der Standarddienst von B2B Commerce Omnichannel Inventory, einen Salesforce-Dienst, den SAP befüllen muss. Mit der Inventory-Extension kann der Shop stattdessen die Verfügbarkeitsprüfung in SAP aufrufen. Sie liefert bestätigte Mengen und Termine, kostet aber Antwortzeit und belastet SAP. Händler brauchen selten exakte Mengen. Sie müssen wissen, ob ein Teil sofort, auf Anfrage oder zu einem bestätigten Termin lieferbar ist. SAP bleibt in jedem Fall führend für den Bestand.
 
 ## Woher bekommt der Shop den Bestand?
 

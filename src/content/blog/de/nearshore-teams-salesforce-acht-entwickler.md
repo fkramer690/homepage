@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Ich begrenze Nearshore-Teams für Salesforce auf etwa acht Entwickler. Zusammen mit Product Owner und Scrum Master kommt ein Team mit acht Entwicklern auf zehn Personen. Diese Größe beschreibt der Scrum Guide als typisch. Acht ist mein Erfahrungswert aus Projekten, kein Gesetz. Darüber wächst der Abstimmungsaufwand schneller als die Leistung, Sprint-Meetings werden lang, und das Team liefert pro Kopf weniger. Braucht ein Programm mehr Entwickler, setze ich mehrere kleine Teams mit klaren Verantwortlichkeiten auf. Die Teamgröße ist dabei nur eine von mehreren Stellschrauben, aber die, die am leichtesten falsch eingestellt wird.
+Ich begrenze Nearshore-Teams für Salesforce auf etwa acht Entwickler. Zusammen mit Product Owner und Scrum Master umfasst ein Team mit acht Entwicklern zehn Personen. Diese Größe beschreibt der Scrum Guide als typisch. Acht ist mein Erfahrungswert aus Projekten, kein Gesetz. Darüber wächst der Abstimmungsaufwand schneller als die Leistung, Sprint-Meetings werden lang, und das Team liefert pro Kopf weniger. Braucht ein Programm mehr Entwickler, setze ich mehrere kleine Teams mit klaren Verantwortlichkeiten auf. Die Teamgröße ist dabei nur eine von mehreren Stellschrauben, aber die, die am leichtesten falsch eingestellt wird.
 
 ## Warum höchstens acht Entwickler?
 
@@ -44,13 +44,13 @@ Die Rechnung dahinter ist einfach. In einem Team mit n Personen gibt es n mal (n
 
 Von acht auf sechzehn Entwickler, plus Product Owner und Scrum Master, verdoppelt sich die Kopfzahl, aber nicht unbedingt die Leistung, während die Zahl der Wege auf mehr als das Dreifache steigt. Nicht jeder Weg wird täglich genutzt. In einem Salesforce-Team, das an derselben Org arbeitet, sind es aber viele: Wer an einem Flow auf dem Account-Objekt arbeitet, muss wissen, wer gerade die Validierungsregeln oder das Layout desselben Objekts ändert.
 
-Bei Nearshore-Teams kommt dazu, dass ein Teil der Abstimmung über Zeitzonen, Sprachen und Organisationsgrenzen läuft. Rückfragen an den Fachbereich auf Kundenseite dauern oft länger, wenn Zeitzonen, Sprache, Zugriffsrechte oder Organisationsgrenzen bremsen. Ein kleines, stabiles Team braucht weniger Übergaben und hält den Kontext besser.
+Bei Nearshore-Teams kommt hinzu, dass ein Teil der Abstimmung über Zeitzonen, Sprachen und Organisationsgrenzen hinweg erfolgt. Rückfragen an den Fachbereich auf Kundenseite dauern oft länger, wenn Zeitzonen, Sprache, Zugriffsrechte oder Organisationsgrenzen bremsen. Ein kleines, stabiles Team braucht weniger Übergaben und hält den Kontext besser.
 
 ## Was passiert, wenn ein Team größer wird?
 
 Ein Team mit zwölf oder fünfzehn Entwicklern funktioniert selten so, wie es auf dem Papier geplant war. Typisch sind drei Muster:
 
-- **Sprint-Meetings werden lang.** Mit fünfzehn Personen lässt sich ein nützliches Daily selten auf fünfzehn Minuten begrenzen, und die meisten hören bei den Themen der anderen nur zu. Detailabstimmung wandert in Zusatztermine, und Planning und Review behandeln viele Themen, die nur einen Teil des Teams betreffen.
+- **Sprint-Meetings werden lang.** Mit fünfzehn Personen lässt sich ein nützliches Daily selten auf fünfzehn Minuten begrenzen, und die meisten hören bei den Themen der anderen nur zu. Detailabstimmung verlagert sich in Zusatztermine, und Planning und Review behandeln viele Themen, die nur einen Teil des Teams betreffen.
 - **Abstimmung verlagert sich in kleine Gruppen.** Im großen Team bilden sich inoffizielle Untergruppen, die eigene Absprachen treffen. Am Ende entstehen also doch kleine Teams, nur ohne klare Verantwortung.
 - **Konflikte in der Org nehmen zu.** Ohne klare Verantwortung, Versionskontrolle und saubere Merges bedeuten mehr Entwickler, die gleichzeitig dieselben Objekte ändern, mehr Merge-Konflikte, mehr versehentlich überschriebene Metadaten und mehr Fehler, die keinem Team zugeordnet werden können.
 

@@ -9,7 +9,7 @@ topic: field-service
 categories: [field-service]
 tags: [field service, außendienst, mobile, flow, data capture, offline]
 takeaways:
-  - "Die App führt zwei Flow-Typen aus. Der klassische Typ ist weiter stark eingeschränkt; Data Capture bekam seit Winter '26 in jedem Release eine neue Funktion."
+  - "Die App führt zwei Flow-Typen aus. Der klassische Typ ist weiter stark eingeschränkt; Data Capture erhielt seit Winter '26 in jedem Release eine neue Funktion."
   - "Es gibt keine mobile Data Table und keinen gleichwertigen Ersatz. Der Lookup in Data Capture ist der einzige dokumentierte Weg zur Mehrfachauswahl."
   - "Der klassische Typ kennt kein IN oder NOT IN, keine bedingte Sichtbarkeit und keine Section. IF(), AND() und OR() fehlen, && und || funktionieren."
   - "Data-Capture-Formulare lassen sich offline ausfüllen; Datensätze werden aber erst geändert, wenn das Gerät wieder online ist."
@@ -106,7 +106,7 @@ Wenn der Zeitpunkt der Arbeit zählt, erfassen Sie ihn in einem eigenen Feld und
 
 ## Was ändert sich mit nativen mobilen Flows in Winter '27?
 
-Seit [Winter '27](https://help.salesforce.com/s/articleView?id=release-notes.rn_fieldservice_264_mobile_native_flows.htm&release=264&type=5) laufen Flows in der App auf einer nativen Architektur: schnelleres Laden, bessere Offline-Fähigkeit, Screens im Design der normalen Datensatzformulare. Die Umstellung kommt schrittweise, je nach Instanz mit Patch 264, 264.1, 264.2 oder 264.3. Die Patch Notes von Juni bis September 2026 zeigen, wie viel sich darunter bewegt hat. Allein die Patches 262.2 und 262.3 haben auf iOS und Android mehrere Fehler bei der Übergabe leerer und Null-Werte behoben; einige davon führten dazu, dass eine Decision den falschen Pfad nahm.
+Seit [Winter '27](https://help.salesforce.com/s/articleView?id=release-notes.rn_fieldservice_264_mobile_native_flows.htm&release=264&type=5) laufen Flows in der App auf einer nativen Architektur: schnelleres Laden, bessere Offline-Fähigkeit, Screens im Design der normalen Datensatzformulare. Die Umstellung erfolgt schrittweise, je nach Instanz mit Patch 264, 264.1, 264.2 oder 264.3. Die Patch Notes von Juni bis September 2026 zeigen, wie viel sich darunter bewegt hat. Allein die Patches 262.2 und 262.3 haben auf iOS und Android mehrere Fehler bei der Übergabe leerer und Null-Werte behoben; einige davon führten dazu, dass eine Decision den falschen Pfad nahm.
 
 ```hinweis achtung
 Die aktuelle Seite mit den Einschränkungen listet IN, Sections und bedingte Sichtbarkeit weiterhin als Grenzen, und die Release Note zur nativen Laufzeit sagt nicht, dass eine dieser Grenzen wegfällt. Gehen Sie nicht davon aus, dass die native Laufzeit eine dieser Einschränkungen aufhebt. Sobald ich diese Punkte auf einem Gerät getestet habe, ergänze ich die Ergebnisse hier.

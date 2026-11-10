@@ -43,7 +43,7 @@ In Fertigungsunternehmen mit mehreren Partnern ist nach meiner Erfahrung der zwe
 
 Ein Partner kann ein CoE moderieren, und manche bieten das als Leistung an. Das Problem: Wer die Regeln festlegt, entscheidet, wie alle anderen entwickeln. Arbeiten fünf Partner an einer Org und einer davon führt das CoE, bestimmt er, was seine Wettbewerber dürfen. Das ist derselbe Grund, aus dem ich bei der [Object Ownership Matrix](../object-ownership-matrix-salesforce/) und bei [Repository und Pipeline](../warum-kunden-devops-tools-selbst-besitzen-sollten/) auf Kundenbesitz bestehe.
 
-Partner sitzen im CoE trotzdem mit am Tisch. Ihre Leads stellen Änderungen vor, bringen Randfälle aus dem Projekt ein und widersprechen, wenn ein Standard im Alltag nicht funktioniert. Den Vorsitz, die Entscheidungsbefugnis und die Dokumentation behält der Kunde, vertreten durch einen CoE-Lead und einen Architekten.
+Partner sind im CoE trotzdem vertreten. Ihre Leads stellen Änderungen vor, bringen Randfälle aus dem Projekt ein und widersprechen, wenn ein Standard im Alltag nicht funktioniert. Den Vorsitz, die Entscheidungsbefugnis und die Dokumentation behält der Kunde, vertreten durch einen CoE-Lead und einen Architekten.
 
 ## Welches Format braucht ein CoE am Anfang?
 
@@ -67,7 +67,7 @@ Der technische Call ist der Teil, der den Unterschied macht. Damit er kein Statu
 2. **Randfälle aus den Reviews.** Was im [Pull-Request-Review](../warum-pull-request-reviews-pflicht-sind/) aufgefallen ist und von keinem Standard abgedeckt wird, wird hier besprochen.
 3. **Entscheidungen festhalten.** Jede Entscheidung wird dort dokumentiert, wo die Standards stehen, und nicht im Protokoll eines einzelnen Partners.
 
-Statusberichte gehören nicht in diesen Call. Wer berichten will, was sein Team im Sprint geschafft hat, tut das im Sprint Review. Sonst sitzen 15 Leute eine Stunde zusammen, und die eine Änderung am Account, um die es eigentlich gehen sollte, wird am Ende in fünf Minuten abgehandelt.
+Statusberichte gehören nicht in diesen Call. Wer berichten will, was sein Team im Sprint geschafft hat, tut das im Sprint Review. Sonst beraten 15 Leute eine Stunde lang, und die eine Änderung am Account, um die es eigentlich gehen sollte, wird am Ende in fünf Minuten abgehandelt.
 
 Neben der Agenda pflege ich einen Backlog mit CoE-Themen, die nicht dringend sind, etwa Namenskonventionen für neue Objekttypen oder eine Regel, die im Review immer wieder diskutiert wird. Werden für einen Termin wenige Themen eingereicht, nehmen wir eines aus dem Backlog als zeitlich begrenzten Standards-Workshop. Ist nichts entscheidungsreif, sagen Sie den Termin lieber ab, als ihn zu füllen.
 

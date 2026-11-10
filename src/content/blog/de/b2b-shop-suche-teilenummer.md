@@ -39,7 +39,7 @@ Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce
 
 Für Ersatzteile ist die dritte Regel entscheidend, und [Partial SKU Search](https://help.salesforce.com/s/articleView?id=commerce.comm_search_enable_partial_sku.htm&language=en_US&type=5), verfügbar seit Winter '26, ist die passende Funktion für aktuelle Nummern. Nach der Aktivierung unter Settings, Search findet sie eine SKU wie "123-57-ABC" bei Eingaben wie "ABC", "57-AB" oder "1235", sofern die Eingabe drei bis zwölf Zeichen der SKU umfasst. Dabei ignoriert sie Bindestriche, Unterstriche, Leerzeichen, Punkte und Schrägstriche. Sie funktioniert nur für Product SKU und Product Code und braucht ein vollständiges Index-Update. Für alte Nummern in einem benutzerdefinierten Feld gelten weiter die Standardregeln. Ich würde deshalb vor jeder Designentscheidung mit 50 echten aktuellen und alten Teilenummern testen.
 
-Zuerst kommt die Sichtbarkeit. Ein Händler findet nur Produkte, für die seine Buyer Groups berechtigt sind, und nur die ersten 2.000 Buyer Groups eines Produkts werden indiziert. Diese Grenze erkläre ich in [Buyer Groups und Entitlements](../buyer-groups-entitlements-sichtbarkeit/). Auch die Sicherheit auf Feldebene ist relevant: Laut Trailhead kann ein Shopbenutzer ohne Zugriff auf ein indiziertes, durchsuchbares Feld den Store überhaupt nicht durchsuchen.
+Zuerst geht es um die Sichtbarkeit. Ein Händler findet nur Produkte, für die seine Buyer Groups berechtigt sind, und nur die ersten 2.000 Buyer Groups eines Produkts werden indiziert. Diese Grenze erkläre ich in [Buyer Groups und Entitlements](../buyer-groups-entitlements-sichtbarkeit/). Auch die Sicherheit auf Feldebene ist relevant: Laut Trailhead kann ein Shopbenutzer ohne Zugriff auf ein indiziertes, durchsuchbares Feld den Store überhaupt nicht durchsuchen.
 
 ## 25 durchsuchbare Merkmale und 100 Synonymregeln pro Store
 
@@ -65,7 +65,7 @@ Die [Seite zur Search Settings API](https://developer.salesforce.com/docs/commer
 
 ## Wohin gehören alte Nummern und Vergleichsnummern?
 
-Hersteller benennen Teile um. Eine Dichtung bekommt nach einer Konstruktionsänderung eine neue Nummer, ein Zukaufteil erhält eine eigene Nummer des Herstellers, ein Händler hat noch die Nummer aus einer 15 Jahre alten Ersatzteilliste. Händler tippen sie alle.
+Hersteller benennen Teile um. Eine Dichtung erhält nach einer Konstruktionsänderung eine neue Nummer, ein Zukaufteil erhält eine eigene Nummer des Herstellers, ein Händler hat noch die Nummer aus einer 15 Jahre alten Ersatzteilliste. Händler tippen sie alle.
 
 Es gibt zwei Wege, eine alte Nummer auffindbar zu machen: eine Synonymregel pro Nummer, wobei die Search Settings API Einwort- und Mehrwortsynonyme unterstützt, oder ein durchsuchbares Textfeld "frühere und alternative Nummern" am aktuellen Produkt. Darin stehen alte Nummern, Lieferantennummern und Vergleichsnummern, getrennt durch Leerzeichen.
 

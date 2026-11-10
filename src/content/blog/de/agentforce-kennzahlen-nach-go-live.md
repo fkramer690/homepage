@@ -16,7 +16,7 @@ takeaways:
   - "Die Abschaltregel steht vor dem Go-live fest und gilt pro Subagent. Im Rechenbeispiel kostet der Ersatzteil-Subagent 8,94 € pro Lösung und wird abgeschaltet."
 faq:
   - q: "Wo finde ich die Kennzahlen eines Agentforce-Agenten?"
-    a: "Eskalations-, Deflection-, Abbruch- und Task-Resolution-Quote stehen in Agent Analytics in Agentforce Studio unter Observe & Optimize. Die Credits pro Agent liefert Digital Wallet, die Bearbeitungszeit nach der Übergabe kommt aus Service Cloud."
+    a: "Eskalations-, Deflection-, Abbruch- und Task-Resolution-Quote stehen in Agent Analytics in Agentforce Studio unter Observe & Optimize. Die Credits pro Agent liefert Digital Wallet, die Bearbeitungszeit nach der Übergabe stammt aus Service Cloud."
   - q: "Welche Eskalationsquote ist für einen Agentforce-Agenten gut?"
     a: "Salesforce veröffentlicht keinen Zielwert. Ich starte mit einer Abschaltschwelle von 40 Prozent pro Subagent nach zwei Verbesserungsrunden und passe sie an die Ausgangswerte der jeweiligen Anfrageart an."
   - q: "Verbraucht Agentforce Observability Flex Credits?"
@@ -32,7 +32,7 @@ Agentforce-Kennzahlen nach dem Go-live beantworten an Tag 90 eine Frage: Löst d
 
 ## Welche Kennzahlen zeigen, ob sich ein Agentforce-Agent lohnt?
 
-Die von Salesforce selbst veröffentlichten Kundenbeispiele zeigen, welche Art von Kennzahl hier zählt. Die [Pressemitteilung zu Agentforce 3](https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement) nennt 15 Prozent weniger durchschnittliche Bearbeitungszeit pro Fall bei Engine und 70 Prozent autonom gelöste administrative Chats bei 1-800Accountant in den Steuerwochen 2025. Beide Unternehmen sind keine Hersteller, und die Zahlen stammen von Salesforce selbst, aber sie messen Arbeit, die nicht mehr bei einem Menschen landet.
+Die von Salesforce selbst veröffentlichten Kundenbeispiele zeigen, welche Art von Kennzahl hier zählt. Die [Pressemitteilung zu Agentforce 3](https://www.salesforce.com/news/press-releases/2025/06/23/agentforce-3-announcement) nennt 15 Prozent weniger durchschnittliche Bearbeitungszeit pro Fall bei Engine und 70 Prozent autonom gelöste administrative Chats bei 1-800Accountant in den Steuerwochen 2025. Beide Unternehmen sind keine Hersteller, und die Zahlen stammen von Salesforce selbst, aber sie messen Arbeit, die nicht mehr bei einem Menschen ankommt.
 
 Für einen Händleragenten im Maschinenbau nutze ich fünf Kennzahlen:
 
@@ -56,11 +56,11 @@ Das Lesen kostet keine Credits: Laut dem [Observability-Beitrag von Juli 2026](h
 
 **Anteil außerhalb der Servicezeiten.** Dafür gibt es keine fertige Kennzahl. Ich zähle pro Land die Sitzungen, die außerhalb der Servicezeiten beginnen, und wie viele davon gelöst wurden. Für einen Exporteur mit Händlern in Asien oder Amerika kann das das stärkste Argument sein.
 
-Agent Health Monitoring, in den [Dreamforce-2026-Ankündigungen](https://www.salesforce.com/blog/dreamforce-2026-announcements/) als GA geführt, mit „16+ built-in metrics“, deckt Fehler und Latenz ab. Es zeigt, ob der Agent läuft, und sagt nichts darüber, ob er sich rechnet.
+Agent Health Monitoring, in den [Dreamforce-2026-Ankündigungen](https://www.salesforce.com/blog/dreamforce-2026-announcements/) als GA geführt, mit „16+ built-in metrics“, deckt Fehler und Latenz ab. Es zeigt, ob der Agent funktioniert, und sagt nichts darüber, ob er sich rechnet.
 
 ## Warum zählt eine abgefangene Sitzung nicht als gelöst?
 
-Deflection ist die Zahl, die Anbieter gern zeigen, und die schwächste der fünf. Nach der alten, ereignisbasierten Regel galt eine Sitzung als abgefangen, wenn ein Händler einen falschen Liefertermin bekam und das Fenster schloss. Salesforce schrieb im Observability-Beitrag selbst, dass diese Quoten „typically measure proxy signals“, und seit 16. Juli 2026 bewertet ein LLM stattdessen die ganze Sitzung. Das verbessert die Kennzahl, aber auch der Bewerter kann eine Sitzung falsch lesen, und Sitzungen vor Mai 2026 haben keinen Wert.
+Deflection ist die Zahl, die Anbieter gern zeigen, und die schwächste der fünf. Nach der alten, ereignisbasierten Regel galt eine Sitzung als abgefangen, wenn ein Händler einen falschen Liefertermin erhielt und das Fenster schloss. Salesforce schrieb im Observability-Beitrag selbst, dass diese Quoten „typically measure proxy signals“, und seit 16. Juli 2026 bewertet ein LLM stattdessen die ganze Sitzung. Das verbessert die Kennzahl, aber auch der Bewerter kann eine Sitzung falsch lesen, und Sitzungen vor Mai 2026 haben keinen Wert.
 
 ```hinweis achtung
 Seit ein LLM Deflection und Abbruch bewertet, kann sich die Definition innerhalb Ihrer Zeitreihe ändern. Notieren Sie das Umstellungsdatum und die Prompt-Version neben jedem Monatswert.

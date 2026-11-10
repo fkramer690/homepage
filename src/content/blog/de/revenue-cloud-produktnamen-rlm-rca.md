@@ -82,18 +82,18 @@ Das ist in der Praxis die wichtigste Frage. "Revenue Cloud" hat zwei verschieden
 Ein Partner, der von "30 Revenue-Cloud-Projekten" spricht, meint vielleicht CPQ-Projekte aus den Jahren 2020 bis 2023. Diese Erfahrung ist für eine CPQ-Migration wertvoll, sagt über das neue Datenmodell aber wenig. Ich stelle drei Fragen:
 
 1. Welches Datenmodell hatten die Referenzprojekte: CPQ-Objekte mit Namespace SBQQ oder Standardobjekte?
-2. Wie viele Projekte liefen seit Spring '24 auf Revenue Lifecycle Management oder Revenue Cloud Advanced?
+2. Wie viele Projekte wurden seit Spring '24 mit Revenue Lifecycle Management oder Revenue Cloud Advanced?
 3. Wer im vorgeschlagenen Team hat im neuen Produkt Preisprozeduren und Konfiguratorregeln gebaut?
 
 ```hinweis achtung
 Für CPQ-Bestandskunden gilt umgekehrt: Beschreibt ein Angebot "Revenue Cloud", prüfen Sie, ob damit eine Neueinführung auf Basis des neuen Datenmodells gemeint ist. Ein Versionsupgrade von CPQ gibt es nicht. Salesforce schreibt selbst, Revenue Cloud Advanced sei nicht einfach CPQ mit neuem Namen, und nennt für eine typische Migration drei bis sechs Monate von der Analyse bis zum Go-live, stark abhängig von der Komplexität.
 ```
 
-Der Status der alten Pakete ist ein eigenes Thema: CPQ wird an Neukunden nicht mehr verkauft, Bestandskunden können aber verlängern und bekommen Support. Was das bedeutet, behandelt das [Kapitel zum Umstieg von CPQ auf Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
+Der Status der alten Pakete ist ein eigenes Thema: CPQ wird an Neukunden nicht mehr verkauft, Bestandskunden können aber verlängern und erhalten Support. Was das bedeutet, behandelt das [Kapitel zum Umstieg von CPQ auf Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
 
 ## Ins Bestellformular gehören Edition, Zusatzprodukte und Positionen
 
-Marketingnamen wechseln schneller, als Verträge laufen. Ein Bestellformular über drei Jahre, das heute unterschrieben wird, erlebt mindestens noch eine Umbenennung. Meine Regeln:
+Marketingnamen wechseln schneller, als Verträge auslaufen. Ein Bestellformular über drei Jahre, das heute unterschrieben wird, erlebt mindestens noch eine Umbenennung. Meine Regeln:
 
 - **Bestellformular:** die genauen Positionsnamen und Produktcodes aus dem Salesforce-Angebot übernehmen, einschließlich Edition (Growth oder Advanced) und jedem Zusatzprodukt wie Revenue Cloud Billing, Dynamic Revenue Orchestration, Invoice Management oder Contract Lifecycle Management. "Revenue Cloud" allein reicht nicht.
 - **Ausschreibung:** das Produkt anhand von Namen und Datenmodell beschreiben, zum Beispiel "Revenue Cloud Advanced (auch Revenue Lifecycle Management oder Revenue Management), nativ auf der Salesforce-Plattform, nicht das Managed Package Salesforce CPQ". Das schließt eine Verwechslung mit dem Paket von 2020 aus.

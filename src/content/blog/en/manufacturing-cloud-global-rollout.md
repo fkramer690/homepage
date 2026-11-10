@@ -52,7 +52,7 @@ I start with a large country of reasonable complexity. Both count:
 - **Big enough** for the template to see real volumes, many users and everyday edge cases. A small pilot country confirms a template that later fails at the first large country.
 - **Not too special**, so its quirks do not shape the template for everyone else. A country with an unusual sales model or its own product line is a poor starting point, even if it is large.
 
-A second rule follows from that: one of the biggest regions should be part of the first two phases. If it only comes in phase five, it meets a template that was shaped by smaller countries and demands changes that affect every country already live. The earlier the large region joins, the cheaper those changes are.
+A second rule follows from that: one of the biggest regions should be part of the first two phases. If it only joins in phase five, it meets a template that was shaped by smaller countries and demands changes that affect every country already live. The earlier the large region joins, the cheaper those changes are.
 
 ## Processes, business units and IT systems decide the order
 

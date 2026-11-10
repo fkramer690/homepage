@@ -13,17 +13,17 @@ contactBrief: partner-governance
 tags: [Implementierungspartner, Partnerauswahl, Partnersteuerung, Festpreis, Vendor Lock-in, Codequalität]
 takeaways:
   - "Der Partner wählt Referenzen und Umfragekontakt selbst aus. Fragen Sie, was in einem Projekt schiefging und was er seitdem geändert hat."
-  - "Beruht die Schätzung auf einer Discovery, in der nur der Happy Path betrachtet wurde, kommen die Randfälle später als Change Request zurück."
-  - "Lassen Sie sich die Schlüsselrollen namentlich zusagen. Im Pitch sitzen Senior-Leute, im Projekt oft ein gemischtes Team mit vielen Junioren."
+  - "Beruht die Schätzung auf einer Discovery, in der nur der Happy Path betrachtet wurde, tauchen die Randfälle später als Change Request wieder auf."
+  - "Lassen Sie sich die Schlüsselrollen namentlich zusagen. Im Pitch treten Senior-Leute auf, im Projekt arbeitet oft ein gemischtes Team mit vielen Junioren."
   - "Fragen Sie, wie Meilensteine, Lieferung und Quality Gates zusammenhängen. Gerade bei KI-Coding zeigt die Antwort, ob der Partner Qualität plant."
-  - "Code, Metadaten und Pipeline-Konfiguration gehören Ihnen. In den meisten Angeboten kommt das Thema gar nicht vor."
+  - "Code, Metadaten und Pipeline-Konfiguration gehören Ihnen. In den meisten Angeboten fehlt das Thema ganz."
 faq:
   - q: "Wie finde ich einen Salesforce-Implementierungspartner in Deutschland?"
     a: "Für die Vorauswahl eignet sich der Consultant-Bereich auf AppExchange, wenn Sie nach Produkt, Branche und Standort filtern. Die Entscheidung sollte aber auf der Discovery, dem benannten Team und den Antworten zur Qualitätssicherung beruhen, nicht auf Sternen und Partnerstufe."
   - q: "Sagt die Partnerstufe (Summit, Crest, Ridge) etwas über die Qualität aus?"
-    a: "Nur begrenzt. Die Stufe ergibt sich aus einem Punktwert mit mehreren Bestandteilen, darunter die durchschnittliche Kundenzufriedenheit abgeschlossener Projekte, Zertifizierungen und Navigator-Status. Darüber, wie das Team arbeitet, das Sie bekommen, sagt sie kaum etwas aus."
+    a: "Nur begrenzt. Die Stufe ergibt sich aus einem Punktwert mit mehreren Bestandteilen, darunter die durchschnittliche Kundenzufriedenheit abgeschlossener Projekte, Zertifizierungen und Navigator-Status. Darüber, wie das Team arbeitet, das Sie erhalten, sagt sie kaum etwas aus."
   - q: "Festpreis oder Aufwand: Was ist bei einem Salesforce-Partner besser?"
-    a: "Ein Festpreis schützt Sie, wenn die Discovery die Randfälle Ihrer Prozesse erfasst und das Angebot Annahmen, Ausschlüsse und Abnahmekriterien nennt. Sonst wandert das Risiko über Change Requests zurück zu Ihnen."
+    a: "Ein Festpreis schützt Sie, wenn die Discovery die Randfälle Ihrer Prozesse erfasst und das Angebot Annahmen, Ausschlüsse und Abnahmekriterien nennt. Sonst verlagert sich das Risiko über Change Requests zurück zu Ihnen."
   - q: "Was tun, wenn der Partner nach dem Projektstart Schlüsselpersonen austauscht?"
     a: "Regeln Sie das vorher im Vertrag: benannte Schlüsselrollen, Austausch nur mit Ihrer Zustimmung, gleichwertiger Ersatz und eine Übergabezeit auf Kosten des Partners. Ohne diese Regel merken Sie den Wechsel meist erst an der Qualität."
 draft: false
@@ -58,8 +58,8 @@ Die Zahlen auf AppExchange helfen bei der Vorauswahl ([Trailhead](https://trailh
 ```tabelle
 titel: Was die Angaben auf AppExchange zeigen
 spalten: Angabe | Zeigt | Zeigt nicht
-Zertifizierte Mitarbeitende | Größe der Salesforce-Practice | Wer in Ihrem Projekt sitzt *
-Spezialisierungen | Produkt- und Branchenerfahrung der Firma | Erfahrung des Teams, das Sie bekommen *
+Zertifizierte Mitarbeitende | Größe der Salesforce-Practice | Wer in Ihrem Projekt arbeitet *
+Spezialisierungen | Produkt- und Branchenerfahrung der Firma | Erfahrung des Teams, das Sie erhalten *
 Sterne und Zufriedenheit | Urteil der Kontakte, die der Partner eingetragen hat | Projekte, die abgebrochen wurden *
 Partnerstufe | Punktwert aus Zufriedenheit, Zertifizierungen und Navigator-Status | Qualität in einem einzelnen Projekt *
 fazit: Gut für die Vorauswahl, zu wenig für die Entscheidung.
@@ -76,7 +76,7 @@ ohne: Discovery nur für den Happy Path
 - Nur der Standardfall nach Schema F ist besprochen.
 - Geräte ohne Seriennummer, Aufträge über zwei Werke oder eigene Rahmenverträge fehlen.
 - Regeln, Datenmodell und Schnittstellen dafür stehen in keiner Schätzung.
-- * Die Randfälle kommen später als Change Request.
+- * Die Randfälle tauchen später als Change Request auf.
 mit: Discovery mit Randfällen
 - * Die Liste der Sonderfälle liegt dem Angebot bei.
 - Annahmen hinter der Schätzung und offene Entscheidungen sind aufgeschrieben.
@@ -86,11 +86,11 @@ zitat: Bei Herstellern liegt der Aufwand in den Randfällen, nicht im Standardfa
 
 Fragen Sie deshalb nicht, ob eine Discovery stattfand, sondern lassen Sie sich diese Belege zeigen. Kann der Partner nichts davon vorlegen, haben Sie keinen Beleg, dass Randfälle besprochen wurden.
 
-Ein Teil der Verantwortung liegt beim Kunden. In jedem meiner Projekte dauerte der Abnahmetest länger als geplant, weil Mitarbeitende des Kunden nicht verfügbar waren, und es kamen Change Requests, weil der Fachbereich sich vorher zu wenig mit der eigenen Lösung und dem Ist-Zustand beschäftigt hatte. Fragen Sie den Partner deshalb auch, was er von Ihnen erwartet: welche Prozessverantwortlichen er für wie viele Tage braucht, wann Sie welche Entscheidungen treffen müssen und wer Testfälle vorbereitet, Testdaten liefert und testet.
+Ein Teil der Verantwortung liegt beim Kunden. In jedem meiner Projekte dauerte der Abnahmetest länger als geplant, weil Mitarbeitende des Kunden nicht verfügbar waren, und es entstanden Change Requests, weil der Fachbereich sich vorher zu wenig mit der eigenen Lösung und dem Ist-Zustand beschäftigt hatte. Fragen Sie den Partner deshalb auch, was er von Ihnen erwartet: welche Prozessverantwortlichen er für wie viele Tage braucht, wann Sie welche Entscheidungen treffen müssen und wer Testfälle vorbereitet, Testdaten liefert und testet.
 
 ## Das Team aus dem Pitch ist nicht automatisch das Team im Projekt
 
-Im Pitch sitzen die erfahrenen Leute. Im Projekt war das Team dann in meinen Fällen sehr durchmischt, mit vielen Junioren. Das muss nicht schlecht sein, Junioren brauchen Projekte. Es wird schlecht, wenn niemand Erfahrenes ihre Arbeit prüft und der Kunde das erst an der Qualität merkt.
+Im Pitch treten die erfahrenen Leute auf. Im Projekt war das Team dann in meinen Fällen sehr durchmischt, mit vielen Junioren. Das muss nicht schlecht sein, Junioren brauchen Projekte. Es wird schlecht, wenn niemand Erfahrenes ihre Arbeit prüft und der Kunde das erst an der Qualität merkt.
 
 ```praxis
 Partnerwechsel habe ich schon öfter erlebt. Die Gründe waren ähnlich: Die Qualität stimmte von Anfang an nicht, oder sie ließ nach, weil Mitarbeitende des Partners das Projekt oder die Firma verlassen hatten. Oder der Vertrieb hatte etwas verkauft, was das Team noch nie gemacht hatte, und das Projekt brauchte mehr Zeit und mehr Budget.
@@ -100,10 +100,10 @@ Daraus ergeben sich die Fragen für den Pitch. Wer besetzt ab Tag 1 die Schlüss
 
 ## Wie fragen Sie nach Qualität, ohne die Antwort vorzugeben?
 
-Auf „Arbeiten Sie in unserem Repository nach unseren Standards?“ antwortet jeder Partner mit Ja. Ich stelle diese Fragen deshalb über Umwege: Ich beschreibe ein Problem und lasse den Partner erzählen, wie er es lösen würde. Ein Partner mit gutem Vorgehen kommt dann von selbst darauf, ohne dass ich es vorgebe. Code-Review und Testregeln stehen selten im Angebot, und gerade seit Partner mit KI-Werkzeugen programmieren, sollte jeder Partner von sich aus erklären, wie er jede Änderung prüft, egal wer oder was sie geschrieben hat.
+Auf „Arbeiten Sie in unserem Repository nach unseren Standards?“ antwortet jeder Partner mit Ja. Ich stelle diese Fragen deshalb über Umwege: Ich beschreibe ein Problem und lasse den Partner erzählen, wie er es lösen würde. Ein Partner mit gutem Vorgehen erkennt das dann von selbst, ohne dass ich es vorgebe. Code-Review und Testregeln stehen selten im Angebot, und gerade seit Partner mit KI-Werkzeugen programmieren, sollte jeder Partner von sich aus erklären, wie er jede Änderung prüft, egal wer oder was sie geschrieben hat.
 
-- **Meilensteine und Qualität.** „Wie hängen Ihre Projektmeilensteine mit der Lieferung und den Quality Gates zusammen?“ Gute Antworten nennen konkrete Prüfungen: Code-Review, Testabdeckung und automatische Prüfungen in der Pipeline, aber auch Datenmigration, Integrationstests und Abnahmereife. Ein Meilenstein gilt erst als technisch fertig, wenn alle bestanden sind; die fachliche Abnahme kommt mit eigenen Kriterien hinzu. Mehr dazu in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) und [Partner codet mit KI](../partner-ki-coding-regeln-vertrag/).
-- **Ein zweiter Partner.** „In zwei Jahren kommt für Field Service ein weiterer Partner dazu. Wie verhindern wir, dass sich beide gegenseitig überschreiben?“ Gute Antworten erwähnen Pull Requests, eine [Object Ownership Matrix](../object-ownership-matrix-salesforce/) und eine gemeinsame [Sandbox-Strategie](../salesforce-sandbox-strategie-mehrere-partner/).
+- **Meilensteine und Qualität.** „Wie hängen Ihre Projektmeilensteine mit der Lieferung und den Quality Gates zusammen?“ Gute Antworten nennen konkrete Prüfungen: Code-Review, Testabdeckung und automatische Prüfungen in der Pipeline, aber auch Datenmigration, Integrationstests und Abnahmereife. Ein Meilenstein gilt erst als technisch fertig, wenn alle bestanden sind; die fachliche Abnahme folgt mit eigenen Kriterien. Mehr dazu in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) und [Partner codet mit KI](../partner-ki-coding-regeln-vertrag/).
+- **Ein zweiter Partner.** „In zwei Jahren übernimmt ein weiterer Partner Field Service. Wie verhindern wir, dass sich beide gegenseitig überschreiben?“ Gute Antworten erwähnen Pull Requests, eine [Object Ownership Matrix](../object-ownership-matrix-salesforce/) und eine gemeinsame [Sandbox-Strategie](../salesforce-sandbox-strategie-mehrere-partner/).
 - **Übernahme nach dem Go-live.** „Wir wollen den Betrieb später selbst führen. Was bekommen wir dann von Ihnen?“ Hier zeigt sich, ob Code, Konfiguration und Dokumentation bei Ihnen liegen sollen oder beim Partner bleiben.
 
 ## Was in den Vertrag mit dem Partner gehört
@@ -115,7 +115,7 @@ Was im Pitch gut klingt, muss in den Vertrag, sonst gilt es nicht. Diese Punkte 
 - **Quality Gates mit festgelegten Prüfungen** für die technische Fertigstellung jedes Meilensteins, mit den Nachweisen, die der Partner liefert.
 - **Annahmen und Ausschlüsse** der Schätzung und eine Regel für Randfälle, die die Discovery nicht abgedeckt hat: Wer bewertet sie, und unter welchen Bedingungen werden sie zum Change Request?
 
-Arbeiten mehrere Partner an einer Org, kommt die Frage dazu, wer die Regeln für alle festlegt. In meinem größten Programm arbeiteten fünf Partner mit über 30 Entwicklern an einer Org, und die Standards wurden auf Kundenseite vorgegeben, wie auf der Seite zur [Partnersteuerung](../../leistungen/partnersteuerung/) beschrieben. Wann dafür ein unabhängiger Architekt sinnvoll ist, steht in [Salesforce-Freelancer oder Agentur](../salesforce-freelancer-oder-agentur/).
+Arbeiten mehrere Partner an einer Org, stellt sich zusätzlich die Frage, wer die Regeln für alle festlegt. In meinem größten Programm arbeiteten fünf Partner mit über 30 Entwicklern an einer Org, und die Standards wurden auf Kundenseite vorgegeben, wie auf der Seite zur [Partnersteuerung](../../leistungen/partnersteuerung/) beschrieben. Wann dafür ein unabhängiger Architekt sinnvoll ist, steht in [Salesforce-Freelancer oder Agentur](../salesforce-freelancer-oder-agentur/).
 
 ## Erster Schritt: drei Problemfälle für alle Partner aufschreiben
 
@@ -123,7 +123,7 @@ Bevor Sie Partner einladen, legen Sie fest, woran Sie sie messen, und geben alle
 
 ```schritte
 Fälle aufschreiben | vor der Einladung · Kunde
-  Ein Randfall aus Ihrem Prozess, ein zweiter Partner kommt dazu, eine Schlüsselperson des Partners geht.
+  Ein Randfall aus Ihrem Prozess, ein zweiter Partner steigt ein, eine Schlüsselperson des Partners geht.
 Kriterien festlegen | vor dem ersten Pitch · Kunde
   Für alle Partner dieselben Kriterien, damit nicht die beste Präsentation gewinnt.
 Fälle im Pitch durchspielen | im Pitch · jeder Partner

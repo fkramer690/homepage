@@ -21,13 +21,13 @@ faq:
   - q: "Braucht Request for Quote Revenue Cloud?"
     a: "Nicht für einfache Produkte. Laut Apex-Referenz werden einfache Produkte allein mit einer B2B-Commerce-Lizenz unterstützt, statische und dynamische Bundles brauchen B2B Commerce und Revenue Cloud. Abonnementprodukte werden nicht unterstützt. Lassen Sie sich die Antwort für Ihren Produktmix schriftlich von Salesforce bestätigen."
   - q: "Wie kommt ein freigegebenes Angebot zurück zum Käufer?"
-    a: "Über Round-Trip Quoting, das Salesforce im Juni 2026 allgemein verfügbar gemacht hat. Der Käufer öffnet das freigegebene Angebot unter My Quotes und klickt auf Accept & Buy. Die Positionen landen zu den verhandelten Preisen im Warenkorb, und der Käufer bestellt im Shop. Die Funktion muss vorher im Store eingerichtet werden."
+    a: "Über Round-Trip Quoting, das Salesforce im Juni 2026 allgemein verfügbar gemacht hat. Der Käufer öffnet das freigegebene Angebot unter My Quotes und klickt auf Accept & Buy. Die Positionen werden zu den verhandelten Preisen in den Warenkorb übernommen, und der Käufer bestellt im Shop. Die Funktion muss vorher im Store eingerichtet werden."
   - q: "Kann ein Käufer ein Angebot im Shop ablehnen oder nachverhandeln?"
     a: "Ja. Laut Apex-Referenz (API 67.0) klickt der Käufer auf der Seite My Quotes bei einem freigegebenen Angebot auf Renegotiate oder Decline. Renegotiate setzt das Angebot mit den Kommentaren des Käufers auf Draft zurück, Decline setzt es auf Denied. Die Einrichtungsseite in der Hilfe nennt den erforderlichen Status Rejected, prüfen Sie deshalb die Werte in Ihrer Org."
 draft: false
 ---
 
-In Salesforce B2B Commerce kann ein angemeldeter Käufer seinen Warenkorb als Angebotsanfrage senden oder für ein einzelnes Produkt von der Produktseite ein Angebot anfragen. Die Anfrage landet als Angebot, das Ihr Innendienst in Sales Cloud oder Agentforce Revenue Management bearbeitet. Ist das Angebot freigegeben, nimmt der Käufer es im Shop an und bestellt den daraus erzeugten Warenkorb zu den verhandelten Preisen. Salesforce nennt das Round-Trip Quoting. Einfache Produkte brauchen nur B2B Commerce, Bundles zusätzlich Revenue Cloud, Abonnements werden nicht unterstützt. Meiner Erfahrung nach funktioniert Request for Quote nur, wenn Ihr Innendienst innerhalb einer veröffentlichten Antwortzeit reagiert.
+In Salesforce B2B Commerce kann ein angemeldeter Käufer seinen Warenkorb als Angebotsanfrage senden oder für ein einzelnes Produkt von der Produktseite ein Angebot anfragen. Die Anfrage wird als Angebot angelegt, das Ihr Innendienst in Sales Cloud oder Agentforce Revenue Management bearbeitet. Ist das Angebot freigegeben, nimmt der Käufer es im Shop an und bestellt den daraus erzeugten Warenkorb zu den verhandelten Preisen. Salesforce nennt das Round-Trip Quoting. Einfache Produkte brauchen nur B2B Commerce, Bundles zusätzlich Revenue Cloud, Abonnements werden nicht unterstützt. Meiner Erfahrung nach funktioniert Request for Quote nur, wenn Ihr Innendienst innerhalb einer veröffentlichten Antwortzeit reagiert.
 
 ## Warum braucht ein B2B-Shop Request for Quote?
 
@@ -52,7 +52,7 @@ Bestellung | Käufer
   Mit Accept & Buy wird das freigegebene Angebot zum Warenkorb. Der Käufer bestellt zu den verhandelten Preisen, meist mit Bestellnummer, wie in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../b2b-checkout-bestellnummer-rechnung/) beschrieben.
 ```
 
-Im Juni-Beitrag heißt es zu Schritt 4: "once a quote is negotiated and approved, sellers can share it with customers as a cart". Salesforce nennt das Round-Trip Quoting und bezeichnet es seit Juni 2026 als allgemein verfügbar. Automatisch läuft es trotzdem nicht: Der Store braucht die Angebotskomponenten auf der Seite My Quotes, und der Käufer stößt die Umwandlung an. Die Apex-Referenz nennt Grenzen, die für das Design wichtig sind:
+Im Juni-Beitrag heißt es zu Schritt 4: "once a quote is negotiated and approved, sellers can share it with customers as a cart". Salesforce nennt das Round-Trip Quoting und bezeichnet es seit Juni 2026 als allgemein verfügbar. Automatisch geschieht das trotzdem nicht: Der Store braucht die Angebotskomponenten auf der Seite My Quotes, und der Käufer stößt die Umwandlung an. Die Apex-Referenz nennt Grenzen, die für das Design wichtig sind:
 
 - **Accept & Buy gegenüber Duplicate to Cart.** Accept & Buy funktioniert nur bei Angeboten mit dem Status Approved oder Accepted und behält die verhandelten Preise. Duplicate to Cart kopiert ein Angebot im Status Draft mit den ursprünglichen Preisen in einen Warenkorb.
 - **Keine Überschneidung, keine teilweise Umwandlung.** Die Umwandlung scheitert, wenn der Warenkorb des Käufers bereits ein Produkt aus dem Angebot enthält. Ein Angebot lässt sich nicht teilweise umwandeln. Promotions und Bonusprodukte werden nicht unterstützt.
@@ -88,17 +88,17 @@ Vor dem Go-live würde ich diese Punkte schriftlich festlegen:
 
 - **Antwortzeit.** Zum Beispiel eine Antwort innerhalb eines Arbeitstags für Ersatzteile und drei Tage für Projektmengen. Messen Sie das ab dem ersten Tag.
 - **Zuständigkeit.** Welches Team erhält die Anfragen aus welcher Käufergruppe oder welchem Land, und wer übernimmt bei Abwesenheit die Vertretung? Eine Queue ohne Verantwortlichen ist ein Wartezimmer.
-- **Preiskompetenz.** Bis zu welchem Rabatt der Innendienst allein freigibt und ab wann eine Führungskraft zustimmt. Laufen Freigaben in Revenue Cloud, gehören die Grenzen dort in Regeln.
+- **Preiskompetenz.** Bis zu welchem Rabatt der Innendienst allein freigibt und ab wann eine Führungskraft zustimmt. Erfolgen Freigaben in Revenue Cloud, gehören die Grenzen dort in Regeln.
 - **Gültigkeit.** Wie lange ein freigegebenes Angebot gilt, bevor Preise neu geprüft werden.
 - **Bestellweg.** Was passiert, wenn ein Käufer per E-Mail statt im Shop annimmt. Tippt der Innendienst den Auftrag dann von Hand ein, bricht der Kreislauf.
 
-Bei großen Händlern laufen Anfragen außerdem über Außendienst und Partnerportale. Erstellt dort ebenfalls eine KI Angebote, sollten derselbe Innendienst und dieselben Preisregeln beide Kanäle bedienen, wie ich es für den [AI Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschreibe.
+Bei großen Händlern gehen Anfragen außerdem über Außendienst und Partnerportale ein. Erstellt dort ebenfalls eine KI Angebote, sollten derselbe Innendienst und dieselben Preisregeln beide Kanäle bedienen, wie ich es für den [AI Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschreibe.
 
 ## Rechenbeispiel: 400 Systemintegratoren
 
-Angenommen, ein Hersteller von Fördertechnik-Komponenten verkauft an 400 Systemintegratoren. Die meisten Bestellungen sind Nachbestellungen zu Stufenpreisen, aber bei etwa jeder zehnten geht es um Projektgeschäft mit größeren Mengen und einem Zielpreis. Der Innendienst bekommt diese Anfragen heute per E-Mail und antwortet im Schnitt nach vier Tagen.
+Angenommen, ein Hersteller von Fördertechnik-Komponenten verkauft an 400 Systemintegratoren. Die meisten Bestellungen sind Nachbestellungen zu Stufenpreisen, aber bei etwa jeder zehnten geht es um Projektgeschäft mit größeren Mengen und einem Zielpreis. Der Innendienst erhält diese Anfragen heute per E-Mail und antwortet im Schnitt nach vier Tagen.
 
-Mit RFQ legt der Integrator die Stückliste in den Warenkorb, fragt ein Angebot an und trägt den Projektnamen in das Kommentarfeld ein. Das Angebot landet in einer Queue je Land, der Innendienst kalkuliert es mit der Revenue-Cloud-Procedure, die der Vertrieb schon für Maschinenangebote nutzt, und gibt es frei. Der Integrator sieht das Angebot unter My Quotes, bittet über Renegotiate um eine Änderung, bekommt das überarbeitete Angebot, klickt auf Accept & Buy und bestellt den Warenkorb. Der Auftrag erreicht SAP mit den verhandelten Preisen und der Angebotsnummer als Referenz.
+Mit RFQ legt der Integrator die Stückliste in den Warenkorb, fragt ein Angebot an und trägt den Projektnamen in das Kommentarfeld ein. Das Angebot wird in eine Queue je Land geleitet, der Innendienst kalkuliert es mit der Revenue-Cloud-Procedure, die der Vertrieb schon für Maschinenangebote nutzt, und gibt es frei. Der Integrator sieht das Angebot unter My Quotes, bittet über Renegotiate um eine Änderung, erhält das überarbeitete Angebot, klickt auf Accept & Buy und bestellt den Warenkorb. Der Auftrag erreicht SAP mit den verhandelten Preisen und der Angebotsnummer als Referenz.
 
 Die Zahlen sind erfunden, um die Methode zu zeigen. Was ich in den ersten drei Monaten messen würde: Anteil der Angebotsanfragen über den Shop statt per E-Mail, Antwortzeit und Anteil der freigegebenen Angebote, die zu Aufträgen werden.
 

@@ -96,17 +96,17 @@ In einem Programm, in das ich eingestiegen bin, betrieb ein großes Unternehmen 
 - Die technischen Ansätze der Teams hatten sich weit auseinanderentwickelt, ähnliche Probleme wurden sehr unterschiedlich gelöst.
 - Jedes Release war ein Risiko, und Fehler fielen oft erst auf, wenn Anwender darauf stießen.
 
-Wir haben das in wenigen Schritten geändert. Zuerst lief jede Änderung über einen Pull Request mit Review. Dann haben wir Entwicklungs- und Architekturstandards aufgeschrieben und in diesen Reviews durchgesetzt. Am Ende wurde die Pipeline der einzige reguläre Weg, Änderungen von einer Org in die nächste zu bringen, mit einem dokumentierten Notfallweg, bei dem die Änderungen anschließend in Git nachgeführt werden.
+Wir haben das in wenigen Schritten geändert. Zuerst wurde jede Änderung über einen Pull Request mit Review eingebracht. Dann haben wir Entwicklungs- und Architekturstandards aufgeschrieben und in diesen Reviews durchgesetzt. Am Ende wurde die Pipeline der einzige reguläre Weg, Änderungen von einer Org in die nächste zu bringen, mit einem dokumentierten Notfallweg, bei dem die Änderungen anschließend in Git nachgeführt werden.
 
 ```praxis
-Eine Zeit lang ging jeder einzelne Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben, der ihn heute verantwortet.
+Eine Zeit lang ging jeder einzelne Pull Request über meinen Schreibtisch. Als der Prozess stabil funktionierte, habe ich ihn an einen internen Kollegen übergeben, der ihn heute verantwortet.
 ```
 
-Die Wirkung war deutlich. Ergebnisse wurden planbar, und Validierungsläufe in der Pipeline haben fehlende Abhängigkeiten und Fehler erkannt, bevor ein Anwender sie gesehen hätte. Dazu kamen die klassischen DevOps-Vorteile: Wir konnten einen früheren Stand aus Git wiederherstellen, jede Änderung über die Pipeline nachvollziehen, und es ging keine Arbeit mehr verloren.
+Die Wirkung war deutlich. Ergebnisse wurden planbar, und Validierungsläufe in der Pipeline haben fehlende Abhängigkeiten und Fehler erkannt, bevor ein Anwender sie gesehen hätte. Hinzu kamen die klassischen DevOps-Vorteile: Wir konnten einen früheren Stand aus Git wiederherstellen, jede Änderung über die Pipeline nachvollziehen, und es ging keine Arbeit mehr verloren.
 
 ## sfdx-hardis als Open-Source-Beispiel
 
-Um dorthin zu kommen, muss man keine kommerzielle Plattform kaufen. Ein gutes Beispiel ist [sfdx-hardis](https://sfdx-hardis.cloudity.com/), ein Open-Source-Toolkit, das Cloudity gemeinsam mit einer aktiven Community pflegt. Es bündelt viele der Bausteine von oben:
+Um dorthin zu gelangen, muss man keine kommerzielle Plattform kaufen. Ein gutes Beispiel ist [sfdx-hardis](https://sfdx-hardis.cloudity.com/), ein Open-Source-Toolkit, das Cloudity gemeinsam mit einer aktiven Community pflegt. Es bündelt viele der Bausteine von oben:
 
 - **Eine fertige CI/CD-Pipeline** für GitHub, GitLab, Azure DevOps, Bitbucket und Jenkins, damit die Pipeline dort läuft, wo die IT des Kunden ohnehin arbeitet.
 - **Delta- und Smart-Deployments** auf Basis von sfdx-git-delta, die nur geänderte Metadaten deployen.
@@ -121,7 +121,7 @@ Das DevOps Center von Salesforce selbst ist eine weitere Option ohne zusätzlich
 DevOps klingt nach einem Thema für Entwickler. In der Praxis profitiert oft der Fachbereich am meisten:
 
 - **Planbare Releases.** Ein fester Release-Kalender ersetzt „wir deployen, wenn es fertig ist“. Fachbereiche können Schulungen und Kommunikation darauf ausrichten. Wie das pro Release aussieht, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
-- **Schnellere Korrekturen.** Tritt ein Fehler in Produktion auf, kann ein Hotfix durch dieselbe getestete Pipeline laufen, statt auf das nächste große Release zu warten.
+- **Schnellere Korrekturen.** Tritt ein Fehler in Produktion auf, kann ein Hotfix dieselbe getestete Pipeline durchlaufen, statt auf das nächste große Release zu warten.
 - **Weniger Überraschungen beim Go-live.** Jede Änderung wurde in Integration und UAT bereits über dieselbe Pipeline deployt und getestet, die sie in Produktion bringt.
 - **Nachvollziehbarkeit für Audits.** Für jede über die Pipeline vorgenommene Änderung lässt sich zeigen, wer sie wann und warum gemacht und wer sie freigegeben hat. Direkte Änderungen in Produktion finden Sie im Setup Audit Trail.
 - **Weniger Abhängigkeit von Einzelnen.** Das Wissen liegt im Repository und in der Pipeline, nicht im Kopf eines Admins oder des Lead-Entwicklers eines Partners.

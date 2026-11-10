@@ -15,7 +15,7 @@ takeaways:
   - "Techniker nehmen die App an, wenn sie ihnen vor Ort Arbeit abnimmt: Anlagenhistorie, Ersatzteile und kurze Formulare statt Papier."
   - "In meinen Projekten waren Standortverfolgung und Sichtbarkeit von Zeiten die heikelsten Themen. Klären Sie beides vorab offen mit dem Betriebsrat."
   - "Eine App, die im Keller ohne Netz versagt, verliert schnell das Vertrauen der Techniker. Testen Sie den Kernablauf vorab offline mit geladenen Daten."
-  - "Wird eine Rückmeldung schnell sichtbar beantwortet und folgen kleine Korrekturen rasch, spricht sich das herum. Sonst landen Punkte im Pflichtfeld."
+  - "Wird eine Rückmeldung schnell sichtbar beantwortet und folgen kleine Korrekturen rasch, spricht sich das herum. Sonst stehen Punkte im Pflichtfeld."
 faq:
   - q: "Warum lehnen Techniker eine neue Field Service App ab?"
     a: "In meinen Projekten meist aus drei Gründen: Sie fürchten mehr Kontrolle, etwa über ihren Standort; sie sehen mehr Dokumentation statt weniger; oder die App funktioniert vor Ort nicht zuverlässig, zum Beispiel ohne Netz."
@@ -34,10 +34,10 @@ Servicetechniker nehmen die Salesforce Field Service App an, wenn sie ihnen vor 
 
 Agentforce Field Service and Operations, früher Salesforce Field Service, verändert den Arbeitstag von Disponenten und Technikern. Ein Techniker, der Berichte auf Papier geschrieben hat, dokumentiert plötzlich in einer App. Er sieht seine Termine auf dem Telefon statt auf dem Zettel aus dem Büro, und er fragt sich zu Recht, wer jetzt sieht, wo er gerade ist.
 
-Techniker sind außerdem eine besondere Gruppe. Sie sind selten im Büro, kommen zu Schulungen oft nur einmal, und weil sie unter Zeitdruck beim Kunden vor der Maschine arbeiten, haben sie wenig Spielraum, Probleme mit unzuverlässiger Software zu beheben. Wiederholte Ausfälle bei den ersten Einsätzen können das Vertrauen schnell beschädigen, besonders wenn sofortige Hilfe oder ein Ausweichverfahren fehlt. Dieser Eindruck kann länger bleiben als der Fehler selbst.
+Techniker sind außerdem eine besondere Gruppe. Sie sind selten im Büro, nehmen an Schulungen oft nur einmal teil, und weil sie unter Zeitdruck beim Kunden vor der Maschine arbeiten, haben sie wenig Spielraum, Probleme mit unzuverlässiger Software zu beheben. Wiederholte Ausfälle bei den ersten Einsätzen können das Vertrauen schnell beschädigen, besonders wenn sofortige Hilfe oder ein Ausweichverfahren fehlt. Dieser Eindruck kann länger bleiben als der Fehler selbst.
 
 ```praxis
-In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetriebnahmen lagen die Stolpersteine an drei Stellen: Datenqualität der Anlagen, Akzeptanz bei den Technikern und Schnittstellen zum ERP. Alle drei bekommt man in einer Region leichter in den Griff als im ganzen Außendienst auf einmal. Deshalb führe ich Field Service am liebsten in Wellen ein, oft Region für Region. Die erste Welle wähle ich nach repräsentativen Auftragsarten, beherrschbaren Schnittstellen und wenigen Abhängigkeiten zu anderen Regionen, denn Anlagendaten und ERP-Schnittstellen sind ohnehin oft zentral.
+In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetriebnahmen lagen die Stolpersteine an drei Stellen: Datenqualität der Anlagen, Akzeptanz bei den Technikern und Schnittstellen zum ERP. Alle drei lassen sich in einer Region leichter in den Griff bekommen als im ganzen Außendienst auf einmal. Deshalb führe ich Field Service am liebsten in Wellen ein, oft Region für Region. Die erste Welle wähle ich nach repräsentativen Auftragsarten, beherrschbaren Schnittstellen und wenigen Abhängigkeiten zu anderen Regionen, denn Anlagendaten und ERP-Schnittstellen sind ohnehin oft zentral.
 ```
 
 ## Was hält Techniker von der App ab?
@@ -80,7 +80,7 @@ Wichtig ist, dass diese Gruppe echte Änderungen bewirken kann. Wenn ihre Rückm
 
 In den ersten Wochen nach dem Start einer Region haben Techniker die meisten Fragen zur App. In dieser Phase sollte das Projektteam erreichbar sein und nicht schon die nächste Region starten. Danach zählt Verankerung: App-Updates können Abläufe verändern. Testen Sie Major Releases und relevante Patches im Betaprogramm, sofern eine Vorschau von etwa 30 oder 7 Tagen verfügbar ist, und legen Sie einen eigenen Ablauf für Notfall-Releases ohne Beta fest, wie in [Field Service App Updates testen](../field-service-app-updates-testen/) beschrieben.
 
-Genauso wichtig ist ein direkter Rückmeldeweg. Ein Techniker, der vor Ort merkt, dass ein Pflichtfeld nicht passt, sollte das in einer Minute melden können, am besten direkt aus der App oder über seinen Ansprechpartner in der Region. Wird die Rückmeldung innerhalb einer festen Frist bestätigt und eingeordnet, folgen kleine Korrekturen rasch. Größere Punkte bekommen eine transparente Entscheidung mit Termin. Das spricht sich im Team herum und wirkt stärker als eine Schulung. Kommt nichts, ist das Pflichtfeld bald mit Punkten gefüllt.
+Genauso wichtig ist ein direkter Rückmeldeweg. Ein Techniker, der vor Ort merkt, dass ein Pflichtfeld nicht passt, sollte das in einer Minute melden können, am besten direkt aus der App oder über seinen Ansprechpartner in der Region. Wird die Rückmeldung innerhalb einer festen Frist bestätigt und eingeordnet, folgen kleine Korrekturen rasch. Für größere Punkte gibt es eine transparente Entscheidung mit Termin. Das spricht sich im Team herum und wirkt stärker als eine Schulung. Bleibt eine Antwort aus, ist das Pflichtfeld bald mit Punkten gefüllt.
 
 Ob die App angekommen ist, zeigt sich in Zahlen: Servicetermine oder Arbeitsaufträge, die rechtzeitig in der App abgeschlossen statt nachträglich im Büro erfasst werden, und Serviceberichte, die am Tag des Einsatzes versandfertig sind. Weil Pflichtfelder Aktivität erzwingen können, gehören Qualitätssignale dazu: Nacharbeit im Innendienst, fehlende oder ungültige Angaben, Synchronisationsfehler und Anrufe im Büro. Wie Sie solche Zahlen aufsetzen, beschreibe ich in [Salesforce-Nutzung nach dem Go-live messen](../salesforce-nutzung-messen-nach-go-live/).
 

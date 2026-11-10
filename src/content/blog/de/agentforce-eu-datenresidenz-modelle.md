@@ -82,7 +82,7 @@ Salesforce hat die Hyperforce EU Operating Zone am 2. März 2023 [gestartet](htt
 Läuft Ihre Org in der Hyperforce Operating Zone, würde ich Agentforce-Agenten dort als unbestätigt behandeln, bis Salesforce den Umfang in Ihrem Vertrag oder Ihrer SKU schriftlich nennt.
 ```
 
-Koa, das eigene CRM-Reasoning-Modell von Salesforce, kommt zuerst in die USA. Laut [Investor-Meldung](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx) vom 15. September 2026 steht es ausgewählten Pilotkunden zur Verfügung, die allgemeine Verfügbarkeit wird für Winter 2026 in US-Regionen erwartet. Die Inferenz läuft laut Salesforce vollständig in der eigenen Trust Boundary. Eine allgemeine Verfügbarkeit in europäischen Regionen wurde nicht angekündigt, und Salesforce veröffentlicht die Pilotregionen nicht.
+Koa, das eigene CRM-Reasoning-Modell von Salesforce, startet zuerst in den USA. Laut [Investor-Meldung](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx) vom 15. September 2026 steht es ausgewählten Pilotkunden zur Verfügung, die allgemeine Verfügbarkeit wird für Winter 2026 in US-Regionen erwartet. Die Inferenz läuft laut Salesforce vollständig in der eigenen Trust Boundary. Eine allgemeine Verfügbarkeit in europäischen Regionen wurde nicht angekündigt, und Salesforce veröffentlicht die Pilotregionen nicht.
 
 ## Ist eine Verarbeitung in der EU Pflicht?
 
