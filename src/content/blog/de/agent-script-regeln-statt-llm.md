@@ -11,27 +11,27 @@ categories: [ai]
 tags: [Agent Script, Agentforce, KI-Agenten, Maschinenbau, Garantie, Architektur]
 takeaways:
   - "Das LLM versteht die Anfrage und erklärt das Ergebnis. Die Entscheidung trifft Agent-Script-Logik oder der Flow-, Apex- oder ERP-Aufruf dahinter."
-  - "Im neuen Agentforce, seit Februar 2026 verfügbar, laufen Logikanweisungen als Code ohne LLM-Aufruf, Prompt-Knoten und einige Plattformschritte rufen das Modell."
+  - "Im neuen Agentforce (seit Februar 2026) laufen Logikanweisungen als Code ohne LLM-Aufruf; Prompt-Knoten und einige Plattformschritte rufen das Modell auf."
   - "Eine Aktion mit available-when-Bedingung verschwindet aus der Werkzeugliste des LLM, solange die Bedingung falsch ist."
-  - "Gate-Variablen muss Code setzen, nie das LLM; sonst bringt das Gate genau die Schwankung zurück, die es verhindern soll."
-  - "before_reasoning läuft bei jedem Parse; eine ERP-Abfrage dort ohne Schutzbedingung läuft mehrmals pro Nutzereingabe."
+  - "Gate-Variablen müssen vom Code gesetzt werden, nie vom LLM; sonst führt das Gate genau die Schwankung wieder ein, die es verhindern soll."
+  - "before_reasoning wird bei jedem Parse ausgeführt; eine ERP-Abfrage ohne Schutzbedingung wird dort mehrmals pro Nutzereingabe ausgeführt."
 faq:
   - q: "Was ist hybrides Reasoning in Agentforce?"
     a: "Hybrides Reasoning heißt, dass ein Agent deterministische Logik mit LLM-Reasoning kombiniert. In Agent Script laufen Logikanweisungen als Code ohne LLM-Aufruf, Prompt-Anweisungen werden zu einem Prompt für das Modell zusammengesetzt. Die Atlas Reasoning Engine entscheidet an jedem Schritt, welcher Weg gilt."
   - q: "Was bewirkt available when in Agent Script?"
-    a: "Es ist eine Bedingung an einer Aktion. Ist sie falsch, entfernt die Plattform die Aktion aus der Werkzeugliste des LLM, das Modell kann sie weder auswählen noch aufrufen. Salesforce Architects nennt das ein hartes Gate auf Plattformebene."
+    a: "Es ist eine Bedingung an einer Aktion. Ist sie falsch, entfernt die Plattform die Aktion aus der Werkzeugliste des LLM; das Modell kann sie weder auswählen noch aufrufen. Salesforce Architects nennt das ein hartes Gate auf Plattformebene."
   - q: "Laufen Agenten aus dem alten Agentforce Builder weiter?"
     a: "Ja. Laut Salesforce ist die Entwicklung am alten Builder eingefroren, neue Agenten entstehen seit Juli 2026 nur noch im neuen Builder, bestehende Agenten bleiben bearbeitbar. Salesforce Help beschreibt ein Upgrade, das eine neue Version im neuen Builder anlegt und Subagenten, Aktionen und Einstellungen in Agent Script überführt; wird sie aktiviert, wird die vorherige Version deaktiviert."
   - q: "Sollte der Agent das Kreditlimit selbst berechnen?"
-    a: "Nein. Kreditlimit und Obligo werden im ERP gepflegt. Der Agent liest das Ergebnis über eine API-Aktion und nutzt es als Gate, und die Auftragsaktion prüft es beim Anlegen des Auftrags erneut. Wer die Regel in Salesforce nachbaut, erzeugt eine zweite Fassung, die vom ERP wegdriftet."
+    a: "Nein. Kreditlimit und Obligo werden im ERP gepflegt. Der Agent liest das Ergebnis über eine API-Aktion und nutzt es als Gate; die Auftragsaktion prüft es beim Anlegen des Auftrags erneut. Wer die Regel in Salesforce nachbaut, erzeugt eine zweite Fassung, die vom ERP abweicht."
 draft: false
 ---
 
-Über Kreditlimit, Garantieberechtigung und Preisfreigabe entscheidet deterministische Logik, nicht das Sprachmodell: Agent-Script-Logik oder, bei transaktionalen Regeln, das System, in dem die Regel geführt wird. Seit Februar 2026 ist das neue Agentforce mit hybridem Reasoning allgemein verfügbar: Logikanweisungen laufen als Code, das LLM wird an Prompt-Knoten aufgerufen. Nutzen Sie diese Trennung bewusst. Eine Regel, die das Modell interpretiert, kann bei gleicher Eingabe einen anderen Weg nehmen, und „der Agent hat entschieden“ hält weder im Audit noch im Streit mit einem Händler. Die Regel entscheidet, das LLM versteht die Anfrage und erklärt das Ergebnis.
+Über Kreditlimit, Garantieberechtigung und Preisfreigabe entscheidet deterministische Logik, nicht das Sprachmodell: Agent-Script-Logik oder, bei transaktionalen Regeln, das System, in dem die Regel geführt wird. Seit Februar 2026 ist das neue Agentforce mit hybridem Reasoning allgemein verfügbar: Logikanweisungen laufen als Code, das LLM wird an Prompt-Knoten aufgerufen. Nutzen Sie diese Trennung bewusst. Wenn das Modell eine Regel interpretiert, kann es bei gleicher Eingabe einen anderen Weg wählen; „der Agent hat entschieden“ trägt weder im Audit noch im Streit mit einem Händler. Die Regel entscheidet, das LLM versteht die Anfrage und erklärt das Ergebnis.
 
 ## Was ist hybrides Reasoning in Agent Script?
 
-Hybrides Reasoning heißt, dass ein Agent deterministische Logik mit LLM-Reasoning verbindet. Salesforce Architects beschreibt das frühere Agentforce-Modell deutlich: Das LLM traf jede Entscheidung zur Laufzeit, „with no guaranteed path through the workflow“, gleiche Eingaben konnten also unterschiedliche Wege nehmen. Der [Architekturleitfaden zu hybridem Reasoning](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) setzt eine Regel dagegen: „if you can express a decision as code, it should be written as logic.“
+Hybrides Reasoning heißt, dass ein Agent deterministische Logik mit LLM-Reasoning verbindet. Salesforce Architects beschreibt das frühere Agentforce-Modell deutlich: Das LLM traf jede Entscheidung zur Laufzeit, „with no guaranteed path through the workflow“, gleiche Eingaben konnten also unterschiedliche Wege nehmen. Der [Architekturleitfaden zu hybridem Reasoning](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) stellt dem eine Regel entgegen: „if you can express a decision as code, it should be written as logic.“
 
 Agent Script ist die deklarative Sprache dafür. Sie kennt zwei Arten von Anweisungen. Logikanweisungen, also Bedingungen und Aktionsaufrufe, laufen als Code ohne LLM. Prompt-Anweisungen sind natürliche Sprache für das Modell; bei einem Parse werden sie zu einem Prompt zusammengesetzt, und am Prompt-Knoten wird das Modell aufgerufen. Routing, Antwortgenerierung oder Groundedness-Prüfungen können weitere Modellaufrufe auslösen. Ein Compiler macht aus dem Script einen Agent Graph, den die Atlas Reasoning Engine als Zustandsautomat ausführt. Laut demselben Leitfaden ist das neue Agentforce seit Februar 2026 allgemein verfügbar.
 
@@ -43,25 +43,25 @@ Weil es Entscheidungen mit einer richtigen Antwort sind. Ein Händler liegt übe
 
 **Audit und Streitfälle.** Ein Händler, dessen Garantieantrag abgelehnt wurde, fragt nach dem Grund. Der Leitfaden nennt nicht deterministische Ausführung eine Lücke im Audit, und ich sehe das genauso. Bei gleicher Version, gleichen Eingaben und gleichem Systemzustand nimmt eine Regel im Code denselben Weg und ist nachvollziehbar. Agentenversionen liegen außerdem als Metadaten vor: Das [AiAuthoringBundle](https://developer.salesforce.com/blogs/2026/05/new-agentforce-metadata-and-development-lifecycle) hält versionierte Ordner. Um zu belegen, welche Regel für einen bestimmten Vorgang galt, sichern Sie zusätzlich Aktivierungshistorie und Laufzeit-Traces.
 
-**Die Regel hat schon ein Zuhause.** In der Fertigung stehen Kreditlimit und Obligo in SAP oder proALPHA. Garantiebedingungen stehen in der Manufacturing Cloud oder im ERP. Preiskonditionen stehen im ERP oder im CPQ, eine Entscheidung, die ich in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/) beschreibe. Ein Agent sollte das Ergebnis dieses Systems lesen, nicht die Regel im Prompt nachbauen. Zwei Orte mit derselben Regel laufen auseinander, und die Prompt-Fassung ist die, die niemand testet.
+**Die Regel hat schon ein Zuhause.** In der Fertigung stehen Kreditlimit und Obligo in SAP oder proALPHA. Garantiebedingungen stehen in der Manufacturing Cloud oder im ERP. Preiskonditionen stehen im ERP oder im CPQ, eine Entscheidung, die ich in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/) beschreibe. Ein Agent sollte das Ergebnis dieses Systems lesen, nicht die Regel im Prompt nachbauen. Zwei Orte mit derselben Regel weichen voneinander ab, und die Prompt-Fassung ist die, die niemand testet.
 
-**Kosten und Antwortzeit.** Der Leitfaden schreibt: „Every unnecessary LLM call adds latency, cost, and variability“, und ein einfaches Gespräch brauchte früher mindestens drei LLM-Zyklen. Jede Berechnung, die Sie in Logik verlagern, ist eine Stelle weniger, an der das Modell danebenliegen kann.
+**Kosten und Antwortzeit.** Der Leitfaden schreibt: „Every unnecessary LLM call adds latency, cost, and variability“, und ein einfaches Gespräch erforderte früher mindestens drei LLM-Zyklen. Jede Berechnung, die Sie in Logik verlagern, ist eine Stelle weniger, an der das Modell ein falsches Ergebnis liefern kann.
 
-**Nicht vertrauenswürdige Eingaben.** Händlerportale, Garantieformulare und E-Mails schreiben Menschen außerhalb Ihres Unternehmens. Hängt eine Regel davon ab, wie das Modell Freitext liest, kann dieser Text das Modell beeinflussen. Das beschreibe ich in [Prompt Injection über Händlerportale](../prompt-injection-haendlerportal-agentforce/).
+**Nicht vertrauenswürdige Eingaben.** Händlerportale, Garantieformulare und E-Mails enthalten Eingaben von Menschen außerhalb Ihres Unternehmens. Hängt eine Regel davon ab, wie das Modell Freitext liest, kann dieser Text das Modell beeinflussen. Das beschreibe ich in [Prompt Injection über Händlerportale](../prompt-injection-haendlerportal-agentforce/).
 
 ## So setzt Agent Script eine Regel durch
 
-Für Entscheider zählen vier Bausteine. Ihr Partner sollte Ihnen zeigen können, wo jede Regel sitzt.
+Für Entscheider sind vier Bausteine relevant. Ihr Partner sollte Ihnen zeigen können, wo jede Regel definiert ist.
 
 - **Bedingungen im Reasoning-Block.** Laut [Agent-Script-Doku](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-patterns-conditionals.html) werden `if` und `else` ausgewertet, bevor der Prompt das LLM erreicht, und nur die passende Anweisung wird geschickt. Den Zweig, der nicht gilt, sieht das Modell nie.
 - **available when.** Eine Bedingung an einer Aktion. Ist sie falsch, ist die Aktion für das LLM [vollständig verborgen](https://developer.salesforce.com/sample-apps/agent-script-recipes/action-configuration/available-when-filtering) und kann nicht aufgerufen werden. Das ist das Gate für „Auftrag anlegen“ oder „Antrag genehmigen“. Eine Berechtigungsgrenze ist es nicht: Flow, Apex-Service oder ERP-Endpunkt hinter der Aktion müssen Regel und Berechtigung des Aufrufers beim Ausführen erneut prüfen.
-- **before_reasoning und after_reasoning.** `before_reasoning` läuft deterministisch zu Beginn jedes Parse, für Authentifizierung, Berechtigungsprüfung und das Laden von Kontext. `after_reasoning` läuft normalerweise nach dem Ende der Reasoning-Schleife, für Prüfungen und Übergänge, entfällt aber in dokumentierten Fällen. Ein Parse passiert beim ersten Eintritt, nach jedem Werkzeugaufruf und bei jeder Nutzereingabe.
-- **Eskalation.** `@utils.escalate` [übergibt das Gespräch an eine Servicemitarbeiterin](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-ref-utils.html) über Omni-Channel.
+- **before_reasoning und after_reasoning.** `before_reasoning` wird deterministisch zu Beginn jedes Parse ausgeführt und dient der Authentifizierung, der Berechtigungsprüfung und dem Laden von Kontext. `after_reasoning` läuft normalerweise nach dem Ende der Reasoning-Schleife, für Prüfungen und Übergänge, entfällt aber in dokumentierten Fällen. Ein Parse erfolgt beim ersten Eintritt, nach jedem Werkzeugaufruf und bei jeder Nutzereingabe.
+- **Eskalation.** `@utils.escalate` [übergibt das Gespräch per Omni-Channel an eine Servicemitarbeiterin](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-ref-utils.html).
 
 Eine vereinfachte Skizze eines Kredit-Gates für Ersatzteilaufträge, in Worten:
 
 ```eintrag Kredit-Gate für Ersatzteilaufträge
-Vor dem Reasoning | Ist die Bonität noch nicht geprüft, ruft das Skript die Bonitätsabfrage mit der Händlernummer auf, speichert das Ergebnis und merkt sich die Prüfung
+Vor dem Reasoning | Ist die Bonität noch nicht geprüft, ruft das Skript die Bonitätsabfrage mit der Händlernummer auf, speichert das Ergebnis und vermerkt die erfolgte Prüfung
 Anweisung | Ist die Bonität nicht in Ordnung, erklärt der Agent, dass das Kreditmanagement den Auftrag zuerst freigeben muss
 Aktion | „Ersatzteilauftrag anlegen“ ist nur verfügbar, wenn die Bonität in Ordnung ist *
 fazit: Das Modell entscheidet nie über die Bonität. Es sieht die Auftragsaktion erst, wenn der Code das Gate geöffnet hat.
@@ -72,8 +72,8 @@ Drei Details aus dem Leitfaden sollten Sie bei Ihrem Partner erfragen.
 ```vertiefung Für Entwickler
 titel: Gate-Variablen, Schutzbedingung und is_displayable
 - **Code setzt die Gate-Variablen.** Setzt sie das LLM, „you've reintroduced the variability the gate was designed to prevent.“
-- **Die Schutzbedingung zählt** (`if @variables.credit_checked == False`). Ohne sie läuft die ERP-Abfrage in `before_reasoning` bei jedem Parse, also mehrmals pro Eingabe, und jeder Lauf ist ein ERP-Aufruf.
-- **`is_displayable` beendet die Schleife.** Ist eine Aktionsausgabe als anzeigbar markiert und zeigt das Modell sie an, endet die Reasoning-Schleife, und `after_reasoning` entfällt. Eine Prüfung dort läuft dann nie.
+- **Die Schutzbedingung ist entscheidend** (`if @variables.credit_checked == False`). Ohne sie wird die ERP-Abfrage in `before_reasoning` bei jedem Parse ausgeführt, also mehrmals pro Eingabe, und jede Ausführung ist ein ERP-Aufruf.
+- **`is_displayable` beendet die Schleife.** Ist eine Aktionsausgabe als anzeigbar markiert und zeigt das Modell sie an, endet die Reasoning-Schleife, und `after_reasoning` entfällt. Eine Prüfung an dieser Stelle wird dann nie ausgeführt.
 ```
 
 ```hinweis offen
@@ -82,11 +82,11 @@ Laut [Salesforce Help](https://help.salesforce.com/s/articleView?id=ai.agent_con
 
 ## Rechenbeispiel: Händleragent für Ersatzteile und Garantie
 
-Nehmen wir einen Maschinenbauer mit SAP, Sales Cloud, Service Cloud und Händlerportal. Die Zahlen sind Annahmen, die das Vorgehen zeigen. Der Agent bearbeitet im Monat 800 Ersatzteilaufträge und 150 Garantie-Vorprüfungen und berührt dabei Kreditlimit, Garantie und Preisfreigabe.
+Nehmen wir einen Maschinenbauer mit SAP, Sales Cloud, Service Cloud und Händlerportal. Die Zahlen sind Annahmen, die das Vorgehen zeigen. Der Agent bearbeitet im Monat 800 Ersatzteilaufträge und 150 Garantie-Vorprüfungen; betroffen sind dabei Kreditlimit, Garantie und Preisfreigabe.
 
-**Kreditlimit.** Das SAP-Kreditmanagement entscheidet. Eine MuleSoft-API liefert pro Händler ein Kennzeichen, wie in [Agentforce und SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/) beschrieben. Der Agent liest es zu Beginn der Sitzung, um das Gespräch zu steuern, und gibt die Auftragsaktion nur bei ausreichender Bonität frei; die Auftrags-API prüft den aktuellen Kreditstatus beim Anlegen erneut. Angenommen, 4 Prozent der Händler sind jeweils gesperrt: Ihnen erklärt das Modell, dass das Kreditmanagement den Auftrag freigeben muss, und bietet an, die Anfrage weiterzuleiten. Die Auftragsaktion steht ihm dabei nicht zur Verfügung.
+**Kreditlimit.** Das SAP-Kreditmanagement entscheidet. Eine MuleSoft-API liefert pro Händler ein Kennzeichen, wie in [Agentforce und SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/) beschrieben. Der Agent liest es zu Beginn der Sitzung, um das Gespräch zu steuern, und gibt die Auftragsaktion nur bei ausreichender Bonität frei; die Auftrags-API prüft den aktuellen Kreditstatus beim Anlegen erneut. Angenommen, 4 Prozent der Händler sind gesperrt: Ihnen erklärt das Modell, dass das Kreditmanagement den Auftrag freigeben muss, und bietet an, die Anfrage weiterzuleiten. Die Auftragsaktion steht dem Modell dabei nicht zur Verfügung.
 
-**Garantieberechtigung.** Angenommen, die Regel lautet 24 Monate ab Inbetriebnahme oder 5.000 Betriebsstunden, je nachdem, was zuerst eintritt. Das Modell sammelt Seriennummer und Fehlerbeschreibung aus dem Freitext. Ein Flow oder eine Apex-Aktion liest dann die Garantie des Assets und liefert berechtigt, nicht berechtigt oder Daten fehlen, jeweils mit Begründung. Das Modell formuliert die Antwort. Fehlt das Inbetriebnahmedatum, lautet das Ergebnis „Daten fehlen“, und der Fall geht an einen Menschen statt an eine Vermutung. Wie die Manufacturing Cloud Garantien abbildet, steht in [Garantieansprüche von Händlern](../garantieansprueche-haendler-salesforce/), den Winter-'27-Agenten für diese Prüfung beschreibe ich in [der Garantie-Prüfagent](../garantie-pruefagent-winter-27/).
+**Garantieberechtigung.** Angenommen, die Regel lautet 24 Monate ab Inbetriebnahme oder 5.000 Betriebsstunden, je nachdem, was zuerst eintritt. Das Modell sammelt Seriennummer und Fehlerbeschreibung aus dem Freitext. Ein Flow oder eine Apex-Aktion liest dann die Garantiedaten des Assets und liefert das Ergebnis „berechtigt“, „nicht berechtigt“ oder „Daten fehlen“, jeweils mit Begründung. Das Modell formuliert die Antwort. Fehlt das Inbetriebnahmedatum, lautet das Ergebnis „Daten fehlen“, und der Fall wird an einen Menschen übergeben, statt auf einer Vermutung zu beruhen. Wie die Manufacturing Cloud Garantien abbildet, steht in [Garantieansprüche von Händlern](../garantieansprueche-haendler-salesforce/); den Winter-'27-Agenten für diese Prüfung beschreibe ich im Beitrag [Der Garantie-Prüfagent](../garantie-pruefagent-winter-27/).
 
 **Preisfreigabe.** Angenommen, Händler dürfen bei Ersatzteilen bis zu 8 Prozent Zusatzrabatt ohne Freigabe erhalten. Darüber verhandelt der Agent nicht. Ein Flow startet die Genehmigung beim Vertriebsleiter, und das Modell sagt dem Händler, dass die Anfrage beim Vertrieb liegt. Der Vertrieb pflegt die Schwelle an einer Stelle, im Prompt steht sie nicht.
 
@@ -94,19 +94,19 @@ Dem Modell bleibt, was es gut kann: „Die Hydraulikpumpe an unserer Maschine vo
 
 ## Was bleibt beim LLM?
 
-Mehr, als es klingt. Das Modell erkennt die Absicht, füllt Pflichtangaben aus Freitext, fasst einen Fall für den Techniker zusammen, erklärt eine Ablehnung höflich in der Sprache des Händlers und erkennt im Rahmen Ihrer Eskalationsregeln, wann ein Gespräch an einen Menschen gehen sollte. Gartner empfiehlt Agenten [dort, wo Entscheidungen nötig sind](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027), und Automatisierung für Routineabläufe. Ich lese das genauso: Was der Händler will, beurteilt das Modell. Die Regel danach läuft als Code.
+Es bleibt mehr, als es zunächst klingt. Das Modell erkennt die Absicht, füllt Pflichtangaben aus Freitext, fasst einen Fall für den Techniker zusammen, erklärt eine Ablehnung höflich in der Sprache des Händlers und erkennt im Rahmen Ihrer Eskalationsregeln, wann ein Gespräch an einen Menschen gehen sollte. Gartner empfiehlt Agenten [dort, wo Entscheidungen nötig sind](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027), und Automatisierung für Routineabläufe. Ich lese das genauso: Was der Händler will, beurteilt das Modell. Die Regel danach wird als Code ausgeführt.
 
-Agent Script ist auch nicht immer der richtige Ort für die Regel selbst. Hat die Regel viele Varianten, etwa Garantiebedingungen pro Produktfamilie und Bauteil, gehört sie ins Datenmodell oder in die Business Rules Engine, die die [Seite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/) für Claims, Boni und Angebote nennt. Das Script ruft sie dann auf. Gehört die Regel dem ERP, ruft das Script das ERP. Agent Script entscheidet, wann eine Regel geprüft wird und was mit dem Ergebnis passiert.
+Agent Script ist auch nicht immer der richtige Ort für die Regel selbst. Hat die Regel viele Varianten, etwa Garantiebedingungen pro Produktfamilie und Bauteil, gehört sie ins Datenmodell oder in die Business Rules Engine, die auf der [Seite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/) für Claims, Boni und Angebote genannt wird. Das Script ruft sie dann auf. Gehört die Regel dem ERP, ruft das Script das ERP auf. In Agent Script wird festgelegt, wann eine Regel geprüft wird und was mit dem Ergebnis passiert.
 
 ## Alle Entscheidungen auflisten, bevor der Partner baut
 
-Bevor Ihr Partner mit dem Bau beginnt, würde ich diese Schritte durchgehen:
+Bevor Ihr Partner mit der Umsetzung beginnt, würde ich diese Schritte durchgehen:
 
 ```schritte
 Entscheidungen auflisten
   Alle Entscheidungen, die der Agent berührt, sammeln und die mit einer richtigen Antwort markieren.
 Führendes System benennen
-  Für jede Regel festhalten, wo sie lebt: ERP, Manufacturing Cloud, Business Rules Engine oder Flow.
+  Für jede Regel festhalten, wo sie geführt wird: ERP, Manufacturing Cloud, Business Rules Engine oder Flow.
 Gates festlegen
   Welche Aktion ist unter welcher Bedingung verfügbar, und welcher Code setzt die Variable?
 „Daten fehlen“ definieren
@@ -115,4 +115,4 @@ Regeln wie Code testen
   Mit Fällen auf beiden Seiten jeder Schwelle, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben.
 ```
 
-Diesen Teil eines Agentendesigns prüfe ich auf Kundenseite im Rahmen der [Salesforce-Architektur](../../leistungen/salesforce-architektur/), weil er entscheidet, ob sich der Agent später prüfen lässt. Ob Ihr Prozess überhaupt reif für einen Agenten ist, steht in [Agentforce für Hersteller: jetzt starten oder warten](../agentforce-ja-oder-nein-hersteller/).
+Diesen Teil eines Agentendesigns prüfe ich auf Kundenseite im Rahmen der [Salesforce-Architektur](../../leistungen/salesforce-architektur/), weil er bestimmt, ob der Agent später auditierbar ist. Ob Ihr Prozess überhaupt reif für einen Agenten ist, steht in [Agentforce für Hersteller: jetzt starten oder warten](../agentforce-ja-oder-nein-hersteller/).
