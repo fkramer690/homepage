@@ -11,29 +11,29 @@ categories: [architecture]
 contactBrief: nearshore
 tags: [nearshore, team size, program management, partner governance, scrum]
 takeaways:
-  - "With a product owner and a scrum master, eight developers make ten people, the size the Scrum Guide names as typical."
-  - "A team of ten people has 45 possible communication paths, twelve have 66 and eighteen have 153."
+  - "With a product owner and a scrum master, eight developers make up a team of ten people, which is the size the Scrum Guide describes as typical."
+  - "A team of ten people has 45 possible communication paths, a team of twelve has 66, and a team of eighteen has 153."
   - "If a program needs more capacity, I set up several teams with clear responsibilities, for example through an object ownership matrix."
-  - "Rotation, turnover and overly senior teams slow things down more often than missing skills, so I agree a minimum stay before the first sprint."
+  - "Rotation, turnover and overly senior teams slow things down more often than missing skills, so I agree on a minimum tenure before the first sprint."
 faq:
   - q: "How large should a Salesforce nearshore team be?"
-    a: "I plan with up to about eight developers per team. With a product owner and a scrum master that makes ten people, which the Scrum Guide describes as typical. Eight is my rule of thumb from projects, not a fixed limit. Beyond that, coordination tends to take over."
+    a: "I plan for up to about eight developers per team. With a product owner and a scrum master, that makes ten people, which the Scrum Guide describes as typical. Eight is my rule of thumb from project experience, not a fixed limit. Beyond that, coordination tends to take over."
   - q: "What if the program needs more than eight developers?"
     a: "Set up several teams, each with a clear area of responsibility, such as a stream with its own objects. All teams work with the same standards, reviews and pipeline, and plan releases together."
   - q: "Why are very experienced teams not automatically better?"
-    a: "In the all senior teams I have seen, several people expected to make architecture decisions while too little capacity went into building and testing. That causes friction and slows the team down. A mix of a few seniors who carry architecture and reviews and developers who like to build delivers more steadily."
+    a: "In the all-senior teams I have seen, several people expected to make architecture decisions, while too little capacity went into building and testing. That causes friction and slows the team down. A mix of a few seniors who take responsibility for architecture and reviews and developers who like to build delivers more steadily."
   - q: "Does this apply to Eastern Europe and India alike?"
     a: "In my experience, yes. Across the nearshore and offshore teams I worked with in both regions, I kept meeting the same success factors and problems: team size, turnover, culture and backing from management."
 draft: false
 ---
 
-I cap Salesforce nearshore teams at about eight developers. With a product owner and a scrum master that makes ten people, the size the Scrum Guide describes as typical. Eight is my rule of thumb from projects, not a law. Beyond that, coordination grows faster than output, sprint meetings get long, and the team delivers less per person. If a program needs more developers, I set up several small teams with clear responsibilities. Team size is only one of several levers, but it is the one that is easiest to get wrong.
+I cap Salesforce nearshore teams at about eight developers. With a product owner and a scrum master that makes ten people, the size the Scrum Guide describes as typical. Eight is my rule of thumb from project experience, not a law. Beyond that, coordination grows faster than output, sprint meetings get long, and the team delivers less per person. If a program needs more developers, I set up several small teams with clear responsibilities. Team size is only one of several levers, but it is the one that is easiest to get wrong.
 
 ## Why eight developers at most?
 
-The [Scrum Guide](https://scrumguides.org/scrum-guide.html) describes a Scrum Team as typically ten or fewer people. Small enough to remain nimble, large enough to complete significant work within a sprint. It also notes that smaller teams tend to communicate better and be more productive. Take away the product owner and the scrum master, and you are left with about eight developers. In Scrum, "developers" means everyone who builds the increment, so in a Salesforce team that includes admins, testers and business analysts, not only people who write code.
+The [Scrum Guide](https://scrumguides.org/scrum-guide.html) describes a Scrum Team as typically ten or fewer people. Such a team is small enough to remain nimble and large enough to complete significant work within a sprint. It also notes that smaller teams tend to communicate better and be more productive. Take away the product owner and the scrum master, and you are left with about eight developers. In Scrum, "developers" means everyone who builds the increment, so in a Salesforce team that includes admins, testers and business analysts, not only people who write code.
 
-The arithmetic behind it is simple. A team of n people has n times (n minus 1) divided by two possible communication paths between any two people. The count covers everyone in the team, product owner and scrum master included, and it shows possible paths, not actual effort:
+The arithmetic behind it is simple. A team of n people has n times (n minus 1) divided by two possible communication paths between any two people. The count covers everyone on the team, including the product owner and scrum master, and it shows possible paths, not actual effort:
 
 | People in the team | Communication paths |
 |---|---|
@@ -42,19 +42,19 @@ The arithmetic behind it is simple. A team of n people has n times (n minus 1) d
 | 12 | 66 |
 | 18 | 153 |
 
-Going from eight to sixteen developers, plus product owner and scrum master, doubles the headcount but not necessarily the output, while the number of paths more than triples. Not every path is used every day. In a Salesforce team working on the same org, many of them are, though: whoever works on a flow on Account needs to know who is changing the validation rules or the layout of the same object.
+Going from eight to sixteen developers, plus a product owner and a scrum master, doubles the headcount but not necessarily the output, while the number of paths more than triples. Not every path is used every day. In a Salesforce team working on the same org, many of them are, though: whoever works on a flow on Account needs to know who is changing the validation rules or the layout of the same object.
 
-With nearshore teams, part of the coordination also runs across time zones, languages and company boundaries. Questions to the business on the client side often take longer when time zones, language, access rights or company boundaries get in the way. A small, stable team needs fewer handovers and keeps context more consistently.
+With nearshore teams, part of the coordination also runs across time zones, languages and company boundaries. Questions for the business on the client side often take longer when time zones, language, access rights or company boundaries get in the way. A small, stable team needs fewer handovers and keeps context more consistently.
 
 ## What happens when a team grows larger?
 
 A team with twelve or fifteen developers rarely works the way it was planned on paper. Three patterns are typical:
 
-- **Sprint meetings get long.** With fifteen people, the daily rarely stays useful within its fifteen minutes, and most people just listen to the others' topics. Detailed coordination moves into extra meetings, and planning and review cover many topics that concern only part of the team.
-- **Coordination moves into small groups.** Inside the large team, informal subgroups form and make their own agreements. You end up with small teams anyway, only without clear responsibility.
-- **Conflicts in the org increase.** Without clear ownership, source control and disciplined merging, more developers changing the same objects at the same time means more merge conflicts, more accidentally overwritten metadata and more bugs that cannot be traced to any team.
+- **Sprint meetings get long.** With fifteen people, the daily rarely stays useful within its fifteen minutes, and most people just listen to other people's updates. Detailed coordination moves into extra meetings, and planning and review cover many topics that affect only part of the team.
+- **Coordination moves into small groups.** Inside the large team, informal subgroups form and make their own agreements. You end up with small teams anyway, but without clear responsibility.
+- **Conflicts in the org increase.** Without clear ownership, source control and disciplined merging, more developers changing the same objects at the same time means more merge conflicts, more cases of accidentally overwritten metadata and more bugs that cannot be traced to any team.
 
-There is also a commercial effect. Most nearshore contracts I see are time and material or capacity based, so every extra person adds cost right away. If extra developers mostly create extra coordination, the team's daily cost goes up, but delivery does not.
+There is also a commercial effect. Most nearshore contracts I see are time-and-material or capacity-based, so every extra person adds cost right away. If extra developers mostly create extra coordination, the team's daily cost goes up, but delivery does not.
 
 ## More capacity means several teams with clear areas of responsibility
 
@@ -64,17 +64,17 @@ If a program needs more than eight developers, I set up several teams, each with
 
 To keep several teams from turning back into one large team, they need four shared foundations:
 
-1. **Clear responsibility per team.** Ideally through streams with their own processes and objects. An [object ownership matrix](../salesforce-object-ownership-matrix/) sets who owns which object. Shared objects such as Account, shared frameworks and interfaces also need a named owner and rules for changes. In my largest program, with more than 30 developers in eight streams and five partners, it was one of the two elements that made the biggest difference.
-2. **The same standards for everyone.** Naming conventions, a defined automation strategy per object with one entry point and a clear execution order, rules for test coverage. New teams learn them fastest in [pull request reviews](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
-3. **One pipeline and one release process.** All teams deliver to production the same way, and releases are planned across teams. Repository and pipeline belong to the client, as described in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
+1. **Clear responsibility per team.** Ideally, this is done through streams with their own processes and objects. An [object ownership matrix](../salesforce-object-ownership-matrix/) sets who owns which object. Shared objects such as Account, as well as shared frameworks and interfaces, also need a named owner and rules for changes. In my largest program, with more than 30 developers in eight streams and five partners, this was one of the two elements that made the biggest difference.
+2. **The same standards for everyone.** This includes naming conventions, a defined automation strategy per object with one entry point and a clear execution order, and rules for test coverage. New teams learn them fastest in [pull request reviews](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+3. **One pipeline and one release process.** All teams deliver to production the same way, and releases are planned across teams. The repository and pipeline belong to the client, as described in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
 4. **A program plan with dependencies.** What team A must deliver by when so that team B can continue is written in the plan, not just in people's heads.
 
-The teams do not have to be the same size. A stream with many interfaces may need six developers, a small stream three. What matters is that none grows beyond eight and that each one knows what it is responsible for.
+The teams do not have to be the same size. A stream with many interfaces may need six developers, a small stream three. What matters is that no team grows beyond eight and that each one knows what it is responsible for.
 
-In practice the limit is rarely a problem when teams are cut along streams. A stream is rarely so large that more than eight people work on, say, Sales Cloud. When a team grows bigger, the tasks are usually far enough apart that two teams make more sense. I often see the opposite: sales and service end up in one pot because both work on Account and Contact. That only makes limited sense, because their processes, business owners and releases differ a lot.
+In practice, the limit is rarely a problem when teams are split by stream. A stream is rarely so large that more than eight people work on, say, Sales Cloud. When a team grows bigger, the tasks are usually far enough apart that two teams make more sense. I often see the opposite: sales and service end up in one team because both work on Account and Contact. That only makes limited sense, because their processes, business owners and releases differ a lot.
 
 ```praxis
-My largest program included nearshore teams as well. Mostly they carried individual streams completely, from backlog to release. That works well, because the team then has a clear area and does not work for several streams at once.
+My largest program included nearshore teams as well. In most cases, they owned individual streams end to end, from backlog to release. That works well because the team then has a clear area of responsibility and does not work across several streams at once.
 ```
 
 ## What slows nearshore teams down besides size?
@@ -83,18 +83,18 @@ When a nearshore team delivers less than expected, skills are often blamed first
 
 - **Rotating resources.** If developers are moved to other projects every few months, knowledge of the org leaves with them. Every new person needs weeks to become productive.
 - **High turnover.** The effect is the same, and it also unsettles the rest of the team.
-- **Overly senior teams.** A team made up only of experienced developers sounds like a safe choice. In the teams I have seen, several people expected to make architecture decisions while too little capacity went into building and testing. A mix of a few seniors who carry architecture and reviews and developers who like to build works better.
+- **Overly senior teams.** A team made up only of experienced developers sounds like a safe choice. In the teams I have seen, several people expected to make architecture decisions while too little capacity went into building and testing. A mix of a few seniors who take responsibility for architecture and reviews and developers who like to build works better.
 - **No backing from management.** A nearshore team needs decisions, access and attention from the client. Without them it waits, and the client pays for the waiting.
 
-Culture counts as much as skills: shared values, trust and the will to deliver, on both sides. A small, stable team builds that faster than a large one that keeps changing its members.
+Culture counts as much as skills: shared values, trust and the will to deliver on both sides. A small, stable team builds that faster than a large one that keeps changing its members.
 
 ## These rules belong before the first sprint
 
-Most of these problems can be limited contractually and organisationally if you raise them before the start. The client and the nearshore partner should therefore agree rules on:
+Most of these problems can be limited contractually and organisationally if you raise them before the start. The client and the nearshore partner should therefore agree on rules for:
 
-- **Team size and roles**, meaning how many developers, which seniority and who does reviews.
-- **Staffing and rotation.** How long does a person stay in the team at least, and how much notice is there before a change? Depending on the size of the program, I consider a minimum of six months sensible.
-- **Handover on changes.** Who onboards a new person, and how long do the old and new person overlap?
+- **Team size and roles**, meaning how many developers, what seniority levels and who does reviews.
+- **Staffing and rotation.** What is the minimum time a person stays on the team, and how much notice is required before a change? Depending on the size of the program, I consider a minimum of six months sensible.
+- **Handover during staffing changes.** Who onboards a new person, and how long do the outgoing and incoming person overlap?
 - **Communication.** Which meetings are shared, who on the client side is available for questions, and how quickly are they answered?
 
 These rules protect both sides from the moment when, after six months, half the team has changed and nobody remembers why an automation was built the way it was.
@@ -107,4 +107,4 @@ If you already have a nearshore team, answer three questions:
 2. **How many people left the team in the last six months?** If the number is high, rotation is probably a bigger problem than size.
 3. **Who owns which objects?** If that is not written down anywhere, start with an object ownership matrix before splitting teams.
 
-If you are planning a new setup, define team size, roles and rotation rules before you compare quotes. Then you compare partners on the same basis, not just on the daily rate. How I plan and steer programs with nearshore teams is described under [program management and nearshore teams](../../services/program-management-nearshore/).
+If you are planning a new setup, define team size, roles and rotation rules before you compare quotes. Then you can compare partners on the same basis, not just on the daily rate. How I plan and steer programs with nearshore teams is described under [program management and nearshore teams](../../services/program-management-nearshore/).
