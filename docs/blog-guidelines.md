@@ -97,6 +97,7 @@ Articles must read like Fabian talking to a client, not like generated content. 
   - At most 3 intensifiers per text (echt, wirklich, tatsächlich, ehrlich / really, actually, honestly, genuinely, truly) and at most 5 × "statt" / "instead of".
   - Titles: the pattern "Topic: statement" is not the default; use it only when the colon really separates two things.
 - **Read-aloud test.** Read the article once out loud. Anything Fabian would not say to a client in a meeting gets rewritten.
+- **Language pass before Fabian sees a draft** (Fabian 2026-11-10, after it happened twice). Go through every sentence of both versions, including takeaways, FAQ, table cells and block texts, and rewrite anything clumsy: vague or wrong verbs ("Gearset hat öffentliche Preise pro Nutzer" instead of "Gearset rechnet pro Nutzer ab"), clipped half sentences ("nach einem Tag bei den Grundlagen"), colloquial fillers ("fahren gut mit"), literal translations between EN and DE, and stacked clauses that need a second read. A sentence passes when Fabian could say it to a CIO unchanged. This pass comes after the ChatGPT review, because review edits often bring new clumsy wording.
 
 ## Content blocks
 
