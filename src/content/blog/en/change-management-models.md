@@ -1,7 +1,7 @@
 ---
 title: "Change management models: Lewin, Kotter and ADKAR compared"
 metaTitle: "Change management models compared: which fits when?"
-description: "Lewin, Kotter, ADKAR or Prosci? Which change management model fits which open question, where each one falls short and how to combine them in one plan."
+description: "Lewin, Kotter, ADKAR or Prosci? Which question each change management model answers, where each one falls short, and how to combine them in one plan."
 pubDate: 2026-10-29
 updatedDate: 2026-11-09
 lang: en
@@ -13,24 +13,24 @@ contactBrief: change-basics
 author: juliane
 tags: [change management, ADKAR, Kotter, Lewin, Prosci]
 takeaways:
-  - "Lewin and Kotter look at change from the organization, ADKAR from the individual. A good plan needs both perspectives."
-  - "Kotter suits mobilizing leadership and a broad group of supporters for a large transformation. ADKAR suits finding out, per group, where a rollout is stuck."
-  - "No model replaces a sponsor in management. All the well known models assume that someone with decision rights visibly backs the change."
+  - "Lewin and Kotter look at change from the organization's perspective, ADKAR from the individual's perspective. A good plan needs both perspectives."
+  - "Kotter helps mobilize leadership and a broad group of supporters for a large transformation. ADKAR helps find out where each group is stuck in a rollout."
+  - "No model replaces an executive sponsor. All the well-known models assume that someone with decision rights visibly backs the change."
 faq:
   - q: "What change management models are there?"
     a: "The best known are Kurt Lewin's three-phase model, John Kotter's eight-step model, the ADKAR model and Prosci's 3-Phase Process. There are also phase models for the emotional reaction to change, often drawn as a change curve."
   - q: "What is the most famous change management model?"
-    a: "Historically, Kurt Lewin's three-phase model with unfreezing, moving and refreezing. In consulting practice today, Kotter's eight steps and the ADKAR model come up most."
+    a: "Historically, it is Kurt Lewin's three-phase model, with the phases unfreezing, moving and refreezing. In consulting practice today, Kotter's eight steps and the ADKAR model come up most often."
   - q: "What is the difference between Kotter and ADKAR?"
-    a: "Kotter describes what a company's leadership has to do in a transformation, from urgency to anchoring the change in the culture. ADKAR describes the five stages every individual goes through and so helps with the diagnosis per group."
+    a: "Kotter describes what a company's leadership has to do in a transformation, from urgency to anchoring the change in the culture. ADKAR describes the five stages every individual goes through and helps diagnose issues by group."
   - q: "Can change management models be combined?"
-    a: "Yes, and in larger initiatives it makes sense, because the models answer different questions. A model for the organization, such as the Prosci 3-Phase Process or Kotter, provides the frame. Within it, ADKAR shows which group needs support at which point."
+    a: "Yes, and in larger initiatives it makes sense, because the models answer different questions. A model for the organization, such as the Prosci 3-Phase Process or Kotter, provides the framework. Within it, ADKAR shows which group needs support at which point."
   - q: "Which change management model suits a CRM rollout?"
-    a: "For a CRM rollout across several departments, a frame for the organization such as the Prosci 3-Phase Process, combined with ADKAR. The frame defines affected groups, sponsors and how success is measured. ADKAR shows per group whether awareness, desire, knowledge, ability or reinforcement is missing, so that not every hurdle is answered with training."
+    a: "For a CRM rollout across several departments, use an organizational framework such as the Prosci 3-Phase Process, combined with ADKAR. The framework defines affected groups, sponsors and how success is measured. ADKAR shows which groups are missing awareness, desire, knowledge, ability or reinforcement, so that not every hurdle is addressed with training."
 draft: false
 ---
 
-The best known change management models are Kurt Lewin's three-phase model, John Kotter's eight steps, the ADKAR model and Prosci's 3-Phase Process. Above all they differ in whom they look at: Lewin and Kotter describe the change of an organization, ADKAR the change of each individual, and Prosci connects the two. I work with Prosci and ADKAR, because they show per group where a rollout is stuck. Which model fits depends on the open question: is leadership and direction missing, is it stuck with individual groups, or does a whole program need a plan?
+The best known change management models are Kurt Lewin's three-phase model, John Kotter's eight steps, the ADKAR model and Prosci's 3-Phase Process. The main difference is whose perspective they take: Lewin and Kotter describe organizational change, ADKAR describes individual change, and Prosci connects the two. I work with Prosci and ADKAR, because they show per group where a rollout is stuck. Which model fits depends on the question at hand: are leadership and direction missing, is the change stuck with individual groups, or does a whole program need a plan?
 
 ## What change management models are there?
 
@@ -53,7 +53,7 @@ Kurt Lewin, a social psychologist, described change as a sequence of three phase
 2. **Moving.** New processes, structures and behaviors are introduced and tried out.
 3. **Refreezing.** The new state is stabilised so that nobody slips back.
 
-The model is the oldest of the four and still useful, because it explains in three words why a change needs preparation and follow-up. It has drawn criticism, though. Bernard Burnes summarises it in his [re-appraisal of Lewin's approach](https://dspace.stir.ac.uk/handle/1893/21356) in the Journal of Management Studies: Lewin is said to assume a stable state, suit only small changes, ignore power and politics and be driven from the top. Burnes himself still considers the approach relevant. The attribution is disputed too: [Cummings, Bridgman and Brown](https://journals.sagepub.com/doi/10.1177/0018726715577707) argue that the linear version taught today only emerged from later interpretations. As a picture for managers Lewin works well; as a work plan it is not enough.
+The model is the oldest of the four and still useful, because it explains in three words why a change needs preparation and follow-up. It has drawn criticism, though. Bernard Burnes summarises the criticism in his [re-appraisal of Lewin's approach](https://dspace.stir.ac.uk/handle/1893/21356) in the Journal of Management Studies: Lewin is said to assume a stable state, suit only small changes, ignore power and politics and be driven from the top. Burnes himself still considers the approach relevant. The attribution of the linear version to Lewin is disputed too: [Cummings, Bridgman and Brown](https://journals.sagepub.com/doi/10.1177/0018726715577707) argue that the linear version taught today only emerged from later interpretations. As a simple illustration for managers, Lewin works well; as an implementation plan, it is not enough.
 
 ## Kotter's eight steps mobilize leaders and supporters
 
@@ -70,7 +70,7 @@ John Kotter, a professor at Harvard Business School, derived his [eight steps](h
 
 Kotter's strength is the clear mandate for leadership. Anyone responsible for a reorganisation or a new strategy finds a checklist here: is the urgency understood? Is there a coalition behind it that is more than a name on a slide? Is there a win after three months that everyone can see?
 
-The limit lies where a change gets stuck with individual groups. Kotter says little about why sales come along and inside sales do not. Kotter later developed the linear sequence into eight "accelerators" that can run in parallel.
+The limitation becomes clear when a change gets stuck with individual groups. Kotter says little about why sales gets on board and inside sales does not. Kotter later developed the linear sequence into eight "accelerators" that can run in parallel.
 
 ## What does the ADKAR model show?
 
@@ -79,31 +79,31 @@ Prosci's [ADKAR model](https://www.prosci.com/blog/adkar-model) describes five s
 - **Awareness:** I understand why something is changing.
 - **Desire:** I want to take part.
 - **Knowledge:** I know how it works.
-- **Ability:** I can do it in daily work.
+- **Ability:** I can do it in my day-to-day work.
 - **Reinforcement:** I stick with it.
 
-The stages build on each other. Their value lies in the diagnosis: when a rollout stalls, you check per group which stage is missing and pick the matching measure. If awareness is missing, the manager has to explain why something changes. If knowledge is missing, training helps. If reinforcement is missing, it takes recognition, reports and managers who follow up. That prevents a widespread reflex in projects: booking the next training session whenever usage is low.
+The stages build on each other. Their value lies in the diagnosis: when a rollout stalls, you check which stage is missing for each group and choose the appropriate measure. If awareness is missing, the manager has to explain why something is changing. If knowledge is missing, training helps. If reinforcement is missing, recognition, reports and managers who follow up are needed. That prevents a widespread reflex in projects: booking the next training session whenever usage is low.
 
-ADKAR alone is not a plan for an organization, though. It does not say who carries the change or in which order groups and sites come next.
+ADKAR alone is not a plan for an organization, though. It does not say who owns the change or in which order groups and sites come next.
 
 ## The Prosci process gives ADKAR a frame for the organization
 
-Prosci adds a frame for the organization to ADKAR, the [3-Phase Process](https://www.prosci.com/methodology/3-phase-process): prepare approach, manage change, sustain outcomes. The first phase defines which groups are affected, what changes for each, who the sponsor is and how success is measured. In the second, the plans per group run, aligned with the ADKAR stages. In the third, results are measured, gaps are closed and ownership is handed over.
+Prosci adds an organizational framework to ADKAR, the [3-Phase Process](https://www.prosci.com/methodology/3-phase-process): prepare approach, manage change, sustain outcomes. The first phase defines which groups are affected, what changes for each, who the sponsor is and how success is measured. In the second phase, the plans for each group are carried out and aligned with the ADKAR stages. In the third, results are measured, gaps are closed and ownership is handed over.
 
-This connection is why I work with Prosci: the plan for the organization and the view of the individual mesh. The research behind it adds to that. Prosci has surveyed projects about their experience since 1998. In the [12th edition of its study](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), participants name active and visible sponsorship as the biggest contributor to success. Because Prosci sells the method itself, I read this as a survey of practitioners, not as independent proof that it works.
+This connection is why I work with Prosci: the organizational plan and the individual perspective fit together. The research behind it adds another reason. Prosci has surveyed practitioners about their project experience since 1998. In the [12th edition of its study](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), participants name active and visible sponsorship as the biggest contributor to success. Because Prosci sells the method itself, I read this as a survey of practitioners, not as independent proof that it works.
 
 ```hinweis tipp
-Models can be combined. Kotter or the Prosci process provide the frame for the organization; within it, ADKAR shows which group needs support at which point.
+Models can be combined. Kotter or the Prosci process provide the framework for the organization; within it, ADKAR shows which group needs support at which point.
 ```
 
 ## Which model fits which change?
 
-A rule of thumb by kind of change:
+A rule of thumb by type of change:
 
-- **One team, one new process.** ADKAR as a checklist for the manager is enough. A separate plan for the organization would be too much.
-- **New software for several departments.** The Prosci process with ADKAR per group. In a CRM rollout, field sales, inside sales and service have different questions, and a diagnosis per group keeps training from becoming the default answer to every problem.
-- **A transformation across countries and divisions.** The Prosci process as the frame, Kotter as a checklist for leadership, ADKAR per group and country. In initiatives like this the plan per country gets demanding, and without a sponsor on site the change remains an announcement from headquarters.
+- **One team, one new process.** ADKAR is enough as a checklist for the manager. A separate plan for the organization would be too much.
+- **New software for several departments.** Use the Prosci process with ADKAR for each group. In a CRM rollout, field sales, inside sales and service have different questions, and a diagnosis per group keeps training from becoming the default answer to every problem.
+- **A transformation across countries and divisions.** Use the Prosci process as the framework, Kotter as a checklist for leadership, and ADKAR for each group and country. In initiatives like this, planning for each country becomes demanding, and without a local sponsor the change remains an announcement from headquarters.
 
-I know both ends of this scale from my projects: a global Salesforce Sales Cloud rollout with more than 500 users and an IT transformation at an insurer with more than 20,000 people affected in 19 countries. The role the models play in a Salesforce program is described with Fabian Kramer in the [change management masterclass](../../masterclass/change-management/); the basics are in [what is change management?](../what-is-change-management/). How we apply this in programs is described under [Salesforce change management consulting](../../services/change-management-salesforce/).
+I know both ends of this scale from my projects: a global Salesforce Sales Cloud rollout with more than 500 users and an IT transformation at an insurer with more than 20,000 people affected in 19 countries. Fabian Kramer and I describe the role these models play in a Salesforce program in the [change management masterclass](../../masterclass/change-management/); the basics are in [what is change management?](../what-is-change-management/). We describe how we apply this in programs on the [Salesforce change management consulting](../../services/change-management-salesforce/) page.
 
 *Prosci and ADKAR are registered trademarks of Prosci, Inc.*
