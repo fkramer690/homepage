@@ -34,7 +34,7 @@ Once the features are designed, three questions decide a Manufacturing Cloud pro
 
 ## Which system owns which object?
 
-Before anyone builds an interface, every object needs a leading system and a named owner. Manufacturing Cloud produces few of its numbers itself. A sales agreement from [chapter 2](../agreements-and-forecasting/) compares plan against actuals, and the actuals come from SAP. Rebates from [chapter 3](../dealer-and-partner-channel/) and warranty from [chapter 4](../warranty-and-after-sales/) run the other way: Salesforce approves, SAP pays.
+Before anyone builds an interface, every object needs a leading system and a named owner. Manufacturing Cloud produces few of its numbers itself. A sales agreement from [chapter 2](../agreements-and-forecasting/) compares plan against actuals, and the actuals come from SAP. Rebates from [chapter 3](../dealer-and-partner-channel/) and warranty from [chapter 4](../warranty-and-after-sales/) work the other way round: Salesforce approves, SAP pays.
 
 This is how I would split ownership at a typical manufacturer running SAP:
 
@@ -106,7 +106,7 @@ Two numbers drive the cost. A standard or custom action costs 20 Flex Credits ac
 source: Salesforce Flex Credits rate card, Agentforce pricing announcement and Manufacturing Cloud pricing page
 ```
 
-The most visible industry reference shows where to start. In the [Siemens and Salesforce announcement](https://www.salesforce.com/news/press-releases/2026/09/15/siemens-agentforce-redefine-industrial-sales-service/) of 15 September 2026, two agents for inbound leads are live, for 18,000 sellers in 132 countries. Teamcenter answers for service and supplier onboarding in SAP are written in the future tense. In [Siemens and Agentforce: lessons for manufacturers](../../../blog/siemens-agentforce-lessons-for-manufacturers/) I derive an order from it: read-only with high volume first, then reading from the ERP, then answers from PLM and serial numbers, and write steps into the ERP last. Which agents exist today for sales, service and warranty is in the [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/) chapter.
+The most visible industry reference shows where to start. In the [Siemens and Salesforce announcement](https://www.salesforce.com/news/press-releases/2026/09/15/siemens-agentforce-redefine-industrial-sales-service/) of 15 September 2026, two agents for inbound leads are live, for 18,000 sellers in 132 countries. Teamcenter answers for service and supplier onboarding in SAP are only announced. In [Siemens and Agentforce: lessons for manufacturers](../../../blog/siemens-agentforce-lessons-for-manufacturers/) I derive an order from it: read-only with high volume first, then reading from the ERP, then answers from PLM and serial numbers, and write steps into the ERP last. Which agents exist today for sales, service and warranty is in the [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/) chapter.
 
 ## One agent for dealers in many languages
 
@@ -116,7 +116,7 @@ Knowledge costs more. According to the same guide, the retriever filters out kno
 
 ## In which order do you roll out Manufacturing Cloud globally?
 
-First the goal is fixed, usually harmonising processes. That leads to a global template with the decisions that are hard to change after the first country: the account level of sales agreements, the rule for when a configuration becomes its own product, and what customers and dealers see in the portal. In [Rolling out Manufacturing Cloud globally](../../../blog/manufacturing-cloud-global-rollout/) I describe the rules I derive from that:
+First the goal has to be set, usually harmonizing processes. That leads to a global template with the decisions that are hard to change after the first country: the account level of sales agreements, the rule for when a configuration becomes its own product, and what customers and dealers see in the portal. In [Rolling out Manufacturing Cloud globally](../../../blog/manufacturing-cloud-global-rollout/) I describe the rules I derive from that:
 
 | Rule | What it means |
 |---|---|
@@ -143,4 +143,4 @@ My test per release is deliberately small: one forecast regeneration, one actual
 
 ## First step: agree the object list with the SAP team
 
-Agree with the SAP team which system owns which object before the first interface is built, and settle the template in the first large country before the second country starts planning. This chapter closes the masterclass. It assumes the decisions from the business case, agreements, dealer channel and warranty, and settles what they need in operation and across many countries. Before it came [chapter 4 on warranty and after-sales](../warranty-and-after-sales/), and all five chapters are on the [overview page](../).
+Agree with the SAP team which system owns which object before the first interface is built, and settle the template in the first large country before the second country starts planning. This chapter closes the masterclass. It assumes the decisions from the business case, agreements, dealer channel and warranty, and settles what they need in operation and across many countries. The previous chapter is [chapter 4 on warranty and after-sales](../warranty-and-after-sales/), and all five chapters are on the [overview page](../).

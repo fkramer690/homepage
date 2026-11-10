@@ -22,7 +22,7 @@ faq:
   - q: "Wie viele Key User braucht ein Hersteller?"
     a: "Einen pro Team, Standort oder Land, bei kritischen Bereichen zwei. Fällt der einzige Key User eines Landes in der Woche nach dem Go-live aus, fällt die Unterstützung für das ganze Land aus."
   - q: "Ersetzt ein Key User den Support?"
-    a: "Nein. Er beantwortet Fragen zur Nutzung, ändert aber keine Konfiguration und behebt keine Fehler in Schnittstellen. Fehler gehen weiter über das Ticketsystem, damit sie gezählt und priorisiert werden."
+    a: "Nein. Er beantwortet Fragen zur Nutzung, ändert aber keine Konfiguration und behebt keine Fehler in Schnittstellen. Fehler werden weiter über das Ticketsystem gemeldet, damit sie gezählt und priorisiert werden."
 draft: false
 ---
 
@@ -63,14 +63,14 @@ Ein einfacher Weg zu den Kandidaten: Fragen Sie in jedem Team, wen die Leute heu
 Ohne freigestellte Zeit bleibt Key User ein Etikett. Den Bedarf bestimmt der Umfang. Für die Planung rechne ich mit vier halbtägigen Workshops, einer Woche Abnahmetest mit halber Kapazität und den ersten zwei Wochen nach dem Go-live mit einem Drittel. Das sind knapp acht Arbeitstage, Vorbereitung und Kurzschulungen für Kollegen kommen hinzu. Im Betrieb bleiben ein paar Stunden im Monat, meist rund um Releases.
 
 ```hinweis tipp
-Halten Sie mit der Führungskraft schriftlich fest, in welchen Wochen und wie viele Stunden der Key User fürs Projekt arbeitet und wer so lange seine Aufgaben macht. Das Papier gehört in den Sponsor-Plan aus Kapitel 2.
+Halten Sie mit der Führungskraft schriftlich fest, in welchen Wochen und wie viele Stunden der Key User fürs Projekt arbeitet und wer so lange seine Aufgaben übernimmt. Das Papier gehört in den Sponsor-Plan aus Kapitel 2.
 ```
 
 Anerkennung, die andere sehen, kostet nichts und wirkt. Die Projektarbeit gehört ins Jahresgespräch. Das entscheidet darüber, ob sich beim nächsten Projekt wieder jemand meldet.
 
 ## Schulung kurz vor dem Go-live, mit Fällen aus dem eigenen Alltag
 
-Eine Schulung zwei Monate vor dem Go-live ist vergessen, wenn das System kommt. Eine Schulung mit erfundenen Beispieldaten zeigt die Funktion, aber nicht den eigenen Fall. Ich plane Schulungen deshalb nach drei Regeln:
+Eine Schulung zwei Monate vor dem Go-live ist vergessen, wenn das System live geht. Eine Schulung mit erfundenen Beispieldaten zeigt die Funktion, aber nicht den eigenen Fall. Ich plane Schulungen deshalb nach drei Regeln:
 
 1. **Kurz vor dem Go-live.** Wenige Tage bis zwei Wochen vorher, damit das Wissen bis zum ersten Kundenfall hält.
 2. **Am echten Fall.** Der Innendienst legt ein Angebot für einen Kunden an, den er kennt, mit den Produkten, die er verkauft. Dafür braucht die Schulungsumgebung realistische Daten.

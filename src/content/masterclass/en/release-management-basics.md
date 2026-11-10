@@ -24,7 +24,7 @@ faq:
   - q: "Do I need a commercial DevOps tool to start?"
     a: "No. A Git repository, the Salesforce CLI and an open-source option such as sfdx-hardis are enough for a complete pipeline. Commercial platforms such as Gearset, Copado or Flosum add a managed interface and vendor support. What matters is that the choice is made early and applies to every partner."
   - q: "Who should own the release pipeline?"
-    a: "You, the client. Repository, pipeline and tools are in your name, and partners work in them with personal users. That keeps the process stable when a partner changes."
+    a: "You, the client. Repository, pipeline and tools are in your name, and partners work in them with personal users. That keeps the process stable when you change partners."
 draft: false
 ---
 
@@ -47,7 +47,7 @@ title: Seven terms as I use them in this masterclass
 
 For decision makers the difference between deployment and release matters most. Deployments can run daily, in sandboxes even several times a day. A release is a business decision: the head of service decides from which day field technicians use the new job completion screen. If you mix the two up, you either plan too few deployments and get huge, risky packages, or you switch features on before the business is ready.
 
-One set of dates is never yours. According to its [release overview](https://www.salesforce.com/products/innovation/releases/), Salesforce ships three seasonal releases a year, typically Spring in February, Summer in June and Winter in October, with a sandbox preview of four to six weeks beforehand. Your release calendar has to work around these dates. [Chapter 8](../release-planning-salesforce-releases/) covers how.
+Some dates are never yours to set. According to its [release overview](https://www.salesforce.com/products/innovation/releases/), Salesforce ships three seasonal releases a year, typically Spring in February, Summer in June and Winter in October, with a sandbox preview of four to six weeks beforehand. Your release calendar has to work around these dates. [Chapter 8](../release-planning-salesforce-releases/) covers how.
 
 ## What do bad releases cost in a program with several partners?
 
@@ -129,7 +129,7 @@ The masterclass follows one company along this path. Each chapter builds on the 
 | 4 | [Tools compared](../devops-tools-compared/) | Salesforce standard tooling, open source or a commercial platform? |
 | 5 | [Building the pipeline](../building-the-pipeline/) | How do pull request, validation, tests and deployment work? |
 | 6 | [Quality, tests, reviews](../quality-tests-reviews/) | Which quality gates must every change pass? |
-| 7 | [Data and configuration](../data-and-configuration/) | How do price books, product data and configuration records move along? |
+| 7 | [Data and configuration](../data-and-configuration/) | How do price books, product data and configuration records move through the pipeline? |
 | 8 | [Release planning](../release-planning-salesforce-releases/) | How do your own calendar and three Salesforce releases fit together? |
 | 9 | [Operations and monitoring](../operations-monitoring-backup/) | What happens after go-live, and how do you measure stability? |
 | 10 | [Rollout and roadmap](../rollout-roadmap/) | In which order do you introduce all of this? |
@@ -145,6 +145,6 @@ Six questions are enough for a first assessment. You should be able to answer ea
 - Does every change go through a pull request with a review, including those from the partner with the biggest team?
 - Which version is in UAT right now, and how do you know?
 - Who approves a release, and who decides on a hotfix?
-- How long does it take to take back a faulty change in production?
+- How long does it take to roll back a faulty change in production?
 
 If you hesitate on more than two of them, your program is at stage 1 or 2. Then settle ownership and roles first and the tool after that. The path continues in [chapter 2: ownership and roles](../release-process-ownership-roles/).
