@@ -24,7 +24,7 @@ faq:
     a: "At the start often three to five days a week, when target picture, standards and partner selection are on the table. Once the programme runs steadily, two days a week usually cover reviews, decisions and the meeting with the technical leads."
   - q: "Does a client-side architect work against the partner?"
     a: "No. The role makes sure the partner gets clear requirements and decisions are made quickly. Good partners value that because it shortens discussions about responsibilities and change requests."
-draft: true
+draft: false
 ---
 
 A client-side Salesforce architect and a system integrator's architect can have the same expertise. The difference is who they work for. The system integrator's architect works for a company that earns from effort, scope and follow-up business; the client-side Salesforce enterprise architect works for the manufacturer that has to run the org for ten years. With one partner, a modest scope and an experienced internal IT team, the system integrator's architect is usually enough. Once two partners build in one org, SAP is deeply connected or a partner switch is due, the client needs a technical mandate of its own.

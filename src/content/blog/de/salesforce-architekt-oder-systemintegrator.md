@@ -24,7 +24,7 @@ faq:
     a: "Zum Start oft drei bis fünf Tage pro Woche, wenn Zielbild, Standards und Partnerauswahl anstehen. Läuft das Programm stabil, reichen meist zwei Tage pro Woche für Reviews, Entscheidungen und den Termin mit den technischen Leads."
   - q: "Arbeitet ein Architekt auf Kundenseite gegen den Partner?"
     a: "Nein. Er sorgt dafür, dass der Partner klare Vorgaben bekommt und Entscheidungen schnell fallen. Gute Partner schätzen das, weil es Diskussionen über Zuständigkeiten und Change Requests verkürzt."
-draft: true
+draft: false
 ---
 
 Ein Salesforce-Architekt auf Kundenseite und der Architekt eines Systemintegrators können dasselbe Fachwissen haben. Der Unterschied liegt darin, für wen sie arbeiten. Der Architekt des Systemintegrators arbeitet für eine Firma, die an Aufwand, Umfang und Folgegeschäft verdient; der Salesforce Enterprise Architect auf Kundenseite arbeitet für den Hersteller, der die Org zehn Jahre betreiben muss. Mit einem Partner, kleinem Umfang und erfahrener interner IT reicht der Architekt des Systemintegrators meist aus. Sobald zwei Partner an einer Org bauen, SAP tief angebunden wird oder ein Partnerwechsel ansteht, braucht der Kunde ein eigenes technisches Mandat.
