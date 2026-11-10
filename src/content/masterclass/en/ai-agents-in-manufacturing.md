@@ -8,24 +8,24 @@ chapter: 10
 short: "Agents in manufacturing"
 summary: "Where Agentforce agents work for manufacturers today, how to build, test and secure them with rules, and what is only announced."
 takeaways:
-  - "Whether a dealer gets warranty or which credit limit applies is decided by Agent Script, Flow or the ERP. The model understands and phrases."
+  - "Whether a dealer gets warranty or which credit limit applies is decided by Agent Script, Flow or the ERP. The model only handles the language."
   - "An agent reaches production like code: as metadata in Git, with test cases, a pass rate agreed in advance and monitoring of sessions after go-live."
   - "Every field that dealers or customers can write is untrusted input for an agent. Protect every connected app like a password."
-  - "According to the September 2026 announcement, two Siemens agents for inbound leads are live. Teamcenter, suppliers and SAP are in the future tense."
+  - "According to the September 2026 announcement, two Siemens agents for inbound leads are live. Teamcenter, suppliers and SAP are only announced."
 articles: [agent-script-deterministic-rules, warranty-adjudication-agent-winter-27, field-service-ai-agents-today, agentforce-sap-order-status, prompt-injection-dealer-portals, oauth-connected-apps-ai-lessons]
 faq:
   - q: "Which agent is the best starting point for a machine builder?"
-    a: "Usually the agent for dealer enquiries on order status and delivery dates, or proactive maintenance booking in field service. Both have high volume and clear rules. Warranty pre-checks follow once assets with serial number and warranty start are complete in Salesforce."
+    a: "Usually the agent for dealer enquiries on order status and delivery dates, or proactive maintenance booking in field service. Both have high volume and clear rules. Warranty pre-checks follow once assets are recorded in Salesforce with serial number and warranty start."
   - q: "Do I need Manufacturing Cloud for agents in manufacturing?"
     a: "For the manufacturing templates and the warranty agents, yes; Salesforce lists them under Manufacturing Cloud and Agentforce for Manufacturing. An agent that reads order status from SAP through a MuleSoft API can also be built in Service Cloud."
   - q: "How do I stop an agent from being manipulated through a dealer portal?"
-    a: "Treat every free-text field from portals, forms or email as untrusted, enforce Trusted URLs and give the agent a user with minimal permissions. Decisions with monetary value belong in deterministic logic that no free text can talk round."
+    a: "Treat every free-text field from portals, forms or email as untrusted, enforce Trusted URLs and give the agent a user with minimal permissions. Decisions with monetary value belong in deterministic logic that no free text can override."
   - q: "What does an agent in manufacturing cost to run?"
     a: "Agentforce bills per action: 20 Flex Credits in production, 16 in a sandbox. At $500 per 100,000 credits that is $0.10 per action. Data 360 for documents, integration work and, for some features, per-user licenses come on top."
 draft: false
 ---
 
-AI agents in manufacturing work today where a process has high volume, clear rules, maintained asset data and access to the ERP: dealer enquiries on order status and delivery dates, booking planned maintenance in field service and, once the installed base is right, pre-checking warranty claims. They are built to one rule: decisions in logic, language in the model. They reach production like code, with tests, and every field a dealer writes counts as outside input. Much of what has been announced, Siemens included, is not live yet.
+AI agents in manufacturing work today where a process has high volume, clear rules, maintained asset data and access to the ERP: dealer enquiries on order status and delivery dates, booking planned maintenance in field service and, once the installed base data is correct, pre-checking warranty claims. They are built to one rule: decisions in logic, language in the model. They reach production like code, with tests, and every field a dealer writes counts as outside input. Much of what has been announced, Siemens included, is not live yet.
 
 ## Which agents are available to manufacturers today?
 
@@ -47,22 +47,22 @@ Salesforce offers three groups of building blocks for manufacturing: templates f
 
 On licensing: according to the [Manufacturing Cloud page](https://www.salesforce.com/manufacturing/cloud/), only the Max editions include the full Agentforce for Industries suite, at $650 (Sales Max or Service Max) or $700 (Sales & Service Max) per user per month on an annual contract. Core editions include Flex Credits for AI. On 3 September 2026 Salesforce said new pricing for the Industries editions would come ["later this fall"](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/). I found no separate license statement for the warranty adjudication agent in the sources I could open.
 
-For a machine builder I sort this list by three questions: how many similar cases are there per month, where does the rule live, and is the data behind it maintained? That usually gives this order: dealer order status and planned maintenance first, then the job report, then warranty. Which field service features pay off is covered in [AI agents in field service](../../../blog/field-service-ai-agents-what-works-today/), what has to be in place before the warranty agent in [Warranty Claims Adjudication Agent: what to prepare](../../../blog/warranty-claims-adjudication-agent/). Whether an agent is the right next step at all, I check with the criteria in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/). How to introduce agents in field service step by step is in [chapter 5 of the Field Service masterclass](../../field-service/field-service-ai-agents-rollout/).
+For a machine builder I sort this list by three questions: how many similar cases are there per month, where is the rule defined, and is the data behind it maintained? That usually gives this order: dealer order status and planned maintenance first, then the job report, then warranty. Which field service features pay off is covered in [AI agents in field service](../../../blog/field-service-ai-agents-what-works-today/), what has to be in place before the warranty agent in [Warranty Claims Adjudication Agent: what to prepare](../../../blog/warranty-claims-adjudication-agent/). Whether an agent is the right next step at all, I check with the criteria in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/). How to introduce agents in field service step by step is in [chapter 5 of the Field Service masterclass](../../field-service/field-service-ai-agents-rollout/).
 
 ## Same answer twice: rules in logic, language in the model
 
 In the earlier Agentforce, the language model made every decision at runtime, from intent to action selection. Identical inputs could take different paths. For a warranty rejection a dealer disputes, that is unusable. The new Agentforce with hybrid reasoning has been generally available since February 2026, and Salesforce Architects states the rule in its [guide to Agent Script](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script): "if you can express a decision as code, it should be written as logic."
 
-Agent Script is the declarative language that describes an agent. Logic instructions run as code with no model call; prompt instructions are interpreted by the model. An action with an `available when` condition disappears from the model's tool list while the condition is false. A dealer over the credit limit gets no order, however they phrase the request. How gates, `before_reasoning` and escalation fit together is described in [Agent Script: business rules don't belong in the LLM](../../../blog/agent-script-deterministic-rules/).
+Agent Script is the declarative language that describes an agent. Logic instructions are executed as code without a model call; prompt instructions are interpreted by the model. An action with an `available when` condition disappears from the model's tool list while the condition is false. A dealer over the credit limit cannot place an order, however they phrase the request. How gates, `before_reasoning` and escalation fit together is described in [Agent Script: business rules don't belong in the LLM](../../../blog/agent-script-deterministic-rules/).
 
-In manufacturing most rules already have a home, and the agent should ask there instead of rebuilding them:
+In manufacturing most rules are already defined in a system, and the agent should query them there instead of rebuilding them:
 
 | Layer | Systems | Agent's job | Integration |
 |---|---|---|---|
 | Front office | Manufacturing Cloud, Service Cloud, Field Service | Dealer enquiries, quotes, warranty, scheduling | native, rules in Agent Script, Flow and Business Rules Engine |
 | Back office | SAP S/4, proALPHA | Read order status, availability, credit status | MuleSoft API [synced to API Catalog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog) as an agent action |
 | Engineering | PLM such as Teamcenter | Spare parts by serial number, technically valid upgrades | API; announced at Siemens |
-| Legacy | ERP or MES without API | Capture orders from PDFs | MuleSoft IDP with RPA, documents under [80 percent confidence go to a human](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce), or the Systems Integration Agent |
+| Legacy | ERP or MES without API | Capture orders from PDFs | MuleSoft IDP with RPA, documents under [80 percent confidence are reviewed by a human](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce), or the Systems Integration Agent |
 
 On the API Catalog route, Salesforce creates Named Credentials and External Services automatically. I found no official reference architecture specifically for Agentforce with SAP S/4HANA; the pattern comes from general MuleSoft documentation. What it looks like for order status and what stays deterministic is in [Agentforce and SAP order status](../../../blog/agentforce-sap-order-status-mulesoft/), the options without an interface in [legacy ERP without an API](../../../blog/legacy-erp-without-api-ai-agents/).
 
@@ -78,9 +78,9 @@ An Agentforce agent is now a set of metadata that a coding agent can help write.
 | Build | Generate Agent Script as an AiAuthoringBundle and validate it locally | `sf agent generate authoring-bundle`, `sf agent validate authoring-bundle` |
 | Test | Smoke test in preview, regression from YAML test cases; a model acting as judge grades the expected outcome | `sf agent preview`, `sf agent test run` |
 | Release | Deploy, publish as an inactive version, activate, version in Git | `sf agent publish authoring-bundle`, `sf agent activate` |
-| Operate | Analyse sessions in the Session Trace Data Model in Data 360 | observing-agentforce skill |
+| Operate | Analyze sessions in the Session Trace Data Model in Data 360 | observing-agentforce skill |
 
-For decision makers this means an agent is a release artefact like Apex. It belongs in the same pipeline with review and approval, and I would rule out changes directly in the production org's builder in the contract. Because a model grades answer quality, results vary between runs. Go-live therefore needs a pass rate agreed in advance, and Salesforce does not give one. My split by risk, with 100 percent for business rules, is in [testing Agentforce agents before go-live](../../../blog/testing-agentforce-agents-before-go-live/).
+For decision makers this means an agent is a release artifact like Apex. It belongs in the same pipeline with review and approval, and I would rule out changes directly in the production org's builder in the contract. Because a model grades answer quality, results vary between runs. Go-live therefore needs a pass rate agreed in advance, and Salesforce does not give one. My split by risk, with 100 percent for business rules, is in [testing Agentforce agents before go-live](../../../blog/testing-agentforce-agents-before-go-live/).
 
 Dreamforce 2026 added tools for operations: Agent Health Monitoring with 16+ metrics is GA and Agent Optimizer was slated for GA in October, while A/B experimentation (from October) and voice and conversation testing are in beta. If you plan a German-language voice agent, you test the voice side with beta tools for now. I would build that into the schedule and acceptance criteria. The automated checks for code are in [chapter 8](../ai-code-best-practices/).
 
@@ -95,7 +95,7 @@ Two incidents from 2025 show where the attack surface is:
 
 At manufacturers these fields are everywhere: Web-to-Lead, dealer portals on Experience Cloud, email-to-case, the fault description in a warranty claim, distributor uploads. MCP servers, Salesforce in Claude and third-party agents also add OAuth connections, exactly the kind of access abused in the Drift incident. My minimum list before the first agent:
 
-1. **One user per agent and integration** with minimal permissions. Hosted MCP runs every call with the permissions of the user who authorised the connection, according to the [security page](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html). An admin has no business there.
+1. **One user per agent and integration** with minimal permissions. Hosted MCP runs every call with the permissions of the user who authorized the connection, according to the [security page](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html). Admin permissions do not belong there.
 2. **Read-only servers first**, such as sobject-reads, write tools only after approval.
 3. **Enforce Trusted URLs** and check the allowlist regularly for expired domains.
 4. **No secrets in records**; treat connected app tokens like passwords.
@@ -108,7 +108,7 @@ The Hosted MCP security page does not mention prompt injection or IP restriction
 
 ## What do the industry references show?
 
-**Siemens** is the most visible industrial reference. According to the [announcement of 15 September 2026](https://investor.salesforce.com/news/news-details/2026/Siemens-and-Salesforce-Deepen-AI-Partnership-to-Redefine-Industrial-Sales-and-Service/default.aspx), an engagement agent and a qualification agent work in Sales Cloud and route inbound leads to 18,000 sellers. Before, more than 2,500 unqualified leads arrived each month; now Siemens engages all inbound leads across 132 countries. Teamcenter "will work with Agentforce", and an SDR agent for distributors, Slackbot for supplier onboarding and Agentforce Operations for the final steps in SAP are also in the future tense. Roland Busch speaks of "a virtual engineer in the hands of service technicians and salespersons". Anyone arguing internally that "Siemens already does this" should read the tense of the release.
+**Siemens** is the most visible industrial reference. According to the [announcement of 15 September 2026](https://investor.salesforce.com/news/news-details/2026/Siemens-and-Salesforce-Deepen-AI-Partnership-to-Redefine-Industrial-Sales-and-Service/default.aspx), an engagement agent and a qualification agent work in Sales Cloud and route inbound leads to 18,000 sellers. Before, more than 2,500 unqualified leads arrived each month; now Siemens engages all inbound leads across 132 countries. Teamcenter "will work with Agentforce", and an SDR agent for distributors, Slackbot for supplier onboarding and Agentforce Operations for the final steps in SAP are also only announced. Roland Busch speaks of "a virtual engineer in the hands of service technicians and salespersons". Anyone arguing internally that "Siemens already does this" should check the tense of the release.
 
 **Brenntag**, a chemical distributor rather than a manufacturer in the strict sense, became the first Agentforce customer in Germany in [November 2024](https://corporate.brenntag.com/en/media/news/brenntag-implements-autonomous-ai-agents-on-its-salesforce-platform-as-first-customer-in-germany.html). Its agents answer order and product questions around the clock, initially as a pilot for selected customers and supply partners. Brenntag published no figures.
 
@@ -135,14 +135,14 @@ Data work and inventory | in parallel · IT
 Maintenance booking | Quarter 2
   The agent books maintenance for customers with maintained downtime windows. For everyone else it proposes slots and hands over to dispatch.
 Warranty pre-check | Quarters 3 and 4
-  Only once the asset data is right does the agent check coverage. The rule stays in the expression set; amounts above the agreed limit and every fraud flag go to a claims handler.
+  Only once the asset data is correct does the agent check coverage. The rule stays in the expression set; amounts above the agreed limit and every fraud flag are passed to a claims handler.
 ```
 
 **Deliberately not in the plan:** troubleshooting for special-purpose machines while manuals are not mapped to serial numbers, and agents in SAP processes that the ERP decides itself today.
 
-At year end three agents run, all under the same rules: own user, rules in logic, tests before every change.
+At year end three agents are in operation, all under the same rules: own user, rules in logic, tests before every change.
 
-## What is coming until 2028?
+## What is coming by 2028?
 
 ```zeitleiste
 2026-12-02 | EU AI Act: marking obligation for generative systems on the market before 2 August 2026
