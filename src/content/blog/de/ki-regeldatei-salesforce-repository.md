@@ -13,11 +13,11 @@ takeaways:
   - "Sobald intern oder beim Partner mit Agenten programmiert wird, braucht das gemeinsame Repository eine Regeldatei: CLAUDE.md, AGENTS.md oder .vibes/rules/."
   - "Die Datei liegt im Repository des Kunden und hat dort eine verantwortliche Person; Partner schlagen Änderungen per Pull Request vor."
   - "Claude behandelt CLAUDE.md laut Anthropic als Kontext. Was immer gelten muss, gehört in Deny-Regeln, Hooks, Pipeline-Gates und Branch Protection."
-  - "Claude Code liest AGENTS.md nur ohne CLAUDE.md; eine einzeilige CLAUDE.md, die sie importiert, sorgt dafür, dass alle Werkzeuge dieselbe Datei nutzen."
+  - "Claude Code liest AGENTS.md nur, wenn keine CLAUDE.md existiert; eine einzeilige CLAUDE.md, die sie importiert, hält eine gemeinsame Datei für alle Werkzeuge."
   - "Schützen Sie die Regeldateien mit CODEOWNERS, denn Copilot Code Review liest die Anweisungen aus dem Head-Branch des Pull Requests."
 faq:
   - q: "Brauche ich für jedes Coding-Werkzeug eine eigene KI-Regeldatei?"
-    a: "Meist nicht. Eine AGENTS.md bedient Codex und Copilot, Claude Code über eine kurze CLAUDE.md, die sie importiert. Agentforce Vibes liest .vibes/rules/, und die Vibes-Dokumentation erwähnt AGENTS.md nicht. Pflegen Sie dort eine kurze Regel und ändern Sie sie im selben Pull Request."
+    a: "Meist nicht. Eine AGENTS.md bedient Codex und Copilot; Claude Code nutzt sie über eine kurze CLAUDE.md, die sie importiert. Agentforce Vibes liest .vibes/rules/, und die Vibes-Dokumentation erwähnt AGENTS.md nicht. Pflegen Sie dort eine kurze Regel und ändern Sie sie im selben Pull Request."
   - q: "Wer sollte die KI-Regeldatei in einem Partnerprojekt verantworten?"
     a: "Eine benannte Person auf Kundenseite, meist der Lead-Architekt oder der interne Tech Lead, plus Vertretung. Partner schlagen Änderungen per Pull Request vor; ein CODEOWNERS-Eintrag mit Branch Protection macht die Freigabe der verantwortlichen Person zur Pflicht."
   - q: "Verhindert eine Regeldatei, dass ein Agent nach Produktion deployt?"
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Eine KI-Regeldatei ist die Markdown-Datei, die ein Coding-Agent als dauerhafte Anweisung lädt, meist zu Beginn einer Sitzung: CLAUDE.md bei Claude Code, AGENTS.md bei Codex und Copilot, Regeldateien in .vibes/rules/ bei Agentforce Vibes. Aus meiner Sicht braucht ein gemeinsames Salesforce-Repository eine, sobald intern oder beim Partner mit einem Agenten programmiert wird, sonst folgt jedes Werkzeug und jeder Partner eigenen Konventionen. Die Datei gehört dem Kunden und hat auf Ihrer Seite eine benannte verantwortliche Person, meist den Lead-Architekten. Sie leitet den Agenten an. Was jedes Mal gelten muss, gehört in Settings, Hooks und Pipeline.
+Eine KI-Regeldatei ist die Markdown-Datei, die ein Coding-Agent als dauerhafte Anweisung lädt, meist zu Beginn einer Sitzung: CLAUDE.md bei Claude Code, AGENTS.md bei Codex und Copilot, Regeldateien in .vibes/rules/ bei Agentforce Vibes. Aus meiner Sicht braucht ein gemeinsames Salesforce-Repository eine KI-Regeldatei, sobald intern oder beim Partner mit einem Agenten programmiert wird, sonst folgen jedes Werkzeug und jeder Partner eigenen Konventionen. Die Datei gehört dem Kunden; auf Ihrer Seite ist dafür eine verantwortliche Person benannt, meist der Lead-Architekt. Sie leitet den Agenten an. Was jedes Mal gelten muss, gehört in Settings, Hooks und die Pipeline.
 
 ## Was ist eine KI-Regeldatei, und welches Werkzeug liest welche Datei?
 
@@ -52,9 +52,9 @@ Legt sich ein Entwickler eine persönliche CLAUDE.local.md an, liest Claude die 
 
 ## Die Regeldatei gehört dem Kunden
 
-Partner bringen gern ihre eigene Vorlage mit. Das geht am Anfang schnell und wird später teuer, aus den Gründen in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/): Wer die Regeln schreibt, setzt den Standard. Für Regeldateien sehe ich drei konkrete Gründe.
+Partner bringen gern ihre eigene Vorlage mit. Das geht am Anfang schnell, wird aber später aus den Gründen teuer, die ich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/) beschreibe: Wer die Regeln schreibt, setzt den Standard. Für Regeldateien sehe ich drei konkrete Gründe.
 
-**Die Datei hält Entscheidungen fest, die nur Sie treffen können.** Welche API-Version neue Apex-Klassen nutzen, welcher Named Credential der einzige Weg zu SAP ist, welches von zwei Garantiedatumsfeldern gepflegt wird. Die Zeile zur API-Version ist keine Formalie: Ab API 67.0 läuft Apex laut [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm) mit Datenbankzugriffen standardmäßig im User Mode, und Klassen ohne Sharing-Deklaration laufen `with sharing`. Das sind zwei getrennte Stellschrauben. Ob eine alte Klasse auf 67.0 oder höher wechseln darf, ist eine Architekturentscheidung für Ihre Org, keine Gewohnheit des Partners.
+**Die Datei hält Entscheidungen fest, die nur Sie treffen können.** Dazu gehört, welche API-Version neue Apex-Klassen nutzen, welcher Named Credential der einzige Weg zu SAP ist und welches von zwei Garantiedatumsfeldern gepflegt wird. Die Zeile zur API-Version ist keine Formalie: Ab API 67.0 läuft Apex laut [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm) bei Datenbankzugriffen standardmäßig im User Mode, und Klassen ohne Sharing-Deklaration laufen `with sharing`. Das sind zwei getrennte Stellschrauben. Ob eine alte Klasse auf 67.0 oder höher wechseln darf, ist eine Architekturentscheidung für Ihre Org, keine Gewohnheit des Partners.
 
 **Die Datei überdauert den Partner.** Endet ein Auftrag, bleiben die Konventionen in Ihrem Repository.
 
@@ -66,7 +66,7 @@ Verantwortung heißt: Eine benannte Person auf Kundenseite gibt jede Änderung f
 
 Anthropic benennt die Grenze klar: Claude behandelt CLAUDE.md-Dateien „as context, not enforced configuration“. In den [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices) heißt es weiter: „If something has to happen every time, make it a hook, a deny rule, or a managed setting. CLAUDE.md is for guidelines, and Claude is allowed to decide a guideline doesn't apply.“ OpenAI ergänzt zur Länge: „A short, accurate AGENTS.md is more useful than a long file full of vague rules.“
 
-Die Datei enthält also, was der Agent nicht im Code sieht. Anthropics Liste: die genauen Befehle, mit denen sich Arbeit prüfen lässt, Stellen, an denen der Code in die Irre führt, Entscheidungen, die nirgends im Repository stehen, und „anything you've had to correct twice already“. Die Memory-Doku nennt als Ziel unter 200 Zeilen pro Datei. Für das Repository eines Maschinenbauers könnten die Abschnitte so aussehen. Die Datei selbst halte ich englisch, damit Nearshore-Teams und Partner sie ohne Übersetzung lesen:
+Die Datei enthält also, was der Agent nicht im Code sieht. Anthropics Liste: die genauen Befehle, mit denen sich Arbeit prüfen lässt, Stellen, an denen der Code in die Irre führt, Entscheidungen, die nirgends im Repository stehen, und „anything you've had to correct twice already“. Die Memory-Doku nennt weniger als 200 Zeilen pro Datei als Ziel. Für das Repository eines Maschinenbauers könnten die Abschnitte so aussehen. Die Datei selbst halte ich auf Englisch, damit Nearshore-Teams und Partner sie ohne Übersetzung lesen können:
 
 ```eintrag AGENTS.md
 Verantwortlich | Lead-Architekt; Änderungen nur per Pull Request
@@ -78,7 +78,7 @@ Datenmodell | Welches Garantiedatumsfeld die SAP-Schnittstelle pflegt und welche
 fazit: Rund 90 Zeilen im Beispiel unten. „Fertig“ heißt echte Tests und die Testausgabe im Pull Request.
 ```
 
-Alles, was ohne Ausnahme gelten muss, gehört an einen Ort, mit dem das Modell nicht verhandeln kann:
+Alles, was ohne Ausnahme gelten muss, gehört an eine Stelle, über die das Modell nicht verhandeln kann:
 
 ```tabelle
 titel: Wohin die harten Regeln gehören
@@ -92,13 +92,13 @@ Kein Agent in Produktion | Keine Produktionszugänge auf Entwicklerrechnern; Vib
 
 ```vertiefung Für Entwickler
 titel: Deny-Regeln und Hook für Claude Code
-- **Deny-Regeln** in der eingecheckten `.claude/settings.json`: `Read(~/.sf/**)`, `Read(~/.sfdx/**)`, `Bash(sf * -o mb-prod*)` und `Bash(sf * --target-org mb-prod*)`. Sie gelten in jedem Berechtigungsmodus, auch in Auto und `bypassPermissions`.
+- **Deny-Regeln** in der eingecheckten `.claude/settings.json`: `Read(~/.sf/**)`, `Read(~/.sfdx/**)`, `Bash(sf * -o mb-prod*)` und `Bash(sf * --target-org mb-prod*)`. Sie gelten in jedem Berechtigungsmodus, auch im Modus Auto und in `bypassPermissions`.
 - **Stop-Hook:** ein Skript, das Tests und Code Analyzer ausführt und mit Exit-Code 2 endet, solange etwas rot ist; Claude arbeitet dann weiter. Merge-Gate bleibt die Pipeline.
 - **Verweisdatei:** eine `CLAUDE.md` mit der einzigen Zeile `@AGENTS.md` und eine Vibes-Regel mit dem Dateimuster `**/*.cls`.
 - **Befehle für die Regeldatei:** `sf apex run test -n MyClassTest -o mb-dev`, `sf code-analyzer run --target force-app`, `sf project deploy start --dry-run -o mb-int --test-level RunLocalTests` (`sf project deploy validate` ist laut Salesforce für Produktions-Orgs gedacht).
 ```
 
-Auch Deny-Regeln haben Grenzen. Laut [Berechtigungsdoku von Anthropic](https://code.claude.com/docs/en/permissions) prüft eine Bash-Regel den Befehlstext, den der Agent schreibt, und sie „isn't a security boundary around the program“: Derselbe Befehl in einen weiteren Shell-Aufruf verpackt fällt durch. Die eigentliche Grenze ist, dass Produktionszugänge nie auf einem Entwicklerrechner landen und nur die Pipeline nach Produktion deployt. Agentforce Vibes lässt sich laut Salesforce im Setup unter Agentforce Vibes Extensions [für eine Produktions-Org deaktivieren](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes). Stellen Sie die Claude-Lizenzen selbst und verteilen Managed Settings zentral, kann laut Anthropic keine persönliche Settings-Datei sie überschreiben.
+Auch Deny-Regeln haben Grenzen. Laut [Berechtigungsdoku von Anthropic](https://code.claude.com/docs/en/permissions) prüft eine Bash-Regel den Befehlstext, den der Agent schreibt, und sie „isn't a security boundary around the program“: Derselbe Befehl kann durchrutschen, wenn er in einen weiteren Shell-Aufruf verpackt ist. Die eigentliche Grenze ist, dass Produktionszugänge nie auf einem Entwicklerrechner landen und nur die Pipeline nach Produktion deployt. Agentforce Vibes lässt sich laut Salesforce im Setup unter Agentforce Vibes Extensions [für eine Produktions-Org deaktivieren](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes). Wenn Sie die Claude-Lizenzen selbst bereitstellen und Managed Settings zentral verteilen, kann laut Anthropic keine persönliche Settings-Datei diese Managed Settings überschreiben.
 
 ## Beispiel: drei Werkzeuge, zwei Partner, eine Datei
 
@@ -113,15 +113,15 @@ Der Kunde richtet daraufhin ein:
 - Eingecheckte Deny-Regeln für den Produktions-Alias sowie Code Analyzer, Tests und Validierungs-Deployment als Merge-Gates in der Pipeline des Kunden.
 - CODEOWNERS für alle Regel- und Settings-Dateien.
 
-Partner A reicht seine Vorlage als Pull Request ein; nur eine Handvoll Zeilen wird übernommen. Ich nehme zwei Tage für die erste Fassung an und danach eine halbe Stunde pro Sprint. Der Reviewer prüft weiter, schreibt aber nicht mehr dieselben Kommentare.
+Partner A reicht seine Vorlage als Pull Request ein; nur eine Handvoll Zeilen wird übernommen. Ich rechne mit zwei Tagen für die erste Fassung und danach mit einer halben Stunde pro Sprint. Der Reviewer prüft weiter, schreibt aber nicht mehr dieselben Kommentare.
 
 ## Änderungen laufen per Pull Request mit CODEOWNERS
 
-Regeldateien sind Teil Ihrer Kontrollen. Laut GitHub-Dokumentation liest Copilot Code Review die Anweisungen aus dem Head-Branch des Pull Requests. Ein Pull Request, der copilot-instructions.md ändert, ändert also die Anweisungen, mit denen sein eigenes KI-Review läuft. Genauso lässt sich eine eingecheckte Deny-Regel per Pull Request löschen wie jede andere Zeile.
+Regeldateien sind Teil Ihrer Kontrollen. Laut GitHub-Dokumentation liest Copilot Code Review die Anweisungen aus dem Head-Branch des Pull Requests. Ein Pull Request, der copilot-instructions.md ändert, ändert also die Anweisungen, nach denen sein eigenes KI-Review läuft. Genauso lässt sich eine eingecheckte Deny-Regel per Pull Request löschen wie jede andere Zeile.
 
-Deshalb würde ich jede Regel- und Settings-Datei unter [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) stellen: AGENTS.md, CLAUDE.md, .claude/, .vibes/ und den ganzen Ordner .github/, denn laut GitHub braucht auch die CODEOWNERS-Datei selbst eine verantwortliche Person. Mit „Require review from Code Owners“ in der Branch Protection wird die Freigabe zur Pflicht, solange niemand ungeprüfte Bypass-Rechte hat. GitHub verlangt Schreibrechte für Code Owner; damit Sie Zugriffe, Rulesets und Bypass-Rechte selbst steuern, sollte das Repository in Ihrer Organisation liegen. Dieselbe Logik gilt für gemeinsam genutzte Objekte, wie in der [Object Ownership Matrix](../object-ownership-matrix-salesforce/) beschrieben.
+Deshalb würde ich jede Regel- und Settings-Datei unter [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) stellen: AGENTS.md, CLAUDE.md, .claude/, .vibes/ und den gesamten Ordner .github/, denn laut GitHub muss auch der CODEOWNERS-Datei selbst eine verantwortliche Person zugeordnet sein. Mit „Require review from Code Owners“ in der Branch Protection wird die Freigabe zur Pflicht, solange niemand ungeprüfte Bypass-Rechte hat. GitHub verlangt Schreibrechte für Code Owner; damit Sie Zugriffe, Rulesets und Bypass-Rechte selbst steuern, sollte das Repository in Ihrer Organisation liegen. Dieselbe Logik gilt für gemeinsam genutzte Objekte, wie in der [Object Ownership Matrix](../object-ownership-matrix-salesforce/) beschrieben.
 
-Die Datei wächst aus Belegen, nicht aus Wunschlisten. OpenAI empfiehlt, Regeln nach wiederholten Fehlern zu ergänzen, Anthropic nach der zweiten Korrektur. In der Praxis sind die Review-Funde nach Kategorie die Grundlage, wie in [KI-generierten Salesforce-Code prüfen](../ki-generierten-salesforce-code-pruefen/) beschrieben. Zeilen fliegen wieder raus, sobald ein Pipeline-Gate sie abdeckt. Nach jedem Salesforce-Release prüft die verantwortliche Person zuerst die Zeile zur API-Version.
+Die Datei wächst aus Belegen, nicht aus Wunschlisten. OpenAI empfiehlt, Regeln nach wiederholten Fehlern zu ergänzen; Anthropic empfiehlt das nach der zweiten Korrektur. In der Praxis sind die Review-Funde nach Kategorie die Grundlage, wie in [KI-generierten Salesforce-Code prüfen](../ki-generierten-salesforce-code-pruefen/) beschrieben. Zeilen fliegen wieder raus, sobald ein Pipeline-Gate sie abdeckt. Nach jedem Salesforce-Release prüft die verantwortliche Person zuerst die Zeile zur API-Version.
 
 ## Vorhandene Regeldateien im Repository aufnehmen
 
