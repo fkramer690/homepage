@@ -13,8 +13,8 @@ tags: [Freelancer, Agentur, Implementierungspartner, Partnersteuerung, Salesforc
 takeaways:
   - "Eine Agentur liefert Umsetzungskapazität, also ein Team, das baut, testet und betreibt, und ein einzelner Freelancer ersetzt dieses Team nicht."
   - "Ein freiberuflicher Architekt auf Kundenseite lohnt sich, wenn Entscheidungen und Standards beim Kunden liegen sollen, nicht beim Partner, der daran verdient."
-  - "Die Warnungen vor Freelancern stimmen für den Freelancer als günstigeren Ersatz für ein Entwicklerteam, nicht für die Architektenrolle."
-  - "In meinem größten Programm bauten 5 Partner mit über 30 Entwicklern in 8 Streams, die Standards dafür kamen von der Kundenseite."
+  - "Die Warnungen vor Freelancern treffen zu, wenn ein Freelancer als günstigerer Ersatz für ein Entwicklerteam eingesetzt wird, nicht für die Architektenrolle."
+  - "In meinem größten Programm bauten 5 Partner mit über 30 Entwicklern in 8 Streams; die Standards dafür kamen von der Kundenseite."
   - "Gegen das Ausfallrisiko eines Freelancers helfen ein Entscheidungslog, dokumentierte Standards und ein interner Kollege als Vertretung."
 faq:
   - q: "Ist ein Salesforce-Freelancer günstiger als eine Agentur?"
@@ -28,16 +28,16 @@ faq:
 draft: false
 ---
 
-Ob Sie für Salesforce einen Freelancer oder eine Agentur beauftragen, hängt an der Rolle, die Sie besetzen wollen. Brauchen Sie ein Team, das eine Einführung umsetzt, testet und betreibt, ist eine Agentur oder ein Implementierungspartner die richtige Wahl. Ein einzelner Salesforce-Freelancer ersetzt dieses Team nicht. Sollen dagegen Architekturentscheidungen, Standards und die Steuerung mehrerer Partner beim Kunden liegen, passt ein freiberuflicher Architekt auf Kundenseite, weil er nicht an der Umsetzung verdient. In größeren Programmen von Herstellern arbeiten beide zusammen.
+Ob Sie für Salesforce einen Freelancer oder eine Agentur beauftragen, hängt von der Rolle ab, die Sie besetzen wollen. Brauchen Sie ein Team, das eine Einführung umsetzt, testet und betreibt, ist eine Agentur oder ein Implementierungspartner die richtige Wahl. Ein einzelner Salesforce-Freelancer ersetzt dieses Team nicht. Sollen dagegen Architekturentscheidungen, Standards und die Steuerung mehrerer Partner beim Kunden liegen, passt ein freiberuflicher Architekt auf Kundenseite, weil er nicht an der Umsetzung verdient. In größeren Programmen von Herstellern arbeiten beide zusammen.
 
 ## Was spricht gegen einen Salesforce-Freelancer?
 
 Wer nach Salesforce-Freelancern sucht, findet weit oben Artikel von Agenturen, die davon abraten. Die Argumente sind nicht falsch:
 
-- **Eine Person fällt aus.** Krankheit, Urlaub, ein anderes Projekt, und niemand übernimmt.
+- **Eine Person fällt aus.** Bei Krankheit, Urlaub oder einem anderen Projekt übernimmt niemand.
 - **Kein Team dahinter.** Ein Freelancer kann nicht kurzfristig drei Entwickler mehr stellen, wenn der Go-live näher rückt.
 - **Qualität schwer zu prüfen.** Profile auf Portalen sind oft anonym, Zertifikate sagen wenig über Projekterfahrung.
-- **Keine Verantwortung für ein Gesamtergebnis.** Nach Aufwand trägt der Kunde den Großteil des Umsetzungsrisikos; ein kleiner Anbieter kann zwar ein definiertes Werk vereinbaren, seine Kapazität bleibt aber begrenzt.
+- **Keine Verantwortung für ein Gesamtergebnis.** Bei Abrechnung nach Aufwand trägt der Kunde den Großteil des Umsetzungsrisikos; ein kleiner Anbieter kann zwar ein definiertes Werk vereinbaren, seine Kapazität bleibt aber begrenzt.
 
 Alle vier Punkte treffen zu, wenn ein Hersteller einen Freelancer als günstigeren Ersatz für ein Entwicklerteam einsetzt. Dann sitzt eine Person dort, wo ein Team hingehört, und der Kunde wundert sich, dass es nicht vorangeht.
 
@@ -50,7 +50,7 @@ Eine Agentur oder ein Implementierungspartner ist die richtige Wahl, wenn Sie Ka
 - **Neueinführung ohne eigenes Salesforce-Team.** Sie brauchen Berater, Entwickler, Tester und einen Projektleiter, die sich kennen und eingespielt sind.
 - **Festpreis oder Werkvertrag.** Wer ein Ergebnis zu einem festen Preis will, braucht einen Vertragspartner mit Team, der es liefern kann. Ob eine Beratung das Ergebnis wirklich schuldet, regeln Vertrag, Abnahmekriterien und Haftung.
 - **Betrieb und Support.** Störungen am Montagmorgen, Releases dreimal im Jahr, neue Nutzer: Das braucht eine Organisation, keinen Einzelnen.
-- **Spitzen in der Umsetzung.** Vor einem Go-live mehr Leute, danach weniger. Das kann ein Partner, ein Freelancer kann es nicht.
+- **Spitzen in der Umsetzung.** Vor einem Go-live mehr Leute, danach weniger. Das kann ein Partner leisten, ein Freelancer nicht.
 
 Ein guter Partner bringt dazu eigene Architekten mit. Das ist sinnvoll, solange es nur einen Partner gibt und der Kunde dessen Entscheidungen nachvollziehen kann. Woran Sie einen guten Partner schon im Angebot erkennen, steht in [Salesforce-Implementierungspartner auswählen](../salesforce-implementierungspartner-auswaehlen/).
 
@@ -91,10 +91,10 @@ In den meisten Programmen, in denen ich arbeite, gibt es beides: Partner, die ba
 | Lizenzen und Verträge | verhandelt | ermittelt Bedarf und berechnet Varianten | liefert Mengengerüst |
 
 ```praxis
-In meinem größten Programm haben 5 Implementierungspartner mit über 30 Entwicklern in 8 Streams an derselben Org gebaut. Die Standards dafür, von Namenskonventionen über einen Einstiegspunkt für Automatisierung pro Objekt bis zur Object Ownership Matrix, haben rund drei Monate gebraucht. 80 Prozent standen nach der ersten Runde, die Randfälle kamen nach und nach dazu. Später wurden Änderungen mit Vorlauf im technischen CoE-Call alle zwei Wochen vorgestellt, bis neue Randfälle fast ganz verschwunden waren.
+In meinem größten Programm haben 5 Implementierungspartner mit über 30 Entwicklern in 8 Streams an derselben Org gebaut. Die Standards dafür, von Namenskonventionen über einen Einstiegspunkt für Automatisierung pro Objekt bis zur Object Ownership Matrix, haben rund drei Monate gebraucht. 80 Prozent standen nach der ersten Runde, die Randfälle kamen nach und nach dazu. Später wurden Änderungen mit Vorlauf im alle zwei Wochen stattfindenden technischen CoE-Call vorgestellt, bis neue Randfälle kaum noch auftraten.
 ```
 
-Kein einzelner Partner hätte diese Rolle übernehmen können, ohne Regeln für seine Wettbewerber festzulegen. Und kein Freelancer hätte die Arbeit der 30 Entwickler leisten können. Wie das Gremium dazu aussieht, steht in [Salesforce Center of Excellence: Format und Rhythmus](../salesforce-center-of-excellence-format/).
+Kein einzelner Partner hätte diese Rolle übernehmen können, ohne Regeln für seine Wettbewerber festzulegen. Und kein Freelancer hätte die Arbeit der 30 Entwickler leisten können. Wie das passende Gremium aussieht, steht in [Salesforce Center of Excellence: Format und Rhythmus](../salesforce-center-of-excellence-format/).
 
 ## Mit diesen Fragen prüfen Sie einen freiberuflichen Architekten
 
@@ -103,9 +103,9 @@ Wenn Sie einen Architekten für Ihre Seite des Tisches suchen, helfen andere Fra
 - **Welche Entscheidung hat er zuletzt vorbereitet, und wie ist sie dokumentiert?** Lassen Sie sich ein anonymisiertes [Entscheidungslog](../salesforce-architektur-entscheidungslog/) zeigen. Wer keines führt, hinterlässt Ihnen später nur seine Erinnerung.
 - **Wie viele Partner hat er gleichzeitig gesteuert?** Ein Architekt, der nur innerhalb eines Partners gearbeitet hat, kennt die Konflikte zwischen Partnern nicht aus eigener Anschauung.
 - **Wo sagt er Nein?** Fragen Sie nach einer Rolle, die er abgelehnt hat. Ich nehme zum Beispiel keine reinen Admin- oder Entwicklerrollen an und keine Rollen, in denen die Architektur schon feststeht und nur noch abgenommen werden soll.
-- **Wie regelt er Ausfälle?** Auf Kollegen als Vertretung kann ein Freelancer nicht ohne Weiteres zurückgreifen, außer es ist eine benannte Vertretung vereinbart. Was es geben muss: dokumentierte Standards, ein Entscheidungslog und einen internen Kollegen, der Reviews und Calls übernehmen kann. In einem Programm lief anfangs jeder Pull Request über meinen Schreibtisch, als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
-- **Wer ist Vertragspartner?** Bei mir ist das die FK Solution Design GmbH, abgerechnet wird monatlich nach Aufwand. Viele Kunden beauftragen über einen Personaldienstleister, auch das ist möglich.
+- **Wie regelt er Ausfälle?** Auf Kollegen als Vertretung kann ein Freelancer nicht ohne Weiteres zurückgreifen, außer es ist eine benannte Vertretung vereinbart. Was es geben muss: dokumentierte Standards, ein Entscheidungslog und einen internen Kollegen, der Reviews und Calls übernehmen kann. In einem Programm ging anfangs jeder Pull Request über meinen Schreibtisch; sobald der Prozess stabil lief, habe ich das an einen internen Kollegen übergeben.
+- **Wer ist Vertragspartner?** Bei mir ist das die FK Solution Design GmbH, abgerechnet wird monatlich nach Aufwand. Viele Kunden beauftragen mich über einen Personaldienstleister, auch das ist möglich.
 
 ## Aufschreiben, welche Rolle fehlt
 
-Schreiben Sie zuerst auf, welche Rolle fehlt: Kapazität, die baut, oder Kontrolle, die entscheidet. Fehlt Kapazität, suchen Sie einen Partner, und kein Freelancer-Portal löst das Problem. Fehlt Kontrolle, weil ein Partner seine eigene Arbeit prüft oder mehrere Partner nach eigenen Regeln bauen, holen Sie sich einen Architekten auf Ihre Seite, bevor die nächste Ausschreibung rausgeht. Wie ich diese Rolle ausfülle, steht auf der Seite [Freiberuflicher Salesforce Architect](../../freiberuflicher-salesforce-architect/) und unter [Partnersteuerung](../../leistungen/partnersteuerung/).
+Schreiben Sie zuerst auf, welche Rolle fehlt: Kapazität, die baut, oder Kontrolle, die entscheidet. Fehlt Kapazität, suchen Sie einen Partner; ein Freelancer-Portal löst dieses Problem nicht. Fehlt Kontrolle, weil ein Partner seine eigene Arbeit prüft oder mehrere Partner nach eigenen Regeln bauen, holen Sie sich einen Architekten auf Ihre Seite, bevor die nächste Ausschreibung veröffentlicht wird. Wie ich diese Rolle ausfülle, steht auf der Seite [Freiberuflicher Salesforce Architect](../../freiberuflicher-salesforce-architect/) und unter [Partnersteuerung](../../leistungen/partnersteuerung/).
