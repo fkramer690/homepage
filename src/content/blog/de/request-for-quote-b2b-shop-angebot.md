@@ -10,20 +10,20 @@ topic: commerce
 categories: [b2b-commerce, revenue-cloud]
 tags: [B2B Commerce, Angebotsanfrage, Request for Quote, Revenue Cloud, Innendienst]
 takeaways:
-  - "Angemeldete Käufer senden ihren Warenkorb oder ein einzelnes Produkt als Angebotsanfrage. Salesforce nennt die Funktion allgemein verfügbar."
+  - "Angemeldete Käufer senden ihren Warenkorb oder ein einzelnes Produkt als Angebotsanfrage. Salesforce bezeichnet die Funktion als allgemein verfügbar."
   - "Einfache Produkte brauchen B2B Commerce, Bundles zusätzlich Revenue Cloud. Abonnements werden bei Request for Quote nicht unterstützt."
   - "Seit Juni 2026 übernimmt der Käufer beim Round-Trip Quoting ein freigegebenes Angebot per Accept & Buy zu verhandelten Preisen in den Warenkorb und bestellt."
   - "ConnectApi.CommerceCart wandelt Warenkörbe in Angebote und freigegebene Angebote in Warenkörbe um; CommerceQuotes listet und aktualisiert Angebote."
-  - "Die Funktion trägt aus meiner Sicht nur mit veröffentlichter Antwortzeit; sonst gehen Käufer zurück zur E-Mail."
+  - "Aus meiner Sicht trägt die Funktion nur, wenn eine Antwortzeit veröffentlicht ist; sonst kehren Käufer zur E-Mail zurück."
 faq:
   - q: "Was ist Request for Quote in Salesforce B2B Commerce?"
-    a: "Eine Store-Funktion, mit der Käufer für komplexe oder hochpreisige Käufe direkt aus dem Warenkorb ein Angebot anfragen, oder für ein einzelnes Produkt von der Produktseite. Aus der Anfrage wird ein Angebot, das der Innendienst in Sales Cloud oder Agentforce Revenue Management bearbeitet."
+    a: "Eine Store-Funktion, mit der Käufer für komplexe oder hochpreisige Käufe ein Angebot anfragen: direkt aus dem Warenkorb oder für ein einzelnes Produkt von der Produktseite. Aus der Anfrage wird ein Angebot, das der Innendienst in Sales Cloud oder Agentforce Revenue Management bearbeitet."
   - q: "Braucht Request for Quote Revenue Cloud?"
     a: "Nicht für einfache Produkte. Laut Apex-Referenz werden einfache Produkte allein mit einer B2B-Commerce-Lizenz unterstützt, statische und dynamische Bundles brauchen B2B Commerce und Revenue Cloud. Abonnementprodukte werden nicht unterstützt. Lassen Sie sich die Antwort für Ihren Produktmix schriftlich von Salesforce bestätigen."
   - q: "Wie kommt ein freigegebenes Angebot zurück zum Käufer?"
     a: "Über Round-Trip Quoting, das Salesforce im Juni 2026 allgemein verfügbar gemacht hat. Der Käufer öffnet das freigegebene Angebot unter My Quotes und klickt auf Accept & Buy. Die Positionen landen zu den verhandelten Preisen im Warenkorb, und der Käufer bestellt im Shop. Die Funktion muss vorher im Store eingerichtet werden."
   - q: "Kann ein Käufer ein Angebot im Shop ablehnen oder nachverhandeln?"
-    a: "Ja. Laut Apex-Referenz (API 67.0) klickt der Käufer auf der Seite My Quotes bei einem freigegebenen Angebot auf Renegotiate oder Decline. Renegotiate setzt das Angebot mit seinen Kommentaren auf Draft zurück, Decline auf Denied. Die Einrichtungsseite in der Hilfe nennt den erforderlichen Status Rejected, prüfen Sie deshalb die Werte in Ihrer Org."
+    a: "Ja. Laut Apex-Referenz (API 67.0) klickt der Käufer auf der Seite My Quotes bei einem freigegebenen Angebot auf Renegotiate oder Decline. Renegotiate setzt das Angebot mit den Kommentaren des Käufers auf Draft zurück, Decline setzt es auf Denied. Die Einrichtungsseite in der Hilfe nennt den erforderlichen Status Rejected, prüfen Sie deshalb die Werte in Ihrer Org."
 draft: false
 ---
 
@@ -52,11 +52,11 @@ Bestellung | Käufer
   Mit Accept & Buy wird das freigegebene Angebot zum Warenkorb. Der Käufer bestellt zu den verhandelten Preisen, meist mit Bestellnummer, wie in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../b2b-checkout-bestellnummer-rechnung/) beschrieben.
 ```
 
-Im Juni-Beitrag heißt es zu Schritt 4: "once a quote is negotiated and approved, sellers can share it with customers as a cart". Salesforce nennt das Round-Trip Quoting und führt es seit Juni 2026 als allgemein verfügbar. Automatisch läuft es trotzdem nicht: Der Store braucht die Angebotskomponenten auf der Seite My Quotes, und der Käufer stößt die Umwandlung an. Die Apex-Referenz nennt Grenzen, die für das Design wichtig sind:
+Im Juni-Beitrag heißt es zu Schritt 4: "once a quote is negotiated and approved, sellers can share it with customers as a cart". Salesforce nennt das Round-Trip Quoting und bezeichnet es seit Juni 2026 als allgemein verfügbar. Automatisch läuft es trotzdem nicht: Der Store braucht die Angebotskomponenten auf der Seite My Quotes, und der Käufer stößt die Umwandlung an. Die Apex-Referenz nennt Grenzen, die für das Design wichtig sind:
 
-- **Accept & Buy gegenüber Duplicate to Cart.** Accept & Buy funktioniert nur bei Angeboten mit dem Status Approved oder Accepted und behält die verhandelten Preise. Duplicate to Cart kopiert ein Angebot im Status Draft zu den ursprünglichen Preisen in einen Warenkorb.
+- **Accept & Buy gegenüber Duplicate to Cart.** Accept & Buy funktioniert nur bei Angeboten mit dem Status Approved oder Accepted und behält die verhandelten Preise. Duplicate to Cart kopiert ein Angebot im Status Draft mit den ursprünglichen Preisen in einen Warenkorb.
 - **Keine Überschneidung, keine teilweise Umwandlung.** Die Umwandlung scheitert, wenn der Warenkorb des Käufers bereits ein Produkt aus dem Angebot enthält. Ein Angebot lässt sich nicht teilweise umwandeln. Promotions und Bonusprodukte werden nicht unterstützt.
-- **Einmal je Auftrag.** Ein Angebot wird einmal zum Warenkorb, wenn mit diesem Warenkorb ein Auftrag aufgegeben wird.
+- **Einmal je Auftrag.** Ein Angebot wird nur einmal in einen Warenkorb umgewandelt, wenn mit diesem Warenkorb ein Auftrag aufgegeben wird.
 
 ## Die Angebots-APIs für eigene Komponenten
 
@@ -71,10 +71,10 @@ Bauen Sie eigene Komponenten, sind zwei Apex-Klassen wichtig; ein Headless-Front
 
 Zwei Details aus der Referenz sind für das Design wichtig:
 
-- **createQuoteFromProduct** legt zur Verarbeitung einen temporären zweiten Warenkorb an und löscht ihn danach, egal ob der Aufruf gelingt oder scheitert. Der eigentliche Warenkorb des Käufers bleibt unberührt.
-- **updateQuote** funktioniert nur bei freigegebenen Angeboten. Renegotiate setzt das Angebot auf Draft zurück und speichert die Kommentare des Käufers, Decline setzt es auf Denied. Die Einrichtungsseite in der Hilfe führt bei den erforderlichen Statuswerten Rejected statt Denied auf, prüfen Sie deshalb die Auswahlliste in Ihrer Org.
+- **createQuoteFromProduct** legt zur Verarbeitung einen temporären zweiten Warenkorb an und löscht ihn danach, egal, ob der Aufruf gelingt oder scheitert. Der eigentliche Warenkorb des Käufers bleibt unberührt.
+- **updateQuote** funktioniert nur bei freigegebenen Angeboten. Renegotiate setzt das Angebot auf Draft zurück und speichert die Kommentare des Käufers, Decline setzt es auf Denied. Die Einrichtungsseite in der Hilfe nennt bei den erforderlichen Statuswerten Rejected statt Denied, prüfen Sie deshalb die Auswahlliste in Ihrer Org.
 
-Die Status sind ein Ausgangspunkt für Ihren Prozess: Ein Angebot im Status Draft aus dem Store bedeutet üblicherweise Arbeit für den Innendienst, ein Approved-Angebot liegt beim Käufer, ein abgelehntes Angebot hat einen Grund, den man lesen sollte. Für Routing und Antwortzeiten brauchen Sie weiterhin einen Queue-Verantwortlichen und eigene Felder.
+Die Statuswerte sind ein Ausgangspunkt für Ihren Prozess: Ein Angebot im Status Draft aus dem Store bedeutet üblicherweise Arbeit für den Innendienst, ein Approved-Angebot liegt beim Käufer, ein abgelehntes Angebot hat einen Grund, den man lesen sollte. Für Routing und Antwortzeiten brauchen Sie weiterhin einen Queue-Verantwortlichen und eigene Felder.
 
 ```hinweis offen
 **Lizenzen je Produkttyp.** Laut Apex-Referenz werden einfache Produkte mit Lizenzen für B2B Commerce oder B2B Commerce und Revenue Cloud unterstützt; statische und dynamische Bundles brauchen B2B Commerce und Revenue Cloud; Abonnementprodukte werden gar nicht unterstützt. Für einen Hersteller, der Maschinen als Bundles oder Services als Abonnements verkauft, entscheidet das über den Umfang. Holen Sie sich die verbindliche Antwort für Ihre Produkte schriftlich von Salesforce.
@@ -82,7 +82,7 @@ Die Status sind ein Ausgangspunkt für Ihren Prozess: Ein Angebot im Status Draf
 
 ## Wer beantwortet das Angebot, und wie schnell?
 
-Hier entscheidet sich RFQ, und nichts davon ist Konfiguration. Ein Käufer, der im Shop ein Angebot anfragt und drei Tage wartet, schickt die nächste Anfrage per E-Mail, weil die wenigstens einen Menschen erreicht.
+Hier entscheidet sich, ob RFQ funktioniert, und nichts davon ist Konfiguration. Ein Käufer, der im Shop ein Angebot anfragt und drei Tage wartet, schickt die nächste Anfrage per E-Mail, weil die wenigstens einen Menschen erreicht.
 
 Vor dem Go-live würde ich diese Punkte schriftlich festlegen:
 
@@ -92,11 +92,11 @@ Vor dem Go-live würde ich diese Punkte schriftlich festlegen:
 - **Gültigkeit.** Wie lange ein freigegebenes Angebot gilt, bevor Preise neu geprüft werden.
 - **Bestellweg.** Was passiert, wenn ein Käufer per E-Mail statt im Shop annimmt. Tippt der Innendienst den Auftrag dann von Hand ein, bricht der Kreislauf.
 
-Große Händler fragen außerdem über Außendienst und Partnerportale an. Erstellt dort ebenfalls eine KI Angebote, sollten derselbe Innendienst und dieselben Preisregeln beide Kanäle bedienen, wie ich es für den [AI Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschreibe.
+Bei großen Händlern laufen Anfragen außerdem über Außendienst und Partnerportale. Erstellt dort ebenfalls eine KI Angebote, sollten derselbe Innendienst und dieselben Preisregeln beide Kanäle bedienen, wie ich es für den [AI Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschreibe.
 
 ## Rechenbeispiel: 400 Systemintegratoren
 
-Angenommen, ein Hersteller von Fördertechnik-Komponenten verkauft an 400 Systemintegratoren. Die meisten Bestellungen sind Nachbestellungen zu Stufenpreisen, aber etwa jede zehnte ist Projektgeschäft mit größeren Mengen und einem Zielpreis. Der Innendienst bekommt diese Anfragen heute per E-Mail und antwortet im Schnitt nach vier Tagen.
+Angenommen, ein Hersteller von Fördertechnik-Komponenten verkauft an 400 Systemintegratoren. Die meisten Bestellungen sind Nachbestellungen zu Stufenpreisen, aber bei etwa jeder zehnten geht es um Projektgeschäft mit größeren Mengen und einem Zielpreis. Der Innendienst bekommt diese Anfragen heute per E-Mail und antwortet im Schnitt nach vier Tagen.
 
 Mit RFQ legt der Integrator die Stückliste in den Warenkorb, fragt ein Angebot an und trägt den Projektnamen in das Kommentarfeld ein. Das Angebot landet in einer Queue je Land, der Innendienst kalkuliert es mit der Revenue-Cloud-Procedure, die der Vertrieb schon für Maschinenangebote nutzt, und gibt es frei. Der Integrator sieht das Angebot unter My Quotes, bittet über Renegotiate um eine Änderung, bekommt das überarbeitete Angebot, klickt auf Accept & Buy und bestellt den Warenkorb. Der Auftrag erreicht SAP mit den verhandelten Preisen und der Angebotsnummer als Referenz.
 
@@ -106,4 +106,4 @@ Die Zahlen sind erfunden, um die Methode zu zeigen. Was ich in den ersten drei M
 
 Starten Sie beim Innendienst, nicht bei der Komponente. Legen Sie Antwortzeit, Verantwortliche je Queue und Preiskompetenz fest und testen Sie den Kreislauf mit einer Käufergruppe, die heute schon viele Anfragen schickt. Klären Sie danach die Lizenzfrage für Ihre Produkttypen mit Salesforce, besonders für Bundles und Abonnements.
 
-Das Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) zeigt, wie RFQ neben Kundenpreisen, Checkout und Nachbestellung steht. Wie aus dem Angebot in Revenue Cloud Vertrag und Auftrag werden, behandelt das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/) der Masterclass Revenue Cloud. Wo RFQ mehrere Partner und Teams berührt, gehört die Steuerung zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
+Das Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) zeigt, wie RFQ mit Kundenpreisen, Checkout und Nachbestellung zusammenspielt. Wie aus dem Angebot in Revenue Cloud ein Vertrag und ein Auftrag werden, behandelt das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/) der Masterclass Revenue Cloud. Wo RFQ mehrere Partner und Teams berührt, gehört die Steuerung zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
