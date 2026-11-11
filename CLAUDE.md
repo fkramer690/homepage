@@ -73,3 +73,7 @@ Every page carries a Content Security Policy (meta tag, `scripts/csp-policy.mjs`
 ## Repository root
 
 Only project files live in the repository root; `scripts/check-root.mjs` fails the build on anything else. Card drawing previews go to `previews/` (git-ignored) via `npm run cards:export`; where every other kind of file belongs is listed under "Where files go" in README.md.
+
+## Backlog
+
+The backlog is not kept in this public repo. It lives in the project files (`homepage/backlog/backlog.md`, rules in `homepage/backlog/anleitung.md`); `docs/backlog.md` only points there. Never add backlog content to the repo or open a PR for a backlog change.
