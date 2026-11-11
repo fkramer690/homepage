@@ -274,6 +274,7 @@ export const en = {
     },
     certifications: {
       title: 'Certifications',
+      h1: 'Salesforce certifications and architect credentials',
       metaTitle: 'Salesforce certifications | FK Solution Design',
       metaDescription: '25 Salesforce certifications, 8 of them architect credentials, plus 15 more, and what each one means for enterprise projects at manufacturers.',
       intro: 'I hold 25 Salesforce certifications, 8 of them architect credentials, earned since 2018. Another 15 certifications cover software architecture, integration, DevOps tools and project delivery.',
@@ -330,6 +331,7 @@ export const en = {
   },
   blog: {
     title: 'Blog',
+    h1: 'Salesforce architecture blog for manufacturers',
     metaTitle: 'Salesforce architecture blog | FK Solution Design',
     metaDescription: 'Notes from client-side Salesforce work at manufacturers: architecture decisions, partner governance, DevOps, licenses and Field Service.',
     intro: 'Notes from client-side Salesforce work at manufacturers: architecture decisions, partner governance, DevOps and the questions that come up in every enterprise project.',
@@ -381,11 +383,21 @@ export const en = {
   },
   partnerPage: {
     title: 'Partners',
+    h1: 'Partners for Salesforce programs',
     metaTitle: 'Partners for Salesforce programs | FK Solution Design',
     description: 'Cooperation partners of FK Solution Design for topics next to Salesforce architecture, such as change management with Juliane Winterscheid.',
     lead: 'For change management in Salesforce programs I work with Juliane Winterscheid. My own focus stays on Salesforce architecture on the client side; where others have more experience, I bring in cooperation partners I know personally and trust.',
     intro: 'A program needs more than a good architecture: the people in the company also have to adopt new processes. For that I bring in partners who are strong in exactly that area, because nobody is the best expert in every field, and neither am I. Recruiters will find further down how I work with them.',
     linkedIn: 'LinkedIn profile',
+    when: {
+      label: 'Working together',
+      title: 'When I bring in a partner',
+      items: [
+        { t: 'The topic needs its own method.', d: 'Guiding sponsors, managers and key users through a change is a discipline of its own, not a side job for the architect.' },
+        { t: 'I know the partner from my own work.', d: 'I recommend nobody I have not worked with on a project myself.' },
+        { t: 'The plans have to fit together.', d: 'Release plan and change plan are built together, so that training and communication are ready for each release.' },
+      ],
+    },
     partners: [
       {
         area: 'Change management',
@@ -414,6 +426,7 @@ export const en = {
     progress: 'How you see progress',
     note: 'Note',
     indexTitle: 'Services',
+    indexH1: 'Services as your client-side Salesforce architect',
     metaTitle: 'Services: Salesforce architecture | FK Solution Design',
     metaDescription: 'Salesforce architect on the client side: target architecture, partner governance, DevOps, integration, program steering and make-or-buy for manufacturers.',
     indexIntro: 'What I take care of as the Salesforce architect on the client side: from target architecture and partner governance to DevOps, integration, program steering and make-or-buy decisions.',

@@ -21,7 +21,7 @@ export const juliane = {
     title: 'Juliane Winterscheid: Change Management für Salesforce',
     metaTitle: 'Juliane Winterscheid: Change-Managerin für Salesforce',
     description:
-      'Juliane Winterscheid, Prosci-zertifizierte Change-Managerin aus Köln, begleitet mit Fabian Kramer Salesforce-Einführungen: ADKAR, Sponsoren, Key User und Verankerung.',
+      'Juliane Winterscheid, Prosci-zertifizierte Change-Managerin aus Köln, begleitet mit Fabian Kramer Salesforce-Einführungen: ADKAR, Sponsoren, Key User.',
     eyebrow: 'Partner · Change Management',
     back: 'Alle Partner',
     lead: 'Juliane Winterscheid ist Senior Human Centered Change Consultant mit mehr als zehn Jahren in Management, Führung und Beratung. Sie sorgt dafür, dass Menschen neue Prozesse annehmen, ich sorge dafür, dass die Architektur und die Releases sie tragen. Bei Change Management in Salesforce-Programmen arbeiten wir zusammen.',
@@ -140,7 +140,7 @@ export const juliane = {
     title: 'Juliane Winterscheid: change management for Salesforce',
     metaTitle: 'Juliane Winterscheid: change management consultant',
     description:
-      'Juliane Winterscheid, Prosci certified change manager from Cologne, supports Salesforce rollouts with Fabian Kramer: ADKAR, sponsors, key users and reinforcement.',
+      'Juliane Winterscheid, Prosci certified change manager from Cologne, supports Salesforce rollouts with Fabian Kramer: ADKAR, sponsors, key users, reinforcement.',
     eyebrow: 'Partner · Change management',
     back: 'All partners',
     lead: 'Juliane Winterscheid is a senior human centered change consultant with more than ten years in management, leadership and consulting. She makes sure people adopt new processes; I make sure the architecture and the releases support them. We work together on change management in Salesforce programs.',

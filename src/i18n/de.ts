@@ -240,6 +240,7 @@ export const de: Dict = {
     },
     certifications: {
       title: 'Zertifizierungen',
+      h1: 'Salesforce-Zertifizierungen und Architect-Credentials',
       metaTitle: 'Salesforce-Zertifizierungen | FK Solution Design',
       metaDescription: '25 Salesforce-Zertifizierungen, davon 8 Architect-Credentials, plus 15 weitere: was jede davon in Enterprise-Projekten bei Fertigern bedeutet.',
       intro: 'Seit 2018 habe ich 25 Salesforce-Zertifizierungen erworben, davon 8 Architect-Credentials. Weitere 15 Zertifizierungen decken Softwarearchitektur, Integration, DevOps-Tools und Projektabwicklung ab.',
@@ -296,6 +297,7 @@ export const de: Dict = {
   },
   blog: {
     title: 'Blog',
+    h1: 'Blog zur Salesforce-Architektur in der Fertigung',
     metaTitle: 'Blog zur Salesforce-Architektur | FK Solution Design',
     metaDescription: 'Notizen aus Salesforce-Projekten auf Kundenseite bei Fertigungsunternehmen: Architektur, Partnersteuerung, DevOps, Lizenzen und Field Service.',
     intro: 'Notizen aus der Salesforce-Arbeit auf Kundenseite bei Fertigungsunternehmen: Architekturentscheidungen, Partnersteuerung, DevOps und die Fragen, die in jedem Enterprise-Projekt aufkommen.',
@@ -346,11 +348,21 @@ export const de: Dict = {
   },
   partnerPage: {
     title: 'Partner',
+    h1: 'Partner für Salesforce-Programme',
     metaTitle: 'Partner für Salesforce-Programme | FK Solution Design',
     description: 'Kooperationspartner von FK Solution Design für Themen neben der Salesforce-Architektur, zum Beispiel Change Management mit Juliane Winterscheid.',
     lead: 'Für Change Management in Salesforce-Programmen arbeite ich mit Juliane Winterscheid zusammen. Mein Schwerpunkt bleibt die Salesforce-Architektur auf Kundenseite; wo andere mehr Erfahrung haben, hole ich Kooperationspartner dazu, die ich selbst kenne und denen ich vertraue.',
     intro: 'Ein Programm braucht mehr als eine gute Architektur: Die Menschen im Unternehmen müssen neue Prozesse auch annehmen. Dafür hole ich Partner dazu, die genau darin stark sind, denn niemand ist in jedem Bereich der beste Experte, ich auch nicht. Recruiter finden weiter unten, wie ich mit ihnen zusammenarbeite.',
     linkedIn: 'LinkedIn-Profil',
+    when: {
+      label: 'Zusammenarbeit',
+      title: 'Wann ich einen Partner dazuhole',
+      items: [
+        { t: 'Das Thema braucht eine eigene Methodik.', d: 'Sponsoren, Führungskräfte und Key User durch eine Veränderung zu führen, ist eine eigene Disziplin und keine Nebenaufgabe des Architekten.' },
+        { t: 'Ich kenne den Partner aus eigener Arbeit.', d: 'Ich empfehle niemanden, mit dem ich nicht selbst in einem Projekt gearbeitet habe.' },
+        { t: 'Die Pläne müssen zusammenpassen.', d: 'Release-Plan und Change-Plan entstehen gemeinsam, damit Schulung und Kommunikation zum jeweiligen Release fertig sind.' },
+      ],
+    },
     partners: [
       {
         area: 'Change Management',
@@ -379,6 +391,7 @@ export const de: Dict = {
     progress: 'Woran Sie Fortschritt sehen',
     note: 'Hinweis',
     indexTitle: 'Leistungen',
+    indexH1: 'Leistungen als Salesforce-Architekt auf Kundenseite',
     metaTitle: 'Leistungen: Salesforce-Architektur | FK Solution Design',
     metaDescription: 'Salesforce-Architekt auf Kundenseite: Zielarchitektur, Partnersteuerung, DevOps, Integration, Programmsteuerung und Make-or-buy für Fertigungsunternehmen.',
     indexIntro: 'Was ich als Salesforce-Architekt auf Kundenseite übernehme: von Zielarchitektur und Partnersteuerung über DevOps und Integration bis zu Programmsteuerung und Make-or-buy-Entscheidungen.',

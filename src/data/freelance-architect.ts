@@ -27,7 +27,7 @@ export const freelanceArchitect = {
     title: 'Freiberuflicher Salesforce Architect für Hersteller',
     metaTitle: 'Freiberuflicher Salesforce Architect | FK Solution Design',
     description:
-      'Fabian Kramer, freiberuflicher Salesforce Architect auf Kundenseite: Architekturentscheidungen, Standards für mehrere Partner, Reviews. Für Fertigung und Service.',
+      'Freiberuflicher Salesforce Architect auf Kundenseite: Architekturentscheidungen, Standards für mehrere Partner, Reviews. Für Fertigung und Service.',
     eyebrow: 'Freiberuflich · Kundenseite',
     lead: 'Ich bin Fabian Kramer, freiberuflicher Salesforce Enterprise Architect aus Köln. Ich arbeite für Hersteller auf der Kundenseite: Ich bereite Architekturentscheidungen vor, lege Standards fest, die für alle Implementierungspartner gelten, und prüfe, was gebaut wird. Vertragspartner ist meine FK Solution Design GmbH, abgerechnet wird monatlich nach Aufwand.',
     ctaPrimary: '30 Minuten sprechen',
@@ -129,7 +129,7 @@ export const freelanceArchitect = {
     title: 'Freelance Salesforce Architect for manufacturers',
     metaTitle: 'Freelance Salesforce Architect | FK Solution Design',
     description:
-      'Fabian Kramer, freelance Salesforce architect on the client side: architecture decisions, standards for several partners, reviews. For manufacturing and service.',
+      'Freelance Salesforce architect on the client side: architecture decisions, standards for several partners, reviews. For manufacturing and service.',
     eyebrow: 'Freelance · Client side',
     lead: 'I am Fabian Kramer, a freelance Salesforce Enterprise Architect based in Cologne. I work for manufacturers on the client side: I prepare architecture decisions, set standards that apply to every implementation partner and review what gets built. The contracting party is my company FK Solution Design GmbH, billed monthly by effort.',
     ctaPrimary: 'Talk for 30 minutes',

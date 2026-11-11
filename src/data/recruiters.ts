@@ -19,7 +19,7 @@ export const recruiters = {
     title: 'Freiberuflicher Salesforce Architect: Zusammenarbeit mit Recruitern',
     metaTitle: 'Freiberuflicher Salesforce Architect für Recruiter',
     description:
-      'Wie Fabian Kramer als freiberuflicher Salesforce Architect mit Recruitern arbeitet: Profil, Antwortzeit, Einreichung nur mit Freigabe, keine Doppeleinreichungen.',
+      'Wie Fabian Kramer als freiberuflicher Salesforce Architect mit Recruitern arbeitet: Profil, Antwortzeit, Einreichung nur mit Freigabe, nie doppelt.',
     eyebrow: 'Partner · Recruiter',
     back: 'Alle Partner',
     lead: 'Viele meiner Projekte kommen über Personaldienstleister zustande, die besten über Recruiter, mit denen ich schon einmal gearbeitet habe. Hier steht, was Sie von mir bekommen, was ich von Ihnen brauche und wo meine Grenzen sind. So wissen wir beide früh, ob eine Zusammenarbeit passt.',
