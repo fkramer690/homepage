@@ -1,0 +1,10 @@
+# Event counter for www.fk-sd.de (see worker.js). Deployed by
+# .github/workflows/events-worker.yml to <name>.<account subdomain>.workers.dev.
+name = "fk-sd-events"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+[[analytics_engine_datasets]]
+binding = "EVENTS"
+dataset = "fk_sd_events"
