@@ -140,6 +140,16 @@ OpenAI hat am 10.11.2026 „Businesses in ChatGPT“ als Beta gestartet (Ankünd
 | CG4 | SEO-Prüfstand (Projektdateien, `seo-standard/vorgehen.md`) im Bereich KI-Suche ergänzen: ChatGPT-Profil des Kunden mit blauem Haken von Hand prüfen; fehlt es, Maßnahme „Unternehmen im Business Hub eintragen“; mit Agenturzugang des Kunden dessen Insights auswerten wie den Lesezugang zur Search Console | mittel | klein | Claude | offen |
 
 
+## Positionierung, Referenzen und KI-Quellen (Ideen aus gtmskills.com, 11.11.2026)
+
+Drei Skills von gtmskills.com gelesen, nichts installiert (category-of-one-positioning, b2b-case-study-production, citation-gap-outreach). Die Regeln stehen jetzt in `docs/positioning-and-references.md`; der SEO-Prüfstand (Projektdateien, `seo-standard/vorgehen.md` Version 3) prüft Austauschbarkeit, Referenzen und Zitatlücken bei jeder Website-Analyse.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| GT1 | Positionierungsgespräch: je Schmerzpunkt der Zielgruppe drei Fragen (Was ist kaputt? Warum? Was ist die Lösung?), Antworten wörtlich festhalten; daraus prüfen, ob Hero, Block „Die Rolle“, LinkedIn-Überschrift und Portalprofile dieselben Begriffe nutzen und keine Formulierungen der Wettbewerber | mittel | klein | Fabian antwortet, Claude wertet aus | offen |
+| GT2 | Referenzen nach dem Raster in `docs/positioning-and-references.md` überarbeiten: Merkmale statt Namen, höchstens zwei bestätigte Zahlen, die schwierige Stelle im Projekt, Prüfung auf Wiedererkennbarkeit. Bündelt J8, Weitere Ideen 4, 11 und 18; die zwei Referenzen mit NDA erst nach Freigabe | hoch | mittel | Fabian liefert Fakten, Claude schreibt | wartet auf Fabian |
+| GT3 | Zitatlücken fk-sd.de: aus dem nächsten Lauf der KI-Suche die Quellen-Domains nach gespeisten Antworten sortieren, je Quelle prüfen, ob fk-sd.de oder Fabian dort steht, passende Bitte je Quelltyp; nach jeder Eintragung dieselben Prompts erneut vergleichen. Stand 11.11.: freelancermap.de speist die meisten Antworten (siehe SP1), danach help.salesforce.com, AppExchange, LinkedIn, freelance.de, XING | mittel | klein | Claude (Liste), Fabian (Eintragungen) | offen |
+
 ## Kaufanfragen in der KI-Suche (Prüfung 09.11.2026)
 
 22 Anfragen mit Kaufabsicht (14 DE, 8 EN), je an ChatGPT, Claude, Gemini, Perplexity und Google AI Mode. fk-sd.de wird nur bei Partnersteuerung, sfdx-hardis und „unabhängiger Architekt für Hersteller“ zitiert, fast nur von Claude und Perplexity (9 Zitate in 110 Antworten, Google AI Mode 0). Für Tool-Alternativen, Partnerwechsel, Projektrettung, Branchenberatung und SAP-Integration zitieren alle Assistenten Seitentypen, die es auf fk-sd.de nicht gibt. Auswertung und Rohdaten in den Projektdateien (`homepage/ki-quellen/money-prompts/`, nicht im Repo).
