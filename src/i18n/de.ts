@@ -363,6 +363,19 @@ export const de: Dict = {
         { t: 'Release-Plan und Change-Plan müssen zusammenpassen.', d: 'Beide Pläne entstehen gemeinsam, damit Schulung und Kommunikation rechtzeitig vor jedem Release bereitstehen.' },
       ],
     },
+    flow: {
+      label: 'Ablauf',
+      title: 'So arbeiten wir in einem Programm zusammen',
+      intro: 'Juliane und ich planen Veränderung und Releases von Anfang an gemeinsam. Ein Programm durchläuft dabei vier Schritte:',
+      steps: [
+        { t: 'Diagnose.', d: 'Wir legen fest, welche Gruppen sich wie stark umstellen müssen, und erheben die Ausgangswerte.' },
+        { t: 'Plan.', d: 'Passend zum Release-Plan entstehen Sponsor-Plan, Auswahl der Key User und Schulungstermine.' },
+        { t: 'Einführung.', d: 'Jede Welle wird in der Landessprache kommuniziert, Rückmeldungen fließen ins Backlog.' },
+        { t: 'Verankerung.', d: 'Ich messe die Nutzung in Salesforce, Juliane übergibt die Verantwortung an interne Rollen.' },
+      ],
+      exampleTitle: 'Ein Beispiel',
+      example: 'Ein Land möchte vom globalen Template abweichen. Ich prüfe, was die Abweichung für Architektur und Betrieb kostet. Juliane klärt, ob dahinter ein fachlicher Unterschied steht oder eine Gewohnheit, die sich mit Schulung und Kommunikation ändern lässt. Das Programm entscheidet erst, wenn beide Antworten vorliegen.',
+    },
     partners: [
       {
         area: 'Change Management',

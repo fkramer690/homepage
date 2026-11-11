@@ -398,6 +398,19 @@ export const en = {
         { t: 'Release plan and change plan have to match.', d: 'Both plans are drawn up together, so that training and communication are ready in time for each release.' },
       ],
     },
+    flow: {
+      label: 'Approach',
+      title: 'How we work together in a program',
+      intro: 'Juliane and I plan the change and the releases together from the start. A program goes through four steps:',
+      steps: [
+        { t: 'Diagnosis.', d: 'We define which groups have to change and by how much, and we record the baseline figures.' },
+        { t: 'Plan.', d: 'Alongside the release plan we draw up the sponsor plan, the key user selection and the training dates.' },
+        { t: 'Rollout.', d: 'Each wave is communicated in the local language, and feedback goes into the backlog.' },
+        { t: 'Reinforcement.', d: 'I measure adoption in Salesforce, and Juliane hands responsibility over to internal roles.' },
+      ],
+      exampleTitle: 'An example',
+      example: 'A country wants to deviate from the global template. I check what the deviation costs in architecture and operations. Juliane clarifies whether there is a business reason behind it or a habit that training and communication can change. The program decides only once both answers are in.',
+    },
     partners: [
       {
         area: 'Change management',
