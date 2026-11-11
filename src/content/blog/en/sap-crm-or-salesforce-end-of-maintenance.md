@@ -116,7 +116,7 @@ How I prepare such decisions with clients is described under [make or buy and li
 
 ## Why does waiting until 2030 increase cost and risk?
 
-Waiting looks cheap at first, because the system runs and nobody has to ask for budget. During extended maintenance, the premium applies every year. Whoever decides only in 2029 has little buffer left for selection, implementation and migration, and negotiates under time pressure. New requirements from sales and service land in a CRM that often gets no more investment, move into Excel lists and extra tools, and have to be migrated later as well.
+Waiting looks cheap at first, because the system runs and nobody has to ask for budget. During extended maintenance, the premium applies every year. Whoever decides only in 2029 has little buffer left for selection, implementation and migration, and negotiates under time pressure. New requirements from sales and service meet a CRM that often gets no more investment, move into Excel lists and extra tools, and have to be migrated later as well.
 
 The same dates apply to SAP ERP 6.0, and many companies move to S/4HANA in the same years. Both projects share interfaces, master data and often the same people, and they compete for the same internal experts and implementation capacity. Keeping SAP CRM running is easiest to defend as a bridge with a fixed end date.
 

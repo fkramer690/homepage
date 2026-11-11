@@ -62,7 +62,7 @@ SAP positioniert [Version 2 der SAP Sales und Service Cloud](https://www.sap.com
 
 ## Welche Fragen entscheiden zwischen Salesforce und SAP?
 
-Zwei Muster helfen, die Ausgangslage zu sortieren. Im ersten ist das CRM eine Vorstufe zum ERP: Der Innendienst erfasst Angebote und Aufträge, der Service legt Serviceaufträge an, und fast alles landet in S/4HANA. Hier gehören die SAP-Wege in die engere Auswahl. Im zweiten trägt das CRM eigene Prozesse: Vertriebssteuerung mit Prognosen und Sales Agreements, Kundenservice über mehrere Kanäle, Außendienst, Händler- und Kundenportale. Hier gehört Salesforce in die engere Auswahl. Viele Unternehmen liegen dazwischen.
+Zwei Muster helfen, die Ausgangslage zu sortieren. Im ersten ist das CRM eine Vorstufe zum ERP: Der Innendienst erfasst Angebote und Aufträge, der Service legt Serviceaufträge an, und fast alles geht anschließend in S/4HANA über. Hier gehören die SAP-Wege in die engere Auswahl. Im zweiten trägt das CRM eigene Prozesse: Vertriebssteuerung mit Prognosen und Sales Agreements, Kundenservice über mehrere Kanäle, Außendienst, Händler- und Kundenportale. Hier gehört Salesforce in die engere Auswahl. Viele Unternehmen liegen dazwischen.
 
 Die Muster grenzen die Liste ein. Die Entscheidung kommt aus den Fragen, die für Hersteller zählen:
 
@@ -116,7 +116,7 @@ Wie ich solche Entscheidungen mit Kunden vorbereite, steht unter [Make-or-buy un
 
 ## Warum erhöht Abwarten bis 2030 Kosten und Risiko?
 
-Abwarten wirkt zunächst günstig, weil das System läuft und niemand Budget beantragen muss. In der verlängerten Wartung fällt der Aufschlag jedes Jahr an. Wer erst 2029 entscheidet, hat wenig Puffer für Auswahl, Einführung und Migration und verhandelt unter Zeitdruck. Neue Anforderungen aus Vertrieb und Service landen in einem CRM, in das oft nicht mehr investiert wird, wandern in Excel-Listen und Zusatzwerkzeuge und müssen später ebenfalls migriert werden.
+Abwarten wirkt zunächst günstig, weil das System läuft und niemand Budget beantragen muss. In der verlängerten Wartung fällt der Aufschlag jedes Jahr an. Wer erst 2029 entscheidet, hat wenig Puffer für Auswahl, Einführung und Migration und verhandelt unter Zeitdruck. Neue Anforderungen aus Vertrieb und Service treffen auf ein CRM, in das oft nicht mehr investiert wird, weichen in Excel-Listen und Zusatzwerkzeuge aus und müssen später ebenfalls migriert werden.
 
 Dieselben Fristen gelten für SAP ERP 6.0, und viele Unternehmen wechseln in denselben Jahren auf S/4HANA. Beide Projekte teilen Schnittstellen, Stammdaten und oft dieselben Leute und konkurrieren um dieselben internen Fachleute und Umsetzungskapazitäten. Ein Weiterbetrieb von SAP CRM lässt sich am besten als Brücke mit festem Enddatum vertreten.
 
