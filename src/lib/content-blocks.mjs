@@ -11,8 +11,9 @@
 import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { iconHtml } from './icons.mjs';
+import { ringHtml, ringProblems, cycleHtml, cycleProblems } from './ring-cycle.mjs';
 
-export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen', 'partnerfluss', 'tabelle', 'staerken-grenzen', 'pipeline', 'saeulenwechsel', 'basis-addons', 'level', 'prozess', 'kette', 'steuerzentrale', 'eisberg'];
+export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen', 'partnerfluss', 'tabelle', 'staerken-grenzen', 'pipeline', 'saeulenwechsel', 'basis-addons', 'level', 'prozess', 'kette', 'steuerzentrale', 'eisberg', 'ring', 'kreislauf'];
 
 const labels = {
   de: {
@@ -25,7 +26,7 @@ const labels = {
     tipp: 'Tip', achtung: 'Warning', offen: 'Get it confirmed in writing', praxis: 'From my practice', entry: 'Entry',
     quelle: 'Source', next: 'next date', risiko: 'Biggest risk', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'adjacent process' },
     diagram: 'Flow diagram', grenzen: 'Limits', besser: 'Better suited', aus: 'from', gesetzt: 'given', addon: 'add-on', level: 'Level', tor: 'Gate',
-    ctrl: 'Control centre', sichtbar: 'Visible', darunter: 'Below: the real costs',
+    ctrl: 'Control center', sichtbar: 'Visible', darunter: 'Below: the real costs',
   },
 };
 const variants = ['tipp', 'achtung', 'offen'];
@@ -182,13 +183,21 @@ export function parsePillars(content) {
 // Comparison: "ohne: Title" / "without: Title" and "mit: Title" / "with: Title", each with "- points".
 export function parseCompare(content) {
   const cols = [];
+  let quote = '';
   for (const l of lines(content)) {
     if (!l.trim()) continue;
+    const q = keyLine(l.trim(), ['zitat', 'quote']);
+    if (q) { quote = q.value; continue; }
     const k = keyLine(l.trim(), ['ohne', 'without', 'mit', 'with']);
-    if (k) { cols.push({ kind: ['ohne', 'without'].includes(k.key) ? 'without' : 'with', title: k.value, items: [] }); continue; }
-    const item = l.trim().match(/^[-*]\s+(.*)$/);
-    if (item && cols.length) cols[cols.length - 1].items.push(item[1]);
+    if (k) { cols.push({ kind: ['ohne', 'without'].includes(k.key) ? 'without' : 'with', title: k.value, items: [], marks: [] }); continue; }
+    const item = l.trim().match(/^[-*]\s+(\*\s+)?(.*)$/);
+    if (item && cols.length) {
+      const c = cols[cols.length - 1];
+      if (item[1]) c.marks.push(c.items.length);
+      c.items.push(item[2]);
+    }
   }
+  cols.quote = quote;
   return cols;
 }
 
@@ -399,7 +408,7 @@ export function parseChain(content) {
   return out;
 }
 
-// Control centre: two sides "seite: Name | control centre | Stage, Stage, Stage" (EN "side:"),
+// Control center: two sides "seite: Name | control center | Stage, Stage, Stage" (EN "side:"),
 // each followed by two "- Role | Name | detail | link label" boxes below it and an optional
 // "fazit:" (EN "note:") as the caption of that side.
 export function parseControl(content) {
@@ -440,6 +449,32 @@ export function parseIceberg(content) {
     if (!m) { out.unknown = l; continue; }
     const [title, text = '', tag = ''] = m[1].split('|').map((x) => x.trim());
     out.items.push({ title, text, tag, mark: Boolean(m[2]) });
+  }
+  return out;
+}
+
+// Ring and cycle (src/lib/ring-cycle.mjs): "titel:" (EN "title:") names the drawing,
+// "mitte: Eyebrow | Title" (EN "centre:") fills the centre, the cycle adds
+// "hinweis: Title | text" (EN "hint:") for the panel at rest. One line per segment or
+// station: ring "- icon | Name | Subtitle | point; point; point" ("Name ~ LABEL" for a
+// shorter segment label), cycle "- icon | Name | Subtitle | Sentence | point; point; point".
+export function parseRingCycle(content, cycle) {
+  const out = { title: '', centre: ['', ''], intro: ['', ''], items: [] };
+  for (const raw of lines(content)) {
+    const l = raw.trim();
+    if (!l) continue;
+    const k = keyLine(l, ['titel', 'title', 'mitte', 'centre', 'hinweis', 'hint']);
+    if (k && isTitle(k.key)) { out.title = k.value; continue; }
+    if (k && ['mitte', 'centre'].includes(k.key)) { const [a, b = ''] = k.value.split('|').map((x) => x.trim()); out.centre = [a, b]; continue; }
+    if (k) { const [a, b = ''] = k.value.split('|').map((x) => x.trim()); out.intro = [a, b]; continue; }
+    const m = l.match(/^-\s+(.*)$/);
+    if (!m) { out.unknown = l; continue; }
+    const f = m[1].split('|').map((x) => x.trim());
+    const [nameRaw = '', label] = f[1] ? f[1].split('~').map((x) => x.trim()) : [''];
+    const item = cycle
+      ? { icon: f[0], name: nameRaw, sub: f[2] ?? '', text: f[3] ?? '', points: (f[4] ?? '').split(';').map((x) => x.trim()).filter(Boolean) }
+      : { icon: f[0], name: nameRaw, label, sub: f[2] ?? '', points: (f[3] ?? '').split(';').map((x) => x.trim()).filter(Boolean) };
+    out.items.push(item);
   }
   return out;
 }
@@ -542,6 +577,12 @@ export function validateBlock(block) {
     const cols = parseCompare(content);
     if (cols.length !== 2 || cols[0].kind !== 'without' || cols[1].kind !== 'with') errs.push('vergleich: needs an "ohne: Title" column followed by a "mit: Title" column');
     for (const c of cols) between(c.items.length, 2, 5, `points in "${c.title}"`);
+    const marked = cols.map((c) => c.marks.length);
+    if (cols.quote) {
+      if (marked.some((n) => n !== 1)) errs.push('vergleich: a quote sums up one pair, mark exactly one point per column with "- * " (docs/content-blocks.md)');
+      if (cols.quote.length > 140) errs.push(`vergleich: quote has ${cols.quote.length} characters, keep it to one sentence of at most 140`);
+      if (/^[„“"”]|[„“"”]$/.test(cols.quote)) errs.push('vergleich: write the quote without quotation marks, they are added');
+    } else if (marked.some((n) => n > 0)) errs.push('vergleich: marked points need a "zitat:" line (EN "quote:") that sums them up');
   } else if (name === 'hebel') {
     const levers = parseSteps(content);
     between(levers.length, 2, 3, 'levers');
@@ -620,11 +661,26 @@ export function validateBlock(block) {
     if (unknown) errs.push(`steuerzentrale: cannot read "${unknown}"`);
     between(sides.length, 2, 2, 'sides ("seite:" / "side:")');
     for (const x of sides) {
-      if (!x.name || !x.ctrl) errs.push('steuerzentrale: every side needs "Name | control centre | Stage, Stage"');
+      if (!x.name || !x.ctrl) errs.push('steuerzentrale: every side needs "Name | control center | Stage, Stage"');
       if (x.stages.length < 2 || x.stages.length > 4) errs.push(`steuerzentrale: "${x.name}" needs 2 to 4 stages`);
       if (x.boxes.length !== 2) errs.push(`steuerzentrale: "${x.name}" needs exactly two "- Role | Name | detail | link" boxes`);
       if (x.boxes.some((b) => !b.role || !b.name || !b.link)) errs.push(`steuerzentrale: every box of "${x.name}" needs role, name and link label`);
     }
+  } else if (name === 'ring' || name === 'kreislauf') {
+    const cycle = name === 'kreislauf';
+    const { title, centre, intro, items, unknown } = parseRingCycle(content, cycle);
+    if (!title) errs.push(`${name}: add a "titel:" (DE) or "title:" (EN) line`);
+    if (!centre[0] || !centre[1]) errs.push(`${name}: add "mitte: Eyebrow | Title" (EN "centre:")`);
+    if (cycle && (!intro[0] || !intro[1])) errs.push('kreislauf: add "hinweis: Title | text" (EN "hint:")');
+    if (unknown) errs.push(`${name}: cannot read "${unknown}"`);
+    between(items.length, cycle ? 3 : 3, cycle ? 6 : 7, cycle ? 'stations' : 'segments');
+    for (const x of items) {
+      if (!x.icon || !x.name || !x.sub || (cycle && !x.text)) errs.push(`${name}: "${x.name}" needs ${cycle ? '"- icon | Name | Subtitle | Sentence | point; point"' : '"- icon | Name | Subtitle | point; point"'}`);
+      if (x.points.length < 2 || x.points.length > 4) errs.push(`${name}: "${x.name}" needs 2 to 4 points separated by ";"`);
+      if (x.icon && !existsSync(new URL(`../icons/${x.icon}.svg`, import.meta.url))) errs.push(`${name}: icon "${x.icon}" is not in src/icons/`);
+    }
+    const problems = cycle ? cycleProblems(items.map((x) => x.name)) : ringProblems(items.map((x) => (x.label ?? x.name).toUpperCase()));
+    for (const p of problems) errs.push(`${name}: ${p}`);
   } else if (name === 'eisberg') {
     const { title, tip, items, unknown } = parseIceberg(content);
     if (!title) errs.push('eisberg: add a "titel:" (DE) or "title:" (EN) line');
@@ -640,7 +696,7 @@ export function validateBlock(block) {
 // Prose of a block, for word counts and the wording checks in check-blog.
 export function blockProse(block) {
   return block.content
-    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with|fazit|note|dach|roof|basis|base|spalten|columns|marke|mark|besser|better|schranke|gate|hotfix|bisher|before|alt|old|abschluss|done|spuren|lanes|ticket|start|phase|tor|zurueck|loop|seite|side|sichtbar|visible):\s*/gim, '')
+    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with|fazit|note|dach|roof|basis|base|spalten|columns|marke|mark|besser|better|schranke|gate|hotfix|bisher|before|alt|old|abschluss|done|spuren|lanes|ticket|start|phase|tor|zurueck|loop|seite|side|sichtbar|visible|mitte|centre|hinweis|hint):\s*/gim, '')
     .replace(/\s\*(?=\s*(\||$))/gm, '')
     .replace(/(--|\.\.)>?/g, ' ')
     .replace(/\s<\s/g, ' ')
@@ -764,9 +820,9 @@ function partnerFlowSvg(kind, arg, lang) {
 }
 
 // HTML of one block. `readDiagram(hash)` returns the stored SVG or undefined.
-export function renderBlock(block, { lang, isExternal, readDiagram, today = new Date().toISOString().slice(0, 10) }) {
+export function renderBlock(block, { lang, isExternal, readDiagram, base = '/', today = new Date().toISOString().slice(0, 10) }) {
   const t = labels[lang];
-  const o = { lang, isExternal };
+  const o = { lang, isExternal, base };
   const { name, arg, content } = block;
   if (name === 'hinweis') {
     return `<aside class="cb cb-card cb-note cb-note-${arg}">${label(t[arg] ?? arg)}${paras(content, o)}</aside>`;
@@ -820,8 +876,11 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
   }
   if (name === 'saeulen') {
     const { roof, base, pillars } = parsePillars(content);
-    const cols = pillars.map((x, i) => `<li style="--i:${i}"><span class="cb-pillar-head">${iconHtml(x.icon, 'cb-pillar-icon')}<span class="cb-pillar-no">${String(i + 1).padStart(2, '0')}</span></span><span class="cb-pillar-name">${inline(x.name, o)}</span><span class="cb-pillar-sub">${inline(x.sub, o)}</span><span class="cb-pillar-text">${inline(x.text, o)}</span></li>`).join('');
-    return `<div class="cb cb-pillars${roof ? ' cb-pillars-roofed' : ''}" style="--n:${pillars.length}">${roof ? `<p class="cb-pillar-roof">${inline(roof, o)}</p>` : ''}<ol>${cols}</ol>${base ? `<p class="cb-pillar-base">${inline(base, o)}</p>` : ''}</div>`;
+    // Slim pillars (icon, name, core line); the sentences stand below the base in two
+    // columns, so they never run in a quarter of the text column (Fabian 2026-10-31).
+    const cols = pillars.map((x, i) => `<li style="--i:${i}">${iconHtml(x.icon, 'cb-pillar-icon')}<span class="cb-pillar-name">${inline(x.name, o)}</span><span class="cb-pillar-sub">${inline(x.sub, o)}</span></li>`).join('');
+    const notes = pillars.map((x) => `<div><dt>${inline(x.name, o)}</dt><dd>${inline(x.text, o)}</dd></div>`).join('');
+    return `<div class="cb cb-pillars${roof ? ' cb-pillars-roofed' : ''}" style="--n:${pillars.length}">${roof ? `<p class="cb-pillar-roof">${inline(roof, o)}</p>` : ''}<ol>${cols}</ol>${base ? `<p class="cb-pillar-base">${inline(base, o)}</p>` : ''}<dl class="cb-pillar-notes">${notes}</dl></div>`;
   }
   if (name === 'hebel') {
     return `<div class="cb cb-levers">${parseSteps(content).map((s, i) => `<div class="cb-lever"><p class="cb-lever-no">${lang === 'de' ? 'Hebel' : 'Lever'} ${String(i + 1).padStart(2, '0')}</p><p class="cb-lever-title">${inline(s.title, o)}</p><p class="cb-lever-text">${inline(s.text, o)}</p>${s.meta ? `<p class="cb-lever-effect">${inline(s.meta, o)}</p>` : ''}</div>`).join('')}</div>`;
@@ -853,7 +912,14 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
     return `<figure class="cb cb-strengths" style="--n:${strengths.length}">${label(title)}<ul class="cb-sg-tiles">${tiles}</ul><div class="cb-sg-limits"><p class="cb-sg-head">${escHtml(t.grenzen)}</p><ul>${crosses}</ul></div>${better ? `<p class="cb-sg-better"><span>${escHtml(t.besser)}</span>${inline(better, o)}</p>` : ''}</figure>`;
   }
   if (name === 'vergleich') {
-    return `<div class="cb cb-compare">${parseCompare(content).map((c) => `<div class="cb-compare-col cb-compare-${c.kind}"><p class="cb-compare-title">${inline(c.title, o)}</p><ul>${c.items.map((i) => `<li>${c.kind === 'with' ? icon.check : icon.cross}<span>${inline(i, o)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;
+    // With "zitat:" the marked pair is summed up in a principle card below the
+    // comparison: round photo and quote only, no kicker or attribution (Fabian
+    // 2026-11-07; layout "Quote after a comparison" in docs/layouts.md).
+    const cols = parseCompare(content);
+    const compare = `<div class="cb cb-compare${cols.quote ? ' cb-compare-quoted' : ''}">${cols.map((c) => `<div class="cb-compare-col cb-compare-${c.kind}"><p class="cb-compare-title">${inline(c.title, o)}</p><ul>${c.items.map((i, n) => `<li${c.marks.includes(n) ? ' class="cb-compare-hit"' : ''}>${c.kind === 'with' ? icon.check : icon.cross}<span>${inline(i, o)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;
+    if (!cols.quote) return compare;
+    const [qo, qc] = lang === 'de' ? ['„', '“'] : ['“', '”'];
+    return `${compare}<figure class="cb cb-principle"><span class="cb-principle-link" aria-hidden="true"></span><div class="cb-principle-card"><img class="cb-principle-photo" src="${o.base ?? '/'}quote/fabian-kramer.webp" alt="Fabian Kramer" width="80" height="80" loading="lazy" decoding="async"><blockquote><p class="cb-principle-quote">${qo}${inline(cols.quote, o)}${qc}</p></blockquote></div></figure>`;
   }
   if (name === 'pipeline') {
     const { title, stages, gate, hotfix, notes } = parsePipeline(content);
@@ -925,6 +991,13 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
     const rows = items.map((x, i) => `<li class="${x.mark ? 'cz-big' : ''}" style="--w:${Math.round(58 + i * step)}%;--i:${i}"><strong>${inline(x.title, o)}</strong><small>${inline(x.text, o)}</small>${x.tag ? `<b>${inline(x.tag, o)}</b>` : ''}</li>`).join('');
     const note = notes.length ? `<figcaption class="cx-note">${notes.map((n) => inline(n, o)).join(' ')}</figcaption>` : '';
     return `<figure class="cb cb-iceberg" style="--n:${items.length}">${label(title)}<div class="cz-sea"><div class="cz-tip"><span class="cz-role">${escHtml(t.sichtbar)}</span><strong>${inline(tip.title, o)}</strong>${tip.text ? `<small>${inline(tip.text, o)}</small>` : ''}</div><div class="cz-under"><span class="cz-water">${escHtml(t.darunter)}</span><ol class="cz-ice">${rows}</ol></div></div>${note}</figure>`;
+  }
+  if (name === 'ring' || name === 'kreislauf') {
+    const cycle = name === 'kreislauf';
+    const { title, centre, intro, items } = parseRingCycle(content, cycle);
+    const id = `rc-${createHash('sha1').update(content).digest('hex').slice(0, 8)}`;
+    const fig = cycle ? cycleHtml({ id, label: title, centre, intro, items }) : ringHtml({ id, label: title, centre, items });
+    return `<div class="cb cb-wheel">${label(title)}${fig}</div>`;
   }
   return '';
 }

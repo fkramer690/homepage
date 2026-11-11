@@ -9,13 +9,17 @@ Service pages follow the content rules of the [blog guidelines](blog-guidelines.
 `src/components/ServicePage.astro` builds every page the same way. The Markdown file provides the frontmatter and the body:
 
 1. Optional note (`note`), eyebrow with number and short name (from `src/i18n`), headline (or title), lead, "Book a call"
-2. Typical situations (`situations`)
-3. What you get (`deliverables`) and results (`results`)
-4. How I work (`phases`, 3–4 steps)
-5. **Body (the only part that comes from Markdown)**
-6. FAQ, collapsible (`faq`)
-7. Author box
-8. Related blog articles (blog posts that share a tag with `blogTags`). With `section: change-management` the page shows the team cards (Fabian, Juliane Winterscheid, the joint plan) between "How I work" and the body, instead of the related articles the change management articles grouped by author (newest four per group, the rest linked in the filtered blog), the heading "Was wir machen" and the shared author box of Fabian and Juliane (`src/components/ChangeTeam.astro`, `ChangeArticles.astro`, texts in `src/data/change-management.ts`). On that page "ich" is Fabian and "wir" are Fabian and Juliane; the first paragraph says so
+2. Then one white band with the reading grid (text column plus contents and booking box), which carries the rest of the page in this order (Fabian, 2026-10-31: intro first, phases right before the FAQ):
+3. **Intro: the first paragraph of the body** (it answers "what is this service")
+4. Typical situations (`situations`)
+5. What you get (`deliverables`) and results (`results`), side by side
+5a. "Projekt im Fokus" / "Project in focus": the reference named in `reference` (sector, title, starting point, role, result, tags from `references.items` in `src/i18n`, the same anonymised projects as on the start page). Only where a confirmed reference fits; the body then does not repeat it (2026-11-09)
+6. **The rest of the body (Markdown)**
+6a. "Artikel zum Thema" / "Articles on this topic": the curated reading list from `readMore` (5 to 8 blog articles in reading order, numbered, with their category) and the masterclass from `masterclass` as a tinted row below it. It sits in the reading flow and in the contents column (backlog U3, 2026-11-07). Not on the change management page, which lists its articles by author
+7. How I work (`phases`, 3–4 steps) as a vertical timeline, with the typical duration (`duration`) above it
+7b. In the section "Passt das zu Ihrem Vorhaben?": "Typischer Einsatz" / "Typical engagement", the same on every page except change management (`servicePage.engagementRows` in `src/i18n`: day rate, scope, on site, language, no commissions; confirmed by Fabian 2026-11-09)
+7a. "Woran Sie Fortschritt sehen" / "How you see progress" (`progress`): 3 to 4 measures the client can follow during the engagement (2026-11-09)
+8. FAQ, collapsible (`faq`), author box. With `section: change-management` the page shows the team cards (Fabian, Juliane Winterscheid, the joint plan) in a grey band below the reading grid and, instead of the curated reading list, the change management articles grouped by author (newest four per group, the rest linked in the filtered blog), the heading "Was wir machen" and the shared author box of Fabian and Juliane (`src/components/ChangeTeam.astro`, `ChangeArticles.astro`, texts in `src/data/change-management.ts`). On that page "ich" is Fabian and "wir" are Fabian and Juliane; the first paragraph says so
 9. Contact section with "Book a call" and the contact form, subject set to the service. Heading, text and the lists "What to bring" / "What we clarify" come from the brief named in the required frontmatter field `contactBrief` (`src/lib/contact-briefs.ts`)
 
 Blog articles link back to the best matching service automatically (`getPostService` in `src/lib/services.ts`).
@@ -32,18 +36,29 @@ Blog articles link back to the best matching service automatically (`getPostServ
 | `order` | 1–7, position on the home page; the short name comes from `services.items` in `src/i18n`. The first `services.featured` services are cards, the rest are rows in the "More services" card (`services.moreItems`) |
 | `lead` | 80–320 characters, the problem and what I do about it |
 | `situations` | 3–5 items, each a situation the reader recognises |
-| `deliverables` | 3–8 items |
-| `results` | 3–6 items |
+| `deliverables` | 3–8 items: what I do, as full sentences with a verb ("Ich prüfe jede Partnerlieferung im Pull Request …"). Plain list, no check marks |
+| `results` | 3–6 items: what the client holds in hand afterwards, such as a document, a matrix, a pipeline, a plan or a handed-over process. No benefits or promises ("vergleichbare Partner", "planbare Lieferung") and nothing a deliverable already says. Plain list, no check marks |
 | `phases` | 3–4 items with `title` (max. 40), `icon` (file name in `src/icons/`, shown in the ring of the phase timeline) and `text` (max. 260) |
+| `duration` | 40–260 characters, the typical duration of the engagement per phase or stage, shown as "Typische Dauer" above the phase timeline. Only values Fabian confirmed (2026-11-07) |
+| `notFit` | 2–3 items, max. 160 characters: when the service does not fit. Shown with `alternatives` and the shared text "Nach dem ersten Gespräch" (`servicePage.afterCallText` in `src/i18n`) in the section "Passt das zu Ihrem Vorhaben?" after the phases (KS1, confirmed by Fabian 2026-11-09) |
+| `progress` | 3–4 items with `measure` (max. 60) and `how` (max. 180): what the client can watch during the engagement and how it shows. Measures only, never promised target values |
+| `reference` | optional key from `references.items` in `src/i18n` (`manufacturing-cloud`, `after-sales`, `cti`, `embedded-chat`, `governance`): the confirmed project shown as "Projekt im Fokus". New projects go into the start page references first |
+| `alternatives` | 80–420 characters: which alternatives (internal role, partner alone, freelancer, tool) fit better and when |
 | `faq` | 2–6 questions, answers up to 600 characters |
 | `note`, `notePartner` | optional, max. 240 characters: note shown at the very top, e.g. who the approach was developed with. `notePartner` is a name from `partnerPage.partners` in `src/i18n` and must appear in `note`; it is linked to the partner page and LinkedIn |
-| `blogTags` | 1–8 tags, matched case-insensitively against blog tags |
+| `blogTags` | 1–8 tags, matched case-insensitively against blog tags; they pick the service an article links back to |
+| `readMore` | 5–8 blog `translationKey`s in reading order: from the entry question to the details, the articles the service is really about. Required except on the change management page; the build fails on a key without a published article in the page's language. Same list in EN and DE |
+| `masterclass` | optional course id from `src/lib/courses.ts`: the masterclass that fits, shown below the reading list |
 | `section` | optional, only `change-management`: adds the team cards and the change management article lists (see "Fixed page structure") |
 
 ## Body
 
 - 400–1,200 words, at least 2 H2 sections, at least one phrased as a question, no H1 and no H4+.
-- First paragraph answers "what is this service" in at most 110 words.
+- First paragraph answers "what is this service" in at most 110 words; it opens the reading column, so the body must start with a plain paragraph (the build fails otherwise).
 - At least one concrete, anonymised example or number from real work.
+- At most one contrast per page (AI-slop review 2026-10-31): one ```vergleich, ```pro-contra or ```partnerfluss block (without/with), never several. The situations list is the problem side; deliverables and results are not a second and third answer to it.
+- Not every H2 is a question: at most half, at least one stays a question for AI search. The others state the answer ("Regeln und Werkzeuge gehören dem Kunden").
+- The "No template shape" rules under "No AI slop" in the blog guidelines apply to the body and the frontmatter lists too (at most one counting announcement, at most 3 intensifiers, at most 5 × "statt", no "Topic: statement" headings by default), even though `--structure` does not check service pages.
+- Say each point once: situations, deliverables and results above the body are the summary. A content block in the body must not repeat them word for word; a ```vergleich shows how it works (mechanism), not the results list again (2026-10-31).
 - At least 2 relative links: related blog articles (`../../blog/<slug>/`), other services (`../<slug>/`), `../../#about`.
 - No closing invitation to get in touch: the contact section ("Book a call" plus form) follows directly below the text (Fabian, 2026-10-29).

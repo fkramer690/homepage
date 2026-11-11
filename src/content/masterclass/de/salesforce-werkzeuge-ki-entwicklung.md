@@ -5,14 +5,14 @@ lang: de
 slug: salesforce-werkzeuge-ki-entwicklung
 translationKey: masterclass-02
 chapter: 2
+pubDate: 2026-10-27
 short: "Salesforce-Werkzeuge"
 summary: "Welche KI-Werkzeuge Salesforce selbst für Entwicklung und Administration anbietet, was sie kosten und wo ihre Grenzen liegen."
 takeaways:
-  - "Salesforce bietet einen eigenen Coding-Agenten, Agentforce Vibes, und dieselben Fähigkeiten als Skills, Claude-Code-Plugin und MCP-Server für fremde Agenten. Die Wahl des Agenten bleibt damit offen."
-  - "Agentforce Vibes ist in der EU Operating Zone nicht verfügbar. Außerhalb der Developer Edition braucht es seit Juni 2026 Flex Credits oder eine Unmetered-Lizenz."
-  - "Die Unmetered-Lizenz begrenzt das Premium-Modell auf 2.500 Requests oder 36 Mio. Token pro Org und 30 Tage, nicht pro Nutzer. Sechs Entwickler mit je 25 Requests am Tag erreichen sie nach acht Arbeitstagen."
-  - "Neue Agentforce-Agenten entstehen seit Juli 2026 nur noch mit Agent Script. Als AiAuthoringBundle lassen sie sich in Git versionieren, testen und über die Pipeline ausrollen."
-  - "Code Analyzer und ApexGuru prüfen ohne Sprachmodell. Eigene Regeln für KI-generierten Code hat Salesforce nicht, deshalb gehören diese Prüfungen als Pflicht in die Pipeline."
+  - "Agentforce Vibes gibt es nicht in der EU Operating Zone. Außerhalb der Developer Edition braucht es seit Juni 2026 Flex Credits oder eine Unmetered-Lizenz."
+  - "Die Unmetered-Lizenz begrenzt das Premium-Modell auf 2.500 Requests pro Org und 30 Tage. Sechs Entwickler sind damit nach acht Arbeitstagen am Limit."
+  - "Neue Agentforce-Agenten entstehen seit Juli 2026 nur mit Agent Script und lassen sich als AiAuthoringBundle in Git versionieren, testen und ausrollen."
+  - "Code Analyzer und ApexGuru prüfen ohne Sprachmodell. Weil Salesforce keine eigenen Regeln für KI-Code hat, gehören sie als Pflicht in die Pipeline."
 articles: [vibes-claude-code-copilot-comparison, testing-agentforce-agents, ai-rules-file-salesforce-repo, agent-script-deterministic-rules]
 faq:
   - q: "Ist Agentforce Vibes kostenlos?"
@@ -30,7 +30,7 @@ Salesforce bietet für KI-gestützte Entwicklung 2026 zwei Wege an: den eigenen 
 
 ## Welche KI-Werkzeuge bietet Salesforce für die Entwicklung?
 
-Die Werkzeuge gehören zur Ebene „KI zum Bauen“ aus [Kapitel 1](../begriffe-und-landkarte/), dazu kommt die Admin-KI im Setup. Stand Oktober 2026:
+Die Werkzeuge gehören zur Ebene „KI zum Bauen“ aus [Kapitel 1](../begriffe-und-landkarte/), hinzu kommt die Admin-KI im Setup. Stand Oktober 2026:
 
 | Werkzeug | Wofür | Stand Oktober 2026 | Abrechnung |
 |---|---|---|---|
@@ -46,7 +46,7 @@ Die Werkzeuge gehören zur Ebene „KI zum Bauen“ aus [Kapitel 1](../begriffe-
 
 Quellen: [Vibes GA](https://developer.salesforce.com/developer-centers/agentforce-vibes/announcements/agentforce-vibes-4-1-0), [Vibes IDE](https://developer.salesforce.com/blogs/2026/04/new-developer-edition-agentforce-vibes-claude-mcp), [Plugin und Skills](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin), [Agentforce DX](https://developer.salesforce.com/blogs/2025/05/introducing-agentforce-dx-pro-code-tools), [Agent Script](https://www.salesforce.com/blog/upgrade-to-agent-script/), [Code Analyzer Engines](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engines.html).
 
-Die Richtung hat sich in einem Jahr gedreht. Im Oktober 2025 startete Vibes als Agent auf Basis des Open-Source-Projekts Cline, [GA mit einer begrenzten Zahl an Requests](https://developer.salesforce.com/blogs/2025/10/unleash-your-innovation-with-agentforce-vibes-vibe-coding-for-the-enterprise). 2026 liefert Salesforce dasselbe Wissen an jeden Agenten aus. Unter dem Namen Headless 360 soll [jede wichtige Fähigkeit als API, MCP-Tool oder CLI-Befehl](https://developer.salesforce.com/blogs/2026/05/headless-360-what-it-means-for-developers) verfügbar sein: über 60 MCP-Tools, über 30 Coding-Skills, über 4.000 APIs und über 220 CLI-Befehle. Jede Aktion läuft als konkreter Benutzer, mit Freigaberegeln, Feldberechtigungen, Validierungsregeln und Governor Limits. Für Sie als Auftraggeber heißt das: Welcher Agent im Team arbeitet, entscheidet nicht darüber, was er in der Org darf.
+Die Richtung hat sich in einem Jahr gedreht. Im Oktober 2025 startete Vibes als Agent auf Basis des Open-Source-Projekts Cline, [GA mit einer begrenzten Zahl an Requests](https://developer.salesforce.com/blogs/2025/10/unleash-your-innovation-with-agentforce-vibes-vibe-coding-for-the-enterprise). 2026 liefert Salesforce dasselbe Wissen an jeden Agenten aus. Unter dem Namen Headless 360 soll [jede wichtige Fähigkeit als API, MCP-Tool oder CLI-Befehl](https://developer.salesforce.com/blogs/2026/05/headless-360-what-it-means-for-developers) verfügbar sein: über 60 MCP-Tools, über 30 Coding-Skills, über 4.000 APIs und über 220 CLI-Befehle. Jede Aktion wird im Namen eines konkreten Benutzers ausgeführt, mit Freigaberegeln, Feldberechtigungen, Validierungsregeln und Governor Limits. Für Sie als Auftraggeber heißt das: Welcher Agent im Team arbeitet, entscheidet nicht darüber, was er in der Org darf.
 
 Ein Hinweis für Angebote von Partnern: „Einstein for Developers“ und „Agentforce for Developers“ sind [ältere Namen](https://developer.salesforce.com/blogs/2024/09/introducing-agentforce-for-developers) aus den Jahren 2023 und 2024, damals mit Salesforce-eigenen Modellen. Steht einer davon im Angebot, beschreibt es einen Vorgänger von Vibes.
 
@@ -58,7 +58,7 @@ Vibes 2.0 läuft laut [GA-Ankündigung](https://developer.salesforce.com/develop
 - **Freigaben:** Der Standardmodus „Run safe defaults“ ändert Dateien im Workspace ohne Rückfrage. Pfade außerhalb, geschützte Dateien und Schreibzugriffe auf `.git/` brauchen eine Freigabe.
 - **Sub-Agenten:** Ein führender Agent verteilt Arbeit an Sub-Agenten für Apex, LWC, Jest-Tests und SOQL, jeder in einem [eigenen Git-Worktree](https://developer.salesforce.com/docs/platform/einstein-for-devs/guide/einstein-overview.html).
 - **MCP:** [Rechte lassen sich pro Tool verwalten](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-permissions-safety.html), und ein Schalter, der nicht destruktive Schreibzugriffe über Salesforce-MCP-Tools automatisch freigibt, ist standardmäßig aus.
-- **Regeln und Skills:** Projektregeln liegen in [`.vibes/rules/`](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-rules.html), früher `.a4drules/`. Projektregeln schlagen globale Regeln. Eingebaute Regeln wie `production-guardrails` lassen sich abschalten, aber nicht ändern.
+- **Regeln und Skills:** Projektregeln liegen in [`.vibes/rules/`](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-rules.html), früher `.a4drules/`. Projektregeln haben Vorrang vor globalen Regeln. Eingebaute Regeln wie `production-guardrails` lassen sich abschalten, aber nicht ändern.
 
 Die Doku sagt nicht, ob Vibes auch `CLAUDE.md` oder `AGENTS.md` liest. Claude Code liest laut [Anthropic](https://code.claude.com/docs/en/memory) `CLAUDE.md` oder ein vorhandenes `AGENTS.md`. Arbeitet Ihr Partner mit Vibes und Ihr eigenes Team mit Claude Code, brauchen Sie die Regeln an zwei Stellen oder eine gemeinsame Quelle. Warum diese Datei in Ihr Repository gehört und wem sie gehört, steht in [die KI-Regeldatei im Salesforce-Repository](../../../blog/ki-regeldatei-salesforce-repository/).
 
@@ -81,13 +81,13 @@ Seit dem 1. Juni 2026 braucht Vibes außerhalb der Developer Edition [Flex Credi
 Für deutsche Hersteller wiegt ein Satz der FAQ am schwersten: „Agentforce Vibes isn't available in the EU Operating Zone.“ In EU-Orgs außerhalb der Operating Zone ist Vibes nach Standardbedingungen nutzbar. Group, Professional, Essentials und Government Cloud sind ebenfalls ausgeschlossen.
 ```
 
-Wer die EU Operating Zone aus Datenschutzgründen gewählt hat, landet bei externen Agenten mit eigenen Datenresidenzfragen. Den Vergleich nach Vertrag, Datenresidenz und Kostenmodell finden Sie in [Agentforce Vibes, Claude Code oder Copilot](../../../blog/agentforce-vibes-claude-code-copilot-vergleich/), die externen Agenten selbst in [Kapitel 4](../externe-coding-agenten/).
+Wer die EU Operating Zone aus Datenschutzgründen gewählt hat, ist auf externe Agenten angewiesen, die eigene Fragen zur Datenresidenz aufwerfen. Den Vergleich nach Vertrag, Datenresidenz und Kostenmodell finden Sie in [Agentforce Vibes, Claude Code oder Copilot](../../../blog/agentforce-vibes-claude-code-copilot-vergleich/), die externen Agenten selbst in [Kapitel 4](../externe-coding-agenten/).
 
 ## Skills, Plugin und Headless 360: Salesforce-Wissen für fremde Agenten
 
 Die Skills-Bibliothek `forcedotcom/sf-skills` ist Open Source. Salesforce nennt im [Juni 2026](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills) Beispiele wie `generating-apex`, `generating-apex-test`, `generating-lwc-components`, `debugging-apex-logs` und `generating-flow`. Installiert wird mit `npx skills add forcedotcom/sf-skills`. In Vibes ist die Bibliothek vorinstalliert, für OpenCode, Claude Code, Codex und Cursor nennt Salesforce im [August 2026](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) denselben Installationsweg.
 
-Das Claude-Code-Plugin aus derselben Ankündigung bündelt rund 40 dieser Skills, ohne Data 360, Commerce und Mobile. Dazu kommen drei MCP-Server (`salesforce-api-context`, `salesforce-metadata-experts`, `salesforce-lsp`), ein Entwicklungsagent, ein nur lesender Agent `architecture-review`, der ein Projekt gegen die Säulen des Well-Architected Framework bewertet, und Hooks. Ein Hook prüft die Syntax von Agent-Script-Dateien, ein anderer validiert Deployments. Ein Hook läuft automatisch, ein Satz im Prompt wirkt nur, wenn das Modell ihn beachtet. Deshalb halte ich die Hooks für den wertvollsten Teil.
+Das Claude-Code-Plugin aus derselben Ankündigung bündelt rund 40 dieser Skills, ohne Data 360, Commerce und Mobile. Hinzu kommen drei MCP-Server (`salesforce-api-context`, `salesforce-metadata-experts`, `salesforce-lsp`), ein Entwicklungsagent, ein nur lesender Agent `architecture-review`, der ein Projekt gegen die Säulen des Well-Architected Framework bewertet, und Hooks. Ein Hook prüft die Syntax von Agent-Script-Dateien, ein anderer validiert Deployments. Ein Hook läuft automatisch, ein Satz im Prompt wirkt nur, wenn das Modell ihn beachtet. Deshalb halte ich die Hooks für den wertvollsten Teil.
 
 Salesforce weist selbst darauf hin, dass Plugins herstellerspezifisch sind, Skills und MCP dagegen Standards. Skills sind im Kern Anweisungen und Skripte, die das Modell bei Bedarf lädt. Sie machen einen Agenten besser in Salesforce, erzwingen aber nichts. Durchgesetzt wird über Hooks, Code Analyzer und die Pipeline.
 
@@ -136,9 +136,9 @@ Die Admin-KI ändert dieselbe Org, nur über die Oberfläche statt über Code.
 | Setup with Agentforce | Setzt Data Cloud voraus und zeigt nach Aktivierung einen Button „Ask Setup Agent“ auf den Setup-Seiten. Laut [SalesforceTime](https://salesforcetime.com/2026/09/01/setup-with-agentforce-everything-you-need-to-know/) legt der Agent Objekte, Felder, Benutzer, Berechtigungen, Freigabeeinstellungen, Flows, Berichtstypen und Lightning-Seiten an, schlägt Änderungen vor der Ausführung vor und verbraucht Data 360 Credits. Salesforce hat die allgemeine Verfügbarkeit am [26. Mai 2026 im Admin-Blog](https://admin.salesforce.com/blog/2026/setup-with-agentforce-is-generally-available) gemeldet, ohne ein Release zu nennen. Was der Agent in Produktion dürfen sollte, steht in [Setup with Agentforce: Admin-KI in Produktion erlauben?](../../../blog/setup-with-agentforce-admin-aenderungen/). |
 | Prompt Builder | Ist [GA](https://developer.salesforce.com/blogs/2025/10/build-and-optimize-agents-with-new-agentforce-360-features) und kann seit Winter '26 Bilder und PDFs verarbeiten, Antworten als HTML oder JSON strukturieren und bis zu 1.000 Prompts als Batch ausführen. |
 
-Damit verbraucht die Admin-KI drei Währungen: Einstein Requests, Data 360 Credits und Flex Credits. Das gehört in die Lizenzplanung. Meine Empfehlung: Setup-Agent und Einstein for Flow nur in Sandboxes einsetzen, und die Ergebnisse gehen über die Pipeline wie jede andere Metadatenänderung. Ein Agent, der in Produktion Freigabeeinstellungen ändert, macht das alte Problem direkter Änderungen nur schneller.
+Damit verbraucht die Admin-KI drei Währungen: Einstein Requests, Data 360 Credits und Flex Credits. Das gehört in die Lizenzplanung. Meine Empfehlung: Setup-Agent und Einstein for Flow nur in Sandboxes einsetzen, und die Ergebnisse durchlaufen die Pipeline wie jede andere Metadatenänderung. Ein Agent, der in Produktion Freigabeeinstellungen ändert, macht das alte Problem direkter Änderungen nur schneller.
 
-## Ein typisches Szenario: Werkzeugwahl bei einem Maschinenbauer
+## Beispiel: Werkzeugwahl bei einem Maschinenbauer
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Händlerportal und SAP an. Ein Implementierungspartner arbeitet mit sechs Entwicklern, geplant ist ein erster Agentforce-Agent für Händleranfragen zum Auftragsstatus. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
@@ -166,5 +166,3 @@ In diesem Szenario ist die Frage nach dem Agenten schnell beantwortet. Zeit kost
 6. **Admin-KI auf Sandboxes begrenzen.**
 
 Salesforce wirbt auf der [Produktseite](https://www.salesforce.com/agentforce/developers/vibe-coding/) damit, Teams könnten mit Vibes „up to 95% faster“ innovieren. Eine Studie dazu nennt die Seite nicht. Messen Sie den Effekt in Ihrem eigenen Programm, wie in [Kapitel 9](../teamarbeit-und-delivery/) beschrieben, und sehen Sie sich als Nächstes in [Kapitel 3](../mcp-und-schnittstellen/) an, über welche Schnittstellen diese Werkzeuge auf Ihre Org zugreifen.
-
-Wählen Sie den Coding-Agenten nach Standort und Lizenz, und legen Sie die Qualität in Agent Script, Tests und Pipeline, die Ihnen gehören.

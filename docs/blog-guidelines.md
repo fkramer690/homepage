@@ -15,8 +15,9 @@ Start every new article from [`docs/blog-template.md`](blog-template.md).
 | Part | Rule | Checked |
 |---|---|---|
 | Title | Names a concrete problem or question, 20–60 characters, main keyword near the start | schema |
+| Meta title (optional) | `metaTitle`: search title (`<title>`) when it should differ from the H1, e.g. "Salesforce" first where the H1 names only the product; 20–60 characters, unique like every title. H1, preview image and links keep `title` | schema, check-titles |
 | Description | 120–160 characters, states what the reader gets | schema |
-| Key takeaways | 3–5 standalone sentences, each understandable without the article | schema |
+| Key takeaways | 3–5 standalone sentences, each understandable without the article, at most 160 characters, the first not a copy of the intro | schema + script |
 | Intro | First paragraph gives the answer, at most 110 words | script |
 | Body | At least 3 H2 sections, H3 if needed, no H1 and no H4+ | script |
 | Questions | At least one H2 phrased as a question people would search for | script |
@@ -47,6 +48,8 @@ Every article page is built by `src/components/BlogPost.astro` and looks the sam
 7. Related articles
 8. Contact section with "Book a call" and the contact form. Heading, text and the two lists "What to bring" / "What we clarify" come from `src/lib/contact-briefs.ts`: by default the brief of the article's main category (the first in `categories`); set `contactBrief` in the frontmatter when another brief fits the topic better (e.g. `licences` for licence and pricing articles, `partner-governance` for partner topics). Add a new brief there instead of writing a CTA in the article.
 
+Two call hints sit inside the article body (`src/components/CallHint.astro`, placed by `src/components/ProseWithHints.astro`): one before the first H2 with at least 20 % of the words above it, one before the first later H2 at 40 %. Hint 1 shows the title and text of the article's contact brief, hint 2 the second item of its "What to bring" list; both have the booking button. Because of them, article pages have no booking box in the side column. Never write a call hint into the Markdown.
+
 Changes to parts 1–2 and 4–8 are made once in the components and apply to all articles. Markdown files contain no raw HTML, no author section and no CTA block; the check script rejects HTML.
 
 ## Series
@@ -67,6 +70,7 @@ A topic too big for one article becomes a series (for example Salesforce Field S
 - First person, clear opinions, plain language. In German address readers with "Sie".
 - Concrete numbers and trade-offs instead of buzzwords. Show where Salesforce is not the right answer.
 - Explain technical terms the first time they appear.
+- No code styling in the running text (Fabian 2026-11-05): with many `code` spans an article reads like a generated answer. Write names in plain words (CLAUDE.md, the severity threshold), and put commands, flags, class and API names into one ```vertiefung For developers block. `check-blog.mjs` allows at most 15 code spans outside such blocks and no raw code blocks; show a code example as a described entry (```eintrag) instead.
 - Never identifiable: customers, partners, people. Never name the energy or utility sector (the script blocks typical terms). Do not highlight certifications.
 - Only claim experience Fabian actually has. If a claim or example is unclear, ask him.
 
@@ -79,19 +83,33 @@ Articles must read like Fabian talking to a client, not like generated content. 
 - **No announcement sentences.** No "Here is what you will learn", "In this article", "Hier lesen Sie", "In diesem Artikel". The intro gives the answer and stops (checked).
 - **No "it is not X, it is Y".** State what something is (checked).
 - **No en or em dashes.** Use a comma, a full stop or "to" (checked).
+- **No colloquial German, no vague verbs.** Write the precise verb: "Partner einbeziehen" instead of "dazuholen", "funktioniert" or "gelingt" instead of "klappt", "geht an" or "wird übernommen" instead of "landet", "wurden erstellt" instead of "es kamen", "werden nicht freigestellt" instead of "bekommen keine Zeit". The build fails on dazuholen, holen … dazu, klappen, landen, drin, kriegen, checken, jede Menge, ziemlich, mal eben, unterm Strich in German texts, in `src/i18n` and in `src/data` (checked). The list only catches the obvious cases: vague kommen, gehen, laufen and bekommen still need the sentence pass below.
+- **Sentence pass before every change with text.** Before a pull request that adds or changes page text (articles, chapters, service pages, i18n, `src/data`, meta descriptions, H1s), read every new or changed sentence in DE and EN once more for clumsy, colloquial or imprecise wording and smooth it. This applies to small SEO fixes too, not only to new articles.
 - **No reflexive lists of three.** Use as many items as there really are.
+- **No template shape.** The SEO test run of 2026-11-11 found that nearly every article has 7 H2 sections and lists of 4 points (chapters: 5). Let the topic decide: a narrow question can have 4 sections, a broad one 9; a list has as many points as there are.
+- **Stock words at most twice per text.** "einfach" and "entscheidend" (EN: simply, crucial) as filler or as the opener "Entscheidend ist …" appear at most twice; inflected adjectives such as "einfache Produkte" are fine (checked, like "wirklich" and "tatsächlich", which are capped at three).
 - **No hype, no superlatives without a reason.** "Best course I have taken" is fine when the article says why; "revolutionary" is not.
 - **Fabian's voice.** First person, direct, a little dry, with his own phrasing where he gave it (e.g. from LinkedIn posts). Keep real quirks instead of smoothing them out.
+- **No template shape** (AI-slop review 2026-10-31). Every article had the same skeleton, which reads as generated even when each sentence is fine. `node scripts/check-blog.mjs --structure` lists these findings (errors in the build since 2026-10-31):
+  - No generic closing heading ("Wo fangen Sie an?", "Wo sollten Sie anfangen?", "Where should you start?"). The last section names the concrete first step in its heading.
+  - No one-sentence summary or moral as the last paragraph ("X ist nur so gut wie Y", "Saubere Stammdaten sind die Voraussetzung für …"). The article ends with the step.
+  - Key takeaways: 3 to 5, as many as there are, at most 160 characters each, and the first does not repeat the intro's first sentence. The intro, the takeaways and the first FAQ answer each add something.
+  - At most half of the H2 are questions (at least one stays for AI search); the others state the answer.
+  - Assumption examples are called "Rechenbeispiel" / "Worked example", never "Ein typisches Szenario, als Annahme".
+  - At most one counting announcement ("drei Dinge", "three questions"); no "Erstens, Zweitens, Drittens".
+  - No stock phrases: "nur so gut wie", "besser als jede …", "die gute Nachricht", "der Haken", "the honest answer", "the catch".
+  - At most 3 intensifiers per text (echt, wirklich, tatsächlich, ehrlich / really, actually, honestly, genuinely, truly) and at most 5 × "statt" / "instead of".
+  - Titles: the pattern "Topic: statement" is not the default; use it only when the colon really separates two things.
 - **Read-aloud test.** Read the article once out loud. Anything Fabian would not say to a client in a meeting gets rewritten.
 
 ## Content blocks
 
-Every article and every masterclass chapter loosens up its text with building blocks from the library in [content-blocks.md](content-blocks.md): note (`hinweis tipp|achtung|offen`), from my practice (`praxis`), key figures (`kennzahlen`), timeline (`zeitleiste`), flow diagram (`ablauf`), pro and contra (`pro-contra`), collapsible detail (`vertiefung`), steps (`schritte`), stage tiles (`stufen`), without/with comparison (`vergleich`), lever cards (`hebel`), log entry (`eintrag`), pillars (`saeulen`) the animated partner flow (`partnerfluss architekt|review`), light table (`tabelle`, `tabelle matrix`), strengths and limits (`staerken-grenzen`) and the four animated explainers on a dark panel: release pipeline (`pipeline`), old to new pillars (`saeulenwechsel`), base and add-ons (`basis-addons`) and levels (`level`), plus the animated process in lanes (`prozess`), traceability chain (`kette`), control centre (`steuerzentrale`) and iceberg (`eisberg`). They are fenced code blocks with the block name as language, so the article stays free of HTML. The build check enforces the counts.
+Every article and every masterclass chapter loosens up its text with building blocks from the library in [content-blocks.md](content-blocks.md): note (`hinweis tipp|achtung|offen`), from my practice (`praxis`), key figures (`kennzahlen`), timeline (`zeitleiste`), flow diagram (`ablauf`), pro and contra (`pro-contra`), collapsible detail (`vertiefung`), steps (`schritte`), stage tiles (`stufen`), without/with comparison (`vergleich`), lever cards (`hebel`), log entry (`eintrag`), pillars (`saeulen`) the animated partner flow (`partnerfluss architekt|review`), light table (`tabelle`, `tabelle matrix`), strengths and limits (`staerken-grenzen`) and the four animated explainers on a dark panel: release pipeline (`pipeline`), old to new pillars (`saeulenwechsel`), base and add-ons (`basis-addons`) and levels (`level`), plus the animated process in lanes (`prozess`), traceability chain (`kette`), control centre (`steuerzentrale`) and iceberg (`eisberg`), and the interactive ring (`ring`) and cycle (`kreislauf`). They are fenced code blocks with the block name as language, so the article stays free of HTML. The build check enforces the counts.
 
 - At least one block or a Markdown table per text; texts over 1,300 words need at least two different ones (a table counts as one kind).
 - At most one block per 250 words, with four always allowed (Fabian 2026-10-30), at most two notes and one practice block, so the text leads and not the boxes.
 - Pick the block by content, never for decoration: dates in a sequence → timeline; a decision with arguments on both sides → pro-contra; data flows between Salesforce and the ERP → flow diagram; phases with duration and owner → steps; two or three levers that each have an effect → lever cards; figures the section explains → key figures; several partners or teams delivering into one org, with and without a central owner → partner flow; a comparison or assignment in rows and columns → light table (never as an image of a table); what a tool does well and where it stops → strengths and limits; stages a change runs through up to production → pipeline; an old structure split onto a new one → pillar shift; what is set anyway and what is added on top → base and add-ons; levels or certifications that build on each other → levels; a whole process in which people, an agent or a pipeline take turns, with decision gates → process in lanes; one item traced through several artefacts → chain; two tools or approaches that differ in where the process is controlled → control centre; a visible price with the real costs below it → iceberg; detail only specialists need → collapsible detail; a fact readers must not miss, an open point to confirm in writing → note.
-- `praxis` only with experience Fabian has confirmed (list in content-blocks.md); assumption scenarios stay in the running text, marked "as an assumption".
+- `praxis` only with experience Fabian has confirmed (list in content-blocks.md); assumption examples stay in the running text, introduced as "Rechenbeispiel" / "Worked example".
 - Key figures and timelines only with values that are sourced in the text.
 - A block repeats nothing the paragraph around it says word for word; it condenses or adds structure. Same blocks in EN and DE.
 - Flow diagrams: run `node scripts/render-diagrams.mjs` after adding or changing one; it fails if a label does not fit its box.
@@ -111,9 +129,10 @@ Every article and every masterclass chapter loosens up its text with building bl
 ## SEO
 
 - One primary keyword (long tail, e.g. "Salesforce DevOps enterprise") in the title, the first paragraph, one H2 and the slug.
+- Pick the keyword by competition, not only by volume (R5, 2026-11-07): before writing a new article, check the top 10 for the keyword with DataForSEO (SERP plus domain rank of each result, login in the environment as `DATAFORSEO_LOGIN`/`DATAFORSEO_PASSWORD`). If at least a few results come from domains as strong as fk-sd.de or weaker, take it. If only strong domains rank (Salesforce, Trailhead, large consultancies, SalesforceBen), choose a more specific long-tail keyword with buying intent ("best X for Y", "alternatives to X", "X experiences", "X for manufacturers") or cover the term through LinkedIn or YouTube instead (R1, R2). Note the check in the pull request.
 - Slug: lowercase words with hyphens, in the article's language, unique across EN and DE (checked). Never change it after publishing.
 - At least 2 internal links, written relative so they survive the domain move: `../other-slug/`, the matching service page (`../../leistungen/<slug>/` in German, `../../services/<slug>/` in English), `../../#references`, `../../#about`. Prefer a specific service page over the generic `../../#services`. Never hardcode the domain or start a link with `/`.
-- External links only to sources that back a statement. They open in a new tab automatically (`src/lib/external-links.mjs`); write them as normal Markdown links.
+- External links only to sources that back a statement. Write them as normal Markdown links. In the body each one becomes a numbered source chip after the link text (`src/lib/source-chips.mjs`); the sources are collected in the collapsed list "Quellen"/"Sources" before the FAQ, where they open in a new tab (`src/lib/external-links.mjs`). So the link text must name the source ("Salesforce-Blog", "Release Notes Winter '27"), not "hier" or "Framework". Links inside content blocks stay plain links.
 - Set `updatedDate` whenever an article changes in substance, and also after checking its prices, Flex Credits, deadlines and release dates against the sources, even if nothing changed. `scripts/stale-articles.mjs` lists articles whose prices are older than six months or whose deadlines have passed since `updatedDate`; a monthly Claude scheduled task (or the manually started workflow `stale-articles.yml`) keeps the issue "Artikel prüfen: Preise, Fristen und tote Links" up to date, including external links that answer 404.
 - Handled automatically by the template: `<title>` (adds the site name only within 60 characters), canonical, hreflang EN/DE, Open Graph as `article`, BlogPosting, FAQPage and BreadcrumbList structured data, sitemap, RSS feed (`/blog/rss.xml`) and `llms.txt`.
 
@@ -126,6 +145,9 @@ AI assistants quote passages that answer a question on their own. So:
 - Write definitions as complete sentences ("Salesforce DevOps means …").
 - Prefer lists and short paragraphs over long blocks of text.
 - Name the author and their role clearly (done by the template).
+- Every H2 section stands on its own, because AI search quotes single sections. No pointers back like "wie oben beschrieben", "siehe oben", "der oben genannte Beitrag", "as described above" or "in the previous section": name the point again in a few words. `scripts/check-blog.mjs` fails on these phrases in articles and chapters (KS2, 2026-11-07).
+- Name products, features and releases by their name ("Salesforce Field Service", "Document Builder", "Winter '27") instead of "das Tool", "die Lösung" or "das Feature", also in the second and third mention within a section.
+- Selection and comparison articles ("which partner", "X or Y", "when does X pay off") state the criteria behind the recommendation, as a short list or a ```vergleich or ```tabelle block, before the recommendation itself (KS3). A reader and an AI assistant must be able to see why the answer is what it is.
 
 ## Languages
 

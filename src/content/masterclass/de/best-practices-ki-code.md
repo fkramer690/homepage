@@ -5,14 +5,15 @@ lang: de
 slug: best-practices-ki-code
 translationKey: masterclass-08
 chapter: 8
+pubDate: 2026-10-27
 short: "Best Practices für KI-Code"
 summary: "Wie Sie KI-generierten Salesforce-Code mit Regeldatei, Pipeline-Prüfungen und klaren Org-Grenzen beherrschbar machen."
 takeaways:
-  - "Eine Regeldatei im Repository ist ein Wunsch an das Modell; verbindlich sind nur Deny-Regeln, Hooks und Prüfungen in der Pipeline, die ohne Zutun des Modells laufen."
-  - "Veracode misst 2026 für KI-Code ohne Review eine Sicherheits-Passrate von 56 Prozent, bei Java nur 30 Prozent; für Apex gibt es keine eigenen Daten, Java ist der nächste Verwandte."
-  - "Ab API 67.0 laufen Apex-Klassen standardmäßig im User Mode und mit Sharing; das Risiko liegt im Anheben der API-Version, das Coding-Agenten gern nebenbei erledigen."
-  - "75 Prozent Testabdeckung sind die Mindestgrenze für ein Deployment; Bulk-Tests, Tests mit eingeschränkten Benutzern und echte Asserts gehören in die Definition of Done."
-  - "Coding-Agenten arbeiten nur gegen Scratch Orgs und Entwickler-Sandboxes; in Produktion gelangt Code ausschließlich über die Pipeline mit menschlicher Freigabe."
+  - "Eine Regeldatei im Repository ist ein Wunsch an das Modell. Verbindlich sind Deny-Regeln, Hooks und Pipeline-Prüfungen, die ohne das Modell laufen."
+  - "Veracode misst 2026 für KI-Code ohne Review eine Sicherheits-Passrate von 56 Prozent, bei Java 30 Prozent. Für Apex gibt es keine eigenen Daten."
+  - "Ab API 67.0 laufen Apex-Klassen im User Mode und mit Sharing. Das Risiko liegt im Anheben der API-Version, das Agenten gern nebenbei erledigen."
+  - "75 Prozent Testabdeckung sind nur die Mindestgrenze. Bulk-Tests, Tests mit eingeschränkten Benutzern und Asserts gehören in die Definition of Done."
+  - "Coding-Agenten arbeiten nur gegen Scratch Orgs und Entwickler-Sandboxes. Nach Produktion gelangt Code nur über die Pipeline mit menschlicher Freigabe."
 articles: [reviewing-ai-generated-salesforce-code, api-67-user-mode-apex, quality-gates-ai-code-pipeline, ai-rules-file-salesforce-repo, vibe-coding-prototype-not-production]
 faq:
   - q: "Muss ich als Auftraggeber KI-generierten Code selbst lesen können?"
@@ -24,7 +25,7 @@ faq:
 draft: false
 ---
 
-Für KI-generierten Salesforce-Code empfehlen 2026 alle großen Werkzeuganbieter dasselbe Muster: eine kurze Regeldatei im Repository, einen Plan vor dem Code und Prüfungen, die nicht vom Wohlwollen des Modells abhängen. Auf Salesforce kommen typische Fehler hinzu, die sich größtenteils maschinell finden lassen: Abfragen in Schleifen, fehlende Feld- und Objektrechte, Tests ohne echte Asserts, erfundene Feldnamen. Und API 67.0 ändert die Rechte-Defaults pro Klasse. Als Auftraggeber müssen Sie keinen Code lesen. Sie sollten aber Regeldatei, Pipeline und Org-Zugriffe besitzen, und kein Agent kommt an Ihre Produktion.
+Für KI-generierten Salesforce-Code empfehlen 2026 alle großen Werkzeuganbieter dasselbe Muster: eine kurze Regeldatei im Repository, einen Plan vor dem Code und Prüfungen, die nicht vom Wohlwollen des Modells abhängen. Auf Salesforce kommen typische Fehler hinzu, die sich größtenteils maschinell finden lassen: Abfragen in Schleifen, fehlende Feld- und Objektrechte, Tests ohne echte Asserts, erfundene Feldnamen. Außerdem ändert API 67.0 die Standardrechte pro Klasse. Als Auftraggeber müssen Sie keinen Code lesen. Sie sollten aber Regeldatei, Pipeline und Org-Zugriffe besitzen, und kein Agent darf auf Ihre Produktion zugreifen.
 
 ## Was sagt die Evidenz über KI-generierten Code?
 
@@ -33,7 +34,7 @@ Die Studien messen sehr unterschiedliche Dinge, und keine davon misst Apex. Für
 | Studie | Setting | Ergebnis |
 |---|---|---|
 | [Veracode, Juli 2026](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) | Rohmodelle ohne Werkzeuge und ohne Review, 11 Modelle im aktuellen Vergleich | 56 % Sicherheits-Passrate, „virtually unchanged“; Python 63 %, Java 30 % auf dem letzten Platz |
-| [METR, Juli 2025](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) | 16 erfahrene Entwickler, echte Aufgaben in eigenen großen Repositories | 19 % langsamer mit KI, gefühlt 20 % schneller |
+| [METR, Juli 2025](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) | 16 erfahrene Entwickler, reale Aufgaben in eigenen großen Repositories | 19 % langsamer mit KI, gefühlt 20 % schneller |
 | [METR, Februar 2026](https://metr.org/blog/2026-02-24-uplift-update/) | Folgestudie | Beschleunigung heute „likely“, die Daten seien aber „only very weak evidence“ für ihre Größe |
 | [DORA, September 2025](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) | knapp 5.000 Befragte | KI steigert den Durchsatz, schadet weiter der Stabilität; „it amplifies what's already there“ |
 
@@ -49,20 +50,20 @@ Salesforce dokumentiert die Schwachstellen selbst. Die [Prüfliste für Agentfor
 | Bulk-Verarbeitung | Trigger verarbeitet einen Datensatz statt einer Liste | Bulk-Test; der [Apex-Testleitfaden](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/api/apex_testing_best_practices.htm) verlangt mindestens 20 Datensätze |
 | Rechte | keine Sharing-Deklaration, kein `WITH USER_MODE` | Code Analyzer, Test mit `runAs` |
 | Tests | Abdeckung ohne Aussage, Testdaten aus der Org | Review, Assert-Regel |
-| Feldnamen | erfundene API-Namen statt der echten aus der Org | Validierungs-Deployment |
+| Feldnamen | erfundene API-Namen, die es in der Org nicht gibt | Validierungs-Deployment |
 | Metadaten | neues Feld fehlt im Permission Set | Validierungs-Deployment, Review |
 | Konfiguration | Agent ändert Sharing, Profile, Layouts | Regel: das macht ein Mensch im Setup |
 
 Die letzte Zeile ist eine Empfehlung von Salesforce: Permission Sets, Profile, Page Layouts und Sharing-Regeln sollen laut den [Vibes Workflow Patterns](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html) von Hand im Setup entstehen, Code für Verschlüsselung, Authentifizierung und Berechtigungslogik soll Zeile für Zeile geprüft werden. Bei einem Hersteller betrifft das genau die Stellen, an denen Händler nur ihre eigenen Aufträge und Garantiefälle sehen dürfen.
 
-Zur Abdeckung: Salesforce verlangt 75 Prozent für ein Deployment, schreibt im Testleitfaden aber ausdrücklich, man solle sich nicht auf den Prozentsatz konzentrieren. Ein Agent optimiert auf die Prüfung, die Sie ihm geben. Geben Sie ihm nur die 75 Prozent, bekommen Sie Tests, die Zeilen durchlaufen und nichts beweisen. Wie Sie als Auftraggeber solchen Code prüfen lassen, steht in [KI-generierten Salesforce-Code prüfen](../../../blog/ki-generierten-salesforce-code-pruefen/), und warum jeder Pull Request ein Review braucht, in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/).
+Zur Abdeckung: Salesforce verlangt 75 Prozent für ein Deployment, schreibt im Testleitfaden aber ausdrücklich, man solle sich nicht auf den Prozentsatz konzentrieren. Ein Agent optimiert auf die Prüfung, die Sie ihm geben. Geben Sie ihm nur die 75 Prozent, erhalten Sie Tests, die Zeilen durchlaufen und nichts beweisen. Wie Sie als Auftraggeber solchen Code prüfen lassen, steht in [KI-generierten Salesforce-Code prüfen](../../../blog/ki-generierten-salesforce-code-pruefen/), und warum jeder Pull Request ein Review braucht, in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/).
 
 ## Die Falle mit API 67.0
 
 Mit Summer '26 hat Salesforce das Standardverhalten von Apex geändert. Laut [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm) läuft Code ab API 67.0 im Benutzerkontext, Klassen ohne Sharing-Deklaration laufen mit den Freigaben des aktuellen Benutzers, und `WITH SECURITY_ENFORCED` ist in SOQL nicht mehr erlaubt. Der [Architektenblog zu Summer '26](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) ergänzt zwei Punkte: Trigger laufen immer im System Mode, die Handler-Klassen, die sie aufrufen, sind aber betroffen, wenn ihnen die Deklaration fehlt. Und Klassen mit der alten Klausel kompilieren auf 67.0 nicht mehr.
 
 ```hinweis achtung
-Die Änderung hängt an der API-Version jeder einzelnen Klasse. Code auf 66.0 verhält sich wie bisher, bis jemand die Version anhebt. Genau dort liegt das Risiko: Eine Abfrage liefert danach still weniger Datensätze, ohne Fehlermeldung.
+Die Änderung hängt von der API-Version jeder einzelnen Klasse ab. Code auf 66.0 verhält sich wie bisher, bis jemand die Version anhebt. Genau dort liegt das Risiko: Eine Abfrage liefert danach still weniger Datensätze, ohne Fehlermeldung.
 ```
 
 Nehmen Sie den Batch-Job, der nachts Auftragsstände aus SAP in Salesforce schreibt, oder die Klasse, die Garantiefristen über alle Anlagen eines Händlers berechnet. Beide haben bisher stillschweigend alles gesehen.
@@ -122,13 +123,13 @@ Vor dem Gate entscheidet die Arbeitsweise, wie viel durchfällt. Drei Gewohnheit
 | Beweise statt Behauptungen | Der Agent liefert den Testbefehl und die Ausgabe, nicht „alle Tests grün“. |
 | Kleine Änderungen | DORA zählt [kleine Batches](https://dora.dev/capabilities/) zu den Fähigkeiten, die KI-Nutzen tragen. Ein Pull Request mit 40 geänderten Dateien wird nicht geprüft, er wird durchgewinkt. |
 
-## Warum bekommt kein Agent Zugriff auf Produktion?
+## Warum erhält kein Agent Zugriff auf Produktion?
 
-Simon Willison beschreibt die [„lethal trifecta“](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/): Zugriff auf private Daten, Kontakt mit nicht vertrauenswürdigen Inhalten und ein Weg nach außen. Ein Coding-Agent mit sf-CLI-Anmeldung an einer Org mit echten Händler- und Kundendaten, der Tickets und Webseiten liest und Netzwerkzugriff hat, erfüllt alle drei. Anthropic nennt im [Leitfaden zum sicheren Betrieb](https://code.claude.com/docs/en/agent-sdk/secure-deployment) selbst das Beispiel einer README mit ungewöhnlichen Anweisungen, die der Agent übernehmen könnte.
+Simon Willison beschreibt die [„lethal trifecta“](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/): Zugriff auf private Daten, Kontakt mit nicht vertrauenswürdigen Inhalten und ein Weg nach außen. Ein Coding-Agent mit sf-CLI-Anmeldung an einer Org mit produktiven Händler- und Kundendaten, der Tickets und Webseiten liest und Netzwerkzugriff hat, erfüllt alle drei. Anthropic nennt im [Leitfaden zum sicheren Betrieb](https://code.claude.com/docs/en/agent-sdk/secure-deployment) selbst das Beispiel einer README mit ungewöhnlichen Anweisungen, die der Agent übernehmen könnte.
 
 Meine Mindestregeln für jedes Projekt:
 
-1. Agenten arbeiten nur gegen Scratch Orgs und Entwickler-Sandboxes ohne echte Kundendaten.
+1. Agenten arbeiten nur gegen Scratch Orgs und Entwickler-Sandboxes ohne Kundendaten aus Produktion.
 2. Agentforce Vibes ist in Produktions-Orgs im Setup unter „Agentforce Vibes Extensions“ [deaktiviert](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes).
 3. Berechtigungen starten bei „Ask every time“ und werden schrittweise geöffnet, wie es die Vibes-Dokumentation empfiehlt.
 4. Deny-Regeln sperren Anmeldedaten und Produktions-Aliase; Zugangsdaten liegen außerhalb der Agentenumgebung, Anthropic beschreibt dafür einen Proxy.
@@ -136,7 +137,7 @@ Meine Mindestregeln für jedes Projekt:
 
 Diese Regeln gehören in den Vertrag mit dem Partner, nicht nur in seine Arbeitsanweisung. Das ist Teil meiner Arbeit in [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
 
-## Ein typisches Szenario: Ersatzteilverfügbarkeit im Händlerportal
+## Durchgespielt: Ersatzteilverfügbarkeit im Händlerportal
 
 Nehmen wir einen Maschinenbauer mit Experience-Cloud-Händlerportal, Service Cloud und SAP S/4. Alle Zahlen sind Annahmen. Der Partner soll mit vier Entwicklern und Claude Code eine Komponente bauen, in der Händler die Verfügbarkeit von Ersatzteilen für ihre Maschinen sehen.
 
@@ -148,13 +149,11 @@ Regeldatei
 Plan
   Der Agent schreibt zuerst einen Plan, den ein Entwickler freigibt.
 Test
-  Der Plan sieht vor, eine bestehende Selector-Klasse von 62.0 auf 67.0 anzuheben, also verlangt die Regeldatei einen `runAs`-Test. Der Test mit einem eingeschränkten Händlerbenutzer zeigt, dass danach Anlagen anderer Händler fehlen, was gewollt ist, aber auch die Teilestammdaten, was nicht gewollt ist. Gefunden im Validierungs-Deployment statt im Portal.
+  Der Plan sieht vor, eine bestehende Selector-Klasse von 62.0 auf 67.0 anzuheben, also verlangt die Regeldatei einen `runAs`-Test. Der Test mit einem eingeschränkten Händlerbenutzer zeigt, dass danach Anlagen anderer Händler fehlen, was gewollt ist, aber auch die Teilestammdaten, was nicht gewollt ist. Der Fehler fällt im Validierungs-Deployment auf statt im Portal.
 Code Analyzer
-  Code Analyzer meldet eine Abfrage in einer Schleife bei 200 Positionen, der Pull Request geht zurück.
+  Code Analyzer meldet eine Abfrage in einer Schleife bei 200 Positionen, und der Pull Request wird zurückgewiesen.
 Review
   Der Reviewer prüft das Sharing-Modell, nicht die Formatierung.
 ```
 
 Kein Schritt davon ist neu. Neu ist, dass ohne diese Schritte in derselben Zeit deutlich mehr ungeprüfter Code entsteht. Die Kosten der KI-Werkzeuge selbst behandelt [Kapitel 7](../kosten-und-token/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
-
-KI-Code wird auf Salesforce so gut wie die Regeln, Gates und Org-Grenzen, die Sie als Auftraggeber festlegen.

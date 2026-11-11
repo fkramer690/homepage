@@ -1,5 +1,5 @@
 ---
-// Who is behind change management in Salesforce programmes: Fabian (architecture and
+// Who is behind change management in Salesforce programs: Fabian (architecture and
 // releases), Juliane Winterscheid (change management) and the joint plan, each card with
 // the portraits of who is behind it. Shown on the change management service page above
 // the reading grid (frontmatter section: change-management). Texts: src/data/change-management.ts.
@@ -32,10 +32,10 @@ const people = [[portrait], [julianePortrait], [julianePortrait, portrait]];
             <Icon name={p.icon} class="card-icon" />
             <span class="pillar-people">{people[i].map((img) => <Image src={img} alt="" width={44} height={44} densities={[1, 2]} />)}</span>
           </span>
-          <span class="pillar-who mono">{p.who}</span>
+          <span class="pillar-who">{p.who}</span>
           <h3>{p.title}</h3>
           <p>{p.text}</p>
-          <span class="card-more mono">{p.more} →</span>
+          <span class="card-more">{p.more} →</span>
         </a>
       </li>
     ))}

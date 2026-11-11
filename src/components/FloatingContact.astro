@@ -1,6 +1,9 @@
 ---
 // Contact shortcuts that stay on the right edge while scrolling.
 // They hide while the contact section itself is on screen.
+// Below 1336px there is no free margin next to the 1216px frame, so they become a
+// bottom bar instead: it appears after the first screen, slides away while the
+// reader scrolls down and comes back on scroll up, so it never sits on text.
 import Icon from './Icon.astro';
 import type { Dict } from '../i18n/en';
 import { contactHref, contactExternal, site } from '../site';
@@ -17,23 +20,50 @@ const ext = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
   <a class="float-btn" href={contactHref(t.hero.mailSubject)} aria-label={t.floating.call} {...ext}>
     <Icon name="book-call" />
     <span class="float-label" aria-hidden="true">{t.floating.call}</span>
+    <span class="float-short" aria-hidden="true">{t.floating.shortCall}</span>
   </a>
   <a class="float-btn" href={messageHref} aria-label={t.floating.message}>
     <Icon name="message" />
     <span class="float-label" aria-hidden="true">{t.floating.message}</span>
+    <span class="float-short" aria-hidden="true">{t.floating.shortMessage}</span>
   </a>
   {/* Phones only: a tap dials the number. */}
   <a class="float-btn float-phone" href={site.phone.href} aria-label={t.floating.phone}>
     <Icon name="phone" />
+    <span class="float-short" aria-hidden="true">{t.floating.shortPhone}</span>
   </a>
 </nav>
 
 <script>
   const nav = document.querySelector<HTMLElement>('.float-contact');
   const contact = document.getElementById('contact');
-  if (nav && contact && 'IntersectionObserver' in window) {
-    new IntersectionObserver(([entry]) => nav.classList.toggle('is-hidden', entry.isIntersecting), {
-      threshold: 0.15,
-    }).observe(contact);
+  if (nav) {
+    let contactVisible = false;
+    let lastY = window.scrollY;
+    let scrolledAway = false;
+    const update = () => {
+      nav.classList.toggle('is-hidden', contactVisible);
+      nav.classList.toggle('is-away', scrolledAway);
+    };
+    if (contact && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        contactVisible = entry.isIntersecting;
+        update();
+      }, { threshold: 0.15 }).observe(contact);
+    }
+    // Bar mode only: hidden on the first screen and while scrolling down.
+    const onScroll = () => {
+      const y = window.scrollY;
+      const firstScreen = y < window.innerHeight * 0.6;
+      const down = y > lastY + 4;
+      const up = y < lastY - 4;
+      if (firstScreen) scrolledAway = true;
+      else if (down) scrolledAway = true;
+      else if (up) scrolledAway = false;
+      if (down || up || firstScreen) lastY = y;
+      update();
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 </script>

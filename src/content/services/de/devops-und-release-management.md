@@ -9,71 +9,90 @@ contactBrief: devops
 order: 3
 lead: "Change Sets, manuelle Deployment-Schritte und Releases, die ein Wochenende brauchen, sind in großen Salesforce-Orgs noch verbreitet. Ich setze einen Git-basierten Release-Prozess mit automatischen Prüfungen und Reviews auf der Plattform des Kunden auf. Releases werden kleiner, häufiger und planbar."
 situations:
-  - "Deployments laufen noch mit Change Sets oder von Hand, und niemand kann genau sagen, was letzten Monat in Produktion ging."
-  - "Jedes Release braucht eine lange Liste manueller Schritte vor und nach dem Deployment, die in einem Kopf oder einer Tabelle stehen."
-  - "Sandboxes laufen auseinander, und ein Feature, das in UAT lief, bricht in Produktion."
+  - "Deployments laufen noch mit Change Sets oder von Hand, und niemand kann genau sagen, was letzten Monat in Produktion deployt wurde."
+  - "Jedes Release braucht eine lange Liste manueller Schritte vor und nach dem Deployment, die nur eine Person kennt oder die in einer Tabelle stehen."
+  - "Sandboxes laufen auseinander, und ein Feature, das in UAT funktioniert hat, schlägt in Produktion fehl."
   - "Mehrere Teams deployen in dieselbe Org ohne gemeinsames Branching-Modell."
   - "Ein kommerzielles DevOps-Tool ist im Einsatz, aber die Lizenzkosten steigen und nur wenige können es bedienen."
 deliverables:
-  - "Branching- und Umgebungsstrategie, passend zur Zahl der Teams und zum Release-Rhythmus"
-  - "CI/CD-Pipeline auf GitHub, GitLab, Azure DevOps oder Bitbucket im Besitz des Kunden"
-  - "Automatische Prüfungen bei jedem Pull Request: Validierungs-Deployment, Apex-Tests, statische Codeanalyse"
-  - "Automatisierte Post-Deployment-Schritte und Daten-Deployments statt manueller Checklisten"
-  - "Review-Regeln und Codequalitäts-Standards für interne Teams und Partner"
-  - "Dokumentation und Schulung, damit interne Kollegen den Prozess selbst führen"
+  - "Ich lege mit Ihnen Branching-Modell, Umgebungen und die Prüfungen pro Stufe fest, passend zur Zahl der Teams und zum Release-Rhythmus."
+  - "Ich baue die Pipeline auf der Git-Plattform, die Sie schon nutzen, meist mit dem Open-Source-Tool sfdx-hardis."
+  - "Ich automatisiere die manuellen Schritte vor und nach dem Deployment, auch Daten-Deployments."
+  - "Am Anfang übernehme ich einen Teil der Reviews selbst, bis interne Kollegen sie ganz übernehmen."
+  - "Ich schule Ihre Kollegen, bis sie die Pipeline selbst betreiben und erweitern."
 results:
-  - "Jede Änderung in Produktion lässt sich einem Pull Request und einem Reviewer zuordnen"
-  - "Kleinere, häufigere Releases statt großer Release-Wochenenden"
-  - "Fehler werden bei der Validierung gefunden, bevor sie UAT oder Produktion erreichen"
-  - "Keine laufenden Lizenzkosten für die Pipeline selbst, wenn sie mit Open-Source-Tools gebaut ist"
-  - "Ein Prozess, der dem Kunden gehört und den er jedem Partner geben kann"
+  - "Eine CI/CD-Pipeline in Ihrem Repository, die jeden Pull Request gegen die Ziel-Org validiert sowie Apex-Tests und statische Codeanalyse ausführt"
+  - "Review-Regeln und Codequalitäts-Standards, die für interne Teams und Partner gelten"
+  - "Eine Historie, in der jede Änderung in Produktion einem Pull Request und einem Reviewer zugeordnet ist"
+  - "Die Dokumentation des Prozesses im Repository, direkt neben dem Code"
 phases:
   - title: "Bestandsaufnahme"
     icon: "analyse"
-    text: "Ich schaue mir den aktuellen Release-Prozess an, die Umgebungen, das Repository und die Schmerzpunkte der Teams: wo Deployments scheitern, was von Hand passiert, wer was freigibt."
+    text: "Ich analysiere den aktuellen Release-Prozess, die Umgebungen, das Repository und die Schmerzpunkte der Teams: wo Deployments scheitern, was von Hand erledigt wird und wer was freigibt."
   - title: "Zielprozess"
     icon: "target"
     text: "Wir einigen uns auf Branching-Modell, Umgebungen, Prüfungen pro Stufe und Review-Regeln. Das Design hängt von der Teamgröße ab und davon, wie oft das Business releasen möchte."
   - title: "Aufbau der Pipeline"
     icon: "pipeline"
-    text: "Ich baue die Pipeline auf der Git-Plattform des Kunden, meist mit sfdx-hardis, und bringe das erste Team darauf. Weitere Teams folgen, sobald der Prozess stabil läuft."
+    text: "Ich baue die Pipeline auf der Git-Plattform des Kunden, meist mit sfdx-hardis, und stelle das erste Team darauf um. Weitere Teams folgen, sobald der Prozess stabil läuft."
   - title: "Übergabe"
     icon: "handshake"
     text: "Interne Kollegen lernen, die Pipeline zu betreiben und zu erweitern. Die Dokumentation liegt im Repository des Kunden, direkt neben dem Code."
+duration: "Bestandsaufnahme und Zielprozess 1 bis 2 Wochen. Das erste Team arbeitet nach 4 bis 6 Wochen mit der Pipeline. Alle Teams sind nach 2 bis 4 Monaten umgestellt, je nach Zahl der Teams."
+notFit:
+  - "Ein einzelner Admin pflegt Änderungen von Hand ein, und das reicht aus."
+  - "Ein kommerzielles DevOps-Tool funktioniert gut, und niemand will wechseln."
+alternatives: "Ein kommerzielles Tool wie Gearset oder Copado ist schneller eingerichtet, kostet aber Lizenzen pro Nutzer. Ein interner DevOps-Engineer kann die Pipeline übernehmen, sobald sie steht. Bei mehreren Partnern fehlt ihm aber oft das Mandat, Regeln durchzusetzen."
+progress:
+  - measure: "Manuelle Schritte pro Release"
+    how: "Welche Schritte beim Deployment noch von Hand erledigt werden."
+  - measure: "Release-Rhythmus"
+    how: "Wie oft Änderungen live gehen und wie groß ein Release ist."
+  - measure: "Korrekturen nach dem Release"
+    how: "Wie viele Hotfixes ein Release nach sich zieht."
+  - measure: "Zeit bis zur Produktion"
+    how: "Wie lange eine fertige Änderung auf ihr Release wartet."
+reference: governance
 faq:
   - q: "Auf welchen Git-Plattformen kann eine Salesforce-Pipeline laufen?"
-    a: "Ich habe Salesforce-Pipelines auf GitHub, GitLab, Azure DevOps und Bitbucket gebaut. Jede Plattform hat ihre Eigenheiten, aber die Pipelines werden in YAML definiert, daher ist das Grundgerüst überall gleich. Am besten passt meist die Plattform, die das Unternehmen schon nutzt."
+    a: "Ich habe Salesforce-Pipelines auf GitHub, GitLab, Azure DevOps und Bitbucket gebaut. Jede Plattform braucht ihre eigene Pipeline-Definition, aber die Deployment-Schritte und Prüfungen dahinter sind überall gleich. Am besten passt meist die Plattform, die das Unternehmen schon nutzt."
   - q: "Brauchen wir ein kommerzielles DevOps-Tool wie Gearset oder Copado?"
-    a: "Nicht unbedingt. Kommerzielle Tools funktionieren, haben aber laufende Lizenzkosten. Open-Source-Tools wie sfdx-hardis decken Branching, Prüfungen, Deployments und Monitoring auf der Git-Plattform des Kunden ab. Welcher Weg passt, hängt vom Team, vom Budget und davon ab, wie viel der Kunde selbst besitzen möchte."
+    a: "Nicht unbedingt. Das DevOps Center von Salesforce ist kostenlos, unterstützt aber weniger Git-Plattformen. Kommerzielle Tools funktionieren, haben aber laufende Lizenzkosten. Open-Source-Tools wie sfdx-hardis decken Branching, Prüfungen, Deployments und Monitoring auf der Git-Plattform des Kunden ab. Welcher Weg passt, hängt vom Team, vom Budget und davon ab, wie viel der Kunde selbst besitzen möchte."
   - q: "Wie misst man, ob der neue Release-Prozess funktioniert?"
-    a: "Vorher-nachher-Zahlen sind oft schwer zu bekommen, weil viele Unternehmen ihren aktuellen Prozess nicht messen können und weil sich Releases verändern: Sie werden kleiner und häufiger. Ich setze auf Kennzahlen, die die Pipeline selbst liefert, etwa Deployment-Häufigkeit, fehlgeschlagene Deployments und Durchlaufzeit von Änderungen."
+    a: "Vorher-nachher-Zahlen sind oft schwer zu erheben, weil viele Unternehmen ihren aktuellen Prozess nicht messen können und weil sich Releases verändern: Sie werden kleiner und häufiger. Ich setze auf Kennzahlen, die die Pipeline selbst liefert, etwa Deployment-Häufigkeit, fehlgeschlagene Deployments und Durchlaufzeit von Änderungen."
   - q: "Wie lange dauert die Einführung eines Git-basierten Release-Prozesses?"
     a: "Das hängt von der Zahl der Teams und vom Zustand der Org ab. Das erste Team arbeitet meist nach einigen Wochen mit dem neuen Prozess, weitere Teams folgen Schritt für Schritt, damit niemand über Nacht umstellen muss."
+  - q: "Ersetzen Sie unseren Umsetzungspartner?"
+    a: "Nein. Ihre Partner bauen weiter, ich steuere sie auf Kundenseite nach gemeinsamen Regeln. Wenn Sie einen Partner ablösen wollen, helfe ich dabei, ohne Wissensverlust und ohne Verzögerung im Programm."
+  - q: "Wie vermeiden Sie, dass Sie zum Engpass werden?"
+    a: "Ich arbeite transparent. Entscheidungen, Standards und Review-Kriterien sind so dokumentiert, dass Ihr Team und Ihre Partner jederzeit darauf zugreifen können. So muss niemand auf mich warten, und die Arbeit hängt nicht an mir."
 blogTags: [devops, release management, release-management, sfdx-hardis, ci/cd, pull request review]
+readMore: [devops-salesforce-enterprise, sfdx-hardis-introduction, client-owned-devops-tools, pull-request-reviews-enterprise, sandbox-strategy-multiple-partners, salesforce-release-schedule, dora-metrics-salesforce-releases, quality-gates-ai-code-pipeline]
+masterclass: devops
 ---
 
-Salesforce DevOps bedeutet, dass jede Änderung über Git, einen Pull Request und eine automatische Pipeline läuft, bevor sie in Produktion ankommt. Release-Management ergänzt die Regeln darum: welche Branches es gibt, welche Prüfungen auf welcher Stufe laufen, wer freigibt und wann das Business neue Funktionen bekommt. In großen Orgs mit mehreren Teams macht genau das aus anstrengenden Release-Wochenenden Routine. Diesen Prozess setze ich auf Kundenseite auf, auf der Git-Plattform, die der Kunde schon besitzt.
+Salesforce DevOps bedeutet, dass jede Änderung, die sich als Metadaten deployen lässt, Git, einen Pull Request und eine automatische Pipeline durchläuft, bevor sie in Produktion deployt wird. Die seltene Änderung, die direkt in Produktion nötig ist, folgt einer dokumentierten Ausnahme und wird danach in Git nachgezogen. Release-Management legt die Regeln dafür fest: welche Branches es gibt, welche Prüfungen auf welcher Stufe laufen, wer freigibt und wann der Fachbereich neue Funktionen erhält. In großen Orgs mit mehreren Teams macht genau das aus anstrengenden Release-Wochenenden Routine. Diesen Prozess setze ich auf Kundenseite auf, auf der Git-Plattform, die der Kunde schon besitzt.
 
 ## Warum machen Salesforce-Releases so viel Ärger?
 
-Salesforce macht es leicht, direkt in einer Org etwas zu ändern. Am Anfang ist das praktisch, sobald mehrere Teams parallel arbeiten, wird es zum Problem. Die typischen Symptome beschreibe ich in [warum DevOps in Salesforce-Enterprise-Projekten zählt](../../blog/warum-devops-salesforce-enterprise-projekte/).
+Salesforce macht es leicht, direkt in einer Org etwas zu ändern. Am Anfang ist das praktisch. Sobald mehrere Teams parallel arbeiten, wird es zum Problem. Die typischen Symptome beschreibe ich in [warum DevOps in Salesforce-Enterprise-Projekten zählt](../../blog/warum-devops-salesforce-enterprise-projekte/).
 
 ```vergleich
 ohne: Änderungen direkt in der Org
-- Niemand weiß, welche Version eines Flows oder Permission Sets die richtige ist.
-- Sandboxes laufen auseinander.
-- Manuelle Schritte vor und nach dem Deployment stehen in Checklisten oder in den Köpfen weniger Leute.
-- Jedes Release hängt davon ab, dass diese Leute verfügbar sind.
+- Wer etwas ändert, ändert es direkt in einer Sandbox oder in Produktion.
+- Welche Version gilt, weiß nur, wer zuletzt daran gearbeitet hat.
+- Vor und nach dem Deployment arbeitet jemand eine Checkliste ab.
+- Ein Release braucht die zwei, drei Leute, die den Ablauf kennen.
 mit: Git, Pull Request und Pipeline
-- Jede Änderung in Produktion lässt sich einem Pull Request und einem Reviewer zuordnen.
-- Fehler werden bei der Validierung gefunden, bevor sie UAT oder Produktion erreichen.
-- Flows aktivieren, Referenzdaten laden und Einstellungen anpassen sind Teil des Deployments.
-- Releases werden kleiner, häufiger und planbar.
+- Jede Änderung beginnt als Branch und endet als Pull Request.
+- Die gültige Version steht in Git, nicht in einer Org.
+- Die Checkliste ist Code und läuft mit jedem Deployment.
+- Ein Release startet mit einem Merge, nicht mit einem Termin am Wochenende.
 ```
 
-## Was macht eine gute Salesforce-Pipeline?
+## Was eine gute Salesforce-Pipeline abdeckt
 
-Eine Pipeline für Enterprise-Teams deckt ein paar Grundlagen ab:
+Für Enterprise-Teams baue ich die Pipeline auf diese Grundlagen:
 
 ```saeulen
 dach: Eine gute Salesforce-Pipeline
@@ -90,23 +109,33 @@ Mehr zu Reviews steht in [warum Pull-Request-Reviews in Großprojekten Pflicht s
 In einem Programm habe ich den Release-Prozess selbst aufgebaut. Am Anfang ging jeder Pull Request über meinen Tisch, später habe ich diese Aufgabe an einen internen Kollegen übergeben.
 ```
 
-## Welche Tools setze ich ein?
+## Die Pipeline läuft auf Ihrer Git-Plattform, meist mit sfdx-hardis
 
 ```kennzahlen
 4 | Git-Plattformen: GitHub, GitLab, Azure DevOps und Bitbucket
-1 | Grundgerüst in YAML, gleich auf jeder Plattform
-0 € | laufende Lizenzkosten für sfdx-hardis
+1 | Satz Deployment-Schritte und Prüfungen, auf jeder Plattform wiederverwendet
+0 € | Lizenzgebühr für sfdx-hardis
 quelle: meine Pipelines in Kundenprojekten
 ```
 
-Ich baue Pipelines auf der Git-Plattform, die das Unternehmen schon nutzt. Bisher waren das GitHub, GitLab, Azure DevOps und Bitbucket. Die Pipelines werden in YAML definiert, daher ist das Grundgerüst auf jeder Plattform gleich, auch wenn jede ihre Eigenheiten hat, zum Beispiel wie der Validierungsstatus eines Pull Requests angezeigt wird.
+Ich baue Pipelines auf der Git-Plattform, die das Unternehmen schon nutzt. Bisher waren das GitHub, GitLab, Azure DevOps und Bitbucket. Jede Plattform braucht ihre eigene Pipeline-Definition, aber die Deployment-Schritte und Prüfungen dahinter sind überall gleich, auch wenn jede ihre Eigenheiten hat, zum Beispiel wie der Validierungsstatus eines Pull Requests angezeigt wird.
 
-Für den Salesforce-Teil nutze ich oft sfdx-hardis, ein Open-Source-DevOps-Tool, das ich in eigenen Projekten einsetze. Es hat keine laufenden Lizenzkosten, und Repository, Pipeline und Zugriffsrechte bleiben beim Kunden. Was es kann, erkläre ich in [sfdx-hardis: Einführung in Open-Source-DevOps für Salesforce](../../blog/sfdx-hardis-einfuehrung-salesforce-devops/). Ich unterstütze das Projekt, habe aber keine finanziellen Verbindungen dazu. Hat ein Kunde schon ein kommerzielles Tool, das funktioniert, baue ich darauf auf.
+Für den Salesforce-Teil nutze ich oft sfdx-hardis, ein Open-Source-DevOps-Tool, das ich in eigenen Projekten einsetze. Es hat keine Lizenzgebühr (Runner und Wartung kosten trotzdem Zeit und Geld), und Repository, Pipeline und Zugriffsrechte bleiben beim Kunden. Was es kann, erkläre ich in [sfdx-hardis: Einführung in Open-Source-DevOps für Salesforce](../../blog/sfdx-hardis-einfuehrung-salesforce-devops/). Ich unterstütze das Projekt, habe aber keine finanziellen Verbindungen dazu. Hat ein Kunde schon ein kommerzielles Tool, das funktioniert, baue ich darauf auf.
 
 ```hinweis tipp
-Auch Plattformänderungen gehören zum Release-Management. Jedes Salesforce-Release, etwa [Winter '27](../../blog/salesforce-winter-27-aenderungen-pipeline/), kann API-Versionen, CLI-Verhalten oder Sicherheitseinstellungen ändern, von denen eine Pipeline abhängt.
+Auch Plattformänderungen gehören zum Release-Management. Jedes Salesforce-Release, etwa [Winter '27](../../blog/salesforce-winter-27-aenderungen-pipeline/), kann API-Versionen, Metadaten-Verhalten oder Sicherheitseinstellungen ändern, von denen eine Pipeline abhängt. Von der Salesforce CLI erscheint zusätzlich jede Woche eine neue Version. Deshalb lege ich die Tool-Versionen in der Pipeline fest und teste Updates, bevor ich sie in den Release-Pfad übernehme.
 ```
 
-## Wie passt das zu mehreren Partnern?
+## Ein Release-Prozess für alle Partner
 
-Ein gemeinsamer Release-Prozess ist die Grundlage, um mehrere Umsetzungspartner zu steuern. Deployt jeder Partner auf seine eigene Art, hält kein Governance-Rahmen. Deshalb geht DevOps meist mit [Partnersteuerung](../partnersteuerung/) zusammen.
+Ein gemeinsamer Release-Prozess ist die Grundlage, um mehrere Umsetzungspartner zu steuern. Jeder Partner liefert über Pull Requests in dasselbe Repository, jede Lieferung durchläuft dieselben Prüfungen, und die Freigabe liegt beim Kunden. Deployt dagegen jeder Partner auf seine eigene Art, hält kein Governance-Rahmen. Die Regeln für Standards, Verantwortung und Reviews über mehrere Partner beschreibe ich unter [Partnersteuerung](../partnersteuerung/).
+
+```kreislauf
+titel: Jede Änderung nimmt denselben Weg
+mitte: Jede Lieferung | ein Durchlauf
+hinweis: Vier Schritte | Egal welcher Partner liefert: Jede Änderung läuft durch denselben Kreis, auch Plattformänderungen aus dem Salesforce-Release.
+- gear | Bauen | Im Repository des Kunden | Der Partner baut die Änderung und liefert sie als Pull Request in dasselbe Repository. | Ein Repository für alle Partner; Pull Request je Änderung
+- check | Prüfen | Bei jedem Pull Request | Validierung, Tests und Codeanalyse laufen, bevor ein Mensch Design und Lesbarkeit reviewt. | Validierung gegen die Ziel-Org; Apex-Tests und Codeanalyse; Review durch einen Menschen
+- handshake | Freigeben | Entscheidung beim Kunden | Die Freigabe liegt beim Kunden, nicht beim Partner, der geliefert hat. | Freigabe durch den Kunden; Dieselben Regeln für alle
+- pipeline | Ausliefern | Über Promotion Branches | Die Änderung wandert über Integration und UAT bis in Produktion. | Integration, UAT, Produktion; Sichtbar, was wo liegt; Handarbeit automatisiert
+```

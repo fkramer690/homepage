@@ -23,7 +23,9 @@ The contact form uses [Web3Forms](https://web3forms.com). Its access key is stor
 
 Visitor statistics use [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) (no cookies). The site token is stored as the repository secret `CF_ANALYTICS_TOKEN`; without it no analytics script is included.
 
-Search and AI visibility come from [DataForSEO](https://dataforseo.com) (secrets `DATAFORSEO_LOGIN` and `DATAFORSEO_PASSWORD`, the API login, not the account e-mail). `.github/workflows/rankings.yml` runs every Monday: Google positions, search volumes and AI Overview citations for the keywords in `seo/keywords.json`, plus every keyword fk-sd.de ranks for. `.github/workflows/ai-visibility.yml` runs on the 1st of each month and asks the questions in `seo/ai-prompts.json` to ChatGPT, Claude, Gemini, Perplexity and Google AI Mode. `.github/workflows/onpage.yml` crawls the live site on the 1st of each month with the DataForSEO OnPage API (duplicate titles, descriptions and content, broken links, redirect chains, non-indexable pages, structured data errors; a manual run can reuse an earlier crawl by its task id). They store snapshots on the `stats` branch (`stats/rankings/`, `stats/ai/`, `stats/onpage/`) and the dashboard rows in `stats/seo-dashboard/`. Edit the two JSON files to change what is tracked.
+Search and AI visibility come from [DataForSEO](https://dataforseo.com) (secrets `DATAFORSEO_LOGIN` and `DATAFORSEO_PASSWORD`, the API login, not the account e-mail). `.github/workflows/rankings.yml` runs every Monday, started at 5:47 Berlin time by the daily dashboard task so it is done well before 7:30 (no GitHub cron, which ran hours late): Google positions, search volumes and AI Overview citations for the keywords in `seo/keywords.json`, plus every keyword fk-sd.de ranks for. `.github/workflows/ai-visibility.yml` runs every second Monday (started by the same task, together with the rankings) and asks the questions in `seo/ai-prompts.json` to ChatGPT, Claude, Gemini, Perplexity and Google AI Mode. `.github/workflows/onpage.yml` crawls the live site on the 1st of each month with the DataForSEO OnPage API (duplicate titles, descriptions and content, broken links, redirect chains, non-indexable pages, structured data errors; a manual run can reuse an earlier crawl by its task id). They store snapshots on the `stats` branch (`stats/rankings/`, `stats/ai/`, `stats/onpage/`) and the dashboard rows in `stats/seo-dashboard/`. Edit the two JSON files to change what is tracked.
+
+Every Monday (and on manual runs) `.github/workflows/analytics.yml` also writes a "Was tun?" list from the Google Search Console and Bing tables: `scripts/search-actions.mjs` lists pages on positions 1 to 10 with at least 10 impressions and no click (sharpen title and description), pages on positions 11 to 20 (sections and internal links), and question queries on positions 1 to 15 whose page has no matching FAQ or H2. Search operators, boolean lists and pasted text are counted as spam and left out. Google uses the last 28 days, Bing its latest week; items not in the previous list are marked `new`. The result goes to `stats/actions/` on the `stats` branch.
 
 Page speed comes from the PageSpeed Insights API (secret `PAGESPEED_API_KEY`). `.github/workflows/pagespeed.yml` runs on the 3rd of each month (and by hand) for the key pages in `scripts/fetch-pagespeed.mjs`, mobile and desktop: Lighthouse scores, lab metrics and Core Web Vitals from real users once Google has enough data. Snapshots go to `stats/pagespeed/` on the `stats` branch.
 
@@ -41,6 +43,8 @@ Rules for structure, SEO and AI search are in [docs/blog-guidelines.md](docs/blo
 
 Open ideas and planned articles are in [docs/backlog.md](docs/backlog.md) (German, single source of truth; the repo is public, so no client names or internal notes there).
 
+Positioning texts and references (case studies) follow [docs/positioning-and-references.md](docs/positioning-and-references.md).
+
 ### Service pages
 
 Each service on the home page links to its own page under `/leistungen/` (DE) and `/en/services/` (EN), built from Markdown files in `src/content/services/<lang>/` by `src/components/ServicePage.astro`. Rules are in [docs/service-pages.md](docs/service-pages.md); the same build check applies.
@@ -57,7 +61,11 @@ Rule: every external link opens in a new tab. Links in Markdown get `target="_bl
 
 `@astrojs/sitemap` builds `sitemap-index.xml` on every build; new pages and articles land in it automatically. Rule: the sitemap lists exactly the indexable pages. After the build, `scripts/check-sitemap.mjs` compares it with `dist/` and fails if a page without `<meta name="robots" content="noindex">` is missing, a noindex page (legal pages, redirects, 404) is listed, or a listed URL has no page (`npm run check:sitemap` runs only the check). To hide a page from search engines, set `noindex` on it and exclude it in the sitemap `filter` in `astro.config.mjs`.
 
+Image alt texts: every `<img>` needs an `alt` with a value: a description for photos, the company name for logos, `alt=""` for purely decorative images. Astro renders an empty dynamic `alt` as a bare `alt`, which Bing reports as missing, so `src/lib/explicit-empty-alt.mjs` writes it back as `alt=""` after the build; `scripts/check-images.mjs` then fails the build on any `<img>` without an alt value (`npm run check:images`).
+
 Page titles: `scripts/check-titles.mjs` runs after the sitemap check and fails if an indexable page has no `<title>`, a title longer than 60 characters, or the same title as another page (`npm run check:titles`). Articles, chapters and most pages add ` | FK Solution Design` only when it still fits in 60 characters, so the keyword stays at the front.
+
+Security: GitHub Pages sends no custom HTTP headers, so `scripts/add-csp.mjs` writes a Content Security Policy as the first tag after `<meta charset>` into every page after the build. The policy lives in `scripts/csp-policy.mjs`: own site plus Cloudflare Web Analytics and Web3Forms, inline scripts and styles by SHA-256 hash per page. `scripts/check-security.mjs` fails the build on a page without the policy, an inline script or style it does not cover, a script in an attribute (`onclick=`), a script from an unlisted host, a plain `http://` resource or a missing referrer policy (`npm run check:security`). A new outside service needs its host in `scripts/csp-policy.mjs`. `scripts/check-broken-links.mjs` fails the build on an internal link or resource that has no file in `dist/` (`npm run check:broken-links`). GitHub Actions are pinned to commit SHAs; Dependabot (`.github/dependabot.yml`) proposes updates monthly.
 
 ## Where files go
 
@@ -71,7 +79,9 @@ The repository root holds only project files (`package.json`, configs, `README.m
 | Explanatory graphics, photos, certification badges | `src/assets/blog/`, `src/assets/photos/`, `src/assets/certifications/` |
 | Icons | `src/icons/` |
 | Files served as they are (favicon, client logos, downloads) | `public/` |
+| Images for guest articles on other sites (hero images linked by URL) | `public/guest/` |
 | Concept notes for reuse in other projects (not published) | `docs/konzepte/` |
+| Cloudflare Workers (event counter for "Book a call" clicks and sent forms) | `workers/<name>/`, deployed by its own workflow (`events-worker.yml`) |
 
 ## Local development
 

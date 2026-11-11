@@ -7,71 +7,84 @@ slug: salesforce-architektur
 translationKey: service-architecture
 contactBrief: architecture
 order: 1
-lead: "Große Salesforce-Programme scheitern selten an einem Klick, sondern weil niemand früh entschieden hat, welche Clouds, welches Datenmodell und welche Schnittstellen das Unternehmen wirklich braucht. Ich entwerfe die Zielarchitektur auf Kundenseite und dokumentiere jede Entscheidung, auch für spätere Partnerwechsel."
+lead: "Große Salesforce-Programme geraten meist in Schwierigkeiten, weil niemand früh entschieden hat, welche Clouds, welches Datenmodell und welche Schnittstellen das Unternehmen braucht. Ich entwerfe die Zielarchitektur auf Kundenseite und dokumentiere jede Entscheidung, auch für spätere Partnerwechsel."
 situations:
   - "Ein neues Salesforce-Programm startet, und das Unternehmen braucht ein Zielbild, bevor es einen Umsetzungspartner beauftragt."
   - "Mehrere Clouds, Portale und Schnittstellen sind über Jahre gewachsen, und niemand hat mehr das Gesamtbild."
   - "Partner schlagen zusätzliche Clouds oder Branchenprodukte vor, und das Unternehmen kann nicht beurteilen, ob sie sich lohnen."
   - "Das Datenmodell ist Projekt für Projekt gewachsen, und Reports, Automatisierung und KI-Anwendungsfälle leiden darunter."
 deliverables:
-  - "Zielarchitektur: Clouds, Portale, Schnittstellen und ihre Verantwortlichkeiten"
-  - "Datenmodell für die Kernobjekte und ihre Beziehungen zu ERP und anderen Systemen"
-  - "Entscheidungslog mit Optionen, Gründen und Folgen jeder Architekturentscheidung"
-  - "Bewertung von Add-ons wie Field Service, Experience Cloud oder Manufacturing Cloud im ROI-Case"
-  - "Solution Design für komplexe Anforderungen, bereit für Umsetzungspartner"
-  - "Architektur-Reviews von Partner-Designs, bevor sie gebaut werden"
+  - "Ich nehme Prozesse, Nutzer und bestehende Systeme auf, bevor ich eine Cloud empfehle."
+  - "Ich bewerte Add-ons wie Field Service, Experience Cloud oder Manufacturing Cloud im ROI-Case."
+  - "Ich prüfe die Designs der Partner, bevor sie gebaut werden."
+  - "Während der Umsetzung halte ich das Entscheidungslog aktuell und greife ein, wenn die Umsetzung vom Zielbild abweicht."
 results:
-  - "Ein Zielbild, das Fachbereich, IT und Partner teilen"
-  - "Clouds und Add-ons, die gewählt werden, weil sie sich lohnen, und nicht, weil sie angeboten wurden"
-  - "Entscheidungen, die nachvollziehbar bleiben, wenn Personen oder Partner wechseln"
-  - "Ein Datenmodell, das Reporting, Automatisierung und KI-Anwendungsfälle trägt"
+  - "Eine Zielarchitektur mit Clouds, Portalen, Schnittstellen und ihren Verantwortlichkeiten"
+  - "Ein Datenmodell für die Kernobjekte und ihre Beziehungen zu ERP und anderen Systemen"
+  - "Ein Entscheidungslog mit Optionen, Gründen und Folgen jeder Architekturentscheidung"
+  - "Solution Designs für die kritischen Bereiche, nach denen Umsetzungspartner bauen können"
 phases:
   - title: "Das Geschäft verstehen"
     icon: "building"
     text: "Ich beginne mit Prozessen, Nutzern und bestehenden Systemen: wie das Unternehmen heute verkauft, liefert und seine Kunden betreut, und wohin es will."
   - title: "Zielbild"
     icon: "target"
-    text: "Mit Fachbereich und IT entwerfe ich Zielarchitektur und Datenmodell. Optionen und Abwägungen kommen ins Entscheidungslog, damit die Gründe sichtbar bleiben."
+    text: "Mit Fachbereich und IT entwerfe ich Zielarchitektur und Datenmodell. Optionen und Abwägungen halte ich im Entscheidungslog fest, damit die Gründe sichtbar bleiben."
   - title: "Detailliertes Solution Design"
     icon: "design"
     text: "Für die kritischen Bereiche schreibe ich Solution Designs, nach denen Umsetzungspartner bauen können, inklusive Schnittstellen, Sicherheit und Datenmigration."
   - title: "Architektur in der Umsetzung"
     icon: "architecture"
-    text: "Während der Umsetzung prüfe ich Partner-Designs, halte das Entscheidungslog aktuell und greife ein, wenn sich der Bau vom Zielbild entfernt."
+    text: "Während der Umsetzung prüfe ich Partner-Designs, halte das Entscheidungslog aktuell und greife ein, wenn die Umsetzung vom Zielbild abweicht."
+duration: "Zielbild mit Datenmodell und Entscheidungslog 6 bis 10 Wochen, Solution Designs für die kritischen Bereiche weitere 4 bis 8 Wochen. Danach begleite ich die Umsetzung, meist 1 bis 2 Tage pro Woche."
+notFit:
+  - "Es geht nur um eine einzelne Cloud ohne Schnittstellen, etwa Sales Cloud für 20 Nutzer."
+  - "Der Umsetzungspartner hat die Lösung bereits gebaut, und niemand ist bereit, getroffene Entscheidungen noch zu ändern."
+alternatives: "Ein interner Architekt mit Erfahrung aus mehreren Programmen ist auf Dauer die bessere Lösung. Ich helfe dann, diese Rolle aufzubauen. Der Umsetzungspartner allein reicht bei kleinen, klar umrissenen Projekten. Ein Freelancer für Konfiguration ersetzt keine Zielarchitektur."
+progress:
+  - measure: "Offene Architekturentscheidungen"
+    how: "Wie viele Fragen zu Clouds, Datenmodell und Schnittstellen noch keinen Eintrag im Entscheidungslog haben."
+  - measure: "Partnerkonzepte gegen das Zielbild"
+    how: "Wie viele Konzepte der Partner gegen das Zielbild geprüft sind, bevor gebaut wird."
+  - measure: "Umbauten am Datenmodell"
+    how: "Wie oft Felder und Objekte nach dem Go-live wieder umgebaut werden müssen."
+reference: manufacturing-cloud
 faq:
   - q: "Was macht ein Salesforce-Architekt auf Kundenseite?"
     a: "Er entwirft die Zielarchitektur im Interesse des Unternehmens und nicht eines Herstellers oder Partners: welche Clouds und Produkte nötig sind, wie das Datenmodell aussieht, wie Salesforce mit den anderen Systemen verbunden ist und welche Entscheidungen langfristig dokumentiert werden. In der Umsetzung prüft er, was Partner bauen, gegen dieses Bild."
   - q: "Welche Salesforce-Clouds braucht ein Fertigungsunternehmen?"
-    a: "Sales Cloud und Service Cloud gehören zu fast jedem Enterprise-Projekt. Field Service lohnt sich am meisten bei vielen kurzen Einsätzen, bei denen Routen- und Terminoptimierung die Kennzahlen verbessert, weniger bei wenigen langen Projekten. Experience Cloud passt zu kundennahen Prozessen und Self-Service. Manufacturing Cloud ergibt nur bei klarem Fit Sinn, der im ROI-Case gerechnet ist."
+    a: "Sales Cloud und Service Cloud gehören zu fast jedem Enterprise-Projekt. Field Service lohnt sich am meisten bei vielen kurzen Einsätzen, bei denen Routen- und Terminoptimierung die Kennzahlen verbessert, weniger bei wenigen langen Projekten. Experience Cloud passt zu kundennahen Prozessen und Self-Service. Manufacturing Cloud lohnt sich nur bei klarem Fit, und den rechne ich im ROI-Case."
   - q: "Was ist ein Entscheidungslog und warum ist es wichtig?"
     a: "Ein Entscheidungslog hält jede Architekturentscheidung mit ihren Optionen, den Gründen für die Wahl und ihren Folgen fest. Fragt zwei Jahre später jemand, warum ein Prozess so gebaut wurde, steht die Antwort dort, auch wenn die Beteiligten längst weitergezogen sind."
+  - q: "Ersetzen Sie unseren Umsetzungspartner?"
+    a: "Nein. Ihre Partner bauen weiter, ich steuere sie auf Kundenseite nach gemeinsamen Regeln. Wenn Sie einen Partner ablösen wollen, helfe ich dabei, ohne Wissensverlust und ohne Verzögerung im Programm."
+  - q: "Wie vermeiden Sie, dass Sie zum Engpass werden?"
+    a: "Ich arbeite transparent. Entscheidungen, Standards und Review-Kriterien sind so dokumentiert, dass Ihr Team und Ihre Partner jederzeit darauf zugreifen können. So muss niemand auf mich warten, und die Arbeit hängt nicht an mir."
+  - q: "Arbeiten Sie vor Ort oder remote?"
+    a: "Beides. Ich arbeite vor Ort mit Ihren Teams und remote, je nachdem, was die aktuelle Phase des Programms erfordert."
 blogTags: [architecture, architektur, data 360, data governance, agentforce, field service]
+readMore: [salesforce-well-architected-2026, revenue-cloud-vs-manufacturing-cloud-commerce, manufacturing-cloud-worth-it, salesforce-editions-core-advanced-max, architecture-decision-log, permission-concept-permission-sets, duplicates-master-data-cleanup]
+masterclass: manufacturing-cloud
 ---
 
 Salesforce-Architektur auf Kundenseite bedeutet, das Gesamtbild im Interesse des Unternehmens zu entwerfen: welche Clouds und Produkte es braucht, wie das Datenmodell aussieht, wie Salesforce mit ERP und anderen Systemen zusammenarbeitet und wie Entscheidungen dokumentiert werden. Meine Rolle ist unabhängig von Herstellern und Partnern, und das zählt vor allem dann, wenn ein Partner das nächste Produkt vorschlägt.
 
-```praxis
-Diese Rolle hatte ich bei globalen Fertigungsunternehmen, darunter beim ersten weltweiten Manufacturing-Cloud-Rollout mit CPQ, Produktkonfigurator und Kundenportal.
-```
+## Welche Clouds braucht das Unternehmen?
 
-## Welche Clouds braucht das Unternehmen wirklich?
-
-Sales Cloud und Service Cloud sind in fast jedem Enterprise-Projekt gesetzt. Die spannenden Fragen beginnen bei den Add-ons:
-
-- **Field Service** hängt von der Art der Arbeit, den Standorten und der Dauer der Einsätze ab. Den größten Nutzen gibt es bei vielen kurzen Einsätzen, bei denen Routen- und Terminoptimierung die Kennzahlen deutlich verbessert. Bei wenigen langen Projekten ist der Nutzen viel kleiner. Über die aktuellen mobilen Funktionen habe ich in [Field Service Mobile im Außendienst](../../blog/salesforce-field-service-mobile-aussendienst/) geschrieben.
-- **Experience Cloud** passt zu kundennahen Prozessen. Self-Service-Portale sparen interne Kapazität, weil Kunden Antworten selbst finden und Anfragen selbst stellen.
-- **Manufacturing Cloud** ergibt nur Sinn, wenn ihre Funktionen dazu passen, wie das Unternehmen tatsächlich verkauft. Der Fit muss im ROI-Case gerechnet werden, den ich auf der Seite [Make-or-buy und Lizenzen](../make-or-buy-lizenzen/) beschreibe.
+Welche Add-ons sich lohnen, hängt von der Art der Arbeit ab:
 
 ```basis-addons
-titel: Welche Clouds das Unternehmen wirklich braucht
+titel: Welche Clouds das Unternehmen braucht
 basis: Sales Cloud, Service Cloud | In fast jedem Enterprise-Projekt gesetzt
 + Field Service | Passt bei vielen kurzen Einsätzen, bei denen Routen- und Terminoptimierung die Kennzahlen deutlich verbessert. Bei wenigen langen Projekten viel kleinerer Nutzen.
 + Experience Cloud | Passt zu kundennahen Prozessen. Self-Service-Portale sparen interne Kapazität.
-+ Manufacturing Cloud | Nur wenn die Funktionen dazu passen, wie das Unternehmen tatsächlich verkauft. Der Fit wird im ROI-Case gerechnet.
-fazit: Die spannenden Fragen beginnen bei den Add-ons.
++ Manufacturing Cloud | Nur wenn die Funktionen dazu passen, wie das Unternehmen verkauft. Der Fit wird im ROI-Case gerechnet.
+fazit: Sales Cloud und Service Cloud sind meist gesetzt, entschieden wird bei den Add-ons.
 ```
 
-## Warum entscheidet das Datenmodell so viel?
+Bei Field Service zählen neben der Art der Arbeit auch die Standorte und die Dauer der Einsätze. Über die aktuellen mobilen Funktionen habe ich in [Field Service Mobile im Außendienst](../../blog/salesforce-field-service-mobile-aussendienst/) geschrieben. Experience Cloud spart Kapazität, weil Kunden Antworten selbst finden und Anfragen selbst stellen. Den Fit der Manufacturing Cloud rechne ich im ROI-Case, den ich auf der Seite [Make-or-buy und Lizenzen](../make-or-buy-lizenzen/) beschreibe.
+
+## Das Datenmodell trägt Reports, Automatisierung und KI
 
 Jeder Report, jede Automatisierung und jeder KI-Anwendungsfall hängt vom Datenmodell ab. Deshalb behandle ich das Datenmodell als Teil der Architektur, inklusive seiner Beziehungen zum ERP. Bei KI sehe ich das genauso: Business Value und Datenqualität stehen an erster Stelle, wie in [Agentforce: Business Value und Datenqualität zuerst](../../blog/agentforce-business-value-datenqualitaet/) beschrieben.
 
@@ -81,14 +94,14 @@ ohne: Jedes Projekt modelliert anders
 - Jahre später traut niemand den Reports.
 - Agenten geben falsche Antworten.
 mit: Datenmodell als Teil der Architektur
-- Die Kernobjekte und ihre Beziehungen werden einmal entworfen.
+- Accounts, Produkte und Verträge werden einmal für alle Projekte entworfen.
 - Die Beziehungen zum ERP sind festgelegt.
-- Reporting, Automatisierung und KI-Anwendungsfälle bauen darauf auf.
+- Reports stimmen, und Agenten finden die richtigen Daten.
 ```
 
-## Was liefere ich?
+## Jede Entscheidung bekommt einen Eintrag im Log
 
-Der Umfang reicht vom Zielbild über das Entscheidungslog bis zum Datenmodell. Jede Architekturentscheidung bekommt einen kurzen Eintrag mit Optionen, Gründen und Folgen. Das klingt nach Papierkram, aber genau damit kann ein Unternehmen Partner oder Personen wechseln, ohne die Begründungen hinter seinem System zu verlieren.
+Neben Zielbild und Datenmodell führe ich ein Entscheidungslog. Jede Architekturentscheidung bekommt dort einen kurzen Eintrag mit Optionen, Gründen und Folgen. Mit diesem Log kann ein Unternehmen Partner oder Personen wechseln, ohne die Begründungen hinter seinem System zu verlieren.
 
 ```eintrag Entscheidungslog
 Entscheidung | Was wurde entschieden?

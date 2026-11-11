@@ -2,6 +2,7 @@
 title: "Change management communication plan with template"
 description: "A change management communication plan: what goes into it, who should deliver which message, an example from a CRM rollout and a free Excel template."
 pubDate: 2026-10-29
+updatedDate: 2026-11-09
 lang: en
 slug: change-management-communication-plan
 translationKey: change-basics-communication
@@ -11,25 +12,25 @@ contactBrief: change-basics
 author: juliane
 tags: [communication plan, change communication, change management, template]
 takeaways:
-  - "A change management communication plan defines which group receives which message, when, through which channel and from whom."
-  - "The sender matters as much as the message: according to Prosci, people want to hear why something changes from senior leadership, and what it means for them from their direct manager."
+  - "The plan is a table, not a strategy on twenty slides. Each row is one message to one group."
+  - "According to Prosci, people want to hear the why from senior leadership and what it means for them from their direct manager."
   - "Prosci recommends repeating key messages five to seven times. A single announcement email is not enough."
   - "The basis of the plan is the stakeholder analysis: every highly affected group gets its own messages and its own sender."
 faq:
   - q: "What is a communication plan in change management?"
-    a: "A communication plan is an overview that defines for every affected group which message it receives, when, through which channel and from whom. It accompanies a change from the first announcement until after go-live."
+    a: "A communication plan is an overview that defines which message each affected group receives, when, through which channel and from whom. It accompanies a change from the first announcement until after go-live."
   - q: "What should a change management communication plan include?"
-    a: "At least audience, message, sender, channel, timing and owner. The purpose of each message, such as building awareness or passing on knowledge, and a way to ask questions are also useful."
-  - q: "Who should communicate change in an organisation?"
-    a: "The reasons for the change are best explained by senior leadership or the sponsor. What changes for a team is explained by its direct manager. The project team supplies content and dates."
+    a: "It should include at least the audience, message, sender, channel, timing and owner. It is also useful to include the purpose of each message, such as building awareness or sharing knowledge, and a way to ask questions."
+  - q: "Who should communicate change in an organization?"
+    a: "The reasons for the change are best explained by senior leadership or the sponsor. How the change affects a team is explained by its direct manager. The project team supplies content and dates."
   - q: "How often should a change be communicated?"
-    a: "Prosci recommends repeating key messages five to seven times, through different channels and senders. Something said only once does not reach most people."
+    a: "Prosci recommends that the preferred senders repeat key messages five to seven times. The formats and channels can vary, but the core message stays the same. Something said only once does not reach most people."
   - q: "What is the difference between a communication plan and a change story?"
-    a: "The change story is the one narrative of why something changes and where it leads. The communication plan defines how this narrative and the messages per group are spread over time."
+    a: "The change story is the single narrative that explains why something is changing and where it is headed. The communication plan defines how this narrative and the group-specific messages are distributed over time."
 draft: false
 ---
 
-A change management communication plan defines which group receives which message, when, through which channel and from whom, from the first announcement until weeks after go-live. It builds on the stakeholder analysis and answers two questions that are often forgotten: who is the right sender, and how often does a message need to be repeated? According to Prosci, people want to hear the reasons for a change from leadership, but the consequences for their own work from their direct manager. A free template as an Excel file with an example is further down.
+A change management communication plan defines which group receives which message, when, through which channel and from whom, from the first announcement until weeks after go-live. It builds on the stakeholder analysis and answers two questions that are often forgotten: who is the right sender, and how often does a message need to be repeated? According to Prosci, people want to hear the reasons for a change from leadership, but the consequences for their own work from their direct manager. You can find a free Excel template with an example further down.
 
 ## What goes into a communication plan?
 
@@ -39,18 +40,18 @@ A communication plan is a table, not a strategy on twenty slides. Each row is on
 |---|---|---|
 | Audience | Who needs to know? | Field sales, southern region |
 | Purpose | What should the group know, want or be able to do afterwards? | Understands why visit reports move into the CRM |
-| Message | What is the core in one sentence? | "So that before every visit you see what service and inside sales last discussed with the customer." |
+| Message | What is the core message in one sentence? | "So that before every visit you see what service and inside sales last discussed with the customer." |
 | Sender | Who says it? | Head of sales |
 | Channel | How? | Regional meeting, then a short summary by email |
 | Timing | When? | 10 weeks before go-live |
 | Owner | Who prepares it and makes sure it happens? | Change manager |
 | Feedback channel | Where do questions go? | Regional key user, shared mailbox |
 
-The purpose column is the most important one and the one most often missing. It links the message to the stage a group is at right now. In the [ADKAR model](../change-management-models/) these are awareness, desire, knowledge, ability and reinforcement. A message meant to build awareness looks completely different from one that passes on knowledge. Putting both into the same circular email usually achieves neither.
+The purpose column is the most important one and the one most often missing. It links the message to the stage a group is at right now. In the [ADKAR model](../change-management-models/) these are awareness, desire, knowledge, ability and reinforcement. A message meant to build awareness looks completely different from one that passes on knowledge. Putting both into the same mass email usually achieves neither.
 
-## Who should communicate the change?
+## Leadership explains the why, managers explain the impact
 
-The sender decides whether a message is taken seriously. In its Best Practices in Change Management research series, Prosci asked from whom employees want to hear which information. The result is clear and summarised in an article on [why some communications work and others do not](https://www.prosci.com/blog/understanding-why-some-communications-work-and-others-dont):
+The sender decides whether a message is taken seriously. In its Best Practices in Change Management research series, Prosci asked which information employees want to hear from whom. The result is clear and summarized in an article on [why some communications work and others do not](https://www.prosci.com/blog/understanding-why-some-communications-work-and-others-dont):
 
 | Type of message | Preferred sender | Typical content |
 |---|---|---|
@@ -58,7 +59,7 @@ The sender decides whether a message is taken seriously. In its Best Practices i
 | Personal impact | Direct manager | What changes for me and my team? What is expected of me? Where do I get help? |
 | Content and dates | Project team, key users | When is the training? How does the new process work? Whom do I ask? |
 
-In practice the project team often sends everything because it knows the content. That is convenient and weak. A circular email from the project team on "why are we doing this?" does not carry the weight of an explanation by the managing director in a town hall. And only someone who knows the team can answer "what does this mean for me?". So the project team drafts, the managers speak.
+In practice the project team often sends everything because it knows the content. That is convenient, but weak. A mass email from the project team about "why are we doing this?" does not carry the weight of an explanation by the managing director at a town hall. And only someone who knows the team can answer "what does this mean for me?". So the project team drafts, the managers speak.
 
 This leads to a task that is easily overlooked: managers need their messages before their team does. A short briefing with the most important questions and answers, one week before the team meeting, turns a hesitant manager into a credible one.
 
@@ -81,44 +82,42 @@ A communication plan is a living document. If the same question keeps coming bac
 
 ## Example: communication plan for a CRM rollout
 
-For introducing a CRM system such as Salesforce in sales, an extract could look like this. Weeks count backwards from go-live:
+When introducing a CRM system such as Salesforce in sales, an extract could look like this. Weeks are counted backward from go-live:
 
 | Week | Audience | Purpose | Message | Sender | Channel |
 |---|---|---|---|---|---|
 | −12 | Everyone in sales | Awareness | Why we introduce one shared CRM and what happens otherwise | Managing director | Town hall |
 | −11 | Sales managers | Desire | Your role, your questions, your messages for the team | Sponsor | Briefing |
 | −10 | Field sales | Awareness | What changes for visit reports and forecasts | Regional head of sales | Regional meeting |
-| −8 | Works council | Awareness | Which reports the system allows and which it does not | Sponsor | Meeting |
+| −8 | Works council | Information and co-determination | Planned processes, data, reports, access rights and whether behavior or performance could be monitored | Sponsor, employer representative | Working session |
 | −4 | Inside sales | Knowledge | New quoting process, training dates | Project team | Email and intranet |
 | −2 | Everyone affected | Knowledge | What happens on go-live day, whom to ask | Key users | Team meeting |
 | +2 | Everyone affected | Reinforcement | First successes, most frequent questions, what we improve | Head of sales | Team meeting and email |
 
-Notice how few rows come from the project team, and that communication does not end at go-live. The message in week +2 is one of the most important: in this period morale and productivity often drop, as the [change curve](../change-curve/) describes, and visible successes help people through the valley.
+Notice that only a few rows come from the project team and that communication does not end at go-live. The message in week +2 is one of the most important: in this period morale and productivity often drop, as the [change curve](../change-curve/) describes, and visible successes help people through the valley.
 
-A global rollout adds another dimension. When countries in the US, Asia and Europe are involved, as in a Salesforce Sales Cloud rollout I supported, every country needs its own senders in its own language. A message from headquarters in English does not replace the country manager explaining why in their own meeting.
+A global rollout adds another dimension. When teams in the United States, Asia and Europe are involved, as in a Salesforce Sales Cloud rollout I supported, the teams in each country usually need their own senders and messages in their own language. A message from headquarters in English does not replace the country manager explaining the reasons in a local meeting.
 
 ## Communication plan template
 
-The [template as an Excel file](../../../downloads/communication-plan-template.xlsx) contains an empty table with all columns from this article and the example from above. It is built so that you can take the groups straight from the stakeholder analysis template.
+The [Excel template](../../../downloads/communication-plan-template.xlsx) contains an empty table with all the columns from this article and the example above. It is designed so that you can take the groups straight from the stakeholder analysis template.
 
 ```hinweis tipp
-Plan every key message at least three times, through different senders and channels. Prosci recommends five to seven repetitions. What feels boring to you by the third time is what many affected people are only now really hearing for the first time.
+Plan every key message at least three times, through different senders and channels. Prosci recommends five to seven repetitions. By the third time, it may feel boring to you, but many affected people will only just be hearing it properly for the first time.
 ```
 
 ## Which mistakes happen in change communication?
 
-- **Too late.** Communication starts two weeks before go-live and can then only inform. Awareness and desire take weeks, not days.
-- **One sender for everything.** The project team sends everything, the managers stay silent. To the team it looks as if they do not support the change.
+- **Too late.** Communication starts two weeks before go-live and can only provide information at that point. Awareness and desire take weeks, not days.
+- **One sender for everything.** The project team sends everything, the managers stay silent. To the team, it looks as if the managers do not support the change.
 - **Content without reasons.** Training dates and instructions without an explanation of why something changes answer the wrong question.
-- **No feedback channel.** If questions have no place to go, they end up in the kitchen and come back as rumours.
-- **Silence after go-live.** The hardest phase only starts after go-live. Going quiet then leaves the interpretation to those who are unhappy.
+- **No feedback channel.** If questions have nowhere to go, they turn into corridor gossip and come back as rumours.
+- **Silence after go-live.** The hardest phase starts only after go-live. If you go quiet then, you leave the interpretation to those who are unhappy.
 
-Salesforce programmes with regular releases need a form of their own: every new version changes something for a business team and needs a short, targeted announcement. Fabian Kramer describes how that works in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
+Salesforce programs with regular releases need their own format: Salesforce ships three seasonal releases a year, and the program deploys its own changes on top. Only changes that affect a business team's process, screens or responsibilities need a short, targeted announcement. Fabian Kramer describes how that works in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
 
-## When is support worth it?
+## Support pays off when many groups and countries are affected
 
-For a change affecting one team, the template is enough. When many groups and countries are affected, when sensitive messages are due or when managers are unsure themselves, an outside view helps to sharpen messages and prepare managers. In Salesforce programmes I work with Fabian Kramer on this, see [Salesforce change management consulting](../../services/change-management-salesforce/) and [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
+For a change affecting one team, the template is enough. When many groups and countries are affected, when sensitive messages are due or when managers are unsure themselves, an outside view helps to sharpen messages and prepare managers. In Salesforce programs, I work with Fabian Kramer on this. See [Salesforce change management consulting](../../services/change-management-salesforce/) and [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
 
-A change is not understood through the first announcement, but through the right person at the right time, more than once.
-
-Prosci and ADKAR are registered trademarks of Prosci, Inc.
+*Prosci and ADKAR are registered trademarks of Prosci, Inc.*

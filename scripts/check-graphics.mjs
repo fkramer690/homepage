@@ -9,7 +9,9 @@
 // 0.6 em wide, so label widths are exact without a browser.
 // Checked: the card drawings of the blog overview (src/lib/card-drawings.ts, every
 // article in both languages), the figure on the masterclass hubs and the partner flow
-// block (```partnerfluss, src/lib/content-blocks.mjs). Any other inline SVG with <text> fails until its class is
+// block (```partnerfluss, src/lib/content-blocks.mjs) and the labels of the rings on
+// pages (src/lib/ring-cycle.mjs, labels on arcs; the ```ring and ```kreislauf blocks are
+// checked by check-blog). Any other inline SVG with <text> fails until its class is
 // listed here, so a new kind of drawing cannot slip past unchecked.
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
@@ -18,7 +20,9 @@ const dist = new URL('../dist/', import.meta.url).pathname;
 const CHECKED = ['mc-drawing', 'pf-drawing'];
 // card-drawing: checked straight from src/lib/card-drawings.ts below.
 // flowchart: Mermaid diagrams, scripts/render-diagrams.mjs checks their labels when it renders them.
-const SKIPPED = ['card-drawing', 'flowchart'];
+// ar-drawing, cy-drawing: rings and cycles, checked with src/lib/ring-cycle.mjs (pages below,
+// content blocks in check-blog via validateBlock).
+const SKIPPED = ['card-drawing', 'flowchart', 'ar-drawing', 'cy-drawing'];
 const ADVANCE = 0.6; // IBM Plex Mono: 600 of 1000 units per glyph
 const ASCENT = 0.78; // top of capitals and umlauts above the baseline, in em
 const DESCENT = 0.2; // descenders below the baseline, in em
@@ -179,6 +183,20 @@ const { cardDrawings } = await import('../src/lib/card-drawings.ts');
 for (const [key, lang, inner] of cardDrawings()) {
   count++;
   for (const p of check(`<svg viewBox="0 0 320 160">${inner}</svg>`)) errors.push(`card drawing "${key}" (${lang}), src/lib/card-drawings.ts: ${p}`);
+}
+
+// Rings placed by pages: every segment label fits its arc and clears its icon.
+const { ringProblems } = await import('../src/lib/ring-cycle.mjs');
+const { approachRing } = await import('../src/data/approach-ring.ts');
+const { pageWheels, masterclassWheel } = await import('../src/data/page-wheels.ts');
+const rings = [
+  ...Object.entries(approachRing).map(([lang, r]) => [`approach ring (${lang}), src/data/approach-ring.ts`, r.items.map((it) => it.name)]),
+  ...Object.entries(pageWheels).flatMap(([key, byLang]) => Object.entries(byLang).map(([lang, r]) => [`${key} ring (${lang}), src/data/page-wheels.ts`, r.items.map((it) => it.label ?? it.name)])),
+  ...Object.entries(masterclassWheel).map(([lang, r]) => [`masterclass ring (${lang}), src/data/page-wheels.ts`, Object.values(r.labels)]),
+];
+for (const [where, labels] of rings) {
+  count++;
+  for (const p of ringProblems(labels.map((l) => l.toUpperCase()))) errors.push(`${where}: ${p}`);
 }
 
 // Every other inline drawing on the built pages.

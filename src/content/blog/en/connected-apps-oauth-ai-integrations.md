@@ -2,6 +2,7 @@
 title: "Connected apps and AI tools: lessons from Salesloft Drift"
 description: "What the Salesloft Drift breach teaches about connected apps, OAuth tokens and AI integrations in Salesforce, and which controls manufacturers need now."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: connected-apps-oauth-ai-integrations
 translationKey: oauth-connected-apps-ai-lessons
@@ -9,32 +10,32 @@ topic: security
 categories: [architecture, ai]
 tags: [connected apps, oauth, security, ai integrations, external client apps, manufacturing]
 takeaways:
-  - "In August 2025 attackers used stolen OAuth tokens of the Drift AI chat app to export Cases, Accounts, Users and Opportunities from Salesforce orgs without exploiting any Salesforce vulnerability."
-  - "Every SaaS tool that holds a refresh token for your org is part of your security perimeter; the damage depends on the integration user's rights, the scopes, the token policy and IP restrictions."
-  - "Since September 2025 Salesforce blocks uninstalled connected apps for most users, since Spring '26 new connected apps need Support, and new External Client Apps enforce refresh token rotation."
-  - "Admins cannot verify most OAuth controls inside a vendor's app, so AI vendors should confirm in writing how they store, rotate and restrict your tokens."
-  - "Machine builders should search service cases for passwords and remote access details, because the Drift attacker mined exported records for credentials."
+  - "In August 2025 attackers used stolen OAuth tokens from the Drift AI app to export data from Salesforce orgs without exploiting a Salesforce vulnerability."
+  - "Every SaaS tool with a refresh token is part of your security perimeter; user rights, scopes, token policy and IP restrictions decide the damage."
+  - "Since September 2025 most users can no longer use uninstalled connected apps, and new External Client Apps enforce refresh token rotation."
+  - "Admins cannot directly verify three of the four OAuth controls Salesforce requires for partner apps, so vendors should confirm them in writing."
+  - "Search service cases for passwords and remote access details, because the Drift attacker mined exported records for credentials."
 faq:
   - q: "Was the Salesloft Drift breach a Salesforce vulnerability?"
-    a: "No. Google Threat Intelligence and Salesforce both state that it did not stem from a vulnerability in the core Salesforce platform. The attacker used valid OAuth tokens stolen from the Drift application, so Salesforce saw normal API access by an authorised app."
+    a: "No. Google Threat Intelligence and Salesforce both state that it did not stem from a vulnerability in the core Salesforce platform. The attacker used valid OAuth tokens stolen from the Drift application, so Salesforce saw normal API access by an authorized app."
   - q: "What is the difference between a connected app and an External Client App?"
-    a: "Both let external systems log in to Salesforce through OAuth. External Client Apps are closed by default, keep admin policies separate from developer settings and are fully metadata compliant. Since Spring '26 Salesforce restricts creating new connected apps and recommends External Client Apps."
+    a: "Both let external systems log in to Salesforce through OAuth. External Client Apps are closed by default, keep admin policies separate from developer settings and are metadata compliant, except that the refresh token IP allowlist and idle expiry cannot be deployed as metadata. Since Spring '26 Salesforce restricts creating new connected apps by default and recommends External Client Apps for new integrations."
   - q: "How do I see which apps have access to our Salesforce org?"
-    a: "Setup shows Connected Apps OAuth Usage with every app that holds tokens, how many users rely on it and whether it is installed. From there you can revoke tokens per app or block an app, which ends its active sessions immediately."
+    a: "In Setup, Connected Apps OAuth Usage shows every app that holds tokens, how many users rely on it and whether it is installed. From there you can revoke tokens per app or block an app, which ends its active sessions immediately."
   - q: "Do we need Event Monitoring to investigate an incident like Drift?"
-    a: "Without the add-on, Enterprise and Unlimited Edition orgs get a limited set of event types with one day of retention. The Drift activity started on 8 August 2025 and was disclosed on 20 August, so a useful look back needs paid Event Monitoring with 30 days or more."
+    a: "Without the add-on, Enterprise, Performance and Unlimited Edition orgs get a limited set of event types with one day of retention. The Drift activity started on August 8, 2025 and was disclosed on August 20, so a useful lookback requires paid Event Monitoring, an export to a SIEM that was already running, or historical logs purchased separately."
   - q: "Which refresh token policy should an AI integration have?"
-    a: "The default for connected apps is valid until revoked. For AI tools that run on the vendor's servers I would set expiry after non-use, limit the integration user's login IP ranges to the vendor's published ranges and require refresh token rotation, which new External Client Apps enforce."
+    a: "The default for many connected apps is valid until revoked. For AI tools that run on the vendor's servers I would set tokens to expire after non-use, limit the integration user's login IP ranges to the vendor's published ranges and require refresh token rotation, which new External Client Apps enforce."
 draft: false
 ---
 
-The Salesloft Drift breach showed that a connected app can be an unmonitored way into your org, and AI integrations add more of them every quarter. In August 2025 attackers used stolen OAuth tokens of an AI chat app to export data from customer orgs without breaking into Salesforce itself. Every tool that holds a refresh token for your org is part of your security perimeter. A manufacturer needs an owner, narrow scopes, a dedicated low-privilege user and a token policy for each app, plus logs that reach back far enough to investigate.
+The Salesloft Drift breach showed that a connected app can be an unmonitored way into your org, and AI tools add more OAuth grants and non-human identities. In August 2025 attackers used stolen OAuth tokens from an AI chat app to export data from customer orgs without breaking into Salesforce itself. Every tool that holds a refresh token for your org is part of your security perimeter. A manufacturer needs an owner, narrow scopes, a dedicated low-privilege user and a token policy for each app, plus logs that reach back far enough to investigate.
 
 ## What happened in the Salesloft Drift breach?
 
-Drift is an AI chat agent from Salesloft that companies connected to Salesforce through a connected app. According to [Google Threat Intelligence](https://cloud.google.com/blog/topics/threat-intelligence/data-theft-salesforce-instances-via-salesloft-drift), a group tracked as UNC6395 used stolen OAuth access and refresh tokens of the Drift app in August 2025. The attacker queried Cases, Accounts, Users and Opportunities in customer orgs, exported the results and deleted the query jobs; the logs survived.
+Drift is an AI chat agent from Salesloft that companies connected to Salesforce through a connected app. Salesloft has since announced that it will [retire Drift on January 31, 2027](https://help.salesloft.com/s/article/Drift-Sunset-FAQ), so remaining customers should plan its replacement, not only secure it. According to [Google Threat Intelligence](https://cloud.google.com/blog/topics/threat-intelligence/data-theft-salesforce-instances-via-salesloft-drift), a group tracked as UNC6395 used stolen OAuth access and refresh tokens from the Drift app in August 2025. The attacker queried Cases, Accounts, Users and Opportunities in customer orgs, exported the results and deleted the query jobs; the logs survived. According to Salesloft's update on the closed investigation, the attacker had first gained access to Salesloft's GitHub account between March and June 2025 and then used that access to reach the Drift AWS environment, where many customers' OAuth tokens were stored.
 
-GTIG assesses that the main goal was harvesting credentials: AWS access keys, passwords and Snowflake tokens found in the exported records. [The Hacker News](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html) reports that GTIG knew of more than 700 potentially affected organisations, while Salesforce spoke of a "small number of customers".
+GTIG assesses that the main goal was harvesting credentials: AWS access keys, passwords and Snowflake tokens found in the exported records. [The Hacker News](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html) reports that GTIG told the publication of more than 700 potentially affected organizations, while Salesforce spoke of a "small number of customers". The two figures likely count different categories, potentially exposed organizations versus actually affected ones, and no public primary source gives a final count.
 
 ```zeitleiste
 2025-08-08 | Attackers start using stolen Drift tokens
@@ -44,69 +45,67 @@ GTIG assesses that the main goal was harvesting credentials: AWS access keys, pa
 2025-09-07 | Integrations re-enabled, except Drift
 ```
 
-Salesforce also removed the app from AppExchange, according to its [security response](https://help.salesforce.com/s/articleView?id=005134951&language=en_US&type=1). GTIG's update of 28 August added that Drift Email tokens had been used against Google Workspace too, and that customers should treat every token stored in Drift as compromised.
+Salesforce also removed the app from AppExchange, according to its [security response](https://help.salesforce.com/s/articleView?id=005134951&language=en_US&type=1). GTIG's update of August 28 added that Drift Email tokens had been used against Google Workspace too, and that customers should treat every token stored in Drift as compromised.
 
-GTIG and Salesforce both state that the issue did not stem from a vulnerability in the core Salesforce platform. That is accurate and no comfort: Salesforce saw an authorised app calling the API with valid tokens, which at first glance looks like a normal sync.
+GTIG and Salesforce both state that the issue did not stem from a vulnerability in the core Salesforce platform. That is accurate but no comfort: Salesforce saw an authorized app calling the API with valid tokens, which at first glance looks like a normal sync.
 
 ## Why does this matter for AI integrations in particular?
 
-Drift was one AI tool. Most companies are adding more: meeting recorders that write call notes into opportunities, email assistants, chatbots that create leads and cases. Each runs on the vendor's servers and holds a refresh token for your org, by default until someone revokes it. Four questions decide the damage when such a token is stolen:
+Drift was one AI tool. Most companies are adding more: meeting recorders that write call notes into opportunities, email assistants, chatbots that create leads and cases. Many run on the vendor's servers and hold a refresh token for your org, which in older connected apps often remains valid until someone revokes it. Newer or partner apps can be subject to rotation and idle expiry, and some integrations use the JWT bearer or client credentials flow without refresh tokens. Four questions decide the damage when such a token is stolen:
 
-- **Which user does the token act as?** If the vendor asked for an admin during setup, the token reads what an admin reads.
+- **Which user does the token act as?** If an admin authorizes the OAuth grant as themselves, or is set as the run-as user, the token works with that admin's rights, limited by the granted scopes.
 - **Which scopes were granted?** GTIG explicitly warns against overly permissive scopes such as `full`.
-- **How long is the token valid?** "Valid until revoked" is the connected app default, according to the [OAuth policy documentation](https://help.salesforce.com/s/articleView?id=xcloud.connected_app_manage_oauth.htm&language=en_US&type=5).
-- **From where may it be used?** The attacker came from cloud hosts and Tor exit nodes, which login IP ranges limited to the vendor's addresses would refuse.
+- **How long is the token valid?** "Valid until revoked" is the default for connected apps, according to the [OAuth policy documentation](https://help.salesforce.com/s/articleView?id=xcloud.connected_app_manage_oauth.htm&language=en_US&type=5).
+- **From where may it be used?** The attacker came from cloud hosts and Tor exit nodes, and login IP ranges limited to the vendor's addresses would have rejected those requests.
 
-Drift was not the last case. In November 2025 Salesforce [revoked the OAuth tokens](https://help.salesforce.com/s/articleView?id=005229029&language=en_US&type=1) of Gainsight-published applications after unusual activity from VPN and Tor addresses, again without a platform vulnerability. Attackers do not need a hole in Salesforce when an OAuth app hands them a key.
+Drift was not the last case. In November 2025 Salesforce [revoked the OAuth tokens](https://help.salesforce.com/s/articleView?id=005229029&language=en_US&type=1) for Gainsight-published applications after unusual activity from VPN and Tor addresses, again without a platform vulnerability. It re-enabled the integrations on December 10, 2025, after remediation validated by Mandiant and CrowdStrike. Attackers do not need a hole in Salesforce when an OAuth app hands them a key.
 
-For a manufacturer the exported objects carry specific weight. Opportunities and accounts hold dealer conditions and project prices. The User query in GTIG's report pulled names, titles, emails and mobile numbers of active users, a ready-made phishing list. And in a machine builder's service cases I would expect exactly what GTIG told customers to search for: login URLs, VPN details and passwords, pasted in by technicians who needed remote access to a machine in a customer's plant. That hurts the customer first.
+For a manufacturer, the exported objects are especially sensitive. Opportunities and accounts hold dealer conditions and project prices. The User query in GTIG's report pulled names, titles, emails and mobile numbers of active users, a ready-made phishing list. And in a machine builder's service cases I would expect exactly what GTIG told customers to search for: login URLs, VPN details and passwords, pasted in by technicians who needed remote access to a machine in a customer's plant. That hurts the customer first.
 
-## What has Salesforce changed since?
+## Salesforce has tightened OAuth access since 2025
 
-Salesforce has tightened OAuth access in several steps:
+The steps in detail:
 
-- **Early September 2025: uninstalled connected apps blocked.** Apps that users authorised without an admin installing them are no longer accessible to most users, according to the [Salesforce Admins blog](https://admin.salesforce.com/blog/2025/get-ready-for-changes-to-connected-app-usage-restrictions). Users with "Approve Uninstalled Connected Apps" or "Use Any API Client" can bypass this, so those permissions should be rare.
-- **Spring '26: no new connected apps.** Creation is restricted by default, except through package installation, and re-enabling needs a Support request, according to the [Spring '26 architect highlights](https://www.salesforce.com/blog/spring-26-release-architect-highlights/).
-- **External Client Apps as the replacement.** An ECA is closed by default and works in an org only after an admin installs it. Admin policies cannot be packaged, so a vendor cannot ship a relaxed token policy into your org, and ECAs are fully metadata compliant, according to the [developer blog](https://developer.salesforce.com/blogs/2025/01/secure-your-org-with-external-client-apps). Their policies can sit in your repository and pass review.
-- **Refresh token rotation on new ECAs**, on by default and locked. Salesforce says it "materially reduces the blast radius of a stolen refresh token" ([Help article](https://help.salesforce.com/s/articleView?id=005390912&language=en_US&type=1)).
-- **Required controls for partner apps.** Apps used by more than two customer production orgs had to enable PKCE, refresh token rotation, a 30-day idle expiry and a refresh token IP allowlist by 11 May 2026, where each applies to the app's OAuth flow, according to the [partner FAQ](https://help.salesforce.com/s/articleView?id=005387798&language=en_US&type=1).
+- **Early September 2025: uninstalled connected apps blocked.** Apps that users authorized without an admin installing them are no longer accessible to most users; users who had authorized them before keep access unless the app uses the device flow, according to the [Salesforce Admins blog](https://admin.salesforce.com/blog/2025/get-ready-for-changes-to-connected-app-usage-restrictions). Users with "Approve Uninstalled Connected Apps" or "Use Any API Client" can bypass this, so those permissions should be rare.
+- **Spring '26: connected app creation restricted.** Creation is restricted by default, except through package installation, and re-enabling it requires a Support request, according to the [Spring '26 architect highlights](https://www.salesforce.com/blog/spring-26-release-architect-highlights/). Existing connected apps keep working.
+- **External Client Apps for new integrations.** An ECA is closed by default and works in an org only after an admin installs it. Admin policies cannot be packaged, so a vendor cannot ship a relaxed token policy into your org, and ECAs are metadata compliant, according to the [developer blog](https://developer.salesforce.com/blogs/2025/01/secure-your-org-with-external-client-apps). Most policies can sit in your repository and pass review. The exceptions per the partner FAQ: the refresh token IP allowlist and idle expiry cannot be deployed as metadata, and a metadata update can switch them off unless the app owner has locked them.
+- **Refresh token rotation on new ECAs** is on by default and locked. Salesforce says it "materially reduces the blast radius of a stolen refresh token" ([Help article](https://help.salesforce.com/s/articleView?id=005390912&language=en_US&type=1)).
+- **Required controls for partner apps.** Apps used by more than two customer production orgs had to enable PKCE, refresh token rotation, a 30-day idle expiry and a refresh token IP allowlist by May 11, 2026, where those controls apply to the app's OAuth flow, according to the [partner FAQ](https://help.salesforce.com/s/articleView?id=005387798&language=en_US&type=1).
 
 ```hinweis offen
-One line in that FAQ matters for buyers: admins cannot directly verify most of these controls. You depend on what the vendor tells you, so get it in writing.
+One line in that FAQ matters for buyers: subscriber admins can infer the 30-day idle expiry, but cannot directly verify PKCE, rotation or the IP allowlist. For those you depend on what the vendor tells you, so get it in writing, with the date each control was activated. Your own settings, such as installation, user assignment, scopes and profile IP ranges, you can check yourself.
 ```
 
 ECAs also do not support the username-password flow. What that means for older ERP and middleware connections is covered in [the end of password integrations in 2027](../salesforce-password-integrations-end-2027/).
 
 ## Which controls must a manufacturer have now?
 
-What I would require for every connected app and ECA in production, starting with the AI tools:
+This is what I would require for every connected app and ECA in production, starting with the AI tools:
 
-1. **An inventory with owners.** Connected Apps OAuth Usage in Setup lists each app, its users and whether it is installed. Every entry gets a business owner and a purpose. Apps nobody claims get blocked, which ends their sessions immediately, so announce it first.
-2. **Install and pre-authorise.** Set "Admin approved users are pre-authorized" and grant access through one permission set per app.
-3. **One dedicated integration user per server-side app.** The Salesforce Integration user licence with the "Minimum Access - API Only Integrations" profile allows API access only, according to the [Help documentation](https://help.salesforce.com/s/articleView?language=en_US&id=platform.integration_user.htm&type=5). The profile itself is configurable; I would grant the app's rights through permission sets on top of it. A website chatbot needs to create leads and cases, not read opportunities.
-4. **API Enabled only through permission sets**, as GTIG recommends, so a standard user cannot authorise an API client by accident.
+1. **An inventory with owners.** Connected Apps OAuth Usage in Setup lists each app, its users and whether it is installed. Every entry gets a business owner and a purpose. Apps nobody claims are blocked, which ends their sessions immediately, so announce the change first.
+2. **Install and pre-authorize.** Set "Admin approved users are pre-authorized" and grant access through one permission set per app.
+3. **One dedicated integration user per server-side app**, where the vendor and the required licenses support it. The Salesforce Integration user license with the "Minimum Access - API Only Integrations" profile allows API access only, according to the [Help documentation](https://help.salesforce.com/s/articleView?language=en_US&id=platform.integration_user.htm&type=5). API-only access cannot be switched off, but other parts of the profile can be configured; I would grant the app's rights through permission sets on top of it. A website chatbot needs to create leads and cases, not read opportunities.
+4. **API Enabled only through permission sets**, as GTIG recommends, so a standard user cannot authorize an API client by accident.
 5. **No `full` scope.** If a vendor insists, ask why in writing.
-6. **A token policy.** Replace "valid until revoked" with expiry after non-use. For IP limits, the connected app setting "Enforce IP restrictions" is already the default and only applies the IP ranges configured in the org, such as those on the user's profile, according to the [OAuth policy documentation](https://help.salesforce.com/s/articleView?id=xcloud.connected_app_manage_oauth.htm&language=en_US&type=5). The real control is the vendor's published IP ranges as login IP ranges on the integration user's profile, or the refresh token IP allowlist of an External Client App.
-7. **Logs that reach back.** Without the add-on, Enterprise and Unlimited Edition orgs get limited event types with one day of retention, according to the [Event Monitoring FAQ](https://help.salesforce.com/s/articleView?id=000396295&language=en_US&type=1). Paid logs keep 30 days by default, up to one year, and only start at the contract date. Drift ran for at least ten days before disclosure.
+6. **A token policy.** Replace "valid until revoked" with a policy that expires tokens after non-use. For IP limits, the connected app setting "Enforce IP restrictions" is already the default and enforces only the IP ranges configured in the org, such as those on the user's profile, according to the [OAuth policy documentation](https://help.salesforce.com/s/articleView?id=xcloud.connected_app_manage_oauth.htm&language=en_US&type=5). The real control comes from adding the vendor's published IP ranges as login IP ranges on the integration user's profile, or from using the refresh token IP allowlist of an External Client App.
+7. **Logs that reach back.** Without the add-on, Enterprise, Performance and Unlimited Edition orgs get limited event types with one day of retention, according to the [Event Monitoring FAQ](https://help.salesforce.com/s/articleView?id=000396295&language=en_US&type=1). Paid logs retain 30 days by default, up to one year, and only start at the contract date. Drift ran for at least ten days before disclosure, so without a running SIEM export or the add-on you would have to buy historical logs after the fact.
 8. **No secrets in records.** Search cases, comments and emails for passwords, VPN terms and AWS keys, as GTIG lists, and give the service team a vault for remote access credentials.
 9. **A vendor questionnaire and a revocation drill.** Ask each vendor where your tokens are stored and whether rotation and IP allowlists are active. Internally, decide who revokes an app's tokens at night and which process stops when they do.
 
 Most of this is configuration. Event Monitoring has a price tag and deserves a conscious decision.
 
-## A typical scenario: nine apps at a machine builder
+## Worked example: nine apps at a machine builder
 
-Assume a machine builder with Sales Cloud, Service Cloud, SAP and 80 dealers. All numbers are assumptions. Connected Apps OAuth Usage lists nine apps, among them the SAP middleware, a backup tool, an AI meeting recorder used by 25 sales reps, an AI chatbot for spare part requests on the website and one app nobody recognises.
+Assume a machine builder with Sales Cloud, Service Cloud, SAP and 80 dealers. All numbers are assumptions. Connected Apps OAuth Usage lists nine apps, including the SAP middleware, a backup tool, an AI meeting recorder used by 25 sales reps, an AI chatbot for spare part requests on the website and one app nobody recognizes.
 
-The chatbot is the Drift pattern. Its integration user was cloned from a system administrator during the proof of concept, the scope is `full`, the refresh token is valid until revoked and IP restrictions are relaxed. It needs to create leads and cases. It could read every dealer price agreement.
+The chatbot matches the Drift pattern. Its integration user was created by cloning a system administrator during the proof of concept, the scope is `full`, the refresh token is valid until revoked and IP restrictions are relaxed. It needs to create leads and cases. It could read every dealer price agreement.
 
-The meeting recorder runs per user, each rep with their own rights, much like the named user model in [hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/). The difference: the vendor stores 25 refresh tokens on its own servers.
+The meeting recorder runs per user, with each rep using their own rights, much like the named user model in [hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/). The difference: the vendor stores 25 refresh tokens on its own servers.
 
-The fixes take an assumed two weeks. The chatbot gets its own integration user with create rights on leads and cases only, `full` is removed and the vendor's IP ranges go onto its profile as login IP ranges. The meeting recorder is installed, limited to a permission set, with tokens expiring after 30 days unused. The unknown app is blocked. A search of service cases finds, assumed, 340 records with passwords or remote access details, which are cleaned up and rotated with the affected customers.
+In this example the fixes take two weeks. The chatbot gets its own integration user with create rights on leads and cases only, `full` is removed and the vendor's IP ranges are added to its profile as login IP ranges. The meeting recorder is installed, limited to a permission set, with tokens expiring after 30 days unused. The unknown app is blocked. A search of service cases finds 340 records with passwords or remote access details in this example; the records are cleaned up and the credentials changed with the affected customers.
 
-None of this stops a vendor from losing your tokens. It decides what a stolen token can do: from an unknown address nothing, and from an allowed one it could create leads, not read dealer prices.
+None of this stops a vendor from losing your tokens. It decides what a stolen token can do: with login IP ranges on the profile and IP restrictions enforced, requests from unknown addresses are rejected, and from an allowed address it could create leads but not read dealer prices.
 
-## Where should you start?
+## Mark every app that sends Salesforce data to a model
 
-Start with the AI tools, because they are the newest and least reviewed: mark every app that sends Salesforce data to a model and check user, scopes and token policy for those first. Their second risk is [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/). An inventory of interfaces with named owners is part of my [Salesforce integration work](../../services/salesforce-integration/).
-
-Every connected app is a key to your org held by someone else, so give each one an owner, a narrow user and an expiry date.
+Start with the AI tools, because they are the newest and least reviewed: mark every app that sends Salesforce data to a model and check the user, scopes and token policy for those first. Your second risk is [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/). An inventory of interfaces with named owners is part of my [Salesforce integration work](../../services/salesforce-integration/).

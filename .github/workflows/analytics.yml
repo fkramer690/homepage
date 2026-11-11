@@ -1,7 +1,9 @@
 name: Fetch analytics
 
-# Daily snapshot of Cloudflare Web Analytics, stored on the "stats" branch
-# so it can be turned into a report without access to Cloudflare itself.
+# Daily snapshot of Cloudflare Web Analytics, Bing Webmaster Tools and Google
+# Search Console, stored
+# on the "stats" branch so it can be turned into a report without access to
+# any of these services.
 on:
   schedule:
     - cron: '15 5 * * *'
@@ -18,8 +20,8 @@ jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
       - name: Query Cloudflare
@@ -29,6 +31,39 @@ jobs:
         run: |
           node scripts/fetch-analytics.mjs > /tmp/latest.json
           node scripts/dashboard-rows.mjs /tmp/latest.json /tmp/dashboard
+      - name: Query Bing Webmaster Tools
+        # A Bing outage must not cost the Cloudflare snapshot.
+        continue-on-error: true
+        env:
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+        run: node scripts/fetch-bing.mjs /tmp/bing
+      - name: Query Google Search Console
+        # A Google outage must not cost the other snapshots.
+        continue-on-error: true
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: node scripts/fetch-gsc.mjs /tmp/google
+      - name: Query event counter
+        # "Book a call" clicks and sent contact forms (workers/events). Keeps the
+        # history from the stats branch, because Analytics Engine keeps 3 months.
+        continue-on-error: true
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          git fetch -q origin stats || true
+          git show origin/stats:stats/events/latest.json > /tmp/events-prev.json 2>/dev/null || rm -f /tmp/events-prev.json
+          node scripts/fetch-events.mjs /tmp/events /tmp/events-prev.json
+      - name: Weekly search actions ("Was tun?")
+        # Mondays and manual runs: snippet, near page 1 and FAQ candidates
+        # from the Google and Bing tables, compared with the previous list.
+        continue-on-error: true
+        run: |
+          if [ "$(date -u +%u)" != 1 ] && [ "${{ github.event_name }}" != workflow_dispatch ]; then exit 0; fi
+          git fetch -q origin stats || true
+          git show origin/stats:stats/actions/latest.json > /tmp/actions-prev.json 2>/dev/null || rm -f /tmp/actions-prev.json
+          node scripts/search-actions.mjs --google /tmp/google/dashboard --bing /tmp/bing/dashboard \
+            $( [ -s /tmp/actions-prev.json ] && echo --prev /tmp/actions-prev.json ) --out /tmp/actions
       - name: Commit snapshot to stats branch
         run: |
           git config user.name "github-actions[bot]"
@@ -43,6 +78,27 @@ jobs:
           cp /tmp/latest.json stats/latest.json
           cp /tmp/latest.json "stats/$(date -u +%F).json"
           rm -rf stats/dashboard && cp -r /tmp/dashboard stats/dashboard
+          if [ -f /tmp/bing/latest.json ]; then
+            mkdir -p stats/bing
+            cp /tmp/bing/latest.json stats/bing/latest.json
+            cp /tmp/bing/latest.json "stats/bing/$(date -u +%F).json"
+            rm -rf stats/bing/dashboard && cp -r /tmp/bing/dashboard stats/bing/dashboard
+          fi
+          if [ -f /tmp/google/latest.json ]; then
+            mkdir -p stats/google
+            cp /tmp/google/latest.json stats/google/latest.json
+            cp /tmp/google/latest.json "stats/google/$(date -u +%F).json"
+            rm -rf stats/google/dashboard && cp -r /tmp/google/dashboard stats/google/dashboard
+          fi
+          if [ -f /tmp/actions/latest.json ]; then
+            mkdir -p stats/actions
+            cp /tmp/actions/latest.json stats/actions/latest.json
+            cp /tmp/actions/latest.json "stats/actions/$(date -u +%F).json"
+          fi
+          if [ -f /tmp/events/latest.json ]; then
+            mkdir -p stats/events
+            cp /tmp/events/latest.json stats/events/latest.json
+          fi
           git add stats
           git commit -m "Analytics snapshot $(date -u +%F)" || exit 0
           git push origin stats

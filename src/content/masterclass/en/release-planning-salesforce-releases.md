@@ -10,10 +10,10 @@ pubDate: 2026-10-28
 short: "Release planning"
 summary: "How to align your release calendar with the three Salesforce releases, release updates and retirements."
 takeaways:
-  - "A Salesforce release calendar lays two calendars on top of each other: your own cadence with freeze windows, and Salesforce's calendar with three releases, release updates and retirements."
-  - "Whether a sandbox gets the new release early depends on its instance; only a refresh before the cutoff changes that, and for Winter '27 the cutoff was 27 August 2026."
-  - "Sandboxes on the preview release do not belong in the deployment path to production, because they work with a newer API version than the production org."
-  - "Release updates carry a date by which you should complete their steps; a test run enables the change immediately, so it belongs in a sandbox first."
+  - "The release calendar combines your cadence and freeze windows with Salesforce's calendar of releases, release updates and retirements."
+  - "Whether a sandbox gets a release early depends on its instance. Only a refresh before the cutoff changes that, for Winter '27 on 27 August 2026."
+  - "Sandboxes on the preview release do not belong in the deployment path to production, because they work with a newer API version than production."
+  - "Release updates carry a date by which you should complete their steps. A test run enables the change immediately, so it belongs in a sandbox first."
   - "Several retirements with fixed dates run until Summer '28, from the CLI token change on 28 October 2026 to API versions 31.0 to 40.0."
 articles: [salesforce-winter-27-pipeline, api-67-user-mode-apex, salesforce-password-integrations-2027, salesforce-dx-mcp-server-end-of-life]
 faq:
@@ -28,11 +28,11 @@ faq:
 draft: false
 ---
 
-Salesforce release planning means laying two calendars on top of each other. Your own calendar sets the cadence in which changes reach production, when you freeze and who informs the business. Salesforce's calendar brings three releases a year, each with a sandbox preview, release updates and a new API version, plus retirements with fixed dates. In autumn 2026 those include 28 October for the Salesforce CLI, 1 December for SOAP logins and 20 February 2027 for the password flow. A release manager on the client side keeps both calendars in one place and makes them binding for every partner.
+Salesforce release planning means combining two calendars. Your own calendar sets the cadence in which changes reach production, when changes are frozen and who informs the business. Salesforce's calendar brings three releases a year, each with a sandbox preview, release updates and a new API version, plus retirements with fixed dates. In autumn 2026 those include 28 October for the Salesforce CLI, 1 December for SOAP logins and 20 February 2027 for the password flow. A release manager on the client side keeps both calendars in one place and makes them binding for every partner.
 
 ## What belongs in a Salesforce release calendar?
 
-A release calendar is the one view every team reads to see when it may deliver and when it may not. In a programme with several implementation partners on one org, each partner has its own sprint plan. The calendar therefore belongs to the client, maintained by the release manager from [chapter 2](../release-process-ownership-roles/), and the partners plan into it. With eight teams on one org, as in one of my programmes, it is the only place where all dates come together.
+A release calendar is the one view every team reads to see when it may deliver and when it may not. In a program with several implementation partners on one org, each partner has its own sprint plan. The calendar therefore belongs to the client, maintained by the release manager from [chapter 2](../release-process-ownership-roles/), and the partners plan into it. With eight teams on one org, as in one of my programs, it is the only place where all dates come together.
 
 Four layers go into it:
 
@@ -45,9 +45,9 @@ Four layers go into it:
 The fourth layer is the one people forget. A release on the last day of the quarter hits sales exactly when quotes and orders have to go through Salesforce. A release that changes the SAP interface does not belong in the week the SAP team imports its own transports.
 ```
 
-## Which cadence and freeze windows fit?
+## A fixed cadence with freeze windows
 
-I recommend a fixed cadence over releases on demand. Every two or three weeks on the same weekday is a good start for most programmes. A fixed date forces partners to ship small packages, and the business knows when things change. Anything urgent that cannot wait goes through the hotfix path from [chapter 3](../environments-and-branching/), not through a special release.
+I recommend a fixed cadence over releases on demand. Every two or three weeks on the same weekday is a good start for most programs. A fixed date forces partners to ship small packages, and the business knows when things change. Anything urgent that cannot wait goes through the hotfix path from [chapter 3](../environments-and-branching/), not through a special release.
 
 A freeze window is a period in which nothing is deployed to production except approved hotfixes. Three kinds make sense on Salesforce:
 
@@ -92,15 +92,15 @@ For the Salesforce CLI, which sfdx-hardis builds on, the [Salesforce documentati
 
 ### Release updates: changes with an enforcement date
 
-Release updates are changes that Salesforce announces and enforces with a set release, because they can change how existing customisations behave. They sit in Setup under [Release Updates](https://help.salesforce.com/s/articleView?language=en_US&id=sf.release_updates.htm&type=5), sorted into Needs Action, Due Soon, Overdue and Archived. Each update shows a Complete Steps By date and the release in which Salesforce enforces it. Many offer a test run. According to Salesforce Help, the change is then "immediately enabled in your org", and in sandboxes the test period may end earlier.
+Release updates are changes that Salesforce announces and enforces with a set release, because they can change how existing customizations behave. They sit in Setup under [Release Updates](https://help.salesforce.com/s/articleView?language=en_US&id=sf.release_updates.htm&type=5), sorted into Needs Action, Due Soon, Overdue and Archived. Each update shows a Complete Steps By date and the release in which Salesforce enforces it. Many offer a test run. According to Salesforce Help, the change is then "immediately enabled in your org", and in sandboxes the test period may end earlier.
 
-That makes a fixed slot in the calendar: after every Salesforce release the release manager goes through the list, gives each update an owner, starts the test run in the preview or integration sandbox first and activates the update in production on a date of your choosing, before Salesforce does. Two current examples: the new "Use Any API Auth" permission for SOAP logins from 1 December 2026 can be tested in advance through the release update in Setup, according to Salesforce. The end of the OAuth password flow is also published as a [release update](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5).
+This becomes a fixed slot in the calendar: after every Salesforce release the release manager goes through the list, gives each update an owner, starts the test run in the preview or integration sandbox first and activates the update in production on a date of your choosing, before Salesforce does. Two current examples: the new "Use Any API Auth" permission for SOAP logins from 1 December 2026 can be tested in advance through the release update in Setup, according to Salesforce. The end of the OAuth password flow is also published as a [release update](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5).
 
 If you do not want to check the list by hand: according to its [documentation](https://sfdx-hardis.cloudity.com/salesforce-monitoring-home/), sfdx-hardis monitoring gathers warnings about upcoming and overdue release updates every week and reports the instance's next upgrade date. More on monitoring in [chapter 9](../operations-monitoring-backup/).
 
 ### API versions: every release brings a new one
 
-Every release brings a new API version, Winter '27 brought 68.0. That alone changes nothing in your code, because every Apex class and trigger stores its own version. The risk lies in raising it. From API 67.0, Apex classes run in user mode and with sharing, and queries then silently return fewer records. Why that happens and how to plan the move is in [API 67.0 user mode: why Apex sees fewer records](../../../blog/api-67-apex-user-mode-fewer-records/). Coding agents like to raise versions in passing, so a rule for this also belongs in the rules file from [chapter 8 of the AI masterclass](../../ai-salesforce/ai-code-best-practices/).
+Every release brings a new API version. With Winter '27 it was 68.0. That alone changes nothing in your code, because every Apex class and trigger stores its own version. The risk lies in raising it. From API 67.0, Apex classes run in user mode and with sharing, and queries then silently return fewer records. Why that happens and how to plan the move is in [API 67.0 user mode: why Apex sees fewer records](../../../blog/api-67-apex-user-mode-fewer-records/). Coding agents like to raise versions in passing, so a rule for this also belongs in the rules file from [chapter 8 of the AI masterclass](../../ai-salesforce/ai-code-best-practices/).
 
 My suggestion for the calendar: once a year, a planned package that raises `sourceApiVersion` and the classes in batches by business domain, with tests as real users. It includes the classes the compiler has warned about since Winter '27 because they are saved at versions 9.0 to 19.0.
 
@@ -128,14 +128,14 @@ The business notices a release whether it comes from you or from Salesforce. Sal
 What works without much effort:
 
 - **A calendar the business can see.** Release dates, freeze windows and the Salesforce upgrade, without technical detail.
-- **User release notes per release.** Organised by role: inside sales, service, field service, sales, dealers in the portal. One sentence per item on what changes for that role.
+- **User release notes per release.** Organized by role: inside sales, service, field service, sales, dealers in the portal. One sentence per item on what changes for that role.
 - **Key users test in the preview sandbox.** People who know the processes see within an hour whether a Salesforce release changes warranty handling or spare parts ordering.
 - **One channel for feedback.** Salesforce itself advises telling users where to report questions and problems.
 - **External users early.** Dealers in the portal do not plan their training around your sprint. They need a longer lead time.
 
-## A typical scenario, as an assumption: a machine builder before Spring '27
+## Example: a machine builder before Spring '27
 
-A typical scenario, as an assumption: a machine builder runs Service Cloud, Field Service and a dealer portal connected to SAP S/4. Three partners work on one org, and releases go live every second Thursday. The release manager on the client side plans in November:
+Suppose a machine builder runs Service Cloud, Field Service and a dealer portal connected to SAP S/4. Three partners work on one org, and releases go live every second Thursday. The release manager on the client side plans in November:
 
 ```schritte
 Enter the retirements | November
@@ -150,6 +150,4 @@ Share the calendar | with every partner
   The partners get the calendar in writing. Anyone who wants to deliver during a freeze needs her approval.
 ```
 
-None of these steps needs a new tool. It needs someone on the client side who owns the calendar, and partners who are contractually bound to plan into it. How such rules get into partner contracts is part of my [partner governance](../../../services/partner-governance/) work; the data side of a release is covered in [chapter 7](../data-and-configuration/), and all chapters are on the [overview page](../).
-
-A release calendar that shows your dates and Salesforce's in one place turns retirements and upgrades into plannable work.
+None of these steps needs a new tool. It needs someone on the client side who owns the calendar, and partners who are contractually bound to plan into it. Building such rules into partner contracts is part of my [partner governance](../../../services/partner-governance/) work; the data side of a release is covered in [chapter 7](../data-and-configuration/), and all chapters are on the [overview page](../).

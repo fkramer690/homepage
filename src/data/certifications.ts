@@ -12,25 +12,25 @@ export const architectCerts: Cert[] = [
     name: "Data Architect",
     year: 2020,
     en: "Most Salesforce problems that appear in year three were created in the data model in month one. This credential covers large data volumes, ownership skew and when data belongs outside the platform. In enterprise orgs with millions of records it decides whether reports, sharing and integrations still perform.",
-    de: "Die meisten Salesforce-Probleme aus dem dritten Jahr entstehen im ersten Monat im Datenmodell. Diese Zertifizierung deckt große Datenmengen, Ownership-Skew und die Frage ab, welche Daten gar nicht auf die Plattform gehören. In Enterprise-Orgs mit Millionen Datensätzen entscheidet das, ob Reports, Sharing und Schnittstellen weiter performant laufen.",
+    de: "Die meisten Salesforce-Probleme aus dem dritten Jahr entstehen im ersten Monat im Datenmodell. Diese Zertifizierung deckt große Datenmengen, Ownership-Skew und die Frage ab, welche Daten gar nicht auf die Plattform gehören. In Enterprise-Orgs mit Millionen Datensätzen entscheidet das, ob Reports, Sharing und Schnittstellen performant bleiben.",
   },
   {
     name: "Application Architect",
     year: 2020,
-    en: "Salesforce awards this one for holding the Data Architect, Sharing and Visibility Architect, Platform App Builder and Platform Developer I credentials together. It stands for one judgement: configure, code or leave it out of Salesforce. Getting that call right early saves the most money in any project.",
+    en: "Salesforce awards this one for holding the Data Architect, Sharing and Visibility Architect, Platform App Builder and Platform Developer I credentials together. It stands for one judgment: configure, code or leave it out of Salesforce. Getting that call right early saves the most money in any project.",
     de: "Salesforce vergibt sie für die Kombination aus Data Architect, Sharing and Visibility Architect, Platform App Builder und Platform Developer I. Sie steht für eine Abwägung: konfigurieren, programmieren oder gar nicht in Salesforce bauen. Diese Entscheidung früh richtig zu treffen spart in jedem Projekt am meisten Geld.",
   },
   {
     name: "Sharing and Visibility Architect",
     year: 2020,
     en: "Who may see which record is a business question with legal weight. Role hierarchies, dealer access and works council requirements have to fit into one sharing model. A wrong model either leaks data or forces workarounds that users stop trusting.",
-    de: "Wer welchen Datensatz sehen darf, ist eine fachliche Frage mit rechtlichem Gewicht. Rollenhierarchie, Händlerzugriffe und Vorgaben des Betriebsrats müssen in ein Sharing-Modell passen. Ein falsches Modell lässt entweder Daten durch oder erzwingt Umwege, denen die Nutzer nicht mehr trauen.",
+    de: "Wer welchen Datensatz sehen darf, ist eine fachliche Frage mit rechtlichem Gewicht. Rollenhierarchie, Händlerzugriffe und Vorgaben des Betriebsrats müssen in ein Sharing-Modell passen. Ein falsches Modell gibt entweder Daten preis oder erzwingt Umwege, denen die Nutzer nicht mehr trauen.",
   },
   {
     name: "Integration Architect",
     year: 2021,
     en: "Salesforce rarely stands alone: ERP, data platform, telephony and portals all exchange data with it. Whether an interface runs in real time, in batches or through events is an architecture decision with consequences for cost, error handling and operations. This credential covers those patterns and their limits.",
-    de: "Salesforce steht selten allein: ERP, Datenplattform, Telefonie und Portale tauschen Daten mit ihm aus. Ob eine Schnittstelle in Echtzeit, im Batch oder über Events läuft, ist eine Architekturentscheidung mit Folgen für Kosten, Fehlerbehandlung und Betrieb. Diese Zertifizierung deckt diese Muster und ihre Grenzen ab.",
+    de: "Salesforce steht selten allein: ERP, Datenplattform, Telefonie und Portale tauschen Daten mit ihm aus. Ob eine Schnittstelle Daten in Echtzeit, im Batch oder über Events überträgt, ist eine Architekturentscheidung mit Folgen für Kosten, Fehlerbehandlung und Betrieb. Diese Zertifizierung deckt diese Muster und ihre Grenzen ab.",
   },
   {
     name: "Identity and Access Management Architect",
@@ -41,20 +41,20 @@ export const architectCerts: Cert[] = [
   {
     name: "System Architect",
     year: 2021,
-    en: "Salesforce awards this one for Integration Architect, Identity and Access Management Architect, Development Lifecycle and Deployment Architect and Platform Developer I. It describes the view from outside: how Salesforce sits in the wider system landscape and how it is built, secured and shipped there.",
-    de: "Salesforce vergibt sie für Integration Architect, Identity and Access Management Architect, Development Lifecycle and Deployment Architect und Platform Developer I. Sie beschreibt den Blick von außen: wie Salesforce in der Systemlandschaft sitzt und wie es dort gebaut, abgesichert und ausgeliefert wird.",
+    en: "Salesforce awards this one for Integration Architect, Identity and Access Management Architect, Development Lifecycle and Deployment Architect and Platform Developer I. It describes the view from outside: how Salesforce fits into the wider system architecture and how it is built, secured and shipped there.",
+    de: "Salesforce vergibt sie für Integration Architect, Identity and Access Management Architect, Development Lifecycle and Deployment Architect und Platform Developer I. Sie beschreibt den Blick von außen: wie Salesforce sich in die Systemlandschaft einfügt und wie es dort gebaut, abgesichert und ausgeliefert wird.",
   },
   {
     name: "Development Lifecycle and Deployment Architect",
     year: 2021,
     en: "When several partners work in one org, the release process decides more than any single feature. Branching, environments, test strategy and deployment order have to hold up with a release every two weeks. This is where I spend a large part of my governance work.",
-    de: "Wenn mehrere Partner in einer Org arbeiten, entscheidet der Release-Prozess mehr als jedes einzelne Feature. Branching, Umgebungen, Teststrategie und Deployment-Reihenfolge müssen bei einem Release alle zwei Wochen halten. Hier liegt ein großer Teil meiner Governance-Arbeit.",
+    de: "Wenn mehrere Partner in einer Org arbeiten, entscheidet der Release-Prozess mehr als jedes einzelne Feature. Branching, Umgebungen, Teststrategie und Deployment-Reihenfolge müssen bei einem Release alle zwei Wochen halten. Darauf entfällt ein großer Teil meiner Governance-Arbeit.",
   },
   {
     name: "B2B Solution Architect",
     year: 2023,
-    en: "Manufacturers run processes from lead to quote, order, installed base and service, often with dealers in between. This credential tests designs that span several clouds and external systems. It matches the projects I work in, where a decision in sales shows up again in after-sales.",
-    de: "Hersteller haben Prozesse vom Lead über Angebot und Auftrag bis zur installierten Anlage und zum Service, oft mit Händlern dazwischen. Diese Zertifizierung prüft Entwürfe über mehrere Clouds und externe Systeme hinweg. Das passt zu meinen Projekten, in denen eine Entscheidung im Vertrieb im After-Sales wieder auftaucht.",
+    en: "Manufacturers run processes from lead to quote, order, installed base and service, often with dealers in between. This credential tests designs that span several clouds and external systems. It matches the projects I work in, where a decision in sales resurfaces in after-sales.",
+    de: "Hersteller haben Prozesse vom Lead über Angebot und Auftrag bis zur installierten Anlage und zum Service, oft mit Händlern dazwischen. Diese Zertifizierung prüft Entwürfe über mehrere Clouds und externe Systeme hinweg. Das passt zu meinen Projekten, in denen eine Entscheidung im Vertrieb sich im After-Sales erneut auswirkt.",
   },
 ];
 
@@ -63,13 +63,13 @@ export const salesforceCerts: Cert[] = [
     name: "Administrator",
     year: 2018,
     en: "Every solution has to be run by someone after go-live. Knowing the admin side keeps designs operable for the internal team, with users, permissions and data maintenance they can handle themselves.",
-    de: "Jede Lösung muss nach dem Go-live jemand betreiben. Wer die Admin-Seite kennt, entwirft so, dass das interne Team Nutzer, Berechtigungen und Datenpflege selbst im Griff behält.",
+    de: "Jede Lösung muss nach dem Go-live jemand betreiben. Wer die Admin-Seite kennt, entwirft so, dass das interne Team Nutzer, Berechtigungen und Datenpflege selbst verwalten kann.",
   },
   {
     name: "Experience Cloud Consultant",
     year: 2019,
-    en: "Dealer, partner and subcontractor portals put Salesforce data in front of people outside the company. Licensing, external sharing and branding have to be settled before the first page is built. A portal that partners do not use costs licences and brings nothing.",
-    de: "Händler-, Partner- und Subunternehmer-Portale zeigen Salesforce-Daten Menschen außerhalb des Unternehmens. Lizenzen, externes Sharing und Branding müssen geklärt sein, bevor die erste Seite entsteht. Ein Portal, das Partner nicht nutzen, kostet Lizenzen und bringt nichts.",
+    en: "Dealer, partner and subcontractor portals put Salesforce data in front of people outside the company. Licensing, external sharing and branding have to be settled before the first page is built. A portal that partners do not use costs licenses and delivers no value.",
+    de: "Händler-, Partner- und Subunternehmer-Portale zeigen Salesforce-Daten Menschen außerhalb des Unternehmens. Lizenzen, externes Sharing und Branding müssen geklärt sein, bevor die erste Seite entsteht. Ein Portal, das Partner nicht nutzen, kostet Lizenzen und hat keinen Nutzen.",
   },
   {
     name: "Service Cloud Consultant",
@@ -93,7 +93,7 @@ export const salesforceCerts: Cert[] = [
     name: "Platform Developer I",
     year: 2020,
     en: "As an architect I review code that partners write. Reading Apex and understanding governor limits lets me spot designs that will fail under load before they reach production.",
-    de: "Als Architekt prüfe ich Code, den Partner schreiben. Wer Apex lesen kann und die Governor Limits versteht, erkennt Entwürfe, die unter Last scheitern, bevor sie in Produktion gehen.",
+    de: "Als Architekt prüfe ich Code, den Partner schreiben. Wer Apex lesen kann und die Governor Limits versteht, erkennt Entwürfe, die unter Last scheitern, bevor sie in Produktion gelangen.",
   },
   {
     name: "Advanced Administrator",
@@ -110,8 +110,8 @@ export const salesforceCerts: Cert[] = [
   {
     name: "Nonprofit Cloud Consultant",
     year: 2020,
-    en: "Industry clouds come with their own data model and assumptions. Working with one outside manufacturing showed me how to judge where an industry model fits and where it forces the business into the wrong shape. The same question comes up with Manufacturing Cloud.",
-    de: "Branchen-Clouds bringen ein eigenes Datenmodell und eigene Annahmen mit. Die Arbeit mit einer außerhalb der Industrie hat mir gezeigt, wo ein Branchenmodell passt und wo es das Geschäft in eine falsche Form drückt. Dieselbe Frage stellt sich bei der Manufacturing Cloud.",
+    en: "Industry clouds come with their own data model and assumptions. Working with one outside manufacturing showed me how to judge where an industry model fits and where it forces the business into the wrong shape. The same question arises with Manufacturing Cloud.",
+    de: "Branchen-Clouds bringen ein eigenes Datenmodell und eigene Annahmen mit. Die Arbeit mit einer außerhalb der Industrie hat mir gezeigt, wo ein Branchenmodell passt und wo es das Geschäft in eine falsche Form zwingt. Dieselbe Frage stellt sich bei der Manufacturing Cloud.",
   },
   {
     name: "Business Analyst",
@@ -141,7 +141,7 @@ export const salesforceCerts: Cert[] = [
     name: "Sales Representative",
     year: 2025,
     en: "This credential looks at sales from the salesperson's side. CRM adoption depends on whether the system helps sales reps sell, and a forecast is only reliable when they enter their data willingly.",
-    de: "Diese Zertifizierung betrachtet Vertrieb aus Sicht der Vertriebler. Ob ein CRM angenommen wird, hängt davon ab, ob es beim Verkaufen hilft, und ein Forecast ist nur belastbar, wenn die Daten gern gepflegt werden.",
+    de: "Diese Zertifizierung betrachtet Vertrieb aus Sicht der Vertriebsmitarbeitenden. Ob ein CRM angenommen wird, hängt davon ab, ob es beim Verkaufen hilft, und ein Forecast ist nur belastbar, wenn der Vertrieb seine Daten bereitwillig pflegt.",
   },
   {
     name: "AI Specialist",
@@ -158,8 +158,8 @@ export const salesforceCerts: Cert[] = [
   {
     name: "Marketing Associate",
     year: 2025,
-    en: "The handover between marketing and sales is where leads and consent records get lost. Knowing the marketing side helps define that handover so that leads arrive qualified and consent is documented.",
-    de: "An der Übergabe zwischen Marketing und Vertrieb gehen Leads und Einwilligungen verloren. Wer die Marketing-Seite kennt, kann diese Übergabe so definieren, dass Leads qualifiziert ankommen und Einwilligungen dokumentiert sind.",
+    en: "The handover between marketing and sales is where leads and consent records get lost. Knowing the marketing side helps define that handover so that leads are handed over qualified and consent is documented.",
+    de: "An der Übergabe zwischen Marketing und Vertrieb gehen Leads und Einwilligungen verloren. Wer die Marketing-Seite kennt, kann diese Übergabe so definieren, dass Leads qualifiziert übergeben werden und Einwilligungen dokumentiert sind.",
   },
 ];
 
@@ -175,14 +175,14 @@ export const otherCerts: Record<'architecture' | 'devops' | 'delivery' | 'crm', 
     {
       name: "AWS Certified Cloud Practitioner",
       year: 2021,
-      en: "Data platforms and IoT services often run on AWS next to Salesforce. Understanding the AWS side helps decide where data and logic should live and what each option costs.",
-      de: "Datenplattformen und IoT-Dienste laufen oft auf AWS neben Salesforce. Wer die AWS-Seite versteht, kann entscheiden, wo Daten und Logik liegen sollten und was jede Variante kostet.",
+      en: "Data platforms and IoT services often run on AWS next to Salesforce. Understanding the AWS side helps decide where data and logic should reside and what each option costs.",
+      de: "Datenplattformen und IoT-Dienste werden oft auf AWS neben Salesforce betrieben. Wer die AWS-Seite versteht, kann entscheiden, wo Daten und Logik angesiedelt sein sollten und was jede Variante kostet.",
     },
     {
       name: "MuleSoft Associate",
       year: 2025,
-      en: "API-led connectivity organises interfaces in reusable layers. With many systems around Salesforce this keeps the landscape changeable, because a new system connects to existing APIs.",
-      de: "API-led Connectivity ordnet Schnittstellen in wiederverwendbaren Schichten. Bei vielen Systemen rund um Salesforce bleibt die Landschaft so veränderbar, weil ein neues System an bestehende APIs andockt.",
+      en: "API-led connectivity organizes interfaces in reusable layers. With many systems around Salesforce this keeps the architecture easy to change, because a new system connects to existing APIs.",
+      de: "API-led Connectivity ordnet Schnittstellen in wiederverwendbaren Schichten. Bei vielen Systemen rund um Salesforce bleibt die Landschaft so veränderbar, weil ein neues System an bestehende APIs angebunden wird.",
     },
   ],
   devops: [
@@ -214,7 +214,7 @@ export const otherCerts: Record<'architecture' | 'devops' | 'delivery' | 'crm', 
       name: "Gearset Master",
       year: 2022,
       en: "Gearset Master is the top level of the Gearset Academy. It covers moving teams from change sets to version control, automated testing and seeding test data before UAT. Many of the orgs I review are still in the middle of that move.",
-      de: "Gearset Master ist die höchste Stufe der Gearset Academy. Sie deckt den Weg von Change Sets zur Versionskontrolle, automatisierte Tests und das Befüllen von Testdaten vor dem UAT ab. Viele Orgs, die ich prüfe, stecken mitten in diesem Wechsel.",
+      de: "Gearset Master ist die höchste Stufe der Gearset Academy. Sie deckt den Weg von Change Sets zur Versionskontrolle, automatisierte Tests und das Befüllen von Testdaten vor dem UAT ab. Viele Orgs, die ich prüfe, befinden sich mitten in diesem Wechsel.",
     },
   ],
   delivery: [
@@ -227,7 +227,7 @@ export const otherCerts: Record<'architecture' | 'devops' | 'delivery' | 'crm', 
     {
       name: "PRINCE2 Foundation",
       year: 2020,
-      en: "Large companies often steer programmes with a steering committee while teams work in Scrum. PRINCE2 gives me the vocabulary of the governance side, so both levels can be connected without friction.",
+      en: "Large companies often steer programs with a steering committee while teams work in Scrum. PRINCE2 gives me the vocabulary of the governance side, so both levels can be connected without friction.",
       de: "Große Unternehmen steuern Programme oft über einen Lenkungskreis, während die Teams in Scrum arbeiten. PRINCE2 gibt mir das Vokabular der Steuerungsebene, damit sich beide Ebenen ohne Reibung verbinden lassen.",
     },
     {
@@ -253,14 +253,14 @@ export const otherCerts: Record<'architecture' | 'devops' | 'delivery' | 'crm', 
     {
       name: "HubSpot Marketing Software",
       year: 2025,
-      en: "HubSpot Marketing is a common alternative to Marketing Cloud. Knowing it allows a licence recommendation based on the requirements alone.",
+      en: "HubSpot Marketing is a common alternative to Marketing Cloud. Knowing it allows a license recommendation based on the requirements alone.",
       de: "HubSpot Marketing ist eine verbreitete Alternative zur Marketing Cloud. Wer es kennt, kann eine Lizenzempfehlung geben, die sich allein an den Anforderungen orientiert.",
     },
     {
       name: "HubSpot Service Software",
       year: 2025,
       en: "HubSpot Service is enough for many small support teams. It reaches its limits with installed assets, field service and complex entitlements, which is the point where Salesforce Service Cloud earns its cost.",
-      de: "HubSpot Service reicht für viele kleine Support-Teams. An Grenzen stößt es bei installierten Anlagen, Field Service und komplexen Entitlements, und an diesem Punkt rechnet sich die Salesforce Service Cloud.",
+      de: "HubSpot Service genügt vielen kleinen Support-Teams. An Grenzen stößt es bei installierten Anlagen, Field Service und komplexen Entitlements, und an diesem Punkt rechnet sich die Salesforce Service Cloud.",
     },
   ],
 };

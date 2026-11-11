@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Blueprint from '../components/Blueprint.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { homeHref } from '../lib/paths';
@@ -17,7 +16,6 @@ const enHome = homeHref('en');
   <Header t={de} home={deHome} switchHref={enHome} />
   <main id="main" data-layout="wide">
     <section class="hero dark grid-bg not-found">
-      <Blueprint />
       <div class="container hero-inner">
         <p class="eyebrow mono">404</p>
         <h1 data-en={en.notFound.title}>{de.notFound.title}</h1>

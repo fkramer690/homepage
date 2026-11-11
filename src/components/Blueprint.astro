@@ -1,29 +1,14 @@
 ---
-// Technical-drawing decoration: crosshairs and dashed dimension lines.
+// Technical-drawing decoration for dark sections: a dashed dimension line with end
+// ticks along the top edge, a short one at the bottom left and a crosshair at the
+// bottom right. Every mark sits in the section's top or bottom padding and inside
+// the 1216px frame, so it never lies on text or runs past the frame edge.
 // Purely decorative, hidden from assistive technology.
 ---
-<svg class="blueprint" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-  <g stroke="#1BA1E2" fill="none" stroke-width="1.2">
-    <g opacity="0.9">
-      <path d="M 1040 120 h 40 M 1060 100 v 40" />
-      <circle cx="1060" cy="120" r="9" />
-    </g>
-    <g opacity="0.7">
-      <path d="M 120 520 h 32 M 136 504 v 32" />
-      <circle cx="136" cy="520" r="7" />
-    </g>
-    <g opacity="0.55">
-      <path d="M 860 470 h 24 M 872 458 v 24" />
-    </g>
-    <g stroke-dasharray="6 6" opacity="0.6">
-      <path d="M 700 60 H 1140" />
-      <path d="M 1140 60 V 300" />
-      <path d="M 980 560 H 1180" />
-    </g>
-    <g opacity="0.6">
-      <path d="M 700 52 v 16 M 1140 52 v 16" />
-      <path d="M 1132 300 h 16" />
-      <path d="M 980 552 v 16 M 1180 552 v 16" />
-    </g>
-  </g>
-</svg>
+<div class="blueprint" aria-hidden="true">
+  <div class="container bp-frame">
+    <span class="bp-dim bp-dim-top"></span>
+    <span class="bp-dim bp-dim-bottom"></span>
+    <span class="bp-cross"></span>
+  </div>
+</div>

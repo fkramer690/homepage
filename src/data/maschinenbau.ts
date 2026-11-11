@@ -1,0 +1,221 @@
+// "Salesforce für Maschinen- und Anlagenbau": industry page /salesforce-maschinenbau/ (DE) and
+// /en/salesforce-for-machinery-manufacturers/ (EN), backlog MP4. Built for the buying questions
+// AI assistants answer with industry pages ("unabhängige Salesforce-Beratung Maschinenbau").
+// Rendered by src/components/FreelanceArchitectPage.astro with the same structure as the
+// freelance architect page. Only confirmed experience (docs/content-blocks.md, start page references).
+
+import type { freelanceArchitect } from './freelance-architect';
+
+export const maschinenbauPaths = {
+  de: 'salesforce-maschinenbau/',
+  en: 'salesforce-for-machinery-manufacturers/',
+} as const;
+
+export const maschinenbau: typeof freelanceArchitect = {
+  de: {
+    title: 'Salesforce für Maschinen- und Anlagenbau',
+    metaTitle: 'Salesforce-Beratung für Maschinen- und Anlagenbau',
+    description:
+      'Unabhängige Salesforce-Beratung für Maschinen- und Anlagenbauer: Field Service, Installed Base, Ersatzteile aus SAP, Händlerportal, Angebote, auf Kundenseite.',
+    eyebrow: 'Branche · Maschinen- und Anlagenbau',
+    lead: 'Maschinen- und Anlagenbauer setzen Salesforce vor allem im Service und After-Sales ein: für die Installed Base, Wartung und Störungseinsätze mit Field Service, Ersatzteile und Aufträge aus SAP, Portale für Händler und Servicepartner und Angebote für Maschinen mit vielen Optionen. Ich berate dabei unabhängig auf Kundenseite, als Salesforce-Architekt ohne Provisionen: Ich kläre mit Ihnen, welche Produkte sich rechnen, lege die Schnittstellen zu SAP fest und steuere die Implementierungspartner.',
+    ctaPrimary: '30 Minuten sprechen',
+    ctaSecondary: 'Typische Themen',
+    promises: ['Nur auf Kundenseite', 'Keine Provisionen', 'Vor Ort in NRW, Rheinland-Pfalz, Baden-Württemberg'],
+    portraitAlt: 'Porträt von Fabian Kramer',
+    facts: [
+      { value: '8', label: 'Jahre Salesforce' },
+      { value: '20+', label: 'Enterprise-Projekte' },
+      { value: '32', label: 'Entwickler in 8 Teams, ein Programm' },
+      { value: 'DE · EN', label: 'Projektsprachen' },
+    ],
+    situations: {
+      label: 'Typische Themen',
+      title: 'Wofür Maschinenbauer Salesforce einsetzen',
+      intro: 'Bei Maschinen- und Anlagenbauern beginnt Salesforce selten im Vertrieb. Meist geht es um die Maschinen, die schon beim Kunden stehen, und um alles, was nach der Auslieferung passiert.',
+      cards: [
+        { icon: 'factory', t: 'Installed Base und Anlagenhierarchie', d: 'Jede Maschine als Asset mit Seriennummer, Baugruppen und Standort, damit Service und Vertrieb wissen, was beim Kunden steht. Die Datenqualität der Assets ist dabei der häufigste Stolperstein.', link: 'blog/field-service-asset-hierarchie-maschinen/', linkText: 'Asset-Hierarchie für Maschinen' },
+        { icon: 'field-service', t: 'Wartung, Störung und Inbetriebnahme', d: 'Einsatzplanung für Servicetechniker mit Salesforce Field Service, automatischer Terminplanung und Servicebericht vor Ort. Den größten Nutzen hat das bei vielen kurzen Einsätzen.', link: 'masterclass/field-service/', linkText: 'Salesforce Field Service' },
+        { icon: 'integration', t: 'Ersatzteile und Kundenaufträge aus SAP', d: 'Preise, Bestände und Kundenaufträge bleiben meist in SAP. Salesforce zeigt Service und Vertrieb, was sie brauchen, und die Schnittstelle legt fest, welches System bei welchen Daten führend ist.', link: 'leistungen/salesforce-schnittstellen/', linkText: 'Salesforce-SAP-Integration' },
+        { icon: 'partners', t: 'Händler und Servicepartner im Portal', d: 'Über Experience Cloud bearbeiten Servicepartner und Subunternehmer Aufträge direkt im System statt per E-Mail und Excel. Kunden finden Dokumente und Fälle im Self-Service.', link: 'blog/salesforce-field-service-servicepartner/', linkText: 'Servicepartner in Field Service' },
+        { icon: 'contract', t: 'Angebote und Rahmenverträge', d: 'Angebote für Maschinen mit vielen Optionen und Rahmenverträge mit Ist-Mengen aus dem ERP. Manufacturing Cloud und Revenue Cloud nur dort, wo sie sich gegen eine Eigenentwicklung rechnen.', link: 'blog/manufacturing-cloud-wann-lohnt-sie-sich/', linkText: 'Wann sich Manufacturing Cloud lohnt' },
+        { icon: 'phone', t: 'Kundenservice über Telefon und E-Mail', d: 'Telefon und E-Mail sind im Service noch immer die wichtigsten Kanäle. Service Cloud bündelt sie an einem Fall, wenn die Telefonie angebunden ist, etwa Genesys oder Teams Phone mit passendem Connector.', link: 'leistungen/salesforce-architektur/', linkText: 'Salesforce-Architektur' },
+      ],
+    },
+    compare: {
+      label: 'Passung',
+      title: 'Welches Salesforce-Produkt passt wann?',
+      intro: 'Nicht jedes Salesforce-Produkt rechnet sich für jeden Maschinenbauer. So schätze ich die Passung ein, bevor jemand eine Lizenz unterschreibt:',
+      colMe: 'Passt, wenn',
+      colPartner: 'Passt eher nicht, wenn',
+      rows: [
+        { k: 'Service Cloud', me: 'Kunden sich mit Fragen zu ihren Maschinen per Telefon, E-Mail oder Portal melden', partner: 'der Service nur aus wenigen Technikern besteht, die ohne Fallbearbeitung auskommen' },
+        { k: 'Field Service', me: 'es viele disponierte Einsätze gibt, bei denen Routen, Skills und Termine die Kennzahlen bewegen', partner: 'es vor allem lange Montagen über Wochen gibt; dann prüfe ich, ob die Projektplanung im ERP besser geeignet ist' },
+        { k: 'Manufacturing Cloud', me: 'Sales Agreements, Mengenplanung je Kunde und Produkt und Ist-Werte aus dem ERP im Vertrieb genutzt werden', partner: 'Rahmenverträge keine Rolle spielen; dann ist eine Eigenentwicklung oft günstiger' },
+        { k: 'Experience Cloud', me: 'Händler, Servicepartner oder Kunden selbst Aufträge, Fälle oder Dokumente bearbeiten', partner: 'nur Informationen angezeigt werden, die auch die Website liefern kann' },
+        { k: 'Revenue Cloud', me: 'Varianten, Optionen und Preisregeln die Angebote fehleranfällig machen; bei komplexen Maschinen oft mit angebundenem Konfigurator', partner: 'Preise und Konditionen vollständig in SAP bleiben und dort gerechnet werden' },
+        { k: 'Agentforce', me: 'ein klar abgegrenzter Servicefall, gepflegtes Wissen, geklärte Berechtigungen und ein messbarer Nutzen vorhanden sind', partner: 'die Datenqualität unklar ist oder der Anwendungsfall erst gesucht wird' },
+      ],
+      more: 'Wann sich Field Service rechnet, ausführlich:',
+      moreLink: 'blog/salesforce-field-service-lohnt-sich/',
+      moreText: 'Lohnt sich Salesforce Field Service?',
+      more2: 'Und wenn es kein Salesforce-Produkt sein muss:',
+      moreLink2: 'blog/field-service-management-software-auswahl/',
+      moreText2: 'Field-Service-Software auswählen',
+    },
+    deliverables: {
+      label: 'Ergebnisse',
+      title: 'Was Sie konkret erhalten',
+      items: [
+        { icon: 'target', t: 'Zielbild mit Systemlandkarte', d: 'Welches System bei Kunden, Material, Preisen, Aufträgen und Anlagen führend ist, und welche Salesforce-Produkte Sie dafür brauchen.' },
+        { icon: 'budget', t: 'Make-or-Buy und Lizenzrechnung', d: 'Industry Cloud, Eigenentwicklung oder anderes Tool, gerechnet über die Laufzeit mit Wartung und Folgekosten.' },
+        { icon: 'design', t: 'Datenmodell für die Installed Base', d: 'Assets, Baugruppen, Standorte und Serviceverträge, abgestimmt mit dem, was SAP liefert.' },
+        { icon: 'integration', t: 'Schnittstellenkonzept zu SAP', d: 'Welche Daten in welche Richtung fließen, wie oft und über welche Middleware.' },
+        { icon: 'steer', t: 'Standards und Reviews für Partner', d: 'Regeln für alle Implementierungspartner und ein Review, bevor etwas in Produktion gelangt.' },
+        { icon: 'handshake', t: 'Übergabe an Ihr Team', d: 'Reviews und Standards übergebe ich an einen internen Kollegen, sobald der Prozess stabil ist.' },
+      ],
+    },
+    practice: {
+      label: 'Aus meiner Praxis',
+      title: 'Aus Projekten mit Herstellern',
+      text: 'In meinen Field-Service-Projekten ging es um Wartung, Störungseinsätze und Inbetriebnahmen, mit automatischer Terminplanung und Ersatzteilen und Installed Base aus dem ERP. Die Stolpersteine waren die Datenqualität der Assets, die Akzeptanz der Techniker und die Schnittstellen zum ERP. In der mobilen App fehlt mir am meisten, mehrere Datensätze in einem Schritt auswählen zu können.',
+      facts: [
+        { value: '1', label: 'globaler Rollout der Manufacturing Cloud' },
+        { value: '12', label: 'Locales im Rollout-Plan eines Service-Chats' },
+        { value: '5', label: 'Implementierungspartner in einer Org' },
+        { value: '32', label: 'Entwickler unter einem Release-Prozess' },
+      ],
+    },
+    process: {
+      label: 'Zusammenarbeit',
+      title: 'So fangen wir an',
+      steps: [
+        { icon: 'message', t: '30 Minuten', d: 'Sie schildern, wo es bei Service, Vertrieb oder Partnern gerade Probleme gibt, ich sage ehrlich, ob ich der Richtige bin.' },
+        { icon: 'analyse', t: 'Bestandsaufnahme', d: 'Prozesse, Systeme, Org und Partner. Das Ergebnis ist eine Liste der Probleme, sortiert nach ihren Kosten.' },
+        { icon: 'architecture', t: 'Zielbild', d: 'Systemlandkarte, Produktauswahl und Roadmap, mit einer Make-or-Buy-Entscheidung für jede größere Anforderung.' },
+        { icon: 'implement', t: 'Umsetzung steuern', d: 'Standards für die Partner, Reviews der Lieferungen und Begleitung bis zum Rollout.' },
+      ],
+      termsLabel: 'Konditionen',
+      terms: [
+        { t: 'Nach Aufwand', d: 'Tagessatz 1.200 Euro netto bei Arbeit remote, vor Ort plus Pauschale oder Reisekosten. Mindestens zwei Tage pro Woche, zum Start bis zu fünf.' },
+        { t: 'Vor Ort', d: 'Vor Ort vor allem in NRW, Rheinland-Pfalz und Baden-Württemberg, zum Start öfter, später ein Blocktermin im Monat.' },
+        { t: 'Unabhängig', d: 'Keine Provisionen von Salesforce, Toolherstellern oder Implementierungspartnern.', link: 'freiberuflicher-salesforce-architect/', linkText: 'Mehr zur Rolle' },
+      ],
+    },
+    faqTitle: 'Häufig gestellte Fragen',
+    faq: [
+      { q: 'Lohnt sich Salesforce für einen mittelständischen Maschinenbauer?', a: 'Wenn Service und After-Sales einen großen Teil des Geschäfts ausmachen, oft ja: Installed Base, Serviceeinsätze und Ersatzteile lassen sich in Salesforce gut abbilden. Für einen reinen Vertriebs-CRM-Bedarf mit wenigen Nutzern gibt es günstigere Lösungen.' },
+      { q: 'Brauchen Maschinenbauer die Salesforce Manufacturing Cloud?', a: 'Nicht automatisch. Manufacturing Cloud lohnt sich, wenn Sales Agreements, Mengenplanung je Kunde und Produkt und Ist-Werte aus dem ERP in der Vertriebsplanung wirklich genutzt werden. In einem meiner Projekte spielten diese keine Rolle, und eine Eigenentwicklung auf der Kernplattform war günstiger und leichter zu warten.' },
+      { q: 'Wie wird Salesforce mit SAP verbunden?', a: 'Meist über eine Middleware wie MuleSoft oder SAP Integration Suite. Vorher wird für jede Art von Daten festgelegt, welches System führend ist: Preise, Bestände, Kundenaufträge und Rechnungen meist SAP, Interessenten, Verkaufschancen und Servicefälle meist Salesforce. Für Kunden, Kontakte und Anlagen klären Sie die führende Quelle im eigenen Unternehmen.' },
+      { q: 'Salesforce Field Service oder eine spezialisierte Field-Service-Software?', a: 'Salesforce Field Service passt, wenn Kundenservice und Vertrieb schon mit Salesforce arbeiten und die Einsätze kurz und zahlreich sind. Eine spezialisierte Software kann besser passen, wenn der Außendienst eigenständig arbeitet und kaum Daten mit Vertrieb und Service teilt.' },
+      { q: 'Arbeiten Sie auch vor Ort beim Kunden?', a: 'Ja, vor allem in NRW, Rheinland-Pfalz und Baden-Württemberg. Zum Start bin ich öfter vor Ort, später genügt meist ein Blocktermin im Monat. Projektsprache ist oft Englisch, weil die Teams international sind.' },
+    ],
+    ctaTitle: 'Planen Sie Salesforce für Service oder Vertrieb?',
+    ctaText: 'Schildern Sie mir kurz die Lage: welche Maschinen, welcher Service, welche Systeme und welche Entscheidung ansteht. Dann sage ich Ihnen, ob und wie ich helfen kann.',
+    formSubject: 'Anfrage Salesforce Maschinenbau',
+    footerLink: 'Maschinen- und Anlagenbau',
+  },
+  en: {
+    title: 'Salesforce for machinery manufacturers',
+    metaTitle: 'Salesforce Consulting for Machinery Manufacturers',
+    description:
+      'Independent Salesforce consulting for machinery manufacturers: Field Service, installed base, SAP spare parts, dealer portals and quotes, on the client side.',
+    eyebrow: 'Industry · Machinery and equipment',
+    lead: 'Machinery and industrial equipment manufacturers use Salesforce mainly in service and after-sales: for the installed base, maintenance and breakdown jobs with Field Service, spare parts and orders from SAP, portals for dealers and service partners, and quotes for machines with many options. I advise independently on the client side, as a Salesforce architect without commissions: I work out with you which products pay off, define the interfaces to SAP and manage the implementation partners.',
+    ctaPrimary: 'Talk for 30 minutes',
+    ctaSecondary: 'Typical topics',
+    promises: ['Client side only', 'No commissions', 'On site in western and southern Germany'],
+    portraitAlt: 'Portrait of Fabian Kramer',
+    facts: [
+      { value: '8', label: 'years of Salesforce' },
+      { value: '20+', label: 'enterprise projects' },
+      { value: '32', label: 'developers in 8 teams, one program' },
+      { value: 'DE · EN', label: 'project languages' },
+    ],
+    situations: {
+      label: 'Typical topics',
+      title: 'What machinery manufacturers use Salesforce for',
+      intro: 'At machinery and plant manufacturers, Salesforce rarely starts in sales. Usually it is about the machines already installed at customers and everything that happens after delivery.',
+      cards: [
+        { icon: 'factory', t: 'Installed base and asset hierarchy', d: 'Every machine as an asset with serial number, assemblies and location, so service and sales know what is installed at the customer. Asset data quality is the most common stumbling block.', link: 'blog/field-service-asset-hierarchy-machines/', linkText: 'Asset hierarchy for machines' },
+        { icon: 'field-service', t: 'Maintenance, breakdowns and commissioning', d: 'Scheduling for service technicians with Salesforce Field Service, automatic scheduling and the service report on site. It pays off most with many short jobs.', link: 'masterclass/field-service/', linkText: 'Salesforce Field Service' },
+        { icon: 'integration', t: 'Spare parts and sales orders from SAP', d: 'Prices, stock and sales orders usually stay in SAP. Salesforce shows service and sales what they need, and the interface defines which system is the master for which data.', link: 'services/salesforce-integration/', linkText: 'Salesforce SAP integration' },
+        { icon: 'partners', t: 'Dealers and service partners in a portal', d: 'With Experience Cloud, service partners and subcontractors work on orders directly in the system instead of by email and Excel. Customers find documents and cases in self-service.', link: 'blog/salesforce-field-service-service-partners/', linkText: 'Service partners in Field Service' },
+        { icon: 'contract', t: 'Quotes and framework agreements', d: 'Quotes for machines with many options and framework agreements with actuals from the ERP. Manufacturing Cloud and Revenue Cloud only where they beat a custom build.', link: 'blog/salesforce-manufacturing-cloud-is-it-worth-it/', linkText: 'When Manufacturing Cloud pays off' },
+        { icon: 'phone', t: 'Customer service by phone and email', d: 'Phone and email are still the main service channels. Service Cloud brings them together on one case once telephony is connected, for example Genesys or Teams Phone with a suitable connector.', link: 'services/salesforce-architecture/', linkText: 'Salesforce architecture' },
+      ],
+    },
+    compare: {
+      label: 'Fit',
+      title: 'Which Salesforce product fits when?',
+      intro: 'Not every Salesforce product pays off for every machinery manufacturer. This is how I assess the fit before anyone signs a license:',
+      colMe: 'Fits when',
+      colPartner: 'Rather not when',
+      rows: [
+        { k: 'Service Cloud', me: 'customers contact you about their machines by phone, email or portal', partner: 'service consists of a few technicians who manage without case handling' },
+        { k: 'Field Service', me: 'there are many dispatched jobs where routes, skills and appointments move the KPIs', partner: 'most work is long installations over weeks; then I check whether ERP project planning is the better fit' },
+        { k: 'Manufacturing Cloud', me: 'sales agreements, volume planning per customer and product and ERP actuals are used in sales', partner: 'framework agreements play no role; then a custom build is often cheaper' },
+        { k: 'Experience Cloud', me: 'dealers, service partners or customers work on orders, cases or documents themselves', partner: 'it only shows information the website could provide as well' },
+        { k: 'Revenue Cloud', me: 'variants, options and pricing rules make quotes error-prone; for complex machines often with a connected configurator', partner: 'prices and conditions stay entirely in SAP and are calculated there' },
+        { k: 'Agentforce', me: 'there is a clearly scoped service case, maintained knowledge, settled permissions and a measurable benefit', partner: 'data quality is unclear or the use case has yet to be found' },
+      ],
+      more: 'When Field Service pays off, in detail:',
+      moreLink: 'blog/salesforce-field-service-worth-it/',
+      moreText: 'Is Salesforce Field Service worth it?',
+      more2: 'And if it does not have to be a Salesforce product:',
+      moreLink2: 'blog/field-service-management-software-selection/',
+      moreText2: 'Choosing field service software',
+    },
+    deliverables: {
+      label: 'Results',
+      title: 'What you actually get',
+      items: [
+        { icon: 'target', t: 'Target architecture with system map', d: 'Which system is the master for customers, materials, prices, orders and assets, and which Salesforce products you need for it.' },
+        { icon: 'budget', t: 'Make-or-buy and license calculation', d: 'Industry cloud, custom build or another tool, calculated over the term including maintenance and follow-up costs.' },
+        { icon: 'design', t: 'Data model for the installed base', d: 'Assets, assemblies, locations and service contracts, aligned with what SAP delivers.' },
+        { icon: 'integration', t: 'Interface concept for SAP', d: 'Which data flows in which direction, how often and through which middleware.' },
+        { icon: 'steer', t: 'Standards and reviews for partners', d: 'Rules for all implementation partners and a review before anything goes into production.' },
+        { icon: 'handshake', t: 'Handover to your team', d: 'Reviews and standards are handed over to an internal colleague once the process is stable.' },
+      ],
+    },
+    practice: {
+      label: 'From my practice',
+      title: 'From projects with manufacturers',
+      text: 'My Field Service projects covered maintenance, breakdown jobs and commissioning, with automatic scheduling and spare parts and installed base from the ERP. The stumbling blocks were asset data quality, technician acceptance and the ERP interfaces. In the mobile app, what I miss most is selecting several records in one step.',
+      facts: [
+        { value: '1', label: 'global Manufacturing Cloud rollout' },
+        { value: '12', label: 'locales in a service chat rollout plan' },
+        { value: '5', label: 'implementation partners in one org' },
+        { value: '32', label: 'developers under one release process' },
+      ],
+    },
+    process: {
+      label: 'Working together',
+      title: 'How we start',
+      steps: [
+        { icon: 'message', t: '30 minutes', d: 'You describe where service, sales or partners are having problems, and I tell you honestly whether I am the right person.' },
+        { icon: 'analyse', t: 'Assessment', d: 'Processes, systems, org and partners. The result is a list of problems, ranked by cost.' },
+        { icon: 'architecture', t: 'Target architecture', d: 'System map, product choice and roadmap, with a make-or-buy decision for every larger requirement.' },
+        { icon: 'implement', t: 'Steering delivery', d: 'Standards for the partners, reviews of what they deliver and support up to the rollout.' },
+      ],
+      termsLabel: 'Terms',
+      terms: [
+        { t: 'Time and materials', d: 'Day rate EUR 1,200 net for remote work, on site plus a flat fee or travel costs. At least two days a week, up to five at the start.' },
+        { t: 'On site', d: 'On site mainly in North Rhine-Westphalia, Rhineland-Palatinate and Baden-Württemberg, more often at the start, later one block session a month.' },
+        { t: 'Independent', d: 'No commissions from Salesforce, tool vendors or implementation partners.', link: 'freelance-salesforce-architect/', linkText: 'More about the role' },
+      ],
+    },
+    faqTitle: 'Frequently asked questions',
+    faq: [
+      { q: 'Is Salesforce worth it for a mid-sized machinery manufacturer?', a: 'When service and after-sales are a large part of the business, often yes: installed base, service jobs and spare parts map well to Salesforce. For a pure sales CRM with few users there are cheaper options.' },
+      { q: 'Do machinery manufacturers need Salesforce Manufacturing Cloud?', a: 'Not automatically. Manufacturing Cloud pays off when sales agreements, volume planning per customer and product and ERP actuals are really used in sales planning. In one of my projects they played no role, and a custom build on the core platform was cheaper and easier to maintain.' },
+      { q: 'How is Salesforce connected to SAP?', a: 'Usually through middleware such as MuleSoft or SAP Integration Suite. Before that, each type of data gets a leading system: prices, stock, sales orders and invoices mostly SAP, leads, opportunities and service cases mostly Salesforce. For accounts, contacts and assets the leading source has to be settled per company.' },
+      { q: 'Salesforce Field Service or specialized field service software?', a: 'Salesforce Field Service fits when customer service and sales already work in Salesforce and jobs are short and numerous. Specialized software can fit better when field service works on its own and shares little data with sales and service.' },
+      { q: 'Do you work on site?', a: 'Yes, mainly in North Rhine-Westphalia, Rhineland-Palatinate and Baden-Württemberg. At the start I am on site more often, later one block session a month is usually enough. The project language is often English because the teams are international.' },
+    ],
+    ctaTitle: 'Planning Salesforce for service or sales?',
+    ctaText: 'Briefly describe the situation: which machines, which service, which systems and which decision is due. I will tell you whether and how I can help.',
+    formSubject: 'Request Salesforce machinery',
+    footerLink: 'Machinery manufacturers',
+  },
+};

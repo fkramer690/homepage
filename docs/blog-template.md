@@ -11,9 +11,9 @@ categories: [devops] # filter categories on the blog overview, one to three, the
 tags: [topic, second-topic]
 # series: { id: field-service, part: 2 } # only for articles in a series, see src/lib/series.ts
 takeaways:
-  - "First key statement as a complete sentence that stands on its own."
+  - "First key statement in one line (at most 160 characters), not a copy of the intro's first sentence."
   - "Second key statement."
-  - "Third key statement."
+  - "Third key statement, use three to five, as many as the article really has."
 faq:
   - q: "Question people would type into Google or an AI assistant?"
     a: "Direct answer in one to three sentences."
@@ -24,7 +24,7 @@ draft: true
 
 Intro: situation, problem and the answer in two to four sentences (at most 110 words). Use the primary keyword here.
 
-## What is the problem in manufacturing companies?
+## Statement heading: what goes wrong in manufacturing companies
 
 Context: why this comes up in programmes with several partners, global rollouts or a split between business and IT.
 
@@ -48,6 +48,6 @@ contra: What you give up
 Use at least one content block or table (two kinds over 1,300 words), chosen by content: see docs/content-blocks.md for all eight (hinweis, praxis, kennzahlen, zeitleiste, ablauf, pro-contra, vertiefung, schritte).
 Link related topics, e.g. [partner steering](../../#services) or [references](../../#references).
 
-## Where should you start?
+## First step: name the concrete action here
 
-Concrete first steps and a one-sentence conclusion. No invitation to get in touch: the contact section follows directly below the article.
+The heading names the first step itself (e.g. "First step: a matching rule for your 100 largest customers"), never a generic "Where should you start?". The section ends with that step: no one-sentence conclusion or moral after it, and no invitation to get in touch, because the contact section follows directly below the article.

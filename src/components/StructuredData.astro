@@ -29,10 +29,16 @@ const data = {
       publisher: { '@id': `${abs(base)}#organization` },
     },
     {
+      // ProfessionalService is a LocalBusiness: Bing and Google read name, address,
+      // phone and register data from it to match the site to business listings
+      // (Bing Places, Google Business Profile) and register entries.
       '@type': 'ProfessionalService',
       '@id': `${abs(base)}#organization`,
-      name: site.company,
-      url,
+      name: 'FK Solution Design',
+      legalName: site.company,
+      alternateName: [site.company, 'fk-sd.de'],
+      // One entity for both languages: the German start page is the main URL.
+      url: abs(base),
       description: t.meta.description,
       logo: abs(`${base}apple-touch-icon.png`),
       image: abs(`${base}og/${t.lang}/site.png`),
@@ -43,12 +49,32 @@ const data = {
         streetAddress: l.street,
         postalCode: l.city.split(' ')[0],
         addressLocality: l.city.split(' ').slice(1).join(' '),
+        addressRegion: 'Nordrhein-Westfalen',
         addressCountry: 'DE',
       },
-      areaServed: ['DE', 'Europe', 'Worldwide'],
+      vatID: l.vatId,
+      // Commercial register entry, so register sites can be matched to the site.
+      identifier: {
+        '@type': 'PropertyValue',
+        propertyID: 'Handelsregister',
+        value: `${l.registerCourt} ${l.register}`,
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        telephone: site.phone.en,
+        email: site.email,
+        availableLanguage: ['de', 'en'],
+      },
+      areaServed: [
+        { '@type': 'Country', name: 'Deutschland' },
+        { '@type': 'Country', name: 'Österreich' },
+        { '@type': 'Country', name: 'Schweiz' },
+        { '@type': 'Place', name: 'Europa' },
+      ],
       knowsAbout: ['Salesforce', 'Salesforce Architecture', 'Manufacturing Cloud', 'Field Service', 'Service Cloud', 'CPQ', 'B2B Commerce'],
       founder: { '@id': `${abs(base)}#person` },
-      sameAs: [site.linkedin],
+      sameAs: [site.linkedin, ...site.companyProfiles],
       inLanguage: t.lang,
     },
     {

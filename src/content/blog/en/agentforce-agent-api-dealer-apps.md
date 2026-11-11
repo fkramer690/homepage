@@ -2,6 +2,7 @@
 title: "Agentforce Agent API: agents in your own dealer apps"
 description: "How your dealer app or machine portal calls an Agentforce agent through the Agent API, and what that means for identity, security and Flex Credit costs."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: agentforce-agent-api-dealer-apps
 translationKey: agent-api-own-apps
@@ -10,18 +11,18 @@ categories: [architecture, ai]
 contactBrief: integration
 tags: [agentforce, agent api, dealer portal, security, flex credits, manufacturing]
 takeaways:
-  - "The Agentforce Agent API lets any system that can call REST talk to an agent: your backend gets a token through the client credentials flow, opens a session and sends or streams messages."
-  - "With client credentials every dealer in your app reaches Salesforce as the same run-as user, so Salesforce sharing no longer separates one dealer's orders from another's."
-  - "Pass the dealer's account at session start in a variable the API may set, and let the agent's actions filter on it in logic, never on what the language model reads from the chat."
-  - "Agent API usage consumes Flex Credits like other agent traffic; whether it also counts as a Headless Platform Interaction, whose rate is still TBA, is not stated on the pages I could open."
-  - "For employees using Claude or ChatGPT, exposing the agent as a hosted MCP tool keeps their own user context; the Agent API fits apps whose users have no Salesforce login."
+  - "Your backend gets a token through the client credentials flow, opens a session and sends or streams messages to the agent."
+  - "With client credentials every dealer reaches Salesforce under the same identity, agent user or token user, so sharing no longer separates their orders."
+  - "Set the dealer account through the API at session start and let the actions filter by it in logic, never by the chat text."
+  - "Calls by registered agents will be metered as Headless Platform Interactions at a rate still TBA. Whether a dealer app calling the Agent API counts is unclear."
+  - "For employees using Claude or ChatGPT, the agent fits better as a hosted MCP tool because it keeps their own user context."
 faq:
   - q: "What is the Agentforce Agent API?"
     a: "A REST API that gives access to Agentforce agents from anywhere that can call REST. A client creates a session for an agent, sends messages synchronously or as a stream and ends the session when done."
   - q: "Which agents can be called through the Agent API?"
     a: "Salesforce documents one exclusion: agents of type Agentforce (Default) are not supported. I would build a dedicated agent for the external app anyway, with only the topics and actions that app needs."
-  - q: "Do dealers in our own app need Salesforce licences to use the agent?"
-    a: "The setup guide only requires one run-as user with at least API Only access, which suits the Salesforce Integration user licence. The guide says nothing about the people typing into your app, so I would get the licence position confirmed in writing."
+  - q: "Do dealers in our own app need Salesforce licenses to use the agent?"
+    a: "The setup guide only requires one run-as user with at least API Only access. When bypassUser is set to true, the agent user runs the actions. The guide says nothing about the people typing into your app, so I would get the licensing position confirmed in writing."
   - q: "How long may an agent take to answer through the Agent API?"
     a: "The Agent API has a 120-second timeout and returns HTTP 500 when a call exceeds it. A session also handles one request at a time, so your app must wait for the answer before sending the next message."
   - q: "Can Claude or ChatGPT call our Agentforce agent instead of our own app?"
@@ -29,7 +30,7 @@ faq:
 draft: false
 ---
 
-The Agentforce Agent API lets your own dealer app, machine portal or service app talk to an Agentforce agent over REST. Your backend gets a token through the client credentials flow, opens a session, sends messages and streams the answer to the screen. The hard part is identity. Every dealer in your app reaches Salesforce as one run-as user, so Salesforce sharing no longer keeps dealer A out of dealer B's orders. I would build this only when your backend authenticates dealers itself, passes their account as a fixed variable and the agent's actions filter on it.
+The Agentforce Agent API lets your own dealer app, machine portal or service app talk to an Agentforce agent over REST. Your backend gets a token through the client credentials flow, opens a session, sends messages and streams the answer to the screen. The hard part is identity. Every dealer in your app reaches Salesforce under one identity, so Salesforce sharing no longer keeps dealer A out of dealer B's orders. I would build this only when your backend authenticates dealers itself, passes their account as a fixed variable and the agent's actions filter by it.
 
 ## What does the Agent API do?
 
@@ -46,64 +47,64 @@ title: What the setup guide asks for in detail
 Source: [Agent API Get Started](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html)
 ```
 
-Messages go either synchronously or as a [server-sent event stream](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-examples.html) with text chunks. One event matters for your app team: on `ValidationFailureChunk` the client has to remove chunks it already displayed, so a dealer may see text appear and disappear.
+Messages go either synchronously or as a [server-sent event stream](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-examples.html) with text chunks. One event matters for your app team: when a `ValidationFailureChunk` occurs, the client has to remove chunks it already displayed, so a dealer may see text appear and disappear.
 
-Three limits from the [considerations](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-considerations.html) and [troubleshooting](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-troubleshooting.html) pages shape the architecture. Agents of type "Agentforce (Default)" are not supported. A call that runs longer than 120 seconds returns HTTP 500. A session handles one request at a time and answers a second one with HTTP 423. If an action fetches order data from SAP through middleware, that lookup has to come back well inside the 120 seconds, which is one more reason for the narrow ERP API I describe in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/).
+Three limits from the [considerations](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-considerations.html) and [troubleshooting](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-troubleshooting.html) pages shape the architecture. Agents of type "Agentforce (Default)" are not supported. A call that runs longer than 120 seconds returns HTTP 500. A session handles one request at a time and answers a second one with HTTP 423. If an action fetches order data from SAP through middleware, that lookup has to return well within the 120-second limit, which is one more reason for the narrow ERP API I describe in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/).
 
 ## Who is the user when a dealer asks?
 
-I would settle this before anyone writes code. With client credentials, the token belongs to the run-as user. The session flag `bypassUser` decides whether the agent runs as the agent-assigned user or as the user tied to the token. Either way it is one Salesforce identity for every dealer in your app.
+I would settle this before anyone writes code. With client credentials, the token belongs to the run-as user. The session flag `bypassUser` decides whether the agent runs as the agent-assigned user (`true`, the value in the setup guide) or as the user tied to the token (`false`). Either way it is one Salesforce identity for every dealer in your app.
 
-Salesforce's own architects warn about this pattern for headless access. In a [Salesforce blog post of 19 May 2026](https://www.salesforce.com/blog/headless-trust-model-agentic-architecture/) on agents calling Salesforce, Miriam McCabe writes: "The client credentials flow would create a service account pattern where all calls run as one identity, losing per-user permissions and the audit trail." That post covers MCP clients with human users; the Agent API guide prescribes client credentials. Know which protection you give up.
+Salesforce's own architects warn about this pattern for headless access. In a [Salesforce blog post of 19 May 2026](https://www.salesforce.com/blog/headless-trust-model-agentic-architecture/) on agents calling Salesforce, Miriam McCabe writes: "The client credentials flow would create a service account pattern where all calls run as one identity, losing per-user permissions and the audit trail." That post covers MCP clients with human users, while the Agent API guide prescribes client credentials. Know which protection you give up.
 
-What you give up is sharing as a dealer boundary. The run-as user needs read access to the orders, assets and warranty claims of all dealers, otherwise the agent cannot answer anyone. The boundary moves into two places you own:
+What you give up is the use of Salesforce sharing as a dealer boundary. The identity the actions run as, usually the agent user, needs read access to the orders, assets and warranty claims of all dealers, otherwise the agent cannot answer anyone. The boundary moves into two places you own:
 
 - **Your backend.** It authenticates the dealer through your own login, maps the user to a Salesforce account ID and keeps the client secret. The secret never goes into a mobile app or a browser.
-- **The agent's actions.** The backend passes the account ID when it starts the session. The [Agent API variables guide](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-variables.html) says many variables are read-only and can only be set at session start, and that a variable must allow "value to be set by API". Every action, a Flow or Apex class, then filters on that variable. The language model never decides which account a query uses.
+- **The agent's actions.** The backend passes the account ID when it starts the session. The [Agent API variables guide](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-variables.html) says many variables are read-only and can only be set at session start, and that a variable must allow "value to be set by API". Bind that variable to the account input of every action, whether that action is implemented as a Flow or an Apex class, so the model cannot fill the input itself, and let the action enforce the filter again. Then the language model never decides which account a query uses.
 
 The second point is where [Agent Script and deterministic rules](../agent-script-deterministic-rules/) earn their place. A dealer who types "show me the orders of account 4711" is attempting exactly the cross-dealer access you want to block, and a filter in logic stops it where an instruction in the prompt may not. The wider pattern is in [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/).
 
-Audit follows the same logic. Salesforce logs the run-as user, so it cannot tell you which dealer asked. The session start takes an `externalSessionKey`, a UUID that, according to the setup guide, you can use to trace the conversation in the agent's event logs. I would write that key next to the dealer's user ID in your app's log, so a question from your data protection officer can be answered from both sides.
+Audit follows the same logic. Salesforce sees the agent user or the token user, so it cannot tell you which dealer asked. The session start takes an `externalSessionKey`, a UUID that, according to the setup guide, you can use to trace the conversation in the agent's event logs. I would write that key next to the dealer's user ID in your app's log, so a question from your data protection officer can be answered from both sides.
 
-For the run-as user I would use the [Salesforce Integration user licence](https://help.salesforce.com/s/articleView?language=en_US&id=platform.integration_user.htm&type=5) with its API-only profile and a permission set on top. Orgs get "a limited number" of these licences by default; the page gives no figure. One External Client App and one run-as user per external app keeps the damage small; token and IP controls are in [connected apps and OAuth for AI integrations](../connected-apps-oauth-ai-integrations/).
+The [Salesforce Integration user license](https://help.salesforce.com/s/articleView?language=en_US&id=platform.integration_user.htm&type=5) with its API-only profile fits the run-as user technically. Salesforce designs it for system-to-system integration, so whether it may support an app whose prompts come from dealers is a contract question; get it confirmed in writing for your order form. One External Client App and one run-as user per external app keeps the damage small; token and IP controls are in [connected apps and OAuth for AI integrations](../connected-apps-oauth-ai-integrations/).
 
-## Agent API, chat channel or hosted MCP: which path fits?
+## Agent API, chat channel and hosted MCP compared
 
-The Agent API is one of three ways out of Salesforce, and the one with the most work on your side.
+The Agent API is one of three ways to take an agent outside Salesforce, and it is the one that requires the most work on your side.
 
 | Path | Who talks to the agent | Identity | Fits |
 |---|---|---|---|
-| Agent API | your own app or backend | one run-as user | dealer app, machine portal, system to agent |
+| Agent API | your own app or backend | one agent user or token user | dealer app, machine portal, system to agent |
 | Enhanced Chat v2 | visitors on a website | Salesforce channel | service agent on a website |
 | Hosted MCP tool | Claude, ChatGPT, Slackbot | signed-in Salesforce user | employees with their own AI client |
 
-Salesforce positions its [custom connections](https://developer.salesforce.com/docs/ai/agentforce/guide/custom-connections.html), which let your client render agent answers as cards or forms through the Agent API, for teams that "need to build a channel from the ground up", and points to Enhanced Chat v2 when an out-of-the-box channel is enough. If your dealers already log in to an Experience Cloud portal, that portal with its licences and sharing is often the simpler home for the agent; the trade-offs are in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
+Salesforce positions its [custom connections](https://developer.salesforce.com/docs/ai/agentforce/guide/custom-connections.html), which let your client render agent answers as cards or forms through the Agent API, for teams that "need to build a channel from the ground up", and points to Enhanced Chat v2 when an out-of-the-box channel is enough. If your dealers already log in to an Experience Cloud portal, that portal with its licenses and sharing is often the simpler home for the agent; the trade-offs are in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
 
-For employees the [hosted MCP page on agents](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/agentforce.html) describes the opposite model: the agent runs "in the authenticated user's context", with sharing and field-level security applied. Only agents built with the new Agent Script Builder qualify. The page states no release status; the [GA announcement of 29 April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) still said "soon". The MCP decisions for IT leads are in [MCP explained for IT leads](../mcp-salesforce-explained-for-it-leads/).
+For employees, the [hosted MCP page on agents](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/agentforce.html) describes the opposite model: the agent runs "in the authenticated user's context", with sharing and field-level security applied. Only agents built with the new Agent Script Builder qualify. The page describes the setup without a beta or pilot label; the [GA announcement of 29 April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) had still said it was coming "soon". The MCP decisions for IT leads are in [MCP explained for IT leads](../mcp-salesforce-explained-for-it-leads/).
 
-## A typical scenario: dealer app and machine portal
+## Worked example: dealer app and machine portal
 
 Assume a machine builder with 250 dealers and its own dealer app for orders and spare parts, plus a portal where end customers see their installed machines. Both run on the company's own backend and login. All numbers here are assumptions.
 
-The dealer app gets an agent for order status and open warranty claims, the machine portal one for "which spare parts kit fits my machine". The backend passes the dealer's account ID or the customer's asset IDs, and actions query only within them.
+The dealer app gets an agent for order status and open warranty claims, and the machine portal gets one for "which spare parts kit fits my machine". The backend passes the dealer's account ID or the customer's asset IDs, and actions query only within that account or asset set.
 
-Assume 5,000 sessions a month with three actions each. At [20 Flex Credits per action](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) that is 300,000 credits a month, 3.6 million a year. At [$500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/) list price that is $1,500 a month for actions alone, prompts and Data 360 grounding on top. The year exceeds the 2.75 million Flex Credits that the [Max edition](https://www.salesforce.com/service/pricing/) includes per org per year, before your service team uses a single credit.
+Assume 5,000 sessions a month with three actions each. At [20 Flex Credits per action](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) that is 300,000 credits a month, 3.6 million a year. At [$500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/) list price that is $1,500 a month for actions alone; prompts and Data 360 grounding can add to it, depending on how the agent is built. The dealer app alone exceeds the 2.75 million Flex Credits that the [Max edition](https://www.salesforce.com/service/pricing/) includes per org per year.
 
-The test I would insist on before go-live: dealer A asks for an order number of dealer B in twenty phrasings. Every answer must be "not found".
+The test I would insist on before go-live: dealer A asks for an order number of dealer B in twenty phrasings, and every answer must be "not found". Add technical cases as well: a manipulated account ID at session start, an empty variable, and two dealers using parallel sessions. The logs must show that no other dealer's data was read, not only that none was shown.
 
 ## What does it cost, and what is still open?
 
 The considerations page says Agent API usage "impacts credit consumption" and links to a Salesforce Help article on generative AI usage and billing, which did not render for me. So I calculate with the action rate above, and sandbox actions cost 16 credits instead of 20.
 
-The open line is the Headless Platform Interaction meter. The rate card lists it as "TBA". According to [Salesforce Ben](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), every successful call by a registered agent through MCP or direct API traffic classed as agentic will count, with 30 days' notice before metering starts.
+The unresolved item is the Headless Platform Interaction meter. The rate card lists it as "TBA". According to a [Salesforce Help article of 17 September 2026](https://help.salesforce.com/s/articleView?id=005360285&language=en_US&type=1), every successful call a registered agent makes to Salesforce counts, "whether it arrives over Model Context Protocol (MCP) or direct API", with 30 days' notice before metering starts and only in production orgs.
 
 ```hinweis offen
-Neither source says whether a call to the Agent API from your dealer app counts as a Headless Platform Interaction on top of the agent's actions. I would ask your account executive for that answer in writing.
+The article does not name the Agent API, so it remains unclear whether your dealer app counts as a registered agent whose calls are metered on top of the agent's actions. I would ask your account executive for that answer in writing.
 ```
 
-How to budget a meter without a price is in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
+How to budget a meter without a price is in [MCP calls as a budget risk](../flex-credits-agentforce-cost-per-action/).
 
-## Where should you start?
+## Begin with one read-only use case such as order status
 
 1. **Pick one read-only use case**, such as order status for dealers, and keep write actions for later.
 2. **Design the identity chain first**: your login, account mapping, a session variable set by the API, actions that filter on it.
@@ -112,6 +113,4 @@ How to budget a meter without a price is in [MCP calls as a budget risk](../mcp-
 5. **Log `externalSessionKey` with the dealer's user ID** in your app.
 6. **Get the Headless Platform Interaction question answered** before you size the Flex Credit order.
 
-Interface and identity design is what I do under [Salesforce integration](../../services/salesforce-integration/); all interfaces side by side are in the masterclass chapter [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/).
-
-The Agent API brings an agent into your own apps quickly, but the dealer boundary becomes your code, so design it before the first screen.
+For the cross-dealer test, two dealer accounts in a sandbox are enough: when you are logged in as dealer A, you ask for the orders of dealer B. Interface and identity design is part of my [Salesforce integration](../../services/salesforce-integration/) work; all interfaces are compared side by side in the masterclass chapter [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/).

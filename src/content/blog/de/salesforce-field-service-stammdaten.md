@@ -1,6 +1,6 @@
 ---
-title: "Field Service: Welche Daten braucht die Planung?"
-description: "Salesforce Field Service plant nur so gut wie seine Stammdaten. Welche Daten die Planung braucht, woher sie kommen und wer sie im Außendienst pflegt."
+title: "Salesforce Field Service: Welche Daten braucht die Planung?"
+description: "Sechs Datenbereiche entscheiden über die Planung in Salesforce Field Service: was technisch Pflicht ist, woher die Daten kommen und wer sie pflegt."
 pubDate: 2026-10-26
 lang: de
 slug: salesforce-field-service-stammdaten
@@ -10,101 +10,77 @@ categories: [field-service]
 series: { id: field-service, part: 2 }
 tags: [Field Service, Außendienst, Datenmodell, Stammdaten, Fertigung]
 takeaways:
-  - "Salesforce Field Service braucht vor dem ersten Einsatz sechs Arten von Stammdaten: Servicegebiete mit Arbeitszeiten, Techniker mit Qualifikationen, Arbeitstypen, Anlagen, Öffnungszeiten der Kunden und Abwesenheiten."
-  - "Die Planungsengine prüft nur, was in diesen Daten steht. Ein Techniker ohne hinterlegte Qualifikation ist für Einsätze mit Qualifikationsanforderung kein Kandidat, ein falsch hinterlegter wird falsch eingeplant."
-  - "Öffnungszeiten der Kunden zählen bei der Planung nur, wenn die Work Rule für Besuchszeiten in der Scheduling Policy aktiv ist. Ohne sie plant Field Service auch Termine, zu denen niemand beim Kunden öffnet."
-  - "Für jede Art von Stammdaten sollte vor dem Start feststehen, aus welchem System sie kommt und wer sie pflegt. Die meisten Daten liegen schon im ERP, bei der Personalabteilung oder bei den Disponenten."
-  - "Ein guter Startpunkt sind die Fehleinsätze der letzten Monate: Jeder Fehleinsatz zeigt, welche Daten gefehlt haben."
+  - "Sechs Datenbereiche entscheiden, wie gut geplant wird: Gebiete, Qualifikationen, Arbeitstypen, Anlagen, Öffnungszeiten und Abwesenheiten."
+  - "Ein Techniker ohne hinterlegte Qualifikation ist für Einsätze, die sie verlangen, kein Kandidat. Wer falsch hinterlegt ist, wird falsch eingeplant."
+  - "Öffnungszeiten der Kunden zählen nur, wenn die Work Rule für Besuchszeiten aktiv ist. Sonst bucht Field Service Termine, zu denen niemand öffnet."
+  - "Für jede Datenart steht vor dem Start fest, welches System führt und wer sie pflegt. Das meiste liegt schon im ERP, im Personalwesen oder bei Disponenten."
+  - "Die Fehleinsätze der letzten Monate zeigen, welche Daten zuerst in guter Qualität vorliegen müssen."
 faq:
   - q: "Welche Stammdaten braucht Salesforce Field Service?"
-    a: "Mindestens Servicegebiete mit Arbeitszeiten, Techniker als Service Resources mit ihren Qualifikationen, Arbeitstypen mit Dauer und benötigten Qualifikationen, die Anlagen beim Kunden, die Öffnungszeiten der Kunden und die Abwesenheiten der Techniker."
+    a: "Technisch braucht die Planung Servicegebiete mit Arbeitszeiten, Techniker als Service Resources, eine Scheduling Policy und Termine mit geokodierbarer Adresse, frühestem Start und Fälligkeit. Wie gut die Planung funktioniert, hängt dann von Qualifikationen, Arbeitstypen, Anlagen, Öffnungszeiten der Kunden und Abwesenheiten ab."
   - q: "Wie viele Techniker gehören in ein Servicegebiet?"
     a: "Salesforce empfiehlt bis zu 50 Service Resources pro Servicegebiet. Größere Gebiete mit vielen Technikern und Disponenten machen Optimierung und Disposition schwerer."
   - q: "Wie bildet Field Service die Qualifikationen von Technikern ab?"
-    a: "Qualifikationen sind Skills, die einem Techniker mit einem Level von 0 bis 99,99 zugeordnet werden. Arbeitstypen und Arbeitsaufträge tragen die benötigten Skills. Die Work Rule Match Skills sorgt dafür, dass nur passende Techniker eingeplant werden."
+    a: "Qualifikationen sind Skills, die einem Techniker mit einem Level von 0 bis 99,99 zugeordnet werden. Arbeitstypen und Arbeitsaufträge enthalten die benötigten Skills. Die Work Rule Match Skills sorgt dafür, dass nur passende Techniker eingeplant werden."
   - q: "Woher kommen die Daten für Field Service?"
-    a: "Anlagen kommen meist aus dem ERP, Qualifikationen und Abwesenheiten aus Personal- und Schulungssystemen, Servicegebiete und Arbeitstypen aus der Serviceleitung. Wichtig ist, für jede Datenart ein führendes System und einen Verantwortlichen festzulegen."
+    a: "Anlagen stammen meist aus dem ERP, Qualifikationen und Abwesenheiten aus Personal- und Schulungssystemen, Servicegebiete und Arbeitstypen aus der Serviceleitung. Wichtig ist, für jede Datenart ein führendes System und einen Verantwortlichen festzulegen."
 draft: false
 ---
 
-Salesforce Field Service plant nur so gut wie die Stammdaten, die es kennt. Bevor die Planungsengine den ersten Einsatz vergibt, braucht sie sechs Arten von Daten: Servicegebiete mit Arbeitszeiten, Techniker mit ihren Qualifikationen, Arbeitstypen mit Dauer und Anforderungen, die Anlagen beim Kunden, die Öffnungszeiten der Kunden und die Abwesenheiten der Techniker. Fehlt eines davon oder ist es veraltet, schickt die Engine den falschen Techniker oder schickt ihn zur falschen Zeit. Die meisten dieser Daten gibt es im Unternehmen schon, verteilt auf ERP, Personalabteilung und die Köpfe der Disponenten.
+Salesforce Field Service plant mit den Daten, die es kennt, und mit keinen anderen. Sechs Datenbereiche entscheiden, wie gut der Plan wird: Servicegebiete mit Arbeitszeiten, Techniker mit ihren Qualifikationen, Arbeitstypen mit Dauer und Anforderungen, die Anlagen beim Kunden, die Öffnungszeiten der Kunden und die Abwesenheiten der Techniker. Technisch braucht die Engine zum Start weniger: Gebiete, Ressourcen, eine Scheduling Policy und Termine mit Adresse, frühestem Start und Fälligkeit. Fehlt aber einer der sechs Bereiche oder ist er veraltet, schickt die Engine den falschen Techniker oder schickt ihn zur falschen Zeit. Die meisten dieser Daten gibt es im Unternehmen schon, verteilt auf ERP, Personalabteilung und die Köpfe der Disponenten.
 
-Ob sich Field Service für Ihren Außendienst überhaupt lohnt, beschreibe ich im ersten Teil dieser Serie: [Salesforce Field Service: Wann lohnt es sich?](../salesforce-field-service-lohnt-sich/). Hier geht es um die Frage danach: Was muss stehen, bevor die Planung startet?
+Ob sich Field Service für Ihren Außendienst überhaupt lohnt, beschreibe ich im ersten Teil dieser Serie: [Salesforce Field Service: Wann lohnt es sich?](../salesforce-field-service-lohnt-sich/). Hier geht es um die nächste Frage: Was muss vorhanden sein, bevor die Planung startet?
 
-## Warum scheitern Einsätze an fehlenden Daten?
+## Fehlende Daten führen zu Fehleinsätzen
 
 ```praxis
-In Serviceprojekten habe ich immer wieder dasselbe Muster gesehen. Techniker waren vor Ort und konnten ihren Job nicht ausführen. Mal waren die Ersatzteile nicht da. Mal war die Maschine nicht zugänglich. Mal stand der falsche Techniker vor der Anlage, oder der richtige war nicht arbeitsfähig. Teils lag es am Kunden, teils an der Planung der Techniker.
+In Serviceprojekten habe ich immer wieder dasselbe Muster gesehen. Techniker waren vor Ort und konnten ihre Arbeit nicht erledigen. Mal fehlten die Ersatzteile. Mal war die Maschine nicht zugänglich. Mal stand der falsche Techniker vor der Anlage, oder der richtige war nicht einsatzfähig. Teils lag es am Kunden, teils an der Einsatzplanung.
 ```
 
-Jeder dieser Fehleinsätze kostet eine Anfahrt, einen Technikertag und meist einen zweiten Termin. Und fast jeder lässt sich auf eine Information zurückführen, die bei der Planung gefehlt hat:
+Jeder dieser Fehleinsätze kostet eine Anfahrt, einen Technikertag und meist einen zweiten Termin. Nicht jeder hat eine Datenursache. Hinter vielen steckt aber eine Information, die bei der Planung gefehlt hat. Mögliche Ursachen:
 
-- **Ersatzteile nicht da:** Niemand wusste, welche Anlage genau beim Kunden steht und welches Teil dafür gebraucht wird.
-- **Maschine nicht zugänglich:** Die Zeiten, zu denen der Kunde Zugang gewährt, waren nirgends hinterlegt.
+- **Ersatzteile nicht da:** Niemand wusste, welche Anlage genau beim Kunden steht und welches Teil dafür gebraucht wird, oder das Teil war nicht im Fahrzeug. Teile und Bestand behandle ich in einem eigenen Teil dieser Serie.
+- **Maschine nicht zugänglich:** Die Zeiten, zu denen der Kunde Zugang gewährt, waren nirgends hinterlegt, oder der Termin wurde nie mit dem Kunden bestätigt.
 - **Falscher Techniker:** Die Qualifikationen der Techniker waren nicht oder nicht aktuell gepflegt.
-- **Techniker nicht arbeitsfähig:** Abwesenheiten oder Einschränkungen waren der Planung nicht bekannt.
+- **Techniker nicht einsatzfähig:** Abwesenheiten, fehlende Sicherheitsunterweisungen oder Arbeitserlaubnisse waren der Planung nicht bekannt. Kurzfristige Krankheit verhindern auch die besten Daten nicht.
 
 Eine Planungssoftware ändert daran zunächst nichts. Sie macht die Lücken nur schneller sichtbar, weil sie Entscheidungen automatisch trifft, die vorher ein erfahrener Disponent aus dem Gedächtnis getroffen hat.
 
 ## Welche Daten braucht Salesforce Field Service?
 
-Salesforce beschreibt die Objekte im [Core Data Model von Field Service](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_soap_core.htm). Für die Planung zählen vor allem diese sechs Bereiche. Die englischen Objektnamen stehen in Klammern, weil sie in jedem Projekt so auftauchen.
+Dabei sind zwei Arten von Daten zu trennen. Manche sind technisch Pflicht: Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.pfs_scheduling.htm&language=en_US&type=5) braucht jede Scheduling Policy die Work Rules für die Verfügbarkeit der Ressource sowie für den frühesten Start und die Fälligkeit (Earliest Start Permitted, Due Date), und Termine brauchen eine Adresse, die die Engine für Fahrzeiten geokodieren kann. Zusätzlich entscheiden sechs Datenbereiche, wie gut der Plan wird. Die Objekte dahinter beschreibt das [Core Data Model von Field Service](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_soap_core.htm). Als Ausgangspunkt für führendes System und Verantwortung schlage ich diese Aufteilung vor; im Projekt wird sie an das Unternehmen angepasst:
 
-### Servicegebiete und Arbeitszeiten
+| Datenbereich | Wofür die Planung ihn nutzt | Wenn er fehlt oder falsch ist | Führendes System | Verantwortlich |
+|---|---|---|---|---|
+| Servicegebiete (Service Territories) und Arbeitszeiten | Wo und wann geplant wird, Startadresse für die Fahrt | Fahrzeit vom falschen Ort, keine Grenzen für die Engine | Salesforce | Serviceleitung |
+| Techniker (Service Resources) und Qualifikationen (Skills) | Wer einen Einsatz übernehmen darf | Falscher Techniker vor Ort | Personal- oder Schulungssystem | Personalabteilung mit Serviceleitung |
+| Arbeitstypen (Work Types) | Dauer und benötigte Qualifikationen je Einsatzart | Qualifikationen an jedem Auftrag von Hand | Salesforce | Serviceleitung |
+| Anlagen beim Kunden (Assets) | Welche Maschine, welche Historie, welches Teil | Lückenhafte Historie, höheres Risiko für das falsche Teil | ERP | Auftragsabwicklung oder Inbetriebnahme |
+| Öffnungszeiten der Kunden (Visiting Hours) | Wann die Maschine erreichbar ist | Termin, zu dem niemand öffnet | Salesforce | Innendienst |
+| Abwesenheiten (Resource Absences) | Wann ein Techniker nicht verfügbar ist | Einsätze für Techniker im Urlaub oder in der Schulung | Zeiterfassung | Personalabteilung |
 
-Ein Servicegebiet (Service Territory) ist der Bereich, in dem Arbeit geplant wird, meist geografisch. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field_service_basics/field_service_basics_enable) sind Servicegebiete und Arbeitszeiten (Operating Hours) die Grundlage: ohne sie hat die Planungsengine keine Grenzen, in denen sie arbeiten kann.
+Vier Details aus der Salesforce-Hilfe entscheiden, ob das in der Praxis trägt:
 
-Techniker werden Mitglied in Gebieten (Service Territory Member). Laut den [Richtlinien für Servicegebiete](https://help.salesforce.com/s/articleView?id=service.fs_territory_guidelines.htm&language=en_US&type=5) hat jeder Techniker genau ein primäres Gebiet, dazu optional sekundäre Gebiete als Aushilfe und Relocation-Gebiete für befristete Einsätze an anderen Orten. Salesforce empfiehlt bis zu 50 Techniker pro Gebiet. Am Mitglied lässt sich auch die Startadresse hinterlegen, etwa die Wohnadresse, wenn ein Techniker morgens von zu Hause losfährt. Fehlt sie, rechnet die Engine die Fahrzeit vom falschen Ort.
+- **Servicegebiete.** Laut den [Richtlinien für Servicegebiete](https://help.salesforce.com/s/articleView?id=service.fs_territory_guidelines.htm&language=en_US&type=5) hat jeder Techniker genau ein primäres Gebiet und optional sekundäre, und Salesforce empfiehlt bis zu 50 Techniker pro Gebiet.
+- **Qualifikationen.** Das Level liegt laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=fs_required_skills.htm&language=en_US&type=5) zwischen 0 und 99,99, und was es bedeutet, legt das Unternehmen fest. Durchgesetzt werden sie erst über die Work Rule [Match Skills](https://help.salesforce.com/s/articleView?id=pfs_optimization_theory_work_rules_match_skills.htm&language=en_US&type=5); ein Techniker ohne Skills ist dann für keinen Einsatz mit Skill-Anforderung mehr Kandidat.
+- **Öffnungszeiten.** Sie werden als Arbeitszeiten am Account gepflegt und laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5) in jeden neuen Arbeitsauftrag übernommen. Sie zählen nur, wenn die Work Rule für Besuchszeiten aktiv ist.
+- **Abwesenheiten.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_create_absences.htm&type=5) plant die Optimierung Techniker nicht für Termine ein, die mit ihren Abwesenheiten kollidieren, aber nur, wenn Urlaub und Schulungen tatsächlich in Salesforce erfasst sind.
 
-### Techniker und Qualifikationen
+Wie aus einem Case ein Arbeitsauftrag mit dem passenden Arbeitstyp wird, steht in [vom Case zum Techniker](../field-service-case-zu-arbeitsauftrag/). Teile und Fahrzeugbestand behandle ich in [einem eigenen Teil](../salesforce-field-service-ersatzteile-erp/) dieser Serie.
 
-Jeder Techniker ist eine Service Resource. Seine Qualifikationen sind Skills, die ihm mit einem Level zugeordnet werden. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=fs_required_skills.htm&language=en_US&type=5) liegt das Level zwischen 0 und 99,99, und was ein Level bedeutet, legt das Unternehmen selbst fest. Sinnvoll ist eine Skala, die Ihre Serviceleitung schon kennt, etwa Schulungsstufen des Herstellers.
+## Was müssen Sie entscheiden, bevor die Planung startet?
 
-Wichtig ist der Unterschied zwischen Hinterlegen und Durchsetzen. Erst die Work Rule [Match Skills](https://help.salesforce.com/s/articleView?id=pfs_optimization_theory_work_rules_match_skills.htm&language=en_US&type=5) sorgt dafür, dass nur Techniker mit passenden Skills eingeplant werden. Ein Techniker ganz ohne Skills ist dann für keinen Einsatz mit Skill-Anforderung mehr Kandidat. Das ist gewollt, zeigt aber auch, wie hart eine Lücke in den Daten durchschlägt.
+Die Tabelle oben ist ein Vorschlag. Die Entscheidungen dahinter gehören Serviceleitung und IT gemeinsam, und niemand sonst wird sie treffen:
 
-### Arbeitstypen
+- **Ein Verantwortlicher je Datenbereich.** Jemand muss verantwortlich sein, wenn Qualifikationen veraltet sind oder eine Anlage fehlt. Ohne Namen in der Tabelle wird Datenqualität nach dem Start niemandes Aufgabe.
+- **Schnittstelle oder Handpflege.** Anlagen und Qualifikationen von Hand in Salesforce zu pflegen, reicht für einen Piloten, aber nicht für den Betrieb. Jede Schnittstelle kostet Aufbau und Betrieb, jede Handliste kostet Zeit und verursacht Fehler. Entscheiden Sie je Bereich nach Menge und Änderungshäufigkeit. Wie man klärt, welches System führt, beschreibe ich auf der Seite [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+- **Welche Ursache für Fehleinsätze Sie zuerst angehen.** Nicht alle sechs Bereiche können am ersten Tag sauber sein. Die Fehleinsätze Ihrer eigenen Region zeigen, wo das Geld verloren geht.
+- **Daten über Mitarbeitende.** Qualifikationen und Abwesenheiten sind Daten über Mitarbeitende. Klären Sie früh mit den Datenschutzverantwortlichen und, wo vorhanden, mit dem Betriebsrat, welche davon in Salesforce gespeichert werden dürfen. Das gilt auch für die Funktionen der App in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/).
 
-Ein Arbeitstyp (Work Type) ist die Vorlage für eine Art von Einsatz, etwa Jahreswartung, Störungsbehebung oder Inbetriebnahme. Er legt die geschätzte Dauer und die benötigten Skills fest. Arbeitsaufträge erben die Skills ihres Arbeitstyps. Wer zehn sauber gepflegte Arbeitstypen hat, muss nicht bei jedem Auftrag von Hand eintragen, wer ihn übernehmen darf. Wie aus einem Case ein Arbeitsauftrag mit dem passenden Arbeitstyp wird, steht in [vom Case zum Techniker](../field-service-case-zu-arbeitsauftrag/).
+Drei Warnzeichen, dass die Datenarchitektur nicht trägt: Disponenten führen eine private Liste, wer was kann, Qualifikationen werden erst nach einem Fehleinsatz nachgepflegt, und niemand kann sagen, welches System recht hat, wenn Salesforce und ERP bei einer Anlage abweichen.
 
-### Anlagen und Standorte
+## Die Fehleinsätze der letzten drei Monate auswerten
 
-Anlagen (Assets) sind die Maschinen beim Kunden. Arbeitsaufträge lassen sich mit einer Anlage verknüpfen, und Anlagen lassen sich als Hierarchie abbilden, also eine Maschine mit ihren Baugruppen. Damit sieht der Techniker die Historie der Anlage, und der Innendienst sieht, welches Teil zu welcher Maschine passt.
+Nehmen Sie die Fehleinsätze der letzten drei Monate in einer Region. Ordnen Sie jeden einer Ursache zu: Teile, Zugang, Qualifikation, Verfügbarkeit oder etwas anderes. Die Ursache mit den meisten Fehleinsätzen zeigt, welche Daten zuerst in guter Qualität vorliegen müssen. Gibt es keine Liste der Fehleinsätze, ist auch das ein Ergebnis, denn dann fehlt die Messgröße, an der sich Field Service später messen lassen muss.
 
-Standorte (Locations) sind Orte wie Lager, Fahrzeuge oder Kundenstandorte. Ein Servicefahrzeug ist ein mobiler Standort mit eigenem Bestand. Wie Teile, Lager und ERP zusammenspielen, ist ein eigenes Thema und bekommt einen eigenen Teil in dieser Serie.
-
-### Öffnungszeiten der Kunden
-
-Kunden haben eigene Zeiten, zu denen ein Techniker an die Maschine kommt. In Field Service hinterlegen Sie sie als Arbeitszeiten am Account. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5) übernimmt jeder neue Arbeitsauftrag sie als Besuchszeiten (Visiting Hours).
-
-```hinweis achtung
-Die Planung beachtet Besuchszeiten nur, wenn die Work Rule für Besuchszeiten in der Scheduling Policy aktiv ist. Ein Disponent kann sie übersteuern, sieht dann aber einen Regelverstoß.
-```
-
-Öffnungszeiten lösen nicht jeden Zugangsfall. Wenn eine Maschine für die Wartung abgeschaltet werden muss, braucht es eine Abstimmung mit dem Kunden. Wie man das in der Planung abbildet, gehört in den nächsten Teil der Serie.
-
-### Abwesenheiten
-
-Abwesenheiten (Resource Absences) blockieren Zeit im Kalender eines Technikers. Salesforce kennt die Typen Urlaub, Besprechung, Schulung und Krankheit. Bei der Optimierung werden Techniker laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_create_absences.htm&type=5) nicht für Termine eingeplant, die mit ihren Abwesenheiten kollidieren. Das funktioniert nur, wenn Urlaub und Schulungen auch in Salesforce ankommen und nicht nur in der Zeiterfassung stehen.
-
-## Woher kommen die Daten, und wer pflegt sie?
-
-Kaum eine dieser Datenarten entsteht in Field Service. Deshalb lege ich vor dem Start für jede Art ein führendes System und einen Verantwortlichen fest. Als Ausgangspunkt schlage ich diese Aufteilung vor und passe sie an das Unternehmen an:
-
-| Daten | Führendes System | Verantwortlich |
-|---|---|---|
-| Servicegebiete und Arbeitszeiten | Salesforce | Serviceleitung |
-| Techniker und Qualifikationen | Personal- oder Schulungssystem | Personalabteilung mit Serviceleitung |
-| Arbeitstypen | Salesforce | Serviceleitung |
-| Anlagen beim Kunden | ERP | Auftragsabwicklung oder Inbetriebnahme |
-| Öffnungszeiten der Kunden | Salesforce | Innendienst |
-| Abwesenheiten | Zeiterfassung | Personalabteilung |
-
-Daraus folgen die Schnittstellen. Anlagen und Qualifikationen von Hand in Salesforce zu pflegen, geht für einen Piloten, aber nicht für den Betrieb. Wie man die Führung zwischen ERP und Salesforce klärt, beschreibe ich auf der Seite [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-
-Qualifikationen und Abwesenheiten sind Daten über Mitarbeitende. Klären Sie früh mit Datenschutz und, wo vorhanden, mit dem Betriebsrat, welche davon in Salesforce landen dürfen. Das gilt auch für die neuen Funktionen der App, die ich in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/) beschreibe.
-
-## Wo sollten Sie anfangen?
-
-Nehmen Sie die Fehleinsätze der letzten drei Monate in einer Region. Ordnen Sie jeden einer Ursache zu: Teile, Zugang, Qualifikation, Verfügbarkeit oder etwas anderes. Die Ursache mit den meisten Fehleinsätzen zeigt, welche Daten Sie zuerst sauber brauchen. Gibt es keine Liste der Fehleinsätze, ist auch das ein Ergebnis, denn dann fehlt die Messgröße, an der sich Field Service später messen lassen muss.
-
-Danach prüfen Sie für jede der sechs Datenarten: Gibt es sie, wo liegt sie, wer pflegt sie? Erst wenn diese Fragen beantwortet sind, lohnt es sich, die Planung selbst einzurichten. Darum geht es im nächsten Teil der Serie.
+Danach prüfen Sie für jeden der sechs Datenbereiche: Gibt es die Daten, wo liegen sie, wer pflegt sie? Erst wenn diese Fragen beantwortet sind, lohnt es sich, die Planung selbst einzurichten. Darum geht es im nächsten Teil der Serie.

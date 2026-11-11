@@ -6,7 +6,7 @@ import { Image } from 'astro:assets';
 import julianeWinterscheid from '../assets/partners/juliane-winterscheid.png';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
-import { localHref, partnersHref } from '../lib/paths';
+import { homeHref, localHref, partnersHref } from '../lib/paths';
 import { recruiters, recruiterPaths } from '../data/recruiters';
 import { getServices, serviceHref } from '../lib/services';
 
@@ -19,13 +19,67 @@ const photos = { 'juliane-winterscheid': julianeWinterscheid };
 const services = await getServices(lang);
 const recruiterTeaser = recruiters[lang].teaser;
 const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)]));
+const abs = (path: string) => new URL(path, Astro.site).href;
+const root = abs(import.meta.env.BASE_URL);
+const url = abs(partnersHref(lang));
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': url,
+      url,
+      name: t.partnerPage.h1,
+      description: t.partnerPage.description,
+      inLanguage: lang,
+      publisher: { '@id': `${root}#organization` },
+      mainEntity: {
+        '@type': 'ItemList',
+        '@id': `${url}#partners`,
+        itemListElement: [
+          ...t.partnerPage.partners.map((p, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            item: {
+              '@type': 'Person',
+              name: p.name,
+              knowsAbout: p.area,
+              sameAs: [p.linkedin],
+              ...(p.profile ? { url: abs(localHref(lang, p.profile)) } : {}),
+            },
+          })),
+          {
+            '@type': 'ListItem',
+            position: t.partnerPage.partners.length + 1,
+            name: recruiterTeaser.title,
+            url: abs(localHref(lang, recruiterPaths[lang])),
+          },
+        ],
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'FK Solution Design', item: abs(homeHref(lang)) },
+        { '@type': 'ListItem', position: 2, name: t.partnerPage.title, item: url },
+      ],
+    },
+  ],
+};
 ---
 <Page layout="wide" lang={lang} title={t.partnerPage.metaTitle} description={t.partnerPage.description} alternates={{ en: partnersHref('en'), de: partnersHref('de') }}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+  <header class="service-hero dark grid-bg">
+    <div class="container">
+      <p class="eyebrow mono">{lang === 'de' ? 'Partner' : 'Partners'}</p>
+      <h1>{t.partnerPage.h1}</h1>
+      <p class="service-lead">{t.partnerPage.lead}</p>
+    </div>
+  </header>
   <section class="section blog">
     <div class="container">
-      <p class="eyebrow mono">FK Solution Design</p>
-      <h1>{t.partnerPage.title}</h1>
-      <p class="partner-lead">{t.partnerPage.lead}</p>
       <p class="partner-intro">{t.partnerPage.intro}</p>
       {t.partnerPage.partners.map((p) => {
         const serviceLink = serviceLinks.get(p.service);
@@ -40,7 +94,7 @@ const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)])
               <p class="partner-area mono">{p.area}</p>
               <h2>{p.profile ? <a href={localHref(lang, p.profile)}>{p.name}</a> : p.name}</h2>
               <p>{p.text}</p>
-              <p class="partner-links mono">
+              <p class="partner-links">
                 <a href={p.linkedin} target="_blank" rel="noopener">{t.partnerPage.linkedIn}<ExternalMark label={t.nav.externalTab} /></a>
                 {p.profile && <a href={localHref(lang, p.profile)}>{p.profileLink} →</a>}
                 {serviceLink && <a href={serviceLink}>{p.serviceLink} →</a>}
@@ -49,11 +103,28 @@ const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)])
           </article>
         );
       })}
+      <section class="partner-when" aria-labelledby="partner-when">
+        <p class="partner-area mono">{t.partnerPage.when.label}</p>
+        <h2 id="partner-when">{t.partnerPage.when.title}</h2>
+        <ul>
+          {t.partnerPage.when.items.map((item) => <li><strong>{item.t}</strong> {item.d}</li>)}
+        </ul>
+      </section>
+      <section class="partner-when" aria-labelledby="partner-flow">
+        <p class="partner-area mono">{t.partnerPage.flow.label}</p>
+        <h2 id="partner-flow">{t.partnerPage.flow.title}</h2>
+        <p>{t.partnerPage.flow.intro}</p>
+        <ol>
+          {t.partnerPage.flow.steps.map((step) => <li><strong>{step.t}</strong> {step.d}</li>)}
+        </ol>
+        <h3>{t.partnerPage.flow.exampleTitle}</h3>
+        <p>{t.partnerPage.flow.example}</p>
+      </section>
       <section class="partner-recruiters" aria-labelledby="recruiters">
         <p class="partner-area mono">{recruiterTeaser.label}</p>
         <h2 id="recruiters">{recruiterTeaser.title}</h2>
         <p>{recruiterTeaser.text}</p>
-        <p class="partner-links mono"><a href={localHref(lang, recruiterPaths[lang])}>{recruiterTeaser.link} →</a></p>
+        <p class="partner-links"><a href={localHref(lang, recruiterPaths[lang])}>{recruiterTeaser.link} →</a></p>
       </section>
     </div>
   </section>

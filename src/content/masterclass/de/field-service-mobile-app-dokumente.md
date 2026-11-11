@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Mobile App und Dokumente"
 summary: "Was Techniker offline brauchen, wie Prüfprotokolle ohne Papier entstehen, wann der Servicebericht reicht und wie Sie jedes App-Update testen."
 takeaways:
-  - "Die Field Service App ist eine eigene App für Techniker. Jede Field-Service-Org kann dort Lightning Web Components offline nutzen, die Salesforce Mobile App braucht dafür die Lizenz Mobile App Plus."
-  - "Briefcase Builder legt fest, welche Datensätze jede Technikergruppe offline hält. Salesforce nennt keine Obergrenze, also schneiden Sie Briefcases nach Rolle zu und testen sie mit einem Partner-Benutzer."
-  - "Data-Capture-Formulare entstehen im Flow Builder und funktionieren offline. Voice to Form ist seit App-Version 260.0 allgemein verfügbar, Winter '27 bringt Deutsch, Französisch, Italienisch, Spanisch und Japanisch."
-  - "Document Builder deckt den Servicebericht mit Unterschrift und Offline-Erstellung ab, mit 250 Dokumenten pro Nutzer und Monat; Prüfberichte mit Bedingungslogik brauchen meist ein zweites Werkzeug."
-  - "Die App hat neben den drei Plattform-Releases eigene Versionen. Beta-Builds kommen einen Monat vor Hauptversionen, so kann eine Pilotgruppe testen, bevor alle Geräte aktualisieren."
+  - "In der Field Service App laufen Lightning Web Components offline. Die Salesforce Mobile App braucht dafür die Lizenz Mobile App Plus."
+  - "Briefcase Builder legt fest, welche Datensätze jede Technikergruppe offline hält. Schneiden Sie sie nach Rolle zu und testen Sie mit einem Partner-Benutzer."
+  - "Data-Capture-Formulare entstehen im Flow Builder und funktionieren offline. Voice to Form kann ab Winter '27 auch Deutsch."
+  - "Document Builder deckt den Servicebericht mit Unterschrift ab. Prüfberichte mit Bedingungslogik brauchen meist ein zweites Werkzeug."
+  - "Die App hat eigene Versionen. Beta-Builds erscheinen einen Monat vor Hauptversionen, so testet eine Pilotgruppe, bevor alle Geräte aktualisieren."
 articles: [field-service-mobile-offline, field-service-data-capture-forms, field-service-mobile-guided-voice, service-documents-document-builder, document-builder-limits-workarounds, visual-remote-assistant-instead-of-visit, field-service-mobile-release-testing]
 faq:
   - q: "Was unterscheidet die Field Service App von der Salesforce Mobile App?"
@@ -30,13 +30,13 @@ faq:
 draft: false
 ---
 
-Die Field Service App muss dort funktionieren, wo das Netz endet. Die erste Entscheidung ist deshalb, welche Datensätze jede Technikergruppe offline hält. Data-Capture-Formulare aus dem Flow Builder ersetzen Papierprotokolle, Document Builder erzeugt den Servicebericht mit Unterschrift und Fotos. Prüfberichte mit Bedingungslogik brauchen meist ein zweites Werkzeug. Visual Remote Assistant spart Einsätze, wenn der Bediener eine Störung mit Anleitung selbst beheben kann. Die App hat eigene Versionen neben den Plattform-Releases, also braucht jede einen kurzen Test, bevor sie auf die Geräte kommt. Alles baut auf einem Datenmodell auf, das vor dem ersten Formular steht.
+Die Field Service App muss dort funktionieren, wo das Netz endet. Die erste Entscheidung ist deshalb, welche Datensätze jede Technikergruppe offline hält. Data-Capture-Formulare aus dem Flow Builder ersetzen Papierprotokolle, Document Builder erzeugt den Servicebericht mit Unterschrift und Fotos. Prüfberichte mit Bedingungslogik brauchen meist ein zweites Werkzeug. Visual Remote Assistant spart Einsätze, wenn der Bediener eine Störung mit Anleitung selbst beheben kann. Die App hat eigene Versionen neben den Plattform-Releases, also braucht jede einen kurzen Test, bevor sie auf den Geräten installiert wird. Alles baut auf einem Datenmodell auf, das vor dem ersten Formular steht.
 
 ## Was leistet die Field Service App?
 
 Field Service, das Salesforce heute als [Field Service and Operations](https://www.salesforce.com/de/products/field-service/pricing/) verkauft, bringt für Techniker eine eigene App mit. [Kapitel 2](../field-service-terminplanung-disposition/) hat gezeigt, wie ein Einsatz eingeplant wird. Dieses Kapitel beginnt dort, wo der Techniker den Einsatz öffnet.
 
-Die Field Service App ist eine eigene App im App Store und bei Google Play. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-mobile/work-from-anywhere) bekommen Techniker darin ihre Einsätze, Kundendaten, Änderungen am Arbeitsauftrag und die Unterschrift des Kunden, ohne im Büro anzurufen. Die Salesforce Mobile App ist die allgemeine App für Vertrieb und Innendienst. Für einen Hersteller zählt vor allem der Unterschied beim Offline-Betrieb: Laut [Salesforce Developers](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/intro_enabled_apps.htm) kann jede Field-Service-Org eigene Lightning Web Components in der Field Service App offline nutzen, die Salesforce Mobile App braucht dafür die Lizenz Mobile App Plus. Meine Regel: Techniker arbeiten in der Field Service App, Disposition und Innendienst bleiben im Browser.
+Die Field Service App ist eine eigene App im App Store und bei Google Play. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-mobile/work-from-anywhere) erhalten Techniker darin ihre Einsätze, Kundendaten und Änderungen am Arbeitsauftrag und holen die Unterschrift des Kunden ein, ohne im Büro anzurufen. Die Salesforce Mobile App ist die allgemeine App für Vertrieb und Innendienst. Für einen Hersteller zählt vor allem der Unterschied beim Offline-Betrieb: Laut [Salesforce Developers](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/intro_enabled_apps.htm) kann jede Field-Service-Org eigene Lightning Web Components in der Field Service App offline nutzen, die Salesforce Mobile App braucht dafür die Lizenz Mobile App Plus. Meine Regel: Techniker arbeiten in der Field Service App, Disposition und Innendienst bleiben im Browser.
 
 ```praxis
 In meinen Field-Service-Projekten war die Akzeptanz der Techniker einer der Stolpersteine.
@@ -44,25 +44,25 @@ In meinen Field-Service-Projekten war die Akzeptanz der Techniker einer der Stol
 
 Planen Sie deshalb Zeit ein, um Formulare und Abläufe mit den Technikern selbst zu testen, bevor die App ausgerollt wird.
 
-## Welche Daten braucht der Techniker offline?
+## Offline-Daten pro Technikergruppe mit Briefcase Builder
 
 Eine Grundausstattung für offline bringt die App mit. Laut dem [Trailhead-Modul zu Offline-Briefcases](https://trailhead.salesforce.com/content/learn/modules/offline-briefcase/allow-access-to-information-online) legt Briefcase Builder fest, welche Datensätze jede Technikergruppe herunterlädt, und Performance Priming synchronisiert die wichtigsten Änderungen alle fünf Minuten, solange Verbindung besteht. Offline erfasste Änderungen speichert das Gerät und überträgt sie später.
 
-Bei einem Maschinenbauer kommt aufs Gerät, was der Techniker braucht, um die Einsätze des Tages abzuschließen und zu dokumentieren, ohne im Büro anzurufen: Termine für heute und morgen, Arbeitsauftrag mit Positionen, das Asset mit seiner jüngsten Historie, das Fahrzeuglager und das Handbuch zu dieser Maschine. Vollständige Preislisten und alle Assets eines Gebiets bleiben online. Salesforce nennt keine feste Zahl an Datensätzen, die ein Gerät halten kann. Messen Sie deshalb die Synchronisation am Morgen mit Ihrer größten Region, statt mit einer Zahl zu planen.
+Bei einem Maschinenbauer gehört aufs Gerät, was der Techniker braucht, um die Einsätze des Tages abzuschließen und zu dokumentieren, ohne im Büro anzurufen: Termine für heute und morgen, Arbeitsauftrag mit Positionen, das Asset mit seiner jüngsten Historie, das Fahrzeuglager und das Handbuch zu dieser Maschine. Vollständige Preislisten und alle Assets eines Gebiets bleiben online. Salesforce nennt keine feste Zahl an Datensätzen, die ein Gerät halten kann. Messen Sie deshalb die Synchronisation am Morgen mit Ihrer größten Region, statt mit einer Zahl zu planen.
 
 Die [Hinweise zu LWC Offline](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sfs_gs_lwc_considerations.htm) nennen fünf bekannte Probleme. Drei davon bestimmen den Testplan:
 
 | Problem | Was passiert |
 |---|---|
 | Aufgaben werden nicht geladen | Ein Task-Objekt im Briefcase löst beim Priming einen Fehler aus. |
-| Partner-Benutzer | Ein Benutzer mit Community-Lizenz kann beim Öffnen eines Service-Termins einen Fehler wegen eines fehlenden Datensatzes bekommen. Partnertechniker brauchen deshalb einen eigenen Briefcase und einen eigenen Test. |
+| Partner-Benutzer | Ein Benutzer mit Community-Lizenz kann beim Öffnen eines Service-Termins einen Fehler wegen eines fehlenden Datensatzes erhalten. Partnertechniker brauchen deshalb einen eigenen Briefcase und einen eigenen Test. |
 | Kaltstart unter iOS | Geänderte Lightning Web Components lädt die App erst, wenn sie ganz beendet und neu gestartet wurde. |
 
 Den Briefcase pro Rolle, die vollständige Liste und einen Tag im Keller ohne Netz beschreibe ich in [Field Service App offline: Welche Daten aufs Gerät?](../../../blog/field-service-app-offline-briefcase/).
 
-## Wie werden aus Papierprotokollen Formulare?
+## Aus Papierprotokollen werden Data-Capture-Formulare
 
-Data Capture ist die Formularfunktion der Field Service App. Laut dem [Trailhead-Überblick](https://trailhead.salesforce.com/content/learn/modules/data-capture-quick-look) baut sie direkt auf dem Flow Builder auf, und Formulare hängen an Service-Terminen, Arbeitsaufträgen und Auftragspositionen. Sie enthalten Unterschrift, Textfelder, Nachschlagefelder und Checkboxen, und Abschnitte können abhängig von früheren Antworten erscheinen. Formulare funktionieren offline, jede Eingabe wird automatisch gespeichert, und jede Übermittlung wird protokolliert.
+Data Capture ist die Formularfunktion der Field Service App. Laut dem [Trailhead-Überblick](https://trailhead.salesforce.com/content/learn/modules/data-capture-quick-look) baut sie direkt auf dem Flow Builder auf, und Formulare hängen an Service-Terminen, Arbeitsaufträgen und Auftragspositionen. Sie enthalten Unterschrift, Textfelder, Nachschlagefelder und Checkboxen, und Abschnitte können abhängig von früheren Antworten erscheinen. Formulare funktionieren offline, jede Eingabe wird automatisch gespeichert, und jede Übermittlung wird protokolliert. Nicht jede Flow-Funktion vom Desktop gibt es dort: Data Table und IN-Operator fehlen, siehe [Field Service Mobile App: Flow-Grenzen](../../../blog/field-service-mobile-flows-grenzen/).
 
 Das Formular ist schnell gebaut. Länger dauert die Entscheidung davor: Welche Antworten werden Felder am Asset oder am Arbeitsauftrag, und welche bleiben Formularantworten? Betriebsstunden, Messwerte, die Sie über Besuche vergleichen, und das Gesamtergebnis gehören in Felder, denn Wartungspläne, Berichte und die ERP-Schnittstelle arbeiten mit Feldern. Bestanden oder nicht bestanden pro Prüfpunkt kann im Formular bleiben. Verbaute Teile werden als verbrauchte Produkte gebucht, nie als Freitext, sonst sehen Fahrzeuglager und ERP sie nicht. Die vollständige Zuordnungstabelle und wie Sie ein langes Protokoll nach Variante aufteilen, stehen in [Field Service Data Capture: Prüfprotokolle ohne Papier](../../../blog/field-service-data-capture-pruefprotokolle/).
 
@@ -95,7 +95,7 @@ Für den klassischen Bericht an der Maschine, mit Arbeitszeit, Teilen, Fotos und
 | Grenze | Was sie bedeutet |
 |---|---|
 | Nur drei Objekte | Kein Dokument am Asset oder an einem eigenen Objekt. |
-| Android hinkt hinterher | Unter iOS entstehen Dokumente aus Arbeitsauftrag und Service-Termin, unter Android nur aus dem Service-Termin. |
+| Android eingeschränkt | Unter iOS entstehen Dokumente aus Arbeitsauftrag und Service-Termin, unter Android nur aus dem Service-Termin. |
 | Umfang | Höchstens 50 Seiten und 100 MB pro Dokument. |
 
 Fünf kleinere Lücken sollten Sie beim Standardbericht einplanen: Vorlagenwahl, Dateiname, E-Mail, Vorbelegung und Gestaltung. Flows und kleine Komponenten schließen sie ohne weitere Lizenz, wie ich in [Document Builder: fünf Grenzen und Workarounds](../../../blog/salesforce-document-builder-grenzen-workarounds/) zeige.
@@ -104,7 +104,7 @@ Fünf kleinere Lücken sollten Sie beim Standardbericht einplanen: Vorlagenwahl,
 
 Prüfberichte mit bedingten Abschnitten, Maschinenakten am Asset, Zertifikate und Word-Ausgabe gehen über Document Builder hinaus. Dafür würde ich Salesforce Document Generation oder ein Werkzeug aus dem AppExchange für die Nutzer im Innendienst lizenzieren, die es brauchen, und den Servicebericht im Document Builder lassen. Den Vergleich finden Sie in [Salesforce Service Documents: reicht der Document Builder?](../../../blog/salesforce-service-documents-document-builder-servicebericht/).
 
-Angebote sind ein eigener Fall. Sieht der Techniker Zusatzarbeit oder ein verschlissenes Teil und will der Kunde vor Ort einen Preis, gehört das Angebot in den Vertriebsprozess mit seinen Freigaben. Wie Angebote, Verträge und Aufträge dort laufen, beschreibt das Kapitel [Angebot, Vertrag, Auftrag](../../revenue-cloud/angebot-vertrag-auftrag/) der Masterclass Revenue Cloud.
+Angebote sind ein eigener Fall. Sieht der Techniker Zusatzarbeit oder ein verschlissenes Teil und will der Kunde vor Ort einen Preis, gehört das Angebot in den Vertriebsprozess mit seinen Freigaben. Wie Angebote, Verträge und Aufträge dort abgewickelt werden, beschreibt das Kapitel [Angebot, Vertrag, Auftrag](../../revenue-cloud/angebot-vertrag-auftrag/) der Masterclass Revenue Cloud.
 
 ## Wann ersetzt ein Videoanruf den Einsatz?
 
@@ -120,7 +120,7 @@ Wie Sie das Potenzial aus den Störungseinsätzen des letzten Jahres schätzen, 
 
 ## Wie testen Sie jede App-Version?
 
-Neben den drei Plattform-Releases im Jahr hat die App eigene Haupt- und Patch-Versionen. Laut dem [Beta-Programm der Field Service App](https://developer.salesforce.com/tools/field-service-mobile-beta) gibt es Beta-Builds einen Monat vor Hauptversionen und eine Woche vor Patches, und mit Debug-Builds testen Entwickler ihre eigenen Komponenten im Emulator oder Simulator. Laut Release-Beitrag zu 260.0 verteilt Salesforce Versionen über mehrere Tage, manche Nutzer bekommen ein Update erst sieben Tage nach der allgemeinen Verfügbarkeit. Bis zu einer Woche laufen also verschiedene Versionen bei Ihren Technikern.
+Neben den drei Plattform-Releases im Jahr hat die App eigene Haupt- und Patch-Versionen. Laut dem [Beta-Programm der Field Service App](https://developer.salesforce.com/tools/field-service-mobile-beta) gibt es Beta-Builds einen Monat vor Hauptversionen und eine Woche vor Patches, und mit Debug-Builds testen Entwickler ihre eigenen Komponenten im Emulator oder Simulator. Laut Release-Beitrag zu 260.0 verteilt Salesforce Versionen über mehrere Tage, manche Nutzer erhalten ein Update erst sieben Tage nach der allgemeinen Verfügbarkeit. Bis zu einer Woche sind bei Ihren Technikern also verschiedene Versionen im Einsatz.
 
 Meine Routine pro Version, auf iOS und Android, passt in einen halben Tag:
 
@@ -136,9 +136,9 @@ Meine Routine pro Version, auf iOS und Android, passt in einen halben Tag:
 
 Pilotgruppe, Kalender und wer für App-Versionen verantwortlich ist, beschreibe ich in [Field Service App Updates: jede Version vorher testen](../../../blog/field-service-app-updates-testen/). App-Versionen gehören in denselben Kalender wie die Plattform-Releases, beschrieben im Kapitel [Release-Planung](../../devops-release-management/release-planung-salesforce-releases/) der DevOps-Masterclass. Wie solche Testskripte in Qualitätsprüfungen passen, steht im Kapitel [Qualität, Tests und Reviews](../../devops-release-management/qualitaet-tests-reviews/).
 
-## Ein typisches Szenario, als Annahme: Das Inbetriebnahmeprotokoll verlässt das Papier
+## Rechenbeispiel: Das Inbetriebnahmeprotokoll wird papierlos
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer mit 60 Technikern nimmt Verpackungsmaschinen in drei Varianten in Betrieb. Das Papierprotokoll hat 80 Prüfpunkte. Der Techniker füllt es von Hand aus und scannt es abends ein, der Innendienst tippt die Messwerte ins ERP. Alle Zahlen sind Annahmen, um die Reihenfolge der Entscheidungen zu zeigen.
+Ein Maschinenbauer mit 60 Technikern nimmt Verpackungsmaschinen in drei Varianten in Betrieb. Das Papierprotokoll hat 80 Prüfpunkte. Der Techniker füllt es von Hand aus und scannt es abends ein, der Innendienst tippt die Messwerte ins ERP. Alle Zahlen sind Annahmen, um die Reihenfolge der Entscheidungen zu zeigen.
 
 ```schritte
 Datenmodell | Wochen 1 und 2 · Service, Innendienst, ERP-Team
@@ -146,18 +146,18 @@ Datenmodell | Wochen 1 und 2 · Service, Innendienst, ERP-Team
 Briefcase | Woche 3
   Ein Briefcase für eigene Techniker, einer für die zwei Partnerfirmen, beide gefiltert nach Gebiet und Datum.
 Formulare | Wochen 4 bis 7
-  Allgemeine Prüfungen am Service-Termin, ein Variantenformular pro Maschinentyp an der Auftragsposition, Abnahme mit Unterschrift. Messwerte wie die Taktzahl landen in Feldern am Asset.
+  Allgemeine Prüfungen am Service-Termin, ein Variantenformular pro Maschinentyp an der Auftragsposition, Abnahme mit Unterschrift. Messwerte wie die Taktzahl werden in Feldern am Asset gespeichert.
 Bericht | Woche 8
   Die Vorlage für den Servicebericht zeigt das Gesamtergebnis aus dem Feld am Arbeitsauftrag. Der ausführliche Prüfbericht mit Variantenlogik bleibt ein eigenes Dokument aus dem Innendienst.
 Pilot | Wochen 9 und 10 · acht Techniker
-  Darunter einer von einem Partner. Sie fahren echte Inbetriebnahmen und die Testroutine auf beiden Plattformen.
+  Darunter einer von einem Partner. Sie führen echte Inbetriebnahmen und die Testroutine auf beiden Plattformen durch.
 ```
 
 Voice to Form wartet, bis Datenschutz und Betriebsrat zugestimmt haben. Nach dem Pilot stehen die Messwerte am Abend des Einsatzes am Asset, und niemand tippt sie noch einmal ab.
 
-## Was entscheiden Sie vor dem ersten Formular?
+## Zieldatenmodell für Servicedaten vor dem ersten Formular festlegen
 
-Vier Entscheidungen brauchen einen Namen, bevor ein Partner Formulare baut:
+Für vier Entscheidungen braucht es einen benannten Verantwortlichen, bevor ein Partner Formulare baut:
 
 | Entscheidung | Was dazugehört |
 |---|---|
@@ -167,5 +167,3 @@ Vier Entscheidungen brauchen einen Namen, bevor ein Partner Formulare baut:
 | Verantwortung für App-Versionen | Meist der Release Manager, gemeinsam mit dem Gerätemanagement. |
 
 Das Datenmodell ist Arbeit an der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/) und entscheidet, ob Formulare, Berichte und später KI-Agenten die Daten nutzen können. [Kapitel 4](../field-service-assets-wartung-teile/) baut darauf auf, mit Assets, Wartungsplänen und Ersatzteilen, und die [Übersicht](../) zeigt alle Kapitel.
-
-Die App des Technikers trägt, wenn das Datenmodell vor dem ersten Formular steht und jede App-Version getestet ist, bevor sie die Geräte erreicht.

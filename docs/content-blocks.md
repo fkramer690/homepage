@@ -145,6 +145,20 @@ Animation of the variant `treppe` (Fabian 2026-10-30, kept slow on purpose): whe
 
 Two columns like the start page comparison: `ohne: Title` (EN `without:`) with grey crosses, then `mit: Title` (EN `with:`) with cyan ticks and a cyan frame, two to five `- points` each. Approved by Fabian 2026-10-29. Use it for before and after; for a decision use `pro-contra`.
 
+With a core sentence (backlog 17, layout "Quote after a comparison" in `docs/layouts.md`): mark the one pair the sentence sums up with `- * ` in each column and end the block with `zitat:` (EN `quote:`), one sentence of at most 140 characters, without quotation marks. The pair is struck through on the left and bold cyan on the right; a dashed line runs from the "with" column into a dark card with Fabian's round photo (`public/quote/fabian-kramer.webp`) and the quote in italic; no kicker and no name or role line (Fabian 2026-11-07). Use it only for a sentence that is really Fabian's position, at most once per article; never put a quote as a plain `>` blockquote under a list.
+
+````
+```vergleich
+ohne: Discovery nur für den Happy Path
+- Nur der Standardfall ist besprochen.
+- * Die Randfälle kommen später als Change Request.
+mit: Discovery mit Randfällen
+- * Die Liste der Sonderfälle liegt dem Angebot bei.
+- Annahmen hinter der Schätzung sind aufgeschrieben.
+zitat: Bei Herstellern liegt der Aufwand in den Randfällen, nicht im Standardfall.
+```
+````
+
 ````
 ```vergleich
 ohne: Einmal im Quartal ein großes Paket
@@ -184,7 +198,7 @@ fazit: Fragt zwei Jahre später jemand, warum ein Prozess so gebaut wurde, steht
 
 ## 13. Säulen (pillars)
 
-Three to five pillars in one row, each `icon | Name | Subtitle | Text`. The icon is a file name from `src/icons/`, numbers are added automatically. Keep the name to one word or two (it must fit one line in a quarter of the text column), the subtitle short and the text one full sentence. Optional `dach: Title` (EN `roof:`) as a dark bar above and `basis: Title` (EN `base:`) as a grey bar below. Title, subtitle and text start at the same height in every pillar and all pillars end together; on phones they stand below each other with the icon on the left. Approved by Fabian 2026-10-29 for the pipeline basics on the DevOps service page (with roof and base).
+Three to five pillars in one row, each `icon | Name | Subtitle | Text`. The icon is a file name from `src/icons/`. Keep the name to one word or two (it must fit one line in a quarter of the text column), the subtitle short and the text one full sentence. Optional `dach: Title` (EN `roof:`) as a dark bar above and `basis: Title` (EN `base:`) as a grey bar below. The pillars show icon, name and subtitle; the sentences stand below the base in two columns, each led by the pillar name (2026-10-31). Name and subtitle start at the same height in every pillar and all pillars end together; on phones they stand below each other with the icon on the left. Approved by Fabian 2026-10-29 for the pipeline basics on the DevOps service page (with roof and base).
 
 ````
 ```saeulen
@@ -377,6 +391,35 @@ sichtbar: Lizenz: 0 € | bei beiden Werkzeugen
 ```
 ````
 
+## 19. Ring and Kreislauf (light, interactive)
+
+Two drawings that show their details only while the pointer rests on a segment or station (layouts "Ring with details in the centre" and "Cycle with labelled stations" in `docs/layouts.md`). Geometry and checks live in `src/lib/ring-cycle.mjs`; the build fails when a label does not fit its arc or runs into the circle. On phones a tap shows the card below the drawing; without script all cards stand below it. Icons are file names from `src/icons/`.
+
+**`ring`**: three to seven equal parts of one whole, without an order. `titel:` (EN `title:`), `mitte: Eyebrow | Title` (EN `centre:`) for the white centre, then one line per segment `- icon | Name | Subtitle | point; point; point` (two to four short points, they must fit the centre circle). A short segment label can follow the name after `~` (`Spare parts ~ Parts`). Use it only where the parts are named in the text around it.
+
+````
+```ring
+titel: Was vor dem ersten Agenten stehen muss
+mitte: Agentforce | bereit?
+- analyse | Volumen | Genug Wiederholung | Tausende ähnliche Anfragen; Anfragen und Minuten gezählt
+- search | Daten | Belastbare Stammdaten | Installierte Basis mit Seriennummer; Gepflegte Wissensartikel
+- integration | ERP | Zugriff per API | Auftragsstatus, Bestand, Preise; API als Aktion des Agenten
+```
+````
+
+**`kreislauf`** (cycle): three to six steps that repeat in a fixed order (release cycle, hypercare routine, ADKAR per release). `titel:`, `mitte: Eyebrow | Title`, `hinweis: Title | text` (EN `hint:`) for the dashed panel at rest, then `- icon | Name | Subtitle | Sentence | point; point` per station. Station names have at most 16 characters. A dot runs around the circle (hidden with reduced motion).
+
+````
+```kreislauf
+titel: Der tägliche Ablauf in der Hypercare
+mitte: Täglich | in der Hypercare
+hinweis: Vier Schritte | Der Kreis läuft jeden Tag, bis die Zahl der Meldungen sinkt.
+- message | Melden | Ein zentraler Eingang | Alle Meldungen kommen über einen Kanal. | Ein Eingang; Kritisches sofort eskalieren
+- search | Bewerten | Fester Termin am Morgen | Jede Meldung bekommt eine Kategorie. | Fehler oder Bedienfrage; Fehler haben Vorrang
+- gear | Beheben | Über die Pipeline | Auch Quick Wins gehen mit Test über die Pipeline. | Fix über die Pipeline; Key User beantworten Fragen
+```
+````
+
 ## Confirmed experience (for `praxis`)
 
 Only these, in Fabian's wording, without client names, industry or size:
@@ -392,4 +435,9 @@ Only these, in Fabian's wording, without client names, industry or size:
 - Project stories that already stand in articles published before 28 October 2026 (written with Fabian), e.g. the global Manufacturing Cloud rollout with CPQ, configurator and customer portal.
 - In one manufacturing project, sales agreements (a core feature of Manufacturing Cloud) were not relevant for the business, so a custom solution on the core platform was cheaper and simpler to maintain (confirmed 23 October 2026, make-or-buy service page).
 
+- In every project so far, UAT or the acceptance of stories took longer than the client planned, because the client's people were not available, and change requests followed because the business had not looked closely enough at its own solution and the status quo beforehand (confirmed 5 November 2026).
+- Partner selection (confirmed 6 November 2026): has seen partners replaced more than once, because quality was never there or dropped when the partner's people left the project or the company, or because sales sold something the team had never done, which cost time and budget. Seen in proposals: optimistic fixed prices without the client knowing what the packages contain, a discovery that only covered the happy path, senior people in the pitch and a mixed team with many juniors on the project, no word on repository or pipeline ownership.
+- In his Field Service projects the missing data table in mobile flows, i.e. selecting several records in one step, is the gap that hurts most (confirmed 6 November 2026).
+
+- Field Service clients between 15 and 700 technicians; job length depends on the industry: large machines in manufacturing mostly multi-day jobs, rarely more than two appointments a day; on-site consumption recording in other industries up to ten a day (never name the sector, guideline rule). At his Field Service client the service report comes from Document Builder; what was missing first: layout details and automatic sending (confirmed 11 November 2026, backlog IG1).
 Add new items here only after Fabian confirms them.

@@ -1,0 +1,122 @@
+{
+  "statkraft.svg": {
+    "file": "mono/statkraft.webp",
+    "ratio": 4.162,
+    "ink": 0.287
+  },
+  "bryt-energy.webp": {
+    "file": "mono/bryt-energy.webp",
+    "ratio": 4.392,
+    "ink": 0.322
+  },
+  "gelita.svg": {
+    "file": "mono/gelita.webp",
+    "ratio": 4.26,
+    "ink": 0.259
+  },
+  "eon.webp": {
+    "file": "mono/eon.webp",
+    "ratio": 3.4,
+    "ink": 0.517
+  },
+  "coi-partners.webp": {
+    "file": "mono/coi-partners.webp",
+    "ratio": 1.587,
+    "ink": 0.398
+  },
+  "ewtn.svg": {
+    "file": "mono/ewtn.webp",
+    "ratio": 3.927,
+    "ink": 0.186
+  },
+  "techem.webp": {
+    "file": "mono/techem.webp",
+    "ratio": 2.931,
+    "ink": 0.456
+  },
+  "shg-ruhr.webp": {
+    "file": "mono/shg-ruhr.webp",
+    "ratio": 2.058,
+    "ink": 0.133
+  },
+  "rhenus.webp": {
+    "file": "mono/rhenus.webp",
+    "ratio": 5.35,
+    "ink": 0.44
+  },
+  "gruner-jahr.webp": {
+    "file": "mono/gruner-jahr.webp",
+    "ratio": 1.692,
+    "ink": 0.335
+  },
+  "republic.svg": {
+    "file": "mono/republic.webp",
+    "ratio": 4.348,
+    "ink": 0.37
+  },
+  "stroeer.svg": {
+    "file": "mono/stroeer.webp",
+    "ratio": 4.748,
+    "ink": 0.643
+  },
+  "atoss.svg": {
+    "file": "mono/atoss.webp",
+    "ratio": 4.693,
+    "ink": 0.28
+  },
+  "fritz-berger.svg": {
+    "file": "mono/fritz-berger.webp",
+    "ratio": 3.455,
+    "ink": 0.37
+  },
+  "dekra.svg": {
+    "file": "mono/dekra.webp",
+    "ratio": 3.587,
+    "ink": 0.306
+  },
+  "gba-group.webp": {
+    "file": "mono/gba-group.webp",
+    "ratio": 6.983,
+    "ink": 0.249
+  },
+  "new.webp": {
+    "file": "mono/new.webp",
+    "ratio": 3.242,
+    "ink": 0.609
+  },
+  "rheinenergie.svg": {
+    "file": "mono/rheinenergie.webp",
+    "ratio": 4.079,
+    "ink": 0.194
+  },
+  "septodont.svg": {
+    "file": "mono/septodont.webp",
+    "ratio": 0.979,
+    "ink": 0.404
+  },
+  "schottel.svg": {
+    "file": "mono/schottel.webp",
+    "ratio": 0.959,
+    "ink": 0.324
+  },
+  "knf.svg": {
+    "file": "mono/knf.webp",
+    "ratio": 3.106,
+    "ink": 0.539
+  },
+  "schubert.svg": {
+    "file": "mono/schubert.webp",
+    "ratio": 6.004,
+    "ink": 0.163
+  },
+  "reemtsma.svg": {
+    "file": "mono/reemtsma.webp",
+    "ratio": 2.954,
+    "ink": 0.285
+  },
+  "lieferando.webp": {
+    "file": "mono/lieferando.webp",
+    "ratio": 4.365,
+    "ink": 0.312
+  }
+}

@@ -65,7 +65,7 @@ const duo = coAuthor && coAuthor !== author ? [box, boxOf(coAuthor)] : undefined
     <div class="post-author-body">
       <p class="label mono">{box.label}</p>
       <p class="post-author-name">{box.a.name}</p>
-      <p class="post-author-role mono">{box.role}</p>
+      <p class="post-author-role">{box.role}</p>
       <p class="post-author-bio">{box.bio}</p>
       <div class="post-author-links">
         <a class="btn btn-small" href={box.a.linkedin} target="_blank" rel="noopener">{t.blog.authorLinkedIn}<ExternalMark label={t.nav.externalTab} /></a>
