@@ -104,6 +104,8 @@ Ich würde einen FDE-Einsatz an diesen Kriterien festmachen:
 
 Nicht lohnen würde sich ein FDE, wenn der größte Aufwand das Prozessdesign über mehrere Clouds, eine tiefe SAP-Anbindung oder eine Datenbereinigung ist. Das ist Arbeit für einen Implementierungspartner über Monate. Und wenn noch offen ist, ob ein Agent überhaupt der richtige Weg ist, klären Sie das zuerst. Die Kriterien dafür stehen in [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/)
 
+Eine kürzere Fassung für CIOs steht auf Englisch als Artikel auf LinkedIn: [Before Salesforce sends you forward deployed engineers, answer three questions](https://www.linkedin.com/pulse/before-salesforce-sends-you-forward-deployed-engineers-fabian-kramer-jqxde/).
+
 ## Erster Schritt: drei Zuständigkeiten klären, bevor der Pod anfängt
 
 Bevor ein FDE-Pod oder ein Partner-FDE in Ihrer Org beginnt, schreiben Sie drei Namen auf: wer im Architekturboard Entscheidungen zum Agenten innerhalb einer Woche herbeiführt, wer Datenzugang und Berechtigungen freigibt und wer den Agenten nach der Hypercare fachlich und technisch verantwortet. Fehlt einer dieser Namen, besetzen Sie die Rolle vor dem Start, intern oder mit einem Architekten auf Ihrer Seite, und vereinbaren Sie mit dem Pod, welche Kennzahl nach 90 Tagen erreicht sein muss.

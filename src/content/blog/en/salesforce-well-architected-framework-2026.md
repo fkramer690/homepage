@@ -131,6 +131,8 @@ In practice, that means:
 
 How I set up standards and reviews in such programs is part of my [work on partner governance and architecture](../../services/partner-governance/).
 
+How the framework helps you govern several implementation partners on one org is the subject of an article on LinkedIn: [Salesforce Well-Architected Framework: how to govern multiple implementation partners](https://www.linkedin.com/pulse/salesforce-well-architected-framework-how-govern-multiple-kramer-q58ge/).
+
 ## Check your development standards against the five pillars
 
 Read the [overview in the Architecture Center](https://architect.salesforce.com/docs/architect/well-architected/guide/overview.html) and the legacy mapping if your teams still work with Trusted, Easy and Adaptable. Then check your existing development standards against the five pillars. Cost and operations are usually what is missing.

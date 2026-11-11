@@ -106,6 +106,8 @@ Auf „Arbeiten Sie in unserem Repository nach unseren Standards?“ antwortet j
 - **Ein zweiter Partner.** „In zwei Jahren übernimmt ein weiterer Partner Field Service. Wie verhindern wir, dass sich beide gegenseitig überschreiben?“ Gute Antworten erwähnen Pull Requests, eine [Object Ownership Matrix](../object-ownership-matrix-salesforce/) und eine gemeinsame [Sandbox-Strategie](../salesforce-sandbox-strategie-mehrere-partner/).
 - **Übernahme nach dem Go-live.** „Wir wollen den Betrieb später selbst führen. Was bekommen wir dann von Ihnen?“ Hier zeigt sich, ob Code, Konfiguration und Dokumentation bei Ihnen liegen sollen oder beim Partner bleiben.
 
+Warum ich Partner gezielt nach gescheiterten Projekten frage, beschreibe ich auf Englisch in einem Artikel auf LinkedIn: [Every Salesforce partner has skeletons in the closet. Ask about them.](https://www.linkedin.com/pulse/every-salesforce-partner-has-skeletons-closet-ask-them-fabian-kramer-crtke/)
+
 ## Was in den Vertrag mit dem Partner gehört
 
 Was im Pitch gut klingt, muss in den Vertrag, sonst gilt es nicht. Diese Punkte gehören mindestens hinein:
