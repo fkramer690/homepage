@@ -1,0 +1,119 @@
+---
+// Four labelled segments around a centre (layout "Ring with details in the centre",
+// docs/layouts.md). While the pointer rests on a segment (or it has keyboard focus, or it
+// was tapped), its details appear in the white centre circle; on narrow screens and
+// without script they stand below the ring. Texts in src/data/approach-ring.ts, geometry
+// in src/lib/approach-ring.ts (labels checked by scripts/check-graphics.mjs).
+import Icon from './Icon.astro';
+import { approachRing } from '../data/approach-ring';
+import { ringSegments } from '../lib/approach-ring';
+import { getServices, serviceHref } from '../lib/services';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+const { lang } = Astro.props;
+const t = approachRing[lang];
+const services = await getServices(lang);
+const hrefOf = (key: string) => {
+  const s = services.find((x) => x.data.translationKey === key);
+  if (!s) throw new Error(`approach ring: no ${lang} service with translationKey "${key}"`);
+  return serviceHref(s);
+};
+const segs = ringSegments(t.items.length);
+const items = t.items.map((item, i) => ({ ...item, href: hrefOf(item.service), seg: segs[i], id: `ar-${lang}-${item.key}` }));
+const pct = (v: number) => `${(v / 4).toFixed(2)}%`;
+---
+<section class="section alt" id="approach">
+  <div class="container ar-grid">
+    <div class="ar-text">
+      <h2>{t.title}</h2>
+      <p class="ar-lead">{t.lead}</p>
+      <p class="ar-hint mono"><span class="ar-hint-pointer">{t.hint}</span><span class="ar-hint-touch">{t.hintTouch}</span></p>
+    </div>
+    <figure class="ar" data-ar>
+      <div class="ar-stage">
+        <svg class="ar-drawing" viewBox="0 0 400 400" role="img" aria-label={t.label}>
+          <defs>
+            {items.map((it) => <path id={it.id} d={it.seg.labelPath} />)}
+          </defs>
+          {items.map((it) => (
+            <g class="ar-seg" data-k={it.key} tabindex="0" role="button" aria-pressed="false" aria-label={`${it.name}: ${it.sub}`} data-href={it.href} style={`--c: ${it.colour}`}>
+              <path class="ar-fill" d={it.seg.path} />
+              <circle class="ar-badge" cx={it.seg.icon.x} cy={it.seg.icon.y} r={it.seg.icon.r} />
+              <text class="ar-label" font-size="13"><textPath href={`#${it.id}`} startOffset="50%" text-anchor="middle">{it.name.toUpperCase()}</textPath></text>
+            </g>
+          ))}
+          <circle class="ar-hub" cx="200" cy="200" r="126" />
+        </svg>
+        {items.map((it) => (
+          <span class="ar-icon" data-k={it.key} style={`left: ${pct(it.seg.icon.x)}; top: ${pct(it.seg.icon.y)}`}><Icon name={it.icon} /></span>
+        ))}
+        <div class="ar-centre">
+          <p class="ar-rest"><span class="mono">{t.centre.eyebrow}</span><strong>{t.centre.title}</strong></p>
+          {items.map((it) => (
+            <div class="ar-detail" data-card={it.key} style={`--c: ${it.colour}`}>
+              <Icon name={it.icon} class="ar-detail-icon" />
+              <p class="ar-detail-name">{it.name}</p>
+              <p class="ar-detail-sub mono">{it.sub}</p>
+              <ul>{it.points.map((p) => <li>{p}</li>)}</ul>
+              <a class="text-link" href={it.href} tabindex="-1">{t.more} →</a>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="ar-below">
+        {items.map((it) => (
+          <div class="ar-card" data-card={it.key} style={`--c: ${it.colour}`}>
+            <div class="ar-card-head">
+              <Icon name={it.icon} class="ar-detail-icon" />
+              <div>
+                <p class="ar-detail-name">{it.name}</p>
+                <p class="ar-detail-sub mono">{it.sub}</p>
+              </div>
+            </div>
+            <ul>{it.points.map((p) => <li>{p}</li>)}</ul>
+            <a class="text-link" href={it.href}>{t.more} →</a>
+          </div>
+        ))}
+      </div>
+    </figure>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-ar]').forEach((fig) => {
+    const segs = [...fig.querySelectorAll<SVGGElement>('.ar-seg')];
+    const hover = matchMedia('(hover: hover)').matches;
+    fig.classList.add('ar-js');
+    const set = (key: string | null) => {
+      if (key) fig.dataset.active = key;
+      else delete fig.dataset.active;
+      segs.forEach((s) => {
+        const on = s.dataset.k === key;
+        s.classList.toggle('is-on', on);
+        s.setAttribute('aria-pressed', String(on));
+      });
+      fig.querySelectorAll<HTMLElement>('.ar-icon').forEach((i) => i.classList.toggle('is-on', i.dataset.k === key));
+      fig.querySelectorAll<HTMLElement>('[data-card]').forEach((c) => {
+        const on = c.dataset.card === key;
+        c.classList.toggle('is-on', on);
+        c.querySelectorAll('a').forEach((a) => a.setAttribute('tabindex', on ? '0' : '-1'));
+      });
+    };
+    segs.forEach((s) => {
+      s.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') set(s.dataset.k ?? null); });
+      s.addEventListener('focus', () => set(s.dataset.k ?? null));
+      s.addEventListener('click', () => {
+        if (hover && s.dataset.href) location.href = s.dataset.href;
+        else set(fig.dataset.active === s.dataset.k ? null : s.dataset.k ?? null);
+      });
+      s.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && s.dataset.href) location.href = s.dataset.href;
+        if (e.key === ' ') { e.preventDefault(); set(s.dataset.k ?? null); }
+        if (e.key === 'Escape') { set(null); s.blur(); }
+      });
+    });
+    fig.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') set(null); });
+  });
+</script>

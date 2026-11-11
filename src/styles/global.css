@@ -565,6 +565,7 @@ a:hover { color: var(--anthracite); }
   .service-index-body > .proof { order: 2; }
 }
 .service-index-note { margin: 2.5em 0 0; max-width: var(--measure); font-size: var(--fs-md); }
+.service-index-note:first-child { margin-top: 0; }
 .service-index-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 2.5em; }
 .service-index-cta p { margin: 0; font-size: var(--fs-md); }
 /* Key figures as trust evidence on the service overview */
@@ -2858,3 +2859,63 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   .svc-reading-cat { grid-column: 2; }
   .svc-reading-course { padding: 14px 16px; }
 }
+
+/* "Vier Bausteine" ring on the service overview (src/components/ApproachRing.astro, layout
+   "Ring with details in the centre" in docs/layouts.md, chosen 2026-11-11). Labelled
+   segments; the details of the segment under the pointer appear in the white centre.
+   Without script, and when the ring is narrower than 540px, the details stand below it. */
+.ar-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 600px); gap: 32px 56px; align-items: center; }
+.ar-text h2 { margin-top: 0; }
+.ar-lead { color: var(--text-2); max-width: 52ch; }
+.ar-hint { font-size: var(--fs-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan-dark); margin: 1.2em 0 0; }
+.ar-hint-touch { display: none; }
+@media (hover: none) { .ar-hint-pointer { display: none; } .ar-hint-touch { display: inline; } }
+.ar { margin: 0; min-width: 0; }
+.ar-stage { position: relative; container-type: inline-size; }
+.ar-drawing { display: block; width: 100%; height: auto; overflow: visible; }
+.ar-seg { cursor: pointer; outline: none; transform-origin: 200px 200px; transition: opacity var(--t-fast), transform var(--t-fast); }
+.ar-fill { fill: var(--c); }
+.ar-seg:focus-visible .ar-fill { stroke: var(--anthracite); stroke-width: 3; }
+.ar-badge { fill: var(--white); }
+.ar-label { font-family: var(--mono); font-weight: 500; letter-spacing: 1.5px; fill: var(--white); pointer-events: none; }
+.ar-hub { fill: var(--white); stroke: var(--line); }
+.ar-icon { position: absolute; width: 6.3%; aspect-ratio: 1; transform: translate(-50%, -50%); pointer-events: none; transition: opacity var(--t-fast); }
+.ar-icon svg { display: block; width: 100%; height: 100%; }
+.ar[data-active] .ar-seg:not(.is-on), .ar[data-active] .ar-icon:not(.is-on) { opacity: 0.3; }
+.ar-seg.is-on { transform: scale(1.03); }
+.ar-centre { position: absolute; left: 50%; top: 50%; width: 46%; height: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; text-align: center; }
+.ar-centre > * { grid-area: 1 / 1; }
+.ar-rest { margin: 0; display: grid; gap: 4px; transition: opacity var(--t-fast); }
+.ar-rest .mono { font-size: var(--fs-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--cyan-dark); }
+.ar-rest strong { font-size: var(--fs-lg); line-height: 1.2; color: var(--anthracite); }
+.ar[data-active] .ar-rest { opacity: 0; }
+.ar-detail { display: flex; flex-direction: column; align-items: center; opacity: 0; visibility: hidden; transition: opacity var(--t-fast), visibility var(--t-fast); }
+.ar-detail.is-on { opacity: 1; visibility: visible; }
+.ar-detail-icon { width: 34px; height: 34px; }
+.ar .ar-detail-name { margin: 4px 0 0; font-size: var(--fs-md); font-weight: 600; line-height: 1.25; color: var(--anthracite); }
+.ar .ar-detail-sub { margin: 4px 0 0; font-size: var(--fs-xs); letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.45; color: var(--cyan-dark); }
+.ar-detail ul, .ar-card ul { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 4px; text-align: left; position: relative; }
+.ar-detail ul::before { content: ''; position: absolute; top: -8px; left: 50%; width: 36px; margin-left: -18px; border-top: 3px solid var(--c); }
+.ar-detail li, .ar-card li { position: relative; padding-left: 20px; font-size: var(--fs-sm); line-height: 1.4; color: var(--text-2); }
+.ar-detail li::before, .ar-card li::before { content: ''; position: absolute; left: 2px; top: 0.35em; width: 9px; height: 5px; border-left: 2px solid var(--cyan); border-bottom: 2px solid var(--cyan); transform: rotate(-45deg); }
+.ar-detail .text-link { margin-top: 12px; }
+.ar-below { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 20px; }
+.ar-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; display: flex; flex-direction: column; }
+.ar-card-head { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; align-items: center; }
+.ar-card .ar-detail-name { margin: 0; }
+.ar-card .text-link { margin-top: auto; padding-top: 12px; }
+/* With script: centre details on a wide ring, one card below a narrow one. */
+.ar-js .ar-below { display: none; }
+@container (max-width: 539px) {
+  .ar-detail { display: none; }
+  .ar[data-active] .ar-rest { opacity: 1; }
+}
+@media (max-width: 960px) {
+  .ar-grid { grid-template-columns: minmax(0, 600px); }
+}
+@media (max-width: 620px) {
+  .ar-js .ar-below { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .ar-js .ar-card { display: none; }
+  .ar-js .ar-card.is-on { display: flex; }
+}
+@media (prefers-reduced-motion: reduce) { .ar-seg.is-on { transform: none; } }

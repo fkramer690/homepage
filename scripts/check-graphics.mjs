@@ -9,7 +9,8 @@
 // 0.6 em wide, so label widths are exact without a browser.
 // Checked: the card drawings of the blog overview (src/lib/card-drawings.ts, every
 // article in both languages), the figure on the masterclass hubs and the partner flow
-// block (```partnerfluss, src/lib/content-blocks.mjs). Any other inline SVG with <text> fails until its class is
+// block (```partnerfluss, src/lib/content-blocks.mjs) and the segment labels of the
+// approach ring (src/lib/approach-ring.ts, labels on arcs). Any other inline SVG with <text> fails until its class is
 // listed here, so a new kind of drawing cannot slip past unchecked.
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
@@ -18,7 +19,8 @@ const dist = new URL('../dist/', import.meta.url).pathname;
 const CHECKED = ['mc-drawing', 'pf-drawing'];
 // card-drawing: checked straight from src/lib/card-drawings.ts below.
 // flowchart: Mermaid diagrams, scripts/render-diagrams.mjs checks their labels when it renders them.
-const SKIPPED = ['card-drawing', 'flowchart'];
+// ar-drawing: labels on arcs, checked from src/lib/approach-ring.ts below.
+const SKIPPED = ['card-drawing', 'flowchart', 'ar-drawing'];
 const ADVANCE = 0.6; // IBM Plex Mono: 600 of 1000 units per glyph
 const ASCENT = 0.78; // top of capitals and umlauts above the baseline, in em
 const DESCENT = 0.2; // descenders below the baseline, in em
@@ -179,6 +181,14 @@ const { cardDrawings } = await import('../src/lib/card-drawings.ts');
 for (const [key, lang, inner] of cardDrawings()) {
   count++;
   for (const p of check(`<svg viewBox="0 0 320 160">${inner}</svg>`)) errors.push(`card drawing "${key}" (${lang}), src/lib/card-drawings.ts: ${p}`);
+}
+
+// Approach ring (service overview): every segment label fits its arc and clears its icon.
+const { approachRing } = await import('../src/data/approach-ring.ts');
+const { ringProblems } = await import('../src/lib/approach-ring.ts');
+for (const [lang, ring] of Object.entries(approachRing)) {
+  count++;
+  for (const p of ringProblems(ring.items.map((it) => it.name.toUpperCase()))) errors.push(`approach ring (${lang}), src/data/approach-ring.ts: ${p}`);
 }
 
 // Every other inline drawing on the built pages.

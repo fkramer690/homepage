@@ -444,6 +444,45 @@ photo and crop per project in `refPhotos`.
   logo and period on top of the panel, then *Rolle / Umfang / Aufgaben* with the tasks as tick list
   (details in `julianeProjectDetails`).
 
+## Ring with details in the centre (service overview, "Vier Bausteine")
+
+Chosen 2026-11-11 after two rounds, inspired by a "Managed CRM" ring Fabian had seen
+elsewhere and rebuilt in the site style (variant 2 of round 2; Fabian: "2 finde ich
+gut", after the centre box was laid out cleanly). Built in
+`src/components/ApproachRing.astro`, texts in `src/data/approach-ring.ts`, geometry in
+`src/lib/approach-ring.ts`, CSS `.ar-*`.
+
+- **At rest only the ring:** four segments in brand colours (cyan, cyan-dark, text-2,
+  anthracite), each with a white icon badge near the inner edge and its name in mono
+  capitals along the outer arc (lower half mirrored, so nothing stands on its head).
+  The white centre names the whole ("Salesforce für Hersteller").
+- **Details on hover:** while the pointer rests on a segment, the others fade and the
+  centre shows icon, name, cyan mono subtitle, a short line in the segment colour,
+  three or four short points and "Zur Leistung →", all centred in the circle. Click on
+  a segment opens its service page; keyboard: Tab focuses a segment, Enter opens it.
+- **Phones and narrow rings** (below 540px): tap shows the segment's card below the
+  ring. Without script all four cards stand below the ring.
+- Points stay short (they must fit the circle); labels are checked by
+  `scripts/check-graphics.mjs` (`ringProblems`).
+- Fits: three to five equal building blocks of one offer where each leads to its own
+  page, not a sequence (for an order use the cycle below).
+
+## Cycle with labelled stations and a detail panel (approved, not built yet)
+
+Variant 3 of the same round; Fabian 2026-11-11: "3 kann so bleiben", keep it for other
+pages. Draft: `/mnt/project-files/grafiken/managed-crm/entwuerfe-runde-2.html` (project
+files), section 3.
+
+- A thin grey ring with four cyan arcs and arrowheads between four white station
+  circles (icon, small dark number badge), the name of each station next to it on the
+  outside; a cyan dot slowly runs around the ring (hidden with reduced motion). The
+  centre names the loop ("Jedes Release / ein Durchlauf").
+- To the right a dashed panel with a short hint; on hover over a station its card
+  (icon, name, mono subtitle, sentence, tick list, link) replaces the hint. On phones
+  the card stands below the cycle after a tap.
+- Fits: anything that repeats in a fixed order (release cycle, hypercare loop,
+  continuous improvement, the ADKAR stages), where the numbers carry the order.
+
 ## References from the graphics review (30.10.2026)
 
 Rated 1 by Fabian in the first graphics review (register `docs/graphics-review.json`,

@@ -285,6 +285,7 @@
     "icon:team": {"title": "Icon-Bibliothek (42)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "icon:tick": {"title": "Icon-Bibliothek (42)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "icon:unlinked": {"title": "Icon-Bibliothek (42)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
+    "layout:bausteine-ring": {"title": "Vier Bausteine als Ring, Details in der Mitte beim Überfahren (Leistungsübersicht)", "proposal": 1, "rating": null, "note": "Fabian wählte am 2026-11-11 Variante 2 aus Runde 2; Kreislauf (Variante 3) für andere Seiten vorgemerkt, docs/layouts.md"},
     "layout:blog-suche": {"title": "Suchleiste über den Artikeln mit „Oft gesucht“", "proposal": 1, "rating": null},
     "layout:blog-filter": {"title": "Filter-Seitenspalte mit Autor und Thema", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "layout:deal": {"title": "Zwei Karten mit Icon-Listen („Der Deal“)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
