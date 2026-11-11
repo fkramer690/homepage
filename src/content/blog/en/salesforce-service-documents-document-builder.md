@@ -106,6 +106,10 @@ Applied to Field Service, the inventory splits into two groups. The service repo
 
 Organizations with many short jobs also produce the most service reports, so the standard functionality covers the bulk of the volume where it matters most.
 
+```praxis
+At my Field Service client, Document Builder produces the service report today. What was missing first were layout details and automatic sending of the report to the customer. We added both: custom components for the layout and a flow for sending.
+```
+
 ## Document Builder or Document Generation?
 
 - **Classic service reports.** The older template editor in Field Service. Proven and simple, up to 20 signature blocks, but little design freedom. Section titles cannot be translated and the action is not available in the Salesforce mobile app.
