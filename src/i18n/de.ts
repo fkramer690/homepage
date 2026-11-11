@@ -3,7 +3,7 @@ import type { Dict } from './en';
 export const de: Dict = {
   lang: 'de',
   meta: {
-    title: 'Salesforce-Architekt für die Fertigung | FK Solution Design',
+    title: 'FK Solution Design | Salesforce-Architekt für die Fertigung',
     description:
       'Unabhängiger Salesforce Enterprise Architect für Fertigungsunternehmen: After-Sales, Service, Field Service und B2B-Vertrieb, auf Kundenseite.',
   },

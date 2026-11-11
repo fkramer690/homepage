@@ -37,7 +37,7 @@ const courseVideo = (video: CourseVideo | null) => video;
 export const en = {
   lang: 'en',
   meta: {
-    title: 'Salesforce architect for manufacturers | FK Solution Design',
+    title: 'FK Solution Design | Salesforce architect for manufacturers',
     description:
       'Independent Salesforce Enterprise Architect for manufacturers: after-sales, service, Field Service and B2B sales, on the client side, tied to no vendor.',
   },
