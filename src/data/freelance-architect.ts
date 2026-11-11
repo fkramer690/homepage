@@ -108,7 +108,7 @@ export const freelanceArchitect = {
       termsLabel: 'Konditionen',
       terms: [
         { t: 'Nach Aufwand', d: 'Tagessatz 1.200 Euro netto bei Arbeit remote, vor Ort plus Pauschale oder Reisekosten. Monatlich abgerechnet mit Tätigkeitsnachweis.' },
-        { t: 'Vor Ort und remote', d: 'Ich arbeite gern beim Kunden vor Ort. Die Anreise gehört in die Kalkulation.' },
+        { t: 'Vor Ort und remote', d: 'Ich arbeite gern beim Kunden vor Ort, von Köln aus vor allem in NRW, Rheinland-Pfalz und Baden-Württemberg. Die Anreise gehört in die Kalkulation.' },
         { t: 'Auch über Recruiter', d: 'Viele Projekte werden über Personaldienstleister vermittelt.', link: 'partner/recruiter/', linkText: 'So arbeite ich mit Recruitern' },
       ] as { t: string; d: string; link?: string; linkText?: string }[],
     },
@@ -116,6 +116,7 @@ export const freelanceArchitect = {
     faq: [
       { q: 'Was macht ein freiberuflicher Salesforce Architect?', a: 'Er arbeitet auf der Seite des Kunden: Er bereitet Architekturentscheidungen vor und dokumentiert sie, legt Standards für alle Implementierungspartner fest und prüft Entwürfe und Pull Requests. Die Umsetzung selbst liefern die Partner.' },
       { q: 'Was kostet ein freiberuflicher Salesforce Architect?', a: 'Mein Tagessatz beträgt 1.200 Euro netto für Arbeit remote. Für Tage vor Ort berechne ich zusätzlich eine Pauschale oder die Reisekosten. Abgerechnet wird monatlich nach Aufwand über die FK Solution Design GmbH, meist mit 2 bis 5 Tagen pro Woche.' },
+      { q: 'Arbeiten Sie auch vor Ort beim Kunden?', a: 'Ja. Ich arbeite von Köln aus, vor Ort vor allem in NRW, Rheinland-Pfalz und Baden-Württemberg. Zu Projektbeginn komme ich häufiger, später genügt meist ein Blocktermin im Monat. Die übrige Arbeit erledige ich remote.' },
       { q: 'Ersetzt ein freiberuflicher Architekt den Implementierungspartner?', a: 'Nein. Für die Umsetzung brauchen Sie ein Team, das baut, testet und betreibt. Der Architekt auf Kundenseite sorgt dafür, dass dieses Team nach Ihren Regeln baut und Sie die Entscheidungen treffen.' },
       { q: 'Für welche Unternehmen und Clouds arbeiten Sie?', a: 'Für Hersteller in Fertigung, Service, After-Sales und B2B-Vertrieb. Schwerpunkte sind Sales und Service Cloud, Field Service, Experience Cloud, Manufacturing Cloud, CPQ, B2B Commerce und die Integration mit SAP.' },
       { q: 'Kann ich Sie auch über einen Personaldienstleister beauftragen?', a: 'Ja. Viele meiner Projekte werden über Recruiter vermittelt. Wie ich dabei arbeite, steht auf der Seite für Recruiter.' },
@@ -210,7 +211,7 @@ export const freelanceArchitect = {
       termsLabel: 'Terms',
       terms: [
         { t: 'By effort', d: 'Day rate EUR 1,200 net for remote work, on site plus a flat fee or travel expenses. Billed monthly with a timesheet.' },
-        { t: 'On site and remote', d: 'I am happy to work on site at the client. Travel belongs in the calculation.' },
+        { t: 'On site and remote', d: 'I am happy to work on site at the client, from Cologne mainly in North Rhine-Westphalia, Rhineland-Palatinate and Baden-Württemberg. Travel belongs in the calculation.' },
         { t: 'Also through recruiters', d: 'Many projects are placed through staffing agencies.', link: 'partners/recruiters/', linkText: 'How I work with recruiters' },
       ] as { t: string; d: string; link?: string; linkText?: string }[],
     },
@@ -218,6 +219,7 @@ export const freelanceArchitect = {
     faq: [
       { q: 'What does a freelance Salesforce architect do?', a: 'He works on the client’s side: he prepares architecture decisions and documents them, sets standards for every implementation partner and reviews designs and pull requests. The partners deliver the implementation itself.' },
       { q: 'What does a freelance Salesforce architect cost?', a: 'My day rate is EUR 1,200 net for remote work. For on-site days, I also charge a flat fee or travel expenses. Billing is monthly by effort through FK Solution Design GmbH, usually for 2 to 5 days a week.' },
+      { q: 'Do you work on site at the client?', a: 'Yes. I work from Cologne, on site mainly in North Rhine-Westphalia, Rhineland-Palatinate and Baden-Württemberg. At the start of a project I come more often; later one block session a month is usually enough. The remaining work I do remotely.' },
       { q: 'Does a freelance architect replace the implementation partner?', a: 'No. For the delivery you need a team that builds, tests and runs. The architect on the client side makes sure that team builds by your rules and that you make the decisions.' },
       { q: 'Which companies and clouds do you work for?', a: 'For manufacturers in production, service, after-sales and B2B sales. Focus areas are Sales and Service Cloud, Field Service, Experience Cloud, Manufacturing Cloud, CPQ, B2B Commerce and integration with SAP.' },
       { q: 'Can I hire you through a staffing agency?', a: 'Yes. Many of my projects are placed through recruiters. How I work with them is on the page for recruiters.' },
