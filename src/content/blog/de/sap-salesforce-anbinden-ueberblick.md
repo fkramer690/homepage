@@ -98,7 +98,7 @@ Für Salesforce heißt das: Kapseln Sie die SAP-Seite hinter einem stabilen fach
 Viele SAP-Schnittstellen funktionieren im Test und scheitern im Alltag. Vor dem Go-live prüfe ich für jede Schnittstelle, ob diese Punkte geklärt sind:
 
 - **Keine Dubletten:** Jeder Auftrag und jede Änderung trägt einen eindeutigen Schlüssel, den der Empfänger prüft, sodass eine wiederholte Anfrage keinen zweiten Auftrag anlegt.
-- **Fehler mit Verantwortlichem:** Technische Fehler werden automatisch wiederholt, fachliche Fehler wie ein gesperrter Kunde landen bei einer benannten Person im Fachbereich.
+- **Fehler mit Verantwortlichem:** Technische Fehler werden automatisch wiederholt, fachliche Fehler wie ein gesperrter Kunde gehen an eine benannte Person im Fachbereich.
 - **Abgleich:** Ein regelmäßiger Vergleich zeigt, ob beide Systeme dieselben Aufträge und Status haben.
 - **Überwachung:** Jemand sieht eine hängende Schnittstelle, bevor Vertrieb oder Service anrufen.
 - **Technischer Benutzer und Anmeldung:** Jede Schnittstelle meldet sich mit einem erkennbaren technischen Benutzer an, der nur die Rechte hat, die er braucht.
