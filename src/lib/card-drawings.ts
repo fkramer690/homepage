@@ -1917,6 +1917,16 @@ const drawings: Record<string, Drawing> = {
     <path d="M166 128H306" stroke="${L}"/>
     ${t(166, 140, l('other languages: often more tokens', 'andere Sprachen: oft mehr Tokens'), { size: 7 })}${t(166, 152, l('prompts: 2,000-token units', 'Prompts: 2.000-Token-Einheiten'), { size: 7 })}`,
 
+  'meshmesh-salesforce-checklist': (l) => `
+    ${t(18, 20, l('MESHMESH · RIGHTS OF THE SIGNED-IN USER', 'MESHMESH · RECHTE DES ANGEMELDETEN NUTZERS'), { fill: D, size: 7 })}
+    ${[l('Plan: reads', 'Plan: liest'), l('Research: reads', 'Research: liest'), l('Build: changes', 'Build: ändert')].map((s, i) => box(18, 30 + i * 28, 96, 22, i === 2 ? C : G) + t(28, 44 + i * 28, s, { fill: i === 2 ? C : G, size: 7 })).join('')}
+    ${check(140, 38)}${t(154, 44, l('agent = one more dev', 'Agent = ein Entwickler mehr'), { size: 7 })}
+    ${cross(144, 62)}${t(154, 66, l('no direct deploy', 'kein Direkt-Deploy'), { size: 7 })}
+    ${[['Branch', 140, 48], ['Pipeline', 198, 52], ['Org', 260, 42]].map(([s, x, w]) => box(x as number, 86, w as number, 22, s === 'Pipeline' ? C : G) + t((x as number) + (w as number) / 2, 100, s as string, { fill: s === 'Pipeline' ? C : G, size: 7, anchor: 'middle' })).join('')}
+    ${arrow(114, 97, 140, C)}${arrow(188, 97, 198)}${arrow(250, 97, 260)}
+    <path d="M18 118H302" stroke="${L}"/>
+    ${tag(18, 126, 120, 'US East · Anthropic')}${t(148, 139, l('beta: 1,000 accounts to 31 Jan 2027', 'Beta: 1.000 Accounts bis 31.01.2027'), { size: 7 })}`,
+
   'sandbox-data-ai-coding-agents': (l) => `
     ${box(14, 58, 72, 44, C)}${t(50, 76, l('CODING AGENT', 'CODING-AGENT'), { fill: C, size: 7.5, anchor: 'middle' })}${t(50, 90, l('read = prompt', 'gelesen = Prompt'), { size: 6.5, anchor: 'middle' })}
     ${[l('Scratch org + seed data', 'Scratch Org + Seed-Daten'), l('Dev sandbox, metadata only', 'Dev-Sandbox, nur Metadaten'), l('Partial Copy masked, read only', 'Partial Copy maskiert, lesend'), l('Full Copy: all prod data', 'Full Copy: alle Prod-Daten')]
