@@ -293,7 +293,7 @@ export const en = {
       whyTitle: 'Why this matters in enterprise projects',
       why: [
         'A certificate does not design an architecture. What it shows is breadth. The architect exams cover large data volumes, sharing models, integration patterns, identity and release management. These are the areas where large Salesforce orgs run into trouble.',
-        'In a program with several implementation partners, each partner knows its own cloud well. Somebody has to see how Sales Cloud, Service Cloud, Field Service and Experience Cloud fit together, and where the platform's limits are. Knowing those limits is what lets me say early that a requirement belongs in the ERP, the telephony system or a separate tool.',
+        'In a program with several implementation partners, each partner knows its own cloud well. Somebody has to see how Sales Cloud, Service Cloud, Field Service and Experience Cloud fit together, and where the limits of the platform are. Knowing those limits is what lets me say early that a requirement belongs in the ERP, the telephony system or a separate tool.',
         'Manufacturing projects rarely fail inside Salesforce. They fail at the edges: the ERP interface, the middleware, single sign-on, product and price data from other systems. The integration, data and identity credentials cover those edges, and MuleSoft, AWS and the iSAQB software architecture certificate cover the systems on the other side.',
         'Salesforce ships three releases a year, and certifications have to be maintained with each release cycle. Keeping 25 of them current means I follow what changes in the platform, including the parts a single project never touches.',
       ],
