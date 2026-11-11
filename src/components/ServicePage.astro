@@ -1,4 +1,5 @@
 ---
+import { withBrand } from '../lib/page-title.mjs';
 import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
@@ -70,8 +71,7 @@ const url = new URL(serviceHref(service), Astro.site).href;
 const base = import.meta.env.BASE_URL;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
-const suffix = ' | FK Solution Design';
-const pageTitle = title.length + suffix.length <= 60 ? title + suffix : title;
+const pageTitle = withBrand(title);
 const ogImage = `${base}og/${lang}/services/${service.data.slug}.png`;
 // The card title on the home page is the short name of the service.
 const name = t.services.items[order - 1]?.title ?? title;

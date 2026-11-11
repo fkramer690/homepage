@@ -114,4 +114,4 @@ Registrierung zur Pflicht machen
   Als festen Schritt im Händlerprozess.
 ```
 
-Die Quote aus dem ersten Schritt berechne ich als Seriennummern mit Betreiber und Startdatum geteilt durch alle Anträge; an ihr messe ich das Projekt. Einen vollständigen Überblick zum After-Sales finden Sie im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.
+Die Quote aus dem ersten Schritt berechne ich als Seriennummern mit Betreiber und Startdatum geteilt durch alle Anträge; an ihr messe ich das Projekt. Einen vollständigen Überblick zum After-Sales finden Sie im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud. Wie Installed Base, Field Service, Ersatzteile und Händlerportal bei Maschinen- und Anlagenbauern zusammenspielen, beschreibt die Seite [Salesforce für Maschinen- und Anlagenbau](../../salesforce-maschinenbau/).

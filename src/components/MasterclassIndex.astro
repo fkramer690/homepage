@@ -1,4 +1,5 @@
 ---
+import { withBrand } from '../lib/page-title.mjs';
 // Overview of all masterclasses (/masterclass/, /en/masterclass/), linked from the
 // main menu. Side column with intro, figures and points, then one row per
 // masterclass in a white box, each leading to its hub; the list comes from
@@ -29,8 +30,7 @@ const masterclasses = await getMasterclasses(lang);
 const base = import.meta.env.BASE_URL;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const url = abs(masterclassesIndex(lang));
-const suffix = ' | FK Solution Design';
-const pageTitle = o.metaTitle.length + suffix.length <= 60 ? o.metaTitle + suffix : o.metaTitle;
+const pageTitle = withBrand(o.metaTitle);
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 const ogImage = `${base}og/${lang}/masterclasses.png`;
 const totalChapters = masterclasses.reduce((sum, mc) => sum + mc.chapters, 0);

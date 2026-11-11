@@ -1,6 +1,6 @@
 ---
 title: "Change-Management-Modelle: Lewin, Kotter, ADKAR im Vergleich"
-metaTitle: "Change-Management-Modelle im Vergleich: welches passt wann?"
+metaTitle: "Change-Management-Modelle: Lewin, Kotter, ADKAR"
 description: "Lewin, Kotter, ADKAR oder Prosci? Welches Change-Management-Modell zu welcher offenen Frage passt, wo es Grenzen hat und wie sich Modelle kombinieren lassen."
 pubDate: 2026-10-29
 updatedDate: 2026-11-09
