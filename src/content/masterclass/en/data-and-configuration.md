@@ -29,11 +29,11 @@ faq:
 draft: false
 ---
 
-Data and configuration that is not metadata slips through many Salesforce pipelines: Field Service scheduling policies and work rules, operating hours, custom settings records, products and price books. A metadata deployment does not carry them, so they end up as manual release steps. My rule: configuration data lives in the repository and runs through the same pipeline after the metadata deployment, with SFDMU or the data module of a commercial tool. Master data from SAP arrives through the integration, test data as a seed set. Customer data in partial and full sandboxes is masked after every refresh, for example with Salesforce Data Mask & Seed.
+Data and configuration that is not metadata slips through many Salesforce pipelines: Field Service scheduling policies and work rules, operating hours, custom settings records, products and price books. A metadata deployment does not carry them, so they remain manual release steps. My rule: configuration data lives in the repository and runs through the same pipeline after the metadata deployment, with SFDMU or the data module of a commercial tool. Master data from SAP arrives through the integration, test data as a seed set. Customer data in partial and full sandboxes is masked after every refresh, for example with Salesforce Data Mask & Seed.
 
 ## Which data counts as configuration, and which does not?
 
-[Chapter 6](../quality-tests-reviews/) covered how metadata reaches production with checks. A Salesforce org also depends on records that drive behaviour. I split them into four groups, because each one needs a different route:
+[Chapter 6](../quality-tests-reviews/) covered how metadata reaches production with checks. A Salesforce org also depends on records that drive behavior. I split them into four groups, because each one needs a different route:
 
 | Group | Manufacturing examples | Source of truth | Route into the orgs |
 |---|---|---|---|
@@ -42,9 +42,9 @@ Data and configuration that is not metadata slips through many Salesforce pipeli
 | Test data | 30 dealers, 200 assets, edge cases from service | repository | seeded into scratch orgs and developer sandboxes |
 | Customer data | cases, work orders, contracts, warranty claims | production | copied into partial and full, then masked |
 
-The Field Service examples are real. In the Trailhead module on [scheduling policies](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies), you create work rules from their own tab and pick a record type; the policy brings work rules and service objectives together for the scheduling engine. Operating hours, according to the [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/api/sforce_api_objects_operatinghours.htm), are the `OperatingHours` object, which sets when a service territory, a resource or an account is available for work. If someone changes a work rule in the integration sandbox so that technicians only get assets that match their skills, that change is a record. No metadata deployment carries it forward.
+The Field Service examples are real. In the Trailhead module on [scheduling policies](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies), you create work rules from their own tab and pick a record type; the policy brings work rules and service objectives together for the scheduling engine. Operating hours, according to the [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/api/sforce_api_objects_operatinghours.htm), are the `OperatingHours` object, which sets when a service territory, a resource or an account is available for work. If someone changes a work rule in the integration sandbox so that technicians only receive jobs on assets that match their skills, that change is a record. No metadata deployment carries it forward.
 
-The most important line runs between configuration data and master data. A price book, per the [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_pricebook2.htm), holds the list of products an org sells. If that list comes from SAP, a deployment from a sandbox to production would be a second, competing route. That is why I never let master data run through the release pipeline into production.
+The most important line runs between configuration data and master data. A price book, per the [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_pricebook2.htm), holds the list of products an org sells. If that list comes from SAP, a deployment from a sandbox to production would be a second, competing route. That is why I never send master data through the release pipeline into production.
 
 ## Custom metadata types, custom settings and where deployment stops
 
@@ -62,7 +62,7 @@ In an existing org I would not rebuild every custom setting. I would write into 
 
 ## Configuration data runs through the same pipeline
 
-**External IDs instead of Salesforce IDs.** A work rule has a different Salesforce ID in every org. A data step has to recognise the record by a business key, or it creates duplicates on the second run. I give every configuration object a field marked as external ID, holding a readable code such as `WR_SKILL_HYDRAULICS`.
+**External IDs instead of Salesforce IDs.** A work rule has a different Salesforce ID in every org. A data step has to recognize the record by a business key, or it creates duplicates on the second run. I give every configuration object a field marked as external ID, holding a readable code such as `WR_SKILL_HYDRAULICS`.
 
 **The data lives in the repository.** Then the same rules apply as for code: pull request, review, history. A changed threshold shows up in the diff, and nobody has to guess who changed it and when.
 
@@ -70,7 +70,7 @@ In an existing org I would not rebuild every custom setting. I would write into 
 
 ### SFDMU and sfdx-hardis
 
-[SFDMU](https://help.sfdmu.com/) is an open-source Salesforce CLI plugin for data migration, licensed under BSD-3 according to its [npm entry](https://www.npmjs.com/package/sfdmu). It copies records directly from org to org or from CSV files, supports insert, upsert, update and delete, handles several related objects in one run and is configured through a single `export.json` file. Field mapping, anonymisation and composite external ID keys come on top. Processing runs locally or on the pipeline runner, with no cloud service in between.
+[SFDMU](https://help.sfdmu.com/) is an open-source Salesforce CLI plugin for data migration, licensed under BSD-3 according to its [npm entry](https://www.npmjs.com/package/sfdmu). It copies records directly from org to org or from CSV files, supports insert, upsert, update and delete, handles several related objects in one run and is configured through a single `export.json` file. It also supports field mapping, anonymization and composite external ID keys. Processing runs locally or on the pipeline runner, with no cloud service in between.
 
 sfdx-hardis runs SFDMU through [deployment actions](https://sfdx-hardis.cloudity.com/salesforce-devops-work-on-user-story-deployment-actions/). How deployment actions fit into the pull request flow is covered in [chapter 5](../building-the-pipeline/). In the free sfdx-hardis training, deployment actions for reference data are part of level 2; my notes are in [what I learned from the free sfdx-hardis training](../../../blog/sfdx-hardis-free-devops-training/), and an introduction is in [sfdx-hardis: open-source Salesforce DevOps explained](../../../blog/sfdx-hardis-open-source-salesforce-devops/).
 
@@ -89,11 +89,11 @@ The commercial platforms have their own data modules with a user interface. Acco
 
 | Tool | What it does with data | Keep in mind |
 |---|---|---|
-| [Gearset data deployments](https://docs.gearset.com/en/articles/2529745-running-your-first-data-deployment) | dependencies up to 15 levels deep, matching on external ID, masking with fake values, flows, triggers and validation rules can be switched off during the run, [templates](https://gearset.com/blog/data-deployment-templates/), [CPQ and Vlocity configuration](https://gearset.com/product/data-deploy) | part of the "Sandbox seeding & compliance" add-on, not the deployment licence; per [Gearset](https://docs.gearset.com/en/articles/1376661-data-deployments-with-gearset) no rollback, no deletion, production disabled by default |
-| [Copado Data Deploy](https://www.copado.com/platform/deliver/) | data templates for configuration records with complex relationships, ready-made templates from the DevOps Exchange, masking of sensitive values | in Copado Essentials, per its [documentation](https://docs.essentials.copado.com/en/articles/6325474-how-to-deploy-relational-data-with-data-deploy-essentials), an Essentials Plus option with a per-user licence |
+| [Gearset data deployments](https://docs.gearset.com/en/articles/2529745-running-your-first-data-deployment) | dependencies up to 15 levels deep, matching on external ID, masking with fake values, flows, triggers and validation rules can be switched off during the run, [templates](https://gearset.com/blog/data-deployment-templates/), [CPQ and Vlocity configuration](https://gearset.com/product/data-deploy) | part of the "Sandbox seeding & compliance" add-on, not the deployment license; per [Gearset](https://docs.gearset.com/en/articles/1376661-data-deployments-with-gearset) no rollback, no deletion, production disabled by default |
+| [Copado Data Deploy](https://www.copado.com/platform/deliver/) | data templates for configuration records with complex relationships, ready-made templates from the DevOps Exchange, masking of sensitive values | in Copado Essentials, per its [documentation](https://docs.essentials.copado.com/en/articles/6325474-how-to-deploy-relational-data-with-data-deploy-essentials), an Essentials Plus option with a per-user license |
 | [Flosum Data Migrator](https://docs.flosum.com/data-migrator) | templates with objects, fields and filters, relationships preserved, masking, triggers can be switched off | error report per failed record |
 
-What these tools do well: an admin sees before the run which related records will go along and does not have to write an `export.json`. For CPQ configuration with many nested objects, that is a real advantage. Which tool fits your programme overall is decided in [chapter 4](../devops-tools-compared/); for data the same rule applies as for metadata. The tool runs in your name, and the data templates sit with you, not in a partner's account. The reasons are in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
+What these tools do well: an admin sees before the run which related records will be included and does not have to write an `export.json`. For CPQ configuration with many nested objects, that is a real advantage. Which tool fits your program overall is decided in [chapter 4](../devops-tools-compared/); for data the same rule applies as for metadata. The tool's contract is in your name, and the data templates sit with you, not in a partner's account. The reasons are in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
 
 One point applies to every tool:
 
@@ -107,7 +107,7 @@ Partial and full sandboxes hold real customer data after every refresh. Which en
 
 Salesforce sells [Data Mask & Seed](https://www.salesforce.com/platform/data-masking/) for this. According to Trailhead, [Data Mask](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/get-to-know-salesforce-data-mask) is a managed package you install in production that masks data in full and partial sandboxes; production stays unchanged, and masked data cannot be unmasked. Per field, the [configuration module](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/install-and-configure-salesforce-data-mask) lets you choose random characters or numbers, a replacement from a library such as names or addresses, or deletion. Checkbox, lookup and picklist fields are not supported. The configuration carries over on refresh, and you start the run in the sandbox.
 
-The seed part, according to the product page, fills developer, developer pro, partial and full sandboxes with records filtered by seed templates. Mask and seed jobs can be scheduled daily, weekly or monthly, and seeding bypasses automations. The page lists no price. Gearset, Copado and Flosum also mask data in transit, and SFDMU can anonymise. The difference: Data Mask works on an existing sandbox copy, the others mask data while they move it.
+The seed part, according to the product page, fills developer, developer pro, partial and full sandboxes with records filtered by seed templates. Mask and seed jobs can be scheduled daily, weekly or monthly, and seeding bypasses automations. The page lists no price. Gearset, Copado and Flosum also mask data in transit, and SFDMU can anonymize. The difference: Data Mask works on an existing sandbox copy, the others mask data while they move it.
 
 My order after every refresh of a partial or full sandbox:
 
@@ -130,7 +130,7 @@ Coding agents get a stricter rule, described in [chapter 8 of the AI masterclass
 
 Assume a machine builder introducing Field Service for maintenance and repairs at customer sites. Two partners work on the same org, and SAP supplies products, material numbers and prices. All numbers are assumptions.
 
-Without a data step in the pipeline, go-live looks like this: the metadata deploys cleanly, then a consultant spends two days re-entering 6 scheduling policies, 25 work rules, 40 operating hours records and 15 service territories by hand in production, working from a spreadsheet taken from the UAT sandbox. Afterwards three rules differ from the tested state, which only shows when technicians get jobs outside their territory.
+Without a data step in the pipeline, go-live looks like this: the metadata deploys cleanly, then a consultant spends two days re-entering 6 scheduling policies, 25 work rules, 40 operating hours records and 15 service territories by hand in production, working from a spreadsheet taken from the UAT sandbox. Afterwards three rules differ from the tested state, which only becomes apparent when technicians are assigned jobs outside their territory.
 
 With a data step, the same go-live looks different:
 
@@ -149,7 +149,7 @@ I would write these into every contract:
 1. Configuration data is never edited directly in a stage org, only in the repository.
 2. Every configuration object has an external ID.
 3. New configuration is built as a custom metadata type unless there is a business reason against it.
-4. Master data from SAP never runs through the release pipeline into production.
+4. Master data from SAP never goes through the release pipeline into production.
 5. No partner gets access to a sandbox before masking has run after the refresh.
 
 When to schedule data steps in the release calendar, and how the three Salesforce releases a year fit in, is covered in [chapter 8](../release-planning-salesforce-releases/). Data steps and sandbox levels are part of my work in [DevOps and release management](../../../services/devops-release-management/).

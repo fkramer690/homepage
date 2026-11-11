@@ -7,6 +7,9 @@ import PhoneLine from './PhoneLine.astro';
 import Icon from './Icon.astro';
 import { Image } from 'astro:assets';
 import Photo from './Photo.astro';
+import type { PhotoKey } from '../data/photos';
+import WheelSection from './WheelSection.astro';
+import { pageWheels } from '../data/page-wheels';
 import portrait from '../assets/portrait.png';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
@@ -14,19 +17,40 @@ import { contactHref, contactExternal } from '../site';
 import { freelanceArchitect, freelanceArchitectPaths } from '../data/freelance-architect';
 import { homeHref, localHref } from '../lib/paths';
 
+// Also renders the industry page for machinery manufacturers (src/data/maschinenbau.ts) and the
+// Field Service consultant page (src/data/field-service-berater.ts):
+// same structure, other content, paths, preview image and photo.
 interface Props {
   lang: 'en' | 'de';
+  content?: typeof freelanceArchitect;
+  paths?: { de: string; en: string };
+  og?: string;
+  photo?: PhotoKey;
+  // Optional ring after the key figures (src/data/page-wheels.ts).
+  wheel?: keyof typeof pageWheels;
 }
-const { lang } = Astro.props;
+const { lang, content = freelanceArchitect, paths = freelanceArchitectPaths, og = 'freelance-architect', photo = '07-rundgang-produktion-v01', wheel } = Astro.props;
 const t = lang === 'de' ? de : en;
-const c = freelanceArchitect[lang];
+const c = content[lang];
 const base = import.meta.env.BASE_URL;
-const alternates = { en: localHref('en', freelanceArchitectPaths.en), de: localHref('de', freelanceArchitectPaths.de) };
+const alternates = { en: localHref('en', paths.en), de: localHref('de', paths.de) };
 const url = new URL(alternates[lang], Astro.site).href;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
-const ogImage = `${base}og/${lang}/freelance-architect.png`;
+const ogImage = `${base}og/${lang}/${og}.png`;
 const href = (path: string) => localHref(lang, path);
+const pw = wheel ? pageWheels[wheel][lang] : undefined;
+const wheelData = pw && {
+  kind: 'ring' as const,
+  id: `ring-${wheel}-${lang}`,
+  title: pw.title,
+  lead: pw.lead,
+  hint: pw.hint,
+  hintTouch: pw.hintTouch,
+  label: pw.label,
+  centre: pw.centre,
+  items: pw.items.map((it) => ({ ...it, href: href(it.link), more: pw.more })),
+};
 
 const schema = {
   '@context': 'https://schema.org',
@@ -83,6 +107,8 @@ const schema = {
       </ul>
     </div>
   </section>
+
+  {wheelData && <WheelSection wheel={wheelData} alt sectionId="areas" />}
 
   <section class="section" id="situations">
     <div class="container">
@@ -149,7 +175,7 @@ const schema = {
           </ul>
           <p class="fa-practice-text">{c.practice.text}</p>
         </div>
-        <figure class="hero-photo"><Photo photo="07-rundgang-produktion-v01" lang={lang} sizes="640px" /></figure>
+        <figure class="hero-photo"><Photo photo={photo} lang={lang} sizes="640px" /></figure>
       </div>
     </div>
   </section>

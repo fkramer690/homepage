@@ -1,4 +1,5 @@
 ---
+import { withBrand } from '../lib/page-title.mjs';
 import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
@@ -9,6 +10,8 @@ import ContactBrief from './ContactBrief.astro';
 import ReadingGrid from './ReadingGrid.astro';
 import VideoCard from './VideoCard.astro';
 import PostMeta from './PostMeta.astro';
+import CallHint from './CallHint.astro';
+import ProseWithHints from './ProseWithHints.astro';
 import { getContactBrief } from '../lib/contact-briefs';
 import { render } from 'astro:content';
 import { en } from '../i18n/en';
@@ -47,12 +50,13 @@ const url = new URL(postHref(post), Astro.site).href;
 const base = import.meta.env.BASE_URL;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const brief = getContactBrief(lang, post.data.contactBrief, post.data.categories[0]);
+// The booking box in the side column is left out: the two call hints in the text
+// (CallHint.astro) and the contact section at the end carry the booking link.
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
-// Keep the <title> within the ~60 characters search results show.
+// Keep the <title> within what search results show (60 characters, ~580 px).
 // metaTitle (optional) replaces the H1 in the search title only.
-const suffix = ' | FK Solution Design';
 const searchTitle = post.data.metaTitle ?? title;
-const pageTitle = searchTitle.length + suffix.length <= 60 ? searchTitle + suffix : searchTitle;
+const pageTitle = withBrand(searchTitle);
 const modified = (updatedDate ?? pubDate).toISOString();
 // Juliane's articles name her as author and send the contact form with her name in the subject.
 // A co-author (frontmatter coAuthor) is named in the byline, the structured data and in a shared author box.
@@ -132,13 +136,13 @@ const schema = {
   </Fragment>
   <article class="section post">
     <div class="container">
-      <a class="post-back" href={blogIndex(lang)}>← {t.blog.back}</a>
+      <a class="post-back" data-nosnippet href={blogIndex(lang)}>← {t.blog.back}</a>
       {seriesInfo && seriesRef && (
         <p class="post-kicker"><span class="post-pill">{partLabel(seriesRef.part)}</span><a href="#series">{t.blog.series} {seriesInfo[lang]}</a></p>
       )}
       <h1>{title}</h1>
       <PostMeta lang={lang} authors={coAuthorId ? [authorId, coAuthorId] : [authorId]} pubDate={pubDate} updatedDate={updatedDate} minutes={readingMinutes(post)} />
-      <ReadingGrid t={t} headings={toc} cta={title}>
+      <ReadingGrid t={t} headings={toc} cta={false}>
         {video && <VideoCard t={t} part="card" video={video} class="video-card-side" slot="side" />}
         <aside class="post-takeaways" aria-label={t.blog.takeaways}>
           <p class="label mono">{t.blog.takeaways}</p>
@@ -147,9 +151,11 @@ const schema = {
           </ul>
         </aside>
         {video && <VideoCard t={t} part="card" video={video} class="video-card-inline" />}
-        <div class="prose">
+        <ProseWithHints>
           <Content />
-        </div>
+          <CallHint slot="hint1" kicker={t.blog.callHintKicker} title={brief.title} text={brief.text} label={t.nav.cta} newTab={t.nav.newTab} subject={title} />
+          <CallHint slot="hint2" kicker={t.blog.callHintPrepKicker} title={t.blog.callHintPrepTitle} text={`${brief.bring[1] ?? brief.bring[0]}.`} label={t.nav.cta} newTab={t.nav.newTab} subject={title} />
+        </ProseWithHints>
         <section class="post-faq" aria-labelledby="faq">
           <h2 id="faq">{t.blog.faq}</h2>
           {faq.map(({ q, a }) => (

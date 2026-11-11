@@ -1,0 +1,49 @@
+---
+// A section with text on the left and a ring or cycle on the right (layouts "Ring with
+// details in the centre" and "Cycle with labelled stations", docs/layouts.md). Drawing from
+// src/lib/ring-cycle.mjs; used by ApproachRing (service overview), FreelanceArchitectPage
+// (machinery and field service pages) and MasterclassIndex. Texts come from the caller.
+import { ringHtml, cycleHtml } from '../lib/ring-cycle.mjs';
+
+export interface WheelItem {
+  icon: string;
+  name: string;
+  label?: string; // shorter segment label (ring)
+  sub: string;
+  text?: string; // sentence (cycle)
+  points: string[];
+  href?: string;
+  more?: string;
+}
+export interface Wheel {
+  kind: 'ring' | 'cycle';
+  id: string;
+  title: string;
+  lead: string;
+  hint: string;
+  hintTouch: string;
+  label: string;
+  centre: [string, string];
+  intro?: [string, string];
+  items: WheelItem[];
+}
+interface Props {
+  wheel: Wheel;
+  alt?: boolean;
+  sectionId?: string;
+}
+const { wheel: w, alt = false, sectionId } = Astro.props;
+const html = w.kind === 'ring'
+  ? ringHtml({ id: w.id, label: w.label, centre: w.centre, items: w.items })
+  : cycleHtml({ id: w.id, label: w.label, centre: w.centre, intro: w.intro ?? ['', ''], items: w.items });
+---
+<section class:list={['section', { alt }]} id={sectionId}>
+  <div class="container wheel-grid">
+    <div class="wheel-text">
+      <h2>{w.title}</h2>
+      <p class="wheel-lead">{w.lead}</p>
+      <p class="wheel-hint mono"><span class="wheel-hint-pointer">{w.hint}</span><span class="wheel-hint-touch">{w.hintTouch}</span></p>
+    </div>
+    <Fragment set:html={html} />
+  </div>
+</section>

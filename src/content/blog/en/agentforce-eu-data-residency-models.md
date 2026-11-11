@@ -1,7 +1,8 @@
 ---
 title: "Agentforce EU data residency: where do models run?"
-description: "Where Agentforce sends prompts with dealer data: Bedrock vs shared trust zone, geo-aware routing, the EU Operating Zone and what to get confirmed in writing."
+description: "Where Agentforce sends prompts with dealer data: Bedrock vs shared trust zone, geo-aware routing, the Hyperforce Operating Zone and what to confirm in writing."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: agentforce-eu-data-residency-models
 translationKey: agentforce-eu-data-residency
@@ -9,34 +10,34 @@ topic: security
 categories: [architecture, ai]
 tags: [agentforce, data residency, gdpr, hyperforce, llm, manufacturing]
 takeaways:
-  - "Claude and Amazon models run on Amazon Bedrock inside the Salesforce trust boundary, other models with partners or at the LLM provider."
-  - "Salesforce's sub-processor list places OpenAI in the United States and Microsoft Azure in Germany, France, Sweden and other EU locations."
-  - "Geo-aware routing follows your org's Data 360 region, but Salesforce publishes no list of the models that stay in the EU."
-  - "The Hyperforce EU Operating Zone pages do not mention Agentforce, and Koa, Salesforce's own reasoning model, comes to US regions first."
-  - "Before go-live, get in writing per agent: model, processing region, failover path, sub-processor and retention terms."
+  - "Claude and Amazon models run on Amazon Bedrock inside the Salesforce trust boundary; other models run with partners or at the LLM provider."
+  - "Outside the US, GPT requests go to the Azure OpenAI endpoint closest to your platform region, with a US fallback you can switch off."
+  - "Geo-aware routing covers OpenAI, Anthropic and Gemini models, but batch requests and failover follow their own rules."
+  - "The Hyperforce Operating Zone FAQ says select Einstein features are not available, without naming Agentforce; Koa is released in US regions first."
+  - "Before go-live, get the following in writing for each agent: model, processing region, failover path, batch use, sub-processor and retention."
 faq:
   - q: "Does Agentforce process data in the EU?"
-    a: "It depends on the model and your org's Data 360 region. Salesforce routes LLM requests to a nearby data center based on that region and lists European locations for AWS and Azure, but publishes no per-model EU list. Ask your account executive to confirm it for your org in writing."
+    a: "Usually, it does for interactive requests from a European org. Salesforce documents geo-aware routing per model family: GPT requests go to the closest Azure OpenAI endpoint, Claude to the nearest AWS region with the model. Fallback to the US, batch processing and model availability per region are the exceptions. Get these details confirmed for your org in writing."
   - q: "What is the shared trust zone in Agentforce?"
-    a: "Salesforce's term for models that partners operate outside its own trust boundary, for example OpenAI models. Trailhead summarises shared trust as data retained in Salesforce with joint moderation, and Salesforce states zero data retention for the LLM providers it currently uses."
-  - q: "Is Agentforce available in the Hyperforce EU Operating Zone?"
-    a: "I found no Salesforce page that says so for Agentforce agents. The EU Operating Zone page names Sales Cloud, Service Cloud, the platform and industries without mentioning AI, and the Agentforce Vibes FAQ says Vibes is not available there. Ask Salesforce before you plan on it."
+    a: "It is Salesforce's term for models that partners operate outside its own trust boundary, for example OpenAI models. On its own, it says nothing about the processing region. For that, you need the provider, hosting platform, region and failover path for each model. Salesforce states zero data retention for the LLM providers it currently uses."
+  - q: "Is Agentforce available in the Hyperforce Operating Zone?"
+    a: "The public documentation does not confirm it for Agentforce agents. The Hyperforce Operating Zone FAQ says select Einstein features are not available in Operating Zone products, without naming Agentforce. Check your contract and SKU scope with Salesforce before planning around it."
   - q: "Does Salesforce's zero data retention cover our own model via BYOLLM?"
     a: "No. Salesforce's Agentforce privacy FAQ says its answers do not apply to BYO LLM. Your provider is then a non-Salesforce application, and your own contract with it governs the data."
   - q: "Can we use Koa in Europe?"
-    a: "Not yet, as I read the announcement. Salesforce announced Koa on 15 September 2026 as a pilot, with general availability expected in Winter 2026 in U.S. regions. No EU date is published."
+    a: "No general availability in European regions has been announced. Salesforce announced Koa on 15 September 2026 as a pilot, with general availability expected in Winter 2026 in U.S. regions, and does not publish the pilot regions."
 draft: false
 ---
 
-When an Agentforce agent answers a European dealer, the CRM records stay in your org, but the prompt built from them goes to a large language model, and the model decides where that happens. Salesforce runs Claude and Amazon models on Amazon Bedrock inside its own trust boundary; other models run with partners in a "shared trust zone" or at the provider. Geo-aware routing follows your org's Data 360 region, the Hyperforce EU Operating Zone pages say nothing about AI, and Koa starts in US regions. For Agentforce EU data residency, get model, region and fallback confirmed in writing.
+When an Agentforce agent answers a European dealer, the CRM records stay in your org, but the prompt built from them goes to a large language model. Where that happens depends on the model, your platform region, the routing rules and the failover settings. Salesforce runs Claude and Amazon models on Amazon Bedrock inside its own trust boundary; other models run with partners in a "shared trust zone" or at the provider. Geo-aware routing keeps interactive requests near your platform region, with exceptions, the Hyperforce Operating Zone does not confirm Agentforce, and Koa starts in US regions. For Agentforce EU data residency, get model, region and fallback confirmed in writing.
 
 ## Where does an Agentforce prompt go?
 
-A service agent that answers "where is my spare parts order?" puts the dealer account, the order and perhaps a delivery date from SAP into a prompt. The records stay put: Salesforce's [Agentforce privacy FAQ](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/Privacy/agentforce-privacy-FAQ.pdf) (June 2025) says customer data "is not stored in Agentforce" but in the underlying Salesforce services. The prompt travels. The [Supported Models page](https://developer.salesforce.com/docs/ai/agentforce/guide/supported-models.html) describes three routes:
+A service agent that answers "where is my spare parts order?" puts the dealer account, the order and perhaps a delivery date from SAP into a prompt. The records stay where they are, although prompts, responses and traces can be logged in Data 360 when you turn on audit or session tracing. Salesforce's [Agentforce privacy FAQ](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/Privacy/agentforce-privacy-FAQ.pdf) (June 2025) says customer data "is not stored in Agentforce" but in the underlying Salesforce services. The prompt travels. The [Supported Models page](https://developer.salesforce.com/docs/ai/agentforce/guide/supported-models.html) describes three routes:
 
 - **Inside the trust boundary.** "Anthropic and Amazon models are operated on Amazon Bedrock infrastructure entirely within the Salesforce Trust Boundary." When the partnership was expanded in [October 2025](https://www.anthropic.com/news/salesforce-anthropic-expanded-partnership), Anthropic described all of Claude's traffic as "contained within the Salesforce virtual private cloud".
-- **Shared trust zone.** Other models "are operated by Salesforce partners, either inside a shared trust zone or through the LLM provider directly". Trailhead's [module on large language models](https://trailhead.salesforce.com/content/learn/modules/large-language-models/learn-how-salesforce-uses-large-language-models) summarises shared trust as "Data retained in Salesforce with joint moderation".
-- **Bring your own LLM (BYOLLM).** You connect your own contract with Amazon Bedrock, Azure OpenAI, OpenAI or Vertex AI. Inference runs at your provider, while the request still passes the Models API and the Trust Layer.
+- **Shared trust zone.** Other models "are operated by Salesforce partners, either inside a shared trust zone or through the LLM provider directly". Trailhead's [module on large language models](https://trailhead.salesforce.com/content/learn/modules/large-language-models/learn-how-salesforce-uses-large-language-models) summarizes shared trust as "Data retained in Salesforce with joint moderation".
+- **Bring your own LLM (BYOLLM).** You connect Agentforce to Amazon Bedrock, Azure OpenAI, OpenAI or Vertex AI under your own contract. Inference runs at your provider, while the request still passes the Models API and the Trust Layer.
 
 According to the privacy FAQ, in some cases "Customer Data is sent to OpenAI directly and OpenAI is Salesforce's Sub-processor". For "Anthropic which is hosted on AWS and OpenAI which is hosted on Microsoft Azure", the hosting provider is the sub-processor. Salesforce states a zero data retention policy for the third-party LLM providers it currently uses. The same FAQ says its answers "do not apply to BYO LLM": with your own model, your own contract with the provider governs the data.
 
@@ -52,67 +53,68 @@ Salesforce's [Infrastructure and Sub-processors document](https://www.salesforce
 | Microsoft Azure | United States, Switzerland, France, Germany, Sweden, United Kingdom and others | none |
 | Amazon Web Services | United States, Germany, France, Italy, Sweden, Switzerland, United Kingdom and others | for LLM calls via AWS endpoints, "the disclosed region closest to Customer's Salesforce Org applies"; Swiss data may be re-routed through AWS in the US on failover |
 
-My reading: a model on Bedrock has a documented rule that ties it to the AWS region closest to your org. For GPT models the documents allow both OpenAI in the US and Azure in Europe, and they do not say which one your org gets. That gap needs closing with Salesforce, and model choice per agent is the lever.
+The sub-processor document is the contractual side. The routing rules per model are in Salesforce Help, and they are more precise, as the next section shows.
 
 ## Does geo-aware routing keep requests in the EU?
 
-According to the Supported Models page, geo-aware models route "your LLM request to a nearby data center based on where Data 360 is provisioned for your org", and your Einstein generative AI platform region is the same as your Data 360 region. A [Salesforce Help article](https://help.salesforce.com/s/articleView?id=000396615&language=en_US&type=1) lists Einstein Platform and Agentforce instances on AWS in Frankfurt, Paris, Milan, Stockholm, London and Zurich.
+According to the Supported Models page, geo-aware models route "your LLM request to a nearby data center based on where Data 360 is provisioned for your org", and your Einstein generative AI platform region is the same as your Data 360 region. The [Help article on geo-aware routing](https://help.salesforce.com/s/articleView?id=ai.generative_ai_platform_geo_aware_routing.htm&language=en_US&type=5) names AI agents and three model families: OpenAI models, Anthropic models on Amazon Bedrock and Gemini models on Vertex AI, "provided that the models are available in the relevant regions".
 
-Three points remain open:
+For GPT models, the [OpenAI routing page](https://help.salesforce.com/s/articleView?id=ai.generative_ai_platform_geo_aware_routing_openai.htm&language=en_US&type=5) is explicit: requests outside the United States are "routed to a supported Azure OpenAI endpoint that is closest to where your Einstein generative AI platform instance is located", with France, Germany, Italy, Sweden, Switzerland and the United Kingdom in its table. Claude requests go to the nearest AWS data center where the model is available. A [Salesforce Help article](https://help.salesforce.com/s/articleView?id=000396615&language=en_US&type=1) lists Einstein Platform and Agentforce instances on AWS in Frankfurt, Paris, Milan, Stockholm, London and Zurich.
 
-- **Which models are geo-aware.** The Supported Models page names no models and no regions.
-- **What happens on an outage.** For Agentforce Vibes, the coding assistant, Salesforce [documents](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-geo-aware-routing.html) that requests fall back to the United States by default when the regional endpoint is unavailable. A setting in Einstein Setup prevents that; ask Salesforce whether it governs your service agents too.
-- **Switzerland.** For Swiss data, the sub-processor document names a failover through AWS in the US, relevant for Swiss sites and dealers.
+Three exceptions matter (as of 9 November 2026):
+
+- **Outage.** "If the primary and secondary endpoints aren't responsive, the request falls back to Azure OpenAI in the United States." A setting in Einstein Setup prevents that; for Anthropic and GPT models it disables region fallback entirely. For Gemini, Salesforce Help says nothing about fallback.
+- **Batch processing.** For GPT 4 Omni, GPT 4 Omni Mini and GPT 4.1, Azure OpenAI uses a global endpoint for batch requests, which "doesn't follow geo-aware routing rules and doesn't provide in-region enforcement".
+- **Switzerland.** For Swiss data, the sub-processor document of 19 December 2025 names a failover through AWS in the US, relevant for Swiss sites and dealers.
 
 ```vertiefung For admins
 title: What "Enable In-Region Model Request Only" does
-The setting sits in Einstein Setup and requires Data 360. When the regional endpoint is unavailable, it returns an error instead of routing the request to the United States. The Salesforce page on Agentforce Vibes says: "This setting currently has no effect for Anthropic and Gemini models."
+The setting sits in Einstein Setup and requires Data 360. When the regional endpoints are unavailable, it returns an error instead of routing the request to the United States. According to Salesforce Help, it disables region fallback entirely for Anthropic and GPT models; the requests still try the primary and secondary endpoints in the region first. It does not affect batch processing.
 ```
 
-In-region only has a price: during an outage the agent returns an error. For order status that is acceptable with a handover to a person. For a [breakdown hotline](../breakdown-hotline-agentforce-voice/) I would not accept it without a tested fallback to a dispatcher.
+In-region only has a price: during an outage the agent returns an error. For order status, that is acceptable with a handover to a person. For a [breakdown hotline](../breakdown-hotline-agentforce-voice/) I would not accept it without a tested fallback to a dispatcher.
 
-## The Hyperforce EU Operating Zone does not mention Agentforce
+## The Hyperforce Operating Zone does not confirm Agentforce
 
-Salesforce [launched](https://www.salesforce.com/news/press-releases/2023/03/02/hyperforce-eu-operating-zone-news/) the Hyperforce EU Operating Zone on 2 March 2023, so customers can store and process their data in the EU, with support by EU-based personnel. The [product page](https://salesforce.com/platform/data-residence-eu-oz) speaks of processing and storing customer data "strictly within the region (EU and Switzerland)" and of "a select set of products and features that have been vetted", spanning Sales Cloud, Service Cloud, the platform and industries. Neither page mentions Agentforce, Einstein or Data 360.
-
-The only explicit AI statement I found is in the [Agentforce Vibes FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html): "Agentforce Vibes isn't available in the EU Operating Zone."
+Salesforce [launched](https://www.salesforce.com/news/press-releases/2023/03/02/hyperforce-eu-operating-zone-news/) the Hyperforce EU Operating Zone on 2 March 2023. It is now called Hyperforce Operating Zone and has separate EU and Swiss offerings, so customers can store and process their data in the EU, with support from EU-based personnel. The [product page](https://salesforce.com/platform/data-residence-eu-oz) speaks of processing and storing customer data "strictly within the region (EU and Switzerland)" and of "a select set of products and features that have been vetted", spanning Sales Cloud, Service Cloud, the platform and industries. Neither page mentions Agentforce. The [Operating Zone FAQ](https://help.salesforce.com/s/articleView?id=xcloud.hf_operating_zone_faq.htm&language=en_US&type=5) says "select Einstein features are not available as part of our Operating Zone products", without listing them. Separately, the [Agentforce Vibes FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) says the coding assistant isn't available there; that says nothing about service agents.
 
 ```hinweis offen
-If your org runs in the EU Operating Zone, I would treat Agentforce agents as unconfirmed there until Salesforce states the scope in writing.
+If your org runs in the Hyperforce Operating Zone, I would treat Agentforce agents as unconfirmed there until Salesforce confirms the scope of your contract or SKU in writing.
 ```
 
-Koa, Salesforce's own CRM reasoning model, comes to the US first. According to the [investor release](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx) of 15 September 2026, it is "Available to select pilot customers now", with general availability "expected Winter 2026 in U.S. regions", and Salesforce runs inference "entirely within its own trust boundary". There is no EU date yet.
+Koa, Salesforce's own CRM reasoning model, is released in the US first. According to the [investor release](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx) of 15 September 2026, it is "Available to select pilot customers now", with general availability "expected Winter 2026 in U.S. regions", and Salesforce runs inference "entirely within its own trust boundary". No general availability in European regions has been announced, and Salesforce does not publish the pilot regions.
 
 ## Is EU processing a legal requirement?
 
-I am a Salesforce architect, not a lawyer, and this is not legal advice. As I read it, GDPR does not demand that data stays in the EU, and Salesforce's privacy FAQ says all Salesforce services, Agentforce included, are covered by the EU Standard Contractual Clauses, with Binding Corporate Rules for processors on top. Whether that is enough is your data protection officer's call. A data protection officer may still ask for EU processing when prompts carry dealer contacts, technician names or warranty cases.
+I am a Salesforce architect, not a lawyer, and this is not legal advice. As I read it, GDPR does not demand that data stays in the EU, and Salesforce's privacy FAQ says all Salesforce services, Agentforce included, are covered by the EU Standard Contractual Clauses, with Binding Corporate Rules for processors on top. Whether that is enough for a specific data flow is your data protection officer's call: model route, sub-processor, data categories, transfer mechanism and any supplementary measures belong in that transfer assessment. A data protection officer may still ask for EU processing when prompts carry dealer contacts, technician names or warranty cases.
 
-Three neighbouring topics follow other rules: the [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/), [AI coding tools under works council and GDPR](../ai-coding-tools-works-council-gdpr/), and external models reading Salesforce data through [hosted MCP servers](../salesforce-hosted-mcp-servers-data-access/), where Salesforce's retention agreements do not reach.
+Three related topics follow other rules: the [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/), [AI coding tools under works council and GDPR](../ai-coding-tools-works-council-gdpr/), and external models reading Salesforce data through [hosted MCP servers](../salesforce-hosted-mcp-servers-data-access/), where Salesforce's retention agreements do not reach.
 
 ## Worked example: dealer enquiries from five countries
 
-Assume a machine builder in Germany with 300 dealers in France, Italy, Austria, Switzerland and Poland, Service Cloud, SAP S/4HANA for orders and Data 360 provisioned in a European region. All numbers are assumptions. A service agent is to answer about 3,000 dealer enquiries per month on order status, spare parts availability and warranty case status. Prompts contain dealer contact names, serial numbers and order values.
+Assume a machine builder in Germany with 300 dealers in France, Italy, Austria, Switzerland and Poland, Service Cloud, SAP S/4HANA for orders and Data 360 provisioned in a European region. All numbers are assumptions. A service agent is expected to answer about 3,000 dealer enquiries per month on order status, spare parts availability and warranty case status. Prompts contain dealer contact names, serial numbers and order values.
 
-**The model.** The agent runs on Salesforce Default. The data protection officer finds OpenAI in the United States on the sub-processor list. The team switches to a Claude model on Bedrock and asks Salesforce to confirm the processing region and failover path for its org.
+**The model.** The agent runs on Salesforce Default. The data protection officer finds OpenAI in the United States on the sub-processor list and the documented US fallback for GPT models. The team turns on in-region requests only, keeps batch prompt templates out of the dealer process and asks Salesforce to confirm the processing region and failover path for its org.
 
 **Switzerland.** The documented failover for Swiss data runs through AWS in the US. The data protection officer accepts it under the Standard Contractual Clauses and documents it.
 
-**The prompt.** The agent identifies dealers by account number and leaves contact names out of the prompt, which the answer does not need.
+**The prompt.** The agent identifies dealers by account number and leaves contact names out of the prompt because they are not needed to answer the question.
 
 **Koa.** The evaluation is postponed until an EU date exists.
 
-Waiting for the written confirmation delays go-live by about three weeks. In my judgement that is cheaper than explaining the data flow afterwards.
+Waiting for the written confirmation delays go-live by about three weeks. In my judgment that is cheaper than explaining the data flow afterwards.
 
 ## Get model, region and failover confirmed in writing per agent
 
-Ask Salesforce per agent and file the answers in the architecture documentation:
+For each agent, ask Salesforce these questions and file the answers in the architecture documentation:
 
 1. **Model.** Which model does each agent use, and what does Salesforce Default mean for your org today?
 2. **Region.** Where is Data 360 provisioned, and in which region does the Einstein generative AI platform process your prompts?
-3. **Failover.** Where does a request go when the regional endpoint is unavailable, and does an in-region-only setting apply to your agents and your model provider?
-4. **Sub-processor.** Who processes the prompt for that model: OpenAI, Azure, AWS or Google?
-5. **EU Operating Zone.** If your org runs there, may it use Agentforce, and with which limits?
-6. **Retention.** Does zero data retention apply to your model, and if you use BYOLLM, which clauses in your own provider contract cover it?
-7. **Changes.** How will you learn when the default model or the sub-processor list changes?
+3. **Failover.** Where does a request go when the regional endpoints are unavailable, and is the in-region-only setting turned on for your model provider?
+4. **Batch.** Does any process use batch prompt templates, which bypass geo-aware routing?
+5. **Sub-processor.** Who processes the prompt for that model: OpenAI, Azure, AWS or Google?
+6. **Operating Zone.** If your org runs in the Hyperforce Operating Zone, may it use Agentforce, and with which limits?
+7. **Retention.** Does zero data retention apply to your model, which prompts and traces are stored in Data 360, and if you use BYOLLM, which clauses in your own provider contract cover it?
+8. **Changes.** How will you learn when the default model, the routing or the sub-processor list changes?
 
-When Salesforce changes the default model or the sub-processor list, ask questions 1 to 4 again; an entry in the [decision log](../salesforce-architecture-decision-log/) is the simplest way to record which answer applies to which agent. Settling these questions per agent is part of my work on [Salesforce architecture](../../services/salesforce-architecture/); the wider map of agents in manufacturing is in [chapter 10 of the AI masterclass](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
+When Salesforce changes the default model or the sub-processor list, ask questions 1 to 5 again; an entry in the [decision log](../salesforce-architecture-decision-log/) is the simplest way to record which answer applies to which agent. Settling these questions per agent is part of my work on [Salesforce architecture](../../services/salesforce-architecture/); the wider map of agents in manufacturing is in [chapter 10 of the AI masterclass](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).

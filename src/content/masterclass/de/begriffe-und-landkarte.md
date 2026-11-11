@@ -5,6 +5,7 @@ lang: de
 slug: begriffe-und-landkarte
 translationKey: masterclass-01
 chapter: 1
+pubDate: 2026-10-27
 short: "Begriffe und Landkarte"
 summary: "Welche vier Ebenen KI im Salesforce-Projekt hat, was Vibe Coding von agentic engineering trennt und welche Produktnamen wofür stehen."
 takeaways:
@@ -17,7 +18,7 @@ faq:
   - q: "Was ist der Unterschied zwischen Agentforce und Agentforce Vibes?"
     a: "Agentforce ist die Plattform für Agenten, die in Ihrer Org laufen, etwa ein Serviceagent für Händler. Agentforce Vibes ist ein Coding-Werkzeug für Entwickler, das Apex, LWC und Metadaten erzeugt. Beide teilen nur den Markennamen, sie werden unterschiedlich abgerechnet und von unterschiedlichen Leuten verantwortet."
   - q: "Ist Vibe Coding für Salesforce-Projekte erlaubt?"
-    a: "Für Prototypen in einer Sandbox oder Developer Edition spricht nichts dagegen. Für Code, der in eine produktive Org mit Kunden-, Händler- oder Garantiedaten geht, empfehle ich agentic engineering: Die KI schreibt, ein Mensch prüft, und automatische Tests und Pipeline-Prüfungen entscheiden über das Deployment."
+    a: "Für Prototypen in einer Sandbox oder Developer Edition spricht nichts dagegen. Für Code, der in eine produktive Org mit Kunden-, Händler- oder Garantiedaten deployt wird, empfehle ich agentic engineering: Die KI schreibt, ein Mensch prüft, und automatische Tests und Pipeline-Prüfungen entscheiden über das Deployment."
   - q: "Was bedeutet MCP im Salesforce-Umfeld?"
     a: "MCP (Model Context Protocol) ist ein offenes Protokoll, über das KI-Anwendungen und Agenten Werkzeuge und Daten anderer Systeme aufrufen. Salesforce bietet seit April 2026 gehostete MCP-Server für Enterprise Edition und höher an; jeder Aufruf läuft mit den Rechten des angemeldeten Nutzers."
 draft: false
@@ -27,7 +28,7 @@ KI im Salesforce-Projekt bedeutet vier verschiedene Dinge: KI, die Code und Meta
 
 ## Die vier Ebenen von KI im Salesforce-Projekt
 
-Ich sortiere jedes KI-Thema in Salesforce-Programmen zuerst in eine von vier Ebenen. Erst danach lohnt die Frage nach dem Werkzeug.
+Ich sortiere jedes KI-Thema in Salesforce-Programmen zuerst in eine von vier Ebenen. Erst danach lohnt sich die Frage nach dem Werkzeug.
 
 | Ebene | Frage | Typische Produkte (Stand Oktober 2026) | Beispiel bei einem Hersteller | Wie abgerechnet wird |
 |---|---|---|---|---|
@@ -36,7 +37,7 @@ Ich sortiere jedes KI-Thema in Salesforce-Programmen zuerst in eine von vier Ebe
 | C: KI im Produkt | Welche KI läuft für Anwender in der Org? | Agentforce mit Builder, Agent Script und Atlas Reasoning Engine, Agentforce for Manufacturing | Ein Serviceagent beantwortet Händleranfragen zu Ersatzteilen und Lieferterminen | Flex Credits pro Aktion |
 | D: KI als Oberfläche | Wo arbeiten Nutzer künftig mit Salesforce? | AIforce: Salesforce in Claude, Slackforce, Agentforce Coworker | Key Account Manager bereiten Händlerbesuche in Claude vor | Noch offen, laut Salesforce „subject to change“ |
 
-Die Abrechnung unterscheidet sich je Ebene deutlich. Ebene C rechnet laut [Salesforce](https://www.salesforce.com/eu/agentforce/pricing/) in Flex Credits pro Aktion ab. Agentforce Vibes in Ebene A zählt laut [Abrechnungsdoku](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) in Token-Einheiten oder läuft über eine Unmetered-Lizenz mit Obergrenze für Premium-Modelle. Für agentische API- und MCP-Aufrufe in Ebene B führt die [Rate Card vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) den Zähler „Headless Platform Interaction“, noch ohne festen Satz.
+Die Abrechnung unterscheidet sich je Ebene deutlich. Ebene C rechnet laut [Salesforce](https://www.salesforce.com/eu/agentforce/pricing/) in Flex Credits pro Aktion ab. Agentforce Vibes in Ebene A rechnet laut [Abrechnungsdoku](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) in Token-Einheiten ab oder über eine Unmetered-Lizenz mit Obergrenze für Premium-Modelle. Für agentische API- und MCP-Aufrufe in Ebene B führt die [Rate Card vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) den Zähler „Headless Platform Interaction“, noch ohne festen Satz.
 
 ```kennzahlen
 20 | Flex Credits pro Agentforce-Aktion in Ebene C
@@ -57,7 +58,7 @@ Martin Fowler trennt seit dem 21. Mai 2026 [Vibe Coding von „agentic engineeri
 Für einen Hersteller ziehe ich die Grenze so:
 
 - **Vibe Coding passt** für einen klickbaren Entwurf des Händlerportals im Anforderungsworkshop, für ein Skript, das Testdaten für Ersatzteile erzeugt, oder für eine Auswertung, die nach einer Woche niemand mehr braucht. Immer in einer Sandbox oder Developer Edition.
-- **Agentic engineering ist Pflicht** für alles, was in die produktive Org geht: Garantielogik, Preisfreigaben, Schnittstellen zu SAP oder proALPHA, Freigaben im Händlerportal. Dort gehören Review, Tests und automatische Prüfungen in der Pipeline dazu.
+- **Agentic engineering ist Pflicht** für alles, was in die produktive Org deployt wird: Garantielogik, Preisfreigaben, Schnittstellen zu SAP oder proALPHA, Freigaben im Händlerportal. Dort gehören Review, Tests und automatische Prüfungen in der Pipeline dazu.
 
 Wo genau die Grenze verläuft und welche Prüfungen ein Prototyp durchlaufen muss, bevor er produktiv wird, beschreibe ich in [Vibe Coding in Salesforce: Prototyp oder Produktion](../../../blog/vibe-coding-salesforce-prototyp-produktion/). Die Prüfregeln für KI-Code selbst sind Thema von [Kapitel 8](../best-practices-ki-code/).
 
@@ -120,9 +121,9 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, SAP und einem H�
 | Vertriebsleitung | Die Key Account Manager sollen Händlerbesuche in Claude vorbereiten und Opportunities von dort pflegen. Das ist Ebene D. Salesforce in Claude ist eine Beta, Preise sind laut Salesforce noch veränderlich. Vorher muss geklärt sein, ob das Sharing für Garantiefälle und Preisvereinbarungen zu weit offen ist. |
 | Serviceleitung | Ein Agent soll Händleranfragen zu Auftragsstatus und Lieferterminen beantworten. Das ist Ebene C, mit einer Abhängigkeit zu Ebene B, denn die Antworten stehen in SAP. Angenommen sind 1.500 Anfragen im Monat mit je drei Aktionen: 4.500 Aktionen zu 20 Credits ergeben 90.000 Credits, rund 450 € im Monat, ohne Tests und Integrationsaufwand. |
 | Implementierungspartner | Er will das neue Händlerportal mit Coding-Agenten bauen und verspricht kürzere Sprints. Das ist Ebene A. Hier zählen Review-Regeln, Regeldatei und Pipeline, nicht der Name des Werkzeugs. |
-| IT-Leitung | Sie fragt, wer eigentlich auf welche Daten zugreift, wenn Claude, der Partner-Agent und der Serviceagent gleichzeitig mit der Org sprechen. Das ist Ebene B, und sie betrifft alle drei anderen Punkte. |
+| IT-Leitung | Sie fragt, wer eigentlich auf welche Daten zugreift, wenn Claude, der Partner-Agent und der Serviceagent gleichzeitig auf die Org zugreifen. Das ist Ebene B, und sie betrifft alle drei anderen Punkte. |
 
-Ohne die Ebenen landen diese vier Wünsche in einem Topf namens „KI-Initiative“ mit einem Budget und einem Verantwortlichen. Mit den Ebenen werden es vier Vorhaben mit vier Verantwortlichen: Vertrieb mit IT und Datenschutz, Service, Programmleitung mit Partnersteuerung, Integrationsarchitektur. Nur das zweite Vorhaben braucht eine Agentforce-Entscheidung. Ob der Serviceagent jetzt startet oder erst die Daten in Ordnung kommen, beantworte ich in [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/).
+Ohne die Ebenen werden diese vier Wünsche in einen Topf namens „KI-Initiative“ geworfen, mit einem Budget und einem Verantwortlichen. Mit den Ebenen werden es vier Vorhaben mit vier Verantwortlichen: Vertrieb mit IT und Datenschutz, Service, Programmleitung mit Partnersteuerung, Integrationsarchitektur. Nur das zweite Vorhaben braucht eine Agentforce-Entscheidung. Ob der Serviceagent jetzt starten sollte oder erst die Daten bereinigt werden müssen, beantworte ich in [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/).
 
 ## Wo Sie in dieser Masterclass weiterlesen
 

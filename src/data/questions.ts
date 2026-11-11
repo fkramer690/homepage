@@ -18,7 +18,7 @@ export const questions = {
     description:
       'Die 14 Fragen, die Fabian Kramer vor jeder Salesforce-Architektur stellt: zu Ziel und Termin, Partnern, ERP-Schnittstellen, Datenmengen, Betrieb und Lizenzen.',
     eyebrow: 'Arbeitsweise',
-    lead: 'Bevor ich eine Architektur zeichne, stelle ich Fragen. Meistens dieselben, und meistens sind die Antworten interessanter als das Lastenheft. Hier ist die Liste. Wenn Sie bei drei davon keine schnelle Antwort haben, lohnt sich ein Gespräch.',
+    lead: 'Bevor ich für einen Hersteller eine Salesforce-Architektur zeichne, stelle ich Fragen, vor allem wenn mehrere Umsetzungspartner in derselben Org arbeiten. Es sind meistens dieselben, und ihre Antworten sind oft aufschlussreicher als das Lastenheft. Hier ist die Liste. Wenn Sie bei drei davon keine schnelle Antwort haben, lohnt sich ein Gespräch.',
     groups: [
       {
         title: 'Zu Ziel und Termin',
@@ -27,18 +27,18 @@ export const questions = {
         questions: [
           {
             q: 'Welches Problem soll in einem Jahr nicht mehr existieren?',
-            a: 'Nicht „Salesforce einführen“, sondern zum Beispiel: Serviceeinsätze ohne Rückfragen planen. Ohne dieses Ziel misst niemand, ob das Projekt etwas gebracht hat.',
+            a: 'Nicht „Salesforce einführen“, sondern zum Beispiel: Serviceeinsätze ohne Rückfragen planen. Ohne dieses Ziel misst niemand, ob das Projekt sein Ziel erreicht hat.',
           },
           {
             q: 'Woran merkt der Fachbereich, dass es funktioniert?',
-            a: 'Eine Zahl, die heute schon jemand erhebt. Wenn es keine gibt, ist das der erste Arbeitspunkt.',
+            a: 'An einer Kennzahl, die heute schon jemand erhebt. Wenn es keine gibt, ist das der erste Arbeitspunkt.',
           },
           {
             q: 'Muss das wirklich in Salesforce?',
-            a: 'Manche Anforderung gehört ins ERP, in die Telefonanlage oder in ein spezialisiertes Tool. Die Frage ist günstiger vor der Umsetzung als danach.',
+            a: 'Manche Anforderung gehört ins ERP, in die Telefonanlage oder in ein spezialisiertes Tool. Diese Frage vor der Umsetzung zu klären, ist günstiger als danach.',
           },
           {
-            q: 'Was passiert, wenn der Go-live nicht zum geplanten Termin kommt?',
+            q: 'Was passiert, wenn der Go-live den geplanten Termin nicht hält?',
             a: 'Die Folgen sind meist teurer als gedacht: Der Vertrag für das Altsystem läuft weiter, das Partnerteam bleibt länger an Bord, der Fachbereich pflegt Daten doppelt, und das Vertrauen in das Projekt sinkt mit jeder Verschiebung. Wer diese Kosten pro Monat kennt, kann entscheiden, ob ein kleinerer erster Go-live besser ist als ein später großer.',
           },
         ],
@@ -57,8 +57,8 @@ export const questions = {
             a: 'Liegen sie beim Implementierungspartner, wird ein Partnerwechsel teuer.',
           },
           {
-            q: 'Wer prüft, was die Partner liefern, bevor es in die Abnahme geht?',
-            a: 'Probleme, die erst im UAT oder in Produktion auftauchen, kosten ein Vielfaches.',
+            q: 'Wer prüft, was die Partner liefern, bevor die Abnahme beginnt?',
+            a: 'Probleme, die erst im UAT oder in Produktion entdeckt werden, kosten ein Vielfaches.',
           },
         ],
       },
@@ -69,7 +69,7 @@ export const questions = {
         questions: [
           {
             q: 'Welches System ist für Kunden, Produkte und Preise führend?',
-            a: 'Manufacturing-Projekte scheitern selten in Salesforce. Sie scheitern an der ERP-Schnittstelle und an doppelten Stammdaten.',
+            a: 'Nach meiner Erfahrung scheitern Manufacturing-Projekte selten in Salesforce. Sie scheitern an der ERP-Schnittstelle und an doppelten Stammdaten.',
           },
           {
             q: 'Was passiert, wenn die Schnittstelle zum ERP eine Stunde ausfällt?',
@@ -77,7 +77,7 @@ export const questions = {
           },
           {
             q: 'Wie viele Daten sind in drei Jahren im System?',
-            a: 'Was mit 10.000 Datensätzen läuft, kann bei 10 Millionen stehen bleiben. Sharing-Modell und Automatisierungen müssen das von Anfang an aushalten.',
+            a: 'Was mit 10.000 Datensätzen funktioniert, kann bei 10 Millionen an seine Grenzen stoßen. Sharing-Modell und Automatisierungen müssen das von Anfang an verkraften.',
           },
         ],
       },
@@ -91,7 +91,7 @@ export const questions = {
             a: 'Wenn alle Antworten auf diese Frage Namen von Externen sind, fehlt ein Plan für die Übergabe.',
           },
           {
-            q: 'Wie kommt eine Änderung in Produktion, und wer kann sie zurückdrehen?',
+            q: 'Wie wird eine Änderung in Produktion gebracht, und wer kann sie zurücknehmen?',
             a: 'Drei Releases im Jahr von Salesforce plus eigene Releases brauchen einen Prozess, nicht Mut.',
           },
           {
@@ -107,7 +107,7 @@ export const questions = {
         questions: [
           {
             q: 'Was wurde schon einmal versucht und hat nicht funktioniert?',
-            a: 'Die ehrlichste Antwort im ganzen Projekt. Sie spart oft Monate.',
+            a: 'Sie bringt die ehrlichste Antwort im ganzen Projekt und spart oft Monate.',
           },
         ],
       },
@@ -129,15 +129,15 @@ export const questions = {
       ],
     },
     quoteLead: 'Und die Frage, die ich am Ende immer stelle:',
-    quote: 'Was schon einmal gescheitert ist, ist die ehrlichste Antwort im ganzen Projekt. Sie spart oft Monate.',
+    quote: 'Was wurde schon einmal versucht und hat nicht funktioniert?',
     quoteCaption: 'Frage 14',
   },
   en: {
     title: 'Questions I ask in every Salesforce project',
     description:
-      'The 14 questions Fabian Kramer asks before any Salesforce architecture: on goal and deadline, partners, ERP interfaces, data volumes, operations and licences.',
+      'The 14 questions Fabian Kramer asks before any Salesforce architecture: on goal and deadline, partners, ERP interfaces, data volumes, operations and licenses.',
     eyebrow: 'How I work',
-    lead: 'Before I draw an architecture, I ask questions. Mostly the same ones, and mostly the answers are more interesting than the requirements document. Here is the list. If you have no quick answer to three of them, a call is worth it.',
+    lead: 'Before I draw a Salesforce architecture for a manufacturer, I ask questions, especially when several implementation partners work in the same org. They are mostly the same ones, and the answers are often more revealing than the requirements document. Here is the list. If you have no quick answer to three of them, a call is worthwhile.',
     groups: [
       {
         title: 'Goal and deadline',
@@ -146,19 +146,19 @@ export const questions = {
         questions: [
           {
             q: 'Which problem should no longer exist a year from now?',
-            a: 'Not "introduce Salesforce", but for example: plan service visits without calling back for details. Without that goal nobody measures whether the project achieved anything.',
+            a: 'Not "introduce Salesforce", but for example: plan service visits without calling back for details. Without that goal nobody measures whether the project reached its goal.',
           },
           {
             q: 'How will the business know that it works?',
-            a: 'A number that someone already collects today. If there is none, that is the first work item.',
+            a: 'By a figure that someone already collects today. If there is none, that is the first work item.',
           },
           {
             q: 'Does this really belong in Salesforce?',
-            a: 'Some requirements belong in the ERP, the phone system or a specialised tool. The question is cheaper before the build than after it.',
+            a: 'Some requirements belong in the ERP, the phone system or a specialized tool. Asking it before the build is cheaper than asking it afterwards.',
           },
           {
-            q: 'What happens if the go-live does not happen on the planned date?',
-            a: 'The consequences are usually more expensive than expected: the contract for the old system keeps running, the partner team stays on board longer, the business maintains data twice, and trust in the project drops with every delay. If you know these costs per month, you can decide whether a smaller first go-live beats a big one that comes late.',
+            q: 'What happens if the go-live misses the planned date?',
+            a: 'The consequences are usually more expensive than expected: the contract for the old system keeps running, the partner team stays on board longer, the business maintains data twice, and trust in the project drops with every delay. If you know these costs per month, you can decide whether a smaller first go-live beats a large one that is delayed.',
           },
         ],
       },
@@ -173,11 +173,11 @@ export const questions = {
           },
           {
             q: 'Who owns the repository, the pipeline and the backlog?',
-            a: 'If they sit with the implementation partner, changing partners gets expensive.',
+            a: 'If the implementation partner owns them, changing partners gets expensive.',
           },
           {
-            q: 'Who reviews what the partners deliver before it goes into acceptance?',
-            a: 'Problems that only show up in UAT or production cost many times more.',
+            q: 'Who reviews what the partners deliver before user acceptance testing starts?',
+            a: 'Problems that are only found in UAT or production cost many times more.',
           },
         ],
       },
@@ -188,7 +188,7 @@ export const questions = {
         questions: [
           {
             q: 'Which system is the master for customers, products and prices?',
-            a: 'Manufacturing projects rarely fail in Salesforce. They fail at the ERP interface and on duplicate master data.',
+            a: 'In my experience, manufacturing projects rarely fail in Salesforce. They fail at the ERP interface and on duplicate master data.',
           },
           {
             q: 'What happens if the ERP interface is down for an hour?',
@@ -196,7 +196,7 @@ export const questions = {
           },
           {
             q: 'How much data will be in the system in three years?',
-            a: 'What runs with 10,000 records can grind to a halt at 10 million. The sharing model and the automations have to handle that from day one.',
+            a: 'What works with 10,000 records can grind to a halt at 10 million. The sharing model and the automations have to handle that from day one.',
           },
         ],
       },
@@ -210,12 +210,12 @@ export const questions = {
             a: 'If every answer to this question is the name of an external person, a handover plan is missing.',
           },
           {
-            q: 'How does a change get into production, and who can roll it back?',
+            q: 'How is a change deployed to production, and who can roll it back?',
             a: 'Three Salesforce releases a year plus your own releases need a process, not courage.',
           },
           {
-            q: 'What will the licences cost once the rollout is done?',
-            a: 'The licence forecast belongs in the architecture decision, not in the budget round afterwards.',
+            q: 'What will the licenses cost once the rollout is done?',
+            a: 'The license forecast belongs in the architecture decision, not in the budget round afterwards.',
           },
         ],
       },
@@ -226,13 +226,13 @@ export const questions = {
         questions: [
           {
             q: 'What has been tried before and did not work?',
-            a: 'The most honest answer in the whole project. It often saves months.',
+            a: 'It gets the most honest answer in the whole project and often saves months.',
           },
         ],
       },
     ] as QuestionGroup[],
     ctaTitle: 'Did you hesitate on some of these?',
-    ctaText: 'In 30 minutes we find out which of them is costing your programme the most right now.',
+    ctaText: 'In 30 minutes we find out which of them is costing your program the most right now.',
     formSubject: 'Questions about the project',
     link: 'Questions I ask in every project',
     back: 'Back to the start page',
@@ -240,14 +240,14 @@ export const questions = {
     count: (n: number) => (n === 1 ? '1 question' : `${n} questions`),
     stats: {
       questions: 'questions before any architecture',
-      topics: 'topics from goal to licences',
+      topics: 'topics from goal to licenses',
       more: [
         { value: '3', text: 'questions without a quick answer: time for a call' },
         { value: '30', text: 'minutes first call, no pitch' },
       ],
     },
     quoteLead: 'And the question I always ask at the end:',
-    quote: 'What has failed before is the most honest answer in the whole project. It often saves months.',
+    quote: 'What has been tried before and did not work?',
     quoteCaption: 'question 14',
   },
 };

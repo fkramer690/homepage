@@ -92,9 +92,25 @@ const services = defineCollection({
     results: z.array(z.string().max(220)).min(3).max(6),
     // icon: file name in src/icons/ shown in the ring of the phase timeline.
     phases: z.array(z.object({ title: z.string().max(40), icon: z.string(), text: z.string().max(260) })).min(3).max(4),
+    // Typical duration of the engagement, shown above the phase timeline (Fabian confirmed the values 2026-11-07).
+    duration: z.string().min(40).max(260),
+    // Section "Passt das zu Ihrem Vorhaben?" after the phases (backlog KS1, Fabian confirmed 2026-11-09):
+    // when the service does not fit, and which alternatives fit better when.
+    notFit: z.array(z.string().max(160)).min(2).max(3),
+    alternatives: z.string().min(80).max(420),
+    // "Woran Sie Fortschritt sehen" after the phases (2026-11-09): 3 to 4 measures the client can
+    // follow during the engagement, each with how it is observed. No promised target values.
+    progress: z.array(z.object({ measure: z.string().max(60), how: z.string().max(180) })).min(3).max(4),
+    // "Projekt im Fokus" box after the results (2026-11-09): key of a reference from
+    // references.items in src/i18n (start page), so the page only repeats confirmed project facts.
+    reference: z.enum(['manufacturing-cloud', 'after-sales', 'cti', 'embedded-chat', 'governance']).optional(),
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).min(2).max(6),
-    // Blog tags whose articles are listed as further reading on this page.
+    // Blog tags that link an article back to its best matching service (getPostService).
     blogTags: z.array(z.string()).min(1).max(8),
+    // Curated reading list in the reading flow (backlog U3): 5 to 8 blog translationKeys in
+    // reading order, plus the masterclass that fits. Required on every page except change management.
+    readMore: z.array(z.string()).min(5).max(8).optional(),
+    masterclass: z.enum(courseIds).optional(),
     // Closing call to action: what to bring to the first call (src/lib/contact-briefs.ts).
     contactBrief: z.enum(contactBriefIds),
     // Optional extra block: change-management adds the team (Fabian and Juliane Winterscheid)
@@ -126,8 +142,8 @@ const masterclass = defineCollection({
     // Blog translationKeys covered by this chapter; unpublished ones are skipped.
     articles: z.array(z.string()).min(1).max(8),
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).max(6).default([]),
-    // First publication; used for datePublished and the sitemap's lastmod.
-    pubDate: z.coerce.date().optional(),
+    // First publication; used for datePublished, the visible date and the sitemap's lastmod.
+    pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     draft: z.boolean().default(false),
   }),

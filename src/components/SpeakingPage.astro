@@ -65,16 +65,28 @@ const talkSchema = (talk: (typeof talks)[number]) => ({
 });
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'ProfilePage',
-  '@id': url,
-  url,
-  name: c.metaTitle,
-  inLanguage: lang,
-  mainEntity: {
-    ...person,
-    jobTitle: 'Salesforce Enterprise Architect',
-  },
-  hasPart: talks.map(talkSchema),
+  '@graph': [
+    {
+      '@type': 'ProfilePage',
+      '@id': url,
+      url,
+      name: c.metaTitle,
+      inLanguage: lang,
+      mainEntity: {
+        ...person,
+        jobTitle: 'Salesforce Enterprise Architect',
+        sameAs: [site.linkedin, site.sessionize],
+      },
+      hasPart: talks.map(talkSchema),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'FK Solution Design', item: new URL(home, Astro.site).href },
+        { '@type': 'ListItem', position: 2, name: c.title, item: url },
+      ],
+    },
+  ],
 };
 ---
 <Page layout="reading" lang={lang} title={c.metaTitle} description={c.description} alternates={alternates} hasContact>

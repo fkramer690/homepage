@@ -5,6 +5,7 @@ lang: de
 slug: mcp-und-schnittstellen
 translationKey: masterclass-03
 chapter: 3
+pubDate: 2026-10-27
 short: "MCP und Schnittstellen"
 summary: "Welche MCP-Server und APIs KI-Agenten mit Salesforce verbinden, wer dabei welche Daten liest und was die Zugriffe kosten werden."
 takeaways:
@@ -13,12 +14,12 @@ takeaways:
   - "Hosted MCP kennt keine Service Accounts und keine Machine-to-Machine-Flows. Nächtliche Agenten brauchen die Agent API oder eine klassische Integration."
   - "Ob der Einstein Trust Layer greift, wenn Claude über Hosted MCP Daten liest, sagt die Salesforce-Dokumentation nicht. Es zählt der Vertrag mit dem KI-Anbieter."
   - "Agentische MCP- und API-Aufrufe sollen als Headless Platform Interactions Flex Credits kosten. Der Satz steht auf der Rate Card noch als TBA."
-articles: [salesforce-dx-mcp-server-end-of-life, mcp-explained-salesforce-it-leads, hosted-mcp-servers-data-access, headless-platform-interactions-budget]
+articles: [salesforce-dx-mcp-server-end-of-life, mcp-explained-salesforce-it-leads, hosted-mcp-servers-data-access, flex-credits-agentforce-costs]
 faq:
   - q: "Was passiert am 2. November 2026 mit dem Salesforce DX MCP Server?"
     a: "Laut Hinweis der Maintainer (Issue 46 im Repository forcedotcom/mcp) gibt es für den lokalen Server danach keine Pflege, keinen Support und keine neuen Releases mehr. Das npm-Paket wird als deprecated markiert, bleibt aber installierbar. Pinnen Sie die Version 0.30.15 und planen Sie den Umstieg auf Skills, Plugin und Hosted MCP."
   - q: "Kann ein KI-Agent über Hosted MCP alle Salesforce-Daten lesen?"
-    a: "Nein. Jeder Aufruf läuft mit Objektrechten, Feldrechten und Freigaben des Benutzers, der die Verbindung autorisiert hat. Der Agent sieht also genau das, was diese Person sieht, und jede Aktion steht in den Audit-Daten unter ihrem Namen."
+    a: "Nein. Jeder Aufruf wird mit den Objektrechten, Feldrechten und Freigaben des Benutzers ausgeführt, der die Verbindung autorisiert hat. Der Agent sieht also genau das, was diese Person sieht, und jede Aktion steht in den Audit-Daten unter ihrem Namen."
   - q: "Kosten MCP-Zugriffe auf Salesforce extra?"
     a: "Salesforce schreibt, dass Hosted MCP Servers nur für Kunden mit Flex Credits gedacht sind und Nutzung abgerechnet werden kann. Der Satz für Headless Platform Interactions ist noch nicht veröffentlicht; laut SalesforceBen gibt es 30 Tage Vorlauf, bevor die Messung startet."
 draft: false
@@ -30,11 +31,11 @@ MCP (Model Context Protocol) ist 2026 der Standardweg, über den KI-Werkzeuge wi
 
 MCP ist ein offenes Protokoll, über das ein KI-Werkzeug andere Systeme als Tools aufruft: Datensätze lesen, eine Abfrage ausführen, eine Aktion starten. Der Server beschreibt, welche Tools er anbietet, der Client (Claude, ChatGPT, Cursor oder Agentforce) entscheidet, wann er welches nutzt. Salesforce hat MCP seit 2025 an fast jeder Stelle eingebaut. Für die Architektur hilft es, drei Richtungen zu trennen:
 
-1. **Coding-Agent zu Projekt und Org.** Ein Entwickler Ihres Partners arbeitet mit Claude Code, Codex, Cursor oder Agentforce Vibes, und der Agent liest Metadaten, deployt und testet. Hier sitzen der lokale DX MCP Server und die MCP-Server im Claude-Code-Plugin von Salesforce.
-2. **Externe KI zu Ihren Daten.** Eine Mitarbeiterin im Serviceinnendienst fragt in Claude nach offenen Fällen einer Maschine. Hier sitzen die Hosted MCP Servers und „Salesforce in Claude“.
-3. **Agentforce zu fremden Systemen.** Ein Agentforce-Agent ruft ein Tool außerhalb von Salesforce auf, etwa eine Auftragsabfrage im ERP. Hier sitzen der MCP-Client von Agentforce und der Weg über MuleSoft und den API Catalog.
+1. **Coding-Agent zu Projekt und Org.** Ein Entwickler Ihres Partners arbeitet mit Claude Code, Codex, Cursor oder Agentforce Vibes, und der Agent liest Metadaten, deployt und testet. Hier kommen der lokale DX MCP Server und die MCP-Server aus dem Claude-Code-Plugin von Salesforce zum Einsatz.
+2. **Externe KI zu Ihren Daten.** Eine Mitarbeiterin im Serviceinnendienst fragt in Claude nach offenen Fällen einer Maschine. Hier kommen die Hosted MCP Servers und „Salesforce in Claude“ zum Einsatz.
+3. **Agentforce zu fremden Systemen.** Ein Agentforce-Agent ruft ein Tool außerhalb von Salesforce auf, etwa eine Auftragsabfrage im ERP. Hier kommen der MCP-Client von Agentforce und der Weg über MuleSoft und den API Catalog infrage.
 
-Daneben bleiben Schnittstellen ohne MCP wichtig: die Agent API, über die andere Systeme einen Agentforce-Agenten aufrufen, die Models API für LLM-Aufrufe aus Apex und die sf CLI, über die Deployments in der Pipeline laufen. MCP ersetzt keine davon. Die Begriffe ordnet [Kapitel 1](../begriffe-und-landkarte/) ein, und welche Entscheidungen bei der IT-Leitung liegen, steht in [MCP und Salesforce, erklärt für die IT-Leitung](../../../blog/mcp-salesforce-erklaert-it-leitung/).
+Daneben bleiben Schnittstellen ohne MCP wichtig: die Agent API, über die andere Systeme einen Agentforce-Agenten aufrufen, die Models API für LLM-Aufrufe aus Apex und die sf CLI, über die die Pipeline deployt. MCP ersetzt keine davon. Die Begriffe ordnet [Kapitel 1](../begriffe-und-landkarte/) ein, und welche Entscheidungen bei der IT-Leitung liegen, steht in [MCP und Salesforce, erklärt für die IT-Leitung](../../../blog/mcp-salesforce-erklaert-it-leitung/).
 
 ## Die Schnittstellen im Überblick
 
@@ -57,11 +58,11 @@ Für einen Hersteller sind heute drei Zeilen dringend: der DX MCP Server, weil I
 
 ## 2. November 2026: Was das Ende des DX MCP Servers bedeutet
 
-Der [End-of-Life-Hinweis](https://github.com/forcedotcom/mcp/issues/46) der Maintainer nennt den 2. November 2026 als End of Life für den lokalen Server `@salesforce/mcp`. Danach gibt es keine Pflege, keinen Support und keine neuen Releases mehr. Das npm-Paket wird als deprecated markiert, bleibt aber installierbar, gepinnte Setups wie Version 0.30.15 laufen also weiter.
+Der [End-of-Life-Hinweis](https://github.com/forcedotcom/mcp/issues/46) der Maintainer nennt den 2. November 2026 als End of Life für den lokalen Server `@salesforce/mcp`. Danach gibt es keine Pflege, keinen Support und keine neuen Releases mehr. Das npm-Paket wird als deprecated markiert, bleibt aber installierbar, gepinnte Setups wie Version 0.30.15 funktionieren also weiter.
 
 Der Hinweis nennt die offene Skills-Bibliothek `forcedotcom/sf-skills` als Ersatz. Daneben hat Salesforce das [Claude-Code-Plugin](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) mit rund 40 dieser Skills und drei MCP-Servern (salesforce-api-context, salesforce-metadata-experts, salesforce-lsp) sowie Hosted MCP für den Datenzugriff veröffentlicht. Die Plugin-Ankündigung erwähnt das Ende des DX MCP Servers nicht. Alle drei als Nachfolger zu sehen, ist meine Lesart, keine Salesforce-Aussage.
 
-Für Sie als Auftraggeber ist vor allem die Frage wichtig, mit welchen Rechten der alte Server bei Ihrem Partner läuft. Ich würde für Agenten nur feste Sandbox-Aliase zulassen, weil zwei Einstellungen den Zugriff sonst still ausweiten.
+Für Sie als Auftraggeber ist vor allem die Frage wichtig, mit welchen Rechten der alte Server bei Ihrem Partner läuft. Ich würde für Agenten nur feste Sandbox-Aliase zulassen, weil zwei Einstellungen den Zugriff sonst unbemerkt ausweiten.
 
 ```vertiefung Für Entwickler
 titel: Wie der lokale DX MCP Server Orgs erreicht
@@ -95,7 +96,7 @@ Das Sicherheitsmodell ist streng, und davon profitieren Hersteller. Laut [Securi
 | Thema | Regel |
 |---|---|
 | Aktivierung | Server sind standardmäßig aus und müssen bewusst aktiviert werden. |
-| Rechte | Jeder Tool-Aufruf läuft mit Objektrechten, Feldrechten und Freigaberegeln des Benutzers, der die Verbindung autorisiert hat, und steht in den Audit-Daten unter seinem Namen. |
+| Rechte | Jeder Tool-Aufruf wird mit Objektrechten, Feldrechten und Freigaberegeln des Benutzers ausgeführt, der die Verbindung autorisiert hat, und erscheint in den Audit-Daten unter seinem Namen. |
 | Benutzerkontext | Es gibt keine Service Accounts, keine Machine-to-Machine-Flows und keinen Betrieb außerhalb eines Benutzerkontexts. |
 | Zugriff | External Client Apps lassen sich auf Profile und Permission Sets beschränken. |
 | Protokoll | MCP-Verkehr lässt sich in den API-Logs über `API_CLIENT_CATEGORY = SALESFORCE_HOSTED_MCP` herausfiltern. |
@@ -111,13 +112,13 @@ Daraus folgt eine Architekturgrenze. Ein nächtlicher Agent, der ohne Menschen G
 Für die Models API schreibt Salesforce, dass alle Aufrufe durch den [Einstein Trust Layer](https://developer.salesforce.com/docs/ai/agentforce/guide/models-api.html) laufen. In der Hosted-MCP-Dokumentation, die ich gelesen habe, finde ich keine entsprechende Zusage für den Fall, dass ein externes Modell die Antworten verarbeitet. Meine Lesart: Liest Claude oder ChatGPT Fälle und Anlagendaten über Hosted MCP, gelten für diese Daten der Vertrag und die Datenverarbeitung des KI-Anbieters. Salesforce prüft die Berechtigung, nicht, was danach mit den Daten passiert. Das gehört in die Datenschutzprüfung, bevor der erste Fachbereich startet.
 ```
 
-Dazu kommt Prompt Injection. Bei [ForcedLeak](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html) (CVSS 9.4, veröffentlicht im September 2025) versteckten Angreifer Anweisungen im Beschreibungsfeld eines Web-to-Lead-Formulars, und Agentforce schickte CRM-Daten an eine fremde Domain. Simon Willison nennt die Kombination aus privaten Daten, fremden Inhalten und einem Weg nach außen die [„lethal trifecta“](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) und weist darauf hin, dass MCP genau dieses Kombinieren von Tools fördert. Bei Herstellern landen fremde Texte über Händlerportale, Garantieanträge und Email-to-Case im CRM. Mehr dazu in [Hosted MCP Server: wer darf welche Daten lesen](../../../blog/salesforce-hosted-mcp-server-datenzugriff/) und [Prompt Injection im Händlerportal](../../../blog/prompt-injection-haendlerportal-agentforce/).
+Hinzu kommt das Risiko der Prompt Injection. Bei [ForcedLeak](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html) (CVSS 9.4, veröffentlicht im September 2025) versteckten Angreifer Anweisungen im Beschreibungsfeld eines Web-to-Lead-Formulars, und Agentforce schickte CRM-Daten an eine fremde Domain. Simon Willison nennt die Kombination aus privaten Daten, fremden Inhalten und einem Weg nach außen die [„lethal trifecta“](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) und weist darauf hin, dass MCP genau dieses Kombinieren von Tools fördert. Bei Herstellern gelangen fremde Texte über Händlerportale, Garantieanträge und Email-to-Case ins CRM. Mehr dazu in [Hosted MCP Server: wer darf welche Daten lesen](../../../blog/salesforce-hosted-mcp-server-datenzugriff/) und [Prompt Injection im Händlerportal](../../../blog/prompt-injection-haendlerportal-agentforce/).
 
 ## Was kosten MCP-Zugriffe auf Salesforce?
 
 Die [Übersicht der Hosted MCP Servers](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) sagt: „intended only for customers with Flex Credits and you may be billed for server usage“. Auf der [Flex Credits Rate Card vom 31.08.2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) steht der Zähler „Headless Platform Interaction“ mit dem Satz TBA. Laut [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/) zählen erfolgreiche Aufrufe registrierter Agenten über MCP oder API, gemessen wird nur in aktiven Produktions-Orgs, Kunden erhalten 30 Tage Vorlauf, und bestehende API-Integrationen behalten ihre heutige Preislogik.
 
-Für die Planung heißt das: Den Preis kennen Sie nicht, die Menge können Sie schätzen. Zählen Sie Benutzer, Fragen pro Tag und Tool-Aufrufe pro Frage, denn ein Agent ruft für eine Antwort oft mehrere Tools auf. Die Rechnung mit Annahmen steht in [MCP-Zugriffe auf Salesforce als Budgetrisiko](../../../blog/mcp-zugriffe-salesforce-budgetrisiko/), die Kostenmodelle insgesamt in [Kapitel 7](../kosten-und-token/).
+Für die Planung heißt das: Den Preis kennen Sie nicht, die Menge können Sie schätzen. Zählen Sie Benutzer, Fragen pro Tag und Tool-Aufrufe pro Frage, denn ein Agent ruft für eine Antwort oft mehrere Tools auf. Die Rechnung mit Annahmen steht in [MCP-Zugriffe auf Salesforce als Budgetrisiko](../../../blog/flex-credits-agentforce-kosten-pro-aktion/), die Kostenmodelle insgesamt in [Kapitel 7](../kosten-und-token/).
 
 ## Durchgespielt: Servicedaten in Claude bei einem Maschinenbauer
 
@@ -127,20 +128,20 @@ So würde ich vorgehen:
 
 | Schritt | Was ich tun würde |
 |---|---|
-| Partner zuerst | Bis zum 2. November die DX-MCP-Einträge inventarisieren, auf 0.30.15 pinnen, in den Sandboxes auf Plugin und Skills umstellen. Kein Agent bekommt eine Produktions-Org. |
+| Partner zuerst | Bis zum 2. November die DX-MCP-Einträge inventarisieren, auf 0.30.15 pinnen, in den Sandboxes auf Plugin und Skills umstellen. Kein Agent erhält Zugriff auf eine Produktions-Org. |
 | Lesend starten | Nur `sobject-reads` aktivieren, die External Client App auf ein eigenes Permission Set beschränken, erst in einer Sandbox testen. Für die Suche nach Seriennummern eine Named Query statt freier SOQL. |
-| ERP bleibt deterministisch | Auftragsstatus und Liefertermine aus SAP kommen über eine MuleSoft-API im API Catalog, nicht über ein Modell, das Tabellen interpretiert. Der Weg steht in [Agentforce und SAP-Auftragsstatus](../../../blog/agentforce-sap-auftragsstatus/). |
+| ERP bleibt deterministisch | Auftragsstatus und Liefertermine aus SAP werden über eine MuleSoft-API im API Catalog abgerufen, nicht über ein Modell, das Tabellen interpretiert. Der Weg steht in [Agentforce und SAP-Auftragsstatus](../../../blog/agentforce-sap-auftragsstatus/). |
 | Menge schätzen | Angenommen 25 Personen, 20 Fragen am Tag, vier Tool-Aufrufe pro Frage und 21 Arbeitstage: das sind 42.000 Aufrufe im Monat. Wenn jeder erfolgreiche Aufruf zählt, wovon ich nach heutigem Stand ausgehe, ist das die Zahl, die Sie mit dem Satz multiplizieren, sobald Salesforce ihn nennt. |
 | Datenschutz klären | Der Vertrag mit Anthropic und die Freigabe durch Datenschutz und Betriebsrat stehen vor dem Start, weil der Trust Layer hier nach meiner Lesart nicht greift. |
 
 ## Welche Entscheidungen liegen bei der IT-Leitung?
 
-Für die Einrichtung nennt Salesforce weniger als 30 Minuten. Die eigentliche Arbeit liegt in fünf Entscheidungen:
+Für die Einrichtung veranschlagt Salesforce weniger als 30 Minuten. Die eigentliche Arbeit liegt in fünf Entscheidungen:
 
 | Entscheidung | Frage |
 |---|---|
 | Server | Welche Server werden aktiviert, und wer darf neue freischalten? |
-| Benutzer | Welche Benutzer bekommen Zugriff, über welches Permission Set? |
+| Benutzer | Welche Benutzer erhalten Zugriff, über welches Permission Set? |
 | Daten | Welche Daten sind lesbar, welche änderbar, und wo reicht eine Named Query? |
 | Modelle und Verträge | Welche sind zugelassen: Claude, ChatGPT, ein Modell über einen Cloud-Anbieter in der EU? |
 | Budget | Wer zahlt die Headless Platform Interactions, Fachbereich oder IT? |

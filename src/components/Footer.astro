@@ -12,6 +12,8 @@ import { getMasterclasses } from '../lib/masterclasses';
 import { getServices, serviceHref, servicesIndex } from '../lib/services';
 import { questionPaths } from '../data/questions';
 import { freelanceArchitect, freelanceArchitectPaths } from '../data/freelance-architect';
+import { maschinenbau, maschinenbauPaths } from '../data/maschinenbau';
+import { fieldServiceBerater, fieldServiceBeraterPaths } from '../data/field-service-berater';
 
 interface Props {
   t: Dict;
@@ -32,6 +34,8 @@ const more = [
   { href: localHref(lang, 'certifications/'), label: f.certifications },
   { href: partnersHref(lang), label: f.partners },
   { href: localHref(lang, freelanceArchitectPaths[lang]), label: freelanceArchitect[lang].footerLink },
+  { href: localHref(lang, maschinenbauPaths[lang]), label: maschinenbau[lang].footerLink },
+  { href: localHref(lang, fieldServiceBeraterPaths[lang]), label: fieldServiceBerater[lang].footerLink },
 ];
 ---
 <footer class="site-footer">

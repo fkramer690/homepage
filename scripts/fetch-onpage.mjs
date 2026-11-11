@@ -97,7 +97,8 @@ const issues = pages
     title: p.meta?.title ?? null,
     words: p.meta?.content?.plain_text_word_count ?? null,
     score: p.onpage_score ?? null,
-    checks: BAD.filter((c) => p.checks?.[c] === true),
+    // duplicate_title/description/content are top-level page fields, not entries in checks.
+    checks: BAD.filter((c) => p.checks?.[c] === true || p[c] === true),
   }))
   .filter((p) => p.checks.length);
 
@@ -118,7 +119,7 @@ const dupGroups = async (type) =>
   }));
 
 const duplicateContent = [];
-for (const p of issues.filter((p) => p.checks.includes('duplicate_content')).slice(0, 40)) {
+for (const p of issues.filter((p) => p.checks.includes('duplicate_content')).slice(0, 100)) {
   const items = await list('on_page/duplicate_content', { url: `https://www.${DOMAIN}${p.page}` });
   const similar = items.flatMap((i) => i.pages ?? []).map((s) => ({ page: path(s.page?.[0]?.url ?? s.url), similarity: s.similarity }));
   duplicateContent.push({ page: p.page, similar: similar.filter((s) => s.page && s.page !== p.page) });

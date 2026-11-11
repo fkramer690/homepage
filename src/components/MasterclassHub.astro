@@ -1,4 +1,5 @@
 ---
+import { withBrand } from '../lib/page-title.mjs';
 // Hub page of one masterclass (`course`, default the AI masterclass) in either language.
 // Chapters come from src/content/masterclass/<lang>/, article clusters from
 // src/lib/masterclass.ts, all texts from src/i18n (rules: docs/masterclass.md).
@@ -10,6 +11,8 @@ import AuthorBox from './AuthorBox.astro';
 import Photo from './Photo.astro';
 import { coursePhotos } from '../data/photos';
 import PartnerBox from './PartnerBox.astro';
+import VideoCard from './VideoCard.astro';
+import type { CourseVideo } from '../i18n/en';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
@@ -26,9 +29,17 @@ const { lang, course = 'ai' } = Astro.props;
 const t = lang === 'de' ? de : en;
 const m = courseTexts(lang, course);
 const photo = coursePhotos[course];
+// Optional intro video (only in the language it is spoken in), opened from a card in the hero.
+const video = (m as { video?: CourseVideo | null }).video ?? null;
 const chapters = await getChapters(lang, course);
 const clusters = await getClusters(lang, course);
 const articleCount = new Set(clusters.flatMap(({ posts }) => posts.map((p) => p.id))).size;
+// Optional question guide (topic hub): one row per question with a short answer and the page that answers it in full.
+type HubQuestion = { q: string; a: string; articleKey: string; link: string };
+const questionTexts = (m as { questions?: HubQuestion[] }).questions ?? [];
+const questions = (
+  await Promise.all(questionTexts.map(async (item) => ({ ...item, post: (await postsForKeys(lang, [item.articleKey]))[0] })))
+).filter((item) => item.post);
 const deadlinePosts = new Map(
   await Promise.all(
     m.deadlines.filter((d) => d.articleKey).map(async (d) => [d.articleKey, (await postsForKeys(lang, [d.articleKey]))[0]] as const),
@@ -40,8 +51,7 @@ const abs = (path: string) => new URL(path, Astro.site).href;
 const alternates = { en: masterclassIndex('en', course), de: masterclassIndex('de', course) };
 const url = abs(masterclassIndex(lang, course));
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
-const suffix = ' | FK Solution Design';
-const pageTitle = m.metaTitle.length + suffix.length <= 60 ? m.metaTitle + suffix : m.metaTitle;
+const pageTitle = withBrand(m.metaTitle);
 const ogImage = `${base}og/${lang}/${courses[course].og}.png`;
 const nn = (n: number) => String(n).padStart(2, '0');
 const countLabel = (n: number) => (n === 1 ? m.articleCount.one : m.articleCount.other).replace('{n}', String(n));
@@ -115,6 +125,36 @@ const schema = {
       hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'Online', inLanguage: lang },
       hasPart: chapters.map((c) => ({ '@type': 'LearningResource', name: c.data.title, url: abs(chapterHref(c)) })),
     },
+    ...(video
+      ? [
+          {
+            '@type': 'VideoObject',
+            '@id': `${url}#video`,
+            name: video.title,
+            description: m.metaDescription,
+            inLanguage: lang,
+            thumbnailUrl: abs(`${base}videos/${video.file}.jpg`),
+            contentUrl: abs(`${base}videos/${video.file}.mp4`),
+            uploadDate: new Date(video.uploadDate).toISOString(),
+            duration: `PT${video.duration}S`,
+            transcript: video.transcript,
+          },
+        ]
+      : []),
+    ...(questions.length
+      ? [
+          {
+            '@type': 'FAQPage',
+            '@id': `${url}#questions`,
+            inLanguage: lang,
+            mainEntity: questions.map((item) => ({
+              '@type': 'Question',
+              name: item.q,
+              acceptedAnswer: { '@type': 'Answer', text: item.a, url: abs(postHref(item.post!)) },
+            })),
+          },
+        ]
+      : []),
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
@@ -141,6 +181,7 @@ const schema = {
           <a class="btn" href={`#${m.chaptersAnchor}`}>{m.toChapters}</a>
           <a class="btn btn-ghost" href={contactHref(m.name)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
         </div>
+        {video && <VideoCard t={t} part="card" video={video} class="mc-video" />}
       </div>
       {photo ? (
       <figure class="mc-figure hero-photo"><Photo photo={photo} lang={lang} eager sizes="(max-width: 900px) calc(100vw - 32px), 500px" /></figure>
@@ -233,6 +274,26 @@ const schema = {
       </ul>
     </div>
   </section>
+
+  {questions.length > 0 && (
+    <section class="section mc-questions" id={(m as { questionsAnchor?: string }).questionsAnchor} aria-labelledby="mc-questions">
+      <div class="container">
+        <p class="label mono">{(m as { questionsLabel?: string }).questionsLabel}</p>
+        <h2 id="mc-questions">{(m as { questionsTitle?: string }).questionsTitle}</h2>
+        <p class="section-intro">{(m as { questionsText?: string }).questionsText}</p>
+        <ol class="mc-qa">
+          {questions.map((item, i) => (
+            <li>
+              <span class="mc-qa-n mono">{nn(i + 1)}</span>
+              <h3>{item.q}</h3>
+              <p>{item.a}</p>
+              <a href={postHref(item.post!)}>{item.link} →</a>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )}
 
   {courses[course].partner && (
   <section class="section mc-partner">
@@ -334,4 +395,5 @@ const schema = {
       <ContactForm t={t} subject={`${t.contact.form.subject}: ${m.formSubject}`} />
     </div>
   </section>
+  {video && <VideoCard t={t} part="dialog" video={video} />}
 </Page>

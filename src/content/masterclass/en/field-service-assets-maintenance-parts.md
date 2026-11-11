@@ -34,31 +34,31 @@ For a machine builder, Salesforce Field Service works best with a flat installed
 
 ## How deep should the installed base go?
 
-Field Service, which Salesforce sells today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/), hangs almost everything in this chapter on the asset. [Chapter 3](../field-service-mobile-app-documents/) covered how technicians document their work; this one covers what they document it against.
+Field Service, which Salesforce sells today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/), builds almost everything in this chapter on the asset. [Chapter 3](../field-service-mobile-app-documents/) covered how technicians document their work; this one covers what they document it against.
 
 An asset is a product bought or installed at a customer, linked to an account, a contact or both. The Parent Asset field builds the hierarchy. The [Field Service limits](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5) in Salesforce Help allow 2,000 child assets per asset, 50 levels and 10,000 assets per hierarchy, while the tree grid view shows hierarchies of up to 500 assets.
 
-Those limits rarely matter. Depth costs you earlier, in data upkeep, maintenance plans and on the tablets. My rule of thumb has three questions, and one yes makes a component an asset:
+Those limits are rarely the first constraint. Depth costs effort much earlier, in data upkeep, in maintenance plans and on the technicians' tablets. My rule of thumb has three questions, and one yes makes a component an asset:
 
 | Question | Why it matters |
 |---|---|
 | Own serial number? | The technician has to record which gearbox or robot was installed or exchanged. |
-| Own maintenance? | Maintenance work rules hang on assets, so a spindle with its own interval needs one. |
+| Own maintenance? | Maintenance work rules are attached to assets, so a spindle with its own interval needs one. |
 | Own warranty? | A bought-in part whose warranty starts on a different date than the machine's. |
 
-Everything else stays in the PLM parts list. For most machines that leaves two or three levels. The calculation for a packaging line with 6 machines, 40 serialised assemblies and 900 parts is in [asset hierarchy: how deep for a machine?](../../../blog/field-service-asset-hierarchy-machines/).
+Everything else stays in the PLM parts list. For most machines that leaves two or three levels. The calculation for a packaging line with 6 machines, 40 serialized assemblies and 900 parts is in [asset hierarchy: how deep for a machine?](../../../blog/field-service-asset-hierarchy-machines/).
 
-Two decisions come before the first ERP load. First, values that differ per series, such as a firmware version, go into asset attributes. The [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm), available since API version 57.0, stores a value per asset against an attribute definition, so a new machine series needs no new custom field. Counters that drive maintenance stay number fields on the asset. Second, someone owns the tree after delivery. The ERP delivers the installed base, but a year later a technician exchanges a gearbox. One system has to lead from then on, or nobody trusts the tree.
+Two decisions come before the first ERP load. First, values that differ per series, such as a firmware version, are stored as asset attributes. The [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm), available since API version 57.0, stores a value per asset against an attribute definition, so a new machine series needs no new custom field. Counters that drive maintenance stay number fields on the asset. Second, someone owns the tree after delivery. The ERP delivers the installed base, but a year later a technician exchanges a gearbox. One system has to lead from then on, or nobody trusts the tree.
 
 ```praxis
-In my Field Service projects, spare parts and the installed base came from the ERP, and that is where two stumbling blocks were, the data quality of the assets and the ERP interfaces.
+In my Field Service projects, spare parts and the installed base came from the ERP, and that is where the two stumbling blocks lay: the data quality of the assets and the ERP interfaces.
 ```
 
 Check serial numbers and locations before maintenance plans build on them.
 
 ## Service contract, maintenance plan, entitlement: one object per job
 
-A maintenance contract does not live in one object. In Field Service it is split three ways:
+A maintenance contract is not stored in a single object. In Field Service it is split three ways:
 
 | Object | Answers | Example |
 |---|---|---|
@@ -101,7 +101,7 @@ Predictive maintenance needs a service history more than it needs sensors. Sales
 
 The model learns only from what your work orders contain. Without serial numbers on corrective work orders and coded failure causes, I recommend the usage and criteria rules above plus a few aggregated condition signals.
 
-Machine data costs money once it lands in Data 360. The [Flex Credits rate card of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices the Streaming Pipeline at 3,500 credits per million rows in the base tier, and 15-minute aggregates have 900 times fewer rows than one-second readings. Raw time series belong in the IoT platform or historian. The data check and the full cost calculation are in [predictive maintenance in Salesforce: what data you need](../../../blog/predictive-maintenance-salesforce-data-needed/).
+Machine data costs money once it is stored in Data 360. The [Flex Credits rate card of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices the Streaming Pipeline at 3,500 credits per million rows in the base tier, and 15-minute aggregates have 900 times fewer rows than one-second readings. Raw time series belong in the IoT platform or historian. The data check and the full cost calculation are in [predictive maintenance in Salesforce: what data you need](../../../blog/predictive-maintenance-salesforce-data-needed/).
 
 ## Do you need Asset Service Lifecycle Management or Connected Assets?
 
@@ -122,7 +122,7 @@ Several ASLM functions handle stock, such as counts and replenishment; if SAP ow
 
 In the ERP a spare part has a value, a purchasing process and postings to accounting. Field Service only needs quantities per location. According to the [inventory data model](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_soap_inventory.htm), a product item holds the stock of one part at one location, products required list what a job needs, and products consumed record what was used, with the product item quantity updated automatically. A [location](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_location.htm) can be a warehouse or a service vehicle.
 
-The ERP sends material master and stock, Salesforce sends back consumed parts and part requests. Bring only the vans and the warehouses that restock them into Salesforce. 40 vans with 300 parts each are already 12,000 product items, and every one of them ends up offline on a device. Which data the app should hold offline is in [Field Service mobile offline](../../../blog/field-service-mobile-app-offline-data/), the split of tasks in [spare parts: ERP or Salesforce?](../../../blog/salesforce-field-service-spare-parts-erp/).
+The ERP sends material master and stock, Salesforce sends back consumed parts and part requests. Bring only the vans and the warehouses that restock them into Salesforce. 40 vans with 300 parts each are already 12,000 product items, and every one of them is stored offline on a device. Which data the app should hold offline is in [Field Service mobile offline](../../../blog/field-service-mobile-app-offline-data/), the split of tasks in [spare parts: ERP or Salesforce?](../../../blog/salesforce-field-service-spare-parts-erp/).
 
 ```ablauf
 sf: Product Item, Products Consumed, Part request
@@ -133,11 +133,11 @@ Products Consumed --Consumed parts--> ERP
 Part request --> ERP
 ```
 
-Many spare parts calls need no visit. If customers order a known part for their machine themselves, the hotline has less to do; the B2B Commerce chapter on [catalogue, search and entitlements](../../b2b-commerce/catalog-search-entitlements/) shows how parts per machine become visible in a store.
+Many spare parts calls need no visit. If customers order a known part for their machine themselves, the hotline has less to do; the B2B Commerce chapter on [catalog, search and entitlements](../../b2b-commerce/catalog-search-entitlements/) shows how parts per machine become visible in a store.
 
 ## Where does warranty belong?
 
-Warranty touches three products, so decide the owner first:
+Warranty involves three products, so decide which one owns it before you buy:
 
 | Product | What it brings for warranty |
 |---|---|
@@ -149,20 +149,20 @@ My rule: if dealers submit warranty claims, Manufacturing Cloud owns warranty, a
 
 ## Service partners work in the same process
 
-Partners belong in the same process as your own technicians: same plan, same app, same service report. Salesforce's [architecture guide on contractor sharing](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns) describes two models. A named contractor is treated much like an employee and needs a user licence of their own. A contractor company can be modelled as a capacity-based resource, and the partner assigns its own people. The guide uses the service territory as the main security boundary, with a child territory per contractor company.
+Partners belong in the same process as your own technicians: same plan, same app, same service report. Salesforce's [architecture guide on contractor sharing](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns) describes two models. A named contractor is treated much like an employee and needs a user license of their own. A contractor company can be modeled as a capacity-based resource, and the partner assigns its own people. The guide uses the service territory as the main security boundary, with a child territory per contractor company.
 
-I prefer the first model for regular partners and the second for partners who step in at peaks. Contractor Plus costs $80 per user or $32 per login and month according to the price list, so per user wins above 2.5 logins a month. Roles and licence rules are in [Field Service licences by role](../../../blog/field-service-licences-by-role/), the setup and what stays deliberately different in [how to bring in service partners](../../../blog/salesforce-field-service-service-partners/).
+I prefer the first model for regular partners and the second for partners who step in at peaks. Contractor Plus costs $80 per user or $32 per login and month according to the price list, so per user wins above 2.5 logins a month. Roles and license rules are in [Field Service licenses by role](../../../blog/field-service-licences-by-role/), the setup and the deliberate differences in [how to bring in service partners](../../../blog/salesforce-field-service-service-partners/).
 
 ## Worked example: 1,200 machines in three series
 
-A builder of machining centres has 1,200 machines in the field in three series. The service contract says: service every 2,000 operating hours or every 12 months, whichever comes first. 700 machines are connected, 500 are not. Two partner companies cover Scandinavia.
+A builder of machining centers has 1,200 machines in the field in three series. The service contract says: service every 2,000 operating hours or every 12 months, whichever comes first. 700 machines are connected, 500 are not. Two partner companies cover Scandinavia.
 
 | Area | Decision in the scenario |
 |---|---|
-| Installed base | Each machine has six serialised assemblies: 8,400 assets in two levels, loaded from SAP. Technicians record exchanges in the app, and SAP stays the master. |
+| Installed base | Each machine has six serialized assemblies: 8,400 assets in two levels, loaded from SAP. Technicians record exchanges in the app, and SAP stays the master. |
 | Maintenance | One criteria-based rule per machine with two conditions joined by OR. The IoT platform writes hours every night, technicians enter the reading for unconnected machines. Six plans, one per series and region, with at most 250 machines each. |
-| Effect | Assume 300 machines run two shifts at about 4,000 hours a year and get two services, while 900 single-shift machines fall back to the 12-month condition. That is 1,500 visits a year instead of 2,400 with a fixed six-month calendar. |
-| Parts and partners | 30 vans in Salesforce as locations, stock synced nightly from SAP. The two partners get a territory each, regular technicians on Contractor Plus per user. |
+| Effect | Assume 300 machines run two shifts at about 4,000 hours a year and receive two services, while the 12-month condition applies to the 900 single-shift machines. That is 1,500 visits a year instead of 2,400 with a fixed six-month calendar. |
+| Parts and partners | 30 vans in Salesforce as locations, stock synced nightly from SAP. The two partners each get a territory, and their regular technicians use Contractor Plus per user. |
 | Add-ons | None in the first year. Connected Assets would cost $180,000 a year without changing a single decision. |
 
 ## Set the asset depth per machine type

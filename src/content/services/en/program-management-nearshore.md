@@ -1,32 +1,32 @@
 ---
-title: "Salesforce programme management and nearshore teams"
+title: "Salesforce program management and nearshore teams"
 headline: "Nearshore Salesforce teams that deliver steadily"
-description: "Planning and steering of Salesforce programmes, including nearshore development teams in Eastern Europe and India, with team setups that stay stable."
+description: "Planning and steering of Salesforce programs, with nearshore teams in Eastern Europe and offshore teams in India, in team setups that stay stable."
 lang: en
 slug: program-management-nearshore
 translationKey: service-nearshore
 contactBrief: nearshore
-order: 5
-lead: "Nearshore teams can deliver a lot for a reasonable price, if the setup is right. Most problems have little to do with skills and a lot to do with team size, turnover and culture. I plan and steer Salesforce programmes on the client side, including nearshore teams in Eastern Europe and India."
+order: 6
+lead: "Nearshore teams can deliver a lot at a reasonable price if the setup is right. Most problems have little to do with skills and a lot to do with team size, turnover and culture. I plan and steer Salesforce programs on the client side, including nearshore teams in Eastern Europe and offshore teams in India."
 situations:
-  - "A Salesforce programme needs more delivery capacity than the internal team and the current partners can provide."
+  - "A Salesforce program needs more delivery capacity than the internal team and the current partners can provide."
   - "A nearshore team is in place, but velocity stays low and the client spends a lot of time explaining and correcting."
-  - "Developers rotate in and out of the team, and knowledge leaves with every change."
+  - "Developers are moved in and out of the team, and knowledge is lost with every change."
   - "Several teams and partners deliver in parallel, and nobody plans dependencies and releases across them."
 deliverables:
-  - "I select nearshore partners with you and look at culture and the will to deliver as closely as at skills."
+  - "I select nearshore partners with you and pay as much attention to culture and commitment to delivery as to skills."
   - "I onboard new teams into the standards, the review process and the pipeline."
   - "I keep dependencies between teams and partners visible and plan releases across them."
-  - "I steer plan, risks and quality for as long as the programme runs."
+  - "I steer plan, risks and quality for as long as the program runs."
 results:
-  - "A programme plan with streams, dependencies, milestones and release plan"
+  - "A program plan with streams, dependencies, milestones and a release plan"
   - "A team setup for every nearshore team with size, roles and seniority mix"
   - "Written rules for staffing and rotation, agreed with every nearshore partner"
   - "Regular reporting with status, risks and upcoming decisions for management"
 phases:
   - title: "Plan and team setup"
     icon: "team"
-    text: "I plan the programme with its streams and dependencies and define the team setup: how many developers, which roles and which mix of seniority."
+    text: "I plan the program with its streams and dependencies and define the team setup: how many developers, which roles and which mix of seniority."
   - title: "Partner selection"
     icon: "partners"
     text: "Together with the client I select nearshore partners and agree on rules for staffing, rotation and communication before the first sprint starts."
@@ -36,58 +36,76 @@ phases:
   - title: "Steering"
     icon: "steer"
     text: "During delivery I steer plan, risks and quality, keep dependencies between teams visible and report to management in a format that supports decisions."
+duration: "Plan and partner selection 4 to 8 weeks. A new team needs 2 to 3 months until it delivers at full speed. After that I steer for the whole life of the program, usually 12 months or more."
+notFit:
+  - "You only need individual developers for a limited time."
+  - "Management sees nearshore only as a way to cut costs and plans no time for onboarding."
+alternatives: "A German partner needs less coordination but costs more per day. Freelancers from portals close short-term gaps but do not build a stable team."
+progress:
+  - measure: "Stable staffing"
+    how: "How many developers leave or join the team per quarter."
+  - measure: "Delivery against plan"
+    how: "How many of the planned user stories are done in the sprint."
+  - measure: "Wait time for the client"
+    how: "How long teams wait for answers and approvals."
 faq:
   - q: "How large should a nearshore Salesforce team be?"
-    a: "Up to around eight developers per team. Beyond that, agile teams rarely work well: coordination takes over, and sprint meetings become long. If a programme needs more capacity, I set up several teams with clear responsibilities instead of one large one."
+    a: "At most eight developers. If more capacity is needed, I plan another team with its own area of responsibility, because in a large team coordination grows faster than output."
   - q: "What makes nearshore teams succeed?"
-    a: "Culture, shared values, trust and the will to deliver, on both sides. Management buy-in is needed as well, because a nearshore team needs time, attention and decisions from the client. Skills matter, but they are rarely the reason a team struggles."
+    a: "A partner who shares values and trust and wants to deliver, and a client who provides time, access and decisions. In my experience, missing skills are rarely the reason a team struggles."
   - q: "What slows nearshore teams down?"
-    a: "Rotating resources and high turnover, because knowledge of the org leaves with every change. Teams that are too senior can also cause problems: experienced developers who all want to design and nobody who wants to build create unrest and slow the team down."
+    a: "Above all, frequent changes in staffing, whether through rotation at the partner or resignations, because each time knowledge of the org is lost. A team made up only of seniors slows things down too: it debates designs instead of building."
+  - q: "Do you replace our implementation partner?"
+    a: "No. Your partners keep building, and I steer them on the client side according to shared rules. If you want to replace a partner, I help you do it without losing knowledge and without delaying the program."
+  - q: "How do you avoid becoming a bottleneck?"
+    a: "I keep my work transparent. Decisions, standards and review criteria are documented where your team and your partners can see them, so nobody has to wait for me and the work does not depend on me."
+  - q: "Do you work on site or remotely?"
+    a: "Both. I work on site with your teams and remotely, depending on what the current phase of the program requires."
 blogTags: [nearshore, pull request review, code quality, codequalität, devops, project management]
+readMore: [nearshore-team-size, development-standards-definition-of-done, pull-request-reviews-enterprise, salesforce-center-of-excellence, salesforce-uat-business-testing, nearshore-teams-with-ai-agents, smaller-teams-ai-native-delivery]
+masterclass: devops
 ---
 
-Programme management on the client side means planning and steering a Salesforce programme across internal teams, implementation partners and nearshore teams. It covers the plan with its dependencies, the team setup, the steering of risks and quality, and reporting that helps management decide. Nearshore teams are often part of it, because they add delivery capacity at a reasonable price. I have worked with nearshore teams in Eastern Europe and India, and the lessons were the same in both regions.
+Program management on the client side means planning and steering a Salesforce program across internal teams, implementation partners and nearshore teams. It covers the plan with its dependencies, the team setup, the steering of risks and quality, and reporting that helps management decide. Nearshore teams are often part of it, because they add delivery capacity at a reasonable price. My nearshore experience comes from teams in Eastern Europe and India, and both regions showed the same patterns.
 
 ## Why do nearshore teams struggle?
 
-When a nearshore team delivers less than expected, the first reaction is often to blame skills. In my experience the reasons are elsewhere, and each one has an answer in the setup:
+Rarely because of missing skills. When I take over a running nearshore setup, I almost always find the same four causes, and the right setup can reduce the impact of each one. The detailed reasoning is in [Nearshore Salesforce teams: why eight developers at most?](../../blog/salesforce-nearshore-teams-eight-developers/).
 
 ```vergleich
-without: Where nearshore teams get stuck
-- **Rotating resources:** If developers are moved every few months, knowledge of the org leaves with them.
-- **High turnover:** The effect is the same, and it creates unrest in the rest of the team.
-- **Teams that are too senior:** Too many people want to design and too few want to build.
-- **Missing management buy-in:** Without decisions, access and attention from the client, the team waits.
-with: A setup that delivers steadily
-- Rules for staffing and rotation are fixed before the first sprint starts.
-- New team members learn the conventions of the org in pull request reviews.
-- The team setup defines a seniority mix, with people who want to build.
-- Management gets status, risks and decisions presented regularly.
+without: What I find in weak setups
+- **Changing staff:** The partner pulls developers out after a few months, and their knowledge of the org goes with them.
+- **People leaving:** Every resignation costs weeks of onboarding and unsettles those who stay.
+- **Seniors only:** Plenty of architecture ideas, few finished user stories.
+- **Nobody reachable at the client:** Questions and approvals pile up, and the team waits at the client's expense.
+with: What I set up instead
+- Minimum tenure and handover rules are agreed with the partner before the team starts.
+- New people learn the conventions of the org in reviews, not from a wiki.
+- A few seniors carry architecture and reviews, together with developers who like to build.
+- A named contact at the client and reporting that asks for decisions.
 ```
 
-## Eight developers per team at most, and fixed rules for rotation
+## Small teams, stable staffing, one pipeline
 
 ```kennzahlen
 8 | developers per team, at most
-2 | regions: Eastern Europe and India
+2 | regions: Eastern Europe (nearshore) and India (offshore)
 1 | pipeline with the same standards for all teams
-source: my nearshore teams in Salesforce programmes
+source: my nearshore teams in Salesforce programs
 ```
 
-I keep teams at up to around eight developers. Larger agile teams rarely work well, because coordination takes over. If the programme needs more capacity, it gets several teams with clear responsibilities.
+Every team I set up has at most eight developers. More capacity means another team with its own stream, not a bigger one. I explain why the limit sits exactly there in the blog article on team size.
 
-Before the first sprint, the client and the partner agree on rules for staffing and rotation. Culture matters as much as skills: shared values, trust and the will to deliver on both sides. I look for these in partner selection and in the first weeks of every new team.
+When I select partners, culture and commitment to delivery count as much as certifications. That includes asking how the partner handles staffing and rotation, because that is where it is decided whether the team is still the same team six months later.
 
-From day one, a nearshore team works with the same standards, pull request reviews and pipeline as everyone else. Reviews are where quality gets checked and where new team members learn the conventions of the org, as described in [why pull request reviews are a must in enterprise projects](../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
-
-![Several small teams on one shared base: each team has up to around eight developers and clear responsibilities. From day one, every team works with the same standards, pull request reviews and pipeline as everyone else. Rules for staffing and rotation are agreed before the first sprint, and one programme plan with streams and dependencies plus one release process keep the teams aligned.](../../../assets/blog/nearshore-team-setup-en.png)
+From day one, a new team delivers through the same repository, the same reviews and the same pipeline as every other team. How reviews protect quality and pass on knowledge is described in [why pull request reviews are a must in enterprise projects](../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 
 ## Steering across several teams and partners
 
-With several teams and partners, the plan only holds if dependencies and releases are coordinated. The rules that make several partners work together are described under [partner governance](../partner-governance/), and the shared release process under [DevOps and release management](../devops-release-management/). On the client side I run the programme plan, the release process and the reporting:
+With several teams and partners, the plan only holds if dependencies and releases are coordinated. I describe the rules for several partners working together under [partner governance](../partner-governance/), and the shared release process under [DevOps and release management](../devops-release-management/). On the client side I run the program plan, the release process and the reporting:
 
 ```stufen
-1 | Programme plan | streams and dependencies | Who delivers what, and when?
+1 | Program plan | streams and dependencies | Who delivers what, and when?
 2 | Release process | shared by all teams | When does what go live?
 3 | Reporting | status, risks, decisions | What does management need to decide?
 ```

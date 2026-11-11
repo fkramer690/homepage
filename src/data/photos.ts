@@ -2,7 +2,7 @@
 // Files live in src/assets/photos/ as fabian-<NN>-<motif>-<version>.jpg and always
 // go through astro:assets (src/components/Photo.astro), which builds AVIF/WebP
 // in the needed widths. Most motifs exist in two versions with a different shirt
-// or a different counterpart; pick versions so neighbouring photos on a page vary.
+// or a different counterpart; pick versions so neighboring photos on a page vary.
 // The real studio portrait (src/assets/portrait.png) stays the photo for the
 // author box, contact and structured data; these are scenes, not headshots.
 //   alt: describes what is visible, in both languages.

@@ -1,7 +1,8 @@
 ---
 title: "Service Cloud: Casey und der Service Rep Assistant"
-description: "Casey antwortet Kunden, der Service Rep Assistant unterstützt Servicemitarbeitende, das Contact Center ist in Europa live. Was das für den B2B-Service bedeutet."
+description: "Casey antwortet Kunden, der Service Rep Assistant hilft Servicemitarbeitenden, Agentforce Contact Center startet in Europa. Was das für B2B-Service heißt."
 pubDate: 2026-10-23
+updatedDate: 2026-11-09
 lang: de
 slug: service-cloud-casey-und-service-rep-assistant
 translationKey: service-cloud-casey-assistant
@@ -9,103 +10,107 @@ topic: service
 categories: [ai]
 tags: [Service Cloud, Agentforce, Contact Center, Kundenservice, Fertigung]
 takeaways:
-  - "Casey, früher Help Agent, wird aus Wissensartikeln, PDFs und URLs eingerichtet und lässt sich an Kanäle wie Telefon anbinden."
+  - "Casey, der benannte Help Agent von Salesforce, wird mit Wissensartikeln, PDFs und URLs eingerichtet und kann über Kanäle wie Telefon eingesetzt werden."
   - "Der Service Rep Assistant wertet Stimmung und Fallkontext in Echtzeit aus und passt den Aktionsplan im Gesprächsverlauf an."
-  - "Erreicht Casey eine Richtliniengrenze, etwa bei Rabatten oder Kulanz, kann er eine Freigabeanfrage an einen Menschen in der Konsole weiterleiten."
-  - "Das native Contact Center von Salesforce ist seit dem 16. Oktober 2026 in mehr als 30 europäischen Ländern allgemein verfügbar."
+  - "Salesforce hat gezeigt, wie Casey bei Richtliniengrenzen Freigabeanfragen an Menschen stellt; prüfen Sie den Status, bevor Sie damit planen."
+  - "Salesforce hat Agentforce Contact Center ab 16. Oktober 2026 in mehr als 30 europäischen Ländern als allgemein verfügbar angekündigt."
   - "Im B2B-Service der Fertigung entscheiden die Qualität der Wissensartikel und klare Freigaberegeln, ob Casey hilft oder zusätzliche Arbeit erzeugt."
 faq:
   - q: "Was ist Casey in der Salesforce Service Cloud?"
-    a: "Casey ist ein fertiger Agentforce-Agent für den Kundenservice, früher als Help Agent bekannt. Er beantwortet Kundenfragen auf Basis von Wissensartikeln, Dokumenten und Webseiten und kann in Kanälen wie Chat und Telefon arbeiten."
+    a: "Casey ist der benannte, vorkonfigurierte Help Agent von Salesforce für den Kundenservice. Er beantwortet Kundenfragen auf Basis von Wissensartikeln, Dokumenten und Webseiten und kann in Kanälen wie Chat und Telefon arbeiten."
   - q: "Was macht der Service Rep Assistant?"
     a: "Er unterstützt Servicemitarbeitende während eines Falls, indem er Stimmung und Fallkontext in Echtzeit auswertet und einen Aktionsplan erstellt oder anpasst, wenn sich das Gespräch verändert."
   - q: "Ist das native Contact Center von Salesforce in Deutschland verfügbar?"
-    a: "Laut Salesforce ist das native Contact Center seit dem 16. Oktober 2026 in mehr als 30 europäischen Ländern allgemein verfügbar. Die Details für Ihr Land und Ihre Edition sollten Sie mit Salesforce klären."
+    a: "Salesforce hat Agentforce Contact Center ab 16. Oktober 2026 in mehr als 30 europäischen Ländern einschließlich Deutschland als allgemein verfügbar angekündigt. Bestellbarkeit, Telefonie-Optionen und Aktivierungstermin für Ihr Land und Ihre Edition sollten Sie vor der Planung mit Salesforce klären."
   - q: "Eignet sich Casey für den B2B-Service in der Fertigung?"
-    a: "Für Standardfragen mit klaren Antworten wie Auftragsstatus, Dokumentation oder Rückgaberegeln ja. Bei technischer Diagnose, Gewährleistung oder Kulanz sollte Casey an einen Menschen übergeben oder eine Freigabe anfordern."
+    a: "Für Standardfragen mit klaren Antworten zu Themen wie Auftragsstatus, Dokumentation oder Rückgaberegeln kann er passen, wenn Identität, Rechte und Datenzugriff pro Kundenkonto geklärt sind. Bei technischer Diagnose, Gewährleistung oder Kulanz sollte Casey an einen Menschen übergeben oder eine Freigabe anfordern."
 ---
 
-Salesforce ordnet sein Service-Angebot um zwei Arten von Hilfe: Casey, einen KI-Agenten, der Kunden direkt antwortet, und den Service Rep Assistant, der Servicemitarbeitende während eines Falls unterstützt. Im Oktober 2026 hat Salesforce außerdem sein natives Contact Center in Europa allgemein verfügbar gemacht. Für Hersteller mit B2B-Service können diese Neuerungen Antwortzeiten verkürzen und Serviceteams entlasten, aber nur, wenn das Wissen dahinter verlässlich ist und die Regeln für die Übergabe an Menschen klar sind. Es folgen ein Überblick über die Neuerungen und eine Einschätzung aus Kundensicht.
+Dieser Beitrag betrachtet zwei Arten von Hilfe in der Salesforce Service Cloud: Casey, einen KI-Agenten, der Kunden direkt antwortet, und den Service Rep Assistant, der Servicemitarbeitende während eines Falls unterstützt. Im Oktober 2026 hat Salesforce außerdem Agentforce Contact Center in Europa als allgemein verfügbar angekündigt. Für Hersteller mit B2B-Service können diese Neuerungen Antwortzeiten verkürzen und Serviceteams entlasten, aber nur, wenn das Wissen dahinter verlässlich ist und die Regeln für die Übergabe an Menschen klar sind. Es folgen ein Überblick über die Neuerungen und eine Einschätzung aus Kundensicht.
 
-## Zehn Neuerungen in der Service Cloud vom 13. Oktober 2026
+## Ausgewählte Neuerungen in der Service Cloud vom 13. Oktober 2026
 
 Am 13. Oktober 2026 hat Salesforce [zehn Neuerungen in der Service Cloud](https://www.salesforce.com/blog/?p=155993) zusammengefasst. Für Serviceorganisationen in Unternehmen sind diese am wichtigsten:
 
-- **Natives Contact Center in Europa.** Seit 16. Oktober 2026 in mehr als 30 europäischen Ländern allgemein verfügbar, Australien und Neuseeland folgen im November. Es verbindet Telefon, digitale Kanäle, CRM-Daten und KI-Agenten in einem System.
+- **Agentforce Contact Center in Europa.** Ab 16. Oktober 2026 ist Agentforce Contact Center in mehr als 30 europäischen Ländern als allgemein verfügbar angekündigt; Australien und Neuseeland folgen im November. Es verbindet Telefon, digitale Kanäle, CRM-Daten und KI-Agenten in einem System.
 - **Service Rep Assistant.** Wertet Stimmung und Fallkontext in Echtzeit aus und erstellt oder passt einen Aktionsplan für den Mitarbeitenden an, wenn sich das Gespräch verändert.
 - **Slack Swarming.** Der Service Rep Assistant kann für einen schwierigen Fall einen eigenen Slack-Kanal öffnen, Experten hinzuziehen und den Fallkontext teilen. Das ist in der offenen Beta.
-- **Workforce Engagement Management.** Planung für gemischte Teams aus Menschen und KI-Agenten, mit Echtzeitüberwachung der Einsatzpläne, Prognosen und Planungsvorschlägen in natürlicher Sprache.
+- **Workforce Engagement Management.** Planung für gemischte Teams aus Menschen und KI-Agenten, mit Echtzeitüberwachung der Planeinhaltung sowie Prognosen und Planungsvorschlägen in natürlicher Sprache.
 - **Kundensignale und Themen-Clustering.** Live-Stimmung und Auswertungen über Fälle, Telefon und Chat sowie eine automatische Rangfolge der häufigsten Kontaktgründe.
-- **Neue Kanäle.** WhatsApp mit Verkauf und Zahlung im Gespräch sowie RCS für Rich Media in nativen Nachrichtenverläufen.
+- **Neue Kanäle.** WhatsApp, über das Verkauf und Zahlung im Gespräch möglich sind, sowie RCS für Rich Media in nativen Nachrichtenverläufen, jeweils abhängig von Land, Edition, Add-on, Mobilfunkanbieter und Zahlungsdienstleister.
 
-Salesforce hat zudem neue Service-Cloud-Editionen vorgestellt, Core, Advanced und Max, die Service Cloud, Contact Center, Workforce Management, Slack und Tableau Next mit einem festen Kontingent an Verbrauchs-Credits bündeln.
+Salesforce hat zudem neue Service-Cloud-Editionen vorgestellt: Core, Advanced und Max, mit 500.000, 1 Million und 2,75 Millionen Flex Credits. Laut der [Ankündigung der Editionen](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) vom September 2026 ist der Help Agent (Casey) in Advanced und Max enthalten, Service Rep Assistant und Workforce Engagement in Max.
 
 ```hinweis offen
-Welche Edition welche KI-Funktionen enthält, sagt die Ankündigung nicht. Klären Sie das vor der Planung mit Salesforce.
+Die Ankündigung deckt nicht jede KI-Funktion und nicht das native Contact Center ab. Klären Sie den genauen Umfang Ihrer Edition und mögliche Add-ons vor der Planung mit Salesforce.
 ```
 
 ## Wer ist Casey?
 
-Casey ist der neue Name für das, was Salesforce bisher Help Agent nannte: ein fertiger Agentforce-Agent für den Kundenservice. Er gehörte zur Welle benannter Agenten, die Salesforce im September veröffentlicht hat, wie [Salesforce Ben von der Dreamforce berichtet](https://www.salesforceben.com/top-service-cloud-announcements-at-dreamforce-26/).
+Casey ist der benannte, vorkonfigurierte Help Agent von Salesforce für den Kundenservice. Er gehörte zur Welle benannter Agenten, die Salesforce [im September 2026 veröffentlicht](https://www.salesforce.com/news/stories/agentforce-job-ready-ai-agents/) hat.
 
-Laut den Demos ist die Einrichtung bewusst einfach gehalten:
+In den Demos von Salesforce ist die Einrichtung bewusst einfach gehalten:
 
 1. Salesforce Knowledge hinzufügen und Artikel, PDFs und Webseiten als Quellen hineinziehen.
-2. Casey an Kanäle anbinden, auch an das Telefon über eine Rufnummer.
+2. Casey in unterstützten Kanälen bereitstellen, auch am Telefon über eine Rufnummer.
 3. Den Agenten auf demselben Bildschirm live testen.
 
-Zwei verwandte Funktionen machen Casey für den Service in Unternehmen interessanter:
+Gezeigt wurden zwei verwandte Funktionen, die Casey für den Service in Unternehmen interessanter machen. Für die erste habe ich keine Produktdokumentation gefunden, deshalb behandle ich beide als Ankündigung, bis sie in Ihrer Org erscheinen:
 
-- **Freigaben für Agenten.** Erreicht Casey eine Richtliniengrenze, etwa einen Rabatt oder eine Kulanzleistung über einem Schwellenwert, kann er eine Freigabeanfrage an einen Menschen schicken. Dieser gibt sie in der Konsole frei oder lehnt sie ab.
-- **Agent Optimizer.** Analysiert Gespräche, ordnet Kontaktgründe nach Häufigkeit und kann bestehende Flows und Apex-Klassen in Aktionen umwandeln, die der Agent nutzen kann.
+- **Freigaben für Agenten.** In der Dreamforce-Demo stieß Casey bei einem Rabatt oder einer Kulanzleistung oberhalb eines Schwellenwerts an eine Richtliniengrenze und schickte eine Freigabeanfrage an einen Menschen, der sie in der Konsole genehmigte oder ablehnte. Einen solchen Freigabeschritt für Entscheidungen oberhalb festgelegter Schwellenwerte können Sie auch selbst umsetzen.
+- **Agent Optimizer.** Analysiert Gespräche und gruppiert Kontaktgründe. In Agentforce Builder sucht er nach vorhandenen Aktionen, Flows und Apex und legt einen Platzhalter an, wenn nichts Passendes vorhanden ist; ein Entwickler vervollständigt ihn anschließend. Salesforce führt ihn für Winter '27 als Beta-Version; die Casey-spezifische Optimierung war für November 2026 angekündigt.
 
 ## Der Service Rep Assistant arbeitet neben dem Menschen
 
-Casey spricht mit dem Kunden. Der Service Rep Assistant arbeitet neben dem Menschen. Er verfolgt das Gespräch, erkennt die Stimmung, behält den Fallkontext im Blick und schlägt die nächsten Schritte vor. Salesforce hat außerdem eine neu gebaute Servicekonsole gezeigt, die Arbeit nach Kundenwert und Abwanderungsrisiko priorisiert und nicht nur nach dem Alter eines Falls.
+Casey spricht mit dem Kunden. Der Service Rep Assistant arbeitet neben dem Menschen. Er verfolgt das Gespräch, erkennt die Stimmung, behält den Fallkontext im Blick und schlägt die nächsten Schritte vor. In der Demo hat Salesforce außerdem eine neu gestaltete Servicekonsole gezeigt, die Arbeit nach Kundenwert und Abwanderungsrisiko priorisierte und nicht nur nach dem Alter eines Falls; prüfen Sie, ob Ihre Edition das als Standard bietet.
 
-Für viele B2B-Serviceorganisationen ist der Assistent der leichtere Einstieg. Der Mitarbeitende bleibt für die Antwort verantwortlich, und die KI spart Zeit beim Suchen, Zusammenfassen und Dokumentieren. Fehler fängt ein Mensch ab, bevor sie den Kunden erreichen.
+Für viele B2B-Serviceorganisationen ist der Assistent der leichtere Einstieg, sofern Ihre Edition ihn enthält (bei den neuen Editionen ist das die Edition Max) oder Sie ihn als Add-on kaufen. Der Mitarbeitende bleibt für die Antwort verantwortlich, und die KI spart Zeit beim Suchen, Zusammenfassen und Dokumentieren. Ein Mensch kann Vorschläge prüfen und korrigieren, bevor sie den Kunden erreichen.
 
 ## Was bedeutet das für den B2B-Service in der Fertigung?
 
-Service in der Fertigung unterscheidet sich vom Endkundenservice. Kunden sind Unternehmen, Fragen sind oft technisch, und es steht mehr auf dem Spiel: Eine stehende Maschine kostet den Kunden jede Stunde Geld. Das bestimmt, wo Casey und der Assistent passen.
+Service in der Fertigung unterscheidet sich vom Endkundenservice. Kunden sind Unternehmen, Anfragen sind oft technischer Natur, und es steht mehr auf dem Spiel: Ein Maschinenstillstand kostet den Kunden mit jeder Stunde Geld. Das bestimmt, für welche Fälle Casey und der Assistent geeignet sind.
 
 **Gute Kandidaten für Casey:**
 
 - Auftrags- und Lieferstatus, wenn die Daten in Salesforce aktuell sind.
 - Anfragen nach Dokumentation, Handbüchern, Zertifikaten oder Ersatzteilinformationen.
 - Standardfragen zu Rückgaberegeln, Servicezeiten oder Vertragsbedingungen.
-- Das Einsammeln der richtigen Informationen, bevor ein Fall bei einem Techniker landet, etwa Seriennummer, Fehlercode und Fotos.
+- Das Erfassen der richtigen Informationen, bevor ein Fall an einen Techniker übergeben wird, etwa Seriennummer, Fehlercode und Fotos.
 
 **Besser bei Menschen, unterstützt durch den Assistenten:**
 
 - Technische Diagnose komplexer Störungen.
-- Gewährleistungs- und Kulanzentscheidungen, die über Freigaben mit klaren Schwellenwerten laufen sollten.
+- Gewährleistungs- und Kulanzentscheidungen, die über Freigaben mit klaren Schwellenwerten erfolgen sollten.
 - Eskalationen von Schlüsselkunden, bei denen die Beziehung wichtiger ist als die Geschwindigkeit.
 
-![Wer im B2B-Service was beantwortet: Casey antwortet dem Kunden zu Auftrags- und Lieferstatus, Dokumentation, Handbüchern, Zertifikaten und Ersatzteilinformationen, Standardfragen zu Rückgaben, Servicezeiten und Verträgen und sammelt Seriennummer, Fehlercode und Fotos ein. Bei Rabatt oder Kulanz über dem Schwellenwert schickt Casey eine Freigabeanfrage an Servicemitarbeitende. Diese übernehmen, unterstützt vom Service Rep Assistant, die technische Diagnose komplexer Störungen, Gewährleistungs- und Kulanzentscheidungen und Eskalationen von Schlüsselkunden und geben in der Konsole frei oder lehnen ab. Vor dem Go-live: verlässliches Wissen, klare Freigaberegeln, saubere Daten, messbare Ziele.](../../../assets/blog/casey-or-service-rep-de.png)
+![Wer im B2B-Service was beantwortet: Casey beantwortet Kundenfragen zu Auftrags- und Lieferstatus, Dokumentation, Handbüchern, Zertifikaten und Ersatzteilinformationen sowie Standardfragen zu Rückgaben, Servicezeiten und Verträgen und erfasst Seriennummer, Fehlercode und Fotos. Bei einem Rabatt oder einer Kulanzleistung oberhalb des Schwellenwerts schickt Casey eine Freigabeanfrage an Servicemitarbeitende. Diese übernehmen, unterstützt vom Service Rep Assistant, die technische Diagnose komplexer Störungen, Gewährleistungs- und Kulanzentscheidungen sowie Eskalationen von Schlüsselkunden und genehmigen Freigabeanfragen in der Konsole oder lehnen sie ab. Vor dem Go-live: verlässliches Wissen, klare Freigaberegeln, saubere Daten, messbare Ziele.](../../../assets/blog/casey-or-service-rep-de.png)
 
-Der Start des Contact Centers ist für deutsche Hersteller relevant, die ihre Hotline heute auf einer separaten Telefonanlage betreiben. Ein natives Contact Center bringt Anrufe, Fälle und Kundendaten zusammen. Ob es passt, hängt von der bestehenden Telefonie, den Anforderungen an die Datenspeicherung und der Anbindung an Ticketsysteme in anderen Bereichen ab.
+Der Start von Agentforce Contact Center ist für deutsche Hersteller relevant, die ihre Hotline heute über eine separate Telefonanlage betreiben. Ein natives Contact Center bringt Anrufe, Fälle und Kundendaten zusammen. Lassen Sie sich von Salesforce bestätigen, dass die Pakete für Deutschland bestellbar sind, bevor Sie planen. Ob das native Contact Center passt, hängt von der bestehenden Telefonie, den Anforderungen an die Datenspeicherung und der Anbindung an Ticketsysteme in anderen Bereichen ab.
 
 ## Vor dem Go-live muss das Wissen stimmen
 
-Aus Architektursicht entscheiden vier Dinge, ob Casey und der Assistent helfen:
+Aus Architektursicht entscheiden diese Punkte, ob Casey und der Assistent helfen:
 
-1. **Verlässliches Wissen.** Casey antwortet aus Wissensartikeln und Dokumenten. Veraltete, widersprüchliche oder verwaiste Artikel führen zu falschen Antworten. Jeder Artikel braucht einen Verantwortlichen und ein Prüfdatum.
+1. **Verlässliches Wissen.** Casey antwortet aus Wissensartikeln und Dokumenten. Veraltete, widersprüchliche oder verwaiste Artikel führen zu falschen Antworten. Meine Regel: Jeder Artikel braucht einen Verantwortlichen und ein Prüfdatum.
 2. **Klare Freigaberegeln.** Legen Sie fest, welche Entscheidungen Casey allein treffen darf, welche eine Freigabe brauchen und bis zu welchem Betrag. Schreiben Sie sie vor dem ersten Gespräch auf.
-3. **Saubere Daten.** Auftragsstatus, Anlagendaten und Verträge müssen in Salesforce aktuell oder zuverlässig aus dem ERP verfügbar sein. Sonst gibt der Agent überzeugte, aber veraltete Antworten.
-4. **Messbare Ziele.** Zum Beispiel der Anteil der Anfragen ohne Mitarbeitende, die Erstlösungsquote oder die Zeit bis zur ersten Antwort, gemessen vorher und nachher.
+3. **Saubere Daten.** Auftragsstatus, Anlagendaten und Verträge müssen in Salesforce aktuell oder zuverlässig aus dem ERP verfügbar sein. Sonst gibt der Agent selbstsicher formulierte, aber veraltete Antworten.
+4. **Identität und Rechte.** Legen Sie fest, welcher Portalnutzer welche Aufträge, Assets, Verträge und Preise sehen darf und welche Aktionen (lesen, ändern, stornieren, gutschreiben) der Agent für ihn ausführen darf. Ein Agent darf einem Kunden nie Daten eines anderen zeigen.
+5. **Überwachung und Ausweichverfahren.** Antworten, Aktionen und Übergaben werden protokolliert, und der Agent weiß, was zu tun ist, wenn das ERP ausfällt oder Quellen sich widersprechen. PDFs und Webseiten als Quellen bergen außerdem das Risiko der [Prompt Injection](../prompt-injection-haendlerportal-agentforce/).
+6. **Messbare Ziele.** Zum Beispiel der Anteil der Anfragen, die ohne Servicemitarbeitende gelöst werden, die Erstlösungsquote oder die Zeit bis zur ersten Antwort, jeweils vorher und nachher gemessen.
 
-Diese Punkte gelten für jeden KI-Agenten, und deshalb plädiere ich dafür, [Business Value und Datenqualität an die erste Stelle zu setzen](../agentforce-business-value-datenqualitaet/). Sie erklären auch, warum KI-Funktionen in die Zielarchitektur gehören und nicht nur in einen Piloten.
+Diese Punkte gelten für jeden KI-Agenten, und deshalb plädiere ich dafür, [Business Value und Datenqualität an die erste Stelle zu setzen](../agentforce-business-value-datenqualitaet/). Sie erklären auch, warum KI-Funktionen in die Zielarchitektur gehören und nicht nur in ein Pilotprojekt.
 
 ## Mit dem Service Rep Assistant in einem Team beginnen
 
 Welche Bausteine der Service Cloud passen, kläre ich im Rahmen von [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/). Mein Weg:
 
 ```schritte
+Lizenzen prüfen
+  Ob Service Rep Assistant und Casey in Ihrer Edition enthalten sind oder ein Add-on oder der Wechsel auf Max nötig ist.
 Mit dem Service Rep Assistant starten
   In einem Team, damit Menschen die Kontrolle behalten, während die Organisation lernt.
 Wissen aufräumen
-  Für die häufigsten Kontaktgründe, die das Themen-Clustering sichtbar macht.
+  Für die häufigsten Kontaktgründe, die das Themen-Clustering sichtbar macht, sofern es lizenziert und verfügbar ist.
 Casey eng einführen
   Für einen Kanal und ein Thema, etwa Dokumentationsanfragen im Kundenportal.
 Freigaben einrichten

@@ -1,10 +1,11 @@
 ---
-title: "AI code best practices for Salesforce programmes"
+title: "AI code best practices for Salesforce programs"
 description: "Which rules, checks and access limits AI-generated Salesforce code needs, from the rules file and API 67.0 to the quality gates in your pipeline."
 lang: en
 slug: ai-code-best-practices
 translationKey: masterclass-08
 chapter: 8
+pubDate: 2026-10-27
 short: "AI code best practices"
 summary: "How to keep AI-generated Salesforce code under control with a rules file, pipeline checks and clear org boundaries."
 takeaways:
@@ -24,7 +25,7 @@ faq:
 draft: false
 ---
 
-For AI-generated Salesforce code, every major tool vendor recommends the same pattern in 2026: a short rules file in the repository, a plan before the code, and checks that do not depend on the model's goodwill. Salesforce adds typical defects that a machine can mostly find: queries in loops, missing field and object permissions, tests without real asserts, invented field names. And API 67.0 changes the permission defaults per class. As the client you do not need to read code. You should own the rules file, the pipeline and org access, and no agent touches production.
+For AI-generated Salesforce code, every major tool vendor recommends the same pattern in 2026: a short rules file in the repository, a plan before the code, and checks that do not depend on the model's goodwill. On Salesforce there are also typical defects that tools can mostly find: queries in loops, missing field and object permissions, tests without real asserts, invented field names. On top of that, API 67.0 changes the permission defaults per class. As the client you do not need to read code. You should own the rules file, the pipeline and org access, and no agent should have access to production.
 
 ## What does the evidence say about AI-generated code?
 
@@ -55,11 +56,11 @@ Salesforce documents the weak spots itself. The [review checklist for Agentforce
 
 The last row is Salesforce's own advice: according to the [Vibes workflow patterns](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html), permission sets, profiles, page layouts and sharing rules should be set up by hand in Setup, and code for encryption, authentication and permission logic deserves a line-by-line review. At a manufacturer, those are exactly the places that make sure dealers see only their own orders and warranty cases.
 
-On coverage: Salesforce requires 75 percent for a deployment, but its testing guide explicitly says not to focus on the percentage. An agent optimises for whatever check you give it. Give it only the 75 percent and you get tests that run through lines and prove nothing. How to have such code reviewed as the client is covered in [reviewing AI-generated Salesforce code](../../../blog/reviewing-ai-generated-salesforce-code/), and why every pull request needs a review in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+On coverage: Salesforce requires 75 percent for a deployment, but its testing guide explicitly says not to focus on the percentage. An agent optimizes for whatever check you give it. Give it only the 75 percent and you get tests that run through lines and prove nothing. How to have such code reviewed as the client is covered in [reviewing AI-generated Salesforce code](../../../blog/reviewing-ai-generated-salesforce-code/), and why every pull request needs a review in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 
 ## The API 67.0 trap
 
-With Summer '26, Salesforce changed Apex's default behaviour. According to the [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm), code saved at API 67.0 runs in user context, classes without a sharing declaration run with the current user's sharing, and `WITH SECURITY_ENFORCED` is no longer allowed in SOQL. The [Summer '26 architect blog](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) adds two points: triggers always run in system mode, but the handler classes they call are affected if they lack a declaration. And classes still using the old clause will not compile on 67.0.
+With Summer '26, Salesforce changed Apex's default behavior. According to the [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm), code saved at API 67.0 runs in user context, classes without a sharing declaration run with the current user's sharing, and `WITH SECURITY_ENFORCED` is no longer allowed in SOQL. The [Summer '26 architect blog](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) adds two points: triggers always run in system mode, but the handler classes they call are affected if they lack a declaration. And classes still using the old clause will not compile on 67.0.
 
 ```hinweis achtung
 The change is tied to each class's own API version. Code on 66.0 behaves as before until someone raises the version. That is where the risk sits: a query silently returns fewer records, with no error.
@@ -126,7 +127,7 @@ Before the gate, the way of working decides how much fails. Three habits work, i
 
 Simon Willison describes the ["lethal trifecta"](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/): access to private data, exposure to untrusted content and a way to communicate externally. A coding agent signed in through the sf CLI to an org with real dealer and customer data, reading tickets and web pages, with network access, has all three. In its [guide to secure deployment](https://code.claude.com/docs/en/agent-sdk/secure-deployment), Anthropic itself gives the example of a README with unusual instructions that the agent might follow.
 
-My minimum rules for every programme:
+My minimum rules for every program:
 
 1. Agents work only against scratch orgs and developer sandboxes without real customer data.
 2. Agentforce Vibes is [disabled](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes) for production orgs in Setup under "Agentforce Vibes Extensions".
@@ -148,9 +149,9 @@ Rules file
 Plan
   The agent writes a plan first, and a developer approves it.
 Test
-  The plan includes raising an existing selector class from 62.0 to 67.0, so the rules file requires a `runAs` test. The test as a restricted dealer user shows that other dealers' assets disappear, which is intended, but so does the parts master data, which is not. Caught in the validation deployment instead of in the portal.
+  The plan includes raising an existing selector class from 62.0 to 67.0, so the rules file requires a `runAs` test. The test as a restricted dealer user shows that other dealers' assets disappear, which is intended, but so does the parts master data, which is not. The problem surfaces in the validation deployment instead of in the portal.
 Code Analyzer
-  Code Analyzer reports a query inside a loop over 200 order lines, and the pull request goes back.
+  Code Analyzer reports a query inside a loop over 200 order lines, and the pull request is sent back.
 Review
   The reviewer checks the sharing model, not the formatting.
 ```

@@ -1,76 +1,79 @@
 ---
 title: "Revenue Cloud pricing: Growth, Advanced and add-ons"
-description: "What Revenue Cloud Growth, Advanced, Billing and the add-ons cost in October 2026, what each contains and how a manufacturer works out which licences it needs."
+description: "What Revenue Cloud Growth, Advanced, Billing and the add-ons cost in October 2026, what each contains and how a manufacturer works out which licenses it needs."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: en
 slug: revenue-cloud-editions-pricing
 translationKey: revenue-cloud-editions-pricing
 topic: revenue
 categories: [revenue-cloud, architecture]
 contactBrief: licences
-tags: [revenue cloud, pricing, licences, billing, make-or-buy]
+tags: [revenue cloud, pricing, licenses, billing, make-or-buy]
 takeaways:
-  - "The biggest lever is the number of licences. Group users by what they do in quotes before you compare editions."
+  - "The biggest lever is the number of licenses. Group users by what they do with quotes before you compare editions."
   - "A quoting user on Sales Cloud Core and Revenue Cloud Advanced costs €395 per month at list price."
-  - "Contract Lifecycle Management, Dynamic Revenue Orchestration, Invoice Management and External User Support are add-ons."
-  - "Revenue Cloud Billing has no published price and consumes one Billing Event per $50 of invoice amount."
+  - "Usage selling is included in Growth. Advanced adds Salesforce Contracts, Dynamic Revenue Orchestrator and basic invoicing; full billing needs Billing."
+  - "Revenue Cloud Billing has no published price and consumes one Billing Event per $50 of posted invoice subtotal."
 faq:
   - q: "How much does Salesforce Revenue Cloud cost?"
-    a: "According to the Salesforce pricing page (October 2026), Revenue Cloud Growth costs €150 or $150 and Revenue Cloud Advanced €200 or $200 per user and month, billed annually. Revenue Cloud Billing is priced on request."
+    a: "According to the Salesforce pricing page (October 2026), Revenue Cloud Growth costs €150 or $150 and Revenue Cloud Advanced €200 or $200 per user per month, billed annually. Revenue Cloud Billing is priced on request."
   - q: "What is the difference between Revenue Cloud Growth and Advanced?"
-    a: "Growth covers quoting with the configurator, order capture and subscriptions. Advanced adds contracts and orders, consumption and invoicing, and AI and analytics."
+    a: "According to the Salesforce license comparison, both contain the product catalog, pricing, configurator and transaction management including usage selling. Advanced adds Salesforce Contracts, Dynamic Revenue Orchestrator, Agentforce for Revenue Management and limited billing."
   - q: "Is Revenue Cloud included in Sales Cloud?"
     a: "No. The pricing page says Revenue Cloud is a paid add-on that you buy in addition to your Sales Cloud subscription."
   - q: "What does freemium access mean for Dynamic Revenue Orchestration?"
-    a: "The pricing page marks Dynamic Revenue Orchestration and Invoice Management with 'Freemium access available' but does not say what is included. Ask for the included volume in writing before you plan with it."
+    a: "The pricing page marks Dynamic Revenue Orchestration and Invoice Management with 'Freemium access available' but does not say what is included. Ask for the included volume in writing before you base your plan on it."
   - q: "How is Revenue Cloud Billing charged?"
     a: "Through Billing Events. The rate sheet from February 2026 counts one Billing Event per $50 of total invoice amount, excluding tax and including shipping. The price per event is not published."
 draft: false
 ---
 
-Revenue Cloud costs €150 per user and month in the Growth edition and €200 in the Advanced edition at list price, billed annually, as of October 2026. Both come on top of a Sales Cloud subscription. Growth covers quoting with the configurator, order capture and subscriptions; Advanced adds contracts and orders, consumption and invoicing, and AI and analytics. Several functions are add-ons, and Revenue Cloud Billing is priced on request and charged by invoice volume. For most manufacturers the bigger question is not Growth or Advanced, but which users need a Revenue Cloud licence at all.
+Revenue Cloud costs €150 per user per month in the Growth edition and €200 in the Advanced edition at list price, billed annually, as of October 2026. Both are purchased in addition to a Sales Cloud subscription. Growth covers quoting, configuration, orders and usage selling; Advanced adds contracts, order orchestration and basic invoicing. Revenue Cloud Billing is priced on request and consumes Billing Events by invoice volume. For most manufacturers the bigger question is not Growth or Advanced, but which users need a Revenue Cloud license at all.
 
 ## What do Revenue Cloud Growth and Advanced cost?
 
-The [Revenue Cloud pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/), last modified on 28 September 2026, lists these list prices per user and month, billed annually:
+The [Revenue Cloud pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/), last modified on 28 September 2026, lists these prices per user per month, billed annually. The contents column follows the Salesforce [license comparison](https://help.salesforce.com/s/articleView?id=ind.revenue_licenses_areas_and_features.htm&language=en_US&type=5) as of 9 November 2026:
 
 | Edition | EUR | USD | GBP | Contains |
 |---|---|---|---|---|
-| Revenue Cloud Growth | €150 | $150 | £120 | Quoting and configurator, order capture, subscriptions |
-| Revenue Cloud Advanced | €200 | $200 | £160 | Everything in Growth plus contracts and orders, consumption and invoicing, AI and analytics |
+| Revenue Cloud Growth | €150 | $150 | £120 | Catalog, pricing, configurator, quotes and orders, usage selling |
+| Revenue Cloud Advanced | €200 | $200 | £160 | Growth plus Salesforce Contracts, Dynamic Revenue Orchestrator, Agentforce, basic invoicing |
 
 Three details from the same page matter for the budget:
 
-- **Sales Cloud comes on top.** The FAQ says Revenue Cloud is a paid add-on bought in addition to a standard Sales Cloud subscription. With Sales Cloud Core at €195 per user and month according to the [Sales Cloud pricing page](https://www.salesforce.com/eu/sales/pricing/), a quoting user on Core and Advanced costs €395 a month at list price.
+- **Sales Cloud comes on top.** The FAQ says Revenue Cloud is a paid add-on bought in addition to a standard Sales Cloud subscription. With Sales Cloud Core at €195 per user per month according to the [Sales Cloud pricing page](https://www.salesforce.com/eu/sales/pricing/), a quoting user with Core and Advanced costs €395 a month at list price.
 - **Annual contract.** The page states that the edition requires an annual contract.
 - **Information only.** The prices are given "for information purposes only and subject to change". The quote decides.
 
 There is no free trial. The FAQ points to hands-on workshops instead.
 
-## Get the feature list per edition in the quote
+For how the two editions relate to Salesforce CPQ and the older Revenue Cloud of 2020, see [Revenue Cloud Advanced vs Revenue Cloud vs CPQ](../revenue-cloud-product-names-rlm-rca/).
 
-The edition cards on the pricing page name three features for Growth and three more for Advanced, as listed in the table above. Below them the page has a comparison table with these rows: product catalog and price management, product configurator, price and quote, order management, subscription and asset lifecycle, Advanced Approvals, Advanced Doc Gen, usage selling, Contract Lifecycle Management, Revenue Management Intelligence, Agentforce templates, Dynamic Revenue Orchestration, Invoice Management and External User Support.
+## Advanced adds contracts, orchestration and invoicing
 
-Which of these rows are included in which edition I could not read reliably from the page, because the markers did not come through in the page text. I would therefore not plan with my own reading of the table, but ask Salesforce for the feature list per edition as part of the quote.
+Salesforce now calls the product family Revenue Management, while the pricing page and the license names still say Revenue Cloud Growth, Advanced and Billing. The Help [license comparison](https://help.salesforce.com/s/articleView?id=ind.revenue_licenses_areas_and_features.htm&language=en_US&type=5) lists what is included in each license:
 
-What the edition cards do show is enough for a first cut:
+- **Growth and Advanced** both contain product catalog management, Salesforce Pricing, rate management, the product configurator, transaction management including usage selling, and document generation.
+- **Advanced only** adds Salesforce Contracts, Dynamic Revenue Orchestrator, Agentforce for Revenue Management and limited billing: billing schedules, invoices for one-time and subscription products, and credit memos.
+- **Billing** adds usage-based and milestone invoices, invoice PDFs and email delivery, payments and refunds, collections, debit memos, the accounting subledger, and consumption and wallet management, which also requires Advanced.
 
 ```pro-contra
 pro: Growth may be enough if
-- the order goes to SAP and the invoice stays in SAP FI
+- the order is passed to SAP and the invoice stays in SAP FI
 - you need quoting with configured products
-- service subscriptions are sufficient
-contra: Advanced is the starting point if
-- contracts are to run in Salesforce
-- you need usage-based pricing
-- invoicing is to run in Salesforce
+- usage-based products only need to be sold, not invoiced
+contra: Advanced or Billing is the starting point if
+- contracts are to be managed in Salesforce (Advanced)
+- orders are to be orchestrated into fulfilment steps (Advanced)
+- usage, milestones or payments are to be invoiced in Salesforce (Billing)
 ```
 
-Which steps stay in SAP is the subject of [Revenue Cloud and SAP: who owns what in quote to cash?](../revenue-cloud-sap-quote-to-cash-ownership/).
+The question of which steps stay in SAP is covered in [Revenue Cloud and SAP: who owns what in quote to cash?](../revenue-cloud-sap-quote-to-cash-ownership/).
 
-## Which add-ons are there?
+## What add-ons are available?
 
-The comparison table marks four rows as "Available for purchase":
+The comparison table on the pricing page marks four rows as "Available for purchase". The license comparison shows that this is not the same as "not included": Advanced already contains Salesforce Contracts, Dynamic Revenue Orchestrator and basic invoicing.
 
 | Add-on | Marked in column | Note on the page |
 |---|---|---|
@@ -82,45 +85,45 @@ The comparison table marks four rows as "Available for purchase":
 Dynamic Revenue Orchestration splits an order into fulfilment steps, for example a callout to SAP.
 
 ```hinweis offen
-"Freemium access" is not defined on the page. If your design relies on Dynamic Revenue Orchestration or Invoice Management, get in writing what the free access covers and from which volume it costs money.
+"Freemium access" is not defined on the page. If your design relies on Dynamic Revenue Orchestration or Invoice Management, get in writing what the free access covers and at what volume charges start.
 ```
 
-External User Support is not described either. I would ask whether it covers dealers or customers who create quotes in a portal, because that changes the licence plan for a dealer network.
+External User Support is not described on the pricing page. Revenue Management has its own license and consumption models for partner and customer communities, and external use can be metered as events. For a manufacturer whose dealers configure and quote in a portal, this can determine the edition, so I would have the dealer scenario priced explicitly.
 
-For contract management there is a second data point. Salesforce's older [billing pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/billing-pricing/), last modified in May 2025, lists Salesforce Contracts from $50 per user and month. The same page still lists CPQ from $75, although Salesforce no longer sells CPQ licences to new customers according to the [CPQ end-of-sale page](https://www.salesforce.com/sales/cpq/end-of-life/). Check the modification date of every pricing page you quote internally.
+For contract management there is a second data point. Salesforce's older [billing pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/billing-pricing/), last modified in May 2025, lists Salesforce Contracts from $50 per user per month. The same page still lists CPQ from $75, although Salesforce no longer sells CPQ licenses to new customers according to the [CPQ end-of-sale page](https://www.salesforce.com/sales/cpq/end-of-life/). Check the modification date of every pricing page you quote internally.
 
-## Billing is charged by invoice amount
+## Billing consumes events by invoice amount
 
-Revenue Cloud Billing is a separate add-on with the price "Request a Quote". According to the pricing page it contains usage rating and digital wallet, the invoicing engine with document production, and the accounting subledger. Add-ons are sold separately from their prerequisite products and need an annual contract.
+Revenue Cloud Billing is a separate add-on listed with the price "Request a Quote". According to the pricing page it contains usage rating and digital wallet, the invoicing engine with document production, and the accounting subledger. Add-ons are sold separately from their prerequisite products and need an annual contract.
 
-Consumption is counted in Billing Events. The [rate sheet from February 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) sets 0.02 Billing Events per $1 of total invoice amount, which is one event per $50. The subtotal includes shipping and handling and excludes taxes. Invoices in other currencies are converted to US dollars at the average daily rate. Events must be used before the order end date, and nothing rolls over.
+Consumption is counted in Billing Events. The [rate sheet from February 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) sets 0.02 Billing Events per $1 of total invoice amount, which is one event per $50. The subtotal includes shipping and handling and excludes taxes. Invoices in other currencies are converted to US dollars at the average daily rate. Only positive amounts on posted invoice lines count, and voiding an invoice does not return the events. The included events and the price of additional ones are specified in the order form. Events must be used before the order end date, and nothing rolls over.
 
-An example as an assumption: a manufacturer invoices $20 million a year through Revenue Cloud Billing. That is 400,000 Billing Events. What one event costs is not public, so the budget only comes from the quote. How to estimate the volume and what to negotiate is covered in [Revenue Cloud Billing costs: what billing events mean](../revenue-cloud-billing-costs/).
+As an example, assume that a manufacturer invoices $20 million a year through Revenue Cloud Billing. That is 400,000 Billing Events. The cost of one event is not public, so the budget can only be based on the quote. How to estimate the volume and what to negotiate is covered in [Revenue Cloud Billing costs: what billing events mean](../revenue-cloud-billing-costs/).
 
-## How many Revenue Cloud licences does a manufacturer need?
+## How many Revenue Cloud licenses does a manufacturer need?
 
-The edition decides the price per user. The licence forecast decides the number of users, and that has the bigger effect. I group users by what they do with quotes:
+The edition determines the price per user. The license forecast determines the number of users, and in a seller-led rollout that has the bigger effect. With dealer portals, API pricing or high invoice volumes, event consumption can matter just as much. I group users by what they do with quotes:
 
-1. **Users who create and change quotes**, such as inside sales and project sales. They clearly need a Revenue Cloud licence.
-2. **Users who only see quotes**, for example on the opportunity. Ask Salesforce in writing whether read access needs a Revenue Cloud licence.
-3. **Approvers** of discounts and margins. Same question.
-4. **Product management and pricing**, who maintain the catalog, rules and pricing procedures. Clarify which licence admins and maintainers need.
-5. **Dealers and customers** who quote themselves. That is a question for External User Support or a portal licence.
+1. **Users who create and change quotes**, such as inside sales and project sales. As internal users they normally need a Revenue Cloud license.
+2. **Users who only see quotes**, for example on the opportunity. Ask Salesforce in writing whether read access needs a Revenue Cloud license.
+3. **Approvers** of discounts and margins. The same question applies.
+4. **Product management and pricing**, who maintain the catalog, rules and pricing procedures. Clarify which licenses admins and maintainers need.
+5. **Dealers and customers** who quote themselves. They follow the partner, community or self-service models, not the named user price.
 6. **Finance** working in invoices. That belongs to the Billing add-on.
 
-Worked example: a machine builder has 80 Sales Cloud users. 35 of them create quotes, the other 45 work on accounts and opportunities and look at quotes now and then. 35 users on Advanced cost 35 × €200 × 12 = €84,000 a year at list price, on Growth €63,000. If all 80 users got Advanced, it would be €192,000. The difference of €108,000 a year only holds if read access works without a Revenue Cloud licence, which is exactly why that question belongs in the quote.
+Worked example: a machine builder has 80 Sales Cloud users. 35 of them create quotes, the other 45 work on accounts and opportunities and look at quotes now and then. 35 users with Advanced cost 35 × €200 × 12 = €84,000 a year at list price, compared with €63,000 on Growth. If all 80 users got Advanced, it would be €192,000. The difference of €108,000 a year only holds if read access is possible without a Revenue Cloud license, which is exactly why that question needs to be answered in the quote.
 
-Whether Growth and Advanced can be mixed in one org is not stated on the pricing page either. If only project sales needs contracts and usage, a mix would be the cheaper plan, so ask for it explicitly. How I build such a forecast in general is described in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+Whether Growth and Advanced can be mixed in one org is not stated on the pricing page either. If only project sales needs contracts and usage, a mix would be the cheaper plan, so ask for it explicitly. How I build such a forecast in general is described in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
-## Get the licence rule for readers and approvers in writing
+## Get the license rule for readers and approvers in writing
 
-List prices are a starting point, and Salesforce is changing its edition model across clouds. Sales Cloud now comes as Core, Advanced and Max, as described in [Salesforce editions Core, Advanced, Max for manufacturers](../salesforce-editions-core-advanced-max/). Before signing I would get these points in writing:
+List prices are a starting point, and Salesforce is changing its edition model across clouds. Sales Cloud now comes in Core, Advanced and Max, as described in [Salesforce editions Core, Advanced, Max for manufacturers](../salesforce-editions-core-advanced-max/). Before signing I would get these points in writing:
 
-- the feature list per edition, row by row, as it applies to your contract,
-- whether read-only users and approvers need a Revenue Cloud licence,
+- the feature list per edition as it applies to your contract, checked against the license comparison,
+- whether read-only users and approvers need a Revenue Cloud license,
 - whether Growth and Advanced can be mixed in one org,
 - what "freemium access" includes for Dynamic Revenue Orchestration and Invoice Management,
 - the price per Billing Event and the number of events included,
 - a price cap for the renewal.
 
-Whether Revenue Cloud pays off at all is covered in [Revenue Cloud for manufacturers: when is it worth it?](../revenue-cloud-worth-it-manufacturers/), and the [overview chapter of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/) puts pricing next to the other decisions. Licence forecasts are part of my work in [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
+Whether Revenue Cloud pays off at all is covered in [Revenue Cloud for manufacturers: when is it worth it?](../revenue-cloud-worth-it-manufacturers/), and the [overview chapter of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/) places pricing alongside the other decisions. License forecasts are part of my work in [make-or-buy and license forecasts](../../services/make-or-buy-licences/).

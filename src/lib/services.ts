@@ -22,14 +22,16 @@ export async function getServiceTranslation(service: Service): Promise<Service |
 }
 
 // Blog articles that share the most tags with the service, newest first on ties.
-export async function getServicePosts(service: Service, limit = 3): Promise<Post[]> {
-  const tags = norm(service.data.blogTags);
-  return (await getPosts(service.data.lang))
-    .map((p) => ({ p, score: [...norm(p.data.tags)].filter((tag) => tags.has(tag)).length }))
-    .filter(({ score }) => score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, limit)
-    .map(({ p }) => p);
+// The curated reading list of a service page (frontmatter readMore, translationKeys in reading order).
+// Fails the build when a key has no published article in the page's language.
+export async function getServiceReading(service: Service): Promise<Post[]> {
+  const keys = service.data.readMore ?? [];
+  const byKey = new Map((await getPosts(service.data.lang)).map((p) => [p.data.translationKey, p]));
+  return keys.map((key) => {
+    const post = byKey.get(key);
+    if (!post) throw new Error(`${service.id}: readMore key "${key}" has no published ${service.data.lang} article`);
+    return post;
+  });
 }
 
 // The service that fits a blog article best, shown at the end of the article.

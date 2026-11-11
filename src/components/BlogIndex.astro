@@ -8,6 +8,7 @@ import Icon from './Icon.astro';
 import { getPosts, postHref, readingMinutes, formatDate, blogIndex } from '../lib/blog';
 import { categories, categoryIds } from '../lib/categories';
 import { authorIds, getAuthor } from '../lib/authors';
+import { homeHref } from '../lib/paths';
 import portrait from '../assets/portrait.png';
 import julianePortrait from '../assets/partners/juliane-winterscheid-portrait.jpg';
 
@@ -37,10 +38,12 @@ const topicFilters = categoryIds
 const searchText = (post: (typeof posts)[number]) =>
   [post.data.title, post.data.description, ...post.data.tags, ...post.data.categories.map((c) => categories[c][lang])].join(' ').toLowerCase();
 
+// Cards on the first page (24 plus the wide first card) get their drawing inline,
+// the rest only when the script shows them; keep in sync with PAGE in the script.
+const FIRST_PAGE = 24;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const root = abs(import.meta.env.BASE_URL);
-const schema = {
-  '@context': 'https://schema.org',
+const blog = {
   '@type': 'Blog',
   '@id': `${abs(blogIndex(lang))}#blog`,
   url: abs(blogIndex(lang)),
@@ -58,6 +61,19 @@ const schema = {
     ...(post.data.updatedDate ? { dateModified: post.data.updatedDate.toISOString() } : {}),
   })),
 };
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    blog,
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'FK Solution Design', item: abs(homeHref(lang)) },
+        { '@type': 'ListItem', position: 2, name: t.blog.title, item: abs(blogIndex(lang)) },
+      ],
+    },
+  ],
+};
 ---
 <Page layout="wide" lang={lang} title={t.blog.metaTitle} description={t.blog.metaDescription} alternates={{ en: blogIndex('en'), de: blogIndex('de') }}>
   <Fragment slot="head">
@@ -67,7 +83,7 @@ const schema = {
     <div class="container">
       <div class="blog-inner">
         <p class="eyebrow mono">FK Solution Design</p>
-        <h1>{t.blog.title}</h1>
+        <h1>{t.blog.h1}</h1>
         <p class="blog-intro">{t.blog.intro}</p>
       </div>
       <div class="blog-layout">
@@ -106,7 +122,7 @@ const schema = {
             <li class:list={['post-tile', { featured: i === 0 }]} data-categories={post.data.categories.join(' ')} data-authors={authorsOf(post).join(' ')} data-search={searchText(post)}>
               <a href={postHref(post)}>
                 <span class="post-tile-media">
-                  <CardDrawing translationKey={post.data.translationKey} topic={post.data.topic} lang={lang} />
+                  <CardDrawing translationKey={post.data.translationKey} topic={post.data.topic} lang={lang} deferred={i > FIRST_PAGE} />
                 </span>
                 <span class="post-tile-body">
                   <span class="post-meta">
@@ -183,6 +199,8 @@ const schema = {
         if (match) matches++;
         tile.hidden = !match || matches > limit;
         tile.classList.remove('featured');
+        // Put the drawing of a card into the page the first time the card is shown.
+        if (!tile.hidden) tile.querySelectorAll<HTMLTemplateElement>('template[data-card-drawing]').forEach((tpl) => tpl.replaceWith(tpl.content));
       });
       more.hidden = matches <= limit;
       moreCount.textContent = moreText.replace('{shown}', String(Math.min(matches, limit))).replace('{total}', String(matches));

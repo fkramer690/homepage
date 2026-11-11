@@ -30,8 +30,8 @@ export const talks: Talk[] = [
     title: 'Speed and scalability matters – How to measure Flow Performance',
     short: 'Flow Performance',
     abstract: {
-      en: 'A flow that runs fine with ten test records can time out at the first data migration. In this session I show how to measure what a Salesforce Flow really costs in CPU time, SOQL queries and DML statements, where the bottlenecks usually sit, and which changes make the biggest difference. For admins, developers and architects who build flows that have to survive real data volumes.',
-      de: 'Ein Flow, der mit zehn Testdatensätzen sauber läuft, kann bei der ersten Datenmigration in ein Timeout laufen. In dieser Session zeige ich, wie man misst, was ein Salesforce Flow wirklich an CPU-Zeit, SOQL-Abfragen und DML-Operationen kostet, wo die Engpässe meistens sitzen und welche Änderungen am meisten bringen. Für Admins, Entwickler und Architekten, deren Flows echte Datenmengen aushalten müssen.',
+      en: 'A flow that works fine with ten test records can time out at the first data migration. In this session I show how to measure what a Salesforce Flow really costs in CPU time, SOQL queries and DML statements, where the bottlenecks usually are, and which changes make the biggest difference. For admins, developers and architects who build flows that have to handle real data volumes.',
+      de: 'Ein Flow, der mit zehn Testdatensätzen fehlerfrei funktioniert, kann bei der ersten Datenmigration ein Timeout auslösen. In dieser Session zeige ich, wie man misst, was ein Salesforce Flow wirklich an CPU-Zeit, SOQL-Abfragen und DML-Operationen kostet, wo die Engpässe meistens entstehen und welche Änderungen die größte Wirkung haben. Für Admins, Entwickler und Architekten, deren Flows echte Datenmengen verarbeiten müssen.',
     },
     points: {
       en: [
@@ -63,19 +63,19 @@ export const talks: Talk[] = [
     title: 'Salesforce Flow vs OmniScript – who is the king of the hill?',
     short: 'Flow vs OmniScript',
     abstract: {
-      en: 'Many orgs with Industries licences have both: Flow from the core platform and OmniScript from OmniStudio. Teams then build the same guided process twice, or pick the tool the last consultant knew. In this session I compare the two side by side: what each does better, where they overlap, what they cost in licences and skills, and where Salesforce is taking both on its roadmap. You leave with a rule of thumb for which tool fits which process.',
-      de: 'Viele Orgs mit Industries-Lizenzen haben beides: Flow aus der Kernplattform und OmniScript aus OmniStudio. Dann baut ein Team denselben geführten Prozess zweimal, oder es nimmt das Werkzeug, das der letzte Berater kannte. In dieser Session vergleiche ich beide direkt: was jedes besser kann, wo sie sich überschneiden, was sie an Lizenzen und Know-how kosten und wohin Salesforce beide laut Roadmap entwickelt. Am Ende steht eine Faustregel, welches Werkzeug zu welchem Prozess passt.',
+      en: 'Many orgs with Industries licenses have both: Flow from the core platform and OmniScript from OmniStudio. Teams then build the same guided process twice, or pick the tool the last consultant knew. In this session I compare the two side by side: what each does better, where they overlap, what they cost in licenses and skills, and where Salesforce is taking both on its roadmap. You leave with a rule of thumb for which tool fits which process.',
+      de: 'Viele Orgs mit Industries-Lizenzen haben beides: Flow aus der Kernplattform und OmniScript aus OmniStudio. Dann baut ein Team denselben geführten Prozess zweimal, oder es wählt das Werkzeug, das der letzte Berater kannte. In dieser Session vergleiche ich beide direkt: was jedes besser kann, wo sie sich überschneiden, was sie an Lizenzen und Know-how kosten und wohin Salesforce beide laut Roadmap entwickelt. Am Ende steht eine Faustregel, welches Werkzeug zu welchem Prozess passt.',
     },
     points: {
       en: [
         'The real differences: data handling, UI, deployment, maintenance',
         'Decision criteria for choosing one over the other',
-        'What the roadmap means for tools you build today',
+        'What the roadmap means for solutions you build today',
       ],
       de: [
         'Die echten Unterschiede: Datenzugriff, Oberfläche, Deployment, Wartung',
         'Entscheidungskriterien, wann welches Werkzeug passt',
-        'Was die Roadmap für das bedeutet, was Sie heute bauen',
+        'Was die Roadmap für Lösungen bedeutet, die Sie heute bauen',
       ],
     },
     appearances: [
@@ -97,7 +97,7 @@ export const talks: Talk[] = [
     short: 'Lightning Flow Scanner',
     coSpeaker: 'Nicolas Vuillamy',
     abstract: {
-      en: 'The Lightning Flow Scanner is a free, open-source tool that checks Salesforce Flows against more than 20 community rules: hard-coded IDs, DML and SOQL inside loops, missing fault paths, recursion risks. Together with Nicolas Vuillamy I showed how to run it from the Salesforce CLI, VS Code and a CI pipeline, so flow problems show up in the pull request instead of in production.',
+      en: 'The Lightning Flow Scanner is a free, open-source tool that checks Salesforce Flows against more than 20 community rules: hard-coded IDs, DML and SOQL inside loops, missing fault paths, recursion risks. Together with Nicolas Vuillamy I showed how to run it from the Salesforce CLI, VS Code and a CI pipeline, so flow problems are caught in the pull request instead of in production.',
       de: 'Der Lightning Flow Scanner ist ein kostenloses Open-Source-Werkzeug, das Salesforce Flows gegen mehr als 20 Community-Regeln prüft: hart codierte IDs, DML und SOQL in Schleifen, fehlende Fault-Pfade, Rekursionsrisiken. Zusammen mit Nicolas Vuillamy habe ich gezeigt, wie man ihn über die Salesforce CLI, in VS Code und in einer CI-Pipeline einsetzt, damit Flow-Probleme im Pull Request auffallen und nicht in Produktion.',
     },
     points: {
@@ -137,7 +137,7 @@ export const moreAppearances: { icon: string; title: Text; text: Text; url?: str
     icon: 'team',
     title: { en: 'Salesforce User Group Cologne', de: 'Salesforce User Group Köln' },
     text: {
-      en: 'Co-leader of the Cologne Trailblazer Community Group. I organise meetups and regularly give talks there myself.',
+      en: 'Co-leader of the Cologne Trailblazer Community Group. I organize meetups and regularly give talks there myself.',
       de: 'Co-Leader der Kölner Trailblazer Community Group. Ich organisiere die Treffen mit und halte dort regelmäßig selbst Vorträge.',
     },
     url: 'https://trailblazercommunitygroups.com/salesforce-user-group-cologne-germany/',
@@ -151,6 +151,16 @@ export const moreAppearances: { icon: string; title: Text; text: Text; url?: str
       de: 'Weitere Vorträge auf nationalen Salesforce-Community-Events.',
     },
   },
+  {
+    icon: 'profile',
+    title: { en: 'Speaker profile on Sessionize', de: 'Speaker-Profil auf Sessionize' },
+    text: {
+      en: 'Organizers who run their call for papers on Sessionize can invite me to their event directly there.',
+      de: 'Wer den Call for Papers über Sessionize organisiert, kann mich dort direkt zu seinem Event einladen.',
+    },
+    url: 'https://sessionize.com/fabian-kramer/',
+    linkLabel: { en: 'Open speaker profile', de: 'Speaker-Profil öffnen' },
+  },
 ];
 
 export const copy = {
@@ -158,7 +168,7 @@ export const copy = {
     title: 'Speaker & events',
     metaTitle: 'Salesforce speaker: talks and events | FK Solution Design',
     description:
-      'Talks by Fabian Kramer at Salesforce community conferences across Europe: Flow performance, Flow vs OmniScript, Flow quality with the Lightning Flow Scanner, and the Cologne user group.',
+      'Talks by Fabian Kramer at Salesforce community conferences in Europe: Flow performance, Flow vs OmniScript, Lightning Flow Scanner and the Cologne user group.',
     lead: 'Since 2023 I have spoken at Salesforce community conferences in Paris, Rotterdam, Prague and London, and I co-lead the Salesforce User Group in Cologne. My talks are about the things that break in real orgs: flows that do not scale, quality checks nobody runs, releases without a safety net. I show it live in an org instead of on slides.',
     talksTitle: 'Talks',
     with: 'with',
@@ -186,8 +196,8 @@ export const copy = {
     title: 'Vorträge & Events',
     metaTitle: 'Salesforce-Vorträge und Events | FK Solution Design',
     description:
-      'Vorträge von Fabian Kramer auf Salesforce-Community-Konferenzen in Europa: Flow-Performance, Flow vs OmniScript, Flow-Qualität mit dem Lightning Flow Scanner und die User Group Köln.',
-    lead: 'Seit 2023 spreche ich auf Salesforce-Community-Konferenzen in Paris, Rotterdam, Prag und London, und ich leite die Salesforce User Group in Köln mit. In meinen Vorträgen geht es um das, was in echten Orgs kaputtgeht: Flows, die nicht skalieren, Qualitätsprüfungen, die niemand laufen lässt, Releases ohne Sicherheitsnetz. Ich zeige das live in einer Org statt auf Folien.',
+      'Vorträge von Fabian Kramer auf Salesforce-Konferenzen in Europa: Flow-Performance, Flow vs OmniScript, Lightning Flow Scanner und die User Group Köln.',
+    lead: 'Seit 2023 spreche ich auf Salesforce-Community-Konferenzen in Paris, Rotterdam, Prag und London, und ich leite die Salesforce User Group in Köln mit. In meinen Vorträgen geht es darum, woran echte Orgs scheitern: Flows, die nicht skalieren, Qualitätsprüfungen, die niemand ausführt, Releases ohne Sicherheitsnetz. Ich zeige das live in einer Org statt auf Folien.',
     talksTitle: 'Vorträge',
     with: 'mit',
     stagesLabel: 'Gehalten auf',
@@ -206,7 +216,7 @@ export const copy = {
     photoAlt: 'Fabian Kramer bei einer Live-Demo auf der Bühne eines Salesforce-Community-Events',
     photoCaption: 'Live-Demo statt Foliensatz.',
     ctaTitle: 'Sie suchen einen Speaker?',
-    ctaText: 'Für ein Community-Event, eine Konferenz oder eine interne Session mit Ihrem Salesforce-Team: Schicken Sie mir Termin, Publikum und das Thema, das Sie im Kopf haben.',
+    ctaText: 'Für ein Community-Event, eine Konferenz oder eine interne Session mit Ihrem Salesforce-Team: Schicken Sie mir Termin, Publikum und das Thema, das Ihnen vorschwebt.',
     formSubject: 'Vortragsanfrage',
     back: 'Zurück zur Startseite',
   },

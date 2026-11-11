@@ -225,6 +225,11 @@ const drawings: Record<string, Drawing> = {
     ${box(222, 36, 82, 70)}${t(263, 52, l('AWS IRELAND', 'AWS IRLAND'), { fill: D, size: 7, anchor: 'middle' })}${t(227, 70, 'Service Board', { size: 7 })}${t(227, 84, l('Optimization', 'Optimierung'), { size: 7 })}
     ${tag(18, 128, 150, l('2 vendors · 2 calendars', '2 Hersteller · 2 Kalender'))}${t(178, 141, l('no PTC SLA for suites', 'keine PTC-SLA für Suiten'), { size: 7 })}`,
 
+  'field-service-management-software': (l) => `
+    ${t(18, 18, l('THE LEADING SYSTEM SETS THE SHORTLIST', 'DAS FÜHRENDE SYSTEM PRÄGT DIE SHORTLIST'), { fill: D, size: 7 })}
+    ${[['Service Cloud', 'Salesforce Field Service'], ['S/4HANA', 'SAP Field Service Mgmt.'], [l('IFS ERP / EAM', 'IFS-ERP / EAM'), 'IFS Cloud FSM'], ['ServiceNow CSM', 'ServiceNow FSM']].map(([a, b], i) => box(18, 28 + i * 22, 110, 18) + t(73, 40 + i * 22, a, { size: 7, anchor: 'middle' }) + arrow(132, 37 + i * 22, 150, i === 0 ? C : G) + box(150, 28 + i * 22, 152, 18, i === 0 ? C : G) + t(226, 40 + i * 22, b, { fill: i === 0 ? C : D, size: 7, anchor: 'middle' })).join('')}
+    ${tag(18, 128, 150, l('recurring risks', 'wiederkehrende Risiken'))}${t(178, 141, l('assets · technicians · ERP', 'Anlagen · Techniker · ERP'), { size: 7 })}`,
+
   'servicemax-asset-360': (l) => `
     ${t(18, 18, l('TWO ADD-ONS, SAME OBJECTS', 'ZWEI ERWEITERUNGEN, GLEICHE OBJEKTE'), { fill: D, size: 7 })}
     ${box(18, 28, 130, 50, C)}${t(83, 42, 'ASSET 360 · PTC', { fill: C, size: 7.5, anchor: 'middle' })}${t(28, 57, l('entitlement engine', 'Entitlement-Engine'), { size: 7 })}${t(28, 70, l('Windchill link', 'Windchill-Anbindung'), { size: 7 })}
@@ -281,7 +286,7 @@ const drawings: Record<string, Drawing> = {
     ${[l('price lists', 'Preislisten'), l('all assets', 'alle Assets'), l('all stock', 'alle Lager')].map((s, i) => cross(252, 54 + i * 16) + t(262, 57 + i * 16, s, { size: 7 })).join('')}
     <path d="M18 126H302" stroke="${L}"/>
     ${t(18, 140, l('known gaps: tasks not primed, iOS loads LWC after cold start', 'bekannte Lücken: Tasks nicht geladen, iOS lädt LWC erst nach Kaltstart'), { size: 7 })}
-    ${t(18, 153, l('test offline with a partner user (community licence)', 'offline mit Partnernutzer testen (Community-Lizenz)'), { fill: C, size: 7 })}`,
+    ${t(18, 153, l('test offline with a partner user (community license)', 'offline mit Partnernutzer testen (Community-Lizenz)'), { fill: C, size: 7 })}`,
 
   'field-service-mobile-flow-limits': (l) => `
     ${t(18, 18, l('WHAT RUNS IN THE APP (HELP PAGES 11/2026)', 'WAS IN DER APP LÄUFT (HILFESEITEN 11/2026)'), { fill: D, size: 7 })}
@@ -419,7 +424,7 @@ const drawings: Record<string, Drawing> = {
     ${t(14, 146, l('Maintenance plan: work order without case, 3x a day', 'Wartungsplan: Arbeitsauftrag ohne Case, 3x am Tag'), { size: 7 })}`,
 
   'field-service-licences-by-role': (l) => `
-    ${t(18, 20, l('ROLE → LICENCE (PER USER / MONTH)', 'ROLLE → LIZENZ (PRO NUTZER / MONAT)'), { fill: D, size: 7.5 })}
+    ${t(18, 20, l('ROLE → LICENSE (PER USER / MONTH)', 'ROLLE → LIZENZ (PRO NUTZER / MONAT)'), { fill: D, size: 7.5 })}
     ${[[l('Hotline', 'Hotline'), 'Service Cloud Core', l('$195', '195 €'), G], [l('Hotline + dispatch', 'Hotline + Disposition'), 'Field Service Plus', l('$230', '230 €'), C], [l('Dispatcher', 'Disposition'), 'Dispatcher', l('$175', '175 €'), G], [l('Technician', 'Techniker'), 'Technician', l('$175', '175 €'), G], [l('Partner technician', 'Partnertechniker'), 'Contractor Plus', l('$80 or $32/login', '80 € oder 32 €/Login'), G]]
       .map(([r, lic, p, c], i) => `<path d="M18 ${30 + i * 20}H302" stroke="${L}"/>` + t(22, 43 + i * 20, String(r), { fill: String(c) === C ? C : G, size: 7.5 }) + t(196, 43 + i * 20, String(lic), { fill: String(c), size: 7, anchor: 'end' }) + t(298, 43 + i * 20, String(p), { fill: String(c), size: 7, anchor: 'end' })).join('')}
     ${cross(24, 146)}${t(34, 149, l('no case management on Dispatcher or Technician', 'kein Case Management mit Dispatcher oder Technician'), { size: 7 })}`,
@@ -549,7 +554,7 @@ const drawings: Record<string, Drawing> = {
     ${t(120, 39.5, l('Sales Core 495K', 'Sales Core 495K'), { size: 7, anchor: 'middle' })}${t(262, 39.5, '+198K', { fill: C, size: 7.5, anchor: 'middle' })}
     ${[[l('Portal, 100 members + 300 logins', 'Portal, 100 Mitglieder + 300 Logins'), '132K'], [l('Agentforce add-on, 20 users', 'Agentforce-Add-on, 20 Nutzer'), '36K'], ['Channel Revenue Mgmt', '30K']]
       .map(([s, v], i) => `<path d="M221 ${58 + i * 14}H302" stroke="${L}"/>` + dot(225, 54 + i * 14, C, 2.2) + t(232, 57 + i * 14, String(v), { fill: C, size: 7 }) + t(214, 57 + i * 14, String(s), { size: 6.8, anchor: 'end' })).join('')}
-    ${tag(18, 98, 112, l('+40 % on licences', '+40 % auf Lizenzen'))}
+    ${tag(18, 98, 112, l('+40 % on licenses', '+40 % auf Lizenzen'))}
     <path d="M18 128H302" stroke="${L}"/>
     ${t(18, 140, l('optional: Connected Assets 180K, Omnistudio +2M calls 120K', 'optional: Connected Assets 180K, Omnistudio +2 Mio. Aufrufe 120K'), { size: 7 })}
     ${cross(22, 150)}${t(32, 154, l('Manufacturing Intelligence: $220/login or "from $165"?', 'Manufacturing Intelligence: 220 $/Login oder „ab 165 $“?'), { size: 7 })}`,
@@ -572,7 +577,7 @@ const drawings: Record<string, Drawing> = {
     ${[[l('spare parts stock', 'Ersatzteilbestand'), l('integer', 'Ganzzahl')], [l('trained mechanics', 'geschulte Mechaniker'), l('integer', 'Ganzzahl')], [l('demo machines', 'Vorführmaschinen'), l('integer', 'Ganzzahl')], [l('open claims > 30 d', 'Ansprüche > 30 T.'), l('integer', 'Ganzzahl')], [l('target reached', 'Ziel erreicht'), l('percentage', 'Prozent')]]
       .map(([a, b], r) => `<path d="M146 ${34 + r * 17}H296" stroke="${L}"/>` + t(146, 46 + r * 17, String(a), { size: 6.8 }) + t(296, 46 + r * 17, String(b), { size: 6.5, anchor: 'end' })).join('')}
     ${t(221, 128, l('expected vs actual', 'Soll gegen Ist'), { fill: C, size: 7.5, anchor: 'middle' })}
-    ${t(14, 152, l('licence and offline use: ask Salesforce', 'Lizenz und Offline: Salesforce fragen'), { size: 7 })}`,
+    ${t(14, 152, l('license and offline use: ask Salesforce', 'Lizenz und Offline: Salesforce fragen'), { size: 7 })}`,
 
   'manufacturing-cloud-product-service-campaigns': (l) => `
     ${box(18, 50, 76, 42)}${t(56, 67, l('CAUSAL PART', 'VERURSACHER'), { fill: D, size: 7, anchor: 'middle' })}${t(56, 81, l('valve batch', 'Ventilcharge'), { size: 7, anchor: 'middle' })}
@@ -614,7 +619,7 @@ const drawings: Record<string, Drawing> = {
     ${t(14, 150, l('SOAP login() needs Use Any API Auth from 1 Dec 2026', 'SOAP login() braucht Use Any API Auth ab 01.12.2026'), { size: 7 })}`,
 
   'manufacturing-cloud-feature-map': (l) => `
-    ${t(18, 18, l('ONE LICENCE, ONE SWITCH PER FEATURE', 'EINE LIZENZ, EIN SCHALTER PRO FUNKTION'), { fill: D, size: 7 })}
+    ${t(18, 18, l('ONE LICENSE, ONE SWITCH PER FEATURE', 'EINE LIZENZ, EIN SCHALTER PRO FUNKTION'), { fill: D, size: 7 })}
     ${[
       { h: l('SALES', 'VERTRIEB'), items: ['Sales Agreements', l('Adv. forecasting', 'Adv. Forecasting'), l('Programs', 'Programme'), 'Targets'] },
       { h: 'SERVICE', items: [l('Warranty', 'Garantie'), l('Campaigns', 'Kampagnen'), 'Asset console', 'Prework'] },
@@ -694,8 +699,8 @@ const drawings: Record<string, Drawing> = {
     ${check(20, 143)}${t(34, 147, l('country x tier: 36 groups, limit 2,000 per part', 'Land x Stufe: 36 Gruppen, Grenze 2.000 je Teil'), { fill: C, size: 7 })}`,
 
   'commerce-buyer-licences': (l) => `
-    ${t(18, 20, l('B2B COMMERCE LICENCES', 'B2B-COMMERCE-LIZENZEN'), { fill: D, size: 7.5 })}
-    ${[[l('Buyer', 'Käufer'), 'Customer Community Plus', C], ['Buyer Manager', 'Customer Community Plus', C], ['Merchandiser', 'B2B and D2C Commerce', G], [l('Developer', 'Entwickler'), l('Full licence', 'Volle Lizenz'), G]]
+    ${t(18, 20, l('B2B COMMERCE LICENSES', 'B2B-COMMERCE-LIZENZEN'), { fill: D, size: 7.5 })}
+    ${[[l('Buyer', 'Käufer'), 'Customer Community Plus', C], ['Buyer Manager', 'Customer Community Plus', C], ['Merchandiser', 'B2B and D2C Commerce', G], [l('Developer', 'Entwickler'), l('Full license', 'Volle Lizenz'), G]]
       .map(([r, lic, c], i) => `<path d="M18 ${36 + i * 22}H190" stroke="${L}"/>` + t(22, 50 + i * 22, String(r), { size: 7.5 }) + t(186, 50 + i * 22, String(lic), { fill: String(c), size: 7, anchor: 'end' })).join('')}
     ${box(206, 30, 96, 58)}${t(254, 46, l('PER MONTH', 'PRO MONAT'), { fill: D, size: 7, anchor: 'middle' })}
     ${t(214, 62, l('Member', 'Mitglied'), { size: 7 })}${t(294, 62, l('$35', '35 €'), { fill: C, size: 7.5, anchor: 'end' })}
@@ -750,7 +755,7 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 64, l('% of GMV: not published', '% vom GMV: nicht veröffentlicht'), { fill: C, size: 7 })}
     ${box(18, 76, 136, 66)}${t(28, 92, 'GROWTH', { fill: D, size: 7.5 })}${t(28, 106, l('6 storefronts', '6 Storefronts'), { size: 7 })}${t(28, 119, 'Order Management Lite', { size: 7 })}${t(28, 132, l('250K Data Cloud credits', '250.000 Data-Cloud-Credits'), { size: 7 })}
     ${box(166, 76, 136, 66)}${t(176, 92, 'ADVANCED', { fill: D, size: 7.5 })}${t(176, 106, l('10 storefronts', '10 Storefronts'), { size: 7 })}${t(176, 119, l('full Order Management', 'volles Order Management'), { size: 7 })}${t(176, 132, l('500K Data Cloud credits', '500.000 Data-Cloud-Credits'), { size: 7 })}
-    ${t(160, 153, l('+ buyer licences, Revenue Cloud, implementation', '+ Käuferlizenzen, Revenue Cloud, Umsetzung'), { size: 7, anchor: 'middle' })}`,
+    ${t(160, 153, l('+ buyer licenses, Revenue Cloud, implementation', '+ Käuferlizenzen, Revenue Cloud, Umsetzung'), { size: 7, anchor: 'middle' })}`,
 
   'commerce-headless-b2b': (l) => `
     ${box(18, 18, 92, 30)}${t(64, 37, l('LWR STORE', 'LWR-STORE'), { fill: D, anchor: 'middle' })}
@@ -796,7 +801,7 @@ const drawings: Record<string, Drawing> = {
     ${box(14, 76, 110, 44)}${t(69, 92, 'PIM / DAM', { fill: D, size: 7.5, anchor: 'middle' })}${t(69, 106, l('texts · attributes · media', 'Texte · Merkmale · Medien'), { size: 6.5, anchor: 'middle' })}
     ${arrow(124, 44, 150)}${arrow(124, 98, 150)}${t(137, 74, l('copy', 'Kopie'), { size: 6.5, anchor: 'middle' })}
     ${box(150, 22, 154, 98, C)}${t(160, 38, 'B2B STORE', { fill: C, size: 7.5 })}
-    ${[l('1 catalogue per store', '1 Katalog pro Store'), l('4M products, 1M searchable', '4 Mio. Produkte, 1 Mio. suchbar'), l('200 variants per parent', '200 Varianten je Träger'), l('9 images + 5 files', '9 Bilder + 5 Dateien'), l('category depth 5', 'Kategorietiefe 5')]
+    ${[l('1 catalog per store', '1 Katalog pro Store'), l('4M products, 1M searchable', '4 Mio. Produkte, 1 Mio. suchbar'), l('200 variants per parent', '200 Varianten je Träger'), l('9 images + 5 files', '9 Bilder + 5 Dateien'), l('category depth 5', 'Kategorietiefe 5')]
       .map((s, i) => dot(164, 52 + i * 14, G, 2) + t(172, 55 + i * 14, s, { size: 6.5 })).join('')}
     <path d="M18 134H302" stroke="${L}"/>
     ${t(18, 150, l('1 owner per field, Salesforce owns only categories and search', '1 Owner pro Feld, Salesforce führt nur Kategorien und Suche'), { fill: D, size: 7 })}`,
@@ -873,7 +878,7 @@ const drawings: Record<string, Drawing> = {
 
   'commerce-stores-countries-brands': (l) => `
     ${t(14, 18, l('1 STORE PER BRAND, BUYER GROUPS INSIDE', '1 STORE PRO MARKE, KÄUFERGRUPPEN INNEN'), { fill: D, size: 7 })}
-    ${box(14, 30, 140, 92, C)}${t(24, 46, l('STORE · BRAND A', 'STORE · MARKE A'), { fill: D, size: 7.5 })}${t(144, 46, l('1 catalogue', '1 Katalog'), { fill: C, size: 6.5, anchor: 'end' })}
+    ${box(14, 30, 140, 92, C)}${t(24, 46, l('STORE · BRAND A', 'STORE · MARKE A'), { fill: D, size: 7.5 })}${t(144, 46, l('1 catalog', '1 Katalog'), { fill: C, size: 6.5, anchor: 'end' })}
     ${[l('DE · tier 1', 'DE · Stufe 1'), l('FR · tier 2', 'FR · Stufe 2'), l('CH · CHF', 'CH · CHF'), '…'].map((s, i) => `<rect x="24" y="${54 + i * 15}" width="120" height="12" rx="3" fill="#fff" stroke="${L}"/>` + t(30, 62.5 + i * 15, s, { size: 6.5 })).join('')}
     ${box(166, 30, 140, 92)}${t(176, 46, l('STORE · BRAND B', 'STORE · MARKE B'), { fill: D, size: 7.5 })}${t(296, 46, l('own ERP', 'eigenes ERP'), { size: 6.5, anchor: 'end' })}
     ${[l('IT · tier 1', 'IT · Stufe 1'), l('ES · tier 2', 'ES · Stufe 2'), '…'].map((s, i) => `<rect x="176" y="${54 + i * 15}" width="120" height="12" rx="3" fill="#fff" stroke="${L}"/>` + t(182, 62.5 + i * 15, s, { size: 6.5 })).join('')}
@@ -889,6 +894,15 @@ const drawings: Record<string, Drawing> = {
     ${t(61, 28, 'CloudCraze 2018', { size: 7, anchor: 'middle' })}${t(211, 28, l('core platform · Experience Cloud', 'Kernplattform · Experience Cloud'), { size: 7, anchor: 'middle' })}
     <path d="M118 32H304" stroke="${L}"/>
     ${cross(30, 128)}${t(42, 131, l('no retirement date published (27.10.2026)', 'kein Abkündigungsdatum veröffentlicht (27.10.2026)'), { size: 7.5 })}`,
+
+  'salesforce-integration-users-cleanup': (l) => `
+    ${t(18, 18, l('TODAY', 'HEUTE'), { fill: D, size: 7 })}${t(172, 18, l('TARGET', 'ZIEL'), { fill: C, size: 7 })}
+    ${['ERP', 'Middleware', 'Marketing'].map((s, i) => box(18, 28 + i * 24, 56, 18) + t(46, 40 + i * 24, s, { size: 6.5, anchor: 'middle' })).join('')}
+    <path d="M74 37H86V60H96M74 61H96M74 85H86V60" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${box(96, 40, 58, 40)}${t(125, 56, l('1 user', '1 Benutzer'), { fill: D, size: 7, anchor: 'middle' })}${t(125, 70, 'Admin', { size: 7, anchor: 'middle' })}
+    ${arrow(156, 60, 170, C)}
+    ${[l('ERP user · permission set', 'ERP-Benutzer · Permission Set'), l('Middleware user · perm. set', 'Middleware · Permission Set'), l('Marketing user · perm. set', 'Marketing · Permission Set')].map((s, i) => box(172, 28 + i * 24, 130, 18, C) + t(237, 40 + i * 24, s, { size: 6.5, anchor: 'middle' })).join('')}
+    ${tag(18, 128, 150, l('5 licences included', '5 Lizenzen inklusive'))}${t(178, 141, l('API only · OAuth', 'nur API · OAuth'), { size: 7 })}`,
 
   'salesforce-password-integrations-2027': (l) => `
     ${box(22, 56, 80, 48)}${t(62, 77, l('INTEGRATION', 'SCHNITTSTELLE'), { fill: D, anchor: 'middle' })}${t(62, 91, 'ERP · middleware', { size: 7, anchor: 'middle' })}
@@ -927,6 +941,27 @@ const drawings: Record<string, Drawing> = {
     ${check(170, 92)}${t(182, 98, l('repo with the client', 'Repo beim Kunden'), { size: 7 })}
     ${check(170, 104)}${t(182, 110, l('lessons from failures', 'Lehren aus Fehlern'), { size: 7 })}
     ${tag(18, 132, 170, l('references: briefed by partner', 'Referenzen: vom Partner gebrieft'))}`,
+
+  'switch-salesforce-partner': (l) => `
+    ${t(18, 20, l('FOUR PHASES', 'VIER PHASEN'), { fill: D, size: 7 })}
+    ${[[l('Secure', 'Sichern'), G], [l('Assess', 'Analysieren'), G], [l('Select', 'Auswählen'), G], [l('Hand over', 'Übergeben'), C]]
+      .map(([s, c], i) => box(18 + i * 74, 28, 62, 24, c) + t(49 + i * 74, 43, s, { size: 7, anchor: 'middle', fill: c }) + (i < 3 ? arrow(82 + i * 74, 40, 90 + i * 74) : '')).join('')}
+    <path d="M18 66H302" stroke="${L}"/>
+    ${t(18, 82, l('OWN BEFORE THE NOTICE', 'VOR DER KÜNDIGUNG BESITZEN'), { fill: D, size: 7 })}
+    ${check(18, 92)}${t(30, 98, l('repo in your account', 'Repo im eigenen Account'), { size: 7 })}
+    ${check(18, 104)}${t(30, 110, l('pipeline on your licence', 'Pipeline auf eigener Lizenz'), { size: 7 })}
+    ${check(170, 92)}${t(182, 98, l('own integration users', 'eigene Integrationsbenutzer'), { size: 7 })}
+    ${check(170, 104)}${t(182, 110, l('decision log', 'Entscheidungslog'), { size: 7 })}
+    ${tag(18, 128, 170, l('4 to 8 weeks overlap', '4 bis 8 Wochen Überlappung'))}`,
+
+  'salesforce-architect-or-system-integrator': (l) => `
+    ${t(18, 20, l('SAME SKILLS, OTHER EMPLOYER', 'GLEICHES WISSEN, ANDERER AUFTRAG'), { fill: D, size: 7 })}
+    ${box(18, 30, 130, 60)}${t(28, 46, l('SI ARCHITECT', 'ARCHITEKT SI'), { fill: D, size: 7 })}
+    ${t(28, 62, l('works for: partner', 'arbeitet für: Partner'), { size: 7 })}${t(28, 76, l('paid by effort', 'bezahlt nach Aufwand'), { size: 7 })}
+    ${box(172, 30, 130, 60, C)}${t(182, 46, l('CLIENT-SIDE ARCHITECT', 'ARCHITEKT KUNDENSEITE'), { fill: C, size: 7 })}
+    ${t(182, 62, l('works for: client', 'arbeitet für: Kunde'), { size: 7 })}${t(182, 76, l('plans for 10 years', 'plant für 10 Jahre'), { size: 7 })}
+    ${t(18, 110, l('scope · licences · repo · change requests', 'Umfang · Lizenzen · Repo · Change Requests'), { size: 7 })}
+    ${tag(18, 122, 200, l('from 2 partners: own architect', 'ab 2 Partnern: eigener Architekt'))}`,
 
   'salesforce-freelancer-or-consultancy': (l) => `
     ${t(18, 20, l('WHO BUILDS, WHO DECIDES', 'WER BAUT, WER ENTSCHEIDET'), { fill: D, size: 7 })}
@@ -1013,6 +1048,18 @@ const drawings: Record<string, Drawing> = {
     ${dot(290, 90)}${t(302, 106, l('to 20 Feb', 'bis 20.2.'), { fill: D, size: 7, anchor: 'end' })}${t(302, 117, l('production', 'Produktion'), { size: 6.5, anchor: 'end' })}
     ${tag(18, 128, 150, l('6 checks per release', '6 Prüfungen je Release'))}${t(178, 141, l('first wave: 8 days of preview', 'erste Welle: 8 Tage Preview'), { size: 6.5 })}`,
 
+  'salesforce-release-updates': (l) => `
+    ${t(18, 18, l('RELEASE UPDATES UP TO SUMMER 2027', 'RELEASE UPDATES BIS SOMMER 2027'), { fill: D, size: 7 })}
+    <path d="M30 34H290" stroke="${G}" stroke-width="1.2"/>
+    ${dot(30, 34, C)}${t(18, 50, l('1 Dec', '1.12.'), { fill: C, size: 7 })}${t(18, 61, 'SOAP login', { size: 6.5 })}
+    ${dot(117, 34)}${t(117, 50, l('20 Feb', '20.2.'), { fill: D, size: 7, anchor: 'middle' })}${t(117, 61, l('password flow', 'Passwort-Flow'), { size: 6.5, anchor: 'middle' })}
+    ${dot(203, 34)}${t(203, 50, "Spring '27", { fill: D, size: 7, anchor: 'middle' })}${t(203, 61, l('instance URLs', 'Instanz-URLs'), { size: 6.5, anchor: 'middle' })}
+    ${dot(290, 34)}${t(302, 50, "Summer '27", { fill: D, size: 7, anchor: 'end' })}${t(302, 61, l('API 31 to 64', 'API 31 bis 64'), { size: 6.5, anchor: 'end' })}
+    <path d="M18 76H302" stroke="${L}"/>
+    ${t(18, 92, l('TEST RUN AS', 'TESTLAUF ALS'), { fill: D, size: 7 })}
+    ${[l('integration user', 'Integrationsuser'), l('technician', 'Techniker'), l('sales rep', 'Vertrieb')].map((s, i) => box(18 + i * 98, 100, 88, 22) + t(62 + i * 98, 114, s, { size: 7, anchor: 'middle' })).join('')}
+    ${tag(18, 132, 150, l('activate on your date', 'selbst aktivieren'))}${t(178, 145, l('not on the upgrade weekend', 'nicht am Upgrade-Wochenende'), { size: 6.5 })}`,
+
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
     ${arrow(70, 43, 82)}${arrow(132, 43, 144)}
@@ -1035,10 +1082,10 @@ const drawings: Record<string, Drawing> = {
   'field-service-worth-it': (l) => `
     ${t(18, 18, l('MANY SHORT JOBS / DAY', 'VIELE KURZE EINSÄTZE / TAG'), { fill: C, size: 7 })}
     <path d="M18 40H302" stroke="${L}"/>${[0, 1, 2, 3, 4].map((i) => `<rect x="${24 + i * 56}" y="30" width="34" height="20" rx="3" fill="#fff" stroke="${C}" stroke-width="1.2"/>` + (i < 4 ? `<path d="M${58 + i * 56} 40H${80 + i * 56}" stroke="${C}" stroke-width="1.2" stroke-dasharray="3 3"/>` : '')).join('')}
-    ${t(18, 66, l('route + slot optimisation pays off', 'Routen- und Terminoptimierung lohnt'), { fill: C, size: 7 })}
+    ${t(18, 66, l('route + slot optimization pays off', 'Routen- und Terminoptimierung lohnt'), { fill: C, size: 7 })}
     ${t(18, 92, l('FEW LONG JOBS', 'WENIGE LANGE EINSÄTZE'), { fill: D, size: 7 })}
     <rect x="24" y="100" width="270" height="20" rx="3" fill="#fff" stroke="${G}" stroke-width="1.2"/>${t(159, 113.5, l('commissioning, 2 weeks', 'Inbetriebnahme, 2 Wochen'), { size: 7, anchor: 'middle' })}
-    ${t(18, 140, l('little to optimise', 'wenig zu optimieren'), { size: 7 })}${t(302, 140, l('175 / technician / month', '175 / Techniker / Monat'), { size: 7, anchor: 'end' })}`,
+    ${t(18, 140, l('little to optimize', 'wenig zu optimieren'), { size: 7 })}${t(302, 140, l('175 / technician / month', '175 / Techniker / Monat'), { size: 7, anchor: 'end' })}`,
 
   'sfdx-hardis-training': (l) => `
     <path d="M24 136H110V104H210V72H300" fill="none" stroke="${G}" stroke-width="1.3"/>
@@ -1065,7 +1112,7 @@ const drawings: Record<string, Drawing> = {
     ${[l('checks', 'Prüfungen'), 'deployments', 'monitoring', l('docs', 'Doku')].map((s, i) => check(130, 66 + i * 12, C) + t(142, 72 + i * 12, s, { size: 7 })).join('')}
     ${box(228, 52, 72, 56)}${t(264, 72, 'ORG', { fill: D, anchor: 'middle' })}${t(264, 86, 'UAT · prod', { size: 7, anchor: 'middle' })}
     ${arrow(92, 80, 118)}${arrow(202, 80, 228)}
-    ${t(160, 140, l('open source · no licence fees', 'Open Source · keine Lizenzkosten'), { fill: C, size: 7.5, anchor: 'middle' })}`,
+    ${t(160, 140, l('open source · no license fees', 'Open Source · keine Lizenzkosten'), { fill: C, size: 7.5, anchor: 'middle' })}`,
 
   'sfdx-hardis-vs-devops-center': (l) => `
     ${box(18, 20, 128, 40)}${t(82, 38, 'LIFECYCLE CENTER', { fill: D, anchor: 'middle' })}${t(82, 51, l('hub org · clicks', 'Hub-Org · Klicks'), { size: 7, anchor: 'middle' })}
@@ -1074,7 +1121,7 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 120, l('GitLab, Azure DevOps: no date', 'GitLab, Azure DevOps: kein Termin'), { size: 7 })}
     ${box(174, 20, 128, 40, C)}${t(238, 38, 'sfdx-hardis', { fill: D, anchor: 'middle' })}${t(238, 51, l("client's CI", 'CI des Kunden'), { size: 7, anchor: 'middle' })}
     ${['GitHub', 'GitLab', 'Azure DevOps', 'Bitbucket', 'Jenkins'].map((s, i) => check(184, 72 + i * 11, C) + t(196, 77 + i * 11, s, { size: 7 })).join('')}
-    ${t(160, 148, l('both: no licence fees', 'beide: keine Lizenzgebühren'), { fill: C, size: 7.5, anchor: 'middle' })}`,
+    ${t(160, 148, l('both: no license fees', 'beide: keine Lizenzgebühren'), { fill: C, size: 7.5, anchor: 'middle' })}`,
 
   'client-owned-devops-tools': (l) => `
     ${box(112, 56, 96, 48, C)}${t(160, 76, l('CLIENT', 'KUNDE'), { fill: D, anchor: 'middle' })}${t(160, 90, l('owns the accounts', 'besitzt die Accounts'), { size: 7, anchor: 'middle' })}
@@ -1085,7 +1132,7 @@ const drawings: Record<string, Drawing> = {
     ${t(160, 140, l('partner leaves: access revoked', 'Partner geht: Zugriff entzogen'), { fill: C, size: 7, anchor: 'middle' })}`,
 
   'salesforce-licence-types': (l) => `
-    ${t(18, 18, l('USER GROUP', 'NUTZERGRUPPE'), { fill: D, size: 7 })}${t(170, 18, l('LICENCE / MONTH', 'LIZENZ / MONAT'), { fill: D, size: 7 })}
+    ${t(18, 18, l('USER GROUP', 'NUTZERGRUPPE'), { fill: D, size: 7 })}${t(170, 18, l('LICENSE / MONTH', 'LIZENZ / MONAT'), { fill: D, size: 7 })}
     ${[[l('sales', 'Vertrieb'), 'Sales Cloud Core 195', false], [l('readers', 'Leser'), 'Platform Starter 25', true], [l('approvers', 'Freigeber'), 'Platform Starter 25', true], [l('dealers', 'Händler'), 'PRM 25', false], [l('interfaces', 'Schnittstellen'), 'Integration, API only', false]]
       .map(([a, b, hi], i) => box(18, 26 + i * 22, 112, 17) + t(26, 37.5 + i * 22, String(a), { size: 7 }) + arrow(134, 34.5 + i * 22, 164, hi ? C : G) + box(170, 26 + i * 22, 132, 17, hi ? C : G) + t(178, 37.5 + i * 22, String(b), { fill: hi ? C : G, size: 7 })).join('')}
     ${t(18, 150, l('100 users x 170 x 12 = 204,000 / year', '100 Nutzer x 170 x 12 = 204.000 / Jahr'), { fill: C, size: 7.5 })}`,
@@ -1225,7 +1272,7 @@ const drawings: Record<string, Drawing> = {
     ${box(104, 118, 112, 26)}${t(160, 134, l('supplier recovery per part', 'Regress pro Teil'), { size: 6.3, anchor: 'middle' })}`,
 
   'manufacturing-cloud-global-rollout': (l) => `
-    ${box(14, 26, 116, 30, C)}${t(72, 40, l('GLOBAL TEMPLATE', 'GLOBALES TEMPLATE'), { fill: D, size: 7.5, anchor: 'middle' })}${t(72, 50, l('goal: harmonisation', 'Ziel: Harmonisierung'), { size: 6.5, anchor: 'middle' })}
+    ${box(14, 26, 116, 30, C)}${t(72, 40, l('GLOBAL TEMPLATE', 'GLOBALES TEMPLATE'), { fill: D, size: 7.5, anchor: 'middle' })}${t(72, 50, l('goal: harmonization', 'Ziel: Harmonisierung'), { size: 6.5, anchor: 'middle' })}
     <path d="M30 96H302" stroke="${G}" stroke-width="0.8"/>
     ${[[60, l('phase 1', 'Phase 1'), l('large country', 'großes Land'), true], [140, l('phase 2', 'Phase 2'), l('large region', 'große Region'), true], [220, l('phase 3', 'Phase 3'), l('more countries', 'weitere Länder'), false], [290, '…', '', false]].map(([x, a, b, hit]) => dot(x, 96, hit ? C : G, hit ? 4 : 3) + t(x, 86, a, { fill: hit ? C : G, size: 7, anchor: 'middle' }) + t(x, 112, b, { size: 6.5, anchor: 'middle' })).join('')}
     ${t(170, 40, l('≥ 80 % identical per country', '≥ 80 % identisch pro Land'), { size: 7 })}
@@ -1240,6 +1287,18 @@ const drawings: Record<string, Drawing> = {
     <path d="M18 120H302" stroke="${L}"/>
     ${t(18, 136, l('1 action = 20 Flex Credits = $0.10', '1 Aktion = 20 Flex Credits = 0,10 €'), { fill: D, size: 7.5 })}
     ${t(18, 150, l('sandbox: 16 credits per action', 'Sandbox: 16 Credits pro Aktion'), { size: 7 })}`,
+
+  'salesforce-forward-deployed-engineer': (l) => `
+    ${t(18, 20, l('FDE POD · ONE USE CASE', 'FDE-POD · EIN ANWENDUNGSFALL'), { fill: D, size: 7 })}
+    ${box(18, 30, 84, 36)}${t(60, 45, '2 FDEs', { fill: D, size: 7.5, anchor: 'middle' })}${t(60, 58, l('+ strategist', '+ Strategist'), { size: 7, anchor: 'middle' })}
+    ${arrow(102, 48, 122)}
+    ${box(122, 30, 84, 36, C)}${t(164, 45, 'AGENTFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(164, 58, l('your org', 'Ihre Org'), { fill: C, size: 7, anchor: 'middle' })}
+    ${arrow(206, 48, 226, C)}
+    ${box(226, 30, 76, 36)}${t(264, 45, l('PRODUCTION', 'PRODUKTION'), { fill: D, size: 7.5, anchor: 'middle' })}${t(264, 58, l('+ hypercare', '+ Hypercare'), { size: 7, anchor: 'middle' })}
+    <path d="M18 80H302" stroke="${L}"/>
+    ${t(18, 96, l('STAYS ON THE CLIENT SIDE', 'BLEIBT AUF KUNDENSEITE'), { fill: D, size: 7 })}
+    ${[l('decisions within a week', 'Entscheidungen in einer Woche'), l('data access, permissions', 'Datenzugang, Berechtigungen'), l('owner after hypercare', 'Owner nach der Hypercare')].map((s, i) => check(18, 104 + i * 14, i === 2 ? C : G) + t(32, 110 + i * 14, s, { size: 7 })).join('')}
+    ${box(196, 104, 106, 36)}${t(249, 119, 'Gartner', { fill: D, size: 7, anchor: 'middle' })}${t(249, 132, l('> $200k per quarter', '> 200 Tsd. $/Quartal'), { size: 7, anchor: 'middle' })}`,
 
   'agent-script-deterministic-rules': (l) => `
     ${box(18, 26, 86, 50)}${t(61, 44, l('DEALER', 'HÄNDLER'), { fill: D, anchor: 'middle' })}${t(61, 58, l('free text', 'Freitext'), { size: 7, anchor: 'middle' })}
@@ -1308,7 +1367,7 @@ const drawings: Record<string, Drawing> = {
 
   'data-360-costs-for-agents': (l) => `
     ${t(18, 18, l('CREDITS PER MB (BASE TIER)', 'CREDITS PRO MB (BASISSTAFFEL)'), { fill: D, size: 7 })}
-    ${[[l('catalogue PDF', 'Katalog-PDF'), l('LLM parsing', 'LLM-Parsing'), '600', true], [l('manual PDF', 'Handbuch-PDF'), l('default parser', 'Standard-Parser'), '150', false]]
+    ${[[l('catalog PDF', 'Katalog-PDF'), l('LLM parsing', 'LLM-Parsing'), '600', true], [l('manual PDF', 'Handbuch-PDF'), l('default parser', 'Standard-Parser'), '150', false]]
       .map(([a, b, c, hi], i) => box(18, 26 + i * 30, 82, 22) + t(59, 40 + i * 30, String(a), { size: 7, anchor: 'middle' }) + arrow(100, 37 + i * 30, 124, hi ? C : G) + box(124, 26 + i * 30, 84, 22, hi ? C : G) + t(166, 40 + i * 30, String(b), { size: 7, anchor: 'middle' }) + t(222, 41 + i * 30, String(c), { fill: hi ? C : D, size: 8.5 })).join('')}
     ${t(244, 41, l('/ MB', '/ MB'), { size: 7 })}${t(244, 71, l('/ MB', '/ MB'), { size: 7 })}
     <path d="M18 98H302" stroke="${L}"/>
@@ -1317,14 +1376,6 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 146, l('changed documents: 195,000 credits', 'geänderte Dokumente: 195.000 Credits'), { fill: C, size: 7 })}
     ${tag(194, 128, 108, l('sandbox: no tiers', 'Sandbox: ohne Staffel'))}`,
 
-  'dealer-service-agent-costs': (l) => `
-    ${t(18, 18, l('3,000 DEALER CHATS / MONTH (SCENARIO)', '3.000 HÄNDLERGESPRÄCHE / MONAT (SZENARIO)'), { fill: D, size: 7 })}
-    ${[['Flex Credits', l('$1,020', '1.020 €'), 26, true], [l('per resolution, 60 %', 'pro Lösung, 60 %'), l('$3,600', '3.600 €'), 90, false], [l('per conversation', 'pro Gespräch'), l('$6,000', '6.000 €'), 150, false]]
-      .map(([a, b, w, hi], i) => t(18, 40 + i * 22, String(a), { size: 7 }) + `<rect x="108" y="${31 + i * 22}" width="${w}" height="12" rx="2" fill="${hi ? C : '#fff'}" fill-opacity="${hi ? 0.25 : 1}" stroke="${hi ? C : G}" stroke-width="1.1"/>` + t(114 + Number(w), 40 + i * 22, String(b), { fill: hi ? C : G, size: 7 })).join('')}
-    <path d="M18 104H302" stroke="${L}"/>
-    ${t(18, 120, l('1 chat = 3 actions + 2 prompts = 68 credits', '1 Gespräch = 3 Aktionen + 2 Prompts = 68 Credits'), { fill: D, size: 7.5 })}
-    ${t(18, 136, l('Data 360: 150 credits per MB of catalogue', 'Data 360: 150 Credits pro MB Katalog'), { size: 7 })}
-    ${t(18, 150, l('sandbox: 120 credits per MB, test a subset', 'Sandbox: 120 Credits pro MB, Ausschnitt testen'), { size: 7 })}`,
 
   'field-service-ai-agents-today': (l) => `
     ${t(18, 18, l('AVAILABLE TODAY', 'HEUTE VERFÜGBAR'), { fill: D, size: 7 })}${t(186, 18, l('MACHINE BUILDER', 'MASCHINENBAUER'), { fill: D, size: 7 })}
@@ -1342,6 +1393,15 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 118, l('SALESFORCE PARTNER INCENTIVES 2026', 'SALESFORCE-PARTNERANREIZE 2026'), { fill: D, size: 7 })}
     ${tag(18, 126, 138, l('active consumption', 'aktiver Verbrauch'))}${tag(164, 126, 138, l('agents in production', 'Agenten in Produktion'))}`,
 
+  'what-is-agentforce': (l) => `
+    ${t(18, 18, l('HOW AN AGENT WORKS', 'SO ARBEITET EIN AGENT'), { fill: D, size: 7 })}
+    ${box(18, 28, 64, 26)}${t(50, 44, l('Request', 'Anfrage'), { size: 7, anchor: 'middle' })}${arrow(82, 41, 98)}
+    ${box(98, 28, 124, 26, C)}${t(160, 44, 'Reasoning Engine', { fill: C, size: 7.5, anchor: 'middle' })}${arrow(222, 41, 238)}
+    ${box(238, 28, 64, 26)}${t(270, 44, l('Answer', 'Antwort'), { size: 7, anchor: 'middle' })}
+    <path d="M160 54V72M62 72H258M62 72V76M160 72V76M258 72V76" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${[[l('Subagents', 'Subagenten'), l('jobs', 'Aufgaben')], [l('Instructions', 'Anweisungen'), l('style, limits', 'Stil, Grenzen')], [l('Actions', 'Aktionen'), 'Flow · Apex · API']].map(([a, b], i) => box(18 + i * 98, 76, 88, 36) + t(62 + i * 98, 90, a, { fill: D, size: 7, anchor: 'middle' }) + t(62 + i * 98, 104, b, { size: 6.5, anchor: 'middle' })).join('')}
+    ${tag(18, 124, 150, l('Agent Script: fixed rules', 'Agent Script: feste Regeln'))}${t(178, 137, l('20 Flex Credits per action', '20 Flex Credits je Aktion'), { size: 7 })}`,
+
   'flex-credits-agentforce-costs': (l) => `
     ${t(18, 18, l('SCENARIO: CREDITS PER MONTH', 'SZENARIO: CREDITS PRO MONAT'), { fill: D, size: 7 })}${t(302, 18, l('218,000 ≈ $1,090', '218.000 ≈ 1.090 €'), { fill: D, size: 7.5, anchor: 'end' })}
     <rect x="18" y="28" width="156" height="22" rx="3" fill="${C}" fill-opacity="0.18" stroke="${C}" stroke-width="1.2"/>
@@ -1351,17 +1411,6 @@ const drawings: Record<string, Drawing> = {
     ${[l('action: 20 · sandbox 16', 'Aktion: 20 · Sandbox 16'), l('voice action: 30 · sandbox 24', 'Sprachaktion: 30 · Sandbox 24'), l('prompt / 2,000 tokens: 2 · 4 · 16', 'Prompt / 2.000 Tokens: 2 · 4 · 16'), l('Data 360: 150 credits per MB', 'Data 360: 150 Credits pro MB')].map((s, i) => dot(22, 99 + i * 14, G, 2) + t(30, 102 + i * 14, s, { size: 7 })).join('')}
     ${box(214, 96, 88, 50, C)}${t(258, 114, l('unused credits', 'ungenutzte Credits'), { fill: C, size: 7, anchor: 'middle' })}${t(258, 126, l('expire at', 'verfallen zum'), { fill: C, size: 7, anchor: 'middle' })}${t(258, 138, l('order end', 'Bestellende'), { fill: C, size: 7, anchor: 'middle' })}`,
 
-  'headless-platform-interactions-budget': (l) => `
-    ${box(18, 30, 80, 46)}${t(58, 50, l('EXTERNAL AGENT', 'EXTERNER AGENT'), { fill: D, size: 7, anchor: 'middle' })}${t(58, 64, 'Claude · ChatGPT', { size: 7, anchor: 'middle' })}
-    ${box(222, 30, 80, 46)}${t(262, 50, 'SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(262, 64, l('production org', 'Produktions-Org'), { size: 7, anchor: 'middle' })}
-    ${arrow(98, 44, 222, C)}${arrow(98, 52, 222, C)}${arrow(98, 60, 222, C)}
-    ${t(160, 36, l('MCP / agentic API', 'MCP / agentische API'), { fill: C, size: 7, anchor: 'middle' })}
-    ${tag(130, 66, 60, l('rate: TBA', 'Satz: TBA'))}
-    ${t(18, 102, l('1 successful call = 1 interaction', '1 erfolgreicher Aufruf = 1 Interaktion'), { fill: D, size: 7.5 })}
-    ${t(18, 116, l('sandbox not metered, 30 days notice', 'Sandbox ohne Zähler, 30 Tage Vorlauf'), { size: 7 })}
-    <path d="M18 126H302" stroke="${L}"/>
-    ${t(18, 142, l('scenario: 2 vs 8 calls per question', 'Szenario: 2 statt 8 Aufrufe pro Frage'), { fill: D, size: 7.5 })}
-    ${t(18, 154, l('tool design changes the bill by factor 4', 'Tool-Design ändert die Rechnung um Faktor 4'), { fill: C, size: 7 })}`,
 
   'hosted-mcp-servers-data-access': (l) => `
     ${box(14, 30, 92, 50)}${t(60, 48, 'SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(60, 61, 'hosted MCP', { size: 7, anchor: 'middle' })}${t(60, 73, 'sobject-reads', { size: 7, anchor: 'middle' })}
@@ -1834,14 +1883,6 @@ const drawings: Record<string, Drawing> = {
     ${t(14, 150, l('Siemens + Teamcenter: announced', 'Siemens + Teamcenter: angekündigt'), { size: 7 })}
     ${t(306, 150, l('3 actions = $0.30', '3 Aktionen = 0,30 €'), { fill: C, size: 7, anchor: 'end' })}`,
 
-  'aela-flat-fee-vs-credits': (l) => `
-    ${box(18, 28, 134, 58)}${t(28, 44, 'FLEX CREDITS', { fill: D, size: 7.5 })}${t(28, 58, l('$500 per 100K credits', '500 € je 100K Credits'), { size: 7 })}${t(28, 72, l('pay per use, no rollover', 'Verbrauch, kein Übertrag'), { size: 7 })}
-    ${box(168, 28, 134, 58, C)}${t(178, 44, 'AELA', { fill: D, size: 7.5 })}${t(178, 58, l('fixed fee, 2 or 3 years', 'Pauschale, 2 oder 3 Jahre'), { size: 7 })}${t(178, 72, l('price not public', 'Preis nicht öffentlich'), { fill: C, size: 7 })}
-    ${t(18, 106, l('PayGo or Pre-Commit', 'PayGo oder Pre-Commit'), { size: 7 })}
-    ${t(170, 100, l('term', 'Laufzeit'), { size: 7 })}${arrow(168, 106, 218, C)}${tag(220, 96, 82, l('RENEWAL', 'VERLÄNGERUNG'))}
-    <path d="M18 124H302" stroke="${L}"/>
-    ${t(18, 140, l('Scenario: $150K a year = 30M credits = 1.5M actions', 'Szenario: 150K € im Jahr = 30 Mio. Credits = 1,5 Mio. Aktionen'), { fill: D, size: 7.5 })}
-    ${t(18, 153, l('120+ AELAs sold in Q4 FY26 (earnings call)', '120+ AELAs verkauft in Q4 FY26 (Earnings Call)'), { size: 7 })}`,
 
   'agentforce-agents-release-pipeline': (l) => `
     ${[['Git PR', G], [l('validate', 'validieren'), G], [l('deploy', 'deployen'), G], ['publish', G], [l('activate', 'aktivieren'), C]]
@@ -1875,15 +1916,6 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 116, l('ASK IN WRITING BEFORE YOU PAY', 'VOR DEM KAUF SCHRIFTLICH FRAGEN'), { fill: D, size: 7 })}
     ${box(18, 124, 284, 24, C)}${t(160, 139, l('model · region · retention · cap · approval', 'Modell · Region · Speicherdauer · Limit · Freigabe'), { fill: C, size: 7.5, anchor: 'middle' })}`,
 
-  'digital-wallet-chargeback': (l) => `
-    ${t(18, 18, l('ONE ORG, ONE POOL (SCENARIO)', 'EINE ORG, EIN POOL (SZENARIO)'), { fill: D, size: 7 })}${t(302, 18, l('4.1M credits planned', '4,1 Mio. Credits geplant'), { fill: D, size: 7, anchor: 'end' })}
-    ${[[18, 125, l('DE 1.8M', 'DE 1,8 Mio.')], [143, 97, l('US 1.4M', 'US 1,4 Mio.')], [240, 41, l('APAC', 'Asien')], [281, 21, 'IT']]
-      .map(([x, w, s]) => `<rect x="${x}" y="28" width="${w}" height="22" fill="#fff" stroke="${G}" stroke-width="1.1"/>` + t(Number(x) + Number(w) / 2 - (Number(w) < 30 ? 3.5 : 0), 42, String(s), { size: Number(w) < 30 ? 6.5 : 7, anchor: 'middle' })).join('')}
-    <path d="M295 24V58" stroke="${D}" stroke-width="1.3" stroke-dasharray="3 2"/>${t(302, 68, l('pool 4.0M, +100K overage', 'Pool 4,0 Mio., +100K Mehrverbrauch'), { size: 7, anchor: 'end' })}
-    <path d="M18 80H302" stroke="${L}"/>
-    ${[l('1 org = 1 pool, 1 contract owner', '1 Org = 1 Pool, 1 Vertragspartner'), l('chargeback: $5 per 1,000 credits', 'Verrechnung: 5 € pro 1.000 Credits'), l('overage: billed in arrears', 'Mehrverbrauch: nachträglich'), l('alerts yes, stop not documented', 'Warnungen ja, Stopp nicht dokumentiert')]
-      .map((s, i) => dot(22, 95 + i * 15, G, 2) + t(30, 98 + i * 15, s, { size: 7 })).join('')}
-    ${box(206, 88, 96, 56, C)}${t(254, 105, l('APAC 4 months late', 'Asien 4 Monate später'), { fill: C, size: 6.5, anchor: 'middle' })}${t(254, 119, l('300K credits expire', '300K Credits verfallen'), { fill: C, size: 6.5, anchor: 'middle' })}${t(254, 133, l('= $1,500', '= 1.500 €'), { fill: C, size: 7.5, anchor: 'middle' })}`,
 
   'multilingual-dealer-agents': (l) => `
     ${t(18, 18, l('AGENTFORCE LANGUAGES', 'AGENTFORCE-SPRACHEN'), { fill: D, size: 7 })}${t(166, 18, l('KNOWLEDGE', 'WISSEN'), { fill: D, size: 7 })}
@@ -1897,6 +1929,16 @@ const drawings: Record<string, Drawing> = {
     ${box(166, 76, 140, 40, C)}${t(176, 91, 'PIVOT', { fill: C, size: 7.5 })}${t(176, 106, l('question to EN, answer back', 'Frage nach EN, Antwort zurück'), { size: 7 })}
     <path d="M166 128H306" stroke="${L}"/>
     ${t(166, 140, l('other languages: often more tokens', 'andere Sprachen: oft mehr Tokens'), { size: 7 })}${t(166, 152, l('prompts: 2,000-token units', 'Prompts: 2.000-Token-Einheiten'), { size: 7 })}`,
+
+  'meshmesh-salesforce-checklist': (l) => `
+    ${t(18, 20, l('MESHMESH · RIGHTS OF THE SIGNED-IN USER', 'MESHMESH · RECHTE DES ANGEMELDETEN NUTZERS'), { fill: D, size: 7 })}
+    ${[l('Plan: reads', 'Plan: liest'), l('Research: reads', 'Research: liest'), l('Build: changes', 'Build: ändert')].map((s, i) => box(18, 30 + i * 28, 96, 22, i === 2 ? C : G) + t(28, 44 + i * 28, s, { fill: i === 2 ? C : G, size: 7 })).join('')}
+    ${check(140, 38)}${t(154, 44, l('agent = one more dev', 'Agent = ein Entwickler mehr'), { size: 7 })}
+    ${cross(144, 62)}${t(154, 66, l('no direct deploy', 'kein Direkt-Deploy'), { size: 7 })}
+    ${[['Branch', 140, 48], ['Pipeline', 198, 52], ['Org', 260, 42]].map(([s, x, w]) => box(x as number, 86, w as number, 22, s === 'Pipeline' ? C : G) + t((x as number) + (w as number) / 2, 100, s as string, { fill: s === 'Pipeline' ? C : G, size: 7, anchor: 'middle' })).join('')}
+    ${arrow(114, 97, 140, C)}${arrow(188, 97, 198)}${arrow(250, 97, 260)}
+    <path d="M18 118H302" stroke="${L}"/>
+    ${tag(18, 126, 120, 'US East · Anthropic')}${t(148, 139, l('beta: 1,000 accounts to 31 Jan 2027', 'Beta: 1.000 Accounts bis 31.01.2027'), { size: 7 })}`,
 
   'sandbox-data-ai-coding-agents': (l) => `
     ${box(14, 58, 72, 44, C)}${t(50, 76, l('CODING AGENT', 'CODING-AGENT'), { fill: C, size: 7.5, anchor: 'middle' })}${t(50, 90, l('read = prompt', 'gelesen = Prompt'), { size: 6.5, anchor: 'middle' })}
@@ -1924,7 +1966,7 @@ const drawings: Record<string, Drawing> = {
 
   'permission-concept-permission-sets': (l) => `
     ${t(18, 18, l('PERMISSIONS AND VISIBILITY SEPARATE', 'RECHTE UND SICHTBARKEIT GETRENNT'), { fill: D, size: 7 })}
-    ${[[l('BASE PROFILE', 'BASISPROFIL'), l('per licence type', 'pro Lizenztyp')], ['PERMISSION SETS', l('per function', 'pro Funktion')], ['PERMISSION SET GROUPS', l('per role', 'pro Rolle')]].map(([a, b], i) => box(18, 28 + i * 34, 196, 26, i === 2 ? C : G) + t(28, 44 + i * 34, a, { fill: i === 2 ? C : D, size: 7 }) + t(206, 44 + i * 34, b, { size: 7, anchor: 'end' })).join('')}
+    ${[[l('BASE PROFILE', 'BASISPROFIL'), l('per license type', 'pro Lizenztyp')], ['PERMISSION SETS', l('per function', 'pro Funktion')], ['PERMISSION SET GROUPS', l('per role', 'pro Rolle')]].map(([a, b], i) => box(18, 28 + i * 34, 196, 26, i === 2 ? C : G) + t(28, 44 + i * 34, a, { fill: i === 2 ? C : D, size: 7 }) + t(206, 44 + i * 34, b, { size: 7, anchor: 'end' })).join('')}
     ${check(226, 72, G)}${t(238, 78, l('stream delivers', 'Stream liefert'), { size: 7 })}
     ${check(226, 106)}${t(238, 112, l('client decides', 'Kunde entscheidet'), { fill: C, size: 7 })}
     ${cross(24, 140)}${t(36, 143, l('no new permissions in profiles', 'keine neuen Rechte im Profil'), { size: 7 })}`,
@@ -2091,7 +2133,7 @@ const drawings: Record<string, Drawing> = {
     <path d="M18 100H302" stroke="${L}"/>
     ${t(18, 118, l('Partial Copy sandbox · refresh every 5 days', 'Partial Copy Sandbox · alle 5 Tage neu'), { size: 7 })}
     ${t(18, 134, l('train the trainer via key users', 'Train the Trainer über Key User'), { size: 7 })}
-    ${t(18, 148, l('3 walkthroughs without extra licence', '3 Walkthroughs ohne Zusatzlizenz'), { size: 7 })}`,
+    ${t(18, 148, l('3 walkthroughs without extra license', '3 Walkthroughs ohne Zusatzlizenz'), { size: 7 })}`,
 
   'change-hypercare': (l) => `
     ${t(18, 18, l('WEEKLY STATUS CALL', 'WÖCHENTLICHER STATUS-CALL'), { fill: D, size: 7 })}
