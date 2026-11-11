@@ -1,9 +1,9 @@
 {
- "generatedAt": "2026-11-10T05:03:58.985Z",
+ "generatedAt": "2026-11-11T05:02:37.876Z",
  "window": {
   "google": {
-   "from": "2026-10-13",
-   "to": "2026-11-09"
+   "from": "2026-10-14",
+   "to": "2026-11-10"
   },
   "bingWeek": "2026-11-06"
  },
@@ -24,7 +24,7 @@
    "file": "src/content/blog/de/change-kurve.md",
    "topQueries": [],
    "hint": "Title und Description schärfen, Antwort in den ersten Satz",
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -75,7 +75,7 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
    "path": "/en/blog/sfdx-hardis-open-source-salesforce-devops/",
-   "impressions": 21,
+   "impressions": 22,
    "clicks": 0,
    "position": 7.3,
    "title": "sfdx-hardis: free open-source Salesforce DevOps toolkit",
@@ -162,35 +162,6 @@
    "new": false
   },
   {
-   "source": "google",
-   "page": "https://www.fk-sd.de/leistungen/",
-   "path": "/leistungen/",
-   "impressions": 18,
-   "clicks": 0,
-   "position": 9,
-   "title": null,
-   "file": null,
-   "topQueries": [
-    {
-     "query": "salesforce architektur klagenfurt",
-     "impressions": 2,
-     "position": 19
-    },
-    {
-     "query": "salesforce architektur dortmund",
-     "impressions": 1,
-     "position": 15
-    },
-    {
-     "query": "salesforce architektur essen",
-     "impressions": 1,
-     "position": 20
-    }
-   ],
-   "hint": "Antwort auf „salesforce architektur klagenfurt“ in Description und ersten Satz",
-   "new": false
-  },
-  {
    "source": "bing",
    "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
    "path": "/en/blog/field-service-scheduling-console-dispatchers/",
@@ -199,19 +170,6 @@
    "position": 6.2,
    "title": "Field Service Scheduling Console vs. Dispatcher Console",
    "file": "src/content/blog/en/field-service-scheduling-console-dispatchers.md",
-   "topQueries": [],
-   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-billing-costs/",
-   "path": "/en/blog/revenue-cloud-billing-costs/",
-   "impressions": 13,
-   "clicks": 0,
-   "position": 9.4,
-   "title": "Revenue Cloud Billing pricing: one billing event per $50",
-   "file": "src/content/blog/en/revenue-cloud-billing-costs.md",
    "topQueries": [],
    "hint": "Title und Description schärfen, Antwort in den ersten Satz",
    "new": false
@@ -228,6 +186,30 @@
    "topQueries": [],
    "hint": "Title und Description schärfen, Antwort in den ersten Satz",
    "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+   "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
+   "impressions": 11,
+   "clicks": 0,
+   "position": 7.2,
+   "title": "Why DevOps decides Salesforce enterprise projects",
+   "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
+   "topQueries": [
+    {
+     "query": "what makes a salesforce devops platform enterprise-ready?",
+     "impressions": 10,
+     "position": 6.5
+    },
+    {
+     "query": "salesforce devops for finance",
+     "impressions": 1,
+     "position": 14
+    }
+   ],
+   "hint": "Antwort auf „what makes a salesforce devops platform enterprise-ready?“ in Description und ersten Satz",
+   "new": true
   },
   {
    "source": "google",
@@ -248,9 +230,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/blog/",
    "path": "/blog/",
-   "impressions": 57,
+   "impressions": 59,
    "clicks": 1,
-   "position": 18.3,
+   "position": 19.8,
    "title": null,
    "file": null,
    "topQueries": [
@@ -272,6 +254,30 @@
    ],
    "hint": "Abschnitt und interne Links zu „sfdx-hardis“",
    "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/agentforce-agent-api-dealer-apps/",
+   "path": "/en/blog/agentforce-agent-api-dealer-apps/",
+   "impressions": 47,
+   "clicks": 0,
+   "position": 19.4,
+   "title": "Agentforce Agent API: agents in your own dealer apps",
+   "file": "src/content/blog/en/agentforce-agent-api-dealer-apps.md",
+   "topQueries": [
+    {
+     "query": "agentforce api",
+     "impressions": 11,
+     "position": 23.4
+    },
+    {
+     "query": "salesforce agentforce api",
+     "impressions": 1,
+     "position": 45
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „agentforce api“",
+   "new": true
   },
   {
    "source": "google",
@@ -342,6 +348,59 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/leistungen/",
+   "path": "/leistungen/",
+   "impressions": 21,
+   "clicks": 0,
+   "position": 13.3,
+   "title": null,
+   "file": null,
+   "topQueries": [
+    {
+     "query": "salesforce architektur klagenfurt",
+     "impressions": 3,
+     "position": 19.3
+    },
+    {
+     "query": "salesforce architektur dortmund",
+     "impressions": 1,
+     "position": 15
+    },
+    {
+     "query": "salesforce architektur essen",
+     "impressions": 1,
+     "position": 20
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „salesforce architektur klagenfurt“",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
+   "path": "/en/blog/field-service-scheduling-console-dispatchers/",
+   "impressions": 20,
+   "clicks": 0,
+   "position": 11.9,
+   "title": "Field Service Scheduling Console vs. Dispatcher Console",
+   "file": "src/content/blog/en/field-service-scheduling-console-dispatchers.md",
+   "topQueries": [
+    {
+     "query": "field service dispatcher console",
+     "impressions": 1,
+     "position": 29
+    },
+    {
+     "query": "dispatcher console",
+     "impressions": 1,
+     "position": 25
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „field service dispatcher console“",
+   "new": false
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/en/masterclass/ai-salesforce/ai-code-best-practices/",
    "path": "/en/masterclass/ai-salesforce/ai-code-best-practices/",
    "impressions": 19,
@@ -366,26 +425,15 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
-   "path": "/en/blog/field-service-scheduling-console-dispatchers/",
-   "impressions": 18,
+   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-billing-costs/",
+   "path": "/en/blog/revenue-cloud-billing-costs/",
+   "impressions": 16,
    "clicks": 0,
-   "position": 12.3,
-   "title": "Field Service Scheduling Console vs. Dispatcher Console",
-   "file": "src/content/blog/en/field-service-scheduling-console-dispatchers.md",
-   "topQueries": [
-    {
-     "query": "field service dispatcher console",
-     "impressions": 1,
-     "position": 29
-    },
-    {
-     "query": "dispatcher console",
-     "impressions": 1,
-     "position": 25
-    }
-   ],
-   "hint": "Abschnitt und interne Links zu „field service dispatcher console“",
+   "position": 11,
+   "title": "Revenue Cloud Billing pricing: one billing event per $50",
+   "file": "src/content/blog/en/revenue-cloud-billing-costs.md",
+   "topQueries": [],
+   "hint": "Interne Links von verwandten Seiten",
    "new": false
   },
   {
@@ -419,30 +467,11 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
-   "path": "/en/blog/salesforce-document-builder-limits-workarounds/",
-   "impressions": 13,
-   "clicks": 0,
-   "position": 15.6,
-   "title": "Salesforce Document Builder limitations and workarounds",
-   "file": "src/content/blog/en/salesforce-document-builder-limits-workarounds.md",
-   "topQueries": [
-    {
-     "query": "salesforce document builder",
-     "impressions": 1,
-     "position": 38
-    }
-   ],
-   "hint": "Abschnitt und interne Links zu „salesforce document builder“",
-   "new": false
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/revenue-cloud-billing-or-sap-invoicing/",
    "path": "/en/blog/revenue-cloud-billing-or-sap-invoicing/",
-   "impressions": 12,
+   "impressions": 13,
    "clicks": 0,
-   "position": 13.2,
+   "position": 12.2,
    "title": "Revenue Cloud Billing or SAP: where should invoices live?",
    "file": "src/content/blog/en/revenue-cloud-billing-or-sap-invoicing.md",
    "topQueries": [
@@ -462,18 +491,37 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
+   "path": "/en/blog/salesforce-document-builder-limits-workarounds/",
+   "impressions": 13,
+   "clicks": 0,
+   "position": 15.6,
+   "title": "Salesforce Document Builder limitations and workarounds",
+   "file": "src/content/blog/en/salesforce-document-builder-limits-workarounds.md",
+   "topQueries": [
+    {
+     "query": "salesforce document builder",
+     "impressions": 1,
+     "position": 38
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „salesforce document builder“",
+   "new": false
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
    "path": "/masterclass/ki-salesforce/",
-   "impressions": 11,
+   "impressions": 12,
    "clicks": 0,
-   "position": 13.5,
+   "position": 14,
    "title": null,
    "file": null,
    "topQueries": [
     {
      "query": "fertigung salesforce",
-     "impressions": 5,
-     "position": 17.6
+     "impressions": 6,
+     "position": 17.8
     }
    ],
    "hint": "Abschnitt und interne Links zu „fertigung salesforce“",
@@ -483,9 +531,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
    "path": "/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
-   "impressions": 11,
+   "impressions": 12,
    "clicks": 0,
-   "position": 14.9,
+   "position": 14.4,
    "title": "Salesforce Winter '27: what changes for your CI/CD pipeline",
    "file": "src/content/blog/en/salesforce-winter-27-what-changes-for-your-pipeline.md",
    "topQueries": [
@@ -507,22 +555,28 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
    "path": "/en/blog/agentforce-llm-choice-bring-your-own/",
-   "impressions": 10,
+   "impressions": 11,
    "clicks": 0,
    "position": 11.4,
    "title": "Agentforce LLM choice: default, Claude or your own model",
    "file": "src/content/blog/en/agentforce-llm-choice-bring-your-own.md",
-   "topQueries": [],
-   "hint": "Interne Links von verwandten Seiten",
+   "topQueries": [
+    {
+     "query": "what llms does agentforce use and can enterprises bring their own model?",
+     "impressions": 1,
+     "position": 11
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „what llms does agentforce use and can enterprises bring their own model?“",
    "new": false
   },
   {
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
    "path": "/en/blog/salesforce-password-integrations-end-2027/",
-   "impressions": 10,
+   "impressions": 11,
    "clicks": 1,
-   "position": 11.9,
+   "position": 11.5,
    "title": "Salesforce username-password flow retirement: Feb 20, 2027",
    "file": "src/content/blog/en/salesforce-password-integrations-end-2027.md",
    "topQueries": [
@@ -540,11 +594,33 @@
   {
    "source": "google",
    "query": "what makes a salesforce devops platform enterprise-ready?",
-   "impressions": 3,
-   "position": 7,
+   "impressions": 10,
+   "position": 6.5,
    "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
    "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
    "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
+   "covered": false,
+   "new": false
+  },
+  {
+   "source": "google",
+   "query": "was passiert mit kundendaten, wenn ein teil des vertriebsteams ein anderes crm und ein anderer teil salesforce nutzt?",
+   "impressions": 4,
+   "position": 8.3,
+   "page": "https://www.fk-sd.de/blog/salesforce-dubletten-stammdaten-bereinigen/",
+   "path": "/blog/salesforce-dubletten-stammdaten-bereinigen/",
+   "file": "src/content/blog/de/salesforce-dubletten-stammdaten-bereinigen.md",
+   "covered": false,
+   "new": false
+  },
+  {
+   "source": "google",
+   "query": "what does a typical salesforce devops rollout look like?",
+   "impressions": 3,
+   "position": 5.3,
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+   "path": "/en/masterclass/devops-release-management/rollout-roadmap/",
+   "file": "src/content/masterclass/en/rollout-roadmap.md",
    "covered": false,
    "new": false
   },
@@ -572,17 +648,6 @@
   },
   {
    "source": "google",
-   "query": "was passiert mit kundendaten, wenn ein teil des vertriebsteams ein anderes crm und ein anderer teil salesforce nutzt?",
-   "impressions": 3,
-   "position": 8.7,
-   "page": "https://www.fk-sd.de/blog/salesforce-dubletten-stammdaten-bereinigen/",
-   "path": "/blog/salesforce-dubletten-stammdaten-bereinigen/",
-   "file": "src/content/blog/de/salesforce-dubletten-stammdaten-bereinigen.md",
-   "covered": false,
-   "new": false
-  },
-  {
-   "source": "google",
    "query": "welche field-service-app unterstützt einsatzplanung, fotodokumentation und digitale unterschriften?",
    "impressions": 3,
    "position": 9.7,
@@ -602,17 +667,6 @@
    "file": null,
    "covered": false,
    "new": false
-  },
-  {
-   "source": "google",
-   "query": "what does a typical salesforce devops rollout look like?",
-   "impressions": 2,
-   "position": 5.5,
-   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
-   "path": "/en/masterclass/devops-release-management/rollout-roadmap/",
-   "file": "src/content/masterclass/en/rollout-roadmap.md",
-   "covered": false,
-   "new": true
   },
   {
    "source": "google",
@@ -645,7 +699,7 @@
    "path": "/blog/field-service-management-software-auswahl/",
    "file": "src/content/blog/de/field-service-management-software-auswahl.md",
    "covered": false,
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -656,7 +710,7 @@
    "path": "/blog/field-service-management-software-auswahl/",
    "file": "src/content/blog/de/field-service-management-software-auswahl.md",
    "covered": false,
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -667,7 +721,7 @@
    "path": "/blog/field-service-management-software-auswahl/",
    "file": "src/content/blog/de/field-service-management-software-auswahl.md",
    "covered": false,
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -678,7 +732,7 @@
    "path": "/blog/field-service-management-software-auswahl/",
    "file": "src/content/blog/de/field-service-management-software-auswahl.md",
    "covered": false,
-   "new": true
+   "new": false
   },
   {
    "source": "bing",
@@ -692,6 +746,17 @@
    "new": false
   },
   {
+   "source": "bing",
+   "query": "wenn ich mein veränderungsprojekt mit kotter analysiere, brauche ich dann auch lewin?",
+   "impressions": 1,
+   "position": 4,
+   "page": null,
+   "path": null,
+   "file": null,
+   "covered": false,
+   "new": true
+  },
+  {
    "source": "google",
    "query": "what is ai force primarily built for",
    "impressions": 1,
@@ -699,17 +764,6 @@
    "page": "https://www.fk-sd.de/en/masterclass/ai-salesforce/aiforce-and-system-integrators/",
    "path": "/en/masterclass/ai-salesforce/aiforce-and-system-integrators/",
    "file": "src/content/masterclass/en/aiforce-and-system-integrators.md",
-   "covered": false,
-   "new": false
-  },
-  {
-   "source": "bing",
-   "query": "how can i see the weekends in field service dispatch 2 scheduling console like i can in the classic dispatch console in field service lightning",
-   "impressions": 1,
-   "position": 6,
-   "page": null,
-   "path": null,
-   "file": null,
    "covered": false,
    "new": false
   },
@@ -747,6 +801,17 @@
    "new": false
   },
   {
+   "source": "bing",
+   "query": "was bedeutet cma im vergleich zu bill-to oder ship-to in den top kunden umsätzen im salesforce programm?",
+   "impressions": 1,
+   "position": 8,
+   "page": null,
+   "path": null,
+   "file": null,
+   "covered": false,
+   "new": true
+  },
+  {
    "source": "google",
    "query": "wer verkauft salesforce lizenzen in österreich?",
    "impressions": 1,
@@ -766,7 +831,7 @@
    "path": "/blog/field-service-management-software-auswahl/",
    "file": "src/content/blog/de/field-service-management-software-auswahl.md",
    "covered": false,
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -803,6 +868,17 @@
   },
   {
    "source": "google",
+   "query": "what llms does agentforce use and can enterprises bring their own model?",
+   "impressions": 1,
+   "position": 11,
+   "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
+   "path": "/en/blog/agentforce-llm-choice-bring-your-own/",
+   "file": "src/content/blog/en/agentforce-llm-choice-bring-your-own.md",
+   "covered": false,
+   "new": true
+  },
+  {
+   "source": "google",
    "query": "welche field-service-management-software ist für ein kleines unternehmen am besten geeignet?",
    "impressions": 1,
    "position": 14,
@@ -810,12 +886,12 @@
    "path": "/blog/field-service-management-software-auswahl/",
    "file": "src/content/blog/de/field-service-management-software-auswahl.md",
    "covered": false,
-   "new": true
+   "new": false
   }
  ],
  "spam": {
   "queries": 15,
-  "impressions": 52,
+  "impressions": 53,
   "list": [
    {
     "source": "google",
@@ -825,7 +901,7 @@
    {
     "source": "google",
     "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
-    "impressions": 8
+    "impressions": 9
    },
    {
     "source": "google",
@@ -874,12 +950,12 @@
    },
    {
     "source": "bing",
-    "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
+    "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
     "impressions": 1
    },
    {
     "source": "bing",
-    "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
+    "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
     "impressions": 1
    },
    {
@@ -895,10 +971,10 @@
   ]
  },
  "counts": {
-  "snippet": 13,
-  "nearPage1": 13,
-  "questions": 25,
-  "new": 8,
+  "snippet": 12,
+  "nearPage1": 16,
+  "questions": 27,
+  "new": 5,
   "spam": 15
  }
 }

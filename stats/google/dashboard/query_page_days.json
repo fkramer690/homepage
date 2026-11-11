@@ -7489,10 +7489,274 @@
  },
  {
   "day": "2026-11-10",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+  "clicks": 0,
+  "impressions": 7,
+  "position": 6.3
+ },
+ {
+  "day": "2026-11-10",
+  "query": "salesforce b2b commerce headless",
+  "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 29
+ },
+ {
+  "day": "2026-11-10",
+  "query": "how to automate technician scheduling and dispatch?",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 29.7
+ },
+ {
+  "day": "2026-11-10",
+  "query": "agentforce",
+  "page": "https://www.fk-sd.de/blog/was-ist-agentforce/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 35
+ },
+ {
+  "day": "2026-11-10",
+  "query": "field engineer scheduling",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 86
+ },
+ {
+  "day": "2026-11-10",
+  "query": "field service dispatcher",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 85.5
+ },
+ {
+  "day": "2026-11-10",
+  "query": "field service mobile flow limitations",
+  "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4.5
+ },
+ {
+  "day": "2026-11-10",
+  "query": "field service pricing",
+  "page": "https://www.fk-sd.de/blog/agentforce-1-field-service-paket-rechnung/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 91.5
+ },
+ {
+  "day": "2026-11-10",
+  "query": "field service scheduling",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 93
+ },
+ {
+  "day": "2026-11-10",
+  "query": "field service scheduling and dispatch",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 87
+ },
+ {
+  "day": "2026-11-10",
+  "query": "field service shift planning",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 86
+ },
+ {
+  "day": "2026-11-10",
   "query": "key user training",
   "page": "https://www.fk-sd.de/masterclass/change-management/key-user-und-schulung/",
   "clicks": 0,
+  "impressions": 2,
+  "position": 59
+ },
+ {
+  "day": "2026-11-10",
+  "query": "kommunikationsplan",
+  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 85
+ },
+ {
+  "day": "2026-11-10",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 74
+ },
+ {
+  "day": "2026-11-10",
+  "query": "services scheduling dispatch",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 75
+ },
+ {
+  "day": "2026-11-10",
+  "query": "b2b checkout",
+  "page": "https://www.fk-sd.de/en/blog/b2b-checkout-purchase-order-card-invoice/",
+  "clicks": 0,
   "impressions": 1,
-  "position": 53
+  "position": 39
+ },
+ {
+  "day": "2026-11-10",
+  "query": "b2b headless commerce",
+  "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 59
+ },
+ {
+  "day": "2026-11-10",
+  "query": "change modelle",
+  "page": "https://www.fk-sd.de/blog/change-management-modelle/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 93
+ },
+ {
+  "day": "2026-11-10",
+  "query": "epicor kinetic salesforce warranty claim handoff",
+  "page": "https://www.fk-sd.de/en/blog/warranty-claims-dealers-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "day": "2026-11-10",
+  "query": "erp field service",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 97
+ },
+ {
+  "day": "2026-11-10",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 19
+ },
+ {
+  "day": "2026-11-10",
+  "query": "field service",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 99
+ },
+ {
+  "day": "2026-11-10",
+  "query": "field service dispatch",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 77
+ },
+ {
+  "day": "2026-11-10",
+  "query": "field service management cloud",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 80
+ },
+ {
+  "day": "2026-11-10",
+  "query": "headless commerce salesforce",
+  "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 94
+ },
+ {
+  "day": "2026-11-10",
+  "query": "ki chatbot audit trail",
+  "page": "https://www.fk-sd.de/blog/audit-trail-ki-agenten-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 94
+ },
+ {
+  "day": "2026-11-10",
+  "query": "manufacturing cloud",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 58
+ },
+ {
+  "day": "2026-11-10",
+  "query": "manufacturing cloud implementeren",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 68
+ },
+ {
+  "day": "2026-11-10",
+  "query": "salesforce implementierungspartner",
+  "page": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 71
+ },
+ {
+  "day": "2026-11-10",
+  "query": "salesforce manufacturing cloud",
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 91
+ },
+ {
+  "day": "2026-11-10",
+  "query": "salesforce release schedule",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 56
+ },
+ {
+  "day": "2026-11-10",
+  "query": "was passiert mit kundendaten, wenn ein teil des vertriebsteams ein anderes crm und ein anderer teil salesforce nutzt?",
+  "page": "https://www.fk-sd.de/blog/salesforce-dubletten-stammdaten-bereinigen/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "day": "2026-11-10",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "day": "2026-11-10",
+  "query": "what llms does agentforce use and can enterprises bring their own model?",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
  }
 ]

@@ -10,18 +10,13 @@
   "visits": 30
  },
  {
-  "page": "/blog/",
-  "pageviews": 70,
-  "visits": 10
- },
- {
   "page": "/leistungen/change-management/",
   "pageviews": 70,
   "visits": 0
  },
  {
-  "page": "/masterclass/",
-  "pageviews": 40,
+  "page": "/blog/",
+  "pageviews": 70,
   "visits": 10
  },
  {
@@ -40,6 +35,16 @@
   "visits": 10
  },
  {
+  "page": "/masterclass/",
+  "pageviews": 40,
+  "visits": 10
+ },
+ {
+  "page": "/en/blog/ai-native-salesforce-delivery-process/",
+  "pageviews": 30,
+  "visits": 20
+ },
+ {
   "page": "/homepage/",
   "pageviews": 30,
   "visits": 10
@@ -50,22 +55,22 @@
   "visits": 0
  },
  {
-  "page": "/en/blog/ai-native-salesforce-delivery-process/",
+  "page": "/leistungen/salesforce-schnittstellen/",
+  "pageviews": 30,
+  "visits": 30
+ },
+ {
+  "page": "/en/masterclass/ai-salesforce/",
+  "pageviews": 20,
+  "visits": 10
+ },
+ {
+  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
   "pageviews": 20,
   "visits": 20
  },
  {
-  "page": "/impressum/",
-  "pageviews": 20,
-  "visits": 20
- },
- {
-  "page": "/en/partners/juliane-winterscheid/",
-  "pageviews": 20,
-  "visits": 0
- },
- {
-  "page": "/leistungen/salesforce-architektur/",
+  "page": "/en/blog/ai-coding-tools-works-council-gdpr/",
   "pageviews": 20,
   "visits": 0
  },
@@ -75,28 +80,23 @@
   "visits": 0
  },
  {
-  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
-  "pageviews": 20,
-  "visits": 20
- },
- {
   "page": "/masterclass-ki/",
   "pageviews": 20,
   "visits": 0
  },
  {
-  "page": "/leistungen/salesforce-schnittstellen/",
-  "pageviews": 20,
-  "visits": 20
- },
- {
-  "page": "/masterclass/ki-salesforce/",
+  "page": "/en/blog/salesforce-object-ownership-matrix/",
   "pageviews": 20,
   "visits": 0
  },
  {
-  "page": "/masterclass/revenue-cloud/",
+  "page": "/impressum/",
   "pageviews": 20,
-  "visits": 10
+  "visits": 20
+ },
+ {
+  "page": "/leistungen/salesforce-architektur/",
+  "pageviews": 20,
+  "visits": 0
  }
 ]
