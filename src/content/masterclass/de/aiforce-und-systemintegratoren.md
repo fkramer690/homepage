@@ -5,6 +5,7 @@ lang: de
 slug: aiforce-und-systemintegratoren
 translationKey: masterclass-05
 chapter: 5
+pubDate: 2026-10-27
 short: "AIforce und Partner"
 summary: "Was AIforce und SIForce wirklich sind und wie das neue Partnermodell von Salesforce die Interessen Ihres Implementierungspartners verschiebt."
 takeaways:

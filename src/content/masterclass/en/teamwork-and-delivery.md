@@ -5,6 +5,7 @@ lang: en
 slug: teamwork-and-delivery
 translationKey: masterclass-09
 chapter: 9
+pubDate: 2026-10-27
 short: "Teamwork and delivery"
 summary: "How manufacturers set up roles, review gates, metrics and works council approval when partners and in-house teams deliver with coding agents."
 takeaways:

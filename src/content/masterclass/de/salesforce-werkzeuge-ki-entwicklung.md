@@ -5,6 +5,7 @@ lang: de
 slug: salesforce-werkzeuge-ki-entwicklung
 translationKey: masterclass-02
 chapter: 2
+pubDate: 2026-10-27
 short: "Salesforce-Werkzeuge"
 summary: "Welche KI-Werkzeuge Salesforce selbst für Entwicklung und Administration anbietet, was sie kosten und wo ihre Grenzen liegen."
 takeaways:

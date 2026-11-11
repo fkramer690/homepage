@@ -5,6 +5,7 @@ lang: en
 slug: salesforce-ai-development-tools
 translationKey: masterclass-02
 chapter: 2
+pubDate: 2026-10-27
 short: "Salesforce tools"
 summary: "Which AI tools Salesforce itself offers for development and administration, what they cost and where their limits are."
 takeaways:

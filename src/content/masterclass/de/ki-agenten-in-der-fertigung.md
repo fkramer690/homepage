@@ -5,6 +5,7 @@ lang: de
 slug: ki-agenten-in-der-fertigung
 translationKey: masterclass-10
 chapter: 10
+pubDate: 2026-10-27
 short: "Agenten in der Fertigung"
 summary: "Wo Agentforce-Agenten Herstellern heute einen Nutzen bringen, wie Sie sie regelbasiert bauen, testen und absichern, und was erst angekündigt ist."
 takeaways:

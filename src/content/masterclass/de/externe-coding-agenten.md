@@ -5,6 +5,7 @@ lang: de
 slug: externe-coding-agenten
 translationKey: masterclass-04
 chapter: 4
+pubDate: 2026-10-27
 short: "Externe Coding-Agenten"
 summary: "Claude Code, Codex, Copilot und DevOps-Agenten im Vergleich: was das Werkzeug entscheidet und was Vertrag, Datenresidenz und Regeln entscheiden."
 takeaways:

@@ -5,6 +5,7 @@ lang: de
 slug: teamarbeit-und-delivery
 translationKey: masterclass-09
 chapter: 9
+pubDate: 2026-10-27
 short: "Teamarbeit und Delivery"
 summary: "Wie Hersteller Rollen, Review-Gates, Kennzahlen und Betriebsrat aufstellen, wenn Partner und eigene Teams mit Coding-Agenten liefern."
 takeaways:

@@ -123,7 +123,7 @@ const schema = {
       <a class="post-back" data-nosnippet href={masterclassIndex(lang, course)}>← {m.back}</a>
       <p class="post-kicker"><span class="post-pill">{eyebrowPart}</span><span>{eyebrowCourse}</span></p>
       <h1>{title}</h1>
-      <PostMeta lang={lang} authors={['fabian']} updatedDate={updatedDate} minutes={chapterReadingMinutes(chapter)} />
+      <PostMeta lang={lang} authors={['fabian']} pubDate={pubDate} updatedDate={updatedDate} minutes={chapterReadingMinutes(chapter)} />
       <ReadingGrid t={t} headings={toc} cta={`${m.name}: ${title}`}>
         <aside class="post-takeaways" aria-label={t.blog.takeaways}>
           <p class="label mono">{t.blog.takeaways}</p>

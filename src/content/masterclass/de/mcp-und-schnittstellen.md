@@ -5,6 +5,7 @@ lang: de
 slug: mcp-und-schnittstellen
 translationKey: masterclass-03
 chapter: 3
+pubDate: 2026-10-27
 short: "MCP und Schnittstellen"
 summary: "Welche MCP-Server und APIs KI-Agenten mit Salesforce verbinden, wer dabei welche Daten liest und was die Zugriffe kosten werden."
 takeaways:

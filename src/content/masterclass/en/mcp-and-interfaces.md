@@ -5,6 +5,7 @@ lang: en
 slug: mcp-and-interfaces
 translationKey: masterclass-03
 chapter: 3
+pubDate: 2026-10-27
 short: "MCP and interfaces"
 summary: "Which MCP servers and APIs connect AI agents to Salesforce, who reads which data through them and what the calls will cost."
 takeaways:

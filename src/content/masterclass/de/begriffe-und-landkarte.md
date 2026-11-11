@@ -5,6 +5,7 @@ lang: de
 slug: begriffe-und-landkarte
 translationKey: masterclass-01
 chapter: 1
+pubDate: 2026-10-27
 short: "Begriffe und Landkarte"
 summary: "Welche vier Ebenen KI im Salesforce-Projekt hat, was Vibe Coding von agentic engineering trennt und welche Produktnamen wofür stehen."
 takeaways:

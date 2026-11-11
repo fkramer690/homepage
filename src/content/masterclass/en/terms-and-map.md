@@ -5,6 +5,7 @@ lang: en
 slug: terms-and-map
 translationKey: masterclass-01
 chapter: 1
+pubDate: 2026-10-27
 short: "Terms and map"
 summary: "The four layers of AI in a Salesforce program, what separates vibe coding from agentic engineering and which product name stands for what."
 takeaways:
