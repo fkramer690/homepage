@@ -117,6 +117,17 @@ Nutzung in Deutschland (Bitkom 2026, unter KI-Nutzern): ChatGPT 71 %, Gemini 50 
 | KA5 | KI-Crawler-Besuche sind unsichtbar (GitHub Pages liefert keine Server-Logs). Ginge nur mit Cloudflare als Proxy vor der Seite (DNS-Umbau) | klein | groß | später | zurückgestellt |
 | KA6 | Meta AI (läuft über Bing), Grok und DeepSeek nicht eigens messen: für CIOs und CRM-Leiter kaum relevant | klein | – | – | entschieden, keine Maßnahme |
 
+## ChatGPT Business Hub (Prüfung 11.11.2026)
+
+OpenAI hat am 10.11.2026 „Businesses in ChatGPT“ als Beta gestartet (Ankündigung openai.com/index/introducing-businesses-chatgpt/, Hilfeartikel help.openai.com/en/articles/20001635). Unternehmen beanspruchen im Business Hub (chatgpt.com/business-hub) ihr Profil, pflegen Website, Beschreibung, Kategorie, Logo und Titelbild und sehen nach der Identitätsprüfung (Persona) Kennzahlen der letzten 28 Tage: Erwähnungen (nur wenn ChatGPT auf die Website verweist, der Firmenname allein zählt nicht), Website-Klicks und Themen der Antworten. Kostenlos, ohne Werbekonto. Offen ist das für berechtigte Unternehmen in allen Ländern, in denen ChatGPT angeboten wird; ein neues Profil anlegen dürfen vorerst nur Online-Unternehmen, die Kategorie „Dienstleistung“ war in einem Test am 10.11. noch angekündigt, nicht wählbar. Business Agents gibt es nur für Online-Händler und Online-Dienstleister in den USA. Eine API ist nicht dokumentiert. Ein veröffentlichtes Profil lässt sich nicht löschen; mehr Sichtbarkeit verspricht OpenAI nicht.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| CG1 | FK Solution Design im Business Hub beanspruchen: in ChatGPT Business Hub öffnen, nach „FK Solution Design“ suchen (sonst neu anlegen, falls angeboten), per TXT-Eintrag bei Strato (MX, SPF und DMARC unverändert lassen) oder Code an Firmen-E-Mail oder -Telefon verifizieren, nach der Freigabe Persona mit Ausweis und Registerdaten wie im Handelsregister | mittel | klein | Fabian (eigenes Konto) | offen |
+| CG2 | Profil ausfüllen: Website https://www.fk-sd.de/, Beschreibung gleichlautend mit Google-Profil und Bing Places (Salesforce-Architektur für Hersteller), Kategorie IT- bzw. Salesforce-Beratung, Logo aus dem Logopaket, Titelbild; Liefer- und Rückgabebedingungen leer lassen | mittel | klein | Claude schreibt die Beschreibung (DE + EN), Fabian trägt ein | nach CG1 |
+| CG3 | Kennzahlen ins Dashboard: alle 4 Wochen Erwähnungen, Website-Klicks und Themen aus „Insights“ übernehmen, als eigene Zeile neben der KI-Suche; Themen fließen in Hebel 5 (KI-Quellen) und die Artikelthemen. Leere Felder bedeuten „unter OpenAIs Mindestmenge“, nicht null | mittel | klein | Fabian (Werte kopieren), Claude (Dashboard) | nach CG1 |
+| CG4 | SEO-Prüfstand (Projektdateien, `seo-standard/vorgehen.md`) im Bereich KI-Suche ergänzen: ChatGPT-Profil des Kunden mit blauem Haken von Hand prüfen; fehlt es, Maßnahme „Unternehmen im Business Hub eintragen“; mit Agenturzugang des Kunden dessen Insights auswerten wie den Lesezugang zur Search Console | mittel | klein | Claude | offen |
+
 
 ## Kaufanfragen in der KI-Suche (Prüfung 09.11.2026)
 
