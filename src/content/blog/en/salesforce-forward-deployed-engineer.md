@@ -104,6 +104,8 @@ I would base an FDE engagement on these criteria:
 
 An FDE would not pay off when most of the effort is process design across several clouds, a deep SAP integration or data cleansing. That is work for an implementation partner over months. And if it is still open whether an agent is the right approach at all, settle that first. The criteria are in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/)
 
+A shorter version for CIOs is on LinkedIn: [Before Salesforce sends you forward deployed engineers, answer three questions](https://www.linkedin.com/pulse/before-salesforce-sends-you-forward-deployed-engineers-fabian-kramer-jqxde/).
+
 ## First step: settle three responsibilities before the pod starts
 
 Before a Salesforce FDE pod or a partner FDE starts in your org, write down three names: who drives architecture board decisions on the agent within a week, who approves data access and permissions, and who owns the agent functionally and technically after hypercare. If one of these names is missing, fill the role before the start, internally or with an architect on your side, and agree with the pod which metric must be reached after 90 days.

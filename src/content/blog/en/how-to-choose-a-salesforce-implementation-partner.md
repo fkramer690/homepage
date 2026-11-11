@@ -105,6 +105,8 @@ Ask "Will you work in our repository to our standards?" and every partner says y
 - **A second partner.** "In two years another partner joins for Field Service. How do we keep the two from overwriting each other?" Good answers mention pull requests, an [object ownership matrix](../salesforce-object-ownership-matrix/) and a shared [sandbox strategy](../salesforce-sandbox-strategy-multiple-partners/).
 - **Taking over after go-live.** "We want to run the platform ourselves later. What do we get from you then?" This shows whether code, configuration and documentation are meant to sit with you or stay with the partner.
 
+Why I ask partners directly about projects that went wrong is the subject of an article on LinkedIn: [Every Salesforce partner has skeletons in the closet. Ask about them.](https://www.linkedin.com/pulse/every-salesforce-partner-has-skeletons-closet-ask-them-fabian-kramer-crtke/)
+
 ## What belongs in the contract with the partner
 
 What sounds good in the pitch has to go into the contract, or it does not count. At a minimum, these points belong there:

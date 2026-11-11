@@ -131,6 +131,8 @@ Konkret heißt das:
 
 Wie ich Standards und Reviews in solchen Programmen aufsetze, gehört zu meiner [Arbeit an Partnersteuerung und Architektur](../../leistungen/partnersteuerung/).
 
+Wie das Framework hilft, mehrere Implementierungspartner auf einer Org zu steuern, beschreibe ich auf Englisch in einem Artikel auf LinkedIn: [Salesforce Well-Architected Framework: how to govern multiple implementation partners](https://www.linkedin.com/pulse/salesforce-well-architected-framework-how-govern-multiple-kramer-q58ge/).
+
 ## Die eigenen Entwicklungsstandards gegen die fünf Säulen prüfen
 
 Lesen Sie die [Übersicht im Architecture Center](https://architect.salesforce.com/docs/architect/well-architected/guide/overview.html) und das Legacy Mapping, wenn Ihre Teams noch mit Trusted, Easy und Adaptable arbeiten. Prüfen Sie dann Ihre bestehenden Entwicklungsstandards gegen die fünf Säulen. Meist fehlen Kosten und Betrieb.
