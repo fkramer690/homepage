@@ -79,6 +79,7 @@ The repository root holds only project files (`package.json`, configs, `README.m
 | Files served as they are (favicon, client logos, downloads) | `public/` |
 | Images for guest articles on other sites (hero images linked by URL) | `public/guest/` |
 | Concept notes for reuse in other projects (not published) | `docs/konzepte/` |
+| Cloudflare Workers (event counter for "Book a call" clicks and sent forms) | `workers/<name>/`, deployed by its own workflow (`events-worker.yml`) |
 
 ## Local development
 
