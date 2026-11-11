@@ -2,7 +2,7 @@
 title: "Agent Script: Geschäftsregeln gehören nicht ins LLM"
 description: "Kreditlimit, Garantieberechtigung und Preisfreigabe gehören in Agent-Script-Logik statt ins LLM. Wie hybrides Reasoning funktioniert und was Sie prüfen sollten."
 pubDate: 2026-10-27
-updatedDate: 2026-11-09
+updatedDate: 2026-11-11
 lang: de
 slug: agent-script-regeln-statt-llm
 translationKey: agent-script-deterministic-rules
@@ -39,13 +39,15 @@ Für bestehende Agenten bleibt das nicht lange freiwillig. Salesforce hat im [Ju
 
 ## Warum gehören Kreditlimit, Garantie und Preisfreigabe nicht ins LLM?
 
-Weil es Entscheidungen mit einer richtigen Antwort sind. Ein Händler liegt über dem Kreditlimit oder nicht. Eine Maschine hat Garantie oder nicht. Ein Rabatt braucht eine Freigabe oder nicht. Ich sehe vier Gründe, diese Entscheidungen aus dem Modell herauszuhalten.
+Weil es Entscheidungen mit einer richtigen Antwort sind. Ein Händler liegt über dem Kreditlimit oder nicht. Eine Maschine hat Garantie oder nicht. Ein Rabatt braucht eine Freigabe oder nicht. Ich sehe fünf Gründe, diese Entscheidungen aus dem Modell herauszuhalten.
 
 **Audit und Streitfälle.** Ein Händler, dessen Garantieantrag abgelehnt wurde, fragt nach dem Grund. Der Leitfaden nennt nicht deterministische Ausführung eine Lücke im Audit, und ich sehe das genauso. Bei gleicher Version, gleichen Eingaben und gleichem Systemzustand nimmt eine Regel im Code denselben Weg und ist nachvollziehbar. Agentenversionen liegen außerdem als Metadaten vor: Das [AiAuthoringBundle](https://developer.salesforce.com/blogs/2026/05/new-agentforce-metadata-and-development-lifecycle) hält versionierte Ordner. Um zu belegen, welche Regel für einen bestimmten Vorgang galt, sichern Sie zusätzlich Aktivierungshistorie und Laufzeit-Traces.
 
 **Die Regel hat schon ein Zuhause.** In der Fertigung stehen Kreditlimit und Obligo in SAP oder proALPHA. Garantiebedingungen stehen in der Manufacturing Cloud oder im ERP. Preiskonditionen stehen im ERP oder im CPQ, eine Entscheidung, die ich in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/) beschreibe. Ein Agent sollte das Ergebnis dieses Systems lesen, nicht die Regel im Prompt nachbauen. Zwei Orte mit derselben Regel weichen voneinander ab, und die Prompt-Fassung ist die, die niemand testet.
 
 **Kosten und Antwortzeit.** Der Leitfaden schreibt: „Every unnecessary LLM call adds latency, cost, and variability“, und ein einfaches Gespräch erforderte früher mindestens drei LLM-Zyklen. Jede Berechnung, die Sie in Logik verlagern, ist eine Stelle weniger, an der das Modell ein falsches Ergebnis liefern kann.
+
+**Zu viele Anweisungen.** Die Forward Deployed Engineers von Salesforce erleben oft, dass Kunden immer mehr Regeln in die Anweisungen des Agenten schreiben. Laut [Salesforce Engineering](https://engineering.salesforce.com/accelerating-agentforce-deployments-from-6-months-to-3-weeks-across-150-enterprises/) antworten Agenten dadurch schlechter; Anweisungen sollen das Denken des Agenten lenken, die festen Entscheidungswege gehören in Workflows. Wie diese Engineers arbeiten, steht in [Forward Deployed Engineer bei Salesforce erklärt](../forward-deployed-engineer-salesforce/).
 
 **Nicht vertrauenswürdige Eingaben.** Händlerportale, Garantieformulare und E-Mails enthalten Eingaben von Menschen außerhalb Ihres Unternehmens. Hängt eine Regel davon ab, wie das Modell Freitext liest, kann dieser Text das Modell beeinflussen. Das beschreibe ich in [Prompt Injection über Händlerportale](../prompt-injection-haendlerportal-agentforce/).
 

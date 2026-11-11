@@ -2,7 +2,7 @@
 title: "Agent Script: why business rules don't belong in the LLM"
 description: "Credit limits, warranty eligibility and price approvals belong in Agent Script logic, not in the LLM. How hybrid reasoning works and what to check in a design."
 pubDate: 2026-10-27
-updatedDate: 2026-11-09
+updatedDate: 2026-11-11
 lang: en
 slug: agent-script-deterministic-rules
 translationKey: agent-script-deterministic-rules
@@ -39,13 +39,15 @@ For existing agents, this will not remain optional for long. Salesforce wrote in
 
 ## Why do credit limits, warranty and price approvals not belong in the LLM?
 
-Because these are decisions with a right answer. A dealer is over the credit limit or not. A machine is under warranty or not. A discount needs approval or not. I see four reasons to keep them out of the model.
+Because these are decisions with a right answer. A dealer is over the credit limit or not. A machine is under warranty or not. A discount needs approval or not. I see five reasons to keep them out of the model.
 
 **Audit and disputes.** A dealer whose warranty claim was rejected will ask why. The guide calls non-deterministic execution an audit gap, and I agree. With the same version, inputs and system state, a rule in code follows the same path and can be traced. Agent versions are also stored as metadata: the [AiAuthoringBundle](https://developer.salesforce.com/blogs/2026/05/new-agentforce-metadata-and-development-lifecycle) keeps versioned folders. To prove which rule governed a specific transaction, also keep the activation history and runtime traces.
 
 **The rule already lives somewhere.** In manufacturing, the credit limit and the exposure are maintained in SAP or proALPHA. Warranty terms are stored in Manufacturing Cloud or in the ERP. Price conditions are maintained in the ERP or in CPQ, a choice covered in [customer prices: SAP conditions or Salesforce Pricing?](../customer-prices-sap-conditions-or-salesforce-pricing/). An agent should read the result of that system, not rebuild the rule in a prompt. Two places with the same rule diverge, and the prompt version is the one nobody tests.
 
 **Cost and latency.** The guide states that "every unnecessary LLM call adds latency, cost, and variability" and that a simple conversation used to need at least three LLM cycles. Each calculation you move into logic is one less place where the model can go wrong.
+
+**Too many instructions.** Salesforce's forward deployed engineers often see clients write more and more rules into the agent's instructions. According to [Salesforce Engineering](https://engineering.salesforce.com/accelerating-agentforce-deployments-from-6-months-to-3-weeks-across-150-enterprises/), agents then answer worse; instructions should guide the agent's thinking, and fixed decision paths belong in workflows. How these engineers work is covered in [Salesforce forward deployed engineers explained](../salesforce-forward-deployed-engineer/).
 
 **Untrusted input.** Dealer portals, warranty forms and emails are written by people outside your company. If a rule depends on the model's reading of free text, that text can influence the model. I cover this in [prompt injection through dealer portals](../prompt-injection-dealer-portals-agentforce/).
 

@@ -2,7 +2,7 @@
 title: "Agentforce KPIs after go-live: does the agent pay off?"
 description: "Which Agentforce KPIs show 90 days after go-live whether an agent pays off for a manufacturer, where each number comes from, and when to switch it off."
 pubDate: 2026-10-27
-updatedDate: 2026-11-09
+updatedDate: 2026-11-11
 lang: en
 slug: agentforce-kpis-after-go-live
 translationKey: agentforce-kpis-after-go-live
@@ -95,7 +95,7 @@ The decision on day 90: order status stays and goes to the next dealer group. Sp
 
 ## When should you switch an agent off?
 
-Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be canceled by the end of 2027, citing "escalating costs, unclear business value or inadequate risk controls". A stop rule written down before go-live makes that a routine decision. I would agree these triggers with the head of service and apply them per subagent:
+Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be canceled by the end of 2027, citing "escalating costs, unclear business value or inadequate risk controls". For vendor-led AI engineering efforts, for example with [forward deployed engineers](../salesforce-forward-deployed-engineer/), Gartner even expects around 70 percent to be abandoned by 2028, according to [CIO Dive](https://www.ciodive.com/news/can-forward-deployed-engineers-fdes-fix-ai-gartner/831833/). A stop rule written down before go-live makes that a routine decision. I would agree these triggers with the head of service and apply them per subagent:
 
 1. **Immediately:** a confirmed breach of a hard rule, such as a wrong warranty statement or exposing another dealer's order data. The subagent stays off until the fix passes the regression tests from [testing before go-live](../testing-agentforce-agents-before-go-live/).
 2. **After two improvement cycles of 30 days:** escalation rate above 40 percent or task resolution below 40 percent.

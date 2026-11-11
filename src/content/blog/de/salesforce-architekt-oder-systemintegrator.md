@@ -24,6 +24,8 @@ faq:
     a: "Zum Start oft drei bis fünf Tage pro Woche, wenn Zielbild, Standards und Partnerauswahl anstehen. Läuft das Programm stabil, reichen meist zwei Tage pro Woche für Reviews, Entscheidungen und den Termin mit den technischen Leads."
   - q: "Arbeitet ein Architekt auf Kundenseite gegen den Partner?"
     a: "Nein. Er sorgt dafür, dass der Partner klare Vorgaben bekommt und Entscheidungen schnell fallen. Gute Partner schätzen das, weil es Diskussionen über Zuständigkeiten und Change Requests verkürzt."
+  - q: "Ersetzt ein Forward Deployed Engineer von Salesforce den Architekten?"
+    a: "Nein. Ein FDE-Pod von Salesforce oder einem Partner bringt einen einzelnen Agentforce-Anwendungsfall in Produktion und verlässt das Projekt danach. Zielbild, Standards über alle Partner und die Entscheidungen im Architekturboard bleiben Aufgaben auf Kundenseite."
 draft: true
 ---
 
@@ -104,6 +106,12 @@ In einem Programm, das ich begleitet habe, lief anfangs jeder Pull Request über
 ```
 
 Ein Architekt auf Kundenseite muss nicht für immer bleiben. Das Ziel ist, dass die Rolle irgendwann intern besetzt ist, mit dokumentierten Standards und einem Kollegen, der Reviews und den Termin mit den technischen Leads übernimmt.
+
+## Und der Forward Deployed Engineer?
+
+Seit 2025 setzt Salesforce für Agentforce eigene Forward Deployed Engineers ein, kurz FDEs: Pods aus zwei Engineers und einem Deployment Strategist, die einen Agenten direkt in der Org des Kunden bauen und bis in den Produktivbetrieb begleiten. Seit April 2026 stellen auch Partner aus dem FDE Partner Network solche Engineers, darunter Accenture und Deloitte. Damit gibt es neben Systemintegrator und Architekt auf Kundenseite eine dritte Rolle im Programm.
+
+Ein FDE arbeitet für einen Anwendungsfall und für das Produkt seines Arbeitgebers. Er meldet Plattformgrenzen an das Produktmanagement von Salesforce zurück und verlässt das Projekt nach der Hypercare. Die Fragen, bei denen Kunde und Systemintegrator verschiedene Interessen haben, beantwortet er nicht: Umfang, Make-or-Buy, Repository und Pipeline, ein zweiter Partner. Er braucht sogar mehr Vorarbeit auf Kundenseite, weil er schnell baut und auf Entscheidungen zu Daten, Berechtigungen und Freigaben wartet. Was ein FDE kostet und wann er sich lohnt, steht in [Forward Deployed Engineer bei Salesforce erklärt](../forward-deployed-engineer-salesforce/).
 
 ## Was ein Architekt auf Kundenseite kostet
 
