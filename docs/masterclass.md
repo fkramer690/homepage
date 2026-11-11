@@ -94,6 +94,7 @@ The first one is the DevOps intro (German, 16:9). It is rendered from an HTML an
 | `takeaways` | 3–5 standalone sentences, max. 160 characters each (structure check), the first not a copy of the intro |
 | `articles` | 1–8 blog translationKeys covered by the chapter |
 | `faq` | optional, up to 6 questions, answers up to 600 characters |
+| `pubDate` | required, date of first publication (YYYY-MM-DD); feeds `datePublished`, the visible date and the sitemap's lastmod, never changed later |
 | `updatedDate` | optional, set when the chapter changes in substance |
 | `draft` | optional; drafts are left out of the production build |
 
