@@ -84,6 +84,17 @@ Grundlage: „AI Search Checklist“ der Agentur Contact (81 Punkte: Seitenbaust
 | KS3 | Auswahl- und Vergleichsartikel (z. B. L1 Partnerwahl) nennen die Kriterien, nach denen die Empfehlung entsteht | mittel | klein | Claude | erledigt 07.11.2026: Regel in docs/blog-guidelines.md (KI-Suche); L1 erfüllt sie bereits mit Tabellen und Vergleich |
 | KS4 | Eigenes kleines Werkzeug als zitierfähige Ressource, z. B. Flex-Credits-Rechner oder Make-or-Buy-Check (DE + EN) | mittel | mittel | Claude schlägt vor, Fabian entscheidet | offen |
 
+## SEO-Prüfstand fk-sd.de (Prüfung 11.11.2026)
+
+Testlauf mit dem erweiterten SEO-Prüfstand (Agenten-Tauglichkeit, Seitentyp-Abgleich, CrUX). Agentic Browsing in Lighthouse 13: 3 von 3 in allen Templates, alle KI-Bots erlaubt, echter 404, Kontaktformular für Agenten bedienbar. Seitentyp-Abgleich: Bei 13 Suchanfragen zeigt Google einen anderen Seitentyp als unsere Seite. Bei „salesforce architekt freiberuflich“ und „salesforce architekt freelancer“ stehen fast nur Job- und Projektbörsen sowie Profile in den Top 10.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| SP1 | Profile auf freelancermap, freelance.de und Malt pflegen, weil Google für die Freelancer-Suchanfragen vor allem solche Profile zeigt: Schwerpunkte Maschinenbau, Partnersteuerung und Architektur nennen, Titel und erster Satz wie in CL4. Wo ein Portal einen Link auf die Website erlaubt, auf `/freiberuflicher-salesforce-architect/` verlinken (laut D7 erlauben das die meisten Portale nicht). Texte je Plattform liegen schon bereit (CL4). Prüfsignal: eigene Profile und Website in den SERPs dieser Suchanfragen, nach 4 bis 8 Wochen | hoch | klein | Fabian | offen |
+| SP2 | EN-Leistungsseiten auf Anbieter-Suchanfragen ausrichten: Integration auf „SAP to Salesforce“, Partnersteuerung auf „implementation partner“. Prüfsignal: Position und Seitentyp für beide Suchanfragen, 4 bis 8 Wochen nach Indexierung | mittel | klein | Claude | erledigt 11.11.2026 (PR #434) |
+| SP3 | Content-Signal in robots.txt: Suche, KI-Antworten und Training erlaubt (Entscheidung Fabian 11.11.2026) | niedrig | klein | Claude | erledigt 11.11.2026 (PR #434) |
+| SP4 | Markdown-Fassung der Seiten und `/.well-known/ard.json`: kein Ranking-Faktor, nur Ausblick | niedrig | mittel | Claude | zurückgestellt |
+
 ## Sichtbarkeit in Claude (Prüfung 09.11.2026)
 
 Lauf vom 09.11.2026: Claude 0 von 15 Fragen, Perplexity 9 von 15 mit denselben Seiten. Technisch ist nichts blockiert: robots.txt erlaubt alle Crawler (also auch ClaudeBot, Claude-SearchBot und Claude-User), die Seiten sind statisches HTML, llms.txt ist da. Claudes Websuche nutzt nach übereinstimmenden Berichten den Index von Brave Search (Anthropic nennt den Anbieter nicht selbst). Was dort nicht oben steht, zitiert Claude nicht. Bei 5 der 15 Fragen hat Claude gar nicht gesucht, dort zählt nur, was im Trainingsstand über Fabian steht, also Erwähnungen auf anderen Seiten. Zitiert hat Claude vor allem Verzeichnisse (freelance.de, GULP, consultingheads, bilarna, Software-Vergleichsportale), Salesforce-Doku, sfdx-hardis-Doku und GitHub, Salesforce Ben und Salesforce Dictionary.
