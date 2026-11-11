@@ -84,4 +84,4 @@ AI assistants answer buyer questions from a small set of sources: portal profile
 - **Never** pay for placements presented as editorial mentions, never create accounts or order forum posts.
 - **Measure before and after:** after each entry, ask the prompts that source fed again (next KI-Suche run) and note the change. If the answers do not move, the entry lacks substance (numbers, comparison, the concrete service): improve it before adding new targets.
 
-The current target list for fk-sd.de is item GT3 in [backlog.md](backlog.md).
+The current target list for fk-sd.de is item GT3 in the backlog (project files, see [backlog.md](backlog.md)).
