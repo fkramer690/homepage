@@ -1,6 +1,6 @@
 ---
-title: "Salesforce SAP integration, ERP interfaces and telephony"
-description: "Salesforce SAP integration and links to other ERP systems, middleware and telephony such as Genesys or Teams Phone, with an integration architecture you own."
+title: "SAP to Salesforce integration, ERP interfaces and telephony"
+description: "SAP to Salesforce integration, links to other ERP systems, middleware and telephony such as Genesys or Teams Phone, with an integration architecture you own."
 lang: en
 slug: salesforce-integration
 translationKey: service-integration
