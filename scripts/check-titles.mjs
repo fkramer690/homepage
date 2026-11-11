@@ -1,9 +1,11 @@
 // Runs after `astro build`: every indexable page needs a <title> of at most 60
-// characters (what search results show before cutting) that no other page uses.
+// characters (what search results show before cutting) that no other page uses,
+// and a meta description of at most 160 characters.
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const MAX = 60;
+const MAX_DESCRIPTION = 160;
 const dist = new URL('../dist/', import.meta.url).pathname;
 const errors = [];
 const seen = new Map();
@@ -23,6 +25,9 @@ function walk(dir) {
       else if (title.length > MAX) errors.push(`<title> longer than ${MAX} characters (${title.length}): ${page} "${title}"`);
       if (title && seen.has(title)) errors.push(`duplicate <title> "${title}": ${seen.get(title)} and ${page}`);
       seen.set(title, page);
+      const description = decode(html.match(/<meta\s+name="description"\s+content="([^"]*)"/)?.[1].trim() ?? '');
+      if (!description) errors.push(`missing meta description: ${page}`);
+      else if (description.length > MAX_DESCRIPTION) errors.push(`meta description longer than ${MAX_DESCRIPTION} characters (${description.length}): ${page}`);
     }
   }
 }
@@ -32,4 +37,4 @@ if (errors.length) {
   console.error(`Title check failed:\n${errors.map((e) => `  - ${e}`).join('\n')}`);
   process.exit(1);
 }
-console.log(`Title check passed: ${seen.size} indexable pages, unique titles of at most ${MAX} characters.`);
+console.log(`Title check passed: ${seen.size} indexable pages, unique titles of at most ${MAX} characters, meta descriptions of at most ${MAX_DESCRIPTION}.`);

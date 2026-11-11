@@ -168,7 +168,7 @@ export const copy = {
     title: 'Speaker & events',
     metaTitle: 'Salesforce speaker: talks and events | FK Solution Design',
     description:
-      'Talks by Fabian Kramer at Salesforce community conferences across Europe: Flow performance, Flow vs OmniScript, Flow quality with the Lightning Flow Scanner, and the Cologne user group.',
+      'Talks by Fabian Kramer at Salesforce community conferences in Europe: Flow performance, Flow vs OmniScript, Lightning Flow Scanner and the Cologne user group.',
     lead: 'Since 2023 I have spoken at Salesforce community conferences in Paris, Rotterdam, Prague and London, and I co-lead the Salesforce User Group in Cologne. My talks are about the things that break in real orgs: flows that do not scale, quality checks nobody runs, releases without a safety net. I show it live in an org instead of on slides.',
     talksTitle: 'Talks',
     with: 'with',
@@ -196,7 +196,7 @@ export const copy = {
     title: 'Vorträge & Events',
     metaTitle: 'Salesforce-Vorträge und Events | FK Solution Design',
     description:
-      'Vorträge von Fabian Kramer auf Salesforce-Community-Konferenzen in Europa: Flow-Performance, Flow vs OmniScript, Flow-Qualität mit dem Lightning Flow Scanner und die User Group Köln.',
+      'Vorträge von Fabian Kramer auf Salesforce-Konferenzen in Europa: Flow-Performance, Flow vs OmniScript, Lightning Flow Scanner und die User Group Köln.',
     lead: 'Seit 2023 spreche ich auf Salesforce-Community-Konferenzen in Paris, Rotterdam, Prag und London, und ich leite die Salesforce User Group in Köln mit. In meinen Vorträgen geht es um das, was in echten Orgs kaputtgeht: Flows, die nicht skalieren, Qualitätsprüfungen, die niemand laufen lässt, Releases ohne Sicherheitsnetz. Ich zeige das live in einer Org statt auf Folien.',
     talksTitle: 'Vorträge',
     with: 'mit',
