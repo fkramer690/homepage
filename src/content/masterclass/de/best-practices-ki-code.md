@@ -5,6 +5,7 @@ lang: de
 slug: best-practices-ki-code
 translationKey: masterclass-08
 chapter: 8
+pubDate: 2026-10-27
 short: "Best Practices für KI-Code"
 summary: "Wie Sie KI-generierten Salesforce-Code mit Regeldatei, Pipeline-Prüfungen und klaren Org-Grenzen beherrschbar machen."
 takeaways:

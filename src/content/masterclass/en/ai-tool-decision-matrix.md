@@ -5,6 +5,7 @@ lang: en
 slug: ai-tool-decision-matrix
 translationKey: masterclass-06
 chapter: 6
+pubDate: 2026-10-27
 short: "What to use when"
 summary: "Which AI tool fits which job, in twelve scenarios for manufacturers, from workshop prototype to ERP agent and EU data residency."
 takeaways:

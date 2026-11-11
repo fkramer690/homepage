@@ -5,6 +5,7 @@ lang: de
 slug: entscheidungsmatrix-ki-werkzeuge
 translationKey: masterclass-06
 chapter: 6
+pubDate: 2026-10-27
 short: "Wann nutze ich was"
 summary: "Welches KI-Werkzeug zu welcher Aufgabe passt, in zwölf Szenarien für Hersteller, von Prototyp über ERP-Agent bis EU-Datenresidenz."
 takeaways:

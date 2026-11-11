@@ -5,6 +5,7 @@ lang: de
 slug: kosten-und-token
 translationKey: masterclass-07
 chapter: 7
+pubDate: 2026-10-27
 short: "Kosten und Token"
 summary: "Wie Token-Preise in der Entwicklung und Flex Credits im Agentforce-Betrieb zusammenspielen und wie ein Hersteller beides budgetiert."
 takeaways:

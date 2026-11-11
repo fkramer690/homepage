@@ -5,6 +5,7 @@ lang: en
 slug: ai-code-best-practices
 translationKey: masterclass-08
 chapter: 8
+pubDate: 2026-10-27
 short: "AI code best practices"
 summary: "How to keep AI-generated Salesforce code under control with a rules file, pipeline checks and clear org boundaries."
 takeaways:

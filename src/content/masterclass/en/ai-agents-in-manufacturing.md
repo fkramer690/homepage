@@ -5,6 +5,7 @@ lang: en
 slug: ai-agents-in-manufacturing
 translationKey: masterclass-10
 chapter: 10
+pubDate: 2026-10-27
 short: "Agents in manufacturing"
 summary: "Where Agentforce agents work for manufacturers today, how to build, test and secure them with rules, and what is only announced."
 takeaways:
