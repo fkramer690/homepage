@@ -18,15 +18,15 @@ takeaways:
 articles: [field-service-ai-agents-today, breakdown-hotline-voice-agent, field-service-ai-troubleshooting-manuals, spare-parts-serial-number-ai, field-service-headless-setup-ai, field-service-rollout, field-service-kpis-after-go-live]
 faq:
   - q: "Which AI agent should a machine builder start with in Field Service?"
-    a: "Proactive maintenance booking from maintenance plans. It runs often, the rules are known and a booking costs cents in Flex Credits. The drafted job report follows once parts, working time and fault codes are structured fields on the work order."
+    a: "Proactive maintenance booking from maintenance plans. It comes up often, the rules are known and a booking costs cents in Flex Credits. The drafted job report follows once parts, working time and fault codes are structured fields on the work order."
   - q: "Can a voice agent book a technician for a machine-down call?"
-    a: "Salesforce lists autonomous scheduling with Agentforce Voice in the Winter '27 highlights. I would let it book only when the machine still runs, the entitlement covers the visit and the fault class is known. Machine-down calls with a committed response time go to a dispatcher with a filled case."
+    a: "Salesforce lists autonomous scheduling with Agentforce Voice in the Winter '27 highlights. I would let it book only when the machine still runs, the entitlement covers the visit and the fault class is known. Machine-down calls with a committed response time are handed to a dispatcher with a completed case."
   - q: "Can an AI assistant set up Field Service directly in production?"
     a: "I would not do that. Most of what it creates are configuration records that a metadata deployment does not carry, and the setup loads sample service appointments. Run it in a sandbox, review the plan with service and dispatch, then deploy through the pipeline."
   - q: "Which KPIs show whether Field Service works after go-live?"
     a: "Jobs per technician and day, travel share, first-time fix rate, response times met, arrivals within the promised window and the share of engine proposals dispatchers change. Measure them for three months in the old system first, with the same definitions."
   - q: "Does the works council have to be involved in a Field Service rollout?"
-    a: "In Germany usually yes. Section 87 of the Works Constitution Act gives it co-determination on technical systems that can monitor behaviour or performance, and location tracking, timesheets and voice input touch that. Bring it in before the first wave, not after the app is on the devices."
+    a: "In Germany usually yes. Section 87 of the Works Constitution Act gives it co-determination on technical systems that can monitor behavior or performance, and location tracking, timesheets and voice input touch that. Bring it in before the first wave, not after the app is on the devices."
 draft: false
 ---
 
@@ -34,7 +34,7 @@ AI agents in Salesforce Field Service work today for a handful of jobs: booking 
 
 ## Which Field Service agents work today, and what do they cost?
 
-Salesforce sells Field Service today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/). Its agents serve three groups. Customers book, reschedule and cancel appointments through an agent and get proactive maintenance offers based on maintenance plan dates. Dispatchers get an assistant that fills gaps after cancellations. Technicians get a Pre-Work Brief before the job, a drafted Post-Work Summary afterwards and step-by-step troubleshooting on site. Salesforce announced these functions in [April 2025](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/). Status per function is in [AI agents in Field Service: what works today?](../../../blog/field-service-ai-agents-what-works-today/).
+Salesforce sells Field Service today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/). Its agents serve three groups. Customers book, reschedule and cancel appointments through an agent and receive proactive maintenance offers based on maintenance plan dates. Dispatchers receive an assistant that fills gaps after cancellations. Technicians receive a Pre-Work Brief before the job, a drafted Post-Work Summary afterwards and step-by-step troubleshooting on site. Salesforce announced these functions in [April 2025](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/). Status per function is in [AI agents in Field Service: what works today?](../../../blog/field-service-ai-agents-what-works-today/).
 
 The price follows the line between customers and employees:
 
@@ -46,7 +46,7 @@ The price follows the line between customers and employees:
 
 The credit rates come from the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) of 31 August 2026. At the [list price of $500 per 100,000 credits](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) an action costs $0.10. A booking agent therefore costs cents per booking, while the employee add-on for 60 technicians comes to $90,000 a year. When the bundle beats single add-ons is covered in [chapter 1](../field-service-business-case-licences/), and how to estimate credits per process in the AI masterclass chapter [AI costs: tokens, Flex Credits, budget](../../ai-salesforce/costs-and-tokens/).
 
-My order for a machine builder: maintenance booking first, because maintenance plans already create the work orders and the agent only agrees a date. Its weak spot is the shutdown window at the customer, so without a maintained window it proposes dates and hands over to a dispatcher. The drafted job report comes second, and only once parts, working time and fault codes stay structured fields. Warranty, invoicing and the ERP cannot read prose. Where Field Service sits among other agent use cases in a manufacturing company is the subject of [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/).
+My order for a machine builder: maintenance booking first, because maintenance plans already create the work orders and the agent only has to agree on a date. Its weak spot is the shutdown window at the customer, so without a maintained window it proposes dates and hands over to a dispatcher. The drafted job report comes second, and only once parts, working time and fault codes stay structured fields. Warranty, invoicing and the ERP cannot read prose. Where Field Service sits among other agent use cases in a manufacturing company is the subject of [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/).
 
 ## How should a voice agent handle the breakdown hotline?
 
@@ -57,7 +57,7 @@ Two announcements matter for a German-language hotline:
 | Agentforce Voice in German | German is one of six new languages | GA according to the [Dreamforce 2026 announcements](https://www.salesforce.com/blog/dreamforce-2026-announcements/) |
 | Autonomous scheduling with Agentforce Voice | Voice agents check availability and find a technician in the right territory while the customer is on the call | No status label in the [Winter '27 highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center), check availability in your org |
 
-A breakdown call is harder than a booking call: four facts decide the next step, which machine, whether it is down, what the contract promises and whether anyone is at risk. I would let the voice agent own intake and triage first. It identifies caller and machine through phone number, contact and installed assets, asks a closed question about the machine state and checks the entitlement. It books a technician itself only when the machine still runs, the entitlement covers the visit and the fault class is known. A stopped press with a four-hour commitment goes to a dispatcher, who can pull a technician off another job.
+A breakdown call is harder than a booking call: four facts decide the next step, which machine, whether it is down, what the contract promises and whether anyone is at risk. I would let the voice agent own intake and triage first. It identifies caller and machine through phone number, contact and installed assets, asks a closed question about the machine state and checks the entitlement. It books a technician itself only when the machine still runs, the entitlement covers the visit and the fault class is known. A stopped press with a four-hour commitment is handed to a dispatcher, who can pull a technician off another job.
 
 ```hinweis tipp
 These gates belong in deterministic logic, not in the prompt. I would start outside business hours with triage only and switch on booking for the clear cases after four weeks of comparison with the on-call engineer.
@@ -92,7 +92,7 @@ The agent understands the question, narrows it to an assembly and presents the r
 
 Salesforce now offers a headless setup of Field Service. According to the [Trailhead unit](https://trailhead.salesforce.com/content/learn/modules/headless-360-use-cases-in-action/set-up-field-service-headlessly), an AI assistant such as Gemini, Claude or Slackbot reads your company website, asks follow-up questions and proposes an implementation plan. Headless skills in three tiers, orchestration, configuration and feature, then build territories, operating hours, work types, skill requirements and scheduling policies, plus mobile branding, pre-work briefs and data capture forms. Nothing is final until you approve the plan.
 
-The assistant builds the frame well and the content poorly. It knows your public website. It does not know which technician holds which skill, which customer allows visits when or which depot serves which region. A territory proposal derived from the website follows sales offices, while the right cut follows depots and travel times. How the assistant reaches Salesforce through MCP and APIs is explained in [MCP and Salesforce interfaces](../../ai-salesforce/mcp-and-interfaces/).
+The assistant builds the frame well and the content poorly. It knows your public website. It does not know which technician holds which skill, which customer allows visits when or which depot serves which region. A territory proposal derived from the website follows sales offices, while the right split follows depots and travel times. How the assistant reaches Salesforce through MCP and APIs is explained in [MCP and Salesforce interfaces](../../ai-salesforce/mcp-and-interfaces/).
 
 Two rules I would not bend:
 
@@ -103,11 +103,11 @@ Two rules I would not bend:
 
 The review table per plan section is in [Field Service setup by AI assistant: what to check](../../../blog/field-service-headless-setup-ai-assistant/).
 
-## Field Service rolls out in waves by region or country
+## Roll out Field Service in waves by region or country
 
-I recommend rolling out Field Service in waves, region by region or country by country. Each wave brings its own master data, dispatchers, technicians and partners, and the first wave tests everything the later ones rely on. If skills or visiting hours are missing, it hits one territory and not the whole field service.
+I recommend rolling out Field Service in waves, region by region or country by country. Each wave brings its own master data, dispatchers, technicians and partners, and the first wave tests everything the later ones rely on. If skills or visiting hours are missing, it affects one territory and not the whole field service.
 
-The works council belongs in the planning of the first wave. In Germany, [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) gives it co-determination on technical systems that can monitor behaviour or performance. Field Service touches that with timesheets, with location tracking in the mobile app and with voice input. According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.mfs_resource_tracking.htm&type=5), location tracking can be set by interval and accuracy, and single technicians can be excluded. Those settings are what you negotiate, per country if needed. The wave content and the settings table are in [Rolling out Salesforce Field Service: why in waves?](../../../blog/salesforce-field-service-rollout/). The release pipeline that carries each wave's configuration should be in place before wave one; the DevOps chapter [rollout roadmap and metrics](../../devops-release-management/rollout-roadmap/) shows how to get there.
+The works council belongs in the planning of the first wave. In Germany, [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) gives it co-determination on technical systems that can monitor behavior or performance. Field Service touches that with timesheets, with location tracking in the mobile app and with voice input. According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.mfs_resource_tracking.htm&type=5), location tracking can be set by interval and accuracy, and single technicians can be excluded. Those settings are what you negotiate, per country if needed. The wave content and the settings table are in [Rolling out Salesforce Field Service: why in waves?](../../../blog/salesforce-field-service-rollout/). The release pipeline that carries each wave's configuration should be in place before wave one; the DevOps chapter [rollout roadmap and metrics](../../devops-release-management/rollout-roadmap/) shows how to get there.
 
 Agents fit into the same waves. I would switch on an agent in a region that has been live for a few months, so its effect can be told apart from the effect of Field Service itself.
 
@@ -125,7 +125,7 @@ Before any dashboard, write down how each KPI is defined. First-time fix needs a
 
 ## Who owns Field Service after go-live?
 
-Scheduling policies, territories, work types and operating hours are records that someone adjusts every month. The mobile app gets its own versions next to the three platform releases, as described in [chapter 3](../field-service-mobile-app-documents/). And agents need their prompts, actions and test cases maintained. I would name owners before the first wave:
+Scheduling policies, territories, work types and operating hours are records that someone adjusts every month. The mobile app receives its own versions next to the three platform releases, as described in [chapter 3](../field-service-mobile-app-documents/). And agents need their prompts, actions and test cases maintained. I would name owners before the first wave:
 
 | Role | Owns |
 |---|---|
@@ -145,19 +145,19 @@ Before wave one
 Region one with 30 technicians | Months 1 to 3
   No agents. Dispatchers change 40 percent of proposals in month one, mostly because customer access times are missing. The team adds them before wave two.
 Region two | Months 4 to 6
-  Region one gets the maintenance booking agent. Assume 250 planned visits a month at five actions each: 25,000 credits, about $125 a month at list price. Shutdown windows exist for two thirds of the customers, the rest stay with the dispatcher.
+  Region one receives the maintenance booking agent. Assume 250 planned visits a month at five actions each: 25,000 credits, about $125 a month at list price. Shutdown windows exist for two thirds of the customers, the rest stay with the dispatcher.
 Region three in another country | Months 7 to 9
-  Separate check of local co-determination rules before dates are fixed. Region one gets a voice agent on the hotline at night, triage only.
+  Separate check of local co-determination rules before dates are fixed. Region one receives a voice agent on the hotline at night, triage only.
 ```
 
-Troubleshooting waits until manuals carry the asset's product key, the spare parts agent until PLM delivers as-built lists through an API. A monthly KPI review decides where the next agent goes.
+The troubleshooting agent waits until manuals carry the asset's product key, the spare parts agent until PLM delivers as-built lists through an API. A monthly KPI review decides where the next agent is deployed.
 
 ## Pick the first agent with a measurable target
 
 | Decision | What it covers |
 |---|---|
 | First agent | With a measurable target such as the share of maintenance visits booked without a dispatcher. |
-| Add-on or Agentforce 1 Field Service | A licence question I handle in [make-or-buy and licence planning](../../../services/make-or-buy-licences/). |
+| Add-on or Agentforce 1 Field Service | A license question I handle in [make-or-buy and license planning](../../../services/make-or-buy-licences/). |
 | Wave order | With works council timing per country. |
 | KPI definitions and baseline | Before go-live. |
 | Owners | Plus the rule that AI-built configuration reaches production only through the pipeline, as in my [DevOps and release management](../../../services/devops-release-management/) work. |

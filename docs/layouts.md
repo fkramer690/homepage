@@ -180,10 +180,12 @@ examples to reuse in blog articles (backlog item 17).
   white with a cyan bar and a mono attribution line (`.role-quote`, `.compare-hit`).
   On phones the photo sits on top, the quote below. Needs a photo that is at least as
   wide as the photo half of the band.
-- **Principle card (variant A, not built):** a dashed cyan line runs from the "with"
-  column down into a dark full-width card: round photo (cyan ring), mono kicker
-  "Mein Grundsatz", the quote, mono attribution. More compact than the band; fits
-  when there is no good wide photo.
+- **Principle card (variant A, built for blog articles 2026-11-07):** a dashed cyan line
+  runs from the "with" column down into a dark full-width card: round photo (cyan
+  ring), mono kicker "Mein Grundsatz", the quote, mono attribution. More compact than
+  the band; fits the reading column. In articles without kicker and name line
+  (Fabian 2026-11-07: "Mein Grundsatz" did not fit, name and role not wanted). In articles it is the `vergleich` block with
+  `zitat:` (docs/content-blocks.md).
 
 Mockups of both: project files `homepage/rolle-zitat/`.
 
@@ -227,6 +229,11 @@ old card grids "sehr erschlagend"). Built in `src/components/MasterclassHub.astr
   topic text and the links in two columns; only the chosen topic is open.
 - Every section heading gets one or two sentences below it.
 - Fits: long, ordered content (courses, step plans) and many links grouped by topic.
+- Topic hub question list (variant B "kompakte Liste", 2026-11-07, backlog U2): a hub
+  that is also the topic hub for its product gets a section "Ihre Frage" right below the
+  figures (`.mc-qa`): one row per question with number, question, short answer and a link
+  to the one page that answers it in full (texts `questions` in the course texts,
+  resolved by `articleKey`; also emitted as FAQPage schema). First used for Field Service, then Manufacturing Cloud and B2B Commerce (2026-11-07).
 
 ## Photos of Fabian
 
@@ -436,6 +443,52 @@ photo and crop per project in `refPhotos`.
 - Also used for Juliane's references on her partner page (`JulianePage.astro`, `.jw-rf`): no photo,
   logo and period on top of the panel, then *Rolle / Umfang / Aufgaben* with the tasks as tick list
   (details in `julianeProjectDetails`).
+
+## Ring with details in the centre (service overview, "Vier Bausteine")
+
+Chosen 2026-11-11 after two rounds, inspired by a "Managed CRM" ring Fabian had seen
+elsewhere and rebuilt in the site style (variant 2 of round 2; Fabian: "2 finde ich
+gut", after the centre box was laid out cleanly). Built in
+`src/components/ApproachRing.astro`, texts in `src/data/approach-ring.ts`, geometry and
+markup in `src/lib/ring-cycle.mjs` (`ringHtml`), section frame `src/components/WheelSection.astro`,
+interaction `src/components/RingCycleScript.astro`, CSS `.ar-*` and `.wheel-*`.
+Also used (approved 2026-11-11 in the click path): the areas ring on the machinery and
+Field Service consultant pages (`wheel` prop of `FreelanceArchitectPage.astro`, texts in
+`src/data/page-wheels.ts`), the masterclass ring on `/masterclass/` (one segment per
+masterclass, built from `src/lib/courses.ts`) and the `ring` content block.
+
+- **At rest only the ring:** four segments in brand colours (cyan, cyan-dark, text-2,
+  anthracite), each with a white icon badge near the inner edge and its name in mono
+  capitals along the outer arc (lower half mirrored, so nothing stands on its head).
+  The white centre names the whole ("Salesforce für Hersteller").
+- **Details on hover:** while the pointer rests on a segment, the others fade and the
+  centre shows icon, name, cyan mono subtitle, a short line in the segment colour,
+  three or four short points and "Zur Leistung →", all centred in the circle. Click on
+  a segment opens its service page; keyboard: Tab focuses a segment, Enter opens it.
+- **Phones and narrow rings** (below 540px): tap shows the segment's card below the
+  ring. Without script all four cards stand below the ring.
+- Points stay short (they must fit the circle); labels are checked by
+  `scripts/check-graphics.mjs` (`ringProblems`).
+- Fits: three to five equal building blocks of one offer where each leads to its own
+  page, not a sequence (for an order use the cycle below).
+
+## Cycle with labelled stations and a detail panel
+
+Variant 3 of the same round; Fabian 2026-11-11: "3 kann so bleiben", keep it for other
+pages. Draft: `/mnt/project-files/grafiken/managed-crm/entwuerfe-runde-2.html` (project
+files), section 3. Built 2026-11-11 as the `kreislauf` content block (`cycleHtml` in
+`src/lib/ring-cycle.mjs`, CSS `.cy-*`), used on the DevOps and change management service
+pages and in the hypercare and agent testing articles.
+
+- A thin grey ring with four cyan arcs and arrowheads between four white station
+  circles (icon, small dark number badge), the name of each station next to it on the
+  outside; a cyan dot slowly runs around the ring (hidden with reduced motion). The
+  centre names the loop ("Jedes Release / ein Durchlauf").
+- To the right a dashed panel with a short hint; on hover over a station its card
+  (icon, name, mono subtitle, sentence, tick list, link) replaces the hint. On phones
+  the card stands below the cycle after a tap.
+- Fits: anything that repeats in a fixed order (release cycle, hypercare loop,
+  continuous improvement, the ADKAR stages), where the numbers carry the order.
 
 ## References from the graphics review (30.10.2026)
 

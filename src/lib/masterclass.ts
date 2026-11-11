@@ -87,7 +87,7 @@ const aiClusters: Cluster[] = [
   {
     id: 'costs',
     en: {
-      title: 'Costs and licences',
+      title: 'Costs and licenses',
       text: 'Flex Credits, editions, Data 360 and AI coding: what it costs and how to estimate it upfront.',
     },
     de: {
@@ -95,10 +95,8 @@ const aiClusters: Cluster[] = [
       text: 'Flex Credits, Editionen, Data 360 und KI-Coding: was es kostet und wie Sie es vorab rechnen.',
     },
     articles: [
-      'dealer-service-agent-costs',
       'flex-credits-agentforce-costs',
       'salesforce-editions-core-advanced-max',
-      'headless-platform-interactions-budget',
       'ai-coding-costs-salesforce-project',
       'data-360-costs-for-agents',
     ],
@@ -183,7 +181,7 @@ const devopsClusters: Cluster[] = [
     id: 'foundations',
     en: {
       title: 'Foundations and ownership',
-      text: 'Why the release process decides enterprise programmes and why the client should own it.',
+      text: 'Why the release process decides enterprise programs and why the client should own it.',
     },
     de: {
       title: 'Grundlagen und Eigentum',
@@ -239,13 +237,13 @@ const devopsClusters: Cluster[] = [
 const manufacturingClusters: Cluster[] = [
   {
     id: 'business-case',
-    en: { title: 'Business case and licences', text: 'What Manufacturing Cloud contains, what it costs and who needs which licence.' },
+    en: { title: 'Business case and licenses', text: 'What Manufacturing Cloud contains, what it costs and who needs which license.' },
     de: { title: 'Business Case und Lizenzen', text: 'Was Manufacturing Cloud enthält, was es kostet und welche Lizenz wer braucht.' },
     articles: ['manufacturing-cloud-worth-it', 'manufacturing-cloud-feature-map', 'manufacturing-cloud-add-ons-costs', 'salesforce-editions-core-advanced-max', 'salesforce-licence-types'],
   },
   {
     id: 'sales-planning',
-    en: { title: 'Agreements and planning', text: 'Plan against actuals per customer and product, forecasts, programmes and targets.' },
+    en: { title: 'Agreements and planning', text: 'Plan against actuals per customer and product, forecasts, programs and targets.' },
     de: { title: 'Rahmenverträge und Planung', text: 'Plan gegen Ist pro Kunde und Produkt, Prognosen, Programme und Ziele.' },
     articles: ['manufacturing-cloud-quote-to-agreement', 'manufacturing-cloud-sales-agreements-actuals', 'manufacturing-cloud-account-forecasting', 'manufacturing-cloud-program-based-business', 'manufacturing-cloud-account-manager-targets', 'sales-planning-agent-agreements'],
   },
@@ -278,7 +276,7 @@ const revenueClusters: Cluster[] = [
   },
   {
     id: 'catalog-pricing',
-    en: { title: 'Catalog, configurator and pricing', text: 'How variants, rules and prices are modelled in Revenue Cloud and who maintains them.' },
+    en: { title: 'Catalog, configurator and pricing', text: 'How variants, rules and prices are modeled in Revenue Cloud and who maintains them.' },
     de: { title: 'Katalog, Konfigurator und Preise', text: 'Wie Varianten, Regeln und Preise in Revenue Cloud abgebildet werden und wer sie pflegt.' },
     articles: ['revenue-cloud-product-catalog-variants', 'revenue-cloud-configurator-constraint-rules', 'revenue-cloud-pricing-procedures', 'customer-prices-sap-or-salesforce-pricing', 'manufacturing-cloud-quote-to-agreement'],
   },
@@ -311,7 +309,7 @@ const commerceClusters: Cluster[] = [
   },
   {
     id: 'catalog',
-    en: { title: 'Catalogue and search', text: 'Who sees which product and how dealers find the right part.' },
+    en: { title: 'Catalog and search', text: 'Who sees which product and how dealers find the right part.' },
     de: { title: 'Katalog und Suche', text: 'Wer welches Produkt sieht und wie Händler das richtige Teil finden.' },
     articles: ['commerce-buyer-groups-entitlements', 'commerce-product-data-pim', 'commerce-search-part-numbers', 'commerce-stores-countries-brands', 'commerce-spare-parts-per-machine', 'spare-parts-serial-number-ai'],
   },
@@ -323,14 +321,14 @@ const commerceClusters: Cluster[] = [
   },
   {
     id: 'erp',
-    en: { title: 'ERP integration', text: 'Which data comes live from SAP and who owns the order.' },
-    de: { title: 'ERP-Anbindung', text: 'Welche Daten live aus SAP kommen und wem der Auftrag gehört.' },
+    en: { title: 'ERP integration', text: 'Which data SAP supplies live and who owns the order.' },
+    de: { title: 'ERP-Anbindung', text: 'Welche Daten SAP live liefert und wem der Auftrag gehört.' },
     articles: ['commerce-sap-data-flows', 'commerce-stock-availability-erp', 'commerce-order-to-erp', 'commerce-extensions-custom-code', 'commerce-headless-b2b', 'agentforce-sap-order-status', 'legacy-erp-without-api-agents', 'salesforce-password-integrations-2027'],
   },
   {
     id: 'agents-rollout',
-    en: { title: 'Agents and rollout', text: 'What the buyer and merchandising agents do and how the store reaches dealers.' },
-    de: { title: 'Agenten und Einführung', text: 'Was Buyer und Merchandising Agent leisten und wie der Shop zu den Händlern kommt.' },
+    en: { title: 'Agents and rollout', text: 'What the buyer and merchandising agents do and how the store is rolled out to dealers.' },
+    de: { title: 'Agenten und Einführung', text: 'Was Buyer und Merchandising Agent leisten und wie der Shop bei den Händlern eingeführt wird.' },
     articles: ['commerce-buyer-agent-whatsapp', 'commerce-merchandising-agent', 'prompt-injection-dealer-portals', 'multilingual-dealer-agents', 'distributor-replenishment-agent', 'commerce-aura-to-lwr-migration', 'commerce-dealer-rollout', 'commerce-kpis-after-go-live'],
   },
 ];
@@ -338,7 +336,7 @@ const commerceClusters: Cluster[] = [
 const fieldServiceClusters: Cluster[] = [
   {
     id: 'decision',
-    en: { title: 'Decision and licences', text: 'When Field Service pays off, which role needs which licence and how a job is created.' },
+    en: { title: 'Decision and licenses', text: 'When Field Service pays off, which role needs which license and how a job is created.' },
     de: { title: 'Entscheidung und Lizenzen', text: 'Wann sich Field Service rechnet, welche Rolle welche Lizenz braucht und wie ein Auftrag entsteht.' },
     articles: ['field-service-worth-it', 'field-service-licences-by-role', 'agentforce-1-field-service-bundle', 'salesforce-licence-types', 'field-service-case-to-work-order'],
   },
@@ -363,7 +361,7 @@ const fieldServiceClusters: Cluster[] = [
   {
     id: 'ai-rollout',
     en: { title: 'AI agents and rollout', text: 'Which agents work today, how to roll out in waves and how to measure success.' },
-    de: { title: 'KI-Agenten und Einführung', text: 'Welche Agenten heute tragen, wie Sie in Wellen einführen und woran Sie den Erfolg messen.' },
+    de: { title: 'KI-Agenten und Einführung', text: 'Welche Agenten sich heute bewähren, wie Sie in Wellen einführen und woran Sie den Erfolg messen.' },
     articles: ['field-service-ai-agents-today', 'breakdown-hotline-voice-agent', 'field-service-ai-troubleshooting-manuals', 'spare-parts-serial-number-ai', 'field-service-headless-setup-ai', 'field-service-rollout', 'field-service-kpis-after-go-live'],
   },
 ];
@@ -371,14 +369,14 @@ const fieldServiceClusters: Cluster[] = [
 const changeClusters: Cluster[] = [
   {
     id: 'diagnosis',
-    en: { title: 'Why rollouts fail', text: 'What change management means in a Salesforce programme and how ADKAR shows where it is stuck.' },
-    de: { title: 'Warum Einführungen scheitern', text: 'Was Change Management im Salesforce-Programm heißt und wie ADKAR zeigt, wo es hängt.' },
+    en: { title: 'Why rollouts fail', text: 'What change management means in a Salesforce program and how ADKAR shows where it stalls.' },
+    de: { title: 'Warum Einführungen scheitern', text: 'Was Change Management im Salesforce-Programm heißt und wie ADKAR zeigt, wo es stockt.' },
     articles: ['change-management-hub', 'change-process-salesforce', 'salesforce-center-of-excellence'],
   },
   {
     id: 'people',
     en: { title: 'Sponsor, communication and key users', text: 'Who explains why, how business teams learn about releases and who answers the first questions.' },
-    de: { title: 'Sponsor, Kommunikation und Key User', text: 'Wer erklärt, warum, wie Fachbereiche von Releases erfahren und wer die ersten Fragen beantwortet.' },
+    de: { title: 'Sponsor, Kommunikation und Key User', text: 'Wer das Warum erklärt, wie Fachbereiche von Releases erfahren und wer die ersten Fragen beantwortet.' },
     articles: ['change-release-communication', 'change-key-users', 'change-training-plan', 'change-sales-adoption', 'salesforce-uat-business-testing', 'ai-coding-works-council-gdpr'],
   },
   {
@@ -389,8 +387,8 @@ const changeClusters: Cluster[] = [
   },
   {
     id: 'reinforcement',
-    en: { title: 'Measure and reinforce', text: 'Which figures show adoption and how standards stay in place with partners.' },
-    de: { title: 'Messen und verankern', text: 'Welche Zahlen Nutzung zeigen und wie Standards bei Partnern bleiben.' },
+    en: { title: 'Measure and reinforce', text: 'Which figures show adoption and how partners keep to the standards.' },
+    de: { title: 'Messen und verankern', text: 'Welche Zahlen Nutzung zeigen und wie Partner die Standards dauerhaft einhalten.' },
     articles: ['change-hypercare', 'change-adoption-metrics', 'field-service-kpis-after-go-live', 'change-reinforcement-standards', 'development-standards-definition-of-done'],
   },
   {

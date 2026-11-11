@@ -12,7 +12,7 @@ const readDiagram = (hash) => {
   return existsSync(file) ? readFileSync(file, 'utf8').replace(/<\?xml[^>]*>\s*/, '') : undefined;
 };
 
-export function contentBlocks({ site }) {
+export function contentBlocks({ site, base = '/' }) {
   return defineMdastPlugin({
     name: 'content-blocks',
     code(node, ctx) {
@@ -20,7 +20,7 @@ export function contentBlocks({ site }) {
       const lang = /\/content\/[^/]+\/de\//.test(ctx.fileURL?.pathname ?? '') ? 'de' : 'en';
       const html = renderBlock(
         { name: node.lang, arg: (node.meta ?? '').trim(), content: node.value },
-        { lang, readDiagram, isExternal: (href) => /^https?:/i.test(href) && isExternal(href, site) },
+        { lang, readDiagram, base: base.endsWith('/') ? base : `${base}/`, isExternal: (href) => /^https?:/i.test(href) && isExternal(href, site) },
       );
       ctx.replaceNode(node, { type: 'html', value: html });
     },

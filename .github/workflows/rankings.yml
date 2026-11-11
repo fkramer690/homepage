@@ -3,9 +3,10 @@ name: Fetch rankings
 # Weekly Google positions, search volumes and AI Overview citations from DataForSEO
 # for the keywords in seo/keywords.json, stored on the "stats" branch next to the
 # analytics, plus the rows the analytics dashboard reads (stats/seo-dashboard/).
+# Started every Monday at 5:47 Berlin time by the daily dashboard task (a Claude scheduled
+# task), because GitHub's own cron started this run up to eight hours late. No cron here, so
+# the paid DataForSEO queries do not run twice.
 on:
-  schedule:
-    - cron: '45 5 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -20,8 +21,8 @@ jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: 22
       - name: Query DataForSEO

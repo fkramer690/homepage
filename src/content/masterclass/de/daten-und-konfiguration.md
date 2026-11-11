@@ -8,16 +8,16 @@ translationKey: devops-07
 chapter: 7
 pubDate: 2026-10-28
 short: "Daten und Konfiguration"
-summary: "Welche Konfigurations- und Referenzdaten keine Metadaten sind, wie sie durch die Pipeline kommen und wie Sandboxes maskiert bleiben."
+summary: "Welche Konfigurations- und Referenzdaten keine Metadaten sind, wie sie durch die Pipeline gelangen und wie Sandboxes maskiert bleiben."
 takeaways:
-  - "Konfigurationsdaten gehören ins Repository und laufen nach dem Metadaten-Deployment durch dieselbe Pipeline, mit externen IDs als Schlüssel."
+  - "Konfigurationsdaten gehören ins Repository und durchlaufen nach dem Metadaten-Deployment dieselbe Pipeline, mit externen IDs als Schlüssel."
   - "SFDMU ist ein Open-Source-Plugin der Salesforce CLI. sfdx-hardis ruft es als Deployment Action auf, Gearset, Copado und Flosum haben eigene Datenmodule."
-  - "Stammdaten wie Produkte und Preise aus SAP kommen über die Schnittstelle oder als Seed-Datensatz, nie per Deployment aus einer Sandbox in die Produktion."
-  - "Nach jedem Refresh einer Partial- oder Full-Sandbox läuft die Maskierung, bevor Partner Zugang bekommen. Data Mask & Seed von Salesforce ist eine Option."
+  - "Stammdaten wie Produkte und Preise aus SAP liefert die Schnittstelle oder ein Seed-Datensatz, nie ein Deployment aus einer Sandbox in die Produktion."
+  - "Nach jedem Refresh einer Partial- oder Full-Sandbox läuft die Maskierung, bevor Partner Zugang erhalten. Data Mask & Seed von Salesforce ist eine Option."
 articles: [sandbox-data-ai-coding-agents, sfdx-hardis-introduction, sfdx-hardis-training, client-owned-devops-tools]
 faq:
-  - q: "Warum kommen Custom-Settings-Datensätze nicht mit dem Deployment mit?"
-    a: "Laut Trailhead lassen sich Datensätze von Custom Settings weder per Paket noch per Metadata API oder Change Set deployen. Die Definition kommt mit, die Werte nicht. Datensätze von Custom Metadata Types dagegen sind Metadaten und reisen mit."
+  - q: "Warum werden Custom-Settings-Datensätze nicht mit deployt?"
+    a: "Laut Trailhead lassen sich Datensätze von Custom Settings weder per Paket noch per Metadata API oder Change Set deployen. Die Definition wird übertragen, die Werte nicht. Datensätze von Custom Metadata Types dagegen sind Metadaten und werden mit deployt."
   - q: "Brauche ich für Konfigurationsdaten ein kommerzielles Werkzeug?"
     a: "Nein. SFDMU ist Open Source und läuft als Plugin der Salesforce CLI, sfdx-hardis bindet es als Deployment Action ein. Gearset, Copado und Flosum bieten dafür eine Oberfläche mit Abhängigkeitsanalyse, was Admins ohne Kommandozeile hilft."
   - q: "Kann ich ein Datendeployment zurückrollen?"
@@ -29,11 +29,11 @@ faq:
 draft: false
 ---
 
-Daten und Konfiguration, die keine Metadaten sind, fallen in vielen Salesforce-Pipelines durch: Planungsrichtlinien und Arbeitsregeln in Field Service, Betriebszeiten, Custom-Settings-Datensätze, Produkte und Preisbücher. Ein Metadaten-Deployment nimmt sie nicht mit, also stehen sie als manueller Schritt in einer Release-Tabelle. Meine Regel: Konfigurationsdaten liegen im Repository und laufen nach dem Metadaten-Deployment durch dieselbe Pipeline, mit SFDMU oder dem Datenmodul eines kommerziellen Werkzeugs. Stammdaten aus SAP kommen über die Schnittstelle, Testdaten als Seed-Datensatz. Kundendaten in Partial- und Full-Sandboxes werden nach jedem Refresh maskiert, zum Beispiel mit Data Mask & Seed von Salesforce.
+Daten und Konfiguration, die keine Metadaten sind, werden in vielen Salesforce-Pipelines übersehen: Planungsrichtlinien und Arbeitsregeln in Field Service, Betriebszeiten, Custom-Settings-Datensätze, Produkte und Preisbücher. Ein Metadaten-Deployment überträgt sie nicht, also stehen sie als manueller Schritt in einer Release-Tabelle. Meine Regel: Konfigurationsdaten liegen im Repository und durchlaufen nach dem Metadaten-Deployment dieselbe Pipeline, mit SFDMU oder dem Datenmodul eines kommerziellen Werkzeugs. Stammdaten aus SAP liefert die Schnittstelle, Testdaten ein Seed-Datensatz. Kundendaten in Partial- und Full-Sandboxes werden nach jedem Refresh maskiert, zum Beispiel mit Data Mask & Seed von Salesforce.
 
 ## Welche Daten gehören zur Konfiguration, und welche nicht?
 
-[Kapitel 6](../qualitaet-tests-reviews/) hat beschrieben, wie Metadaten geprüft in Produktion kommen. Eine Salesforce-Org lebt aber auch von Datensätzen, die Verhalten steuern. Ich teile sie in vier Gruppen, weil jede Gruppe einen anderen Weg braucht:
+[Kapitel 6](../qualitaet-tests-reviews/) hat beschrieben, wie Metadaten geprüft in die Produktion gelangen. Eine Salesforce-Org lebt aber auch von Datensätzen, die Verhalten steuern. Ich teile sie in vier Gruppen, weil jede Gruppe einen anderen Weg braucht:
 
 | Gruppe | Beispiele in der Fertigung | Quelle der Wahrheit | Weg in die Orgs |
 |---|---|---|---|
@@ -42,9 +42,9 @@ Daten und Konfiguration, die keine Metadaten sind, fallen in vielen Salesforce-P
 | Testdaten | 30 Händler, 200 Anlagen, Sonderfälle aus dem Service | Repository | Seed in Scratch Orgs und Developer-Sandboxes |
 | Kundendaten | Fälle, Arbeitsaufträge, Verträge, Garantieanträge | Produktion | Kopie in Partial und Full, danach maskiert |
 
-Die Field-Service-Beispiele sind keine Theorie. Im Trailhead-Modul zu [Planungsrichtlinien](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies) legen Sie Arbeitsregeln über eine eigene Registerkarte an und wählen dabei einen Datensatztyp; die Richtlinie bündelt Arbeitsregeln und Serviceziele für die Planungs-Engine. Betriebszeiten sind laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/api/sforce_api_objects_operatinghours.htm) das Objekt `OperatingHours`, das festlegt, wann ein Servicegebiet, eine Ressource oder ein Account für Arbeit verfügbar ist. Ändert jemand in der Integrationssandbox eine Arbeitsregel, damit Techniker nur Anlagen mit passender Qualifikation bekommen, ist das ein Datensatz. Kein Metadaten-Deployment trägt ihn weiter.
+Die Field-Service-Beispiele sind keine Theorie. Im Trailhead-Modul zu [Planungsrichtlinien](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies) legen Sie Arbeitsregeln über eine eigene Registerkarte an und wählen dabei einen Datensatztyp; die Richtlinie bündelt Arbeitsregeln und Serviceziele für die Planungs-Engine. Betriebszeiten sind laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/api/sforce_api_objects_operatinghours.htm) das Objekt `OperatingHours`, das festlegt, wann ein Servicegebiet, eine Ressource oder ein Account für Arbeit verfügbar ist. Ändert jemand in der Integrationssandbox eine Arbeitsregel, damit Techniker nur Aufträge an Anlagen erhalten, für die sie qualifiziert sind, ist das ein Datensatz. Kein Metadaten-Deployment überträgt ihn.
 
-Die wichtigste Grenze verläuft zwischen Konfigurations- und Stammdaten. Ein Preisbuch ist laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_pricebook2.htm) die Liste der Produkte, die eine Org verkauft. Kommt diese Liste bei Ihnen aus SAP, wäre ein Deployment aus der Sandbox in die Produktion ein zweiter, konkurrierender Weg. Ich lasse Stammdaten deshalb nie durch die Release-Pipeline in die Produktion laufen.
+Die wichtigste Grenze verläuft zwischen Konfigurations- und Stammdaten. Ein Preisbuch ist laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_pricebook2.htm) die Liste der Produkte, die eine Org verkauft. Stammt diese Liste bei Ihnen aus SAP, wäre ein Deployment aus der Sandbox in die Produktion ein zweiter, konkurrierender Weg. Stammdaten schicke ich deshalb nie über die Release-Pipeline in die Produktion.
 
 ## Custom Metadata Types, Custom Settings und die Grenze zum Deployment
 
@@ -52,7 +52,7 @@ Für neue Konfiguration gibt es eine einfache Entscheidung, die viel Datenarbeit
 
 Für einen Hersteller heißt das:
 
-- **Custom Metadata Types** für Konfiguration, die im Repository versioniert und mit dem Release ausgerollt wird: Zuordnung von Produktgruppen zu Service-Warteschlangen, Schwellenwerte für Garantieprüfungen, Endpunkt-Schalter für Schnittstellen. Sie laufen im normalen Pull Request mit Review. Bei Delta-Deployments mit Abhängigkeiten, laut [Dokumentation](https://sfdx-hardis.cloudity.com/salesforce-devops-config-delta-deployment/) noch in Beta, nimmt sfdx-hardis alle Datensätze eines Custom Metadata Types mit, sobald einer davon geändert wurde.
+- **Custom Metadata Types** für Konfiguration, die im Repository versioniert und mit dem Release ausgerollt wird: Zuordnung von Produktgruppen zu Service-Warteschlangen, Schwellenwerte für Garantieprüfungen, Endpunkt-Schalter für Schnittstellen. Sie durchlaufen den normalen Pull Request mit Review. Bei Delta-Deployments mit Abhängigkeiten, laut [Dokumentation](https://sfdx-hardis.cloudity.com/salesforce-devops-config-delta-deployment/) noch in Beta, deployt sfdx-hardis alle Datensätze eines Custom Metadata Types, sobald einer davon geändert wurde.
 - **Custom Settings** nur dort, wo es fachlich nötig ist, etwa für Werte pro Benutzer oder Profil. Ihre Datensätze brauchen dann einen Datenschritt in der Pipeline.
 - **Eigene Objekte und Standardobjekte als Konfiguration**, etwa die Field-Service-Objekte oder Preisregeln in einem Konfigurator. Hier haben Sie keine Wahl, sie sind Daten.
 
@@ -60,7 +60,7 @@ Für einen Hersteller heißt das:
 Bei bestehenden Orgs würde ich Custom Settings nicht pauschal umbauen. Ich würde aber in die Partnerregeln schreiben, dass neue Konfiguration als Custom Metadata Type entsteht, sofern es keinen fachlichen Grund dagegen gibt. Wer diese Regeln festlegt und durchsetzt, beschreibt [Kapitel 2](../release-prozess-eigentum-rollen/).
 ```
 
-## Konfigurationsdaten laufen durch dieselbe Pipeline
+## Konfigurationsdaten durchlaufen dieselbe Pipeline
 
 **Externe IDs statt Salesforce-IDs.** Eine Arbeitsregel hat in jeder Org eine andere Salesforce-ID. Ein Datenschritt muss den Datensatz an einem fachlichen Schlüssel erkennen, sonst legt er beim zweiten Lauf Dubletten an. Ich gebe jedem Konfigurationsobjekt ein Feld als externe ID, etwa einen sprechenden Code wie `WR_SKILL_HYDRAULIK`.
 
@@ -70,7 +70,7 @@ Bei bestehenden Orgs würde ich Custom Settings nicht pauschal umbauen. Ich wür
 
 ### SFDMU und sfdx-hardis
 
-[SFDMU](https://help.sfdmu.com/) ist ein Open-Source-Plugin der Salesforce CLI für Datenmigrationen, laut [npm-Eintrag](https://www.npmjs.com/package/sfdmu) unter BSD-3-Lizenz. Es kopiert Datensätze direkt von Org zu Org oder aus CSV-Dateien, beherrscht Insert, Upsert, Update und Delete, verarbeitet mehrere verknüpfte Objekte in einem Lauf und wird über eine einzige Datei `export.json` konfiguriert. Dazu kommen Feldzuordnungen, Anonymisierung und zusammengesetzte externe ID-Schlüssel. Die Verarbeitung läuft lokal oder auf dem Pipeline-Runner, ohne Cloud-Dienst dazwischen.
+[SFDMU](https://help.sfdmu.com/) ist ein Open-Source-Plugin der Salesforce CLI für Datenmigrationen, laut [npm-Eintrag](https://www.npmjs.com/package/sfdmu) unter BSD-3-Lizenz. Es kopiert Datensätze direkt von Org zu Org oder aus CSV-Dateien, beherrscht Insert, Upsert, Update und Delete, verarbeitet mehrere verknüpfte Objekte in einem Lauf und wird über eine einzige Datei `export.json` konfiguriert. Hinzu kommen Feldzuordnungen, Anonymisierung und zusammengesetzte externe ID-Schlüssel. Die Verarbeitung läuft lokal oder auf dem Pipeline-Runner, ohne Cloud-Dienst dazwischen.
 
 sfdx-hardis bindet SFDMU über [Deployment Actions](https://sfdx-hardis.cloudity.com/salesforce-devops-work-on-user-story-deployment-actions/) ein. Wie Deployment Actions in den Pull-Request-Fluss passen, steht in [Kapitel 5](../pipeline-aufbauen/). Im kostenlosen sfdx-hardis-Training gehören Deployment Actions für Referenzdaten zu Level 2; meine Eindrücke stehen in [was ich aus dem sfdx-hardis-Training mitgenommen habe](../../../blog/sfdx-hardis-kostenloses-devops-training/), eine Einführung in [sfdx-hardis: Open-Source-DevOps erklärt](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/).
 
@@ -93,7 +93,7 @@ Die kommerziellen Plattformen haben eigene Datenmodule mit Oberfläche. Laut Dok
 | [Copado Data Deploy](https://www.copado.com/platform/deliver/) | Datenvorlagen für Konfigurationsdatensätze mit komplexen Beziehungen, fertige Vorlagen aus der DevOps Exchange, Maskierung sensibler Werte | in Copado Essentials laut [Dokumentation](https://docs.essentials.copado.com/en/articles/6325474-how-to-deploy-relational-data-with-data-deploy-essentials) eine Option von Essentials Plus mit Lizenz pro Benutzer |
 | [Flosum Data Migrator](https://docs.flosum.com/data-migrator) | Vorlagen mit Objekten, Feldern und Filtern, Beziehungen bleiben erhalten, Maskierung, Trigger abschaltbar | Fehlerbericht pro Datensatz |
 
-Was diese Werkzeuge gut machen: Ein Admin sieht vor dem Lauf, welche verknüpften Datensätze mitgehen, und muss keine `export.json` schreiben. Für CPQ-Konfiguration mit vielen verschachtelten Objekten ist das ein echter Vorteil. Welches Werkzeug insgesamt zu Ihrem Programm passt, entscheidet [Kapitel 4](../devops-werkzeuge-vergleich/); für Daten gilt dieselbe Regel wie für Metadaten. Das Werkzeug läuft auf Ihren Namen, und die Datenvorlagen liegen bei Ihnen, nicht im Konto eines Partners. Warum, steht in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
+Was diese Werkzeuge gut machen: Ein Admin sieht vor dem Lauf, welche verknüpften Datensätze mitübertragen werden, und muss keine `export.json` schreiben. Für CPQ-Konfiguration mit vielen verschachtelten Objekten ist das ein echter Vorteil. Welches Werkzeug insgesamt zu Ihrem Programm passt, entscheidet [Kapitel 4](../devops-werkzeuge-vergleich/); für Daten gilt dieselbe Regel wie für Metadaten. Der Vertrag für das Werkzeug ist auf Ihren Namen ausgestellt, und die Datenvorlagen liegen bei Ihnen, nicht im Konto eines Partners. Warum, steht in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
 Ein Punkt gilt für alle Werkzeuge:
 
@@ -105,7 +105,7 @@ Gearset schreibt offen, dass ein abgebrochenes Datendeployment Daten nur teilwei
 
 Partial- und Full-Sandboxes enthalten nach jedem Refresh echte Kundendaten. Welche Umgebung welche Daten tragen darf, habe ich in [Kapitel 3](../umgebungen-und-branching/) festgelegt; welche Felder bei einem Hersteller heikel sind und was Coding-Agenten lesen dürfen, steht in [Sandbox-Kundendaten: was KI-Coding-Agenten lesen dürfen](../../../blog/sandbox-kundendaten-ki-coding-agenten/).
 
-Salesforce verkauft dafür [Data Mask & Seed](https://www.salesforce.com/de/platform/data-masking/). Laut Trailhead ist [Data Mask](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/get-to-know-salesforce-data-mask) ein Managed Package, das Sie in der Produktion installieren und das Daten in Full- und Partial-Sandboxes maskiert; die Produktion bleibt unverändert, und maskierte Daten lassen sich nicht zurückholen. Pro Feld wählen Sie laut [Konfigurationsmodul](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/install-and-configure-salesforce-data-mask) Zufallszeichen oder Zufallszahlen, einen Ersatz aus einer Bibliothek wie Namen oder Adressen, oder Löschen. Checkbox-, Lookup- und Picklist-Felder werden nicht unterstützt. Die Konfiguration kommt beim Refresh mit, den Lauf starten Sie in der Sandbox.
+Salesforce verkauft dafür [Data Mask & Seed](https://www.salesforce.com/de/platform/data-masking/). Laut Trailhead ist [Data Mask](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/get-to-know-salesforce-data-mask) ein Managed Package, das Sie in der Produktion installieren und das Daten in Full- und Partial-Sandboxes maskiert; die Produktion bleibt unverändert, und maskierte Daten lassen sich nicht zurückholen. Pro Feld wählen Sie laut [Konfigurationsmodul](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/install-and-configure-salesforce-data-mask) Zufallszeichen oder Zufallszahlen, einen Ersatz aus einer Bibliothek wie Namen oder Adressen, oder Löschen. Checkbox-, Lookup- und Picklist-Felder werden nicht unterstützt. Die Konfiguration wird beim Refresh übernommen, den Lauf starten Sie in der Sandbox.
 
 Der Seed-Teil füllt laut Produktseite Developer-, Developer-Pro-, Partial- und Full-Sandboxes mit Datensätzen, die Seed-Vorlagen filtern. Masken- und Seeding-Jobs lassen sich täglich, wöchentlich oder monatlich planen, und das Seeding umgeht Automatisierungen. Einen Preis nennt die Seite nicht. Gearset, Copado und Flosum maskieren beim Datentransport ebenfalls, und SFDMU kann anonymisieren. Der Unterschied: Data Mask bearbeitet eine vorhandene Sandbox-Kopie, die anderen maskieren Daten, die sie gerade bewegen.
 
@@ -117,7 +117,7 @@ Maskierung starten
 Neue Felder aufnehmen
   Felder, die seit dem letzten Lauf entstanden sind, in die Maskierung aufnehmen; diese Prüfung steht in der Release-Checkliste.
 E-Mail-Felder maskieren
-  E-Mail-Felder in Kontakten auf die Maskierungsliste setzen, damit kein Händler eine Testbenachrichtigung bekommt.
+  E-Mail-Felder in Kontakten auf die Maskierungsliste setzen, damit kein Händler eine Testbenachrichtigung erhält.
 Konfiguration einspielen
   Konfigurationsdaten aus dem Repository laden, falls die Sandbox einen neueren Stand braucht als die Produktion.
 Zugänge freigeben
@@ -130,17 +130,17 @@ Für Coding-Agenten gilt eine strengere Regel, die [Kapitel 8 der KI-Masterclass
 
 Nehmen wir einen Maschinenbauer, der Field Service für Wartung und Reparatur beim Kunden einführt. Zwei Partner arbeiten auf derselben Org, SAP liefert Produkte, Materialnummern und Preise. Alle Zahlen sind Annahmen.
 
-Ohne Datenschritt in der Pipeline sieht der Go-live so aus: Die Metadaten laufen sauber durch, dann pflegt ein Berater zwei Tage lang 6 Planungsrichtlinien, 25 Arbeitsregeln, 40 Betriebszeiten und 15 Servicegebiete von Hand in der Produktion nach, mit einer Tabelle aus der UAT-Sandbox als Vorlage. Drei Regeln stimmen danach nicht mit dem getesteten Stand überein, was erst auffällt, als Techniker Aufträge außerhalb ihres Gebiets bekommen.
+Ohne Datenschritt in der Pipeline sieht der Go-live so aus: Das Metadaten-Deployment läuft fehlerfrei durch, dann pflegt ein Berater zwei Tage lang 6 Planungsrichtlinien, 25 Arbeitsregeln, 40 Betriebszeiten und 15 Servicegebiete von Hand in der Produktion nach, mit einer Tabelle aus der UAT-Sandbox als Vorlage. Drei Regeln stimmen danach nicht mit dem getesteten Stand überein, was erst auffällt, als Technikern Aufträge außerhalb ihres Gebiets zugewiesen werden.
 
 Mit Datenschritt sieht derselbe Go-live anders aus:
 
 - Jedes Konfigurationsobjekt hat ein Feld als externe ID, die Datensätze liegen als SFDMU-Arbeitsbereich im Repository des Herstellers.
-- Änderungen an Arbeitsregeln laufen als Pull Request mit Review durch den Service-Prozessverantwortlichen.
+- Änderungen an Arbeitsregeln werden per Pull Request eingereicht und vom Service-Prozessverantwortlichen geprüft.
 - Nach dem Metadaten-Deployment lädt eine Deployment Action die Konfiguration in Integration, UAT, Staging und Produktion, jedes Mal mit demselben Stand.
-- Produkte und Preisbücher kommen in der Produktion aus SAP; Sandboxes bekommen einen Seed-Datensatz mit 300 Teilen und zwei Preisbüchern.
-- Die UAT-Sandbox als Partial Copy wird nach jedem Refresh maskiert, bevor der Partner Zugang bekommt.
+- Produkte und Preisbücher stammen in der Produktion aus SAP; Sandboxes erhalten einen Seed-Datensatz mit 300 Teilen und zwei Preisbüchern.
+- Die UAT-Sandbox als Partial Copy wird nach jedem Refresh maskiert, bevor der Partner Zugang erhält.
 
-Wäre das Programm auf Gearset, Copado oder Flosum, sähe die Struktur gleich aus, nur mit einer Datenvorlage statt `export.json`. Entscheidend ist, dass kein manueller Datenschritt mehr im Release-Plan steht.
+Setzt das Programm Gearset, Copado oder Flosum ein, sieht die Struktur gleich aus, nur mit einer Datenvorlage statt `export.json`. Entscheidend ist, dass kein manueller Datenschritt mehr im Release-Plan steht.
 
 ## Diese Regeln gehören in den Partnervertrag
 
@@ -149,7 +149,7 @@ In jeden Vertrag würde ich schreiben:
 1. Konfigurationsdaten werden nie direkt in einer Stufen-Org gepflegt, nur im Repository.
 2. Jedes Konfigurationsobjekt hat eine externe ID.
 3. Neue Konfiguration entsteht als Custom Metadata Type, wenn kein fachlicher Grund dagegen spricht.
-4. Stammdaten aus SAP laufen nie durch die Release-Pipeline in die Produktion.
-5. Kein Partner bekommt Zugang zu einer Sandbox, bevor die Maskierung nach dem Refresh gelaufen ist.
+4. Stammdaten aus SAP werden nie über die Release-Pipeline in die Produktion übertragen.
+5. Kein Partner erhält Zugang zu einer Sandbox, bevor die Maskierung nach dem Refresh gelaufen ist.
 
 Wann Sie Datenschritte im Release-Kalender einplanen und wie die drei Salesforce-Releases pro Jahr hineinspielen, behandelt [Kapitel 8](../release-planung-salesforce-releases/). Datenschritte und Sandbox-Stufen gehören zu meiner Arbeit in [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).

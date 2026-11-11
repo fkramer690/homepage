@@ -14,13 +14,13 @@ takeaways:
   - "Ein Preisaufruf im B2B-Store wertet nur die ersten 25 gültigen Preisbücher aus; alles darüber ignoriert der Store ohne Fehlermeldung."
   - "Advanced Pricing setzt zusätzlich Revenue Cloud Advanced voraus und lohnt sich, wenn der Vertrieb seine Angebote schon in Revenue Cloud rechnet."
   - "Händler zahlen per Bestellnummer, die in Salesforce keine Zahlung auslöst. Kreditlimit und Auftragssperre prüft der Shop vor der Bestellung live im ERP."
-  - "Das Volumen kommt über Nachbestellungen aus alter Bestellung, Vorlage oder CSV-Import. Ein Warenkorb fasst meist 500 Positionen, mit Large Cart 2.000."
+  - "Das Volumen entsteht durch Nachbestellungen aus alter Bestellung, Vorlage oder CSV-Import. Ein Warenkorb fasst meist 500 Positionen, mit Large Cart 2.000."
 articles: [commerce-customer-prices, commerce-advanced-pricing-revenue-cloud, commerce-request-for-quote, commerce-checkout-purchase-order, commerce-reorder-order-templates, partner-sales-assistant-dealer-quotes]
 faq:
   - q: "Kann Salesforce B2B Commerce Händlerpreise direkt aus SAP zeigen?"
-    a: "Ja, über den Extension Point Commerce_Domain_Pricing_Service. Er nutzt im Standard Preisbücher und lässt sich durch Apex-Logik ersetzen, die SAP live fragt. Dann muss SAP schnell antworten, und Sie brauchen eine Regel für den Fall, dass es nicht erreichbar ist."
+    a: "Ja, über den Extension Point Commerce_Domain_Pricing_Service. Er nutzt im Standard Preisbücher und lässt sich durch Apex-Logik ersetzen, die SAP live abfragt. Dann muss SAP schnell antworten, und Sie brauchen eine Regel für den Fall, dass es nicht erreichbar ist."
   - q: "Brauche ich Revenue Cloud für einen B2B-Shop?"
-    a: "Nicht für Listen- und Stufenpreise, die decken Preisbücher ab. Revenue Cloud Advanced kommt dazu, wenn Sie Pricing Procedures, Vertragspreise aus Salesforce, konfigurierbare Bundles oder Request for Quote wollen. Die Salesforce-Hilfe nennt Advanced Pricing als Voraussetzung für Request for Quote."
+    a: "Nicht für Listen- und Stufenpreise, die decken Preisbücher ab. Revenue Cloud Advanced wird nötig, wenn Sie Pricing Procedures, Vertragspreise aus Salesforce, konfigurierbare Bundles oder Request for Quote nutzen wollen. Die Salesforce-Hilfe nennt Advanced Pricing als Voraussetzung für Request for Quote."
   - q: "Braucht ein B2B-Shop ein Payment Gateway?"
     a: "Nicht, wenn alle Käufer auf Rechnung bestellen. Die Purchase-Order-Komponente kommt ohne Gateway aus. Ein Gateway brauchen Sie erst, wenn eine Gruppe von Käufern mit Karte zahlt, etwa über Dual Payment oder Salesforce Payments mit Stripe."
   - q: "Wie bestellen Händler am schnellsten nach?"
@@ -28,18 +28,18 @@ faq:
 draft: false
 ---
 
-Ein B2B-Shop auf Salesforce zeigt Kundenpreise im Standard aus Preisbüchern. Das reicht für Listenpreise und Händlerstufen. Entstehen Ihre Preise aus SAP-Konditionen oder Verträgen, brauchen Sie einen Live-Aufruf ans ERP über die Pricing Extension oder Advanced Pricing aus Revenue Cloud, das eine zweite Lizenz kostet. Große oder ungewöhnliche Mengen laufen über Request for Quote. Im Checkout zahlen Händler mit Bestellnummer, und der Shop fragt vorher das ERP nach Kreditlimit und Auftragssperre. Den größten Hebel hat das Nachbestellen. Die wichtigste Entscheidung des Kapitels ist trotzdem eine schriftliche: welches System Preis-Master ist.
+Ein B2B-Shop auf Salesforce zeigt Kundenpreise im Standard aus Preisbüchern. Das reicht für Listenpreise und Händlerstufen. Entstehen Ihre Preise aus SAP-Konditionen oder Verträgen, brauchen Sie einen Live-Aufruf ans ERP über die Pricing Extension oder Advanced Pricing aus Revenue Cloud, das eine zweite Lizenz kostet. Große oder ungewöhnliche Mengen fragen Käufer über Request for Quote an. Im Checkout zahlen Händler mit Bestellnummer, und der Shop prüft vorher im ERP Kreditlimit und Auftragssperre. Den größten Hebel hat das Nachbestellen. Die wichtigste Entscheidung des Kapitels ist trotzdem eine schriftliche: welches System Preis-Master ist.
 
 ## Woher kommen die Preise im B2B-Store?
 
-Salesforce B2B Commerce, das Salesforce laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping) inzwischen auch als "Agentforce Commerce for B2B" vermarktet, nutzt dieselben Preisbuch-Objekte wie Sales Cloud. Laut [Salesforce-Hilfe zu Preisen in B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) bekommt jeder neue Store automatisch ein Standard-Preisbuch und ein Streichpreis-Preisbuch, das einen durchgestrichenen Vergleichspreis zeigt. Weitere Preisbücher ordnen Sie dem Store oder Käufergruppen zu. Wie Käufergruppen und Sichtbarkeit zusammenhängen, steht in [Kapitel 2](../katalog-suche-sichtbarkeit/).
+Salesforce B2B Commerce, das Salesforce laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping) inzwischen auch als "Agentforce Commerce for B2B" vermarktet, nutzt dieselben Preisbuch-Objekte wie Sales Cloud. Laut [Salesforce-Hilfe zu Preisen in B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) erhält jeder neue Store automatisch ein Standard-Preisbuch und ein Streichpreis-Preisbuch, das einen durchgestrichenen Vergleichspreis zeigt. Weitere Preisbücher ordnen Sie dem Store oder Käufergruppen zu. Wie Käufergruppen und Sichtbarkeit zusammenhängen, steht in [Kapitel 2](../katalog-suche-sichtbarkeit/).
 
 Hat ein Käufer Zugriff auf mehrere Preisbücher, entscheidet die [Preisstrategie](https://help.salesforce.com/s/articleView?id=sf.comm_priority_pricing.htm&language=en_US&type=5):
 
-- **Best Price** zeigt den niedrigsten Preis aus allen Preisbüchern des Käufers.
+- **Best Price** nimmt von allen Preisbüchern, auf die der Käufer Zugriff hat, das günstigste.
 - **Priority Price** folgt der Reihenfolge, die Sie je Käufergruppe festlegen; die kleinere Zahl hat Vorrang.
 
-Ich würde mit Priority Price anfangen, wenn Händler in mehreren Käufergruppen stecken, etwa Land und Stufe. Best Price belohnt jede Überschneidung, die beim Datenladen versehentlich entsteht.
+Ich würde mit Priority Price anfangen, wenn Händler mehreren Käufergruppen angehören, etwa Land und Stufe. Best Price belohnt jede Überschneidung, die beim Datenladen versehentlich entsteht.
 
 Für Mengenstaffeln enthält das Preis-Datenmodell Price Adjustment Schedule und Price Adjustment Tier. Tiered Pricing steht zugleich auf der Liste der Revenue-Management-Funktionen. Welche Variante Ihre Staffeln abdeckt, prüfen Sie im Prototyp, bevor Sie Lizenzen kaufen.
 
@@ -53,14 +53,14 @@ Die [Limits für Preisbücher](https://developer.salesforce.com/docs/commerce/sa
 | Käufergruppen je Preisbuch | 100 (weich) |
 | Preisbücher je Käufergruppe | 50 in der Tabelle, 25 im Hinweis derselben Seite |
 
-Die 25 je Aufruf sind das Limit, das in Projekten wehtun kann: Preisbücher darüber fließen nicht in die Preisfindung ein, ohne Fehlermeldung. Die widersprüchliche Angabe je Käufergruppe sollten Sie sich von Salesforce schriftlich klären lassen, wenn Ihr Design daran hängt. Details und Muster stehen in [Kundenpreise in B2B Commerce](../../../blog/kundenpreise-b2b-commerce-preisbuecher-erp/).
+Die 25 je Aufruf sind das Limit, das in Projekten zum Problem werden kann: Preisbücher darüber fließen nicht in die Preisfindung ein, ohne Fehlermeldung. Die widersprüchliche Angabe je Käufergruppe sollten Sie sich von Salesforce schriftlich klären lassen, wenn Ihr Design davon abhängt. Details und Muster stehen in [Kundenpreise in B2B Commerce](../../../blog/kundenpreise-b2b-commerce-preisbuecher-erp/).
 
-## Preisbücher kopieren oder das ERP live fragen?
+## Preisbücher kopieren oder das ERP live abfragen?
 
 Ein Preisbucheintrag hält einen Preis für ein Produkt in einem Preisbuch. Die Konditionstechnik in SAP berechnet den Nettopreis dagegen zum Zeitpunkt des Auftrags aus Kundenpreisen, Rabatten je Materialgruppe, Zuschlägen und Gültigkeiten. Für den Shop gibt es zwei Wege:
 
 - **Replizieren:** Ein Job berechnet die Nettopreise vorab und lädt sie in Preisbücher.
-- **Live fragen:** Laut [Liste der Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) nutzt `Commerce_Domain_Pricing_Service` im Standard Preisbücher, und `Commerce_Domain_Pricing_CartCalculator` rechnet Warenkorb und Checkout auf Basis dieses Dienstes. Ersetzen Sie den Dienst durch Apex, das SAP aufruft, sieht der Käufer den echten Nettopreis. Dafür muss SAP so schnell antworten, wie ein Käufer auf einer Produktliste wartet.
+- **Live abfragen:** Laut [Liste der Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) nutzt `Commerce_Domain_Pricing_Service` im Standard Preisbücher, und `Commerce_Domain_Pricing_CartCalculator` rechnet Warenkorb und Checkout auf Basis dieses Dienstes. Ersetzen Sie den Dienst durch Apex, das SAP aufruft, sieht der Käufer den echten Nettopreis. Dafür muss SAP so schnell antworten, wie ein Käufer auf einer Produktliste wartet.
 
 ```pro-contra
 pro: Replizieren
@@ -71,9 +71,9 @@ contra: Der Preis dafür
 - Die Preislogik existiert zweimal
 ```
 
-Bei vier Händlerstufen und stabiler Preisliste reichen vier Preisbücher und eine nächtliche Ladung. Bei Preisen, die je Kunde verhandelt sind, würde ich SAP live fragen oder aufteilen: Preisbücher für die breite Masse, Live-Aufruf für die Schlüsselkunden. Ein Detail aus der Extension-Liste: Nutzt der Store Faster Add-to-Cart, braucht jedes Produkt trotzdem einen Eintrag in einem Store-Preisbuch.
+Bei vier Händlerstufen und stabiler Preisliste reichen vier Preisbücher und eine nächtliche Ladung. Bei Preisen, die je Kunde verhandelt sind, würde ich SAP live abfragen oder aufteilen: Preisbücher für die breite Masse, Live-Aufruf für die Schlüsselkunden. Ein Detail aus der Extension-Liste: Nutzt der Store Faster Add-to-Cart, braucht jedes Produkt trotzdem einen Eintrag in einem Store-Preisbuch.
 
-Egal welcher Weg, eine Frage muss vor dem Go-live beantwortet sein: Welcher Preis gilt, wenn der Shop einen anderen zeigt als den, den SAP beim Auftragseingang berechnet? Ohne Regel landet sie beim Innendienst, Auftrag für Auftrag. Dasselbe Risiko beschreibe ich für KI-Angebote in [KI-Angebote für Händler mit dem Partner Sales Assistant](../../../blog/ki-angebote-haendler-partner-sales-assistant/). Welche Schnittstellen daraus folgen, behandelt [Kapitel 4](../erp-integration-bestand-auftraege/).
+Egal welcher Weg, eine Frage muss vor dem Go-live beantwortet sein: Welcher Preis gilt, wenn der Shop einen anderen zeigt als den, den SAP beim Auftragseingang berechnet? Ohne Regel muss der Innendienst sie klären, Auftrag für Auftrag. Dasselbe Risiko beschreibe ich für KI-Angebote in [KI-Angebote für Händler mit dem Partner Sales Assistant](../../../blog/ki-angebote-haendler-partner-sales-assistant/). Welche Schnittstellen daraus folgen, behandelt [Kapitel 4](../erp-integration-bestand-auftraege/).
 
 ## Wann braucht der Shop Advanced Pricing aus Revenue Cloud?
 
@@ -87,7 +87,7 @@ Meine Regel: Advanced Pricing lohnt sich, wenn der Vertrieb seine Angebote schon
 
 ## Von der Anfrage über das Angebot zur Bestellung
 
-Händler fragen nach einem Preis für 200 Stück statt 5 oder für ein Projekt mit Liefertermin. Heute ist das eine E-Mail mit Excel-Liste. Mit Request for Quote senden angemeldete Käufer den Warenkorb als Angebotsanfrage, und der Innendienst bearbeitet das Angebot in Sales Cloud oder Agentforce Revenue Management. Salesforce nennt RFQ im [Beitrag vom Juni 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) "already generally available". Im selben Beitrag stehen Quote to Cart und Round-Trip Quoting: Ein freigegebenes Angebot kommt als Warenkorb zum Käufer zurück, der es im Shop bestellt.
+Händler fragen nach einem Preis für 200 Stück statt 5 oder für ein Projekt mit Liefertermin. Heute ist das eine E-Mail mit Excel-Liste. Mit Request for Quote senden angemeldete Käufer den Warenkorb als Angebotsanfrage, und der Innendienst bearbeitet das Angebot in Sales Cloud oder Agentforce Revenue Management. Salesforce nennt RFQ im [Beitrag vom Juni 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) "already generally available". Im selben Beitrag stehen Quote to Cart und Round-Trip Quoting: Ein freigegebenes Angebot geht als Warenkorb an den Käufer zurück, der es im Shop bestellt.
 
 ```vertiefung Für Entwickler
 titel: Welche Apex-Methoden gibt es für Angebote im Shop?
@@ -95,10 +95,10 @@ Für eigene Komponenten gibt es die Apex-Klasse [ConnectApi.CommerceQuotes](http
 ```
 
 ```hinweis offen
-Bei der Lizenz lesen sich die Quellen unterschiedlich. Die Hilfe nennt Advanced Pricing als Voraussetzung für RFQ, die Apex-Referenz unterstützt einfache Produkte bei createQuoteFromProduct auch mit einer reinen B2B-Commerce-Lizenz. Holen Sie die Antwort für Ihre Produkte schriftlich ein.
+Zur Lizenz machen die Quellen unterschiedliche Angaben. Die Hilfe nennt Advanced Pricing als Voraussetzung für RFQ, die Apex-Referenz unterstützt einfache Produkte bei createQuoteFromProduct auch mit einer reinen B2B-Commerce-Lizenz. Holen Sie die Antwort für Ihre Produkte schriftlich ein.
 ```
 
-Wichtiger als die Technik ist der Innendienst. Ein Käufer, der drei Tage auf ein Angebot aus dem Shop wartet, schickt die nächste Anfrage wieder per E-Mail. Antwortzeit, Zuständigkeit je Queue und Rabattgrenzen gehören vor dem Go-live auf Papier. Den ganzen Kreislauf beschreibe ich in [Request for Quote im B2B-Shop](../../../blog/request-for-quote-b2b-shop-angebot/).
+Wichtiger als die Technik ist der Innendienst. Ein Käufer, der drei Tage auf ein Angebot aus dem Shop wartet, schickt die nächste Anfrage wieder per E-Mail. Antwortzeit, Zuständigkeit je Queue und Rabattgrenzen sollten vor dem Go-live schriftlich festgelegt sein. Den ganzen Kreislauf beschreibe ich in [Request for Quote im B2B-Shop](../../../blog/request-for-quote-b2b-shop-angebot/).
 
 ## Checkout auf Rechnung: Bestellnummer statt Karte
 
@@ -111,13 +111,13 @@ Die Optionen für B2B-Stores:
 - **Salesforce Payments:** native Stripe-Integration, die in B2B-Stores auch eine Bestellnummer anbieten kann.
 - **Eigene Komponente** oder ein eigenes serverseitiges Gateway mit Apex-Adapter.
 
-Zahlungen lassen sich laut [Extension-Leitfaden](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html) nicht mit Extensions anpassen. Sonderregeln für Zahlungen sind also eigener Code, den Ihr Team über jedes Release trägt.
+Zahlungen lassen sich laut [Extension-Leitfaden](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html) nicht mit Extensions anpassen. Sonderregeln für Zahlungen sind also eigener Code, den Ihr Team bei jedem Release pflegen muss.
 
 Was der Standard nicht kann, ist die Prüfung, ob ein Händler überhaupt bestellen darf. Kreditlimit und Auftragssperre liegen im ERP. Der Ort dafür ist `Commerce_Domain_Checkout_PlaceOrder`: Er führt Warenkorbprüfungen aus, wenn der Käufer bestellt, und Sie überschreiben die Methode `validate` mit einem Live-Aufruf ans ERP. Entscheiden Sie dabei, was bei einer Zeitüberschreitung passiert und was der Käufer bei einer Sperre liest. Kreditlimits nachts nach Salesforce zu kopieren halte ich für falsch: Die Kopie stimmt genau dann nicht, wenn ein Händler heute Morgen drei große Bestellungen abgeschickt hat. Mehr dazu in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../../../blog/b2b-checkout-bestellnummer-rechnung/).
 
-## Nachbestellen: Wo kommt das Volumen her?
+## Nachbestellen: Woher kommt das Volumen?
 
-Die meisten Ersatzteile und Verbrauchsmaterialien hat ein Händler schon einmal bestellt. Muss er jedes Teil neu suchen, geht er zurück zum Telefon. Salesforce bietet dafür mehrere Wege:
+Die meisten Ersatzteile und Verbrauchsmaterialien hat ein Händler schon einmal bestellt. Muss er jedes Teil neu suchen, greift er wieder zum Telefon. Salesforce bietet dafür mehrere Wege:
 
 | Weg | Stand Oktober 2026 |
 |---|---|
@@ -127,11 +127,11 @@ Die meisten Ersatzteile und Verbrauchsmaterialien hat ein Händler schon einmal 
 | Mehrere Nutzer bearbeiten einen Warenkorb live | "AV Jan. 27" |
 | Reorder Portal für Vertriebsteams in Sales Cloud | verfügbar, Agentforce-Commerce-Lizenz nötig |
 
-Add Order to Cart arbeitet mit Order Summaries in Salesforce. Eine Telefonbestellung, die nur in SAP existiert, kann der Händler deshalb nicht aus der Shop-Historie nachbestellen, solange Sie solche Aufträge nicht nach Salesforce holen.
+Add Order to Cart arbeitet mit Order Summaries in Salesforce. Eine Telefonbestellung, die nur in SAP existiert, kann der Händler deshalb nicht aus der Shop-Historie nachbestellen, solange Sie solche Aufträge nicht nach Salesforce übertragen.
 
 Die [Warenkorblimits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-cart-limits.html): Die meisten Shops begrenzen einen Warenkorb auf 500 Positionen, mit Large-Cart-Unterstützung auf 2.000. Ein Nutzer hat bis zu 100 Warenkörbe, einen aktiven und 99 weitere. Prüfen Sie vor dem Versprechen "Laden Sie Ihre ganze Liste hoch", wie lang die längsten Bestellungen im ERP wirklich sind.
 
-Das [Reorder Portal](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal) ist die schlanke Variante: Vertriebsmitarbeiter laden Käufer ein, die dann ihre früheren Bestellungen wiederholen. Für die Anbindung an Sales Cloud braucht es eine Agentforce-Commerce-Lizenz und eine aktivierte Digital Experience. Es passt, wenn kein Katalogprojekt geplant ist. Welche Funktion zu welchem Bestellmuster passt, steht in [Nachbestellen im B2B-Shop](../../../blog/nachbestellen-b2b-shop-vorlagen/).
+Das [Reorder Portal](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal) ist die schlanke Variante: Vertriebsmitarbeiter laden Käufer ein, die dann ihre früheren Bestellungen wiederholen. Für die Anbindung an Sales Cloud sind eine Agentforce-Commerce-Lizenz und eine aktivierte Digital Experience nötig. Es passt, wenn kein Katalogprojekt geplant ist. Welche Funktion zu welchem Bestellmuster passt, steht in [Nachbestellen im B2B-Shop](../../../blog/nachbestellen-b2b-shop-vorlagen/).
 
 ## Rechenbeispiel: 600 Händler in 9 Ländern
 
@@ -141,21 +141,21 @@ So würde ich entscheiden:
 
 | Thema | Entscheidung |
 |---|---|
-| Preise: | 27 Preisbücher für 9 Länder und 3 Stufen, nachts aus SAP berechnet; jeder Händler sieht genau eines. Die 40 großen Händler bekommen ihren Preis über die Pricing Extension live aus SAP. Kein Advanced Pricing, weil die Preislogik in SAP bleibt. |
-| Angebote: | RFQ erst in einer zweiten Stufe, wenn die Lizenzfrage geklärt ist; bis dahin geht Projektgeschäft wie heute an den Innendienst. |
+| Preise: | 27 Preisbücher für 9 Länder und 3 Stufen, nachts aus SAP berechnet; jeder Händler sieht genau eines. Die 40 großen Händler erhalten ihren Preis über die Pricing Extension live aus SAP. Kein Advanced Pricing, weil die Preislogik in SAP bleibt. |
+| Angebote: | RFQ erst in einer zweiten Stufe, wenn die Lizenzfrage geklärt ist; bis dahin bearbeitet der Innendienst das Projektgeschäft wie heute. |
 | Checkout: | nur Purchase-Order-Komponente, Kreditprüfung in `validate` gegen SAP. Bei Zeitüberschreitung nimmt der Shop die Bestellung an, weil SAP den Kredit beim Anlegen des Kundenauftrags ohnehin prüft. |
 | Nachbestellen: | Add Order to Cart und Bestellvorlagen für alle, CSV-Import für die großen Händler. |
 
-Die Zahlen sind erfunden, um die Methode zu zeigen. Ändern Sie eine Annahme, etwa einen Vertrieb, der schon in Revenue Cloud kalkuliert, kippt Punkt 1 zugunsten von Advanced Pricing.
+Die Zahlen sind erfunden, um die Methode zu zeigen. Ändern Sie eine Annahme, etwa einen Vertrieb, der schon in Revenue Cloud kalkuliert, fällt die Preisentscheidung zugunsten von Advanced Pricing aus.
 
 ## Die Preis-Master-Entscheidung auf eine Seite schreiben
 
 Schreiben Sie eine Seite zur Preis-Master-Entscheidung, bevor jemand den Store gestaltet:
 
-1. Welches System berechnet den Preis je Käufergruppe: SAP, Preisbücher oder Revenue Cloud?
-2. Welcher Preis erscheint wo: Produktliste, Warenkorb, Auftragsbestätigung?
-3. Was zeigt der Shop, wenn der Live-Aufruf scheitert?
-4. Welcher Preis gilt, wenn Shop und ERP abweichen, und wer klärt das?
+1. Wer berechnet den Preis für jede Käufergruppe, SAP, die Preisbücher oder Revenue Cloud?
+2. Wo steht welcher Preis, in der Produktliste, im Warenkorb, in der Auftragsbestätigung?
+3. Was sieht der Händler, wenn SAP auf den Live-Aufruf nicht antwortet?
+4. Weichen Shop und ERP voneinander ab: Welcher Preis zählt, und wer klärt die Differenz?
 5. Welche Käufergruppen zahlen mit Bestellnummer, welche mit Karte, und wer prüft den Kredit?
 
 Diese Seite gehört neben Ihre [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/) und bestimmt die Schnittstellenliste für [Kapitel 4](../erp-integration-bestand-auftraege/). Den Entwurf der Preis- und Kreditaufrufe übernehme ich im Rahmen der [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/), die Lizenzfrage zu Revenue Cloud unter [Make-or-Buy und Lizenzen](../../../leistungen/make-or-buy-lizenzen/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).

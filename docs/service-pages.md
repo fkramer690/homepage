@@ -13,9 +13,13 @@ Service pages follow the content rules of the [blog guidelines](blog-guidelines.
 3. **Intro: the first paragraph of the body** (it answers "what is this service")
 4. Typical situations (`situations`)
 5. What you get (`deliverables`) and results (`results`), side by side
+5a. "Projekt im Fokus" / "Project in focus": the reference named in `reference` (sector, title, starting point, role, result, tags from `references.items` in `src/i18n`, the same anonymised projects as on the start page). Only where a confirmed reference fits; the body then does not repeat it (2026-11-09)
 6. **The rest of the body (Markdown)**
-7. How I work (`phases`, 3–4 steps) as a vertical timeline
-8. FAQ, collapsible (`faq`), author box, related blog articles (blog posts that share a tag with `blogTags`). With `section: change-management` the page shows the team cards (Fabian, Juliane Winterscheid, the joint plan) in a grey band below the reading grid and, instead of the related articles, the change management articles grouped by author (newest four per group, the rest linked in the filtered blog), the heading "Was wir machen" and the shared author box of Fabian and Juliane (`src/components/ChangeTeam.astro`, `ChangeArticles.astro`, texts in `src/data/change-management.ts`). On that page "ich" is Fabian and "wir" are Fabian and Juliane; the first paragraph says so
+6a. "Artikel zum Thema" / "Articles on this topic": the curated reading list from `readMore` (5 to 8 blog articles in reading order, numbered, with their category) and the masterclass from `masterclass` as a tinted row below it. It sits in the reading flow and in the contents column (backlog U3, 2026-11-07). Not on the change management page, which lists its articles by author
+7. How I work (`phases`, 3–4 steps) as a vertical timeline, with the typical duration (`duration`) above it
+7b. In the section "Passt das zu Ihrem Vorhaben?": "Typischer Einsatz" / "Typical engagement", the same on every page except change management (`servicePage.engagementRows` in `src/i18n`: day rate, scope, on site, language, no commissions; confirmed by Fabian 2026-11-09)
+7a. "Woran Sie Fortschritt sehen" / "How you see progress" (`progress`): 3 to 4 measures the client can follow during the engagement (2026-11-09)
+8. FAQ, collapsible (`faq`), author box. With `section: change-management` the page shows the team cards (Fabian, Juliane Winterscheid, the joint plan) in a grey band below the reading grid and, instead of the curated reading list, the change management articles grouped by author (newest four per group, the rest linked in the filtered blog), the heading "Was wir machen" and the shared author box of Fabian and Juliane (`src/components/ChangeTeam.astro`, `ChangeArticles.astro`, texts in `src/data/change-management.ts`). On that page "ich" is Fabian and "wir" are Fabian and Juliane; the first paragraph says so
 9. Contact section with "Book a call" and the contact form, subject set to the service. Heading, text and the lists "What to bring" / "What we clarify" come from the brief named in the required frontmatter field `contactBrief` (`src/lib/contact-briefs.ts`)
 
 Blog articles link back to the best matching service automatically (`getPostService` in `src/lib/services.ts`).
@@ -35,9 +39,16 @@ Blog articles link back to the best matching service automatically (`getPostServ
 | `deliverables` | 3–8 items: what I do, as full sentences with a verb ("Ich prüfe jede Partnerlieferung im Pull Request …"). Plain list, no check marks |
 | `results` | 3–6 items: what the client holds in hand afterwards, such as a document, a matrix, a pipeline, a plan or a handed-over process. No benefits or promises ("vergleichbare Partner", "planbare Lieferung") and nothing a deliverable already says. Plain list, no check marks |
 | `phases` | 3–4 items with `title` (max. 40), `icon` (file name in `src/icons/`, shown in the ring of the phase timeline) and `text` (max. 260) |
+| `duration` | 40–260 characters, the typical duration of the engagement per phase or stage, shown as "Typische Dauer" above the phase timeline. Only values Fabian confirmed (2026-11-07) |
+| `notFit` | 2–3 items, max. 160 characters: when the service does not fit. Shown with `alternatives` and the shared text "Nach dem ersten Gespräch" (`servicePage.afterCallText` in `src/i18n`) in the section "Passt das zu Ihrem Vorhaben?" after the phases (KS1, confirmed by Fabian 2026-11-09) |
+| `progress` | 3–4 items with `measure` (max. 60) and `how` (max. 180): what the client can watch during the engagement and how it shows. Measures only, never promised target values |
+| `reference` | optional key from `references.items` in `src/i18n` (`manufacturing-cloud`, `after-sales`, `cti`, `embedded-chat`, `governance`): the confirmed project shown as "Projekt im Fokus". New projects go into the start page references first |
+| `alternatives` | 80–420 characters: which alternatives (internal role, partner alone, freelancer, tool) fit better and when |
 | `faq` | 2–6 questions, answers up to 600 characters |
 | `note`, `notePartner` | optional, max. 240 characters: note shown at the very top, e.g. who the approach was developed with. `notePartner` is a name from `partnerPage.partners` in `src/i18n` and must appear in `note`; it is linked to the partner page and LinkedIn |
-| `blogTags` | 1–8 tags, matched case-insensitively against blog tags |
+| `blogTags` | 1–8 tags, matched case-insensitively against blog tags; they pick the service an article links back to |
+| `readMore` | 5–8 blog `translationKey`s in reading order: from the entry question to the details, the articles the service is really about. Required except on the change management page; the build fails on a key without a published article in the page's language. Same list in EN and DE |
+| `masterclass` | optional course id from `src/lib/courses.ts`: the masterclass that fits, shown below the reading list |
 | `section` | optional, only `change-management`: adds the team cards and the change management article lists (see "Fixed page structure") |
 
 ## Body

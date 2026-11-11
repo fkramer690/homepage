@@ -1,7 +1,8 @@
 ---
-title: "Asset Service Lifecycle Management: Lohnt das Add-on?"
+title: "Asset Service Lifecycle Management: Lohnt sich das Add-on?"
 description: "Was die Add-ons Asset Service Lifecycle Management (75 Dollar) und Connected Assets zu Field Service ergänzen, was der Kern kann und wann es sich rechnet."
 pubDate: 2026-10-28
+updatedDate: 2026-11-09
 lang: de
 slug: asset-service-lifecycle-management-zusatz
 translationKey: asset-service-lifecycle-management-addon
@@ -10,62 +11,62 @@ categories: [field-service, manufacturing-cloud]
 contactBrief: licences
 tags: [Field Service, Asset Management, Lizenzen, Garantie, Connected Assets]
 takeaways:
-  - "Connected Assets kostet 15.000 Dollar pro Org und Monat und rechnet sich nur bei einer großen vernetzten Flotte."
-  - "Assets, Wartungspläne, Serviceverträge und Entitlements gehören zum Kern. Das Add-on ergänzt Deckungsauswahl, Reparaturangebote, Rückrufe und Depotreparatur."
-  - "Die Preisliste führt Asset Coverage View und interaktive Hierarchie als zukaufbar, sogar bei Agentforce 1 Field Service."
-  - "Mehrere Funktionen des Add-ons, etwa Inventur und Nachschub, überschneiden sich mit dem ERP. Führt SAP den Bestand, bringen sie wenig."
+  - "Connected Assets kostet 15.000 Dollar pro Org und Monat. Es rechnet sich, wenn Echtzeitereignisse genug Stillstand verhindern, nicht durch die Flottengröße."
+  - "Assets und Wartungspläne gehören zum Field-Service-Kern, Verträge und Entitlements zur Service Cloud. Das Add-on bringt Deckungsansicht, Angebote, Rückrufe."
+  - "Seit November 2026 nennt die Preisseite ASLM und Connected Assets bei Field Service Max, die Tabelle führt sie aber weiterhin als zukaufbar."
+  - "Lagerfunktionen überschneiden sich mit dem ERP. Führt SAP Nachschub und Inventur, nutzen Sie ASLM nur für Serviceschritte wie Reservierung und Fahrzeuglager."
   - "Garantieansprüche, Rückrufe und Servicekampagnen gibt es auch in Manufacturing Cloud. Legen Sie fest, welches Produkt sie führt, bevor Sie beide kaufen."
 faq:
   - q: "Was ist Asset Service Lifecycle Management in Salesforce?"
     a: "Ein kostenpflichtiges Add-on für Field Service und mehrere Branchen-Clouds. Die Salesforce-Hilfe nennt unter anderem Asset Coverage View, interaktive Asset-Hierarchie, Work Order Estimation, Product Service Campaigns, Depotreparatur, Advanced Exchange, Lagerfunktionen und Stundenzettel."
   - q: "Was kostet Asset Service Lifecycle Management?"
-    a: "Laut Preisliste Field Service vom Oktober 2026 kostet es 75 Dollar pro Nutzer und Monat bei jährlicher Abrechnung; die deutsche Preisseite nennt die Add-ons nur in Dollar. Connected Assets kostet separat 15.000 Dollar pro Org und Monat."
-  - q: "Ist Asset Service Lifecycle Management in Agentforce 1 Field Service enthalten?"
-    a: "Laut Vergleichstabelle der Preisliste nicht. Dort steht für Asset Coverage View und Interactive Hierarchy bei Dispatcher, Technician, Field Service Plus und Agentforce 1 Field Service jeweils zukaufbar. Lassen Sie das im Angebot bestätigen."
-  - q: "Brauche ich Connected Assets für Wartung nach Betriebsstunden?"
-    a: "Nein. Wartungspläne mit nutzungsbasierten Regeln gehören zum Field-Service-Kern. Ein Betriebsstundenzähler, den ERP oder IoT-Plattform einmal am Tag ans Asset schreibt, reicht aus. Connected Assets ergänzt Konnektoren, Telemetrie in Echtzeit und den Asset Health Score."
+    a: "Die Add-on-Seite von Salesforce nennt 75 Dollar pro Nutzer und Monat bei jährlicher Abrechnung für Field-Service-Editionen. Connected Assets kostet separat 15.000 Dollar pro Org und Monat. Die Field-Service-Preisseite führt beide Preise seit ihrer Aktualisierung vom 5. November 2026 nicht mehr."
+  - q: "Ist Asset Service Lifecycle Management in Field Service Max enthalten?"
+    a: "Die Preisseite ist mit Stand 9. November 2026 widersprüchlich. Die Zusammenfassung von Field Service Max für 650 Dollar nennt Asset Service Lifecycle Management und Connected Assets, die Vergleichstabelle führt deren Funktionen aber weiterhin als zukaufbar. Lassen Sie den Leistungsanspruch und die enthaltene Kapazität im Bestellformular bestätigen."
+  - q: "Brauche ich Connected Assets für nutzungsbasierte Wartung?"
+    a: "Nein. Wartungspläne mit nutzungsbasierten Regeln gehören zum Field-Service-Kern. Ein Betriebsstundenzähler, den das ERP oder die IoT-Plattform einmal am Tag ans Asset schreibt, reicht aus, wenn ein Tag Verzögerung vertretbar ist. Connected Assets ergänzt Konnektoren, Telemetrie in Echtzeit und den Asset Health Score."
 draft: false
 ---
 
-Asset Service Lifecycle Management (ASLM) ist ein Add-on für Salesforce Field Service und kostet laut Preisliste vom Oktober 2026 75 Dollar pro Nutzer und Monat. Es ergänzt Abläufe rund um die installierte Basis: eine Deckungsansicht pro Asset, eine interaktive Asset-Hierarchie, Reparaturangebote, Rückrufkampagnen, Depotreparatur, Lagerfunktionen und Stundenzettel. Assets, Wartungspläne, Serviceverträge und Entitlements stecken schon in der Basislizenz. Connected Assets ist ein eigenes Add-on für 15.000 Dollar pro Org und Monat für Telemetrie. Ich würde ASLM kaufen, wenn Sie Reparaturen anbieten, Rückrufe fahren oder Teile im Depot reparieren. Für reine Wartungspläne reicht die Basislizenz.
+Asset Service Lifecycle Management (ASLM) ist ein Add-on für Salesforce Field Service und kostet laut Add-on-Seite von Salesforce im November 2026 75 Dollar pro Nutzer und Monat. Es ergänzt Abläufe rund um die installierte Basis: eine Deckungsansicht pro Asset, eine interaktive Asset-Hierarchie, Reparaturangebote, Rückrufkampagnen, Depotreparatur, Lagerfunktionen und Stundenzettel. Assets und Wartungspläne stecken schon im Field-Service-Kern, Serviceverträge und Entitlements gehören zur Service Cloud. Connected Assets ist ein eigenes Add-on für Telemetrie und kostet 15.000 Dollar pro Org und Monat. Ich würde ASLM kaufen, wenn Sie Reparaturangebote erstellen, Rückrufaktionen durchführen oder Teile im Depot reparieren. Für reine Wartungspläne reicht die Basislizenz.
 
 ## Was steckt in Asset Service Lifecycle Management?
 
-Salesforce verkauft Field Service heute als Field Service and Operations. Die [Preisliste](https://www.salesforce.com/de/products/field-service/pricing/) zeigt zwei Asset-Add-ons: Asset Service Lifecycle Management für 75 Dollar pro Nutzer und Monat und Connected Assets für 15.000 Dollar pro Org und Monat. Die Lizenzen nennt die deutsche Seite in Euro, die Add-ons nur in Dollar. Beide wurden [im Juni 2024](https://www.salesforce.com/news/stories/field-service-asset-management-news/) als separate Add-ons angekündigt. Die [Produktseite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) beschreibt ASLM in Marketingsprache, deshalb habe ich die Funktionsliste aus dem [ASLM-Bereich der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.aslm_asset_service_lifecycle_management.htm&type=5) genommen:
+Salesforce verkauft Field Service heute als Field Service and Operations. Bis zum 5. November 2026 zeigte die [Preisliste](https://www.salesforce.com/de/products/field-service/pricing/) zwei Asset-Add-ons; heute führt die [Add-on-Seite von Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) Asset Service Lifecycle Management weiterhin mit 75 Dollar pro Nutzer und Monat für Field-Service-Editionen und Connected Assets mit 15.000 Dollar pro Org und Monat. Beide wurden [im Juni 2024](https://www.salesforce.com/news/stories/field-service-asset-management-news/) als separate Add-ons angekündigt. Die [Produktseite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) beschreibt ASLM in Marketingsprache, deshalb habe ich die Funktionsliste aus dem [ASLM-Bereich der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.aslm_asset_service_lifecycle_management.htm&type=5) genommen:
 
 | Funktion | Was sie laut Hilfe tut | Wer sie beim Maschinenbauer nutzt |
 |---|---|---|
 | Asset Coverage View | Listet die Ansprüche eines Assets auf, darunter Wartungspläne, Garantien und Serviceverträge | Hotline, Innendienst |
 | Asset Interactive Hierarchy | Zeigt komplexe Assets und ihre Unter-Assets als navigierbaren Baum | Hotline, Techniker |
 | Work Order Estimation | Schätzt Kosten und Aufwand vor dem Einsatz und erzeugt Angebote | Innendienst, Vertrieb |
-| Product Service Campaign | Wartet, ruft zurück oder rüstet Produkte in großer Zahl nach | Serviceleitung, Qualität |
+| Product Service Campaign | Steuert Serviceaktionen, Rückrufe oder Nachrüstungen für eine große Zahl von Produkten | Serviceleitung, Qualität |
 | Depot Repair | Erzeugt Arbeitsaufträge aus Retourenpositionen für die Reparatur im Depot | Reparaturzentrum |
 | Advanced Exchange und Service Parts Return | Steuert Rücksendung und Ersatz defekter Teile | Ersatzteilteam |
 | Lagerfunktionen | Reservierung, Chargen, Suche und Umlagerung, Inventur, Nachschub | Lager, Techniker |
 | Timesheets and Labor Cost Optimization | Stundenzettel mit Arbeitszeitregeln | Techniker, Lohnbuchhaltung |
-| Agentforce for ASLM | Agentenvorlagen für Asset-Service, Lager und Zusatzverkauf | Mehrere Rollen |
+| Agentforce for ASLM | Agentenvorlagen für Asset-Service, Lager und Zusatzverkauf; sie brauchen eigene Agentforce-Lizenzen und Credits | Mehrere Rollen |
 
-Zwei Details zählen für die Planung. Work Order Estimation läuft laut [Einrichtungsanleitung](https://help.salesforce.com/s/articleView?id=sf.aslm_woe_setup_configure.htm&language=en_US&type=5) als Screen Flow auf Omnistudio-Dokumentenerzeugung und Salesforce Pricing. Das ist ein echtes Einrichtungsprojekt mit Preisprozeduren und Nachschlagetabellen. Und die Hilfe nennt die ASLM-Funktionen [verfügbar mit Field Service und mehreren Branchen-Clouds](https://help.salesforce.com/s/articleView?id=xcloud.aslm_editions.htm&language=en_US&type=5), darunter Manufacturing Cloud und Automotive Cloud, jeweils in Enterprise, Unlimited und Developer Edition.
+Zwei Details zählen für die Planung. Work Order Estimation läuft laut [Einrichtungsanleitung](https://help.salesforce.com/s/articleView?id=sf.aslm_woe_setup_configure.htm&language=en_US&type=5) als konfigurierbarer Flow. Field Service ist Pflicht; Omnistudio-Dokumentenerzeugung für das Angebot und Salesforce Pricing für Rabatte nach Deckung sind optional. Mit Pricing wird daraus ein echtes Einrichtungsprojekt mit Preisprozeduren und Nachschlagetabellen. Laut Hilfe sind die ASLM-Funktionen [mit Field Service und mehreren Branchen-Clouds verfügbar](https://help.salesforce.com/s/articleView?id=xcloud.aslm_editions.htm&language=en_US&type=5), darunter Manufacturing Cloud und Automotive Cloud, jeweils in Enterprise, Unlimited und Developer Edition.
 
 ## Die Field-Service-Basislizenz enthält mehr, als viele Angebote vermuten lassen
 
-Assets mit über- und untergeordneten Assets, Wartungspläne mit Wartungsregeln, Serviceverträge und Entitlements gehören zu jeder Field-Service-Org. Wie diese drei Vertragsobjekte zusammenspielen, beschreibe ich in [Wartungsverträge in Field Service abbilden](../salesforce-field-service-wartungsvertraege/). Product Service Campaigns als Objekte stehen ebenfalls in der [Field-Service-Einrichtung](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_setup_product_service_campaigns.htm&type=5), mit einem Hinweis für Orgs, die vor Spring '21 angelegt wurden. Und das [Datenmodell für Garantien](https://developer.salesforce.com/docs/platform/data-models/guide/field-service-warranty-management.html) für Field Service and Operations enthält Garantiebedingungen, Produktgarantien und Asset-Garantien.
+Assets mit über- und untergeordneten Assets und Wartungspläne mit Wartungsregeln gehören zu jeder Field-Service-Org; Serviceverträge und Entitlements stammen aus der Service-Cloud-Basis, die Field Service voraussetzt. Wie diese drei Vertragsobjekte zusammenspielen, beschreibe ich in [Wartungsverträge in Field Service abbilden](../salesforce-field-service-wartungsvertraege/). Product Service Campaigns gehören dagegen nicht zum Kern: Das Objekt steht im Datenmodell, aber laut Salesforce-Hilfe schalten Sie zum [Einrichten und Nutzen von Product Service Campaign](https://help.salesforce.com/s/articleView?id=sf.aslm_psc_enable_aslm.htm&language=en_US&type=5) Asset Service Lifecycle Management ein. Und das [Datenmodell für Garantien](https://developer.salesforce.com/docs/platform/data-models/guide/field-service-warranty-management.html) für Field Service and Operations enthält Garantiebedingungen, Produktgarantiebedingungen und Asset-Garantien.
 
-Das Add-on kauft also Arbeit, die auf dem Datenmodell aufsetzt:
+Mit dem Add-on kaufen Sie also Funktionen, die auf dem Datenmodell aufsetzen:
 
-- **Deckung an der Hotline.** Mit der [Asset Coverage View](https://help.salesforce.com/s/articleView?id=xcloud.fs_entitlements_use.htm&language=en_US&type=5) filtert die Hotline Ansprüche nach übergeordnetem, untergeordnetem oder Wurzel-Asset oder nach Account und verknüpft den passenden mit "Choose Coverage" mit Case oder Arbeitsauftrag. Ohne das Add-on baut jemand diese Maske selbst.
+- **Deckung an der Hotline.** Mit der [Asset Coverage View](https://help.salesforce.com/s/articleView?id=xcloud.fs_entitlements_use.htm&language=en_US&type=5) filtert die Hotline Ansprüche nach übergeordnetem, untergeordnetem oder Wurzel-Asset oder nach Account und verknüpft den passenden Anspruch über "Choose Coverage" mit einem Case oder Arbeitsauftrag. Ohne das Add-on baut jemand diese Maske selbst.
 - **Angebot vor dem Einsatz.** Eine Reparaturschätzung, die anhand von Entitlements und Garantien festlegt, was der Kunde zahlt.
-- **Kampagnen in großer Zahl.** Die Produktseite nennt Automatisierung und Durchführung von Servicekampagnen. Der Kern liefert die Objekte, ASLM das Werkzeug, um sie für Hunderte Assets zu füllen.
+- **Kampagnen in großer Zahl.** Die Produktseite nennt Automatisierung und Durchführung von Servicekampagnen, von den Kampagnenpositionen bis zu Arbeitsaufträgen für Hunderte Assets.
 
-Was mich in der [Vergleichstabelle der Preisliste](https://www.salesforce.com/service/field-service-management/pricing/) überrascht hat: Die Zeile "Asset Coverage View and Interactive Hierarchy" steht bei Dispatcher, Technician, Field Service Plus und sogar bei Agentforce 1 Field Service für 650 € auf "Available for Purchase". Auch die größte Edition enthält sie also nicht. Die Asset-Management-Seite schreibt dagegen, manche Editionen enthielten diese Funktionen bereits, ohne sie zu nennen.
+Die Editionen haben sich am 5. November 2026 geändert. Die [Preisliste](https://www.salesforce.com/service/field-service-management/pricing/) verkauft jetzt Field Service+ Core für 250 Dollar, Field Service+ Advanced für 450 Dollar und Field Service Max für 650 Dollar; Field Service Plus und Agentforce 1 Field Service sind daraus verschwunden. Die Zusammenfassung von Field Service Max nennt Asset Service Lifecycle Management und Connected Assets, die Vergleichstabelle führt die Zeile "Asset Coverage View and Interactive Hierarchy" und Connected Assets aber weiterhin als "Available for purchase". Die Asset-Management-Seite schreibt dagegen, manche Editionen enthielten diese Funktionen bereits, ohne sie zu nennen.
 
 ```hinweis offen
-Lassen Sie im Angebot klären, was für Ihre Edition gilt: zukaufbar laut Preisliste oder enthalten laut Asset-Management-Seite.
+Lassen Sie im Bestellformular klären, was für Ihre Edition gilt und mit welcher Kapazität: zukaufbar laut Vergleichstabelle oder enthalten laut Zusammenfassung von Field Service Max.
 ```
 
 ## Ein Hersteller mit SAP braucht nur einen Teil von ASLM
 
-Fünf der Funktionen betreffen den Bestand: Reservierung, Chargen, Suche und Umlagerung, Inventur und Nachschub. In den meisten Fertigungsunternehmen führt aus meiner Sicht das ERP Bestand und Materialstamm, Field Service hält eine Kopie für das Fahrzeuglager und die verbrauchten Teile. Diese Aufteilung erkläre ich in [Ersatzteile zwischen ERP und Salesforce](../salesforce-field-service-ersatzteile-erp/). Plant SAP den Nachschub und führt die Inventur, erzeugen dieselben Funktionen in Salesforce eine zweite Wahrheit.
+Fünf der Funktionen betreffen den Bestand: Reservierung, Chargen, Suche und Umlagerung, Inventur und Nachschub. In den meisten Fertigungsunternehmen führt aus meiner Sicht das ERP Bestand und Materialstamm, Field Service hält eine Kopie für das Fahrzeuglager und die verbrauchten Teile. Diese Aufteilung erkläre ich in [Ersatzteile zwischen ERP und Salesforce](../salesforce-field-service-ersatzteile-erp/). Plant SAP den Nachschub und führt die Inventur, entsteht mit denselben Funktionen in Salesforce die Gefahr einer zweiten Wahrheit. ASLM kann trotzdem bei Serviceschritten helfen, die die ERP-Schnittstelle schlecht abdeckt, etwa bei der Reservierung von Teilen für einen Arbeitsauftrag, beim Fahrzeuglager und bei Rücksendungen.
 
 Zum Maschinenbauer passen meist die Funktionen, die das ERP auf der Serviceseite schlecht abdeckt: die Deckungsansicht für die Hotline, die Hierarchie für Maschinen mit vielen Baugruppen, die Schätzung für Reparaturangebote und Kampagnen für Nachrüstungen. Depotreparatur lohnt sich für Unternehmen, die zurückgeschickte Baugruppen im eigenen Reparaturzentrum instand setzen.
 
@@ -77,14 +78,14 @@ Connected Assets ist das Telemetrie-Add-on. Die Asset-Management-Seite nennt vor
 15.000 $ | Connected Assets pro Org und Monat
 180.000 $ | pro Org und Jahr zum Listenpreis
 10.000 | verbundene digitale Assets laut Asset-Management-Seite
-quelle: Salesforce Preisliste Field Service, Stand Oktober 2026, und Asset-Management-Seite
+quelle: Salesforce Add-on-Seite Manufacturing Cloud, Stand November 2026, und Asset-Management-Seite
 ```
 
-Aus meiner Sicht rechnet sich der Listenpreis nur, wenn eine große vernetzte Flotte Signale liefert, die Servicearbeit auslösen sollen, ohne dass jemand auf ein Dashboard schaut. Für die meisten Maschinenbauer ist der erste Schritt kleiner. Ein Betriebsstundenzähler, den ERP oder IoT-Plattform einmal am Tag schreibt, reicht für Wartungspläne nach Nutzung im Field-Service-Kern. Verdichtete Zustandssignale über Data 360 kosten einen Bruchteil des Add-ons, wie die Rechnung in [Predictive Maintenance: welche Datenbasis Sie brauchen](../predictive-maintenance-salesforce-datenbasis/) zeigt.
+Aus meiner Sicht rechnet sich der Listenpreis nur, wenn Signale in Echtzeit Serviceeinsätze auslösen sollen, ohne dass jemand auf ein Dashboard schaut, und die dadurch vermiedenen Ausfallzeiten mindestens 180.000 Dollar im Jahr wert sind. Die Flottengröße allein entscheidet das nicht; zehn kritische Maschinen können mehr rechtfertigen als Tausende unkritische. Fragen Sie auch, wie viele Event-Orchestrierungen und wie viel Data-360-Verbrauch der Preis enthält. Für die meisten Maschinenbauer ist der erste Schritt kleiner. Ein Betriebsstundenzähler, den das ERP oder die IoT-Plattform einmal täglich an das Asset schreibt, reicht für nutzungsbasierte Wartungspläne im Field-Service-Kern. Einige verdichtete Zustandssignale über Data 360 können je nach Verbrauch und Integration deutlich weniger kosten als das Add-on, wie die Rechnung in [Predictive Maintenance: welche Datenbasis Sie brauchen](../predictive-maintenance-salesforce-datenbasis/) zeigt.
 
 ## Wer führt die Garantie: Field Service, ASLM oder Manufacturing Cloud?
 
-Diese Entscheidung würde ich vor jedem Kauf treffen. Die Asset-Management-Seite nennt "warranty definition and claims management" unter ASLM. Manufacturing Cloud hat einen eigenen Garantieprozess mit Garantiebedingungen, Händleransprüchen und Lieferantenregress, beschrieben in [Garantieansprüche von Händlern in Salesforce](../garantieansprueche-haendler-salesforce/), und Winter '27 bringt den [Prüfagenten für Garantieansprüche](../garantie-pruefagent-winter-27/). Product Service Campaigns tauchen in beiden Produkten auf.
+Diese Entscheidung würde ich vor jedem Kauf treffen. Die Asset-Management-Seite nennt "warranty definition and claims management" unter ASLM, der ASLM-Bereich der Hilfe behandelt aber Deckung an Case, Arbeitsauftrag und Schätzung, keinen vollständigen Anspruchsprozess. Manufacturing Cloud, inzwischen auch Agentforce Manufacturing genannt, hat einen eigenen Garantieprozess mit Garantiebedingungen, Händleransprüchen, Prüfung und Lieferantenregress, beschrieben in [Garantieansprüche von Händlern in Salesforce](../garantieansprueche-haendler-salesforce/), und Mit Winter '27 wurde der [Prüfagent für Garantieansprüche](../garantie-pruefagent-winter-27/) eingeführt. Product Service Campaigns tauchen in beiden Produkten auf. Fragen Sie, welche SKUs und Permission Set Licenses jeder Schritt braucht.
 
 Meine Faustregel:
 
@@ -94,13 +95,13 @@ Meine Faustregel:
 
 ## Rechenbeispiel: ein Komponentenhersteller mit 30 Nutzern
 
-Ein Hersteller von Hydraulikkomponenten arbeitet mit SAP als ERP und Field Service für 30 Nutzer, davon 8 in Hotline und Innendienst auf Field Service Plus, 4 Disponenten und 18 Techniker. Der Service verkauft Reparaturen zurückgeschickter Pumpen und fährt ein bis zwei Nachrüstkampagnen im Jahr. Alle Zahlen sind Annahmen.
+Ein Hersteller von Hydraulikkomponenten arbeitet mit SAP als ERP und Field Service für 30 Nutzer, davon 8 in Hotline und Innendienst auf Field Service+ Core, 4 Disponenten und 18 Techniker. Der Service verkauft Reparaturen zurückgeschickter Pumpen und fährt ein bis zwei Nachrüstkampagnen im Jahr. Alle Zahlen sind Annahmen.
 
-**Variante A, das Add-on für alle.** 30 × 75 Dollar × 12 = 27.000 Dollar im Jahr zum Listenpreis. Auf den Seiten, die ich öffnen konnte, sagt Salesforce nicht, ob jeder Field-Service-Nutzer das Add-on braucht, also ist das die Obergrenze. Die Einrichtung von Schätzung mit Preisprozeduren und Kampagnen dauert angenommen 20 Partnertage.
+**Variante A, das Add-on für alle.** 30 × 75 Dollar × 12 = 27.000 Dollar im Jahr zum Listenpreis. Auf den Seiten, die ich öffnen konnte, sagt Salesforce nicht, ob jeder Field-Service-Nutzer das Add-on braucht, also ist das die Obergrenze. Die Einrichtung der Schätzung mit Preisprozeduren und Kampagnen dauert angenommen 20 Partnertage.
 
-**Variante B, Kern plus Eigenbau.** Eine Lightning-Komponente, die Entitlements auf der Asset-Seite zeigt, ein Flow für Reparaturangebote mit Preisen aus dem ERP und Kampagnenpositionen per Tabellenimport. Angenommen 60 Partnertage Aufbau und 10 Tage Pflege pro Jahr, weil jedes Release und jede Vertragsänderung die Eigenentwicklung berührt.
+**Variante B, Kern plus Eigenbau.** Variante B umfasst eine Lightning-Komponente, die Entitlements auf der Asset-Seite zeigt, einen Flow für Reparaturangebote mit Preisen aus dem ERP und Kampagnenpositionen per Tabellenimport. Angenommen werden 60 Partnertage für den Aufbau und 10 Tage Pflege pro Jahr, weil jedes Release und jede Vertragsänderung die Eigenentwicklung betrifft.
 
-**Der Vergleich.** Für die Rechnung setze ich Dollar und Euro gleich, so wie die Preisliste die Lizenzen in beiden Währungen gleich bepreist (175 € oder 175 Dollar). Bei angenommen 1.200 Euro Tagessatz kostet Variante A über zwei Jahre 24.000 Euro Einrichtung plus rund 54.000 Euro Lizenzen, zusammen 78.000 Euro. Variante B kostet 72.000 Euro plus 24.000 Euro Pflege, zusammen 96.000 Euro, und jeder Fehler gehört dem Unternehmen. Genutzt werden drei Funktionen: Deckungsansicht, Schätzung für Depotreparaturen und Kampagnen. Bei drei genutzten Funktionen gewinnt das Add-on. Bräuchte das Unternehmen nur die Deckungsansicht, würde ich Salesforce vor jedem Eigenbau um ein Angebot nur für die Hotline-Nutzer bitten. Wie ich solche Varianten vergleiche, beschreibe ich unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+**Der Vergleich.** Bei einem angenommenen Tagessatz von 1.200 Dollar kostet Variante A über zwei Jahre 24.000 Dollar Einrichtung plus 54.000 Dollar Lizenzen, zusammen 78.000 Dollar. Variante B kostet 72.000 Dollar plus 24.000 Dollar Pflege, zusammen 96.000 Dollar, und für jeden Fehler ist das Unternehmen selbst verantwortlich. Unter diesen Annahmen ist Variante A über zwei Jahre 18.000 Dollar günstiger, bei drei genutzten Funktionen: Deckungsansicht, Schätzung für Depotreparaturen und Kampagnen. Weniger lizenzierte Nutzer, zusätzliche Abhängigkeiten wie Salesforce Pricing oder ein anderer Aufbauaufwand können das Ergebnis ändern. Bräuchte das Unternehmen nur die Deckungsansicht, würde ich Salesforce vor jedem Eigenbau um ein Angebot nur für die Hotline-Nutzer bitten. Wie ich solche Varianten vergleiche, beschreibe ich unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
 ## Asset-Prozesse auflisten und die Führung festlegen
 
@@ -108,5 +109,5 @@ Wie Assets, Wartung und Teile zusammenhängen, behandelt das [Kapitel Assets, Wa
 
 1. **Listen Sie Ihre Asset-Prozesse auf**: Deckungsprüfung an der Hotline, Reparaturangebote, Rückrufe und Nachrüstungen, Depotreparatur, Inventur im Fahrzeuglager.
 2. **Legen Sie für jeden Prozess fest, wer ihn führt**: Field-Service-Kern, ASLM, Manufacturing Cloud oder das ERP.
-3. **Stellen Sie Salesforce drei Fragen schriftlich**: welche Nutzer das Add-on brauchen, ob Ihre Edition Teile davon schon enthält und ob Ihre Manufacturing-Cloud-Lizenz dieselben Funktionen abdeckt.
+3. **Stellen Sie Salesforce drei Fragen schriftlich**: welche Nutzer das Add-on brauchen, ob Ihre Edition, etwa Field Service Max, es schon enthält und mit welcher Kapazität, und ob Ihre Manufacturing-Cloud-Lizenz dieselben Funktionen abdeckt.
 4. **Stellen Sie Connected Assets zurück**, bis tägliche Zähler und einige verdichtete Signale zeigen, dass Telemetrie in Echtzeit Serviceentscheidungen ändern würde.

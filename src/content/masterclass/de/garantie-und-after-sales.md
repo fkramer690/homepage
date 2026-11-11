@@ -12,16 +12,16 @@ summary: "Garantieansprüche, Rückrufaktionen und installierte Basis: wann Manu
 takeaways:
   - "Service Core kostet laut Preisliste 275 US-Dollar pro Nutzer und Monat, 80 mehr als Service Cloud Core. Das lohnt sich für Garantie- und Rückrufteams."
   - "Jede After-Sales-Funktion braucht ein Asset pro Maschine mit Seriennummer, Produkt, Eigentümer und Garantiebeginn."
-  - "Garantieansprüche laufen vom Händlerportal über eine regelbasierte Prüfung bis zur Gutschrift im ERP. Der Prüfagent aus Winter '27 prüft zusätzlich die Deckung."
+  - "Ein Garantieanspruch führt vom Händlerportal über eine Regelprüfung bis zur Gutschrift im ERP. Der Prüfagent aus Winter '27 prüft zusätzlich die Deckung."
   - "Servicekampagnen bündeln einen Rückruf mit einem Eintrag pro Maschine. Die richtigen Maschinen findet, wer Seriennummern und Fertigungslose in Salesforce hat."
   - "Manufacturing Cloud entscheidet, ob ein Schaden gedeckt ist und wer zahlt. Einsatz vor Ort, Wartungspläne und Technikerlager gehören zu Field Service."
 articles: [manufacturing-cloud-service-vs-service-cloud, manufacturing-cloud-installed-base-assets, manufacturing-cloud-warranty-claims, warranty-adjudication-agent-winter-27, manufacturing-cloud-product-service-campaigns, spare-parts-serial-number-ai]
 faq:
   - q: "Was bringt Manufacturing Cloud for Service zusätzlich zur Service Cloud?"
-    a: "Die Preisseite nennt Warranty Lifecycle Management, die Asset Service Console, die Service Console for Manufacturing und Pre-Work Estimation, dazu das Datenmodell für die Fertigung. Trailhead nennt zusätzlich Product Service Campaigns. Cases, Entitlements und Knowledge kommen aus der Service Cloud."
+    a: "Die Preisseite nennt Warranty Lifecycle Management, die Asset Service Console, die Service Console for Manufacturing und Pre-Work Estimation, dazu das Datenmodell für die Fertigung. Trailhead nennt zusätzlich Product Service Campaigns. Cases, Entitlements und Knowledge stammen aus der Service Cloud."
   - q: "Braucht jeder Servicemitarbeiter eine Manufacturing-Cloud-Lizenz?"
     a: "Nein. Ich würde nach Rolle lizenzieren: Garantiesachbearbeiter und das Team für Rückrufe auf Manufacturing Cloud, den First Level, der nur Cases bearbeitet, auf Service Cloud. Lassen Sie sich den Mix und die Leserechte auf Garantiedaten schriftlich bestätigen."
-  - q: "Was braucht der Garantie-Prüfagent, bevor er läuft?"
+  - q: "Was braucht der Garantie-Prüfagent, bevor er in Betrieb geht?"
     a: "Assets mit Seriennummer und Garantiebeginn in Salesforce, Garantiebedingungen als gepflegte Regeln, eine vereinbarte Schwelle, ab der ein Mensch freigibt, und ein Händlerportal, dessen Freitext als nicht vertrauenswürdig gilt. Lizenz und Einrichtungsanleitung hat Salesforce in den Quellen, die ich öffnen konnte, nicht veröffentlicht."
   - q: "Gehören Product Service Campaigns zu Manufacturing Cloud?"
     a: "Trailhead führt sie bei den Servicefunktionen von Manufacturing Cloud auf, die Preisseite nennt sie nicht. Fragen Sie Salesforce schriftlich, welche Edition sie enthält, bevor Sie einen Rückrufprozess darauf planen."
@@ -30,7 +30,7 @@ faq:
 draft: false
 ---
 
-Manufacturing Cloud for Service lohnt sich, wenn Händler oder Kunden regelmäßig Garantieansprüche einreichen und Rückrufe oder Upgrades über Hunderte Maschinen laufen. Sie ergänzt die Service Cloud um Garantiebedingungen, Garantieanträge mit Prüfung, Servicekampagnen und eine Sicht auf jede Maschine, für 275 statt 195 US-Dollar pro Nutzer und Monat. Alles steht auf der installierten Basis: ein Asset pro Maschine mit Seriennummer, Eigentümer und Garantiebeginn. Fehlen diese Daten, kann weder ein Mensch noch der Prüfagent aus Winter '27 einen Anspruch prüfen. Manufacturing Cloud entscheidet, ob ein Schaden gedeckt ist und wer zahlt; der Einsatz beim Kunden gehört zu Field Service.
+Manufacturing Cloud for Service lohnt sich, wenn Händler oder Kunden regelmäßig Garantieansprüche einreichen und Rückrufe oder Upgrades Hunderte Maschinen betreffen. Sie ergänzt die Service Cloud um Garantiebedingungen, Garantieanträge mit Prüfung, Servicekampagnen und eine Sicht auf jede Maschine, für 275 statt 195 US-Dollar pro Nutzer und Monat. Alles baut auf der installierten Basis auf: ein Asset pro Maschine mit Seriennummer, Eigentümer und Garantiebeginn. Fehlen diese Daten, kann weder ein Mensch noch der Prüfagent aus Winter '27 einen Anspruch prüfen. Manufacturing Cloud entscheidet, ob ein Schaden gedeckt ist und wer zahlt; der Einsatz beim Kunden gehört zu Field Service.
 
 ## Manufacturing Cloud for Service oder Service Cloud?
 
@@ -38,7 +38,7 @@ Salesforce verkauft diesen Teil der Branchenlösung als Manufacturing Cloud for 
 
 Zwei Fußnoten auf der Preisseite von Manufacturing Cloud widersprechen sich: Die eine sagt, die Preise gelten für die Enterprise Edition und Unlimited koste 425 US-Dollar, die andere, sie gelten für die Unlimited Edition. Welcher Preis für Sie gilt, zeigt erst das Angebot.
 
-Für den Aufpreis bekommen Sie laut Preisseite Warranty Lifecycle Management, die Asset Service Console, die Service Console for Manufacturing und Pre-Work Estimation. Die [Trailhead-Übersicht](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) nennt zusätzlich Product Service Campaigns, die auf der Preisseite fehlen. Die Service Cloud allein deckt bereits Cases, Entitlements, Knowledge und Standard-Assets mit Seriennummer ab.
+Für den Aufpreis erhalten Sie laut Preisseite Warranty Lifecycle Management, die Asset Service Console, die Service Console for Manufacturing und Pre-Work Estimation. Die [Trailhead-Übersicht](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) nennt zusätzlich Product Service Campaigns, die auf der Preisseite fehlen. Die Service Cloud allein deckt bereits Cases, Entitlements, Knowledge und Standard-Assets mit Seriennummer ab.
 
 ```hinweis tipp
 Meine Regel: nach Rolle lizenzieren. Garantiesachbearbeiter und das Qualitätsteam, das Rückrufe steuert, arbeiten auf Manufacturing Cloud; ein First Level, der Cases anlegt und aus Knowledge antwortet, bleibt auf Service Cloud. Ein Punkt gehört in den Vertrag: welche Garantiedaten ein Service-Cloud-Nutzer lesen darf. Wie ich den Lizenzmix als Make-or-buy-Frage aufbereite, steht unter [Make-or-buy und Lizenzprognose](../../../leistungen/make-or-buy-lizenzen/), den Umfang der ganzen Branchenlösung behandelt [Kapitel 1](../einordnung-und-business-case/).
@@ -62,7 +62,7 @@ Das Datenmodell ist der leichte Teil. Schwer ist die Quelle. Das ERP kennt Serie
 
 Manufacturing Cloud bildet Garantien auf drei Ebenen ab. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/warranty-administration-and-claims-management-in-manufacturing-cloud/administer-warranty-terms) legt die Garantiebedingung (Warranty Term) Art, Dauer, Beginn und die gedeckten Anteile für Arbeit, Teile und Spesen fest; die Abdeckung pro Teil (Warranty Term Coverage) erweitert oder beschränkt sie für einzelne Teile; die Asset-Garantie ordnet die Bedingung einer Maschine zu, „when assets are purchased or installed“. Für Hersteller mit vielen Varianten spart die mittlere Ebene am meisten Arbeit: eine Grundbedingung pro Produktfamilie, Ausnahmen pro Teil.
 
-Der Anspruch selbst kommt meist von außen. Die [Serviceseite](https://salesforce.com/manufacturing/cloud/service) sagt, dass Partner und Kunden Ansprüche „via API or portals“ einreichen und Geschäftsregeln Freigaben automatisieren können. Der Ablauf in Kurzform:
+Den Anspruch selbst reichen meist Händler oder Kunden ein. Die [Serviceseite](https://salesforce.com/manufacturing/cloud/service) sagt, dass Partner und Kunden Ansprüche „via API or portals“ einreichen und Geschäftsregeln Freigaben automatisieren können. Der Ablauf in Kurzform:
 
 ```ablauf
 sf: Anspruch im Portal, Regelprüfung, Sachbearbeiter, Genehmigter Anspruch
@@ -76,7 +76,7 @@ Genehmigter Anspruch --Schnittstelle--> Gutschrift
 Genehmigter Anspruch ..Regressanspruch..> Lieferant
 ```
 
-Der Händler reicht den Anspruch im Partnerportal mit Maschine, Fehler, verursachendem Teil und Kosten pro Position ein. Die Regeln prüfen Garantiezeitraum, Nutzungsgrenze und gedecktes Teil. Bei einem Zukaufteil geht ein Regressanspruch (Supplier Recovery Claim) an den Lieferanten, und die Buchhaltung bucht die Gutschrift im ERP.
+Der Händler reicht den Anspruch im Partnerportal mit Maschine, Fehler, verursachendem Teil und Kosten pro Position ein. Die Regeln prüfen Garantiezeitraum, Nutzungsgrenze und gedecktes Teil. Bei einem Zukaufteil wird ein Regressanspruch (Supplier Recovery Claim) an den Lieferanten gestellt, und die Buchhaltung bucht die Gutschrift im ERP.
 
 Die Gutschrift fällt in Planungen leicht unter den Tisch. Ohne sie sieht der Händler im Portal einen genehmigten Anspruch und wartet trotzdem auf sein Geld. Die Objekte, den Lieferantenregress und die Portallizenzen für Händler behandelt [Garantieansprüche von Händlern in Salesforce](../../../blog/garantieansprueche-haendler-salesforce/). Welche Portallizenz Händler brauchen, war Thema in [Kapitel 3](../haendler-und-partnerkanal/).
 
@@ -84,7 +84,7 @@ Die Gutschrift fällt in Planungen leicht unter den Tisch. Ohne sie sieht der H�
 
 Winter '27, [seit dem 12. Oktober 2026 allgemein verfügbar](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), bringt einen Warranty Claims Adjudication Agent. Die [Produktseite von Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/) beschreibt ihn in einem Satz: Er „validates coverage and flags potential fraud“. Lizenz, Betrugssignale und eine Einrichtungsanleitung hat Salesforce in den Quellen, die ich öffnen konnte, nicht veröffentlicht.
 
-Ich würde die Deckung von Regeln entscheiden lassen und den Agenten dort einsetzen, wo Regeln schwach sind: die Fehlerbeschreibung des Händlers im Freitext lesen, mit Fehlercode und Teilen abgleichen, eine doppelt eingereichte Seriennummer erkennen und eine Rückfrage zu fehlenden Daten vorbereiten. Beträge über einer vereinbarten Grenze, jeder Betrugsverdacht, Kulanz und Ansprüche mit fehlenden Asset-Daten gehen an einen Menschen. Was Sie vorbereiten sollten, mit Testset und Flex Credits pro Anspruch, steht in [Garantie-Prüfagent aus Winter '27](../../../blog/garantie-pruefagent-winter-27/). Das größere Bild der Agenten für Hersteller zeigt das Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/) der KI-Masterclass.
+Ich würde die Deckung von Regeln entscheiden lassen und den Agenten dort einsetzen, wo Regeln schwach sind: die Fehlerbeschreibung des Händlers im Freitext lesen, mit Fehlercode und Teilen abgleichen, eine doppelt eingereichte Seriennummer erkennen und eine Rückfrage zu fehlenden Daten vorbereiten. Beträge über einer vereinbarten Grenze, jeder Betrugsverdacht, Kulanz und Ansprüche mit fehlenden Asset-Daten werden einem Menschen vorgelegt. Was Sie vorbereiten sollten, mit Testset und Flex Credits pro Anspruch, steht in [Garantie-Prüfagent aus Winter '27](../../../blog/garantie-pruefagent-winter-27/). Das größere Bild der Agenten für Hersteller zeigt das Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/) der KI-Masterclass.
 
 ## Rückrufe und Upgrades mit Servicekampagnen
 
@@ -110,7 +110,7 @@ Die Frage „Welches Teil passt in diese Maschine?“ berührt drei Systeme. Sal
 
 ## Wo endet Garantie und wo beginnt Field Service?
 
-An der Tür des Kunden. Manufacturing Cloud klärt, ob ein Schaden gedeckt ist, wer welchen Betrag bekommt und wer am Ende zahlt. Wer wann mit welchem Teil zum Kunden fährt, ist Field Service: Arbeitsaufträge, Terminplanung, Wartungspläne und Technikerlager.
+An der Tür des Kunden. Manufacturing Cloud klärt, ob ein Schaden gedeckt ist, wer welchen Betrag erhält und wer am Ende zahlt. Wer wann mit welchem Teil zum Kunden fährt, ist Field Service: Arbeitsaufträge, Terminplanung, Wartungspläne und Technikerlager.
 
 | Thema | Wohin es gehört |
 |---|---|
@@ -130,7 +130,7 @@ Asset-Hierarchie, Wartungspläne und Servicepartner sind Thema des Kapitels [Ass
 2. **Lizenzmix nach Rolle festlegen** und die Leserechte für Service-Cloud-Nutzer schriftlich bestätigen lassen.
 3. **Registrierung regeln.** Machen Sie die Übergabemeldung des Händlers zum Pflichtschritt im Portal.
 4. **Regelbasierte Prüfung** und die Gutschrift im ERP vor jedem Agenten in Betrieb nehmen.
-5. **Eine Kampagne testen**, und zwar an einem vergangenen Qualitätsfall, bevor ein echter Rückruf daran hängt.
+5. **Eine Kampagne testen**, und zwar an einem vergangenen Qualitätsfall, bevor ein echter Rückruf davon abhängt.
 6. **Den Agenten zuletzt ergänzen**, mit einer Freigabeschwelle, die Service und Finanzen vereinbart haben.
 
 Beginnen Sie mit Schritt 1, denn Garantie, Rückrufe und Agenten hängen alle an der installierten Basis. Die Datenflüsse zwischen SAP und Manufacturing Cloud, Gutschriften eingeschlossen, sind Thema von [Kapitel 5](../erp-ki-und-rollout/).

@@ -1,0 +1,20 @@
+# Keeps the pinned GitHub Actions (commit SHAs) and the npm packages up to date.
+# Dependabot opens one grouped pull request per ecosystem and month; the Build
+# workflow checks it like every other pull request.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ['*']
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]

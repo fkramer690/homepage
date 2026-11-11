@@ -11,7 +11,7 @@ short: "Rahmenverträge und Prognosen"
 summary: "Sales Agreements, Account Forecasting, Programmgeschäft und Vertriebsziele: was sie leisten und welche ERP-Daten sie brauchen."
 takeaways:
   - "Das Sales Agreement hält geplante Menge, Ist-Menge und Prognose pro Kunde, Produkt und Zeitraum in einem Datensatz."
-  - "Die Ist-Mengen kommen aus dem ERP. Wie sie berechnet werden, legt der Actuals Calculation Mode fest, den jedes Sales Agreement bei der Anlage übernimmt."
+  - "Die Ist-Mengen stammen aus dem ERP. Wie sie berechnet werden, legt der Actuals Calculation Mode fest, den jedes Sales Agreement bei der Anlage übernimmt."
   - "Salesforce empfiehlt Advanced Account Forecasting mit eigenen Forecast Sets pro Geschäftsbereich, freien Dimensionen und der Data Processing Engine."
   - "Ziele, Prognosen und Ist-Mengen ergeben nur zusammen Sinn, wenn alle drei dieselbe Kundenebene, dieselbe Produktebene und denselben Periodentyp nutzen."
   - "Produktions-, Material- und Kapazitätsplanung bleiben im ERP oder Planungssystem. Vor dem Start muss feststehen, welche Absatzzahl führend ist."
@@ -19,7 +19,7 @@ articles: [manufacturing-cloud-quote-to-agreement, manufacturing-cloud-sales-agr
 faq:
   - q: "Was ist ein Sales Agreement in der Manufacturing Cloud?"
     a: "Ein Rahmenvertrag mit einem Kunden über Mengen pro Produkt und Zeitraum. Es hängt an einem Account und einem Preisbuch, Salesforce verteilt die Gesamtmenge auf Monate oder Quartale und stellt Plan, Ist und Prognose pro Zeitraum nebeneinander."
-  - q: "Woher kommen die Ist-Mengen in einem Sales Agreement?"
+  - q: "Woher stammen die Ist-Mengen in einem Sales Agreement?"
     a: "Aus Aufträgen in Salesforce, direkt oder über Verträge verknüpft, aus einem Upload per API oder aus einer eigenen Definition der Data Processing Engine. Liegen die Aufträge im ERP, lädt eine Schnittstelle die Mengen pro Kunde, Produkt und Zeitraum."
   - q: "Was ist der Unterschied zwischen Account Forecasting und Advanced Account Forecasting?"
     a: "Account Forecasting nutzt eine Konfiguration für die ganze Org und plant nur auf Ebene Kunde, Produkt und Zeitraum. Advanced Account Forecasting erlaubt eigene Forecast Sets pro Geschäftsbereich, Region oder Land, freie Dimensionen wie Produktkategorie und angepasste Berechnungen. Salesforce empfiehlt die erweiterte Variante."
@@ -30,7 +30,7 @@ faq:
 draft: false
 ---
 
-Die Vertriebsplanung der Manufacturing Cloud hat vier Bausteine. Sales Agreements halten Rahmenverträge mit Mengen pro Kunde, Produkt und Zeitraum und vergleichen sie mit den Ist-Mengen. Account Forecasting, heute in der Variante Advanced Account Forecasting, rechnet daraus mit Aufträgen und Opportunities eine Absatzprognose. Das Programmgeschäft leitet für Zulieferer den Komponentenbedarf aus OEM-Programmen ab. Account Manager Targets verteilen Jahresziele von der Vertriebsleitung bis auf Kunde und Produkt. Alle vier tragen nur, wenn Auftragshistorie und Ist-Mengen aus dem ERP verlässlich ankommen und Ziel, Prognose und Ist dieselbe Struktur haben. Die Planung von Produktion und Material bleibt im ERP.
+Die Vertriebsplanung der Manufacturing Cloud hat vier Bausteine. Sales Agreements halten Rahmenverträge mit Mengen pro Kunde, Produkt und Zeitraum und vergleichen sie mit den Ist-Mengen. Account Forecasting, heute in der Variante Advanced Account Forecasting, rechnet daraus mit Aufträgen und Opportunities eine Absatzprognose. Das Programmgeschäft leitet für Zulieferer den Komponentenbedarf aus OEM-Programmen ab. Account Manager Targets verteilen Jahresziele von der Vertriebsleitung bis auf Kunde und Produkt. Alle vier funktionieren nur, wenn Auftragshistorie und Ist-Mengen aus dem ERP verlässlich geliefert werden und Ziel, Prognose und Ist dieselbe Struktur haben. Die Planung von Produktion und Material bleibt im ERP.
 
 ## Warum steht das Sales Agreement im Mittelpunkt?
 
@@ -104,9 +104,9 @@ Forecast Sets, Dimensionen und geklonte DPE-Definitionen sind Konfiguration. Sie
 
 ## Programmgeschäft für Zulieferer von OEM-Programmen
 
-Das Programmgeschäft (Program Based Business) ist für Zulieferer gedacht, deren Teile in Serienprodukte großer Kunden gehen. Startet ein OEM ein Programm, muss der Zulieferer lange vor dem ersten Auftrag schätzen, wie viele seiner Teile jede Variante braucht.
+Das Programmgeschäft (Program Based Business) ist für Zulieferer gedacht, deren Teile in Serienprodukten großer Kunden verbaut werden. Startet ein OEM ein Programm, muss der Zulieferer lange vor dem ersten Auftrag schätzen, wie viele seiner Teile jede Variante braucht.
 
-Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business) kommen Programm- und Variantenprognosen als CSV-Dateien, oft aus externen Marktdaten. Daraus berechnen Vorlagen der Data Processing Engine die Komponentenprognosen, auf Basis von Menge pro Einheit, Mindestmenge und Vorlaufzeit jeder Komponente. Eine freigegebene Prognose wird über die Transformation API zur Opportunity und nach dem Gewinn über die Sales Agreement Connect API zum Rahmenvertrag. Voraussetzung sind Advanced Account Forecasting, Data Pipelines und die Funktion selbst.
+Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business) werden Programm- und Variantenprognosen als CSV-Dateien geliefert, oft aus externen Marktdaten. Daraus berechnen Vorlagen der Data Processing Engine die Komponentenprognosen, auf Basis von Menge pro Einheit, Mindestmenge und Vorlaufzeit jeder Komponente. Eine freigegebene Prognose wird über die Transformation API zur Opportunity und nach dem Gewinn über die Sales Agreement Connect API zum Rahmenvertrag. Voraussetzung sind Advanced Account Forecasting, Data Pipelines und die Funktion selbst.
 
 Bei einer Handvoll Programmen oder wenn ein Planungssystem den Komponentenbedarf schon ableitet, entsteht eine zweite Prognose statt einer besseren. Wann es sich lohnt, steht in [Programmgeschäft: Prognosen für Zulieferer](../../../blog/programmgeschaeft-zulieferer-prognose/).
 
@@ -114,13 +114,13 @@ Bei einer Handvoll Programmen oder wenn ein Planungssystem den Komponentenbedarf
 
 Account Manager Targets ersetzen den Verteilungsteil der Excel-Zielplanung. Laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target.htm) legt die Vertriebsleitung ein Jahresziel auf Umsatz, Stückzahl oder eine eigene Kennzahl an und verteilt es über die Manager- oder Forecast-Hierarchie. Jede Ebene verteilt weiter auf Kunden, Produkte und Monate; ein Umsatzziel pro Produkt rechnet Salesforce über den Listenpreis aus dem Preisbuch, das bei der Einrichtung als Default gewählt wurde, in Stück um.
 
-Änderungen laufen nicht von selbst nach unten. Ein Manager gibt sie weiter, oder ein Flow ruft die Aktion [Update Account Manager Target Values](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_account_manager_target.htm) auf. Nach einer Umorganisation werden Zuordnungen ungültig und müssen neu verteilt werden. Provisionen rechnet die Funktion nicht. Die Details, auch zum Datensatzlimit, stehen in [Account Manager Targets: Vertriebsziele pro Kunde](../../../blog/account-manager-targets-vertriebsziele/).
+Änderungen werden nicht automatisch nach unten weitergegeben. Ein Manager gibt sie weiter, oder ein Flow ruft die Aktion [Update Account Manager Target Values](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_account_manager_target.htm) auf. Nach einer Umorganisation werden Zuordnungen ungültig und müssen neu verteilt werden. Provisionen rechnet die Funktion nicht. Die Details, auch zum Datensatzlimit, stehen in [Account Manager Targets: Vertriebsziele pro Kunde](../../../blog/account-manager-targets-vertriebsziele/).
 
 ## Welche Daten braucht eine Absatzplanung in Salesforce?
 
 Mehr aus dem ERP, als die meisten Workshops annehmen. Die Übersicht:
 
-| Baustein | Was aus Salesforce kommt | Was von außen kommen muss |
+| Baustein | Was Salesforce liefert | Was von außen geliefert werden muss |
 |---|---|---|
 | Sales Agreements | Plan pro Kunde, Produkt und Zeitraum | Ist-Mengen und Lagerbestand aus dem ERP, Materialnummern |
 | Account Forecasting | Opportunities, Anpassungen | Auftragshistorie aus dem ERP |
@@ -133,7 +133,7 @@ Die wichtigste Regel steht in keiner Tabelle: Ziel, Prognose und Ist brauchen di
 
 Bei der Frage, was produziert wird. Salesforce liefert die Erwartung des Vertriebs: welcher Kunde welche Menge in welchem Monat abnehmen wird. Ob diese Menge produziert werden kann, mit welchem Material und auf welcher Anlage, entscheidet die Planung im ERP oder in einem eigenen Planungssystem.
 
-Daraus folgen zwei Festlegungen. Es gibt eine führende Absatzzahl und einen Termin, an dem sie übergeben wird; zwei gepflegte Prognosen laufen auseinander. Und die Übergabe braucht die Granularität, mit der das ERP plant, also oft Materialnummer und Werk. Eine Prognose auf Produktkategorie hilft der Produktionsplanung dann nur begrenzt.
+Daraus folgen zwei Festlegungen. Es gibt eine führende Absatzzahl und einen Termin, an dem sie übergeben wird; zwei gepflegte Prognosen weichen mit der Zeit voneinander ab. Und die Übergabe braucht die Granularität, mit der das ERP plant, also oft Materialnummer und Werk. Eine Prognose auf Produktkategorie hilft der Produktionsplanung dann nur begrenzt.
 
 ## Was kann der Sales-Planning-Agent dazu beitragen?
 
@@ -164,4 +164,4 @@ Programmgeschäft braucht dieser Hersteller nicht, weil er nicht in OEM-Programm
 
 ## Den Ist-Datenfluss aus dem ERP vor dem ersten Sales Agreement klären
 
-Klären Sie vor dem ersten Sales Agreement, wie die Ist-Mengen aus dem ERP kommen und auf welcher Kunden-, Produkt- und Periodenebene Ziel, Prognose und Ist zusammenpassen. Rahmenverträge und Prognosen betreffen den Direktvertrieb an große Kunden. Wer über Händler verkauft, braucht zusätzlich Boni, Portale und Händlerbesuche; das behandelt [Kapitel 3: Händler und Partnerkanal](../haendler-und-partnerkanal/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
+Klären Sie vor dem ersten Sales Agreement, wie die Ist-Mengen aus dem ERP nach Salesforce gelangen und auf welcher Kunden-, Produkt- und Periodenebene Ziel, Prognose und Ist zusammenpassen. Rahmenverträge und Prognosen betreffen den Direktvertrieb an große Kunden. Wer über Händler verkauft, braucht zusätzlich Boni, Portale und Händlerbesuche; das behandelt [Kapitel 3: Händler und Partnerkanal](../haendler-und-partnerkanal/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).

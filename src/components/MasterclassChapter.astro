@@ -1,4 +1,5 @@
 ---
+import { withBrand } from '../lib/page-title.mjs';
 // One chapter of the masterclass, laid out like a blog article: takeaways, body,
 // optional FAQ, articles for the chapter, previous/next chapter, author box and
 // contact section. A Markdown file only provides body and frontmatter (docs/masterclass.md).
@@ -57,8 +58,7 @@ const hub = new URL(masterclassIndex(lang, course), Astro.site).href;
 const base = import.meta.env.BASE_URL;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
-const suffix = ' | FK Solution Design';
-const pageTitle = title.length + suffix.length <= 60 ? title + suffix : title;
+const pageTitle = withBrand(title);
 const ogImage = `${base}og/${lang}/masterclass/${chapter.data.slug}.png`;
 const nn = (n: number) => String(n).padStart(2, '0');
 const eyebrow = m.chapterEyebrow.replace('{nn}', nn(no)).replace('{n}', String(no)).replace('{total}', String(chapterTotal(course)));
@@ -120,10 +120,10 @@ const schema = {
   </Fragment>
   <article class="section post mc-chapter">
     <div class="container">
-      <a class="post-back" href={masterclassIndex(lang, course)}>← {m.back}</a>
+      <a class="post-back" data-nosnippet href={masterclassIndex(lang, course)}>← {m.back}</a>
       <p class="post-kicker"><span class="post-pill">{eyebrowPart}</span><span>{eyebrowCourse}</span></p>
       <h1>{title}</h1>
-      <PostMeta lang={lang} authors={['fabian']} updatedDate={updatedDate} minutes={chapterReadingMinutes(chapter)} />
+      <PostMeta lang={lang} authors={['fabian']} pubDate={pubDate} updatedDate={updatedDate} minutes={chapterReadingMinutes(chapter)} />
       <ReadingGrid t={t} headings={toc} cta={`${m.name}: ${title}`}>
         <aside class="post-takeaways" aria-label={t.blog.takeaways}>
           <p class="label mono">{t.blog.takeaways}</p>

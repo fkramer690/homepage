@@ -1,6 +1,6 @@
 ---
 title: "Field Service: KI-Agenten, Einführung und Kennzahlen"
-description: "Welche KI-Agenten in Salesforce Field Service heute tragen und was sie kosten, wie Sie in Wellen einführen und welche Kennzahlen nach dem Go-live zählen."
+description: "Welche KI-Agenten in Salesforce Field Service heute nützen und was sie kosten, wie Sie in Wellen einführen und welche Kennzahlen nach dem Go-live zählen."
 lang: de
 slug: field-service-ki-agenten-einfuehrung
 course: field-service
@@ -8,33 +8,33 @@ translationKey: fsl-05
 chapter: 5
 pubDate: 2026-10-28
 short: "KI-Agenten, Einführung, Betrieb"
-summary: "Welche Field-Service-Agenten heute tragen, wie Sie in Wellen einführen, was ein KI-Assistent einrichten darf und welche Kennzahlen danach zählen."
+summary: "Welche Field-Service-Agenten heute Nutzen bringen, wie Sie in Wellen einführen, was ein KI-Assistent einrichten darf und welche Kennzahlen danach zählen."
 takeaways:
   - "Zuerst lohnen sich die proaktive Wartungsbuchung und der vorformulierte Einsatzbericht, weil beide häufig vorkommen und bekannten Regeln folgen."
   - "Kundenseitige Agenten kosten 20 Flex Credits pro Aktion, Sprachaktionen 30. Funktionen für Mitarbeitende kosten 125 Dollar pro Nutzer und Monat als Add-on."
   - "Agenten für Fehlersuche und Ersatzteile brauchen Handbücher mit dem Produktschlüssel des Assets und eine As-built-Stückliste je Seriennummer."
   - "Ein KI-Assistent kann Field Service ohne Setup-Masken einrichten. Lassen Sie ihn in einer Sandbox arbeiten und bringen Sie das Ergebnis über die Pipeline live."
-  - "Führen Sie in Wellen nach Region ein, holen Sie den Betriebsrat vor der ersten Welle dazu und messen Sie gegen eine Ausgangsbasis aus dem Altsystem."
+  - "Führen Sie in Wellen nach Region ein, beziehen Sie den Betriebsrat vor der ersten Welle ein und messen Sie gegen eine Ausgangsbasis aus dem Altsystem."
 articles: [field-service-ai-agents-today, breakdown-hotline-voice-agent, field-service-ai-troubleshooting-manuals, spare-parts-serial-number-ai, field-service-headless-setup-ai, field-service-rollout, field-service-kpis-after-go-live]
 faq:
   - q: "Mit welchem KI-Agenten sollte ein Maschinenbauer in Field Service beginnen?"
-    a: "Mit der proaktiven Wartungsbuchung aus Wartungsplänen. Sie läuft oft, die Regeln sind bekannt, und eine Buchung kostet Cent in Flex Credits. Der vorformulierte Einsatzbericht folgt, sobald Teile, Arbeitszeit und Fehlercodes strukturierte Felder am Arbeitsauftrag sind."
+    a: "Mit der proaktiven Wartungsbuchung aus Wartungsplänen. Sie fällt häufig an, die Regeln sind bekannt, und eine Buchung kostet Cent in Flex Credits. Der vorformulierte Einsatzbericht folgt, sobald Teile, Arbeitszeit und Fehlercodes strukturierte Felder am Arbeitsauftrag sind."
   - q: "Darf ein Sprachagent bei Maschinenstillstand selbst einen Techniker buchen?"
-    a: "Salesforce nennt Autonomous Scheduling mit Agentforce Voice in den Winter-'27-Highlights. Ich würde ihn nur buchen lassen, wenn die Maschine noch läuft, das Entitlement den Einsatz deckt und die Fehlerklasse bekannt ist. Stillstände mit zugesagter Reaktionszeit gehen mit gefülltem Case an die Disposition."
+    a: "Salesforce nennt Autonomous Scheduling mit Agentforce Voice in den Winter-'27-Highlights. Ich würde ihn nur buchen lassen, wenn die Maschine noch läuft, das Entitlement den Einsatz deckt und die Fehlerklasse bekannt ist. Stillstände mit zugesagter Reaktionszeit werden mit ausgefülltem Case an die Disposition übergeben."
   - q: "Kann ein KI-Assistent Field Service direkt in Produktion einrichten?"
     a: "Davon rate ich ab. Das meiste, was er anlegt, sind Konfigurationsdatensätze, die ein Metadaten-Deployment nicht mitnimmt, und die Einrichtung lädt Beispieltermine. Lassen Sie ihn in einer Sandbox arbeiten, prüfen Sie den Plan mit Service und Disposition und deployen Sie über die Pipeline."
   - q: "Welche Kennzahlen zeigen nach dem Go-live, ob Field Service wirkt?"
     a: "Einsätze pro Techniker und Tag, Fahrzeitanteil, Erstlösungsquote, eingehaltene Reaktionszeiten, Ankunft im zugesagten Zeitfenster und der Anteil der Vorschläge, den die Disposition ändert. Messen Sie diese Werte vorher drei Monate im Altsystem, mit denselben Definitionen."
   - q: "Muss der Betriebsrat bei der Einführung von Field Service mitreden?"
-    a: "In Deutschland in der Regel ja. Nach § 87 BetrVG bestimmt er bei technischen Einrichtungen mit, die Verhalten oder Leistung überwachen können, und Standortübermittlung, Stundenzettel und Spracheingabe berühren das. Holen Sie ihn vor der ersten Welle dazu, nicht erst, wenn die App auf den Geräten ist."
+    a: "In Deutschland in der Regel ja. Nach § 87 BetrVG bestimmt er bei technischen Einrichtungen mit, die Verhalten oder Leistung überwachen können, und Standortübermittlung, Stundenzettel und Spracheingabe berühren das. Beziehen Sie ihn vor der ersten Welle ein, nicht erst, wenn die App auf den Geräten ist."
 draft: false
 ---
 
-KI-Agenten in Salesforce Field Service tragen heute bei einer Handvoll Aufgaben: Termine buchen, Wartung aus Wartungsplänen einplanen, Techniker vor dem Einsatz briefen und den Einsatzbericht vorformulieren. Für einen Maschinenbauer würde ich mit der Wartungsbuchung und dem Einsatzbericht beginnen, weil beide häufig sind und bekannten Regeln folgen. Störungsanrufe, Fehlersuche und Ersatzteile brauchen zuerst Triage-Regeln, gepflegte Handbücher und As-built-Daten. Ein KI-Assistent kann eine erste Konfiguration bauen, die trotzdem über Git läuft. Die Einführung erfolgt in Wellen nach Region oder Land, mit dem Betriebsrat vor der ersten Welle. Den Erfolg zeigen sechs Kennzahlen, gemessen gegen eine Ausgangsbasis aus dem Altsystem.
+KI-Agenten in Salesforce Field Service bringen heute bei einer Handvoll Aufgaben Nutzen: Termine buchen, Wartung aus Wartungsplänen einplanen, Techniker vor dem Einsatz briefen und den Einsatzbericht vorformulieren. Für einen Maschinenbauer würde ich mit der Wartungsbuchung und dem Einsatzbericht beginnen, weil beide häufig sind und bekannten Regeln folgen. Störungsanrufe, Fehlersuche und Ersatzteile brauchen zuerst Triage-Regeln, gepflegte Handbücher und As-built-Daten. Ein KI-Assistent kann eine erste Konfiguration bauen, die trotzdem über Git ausgeliefert wird. Die Einführung erfolgt in Wellen nach Region oder Land, mit dem Betriebsrat vor der ersten Welle. Den Erfolg zeigen sechs Kennzahlen, gemessen gegen eine Ausgangsbasis aus dem Altsystem.
 
-## Welche Field-Service-Agenten tragen heute, und was kosten sie?
+## Welche Field-Service-Agenten lohnen sich heute, und was kosten sie?
 
-Salesforce verkauft Field Service heute als [Field Service and Operations](https://www.salesforce.com/de/products/field-service/pricing/). Die Agenten bedienen drei Gruppen. Kunden buchen, verschieben und stornieren Termine über einen Agenten und bekommen proaktive Wartungsangebote auf Basis der Termine aus dem Wartungsplan. Disponenten bekommen einen Assistenten, der Lücken nach Absagen füllt. Techniker bekommen vor dem Einsatz einen Pre-Work Brief, danach eine vorformulierte Post-Work Summary und vor Ort eine Fehlersuche Schritt für Schritt. Salesforce hat diese Funktionen im [April 2025](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/) angekündigt. Den Status je Funktion finden Sie in [KI-Agenten im Außendienst: Was Field Service heute kann](../../../blog/ki-agenten-aussendienst-field-service/).
+Salesforce verkauft Field Service heute als [Field Service and Operations](https://www.salesforce.com/de/products/field-service/pricing/). Die Agenten bedienen drei Gruppen. Kunden buchen, verschieben und stornieren Termine über einen Agenten und erhalten proaktive Wartungsangebote auf Basis der Termine aus dem Wartungsplan. Disponenten erhalten einen Assistenten, der Lücken nach Absagen füllt. Techniker erhalten vor dem Einsatz einen Pre-Work Brief, danach eine vorformulierte Post-Work Summary und vor Ort eine Fehlersuche Schritt für Schritt. Salesforce hat diese Funktionen im [April 2025](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/) angekündigt. Den Status je Funktion finden Sie in [KI-Agenten im Außendienst: Was Field Service heute kann](../../../blog/ki-agenten-aussendienst-field-service/).
 
 Der Preis folgt der Linie zwischen Kunden und Mitarbeitenden:
 
@@ -46,7 +46,7 @@ Der Preis folgt der Linie zwischen Kunden und Mitarbeitenden:
 
 Die Credit-Sätze stammen aus der [Flex-Credits-Rate-Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) vom 31. August 2026. Bei [500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) kostet eine Aktion 0,10 €. Ein Buchungsagent kostet also Cent pro Buchung, das Add-on für 60 Techniker dagegen 90.000 Dollar im Jahr. Wann sich das Paket gegenüber einzelnen Add-ons rechnet, steht in [Kapitel 1](../field-service-lohnt-sich-lizenzen/), wie Sie Credits pro Prozess schätzen, im KI-Kapitel [KI-Kosten in Salesforce: Token, Flex Credits, Budget](../../ki-salesforce/kosten-und-token/).
 
-Meine Reihenfolge für einen Maschinenbauer: zuerst die Wartungsbuchung, weil Wartungspläne die Arbeitsaufträge ohnehin erzeugen und der Agent nur noch einen Termin abstimmt. Die Schwachstelle ist das Stillstandsfenster beim Kunden. Ist keines gepflegt, schlägt der Agent Termine vor und übergibt an die Disposition. Danach kommt der vorformulierte Einsatzbericht, und zwar erst, wenn Teile, Arbeitszeit und Fehlercodes strukturierte Felder bleiben. Garantie, Abrechnung und ERP können keinen Fließtext lesen. Wo Field Service unter den übrigen Agenten in einem Fertigungsunternehmen steht, zeigt das KI-Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/).
+Meine Reihenfolge für einen Maschinenbauer: zuerst die Wartungsbuchung, weil Wartungspläne die Arbeitsaufträge ohnehin erzeugen und der Agent nur noch einen Termin abstimmt. Die Schwachstelle ist das Stillstandsfenster beim Kunden. Ist keines gepflegt, schlägt der Agent Termine vor und übergibt an die Disposition. Danach folgt der vorformulierte Einsatzbericht, und zwar erst, wenn Teile, Arbeitszeit und Fehlercodes strukturierte Felder bleiben. Garantie, Abrechnung und ERP können keinen Fließtext lesen. Wo Field Service unter den übrigen Agenten in einem Fertigungsunternehmen steht, zeigt das KI-Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/).
 
 ## Wie sollte ein Sprachagent die Störungshotline bedienen?
 
@@ -57,7 +57,7 @@ Für eine Hotline auf Deutsch zählen zwei Ankündigungen:
 | Agentforce Voice auf Deutsch | Deutsch ist eine von sechs neuen Sprachen | GA laut [Dreamforce-Ankündigungen 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) |
 | Autonomous Scheduling mit Agentforce Voice | Sprachagenten prüfen die Verfügbarkeit und finden einen Techniker im richtigen Gebiet, während der Kunde am Telefon ist | in den [Winter-'27-Highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) ohne Status, Verfügbarkeit in Ihrer Org prüfen |
 
-Ein Störungsanruf ist schwerer als ein Buchungsanruf: Vier Fakten entscheiden über den nächsten Schritt, welche Maschine, ob sie steht, was der Vertrag zusagt und ob jemand gefährdet ist. Ich würde dem Sprachagenten zuerst Annahme und Triage übertragen. Er erkennt Anrufer und Maschine über Rufnummer, Kontakt und installierte Assets, stellt eine geschlossene Frage zum Maschinenzustand und prüft das Entitlement. Einen Techniker bucht er nur selbst, wenn die Maschine noch läuft, das Entitlement den Einsatz deckt und die Fehlerklasse bekannt ist. Eine stehende Presse mit vier Stunden Reaktionszeit geht an die Disposition, die einen Techniker von einem anderen Einsatz abziehen kann.
+Ein Störungsanruf ist schwerer als ein Buchungsanruf: Vier Fakten entscheiden über den nächsten Schritt, welche Maschine, ob sie steht, was der Vertrag zusagt und ob jemand gefährdet ist. Ich würde dem Sprachagenten zuerst Annahme und Triage übertragen. Er erkennt Anrufer und Maschine über Rufnummer, Kontakt und installierte Assets, stellt eine geschlossene Frage zum Maschinenzustand und prüft das Entitlement. Einen Techniker bucht er nur selbst, wenn die Maschine noch läuft, das Entitlement den Einsatz deckt und die Fehlerklasse bekannt ist. Eine stehende Presse mit vier Stunden Reaktionszeit wird an die Disposition übergeben, die einen Techniker von einem anderen Einsatz abziehen kann.
 
 ```hinweis tipp
 Diese Schranken gehören in deterministische Logik, nicht in den Prompt. Ich würde außerhalb der Geschäftszeiten nur mit Triage starten und die Buchung für die eindeutigen Fälle erst nach vier Wochen Vergleich mit dem Bereitschaftstechniker einschalten.
@@ -67,7 +67,7 @@ Die Regeltabelle, die Muster in Agent Script und die Kosten eines Anrufs in Spra
 
 ## Agenten für Fehlersuche und Ersatzteile brauchen zuerst Ihre Daten
 
-Beide Agenten hängen an Dokumenten und Stücklisten, die nur der Hersteller in Ordnung bringen kann.
+Beide Agenten hängen von Dokumenten und Stücklisten ab, die nur der Hersteller in Ordnung bringen kann.
 
 ### Handbücher mit den Schlüsseln des Assets
 
@@ -75,7 +75,7 @@ Laut der Ankündigung vom April 2025 liest der Agent für die Fehlersuche Produk
 
 ### Ersatzteile per Seriennummer
 
-Ein Agent nennt das richtige Ersatzteil zu einer Seriennummer nur, wenn eines Ihrer Systeme diese Frage schon nach Regeln beantwortet. Die Daten kommen aus drei Quellen: die As-built-Stückliste aus dem PLM, Material, Verfügbarkeit und Preis aus dem ERP, die installierte Basis mit Servicehistorie aus den Salesforce-Assets.
+Ein Agent nennt das richtige Ersatzteil zu einer Seriennummer nur, wenn eines Ihrer Systeme diese Frage schon nach Regeln beantwortet. Die Daten stammen aus drei Quellen: die As-built-Stückliste aus dem PLM, Material, Verfügbarkeit und Preis aus dem ERP, die installierte Basis mit Servicehistorie aus den Salesforce-Assets.
 
 ```ablauf
 sf: Salesforce-Assets, Ersatzteilagent
@@ -99,11 +99,11 @@ Zwei Regeln würde ich nicht aufweichen:
 | Regel | Warum |
 |---|---|
 | Prüfen Sie den Plan Abschnitt für Abschnitt mit Serviceleitung und Leitung der Disposition, bevor jemand ihn freigibt. | Der Assistent kennt Ihre Website, aber nicht Skills, Besuchszeiten und Lager. |
-| Lassen Sie ihn in einer Sandbox laufen. | Das meiste, was der Assistent anlegt, sind Konfigurationsdatensätze, die ein Metadaten-Deployment nicht mitnimmt, wie das DevOps-Kapitel [Daten und Konfiguration in der Pipeline](../../devops-release-management/daten-und-konfiguration/) zeigt, und die Einrichtung lädt Beispieltermine. Flows kommen in einen Branch, Datensätze in einen Daten-Workspace, beides geht über die Pipeline in Produktion. |
+| Lassen Sie ihn in einer Sandbox arbeiten. | Das meiste, was der Assistent anlegt, sind Konfigurationsdatensätze, die ein Metadaten-Deployment nicht mitnimmt, wie das DevOps-Kapitel [Daten und Konfiguration in der Pipeline](../../devops-release-management/daten-und-konfiguration/) zeigt, und die Einrichtung lädt Beispieltermine. Flows gehören in einen Branch, Datensätze in einen Daten-Workspace, und beides gelangt über die Pipeline in Produktion. |
 
 Die Prüftabelle je Planabschnitt steht in [Field Service per KI-Assistent einrichten: Was prüfen?](../../../blog/field-service-einrichtung-ki-assistent/).
 
-## Field Service kommt in Wellen nach Region oder Land
+## Field Service in Wellen nach Region oder Land einführen
 
 Ich empfehle, Field Service in Wellen einzuführen, Region für Region oder Land für Land. Jede Welle bringt ihre eigenen Stammdaten, Disponenten, Techniker und Partner mit, und die erste Welle testet alles, worauf die späteren bauen. Fehlen Skills oder Besuchszeiten, trifft das ein Gebiet und nicht den ganzen Außendienst.
 
@@ -125,7 +125,7 @@ Legen Sie vor jedem Dashboard schriftlich fest, wie jede Kennzahl definiert ist.
 
 ## Wer verantwortet Field Service nach dem Go-live?
 
-Scheduling Policies, Gebiete, Arbeitstypen und Betriebszeiten sind Datensätze, die jeden Monat jemand anpasst. Die App bekommt neben den drei Plattform-Releases eigene Versionen, wie in [Kapitel 3](../field-service-mobile-app-dokumente/) beschrieben. Und Agenten brauchen gepflegte Prompts, Aktionen und Testfälle. Ich würde die Verantwortlichen vor der ersten Welle benennen:
+Scheduling Policies, Gebiete, Arbeitstypen und Betriebszeiten sind Datensätze, die jeden Monat jemand anpasst. Die App erhält neben den drei Plattform-Releases eigene Versionen, wie in [Kapitel 3](../field-service-mobile-app-dokumente/) beschrieben. Und Agenten brauchen gepflegte Prompts, Aktionen und Testfälle. Ich würde die Verantwortlichen vor der ersten Welle benennen:
 
 | Rolle | Verantwortet |
 |---|---|
@@ -145,12 +145,12 @@ Vor der ersten Welle
 Region eins mit 30 Technikern | Monate 1 bis 3
   Keine Agenten. Die Disposition ändert im ersten Monat 40 Prozent der Vorschläge, meist wegen fehlender Zugangszeiten der Kunden. Das Team pflegt sie vor der zweiten Welle nach.
 Region zwei | Monate 4 bis 6
-  Region eins bekommt den Agenten für die Wartungsbuchung. Angenommen werden 250 geplante Einsätze im Monat mit je fünf Aktionen: 25.000 Credits, etwa 125 € im Monat zum Listenpreis. Stillstandsfenster gibt es für zwei Drittel der Kunden, der Rest bleibt bei der Disposition.
+  Region eins erhält den Agenten für die Wartungsbuchung. Angenommen werden 250 geplante Einsätze im Monat mit je fünf Aktionen: 25.000 Credits, etwa 125 € im Monat zum Listenpreis. Stillstandsfenster gibt es für zwei Drittel der Kunden, der Rest bleibt bei der Disposition.
 Region drei in einem anderen Land | Monate 7 bis 9
-  Eigene Prüfung der örtlichen Mitbestimmungsregeln, bevor Termine feststehen. Region eins bekommt nachts einen Sprachagenten auf der Hotline, nur für die Triage.
+  Eigene Prüfung der örtlichen Mitbestimmungsregeln, bevor Termine feststehen. Region eins erhält nachts einen Sprachagenten auf der Hotline, nur für die Triage.
 ```
 
-Die Fehlersuche wartet, bis die Handbücher den Produktschlüssel des Assets tragen, der Ersatzteilagent, bis das PLM As-built-Stücklisten über eine API liefert. Der monatliche Kennzahlentermin entscheidet, wo der nächste Agent hinkommt.
+Die Fehlersuche wartet, bis die Handbücher den Produktschlüssel des Assets tragen, der Ersatzteilagent, bis das PLM As-built-Stücklisten über eine API liefert. Der monatliche Kennzahlentermin entscheidet, wo der nächste Agent eingesetzt wird.
 
 ## Den ersten Agenten mit einem messbaren Ziel auswählen
 
@@ -160,6 +160,6 @@ Die Fehlersuche wartet, bis die Handbücher den Produktschlüssel des Assets tra
 | Add-on oder Agentforce 1 Field Service | Eine Lizenzfrage, die ich in [Make-or-Buy und Lizenzplanung](../../../leistungen/make-or-buy-lizenzen/) kläre. |
 | Reihenfolge der Wellen | Mit dem Zeitpunkt für den Betriebsrat je Land. |
 | Definitionen der Kennzahlen und Ausgangsbasis | Vor dem Go-live. |
-| Verantwortliche | Dazu die Regel, dass KI-gebaute Konfiguration nur über die Pipeline in Produktion kommt, wie in meiner Arbeit zu [DevOps und Release-Management](../../../leistungen/devops-und-release-management/). |
+| Verantwortliche | Dazu die Regel, dass KI-gebaute Konfiguration nur über die Pipeline in Produktion gelangt, wie in meiner Arbeit zu [DevOps und Release-Management](../../../leistungen/devops-und-release-management/). |
 
 Legen Sie diese Punkte schriftlich fest, bevor die erste Region plant. Mit diesem Kapitel endet die Masterclass; Assets und Teile stehen in [Kapitel 4](../field-service-assets-wartung-teile/), alle Kapitel auf der [Übersichtsseite](../).

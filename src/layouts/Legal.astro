@@ -23,7 +23,7 @@ const body = (await Astro.slots.render('default')).replace(/<h2>(.*?)<\/h2>/g, (
 });
 ---
 <Base lang="de" title={`${title} – FK Solution Design`} description={title} noindex>
-  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <a class="skip-link" href="#main" data-nosnippet>Zum Inhalt springen</a>
   <Header t={de} home={base} switchHref={homeHref('en')} />
   <main id="main" class="section legal" data-layout="reading">
     <div class="container">

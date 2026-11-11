@@ -1,0 +1,26 @@
+---
+// Short call hint inside the article text (backlog R3, Fabian chose variant C on
+// 2026-11-07). BlogPost.astro places two of them via ProseWithHints.astro, at
+// about 20 % and 40 % of the article; the texts come from the article's contact brief.
+import ExternalMark from './ExternalMark.astro';
+import { contactHref, contactExternal } from '../site';
+
+interface Props {
+  kicker: string;
+  title: string;
+  text: string;
+  label: string;
+  newTab: string;
+  subject: string;
+}
+const { kicker, title, text, label, newTab, subject } = Astro.props;
+const attrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
+---
+<aside class="call-hint" aria-label={kicker}>
+  <p class="call-hint-kicker mono">{kicker}</p>
+  <div>
+    <p class="call-hint-title">{title}</p>
+    <p class="call-hint-text">{text}</p>
+  </div>
+  <a class="btn" href={contactHref(subject)} {...attrs}>{label}{contactExternal && <ExternalMark label={newTab} />}</a>
+</aside>

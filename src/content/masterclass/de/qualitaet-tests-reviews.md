@@ -32,9 +32,9 @@ Jede Salesforce-Änderung sollte vor dem Merge dieselben Prüfungen bestehen, un
 
 ## Was ist ein Quality Gate in einer Salesforce-Pipeline?
 
-Ein Quality Gate ist eine automatische oder menschliche Prüfung, die eine Änderung aufhält, bis sie bestanden ist. Entscheidend ist das Aufhalten: Ein Bericht über 300 Funde, der den Merge nicht sperrt, ändert am Release nichts. In [Kapitel 5](../pipeline-aufbauen/) haben Sie gesehen, wie ein Pull Request durch die Pipeline läuft und welches Apex-Testlevel wohin gehört. Dieses Kapitel klärt, was an den einzelnen Stationen geprüft wird und wer die Messlatte setzt.
+Ein Quality Gate ist eine automatische oder menschliche Prüfung, die eine Änderung aufhält, bis sie bestanden ist. Entscheidend ist das Aufhalten: Ein Bericht über 300 Funde, der den Merge nicht sperrt, ändert am Release nichts. In [Kapitel 5](../pipeline-aufbauen/) haben Sie gesehen, wie ein Pull Request die Pipeline durchläuft und welches Apex-Testlevel wohin gehört. Dieses Kapitel klärt, was an den einzelnen Stationen geprüft wird und wer die Messlatte setzt.
 
-Ich ordne Gates nach Kosten. Günstige Prüfungen laufen zuerst und scheitern schnell, teure kommen danach:
+Ich ordne Gates nach Kosten. Günstige Prüfungen laufen zuerst und scheitern schnell, teure folgen danach:
 
 ```schritte
 Statische Analyse | Laufzeit in Minuten
@@ -47,7 +47,7 @@ Review
   Durch einen Menschen, der nur noch Änderungen sieht, die die Schritte 1 bis 3 bestanden haben.
 ```
 
-Die Sperre selbst setzt Ihre Git-Plattform. Auf GitHub verlangt ein geschützter Branch laut [Dokumentation](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) eine festgelegte Zahl von Freigaben und bestandene Status Checks. Zwei Optionen würde ich in jedem Programm mit mehreren Partnern einschalten: Freigaben verfallen, wenn danach neue Commits kommen, und „Do not allow bypassing the above settings“, denn ohne diese Option gelten die Regeln nicht für Administratoren. Haben Partner Admin-Rechte im Repository, ist der Branch-Schutz sonst eine Empfehlung.
+Die Sperre selbst setzt Ihre Git-Plattform. Auf GitHub verlangt ein geschützter Branch laut [Dokumentation](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) eine festgelegte Zahl von Freigaben und bestandene Status Checks. Zwei Optionen würde ich in jedem Programm mit mehreren Partnern einschalten: Freigaben verfallen, wenn danach neue Commits hinzukommen, und „Do not allow bypassing the above settings“, denn ohne diese Option gelten die Regeln nicht für Administratoren. Haben Partner Admin-Rechte im Repository, ist der Branch-Schutz sonst nur eine Empfehlung.
 
 ## Warum sind Reviews Pflicht, auch mit guter Automatisierung?
 
@@ -63,7 +63,7 @@ Flows, Page Layouts und Permission Sets gehören genauso ins Review wie Apex. Ge
 
 ## Apex-Tests: warum 75 Prozent nur die Untergrenze sind
 
-Für ein Deployment nach Produktion verlangt Salesforce laut [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/api/apex_testing_intro.htm), dass Tests mindestens 75 Prozent des Apex-Codes abdecken, alle Tests bestehen und jeder Trigger etwas Abdeckung hat. Dieselbe Dokumentation sagt in den [Testing Best Practices](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/api/apex_testing_best_practices.htm) aber auch: „don't focus on the percentage of code that is covered.“ Abdeckung misst, welche Zeilen gelaufen sind, nicht, ob das Ergebnis stimmt.
+Für ein Deployment nach Produktion verlangt Salesforce laut [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/api/apex_testing_intro.htm), dass Tests mindestens 75 Prozent des Apex-Codes abdecken, alle Tests bestehen und jeder Trigger etwas Abdeckung hat. Dieselbe Dokumentation sagt in den [Testing Best Practices](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/api/apex_testing_best_practices.htm) aber auch: „don't focus on the percentage of code that is covered.“ Abdeckung misst, welche Zeilen ausgeführt wurden, nicht, ob das Ergebnis stimmt.
 
 Was ich stattdessen in der Definition of Done sehen will, steht fast wörtlich im selben Leitfaden:
 
@@ -71,7 +71,7 @@ Was ich stattdessen in der Definition of Done sehen will, steht fast wörtlich i
 - **Positiv- und Negativfälle**, gültige und ungültige Eingaben.
 - **Bulk-Tests mit mindestens 20 Datensätzen**, damit ein Trigger beim nächtlichen Import der Auftragsstände aus SAP nicht an Governor Limits scheitert.
 - **Tests mit `runAs`** in verschiedenen Benutzerkontexten, etwa als Servicetechniker oder Händler im Portal.
-- **Eigene Testdaten** statt Daten aus der Org, damit Tests nach einem Sandbox-Refresh noch laufen.
+- **Eigene Testdaten** statt Daten aus der Org, damit Tests nach einem Sandbox-Refresh noch funktionieren.
 
 ```kennzahlen
 75 % | Apex-Abdeckung, die Salesforce für ein Deployment nach Produktion mindestens verlangt
@@ -82,19 +82,19 @@ quelle: Apex Developer Guide (Testing Best Practices), sfdx-hardis-Parameter ape
 
 Den maschinell prüfbaren Teil davon erzwingen PMD-Regeln aus der Kategorie [Best Practices](https://docs.pmd-code.org/latest/pmd_rules_apex_bestpractices.html): `ApexUnitTestClassShouldHaveAsserts` verlangt mindestens einen Assert, `ApexUnitTestShouldNotUseSeeAllDataTrue` verbietet den Zugriff auf Org-Daten, `ApexUnitTestClassShouldHaveRunAs` verlangt mindestens ein `runAs`. Die erste Regel besteht auch ein Test, der nur auf „nicht null“ prüft. Ob ein Assert etwas beweist, bleibt Aufgabe des Reviews.
 
-Die Abdeckungsgrenze selbst können Sie anheben. In sfdx-hardis heißt der Parameter [`apexTestsMinCoverageOrgWide`](https://sfdx-hardis.cloudity.com/schema/sfdx-hardis-json-schema-parameters.html), Standard 75, und die Dokumentation empfiehlt für saubere Projekte strengere Werte wie 80 oder 90. In einer gewachsenen Org mit Jahren an Altcode würde ich die Grenze für neue und geänderte Klassen anheben und die Gesamtabdeckung schrittweise nachziehen. Ein Sonderfall ist API-Version 67.0: Apex läuft dort standardmäßig im User Mode, und ein Test ohne `runAs` sieht nicht, welche Datensätze ein eingeschränkter Benutzer verliert. Details in [API 67.0: warum Apex weniger Datensätze sieht](../../../blog/api-67-apex-user-mode-weniger-datensaetze/).
+Die Abdeckungsgrenze selbst können Sie anheben. In sfdx-hardis heißt der Parameter [`apexTestsMinCoverageOrgWide`](https://sfdx-hardis.cloudity.com/schema/sfdx-hardis-json-schema-parameters.html), Standard 75, und die Dokumentation empfiehlt für saubere Projekte strengere Werte wie 80 oder 90. In einer gewachsenen Org mit Jahren an Altcode würde ich die Grenze für neue und geänderte Klassen anheben und die Gesamtabdeckung schrittweise nachziehen. Ein Sonderfall ist API-Version 67.0: Apex wird dort standardmäßig im User Mode ausgeführt, und ein Test ohne `runAs` sieht nicht, welche Datensätze ein eingeschränkter Benutzer verliert. Details in [API 67.0: warum Apex weniger Datensätze sieht](../../../blog/api-67-apex-user-mode-weniger-datensaetze/).
 
 ## Wie testen Sie Flows?
 
-Flows sind in vielen Fertigungs-Orgs die größere Automatisierung: Statuswechsel im Serviceauftrag, Eskalationen bei Garantiefällen, Benachrichtigungen an Händler. Trotzdem laufen sie in vielen Pipelines ungeprüft durch. Drei Werkzeuge gibt es:
+Flows sind in vielen Fertigungs-Orgs die größere Automatisierung: Statuswechsel im Serviceauftrag, Eskalationen bei Garantiefällen, Benachrichtigungen an Händler. Trotzdem passieren sie viele Pipelines ungeprüft. Dafür gibt es drei Werkzeuge:
 
 **Flow-Tests.** Für record-triggered, autolaunched und Data-Cloud-triggered Flows lassen sich laut [Metadata API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_flowtest.htm) Tests anlegen, die erwartete Ergebnisse prüfen. Sie liegen als Metadatentyp `FlowTest` im Repository. Die Salesforce CLI führt sie mit [`sf flow run test`](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_flow_run_test.html) aus, Ergebnisse auch im JUnit-Format für die Pipeline; `sf logic run test` führt Flow- und Apex-Tests zusammen aus. Ein praktisches Detail: Der ausführende Benutzer braucht die Berechtigung „View All Data“. Das betrifft den technischen Benutzer Ihrer Pipeline.
 
-**Abdeckung für aktiv deployte Flows.** Standardmäßig kommen Flows, die in der Sandbox aktiv sind, laut [Salesforce Help](https://help.salesforce.com/apex/HTViewHelpDoc?id=flow_distribute_deploy_active.htm) inaktiv in Produktion an und müssen von Hand aktiviert werden. Mit der Einstellung „Deploy processes and flows as active“ in den Process Automation Settings legen Sie eine Abdeckungsgrenze fest. Sie gilt für Prozesse und autolaunched Flows, die per Change Set oder Metadata API deployt werden, und gemessen wird sie über Apex-Tests: Mindestens ein Apex-Test muss die eingestellte Abdeckung der aktiven Prozesse und autolaunched Flows erreichen. Flows mit Screens sind von der Anforderung ausgenommen. Die Werte stehen im Tooling-API-Objekt [`FlowTestCoverage`](https://developer.salesforce.com/docs/atlas.en-us.api_tooling.meta/api_tooling/tooling_api_objects_flowtestcoverage.htm). Für eine Pipeline, die auch nach Produktion ohne Handarbeit deployen soll, ist diese Einstellung der saubere Weg.
+**Abdeckung für aktiv deployte Flows.** Standardmäßig werden Flows, die in der Sandbox aktiv sind, laut [Salesforce Help](https://help.salesforce.com/apex/HTViewHelpDoc?id=flow_distribute_deploy_active.htm) inaktiv nach Produktion deployt und müssen von Hand aktiviert werden. Mit der Einstellung „Deploy processes and flows as active“ in den Process Automation Settings legen Sie eine Abdeckungsgrenze fest. Sie gilt für Prozesse und autolaunched Flows, die per Change Set oder Metadata API deployt werden, und gemessen wird sie über Apex-Tests: Mindestens ein Apex-Test muss die eingestellte Abdeckung der aktiven Prozesse und autolaunched Flows erreichen. Flows mit Screens sind von der Anforderung ausgenommen. Die Werte stehen im Tooling-API-Objekt [`FlowTestCoverage`](https://developer.salesforce.com/docs/atlas.en-us.api_tooling.meta/api_tooling/tooling_api_objects_flowtestcoverage.htm). Für eine Pipeline, die auch nach Produktion ohne Handarbeit deployen soll, ist diese Einstellung der saubere Weg.
 
 **Statische Analyse von Flows.** Der Flow Scanner in Code Analyzer findet typische Baufehler in Flows, bevor überhaupt ein Test läuft.
 
-Meine Empfehlung: Jeder record-triggered Flow auf einem Kernobjekt wie Arbeitsauftrag, Anlage oder Garantiefall bekommt mindestens einen Flow-Test für den Hauptpfad und einen für den wichtigsten Fehlerfall. Screen Flows testen Sie weiterhin fachlich in UAT.
+Meine Empfehlung: Jeder record-triggered Flow auf einem Kernobjekt wie Arbeitsauftrag, Anlage oder Garantiefall erhält mindestens einen Flow-Test für den Hauptpfad und einen für den wichtigsten Fehlerfall. Screen Flows testen Sie weiterhin fachlich in UAT.
 
 ## Statische Analyse mit Salesforce Code Analyzer
 
@@ -111,21 +111,21 @@ Meine Empfehlung: Jeder record-triggered Flow auf einem Kernobjekt wie Arbeitsau
 
 Die [Regeln des Flow Scanners](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/rules-flow.html) sind für Admins der Partner besonders nützlich: `DbInLoop` meldet Get-, Create-, Update- und Delete-Elemente in Schleifen, `MissingFaultHandler` Elemente ohne Fehlerpfad, `HardcodedId` org-spezifische IDs, die beim Deployment brechen. Zwei Regeln melden, wenn Benutzereingaben in einem Flow im Systemkontext Datensätze auswählen oder ändern, ein Risiko für Rechteausweitung.
 
-In der Pipeline rufen Sie `sf code-analyzer run` auf oder die GitHub Action. Laut [CI/CD-Leitfaden](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html) muss es Version 2 der Action sein, Version 1 nutzt den abgekündigten Code Analyzer v4. Ohne `--rule-selector` läuft der Regelsatz `Recommended`.
+In der Pipeline rufen Sie `sf code-analyzer run` auf oder die GitHub Action. Laut [CI/CD-Leitfaden](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html) muss es Version 2 der Action sein, Version 1 nutzt den abgekündigten Code Analyzer v4. Ohne `--rule-selector` wird der Regelsatz `Recommended` ausgeführt.
 
 ```hinweis achtung
 Zum Gate wird der Lauf erst mit `--severity-threshold`: Laut [Befehlsreferenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html) endet der Befehl mit einem Fehlercode, sobald ein Fund diesen Schweregrad erreicht. Ohne den Parameter bleibt alles grün.
 ```
 
-In einer Org mit zehn Jahren Apex würde ich ab „High“ blockieren und den Rest berichten. Wer am ersten Tag alles blockiert, bekommt Hunderte Altfunde, und Partner fangen an, Regeln abzuschalten statt Code zu korrigieren. Die Schwelle senken Sie, sobald der Bestand aufgeräumt ist; wie Sie technische Schulden vorher sichtbar machen, beschreibe ich in [Kapitel 9](../betrieb-monitoring-backup/).
+In einer Org mit zehn Jahren Apex würde ich ab „High“ blockieren und den Rest berichten. Wer am ersten Tag alles blockiert, erhält Hunderte Altfunde, und Partner beginnen, Regeln abzuschalten statt Code zu korrigieren. Die Schwelle senken Sie, sobald der Bestand aufgeräumt ist; wie Sie technische Schulden vorher sichtbar machen, beschreibe ich in [Kapitel 9](../betrieb-monitoring-backup/).
 
-## Wie laufen die Gates in sfdx-hardis und in kommerziellen Werkzeugen?
+## Wie funktionieren die Gates in sfdx-hardis und in kommerziellen Werkzeugen?
 
 Alle Werkzeuge aus [Kapitel 4](../devops-werkzeuge-vergleich/) decken die Gates ab, mit unterschiedlicher Bedienung.
 
 **sfdx-hardis**, das ich seit rund zwei Jahren in Kundenprojekten einsetze, startet laut [Dokumentation](https://sfdx-hardis.cloudity.com/salesforce-devops-handle-merge-request-results/) bei jedem Pull Request zwei Kontrolljobs. Der erste simuliert das Deployment in der Zielorg, führt die Apex-Tests aus, berechnet die Abdeckung und schreibt das Ergebnis mit einem visuellen Diff geänderter Flows in den Pull Request. Der zweite führt MegaLinter mit PMD für Apex, ESLint für Lightning Web Components, einer Suche nach fest codierten Tokens und einer Copy-Paste-Erkennung aus. Gemergt wird laut Dokumentation nur, wenn beide grün sind. Die [MegaLinter-Konfiguration](https://sfdx-hardis.cloudity.com/salesforce-devops-solve-megalinter-errors/) markiert den PMD-Schwellenwert mit dem Kommentar, dass nur der Release Manager ihn ändern darf, und `// NOPMD` ist „only for false positives, never to publish faster“ gedacht. Achten Sie auf die Option `testCoverageNotBlocking`, die laut [Dokumentation](https://sfdx-hardis.cloudity.com/salesforce-devops-smart-deployment/) Deployments trotz zu geringer Abdeckung zulässt. Sie gehört in kein Produktions-Setup.
 
-**Gearset** bringt mit [Code Reviews](https://docs.gearset.com/en/articles/11478945-what-is-code-reviews) eigene, anpassbare Regelsätze für alle Metadatentypen mit, Flows eingeschlossen, dazu eine automatische Korrektur und Dashboards zu technischen Schulden. Als Status Check an einem geschützten Branch sperrt es laut [Gearset](https://docs.gearset.com/en/articles/11478649-planning-your-clayton-trial) die Promotion eines Pull Requests, der die Prüfung nicht besteht. Eine eigene Regel meldet [Flows ohne Test](https://docs.gearset.com/en/articles/14121616-code-reviews-rule-untested-flows). Das spart Ihnen das Skript, das Sie sonst selbst schreiben.
+**Gearset** bringt mit [Code Reviews](https://docs.gearset.com/en/articles/11478945-what-is-code-reviews) eigene, anpassbare Regelsätze für alle Metadatentypen mit, Flows eingeschlossen, dazu eine automatische Korrektur und Dashboards zu technischen Schulden. Als Status Check an einem geschützten Branch sperrt es laut [Gearset](https://docs.gearset.com/en/articles/11478649-planning-your-clayton-trial) die Promotion eines Pull Requests, der die Prüfung nicht besteht. Eine eigene Regel meldet [Flows ohne Test](https://docs.gearset.com/en/articles/14121616-code-reviews-rule-untested-flows). Das spart Ihnen das Skript, das Sie sonst selbst schreiben müssten.
 
 **Copado** wirbt mit durchsetzbaren [Quality Gates](https://www.copado.com/product-detail/quality-assurance) entlang Ihrer Definition of Done und mit Robotic Testing für automatisierte Oberflächentests. Code Analyzer lässt sich laut [Salesforce-Leitfaden](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html) so einbinden, dass gewählte Schweregrade Deployments blockieren.
 
@@ -137,7 +137,7 @@ Die kommerziellen Werkzeuge punkten bei Oberfläche, eigenen Regelsätzen und Su
 
 ## KI-generierter Code: dieselben Gates, keine Ausnahmen
 
-Arbeiten Ihre Partner mit Coding-Agenten, steigt die Zahl der Pull Requests, Ihre Reviewkapazität bleibt gleich. Das spricht dafür, die Gates oben ohne Ausnahme durchzusetzen. Neue Gates braucht es kaum. Typische Fehler von KI-Code wie Abfragen in Schleifen, fehlende Sharing-Deklarationen und Tests ohne Aussage findet dieselbe Kombination aus Code Analyzer, Validierung und Review. Zwei Ergänzungen lohnen sich: eine Prüfung, die einen Sprung der API-Version auf 67.0 ohne Auftrag stoppt, und die Pflicht, KI-Anteile im Pull Request zu kennzeichnen.
+Arbeiten Ihre Partner mit Coding-Agenten, steigt die Zahl der Pull Requests, Ihre Reviewkapazität bleibt gleich. Das spricht dafür, die Gates oben ohne Ausnahme durchzusetzen. Neue Gates sind kaum nötig. Typische Fehler von KI-Code wie Abfragen in Schleifen, fehlende Sharing-Deklarationen und Tests ohne Aussage findet dieselbe Kombination aus Code Analyzer, Validierung und Review. Zwei Ergänzungen lohnen sich: eine Prüfung, die einen Sprung der API-Version auf 67.0 ohne Auftrag stoppt, und die Pflicht, KI-Anteile im Pull Request zu kennzeichnen.
 
 Was KI-Code zusätzlich braucht, von der Regeldatei bis zu Org-Grenzen für Agenten, behandelt [Kapitel 8 der KI-Masterclass](../../ki-salesforce/best-practices-ki-code/). Die Gates im Detail stehen in [Quality Gates für KI-Code](../../../blog/quality-gates-ki-code-salesforce-pipeline/), das Review aus Kundensicht in [KI-generierten Salesforce-Code prüfen](../../../blog/ki-generierten-salesforce-code-pruefen/).
 
@@ -147,6 +147,6 @@ Ein Maschinenbauer betreibt Service Cloud mit Field Service für seine Außendie
 
 Ein Admin des ersten Partners baut einen record-triggered Flow auf dem Arbeitsauftrag, der bei Statuswechsel die zugehörigen Termine aktualisiert, mit einem Update-Element in einer Schleife. In der Sandbox funktioniert er mit einem Auftrag. Im Pull Request meldet der Flow Scanner `DbInLoop` und `MissingFaultHandler`, beide über der Schwelle, der Merge ist gesperrt. Der Admin baut das Update nach der Schleife, ergänzt einen Fehlerpfad und zwei Flow-Tests.
 
-Im Validierungs-Deployment scheitert danach ein Apex-Test des zweiten Partners: Der Bulk-Test der SAP-Importklasse legt 200 Arbeitsaufträge an und läuft jetzt durch den neuen Flow. Ohne diesen Test wäre das Problem erst beim nächtlichen Import in Produktion aufgefallen. Das Review durch den Architekten des Kunden klärt am Ende die fachliche Frage, die kein Werkzeug stellt: ob der Termin bei einem stornierten Auftrag gelöscht oder nur abgesagt werden soll.
+Im Validierungs-Deployment scheitert danach ein Apex-Test des zweiten Partners: Der Bulk-Test der SAP-Importklasse legt 200 Arbeitsaufträge an und durchläuft jetzt den neuen Flow. Ohne diesen Test wäre das Problem erst beim nächtlichen Import in Produktion aufgefallen. Das Review durch den Architekten des Kunden klärt am Ende die fachliche Frage, die kein Werkzeug stellt: ob der Termin bei einem stornierten Auftrag gelöscht oder nur abgesagt werden soll.
 
 Welche Konfigurationsdaten solche Flows in Sandboxes brauchen, damit Tests aussagekräftig sind, behandelt [Kapitel 7](../daten-und-konfiguration/). Wie ich Programme dabei unterstütze, steht unter [DevOps und Release-Management](../../../leistungen/devops-und-release-management/) und [Partnersteuerung](../../../leistungen/partnersteuerung/).

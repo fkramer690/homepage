@@ -8,11 +8,15 @@ Every blog article must follow `docs/blog-guidelines.md`: best-practice structur
 
 Every article page has the same fixed structure: takeaways, article body, collapsible FAQ, author box (`src/components/AuthorBox.astro`), related articles and the contact section ("Book a call" plus the contact form). All of it comes from `src/components/BlogPost.astro`; a Markdown file only provides the body and frontmatter. Change shared parts in the components, never per article.
 
-Articles and masterclass chapters loosen up their text with content blocks from the library in `docs/content-blocks.md` (```hinweis, ```praxis, ```kennzahlen, ```zeitleiste, ```ablauf, ```pro-contra, ```vertiefung, ```schritte, ```stufen, ```vergleich, ```hebel, ```eintrag, ```saeulen, ```partnerfluss, ```tabelle, ```staerken-grenzen, ```pipeline, ```saeulenwechsel, ```basis-addons, ```level, ```prozess, ```kette, ```steuerzentrale, ```eisberg; rules under "Content blocks" in `docs/blog-guidelines.md`). They render through `src/lib/content-blocks-plugin.mjs`; the build check enforces their use. Flow diagrams are rendered once with `node scripts/render-diagrams.mjs`, which fails when a label does not fit its box.
+Articles and masterclass chapters loosen up their text with content blocks from the library in `docs/content-blocks.md` (```hinweis, ```praxis, ```kennzahlen, ```zeitleiste, ```ablauf, ```pro-contra, ```vertiefung, ```schritte, ```stufen, ```vergleich, ```hebel, ```eintrag, ```saeulen, ```partnerfluss, ```tabelle, ```staerken-grenzen, ```pipeline, ```saeulenwechsel, ```basis-addons, ```level, ```prozess, ```kette, ```steuerzentrale, ```eisberg, ```ring, ```kreislauf; rules under "Content blocks" in `docs/blog-guidelines.md`). They render through `src/lib/content-blocks-plugin.mjs`; the build check enforces their use. Flow diagrams are rendered once with `node scripts/render-diagrams.mjs`, which fails when a label does not fit its box.
 
 ## Two pillars
 
 Fabian's core positioning is Salesforce architecture for manufacturers. Change management, together with Juliane Winterscheid, is one building block of his Salesforce programmes, not a second business: it lives under Leistungen on the change management service page (`/leistungen/change-management/`, `/en/services/change-management-salesforce/`), never as its own menu item or start page section. That page (frontmatter `section: change-management`, texts in `src/data/change-management.ts`) shows who is behind it (Fabian, Juliane, the joint plan) and lists the change articles from the blog collection by author: Juliane's general basics and Fabian's practice from Salesforce programmes. The former area page `/change-management/` is a redirect to it. Keep the start page written for the manufacturer audience; general change topics are Juliane's articles in the blog.
+
+## Positioning and references
+
+Positioning texts (hero, role, profiles, talk abstracts) and every reference or case study follow `docs/positioning-and-references.md`: one category ("Salesforce architecture for manufacturers, on the client side"), positioned against the old way, never against named competitors; references anonymised by attributes, at most two confirmed numbers, written approval for names, logos and exact figures.
 
 ## Service pages
 
@@ -54,9 +58,17 @@ Every graphic (content blocks, explanatory graphics, card drawings, hub drawings
 
 Every indexable page has a unique `<title>` of at most 60 characters, keyword first; the brand suffix ` | FK Solution Design` is added only where it fits. `scripts/check-titles.mjs` runs after `astro build` and enforces this; never weaken it.
 
+## Wording
+
+Every change that adds or touches page text, however small (SEO fixes, H1s, meta descriptions, i18n, `src/data`), gets a sentence pass in DE and EN for clumsy, colloquial or vague wording before the pull request ("Partner dazuholen", "es kamen", "klappt", "landet"). Rules under "No AI slop" in `docs/blog-guidelines.md`; `scripts/check-blog.mjs` fails on the obvious colloquial words in articles, chapters, `src/i18n` and `src/data`. Never weaken that list.
+
 ## FAQ heading
 
 On German pages the FAQ section is always called "Häufig gestellte Fragen" (English: "Frequently asked questions"), never "Häufige Fragen". `scripts/check-blog.mjs` fails on the old wording anywhere in `src/`.
+
+## Security
+
+Every page carries a Content Security Policy (meta tag, `scripts/csp-policy.mjs`, written by `scripts/add-csp.mjs` after `astro build`) and a referrer policy. No inline event handlers (`onclick=`), no `javascript:` links; a new outside service gets its host in `scripts/csp-policy.mjs`. `scripts/check-security.mjs` and `scripts/check-broken-links.mjs` run in `npm run build`; never weaken them. Actions stay pinned to commit SHAs (Dependabot updates them); workflows get only the permissions they need.
 
 ## Repository root
 

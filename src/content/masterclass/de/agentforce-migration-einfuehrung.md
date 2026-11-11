@@ -12,7 +12,7 @@ summary: "Buyer Agent und Merchandising Agent, der Weg von Aura zu LWR und die E
 takeaways:
   - "Der Buyer Agent beantwortet Händlerfragen aus Katalog, Preisen und Aufträgen des Shops und macht Fehler in diesen Daten schneller sichtbar."
   - "Den Buyer Agent führt Salesforce seit Juni 2026 als allgemein verfügbar. Den kompletten Auftrag im Chat datiert Salesforce auf Januar 2027."
-  - "Vertragspreise, Kreditlimits und Liefertermine kommen aus Shop und ERP, nie aus dem Sprachmodell. Jede Händlernachricht ist nicht vertrauenswürdige Eingabe."
+  - "Vertragspreise, Kreditlimits und Liefertermine stammen aus Shop und ERP, nie aus dem Sprachmodell. Jede Händlernachricht ist nicht vertrauenswürdige Eingabe."
   - "Für Aura-Stores gibt es bis zum 27. Oktober 2026 kein Abschaltdatum. Migrieren Sie auf LWR, wenn Funktionen, Aura-Code oder ein neuer Checkout es verlangen."
   - "Führen Sie den Shop in Wellen ein und messen Sie je Welle den Shop-Anteil der Auftragspositionen, Suchen ohne Treffer und Innendienstminuten pro Position."
 articles: [commerce-buyer-agent-whatsapp, commerce-merchandising-agent, commerce-aura-to-lwr-migration, commerce-dealer-rollout, commerce-kpis-after-go-live, prompt-injection-dealer-portals, multilingual-dealer-agents, distributor-replenishment-agent]
@@ -28,7 +28,7 @@ faq:
 draft: false
 ---
 
-Agenten gehören in einen B2B-Shop, der schon funktioniert. Der Buyer Agent beantwortet Händlerfragen zu Produkten, Auftragsstatus und Nachbestellung aus den Daten des Shops, der Merchandising Agent hilft beim Pflegen von Suche, Aktionen und Käufer-Accounts. Preise, Kredit und Liefertermine kommen weiter aus Code und ERP. Einen Aura-Store migrieren Sie auf LWR, wenn Funktionen oder wachsender eigener Code es verlangen, denn ein Abschaltdatum gibt es nicht. Eingeführt wird in Wellen nach Buyer Group, mit Pilothändlern zuerst. Gemessen wird je Welle, und drei Salesforce-Releases im Jahr verlangen feste Regressionstests für Suche, Warenkorb und Checkout.
+Agenten gehören in einen B2B-Shop, der schon funktioniert. Der Buyer Agent beantwortet Händlerfragen zu Produkten, Auftragsstatus und Nachbestellung aus den Daten des Shops, der Merchandising Agent hilft beim Pflegen von Suche, Aktionen und Käufer-Accounts. Preise, Kredit und Liefertermine stammen weiterhin aus Code und ERP. Einen Aura-Store migrieren Sie auf LWR, wenn Funktionen oder wachsender eigener Code es verlangen, denn ein Abschaltdatum gibt es nicht. Eingeführt wird in Wellen nach Buyer Group, mit Pilothändlern zuerst. Gemessen wird je Welle, und drei Salesforce-Releases im Jahr verlangen feste Regressionstests für Suche, Warenkorb und Checkout.
 
 ## Wo steht der Shop nach den ersten vier Kapiteln?
 
@@ -52,7 +52,7 @@ Der Buyer Agent wird aus der Vorlage „Buyer Agent (B2B)“ angelegt. Laut Trai
 
 Die Voraussetzungen sind umfangreicher, als der Name vermuten lässt. Trailhead nennt Agentforce Commerce for B2B, Service Cloud oder Sales and Service Edition, die Add-ons Agentforce und Einstein for Service sowie Einstein generative AI mit Data 360. Wer neben dem Shop nur Sales Cloud betreibt, kauft also mehr als einen Agenten. Einen eigenen Preis für den Buyer Agent habe ich auf den offiziellen Seiten nicht gefunden. Wie Sie Agentenkosten trotzdem abschätzen, steht im KI-Kapitel [Kosten und Token](../../ki-salesforce/kosten-und-token/). Subagenten, Kanäle und Lizenzen im Detail beschreibe ich in [B2B Buyer Agent: Bestellen per WhatsApp und SMS](../../../blog/b2b-buyer-agent-whatsapp-bestellen/).
 
-Für Händler im Export kommt die Sprache dazu. Welche Sprachen Agentforce-Agenten beherrschen, was Übersetzung kostet und wie Sie Wissen pro Sprache pflegen, steht in [Mehrsprachige Agentforce-Agenten für Händler im Export](../../../blog/mehrsprachige-agentforce-agenten-export/). Prüfen Sie für den Buyer Agent selbst, welche Sprachen für Ihre Händlerländer freigegeben sind.
+Bei Händlern im Export kommt die Sprache hinzu. Welche Sprachen Agentforce-Agenten beherrschen, was Übersetzung kostet und wie Sie Wissen pro Sprache pflegen, steht in [Mehrsprachige Agentforce-Agenten für Händler im Export](../../../blog/mehrsprachige-agentforce-agenten-export/). Prüfen Sie für den Buyer Agent selbst, welche Sprachen für Ihre Händlerländer freigegeben sind.
 
 ### Merchandising Agent für das Shop-Team
 
@@ -63,7 +63,7 @@ Im Ersatzteilkatalog ist Boost und Bury der nützliche Teil: ersetzte Teilenumme
 ## Warum darf der Agent keinen Preis erfinden?
 
 ```hinweis achtung
-Für einen Hersteller ist der Vertragspreis die heikelste Zahl im ganzen Chat. Er kommt aus der Preisfindung des Shops, die Preisbücher liest oder das ERP aufruft, wie in [Kapitel 3](../preise-warenkorb-checkout/) beschrieben. Dasselbe gilt für Kreditlimit, gesperrte Kunden und bestätigte Liefertermine. Das Sprachmodell versteht die Frage und formuliert die Antwort, die Zahl liefert Code. Zeigt der Shop nur Listenpreise, weil Händlerpreise in SAP-Konditionen stehen, nennt auch der Agent Listenpreise.
+Für einen Hersteller ist der Vertragspreis die heikelste Zahl im ganzen Chat. Er stammt aus der Preisfindung des Shops, die Preisbücher liest oder das ERP aufruft, wie in [Kapitel 3](../preise-warenkorb-checkout/) beschrieben. Dasselbe gilt für Kreditlimit, gesperrte Kunden und bestätigte Liefertermine. Das Sprachmodell versteht die Frage und formuliert die Antwort, die Zahl liefert Code. Zeigt der Shop nur Listenpreise, weil Händlerpreise in SAP-Konditionen stehen, nennt auch der Agent Listenpreise.
 ```
 
 Die zweite Regel betrifft die Eingabe. Jede Nachricht eines Händlers ist Text, und Text kann Anweisungen enthalten. Ich plane deshalb so, als ob ein Filter eines Tages eine eingeschleuste Anweisung übersieht:
@@ -79,7 +79,7 @@ Angriffsmuster und Gegenmaßnahmen stehen in [Prompt Injection im Händlerportal
 
 Salesforce B2B Commerce gab es als Visualforce-Paket, als Aura-Store und als LWR-Store. Laut [Migrationsleitfaden](https://developer.salesforce.com/docs/commerce/lwr-migration/guide) können nur Orgs, die vor Spring '23 für Commerce aktiviert wurden, noch Aura-Stores anlegen, und Salesforce empfiehlt LWR für neue Stores. Ein Abschaltdatum gibt es bis zum 27. Oktober 2026 nicht: Aura-Stores stehen nicht auf der [Liste der aktiven Abkündigungen](https://help.salesforce.com/s/articleView?id=000381744&language=en_US&type=1). Dasselbe gilt für B2B Commerce for Visualforce. Welche Generation Sie betreiben, klärt [B2B Commerce Versionen: Visualforce, Aura oder LWR?](../../../blog/b2b-commerce-versionen-visualforce-aura-lwr/).
 
-Die [wichtigsten Unterschiede](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/key-differences.html) betreffen jeden eigenen Code: LWR unterstützt nur Lightning Web Components, Styling läuft über `--dxp`-Styling-Hooks statt eigener CSS-Klassen, Daten kommen über Wire-Adapter, und der Checkout ist der eingebaute Salesforce Commerce Checkout statt eines Flows. Ein Migrationswerkzeug dokumentiert Salesforce nicht. Ich plane den Umstieg deshalb als Neubau der Storefront auf denselben Commerce-Daten.
+Die [wichtigsten Unterschiede](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/key-differences.html) betreffen jeden eigenen Code: LWR unterstützt nur Lightning Web Components, Styling erfolgt über `--dxp`-Styling-Hooks statt eigener CSS-Klassen, Daten werden über Wire-Adapter geladen, und der Checkout ist der eingebaute Salesforce Commerce Checkout statt eines Flows. Ein Migrationswerkzeug dokumentiert Salesforce nicht. Ich plane den Umstieg deshalb als Neubau der Storefront auf denselben Commerce-Daten.
 
 ```pro-contra
 pro: Migrieren, wenn einer dieser Punkte zutrifft
@@ -90,22 +90,22 @@ pro: Migrieren, wenn einer dieser Punkte zutrifft
 contra: Was für Abwarten spricht
 - Ein Abschaltdatum gibt es nicht
 - Der Umstieg ist ein Neubau der Storefront
-- Läuft der Store stabil mit wenig eigenem Code, ist Abwarten legitim
+- Ist der Store stabil und hat wenig eigenen Code, ist Abwarten legitim
 ```
 
-Auch wenn Sie abwarten, würde ich den ersten Schritt gehen: Aura-Komponenten im laufenden Store durch Lightning Web Components ersetzen, denn die laufen in beiden Store-Typen. Schritte, Checkout und offene Punkte des Leitfadens beschreibe ich in [Von Aura zu LWR: einen B2B-Commerce-Store migrieren](../../../blog/b2b-store-aura-lwr-migrieren/).
+Auch wenn Sie abwarten, würde ich den ersten Schritt gehen: Aura-Komponenten im laufenden Store durch Lightning Web Components ersetzen, denn diese funktionieren in beiden Store-Typen. Schritte, Checkout und offene Punkte des Leitfadens beschreibe ich in [Von Aura zu LWR: einen B2B-Commerce-Store migrieren](../../../blog/b2b-store-aura-lwr-migrieren/).
 
 ## Einführung bei Händlern in Wellen nach Buyer Group
 
-Ein B2B-Shop zeigt jedem Händler seinen eigenen Katalog und seine eigenen Preise. Ein Big Bang zeigt deshalb jeden Datenfehler allen Händlern am selben Tag. Das Datenmodell macht Wellen einfach: Käufer kommen über Buyer Groups in den Store, also ist eine Welle die Menge der Buyer Groups, die Sie mit dem Store verbinden.
+Ein B2B-Shop zeigt jedem Händler seinen eigenen Katalog und seine eigenen Preise. Ein Big Bang zeigt deshalb jeden Datenfehler allen Händlern am selben Tag. Das Datenmodell macht Wellen einfach: Käufer erhalten über Buyer Groups Zugang zum Store, also ist eine Welle die Menge der Buyer Groups, die Sie mit dem Store verbinden.
 
 - **Pilot zuerst.** Händler mit vielen Wiederholbestellungen bekannter Teile, einem ehrlichen Ansprechpartner und wenigen Sonderkonditionen.
-- **Buyer Manager beim Händler.** Laut Salesforce bekommen sie Customer Community Plus mit B2B Commerce Super User und Delegated External User Administration. Damit legen sie Benutzer ihres eigenen Kontos an, setzen Passwörter zurück und deaktivieren Benutzer, ohne Ticket bei Ihrem Service Desk.
+- **Buyer Manager beim Händler.** Laut Salesforce erhalten sie Customer Community Plus mit B2B Commerce Super User und Delegated External User Administration. Damit legen sie Benutzer ihres eigenen Kontos an, setzen Passwörter zurück und deaktivieren Benutzer, ohne Ticket bei Ihrem Service Desk.
 - **Test je Welle.** Entitlements, Preise, Bestand, Checkout und Auftragsstatus mit einem echten Käuferkonto dieser Welle, nie nur mit einem Admin-Benutzer.
-- **Innendienst bleibt erreichbar.** Telefon und E-Mail laufen weiter. Händler wechseln, weil der Shop schneller ist. Ruft ein Pilothändler mit einer Nachbestellung an, führt die Kollegin ihn einmal durch den Shop.
+- **Innendienst bleibt erreichbar.** Telefon und E-Mail stehen weiter zur Verfügung. Händler wechseln, weil der Shop schneller ist. Ruft ein Pilothändler mit einer Nachbestellung an, führt die Kollegin ihn einmal durch den Shop.
 - **Schulung kurz halten.** Ein Termin pro Buyer Manager zur Benutzerverwaltung und eine Seite mit Suche nach Teilenummer und Nachbestellung reichen für den Start.
 
-Rechenbeispiel: Ein Hersteller von Kompressoren verkauft Ersatzteile an 250 Händler in Deutschland, Österreich und der Schweiz. Welle 1 bringt in den Monaten 1 und 2 fünfzehn Pilothändler in Deutschland in einer Buyer Group. Welle 2 folgt mit den übrigen deutschen Händlern in drei Gruppen nach Händlerstufe, Welle 3 mit Österreich, der Schweiz und den Schlüsselkunden mit Sonderkonditionen. Zwischen den Wellen liegen zwei Wochen für Korrekturen. Den Buyer Agent bekommt erst Welle 1, wenn sie drei Monate im Shop bestellt hat. Die ganze Reihenfolge steht in [B2B-Shop für Händler einführen](../../../blog/b2b-shop-haendler-einfuehren/). Wenn Händler und Innendienst ihre Arbeitsweise ändern sollen, gehört [Change Management](../../../leistungen/change-management/) ab der ersten Welle in den Plan.
+Rechenbeispiel: Ein Hersteller von Kompressoren verkauft Ersatzteile an 250 Händler in Deutschland, Österreich und der Schweiz. Welle 1 umfasst in den Monaten 1 und 2 fünfzehn Pilothändler in Deutschland in einer Buyer Group. Welle 2 folgt mit den übrigen deutschen Händlern in drei Gruppen nach Händlerstufe, Welle 3 mit Österreich, der Schweiz und den Schlüsselkunden mit Sonderkonditionen. Zwischen den Wellen liegen zwei Wochen für Korrekturen. Den Buyer Agent erhält Welle 1 erst, wenn sie drei Monate im Shop bestellt hat. Die ganze Reihenfolge steht in [B2B-Shop für Händler einführen](../../../blog/b2b-shop-haendler-einfuehren/). Wenn Händler und Innendienst ihre Arbeitsweise ändern sollen, gehört [Change Management](../../../leistungen/change-management/) ab der ersten Welle in den Plan.
 
 ## Welche Kennzahlen zeigen, ob der Shop wirkt?
 
@@ -119,13 +119,13 @@ Händler bestellen ohnehin. Die Frage ist, ob sie über den Shop bestellen und o
 | Innendienstminuten pro Auftragsposition | Spart der Shop Arbeit? | eigene Messung, vorher und nachher |
 | Bestellungen mit manueller Korrektur | Stimmen die Daten? | ERP oder Order Summaries |
 
-Die Suchanalyse über Data Cloud hat Salesforce [im Juli 2026 angekündigt](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/), mit Suchanfragen, Klickraten, Conversions und Suchen ohne Treffer. Sie verbraucht Data-Cloud-Credits, von denen Growth laut Preisseite 250K und Advanced 500K enthält. Den Verbrauch veröffentlicht Salesforce nicht, also schauen Sie nach dem ersten Monat ins Digital Wallet.
+Die Suchanalyse über Data Cloud hat Salesforce [im Juli 2026 angekündigt](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/), mit Suchanfragen, Klickraten, Conversions und Suchen ohne Treffer. Sie verbraucht Data-Cloud-Credits, von denen Growth laut Preisseite 250K und Advanced 500K enthält. Den Verbrauch veröffentlicht Salesforce nicht, prüfen Sie ihn deshalb nach dem ersten Monat im Digital Wallet.
 
-Zwei Dinge müssen vor dem Go-live stehen: ein Kanalkennzeichen in der Auftragsschnittstelle, damit jede Position im ERP dem Shop zugeordnet werden kann, und zwei Wochen Zeitmessung im Innendienst als Ausgangswert. Ohne diese Zahlen bleibt der [Business Case](../../../blog/b2b-webshop-business-case-hersteller/) eine Behauptung. Details und eine Beispielrechnung stehen in [B2B-Shop Kennzahlen: Was nach dem Go-live zählt](../../../blog/b2b-shop-kennzahlen-nach-go-live/).
+Zwei Dinge müssen vor dem Go-live vorhanden sein: ein Kanalkennzeichen in der Auftragsschnittstelle, damit jede Position im ERP dem Shop zugeordnet werden kann, und zwei Wochen Zeitmessung im Innendienst als Ausgangswert. Ohne diese Zahlen bleibt der [Business Case](../../../blog/b2b-webshop-business-case-hersteller/) eine Behauptung. Details und eine Beispielrechnung stehen in [B2B-Shop Kennzahlen: Was nach dem Go-live zählt](../../../blog/b2b-shop-kennzahlen-nach-go-live/).
 
 ## Der Betrieb nach dem Go-live braucht eine Regressionsliste
 
-Salesforce liefert drei Releases im Jahr, und jedes trifft Storefront, Checkout und Extensions. Ich würde für den Shop eine feste Regressionsliste führen, die vor jedem Release in der Preview-Sandbox läuft:
+Salesforce liefert drei Releases im Jahr, und jedes betrifft Storefront, Checkout und Extensions. Ich würde für den Shop eine feste Regressionsliste führen, die vor jedem Release in der Preview-Sandbox abgearbeitet wird:
 
 1. Suche nach aktueller und alter Teilenummer, mit zehn typischen Teilen.
 2. Preise für je ein Käuferkonto pro Buyer Group, gegen das ERP geprüft.
@@ -134,7 +134,7 @@ Salesforce liefert drei Releases im Jahr, und jedes trifft Storefront, Checkout 
 5. Jede eigene Extension und jede eigene Lightning Web Component.
 6. Wenn der Buyer Agent aktiv ist: ein festes Testset echter Händlerfragen mit erwarteten Antworten.
 
-Die Store-Konfiguration, also Buyer Groups, Entitlement Policies und Preisbücher, läuft dabei wie Metadaten durch die Pipeline. Wie Sie die drei Releases in einen Kalender legen, beschreibt das DevOps-Kapitel [Release-Planung für Salesforce](../../devops-release-management/release-planung-salesforce-releases/), wie Sie eine solche Arbeitsweise schrittweise einführen und messen, das Kapitel [Fahrplan und Messung](../../devops-release-management/einfuehrung-fahrplan/). Bei Pipeline und Testautomatisierung unterstütze ich im Rahmen von [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
+Die Store-Konfiguration, also Buyer Groups, Entitlement Policies und Preisbücher, durchläuft dabei wie Metadaten die Pipeline. Wie Sie die drei Releases in einem Kalender planen, beschreibt das DevOps-Kapitel [Release-Planung für Salesforce](../../devops-release-management/release-planung-salesforce-releases/), wie Sie eine solche Arbeitsweise schrittweise einführen und messen, das Kapitel [Fahrplan und Messung](../../devops-release-management/einfuehrung-fahrplan/). Bei Pipeline und Testautomatisierung unterstütze ich im Rahmen von [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
 
 ## Erster Schritt: der Shop vor dem Agenten
 
@@ -142,7 +142,7 @@ Die Store-Konfiguration, also Buyer Groups, Entitlement Policies und Preisbüche
 Shop vor Agent
   Erste Welle live, Daten geprüft, Kennzahlen erhoben. Dann Auftragsstatus und Nachbestellung im Web-Chat für die Pilotgruppe, WhatsApp erst danach.
 Store-Generation klären
-  Aura oder LWR, Umfang des eigenen Aura-Codes, geplante Änderungen am Checkout. Daraus folgt, ob die Migration vor oder nach der Einführung kommt.
+  Aura oder LWR, Umfang des eigenen Aura-Codes, geplante Änderungen am Checkout. Daraus folgt, ob die Migration vor oder nach der Einführung erfolgt.
 Wellen schneiden
   Händlerliste mit Auftragspositionen, Preislogik und Datenqualität, daraus Pilot und Folgewellen.
 Ausgangswerte messen

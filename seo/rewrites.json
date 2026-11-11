@@ -1,0 +1,149 @@
+{
+  "about": "Pages near page 1 (GSC position 11-20) that were reworked, with baseline values. Compare after about 4 weeks, once Google has crawled the new version (lastCrawl in stats/google/dashboard/index_urls.json). live = rank in DataForSEO live SERP (depth 50), null = not in top 50.",
+  "rounds": [
+    {
+      "date": "2026-11-09",
+      "gscWindow": "2026-10-13 to 2026-11-09",
+      "liveCheck": "2026-11-09",
+      "recheckFrom": "2026-12-07",
+      "pages": [
+        {
+          "term": "salesforce document builder",
+          "paths": [
+            "/en/blog/salesforce-service-documents-document-builder/",
+            "/blog/salesforce-service-documents-document-builder-servicebericht/"
+          ],
+          "gsc": {
+            "impressions": 19,
+            "clicks": 0,
+            "position": 12.9,
+            "termImpressions": 4,
+            "termPosition": 23.3
+          },
+          "live": {
+            "us": null,
+            "de": null
+          },
+          "lastCrawl": "2026-10-27",
+          "changes": [
+            "metaTitle with the term",
+            "H2 Document Builder or Document Generation?",
+            "FAQ: flow creates a document",
+            "internal links from 2 offline and app-update articles (EN+DE)"
+          ]
+        },
+        {
+          "term": "salesforce document builder limitations",
+          "paths": [
+            "/en/blog/salesforce-document-builder-limits-workarounds/",
+            "/blog/salesforce-document-builder-grenzen-workarounds/"
+          ],
+          "gsc": {
+            "impressions": 12,
+            "clicks": 0,
+            "position": 16.8
+          },
+          "live": {
+            "us": null,
+            "de": null
+          },
+          "lastCrawl": "2026-10-26",
+          "changes": [
+            "metaTitle and description aimed at 'limitations', so the main term stays with the Service Documents article"
+          ]
+        },
+        {
+          "term": "field service scheduling console / dispatcher console",
+          "paths": [
+            "/en/blog/field-service-scheduling-console-dispatchers/",
+            "/blog/field-service-scheduling-console-disponenten/"
+          ],
+          "gsc": {
+            "impressions": 16,
+            "clicks": 0,
+            "position": 12.8
+          },
+          "live": {
+            "us": null,
+            "de": null
+          },
+          "lastCrawl": "2026-10-29",
+          "changes": [
+            "metaTitle and description with 'Dispatcher Console'",
+            "intro names the former Dispatcher Console",
+            "H2 with Dispatcher Console",
+            "internal links from multiday jobs and service partners articles (EN+DE)"
+          ]
+        },
+        {
+          "term": "einstein trust layer",
+          "paths": [
+            "/en/blog/einstein-trust-layer-what-it-protects/",
+            "/blog/einstein-trust-layer-was-er-schuetzt/"
+          ],
+          "gsc": {
+            "impressions": 13,
+            "clicks": 0,
+            "position": 11.8
+          },
+          "live": {
+            "us": null,
+            "de": null
+          },
+          "lastCrawl": "2026-10-28",
+          "changes": [
+            "table: components in prompt templates vs. agents",
+            "FAQ: what the audit trail records",
+            "internal links from 5 Agentforce/MCP articles (EN+DE)"
+          ]
+        },
+        {
+          "term": "salesforce username password flow retirement",
+          "paths": [
+            "/en/blog/salesforce-password-integrations-end-2027/",
+            "/blog/salesforce-passwort-integrationen-2027/"
+          ],
+          "gsc": {
+            "impressions": 10,
+            "clicks": 0,
+            "position": 11.9,
+            "termImpressions": 1,
+            "termPosition": 55
+          },
+          "live": {
+            "us": null,
+            "de": null
+          },
+          "lastCrawl": "2026-10-26",
+          "changes": [
+            "metaTitle with 'retirement'",
+            "FAQ: test the retirement in a sandbox"
+          ]
+        },
+        {
+          "term": "visual remote assistance",
+          "paths": [
+            "/en/blog/visual-remote-assistant-remote-help-instead-of-visit/",
+            "/blog/visual-remote-assistant-fernhilfe-statt-einsatz/"
+          ],
+          "gsc": {
+            "impressions": 332,
+            "clicks": 0,
+            "position": 27.1,
+            "note": "almost all impressions 29.-31.10.2026, 0-5 per day since"
+          },
+          "live": {
+            "us": null,
+            "de": null
+          },
+          "lastCrawl": "2026-10-29",
+          "changes": [
+            "first tuning 07.11.2026 (PR #304)",
+            "H2 Visual Remote Assistant or a third-party tool?",
+            "internal link from Field Service licences article (EN+DE)"
+          ]
+        }
+      ]
+    }
+  ]
+}

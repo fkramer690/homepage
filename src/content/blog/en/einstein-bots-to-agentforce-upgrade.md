@@ -2,6 +2,7 @@
 title: "Einstein Bot to Agentforce: convert or keep the menu?"
 description: "Should your portal's Einstein Bot become an Agentforce service agent? What Upgrade Agent does, how cost and testing change, and which flows stay menu-driven."
 pubDate: 2026-10-27
+updatedDate: 2026-11-09
 lang: en
 slug: einstein-bots-to-agentforce-upgrade
 translationKey: einstein-bots-to-agentforce
@@ -10,56 +11,56 @@ categories: [ai]
 tags: [einstein bots, agentforce, service cloud, dealer portal, flex credits, manufacturing]
 takeaways:
   - "Upgrade Agent builds an Agentforce Service Agent from an Einstein Bot while the bot keeps running. Salesforce calls the tool experimental."
-  - "I found no retirement date for Einstein Bots, so the switch is a business decision."
-  - "An agent bills consumption at 20 Flex Credits ($0.10) per action or $2 per conversation, and Salesforce does not support both in one org."
+  - "Einstein Bots have no retirement date but have been in Maintenance Mode since August 17, 2026: supported, without new features."
+  - "An agent consumes 20 Flex Credits ($0.10) per action or is billed at $2 per conversation, and Salesforce does not support both billing models in one org."
   - "In the worked example, 4,000 portal conversations a month need about 2.9 million credits a year for actions, more than the 2.75 million in Service Cloud Max."
-  - "Identification, warranty registration, safety reports and lookups by order number stay in menus, and the agent gets the free text."
+  - "Identification, warranty registration, safety reports and lookups by order number stay menu-driven, and free-text cases go to the agent."
 faq:
   - q: "Is Salesforce retiring Einstein Bots?"
-    a: "On the Salesforce pages I checked by 27 October 2026 I found no retirement date for Einstein Bots. Salesforce did schedule legacy Chat for retirement on 14 February 2026, so bots on that channel had to move to Messaging for In-App and Web."
+    a: "Salesforce names no retirement date, but Einstein Bots have been in Maintenance Mode since August 17, 2026: existing bots stay supported, new features are released only in Agentforce. Legacy Chat was retired on February 14, 2026, so bots on that channel had to move to Enhanced Chat, formerly Messaging for In-App and Web."
   - q: "What does the Agentforce Upgrade Agent do?"
-    a: "According to Salesforce it converts an existing Einstein Bot into an Agentforce Service Agent in minutes, while the bot keeps running. It runs in Agentforce Labs, which Salesforce describes as experimental and pre-release, so treat the result as a draft."
+    a: "According to Salesforce it converts an existing Einstein Bot into an Agentforce Service Agent in minutes, while the bot keeps running. It is part of Agentforce Labs, which Salesforce describes as experimental and pre-release, so treat the result as a draft."
   - q: "Can an Einstein Bot and an Agentforce agent run side by side?"
-    a: "Yes. A Salesforce Developers blog post from December 2025 describes a bot that handles status and logging requests and routes complex questions to an Agentforce Service agent through an outbound Omni-Channel flow with a fallback queue."
+    a: "Yes. A Salesforce Developers blog post from December 2025 describes a bot that handles status and logging requests and routes complex questions to an Agentforce Service agent through an outbound Omni-Channel flow with a fallback queue. The post covers only the handoff from bot to agent, not the way back."
   - q: "Is an Agentforce agent more expensive than an Einstein Bot?"
-    a: "Usually per conversation, yes. Bot conversations were part of the licence allowance, while an agent consumes 20 Flex Credits per action. In the worked example, three actions per conversation cost $0.30, and the yearly volume exceeds a Max edition pool."
+    a: "Usually per conversation, yes. Bot conversations were part of the license allowance, while an agent consumes 20 Flex Credits per action. In the worked example, three actions per conversation cost $0.30, and the yearly volume exceeds a Max edition pool."
   - q: "How do I test an upgraded agent?"
-    a: "Reuse the example phrases the bot's intents were trained with and the transcripts of failed bot conversations as test cases, run the set several times and agree a pass rate with the head of service before go-live."
+    a: "Reuse the example phrases used to train the bot's intents and the transcripts of failed bot conversations as test cases, run the set several times and agree on a pass rate with the head of service before go-live."
 draft: false
 ---
 
-Convert an Einstein Bot to Agentforce only where customers type questions the bot never understood, and keep short, rule-bound paths menu-driven. Salesforce's Upgrade Agent, announced at Dreamforce 2026, builds an Agentforce Service Agent from your bot in minutes while the bot keeps running, but it is a Labs tool and its output is a draft. The bigger changes sit around the tool: cost moves from a licence allowance to Flex Credits per action, behaviour moves from scripted dialogs to a model that decides, and testing moves from clicking through paths to pass rates.
+Convert an Einstein Bot to Agentforce only where customers type questions the bot never understood, and keep short, rule-bound paths menu-driven. Salesforce's Upgrade Agent, announced at Dreamforce 2026, builds an Agentforce Service Agent from your bot in minutes while the bot keeps running, but it is a Labs tool and its output is a draft. The bigger changes concern everything around the tool: cost moves from a license allowance to Flex Credits per action, behavior moves from scripted dialogs to a model that decides, and testing moves from clicking through paths to pass rates.
 
 ## Do you have to replace your Einstein Bot now?
 
-I found no deadline. On the Salesforce pages I checked by 27 October 2026, Einstein Bots carry no retirement date. The pressure came from the channel instead: Salesforce's developer documentation says legacy Chat was ["scheduled for retirement on February 14, 2026"](https://developer.salesforce.com/docs/atlas.en-us.live_agent_rest.meta/live_agent_rest), with Messaging for In-App and Web as the successor. Salesforce's own [implementation guide for customer-facing agents](https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/agentforce_implementation_customer.pdf) deploys its example agent on an Enhanced Web Chat channel inside an Experience Cloud site, which is the setup many manufacturer portals already use.
+There is no deadline, but there is a clear signal. Einstein Bots carry no retirement date, yet according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.bots_service_enhanced.htm&language=en_US&type=5) "Starting August 17, 2026, Einstein Bots is in Maintenance Mode": existing bots stay supported, new features are released only in Agentforce. Earlier pressure stemmed from the channel: legacy Chat was [retired on February 14, 2026](https://developer.salesforce.com/docs/atlas.en-us.live_agent_rest.meta/live_agent_rest), with Enhanced Chat, formerly Messaging for In-App and Web, as the successor. Salesforce's own [implementation guide for customer-facing agents](https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/agentforce_implementation_customer.pdf) deploys its example agent on an Enhanced Web Chat channel inside an Experience Cloud site, which is the setup many manufacturer portals already use.
 
-The tool itself is item 20 in Salesforce's list of [21 Dreamforce 2026 announcements](https://www.salesforce.com/blog/dreamforce-2026-announcements/): "Click Upgrade Agent on Agentforce Labs to convert an existing Einstein Bot into an Agentforce Service Agent." The post adds that it "builds the new agent in minutes, so your current bot keeps running while you review and adjust the upgraded version." It names no GA or beta status. On its [Agentforce Labs page](https://www.salesforce.com/agentforce/labs/) Salesforce writes: "Everything in Labs is experimental and pre-release." I would run it in a sandbox and treat the result as a first draft. Which parts of a bot carry over, such as dialogs, variables or Apex actions, is not described on any page I could open, so check it in your org before you estimate effort.
+The tool itself is item 20 in Salesforce's list of [21 Dreamforce 2026 announcements](https://www.salesforce.com/blog/dreamforce-2026-announcements/): "Click Upgrade Agent on Agentforce Labs to convert an existing Einstein Bot into an Agentforce Service Agent." The post adds that it "builds the new agent in minutes, so your current bot keeps running while you review and adjust the upgraded version." The announcement does not name a GA or beta status. On its [Agentforce Labs page](https://www.salesforce.com/agentforce/labs/) Salesforce writes: "Everything in Labs is experimental and pre-release." I would run it in a sandbox and treat the result as a first draft. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.bots_service_asa_how_it_works.htm&language=en_US&type=5), the tool groups similar dialogs and intents into subagents, creates agent actions from the action steps and transfers custom conditional logic into the instructions; steps that only navigate the conversation or write feedback logs do not become actions. The documentation does not describe how variables carry over, so check that in your org before you estimate the effort.
 
 ## The script becomes a model that decides for itself
 
-An Einstein Bot follows a script. Salesforce described dialogs as ["the basic 'unit' of conversation"](https://developer.salesforce.com/blogs/2018/06/summer18-einstein-bots-for-the-people), intents as example phrases per dialog and rules as "a conditional engine" for runtime decisions, and bots can "present customers with pre-defined options in menus". When a dealer types something no intent matches, the bot says it did not understand and shows the menu again. Annoying, but visible.
+An Einstein Bot follows a script. Salesforce described dialogs as ["the basic 'unit' of conversation"](https://developer.salesforce.com/blogs/2018/06/summer18-einstein-bots-for-the-people), intents as sets of example phrases per dialog and rules as "a conditional engine" for runtime decisions, and bots can "present customers with pre-defined options in menus". When a dealer types something that does not match any intent, the bot says it did not understand and shows the menu again. That is annoying, but the failure is visible.
 
-An Agentforce Service Agent works with topics, instructions and actions, and a language model chooses the action and phrases the answer. That handles questions like "The spindle motor on serial 4711 failed again, is the part in stock and can a technician come this week?" It also changes how the system fails. An agent rarely says it does not understand. If the knowledge article is outdated or the delivery date from SAP is a week old, it gives a fluent, wrong answer. In machine building the expensive cases are warranty statements, delivery promises and anything that touches safety.
+An Agentforce Service Agent works with topics, instructions and actions, and a language model chooses the action and phrases the answer. That handles questions like "The spindle motor on serial 4711 failed again, is the part in stock and can a technician come this week?" It also changes how the system fails. Unless its instructions force a follow-up question or a handoff, an agent tends to answer rather than admit it does not understand. If the knowledge article is outdated or the delivery date from SAP is a week old, the answer can be fluent and wrong. In machinery manufacturing, the expensive cases are warranty statements, delivery promises and anything that involves safety.
 
 Two consequences:
 
 - **Decisions with consequences move into deterministic logic** behind the agent, for example warranty eligibility or goodwill limits. I describe the mechanics in [Agent Script rules instead of LLM decisions](../agent-script-deterministic-rules/).
-- **Knowledge becomes a production system.** A bot showed the one article a dialog pointed to. An agent reads and rephrases whatever grounding it gets, so every manual and article needs an owner and a review date.
+- **Knowledge becomes a production system.** A bot showed articles through configured dialogs and article answers. An agent reads, combines and rephrases whatever grounding it is given, so every manual and article needs an owner and a review date.
 
 ## The allowance becomes consumption
 
-Einstein Bots were budgeted as an allowance. Salesforce's [Einstein features cheat sheet](https://www.salesforce.com/en-ca/wp-content/uploads/sites/4/documents/datasheets/einstein-features-cheat-sheet.pdf), updated April 2024, says "Service Cloud UE licenses come 25 Einstein Bot conversations PUPM" (per user per month), Enterprise Edition gets them only with the Digital Engagement add-on, and extra capacity was "100 conversations for $50 per month".
+Einstein Bots were budgeted against a license allowance. Salesforce's [Einstein features cheat sheet](https://www.salesforce.com/en-ca/wp-content/uploads/sites/4/documents/datasheets/einstein-features-cheat-sheet.pdf), updated April 2024, says "Service Cloud UE licenses come 25 Einstein Bot conversations PUPM" (per user per month), Enterprise Edition includes them only with the Digital Engagement add-on, and extra capacity was sold as "100 conversations for $50 per month".
 
-Agentforce bills consumption. The [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) lists Flex Credits at $500 per 100,000, and Salesforce's [May 2025 announcement](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) says "One Agentforce action consumes 20 Flex Credits ($0.10 USD)". The alternative is $2 per conversation, and the pricing page states that Flex Credits and conversations "will not be supported in the same org". Prompts and Data 360 grounding come on top of actions; I break them down in [Flex Credits per action](../flex-credits-agentforce-cost-per-action/).
+Agentforce uses consumption-based billing. The [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) lists Flex Credits at $500 per 100,000, and Salesforce's [May 2025 announcement](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) says "One Agentforce action consumes 20 Flex Credits ($0.10 USD)". The alternative is $2 per conversation, and the pricing page states that Flex Credits and conversations "will not be supported in the same org". Prompts and Data 360 grounding are charged in addition to actions; I break them down in [Flex Credits per action](../flex-credits-agentforce-cost-per-action/).
 
-There is a third model. The [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) lists Help Agent resolutions at 400 credits, and Salesforce's [June 2026 announcement](https://www.salesforce.com/de/news/press-releases/2026/06/30/salesforce-agentforce-help-agent/) says there is no charge when the customer is handed to a human. Salesforce announced this for Help Agent, now marketed as Casey, which I cover in [the Casey article](../service-cloud-casey-service-rep-assistant/). I found nothing saying it applies to a custom service agent built from your bot.
+There is a third model. The [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) (as of November 3, 2026) lists Help Agent resolutions at 400 credits, and Salesforce's [June 2026 announcement](https://www.salesforce.com/de/news/press-releases/2026/06/30/salesforce-agentforce-help-agent/) says there is no charge when the customer is handed off to a human. Salesforce announced this for Help Agent, now marketed as Casey, which I cover in [the Casey article](../service-cloud-casey-service-rep-assistant/). Salesforce's Dreamforce post says Upgrade Agent can also convert a bot into a Help Agent, so for simple service portals that is a third option worth pricing separately. For a custom service agent built from your bot, the resolution model does not apply.
 
-The [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) lists Max with "2.75M Flex Credits per org per year". That pool is shared by every agent and every Data 360 job in the org.
+The [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) lists Max as including "2.75M Flex Credits per org per year". That pool is shared by every agent in the org; whether Data 360 jobs draw from it too depends on whether your contract also contains Data Services Credits.
 
 ## Worked example: a dealer portal bot with 4,000 conversations
 
-Assume a machine builder with 300 dealers and service partners on an Experience Cloud portal. All numbers are assumptions for illustration. An Einstein Bot handles 4,000 conversations a month:
+Assume a machine builder with 300 dealers and service partners using an Experience Cloud portal. All numbers are assumptions for illustration. An Einstein Bot handles 4,000 conversations a month:
 
 | Bot path | Share (assumed) | My recommendation |
 |---|---|---|
@@ -71,7 +72,7 @@ Assume a machine builder with 300 dealers and service partners on an Experience 
 
 **Option 1, convert everything.** At an average of three actions per conversation, 4,000 conversations need 240,000 credits a month, $1,200 at list price, or 2.88 million credits a year for actions alone. That exceeds the 2.75 million in a Service Cloud Max org before a single prompt, grounding job or test run. At $2 per conversation the same volume costs $8,000 a month.
 
-**Option 2, hybrid.** The bot keeps the first four paths, 2,600 conversations. The 1,400 free-text conversations go to the agent. Free text tends to need more steps, so assume four actions: 112,000 credits, $560 a month, about 1.34 million a year.
+**Option 2, hybrid.** The bot keeps the first four paths, 2,600 conversations. The 1,400 free-text conversations go to the agent. Free text tends to require more steps, so assume four actions: 112,000 credits, $560 a month, about 1.34 million a year.
 
 ```kennzahlen
 2.88M | credits a year for actions if everything is converted
@@ -81,32 +82,32 @@ source: worked example with assumed values; 20 credits per action from Salesforc
 ```
 
 ```hinweis offen
-I assume the bot paths stay inside the existing licence allowance. Confirm that with your account executive, because a move to the new editions may change it.
+I assume the bot paths stay inside the existing license allowance. Check the math: at 25 bot conversations per user per month, 4,000 conversations need 160 licensed users; with fewer licensed users, each extra block of 100 conversations cost $50 a month in the 2024 cheat sheet. Confirm that with your account executive, because a move to the new editions may change the calculation.
 ```
 
-Cost is the smaller argument for option 2: the free-text bucket is where the bot fails today, while the menu paths already work. A December 2025 post on the Salesforce Developers blog about handing off from Einstein Enhanced Bots to Agentforce agents, written by two Salesforce employees, describes this pattern with Einstein Enhanced Bots: the bot "triages transactions (Log/Status) and routes complex knowledge to an Agentforce Service agent", using a field on the Messaging Session, an outbound Omni-Channel flow and a fallback queue. The post covers only the handoff from bot to agent, not the way back.
+Cost is not the main argument for option 2: the free-text category is where the bot fails today, while the menu paths already work. A December 2025 post on the Salesforce Developers blog about handing off from Einstein Enhanced Bots to Agentforce agents, written by two Salesforce employees, describes this pattern for Einstein Enhanced Bots: the bot "triages transactions (Log/Status) and routes complex knowledge to an Agentforce Service agent", using a field on the Messaging Session, an outbound Omni-Channel flow and a fallback queue. The post covers only the handoff from bot to agent, not the way back.
 
 ## Which flows should stay menu-driven?
 
 My criteria, in this order:
 
-- **Identification and verification.** Customer number, dealer ID and serial number decide what the conversation may see. That should not depend on how a model reads a sentence, and free-text entry points are where [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/) starts.
-- **Data capture with legal weight.** Warranty registration, commissioning date, the contact for safety notices. A menu or form captures exactly the mandatory fields.
-- **Safety-relevant reports.** A breakdown with risk to people goes straight to a human queue with serial number and photos, without a summary in between. For the phone channel I cover the same question in [the breakdown hotline article](../breakdown-hotline-agentforce-voice/).
-- **Single lookups with one key.** Order status by order number is one SAP call. An agent can answer it too, as described in [the SAP order status article](../agentforce-sap-order-status-mulesoft/), but it spends two or more actions on an answer the menu gives in two clicks.
+- **Identification and verification.** Customer number, dealer ID and serial number decide what the conversation may see. That should not depend on how a model reads a sentence, and free-text entry points are one place where [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/) can start. A menu does not replace authorization, though: the server still checks every value against the signed-in portal user.
+- **Data capture with legal weight.** Warranty registration, commissioning date and the contact for safety notices. A menu or form captures exactly the mandatory fields.
+- **Safety-relevant reports.** A breakdown that poses a risk to people goes straight to a human queue with serial number and photos, without an intermediate summary. For the phone channel I cover the same question in [the breakdown hotline article](../breakdown-hotline-agentforce-voice/).
+- **Single lookups with one key.** Order status by order number is one SAP call. An agent can answer it too, as described in [the SAP order status article](../agentforce-sap-order-status-mulesoft/), but depending on the build it may use one or more billable actions to produce an answer that the menu provides in two clicks.
 - **Promises with liability**, such as confirmed delivery dates.
 
-Convert to the agent: troubleshooting questions answered from manuals, mixed questions, dealers writing in their own language and follow-up questions in the same conversation.
+Convert these to the agent: troubleshooting questions answered from manuals, mixed questions, dealers writing in their own language and follow-up questions in the same conversation.
 
-If you move everything to Agentforce anyway, the deterministic paths can live inside the agent as Agent Script logic, but each step then runs on the agent's meter.
+If you move everything to Agentforce anyway, the deterministic paths can be implemented inside the agent as Agent Script logic, but every action the script calls is then billed on the agent's meter.
 
 ## How do testing and go-live change?
 
-A bot is tested by walking each dialog path once: same input, same output. An agent needs a test set that runs several times against an agreed pass rate. The implementation guide scores response quality from 0 to 5 and counts 3 or higher as a pass, while topic and action checks are pass or fail. Thresholds and tooling are in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). Test runs in a sandbox cost 16 credits per action according to the rate card.
+A bot is tested by following its dialog paths, including unrecognized input and backend errors, and the same input leads to the same path. An agent needs a test set that is run several times and evaluated against an agreed pass rate. The implementation guide scores response quality from 0 to 5 and counts 3 or higher as a pass, while topic and action checks are pass or fail. Thresholds and tooling are covered in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). Test runs in a sandbox cost 16 credits per action according to the rate card.
 
-The bot gives you a head start. The example phrases each intent was trained with, plus the transcripts of the "something else" path, are a ready-made test set of real dealer questions.
+The bot gives you a head start. The example phrases used to train each intent, plus the transcripts of the "something else" path, are a ready-made test set of real dealer questions.
 
-This split is an [architecture decision](../../services/salesforce-architecture/) worth making before the first upgrade click. The order I would follow:
+This split is an [architecture decision](../../services/salesforce-architecture/) worth making before you click Upgrade Agent for the first time. The order I would follow:
 
 ```schritte
 Review the paths

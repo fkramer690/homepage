@@ -25,7 +25,7 @@ faq:
   - q: "Does SAP stay in place with Revenue Cloud?"
     a: "Yes, in every manufacturing setup I would plan. SAP usually keeps the material master, the sales order for delivery and the machine invoice. Which system calculates customer prices has to be decided once, for every price type."
   - q: "Should a new customer still buy Salesforce CPQ?"
-    a: "That is no longer possible. Salesforce does not sell new CPQ licences to new customers. Existing customers can keep using CPQ, add users and renew, and there is no forced migration."
+    a: "That is no longer possible. Salesforce does not sell new CPQ licenses to new customers. Existing customers can keep using CPQ, add users and renew, and there is no forced migration."
 draft: false
 ---
 
@@ -33,7 +33,7 @@ Revenue Cloud is Salesforce's quote-to-cash product on core platform objects: pr
 
 ## What does Revenue Cloud cover?
 
-Revenue Cloud is the route from product catalog to invoice, built on standard objects of the Salesforce platform instead of a managed package. The Trailhead module [Agentforce Revenue Management Foundations](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management) lists its components:
+Revenue Cloud covers everything from the product catalog to the invoice and uses the platform's standard objects for it, not a managed package. The Trailhead module [Agentforce Revenue Management Foundations](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management) lists its components:
 
 | Component | What it does for a manufacturer |
 |---|---|
@@ -44,19 +44,19 @@ Revenue Cloud is the route from product catalog to invoice, built on standard ob
 | Transaction Management | Quotes and order capture across channels |
 | Configure, Price & Quote | A spreadsheet-like quote editor that groups products |
 | Asset Lifecycle Management | The installed base of what was sold, with recurring revenue |
-| Salesforce Contracts | Contracts, obligations and digitised legacy contracts |
-| Dynamic Revenue Orchestrator | Everything after the order, up to fulfilment |
+| Salesforce Contracts | Contracts, obligations and digitized legacy contracts |
+| Dynamic Revenue Orchestrator | Everything after the order, up to fulfillment |
 | Invoice Management | Invoices for delivered products and services |
 
-The [product page](https://www.salesforce.com/uk/products/revenue-cycle-management) sums it up as one product that "unifies pricing, quoting, contracting, and billing on a single data model", with "a single, attribute-based catalogue" across all channels. Trailhead adds that composable APIs let other clouds use the catalog and pricing, with Agentforce Manufacturing as the example. For Winter '27, the [release highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management) name up to 15,000 transaction lines per deal and agents for buyer self-service, partner quoting and renewal preparation.
+The [product page](https://www.salesforce.com/uk/products/revenue-cycle-management) sums it up as one product that "unifies pricing, quoting, contracting, and billing on a single data model", with "a single, attribute-based catalog" across all channels. Trailhead adds that composable APIs let other clouds use the catalog and pricing, with Agentforce Manufacturing as the example. For Winter '27, the [release highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management) name up to 15,000 transaction lines per deal and agents for buyer self-service, partner quoting and renewal preparation.
 
-For the first decision, two points matter. Revenue Cloud is a different product from Salesforce CPQ, which the [CPQ end-of-sale page](https://www.salesforce.com/sales/cpq/end-of-life/) describes as a managed package around seller-led quoting, with Revenue Cloud Advanced as its successor "built natively on the Salesforce platform". And Salesforce no longer sells CPQ licences to new customers, so a new project chooses between Revenue Cloud, a partner product and a custom approach.
+For the first decision, two points matter. Revenue Cloud is a different product from Salesforce CPQ, which the [CPQ end-of-sale page](https://www.salesforce.com/sales/cpq/end-of-life/) describes as a managed package around seller-led quoting, with Revenue Cloud Advanced as its successor "built natively on the Salesforce platform". And Salesforce no longer sells CPQ licenses to new customers, so a new project chooses between Revenue Cloud, a partner product and a custom approach.
 
 ## When does Revenue Cloud pay off for a manufacturer?
 
 I look for these signals in the current quoting process:
 
-| Signal | How you recognise it |
+| Signal | How you recognize it |
 |---|---|
 | Variants with rules | Machines with dozens of options that require or exclude each other. A configurator that checks combinations saves rework in order processing. |
 | Service on the same quote | A spare parts package, a maintenance contract and a remote monitoring subscription sold together with the machine. |
@@ -89,20 +89,20 @@ The [pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-managem
 
 | Edition | List price | Contains |
 |---|---|---|
-| Revenue Cloud Growth | €150 / $150 | Quoting and configurator, order capture, subscriptions |
+| Revenue Cloud Growth | €150 / $150 | Configurator and quote, capturing orders, selling subscriptions |
 | Revenue Cloud Advanced | €200 / $200 | Growth plus contracts and orders, consumption and invoicing, AI and analytics |
 
 The FAQ on that page says Revenue Cloud is a paid add-on to a Sales Cloud subscription. The comparison table marks four add-ons as "Available for purchase": Contract Lifecycle Management for Growth, and Dynamic Revenue Orchestration, Invoice Management and External User Support for Advanced. The two in the middle carry the note "Freemium access available", without saying what is included. Revenue Cloud Billing has no published list price. According to the [Billing rate sheet from February 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf), it consumes one Billing Event per $50 of invoice amount, with no rollover past the order end date.
 
-A calculation at list price, as an assumption: 50 users who create quotes get Revenue Cloud Advanced, which is 50 × €200 × 12 = €120,000 a year. If they do not have Sales Cloud yet, Sales Cloud Core at €195 per user and month according to the [Sales Cloud pricing page](https://www.salesforce.com/eu/sales/pricing/) adds €117,000. Implementation, the SAP integration and operations come on top.
+Worked example at list price: if 50 quote creators work with Revenue Cloud Advanced, that costs 50 × €200 × 12, so €120,000 per year. If they do not have Sales Cloud yet, Sales Cloud Core at €195 per user and month according to the [Sales Cloud pricing page](https://www.salesforce.com/eu/sales/pricing/) adds €117,000. Implementation, the SAP integration and operations come on top.
 
-The number of users moves the budget more than the edition does. I group users by what they do with quotes: create, approve, only read, maintain the catalog, or quote as a dealer.
+The number of users affects the budget more than the edition does. I group users by what they do with quotes: create, approve, only read, maintain the catalog, or quote as a dealer.
 
 ```hinweis offen
-For every group except the users who create quotes, get the licence requirement from Salesforce in writing.
+For every group except the users who create quotes, get the license requirement from Salesforce in writing.
 ```
 
-Add-ons, Billing Events and the licence forecast are in [Revenue Cloud pricing: Growth, Advanced and add-ons](../../../blog/revenue-cloud-editions-pricing/), and an independent check of a quote is part of [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/).
+Add-ons, Billing Events and the license forecast are in [Revenue Cloud pricing: Growth, Advanced and add-ons](../../../blog/revenue-cloud-editions-pricing/), and an independent check of a quote is part of [make-or-buy and license forecasts](../../../services/make-or-buy-licences/).
 
 ## These tasks stay in SAP
 
@@ -133,21 +133,22 @@ If invoices do move, [Revenue Cloud Billing](https://www.salesforce.com/sales/re
 Three other Salesforce products touch the same deals:
 
 - **Manufacturing Cloud** measures run-rate business: sales agreements with plan against actuals, account forecasts and rebates. A configured quote from Revenue Cloud can become a sales agreement. That side is covered in the chapter [agreements and forecasting](../../manufacturing-cloud/agreements-and-forecasting/) of the Manufacturing Cloud masterclass.
-- **B2B Commerce** lets dealers and customers reorder known items in a store. For rule-based prices, configurable bundles and Request for Quote, [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_revenue_intro.htm&language=en_US&type=5) names a Commerce Growth or Advanced licence together with Revenue Cloud Advanced. When a store pays off is in the chapter [is B2B Commerce worth it?](../../b2b-commerce/b2b-commerce-worth-it-overview/).
+- **B2B Commerce** lets dealers and customers reorder known items in a store. For rule-based prices, configurable bundles and Request for Quote, [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_revenue_intro.htm&language=en_US&type=5) names a Commerce Growth or Advanced license together with Revenue Cloud Advanced. When a store pays off is in the chapter [is B2B Commerce worth it?](../../b2b-commerce/b2b-commerce-worth-it-overview/).
 - **Field Service** maintains the installed machines. Revenue Cloud keeps what was sold as assets, Field Service works on the machine with its serial number. How the two meet is part of chapter 3.
 
-The overlaps are catalog, price and quote. One catalog, one price master and one quote model, with exactly one product leading each process step. The decision table is in [Revenue Cloud, Manufacturing Cloud or B2B Commerce?](../../../blog/revenue-cloud-vs-manufacturing-cloud-b2b-commerce/).
+The overlaps are catalog, price and quote. The rule: one catalog, one price master and one quote model, with exactly one product leading each process step. The decision table is in [Revenue Cloud, Manufacturing Cloud or B2B Commerce?](../../../blog/revenue-cloud-vs-manufacturing-cloud-b2b-commerce/).
 
 ## When is Salesforce the wrong answer?
 
-For some manufacturers Revenue Cloud is too much:
+For some manufacturers Revenue Cloud is too much. I check which of the three building blocks from this chapter would actually be used:
 
-- **The quote is an SAP price lookup.** Sales picks material numbers, SAP calculates. Salesforce then only needs an interface to SAP.
-- **Few products, few variants.** A range of 200 items without options does not need a constraint-based configurator.
-- **Rules live elsewhere and stay there.** If variant rules sit in SAP or in the heads of application engineers and nobody will maintain them twice, the configurator stays empty.
-- **No recurring revenue.** If every sale is a one-off machine and the invoice stays in SAP, the strongest parts go unused.
+| Building block | Stays unused when | Then this is enough |
+|---|---|---|
+| Pricing | Sales picks material numbers and SAP calculates the price | Sales Cloud with a price lookup in SAP |
+| Configurator | The range has hardly any variants, or the variant rules stay in SAP or with application engineering | Product selection without a constraint engine |
+| Contracts and billing | Every machine is sold as a one-off and SAP writes the invoice | Order to SAP, no billing in Salesforce |
 
-The alternatives are Sales Cloud quotes with an ERP interface, a CPQ product from a partner, or a custom approach on the platform. I describe the last route in [from quote to sales agreement](../../../blog/quote-to-sales-agreement-product-configurator/).
+If all three rows apply, Sales Cloud quotes with an ERP interface, a CPQ product from a partner, or a custom approach on the platform are the better routes. I weigh this in detail in [Revenue Cloud for manufacturers: when is it worth it?](../../../blog/revenue-cloud-worth-it-manufacturers/). I describe the last route in [from quote to sales agreement](../../../blog/quote-to-sales-agreement-product-configurator/).
 
 ## Worked example: 25 base models with remote monitoring
 
@@ -170,13 +171,13 @@ Invoices stay in SAP in year one; Billing becomes a question once subscriptions 
 
 ## First step: price, rules and invoice into the decision log
 
-Partners ask about features. The decisions that drive cost and timeline belong to the company:
+A partner asks about features. But the company itself makes the decisions that cost and timeline depend on:
 
 | Decision | What it includes |
 |---|---|
-| Price master | SAP conditions or Salesforce Pricing, per price type, never both for the same price. |
-| Configurator owner | Who maintains variant rules after go-live, and in which system. |
+| Price master | Per price type either SAP conditions or Salesforce Pricing, never both for one and the same price. |
+| Configurator owner | Who keeps the variant rules current after go-live, and in which system they live. |
 | Invoice owner | SAP or Revenue Cloud Billing. Finance decides, not the CRM team. |
 | CPQ coexistence | Existing CPQ customers are under no time pressure: the CPQ page says "There is no forced migration", but also that CPQ "will not receive new features". A typical migration runs three to six months according to the same page. The details are in chapter 5, [from CPQ to Revenue Cloud](../from-cpq-to-revenue-cloud/). |
 
-Write these four answers into the decision log before you ask for estimates. They are part of my work on [Salesforce architecture](../../../services/salesforce-architecture/). With them settled, [chapter 2 on catalog, configurator and pricing](../product-catalog-configurator-pricing/) covers how the products and prices are modelled; all chapters are on the [overview page](../).
+Write these four answers into the decision log before you ask for estimates. They are part of my work on [Salesforce architecture](../../../services/salesforce-architecture/). With them settled, [chapter 2 on catalog, configurator and pricing](../product-catalog-configurator-pricing/) covers how the products and prices are modeled; all chapters are on the [overview page](../).
