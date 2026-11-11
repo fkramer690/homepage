@@ -43,6 +43,8 @@ Rules for structure, SEO and AI search are in [docs/blog-guidelines.md](docs/blo
 
 Open ideas and planned articles are in [docs/backlog.md](docs/backlog.md) (German, single source of truth; the repo is public, so no client names or internal notes there).
 
+Positioning texts and references (case studies) follow [docs/positioning-and-references.md](docs/positioning-and-references.md).
+
 ### Service pages
 
 Each service on the home page links to its own page under `/leistungen/` (DE) and `/en/services/` (EN), built from Markdown files in `src/content/services/<lang>/` by `src/components/ServicePage.astro`. Rules are in [docs/service-pages.md](docs/service-pages.md); the same build check applies.
