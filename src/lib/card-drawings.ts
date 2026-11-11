@@ -942,6 +942,26 @@ const drawings: Record<string, Drawing> = {
     ${check(170, 104)}${t(182, 110, l('lessons from failures', 'Lehren aus Fehlern'), { size: 7 })}
     ${tag(18, 132, 170, l('references: briefed by partner', 'Referenzen: vom Partner gebrieft'))}`,
 
+  'fit-gap-analysis-salesforce': (l) => `
+    ${t(18, 20, l('3 RATINGS · DECIDE EVERY GAP', '3 BEWERTUNGEN · JEDE LÜCKE ENTSCHEIDEN'), { fill: D, size: 7 })}
+    ${[['Fit', G], [l('Configuration', 'Konfiguration'), G], ['Gap', C]]
+      .map(([s, c], i) => box(18 + i * 96, 28, 88, 24, c) + t(62 + i * 96, 43, s, { size: 7.5, anchor: 'middle', fill: c })).join('')}
+    <path d="M18 66H302" stroke="${L}"/>
+    ${t(18, 82, l('SOLUTION PER GAP', 'LÖSUNGSWEG JE GAP'), { fill: D, size: 7 })}
+    ${[l('Process', 'Prozess'), 'AppExchange', l('Custom build', 'Eigenbau'), l('Other system', 'Fremdsystem')]
+      .map((s, i) => box(18 + i * 72, 90, 66, 22) + t(51 + i * 72, 104, s, { size: 7, anchor: 'middle' })).join('')}
+    ${tag(18, 128, 162, l('Edge cases before fixed price', 'Randfälle vor dem Festpreis'))}${t(188, 141, l('10 exceptions per process', '10 Ausnahmen je Prozess'), { size: 7 })}`,
+
+  'salesforce-renewal-negotiation': (l) => `
+    ${t(18, 20, l('RENEWAL · COUNT BACK FROM CONTRACT END', 'VERLÄNGERUNG · RÜCKWÄRTS VOM VERTRAGSENDE'), { fill: D, size: 7 })}
+    <path d="M30 50H290" stroke="${G}" stroke-width="1.2"/>
+    ${[[l('6 mo', '6 Mon.'), l('Stock', 'Bestand'), G], [l('4 mo', '4 Mon.'), l('Offer', 'Angebot'), G], [l('2 mo', '2 Mon.'), l('Negotiate', 'Verhandeln'), G], [l('30 days', '30 Tage'), l('Notice', 'Frist'), G], [l('End', 'Ende'), l('+1 year', '+1 Jahr'), C]]
+      .map(([a, b, c], i) => dot(34 + i * 63, 50, c) + t(34 + i * 63, 40, a, { size: 7, anchor: 'middle', fill: c }) + t(34 + i * 63, 66, b, { size: 7, anchor: 'middle', fill: c })).join('')}
+    <path d="M18 80H302" stroke="${L}"/>
+    ${cross(24, 96)}${t(36, 99, l('fewer licenses = new unit price', 'weniger Lizenzen = neuer Stückpreis'), { size: 7 })}
+    ${check(20, 108)}${t(36, 114, l('price cap in the order form', 'Preisobergrenze im Order Form'), { size: 7 })}
+    ${tag(18, 128, 130, l('FY end 31 January', 'FY-Ende 31. Januar'))}${t(158, 141, l('roadmap for 2 to 3 years', 'Roadmap für 2 bis 3 Jahre'), { size: 7 })}`,
+
   'switch-salesforce-partner': (l) => `
     ${t(18, 20, l('FOUR PHASES', 'VIER PHASEN'), { fill: D, size: 7 })}
     ${[[l('Secure', 'Sichern'), G], [l('Assess', 'Analysieren'), G], [l('Select', 'Auswählen'), G], [l('Hand over', 'Übergeben'), C]]

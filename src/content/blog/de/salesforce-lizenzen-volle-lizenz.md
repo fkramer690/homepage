@@ -109,7 +109,7 @@ Bei bestehenden Orgs hilft ein Blick auf die Login-Historie und die zuletzt bear
 
 Für seltene Nutzer gibt es außerdem eine nutzungsabhängige Variante: Salesforce verkauft [Platform-Logins](https://www.salesforce.com/platform/enterprise-app-development/pricing/) mit ungefähr denselben Rechten wie Platform Starter. Für Freigeber, die sich nur wenige Male im Jahr anmelden, lohnt der Vergleich mit benannten Lizenzen.
 
-Der Zeitpunkt zählt auch. Das [Geschäftsjahr von Salesforce](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Fourth-Quarter-Fiscal-2026-Results/default.aspx) endet am 31. Januar. Das kann den Zeitpunkt beeinflussen, Rabatte und Paketkonditionen sind aber kundenspezifisch. Roadmap-Produkte würde ich nur frühzeitig einbeziehen, wenn Startdaten, Reduktionsrechte und erwartete Nutzung den Gesamtvertrag günstiger machen; sonst werden sie Shelfware.
+Der Zeitpunkt zählt auch. Das [Geschäftsjahr von Salesforce](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Fourth-Quarter-Fiscal-2026-Results/default.aspx) endet am 31. Januar. Das kann den Zeitpunkt beeinflussen, Rabatte und Paketkonditionen sind aber kundenspezifisch. Roadmap-Produkte würde ich nur frühzeitig einbeziehen, wenn Startdaten, Reduktionsrechte und erwartete Nutzung den Gesamtvertrag günstiger machen; sonst werden sie Shelfware. Was der Rahmenvertrag zu Kündigung, Reduzierung und Neubepreisung regelt, steht in [Salesforce-Lizenzen verhandeln vor der Verlängerung](../salesforce-lizenzen-verhandeln/).
 
 ## Wann ist die volle Lizenz trotzdem richtig?
 
