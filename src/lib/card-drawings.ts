@@ -1275,6 +1275,18 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 136, l('1 action = 20 Flex Credits = $0.10', '1 Aktion = 20 Flex Credits = 0,10 €'), { fill: D, size: 7.5 })}
     ${t(18, 150, l('sandbox: 16 credits per action', 'Sandbox: 16 Credits pro Aktion'), { size: 7 })}`,
 
+  'salesforce-forward-deployed-engineer': (l) => `
+    ${t(18, 20, l('FDE POD · ONE USE CASE', 'FDE-POD · EIN ANWENDUNGSFALL'), { fill: D, size: 7 })}
+    ${box(18, 30, 84, 36)}${t(60, 45, '2 FDEs', { fill: D, size: 7.5, anchor: 'middle' })}${t(60, 58, l('+ strategist', '+ Strategist'), { size: 7, anchor: 'middle' })}
+    ${arrow(102, 48, 122)}
+    ${box(122, 30, 84, 36, C)}${t(164, 45, 'AGENTFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(164, 58, l('your org', 'Ihre Org'), { fill: C, size: 7, anchor: 'middle' })}
+    ${arrow(206, 48, 226, C)}
+    ${box(226, 30, 76, 36)}${t(264, 45, l('PRODUCTION', 'PRODUKTION'), { fill: D, size: 7.5, anchor: 'middle' })}${t(264, 58, l('+ hypercare', '+ Hypercare'), { size: 7, anchor: 'middle' })}
+    <path d="M18 80H302" stroke="${L}"/>
+    ${t(18, 96, l('STAYS ON THE CLIENT SIDE', 'BLEIBT AUF KUNDENSEITE'), { fill: D, size: 7 })}
+    ${[l('decisions within a week', 'Entscheidungen in einer Woche'), l('data access, permissions', 'Datenzugang, Berechtigungen'), l('owner after hypercare', 'Owner nach der Hypercare')].map((s, i) => check(18, 104 + i * 14, i === 2 ? C : G) + t(32, 110 + i * 14, s, { size: 7 })).join('')}
+    ${box(196, 104, 106, 36)}${t(249, 119, 'Gartner', { fill: D, size: 7, anchor: 'middle' })}${t(249, 132, l('> $200k per quarter', '> 200 Tsd. $/Quartal'), { size: 7, anchor: 'middle' })}`,
+
   'agent-script-deterministic-rules': (l) => `
     ${box(18, 26, 86, 50)}${t(61, 44, l('DEALER', 'HÄNDLER'), { fill: D, anchor: 'middle' })}${t(61, 58, l('free text', 'Freitext'), { size: 7, anchor: 'middle' })}
     ${arrow(104, 51, 124)}

@@ -2,7 +2,7 @@
 title: "Testing Agentforce agents: when is one ready to go live?"
 description: "When is an Agentforce agent ready for production? Testing Center, sf agent test, the LLM judge, pass-rate gates and monitoring, explained for manufacturers."
 pubDate: 2026-10-27
-updatedDate: 2026-11-09
+updatedDate: 2026-11-11
 lang: en
 slug: testing-agentforce-agents-before-go-live
 translationKey: testing-agentforce-agents
@@ -36,6 +36,8 @@ Testing Agentforce agents should end with a number that determines whether they 
 An Apex unit test is designed to give the same result for the same controlled input: green or red. An agent built on a language model can answer the same dealer question in two different ways across two runs. Both answers may be fine, or one may be wrong. Anthropic describes this in its [guide to agent evaluations](https://anthropic.com/engineering/demystifying-evals-for-ai-agents): because model outputs vary between runs, you run several trials per task. The same guide shows why one green run proves little. An agent that solves a task in 75 percent of trials passes three trials in a row only about 42 percent of the time.
 
 So the question becomes: how often does it pass, and which failures can we live with? A clumsy delivery date summary is annoying. A wrong statement that a machine is still under warranty can lead to a credit note. These failures need different gates.
+
+Salesforce learned the same in its own rollouts. According to [Salesforce Engineering](https://engineering.salesforce.com/accelerating-agentforce-deployments-from-6-months-to-3-weeks-across-150-enterprises/), single-utterance tests were not enough for its forward deployed engineers to validate complex conversations. The team therefore built an automated multi-turn testing framework that catches failures before many customers see them.
 
 ## Salesforce's tools for testing agents
 

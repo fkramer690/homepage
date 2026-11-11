@@ -2,7 +2,7 @@
 title: "Agentforce-Agenten testen: wann ist einer produktionsreif?"
 description: "Wann ist ein Agentforce-Agent reif für die Produktion? Testing Center, sf agent test, LLM als Prüfer, Passraten-Schwellen und Monitoring für Hersteller erklärt."
 pubDate: 2026-10-27
-updatedDate: 2026-11-09
+updatedDate: 2026-11-11
 lang: de
 slug: agentforce-agenten-testen-freigeben
 translationKey: testing-agentforce-agents
@@ -36,6 +36,8 @@ Wer Agentforce-Agenten testet, braucht am Ende eine Zahl, die über den Go-live 
 Ein Apex-Unit-Test ist so gebaut, dass er bei gleicher kontrollierter Eingabe dasselbe Ergebnis liefert: grün oder rot. Ein Agent auf Basis eines Sprachmodells kann dieselbe Händlerfrage in zwei Läufen unterschiedlich beantworten. Beide Antworten können passen, oder eine ist falsch. Anthropic beschreibt das in seinem [Leitfaden zu Agenten-Evaluierungen](https://anthropic.com/engineering/demystifying-evals-for-ai-agents): Weil Modellausgaben zwischen Läufen schwanken, prüft man jede Aufgabe mehrfach. Derselbe Leitfaden zeigt, warum ein grüner Lauf wenig beweist. Ein Agent, der eine Aufgabe in 75 Prozent der Versuche löst, besteht drei Versuche hintereinander nur in etwa 42 Prozent der Fälle.
 
 Die Frage lautet also: Wie oft besteht er, und mit welchen Fehlern können wir leben? Eine holprige Zusammenfassung eines Liefertermins ist ärgerlich. Eine falsche Aussage, die Maschine sei noch in der Garantie, kostet eine Gutschrift. Diese Fehler brauchen unterschiedliche Schwellen.
+
+Auch Salesforce hat das in eigenen Einführungen gelernt. Laut [Salesforce Engineering](https://engineering.salesforce.com/accelerating-agentforce-deployments-from-6-months-to-3-weeks-across-150-enterprises/) reichten den Forward Deployed Engineers Tests mit einzelnen Sätzen nicht, um komplexe Gespräche abzusichern. Das Team baute deshalb ein automatisiertes Framework für Tests über mehrere Gesprächsrunden, das Fehler findet, bevor viele Kunden sie sehen.
 
 ## Die Testwerkzeuge von Salesforce
 

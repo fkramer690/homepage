@@ -13,7 +13,7 @@ takeaways:
   - "Executive Order 14434 applies only to US federal agencies. Salesforce, its partners and manufacturers in Europe do not have to rename anything."
   - "Since 2026 partners earn on consumption and on agents in production. When your credit consumption rises, your partner benefits too."
   - "Measure partners on outcomes you can check yourself, cap Flex Credits and write rules for AI-assisted coding into the contract."
-articles: [aiforce-salesforce-in-claude-slack, fixed-price-ai-salesforce-partners, partners-ai-coding-sow-rules]
+articles: [aiforce-salesforce-in-claude-slack, fixed-price-ai-salesforce-partners, partners-ai-coding-sow-rules, salesforce-forward-deployed-engineer]
 faq:
   - q: "What is AIforce in Salesforce?"
     a: "AIforce is an interface layer Salesforce announced at Dreamforce on 15 September 2026. It makes Salesforce data, workflows and permissions usable from Claude, Slack and Lightning, and consists of Claudeforce, Slackforce, Agentforce Coworker and the Headless Toolkit."

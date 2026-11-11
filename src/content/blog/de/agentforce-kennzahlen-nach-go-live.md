@@ -2,7 +2,7 @@
 title: "Agentforce-Kennzahlen nach Go-live: lohnt sich der Agent?"
 description: "Welche Agentforce-Kennzahlen 90 Tage nach Go-live zeigen, ob sich ein Agent für Hersteller lohnt, woher jede Zahl kommt und wann Sie ihn abschalten sollten."
 pubDate: 2026-10-27
-updatedDate: 2026-11-09
+updatedDate: 2026-11-11
 lang: de
 slug: agentforce-kennzahlen-nach-go-live
 translationKey: agentforce-kpis-after-go-live
@@ -95,7 +95,7 @@ Die Entscheidung an Tag 90: Der Auftragsstatus bleibt und geht an die nächste H
 
 ## Wann sollten Sie einen Agenten abschalten?
 
-Gartner [erwartet](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027), dass bis Ende 2027 mehr als 40 Prozent der Projekte mit agentischer KI eingestellt werden, wegen steigender Kosten, unklarem Geschäftsnutzen oder unzureichender Risikokontrollen. Eine Abschaltregel, die vor dem Go-live feststeht, macht daraus eine Routineentscheidung. Ich würde diese Auslöser mit der Serviceleitung vereinbaren und pro Subagent anwenden:
+Gartner [erwartet](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027), dass bis Ende 2027 mehr als 40 Prozent der Projekte mit agentischer KI eingestellt werden, wegen steigender Kosten, unklarem Geschäftsnutzen oder unzureichender Risikokontrollen. Für anbietergeführte KI-Einsätze, etwa mit [Forward Deployed Engineers](../forward-deployed-engineer-salesforce/), erwartet Gartner laut [CIO Dive](https://www.ciodive.com/news/can-forward-deployed-engineers-fdes-fix-ai-gartner/831833/) sogar, dass rund 70 Prozent bis 2028 abgebrochen werden. Eine Abschaltregel, die vor dem Go-live feststeht, macht daraus eine Routineentscheidung. Ich würde diese Auslöser mit der Serviceleitung vereinbaren und pro Subagent anwenden:
 
 1. **Sofort:** ein bestätigter Verstoß gegen eine harte Regel, etwa eine falsche Garantieaussage oder Auftragsdaten eines anderen Händlers. Der Subagent bleibt aus, bis die Korrektur die Regressionstests aus [Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) besteht.
 2. **Nach zwei Verbesserungsrunden von je 30 Tagen:** Eskalationsquote über 40 Prozent oder Task-Resolution-Quote unter 40 Prozent.

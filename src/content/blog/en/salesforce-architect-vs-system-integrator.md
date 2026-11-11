@@ -20,6 +20,8 @@ faq:
     a: "A system integrator is a company that implements Salesforce and staffs a team of consultants, developers and its own architects. A Salesforce architect is a role. It can sit with the system integrator or on the client side, and that decides whose interests it represents."
   - q: "Do I need my own architect if my partner provides a solution architect?"
     a: "Not always. With one partner, a manageable scope and internal IT that can judge designs, the partner's solution architect is enough. When several partners work in one org or internal technical experience is missing, you need a voice of your own."
+  - q: "Does a Salesforce forward deployed engineer replace the architect?"
+    a: "No. An FDE pod from Salesforce or a partner takes one Agentforce use case into production and then leaves the project. The target picture, standards across all partners and decisions in the architecture board remain client-side tasks."
   - q: "How much time does a client-side architect need?"
     a: "At the start often three to five days a week, when target picture, standards and partner selection are on the table. Once the programme runs steadily, two days a week usually cover reviews, decisions and the meeting with the technical leads."
   - q: "Does a client-side architect work against the partner?"
@@ -104,6 +106,12 @@ In one programme I supported, every pull request went across my desk at first. O
 ```
 
 A client-side architect does not have to stay forever. The goal is for the role to be filled internally at some point, with documented standards and a colleague who takes over reviews and the meeting with the technical leads.
+
+## And the forward deployed engineer?
+
+Since 2025, Salesforce has deployed its own forward deployed engineers for Agentforce, FDEs for short: pods of two engineers and a deployment strategist who build an agent directly in the client's org and stay with it into production. Since April 2026, partners in the FDE Partner Network provide such engineers too, among them Accenture and Deloitte. That adds a third role next to the system integrator and the client-side architect.
+
+An FDE works for one use case and for their employer's product. They report platform limits back to Salesforce product management and leave the project after hypercare. They do not answer the questions where client and system integrator have different interests: scope, make or buy, repository and pipeline, a second partner. They even need more groundwork on the client side, because they build fast and wait on decisions about data, permissions and approvals. What an FDE costs and when one pays off is covered in [Salesforce forward deployed engineers explained](../salesforce-forward-deployed-engineer/).
 
 ## What a client-side architect costs
 

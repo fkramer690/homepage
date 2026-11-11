@@ -36,6 +36,7 @@
     "card:salesforce-architect-or-system-integrator": {"title": "Kartenskizze Salesforce-Architekt oder Systemintegrator", "proposal": 1, "rating": null},
     "card:agent-api-own-apps": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},
     "card:agent-context-engine": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},
+    "card:salesforce-forward-deployed-engineer": {"title": "Kartenskizze FDE bei Salesforce", "proposal": 1, "rating": null},
     "card:agent-script-deterministic-rules": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},
     "card:agentforce-1-field-service-bundle": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},
     "card:agentforce-a2a-multi-agent": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},
