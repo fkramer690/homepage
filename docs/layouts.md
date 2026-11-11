@@ -352,6 +352,12 @@ for every service page.
   reading area. Cards and boxes on grey bands are white.
 - The running text, FAQ and author box stay in one white band with the
   ReadingGrid.
+- Few frames in the reading column (variant A "ruhiger", chosen 2026-11-11 after
+  the AI-slop re-audit, finding ND1): typical situations, "Was Sie erhalten",
+  the reading list with its masterclass row, "Woran Sie Fortschritt sehen" and
+  "Typischer Einsatz" stand without box, border or tint, separated only by
+  dashed lines. Only "Projekt im Fokus", the content blocks in the body and the
+  author box keep a frame, so they stand out.
 
 ## Profile card ("Steckbrief", start page About)
 
