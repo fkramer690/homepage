@@ -92,7 +92,7 @@ Region der Verarbeitung, Liste der Unterauftragsverarbeiter, Aufbewahrung von Or
 
 ## Der Health Check von MeshMesh ersetzt keine eigene Prüfung
 
-Der Screenshot in Mike Wolffs Beitrag zeigt einen Data 360 Health Check. Seit dem [9. November 2026](https://docs.meshmesh.io/releases/2026-11-09) bietet MeshMesh dafür das Rezept „Audit Snapshot of Org Health“ an. Laut [Beschreibung des Rezepts](https://docs.meshmesh.io/recipes/audit-snapshot-of-org-health) liest es die Org nur, braucht 30 bis 45 Minuten und einen Admin-Nutzer mit Lesezugriff auf das Setup. Das Ergebnis ist ein Score über sechs Dimensionen, eine Lizenzübersicht mit aktiven und ungenutzten Plätzen, ein Funnel von der Datenaufnahme bis zur Aktivierung in Data Cloud, ein Abschnitt zu Sicherheit und Code sowie bis zu 15 priorisierte Maßnahmen.
+Das Video in Mike Wolffs Beitrag zeigt einen Data 360 Health Check. Seit dem [9. November 2026](https://docs.meshmesh.io/releases/2026-11-09) bietet MeshMesh dafür das Rezept „Audit Snapshot of Org Health“ an. Laut [Beschreibung des Rezepts](https://docs.meshmesh.io/recipes/audit-snapshot-of-org-health) liest es die Org nur, braucht 30 bis 45 Minuten und einen Admin-Nutzer mit Lesezugriff auf das Setup. Das Ergebnis ist ein Score über sechs Dimensionen, eine Lizenzübersicht mit aktiven und ungenutzten Plätzen, ein Funnel von der Datenaufnahme bis zur Aktivierung in Data Cloud, ein Abschnitt zu Sicherheit und Code sowie bis zu 15 priorisierte Maßnahmen.
 
 Als Startpunkt für eine Bestandsaufnahme ist das brauchbar, und in der Beta kostet es nur Credits. Zwei Bereiche würde ich trotzdem selbst prüfen.
 

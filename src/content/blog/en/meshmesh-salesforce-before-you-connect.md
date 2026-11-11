@@ -92,7 +92,7 @@ Region of processing, list of subprocessors, retention of org metadata and query
 
 ## The MeshMesh health check does not replace your own review
 
-The screenshot in Mike Wolff's post shows a Data 360 health check. Since [November 9, 2026](https://docs.meshmesh.io/releases/2026-11-09), MeshMesh has offered the recipe "Audit Snapshot of Org Health" for this. According to the [recipe description](https://docs.meshmesh.io/recipes/audit-snapshot-of-org-health), it only reads the org, takes 30 to 45 minutes and needs an admin-level user with read access to Setup. The result is a score across six dimensions, a license overview with active and idle seats, a funnel from ingestion to activation in Data Cloud, a section on security and code, and up to 15 prioritized moves.
+The video in Mike Wolff's post shows a Data 360 health check. Since [November 9, 2026](https://docs.meshmesh.io/releases/2026-11-09), MeshMesh has offered the recipe "Audit Snapshot of Org Health" for this. According to the [recipe description](https://docs.meshmesh.io/recipes/audit-snapshot-of-org-health), it only reads the org, takes 30 to 45 minutes and needs an admin-level user with read access to Setup. The result is a score across six dimensions, a license overview with active and idle seats, a funnel from ingestion to activation in Data Cloud, a section on security and code, and up to 15 prioritized moves.
 
 As a starting point for an inventory that is useful, and in the beta it only costs credits. I would still check two areas myself.
 
