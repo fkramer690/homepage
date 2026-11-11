@@ -73,6 +73,17 @@ const abs = (path: string) => new URL(path, Astro.site).href;
   </head>
   <body>
     <slot />
+    <script>
+      // Count clicks on "Book a call" (every link to the booking page), see src/lib/events.ts.
+      import { site } from '../site';
+      import { track } from '../lib/events';
+      if (site.bookingUrl) {
+        document.addEventListener('click', (event) => {
+          const link = (event.target as Element | null)?.closest?.('a[href]');
+          if (link && link.getAttribute('href')?.startsWith(site.bookingUrl)) track('termin');
+        });
+      }
+    </script>
     {site.analyticsToken && (
       <script
         is:inline

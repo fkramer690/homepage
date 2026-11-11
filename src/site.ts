@@ -16,6 +16,10 @@ export const site = {
   // Cloudflare Web Analytics (cookieless). The site token comes from the
   // CF_ANALYTICS_TOKEN repository secret at build time; empty = no tracking.
   analyticsToken: import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN ?? '',
+  // Event counter (workers/events, deployed by events-worker.yml): counts
+  // "Book a call" clicks and sent contact forms, nothing else. Empty = off.
+  // Its host must also be in connect-src of scripts/csp-policy.mjs.
+  eventsUrl: 'EVENTS_URL_TBD',
   // Business phone: German pages show the national format, English pages the
   // international one; links always dial the international number.
   phone: {
