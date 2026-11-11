@@ -119,6 +119,17 @@ Die erste Version deckte rund 80 Prozent der Fälle ab. Die Randfälle haben wir
 
 Mit einem sauberen Release-Prozess werden Releases kleiner und häufiger. Für Fachbereiche heißt das: öfter kleine Änderungen statt einmal im Quartal ein großes Paket. Damit das funktioniert, brauchen sie einen festen Weg, auf dem sie vorher erfahren, was sich ändert, und einen Rückweg, auf dem sie melden, was im Alltag nicht passt. Vor jedem Release kläre ich mit den Verantwortlichen im Fachbereich, welche Teams betroffen sind, was sich in ihren Abläufen ändert und wer sie informiert. Das steht im Release-Plan, bevor die Entwicklung fertig ist. Nach dem Release prüfe ich, ob die neuen Prozesse genutzt werden, und übertrage Rückmeldungen aus dem Alltag in den Backlog.
 
+```kreislauf
+titel: Jedes Release beginnt wieder bei Awareness
+mitte: ADKAR | je Release
+hinweis: Fünf Stufen nach Prosci | Mit jedem Release durchlaufen die betroffenen Teams die Stufen erneut, in kleinen Schritten.
+- message | Awareness | Bewusstsein | Die Teams erfahren vorher, was sich ändert und warum. | Betroffene Teams geklärt; Erklärt von der Führungskraft
+- target | Desire | Bereitschaft | Die Teams wollen mitmachen, weil das Management die Änderung sichtbar trägt. | Sichtbares Sponsoring; Nutzen für die Rolle
+- lessons | Knowledge | Wissen | Die Teams wissen, wie der neue Ablauf funktioniert. | Information im Release-Plan; Key User im Team
+- check | Ability | Fähigkeit | Die Teams schaffen den Ablauf im Alltag und melden, was nicht passt. | Rückweg für Meldungen; Rückmeldungen in den Backlog
+- badge | Reinforcement | Verankerung | Die neue Arbeitsweise bleibt, auch wenn das Release vorbei ist. | Berichte zur Nutzung; Prüfungen in der Pipeline
+```
+
 ## Prosci stützt sich auf Forschung seit 1998
 
 Prosci ist für mich der Goldstandard im Change Management. Der Grund ist die Forschung dahinter: Prosci befragt seit 1998 Projektverantwortliche nach ihren Erfahrungen mit Veränderungen.

@@ -129,3 +129,13 @@ Platform changes are part of release management too. Each Salesforce release, su
 ## One release process for all partners
 
 A shared release process is the foundation for steering several implementation partners. Every partner delivers through pull requests into the same repository, every delivery runs through the same checks, and the approval sits with the client. If every partner deploys in its own way instead, no governance framework holds. I describe the rules for standards, ownership and reviews across several partners under [partner governance](../partner-governance/).
+
+```kreislauf
+title: Every change takes the same route
+centre: Every delivery | one pass
+hint: Four steps | Whichever partner delivers, every change runs through the same cycle, including platform changes from the Salesforce release.
+- gear | Build | In the client's repository | The partner builds the change and delivers it as a pull request into the same repository. | One repository for all partners; One pull request per change
+- check | Check | On every pull request | Validation, tests and code analysis run before a person reviews design and readability. | Validation against the target org; Apex tests and code analysis; Review by a person
+- handshake | Approve | The client decides | The approval sits with the client, not with the partner who delivered. | Approval by the client; The same rules for everyone
+- pipeline | Deliver | Through promotion branches | The change moves through integration and UAT to production. | Integration, UAT, production; Visible what sits where; Post-deployment steps automated
+```

@@ -1,10 +1,15 @@
 // Icons from src/icons/ for the Markdown plugins, which build their HTML outside of
 // Astro components: as an HTML string (content blocks) or as a hast node (external links).
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
 const cache = new Map();
 const source = (name) => {
-  if (!cache.has(name)) cache.set(name, readFileSync(new URL(`../icons/${name}.svg`, import.meta.url), 'utf8').trim());
+  if (!cache.has(name)) {
+    // Next to this file in src/lib/; Astro components bundle it elsewhere, then src/icons/ below the project root.
+    const local = new URL(`../icons/${name}.svg`, import.meta.url);
+    cache.set(name, readFileSync(existsSync(local) ? local : join(process.cwd(), 'src/icons', `${name}.svg`), 'utf8').trim());
+  }
   return cache.get(name);
 };
 const attrs = (text) => Object.fromEntries([...text.matchAll(/([\w-]+)="([^"]*)"/g)].map((m) => [m[1], m[2]]));

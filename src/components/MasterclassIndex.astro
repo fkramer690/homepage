@@ -18,6 +18,9 @@ import { site, contactHref, contactExternal } from '../site';
 import { homeHref } from '../lib/paths';
 import { masterclassesIndex } from '../lib/masterclass';
 import { getMasterclasses } from '../lib/masterclasses';
+import { getChapters } from '../lib/masterclass';
+import WheelSection from './WheelSection.astro';
+import { masterclassWheel } from '../data/page-wheels';
 
 interface Props {
   lang: 'en' | 'de';
@@ -33,6 +36,26 @@ const url = abs(masterclassesIndex(lang));
 const pageTitle = withBrand(o.metaTitle);
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 const ogImage = `${base}og/${lang}/masterclasses.png`;
+const mw = masterclassWheel[lang];
+const wheel = {
+  kind: 'ring' as const,
+  id: `ring-masterclasses-${lang}`,
+  title: mw.title.replace(/^\S+/, (w) => (masterclasses.length === 7 ? w : String(masterclasses.length))),
+  lead: mw.lead,
+  hint: mw.hint,
+  hintTouch: mw.hintTouch,
+  label: mw.label,
+  centre: mw.centre,
+  items: await Promise.all(masterclasses.map(async (mc) => ({
+    icon: mc.icon,
+    name: mc.shortName,
+    label: mw.labels[mc.id],
+    sub: o.chapters.replace('{n}', String(mc.chapters)),
+    points: (await getChapters(lang, mc.id)).slice(0, 3).map((c) => c.data.short),
+    href: mc.href,
+    more: mw.more,
+  }))),
+};
 const totalChapters = masterclasses.reduce((sum, mc) => sum + mc.chapters, 0);
 // Articles are not summed: many are linked from more than one masterclass.
 const stats = [
@@ -81,6 +104,7 @@ const schema = {
       <h1>{o.title}</h1>
     </div>
   </header>
+  <WheelSection wheel={wheel} alt />
   <section class="section blog">
     <div class="container">
       <div class="mc-overview">

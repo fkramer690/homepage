@@ -1,0 +1,32 @@
+---
+// "Vier Bausteine" section on the service overview (layout "Ring with details in the
+// centre", docs/layouts.md). Texts in src/data/approach-ring.ts; each segment links to the
+// service page with the same translationKey.
+import WheelSection from './WheelSection.astro';
+import { approachRing } from '../data/approach-ring';
+import { getServices, serviceHref } from '../lib/services';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+const { lang } = Astro.props;
+const t = approachRing[lang];
+const services = await getServices(lang);
+const hrefOf = (key: string) => {
+  const s = services.find((x) => x.data.translationKey === key);
+  if (!s) throw new Error(`approach ring: no ${lang} service with translationKey "${key}"`);
+  return serviceHref(s);
+};
+const wheel = {
+  kind: 'ring' as const,
+  id: `ring-approach-${lang}`,
+  title: t.title,
+  lead: t.lead,
+  hint: t.hint,
+  hintTouch: t.hintTouch,
+  label: t.label,
+  centre: [t.centre.eyebrow, t.centre.title] as [string, string],
+  items: t.items.map((it) => ({ ...it, href: hrefOf(it.service), more: t.more })),
+};
+---
+<WheelSection wheel={wheel} alt sectionId="approach" />

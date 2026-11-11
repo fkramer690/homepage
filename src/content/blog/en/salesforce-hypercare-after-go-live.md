@@ -69,6 +69,16 @@ The last row deserves attention. After a go-live, many reasonable requests come 
 Count tickets per category and per group every day. Many how-to questions from one team point to a gap in training. Many change requests from one team show it was not involved in the decisions beforehand.
 ```
 
+```kreislauf
+title: The daily routine in hypercare
+centre: Every day | in hypercare
+hint: Four steps | The cycle runs every day until the number of tickets falls. After that, a weekly status call is enough.
+- message | Report | One channel | All tickets come in through one channel, not through chat, email and hallway requests. | One channel for all tickets; Escalate critical issues at once
+- search | Triage | Fixed morning slot | In 15 to 30 minutes, every ticket from the previous day gets one of four categories. | Defect or how-to question; Data issue or change request; Defects come first
+- gear | Fix | Through the pipeline | Quick wins also go through the regular pipeline with testing. | Fix through the pipeline; Key users answer questions; Data team corrects data
+- feedback | Follow up | Make the impact visible | Users see what happened to their feedback, and training gaps get closed. | Show the quick wins; Questions go into training; Count tickets per team
+```
+
 ## Which tools in Salesforce help?
 
 Salesforce provides several features that save time in hypercare. With "Log in as another user", the admin sees what a user sees and finds missing permissions without a long back and forth. This requires the right permission, and depending on the settings, the user has to grant access first. The Setup Audit Trail shows who changed what in setup and when. That helps when something else stops working after a fix. Login history shows who logs in, and reports on created records show which groups are using the system at all. Both are signals of activity, not proof that a process works.

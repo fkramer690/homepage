@@ -119,6 +119,17 @@ The first version covered around 80 percent of the cases. We added the edge case
 
 With a clean release process, releases become smaller and more frequent. For business teams this means small changes more often instead of one large package per quarter. For that to work, they need a fixed route through which they learn in advance what changes, and a route back through which they report what does not fit their daily work. Before each release I clarify with the owners in the business which teams are affected, what changes in their processes and who informs them. That goes into the release plan before development is finished. After the release I check whether the new processes are used and add feedback from daily work to the backlog.
 
+```kreislauf
+title: Every release starts again at awareness
+centre: ADKAR | per release
+hint: Five stages by Prosci | With every release, the affected teams pass through the stages again, in small steps.
+- message | Awareness | Awareness | The teams learn in advance what changes and why. | Affected teams identified; Explained by their manager
+- target | Desire | Desire | The teams want to take part because management visibly backs the change. | Visible sponsorship; Value for the role
+- lessons | Knowledge | Knowledge | The teams know how the new process works. | Information in the release plan; Key users in the team
+- check | Ability | Ability | The teams manage the process in daily work and report what does not fit. | A route for feedback; Feedback goes to the backlog
+- badge | Reinforcement | Reinforcement | The new way of working stays after the release is over. | Usage reports; Checks in the pipeline
+```
+
 ## Prosci is built on research since 1998
 
 To me, Prosci is the gold standard in change management. The reason is the research behind it: Prosci has surveyed project leaders about their experience with change since 1998.

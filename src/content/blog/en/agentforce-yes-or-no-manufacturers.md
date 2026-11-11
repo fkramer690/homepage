@@ -37,6 +37,16 @@ What is live at manufacturers is narrower than what Salesforce has announced. Si
 
 So the open question is whether your first process is ready. Five criteria decide that.
 
+```ring
+title: What must be in place before the first agent
+centre: Agentforce | ready?
+- message | Volume | Enough repetition | Thousands of similar requests; Requests and minutes counted; Build cost covered
+- search | Data | Reliable master data | Installed base with serial numbers; Spare part master data; Maintained knowledge articles
+- integration | ERP | Access through an API | Order status, stock, prices; API as an agent action; RPA only as a fallback
+- budget | Cost | Billing per action | Flex Credits per action; Unused credits expire; Documents cost extra
+- license | Edition | Credits in the contract | Core, Advanced or Max; Pool per org and year; Switch at renewal
+```
+
 ## The criteria for the Agentforce decision
 
 ### 1. Is there enough volume?
