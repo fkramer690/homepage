@@ -52,6 +52,9 @@ const backReference = /\bwie (oben|bereits|schon) (beschrieben|erwähnt|gesagt|g
 const genericCloser = /^(wo (fangen sie an|starten sie|sollten sie (anfangen|starten))|womit (fangen sie an|sollten sie anfangen)|where (do|should) you (start|begin)|what should you start with)\??$/i;
 const countAnnounce = /\b(drei|vier|fünf|three|four|five) (dinge|punkte|fragen|regeln|gründe|entscheidungen|kriterien|hebel|things|points|questions|rules|reasons|decisions|criteria|levers)\b/gi;
 const intensifiers = { de: /\b(echt(e|er|en|es|em)?|wirklich|tatsächlich|ehrlich)\b/gi, en: /\b(really|actually|honest(ly)?|genuinely|truly)\b/gi };
+// Stock words the SEO test run of 2026-11-11 found in the same role on many pages ("Entscheidend ist …",
+// "einfach" as filler). Inflected adjectives ("einfache Produkte") are fine; at most 2 per text.
+const stockWords = { de: /\b(einfach|entscheidend)\b/gi, en: /\b(simply|crucial(ly)?)\b/gi };
 const contentWords = (str) => new Set((str.toLowerCase().match(/[a-zäöüß0-9]{4,}/g) ?? []));
 
 function checkStructure(name, lang, text, fm) {
@@ -67,6 +70,8 @@ function checkStructure(name, lang, text, fm) {
   if (counts.length > 1) issue(`counting formula used ${counts.length}× (${counts.slice(0, 3).join(', ')}), at most once`);
   const intens = text.match(intensifiers[lang] ?? intensifiers.en) ?? [];
   if (intens.length > 3) issue(`${intens.length} intensifiers (${[...new Set(intens.map((w) => w.toLowerCase()))].join(', ')}), at most 3`);
+  const stock = text.match(stockWords[lang] ?? stockWords.en) ?? [];
+  if (stock.length > 2) issue(`${stock.length} stock words (${[...new Set(stock.map((w) => w.toLowerCase()))].join(', ')}), at most 2: say what matters instead of "entscheidend ist" or "einfach"`);
   const insteadOf = (text.match(lang === 'de' ? /\bstatt\b/gi : /\binstead of\b/gi) ?? []).length;
   if (insteadOf > 5) issue(`"${lang === 'de' ? 'statt' : 'instead of'}" used ${insteadOf}×, at most 5`);
   // The last paragraph is not a one-sentence moral.

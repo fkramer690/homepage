@@ -110,6 +110,16 @@ const schema = {
           {t.partnerPage.when.items.map((item) => <li><strong>{item.t}</strong> {item.d}</li>)}
         </ul>
       </section>
+      <section class="partner-when" aria-labelledby="partner-flow">
+        <p class="partner-area mono">{t.partnerPage.flow.label}</p>
+        <h2 id="partner-flow">{t.partnerPage.flow.title}</h2>
+        <p>{t.partnerPage.flow.intro}</p>
+        <ol>
+          {t.partnerPage.flow.steps.map((step) => <li><strong>{step.t}</strong> {step.d}</li>)}
+        </ol>
+        <h3>{t.partnerPage.flow.exampleTitle}</h3>
+        <p>{t.partnerPage.flow.example}</p>
+      </section>
       <section class="partner-recruiters" aria-labelledby="recruiters">
         <p class="partner-area mono">{recruiterTeaser.label}</p>
         <h2 id="recruiters">{recruiterTeaser.title}</h2>

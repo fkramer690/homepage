@@ -1955,7 +1955,9 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .partner-when { margin-top: 2.4em; }
 .partner-when .partner-area { font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan-dark); margin: 0 0 0.6em; }
 .partner-when h2 { margin: 0 0 0.5em; font-size: var(--fs-lg); }
-.partner-when ul { margin: 0; padding-left: 1.2em; color: var(--text-2); max-width: 70ch; }
+.partner-when ul, .partner-when ol { margin: 0; padding-left: 1.2em; color: var(--text-2); max-width: 70ch; }
+.partner-when > p { color: var(--text-2); max-width: 70ch; }
+.partner-when h3 { margin: 1.2em 0 0.4em; }
 .partner-when li + li { margin-top: 0.5em; }
 .partner-when strong { color: var(--text); }
 .partner-recruiters { margin-top: 2.4em; padding: 28px; border: 1px solid var(--line); border-left: 3px solid var(--cyan-dark); border-radius: var(--radius); }
