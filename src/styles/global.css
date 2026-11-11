@@ -1475,7 +1475,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .service-list li { margin-bottom: 0.5em; }
 .service-list li::marker { color: var(--cyan-dark); }
 .service-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
-.service-block.results { background: var(--tint-2); border-radius: var(--radius); padding: 4px 24px 12px; }
+.service-block.results { padding: 0; }
 .service-block.results h2 { margin-top: 0.8em; }
 /* Phases of the service pages as a vertical timeline in the reading column, right before
    the FAQ: icon ring per phase, dashed line between them (approved 2026-10-29, placed
@@ -1501,7 +1501,6 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .service .service-columns > .service-block { margin-top: 0; }
 .service .service-columns li { font-size: var(--fs-ui); }
 .service .service-columns > .service-block:not(.results) h2 { margin-top: 0.8em; }
-.service-block.results { padding: 4px 22px 12px; }
 .post-service { display: block; margin-top: 2em; padding: 18px 22px; border: 1px solid var(--line); border-left: 4px solid var(--cyan); border-radius: var(--radius); background: var(--white); color: inherit; text-decoration: none; }
 .post-service .label { display: block; font-size: var(--fs-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan-dark); margin-bottom: 0.3em; }
 .post-service-title { font-weight: 600; }
@@ -2301,7 +2300,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8em; }
 .card-top .card-index { margin: 0; }
 .card-icon { width: 40px; height: 40px; display: block; }
-.sit-box { margin-top: 0; }
+.sit-box { margin-top: 0; padding: 0; background: none; border: 0; border-radius: 0; }
 .sit-box .rc-rules-list li { font-size: var(--fs-ui); }
 
 /* Freelance architect page (src/components/FreelanceArchitectPage.astro) */
@@ -2812,38 +2811,38 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   .call-hint .btn { justify-self: start; margin-top: 8px; }
 }
 
-/* Service pages: curated reading list in the reading flow (backlog U3). One white box with
-   dashed dividers and cyan numbers (like the questions page), the masterclass as a tinted row below. */
-.svc-reading { list-style: none; margin: 0; padding: 4px 24px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+/* Service pages: curated reading list in the reading flow (backlog U3). Dashed dividers and cyan
+   numbers without a box (variant A "ruhiger", Fabian 2026-11-11), the masterclass as a row below. */
+.svc-reading { list-style: none; margin: 0; padding: 0; }
 .svc-reading li { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 4px 14px; align-items: baseline; padding: 13px 0; }
 .svc-reading li + li { border-top: 1px dashed var(--line); }
 .svc-reading-n { font-size: var(--fs-xs); color: var(--cyan-dark); }
 .svc-reading a { font-weight: 600; font-size: var(--fs-ui); color: var(--text); text-decoration: none; }
 .svc-reading a:hover { color: var(--cyan-dark); }
 .svc-reading-cat { font-size: var(--fs-xs); color: var(--text-2); }
-.svc-reading-course { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 14px; align-items: center; margin-top: 12px; padding: 14px 24px; background: var(--tint); border: 1px solid var(--tint-line); border-radius: var(--radius); color: var(--text); text-decoration: none; transition: box-shadow var(--t-fast); }
-.svc-reading-course:hover { box-shadow: var(--shadow-lift); }
+.svc-reading-course { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 14px; align-items: center; margin-top: 4px; padding: 13px 0; border-top: 1px dashed var(--line); color: var(--text); text-decoration: none; }
+.svc-reading-course:hover strong { color: var(--cyan-dark); }
 .svc-reading-course .label { display: block; margin: 0 0 2px; }
 .svc-reading-course strong { display: block; font-size: var(--fs-md); font-weight: 600; }
-.svc-reading-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--radius-pill); background: var(--white); color: var(--cyan-dark); }
+.svc-reading-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--radius-pill); background: var(--tint); color: var(--cyan-dark); }
 .svc-reading-icon svg { width: 22px; height: 22px; }
 .svc-reading-arrow { color: var(--cyan-dark); font-weight: 600; }
 .svc-case { margin: 8px 0 32px; background: var(--white); border: 1px solid var(--line); border-left: 3px solid var(--cyan); border-radius: var(--radius); }
 .svc-case > .label { margin: 0; padding: 16px 26px 0; }
 .svc-case .rf-body { padding-top: 6px; }
-.svc-progress { list-style: none; margin: 0; padding: 4px 24px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+.svc-progress { list-style: none; margin: 0; padding: 0; }
 .svc-progress li { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 2px 14px; align-items: baseline; padding: 13px 0; }
 .svc-progress li + li { border-top: 1px dashed var(--line); }
 .svc-progress-n { grid-row: span 2; font-size: var(--fs-xs); color: var(--cyan-dark); }
 .svc-progress strong { font-weight: 600; font-size: var(--fs-ui); }
 .svc-progress span:last-child { font-size: var(--fs-sm); color: var(--text-2); }
-.svc-terms { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 0 18px; margin: 0 0 1.2em; padding: 4px 24px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+.svc-terms { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 0 18px; margin: 0 0 1.2em; padding: 0; }
 .svc-terms dt, .svc-terms dd { margin: 0; padding: 11px 0; }
 .svc-terms dt { font-weight: 600; font-size: var(--fs-ui); }
 .svc-terms dd { color: var(--text-2); font-size: var(--fs-ui); }
 .svc-terms dt:not(:first-of-type), .svc-terms dd:not(:first-of-type) { border-top: 1px dashed var(--line); }
 @media (max-width: 760px) {
-  .svc-terms { grid-template-columns: 1fr; padding: 4px 18px; }
+  .svc-terms { grid-template-columns: 1fr; }
   .svc-terms dd { padding-top: 0; }
   .svc-terms dd:not(:first-of-type) { border-top: 0; }
 }
@@ -2851,13 +2850,11 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   .svc-case > .label { padding: 14px 18px 0; }
   .svc-case .rf-body { padding: 6px 18px 18px; }
   .svc-case .rf-body dl { grid-template-columns: 1fr; gap: 4px; }
-  .svc-progress { padding: 4px 18px; }
 }
 @media (max-width: 640px) {
-  .svc-reading { padding: 4px 16px; }
   .svc-reading li { grid-template-columns: 28px minmax(0, 1fr); }
   .svc-reading-cat { grid-column: 2; }
-  .svc-reading-course { padding: 14px 16px; }
+  .svc-reading-course { padding: 13px 0; }
 }
 
 /* Ring and cycle (src/lib/ring-cycle.mjs; layouts "Ring with details in the centre" and
