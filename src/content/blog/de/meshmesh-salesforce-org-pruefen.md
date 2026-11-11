@@ -37,7 +37,20 @@ Kevin Nuest, David DeVore und Calvin Hoenes haben MeshMesh 2023 gegründet. Im J
 
 Mike Wolff, Chief Growth Officer bei Salesforce, hat die offene Beta im November [auf LinkedIn](https://www.linkedin.com/posts/mwolff1_introducing-the-meshmesh-from-salesforce-activity-7525971855753789440-9X06) angekündigt. Sein Kernsatz: „Work that used to be complex, slow, and expensive becomes a conversation.“ Die Arbeit gliedert er in Diagnose, Fix und Build. Laut [MeshMesh-Website](https://meshmesh.io) gehört das Produkt zu Maestro, einer Salesforce-Initiative, die Nutzung und Einführung aller Salesforce-Produkte vereinfachen soll. Eine Primärquelle von Salesforce zu Maestro habe ich nicht gefunden.
 
-Laut [Dokumentation der Agenten](https://docs.meshmesh.io/concepts/agents) arbeitet MeshMesh in drei Modi. Im Plan Mode liest der Agent die Org und schreibt einen Plan, im Research Mode erstellt er Analysen und Berichte. Beide ändern nichts. Erst im Build Mode greift MeshMesh in die Org ein: Der Agent deployt Metadaten, ändert Daten und bedient bei Bedarf die Oberfläche im Browser. Das Wissen über Salesforce ist in einer Kontextschicht abgelegt, die MeshMesh Cloud Control nennt. Die Sprachmodelle dahinter stammen laut [MeshMesh-FAQ](https://docs.meshmesh.io/faq) von Anthropic.
+Laut [Dokumentation der Agenten](https://docs.meshmesh.io/concepts/agents) liest MeshMesh im Plan Mode und im Research Mode nur. Erst im Build Mode deployt der Agent Metadaten, ändert Daten und bedient bei Bedarf die Oberfläche im Browser. Das Wissen über Salesforce ist in einer Kontextschicht abgelegt, die MeshMesh Cloud Control nennt; die Sprachmodelle stammen laut [MeshMesh-FAQ](https://docs.meshmesh.io/faq) von Anthropic. So sieht ein Lauf aus, wenn Sie die Pipeline einbinden, wie ich es empfehle:
+
+```prozess
+titel: Ein Lauf in MeshMesh, mit Ihrer Pipeline
+spuren: Personen | Agent | Pipeline
+Personen | Ziel beschreiben | In normaler Sprache, mit Kriterium für fertig
+Agent | Org erfassen | Objekte, Flows, Apex, Integrationen, nur lesend
+Agent | Plan schreiben | Plan Mode, ändert nichts
+tor: Ein Mensch gibt den Plan frei
+Agent | Bauen | Build Mode schreibt in einen Branch
+Pipeline | Branch prüfen | Validierungs-Deployment, Tests, Review
+zurueck: Befunde gehen an den Agenten zurück
+tor: Release nur über die Pipeline
+```
 
 ## Die Dokumentation von MeshMesh ist vorsichtiger als die Ankündigung
 
@@ -62,9 +75,18 @@ Die allgemeine Verfügbarkeit plant MeshMesh für das Salesforce-Geschäftsjahr 
 
 Der Standardweg ist ein Managed Package. Ein Salesforce-Admin installiert es einmal pro Org und aktiviert die External Client App „MeshMesh Studio“. Danach verbindet sich jeder Nutzer der Org per OAuth, also mit seinem eigenen Salesforce-Login. Die [Anleitung zum Managed Package](https://docs.meshmesh.io/guides/connect-salesforce-managed-package) sagt deutlich, was daraus folgt: Der Agent darf alles, was der angemeldete Nutzer darf, und nicht mehr.
 
-Meldet sich ein Systemadministrator an, darf MeshMesh im Build Mode also Apex schreiben, Berechtigungen ändern und Daten löschen. MeshMesh empfiehlt selbst einen eigenen Integrationsnutzer ohne die Berechtigungen Modify All Data, Customize Application, Author Apex und Manage Users. Für Produktionsorgs gibt es zusätzlich die Verbindung über [Salesforce Headless 360](https://docs.meshmesh.io/guides/connect-salesforce-headless-360), ebenfalls in der Beta. Dabei lässt MeshMesh bei jeder Anfrage nur Lesezugriff zu.
+```vergleich
+ohne: Ein Admin meldet sich an
+- MeshMesh darf im Build Mode Apex schreiben, Berechtigungen ändern und Daten löschen.
+- * Der Agent arbeitet in einer Full Copy mit Händlerpreisen und Servicefällen.
+mit: Eigener Integrationsnutzer
+- Ohne Modify All Data, Customize Application, Author Apex und Manage Users, wie MeshMesh selbst empfiehlt.
+- * Der Agent arbeitet nur in einer Developer-Sandbox mit Testdaten.
+- In Produktion liest er nur, über Headless 360.
+zitat: Der Agent darf, was der angemeldete Nutzer darf. Deshalb meldet sich bei mir nie ein Admin an.
+```
 
-Meine Regel für die Beta: Der Agent arbeitet mit einem eigenen Nutzer, nie mit dem Login eines Admins, und nur in einer Developer-Sandbox. Die FAQ von MeshMesh rät ebenfalls, immer eine Sandbox oder Testumgebung zu verbinden. Welche Daten dort gespeichert sein dürfen, beschreibe ich in [Sandbox-Kundendaten: was KI-Coding-Agenten lesen dürfen](../sandbox-kundendaten-ki-coding-agenten/). Eine Full-Copy-Sandbox mit Händlerpreisen und Servicefällen ist für einen Agenten in der Beta der falsche Ort.
+Die Verbindung über [Salesforce Headless 360](https://docs.meshmesh.io/guides/connect-salesforce-headless-360) ist selbst noch in der Beta; MeshMesh lässt dabei bei jeder Anfrage nur Lesezugriff zu. Die FAQ von MeshMesh rät ebenfalls, immer eine Sandbox oder Testumgebung zu verbinden. Welche Daten dort gespeichert sein dürfen, beschreibe ich in [Sandbox-Kundendaten: was KI-Coding-Agenten lesen dürfen](../sandbox-kundendaten-ki-coding-agenten/).
 
 ## Änderungen von MeshMesh gehören ins Repository
 
@@ -80,25 +102,30 @@ Was ein Review bei Code von Agenten zusätzlich prüfen sollte, steht in [KI-gen
 
 ## Wo verarbeitet MeshMesh Ihre Daten?
 
-MeshMesh läuft laut [Dokumentation zur Netzwerkfreigabe](https://docs.meshmesh.io/network-allowlist) in der Region US East. Kunden, deren Daten in der EU verarbeitet werden müssen, bittet MeshMesh um Kontakt und stellt dann eigene regionale Infrastruktur bereit. Für die Verbindung zu Salesforce nutzt MeshMesh zwei feste IPv4-Adressen, die sich alle Kunden teilen. Wer die Login-IP-Bereiche seiner Org einschränkt, muss beide freigeben.
+Für Ihre Datenschutzprüfung zählen diese Angaben aus der Dokumentation von MeshMesh:
 
-Die Modelle stammen von Anthropic. Laut FAQ hat MeshMesh einen Enterprise-Vertrag, der Training mit Kundendaten und die Speicherung von Daten beim Modellanbieter ausschließt. Für Ihren Datenschutzbeauftragten bedeutet das: ein weiterer Dienstleister mit Verarbeitung in den USA. Das schließt einen Test nicht aus, gehört aber vor den ersten Login in die Prüfung.
+- **Region:** US East laut [Dokumentation zur Netzwerkfreigabe](https://docs.meshmesh.io/network-allowlist). Für Daten, die in der EU verarbeitet werden müssen, stellt MeshMesh auf Anfrage eigene regionale Infrastruktur bereit.
+- **Modelle:** Anthropic, laut FAQ mit einem Enterprise-Vertrag ohne Training mit Kundendaten und ohne Speicherung beim Modellanbieter.
+- **Netzwerk:** zwei feste IPv4-Adressen, die sich alle Kunden teilen. Wer die Login-IP-Bereiche seiner Org einschränkt, muss beide freigeben.
+- **Protokolle:** vollständige Audit Trails für alle Aktionen laut [Sicherheitsseite](https://docs.meshmesh.io/security).
 
-An deutschen Standorten ist außerdem der Betriebsrat beteiligt. MeshMesh führt laut [Sicherheitsseite](https://docs.meshmesh.io/security) vollständige Audit Trails für alle Aktionen. Ein Werkzeug, das Nutzungsdaten pro Person erzeugt, unterliegt in der Regel der Mitbestimmung nach § 87 Abs. 1 Nr. 6 BetrVG. Die Einzelheiten beschreibe ich in [KI-Coding-Tools: Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
-
-```hinweis offen
-Region der Verarbeitung, Liste der Unterauftragsverarbeiter, Aufbewahrung von Org-Metadaten und Abfrageergebnissen bei MeshMesh und die Vertragsgrundlage der Beta: Lassen Sie sich diese Angaben schriftlich geben, bevor ein Nutzer die Verbindung herstellt.
-```
+Für Ihren Datenschutzbeauftragten ist MeshMesh damit ein weiterer Dienstleister mit Verarbeitung in den USA. Das schließt einen Test nicht aus, gehört aber vor den ersten Login in die Prüfung. An deutschen Standorten ist außerdem der Betriebsrat beteiligt: Ein Werkzeug, das Nutzungsdaten pro Person erzeugt, unterliegt in der Regel der Mitbestimmung nach § 87 Abs. 1 Nr. 6 BetrVG. Die Einzelheiten beschreibe ich in [KI-Coding-Tools: Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/). Lassen Sie sich vor dem ersten Login außerdem schriftlich bestätigen, welche Unterauftragsverarbeiter beteiligt sind, wie lange MeshMesh Org-Metadaten und Abfrageergebnisse aufbewahrt und auf welcher Vertragsgrundlage Sie an der Beta teilnehmen.
 
 ## Der Health Check von MeshMesh ersetzt keine eigene Prüfung
 
 Das Video in Mike Wolffs Beitrag zeigt einen Data 360 Health Check. Seit dem [9. November 2026](https://docs.meshmesh.io/releases/2026-11-09) bietet MeshMesh dafür das Rezept „Audit Snapshot of Org Health“ an. Laut [Beschreibung des Rezepts](https://docs.meshmesh.io/recipes/audit-snapshot-of-org-health) liest es die Org nur, braucht 30 bis 45 Minuten und einen Admin-Nutzer mit Lesezugriff auf das Setup. Das Ergebnis ist ein Score über sechs Dimensionen, eine Lizenzübersicht mit aktiven und ungenutzten Plätzen, ein Funnel von der Datenaufnahme bis zur Aktivierung in Data Cloud, ein Abschnitt zu Sicherheit und Code sowie bis zu 15 priorisierte Maßnahmen.
 
-Als Startpunkt für eine Bestandsaufnahme ist das brauchbar, und in der Beta kostet es nur Credits. Zwei Bereiche würde ich trotzdem selbst prüfen.
+```staerken-grenzen
+titel: Audit Snapshot of Org Health: guter Startpunkt, kein Gutachten
++ Nur lesend | Ändert nichts in der Org, kostet in der Beta nur Credits
++ Breite | Lizenzen, Data Cloud, Sicherheit und Code, bis zu 15 Maßnahmen *
+- Lizenzart | Login-Daten zeigen nicht, ob eine günstigere Lizenz reicht
+- Datenströme | Ob ein Strom nötig ist, ist eine Architekturentscheidung
+- Absender | Der Bericht stammt vom Hersteller, der die Lizenzen verkauft
+besser: Für Lizenzverhandlung und Zielarchitektur: Aufgaben der Nutzer und Datenflüsse unabhängig prüfen.
+```
 
-Bei den Lizenzen stammt der Bericht vom Hersteller, der die Lizenzen verkauft. Das ist nicht automatisch ein Interessenkonflikt, denn ungenutzte Plätze zeigt der Bericht an. Aus meiner Pre-Sales-Arbeit mit Salesforce weiß ich aber, dass standardmäßig volle Lizenzen angeboten werden, auch für Nutzer, die nur lesen oder Datensätze freigeben. Bei großer Nutzerbasis sind das schnell sechsstellige Beträge pro Jahr. Ob ein aktiver Nutzer eine günstigere Lizenzart bräuchte, zeigen Login-Daten nicht. Das zeigt erst der Blick auf seine Aufgaben, wie ich ihn bei [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/) mache.
-
-Bei Data Cloud zeigt der Bericht, wo die Datenpipeline stoppt, und schlägt Maßnahmen für den Credit-Verbrauch vor. Ob ein Datenstrom überhaupt nötig ist oder das ERP die Daten besser direkt an Salesforce liefert, ist eine Architekturentscheidung. Die kann ein Health Check vorbereiten, aber nicht treffen. Was eine KI-gestützte Analyse vor einem Partnerwechsel leisten muss, beschreibe ich in [KI-Org-Analyse: technische Schulden vor dem Partnerwechsel](../ki-org-analyse-technische-schulden/).
+Aus meiner Pre-Sales-Arbeit mit Salesforce weiß ich, dass standardmäßig volle Lizenzen angeboten werden, auch für Nutzer, die nur lesen oder Datensätze freigeben. Bei großer Nutzerbasis sind das schnell sechsstellige Beträge pro Jahr. Ungenutzte Plätze zeigt der Health Check an; ob ein aktiver Nutzer eine günstigere Lizenzart bräuchte, zeigt erst der Blick auf seine Aufgaben, wie ich ihn bei [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/) mache. Was eine KI-gestützte Analyse vor einem Partnerwechsel leisten muss, beschreibe ich in [KI-Org-Analyse: technische Schulden vor dem Partnerwechsel](../ki-org-analyse-technische-schulden/).
 
 ## Erster Schritt: MeshMesh bis Ende Januar in einer Developer-Sandbox testen
 
