@@ -83,6 +83,8 @@ Articles must read like Fabian talking to a client, not like generated content. 
 - **No announcement sentences.** No "Here is what you will learn", "In this article", "Hier lesen Sie", "In diesem Artikel". The intro gives the answer and stops (checked).
 - **No "it is not X, it is Y".** State what something is (checked).
 - **No en or em dashes.** Use a comma, a full stop or "to" (checked).
+- **No colloquial German, no vague verbs.** Write the precise verb: "Partner einbeziehen" instead of "dazuholen", "funktioniert" or "gelingt" instead of "klappt", "geht an" or "wird übernommen" instead of "landet", "wurden erstellt" instead of "es kamen", "werden nicht freigestellt" instead of "bekommen keine Zeit". The build fails on dazuholen, holen … dazu, klappen, landen, drin, kriegen, checken, jede Menge, ziemlich, mal eben, unterm Strich in German texts, in `src/i18n` and in `src/data` (checked). The list only catches the obvious cases: vague kommen, gehen, laufen and bekommen still need the sentence pass below.
+- **Sentence pass before every change with text.** Before a pull request that adds or changes page text (articles, chapters, service pages, i18n, `src/data`, meta descriptions, H1s), read every new or changed sentence in DE and EN once more for clumsy, colloquial or imprecise wording and smooth it. This applies to small SEO fixes too, not only to new articles.
 - **No reflexive lists of three.** Use as many items as there really are.
 - **No hype, no superlatives without a reason.** "Best course I have taken" is fine when the article says why; "revolutionary" is not.
 - **Fabian's voice.** First person, direct, a little dry, with his own phrasing where he gave it (e.g. from LinkedIn posts). Keep real quirks instead of smoothing them out.

@@ -78,7 +78,7 @@ Wenn Spring '27 wie üblich im Februar erscheint, fällt es in dieselben Wochen 
 
 ### Sandbox Preview: welche Sandbox erhält das Release früher?
 
-Ob eine Sandbox das neue Release früh erhält, hängt von ihrer Instanz ab. Alle Sandboxes auf einer Preview-Instanz werden gemeinsam aktualisiert, Sandboxes auf Non-Preview-Instanzen bleiben auf dem aktuellen Release, bis auch Produktion umgestellt ist. Welche Instanz eine Sandbox hat, zeigt die Spalte Release Type auf der Sandbox-Seite im Setup. Ändern lässt sich das nur per Refresh: Laut Salesforce Help landet eine Sandbox, die nach dem Stichtag erstellt oder aktualisiert wird, auf einer Non-Preview-Instanz und fällt auf das alte Release zurück. Ein Refresh baut die Sandbox aus Produktion neu auf, eigene Daten und Konfiguration darin gehen dabei verloren.
+Ob eine Sandbox das neue Release früh erhält, hängt von ihrer Instanz ab. Alle Sandboxes auf einer Preview-Instanz werden gemeinsam aktualisiert, Sandboxes auf Non-Preview-Instanzen bleiben auf dem aktuellen Release, bis auch Produktion umgestellt ist. Welche Instanz eine Sandbox hat, zeigt die Spalte Release Type auf der Sandbox-Seite im Setup. Ändern lässt sich das nur per Refresh: Laut Salesforce Help wird eine Sandbox, die nach dem Stichtag erstellt oder aktualisiert wird, einer Non-Preview-Instanz zugeordnet und fällt auf das alte Release zurück. Ein Refresh baut die Sandbox aus Produktion neu auf, eigene Daten und Konfiguration darin gehen dabei verloren.
 
 Für den Release-Kalender folgen daraus zwei Regeln:
 

@@ -56,7 +56,7 @@ Trailhead ergänzt drei weitere Funktionen: Product Service Campaigns für Rück
 
 Die Preisseite führt den Service als eigene Edition auf, Service Core zu 275 $ pro Nutzer und Monat, und fasst beide Seiten nur in Sales & Service Max zu 700 $ zusammen. Die Vergleichstabelle ordnet Funktionen den einzelnen Editionen zu. In der Textfassung, die ich gelesen habe, waren die Häkchen jedoch nicht auslesbar; prüfen Sie die Tabelle auf der Seite und im Angebot. Die Einsatzplanung für Techniker und die mobile App im Außendienst gehören zu Field Service mit eigenen Lizenzen, sofern kein Paket im Angebot sie enthält, wie in [lohnt sich Salesforce Field Service](../salesforce-field-service-lohnt-sich/) beschrieben.
 
-## Was steckt für Händler und den Kanal drin?
+## Was bietet Manufacturing Cloud für Händler und den Kanal?
 
 Hier werden die Listen unübersichtlich. Trailhead ordnet die Kanalfunktionen unter zwei Überschriften:
 

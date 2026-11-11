@@ -394,8 +394,8 @@ export const en = {
       title: 'When I bring in a partner',
       items: [
         { t: 'The topic needs its own method.', d: 'Guiding sponsors, managers and key users through a change is a discipline of its own, not a side job for the architect.' },
-        { t: 'I know the partner from my own work.', d: 'I recommend nobody I have not worked with on a project myself.' },
-        { t: 'The plans have to fit together.', d: 'Release plan and change plan are built together, so that training and communication are ready for each release.' },
+        { t: 'I know the partner from joint projects.', d: 'I only recommend partners I have worked with on a project myself.' },
+        { t: 'Release plan and change plan have to fit.', d: 'Both plans are built together, so that training and communication are ready in time for each release.' },
       ],
     },
     partners: [

@@ -116,7 +116,7 @@ Voraussetzung sind ein Digital-Wallet-fähiges Produkt, eine Data-360-Lizenz (ei
 Einen automatischen Stopp habe ich nicht gefunden. Die Seiten, die ich geöffnet habe, beschreiben nur Warnungen. Ein Werksbudget bleibt damit eine Zahl im Controlling, und wer eine harte Grenze braucht, deaktiviert den Agenten selbst.
 ```
 
-Ich würde eine Person in der Konzern-IT oder im [Salesforce Center of Excellence](../salesforce-center-of-excellence-format/) zur Budgetverantwortlichen machen, Tags für Gesellschaft, Kostenstelle und Umgebung ab dem ersten Tag setzen und sechs Monate Showback nutzen, bevor Werke zahlen. Danach verrechne ich zum festen Satz von 5 € pro 1.000 Credits. Halten Sie vor dem ersten regionalen Go-live schriftlich fest, wer verfallene Credits trägt. Ohne Regel landet der Verlust im zentralen IT-Budget, und niemand merkt es. Welche Kennzahlen Sie pro Agent verfolgen, steht in [Agentforce-Kennzahlen nach dem Go-live](../agentforce-kennzahlen-nach-go-live/).
+Ich würde eine Person in der Konzern-IT oder im [Salesforce Center of Excellence](../salesforce-center-of-excellence-format/) zur Budgetverantwortlichen machen, Tags für Gesellschaft, Kostenstelle und Umgebung ab dem ersten Tag setzen und sechs Monate Showback nutzen, bevor Werke zahlen. Danach verrechne ich zum festen Satz von 5 € pro 1.000 Credits. Halten Sie vor dem ersten regionalen Go-live schriftlich fest, wer verfallene Credits trägt. Ohne Regel trägt das zentrale IT-Budget den Verlust, und niemand merkt es. Welche Kennzahlen Sie pro Agent verfolgen, steht in [Agentforce-Kennzahlen nach dem Go-live](../agentforce-kennzahlen-nach-go-live/).
 
 ## MCP-Zugriffe externer Agenten: der Zähler ohne Preis
 

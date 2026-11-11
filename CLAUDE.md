@@ -54,6 +54,10 @@ Every graphic (content blocks, explanatory graphics, card drawings, hub drawings
 
 Every indexable page has a unique `<title>` of at most 60 characters, keyword first; the brand suffix ` | FK Solution Design` is added only where it fits. `scripts/check-titles.mjs` runs after `astro build` and enforces this; never weaken it.
 
+## Wording
+
+Every change that adds or touches page text, however small (SEO fixes, H1s, meta descriptions, i18n, `src/data`), gets a sentence pass in DE and EN for clumsy, colloquial or vague wording before the pull request ("Partner dazuholen", "es kamen", "klappt", "landet"). Rules under "No AI slop" in `docs/blog-guidelines.md`; `scripts/check-blog.mjs` fails on the obvious colloquial words in articles, chapters, `src/i18n` and `src/data`. Never weaken that list.
+
 ## FAQ heading
 
 On German pages the FAQ section is always called "Häufig gestellte Fragen" (English: "Frequently asked questions"), never "Häufige Fragen". `scripts/check-blog.mjs` fails on the old wording anywhere in `src/`.

@@ -41,7 +41,7 @@ export const architectCerts: Cert[] = [
   {
     name: "System Architect",
     year: 2021,
-    en: "Salesforce awards this one for Integration Architect, Identity and Access Management Architect, Development Lifecycle and Deployment Architect and Platform Developer I. It describes the view from outside: how Salesforce sits in the wider system landscape and how it is built, secured and shipped there.",
+    en: "Salesforce awards this one for Integration Architect, Identity and Access Management Architect, Development Lifecycle and Deployment Architect and Platform Developer I. It describes the view from outside: how Salesforce fits into the wider system architecture and how it is built, secured and shipped there.",
     de: "Salesforce vergibt sie für Integration Architect, Identity and Access Management Architect, Development Lifecycle and Deployment Architect und Platform Developer I. Sie beschreibt den Blick von außen: wie Salesforce in der Systemlandschaft sitzt und wie es dort gebaut, abgesichert und ausgeliefert wird.",
   },
   {
@@ -181,7 +181,7 @@ export const otherCerts: Record<'architecture' | 'devops' | 'delivery' | 'crm', 
     {
       name: "MuleSoft Associate",
       year: 2025,
-      en: "API-led connectivity organizes interfaces in reusable layers. With many systems around Salesforce this keeps the landscape changeable, because a new system connects to existing APIs.",
+      en: "API-led connectivity organizes interfaces in reusable layers. With many systems around Salesforce this keeps the architecture easy to change, because a new system connects to existing APIs.",
       de: "API-led Connectivity ordnet Schnittstellen in wiederverwendbaren Schichten. Bei vielen Systemen rund um Salesforce bleibt die Landschaft so veränderbar, weil ein neues System an bestehende APIs andockt.",
     },
   ],

@@ -78,7 +78,7 @@ Auswählen | 4 bis 8 Wochen · Kunde
   Überlappung mit Wissenstransfer, kleinem Übergabe-Release und klarem Stichtag.
 ```
 
-**Sichern.** Legen Sie das Repository in Ihren eigenen Account oder lassen Sie es dorthin übertragen, mit allen Branches und der Historie. Lassen Sie es vorher auf Passwörter, Schlüssel und Kundendaten durchsuchen, und tauschen Sie gefundene Zugangsdaten aus. Lassen Sie sich die Pipeline-Konfiguration geben und prüfen Sie, ob ein Deployment ohne den Partner funktioniert. Erst wenn das klappt, ist der Partner austauschbar.
+**Sichern.** Legen Sie das Repository in Ihren eigenen Account oder lassen Sie es dorthin übertragen, mit allen Branches und der Historie. Lassen Sie es vorher auf Passwörter, Schlüssel und Kundendaten durchsuchen, und tauschen Sie gefundene Zugangsdaten aus. Lassen Sie sich die Pipeline-Konfiguration geben und prüfen Sie, ob ein Deployment ohne den Partner funktioniert. Erst wenn das gelingt, ist der Partner austauschbar.
 
 **Analysieren.** Eine Org-Analyse zeigt, was in der Org steckt: wie viele Apex-Klassen, Flows und Permission Sets es gibt, wo Regeln verletzt werden und wie hoch die Testabdeckung ist. Ob etwas genutzt wird, zeigen die Tools nur als Hinweis; das bestätigt der Fachbereich. Ich lasse zuerst deterministische Tools laufen und gebe die Ergebnisse dann einem Sprachmodell, das Zweck und Geschäftsprozess jeder Komponente beschreibt, als Vorschlag, den jemand fachlich prüft. Wie das geht und was es kostet, steht in [KI-Org-Analyse vor dem Partnerwechsel](../ki-org-analyse-technische-schulden/).
 
@@ -120,4 +120,4 @@ Haben Sie intern einen Salesforce-Architekten oder einen technischen Produktvera
 
 ## Erster Schritt: ein Deployment ohne den alten Partner
 
-Bevor Sie über die Kündigung sprechen, testen Sie, ob Sie ohne den alten Partner deployen können. Nehmen Sie eine kleine Änderung, etwa ein neues Feld in einer Sandbox, und bringen Sie sie mit eigenen Leuten über Ihr Repository und Ihre Pipeline bis in eine Testumgebung. Klappt das, ist der Partner austauschbar. Klappt es nicht, wissen Sie genau, was Sie vor der Kündigung noch übernehmen müssen.
+Bevor Sie über die Kündigung sprechen, testen Sie, ob Sie ohne den alten Partner deployen können. Nehmen Sie eine kleine Änderung, etwa ein neues Feld in einer Sandbox, und bringen Sie sie mit eigenen Leuten über Ihr Repository und Ihre Pipeline bis in eine Testumgebung. Gelingt das, ist der Partner austauschbar. Gelingt es nicht, wissen Sie genau, was Sie vor der Kündigung noch übernehmen müssen.

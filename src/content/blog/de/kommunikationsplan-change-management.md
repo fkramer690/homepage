@@ -45,7 +45,7 @@ Ein Kommunikationsplan ist eine Tabelle, keine Strategie auf zwanzig Folien. Jed
 | Kanal | Wie? | Regionalmeeting, danach kurze Zusammenfassung per Mail |
 | Zeitpunkt | Wann? | 10 Wochen vor dem Go-live |
 | Verantwortlich | Wer bereitet die Nachricht vor und sorgt dafür, dass sie versendet wird? | Change-Managerin |
-| Rückkanal | Wo landen Fragen? | Key User der Region, Sammelpostfach |
+| Rückkanal | Wohin gehen Fragen? | Key User der Region, Sammelpostfach |
 
 Die Spalte Ziel ist die wichtigste und fehlt am häufigsten. Sie verbindet die Nachricht mit der Stufe, auf der eine Gruppe gerade steht. Im [ADKAR-Modell](../change-management-modelle/) sind das Bewusstsein, Bereitschaft, Wissen, Fähigkeit und Verankerung. Eine Nachricht, die Bewusstsein schaffen soll, sieht ganz anders aus als eine, die Wissen vermittelt. Wer beides in dieselbe Rundmail packt, erreicht meist keins von beidem.
 
