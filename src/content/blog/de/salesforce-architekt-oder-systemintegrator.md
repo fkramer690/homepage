@@ -20,12 +20,12 @@ faq:
     a: "Ein Systemintegrator ist eine Firma, die Salesforce einführt und dafür ein Team mit Beratern, Entwicklern und eigenen Architekten stellt. Ein Salesforce-Architekt ist eine Rolle. Sie kann beim Systemintegrator sitzen oder auf Kundenseite, und davon hängt ab, wessen Interessen sie vertritt."
   - q: "Brauche ich einen eigenen Architekten, wenn mein Partner einen Solution Architect stellt?"
     a: "Nicht immer. Bei einem Partner, überschaubarem Umfang und einer internen IT, die Entwürfe beurteilen kann, reicht der Solution Architect des Partners. Arbeiten mehrere Partner an einer Org oder fehlt intern die technische Erfahrung, brauchen Sie eine eigene Stimme."
+  - q: "Ersetzt ein Forward Deployed Engineer von Salesforce den Architekten?"
+    a: "Nein. Ein FDE-Pod von Salesforce oder einem Partner bringt einen einzelnen Agentforce-Anwendungsfall in Produktion und verlässt das Projekt danach. Zielbild, Standards über alle Partner und die Entscheidungen im Architekturboard bleiben Aufgaben auf Kundenseite."
   - q: "Wie viel Zeit braucht ein Architekt auf Kundenseite?"
     a: "Zum Start oft drei bis fünf Tage pro Woche, wenn Zielbild, Standards und Partnerauswahl anstehen. Läuft das Programm stabil, reichen meist zwei Tage pro Woche für Reviews, Entscheidungen und den Termin mit den technischen Leads."
   - q: "Arbeitet ein Architekt auf Kundenseite gegen den Partner?"
     a: "Nein. Er sorgt dafür, dass der Partner klare Vorgaben bekommt und Entscheidungen schnell fallen. Gute Partner schätzen das, weil es Diskussionen über Zuständigkeiten und Change Requests verkürzt."
-  - q: "Ersetzt ein Forward Deployed Engineer von Salesforce den Architekten?"
-    a: "Nein. Ein FDE-Pod von Salesforce oder einem Partner bringt einen einzelnen Agentforce-Anwendungsfall in Produktion und verlässt das Projekt danach. Zielbild, Standards über alle Partner und die Entscheidungen im Architekturboard bleiben Aufgaben auf Kundenseite."
 draft: true
 ---
 

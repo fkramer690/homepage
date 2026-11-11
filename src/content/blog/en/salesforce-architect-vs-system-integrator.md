@@ -20,12 +20,12 @@ faq:
     a: "A system integrator is a company that implements Salesforce and staffs a team of consultants, developers and its own architects. A Salesforce architect is a role. It can sit with the system integrator or on the client side, and that decides whose interests it represents."
   - q: "Do I need my own architect if my partner provides a solution architect?"
     a: "Not always. With one partner, a manageable scope and internal IT that can judge designs, the partner's solution architect is enough. When several partners work in one org or internal technical experience is missing, you need a voice of your own."
+  - q: "Does a Salesforce forward deployed engineer replace the architect?"
+    a: "No. An FDE pod from Salesforce or a partner takes one Agentforce use case into production and then leaves the project. The target picture, standards across all partners and decisions in the architecture board remain client-side tasks."
   - q: "How much time does a client-side architect need?"
     a: "At the start often three to five days a week, when target picture, standards and partner selection are on the table. Once the programme runs steadily, two days a week usually cover reviews, decisions and the meeting with the technical leads."
   - q: "Does a client-side architect work against the partner?"
     a: "No. The role makes sure the partner gets clear requirements and decisions are made quickly. Good partners value that because it shortens discussions about responsibilities and change requests."
-  - q: "Does a Salesforce forward deployed engineer replace the architect?"
-    a: "No. An FDE pod from Salesforce or a partner takes one Agentforce use case into production and then leaves the project. The target picture, standards across all partners and decisions in the architecture board remain client-side tasks."
 draft: true
 ---
 
