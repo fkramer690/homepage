@@ -129,3 +129,13 @@ Auch Plattformänderungen gehören zum Release-Management. Jedes Salesforce-Rele
 ## Ein Release-Prozess für alle Partner
 
 Ein gemeinsamer Release-Prozess ist die Grundlage, um mehrere Umsetzungspartner zu steuern. Jeder Partner liefert über Pull Requests in dasselbe Repository, jede Lieferung durchläuft dieselben Prüfungen, und die Freigabe liegt beim Kunden. Deployt dagegen jeder Partner auf seine eigene Art, hält kein Governance-Rahmen. Die Regeln für Standards, Verantwortung und Reviews über mehrere Partner beschreibe ich unter [Partnersteuerung](../partnersteuerung/).
+
+```kreislauf
+titel: Jede Änderung nimmt denselben Weg
+mitte: Jede Lieferung | ein Durchlauf
+hinweis: Vier Schritte | Egal welcher Partner liefert: Jede Änderung läuft durch denselben Kreis, auch Plattformänderungen aus dem Salesforce-Release.
+- gear | Bauen | Im Repository des Kunden | Der Partner baut die Änderung und liefert sie als Pull Request in dasselbe Repository. | Ein Repository für alle Partner; Pull Request je Änderung
+- check | Prüfen | Bei jedem Pull Request | Validierung, Tests und Codeanalyse laufen, bevor ein Mensch Design und Lesbarkeit reviewt. | Validierung gegen die Ziel-Org; Apex-Tests und Codeanalyse; Review durch einen Menschen
+- handshake | Freigeben | Entscheidung beim Kunden | Die Freigabe liegt beim Kunden, nicht beim Partner, der geliefert hat. | Freigabe durch den Kunden; Dieselben Regeln für alle
+- pipeline | Ausliefern | Über Promotion Branches | Die Änderung wandert über Integration und UAT bis in Produktion. | Integration, UAT, Produktion; Sichtbar, was wo liegt; Handarbeit automatisiert
+```

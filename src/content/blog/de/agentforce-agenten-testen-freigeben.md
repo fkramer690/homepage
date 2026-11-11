@@ -94,6 +94,16 @@ Tests decken die Fragen ab, an die Sie gedacht haben. Händler stellen andere. D
 
 Testen Sie neu, sobald sich etwas unter dem Agenten ändert: ein Subagent, ein Flow, Wissensartikel, ein Salesforce-Release, die SAP-API.
 
+```kreislauf
+titel: Kein Agent geht ohne Tests live
+mitte: Vor jedem | Agent-Release
+hinweis: Vier Schritte | Jede Änderung unter dem Agenten startet den Kreis neu: Subagent, Flow, Wissensartikel, Salesforce-Release oder SAP-API.
+- check | Testen | Testsatz ausführen | Typische Fragen, Grenzfälle und Schutzfälle laufen in drei vollständigen Läufen. | Fragen aus echten Anfragen; Grenzfälle und Schutzfälle; Drei vollständige Läufe
+- search | Bewerten | Schwellen nach Risiko | Geschäftsregeln müssen exakt stimmen, die Antwortqualität braucht eine Passrate. | Regeln zu 100 Prozent; Antworten ab 90 Prozent; Stichprobe durch Fachleute
+- pipeline | Freigeben | Entscheidung der Fachseite | Die Fachseite gibt frei, die Pipeline stoppt unter der Schwelle. | Tests in der Pipeline; Freigabe durch die Fachseite; Rollout in Stufen
+- feedback | Beobachten | Monitoring ab Tag eins | Fehlgeschlagene Gespräche werden gesichtet und typische Fehler in die Regressionstests übernommen. | Traces und Alarme; Fehlgeschlagene Gespräche sichten; Neue Fälle in die Tests
+```
+
 ## Die Tests gehören dem Kunden
 
 Umsetzungspartner können die Tests schreiben und ausführen, aber Testsatz, Schwellen und Go-live-Entscheidung gehören dem Unternehmen, das gegenüber seinen Händlern verantwortlich ist. Das ist das Prinzip aus [DevOps in Enterprise-Projekten](../warum-devops-salesforce-enterprise-projekte/): Agententests liegen im selben Repository und laufen in derselben Pipeline, mit JUnit-Ausgabe und einer Regel, die das Deployment stoppt, wenn die Passrate unter der Schwelle liegt. Das aufzusetzen gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).

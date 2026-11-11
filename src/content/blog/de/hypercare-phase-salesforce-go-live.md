@@ -69,6 +69,16 @@ Die letzte Zeile verdient Aufmerksamkeit. Nach einem Go-live kommen viele berech
 Zählen Sie die Meldungen pro Kategorie und pro Gruppe jeden Tag mit. Viele Bedienfragen aus einem Team zeigen eine Lücke in der Schulung. Viele Änderungswünsche aus einem Team zeigen, dass es an den Entscheidungen vorher nicht beteiligt war.
 ```
 
+```kreislauf
+titel: Der tägliche Ablauf in der Hypercare
+mitte: Täglich | in der Hypercare
+hinweis: Vier Schritte | Der Kreis läuft jeden Tag, bis die Zahl der Meldungen sinkt. Danach reicht ein wöchentlicher Status-Call.
+- message | Melden | Ein zentraler Eingang | Alle Meldungen kommen über einen Kanal, nicht über Chat, E-Mail und Zuruf. | Ein Eingang für alle Meldungen; Kritisches sofort eskalieren
+- search | Bewerten | Fester Termin am Morgen | In 15 bis 30 Minuten bekommt jede Meldung des Vortags eine von vier Kategorien. | Fehler oder Bedienfrage; Datenproblem oder Änderungswunsch; Fehler haben Vorrang
+- gear | Beheben | Über die Pipeline | Auch Quick Wins gehen mit Test über die normale Pipeline. | Fix über die Pipeline; Key User beantworten Fragen; Datenteam korrigiert Daten
+- feedback | Nachsteuern | Wirkung sichtbar machen | Die Anwender sehen, was aus ihrer Rückmeldung wird, und Schulungslücken werden geschlossen. | Quick Wins sichtbar machen; Fragen in die Nachschulung; Meldungen je Team zählen
+```
+
 ## Welche Werkzeuge in Salesforce helfen?
 
 Salesforce bringt einiges mit, was in der Hypercare Zeit spart. Mit „Als anderer Benutzer anmelden“ sieht der Admin, was ein Anwender sieht, und findet fehlende Rechte ohne langes Hin und Her. Dafür braucht er die passende Berechtigung, und je nach Einstellung muss der Anwender den Zugriff vorher freigeben. Der Setup Audit Trail zeigt, wer wann etwas am Setup geändert hat. Das hilft, wenn nach einem Fix plötzlich etwas anderes nicht mehr geht. Die Login-Historie zeigt, wer sich anmeldet, und Berichte über angelegte Datensätze zeigen, welche Gruppen überhaupt im System arbeiten. Beides sind Signale für Aktivität, aber kein Beweis dafür, dass ein Prozess richtig funktioniert.

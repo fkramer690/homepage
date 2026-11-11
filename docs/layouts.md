@@ -449,8 +449,13 @@ photo and crop per project in `refPhotos`.
 Chosen 2026-11-11 after two rounds, inspired by a "Managed CRM" ring Fabian had seen
 elsewhere and rebuilt in the site style (variant 2 of round 2; Fabian: "2 finde ich
 gut", after the centre box was laid out cleanly). Built in
-`src/components/ApproachRing.astro`, texts in `src/data/approach-ring.ts`, geometry in
-`src/lib/approach-ring.ts`, CSS `.ar-*`.
+`src/components/ApproachRing.astro`, texts in `src/data/approach-ring.ts`, geometry and
+markup in `src/lib/ring-cycle.mjs` (`ringHtml`), section frame `src/components/WheelSection.astro`,
+interaction `src/components/RingCycleScript.astro`, CSS `.ar-*` and `.wheel-*`.
+Also used (approved 2026-11-11 in the click path): the areas ring on the machinery and
+Field Service consultant pages (`wheel` prop of `FreelanceArchitectPage.astro`, texts in
+`src/data/page-wheels.ts`), the masterclass ring on `/masterclass/` (one segment per
+masterclass, built from `src/lib/courses.ts`) and the `ring` content block.
 
 - **At rest only the ring:** four segments in brand colours (cyan, cyan-dark, text-2,
   anthracite), each with a white icon badge near the inner edge and its name in mono
@@ -467,11 +472,13 @@ gut", after the centre box was laid out cleanly). Built in
 - Fits: three to five equal building blocks of one offer where each leads to its own
   page, not a sequence (for an order use the cycle below).
 
-## Cycle with labelled stations and a detail panel (approved, not built yet)
+## Cycle with labelled stations and a detail panel
 
 Variant 3 of the same round; Fabian 2026-11-11: "3 kann so bleiben", keep it for other
 pages. Draft: `/mnt/project-files/grafiken/managed-crm/entwuerfe-runde-2.html` (project
-files), section 3.
+files), section 3. Built 2026-11-11 as the `kreislauf` content block (`cycleHtml` in
+`src/lib/ring-cycle.mjs`, CSS `.cy-*`), used on the DevOps and change management service
+pages and in the hypercare and agent testing articles.
 
 - A thin grey ring with four cyan arcs and arrowheads between four white station
   circles (icon, small dark number badge), the name of each station next to it on the

@@ -43,6 +43,16 @@ Was bei Herstellern tatsächlich im produktiven Einsatz ist, ist enger begrenzt 
 
 Offen ist also, ob Ihr erster Prozess bereit ist. Das entscheiden fünf Kriterien.
 
+```ring
+titel: Was vor dem ersten Agenten stehen muss
+mitte: Agentforce | bereit?
+- message | Volumen | Genug Wiederholung | Tausende ähnliche Anfragen; Anfragen und Minuten gezählt; Kosten für Aufbau gedeckt
+- search | Daten | Belastbare Stammdaten | Installierte Basis mit Seriennummer; Ersatzteilstammdaten; Gepflegte Wissensartikel
+- integration | ERP | Zugriff per API | Auftragsstatus, Bestand, Preise; API als Aktion des Agenten; RPA nur als Notlösung
+- budget | Kosten | Abrechnung pro Aktion | Flex Credits je Aktion; Verfall nicht genutzter Credits; Dokumente kosten extra
+- license | Edition | Credits im Vertrag | Core, Advanced oder Max; Pool pro Org und Jahr; Wechsel bei der Verlängerung
+```
+
 ## Die Kriterien für die Entscheidung über Agentforce
 
 ### 1. Gibt es genug Volumen?

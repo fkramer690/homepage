@@ -94,6 +94,16 @@ Tests cover the questions you thought of. Dealers will ask others, so monitoring
 
 Retest whenever something the agent depends on changes: a subagent, a Flow, knowledge articles, a Salesforce release, the SAP API.
 
+```kreislauf
+title: No agent goes live without tests
+centre: Before every | agent release
+hint: Four steps | Every change underneath the agent restarts the cycle: a subagent, a Flow, knowledge articles, a Salesforce release or the SAP API.
+- check | Test | Run the test set | Typical questions, edge cases and guardrail cases run in three full passes. | Questions from real requests; Edge cases and guardrail cases; Three full passes
+- search | Evaluate | Gates by risk | Business rules must be exact, answer quality needs a pass rate. | Rules at 100 percent; Answers from 90 percent; Sample checked by experts
+- pipeline | Approve | The business decides | The business approves, and the pipeline stops below the gate. | Tests in the pipeline; Approval by the business; Staged rollout
+- feedback | Monitor | From day one | Failed conversations are reviewed and typical failures go into the regression tests. | Traces and alerts; Review failed conversations; New cases into the tests
+```
+
 ## The client owns the tests
 
 Delivery partners may write and run the tests, but the test set, the thresholds and the go-live decision belong to the company that is accountable to its dealers. It is the principle from [DevOps for enterprise projects](../why-devops-matters-salesforce-enterprise/): agent tests are kept in the same repository and pipeline, with JUnit output and a gate that blocks the deployment when results fall below the threshold. Setting this up is part of my [DevOps and release management](../../services/devops-release-management/) work.

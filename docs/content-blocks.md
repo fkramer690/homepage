@@ -391,6 +391,35 @@ sichtbar: Lizenz: 0 € | bei beiden Werkzeugen
 ```
 ````
 
+## 19. Ring and Kreislauf (light, interactive)
+
+Two drawings that show their details only while the pointer rests on a segment or station (layouts "Ring with details in the centre" and "Cycle with labelled stations" in `docs/layouts.md`). Geometry and checks live in `src/lib/ring-cycle.mjs`; the build fails when a label does not fit its arc or runs into the circle. On phones a tap shows the card below the drawing; without script all cards stand below it. Icons are file names from `src/icons/`.
+
+**`ring`**: three to seven equal parts of one whole, without an order. `titel:` (EN `title:`), `mitte: Eyebrow | Title` (EN `centre:`) for the white centre, then one line per segment `- icon | Name | Subtitle | point; point; point` (two to four short points, they must fit the centre circle). A short segment label can follow the name after `~` (`Spare parts ~ Parts`). Use it only where the parts are named in the text around it.
+
+````
+```ring
+titel: Was vor dem ersten Agenten stehen muss
+mitte: Agentforce | bereit?
+- analyse | Volumen | Genug Wiederholung | Tausende ähnliche Anfragen; Anfragen und Minuten gezählt
+- search | Daten | Belastbare Stammdaten | Installierte Basis mit Seriennummer; Gepflegte Wissensartikel
+- integration | ERP | Zugriff per API | Auftragsstatus, Bestand, Preise; API als Aktion des Agenten
+```
+````
+
+**`kreislauf`** (cycle): three to six steps that repeat in a fixed order (release cycle, hypercare routine, ADKAR per release). `titel:`, `mitte: Eyebrow | Title`, `hinweis: Title | text` (EN `hint:`) for the dashed panel at rest, then `- icon | Name | Subtitle | Sentence | point; point` per station. Station names have at most 16 characters. A dot runs around the circle (hidden with reduced motion).
+
+````
+```kreislauf
+titel: Der tägliche Ablauf in der Hypercare
+mitte: Täglich | in der Hypercare
+hinweis: Vier Schritte | Der Kreis läuft jeden Tag, bis die Zahl der Meldungen sinkt.
+- message | Melden | Ein zentraler Eingang | Alle Meldungen kommen über einen Kanal. | Ein Eingang; Kritisches sofort eskalieren
+- search | Bewerten | Fester Termin am Morgen | Jede Meldung bekommt eine Kategorie. | Fehler oder Bedienfrage; Fehler haben Vorrang
+- gear | Beheben | Über die Pipeline | Auch Quick Wins gehen mit Test über die Pipeline. | Fix über die Pipeline; Key User beantworten Fragen
+```
+````
+
 ## Confirmed experience (for `praxis`)
 
 Only these, in Fabian's wording, without client names, industry or size:
