@@ -55,6 +55,10 @@ Salesforce points in the same direction. In an [article on scheduling](https://w
 
 With few long jobs the benefit of scheduling is much smaller. A technician who commissions a plant over two weeks does not need route optimization. He or she needs a project plan, access to drawings and clean documentation at the end.
 
+```praxis
+My Field Service clients had between 15 and 700 technicians, and job length depended heavily on the industry. With large machines in manufacturing, jobs usually take several days, and more than two appointments on the same day are rare. In industries where technicians only record consumption on site, it was up to ten appointments a day.
+```
+
 Typical cases are commissioning, conversions or overhauls where a team works at one site for days. The difference from 16 appointments a day is substantial: access to documents, coordination with the customer and a complete acceptance process matter more than which technician is where in the afternoon. Field Service supports such work with multiday appointments and crews, see [multiday jobs and crews](../field-service-multiday-jobs-crews-commissioning/). The business case then has to come from offline documentation, asset history, maintenance contracts, parts or partner management, not from routes.
 
 For such cases, there are alternatives I check before buying a Field Service license:

@@ -106,6 +106,10 @@ Auf Field Service übertragen teilt sich die Bestandsaufnahme in zwei Gruppen. N
 
 Organisationen mit vielen kurzen Einsätzen erzeugen besonders viele Serviceberichte. Der Standard deckt also den Großteil des Volumens dort ab, wo er am meisten zählt.
 
+```praxis
+Bei meinem Field-Service-Kunden erzeugt der Document Builder heute den Servicebericht. Zuerst fehlten Feinheiten im Layout und der automatische Versand des Berichts an den Kunden. Beides haben wir ergänzt: eigene Komponenten für das Layout, einen Flow für den Versand.
+```
+
 ## Document Builder oder Document Generation?
 
 - **Klassische Service Reports.** Der ältere Vorlageneditor in Field Service. Er ist bewährt und einfach, unterstützt bis zu 20 Unterschriftsblöcke, bietet aber wenig Gestaltungsspielraum. Abschnittstitel lassen sich nicht übersetzen, und in der Salesforce Mobile App steht die Aktion nicht zur Verfügung.

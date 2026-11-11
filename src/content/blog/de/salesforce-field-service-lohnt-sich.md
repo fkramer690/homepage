@@ -55,6 +55,10 @@ Die Aussagen von Salesforce weisen in dieselbe Richtung. In einem [Beitrag zur T
 
 Bei wenigen langen Einsätzen ist der Nutzen der Planung viel kleiner. Ein Techniker, der eine Anlage über zwei Wochen in Betrieb nimmt, braucht keine Routenoptimierung. Er braucht einen Projektplan, Zugang zu Zeichnungen und eine saubere Dokumentation am Ende.
 
+```praxis
+Meine Field-Service-Kunden hatten zwischen 15 und 700 Techniker, und die Länge der Einsätze hing stark von der Branche ab. Bei großen Maschinen in der Fertigung sind meist mehrtägige Termine nötig, mehr als zwei Termine am selben Tag sind selten. In Branchen, in denen Techniker vor Ort nur Verbräuche erfassen, waren es bis zu zehn Termine am Tag.
+```
+
 Typisch dafür sind Inbetriebnahmen, Umbauten oder Revisionen, bei denen ein Team tagelang an einem Ort arbeitet. Der Unterschied zu 16 Terminen am Tag ist groß: Bei solchen langen Einsätzen zählen Zugang zu Unterlagen, Abstimmung mit dem Kunden und eine vollständige Abnahme mehr als die Frage, welcher Techniker am Nachmittag wo ist. Field Service unterstützt solche Arbeit mit mehrtägigen Terminen und Teams (Crews), siehe [mehrtägige Einsätze und Teams](../field-service-mehrtaegige-einsaetze-inbetriebnahme/). Der Business Case muss sich dann aus Offline-Dokumentation, Anlagenhistorie, Wartungsverträgen, Teilen oder der Steuerung von Partnern ergeben, nicht aus der Routenoptimierung.
 
 Für solche Fälle gibt es Alternativen, die ich vor einer Field-Service-Lizenz prüfe:
