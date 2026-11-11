@@ -73,7 +73,7 @@ Sie müssen nicht jede Zeile lesen. Ist die Pipeline grün, würde ich einen Pul
 2. **Datenzugriff.** Jedes `without sharing` und jedes `WITH SYSTEM_MODE` braucht eine schriftliche Begründung. `without sharing` erweitert den Datensatzzugriff, System Mode umgeht Objekt- und Feldberechtigungen; in einem Händlerportal entscheiden diese Zeilen, ob ein Händler die Daten eines anderen sieht.
 3. **Felder und Objekte.** Sind das die Felder, die der Fachbereich wirklich pflegt? Stehen neue Felder in den richtigen Permission Sets?
 4. **Umfang.** Berührt der Diff nur, was die Story braucht? Ein Agent, der „nebenbei“ drei weitere Klassen aufgeräumt oder ihre API-Version angehoben hat, schafft ein Risiko, das niemand bestellt hat.
-5. **Geschäftsregel.** Passt die Logik zu den Akzeptanzkriterien, auch bei den Ausnahmen? Bei allem, was Garantie, Preise oder Kreditlimits betrifft, würde ich den fachlichen Lead dazuholen.
+5. **Geschäftsregel.** Passt die Logik zu den Akzeptanzkriterien, auch bei den Ausnahmen? Bei allem, was Garantie, Preise oder Kreditlimits betrifft, würde ich den fachlichen Lead einbeziehen.
 
 Verlangen Sie Belege vom Partner. Anthropic formuliert es in seinem Leitfaden treffend: „All tests pass“ allein sagt wenig. Ich möchte den Testlauf und das Ergebnis von Code Analyzer im Pull Request sehen, dazu einen Hinweis, welche Teile ein Agent erzeugt hat. Das gehört in den Vertrag, wie in [Regeln für Partner, die mit KI programmieren](../partner-ki-coding-regeln-vertrag/) beschrieben, und ist Teil meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
 

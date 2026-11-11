@@ -351,16 +351,16 @@ export const de: Dict = {
     h1: 'Partner für Salesforce-Programme',
     metaTitle: 'Partner für Salesforce-Programme | FK Solution Design',
     description: 'Kooperationspartner von FK Solution Design für Themen neben der Salesforce-Architektur, zum Beispiel Change Management mit Juliane Winterscheid.',
-    lead: 'Für Change Management in Salesforce-Programmen arbeite ich mit Juliane Winterscheid zusammen. Mein Schwerpunkt bleibt die Salesforce-Architektur auf Kundenseite; wo andere mehr Erfahrung haben, hole ich Kooperationspartner dazu, die ich selbst kenne und denen ich vertraue.',
-    intro: 'Ein Programm braucht mehr als eine gute Architektur: Die Menschen im Unternehmen müssen neue Prozesse auch annehmen. Dafür hole ich Partner dazu, die genau darin stark sind, denn niemand ist in jedem Bereich der beste Experte, ich auch nicht. Recruiter finden weiter unten, wie ich mit ihnen zusammenarbeite.',
+    lead: 'Für Change Management in Salesforce-Programmen arbeite ich mit Juliane Winterscheid zusammen. Mein Schwerpunkt bleibt die Salesforce-Architektur auf Kundenseite; wo andere mehr Erfahrung haben, beziehe ich Kooperationspartner ein, die ich selbst kenne und denen ich vertraue.',
+    intro: 'Ein Programm braucht mehr als eine gute Architektur: Die Menschen im Unternehmen müssen neue Prozesse auch annehmen. Dafür beziehe ich Partner ein, die genau darin stark sind, denn niemand ist in jedem Bereich der beste Experte, ich auch nicht. Recruiter finden weiter unten, wie ich mit ihnen zusammenarbeite.',
     linkedIn: 'LinkedIn-Profil',
     when: {
       label: 'Zusammenarbeit',
-      title: 'Wann ich einen Partner dazuhole',
+      title: 'Wann ich einen Partner einbeziehe',
       items: [
         { t: 'Das Thema braucht eine eigene Methodik.', d: 'Sponsoren, Führungskräfte und Key User durch eine Veränderung zu führen, ist eine eigene Disziplin und keine Nebenaufgabe des Architekten.' },
-        { t: 'Ich kenne den Partner aus eigener Arbeit.', d: 'Ich empfehle niemanden, mit dem ich nicht selbst in einem Projekt gearbeitet habe.' },
-        { t: 'Die Pläne müssen zusammenpassen.', d: 'Release-Plan und Change-Plan entstehen gemeinsam, damit Schulung und Kommunikation zum jeweiligen Release fertig sind.' },
+        { t: 'Ich kenne den Partner aus gemeinsamen Projekten.', d: 'Ich empfehle nur Partner, mit denen ich selbst in einem Projekt gearbeitet habe.' },
+        { t: 'Release-Plan und Change-Plan müssen zusammenpassen.', d: 'Beide Pläne entstehen gemeinsam, damit Schulung und Kommunikation rechtzeitig vor jedem Release bereitstehen.' },
       ],
     },
     partners: [

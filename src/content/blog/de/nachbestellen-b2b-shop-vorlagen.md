@@ -44,7 +44,7 @@ Dazu kommt das Teilen von Warenkörben, das selbst kein Bestellweg ist, aber bei
 
 | Weg | Was der Käufer tut | Stand November 2026 |
 |---|---|---|
-| Alte Bestellung in den Warenkorb | Wählt eine Bestellung aus der Historie, alle Positionen landen im Warenkorb | Verfügbar, API dokumentiert |
+| Alte Bestellung in den Warenkorb | Wählt eine Bestellung aus der Historie, alle Positionen werden in den Warenkorb übernommen | Verfügbar, API dokumentiert |
 | Bestellvorlagen | Speichert eine häufige Bestellung und nutzt sie wieder | Verfügbar seit September 2026 |
 | Warenkorb importieren und exportieren | Lädt eine CSV-Datei hoch, exportiert den Warenkorb zur Freigabe | Verfügbar seit Juli 2026 |
 | Warenkorb teilen | Teilt den Warenkorb im eigenen Konto zum Ansehen, Bearbeiten oder Bestellen | Verfügbar, Echtzeit-Zusammenarbeit für Januar 2027 angekündigt |

@@ -14,7 +14,7 @@ takeaways:
   - "Kundenseitige Agenten kosten 20 Flex Credits pro Aktion, Sprachaktionen 30. Funktionen für Mitarbeitende kosten 125 Dollar pro Nutzer und Monat als Add-on."
   - "Agenten für Fehlersuche und Ersatzteile brauchen Handbücher mit dem Produktschlüssel des Assets und eine As-built-Stückliste je Seriennummer."
   - "Ein KI-Assistent kann Field Service ohne Setup-Masken einrichten. Lassen Sie ihn in einer Sandbox arbeiten und bringen Sie das Ergebnis über die Pipeline live."
-  - "Führen Sie in Wellen nach Region ein, holen Sie den Betriebsrat vor der ersten Welle dazu und messen Sie gegen eine Ausgangsbasis aus dem Altsystem."
+  - "Führen Sie in Wellen nach Region ein, beziehen Sie den Betriebsrat vor der ersten Welle ein und messen Sie gegen eine Ausgangsbasis aus dem Altsystem."
 articles: [field-service-ai-agents-today, breakdown-hotline-voice-agent, field-service-ai-troubleshooting-manuals, spare-parts-serial-number-ai, field-service-headless-setup-ai, field-service-rollout, field-service-kpis-after-go-live]
 faq:
   - q: "Mit welchem KI-Agenten sollte ein Maschinenbauer in Field Service beginnen?"
@@ -26,7 +26,7 @@ faq:
   - q: "Welche Kennzahlen zeigen nach dem Go-live, ob Field Service wirkt?"
     a: "Einsätze pro Techniker und Tag, Fahrzeitanteil, Erstlösungsquote, eingehaltene Reaktionszeiten, Ankunft im zugesagten Zeitfenster und der Anteil der Vorschläge, den die Disposition ändert. Messen Sie diese Werte vorher drei Monate im Altsystem, mit denselben Definitionen."
   - q: "Muss der Betriebsrat bei der Einführung von Field Service mitreden?"
-    a: "In Deutschland in der Regel ja. Nach § 87 BetrVG bestimmt er bei technischen Einrichtungen mit, die Verhalten oder Leistung überwachen können, und Standortübermittlung, Stundenzettel und Spracheingabe berühren das. Holen Sie ihn vor der ersten Welle dazu, nicht erst, wenn die App auf den Geräten ist."
+    a: "In Deutschland in der Regel ja. Nach § 87 BetrVG bestimmt er bei technischen Einrichtungen mit, die Verhalten oder Leistung überwachen können, und Standortübermittlung, Stundenzettel und Spracheingabe berühren das. Beziehen Sie ihn vor der ersten Welle ein, nicht erst, wenn die App auf den Geräten ist."
 draft: false
 ---
 

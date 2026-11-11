@@ -143,7 +143,7 @@ Ein angenommenes Beispiel zeigt die Kette. Im Discovery-Workshop eines Maschinen
 - Im Abnahmetest meldet eine Vertriebsmitarbeiterin, dass kleine Ersatzteilaufträge trotzdem als gewonnen gelten sollen. Der Agent ordnet das als Change Request ein, weil kein bestätigtes Kriterium eine Ausnahme vorsieht.
 - Die Release Note nennt die neue Mindestsumme für gewonnene Opportunities.
 
-Fragt ein Jahr später jemand, warum die Regel bei 10.000 Euro greift, lässt sich die Kette in zwei Klicks bis zur bestätigten Entscheidung zurückverfolgen. Das klappt nur, wenn das bestätigte Protokoll mit festen Entscheidungs-IDs als Nachweis aufbewahrt wird, auch wenn das Rohtranskript gelöscht ist.
+Fragt ein Jahr später jemand, warum die Regel bei 10.000 Euro greift, lässt sich die Kette in zwei Klicks bis zur bestätigten Entscheidung zurückverfolgen. Das funktioniert nur, wenn das bestätigte Protokoll mit festen Entscheidungs-IDs als Nachweis aufbewahrt wird, auch wenn das Rohtranskript gelöscht ist.
 
 ```kette
 titel: Rückverfolgung: vom Satz im Workshop zur Release Note

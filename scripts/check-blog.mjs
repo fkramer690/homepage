@@ -22,6 +22,15 @@ const slop = [
   /es ist (wichtig|erwähnenswert) zu (beachten|erwähnen)/i, /nicht zuletzt/i, /\bsynergie/i,
 ];
 
+// Colloquial German that reads like spoken language, not like a Fabian text (Fabian 2026-11-10/11:
+// "es kamen viele Change Requests", "Partner dazuholen"). Write the precise verb instead: "einbeziehen",
+// "beauftragen", "funktioniert", "wird gespeichert", "geht an". Rules under "Wording" in docs/blog-guidelines.md.
+const colloquial = [
+  /dazuhol/i, /\bhol(e|en|t|te|ten)?\b[^.!?\n]{0,60}\bdazu\b/i, /\bklapp(t|en|te|ten)\b/i,
+  /\bland(et|en|ete|eten)\b/i, /\bgelandet\b/i, /\bdrin\b/i, /\bkrieg(e|en|t|te|ten)\b/i, /\bchecken\b/i,
+  /\bjede Menge\b/i, /\bziemlich\b/i, /\bmal eben\b/i, /\bunterm Strich\b/i,
+];
+
 const errors = [];
 
 // Structural AI-slop patterns (AI-slop review 2026-10-31, "No AI slop" in docs/blog-guidelines.md). Errors since
@@ -189,6 +198,7 @@ function check(collection, rules) {
 
       for (const re of banned) if (re.test(raw)) fail(`contains a banned term (${re})`);
       for (const re of slop) if (re.test(raw)) fail(`sounds generated, rewrite in plain words (${re})`);
+      if (lang === 'de') for (const re of colloquial) if (re.test(raw)) fail(`colloquial wording, use the precise verb (${re}): "${raw.match(re)[0]}"`);
       if (/[\u2013\u2014]/.test(text)) fail('no en or em dashes (– —), use a comma, a full stop or "to"');
       const contrasts = (text.match(/\b(is|are|isn't|aren't) not (just |only )?(about|a|an)\b[^.]*\.\s+(it|they) (is|are)\b|geht es nicht (nur )?(um|darum)|\b(ist|sind) (kein|keine|nicht)\b[^.]*\.\s+(es|sie) (ist|sind)\b/gi) ?? []).length;
       if (contrasts > 0) fail('avoid the "it is not X, it is Y" pattern, state what it is');
@@ -219,8 +229,21 @@ for (const [, str] of text.matchAll(/'((?:[^'\\\n]|\\.)*)'/g)) {
   const fail = (msg) => errors.push(`${file}: "${str.slice(0, 50)}": ${msg}`);
   for (const re of banned) if (re.test(str)) fail(`contains a banned term (${re})`);
   for (const re of slop) if (re.test(str)) fail(`sounds generated, rewrite in plain words (${re})`);
+  for (const re of colloquial) if (re.test(str)) fail(`colloquial wording, use the precise verb (${re}): "${str.match(re)[0]}"`);
   if (/[\u2013\u2014]/.test(str)) fail('no en or em dashes (– —), use a comma, a full stop or "to"');
 }
+}
+
+// Page texts in src/data (service extras, landing pages, partner and speaking pages) follow the same wording
+// rules: no generated-sounding phrases and no colloquial German (Fabian 2026-11-11).
+for (const name of readdirSync(new URL('../src/data/', import.meta.url)).filter((f) => f.endsWith('.ts'))) {
+  const file = `src/data/${name}`;
+  const text = readFileSync(new URL(`../${file}`, import.meta.url), 'utf8').replace(/^\s*\/\/.*$/gm, '');
+  for (const [, , str] of text.matchAll(/(['"`])((?:(?!\1)[^\\\n]|\\.)*)\1/g)) {
+    const fail = (msg) => errors.push(`${file}: "${str.slice(0, 50)}": ${msg}`);
+    for (const re of slop) if (re.test(str)) fail(`sounds generated, rewrite in plain words (${re})`);
+    for (const re of colloquial) if (re.test(str)) fail(`colloquial wording, use the precise verb (${re}): "${str.match(re)[0]}"`);
+  }
 }
 
 // The German FAQ heading is always "Häufig gestellte Fragen" (Fabian, 2026-10-29), on every page.

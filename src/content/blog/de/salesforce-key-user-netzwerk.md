@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Key User sind Fachanwender, die das neue Salesforce-System vor allen anderen kennen, an den Tests mitwirken und nach dem Go-live die erste Anlaufstelle für Fragen in ihrem Team sind. Sie tragen außerdem Rückmeldungen aus dem Alltag zurück ins Projekt. Ohne sie landet jede Frage beim Projektteam oder beim Support, und viele Fragen werden gar nicht gestellt, sondern mit einer Excel-Liste umgangen. Gute Key User wählt man nach Ansehen im Team aus, nicht nach freier Zeit. Als Planungswert für Workshops, Abnahmetest und die ersten Wochen nach dem Go-live rechne ich mit rund acht Arbeitstagen je Key User, und die gehören vorher in die Planung des Fachbereichs.
+Key User sind Fachanwender, die das neue Salesforce-System vor allen anderen kennen, an den Tests mitwirken und nach dem Go-live die erste Anlaufstelle für Fragen in ihrem Team sind. Sie tragen außerdem Rückmeldungen aus dem Alltag zurück ins Projekt. Ohne sie geht jede Frage an das Projektteam oder den Support, und viele Fragen werden gar nicht gestellt, sondern mit einer Excel-Liste umgangen. Gute Key User wählt man nach Ansehen im Team aus, nicht nach freier Zeit. Als Planungswert für Workshops, Abnahmetest und die ersten Wochen nach dem Go-live rechne ich mit rund acht Arbeitstagen je Key User, und die gehören vorher in die Planung des Fachbereichs.
 
 ## Key User stärken vor allem Wissen und Fähigkeit
 
