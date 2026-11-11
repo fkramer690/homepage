@@ -1,4 +1,5 @@
 ---
+import { withBrand } from '../lib/page-title.mjs';
 import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
@@ -52,11 +53,10 @@ const brief = getContactBrief(lang, post.data.contactBrief, post.data.categories
 // The booking box in the side column is left out: the two call hints in the text
 // (CallHint.astro) and the contact section at the end carry the booking link.
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
-// Keep the <title> within the ~60 characters search results show.
+// Keep the <title> within what search results show (60 characters, ~580 px).
 // metaTitle (optional) replaces the H1 in the search title only.
-const suffix = ' | FK Solution Design';
 const searchTitle = post.data.metaTitle ?? title;
-const pageTitle = searchTitle.length + suffix.length <= 60 ? searchTitle + suffix : searchTitle;
+const pageTitle = withBrand(searchTitle);
 const modified = (updatedDate ?? pubDate).toISOString();
 // Juliane's articles name her as author and send the contact form with her name in the subject.
 // A co-author (frontmatter coAuthor) is named in the byline, the structured data and in a shared author box.

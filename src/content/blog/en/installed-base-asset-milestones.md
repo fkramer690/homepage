@@ -114,4 +114,4 @@ Make registration required
   As a fixed step in the dealer process.
 ```
 
-The ratio from the first step, serial numbers with owner and start date divided by all claims, is the number I use to measure the project. The full after-sales picture is in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.
+The ratio from the first step, serial numbers with owner and start date divided by all claims, is the number I use to measure the project. The full after-sales picture is in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass. The page [Salesforce for machinery manufacturers](../../salesforce-for-machinery-manufacturers/) shows how installed base, Field Service, spare parts and the dealer portal fit together for machine builders.

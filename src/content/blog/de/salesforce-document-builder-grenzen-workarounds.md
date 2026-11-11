@@ -1,6 +1,6 @@
 ---
 title: "Salesforce Document Builder: fünf Grenzen und Workarounds"
-metaTitle: "Salesforce Document Builder: Grenzen, Limits und Workarounds"
+metaTitle: "Salesforce Document Builder: Grenzen und Workarounds"
 description: "Vorlagenwahl, Dateiname, E-Mail, Vorbelegung und Styling: fünf Grenzen des Salesforce Document Builder im Field Service und wie Flows und LWCs sie umgehen."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09

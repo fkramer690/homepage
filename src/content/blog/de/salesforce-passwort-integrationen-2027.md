@@ -1,6 +1,6 @@
 ---
 title: "Salesforce: Passwort-Integrationen enden 2027"
-metaTitle: "Salesforce Username-Password Flow: Abschaltung 20. Feb. 2027"
+metaTitle: "Salesforce Username-Password Flow: Ende Februar 2027"
 description: "Salesforce schaltet den OAuth Username-Password Flow am 20. Februar 2027 ab; SOAP login() entfällt mit Summer '27. So finden Sie betroffene Integrationen."
 pubDate: 2026-10-23
 updatedDate: 2026-11-09

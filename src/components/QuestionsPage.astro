@@ -1,4 +1,5 @@
 ---
+import { withBrand } from '../lib/page-title.mjs';
 // "Questions I ask in every project" in either language; content lives in src/data/questions.ts.
 import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
@@ -26,8 +27,7 @@ const alternates = { en: localHref('en', questionPaths.en), de: localHref('de', 
 const url = new URL(alternates[lang], Astro.site).href;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
-const suffix = ' | FK Solution Design';
-const pageTitle = c.title.length + suffix.length <= 60 ? c.title + suffix : c.title;
+const pageTitle = withBrand(c.title);
 const ogImage = `${base}og/${lang}/questions.png`;
 // Questions are numbered across all groups.
 const total = c.groups.reduce((n, g) => n + g.questions.length, 0);
