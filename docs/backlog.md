@@ -95,6 +95,21 @@ Testlauf mit dem erweiterten SEO-Prüfstand (Agenten-Tauglichkeit, Seitentyp-Abg
 | SP3 | Content-Signal in robots.txt: Suche, KI-Antworten und Training erlaubt (Entscheidung Fabian 11.11.2026) | niedrig | klein | Claude | erledigt 11.11.2026 (PR #434) |
 | SP4 | Markdown-Fassung der Seiten und `/.well-known/ard.json`: kein Ranking-Faktor, nur Ausblick | niedrig | mittel | Claude | zurückgestellt |
 
+## Übertrag aus Website-Analysen (Prüfung 11.11.2026)
+
+Abgleich von zehn Website-Analysen (Industrie, B2B-SaaS, Personalvermittlung, Beratung, Handel) mit fk-sd.de, geprüft gegen den Stand von main am 11.11.2026. A = andere Websites machen es besser, B = fk-sd.de hat dieselbe Schwäche. Neue Analysen ergänzen diese Liste; Namen der analysierten Firmen stehen hier nicht.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| UE1 | (B) Maschinenbau-Seite `/salesforce-maschinenbau/` und `/en/salesforce-for-machinery-manufacturers/` ist nur über die Navigation verlinkt, aus keinem Inhalt. Aus Startseite, passenden Leistungsseiten und 5 bis 10 Artikeln mit beschreibendem Ankertext verlinken. Gleicher Befund bei 6 von 10 Websites. Prüfsignal: interne Links aus dem Inhalt im nächsten Prüfstand-Lauf, Impressionen der Seite nach 4 Wochen | hoch | klein | Claude | offen |
+| UE2 | (A) Kundenstimmen mit Namen und Rolle sichtbar machen, gegebenenfalls über ein Google-Unternehmensprofil mit Bewertungen. Die überzeugendsten Websites zeigen sie auf der Startseite. Bestätigt J8 | hoch | klein | Fabian liefert, Claude baut ein | wartet auf Fabian |
+| UE3 | (A) Eine Referenz zur Fallstudie ausbauen: Ausgangslage, schwierige Stelle, Ablauf, höchstens zwei bestätigte Zahlen. Bei 5 von 10 Websites der stärkste Vertrauensbeleg. Bestätigt GT2 | hoch | mittel | Fabian liefert Fakten, Claude schreibt | wartet auf Fabian |
+| UE4 | (A) Titelmuster „X: Y“ auflockern: 403 von 552 indexierbaren Titeln (73 %), bei 8 von 10 Websites deutlich weniger. Neue Titel abwechseln (Frage, Aussage), bestehende nur bei ohnehin fälliger Überarbeitung ändern. Prüfsignal: Anteil in `10_text_slop` | mittel | klein je Seite | Claude | offen |
+| UE5 | (A) Blog-Übersicht verschlanken: `/blog/` und `/en/blog/` haben je rund 1.050 KB HTML und mobil viel Text unter 12 px. Karten seitenweise oder nachladen, Kartentext mobil größer. Prüfsignal: HTML-Größe, Lighthouse mobil | mittel | mittel | Claude | offen |
+| UE6 | (B) Google und KI zeigen bei Käuferfragen nach freiberuflichen Architekten Profile und Börsen statt Anbieterseiten (13 Seitentyp-Abweichungen, 15 Lücken bei KI-Unterfragen). Bei 7 von 10 Websites ähnlich. Umsetzung über SP1 und D7 | hoch | klein | Fabian | offen (= SP1) |
+| UE7 | (B) Antwort zuerst: 82 Abschnitte beginnen mit einem Satz über 45 Wörter. Bei Überarbeitungen den ersten Satz als Antwort schreiben; vorher im aktuellen Stand neu zählen | mittel | klein je Seite | Claude | offen |
+| UE8 | (B) Neun Abschnitte über 450 Wörter ohne Zwischenüberschrift: H3 einziehen, damit KI-Suchen die Antwort einzeln zitieren können | niedrig | klein | Claude | offen |
+
 ## Sichtbarkeit in Claude (Prüfung 09.11.2026)
 
 Lauf vom 09.11.2026: Claude 0 von 15 Fragen, Perplexity 9 von 15 mit denselben Seiten. Technisch ist nichts blockiert: robots.txt erlaubt alle Crawler (also auch ClaudeBot, Claude-SearchBot und Claude-User), die Seiten sind statisches HTML, llms.txt ist da. Claudes Websuche nutzt nach übereinstimmenden Berichten den Index von Brave Search (Anthropic nennt den Anbieter nicht selbst). Was dort nicht oben steht, zitiert Claude nicht. Bei 5 der 15 Fragen hat Claude gar nicht gesucht, dort zählt nur, was im Trainingsstand über Fabian steht, also Erwähnungen auf anderen Seiten. Zitiert hat Claude vor allem Verzeichnisse (freelance.de, GULP, consultingheads, bilarna, Software-Vergleichsportale), Salesforce-Doku, sfdx-hardis-Doku und GitHub, Salesforce Ben und Salesforce Dictionary.
