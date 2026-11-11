@@ -30,16 +30,16 @@
   "position": 6
  },
  {
-  "query": "veränderungskurve kühn-rosch",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 6
- },
- {
   "query": "salesforce fehlende sicht berechtigung",
   "clicks": 0,
   "impressions": 3,
   "position": 10
+ },
+ {
+  "query": "veränderungskurve kühn-rosch",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 6
  },
  {
   "query": "primäradresse im salesforce ändern",
@@ -54,10 +54,22 @@
   "position": 4
  },
  {
+  "query": "does the salesforce agent context engine allow me to configure my company's semantics and terminology?",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 3
+ },
+ {
   "query": "salesforce well architected framework architect agent",
   "clicks": 0,
   "impressions": 2,
   "position": 7
+ },
+ {
+  "query": "scheduling console salesforce",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
  },
  {
   "query": "sfdx-hardis vs salesforce devops center lifecycle center comparison 2026",
@@ -72,10 +84,16 @@
   "position": 10
  },
  {
-  "query": "does the salesforce agent context engine allow me to configure my company's semantics and terminology?",
+  "query": "4-seiten-analyse nach stakeholder meetings",
   "clicks": 0,
   "impressions": 2,
-  "position": 3
+  "position": 8
+ },
+ {
+  "query": "well architected framework salesforce",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 6
  },
  {
   "query": "salesforce well architected framework",
@@ -90,24 +108,6 @@
   "position": 8
  },
  {
-  "query": "scheduling console salesforce",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
- },
- {
-  "query": "4-seiten-analyse nach stakeholder meetings",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
- },
- {
-  "query": "well architected framework salesforce",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 6
- },
- {
   "query": "salesforce gmv",
   "clicks": 1,
   "impressions": 1,
@@ -120,16 +120,34 @@
   "position": 2
  },
  {
-  "query": "salesforce scheduling console update service appointment duration on gantt",
+  "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
   "clicks": 0,
   "impressions": 1,
-  "position": 10
+  "position": 4
  },
  {
   "query": "change management definition kotter lewin widerstand organisation",
   "clicks": 0,
   "impressions": 1,
   "position": 3
+ },
+ {
+  "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "query": "what is rca latest name for by salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "query": "salesforce scheduling console update service appointment duration on gantt",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  },
  {
   "query": "trailhead new dispatch console",
@@ -142,30 +160,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 4
- },
- {
-  "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "query": "difference between devops centre and salesforce dx  and copado",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 9
- },
- {
-  "query": "i don't see classic dispatcher console in salesforce",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 6
- },
- {
-  "query": "salesforce new dispatch console",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 6
  },
  {
   "query": "trailhead scheduling console",
@@ -184,30 +178,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 8
- },
- {
-  "query": "what is rca latest name for by salesforce",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
-  "query": "\"snelstart\" \"verkooporders\" \"post\"",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
- },
- {
-  "query": "migrate list views scheudling console sfdc",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 3
  },
  {
   "query": "hardifs",
@@ -240,46 +210,40 @@
   "position": 7
  },
  {
-  "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
- },
- {
-  "query": "\"pflege\" \"schulungskonzept\" \"key-user\" studie",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 2
- },
- {
-  "query": "wenn ich mein veränderungsprojekt mit kotter analysiere, brauche ich dann auch lewin?",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "query": "changekurve team 4 stufen",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 2
- },
- {
-  "query": "16 days hypercare after go-live",
+  "query": "difference between devops centre and salesforce dx  and copado",
   "clicks": 0,
   "impressions": 1,
   "position": 9
  },
  {
-  "query": "agent context engine salesforce",
+  "query": "i don't see classic dispatcher console in salesforce",
   "clicks": 0,
   "impressions": 1,
   "position": 6
  },
  {
-  "query": "was bedeutet cma im vergleich zu bill-to oder ship-to in den top kunden umsätzen im salesforce programm?",
+  "query": "salesforce new dispatch console",
   "clicks": 0,
   "impressions": 1,
-  "position": 8
+  "position": 6
+ },
+ {
+  "query": "migrate list views scheudling console sfdc",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "query": "\"snelstart\" \"verkooporders\" \"post\"",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  },
  {
   "query": "shop bestand",
@@ -298,5 +262,41 @@
   "clicks": 0,
   "impressions": 1,
   "position": 3
+ },
+ {
+  "query": "what does active hypercare in salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "query": "16 days hypercare after go-live",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "query": "agent context engine salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
+  "query": "how can i see the weekends in field service dispatch 2 scheduling console like i can in the classic dispatch console in field service lightning",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
+  "query": "coe waht does that mean salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "query": "salesforce is retiring the oauth 2.0 username-password flow on february 20, 2027",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
  }
 ]

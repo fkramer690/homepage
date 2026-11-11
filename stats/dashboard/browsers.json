@@ -1,27 +1,32 @@
 [
  {
   "browser": "Chrome",
-  "pageviews": 900,
-  "visits": 200
+  "pageviews": 950,
+  "visits": 250
  },
  {
   "browser": "Unknown",
-  "pageviews": 250,
-  "visits": 160
+  "pageviews": 270,
+  "visits": 170
  },
  {
   "browser": "MobileSafari",
-  "pageviews": 150,
-  "visits": 20
+  "pageviews": 170,
+  "visits": 30
  },
  {
   "browser": "ChromeMobile",
-  "pageviews": 50,
-  "visits": 30
+  "pageviews": 70,
+  "visits": 50
  },
  {
   "browser": "Edge",
   "pageviews": 40,
+  "visits": 30
+ },
+ {
+  "browser": "ChromeHeadless",
+  "pageviews": 30,
   "visits": 30
  },
  {

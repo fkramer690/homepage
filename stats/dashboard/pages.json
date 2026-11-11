@@ -1,8 +1,8 @@
 [
  {
   "page": "/",
-  "pageviews": 320,
-  "visits": 130
+  "pageviews": 330,
+  "visits": 140
  },
  {
   "page": "/en/",
@@ -10,19 +10,24 @@
   "visits": 30
  },
  {
+  "page": "/blog/",
+  "pageviews": 80,
+  "visits": 20
+ },
+ {
   "page": "/leistungen/change-management/",
   "pageviews": 70,
   "visits": 0
  },
  {
-  "page": "/blog/",
-  "pageviews": 70,
-  "visits": 10
+  "page": "/fragen/",
+  "pageviews": 50,
+  "visits": 0
  },
  {
-  "page": "/fragen/",
+  "page": "/en/masterclass/ai-salesforce/",
   "pageviews": 40,
-  "visits": 0
+  "visits": 30
  },
  {
   "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
@@ -41,8 +46,18 @@
  },
  {
   "page": "/en/blog/ai-native-salesforce-delivery-process/",
-  "pageviews": 30,
+  "pageviews": 40,
   "visits": 20
+ },
+ {
+  "page": "/en/blog/",
+  "pageviews": 40,
+  "visits": 10
+ },
+ {
+  "page": "/en/services/change-management-salesforce/",
+  "pageviews": 40,
+  "visits": 30
  },
  {
   "page": "/homepage/",
@@ -50,9 +65,9 @@
   "visits": 10
  },
  {
-  "page": "/en/blog/",
+  "page": "/blog/account-forecasting-absatzprognose-vertrieb/",
   "pageviews": 30,
-  "visits": 0
+  "visits": 30
  },
  {
   "page": "/leistungen/salesforce-schnittstellen/",
@@ -60,22 +75,7 @@
   "visits": 30
  },
  {
-  "page": "/en/masterclass/ai-salesforce/",
-  "pageviews": 20,
-  "visits": 10
- },
- {
-  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
-  "pageviews": 20,
-  "visits": 20
- },
- {
-  "page": "/en/blog/ai-coding-tools-works-council-gdpr/",
-  "pageviews": 20,
-  "visits": 0
- },
- {
-  "page": "/leistungen/",
+  "page": "/masterclass/ki-salesforce/",
   "pageviews": 20,
   "visits": 0
  },
@@ -85,17 +85,17 @@
   "visits": 0
  },
  {
+  "page": "/leistungen/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
   "page": "/en/blog/salesforce-object-ownership-matrix/",
   "pageviews": 20,
   "visits": 0
  },
  {
-  "page": "/impressum/",
-  "pageviews": 20,
-  "visits": 20
- },
- {
-  "page": "/leistungen/salesforce-architektur/",
+  "page": "/en/blog/ai-coding-tools-works-council-gdpr/",
   "pageviews": 20,
   "visits": 0
  }

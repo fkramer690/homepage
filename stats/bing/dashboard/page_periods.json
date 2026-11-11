@@ -106,13 +106,6 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/salesforce-berechtigungskonzept-permission-sets/",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 10
- },
- {
-  "period": "2026-11-06",
   "page": "https://www.fk-sd.de/blog/salesforce-key-user-netzwerk/",
   "clicks": 0,
   "impressions": 3,
@@ -120,14 +113,42 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/blog/salesforce-hypercare-after-go-live/",
+  "page": "https://www.fk-sd.de/blog/salesforce-berechtigungskonzept-permission-sets/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 10
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 9
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
   "clicks": 0,
   "impressions": 2,
   "position": 7
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
+  "page": "https://www.fk-sd.de/blog/merchandising-agent-teilekatalog/",
   "clicks": 0,
   "impressions": 2,
   "position": 4
@@ -141,7 +162,7 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-hypercare-after-go-live/",
   "clicks": 0,
   "impressions": 2,
   "position": 7
@@ -155,59 +176,10 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/merchandising-agent-teilekatalog/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 9
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
- },
- {
-  "period": "2026-11-06",
   "page": "https://www.fk-sd.de/blog/b2b-commerce-preise-gmv-modell/",
   "clicks": 1,
   "impressions": 1,
   "position": 4
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 9
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/ai-masterclass/aiforce-and-system-integrators/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/ship-and-debit-preisschutz-haendler/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 8
  },
  {
   "period": "2026-11-06",
@@ -218,9 +190,37 @@
  },
  {
   "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/blog/ship-and-debit-preisschutz-haendler/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "period": "2026-11-06",
   "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
   "clicks": 0,
   "impressions": 1,
   "position": 2
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/en/ai-masterclass/aiforce-and-system-integrators/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  }
 ]

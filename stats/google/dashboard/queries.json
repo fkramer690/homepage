@@ -42,16 +42,16 @@
   "position": 87.6
  },
  {
+  "query": "sfdx-hardis",
+  "clicks": 1,
+  "impressions": 26,
+  "position": 10.1
+ },
+ {
   "query": "field service scheduling and dispatch",
   "clicks": 0,
   "impressions": 26,
   "position": 84.7
- },
- {
-  "query": "sfdx-hardis",
-  "clicks": 1,
-  "impressions": 25,
-  "position": 10.4
  },
  {
   "query": "field service shift planning",
@@ -150,6 +150,12 @@
   "position": 37.9
  },
  {
+  "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
+  "clicks": 0,
+  "impressions": 10,
+  "position": 7.5
+ },
+ {
   "query": "b2b commerce platform with negotiable quotes",
   "clicks": 0,
   "impressions": 10,
@@ -166,6 +172,12 @@
   "clicks": 0,
   "impressions": 10,
   "position": 53.7
+ },
+ {
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 10,
+  "position": 56.8
  },
  {
   "query": "revenue cloud",
@@ -190,12 +202,6 @@
   "clicks": 0,
   "impressions": 10,
   "position": 6.5
- },
- {
-  "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
-  "clicks": 0,
-  "impressions": 9,
-  "position": 7.3
  },
  {
   "query": "b2b checkout",
@@ -226,12 +232,6 @@
   "clicks": 0,
   "impressions": 9,
   "position": 79.9
- },
- {
-  "query": "nearshore teams",
-  "clicks": 0,
-  "impressions": 9,
-  "position": 56.7
  },
  {
   "query": "salesforce b2b commerce headless",
@@ -354,6 +354,12 @@
   "position": 17.8
  },
  {
+  "query": "kommunikationsplan",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 90.5
+ },
+ {
   "query": "kundeportal b2b",
   "clicks": 0,
   "impressions": 6,
@@ -418,12 +424,6 @@
   "clicks": 0,
   "impressions": 5,
   "position": 72.4
- },
- {
-  "query": "kommunikationsplan",
-  "clicks": 0,
-  "impressions": 5,
-  "position": 90.6
  },
  {
   "query": "nearshore salesforce development",
@@ -714,6 +714,12 @@
   "position": 8
  },
  {
+  "query": "key user training",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 61
+ },
+ {
   "query": "manufacturing cloud vs service cloud",
   "clicks": 0,
   "impressions": 3,
@@ -846,6 +852,12 @@
   "position": 32.5
  },
  {
+  "query": "can agentforce agents be tested and monitored before going live?",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4.5
+ },
+ {
   "query": "change management adkar",
   "clicks": 0,
   "impressions": 2,
@@ -954,6 +966,18 @@
   "position": 73
  },
  {
+  "query": "field services software",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 35.5
+ },
+ {
+  "query": "headless b2b solution",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 36
+ },
+ {
   "query": "how does gearset position its agent and ai solutions?",
   "clicks": 0,
   "impressions": 2,
@@ -978,10 +1002,10 @@
   "position": 52.5
  },
  {
-  "query": "key user training",
+  "query": "kommunikationsplan vorlage",
   "clicks": 0,
   "impressions": 2,
-  "position": 59
+  "position": 30
  },
  {
   "query": "manufacturing cloud implementeren",
@@ -1000,6 +1024,12 @@
   "clicks": 0,
   "impressions": 2,
   "position": 22.5
+ },
+ {
+  "query": "salesforce agentforce api",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 41.5
  },
  {
   "query": "salesforce architecture planning",
@@ -1144,6 +1174,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 59
+ },
+ {
+  "query": "agentforce kosten",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 20
  },
  {
   "query": "agentforce operations",
@@ -1374,10 +1410,28 @@
   "position": 68
  },
  {
+  "query": "field service application software",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 65
+ },
+ {
   "query": "field service automation",
   "clicks": 0,
   "impressions": 1,
   "position": 54
+ },
+ {
+  "query": "field service cases",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 64
+ },
+ {
+  "query": "field service crm",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 98
  },
  {
   "query": "field service dispatcher console",
@@ -1450,12 +1504,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 49
- },
- {
-  "query": "field services software",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 50
  },
  {
   "query": "field workforce scheduling",
@@ -1572,12 +1620,6 @@
   "position": 33
  },
  {
-  "query": "headless b2b solution",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 31
- },
- {
   "query": "headless commerce salesforce",
   "clicks": 0,
   "impressions": 1,
@@ -1650,12 +1692,6 @@
   "position": 94
  },
  {
-  "query": "kommunikationsplan vorlage",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 30
- },
- {
   "query": "konfigurator händleranbindung",
   "clicks": 0,
   "impressions": 1,
@@ -1716,12 +1752,6 @@
   "position": 58
  },
  {
-  "query": "salesforce agentforce api",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 45
- },
- {
   "query": "salesforce ai coding",
   "clicks": 0,
   "impressions": 1,
@@ -1734,6 +1764,12 @@
   "position": 33
  },
  {
+  "query": "salesforce architektur",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 49
+ },
+ {
   "query": "salesforce architektur dortmund",
   "clicks": 0,
   "impressions": 1,
@@ -1744,6 +1780,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 20
+ },
+ {
+  "query": "salesforce architektur nürnberg",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 17
  },
  {
   "query": "salesforce architektur salzburg",
@@ -2092,6 +2134,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 7
+ },
+ {
+  "query": "what software manages preferred supplier lists in field service?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 43
  },
  {
   "query": "woher bekomme ich salesforce lizenzen?",
