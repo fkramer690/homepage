@@ -21,11 +21,11 @@ export const contactBriefs = {
       bring: [
         'Wie heute deployt wird: Change Sets, ein Tool oder eine Pipeline, und wer das macht',
         'Wie viele Sandboxes, Teams und Partner in dieselbe Org liefern',
-        'Ein Release, das zuletzt schiefging, mit kurzem Hergang',
+        'Ein Release, das zuletzt fehlgeschlagen ist, mit kurzem Hergang',
       ],
       clarify: [
         'Wo im Ablauf die meiste Zeit verloren geht und die meisten Fehler entstehen',
-        'Ob Ihre vorhandene Git-Plattform reicht, etwa GitLab, Azure DevOps, GitHub oder Bitbucket',
+        'Ob Ihre vorhandene Git-Plattform ausreicht, etwa GitLab, Azure DevOps, GitHub oder Bitbucket',
         'Welcher erste Pipeline-Schritt sich lohnt, den Ihr Team danach selbst betreibt',
       ],
     },
@@ -38,7 +38,7 @@ export const contactBriefs = {
         'One release that went wrong recently, and what happened',
       ],
       clarify: [
-        'Where in the process most time is lost and most errors come from',
+        'Where in the process most time is lost and most errors arise',
         'Whether your existing Git platform is enough, for example GitLab, Azure DevOps, GitHub or Bitbucket',
         'Which first pipeline step pays off and can then be run by your own team',
       ],
@@ -47,9 +47,9 @@ export const contactBriefs = {
   architecture: {
     de: {
       title: 'Steht eine Architekturentscheidung an?',
-      text: 'In 30 Minuten klären wir, welche Entscheidung zuerst fallen muss und welche Informationen Ihnen dafür noch fehlen.',
+      text: 'In 30 Minuten klären wir, welche Entscheidung zuerst getroffen werden muss und welche Informationen Ihnen dafür noch fehlen.',
       bring: [
-        'Die Entscheidung, um die es geht, und bis wann sie fallen muss',
+        'Die Entscheidung, um die es geht, und bis wann sie getroffen werden muss',
         'Welche Salesforce-Clouds Sie nutzen oder planen und welche Systeme angebunden sind',
         'Wer mitentscheidet: IT, Fachbereich, Implementierungspartner',
       ],
@@ -61,7 +61,7 @@ export const contactBriefs = {
     },
     en: {
       title: 'Facing an architecture decision?',
-      text: 'In 30 minutes we work out which decision has to come first and which information you still need for it.',
+      text: 'In 30 minutes we work out which decision has to be made first and which information you still need for it.',
       bring: [
         'The decision at hand and the date by which it has to be made',
         'Which Salesforce clouds you use or plan and which systems are connected',
@@ -77,7 +77,7 @@ export const contactBriefs = {
   'partner-governance': {
     de: {
       title: 'Mehrere Partner, unklare Zuständigkeiten?',
-      text: 'In 30 Minuten ordnen wir ein, wo Verantwortlichkeiten fehlen und warum sich Releases gegenseitig in die Quere kommen.',
+      text: 'In 30 Minuten ordnen wir ein, wo Verantwortlichkeiten fehlen und warum sich Releases gegenseitig behindern.',
       bring: [
         'Welche Partner und Teams an welchen Streams arbeiten',
         'Zwei oder drei Release-Konflikte oder Hotfixes aus den letzten Monaten, mit kurzem Hergang',
@@ -85,7 +85,7 @@ export const contactBriefs = {
       ],
       clarify: [
         'Wer welche Objekte und Automatisierungen verantworten sollte',
-        'Ob die Konflikte aus Zuständigkeiten, aus dem Prozess oder aus der Pipeline kommen',
+        'Ob die Konflikte aus Zuständigkeiten, aus dem Prozess oder aus der Pipeline entstehen',
         'Welche Standards Sie zuerst festlegen sollten',
       ],
     },
@@ -99,7 +99,7 @@ export const contactBriefs = {
       ],
       clarify: [
         'Who should own which objects and automations',
-        'Whether the conflicts come from ownership, from the process or from the pipeline',
+        'Whether the conflicts stem from ownership, from the process or from the pipeline',
         'Which standards you should set first',
       ],
     },
@@ -114,7 +114,7 @@ export const contactBriefs = {
         'Das Datum, bis zu dem Sie unterschreiben sollen, oder das Vertragsende',
       ],
       clarify: [
-        'Welche Nutzer wirklich eine volle Lizenz brauchen und wo eine günstigere reicht',
+        'Welche Nutzer wirklich eine volle Lizenz brauchen und wo eine günstigere ausreicht',
         'Ob Edition und Add-ons zu Ihrem Bedarf der nächsten zwei bis drei Jahre passen',
         'Wo Sie vor der Unterschrift noch Verhandlungsspielraum haben',
       ],
@@ -137,16 +137,16 @@ export const contactBriefs = {
   'field-service': {
     de: {
       title: 'Lohnt sich Field Service für Ihren Außendienst?',
-      text: 'Ob sich Terminplanung und Routenoptimierung rechnen, hängt an wenigen Zahlen. Mit ihnen gebe ich Ihnen in 30 Minuten eine erste Einschätzung.',
+      text: 'Ob sich Terminplanung und Routenoptimierung rechnen, hängt von wenigen Zahlen ab. Mit ihnen gebe ich Ihnen in 30 Minuten eine erste Einschätzung.',
       bring: [
         'Die typische Einsatzdauer: eher eine Stunde oder eher mehrere Tage pro Auftrag',
         'Die Fahrzeit zum Kunden und wie viele Einsätze ein Techniker am Tag schafft',
         'Wie Sie heute planen, mit wie vielen Disponenten und wie viel Aufwand pro Woche',
       ],
       clarify: [
-        'Ob Ihre Einsätze von Field Service profitieren oder ein schlankeres Modell reicht',
+        'Ob Ihre Einsätze von Field Service profitieren oder ein schlankeres Modell ausreicht',
         'Welche Kennzahlen sich mit Planung und Routenoptimierung verbessern lassen',
-        'Welche Stammdaten und Schnittstellen, etwa zum ERP, vorher stehen müssen',
+        'Welche Stammdaten und Schnittstellen, etwa zum ERP, vorher geklärt sein müssen',
       ],
     },
     en: {
@@ -170,7 +170,7 @@ export const contactBriefs = {
       text: 'Ob sie sich lohnt, entscheidet der Nutzen in Ihrem Prozess. In 30 Minuten prüfen wir, ob es diesen Nutzen bei Ihnen gibt.',
       bring: [
         'Wie Sie heute Rahmenverträge, Abnahmemengen und Absatzprognosen führen',
-        'Welches ERP die Aufträge hält und wie es mit Salesforce verbunden ist',
+        'Welches ERP die Aufträge führt und wie es mit Salesforce verbunden ist',
         'Das Angebot oder die Lizenzposition, falls schon eine vorliegt',
       ],
       clarify: [
@@ -227,7 +227,7 @@ export const contactBriefs = {
   'revenue-cloud': {
     de: {
       title: 'Revenue Cloud einführen oder von CPQ umsteigen?',
-      text: 'Ob sich der Wechsel lohnt und in welcher Reihenfolge, hängt an Ihrem Angebots- und Abrechnungsprozess. In 30 Minuten prüfen wir die wichtigsten Punkte.',
+      text: 'Ob sich der Wechsel lohnt und in welcher Reihenfolge, hängt von Ihrem Angebots- und Abrechnungsprozess ab. In 30 Minuten prüfen wir die wichtigsten Punkte.',
       bring: [
         'Wie Sie heute Angebote erstellen: mit Salesforce CPQ, einem anderen Werkzeug oder Excel',
         'Wie viele Produkte, Optionen und Preisregeln es gibt und wer sie pflegt',
@@ -264,7 +264,7 @@ export const contactBriefs = {
         'Ihre Lizenzlage für Agentforce und Data 360, falls bekannt',
       ],
       clarify: [
-        'Ob ein Agent der richtige Weg ist oder ein Flow mit festen Regeln reicht',
+        'Ob ein Agent der richtige Weg ist oder ein Flow mit festen Regeln ausreicht',
         'Mit welchen laufenden Kosten pro Aktion Sie rechnen müssen',
         'Welche Datenqualität und welche Tests vor dem Go-live nötig sind',
       ],
@@ -274,7 +274,7 @@ export const contactBriefs = {
       text: 'In 30 minutes we check whether your use case holds up and what it costs to run.',
       bring: [
         'The use case: which request or task the agent should take over and how often it occurs',
-        'Where the data for it lives: in Salesforce, in the ERP or in documents',
+        'Where the data for it is stored: in Salesforce, in the ERP or in documents',
         'Your license situation for Agentforce and Data 360, if known',
       ],
       clarify: [
@@ -287,7 +287,7 @@ export const contactBriefs = {
   integration: {
     de: {
       title: 'Salesforce soll mit SAP und weiteren Systemen sprechen?',
-      text: 'In 30 Minuten klären wir, welche Schnittstelle zuerst kommt und wie sie gebaut werden sollte.',
+      text: 'In 30 Minuten klären wir, welche Schnittstelle Vorrang hat und wie sie gebaut werden sollte.',
       bring: [
         'Die beteiligten Systeme, etwa SAP, proALPHA oder eine Telefonie-Lösung',
         'Welche Daten in welche Richtung fließen und wie aktuell sie sein müssen',
@@ -295,13 +295,13 @@ export const contactBriefs = {
       ],
       clarify: [
         'Welches System für welche Daten führend ist',
-        'Ob Sie eine Middleware brauchen oder eine direkte Anbindung reicht',
+        'Ob Sie eine Middleware brauchen oder eine direkte Anbindung ausreicht',
         'Wo heute die größten Risiken liegen, etwa bei Authentifizierung und Fehlerbehandlung',
       ],
     },
     en: {
       title: 'Salesforce needs to talk to SAP and other systems?',
-      text: 'In 30 minutes we clarify which interface comes first and how it should be built.',
+      text: 'In 30 minutes we clarify which interface takes priority and how it should be built.',
       bring: [
         'The systems involved, for example SAP, proALPHA or a telephony solution',
         'Which data flows in which direction and how current it has to be',
@@ -317,11 +317,11 @@ export const contactBriefs = {
   nearshore: {
     de: {
       title: 'Planen oder steuern Sie ein Nearshore-Team?',
-      text: 'In 30 Minuten schauen wir, ob Teamgröße, Zusammensetzung und Steuerung zu Ihrem Vorhaben passen.',
+      text: 'In 30 Minuten prüfen wir, ob Teamgröße, Zusammensetzung und Steuerung zu Ihrem Vorhaben passen.',
       bring: [
         'Größe und Zusammensetzung des Teams, Standorte und Seniorität',
         'Wie oft in den letzten Monaten Personen gewechselt haben',
-        'Wie Anforderungen heute ins Team kommen und wer Ergebnisse abnimmt',
+        'Wie Anforderungen heute an das Team übergeben werden und wer Ergebnisse abnimmt',
       ],
       clarify: [
         'Ob Teamgröße und Mischung zu Ihrem Vorhaben passen',
@@ -350,8 +350,8 @@ export const contactBriefs = {
       text: 'In 30 Minuten ordnen wir Ihre Optionen ein, mit Blick auf Lizenzen, Betrieb und Folgekosten über mehrere Jahre.',
       bring: [
         'Den Prozess oder das Problem, das gelöst werden soll',
-        'Die Optionen, die schon auf dem Tisch liegen, mit Angeboten falls vorhanden',
-        'Ihre vorhandenen Salesforce-Lizenzen und die Systeme drumherum',
+        'Die Optionen, die bereits zur Auswahl stehen, mit Angeboten falls vorhanden',
+        'Ihre vorhandenen Salesforce-Lizenzen und die angebundenen Systeme',
       ],
       clarify: [
         'Welche Option sich über die Jahre rechnet, inklusive Wartung',
@@ -364,7 +364,7 @@ export const contactBriefs = {
       text: 'In 30 minutes we sort your options, looking at licenses, operation and follow-up costs over several years.',
       bring: [
         'The process or problem that needs solving',
-        'The options already on the table, with offers if you have them',
+        'The options already under consideration, with offers if you have them',
         'Your existing Salesforce licenses and the systems around them',
       ],
       clarify: [
@@ -377,10 +377,10 @@ export const contactBriefs = {
   change: {
     de: {
       title: 'Ein Release ist live, aber der Alltag bleibt beim Alten?',
-      text: 'In 30 Minuten klären wir, wo neue Prozesse und Standards hängen bleiben und was die Einführung braucht.',
+      text: 'In 30 Minuten klären wir, woran neue Prozesse und Standards scheitern und was die Einführung braucht.',
       bring: [
         'Was sich mit dem Release oder Standard ändern soll und für wen',
-        'Woran Sie merken, dass es nicht ankommt, etwa Nutzung, Rückfragen oder Umgehungslösungen',
+        'Woran Sie merken, dass es nicht angenommen wird, etwa Nutzung, Rückfragen oder Umgehungslösungen',
         'Wer die Einführung heute verantwortet',
       ],
       clarify: [
@@ -391,10 +391,10 @@ export const contactBriefs = {
     },
     en: {
       title: 'The release is live, but daily work has not changed?',
-      text: 'In 30 minutes we clarify where new processes and standards get stuck and what the rollout needs.',
+      text: 'In 30 minutes we clarify why new processes and standards fail to take hold and what the rollout needs.',
       bring: [
         'What the release or standard is supposed to change, and for whom',
-        'How you notice it is not landing, for example usage, questions or workarounds',
+        'How you notice it is not being adopted, for example usage, questions or workarounds',
         'Who is responsible for the rollout today',
       ],
       clarify: [
@@ -407,7 +407,7 @@ export const contactBriefs = {
   // Articles by Juliane Winterscheid on change management in general (author: juliane).
   'change-basics': {
     de: {
-      title: 'Eine Veränderung steht an und soll im Alltag ankommen?',
+      title: 'Eine Veränderung steht an und soll sich im Alltag durchsetzen?',
       text: 'In 30 Minuten klären Juliane Winterscheid und ich, wo Ihre Veränderung steht und welche Schritte als Nächstes zählen.',
       bring: [
         'Was sich ändern soll, für wen und bis wann',

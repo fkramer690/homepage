@@ -321,14 +321,14 @@ const commerceClusters: Cluster[] = [
   },
   {
     id: 'erp',
-    en: { title: 'ERP integration', text: 'Which data comes live from SAP and who owns the order.' },
-    de: { title: 'ERP-Anbindung', text: 'Welche Daten live aus SAP kommen und wem der Auftrag gehört.' },
+    en: { title: 'ERP integration', text: 'Which data SAP supplies live and who owns the order.' },
+    de: { title: 'ERP-Anbindung', text: 'Welche Daten SAP live liefert und wem der Auftrag gehört.' },
     articles: ['commerce-sap-data-flows', 'commerce-stock-availability-erp', 'commerce-order-to-erp', 'commerce-extensions-custom-code', 'commerce-headless-b2b', 'agentforce-sap-order-status', 'legacy-erp-without-api-agents', 'salesforce-password-integrations-2027'],
   },
   {
     id: 'agents-rollout',
-    en: { title: 'Agents and rollout', text: 'What the buyer and merchandising agents do and how the store reaches dealers.' },
-    de: { title: 'Agenten und Einführung', text: 'Was Buyer und Merchandising Agent leisten und wie der Shop zu den Händlern kommt.' },
+    en: { title: 'Agents and rollout', text: 'What the buyer and merchandising agents do and how the store is rolled out to dealers.' },
+    de: { title: 'Agenten und Einführung', text: 'Was Buyer und Merchandising Agent leisten und wie der Shop bei den Händlern eingeführt wird.' },
     articles: ['commerce-buyer-agent-whatsapp', 'commerce-merchandising-agent', 'prompt-injection-dealer-portals', 'multilingual-dealer-agents', 'distributor-replenishment-agent', 'commerce-aura-to-lwr-migration', 'commerce-dealer-rollout', 'commerce-kpis-after-go-live'],
   },
 ];
@@ -361,7 +361,7 @@ const fieldServiceClusters: Cluster[] = [
   {
     id: 'ai-rollout',
     en: { title: 'AI agents and rollout', text: 'Which agents work today, how to roll out in waves and how to measure success.' },
-    de: { title: 'KI-Agenten und Einführung', text: 'Welche Agenten heute tragen, wie Sie in Wellen einführen und woran Sie den Erfolg messen.' },
+    de: { title: 'KI-Agenten und Einführung', text: 'Welche Agenten sich heute bewähren, wie Sie in Wellen einführen und woran Sie den Erfolg messen.' },
     articles: ['field-service-ai-agents-today', 'breakdown-hotline-voice-agent', 'field-service-ai-troubleshooting-manuals', 'spare-parts-serial-number-ai', 'field-service-headless-setup-ai', 'field-service-rollout', 'field-service-kpis-after-go-live'],
   },
 ];
@@ -369,14 +369,14 @@ const fieldServiceClusters: Cluster[] = [
 const changeClusters: Cluster[] = [
   {
     id: 'diagnosis',
-    en: { title: 'Why rollouts fail', text: 'What change management means in a Salesforce program and how ADKAR shows where it is stuck.' },
-    de: { title: 'Warum Einführungen scheitern', text: 'Was Change Management im Salesforce-Programm heißt und wie ADKAR zeigt, wo es hängt.' },
+    en: { title: 'Why rollouts fail', text: 'What change management means in a Salesforce program and how ADKAR shows where it stalls.' },
+    de: { title: 'Warum Einführungen scheitern', text: 'Was Change Management im Salesforce-Programm heißt und wie ADKAR zeigt, wo es stockt.' },
     articles: ['change-management-hub', 'change-process-salesforce', 'salesforce-center-of-excellence'],
   },
   {
     id: 'people',
     en: { title: 'Sponsor, communication and key users', text: 'Who explains why, how business teams learn about releases and who answers the first questions.' },
-    de: { title: 'Sponsor, Kommunikation und Key User', text: 'Wer erklärt, warum, wie Fachbereiche von Releases erfahren und wer die ersten Fragen beantwortet.' },
+    de: { title: 'Sponsor, Kommunikation und Key User', text: 'Wer das Warum erklärt, wie Fachbereiche von Releases erfahren und wer die ersten Fragen beantwortet.' },
     articles: ['change-release-communication', 'change-key-users', 'change-training-plan', 'change-sales-adoption', 'salesforce-uat-business-testing', 'ai-coding-works-council-gdpr'],
   },
   {
@@ -387,8 +387,8 @@ const changeClusters: Cluster[] = [
   },
   {
     id: 'reinforcement',
-    en: { title: 'Measure and reinforce', text: 'Which figures show adoption and how standards stay in place with partners.' },
-    de: { title: 'Messen und verankern', text: 'Welche Zahlen Nutzung zeigen und wie Standards bei Partnern bleiben.' },
+    en: { title: 'Measure and reinforce', text: 'Which figures show adoption and how partners keep to the standards.' },
+    de: { title: 'Messen und verankern', text: 'Welche Zahlen Nutzung zeigen und wie Partner die Standards dauerhaft einhalten.' },
     articles: ['change-hypercare', 'change-adoption-metrics', 'field-service-kpis-after-go-live', 'change-reinforcement-standards', 'development-standards-definition-of-done'],
   },
   {
