@@ -1,6 +1,6 @@
 # Recherche-Dossier: Salesforce Enhanced Chat (v1 und v2)
 
-Stand 31.10.2026. Grundlage für die Blogserie „Salesforce Enhanced Chat für Hersteller“ (Serienplan in `docs/backlog.md`, Abschnitt „Serie Enhanced Chat“). Nur Salesforce-Primärquellen, außer wo ausdrücklich vermerkt. Das Repo ist öffentlich: keine Kundennamen, Preise aus Verträgen oder Projektdetails hier eintragen. Fabians Projekterfahrung kommt erst nach seinen Antworten in die Artikel.
+Stand 31.10.2026. Grundlage für die Blogserie „Salesforce Enhanced Chat für Hersteller“ (Serienplan im Backlog des Projekts Homepage, Abschnitt „Serie Enhanced Chat“, Teile EC1 bis EC9). Nur Salesforce-Primärquellen, außer wo ausdrücklich vermerkt. Das Repo ist öffentlich: keine Kundennamen, Preise aus Verträgen oder Projektdetails hier eintragen. Fabians Projekterfahrung kommt erst nach seinen Antworten in die Artikel.
 
 ## 1. Begriffe: was heißt was?
 
