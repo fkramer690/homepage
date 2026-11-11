@@ -2,10 +2,12 @@
 // into every page) and scripts/check-security.mjs (checks it). GitHub Pages cannot send
 // HTTP headers, so the policy is a <meta http-equiv="content-security-policy"> tag.
 //
-// Allowed: this site, plus the two outside services the site really uses:
+// Allowed: this site, plus the outside services the site really uses:
 //   - Cloudflare Web Analytics: script from static.cloudflareinsights.com,
 //     beacon to cloudflareinsights.com
 //   - Web3Forms: the contact form posts to api.web3forms.com
+//   - Event counter (workers/events): "Book a call" clicks and sent forms are
+//     beaconed to fk-sd-events.fk-sd.workers.dev
 // A new outside service (script, form, embed, image host) needs its host here, or the
 // browser blocks it. Inline <script> and <style> elements are allowed by their SHA-256
 // hash only, which scripts/add-csp.mjs computes per page. Style attributes (drawings,
@@ -19,7 +21,7 @@ const fixed = [
   "base-uri 'self'",
   "object-src 'none'",
   "form-action 'self' https://api.web3forms.com",
-  "connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com",
+  "connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com https://fk-sd-events.fk-sd.workers.dev",
   "img-src 'self' data:",
   "font-src 'self'",
   "media-src 'self'",

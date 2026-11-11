@@ -19,7 +19,7 @@ export const site = {
   // Event counter (workers/events, deployed by events-worker.yml): counts
   // "Book a call" clicks and sent contact forms, nothing else. Empty = off.
   // Its host must also be in connect-src of scripts/csp-policy.mjs.
-  eventsUrl: 'EVENTS_URL_TBD',
+  eventsUrl: 'https://fk-sd-events.fk-sd.workers.dev/',
   // Business phone: German pages show the national format, English pages the
   // international one; links always dial the international number.
   phone: {
