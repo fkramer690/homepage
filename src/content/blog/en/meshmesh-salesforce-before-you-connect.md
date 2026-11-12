@@ -86,7 +86,7 @@ with: A dedicated integration user
 quote: The agent can do what the signed-in user can do. That is why an admin never signs in on my projects.
 ```
 
-The connection through [Salesforce Headless 360](https://docs.meshmesh.io/guides/connect-salesforce-headless-360) is itself still in beta; MeshMesh allows read access only on every request. The MeshMesh FAQ also advises always connecting a sandbox or test environment. Which data may be stored there is covered in [sandbox customer data and AI coding agents](../sandbox-customer-data-ai-coding-agents/).
+The connection through [Salesforce Headless 360](https://docs.meshmesh.io/guides/connect-salesforce-headless-360) is itself still in beta; MeshMesh allows read access only on every request. The MeshMesh FAQ also advises always connecting a sandbox or test environment. Which data may be stored there is covered in [sandbox customer data and AI coding agents](/en/blog/sandbox-customer-data-ai-coding-agents/).
 
 ## MeshMesh changes belong in the repository
 
@@ -98,7 +98,7 @@ According to the [guide to the GitHub connection](https://docs.meshmesh.io/guide
 In a program with several implementation partners, every pull request went across my desk at first; later I handed that over to an internal colleague. The shared standards only held because no change bypassed that route. I treat an AI agent as one more developer: it follows the same rules, or it works only in its own sandbox.
 ```
 
-What a review should also check for code written by agents is in [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/). How a pipeline for several teams is set up is on my page about [DevOps and release management](../../services/devops-release-management/).
+What a review should also check for code written by agents is in [reviewing AI-generated Salesforce code](/en/blog/reviewing-ai-generated-salesforce-code/). How a pipeline for several teams is set up is on my page about [DevOps and release management](/en/services/devops-release-management/).
 
 ## Where does MeshMesh process your data?
 
@@ -109,7 +109,7 @@ These details from the MeshMesh documentation matter for your data protection re
 - **Network:** two fixed IPv4 addresses shared by all customers. If your org restricts login IP ranges, you have to allow both.
 - **Logs:** complete audit trails for all actions, according to the [security page](https://docs.meshmesh.io/security).
 
-For your data protection officer, MeshMesh is one more service provider with processing in the US. That does not rule out a test, but it belongs in the review before the first login. In Germany, the works council is also involved: a tool that produces usage data per person usually falls under co-determination under section 87 (1) no. 6 of the German Works Constitution Act. The details are in [AI coding tools: works council and GDPR](../ai-coding-tools-works-council-gdpr/). Before the first login, also get written confirmation of the subprocessors involved, how long MeshMesh retains org metadata and query results, and the contractual basis on which you join the beta.
+For your data protection officer, MeshMesh is one more service provider with processing in the US. That does not rule out a test, but it belongs in the review before the first login. In Germany, the works council is also involved: a tool that produces usage data per person usually falls under co-determination under section 87 (1) no. 6 of the German Works Constitution Act. The details are in [AI coding tools: works council and GDPR](/en/blog/ai-coding-tools-works-council-gdpr/). Before the first login, also get written confirmation of the subprocessors involved, how long MeshMesh retains org metadata and query results, and the contractual basis on which you join the beta.
 
 ## The MeshMesh health check does not replace your own review
 
@@ -125,7 +125,7 @@ title: Audit Snapshot of Org Health: a good start, not an assessment
 better: For license negotiations and the target architecture: review user tasks and data flows independently.
 ```
 
-From my pre-sales work with Salesforce I know that full licenses are offered by default, including for users who only read data or approve records. With a large user base that easily adds up to six figures a year. The health check shows idle seats; whether an active user would need a cheaper license type only becomes clear from what that user does, which is how I approach [make-or-buy and licenses](../../services/make-or-buy-licences/). What an AI-assisted analysis has to deliver before a partner switch is covered in [AI org assessment: technical debt before a partner switch](../ai-org-assessment-technical-debt/).
+From my pre-sales work with Salesforce I know that full licenses are offered by default, including for users who only read data or approve records. With a large user base that easily adds up to six figures a year. The health check shows idle seats; whether an active user would need a cheaper license type only becomes clear from what that user does, which is how I approach [make-or-buy and licenses](/en/services/make-or-buy-licences/). What an AI-assisted analysis has to deliver before a partner switch is covered in [AI org assessment: technical debt before a partner switch](/en/blog/ai-org-assessment-technical-debt/).
 
 ## First step: test MeshMesh in a developer sandbox until the end of January
 

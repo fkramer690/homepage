@@ -84,7 +84,7 @@ Fälle und Servicehistorie | Fälle und Servicehistorie * | Aufträge und instal
 marke: führt
 fazit: Ändern darf jeweils nur das führende System, das andere liest oder verweist.
 ```
-Die Details unterscheiden sich in jedem Unternehmen. Deshalb gehört diese Landkarte zur [Salesforce-Architektur](../salesforce-architektur/) und wird nicht der einzelnen Schnittstelle überlassen. Welche Daten bei Maschinen- und Anlagenbauern meist in SAP bleiben, von Ersatzteilpreisen bis zu Kundenaufträgen, beschreibt die Seite [Salesforce für Maschinen- und Anlagenbau](../../salesforce-maschinenbau/).
+Die Details unterscheiden sich in jedem Unternehmen. Deshalb gehört diese Landkarte zur [Salesforce-Architektur](/leistungen/salesforce-architektur/) und wird nicht der einzelnen Schnittstelle überlassen. Welche Daten bei Maschinen- und Anlagenbauern meist in SAP bleiben, von Ersatzteilpreisen bis zu Kundenaufträgen, beschreibt die Seite [Salesforce für Maschinen- und Anlagenbau](/salesforce-maschinenbau/).
 
 ## Braucht es eine Middleware?
 
@@ -120,7 +120,7 @@ Ich habe mit den CTI-Anbietern Genesys und Mirage gearbeitet, und Microsoft Team
 
 ## Integrationsbenutzer brauchen weniger Rechte und eine neue Anmeldung
 
-Jede Schnittstelle hat einen technischen Benutzer, und diese Benutzer haben oft mehr Rechte als nötig. Auch die Authentifizierung ändert sich: Schnittstellen, die sich mit Benutzername und Passwort anmelden, müssen auf moderne Verfahren umsteigen, wie in [Salesforce-Passwort-Integrationen enden 2027](../../blog/salesforce-passwort-integrationen-2027/) beschrieben. Integrationsbenutzer, ihre Rechte und ihre Authentifizierung prüfe ich als Teil der Architektur. Die wichtigsten Termine für die Anmeldung von Integrationen:
+Jede Schnittstelle hat einen technischen Benutzer, und diese Benutzer haben oft mehr Rechte als nötig. Auch die Authentifizierung ändert sich: Schnittstellen, die sich mit Benutzername und Passwort anmelden, müssen auf moderne Verfahren umsteigen, wie in [Salesforce-Passwort-Integrationen enden 2027](/blog/salesforce-passwort-integrationen-2027/) beschrieben. Integrationsbenutzer, ihre Rechte und ihre Authentifizierung prüfe ich als Teil der Architektur. Die wichtigsten Termine für die Anmeldung von Integrationen:
 
 ```zeitleiste
 2026-12-01 | SOAP login() braucht die Berechtigung Use Any API Auth

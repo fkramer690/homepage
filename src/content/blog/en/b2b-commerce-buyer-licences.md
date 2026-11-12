@@ -42,7 +42,7 @@ Salesforce B2B Commerce, which Salesforce now calls "Agentforce Commerce for B2B
 | Merchandiser | Runs the catalog, store features and launches | Salesforce standard or Identity license | Merchandiser or Commerce Admin permission set |
 | Developer, front-end builder | Loads product data, builds checkout and pages | Internal Salesforce license, depending on the task | Customize Application, Author Apex, Create and Set Up Experiences |
 
-The [B2B Commerce pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) lists 6 or 10 storefronts, 20 inventory locations, Order Management, Data Cloud credits, the Merchant Agent and 3 or 5 users each for CRM Analytics and Knowledge. Buyer licenses do not appear there; ask whether your edition includes any. Otherwise they are charged on top of the GMV fee, which I cover in [B2B Commerce pricing: what the GMV model costs](../b2b-commerce-pricing-gmv-model/).
+The [B2B Commerce pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) lists 6 or 10 storefronts, 20 inventory locations, Order Management, Data Cloud credits, the Merchant Agent and 3 or 5 users each for CRM Analytics and Knowledge. Buyer licenses do not appear there; ask whether your edition includes any. Otherwise they are charged on top of the GMV fee, which I cover in [B2B Commerce pricing: what the GMV model costs](/en/blog/b2b-commerce-pricing-gmv-model/).
 
 ## Buyer managers need Customer Community Plus, plain buyers do not
 
@@ -58,7 +58,7 @@ A buyer manager, according to Trailhead:
 - reads, creates and edits carts and orders, like a buyer,
 - edits address fields on contact point addresses, which buyers can only read.
 
-If you assign Delegated External User Administration, the dealer's buyer manager can onboard new staff without opening a ticket with your inside sales team. In a rollout this saves more work than most store features, which is why I describe it in [the dealer rollout](../b2b-shop-dealer-rollout/).
+If you assign Delegated External User Administration, the dealer's buyer manager can onboard new staff without opening a ticket with your inside sales team. In a rollout this saves more work than most store features, which is why I describe it in [the dealer rollout](/en/blog/b2b-shop-dealer-rollout/).
 
 ## Member or login license: which is cheaper for Customer Community Plus?
 
@@ -95,8 +95,8 @@ Internal staff work in Salesforce with their internal license. The Trailhead per
 - **Order templates**, generally available since September 2026 according to the [Commerce innovations page](https://www.salesforce.com/ca/commerce/innovations/): buyers and sales reps create, save and reuse common orders.
 - **Reorder portal**: a rep invites a buyer to a page with past orders ready to reorder. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal), integrating it with Sales Cloud requires an Agentforce Commerce license and an enabled digital experience.
 
-My advice: for each internal group, write down what they do in the store, for example look at it as a dealer would, order on a dealer's behalf or maintain the catalog, and have Salesforce confirm in the quote which license covers each activity. Which internal users really need a full license is covered in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+My advice: for each internal group, write down what they do in the store, for example look at it as a dealer would, order on a dealer's behalf or maintain the catalog, and have Salesforce confirm in the quote which license covers each activity. Which internal users really need a full license is covered in [Salesforce licenses: does everyone need a full one?](/en/blog/salesforce-licences-full-licence-needed/).
 
 ## Count login days per buyer
 
-Build a list with four columns: role, number of people, login days per month and license. Fill it using order data from the last twelve months: who ordered how often by phone, email or through the portal. Then check the limits above, especially roles and the Account Switcher for dealer groups. Whether a store or a portal fits your dealers at all is the question in [B2B Commerce or dealer portal](../b2b-commerce-or-dealer-portal/), and the whole cost picture is in [chapter 1 of the B2B Commerce masterclass](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/). License forecasts like this are part of my work on [make-or-buy and licenses](../../services/make-or-buy-licences/).
+Build a list with four columns: role, number of people, login days per month and license. Fill it using order data from the last twelve months: who ordered how often by phone, email or through the portal. Then check the limits above, especially roles and the Account Switcher for dealer groups. Whether a store or a portal fits your dealers at all is the question in [B2B Commerce or dealer portal](/en/blog/b2b-commerce-or-dealer-portal/), and the whole cost picture is in [chapter 1 of the B2B Commerce masterclass](/en/masterclass/b2b-commerce/b2b-commerce-worth-it-overview/). License forecasts like this are part of my work on [make-or-buy and licenses](/en/services/make-or-buy-licences/).

@@ -35,7 +35,7 @@ Händler bestellen nicht nur bekannte Teile zu bekannten Preisen nach. Sie frage
 
 Request for Quote (RFQ), auf Deutsch Angebotsanfrage, hält dieses Gespräch im Shop. Salesforce beschreibt es in seinem [Beitrag zu den B2B-Neuerungen für Spring '26](https://www.salesforce.com/blog/b2b-commerce-innovations-spring-26/) als Schritt "from self-service to sales-assisted": Käufer fragen ein Angebot an, ohne den Shop zu verlassen. Der [Beitrag vom Juni 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) nennt RFQ "already generally available". Auch Trailhead nennt das Produkt "Agentforce Commerce for B2B"; die Funktion ist unter beiden Namen dieselbe.
 
-Die [Salesforce-Hilfe zu Preisen in B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) beschreibt es so: Käufer in B2B-Stores fragen Angebote für komplexe oder hochpreisige Käufe direkt aus dem Warenkorb an, und Sie bearbeiten die Angebote in Sales Cloud oder Agentforce Revenue Management. Welche Produkte funktionieren, hängt von der Lizenz ab: Laut [Apex-Referenz für ConnectApi.CommerceCart](https://developer.salesforce.com/docs/platform/apex-ref/references/apex-ref/apex-connectapi-commercecart-static-methods.html) werden einfache Produkte allein mit B2B Commerce unterstützt, statische und dynamische Bundles nur mit B2B Commerce und Revenue Cloud und Abonnementprodukte gar nicht. Wann sich Revenue-Cloud-Preise im Shop lohnen, steht in [Advanced Pricing im B2B-Shop](../advanced-pricing-b2b-shop-revenue-cloud/).
+Die [Salesforce-Hilfe zu Preisen in B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) beschreibt es so: Käufer in B2B-Stores fragen Angebote für komplexe oder hochpreisige Käufe direkt aus dem Warenkorb an, und Sie bearbeiten die Angebote in Sales Cloud oder Agentforce Revenue Management. Welche Produkte funktionieren, hängt von der Lizenz ab: Laut [Apex-Referenz für ConnectApi.CommerceCart](https://developer.salesforce.com/docs/platform/apex-ref/references/apex-ref/apex-connectapi-commercecart-static-methods.html) werden einfache Produkte allein mit B2B Commerce unterstützt, statische und dynamische Bundles nur mit B2B Commerce und Revenue Cloud und Abonnementprodukte gar nicht. Wann sich Revenue-Cloud-Preise im Shop lohnen, steht in [Advanced Pricing im B2B-Shop](/blog/advanced-pricing-b2b-shop-revenue-cloud/).
 
 ## Wie wird aus dem Warenkorb ein Angebot und daraus wieder ein Warenkorb?
 
@@ -49,7 +49,7 @@ Verhandlung | Innendienst
 Antwort | Käufer
   Der Käufer sieht das Angebot auf der Seite My Quotes und nimmt es an, bittet um Änderungen oder lehnt ab.
 Bestellung | Käufer
-  Mit Accept & Buy wird das freigegebene Angebot zum Warenkorb. Der Käufer bestellt zu den verhandelten Preisen, meist mit Bestellnummer, wie in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../b2b-checkout-bestellnummer-rechnung/) beschrieben.
+  Mit Accept & Buy wird das freigegebene Angebot zum Warenkorb. Der Käufer bestellt zu den verhandelten Preisen, meist mit Bestellnummer, wie in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](/blog/b2b-checkout-bestellnummer-rechnung/) beschrieben.
 ```
 
 Im Juni-Beitrag heißt es zu Schritt 4: "once a quote is negotiated and approved, sellers can share it with customers as a cart". Salesforce nennt das Round-Trip Quoting und bezeichnet es seit Juni 2026 als allgemein verfügbar. Automatisch geschieht das trotzdem nicht: Der Store braucht die Angebotskomponenten auf der Seite My Quotes, und der Käufer stößt die Umwandlung an. Die Apex-Referenz nennt Grenzen, die für das Design wichtig sind:
@@ -92,7 +92,7 @@ Vor dem Go-live würde ich diese Punkte schriftlich festlegen:
 - **Gültigkeit.** Wie lange ein freigegebenes Angebot gilt, bevor Preise neu geprüft werden.
 - **Bestellweg.** Was passiert, wenn ein Käufer per E-Mail statt im Shop annimmt. Tippt der Innendienst den Auftrag dann von Hand ein, bricht der Kreislauf.
 
-Bei großen Händlern gehen Anfragen außerdem über Außendienst und Partnerportale ein. Erstellt dort ebenfalls eine KI Angebote, sollten derselbe Innendienst und dieselben Preisregeln beide Kanäle bedienen, wie ich es für den [AI Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschreibe.
+Bei großen Händlern gehen Anfragen außerdem über Außendienst und Partnerportale ein. Erstellt dort ebenfalls eine KI Angebote, sollten derselbe Innendienst und dieselben Preisregeln beide Kanäle bedienen, wie ich es für den [AI Partner Sales Assistant](/blog/ki-angebote-haendler-partner-sales-assistant/) beschreibe.
 
 ## Rechenbeispiel: 400 Systemintegratoren
 
@@ -106,4 +106,4 @@ Die Zahlen sind erfunden, um die Methode zu zeigen. Was ich in den ersten drei M
 
 Starten Sie beim Innendienst, nicht bei der Komponente. Legen Sie Antwortzeit, Verantwortliche je Queue und Preiskompetenz fest und testen Sie den Kreislauf mit einer Käufergruppe, die heute schon viele Anfragen schickt. Klären Sie danach die Lizenzfrage für Ihre Produkttypen mit Salesforce, besonders für Bundles und Abonnements.
 
-Das Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) zeigt, wie RFQ mit Kundenpreisen, Checkout und Nachbestellung zusammenspielt. Wie aus dem Angebot in Revenue Cloud ein Vertrag und ein Auftrag werden, behandelt das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/) der Masterclass Revenue Cloud. Wo RFQ mehrere Partner und Teams berührt, gehört die Steuerung zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
+Das Kapitel [Preise, Warenkorb, Checkout](/masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](/masterclass/b2b-commerce/) zeigt, wie RFQ mit Kundenpreisen, Checkout und Nachbestellung zusammenspielt. Wie aus dem Angebot in Revenue Cloud ein Vertrag und ein Auftrag werden, behandelt das Kapitel [Angebot, Vertrag, Auftrag](/masterclass/revenue-cloud/angebot-vertrag-auftrag/) der Masterclass Revenue Cloud. Wo RFQ mehrere Partner und Teams berührt, gehört die Steuerung zu meiner Arbeit in der [Partnersteuerung](/leistungen/partnersteuerung/).

@@ -75,7 +75,7 @@ Salesforce DevOps bedeutet, dass jede Änderung, die sich als Metadaten deployen
 
 ## Warum machen Salesforce-Releases so viel Ärger?
 
-Salesforce macht es leicht, direkt in einer Org etwas zu ändern. Am Anfang ist das praktisch. Sobald mehrere Teams parallel arbeiten, wird es zum Problem. Die typischen Symptome beschreibe ich in [warum DevOps in Salesforce-Enterprise-Projekten zählt](../../blog/warum-devops-salesforce-enterprise-projekte/).
+Salesforce macht es leicht, direkt in einer Org etwas zu ändern. Am Anfang ist das praktisch. Sobald mehrere Teams parallel arbeiten, wird es zum Problem. Die typischen Symptome beschreibe ich in [warum DevOps in Salesforce-Enterprise-Projekten zählt](/blog/warum-devops-salesforce-enterprise-projekte/).
 
 ```vergleich
 ohne: Änderungen direkt in der Org
@@ -103,7 +103,7 @@ analyse | Review | Für jede Änderung | Die Automatisierung findet die wiederho
 basis: Auf der Git-Plattform des Kunden
 ```
 
-Mehr zu Reviews steht in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../../blog/warum-pull-request-reviews-pflicht-sind/).
+Mehr zu Reviews steht in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](/blog/warum-pull-request-reviews-pflicht-sind/).
 
 ```praxis
 In einem Programm habe ich den Release-Prozess selbst aufgebaut. Am Anfang ging jeder Pull Request über meinen Tisch, später habe ich diese Aufgabe an einen internen Kollegen übergeben.
@@ -120,15 +120,15 @@ quelle: meine Pipelines in Kundenprojekten
 
 Ich baue Pipelines auf der Git-Plattform, die das Unternehmen schon nutzt. Bisher waren das GitHub, GitLab, Azure DevOps und Bitbucket. Jede Plattform braucht ihre eigene Pipeline-Definition, aber die Deployment-Schritte und Prüfungen dahinter sind überall gleich, auch wenn jede ihre Eigenheiten hat, zum Beispiel wie der Validierungsstatus eines Pull Requests angezeigt wird.
 
-Für den Salesforce-Teil nutze ich oft sfdx-hardis, ein Open-Source-DevOps-Tool, das ich in eigenen Projekten einsetze. Es hat keine Lizenzgebühr (Runner und Wartung kosten trotzdem Zeit und Geld), und Repository, Pipeline und Zugriffsrechte bleiben beim Kunden. Was es kann, erkläre ich in [sfdx-hardis: Einführung in Open-Source-DevOps für Salesforce](../../blog/sfdx-hardis-einfuehrung-salesforce-devops/). Ich unterstütze das Projekt, habe aber keine finanziellen Verbindungen dazu. Hat ein Kunde schon ein kommerzielles Tool, das funktioniert, baue ich darauf auf.
+Für den Salesforce-Teil nutze ich oft sfdx-hardis, ein Open-Source-DevOps-Tool, das ich in eigenen Projekten einsetze. Es hat keine Lizenzgebühr (Runner und Wartung kosten trotzdem Zeit und Geld), und Repository, Pipeline und Zugriffsrechte bleiben beim Kunden. Was es kann, erkläre ich in [sfdx-hardis: Einführung in Open-Source-DevOps für Salesforce](/blog/sfdx-hardis-einfuehrung-salesforce-devops/). Ich unterstütze das Projekt, habe aber keine finanziellen Verbindungen dazu. Hat ein Kunde schon ein kommerzielles Tool, das funktioniert, baue ich darauf auf.
 
 ```hinweis tipp
-Auch Plattformänderungen gehören zum Release-Management. Jedes Salesforce-Release, etwa [Winter '27](../../blog/salesforce-winter-27-aenderungen-pipeline/), kann API-Versionen, Metadaten-Verhalten oder Sicherheitseinstellungen ändern, von denen eine Pipeline abhängt. Von der Salesforce CLI erscheint zusätzlich jede Woche eine neue Version. Deshalb lege ich die Tool-Versionen in der Pipeline fest und teste Updates, bevor ich sie in den Release-Pfad übernehme.
+Auch Plattformänderungen gehören zum Release-Management. Jedes Salesforce-Release, etwa [Winter '27](/blog/salesforce-winter-27-aenderungen-pipeline/), kann API-Versionen, Metadaten-Verhalten oder Sicherheitseinstellungen ändern, von denen eine Pipeline abhängt. Von der Salesforce CLI erscheint zusätzlich jede Woche eine neue Version. Deshalb lege ich die Tool-Versionen in der Pipeline fest und teste Updates, bevor ich sie in den Release-Pfad übernehme.
 ```
 
 ## Ein Release-Prozess für alle Partner
 
-Ein gemeinsamer Release-Prozess ist die Grundlage, um mehrere Umsetzungspartner zu steuern. Jeder Partner liefert über Pull Requests in dasselbe Repository, jede Lieferung durchläuft dieselben Prüfungen, und die Freigabe liegt beim Kunden. Deployt dagegen jeder Partner auf seine eigene Art, hält kein Governance-Rahmen. Die Regeln für Standards, Verantwortung und Reviews über mehrere Partner beschreibe ich unter [Partnersteuerung](../partnersteuerung/).
+Ein gemeinsamer Release-Prozess ist die Grundlage, um mehrere Umsetzungspartner zu steuern. Jeder Partner liefert über Pull Requests in dasselbe Repository, jede Lieferung durchläuft dieselben Prüfungen, und die Freigabe liegt beim Kunden. Deployt dagegen jeder Partner auf seine eigene Art, hält kein Governance-Rahmen. Die Regeln für Standards, Verantwortung und Reviews über mehrere Partner beschreibe ich unter [Partnersteuerung](/leistungen/partnersteuerung/).
 
 ```kreislauf
 titel: Jede Änderung nimmt denselben Weg

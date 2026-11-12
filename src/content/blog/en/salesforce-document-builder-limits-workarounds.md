@@ -27,11 +27,11 @@ faq:
     a: "They can, if they read their data through the GraphQL wire adapter, use no Apex (it returns an empty result offline) and the records are primed on the device. In my projects the offline mode then worked, and the preview showed the data correctly."
 ---
 
-The Salesforce Document Builder creates the service report in Field Service with signature, photos and offline support, but in practice it has five limits: picking a template is awkward, the file name is fixed, there is no email sending, nothing presets language and template, and the styling is basic. For a typical service report, none of them is a reason to buy another tool. Each one can be closed with a flow or a small Lightning Web Component. This article shows how I solve them in my projects.
+The Salesforce Document Builder creates the service report in [Field Service](/en/salesforce-field-service-consultant/) with signature, photos and offline support, but in practice it has five limits: picking a template is awkward, the file name is fixed, there is no email sending, nothing presets language and template, and the styling is basic. For a typical service report, none of them is a reason to buy another tool. Each one can be closed with a flow or a small Lightning Web Component. This article shows how I solve them in my projects.
 
 ## The limits only show in the first test with technicians
 
-In [my first article on Service Documents](../salesforce-service-documents-document-builder/) I described what the Document Builder is, what it costs and when you need a document generation tool instead. The short version: for the service report on site it is the right choice, because it is included for users with the Field Service Dispatcher or Mobile permission set license and works offline.
+In [my first article on Service Documents](/en/blog/salesforce-service-documents-document-builder/) I described what the Document Builder is, what it costs and when you need a document generation tool instead. The short version: for the service report on site it is the right choice, because it is included for users with the Field Service Dispatcher or Mobile permission set license and works offline.
 
 The official limits list covers technical boundaries such as 50 pages per document or three supported objects. What it does not cover are the gaps you only notice in the first test with technicians and the service office. They are small, but they determine whether users accept the report. A technician who has to search for the right template after every job, or a service office that renames every PDF by hand, will soon ask for the old paper form.
 

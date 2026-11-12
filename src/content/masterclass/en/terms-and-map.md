@@ -60,9 +60,9 @@ For a manufacturer I draw the line like this:
 - **Vibe coding is fine** for a clickable draft of the dealer portal in a requirements workshop, a script that generates spare-part test data, or an analysis nobody needs after a week. Always in a sandbox or Developer Edition.
 - **Agentic engineering is required** for anything that is deployed to the production org: warranty logic, price approvals, interfaces to SAP or proALPHA, approvals in the dealer portal. Review, tests and automated checks in the pipeline come with it.
 
-Where exactly the line runs, and which checks a prototype has to pass before it goes live, is covered in [vibe coding in Salesforce: prototype or production](../../../blog/vibe-coding-salesforce-prototype-vs-production/). The review rules for AI code itself are the topic of [chapter 8](../ai-code-best-practices/).
+Where exactly the line runs, and which checks a prototype has to pass before it goes live, is covered in [vibe coding in Salesforce: prototype or production](/en/blog/vibe-coding-salesforce-prototype-vs-production/). The review rules for AI code itself are the topic of [chapter 8](/en/masterclass/ai-salesforce/ai-code-best-practices/).
 
-A third term shows up in partner decks: "AI-native delivery". It describes a delivery process planned around coding agents from the start, with smaller teams and different roles. What that means for your program organization is in [chapter 9](../teamwork-and-delivery/).
+A third term shows up in partner decks: "AI-native delivery". It describes a delivery process planned around coding agents from the start, with smaller teams and different roles. What that means for your program organization is in [chapter 9](/en/masterclass/ai-salesforce/teamwork-and-delivery/).
 
 ## Coding agent or Agentforce agent: the basic terms
 
@@ -110,7 +110,7 @@ I take two lessons from this. First, Einstein for Developers, Agentforce for Dev
 In concepts I write "AIforce (as of October 2026)", and in contracts I use the name printed on the order form.
 ```
 
-What AIforce contains and what an IT lead should do now is in [AIforce: Salesforce in Claude and Slack](../../../blog/aiforce-salesforce-in-claude-and-slack/); the second reading of "SI" as system integrator is in [chapter 5](../aiforce-and-system-integrators/).
+What AIforce contains and what an IT lead should do now is in [AIforce: Salesforce in Claude and Slack](/en/blog/aiforce-salesforce-in-claude-and-slack/); the second reading of "SI" as system integrator is in [chapter 5](/en/masterclass/ai-salesforce/aiforce-and-system-integrators/).
 
 ## Example: "AI" four times in one steering committee
 
@@ -123,15 +123,15 @@ Assume a machine builder with Sales Cloud, Service Cloud, SAP and a dealer netwo
 | Implementation partner | It wants to build the new dealer portal with coding agents and promises shorter sprints. That is layer A. What counts here are review rules, the rules file and the pipeline, whatever the tool is called. |
 | IT lead | Asks who reads which data when Claude, the partner's agent and the service agent all access the org at the same time. That is layer B, and it affects the other three. |
 
-Without the layers, these four requests get lumped into one pot called "AI initiative" with one budget and one owner. With the layers they become four projects with four owners: sales with IT and data protection, service, program management with partner governance, integration architecture. Only the second needs an Agentforce decision. Whether the service agent should start now or the data should be cleaned up first is answered in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/).
+Without the layers, these four requests get lumped into one pot called "AI initiative" with one budget and one owner. With the layers they become four projects with four owners: sales with IT and data protection, service, program management with partner governance, integration architecture. Only the second needs an Agentforce decision. Whether the service agent should start now or the data should be cleaned up first is answered in [Agentforce for manufacturers: start now or wait?](/en/blog/agentforce-yes-or-no-manufacturers/).
 
 ## Where to read on in this masterclass
 
 The following chapters take the layers one at a time:
 
-- **Layer A:** [chapter 2](../salesforce-ai-development-tools/) covers Salesforce's own tools, [chapter 4](../external-coding-agents/) the coding agents from Anthropic, OpenAI and GitHub.
-- **Layer B:** [chapter 3](../mcp-and-interfaces/) explains MCP and the interfaces agents use to reach your org.
-- **Layer C:** [chapter 10](../ai-agents-in-manufacturing/) deals with agents in service, field service and warranty.
-- **Across layers:** [chapter 6](../ai-tool-decision-matrix/) gives the decision matrix, [chapter 7](../costs-and-tokens/) the costs with worked examples.
+- **Layer A:** [chapter 2](/en/masterclass/ai-salesforce/salesforce-ai-development-tools/) covers Salesforce's own tools, [chapter 4](/en/masterclass/ai-salesforce/external-coding-agents/) the coding agents from Anthropic, OpenAI and GitHub.
+- **Layer B:** [chapter 3](/en/masterclass/ai-salesforce/mcp-and-interfaces/) explains MCP and the interfaces agents use to reach your org.
+- **Layer C:** [chapter 10](/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/) deals with agents in service, field service and warranty.
+- **Across layers:** [chapter 6](/en/masterclass/ai-salesforce/ai-tool-decision-matrix/) gives the decision matrix, [chapter 7](/en/masterclass/ai-salesforce/costs-and-tokens/) the costs with worked examples.
 
-All chapters are listed on the [masterclass overview](../). Sorting the layers for your own program is a typical starting point for my work on [Salesforce architecture](../../../services/salesforce-architecture/).
+All chapters are listed on the [masterclass overview](/en/masterclass/ai-salesforce/). Sorting the layers for your own program is a typical starting point for my work on [Salesforce architecture](/en/services/salesforce-architecture/).

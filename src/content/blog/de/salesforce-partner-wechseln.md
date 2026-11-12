@@ -55,13 +55,13 @@ Verträge | Auf wen laufen AppExchange-Pakete und Drittlizenzen, welche Übergab
 fazit: Die markierten Punkte kosten nach der Kündigung am meisten Zeit.
 ```
 
-Das Repository ist der wichtigste Punkt. Die Metadaten stehen zwar in Ihrer Org, aber die Historie, wer was warum geändert hat, steht nur im Git-Repository. Liegt es im Account des Partners, verlieren Sie beim Wechsel genau das Wissen, das der neue Partner zum Einarbeiten braucht. Ob Sie Code und Bausteine des Partners weiter nutzen dürfen, regelt Ihr Vertrag; klären Sie das, bevor Sie das Repository übernehmen. Warum Repository und DevOps-Tools grundsätzlich beim Kunden liegen sollten, steht in [Warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/).
+Das Repository ist der wichtigste Punkt. Die Metadaten stehen zwar in Ihrer Org, aber die Historie, wer was warum geändert hat, steht nur im Git-Repository. Liegt es im Account des Partners, verlieren Sie beim Wechsel genau das Wissen, das der neue Partner zum Einarbeiten braucht. Ob Sie Code und Bausteine des Partners weiter nutzen dürfen, regelt Ihr Vertrag; klären Sie das, bevor Sie das Repository übernehmen. Warum Repository und DevOps-Tools grundsätzlich beim Kunden liegen sollten, steht in [Warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
 ```hinweis achtung
 Prüfen Sie vor der Kündigung, ob Schnittstellen zu SAP oder anderen Systemen über einen Benutzer, ein Zertifikat oder eine Connected App laufen, die an einer Person des Partners hängen. Wird der Benutzer beim Ausscheiden deaktiviert oder läuft das Zertifikat ab, steht die Schnittstelle. Stellen Sie solche Verbindungen vorher auf eigene Integrationsbenutzer um und tauschen Sie Zugangsdaten aus, die der Partner kennt.
 ```
 
-Wie Sie Integrationsbenutzer und Connected Apps aufräumen, steht in [Salesforce-Integrationsbenutzer aufräumen](../salesforce-integrationsbenutzer-aufraeumen/).
+Wie Sie Integrationsbenutzer und Connected Apps aufräumen, steht in [Salesforce-Integrationsbenutzer aufräumen](/blog/salesforce-integrationsbenutzer-aufraeumen/).
 
 ## Wie läuft ein Partnerwechsel ab?
 
@@ -80,9 +80,9 @@ Auswählen | 4 bis 8 Wochen · Kunde
 
 **Sichern.** Legen Sie das Repository in Ihren eigenen Account oder lassen Sie es dorthin übertragen, mit allen Branches und der Historie. Lassen Sie es vorher auf Passwörter, Schlüssel und Kundendaten durchsuchen, und tauschen Sie gefundene Zugangsdaten aus. Lassen Sie sich die Pipeline-Konfiguration geben und prüfen Sie, ob ein Deployment ohne den Partner funktioniert. Erst wenn das gelingt, ist der Partner austauschbar.
 
-**Analysieren.** Eine Org-Analyse zeigt, was in der Org steckt: wie viele Apex-Klassen, Flows und Permission Sets es gibt, wo Regeln verletzt werden und wie hoch die Testabdeckung ist. Ob etwas genutzt wird, zeigen die Tools nur als Hinweis; das bestätigt der Fachbereich. Ich lasse zuerst deterministische Tools laufen und gebe die Ergebnisse dann einem Sprachmodell, das Zweck und Geschäftsprozess jeder Komponente beschreibt, als Vorschlag, den jemand fachlich prüft. Wie das geht und was es kostet, steht in [KI-Org-Analyse vor dem Partnerwechsel](../ki-org-analyse-technische-schulden/).
+**Analysieren.** Eine Org-Analyse zeigt, was in der Org steckt: wie viele Apex-Klassen, Flows und Permission Sets es gibt, wo Regeln verletzt werden und wie hoch die Testabdeckung ist. Ob etwas genutzt wird, zeigen die Tools nur als Hinweis; das bestätigt der Fachbereich. Ich lasse zuerst deterministische Tools laufen und gebe die Ergebnisse dann einem Sprachmodell, das Zweck und Geschäftsprozess jeder Komponente beschreibt, als Vorschlag, den jemand fachlich prüft. Wie das geht und was es kostet, steht in [KI-Org-Analyse vor dem Partnerwechsel](/blog/ki-org-analyse-technische-schulden/).
 
-**Auswählen.** Geben Sie allen Kandidaten dieselbe Analyse und dieselben Fragen. Ein Partner, der nach zwei Stunden Präsentation einen Neubau empfiehlt, ohne die Analyse gelesen zu haben, verkauft Ihnen ein Projekt. Worauf Sie bei der Auswahl achten, steht in [Salesforce-Implementierungspartner auswählen](../salesforce-implementierungspartner-auswaehlen/).
+**Auswählen.** Geben Sie allen Kandidaten dieselbe Analyse und dieselben Fragen. Ein Partner, der nach zwei Stunden Präsentation einen Neubau empfiehlt, ohne die Analyse gelesen zu haben, verkauft Ihnen ein Projekt. Worauf Sie bei der Auswahl achten, steht in [Salesforce-Implementierungspartner auswählen](/blog/salesforce-implementierungspartner-auswaehlen/).
 
 **Übergeben.** Die Überlappung beginnt nach einem stabilen Release. Beide Partner arbeiten: Der alte erklärt, der neue fragt und baut die ersten Stories unter Aufsicht. Am Ende steht ein kleines Übergabe-Release, das der neue Partner allein durch die Pipeline bringt, mit Abnahmetest und Plan für den Rückweg, und ein Stichtag, ab dem der alte Partner keinen Zugang mehr hat.
 
@@ -108,15 +108,15 @@ Diese Fehler machen einen Partnerwechsel teuer:
 
 - **Der neue Partner bekommt keine Analyse.** Dann schätzt er auf Basis einer Präsentation und findet die Überraschungen im Projekt. Das Ergebnis sind Change Requests in den ersten drei Monaten.
 - **Mitten im Release wechseln.** Ein halbfertiges Release mit Arbeit von zwei Partnern versteht später keiner mehr. Beginnen Sie die Übergabe nach einem stabilen Release.
-- **Nur Code übergeben, keine Entscheidungen.** Der neue Partner sieht, was gebaut wurde, aber nicht warum. Ein [Entscheidungslog](../salesforce-architektur-entscheidungslog/) beantwortet diese Frage, ohne dass jemand nachfragen muss.
-- **Zuständigkeiten nicht neu verteilen.** Arbeiten mehrere Partner an der Org, muss für jedes Objekt klar sein, wer es nach dem Wechsel verantwortet. Dafür eignet sich eine [Object Ownership Matrix](../object-ownership-matrix-salesforce/).
+- **Nur Code übergeben, keine Entscheidungen.** Der neue Partner sieht, was gebaut wurde, aber nicht warum. Ein [Entscheidungslog](/blog/salesforce-architektur-entscheidungslog/) beantwortet diese Frage, ohne dass jemand nachfragen muss.
+- **Zuständigkeiten nicht neu verteilen.** Arbeiten mehrere Partner an der Org, muss für jedes Objekt klar sein, wer es nach dem Wechsel verantwortet. Dafür eignet sich eine [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/).
 - **Dieselben Fehler wiederholen.** Wenn der alte Partner wegen schlechter Qualität gehen musste, braucht der neue Regeln, die das verhindern: Pull Requests, Testabdeckung, ein Quality Gate vor jedem Release. Sonst wechseln Sie in zwei Jahren wieder.
 
 ## Wer steuert den Wechsel auf Kundenseite?
 
 Den Wechsel sollte jemand auf Kundenseite steuern, der die Org technisch versteht und keinem der beiden Partner verpflichtet ist. Beide Partner haben eigene wirtschaftliche Interessen: Der alte möchte seine Arbeit gut dastehen lassen, der neue findet eher zu viel Neubaubedarf als zu wenig. Das ist verständlich, deshalb braucht der Kunde eine eigene technische Bewertung.
 
-Haben Sie intern einen Salesforce-Architekten oder einen technischen Produktverantwortlichen, ist das die Person. Haben Sie niemanden, holen Sie sich für die Zeit des Wechsels einen unabhängigen Architekten, der Analyse, Auswahl und Übergabe begleitet und danach die Standards für den neuen Partner festlegt. So arbeite ich in der [Partnersteuerung](../../leistungen/partnersteuerung/): auf Kundenseite, ohne Provisionen von Partnern oder Toolherstellern.
+Haben Sie intern einen Salesforce-Architekten oder einen technischen Produktverantwortlichen, ist das die Person. Haben Sie niemanden, holen Sie sich für die Zeit des Wechsels einen unabhängigen Architekten, der Analyse, Auswahl und Übergabe begleitet und danach die Standards für den neuen Partner festlegt. So arbeite ich in der [Partnersteuerung](/leistungen/partnersteuerung/): auf Kundenseite, ohne Provisionen von Partnern oder Toolherstellern.
 
 ## Erster Schritt: ein Deployment ohne den alten Partner
 

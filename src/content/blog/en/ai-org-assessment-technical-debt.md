@@ -36,7 +36,7 @@ An AI org assessment is worth doing before a relaunch or partner change, as long
 
 A Salesforce org that has grown for ten years under several partners carries their handwriting. At a machine builder, one partner may have built the dealer portal, another the field service processes, a third the SAP integration for orders and spare parts. Each brought its own trigger framework, naming conventions and test style. Before a new partner takes over or a relaunch starts, someone has to answer three questions: what is in the org, what of it is in use, and what would be risky to keep.
 
-The two obvious candidates for that answer are poor ones. The outgoing partner defends its code. The incoming partner has an interest in finding a lot to rebuild. An assessment run by the client, with the client's tools, is the neutral baseline, and it later feeds the [object ownership matrix](../salesforce-object-ownership-matrix/) for the new set-up.
+The two obvious candidates for that answer are poor ones. The outgoing partner defends its code. The incoming partner has an interest in finding a lot to rebuild. An assessment run by the client, with the client's tools, is the neutral baseline, and it later feeds the [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/) for the new set-up.
 
 ## What can an AI org assessment do that scanners cannot?
 
@@ -61,7 +61,7 @@ Anything that is a count, a usage figure or a rule violation. A model reading on
 - **A freshly executed Apex test run** at a defined test level gives reproducible line coverage per class, which no model should estimate. Coverage still says nothing about the quality of the assertions.
 - **Dependencies** are retrieved from the Tooling API object [MetadataComponentDependency](https://developer.salesforce.com/docs/atlas.en-us.api_tooling.meta/api_tooling/tooling_api_objects_metadatacomponentdependency.htm), which Salesforce still labels Beta. A query returns at most 2,000 records, so it is one dependency source among several, next to static references in code and flow metadata. Who built what is shown by Git history or the LastModifiedBy fields, not from the model's guess about coding style.
 
-My rule: if a sentence in the report contains a number or the word "unused", a tool produced it. Even then, the finding is an indicator, not proof that something can be deleted. I wrote more about these tools as pipeline gates in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/); for an assessment you run them once against the whole org.
+My rule: if a sentence in the report contains a number or the word "unused", a tool produced it. Even then, the finding is an indicator, not proof that something can be deleted. I wrote more about these tools as pipeline gates in [quality gates for AI code](/en/blog/quality-gates-for-ai-code-salesforce-pipeline/); for an assessment you run them once against the whole org.
 
 ## Worked example: three partners, one org, one relaunch
 
@@ -97,7 +97,7 @@ $10 | Second pass for 40 objects with 100,000 input tokens and 5,000 output toke
 source: Claude pricing page (batch list prices, global inference, as of November 9, 2026; US-only inference costs 1.1 times as much), token volumes as assumptions in the worked example
 ```
 
-Prompt caching stacks with the batch discount, but in batches cache hits are best effort; Anthropic reports hit rates from 30 to 98 percent. I calculate without caching and treat any saving as a bonus. Thinking tokens are [billed as output](https://code.claude.com/docs/en/costs) and cannot be disabled on the 5.5 models; if they triple the output, the Opus pass rises to about $187. The basics of this token math are in the [masterclass chapter on costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
+Prompt caching stacks with the batch discount, but in batches cache hits are best effort; Anthropic reports hit rates from 30 to 98 percent. I calculate without caching and treat any saving as a bonus. Thinking tokens are [billed as output](https://code.claude.com/docs/en/costs) and cannot be disabled on the 5.5 models; if they triple the output, the Opus pass rises to about $187. The basics of this token math are in the [masterclass chapter on costs and tokens](/en/masterclass/ai-salesforce/costs-and-tokens/).
 
 ### Where the real cost sits
 
@@ -105,15 +105,15 @@ The token bill is small; the effort lies with people. In the worked example I wo
 
 ## What about source code and data protection?
 
-Before you upload source code, check that the client may process it with an external AI provider, including partner frameworks and third-party components in the org. Test classes also often contain names, email addresses or record IDs. Anthropic's [data retention page](https://platform.claude.com/docs/en/manage-claude/api-and-data-retention) lists batch processing as not eligible for zero data retention, with 29-day retention, which applies to what you send as well as to the results. The same page says retained data is "never used for model training without your express permission". Strip personal data before the run and agree on the set-up with your data protection officer; I discuss the German perspective in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
+Before you upload source code, check that the client may process it with an external AI provider, including partner frameworks and third-party components in the org. Test classes also often contain names, email addresses or record IDs. Anthropic's [data retention page](https://platform.claude.com/docs/en/manage-claude/api-and-data-retention) lists batch processing as not eligible for zero data retention, with 29-day retention, which applies to what you send as well as to the results. The same page says retained data is "never used for model training without your express permission". Strip personal data before the run and agree on the set-up with your data protection officer; I discuss the German perspective in [AI coding tools, works council and GDPR](/en/blog/ai-coding-tools-works-council-gdpr/).
 
 If the zero-retention rule is strict, there are two alternatives. You pay full price without batch processing, about $119 to $238 in the worked example. That only helps if Anthropic has enabled zero data retention for your organization; this is not self-serve and requires Anthropic's sales team. Or you use the AI documentation feature in sfdx-hardis, which according to its [AI setup page](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/) works with Agentforce, OpenAI or, through LangChain.js, Anthropic, Google GenAI and Ollama for models run locally. The same page warns that the first documentation run "can make hundreds of API calls" and recommends committing the AI cache, and it caps calls per command at 10,000 by default.
 
 ## Who should own the assessment?
 
-The client. Run the scans in your pipeline, make the model calls from your own API account, and keep the results in your repository, as I argue for DevOps tools in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/). If a partner does the work, its contract should name the tools and data rules, see [partners coding with AI: what belongs in the contract](../partners-using-ai-coding-contract-rules/).
+The client. Run the scans in your pipeline, make the model calls from your own API account, and keep the results in your repository, as I argue for DevOps tools in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/). If a partner does the work, its contract should name the tools and data rules, see [partners coding with AI: what belongs in the contract](/en/blog/partners-using-ai-coding-contract-rules/).
 
-The assessment is the starting point for the handover: which objects move to which partner, which components are deleted and which are rebuilt. Managing that is part of [partner governance](../../services/partner-governance/).
+The assessment is the starting point for the handover: which objects move to which partner, which components are deleted and which are rebuilt. Managing that is part of [partner governance](/en/services/partner-governance/).
 
 ## Retrieve all metadata into a repository you own
 

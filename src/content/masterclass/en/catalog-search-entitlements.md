@@ -45,7 +45,7 @@ title: Which standard objects form the chain?
 - **BuyerGroupPricebook:** attaches price books to the buyer group.
 ```
 
-Visibility and price therefore depend on the same groups. If you cut buyer groups for the assortment only, you find out in [chapter 3](../prices-cart-checkout/) that prices would need a different split. That is why I design both together. What B2B Commerce is and what it costs is covered in [chapter 1](../b2b-commerce-worth-it-overview/).
+Visibility and price therefore depend on the same groups. If you cut buyer groups for the assortment only, you find out in [chapter 3](/en/masterclass/b2b-commerce/prices-cart-checkout/) that prices would need a different split. That is why I design both together. What B2B Commerce is and what it costs is covered in [chapter 1](/en/masterclass/b2b-commerce/b2b-commerce-worth-it-overview/).
 
 ## The limits that shape the design
 
@@ -76,7 +76,7 @@ The buyer group page also has a note with a different value than its table; I pl
 
 The idea is tempting because it mirrors the ERP: every customer has its own conditions, so every customer gets its own group. With 50 dealers that works. With 2,500 dealers, a spare part that everyone may buy is entitled to 2,500 groups and sits above the index limit. A policy "all spare parts" serves at most 200 groups and would have to be copied several times and kept identical. Every new dealer turns into a data project.
 
-I cut buyer groups by attributes that change rarely and that the ERP already holds in the customer master: country or sales organization, dealer tier such as service partner or sales partner, and brand where dealers carry only one brand. Entitlement policies then follow assortments, not customers: "spare parts general", "spare parts for service partners", "consumables". How to set memberships from the ERP, and when assignment by Apex or by rule pays off, is covered in [buyer groups and entitlements](../../../blog/buyer-groups-entitlements-product-visibility/).
+I cut buyer groups by attributes that change rarely and that the ERP already holds in the customer master: country or sales organization, dealer tier such as service partner or sales partner, and brand where dealers carry only one brand. Entitlement policies then follow assortments, not customers: "spare parts general", "spare parts for service partners", "consumables". How to set memberships from the ERP, and when assignment by Apex or by rule pays off, is covered in [buyer groups and entitlements](/en/blog/buyer-groups-entitlements-product-visibility/).
 
 ```vergleich
 without: One buyer group per dealer
@@ -91,11 +91,11 @@ with: Buyer groups by attribute
 
 ## Who owns the product data?
 
-Product data for the store should not be maintained in Salesforce. The ERP owns what it already owns today: material number, unit of measure, sales status. A PIM, if you have one, owns texts, technical attributes, images and translations. Salesforce holds a copy and maintains only what belongs to the store, such as categories and search settings. If a merchandiser fixes a typo in Salesforce and the nightly ERP load overwrites it, the dealer sees the typo again the next day, and the merchandiser stops trusting the store. The principle applies to every object in the org and is explained in the [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/).
+Product data for the store should not be maintained in Salesforce. The ERP owns what it already owns today: material number, unit of measure, sales status. A PIM, if you have one, owns texts, technical attributes, images and translations. Salesforce holds a copy and maintains only what belongs to the store, such as categories and search settings. If a merchandiser fixes a typo in Salesforce and the nightly ERP load overwrites it, the dealer sees the typo again the next day, and the merchandiser stops trusting the store. The principle applies to every object in the org and is explained in the [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/).
 
 Whether you need a PIM depends on scale. With a few thousand parts and German and English texts from the ERP, the ERP is enough as the only source. With tens of thousands of parts, many languages and filter attributes, nobody maintains that in the material master.
 
-Two limits from the table shape the product data. Nine images per product cover most spare parts, but drawings and data sheets with revisions are better kept in the DAM or PLM. In [July 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) Salesforce announced that external DAM platforms, 3D models and technical specs can be shown on product pages through LWC wrappers; I would test that in a sandbox before planning around it. And variations need clean attribute values. "50 mm", "50mm" and "DN50" in three material masters become three filter values. The split between ERP, PIM and Salesforce in detail is in [B2B Commerce product data](../../../blog/b2b-commerce-product-data-pim-erp/).
+Two limits from the table shape the product data. Nine images per product cover most spare parts, but drawings and data sheets with revisions are better kept in the DAM or PLM. In [July 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) Salesforce announced that external DAM platforms, 3D models and technical specs can be shown on product pages through LWC wrappers; I would test that in a sandbox before planning around it. And variations need clean attribute values. "50 mm", "50mm" and "DN50" in three material masters become three filter values. The split between ERP, PIM and Salesforce in detail is in [B2B Commerce product data](/en/blog/b2b-commerce-product-data-pim-erp/).
 
 ## How do dealers find spare parts by part number?
 
@@ -118,7 +118,7 @@ Three rules follow for parts catalogs:
 2. **Synonyms are for words.** 100 rules cover "O-ring" and "seal ring", not 8,000 predecessor numbers.
 3. **Rebuild the index after every change.** Trailhead names changed searchable fields, products, categories and entitlement policies as reasons to rebuild the search index.
 
-Salesforce extended search in 2026. With its [June 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) release, Salesforce describes B2B search where buyers describe a part in their own words instead of knowing its name or SKU. July brought boost and bury, the order of filter groups and search analytics through Data Cloud with click-through, conversion and zero-result searches. After go-live, those zero-result searches are the best list of missing product data. Setup and limits in detail are in [B2B Commerce search: finding parts by part number](../../../blog/b2b-commerce-search-part-numbers/).
+Salesforce extended search in 2026. With its [June 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) release, Salesforce describes B2B search where buyers describe a part in their own words instead of knowing its name or SKU. July brought boost and bury, the order of filter groups and search analytics through Data Cloud with click-through, conversion and zero-result searches. After go-live, those zero-result searches are the best list of missing product data. Setup and limits in detail are in [B2B Commerce search: finding parts by part number](/en/blog/b2b-commerce-search-part-numbers/).
 
 ## One store or several?
 
@@ -133,7 +133,7 @@ I plan a second store in four cases:
 | Another checkout or another ERP | Extensions for pricing, inventory or order creation are mapped per store. |
 | Different buyers | End customers next to dealers get their own D2C store with shared product data. |
 
-The license caps the number of stores well before the limit of 100 stores per org. According to the [pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/), Growth Edition includes six storefronts and Advanced Edition ten. And every extra store brings its own pages, translations and its own regression test after each of the three Salesforce releases a year. The decision with an example is in [one B2B store or several](../../../blog/b2b-stores-countries-brands-dealers/).
+The license caps the number of stores well before the limit of 100 stores per org. According to the [pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/), Growth Edition includes six storefronts and Advanced Edition ten. And every extra store brings its own pages, translations and its own regression test after each of the three Salesforce releases a year. The decision with an example is in [one B2B store or several](/en/blog/b2b-stores-countries-brands-dealers/).
 
 ## Parts per machine: where entitlements stop
 
@@ -150,7 +150,7 @@ PLM ..live..> Machine page
 Entitlements and prices --Right to buy and price--> Machine page
 ```
 
-The data matters more than the component: without an as-built parts list per serial number, meaning the parts built into exactly this machine, no store can answer the question. The options are in [spare parts shop: show only parts for each machine](../../../blog/spare-parts-shop-parts-per-machine/), and the same data from an agent's point of view in [spare parts by serial number](../../../blog/spare-parts-by-serial-number-ai/). How the installed base is kept as assets is covered in the Manufacturing Cloud masterclass chapter [warranty and after-sales](../../manufacturing-cloud/warranty-and-after-sales/). One rule I never relax: the dealer sees only machines registered to their own account, read from the asset, never from a free text field.
+The data matters more than the component: without an as-built parts list per serial number, meaning the parts built into exactly this machine, no store can answer the question. The options are in [spare parts shop: show only parts for each machine](/en/blog/spare-parts-shop-parts-per-machine/), and the same data from an agent's point of view in [spare parts by serial number](/en/blog/spare-parts-by-serial-number-ai/). How the installed base is kept as assets is covered in the Manufacturing Cloud masterclass chapter [warranty and after-sales](/en/masterclass/manufacturing-cloud/warranty-and-after-sales/). One rule I never relax: the dealer sees only machines registered to their own account, read from the asset, never from a free text field.
 
 ## Worked example: 800 dealers in 12 countries
 
@@ -171,4 +171,4 @@ Put the entitlement concept on a single page before the first data load:
 - the volumes of today and in three years, measured against the limits above,
 - 200 real search terms from dealers, taken from emails and phone notes and tested against a test store.
 
-The ERP fields that feed memberships and search are then added to the interface list from [chapter 4](../erp-integration-stock-orders/). I review such concepts before a partner builds as part of [Salesforce architecture](../../../services/salesforce-architecture/); which data comes from which system is part of [Salesforce integration](../../../services/salesforce-integration/). All chapters are on the [overview page](../).
+The ERP fields that feed memberships and search are then added to the interface list from [chapter 4](/en/masterclass/b2b-commerce/erp-integration-stock-orders/). I review such concepts before a partner builds as part of [Salesforce architecture](/en/services/salesforce-architecture/); which data comes from which system is part of [Salesforce integration](/en/services/salesforce-integration/). All chapters are on the [overview page](/en/masterclass/b2b-commerce/).

@@ -33,7 +33,7 @@ An Agentforce agent provides order status and availability from SAP S/4HANA by c
 
 ## How does an Agentforce agent get the order status from SAP?
 
-It gets the order status through a chain of five links, and each link needs an owner. The [Salesforce Developers blog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog) describes the order: define topics, actions and instructions in Topic Center while you design the API, build it, publish it to Anypoint Exchange and sync it with API Catalog. After the sync an admin activates the operations as actions in API Catalog. The blog says that Named Credentials and External Services are created automatically; which credential setup you still need depends on the API's security policy. Flow and Apex can call the same API. The opposite direction, an order from Revenue Cloud handed to SAP, is covered in [handing orders to SAP](../revenue-cloud-order-orchestration-sap/).
+It gets the order status through a chain of five links, and each link needs an owner. The [Salesforce Developers blog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog) describes the order: define topics, actions and instructions in Topic Center while you design the API, build it, publish it to Anypoint Exchange and sync it with API Catalog. After the sync an admin activates the operations as actions in API Catalog. The blog says that Named Credentials and External Services are created automatically; which credential setup you still need depends on the API's security policy. Flow and Apex can call the same API. The opposite direction, an order from Revenue Cloud handed to SAP, is covered in [handing orders to SAP](/en/blog/revenue-cloud-order-orchestration-sap/).
 
 For a machine builder the chain looks like this:
 
@@ -49,7 +49,7 @@ Two prerequisites are easy to miss: a trusted connection between the Anypoint or
 
 As of November 2026 I have not found an official Salesforce reference architecture for Agentforce with S/4HANA, only this generic MuleSoft pattern. So your partner's design is the architecture, and someone on your side should review it.
 
-Without MuleSoft, an [External Service action](https://developer.salesforce.com/blogs/2025/05/call-third-party-apis-from-an-agent-with-external-service-actions) based on an OpenAPI document and a named credential is the alternative, for example behind another middleware; Salesforce caps the spec upload at 10 MB. MuleSoft adds the SAP connector, governance rulesets and gateway policies. If it already runs in your company, I would use it. Buying it for one agent rarely pays off. Choosing the right middleware is part of [Salesforce integration](../../services/salesforce-integration/).
+Without MuleSoft, an [External Service action](https://developer.salesforce.com/blogs/2025/05/call-third-party-apis-from-an-agent-with-external-service-actions) based on an OpenAPI document and a named credential is the alternative, for example behind another middleware; Salesforce caps the spec upload at 10 MB. MuleSoft adds the SAP connector, governance rulesets and gateway policies. If it already runs in your company, I would use it. Buying it for one agent rarely pays off. Choosing the right middleware is part of [Salesforce integration](/en/services/salesforce-integration/).
 
 ## Which API design makes the agent reliable?
 
@@ -77,13 +77,13 @@ Precompute what dealers ask for most often. "Overall status" and "next confirmed
 
 MuleSoft's own Topic Center documentation says instructions "are nondeterministic, so they shouldn't include sensitive or deterministic business rules". I would put that sentence on the first page of every agent design. For order status it covers four things.
 
-**Who may see which order.** This is the biggest risk. A dealer logged into the portal is a contact on an account, and the account stores the SAP sold-to number. Code derives that number on the server from the verified portal user and passes it to the API; it never comes from the chat or the browser. The API returns an order only if the sold-to matches and otherwise answers "not found", exactly as for an order that does not exist. If the model passes both order number and customer number, dealer A can read dealer B's order just by typing a number. Email enquiries are weaker still, because a sender address proves little; more in [prompt injection through dealer portals](../prompt-injection-dealer-portals-agentforce/).
+**Who may see which order.** This is the biggest risk. A dealer logged into the portal is a contact on an account, and the account stores the SAP sold-to number. Code derives that number on the server from the verified portal user and passes it to the API; it never comes from the chat or the browser. The API returns an order only if the sold-to matches and otherwise answers "not found", exactly as for an order that does not exist. If the model passes both order number and customer number, dealer A can read dealer B's order just by typing a number. Email enquiries are weaker still, because a sender address proves little; more in [prompt injection through dealer portals](/en/blog/prompt-injection-dealer-portals-agentforce/).
 
-**Availability and dates.** SAP runs the availability check. The agent passes on the confirmed date and never estimates one from stock or lead times. If SAP has no confirmed date, the answer is "not confirmed yet". A B2B store needs the same rule, see [chapter 4 of the B2B Commerce masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/).
+**Availability and dates.** SAP runs the availability check. The agent passes on the confirmed date and never estimates one from stock or lead times. If SAP has no confirmed date, the answer is "not confirmed yet". A B2B store needs the same rule, see [chapter 4 of the B2B Commerce masterclass](/en/masterclass/b2b-commerce/erp-integration-stock-orders/).
 
 **Blocks.** Credit and delivery blocks are SAP decisions. Whether a dealer hears about a credit block or gets "please contact your sales rep" is a business decision that belongs in the API response, not in the prompt.
 
-**Write actions.** Changing a delivery date or placing an order is a second phase, with gates as described in [Agent Script: rules instead of the LLM](../agent-script-deterministic-rules/). For the first release I would keep the agent read-only.
+**Write actions.** Changing a delivery date or placing an order is a second phase, with gates as described in [Agent Script: rules instead of the LLM](/en/blog/agent-script-deterministic-rules/). For the first release I would keep the agent read-only.
 
 ## Worked example: order status for 400 dealers
 
@@ -91,9 +91,9 @@ Assume a machine builder with S/4HANA on premises, 400 dealers in Europe, a deal
 
 Assume 2,000 order enquiries a month, each with up to three API calls: order status, delivery dates, availability of one replacement item. That is about 6,000 calls a month, roughly 300 per working day. The volume is small. The risk lies in peaks, slow availability checks and a bug that makes the agent call the API in a loop, so I would run a load test against a production-like SAP system. MuleSoft's [Rate-Limiting SLA policy](https://docs.mulesoft.com/mule-gateway/policies-included-rate-limiting-sla) sets limits per client application through contracts in API Manager and answers with HTTP 429 once the quota is used up. So the agent gets its own client application with its own limit, for example 60 requests a minute, separate from the portal. A looping agent hits its own ceiling, and dealers in the portal keep working.
 
-In the worked example, the first test week brings three findings. Orders taken by phone carry no dealer purchase order number, so the agent must also search by SAP order number. Some dealers have several sold-to numbers for subsidiaries, so the account needs a mapping that someone maintains. It is the same problem as with [sales agreements and ERP actuals](../sales-agreements-volume-shortfall-erp/). And one plant does not maintain confirmed dates for spare parts, so for those items the agent can only say "not confirmed yet". That is a data problem, and no prompt fixes it.
+In the worked example, the first test week brings three findings. Orders taken by phone carry no dealer purchase order number, so the agent must also search by SAP order number. Some dealers have several sold-to numbers for subsidiaries, so the account needs a mapping that someone maintains. It is the same problem as with [sales agreements and ERP actuals](/en/blog/sales-agreements-volume-shortfall-erp/). And one plant does not maintain confirmed dates for spare parts, so for those items the agent can only say "not confirmed yet". That is a data problem, and no prompt fixes it.
 
-[The dealer service agent cost calculation](../flex-credits-agentforce-cost-per-action/) shows what a conversation costs in Flex Credits.
+[The dealer service agent cost calculation](/en/blog/flex-credits-agentforce-cost-per-action/) shows what a conversation costs in Flex Credits.
 
 ## Live call or a copy in Salesforce?
 
@@ -110,11 +110,11 @@ SAP S/4HANA ..Confirmed date..> Mule API
 Mule API ..Response fields..> Agentforce agent
 ```
 
-The trade-off is a dependency: during an SAP maintenance window the action fails. The agent must then say so and offer a callback or a handover, and that case belongs in the test set, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+The trade-off is a dependency: during an SAP maintenance window the action fails. The agent must then say so and offer a callback or a handover, and that case belongs in the test set, as described in [testing Agentforce agents before go-live](/en/blog/testing-agentforce-agents-before-go-live/).
 
-A copy still has its place, for example van stock that technicians need offline, as in [spare parts between ERP and Field Service](../salesforce-field-service-spare-parts-erp/). I would not let the agent present dates from such a copy as current.
+A copy still has its place, for example van stock that technicians need offline, as in [spare parts between ERP and Field Service](/en/blog/salesforce-field-service-spare-parts-erp/). I would not let the agent present dates from such a copy as current.
 
-MuleSoft can also turn the same API into an MCP server: [Agent Fabric](https://docs.mulesoft.com/general/agent-fabric-overview) describes an MCP Bridge that does this without custom code and keeps the existing gateway policies. That matters when external agents such as Claude need to access the API. Agentforce can also use MCP tools directly: according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=ai.agent_mcp_connect.htm&language=en_US&type=5), MuleSoft MCP servers are managed in API Catalog and third-party servers are registered in Agentforce Registry. For a narrow order status API I would still start with the API action. What MCP means for an IT lead is in [MCP explained for IT leads](../mcp-salesforce-explained-for-it-leads/).
+MuleSoft can also turn the same API into an MCP server: [Agent Fabric](https://docs.mulesoft.com/general/agent-fabric-overview) describes an MCP Bridge that does this without custom code and keeps the existing gateway policies. That matters when external agents such as Claude need to access the API. Agentforce can also use MCP tools directly: according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=ai.agent_mcp_connect.htm&language=en_US&type=5), MuleSoft MCP servers are managed in API Catalog and third-party servers are registered in Agentforce Registry. For a narrow order status API I would still start with the API action. What MCP means for an IT lead is in [MCP explained for IT leads](/en/blog/mcp-salesforce-explained-for-it-leads/).
 
 ## Check the existing sales order API
 
@@ -124,4 +124,4 @@ MuleSoft can also turn the same API into an MCP server: [Agent Fabric](https://d
 4. **Separate client applications** for agent and portal, each with its own rate limit.
 5. **Test the unhappy paths:** someone else's order number, a missing confirmed date, SAP offline.
 
-If your ERP has no API at all, see [legacy ERP without an API](../legacy-erp-without-api-ai-agents/). Whether the process is ready for an agent at all is covered in [Agentforce for manufacturers: start now or wait](../agentforce-yes-or-no-manufacturers/).
+If your ERP has no API at all, see [legacy ERP without an API](/en/blog/legacy-erp-without-api-ai-agents/). Whether the process is ready for an agent at all is covered in [Agentforce for manufacturers: start now or wait](/en/blog/agentforce-yes-or-no-manufacturers/).

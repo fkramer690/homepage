@@ -28,7 +28,7 @@ draft: false
 
 I always roll out Salesforce Field Service in waves, region by region or country by country. Each wave includes its own master data, dispatchers, technicians and partners, and the first wave is the test for all others. Then there is a topic that is often raised too late: the works council. In my projects it mattered above all for what technicians can see of each other, for example in timesheets, and for their location. Both should be raised proactively, along with everything else the system records about technicians. Different regions and countries also have different conditions that need to be checked before each wave.
 
-This is the last part of the series. The earlier parts describe what has to be in place in every wave: the decision in [part 1](../salesforce-field-service-worth-it/), master data in [part 2](../salesforce-field-service-master-data/), scheduling in [part 3](../salesforce-field-service-scheduling-automation/), spare parts in [part 4](../salesforce-field-service-spare-parts-erp/), contracts in [part 5](../salesforce-field-service-maintenance-contracts/) and partners in [part 6](../salesforce-field-service-service-partners/). The topic hub [Salesforce Field Service for manufacturers](../../masterclass/field-service/) collects short answers to common questions about the product. If you want support for the rollout on the client side, independent of the implementation partner, the page [Salesforce Field Service consultant](../../salesforce-field-service-consultant/) describes what I take on.
+This is the last part of the series. The earlier parts describe what has to be in place in every wave: the decision in [part 1](/en/blog/salesforce-field-service-worth-it/), master data in [part 2](/en/blog/salesforce-field-service-master-data/), scheduling in [part 3](/en/blog/salesforce-field-service-scheduling-automation/), spare parts in [part 4](/en/blog/salesforce-field-service-spare-parts-erp/), contracts in [part 5](/en/blog/salesforce-field-service-maintenance-contracts/) and partners in [part 6](/en/blog/salesforce-field-service-service-partners/). The topic hub [Salesforce Field Service for manufacturers](/en/masterclass/field-service/) collects short answers to common questions about the product. If you want support for the rollout on the client side, independent of the implementation partner, the page [Salesforce Field Service consultant](/en/salesforce-field-service-consultant/) describes what I take on.
 
 ## The first wave is the test for all others
 
@@ -49,7 +49,7 @@ A wave should cover:
 - the agreements with the works council and on data protection for that country
 - metrics measured before and after go-live
 
-Leave time between two waves. The first weeks after a region goes live are when dispatchers change proposals often and technicians have questions about the app. Starting the next wave in that phase spreads the project team's attention too thin. It helps when dispatchers from the next wave first spend time watching a region that is already live. They learn more there than in any training. Why training alone is not enough for technician adoption is covered in [Field Service app: getting technicians on board](../field-service-app-technician-adoption/).
+Leave time between two waves. The first weeks after a region goes live are when dispatchers change proposals often and technicians have questions about the app. Starting the next wave in that phase spreads the project team's attention too thin. It helps when dispatchers from the next wave first spend time watching a region that is already live. They learn more there than in any training. Why training alone is not enough for technician adoption is covered in [Field Service app: getting technicians on board](/en/blog/field-service-app-technician-adoption/).
 
 ## Which topics go to the works council early?
 
@@ -69,7 +69,7 @@ The technology can be configured. In concrete terms, I would discuss these setti
 | Time window | With Appointment Assistant only in the En Route status, on the way to the customer |
 | History | Whether old locations are stored or only the latest one |
 
-Added to this are the skills and absences from part 2 and the voice input I describe in [Field Service Mobile: guided flows and voice](../salesforce-field-service-mobile-guided-voice/). That is employee data too.
+Added to this are the skills and absences from part 2 and the voice input I describe in [Field Service Mobile: guided flows and voice](/en/blog/salesforce-field-service-mobile-guided-voice/). That is employee data too.
 
 In Germany, co-determination extends beyond these two topics. [Section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) covers, among others, technical systems suited to monitor behavior or performance, the start and end of working time and breaks, and rules of conduct. [Section 90](https://www.gesetze-im-internet.de/betrvg/__90.html) requires timely information and consultation on new technical systems, work processes and workplaces. So I would not present only a list of features to the works council, but the whole system, with a short check for each topic:
 
@@ -88,7 +88,7 @@ From a project point of view, timing matters most. Whoever talks to the works co
 
 An international field service is subject to multiple legal frameworks. Co-determination, data protection and working time rules differ by country, sometimes also by region or site with its own employee representation. What requires only a brief discussion in one country may require a formal works agreement in another.
 
-That is an argument for waves by country. For each wave, check the conditions in that country before the wave starts. The configuration has to support that: mobile settings can be assigned per profile, so that location tracking is active in one country and not in another. Set it up that way from the start, so the second country does not inherit the settings of the first. Keep the number of such variants small, though, because profiles also carry permissions, and one profile per country and role quickly becomes hard to maintain. [Chapter 4 of the change management masterclass](../../masterclass/change-management/change-management-rollout-countries/) covers what each country needs beyond legal and technical work, from a sponsor in country management to key users.
+That is an argument for waves by country. For each wave, check the conditions in that country before the wave starts. The configuration has to support that: mobile settings can be assigned per profile, so that location tracking is active in one country and not in another. Set it up that way from the start, so the second country does not inherit the settings of the first. Keep the number of such variants small, though, because profiles also carry permissions, and one profile per country and role quickly becomes hard to maintain. [Chapter 4 of the change management masterclass](/en/masterclass/change-management/change-management-rollout-countries/) covers what each country needs beyond legal and technical work, from a sponsor in country management to key users.
 
 ## How do you measure the success of a wave?
 
@@ -99,7 +99,7 @@ Every wave needs numbers from before and after. I would use the metrics already 
 - the share of proposals the dispatcher changes before release, from part 3
 - the share of response times met, from part 5
 
-If the numbers do not improve in the first wave, in my view the cause is more often data or scheduling done outside the system than the product. I still check every possible cause: data, configuration, integration, adoption, process fit and product fit. If the product does not fit the type of field service, that is a finding like any other. The numbers to watch are covered in [Field Service KPIs after go-live](../field-service-kpis-after-go-live/).
+If the numbers do not improve in the first wave, in my view the cause is more often data or scheduling done outside the system than the product. I still check every possible cause: data, configuration, integration, adoption, process fit and product fit. If the product does not fit the type of field service, that is a finding like any other. The numbers to watch are covered in [Field Service KPIs after go-live](/en/blog/field-service-kpis-after-go-live/).
 
 ## First step: a region with clean data for the first wave
 

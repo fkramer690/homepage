@@ -55,7 +55,7 @@ Meine Faustregel besteht aus drei Fragen. Jedes Ja ist ein starkes Signal; entsc
 - **Hat sie eine eigene Wartung?** Eine Spindel mit eigenem Intervall in Betriebsstunden, eine Filteranlage mit eigener Prüfung. Maintenance Work Rules hängen an Assets, also braucht die Komponente ein eigenes Asset.
 - **Hat sie eine eigene Garantie?** Ein Lieferantenteil, dessen Garantie an einem anderen Datum beginnt als die der Maschine. Ohne eigenes Asset kann niemand sagen, ob der Anspruch an den Lieferanten geht.
 
-Alles andere bleibt in der Stückliste: Schrauben, Dichtungen, Kabel, Normteile. Der Techniker muss sie trotzdem finden, aber das ist eine Frage für PLM und Ersatzteilkatalog. In [Ersatzteile per Seriennummer](../ersatzteile-seriennummer-ki-agent/) empfehle ich dieselbe Aufteilung: Salesforce führt die Maschine und ihre für den Service wichtigen Hauptbaugruppen, die vollständige As-built-Stückliste bleibt im PLM und wird live gelesen.
+Alles andere bleibt in der Stückliste: Schrauben, Dichtungen, Kabel, Normteile. Der Techniker muss sie trotzdem finden, aber das ist eine Frage für PLM und Ersatzteilkatalog. In [Ersatzteile per Seriennummer](/blog/ersatzteile-seriennummer-ki-agent/) empfehle ich dieselbe Aufteilung: Salesforce führt die Maschine und ihre für den Service wichtigen Hauptbaugruppen, die vollständige As-built-Stückliste bleibt im PLM und wird live gelesen.
 
 ## Felder oder Asset-Attribute für Maschinendaten?
 
@@ -65,7 +65,7 @@ Das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.ob
 
 Attribute haben laut [Hinweisen](https://help.salesforce.com/s/articleView?id=fs_asset_attrib_manage_monit_consider.htm&language=en_US&type=5) Grenzen: 25 pro Asset, und höchstens 10 empfohlen, wenn nutzungsbasierte Wartung daraus Arbeitsaufträge erzeugt. Validierungsregeln, Datensatztypen und Feldhistorie werden nicht unterstützt. Und Briefcases für das Offline-Priming [enthalten keine Asset-Attribute](https://help.salesforce.com/s/articleView?id=service.wfs_mobile_work_with_performance_priming.htm&language=en_US&type=5), Techniker benötigen also eine Verbindung, um sie zu lesen.
 
-Ich nutze Attribute für beschreibende Werte, die je Baureihe verschieden sind. Für wenige Zähler, die über alle Baureihen hinweg relevant sind, Validierung oder Historie benötigen oder offline lesbar sein müssen, etwa Betriebsstunden, nehme ich lieber ein Zahlenfeld am Asset. Nutzungsbasierte Wartung funktioniert mit beidem. Wie das im Detail funktioniert, steht in [Wartung nach Betriebsstunden im Field Service einrichten](../field-service-wartung-nach-betriebsstunden/).
+Ich nutze Attribute für beschreibende Werte, die je Baureihe verschieden sind. Für wenige Zähler, die über alle Baureihen hinweg relevant sind, Validierung oder Historie benötigen oder offline lesbar sein müssen, etwa Betriebsstunden, nehme ich lieber ein Zahlenfeld am Asset. Nutzungsbasierte Wartung funktioniert mit beidem. Wie das im Detail funktioniert, steht in [Wartung nach Betriebsstunden im Field Service einrichten](/blog/field-service-wartung-nach-betriebsstunden/).
 
 ## Wer hält die Hierarchie aktuell?
 
@@ -74,10 +74,10 @@ Die installierte Basis stammt bei Auslieferung aus dem System, das die seriennum
 Ohne festen Prozess zeigt die Hierarchie in Salesforce dann die Maschine im Auslieferungszustand, und niemand vertraut ihr mehr. Diese Punkte gehören vor dem Go-live geklärt:
 
 1. **Wer erfasst eine getauschte Baugruppe?** Aus meiner Sicht sollte der Techniker den Tausch in der mobilen App erfassen, mit der Seriennummer des neuen Teils, weil er den Austausch unmittelbar vornimmt.
-2. **Welches System führt danach?** Bleibt das ERP führend für die installierte Basis, muss die Änderung aus der App zurück ins ERP fließen. Führt Salesforce nach der Auslieferung, erhält das ERP eine Kopie. Beides funktioniert. Eine Mischung funktioniert nur mit klarer Zuständigkeit je Datenbereich und Änderungsereignis sowie mit Regeln für Konflikte und Abgleich. Das ist dieselbe Frage nach dem führenden System wie bei den [Stammdaten für die Planung](../salesforce-field-service-stammdaten/), und sie gehört in das Schnittstellendesign, siehe [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-3. **Was ist mit Umbauten durch Händler oder Kunden?** Tauscht ein Händler eine Komponente und meldet nur Garantiefälle, hat die Hierarchie Lücken. Das schadet auch jeder späteren Auswertung, wie in [Predictive Maintenance in Salesforce: die Datenbasis](../predictive-maintenance-salesforce-datenbasis/) beschrieben.
+2. **Welches System führt danach?** Bleibt das ERP führend für die installierte Basis, muss die Änderung aus der App zurück ins ERP fließen. Führt Salesforce nach der Auslieferung, erhält das ERP eine Kopie. Beides funktioniert. Eine Mischung funktioniert nur mit klarer Zuständigkeit je Datenbereich und Änderungsereignis sowie mit Regeln für Konflikte und Abgleich. Das ist dieselbe Frage nach dem führenden System wie bei den [Stammdaten für die Planung](/blog/salesforce-field-service-stammdaten/), und sie gehört in das Schnittstellendesign, siehe [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/).
+3. **Was ist mit Umbauten durch Händler oder Kunden?** Tauscht ein Händler eine Komponente und meldet nur Garantiefälle, hat die Hierarchie Lücken. Das schadet auch jeder späteren Auswertung, wie in [Predictive Maintenance in Salesforce: die Datenbasis](/blog/predictive-maintenance-salesforce-datenbasis/) beschrieben.
 
-Field Service kann Garantiebedingungen und Asset-Garantien speichern. Die Erfassung von Partneransprüchen, die Prüfung und der Lieferantenregress gehören zu Warranty Lifecycle Management in Manufacturing Cloud, mit eigener Lizenz, und stehen im Kapitel [Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) dieser Masterclass.
+Field Service kann Garantiebedingungen und Asset-Garantien speichern. Die Erfassung von Partneransprüchen, die Prüfung und der Lieferantenregress gehören zu Warranty Lifecycle Management in Manufacturing Cloud, mit eigener Lizenz, und stehen im Kapitel [Garantie und After-Sales](/masterclass/manufacturing-cloud/garantie-und-after-sales/) dieser Masterclass.
 
 ## Jedes zusätzliche Asset kostet später
 
@@ -94,7 +94,7 @@ quelle: Salesforce Hilfe, Grenzen von Field Service
 - **Die Baumansicht.** Über 500 Assets steht die Aktion View Asset Hierarchy nicht zur Verfügung, und sie navigiert nur 20 Ebenen. Eine Linie mit 900 Teilen als Assets ist für den Innendienst dann schwer lesbar.
 - **Die mobile App.** Was das Gerät des Technikers lädt, hängt von den Briefcase-Regeln ab, nicht automatisch von der ganzen Hierarchie. Trotzdem vergrößert jedes geladene Asset die Datenmenge, die offline aktuell bleiben muss; ich würde die Ladezeit mit einer echten Maschine testen, bevor Teile auf jedes Tablet geladen werden.
 
-Dasselbe gilt für Händlerportale: Jedes Asset, das ein Händler sehen darf, muss richtig freigegeben sein, wie beim [Ersatzteilshop pro Maschine](../ersatzteilshop-teile-pro-maschine/).
+Dasselbe gilt für Händlerportale: Jedes Asset, das ein Händler sehen darf, muss richtig freigegeben sein, wie beim [Ersatzteilshop pro Maschine](/blog/ersatzteilshop-teile-pro-maschine/).
 
 ## Rechenbeispiel: eine Verpackungslinie
 
@@ -108,4 +108,4 @@ Bei 50 Linien im Feld sind das 2.350 Assets statt rund 47.000, und jedes davon e
 
 ## Einen Maschinentyp mit der Faustregel durchgehen
 
-Nehmen Sie einen Maschinentyp und gehen Sie seine Stückliste mit der Faustregel durch: Seriennummer, eigene Wartung, eigene Garantie und ob ein Serviceprozess die Einheit getrennt verfolgen muss. Schreiben Sie die Ebenen auf, die sich daraus ergeben, und zählen Sie die Assets pro Maschine. Dann entscheiden Sie, wer eine getauschte Baugruppe erfasst und welches System nach der Auslieferung führt, und zwar vor dem ersten Import aus dem ERP. Das [Masterclass-Kapitel zu Assets, Wartung und Teilen](../../masterclass/field-service/field-service-assets-wartung-teile/) zeigt, wie die Hierarchie mit Wartungsplänen, Ersatzteilen und Servicepartnern zusammenhängt. Welche weiteren Salesforce-Themen bei Maschinen- und Anlagenbauern anstehen, von Ersatzteilen aus SAP bis zum Händlerportal, beschreibt die Seite [Salesforce für Maschinen- und Anlagenbau](../../salesforce-maschinenbau/).
+Nehmen Sie einen Maschinentyp und gehen Sie seine Stückliste mit der Faustregel durch: Seriennummer, eigene Wartung, eigene Garantie und ob ein Serviceprozess die Einheit getrennt verfolgen muss. Schreiben Sie die Ebenen auf, die sich daraus ergeben, und zählen Sie die Assets pro Maschine. Dann entscheiden Sie, wer eine getauschte Baugruppe erfasst und welches System nach der Auslieferung führt, und zwar vor dem ersten Import aus dem ERP. Das [Masterclass-Kapitel zu Assets, Wartung und Teilen](/masterclass/field-service/field-service-assets-wartung-teile/) zeigt, wie die Hierarchie mit Wartungsplänen, Ersatzteilen und Servicepartnern zusammenhängt. Welche weiteren Salesforce-Themen bei Maschinen- und Anlagenbauern anstehen, von Ersatzteilen aus SAP bis zum Händlerportal, beschreibt die Seite [Salesforce für Maschinen- und Anlagenbau](/salesforce-maschinenbau/).

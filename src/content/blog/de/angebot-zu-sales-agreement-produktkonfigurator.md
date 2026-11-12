@@ -43,7 +43,7 @@ Daraus folgt eine Anforderung, die oft erst spät auffällt: Die Regeln, welche 
 
 ## Eigener Ansatz oder Standardprodukt?
 
-Für die Angebotserstellung gibt es heute drei Wege: Revenue Cloud Advanced von Salesforce, ein Produkt eines Partners oder ein eigener Ansatz auf der Plattform. Salesforce CPQ ist für Neukunden keine Option mehr. Laut [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/) wird CPQ an Neukunden nicht mehr verkauft, Bestandskunden können weiter Nutzer kaufen, verlängern und erhalten Support. Neue Funktionen entstehen in Revenue Cloud Advanced, eine erzwungene Migration gibt es nicht. Was heute gilt, steht in [Salesforce CPQ Verkaufsende](../salesforce-cpq-verkaufsende-status/). Wie Sie den Umstieg planen, erfahren Sie in [Kapitel 5 der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
+Für die Angebotserstellung gibt es heute drei Wege: Revenue Cloud Advanced von Salesforce, ein Produkt eines Partners oder ein eigener Ansatz auf der Plattform. Salesforce CPQ ist für Neukunden keine Option mehr. Laut [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/) wird CPQ an Neukunden nicht mehr verkauft, Bestandskunden können weiter Nutzer kaufen, verlängern und erhalten Support. Neue Funktionen entstehen in Revenue Cloud Advanced, eine erzwungene Migration gibt es nicht. Was heute gilt, steht in [Salesforce CPQ Verkaufsende](/blog/salesforce-cpq-verkaufsende-status/). Wie Sie den Umstieg planen, erfahren Sie in [Kapitel 5 der Masterclass Revenue Cloud](/masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
 
 Im Projekt haben wir einen eigenen CPQ-Ansatz verfolgt. Ob das heute wieder die richtige Wahl wäre, hängt von denselben Fragen ab, die ich bei jeder Make-or-buy-Entscheidung stelle:
 
@@ -51,7 +51,7 @@ Im Projekt haben wir einen eigenen CPQ-Ansatz verfolgt. Ob das heute wieder die 
 - **Wer pflegt die Regeln?** Ein eigener Konfigurator ist eigener Code, der bei jedem Release mitgetestet und von jemandem gepflegt werden muss.
 - **Was kostet die Lizenz über mehrere Jahre?** Ein Standardprodukt kostet pro Nutzer, ein eigener Ansatz kostet Entwicklung und Wartung.
 
-Wie ich solche Fälle kalkuliere, beschreibe ich unter [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/). Die Frage, ob sich die Manufacturing Cloud selbst lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
+Wie ich solche Fälle kalkuliere, beschreibe ich unter [Make-or-buy und Lizenzprognosen](/leistungen/make-or-buy-lizenzen/). Die Frage, ob sich die Manufacturing Cloud selbst lohnt, behandelt [Teil 1 der Serie](/blog/manufacturing-cloud-wann-lohnt-sie-sich/).
 
 ## Wann wird aus einer Konfiguration ein Produkt?
 
@@ -65,7 +65,7 @@ Für das Design heißt das, früh zu entscheiden:
 2. **Wer legt das Produkt an?** Entsteht eine neue Variante im Angebot, muss sie im ERP angelegt werden, bevor sie bestellt werden kann. Das ist ein Prozess mit Freigabe, meist außerhalb des Vertriebs.
 3. **Wie wächst der Katalog?** Wenn fast jede Konfiguration einzigartig ist, wächst der Produktkatalog schnell. Dann ist eine Regel erforderlich, wann eine Variante wiederverwendet wird.
 
-Wie die Ist-Mengen danach aus dem ERP ins Sales Agreement gelangen, beschreibe ich in [Teil 3: Sales Agreements, fehlende Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/).
+Wie die Ist-Mengen danach aus dem ERP ins Sales Agreement gelangen, beschreibe ich in [Teil 3: Sales Agreements, fehlende Abnahmemengen erkennen](/blog/sales-agreements-abnahmemengen-erp/).
 
 ## Die Connect API macht aus dem Angebot ein Sales Agreement
 
@@ -109,6 +109,6 @@ Bevor der Konfigurator gebaut oder ein Produkt ausgewählt wird, klären Sie die
 1. **Was wird konfiguriert?** Eine Liste der Eigenschaften mit Kostenwirkung, abgestimmt mit Produktion, Qualität und Einkauf.
 2. **Wann entsteht ein Produkt?** Die Regel, welche Eigenschaft eine neue Materialnummer im ERP erzeugt.
 3. **Welche Felder wandern ins Agreement?** Das Mapping aus der Tabelle oben, inklusive Laufzeit und Account-Ebene.
-4. **Wo wird freigegeben?** Eine zentrale Freigabestelle für den Preis, dokumentiert im Entscheidungslog der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+4. **Wo wird freigegeben?** Eine zentrale Freigabestelle für den Preis, dokumentiert im Entscheidungslog der [Salesforce-Architektur](/leistungen/salesforce-architektur/).
 
 Punkt 2 entscheide ich zusammen mit dem ERP-Team, weil jede neue Variante dort eine Materialnummer erhält. Ohne diese Regel enthält das Sales Agreement Produkte, die das ERP nicht kennt.

@@ -50,7 +50,7 @@ Salesforce hat das eigene FDE-Modell 2025 öffentlich gemacht und 2026 auf Partn
 
 Zum [FDE Partner Network](https://www.salesforce.com/news/stories/salesforce-launches-forward-deployed-engineer-partner-network-announcement/) gehören neben Accenture und Deloitte unter anderem Capgemini, Cognizant, IBM Consulting, KPMG, PwC, Slalom, TCS und einige Regionalfirmen. Die Partner erhalten einen direkten Draht zu den Produktteams. Salesforce knüpft ihre Anreize daran, dass Agenten in Produktion gehen, und beschreibt vier Bausteine: Lösungsarchitektur, Agentendesign, Go-live mit Hypercare sowie Adoption und Change Management.
 
-Einzelne Engineers der Partner lassen sich als FDE-Praktiker verifizieren. Laut [diginomica](https://diginomica.com/node/31193) gehören dazu ein Wissenstest, ein Workshop über zwei Tage und der Nachweis an einem echten Kundenprojekt. Salesforce nannte dort 84 Partner und über 800 verifizierte Praktiker. Was das neue Partnermodell für die Interessen Ihres Implementierungspartners bedeutet, steht im Kapitel [AIforce und Systemintegratoren](../../masterclass/ki-salesforce/aiforce-und-systemintegratoren/) der KI-Masterclass.
+Einzelne Engineers der Partner lassen sich als FDE-Praktiker verifizieren. Laut [diginomica](https://diginomica.com/node/31193) gehören dazu ein Wissenstest, ein Workshop über zwei Tage und der Nachweis an einem echten Kundenprojekt. Salesforce nannte dort 84 Partner und über 800 verifizierte Praktiker. Was das neue Partnermodell für die Interessen Ihres Implementierungspartners bedeutet, steht im Kapitel [AIforce und Systemintegratoren](/masterclass/ki-salesforce/aiforce-und-systemintegratoren/) der KI-Masterclass.
 
 ## Was ein FDE kostet und wer ihn bezahlt
 
@@ -78,9 +78,9 @@ Architekt auf Kundenseite | Den Hersteller | Zielbild, Standards, Entscheidungen
 fazit: Der FDE-Pod ist zeitlich und auf einen Anwendungsfall begrenzt. Die anderen Rollen bleiben über die Laufzeit des Programms.
 ```
 
-In meinem größten Programm arbeiteten fünf Implementierungspartner mit über 30 Entwicklern in acht Streams an einer Org. Ein FDE-Pod wäre dort eine weitere Partei gewesen, die in derselben Org entwickelt. Er muss sich an dieselben Entwicklungsstandards halten, an die [Object Ownership Matrix](../object-ownership-matrix-salesforce/), die festlegt, welcher Stream welches Objekt verantwortet, und an denselben Release-Prozess. Sonst baut ein sehr gutes Team einen sehr guten Agenten, den nach der Hypercare niemand sauber weiterführen kann.
+In meinem größten Programm arbeiteten fünf Implementierungspartner mit über 30 Entwicklern in acht Streams an einer Org. Ein FDE-Pod wäre dort eine weitere Partei gewesen, die in derselben Org entwickelt. Er muss sich an dieselben Entwicklungsstandards halten, an die [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/), die festlegt, welcher Stream welches Objekt verantwortet, und an denselben Release-Prozess. Sonst baut ein sehr gutes Team einen sehr guten Agenten, den nach der Hypercare niemand sauber weiterführen kann.
 
-Diese Einordnung gehört zur [Partnersteuerung](../../leistungen/partnersteuerung/): Wer bringt welche Regeln mit, wer gibt frei, wem gehören Repository und Pipeline. Ein FDE-Pod ändert daran nichts. Er macht die Fragen dringlicher, weil er schnell arbeitet und das Projekt nach wenigen Wochen verlässt.
+Diese Einordnung gehört zur [Partnersteuerung](/leistungen/partnersteuerung/): Wer bringt welche Regeln mit, wer gibt frei, wem gehören Repository und Pipeline. Ein FDE-Pod ändert daran nichts. Er macht die Fragen dringlicher, weil er schnell arbeitet und das Projekt nach wenigen Wochen verlässt.
 
 ## Was Salesforce-FDEs als größte Bremsen nennen
 
@@ -88,10 +88,10 @@ Der FDE-Director für Agentforce hat im Engineering-Blog von Salesforce zusammen
 
 - **Entscheidungsstau.** KI-Gremien und Architekturboards brauchen lange für Grundsatzentscheidungen, Governance-Reviews zu Sicherheit, Compliance und Monitoring verlangen ausführliche Scorecards. Mittelständler entscheiden laut Salesforce schneller.
 - **Unfertige Plattformen.** Viele Orgs sind mitten in einer Migration, die Daten sind auf mehrere Systeme verteilt. Ob Data 360 sie per API oder per Zero Copy einbindet, ist eine Architekturfrage mit Folgen für Leistung und Kosten.
-- **Zu viele Anweisungen.** Kunden schreiben immer mehr Regeln in die Anweisungen des Agenten, und der Agent antwortet dadurch schlechter. Feste Geschäftslogik gehört in Flows oder Code, wie ich in [Agent Script: Geschäftsregeln gehören nicht ins LLM](../agent-script-regeln-statt-llm/) beschreibe.
-- **Fehlende Tests.** Einzelne Testsätze zeigen nicht, ob ein Gespräch über mehrere Schritte funktioniert. Salesforce hat dafür ein eigenes Framework für Tests über mehrere Gesprächsrunden gebaut. Wie Sie das in Ihrem Projekt lösen, steht in [Agentforce-Agenten testen](../agentforce-agenten-testen-freigeben/).
+- **Zu viele Anweisungen.** Kunden schreiben immer mehr Regeln in die Anweisungen des Agenten, und der Agent antwortet dadurch schlechter. Feste Geschäftslogik gehört in Flows oder Code, wie ich in [Agent Script: Geschäftsregeln gehören nicht ins LLM](/blog/agent-script-regeln-statt-llm/) beschreibe.
+- **Fehlende Tests.** Einzelne Testsätze zeigen nicht, ob ein Gespräch über mehrere Schritte funktioniert. Salesforce hat dafür ein eigenes Framework für Tests über mehrere Gesprächsrunden gebaut. Wie Sie das in Ihrem Projekt lösen, steht in [Agentforce-Agenten testen](/blog/agentforce-agenten-testen-freigeben/).
 
-Salesforce gibt an, die Einführungszeit so von etwa sechs Monaten auf wenige Wochen gesenkt zu haben. Die Methode dahinter ist nicht offengelegt. Die ersten beiden Bremsen kann aber kein FDE allein lösen. Wenn im Architekturboard niemand die Entscheidung vorbereitet hat, wartet auch der beste Pod. Darum geht es auch in [Entscheider als Engpass im KI-Salesforce-Projekt](../entscheider-engpass-ki-salesforce-projekt/).
+Salesforce gibt an, die Einführungszeit so von etwa sechs Monaten auf wenige Wochen gesenkt zu haben. Die Methode dahinter ist nicht offengelegt. Die ersten beiden Bremsen kann aber kein FDE allein lösen. Wenn im Architekturboard niemand die Entscheidung vorbereitet hat, wartet auch der beste Pod. Darum geht es auch in [Entscheider als Engpass im KI-Salesforce-Projekt](/blog/entscheider-engpass-ki-salesforce-projekt/).
 
 ## Wann lohnt sich ein FDE für Hersteller?
 
@@ -102,7 +102,7 @@ Ich würde einen FDE-Einsatz an diesen Kriterien festmachen:
 - **Jemand übernimmt danach.** Ihr Team oder Ihr Implementierungspartner kann den Agenten nach der Hypercare weiterentwickeln. Sonst kaufen Sie einen Prototyp mit Produktionszugang.
 - **Die Entscheidungswege sind kurz.** Datenzugang, Berechtigungen und die Freigabe im Architekturboard lassen sich in Tagen klären, nicht in Monaten.
 
-Nicht lohnen würde sich ein FDE, wenn der größte Aufwand das Prozessdesign über mehrere Clouds, eine tiefe SAP-Anbindung oder eine Datenbereinigung ist. Das ist Arbeit für einen Implementierungspartner über Monate. Und wenn noch offen ist, ob ein Agent überhaupt der richtige Weg ist, klären Sie das zuerst. Die Kriterien dafür stehen in [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/)
+Nicht lohnen würde sich ein FDE, wenn der größte Aufwand das Prozessdesign über mehrere Clouds, eine tiefe SAP-Anbindung oder eine Datenbereinigung ist. Das ist Arbeit für einen Implementierungspartner über Monate. Und wenn noch offen ist, ob ein Agent überhaupt der richtige Weg ist, klären Sie das zuerst. Die Kriterien dafür stehen in [Agentforce für Hersteller: jetzt starten oder warten?](/blog/agentforce-ja-oder-nein-hersteller/)
 
 Eine kürzere Fassung für CIOs steht auf Englisch als Artikel auf LinkedIn: [Before Salesforce sends you forward deployed engineers, answer three questions](https://www.linkedin.com/pulse/before-salesforce-sends-you-forward-deployed-engineers-fabian-kramer-jqxde/).
 

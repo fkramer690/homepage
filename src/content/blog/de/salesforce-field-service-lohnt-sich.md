@@ -36,7 +36,7 @@ Salesforce Field Service ist das Produkt für den Außendienst auf Basis der Ser
 
 - **Terminplanung und Optimierung.** Eine Planungsengine wählt für jeden Einsatz einen passenden Techniker und ein Zeitfenster.
 - **Mobile App.** Techniker sehen ihre Einsätze, Anlagen und Historie, auch offline, und erfassen Arbeitszeit, Material, Fotos und Unterschrift.
-- **Dokumentation.** Serviceberichte werden direkt in der App erzeugt. Was der Standard dabei kann und wo er Grenzen hat, beschreibe ich in [Service Documents: reicht der Document Builder?](../salesforce-service-documents-document-builder-servicebericht/).
+- **Dokumentation.** Serviceberichte werden direkt in der App erzeugt. Was der Standard dabei kann und wo er Grenzen hat, beschreibe ich in [Service Documents: reicht der Document Builder?](/blog/salesforce-service-documents-document-builder-servicebericht/).
 
 Der Kern ist die Planung. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies) arbeitet sie mit zwei Arten von Regeln. Work Rules filtern Techniker aus, die einen Einsatz nicht übernehmen können, etwa weil eine Qualifikation fehlt. Service Objectives bewerten die übrigen Kandidaten, zum Beispiel nach geringster Fahrzeit, frühestem Termin oder bevorzugtem Techniker. Beides zusammen ergibt eine Scheduling Policy.
 
@@ -59,7 +59,7 @@ Bei wenigen langen Einsätzen ist der Nutzen der Planung viel kleiner. Ein Techn
 Meine Field-Service-Kunden hatten zwischen 15 und 700 Techniker, und die Länge der Einsätze hing stark von der Branche ab. Bei großen Maschinen in der Fertigung sind meist mehrtägige Termine nötig, mehr als zwei Termine am selben Tag sind selten. In Branchen, in denen Techniker vor Ort nur Verbräuche erfassen, waren es bis zu zehn Termine am Tag.
 ```
 
-Typisch dafür sind Inbetriebnahmen, Umbauten oder Revisionen, bei denen ein Team tagelang an einem Ort arbeitet. Der Unterschied zu 16 Terminen am Tag ist groß: Bei solchen langen Einsätzen zählen Zugang zu Unterlagen, Abstimmung mit dem Kunden und eine vollständige Abnahme mehr als die Frage, welcher Techniker am Nachmittag wo ist. Field Service unterstützt solche Arbeit mit mehrtägigen Terminen und Teams (Crews), siehe [mehrtägige Einsätze und Teams](../field-service-mehrtaegige-einsaetze-inbetriebnahme/). Der Business Case muss sich dann aus Offline-Dokumentation, Anlagenhistorie, Wartungsverträgen, Teilen oder der Steuerung von Partnern ergeben, nicht aus der Routenoptimierung.
+Typisch dafür sind Inbetriebnahmen, Umbauten oder Revisionen, bei denen ein Team tagelang an einem Ort arbeitet. Der Unterschied zu 16 Terminen am Tag ist groß: Bei solchen langen Einsätzen zählen Zugang zu Unterlagen, Abstimmung mit dem Kunden und eine vollständige Abnahme mehr als die Frage, welcher Techniker am Nachmittag wo ist. Field Service unterstützt solche Arbeit mit mehrtägigen Terminen und Teams (Crews), siehe [mehrtägige Einsätze und Teams](/blog/field-service-mehrtaegige-einsaetze-inbetriebnahme/). Der Business Case muss sich dann aus Offline-Dokumentation, Anlagenhistorie, Wartungsverträgen, Teilen oder der Steuerung von Partnern ergeben, nicht aus der Routenoptimierung.
 
 Für solche Fälle gibt es Alternativen, die ich vor einer Field-Service-Lizenz prüfe:
 
@@ -67,7 +67,7 @@ Für solche Fälle gibt es Alternativen, die ich vor einer Field-Service-Lizenz 
 - **Ein Portal mit Experience Cloud**, wenn Subunternehmer oder Partner Arbeiten melden und Unterlagen austauschen.
 - **Planung im ERP oder in einem Projektwerkzeug**, wenn Einsätze eher Projekte als Termine sind.
 
-Das ist dieselbe Make-or-buy-Frage wie bei jedem anderen Salesforce-Produkt. Ich beschreibe das Vorgehen unter [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+Das ist dieselbe Make-or-buy-Frage wie bei jedem anderen Salesforce-Produkt. Ich beschreibe das Vorgehen unter [Make-or-buy und Lizenzprognosen](/leistungen/make-or-buy-lizenzen/).
 
 ## Was kostet Salesforce Field Service?
 
@@ -90,7 +90,7 @@ Für die Lizenzplanung sind vor allem diese Bedingungen aus dem Kleingedruckten 
 Dispatcher- und Technician-Lizenzen dürfen nicht für Contact Center oder Fallbearbeitung genutzt werden. Wer im Innendienst Fälle bearbeitet und zugleich Einsätze plant, braucht Field Service Plus.
 ```
 
-Welche Rolle welche Lizenz braucht, Subunternehmer eingeschlossen, steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/) und in [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/). Die sechs häufigsten Fragen zum Produkt mit Kurzantwort sammelt der Themen-Hub [Salesforce Field Service für Hersteller](../../masterclass/field-service/).
+Welche Rolle welche Lizenz braucht, Subunternehmer eingeschlossen, steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](/blog/field-service-lizenzen-rollen-dispatcher-techniker/) und in [Kapitel 1 der Masterclass Field Service](/masterclass/field-service/field-service-lohnt-sich-lizenzen/). Die sechs häufigsten Fragen zum Produkt mit Kurzantwort sammelt der Themen-Hub [Salesforce Field Service für Hersteller](/masterclass/field-service/).
 
 ## Woran entscheide ich?
 
@@ -105,8 +105,8 @@ Diese Zahlen lassen sich meist dem ERP oder der bestehenden Einsatzplanung entne
 
 Der Business Case selbst braucht beide Seiten. Auf der Nutzenseite stehen Kosten eines Fehleinsatzes, Wiederholungsbesuche, Aufwand der Disposition, Überstunden, verfehlte Reaktionszeiten mit ihren Vertragsfolgen und der Aufwand für Serviceberichte. Auf der Kostenseite stehen Lizenzen, Umsetzung, Integration, Betrieb und bestehende Systeme, die abgelöst werden oder bleiben. Rechnen Sie über die erwartete Nutzungsdauer, nicht nur für das erste Jahr.
 
-Danach folgt die Frage nach den Daten. Field Service plant nur mit gepflegten Anlagen, Standorten, Qualifikationen und Verfügbarkeiten. Ein Techniker, dessen Qualifikationen nirgends hinterlegt sind, wird von der Engine falsch eingeplant. Welche Daten das genau sind, beschreibe ich in [Teil 2 dieser Serie](../salesforce-field-service-stammdaten/).
+Danach folgt die Frage nach den Daten. Field Service plant nur mit gepflegten Anlagen, Standorten, Qualifikationen und Verfügbarkeiten. Ein Techniker, dessen Qualifikationen nirgends hinterlegt sind, wird von der Engine falsch eingeplant. Welche Daten das genau sind, beschreibe ich in [Teil 2 dieser Serie](/blog/salesforce-field-service-stammdaten/).
 
 ## Vier Zahlen für einen Monat und eine Region erheben
 
-Erheben Sie die vier Zahlen für einen Monat und eine Region. Zeigen sie viele kurze Einsätze mit viel Fahrzeit, rechnen Sie den Business Case für Field Service mit Lizenzen, Umsetzung und Wartung über mehrere Jahre. Wie die Einführung danach Region für Region abläuft, beschreibe ich in [Salesforce Field Service Einführung: Warum in Wellen?](../salesforce-field-service-einfuehrung/). Zeigen sie wenige lange Einsätze, prüfen Sie zuerst, ob Service Cloud, ein Portal oder das ERP die Lücke schließen. Was die mobile App heute für Techniker leistet, steht in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/). Für welche Maschinen- und Anlagenbauer sich Field Service besonders eignet, zeigt die Passungstabelle unter [Salesforce im Maschinen- und Anlagenbau](../../salesforce-maschinenbau/).
+Erheben Sie die vier Zahlen für einen Monat und eine Region. Zeigen sie viele kurze Einsätze mit viel Fahrzeit, rechnen Sie den Business Case für Field Service mit Lizenzen, Umsetzung und Wartung über mehrere Jahre. Wie die Einführung danach Region für Region abläuft, beschreibe ich in [Salesforce Field Service Einführung: Warum in Wellen?](/blog/salesforce-field-service-einfuehrung/). Zeigen sie wenige lange Einsätze, prüfen Sie zuerst, ob Service Cloud, ein Portal oder das ERP die Lücke schließen. Was die mobile App heute für Techniker leistet, steht in [Field Service Mobile im Außendienst](/blog/salesforce-field-service-mobile-aussendienst/). Für welche Maschinen- und Anlagenbauer sich Field Service besonders eignet, zeigt die Passungstabelle unter [Salesforce im Maschinen- und Anlagenbau](/salesforce-maschinenbau/).

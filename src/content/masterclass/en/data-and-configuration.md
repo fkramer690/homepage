@@ -33,7 +33,7 @@ Data and configuration that is not metadata slips through many Salesforce pipeli
 
 ## Which data counts as configuration, and which does not?
 
-[Chapter 6](../quality-tests-reviews/) covered how metadata reaches production with checks. A Salesforce org also depends on records that drive behavior. I split them into four groups, because each one needs a different route:
+[Chapter 6](/en/masterclass/devops-release-management/quality-tests-reviews/) covered how metadata reaches production with checks. A Salesforce org also depends on records that drive behavior. I split them into four groups, because each one needs a different route:
 
 | Group | Manufacturing examples | Source of truth | Route into the orgs |
 |---|---|---|---|
@@ -57,7 +57,7 @@ For a manufacturer, that means:
 - **Custom and standard objects used as configuration**, such as the Field Service objects or pricing rules in a configurator. Here you have no choice; they are data.
 
 ```hinweis tipp
-In an existing org I would not rebuild every custom setting. I would write into the partner rules, though, that new configuration is built as a custom metadata type unless there is a business reason against it. Who sets and enforces these rules is covered in [chapter 2](../release-process-ownership-roles/).
+In an existing org I would not rebuild every custom setting. I would write into the partner rules, though, that new configuration is built as a custom metadata type unless there is a business reason against it. Who sets and enforces these rules is covered in [chapter 2](/en/masterclass/devops-release-management/release-process-ownership-roles/).
 ```
 
 ## Configuration data runs through the same pipeline
@@ -72,7 +72,7 @@ In an existing org I would not rebuild every custom setting. I would write into 
 
 [SFDMU](https://help.sfdmu.com/) is an open-source Salesforce CLI plugin for data migration, licensed under BSD-3 according to its [npm entry](https://www.npmjs.com/package/sfdmu). It copies records directly from org to org or from CSV files, supports insert, upsert, update and delete, handles several related objects in one run and is configured through a single `export.json` file. It also supports field mapping, anonymization and composite external ID keys. Processing runs locally or on the pipeline runner, with no cloud service in between.
 
-sfdx-hardis runs SFDMU through [deployment actions](https://sfdx-hardis.cloudity.com/salesforce-devops-work-on-user-story-deployment-actions/). How deployment actions fit into the pull request flow is covered in [chapter 5](../building-the-pipeline/). In the free sfdx-hardis training, deployment actions for reference data are part of level 2; my notes are in [what I learned from the free sfdx-hardis training](../../../blog/sfdx-hardis-free-devops-training/), and an introduction is in [sfdx-hardis: open-source Salesforce DevOps explained](../../../blog/sfdx-hardis-open-source-salesforce-devops/).
+sfdx-hardis runs SFDMU through [deployment actions](https://sfdx-hardis.cloudity.com/salesforce-devops-work-on-user-story-deployment-actions/). How deployment actions fit into the pull request flow is covered in [chapter 5](/en/masterclass/devops-release-management/building-the-pipeline/). In the free sfdx-hardis training, deployment actions for reference data are part of level 2; my notes are in [what I learned from the free sfdx-hardis training](/en/blog/sfdx-hardis-free-devops-training/), and an introduction is in [sfdx-hardis: open-source Salesforce DevOps explained](/en/blog/sfdx-hardis-open-source-salesforce-devops/).
 
 ```vertiefung For developers
 title: How do deployment actions of type data run?
@@ -93,17 +93,17 @@ The commercial platforms have their own data modules with a user interface. Acco
 | [Copado Data Deploy](https://www.copado.com/platform/deliver/) | data templates for configuration records with complex relationships, ready-made templates from the DevOps Exchange, masking of sensitive values | in Copado Essentials, per its [documentation](https://docs.essentials.copado.com/en/articles/6325474-how-to-deploy-relational-data-with-data-deploy-essentials), an Essentials Plus option with a per-user license |
 | [Flosum Data Migrator](https://docs.flosum.com/data-migrator) | templates with objects, fields and filters, relationships preserved, masking, triggers can be switched off | error report per failed record |
 
-What these tools do well: an admin sees before the run which related records will be included and does not have to write an `export.json`. For CPQ configuration with many nested objects, that is a real advantage. Which tool fits your program overall is decided in [chapter 4](../devops-tools-compared/); for data the same rule applies as for metadata. The tool's contract is in your name, and the data templates sit with you, not in a partner's account. The reasons are in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
+What these tools do well: an admin sees before the run which related records will be included and does not have to write an `export.json`. For CPQ configuration with many nested objects, that is a real advantage. Which tool fits your program overall is decided in [chapter 4](/en/masterclass/devops-release-management/devops-tools-compared/); for data the same rule applies as for metadata. The tool's contract is in your name, and the data templates sit with you, not in a partner's account. The reasons are in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/).
 
 One point applies to every tool:
 
 ```hinweis achtung
-Gearset says openly that a failed data deployment can leave data only partly deployed. Back up the affected objects before every release with a data step; backup and restore are covered in [chapter 9](../operations-monitoring-backup/).
+Gearset says openly that a failed data deployment can leave data only partly deployed. Back up the affected objects before every release with a data step; backup and restore are covered in [chapter 9](/en/masterclass/devops-release-management/operations-monitoring-backup/).
 ```
 
 ## How does customer data in sandboxes stay protected?
 
-Partial and full sandboxes hold real customer data after every refresh. Which environment may carry which data was set in [chapter 3](../environments-and-branching/); which fields are sensitive at a manufacturer and what coding agents may read is covered in [sandbox customer data: what AI coding agents may read](../../../blog/sandbox-customer-data-ai-coding-agents/).
+Partial and full sandboxes hold real customer data after every refresh. Which environment may carry which data was set in [chapter 3](/en/masterclass/devops-release-management/environments-and-branching/); which fields are sensitive at a manufacturer and what coding agents may read is covered in [sandbox customer data: what AI coding agents may read](/en/blog/sandbox-customer-data-ai-coding-agents/).
 
 Salesforce sells [Data Mask & Seed](https://www.salesforce.com/platform/data-masking/) for this. According to Trailhead, [Data Mask](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/get-to-know-salesforce-data-mask) is a managed package you install in production that masks data in full and partial sandboxes; production stays unchanged, and masked data cannot be unmasked. Per field, the [configuration module](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/install-and-configure-salesforce-data-mask) lets you choose random characters or numbers, a replacement from a library such as names or addresses, or deletion. Checkbox, lookup and picklist fields are not supported. The configuration carries over on refresh, and you start the run in the sandbox.
 
@@ -124,7 +124,7 @@ Open access
   Only then open access for partners and business users.
 ```
 
-Coding agents get a stricter rule, described in [chapter 8 of the AI masterclass](../../ai-salesforce/ai-code-best-practices/): they work in scratch orgs and developer sandboxes with seed data, never in a full copy.
+Coding agents get a stricter rule, described in [chapter 8 of the AI masterclass](/en/masterclass/ai-salesforce/ai-code-best-practices/): they work in scratch orgs and developer sandboxes with seed data, never in a full copy.
 
 ## Worked example: Field Service for maintenance
 
@@ -152,4 +152,4 @@ I would write these into every contract:
 4. Master data from SAP never goes through the release pipeline into production.
 5. No partner gets access to a sandbox before masking has run after the refresh.
 
-When to schedule data steps in the release calendar, and how the three Salesforce releases a year fit in, is covered in [chapter 8](../release-planning-salesforce-releases/). Data steps and sandbox levels are part of my work in [DevOps and release management](../../../services/devops-release-management/).
+When to schedule data steps in the release calendar, and how the three Salesforce releases a year fit in, is covered in [chapter 8](/en/masterclass/devops-release-management/release-planning-salesforce-releases/). Data steps and sandbox levels are part of my work in [DevOps and release management](/en/services/devops-release-management/).

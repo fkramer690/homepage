@@ -50,9 +50,9 @@ Wie viele Sandboxes Sie von welchem Typ haben, hängt von Edition und zugekaufte
 | Staging (Preprod) | Full | Release Manager, Tests mit dem SAP-QS-System | alle Daten |
 | Produktion | Produktion | nur die Pipeline deployt | echte Daten |
 
-Zwei Regeln halte ich für nicht verhandelbar. In Integration, UAT, Staging und Produktion deployt ausschließlich die Pipeline, kein Mensch über Change Sets oder das Setup. Und welche Daten in welcher Stufe liegen dürfen, ist eine Entscheidung mit dem Datenschutzbeauftragten; die Details stehen in [Sandbox-Kundendaten: was KI-Coding-Agenten lesen dürfen](../../../blog/sandbox-kundendaten-ki-coding-agenten/). Ohne Partial-Copy-Lizenz teilen sich UAT und Staging die Full-Sandbox, und Abnahme und Generalprobe müssen nacheinander stattfinden.
+Zwei Regeln halte ich für nicht verhandelbar. In Integration, UAT, Staging und Produktion deployt ausschließlich die Pipeline, kein Mensch über Change Sets oder das Setup. Und welche Daten in welcher Stufe liegen dürfen, ist eine Entscheidung mit dem Datenschutzbeauftragten; die Details stehen in [Sandbox-Kundendaten: was KI-Coding-Agenten lesen dürfen](/blog/sandbox-kundendaten-ki-coding-agenten/). Ohne Partial-Copy-Lizenz teilen sich UAT und Staging die Full-Sandbox, und Abnahme und Generalprobe müssen nacheinander stattfinden.
 
-Wer welche Org besitzt und wer Deployments dorthin freigibt, regelt [Kapitel 2 zu Eigentum und Rollen](../release-prozess-eigentum-rollen/). Die Sandboxes gehören dem Kunden, auch wenn ein Partner sie täglich nutzt.
+Wer welche Org besitzt und wer Deployments dorthin freigibt, regelt [Kapitel 2 zu Eigentum und Rollen](/masterclass/devops-release-management/release-prozess-eigentum-rollen/). Die Sandboxes gehören dem Kunden, auch wenn ein Partner sie täglich nutzt.
 
 ## Wann passen Scratch Orgs, und wo stoßen sie an Grenzen?
 
@@ -69,7 +69,7 @@ Jede Scratch Org hat 500 MB Daten- und 50 MB Dateispeicher. Für ein Programm mi
 
 Die eigentliche Grenze liegt woanders. Eine Scratch Org enthält nur, was im Repository steht und sich deployen lässt, plus die Features und Einstellungen aus der Definitionsdatei, die Salesforce „org shape“ nennt. Eine Org, die über Jahre mit Service Cloud, Field Service, Händlerportal, Managed Packages und manuellen Einstellungen gewachsen ist, lässt sich nach meiner Einschätzung selten vollständig in eine leere Scratch Org deployen. Der Aufwand dafür ist ein Projekt für sich.
 
-Mein Rat für gewachsene Orgs: Developer- oder Developer-Pro-Sandboxes als Arbeitsplatz, mit eingeschaltetem [Source Tracking](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html). Das gibt es nur für diese beiden Typen, nicht für Partial Copy und Full. Scratch Orgs lohnen sich für neue, gekapselte Teile, etwa ein eigenes Paket für eine Garantie-App. sfdx-hardis unterstützt beide Wege; das [kostenlose Training](../../../blog/sfdx-hardis-kostenloses-devops-training/) richtet zum Beispiel Dev Hub und Scratch Orgs ein, für eine gewachsene Kundenorg würde ich trotzdem mit Sandboxes starten.
+Mein Rat für gewachsene Orgs: Developer- oder Developer-Pro-Sandboxes als Arbeitsplatz, mit eingeschaltetem [Source Tracking](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html). Das gibt es nur für diese beiden Typen, nicht für Partial Copy und Full. Scratch Orgs lohnen sich für neue, gekapselte Teile, etwa ein eigenes Paket für eine Garantie-App. sfdx-hardis unterstützt beide Wege; das [kostenlose Training](/blog/sfdx-hardis-kostenloses-devops-training/) richtet zum Beispiel Dev Hub und Scratch Orgs ein, für eine gewachsene Kundenorg würde ich trotzdem mit Sandboxes starten.
 
 ## Wie sieht ein Branch-Modell aus, das mehrere Partner trägt?
 
@@ -86,7 +86,7 @@ uat --Beförderung--> preprod
 preprod --Beförderung--> main Produktion
 ```
 
-Von dort werden Änderungen per Pull Request zwischen den Stufen-Branches nach oben befördert. Ein solcher Pull Request befördert laut sfdx-hardis alles, was seit der letzten Beförderung in den Quell-Branch gemergt wurde. Gearset arbeitet in seinen Pipelines ebenfalls mit langlebigen Umgebungs-Branches. Die Werkzeuge vergleicht [Kapitel 4](../devops-werkzeuge-vergleich/).
+Von dort werden Änderungen per Pull Request zwischen den Stufen-Branches nach oben befördert. Ein solcher Pull Request befördert laut sfdx-hardis alles, was seit der letzten Beförderung in den Quell-Branch gemergt wurde. Gearset arbeitet in seinen Pipelines ebenfalls mit langlebigen Umgebungs-Branches. Die Werkzeuge vergleicht [Kapitel 4](/masterclass/devops-release-management/devops-werkzeuge-vergleich/).
 
 Eine ehrliche Einschränkung: DORA empfiehlt für leistungsstarke Teams [Trunk-Based Development](https://dora.dev/capabilities/trunk-based-development/) mit höchstens drei aktiven Branches und mindestens einem Merge pro Tag in den Hauptstrang. Ein Modell mit vier Stufen-Branches widerspricht dem. Ich halte es in Programmen mit Fachbereichsabnahme und mehreren Partnern trotzdem für richtig, weil jede Stufe eine andere Freigabe darstellt. Das Risiko liegt in Feature-Branches, die lange bestehen. Meine Regel deshalb: Feature-Branches bestehen Tage, nicht Wochen, und eine Story, die nicht in einen Sprint passt, wird aufgeteilt.
 
@@ -94,7 +94,7 @@ Stories, die in UAT noch nicht abgenommen sind, blockieren eine Beförderung von
 
 ## Wie bleiben Entwickler-Sandboxes aktuell?
 
-Mit jedem Merge in `integration` veraltet jede Entwickler-Sandbox ein Stück. Wer auf einem Stand von vor drei Wochen baut, erzeugt Konflikte, die erst im Pull Request auffallen, oder deployt alte Versionen fremder Komponenten mit. So entstehen die sich gegenseitig überschreibenden Änderungen, die ich in [warum DevOps über Salesforce-Großprojekte entscheidet](../../../blog/warum-devops-salesforce-enterprise-projekte/) beschrieben habe.
+Mit jedem Merge in `integration` veraltet jede Entwickler-Sandbox ein Stück. Wer auf einem Stand von vor drei Wochen baut, erzeugt Konflikte, die erst im Pull Request auffallen, oder deployt alte Versionen fremder Komponenten mit. So entstehen die sich gegenseitig überschreibenden Änderungen, die ich in [warum DevOps über Salesforce-Großprojekte entscheidet](/blog/warum-devops-salesforce-enterprise-projekte/) beschrieben habe.
 
 Der Vorgang heißt Back Promotion oder Backpromote: Änderungen aus einer höheren Stufe werden zurück in die Entwicklungsumgebungen gebracht. So lösen es die Werkzeuge:
 
@@ -122,14 +122,14 @@ Stufen-Branch deployen
 Schnittstellen prüfen
   Zeigen Named Credentials und Endpunkte auf das SAP-QS-System statt auf das produktive?
 Daten nachziehen
-  Kontaktadressen, Maskierung und Seed-Daten, wie in [Kapitel 7 zu Daten und Konfiguration](../daten-und-konfiguration/) beschrieben.
+  Kontaktadressen, Maskierung und Seed-Daten, wie in [Kapitel 7 zu Daten und Konfiguration](/masterclass/devops-release-management/daten-und-konfiguration/) beschrieben.
 Pipeline-Zugang neu einrichten
   Falls die Authentifizierung an die alte Org gebunden war.
 ```
 
 Bei Entwickler-Sandboxes ist es einfacher: Nach dem Refresh ein Backpromote, und der Entwickler ist auf dem aktuellen Stand. sfdx-hardis markiert frühere Läufe dann als „Before refresh“ und behandelt Deployment Actions als noch nicht ausgeführt.
 
-Der Zeitpunkt eines Refreshs hat noch eine Nebenwirkung: Er entscheidet, ob eine Sandbox auf einer [Preview-Instanz](https://trailhead.salesforce.com/content/learn/modules/sf_releases/sf-releases-sandbox-preview) liegt und das nächste Salesforce-Release etwa vier bis sechs Wochen vor der Produktion erhält. Wie Sie das planen, steht in [Kapitel 8 zur Release-Planung](../release-planung-salesforce-releases/).
+Der Zeitpunkt eines Refreshs hat noch eine Nebenwirkung: Er entscheidet, ob eine Sandbox auf einer [Preview-Instanz](https://trailhead.salesforce.com/content/learn/modules/sf_releases/sf-releases-sandbox-preview) liegt und das nächste Salesforce-Release etwa vier bis sechs Wochen vor der Produktion erhält. Wie Sie das planen, steht in [Kapitel 8 zur Release-Planung](/masterclass/devops-release-management/release-planung-salesforce-releases/).
 
 ## Der Hotfix-Pfad
 
@@ -141,7 +141,7 @@ Der zweite Pull Request nach `main` befördert alles, was seit der letzten Befö
 
 Der kritische Schritt folgt danach. Die Stufen-Branches darunter wurden vor dem Fix abgezweigt und enthalten die alte Version derselben Metadaten. Werden sie befördert, verschwindet die Korrektur wieder aus Produktion. sfdx-hardis nennt den Rückweg [Retrofit](https://sfdx-hardis.cloudity.com/salesforce-devops-retrofit/): `main` wird in einen Branch `retrofit/from-main` gemergt und per Pull Request nach `integration` gebracht, und zwar sofort, weil ein aufgeschobener Retrofit zu einem wachsenden Konflikt wird. Gearset erzeugt nach einem Hotfix in `main` automatisch [Back-Propagation-Pull-Requests](https://docs.gearset.com/en/articles/9773388-org-syncing-with-pipelines) für die tieferen Umgebungen, befördert sie aber nicht selbst. Jemand muss sie also prüfen und mergen.
 
-Dieselbe Logik gilt für Änderungen, die jemand von Hand in Produktion gemacht hat. Sie gelangen als normale Story über die unterste Stufe zurück ins Repository. Wie Sie solche Änderungen überhaupt bemerken, behandelt [Kapitel 9 zu Betrieb und Monitoring](../betrieb-monitoring-backup/).
+Dieselbe Logik gilt für Änderungen, die jemand von Hand in Produktion gemacht hat. Sie gelangen als normale Story über die unterste Stufe zurück ins Repository. Wie Sie solche Änderungen überhaupt bemerken, behandelt [Kapitel 9 zu Betrieb und Monitoring](/masterclass/devops-release-management/betrieb-monitoring-backup/).
 
 ## Beispiel: drei Partner auf einer Service-Org
 
@@ -153,4 +153,4 @@ Ein Maschinenbauer betreibt Service Cloud, Field Service und ein Händlerportal 
 - **Eine Full-Sandbox** für Staging und die End-to-End-Tests mit dem SAP-QS-System, Refresh nach jedem eigenen Quartals-Release.
 - **Ein Hotfix-Weg** über `preprod`, mit Retrofit am selben Tag.
 
-Die Regeln dazu stehen im Vertrag mit jedem Partner: Backpromote vor jeder Story, keine Änderung im Setup einer Stufen-Org, kein Feature-Branch älter als zwei Wochen. Wie die Pipeline zwischen diesen Stufen technisch funktioniert, beschreibt [Kapitel 5](../pipeline-aufbauen/). Solche Modelle entwerfe ich in meiner Arbeit zu [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
+Die Regeln dazu stehen im Vertrag mit jedem Partner: Backpromote vor jeder Story, keine Änderung im Setup einer Stufen-Org, kein Feature-Branch älter als zwei Wochen. Wie die Pipeline zwischen diesen Stufen technisch funktioniert, beschreibt [Kapitel 5](/masterclass/devops-release-management/pipeline-aufbauen/). Solche Modelle entwerfe ich in meiner Arbeit zu [DevOps und Release-Management](/leistungen/devops-und-release-management/).

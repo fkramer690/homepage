@@ -34,7 +34,7 @@ The Field Service mobile app has to work where the network ends, so the first de
 
 ## What does the Field Service mobile app do?
 
-Field Service, which Salesforce sells today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/), gives technicians their own app. [Chapter 2](../field-service-scheduling-dispatch/) covered how a job gets scheduled. This chapter starts when the technician opens the job.
+Field Service, which Salesforce sells today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/), gives technicians their own app. [Chapter 2](/en/masterclass/field-service/field-service-scheduling-dispatch/) covered how a job gets scheduled. This chapter starts when the technician opens the job.
 
 The Field Service mobile app is a separate app in the App Store and Google Play. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-mobile/work-from-anywhere), it gives technicians their jobs, customer details, work order updates and signature capture without calling the office. The Salesforce mobile app is the general app for sales and service staff. For a manufacturer the difference that matters most is offline: according to [Salesforce Developers](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/intro_enabled_apps.htm), any Field Service org can opt into offline Lightning web components in the Field Service app, while the Salesforce mobile app needs the Mobile App Plus license for them. My rule: technicians work in the Field Service app, and dispatchers and back office staff stay in the browser.
 
@@ -58,13 +58,13 @@ The [considerations for LWC Offline](https://developer.salesforce.com/docs/atlas
 | Partner users | A community license user who opens a service appointment can get a missing record error. Partner technicians therefore need their own briefcase and their own test. |
 | iOS cold start | Changed Lightning web components load only after the app is fully closed and started again. |
 
-The briefcase per role, the full list of gaps and a day in a basement without network are in [Field Service mobile offline: which data goes on the device?](../../../blog/field-service-mobile-app-offline-data/).
+The briefcase per role, the full list of gaps and a day in a basement without network are in [Field Service mobile offline: which data goes on the device?](/en/blog/field-service-mobile-app-offline-data/).
 
 ## Paper protocols become Data Capture forms
 
-Data Capture is the form feature of the Field Service app. According to the [Trailhead quick look](https://trailhead.salesforce.com/content/learn/modules/data-capture-quick-look), it is built directly on Flow Builder, and forms connect to service appointments, work orders and work order line items. They contain signature capture, text fields, lookups and checkboxes, and sections can appear based on earlier answers. Forms work offline, auto-save captures every entry, and every submission is logged. Not every desktop flow feature exists there: the data table and the IN operator are missing, see [Field Service mobile flow limitations](../../../blog/field-service-mobile-flow-limitations/).
+Data Capture is the form feature of the Field Service app. According to the [Trailhead quick look](https://trailhead.salesforce.com/content/learn/modules/data-capture-quick-look), it is built directly on Flow Builder, and forms connect to service appointments, work orders and work order line items. They contain signature capture, text fields, lookups and checkboxes, and sections can appear based on earlier answers. Forms work offline, auto-save captures every entry, and every submission is logged. Not every desktop flow feature exists there: the data table and the IN operator are missing, see [Field Service mobile flow limitations](/en/blog/field-service-mobile-flow-limitations/).
 
-Building the form is quick. The decision before it takes longer: which answers become fields on the asset or work order, and which stay as form answers. Operating hours, trended readings and the overall result belong in fields, because maintenance plans, reports and the ERP interface work on fields. Pass or fail per checkpoint can stay in the form. Parts used are booked as products consumed, never as free text, otherwise the van stock and the ERP do not see them. The full mapping table and how to split a long protocol by variant are in [Field Service Data Capture: inspection forms without paper](../../../blog/field-service-data-capture-inspection-forms/).
+Building the form is quick. The decision before it takes longer: which answers become fields on the asset or work order, and which stay as form answers. Operating hours, trended readings and the overall result belong in fields, because maintenance plans, reports and the ERP interface work on fields. Pass or fail per checkpoint can stay in the form. Parts used are booked as products consumed, never as free text, otherwise the van stock and the ERP do not see them. The full mapping table and how to split a long protocol by variant are in [Field Service Data Capture: inspection forms without paper](/en/blog/field-service-data-capture-inspection-forms/).
 
 ### Voice to Form and guided work: what is available?
 
@@ -77,7 +77,7 @@ The status changes with every mobile release, so I keep it apart from the form d
 | Lookup component offline, multi-image preview, forms from assets and timesheets | Listed in 260.0, check the status in your org | Release post 260.0 |
 | Guided Experience, forms from a photo of a paper form | Announced on 20 October 2026, no release date | [Salesforce blog](https://www.salesforce.com/blog/guided-mobile-work/) |
 
-German voice input makes the feature relevant for service teams in the DACH region. It also processes employees' speech, which brings in data protection and, where one exists, the works council. I describe these questions and the risk of digitising a bad paper form one to one in [Salesforce Field Service mobile: guided work and voice](../../../blog/salesforce-field-service-mobile-guided-voice/). My order: form and fields first, voice in a second step.
+German voice input makes the feature relevant for service teams in the DACH region. It also processes employees' speech, which brings in data protection and, where one exists, the works council. I describe these questions and the risk of digitising a bad paper form one to one in [Salesforce Field Service mobile: guided work and voice](/en/blog/salesforce-field-service-mobile-guided-voice/). My order: form and fields first, voice in a second step.
 
 ## When is the service report from Document Builder enough?
 
@@ -98,13 +98,13 @@ For the classic report at the machine, with working time, parts, photos and the 
 | Android is limited | On iOS documents come from work order and service appointment, on Android only from the service appointment. |
 | Size | At most 50 pages and 100 MB per document. |
 
-Plan for five smaller gaps in the standard report: template choice, file name, email, default values and styling. Flows and small components close them without another license, as I describe in [Document Builder: five limits and workarounds](../../../blog/salesforce-document-builder-limits-workarounds/).
+Plan for five smaller gaps in the standard report: template choice, file name, email, default values and styling. Flows and small components close them without another license, as I describe in [Document Builder: five limits and workarounds](/en/blog/salesforce-document-builder-limits-workarounds/).
 
 ### When do you need a second tool?
 
-Inspection reports with conditional sections, machine files on the asset, certificates and Word output go beyond Document Builder. For these I would license Salesforce Document Generation or an AppExchange tool for the office users who need it, and leave the service report in Document Builder. The comparison is in [Salesforce Service Documents: is Document Builder enough?](../../../blog/salesforce-service-documents-document-builder/).
+Inspection reports with conditional sections, machine files on the asset, certificates and Word output go beyond Document Builder. For these I would license Salesforce Document Generation or an AppExchange tool for the office users who need it, and leave the service report in Document Builder. The comparison is in [Salesforce Service Documents: is Document Builder enough?](/en/blog/salesforce-service-documents-document-builder/).
 
-Quotes are a separate case. When technicians spot extra work or a worn part and the customer wants a price on site, the quote belongs in the sales process with its approvals. How quotes, contracts and orders are handled there is covered in the Revenue Cloud masterclass chapter on [quote, contract and order](../../revenue-cloud/quote-contract-order/).
+Quotes are a separate case. When technicians spot extra work or a worn part and the customer wants a price on site, the quote belongs in the sales process with its approvals. How quotes, contracts and orders are handled there is covered in the Revenue Cloud masterclass chapter on [quote, contract and order](/en/masterclass/revenue-cloud/quote-contract-order/).
 
 ## When can a video call replace a visit?
 
@@ -116,7 +116,7 @@ In my view video replaces a visit when the operator can fix the fault with guida
 Before the first session, settle recording consent with the customer, the works council for your own staff and which faults may be closed remotely.
 ```
 
-How to estimate the potential from last year's breakdown visits is in [Visual Remote Assistant: video help instead of a visit?](../../../blog/visual-remote-assistant-remote-help-instead-of-visit/).
+How to estimate the potential from last year's breakdown visits is in [Visual Remote Assistant: video help instead of a visit?](/en/blog/visual-remote-assistant-remote-help-instead-of-visit/).
 
 ## How do you test every app version?
 
@@ -134,7 +134,7 @@ My routine per version, on iOS and Android, fits into half a day:
 | 6 | The same with a partner user. |
 | 7 | After sync, consumption and report in the back office and the ERP. |
 
-The pilot group, the calendar and who owns app versions are in [Field Service app updates: how to test each release](../../../blog/field-service-mobile-app-updates-testing/). App versions belong in the same calendar as the platform releases, described in the DevOps masterclass chapter on [release planning](../../devops-release-management/release-planning-salesforce-releases/). How such scripted tests fit into quality gates is in the chapter on [quality, tests and reviews](../../devops-release-management/quality-tests-reviews/).
+The pilot group, the calendar and who owns app versions are in [Field Service app updates: how to test each release](/en/blog/field-service-mobile-app-updates-testing/). App versions belong in the same calendar as the platform releases, described in the DevOps masterclass chapter on [release planning](/en/masterclass/devops-release-management/release-planning-salesforce-releases/). How such scripted tests fit into quality gates is in the chapter on [quality, tests and reviews](/en/masterclass/devops-release-management/quality-tests-reviews/).
 
 ## Worked example: the commissioning protocol goes paperless
 
@@ -166,4 +166,4 @@ Four decisions need a named owner before a partner builds forms:
 | Document split | Service report in Document Builder, documents with logic in a second tool, quotes in the sales process. |
 | Owner of app versions | Usually the release manager, together with device management. |
 
-The data model is [architecture work](../../../services/salesforce-architecture/) and decides whether forms, reports and later AI agents can use the data. [Chapter 4](../field-service-assets-maintenance-parts/) builds on it with assets, maintenance plans and spare parts, and the [overview](../) lists all chapters.
+The data model is [architecture work](/en/services/salesforce-architecture/) and decides whether forms, reports and later AI agents can use the data. [Chapter 4](/en/masterclass/field-service/field-service-assets-maintenance-parts/) builds on it with assets, maintenance plans and spare parts, and the [overview](/en/masterclass/field-service/) lists all chapters.

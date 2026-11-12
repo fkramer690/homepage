@@ -31,7 +31,7 @@ Ein KI-nativer Delivery-Prozess für Salesforce macht das Jira-Ticket zur ausfü
 
 ## Was heißt KI-nativ in einem Salesforce-Projekt?
 
-KI-native Delivery bedeutet, den Lieferprozess um den Agenten herum zu bauen, statt dem alten Prozess einen Coding-Assistenten hinzuzufügen. Wie sich dadurch die Teamaufstellung ändert, habe ich in [KI-native Delivery: kleinere Salesforce-Teams](../ki-kleinere-salesforce-teams-delivery/) beschrieben. Hier geht es um den Ablauf selbst. Ich habe ihn vom Workshop bis zur Produktion durchgängig umgesetzt. Ein paar Lücken sind noch zu schließen. Er beruht auf vier Ideen:
+KI-native Delivery bedeutet, den Lieferprozess um den Agenten herum zu bauen, statt dem alten Prozess einen Coding-Assistenten hinzuzufügen. Wie sich dadurch die Teamaufstellung ändert, habe ich in [KI-native Delivery: kleinere Salesforce-Teams](/blog/ki-kleinere-salesforce-teams-delivery/) beschrieben. Hier geht es um den Ablauf selbst. Ich habe ihn vom Workshop bis zur Produktion durchgängig umgesetzt. Ein paar Lücken sind noch zu schließen. Er beruht auf vier Ideen:
 
 ```saeulen
 dach: KI-native Delivery
@@ -64,7 +64,7 @@ Agent | Story-Diff und Impact | Änderungen, Testfälle, Metadaten | Stories akt
 tor: BA und Architekt geben die Story frei | Ready for Agent · BA
 ```
 
-Vor dem Workshop analysiert der Agent die bestehende Org: Objekte, Flows, Validierungsregeln, Berechtigungen. Daraus entwirft er eine Agenda, Hypothesen und gezielte Fragen, etwa: „Auf der Opportunity laufen drei Flows, die sich überschneiden. Wer ist dafür fachlich zuständig?“ Der Business Analyst schärft die Agenda und streicht Hypothesen, die politisch heikel sind. Wie eine solche Org-Analyse aussieht, steht in [KI-Org-Analyse: technische Schulden finden](../ki-org-analyse-technische-schulden/).
+Vor dem Workshop analysiert der Agent die bestehende Org: Objekte, Flows, Validierungsregeln, Berechtigungen. Daraus entwirft er eine Agenda, Hypothesen und gezielte Fragen, etwa: „Auf der Opportunity laufen drei Flows, die sich überschneiden. Wer ist dafür fachlich zuständig?“ Der Business Analyst schärft die Agenda und streicht Hypothesen, die politisch heikel sind. Wie eine solche Org-Analyse aussieht, steht in [KI-Org-Analyse: technische Schulden finden](/blog/ki-org-analyse-technische-schulden/).
 
 Im Workshop moderiert der Business Analyst und muss nicht mitschreiben. Aus dem Transkript erzeugt der Agent ein Protokoll mit Entscheidungen, offenen Fragen und Verantwortlichen sowie Entwürfe für Epics und Stories in Jira, jeweils mit Zeitstempel. Er trennt hart zwischen „Kunde hat gesagt“ und „Agent interpretiert“. Der Business Analyst kuratiert das Ergebnis: Er streicht, schärft, ergänzt den Fit-Gap (Standard, Konfiguration oder Code) und korrigiert falsch erkannte Fachbegriffe und verwechselte Sprecher.
 
@@ -88,9 +88,9 @@ Erst wenn Business Analyst und Architekt eine Story auf „Ready for Agent“ se
 
 Vor jedem Merge läuft die Pipeline als Pflichtprüfung am Pull Request. Sie erstellt ein Delta-Paket, etwa mit dem Drittanbieter-Werkzeug `sfdx-git-delta` in fester Version und mit vollständigem Deployment als Fallback, führt ein Check-only-Deploy gegen die Integrations-Sandbox aus, startet definierte Tests und prüft ein Gate mit Code Analyzer v5, dessen Regeln und Schwellen versioniert im Repository liegen. Schlägt sie fehl, erhält der Agent das Log und darf einen Fix-Commit liefern, höchstens zwei Versuche. Danach übernimmt der Entwickler.
 
-Gemergt wird nur mit grüner Pipeline und nach dem Review durch einen Entwickler. Der Entwickler reviewt in diesem Prozess mehr, als er schreibt. Warum ich auf dieses Tor nie verzichte, steht in [Warum Pull-Request-Reviews Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
+Gemergt wird nur mit grüner Pipeline und nach dem Review durch einen Entwickler. Der Entwickler reviewt in diesem Prozess mehr, als er schreibt. Warum ich auf dieses Tor nie verzichte, steht in [Warum Pull-Request-Reviews Pflicht sind](/blog/warum-pull-request-reviews-pflicht-sind/).
 
-Welche Prüfungen ich für KI-Code in die Pipeline setze, beschreibe ich in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/).
+Welche Prüfungen ich für KI-Code in die Pipeline setze, beschreibe ich in [Quality Gates für KI-Code](/blog/quality-gates-ki-code-salesforce-pipeline/).
 
 ### Release: der Kunde testet, der Agent ordnet ein
 
@@ -110,7 +110,7 @@ Pipeline | Release nach Produktion | In Produktion validieren, Quick Deploy | Er
 fazit: **Regel:** Der Agent hat keinen Zugang zur Produktion. Dorthin deployt nur die Pipeline.
 ```
 
-Nach dem Merge deployt die Pipeline in die UAT-Sandbox. Die Testskripte mit Negativfällen, Rollenrechten und Regression hat der Agent aus den Akzeptanzkriterien entworfen; freigegeben wurden sie vor diesem Deployment. Der Kunde testet, der Business Analyst begleitet die Sessions. Jede Rückmeldung ordnet der Agent ein: **Bug**, wenn sie einem bestätigten Kriterium widerspricht, **Change Request**, wenn sie neu ist, **Klärungsbedarf**, wenn der Beleg fehlt. Business Analyst und Kunde bestätigen die Einordnung. Bugs gehen zurück in die Implementierung, Change Requests werden als neue Story bewertet, auch kommerziell. Scope Creep wird damit sichtbar, mit Beleg statt Bauchgefühl. Wie ein Abnahmetest mit dem Fachbereich aufgebaut ist, steht in [Salesforce-UAT mit dem Fachbereich](../salesforce-uat-abnahmetest-fachbereich/).
+Nach dem Merge deployt die Pipeline in die UAT-Sandbox. Die Testskripte mit Negativfällen, Rollenrechten und Regression hat der Agent aus den Akzeptanzkriterien entworfen; freigegeben wurden sie vor diesem Deployment. Der Kunde testet, der Business Analyst begleitet die Sessions. Jede Rückmeldung ordnet der Agent ein: **Bug**, wenn sie einem bestätigten Kriterium widerspricht, **Change Request**, wenn sie neu ist, **Klärungsbedarf**, wenn der Beleg fehlt. Business Analyst und Kunde bestätigen die Einordnung. Bugs gehen zurück in die Implementierung, Change Requests werden als neue Story bewertet, auch kommerziell. Scope Creep wird damit sichtbar, mit Beleg statt Bauchgefühl. Wie ein Abnahmetest mit dem Fachbereich aufgebaut ist, steht in [Salesforce-UAT mit dem Fachbereich](/blog/salesforce-uat-abnahmetest-fachbereich/).
 
 Vor der Release-Entscheidung entwirft der Agent Release Notes und eine Anwenderhilfe in der Sprache des Fachbereichs, die der Business Analyst gegenliest. Nach der Freigabe validiert die Pipeline das unveränderte Release-Artefakt gegen Produktion, mit den dort nötigen Tests, und rollt genau diese Validierungs-ID innerhalb von zehn Tagen per Quick Deploy aus. Eine Validierung gegen eine Sandbox lässt sich für Produktion nicht wiederverwenden.
 
@@ -131,7 +131,7 @@ marke: Tor
 fazit: Markiert sind die Entscheidungen an den fünf Toren. Alles andere ist Vorarbeit dafür.
 ```
 
-Für die Rollen ändert sich mehr als die Werkzeuge. Der Business Analyst schreibt weniger und entscheidet mehr; seine wichtigste Fähigkeit wird es, Widersprüche zwischen Gesagtem und Gemeintem zu erkennen. Der Architekt wird zum Hüter der Regeldatei, also der Markdown-Datei im Repository mit Trigger-Framework, Namenskonventionen, Sharing-Regeln und Verboten, die der Agent zu Beginn jeder Sitzung liest. Sie ist der größte Hebel für die Qualität aller Agenten-Ergebnisse, siehe [KI-Regeldatei im Salesforce-Repository](../ki-regeldatei-salesforce-repository/). Der Kunde braucht mehr Disziplin bei Bestätigungen, sonst wird aus Geschwindigkeit Chaos.
+Für die Rollen ändert sich mehr als die Werkzeuge. Der Business Analyst schreibt weniger und entscheidet mehr; seine wichtigste Fähigkeit wird es, Widersprüche zwischen Gesagtem und Gemeintem zu erkennen. Der Architekt wird zum Hüter der Regeldatei, also der Markdown-Datei im Repository mit Trigger-Framework, Namenskonventionen, Sharing-Regeln und Verboten, die der Agent zu Beginn jeder Sitzung liest. Sie ist der größte Hebel für die Qualität aller Agenten-Ergebnisse, siehe [KI-Regeldatei im Salesforce-Repository](/blog/ki-regeldatei-salesforce-repository/). Der Kunde braucht mehr Disziplin bei Bestätigungen, sonst wird aus Geschwindigkeit Chaos.
 
 ## Ein Beispiel: vom Satz im Workshop zur Release Note
 
@@ -161,9 +161,9 @@ fazit: Jedes Glied verweist auf das vorige. So bleibt jede deployte Änderung be
 Der Prozess hängt an keinem bestimmten Coding-Agenten. Er braucht vier Verbindungen, Stand Oktober 2026:
 
 - **Jira als gemeinsames Ticketsystem.** Agent und Pipeline laufen nicht in Jira, sie lesen und schreiben nur dieselben Tickets. Der Agent läuft auf dem Rechner des Entwicklers und greift über den Atlassian Rovo MCP Server auf Jira zu; laut [Atlassian](https://www.atlassian.com/blog/jira/mcp-enhancements) liest er dort auch das Development-Panel mit verknüpften Branches, Pull Requests und Commits. Die Pipeline läuft auf der Git-Plattform und setzt den Ticketstatus nach jedem Lauf selbst, damit niemand ihn von Hand pflegt.
-- **Zugriff auf die Sandboxes.** Skills aus [sf-skills](https://github.com/forcedotcom/sf-skills) liefern Anweisungen, die Salesforce CLI führt Org-Aktionen aus, und das [Claude-Code-Plugin von Salesforce](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) ergänzt MCP-Server, die Kontext liefern. Der lokale Salesforce DX MCP Server hat am 2. November 2026 sein End of Life erreicht; was das für Ihre Partner heißt, steht in [Salesforce DX MCP Server: Ende am 2. November 2026](../salesforce-dx-mcp-server-ende/). Der Agent erreicht jede Org, deren Zugangsdaten die CLI auf seinem Rechner gespeichert hat. Ein Sandbox-Alias ist keine Sicherheitsgrenze, deshalb läuft der Agent unter eigener Identität ohne Produktionszugangsdaten, mit begrenzten Befehlen und Protokollierung.
-- **Eine Git-Pipeline**, die ohne KI validiert und deployt, mit Produktionszugang nur für die Identität der Pipeline. Wie ich sie aufsetze, beschreibe ich unter [DevOps und Release Management](../../leistungen/devops-und-release-management/).
-- **Transkription im Tenant des Kunden**, etwa über die Aufzeichnung in Teams, die beim Organisator gespeichert wird; deshalb sollte ein Mitarbeiter des Kunden zum Termin einladen. Diese Lösung regelt nur die Ablage: Der Modellanbieter, der das Transkript liest, braucht ebenfalls einen Auftragsverarbeitungsvertrag, eine festgelegte Verarbeitungsregion und den Ausschluss der Daten vom Training. Einwilligung und Betriebsrat behandle ich in [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
+- **Zugriff auf die Sandboxes.** Skills aus [sf-skills](https://github.com/forcedotcom/sf-skills) liefern Anweisungen, die Salesforce CLI führt Org-Aktionen aus, und das [Claude-Code-Plugin von Salesforce](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) ergänzt MCP-Server, die Kontext liefern. Der lokale Salesforce DX MCP Server hat am 2. November 2026 sein End of Life erreicht; was das für Ihre Partner heißt, steht in [Salesforce DX MCP Server: Ende am 2. November 2026](/blog/salesforce-dx-mcp-server-ende/). Der Agent erreicht jede Org, deren Zugangsdaten die CLI auf seinem Rechner gespeichert hat. Ein Sandbox-Alias ist keine Sicherheitsgrenze, deshalb läuft der Agent unter eigener Identität ohne Produktionszugangsdaten, mit begrenzten Befehlen und Protokollierung.
+- **Eine Git-Pipeline**, die ohne KI validiert und deployt, mit Produktionszugang nur für die Identität der Pipeline. Wie ich sie aufsetze, beschreibe ich unter [DevOps und Release Management](/leistungen/devops-und-release-management/).
+- **Transkription im Tenant des Kunden**, etwa über die Aufzeichnung in Teams, die beim Organisator gespeichert wird; deshalb sollte ein Mitarbeiter des Kunden zum Termin einladen. Diese Lösung regelt nur die Ablage: Der Modellanbieter, der das Transkript liest, braucht ebenfalls einen Auftragsverarbeitungsvertrag, eine festgelegte Verarbeitungsregion und den Ausschluss der Daten vom Training. Einwilligung und Betriebsrat behandle ich in [KI-Coding, Betriebsrat und DSGVO](/blog/ki-coding-betriebsrat-dsgvo/).
 
 ## Wo stolpert der Prozess?
 

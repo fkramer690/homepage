@@ -67,24 +67,24 @@ These signs are hypotheses, not diagnoses: dots in required fields can also indi
 
 The sponsor deserves a sentence of its own, because it is the role most often missing in Salesforce programs. It means a person from management who visibly backs the change: they explain in the sales meeting why forecasts will come from Salesforce from now on, decide when two departments cannot agree, and ask about usage in the monthly report. That is why I write a sponsor plan that defines which visible actions management takes and when. Without it, "management supports this" becomes a line on the first slide.
 
-Prosci and ADKAR are registered trademarks of Prosci, Inc. I adapted the approach to Salesforce programs together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), my partner for change management.
+Prosci and ADKAR are registered trademarks of Prosci, Inc. I adapted the approach to Salesforce programs together with [Juliane Winterscheid](/en/partners/juliane-winterscheid/), my partner for change management.
 
 ## These topics belong to change management in Salesforce programs
 
 Change management is not a single step. The same topics come up again and again in Salesforce programs at manufacturers. Each one has its own article:
 
-1. **[Building up key users](../salesforce-key-user-network/):** who answers the first questions from the business and how much time that takes.
-2. **[Change management in a global rollout](../change-management-global-salesforce-rollout/):** what each country needs when a global template is rolled out.
-3. **[Technician adoption of the Field Service app](../field-service-app-technician-adoption/):** why field service accepts the app or works around it.
-4. **[Communicating releases to the business](../salesforce-release-communication-business/):** how business users learn what changes before a release.
-5. **[Reinforcement: making standards stick with partners](../partner-standards-reinforcement/):** how new development rules stay part of the partners' daily work.
-6. **[Measuring adoption after go-live](../salesforce-adoption-metrics-after-go-live/):** which numbers show whether a process has landed.
-7. **[Adoption in sales](../salesforce-adoption-sales-team/):** why sales works around Salesforce and what helps.
-8. **[Training plan](../salesforce-training-plan-rollout/):** how to plan training by role, using real cases and key users.
-9. **[Hypercare after go-live](../salesforce-hypercare-after-go-live/):** who is on hand in the first weeks and when it ends.
-10. **[Change management process in the project](../change-management-process-salesforce/):** which change work belongs in which project phase, from planning to operations.
+1. **[Building up key users](/en/blog/salesforce-key-user-network/):** who answers the first questions from the business and how much time that takes.
+2. **[Change management in a global rollout](/en/blog/change-management-global-salesforce-rollout/):** what each country needs when a global template is rolled out.
+3. **[Technician adoption of the Field Service app](/en/blog/field-service-app-technician-adoption/):** why field service accepts the app or works around it.
+4. **[Communicating releases to the business](/en/blog/salesforce-release-communication-business/):** how business users learn what changes before a release.
+5. **[Reinforcement: making standards stick with partners](/en/blog/partner-standards-reinforcement/):** how new development rules stay part of the partners' daily work.
+6. **[Measuring adoption after go-live](/en/blog/salesforce-adoption-metrics-after-go-live/):** which numbers show whether a process has landed.
+7. **[Adoption in sales](/en/blog/salesforce-adoption-sales-team/):** why sales works around Salesforce and what helps.
+8. **[Training plan](/en/blog/salesforce-training-plan-rollout/):** how to plan training by role, using real cases and key users.
+9. **[Hypercare after go-live](/en/blog/salesforce-hypercare-after-go-live/):** who is on hand in the first weeks and when it ends.
+10. **[Change management process in the project](/en/blog/change-management-process-salesforce/):** which change work belongs in which project phase, from planning to operations.
 
-Juliane Winterscheid explains the general tools behind this in her own articles on the basics: the [stakeholder analysis](../stakeholder-analysis/) with a template, the [communication plan](../change-management-communication-plan/) and the [change curve](../change-curve/).
+Juliane Winterscheid explains the general tools behind this in her own articles on the basics: the [stakeholder analysis](/en/blog/stakeholder-analysis/) with a template, the [communication plan](/en/blog/change-management-communication-plan/) and the [change curve](/en/blog/change-curve/).
 
 ## Change management runs in three phases alongside delivery
 
@@ -99,10 +99,10 @@ Sustain outcomes | after go-live · internal owners
   Check for gaps, anchor new rules in pipeline, reports and Center of Excellence calls, hand over responsibility.
 ```
 
-Timing is what matters. Change management that starts two weeks before go-live can do little more than inform people. The question of which groups are affected and what changes for them should be answered during planning, before anything is built. With a [global template](../salesforce-global-template-country-deviations/) it is even part of the architecture, because some deviations per country are a question of habit, while others come from law, tax, contracts or the local ERP, and the rollout team has to tell them apart.
+Timing is what matters. Change management that starts two weeks before go-live can do little more than inform people. The question of which groups are affected and what changes for them should be answered during planning, before anything is built. With a [global template](/en/blog/salesforce-global-template-country-deviations/) it is even part of the architecture, because some deviations per country are a question of habit, while others come from law, tax, contracts or the local ERP, and the rollout team has to tell them apart.
 
 ## Write down groups, changes and sponsor of your next release
 
 For your next release, answer three questions in writing: which groups are affected? What changes for each group in their day-to-day work? Who in management visibly backs it? If the third answer is missing, start there. Then decide how you measure success, instead of counting training sessions: adoption (do the intended roles use the new process?), proficiency and data quality (do they do it correctly?) and business outcome, such as forecast quality or first-time fix rate.
 
-If you want to go through the five elements one by one, the [change management masterclass](../../masterclass/change-management/) has one chapter for each stage with the relevant articles. How Juliane Winterscheid and I support this in programs is described under [Salesforce change management consulting](../../services/change-management-salesforce/).
+If you want to go through the five elements one by one, the [change management masterclass](/en/masterclass/change-management/) has one chapter for each stage with the relevant articles. How Juliane Winterscheid and I support this in programs is described under [Salesforce change management consulting](/en/services/change-management-salesforce/).

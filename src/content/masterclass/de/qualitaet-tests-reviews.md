@@ -32,7 +32,7 @@ Jede Salesforce-Änderung sollte vor dem Merge dieselben Prüfungen bestehen, un
 
 ## Was ist ein Quality Gate in einer Salesforce-Pipeline?
 
-Ein Quality Gate ist eine automatische oder menschliche Prüfung, die eine Änderung aufhält, bis sie bestanden ist. Entscheidend ist das Aufhalten: Ein Bericht über 300 Funde, der den Merge nicht sperrt, ändert am Release nichts. In [Kapitel 5](../pipeline-aufbauen/) haben Sie gesehen, wie ein Pull Request die Pipeline durchläuft und welches Apex-Testlevel wohin gehört. Dieses Kapitel klärt, was an den einzelnen Stationen geprüft wird und wer die Messlatte setzt.
+Ein Quality Gate ist eine automatische oder menschliche Prüfung, die eine Änderung aufhält, bis sie bestanden ist. Entscheidend ist das Aufhalten: Ein Bericht über 300 Funde, der den Merge nicht sperrt, ändert am Release nichts. In [Kapitel 5](/masterclass/devops-release-management/pipeline-aufbauen/) haben Sie gesehen, wie ein Pull Request die Pipeline durchläuft und welches Apex-Testlevel wohin gehört. Dieses Kapitel klärt, was an den einzelnen Stationen geprüft wird und wer die Messlatte setzt.
 
 Ich ordne Gates nach Kosten. Günstige Prüfungen laufen zuerst und scheitern schnell, teure folgen danach:
 
@@ -51,9 +51,9 @@ Die Sperre selbst setzt Ihre Git-Plattform. Auf GitHub verlangt ein geschützter
 
 ## Warum sind Reviews Pflicht, auch mit guter Automatisierung?
 
-Werkzeuge prüfen Regeln. Ob eine Änderung zur Architektur passt, ob ein neues Feld wirklich gebraucht wird oder ob ein Trigger mit dem Flow eines anderen Teams kollidiert, sieht nur ein Mensch, der die Org kennt. Deshalb ist für mich jeder Pull Request ohne Freigabe gesperrt, ausnahmslos. Die Begründung und wie Sie Reviews einführen, ohne langsamer zu werden, steht in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/).
+Werkzeuge prüfen Regeln. Ob eine Änderung zur Architektur passt, ob ein neues Feld wirklich gebraucht wird oder ob ein Trigger mit dem Flow eines anderen Teams kollidiert, sieht nur ein Mensch, der die Org kennt. Deshalb ist für mich jeder Pull Request ohne Freigabe gesperrt, ausnahmslos. Die Begründung und wie Sie Reviews einführen, ohne langsamer zu werden, steht in [warum Pull-Request-Reviews Pflicht sind](/blog/warum-pull-request-reviews-pflicht-sind/).
 
-Für die Rollen aus [Kapitel 2](../release-prozess-eigentum-rollen/) heißt das konkret:
+Für die Rollen aus [Kapitel 2](/masterclass/devops-release-management/release-prozess-eigentum-rollen/) heißt das konkret:
 
 - **Partner reviewen sich gegenseitig** bei Änderungen innerhalb ihres Bereichs.
 - **Der Architekt auf Kundenseite gibt frei**, was Datenmodell, Sharing, Permission Sets oder Schnittstellen zu SAP berührt. Auf GitHub erzwingen Sie das mit Code Ownern: Eine Datei mit Code Owner braucht dessen Freigabe.
@@ -82,7 +82,7 @@ quelle: Apex Developer Guide (Testing Best Practices), sfdx-hardis-Parameter ape
 
 Den maschinell prüfbaren Teil davon erzwingen PMD-Regeln aus der Kategorie [Best Practices](https://docs.pmd-code.org/latest/pmd_rules_apex_bestpractices.html): `ApexUnitTestClassShouldHaveAsserts` verlangt mindestens einen Assert, `ApexUnitTestShouldNotUseSeeAllDataTrue` verbietet den Zugriff auf Org-Daten, `ApexUnitTestClassShouldHaveRunAs` verlangt mindestens ein `runAs`. Die erste Regel besteht auch ein Test, der nur auf „nicht null“ prüft. Ob ein Assert etwas beweist, bleibt Aufgabe des Reviews.
 
-Die Abdeckungsgrenze selbst können Sie anheben. In sfdx-hardis heißt der Parameter [`apexTestsMinCoverageOrgWide`](https://sfdx-hardis.cloudity.com/schema/sfdx-hardis-json-schema-parameters.html), Standard 75, und die Dokumentation empfiehlt für saubere Projekte strengere Werte wie 80 oder 90. In einer gewachsenen Org mit Jahren an Altcode würde ich die Grenze für neue und geänderte Klassen anheben und die Gesamtabdeckung schrittweise nachziehen. Ein Sonderfall ist API-Version 67.0: Apex wird dort standardmäßig im User Mode ausgeführt, und ein Test ohne `runAs` sieht nicht, welche Datensätze ein eingeschränkter Benutzer verliert. Details in [API 67.0: warum Apex weniger Datensätze sieht](../../../blog/api-67-apex-user-mode-weniger-datensaetze/).
+Die Abdeckungsgrenze selbst können Sie anheben. In sfdx-hardis heißt der Parameter [`apexTestsMinCoverageOrgWide`](https://sfdx-hardis.cloudity.com/schema/sfdx-hardis-json-schema-parameters.html), Standard 75, und die Dokumentation empfiehlt für saubere Projekte strengere Werte wie 80 oder 90. In einer gewachsenen Org mit Jahren an Altcode würde ich die Grenze für neue und geänderte Klassen anheben und die Gesamtabdeckung schrittweise nachziehen. Ein Sonderfall ist API-Version 67.0: Apex wird dort standardmäßig im User Mode ausgeführt, und ein Test ohne `runAs` sieht nicht, welche Datensätze ein eingeschränkter Benutzer verliert. Details in [API 67.0: warum Apex weniger Datensätze sieht](/blog/api-67-apex-user-mode-weniger-datensaetze/).
 
 ## Wie testen Sie Flows?
 
@@ -117,11 +117,11 @@ In der Pipeline rufen Sie `sf code-analyzer run` auf oder die GitHub Action. Lau
 Zum Gate wird der Lauf erst mit `--severity-threshold`: Laut [Befehlsreferenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html) endet der Befehl mit einem Fehlercode, sobald ein Fund diesen Schweregrad erreicht. Ohne den Parameter bleibt alles grün.
 ```
 
-In einer Org mit zehn Jahren Apex würde ich ab „High“ blockieren und den Rest berichten. Wer am ersten Tag alles blockiert, erhält Hunderte Altfunde, und Partner beginnen, Regeln abzuschalten statt Code zu korrigieren. Die Schwelle senken Sie, sobald der Bestand aufgeräumt ist; wie Sie technische Schulden vorher sichtbar machen, beschreibe ich in [Kapitel 9](../betrieb-monitoring-backup/).
+In einer Org mit zehn Jahren Apex würde ich ab „High“ blockieren und den Rest berichten. Wer am ersten Tag alles blockiert, erhält Hunderte Altfunde, und Partner beginnen, Regeln abzuschalten statt Code zu korrigieren. Die Schwelle senken Sie, sobald der Bestand aufgeräumt ist; wie Sie technische Schulden vorher sichtbar machen, beschreibe ich in [Kapitel 9](/masterclass/devops-release-management/betrieb-monitoring-backup/).
 
 ## Wie funktionieren die Gates in sfdx-hardis und in kommerziellen Werkzeugen?
 
-Alle Werkzeuge aus [Kapitel 4](../devops-werkzeuge-vergleich/) decken die Gates ab, mit unterschiedlicher Bedienung.
+Alle Werkzeuge aus [Kapitel 4](/masterclass/devops-release-management/devops-werkzeuge-vergleich/) decken die Gates ab, mit unterschiedlicher Bedienung.
 
 **sfdx-hardis**, das ich seit rund zwei Jahren in Kundenprojekten einsetze, startet laut [Dokumentation](https://sfdx-hardis.cloudity.com/salesforce-devops-handle-merge-request-results/) bei jedem Pull Request zwei Kontrolljobs. Der erste simuliert das Deployment in der Zielorg, führt die Apex-Tests aus, berechnet die Abdeckung und schreibt das Ergebnis mit einem visuellen Diff geänderter Flows in den Pull Request. Der zweite führt MegaLinter mit PMD für Apex, ESLint für Lightning Web Components, einer Suche nach fest codierten Tokens und einer Copy-Paste-Erkennung aus. Gemergt wird laut Dokumentation nur, wenn beide grün sind. Die [MegaLinter-Konfiguration](https://sfdx-hardis.cloudity.com/salesforce-devops-solve-megalinter-errors/) markiert den PMD-Schwellenwert mit dem Kommentar, dass nur der Release Manager ihn ändern darf, und `// NOPMD` ist „only for false positives, never to publish faster“ gedacht. Achten Sie auf die Option `testCoverageNotBlocking`, die laut [Dokumentation](https://sfdx-hardis.cloudity.com/salesforce-devops-smart-deployment/) Deployments trotz zu geringer Abdeckung zulässt. Sie gehört in kein Produktions-Setup.
 
@@ -139,7 +139,7 @@ Die kommerziellen Werkzeuge punkten bei Oberfläche, eigenen Regelsätzen und Su
 
 Arbeiten Ihre Partner mit Coding-Agenten, steigt die Zahl der Pull Requests, Ihre Reviewkapazität bleibt gleich. Das spricht dafür, die Gates oben ohne Ausnahme durchzusetzen. Neue Gates sind kaum nötig. Typische Fehler von KI-Code wie Abfragen in Schleifen, fehlende Sharing-Deklarationen und Tests ohne Aussage findet dieselbe Kombination aus Code Analyzer, Validierung und Review. Zwei Ergänzungen lohnen sich: eine Prüfung, die einen Sprung der API-Version auf 67.0 ohne Auftrag stoppt, und die Pflicht, KI-Anteile im Pull Request zu kennzeichnen.
 
-Was KI-Code zusätzlich braucht, von der Regeldatei bis zu Org-Grenzen für Agenten, behandelt [Kapitel 8 der KI-Masterclass](../../ki-salesforce/best-practices-ki-code/). Die Gates im Detail stehen in [Quality Gates für KI-Code](../../../blog/quality-gates-ki-code-salesforce-pipeline/), das Review aus Kundensicht in [KI-generierten Salesforce-Code prüfen](../../../blog/ki-generierten-salesforce-code-pruefen/).
+Was KI-Code zusätzlich braucht, von der Regeldatei bis zu Org-Grenzen für Agenten, behandelt [Kapitel 8 der KI-Masterclass](/masterclass/ki-salesforce/best-practices-ki-code/). Die Gates im Detail stehen in [Quality Gates für KI-Code](/blog/quality-gates-ki-code-salesforce-pipeline/), das Review aus Kundensicht in [KI-generierten Salesforce-Code prüfen](/blog/ki-generierten-salesforce-code-pruefen/).
 
 ## Durchgespielt: ein Flow mit Update in der Schleife
 
@@ -149,4 +149,4 @@ Ein Admin des ersten Partners baut einen record-triggered Flow auf dem Arbeitsau
 
 Im Validierungs-Deployment scheitert danach ein Apex-Test des zweiten Partners: Der Bulk-Test der SAP-Importklasse legt 200 Arbeitsaufträge an und durchläuft jetzt den neuen Flow. Ohne diesen Test wäre das Problem erst beim nächtlichen Import in Produktion aufgefallen. Das Review durch den Architekten des Kunden klärt am Ende die fachliche Frage, die kein Werkzeug stellt: ob der Termin bei einem stornierten Auftrag gelöscht oder nur abgesagt werden soll.
 
-Welche Konfigurationsdaten solche Flows in Sandboxes brauchen, damit Tests aussagekräftig sind, behandelt [Kapitel 7](../daten-und-konfiguration/). Wie ich Programme dabei unterstütze, steht unter [DevOps und Release-Management](../../../leistungen/devops-und-release-management/) und [Partnersteuerung](../../../leistungen/partnersteuerung/).
+Welche Konfigurationsdaten solche Flows in Sandboxes brauchen, damit Tests aussagekräftig sind, behandelt [Kapitel 7](/masterclass/devops-release-management/daten-und-konfiguration/). Wie ich Programme dabei unterstütze, steht unter [DevOps und Release-Management](/leistungen/devops-und-release-management/) und [Partnersteuerung](/leistungen/partnersteuerung/).

@@ -56,7 +56,7 @@ The comparison is an approximation; the stages of the two models do not match ex
 
 ## ADKAR shows what helps in each stage
 
-The curve describes reactions. It does not say what a manager can do. This is where the [ADKAR model](../change-management-models/) helps, because Prosci maps each stage of the curve to an ADKAR element. That turns an observation into an action:
+The curve describes reactions. It does not say what a manager can do. This is where the [ADKAR model](/en/blog/change-management-models/) helps, because Prosci maps each stage of the curve to an ADKAR element. That turns an observation into an action:
 
 | Stage | What is usually missing (ADKAR) | What helps |
 |---|---|---|
@@ -74,9 +74,9 @@ When a new system such as a CRM is introduced, the curve is often easy to observ
 
 After the announcement many people are neutral or curious; the system is still far away. Resistance usually appears when the change becomes concrete: in the first demos, when field sales see that visit reports will be recorded in the system rather than in their own spreadsheet. The valley typically occurs in the weeks after go-live. The old spreadsheet is switched off, everything takes longer in the new system and the first mistakes occur in customer interactions.
 
-This is exactly what the [hypercare phase after go-live](../salesforce-hypercare-after-go-live/) is for: contacts are easy to reach, feedback is taken seriously and small improvements are implemented quickly. That shortens the valley. A common mistake is the opposite: the project team disbands the day after go-live because, from a technical perspective, everything is complete.
+This is exactly what the [hypercare phase after go-live](/en/blog/salesforce-hypercare-after-go-live/) is for: contacts are easy to reach, feedback is taken seriously and small improvements are implemented quickly. That shortens the valley. A common mistake is the opposite: the project team disbands the day after go-live because, from a technical perspective, everything is complete.
 
-In large initiatives, groups and countries may also be at different stages at different times. In a global rollout spanning the US, Asia and Europe, like the one I supported for Salesforce Sales Cloud, a single assessment of "the mood in the project" does not help much. It is more useful to assess each group and country separately, ideally linked to the [stakeholder analysis](../stakeholder-analysis/).
+In large initiatives, groups and countries may also be at different stages at different times. In a global rollout spanning the US, Asia and Europe, like the one I supported for Salesforce Sales Cloud, a single assessment of "the mood in the project" does not help much. It is more useful to assess each group and country separately, ideally linked to the [stakeholder analysis](/en/blog/stakeholder-analysis/).
 
 ## The curve is a basis for conversation, not a diagnosis
 
@@ -103,6 +103,6 @@ Do not show the change curve to the affected team and tell them they are now in 
 
 ## Plan for the valley
 
-Plan for the valley. If you know that morale and productivity drop after go-live, you can provide clear points of contact, adjust targets for the first weeks and explain to management why the first figures look worse. Ask each group where it is in the change instead of choosing the same action for everyone. And connect the curve with a model you can use to derive actions; the basics are in [What is change management?](../what-is-change-management/). In Salesforce programs I do this together with Fabian Kramer, see [Salesforce change management consulting](../../services/change-management-salesforce/).
+Plan for the valley. If you know that morale and productivity drop after go-live, you can provide clear points of contact, adjust targets for the first weeks and explain to management why the first figures look worse. Ask each group where it is in the change instead of choosing the same action for everyone. And connect the curve with a model you can use to derive actions; the basics are in [What is change management?](/en/blog/what-is-change-management/). In Salesforce programs I do this together with Fabian Kramer, see [Salesforce change management consulting](/en/services/change-management-salesforce/).
 
 *Prosci and ADKAR are registered trademarks of Prosci, Inc.*

@@ -38,7 +38,7 @@ Hypercare is the period right after a Salesforce go-live in which the project te
 
 In the first days after a go-live, three things come together: defects that testing did not find, questions from users handling real cases for the first time, and migrated data that is not quite right. Regular support is not built for this. It does not know the new processes yet, and its response times do not fit a sales team that has to send a quote today.
 
-Anyone who does not get a quick answer in this phase finds a way around it. Quotes go out from Word again after all, and jobs are assigned by phone. These detours quickly become habits, and habits are harder to change later than any defect. In the [ADKAR model](../change-management-salesforce-rollout/) this usually points to the ability stage: users know how it works but cannot yet manage it alone in daily work. Deliberate workarounds can also mean that users have not understood the benefit.
+Anyone who does not get a quick answer in this phase finds a way around it. Quotes go out from Word again after all, and jobs are assigned by phone. These detours quickly become habits, and habits are harder to change later than any defect. In the [ADKAR model](/en/blog/change-management-salesforce-rollout/) this usually points to the ability stage: users know how it works but cannot yet manage it alone in daily work. Deliberate workarounds can also mean that users have not understood the benefit.
 
 ## A small hypercare team that can decide
 
@@ -47,7 +47,7 @@ It needs only a few people, but they must be able to make decisions and fix defe
 - **The client's product owner.** Assesses the business impact and sets priorities. When there is disagreement about whether something is a defect or a change request, the product owner settles it with architecture and the partner, based on the requirement, the design and the acceptance criteria.
 - **Admin.** Sorts out permissions, layouts and data issues quickly. Changes go through the agreed approval path depending on risk, and data corrections are documented.
 - **Developers from the delivery partner.** Fix defects in code, flows and interfaces.
-- **[Key users](../salesforce-key-user-network/) of the affected groups.** Answer how-to questions on site and report what does not work in their teams.
+- **[Key users](/en/blog/salesforce-key-user-network/) of the affected groups.** Answer how-to questions on site and report what does not work in their teams.
 - **One person from the future support team.** Learns the cases from the start, so the handover leaves no gap.
 
 If there are interfaces to the ERP, someone from the ERP team should also be part of the team. Many tickets in the first days concern data that arrives in the ERP differently than expected, and they can only be resolved together.
@@ -63,7 +63,7 @@ All tickets come in through one channel, not through chat, email and hallway req
 | Data issue | Migrated customer without a contact person | Admin or data team corrects it |
 | Change request | "We would like that field further up" | small: quick win during hypercare, large: backlog |
 
-The last row deserves attention. After a go-live, many reasonable requests come in. Small improvements that are quick to deliver, easy to test and easy to roll back belong in hypercare: users see that their feedback changes something, and that builds desire more than a newsletter. Two rules apply. Defects always come first, and quick wins also go through the regular pipeline with testing, because every change can bring new defects. Larger requests go to the backlog and are delivered with the next regular release. How releases continue afterwards is covered in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
+The last row deserves attention. After a go-live, many reasonable requests come in. Small improvements that are quick to deliver, easy to test and easy to roll back belong in hypercare: users see that their feedback changes something, and that builds desire more than a newsletter. Two rules apply. Defects always come first, and quick wins also go through the regular pipeline with testing, because every change can bring new defects. Larger requests go to the backlog and are delivered with the next regular release. How releases continue afterwards is covered in [Communicating Salesforce releases to the business](/en/blog/salesforce-release-communication-business/).
 
 ```hinweis tipp
 Count tickets per category and per group every day. Many how-to questions from one team point to a gap in training. Many change requests from one team show it was not involved in the decisions beforehand.
@@ -83,7 +83,7 @@ hint: Four steps | The cycle runs every day until the number of tickets falls. A
 
 Salesforce provides several features that save time in hypercare. With "Log in as another user", the admin sees what a user sees and finds missing permissions without a long back and forth. This requires the right permission, and depending on the settings, the user has to grant access first. The Setup Audit Trail shows who changed what in setup and when. That helps when something else stops working after a fix. Login history shows who logs in, and reports on created records show which groups are using the system at all. Both are signals of activity, not proof that a process works.
 
-For usage metrics, it pays to have the reports that will later measure success ready at go-live. Then you can see from day one in hypercare whether a team works in the system or only reads. The relevant figures are covered in [Measuring Salesforce adoption after go-live](../salesforce-adoption-metrics-after-go-live/).
+For usage metrics, it pays to have the reports that will later measure success ready at go-live. Then you can see from day one in hypercare whether a team works in the system or only reads. The relevant figures are covered in [Measuring Salesforce adoption after go-live](/en/blog/salesforce-adoption-metrics-after-go-live/).
 
 ## When does hypercare end?
 
@@ -101,7 +101,7 @@ Usage figures belong on the radar, but not necessarily in the exit criteria. A s
 I usually combined hypercare with implementing feedback and quick wins. At times it ran for up to three months, with weekly status calls. The time is worth it, because in those weeks feedback turns into visible improvements.
 ```
 
-So plan for weeks or months rather than days, depending on the number of groups and ERP interfaces. In a wave-based rollout, hypercare starts again in every country, as described in [Change management in a global Salesforce rollout](../change-management-global-salesforce-rollout/).
+So plan for weeks or months rather than days, depending on the number of groups and ERP interfaces. In a wave-based rollout, hypercare starts again in every country, as described in [Change management in a global Salesforce rollout](/en/blog/change-management-global-salesforce-rollout/).
 
 A shorter version that leaves out the Salesforce detail and applies just as well to ERP or a service portal is on LinkedIn: [Hypercare after go-live: what it means, how long it lasts and when it ends](https://www.linkedin.com/pulse/hypercare-after-go-live-what-means-how-long-lasts-edmee/).
 
@@ -113,4 +113,4 @@ After the handover, one task remains for change management: the collected questi
 
 ## Put team, meetings and exit criteria in writing
 
-Before the next go-live, put in writing who is on the hypercare team, how often it meets and the criteria for ending hypercare. Include the person from support from the start, so the handover to operations can happen step by step. We describe how we set up hypercare in programs under [Salesforce change management consulting](../../services/change-management-salesforce/).
+Before the next go-live, put in writing who is on the hypercare team, how often it meets and the criteria for ending hypercare. Include the person from support from the start, so the handover to operations can happen step by step. We describe how we set up hypercare in programs under [Salesforce change management consulting](/en/services/change-management-salesforce/).

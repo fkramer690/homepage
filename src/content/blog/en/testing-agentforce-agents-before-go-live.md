@@ -64,10 +64,10 @@ And if an action reserves a part in a connected ERP test system, every test run 
 
 Salesforce gives you scores, but it publishes no threshold that means "ready". The June 2026 lifecycle post names none, and neither do the testing docs. The gates are therefore a project decision, and I split them by risk:
 
-1. **Business rules: 100 percent, checked exactly.** Warranty eligibility, credit limits, discount approvals. These belong in deterministic logic, as described in [Agent Script: rules instead of the LLM](../agent-script-deterministic-rules/), and you test them with action checks and custom evaluations that leave no room for interpretation. One failure blocks the release.
+1. **Business rules: 100 percent, checked exactly.** Warranty eligibility, credit limits, discount approvals. These belong in deterministic logic, as described in [Agent Script: rules instead of the LLM](/en/blog/agent-script-deterministic-rules/), and you test them with action checks and custom evaluations that leave no room for interpretation. One failure blocks the release.
 2. **Routing and actions: close to 100 percent.** If a spare parts question is routed to the wrong subagent or the order lookup does not run, the answer cannot be right. These checks are pass or fail and cheap to repeat.
 3. **Answer quality: a pass rate over several runs.** For the outcome graded by the LLM judge I start with 90 percent in each of three full runs, and I look at which cases fail: a case that fails in every run is a finding, even if the total stays above 90 percent. That number is my starting point, not a Salesforce value; the business owner confirms or changes it.
-4. **Guardrails: no failures.** Out-of-scope requests, questions about another dealer's orders, instructions hidden in free text. Dealer portals and warranty forms are entry points for prompt injection, which I cover in [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/).
+4. **Guardrails: no failures.** Out-of-scope requests, questions about another dealer's orders, instructions hidden in free text. Dealer portals and warranty forms are entry points for prompt injection, which I cover in [prompt injection in dealer portals](/en/blog/prompt-injection-dealer-portals-agentforce/).
 
 The judge needs checking too. Anthropic recommends calibrating model graders against human experts, so the service expert reads a sample of judged answers in the first runs. If the expert and the judge often disagree, the outcome descriptions in the test cases are too vague.
 
@@ -77,11 +77,11 @@ Assume a machine builder with SAP, Service Cloud and a dealer portal. The planne
 
 **The test set.** The team writes 60 test cases: 40 typical questions from real dealer emails, 10 edge cases such as superseded part numbers or a serial number missing from the installed base, and 10 guardrail cases such as a request for another dealer's orders. Each case uses three actions on average: identify the machine, query SAP, write the answer. Anthropic's guide calls 20 to 50 tasks drawn from real failures a good start.
 
-**The cost.** If test actions are billed at sandbox rates, one full run is 60 × 3 = 180 actions at 16 credits, so 2,880 credits. Three runs per release add up to 8,640 credits, about $43 at the [list price of $500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/), before prompts and Data 360. Three runs every week over a twelve-week pilot would cost roughly $520, less than the cost of one wrong availability promise to a dealer whose machine is down. If your test runs are unmetered, only costs from connected systems and Data 360 remain. How to estimate the rest of the bill is the topic of [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
+**The cost.** If test actions are billed at sandbox rates, one full run is 60 × 3 = 180 actions at 16 credits, so 2,880 credits. Three runs per release add up to 8,640 credits, about $43 at the [list price of $500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/), before prompts and Data 360. Three runs every week over a twelve-week pilot would cost roughly $520, less than the cost of one wrong availability promise to a dealer whose machine is down. If your test runs are unmetered, only costs from connected systems and Data 360 remain. How to estimate the rest of the bill is the topic of [Flex Credits and Agentforce cost per action](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 **The first result.** Routing and actions pass in 58 of 60 cases, the outcome in 49 of 60. The failures cluster: eight of the eleven involve superseded part numbers, where SAP returns the old number and the agent reports the part as unavailable. That is a task for the SAP team, not a prompt problem. Once the API returns the successor part, the outcome passes in 56, 55 and 56 of 60 cases over three runs, above 90 percent each time, no case fails in all three runs, all guardrail cases pass, a service expert has read a sample of the judged answers, and the head of service approves go-live for dealers in one country first.
 
-Most failures in such a run point to data and interfaces, which is why I put [business value and data quality first](../agentforce-business-value-data-quality-first/).
+Most failures in such a run point to data and interfaces, which is why I put [business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/).
 
 ## After go-live, monitoring runs from day one
 
@@ -106,7 +106,7 @@ hint: Four steps | Every change underneath the agent restarts the cycle: a subag
 
 ## The client owns the tests
 
-Delivery partners may write and run the tests, but the test set, the thresholds and the go-live decision belong to the company that is accountable to its dealers. It is the principle from [DevOps for enterprise projects](../why-devops-matters-salesforce-enterprise/): agent tests are kept in the same repository and pipeline, with JUnit output and a gate that blocks the deployment when results fall below the threshold. Setting this up is part of my [DevOps and release management](../../services/devops-release-management/) work.
+Delivery partners may write and run the tests, but the test set, the thresholds and the go-live decision belong to the company that is accountable to its dealers. It is the principle from [DevOps for enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/): agent tests are kept in the same repository and pipeline, with JUnit output and a gate that blocks the deployment when results fall below the threshold. Setting this up is part of my [DevOps and release management](/en/services/devops-release-management/) work.
 
 ```schritte
 Name unacceptable failures

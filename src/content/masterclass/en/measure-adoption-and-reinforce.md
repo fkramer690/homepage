@@ -44,7 +44,7 @@ In Salesforce almost every action leaves a record with a timestamp and an owner,
 | Data quality | required fields with real content, new duplicates | Desire or knowledge: fields are filled because they must be, without knowing why |
 | Outcome | forecast accuracy, lead time from quote to order | Reinforcement: nobody asks about the figures, so everything stays as it was |
 
-Salesforce delivers the first level almost for free through login history and Lightning usage data. The meaningful figures are on the second and third levels, and you have to define those for your own processes. For field service the list of KPIs is in [Field Service KPIs after go-live](../../../blog/field-service-kpis-after-go-live/), for all other areas the method is in [Measuring Salesforce adoption after go-live](../../../blog/salesforce-adoption-metrics-after-go-live/).
+Salesforce delivers the first level almost for free through login history and Lightning usage data. The meaningful figures are on the second and third levels, and you have to define those for your own processes. For field service the list of KPIs is in [Field Service KPIs after go-live](/en/blog/field-service-kpis-after-go-live/), for all other areas the method is in [Measuring Salesforce adoption after go-live](/en/blog/salesforce-adoption-metrics-after-go-live/).
 
 ```hinweis achtung
 Record before go-live how many quotes are created per month today, in whatever tool. Without that figure you cannot read 200 quotes in Salesforce later as either a success or a warning.
@@ -54,11 +54,11 @@ Record before go-live how many quotes are created per month today, in whatever t
 
 Low usage gets most expensive when a separate list is still kept next to Salesforce. It gives itself away in three ways. High login figures with few new records mean the team looks things up and works elsewhere. Large waves of updates just before the monthly report to management mean records are filled in afterwards. And reports exported to Excel on a regular basis often feed exactly that list.
 
-None of this proves anything, but each sign is a reason for a conversation with the team, ideally through the key user from [chapter 3](../key-users-and-training/). Then the diagnosis from [chapter 1](../change-management-adkar-diagnosis/) follows: at which stage is the group stuck?
+None of this proves anything, but each sign is a reason for a conversation with the team, ideally through the key user from [chapter 3](/en/masterclass/change-management/key-users-and-training/). Then the diagnosis from [chapter 1](/en/masterclass/change-management/change-management-adkar-diagnosis/) follows: at which stage is the group stuck?
 
 ## Who gets which figure?
 
-In the steering committee two or three figures per process from use and outcome are enough, each with the trend since go-live. The sponsor of a country or department sees the same figures for their teams, and their question in the monthly report already works as reinforcement. Key users and team leads get the detailed view as a basis for conversations. A public ranking of individuals leads to polished figures rather than maintained data, and in Germany such an evaluation needs to be agreed with the works council beforehand, as described in [chapter 2](../sponsor-and-communication/). In a global rollout you measure per country, because every country has its own curve.
+In the steering committee two or three figures per process from use and outcome are enough, each with the trend since go-live. The sponsor of a country or department sees the same figures for their teams, and their question in the monthly report already works as reinforcement. Key users and team leads get the detailed view as a basis for conversations. A public ranking of individuals leads to polished figures rather than maintained data, and in Germany such an evaluation needs to be agreed with the works council beforehand, as described in [chapter 2](/en/masterclass/change-management/sponsor-and-communication/). In a global rollout you measure per country, because every country has its own curve.
 
 ## With partners, pipeline, review and Center of Excellence call anchor the standards
 
@@ -72,14 +72,14 @@ Each lever covers a different part:
 
 - **Automatic checks in the pipeline** for names, forbidden patterns and test coverage. This is the cheapest lever, because it never gets tired.
 - **Pull request review on the client side** for design, object ownership and fit with the architecture.
-- **Center of Excellence call** for new edge cases. The technical leads carry the decisions into their teams; format and cadence are in [Salesforce Center of Excellence: format and cadence](../../../blog/salesforce-center-of-excellence-cadence/).
+- **Center of Excellence call** for new edge cases. The technical leads carry the decisions into their teams; format and cadence are in [Salesforce Center of Excellence: format and cadence](/en/blog/salesforce-center-of-excellence-cadence/).
 - **Onboarding of new developers,** owned by the partner and checked by the client.
 - **Contract** that refers to the current version of the standards and excludes violations from acceptance.
 
-There will be exceptions under deadline pressure. They need a justification in the pull request and a ticket for the fix. All levers in detail are in [Reinforcement: anchoring standards with partners](../../../blog/partner-standards-reinforcement/).
+There will be exceptions under deadline pressure. They need a justification in the pull request and a ticket for the fix. All levers in detail are in [Reinforcement: anchoring standards with partners](/en/blog/partner-standards-reinforcement/).
 
 ## The change lasts when it holds without the people who introduced it
 
-With business teams, the figures at process level stay stable after six months, and new colleagues learn the process from key users instead of from old lists. With partners, reviewers flag the same points less often, new edge cases are raised in the call before they are built, and new developers follow the rules without anyone explaining them one by one. In both cases the change is anchored when it holds without the person who introduced it. So plan from the start who takes over on the client side. How I support you with this is on the page [Change management for Salesforce programs](../../../services/change-management-salesforce/).
+With business teams, the figures at process level stay stable after six months, and new colleagues learn the process from key users instead of from old lists. With partners, reviewers flag the same points less often, new edge cases are raised in the call before they are built, and new developers follow the rules without anyone explaining them one by one. In both cases the change is anchored when it holds without the person who introduced it. So plan from the start who takes over on the client side. How I support you with this is on the page [Change management for Salesforce programs](/en/services/change-management-salesforce/).
 
-This chapter ends the masterclass. All chapters and articles are on the [overview page](../).
+This chapter ends the masterclass. All chapters and articles are on the [overview page](/en/masterclass/change-management/).

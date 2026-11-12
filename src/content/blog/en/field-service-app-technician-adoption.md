@@ -42,7 +42,7 @@ In my Field Service projects with maintenance, breakdown jobs and commissioning,
 
 ## What keeps technicians from using the app?
 
-In terms of the [ADKAR model](../change-management-salesforce-rollout/): in my Field Service rollouts, resistance showed up mostly around desire (the willingness to take part), while usability and offline problems limited ability (being able to do it in daily work). This table groups typical reasons; the stage is a starting point for the diagnosis, not proof:
+In terms of the [ADKAR model](/en/blog/change-management-salesforce-rollout/): in my Field Service rollouts, resistance showed up mostly around desire (the willingness to take part), while usability and offline problems limited ability (being able to do it in daily work). This table groups typical reasons; the stage is a starting point for the diagnosis, not proof:
 
 | Reason | Stage | What helps |
 |---|---|---|
@@ -53,11 +53,11 @@ In terms of the [ADKAR model](../change-management-salesforce-rollout/): in my F
 | "I cannot find the feature" | knowledge | training on a real work order, technicians as key users in the region |
 | "The update changed my workflow" | reinforcement | test releases in the beta program where possible and announce changes |
 
-Willingness grows when the app delivers something. For a technician, that means in concrete terms: the asset history is visible on site, the right spare parts are known before the job, and the documentation is complete after the job instead of being written in the hotel at night. Offline, the final service report PDF is only generated once the device is back online. For an example of inspection forms without paper, see [Field Service Data Capture](../field-service-data-capture-inspection-forms/).
+Willingness grows when the app delivers something. For a technician, that means in concrete terms: the asset history is visible on site, the right spare parts are known before the job, and the documentation is complete after the job instead of being written in the hotel at night. Offline, the final service report PDF is only generated once the device is back online. For an example of inspection forms without paper, see [Field Service Data Capture](/en/blog/field-service-data-capture-inspection-forms/).
 
 ## How do you handle location and hours?
 
-Where a works council exists, it plays a role in two topics: who can see and evaluate working, travel and break times, and the tracking of technicians' locations. Both should be raised proactively, before anything is set up. Interval and accuracy of location tracking in the Field Service mobile app can be configured, admins can exclude individual workers, and each user can withdraw the location permission in the phone's settings; iOS sends fewer updates in the background. The available settings are described in the [Field Service rollout](../salesforce-field-service-rollout/).
+Where a works council exists, it plays a role in two topics: who can see and evaluate working, travel and break times, and the tracking of technicians' locations. Both should be raised proactively, before anything is set up. Interval and accuracy of location tracking in the Field Service mobile app can be configured, admins can exclude individual workers, and each user can withdraw the location permission in the phone's settings; iOS sends fewer updates in the background. The available settings are described in the [Field Service rollout](/en/blog/salesforce-field-service-rollout/).
 
 For adoption, openness matters more than the setting itself. A technician who learns from the works council what is tracked and why reacts differently from one who discovers it on a map in the office. With Appointment Assistant, tracking can be limited to the En Route status, so the location is only sent on the way to a job. The agreement also needs to define the purpose of tracking, who can access the data, which evaluations are not allowed and how long location history is kept; involve the data protection officer. This information belongs in the communication before the rollout, in plain words.
 
@@ -70,19 +70,19 @@ Clarify location tracking and the visibility of working hours data with the work
 I recommend a small group of technicians per region who get involved before the rollout. Do not only pick enthusiasts: include a skeptic and someone with little digital routine, cover different devices and job types such as maintenance, breakdowns and commissioning, and include service partners if they use the app. In machinery manufacturing, that also means multiday commissioning with several technicians, serial numbers in deep asset structures, and safety and acceptance protocols with photos, readings and the customer's signature.
 
 - **Test forms on real jobs.** An inspection form that looks logical from a desk can be useless in front of the machine, because the sequence does not match the workflow.
-- **Check offline.** The group takes the app where there is no signal and reports which data is missing. What should be stored offline on the device is covered in [Field Service app offline](../field-service-mobile-app-offline-data/).
+- **Check offline.** The group takes the app where there is no signal and reports which data is missing. What should be stored offline on the device is covered in [Field Service app offline](/en/blog/field-service-mobile-app-offline-data/).
 - **Train colleagues.** Experienced technicians explain the app more convincingly than a trainer from the project team, because they know the same jobs.
-- **Remain contacts.** After the rollout they are the first points of contact in their region, like key users in inside sales. See [key users in Salesforce rollouts](../salesforce-key-user-network/).
+- **Remain contacts.** After the rollout they are the first points of contact in their region, like key users in inside sales. See [key users in Salesforce rollouts](/en/blog/salesforce-key-user-network/).
 
 It matters that this group can bring about real changes. If their feedback disappears in the backlog, they stop giving feedback.
 
 ## After the rollout every region needs a short way back
 
-The first weeks after a region goes live are when technicians have the most questions about the app. During this phase the project team should be available rather than already starting the next region. After that, reinforcement counts: app updates can change workflows. Test major releases and relevant patches in the beta program, where a preview of about 30 days or 7 days is available, and define a separate response for emergency releases that come without a beta, as described in [testing Field Service app updates](../field-service-mobile-app-updates-testing/).
+The first weeks after a region goes live are when technicians have the most questions about the app. During this phase the project team should be available rather than already starting the next region. After that, reinforcement counts: app updates can change workflows. Test major releases and relevant patches in the beta program, where a preview of about 30 days or 7 days is available, and define a separate response for emergency releases that come without a beta, as described in [testing Field Service app updates](/en/blog/field-service-mobile-app-updates-testing/).
 
 A short feedback route matters just as much. A technician who notices on site that a required field does not fit should be able to report it in a minute, ideally straight from the app or through their contact in the region. If the feedback is acknowledged and classified within a set time, small fixes follow quickly and larger ones receive a clear decision and date. Word spreads in the team, and that works better than a training session. If nothing happens, the required field is soon filled with dots.
 
-The numbers show whether the app has caught on: service appointments or work orders completed in the app on time instead of entered later in the office, and service reports ready on the day of the job. Because required fields can force entries, add quality signals: rework in the back office, missing or invalid entries, sync errors and phone calls to the office. For how to set up such numbers, see [measuring Salesforce adoption after go-live](../salesforce-adoption-metrics-after-go-live/).
+The numbers show whether the app has caught on: service appointments or work orders completed in the app on time instead of entered later in the office, and service reports ready on the day of the job. Because required fields can force entries, add quality signals: rework in the back office, missing or invalid entries, sync errors and phone calls to the office. For how to set up such numbers, see [measuring Salesforce adoption after go-live](/en/blog/salesforce-adoption-metrics-after-go-live/).
 
 ## Win three to five test technicians in the first region
 

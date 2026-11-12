@@ -31,7 +31,7 @@ Nach dem Go-live entscheidet der Betrieb, ob Ihr Release-Prozess hält. Dazu geh
 
 ## Was gehört nach dem Go-live zum Betrieb?
 
-Die ersten acht Kapitel haben den Weg einer Änderung bis in Produktion beschrieben, zuletzt die [Release-Planung rund um die drei Salesforce-Releases](../release-planung-salesforce-releases/). Mit dem Deployment ist die Arbeit nicht vorbei. In einem Programm mit mehreren Partnern ändern sich jede Woche Konfiguration, Daten und Nutzung der Org, und nicht jede Änderung wird über die Pipeline ausgerollt.
+Die ersten acht Kapitel haben den Weg einer Änderung bis in Produktion beschrieben, zuletzt die [Release-Planung rund um die drei Salesforce-Releases](/masterclass/devops-release-management/release-planung-salesforce-releases/). Mit dem Deployment ist die Arbeit nicht vorbei. In einem Programm mit mehreren Partnern ändern sich jede Woche Konfiguration, Daten und Nutzung der Org, und nicht jede Änderung wird über die Pipeline ausgerollt.
 
 | Aufgabe | Frage, die sie beantwortet | Beispiel für ein Werkzeug |
 |---|---|---|
@@ -42,7 +42,7 @@ Die ersten acht Kapitel haben den Weg einer Änderung bis in Produktion beschrie
 | DORA-Kennzahlen | Wie schnell und wie stabil liefern wir? | sfdx-hardis DORA-Bericht, Gearset Reporting |
 | Incidents und Hotfixes | Wie gelangt eine dringende Korrektur sicher in Produktion? | Ihre Pipeline mit Hotfix-Branch |
 
-Jede Zeile braucht eine verantwortliche Person. In den meisten Programmen ist das die Release-Rolle aus [Kapitel 2](../release-prozess-eigentum-rollen/), unterstützt von den Partnern.
+Jede Zeile braucht eine verantwortliche Person. In den meisten Programmen ist das die Release-Rolle aus [Kapitel 2](/masterclass/devops-release-management/release-prozess-eigentum-rollen/), unterstützt von den Partnern.
 
 ## Org-Monitoring: was täglich geprüft werden sollte
 
@@ -80,7 +80,7 @@ Für Daten gibt es mehrere Wege:
 
 Backup & Recover hieß früher Own Recover. Salesforce hat Own im September 2024 [übernommen](https://www.salesforce.com/news/press-releases/2024/09/05/salesforce-signs-definitive-agreement-to-acquire-own-company/), der Abschluss war am 18. November 2024. Auf der [Produktseite](https://www.salesforce.com/platform/data-backup-recovery/) nennt Salesforce eine Standard-Aufbewahrung von 99 Jahren und für Preise nur „varies based on each customer's individual needs“. Gearset speichert Backups laut Doku bei AWS in den Regionen USA, Irland, Australien oder Kanada und bietet laut [Produktseite](https://gearset.com/solutions/backup) Warnungen, wenn ungewöhnlich viele Datensätze angelegt, geändert oder gelöscht werden. Bei Flosum sollten Sie den Speicherort im Gespräch klären.
 
-Welche Lösung passt, hängt weniger von Funktionen als von Ihrem Umfeld ab: Wo dürfen die Daten liegen, welches Werkzeug nutzen Sie schon für Deployments, wer darf einen Restore auslösen? Diese Entscheidung gehört in die Werkzeugwahl aus [Kapitel 4](../devops-werkzeuge-vergleich/), nicht in eine spätere Nachbestellung.
+Welche Lösung passt, hängt weniger von Funktionen als von Ihrem Umfeld ab: Wo dürfen die Daten liegen, welches Werkzeug nutzen Sie schon für Deployments, wer darf einen Restore auslösen? Diese Entscheidung gehört in die Werkzeugwahl aus [Kapitel 4](/masterclass/devops-release-management/devops-werkzeuge-vergleich/), nicht in eine spätere Nachbestellung.
 
 ### Warum Sie den Restore üben sollten
 
@@ -92,13 +92,13 @@ Schreibt Ihre SAP-Schnittstelle Auftragsstände über die Salesforce-ID zurück,
 
 Außerdem können laut [Leitfaden zur Backup-Strategie](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.backup_restore_plan.htm&type=5) wiederhergestellte Share-Objekte veraltete Zugriffsrechte zurückbringen. Prüfen Sie nach einem Restore deshalb, ob Händler nur ihre eigenen Anlagen sehen. Salesforce Help führt Salesforce Backup, Backup & Recover und Backup & Recover Next als getrennte Themen; klären Sie, welches Produkt Sie lizenziert haben, und üben Sie den Restore genau damit.
 
-Ich würde einen Restore einmal pro Quartal in einer Sandbox üben, mit einem Objekt, von dem Prozesse abhängen, etwa Assets mit Wartungsplänen. Wie Daten zwischen Orgs bewegt und maskiert werden, beschreibt [Kapitel 7](../daten-und-konfiguration/).
+Ich würde einen Restore einmal pro Quartal in einer Sandbox üben, mit einem Objekt, von dem Prozesse abhängen, etwa Assets mit Wartungsplänen. Wie Daten zwischen Orgs bewegt und maskiert werden, beschreibt [Kapitel 7](/masterclass/devops-release-management/daten-und-konfiguration/).
 
 ## Technische Schulden sichtbar halten
 
-Technische Schulden wachsen in einer Org mit mehreren Partnern leise: eine Apex-Klasse, die niemand mehr aufruft, ein Permission Set mit zwei Benutzern, ein Feld ohne Beschreibung, Klassen auf alten API-Versionen. Die wöchentlichen Prüfungen von sfdx-hardis finden genau das, unter anderem ungenutzte Apex-Klassen, ungenutzte Custom Labels, inaktive Metadaten, wenig genutzte Permission Sets, fehlende Feldbeschreibungen und Apex mit veralteter API-Version. Die Qualitätsprüfungen vor dem Merge aus [Kapitel 6](../qualitaet-tests-reviews/) verhindern neue Schulden, das Monitoring zeigt die alten.
+Technische Schulden wachsen in einer Org mit mehreren Partnern leise: eine Apex-Klasse, die niemand mehr aufruft, ein Permission Set mit zwei Benutzern, ein Feld ohne Beschreibung, Klassen auf alten API-Versionen. Die wöchentlichen Prüfungen von sfdx-hardis finden genau das, unter anderem ungenutzte Apex-Klassen, ungenutzte Custom Labels, inaktive Metadaten, wenig genutzte Permission Sets, fehlende Feldbeschreibungen und Apex mit veralteter API-Version. Die Qualitätsprüfungen vor dem Merge aus [Kapitel 6](/masterclass/devops-release-management/qualitaet-tests-reviews/) verhindern neue Schulden, das Monitoring zeigt die alten.
 
-Eine Liste allein ändert nichts. Ich empfehle einen eigenen Backlog für technische Schulden, aus dem jedes Release einen festen Anteil der Kapazität abarbeitet, und eine klare Zuordnung: Wer eine Komponente gebaut hat, räumt sie auf. Vor einem Partnerwechsel lohnt eine tiefere Analyse. Wie ein LLM dabei das Lesen übernimmt und die Tools die Fakten liefern, beschreibe ich in [KI-Org-Analyse: technische Schulden vor dem Partnerwechsel](../../../blog/ki-org-analyse-technische-schulden/).
+Eine Liste allein ändert nichts. Ich empfehle einen eigenen Backlog für technische Schulden, aus dem jedes Release einen festen Anteil der Kapazität abarbeitet, und eine klare Zuordnung: Wer eine Komponente gebaut hat, räumt sie auf. Vor einem Partnerwechsel lohnt eine tiefere Analyse. Wie ein LLM dabei das Lesen übernimmt und die Tools die Fakten liefern, beschreibe ich in [KI-Org-Analyse: technische Schulden vor dem Partnerwechsel](/blog/ki-org-analyse-technische-schulden/).
 
 ## Welche DORA-Kennzahlen sind für Salesforce sinnvoll?
 
@@ -135,12 +135,12 @@ Nachbereiten
   Ursache, Dauer und ob ein Deployment beteiligt war, festhalten. Daraus speisen sich Change Fail Rate und Rework Rate.
 ```
 
-sfdx-hardis beschreibt das als zwei Ströme: RUN für schnelle Korrekturen, BUILD für die nächste Version. Ein [Hotfix](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/) wird über einen Branch nach Preprod und Produktion deployt, danach folgt der Retrofit in die BUILD-Branches. Die Doku formuliert es deutlich: Eine Korrektur von Hand im Setup ist nie vorgesehen, auch nicht um zwei Uhr nachts, weil das nächste Deployment sie überschreibt. Den Hotfix-Weg in der Branch-Strategie beschreibt [Kapitel 3](../umgebungen-und-branching/), die Validierung in der Pipeline [Kapitel 5](../pipeline-aufbauen/).
+sfdx-hardis beschreibt das als zwei Ströme: RUN für schnelle Korrekturen, BUILD für die nächste Version. Ein [Hotfix](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/) wird über einen Branch nach Preprod und Produktion deployt, danach folgt der Retrofit in die BUILD-Branches. Die Doku formuliert es deutlich: Eine Korrektur von Hand im Setup ist nie vorgesehen, auch nicht um zwei Uhr nachts, weil das nächste Deployment sie überschreibt. Den Hotfix-Weg in der Branch-Strategie beschreibt [Kapitel 3](/masterclass/devops-release-management/umgebungen-und-branching/), die Validierung in der Pipeline [Kapitel 5](/masterclass/devops-release-management/pipeline-aufbauen/).
 
 Angenommen, ein Maschinenbauer betreibt Field Service und ein Händlerportal. Am Montagmorgen meldet das Monitoring Flow-Fehler beim Anlegen von Arbeitsaufträgen. Der Audit Trail zeigt eine Änderung am Freitag im Setup, das Metadaten-Backup zeigt die geänderte Entscheidung im Flow. Gleichzeitig fällt auf, dass ein Datenimport am Wochenende das Garantieende auf tausenden Anlagen überschrieben hat. Der Flow wird per Hotfix korrigiert und zurückgeführt. Das Garantieende wird per Restore genau dieses Feldes aus dem Backup vom Freitag wiederhergestellt, ohne die neuen Arbeitsaufträge vom Montag anzufassen.
 
 ## Wem gehört der Betrieb?
 
-Monitoring-Repository, Backup-Lösung, Benachrichtigungskanäle und Kennzahlen gehören dem Kunden, aus denselben Gründen wie Repository und Pipeline: Sie sollen einen Partnerwechsel überleben. Warum ich das so sehe, steht in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/). Die Partner erhalten Zugriff auf die Kanäle und die Pflicht, auf Meldungen zu ihren Komponenten in einer vereinbarten Zeit zu reagieren. Das gehört in den Vertrag, siehe [Partnersteuerung](../../../leistungen/partnersteuerung/).
+Monitoring-Repository, Backup-Lösung, Benachrichtigungskanäle und Kennzahlen gehören dem Kunden, aus denselben Gründen wie Repository und Pipeline: Sie sollen einen Partnerwechsel überleben. Warum ich das so sehe, steht in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/). Die Partner erhalten Zugriff auf die Kanäle und die Pflicht, auf Meldungen zu ihren Komponenten in einer vereinbarten Zeit zu reagieren. Das gehört in den Vertrag, siehe [Partnersteuerung](/leistungen/partnersteuerung/).
 
-Wie Monitoring und Backup in den gesamten Prozess passen, zeigen [warum DevOps über Salesforce-Großprojekte entscheidet](../../../blog/warum-devops-salesforce-enterprise-projekte/) und die [Einführung in sfdx-hardis](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/). In welcher Reihenfolge Sie all das einführen, beschreibt das letzte Kapitel, [Einführung und Fahrplan](../einfuehrung-fahrplan/). Mein Rat für den Start: Monitoring und Daten-Backup zuerst, denn beides können Sie einschalten, bevor die Pipeline fertig ist. Wie ich Sie dabei unterstütze, steht unter [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
+Wie Monitoring und Backup in den gesamten Prozess passen, zeigen [warum DevOps über Salesforce-Großprojekte entscheidet](/blog/warum-devops-salesforce-enterprise-projekte/) und die [Einführung in sfdx-hardis](/blog/sfdx-hardis-einfuehrung-salesforce-devops/). In welcher Reihenfolge Sie all das einführen, beschreibt das letzte Kapitel, [Einführung und Fahrplan](/masterclass/devops-release-management/einfuehrung-fahrplan/). Mein Rat für den Start: Monitoring und Daten-Backup zuerst, denn beides können Sie einschalten, bevor die Pipeline fertig ist. Wie ich Sie dabei unterstütze, steht unter [DevOps und Release-Management](/leistungen/devops-und-release-management/).

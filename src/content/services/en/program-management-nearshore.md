@@ -70,7 +70,7 @@ Program management on the client side means planning and steering a Salesforce p
 
 ## Why do nearshore teams struggle?
 
-Rarely because of missing skills. When I take over a running nearshore setup, I almost always find the same four causes, and the right setup can reduce the impact of each one. The detailed reasoning is in [Nearshore Salesforce teams: why eight developers at most?](../../blog/salesforce-nearshore-teams-eight-developers/).
+Rarely because of missing skills. When I take over a running nearshore setup, I almost always find the same four causes, and the right setup can reduce the impact of each one. The detailed reasoning is in [Nearshore Salesforce teams: why eight developers at most?](/en/blog/salesforce-nearshore-teams-eight-developers/).
 
 ```vergleich
 without: What I find in weak setups
@@ -98,11 +98,11 @@ Every team I set up has at most eight developers. More capacity means another te
 
 When I select partners, culture and commitment to delivery count as much as certifications. That includes asking how the partner handles staffing and rotation, because that is where it is decided whether the team is still the same team six months later.
 
-From day one, a new team delivers through the same repository, the same reviews and the same pipeline as every other team. How reviews protect quality and pass on knowledge is described in [why pull request reviews are a must in enterprise projects](../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+From day one, a new team delivers through the same repository, the same reviews and the same pipeline as every other team. How reviews protect quality and pass on knowledge is described in [why pull request reviews are a must in enterprise projects](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 
 ## Steering across several teams and partners
 
-With several teams and partners, the plan only holds if dependencies and releases are coordinated. I describe the rules for several partners working together under [partner governance](../partner-governance/), and the shared release process under [DevOps and release management](../devops-release-management/). On the client side I run the program plan, the release process and the reporting:
+With several teams and partners, the plan only holds if dependencies and releases are coordinated. I describe the rules for several partners working together under [partner governance](/en/services/partner-governance/), and the shared release process under [DevOps and release management](/en/services/devops-release-management/). On the client side I run the program plan, the release process and the reporting:
 
 ```stufen
 1 | Program plan | streams and dependencies | Who delivers what, and when?

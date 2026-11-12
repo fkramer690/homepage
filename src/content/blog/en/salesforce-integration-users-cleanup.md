@@ -41,13 +41,13 @@ Password logins | Username and password, often with a security token | OAuth use
 note: Each pattern on its own is reason enough to include the user in the switch.
 ```
 
-The timeline for retiring login methods is described in [Salesforce password integrations end in 2027](../salesforce-password-integrations-end-2027/). The risk of the first pattern is obvious: if the credentials leak, for example at a vendor, the attacker has the administrator's access. How quickly that can happen is shown by the incident I describe in [Connected Apps and AI tools: lessons from Salesloft Drift](../connected-apps-oauth-ai-integrations/).
+The timeline for retiring login methods is described in [Salesforce password integrations end in 2027](/en/blog/salesforce-password-integrations-end-2027/). The risk of the first pattern is obvious: if the credentials leak, for example at a vendor, the attacker has the administrator's access. How quickly that can happen is shown by the incident I describe in [Connected Apps and AI tools: lessons from Salesloft Drift](/en/blog/connected-apps-oauth-ai-integrations/).
 
 ## The Integration User licence limits the user to the API
 
 Salesforce offers a dedicated licence for system-to-system integrations. According to the [Salesforce Admin blog](https://admin.salesforce.com/blog/2023/best-practices-for-configuring-your-integration-user), Enterprise, Unlimited and Performance Edition automatically include five Salesforce Integration licences at no extra cost. More are available through your account executive.
 
-It can also free up full licences. An integration user with a Sales or Service Cloud licence consumes a licence that a person could use, so moving the integration to the dedicated licence can avoid the need to buy another one. Which licences users actually need is covered in [Salesforce licences: does everyone need a full licence?](../salesforce-licences-full-licence-needed/)
+It can also free up full licences. An integration user with a Sales or Service Cloud licence consumes a licence that a person could use, so moving the integration to the dedicated licence can avoid the need to buy another one. Which licences users actually need is covered in [Salesforce licences: does everyone need a full licence?](/en/blog/salesforce-licences-full-licence-needed/)
 
 The licence comes with the Minimum Access - API Only Integrations profile. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=User-Permission-for-API-Integration-User&language=en_US&type=1), this profile enables API access and restricts the user to it, and API-only access cannot be turned off. Logging in through the user interface is therefore ruled out.
 
@@ -55,7 +55,7 @@ The licence comes with the Minimum Access - API Only Integrations profile. Accor
 The licence does not restrict the user's permissions by itself. The associated Salesforce API Integration permission set licence makes many administrative permissions available; which permissions the user receives depends on your permission sets. And some permission types are not available in permission sets tied to it, for example Apex class access, custom permissions and named credential access. Salesforce's workaround is a second permission set without that licence. Check these limitations for every integration before the switch.
 ```
 
-The details are in the Salesforce article on [missing permissions with the API Integration licence](https://help.salesforce.com/s/articleView?id=001453686&language=en_US&type=1). Keep the profile at minimum access; it controls defaults, login hours and IP ranges. Object and field access is granted through a dedicated permission set, or a permission set group where several reusable sets are combined. Record access still follows sharing. The app's OAuth scopes and policies add a separate layer: they limit how the application authenticates and which APIs it may use, not which records it can access. That matches the setup I describe for human users in [permission concept with permission sets](../salesforce-permission-concept-permission-sets/).
+The details are in the Salesforce article on [missing permissions with the API Integration licence](https://help.salesforce.com/s/articleView?id=001453686&language=en_US&type=1). Keep the profile at minimum access; it controls defaults, login hours and IP ranges. Object and field access is granted through a dedicated permission set, or a permission set group where several reusable sets are combined. Record access still follows sharing. The app's OAuth scopes and policies add a separate layer: they limit how the application authenticates and which APIs it may use, not which records it can access. That matches the setup I describe for human users in [permission concept with permission sets](/en/blog/salesforce-permission-concept-permission-sets/).
 
 ## Take stock of users, apps and login methods
 
@@ -73,7 +73,7 @@ Ownership | Usually nowhere | Nobody can say what the user is for
 note: Use one line per integration, not per user: a shared user then appears several times, which is a finding in itself.
 ```
 
-For the ERP interface, the objects usually follow from the data flows, as described in [Manufacturing Cloud and SAP: data flows](../manufacturing-cloud-sap-integration-data-flows/).
+For the ERP interface, the objects usually follow from the data flows, as described in [Manufacturing Cloud and SAP: data flows](/en/blog/manufacturing-cloud-sap-integration-data-flows/).
 
 Unclaimed users require the greatest care. Before you lock them, check the login history, the job schedules and the middleware configuration, because a quarterly or year-end interface may not have logged in for weeks. If the dependency stays unclear, freeze the user for a fixed period with a named contact for escalation.
 
@@ -102,7 +102,7 @@ Deactivate | after the cycle · admin
   Old user off, licence freed.
 ```
 
-Freezing the old user on the day of the switch closes the privileged path. If a permission is missing, you add it to the new permission set; reactivating the old user remains an exception with a deadline. Check business figures, not only technical logs: the number of orders transferred, open errors and the reconciliation between both systems. Keep the switch away from the weekend of a Salesforce release, so errors can be traced more easily; the dates are listed in [Salesforce release schedule and what IT checks](../salesforce-release-schedule-what-it-checks/). How I plan interfaces with clients is described under [Salesforce integration](../../services/salesforce-integration/).
+Freezing the old user on the day of the switch closes the privileged path. If a permission is missing, you add it to the new permission set; reactivating the old user remains an exception with a deadline. Check business figures, not only technical logs: the number of orders transferred, open errors and the reconciliation between both systems. Keep the switch away from the weekend of a Salesforce release, so errors can be traced more easily; the dates are listed in [Salesforce release schedule and what IT checks](/en/blog/salesforce-release-schedule-what-it-checks/). How I plan interfaces with clients is described under [Salesforce integration](/en/services/salesforce-integration/).
 
 ## Switch the riskiest integration users first
 

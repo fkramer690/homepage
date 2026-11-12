@@ -43,11 +43,11 @@ Duplicates rarely appear because someone works sloppily. In manufacturing compan
 In my Field Service projects the installed base came from the ERP, and the data quality of the assets was one of the stumbling blocks. A machine that exists twice has a split service history, and the technician on site only sees one part of it.
 ```
 
-How the installed base should be structured is described in [asset hierarchy in Field Service](../field-service-asset-hierarchy-machines/) and in [Field Service master data](../salesforce-field-service-master-data/).
+How the installed base should be structured is described in [asset hierarchy in Field Service](/en/blog/field-service-asset-hierarchy-machines/) and in [Field Service master data](/en/blog/salesforce-field-service-master-data/).
 
 ## Why does the cleanup come before the AI agent?
 
-A person who sees two similar accounts becomes suspicious and asks. An agent does what its actions and instructions allow: if a lookup returns two plausible results and nothing decides between them, it may name the wrong contract, send the quote to the wrong contact or check a warranty against the wrong machine. It does so in a convincing tone, and that is exactly what makes the mistake expensive. Besides the cleanup, agent actions should filter precisely, pass stable record IDs and ask for clarification when several records match. That is why, in my view, business value and data quality come before any agent; see [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
+A person who sees two similar accounts becomes suspicious and asks. An agent does what its actions and instructions allow: if a lookup returns two plausible results and nothing decides between them, it may name the wrong contract, send the quote to the wrong contact or check a warranty against the wrong machine. It does so in a convincing tone, and that is exactly what makes the mistake expensive. Besides the cleanup, agent actions should filter precisely, pass stable record IDs and ask for clarification when several records match. That is why, in my view, business value and data quality come before any agent; see [Agentforce: business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/).
 
 ## How do you clean up duplicates step by step?
 
@@ -86,7 +86,7 @@ Start with duplicate rules set to the action "alert" and use a report. After two
 
 ## An upsert on a unique external ID keeps ERP duplicates out
 
-The most effective measure lies in the interface. Every record from the ERP carries the ERP's key in an external ID field, and the interface writes with an upsert: if the key exists, the record is updated, otherwise it is created. Mark the field as unique, reject records without a key and watch newly created records. Then an import no longer creates a duplicate because a name is spelled differently. What an upsert cannot decide is whether two different ERP keys stand for the same customer; that remains a business decision. Which system owns which data should be defined in the integration architecture I describe under [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
+The most effective measure lies in the interface. Every record from the ERP carries the ERP's key in an external ID field, and the interface writes with an upsert: if the key exists, the record is updated, otherwise it is created. Mark the field as unique, reject records without a key and watch newly created records. Then an import no longer creates a duplicate because a name is spelled differently. What an upsert cannot decide is whether two different ERP keys stand for the same customer; that remains a business decision. Which system owns which data should be defined in the integration architecture I describe under [integration with ERP, middleware and telephony](/en/services/salesforce-integration/).
 
 ## Who is responsible for data quality?
 

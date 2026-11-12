@@ -29,7 +29,7 @@ Ein Pull-Request-Review ist in Großprojekten Pflicht, weil es eine der letzten 
 
 ## Was ist ein Pull-Request-Review?
 
-Ein Pull Request ist die Anfrage, eine Reihe von Änderungen aus einem Branch in einen anderen zu übernehmen, zum Beispiel aus einem Feature-Branch in den Integrations-Branch. Beim Pull-Request-Review sieht sich mindestens eine weitere Person diese Änderungen an und gibt sie frei, bevor sie übernommen werden. In einem sauberen [Salesforce-DevOps-Setup](../warum-devops-salesforce-enterprise-projekte/) läuft bei jedem Pull Request zusätzlich die Pipeline mit Validierungsdeployment, Apex-Tests und statischer Codeanalyse. In Sandboxes ist das ein Probelauf mit `sf project deploy start --dry-run`; `sf project deploy validate` ist für Produktion gedacht. Mit Branch-Schutz und Pflichtprüfungen wird die Änderung erst dann übernommen, wenn das Review freigegeben und die Pipeline grün ist.
+Ein Pull Request ist die Anfrage, eine Reihe von Änderungen aus einem Branch in einen anderen zu übernehmen, zum Beispiel aus einem Feature-Branch in den Integrations-Branch. Beim Pull-Request-Review sieht sich mindestens eine weitere Person diese Änderungen an und gibt sie frei, bevor sie übernommen werden. In einem sauberen [Salesforce-DevOps-Setup](/blog/warum-devops-salesforce-enterprise-projekte/) läuft bei jedem Pull Request zusätzlich die Pipeline mit Validierungsdeployment, Apex-Tests und statischer Codeanalyse. In Sandboxes ist das ein Probelauf mit `sf project deploy start --dry-run`; `sf project deploy validate` ist für Produktion gedacht. Mit Branch-Schutz und Pflichtprüfungen wird die Änderung erst dann übernommen, wenn das Review freigegeben und die Pipeline grün ist.
 
 Das gilt auch für Low-Code. Flows, Page Layouts, Permission Sets und benutzerdefinierte Felder sind Metadaten im Repository. Ist die Änderung vollständig aus der Org übernommen, tauchen sie im Pull Request auf wie jede andere Datei.
 
@@ -100,7 +100,7 @@ Der häufigste Einwand ist die Geschwindigkeit. Nach meiner Erfahrung bremsen Re
 
 ## Der Review-Prozess gehört dem Kunden
 
-Das ist mir als [Architekt auf Kundenseite](../../#about) wichtig. Verantwortet ein Umsetzungspartner die Review-Regeln, entscheidet er, wie alle anderen bauen, einschließlich seiner Wettbewerber. Liegen die Regeln und die Freigabe architekturrelevanter Änderungen beim Kunden, bleiben Partner vergleichbar und austauschbar. Das ist die Grundlage guter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).
+Das ist mir als [Architekt auf Kundenseite](/#about) wichtig. Verantwortet ein Umsetzungspartner die Review-Regeln, entscheidet er, wie alle anderen bauen, einschließlich seiner Wettbewerber. Liegen die Regeln und die Freigabe architekturrelevanter Änderungen beim Kunden, bleiben Partner vergleichbar und austauschbar. Das ist die Grundlage guter [Partnersteuerung und Governance](/leistungen/partnersteuerung/).
 
 Das heißt nicht, dass der Kunde jede Zeile selbst prüfen muss. Partner können und sollten sich gegenseitig reviewen. Aber die Standards, die Freigaberechte und das Repository sollten beim Kunden liegen, am besten bei einer internen Person, die den Prozess langfristig übernimmt.
 

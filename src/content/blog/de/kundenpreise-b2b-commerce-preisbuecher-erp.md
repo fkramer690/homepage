@@ -69,7 +69,7 @@ Ein Preisbucheintrag ist ein Preis für ein Produkt in einem Preisbuch, mit Wäh
 
 Um das in Preisbücher zu bringen, müssen Sie das Ergebnis für jede Kombination vorab berechnen, die ein Käufer sehen kann. Bei vier Händlerstufen und stabiler Preisliste ist das einfach: vier Preisbücher, eine nächtliche Ladung. Bei Preisen, die kundenspezifisch verhandelt sind, wächst das schnell, und jede Änderung in SAP erfordert einen neuen Ladevorgang, bevor der Shop den richtigen Preis zeigt. Befristete Aktionen, Frachtzuschläge und Mindermengenzuschläge sind meist die Stellen, an denen die Replikation zuerst scheitert.
 
-Das zweite Risiko ist weniger offensichtlich. Zeigt der Shop einen Preis aus einer Kopie und berechnet SAP beim Eingang des Auftrags einen anderen, muss jemand entscheiden, welcher gilt. Hat das vor dem Go-live niemand entschieden, muss der Innendienst diese Frage klären, Auftrag für Auftrag. Dasselbe Risiko beschreibe ich für KI-Angebote in [KI-Angebote für Händler mit dem Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/).
+Das zweite Risiko ist weniger offensichtlich. Zeigt der Shop einen Preis aus einer Kopie und berechnet SAP beim Eingang des Auftrags einen anderen, muss jemand entscheiden, welcher gilt. Hat das vor dem Go-live niemand entschieden, muss der Innendienst diese Frage klären, Auftrag für Auftrag. Dasselbe Risiko beschreibe ich für KI-Angebote in [KI-Angebote für Händler mit dem Partner Sales Assistant](/blog/ki-angebote-haendler-partner-sales-assistant/).
 
 ## Wann sollte der Preis live aus dem ERP kommen?
 
@@ -83,7 +83,7 @@ Die Abwägung ist klar:
 - **Replizierte Preisbücher:** schnell und unabhängig vom ERP. Dafür entsprechen die Preise dem Stand der letzten Ladung, und die Preislogik existiert zweimal.
 - **Gemischt:** Preisbücher für Listen- und Staffelpreise auf Produktseiten, der Live-Aufruf dort, wo der Preis verbindlich wird. Der Leitfaden trennt das sauber: processPrice wirkt auf Produktliste und Produktseite, processTransactionalPrice wirkt auf Warenkorb und Checkout. Antwortzeiten, Preissprünge zwischen Produktseite und Warenkorb und das Verhalten bei Ausfällen würde ich trotzdem in einem Prototyp prüfen, bevor ich mich festlege.
 
-Eine dritte Option ist Advanced Pricing powered by Revenue Cloud, eine Preis-Engine innerhalb von Salesforce. Wann sich die zusätzliche Lizenz lohnt, steht in [Advanced Pricing im B2B-Shop](../advanced-pricing-b2b-shop-revenue-cloud/).
+Eine dritte Option ist Advanced Pricing powered by Revenue Cloud, eine Preis-Engine innerhalb von Salesforce. Wann sich die zusätzliche Lizenz lohnt, steht in [Advanced Pricing im B2B-Shop](/blog/advanced-pricing-b2b-shop-revenue-cloud/).
 
 ## Rechenbeispiel: Kompressorenhersteller mit 600 Händlern
 
@@ -113,4 +113,4 @@ Erstellen Sie vor dem Store-Design eine Seite zur Preis-Master-Entscheidung:
 4. Was zeigt der Shop, wenn der Live-Aufruf scheitert?
 5. Welcher Preis gilt, wenn Shop und ERP abweichen, und wer klärt das?
 
-Diese Entscheidung gehört in dasselbe Dokument wie Ihre [Object Ownership Matrix](../object-ownership-matrix-salesforce/) und bestimmt die Schnittstellenliste zum ERP, wie in [B2B Commerce und SAP: Welche Daten fließen wohin?](../b2b-commerce-sap-datenfluesse/) beschrieben. Wie Preise, Angebote, Checkout und Nachbestellung zusammenspielen, behandelt das Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/). Den Entwurf der Schnittstelle selbst übernehme ich im Rahmen der [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Diese Entscheidung gehört in dasselbe Dokument wie Ihre [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/) und bestimmt die Schnittstellenliste zum ERP, wie in [B2B Commerce und SAP: Welche Daten fließen wohin?](/blog/b2b-commerce-sap-datenfluesse/) beschrieben. Wie Preise, Angebote, Checkout und Nachbestellung zusammenspielen, behandelt das Kapitel [Preise, Warenkorb, Checkout](/masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](/masterclass/b2b-commerce/). Den Entwurf der Schnittstelle selbst übernehme ich im Rahmen der [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/).

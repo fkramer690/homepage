@@ -37,7 +37,7 @@ Ein Maschinenbauer mit Salesforce, SAP und Microsoft 365 erhält drei Agentenang
 
 Die Frage eines Händlers folgt diesen Grenzen jedoch nicht. "Ist der Dichtungssatz für Maschine 4711 lieferbar, und ist mein Garantieantrag für diese Maschine freigegeben?" berührt die Verfügbarkeit in SAP sowie den Garantieantrag und das Asset in Salesforce. Will jeder Systemagent selbst antworten, steht der Händler vor drei Eingangstüren oder vor einer Kette von Agenten, die sich gegenseitig fragen. Beides ist schlechter als ein Agent, der das Gespräch führt und die nötigen Informationen selbst abruft.
 
-A2A (Agent2Agent) ist ein offenes Protokoll, über das sich Agenten verschiedener Anbieter über eine "Agent Card" finden, Aufgaben übergeben und Ergebnisse zurückgeben. Der Unterschied zu MCP ist für den Entwurf wichtig: MCP verbindet einen Agenten mit Werkzeugen und Daten, A2A mit einem anderen Agenten, der selbst schlussfolgert. Was MCP für die IT bedeutet, steht in [MCP und Salesforce für die IT-Leitung erklärt](../mcp-salesforce-erklaert-it-leitung/).
+A2A (Agent2Agent) ist ein offenes Protokoll, über das sich Agenten verschiedener Anbieter über eine "Agent Card" finden, Aufgaben übergeben und Ergebnisse zurückgeben. Der Unterschied zu MCP ist für den Entwurf wichtig: MCP verbindet einen Agenten mit Werkzeugen und Daten, A2A mit einem anderen Agenten, der selbst schlussfolgert. Was MCP für die IT bedeutet, steht in [MCP und Salesforce für die IT-Leitung erklärt](/blog/mcp-salesforce-erklaert-it-leitung/).
 
 ## Was leistet Agent-to-Agent-Interoperabilität heute?
 
@@ -68,7 +68,7 @@ Im Normalfall führt das Gespräch der Agent des Systems, in dem sich die Person
 3. **Welcher Kanal?** Hier werden Portal-Chat, Service-Hotline und E-Mail-to-Case über Salesforce abgewickelt. Teams gehört zu Microsoft.
 4. **Wer übernimmt vom Agenten?** In diesem Beispiel liegt die Eskalations-Queue des Serviceteams in Salesforce Omni-Channel.
 
-Für einen Maschinenbauer ergibt das eine klare Aufteilung. Händler und Servicekunden sprechen mit Agentforce, SAP-Daten werden über eine API-Aktion abgerufen, wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/) beschrieben. Vertriebsmitarbeitende, die in Teams und Outlook arbeiten, können Copilot als Eingangstür nutzen, mit einem Agentforce-Agenten im Hintergrund für CRM-Fragen. Wer im Kreditmanagement oder in der Fakturierung in SAP arbeitet, nutzt Joule.
+Für einen Maschinenbauer ergibt das eine klare Aufteilung. Händler und Servicekunden sprechen mit Agentforce, SAP-Daten werden über eine API-Aktion abgerufen, wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](/blog/agentforce-sap-auftragsstatus/) beschrieben. Vertriebsmitarbeitende, die in Teams und Outlook arbeiten, können Copilot als Eingangstür nutzen, mit einem Agentforce-Agenten im Hintergrund für CRM-Fragen. Wer im Kreditmanagement oder in der Fakturierung in SAP arbeitet, nutzt Joule.
 
 ```ablauf
 sf: Portal-Agent, Agentforce-Spezialist
@@ -88,10 +88,10 @@ Eine Datenabfrage mit genau einer richtigen Antwort sollte über eine API oder e
 
 Vor dem Go-live wirft jeder Übergang zwischen Agenten vier Fragen auf:
 
-- **Als wer läuft der Spezialist?** Die A2A Bridge meldet sich mit Client-ID und Secret an der Salesforce-Org an. Im dokumentierten [Client-Credentials-Setup](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html) mit `bypassUser` auf true nutzt die API den Benutzer, der dem Agenten zugeordnet ist, nicht die Person, die in Teams die Anfrage gestellt hat. Dessen Freigaben bestimmen, was der Spezialist lesen darf. Die Bridge authentifiziert den technischen Client, nicht die Person, also ordnen Sie die externe Identität ausdrücklich zu, prüfen Sie je Anfrage, welche Händler oder Accounts die anfragende Person sehen darf, geben Sie dem Agentenbenutzer nur die nötigen Rechte und protokollieren Sie, wer die Anfrage ausgelöst hat. Zugriffsprüfungen gehören auf der empfangenden Seite in Code, wie in [Agent Script: Regeln statt LLM](../agent-script-regeln-statt-llm/).
+- **Als wer läuft der Spezialist?** Die A2A Bridge meldet sich mit Client-ID und Secret an der Salesforce-Org an. Im dokumentierten [Client-Credentials-Setup](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html) mit `bypassUser` auf true nutzt die API den Benutzer, der dem Agenten zugeordnet ist, nicht die Person, die in Teams die Anfrage gestellt hat. Dessen Freigaben bestimmen, was der Spezialist lesen darf. Die Bridge authentifiziert den technischen Client, nicht die Person, also ordnen Sie die externe Identität ausdrücklich zu, prüfen Sie je Anfrage, welche Händler oder Accounts die anfragende Person sehen darf, geben Sie dem Agentenbenutzer nur die nötigen Rechte und protokollieren Sie, wer die Anfrage ausgelöst hat. Zugriffsprüfungen gehören auf der empfangenden Seite in Code, wie in [Agent Script: Regeln statt LLM](/blog/agent-script-regeln-statt-llm/).
 - **Wie lange darf es dauern?** Die Agent API erlaubt höchstens 120 Sekunden; ein niedrigerer Gateway-Timeout in der Bridge greift früher.
 - **Wer zahlt?** Laut Salesforce zählt die Nutzung der Agent API zum Credit-Verbrauch, und die aufrufende Plattform kann je nach Lizenzmodell ihre eigene Nutzung abrechnen. Eine Händlerfrage kann dann auf zwei Zählern Kosten verursachen; prüfen Sie beide Abrechnungsmodelle vor dem Entwurf.
-- **Wo liegt die Spur?** Ein Fehler über zwei Anbieter hinweg bedeutet zwei Logs und zwei Supportverträge. Anbieterübergreifende Fälle gehören in die Testfälle aus [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
+- **Wo liegt die Spur?** Ein Fehler über zwei Anbieter hinweg bedeutet zwei Logs und zwei Supportverträge. Anbieterübergreifende Fälle gehören in die Testfälle aus [Agentforce-Agenten testen und freigeben](/blog/agentforce-agenten-testen-freigeben/).
 
 ## Praxisbeispiel: Händlerportal, Teams und ein Joule-Agent
 
@@ -113,4 +113,4 @@ Eine von drei Anfragen wird über A2A umgesetzt. Für ein erstes Jahr halte ich 
 4. **Prüfen Sie Identität, Timeout, Kosten und Logging** für jeden anbieterübergreifenden Aufruf, bevor Sie ihn bauen.
 5. **Erproben Sie einen A2A-Aufruf mit reinem Lesezugriff**, wenn MuleSoft bei Ihnen bereits im Einsatz ist, und lassen Sie sich von SAP und Microsoft den GA-Status ihrer Seite schriftlich bestätigen.
 
-Für den ersten Punkt reicht eine Tabelle mit Zielgruppe, Kanal, führendem Agenten und den Systemen, die er abfragt. Welches Integrationsmuster zu welchem System passt, gehört zu [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/), und das Masterclass-Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/) ordnet die Protokolle ein.
+Für den ersten Punkt reicht eine Tabelle mit Zielgruppe, Kanal, führendem Agenten und den Systemen, die er abfragt. Welches Integrationsmuster zu welchem System passt, gehört zu [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/), und das Masterclass-Kapitel [MCP und Schnittstellen](/masterclass/ki-salesforce/mcp-und-schnittstellen/) ordnet die Protokolle ein.

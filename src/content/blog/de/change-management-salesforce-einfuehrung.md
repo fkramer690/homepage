@@ -67,24 +67,24 @@ Diese Zeichen sind Hypothesen, keine Diagnosen. Punkte in Pflichtfeldern können
 
 Die Rolle des Sponsors verdient einen eigenen Absatz, weil sie in Salesforce-Programmen besonders häufig fehlt. Gemeint ist eine Person aus dem Management, die sichtbar hinter der Einführung steht: Sie erklärt im Vertriebsmeeting, warum Prognosen künftig aus Salesforce stammen, entscheidet, wenn zwei Bereiche sich nicht einigen, und fragt im Monatsbericht nach der Nutzung. Ich erstelle deshalb einen Plan für den Sponsor, der festlegt, wann das Management mit welchen sichtbaren Maßnahmen auftritt. Ohne diesen Plan wird aus „das Management steht dahinter“ eine Zeile auf der ersten Folie.
 
-Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Das Vorgehen habe ich gemeinsam mit meiner Kooperationspartnerin für Change Management, [Juliane Winterscheid](../../partner/juliane-winterscheid/), auf Salesforce-Programme übertragen.
+Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Das Vorgehen habe ich gemeinsam mit meiner Kooperationspartnerin für Change Management, [Juliane Winterscheid](/partner/juliane-winterscheid/), auf Salesforce-Programme übertragen.
 
 ## Diese Themen gehören zum Change Management in Salesforce-Programmen
 
 Change Management ist kein einzelner Arbeitsschritt. In Salesforce-Programmen von Herstellern kommen immer wieder dieselben Themen vor. Jedes hat einen eigenen Artikel:
 
-1. **[Key User aufbauen](../salesforce-key-user-netzwerk/):** Wer im Fachbereich die ersten Fragen beantwortet und wie viel Zeit das kostet.
-2. **[Change Management im weltweiten Rollout](../change-management-weltweiter-rollout/):** Was pro Land dazugehört, wenn ein globales Template ausgerollt wird.
-3. **[Akzeptanz der Techniker für die Field Service App](../field-service-app-akzeptanz-techniker/):** Warum der Außendienst die App annimmt oder umgeht.
-4. **[Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/):** Wie Fachbereiche vor einem Release erfahren, was sich ändert.
-5. **[Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/):** Wie neue Regeln für die Entwicklung im Alltag der Partner verankert bleiben.
-6. **[Nutzung nach dem Go-live messen](../salesforce-nutzung-messen-nach-go-live/):** Welche Zahlen zeigen, ob ein Prozess angekommen ist.
-7. **[Akzeptanz im Vertrieb](../salesforce-akzeptanz-vertrieb/):** Warum der Vertrieb Salesforce umgeht und was dagegen hilft.
-8. **[Schulungskonzept](../salesforce-schulungskonzept-einfuehrung/):** Wie Schulungen nach Rollen, anhand eigener Fälle und mit Key Usern geplant werden.
-9. **[Hypercare-Phase nach dem Go-live](../hypercare-phase-salesforce-go-live/):** Wer in den ersten Wochen dabei ist und wann sie endet.
-10. **[Change-Management-Prozess im Projekt](../change-management-prozess-salesforce/):** Welche Change-Arbeit in welche Projektphase gehört, von der Planung bis zum Betrieb.
+1. **[Key User aufbauen](/blog/salesforce-key-user-netzwerk/):** Wer im Fachbereich die ersten Fragen beantwortet und wie viel Zeit das kostet.
+2. **[Change Management im weltweiten Rollout](/blog/change-management-weltweiter-rollout/):** Was pro Land dazugehört, wenn ein globales Template ausgerollt wird.
+3. **[Akzeptanz der Techniker für die Field Service App](/blog/field-service-app-akzeptanz-techniker/):** Warum der Außendienst die App annimmt oder umgeht.
+4. **[Releases an den Fachbereich kommunizieren](/blog/salesforce-releases-fachbereich-kommunizieren/):** Wie Fachbereiche vor einem Release erfahren, was sich ändert.
+5. **[Reinforcement: Standards bei Partnern verankern](/blog/standards-partner-verankern-reinforcement/):** Wie neue Regeln für die Entwicklung im Alltag der Partner verankert bleiben.
+6. **[Nutzung nach dem Go-live messen](/blog/salesforce-nutzung-messen-nach-go-live/):** Welche Zahlen zeigen, ob ein Prozess angekommen ist.
+7. **[Akzeptanz im Vertrieb](/blog/salesforce-akzeptanz-vertrieb/):** Warum der Vertrieb Salesforce umgeht und was dagegen hilft.
+8. **[Schulungskonzept](/blog/salesforce-schulungskonzept-einfuehrung/):** Wie Schulungen nach Rollen, anhand eigener Fälle und mit Key Usern geplant werden.
+9. **[Hypercare-Phase nach dem Go-live](/blog/hypercare-phase-salesforce-go-live/):** Wer in den ersten Wochen dabei ist und wann sie endet.
+10. **[Change-Management-Prozess im Projekt](/blog/change-management-prozess-salesforce/):** Welche Change-Arbeit in welche Projektphase gehört, von der Planung bis zum Betrieb.
 
-Die allgemeinen Werkzeuge dahinter erklärt Juliane Winterscheid in eigenen Grundlagenartikeln: die [Stakeholder-Analyse](../stakeholder-analyse/) mit Vorlage, den [Kommunikationsplan](../kommunikationsplan-change-management/) und die [Change-Kurve](../change-kurve/).
+Die allgemeinen Werkzeuge dahinter erklärt Juliane Winterscheid in eigenen Grundlagenartikeln: die [Stakeholder-Analyse](/blog/stakeholder-analyse/) mit Vorlage, den [Kommunikationsplan](/blog/kommunikationsplan-change-management/) und die [Change-Kurve](/blog/change-kurve/).
 
 ## Change Management läuft in drei Phasen neben der Umsetzung
 
@@ -99,10 +99,10 @@ Ergebnisse sichern | nach dem Go-live · interne Verantwortliche
   Lücken prüfen, neue Regeln in Pipeline, Berichten und Center-of-Excellence-Calls verankern, Verantwortung übergeben.
 ```
 
-Entscheidend ist der Zeitpunkt. Change Management, das zwei Wochen vor dem Go-live beginnt, kann nur noch informieren. Die Frage, welche Gruppen betroffen sind und was sich für sie ändert, gehört in die Planung, bevor gebaut wird. Bei einem [globalen Template](../salesforce-globales-template-laenderabweichungen/) ist sie sogar Teil der Architektur, weil manche Abweichungen pro Land eine Frage der Gewohnheit sind, andere aber aus Gesetzen, Steuern, Verträgen oder dem lokalen ERP entstehen. Im Rollout muss beides unterschieden werden.
+Entscheidend ist der Zeitpunkt. Change Management, das zwei Wochen vor dem Go-live beginnt, kann nur noch informieren. Die Frage, welche Gruppen betroffen sind und was sich für sie ändert, gehört in die Planung, bevor gebaut wird. Bei einem [globalen Template](/blog/salesforce-globales-template-laenderabweichungen/) ist sie sogar Teil der Architektur, weil manche Abweichungen pro Land eine Frage der Gewohnheit sind, andere aber aus Gesetzen, Steuern, Verträgen oder dem lokalen ERP entstehen. Im Rollout muss beides unterschieden werden.
 
 ## Gruppen, Änderungen und Sponsor des nächsten Releases aufschreiben
 
 Beantworten Sie für Ihr nächstes Release drei Fragen schriftlich: Welche Gruppen sind betroffen? Was ändert sich für jede im Alltag? Wer aus dem Management steht sichtbar dahinter? Fehlt die dritte Antwort, ist das der erste Schritt. Danach legen Sie fest, woran Sie Erfolg messen, statt Schulungen zu zählen: Akzeptanz, also ob die vorgesehenen Rollen den neuen Prozess nutzen, Kompetenz und Datenqualität, also ob sie ihn richtig nutzen, und das Geschäftsergebnis, etwa Prognosequalität oder die Erstlösungsquote.
 
-Wenn Sie die fünf Elemente einzeln durchgehen möchten, finden Sie in der [Masterclass Change Management](../../masterclass/change-management/) zu jeder Stufe ein Kapitel mit den passenden Artikeln. Wie Juliane Winterscheid und ich das in Programmen begleiten, steht unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).
+Wenn Sie die fünf Elemente einzeln durchgehen möchten, finden Sie in der [Masterclass Change Management](/masterclass/change-management/) zu jeder Stufe ein Kapitel mit den passenden Artikeln. Wie Juliane Winterscheid und ich das in Programmen begleiten, steht unter [Change Management Beratung für Salesforce](/leistungen/change-management/).

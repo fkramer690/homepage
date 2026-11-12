@@ -44,15 +44,15 @@ A machine invoice depends on shipment, acceptance and down payments, and all thr
 | Maintenance contract fees | Revenue Cloud Billing | Same amount every period, changes come from sales |
 | Usage above an allowance | Revenue Cloud Billing | Rated in Salesforce |
 
-The signal I look for: sales changes contracts every week, and finance corrects invoices every month because SAP was not informed of a change. Then Billing in Salesforce removes a hand-over. If the recurring business is a few hundred contracts with one invoice a year, SAP is enough. The full reasoning is in [Revenue Cloud Billing or SAP](../../../blog/revenue-cloud-billing-or-sap-invoicing/), and the system boundary for the whole process from [chapter 1](../revenue-cloud-overview/) is in [who owns what in quote to cash](../../../blog/revenue-cloud-sap-quote-to-cash-ownership/).
+The signal I look for: sales changes contracts every week, and finance corrects invoices every month because SAP was not informed of a change. Then Billing in Salesforce removes a hand-over. If the recurring business is a few hundred contracts with one invoice a year, SAP is enough. The full reasoning is in [Revenue Cloud Billing or SAP](/en/blog/revenue-cloud-billing-or-sap-invoicing/), and the system boundary for the whole process from [chapter 1](/en/masterclass/revenue-cloud/revenue-cloud-overview/) is in [who owns what in quote to cash](/en/blog/revenue-cloud-sap-quote-to-cash-ownership/).
 
-Payment in a B2B store is a separate boundary. Dealers who order spare parts in the shop usually pay on account, and the ERP issues the invoice; the [B2B Commerce chapter on prices, cart and checkout](../../b2b-commerce/prices-cart-checkout/) covers that side.
+Payment in a B2B store is a separate boundary. Dealers who order spare parts in the shop usually pay on account, and the ERP issues the invoice; the [B2B Commerce chapter on prices, cart and checkout](/en/masterclass/b2b-commerce/prices-cart-checkout/) covers that side.
 
 ## Revenue Cloud Billing turns Salesforce into a subledger
 
 Revenue Cloud Billing is the billing add-on for Revenue Cloud. Salesforce Help and the Winter '27 [developer guide](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/billing_overview.htm) call the product family Revenue Management, Trailhead says Agentforce Revenue Management, and the earlier name was Revenue Lifecycle Management. Search under all of them.
 
-The mechanics follow the order from [chapter 3](../quote-contract-order/). According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/generate-invoices), order activation creates billing schedule groups and one billing schedule per order item, for new sales, amendments, renewals and cancellations alike. Invoice schedulers pick up the schedules marked ready for invoicing, and the invoice run uses the Data Processing Engine for large volumes. An external tax engine calculates the tax through tax policies and treatments.
+The mechanics follow the order from [chapter 3](/en/masterclass/revenue-cloud/quote-contract-order/). According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/generate-invoices), order activation creates billing schedule groups and one billing schedule per order item, for new sales, amendments, renewals and cancellations alike. Invoice schedulers pick up the schedules marked ready for invoicing, and the invoice run uses the Data Processing Engine for large volumes. An external tax engine calculates the tax through tax policies and treatments.
 
 The [product page](https://www.salesforce.com/sales/revenue-cloud-billing/) adds payments across gateways, collections with automated reminders, and an accounting backbone for journal entries, closing periods and currency conversion. Salesforce's own wording is that Billing allows "Salesforce to function as a sub-ledger while synchronizing journal entries". That sentence is the reason finance has to be in the room.
 
@@ -64,7 +64,7 @@ The subledger holds receivables in detail, each invoice, each credit memo, each 
 So before a partner sets anything up, finance settles how SAP maps into Salesforce: which company code matches which legal entity and which of them invoice from Salesforce, who closes the accounting period in Salesforce and whether that happens before or after the SAP close, who updates the G/L account mapping when the chart of accounts changes, and who compares the receivables of both systems at month end and resolves differences.
 ```
 
-Trailhead describes an [Accounts Receivable Admin](https://trailhead.salesforce.com/content/learn/modules/billing-basics-in-revenue-cloud/explore-billing-features-and-roles) for accounting periods, journal entries and financial reports. At a manufacturer that role belongs in accounting, and without someone there to fill it I do not put Billing into operation. The interfaces for journal entries and invoice status are part of my work on [Salesforce integration](../../../services/salesforce-integration/).
+Trailhead describes an [Accounts Receivable Admin](https://trailhead.salesforce.com/content/learn/modules/billing-basics-in-revenue-cloud/explore-billing-features-and-roles) for accounting periods, journal entries and financial reports. At a manufacturer that role belongs in accounting, and without someone there to fill it I do not put Billing into operation. The interfaces for journal entries and invoice status are part of my work on [Salesforce integration](/en/services/salesforce-integration/).
 
 ## What does Billing cost?
 
@@ -81,7 +81,7 @@ source: Revenue Cloud EU pricing page and Revenue Cloud Billing rate sheet of Fe
 
 Worked example: a machine builder invoices €18 million a year of subscriptions and maintenance fees from Billing, without tax. At an assumed 1.15 dollars per euro that is $20.7 million, or 414,000 billing events a year. Put €120 million of machine invoices through Billing as well and the count grows more than sevenfold, for invoices SAP creates anyway. Scope drives the cost more than anything you negotiate.
 
-What to settle on the order form, how rounding and credit memos might count and how to ramp the entitlement over the term is in [Revenue Cloud Billing costs](../../../blog/revenue-cloud-billing-costs/). License forecasts like this are part of my [make-or-buy and license](../../../services/make-or-buy-licences/) work.
+What to settle on the order form, how rounding and credit memos might count and how to ramp the entitlement over the term is in [Revenue Cloud Billing costs](/en/blog/revenue-cloud-billing-costs/). License forecasts like this are part of my [make-or-buy and license](/en/services/make-or-buy-licences/) work.
 
 ## What does German e-invoicing from 2027 require?
 
@@ -103,7 +103,7 @@ On the Salesforce side, [Trailhead](https://trailhead.salesforce.com/content/lea
 - **E-invoicing service.** Billing posts the invoice, middleware maps it to the structured format, a service validates and delivers it. I prefer a service that also handles SAP's invoices, so customers receive everything through one channel.
 - **Partner app in the org.** Keeps the logic in Salesforce and adds a vendor to every release.
 
-If Billing invoices go out after 1 January 2027, they need a structured route from the first invoice. Do not start with PDFs and fix the format later. The checklist and the legal details are in [e-invoicing in Germany from 2027](../../../blog/e-invoicing-germany-2027-revenue-cloud/). Have your tax advisor confirm the setup; I describe the system side, not the tax law.
+If Billing invoices go out after 1 January 2027, they need a structured route from the first invoice. Do not start with PDFs and fix the format later. The checklist and the legal details are in [e-invoicing in Germany from 2027](/en/blog/e-invoicing-germany-2027-revenue-cloud/). Have your tax advisor confirm the setup; I describe the system side, not the tax law.
 
 ## Pay-per-use with Usage Management needs a counter per machine
 
@@ -125,13 +125,13 @@ For a machine that translates directly. Operating hours become a usage resource,
 | Checks before rating | Serial number to asset and account, counter resets after a controller swap, gaps when a machine was offline, duplicates from retried transfers. |
 | A contract that defines the unit | Operating hours, load hours or good parts; which counter is binding; how gaps are handled; the minimum fee that protects the financing of the machine. |
 
-The same daily counter often drives maintenance by operating hours in Field Service, so one feed can serve both; the [Field Service chapter on assets and maintenance](../../field-service/field-service-assets-maintenance-parts/) covers that side. Rating sits in the Billing add-on as "Usage Rating & Digital Wallet", so confirm in the order form which license covers it. The scenario and the contract checklist are in [pay-per-use for machines](../../../blog/pay-per-use-machines-revenue-cloud/).
+The same daily counter often drives maintenance by operating hours in Field Service, so one feed can serve both; the [Field Service chapter on assets and maintenance](/en/masterclass/field-service/field-service-assets-maintenance-parts/) covers that side. Rating sits in the Billing add-on as "Usage Rating & Digital Wallet", so confirm in the order form which license covers it. The scenario and the contract checklist are in [pay-per-use for machines](/en/blog/pay-per-use-machines-revenue-cloud/).
 
 If all invoices stay in SAP, I would weigh carefully whether to rate usage in Salesforce. I did not find a documented standard hand-over of rated usage to an external billing system.
 
 ## Maintenance contracts as recurring revenue
 
-Most machine builders already have the recurring revenue that Billing is built for: maintenance contracts. In Revenue Cloud the contract is a product with a subscription selling model. Order activation creates an asset for the contract and billing schedules, and an invoice scheduler bills it, for example quarterly in advance. Every upsell, renewal or cancellation runs through a quote and an order, as described in [chapter 3](../quote-contract-order/). A service manager who adds a machine on the phone has changed nothing Billing sees.
+Most machine builders already have the recurring revenue that Billing is built for: maintenance contracts. In Revenue Cloud the contract is a product with a subscription selling model. Order activation creates an asset for the contract and billing schedules, and an invoice scheduler bills it, for example quarterly in advance. Every upsell, renewal or cancellation runs through a quote and an order, as described in [chapter 3](/en/masterclass/revenue-cloud/quote-contract-order/). A service manager who adds a machine on the phone has changed nothing Billing sees.
 
 Field Service does not read Revenue Cloud subscriptions. Service contract, contract line items, maintenance plan and entitlement deliver the visits, and I found no documented standard link from the sold subscription to the service contract. Plan a flow on order activation that creates or updates them. My rule for the records:
 
@@ -139,7 +139,7 @@ Field Service does not read Revenue Cloud subscriptions. Service contract, contr
 - The Field Service service contract answers which machines get which service level.
 - The machine asset with serial number belongs to service and is usually fed from the ERP.
 
-The details, including a scenario with 800 machines billed quarterly, are in [maintenance contracts with recurring billing](../../../blog/maintenance-contracts-recurring-billing/).
+The details, including a scenario with 800 machines billed quarterly, are in [maintenance contracts with recurring billing](/en/blog/maintenance-contracts-recurring-billing/).
 
 ## Finance sets the invoice owner per revenue type
 
@@ -156,4 +156,4 @@ To get there, the client settles these points before the partner configures anyt
 | The usage feed and the contract terms | For pay-per-use, before any rate card exists. |
 | The link to Field Service | For maintenance contracts, as automation with an owner. |
 
-If you run the old Salesforce Billing package today, open invoices, schedules and payment history have to move as well. That migration is part of [chapter 5, from CPQ to Revenue Cloud](../from-cpq-to-revenue-cloud/).
+If you run the old Salesforce Billing package today, open invoices, schedules and payment history have to move as well. That migration is part of [chapter 5, from CPQ to Revenue Cloud](/en/masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).

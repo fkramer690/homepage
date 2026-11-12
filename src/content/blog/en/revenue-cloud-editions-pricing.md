@@ -48,7 +48,7 @@ Three details from the same page matter for the budget:
 
 There is no free trial. The FAQ points to hands-on workshops instead.
 
-For how the two editions relate to Salesforce CPQ and the older Revenue Cloud of 2020, see [Revenue Cloud Advanced vs Revenue Cloud vs CPQ](../revenue-cloud-product-names-rlm-rca/).
+For how the two editions relate to Salesforce CPQ and the older Revenue Cloud of 2020, see [Revenue Cloud Advanced vs Revenue Cloud vs CPQ](/en/blog/revenue-cloud-product-names-rlm-rca/).
 
 ## Advanced adds contracts, orchestration and invoicing
 
@@ -69,7 +69,7 @@ contra: Advanced or Billing is the starting point if
 - usage, milestones or payments are to be invoiced in Salesforce (Billing)
 ```
 
-The question of which steps stay in SAP is covered in [Revenue Cloud and SAP: who owns what in quote to cash?](../revenue-cloud-sap-quote-to-cash-ownership/).
+The question of which steps stay in SAP is covered in [Revenue Cloud and SAP: who owns what in quote to cash?](/en/blog/revenue-cloud-sap-quote-to-cash-ownership/).
 
 ## What add-ons are available?
 
@@ -98,7 +98,7 @@ Revenue Cloud Billing is a separate add-on listed with the price "Request a Quot
 
 Consumption is counted in Billing Events. The [rate sheet from February 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) sets 0.02 Billing Events per $1 of total invoice amount, which is one event per $50. The subtotal includes shipping and handling and excludes taxes. Invoices in other currencies are converted to US dollars at the average daily rate. Only positive amounts on posted invoice lines count, and voiding an invoice does not return the events. The included events and the price of additional ones are specified in the order form. Events must be used before the order end date, and nothing rolls over.
 
-As an example, assume that a manufacturer invoices $20 million a year through Revenue Cloud Billing. That is 400,000 Billing Events. The cost of one event is not public, so the budget can only be based on the quote. How to estimate the volume and what to negotiate is covered in [Revenue Cloud Billing costs: what billing events mean](../revenue-cloud-billing-costs/).
+As an example, assume that a manufacturer invoices $20 million a year through Revenue Cloud Billing. That is 400,000 Billing Events. The cost of one event is not public, so the budget can only be based on the quote. How to estimate the volume and what to negotiate is covered in [Revenue Cloud Billing costs: what billing events mean](/en/blog/revenue-cloud-billing-costs/).
 
 ## How many Revenue Cloud licenses does a manufacturer need?
 
@@ -113,11 +113,11 @@ The edition determines the price per user. The license forecast determines the n
 
 Worked example: a machine builder has 80 Sales Cloud users. 35 of them create quotes, the other 45 work on accounts and opportunities and look at quotes now and then. 35 users with Advanced cost 35 × €200 × 12 = €84,000 a year at list price, compared with €63,000 on Growth. If all 80 users got Advanced, it would be €192,000. The difference of €108,000 a year only holds if read access is possible without a Revenue Cloud license, which is exactly why that question needs to be answered in the quote.
 
-Whether Growth and Advanced can be mixed in one org is not stated on the pricing page either. If only project sales needs contracts and usage, a mix would be the cheaper plan, so ask for it explicitly. How I build such a forecast in general is described in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+Whether Growth and Advanced can be mixed in one org is not stated on the pricing page either. If only project sales needs contracts and usage, a mix would be the cheaper plan, so ask for it explicitly. How I build such a forecast in general is described in [Salesforce licenses: does everyone need a full one?](/en/blog/salesforce-licences-full-licence-needed/).
 
 ## Get the license rule for readers and approvers in writing
 
-List prices are a starting point, and Salesforce is changing its edition model across clouds. Sales Cloud now comes in Core, Advanced and Max, as described in [Salesforce editions Core, Advanced, Max for manufacturers](../salesforce-editions-core-advanced-max/). Before signing I would get these points in writing:
+List prices are a starting point, and Salesforce is changing its edition model across clouds. Sales Cloud now comes in Core, Advanced and Max, as described in [Salesforce editions Core, Advanced, Max for manufacturers](/en/blog/salesforce-editions-core-advanced-max/). Before signing I would get these points in writing:
 
 - the feature list per edition as it applies to your contract, checked against the license comparison,
 - whether read-only users and approvers need a Revenue Cloud license,
@@ -126,4 +126,4 @@ List prices are a starting point, and Salesforce is changing its edition model a
 - the price per Billing Event and the number of events included,
 - a price cap for the renewal.
 
-Whether Revenue Cloud pays off at all is covered in [Revenue Cloud for manufacturers: when is it worth it?](../revenue-cloud-worth-it-manufacturers/), and the [overview chapter of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/) places pricing alongside the other decisions. License forecasts are part of my work in [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
+Whether Revenue Cloud pays off at all is covered in [Revenue Cloud for manufacturers: when is it worth it?](/en/blog/revenue-cloud-worth-it-manufacturers/), and the [overview chapter of the Revenue Cloud masterclass](/en/masterclass/revenue-cloud/revenue-cloud-overview/) places pricing alongside the other decisions. License forecasts are part of my work in [make-or-buy and license forecasts](/en/services/make-or-buy-licences/).

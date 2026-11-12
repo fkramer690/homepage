@@ -64,7 +64,7 @@ The page also states the default services you replace: inventory uses Omnichanne
 According to the same page, if the store uses Faster Add-to-Cart, every product needs an entry in a store price book before you implement the pricing extension, even if the real price later comes from the ERP.
 ```
 
-Which data should be retrieved live from the ERP and which should be copied into Salesforce is a design decision of its own. I cover it in [B2B Commerce and SAP: which data flows where?](../b2b-commerce-sap-data-flows/).
+Which data should be retrieved live from the ERP and which should be copied into Salesforce is a design decision of its own. I cover it in [B2B Commerce and SAP: which data flows where?](/en/blog/b2b-commerce-sap-data-flows/).
 
 ## Why should a domain extension keep the standard behavior running?
 
@@ -93,7 +93,7 @@ One limitation determines the migration order: according to the [Cart Calculate 
 
 My rule: new stores start with extensions. Existing integrations stay until the code has to change anyway, for example because the ERP interface changes or the store moves from Aura to LWR. Then decide for the whole store whether it switches to Cart Calculate and extensions or keeps the integrations with Cart Calculate disabled. Rewriting working integrations only because a newer mechanism exists rarely pays off.
 
-Payments are the exception. Salesforce states: "Currently, payments can't be customized with an extension." Payment gateways continue to use their own adapter; see [B2B checkout: purchase order, card or invoice?](../b2b-checkout-purchase-order-card-invoice/).
+Payments are the exception. Salesforce states: "Currently, payments can't be customized with an extension." Payment gateways continue to use their own adapter; see [B2B checkout: purchase order, card or invoice?](/en/blog/b2b-checkout-purchase-order-card-invoice/).
 
 ## Registration and mapping belong in the repository
 
@@ -111,14 +111,14 @@ title: Class names, extension point names and CLI commands
 
 What I would put into the contract and the pipeline:
 
-- Extension classes, tests and the registration and mapping commands live in the client's repository, as I argue in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
+- Extension classes, tests and the registration and mapping commands live in the client's repository, as I argue in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/).
 - The pipeline runs the CLI commands per environment, with the store names and IDs for each environment, so mappings are reproducible. Salesforce notes that managing extensions needs the latest Salesforce CLI, so pin tested versions of the CLI and commerce plug-in and update both on a fixed cadence.
-- Every extension change goes through a [pull request review](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) that checks whether the standard behavior still runs, whether ERP callout timeouts are handled and whether tests include assertions.
+- Every extension change goes through a [pull request review](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/) that checks whether the standard behavior still runs, whether ERP callout timeouts are handled and whether tests include assertions.
 - Manual mapping in production is reserved for emergencies and followed by a commit the same day.
 - Each extension has a written runtime policy: ERP timeout, retries, fallback, monitoring, and what the buyer sees when a live price or stock information is not available.
 
-The DevOps masterclass covers how store configuration travels with metadata in [data and configuration](../../masterclass/devops-release-management/data-and-configuration/) and how to set up the pipeline in [building the pipeline](../../masterclass/devops-release-management/building-the-pipeline/).
+The DevOps masterclass covers how store configuration travels with metadata in [data and configuration](/en/masterclass/devops-release-management/data-and-configuration/) and how to set up the pipeline in [building the pipeline](/en/masterclass/devops-release-management/building-the-pipeline/).
 
 ## Map every piece of custom logic to an extension point
 
-List every piece of custom logic in your store and assign it to an extension point, an old integration or a custom component, keeping in mind that cart calculation uses either extensions or integrations. Mark each domain provider that replaces the standard behavior and ask for the reason. Then check whether registration and mapping can be rebuilt from the repository in a fresh sandbox. If that fails, you have found your biggest dependency on the current partner. The ERP side of the same decisions is covered in the chapter [ERP integration](../../masterclass/b2b-commerce/erp-integration-stock-orders/), and the same extensions can also serve a [headless storefront](../headless-b2b-commerce-own-frontend/).
+List every piece of custom logic in your store and assign it to an extension point, an old integration or a custom component, keeping in mind that cart calculation uses either extensions or integrations. Mark each domain provider that replaces the standard behavior and ask for the reason. Then check whether registration and mapping can be rebuilt from the repository in a fresh sandbox. If that fails, you have found your biggest dependency on the current partner. The ERP side of the same decisions is covered in the chapter [ERP integration](/en/masterclass/b2b-commerce/erp-integration-stock-orders/), and the same extensions can also serve a [headless storefront](/en/blog/headless-b2b-commerce-own-frontend/).

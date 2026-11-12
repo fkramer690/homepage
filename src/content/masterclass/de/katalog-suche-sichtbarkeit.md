@@ -45,7 +45,7 @@ titel: Welche Standardobjekte bilden die Kette?
 - **BuyerGroupPricebook:** hängt Preisbücher an die Buyer Group.
 ```
 
-Sichtbarkeit und Preis hängen damit an denselben Gruppen. Wer Buyer Groups nur für das Sortiment schneidet, merkt in [Kapitel 3](../preise-warenkorb-checkout/), dass die Preise eine andere Einteilung bräuchten. Ich entwerfe beides deshalb zusammen. Was B2B Commerce überhaupt ist und was es kostet, steht in [Kapitel 1](../b2b-commerce-lohnt-sich-ueberblick/).
+Sichtbarkeit und Preis hängen damit an denselben Gruppen. Wer Buyer Groups nur für das Sortiment schneidet, merkt in [Kapitel 3](/masterclass/b2b-commerce/preise-warenkorb-checkout/), dass die Preise eine andere Einteilung bräuchten. Ich entwerfe beides deshalb zusammen. Was B2B Commerce überhaupt ist und was es kostet, steht in [Kapitel 1](/masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/).
 
 ## Die Grenzen, die das Design bestimmen
 
@@ -76,7 +76,7 @@ Auf der Seite zu Buyer Groups steht in einer Anmerkung außerdem ein anderer Wer
 
 Die Idee liegt nahe, weil sie das ERP spiegelt: Jeder Kunde hat eigene Konditionen, also erhält jeder Kunde eine eigene Gruppe. Bei 50 Händlern funktioniert das. Bei 2.500 Händlern ist ein Ersatzteil, das alle kaufen dürfen, 2.500 Gruppen zugeordnet und liegt über der Indexgrenze. Eine Policy "alle Ersatzteile" bedient höchstens 200 Gruppen und müsste mehrfach kopiert und gleich gehalten werden. Jeder neue Händler wird zum Datenprojekt.
 
-Ich schneide Buyer Groups nach Merkmalen, die sich selten ändern und die das ERP im Kundenstamm schon hat: Land oder Verkaufsorganisation, Händlerstufe wie Servicepartner oder Vertriebspartner, und Marke, wenn Händler nur eine Marke führen. Entitlement Policies folgen dann Sortimenten, nicht Kunden: "Ersatzteile allgemein", "Ersatzteile für Servicepartner", "Verbrauchsmaterial". Wie Sie die Mitgliedschaften aus dem ERP setzen und wann sich eine Zuordnung per Apex oder Regel lohnt, steht in [Buyer Groups und Entitlements](../../../blog/buyer-groups-entitlements-sichtbarkeit/).
+Ich schneide Buyer Groups nach Merkmalen, die sich selten ändern und die das ERP im Kundenstamm schon hat: Land oder Verkaufsorganisation, Händlerstufe wie Servicepartner oder Vertriebspartner, und Marke, wenn Händler nur eine Marke führen. Entitlement Policies folgen dann Sortimenten, nicht Kunden: "Ersatzteile allgemein", "Ersatzteile für Servicepartner", "Verbrauchsmaterial". Wie Sie die Mitgliedschaften aus dem ERP setzen und wann sich eine Zuordnung per Apex oder Regel lohnt, steht in [Buyer Groups und Entitlements](/blog/buyer-groups-entitlements-sichtbarkeit/).
 
 ```vergleich
 ohne: Eine Buyer Group pro Händler
@@ -91,11 +91,11 @@ mit: Buyer Groups nach Merkmalen
 
 ## Wem gehören die Produktdaten?
 
-Produktdaten für den Shop sollten nicht in Salesforce gepflegt werden. Das ERP besitzt, was es heute schon besitzt: Materialnummer, Mengeneinheit, Vertriebsstatus. Ein PIM, falls vorhanden, besitzt Texte, technische Merkmale, Bilder und Übersetzungen. Salesforce hält eine Kopie und pflegt nur, was zum Store gehört, etwa Kategorien und Sucheinstellungen. Korrigiert ein Merchandiser einen Tippfehler in Salesforce und überschreibt ihn der nächtliche ERP-Import, sieht der Händler den Fehler am nächsten Tag wieder. Danach vertraut der Merchandiser dem Shop nicht mehr. Das Prinzip gilt für jedes Objekt der Org und steht ausführlich in der [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/).
+Produktdaten für den Shop sollten nicht in Salesforce gepflegt werden. Das ERP besitzt, was es heute schon besitzt: Materialnummer, Mengeneinheit, Vertriebsstatus. Ein PIM, falls vorhanden, besitzt Texte, technische Merkmale, Bilder und Übersetzungen. Salesforce hält eine Kopie und pflegt nur, was zum Store gehört, etwa Kategorien und Sucheinstellungen. Korrigiert ein Merchandiser einen Tippfehler in Salesforce und überschreibt ihn der nächtliche ERP-Import, sieht der Händler den Fehler am nächsten Tag wieder. Danach vertraut der Merchandiser dem Shop nicht mehr. Das Prinzip gilt für jedes Objekt der Org und steht ausführlich in der [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/).
 
 Ob Sie ein PIM brauchen, hängt vom Umfang ab. Bei einigen tausend Teilen mit deutschen und englischen Texten aus dem ERP reicht das ERP als einzige Quelle. Bei zehntausenden Teilen, vielen Sprachen und Filtermerkmalen pflegt das niemand im Materialstamm.
 
-Zwei Grenzen aus der Tabelle prägen die Produktdaten. Neun Bilder pro Produkt reichen für die meisten Ersatzteile, aber Zeichnungen und Datenblätter mit Revisionen liegen besser im DAM oder PLM. Salesforce hat im [Juli 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) angekündigt, externe DAM-Plattformen, 3D-Modelle und technische Daten über LWC-Wrapper auf Produktseiten anzuzeigen; das würde ich vor der Planung in einer Sandbox testen. Und Varianten brauchen saubere Merkmalswerte. "50 mm", "50mm" und "DN50" in drei Materialstämmen ergeben drei Filterwerte. Die Aufteilung zwischen ERP, PIM und Salesforce im Detail steht in [Produktdaten für B2B Commerce](../../../blog/produktdaten-b2b-commerce-pim-erp/).
+Zwei Grenzen aus der Tabelle prägen die Produktdaten. Neun Bilder pro Produkt reichen für die meisten Ersatzteile, aber Zeichnungen und Datenblätter mit Revisionen liegen besser im DAM oder PLM. Salesforce hat im [Juli 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) angekündigt, externe DAM-Plattformen, 3D-Modelle und technische Daten über LWC-Wrapper auf Produktseiten anzuzeigen; das würde ich vor der Planung in einer Sandbox testen. Und Varianten brauchen saubere Merkmalswerte. "50 mm", "50mm" und "DN50" in drei Materialstämmen ergeben drei Filterwerte. Die Aufteilung zwischen ERP, PIM und Salesforce im Detail steht in [Produktdaten für B2B Commerce](/blog/produktdaten-b2b-commerce-pim-erp/).
 
 ## Wie finden Händler Ersatzteile über die Teilenummer?
 
@@ -118,7 +118,7 @@ Daraus folgen drei Regeln für Teilekataloge:
 2. **Synonyme sind für Wörter.** 100 Regeln reichen für "O-Ring" und "Dichtring", nicht für 8.000 Vorgängernummern.
 3. **Nach jeder Änderung neu indizieren.** Trailhead nennt geänderte durchsuchbare Felder, Produkte, Kategorien und Entitlement Policies als Anlässe, den Suchindex neu aufzubauen.
 
-Salesforce hat die Suche 2026 erweitert. Mit den Neuerungen vom [Juni 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) beschreibt Salesforce eine B2B-Suche, bei der Käufer ein Teil in eigenen Worten beschreiben, statt Namen oder SKU zu kennen. Im Juli folgten Boost and Bury, die Reihenfolge von Filtergruppen und Suchanalysen über Data Cloud mit Klickraten, Conversion und Suchen ohne Treffer. Diese Nullsuchen sind nach dem Go-live die beste Liste fehlender Produktdaten. Einrichtung und Grenzen im Detail beschreibt [B2B-Shop-Suche: Ersatzteile über die Teilenummer finden](../../../blog/b2b-shop-suche-teilenummer/).
+Salesforce hat die Suche 2026 erweitert. Mit den Neuerungen vom [Juni 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) beschreibt Salesforce eine B2B-Suche, bei der Käufer ein Teil in eigenen Worten beschreiben, statt Namen oder SKU zu kennen. Im Juli folgten Boost and Bury, die Reihenfolge von Filtergruppen und Suchanalysen über Data Cloud mit Klickraten, Conversion und Suchen ohne Treffer. Diese Nullsuchen sind nach dem Go-live die beste Liste fehlender Produktdaten. Einrichtung und Grenzen im Detail beschreibt [B2B-Shop-Suche: Ersatzteile über die Teilenummer finden](/blog/b2b-shop-suche-teilenummer/).
 
 ## Ein Store oder mehrere?
 
@@ -133,7 +133,7 @@ Einen zweiten Store plane ich in vier Fällen:
 | Anderer Checkout oder anderes ERP | Erweiterungen für Preise, Bestand oder Auftragsanlage werden pro Store zugeordnet. |
 | Andere Käufer | Endkunden neben Händlern erhalten einen eigenen D2C-Store mit gemeinsamen Produktdaten. |
 
-Die Lizenz begrenzt die Zahl der Stores deutlich früher als die Grenze von 100 Stores pro Org. Laut [Preisseite](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) enthält die Growth Edition sechs Storefronts, die Advanced Edition zehn. Und jeder weitere Store bringt eigene Seiten, Übersetzungen und einen eigenen Regressionstest nach jedem der drei Salesforce-Releases im Jahr. Die Entscheidung mit Beispiel steht in [Ein B2B-Store oder mehrere](../../../blog/b2b-store-laender-marken-haendler/).
+Die Lizenz begrenzt die Zahl der Stores deutlich früher als die Grenze von 100 Stores pro Org. Laut [Preisseite](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) enthält die Growth Edition sechs Storefronts, die Advanced Edition zehn. Und jeder weitere Store bringt eigene Seiten, Übersetzungen und einen eigenen Regressionstest nach jedem der drei Salesforce-Releases im Jahr. Die Entscheidung mit Beispiel steht in [Ein B2B-Store oder mehrere](/blog/b2b-store-laender-marken-haendler/).
 
 ## Teile pro Maschine: wo Entitlements aufhören
 
@@ -150,7 +150,7 @@ PLM ..live..> Maschinenseite
 Entitlements und Preise --Kaufrecht und Preis--> Maschinenseite
 ```
 
-Die Daten entscheiden mehr als die Komponente: Ohne Stückliste pro Seriennummer, also die Teile, die in genau dieser Maschine verbaut sind, kann kein Shop die Frage beantworten. Die Optionen stehen in [Ersatzteilshop: nur Teile zur eigenen Maschine](../../../blog/ersatzteilshop-teile-pro-maschine/), dieselbe Datenlage aus Sicht eines Agenten in [Ersatzteile per Seriennummer finden](../../../blog/ersatzteile-seriennummer-ki-agent/). Wie die installierte Basis als Asset gepflegt wird, behandelt die Masterclass Manufacturing Cloud im Kapitel [Garantie und After-Sales](../../manufacturing-cloud/garantie-und-after-sales/). Eine Regel lockere ich nie: Der Händler sieht nur Maschinen, die auf seinen eigenen Account registriert sind, gelesen aus dem Asset, nie aus einem Freitextfeld.
+Die Daten entscheiden mehr als die Komponente: Ohne Stückliste pro Seriennummer, also die Teile, die in genau dieser Maschine verbaut sind, kann kein Shop die Frage beantworten. Die Optionen stehen in [Ersatzteilshop: nur Teile zur eigenen Maschine](/blog/ersatzteilshop-teile-pro-maschine/), dieselbe Datenlage aus Sicht eines Agenten in [Ersatzteile per Seriennummer finden](/blog/ersatzteile-seriennummer-ki-agent/). Wie die installierte Basis als Asset gepflegt wird, behandelt die Masterclass Manufacturing Cloud im Kapitel [Garantie und After-Sales](/masterclass/manufacturing-cloud/garantie-und-after-sales/). Eine Regel lockere ich nie: Der Händler sieht nur Maschinen, die auf seinen eigenen Account registriert sind, gelesen aus dem Asset, nie aus einem Freitextfeld.
 
 ## Rechenbeispiel: 800 Händler in 12 Ländern
 
@@ -171,4 +171,4 @@ Schreiben Sie das Entitlement-Konzept auf eine Seite, bevor jemand Daten lädt:
 - die Mengen von heute und in drei Jahren, gemessen an den Grenzen oben,
 - 200 echte Suchbegriffe von Händlern aus E-Mails und Telefonnotizen, gegen einen Teststore geprüft.
 
-Die ERP-Felder, die Mitgliedschaften und Suche speisen, werden danach in die Schnittstellenliste aus [Kapitel 4](../erp-integration-bestand-auftraege/) übernommen. Solche Konzepte prüfe ich, bevor ein Partner baut, im Rahmen von [Salesforce-Architektur](../../../leistungen/salesforce-architektur/); welche Daten aus welchem System kommen, ist Teil von [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
+Die ERP-Felder, die Mitgliedschaften und Suche speisen, werden danach in die Schnittstellenliste aus [Kapitel 4](/masterclass/b2b-commerce/erp-integration-bestand-auftraege/) übernommen. Solche Konzepte prüfe ich, bevor ein Partner baut, im Rahmen von [Salesforce-Architektur](/leistungen/salesforce-architektur/); welche Daten aus welchem System kommen, ist Teil von [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/). Alle Kapitel finden Sie auf der [Übersichtsseite](/masterclass/b2b-commerce/).

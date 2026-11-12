@@ -43,7 +43,7 @@ This leads to a requirement that often surfaces late: the rules on which combina
 
 ## Custom approach or standard product?
 
-For quoting there are three routes today: Revenue Cloud Advanced from Salesforce, a partner product, or a custom approach on the platform. Salesforce CPQ is no longer an option for new customers. According to [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/), CPQ is no longer sold to new customers, while existing customers can still buy users, renew and receive support. New features are added to Revenue Cloud Advanced, and there is no forced migration. What applies today is covered in [Salesforce CPQ end of sale](../salesforce-cpq-end-of-sale-status/), how to plan the move in [chapter 5 of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
+For quoting there are three routes today: Revenue Cloud Advanced from Salesforce, a partner product, or a custom approach on the platform. Salesforce CPQ is no longer an option for new customers. According to [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/), CPQ is no longer sold to new customers, while existing customers can still buy users, renew and receive support. New features are added to Revenue Cloud Advanced, and there is no forced migration. What applies today is covered in [Salesforce CPQ end of sale](/en/blog/salesforce-cpq-end-of-sale-status/), how to plan the move in [chapter 5 of the Revenue Cloud masterclass](/en/masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
 
 In the project we took a custom CPQ approach. Whether that would be the right choice again today depends on the same questions I ask in every make-or-buy decision:
 
@@ -51,7 +51,7 @@ In the project we took a custom CPQ approach. Whether that would be the right ch
 - **Who maintains the rules?** A custom configurator is your own code, which has to be tested with every release and maintained by someone.
 - **What does the license cost over several years?** A standard product is priced per user, while a custom approach incurs development and maintenance costs.
 
-I describe how I calculate such cases in [make-or-buy and license forecasts](../../services/make-or-buy-licences/). Whether Manufacturing Cloud itself pays off is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
+I describe how I calculate such cases in [make-or-buy and license forecasts](/en/services/make-or-buy-licences/). Whether Manufacturing Cloud itself pays off is covered in [part 1 of this series](/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/).
 
 ## When does a configuration become a product?
 
@@ -65,7 +65,7 @@ For the design, that means deciding early:
 2. **Who creates the product?** When a new variant appears in a quote, it has to be created in the ERP before it can be ordered. That process requires approval, usually outside sales.
 3. **How does the catalog grow?** If almost every configuration is unique, the product catalog grows fast. A rule for when a variant is reused helps.
 
-How actuals are then transferred from the ERP into the sales agreement is covered in [part 3: sales agreements, spotting customers behind on volume](../sales-agreements-volume-shortfall-erp/).
+How actuals are then transferred from the ERP into the sales agreement is covered in [part 3: sales agreements, spotting customers behind on volume](/en/blog/sales-agreements-volume-shortfall-erp/).
 
 ## The Connect API turns the quote into a sales agreement
 
@@ -109,6 +109,6 @@ Before the configurator is built or a product is chosen, settle these points:
 1. **What gets configured?** A list of properties that affect costs, agreed with production, quality and procurement.
 2. **When does a product come into being?** The rule for which property creates a new material number in the ERP.
 3. **Which fields move into the agreement?** The mapping from the table above, including term and account level.
-4. **Where is the price approved?** One place, documented in the decision log of the [Salesforce architecture](../../services/salesforce-architecture/).
+4. **Where is the price approved?** One place, documented in the decision log of the [Salesforce architecture](/en/services/salesforce-architecture/).
 
 I decide point 2 together with the ERP team, because every new variant receives a material number there. Without that rule, the sales agreement fills up with products the ERP does not know.

@@ -80,7 +80,7 @@ I have not found a Salesforce reference pattern for Revenue Cloud and SAP. The c
 1. The callout sends a stable idempotency key, such as the Salesforce order ID, and the integration layer or SAP checks it before creating an order. Merely sending the ID does not prevent duplicates.
 2. The SAP order number comes back and is stored on the Salesforce order, either in the synchronous response or, in the asynchronous pattern, through a later callback: the callout stays in progress after an HTTP 202 until the result arrives.
 3. In the architecture assumed here, SAP owns delivery, confirmed dates and the invoice after the hand-over. Salesforce shows the status and does not change it.
-4. Changes after submission need an explicit amendment design. Revenue Cloud can create a linked supplemental order, DRO reconciles the running plan and can run compensation steps, and whether SAP gets a change, a cancellation or a replacement order is an integration decision. How amendments work on the asset side is explained in [assets, amendments and renewals](../revenue-cloud-assets-amendments-renewals/).
+4. Changes after submission need an explicit amendment design. Revenue Cloud can create a linked supplemental order, DRO reconciles the running plan and can run compensation steps, and whether SAP gets a change, a cancellation or a replacement order is an integration decision. How amendments work on the asset side is explained in [assets, amendments and renewals](/en/blog/revenue-cloud-assets-amendments-renewals/).
 
 ```ablauf
 sf: Order, DRO plan, Fallout queue
@@ -93,7 +93,7 @@ SAP sales order --> Delivery
 Delivery --> Invoice
 ```
 
-Which system owns which step from quote to invoice is the topic of [Revenue Cloud and SAP: who owns what](../revenue-cloud-sap-quote-to-cash-ownership/). The same split belongs in your [object ownership matrix](../salesforce-object-ownership-matrix/), so no partner builds a second path to SAP. Reading the order status back from SAP for dealers is covered in [Agentforce and SAP: order status through MuleSoft](../agentforce-sap-order-status-mulesoft/).
+Which system owns which step from quote to invoice is the topic of [Revenue Cloud and SAP: who owns what](/en/blog/revenue-cloud-sap-quote-to-cash-ownership/). The same split belongs in your [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/), so no partner builds a second path to SAP. Reading the order status back from SAP for dealers is covered in [Agentforce and SAP: order status through MuleSoft](/en/blog/agentforce-sap-order-status-mulesoft/).
 
 ## What happens when SAP rejects the order?
 
@@ -122,4 +122,4 @@ What the freemium access includes is not stated on the pricing page. Get it in w
 
 ## Sketch your five most common order types
 
-Take your five most common order types and, for each one, sketch what happens after signing: which system, which team, in which order. If every sketch ends in "SAP does the rest", start with a plain integration. If you see several systems and dependencies, model one order type in DRO first, including the callout to SAP and the fallout queue, and test the rejections before the happy path. The chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/) shows where this step sits in the whole process, and the integration design is part of my work in [Salesforce integration](../../services/salesforce-integration/).
+Take your five most common order types and, for each one, sketch what happens after signing: which system, which team, in which order. If every sketch ends in "SAP does the rest", start with a plain integration. If you see several systems and dependencies, model one order type in DRO first, including the callout to SAP and the fallout queue, and test the rejections before the happy path. The chapter [quote, contract, order](/en/masterclass/revenue-cloud/quote-contract-order/) shows where this step sits in the whole process, and the integration design is part of my work in [Salesforce integration](/en/services/salesforce-integration/).

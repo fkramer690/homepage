@@ -72,7 +72,7 @@ titel: Was die Einstellung „Enable In-Region Model Request Only“ bewirkt
 Sie liegt im Einstein Setup und setzt Data 360 voraus. Ist sie aktiviert und sind die regionalen Endpunkte nicht erreichbar, wird ein Fehler ausgegeben, statt die Anfrage in die USA umzuleiten. Laut Salesforce-Hilfe deaktiviert sie den regionalen Fallback für Anthropic- und GPT-Modelle vollständig; das System versucht weiterhin zuerst, den primären und sekundären Endpunkt in der Region zu erreichen. Auf die Batch-Verarbeitung wirkt sie nicht.
 ```
 
-In-Region-only hat einen Preis: Bei einem Ausfall liefert der Agent einen Fehler. Beim Auftragsstatus ist das mit einer Übergabe an einen Menschen vertretbar. Für eine [Störungshotline](../stoerungshotline-agentforce-voice-deutsch/) würde ich das ohne getestete Übergabe an einen Disponenten nicht akzeptieren.
+In-Region-only hat einen Preis: Bei einem Ausfall liefert der Agent einen Fehler. Beim Auftragsstatus ist das mit einer Übergabe an einen Menschen vertretbar. Für eine [Störungshotline](/blog/stoerungshotline-agentforce-voice-deutsch/) würde ich das ohne getestete Übergabe an einen Disponenten nicht akzeptieren.
 
 ## Für Agentforce ist die Hyperforce Operating Zone nicht bestätigt
 
@@ -88,7 +88,7 @@ Koa, das eigene CRM-Reasoning-Modell von Salesforce, startet zuerst in den USA. 
 
 Ich bin Salesforce-Architekt, kein Anwalt, und das hier ist keine Rechtsberatung. So wie ich es lese, verlangt die DSGVO nicht, dass Daten in der EU bleiben. Laut Datenschutz-FAQ von Salesforce sind alle Salesforce-Dienste einschließlich Agentforce durch die EU-Standardvertragsklauseln abgedeckt, dazu kommen Binding Corporate Rules für Auftragsverarbeiter. Ob das für einen konkreten Datenfluss reicht, entscheidet Ihr Datenschutzbeauftragter: Modellroute, Unterauftragsverarbeiter, Datenkategorien, Übermittlungsinstrument und mögliche ergänzende Maßnahmen gehören in diese Transferbewertung. Ein Datenschutzbeauftragter kann trotzdem eine Verarbeitung in der EU verlangen, sobald Prompts Händlerkontakte, Namen von Technikern im Außendienst oder Garantiefälle enthalten.
 
-Drei benachbarte Themen folgen eigenen Regeln: die [Fristen des EU AI Act für Agentforce](../eu-ai-act-fristen-agentforce/), [KI-Coding-Tools mit Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/) und externe Modelle, die über [Hosted MCP Server](../salesforce-hosted-mcp-server-datenzugriff/) Salesforce-Daten lesen und für die die Aufbewahrungsvereinbarungen von Salesforce nicht greifen.
+Drei benachbarte Themen folgen eigenen Regeln: die [Fristen des EU AI Act für Agentforce](/blog/eu-ai-act-fristen-agentforce/), [KI-Coding-Tools mit Betriebsrat und DSGVO](/blog/ki-coding-betriebsrat-dsgvo/) und externe Modelle, die über [Hosted MCP Server](/blog/salesforce-hosted-mcp-server-datenzugriff/) Salesforce-Daten lesen und für die die Aufbewahrungsvereinbarungen von Salesforce nicht greifen.
 
 ## Rechenbeispiel: Händleranfragen aus fünf Ländern
 
@@ -117,4 +117,4 @@ Fragen Sie Salesforce pro Agent und legen Sie die Antworten in der Architekturdo
 7. **Aufbewahrung.** Gilt Zero Data Retention für Ihr Modell, welche Prompts und Traces werden in Data 360 gespeichert, und welche Klauseln Ihres eigenen Anbietervertrags greifen bei BYOLLM?
 8. **Änderungen.** Wie erfahren Sie, wenn sich das Standardmodell, das Routing oder die Unterauftragsverarbeiter-Liste ändert?
 
-Ändert Salesforce das Standardmodell oder die Liste der Unterauftragsverarbeiter, stellen Sie die Fragen 1 bis 5 neu; am einfachsten hält ein Eintrag im [Entscheidungslog](../salesforce-architektur-entscheidungslog/) fest, welche Antwort für welchen Agenten gilt. Diese Fragen pro Agent zu klären, gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/); den größeren Überblick über Agenten in der Fertigung gibt [Kapitel 10 der KI-Masterclass](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
+Ändert Salesforce das Standardmodell oder die Liste der Unterauftragsverarbeiter, stellen Sie die Fragen 1 bis 5 neu; am einfachsten hält ein Eintrag im [Entscheidungslog](/blog/salesforce-architektur-entscheidungslog/) fest, welche Antwort für welchen Agenten gilt. Diese Fragen pro Agent zu klären, gehört zu meiner Arbeit in der [Salesforce-Architektur](/leistungen/salesforce-architektur/); den größeren Überblick über Agenten in der Fertigung gibt [Kapitel 10 der KI-Masterclass](/masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).

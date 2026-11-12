@@ -96,10 +96,10 @@ K | Knowledge | Know-how | How does it work?
 A | Ability | Doing it | Can I do it in daily work?
 R | Reinforcement | Making it stick | Does it last, or do I slip back? *
 case: Awareness is missing | A sales team does not know what the maintained opportunities are needed for. | The head of sales has to explain that, not the trainer.
-case: Reinforcement is missing | A partner's developers know the naming conventions, but nobody checks them in the pipeline. | Then an automatic check belongs in the [release process](../devops-release-management/).
+case: Reinforcement is missing | A partner's developers know the naming conventions, but nobody checks them in the pipeline. | Then an automatic check belongs in the [release process](/en/services/devops-release-management/).
 ```
 
-Salesforce helps with measuring. Reports on created and maintained records show more reliably than a survey whether a new process is used. We define these figures in the first phase and look at them regularly in the second. I describe the individual topics, from key users to measuring adoption, in [Salesforce change management: why rollouts fail](../../blog/change-management-salesforce-rollout/). The [change management masterclass](../../masterclass/change-management/) goes through the five stages chapter by chapter.
+Salesforce helps with measuring. Reports on created and maintained records show more reliably than a survey whether a new process is used. We define these figures in the first phase and look at them regularly in the second. I describe the individual topics, from key users to measuring adoption, in [Salesforce change management: why rollouts fail](/en/blog/change-management-salesforce-rollout/). The [change management masterclass](/en/masterclass/change-management/) goes through the five stages chapter by chapter.
 
 ## Shared standards for five partners in three months
 
@@ -111,9 +111,9 @@ Salesforce helps with measuring. Reports on created and maintained records show 
 source: my largest program as architect on the client side
 ```
 
-At the start of this program, the technical approaches of the teams had drifted far apart. So we introduced shared standards for naming conventions, one automation entry point per object, test coverage and an [object ownership matrix](../../blog/salesforce-object-ownership-matrix/) in stages.
+At the start of this program, the technical approaches of the teams had drifted far apart. So we introduced shared standards for naming conventions, one automation entry point per object, test coverage and an [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/) in stages.
 
-The first version covered around 80 percent of the cases. We added the edge cases step by step as they came up in the project. Later we discussed new topics with lead time in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), before they turned into problems. Over time, hardly any new edge cases came up. I describe the rules for several partners under [partner governance](../partner-governance/).
+The first version covered around 80 percent of the cases. We added the edge cases step by step as they came up in the project. Later we discussed new topics with lead time in regular [Center of Excellence calls](/en/blog/salesforce-center-of-excellence-cadence/), before they turned into problems. Over time, hardly any new edge cases came up. I describe the rules for several partners under [partner governance](/en/services/partner-governance/).
 
 ## Smaller releases need a fixed route into the business
 
@@ -143,6 +143,6 @@ source: Prosci, Best Practices in Change Management, 12th edition, 2,668 partici
 
 In the 12th edition of its study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), Prosci reports from its benchmark data that projects with excellent change management met their objectives seven times as often as projects with poor change management, 88 against 13 percent. Participants name active and visible sponsorship by management as the biggest contributor to success. That matches what I see in Salesforce programs.
 
-Together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), who is Prosci certified, I have applied two building blocks from Prosci to Salesforce programs: the ADKAR model described above and the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). The 3-Phase Process gives the rollout a frame at the level of the organization: Prepare Approach, Manage Change and Sustain Outcomes. The steps under “How we work together” follow these phases.
+Together with [Juliane Winterscheid](/en/partners/juliane-winterscheid/), who is Prosci certified, I have applied two building blocks from Prosci to Salesforce programs: the ADKAR model described above and the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). The 3-Phase Process gives the rollout a frame at the level of the organization: Prepare Approach, Manage Change and Sustain Outcomes. The steps under “How we work together” follow these phases.
 
 Prosci and ADKAR are registered trademarks of Prosci, Inc. The Prosci certification is held by Juliane Winterscheid, not by FK Solution Design, and FK Solution Design is not a Prosci partner. This page describes how we apply elements of the approach in Salesforce programs.

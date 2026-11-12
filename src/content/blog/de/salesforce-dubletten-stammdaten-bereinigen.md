@@ -43,11 +43,11 @@ Dubletten entstehen selten, weil jemand schlampig arbeitet. Bei Herstellern sehe
 In meinen Field-Service-Projekten stammte die installierte Basis aus dem ERP, und die Datenqualität der Assets war einer der Stolpersteine. Eine Anlage, die zweimal existiert, hat zwei halbe Servicehistorien, und der Techniker sieht vor Ort nur eine davon.
 ```
 
-Wie die installierte Basis aufgebaut sein sollte, beschreibe ich in [Asset-Hierarchie im Field Service](../field-service-asset-hierarchie-maschinen/) und in [Field Service Stammdaten](../salesforce-field-service-stammdaten/).
+Wie die installierte Basis aufgebaut sein sollte, beschreibe ich in [Asset-Hierarchie im Field Service](/blog/field-service-asset-hierarchie-maschinen/) und in [Field Service Stammdaten](/blog/salesforce-field-service-stammdaten/).
 
 ## Warum kommt die Bereinigung vor dem KI-Agenten?
 
-Ein Mensch, der zwei ähnliche Accounts sieht, wird stutzig und fragt nach. Ein Agent tut, was seine Aktionen und Anweisungen erlauben: Wenn eine Suche zwei plausible Treffer liefert und keine Regel die Auswahl bestimmt, nennt er womöglich den falschen Vertrag, schickt das Angebot an den falschen Ansprechpartner oder prüft eine Garantie gegen die falsche Anlage. Er tut das in einem überzeugenden Ton, und genau das macht den Fehler teuer. Neben der Bereinigung sollten Agentenaktionen präzise filtern, stabile Datensatz-IDs übergeben und bei mehreren Treffern nachfragen. Business Value und Datenqualität stehen deshalb bei mir vor jedem Agenten, siehe [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
+Ein Mensch, der zwei ähnliche Accounts sieht, wird stutzig und fragt nach. Ein Agent tut, was seine Aktionen und Anweisungen erlauben: Wenn eine Suche zwei plausible Treffer liefert und keine Regel die Auswahl bestimmt, nennt er womöglich den falschen Vertrag, schickt das Angebot an den falschen Ansprechpartner oder prüft eine Garantie gegen die falsche Anlage. Er tut das in einem überzeugenden Ton, und genau das macht den Fehler teuer. Neben der Bereinigung sollten Agentenaktionen präzise filtern, stabile Datensatz-IDs übergeben und bei mehreren Treffern nachfragen. Business Value und Datenqualität stehen deshalb bei mir vor jedem Agenten, siehe [Agentforce: Business Value und Datenqualität zuerst](/blog/agentforce-business-value-datenqualitaet/).
 
 ## Wie bereinigen Sie Dubletten Schritt für Schritt?
 
@@ -86,7 +86,7 @@ Aktivieren Sie Duplicate Rules zunächst mit der Aktion „Warnen“ und werten 
 
 ## Ein Upsert über eine eindeutige External ID hält ERP-Dubletten fern
 
-Die wirksamste Maßnahme liegt in der Schnittstelle. Jeder Datensatz aus dem ERP trägt den ERP-Schlüssel in einem External-ID-Feld, und die Schnittstelle schreibt per Upsert: Gibt es den Schlüssel schon, wird aktualisiert, sonst angelegt. Markieren Sie das Feld als eindeutig, weisen Sie Datensätze ohne Schlüssel ab und überwachen Sie neu angelegte Datensätze. Dann erzeugt ein Import keine Dublette mehr, nur weil ein Name anders geschrieben ist. Ein Upsert kann nicht entscheiden, ob zwei verschiedene ERP-Schlüssel zu demselben Kunden gehören. Das bleibt eine fachliche Entscheidung. Welches System welche Daten führt, gehört in die Integrationsarchitektur, die ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/) beschreibe.
+Die wirksamste Maßnahme liegt in der Schnittstelle. Jeder Datensatz aus dem ERP trägt den ERP-Schlüssel in einem External-ID-Feld, und die Schnittstelle schreibt per Upsert: Gibt es den Schlüssel schon, wird aktualisiert, sonst angelegt. Markieren Sie das Feld als eindeutig, weisen Sie Datensätze ohne Schlüssel ab und überwachen Sie neu angelegte Datensätze. Dann erzeugt ein Import keine Dublette mehr, nur weil ein Name anders geschrieben ist. Ein Upsert kann nicht entscheiden, ob zwei verschiedene ERP-Schlüssel zu demselben Kunden gehören. Das bleibt eine fachliche Entscheidung. Welches System welche Daten führt, gehört in die Integrationsarchitektur, die ich unter [Integration mit ERP, Middleware und Telefonie](/leistungen/salesforce-schnittstellen/) beschreibe.
 
 ## Wer ist für die Datenqualität verantwortlich?
 

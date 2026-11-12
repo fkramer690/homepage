@@ -48,7 +48,7 @@ Salesforce lists the details in its [developer guide to Winter '27](https://deve
 
 A small org has a handful of integrations, and the admin knows them. An enterprise org has grown over the years. Typical sources of password-based logins are:
 
-- **ERP and order integrations** that were set up years ago by a partner who is no longer involved. If you run a B2B store on SAP, its data flows belong on the list too, see [B2B Commerce and SAP: which data flows where?](../b2b-commerce-sap-data-flows/).
+- **ERP and order integrations** that were set up years ago by a partner who is no longer involved. If you run a B2B store on SAP, its data flows belong on the list too, see [B2B Commerce and SAP: which data flows where?](/en/blog/b2b-commerce-sap-data-flows/).
 - **Middleware and integration platforms** where a technical user's password sits in a configuration screen.
 - **Data loaders and scheduled scripts** that run on a server under someone's desk.
 - **Backup, archiving and reporting tools** that pull data every night.
@@ -68,7 +68,7 @@ Start the inventory now, not in January. These sources complement each other:
 4. **Sandbox test.** In a full or partial copy sandbox, turn off the setting "Allow OAuth Username-Password Flows" and run the integrations. The test is meaningful only if the external systems, app configuration, users and scheduled jobs really point to that sandbox. What fails there would fail in production in February.
 5. **SOAP logins.** Check which integration users log in via SOAP and which API versions they use, so the December and Summer '27 steps don't catch you off guard.
 
-The result should be one list: integration, purpose, owner on the client side, technical user, flow, API version, vendor or partner, migration date. That list is worth keeping after the migration, as part of the [architecture documentation](../../services/salesforce-integration/).
+The result should be one list: integration, purpose, owner on the client side, technical user, flow, API version, vendor or partner, migration date. That list is worth keeping after the migration, as part of the [architecture documentation](/en/services/salesforce-integration/).
 
 ## Which flow replaces the password login?
 
@@ -96,7 +96,7 @@ Integrations connect the client's systems, and the credentials belong in the cli
 
 - **A named owner per integration** on the client side, even if a partner does the technical work.
 - **A dedicated integration user per system or trust boundary**, with only the permissions it needs. Separate users are justified when owners, permissions, criticality or secret rotation differ. Shared technical users make it impossible to tell which system does what.
-- **Secrets and certificates in the client's vault**, rotated when a partner leaves. I explain the broader principle in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
+- **Secrets and certificates in the client's vault**, rotated when a partner leaves. I explain the broader principle in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/).
 - **Changes through the normal release process**, with the new connected app or External Client App configuration in the repository and deployed through the pipeline.
 
 ## First step: inventory by the end of November 2026

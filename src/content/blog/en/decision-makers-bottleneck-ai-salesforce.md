@@ -32,7 +32,7 @@ When coding agents speed up Salesforce delivery, the development team is often n
 
 ## Why does the decision maker become the bottleneck when AI builds?
 
-A project is as fast as its slowest step. As long as developers needed weeks for a stream, nobody noticed that questions to the business remained unanswered for a few days. Coding agents can shrink the build time; the waiting time stays. I describe the flow in which the agent does the implementation work and people decide at fixed gates in [AI-native Salesforce delivery process](../ai-native-salesforce-delivery-process/). It is my target operating model; I already use individual steps, but not yet end to end. Even in that sketch, the client is responsible for three of the five gates.
+A project is as fast as its slowest step. As long as developers needed weeks for a stream, nobody noticed that questions to the business remained unanswered for a few days. Coding agents can shrink the build time; the waiting time stays. I describe the flow in which the agent does the implementation work and people decide at fixed gates in [AI-native Salesforce delivery process](/en/blog/ai-native-salesforce-delivery-process/). It is my target operating model; I already use individual steps, but not yet end to end. Even in that sketch, the client is responsible for three of the five gates.
 
 The 2025 DORA report calls AI an amplifier: it magnifies the strengths of good organizations and the dysfunctions of the others. Google's [DORA post from December 2025](https://cloud.google.com/blog/products/ai-machine-learning/from-adoption-to-impact-putting-the-dora-ai-capabilities-model-to-work?hl=en) warns that speed gains in individual steps only create a backlog in front of the next one; DORA names review, testing, security and deployment as examples. That client decisions become the next bottleneck is my own observation from projects, not a research result.
 
@@ -46,7 +46,7 @@ In every one of my projects, user acceptance testing or the acceptance of storie
 
 ### Daily business wins
 
-The head of service who is supposed to decide on the warranty claims process also runs a team. When a machine is down at a customer site, the outage takes priority. In a classic project this was hardly noticeable, because between concept and acceptance testing the business had little to do for weeks anyway. With daily demos the team needs an answer every day. In [AI-native delivery: smaller Salesforce teams](../ai-native-delivery-smaller-salesforce-teams/) I estimate that the product owner needs about half of their working time per stream. That time rarely appears in the project plan.
+The head of service who is supposed to decide on the warranty claims process also runs a team. When a machine is down at a customer site, the outage takes priority. In a classic project this was hardly noticeable, because between concept and acceptance testing the business had little to do for weeks anyway. With daily demos the team needs an answer every day. In [AI-native delivery: smaller Salesforce teams](/en/blog/ai-native-delivery-smaller-salesforce-teams/) I estimate that the product owner needs about half of their working time per stream. That time rarely appears in the project plan.
 
 ### The process is not settled internally
 
@@ -64,7 +64,7 @@ Management hears that AI speeds up development and expects shorter, cheaper proj
 
 A worked example with assumed figures shows why looking at development alone misleads. A story used to take five days of development and testing. In addition, the business has to answer three of the team's questions one after the other, each of which blocks the story for two days: six days on the critical path. Lead time is eleven days. With a coding agent, build and review drop to a day and a half, and lead time drops to seven and a half days, of which 80 percent is waiting. That is a gain. If the next tool leap halves the build time again, lead time only drops to just under seven days, because almost 90 percent of it is waiting. Costs follow a similar pattern: the partner bills fewer developer hours, but the hours for workshops, alignment and rework after late decisions remain, and blocked team capacity costs extra.
 
-For management this means the saving on the partner side is only part of the calculation. The other part is time from your own staff that never appeared in a budget, because it was spread across a long project. With coding agents it is concentrated in a few weeks and becomes visible. If you do not plan for it, you end up with a project that is cheaper on paper and takes longer in the calendar. How to measure whether a program gets faster with AI is covered in [Measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
+For management this means the saving on the partner side is only part of the calculation. The other part is time from your own staff that never appeared in a budget, because it was spread across a long project. With coding agents it is concentrated in a few weeks and becomes visible. If you do not plan for it, you end up with a project that is cheaper on paper and takes longer in the calendar. How to measure whether a program gets faster with AI is covered in [Measuring AI productivity in Salesforce projects](/en/blog/measuring-ai-productivity-salesforce-projects/).
 
 ## What helps against the bottleneck at the client?
 
@@ -79,7 +79,7 @@ Settle processes before building | Fewer changes after the build
   Open process questions become their own tasks with an owner and a date; an unclear process goes into a time-boxed prototype, not into the production build as a supposedly finished story.
 ```
 
-Add a rule for questions: every question has a documented proposal from the team and a deadline by type, for example the next working day for reversible operational questions and two working days for questions that affect a stream. For low-risk, reversible decisions within agreed guardrails, the proposal applies without an answer and is recorded in the [decision log](../salesforce-architecture-decision-log/); whoever objects later raises a change request, not a silent rebuild. Data protection, pricing, warranty rules, permissions and irreversible migrations need explicit approval or escalation, never silence. The delay is then no longer hidden inside the team's work.
+Add a rule for questions: every question has a documented proposal from the team and a deadline by type, for example the next working day for reversible operational questions and two working days for questions that affect a stream. For low-risk, reversible decisions within agreed guardrails, the proposal applies without an answer and is recorded in the [decision log](/en/blog/salesforce-architecture-decision-log/); whoever objects later raises a change request, not a silent rebuild. Data protection, pricing, warranty rules, permissions and irreversible migrations need explicit approval or escalation, never silence. The delay is then no longer hidden inside the team's work.
 
 The roles can be split like this:
 
@@ -93,7 +93,7 @@ Steering committee | Conflicts between departments, releasing people * | Daily d
 note: A key user network only takes load off the product owner when it has its own decision authority.
 ```
 
-How to build such a network is covered in [Salesforce key user network](../salesforce-key-user-network/). For the decision makers, their own role changes, and that is a change like any other in the project. It needs communication and backing from the top. That is why it belongs in the [change management of my Salesforce programs](../../services/change-management-salesforce/), which I run together with Juliane Winterscheid.
+How to build such a network is covered in [Salesforce key user network](/en/blog/salesforce-key-user-network/). For the decision makers, their own role changes, and that is a change like any other in the project. It needs communication and backing from the top. That is why it belongs in the [change management of my Salesforce programs](/en/services/change-management-salesforce/), which I run together with Juliane Winterscheid.
 
 ## First step: measure the waiting time for decisions for two weeks
 
@@ -108,4 +108,4 @@ Show it to the steering committee | next meeting
   Build time and waiting time side by side, with the request for released time and deadlines.
 ```
 
-The analysis usually also shows which processes are not settled internally: that is where the questions pile up. Those processes are the first candidates for clarification before the next sprint, and the measurement is part of my [program management for Salesforce programs](../../services/program-management-nearshore/).
+The analysis usually also shows which processes are not settled internally: that is where the questions pile up. Those processes are the first candidates for clarification before the next sprint, and the measurement is part of my [program management for Salesforce programs](/en/services/program-management-nearshore/).

@@ -55,7 +55,7 @@ Optimierung hilft dort, wo es viel zu optimieren gibt. Ich frage vor jeder Produ
 
 Wartung, Reparaturen und Inspektionen mit mehreren Kunden pro Tag sind der beste Fall. Ein Techniker, der zwei Wochen eine Anlage in Betrieb nimmt, braucht Zeichnungen, einen Projektplan und eine saubere Abnahme; Routenoptimierung hilft ihm wenig.
 
-Kennt niemand die vier Zahlen, fehlt die Grundlage für jeden Business Case. Die Kriterien im Detail und die Rechnung mit 40 Technikern stehen in [Salesforce Field Service: Wann lohnt es sich?](../../../blog/salesforce-field-service-lohnt-sich/).
+Kennt niemand die vier Zahlen, fehlt die Grundlage für jeden Business Case. Die Kriterien im Detail und die Rechnung mit 40 Technikern stehen in [Salesforce Field Service: Wann lohnt es sich?](/blog/salesforce-field-service-lohnt-sich/).
 
 ## Vom Case zum Techniker: der Weg eines Auftrags
 
@@ -72,7 +72,7 @@ Ein Arbeitstyp (Work Type) ist die Vorlage für eine Art von Einsatz, etwa Jahre
 
 Geplante Wartung entsteht auf einem anderen Weg. Wartungspläne erzeugen Arbeitsaufträge ohne Case, laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field_service_maint/field-service-generate-work-orders) manuell oder automatisch dreimal am Tag. Geplante und ungeplante Arbeit liegen damit in derselben Disposition und konkurrieren um dieselben Techniker. Vor dem Start muss feststehen, wer entscheidet, welcher Wartungstermin bei einem Maschinenstillstand weichen muss.
 
-Nicht jeder Case braucht einen Techniker. Ich empfehle eine kurze Triage an der Hotline: Fernhilfe, Teileversand oder Einsatz. Erst beim Einsatz entsteht ein Arbeitsauftrag. Den ganzen Weg eines Stillstandsanrufs beschreibt [Field Service Arbeitsauftrag: vom Case zum Techniker](../../../blog/field-service-case-zu-arbeitsauftrag/).
+Nicht jeder Case braucht einen Techniker. Ich empfehle eine kurze Triage an der Hotline: Fernhilfe, Teileversand oder Einsatz. Erst beim Einsatz entsteht ein Arbeitsauftrag. Den ganzen Weg eines Stillstandsanrufs beschreibt [Field Service Arbeitsauftrag: vom Case zum Techniker](/blog/field-service-case-zu-arbeitsauftrag/).
 
 ## Welche Rolle braucht welche Lizenz?
 
@@ -92,7 +92,7 @@ In der Unlimited Edition kosten Dispatcher und Technician laut Fußnote 330 Doll
 2. Techniker und Contractors brauchen mindestens eine Dispatcher-Lizenz in der Org.
 3. Dispatcher und Technician dürfen nicht für Contact Center, Call Center oder Case Management genutzt werden. Field Service Plus darf das.
 
-Die Matrix baue ich aus dem, was jemand im System tut, nicht aus der Stellenbezeichnung. Die Hotline, die nur Cases bearbeitet, erhält Service Cloud. Die [Service-Cloud-Preisseite](https://www.salesforce.com/de/service/pricing/) nennt Core für 195 €, und die [US-Seite](https://www.salesforce.com/service/pricing/) schreibt, dass Core die Enterprise Edition ersetzt. Disponenten erhalten Dispatcher, eigene Techniker Technician. Das Backoffice prüfe ich am genauesten: Wer nur im ERP fakturiert, braucht gar keine Salesforce-Lizenz, und wer Berichte liest, kommt vielleicht mit einer günstigeren aus. Wie Sie das prüfen, ohne Standardfunktionen nachzubauen, steht in [Braucht jeder eine volle Lizenz?](../../../blog/salesforce-lizenzen-volle-lizenz/).
+Die Matrix baue ich aus dem, was jemand im System tut, nicht aus der Stellenbezeichnung. Die Hotline, die nur Cases bearbeitet, erhält Service Cloud. Die [Service-Cloud-Preisseite](https://www.salesforce.com/de/service/pricing/) nennt Core für 195 €, und die [US-Seite](https://www.salesforce.com/service/pricing/) schreibt, dass Core die Enterprise Edition ersetzt. Disponenten erhalten Dispatcher, eigene Techniker Technician. Das Backoffice prüfe ich am genauesten: Wer nur im ERP fakturiert, braucht gar keine Salesforce-Lizenz, und wer Berichte liest, kommt vielleicht mit einer günstigeren aus. Wie Sie das prüfen, ohne Standardfunktionen nachzubauen, steht in [Braucht jeder eine volle Lizenz?](/blog/salesforce-lizenzen-volle-lizenz/).
 
 ### Field Service Plus oder Service Cloud plus Dispatcher?
 
@@ -112,7 +112,7 @@ Für diese Mischrolle nennt die Preisliste Field Service Plus. Gegenüber Servic
 Die Preisseite verweist für loginbasierte Contractor-Lizenzen an den Vertrieb, deshalb würde ich die Zählregel ins Bestellformular schreiben lassen.
 ```
 
-Contractor-Lizenzen sind für das Personal Ihrer Servicepartner gedacht; eigene Mitarbeitende damit auszustatten, um zu sparen, würde ich nicht riskieren. Die ganze Rollenmatrix mit einer Jahresrechnung steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../../../blog/field-service-lizenzen-rollen-dispatcher-techniker/).
+Contractor-Lizenzen sind für das Personal Ihrer Servicepartner gedacht; eigene Mitarbeitende damit auszustatten, um zu sparen, würde ich nicht riskieren. Die ganze Rollenmatrix mit einer Jahresrechnung steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](/blog/field-service-lizenzen-rollen-dispatcher-techniker/).
 
 ## Add-ons und das Agentforce-1-Paket
 
@@ -122,13 +122,13 @@ Die Preisseite listet fünf Add-ons, auf der deutschen Seite in Dollar:
 |---|---|---|
 | Agentforce for Field Service and Operations | KI-Agenten im Arbeitsablauf der Mitarbeitenden | 125 Dollar pro Nutzer und Monat |
 | Asset Service Lifecycle Management | Lebenszyklus der installierten Basis, vom Angebot für Arbeitsaufträge bis zu Servicekampagnen | 75 Dollar pro Nutzer und Monat |
-| Visual Remote Assistant | [Visual Remote Assistance](../../../blog/visual-remote-assistant-fernhilfe-statt-einsatz/): Videohilfe für Kunden statt Einsatz | 50 Dollar pro Nutzer und Monat |
+| Visual Remote Assistant | [Visual Remote Assistance](/blog/visual-remote-assistant-fernhilfe-statt-einsatz/): Videohilfe für Kunden statt Einsatz | 50 Dollar pro Nutzer und Monat |
 | Appointment Assistant | Echtzeit-Updates zum Termin für Kunden | 25 Dollar pro Nutzer und Monat |
 | Connected Assets | Proaktive Wartung mit externen Daten und Event Orchestration | 15.000 Dollar pro Org und Monat |
 
 Agentforce 1 Field Service für 650 € enthält laut Preisseite Field Service Plus, unbegrenzte Agentforce-Nutzung für Mitarbeitende, Appointment Assistant, Visual Remote Assistant, Digital Channels, Slack und Tableau Next sowie 1 Million Flex Credits und 2,5 Millionen Data-Cloud-Credits pro Org und Jahr. Aus Einzelteilen kosten Field Service Plus und die drei Add-ons für Agentforce, Visual Remote Assistant und Appointment Assistant 430 Dollar. Das Paket kostet also 220 Dollar mehr pro Nutzer und Monat, und die Credits pro Org decken diesen Aufpreis nur für etwa zwei Nutzer.
 
-Meine Regel: Das Paket lohnt sich, wenn Slack, Tableau Next, Digital Channels und Data Cloud für dieselben Nutzer ohnehin gekauft würden. Für Techniker, die nur das KI-Add-on brauchen, sind Einzellizenzen klar günstiger. Die Rechnung mit 50 Nutzern und einem Buchungsagenten steht in [Agentforce 1 Field Service: Wann rechnet sich das Paket?](../../../blog/agentforce-1-field-service-paket-rechnung/), wie Flex Credits grundsätzlich funktionieren, im Kapitel [KI-Kosten: Token, Flex Credits, Budget](../../ki-salesforce/kosten-und-token/) der KI-Masterclass.
+Meine Regel: Das Paket lohnt sich, wenn Slack, Tableau Next, Digital Channels und Data Cloud für dieselben Nutzer ohnehin gekauft würden. Für Techniker, die nur das KI-Add-on brauchen, sind Einzellizenzen klar günstiger. Die Rechnung mit 50 Nutzern und einem Buchungsagenten steht in [Agentforce 1 Field Service: Wann rechnet sich das Paket?](/blog/agentforce-1-field-service-paket-rechnung/), wie Flex Credits grundsätzlich funktionieren, im Kapitel [KI-Kosten: Token, Flex Credits, Budget](/masterclass/ki-salesforce/kosten-und-token/) der KI-Masterclass.
 
 ## Wo ist Salesforce Field Service nicht die richtige Antwort?
 
@@ -138,7 +138,7 @@ Nicht jeder Außendienst braucht ein Planungsprodukt. Drei Alternativen prüfe i
 - **Ein schlankes Planungswerkzeug** neben dem CRM, wenn nur die Disposition fehlt und Assets, Verträge und Historie anderswo sauber gepflegt sind.
 - **Service Cloud ohne Field-Service-Lizenzen**, wenn vor allem Case-Bearbeitung und Dokumentation fehlen und Termine einfach vereinbart werden.
 
-Zwei Grenzen zu anderen Salesforce-Produkten sollten Sie vor dem Angebot kennen. Bearbeitet dieselbe Serviceorganisation Garantieansprüche von Händlern, kommt Manufacturing Cloud for Service ins Spiel; wo die Garantie endet und Field Service beginnt, klärt das Kapitel [Garantie und After-Sales](../../manufacturing-cloud/garantie-und-after-sales/) der Manufacturing-Cloud-Masterclass. Werden Wartungsverträge als wiederkehrender Umsatz verkauft und abgerechnet, ist das ein Thema für Revenue Cloud, eingeordnet im [Überblick zu Revenue Cloud](../../revenue-cloud/revenue-cloud-ueberblick/).
+Zwei Grenzen zu anderen Salesforce-Produkten sollten Sie vor dem Angebot kennen. Bearbeitet dieselbe Serviceorganisation Garantieansprüche von Händlern, kommt Manufacturing Cloud for Service ins Spiel; wo die Garantie endet und Field Service beginnt, klärt das Kapitel [Garantie und After-Sales](/masterclass/manufacturing-cloud/garantie-und-after-sales/) der Manufacturing-Cloud-Masterclass. Werden Wartungsverträge als wiederkehrender Umsatz verkauft und abgerechnet, ist das ein Thema für Revenue Cloud, eingeordnet im [Überblick zu Revenue Cloud](/masterclass/revenue-cloud/revenue-cloud-ueberblick/).
 
 ## Rechenbeispiel: die Lizenzrechnung eines Komponentenherstellers
 
@@ -167,4 +167,4 @@ Soll die Hotline zusätzlich einen KI-Agenten erhalten, kosten die fünf Büroar
 | Welche Add-ons im ersten Jahr wirklich genutzt werden | Pro Rolle statt für alle. |
 | Eine Lizenzprognose über drei Jahre | Nach Rollen und Einführungswellen, damit Sie nicht am ersten Tag 45 Technikerlizenzen kaufen, wenn die erste Welle 15 hat. |
 
-Diese Liste ist Teil meiner Arbeit unter [Make-or-buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/), vor der Verhandlung und unabhängig von Hersteller und Partner. Steht der Business Case, geht es um die Planung selbst: Stammdaten, Scheduling Policies und die neue Konsole behandelt [Kapitel 2: Terminplanung und Disposition](../field-service-terminplanung-disposition/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
+Diese Liste ist Teil meiner Arbeit unter [Make-or-buy und Lizenzprognosen](/leistungen/make-or-buy-lizenzen/), vor der Verhandlung und unabhängig von Hersteller und Partner. Steht der Business Case, geht es um die Planung selbst: Stammdaten, Scheduling Policies und die neue Konsole behandelt [Kapitel 2: Terminplanung und Disposition](/masterclass/field-service/field-service-terminplanung-disposition/). Alle Kapitel finden Sie auf der [Übersichtsseite](/masterclass/field-service/).

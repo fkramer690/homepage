@@ -32,7 +32,7 @@ Salesforce release planning means combining two calendars. Your own calendar set
 
 ## What belongs in a Salesforce release calendar?
 
-A release calendar is the one view every team reads to see when it may deliver and when it may not. In a program with several implementation partners on one org, each partner has its own sprint plan. The calendar therefore belongs to the client, maintained by the release manager from [chapter 2](../release-process-ownership-roles/), and the partners plan into it. With eight teams on one org, as in one of my programs, it is the only place where all dates come together.
+A release calendar is the one view every team reads to see when it may deliver and when it may not. In a program with several implementation partners on one org, each partner has its own sprint plan. The calendar therefore belongs to the client, maintained by the release manager from [chapter 2](/en/masterclass/devops-release-management/release-process-ownership-roles/), and the partners plan into it. With eight teams on one org, as in one of my programs, it is the only place where all dates come together.
 
 Four layers go into it:
 
@@ -47,7 +47,7 @@ The fourth layer is the one people forget. A release on the last day of the quar
 
 ## A fixed cadence with freeze windows
 
-I recommend a fixed cadence over releases on demand. Every two or three weeks on the same weekday is a good start for most programs. A fixed date forces partners to ship small packages, and the business knows when things change. Anything urgent that cannot wait goes through the hotfix path from [chapter 3](../environments-and-branching/), not through a special release.
+I recommend a fixed cadence over releases on demand. Every two or three weeks on the same weekday is a good start for most programs. A fixed date forces partners to ship small packages, and the business knows when things change. Anything urgent that cannot wait goes through the hotfix path from [chapter 3](/en/masterclass/devops-release-management/environments-and-branching/), not through a special release.
 
 A freeze window is a period in which nothing is deployed to production except approved hotfixes. Three kinds make sense on Salesforce:
 
@@ -82,7 +82,7 @@ Whether a sandbox gets the new release early depends on its instance. All sandbo
 
 Two rules follow for the release calendar:
 
-- **At least one sandbox deliberately on preview.** Salesforce recommends this in the [Trailhead module on the sandbox preview](https://trailhead.salesforce.com/content/learn/modules/sf_releases/sf-releases-sandbox-preview). That is where regression tests, SAP interface tests and the release update tests run. Schedule the planned sandbox refreshes from [chapter 3](../environments-and-branching/) before the cutoff.
+- **At least one sandbox deliberately on preview.** Salesforce recommends this in the [Trailhead module on the sandbox preview](https://trailhead.salesforce.com/content/learn/modules/sf_releases/sf-releases-sandbox-preview). That is where regression tests, SAP interface tests and the release update tests run. Schedule the planned sandbox refreshes from [chapter 3](/en/masterclass/devops-release-management/environments-and-branching/) before the cutoff.
 - **Preview sandboxes stay out of the deployment path to production.** A preview sandbox works with the new API version and knows metadata that production does not know yet. Gearset's [documentation on preview sandboxes](https://docs.gearset.com/en/articles/9297189-salesforce-preview-and-non-preview-sandboxes) explicitly advises against adding them to the pipeline, and Gearset makes a new API version its [default](https://docs.gearset.com/en/articles/4934349-how-does-gearset-handle-salesforce-metadata-api-releases) only after general availability. For Winter '27, Salesforce itself offered an Apex setting that keeps the old heap limit when deploying from a Winter '27 sandbox to a production org still on Summer '26, as described in the [developer guide to Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release).
 
 ```vertiefung For developers
@@ -96,11 +96,11 @@ Release updates are changes that Salesforce announces and enforces with a set re
 
 This becomes a fixed slot in the calendar: after every Salesforce release the release manager goes through the list, gives each update an owner, starts the test run in the preview or integration sandbox first and activates the update in production on a date of your choosing, before Salesforce does. Two current examples: the new "Use Any API Auth" permission for SOAP logins from 1 December 2026 can be tested in advance through the release update in Setup, according to Salesforce. The end of the OAuth password flow is also published as a [release update](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5).
 
-If you do not want to check the list by hand: according to its [documentation](https://sfdx-hardis.cloudity.com/salesforce-monitoring-home/), sfdx-hardis monitoring gathers warnings about upcoming and overdue release updates every week and reports the instance's next upgrade date. More on monitoring in [chapter 9](../operations-monitoring-backup/).
+If you do not want to check the list by hand: according to its [documentation](https://sfdx-hardis.cloudity.com/salesforce-monitoring-home/), sfdx-hardis monitoring gathers warnings about upcoming and overdue release updates every week and reports the instance's next upgrade date. More on monitoring in [chapter 9](/en/masterclass/devops-release-management/operations-monitoring-backup/).
 
 ### API versions: every release brings a new one
 
-Every release brings a new API version. With Winter '27 it was 68.0. That alone changes nothing in your code, because every Apex class and trigger stores its own version. The risk lies in raising it. From API 67.0, Apex classes run in user mode and with sharing, and queries then silently return fewer records. Why that happens and how to plan the move is in [API 67.0 user mode: why Apex sees fewer records](../../../blog/api-67-apex-user-mode-fewer-records/). Coding agents like to raise versions in passing, so a rule for this also belongs in the rules file from [chapter 8 of the AI masterclass](../../ai-salesforce/ai-code-best-practices/).
+Every release brings a new API version. With Winter '27 it was 68.0. That alone changes nothing in your code, because every Apex class and trigger stores its own version. The risk lies in raising it. From API 67.0, Apex classes run in user mode and with sharing, and queries then silently return fewer records. Why that happens and how to plan the move is in [API 67.0 user mode: why Apex sees fewer records](/en/blog/api-67-apex-user-mode-fewer-records/). Coding agents like to raise versions in passing, so a rule for this also belongs in the rules file from [chapter 8 of the AI masterclass](/en/masterclass/ai-salesforce/ai-code-best-practices/).
 
 My suggestion for the calendar: once a year, a planned package that raises `sourceApiVersion` and the classes in batches by business domain, with tests as real users. It includes the classes the compiler has warned about since Winter '27 because they are saved at versions 9.0 to 19.0.
 
@@ -117,7 +117,7 @@ Retirements are dates on which something stops working. Until Summer '28 these a
 | Summer '27 | SOAP login() in API 31.0 to 64.0; API 31.0 to 40.0 without updates | older interfaces |
 | Summer '28 | SOAP, REST and Bulk API 31.0 to 40.0 fail | older interfaces |
 
-On top of that, the Salesforce CLI has required Node.js 22 or later since Winter '27, which affects CI runners and Docker images. The details are in four articles: [Winter '27 and your pipeline](../../../blog/salesforce-winter-27-what-changes-for-your-pipeline/), [password integrations end in 2027](../../../blog/salesforce-password-integrations-end-2027/), [DX MCP Server end of life](../../../blog/salesforce-dx-mcp-server-end-of-life/) and the API 67.0 article above. How the pipeline authenticates without passwords is covered in [chapter 5](../building-the-pipeline/).
+On top of that, the Salesforce CLI has required Node.js 22 or later since Winter '27, which affects CI runners and Docker images. The details are in four articles: [Winter '27 and your pipeline](/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/), [password integrations end in 2027](/en/blog/salesforce-password-integrations-end-2027/), [DX MCP Server end of life](/en/blog/salesforce-dx-mcp-server-end-of-life/) and the API 67.0 article above. How the pipeline authenticates without passwords is covered in [chapter 5](/en/masterclass/devops-release-management/building-the-pipeline/).
 
 For planning, what counts is that every retirement gets an owner on the client side and a done date before the Salesforce date. For the password flow I would switch the setting off in production myself a few days earlier, with the team on standby. The outage then happens on a day you chose.
 
@@ -150,4 +150,4 @@ Share the calendar | with every partner
   The partners get the calendar in writing. Anyone who wants to deliver during a freeze needs her approval.
 ```
 
-None of these steps needs a new tool. It needs someone on the client side who owns the calendar, and partners who are contractually bound to plan into it. Building such rules into partner contracts is part of my [partner governance](../../../services/partner-governance/) work; the data side of a release is covered in [chapter 7](../data-and-configuration/), and all chapters are on the [overview page](../).
+None of these steps needs a new tool. It needs someone on the client side who owns the calendar, and partners who are contractually bound to plan into it. Building such rules into partner contracts is part of my [partner governance](/en/services/partner-governance/) work; the data side of a release is covered in [chapter 7](/en/masterclass/devops-release-management/data-and-configuration/), and all chapters are on the [overview page](/en/masterclass/devops-release-management/).

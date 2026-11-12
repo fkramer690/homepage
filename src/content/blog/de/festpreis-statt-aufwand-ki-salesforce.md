@@ -44,7 +44,7 @@ Wie groß der Gewinn ist, bleibt offen, und das zählt für die Preisgestaltung.
 quelle: McKinsey, Umfrage unter Produkt- und Engineering-Verantwortlichen (334 gesamt, 173 ab Director-Ebene), Selbstauskunft, August 2026
 ```
 
-METRs [randomisierte Studie](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) ergab Anfang 2025, dass erfahrene Entwickler mit KI 19 Prozent langsamer arbeiteten; das [Update vom Februar 2026](https://metr.org/blog/2026-02-24-uplift-update/) deutet auf eine Beschleunigung hin, nennt die eigenen Daten aber „an unreliable signal“. Bevor Sie auf Basis einer Partneraussage nachverhandeln, messen Sie selbst, wie in [KI-Nutzen im Salesforce-Projekt messen](../ki-nutzen-salesforce-projekt-messen/) beschrieben.
+METRs [randomisierte Studie](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) ergab Anfang 2025, dass erfahrene Entwickler mit KI 19 Prozent langsamer arbeiteten; das [Update vom Februar 2026](https://metr.org/blog/2026-02-24-uplift-update/) deutet auf eine Beschleunigung hin, nennt die eigenen Daten aber „an unreliable signal“. Bevor Sie auf Basis einer Partneraussage nachverhandeln, messen Sie selbst, wie in [KI-Nutzen im Salesforce-Projekt messen](/blog/ki-nutzen-salesforce-projekt-messen/) beschrieben.
 
 Der Produktivitätsgewinn ist also bei manchen Aufgaben real, im Durchschnitt aber unsicher. Ein Vergütungsmodell muss regeln, wer diese Unsicherheit trägt.
 
@@ -74,7 +74,7 @@ Für einen Hersteller hat das zwei Seiten. Ein Partner, der beim Go-live verdien
 
 **Erfolgsanteile funktionieren als Teil des Honorars, nicht als vollständiges Honorar.** Kein Partner kontrolliert Ihre Anlagendaten, die Verfügbarkeit Ihres SAP-Systems oder wie viele Händler das Portal nutzen. Ein Honorar, das komplett an der Nutzung hängt, ist für beide Seiten ein Glücksspiel. Nach meiner Einschätzung sind 10 bis 20 Prozent des Honorars, gekoppelt an eine Kennzahl, eine diskutable Größenordnung.
 
-**Die Frage, wer die Tokens bezahlt, gehört in den Preis.** McKinsey schätzt, dass Tokens, Rechenleistung, Infrastruktur und KI-Betrieb bis zu 20 Prozent der bisherigen Personalkosten erreichen können. Diese Kosten trägt beim Festpreis wie bei Aufwandsabrechnung die Partei, die der Vertrag festlegt. Nutzt ein Partner Agentforce Vibes in Ihrer Org, kann das Ihre Flex Credits verbrauchen. Die Zahlen stehen in [was KI-Coding im Salesforce-Projekt kostet](../ki-coding-kosten-salesforce-projekt/).
+**Die Frage, wer die Tokens bezahlt, gehört in den Preis.** McKinsey schätzt, dass Tokens, Rechenleistung, Infrastruktur und KI-Betrieb bis zu 20 Prozent der bisherigen Personalkosten erreichen können. Diese Kosten trägt beim Festpreis wie bei Aufwandsabrechnung die Partei, die der Vertrag festlegt. Nutzt ein Partner Agentforce Vibes in Ihrer Org, kann das Ihre Flex Credits verbrauchen. Die Zahlen stehen in [was KI-Coding im Salesforce-Projekt kostet](/blog/ki-coding-kosten-salesforce-projekt/).
 
 ## Rechenbeispiel: Verlängerung eines Rahmenvertrags
 
@@ -94,8 +94,8 @@ Der Tagessatz nach Aufwand bleibt für Discovery und Support bei 1.100 €. Neu 
 
 1. **Sortieren Sie das Backlog** in Pakete mit prüfbaren Abnahmekriterien, Discovery-Arbeit und laufende Änderungen. Für jede Art gilt ein eigenes Vergütungsmodell.
 2. **Messen Sie eine Basislinie** für aktive Bearbeitungszeit und Nacharbeit, bevor Sie nachverhandeln, damit Sie auf Daten bepreisen statt auf Behauptungen.
-3. **Verlangen Sie Offenlegung** der eingesetzten Coding-Agenten und der Salesforce-Incentives, die das Projekt auslöst. Die Vertragsklauseln für KI-Nutzung beschreibe ich in [Partner mit KI-Coding: Regeln im Vertrag](../partner-ki-coding-regeln-vertrag/).
+3. **Verlangen Sie Offenlegung** der eingesetzten Coding-Agenten und der Salesforce-Incentives, die das Projekt auslöst. Die Vertragsklauseln für KI-Nutzung beschreibe ich in [Partner mit KI-Coding: Regeln im Vertrag](/blog/partner-ki-coding-regeln-vertrag/).
 4. **Klären Sie, wer bezahlt**: Tokens und Flex Credits in Entwicklung, Sandbox-Tests und Produktion.
-5. **Prüfen Sie Preise alle sechs Monate** gegen gemessene Zahlen. Kleinere, KI-native Teams verändern auch die Kostenbasis, siehe [KI und kleinere Salesforce-Teams](../ki-kleinere-salesforce-teams-delivery/).
+5. **Prüfen Sie Preise alle sechs Monate** gegen gemessene Zahlen. Kleinere, KI-native Teams verändern auch die Kostenbasis, siehe [KI und kleinere Salesforce-Teams](/blog/ki-kleinere-salesforce-teams-delivery/).
 
-Solche Vergütungsregeln aufzusetzen gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/), auf Kundenseite und ohne Anteil am Umsatz eines Partners. Für die Basislinie aus Punkt 2 bieten etwa 20 vergleichbare Stories aus Ihrem Ticketsystem eine erste Orientierung, wenn Sie sie nach Art und Größe gruppieren und aktive Arbeit von Wartezeit trennen.
+Solche Vergütungsregeln aufzusetzen gehört zu meiner Arbeit in der [Partnersteuerung](/leistungen/partnersteuerung/), auf Kundenseite und ohne Anteil am Umsatz eines Partners. Für die Basislinie aus Punkt 2 bieten etwa 20 vergleichbare Stories aus Ihrem Ticketsystem eine erste Orientierung, wenn Sie sie nach Art und Größe gruppieren und aktive Arbeit von Wartezeit trennen.

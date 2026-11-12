@@ -34,7 +34,7 @@ Die Field Service App muss dort funktionieren, wo das Netz endet. Die erste Ents
 
 ## Was leistet die Field Service App?
 
-Field Service, das Salesforce heute als [Field Service and Operations](https://www.salesforce.com/de/products/field-service/pricing/) verkauft, bringt für Techniker eine eigene App mit. [Kapitel 2](../field-service-terminplanung-disposition/) hat gezeigt, wie ein Einsatz eingeplant wird. Dieses Kapitel beginnt dort, wo der Techniker den Einsatz öffnet.
+Field Service, das Salesforce heute als [Field Service and Operations](https://www.salesforce.com/de/products/field-service/pricing/) verkauft, bringt für Techniker eine eigene App mit. [Kapitel 2](/masterclass/field-service/field-service-terminplanung-disposition/) hat gezeigt, wie ein Einsatz eingeplant wird. Dieses Kapitel beginnt dort, wo der Techniker den Einsatz öffnet.
 
 Die Field Service App ist eine eigene App im App Store und bei Google Play. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-mobile/work-from-anywhere) erhalten Techniker darin ihre Einsätze, Kundendaten und Änderungen am Arbeitsauftrag und holen die Unterschrift des Kunden ein, ohne im Büro anzurufen. Die Salesforce Mobile App ist die allgemeine App für Vertrieb und Innendienst. Für einen Hersteller zählt vor allem der Unterschied beim Offline-Betrieb: Laut [Salesforce Developers](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/intro_enabled_apps.htm) kann jede Field-Service-Org eigene Lightning Web Components in der Field Service App offline nutzen, die Salesforce Mobile App braucht dafür die Lizenz Mobile App Plus. Meine Regel: Techniker arbeiten in der Field Service App, Disposition und Innendienst bleiben im Browser.
 
@@ -58,13 +58,13 @@ Die [Hinweise zu LWC Offline](https://developer.salesforce.com/docs/atlas.en-us.
 | Partner-Benutzer | Ein Benutzer mit Community-Lizenz kann beim Öffnen eines Service-Termins einen Fehler wegen eines fehlenden Datensatzes erhalten. Partnertechniker brauchen deshalb einen eigenen Briefcase und einen eigenen Test. |
 | Kaltstart unter iOS | Geänderte Lightning Web Components lädt die App erst, wenn sie ganz beendet und neu gestartet wurde. |
 
-Den Briefcase pro Rolle, die vollständige Liste und einen Tag im Keller ohne Netz beschreibe ich in [Field Service App offline: Welche Daten aufs Gerät?](../../../blog/field-service-app-offline-briefcase/).
+Den Briefcase pro Rolle, die vollständige Liste und einen Tag im Keller ohne Netz beschreibe ich in [Field Service App offline: Welche Daten aufs Gerät?](/blog/field-service-app-offline-briefcase/).
 
 ## Aus Papierprotokollen werden Data-Capture-Formulare
 
-Data Capture ist die Formularfunktion der Field Service App. Laut dem [Trailhead-Überblick](https://trailhead.salesforce.com/content/learn/modules/data-capture-quick-look) baut sie direkt auf dem Flow Builder auf, und Formulare hängen an Service-Terminen, Arbeitsaufträgen und Auftragspositionen. Sie enthalten Unterschrift, Textfelder, Nachschlagefelder und Checkboxen, und Abschnitte können abhängig von früheren Antworten erscheinen. Formulare funktionieren offline, jede Eingabe wird automatisch gespeichert, und jede Übermittlung wird protokolliert. Nicht jede Flow-Funktion vom Desktop gibt es dort: Data Table und IN-Operator fehlen, siehe [Field Service Mobile App: Flow-Grenzen](../../../blog/field-service-mobile-flows-grenzen/).
+Data Capture ist die Formularfunktion der Field Service App. Laut dem [Trailhead-Überblick](https://trailhead.salesforce.com/content/learn/modules/data-capture-quick-look) baut sie direkt auf dem Flow Builder auf, und Formulare hängen an Service-Terminen, Arbeitsaufträgen und Auftragspositionen. Sie enthalten Unterschrift, Textfelder, Nachschlagefelder und Checkboxen, und Abschnitte können abhängig von früheren Antworten erscheinen. Formulare funktionieren offline, jede Eingabe wird automatisch gespeichert, und jede Übermittlung wird protokolliert. Nicht jede Flow-Funktion vom Desktop gibt es dort: Data Table und IN-Operator fehlen, siehe [Field Service Mobile App: Flow-Grenzen](/blog/field-service-mobile-flows-grenzen/).
 
-Das Formular ist schnell gebaut. Länger dauert die Entscheidung davor: Welche Antworten werden Felder am Asset oder am Arbeitsauftrag, und welche bleiben Formularantworten? Betriebsstunden, Messwerte, die Sie über Besuche vergleichen, und das Gesamtergebnis gehören in Felder, denn Wartungspläne, Berichte und die ERP-Schnittstelle arbeiten mit Feldern. Bestanden oder nicht bestanden pro Prüfpunkt kann im Formular bleiben. Verbaute Teile werden als verbrauchte Produkte gebucht, nie als Freitext, sonst sehen Fahrzeuglager und ERP sie nicht. Die vollständige Zuordnungstabelle und wie Sie ein langes Protokoll nach Variante aufteilen, stehen in [Field Service Data Capture: Prüfprotokolle ohne Papier](../../../blog/field-service-data-capture-pruefprotokolle/).
+Das Formular ist schnell gebaut. Länger dauert die Entscheidung davor: Welche Antworten werden Felder am Asset oder am Arbeitsauftrag, und welche bleiben Formularantworten? Betriebsstunden, Messwerte, die Sie über Besuche vergleichen, und das Gesamtergebnis gehören in Felder, denn Wartungspläne, Berichte und die ERP-Schnittstelle arbeiten mit Feldern. Bestanden oder nicht bestanden pro Prüfpunkt kann im Formular bleiben. Verbaute Teile werden als verbrauchte Produkte gebucht, nie als Freitext, sonst sehen Fahrzeuglager und ERP sie nicht. Die vollständige Zuordnungstabelle und wie Sie ein langes Protokoll nach Variante aufteilen, stehen in [Field Service Data Capture: Prüfprotokolle ohne Papier](/blog/field-service-data-capture-pruefprotokolle/).
 
 ### Voice to Form und geführte Arbeit: Was ist verfügbar?
 
@@ -77,7 +77,7 @@ Der Stand ändert sich mit jeder App-Version, deshalb trenne ich ihn vom Formula
 | Nachschlagefeld offline, Vorschau mehrerer Bilder, Formulare an Assets und Zeitnachweisen | in 260.0 genannt, Stand in Ihrer Org prüfen | Release-Beitrag 260.0 |
 | Guided Experience, Formulare aus dem Foto eines Papierformulars | angekündigt am 20. Oktober 2026, ohne Termin | [Salesforce-Blog](https://www.salesforce.com/blog/guided-mobile-work/) |
 
-Spracheingabe auf Deutsch macht die Funktion für Serviceteams in der DACH-Region interessant. Sie verarbeitet aber die Sprache von Beschäftigten, und damit sind Datenschutz und, wo vorhanden, der Betriebsrat gefragt. Diese Fragen und das Risiko, ein schlechtes Papierformular eins zu eins zu digitalisieren, beschreibe ich in [Salesforce Field Service Mobile: Führung und Sprache](../../../blog/salesforce-field-service-mobile-aussendienst/). Meine Reihenfolge: erst Formular und Felder, dann Sprache als zweiter Schritt.
+Spracheingabe auf Deutsch macht die Funktion für Serviceteams in der DACH-Region interessant. Sie verarbeitet aber die Sprache von Beschäftigten, und damit sind Datenschutz und, wo vorhanden, der Betriebsrat gefragt. Diese Fragen und das Risiko, ein schlechtes Papierformular eins zu eins zu digitalisieren, beschreibe ich in [Salesforce Field Service Mobile: Führung und Sprache](/blog/salesforce-field-service-mobile-aussendienst/). Meine Reihenfolge: erst Formular und Felder, dann Sprache als zweiter Schritt.
 
 ## Wann reicht der Servicebericht aus dem Document Builder?
 
@@ -98,13 +98,13 @@ Für den klassischen Bericht an der Maschine, mit Arbeitszeit, Teilen, Fotos und
 | Android eingeschränkt | Unter iOS entstehen Dokumente aus Arbeitsauftrag und Service-Termin, unter Android nur aus dem Service-Termin. |
 | Umfang | Höchstens 50 Seiten und 100 MB pro Dokument. |
 
-Fünf kleinere Lücken sollten Sie beim Standardbericht einplanen: Vorlagenwahl, Dateiname, E-Mail, Vorbelegung und Gestaltung. Flows und kleine Komponenten schließen sie ohne weitere Lizenz, wie ich in [Document Builder: fünf Grenzen und Workarounds](../../../blog/salesforce-document-builder-grenzen-workarounds/) zeige.
+Fünf kleinere Lücken sollten Sie beim Standardbericht einplanen: Vorlagenwahl, Dateiname, E-Mail, Vorbelegung und Gestaltung. Flows und kleine Komponenten schließen sie ohne weitere Lizenz, wie ich in [Document Builder: fünf Grenzen und Workarounds](/blog/salesforce-document-builder-grenzen-workarounds/) zeige.
 
 ### Wann brauchen Sie ein zweites Werkzeug?
 
-Prüfberichte mit bedingten Abschnitten, Maschinenakten am Asset, Zertifikate und Word-Ausgabe gehen über Document Builder hinaus. Dafür würde ich Salesforce Document Generation oder ein Werkzeug aus dem AppExchange für die Nutzer im Innendienst lizenzieren, die es brauchen, und den Servicebericht im Document Builder lassen. Den Vergleich finden Sie in [Salesforce Service Documents: reicht der Document Builder?](../../../blog/salesforce-service-documents-document-builder-servicebericht/).
+Prüfberichte mit bedingten Abschnitten, Maschinenakten am Asset, Zertifikate und Word-Ausgabe gehen über Document Builder hinaus. Dafür würde ich Salesforce Document Generation oder ein Werkzeug aus dem AppExchange für die Nutzer im Innendienst lizenzieren, die es brauchen, und den Servicebericht im Document Builder lassen. Den Vergleich finden Sie in [Salesforce Service Documents: reicht der Document Builder?](/blog/salesforce-service-documents-document-builder-servicebericht/).
 
-Angebote sind ein eigener Fall. Sieht der Techniker Zusatzarbeit oder ein verschlissenes Teil und will der Kunde vor Ort einen Preis, gehört das Angebot in den Vertriebsprozess mit seinen Freigaben. Wie Angebote, Verträge und Aufträge dort abgewickelt werden, beschreibt das Kapitel [Angebot, Vertrag, Auftrag](../../revenue-cloud/angebot-vertrag-auftrag/) der Masterclass Revenue Cloud.
+Angebote sind ein eigener Fall. Sieht der Techniker Zusatzarbeit oder ein verschlissenes Teil und will der Kunde vor Ort einen Preis, gehört das Angebot in den Vertriebsprozess mit seinen Freigaben. Wie Angebote, Verträge und Aufträge dort abgewickelt werden, beschreibt das Kapitel [Angebot, Vertrag, Auftrag](/masterclass/revenue-cloud/angebot-vertrag-auftrag/) der Masterclass Revenue Cloud.
 
 ## Wann ersetzt ein Videoanruf den Einsatz?
 
@@ -116,7 +116,7 @@ Aus meiner Sicht ersetzt Video einen Einsatz, wenn der Bediener die Störung mit
 Klären Sie vor der ersten Sitzung die Einwilligung des Kunden zur Aufzeichnung, den Betriebsrat für Ihre eigenen Beschäftigten und welche Störungen ohne Einsatz abgeschlossen werden dürfen.
 ```
 
-Wie Sie das Potenzial aus den Störungseinsätzen des letzten Jahres schätzen, steht in [Visual Remote Assistant: Videohilfe statt Einsatz?](../../../blog/visual-remote-assistant-fernhilfe-statt-einsatz/).
+Wie Sie das Potenzial aus den Störungseinsätzen des letzten Jahres schätzen, steht in [Visual Remote Assistant: Videohilfe statt Einsatz?](/blog/visual-remote-assistant-fernhilfe-statt-einsatz/).
 
 ## Wie testen Sie jede App-Version?
 
@@ -134,7 +134,7 @@ Meine Routine pro Version, auf iOS und Android, passt in einen halben Tag:
 | 6 | Dasselbe mit einem Partner-Benutzer. |
 | 7 | Nach der Synchronisation: Verbrauch und Bericht im Innendienst und im ERP. |
 
-Pilotgruppe, Kalender und wer für App-Versionen verantwortlich ist, beschreibe ich in [Field Service App Updates: jede Version vorher testen](../../../blog/field-service-app-updates-testen/). App-Versionen gehören in denselben Kalender wie die Plattform-Releases, beschrieben im Kapitel [Release-Planung](../../devops-release-management/release-planung-salesforce-releases/) der DevOps-Masterclass. Wie solche Testskripte in Qualitätsprüfungen passen, steht im Kapitel [Qualität, Tests und Reviews](../../devops-release-management/qualitaet-tests-reviews/).
+Pilotgruppe, Kalender und wer für App-Versionen verantwortlich ist, beschreibe ich in [Field Service App Updates: jede Version vorher testen](/blog/field-service-app-updates-testen/). App-Versionen gehören in denselben Kalender wie die Plattform-Releases, beschrieben im Kapitel [Release-Planung](/masterclass/devops-release-management/release-planung-salesforce-releases/) der DevOps-Masterclass. Wie solche Testskripte in Qualitätsprüfungen passen, steht im Kapitel [Qualität, Tests und Reviews](/masterclass/devops-release-management/qualitaet-tests-reviews/).
 
 ## Rechenbeispiel: Das Inbetriebnahmeprotokoll wird papierlos
 
@@ -166,4 +166,4 @@ Für vier Entscheidungen braucht es einen benannten Verantwortlichen, bevor ein 
 | Aufteilung der Dokumente | Servicebericht im Document Builder, Dokumente mit Logik in einem zweiten Werkzeug, Angebote im Vertriebsprozess. |
 | Verantwortung für App-Versionen | Meist der Release Manager, gemeinsam mit dem Gerätemanagement. |
 
-Das Datenmodell ist Arbeit an der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/) und entscheidet, ob Formulare, Berichte und später KI-Agenten die Daten nutzen können. [Kapitel 4](../field-service-assets-wartung-teile/) baut darauf auf, mit Assets, Wartungsplänen und Ersatzteilen, und die [Übersicht](../) zeigt alle Kapitel.
+Das Datenmodell ist Arbeit an der [Salesforce-Architektur](/leistungen/salesforce-architektur/) und entscheidet, ob Formulare, Berichte und später KI-Agenten die Daten nutzen können. [Kapitel 4](/masterclass/field-service/field-service-assets-wartung-teile/) baut darauf auf, mit Assets, Wartungsplänen und Ersatzteilen, und die [Übersicht](/masterclass/field-service/) zeigt alle Kapitel.

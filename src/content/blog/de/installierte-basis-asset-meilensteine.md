@@ -37,10 +37,10 @@ Aus meiner Sicht braucht jede Maschine mindestens diese Daten:
 - **Seriennummer.** Der fachliche Schlüssel, den ERP, PLM, Händler und Salesforce kennen. Als technischen Integrationsschlüssel würde ich die Asset-ID des Quellsystems behalten und eine Eindeutigkeitsregel festlegen, etwa Produkt plus Seriennummer.
 - **Produkt.** Der Maschinentyp, damit Garantiebedingungen und Kampagnen nach Produkt auswählen können.
 - **Betreiber-Account und Standort.** Wer die Maschine betreibt und wo sie steht.
-- **Garantiebeginn.** Kauf- oder Installationsdatum, je nach Ihren Bedingungen. Wie die Garantie des einzelnen Assets damit arbeitet, steht in [Garantieansprüche von Händlern](../garantieansprueche-haendler-salesforce/).
+- **Garantiebeginn.** Kauf- oder Installationsdatum, je nach Ihren Bedingungen. Wie die Garantie des einzelnen Assets damit arbeitet, steht in [Garantieansprüche von Händlern](/blog/garantieansprueche-haendler-salesforce/).
 - **Nutzung**, wenn Ihre Garantie an Betriebsstunden oder Zyklen gebunden ist.
 
-Hauptbaugruppen können als untergeordnete Assets unter der Maschine stehen. Wie diese Hierarchie bei Ersatzteilen hilft, beschreibt [Ersatzteile per Seriennummer](../ersatzteile-seriennummer-ki-agent/).
+Hauptbaugruppen können als untergeordnete Assets unter der Maschine stehen. Wie diese Hierarchie bei Ersatzteilen hilft, beschreibt [Ersatzteile per Seriennummer](/blog/ersatzteile-seriennummer-ki-agent/).
 
 ## Was halten Asset-Meilensteine fest?
 
@@ -83,21 +83,21 @@ Keine der Quellen kennt alles. Ein Rechenbeispiel mit angenommenen Zahlen: Ein M
 | Installationsdatum, Standort | Inbetriebnahmeprotokoll | Service |
 | Betriebsstunden | Händler, Kunde oder Telemetrie | Hängt von den Garantiebedingungen ab |
 
-In diesem Szenario hängt der Garantiebeginn vom Händler ab. Ist die Registrierung freiwillig, fehlt bei einem großen Teil der Maschinen das Startdatum, und jeder Antrag zu diesen Maschinen muss manuell bearbeitet werden. Ich würde die Registrierung im Portal zur Pflicht machen, am besten verknüpft mit einem Vorteil für den Händler, etwa dass Garantieanträge nur für registrierte Maschinen angenommen werden. Welche Lizenz Händler dafür brauchen, steht im Beitrag zum [Kundenportal der Manufacturing Cloud](../manufacturing-cloud-kundenportal/).
+In diesem Szenario hängt der Garantiebeginn vom Händler ab. Ist die Registrierung freiwillig, fehlt bei einem großen Teil der Maschinen das Startdatum, und jeder Antrag zu diesen Maschinen muss manuell bearbeitet werden. Ich würde die Registrierung im Portal zur Pflicht machen, am besten verknüpft mit einem Vorteil für den Händler, etwa dass Garantieanträge nur für registrierte Maschinen angenommen werden. Welche Lizenz Händler dafür brauchen, steht im Beitrag zum [Kundenportal der Manufacturing Cloud](/blog/manufacturing-cloud-kundenportal/).
 
-Die Owner-Spalte ist die eigentliche Arbeit. Schreiben Sie sie pro Feld auf, wie in der [Object Ownership Matrix](../object-ownership-matrix-salesforce/), und planen Sie die ERP-Schnittstelle danach. Wie ich dabei unterstütze, steht unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Die Owner-Spalte ist die eigentliche Arbeit. Schreiben Sie sie pro Feld auf, wie in der [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/), und planen Sie die ERP-Schnittstelle danach. Wie ich dabei unterstütze, steht unter [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/).
 
 ## Was zeigt die Asset Service Console?
 
 Sie zeigt alle Datensätze, die einer Maschine zugeordnet sind. Laut Serviceseite zeigt sie „alerts, milestones, and service history“ eines Assets, dazu Garantien, Cases, Arbeitsaufträge und Garantieanträge. Der [Überblick auf Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) nennt sie einen Arbeitsplatz „to manage cases, assets, warranties, and service histories“.
 
-Eine Konsole wirkt nur so vollständig wie die Daten dahinter. Das gilt genauso für den [Garantie-Prüfagenten aus Winter '27](../garantie-pruefagent-winter-27/): Er stützt sich wie ein Mensch auf Asset-, Garantie- und Antragsdaten, fragt aber nicht nach, wenn sie fehlen. Der Beitrag schlägt einen einfachen Test vor: Zählen Sie, zu wie vielen Seriennummern aus den Anträgen des Vorjahres ein Asset mit Startdatum existiert.
+Eine Konsole wirkt nur so vollständig wie die Daten dahinter. Das gilt genauso für den [Garantie-Prüfagenten aus Winter '27](/blog/garantie-pruefagent-winter-27/): Er stützt sich wie ein Mensch auf Asset-, Garantie- und Antragsdaten, fragt aber nicht nach, wenn sie fehlen. Der Beitrag schlägt einen einfachen Test vor: Zählen Sie, zu wie vielen Seriennummern aus den Anträgen des Vorjahres ein Asset mit Startdatum existiert.
 
 ## Beim Arbeitsauftrag beginnt Field Service
 
-Assets, Meilensteine, Beteiligte und Flotten bilden die gemeinsame Grundlage. Wartungspläne, Arbeitsaufträge, Servicetermine und Technikerbestände gehören zu Field Service, beschrieben im [Kapitel zu Assets und Wartung der Field-Service-Masterclass](../../masterclass/field-service/field-service-assets-wartung-teile/) und im Beitrag zu [Wartungsverträgen](../salesforce-field-service-wartungsvertraege/). Entwerfen Sie das Asset-Modell einmal für beide, nicht pro Projekt.
+Assets, Meilensteine, Beteiligte und Flotten bilden die gemeinsame Grundlage. Wartungspläne, Arbeitsaufträge, Servicetermine und Technikerbestände gehören zu Field Service, beschrieben im [Kapitel zu Assets und Wartung der Field-Service-Masterclass](/masterclass/field-service/field-service-assets-wartung-teile/) und im Beitrag zu [Wartungsverträgen](/blog/salesforce-field-service-wartungsvertraege/). Entwerfen Sie das Asset-Modell einmal für beide, nicht pro Projekt.
 
-Zwei Add-ons werden hier oft diskutiert. Laut [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) kostet Connected Assets 15.000 US-Dollar pro Org und Monat bei jährlicher Abrechnung und stellt Telemetriedaten bereit; Asset Service Lifecycle Management kostet 75 US-Dollar pro Nutzer und Monat und kann zu den Field-Service-Editionen hinzugebucht werden (Field Service Max enthält laut Field-Service-Preisseite ASLM und Connected Assets). Für eine saubere installierte Basis brauchen Sie keines davon. Ob Telemetrie sich lohnt, steht in [Predictive Maintenance in Salesforce](../predictive-maintenance-salesforce-datenbasis/).
+Zwei Add-ons werden hier oft diskutiert. Laut [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) kostet Connected Assets 15.000 US-Dollar pro Org und Monat bei jährlicher Abrechnung und stellt Telemetriedaten bereit; Asset Service Lifecycle Management kostet 75 US-Dollar pro Nutzer und Monat und kann zu den Field-Service-Editionen hinzugebucht werden (Field Service Max enthält laut Field-Service-Preisseite ASLM und Connected Assets). Für eine saubere installierte Basis brauchen Sie keines davon. Ob Telemetrie sich lohnt, steht in [Predictive Maintenance in Salesforce](/blog/predictive-maintenance-salesforce-datenbasis/).
 
 ## Lücken in den Garantieanträgen des Vorjahres zählen
 
@@ -114,4 +114,4 @@ Registrierung zur Pflicht machen
   Als festen Schritt im Händlerprozess.
 ```
 
-Die Quote aus dem ersten Schritt berechne ich als Seriennummern mit Betreiber und Startdatum geteilt durch alle Anträge; an ihr messe ich das Projekt. Einen vollständigen Überblick zum After-Sales finden Sie im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud. Wie Installed Base, Field Service, Ersatzteile und Händlerportal bei Maschinen- und Anlagenbauern zusammenspielen, beschreibt die Seite [Salesforce für Maschinen- und Anlagenbau](../../salesforce-maschinenbau/).
+Die Quote aus dem ersten Schritt berechne ich als Seriennummern mit Betreiber und Startdatum geteilt durch alle Anträge; an ihr messe ich das Projekt. Einen vollständigen Überblick zum After-Sales finden Sie im [Kapitel Garantie und After-Sales](/masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud. Wie Installed Base, Field Service, Ersatzteile und Händlerportal bei Maschinen- und Anlagenbauern zusammenspielen, beschreibt die Seite [Salesforce für Maschinen- und Anlagenbau](/salesforce-maschinenbau/).

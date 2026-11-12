@@ -72,7 +72,7 @@ title: What "Enable In-Region Model Request Only" does
 The setting sits in Einstein Setup and requires Data 360. When the regional endpoints are unavailable, it returns an error instead of routing the request to the United States. According to Salesforce Help, it disables region fallback entirely for Anthropic and GPT models; the requests still try the primary and secondary endpoints in the region first. It does not affect batch processing.
 ```
 
-In-region only has a price: during an outage the agent returns an error. For order status, that is acceptable with a handover to a person. For a [breakdown hotline](../breakdown-hotline-agentforce-voice/) I would not accept it without a tested fallback to a dispatcher.
+In-region only has a price: during an outage the agent returns an error. For order status, that is acceptable with a handover to a person. For a [breakdown hotline](/en/blog/breakdown-hotline-agentforce-voice/) I would not accept it without a tested fallback to a dispatcher.
 
 ## The Hyperforce Operating Zone does not confirm Agentforce
 
@@ -88,7 +88,7 @@ Koa, Salesforce's own CRM reasoning model, is released in the US first. Accordin
 
 I am a Salesforce architect, not a lawyer, and this is not legal advice. As I read it, GDPR does not demand that data stays in the EU, and Salesforce's privacy FAQ says all Salesforce services, Agentforce included, are covered by the EU Standard Contractual Clauses, with Binding Corporate Rules for processors on top. Whether that is enough for a specific data flow is your data protection officer's call: model route, sub-processor, data categories, transfer mechanism and any supplementary measures belong in that transfer assessment. A data protection officer may still ask for EU processing when prompts carry dealer contacts, technician names or warranty cases.
 
-Three related topics follow other rules: the [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/), [AI coding tools under works council and GDPR](../ai-coding-tools-works-council-gdpr/), and external models reading Salesforce data through [hosted MCP servers](../salesforce-hosted-mcp-servers-data-access/), where Salesforce's retention agreements do not reach.
+Three related topics follow other rules: the [EU AI Act deadlines for Agentforce](/en/blog/eu-ai-act-deadlines-agentforce/), [AI coding tools under works council and GDPR](/en/blog/ai-coding-tools-works-council-gdpr/), and external models reading Salesforce data through [hosted MCP servers](/en/blog/salesforce-hosted-mcp-servers-data-access/), where Salesforce's retention agreements do not reach.
 
 ## Worked example: dealer enquiries from five countries
 
@@ -117,4 +117,4 @@ For each agent, ask Salesforce these questions and file the answers in the archi
 7. **Retention.** Does zero data retention apply to your model, which prompts and traces are stored in Data 360, and if you use BYOLLM, which clauses in your own provider contract cover it?
 8. **Changes.** How will you learn when the default model, the routing or the sub-processor list changes?
 
-When Salesforce changes the default model or the sub-processor list, ask questions 1 to 5 again; an entry in the [decision log](../salesforce-architecture-decision-log/) is the simplest way to record which answer applies to which agent. Settling these questions per agent is part of my work on [Salesforce architecture](../../services/salesforce-architecture/); the wider map of agents in manufacturing is in [chapter 10 of the AI masterclass](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
+When Salesforce changes the default model or the sub-processor list, ask questions 1 to 5 again; an entry in the [decision log](/en/blog/salesforce-architecture-decision-log/) is the simplest way to record which answer applies to which agent. Settling these questions per agent is part of my work on [Salesforce architecture](/en/services/salesforce-architecture/); the wider map of agents in manufacturing is in [chapter 10 of the AI masterclass](/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/).

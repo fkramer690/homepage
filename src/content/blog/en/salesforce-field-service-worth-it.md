@@ -36,7 +36,7 @@ Salesforce Field Service is the field service product built on Service Cloud. Sa
 
 - **Scheduling and optimization.** A scheduling engine picks a suitable technician and time slot for every job.
 - **Mobile app.** Technicians see their jobs, assets and history, including offline, and record working time, parts, photos and signatures.
-- **Documentation.** Service reports are created directly from the app. What the standard product can do and where it stops is covered in [Service Documents: is Document Builder enough?](../salesforce-service-documents-document-builder/).
+- **Documentation.** Service reports are created directly from the app. What the standard product can do and where it stops is covered in [Service Documents: is Document Builder enough?](/en/blog/salesforce-service-documents-document-builder/).
 
 Scheduling is the core. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies), it works with two kinds of rules. Work rules filter out technicians who cannot take a job, for example because a skill is missing. Service objectives rate the remaining candidates, for example by least travel time, earliest slot or preferred technician. Together they form a scheduling policy.
 
@@ -59,7 +59,7 @@ With few long jobs the benefit of scheduling is much smaller. A technician who c
 My Field Service clients had between 15 and 700 technicians, and job length depended heavily on the industry. With large machines in manufacturing, jobs usually take several days, and more than two appointments on the same day are rare. In industries where technicians only record consumption on site, it was up to ten appointments a day.
 ```
 
-Typical cases are commissioning, conversions or overhauls where a team works at one site for days. The difference from 16 appointments a day is substantial: access to documents, coordination with the customer and a complete acceptance process matter more than which technician is where in the afternoon. Field Service supports such work with multiday appointments and crews, see [multiday jobs and crews](../field-service-multiday-jobs-crews-commissioning/). The business case then has to come from offline documentation, asset history, maintenance contracts, parts or partner management, not from routes.
+Typical cases are commissioning, conversions or overhauls where a team works at one site for days. The difference from 16 appointments a day is substantial: access to documents, coordination with the customer and a complete acceptance process matter more than which technician is where in the afternoon. Field Service supports such work with multiday appointments and crews, see [multiday jobs and crews](/en/blog/field-service-multiday-jobs-crews-commissioning/). The business case then has to come from offline documentation, asset history, maintenance contracts, parts or partner management, not from routes.
 
 For such cases, there are alternatives I check before buying a Field Service license:
 
@@ -67,7 +67,7 @@ For such cases, there are alternatives I check before buying a Field Service lic
 - **A portal with Experience Cloud**, if subcontractors or partners report work and exchange documents.
 - **Planning in the ERP or a project tool**, if jobs are more like projects than appointments.
 
-This is the same make-or-buy question as with any other Salesforce product. I describe the approach under [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
+This is the same make-or-buy question as with any other Salesforce product. I describe the approach under [make-or-buy and license forecasts](/en/services/make-or-buy-licences/).
 
 ## How much does Salesforce Field Service cost?
 
@@ -90,7 +90,7 @@ Two conditions from the small print matter for license planning. Field Service r
 Dispatcher and Technician licenses may not be used in a contact center or for case management. Anyone in the back office who handles cases and plans jobs needs Field Service Plus.
 ```
 
-Which role needs which license, including subcontractors, is covered in [Salesforce Field Service licenses: who needs which?](../field-service-licences-by-role/) and in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/). The six most common questions about the product, each with a short answer, are collected in the topic hub [Salesforce Field Service for manufacturers](../../masterclass/field-service/).
+Which role needs which license, including subcontractors, is covered in [Salesforce Field Service licenses: who needs which?](/en/blog/field-service-licences-by-role/) and in [chapter 1 of the Field Service masterclass](/en/masterclass/field-service/field-service-business-case-licences/). The six most common questions about the product, each with a short answer, are collected in the topic hub [Salesforce Field Service for manufacturers](/en/masterclass/field-service/).
 
 ## How do I decide?
 
@@ -105,8 +105,8 @@ These numbers can usually be pulled from the ERP or the existing scheduling tool
 
 The business case itself has to cover both sides. On the benefit side, include the cost of a failed visit, repeat visits, dispatcher effort, overtime, missed response times and their contractual consequences, and the effort for service reports. On the cost side, include licenses, implementation, integration, operation and existing systems that are switched off or remain in use. Calculate the business case over the expected lifetime, not just for the first year.
 
-Then comes the data question. Field Service schedules using only the assets, locations, skills and availability that are maintained. A technician whose skills are not recorded anywhere will be scheduled incorrectly by the engine. Exactly which data is required is covered in [part 2 of this series](../salesforce-field-service-master-data/).
+Then comes the data question. Field Service schedules using only the assets, locations, skills and availability that are maintained. A technician whose skills are not recorded anywhere will be scheduled incorrectly by the engine. Exactly which data is required is covered in [part 2 of this series](/en/blog/salesforce-field-service-master-data/).
 
 ## Collect four numbers for one month and one region
 
-Collect the four numbers for one month and one region. If they show many short jobs with a lot of travel, build the business case for Field Service with licenses, implementation and maintenance over several years. How the rollout then works region by region is covered in [Salesforce Field Service implementation: why in waves?](../salesforce-field-service-rollout/). If they show few long jobs, first check whether Service Cloud, a portal or the ERP can close the gap. What the mobile app can do for technicians today is covered in [Field Service mobile: guidance and voice](../salesforce-field-service-mobile-guided-voice/). The fit table on [Salesforce in machinery and plant engineering](../../salesforce-for-machinery-manufacturers/) shows which machine builders benefit most from Field Service.
+Collect the four numbers for one month and one region. If they show many short jobs with a lot of travel, build the business case for Field Service with licenses, implementation and maintenance over several years. How the rollout then works region by region is covered in [Salesforce Field Service implementation: why in waves?](/en/blog/salesforce-field-service-rollout/). If they show few long jobs, first check whether Service Cloud, a portal or the ERP can close the gap. What the mobile app can do for technicians today is covered in [Field Service mobile: guidance and voice](/en/blog/salesforce-field-service-mobile-guided-voice/). The fit table on [Salesforce in machinery and plant engineering](/en/salesforce-for-machinery-manufacturers/) shows which machine builders benefit most from Field Service.

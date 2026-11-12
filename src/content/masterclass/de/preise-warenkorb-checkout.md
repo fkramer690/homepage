@@ -32,7 +32,7 @@ Ein B2B-Shop auf Salesforce zeigt Kundenpreise im Standard aus Preisbüchern. Da
 
 ## Woher kommen die Preise im B2B-Store?
 
-Salesforce B2B Commerce, das Salesforce laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping) inzwischen auch als "Agentforce Commerce for B2B" vermarktet, nutzt dieselben Preisbuch-Objekte wie Sales Cloud. Laut [Salesforce-Hilfe zu Preisen in B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) erhält jeder neue Store automatisch ein Standard-Preisbuch und ein Streichpreis-Preisbuch, das einen durchgestrichenen Vergleichspreis zeigt. Weitere Preisbücher ordnen Sie dem Store oder Käufergruppen zu. Wie Käufergruppen und Sichtbarkeit zusammenhängen, steht in [Kapitel 2](../katalog-suche-sichtbarkeit/).
+Salesforce B2B Commerce, das Salesforce laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping) inzwischen auch als "Agentforce Commerce for B2B" vermarktet, nutzt dieselben Preisbuch-Objekte wie Sales Cloud. Laut [Salesforce-Hilfe zu Preisen in B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) erhält jeder neue Store automatisch ein Standard-Preisbuch und ein Streichpreis-Preisbuch, das einen durchgestrichenen Vergleichspreis zeigt. Weitere Preisbücher ordnen Sie dem Store oder Käufergruppen zu. Wie Käufergruppen und Sichtbarkeit zusammenhängen, steht in [Kapitel 2](/masterclass/b2b-commerce/katalog-suche-sichtbarkeit/).
 
 Hat ein Käufer Zugriff auf mehrere Preisbücher, entscheidet die [Preisstrategie](https://help.salesforce.com/s/articleView?id=sf.comm_priority_pricing.htm&language=en_US&type=5):
 
@@ -53,7 +53,7 @@ Die [Limits für Preisbücher](https://developer.salesforce.com/docs/commerce/sa
 | Käufergruppen je Preisbuch | 100 (weich) |
 | Preisbücher je Käufergruppe | 50 in der Tabelle, 25 im Hinweis derselben Seite |
 
-Die 25 je Aufruf sind das Limit, das in Projekten zum Problem werden kann: Preisbücher darüber fließen nicht in die Preisfindung ein, ohne Fehlermeldung. Die widersprüchliche Angabe je Käufergruppe sollten Sie sich von Salesforce schriftlich klären lassen, wenn Ihr Design davon abhängt. Details und Muster stehen in [Kundenpreise in B2B Commerce](../../../blog/kundenpreise-b2b-commerce-preisbuecher-erp/).
+Die 25 je Aufruf sind das Limit, das in Projekten zum Problem werden kann: Preisbücher darüber fließen nicht in die Preisfindung ein, ohne Fehlermeldung. Die widersprüchliche Angabe je Käufergruppe sollten Sie sich von Salesforce schriftlich klären lassen, wenn Ihr Design davon abhängt. Details und Muster stehen in [Kundenpreise in B2B Commerce](/blog/kundenpreise-b2b-commerce-preisbuecher-erp/).
 
 ## Preisbücher kopieren oder das ERP live abfragen?
 
@@ -73,7 +73,7 @@ contra: Der Preis dafür
 
 Bei vier Händlerstufen und stabiler Preisliste reichen vier Preisbücher und eine nächtliche Ladung. Bei Preisen, die je Kunde verhandelt sind, würde ich SAP live abfragen oder aufteilen: Preisbücher für die breite Masse, Live-Aufruf für die Schlüsselkunden. Ein Detail aus der Extension-Liste: Nutzt der Store Faster Add-to-Cart, braucht jedes Produkt trotzdem einen Eintrag in einem Store-Preisbuch.
 
-Egal welcher Weg, eine Frage muss vor dem Go-live beantwortet sein: Welcher Preis gilt, wenn der Shop einen anderen zeigt als den, den SAP beim Auftragseingang berechnet? Ohne Regel muss der Innendienst sie klären, Auftrag für Auftrag. Dasselbe Risiko beschreibe ich für KI-Angebote in [KI-Angebote für Händler mit dem Partner Sales Assistant](../../../blog/ki-angebote-haendler-partner-sales-assistant/). Welche Schnittstellen daraus folgen, behandelt [Kapitel 4](../erp-integration-bestand-auftraege/).
+Egal welcher Weg, eine Frage muss vor dem Go-live beantwortet sein: Welcher Preis gilt, wenn der Shop einen anderen zeigt als den, den SAP beim Auftragseingang berechnet? Ohne Regel muss der Innendienst sie klären, Auftrag für Auftrag. Dasselbe Risiko beschreibe ich für KI-Angebote in [KI-Angebote für Händler mit dem Partner Sales Assistant](/blog/ki-angebote-haendler-partner-sales-assistant/). Welche Schnittstellen daraus folgen, behandelt [Kapitel 4](/masterclass/b2b-commerce/erp-integration-bestand-auftraege/).
 
 ## Wann braucht der Shop Advanced Pricing aus Revenue Cloud?
 
@@ -82,7 +82,7 @@ Die dritte Option ist eine Preis-Engine in Salesforce. Die [Salesforce-Hilfe zu 
 Zum Budget: Die B2B-Editionen stehen auf "Contact for Pricing", die [Preisseite von Revenue Cloud](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) nennt für Revenue Cloud Advanced 200 US-Dollar pro Nutzer und Monat bei jährlicher Abrechnung. Wie viele dieser Nutzerlizenzen ein Store mit externen Käufern braucht, steht auf keiner der beiden Seiten. Diese Frage gehört schriftlich an Salesforce, bevor Sie einen Business Case rechnen.
 
 ```hinweis tipp
-Meine Regel: Advanced Pricing lohnt sich, wenn der Vertrieb seine Angebote schon in Revenue Cloud rechnet, wenn Vertragspreise in Salesforce verhandelt werden oder wenn Sie Request for Quote brauchen. Berechnet SAP jeden Kundenpreis und soll das so bleiben, bauen Sie mit Revenue Cloud eine zweite Preis-Engine, die mit SAP übereinstimmen muss. Dann ist der Live-Aufruf einfacher. Die Abwägung im Detail steht in [Advanced Pricing im B2B-Shop](../../../blog/advanced-pricing-b2b-shop-revenue-cloud/). Für Rahmenverträge mit Mengen und Laufzeit, die eher den Absatz planen als den Shoppreis setzen, ist Manufacturing Cloud zuständig; das behandelt das Kapitel [Rahmenverträge und Prognosen](../../manufacturing-cloud/rahmenvertraege-und-prognosen/).
+Meine Regel: Advanced Pricing lohnt sich, wenn der Vertrieb seine Angebote schon in Revenue Cloud rechnet, wenn Vertragspreise in Salesforce verhandelt werden oder wenn Sie Request for Quote brauchen. Berechnet SAP jeden Kundenpreis und soll das so bleiben, bauen Sie mit Revenue Cloud eine zweite Preis-Engine, die mit SAP übereinstimmen muss. Dann ist der Live-Aufruf einfacher. Die Abwägung im Detail steht in [Advanced Pricing im B2B-Shop](/blog/advanced-pricing-b2b-shop-revenue-cloud/). Für Rahmenverträge mit Mengen und Laufzeit, die eher den Absatz planen als den Shoppreis setzen, ist Manufacturing Cloud zuständig; das behandelt das Kapitel [Rahmenverträge und Prognosen](/masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/).
 ```
 
 ## Von der Anfrage über das Angebot zur Bestellung
@@ -98,7 +98,7 @@ Für eigene Komponenten gibt es die Apex-Klasse [ConnectApi.CommerceQuotes](http
 Zur Lizenz machen die Quellen unterschiedliche Angaben. Die Hilfe nennt Advanced Pricing als Voraussetzung für RFQ, die Apex-Referenz unterstützt einfache Produkte bei createQuoteFromProduct auch mit einer reinen B2B-Commerce-Lizenz. Holen Sie die Antwort für Ihre Produkte schriftlich ein.
 ```
 
-Wichtiger als die Technik ist der Innendienst. Ein Käufer, der drei Tage auf ein Angebot aus dem Shop wartet, schickt die nächste Anfrage wieder per E-Mail. Antwortzeit, Zuständigkeit je Queue und Rabattgrenzen sollten vor dem Go-live schriftlich festgelegt sein. Den ganzen Kreislauf beschreibe ich in [Request for Quote im B2B-Shop](../../../blog/request-for-quote-b2b-shop-angebot/).
+Wichtiger als die Technik ist der Innendienst. Ein Käufer, der drei Tage auf ein Angebot aus dem Shop wartet, schickt die nächste Anfrage wieder per E-Mail. Antwortzeit, Zuständigkeit je Queue und Rabattgrenzen sollten vor dem Go-live schriftlich festgelegt sein. Den ganzen Kreislauf beschreibe ich in [Request for Quote im B2B-Shop](/blog/request-for-quote-b2b-shop-angebot/).
 
 ## Checkout auf Rechnung: Bestellnummer statt Karte
 
@@ -113,7 +113,7 @@ Die Optionen für B2B-Stores:
 
 Zahlungen lassen sich laut [Extension-Leitfaden](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html) nicht mit Extensions anpassen. Sonderregeln für Zahlungen sind also eigener Code, den Ihr Team bei jedem Release pflegen muss.
 
-Was der Standard nicht kann, ist die Prüfung, ob ein Händler überhaupt bestellen darf. Kreditlimit und Auftragssperre liegen im ERP. Der Ort dafür ist `Commerce_Domain_Checkout_PlaceOrder`: Er führt Warenkorbprüfungen aus, wenn der Käufer bestellt, und Sie überschreiben die Methode `validate` mit einem Live-Aufruf ans ERP. Entscheiden Sie dabei, was bei einer Zeitüberschreitung passiert und was der Käufer bei einer Sperre liest. Kreditlimits nachts nach Salesforce zu kopieren halte ich für falsch: Die Kopie stimmt genau dann nicht, wenn ein Händler heute Morgen drei große Bestellungen abgeschickt hat. Mehr dazu in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../../../blog/b2b-checkout-bestellnummer-rechnung/).
+Was der Standard nicht kann, ist die Prüfung, ob ein Händler überhaupt bestellen darf. Kreditlimit und Auftragssperre liegen im ERP. Der Ort dafür ist `Commerce_Domain_Checkout_PlaceOrder`: Er führt Warenkorbprüfungen aus, wenn der Käufer bestellt, und Sie überschreiben die Methode `validate` mit einem Live-Aufruf ans ERP. Entscheiden Sie dabei, was bei einer Zeitüberschreitung passiert und was der Käufer bei einer Sperre liest. Kreditlimits nachts nach Salesforce zu kopieren halte ich für falsch: Die Kopie stimmt genau dann nicht, wenn ein Händler heute Morgen drei große Bestellungen abgeschickt hat. Mehr dazu in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](/blog/b2b-checkout-bestellnummer-rechnung/).
 
 ## Nachbestellen: Woher kommt das Volumen?
 
@@ -131,7 +131,7 @@ Add Order to Cart arbeitet mit Order Summaries in Salesforce. Eine Telefonbestel
 
 Die [Warenkorblimits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-cart-limits.html): Die meisten Shops begrenzen einen Warenkorb auf 500 Positionen, mit Large-Cart-Unterstützung auf 2.000. Ein Nutzer hat bis zu 100 Warenkörbe, einen aktiven und 99 weitere. Prüfen Sie vor dem Versprechen "Laden Sie Ihre ganze Liste hoch", wie lang die längsten Bestellungen im ERP wirklich sind.
 
-Das [Reorder Portal](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal) ist die schlanke Variante: Vertriebsmitarbeiter laden Käufer ein, die dann ihre früheren Bestellungen wiederholen. Für die Anbindung an Sales Cloud sind eine Agentforce-Commerce-Lizenz und eine aktivierte Digital Experience nötig. Es passt, wenn kein Katalogprojekt geplant ist. Welche Funktion zu welchem Bestellmuster passt, steht in [Nachbestellen im B2B-Shop](../../../blog/nachbestellen-b2b-shop-vorlagen/).
+Das [Reorder Portal](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal) ist die schlanke Variante: Vertriebsmitarbeiter laden Käufer ein, die dann ihre früheren Bestellungen wiederholen. Für die Anbindung an Sales Cloud sind eine Agentforce-Commerce-Lizenz und eine aktivierte Digital Experience nötig. Es passt, wenn kein Katalogprojekt geplant ist. Welche Funktion zu welchem Bestellmuster passt, steht in [Nachbestellen im B2B-Shop](/blog/nachbestellen-b2b-shop-vorlagen/).
 
 ## Rechenbeispiel: 600 Händler in 9 Ländern
 
@@ -158,4 +158,4 @@ Schreiben Sie eine Seite zur Preis-Master-Entscheidung, bevor jemand den Store g
 4. Weichen Shop und ERP voneinander ab: Welcher Preis zählt, und wer klärt die Differenz?
 5. Welche Käufergruppen zahlen mit Bestellnummer, welche mit Karte, und wer prüft den Kredit?
 
-Diese Seite gehört neben Ihre [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/) und bestimmt die Schnittstellenliste für [Kapitel 4](../erp-integration-bestand-auftraege/). Den Entwurf der Preis- und Kreditaufrufe übernehme ich im Rahmen der [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/), die Lizenzfrage zu Revenue Cloud unter [Make-or-Buy und Lizenzen](../../../leistungen/make-or-buy-lizenzen/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
+Diese Seite gehört neben Ihre [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/) und bestimmt die Schnittstellenliste für [Kapitel 4](/masterclass/b2b-commerce/erp-integration-bestand-auftraege/). Den Entwurf der Preis- und Kreditaufrufe übernehme ich im Rahmen der [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/), die Lizenzfrage zu Revenue Cloud unter [Make-or-Buy und Lizenzen](/leistungen/make-or-buy-lizenzen/). Alle Kapitel finden Sie auf der [Übersichtsseite](/masterclass/b2b-commerce/).

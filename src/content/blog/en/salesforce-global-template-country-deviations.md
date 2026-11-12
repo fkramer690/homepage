@@ -43,7 +43,7 @@ Each exception is small. Together they have three consequences:
 In the worldwide Manufacturing Cloud rollout I accompanied as architect, it was clear from the start that the goal was to harmonize processes. We started with a large country with reasonable complexity, and the other countries only had marginal deviations. My guideline since then: all countries should be at least 80 percent identical to the template, and the delta per country should be minimized. What I would do differently: keep raising change management, even when the client thinks they do not need it.
 ```
 
-I describe the order of countries in detail in [Manufacturing Cloud global rollout](../manufacturing-cloud-global-rollout/). This article is about the question every country asks again and again: may this deviation go into the system?
+I describe the order of countries in detail in [Manufacturing Cloud global rollout](/en/blog/manufacturing-cloud-global-rollout/). This article is about the question every country asks again and again: may this deviation go into the system?
 
 ## Which deviations are justified?
 
@@ -68,9 +68,9 @@ The technical rule is simple: country differences belong in configuration, not i
 - **Values per country in custom metadata types.** Approval limits, routing parameters or required fields per country are stored in a table. A validation rule or flow reads the value for the record's country and enforces it. A new country then adds entries rather than new automation, and those entries are tested and deployed like any other change. Tax rates stay in the ERP or tax system, which is their system of record.
 - **Translations through Salesforce's translation features**, not through extra fields per language.
 - **Record types only for real process variants**, not per country. Ten countries with one record type each multiply layouts, picklist values and tests that drift apart.
-- **Visibility by country, legal entity or region through roles, territories and sharing rules**, as described in the [permission concept](../salesforce-permission-concept-permission-sets/).
+- **Visibility by country, legal entity or region through roles, territories and sharing rules**, as described in the [permission concept](/en/blog/salesforce-permission-concept-permission-sets/).
 
-These rules belong in the [development standards](../salesforce-development-standards-definition-of-done/), so every partner who rolls out the template in a country knows them.
+These rules belong in the [development standards](/en/blog/salesforce-development-standards-definition-of-done/), so every partner who rolls out the template in a country knows them.
 
 ```pro-contra
 pro: Strict template
@@ -84,9 +84,9 @@ contra: What you give up
 
 ## Who decides on deviations?
 
-A country requests a deviation in writing: what it needs, why, and what it costs to adopt the template instead. A global process owner decides together with the architect on the client side, and the decision goes into the [decision log](../salesforce-architecture-decision-log/), so the next country does not ask the same question again.
+A country requests a deviation in writing: what it needs, why, and what it costs to adopt the template instead. A global process owner decides together with the architect on the client side, and the decision goes into the [decision log](/en/blog/salesforce-architecture-decision-log/), so the next country does not ask the same question again.
 
-Two rules help. First, the country carries the follow-up costs of its deviation, including testing in every future release. That reduces the scope of many requests. Second, every deviation is reviewed after a year: is it still needed, or can the country go back to the template? Many requests come from habit. If the sponsor in the country understands why the template is built the way it is, they can put these requests in context before they reach the architect. More on that in [Change management in a global Salesforce rollout](../change-management-global-salesforce-rollout/).
+Two rules help. First, the country carries the follow-up costs of its deviation, including testing in every future release. That reduces the scope of many requests. Second, every deviation is reviewed after a year: is it still needed, or can the country go back to the template? Many requests come from habit. If the sponsor in the country understands why the template is built the way it is, they can put these requests in context before they reach the architect. More on that in [Change management in a global Salesforce rollout](/en/blog/change-management-global-salesforce-rollout/).
 
 ## Metrics per country show whether the template holds
 
@@ -98,4 +98,4 @@ The 80 percent figure is a guideline, not an exact measurement. Still, the trend
 
 ## Write down the goal before the first country
 
-Before the first country rollout, decide what the goal is and write it down. If the goal is harmonization, the target level of template fit and the request path for deviations follow from it. Then keep a list of deviations per country, with reason and approval date. The list should also say what each deviation costs in operation, such as an extra test case in every release. In the steering committee it shows at a glance whether the template holds. How countries adopt the template is also a question of [change management](../../services/change-management-salesforce/).
+Before the first country rollout, decide what the goal is and write it down. If the goal is harmonization, the target level of template fit and the request path for deviations follow from it. Then keep a list of deviations per country, with reason and approval date. The list should also say what each deviation costs in operation, such as an extra test case in every release. In the steering committee it shows at a glance whether the template holds. How countries adopt the template is also a question of [change management](/en/services/change-management-salesforce/).

@@ -41,7 +41,7 @@ These are list prices per user per month, billed annually, as of October 2026:
 | Manufacturing Cloud Service Max | $650 | 2,750,000 |
 | Manufacturing Cloud Sales & Service Max | $700 | 2,750,000 |
 
-The [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) lists Core at $195 and states in its FAQ that "Core replaces Enterprise Edition, Advanced replaces Unlimited Edition, and Max replaces Agentforce 1 Edition". It no longer shows an Enterprise price. Salesforce [announced in September](https://www.salesforce.com/in/news/?p=14535) that "existing customer pricing on legacy editions remains unchanged". So new buyers usually compare against $195, existing Enterprise customers against the price in their current contract; expansion SKUs can differ. How the new editions differ is covered in [Salesforce editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
+The [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) lists Core at $195 and states in its FAQ that "Core replaces Enterprise Edition, Advanced replaces Unlimited Edition, and Max replaces Agentforce 1 Edition". It no longer shows an Enterprise price. Salesforce [announced in September](https://www.salesforce.com/in/news/?p=14535) that "existing customer pricing on legacy editions remains unchanged". So new buyers usually compare against $195, existing Enterprise customers against the price in their current contract; expansion SKUs can differ. How the new editions differ is covered in [Salesforce editions Core, Advanced and Max](/en/blog/salesforce-editions-core-advanced-max/).
 
 The [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) has two footnotes that contradict each other. One says the prices are for Enterprise Edition and that Unlimited costs $425. The other says the prices are for Unlimited Edition. The same announcement says new pricing for the industry editions will follow "later this fall". As of November 2026 the public page is inconsistent, so the order form has to name the SKU, the base edition, the included permission set licenses and the price.
 
@@ -51,10 +51,10 @@ The Manufacturing Cloud pricing page lists these service features: Warranty Life
 
 What these features do:
 
-- **Warranty lifecycle management.** Warranty terms, claims from dealers, adjudication and supplier recovery, covered in [warranty claims from dealers](../warranty-claims-dealers-salesforce/).
-- **Asset Service Console.** Milestones, warranties, cases, work orders and claims per machine. The data behind it is the topic of [installed base in Manufacturing Cloud](../installed-base-asset-milestones/).
+- **Warranty lifecycle management.** Warranty terms, claims from dealers, adjudication and supplier recovery, covered in [warranty claims from dealers](/en/blog/warranty-claims-dealers-salesforce/).
+- **Asset Service Console.** Milestones, warranties, cases, work orders and claims per machine. The data behind it is the topic of [installed base in Manufacturing Cloud](/en/blog/installed-base-asset-milestones/).
 - **Service Console for Manufacturing.** A redesigned contact page with assets, cases and orders of the caller's account. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/service-console-for-manufacturing-cloud-admin-essentials/learn-about-the-service-console-for-manufacturing), its timeline, recommendations and record alerts components are "available with the Industries Service Excellence license". Ask whether Service Core includes the Service Console for Manufacturing.
-- **Product service campaigns** for recalls and upgrades. Trailhead lists them as a Manufacturing Cloud capability, the pricing page does not. In Salesforce Help, they belong to [Asset Service Lifecycle Management](https://help.salesforce.com/s/articleView?id=xcloud.aslm_psc_parent.htm&language=en_US&type=5), which Salesforce also offers outside Manufacturing Cloud with Field Service, so campaigns alone do not justify Manufacturing Cloud. See [product recalls in Salesforce](../product-recalls-service-campaigns/).
+- **Product service campaigns** for recalls and upgrades. Trailhead lists them as a Manufacturing Cloud capability, the pricing page does not. In Salesforce Help, they belong to [Asset Service Lifecycle Management](https://help.salesforce.com/s/articleView?id=xcloud.aslm_psc_parent.htm&language=en_US&type=5), which Salesforce also offers outside Manufacturing Cloud with Field Service, so campaigns alone do not justify Manufacturing Cloud. See [product recalls in Salesforce](/en/blog/product-recalls-service-campaigns/).
 
 ## What does Service Cloud cover on its own?
 
@@ -76,9 +76,9 @@ All 45 on Manufacturing Cloud Service Core cost $148,500 a year at list price. T
 
 Three groups fall outside this table:
 
-- **Field technicians** need Field Service licenses either way. The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) lists Technician at $175 and Field Service+ Core at $250 since its November 2026 update, requires at least one Service Cloud user license, at least one Dispatcher for existing Service Cloud customers, and forbids Dispatcher and Technician licenses for case management. Whether Field Service pays off is covered in [is Salesforce Field Service worth it](../salesforce-field-service-worth-it/).
-- **Dealers** who submit claims work in a portal with partner licenses. See [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
-- **Managers who only read reports** may not need a full license at all. See [does everyone need a full license](../salesforce-licences-full-licence-needed/).
+- **Field technicians** need Field Service licenses either way. The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) lists Technician at $175 and Field Service+ Core at $250 since its November 2026 update, requires at least one Service Cloud user license, at least one Dispatcher for existing Service Cloud customers, and forbids Dispatcher and Technician licenses for case management. Whether Field Service pays off is covered in [is Salesforce Field Service worth it](/en/blog/salesforce-field-service-worth-it/).
+- **Dealers** who submit claims work in a portal with partner licenses. See [the Manufacturing Cloud customer portal](/en/blog/manufacturing-cloud-customer-portal/).
+- **Managers who only read reports** may not need a full license at all. See [does everyone need a full license](/en/blog/salesforce-licences-full-licence-needed/).
 
 ```hinweis offen
 One point I would always get in writing: which Manufacturing Cloud records, such as warranty claims or asset warranties, a Service Cloud user may see. Access comes with [permission set licenses](https://help.salesforce.com/s/articleView?id=mfg_permission_set_licenses.htm&language=en_US&type=5): Warranty Lifecycle Management, Claims Management Foundation and Industry Service Excellence for the consoles. The hotline usually needs to read warranty data, even if it never edits it.
@@ -104,8 +104,8 @@ contra: What you take on
 - You own every change yourself
 ```
 
-This is the same make-or-buy question that applies to the whole industry cloud, covered in [is Manufacturing Cloud worth it](../salesforce-manufacturing-cloud-is-it-worth-it/) and in the [scope and business case chapter](../../masterclass/manufacturing-cloud/scope-and-business-case/). I describe the approach under [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
+This is the same make-or-buy question that applies to the whole industry cloud, covered in [is Manufacturing Cloud worth it](/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/) and in the [scope and business case chapter](/en/masterclass/manufacturing-cloud/scope-and-business-case/). I describe the approach under [make-or-buy and license forecasts](/en/services/make-or-buy-licences/).
 
 ## Count the users per role for one region
 
-Count the users per role for one region: how many handle warranty claims, how many run campaigns, how many only take calls. Then ask for a quote with exactly that mix, and have it address the Industries Service Excellence question and read access for Service Cloud users. The [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass covers the after-sales features themselves.
+Count the users per role for one region: how many handle warranty claims, how many run campaigns, how many only take calls. Then ask for a quote with exactly that mix, and have it address the Industries Service Excellence question and read access for Service Cloud users. The [warranty and after-sales chapter](/en/masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass covers the after-sales features themselves.

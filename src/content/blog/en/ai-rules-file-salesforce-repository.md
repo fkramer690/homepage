@@ -52,7 +52,7 @@ A developer who creates a personal CLAUDE.local.md stops Claude from reading the
 
 ## The rules file belongs to the client
 
-Partners like to bring their own template. That is quick at the start and expensive later, for the reasons in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/): whoever writes the rules sets the standard. For rules files I see three specific reasons.
+Partners like to bring their own template. That is quick at the start and expensive later, for the reasons in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/): whoever writes the rules sets the standard. For rules files I see three specific reasons.
 
 **The file records decisions only you can make.** Which API version new Apex classes use, which Named Credential is the only route to SAP, which of the two warranty date fields is maintained. The API version line is not a formality: from API 67.0, Apex database operations run in user mode by default, and classes without a sharing declaration run `with sharing`, according to the [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm). These are two separate controls. Whether an old class may be moved to 67.0 or later is an architecture decision for your org, not a partner's habit.
 
@@ -60,7 +60,7 @@ Partners like to bring their own template. That is quick at the start and expens
 
 **The file keeps partners comparable.** One file, one definition of done for every team. With two partners and two templates on one org, the louder template quietly becomes your standard.
 
-Ownership means a named person on the client side approves every change, typically the lead architect or the internal tech lead, with a deputy. Partners propose, they do not merge. I would write that into the annex described in [what belongs in the contract when partners code with AI](../partners-using-ai-coding-contract-rules/).
+Ownership means a named person on the client side approves every change, typically the lead architect or the internal tech lead, with a deputy. Partners propose, they do not merge. I would write that into the annex described in [what belongs in the contract when partners code with AI](/en/blog/partners-using-ai-coding-contract-rules/).
 
 ## What goes into the rules file, and what must be enforced elsewhere?
 
@@ -119,9 +119,9 @@ Partner A's template becomes a proposal pull request; a handful of lines survive
 
 Rules files are part of your controls. GitHub's documentation notes that Copilot code review reads custom instructions from the pull request's head branch. A pull request that edits copilot-instructions.md therefore changes the instructions used by its own AI review. In the same way, a committed deny rule can be deleted in a pull request like any other line.
 
-That is why I would put every rules and settings file under [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners): AGENTS.md, CLAUDE.md, .claude/, .vibes/ and the whole .github/ folder, because GitHub says the CODEOWNERS file itself needs an owner. With "Require review from Code Owners" in the branch protection, the owner's approval becomes mandatory, as long as nobody has unchecked bypass rights. GitHub requires code owners to have write permission; if you want to control access, rulesets and bypass rights yourself, the repository should sit in your organization. The same logic applies to shared objects, as described in the [object ownership matrix](../salesforce-object-ownership-matrix/).
+That is why I would put every rules and settings file under [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners): AGENTS.md, CLAUDE.md, .claude/, .vibes/ and the whole .github/ folder, because GitHub says the CODEOWNERS file itself needs an owner. With "Require review from Code Owners" in the branch protection, the owner's approval becomes mandatory, as long as nobody has unchecked bypass rights. GitHub requires code owners to have write permission; if you want to control access, rulesets and bypass rights yourself, the repository should sit in your organization. The same logic applies to shared objects, as described in the [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/).
 
-The file grows from evidence, not from wish lists. OpenAI recommends adding rules after repeated mistakes, and Anthropic recommends adding them after the second correction. In practice, the input comes from review findings counted by category, as described in [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/). Lines are removed again once a pipeline gate covers them. After each Salesforce release, the owner checks the API version line first.
+The file grows from evidence, not from wish lists. OpenAI recommends adding rules after repeated mistakes, and Anthropic recommends adding them after the second correction. In practice, the input comes from review findings counted by category, as described in [reviewing AI-generated Salesforce code](/en/blog/reviewing-ai-generated-salesforce-code/). Lines are removed again once a pipeline gate covers them. After each Salesforce release, the owner checks the API version line first.
 
 ## Take stock of the rules files in your repository
 
@@ -135,9 +135,9 @@ Write the first version
 Add the pointers
   A short CLAUDE.md that points to AGENTS.md, and one Vibes rule.
 Move the hard rules out
-  Deny rules, a hook that keeps the agent from stopping while tests are red, and the gates from [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/), with Vibes disabled in production.
+  Deny rules, a hook that keeps the agent from stopping while tests are red, and the gates from [quality gates for AI code](/en/blog/quality-gates-for-ai-code-salesforce-pipeline/), with Vibes disabled in production.
 Protect the files
   With CODEOWNERS and branch protection.
 ```
 
-Setting this up is part of my work in [DevOps and release management](../../services/devops-release-management/) and in [partner governance](../../services/partner-governance/). For the first version I plan a few days.
+Setting this up is part of my work in [DevOps and release management](/en/services/devops-release-management/) and in [partner governance](/en/services/partner-governance/). For the first version I plan a few days.

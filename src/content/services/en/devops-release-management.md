@@ -75,7 +75,7 @@ Salesforce DevOps means every change that can be deployed as metadata goes throu
 
 ## Why do Salesforce releases cause so much trouble?
 
-Salesforce makes it easy to change things directly in an org. That is useful at the beginning, but it becomes a problem once several teams work in parallel. I describe the typical symptoms in more detail in [why DevOps matters in Salesforce enterprise projects](../../blog/why-devops-matters-salesforce-enterprise/).
+Salesforce makes it easy to change things directly in an org. That is useful at the beginning, but it becomes a problem once several teams work in parallel. I describe the typical symptoms in more detail in [why DevOps matters in Salesforce enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/).
 
 ```vergleich
 without: Changes made directly in the org
@@ -103,7 +103,7 @@ analyse | Review | For every change | Automation catches the repeatable errors, 
 base: On the client's Git platform
 ```
 
-More on reviews in [why pull request reviews are a must in enterprise projects](../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+More on reviews in [why pull request reviews are a must in enterprise projects](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 
 ```praxis
 In one program I built the release process myself. At first every pull request went across my desk, and later I handed this task over to an internal colleague.
@@ -120,15 +120,15 @@ source: my pipelines in client projects
 
 I build pipelines on the Git platform the company already uses. So far that has been GitHub, GitLab, Azure DevOps and Bitbucket. Each platform needs its own pipeline definition, but the deployment steps and checks behind it are the same everywhere, even though each one has its own quirks, for example how the validation status of a pull request is shown.
 
-For the Salesforce part I often use sfdx-hardis, an open-source DevOps tool that I use in my own projects. It has no license fee (runners and maintenance still cost time and money), and the repository, the pipeline and the access rights stay with the client. I explain what it does in [sfdx-hardis: open-source DevOps for Salesforce](../../blog/sfdx-hardis-open-source-salesforce-devops/). I support the project, but I have no financial ties to it. If a client already has a commercial tool that works, I build on it.
+For the Salesforce part I often use sfdx-hardis, an open-source DevOps tool that I use in my own projects. It has no license fee (runners and maintenance still cost time and money), and the repository, the pipeline and the access rights stay with the client. I explain what it does in [sfdx-hardis: open-source DevOps for Salesforce](/en/blog/sfdx-hardis-open-source-salesforce-devops/). I support the project, but I have no financial ties to it. If a client already has a commercial tool that works, I build on it.
 
 ```hinweis tipp
-Platform changes are part of release management too. Each Salesforce release, such as [Winter '27](../../blog/salesforce-winter-27-what-changes-for-your-pipeline/), can change API versions, metadata behavior or security settings that a pipeline depends on. On top of that, a new version of the Salesforce CLI comes out every week, so I pin the tool versions in the pipeline and test updates before they reach the release path.
+Platform changes are part of release management too. Each Salesforce release, such as [Winter '27](/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/), can change API versions, metadata behavior or security settings that a pipeline depends on. On top of that, a new version of the Salesforce CLI comes out every week, so I pin the tool versions in the pipeline and test updates before they reach the release path.
 ```
 
 ## One release process for all partners
 
-A shared release process is the foundation for steering several implementation partners. Every partner delivers through pull requests into the same repository, every delivery runs through the same checks, and the approval sits with the client. If every partner deploys in its own way instead, no governance framework holds. I describe the rules for standards, ownership and reviews across several partners under [partner governance](../partner-governance/).
+A shared release process is the foundation for steering several implementation partners. Every partner delivers through pull requests into the same repository, every delivery runs through the same checks, and the approval sits with the client. If every partner deploys in its own way instead, no governance framework holds. I describe the rules for standards, ownership and reviews across several partners under [partner governance](/en/services/partner-governance/).
 
 ```kreislauf
 title: Every change takes the same route

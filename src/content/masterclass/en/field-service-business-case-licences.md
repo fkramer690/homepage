@@ -55,7 +55,7 @@ Optimization helps where there is a lot to optimize. Before any product discussi
 
 Maintenance, repairs and inspections with several customers a day are the best case. A technician who commissions a plant over two weeks needs drawings, a project plan and a clean acceptance; route optimization does little for them.
 
-If nobody knows the four numbers, the basis for any business case is missing. The criteria in detail and the calculation for 40 technicians are in [Salesforce Field Service: when is it worth it?](../../../blog/salesforce-field-service-worth-it/).
+If nobody knows the four numbers, the basis for any business case is missing. The criteria in detail and the calculation for 40 technicians are in [Salesforce Field Service: when is it worth it?](/en/blog/salesforce-field-service-worth-it/).
 
 ## From case to technician: the path of a job
 
@@ -72,7 +72,7 @@ A work type is the template for a kind of job, such as annual maintenance, break
 
 Planned maintenance enters by a different route. Maintenance plans create work orders without a case, manually or automatically three times a day according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field_service_maint/field-service-generate-work-orders). Planned and unplanned work therefore share the same dispatch queue and compete for the same technicians. Who decides which maintenance visit has to make way for a machine-down call should be settled before the start.
 
-Not every case needs a technician. I recommend a short triage at the hotline: remote help, part shipment or visit. Only a visit creates a work order. The full path of a machine-down call is in [Field Service work orders: from case to technician](../../../blog/field-service-case-to-work-order/).
+Not every case needs a technician. I recommend a short triage at the hotline: remote help, part shipment or visit. Only a visit creates a work order. The full path of a machine-down call is in [Field Service work orders: from case to technician](/en/blog/field-service-case-to-work-order/).
 
 ## Which role needs which license?
 
@@ -92,7 +92,7 @@ On Unlimited Edition, Dispatcher and Technician cost $330 according to the footn
 2. Technicians and contractors need at least one Dispatcher license in the org.
 3. Dispatcher and Technician may not be used for contact center, call center or customer case management. Field Service Plus may.
 
-I build the matrix from what a person does in the system, not from their job title. Hotline agents who only work cases get Service Cloud. The [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) lists Core at $195 and says Core replaces Enterprise Edition. Dispatchers get Dispatcher, your own technicians Technician. The back office is where I look most closely: people who only invoice in the ERP need no Salesforce license at all, and people who read reports may get by with a cheaper one. How to test that without rebuilding standard functions is in [Salesforce licenses: does everyone need a full one?](../../../blog/salesforce-licences-full-licence-needed/).
+I build the matrix from what a person does in the system, not from their job title. Hotline agents who only work cases get Service Cloud. The [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) lists Core at $195 and says Core replaces Enterprise Edition. Dispatchers get Dispatcher, your own technicians Technician. The back office is where I look most closely: people who only invoice in the ERP need no Salesforce license at all, and people who read reports may get by with a cheaper one. How to test that without rebuilding standard functions is in [Salesforce licenses: does everyone need a full one?](/en/blog/salesforce-licences-full-licence-needed/).
 
 ### Field Service Plus or Service Cloud plus Dispatcher?
 
@@ -112,7 +112,7 @@ $80 divided by $32 is 2.5. A partner technician who logs in three or more times 
 The pricing page refers to sales for login-based contractor licenses, so I would have the counting rule written into the order form.
 ```
 
-Contractor licenses are meant for your service partners' staff; putting your own people on them to save money is a risk I would not take. The full role matrix with an annual bill is in [Salesforce Field Service licenses: who needs which?](../../../blog/field-service-licences-by-role/).
+Contractor licenses are meant for your service partners' staff; putting your own people on them to save money is a risk I would not take. The full role matrix with an annual bill is in [Salesforce Field Service licenses: who needs which?](/en/blog/field-service-licences-by-role/).
 
 ## Add-ons and the Agentforce 1 bundle
 
@@ -122,13 +122,13 @@ The pricing page lists five add-ons:
 |---|---|---|
 | Agentforce for Field Service and Operations | AI agents in the flow of work for employees | $125 per user and month |
 | Asset Service Lifecycle Management | Lifecycle of the installed base, from work order quoting to service campaigns | $75 per user and month |
-| Visual Remote Assistant | [Visual remote assistance](../../../blog/visual-remote-assistant-remote-help-instead-of-visit/): video help for customers instead of a visit | $50 per user and month |
+| Visual Remote Assistant | [Visual remote assistance](/en/blog/visual-remote-assistant-remote-help-instead-of-visit/): video help for customers instead of a visit | $50 per user and month |
 | Appointment Assistant | Real-time appointment updates for customers | $25 per user and month |
 | Connected Assets | Proactive maintenance with external data and event orchestration | $15,000 per org and month |
 
 According to the pricing page, Agentforce 1 Field Service at $650 contains Field Service Plus, unlimited Agentforce use for employees, Appointment Assistant, Visual Remote Assistant, Digital Channels, Slack and Tableau Next, plus 1 million Flex Credits and 2.5 million Data Cloud credits per org and year. Built from parts, Field Service Plus and the three add-ons for Agentforce, Visual Remote Assistant and Appointment Assistant cost $430. The bundle therefore costs $220 more per user and month, and the credits per org cover that premium for only about two users.
 
-My rule: the bundle pays off when Slack, Tableau Next, Digital Channels and Data Cloud would be bought for the same users anyway. For technicians who only need the AI add-on, single licenses are clearly cheaper. The calculation with 50 users and a booking agent is in [Agentforce 1 Field Service: when does the bundle pay off?](../../../blog/agentforce-1-field-service-edition-worth-it/), and how Flex Credits work in general is in the AI masterclass chapter [AI costs: tokens, Flex Credits, budget](../../ai-salesforce/costs-and-tokens/).
+My rule: the bundle pays off when Slack, Tableau Next, Digital Channels and Data Cloud would be bought for the same users anyway. For technicians who only need the AI add-on, single licenses are clearly cheaper. The calculation with 50 users and a booking agent is in [Agentforce 1 Field Service: when does the bundle pay off?](/en/blog/agentforce-1-field-service-edition-worth-it/), and how Flex Credits work in general is in the AI masterclass chapter [AI costs: tokens, Flex Credits, budget](/en/masterclass/ai-salesforce/costs-and-tokens/).
 
 ## Where is Salesforce Field Service not the right answer?
 
@@ -138,7 +138,7 @@ Not every field team needs a planning product. I check three alternatives before
 - **A lean scheduling tool** next to the CRM, if only dispatch is missing and assets, contracts and history are maintained cleanly elsewhere.
 - **Service Cloud without Field Service licenses**, if mainly case handling and documentation are missing and appointments are simple to agree.
 
-Two boundaries to other Salesforce products are worth knowing before the quote. If the same service organization handles warranty claims from dealers, Manufacturing Cloud for Service comes into play; where warranty ends and Field Service begins is covered in the Manufacturing Cloud masterclass chapter [warranty and after-sales](../../manufacturing-cloud/warranty-and-after-sales/). If maintenance contracts are sold and billed as recurring revenue, that is a Revenue Cloud topic, placed in the [Revenue Cloud overview](../../revenue-cloud/revenue-cloud-overview/).
+Two boundaries to other Salesforce products are worth knowing before the quote. If the same service organization handles warranty claims from dealers, Manufacturing Cloud for Service comes into play; where warranty ends and Field Service begins is covered in the Manufacturing Cloud masterclass chapter [warranty and after-sales](/en/masterclass/manufacturing-cloud/warranty-and-after-sales/). If maintenance contracts are sold and billed as recurring revenue, that is a Revenue Cloud topic, placed in the [Revenue Cloud overview](/en/masterclass/revenue-cloud/revenue-cloud-overview/).
 
 ## Worked example: a component maker's license bill
 
@@ -167,4 +167,4 @@ If the hotline is also to get an AI agent, the five office seats cost $625 more 
 | Which add-ons are really used in the first year | By role rather than for everyone. |
 | A license forecast for three years | By role and rollout wave, so you do not buy 45 technician licenses on day one when the first wave has 15. |
 
-This list is part of my work on [make-or-buy and license forecasts](../../../services/make-or-buy-licences/), before the negotiation and independent of vendor and partner. Once the business case stands, the next topic is planning itself: master data, scheduling policies and the new console are covered in [chapter 2: scheduling and dispatch](../field-service-scheduling-dispatch/). All chapters are on the [overview page](../).
+This list is part of my work on [make-or-buy and license forecasts](/en/services/make-or-buy-licences/), before the negotiation and independent of vendor and partner. Once the business case stands, the next topic is planning itself: master data, scheduling policies and the new console are covered in [chapter 2: scheduling and dispatch](/en/masterclass/field-service/field-service-scheduling-dispatch/). All chapters are on the [overview page](/en/masterclass/field-service/).

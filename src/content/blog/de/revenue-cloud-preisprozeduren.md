@@ -41,7 +41,7 @@ Salesforce Pricing ist die Preisfindung in Revenue Cloud; in der Salesforce-Doku
 
 Dazu kommen Preisanpassungspläne für Mengenstaffeln, Vertragspreise in Contract-Item-Price-Datensätzen und [abgeleitete Preise](https://trailhead.salesforce.com/content/learn/modules/advanced-price-management-with-revenue-cloud/implement-derived-pricing), bei denen sich der Preis eines Produkts aus dem Preis eines anderen Produkts ergibt, etwa ein Zubehörteil mit 10 Prozent vom Listenpreis des Hauptprodukts.
 
-Für alle, die von Salesforce CPQ umsteigen: Die Aufgaben, die dort Price Rules und das Quote Calculator Plugin erledigt haben, müssen in Pricing Procedures neu gebaut werden. Migrationswerkzeuge helfen bei Preisbüchern, Rabattplänen und der Analyse, die Logik von Price Rules und Plugin wird aber von Hand neu entworfen. Die übrigen Unterschiede stehen in [Salesforce CPQ und Revenue Cloud: die Unterschiede](../salesforce-cpq-revenue-cloud-unterschiede/).
+Für alle, die von Salesforce CPQ umsteigen: Die Aufgaben, die dort Price Rules und das Quote Calculator Plugin erledigt haben, müssen in Pricing Procedures neu gebaut werden. Migrationswerkzeuge helfen bei Preisbüchern, Rabattplänen und der Analyse, die Logik von Price Rules und Plugin wird aber von Hand neu entworfen. Die übrigen Unterschiede stehen in [Salesforce CPQ und Revenue Cloud: die Unterschiede](/blog/salesforce-cpq-revenue-cloud-unterschiede/).
 
 ## Wie berechnet eine Pricing Procedure einen Preis?
 
@@ -86,7 +86,7 @@ titel: Welche Ressourcen der Pricing Business APIs brauchen Sie?
 - `/connect/core-pricing/waterfall`, um den Preiswasserfall einer Position zu schreiben und zu lesen
 ```
 
-Das ist wichtig, wenn derselbe Preis in einem Händlerportal, einem B2B-Shop oder in der Antwort eines Agenten erscheinen soll. Den Shop behandle ich in [Advanced Pricing im B2B-Shop](../advanced-pricing-b2b-shop-revenue-cloud/) und im Kapitel [Preise, Warenkorb und Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/). Ein Agent sollte die Pricing API aufrufen und nie selbst einen Preis ausrechnen. Das folgt derselben Regel, die ich in [Agent Script: Geschäftsregeln gehören nicht ins LLM](../agent-script-regeln-statt-llm/) beschreibe.
+Das ist wichtig, wenn derselbe Preis in einem Händlerportal, einem B2B-Shop oder in der Antwort eines Agenten erscheinen soll. Den Shop behandle ich in [Advanced Pricing im B2B-Shop](/blog/advanced-pricing-b2b-shop-revenue-cloud/) und im Kapitel [Preise, Warenkorb und Checkout](/masterclass/b2b-commerce/preise-warenkorb-checkout/). Ein Agent sollte die Pricing API aufrufen und nie selbst einen Preis ausrechnen. Das folgt derselben Regel, die ich in [Agent Script: Geschäftsregeln gehören nicht ins LLM](/blog/agent-script-regeln-statt-llm/) beschreibe.
 
 ## Jede Pricing Procedure braucht eine verantwortliche Person
 
@@ -95,9 +95,9 @@ Eine Pricing Procedure ändert Preise in jedem Angebot. Ich behandle sie wie Cod
 - **Eine verantwortliche Person.** Meist ein Pricing-Admin im Vertriebsinnendienst oder in Sales Operations, Änderungen gibt das Controlling frei. Der Implementierungspartner setzt die Änderungen um, entscheidet aber nicht.
 - **Versionen.** Jede Änderung erhält eine neue Version mit einer kurzen Notiz, was sich geändert hat und warum.
 - **Regressionsfälle.** Ein fester Satz von Referenzangeboten mit dokumentierten Soll-Nettopreisen: Standardprodukte, jede Mengenstaffel, Vertragskunden, Attributrabatte, manuelle Rabatte über und unter den Freigabegrenzen. Jede Änderung wird gegen alle Fälle geprüft, bevor sie aktiviert wird.
-- **Deployment.** Prozeduren werden als Metadaten zwischen Orgs übertragen, Preisbücher, Staffeln und Vertragspreise dagegen sind Daten. Laut der [Gearset-Dokumentation](https://docs.gearset.com/en/articles/10776213-how-to-deploy-pricing-procedures) sind Pricing Procedures in der Metadata API ExpressionSetDefinitions, ein Deployment legt in der Ziel-Org eine neue Version an, und danach müssen die Decision Tables aktualisiert werden. Kontextdefinitionen und Decision Tables müssen in der Ziel-Org vor der Prozedur vorliegen; stellen Sie sie also in dieser Reihenfolge bereit. Wie das in eine Pipeline passt, steht in [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/).
+- **Deployment.** Prozeduren werden als Metadaten zwischen Orgs übertragen, Preisbücher, Staffeln und Vertragspreise dagegen sind Daten. Laut der [Gearset-Dokumentation](https://docs.gearset.com/en/articles/10776213-how-to-deploy-pricing-procedures) sind Pricing Procedures in der Metadata API ExpressionSetDefinitions, ein Deployment legt in der Ziel-Org eine neue Version an, und danach müssen die Decision Tables aktualisiert werden. Kontextdefinitionen und Decision Tables müssen in der Ziel-Org vor der Prozedur vorliegen; stellen Sie sie also in dieser Reihenfolge bereit. Wie das in eine Pipeline passt, steht in [Revenue Cloud Deployments](/blog/revenue-cloud-konfiguration-deployment/).
 
-Wie Tests und Reviews allgemein in den Release-Prozess gehören, behandelt das Kapitel [Qualität, Tests und Reviews](../../masterclass/devops-release-management/qualitaet-tests-reviews/) der DevOps-Masterclass.
+Wie Tests und Reviews allgemein in den Release-Prozess gehören, behandelt das Kapitel [Qualität, Tests und Reviews](/masterclass/devops-release-management/qualitaet-tests-reviews/) der DevOps-Masterclass.
 
 ## Rechenbeispiel: Pumpenhersteller mit Händlern und Vertragspreisen
 
@@ -105,8 +105,8 @@ Ein Pumpenhersteller verkauft 60 Produktfamilien über den eigenen Vertrieb und 
 
 Die Prozedur enthielte den Listenpreis mit vertragsbasierter Preisfindung, einen Attributrabatt für die Steuerung, den Mengenrabatt, den manuellen Rabatt und ein Aggregat je Produktfamilie. Der Nachtjob lädt die Preise und startet danach den Sync. Der Regressionssatz umfasst 25 Referenzangebote, die jede Produktgruppe, jede Mengenstaffel und mehrere Vertragskunden abdecken. Wünscht der Vertrieb eine Aktion, baut der Pricing-Admin eine neue Version in einer Sandbox, führt die 25 Fälle aus, das Controlling prüft die Abweichungen im Preiswasserfall und bei Aggregaten im Output-JSON, und erst dann wird die Version in der Produktion aktiviert.
 
-Ob SAP oder Salesforce Händler- und Vertragspreise überhaupt berechnen sollte, ist eine eigene Entscheidung. Die behandle ich in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/).
+Ob SAP oder Salesforce Händler- und Vertragspreise überhaupt berechnen sollte, ist eine eigene Entscheidung. Die behandle ich in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](/blog/kundenpreise-sap-konditionen-oder-salesforce-pricing/).
 
 ## Die Preislogik als Schritte aufschreiben
 
-Schreiben Sie Ihre Preislogik als Schritte auf, bevor jemand den Builder öffnet: Welcher Preis ist der Ausgangspunkt, welche Rabatte folgen in welcher Reihenfolge, welche brauchen eine Freigabe? Aus dieser Liste entstehen zugleich die Prozedur und die ersten Regressionsfälle. Wie die Preisfindung mit Katalog und Konfigurator zusammenspielt, erklärt das Kapitel [Katalog, Konfigurator, Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/) der Masterclass Revenue Cloud. Die Freigaben behandelt [Rabattfreigaben in Revenue Cloud](../revenue-cloud-rabattfreigaben/).
+Schreiben Sie Ihre Preislogik als Schritte auf, bevor jemand den Builder öffnet: Welcher Preis ist der Ausgangspunkt, welche Rabatte folgen in welcher Reihenfolge, welche brauchen eine Freigabe? Aus dieser Liste entstehen zugleich die Prozedur und die ersten Regressionsfälle. Wie die Preisfindung mit Katalog und Konfigurator zusammenspielt, erklärt das Kapitel [Katalog, Konfigurator, Preise](/masterclass/revenue-cloud/produktkatalog-konfigurator-preise/) der Masterclass Revenue Cloud. Die Freigaben behandelt [Rabattfreigaben in Revenue Cloud](/blog/revenue-cloud-rabattfreigaben/).

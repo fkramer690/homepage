@@ -39,7 +39,7 @@ The [Supported Models page](https://developer.salesforce.com/docs/ai/agentforce/
 - **Salesforce-managed models** (as of 9 November 2026): Claude Haiku 4.5 up to Haiku 5.5, Sonnet 5.5 and Opus 5.5, Amazon Nova and NVIDIA Nemotron 3 (Beta) on Bedrock; GPT-4o up to GPT 5.6, GPT-6 Luna, Sol and Astra and GPT-6.1 Sol from OpenAI and Azure OpenAI; Gemini 3 Flash up to 3.8 Flash and Gemini 3.1 Pro (Beta) on Vertex AI.
 - **Bring your own LLM (BYOLLM)**: your own account at Amazon Bedrock, Azure OpenAI, OpenAI or Vertex AI, or any model behind the LLM Open Connector.
 
-Anthropic and Amazon models run on Bedrock "entirely within the Salesforce Trust Boundary"; other managed models run "inside a shared trust zone" with Salesforce's partners. What that means for masking and logging is covered in [what the Einstein Trust Layer protects](../einstein-trust-layer-what-it-protects/).
+Anthropic and Amazon models run on Bedrock "entirely within the Salesforce Trust Boundary"; other managed models run "inside a shared trust zone" with Salesforce's partners. What that means for masking and logging is covered in [what the Einstein Trust Layer protects](/en/blog/einstein-trust-layer-what-it-protects/).
 
 The [Claudeforce press release of 27 August 2026](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) names Claude as "a reasoning model for the Atlas Reasoning Engine" and "available in Agent Builder". It does not call Claude the default for agents, and the developer documentation still names GPT-4o in the default mix. According to the [announcement of 15 September 2026](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx), Salesforce's own CRM reasoning model Koa is in pilot, with general availability "expected Winter 2026 in U.S. regions". For a German machine builder planning now, Koa is not yet an option.
 
@@ -49,7 +49,7 @@ According to the [model configuration guide](https://developer.salesforce.com/do
 
 Salesforce names three models as "thoroughly tested with agents": GPT 4.1, Claude Haiku 4.5 and Gemini 3.5 Flash. For routing, new agents from the Agentforce Service agent template use EinsteinHyperClassifier, a Salesforce model that only classifies and cannot call other tools.
 
-I would pin a model even when the default works. Salesforce can change the mix, and an agent that passed your tests in May may answer differently in November without a change on your side. Defaults can also change independently: Salesforce [switches legacy builder agents from GPT-4o to GPT-5.6 Luna](https://help.salesforce.com/s/articleView?id=release-notes.rn_einstein_models_legacy_builder_model_change.htm&language=en_US&type=5) to prepare for the GPT-4o deprecation in Spring 2027. A pinned model is part of the agent version, so a model change goes through the same gates as any other change, described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+I would pin a model even when the default works. Salesforce can change the mix, and an agent that passed your tests in May may answer differently in November without a change on your side. Defaults can also change independently: Salesforce [switches legacy builder agents from GPT-4o to GPT-5.6 Luna](https://help.salesforce.com/s/articleView?id=release-notes.rn_einstein_models_legacy_builder_model_change.htm&language=en_US&type=5) to prepare for the GPT-4o deprecation in Spring 2027. A pinned model is part of the agent version, so a model change goes through the same gates as any other change, described in [testing Agentforce agents before go-live](/en/blog/testing-agentforce-agents-before-go-live/).
 
 ## What does the model tier cost?
 
@@ -65,7 +65,7 @@ source: Flex Credits rate card, updated as of 3 November 2026
 
 The tested models fall into different tiers: Gemini 3.5 Flash is Basic, Claude Haiku 4.5 and GPT 4.1 are Standard. The Claude Opus models up to 4.8 and GPT 5.6 Sol are Advanced, so moving a subagent from Haiku to Opus multiplies its prompt cost by four.
 
-That help article does not say whether the reasoning engine's own LLM calls are metered as prompts on top of the 20 credits per action. For prompt templates, the tier definitely applies; for reasoning, I would measure it in the pilot with Digital Wallet. The full meter set is in [Flex Credits: estimating cost per action](../flex-credits-agentforce-cost-per-action/), the template side in [Prompt Builder or Agentforce agent](../prompt-builder-or-agentforce-agent/).
+That help article does not say whether the reasoning engine's own LLM calls are metered as prompts on top of the 20 credits per action. For prompt templates, the tier definitely applies; for reasoning, I would measure it in the pilot with Digital Wallet. The full meter set is in [Flex Credits: estimating cost per action](/en/blog/flex-credits-agentforce-cost-per-action/), the template side in [Prompt Builder or Agentforce agent](/en/blog/prompt-builder-or-agentforce-agent/).
 
 ## When does bring your own LLM make sense?
 
@@ -87,7 +87,7 @@ Anthropic's [model overview](https://platform.claude.com/docs/en/about-claude/mo
 
 Models are also withdrawn. A deprecated model keeps working for a while and can then be rerouted to a replacement, for example Claude Sonnet 4 to Sonnet 4.6, or retired, as Gemini 3 Pro (Beta) was on 23 April 2026. The model page lists deprecation and reroute dates, and I found no stated notice period. A reroute is a model change that your tests have not covered, so I test the replacement as soon as the deprecation is announced.
 
-Region is the third check. Managed models "eventually re-route to a US region" when a request fails in the designated region, unless an admin turns on "Enable In-Region Model Requests Only", which covers "some models". The help page listed `eu` inference profiles for Claude Sonnet 5 and Opus 4.8, and only the United States for GPT 5.6 Terra. More in [Agentforce EU data residency](../agentforce-eu-data-residency-models/).
+Region is the third check. Managed models "eventually re-route to a US region" when a request fails in the designated region, unless an admin turns on "Enable In-Region Model Requests Only", which covers "some models". The help page listed `eu` inference profiles for Claude Sonnet 5 and Opus 4.8, and only the United States for GPT 5.6 Terra. More in [Agentforce EU data residency](/en/blog/agentforce-eu-data-residency-models/).
 
 ## Worked example: a service agent with an Azure OpenAI contract
 
@@ -95,7 +95,7 @@ Assume a machine builder with Service Cloud, Field Service, a dealer portal and 
 
 - **Router:** EinsteinHyperClassifier, as in the service template.
 - **Order status** for dealers from SAP via MuleSoft: Gemini 3.5 Flash (Basic), because the answer is a lookup.
-- **Warranty pre-check**, with the rule itself in [Agent Script logic](../agent-script-deterministic-rules/): Claude Haiku 4.5 (Standard) reads the serial number and fault description from free text.
+- **Warranty pre-check**, with the rule itself in [Agent Script logic](/en/blog/agent-script-deterministic-rules/): Claude Haiku 4.5 (Standard) reads the serial number and fault description from free text.
 - **Troubleshooting** from manuals for dealer technicians: Claude Haiku 4.5, tested against Opus 4.8 on 100 real fault descriptions before anyone pays for Advanced.
 
 A prompt template also writes a case summary for the field service technician: 3,000 a month at about 5,000 tokens of input and output, three prompts each.
@@ -117,4 +117,4 @@ The table shows prompt charges only. If an agent runs the summary as a custom ac
 5. **Check the model page and release notes regularly** and rerun the tests as soon as a deprecation is announced.
 6. **Measure in Digital Wallet** whether reasoning calls show up as prompts.
 
-I treat these decisions as [Salesforce architecture](../../services/salesforce-architecture/) work, alongside the data model and permissions. For each subagent I write down model, tier, region and test result, because every change touches cost, contracts and tests.
+I treat these decisions as [Salesforce architecture](/en/services/salesforce-architecture/) work, alongside the data model and permissions. For each subagent I write down model, tier, region and test result, because every change touches cost, contracts and tests.

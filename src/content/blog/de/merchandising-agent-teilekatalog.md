@@ -34,7 +34,7 @@ Der Merchandising Agent in Salesforce B2B Commerce erledigt Backoffice-Arbeit im
 
 ## Was ist der Merchandising Agent?
 
-Für den Shopbetrieb in Salesforce B2B Commerce sind zwei Agenten relevant. Der Buyer Agent spricht mit Händlern, darum geht es in [B2B Buyer Agent: Bestellen per WhatsApp und SMS](../b2b-buyer-agent-whatsapp-bestellen/). Der Merchandising Agent arbeitet für das Team, das den Shop betreibt.
+Für den Shopbetrieb in Salesforce B2B Commerce sind zwei Agenten relevant. Der Buyer Agent spricht mit Händlern, darum geht es in [B2B Buyer Agent: Bestellen per WhatsApp und SMS](/blog/b2b-buyer-agent-whatsapp-bestellen/). Der Merchandising Agent arbeitet für das Team, das den Shop betreibt.
 
 Salesforce verwendet dafür drei Namen auf verschiedenen Seiten und beschreibt dort nicht ganz denselben Umfang:
 
@@ -56,7 +56,7 @@ Ein Ersatzteilkatalog ist ein Shop, in dem die Suche fast alles entscheidet. Hä
 
 **Neue Produkte.** Der Agent kann Produkte anlegen. Das passt für Artikel, die es nur im Shop gibt, etwa ein Paket aus Verschleißteilen für ein Wartungsintervall. Teile aus dem ERP sollten weiterhin über die Schnittstelle geliefert werden.
 
-**Käufer-Accounts.** Der Agent kann Käufer-Accounts verwalten. Bei einem Hersteller sind das Anfragen wie "Lege die neue Filiale von Händler X als Käufer-Account an". Welcher Käufergruppe der Account zugeordnet wird, entscheidet, was er sieht und was er zahlt. Mit diesem Skill würde ich am vorsichtigsten umgehen. Wie Käufergruppen und Berechtigungen aufgebaut werden, steht im Kapitel [Katalog, Suche, Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/).
+**Käufer-Accounts.** Der Agent kann Käufer-Accounts verwalten. Bei einem Hersteller sind das Anfragen wie "Lege die neue Filiale von Händler X als Käufer-Account an". Welcher Käufergruppe der Account zugeordnet wird, entscheidet, was er sieht und was er zahlt. Mit diesem Skill würde ich am vorsichtigsten umgehen. Wie Käufergruppen und Berechtigungen aufgebaut werden, steht im Kapitel [Katalog, Suche, Sichtbarkeit](/masterclass/b2b-commerce/katalog-suche-sichtbarkeit/).
 
 ## Kennzahlen zusammenfassen, Verkaufsaktionen entwerfen
 
@@ -70,7 +70,7 @@ Zwei Kennzahlen zählen im Teileshop mehr als der Bestellwert: Suchen ohne Treff
 
 Trailhead nennt die Voraussetzungen: generative KI von Salesforce, Agentforce, Bots und Data 360, aktiviert für den Shop. Die aktuelle Einrichtungshilfe führt Bots nicht mehr als eigenen Schritt; maßgeblich ist die Hilfe für Ihr Release. Die Einrichtung erfolgt geführt in der Commerce-App, Themen und Aktionen sind für Commerce vorkonfiguriert. Für die Lizenzierung verweist Trailhead auf den Hilfeartikel von Salesforce zur Aktivierung der Agentforce Skills for Merchandising.
 
-Die Editionen enthalten laut Preisseite Data-Cloud-Credits: 250K in Growth und 500K in Advanced. Für Agentforce Merchandising nennt Salesforce aber Einstein Requests als Nutzungsmetrik, dazu möglicherweise Data-360-Credits, in Produktion und Sandbox. Wie viel eine einzelne Anfrage verbraucht, ist nicht veröffentlicht. Ich würde den Verbrauch deshalb vor dem Go-live in einer Sandbox mit echten Anfragen messen. Wie eine solche Schätzung funktioniert, zeige ich in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/).
+Die Editionen enthalten laut Preisseite Data-Cloud-Credits: 250K in Growth und 500K in Advanced. Für Agentforce Merchandising nennt Salesforce aber Einstein Requests als Nutzungsmetrik, dazu möglicherweise Data-360-Credits, in Produktion und Sandbox. Wie viel eine einzelne Anfrage verbraucht, ist nicht veröffentlicht. Ich würde den Verbrauch deshalb vor dem Go-live in einer Sandbox mit echten Anfragen messen. Wie eine solche Schätzung funktioniert, zeige ich in [Agentforce-Kosten für Hersteller](/blog/flex-credits-agentforce-kosten-pro-aktion/).
 
 Die Grenzen des Shops gelten auch für den Agenten. Der Developer Guide nennt diese Werte:
 
@@ -85,7 +85,7 @@ Die Hilfe- und Release-Seiten unterscheiden zusätzlich zwischen Regeln für den
 
 ## Was sollte der Agent nicht tun?
 
-Produktstammdaten gehören in ERP oder PIM. Materialnummer, Einheit, Vertriebsstatus und Nachfolgeteil werden dort gepflegt, der Shop erhält eine Kopie. Ändert der Agent ein Produkt in Salesforce, überschreibt die nächste Nachtladung die Änderung, oder, schlimmer noch, Shop und ERP weichen voneinander ab. Wo welche Produktdaten gepflegt werden sollten, erkläre ich in [Produktdaten für B2B Commerce: PIM, ERP oder Salesforce?](../produktdaten-b2b-commerce-pim-erp/).
+Produktstammdaten gehören in ERP oder PIM. Materialnummer, Einheit, Vertriebsstatus und Nachfolgeteil werden dort gepflegt, der Shop erhält eine Kopie. Ändert der Agent ein Produkt in Salesforce, überschreibt die nächste Nachtladung die Änderung, oder, schlimmer noch, Shop und ERP weichen voneinander ab. Wo welche Produktdaten gepflegt werden sollten, erkläre ich in [Produktdaten für B2B Commerce: PIM, ERP oder Salesforce?](/blog/produktdaten-b2b-commerce-pim-erp/).
 
 Meine Regel für einen Teileshop:
 
@@ -97,13 +97,13 @@ Meine Regel für einen Teileshop:
 | Teil aus dem ERP-Materialstamm | Nein | ERP oder PIM ist Master |
 | Neuer Käufer-Account | Nur mit benanntem Freigeber | Entscheidet Sichtbarkeit und Preise |
 
-Jede Änderung des Agenten sollte nachvollziehbar sein: Wer hat gefragt, was hat sich geändert, wer hat freigegeben. Welche Protokolle Salesforce dafür bietet, steht in [Audit-Trail für KI-Agenten in Salesforce: welche Logs?](../audit-trail-ki-agenten-salesforce/).
+Jede Änderung des Agenten sollte nachvollziehbar sein: Wer hat gefragt, was hat sich geändert, wer hat freigegeben. Welche Protokolle Salesforce dafür bietet, steht in [Audit-Trail für KI-Agenten in Salesforce: welche Logs?](/blog/audit-trail-ki-agenten-salesforce/).
 
 ## Beispiel: 60.000 Ersatzteile für 300 Händler
 
 Angenommen, ein Hersteller von Kompressoren betreibt einen B2B-Shop mit 60.000 Ersatzteilen für 300 Händler. Jedes Quartal ersetzt die Konstruktion einige Hundert Teilenummern. Heute pflegt eine Merchandiserin die Suchregeln von Hand und ist zwei Monate im Rückstand.
 
-Nach jeder ERP-Aktualisierung weist sie den Agenten an: "Stufe jedes Teil mit Vertriebsstatus ersetzt herab und hebe sein Nachfolgeteil hervor." Der Agent schlägt die Regeln vor, sie prüft eine Stichprobe und gibt frei. Einmal im Monat fragt sie nach den Suchen ohne Treffer und meldet fehlende alte Nummern als Synonyme oder Attribute an das PIM-Team. Die Suche selbst beschreibe ich in [B2B-Shop-Suche: Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/).
+Nach jeder ERP-Aktualisierung weist sie den Agenten an: "Stufe jedes Teil mit Vertriebsstatus ersetzt herab und hebe sein Nachfolgeteil hervor." Der Agent schlägt die Regeln vor, sie prüft eine Stichprobe und gibt frei. Einmal im Monat fragt sie nach den Suchen ohne Treffer und meldet fehlende alte Nummern als Synonyme oder Attribute an das PIM-Team. Die Suche selbst beschreibe ich in [B2B-Shop-Suche: Ersatzteile über die Teilenummer finden](/blog/b2b-shop-suche-teilenummer/).
 
 ## Lizenz und enthaltene Skills klären
 
@@ -114,4 +114,4 @@ Nach jeder ERP-Aktualisierung weist sie den Agenten an: "Stufe jedes Teil mit Ve
 5. **Grenzen im Blick behalten.** Regelgrenzen des eigenen Releases kennen und monatlich aufräumen.
 6. **Sprache testen.** Deutsche Anfragen und Teilenummern im Pilot prüfen, solange Salesforce nur Englisch dokumentiert.
 
-Das Kapitel [Agenten, Migration, Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) ordnet den Merchandising Agent neben dem Buyer Agent und der Einführung ein. Wenn Sie klären möchten, welchem System welche Daten zwischen ERP, PIM und Salesforce zugeordnet sind, lesen Sie weiter bei [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+Das Kapitel [Agenten, Migration, Einführung](/masterclass/b2b-commerce/agentforce-migration-einfuehrung/) der [Masterclass B2B Commerce](/masterclass/b2b-commerce/) ordnet den Merchandising Agent neben dem Buyer Agent und der Einführung ein. Wenn Sie klären möchten, welchem System welche Daten zwischen ERP, PIM und Salesforce zugeordnet sind, lesen Sie weiter bei [Salesforce-Architektur](/leistungen/salesforce-architektur/).

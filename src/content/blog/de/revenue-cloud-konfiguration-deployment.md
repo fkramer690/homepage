@@ -42,7 +42,7 @@ Für Teams, die von CPQ umsteigen, sehen die Unterschiede so aus:
 | Status der Datensätze | Checkbox Aktiv an Preis- und Produktregeln | Je nach Objekt verschieden, etwa Draft, Active und Inactive bei Verkaufsmodellen; manche Aktivierung ist manuell |
 | Unterstützung in Gearset | Vergleichen und Deployen mit dem External-ID-Assistenten | External-ID-Assistent plus Deployment von Konfigurationsdaten zusammen mit Metadaten, automatisch in Reihenfolge |
 
-Die Folge: Ein Revenue-Cloud-Release kann Metadaten, Konfigurationsdaten und manuelle Einrichtungsschritte enthalten. Enthält es Metadaten und Daten, müssen beide in der richtigen Reihenfolge deployt werden. Den ausführlichen Vergleich beider Produkte finden Sie in [Salesforce CPQ und Revenue Cloud: die echten Unterschiede](../salesforce-cpq-revenue-cloud-unterschiede/).
+Die Folge: Ein Revenue-Cloud-Release kann Metadaten, Konfigurationsdaten und manuelle Einrichtungsschritte enthalten. Enthält es Metadaten und Daten, müssen beide in der richtigen Reihenfolge deployt werden. Den ausführlichen Vergleich beider Produkte finden Sie in [Salesforce CPQ und Revenue Cloud: die echten Unterschiede](/blog/salesforce-cpq-revenue-cloud-unterschiede/).
 
 ## Metadaten zuerst, Eltern vor Kindern
 
@@ -77,7 +77,7 @@ Der Release-Punkt wird am leichtesten übersehen:
 Im Preview-Fenster von Salesforce laufen Sandboxes Wochen vor der Produktion auf dem neuen Release. Eine Context Definition, die in einer Preview-Sandbox entsteht, kann erst in die Produktion übernommen werden, wenn diese dasselbe Release hat.
 ```
 
-Welche Sandbox auf welchem Release läuft, gehört in die Planung von [Umgebungen und Branching](../../masterclass/devops-release-management/umgebungen-und-branching/).
+Welche Sandbox auf welchem Release läuft, gehört in die Planung von [Umgebungen und Branching](/masterclass/devops-release-management/umgebungen-und-branching/).
 
 ## Jeder Konfigurationsdatensatz braucht eine stabile eindeutige ID
 
@@ -87,9 +87,9 @@ Ich würde diese ID einrichten, bevor der erste Konfigurationsdatensatz entsteht
 
 ## Welches Werkzeug bewegt die Daten?
 
-Geeignet ist jedes Datenwerkzeug, das verbundene Datensätze in der richtigen Reihenfolge lädt und über externe IDs abgleicht. Das Kapitel der DevOps-Masterclass zu [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/) vergleicht SFDMU, das Open-Source-Plugin für die Salesforce CLI, mit den Datenmodulen von Gearset, Copado und Flosum. Für Revenue Cloud führt Gearset zuerst seinen External-ID-Assistenten aus und deployt Konfigurationsdaten dann zusammen mit Metadaten. Welches Werkzeug insgesamt zu Ihrem Programm passt, entscheidet der [Vergleich der DevOps-Werkzeuge](../../masterclass/devops-release-management/devops-werkzeuge-vergleich/).
+Geeignet ist jedes Datenwerkzeug, das verbundene Datensätze in der richtigen Reihenfolge lädt und über externe IDs abgleicht. Das Kapitel der DevOps-Masterclass zu [Daten und Konfiguration](/masterclass/devops-release-management/daten-und-konfiguration/) vergleicht SFDMU, das Open-Source-Plugin für die Salesforce CLI, mit den Datenmodulen von Gearset, Copado und Flosum. Für Revenue Cloud führt Gearset zuerst seinen External-ID-Assistenten aus und deployt Konfigurationsdaten dann zusammen mit Metadaten. Welches Werkzeug insgesamt zu Ihrem Programm passt, entscheidet der [Vergleich der DevOps-Werkzeuge](/masterclass/devops-release-management/devops-werkzeuge-vergleich/).
 
-Eine Regel gilt für jedes Werkzeug: Data Templates, SFDMU-Arbeitsbereiche und das Werkzeugkonto gehören dem Kunden. Revenue-Cloud-Konfiguration ist Ihre Preislogik und Ihr Katalog. Liegt sie im Gearset-Konto eines Partners, wird ein Partnerwechsel zum Migrationsprojekt. Die Gründe stehen in [Warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/).
+Eine Regel gilt für jedes Werkzeug: Data Templates, SFDMU-Arbeitsbereiche und das Werkzeugkonto gehören dem Kunden. Revenue-Cloud-Konfiguration ist Ihre Preislogik und Ihr Katalog. Liegt sie im Gearset-Konto eines Partners, wird ein Partnerwechsel zum Migrationsprojekt. Die Gründe stehen in [Warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
 ## Wo verläuft die Grenze zwischen Konfiguration und ERP-Stammdaten?
 
@@ -100,10 +100,10 @@ Meine Aufteilung:
 - **Repository und Pipeline:** Attribute, Klassifizierungen, Verkaufsmodelle, Bundle-Strukturen, Anpassungsregeln, Pricing Procedures, Decision Tables, Context Definitions, Billing- und Steuer-Policies.
 - **Schnittstelle aus SAP:** Produkte mit Materialnummern, Listenpreise und Kundenkonditionen, wenn SAP den Preis führt.
 
-Welche Preise SAP führen sollte, behandelt [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/).
+Welche Preise SAP führen sollte, behandelt [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](/blog/kundenpreise-sap-konditionen-oder-salesforce-pricing/).
 
 ## Praxisbeispiel: ein Release mit neuem Attributaufschlag
 
 Ein Maschinenbauer betreibt Revenue Cloud mit drei Sandboxes und der Produktion. 300 Produkte und Listenpreise stammen aus SAP, 45 Attribute, 12 Klassifizierungen, 4 Verkaufsmodelle und 6 Pricing Procedures werden in Salesforce gepflegt. Alle Zahlen sind Annahmen.
 
-Ein Release, das einen neuen attributbasierten Aufschlag einführt, sieht dann so aus: Der Pull Request enthält die Attributdefinition, die Änderung der Klassifizierung und die neue Anpassungsregel als SFDMU-Datensätze mit externen IDs, dazu die geänderte Decision Table als Metadaten. Die Pipeline deployt erst Metadaten, dann Daten, in der Reihenfolge der Referenztabellen. Den Rest regelt die Release-Checkliste: Sandbox-IDs in den Konstanten der Pricing Procedure ersetzen, Procedure aktivieren, betroffene Decision Tables aktualisieren, Produktindex neu aufbauen, falls sich Katalog oder Suche geändert haben, und fünf Angebote als Regressionstest berechnen. Eine solche Pipeline aufzusetzen gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Die Migration davor beschreiben [CPQ zu Revenue Cloud migrieren](../cpq-migration-revenue-cloud-phasen/) und das Masterclass-Kapitel [Von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
+Ein Release, das einen neuen attributbasierten Aufschlag einführt, sieht dann so aus: Der Pull Request enthält die Attributdefinition, die Änderung der Klassifizierung und die neue Anpassungsregel als SFDMU-Datensätze mit externen IDs, dazu die geänderte Decision Table als Metadaten. Die Pipeline deployt erst Metadaten, dann Daten, in der Reihenfolge der Referenztabellen. Den Rest regelt die Release-Checkliste: Sandbox-IDs in den Konstanten der Pricing Procedure ersetzen, Procedure aktivieren, betroffene Decision Tables aktualisieren, Produktindex neu aufbauen, falls sich Katalog oder Suche geändert haben, und fünf Angebote als Regressionstest berechnen. Eine solche Pipeline aufzusetzen gehört zu meiner Arbeit in [DevOps und Release-Management](/leistungen/devops-und-release-management/). Die Migration davor beschreiben [CPQ zu Revenue Cloud migrieren](/blog/cpq-migration-revenue-cloud-phasen/) und das Masterclass-Kapitel [Von CPQ zu Revenue Cloud](/masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).

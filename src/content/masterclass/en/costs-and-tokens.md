@@ -43,7 +43,7 @@ The two cost worlds side by side:
 
 Agentforce Vibes falls in between. According to its [billing documentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) it counts tokens in 2,000-token increments, rounded up, but you pay in Flex Credits or through a flat fee per user.
 
-For coding tools, 2026 turned request counters into token budgets. GitHub Copilot bills in AI credits at $0.01 each, with each token priced "based on the model used" ([GitHub docs](https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/billing/billing-for-individuals)). Codex has billed in credits per million tokens since 2 April 2026 ([OpenAI](https://help.openai.com/en/articles/20001106-codex-rate-card-2)). The seat price buys a budget, and the API price table becomes the common denominator. Which tool fits which task is in [chapter 6](../ai-tool-decision-matrix/), the vendors themselves in [chapter 4](../external-coding-agents/).
+For coding tools, 2026 turned request counters into token budgets. GitHub Copilot bills in AI credits at $0.01 each, with each token priced "based on the model used" ([GitHub docs](https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/billing/billing-for-individuals)). Codex has billed in credits per million tokens since 2 April 2026 ([OpenAI](https://help.openai.com/en/articles/20001106-codex-rate-card-2)). The seat price buys a budget, and the API price table becomes the common denominator. Which tool fits which task is in [chapter 6](/en/masterclass/ai-salesforce/ai-tool-decision-matrix/), the vendors themselves in [chapter 4](/en/masterclass/ai-salesforce/external-coding-agents/).
 
 ## What is a token, and why does context matter more than the prompt?
 
@@ -102,7 +102,7 @@ below $30 | per active day for 90 percent of users
 source: Anthropic, Claude Code cost documentation for enterprise deployments
 ```
 
-At 20 active days that is $260 at API rates. A Team Premium seat can be cheaper for heavy users while the windows suffice, though their size in tokens is not published. I would measure one month at API rates first. Who should carry the cost, client or partner, is covered in [AI coding costs in a Salesforce project](../../../blog/ai-coding-costs-salesforce-project/). My default: if the agent works in your repository and your sandboxes, the accounts belong to you, for the same reasons as with [DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
+At 20 active days that is $260 at API rates. A Team Premium seat can be cheaper for heavy users while the windows suffice, though their size in tokens is not published. I would measure one month at API rates first. Who should carry the cost, client or partner, is covered in [AI coding costs in a Salesforce project](/en/blog/ai-coding-costs-salesforce-project/). My default: if the agent works in your repository and your sandboxes, the accounts belong to you, for the same reasons as with [DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/).
 
 ### Worked example: one agentic session
 
@@ -144,11 +144,11 @@ Agentforce bills in Flex Credits, listed on the [Agentforce pricing page](https:
 | Data 360 queries, base tier | 3 / 2.4 per million rows | $0.015 |
 | Headless Platform Interaction | TBA | open |
 
-According to the [Salesforce model support page](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5), Claude Sonnet 4.6, Sonnet 5 and GPT-5 count as Standard, Claude Opus and GPT 5.5 as Advanced. The same summary costs four times as much on Opus. According to the pricing page, unused Flex Credits do not roll over into the next subscription term. Flex Credits and the $2 per conversation model are not supported in the same org. Agentforce add-ons cost $125 per user and month, the Agentforce User License $5 plus Flex Credits. For large customers, [Forrester](https://www.forrester.com/blogs/ai-agents-become-economic-actors-salesforce-rewrites-the-rules-of-pricing) describes the AELA, a fixed fee over two or three years, without contract terms in that post. How to estimate per action is in [Flex Credits and Agentforce cost per action](../../../blog/flex-credits-agentforce-cost-per-action/).
+According to the [Salesforce model support page](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5), Claude Sonnet 4.6, Sonnet 5 and GPT-5 count as Standard, Claude Opus and GPT 5.5 as Advanced. The same summary costs four times as much on Opus. According to the pricing page, unused Flex Credits do not roll over into the next subscription term. Flex Credits and the $2 per conversation model are not supported in the same org. Agentforce add-ons cost $125 per user and month, the Agentforce User License $5 plus Flex Credits. For large customers, [Forrester](https://www.forrester.com/blogs/ai-agents-become-economic-actors-salesforce-rewrites-the-rules-of-pricing) describes the AELA, a fixed fee over two or three years, without contract terms in that post. How to estimate per action is in [Flex Credits and Agentforce cost per action](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 ### What the editions include
 
-The [Sales Cloud pricing page](https://www.salesforce.com/sales-cloud/pricing/) lists "500K Flex Credits/org/year" for Core, 1 million for Advanced and 2.75 million for Max, per org per year. At list price that is $2,500, $5,000 and $13,750. Against seat prices of $195, $395 and $550 per user and month, the pools are small: credits are no reason to pick an edition. Salesforce announced new pricing for the Industries editions, which matter for Manufacturing Cloud, for ["later this fall"](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/). The trade-off per edition is in [Salesforce editions Core, Advanced and Max](../../../blog/salesforce-editions-core-advanced-max/).
+The [Sales Cloud pricing page](https://www.salesforce.com/sales-cloud/pricing/) lists "500K Flex Credits/org/year" for Core, 1 million for Advanced and 2.75 million for Max, per org per year. At list price that is $2,500, $5,000 and $13,750. Against seat prices of $195, $395 and $550 per user and month, the pools are small: credits are no reason to pick an edition. Salesforce announced new pricing for the Industries editions, which matter for Manufacturing Cloud, for ["later this fall"](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/). The trade-off per edition is in [Salesforce editions Core, Advanced and Max](/en/blog/salesforce-editions-core-advanced-max/).
 
 ### Worked example: an agent for dealer enquiries
 
@@ -161,13 +161,13 @@ Assumption: 3,000 conversations a month about order status, delivery dates and s
 | Total | 204,000 credits = **$1,020 a month**, against $6,000 on the per-conversation model |
 | Twelve months | 2,448,000 credits, more than the Core and Advanced pools, just under Max |
 
-With 2,000 MB of spare part catalogs processed in Data 360 (300,000 credits) and sandbox tests, the first year comes to about 3 million credits or $15,000. The full calculation with test load and resolution pricing is in [Agentforce costs for manufacturers](../../../blog/flex-credits-agentforce-cost-per-action/).
+With 2,000 MB of spare part catalogs processed in Data 360 (300,000 credits) and sandbox tests, the first year comes to about 3 million credits or $15,000. The full calculation with test load and resolution pricing is in [Agentforce costs for manufacturers](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 ### The two most common gaps
 
-**Data 360.** When an agent relies on manuals, exploded drawings or spare part catalogs, 1 GB of unstructured documents costs about 150,000 credits in the base tier, roughly $750, and four times that if exploded drawings need LLM-based Intelligent Processing at 600 credits per MB. In a sandbox there are no volume tiers. Test with a subset and remove outdated catalog versions first. More in [Data 360 costs for AI agents](../../../blog/data-360-costs-for-ai-agents/).
+**Data 360.** When an agent relies on manuals, exploded drawings or spare part catalogs, 1 GB of unstructured documents costs about 150,000 credits in the base tier, roughly $750, and four times that if exploded drawings need LLM-based Intelligent Processing at 600 credits per MB. In a sandbox there are no volume tiers. Test with a subset and remove outdated catalog versions first. More in [Data 360 costs for AI agents](/en/blog/data-360-costs-for-ai-agents/).
 
-**Headless Platform Interactions.** When Claude, ChatGPT or other agents access Salesforce through MCP or API, every successful call by a registered agent is to count, according to [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), only in active production orgs and with 30 days' notice. Classic integrations keep their current pricing. Using Claude on Salesforce data then means paying twice: Anthropic for tokens, Salesforce for interactions. You can estimate the volume, as shown in [chapter 3](../mcp-and-interfaces/); the budget line is in [MCP and API calls to Salesforce as a budget risk](../../../blog/flex-credits-agentforce-cost-per-action/).
+**Headless Platform Interactions.** When Claude, ChatGPT or other agents access Salesforce through MCP or API, every successful call by a registered agent is to count, according to [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), only in active production orgs and with 30 days' notice. Classic integrations keep their current pricing. Using Claude on Salesforce data then means paying twice: Anthropic for tokens, Salesforce for interactions. You can estimate the volume, as shown in [chapter 3](/en/masterclass/ai-salesforce/mcp-and-interfaces/); the budget line is in [MCP and API calls to Salesforce as a budget risk](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 ```hinweis offen
 The rate for Headless Platform Interactions is still TBA on the rate card. Get your account executive to confirm how the pool, multiple orgs and Headless Platform Interactions are billed.
@@ -193,10 +193,10 @@ The 80 Core seats alone cost $187,200 a year at list price, so AI consumption is
 1. **Keep two budget lines:** tokens for development, Flex Credits for runtime, each with its own owner.
 2. **Count your own documents** with token counting instead of copying rules of thumb.
 3. **Choose the model by task:** Sonnet as default, Opus for architecture and hard bugs, Haiku for short bulk jobs under 100,000 tokens.
-4. **Keep context small:** `/clear` between tasks, rules file under 200 lines, only the MCP servers you need. The rules for clean AI code are in [chapter 8](../ai-code-best-practices/).
+4. **Keep context small:** `/clear` between tasks, rules file under 200 lines, only the MCP servers you need. The rules for clean AI code are in [chapter 8](/en/masterclass/ai-salesforce/ai-code-best-practices/).
 5. **Buy seats after measuring:** run one month at API rates or metered, then decide per person between flat fee and seat.
 6. **Estimate Agentforce per conversation type:** actions, prompts, sandbox tests and documents in MB; buy credits along the go-live plan, because unused credits do not roll over.
 7. **Hold a reserve for open meters** until the billing above is confirmed.
 8. **Measure monthly:** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) shows Agentforce consumption by agent, action and channel and needs Data 360 turned on; for Claude use the spend report or Console.
 
-These questions are part of my [make-or-buy and license planning](../../../services/make-or-buy-licences/). All chapters are on the [overview page](../).
+These questions are part of my [make-or-buy and license planning](/en/services/make-or-buy-licences/). All chapters are on the [overview page](/en/masterclass/ai-salesforce/).

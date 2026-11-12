@@ -1,6 +1,8 @@
 // Runs after `astro build`: every internal link and resource (href, src, srcset, poster
 // starting with /) must point to a file in dist/. Catches links to renamed or removed
-// pages, images and downloads before they go live as 404s.
+// pages, images and downloads before they go live as 404s. Relative links (../blog/x/) are
+// not allowed: crawlers resolve them wrongly when a URL lacks its trailing slash, and only
+// root paths can be checked here.
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -28,6 +30,9 @@ function check(path) {
     ...[...html.matchAll(/\s(?:href|src|poster)="(\/[^"]*)"/gi)].map((m) => m[1]),
     ...[...html.matchAll(/\ssrcset="([^"]*)"/gi)].flatMap((m) => m[1].split(',').map((s) => s.trim().split(/\s+/)[0]).filter((u) => u.startsWith('/'))),
   ];
+  for (const m of html.matchAll(/\s(?:href|src|poster)="(?!\/|#|[a-z][a-z0-9+.-]*:)([^"]+)"/gi)) {
+    errors.push(`${path.slice(dist.length)}: relative link ${m[1]} (start internal links with /)`);
+  }
   for (const url of urls) {
     links++;
     if (!exists(url)) errors.push(`${path.slice(dist.length)}: ${url}`);

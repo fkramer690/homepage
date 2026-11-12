@@ -48,7 +48,7 @@ So würde ich die Datenflüsse bei einem typischen Hersteller mit SAP als ERP au
 | Freigegebene Garantiebeträge | Salesforce | Salesforce nach SAP | bei Freigabe |
 | Zahlungsstatus der Gutschriften | SAP | SAP nach Salesforce | nach Zeitplan |
 
-Preise sind mit Winter '27 eine eigene Frage, weil Salesforce jetzt eine eigene Preisfindung für Aufträge anbietet, mit eigenen Add-ons. Darum geht es in [Penny Perfect Pricing: ERP-Preise in Salesforce?](../penny-perfect-pricing-erp-preise/). Den Gesamtzusammenhang, von den Datenflüssen bis zum Rollout, behandelt das Masterclass-Kapitel [ERP, KI und Rollout](../../masterclass/manufacturing-cloud/erp-ki-und-rollout/).
+Preise sind mit Winter '27 eine eigene Frage, weil Salesforce jetzt eine eigene Preisfindung für Aufträge anbietet, mit eigenen Add-ons. Darum geht es in [Penny Perfect Pricing: ERP-Preise in Salesforce?](/blog/penny-perfect-pricing-erp-preise/). Den Gesamtzusammenhang, von den Datenflüssen bis zum Rollout, behandelt das Masterclass-Kapitel [ERP, KI und Rollout](/masterclass/manufacturing-cloud/erp-ki-und-rollout/).
 
 ## Was deckt der MuleSoft Accelerator for Manufacturing ab?
 
@@ -60,9 +60,9 @@ Der [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufactu
 - Unterstützt wird nur ein Produktkatalog.
 - Auf SAP-Seite sind ein Communication Arrangement für Produkthierarchien und ein eigenes Kennzeichenfeld im Materialstamm nötig.
 
-**Vertriebsboni.** Laut dem [Anwendungsfall zu Boni](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/Use%20case%202%20-%20Sales%20rebate%20management/) ist die Manufacturing Cloud das führende System für Bonusauszahlungen. Wird eine Auszahlung freigegeben, erzeugt ein Ereignis in SAP eine Gutschrift im Entwurfsstatus. Die dokumentierte Massenverarbeitung arbeitet anders: Sie holt alle neuen Auszahlungen "irrespective of status" und schickt sie an SAP. Ihre Umsetzung braucht daher einen Statusfilter und einen entsprechenden Test. Ein geplanter Lauf setzt den Status der Auszahlung später auf bezahlt, sobald SAP die Gutschrift bezahlt hat. Kundenaufträge fließen von SAP in die Manufacturing Cloud. Wie Bonusprogramme auf Salesforce-Seite funktionieren, steht in [Rebate Management: Händlerboni ohne Excel](../rebate-management-haendlerboni/).
+**Vertriebsboni.** Laut dem [Anwendungsfall zu Boni](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/Use%20case%202%20-%20Sales%20rebate%20management/) ist die Manufacturing Cloud das führende System für Bonusauszahlungen. Wird eine Auszahlung freigegeben, erzeugt ein Ereignis in SAP eine Gutschrift im Entwurfsstatus. Die dokumentierte Massenverarbeitung arbeitet anders: Sie holt alle neuen Auszahlungen "irrespective of status" und schickt sie an SAP. Ihre Umsetzung braucht daher einen Statusfilter und einen entsprechenden Test. Ein geplanter Lauf setzt den Status der Auszahlung später auf bezahlt, sobald SAP die Gutschrift bezahlt hat. Kundenaufträge fließen von SAP in die Manufacturing Cloud. Wie Bonusprogramme auf Salesforce-Seite funktionieren, steht in [Rebate Management: Händlerboni ohne Excel](/blog/rebate-management-haendlerboni/).
 
-Was der Accelerator nicht abdeckt: Er legt keine Sales Agreements an und nennt keinen Garantiefluss. Für den freigegebenen Betrag aus einem Garantieanspruch, den ich wie in [Garantieansprüche von Händlern](../garantieansprueche-haendler-salesforce/) beschrieben im ERP als Gutschrift an den Händler buchen würde, ist eine eigene Schnittstelle erforderlich.
+Was der Accelerator nicht abdeckt: Er legt keine Sales Agreements an und nennt keinen Garantiefluss. Für den freigegebenen Betrag aus einem Garantieanspruch, den ich wie in [Garantieansprüche von Händlern](/blog/garantieansprueche-haendler-salesforce/) beschrieben im ERP als Gutschrift an den Händler buchen würde, ist eine eigene Schnittstelle erforderlich.
 
 Ein Widerspruch, den Sie früh klären sollten: Im Auftragsabgleich fließen Kunden in eine Richtung, mit SAP als Master. Im Anwendungsfall zu Boni werden Kunden in beide Richtungen abgeglichen, und jedes der beiden Systeme kann führend sein. Beides stammt aus demselben Accelerator. Legen Sie eine Regel für Kundenstammdaten fest, bevor Sie beide Vorlagen einsetzen.
 
@@ -70,7 +70,7 @@ Salesforce listet MuleSoft Anypoint Platform auf der [Seite mit den Add-ons der 
 
 ## Wie kommen die Ist-Mengen in die Sales Agreements?
 
-Sales Agreements beziehen ihre Ist-Mengen aus Aufträgen in Salesforce, aus einem Upload per API oder aus einer Definition in der Data Processing Engine. Die Einstellung Actuals Calculation Mode legt fest, welcher Weg gilt. Laut [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_reference.htm&language=en_US&type=5) rechnet Salesforce mit dem Modus, der bei der Aktivierung des Agreements gilt; eine Änderung während der aktiven Laufzeit berücksichtigt der automatische Prozess nicht. Die vier Modi und wann welcher passt, beschreibe ich in [Sales Agreements: fehlende Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/).
+Sales Agreements beziehen ihre Ist-Mengen aus Aufträgen in Salesforce, aus einem Upload per API oder aus einer Definition in der Data Processing Engine. Die Einstellung Actuals Calculation Mode legt fest, welcher Weg gilt. Laut [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_reference.htm&language=en_US&type=5) rechnet Salesforce mit dem Modus, der bei der Aktivierung des Agreements gilt; eine Änderung während der aktiven Laufzeit berücksichtigt der automatische Prozess nicht. Die vier Modi und wann welcher passt, beschreibe ich in [Sales Agreements: fehlende Abnahmemengen erkennen](/blog/sales-agreements-abnahmemengen-erp/).
 
 Für die Schnittstelle zählt eine Aktion: [Refresh Actuals Calculation](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_refresh_actuals_calculation.htm). Sie ist seit API-Version 47.0 für Nutzer mit dem Permission Set Manufacturing Sales Agreements verfügbar und berechnet die Ist-Mengen eines Sales Agreements neu. Über zwei Schalter wählen Sie die Zeiträume: nur den aktuellen Zeitraum, den aktuellen und vergangene Zeiträume oder den aktuellen und künftige Zeiträume. Wie viele künftige Zeiträume berücksichtigt werden, legt ein Feld am Sales Agreement fest. Setzt man beide Schalter auf true, schlägt der Aufruf fehl, und laut Dokumentation lässt sich die Aktion nur über ein Datenbank-Rollback rückgängig machen.
 
@@ -78,7 +78,7 @@ Daraus ergibt sich ein sauberes Muster für die Schnittstelle. Wurden verspätet
 
 ## Der Takt folgt der Frage, die die Daten beantworten
 
-Der Takt folgt der Frage, die die Daten beantworten. Sales Agreements erstrecken sich über Monate oder ein Jahr, also reicht ein täglicher Lauf für die Ist-Mengen. Ein Händler, der nach dem Status seines Auftrags fragt, will den aktuellen Stand kennen. Den Auftragsstatus sollte man deshalb live in SAP abfragen, wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/). Ein Takt für alles verschwendet entweder API-Aufrufe oder zeigt dort alte Daten, wo es auf aktuelle Daten ankommt.
+Der Takt folgt der Frage, die die Daten beantworten. Sales Agreements erstrecken sich über Monate oder ein Jahr, also reicht ein täglicher Lauf für die Ist-Mengen. Ein Händler, der nach dem Status seines Auftrags fragt, will den aktuellen Stand kennen. Den Auftragsstatus sollte man deshalb live in SAP abfragen, wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](/blog/agentforce-sap-auftragsstatus/). Ein Takt für alles verschwendet entweder API-Aufrufe oder zeigt dort alte Daten, wo es auf aktuelle Daten ankommt.
 
 Das Volumen entscheidet zwischen ganzen Aufträgen und Summen. Ein Rechenbeispiel mit angenommenen Zahlen: 800 Accounts mit Sales Agreements, im Schnitt 40 Produkte pro Agreement und Monatszeiträume. Summen pro Kunde, Produkt und Monat ergeben höchstens 800 × 40 = 32.000 Werte im Monat, und ein täglicher Delta-Lauf überträgt nur die geänderten Werte. Jede Auftragsposition zusätzlich zu replizieren, kostet Datenspeicher und einen Verknüpfungsschritt pro Auftrag. Das lohnt sich nur, wenn Vertrieb oder Service die Aufträge selbst in Salesforce einsehen sollen.
 
@@ -94,11 +94,11 @@ Summer '27 | SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt; SOAP-, R
 Summer '28 | Aufrufe an SOAP-, REST- und Bulk-API 31.0 bis 40.0 schlagen fehl
 ```
 
-Salesforce rät im selben Guide, diese Schnittstellen auf OAuth mit External Client Apps umzustellen. Ein Ist-Mengen-Lauf, der unbemerkt ausfällt, ist schlimmer als einer, der eine Fehlermeldung erzeugt, weil der Vertrieb eine alte Fehlmenge sieht und ihm glaubt. Wie Sie alle betroffenen Schnittstellen finden, steht in [Salesforce-Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
+Salesforce rät im selben Guide, diese Schnittstellen auf OAuth mit External Client Apps umzustellen. Ein Ist-Mengen-Lauf, der unbemerkt ausfällt, ist schlimmer als einer, der eine Fehlermeldung erzeugt, weil der Vertrieb eine alte Fehlmenge sieht und ihm glaubt. Wie Sie alle betroffenen Schnittstellen finden, steht in [Salesforce-Passwort-Integrationen enden 2027](/blog/salesforce-passwort-integrationen-2027/).
 
 ## Jedes Objekt braucht ein führendes System und eine Person
 
-Für jede Zeile der Tabelle oben brauchen Sie ein führendes System und eine benannte Person; beides sollte vor der Umsetzung schriftlich festgehalten werden. Die [Object Ownership Matrix](../object-ownership-matrix-salesforce/) leistet das für Objekte innerhalb der Org; für eine ERP-Schnittstelle ergänze ich zwei Spalten: Richtung und Takt.
+Für jede Zeile der Tabelle oben brauchen Sie ein führendes System und eine benannte Person; beides sollte vor der Umsetzung schriftlich festgehalten werden. Die [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/) leistet das für Objekte innerhalb der Org; für eine ERP-Schnittstelle ergänze ich zwei Spalten: Richtung und Takt.
 
 Diese Fragen stellen sich in fast jedem Design:
 
@@ -107,7 +107,7 @@ Diese Fragen stellen sich in fast jedem Design:
 - **Korrekturen.** Wer stößt die Neuberechnung der Ist-Mengen an, wenn SAP eine Gutschrift oder Retoure für einen vergangenen Zeitraum bucht?
 - **Fehler.** Wer erhält die Meldung, wenn der nächtliche Lauf ausfällt, und bis wann muss der Fehler behoben sein?
 
-Wie ich Schnittstellen zwischen ERP, Middleware und Salesforce aufsetze, beschreibe ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Wie ich Schnittstellen zwischen ERP, Middleware und Salesforce aufsetze, beschreibe ich unter [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/).
 
 ## Tabelle mit Objekten, Richtung und Takt füllen
 

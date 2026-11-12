@@ -40,7 +40,7 @@ Revenue Cloud Billing ist das Abrechnungs-Add-on zu Revenue Cloud. Salesforce ne
 
 Die Abläufe hängen am Auftrag. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/generate-invoices) erzeugt die Aktivierung eines Auftrags Billing Schedule Groups, also Abrechnungsplangruppen, und Billing Schedules, also Abrechnungspläne. Rechnungsläufe verarbeiten die Pläne, die zur Fakturierung bereit sind, und nutzen für große Mengen die Data Processing Engine. Rechnungsentwürfe zeigen die geschätzte Steuer. Beim Buchen einer Rechnung berechnet die externe Engine die tatsächliche Steuer. Das [Billing-Modul auf Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/generate-invoices-revenue) ergänzt Rechnungsvorschauen, Gutschriften, Zahlungsläufe und Rechnungs-PDFs, die an den Rechnungskontakt gemailt werden können.
 
-Der [Developer Guide](https://developer.salesforce.com/docs/revenue/revenue-management/guide/billing-overview.html) beschreibt Standardobjekte für Abrechnungs- und Steuerkonfiguration, Gutschriften, Rechnungen und Buchungsperioden je Legal Entity, dazu Zahlungsobjekte, die die Revenue-Cloud-Billing-Lizenz voraussetzen. Den Preis nennt Salesforce nur auf Anfrage. Salesforce misst die Billing-Nutzung anhand der positiven Beträge gebuchter Rechnungspositionen. Einzelheiten stehen in [Revenue Cloud Billing: Kosten](../revenue-cloud-billing-kosten/).
+Der [Developer Guide](https://developer.salesforce.com/docs/revenue/revenue-management/guide/billing-overview.html) beschreibt Standardobjekte für Abrechnungs- und Steuerkonfiguration, Gutschriften, Rechnungen und Buchungsperioden je Legal Entity, dazu Zahlungsobjekte, die die Revenue-Cloud-Billing-Lizenz voraussetzen. Den Preis nennt Salesforce nur auf Anfrage. Salesforce misst die Billing-Nutzung anhand der positiven Beträge gebuchter Rechnungspositionen. Einzelheiten stehen in [Revenue Cloud Billing: Kosten](/blog/revenue-cloud-billing-kosten/).
 
 ## Was bedeutet "Salesforce als Nebenbuch" für Finance?
 
@@ -66,17 +66,17 @@ Bei einmaligen Maschinenverkäufen lasse ich die Rechnung in SAP, wenn Versand, 
 - **Die Lieferung bestimmt die Rechnung.** Maschinen werden oft nach Versand oder Abnahme fakturiert, und in vielen Unternehmen werden Versand, Zoll und Abnahme in SAP abgewickelt.
 - **Anzahlungen und Meilensteine** werden üblicherweise gegen den SAP-Auftrag gebucht. Billing kennt im Datenmodell zwar Billing Milestone Plans, aber die Anzahlungsbuchhaltung für eine Produktlinie aus SAP herauszulösen, lohnt sich selten.
 - **Kosten.** Die Billing-Nutzung wird anhand der positiven Beträge gebuchter Rechnungspositionen gemessen. Eine in Salesforce gebuchte Maschinenrechnung über 2 Millionen Euro verbraucht Billing Events für den vollen Betrag, obwohl SAP diese Rechnung ohnehin erstellen könnte. Ob dadurch zusätzliche Kosten entstehen, hängt von den in Ihrem Vertrag enthaltenen Events ab.
-- **E-Rechnung.** Ab dem 1. Januar 2027 entfällt für Rechnungsaussteller mit mehr als 800.000 Euro Vorjahresumsatz grundsätzlich die Übergangsoption, für inländische B2B-Umsätze Papier- oder unstrukturierte Rechnungen zu senden. Gesetzliche Ausnahmen und die EDI-Übergangsfrist bis Ende 2027 müssen weiterhin geprüft werden. Erzeugt SAP E-Rechnungen bereits, bedeutet ein zweites Fakturasystem ein zweites Compliance-Projekt. Einzelheiten stehen in [E-Rechnung ab 2027 und Revenue Cloud](../e-rechnung-pflicht-2027-revenue-cloud/).
+- **E-Rechnung.** Ab dem 1. Januar 2027 entfällt für Rechnungsaussteller mit mehr als 800.000 Euro Vorjahresumsatz grundsätzlich die Übergangsoption, für inländische B2B-Umsätze Papier- oder unstrukturierte Rechnungen zu senden. Gesetzliche Ausnahmen und die EDI-Übergangsfrist bis Ende 2027 müssen weiterhin geprüft werden. Erzeugt SAP E-Rechnungen bereits, bedeutet ein zweites Fakturasystem ein zweites Compliance-Projekt. Einzelheiten stehen in [E-Rechnung ab 2027 und Revenue Cloud](/blog/e-rechnung-pflicht-2027-revenue-cloud/).
 
-Dasselbe gilt für Ersatzteile, die mit der Lieferung fakturiert werden. Die Zahlung im B2B-Shop ist eine eigene Frage, beschrieben in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../b2b-checkout-bestellnummer-rechnung/).
+Dasselbe gilt für Ersatzteile, die mit der Lieferung fakturiert werden. Die Zahlung im B2B-Shop ist eine eigene Frage, beschrieben in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](/blog/b2b-checkout-bestellnummer-rechnung/).
 
 ## Wann lohnt sich Revenue Cloud Billing?
 
 Billing lohnt sich dort, wo die Rechnung eher dem Vertrag folgt als der Lieferung:
 
 - **Abonnements** wie Fernüberwachung, Softwareoptionen oder Datendienste, monatlich oder quartalsweise abgerechnet.
-- **Service- und Wartungsverträge** mit fester Gebühr je Periode, die angepasst werden, wenn Maschinen dazukommen oder stillgelegt werden. Wie man sie abrechnet, steht in [Wartungsverträge wiederkehrend abrechnen](../wartungsvertraege-wiederkehrend-abrechnen/).
-- **Nutzungsbasierte Entgelte** wie Maschinenstunden oder Ausbringung, die Revenue Cloud bepreist und an Billing übergibt. Den Maschinenfall beschreibt [Pay-per-Use für Maschinen](../pay-per-use-maschinen-revenue-cloud/).
+- **Service- und Wartungsverträge** mit fester Gebühr je Periode, die angepasst werden, wenn Maschinen dazukommen oder stillgelegt werden. Wie man sie abrechnet, steht in [Wartungsverträge wiederkehrend abrechnen](/blog/wartungsvertraege-wiederkehrend-abrechnen/).
+- **Nutzungsbasierte Entgelte** wie Maschinenstunden oder Ausbringung, die Revenue Cloud bepreist und an Billing übergibt. Den Maschinenfall beschreibt [Pay-per-Use für Maschinen](/blog/pay-per-use-maschinen-revenue-cloud/).
 - **Häufige Vertragsänderungen.** In Revenue Cloud erzeugt ein Nachtrag ein Angebot und einen Auftrag für die bestehenden Assets, und die Abrechnungspläne werden entsprechend aktualisiert. Fakturiert stattdessen SAP, muss jede Änderung vor dem nächsten Rechnungslauf über eine Schnittstelle in SAP ankommen.
 
 Das Signal, auf das ich achte: Wenn der Vertrieb jede Woche Verträge ändert und die Buchhaltung jeden Monat Rechnungen korrigiert, weil SAP von einer Änderung nichts wusste, erspart Billing in Salesforce eine Übergabe. Wenn sich Verträge selten ändern, die Nutzung gering ist und es nur eine Rechnung im Jahr gibt, reicht die Fakturierung aus SAP meistens. Die Zahl der Verträge allein entscheidet nicht. Änderungshäufigkeit, rückwirkende Änderungen, Nutzungsvolumen, Legal Entities und Abstimmungsaufwand sind wichtiger.
@@ -108,11 +108,11 @@ Lieferung SAP --> Rechnung SAP
 Rechnung SAP --> Hauptbuch SAP
 ```
 
-Der Kunde erhält zwei Arten von Rechnungen. Der Kundenservice muss beide erklären können. Ist das nicht akzeptabel, bleibt jede Rechnung in SAP, und Revenue Cloud liefert die Abrechnungsdaten. Dafür braucht es eine verlässliche Schnittstelle für Nachträge. Welches System welches Objekt führt, steht in [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
+Der Kunde erhält zwei Arten von Rechnungen. Der Kundenservice muss beide erklären können. Ist das nicht akzeptabel, bleibt jede Rechnung in SAP, und Revenue Cloud liefert die Abrechnungsdaten. Dafür braucht es eine verlässliche Schnittstelle für Nachträge. Welches System welches Objekt führt, steht in [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](/blog/revenue-cloud-sap-quote-to-cash-aufteilung/).
 
 ## Finance zieht die Grenze
 
-Die Entscheidung liegt bei Finance. Das CRM-Team kann zeigen, was Billing kann, aber die Folgen trägt die Finanzabteilung: ein zweites Debitorenbuch, ein zweiter Periodenabschluss und ein weiterer Prozess, den sich Wirtschaftsprüfer ansehen. Die [Object Ownership Matrix](../object-ownership-matrix-salesforce/) hilft auch hier: Jedes Billing-Objekt braucht einen Owner, und bei Legal Entities, Buchungsperioden und Sachkonten gehört dieser Owner zur Buchhaltung.
+Die Entscheidung liegt bei Finance. Das CRM-Team kann zeigen, was Billing kann, aber die Folgen trägt die Finanzabteilung: ein zweites Debitorenbuch, ein zweiter Periodenabschluss und ein weiterer Prozess, den sich Wirtschaftsprüfer ansehen. Die [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/) hilft auch hier: Jedes Billing-Objekt braucht einen Owner, und bei Legal Entities, Buchungsperioden und Sachkonten gehört dieser Owner zur Buchhaltung.
 
 Ich würde die Leitung des Rechnungswesens in den ersten Architektur-Workshop holen, nicht erst in den Abnahmetest.
 
@@ -120,8 +120,8 @@ Ich würde die Leitung des Rechnungswesens in den ersten Architektur-Workshop ho
 Halten Sie mit Finance mindestens schriftlich fest: welche Umsatzarten Salesforce fakturiert, Rechnungsnummerierung und rechtlicher Aussteller, wer Perioden schließt, Stornierung und Korrektur, Verantwortung für Zahlungen und Ausgleich, Mahnwesen und Forderungsausbuchungen, Aufbewahrung von Dokumenten, Fehlerbehandlung der SAP-Schnittstelle und wie die Abstimmung mit SAP funktioniert.
 ```
 
-Die Schnittstellen für Buchungssätze und Rechnungsstatus gehören zu meiner Arbeit rund um [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Die Schnittstellen für Buchungssätze und Rechnungsstatus gehören zu meiner Arbeit rund um [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/).
 
 ## Umsatzarten mit Rechnungsquelle auflisten
 
-Listen Sie Ihre Umsatzarten auf und notieren Sie zu jeder, wer heute fakturiert und wie oft sich der Vertrag ändert. Zeilen mit wiederkehrenden Gebühren und häufigen Änderungen sind Kandidaten für Billing, alles andere bleibt in SAP. Das Masterclass-Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) ordnet diese Entscheidung in den gesamten Quote-to-Cash-Prozess ein.
+Listen Sie Ihre Umsatzarten auf und notieren Sie zu jeder, wer heute fakturiert und wie oft sich der Vertrag ändert. Zeilen mit wiederkehrenden Gebühren und häufigen Änderungen sind Kandidaten für Billing, alles andere bleibt in SAP. Das Masterclass-Kapitel [Abrechnung und nutzungsbasierte Preise](/masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) ordnet diese Entscheidung in den gesamten Quote-to-Cash-Prozess ein.

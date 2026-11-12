@@ -41,7 +41,7 @@ What a form can contain:
 For field work, two properties matter more than the components. The forms work offline with a dedicated offline engine, and auto-save captures every entry, so a technician can close a form at the machine and resume it later. Every submission is logged, online or offline.
 
 ```hinweis achtung
-Offline mode only works if the records the form reads are on the device. Which records belong in the briefcase is covered in [Field Service mobile offline: which data goes on the device?](../field-service-mobile-app-offline-data/). Which flow features Data Capture still lacks compared with a desktop flow, such as the data table, is covered in [Field Service mobile flow limitations](../field-service-mobile-flow-limitations/).
+Offline mode only works if the records the form reads are on the device. Which records belong in the briefcase is covered in [Field Service mobile offline: which data goes on the device?](/en/blog/field-service-mobile-app-offline-data/). Which flow features Data Capture still lacks compared with a desktop flow, such as the data table, is covered in [Field Service mobile flow limitations](/en/blog/field-service-mobile-flow-limitations/).
 ```
 
 ## Voice to Form has been generally available since Spring '26
@@ -51,7 +51,7 @@ The status changes with every mobile release, so it is worth knowing where it st
 - **Mobile release 260.0 (Spring '26).** The [Salesforce release post in the Trailblazer Community](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000j9vu70AA) marks Data Capture Voice to Form as GA. Technicians dictate, and the app transcribes their speech and fills the form fields. The same post lists a lookup component that also works offline, a multi-image preview and the option to launch forms from assets, custom objects and mobile timesheets. Check their status in your org before you plan with them.
 - **Winter '27.** The [release highlights on Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) add Voice to Form in Spanish, Japanese, Italian, French and German. According to the [setup guide](https://help.salesforce.com/s/articleView?id=service.mfs_voice_to_form_setup.htm&language=en_US&type=5) users need the Agentforce for Field Service license and the Einstein Field Service User permission, so Voice to Form is a separate license decision.
 
-German voice input makes the feature relevant for many service organizations in the DACH region. It also processes employees' speech, which raises data protection issues and, where one exists, involves the works council. I described those questions in [Salesforce Field Service mobile: guided work and voice](../salesforce-field-service-mobile-guided-voice/). For form design, this means deciding which fields may be filled by voice and which values the technician confirms by hand, for example a measured value that affects safety.
+German voice input makes the feature relevant for many service organizations in the DACH region. It also processes employees' speech, which raises data protection issues and, where one exists, involves the works council. I described those questions in [Salesforce Field Service mobile: guided work and voice](/en/blog/salesforce-field-service-mobile-guided-voice/). For form design, this means deciding which fields may be filled by voice and which values the technician confirms by hand, for example a measured value that affects safety.
 
 ## Which answers should become fields?
 
@@ -69,11 +69,11 @@ This is the decision I would make before building the first form. A form answer 
 
 Two rules follow from this table. A form does not ask for anything that already exists on the asset or the work order, such as serial number, customer or machine type. And consumption is booked as products consumed, never as a free text field in the form, otherwise it is not reflected in van stock or the ERP.
 
-Readings on the asset connect the form to maintenance planning. How maintenance plans and entitlements fit together is covered in [Field Service: how to model maintenance contracts](../salesforce-field-service-maintenance-contracts/). This is classic [architecture work](../../services/salesforce-architecture/) and belongs to the service organization as much as to IT.
+Readings on the asset connect the form to maintenance planning. How maintenance plans and entitlements fit together is covered in [Field Service: how to model maintenance contracts](/en/blog/salesforce-field-service-maintenance-contracts/). This is classic [architecture work](/en/services/salesforce-architecture/) and belongs to the service organization as much as to IT.
 
 ## How does the form relate to the service report?
 
-Data Capture collects the data. The PDF the customer receives comes from Document Builder or, in orgs that still use them, Service Reports. A PDF of the completed form itself is available only in Unlimited Edition and not for forms launched from a quick action, which do not create a form record. Document Builder works on work orders, work order line items and service appointments, as described in [Salesforce Service Documents: is Document Builder enough?](../salesforce-service-documents-document-builder/). If the customer needs the inspection results in the report, check in the first sprint how the answers get into the template. Values stored in fields on the work order can be placed in the template directly.
+Data Capture collects the data. The PDF the customer receives comes from Document Builder or, in orgs that still use them, Service Reports. A PDF of the completed form itself is available only in Unlimited Edition and not for forms launched from a quick action, which do not create a form record. Document Builder works on work orders, work order line items and service appointments, as described in [Salesforce Service Documents: is Document Builder enough?](/en/blog/salesforce-service-documents-document-builder/). If the customer needs the inspection results in the report, check in the first sprint how the answers get into the template. Values stored in fields on the work order can be placed in the template directly.
 
 Inspection reports with a lot of conditional content can outgrow Document Builder. In that case a separate inspection document from Document Generation or an AppExchange tool is the better solution, and the form still provides the data.
 
@@ -93,7 +93,7 @@ In this example the back office gains the most. After the sync the readings are 
 
 ## Pick one high-volume protocol
 
-Forms, offline data and the service report together make up [chapter 3 of the Field Service masterclass](../../masterclass/field-service/field-service-mobile-app-documents/). For the first form I would proceed like this:
+Forms, offline data and the service report together make up [chapter 3 of the Field Service masterclass](/en/masterclass/field-service/field-service-mobile-app-documents/). For the first form I would proceed like this:
 
 ```schritte
 Pick one protocol

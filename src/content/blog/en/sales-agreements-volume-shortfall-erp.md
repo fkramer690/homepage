@@ -31,7 +31,7 @@ With sales agreements, sales can see which customers are behind on their committ
 
 ## What question does a sales agreement answer day to day?
 
-I cover what a sales agreement is and when Manufacturing Cloud pays off for it in [Salesforce Manufacturing Cloud: is it worth it?](../salesforce-manufacturing-cloud-is-it-worth-it/). This article is about operating it afterwards.
+I cover what a sales agreement is and when Manufacturing Cloud pays off for it in [Salesforce Manufacturing Cloud: is it worth it?](/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/). This article is about operating it afterwards.
 
 Day to day, sales asks a simple question: who is behind on their commitment? A customer has committed to a volume for the year, split into months or quarters. For each period and product, the sales agreement shows planned quantity, actual quantity and forecast side by side. The gap is the number account managers work with.
 
@@ -73,7 +73,7 @@ ERP orders --> Middleware
 Middleware --totals via API--> Sales agreement
 ```
 
-Which one fits depends on what else Salesforce needs to know about orders. The basic rule is the same as for any integration: one leading system per type of data. How I split that for customers, products, prices and orders is described under [integration with ERP, middleware and telephony](../../services/salesforce-integration/). The data flows between SAP and Manufacturing Cloud overall are covered in [Manufacturing Cloud and SAP: which data flows where](../manufacturing-cloud-sap-integration-data-flows/).
+Which one fits depends on what else Salesforce needs to know about orders. The basic rule is the same as for any integration: one leading system per type of data. How I split that for customers, products, prices and orders is described under [integration with ERP, middleware and telephony](/en/services/salesforce-integration/). The data flows between SAP and Manufacturing Cloud overall are covered in [Manufacturing Cloud and SAP: which data flows where](/en/blog/manufacturing-cloud-sap-integration-data-flows/).
 
 ## What I saw in a project
 
@@ -118,7 +118,7 @@ Seasonality is another factor. A shortfall in the first quarter can be normal in
 
 Salesforce can sort customers by shortfall, show inventory and seasonality alongside it and create a task for the account manager. Whether a customer receives a price concession, brings an order forward or has its commitment adjusted next year is decided by people who know the customer.
 
-I would not want to automate that step either. The reasons for a shortfall range from a weak season for the customer to a competitor currently offering lower prices, and no metric in the system captures those reasons. If you want agents to work with this kind of data, check data quality first, as I describe in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
+I would not want to automate that step either. The reasons for a shortfall range from a weak season for the customer to a competitor currently offering lower prices, and no metric in the system captures those reasons. If you want agents to work with this kind of data, check data quality first, as I describe in [Agentforce: business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/).
 
 ## Decide the actuals mode before the first agreement
 

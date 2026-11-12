@@ -34,10 +34,10 @@ Salesforce B2B Commerce lohnt sich für Hersteller, deren Händler und Kunden be
 Die Masterclass hat fünf Kapitel. Jedes beantwortet eine Entscheidung und verweist für die Details auf eigene Artikel.
 
 1. **Lohnt sich B2B Commerce?** Dieses Kapitel: Produkt, Namen, Generationen, Kosten, Portal oder Shop.
-2. **[Katalog, Suche, Sichtbarkeit](../katalog-suche-sichtbarkeit/):** Käufergruppen, Entitlements, Produktdaten und Suche nach Teilenummern.
-3. **[Preise, Warenkorb, Checkout](../preise-warenkorb-checkout/):** Kundenpreise, Angebotsanfrage, Kauf auf Rechnung, Nachbestellen.
-4. **[ERP-Anbindung](../erp-integration-bestand-auftraege/):** welche Daten live aus SAP kommen und wem der Auftrag gehört.
-5. **[Agenten, Migration, Einführung](../agentforce-migration-einfuehrung/):** Buyer Agent, der Weg von Aura zu LWR und die Einführung bei Händlern in Wellen.
+2. **[Katalog, Suche, Sichtbarkeit](/masterclass/b2b-commerce/katalog-suche-sichtbarkeit/):** Käufergruppen, Entitlements, Produktdaten und Suche nach Teilenummern.
+3. **[Preise, Warenkorb, Checkout](/masterclass/b2b-commerce/preise-warenkorb-checkout/):** Kundenpreise, Angebotsanfrage, Kauf auf Rechnung, Nachbestellen.
+4. **[ERP-Anbindung](/masterclass/b2b-commerce/erp-integration-bestand-auftraege/):** welche Daten live aus SAP kommen und wem der Auftrag gehört.
+5. **[Agenten, Migration, Einführung](/masterclass/b2b-commerce/agentforce-migration-einfuehrung/):** Buyer Agent, der Weg von Aura zu LWR und die Einführung bei Händlern in Wellen.
 
 Wer nur eine Frage hat, springt direkt in das passende Kapitel. Wer vor der Entscheidung steht, liest dieses zuerst.
 
@@ -66,7 +66,7 @@ Viele Hersteller haben schon einen Shop auf Salesforce, oft von einem Partner vo
 | Aura-Store | Kernplattform, Experience-Cloud-Site mit Aura-Template | nur für Orgs, die vor Spring '23 für Commerce aktiviert waren |
 | LWR-Store | Kernplattform, Experience-Cloud-Site mit LWR-Template | von Salesforce für neue Stores empfohlen |
 
-Salesforce hat den Abschluss der [Übernahme von CloudCraze](https://salesforce.com/news/stories/salesforce-completes-its-acquisition-of-cloudcraze/) im April 2018 gemeldet. Zur Visualforce-Variante sagte Salesforce in seinem Schulungsmaterial, Kunden müssten nicht wechseln und Salesforce unterstütze sie weiter. Den Hinweis auf Spring '23 und die Empfehlung für LWR finden Sie im [Migrationsleitfaden](https://developer.salesforce.com/docs/commerce/lwr-migration/guide). Ein Abkündigungsdatum für Aura-Stores oder das Visualforce-Paket hat Salesforce Stand 27. Oktober 2026 nicht veröffentlicht, beide stehen nicht in der [Liste der aktiven Abkündigungen](https://help.salesforce.com/s/articleView?id=000381744&language=en_US&type=1). Ich plane deshalb nach Funktionen: Braucht Ihre Roadmap etwas, das Salesforce nur für LWR dokumentiert, ziehen Sie um. Sonst investieren Sie in Daten und Prozesse. Wie Sie in einer Stunde herausfinden, was Sie betreiben, steht in [B2B Commerce Versionen: Visualforce, Aura oder LWR?](../../../blog/b2b-commerce-versionen-visualforce-aura-lwr/).
+Salesforce hat den Abschluss der [Übernahme von CloudCraze](https://salesforce.com/news/stories/salesforce-completes-its-acquisition-of-cloudcraze/) im April 2018 gemeldet. Zur Visualforce-Variante sagte Salesforce in seinem Schulungsmaterial, Kunden müssten nicht wechseln und Salesforce unterstütze sie weiter. Den Hinweis auf Spring '23 und die Empfehlung für LWR finden Sie im [Migrationsleitfaden](https://developer.salesforce.com/docs/commerce/lwr-migration/guide). Ein Abkündigungsdatum für Aura-Stores oder das Visualforce-Paket hat Salesforce Stand 27. Oktober 2026 nicht veröffentlicht, beide stehen nicht in der [Liste der aktiven Abkündigungen](https://help.salesforce.com/s/articleView?id=000381744&language=en_US&type=1). Ich plane deshalb nach Funktionen: Braucht Ihre Roadmap etwas, das Salesforce nur für LWR dokumentiert, ziehen Sie um. Sonst investieren Sie in Daten und Prozesse. Wie Sie in einer Stunde herausfinden, was Sie betreiben, steht in [B2B Commerce Versionen: Visualforce, Aura oder LWR?](/blog/b2b-commerce-versionen-visualforce-aura-lwr/).
 
 ## Was kostet B2B Commerce?
 
@@ -92,18 +92,18 @@ Was die GMV-Gebühr nicht enthält:
 
 | Posten | Was dahinter steckt |
 |---|---|
-| Käuferlizenzen | Laut Salesforce brauchen Käufer und Buyer Manager Customer Community Plus, Merchandiser die Lizenz "B2B and D2C Commerce". Die [Preisliste für Experience Cloud for Manufacturing](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) nennt 35 € pro Mitglied oder 15 € pro Login im Monat, jährlich abgerechnet. Ob Member oder Login günstiger ist, hängt von den Login-Tagen ab, siehe [B2B Commerce Lizenzen für Käufer](../../../blog/b2b-commerce-lizenzen-kaeufer/). Wie sich externe von internen Lizenzen unterscheiden, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../../../blog/salesforce-lizenzen-volle-lizenz/). |
+| Käuferlizenzen | Laut Salesforce brauchen Käufer und Buyer Manager Customer Community Plus, Merchandiser die Lizenz "B2B and D2C Commerce". Die [Preisliste für Experience Cloud for Manufacturing](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) nennt 35 € pro Mitglied oder 15 € pro Login im Monat, jährlich abgerechnet. Ob Member oder Login günstiger ist, hängt von den Login-Tagen ab, siehe [B2B Commerce Lizenzen für Käufer](/blog/b2b-commerce-lizenzen-kaeufer/). Wie sich externe von internen Lizenzen unterscheiden, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](/blog/salesforce-lizenzen-volle-lizenz/). |
 | Erweiterte Preislogik | mit Revenue Cloud, Thema von Kapitel 3. |
 | Umsetzung und ERP-Anbindung | Katalog, Käufergruppen, Preis- und Bestandsaufrufe, Auftragsübergabe. |
-| Verbrauch über die enthaltenen Credits hinaus | Wie Data-Cloud- und Flex-Credits zusammenwirken, erklärt das Kapitel [Kosten und Token](../../ki-salesforce/kosten-und-token/) der KI-Masterclass. |
+| Verbrauch über die enthaltenen Credits hinaus | Wie Data-Cloud- und Flex-Credits zusammenwirken, erklärt das Kapitel [Kosten und Token](/masterclass/ki-salesforce/kosten-und-token/) der KI-Masterclass. |
 
 ```hinweis tipp
-Die GMV-Gebühr wächst mit dem Erfolg des Stores. Jeder Händler, den Sie von der E-Mail in den Shop holen, erhöht die Rechnung. Ich rechne deshalb immer drei Jahre mit steigendem digitalem Anteil und dem Satz als Variable bei 1, 2 und 3 Prozent. Die Details stehen in [B2B Commerce Preise: Was das GMV-Modell kostet](../../../blog/b2b-commerce-preise-gmv-modell/), die vollständige Rechnung mit Innendienstzeit und Fehlerkosten im [Business Case für einen B2B-Webshop](../../../blog/b2b-webshop-business-case-hersteller/). Dort zeigt ein angenommenes Szenario auch, dass Zeitersparnis allein einen Shop selten rechtfertigt. Er rechnet sich meist über zusätzlichen Umsatz.
+Die GMV-Gebühr wächst mit dem Erfolg des Stores. Jeder Händler, den Sie von der E-Mail in den Shop holen, erhöht die Rechnung. Ich rechne deshalb immer drei Jahre mit steigendem digitalem Anteil und dem Satz als Variable bei 1, 2 und 3 Prozent. Die Details stehen in [B2B Commerce Preise: Was das GMV-Modell kostet](/blog/b2b-commerce-preise-gmv-modell/), die vollständige Rechnung mit Innendienstzeit und Fehlerkosten im [Business Case für einen B2B-Webshop](/blog/b2b-webshop-business-case-hersteller/). Dort zeigt ein angenommenes Szenario auch, dass Zeitersparnis allein einen Shop selten rechtfertigt. Er rechnet sich meist über zusätzlichen Umsatz.
 ```
 
 ## Portal oder Shop: Was brauchen Ihre Händler?
 
-Ein Portal auf Experience Cloud oder Manufacturing Cloud zeigt Datensätze und nimmt Anfragen an. Kunden sehen Verträge, Bestellungen, Stammdaten und Cases und schicken Anfragen per Formular. Wie so ein Portal aussieht, beschreibe ich in [Kundenportal in der Manufacturing Cloud](../../../blog/manufacturing-cloud-kundenportal/). Ein Shop ergänzt, was wiederkehrendes Einkaufen braucht: einen durchsuchbaren Katalog, Sichtbarkeit je Käufergruppe, Preise je Käufer, Warenkorb, Checkout und Nachbestellen aus früheren Aufträgen.
+Ein Portal auf Experience Cloud oder Manufacturing Cloud zeigt Datensätze und nimmt Anfragen an. Kunden sehen Verträge, Bestellungen, Stammdaten und Cases und schicken Anfragen per Formular. Wie so ein Portal aussieht, beschreibe ich in [Kundenportal in der Manufacturing Cloud](/blog/manufacturing-cloud-kundenportal/). Ein Shop ergänzt, was wiederkehrendes Einkaufen braucht: einen durchsuchbaren Katalog, Sichtbarkeit je Käufergruppe, Preise je Käufer, Warenkorb, Checkout und Nachbestellen aus früheren Aufträgen.
 
 Die Käuferlizenz entscheidet die Frage nicht, beide nutzen Customer Community Plus. Den Unterschied machen GMV-Gebühr und Umsetzungsaufwand. Ich schaue auf vier Zahlen der letzten zwölf Monate:
 
@@ -112,7 +112,7 @@ Die Käuferlizenz entscheidet die Frage nicht, beide nutzen Customer Community P
 3. Zahl der bestellenden Händler und Kunden,
 4. Anteil der Bestellungen per Telefon und E-Mail.
 
-Rechenbeispiel: Ein Hersteller von Kompressoren hat 250 Händler, die 30.000 Ersatzteilpositionen im Jahr bestellen, meist als E-Mail mit Teilenummern. Das sind rund zehn Positionen pro Händler und Monat. Hier würde ich einen Store bauen und das bestehende Portal für Garantie und Cases behalten. Hat derselbe Hersteller 20 Händler, die zweimal im Jahr eine konfigurierte Anlage kaufen, bringt ein Store nichts. Die Anlage braucht ein Angebot, und das Portal zeigt dessen Status. Die Kriterien im Detail stehen in [B2B Commerce oder Händlerportal: Wann lohnt ein Shop?](../../../blog/b2b-commerce-oder-haendlerportal/). Was Manufacturing Cloud für den Vertrieb über Händler bietet, von Boni bis Partnerportal, behandelt das Kapitel [Händler und Partnerkanal](../../manufacturing-cloud/haendler-und-partnerkanal/) der Masterclass Manufacturing Cloud.
+Rechenbeispiel: Ein Hersteller von Kompressoren hat 250 Händler, die 30.000 Ersatzteilpositionen im Jahr bestellen, meist als E-Mail mit Teilenummern. Das sind rund zehn Positionen pro Händler und Monat. Hier würde ich einen Store bauen und das bestehende Portal für Garantie und Cases behalten. Hat derselbe Hersteller 20 Händler, die zweimal im Jahr eine konfigurierte Anlage kaufen, bringt ein Store nichts. Die Anlage braucht ein Angebot, und das Portal zeigt dessen Status. Die Kriterien im Detail stehen in [B2B Commerce oder Händlerportal: Wann lohnt ein Shop?](/blog/b2b-commerce-oder-haendlerportal/). Was Manufacturing Cloud für den Vertrieb über Händler bietet, von Boni bis Partnerportal, behandelt das Kapitel [Händler und Partnerkanal](/masterclass/manufacturing-cloud/haendler-und-partnerkanal/) der Masterclass Manufacturing Cloud.
 
 ## Wann ist Salesforce nicht die Antwort?
 
@@ -133,4 +133,4 @@ Einen Store aus der Vorlage anzulegen ist der kleinste Teil des Projekts. Die En
 | Welches Store-Template? | Für neue Stores LWR, für bestehende Aura-Stores eine Entscheidung nach Funktionen. |
 | Welche ERP-Aufrufe laufen live? | Preis, Verfügbarkeit, Kreditprüfung und Auftragsübergabe brauchen ein ERP, das schnell antwortet. Das klären Sie mit dem SAP-Team, bevor das Store-Design steht. |
 
-Diese vier Punkte gehören in ein kurzes Dokument, das Sie besitzen, nicht der Partner. Wie ich Architekturentscheidungen dieser Art auf Kundenseite begleite, steht unter [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Eine unabhängige Prüfung von Angebot und Lizenzplan gehört zu [Make-or-Buy und Lizenzen](../../../leistungen/make-or-buy-lizenzen/). Weiter geht es mit [Kapitel 2 zu Katalog, Suche und Sichtbarkeit](../katalog-suche-sichtbarkeit/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
+Diese vier Punkte gehören in ein kurzes Dokument, das Sie besitzen, nicht der Partner. Wie ich Architekturentscheidungen dieser Art auf Kundenseite begleite, steht unter [Salesforce-Architektur](/leistungen/salesforce-architektur/). Eine unabhängige Prüfung von Angebot und Lizenzplan gehört zu [Make-or-Buy und Lizenzen](/leistungen/make-or-buy-lizenzen/). Weiter geht es mit [Kapitel 2 zu Katalog, Suche und Sichtbarkeit](/masterclass/b2b-commerce/katalog-suche-sichtbarkeit/), alle Kapitel finden Sie auf der [Übersichtsseite](/masterclass/b2b-commerce/).

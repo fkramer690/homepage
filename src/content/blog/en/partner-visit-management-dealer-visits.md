@@ -59,7 +59,7 @@ Visit
 
 The rep opens the visit app from the App Launcher (Salesforce documentation currently calls it both Partner Visits and Generic Visits, so check the label in your org), sees scheduled visits, taps Get Directions and works through the tasks. For each task the app shows context, metrics and expected values. The rep enters values, adds notes and uploads screenshots. When all metrics of a task are captured, the task is complete, and when all tasks are done, the rep ends the visit. If only optional tasks are open, the rep can complete the visit with a reason. If a mandatory task cannot be completed, the rep abandons the visit and has to provide a reason. So "completed" does not always mean every task was completed.
 
-The first unit also shows tasks linked to customer records, for example a warranty term on a warranty renewal task or an asset on a damage inspection. That is useful for dealers who handle [warranty claims](../warranty-claims-dealers-salesforce/): the rep sees the open warranty terms while standing in the workshop.
+The first unit also shows tasks linked to customer records, for example a warranty term on a warranty renewal task or an asset on a damage inspection. That is useful for dealers who handle [warranty claims](/en/blog/warranty-claims-dealers-salesforce/): the rep sees the open warranty terms while standing in the workshop.
 
 ## Switching it on is easy, license scope and offline are open
 
@@ -70,7 +70,7 @@ Two points need to be confirmed before you base your plan on it:
 - **License.** Salesforce Help lists the Partner Visit Management permission set and permission set license for internal users, and Partner Visit Management for Experience Cloud for external users, in its example for a Partner Community license. The [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) lists "Visit Management" in its edition comparison. Ask Salesforce to confirm in writing which of your contracted editions include these permission set licenses, in which quantity, and whether the external flow matches the internal mobile flow.
 - **Offline.** The sources I checked for partner visits do not confirm offline support. The general "Full Offline Mobile Functionality" line on the pricing page says nothing about the visit components. Dealer workshops and warehouses often have poor reception. Ask Salesforce whether starting and ending a visit, working through tasks, entering KPIs and uploading files work offline, and test the app in airplane mode and during reconnection with conflicting changes before rollout.
 
-I describe how to treat both points in the license plan in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+I describe how to treat both points in the license plan in [Salesforce licenses: does everyone need a full one?](/en/blog/salesforce-licences-full-licence-needed/).
 
 ## Worked example: 60 dealers, quarterly, five KPIs
 
@@ -97,14 +97,14 @@ pro: Partner visit management is a strong candidate with
 - Many dealers visited on a fixed cycle, so templates save planning time
 - The same KPIs for every dealer, so comparisons make sense
 - Context such as sales agreements, assets or warranty terms that the rep needs on site
-- Managed dealer performance, for example as input for [dealer rebates](../rebate-management-dealer-rebates/) or the [Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/)
+- Managed dealer performance, for example as input for [dealer rebates](/en/blog/rebate-management-dealer-rebates/) or the [Manufacturing Cloud customer portal](/en/blog/manufacturing-cloud-customer-portal/)
 contra: What speaks for the simple report
 - It is quick to build for a narrow process and may work with licenses your sales team already has (check this)
 - It is easy to report on
 - License scope and offline use of the visit app still need to be confirmed
 ```
 
-The chapter on the [dealer and partner channel](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/) shows how visits relate to rebates, portals and ship and debit. I cover whether to buy or build such a feature in my [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
+The chapter on the [dealer and partner channel](/en/masterclass/manufacturing-cloud/dealer-and-partner-channel/) shows how visits relate to rebates, portals and ship and debit. I cover whether to buy or build such a feature in my [make-or-buy and license forecasts](/en/services/make-or-buy-licences/).
 
 ## Write down KPIs with expected values, then pilot one region
 

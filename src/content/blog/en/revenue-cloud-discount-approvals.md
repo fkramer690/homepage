@@ -65,7 +65,7 @@ An approval matrix is the table that says which deviation needs which approver. 
 
 Three rules keep such a matrix workable. Each trigger has exactly one owner who can change the threshold. Thresholds are written down outside Salesforce as well, so sales and finance argue about the policy and not about a Flow. And every new trigger has to justify itself against the existing ones, or the matrix grows until every quote needs three signatures.
 
-The discount itself comes from pricing. How Revenue Cloud calculates list price, volume discount and manual discount in sequence is covered in [Salesforce Pricing: how Revenue Cloud calculates prices](../revenue-cloud-pricing-procedures-explained/). The approval should check the result of that calculation, not recalculate it.
+The discount itself comes from pricing. How Revenue Cloud calculates list price, volume discount and manual discount in sequence is covered in [Salesforce Pricing: how Revenue Cloud calculates prices](/en/blog/revenue-cloud-pricing-procedures-explained/). The approval should check the result of that calculation, not recalculate it.
 
 ## Margin needs cost data from the ERP
 
@@ -77,13 +77,13 @@ I see three ways, and I would pick the simplest that finance accepts:
 2. **Cost calculated by the ERP on request.** Needed for configured assemblies where the cost depends on the options. That means an API call when the quote is priced.
 3. **No margin approval.** Base approvals on discount and deal size only, and let controlling review margins after the order. This is honest, and better than a margin field nobody trusts.
 
-Whichever route you take, decide who owns the cost field and lock it with field permissions. If sales can edit it, the margin approval is decoration. My [object ownership matrix](../salesforce-object-ownership-matrix/) is the tool I use to write that down.
+Whichever route you take, decide who owns the cost field and lock it with field permissions. If sales can edit it, the margin approval is decoration. My [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/) is the tool I use to write that down.
 
 ## Why do approval rules stay deterministic, even with an agent in front?
 
 Because approval routing has a right answer. A discount is above 30 percent or it is not, and the head of sales either is the approver or is not. Whether the head of sales then approves is a judgment call, and that belongs to a person. If an agent interprets the routing rule, the same quote can take a different path on Monday than on Tuesday, and an auditor will ask why.
 
-Salesforce Help lists an Agentforce area for Advanced Approvals with three subagents: Approval Management, Search Approval Record and Summarize Multiple Approval Work Items. Since the week of 14 September 2026 the [Approval Agent](https://help.salesforce.com/s/articleView?id=release-notes.rn_rev_agentforce_approvals_agent.htm&type=5) lets reps submit, recall and track approvals, and lets reviewers get AI summaries and comments and approve or reject faster. It needs Advanced Approvals and Agentforce enabled; Agentforce for Revenue Management is part of Revenue Cloud Advanced, not Growth. That is a sensible split. The workflow controls the threshold and the approver, and the approver makes the decision. I discuss the same idea for agents in general in [Agent Script: why business rules don't belong in the LLM](../agent-script-deterministic-rules/).
+Salesforce Help lists an Agentforce area for Advanced Approvals with three subagents: Approval Management, Search Approval Record and Summarize Multiple Approval Work Items. Since the week of 14 September 2026 the [Approval Agent](https://help.salesforce.com/s/articleView?id=release-notes.rn_rev_agentforce_approvals_agent.htm&type=5) lets reps submit, recall and track approvals, and lets reviewers get AI summaries and comments and approve or reject faster. It needs Advanced Approvals and Agentforce enabled; Agentforce for Revenue Management is part of Revenue Cloud Advanced, not Growth. That is a sensible split. The workflow controls the threshold and the approver, and the approver makes the decision. I discuss the same idea for agents in general in [Agent Script: why business rules don't belong in the LLM](/en/blog/agent-script-deterministic-rules/).
 
 ## Approvals from CPQ are rebuilt
 
@@ -96,8 +96,8 @@ The names sound alike, but do not assume anything will carry over. [Salesforce H
 - Approval history stays in the CPQ objects as long as the package and its data remain; decide whether you archive, migrate or report on it.
 - Each rule gets a test case with the expected approver, before and after go-live.
 
-I would use the migration to clean up. CPQ orgs tend to collect approval rules that nobody can explain. Rebuild only what the head of sales and finance confirm. The full migration path is in the chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
+I would use the migration to clean up. CPQ orgs tend to collect approval rules that nobody can explain. Rebuild only what the head of sales and finance confirm. The full migration path is in the chapter [from CPQ to Revenue Cloud](/en/masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
 
 ## Write the approval matrix on one page
 
-Write the approval matrix on one page before anyone builds a workflow: triggers, thresholds, owners and the source of the cost data. Then build the workflows with parallel approvers and delegation, and test each rule with one quote that should trigger it and one that should not. How approvals fit into the path from quote to order is covered in the chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/), and I help with this as part of [Salesforce architecture](../../services/salesforce-architecture/).
+Write the approval matrix on one page before anyone builds a workflow: triggers, thresholds, owners and the source of the cost data. Then build the workflows with parallel approvers and delegation, and test each rule with one quote that should trigger it and one that should not. How approvals fit into the path from quote to order is covered in the chapter [quote, contract, order](/en/masterclass/revenue-cloud/quote-contract-order/), and I help with this as part of [Salesforce architecture](/en/services/salesforce-architecture/).

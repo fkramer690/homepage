@@ -39,7 +39,7 @@ Die [Supported-Models-Seite](https://developer.salesforce.com/docs/ai/agentforce
 - **Von Salesforce verwaltete Modelle** (Stand 9. November 2026): Claude Haiku 4.5 bis Haiku 5.5, Sonnet 5.5 und Opus 5.5, Amazon Nova und NVIDIA Nemotron 3 (Beta) auf Bedrock; GPT-4o bis GPT 5.6, GPT-6 Luna, Sol und Astra und GPT-6.1 Sol von OpenAI und Azure OpenAI; Gemini 3 Flash bis 3.8 Flash und Gemini 3.1 Pro (Beta) auf Vertex AI.
 - **Bring Your Own LLM (BYOLLM)**: Ihr eigenes Konto bei Amazon Bedrock, Azure OpenAI, OpenAI oder Vertex AI, oder jedes Modell hinter dem LLM Open Connector.
 
-Modelle von Anthropic und Amazon laufen auf Bedrock „entirely within the Salesforce Trust Boundary“, andere verwaltete Modelle „inside a shared trust zone“ bei Partnern von Salesforce. Was das für Maskierung und Protokollierung bedeutet, steht in [was der Einstein Trust Layer schützt](../einstein-trust-layer-was-er-schuetzt/).
+Modelle von Anthropic und Amazon laufen auf Bedrock „entirely within the Salesforce Trust Boundary“, andere verwaltete Modelle „inside a shared trust zone“ bei Partnern von Salesforce. Was das für Maskierung und Protokollierung bedeutet, steht in [was der Einstein Trust Layer schützt](/blog/einstein-trust-layer-was-er-schuetzt/).
 
 Die [Claudeforce-Pressemitteilung vom 27. August 2026](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) nennt Claude „a reasoning model for the Atlas Reasoning Engine“ und „available in Agent Builder“. Sie erklärt Claude nicht zum Standard für Agenten, und die Entwicklerdokumentation nennt weiterhin GPT-4o im Standardmix. Salesforces eigenes CRM-Reasoning-Modell Koa ist laut [Ankündigung vom 15. September 2026](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx) im Pilot, die allgemeine Verfügbarkeit wird für „Winter 2026 in U.S. regions“ erwartet. Für einen deutschen Maschinenbauer, der jetzt plant, ist Koa noch keine Option.
 
@@ -49,7 +49,7 @@ Laut [Anleitung zur Modellkonfiguration](https://developer.salesforce.com/docs/a
 
 Drei Modelle nennt Salesforce als „thoroughly tested with agents“: GPT 4.1, Claude Haiku 4.5 und Gemini 3.5 Flash. Neue Agenten aus der Vorlage des Agentforce Service Agent nutzen für das Routing EinsteinHyperClassifier, ein Salesforce-Modell, das nur klassifiziert und keine anderen Tools aufrufen kann.
 
-Ich würde das Modell auch dann festlegen, wenn der Standard funktioniert. Salesforce kann den Mix ändern, und ein Agent, der im Mai seine Tests bestanden hat, antwortet im November womöglich anders, ohne dass Sie etwas geändert haben. Auch Standards ändern sich von selbst: Salesforce [stellt Agenten aus dem Legacy Builder von GPT-4o auf GPT-5.6 Luna um](https://help.salesforce.com/s/articleView?id=release-notes.rn_einstein_models_legacy_builder_model_change.htm&language=en_US&type=5), als Vorbereitung auf die Abkündigung von GPT-4o im Frühjahr 2027. Ein festgelegtes Modell gehört zur Agentenversion, ein Modellwechsel durchläuft dann dieselben Freigaben wie jede andere Änderung, beschrieben in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
+Ich würde das Modell auch dann festlegen, wenn der Standard funktioniert. Salesforce kann den Mix ändern, und ein Agent, der im Mai seine Tests bestanden hat, antwortet im November womöglich anders, ohne dass Sie etwas geändert haben. Auch Standards ändern sich von selbst: Salesforce [stellt Agenten aus dem Legacy Builder von GPT-4o auf GPT-5.6 Luna um](https://help.salesforce.com/s/articleView?id=release-notes.rn_einstein_models_legacy_builder_model_change.htm&language=en_US&type=5), als Vorbereitung auf die Abkündigung von GPT-4o im Frühjahr 2027. Ein festgelegtes Modell gehört zur Agentenversion, ein Modellwechsel durchläuft dann dieselben Freigaben wie jede andere Änderung, beschrieben in [Agentforce-Agenten testen und freigeben](/blog/agentforce-agenten-testen-freigeben/).
 
 ## Was kostet die Modellstufe?
 
@@ -65,7 +65,7 @@ quelle: Flex Credits Rate Card, Stand 3. November 2026
 
 Die getesteten Modelle liegen in verschiedenen Stufen: Gemini 3.5 Flash ist Basic, Claude Haiku 4.5 und GPT 4.1 sind Standard. Die Claude-Opus-Modelle bis 4.8 und GPT 5.6 Sol sind der Stufe Advanced zugeordnet. Wer einen Subagenten von Haiku auf Opus umstellt, vervierfacht dessen Promptkosten.
 
-Dieser Hilfeartikel sagt nicht, ob die LLM-Aufrufe der Reasoning Engine zusätzlich zu den 20 Credits pro Aktion als Prompts abgerechnet werden. Für Prompt-Vorlagen gilt die Stufe sicher, für das Reasoning würde ich im Pilot mit Digital Wallet messen. Alle Zähler stehen in [Flex Credits: Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), die Vorlagen in [Prompt Builder oder Agentforce-Agent](../prompt-builder-oder-agentforce-agent/).
+Dieser Hilfeartikel sagt nicht, ob die LLM-Aufrufe der Reasoning Engine zusätzlich zu den 20 Credits pro Aktion als Prompts abgerechnet werden. Für Prompt-Vorlagen gilt die Stufe sicher, für das Reasoning würde ich im Pilot mit Digital Wallet messen. Alle Zähler stehen in [Flex Credits: Kosten pro Aktion](/blog/flex-credits-agentforce-kosten-pro-aktion/), die Vorlagen in [Prompt Builder oder Agentforce-Agent](/blog/prompt-builder-oder-agentforce-agent/).
 
 ## Wann lohnt sich Bring Your Own LLM?
 
@@ -87,7 +87,7 @@ Die [Modellübersicht von Anthropic](https://platform.claude.com/docs/en/about-c
 
 Modelle verschwinden auch wieder. Ein abgekündigtes Modell funktioniert noch eine Weile und kann dann auf einen Nachfolger umgeleitet werden, etwa Claude Sonnet 4 auf Sonnet 4.6, oder abgeschaltet, wie Gemini 3 Pro (Beta) am 23. April 2026. Die Modellseite nennt Abkündigungs- und Umleitungsdaten; eine Vorlaufzeit habe ich nicht gefunden. Eine Umleitung ist ein Modellwechsel, der in Ihren Tests nicht abgedeckt war; deshalb teste ich den Nachfolger, sobald die Abkündigung angekündigt ist.
 
-Die Region ist der dritte Prüfpunkt. Verwaltete Modelle werden „eventually re-route to a US region“, wenn eine Anfrage in der vorgesehenen Region scheitert, es sei denn, ein Admin aktiviert „Enable In-Region Model Requests Only“. Das gilt allerdings nur für „some models“. Die Hilfeseite nannte `eu`-Inference-Profile für Claude Sonnet 5 und Opus 4.8 und für GPT 5.6 Terra nur die USA. Mehr in [Agentforce und EU-Datenresidenz](../agentforce-eu-datenresidenz-modelle/).
+Die Region ist der dritte Prüfpunkt. Verwaltete Modelle werden „eventually re-route to a US region“, wenn eine Anfrage in der vorgesehenen Region scheitert, es sei denn, ein Admin aktiviert „Enable In-Region Model Requests Only“. Das gilt allerdings nur für „some models“. Die Hilfeseite nannte `eu`-Inference-Profile für Claude Sonnet 5 und Opus 4.8 und für GPT 5.6 Terra nur die USA. Mehr in [Agentforce und EU-Datenresidenz](/blog/agentforce-eu-datenresidenz-modelle/).
 
 ## Rechenbeispiel: ein Service-Agent und ein Azure-OpenAI-Vertrag
 
@@ -95,7 +95,7 @@ Nehmen wir einen Maschinenbauer mit Service Cloud, Field Service, einem Händler
 
 - **Router:** EinsteinHyperClassifier, wie in der Service-Vorlage.
 - **Auftragsstatus** für Händler aus SAP über MuleSoft: Gemini 3.5 Flash (Basic), denn die Antwort ist ein Nachschlagen.
-- **Garantie-Vorprüfung**, bei der die Regel selbst in der [Logik von Agent Script](../agent-script-regeln-statt-llm/) liegt: Claude Haiku 4.5 (Standard) liest Seriennummer und Fehlerbeschreibung aus Freitext.
+- **Garantie-Vorprüfung**, bei der die Regel selbst in der [Logik von Agent Script](/blog/agent-script-regeln-statt-llm/) liegt: Claude Haiku 4.5 (Standard) liest Seriennummer und Fehlerbeschreibung aus Freitext.
 - **Fehlersuche** für Techniker der Händler anhand von Handbüchern: Claude Haiku 4.5, getestet gegen Opus 4.8 an 100 echten Fehlerbeschreibungen, bevor jemand für Advanced bezahlt.
 
 Dazu schreibt eine Prompt-Vorlage eine Fallzusammenfassung für den Techniker im Außendienst: 3.000 Zusammenfassungen im Monat mit etwa 5.000 Tokens für Ein- und Ausgabe, also je drei Prompts.
@@ -117,4 +117,4 @@ Die Tabelle zeigt nur Prompt-Kosten. Läuft die Zusammenfassung als eigene Aktio
 5. **Modellseite und Release Notes regelmäßig prüfen** und die Tests erneut laufen lassen, sobald eine Abkündigung angekündigt ist.
 6. **In Digital Wallet messen**, ob Reasoning-Aufrufe als Prompts auftauchen.
 
-Ich behandle diese Entscheidungen als Teil der [Salesforce-Architektur](../../leistungen/salesforce-architektur/), neben Datenmodell und Berechtigungen. Pro Subagent halte ich Modell, Stufe, Region und Testergebnis schriftlich fest, weil jede Änderung Kosten, Verträge und Tests berührt.
+Ich behandle diese Entscheidungen als Teil der [Salesforce-Architektur](/leistungen/salesforce-architektur/), neben Datenmodell und Berechtigungen. Pro Subagent halte ich Modell, Stufe, Region und Testergebnis schriftlich fest, weil jede Änderung Kosten, Verträge und Tests berührt.

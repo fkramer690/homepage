@@ -36,13 +36,13 @@ In einem weltweiten Salesforce-Rollout mit globalem Template arbeiten Menschen i
 
 Das strategische Ziel eines weltweiten Rollouts ist meist die Harmonisierung von Prozessen. In der Zentrale ist dieses Ziel klar, in den Ländern oft nicht. Für eine Landesgesellschaft, die seit Jahren erfolgreich mit eigenen Abläufen arbeitet, ist das globale Template zunächst eine Vorgabe von außen. Wer dort nicht erklärt, warum sich die Umstellung lohnt, erhält Abweichungswünsche statt Unterstützung. „Land“ steht hier für die Einheit, die gemeinsam live geht; je nach Organisation ist das auch eine Region, eine Landesgesellschaft oder ein Geschäftsbereich.
 
-Das [ADKAR-Modell](../change-management-salesforce-einfuehrung/) von Prosci beschreibt fünf Stufen, die jeder Mensch bei einer Veränderung durchläuft: Awareness, Desire, Knowledge, Ability und Reinforcement. In dieser Lage sind oft die ersten beiden gefährdet: Awareness, also das Verständnis, warum sich etwas ändert, und Desire, die Bereitschaft mitzumachen. Ob dort die Hürde liegt, zeigt erst das Gespräch mit den betroffenen Gruppen. Beides lässt sich nicht aus der Zentrale per Rundmail herstellen. Es braucht eine Person im Land, der die Mitarbeitenden zuhören. Allein reicht sie nicht: Fehlen Zeit, passende Ziele oder Funktionen, hilft auch der beste Sponsor wenig.
+Das [ADKAR-Modell](/blog/change-management-salesforce-einfuehrung/) von Prosci beschreibt fünf Stufen, die jeder Mensch bei einer Veränderung durchläuft: Awareness, Desire, Knowledge, Ability und Reinforcement. In dieser Lage sind oft die ersten beiden gefährdet: Awareness, also das Verständnis, warum sich etwas ändert, und Desire, die Bereitschaft mitzumachen. Ob dort die Hürde liegt, zeigt erst das Gespräch mit den betroffenen Gruppen. Beides lässt sich nicht aus der Zentrale per Rundmail herstellen. Es braucht eine Person im Land, der die Mitarbeitenden zuhören. Allein reicht sie nicht: Fehlen Zeit, passende Ziele oder Funktionen, hilft auch der beste Sponsor wenig.
 
 ```praxis
 Beim weltweiten Manufacturing-Cloud-Rollout stand von Anfang an fest, dass es um die Harmonisierung der Prozesse ging. Was ich heute anders machen würde: Ich würde Change Management immer wieder ins Gespräch bringen, auch wenn der Kunde meint, er brauche keins. Zu jedem Land gehörten mindestens Key User, Kommunikation vor dem Go-live und ein Blick auf die Nutzung danach.
 ```
 
-Die Reihenfolge der Länder beschreibe ich in [Manufacturing Cloud weltweit ausrollen](../manufacturing-cloud-weltweit-ausrollen/), den Umgang mit Abweichungen in [Globales Salesforce-Template: wie viel Land verträgt es?](../salesforce-globales-template-laenderabweichungen/).
+Die Reihenfolge der Länder beschreibe ich in [Manufacturing Cloud weltweit ausrollen](/blog/manufacturing-cloud-weltweit-ausrollen/), den Umgang mit Abweichungen in [Globales Salesforce-Template: wie viel Land verträgt es?](/blog/salesforce-globales-template-laenderabweichungen/).
 
 ## Was gehört pro Land dazu?
 
@@ -58,7 +58,7 @@ Ich plane für jedes Land dieselben Bausteine. Die Inhalte unterscheiden sich, d
 | Mitbestimmung und Datenschutz | Betriebsrat oder vergleichbare Vertretung, wo vorhanden, Datenschutz, Personalabteilung | früh in der Konzeption, je Land unterschiedlich |
 | Nutzung messen | Sponsor, Projektteam | Ausgangswert vor dem Go-live, danach monatlich |
 
-Zwei Punkte werden am häufigsten unterschätzt. Der erste ist der Sponsor im Land. Ein globaler Sponsor in der Zentrale ist nötig, ersetzt aber nicht die Person, die im Land vor ihrem Team steht und sagt, dass Prognosen künftig aus Salesforce stammen. Der zweite ist die Mitbestimmung. Ob und wie ein Betriebsrat oder eine vergleichbare Vertretung beteiligt wird, ist je nach Land und Region unterschiedlich und muss früh geklärt werden. Bei Auswertungen, die Leistung oder Verhalten zeigen können, gilt das schon während der Konzeption. Für den Außendienst beschreibe ich das in der [Field-Service-Einführung](../salesforce-field-service-einfuehrung/).
+Zwei Punkte werden am häufigsten unterschätzt. Der erste ist der Sponsor im Land. Ein globaler Sponsor in der Zentrale ist nötig, ersetzt aber nicht die Person, die im Land vor ihrem Team steht und sagt, dass Prognosen künftig aus Salesforce stammen. Der zweite ist die Mitbestimmung. Ob und wie ein Betriebsrat oder eine vergleichbare Vertretung beteiligt wird, ist je nach Land und Region unterschiedlich und muss früh geklärt werden. Bei Auswertungen, die Leistung oder Verhalten zeigen können, gilt das schon während der Konzeption. Für den Außendienst beschreibe ich das in der [Field-Service-Einführung](/blog/salesforce-field-service-einfuehrung/).
 
 ## Was muss die Kommunikation im Land erklären?
 
@@ -83,7 +83,7 @@ Umgekehrt zeigt die Liste der Abweichungen, wo das Change Management ansetzen mu
 Auch für das Change Management ist die erste Welle ein Test. Nach dem Go-live des ersten Landes prüfe ich mit dem Sponsor und den Key Usern:
 
 1. **Welche Fragen kamen nach dem Go-live am häufigsten?** Sie zeigen, wo Schulung oder Kommunikation gefehlt hat.
-2. **Wo wird neben Salesforce weiter mit eigenen Listen gearbeitet?** Das zeigt, wo der neue Prozess nicht angekommen ist. Ob fehlendes Wissen, Bedienprobleme, fehlende Funktionen oder mangelnde Bereitschaft dahinterstehen, klärt das Gespräch mit den Nutzern. Wie man das misst, beschreibe ich in [Salesforce-Nutzung nach dem Go-live messen](../salesforce-nutzung-messen-nach-go-live/).
+2. **Wo wird neben Salesforce weiter mit eigenen Listen gearbeitet?** Das zeigt, wo der neue Prozess nicht angekommen ist. Ob fehlendes Wissen, Bedienprobleme, fehlende Funktionen oder mangelnde Bereitschaft dahinterstehen, klärt das Gespräch mit den Nutzern. Wie man das misst, beschreibe ich in [Salesforce-Nutzung nach dem Go-live messen](/blog/salesforce-nutzung-messen-nach-go-live/).
 3. **Was hätten die Key User gern früher gewusst?** Die Antwort geht direkt in den Plan für das nächste Land.
 
 Zwischen zwei Wellen braucht es dafür einen kurzen Prüfpunkt, auch wenn sich Wellen überlappen: Kritische Fehler aus der ersten Welle sind gelöst, Schulungsunterlagen angepasst, Änderungen am Template entschieden und die Key User der nächsten Welle bereit. Wer die nächste Welle startet, während das erste Land noch Fragen hat, zersplittert die Aufmerksamkeit des Projektteams, und das zweite Land startet mit denselben Lücken.
@@ -94,4 +94,4 @@ Lassen Sie Key User des nächsten Landes einige Tage im Land der laufenden Welle
 
 ## Pro Land einen Sponsor benennen, bevor die Planung beginnt
 
-Benennen Sie für jedes Land einen Sponsor, bevor das Land in die Planung aufgenommen wird, und lassen Sie ihn die Liste der Landesabweichungen mitprüfen. Legen Sie pro Land Key User fest und vereinbaren Sie deren Zeitkontingent mit den Führungskräften, wie in [Key User in Salesforce-Einführungen](../salesforce-key-user-netzwerk/) beschrieben. Nach dem ersten Land planen Sie eine Auswertung ein, bevor das zweite startet. Ohne benannten Sponsor beginnt für ein Land kein Detaildesign, auch wenn der Zeitplan drängt. Wie wir das in Programmen aufsetzen, steht unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).
+Benennen Sie für jedes Land einen Sponsor, bevor das Land in die Planung aufgenommen wird, und lassen Sie ihn die Liste der Landesabweichungen mitprüfen. Legen Sie pro Land Key User fest und vereinbaren Sie deren Zeitkontingent mit den Führungskräften, wie in [Key User in Salesforce-Einführungen](/blog/salesforce-key-user-netzwerk/) beschrieben. Nach dem ersten Land planen Sie eine Auswertung ein, bevor das zweite startet. Ohne benannten Sponsor beginnt für ein Land kein Detaildesign, auch wenn der Zeitplan drängt. Wie wir das in Programmen aufsetzen, steht unter [Change Management für Salesforce-Programme](/leistungen/change-management/).

@@ -88,7 +88,7 @@ SAP availability ..date..> Checkout
 
 That has three advantages. The product list stays fast, because it only reads the copy. The one moment where the store makes a promise, the order, uses the current value from SAP. The promise only becomes binding when SAP creates the order or reserves the quantity, so the availability check and order creation should be close together. And exact quantities stay internal, which matters when resellers or competitors have access to the store.
 
-The same logic applies to agents. My article on [order status from SAP](../agentforce-sap-order-status-mulesoft/) makes the point that an agent passes on the confirmed date from SAP and never estimates one from stock figures. A store should do the same.
+The same logic applies to agents. My article on [order status from SAP](/en/blog/agentforce-sap-order-status-mulesoft/) makes the point that an agent passes on the confirmed date from SAP and never estimates one from stock figures. A store should do the same.
 
 ## Worked example: 12,000 spare parts in three warehouses
 
@@ -106,9 +106,9 @@ The fifth point is the one teams forget most often. Write the fallback down befo
 
 ## How does this fit with Field Service and distributors?
 
-The stock the store shows is often the same stock Field Service technicians draw from. In my article on [Field Service spare parts](../salesforce-field-service-spare-parts-erp/), the ERP owns the stock, including service van stock, and Salesforce works with a copy. The store adds a second consumer of the same data. If both read different copies with different update cycles, a technician and a dealer see different numbers for the same part.
+The stock the store shows is often the same stock Field Service technicians draw from. In my article on [Field Service spare parts](/en/blog/salesforce-field-service-spare-parts-erp/), the ERP owns the stock, including service van stock, and Salesforce works with a copy. The store adds a second consumer of the same data. If both read different copies with different update cycles, a technician and a dealer see different numbers for the same part.
 
-Distributor stock is a separate topic. Stock held at the distributor and related replenishment proposals are covered in [Agentforce for distributor stock](../distributor-inventory-replenishment-agentforce/). The store only shows the manufacturer's own stock.
+Distributor stock is a separate topic. Stock held at the distributor and related replenishment proposals are covered in [Agentforce for distributor stock](/en/blog/distributor-inventory-replenishment-agentforce/). The store only shows the manufacturer's own stock.
 
 ## Check Unified Omnichannel Inventory from Winter '27 against B2B first
 
@@ -116,4 +116,4 @@ The [Winter '27 highlights on Trailhead](https://trailhead.salesforce.com/conten
 
 ## Decide the stock source per screen
 
-Decide per screen which stock source applies: product list, product page, cart, checkout. Then define the three states for dealers, the update cycle of the copy and the fallback when SAP does not answer. How stock fits into the full interface list is described in [B2B Commerce and SAP: which data flows where](../b2b-commerce-sap-data-flows/), and the [ERP integration chapter of the masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/) puts it into context. Reviewing such interfaces independently is part of my work on [Salesforce integration](../../services/salesforce-integration/).
+Decide per screen which stock source applies: product list, product page, cart, checkout. Then define the three states for dealers, the update cycle of the copy and the fallback when SAP does not answer. How stock fits into the full interface list is described in [B2B Commerce and SAP: which data flows where](/en/blog/b2b-commerce-sap-data-flows/), and the [ERP integration chapter of the masterclass](/en/masterclass/b2b-commerce/erp-integration-stock-orders/) puts it into context. Reviewing such interfaces independently is part of my work on [Salesforce integration](/en/services/salesforce-integration/).

@@ -45,19 +45,19 @@ Salesforce describes [four sandbox types](https://www.salesforce.com/platform/wh
 
 From a data protection point of view, a full copy is production with a different login URL.
 
-For Claude Code under commercial terms, Anthropic states that it [does not train on code or prompts](https://code.claude.com/docs/en/data-usage) and keeps them for 30 days by default. Claude Code also stores session transcripts locally in plaintext for 30 days by default, so a partner laptop holds that query result for a month. Deletion at the end of an engagement belongs in the contract, see [partners coding with AI](../partners-using-ai-coding-contract-rules/).
+For Claude Code under commercial terms, Anthropic states that it [does not train on code or prompts](https://code.claude.com/docs/en/data-usage) and keeps them for 30 days by default. Claude Code also stores session transcripts locally in plaintext for 30 days by default, so a partner laptop holds that query result for a month. Deletion at the end of an engagement belongs in the contract, see [partners coding with AI](/en/blog/partners-using-ai-coding-contract-rules/).
 
-Simon Willison calls the combination of private data, untrusted content and a way to communicate externally the [lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/). A full copy brings two of them: production customer data, and text that dealers wrote through the portal or by email. A warranty fault description can carry instructions just like the README in Anthropic's [secure deployment guide](https://code.claude.com/docs/en/agent-sdk/secure-deployment), as described in [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/). The laptop with internet access supplies the third.
+Simon Willison calls the combination of private data, untrusted content and a way to communicate externally the [lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/). A full copy brings two of them: production customer data, and text that dealers wrote through the portal or by email. A warranty fault description can carry instructions just like the README in Anthropic's [secure deployment guide](https://code.claude.com/docs/en/agent-sdk/secure-deployment), as described in [prompt injection in dealer portals](/en/blog/prompt-injection-dealer-portals-agentforce/). The laptop with internet access supplies the third.
 
 ## Which data in a manufacturer's sandbox is sensitive?
 
-**Personal data.** Contacts at dealers and end customers, technician names, delivery addresses, phone numbers. Salesforce's scratch org guide says plainly: ["Don't add personal data to scratch orgs."](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs.htm) Whether a full copy with personal data may serve development at all is for your data protection officer to decide. This is not legal advice; the GDPR side is covered in [AI coding tools: works council and GDPR](../ai-coding-tools-works-council-gdpr/).
+**Personal data.** Contacts at dealers and end customers, technician names, delivery addresses, phone numbers. Salesforce's scratch org guide says plainly: ["Don't add personal data to scratch orgs."](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_scratch_orgs.htm) Whether a full copy with personal data may serve development at all is for your data protection officer to decide. This is not legal advice; the GDPR side is covered in [AI coding tools: works council and GDPR](/en/blog/ai-coding-tools-works-council-gdpr/).
 
 **Commercial data.** Dealer net prices, discount matrices, rebate agreements, sales agreement volumes, warranty terms per dealer. GDPR does not cover them, but the partner building your portal may work for a competitor next year.
 
 **Free text.** Case descriptions, emails, Chatter posts, work order notes and warranty fault descriptions. They mix both groups and are the hardest to mask without destroying their meaning.
 
-Salesforce says Agentforce Vibes [routes prompts through the Einstein Trust Layer](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-trust.html), which "can identify and mask" personal and payment card data, and caps the context window at 115K tokens while masking is active. A dealer net price is neither, so as I read it the price reaches the model unmasked. Claude Code sends prompts to Anthropic or your cloud provider directly, with no Salesforce masking step in between. More in [the Einstein Trust Layer and what it protects](../einstein-trust-layer-what-it-protects/).
+Salesforce says Agentforce Vibes [routes prompts through the Einstein Trust Layer](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-trust.html), which "can identify and mask" personal and payment card data, and caps the context window at 115K tokens while masking is active. A dealer net price is neither, so as I read it the price reaches the model unmasked. Claude Code sends prompts to Anthropic or your cloud provider directly, with no Salesforce masking step in between. More in [the Einstein Trust Layer and what it protects](/en/blog/einstein-trust-layer-what-it-protects/).
 
 ## Which environment may an agent use?
 
@@ -89,7 +89,7 @@ Scratch orgs are empty by default. For small sets, Salesforce recommends the [da
 - **Rare constellations.** The machine with 14 years of service history, the asset that moved between dealers, the SAP customer number mapped to two accounts. A seed set only contains them if someone writes them down, so I would ask service and sales for 20 to 30 such cases.
 - **Free text.** Masked case comments make service history summaries hard to test. Synthetic fault descriptions with your real error codes help.
 - **Integration keys.** If SAP customer and material numbers are masked, tests against SAP QA fail. I would keep them and mask the names around them.
-- **Volume.** A partial copy is capped at 5 GB, a developer sandbox at 200 MB. Load tests belong in the full copy and should be run by humans; the same applies to ApexGuru's runtime ratings, see [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
+- **Volume.** A partial copy is capped at 5 GB, a developer sandbox at 200 MB. Load tests belong in the full copy and should be run by humans; the same applies to ApexGuru's runtime ratings, see [quality gates for AI code](/en/blog/quality-gates-for-ai-code-salesforce-pipeline/).
 - **Upkeep.** A new field for a dealer surcharge stays unmasked until someone adds it to the mask, so that check belongs in the release checklist.
 
 ## Worked example: warranty claims and a partner's agent
@@ -109,14 +109,14 @@ The assumed effort is 6 to 10 person-days for the seed set and the mask, plus ha
 The strongest control: no full copy login on any machine where an agent runs. Tool settings come second:
 
 - **Claude Code.** Anthropic's [best practices](https://code.claude.com/docs/en/best-practices) say deny rules "hold in every permission mode", but also that a WebFetch deny does nothing against curl unless sandboxing is on. Deny rules back up the no-login rule; they do not replace it.
-- **Salesforce DX MCP Server.** It reaches only [explicitly allowlisted](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-mcp.html) orgs. According to its README, it will reach [end of life on November 2, 2026](../salesforce-dx-mcp-server-end-of-life/); whatever replaces it needs the same restriction.
+- **Salesforce DX MCP Server.** It reaches only [explicitly allowlisted](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-mcp.html) orgs. According to its README, it will reach [end of life on November 2, 2026](/en/blog/salesforce-dx-mcp-server-end-of-life/); whatever replaces it needs the same restriction.
 - **Agentforce Vibes.** Salesforce describes [disabling Vibes per org](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes) for production orgs under Setup, Agentforce Vibes Extensions. I would do the same for the full copy.
 - **Transcripts.** Shorten local retention with `cleanupPeriodDays` and have partners confirm deletion when the engagement ends.
 
-Sandbox levels and pipelines are part of my [DevOps and release management](../../services/devops-release-management/) work. My test question for every environment: would I accept this data on a partner laptop for a month? This is where I would start:
+Sandbox levels and pipelines are part of my [DevOps and release management](/en/services/devops-release-management/) work. My test question for every environment: would I accept this data on a partner laptop for a month? This is where I would start:
 
 1. **List every sandbox** with type, last refresh and who has a CLI login.
 2. **Classify the fields** into personal, commercial and free text, with your data protection officer.
 3. **Build the seed set** with the service and sales teams, including edge cases, and check it into the repository.
 4. **Configure the mask** for the partial copy and add the field check to every release.
-5. **Remove agent access** to the full copy and write the levels into the partner annex and the AI rules file; more agent rules are in [chapter 8 of the masterclass](../../masterclass/ai-salesforce/ai-code-best-practices/).
+5. **Remove agent access** to the full copy and write the levels into the partner annex and the AI rules file; more agent rules are in [chapter 8 of the masterclass](/en/masterclass/ai-salesforce/ai-code-best-practices/).

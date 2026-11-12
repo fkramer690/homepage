@@ -91,7 +91,7 @@ Beide Zahlen sind Planungshilfen, keine Vorschriften. Salesforce selbst nennt di
 
 Die zweite große Änderung ist die Agentic-Enterprise-Linse. Sie ist keine sechste Säule. Für jede der fünf Säulen gibt es eine Variante, die beschreibt, was zusätzlich gilt, wenn KI-Agenten eigenständig entscheiden und handeln: Berechtigungen und Prüfpfade für Agenten, Umgang mit Fehlern in der Orchestrierung mehrerer Agenten, der Agent Development Lifecycle, Token-Verbrauch und Nachvollziehbarkeit von Entscheidungen.
 
-Der wichtigste Satz dazu steht im Ankündigungsblog: „Agents don't get their own rulebook." Ein Agent muss also dieselben Anforderungen an Sicherheit, Stabilität und Kosten erfüllen wie jede andere Lösung in Ihrer Org. Das passt zu meiner Haltung aus Agentforce-Projekten: Business Value und Datenqualität haben Vorrang vor dem Agenten. Mehr dazu in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
+Der wichtigste Satz dazu steht im Ankündigungsblog: „Agents don't get their own rulebook." Ein Agent muss also dieselben Anforderungen an Sicherheit, Stabilität und Kosten erfüllen wie jede andere Lösung in Ihrer Org. Das passt zu meiner Haltung aus Agentforce-Projekten: Business Value und Datenqualität haben Vorrang vor dem Agenten. Mehr dazu in [Agentforce: Business Value und Datenqualität zuerst](/blog/agentforce-business-value-datenqualitaet/).
 
 ## Für CIOs zählen Kosten, Betrieb und benannte Zielkonflikte
 
@@ -99,7 +99,7 @@ Aus Sicht eines Architekten auf Kundenseite sind drei Änderungen relevant.
 
 **Kosten stecken in einer eigenen Säule.** Im alten Framework wurden Kosten nur am Rand behandelt. Jetzt stehen Lizenzen, Sandboxes und Make-or-Buy in Resource and Cost Optimization, neben Performance und Wartbarkeit. Das ist überfällig. In meiner Pre-Sales-Arbeit mit Salesforce wurden Angebote meist zunächst mit vollen Lizenzen für alle kalkuliert, obwohl viele Nutzer sie nicht brauchten. In einer größeren Organisation sind das schnell sechsstellige Beträge pro Jahr. Eine Architekturprüfung, die das nicht berücksichtigt, ist unvollständig.
 
-**Betrieb steht gleichberechtigt neben dem Design.** Operational Excellence bündelt DevOps, Monitoring und Incident Management. Damit gehört der Betrieb in jede Architekturprüfung und darf nicht erst nach dem Go-live Thema werden. Dass DORA-Metriken jetzt im offiziellen Framework stehen, gibt Kunden ein Argument gegenüber Partnern, die Deployments noch manuell durchführen. Warum ich darauf bestehe, steht in [Warum DevOps in Salesforce-Enterprise-Projekten zählt](../warum-devops-salesforce-enterprise-projekte/).
+**Betrieb steht gleichberechtigt neben dem Design.** Operational Excellence bündelt DevOps, Monitoring und Incident Management. Damit gehört der Betrieb in jede Architekturprüfung und darf nicht erst nach dem Go-live Thema werden. Dass DORA-Metriken jetzt im offiziellen Framework stehen, gibt Kunden ein Argument gegenüber Partnern, die Deployments noch manuell durchführen. Warum ich darauf bestehe, steht in [Warum DevOps in Salesforce-Enterprise-Projekten zählt](/blog/warum-devops-salesforce-enterprise-projekte/).
 
 **Das Framework benennt Zielkonflikte.** Mehr Verschlüsselung und Audit-Logs kosten Geld. Höhere Verfügbarkeit kostet Geld. Mehr Autonomie für Agenten erhöht das Risiko unfairer Entscheidungen. Salesforce schreibt dazu: „The goal is not to maximize every pillar simultaneously." Genau diese Abwägungen gehören in ein Entscheidungsprotokoll, und zwar mit dem Namen der Person, die entschieden hat.
 
@@ -129,7 +129,7 @@ Konkret heißt das:
 3. **Agenten nicht separat behandeln.** Agentforce-Vorhaben durchlaufen dasselbe Review, ergänzt um die Agenten-Variante jeder Säule.
 4. **Kostensäule ernst nehmen.** Salesforce empfiehlt, monatlich Kostenausreißer zu prüfen, vierteljährlich Lizenzzuweisungen und Kapazität zu überprüfen und einmal im Jahr eine vollständige Kostenprüfung vorzunehmen.
 
-Wie ich Standards und Reviews in solchen Programmen aufsetze, gehört zu meiner [Arbeit an Partnersteuerung und Architektur](../../leistungen/partnersteuerung/).
+Wie ich Standards und Reviews in solchen Programmen aufsetze, gehört zu meiner [Arbeit an Partnersteuerung und Architektur](/leistungen/partnersteuerung/).
 
 Wie das Framework hilft, mehrere Implementierungspartner auf einer Org zu steuern, beschreibe ich auf Englisch in einem Artikel auf LinkedIn: [Salesforce Well-Architected Framework: how to govern multiple implementation partners](https://www.linkedin.com/pulse/salesforce-well-architected-framework-how-govern-multiple-kramer-q58ge/).
 

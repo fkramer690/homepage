@@ -86,9 +86,9 @@ contra: Gets expensive when
 In one manufacturing project, sales agreements, a core feature of Manufacturing Cloud, were not relevant for the business. A custom solution on the core platform was cheaper and simpler to maintain.
 ```
 
-For machine builders, I have set out [which Salesforce products pay off and when](../../salesforce-for-machinery-manufacturers/): Service Cloud, Field Service, Manufacturing Cloud, Experience Cloud, Revenue Cloud and Agentforce.
+For machine builders, I have set out [which Salesforce products pay off and when](/en/salesforce-for-machinery-manufacturers/): Service Cloud, Field Service, Manufacturing Cloud, Experience Cloud, Revenue Cloud and Agentforce.
 
-The same logic applies beyond Salesforce products. Document generation, e-signatures, telephony and AI use cases all raise the question of whether to buy, build or leave the function in another system. For AI the most important input is the state of the data, as I explain in [Agentforce: business value and data quality first](../../blog/agentforce-business-value-data-quality-first/). Open-source tools can change the math too, for example in DevOps, as described in [why clients should own their DevOps tools](../../blog/why-clients-should-own-their-devops-tools/).
+The same logic applies beyond Salesforce products. Document generation, e-signatures, telephony and AI use cases all raise the question of whether to buy, build or leave the function in another system. For AI the most important input is the state of the data, as I explain in [Agentforce: business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/). Open-source tools can change the math too, for example in DevOps, as described in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/).
 
 ## An ROI case over several years, with maintenance and follow-up costs
 
@@ -96,7 +96,7 @@ The first-year price is the least interesting number. I look at several years an
 
 ![Make-or-buy with four options per requirement: standard product, industry cloud, custom build on the core platform or separate tool. The ROI case looks at several years, not the first-year price, and includes licenses for every user group with the expected growth, implementation by internal teams and partners, maintenance and upgrades including the effort custom code causes with every release, and follow-up costs such as add-ons needed later or the effort to switch to another option. The second lever is the license type, because full licenses are often offered by default, even for users who only read or approve.](../../../assets/blog/make-or-buy-roi-en.png)
 
-Make-or-buy decisions shape the architecture, so this service is often combined with [Salesforce architecture and solution design](../salesforce-architecture/).
+Make-or-buy decisions shape the architecture, so this service is often combined with [Salesforce architecture and solution design](/en/services/salesforce-architecture/).
 
 ## License type and timing decide the license price
 

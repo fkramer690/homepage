@@ -41,7 +41,7 @@ Salesforce ships three tools at no extra license cost. They build on each other,
 A change set sends customisations from one org to another, typically from a sandbox to production. According to the [Salesforce help on change sets](https://help.salesforce.com/apex/HTViewHelpDoc?id=changesets.htm), three limits apply: change sets contain only changes you can make through the Setup menu, they contain no data, and they work only between orgs that are affiliated with the same production org and linked by a deployment connection. An inbound change set is always deployed as a whole.
 
 ```hinweis achtung
-For an admin who moves a field and a validation rule every few weeks, that is enough. For a program with several teams, the essentials are missing: there is no history in Git, no pull request, no review and no comparison of which state sits where. When two partners change the same page layout or the same flow version, whoever deploys last wins. [Chapter 1](../release-management-basics/) describes exactly this state as the starting point of the maturity path.
+For an admin who moves a field and a validation rule every few weeks, that is enough. For a program with several teams, the essentials are missing: there is no history in Git, no pull request, no review and no comparison of which state sits where. When two partners change the same page layout or the same flow version, whoever deploys last wins. [Chapter 1](/en/masterclass/devops-release-management/release-management-basics/) describes exactly this state as the starting point of the maturity path.
 ```
 
 ### Salesforce CLI
@@ -68,7 +68,7 @@ contra: What to check first
 - Migrating projects from the managed package is a developer preview. I would not rely on it for production projects until it is generally available.
 ```
 
-How Lifecycle Center compares with sfdx-hardis in detail is in my [comparison of sfdx-hardis and DevOps Center](../../../blog/sfdx-hardis-vs-devops-center-comparison/). In short: Lifecycle Center provides the workflow and the controls, and the connected Git repository stays the source of truth.
+How Lifecycle Center compares with sfdx-hardis in detail is in my [comparison of sfdx-hardis and DevOps Center](/en/blog/sfdx-hardis-vs-devops-center-comparison/). In short: Lifecycle Center provides the workflow and the controls, and the connected Git repository stays the source of truth.
 
 ## sfdx-hardis: the open source route
 
@@ -76,7 +76,7 @@ How Lifecycle Center compares with sfdx-hardis in detail is in my [comparison of
 
 I have used sfdx-hardis in client projects for about two years. In programs with several implementation partners, what counts for me is that the whole process sits as configuration in the client's repository. With branch protection, a partner can change it only through a pull request the client approves.
 
-In return, it takes know-how. There are no license fees, but there are CI minutes, the setup and a person on the client side who understands the pipeline. Cloudity offers help as a service provider, but you do not need it. What the toolkit covers is in my [introduction to sfdx-hardis](../../../blog/sfdx-hardis-open-source-salesforce-devops/).
+In return, it takes know-how. There are no license fees, but there are CI minutes, the setup and a person on the client side who understands the pipeline. Cloudity offers help as a service provider, but you do not need it. What the toolkit covers is in my [introduction to sfdx-hardis](/en/blog/sfdx-hardis-open-source-salesforce-devops/).
 
 ## What do Gearset, Copado and Flosum do better?
 
@@ -95,7 +95,7 @@ source: Gearset price list, as of October 2026
 
 **Flosum** is, according to the [vendor](https://www.flosum.com/products/devops), also Salesforce-native and has its own metadata-aware version control. Git is explicitly optional there; GitHub, GitLab, Bitbucket and Azure DevOps can be connected. Flosum stresses audit evidence generated in the pipeline itself and names frameworks such as SOX and GxP. That is relevant for makers of medical devices or lab equipment. Besides DevOps there are Backup and Archive, a Data Migrator and a Trust Center. Pricing is quote-based, according to Flosum.
 
-I have not checked other vendors such as AutoRABIT or Blue Canvas for this chapter. How Copado and Gearset are adding AI agents and what to ask before you pay is in [Copado, Gearset and Provar AI agents](../../../blog/copado-gearset-provar-ai-agents/).
+I have not checked other vendors such as AutoRABIT or Blue Canvas for this chapter. How Copado and Gearset are adding AI agents and what to ask before you pay is in [Copado, Gearset and Provar AI agents](/en/blog/copado-gearset-provar-ai-agents/).
 
 ## Which criteria should drive the choice?
 
@@ -103,8 +103,8 @@ I go through the criteria in this order, because the first ones rule out the mos
 
 1. **Git platform.** Which platform does your IT already run? On Azure DevOps or a self-hosted GitLab, Lifecycle Center is out today. Nobody changes their Git platform for a release tool.
 2. **Team.** Who works with the tool every day: admins who click, or developers familiar with VS Code and branches? And is there someone on the client side who can own a pipeline?
-3. **Partners.** How many teams and implementation partners work on the same org? From the second partner on, you need pull requests with [mandatory reviews](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/) and one process that everyone uses the same way.
-4. **Ownership.** Is the contract in your name, do your employees hold admin rights, does the repository sit in your organization? Why that matters is in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
+3. **Partners.** How many teams and implementation partners work on the same org? From the second partner on, you need pull requests with [mandatory reviews](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/) and one process that everyone uses the same way.
+4. **Ownership.** Is the contract in your name, do your employees hold admin rights, does the repository sit in your organization? Why that matters is in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/).
 5. **Cost.** License, CI minutes, setup and above all the release role. In my assessment, in a program with several partners that role costs more than the tool license.
 6. **Support.** Do you need a contract with response times, or are the community and a service provider on demand enough?
 
@@ -134,7 +134,7 @@ The Git platform rules out Lifecycle Center. Change sets are out because of the 
 
 ## How do you make the decision binding?
 
-The tool choice belongs at the start of a program and applies to every partner. Whoever joins later works in the existing setup and does not bring their own. That goes into the contract, as described in [chapter 2 on ownership and roles](../release-process-ownership-roles/).
+The tool choice belongs at the start of a program and applies to every partner. Whoever joins later works in the existing setup and does not bring their own. That goes into the contract, as described in [chapter 2 on ownership and roles](/en/masterclass/devops-release-management/release-process-ownership-roles/).
 
 Three rules are not negotiable for me:
 
@@ -142,4 +142,4 @@ Three rules are not negotiable for me:
 - **Licenses and admin rights sit with the client.** That applies to Gearset, Copado and Flosum just as much as to the Git platform under sfdx-hardis.
 - **History stays portable.** With Flosum, where Git is optional, I would still switch on the Git connection so that the version history stays readable without the tool.
 
-The sandboxes and branches each of these tools builds on are covered in [chapter 3](../environments-and-branching/). How they become a pipeline with pull requests, validations and delta deployments follows in [chapter 5](../building-the-pipeline/). I help with the selection and setup as part of [DevOps and release management](../../../services/devops-release-management/) and, when several partners are involved, in [partner governance](../../../services/partner-governance/).
+The sandboxes and branches each of these tools builds on are covered in [chapter 3](/en/masterclass/devops-release-management/environments-and-branching/). How they become a pipeline with pull requests, validations and delta deployments follows in [chapter 5](/en/masterclass/devops-release-management/building-the-pipeline/). I help with the selection and setup as part of [DevOps and release management](/en/services/devops-release-management/) and, when several partners are involved, in [partner governance](/en/services/partner-governance/).

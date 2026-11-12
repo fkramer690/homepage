@@ -77,7 +77,7 @@ In practice I check these points before an agent goes live:
 - **Process data.** Are statuses, dates and fields maintained reliably? If the delivery date in Salesforce is only updated once a week, the agent will give outdated answers.
 - **Access rights.** What may the agent see, and what may it show to whom? Sharing rules, field-level security and data classification must be configured correctly before an agent works with them. Which user context applies depends on the agent type: employee agents can run with the logged-in user's rights, while external service agents often run as a dedicated agent user. A customer ID passed in a context variable does not restrict record access by itself, so flows and actions must scope the data to the verified customer.
 
-Salesforce is building more tooling for this, such as the Agent Context Engine, which assembles governed context for agents from Data 360. Check its availability before planning with it. I describe it in more detail in [the Agent Context Engine explained](../salesforce-agent-context-engine-explained/). But even the best context layer can only pass on what the data contains.
+Salesforce is building more tooling for this, such as the Agent Context Engine, which assembles governed context for agents from Data 360. Check its availability before planning with it. I describe it in more detail in [the Agent Context Engine explained](/en/blog/salesforce-agent-context-engine-explained/). But even the best context layer can only pass on what the data contains.
 
 Cleaning up data is not glamorous work, and it is easy to push it to "later" or to someone else. In the projects that move forward, it is part of the project plan from the start.
 
@@ -100,8 +100,8 @@ Go live in a limited scope
   In one channel or region, measure against the target and only then expand.
 ```
 
-This is ordinary project discipline, applied to a new kind of system. Agents should go through the same release process as every other change, with supported metadata in the repository and deployment through a pipeline, plus documented setup steps for what Salesforce does not package, such as MCP server registrations, as I describe in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
+This is ordinary project discipline, applied to a new kind of system. Agents should go through the same release process as every other change, with supported metadata in the repository and deployment through a pipeline, plus documented setup steps for what Salesforce does not package, such as MCP server registrations, as I describe in [why DevOps decides Salesforce enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/).
 
 ## The architect asks whether the agent is worth its cost
 
-On the client side, my job in Agentforce projects is to keep the focus on value and to make sure the foundations hold: data model, integrations, permissions and the release process. Partners and vendors understandably want to show what the technology can do. Someone has to ask whether a specific agent is worth its cost and whether the data supports it. That is a core part of [architecture and partner governance](../../services/salesforce-architecture/).
+On the client side, my job in Agentforce projects is to keep the focus on value and to make sure the foundations hold: data model, integrations, permissions and the release process. Partners and vendors understandably want to show what the technology can do. Someone has to ask whether a specific agent is worth its cost and whether the data supports it. That is a core part of [architecture and partner governance](/en/services/salesforce-architecture/).

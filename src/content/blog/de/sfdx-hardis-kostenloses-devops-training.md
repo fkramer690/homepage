@@ -26,7 +26,7 @@ faq:
     a: "Nein. Cloudity beschreibt es ausdrücklich als Badge, nicht als Zertifizierung. Es ist ein stärkerer Nachweis praktischer Arbeit als ein Quiz, weil ein automatischer Job Ihr eigenes Repository prüft."
 ---
 
-Das kostenlose DevOps-Training zu [sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/) ist der nützlichste Salesforce-DevOps-Kurs, den ich bisher gemacht habe. In 27 Praxis-Labs auf drei Leveln bauen Sie eine durchgängige Referenz-Pipeline auf kostenlosen Salesforce-Orgs, von der ersten User Story bis zu Produktions-Releases, Hotfixes und Monitoring. Ein Badge gibt es erst, wenn ein automatischer Job Ihre Arbeit im eigenen Repository geprüft hat. Ich habe alle drei Level im Oktober 2026 abgeschlossen und trotz fast zwei Jahren sfdx-hardis-Erfahrung beinahe einen ganzen Tag gebraucht.
+Das kostenlose DevOps-Training zu [sfdx-hardis](/blog/sfdx-hardis-einfuehrung-salesforce-devops/) ist der nützlichste Salesforce-DevOps-Kurs, den ich bisher gemacht habe. In 27 Praxis-Labs auf drei Leveln bauen Sie eine durchgängige Referenz-Pipeline auf kostenlosen Salesforce-Orgs, von der ersten User Story bis zu Produktions-Releases, Hotfixes und Monitoring. Ein Badge gibt es erst, wenn ein automatischer Job Ihre Arbeit im eigenen Repository geprüft hat. Ich habe alle drei Level im Oktober 2026 abgeschlossen und trotz fast zwei Jahren sfdx-hardis-Erfahrung beinahe einen ganzen Tag gebraucht.
 
 ## Warum habe ich das Training gemacht?
 
@@ -34,7 +34,7 @@ Ehrlich gesagt: LinkedIn ist schuld. Jeden Tag tauchten mehr sfdx-hardis-Badges 
 
 Ich habe nicht bei null angefangen. Ich setze sfdx-hardis in Kundenprojekten ein, arbeite seit fast zwei Jahren damit und kenne Git gut. Außerdem habe ich DevOps-Kurse von Gearset, Flosum und Copado abgeschlossen. Das gab mir einen guten Vergleich, und meine Kriterien waren einfach: der Anteil praktischer Arbeit, automatisch geprüfte Übungen, eine durchgängige Abdeckung und die Kosten. Dabei liegt dieser Kurs für mich vorn.
 
-Wenn Sie das Tool noch nicht kennen, starten Sie mit meiner [Einführung in sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/). Sie erklärt, was das Toolkit kann und wie es sich von kommerziellen Plattformen unterscheidet.
+Wenn Sie das Tool noch nicht kennen, starten Sie mit meiner [Einführung in sfdx-hardis](/blog/sfdx-hardis-einfuehrung-salesforce-devops/). Sie erklärt, was das Toolkit kann und wie es sich von kommerziellen Plattformen unterscheidet.
 
 ## Was deckt das sfdx-hardis-Training ab?
 
@@ -91,9 +91,9 @@ Ich empfehle es drei Gruppen:
 
 - **Admins und Berater**, die keine Angst mehr vor Git haben wollen. Level 1 und 2 zeigen, dass Branches, Pull Requests und Merge-Konflikte mit der VS-Code-Erweiterung beherrschbar sind.
 - **Entwickler und Tech Leads**, die Git kennen, aber noch keine vollständige Salesforce-Pipeline mit Deployment Actions, Quality Gates und Monitoring gesehen haben.
-- **Release Manager und Architekten**, die den Release-Prozess verantworten. Level 3 würde ich für diese Rolle zur Pflicht machen, gerade in Programmen mit mehreren Partnern, in denen [Pull-Request-Reviews](../warum-pull-request-reviews-pflicht-sind/) und ein klarer Release-Rhythmus den Unterschied machen.
+- **Release Manager und Architekten**, die den Release-Prozess verantworten. Level 3 würde ich für diese Rolle zur Pflicht machen, gerade in Programmen mit mehreren Partnern, in denen [Pull-Request-Reviews](/blog/warum-pull-request-reviews-pflicht-sind/) und ein klarer Release-Rhythmus den Unterschied machen.
 
-Für Kunden ist das Training außerdem ein lizenzfreier Weg, internes DevOps-Wissen aufzubauen. Der tatsächliche Zeitaufwand liegt bei etwa 13 Stunden pro Person. Das ist die Grundlage dafür, den Release-Prozess selbst in der Hand zu behalten, statt ihn einem Partner zu überlassen. Dieses Thema zieht sich durch einen Großteil meiner [Arbeit an Architektur und Governance](../../leistungen/partnersteuerung/).
+Für Kunden ist das Training außerdem ein lizenzfreier Weg, internes DevOps-Wissen aufzubauen. Der tatsächliche Zeitaufwand liegt bei etwa 13 Stunden pro Person. Das ist die Grundlage dafür, den Release-Prozess selbst in der Hand zu behalten, statt ihn einem Partner zu überlassen. Dieses Thema zieht sich durch einen Großteil meiner [Arbeit an Architektur und Governance](/leistungen/partnersteuerung/).
 
 ## Mein Fazit: mit Erfahrung einen Tag einplanen, ohne zwei
 

@@ -32,7 +32,7 @@ In a Salesforce release process, repository, pipeline, DevOps tool, sandboxes an
 
 ## What should you own as the client?
 
-[Chapter 1](../release-management-basics/) set the baseline: the release process belongs to you. In practice, the contracts, licenses and admin rights for the building blocks below are in your name. Owning does not mean running your own servers. A cloud GitHub organization is fine, as long as it is yours.
+[Chapter 1](/en/masterclass/devops-release-management/release-management-basics/) set the baseline: the release process belongs to you. In practice, the contracts, licenses and admin rights for the building blocks below are in your name. Owning does not mean running your own servers. A cloud GitHub organization is fine, as long as it is yours.
 
 | Building block | Owned by | Partners get |
 |---|---|---|
@@ -43,20 +43,20 @@ In a Salesforce release process, repository, pipeline, DevOps tool, sandboxes an
 | Certificates, technical users, integration access to SAP | you, in your own vault | no direct access |
 | Backlog, wiki, standards | you | edit rights in the project |
 
-What this looks like depends on the product. With sfdx-hardis the configuration lives as files in the repository, so whoever owns the repository owns the process. In Gearset, according to the [Gearset docs](https://docs.gearset.com/en/articles/2477938-team-ownership-and-management), only team owners manage license assignment, and anyone removed from the team immediately loses access to the shared history, while the history stays with the team. That is exactly the behavior you want, but only if the team is yours. Flosum is Salesforce-native according to the [vendor](https://www.flosum.com/), so it runs on the Salesforce platform itself. Make sure the org Flosum runs in belongs to you. Which tool fits you is compared in [chapter 4](../devops-tools-compared/). For this chapter one point matters: whoever holds the tool's contract decides who has access.
+What this looks like depends on the product. With sfdx-hardis the configuration lives as files in the repository, so whoever owns the repository owns the process. In Gearset, according to the [Gearset docs](https://docs.gearset.com/en/articles/2477938-team-ownership-and-management), only team owners manage license assignment, and anyone removed from the team immediately loses access to the shared history, while the history stays with the team. That is exactly the behavior you want, but only if the team is yours. Flosum is Salesforce-native according to the [vendor](https://www.flosum.com/), so it runs on the Salesforce platform itself. Make sure the org Flosum runs in belongs to you. Which tool fits you is compared in [chapter 4](/en/masterclass/devops-release-management/devops-tools-compared/). For this chapter one point matters: whoever holds the tool's contract decides who has access.
 
-Why the same applies to Jira, Confluence and Miro, and how to plan a move when a partner owns parts of it today, is covered in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
+Why the same applies to Jira, Confluence and Miro, and how to plan a move when a partner owns parts of it today, is covered in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/).
 
 ## Which roles does a release process need?
 
 Programs with several partners easily develop the same gap: each partner owns its stream, nobody owns the whole. Four roles close it. In small programs one person can hold two roles, but the responsibility still has to be named.
 
 - **Release manager (client side).** Owns the pipeline, the release calendar and every promotion from integration through UAT to production. The [sfdx-hardis release manager guide](https://sfdx-hardis.cloudity.com/salesforce-devops-release-home/) describes the job well: check validation jobs, solve conflicts, merge into the major branches, ship hotfixes and bring them back into the build branches afterwards, produce release notes and DORA metrics. According to the same page, one or two team members take this role, and on small projects a tech lead or senior admin can do it part time.
-- **Architect (client side).** Writes the development and architecture standards, approves architecture-relevant changes (new objects, integrations, sharing, the permission model) and decides when two streams need the same object. Which stream owns which object is set out in an [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/).
+- **Architect (client side).** Writes the development and architecture standards, approves architecture-relevant changes (new objects, integrations, sharing, the permission model) and decides when two streams need the same object. Which stream owns which object is set out in an [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/).
 - **Technical lead per partner.** Makes sure the team's pull requests arrive complete, small and checked, does the first review within the stream and supplies the input for the release notes. Has no approval rights for stages that affect other partners.
 - **Product owner in the business.** For example the head of service for Field Service or the head of sales for the dealer portal. Accepts stories in UAT and decides from a business point of view whether a feature goes live for users with the next release.
 
-The release role is the one programs most often save on. My position, which I have set out in several articles: if you save license costs with an open-source tool such as sfdx-hardis, the money is best invested in an internal release role. The same holds for commercial platforms such as Gearset, Copado or Flosum. Their advantage is that roles and approvals can be set up in one interface and the vendor provides support; a person on your side still has to own the approvals. More on this in [why DevOps decides Salesforce enterprise projects](../../../blog/why-devops-matters-salesforce-enterprise/).
+The release role is the one programs most often save on. My position, which I have set out in several articles: if you save license costs with an open-source tool such as sfdx-hardis, the money is best invested in an internal release role. The same holds for commercial platforms such as Gearset, Copado or Flosum. Their advantage is that roles and approvals can be set up in one interface and the vendor provides support; a person on your side still has to own the approvals. More on this in [why DevOps decides Salesforce enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/).
 
 ```praxis
 In one program I supported, every pull request went across my desk at first. Once the process was stable, I handed it over to an internal colleague. That is the path I recommend: build it with outside help, hand it over internally.
@@ -76,7 +76,7 @@ An approval matrix answers two questions for every kind of change: who checks, a
 | Hotfix | architect or lead | release manager and the product owner affected |
 | Pipeline, branch protection, tool configuration | release manager | client side only |
 
-What a good review checks and how it stays fast is covered in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). This chapter is about enforcement, because a matrix in the wiki stops nobody.
+What a good review checks and how it stays fast is covered in [why pull request reviews are a must](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). This chapter is about enforcement, because a matrix in the wiki stops nobody.
 
 ### In the Git platform
 
@@ -96,7 +96,7 @@ A pipeline is of little use if someone can deploy around it.
 According to the [Metadata API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_metadata_perm.htm), deploying through the Metadata API needs "Modify Metadata Through Metadata API Functions" or "Modify All Data". The first is switched on automatically as soon as someone has "Deploy Change Sets" or "Author Apex".
 ```
 
-So check in production, UAT and staging which partner users hold one of these permissions. Only the pipeline's technical user should deploy there, as [chapter 5](../building-the-pipeline/) describes. For temporary rights, say for an analysis in production, permission set assignments can get an expiration date according to the [Salesforce Admins blog](https://admin.salesforce.com/blog/2021/how-to-set-assignment-expiration-on-permission-sets-and-permission-set-groups), after which the rights lapse automatically.
+So check in production, UAT and staging which partner users hold one of these permissions. Only the pipeline's technical user should deploy there, as [chapter 5](/en/masterclass/devops-release-management/building-the-pipeline/) describes. For temporary rights, say for an analysis in production, permission set assignments can get an expiration date according to the [Salesforce Admins blog](https://admin.salesforce.com/blog/2021/how-to-set-assignment-expiration-on-permission-sets-and-permission-set-groups), after which the rights lapse automatically.
 
 ## One contract annex, the same for every partner
 
@@ -107,9 +107,9 @@ I am an architect, not a lawyer. The points below describe what I want to see in
 3. **Every change by pull request.** Including flows, permission sets and layouts. Nobody changes anything directly in Setup in integration, UAT, staging or production.
 4. **Standards and review rules apply.** The client's standards document is part of the contract, as are agreed response times for reviews.
 5. **Definition of done.** Tests with real asserts, a pull request description that links to the story, documented pre and post deployment steps.
-6. **Release calendar and freeze windows.** The partner plans against your calendar, not its own. How the calendar is built is covered in [chapter 8](../release-planning-salesforce-releases/).
+6. **Release calendar and freeze windows.** The partner plans against your calendar, not its own. How the calendar is built is covered in [chapter 8](/en/masterclass/devops-release-management/release-planning-salesforce-releases/).
 7. **Hotfixes through the same pipeline.** No exception for "urgent".
-8. **Rules for AI coding.** Which tools, which data, which review. The checklist for this is in [partners coding with AI: what belongs in the contract](../../../blog/partners-using-ai-coding-contract-rules/).
+8. **Rules for AI coding.** Which tools, which data, which review. The checklist for this is in [partners coding with AI: what belongs in the contract](/en/blog/partners-using-ai-coding-contract-rules/).
 9. **Exit.** Handover with no work outside the repository, confirmation that local copies of your code and credentials are deleted, and active support for the handover over an agreed period.
 
 ```hinweis tipp
@@ -122,7 +122,7 @@ Once ownership, roles and contract rules are in place, a partner change is a pro
 
 ```schritte
 Take stock before the exit is announced
-  A comparison between production and the repository shows what never reached the repository. The setup audit trail helps: according to the [Salesforce object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm) it shows Setup changes for at least the last 180 days. Older drift only shows up in the comparison. What an assessment of technical debt before the change looks like is covered in [AI org assessment: technical debt before a partner change](../../../blog/ai-org-assessment-technical-debt/).
+  A comparison between production and the repository shows what never reached the repository. The setup audit trail helps: according to the [Salesforce object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm) it shows Setup changes for at least the last 180 days. Older drift only shows up in the comparison. What an assessment of technical debt before the change looks like is covered in [AI org assessment: technical debt before a partner change](/en/blog/ai-org-assessment-technical-debt/).
 Onboard the new partner into the existing setup
   It gets users in the repository, the tool and the sandboxes, reads the standards and submits small pull requests in its first week, closely followed by the release manager.
 Update CODEOWNERS
@@ -143,4 +143,4 @@ In this scenario the release calendar runs on without a break, because pipeline,
 4. Remove direct deployment rights from partner users in the stage orgs.
 5. Draft the annex for all partner contracts with your legal department.
 
-Running this across all partners is the core of my work in [partner governance](../../../services/partner-governance/). Which orgs and branches the roles in this chapter work with follows in [chapter 3 on environments and branches](../environments-and-branching/).
+Running this across all partners is the core of my work in [partner governance](/en/services/partner-governance/). Which orgs and branches the roles in this chapter work with follows in [chapter 3 on environments and branches](/en/masterclass/devops-release-management/environments-and-branching/).

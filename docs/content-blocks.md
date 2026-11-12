@@ -4,7 +4,7 @@ Fourteen building blocks that loosen up blog articles and masterclass chapters. 
 
 Design: only the site's own colours and forms (cyan, anthracite, greys, dashed mono labels, cards with a short bar on top, the technical grid). No other colours, no icons beyond the cyan tick and grey cross.
 
-Inside a block, `**bold**`, `` `code` `` and `[links](../slug/)` work; external links get the new-tab mark automatically. Write the block in the language of the file (DE keys like `quelle:` and `titel:` in German files, `source:` and `title:` in English ones; both are accepted).
+Inside a block, `**bold**`, `` `code` `` and `[links](/blog/slug/)` work; external links get the new-tab mark automatically. Write the block in the language of the file (DE keys like `quelle:` and `titel:` in German files, `source:` and `title:` in English ones; both are accepted).
 
 ## 1. Hinweis (note)
 

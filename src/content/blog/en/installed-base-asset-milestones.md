@@ -37,10 +37,10 @@ The minimum per machine, in my view:
 - **Serial number.** The business key that ERP, PLM, dealers and Salesforce all recognize. As the technical integration key I would keep the source system's asset ID and define a uniqueness rule, such as product plus serial number.
 - **Product.** The machine type, so warranty terms and campaigns can select by product.
 - **Owning account and location.** These fields show who operates the machine and where it is located.
-- **Warranty start date.** The purchase or installation date, depending on your terms. [Warranty claims from dealers](../warranty-claims-dealers-salesforce/) shows how the asset warranty uses it.
+- **Warranty start date.** The purchase or installation date, depending on your terms. [Warranty claims from dealers](/en/blog/warranty-claims-dealers-salesforce/) shows how the asset warranty uses it.
 - **Usage**, if your warranty is limited by operating hours or cycles.
 
-Main assemblies can be modeled below the machine as child assets. How that hierarchy helps with spare parts is covered in [spare parts by serial number](../spare-parts-by-serial-number-ai/).
+Main assemblies can be modeled below the machine as child assets. How that hierarchy helps with spare parts is covered in [spare parts by serial number](/en/blog/spare-parts-by-serial-number-ai/).
 
 ## What do asset milestones record?
 
@@ -83,21 +83,21 @@ None of them knows everything. Here is a worked example with assumed numbers: a 
 | Installation date, location | Commissioning report | Service |
 | Operating hours | Dealer, customer or telemetry | Depends on the warranty terms |
 
-In this scenario the warranty start date depends on the dealer. If registration is optional, many machines have no start date, and every claim for those machines requires a manual check. I would make registration a required step in the portal, ideally tied to something the dealer wants, such as accepting warranty claims only for registered machines. The license dealers need for that is covered in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
+In this scenario the warranty start date depends on the dealer. If registration is optional, many machines have no start date, and every claim for those machines requires a manual check. I would make registration a required step in the portal, ideally tied to something the dealer wants, such as accepting warranty claims only for registered machines. The license dealers need for that is covered in [the Manufacturing Cloud customer portal](/en/blog/manufacturing-cloud-customer-portal/).
 
-The real work is defining the owner column. Document it for each field, as in the [object ownership matrix](../salesforce-object-ownership-matrix/), and plan the ERP interface accordingly. How I help with that is described under [Salesforce integration](../../services/salesforce-integration/).
+The real work is defining the owner column. Document it for each field, as in the [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/), and plan the ERP interface accordingly. How I help with that is described under [Salesforce integration](/en/services/salesforce-integration/).
 
 ## What does the Asset Service Console show?
 
 Everything attached to one machine. According to the service page, it shows "alerts, milestones, and service history" for an asset, plus its warranties, cases, work orders and claims. The [Trailhead overview](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) calls it a workspace "to manage cases, assets, warranties, and service histories".
 
-A console is only as complete as the data behind it. The same is true for the [Warranty Claims Adjudication Agent](../warranty-claims-adjudication-agent/): it relies on asset, warranty and claim data just as a person does, but unlike a person it does not ask when they are missing. That article suggests a simple test: count how many serial numbers from last year's claims correspond to assets with a start date.
+A console is only as complete as the data behind it. The same is true for the [Warranty Claims Adjudication Agent](/en/blog/warranty-claims-adjudication-agent/): it relies on asset, warranty and claim data just as a person does, but unlike a person it does not ask when they are missing. That article suggests a simple test: count how many serial numbers from last year's claims correspond to assets with a start date.
 
 ## Field Service begins at the work order
 
-Assets, milestones, participants and fleets are the shared foundation. Maintenance plans, work orders, service appointments and technician stock belong to Field Service. This is covered in the [Field Service masterclass chapter on assets and maintenance](../../masterclass/field-service/field-service-assets-maintenance-parts/) and in [maintenance contracts](../salesforce-field-service-maintenance-contracts/). Design the asset model once for both Manufacturing Cloud and Field Service, not separately for each project.
+Assets, milestones, participants and fleets are the shared foundation. Maintenance plans, work orders, service appointments and technician stock belong to Field Service. This is covered in the [Field Service masterclass chapter on assets and maintenance](/en/masterclass/field-service/field-service-assets-maintenance-parts/) and in [maintenance contracts](/en/blog/salesforce-field-service-maintenance-contracts/). Design the asset model once for both Manufacturing Cloud and Field Service, not separately for each project.
 
-Two add-ons are often relevant here. According to the [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/), Connected Assets costs $15,000 per org per month, billed annually, and adds telemetry; Asset Service Lifecycle Management costs $75 per user per month and is available with Field Service editions (Field Service Max includes both ASLM and Connected Assets, according to the Field Service pricing page). Neither is needed for a clean installed base. Whether telemetry creates value is covered in [predictive maintenance in Salesforce](../predictive-maintenance-salesforce-data-needed/).
+Two add-ons are often relevant here. According to the [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/), Connected Assets costs $15,000 per org per month, billed annually, and adds telemetry; Asset Service Lifecycle Management costs $75 per user per month and is available with Field Service editions (Field Service Max includes both ASLM and Connected Assets, according to the Field Service pricing page). Neither is needed for a clean installed base. Whether telemetry creates value is covered in [predictive maintenance in Salesforce](/en/blog/predictive-maintenance-salesforce-data-needed/).
 
 ## Count the gaps in last year's warranty claims
 
@@ -114,4 +114,4 @@ Make registration required
   As a fixed step in the dealer process.
 ```
 
-The ratio from the first step, serial numbers with owner and start date divided by all claims, is the number I use to measure the project. The full after-sales picture is in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass. The page [Salesforce for machinery manufacturers](../../salesforce-for-machinery-manufacturers/) shows how installed base, Field Service, spare parts and the dealer portal fit together for machine builders.
+The ratio from the first step, serial numbers with owner and start date divided by all claims, is the number I use to measure the project. The full after-sales picture is in the [warranty and after-sales chapter](/en/masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass. The page [Salesforce for machinery manufacturers](/en/salesforce-for-machinery-manufacturers/) shows how installed base, Field Service, spare parts and the dealer portal fit together for machine builders.

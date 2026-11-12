@@ -82,11 +82,11 @@ base: Sales Cloud, Service Cloud | A given in almost every enterprise project
 note: Sales Cloud and Service Cloud are usually set, the real decision is about the add-ons.
 ```
 
-For Field Service, the locations and the duration of the jobs matter as much as the type of work. I wrote about the current mobile features in [Field Service mobile with guided flows and voice](../../blog/salesforce-field-service-mobile-guided-voice/). Experience Cloud saves capacity because customers find answers and submit requests themselves. I calculate the fit of Manufacturing Cloud in the ROI case, which I describe on the [make-or-buy and licenses](../make-or-buy-licences/) page. Which clouds machine builders usually need, from Service Cloud to Field Service, is shown on the page [Salesforce for machine builders](../../salesforce-for-machinery-manufacturers/).
+For Field Service, the locations and the duration of the jobs matter as much as the type of work. I wrote about the current mobile features in [Field Service mobile with guided flows and voice](/en/blog/salesforce-field-service-mobile-guided-voice/). Experience Cloud saves capacity because customers find answers and submit requests themselves. I calculate the fit of Manufacturing Cloud in the ROI case, which I describe on the [make-or-buy and licenses](/en/services/make-or-buy-licences/) page. Which clouds machine builders usually need, from Service Cloud to Field Service, is shown on the page [Salesforce for machine builders](/en/salesforce-for-machinery-manufacturers/).
 
 ## The data model carries reports, automation and AI
 
-Every report, every automation and every AI use case depends on the data model. That is why I treat the data model as part of the architecture, including its relationships to ERP. My view on AI is the same: business value and data quality come first, as described in [Agentforce: business value and data quality first](../../blog/agentforce-business-value-data-quality-first/).
+Every report, every automation and every AI use case depends on the data model. That is why I treat the data model as part of the architecture, including its relationships to ERP. My view on AI is the same: business value and data quality come first, as described in [Agentforce: business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/).
 
 ```vergleich
 without: Every project models differently
@@ -111,4 +111,4 @@ Consequences | What does the decision mean later? *
 note: If someone asks two years later why a process was built that way, the answer is here, even when the people involved have long moved on.
 ```
 
-Integration architecture is part of it, because Salesforce is never the only system. More on that under [integration with ERP, middleware and telephony](../salesforce-integration/).
+Integration architecture is part of it, because Salesforce is never the only system. More on that under [integration with ERP, middleware and telephony](/en/services/salesforce-integration/).

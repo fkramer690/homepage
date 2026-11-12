@@ -71,7 +71,7 @@ In my view, video fits four situations for a machine builder:
 
 Video does not replace a visit when the work requires tools, a qualified electrician or a signed acceptance on site, or when the customer does not allow cameras in production. For those cases it shortens the visit instead. That is often where most of the value lies, because a second visit for a missing part costs about as much as the first.
 
-Visual Remote Assistant fits the triage logic I describe for the [breakdown hotline with Agentforce Voice](../breakdown-hotline-agentforce-voice/): first decide whether the machine is down and what the contract covers, then decide whether video, a part shipment or a technician solves it. For the expert in the video session, the [troubleshooting agent](../field-service-ai-troubleshooting-manuals/) only helps if the manuals use the same product key as the asset.
+Visual Remote Assistant fits the triage logic I describe for the [breakdown hotline with Agentforce Voice](/en/blog/breakdown-hotline-agentforce-voice/): first decide whether the machine is down and what the contract covers, then decide whether video, a part shipment or a technician solves it. For the expert in the video session, the [troubleshooting agent](/en/blog/field-service-ai-troubleshooting-manuals/) only helps if the manuals use the same product key as the asset.
 
 ## Worked example: 20 percent solved by video
 
@@ -96,7 +96,7 @@ My rule of thumb: start with the tool that keeps the session where your service 
 
 **Recording and data protection.** Recording is switched on in the VRA configuration, for entire sessions or, since Winter '27, on demand. The customer's staff appear in the video, and so does their production hall. An agreement with the customer company does not replace the legal basis and information for the people on camera; with your data protection officer, clarify the legal basis for the live video and, separately, for the recording, as well as retention and who may see recordings. Some customers will not allow recording, so the process has to work without recording too.
 
-**Works council for your own staff.** Even without recordings, session times, durations, notes and VRA reports per user make VRA a technical system that can monitor performance. In Germany, the works council has a say in this from the start, including access, reports and retention. I would address this at the same time as the timesheet and location topics from the [Field Service rollout](../salesforce-field-service-rollout/).
+**Works council for your own staff.** Even without recordings, session times, durations, notes and VRA reports per user make VRA a technical system that can monitor performance. In Germany, the works council has a say in this from the start, including access, reports and retention. I would address this at the same time as the timesheet and location topics from the [Field Service rollout](/en/blog/salesforce-field-service-rollout/).
 
 **Hosting region.** The installation manual names AWS North America as the default region and AWS Europe as an option. The session domains use techsee.me, and SMS invitations go through gateway providers. Your data protection officer should know this before the first customer call, and your IT should check firewall rules, browsers and the camera permissions on customer devices.
 
@@ -113,4 +113,4 @@ Measure and decide
   Check the fix rate and repeat calls, then decide on the full rollout.
 ```
 
-How this fits with the mobile app and service documents is covered in the [masterclass chapter on the mobile app](../../masterclass/field-service/field-service-mobile-app-documents/). Whether Field Service pays off at all is covered in [Salesforce Field Service: when is it worth it?](../salesforce-field-service-worth-it/), and the license question as a whole under [make-or-buy and licenses](../../services/make-or-buy-licences/).
+How this fits with the mobile app and service documents is covered in the [masterclass chapter on the mobile app](/en/masterclass/field-service/field-service-mobile-app-documents/). Whether Field Service pays off at all is covered in [Salesforce Field Service: when is it worth it?](/en/blog/salesforce-field-service-worth-it/), and the license question as a whole under [make-or-buy and licenses](/en/services/make-or-buy-licences/).

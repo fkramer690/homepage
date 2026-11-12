@@ -53,7 +53,7 @@ In a small org with one admin, sandboxes rarely cause trouble. With several part
 - **Nobody knows what a sandbox is for.** After two years an org has twenty sandboxes with names like `test2` and `partnernew`, and nobody dares to delete one.
 - **Refreshes without a plan.** Someone refreshes a sandbox, and afterwards an interface configuration still points to the production ERP, while the credentials for the test ERP are missing because secrets are not copied.
 
-The symptoms are always the same: a feature works in UAT and breaks in production. I describe the causes in more detail in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
+The symptoms are always the same: a feature works in UAT and breaks in production. I describe the causes in more detail in [why DevOps decides Salesforce enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/).
 
 ## What does a sandbox strategy for several partners look like?
 
@@ -71,11 +71,11 @@ Larger programs with parallel release trains may need a second integration or st
 A refresh creates a new org from the source, usually production, with a new org ID, and replaces the old one on activation. Anything built only in the sandbox is gone afterwards. So the rule is: every change lives in Git first and reaches the sandbox through the pipeline. Data, secrets, scheduled jobs and connections are not in Git and need the post-refresh steps.
 ```
 
-With a pipeline on the client's own Git platform you see which release was last deployed to which environment; drift from direct changes still needs to be checked regularly. That is the part I set up under [DevOps and release management](../../services/devops-release-management/).
+With a pipeline on the client's own Git platform you see which release was last deployed to which environment; drift from direct changes still needs to be checked regularly. That is the part I set up under [DevOps and release management](/en/services/devops-release-management/).
 
 ## The sandboxes belong to the client
 
-All sandboxes hang off the production org, so technically they always belong to the client. In practice, though, a partner often decides who gets access and when a refresh happens. I think that is a mistake, for the same reason [clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/): whoever controls the environments sets the pace for everyone else.
+All sandboxes hang off the production org, so technically they always belong to the client. In practice, though, a partner often decides who gets access and when a refresh happens. I think that is a mistake, for the same reason [clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/): whoever controls the environments sets the pace for everyone else.
 
 So I keep a simple list that the client owns:
 
@@ -87,7 +87,7 @@ So I keep a simple list that the client owns:
 - Preview or non-preview status around Salesforce releases
 - Data classification and masking status
 
-A sandbox without an entry in this list is deleted after notice. That sounds strict, but it frees an allocated sandbox for a real purpose and stops forgotten environments full of customer data from lying around. What AI coding agents may read in such environments is covered in [sandbox customer data and AI coding agents](../sandbox-customer-data-ai-coding-agents/).
+A sandbox without an entry in this list is deleted after notice. That sounds strict, but it frees an allocated sandbox for a real purpose and stops forgotten environments full of customer data from lying around. What AI coding agents may read in such environments is covered in [sandbox customer data and AI coding agents](/en/blog/sandbox-customer-data-ai-coding-agents/).
 
 ## How often should you refresh your sandboxes?
 

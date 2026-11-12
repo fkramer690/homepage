@@ -33,7 +33,7 @@ A client-side Salesforce architect and a system integrator's architect can have 
 
 ## What a system integrator is and what it brings
 
-Whether a freelancer, a consultancy or an internal colleague fills the client-side architect role is a different question, answered in [Salesforce freelancer or consultancy](../salesforce-freelancer-or-consultancy/). This article is about who prepares which decisions when the system integrator already brings its own architects.
+Whether a freelancer, a consultancy or an internal colleague fills the client-side architect role is a different question, answered in [Salesforce freelancer or consultancy](/en/blog/salesforce-freelancer-or-consultancy/). This article is about who prepares which decisions when the system integrator already brings its own architects.
 
 A system integrator, in the Salesforce world usually called an implementation partner, is a company that implements and extends Salesforce. It provides a team: project management, consultants for the business processes, developers, testers and one or more architects, often called solution architect or technical architect.
 
@@ -74,7 +74,7 @@ Make-or-buy and licences | Prepares the decision * | provides input
 Technical approval before the release | Go or no-go * | provides evidence
 ```
 
-The decision itself is the client's, usually the head of CRM or the programme owner; business acceptance stays with the business. The architect prepares it so it can be made in one meeting, with options, costs over the lifetime and a recommendation, and then records it in the [decision log](../salesforce-architecture-decision-log/).
+The decision itself is the client's, usually the head of CRM or the programme owner; business acceptance stays with the business. The architect prepares it so it can be made in one meeting, with options, costs over the lifetime and a recommendation, and then records it in the [decision log](/en/blog/salesforce-architecture-decision-log/).
 
 ## When is the system integrator's architect enough?
 
@@ -98,7 +98,7 @@ It looks different as soon as one of these situations occurs:
 - **Several partners in one org.** Without shared standards each partner builds by its own rules. In my largest programme five implementation partners with more than 30 developers worked in eight streams on one org. The standards came from the client side, and it took about three months until they were in place.
 - **SAP and other core systems.** For customers, materials, prices, orders, assets with serial numbers and service cases someone has to decide which system is the system of record. That decision holds for years, and a pure Salesforce stream often sees only its own part of it.
 - **Standard product, industry cloud or custom build.** Whether Manufacturing Cloud, Field Service, an AppExchange solution or a custom build pays off depends on the business model. Someone who earns neither from licences nor from the implementation should assess that.
-- **Partner switch or a project in trouble.** Then the client needs someone who understands the org and owes nothing to any partner. How a switch works is covered in [switching Salesforce partners without a standstill](../switching-salesforce-implementation-partner/).
+- **Partner switch or a project in trouble.** Then the client needs someone who understands the org and owes nothing to any partner. How a switch works is covered in [switching Salesforce partners without a standstill](/en/blog/switching-salesforce-implementation-partner/).
 - **No technical experience of your own.** When nobody internally can judge the partner's designs, the partner decides in practice.
 
 ```praxis
@@ -111,13 +111,13 @@ A client-side architect does not have to stay forever. The goal is for the role 
 
 Since 2025, Salesforce has deployed its own forward deployed engineers for Agentforce, FDEs for short: pods of two engineers and a deployment strategist who build an agent directly in the client's org and stay with it into production. Since April 2026, partners in the FDE Partner Network provide such engineers too, among them Accenture and Deloitte. That adds a third role next to the system integrator and the client-side architect.
 
-An FDE works for one use case and for their employer's product. They report platform limits back to Salesforce product management and leave the project after hypercare. They do not answer the questions where client and system integrator have different interests: scope, make or buy, repository and pipeline, a second partner. They even need more groundwork on the client side, because they build fast and wait on decisions about data, permissions and approvals. What an FDE costs and when one pays off is covered in [Salesforce forward deployed engineers explained](../salesforce-forward-deployed-engineer/).
+An FDE works for one use case and for their employer's product. They report platform limits back to Salesforce product management and leave the project after hypercare. They do not answer the questions where client and system integrator have different interests: scope, make or buy, repository and pipeline, a second partner. They even need more groundwork on the client side, because they build fast and wait on decisions about data, permissions and approvals. What an FDE costs and when one pays off is covered in [Salesforce forward deployed engineers explained](/en/blog/salesforce-forward-deployed-engineer/).
 
 ## What a client-side architect costs
 
 An independent Salesforce architect usually charges a day rate. I work at EUR 1,200 net per day remote, plus a flat fee or expenses on site, with at least two days a week and up to five at the start. Compared with the partner budget this is a small item: in a programme with 30 developers the client pays the partners many times that. If part of that team waits even one day for a decision, it quickly costs more than a week of architect time.
 
-What steering several partners looks like in practice is described on the [partner governance](../../services/partner-governance/) page.
+What steering several partners looks like in practice is described on the [partner governance](/en/services/partner-governance/) page.
 
 ## First step: assign the five conflict questions in your programme
 

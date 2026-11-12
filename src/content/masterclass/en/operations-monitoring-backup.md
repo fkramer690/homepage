@@ -31,7 +31,7 @@ After go-live, operations decide whether your release process holds. Five things
 
 ## What does running Salesforce after go-live involve?
 
-The first eight chapters followed a change all the way to production, most recently [release planning around the three Salesforce releases](../release-planning-salesforce-releases/). The deployment does not end the work. In a program with several partners, configuration, data and usage of the org change every week, and not every change is deployed through the pipeline.
+The first eight chapters followed a change all the way to production, most recently [release planning around the three Salesforce releases](/en/masterclass/devops-release-management/release-planning-salesforce-releases/). The deployment does not end the work. In a program with several partners, configuration, data and usage of the org change every week, and not every change is deployed through the pipeline.
 
 | Task | Question it answers | Example tool |
 |---|---|---|
@@ -42,7 +42,7 @@ The first eight chapters followed a change all the way to production, most recen
 | DORA metrics | How fast and how stable do we deliver? | sfdx-hardis DORA report, Gearset reporting |
 | Incidents and hotfixes | How does an urgent fix reach production safely? | your pipeline with a hotfix branch |
 
-Each row needs one person who owns it. In most programs that is the release role from [chapter 2](../release-process-ownership-roles/), backed by the partners.
+Each row needs one person who owns it. In most programs that is the release role from [chapter 2](/en/masterclass/devops-release-management/release-process-ownership-roles/), backed by the partners.
 
 ## Org monitoring: what to check every day
 
@@ -80,7 +80,7 @@ For data there are several options:
 
 Backup & Recover used to be called Own Recover. Salesforce [agreed to acquire Own](https://www.salesforce.com/news/press-releases/2024/09/05/salesforce-signs-definitive-agreement-to-acquire-own-company/) in September 2024 and closed the deal on November 18, 2024. On its [product page](https://www.salesforce.com/platform/data-backup-recovery/), Salesforce states a default retention of 99 years and says on pricing only that it "varies based on each customer's individual needs". According to its docs, Gearset stores backups on AWS in the US, Ireland, Australia or Canada, and according to its [product page](https://gearset.com/solutions/backup) it can alert you when unusual numbers of records are added, changed or deleted. With Flosum, ask about the storage location directly.
 
-Which product fits depends less on features than on your setting: where may the data live, which tool do you already deploy with, who may trigger a restore? That decision belongs in the tool choice from [chapter 4](../devops-tools-compared/), not in a later add-on order.
+Which product fits depends less on features than on your setting: where may the data live, which tool do you already deploy with, who may trigger a restore? That decision belongs in the tool choice from [chapter 4](/en/masterclass/devops-release-management/devops-tools-compared/), not in a later add-on order.
 
 ### Why you should rehearse the restore
 
@@ -92,13 +92,13 @@ If your SAP integration writes order status back by Salesforce ID, those updates
 
 Also, according to the [guide on planning a backup strategy](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.backup_restore_plan.htm&type=5), restored share objects can bring back outdated access. After a restore, check that dealers still see only their own assets. Salesforce Help lists Salesforce Backup, Backup & Recover and Backup & Recover Next as separate topics; find out which product you have licensed and rehearse the restore with exactly that one.
 
-I would rehearse a restore once a quarter in a sandbox, using an object that processes depend on, such as assets with maintenance plans. Moving and masking data between orgs is covered in [chapter 7](../data-and-configuration/).
+I would rehearse a restore once a quarter in a sandbox, using an object that processes depend on, such as assets with maintenance plans. Moving and masking data between orgs is covered in [chapter 7](/en/masterclass/devops-release-management/data-and-configuration/).
 
 ## Keeping technical debt visible
 
-Technical debt grows quietly in an org with several partners: an Apex class nobody calls anymore, a permission set with two users, a field without a description, classes on old API versions. The weekly sfdx-hardis checks find exactly that, among them unused Apex classes, unused custom labels, inactive metadata, underused permission sets, missing field descriptions and Apex on deprecated API versions. The quality gates before the merge from [chapter 6](../quality-tests-reviews/) prevent new debt; monitoring shows the old.
+Technical debt grows quietly in an org with several partners: an Apex class nobody calls anymore, a permission set with two users, a field without a description, classes on old API versions. The weekly sfdx-hardis checks find exactly that, among them unused Apex classes, unused custom labels, inactive metadata, underused permission sets, missing field descriptions and Apex on deprecated API versions. The quality gates before the merge from [chapter 6](/en/masterclass/devops-release-management/quality-tests-reviews/) prevent new debt; monitoring shows the old.
 
-A list alone changes nothing. I recommend a separate backlog for technical debt, with a fixed share of capacity in every release, and clear ownership: whoever built a component cleans it up. Before a partner change, a deeper analysis pays off. How an LLM can do the reading while the tools supply the facts is covered in [AI org assessment: technical debt before a partner change](../../../blog/ai-org-assessment-technical-debt/).
+A list alone changes nothing. I recommend a separate backlog for technical debt, with a fixed share of capacity in every release, and clear ownership: whoever built a component cleans it up. Before a partner change, a deeper analysis pays off. How an LLM can do the reading while the tools supply the facts is covered in [AI org assessment: technical debt before a partner change](/en/blog/ai-org-assessment-technical-debt/).
 
 ## Which DORA metrics make sense for Salesforce?
 
@@ -135,12 +135,12 @@ Follow up
   Record the cause, the duration and whether a deployment was involved. This record feeds change fail rate and rework rate.
 ```
 
-sfdx-hardis describes this as two streams: RUN for quick fixes, BUILD for the next version. A [hotfix](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/) goes through a branch to preprod and production, followed by a retrofit into the BUILD branches. The docs are blunt about it: fixing something by hand in Setup is never on the list, not even at 2 am, because the next deployment overwrites it. The hotfix path in the branch model is covered in [chapter 3](../environments-and-branching/), validation in the pipeline in [chapter 5](../building-the-pipeline/).
+sfdx-hardis describes this as two streams: RUN for quick fixes, BUILD for the next version. A [hotfix](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/) goes through a branch to preprod and production, followed by a retrofit into the BUILD branches. The docs are blunt about it: fixing something by hand in Setup is never on the list, not even at 2 am, because the next deployment overwrites it. The hotfix path in the branch model is covered in [chapter 3](/en/masterclass/devops-release-management/environments-and-branching/), validation in the pipeline in [chapter 5](/en/masterclass/devops-release-management/building-the-pipeline/).
 
 Suppose a machine builder runs Field Service and a dealer portal. On Monday morning, monitoring reports Flow errors when work orders are created. The audit trail shows a change in Setup on Friday, and the metadata backup shows the changed decision in the flow. At the same time it turns out that a data import over the weekend overwrote the warranty end date on thousands of assets. The flow is fixed by hotfix and merged back. The warranty end date is recovered through a restore of exactly that field from Friday's backup, without touching Monday's new work orders.
 
 ## Who owns operations?
 
-The monitoring repository, the backup product, the notification channels and the metrics belong to the client, for the same reasons as the repository and the pipeline: they should survive a partner change. Why I see it that way is in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/). Partners get access to the channels and the duty to respond to alerts about their components within an agreed time. That belongs in the contract; see [partner governance](../../../services/partner-governance/).
+The monitoring repository, the backup product, the notification channels and the metrics belong to the client, for the same reasons as the repository and the pipeline: they should survive a partner change. Why I see it that way is in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/). Partners get access to the channels and the duty to respond to alerts about their components within an agreed time. That belongs in the contract; see [partner governance](/en/services/partner-governance/).
 
-How monitoring and backup fit into the whole process is covered in [why DevOps decides Salesforce enterprise projects](../../../blog/why-devops-matters-salesforce-enterprise/) and the [introduction to sfdx-hardis](../../../blog/sfdx-hardis-open-source-salesforce-devops/). The order in which to introduce all of this is the topic of the last chapter, [rollout and roadmap](../rollout-roadmap/). My advice for the start: monitoring and data backup first, because you can switch on both before the pipeline is finished. How I support this is described under [DevOps and release management](../../../services/devops-release-management/).
+How monitoring and backup fit into the whole process is covered in [why DevOps decides Salesforce enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/) and the [introduction to sfdx-hardis](/en/blog/sfdx-hardis-open-source-salesforce-devops/). The order in which to introduce all of this is the topic of the last chapter, [rollout and roadmap](/en/masterclass/devops-release-management/rollout-roadmap/). My advice for the start: monitoring and data backup first, because you can switch on both before the pipeline is finished. How I support this is described under [DevOps and release management](/en/services/devops-release-management/).

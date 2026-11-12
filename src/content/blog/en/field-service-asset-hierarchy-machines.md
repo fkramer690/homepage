@@ -55,7 +55,7 @@ My rule of thumb has three questions. Each "yes" is a strong signal; the decidin
 - **Does it have its own maintenance?** For example, a spindle with its own interval in operating hours or a filter unit with its own inspection. Maintenance work rules are attached to assets, so the component needs one.
 - **Does it have its own warranty?** For example, a supplier part with a warranty that starts on a different date from the machine warranty. Without its own asset, nobody can tell whether the claim goes to the supplier.
 
-Everything else stays in the parts list: screws, seals, cables, standard parts. The technician still needs to find them, but that is a question for PLM and the spare parts catalog. In [spare parts by serial number](../spare-parts-by-serial-number-ai/) I recommend the same split: Salesforce holds the machine and its service-relevant main assemblies, the full as-built parts list stays in PLM and is read live.
+Everything else stays in the parts list: screws, seals, cables, standard parts. The technician still needs to find them, but that is a question for PLM and the spare parts catalog. In [spare parts by serial number](/en/blog/spare-parts-by-serial-number-ai/) I recommend the same split: Salesforce holds the machine and its service-relevant main assemblies, the full as-built parts list stays in PLM and is read live.
 
 ## Fields or asset attributes for machine data?
 
@@ -65,7 +65,7 @@ The [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.ob
 
 Attributes have limits, according to the [considerations](https://help.salesforce.com/s/articleView?id=fs_asset_attrib_manage_monit_consider.htm&language=en_US&type=5): 25 per asset, and at most 10 recommended when usage-based maintenance creates work orders from them. Validation rules, record types and history tracking are not supported. And briefcases for offline priming [do not include asset attributes](https://help.salesforce.com/s/articleView?id=service.wfs_mobile_work_with_performance_priming.htm&language=en_US&type=5), so technicians need a connection to read them.
 
-I use attributes for descriptive values that vary by series. For a few counters, such as operating hours, that matter across all series, need validation or history, or have to be readable offline, I prefer a number field on the asset. Usage-based maintenance can work with either. How that works in detail is in [usage-based maintenance in Field Service](../field-service-usage-based-maintenance/).
+I use attributes for descriptive values that vary by series. For a few counters, such as operating hours, that matter across all series, need validation or history, or have to be readable offline, I prefer a number field on the asset. Usage-based maintenance can work with either. How that works in detail is in [usage-based maintenance in Field Service](/en/blog/field-service-usage-based-maintenance/).
 
 ## Who keeps the hierarchy current?
 
@@ -74,10 +74,10 @@ At delivery, the installed base is taken from the system that holds the serial-s
 Without a defined process, the Salesforce hierarchy then shows the machine as delivered, and nobody trusts it. These questions need to be answered before go-live:
 
 1. **Who records an exchanged assembly?** In my view, the technician should record it in the mobile app, including the serial number of the new unit, because they can physically verify it.
-2. **Which system leads afterwards?** If the ERP stays the master for the installed base, the change from the app has to flow back to the ERP. If Salesforce leads after delivery, the ERP receives a copy. Both work. A mixed model works only with explicit ownership for each data domain and change event, plus rules for conflicts and reconciliation. This is the same ownership question as in [master data for scheduling](../salesforce-field-service-master-data/), and it should be addressed in the interface design described on the [Salesforce integration](../../services/salesforce-integration/) page.
-3. **What about retrofits by dealers or the customer?** If a dealer exchanges a component and reports only warranty cases, the hierarchy has gaps. That also undermines every later analysis, as described in [predictive maintenance in Salesforce: what data you need](../predictive-maintenance-salesforce-data-needed/).
+2. **Which system leads afterwards?** If the ERP stays the master for the installed base, the change from the app has to flow back to the ERP. If Salesforce leads after delivery, the ERP receives a copy. Both work. A mixed model works only with explicit ownership for each data domain and change event, plus rules for conflicts and reconciliation. This is the same ownership question as in [master data for scheduling](/en/blog/salesforce-field-service-master-data/), and it should be addressed in the interface design described on the [Salesforce integration](/en/services/salesforce-integration/) page.
+3. **What about retrofits by dealers or the customer?** If a dealer exchanges a component and reports only warranty cases, the hierarchy has gaps. That also undermines every later analysis, as described in [predictive maintenance in Salesforce: what data you need](/en/blog/predictive-maintenance-salesforce-data-needed/).
 
-Field Service can store warranty terms and asset warranties. Partner claim capture, adjudication and supplier recovery are part of Warranty Lifecycle Management in Manufacturing Cloud, with its own licensing, and are covered in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of that masterclass.
+Field Service can store warranty terms and asset warranties. Partner claim capture, adjudication and supplier recovery are part of Warranty Lifecycle Management in Manufacturing Cloud, with its own licensing, and are covered in the [warranty and after-sales chapter](/en/masterclass/manufacturing-cloud/warranty-and-after-sales/) of that masterclass.
 
 ## Every extra asset costs you later
 
@@ -94,7 +94,7 @@ source: Salesforce Help, Field Service limits
 - **The tree view.** Above 500 assets the View Asset Hierarchy action is not available, and it navigates only 20 levels. A line with 900 parts modeled as assets is then hard for the back office to read.
 - **The mobile app.** What the technician's device loads depends on the briefcase rules, not automatically on the whole hierarchy. Still, every asset you prime adds data that has to stay in step offline, so I would test load times with a real machine before loading parts onto every tablet.
 
-The same applies to dealer portals: every asset a dealer may see has to be shared correctly, as described in the [spare parts shop per machine](../spare-parts-shop-parts-per-machine/).
+The same applies to dealer portals: every asset a dealer may see has to be shared correctly, as described in the [spare parts shop per machine](/en/blog/spare-parts-shop-parts-per-machine/).
 
 ## Worked example: a packaging line
 
@@ -108,4 +108,4 @@ With 50 lines in the field, that is 2,350 assets instead of about 47,000, and ev
 
 ## Run one machine type through the rule of thumb
 
-Take one machine type and go through its bill of materials with the rule of thumb: serial number, its own maintenance requirement, its own warranty, and whether a service process has to track the unit separately. Write down the resulting levels and count the assets per machine. Then decide who records an exchanged assembly and which system is authoritative after delivery, before the first load from the ERP. The [masterclass chapter on assets, maintenance and parts](../../masterclass/field-service/field-service-assets-maintenance-parts/) shows how the hierarchy connects to maintenance plans, spare parts and service partners. The page [Salesforce for machinery manufacturers](../../salesforce-for-machinery-manufacturers/) covers the other Salesforce topics machine builders face, from spare parts out of SAP to the dealer portal.
+Take one machine type and go through its bill of materials with the rule of thumb: serial number, its own maintenance requirement, its own warranty, and whether a service process has to track the unit separately. Write down the resulting levels and count the assets per machine. Then decide who records an exchanged assembly and which system is authoritative after delivery, before the first load from the ERP. The [masterclass chapter on assets, maintenance and parts](/en/masterclass/field-service/field-service-assets-maintenance-parts/) shows how the hierarchy connects to maintenance plans, spare parts and service partners. The page [Salesforce for machinery manufacturers](/en/salesforce-for-machinery-manufacturers/) covers the other Salesforce topics machine builders face, from spare parts out of SAP to the dealer portal.

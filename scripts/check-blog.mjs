@@ -190,10 +190,13 @@ function check(collection, rules) {
       if (firstPara.startsWith('#')) fail('start with an intro paragraph that gives the answer');
       else if (firstPara.split(/\s+/).length > 110) fail('intro paragraph too long, give the answer in at most 110 words');
 
-      const internal = (text.match(/\]\(\.\.?\//g) ?? []).length;
-      if (internal < 2) fail(`${internal} internal links, at least 2 needed (relative, e.g. ../../#services)`);
-      if (/\]\(\/(?!\/)/.test(text)) fail('internal links must be relative (../../#services), not start with /');
-      if (/\]\(https?:\/\/fkramer690\.github\.io/.test(text)) fail('do not hardcode the site domain, use relative links');
+      // Internal links are root paths (/leistungen/architektur/, /en/blog/<slug>/): crawlers resolve
+      // them unambiguously and check-broken-links.mjs checks every one. Images stay relative (../../../assets/).
+      const internal = (text.match(/\]\(\/(?!\/)/g) ?? []).length;
+      if (internal < 2) fail(`${internal} internal links, at least 2 needed (root paths, e.g. /leistungen/architektur/)`);
+      const relative = text.match(/\]\(\.\.?\/(?![^)]*assets\/)[^)\s]*/);
+      if (relative) fail(`internal links must start with /, not be relative: ${relative[0].slice(2)}`);
+      if (/\]\(https?:\/\/(fkramer690\.github\.io|(www\.)?fk-sd\.de)/.test(text)) fail('do not hardcode the site domain, start internal links with /');
 
       if (/!\[\s*\]\(/.test(text)) fail('every image needs alt text: ![What the image shows](...)');
       if (/!\[[^\]]*\]\(https?:/.test(text)) fail('store images in src/assets/, do not hotlink external images');

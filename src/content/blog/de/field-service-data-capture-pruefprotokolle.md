@@ -41,7 +41,7 @@ Was ein Formular enthalten kann:
 Für den Einsatz vor Ort zählen zwei Eigenschaften mehr als die Bausteine. Die Formulare funktionieren offline mit einer eigenen Offline-Engine, und die automatische Speicherung sichert jede Eingabe. Ein Techniker kann ein Formular an der Maschine schließen und später weitermachen. Jede Übermittlung wird protokolliert, online wie offline.
 
 ```hinweis achtung
-Offline funktioniert nur, wenn die Datensätze, die das Formular liest, auf dem Gerät liegen. Welche Datensätze in den Briefcase gehören, steht in [Field Service App offline: Welche Daten aufs Gerät?](../field-service-app-offline-briefcase/). Welche Flow-Funktionen Data Capture gegenüber einem Desktop-Flow noch fehlen, etwa die Data Table, steht in [Field Service Mobile App: Flow-Grenzen](../field-service-mobile-flows-grenzen/).
+Offline funktioniert nur, wenn die Datensätze, die das Formular liest, auf dem Gerät liegen. Welche Datensätze in den Briefcase gehören, steht in [Field Service App offline: Welche Daten aufs Gerät?](/blog/field-service-app-offline-briefcase/). Welche Flow-Funktionen Data Capture gegenüber einem Desktop-Flow noch fehlen, etwa die Data Table, steht in [Field Service Mobile App: Flow-Grenzen](/blog/field-service-mobile-flows-grenzen/).
 ```
 
 ## Voice to Form ist seit Spring '26 allgemein verfügbar
@@ -51,7 +51,7 @@ Der Stand ändert sich mit jedem App-Release, deshalb lohnt der genaue Blick.
 - **App-Release 260.0 (Spring '26).** Der [Release-Beitrag von Salesforce in der Trailblazer Community](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000j9vu70AA) kennzeichnet Data Capture Voice to Form als GA. Techniker diktieren, die App schreibt mit und füllt die Formularfelder. Derselbe Beitrag nennt eine Lookup-Komponente, die auch offline funktioniert, eine Vorschau für mehrere Bilder und die Möglichkeit, Formulare aus Assets, benutzerdefinierten Objekten und mobilen Zeiterfassungen heraus zu starten. Prüfen Sie den Stand in Ihrer Org, bevor Sie damit planen.
 - **Winter '27.** Die [Release-Highlights auf Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) ergänzen die Unterstützung für Spanisch, Japanisch, Italienisch, Französisch und Deutsch. Laut [Einrichtungsanleitung](https://help.salesforce.com/s/articleView?id=service.mfs_voice_to_form_setup.htm&language=en_US&type=5) brauchen Nutzer die Lizenz Agentforce for Field Service und die Berechtigung Einstein Field Service User; Voice to Form ist also eine eigene Lizenzentscheidung.
 
-Spracheingabe auf Deutsch macht die Funktion für viele Serviceorganisationen im DACH-Raum interessant. Dabei werden jedoch Sprachdaten von Beschäftigten verarbeitet, und damit kommen Datenschutz und, wo vorhanden, der Betriebsrat ins Spiel. Diese Fragen habe ich in [Salesforce Field Service Mobile: Führung und Sprache](../salesforce-field-service-mobile-aussendienst/) beschrieben. Für das Formular heißt das: Legen Sie fest, welche Felder per Sprache gefüllt werden dürfen und welche Werte der Techniker von Hand bestätigt, etwa einen sicherheitsrelevanten Messwert.
+Spracheingabe auf Deutsch macht die Funktion für viele Serviceorganisationen im DACH-Raum interessant. Dabei werden jedoch Sprachdaten von Beschäftigten verarbeitet, und damit kommen Datenschutz und, wo vorhanden, der Betriebsrat ins Spiel. Diese Fragen habe ich in [Salesforce Field Service Mobile: Führung und Sprache](/blog/salesforce-field-service-mobile-aussendienst/) beschrieben. Für das Formular heißt das: Legen Sie fest, welche Felder per Sprache gefüllt werden dürfen und welche Werte der Techniker von Hand bestätigt, etwa einen sicherheitsrelevanten Messwert.
 
 ## Welche Antworten sollten Felder werden?
 
@@ -69,11 +69,11 @@ Diese Entscheidung würde ich vor dem ersten Formular treffen. Eine Formularantw
 
 Aus der Tabelle folgen zwei Regeln. Ein Formular fragt nichts ab, was schon am Asset oder Arbeitsauftrag steht, etwa Seriennummer, Kunde oder Maschinentyp. Und verbrauchte Teile werden als Products Consumed gebucht, nie als Freitextfeld im Formular, sonst sehen Fahrzeuglager und ERP sie nicht.
 
-Messwerte am Asset verbinden das Formular mit der Wartungsplanung. Wie Wartungspläne und Entitlements zusammenspielen, steht in [Field Service: Wie bildet man Wartungsverträge ab?](../salesforce-field-service-wartungsvertraege/). Das ist klassische [Architekturarbeit](../../leistungen/salesforce-architektur/) und gehört der Serviceorganisation genauso wie der IT.
+Messwerte am Asset verbinden das Formular mit der Wartungsplanung. Wie Wartungspläne und Entitlements zusammenspielen, steht in [Field Service: Wie bildet man Wartungsverträge ab?](/blog/salesforce-field-service-wartungsvertraege/). Das ist klassische [Architekturarbeit](/leistungen/salesforce-architektur/) und gehört der Serviceorganisation genauso wie der IT.
 
 ## Wie hängt das Formular mit dem Servicebericht zusammen?
 
-Data Capture sammelt die Daten. Das PDF, das der Kunde erhält, entsteht im Document Builder oder, in Orgs, die diese noch nutzen, über Service Reports. Ein PDF des abgeschlossenen Formulars selbst gibt es nur in der Unlimited Edition und nicht für Formulare, die per Quick Action starten, denn diese legen keinen Formular-Datensatz an. Der Document Builder arbeitet mit Arbeitsaufträgen, Arbeitsauftragspositionen und Serviceterminen, wie in [Salesforce Service Documents: reicht der Document Builder?](../salesforce-service-documents-document-builder-servicebericht/) beschrieben. Braucht der Kunde die Prüfergebnisse im Bericht, klären Sie im ersten Sprint, wie die Antworten in die Vorlage gelangen. Werte, die als Feld am Arbeitsauftrag stehen, lassen sich direkt in die Vorlage setzen.
+Data Capture sammelt die Daten. Das PDF, das der Kunde erhält, entsteht im Document Builder oder, in Orgs, die diese noch nutzen, über Service Reports. Ein PDF des abgeschlossenen Formulars selbst gibt es nur in der Unlimited Edition und nicht für Formulare, die per Quick Action starten, denn diese legen keinen Formular-Datensatz an. Der Document Builder arbeitet mit Arbeitsaufträgen, Arbeitsauftragspositionen und Serviceterminen, wie in [Salesforce Service Documents: reicht der Document Builder?](/blog/salesforce-service-documents-document-builder-servicebericht/) beschrieben. Braucht der Kunde die Prüfergebnisse im Bericht, klären Sie im ersten Sprint, wie die Antworten in die Vorlage gelangen. Werte, die als Feld am Arbeitsauftrag stehen, lassen sich direkt in die Vorlage setzen.
 
 Prüfberichte mit viel bedingtem Inhalt können über den Document Builder hinauswachsen. Dann ist ein eigenes Prüfdokument mit Document Generation oder einem AppExchange-Tool die bessere Lösung, und das Formular liefert weiterhin die Daten.
 
@@ -93,7 +93,7 @@ Den größten Gewinn hat in diesem Beispiel der Innendienst. Nach der Synchronis
 
 ## Ein häufig genutztes Protokoll auswählen
 
-Formulare, Offline-Daten und Servicebericht bilden zusammen [Kapitel 3 der Masterclass Field Service](../../masterclass/field-service/field-service-mobile-app-dokumente/). Für das erste Formular würde ich so vorgehen:
+Formulare, Offline-Daten und Servicebericht bilden zusammen [Kapitel 3 der Masterclass Field Service](/masterclass/field-service/field-service-mobile-app-dokumente/). Für das erste Formular würde ich so vorgehen:
 
 ```schritte
 Ein Protokoll auswählen

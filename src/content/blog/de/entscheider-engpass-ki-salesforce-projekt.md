@@ -32,7 +32,7 @@ Wenn Coding-Agenten die Salesforce-Delivery beschleunigen, ist das Entwicklungst
 
 ## Warum wird der Entscheider zum Engpass, wenn KI entwickelt?
 
-Ein Projekt ist so schnell wie sein langsamster Schritt. Solange Entwickler Wochen für einen Stream brauchten, fiel nicht auf, dass Rückfragen an den Fachbereich ein paar Tage unbeantwortet blieben. Coding-Agenten können die Umsetzungszeit verkürzen, die Wartezeit bleibt. Den Ablauf, bei dem der Agent die Vorarbeit übernimmt und Menschen an festgelegten Entscheidungspunkten entscheiden, beschreibe ich in [KI-nativer Delivery-Prozess für Salesforce](../ki-native-salesforce-delivery-prozess/). Er ist mein Zielbild; einzelne Schritte nutze ich schon, aber noch nicht durchgängig. Schon in dieser Skizze liegt die Verantwortung für drei der fünf Entscheidungspunkte beim Kunden.
+Ein Projekt ist so schnell wie sein langsamster Schritt. Solange Entwickler Wochen für einen Stream brauchten, fiel nicht auf, dass Rückfragen an den Fachbereich ein paar Tage unbeantwortet blieben. Coding-Agenten können die Umsetzungszeit verkürzen, die Wartezeit bleibt. Den Ablauf, bei dem der Agent die Vorarbeit übernimmt und Menschen an festgelegten Entscheidungspunkten entscheiden, beschreibe ich in [KI-nativer Delivery-Prozess für Salesforce](/blog/ki-native-salesforce-delivery-prozess/). Er ist mein Zielbild; einzelne Schritte nutze ich schon, aber noch nicht durchgängig. Schon in dieser Skizze liegt die Verantwortung für drei der fünf Entscheidungspunkte beim Kunden.
 
 Der DORA-Bericht 2025 beschreibt KI als Verstärker: Sie vergrößert die Stärken guter Organisationen und die Schwächen der anderen. Google warnt im [DORA-Beitrag vom Dezember 2025](https://cloud.google.com/blog/products/ai-machine-learning/from-adoption-to-impact-putting-the-dora-ai-capabilities-model-to-work?hl=en) ausdrücklich davor, dass Tempogewinne einzelner Schritte nur Arbeit vor dem nächsten Schritt aufstauen; DORA nennt Reviews, Tests, Sicherheit und Deployment als Beispiele. Dass Entscheidungen beim Kunden zum nächsten Engpass werden, ist meine eigene Beobachtung aus Projekten und kein Forschungsergebnis.
 
@@ -46,7 +46,7 @@ In jedem meiner Projekte hat der Abnahmetest oder die Abnahme der Stories länge
 
 ### Das Tagesgeschäft gewinnt
 
-Der Serviceleiter, der im Projekt über den Prozess für Garantiefälle entscheiden soll, führt zugleich ein Team. Fällt eine Maschine beim Kunden aus, hat die Störungsbehebung Vorrang. Im klassischen Projekt fiel das kaum auf, weil der Fachbereich zwischen Konzept und Abnahmetest ohnehin wochenlang wenig zu tun hatte. Mit täglichen Demos braucht das Team jeden Tag eine Antwort. In [KI-native Delivery: kleinere Salesforce-Teams](../ki-kleinere-salesforce-teams-delivery/) schätze ich den Bedarf auf rund die Hälfte der Arbeitszeit pro Stream. Diese Zeit steht selten im Projektplan.
+Der Serviceleiter, der im Projekt über den Prozess für Garantiefälle entscheiden soll, führt zugleich ein Team. Fällt eine Maschine beim Kunden aus, hat die Störungsbehebung Vorrang. Im klassischen Projekt fiel das kaum auf, weil der Fachbereich zwischen Konzept und Abnahmetest ohnehin wochenlang wenig zu tun hatte. Mit täglichen Demos braucht das Team jeden Tag eine Antwort. In [KI-native Delivery: kleinere Salesforce-Teams](/blog/ki-kleinere-salesforce-teams-delivery/) schätze ich den Bedarf auf rund die Hälfte der Arbeitszeit pro Stream. Diese Zeit steht selten im Projektplan.
 
 ### Der Prozess ist intern nicht geklärt
 
@@ -64,7 +64,7 @@ Das Management hört, dass KI die Entwicklung beschleunigt, und erwartet kürzer
 
 Ein Rechenbeispiel mit angenommenen Zahlen zeigt, warum der Blick auf die Entwicklung allein täuscht. Eine Story brauchte bisher fünf Tage Entwicklung und Test. Dazu kommen drei Rückfragen an den Fachbereich, die nacheinander beantwortet werden müssen und die Story jeweils zwei Tage blockieren: sechs Tage auf dem kritischen Pfad. Die Durchlaufzeit liegt bei elf Tagen. Mit einem Coding-Agenten sinkt die Zeit für Umsetzung und Review auf eineinhalb Tage, die Durchlaufzeit auf siebeneinhalb Tage, von denen 80 Prozent auf Wartezeit entfallen. Das ist ein Gewinn. Halbiert der nächste Werkzeugsprung die Umsetzungszeit noch einmal, sinkt die Durchlaufzeit nur noch auf knapp sieben Tage, weil fast 90 Prozent davon auf Wartezeit entfallen. Bei den Kosten zeigt sich ein ähnliches Muster: Der Partner bucht weniger Entwicklerstunden, aber die Stunden für Workshops, Abstimmung und Nacharbeit nach späten Entscheidungen bleiben, und blockierte Teamkapazität kostet zusätzlich.
 
-Für das Management heißt das: Die Einsparung beim Partner ist nur ein Teil der Rechnung. Der andere Teil ist interne Zeit, die bisher in keinem Budget stand, weil sie sich über den langen Projektverlauf verteilt hat. Mit Coding-Agenten konzentriert sie sich auf wenige Wochen und wird sichtbar. Wer sie nicht einplant, erhält ein Projekt, das auf dem Papier billiger ist und im Kalender länger dauert. Wie Sie messen, ob ein Programm mit KI schneller wird, beschreibe ich in [KI-Nutzen im Salesforce-Projekt messen](../ki-nutzen-salesforce-projekt-messen/).
+Für das Management heißt das: Die Einsparung beim Partner ist nur ein Teil der Rechnung. Der andere Teil ist interne Zeit, die bisher in keinem Budget stand, weil sie sich über den langen Projektverlauf verteilt hat. Mit Coding-Agenten konzentriert sie sich auf wenige Wochen und wird sichtbar. Wer sie nicht einplant, erhält ein Projekt, das auf dem Papier billiger ist und im Kalender länger dauert. Wie Sie messen, ob ein Programm mit KI schneller wird, beschreibe ich in [KI-Nutzen im Salesforce-Projekt messen](/blog/ki-nutzen-salesforce-projekt-messen/).
 
 ## Was hilft gegen den Engpass beim Kunden?
 
@@ -79,7 +79,7 @@ Prozesse vor der Umsetzung klären | Weniger Änderungen nach der Umsetzung
   Offene Prozessfragen werden zu eigenen Aufgaben mit Verantwortlichem und Termin; ein ungeklärter Prozess wird in einem zeitlich begrenzten Prototyp geklärt und nicht als vermeintlich fertige Story für den Produktivbetrieb umgesetzt.
 ```
 
-Dazu kommt eine Regel für Rückfragen: Jede Frage hat einen dokumentierten Vorschlag des Teams und eine Frist nach Art der Entscheidung, zum Beispiel bis zum nächsten Arbeitstag für reversible operative Fragen und zwei Arbeitstage für Fragen, die einen Stream betreffen. Bei risikoarmen, reversiblen Entscheidungen innerhalb vereinbarter Leitplanken gilt der Vorschlag ohne Antwort und wird im [Entscheidungslog](../salesforce-architektur-entscheidungslog/) festgehalten; wer später widerspricht, löst einen Change Request aus und keinen stillen Umbau. Für Datenschutz, Preise, Garantieregeln, Berechtigungen und irreversible Migrationen braucht es eine ausdrückliche Freigabe oder Eskalation; Schweigen reicht nicht. Damit liegt die Verzögerung nicht mehr unsichtbar beim Team.
+Dazu kommt eine Regel für Rückfragen: Jede Frage hat einen dokumentierten Vorschlag des Teams und eine Frist nach Art der Entscheidung, zum Beispiel bis zum nächsten Arbeitstag für reversible operative Fragen und zwei Arbeitstage für Fragen, die einen Stream betreffen. Bei risikoarmen, reversiblen Entscheidungen innerhalb vereinbarter Leitplanken gilt der Vorschlag ohne Antwort und wird im [Entscheidungslog](/blog/salesforce-architektur-entscheidungslog/) festgehalten; wer später widerspricht, löst einen Change Request aus und keinen stillen Umbau. Für Datenschutz, Preise, Garantieregeln, Berechtigungen und irreversible Migrationen braucht es eine ausdrückliche Freigabe oder Eskalation; Schweigen reicht nicht. Damit liegt die Verzögerung nicht mehr unsichtbar beim Team.
 
 Die Rollen lassen sich so aufteilen:
 
@@ -93,7 +93,7 @@ Lenkungsausschuss | Konflikte zwischen Bereichen, Freistellung von Personen * | 
 fazit: Das Netzwerk aus Key Usern entlastet den Product Owner nur, wenn es eigene Entscheidungsbefugnisse hat.
 ```
 
-Wie ein solches Netzwerk aufgebaut wird, steht in [Key-User-Netzwerk für Salesforce](../salesforce-key-user-netzwerk/). Dass sich die Rolle der Entscheider ändert, ist eine Veränderung wie jede andere im Projekt. Sie braucht Kommunikation und Rückhalt von oben. Deshalb gehört sie in das [Change Management meiner Salesforce-Programme](../../leistungen/change-management/), das ich gemeinsam mit Juliane Winterscheid begleite.
+Wie ein solches Netzwerk aufgebaut wird, steht in [Key-User-Netzwerk für Salesforce](/blog/salesforce-key-user-netzwerk/). Dass sich die Rolle der Entscheider ändert, ist eine Veränderung wie jede andere im Projekt. Sie braucht Kommunikation und Rückhalt von oben. Deshalb gehört sie in das [Change Management meiner Salesforce-Programme](/leistungen/change-management/), das ich gemeinsam mit Juliane Winterscheid begleite.
 
 ## Erster Schritt: zwei Wochen lang die Wartezeit auf Entscheidungen messen
 
@@ -108,4 +108,4 @@ Im Lenkungsausschuss zeigen | nächster Termin
   Umsetzungszeit und Wartezeit nebeneinander, verbunden mit der Forderung nach verbindlich freigestellter Zeit und klaren Fristen.
 ```
 
-Die Auswertung zeigt meist auch, welche Prozesse intern ungeklärt sind: Dort häufen sich die Rückfragen. Diese Prozesse sind die ersten Kandidaten für eine Klärung vor dem nächsten Sprint, und die Messung ist Teil meiner [Programmsteuerung für Salesforce-Programme](../../leistungen/projektsteuerung-nearshore/).
+Die Auswertung zeigt meist auch, welche Prozesse intern ungeklärt sind: Dort häufen sich die Rückfragen. Diese Prozesse sind die ersten Kandidaten für eine Klärung vor dem nächsten Sprint, und die Messung ist Teil meiner [Programmsteuerung für Salesforce-Programme](/leistungen/projektsteuerung-nearshore/).

@@ -71,7 +71,7 @@ Aus meiner Sicht passt Video für Maschinenbauer in vier Situationen:
 
 Das Video kann einen Einsatz nicht ersetzen, wenn die Arbeit Werkzeug, eine Elektrofachkraft oder eine unterschriebene Abnahme vor Ort erfordert oder wenn der Kunde in der Produktion keine Kameras erlaubt. In diesen Fällen verkürzt es den Einsatz. Dort liegt oft der größere Nutzen, denn ein zweiter Einsatz wegen eines fehlenden Teils kostet etwa so viel wie der erste.
 
-Visual Remote Assistant passt zur Triage, die ich für die [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/) beschreibe: Erst klären, ob die Maschine steht und was der Vertrag abdeckt, dann entscheiden, ob Video, ein Teileversand oder ein Techniker das Problem löst. Dem Experten, der die Videositzung führt, hilft der [Agent zur Fehlersuche](../ki-fehlersuche-handbuecher-aussendienst/) nur, wenn die Handbücher denselben Produktschlüssel haben wie das Asset.
+Visual Remote Assistant passt zur Triage, die ich für die [Störungshotline mit Agentforce Voice](/blog/stoerungshotline-agentforce-voice-deutsch/) beschreibe: Erst klären, ob die Maschine steht und was der Vertrag abdeckt, dann entscheiden, ob Video, ein Teileversand oder ein Techniker das Problem löst. Dem Experten, der die Videositzung führt, hilft der [Agent zur Fehlersuche](/blog/ki-fehlersuche-handbuecher-aussendienst/) nur, wenn die Handbücher denselben Produktschlüssel haben wie das Asset.
 
 ## Rechenbeispiel: 20 Prozent per Video gelöst
 
@@ -96,7 +96,7 @@ Meine Faustregel: Beginnen Sie mit dem Werkzeug, das die Sitzung dort ablegt, wo
 
 **Aufzeichnung und Datenschutz.** Die Aufzeichnung wird in der VRA-Konfiguration eingeschaltet, entweder für ganze Sitzungen oder seit Winter '27 auf Abruf. Im Bild sind die Mitarbeitenden des Kunden und seine Produktionshalle. Eine Vereinbarung mit dem Kundenunternehmen ersetzt nicht die Rechtsgrundlage und die Information der Personen vor der Kamera; klären Sie mit Ihrem Datenschutzbeauftragten die Rechtsgrundlage für das Livevideo und getrennt davon für die Aufzeichnung, außerdem die Aufbewahrung und wer die Aufzeichnungen sehen darf. Manche Kunden werden Aufzeichnungen ablehnen, der Prozess muss also auch ohne Aufzeichnung funktionieren.
 
-**Betriebsrat für eigene Mitarbeitende.** Auch ohne Aufzeichnung machen Sitzungszeiten, Dauer, Notizen und VRA-Berichte pro Nutzer das System zu einer technischen Einrichtung, mit der sich die Leistung überwachen lässt. Hier redet der Betriebsrat von Anfang an mit, auch bei Zugriffen, Berichten und Aufbewahrung. Ich würde das Thema zusammen mit Zeiterfassung und Standortdaten im Rahmen der [Field-Service-Einführung](../salesforce-field-service-einfuehrung/) einbringen.
+**Betriebsrat für eigene Mitarbeitende.** Auch ohne Aufzeichnung machen Sitzungszeiten, Dauer, Notizen und VRA-Berichte pro Nutzer das System zu einer technischen Einrichtung, mit der sich die Leistung überwachen lässt. Hier redet der Betriebsrat von Anfang an mit, auch bei Zugriffen, Berichten und Aufbewahrung. Ich würde das Thema zusammen mit Zeiterfassung und Standortdaten im Rahmen der [Field-Service-Einführung](/blog/salesforce-field-service-einfuehrung/) einbringen.
 
 **Region für das Hosting.** Das Installationshandbuch nennt AWS Nordamerika als Standard und AWS Europa als Option. Die Sitzungsdomains verwenden techsee.me, SMS-Einladungen werden über Gateway-Anbieter versendet. Ihr Datenschutzbeauftragter sollte darüber vor dem ersten Kundengespräch informiert sein, und Ihre IT prüft Firewall-Regeln, Browser und die Kamerafreigabe auf Kundengeräten.
 
@@ -113,4 +113,4 @@ Messen und entscheiden
   Lösungsquote und erneute Anrufe auswerten, dann über den Rollout entscheiden.
 ```
 
-Wie das zur mobilen App und zu Servicedokumenten passt, steht im [Masterclass-Kapitel zur mobilen App](../../masterclass/field-service/field-service-mobile-app-dokumente/). Ob sich Field Service überhaupt rechnet, beschreibe ich in [Salesforce Field Service: Wann lohnt es sich?](../salesforce-field-service-lohnt-sich/), und die Lizenzfrage als Ganzes unter [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).
+Wie das zur mobilen App und zu Servicedokumenten passt, steht im [Masterclass-Kapitel zur mobilen App](/masterclass/field-service/field-service-mobile-app-dokumente/). Ob sich Field Service überhaupt rechnet, beschreibe ich in [Salesforce Field Service: Wann lohnt es sich?](/blog/salesforce-field-service-lohnt-sich/), und die Lizenzfrage als Ganzes unter [Make-or-Buy und Lizenzen](/leistungen/make-or-buy-lizenzen/).

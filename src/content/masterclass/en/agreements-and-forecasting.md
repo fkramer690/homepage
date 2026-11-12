@@ -46,15 +46,15 @@ The [considerations in Salesforce Help](https://help.salesforce.com/s/articleVie
 source: Salesforce Help, considerations for sales agreements
 ```
 
-Why I consider the sales agreement the main reason to look at Manufacturing Cloud at all is in [chapter 1](../scope-and-business-case/). How it works day to day is described in [sales agreements: spotting volume shortfalls](../../../blog/sales-agreements-volume-shortfall-erp/).
+Why I consider the sales agreement the main reason to look at Manufacturing Cloud at all is in [chapter 1](/en/masterclass/manufacturing-cloud/scope-and-business-case/). How it works day to day is described in [sales agreements: spotting volume shortfalls](/en/blog/sales-agreements-volume-shortfall-erp/).
 
 ## From quote to sales agreement
 
 A sales agreement plans quantities per product. That sets a requirement for everything before it: every variant that is planned and measured needs its own product identity, which the ERP also knows as a material number. With configurable products, the configurator therefore decides when a configuration becomes a product.
 
-There is a standard route for the handover. The [Manufacturing Cloud Connect API](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/connect_resources_sales_agreement.htm) creates a sales agreement from a quote, an opportunity or a custom object, controlled by a mapping of type ConvertToSalesAgreement. The mapping has to settle account level, product, price and term cleanly. I approve the price once, on the quote, and not a second time on the agreement. The details are in [from quote to sales agreement](../../../blog/quote-to-sales-agreement-product-configurator/).
+There is a standard route for the handover. The [Manufacturing Cloud Connect API](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/connect_resources_sales_agreement.htm) creates a sales agreement from a quote, an opportunity or a custom object, controlled by a mapping of type ConvertToSalesAgreement. The mapping has to settle account level, product, price and term cleanly. I approve the price once, on the quote, and not a second time on the agreement. The details are in [from quote to sales agreement](/en/blog/quote-to-sales-agreement-product-configurator/).
 
-The quote itself is outside Manufacturing Cloud. [Salesforce CPQ](https://www.salesforce.com/sales/cpq/end-of-life/) is no longer sold to new customers, and new features are built in Revenue Cloud. Catalog, configurator and pricing are covered in the Revenue Cloud masterclass chapter [product catalog, configurator and pricing](../../revenue-cloud/product-catalog-configurator-pricing/).
+The quote itself is outside Manufacturing Cloud. [Salesforce CPQ](https://www.salesforce.com/sales/cpq/end-of-life/) is no longer sold to new customers, and new features are built in Revenue Cloud. Catalog, configurator and pricing are covered in the Revenue Cloud masterclass chapter [product catalog, configurator and pricing](/en/masterclass/revenue-cloud/product-catalog-configurator-pricing/).
 
 ## Actuals: why the ERP interface decides everything
 
@@ -79,7 +79,7 @@ Three decisions determine whether the numbers are right:
 - **Totals or orders.** Totals per customer, product and period are enough for plan versus actuals. Full orders pay off when sales or service should see them in Salesforce anyway.
 - **Stock next to the gap.** According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better), custom metrics such as stock can be carried in the agreement. Only then does sales see whether an open quantity can be delivered.
 
-Which system leads for which data is part of my work on [Salesforce integration](../../../services/salesforce-integration/).
+Which system leads for which data is part of my work on [Salesforce integration](/en/services/salesforce-integration/).
 
 ```praxis
 I have introduced sales agreements with actuals from the ERP in Manufacturing Cloud, and the ERP interface was one of the stumbling blocks. Settle early which orders and deliveries count as actuals and who owns the data.
@@ -98,9 +98,9 @@ Account forecasting is the sales volume forecast of Manufacturing Cloud: quantit
 
 That is how the [Trailhead module on advanced account forecasting](https://trailhead.salesforce.com/content/learn/modules/advanced-account-forecasting-with-manufacturing-cloud/explore-advanced-account-forecasting) describes it. The predefined templates are Generate, Regenerate, Rollover and Recalculate Account Forecast. In the [unit on forecasting strategy](https://trailhead.salesforce.com/content/learn/modules/advanced-account-forecasting-with-manufacturing-cloud/decide-your-forecasting-strategies), Salesforce recommends the advanced version and names a second option: running both side by side for separate business units. For a new implementation I see no reason to start with the simple version.
 
-Two consequences for the architecture. First, account forecasting is an integration project before anything else, because the order history lives in the ERP. Second, Salesforce counts forecast records against a limit; 2,000 customers, 500 products and 24 months add up to 24 million possible combinations. How to cut customers, products and periods is in [account forecasting for sales volume planning](../../../blog/account-forecasting-sales-volume-planning/).
+Two consequences for the architecture. First, account forecasting is an integration project before anything else, because the order history lives in the ERP. Second, Salesforce counts forecast records against a limit; 2,000 customers, 500 products and 24 months add up to 24 million possible combinations. How to cut customers, products and periods is in [account forecasting for sales volume planning](/en/blog/account-forecasting-sales-volume-planning/).
 
-Forecast sets, dimensions and cloned DPE definitions are configuration. They belong in the release process like any other change, as described in the DevOps chapter [data and configuration](../../devops-release-management/data-and-configuration/).
+Forecast sets, dimensions and cloned DPE definitions are configuration. They belong in the release process like any other change, as described in the DevOps chapter [data and configuration](/en/masterclass/devops-release-management/data-and-configuration/).
 
 ## Program-based business for suppliers to OEM programs
 
@@ -108,13 +108,13 @@ Program-based business is meant for suppliers whose parts go into series product
 
 According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business), program and variant forecasts arrive as CSV files, often from external market data. Data Processing Engine templates calculate component forecasts from them, based on quantity per unit, minimum quantity and lead time of each component. An approved forecast becomes an opportunity through the Transformation API and, once won, a sales agreement through the Sales Agreement Connect API. Prerequisites are advanced account forecasting, Data Pipelines and the feature itself.
 
-With a handful of programs, or when a planning system already derives component demand, you get a second forecast instead of a better one. When it pays off is in [program-based business: forecasts for suppliers](../../../blog/program-based-business-supplier-forecasts/).
+With a handful of programs, or when a planning system already derives component demand, you get a second forecast instead of a better one. When it pays off is in [program-based business: forecasts for suppliers](/en/blog/program-based-business-supplier-forecasts/).
 
 ## Account manager targets: targets from the top down
 
 Account manager targets replace the distribution part of the target spreadsheet. According to the [object reference](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target.htm), sales leadership creates an annual target on revenue, quantity or a custom measure and distributes it through the manager or forecast hierarchy. Each level distributes further to customers, products and months; Salesforce converts a revenue target per product into units using the list price from the default price book chosen in setup.
 
-Changes do not flow down on their own. A manager propagates them, or a flow calls the [Update Account Manager Target Values](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_account_manager_target.htm) action. After a reorganization, assignments become invalid and have to be redistributed. The feature calculates no commission. The details, including the record limit, are in [account manager targets: sales targets per customer](../../../blog/account-manager-targets-sales-targets/).
+Changes do not flow down on their own. A manager propagates them, or a flow calls the [Update Account Manager Target Values](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_account_manager_target.htm) action. After a reorganization, assignments become invalid and have to be redistributed. The feature calculates no commission. The details, including the record limit, are in [account manager targets: sales targets per customer](/en/blog/account-manager-targets-sales-targets/).
 
 ## Which data does sales volume planning in Salesforce need?
 
@@ -139,7 +139,7 @@ Two decisions follow. There is one leading sales volume figure and a date on whi
 
 The Agentforce for Sales Planning agent template sits on top of sales agreements. [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.mfg_gen_ai_agentforce_sales_planning_agent.htm&language=en_US&type=5) names three subagents: Sales Agreement Management, Sales Agreement Bulk Update and Program Forecasts to Opportunities. The agent answers questions about agreements, writes summaries, helps with visits and emails and updates agreements in bulk. According to the description, none of the three works with account forecasts or targets.
 
-Every answer about a customer's shortfall rests on actuals from the ERP. If a subsidiary is missing from the data flow, the agent reports a shortfall that does not exist. What the template does and which license it needs is in [Agentforce sales planning: what the agent really does](../../../blog/agentforce-sales-planning-agreements-forecasts/); the overview of agents in manufacturing is in [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/).
+Every answer about a customer's shortfall rests on actuals from the ERP. If a subsidiary is missing from the data flow, the agent reports a shortfall that does not exist. What the template does and which license it needs is in [Agentforce sales planning: what the agent really does](/en/blog/agentforce-sales-planning-agreements-forecasts/); the overview of agents in manufacturing is in [AI agents in manufacturing](/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
 ## Worked example: 200 framework contracts for industrial valves
 
@@ -164,4 +164,4 @@ This manufacturer does not need program-based business, because it does not supp
 
 ## Clarify the actuals feed from the ERP before the first sales agreement
 
-Before the first sales agreement, clarify how actuals come from the ERP and on which customer, product and period level target, forecast and actuals fit together. Framework contracts and forecasts concern direct sales to large customers. If you sell through dealers, you also need rebates, portals and dealer visits; that is [chapter 3: dealer and partner channel](../dealer-and-partner-channel/). All chapters are on the [overview page](../).
+Before the first sales agreement, clarify how actuals come from the ERP and on which customer, product and period level target, forecast and actuals fit together. Framework contracts and forecasts concern direct sales to large customers. If you sell through dealers, you also need rebates, portals and dealer visits; that is [chapter 3: dealer and partner channel](/en/masterclass/manufacturing-cloud/dealer-and-partner-channel/). All chapters are on the [overview page](/en/masterclass/manufacturing-cloud/).

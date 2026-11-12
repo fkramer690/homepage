@@ -34,7 +34,7 @@ The Merchandising Agent in Salesforce B2B Commerce handles back-office work thro
 
 ## What is the Merchandising Agent?
 
-For running a store in Salesforce B2B Commerce, two agents matter. The Buyer Agent talks to dealers, which I cover in [B2B Buyer Agent: ordering through WhatsApp and SMS](../b2b-buyer-agent-whatsapp-ordering/). The Merchandising Agent works for the team that runs the store.
+For running a store in Salesforce B2B Commerce, two agents matter. The Buyer Agent talks to dealers, which I cover in [B2B Buyer Agent: ordering through WhatsApp and SMS](/en/blog/b2b-buyer-agent-whatsapp-ordering/). The Merchandising Agent works for the team that runs the store.
 
 Salesforce uses three names here, on different pages, and does not describe exactly the same scope on each page:
 
@@ -56,7 +56,7 @@ A parts catalog is a store where search decides almost everything. Dealers type 
 
 **New products.** The agent can create products. That suits items that exist only in the store, such as a bundle of wear parts for a service interval. Parts from the ERP should continue to be supplied through the interface.
 
-**Buyer accounts.** The agent can manage buyer accounts. For a manufacturer that means requests like "add the new branch of dealer X as a buyer account". The buyer group the account is assigned to decides what it sees and what it pays, so I would treat this skill with the most care. How buyer groups and entitlements are structured is the topic of the chapter [Catalog, search, entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/).
+**Buyer accounts.** The agent can manage buyer accounts. For a manufacturer that means requests like "add the new branch of dealer X as a buyer account". The buyer group the account is assigned to decides what it sees and what it pays, so I would treat this skill with the most care. How buyer groups and entitlements are structured is the topic of the chapter [Catalog, search, entitlements](/en/masterclass/b2b-commerce/catalog-search-entitlements/).
 
 ## Summarise KPIs, draft promotions
 
@@ -70,7 +70,7 @@ Two KPIs matter more in parts stores than AOV: zero-result searches and the shar
 
 Trailhead lists the prerequisites: Salesforce generative AI, Agentforce, bots and Data 360, all activated for the store. The current setup help no longer lists bots as a separate step; the help for your release is authoritative. Setup is guided in the Commerce app, and the topics and actions are preconfigured for Commerce. For licensing, Trailhead points to the Salesforce Help article on enabling Agentforce Skills for Merchandising.
 
-The editions include Data Cloud credits: 250K in Growth and 500K in Advanced, according to the pricing page. For Agentforce Merchandising, however, Salesforce names Einstein Requests as the usage metric, possibly plus Data 360 credits, for both production and sandboxes. What a single request consumes is not published. I would therefore measure consumption in a sandbox with real requests before go-live; how such an estimate works is shown in [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/).
+The editions include Data Cloud credits: 250K in Growth and 500K in Advanced, according to the pricing page. For Agentforce Merchandising, however, Salesforce names Einstein Requests as the usage metric, possibly plus Data 360 credits, for both production and sandboxes. What a single request consumes is not published. I would therefore measure consumption in a sandbox with real requests before go-live; how such an estimate works is shown in [Agentforce costs for manufacturers](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 The store's limits also apply to the agent. The developer guide lists these values:
 
@@ -85,7 +85,7 @@ The help and release pages also split the limits by store-wide, category and key
 
 ## What should the agent not do?
 
-Product master data belongs in the ERP or PIM. Material number, unit, sales status and successor part are maintained there, and the store receives a copy. If the agent changes a product in Salesforce, the next nightly load overwrites it, or worse, the store and the ERP diverge. I explain where which product data belongs in [B2B Commerce product data: PIM, ERP or Salesforce?](../b2b-commerce-product-data-pim-erp/).
+Product master data belongs in the ERP or PIM. Material number, unit, sales status and successor part are maintained there, and the store receives a copy. If the agent changes a product in Salesforce, the next nightly load overwrites it, or worse, the store and the ERP diverge. I explain where which product data belongs in [B2B Commerce product data: PIM, ERP or Salesforce?](/en/blog/b2b-commerce-product-data-pim-erp/).
 
 My rule for a parts store:
 
@@ -97,13 +97,13 @@ My rule for a parts store:
 | Part from the ERP material master | No | ERP or PIM is master |
 | New buyer account | Only with a named approver | Decides visibility and prices |
 
-Every agent change should be traceable: who requested it, what changed and who approved it. The Salesforce logs available for this are covered in [Audit trail for AI agents in Salesforce: which logs?](../audit-trail-ai-agents-salesforce/).
+Every agent change should be traceable: who requested it, what changed and who approved it. The Salesforce logs available for this are covered in [Audit trail for AI agents in Salesforce: which logs?](/en/blog/audit-trail-ai-agents-salesforce/).
 
 ## Example: 60,000 spare parts for 300 dealers
 
 Assume a manufacturer of compressors runs a B2B store with 60,000 spare parts for 300 dealers. Every quarter, engineering supersedes a few hundred part numbers. Today one merchandiser maintains search rules by hand and is two months behind.
 
-With the agent, after each ERP update the merchandiser asks: "bury every part whose sales status is superseded and boost its successor". The agent proposes the rules, the merchandiser checks a sample and releases them. Once a month, the merchandiser asks for the previous month's zero-result searches and passes missing old numbers to the PIM team as synonyms or attributes. The search side of this is covered in [B2B Commerce search: finding parts by part number](../b2b-commerce-search-part-numbers/).
+With the agent, after each ERP update the merchandiser asks: "bury every part whose sales status is superseded and boost its successor". The agent proposes the rules, the merchandiser checks a sample and releases them. Once a month, the merchandiser asks for the previous month's zero-result searches and passes missing old numbers to the PIM team as synonyms or attributes. The search side of this is covered in [B2B Commerce search: finding parts by part number](/en/blog/b2b-commerce-search-part-numbers/).
 
 ## Clarify the license and included skills
 
@@ -114,4 +114,4 @@ With the agent, after each ERP update the merchandiser asks: "bury every part wh
 5. **Watch the limits.** Know the rule limits of your release and clean up monthly.
 6. **Test the language.** Check non-English prompts and part numbers in the pilot as long as Salesforce documents English only.
 
-The chapter [Agents, migration, rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) discusses the Merchandising Agent alongside the Buyer Agent and the rollout. For the question of who owns which data between ERP, PIM and Salesforce, see [Salesforce architecture](../../services/salesforce-architecture/).
+The chapter [Agents, migration, rollout](/en/masterclass/b2b-commerce/agentforce-migration-rollout/) of the [B2B Commerce masterclass](/en/masterclass/b2b-commerce/) discusses the Merchandising Agent alongside the Buyer Agent and the rollout. For the question of who owns which data between ERP, PIM and Salesforce, see [Salesforce architecture](/en/services/salesforce-architecture/).

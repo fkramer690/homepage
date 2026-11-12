@@ -91,7 +91,7 @@ Read both figures as planning guidance, not as rules. Salesforce itself calls th
 
 The second big change is the Agentic Enterprise lens. It is not a sixth pillar. Each of the five pillars gets a variant that describes what also applies when AI agents decide and act on their own: permissions and audit trails for agents, handling failures when several agents are orchestrated, the Agent Development Lifecycle, token consumption and explainable decisions.
 
-The key sentence is in the announcement blog: "Agents don't get their own rulebook." An agent has to meet the same requirements for security, stability and cost as any other solution in your org. That matches my stance from Agentforce projects: business value and data quality come before the agent. I cover this in more detail in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
+The key sentence is in the announcement blog: "Agents don't get their own rulebook." An agent has to meet the same requirements for security, stability and cost as any other solution in your org. That matches my stance from Agentforce projects: business value and data quality come before the agent. I cover this in more detail in [Agentforce: business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/).
 
 ## For CIOs, cost, operations and named trade-offs matter
 
@@ -99,7 +99,7 @@ From the point of view of a client-side architect, three changes matter.
 
 **Cost is part of a pillar.** In the old framework cost was only covered at the margins. Now licenses, sandboxes and build versus buy are part of Resource and Cost Optimization, next to performance and maintainability. That was overdue. In my pre-sales work with Salesforce, proposals usually started with full licenses for everyone, even though many users did not need them. In a larger organization that easily adds up to six figures a year. An architecture review that ignores this is incomplete.
 
-**Operations sit next to design as equals.** Operational Excellence bundles DevOps, monitoring and incident management. That puts operations into every architecture review instead of leaving them until after go-live. Having DORA metrics in the official framework gives clients an argument to use with partners who still deploy by hand. I explain why I insist on this in [Why DevOps matters in Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
+**Operations sit next to design as equals.** Operational Excellence bundles DevOps, monitoring and incident management. That puts operations into every architecture review instead of leaving them until after go-live. Having DORA metrics in the official framework gives clients an argument to use with partners who still deploy by hand. I explain why I insist on this in [Why DevOps matters in Salesforce enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/).
 
 **The framework names trade-offs.** More encryption and audit logging cost money. Higher availability costs money. More autonomy for agents raises the risk of unfair decisions. Salesforce writes: "The goal is not to maximize every pillar simultaneously." These trade-offs belong in a decision log, together with the decision maker's name.
 
@@ -129,7 +129,7 @@ In practice, that means:
 3. **Do not treat agents separately.** Agentforce work goes through the same review, extended by the agent variant of each pillar.
 4. **Take the cost pillar seriously.** Salesforce suggests a monthly review of spending anomalies, a quarterly audit of license assignments and capacity, and a full cost review once a year.
 
-How I set up standards and reviews in such programs is part of my [work on partner governance and architecture](../../services/partner-governance/).
+How I set up standards and reviews in such programs is part of my [work on partner governance and architecture](/en/services/partner-governance/).
 
 How the framework helps you govern several implementation partners on one org is the subject of an article on LinkedIn: [Salesforce Well-Architected Framework: how to govern multiple implementation partners](https://www.linkedin.com/pulse/salesforce-well-architected-framework-how-govern-multiple-kramer-q58ge/).
 
