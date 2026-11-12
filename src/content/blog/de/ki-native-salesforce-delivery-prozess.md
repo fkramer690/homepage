@@ -2,7 +2,7 @@
 title: "KI-nativer Delivery-Prozess für Salesforce in 14 Schritten"
 description: "KI-nativer Delivery-Prozess für Salesforce vom Workshop bis zur Produktion: was der Agent macht, wo Personen an fünf Toren entscheiden, was die Pipeline prüft."
 pubDate: 2026-10-30
-updatedDate: 2026-11-09
+updatedDate: 2026-11-12
 lang: de
 slug: ki-native-salesforce-delivery-prozess
 translationKey: ai-native-delivery-process
@@ -31,7 +31,7 @@ Ein KI-nativer Delivery-Prozess für Salesforce macht das Jira-Ticket zur ausfü
 
 ## Was heißt KI-nativ in einem Salesforce-Projekt?
 
-KI-native Delivery bedeutet, den Lieferprozess um den Agenten herum zu bauen, statt dem alten Prozess einen Coding-Assistenten hinzuzufügen. Wie sich dadurch die Teamaufstellung ändert, habe ich in [KI-native Delivery: kleinere Salesforce-Teams](../ki-kleinere-salesforce-teams-delivery/) beschrieben. Hier geht es um den Ablauf selbst. Er ist mein Zielbild: Einzelne Schritte nutze ich schon, durchgängig vom Workshop bis zur Produktion setze ich ihn im nächsten Projekt auf, und ein paar Lücken sind noch zu schließen. Er beruht auf vier Ideen:
+KI-native Delivery bedeutet, den Lieferprozess um den Agenten herum zu bauen, statt dem alten Prozess einen Coding-Assistenten hinzuzufügen. Wie sich dadurch die Teamaufstellung ändert, habe ich in [KI-native Delivery: kleinere Salesforce-Teams](../ki-kleinere-salesforce-teams-delivery/) beschrieben. Hier geht es um den Ablauf selbst. Ich habe ihn vom Workshop bis zur Produktion durchgängig umgesetzt. Ein paar Lücken sind noch zu schließen. Er beruht auf vier Ideen:
 
 ```saeulen
 dach: KI-native Delivery

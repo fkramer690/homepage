@@ -2,7 +2,7 @@
 title: "AI-native Salesforce delivery process in 14 steps"
 description: "An AI-native delivery process for Salesforce from workshop to deployment: what the agent does, where people decide at five gates and what the pipeline checks."
 pubDate: 2026-10-30
-updatedDate: 2026-11-09
+updatedDate: 2026-11-12
 lang: en
 slug: ai-native-salesforce-delivery-process
 translationKey: ai-native-delivery-process
@@ -31,7 +31,7 @@ An AI-native delivery process for Salesforce turns the Jira ticket into an execu
 
 ## What does AI-native mean in a Salesforce project?
 
-AI-native delivery means building the delivery process around the agent instead of adding a coding assistant to the old process. I described how this changes the team set-up in [AI-native delivery: smaller Salesforce teams](../ai-native-delivery-smaller-salesforce-teams/). This article is about the flow itself. It is my target process: I already use parts of it, I will run it end to end in my next project, and a few gaps remain. It is built on four ideas:
+AI-native delivery means building the delivery process around the agent instead of adding a coding assistant to the old process. I described how this changes the team set-up in [AI-native delivery: smaller Salesforce teams](../ai-native-delivery-smaller-salesforce-teams/). This article is about the flow itself. I have implemented it end to end, from the workshop to production. A few gaps remain. It is built on four ideas:
 
 ```saeulen
 roof: AI-native delivery
