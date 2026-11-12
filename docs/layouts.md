@@ -284,6 +284,16 @@ a second filter by author next to the topic). Built in `src/components/BlogIndex
   first new card). Filter and search always
   look through all articles and start again at 24. Without JavaScript every
   article stays visible. The intro above is one sentence.
+- Only the first 25 cards carry their drawing in the HTML. The drawings of all
+  later cards come from one file per language (`/blog/zeichnungen.json`,
+  `/en/blog/drawings.json`, built from `src/lib/card-svg.ts`), fetched once when a
+  later card is first shown. Title, description and link of every card stay in the
+  HTML for crawlers. This took the overview from 1,081 KB to 577 KB (backlog UE5,
+  2026-11-12).
+- Phones (640px and below): cards without drawing (date, topic, title,
+  description, author), because the drawing labels would be 7 to 9px there;
+  no text on the overview is smaller than 12px. Chosen by Fabian 2026-11-12
+  (variant A of two; B kept the drawing without labels).
 - The filters combine; each list counts within the other one's choice and greys
   out empty entries. An article counts for its author and its `coAuthor`. The
   choice sits in the hash (`#juliane+change-management`), old topic links
