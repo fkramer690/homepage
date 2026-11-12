@@ -256,6 +256,10 @@ export const en = {
         head: 'Why independent',
         text: 'I’m not tied to a vendor or an implementation partner. That’s why I regularly ask whether something should be built in Salesforce at all. When others ask that, it is often because they don’t know what the platform can do. I ask it because I know where its limits are and where it is the right tool. Make-or-buy evaluations, license forecasts and best-of-breed alternatives are part of the job, not an afterthought.',
       },
+      {
+        head: 'Why the client side',
+        text: 'With Blue Apes, I co-founded a Salesforce implementation partner myself and later sold it. So I know how a partner prices a proposal, staffs a team and delivers under deadline pressure. Today I work only for the manufacturer and check whether every delivery fits the overall architecture.',
+      },
     ],
     facts: [
       { label: 'Since 2020', text: 'Founder of FK Solution Design GmbH, Cologne' },
