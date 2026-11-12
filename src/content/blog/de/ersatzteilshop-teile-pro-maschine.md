@@ -110,4 +110,4 @@ Mit der Maschinenseite starten
   Das Filtern der Suche gehen Sie erst an, wenn Händler danach fragen.
 ```
 
-Das Kapitel [Katalog, Suche, Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) ordnet diesen Ansatz in das Store-Design ein. Welches System welche Daten führt, ist Thema von [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Das Kapitel [Katalog, Suche, Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) ordnet diesen Ansatz in das Store-Design ein. Welches System welche Daten führt, ist Thema von [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/). Welche Salesforce-Themen bei Maschinenbauern außer dem Ersatzteilshop anstehen, steht unter [Salesforce-Beratung für Maschinenbauer](../../salesforce-maschinenbau/).

@@ -97,5 +97,5 @@ Prüfen Sie, wie genau der Fahrzeugbestand im ERP heute ist.
 Ein einfacher Test: Lassen Sie drei Techniker den Bestand in ihrem Fahrzeug zählen und vergleichen Sie das Ergebnis mit dem ERP. Weicht es stark ab, hat dieses Thema Priorität vor jeder Schnittstelle.
 ```
 
-Stimmt der Fahrzeugbestand, starten Sie mit Bestandsdaten, benötigten Teilen und Verbrauch. Wie Wartungsverträge und zugesagte Reaktionszeiten in die Planung einfließen, zeigt der [nächste Teil der Serie](../salesforce-field-service-wartungsvertraege/).
+Stimmt der Fahrzeugbestand, starten Sie mit Bestandsdaten, benötigten Teilen und Verbrauch. Wie Wartungsverträge und zugesagte Reaktionszeiten in die Planung einfließen, zeigt der [nächste Teil der Serie](../salesforce-field-service-wartungsvertraege/). Wie Ersatzteile aus SAP, Installed Base und Servicepartner bei Maschinenbauern zusammenhängen, beschreibt die Seite [Salesforce für Maschinen- und Anlagenbau](../../salesforce-maschinenbau/).
 

@@ -110,4 +110,4 @@ Start with the machine page
   Consider search filtering only when dealers ask for it.
 ```
 
-The chapter [catalog, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) places this topic in the broader store design. Which system is the system of record for which data is the subject of [Salesforce integration](../../services/salesforce-integration/).
+The chapter [catalog, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) places this topic in the broader store design. Which system is the system of record for which data is the subject of [Salesforce integration](../../services/salesforce-integration/). Which other Salesforce topics machine builders face besides the spare parts shop is covered under [Salesforce consulting for machine builders](../../salesforce-for-machinery-manufacturers/).

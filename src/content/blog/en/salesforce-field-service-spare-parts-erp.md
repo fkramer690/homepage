@@ -97,5 +97,5 @@ Check how accurate van stock in the ERP is today.
 A simple test: have three technicians count the stock in their vans and compare the result with the ERP. If the result differs significantly, that is the first thing to fix before building any interface.
 ```
 
-If it matches, start with stock, required parts and consumption in Field Service. How maintenance contracts and committed response times are reflected in scheduling is covered in the [next part of the series](../salesforce-field-service-maintenance-contracts/).
+If it matches, start with stock, required parts and consumption in Field Service. How maintenance contracts and committed response times are reflected in scheduling is covered in the [next part of the series](../salesforce-field-service-maintenance-contracts/). How spare parts from SAP, the installed base and service partners fit together at machine builders is described on the page [Salesforce for machinery manufacturers](../../salesforce-for-machinery-manufacturers/).
 

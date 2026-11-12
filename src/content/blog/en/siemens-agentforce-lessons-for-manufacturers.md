@@ -82,6 +82,8 @@ Assume a machine builder with 1,100 employees, SAP S/4HANA, Sales Cloud and Serv
 
 **Supplier onboarding.** Assume 25 new suppliers a year. An approval process with a checklist probably covers that. Because checks are this rare, I would only build an agent if each onboarding is complex or risky enough to justify the build and test effort. The Siemens release gives no supplier volume, so the "weeks to days" promise says nothing about your case.
 
+Which Salesforce topics such a machine builder should tackle besides Agentforce, from the installed base to the dealer portal, is described on the page [Salesforce consulting for machine builders](../../salesforce-for-machinery-manufacturers/).
+
 ## A smaller company needs its own order of use cases
 
 From the scenario I derive this order:

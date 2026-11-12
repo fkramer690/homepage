@@ -84,7 +84,7 @@ Cases and service history | Cases and service history * | Orders and installed p
 mark: leads
 note: Only the leading system changes the data, the other one reads it or links to it.
 ```
-The details differ in every company, which is why this map is part of the [Salesforce architecture](../salesforce-architecture/) and not a decision left to the individual interface.
+The details differ in every company, which is why this map is part of the [Salesforce architecture](../salesforce-architecture/) and not a decision left to the individual interface. Which data usually stays in SAP at machine builders, from spare part prices to customer orders, is described on the page [Salesforce for machinery manufacturers](../../salesforce-for-machinery-manufacturers/).
 
 ## Do you need a middleware?
 

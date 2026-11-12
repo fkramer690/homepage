@@ -84,7 +84,7 @@ Fälle und Servicehistorie | Fälle und Servicehistorie * | Aufträge und instal
 marke: führt
 fazit: Ändern darf jeweils nur das führende System, das andere liest oder verweist.
 ```
-Die Details unterscheiden sich in jedem Unternehmen. Deshalb gehört diese Landkarte zur [Salesforce-Architektur](../salesforce-architektur/) und wird nicht der einzelnen Schnittstelle überlassen.
+Die Details unterscheiden sich in jedem Unternehmen. Deshalb gehört diese Landkarte zur [Salesforce-Architektur](../salesforce-architektur/) und wird nicht der einzelnen Schnittstelle überlassen. Welche Daten bei Maschinen- und Anlagenbauern meist in SAP bleiben, von Ersatzteilpreisen bis zu Kundenaufträgen, beschreibt die Seite [Salesforce für Maschinen- und Anlagenbau](../../salesforce-maschinenbau/).
 
 ## Braucht es eine Middleware?
 
