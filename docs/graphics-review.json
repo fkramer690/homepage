@@ -223,6 +223,7 @@
     "card:salesforce-release-updates": {"title": "Kartenskizze Salesforce Release Updates testen", "proposal": 2, "rating": null},
     "card:what-is-agentforce": {"title": "Kartenskizze Was ist Agentforce", "proposal": 2, "rating": null},
     "card:meshmesh-salesforce-checklist": {"title": "Kartenskizze MeshMesh vor dem Anschließen", "proposal": 1, "rating": null},
+    "card:salesforce-connect-sap": {"title": "Kartenskizze Salesforce Connect mit SAP", "proposal": 1, "rating": null},
     "card:servicemax-vs-salesforce-field-service": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},
     "card:setup-with-agentforce-admin-changes": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},
     "card:sfdx-hardis-introduction": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},
