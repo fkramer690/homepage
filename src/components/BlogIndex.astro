@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import CardDrawing from './CardDrawing.astro';
 import Icon from './Icon.astro';
 import { getPosts, postHref, readingMinutes, formatDate, blogIndex } from '../lib/blog';
+import { FIRST_PAGE } from '../lib/card-svg';
 import { categories, categoryIds } from '../lib/categories';
 import { authorIds, getAuthor } from '../lib/authors';
 import { homeHref } from '../lib/paths';
@@ -34,13 +35,13 @@ const topicFilters = categoryIds
   .map((id) => ({ id, label: categories[id][lang], icon: categories[id].icon, count: posts.filter((p) => p.data.categories.includes(id)).length }))
   .filter((f) => f.count > 0);
 
-// What the search bar looks through: title, description, tags and topic names.
+// What the search bar looks through: title and description (read from the card by the
+// script), plus tags and topic names from this attribute.
 const searchText = (post: (typeof posts)[number]) =>
-  [post.data.title, post.data.description, ...post.data.tags, ...post.data.categories.map((c) => categories[c][lang])].join(' ').toLowerCase();
+  [...post.data.tags, ...post.data.categories.map((c) => categories[c][lang])].join(' ').toLowerCase();
 
-// Cards on the first page (24 plus the wide first card) get their drawing inline,
-// the rest only when the script shows them; keep in sync with PAGE in the script.
-const FIRST_PAGE = 24;
+// Drawings of the cards after the first page come from this file when they are shown.
+const drawingsHref = `${blogIndex(lang)}${lang === 'de' ? 'zeichnungen' : 'drawings'}.json`;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const root = abs(import.meta.env.BASE_URL);
 const blog = {
@@ -117,7 +118,7 @@ const schema = {
             <p class="blog-search-popular"><span>{t.blog.searchPopular}:</span>{t.blog.searchPopularTerms.map((term) => <button type="button" class="blog-search-chip" data-search-term={term}>{term}</button>)}</p>
             <p class="blog-search-status" aria-live="polite" data-search-status hidden><span><strong data-search-count></strong> {t.blog.searchHits} {lang === 'de' ? '„' : '“'}<span data-search-query></span>{lang === 'de' ? '“' : '”'}</span> <button type="button" class="blog-filter-reset" data-search-clear>× {t.blog.searchClear}</button></p>
           </search>
-        <ul class="post-grid" data-more-text={t.blog.loadMoreCount}>
+        <ul class="post-grid" data-more-text={t.blog.loadMoreCount} data-drawings={drawingsHref}>
           {posts.map((post, i) => (
             <li class:list={['post-tile', { featured: i === 0 }]} data-categories={post.data.categories.join(' ')} data-authors={authorsOf(post).join(' ')} data-search={searchText(post)}>
               <a href={postHref(post)}>
@@ -169,11 +170,26 @@ const schema = {
     const moreCount = more.querySelector<HTMLElement>('[data-more-count]')!;
     const moreText = grid.dataset.moreText ?? '';
     const state = { author: 'all', topic: 'all', q: '', limit: PAGE };
+    // Search text: title and description from the card, tags and topics from data-search.
+    const haystack = new Map(tiles.map((tile) => [tile, `${tile.querySelector('.post-title')?.textContent ?? ''} ${tile.querySelector('.post-desc')?.textContent ?? ''} ${tile.dataset.search ?? ''}`.toLowerCase()]));
+    // The drawings of later cards are fetched once, the first time one of them is shown.
+    let drawings: Promise<Record<string, string>> | undefined;
+    function fillDrawings(shown: HTMLElement[]) {
+      // Phones show cards without drawing (global.css), so nothing is fetched there.
+      if (window.matchMedia('(max-width: 640px)').matches) return;
+      const slots = shown.flatMap((tile) => [...tile.querySelectorAll<HTMLElement>('[data-card-drawing]')]);
+      if (!slots.length) return;
+      drawings ??= fetch(grid!.dataset.drawings!).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+      drawings.then((map) => slots.forEach((slot) => {
+        const svg = map[slot.dataset.cardDrawing!];
+        if (svg && slot.isConnected) slot.outerHTML = svg;
+      }));
+    }
     const has = (tile: HTMLElement, key: 'authors' | 'categories', id: string) =>
       id === 'all' || (tile.dataset[key] ?? '').split(' ').includes(id);
     // Every word must appear (in any order); one-letter words are ignored.
     const words = () => state.q.toLowerCase().split(/\s+/).filter((w) => w.length > 1);
-    const found = (tile: HTMLElement) => words().every((w) => (tile.dataset.search ?? '').includes(w));
+    const found = (tile: HTMLElement) => words().every((w) => haystack.get(tile)!.includes(w));
     const count = (author: string, topic: string) =>
       tiles.filter((tile) => has(tile, 'authors', author) && has(tile, 'categories', topic) && found(tile)).length;
 
@@ -199,9 +215,8 @@ const schema = {
         if (match) matches++;
         tile.hidden = !match || matches > limit;
         tile.classList.remove('featured');
-        // Put the drawing of a card into the page the first time the card is shown.
-        if (!tile.hidden) tile.querySelectorAll<HTMLTemplateElement>('template[data-card-drawing]').forEach((tpl) => tpl.replaceWith(tpl.content));
       });
+      fillDrawings(tiles.filter((tile) => !tile.hidden));
       more.hidden = matches <= limit;
       moreCount.textContent = moreText.replace('{shown}', String(Math.min(matches, limit))).replace('{total}', String(matches));
       highlight();
