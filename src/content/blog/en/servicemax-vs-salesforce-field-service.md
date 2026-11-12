@@ -113,4 +113,4 @@ My rule of thumb: Salesforce Field Service is the default for manufacturers who 
 1. **List your service processes** and mark the ones that involve the depot, returns and entitlement checks.
 2. **Request two quotes**: one from PTC including all Salesforce licenses, and one for Salesforce Field Service including add-ons. The role logic for Salesforce is in [Salesforce Field Service licenses by role](../field-service-licences-by-role/).
 3. **Ask PTC four questions in writing**: data locations, availability, which OpenAI models ServiceMax AI uses and where prompts are processed, and how it works with Salesforce features.
-4. **Have the comparison calculated independently.** I describe how I compare such options under [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
+4. **Have the comparison calculated independently.** I describe how I compare such options under [make-or-buy and license forecasts](../../services/make-or-buy-licences/). How I support machine builders with such decisions is described under [Salesforce consulting for machine builders](../../salesforce-for-machinery-manufacturers/).

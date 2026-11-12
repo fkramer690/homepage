@@ -82,7 +82,7 @@ base: Sales Cloud, Service Cloud | A given in almost every enterprise project
 note: Sales Cloud and Service Cloud are usually set, the real decision is about the add-ons.
 ```
 
-For Field Service, the locations and the duration of the jobs matter as much as the type of work. I wrote about the current mobile features in [Field Service mobile with guided flows and voice](../../blog/salesforce-field-service-mobile-guided-voice/). Experience Cloud saves capacity because customers find answers and submit requests themselves. I calculate the fit of Manufacturing Cloud in the ROI case, which I describe on the [make-or-buy and licenses](../make-or-buy-licences/) page.
+For Field Service, the locations and the duration of the jobs matter as much as the type of work. I wrote about the current mobile features in [Field Service mobile with guided flows and voice](../../blog/salesforce-field-service-mobile-guided-voice/). Experience Cloud saves capacity because customers find answers and submit requests themselves. I calculate the fit of Manufacturing Cloud in the ROI case, which I describe on the [make-or-buy and licenses](../make-or-buy-licences/) page. Which clouds machine builders usually need, from Service Cloud to Field Service, is shown on the page [Salesforce for machine builders](../../salesforce-for-machinery-manufacturers/).
 
 ## The data model carries reports, automation and AI
 

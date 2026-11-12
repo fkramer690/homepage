@@ -82,6 +82,8 @@ Nehmen wir einen Maschinenbauer mit 1.100 Beschäftigten, SAP S/4HANA, Sales Clo
 
 **Lieferanten-Onboarding.** Angenommen, es sind 25 neue Lieferanten im Jahr. Ein Genehmigungsprozess mit Checkliste deckt das wahrscheinlich ab. Bei so seltenen Prüfungen würde ich einen Agenten nur bauen, wenn jedes Onboarding komplex oder riskant genug ist, um den Bau- und Testaufwand zu rechtfertigen. Die Siemens-Meldung nennt kein Lieferantenvolumen, also sagt das Versprechen "from weeks to days" nichts über Ihren Fall.
 
+Welche Salesforce-Themen ein solcher Maschinenbauer neben Agentforce angehen sollte, von der Installed Base bis zum Händlerportal, beschreibt die Seite [Salesforce-Beratung für Maschinenbauer](../../salesforce-maschinenbau/).
+
 ## Für ein kleineres Unternehmen folgt eine eigene Reihenfolge
 
 Aus dem Szenario leite ich diese Reihenfolge ab:

@@ -86,6 +86,8 @@ contra: Gets expensive when
 In one manufacturing project, sales agreements, a core feature of Manufacturing Cloud, were not relevant for the business. A custom solution on the core platform was cheaper and simpler to maintain.
 ```
 
+For machine builders, I have set out [which Salesforce products pay off and when](../../salesforce-for-machinery-manufacturers/): Service Cloud, Field Service, Manufacturing Cloud, Experience Cloud, Revenue Cloud and Agentforce.
+
 The same logic applies beyond Salesforce products. Document generation, e-signatures, telephony and AI use cases all raise the question of whether to buy, build or leave the function in another system. For AI the most important input is the state of the data, as I explain in [Agentforce: business value and data quality first](../../blog/agentforce-business-value-data-quality-first/). Open-source tools can change the math too, for example in DevOps, as described in [why clients should own their DevOps tools](../../blog/why-clients-should-own-their-devops-tools/).
 
 ## An ROI case over several years, with maintenance and follow-up costs

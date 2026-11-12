@@ -92,7 +92,7 @@ Assume a machine builder with SAP, Sales Cloud and Service Cloud, a dealer netwo
 
 **Troubleshooting for special machines.** Assume 40 cases a month, each different, with the relevant knowledge held by four senior technicians. Volume is low, the risk of a wrong answer is high, and there are hardly any written articles to ground the answers in. For now this stays with the technicians.
 
-One of three is ready. In my judgment, that is a normal ratio, and one solid start is better than three parallel pilots.
+One of three is ready. In my judgment, that is a normal ratio, and one solid start is better than three parallel pilots. Where an agent fits at a machine builder next to Field Service, spare parts and the dealer portal is shown on the page [Salesforce in machinery and plant engineering](../../salesforce-for-machinery-manufacturers/).
 
 ## Where Salesforce is not the answer
 

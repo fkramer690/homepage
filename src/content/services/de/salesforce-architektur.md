@@ -82,7 +82,7 @@ basis: Sales Cloud, Service Cloud | In fast jedem Enterprise-Projekt gesetzt
 fazit: Sales Cloud und Service Cloud sind meist gesetzt, entschieden wird bei den Add-ons.
 ```
 
-Bei Field Service zählen neben der Art der Arbeit auch die Standorte und die Dauer der Einsätze. Über die aktuellen mobilen Funktionen habe ich in [Field Service Mobile im Außendienst](../../blog/salesforce-field-service-mobile-aussendienst/) geschrieben. Experience Cloud spart Kapazität, weil Kunden Antworten selbst finden und Anfragen selbst stellen. Den Fit der Manufacturing Cloud rechne ich im ROI-Case, den ich auf der Seite [Make-or-buy und Lizenzen](../make-or-buy-lizenzen/) beschreibe.
+Bei Field Service zählen neben der Art der Arbeit auch die Standorte und die Dauer der Einsätze. Über die aktuellen mobilen Funktionen habe ich in [Field Service Mobile im Außendienst](../../blog/salesforce-field-service-mobile-aussendienst/) geschrieben. Experience Cloud spart Kapazität, weil Kunden Antworten selbst finden und Anfragen selbst stellen. Den Fit der Manufacturing Cloud rechne ich im ROI-Case, den ich auf der Seite [Make-or-buy und Lizenzen](../make-or-buy-lizenzen/) beschreibe. Welche Clouds Maschinen- und Anlagenbauer meist brauchen, von Service Cloud bis Field Service, zeigt die Seite [Salesforce im Maschinen- und Anlagenbau](../../salesforce-maschinenbau/).
 
 ## Das Datenmodell trägt Reports, Automatisierung und KI
 

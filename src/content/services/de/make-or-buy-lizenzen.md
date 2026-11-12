@@ -86,6 +86,8 @@ contra: Wird teuer, wenn
 In einem Fertigungsprojekt waren Sales Agreements, eine Kernfunktion der Manufacturing Cloud, für das Geschäft nicht relevant. Eine eigene Lösung auf der Kernplattform war günstiger und einfacher zu warten.
 ```
 
+Für Maschinen- und Anlagenbauer habe ich zusammengestellt, [welche Salesforce-Produkte sich wann rechnen](../../salesforce-maschinenbau/): Service Cloud, Field Service, Manufacturing Cloud, Experience Cloud, Revenue Cloud und Agentforce.
+
 Dieselbe Logik gilt über Salesforce-Produkte hinaus. Dokumentenerstellung, E-Signatur, Telefonie und KI-Anwendungsfälle werfen alle die Frage auf, ob man kauft, selbst baut oder die Funktion in einem anderen System belässt. Bei KI ist der wichtigste Faktor der Zustand der Daten, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../../blog/agentforce-business-value-datenqualitaet/) erkläre. Auch Open-Source-Tools verändern die Rechnung, zum Beispiel bei DevOps, wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/) beschrieben.
 
 ## ROI-Case über mehrere Jahre, mit Wartung und Folgekosten

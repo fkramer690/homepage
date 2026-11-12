@@ -98,7 +98,7 @@ Nehmen wir einen Maschinenbauer mit SAP, Sales Cloud und Service Cloud, einem H�
 
 **Fehlersuche bei Sondermaschinen.** Angenommen, es gibt 40 Fälle im Monat, jeder ist anders, und das Wissen steckt in den Köpfen von vier erfahrenen Servicetechnikern. Das Volumen ist gering, das Risiko einer falschen Antwort hoch, und es gibt kaum schriftliche Artikel, auf die sich ein Agent stützen könnte. Diese Aufgabe bleibt vorerst bei den Technikern.
 
-Einer der drei Kandidaten ist bereit. Nach meiner Einschätzung ist das ein normales Verhältnis, und ein solider Start ist mehr wert als drei parallele Piloten.
+Einer der drei Kandidaten ist bereit. Nach meiner Einschätzung ist das ein normales Verhältnis, und ein solider Start ist mehr wert als drei parallele Piloten. Wo ein Agent bei Maschinenbauern neben Field Service, Ersatzteilen und Händlerportal ansetzt, zeigt die Seite [Salesforce im Maschinen- und Anlagenbau](../../salesforce-maschinenbau/).
 
 ## Wo Salesforce nicht die Antwort ist
 
