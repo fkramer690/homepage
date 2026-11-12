@@ -1287,6 +1287,17 @@ const drawings: Record<string, Drawing> = {
     ${[l('decisions within a week', 'Entscheidungen in einer Woche'), l('data access, permissions', 'Datenzugang, Berechtigungen'), l('owner after hypercare', 'Owner nach der Hypercare')].map((s, i) => check(18, 104 + i * 14, i === 2 ? C : G) + t(32, 110 + i * 14, s, { size: 7 })).join('')}
     ${box(196, 104, 106, 36)}${t(249, 119, 'Gartner', { fill: D, size: 7, anchor: 'middle' })}${t(249, 132, l('> $200k per quarter', '> 200 Tsd. $/Quartal'), { size: 7, anchor: 'middle' })}`,
 
+  'botsitting-salesforce-tools': (l) => `
+    ${t(18, 20, l('4 HANDOFFS, CONTEXT LOST', '4 ÜBERGABEN, KONTEXT WEG'), { fill: D, size: 7 })}${t(302, 20, 'Glean: 6.4 h/week', { size: 7, anchor: 'end' })}
+    ${['Miro', 'Lucidchart', 'Figma', 'Jira'].map((a, i) => box(18 + i * 74, 30, 62, 26) + t(49 + i * 74, 46, a, { fill: D, size: 6.5, anchor: 'middle' })).join('')}
+    ${[0, 1, 2].map((i) => arrow(80 + i * 74, 43, 92 + i * 74)).join('')}
+    ${t(271, 72, l('exception missing', 'Ausnahme fehlt'), { size: 7, anchor: 'middle' })}
+    <path d="M18 86H302" stroke="${L}"/>
+    ${t(18, 102, l('CLAUDE: ONE CONTEXT', 'CLAUDE: EIN KONTEXT'), { fill: D, size: 7 })}
+    ${box(18, 110, 124, 34)}${t(80, 124, 'CLAUDE', { fill: D, size: 7.5, anchor: 'middle' })}${t(80, 137, l('notes, org, repo', 'Mitschrift, Org, Repo'), { size: 7, anchor: 'middle' })}
+    ${arrow(142, 127, 178, C)}
+    ${box(178, 110, 124, 34, C)}${t(240, 124, 'ARTIFACT', { fill: D, size: 7.5, anchor: 'middle' })}${t(240, 137, l('LWC, Mermaid, dashboard', 'LWC, Mermaid, Dashboard'), { fill: C, size: 7, anchor: 'middle' })}`,
+
   'agent-script-deterministic-rules': (l) => `
     ${box(18, 26, 86, 50)}${t(61, 44, l('DEALER', 'HÄNDLER'), { fill: D, anchor: 'middle' })}${t(61, 58, l('free text', 'Freitext'), { size: 7, anchor: 'middle' })}
     ${arrow(104, 51, 124)}
