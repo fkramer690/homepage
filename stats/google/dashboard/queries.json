@@ -8,14 +8,14 @@
  {
   "query": "how to automate technician scheduling and dispatch?",
   "clicks": 0,
-  "impressions": 45,
-  "position": 40.5
+  "impressions": 47,
+  "position": 40.1
  },
  {
   "query": "field engineer scheduling",
   "clicks": 0,
-  "impressions": 33,
-  "position": 92.8
+  "impressions": 35,
+  "position": 93.2
  },
  {
   "query": "manufacturing cloud",
@@ -38,8 +38,20 @@
  {
   "query": "field service pricing",
   "clicks": 0,
-  "impressions": 27,
-  "position": 87.6
+  "impressions": 28,
+  "position": 87.9
+ },
+ {
+  "query": "field service scheduling and dispatch",
+  "clicks": 0,
+  "impressions": 28,
+  "position": 85
+ },
+ {
+  "query": "field service shift planning",
+  "clicks": 0,
+  "impressions": 28,
+  "position": 76.5
  },
  {
   "query": "sfdx-hardis",
@@ -48,16 +60,10 @@
   "position": 10.1
  },
  {
-  "query": "field service scheduling and dispatch",
+  "query": "field service scheduling",
   "clicks": 0,
-  "impressions": 26,
-  "position": 84.7
- },
- {
-  "query": "field service shift planning",
-  "clicks": 0,
-  "impressions": 26,
-  "position": 75.8
+  "impressions": 25,
+  "position": 90.3
  },
  {
   "query": "cad vertriebsdaten",
@@ -66,10 +72,16 @@
   "position": 68.2
  },
  {
-  "query": "field service scheduling",
+  "query": "services scheduling dispatch",
   "clicks": 0,
-  "impressions": 23,
-  "position": 90.3
+  "impressions": 21,
+  "position": 76.4
+ },
+ {
+  "query": "field service dispatcher",
+  "clicks": 0,
+  "impressions": 20,
+  "position": 79
  },
  {
   "query": "nearshore teamerweiterung",
@@ -84,22 +96,10 @@
   "position": 6.9
  },
  {
-  "query": "services scheduling dispatch",
-  "clicks": 0,
-  "impressions": 19,
-  "position": 76.4
- },
- {
   "query": "b2b portal software pricing",
   "clicks": 0,
   "impressions": 18,
   "position": 66.9
- },
- {
-  "query": "field service dispatcher",
-  "clicks": 0,
-  "impressions": 18,
-  "position": 77.8
  },
  {
   "query": "is salesforce sales planning included with agentforce sales?",
@@ -126,16 +126,16 @@
   "position": 57.6
  },
  {
+  "query": "field service dispatch",
+  "clicks": 0,
+  "impressions": 14,
+  "position": 89.2
+ },
+ {
   "query": "what makes a salesforce devops platform enterprise-ready?",
   "clicks": 0,
   "impressions": 14,
   "position": 6.1
- },
- {
-  "query": "field service dispatch",
-  "clicks": 0,
-  "impressions": 12,
-  "position": 89.2
  },
  {
   "query": "headless commerce solutions for b2b",
@@ -348,6 +348,12 @@
   "position": 65.4
  },
  {
+  "query": "wechsel von cpq zu revenue cloud",
+  "clicks": 0,
+  "impressions": 7,
+  "position": 9.1
+ },
+ {
   "query": "agent context engine salesforce",
   "clicks": 0,
   "impressions": 6,
@@ -402,12 +408,6 @@
   "position": 89.3
  },
  {
-  "query": "wechsel von cpq zu revenue cloud",
-  "clicks": 0,
-  "impressions": 6,
-  "position": 9.7
- },
- {
   "query": "change management communication plan template",
   "clicks": 0,
   "impressions": 5,
@@ -418,6 +418,12 @@
   "clicks": 0,
   "impressions": 5,
   "position": 37.4
+ },
+ {
+  "query": "erp field service",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 82.2
  },
  {
   "query": "field service kpi",
@@ -454,6 +460,12 @@
   "clicks": 0,
   "impressions": 5,
   "position": 35.4
+ },
+ {
+  "query": "salesforce nearshore development",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 70.4
  },
  {
   "query": "salesforce revenue cloud advanced",
@@ -606,12 +618,6 @@
   "position": 74.5
  },
  {
-  "query": "salesforce nearshore development",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 74.8
- },
- {
   "query": "salesforce release schedule",
   "clicks": 0,
   "impressions": 4,
@@ -684,12 +690,6 @@
   "position": 29
  },
  {
-  "query": "erp field service",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 77.3
- },
- {
   "query": "fakturierung cloud",
   "clicks": 0,
   "impressions": 3,
@@ -700,6 +700,12 @@
   "clicks": 0,
   "impressions": 3,
   "position": 79.7
+ },
+ {
+  "query": "field service application software",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 66
  },
  {
   "query": "field service bedeutung",
@@ -1146,6 +1152,12 @@
   "position": 6
  },
  {
+  "query": "what is the agent context engine in salesforce data 360?",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8.5
+ },
+ {
   "query": "\"agentforce sales coach\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
   "clicks": 0,
   "impressions": 1,
@@ -1422,12 +1434,6 @@
   "position": 68
  },
  {
-  "query": "field service application software",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 65
- },
- {
   "query": "field service automation",
   "clicks": 0,
   "impressions": 1,
@@ -1462,6 +1468,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 98
+ },
+ {
+  "query": "field service management application",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 84
  },
  {
   "query": "field service management service",
@@ -1512,10 +1524,22 @@
   "position": 46
  },
  {
+  "query": "field service system",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 74
+ },
+ {
   "query": "field service work orders",
   "clicks": 0,
   "impressions": 1,
   "position": 49
+ },
+ {
+  "query": "field software",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 95
  },
  {
   "query": "field workforce scheduling",
@@ -2140,12 +2164,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 6
- },
- {
-  "query": "what is the agent context engine in salesforce data 360?",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 8
  },
  {
   "query": "what llms does agentforce use and can enterprises bring their own model?",

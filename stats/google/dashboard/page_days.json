@@ -7022,10 +7022,31 @@
  },
  {
   "day": "2026-11-11",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 18,
+  "position": 76.3
+ },
+ {
+  "day": "2026-11-11",
   "page": "https://www.fk-sd.de/",
   "clicks": 1,
   "impressions": 8,
   "position": 1.5
+ },
+ {
+  "day": "2026-11-11",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 71.5
+ },
+ {
+  "day": "2026-11-11",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 8.2
  },
  {
   "day": "2026-11-11",
@@ -7043,17 +7064,17 @@
  },
  {
   "day": "2026-11-11",
-  "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
-  "clicks": 0,
-  "impressions": 5,
-  "position": 8.4
- },
- {
-  "day": "2026-11-11",
   "page": "http://fk-sd.de/",
   "clicks": 0,
   "impressions": 4,
   "position": 8.8
+ },
+ {
+  "day": "2026-11-11",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-agent-api-dealer-apps/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 9
  },
  {
   "day": "2026-11-11",
@@ -7071,6 +7092,13 @@
  },
  {
   "day": "2026-11-11",
+  "page": "https://www.fk-sd.de/blog/agentforce-1-field-service-paket-rechnung/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 37
+ },
+ {
+  "day": "2026-11-11",
   "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
   "clicks": 0,
   "impressions": 3,
@@ -7085,24 +7113,10 @@
  },
  {
   "day": "2026-11-11",
-  "page": "https://www.fk-sd.de/en/blog/agentforce-agent-api-dealer-apps/",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 9.3
- },
- {
-  "day": "2026-11-11",
   "page": "https://www.fk-sd.de/masterclass/change-management/key-user-und-schulung/",
   "clicks": 0,
   "impressions": 3,
   "position": 27
- },
- {
-  "day": "2026-11-11",
-  "page": "https://www.fk-sd.de/blog/agentforce-1-field-service-paket-rechnung/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 7.5
  },
  {
   "day": "2026-11-11",
@@ -7117,6 +7131,13 @@
   "clicks": 0,
   "impressions": 2,
   "position": 8
+ },
+ {
+  "day": "2026-11-11",
+  "page": "https://www.fk-sd.de/blog/revenue-cloud-billing-oder-sap-rechnung/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 5
  },
  {
   "day": "2026-11-11",
@@ -7173,13 +7194,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 8.5
- },
- {
-  "day": "2026-11-11",
-  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 37.5
  },
  {
   "day": "2026-11-11",
@@ -7246,6 +7260,13 @@
  },
  {
   "day": "2026-11-11",
+  "page": "https://www.fk-sd.de/blog/api-67-apex-user-mode-weniger-datensaetze/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "day": "2026-11-11",
   "page": "https://www.fk-sd.de/blog/b2b-buyer-agent-whatsapp-bestellen/",
   "clicks": 0,
   "impressions": 1,
@@ -7288,10 +7309,10 @@
  },
  {
   "day": "2026-11-11",
-  "page": "https://www.fk-sd.de/blog/revenue-cloud-billing-oder-sap-rechnung/",
+  "page": "https://www.fk-sd.de/blog/salesforce-cpq-revenue-cloud-unterschiede/",
   "clicks": 0,
   "impressions": 1,
-  "position": 3
+  "position": 6
  },
  {
   "day": "2026-11-11",
@@ -7337,6 +7358,13 @@
  },
  {
   "day": "2026-11-11",
+  "page": "https://www.fk-sd.de/en/blog/audit-trail-ai-agents-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "day": "2026-11-11",
   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-search-part-numbers/",
   "clicks": 0,
   "impressions": 1,
@@ -7362,13 +7390,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 10
- },
- {
-  "day": "2026-11-11",
-  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
  },
  {
   "day": "2026-11-11",
@@ -7519,6 +7540,13 @@
  },
  {
   "day": "2026-11-11",
+  "page": "https://www.fk-sd.de/en/masterclass/b2b-commerce/prices-cart-checkout/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "day": "2026-11-11",
   "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
   "clicks": 0,
   "impressions": 1,
@@ -7533,10 +7561,24 @@
  },
  {
   "day": "2026-11-11",
+  "page": "https://www.fk-sd.de/en/masterclass/revenue-cloud/product-catalog-configurator-pricing/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "day": "2026-11-11",
   "page": "https://www.fk-sd.de/en/services/make-or-buy-licences/",
   "clicks": 0,
   "impressions": 1,
   "position": 1
+ },
+ {
+  "day": "2026-11-11",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 53
  },
  {
   "day": "2026-11-11",
@@ -7572,5 +7614,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 10
+ },
+ {
+  "day": "2026-11-12",
+  "page": "https://www.fk-sd.de/blog/agentforce-1-field-service-paket-rechnung/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
  }
 ]

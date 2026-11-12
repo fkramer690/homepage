@@ -1,8 +1,8 @@
 [
  {
   "page": "/",
-  "pageviews": 350,
-  "visits": 160
+  "pageviews": 360,
+  "visits": 170
  },
  {
   "page": "/en/",
@@ -21,7 +21,7 @@
  },
  {
   "page": "/en/masterclass/ai-salesforce/",
-  "pageviews": 60,
+  "pageviews": 70,
   "visits": 50
  },
  {
@@ -95,7 +95,7 @@
   "visits": 20
  },
  {
-  "page": "/masterclass-ki/",
+  "page": "/en/blog/ai-coding-tools-works-council-gdpr/",
   "pageviews": 20,
   "visits": 0
  }

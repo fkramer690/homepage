@@ -22,17 +22,17 @@
  },
  {
   "period": "2026-10-30",
-  "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 4
- },
- {
-  "period": "2026-10-30",
   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
   "clicks": 0,
   "impressions": 3,
   "position": 5
+ },
+ {
+  "period": "2026-10-30",
+  "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 4
  },
  {
   "period": "2026-10-30",
@@ -43,17 +43,17 @@
  },
  {
   "period": "2026-10-30",
-  "page": "https://www.fk-sd.de/blog/shop-bestellungen-erp-auftrag/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 8
- },
- {
-  "period": "2026-10-30",
   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-product-names-rlm-rca/",
   "clicks": 0,
   "impressions": 1,
   "position": 4
+ },
+ {
+  "period": "2026-10-30",
+  "page": "https://www.fk-sd.de/blog/shop-bestellungen-erp-auftrag/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
  },
  {
   "period": "2026-10-30",
@@ -106,13 +106,6 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/salesforce-key-user-netzwerk/",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 5
- },
- {
-  "period": "2026-11-06",
   "page": "https://www.fk-sd.de/blog/salesforce-berechtigungskonzept-permission-sets/",
   "clicks": 0,
   "impressions": 3,
@@ -120,42 +113,14 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
+  "page": "https://www.fk-sd.de/blog/salesforce-key-user-netzwerk/",
   "clicks": 0,
-  "impressions": 2,
-  "position": 8
+  "impressions": 3,
+  "position": 5
  },
  {
   "period": "2026-11-06",
   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/merchandising-agent-teilekatalog/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 7
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/salesforce-uat-abnahmetest-fachbereich/",
   "clicks": 0,
   "impressions": 2,
   "position": 4
@@ -169,10 +134,45 @@
  },
  {
   "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/blog/merchandising-agent-teilekatalog/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
+ },
+ {
+  "period": "2026-11-06",
   "page": "https://www.fk-sd.de/en/blog/salesforce-hypercare-after-go-live/",
   "clicks": 0,
   "impressions": 2,
   "position": 7
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/blog/salesforce-uat-abnahmetest-fachbereich/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
  },
  {
   "period": "2026-11-06",
@@ -183,10 +183,17 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
+  "page": "https://www.fk-sd.de/blog/ship-and-debit-preisschutz-haendler/",
   "clicks": 0,
   "impressions": 1,
-  "position": 2
+  "position": 8
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
  },
  {
   "period": "2026-11-06",
@@ -204,23 +211,16 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
+  "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
   "clicks": 0,
   "impressions": 1,
   "position": 2
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/ship-and-debit-preisschutz-haendler/",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
   "clicks": 0,
   "impressions": 1,
-  "position": 8
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 9
+  "position": 2
  }
 ]
