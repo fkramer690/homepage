@@ -1060,6 +1060,16 @@ const drawings: Record<string, Drawing> = {
     ${[l('integration user', 'Integrationsuser'), l('technician', 'Techniker'), l('sales rep', 'Vertrieb')].map((s, i) => box(18 + i * 98, 100, 88, 22) + t(62 + i * 98, 114, s, { size: 7, anchor: 'middle' })).join('')}
     ${tag(18, 132, 150, l('activate on your date', 'selbst aktivieren'))}${t(178, 145, l('not on the upgrade weekend', 'nicht am Upgrade-Wochenende'), { size: 6.5 })}`,
 
+  'salesforce-connect-sap': (l) => `
+    ${t(18, 18, l('LIVE OR COPY, PER DATA TYPE', 'LIVE ODER KOPIE, JE DATENART'), { fill: D, size: 7 })}
+    ${box(18, 30, 96, 50)}${t(66, 50, 'SAP', { fill: D, size: 9, anchor: 'middle' })}${t(66, 66, l('invoices stay', 'Rechnungen bleiben'), { size: 7, anchor: 'middle' })}
+    ${arrow(114, 58, 206, C)}${t(160, 50, l('OData, on open', 'OData, beim Öffnen'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(206, 30, 96, 50, C)}${t(254, 50, 'SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(254, 66, l('external object', 'externes Objekt'), { size: 7, anchor: 'middle' })}
+    <path d="M18 92H302" stroke="${L}"/>
+    ${box(18, 100, 138, 22)}${check(26, 110)}${t(40, 114, l('show only: Connect', 'nur anzeigen: Connect'), { size: 7 })}
+    ${box(164, 100, 138, 22)}${cross(178, 111)}${t(188, 114, l('calculate: copy', 'rechnen: Kopie'), { size: 7 })}
+    ${tag(18, 130, 160, l('USD 4,000 / connection / month', '4.000 USD / Verbindung / Monat'))}${t(186, 143, l('20,000 calls/h OData 4.0', '20.000 Aufrufe/h OData 4.0'), { size: 6.5 })}`,
+
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
     ${arrow(70, 43, 82)}${arrow(132, 43, 144)}
