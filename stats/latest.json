@@ -1,59 +1,59 @@
 {
-  "generatedAt": "2026-11-11T12:41:45.341Z",
+  "generatedAt": "2026-11-12T04:51:43.085Z",
   "range": {
-    "start": "2026-10-12",
-    "end": "2026-11-11"
+    "start": "2026-10-13",
+    "end": "2026-11-12"
   },
   "browsers": [
     {
-      "count": 950,
+      "count": 960,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
       "sum": {
-        "visits": 250
+        "visits": 260
       }
     },
     {
-      "count": 270,
+      "count": 290,
       "dimensions": {
         "userAgentBrowser": "Unknown"
       },
       "sum": {
-        "visits": 170
+        "visits": 190
       }
     },
     {
-      "count": 170,
+      "count": 200,
       "dimensions": {
         "userAgentBrowser": "MobileSafari"
-      },
-      "sum": {
-        "visits": 30
-      }
-    },
-    {
-      "count": 70,
-      "dimensions": {
-        "userAgentBrowser": "ChromeMobile"
       },
       "sum": {
         "visits": 50
       }
     },
     {
-      "count": 40,
+      "count": 160,
       "dimensions": {
-        "userAgentBrowser": "Edge"
+        "userAgentBrowser": "ChromeHeadless"
       },
       "sum": {
-        "visits": 30
+        "visits": 160
       }
     },
     {
-      "count": 30,
+      "count": 80,
       "dimensions": {
-        "userAgentBrowser": "ChromeHeadless"
+        "userAgentBrowser": "ChromeMobile"
+      },
+      "sum": {
+        "visits": 60
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "userAgentBrowser": "Edge"
       },
       "sum": {
         "visits": 30
@@ -80,21 +80,21 @@
   ],
   "countries": [
     {
-      "count": 1040,
+      "count": 1050,
       "dimensions": {
         "countryName": "DE"
       },
       "sum": {
-        "visits": 140
+        "visits": 150
       }
     },
     {
-      "count": 370,
+      "count": 520,
       "dimensions": {
         "countryName": "US"
       },
       "sum": {
-        "visits": 350
+        "visits": 500
       }
     },
     {
@@ -107,9 +107,18 @@
       }
     },
     {
-      "count": 30,
+      "count": 40,
       "dimensions": {
         "countryName": "IN"
+      },
+      "sum": {
+        "visits": 40
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "countryName": "NL"
       },
       "sum": {
         "visits": 30
@@ -146,15 +155,6 @@
       "count": 10,
       "dimensions": {
         "countryName": "CA"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "countryName": "NL"
       },
       "sum": {
         "visits": 10
@@ -316,52 +316,70 @@
       }
     },
     {
-      "count": 140,
+      "count": 330,
       "dimensions": {
         "date": "2026-11-11"
       },
       "sum": {
-        "visits": 120
+        "visits": 300
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-12"
+      },
+      "sum": {
+        "visits": 10
       }
     }
   ],
   "devices": [
     {
-      "count": 1160,
+      "count": 1310,
       "dimensions": {
         "deviceType": "desktop"
       },
       "sum": {
-        "visits": 450
+        "visits": 600
       }
     },
     {
-      "count": 410,
+      "count": 460,
       "dimensions": {
         "deviceType": "mobile"
       },
       "sum": {
-        "visits": 150
+        "visits": 190
       }
     }
   ],
   "pages": [
     {
-      "count": 330,
+      "count": 350,
       "dimensions": {
         "requestPath": "/"
       },
       "sum": {
-        "visits": 140
+        "visits": 160
       }
     },
     {
-      "count": 120,
+      "count": 130,
       "dimensions": {
         "requestPath": "/en/"
       },
       "sum": {
-        "visits": 30
+        "visits": 40
+      }
+    },
+    {
+      "count": 90,
+      "dimensions": {
+        "requestPath": "/leistungen/change-management/"
+      },
+      "sum": {
+        "visits": 20
       }
     },
     {
@@ -374,12 +392,12 @@
       }
     },
     {
-      "count": 70,
+      "count": 60,
       "dimensions": {
-        "requestPath": "/leistungen/change-management/"
+        "requestPath": "/en/masterclass/ai-salesforce/"
       },
       "sum": {
-        "visits": 0
+        "visits": 50
       }
     },
     {
@@ -392,12 +410,48 @@
       }
     },
     {
-      "count": 40,
+      "count": 50,
       "dimensions": {
-        "requestPath": "/en/masterclass/ai-salesforce/"
+        "requestPath": "/en/blog/"
       },
       "sum": {
-        "visits": 30
+        "visits": 20
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "requestPath": "/en/blog/ai-native-salesforce-delivery-process/"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "requestPath": "/masterclass/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "requestPath": "/blog/account-forecasting-absatzprognose-vertrieb/"
+      },
+      "sum": {
+        "visits": 40
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "requestPath": "/leistungen/salesforce-architektur/"
+      },
+      "sum": {
+        "visits": 20
       }
     },
     {
@@ -413,33 +467,6 @@
       "count": 40,
       "dimensions": {
         "requestPath": "/partner/juliane-winterscheid/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 40,
-      "dimensions": {
-        "requestPath": "/masterclass/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 40,
-      "dimensions": {
-        "requestPath": "/en/blog/ai-native-salesforce-delivery-process/"
-      },
-      "sum": {
-        "visits": 20
-      }
-    },
-    {
-      "count": 40,
-      "dimensions": {
-        "requestPath": "/en/blog/"
       },
       "sum": {
         "visits": 10
@@ -466,7 +493,7 @@
     {
       "count": 30,
       "dimensions": {
-        "requestPath": "/blog/account-forecasting-absatzprognose-vertrieb/"
+        "requestPath": "/leistungen/salesforce-schnittstellen/"
       },
       "sum": {
         "visits": 30
@@ -475,7 +502,16 @@
     {
       "count": 30,
       "dimensions": {
-        "requestPath": "/leistungen/salesforce-schnittstellen/"
+        "requestPath": "/en/blog/salesforce-forward-deployed-engineer/"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/masterclass/b2b-commerce/"
       },
       "sum": {
         "visits": 30
@@ -484,10 +520,10 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/masterclass/ki-salesforce/"
+        "requestPath": "/en/blog/salesforce-dx-mcp-server-end-of-life/"
       },
       "sum": {
-        "visits": 0
+        "visits": 20
       }
     },
     {
@@ -498,38 +534,11 @@
       "sum": {
         "visits": 0
       }
-    },
-    {
-      "count": 20,
-      "dimensions": {
-        "requestPath": "/leistungen/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 20,
-      "dimensions": {
-        "requestPath": "/en/blog/salesforce-object-ownership-matrix/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 20,
-      "dimensions": {
-        "requestPath": "/en/blog/ai-coding-tools-works-council-gdpr/"
-      },
-      "sum": {
-        "visits": 0
-      }
     }
   ],
   "referers": [
     {
-      "count": 910,
+      "count": 920,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
@@ -538,12 +547,12 @@
       }
     },
     {
-      "count": 560,
+      "count": 730,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 560
+        "visits": 730
       }
     },
     {
@@ -565,21 +574,21 @@
       }
     },
     {
-      "count": 10,
+      "count": 20,
       "dimensions": {
         "refererHost": "www.linkedin.com"
       },
       "sum": {
-        "visits": 10
+        "visits": 20
       }
     },
     {
-      "count": 10,
+      "count": 20,
       "dimensions": {
         "refererHost": "com.linkedin.android"
       },
       "sum": {
-        "visits": 10
+        "visits": 20
       }
     }
   ],
@@ -598,7 +607,7 @@
       "count": 10,
       "dimensions": {
         "date": "2026-10-23",
-        "requestPath": "/homepage/blog/"
+        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
       },
       "sum": {
         "visits": 0
@@ -628,7 +637,7 @@
       "count": 10,
       "dimensions": {
         "date": "2026-10-23",
-        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
+        "requestPath": "/homepage/blog/"
       },
       "sum": {
         "visits": 0
@@ -668,7 +677,7 @@
       "count": 10,
       "dimensions": {
         "date": "2026-10-27",
-        "requestPath": "/fragen/"
+        "requestPath": "/leistungen/"
       },
       "sum": {
         "visits": 0
@@ -678,7 +687,7 @@
       "count": 10,
       "dimensions": {
         "date": "2026-10-27",
-        "requestPath": "/leistungen/"
+        "requestPath": "/fragen/"
       },
       "sum": {
         "visits": 0
@@ -689,16 +698,6 @@
       "dimensions": {
         "date": "2026-10-28",
         "requestPath": "/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-10-28",
-        "requestPath": "/en/blog/copado-gearset-provar-ai-agents/"
       },
       "sum": {
         "visits": 0
@@ -725,20 +724,20 @@
       }
     },
     {
-      "count": 40,
+      "count": 10,
       "dimensions": {
-        "date": "2026-10-29",
-        "requestPath": "/"
+        "date": "2026-10-28",
+        "requestPath": "/en/blog/copado-gearset-provar-ai-agents/"
       },
       "sum": {
         "visits": 0
       }
     },
     {
-      "count": 30,
+      "count": 40,
       "dimensions": {
         "date": "2026-10-29",
-        "requestPath": "/leistungen/change-management/"
+        "requestPath": "/"
       },
       "sum": {
         "visits": 0
@@ -755,10 +754,10 @@
       }
     },
     {
-      "count": 20,
+      "count": 30,
       "dimensions": {
         "date": "2026-10-29",
-        "requestPath": "/en/"
+        "requestPath": "/leistungen/change-management/"
       },
       "sum": {
         "visits": 0
@@ -785,20 +784,10 @@
       }
     },
     {
-      "count": 10,
+      "count": 20,
       "dimensions": {
         "date": "2026-10-29",
-        "requestPath": "/masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-10-29",
-        "requestPath": "/masterclass/manufacturing-cloud/"
+        "requestPath": "/en/"
       },
       "sum": {
         "visits": 0
@@ -818,7 +807,27 @@
       "count": 10,
       "dimensions": {
         "date": "2026-10-29",
+        "requestPath": "/masterclass/manufacturing-cloud/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-10-29",
         "requestPath": "/en/services/change-management-salesforce/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-10-29",
+        "requestPath": "/leistungen/salesforce-architektur/"
       },
       "sum": {
         "visits": 0
@@ -838,10 +847,10 @@
       "count": 10,
       "dimensions": {
         "date": "2026-10-29",
-        "requestPath": "/leistungen/salesforce-architektur/"
+        "requestPath": "/masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     },
     {
@@ -898,20 +907,20 @@
       "count": 10,
       "dimensions": {
         "date": "2026-10-31",
-        "requestPath": "/en/services/program-management-nearshore/"
+        "requestPath": "/blog/sfdx-hardis-oder-devops-center-vergleich/"
       },
       "sum": {
-        "visits": 10
+        "visits": 0
       }
     },
     {
       "count": 10,
       "dimensions": {
         "date": "2026-10-31",
-        "requestPath": "/blog/sfdx-hardis-oder-devops-center-vergleich/"
+        "requestPath": "/en/services/program-management-nearshore/"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     },
     {
@@ -978,10 +987,10 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-02",
-        "requestPath": "/"
+        "requestPath": "/freiberuflicher-salesforce-architect/"
       },
       "sum": {
-        "visits": 10
+        "visits": 0
       }
     },
     {
@@ -998,10 +1007,10 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-02",
-        "requestPath": "/freiberuflicher-salesforce-architect/"
+        "requestPath": "/"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     },
     {
@@ -1038,20 +1047,20 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-03",
-        "requestPath": "/leistungen/change-management/"
+        "requestPath": "/blog/"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     },
     {
       "count": 10,
       "dimensions": {
         "date": "2026-11-03",
-        "requestPath": "/blog/"
+        "requestPath": "/leistungen/change-management/"
       },
       "sum": {
-        "visits": 10
+        "visits": 0
       }
     },
     {
@@ -1078,10 +1087,10 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-04",
-        "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
+        "requestPath": "/partner/juliane-winterscheid/"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     },
     {
@@ -1098,17 +1107,17 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-04",
-        "requestPath": "/partner/juliane-winterscheid/"
+        "requestPath": "/fragen/"
       },
       "sum": {
-        "visits": 10
+        "visits": 0
       }
     },
     {
       "count": 10,
       "dimensions": {
         "date": "2026-11-04",
-        "requestPath": "/fragen/"
+        "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
       },
       "sum": {
         "visits": 0
@@ -1128,7 +1137,7 @@
       "count": 20,
       "dimensions": {
         "date": "2026-11-05",
-        "requestPath": "/en/"
+        "requestPath": "/masterclass/ki-salesforce/"
       },
       "sum": {
         "visits": 0
@@ -1138,7 +1147,7 @@
       "count": 20,
       "dimensions": {
         "date": "2026-11-05",
-        "requestPath": "/masterclass/ki-salesforce/"
+        "requestPath": "/en/"
       },
       "sum": {
         "visits": 0
@@ -1158,107 +1167,7 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-05",
-        "requestPath": "/en/blog/field-service-asset-hierarchy-machines/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-05",
-        "requestPath": "/blog/merchandising-agent-teilekatalog/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-05",
-        "requestPath": "/impressum/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-05",
-        "requestPath": "/en/blog/ai-native-delivery-smaller-salesforce-teams/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-05",
-        "requestPath": "/speaking/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-05",
-        "requestPath": "/leistungen/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-05",
-        "requestPath": "/en/blog/quality-gates-for-ai-code-salesforce-pipeline/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-05",
         "requestPath": "/en/blog/salesforce-dx-mcp-server-end-of-life/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-05",
-        "requestPath": "/blog/revenue-cloud-produktnamen-rlm-rca/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-05",
-        "requestPath": "/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-05",
-        "requestPath": "/en/blog/ai-rules-file-salesforce-repository/"
       },
       "sum": {
         "visits": 10
@@ -1278,6 +1187,36 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-05",
+        "requestPath": "/leistungen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05",
+        "requestPath": "/blog/merchandising-agent-teilekatalog/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05",
+        "requestPath": "/en/blog/ai-native-delivery-smaller-salesforce-teams/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05",
         "requestPath": "/partner/juliane-winterscheid/"
       },
       "sum": {
@@ -1288,7 +1227,47 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-05",
+        "requestPath": "/impressum/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05",
         "requestPath": "/blog/salesforce-document-builder-grenzen-workarounds/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05",
+        "requestPath": "/en/blog/quality-gates-for-ai-code-salesforce-pipeline/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05",
+        "requestPath": "/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05",
+        "requestPath": "/en/blog/field-service-asset-hierarchy-machines/"
       },
       "sum": {
         "visits": 10
@@ -1308,6 +1287,16 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-05",
+        "requestPath": "/blog/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05",
         "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
       },
       "sum": {
@@ -1318,7 +1307,27 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-05",
-        "requestPath": "/blog/"
+        "requestPath": "/blog/revenue-cloud-produktnamen-rlm-rca/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05",
+        "requestPath": "/en/blog/ai-rules-file-salesforce-repository/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05",
+        "requestPath": "/speaking/"
       },
       "sum": {
         "visits": 0
@@ -1358,16 +1367,6 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-07",
-        "requestPath": "/masterclass/ki-salesforce/externe-coding-agenten/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-07",
         "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
       },
       "sum": {
@@ -1377,8 +1376,8 @@
     {
       "count": 10,
       "dimensions": {
-        "date": "2026-11-08",
-        "requestPath": "/en/blog/salesforce-hypercare-after-go-live/"
+        "date": "2026-11-07",
+        "requestPath": "/masterclass/ki-salesforce/externe-coding-agenten/"
       },
       "sum": {
         "visits": 10
@@ -1395,6 +1394,16 @@
       }
     },
     {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-08",
+        "requestPath": "/en/blog/salesforce-hypercare-after-go-live/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
       "count": 20,
       "dimensions": {
         "date": "2026-11-09",
@@ -1408,7 +1417,7 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-09",
-        "requestPath": "/leistungen/projektsteuerung-nearshore/"
+        "requestPath": "/en/blog/agentforce-llm-choice-bring-your-own/"
       },
       "sum": {
         "visits": 10
@@ -1438,17 +1447,7 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-09",
-        "requestPath": "/en/blog/field-service-case-to-work-order/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-09",
-        "requestPath": "/en/blog/agentforce-llm-choice-bring-your-own/"
+        "requestPath": "/en/blog/salesforce-dx-mcp-server-end-of-life/"
       },
       "sum": {
         "visits": 10
@@ -1468,7 +1467,17 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-09",
-        "requestPath": "/en/blog/salesforce-dx-mcp-server-end-of-life/"
+        "requestPath": "/en/blog/field-service-case-to-work-order/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-09",
+        "requestPath": "/leistungen/projektsteuerung-nearshore/"
       },
       "sum": {
         "visits": 10
@@ -1498,16 +1507,6 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-10",
-        "requestPath": "/en/blog/ai-native-salesforce-delivery-process/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-10",
         "requestPath": "/leistungen/devops-und-release-management/"
       },
       "sum": {
@@ -1528,17 +1527,7 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-10",
-        "requestPath": "/en/masterclass/ai-salesforce/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-10",
-        "requestPath": "/impressum/"
+        "requestPath": "/blog/change-management-modelle/"
       },
       "sum": {
         "visits": 10
@@ -1558,7 +1547,7 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-10",
-        "requestPath": "/blog/change-management-modelle/"
+        "requestPath": "/en/blog/field-service-scheduling-console-dispatchers/"
       },
       "sum": {
         "visits": 10
@@ -1568,10 +1557,50 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-10",
-        "requestPath": "/en/blog/field-service-scheduling-console-dispatchers/"
+        "requestPath": "/en/masterclass/ai-salesforce/"
       },
       "sum": {
         "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-10",
+        "requestPath": "/en/blog/ai-native-salesforce-delivery-process/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-10",
+        "requestPath": "/impressum/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "date": "2026-11-11",
+        "requestPath": "/blog/account-forecasting-absatzprognose-vertrieb/"
+      },
+      "sum": {
+        "visits": 40
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "date": "2026-11-11",
+        "requestPath": "/en/masterclass/ai-salesforce/"
+      },
+      "sum": {
+        "visits": 40
       }
     },
     {
@@ -1588,7 +1617,17 @@
       "count": 30,
       "dimensions": {
         "date": "2026-11-11",
-        "requestPath": "/blog/account-forecasting-absatzprognose-vertrieb/"
+        "requestPath": "/"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "date": "2026-11-11",
+        "requestPath": "/masterclass/b2b-commerce/"
       },
       "sum": {
         "visits": 30
@@ -1598,7 +1637,37 @@
       "count": 20,
       "dimensions": {
         "date": "2026-11-11",
-        "requestPath": "/en/masterclass/ai-salesforce/"
+        "requestPath": "/en/blog/salesforce-forward-deployed-engineer/"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "date": "2026-11-11",
+        "requestPath": "/leistungen/change-management/"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "date": "2026-11-11",
+        "requestPath": "/leistungen/salesforce-architektur/"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "date": "2026-11-11",
+        "requestPath": "/en/blog/"
       },
       "sum": {
         "visits": 20
@@ -1608,40 +1677,30 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-11",
-        "requestPath": "/en/blog/ai-native-salesforce-delivery-process/"
+        "requestPath": "/en/blog/manufacturing-cloud-global-rollout/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-11",
+        "requestPath": "/en/blog/agentforce-agent-api-dealer-apps/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-11",
+        "requestPath": "/en/masterclass/ai-salesforce/aiforce-and-system-integrators/"
       },
       "sum": {
         "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-11",
-        "requestPath": "/en/blog/account-forecasting-sales-volume-planning/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-11",
-        "requestPath": "/blog/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-11",
-        "requestPath": "/"
-      },
-      "sum": {
-        "visits": 10
       }
     },
     {
@@ -1658,7 +1717,47 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-11",
-        "requestPath": "/en/blog/"
+        "requestPath": "/en/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-11",
+        "requestPath": "/en/blog/account-forecasting-sales-volume-planning/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-11",
+        "requestPath": "/en/blog/ai-native-salesforce-delivery-process/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-11",
+        "requestPath": "/blog/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-12",
+        "requestPath": "/en/blog/salesforce-forward-deployed-engineer/"
       },
       "sum": {
         "visits": 10
@@ -1760,7 +1859,7 @@
       "count": 10,
       "dimensions": {
         "date": "2026-10-30",
-        "refererHost": "teams.public.onecdn.static.microsoft"
+        "refererHost": ""
       },
       "sum": {
         "visits": 10
@@ -1770,7 +1869,7 @@
       "count": 10,
       "dimensions": {
         "date": "2026-10-30",
-        "refererHost": ""
+        "refererHost": "teams.public.onecdn.static.microsoft"
       },
       "sum": {
         "visits": 10
@@ -2017,23 +2116,43 @@
       }
     },
     {
-      "count": 120,
+      "count": 290,
       "dimensions": {
         "date": "2026-11-11",
         "refererHost": ""
       },
       "sum": {
-        "visits": 120
+        "visits": 290
       }
     },
     {
-      "count": 20,
+      "count": 30,
       "dimensions": {
         "date": "2026-11-11",
         "refererHost": "www.fk-sd.de"
       },
       "sum": {
         "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-11",
+        "refererHost": "www.linkedin.com"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-12",
+        "refererHost": "com.linkedin.android"
+      },
+      "sum": {
+        "visits": 10
       }
     }
   ]

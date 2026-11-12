@@ -1,13 +1,13 @@
 [
  {
   "country": "DE",
-  "pageviews": 1040,
-  "visits": 140
+  "pageviews": 1050,
+  "visits": 150
  },
  {
   "country": "US",
-  "pageviews": 370,
-  "visits": 350
+  "pageviews": 520,
+  "visits": 500
  },
  {
   "country": "FR",
@@ -16,7 +16,12 @@
  },
  {
   "country": "IN",
-  "pageviews": 30,
+  "pageviews": 40,
+  "visits": 40
+ },
+ {
+  "country": "NL",
+  "pageviews": 40,
   "visits": 30
  },
  {
@@ -36,11 +41,6 @@
  },
  {
   "country": "CA",
-  "pageviews": 10,
-  "visits": 10
- },
- {
-  "country": "NL",
   "pageviews": 10,
   "visits": 10
  }

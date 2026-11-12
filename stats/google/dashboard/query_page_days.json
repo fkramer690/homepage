@@ -7801,6 +7801,14 @@
  },
  {
   "day": "2026-11-10",
+  "query": "outdated cpq",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-cpq-end-of-sale-status/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 62
+ },
+ {
+  "day": "2026-11-10",
   "query": "salesforce agentforce api",
   "page": "https://www.fk-sd.de/en/blog/agentforce-agent-api-dealer-apps/",
   "clicks": 0,
@@ -7830,6 +7838,14 @@
   "clicks": 0,
   "impressions": 1,
   "position": 56
+ },
+ {
+  "day": "2026-11-10",
+  "query": "service pro vs ptc servicemax",
+  "page": "https://www.fk-sd.de/blog/servicemax-oder-salesforce-field-service/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  },
  {
   "day": "2026-11-10",
@@ -7913,6 +7929,30 @@
  },
  {
   "day": "2026-11-11",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 5
+ },
+ {
+  "day": "2026-11-11",
+  "query": "change management salesforce projekt",
+  "page": "https://www.fk-sd.de/blog/change-management-prozess-salesforce/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
+ },
+ {
+  "day": "2026-11-11",
+  "query": "manufacturing cloud",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 34
+ },
+ {
+  "day": "2026-11-11",
   "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
   "page": "https://www.fk-sd.de/en/blog/agentforce-agent-api-dealer-apps/",
   "clicks": 0,
@@ -7926,5 +7966,117 @@
   "clicks": 0,
   "impressions": 1,
   "position": 5
+ },
+ {
+  "day": "2026-11-11",
+  "query": "can salesforce handle asset-heavy maintenance like maximo? in 2026",
+  "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "day": "2026-11-11",
+  "query": "field service mobile flow limitations",
+  "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-11",
+  "query": "field service shift planning",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 45
+ },
+ {
+  "day": "2026-11-11",
+  "query": "how to automate technician scheduling and dispatch?",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 30
+ },
+ {
+  "day": "2026-11-11",
+  "query": "key user training",
+  "page": "https://www.fk-sd.de/masterclass/change-management/key-user-und-schulung/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 66
+ },
+ {
+  "day": "2026-11-11",
+  "query": "kommunikationsplan",
+  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 97
+ },
+ {
+  "day": "2026-11-11",
+  "query": "kommunikationsplan vorlage",
+  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 30
+ },
+ {
+  "day": "2026-11-11",
+  "query": "manufacturing cloud vs service cloud",
+  "page": "https://www.fk-sd.de/en/blog/manufacturing-cloud-service-vs-service-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "day": "2026-11-11",
+  "query": "predictive maintenance salesforce",
+  "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 20
+ },
+ {
+  "day": "2026-11-11",
+  "query": "salesforce middleware",
+  "page": "https://www.fk-sd.de/en/services/salesforce-integration/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 26
+ },
+ {
+  "day": "2026-11-11",
+  "query": "salesforce zertifizierte experten",
+  "page": "https://www.fk-sd.de/certifications/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 47
+ },
+ {
+  "day": "2026-11-11",
+  "query": "sap order in mulesoft",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-sap-order-status-mulesoft/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 12
+ },
+ {
+  "day": "2026-11-11",
+  "query": "service pro vs ptc servicemax",
+  "page": "https://www.fk-sd.de/blog/servicemax-oder-salesforce-field-service/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-11",
+  "query": "what is the agent context engine in salesforce data 360?",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
  }
 ]

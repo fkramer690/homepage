@@ -8,8 +8,8 @@
  {
   "query": "how to automate technician scheduling and dispatch?",
   "clicks": 0,
-  "impressions": 44,
-  "position": 40.8
+  "impressions": 45,
+  "position": 40.5
  },
  {
   "query": "field engineer scheduling",
@@ -20,8 +20,8 @@
  {
   "query": "manufacturing cloud",
   "clicks": 0,
-  "impressions": 31,
-  "position": 50.3
+  "impressions": 33,
+  "position": 49.3
  },
  {
   "query": "b2b portal",
@@ -56,8 +56,8 @@
  {
   "query": "field service shift planning",
   "clicks": 0,
-  "impressions": 25,
-  "position": 77.1
+  "impressions": 26,
+  "position": 75.8
  },
  {
   "query": "cad vertriebsdaten",
@@ -124,6 +124,12 @@
   "clicks": 0,
   "impressions": 14,
   "position": 57.6
+ },
+ {
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "clicks": 0,
+  "impressions": 14,
+  "position": 6.1
  },
  {
   "query": "field service dispatch",
@@ -198,12 +204,6 @@
   "position": 71.4
  },
  {
-  "query": "what makes a salesforce devops platform enterprise-ready?",
-  "clicks": 0,
-  "impressions": 10,
-  "position": 6.5
- },
- {
   "query": "b2b checkout",
   "clicks": 0,
   "impressions": 9,
@@ -240,6 +240,12 @@
   "position": 25.9
  },
  {
+  "query": "change management salesforce projekt",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 16.1
+ },
+ {
   "query": "cpq revenue cloud integration",
   "clicks": 0,
   "impressions": 8,
@@ -262,6 +268,12 @@
   "clicks": 0,
   "impressions": 8,
   "position": 54.6
+ },
+ {
+  "query": "service pro vs ptc servicemax",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 8.6
  },
  {
   "query": "tourenplanung field service",
@@ -298,6 +310,12 @@
   "clicks": 0,
   "impressions": 7,
   "position": 63.3
+ },
+ {
+  "query": "kommunikationsplan",
+  "clicks": 0,
+  "impressions": 7,
+  "position": 91.4
  },
  {
   "query": "salesforce release management tools",
@@ -342,22 +360,10 @@
   "position": 32.3
  },
  {
-  "query": "change management salesforce projekt",
-  "clicks": 0,
-  "impressions": 6,
-  "position": 18.2
- },
- {
   "query": "fertigung salesforce",
   "clicks": 0,
   "impressions": 6,
   "position": 17.8
- },
- {
-  "query": "kommunikationsplan",
-  "clicks": 0,
-  "impressions": 6,
-  "position": 90.5
  },
  {
   "query": "kundeportal b2b",
@@ -394,12 +400,6 @@
   "clicks": 0,
   "impressions": 6,
   "position": 89.3
- },
- {
-  "query": "service pro vs ptc servicemax",
-  "clicks": 0,
-  "impressions": 6,
-  "position": 8.2
  },
  {
   "query": "wechsel von cpq zu revenue cloud",
@@ -534,6 +534,18 @@
   "position": 79.3
  },
  {
+  "query": "key user training",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 62.3
+ },
+ {
+  "query": "manufacturing cloud vs service cloud",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 4.3
+ },
+ {
   "query": "manufacturing customer portal",
   "clicks": 0,
   "impressions": 4,
@@ -544,6 +556,12 @@
   "clicks": 0,
   "impressions": 4,
   "position": 69.5
+ },
+ {
+  "query": "predictive maintenance salesforce",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 14
  },
  {
   "query": "recurring field service coverage",
@@ -696,6 +714,12 @@
   "position": 88
  },
  {
+  "query": "field service mobile flow limitations",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 4.3
+ },
+ {
   "query": "field service scheduling system",
   "clicks": 0,
   "impressions": 3,
@@ -714,22 +738,10 @@
   "position": 8
  },
  {
-  "query": "key user training",
+  "query": "kommunikationsplan vorlage",
   "clicks": 0,
   "impressions": 3,
-  "position": 61
- },
- {
-  "query": "manufacturing cloud vs service cloud",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 4.7
- },
- {
-  "query": "predictive maintenance salesforce",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 12
+  "position": 30
  },
  {
   "query": "replace drs scheduling",
@@ -772,6 +784,12 @@
   "clicks": 0,
   "impressions": 3,
   "position": 17.3
+ },
+ {
+  "query": "sap order in mulesoft",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 11.3
  },
  {
   "query": "servicemax integration with salesforce",
@@ -954,12 +972,6 @@
   "position": 93.5
  },
  {
-  "query": "field service mobile flow limitations",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4.5
- },
- {
   "query": "field service mobile forms",
   "clicks": 0,
   "impressions": 2,
@@ -1000,12 +1012,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 52.5
- },
- {
-  "query": "kommunikationsplan vorlage",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 30
  },
  {
   "query": "manufacturing cloud implementeren",
@@ -1068,6 +1074,12 @@
   "position": 80.5
  },
  {
+  "query": "salesforce middleware",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 54
+ },
+ {
   "query": "salesforce mit erp integrieren lassen",
   "clicks": 0,
   "impressions": 2,
@@ -1090,12 +1102,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 78
- },
- {
-  "query": "sap order in mulesoft",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 11
  },
  {
   "query": "servicemax",
@@ -1306,6 +1312,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 8
+ },
+ {
+  "query": "can salesforce handle asset-heavy maintenance like maximo? in 2026",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
  },
  {
   "query": "casey help agent",
@@ -1704,6 +1716,12 @@
   "position": 36
  },
  {
+  "query": "outdated cpq",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 62
+ },
+ {
   "query": "permissionset",
   "clicks": 0,
   "impressions": 1,
@@ -1896,12 +1914,6 @@
   "position": 25
  },
  {
-  "query": "salesforce middleware",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 82
- },
- {
   "query": "salesforce partner revenue cloud",
   "clicks": 0,
   "impressions": 1,
@@ -1966,6 +1978,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 10
+ },
+ {
+  "query": "salesforce zertifizierte experten",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 47
  },
  {
   "query": "sfdx deploy to sandbox",
@@ -2122,6 +2140,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 6
+ },
+ {
+  "query": "what is the agent context engine in salesforce data 360?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
  },
  {
   "query": "what llms does agentforce use and can enterprises bring their own model?",

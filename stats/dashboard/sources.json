@@ -1,13 +1,13 @@
 [
  {
   "source": "www.fk-sd.de",
-  "pageviews": 910,
+  "pageviews": 920,
   "visits": 0
  },
  {
   "source": "Direct",
-  "pageviews": 560,
-  "visits": 560
+  "pageviews": 730,
+  "visits": 730
  },
  {
   "source": "fkramer690.github.io",
@@ -21,12 +21,12 @@
  },
  {
   "source": "www.linkedin.com",
-  "pageviews": 10,
-  "visits": 10
+  "pageviews": 20,
+  "visits": 20
  },
  {
   "source": "com.linkedin.android",
-  "pageviews": 10,
-  "visits": 10
+  "pageviews": 20,
+  "visits": 20
  }
 ]

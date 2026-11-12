@@ -5790,6 +5790,13 @@
  },
  {
   "day": "2026-11-10",
+  "query": "outdated cpq",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 62
+ },
+ {
+  "day": "2026-11-10",
   "query": "salesforce agentforce api",
   "clicks": 0,
   "impressions": 1,
@@ -5815,6 +5822,13 @@
   "clicks": 0,
   "impressions": 1,
   "position": 56
+ },
+ {
+  "day": "2026-11-10",
+  "query": "service pro vs ptc servicemax",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  },
  {
   "day": "2026-11-10",
@@ -5853,6 +5867,27 @@
  },
  {
   "day": "2026-11-11",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 5
+ },
+ {
+  "day": "2026-11-11",
+  "query": "change management salesforce projekt",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
+ },
+ {
+  "day": "2026-11-11",
+  "query": "manufacturing cloud",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 34
+ },
+ {
+  "day": "2026-11-11",
   "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
   "clicks": 0,
   "impressions": 1,
@@ -5864,5 +5899,103 @@
   "clicks": 0,
   "impressions": 1,
   "position": 5
+ },
+ {
+  "day": "2026-11-11",
+  "query": "can salesforce handle asset-heavy maintenance like maximo? in 2026",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "day": "2026-11-11",
+  "query": "field service mobile flow limitations",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-11",
+  "query": "field service shift planning",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 45
+ },
+ {
+  "day": "2026-11-11",
+  "query": "how to automate technician scheduling and dispatch?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 30
+ },
+ {
+  "day": "2026-11-11",
+  "query": "key user training",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 66
+ },
+ {
+  "day": "2026-11-11",
+  "query": "kommunikationsplan",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 97
+ },
+ {
+  "day": "2026-11-11",
+  "query": "kommunikationsplan vorlage",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 30
+ },
+ {
+  "day": "2026-11-11",
+  "query": "manufacturing cloud vs service cloud",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "day": "2026-11-11",
+  "query": "predictive maintenance salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 20
+ },
+ {
+  "day": "2026-11-11",
+  "query": "salesforce middleware",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 26
+ },
+ {
+  "day": "2026-11-11",
+  "query": "salesforce zertifizierte experten",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 47
+ },
+ {
+  "day": "2026-11-11",
+  "query": "sap order in mulesoft",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 12
+ },
+ {
+  "day": "2026-11-11",
+  "query": "service pro vs ptc servicemax",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-11",
+  "query": "what is the agent context engine in salesforce data 360?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
  }
 ]
