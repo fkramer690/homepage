@@ -50,7 +50,7 @@ Für Wartungsverträge ist die Abrechnung im Voraus üblich. Der Ausschluss von 
 
 Rechnungen werden über Invoice Scheduler erstellt. Laut der [Trailhead-Einheit zu Rechnungen](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/generate-invoices) hat ein Scheduler ein Start- und Enddatum, eine Laufhäufigkeit, eine Option zum Buchen und einen Billing Batch, und er verarbeitet alle Schedules mit dem Status "Ready for Invoicing". Für große Läufe wird die Data Processing Engine genutzt. Tax Policies und Tax Treatments legen die Steuer-Engine fest, entweder die Revenue Standard Tax Engine von Salesforce oder eine externe über einen Adapter. Rechtseinheiten (Legal Entities) trennen Steuern und Buchungsperioden je Gesellschaft. Das ist wichtig für Hersteller mit Vertriebsgesellschaften in mehreren Ländern.
 
-Ein Punkt für deutsche Kunden: Ab dem 1. Januar 2027 müssen Unternehmen mit mehr als 800.000 Euro Vorjahresumsatz im inländischen B2B-Geschäft E-Rechnungen ausstellen, ab 2028 alle, so die [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094). Eine Wartungsrechnung je Quartal an einen deutschen Geschäftskunden gehört in der Regel dazu; prüfen Sie die Ausnahmen. Was das für Revenue Cloud heißt, steht im Beitrag zur [E-Rechnung ab 2027](../e-rechnung-pflicht-2027-revenue-cloud/).
+Ein Punkt für deutsche Kunden: Ab dem 1. Januar 2027 müssen Unternehmen mit mehr als 800.000 Euro Vorjahresumsatz im inländischen B2B-Geschäft E-Rechnungen ausstellen, ab 2028 alle, so die [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094). Eine Wartungsrechnung je Quartal an einen deutschen Geschäftskunden gehört in der Regel dazu; prüfen Sie die Ausnahmen. Was das für Revenue Cloud heißt, steht im Beitrag zur [E-Rechnung ab 2027](/blog/e-rechnung-pflicht-2027-revenue-cloud/).
 
 ## Jede Änderung läuft über Angebot und Auftrag
 
@@ -64,9 +64,9 @@ Ein Serviceleiter, der am Telefon eine Maschine in den Vertrag aufnimmt, ändert
 
 ## Was braucht Field Service aus dem Vertrag?
 
-Field Service arbeitet mit eigenen Objekten. Wie ich in [Wartungsverträge in Field Service abbilden](../salesforce-field-service-wartungsvertraege/) beschreibe, hält der Servicevertrag fest, was verkauft wurde, Vertragspositionen nennen die abgedeckten Assets, der Wartungsplan erzeugt die geplanten Einsätze, und das Entitlement überwacht mit Entitlement-Prozess und Meilensteinen die zugesagte Reaktionszeit.
+Field Service arbeitet mit eigenen Objekten. Wie ich in [Wartungsverträge in Field Service abbilden](/blog/salesforce-field-service-wartungsvertraege/) beschreibe, hält der Servicevertrag fest, was verkauft wurde, Vertragspositionen nennen die abgedeckten Assets, der Wartungsplan erzeugt die geplanten Einsätze, und das Entitlement überwacht mit Entitlement-Prozess und Meilensteinen die zugesagte Reaktionszeit.
 
-Beide Clouds nutzen das Objekt Asset, aber für verschiedene Dinge. Das Asset in Revenue Cloud ist das verkaufte Abo mit Menge, Preis und Laufzeit. Das Asset in Field Service ist die physische Maschine mit Seriennummer, Standort und Historie. Ich würde beide als getrennte Datensätze führen und nicht versuchen, das Abo zusätzlich am Maschinen-Asset abzubilden. Wie die beiden Sichten auf Assets zusammenpassen, steht in [Assets, Nachträge und Verlängerungen](../revenue-cloud-assets-nachtraege-verlaengerungen/).
+Beide Clouds nutzen das Objekt Asset, aber für verschiedene Dinge. Das Asset in Revenue Cloud ist das verkaufte Abo mit Menge, Preis und Laufzeit. Das Asset in Field Service ist die physische Maschine mit Seriennummer, Standort und Historie. Ich würde beide als getrennte Datensätze führen und nicht versuchen, das Abo zusätzlich am Maschinen-Asset abzubilden. Wie die beiden Sichten auf Assets zusammenpassen, steht in [Assets, Nachträge und Verlängerungen](/blog/revenue-cloud-assets-nachtraege-verlaengerungen/).
 
 Eine dokumentierte Standardverbindung zwischen einem Abo in Revenue Cloud und dem Servicevertrag in Field Service habe ich nicht gefunden. Planen Sie dafür also eine eigene Automatisierung: Bei Aktivierung des Auftrags legt ein Flow den Servicevertrag an oder ändert ihn, nimmt die abgedeckten Maschinen als Vertragspositionen auf und vergibt das Entitlement für das verkaufte Servicelevel. Änderungen und Kündigungen folgen demselben Weg.
 
@@ -80,7 +80,7 @@ Billing Schedules --Invoice Scheduler--> Rechnung
 Auftrag --Flow--> Servicevertrag
 ```
 
-Die Seite von Field Service, einschließlich Wartungsplänen nach Kalender oder Betriebsstunden, steht im [Kapitel zu Assets und Wartung](../../masterclass/field-service/field-service-assets-wartung-teile/).
+Die Seite von Field Service, einschließlich Wartungsplänen nach Kalender oder Betriebsstunden, steht im [Kapitel zu Assets und Wartung](/masterclass/field-service/field-service-assets-wartung-teile/).
 
 ## Welcher Datensatz beantwortet, was verkauft wurde?
 
@@ -90,7 +90,7 @@ Ein Datensatz muss für den kaufmännischen Vertrag führend sein, sonst arbeite
 - **Servicevertrag in Field Service:** welche Maschinen abgedeckt sind und welches Servicelevel gilt. Wird aus dem Asset in Revenue Cloud angelegt und geändert, bei kaufmännischen Änderungen nie von Hand.
 - **Maschinen-Asset:** Seriennummer, Standort, installierte Basis. Gehört dem Service und stammt meist aus dem ERP.
 
-Legen Sie das für jedes Objekt fest, wie in einer [Object Ownership Matrix](../object-ownership-matrix-salesforce/). Die Schwachstelle liegt beim dritten Fall: Eine Maschine wird im Vertrag getauscht, der Service ersetzt das Asset in der Vertragsposition, und niemand prüft, ob sich der Preis ändert.
+Legen Sie das für jedes Objekt fest, wie in einer [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/). Die Schwachstelle liegt beim dritten Fall: Eine Maschine wird im Vertrag getauscht, der Service ersetzt das Asset in der Vertragsposition, und niemand prüft, ob sich der Preis ändert.
 
 ## Rechenbeispiel: 800 Maschinen in drei Wartungsstufen
 
@@ -102,4 +102,4 @@ Zu den Billing Events: Summieren sich die Verträge auf 2,4 Millionen US-Dollar 
 
 ## Den Anteil der Wartung am Umsatz prüfen
 
-Revenue Cloud Billing lohnt sich, wenn Wartungs- und Serviceverträge oft in Salesforce verkauft und geändert werden und einen wesentlichen Anteil am Umsatz haben. Fakturiert SAP Maschinen und Ersatzteile und ist Wartung ein kleiner Zusatz, würde ich die Rechnungsstellung in SAP belassen und Revenue Cloud für Angebot, Auftrag und Asset nutzen. Die Abwägung steht in [Revenue Cloud Billing oder SAP](../revenue-cloud-billing-oder-sap-rechnung/). Nutzungsbasierte Verträge folgen derselben Logik und werden in [Pay-per-Use für Maschinen](../pay-per-use-maschinen-revenue-cloud/) behandelt. Das Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) fasst diese Beiträge zusammen.
+Revenue Cloud Billing lohnt sich, wenn Wartungs- und Serviceverträge oft in Salesforce verkauft und geändert werden und einen wesentlichen Anteil am Umsatz haben. Fakturiert SAP Maschinen und Ersatzteile und ist Wartung ein kleiner Zusatz, würde ich die Rechnungsstellung in SAP belassen und Revenue Cloud für Angebot, Auftrag und Asset nutzen. Die Abwägung steht in [Revenue Cloud Billing oder SAP](/blog/revenue-cloud-billing-oder-sap-rechnung/). Nutzungsbasierte Verträge folgen derselben Logik und werden in [Pay-per-Use für Maschinen](/blog/pay-per-use-maschinen-revenue-cloud/) behandelt. Das Kapitel [Abrechnung und nutzungsbasierte Preise](/masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) fasst diese Beiträge zusammen.

@@ -56,7 +56,7 @@ Die Berechnung berücksichtigt nur die Umsätze, die im Transaction Journal steh
 | Belege der Partner | Partner laden Rechnungen oder Nachweise als CSV über Experience Cloud hoch | der Bonus am Abverkauf des Händlers hängt |
 | Externe Systeme | Schnittstelle, Bulk API oder Data Loader, zum Beispiel aus dem ERP | Rechnungen im ERP liegen |
 
-Bei den meisten Herstellern wird es der dritte Weg sein, weil die Rechnungen im ERP entstehen. Damit steht wieder dieselbe Frage im Raum wie bei Sales Agreements in [Teil 3](../sales-agreements-abnahmemengen-erp/): Welche Daten liefert das ERP, auf welcher Ebene und wie oft?
+Bei den meisten Herstellern wird es der dritte Weg sein, weil die Rechnungen im ERP entstehen. Damit steht wieder dieselbe Frage im Raum wie bei Sales Agreements in [Teil 3](/blog/sales-agreements-abnahmemengen-erp/): Welche Daten liefert das ERP, auf welcher Ebene und wie oft?
 
 Der zweite Weg ist für einen bestimmten Programmtyp interessant. Hängt der Bonus vom Abverkauf des Händlers an seine Kunden ab, kennt nur der Händler die Zahlen. Dann lädt er sie selbst hoch, und der Hersteller braucht eine Prüfung, bevor daraus eine Auszahlung wird.
 
@@ -91,13 +91,13 @@ Berechnung --> Freigabe
 Freigabe --Beträge--> Auszahlung
 ```
 
-Die Rückstellungen verdienen einen eigenen Termin mit der Finanzabteilung. Wer einen Jahresbonus monatlich zurückstellt, braucht jeden Monat eine Zahl. Stammt sie aus Salesforce, muss sie pünktlich zum Monatsabschluss im ERP sein. Wie ich führende Systeme pro Datenart festlege, beschreibe ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/).
+Die Rückstellungen verdienen einen eigenen Termin mit der Finanzabteilung. Wer einen Jahresbonus monatlich zurückstellt, braucht jeden Monat eine Zahl. Stammt sie aus Salesforce, muss sie pünktlich zum Monatsabschluss im ERP sein. Wie ich führende Systeme pro Datenart festlege, beschreibe ich unter [Integration mit ERP, Middleware und Telefonie](/leistungen/salesforce-schnittstellen/).
 
 ## Händler können ihre Beträge im Portal sehen
 
 Das ist optional. Laut Hilfe können Partner ihre Auszahlungen über Experience Cloud sehen. Für Händler, die heute per E-Mail nach ihrem Stand fragen, ist das der sichtbarste Nutzen.
 
-In der Übersicht der Portallizenzen, die ich in [Teil 7: Kundenportal in der Manufacturing Cloud](../manufacturing-cloud-kundenportal/) beschreibe, führt Salesforce Bonusansprüche bei der Lizenz Partner Community for Manufacturing auf. Wer Händlern Boni im Portal zeigen will, plant also Partnerlizenzen ein, nicht die günstigere Kundenlizenz.
+In der Übersicht der Portallizenzen, die ich in [Teil 7: Kundenportal in der Manufacturing Cloud](/blog/manufacturing-cloud-kundenportal/) beschreibe, führt Salesforce Bonusansprüche bei der Lizenz Partner Community for Manufacturing auf. Wer Händlern Boni im Portal zeigen will, plant also Partnerlizenzen ein, nicht die günstigere Kundenlizenz.
 
 ```hinweis achtung
 Ein Händler, der seinen Zwischenstand sieht, richtet sein Verhalten danach aus. Sind dort Retouren nicht berücksichtigt oder sind die Zahlen eine Woche alt, führt das am Ende des Zeitraums zu Konflikten. Ich würde den Zwischenstand erst freischalten, wenn die Berechnung ein paar Zeiträume lang intern gestimmt hat.
@@ -116,7 +116,7 @@ Die Regel daraus gilt hier genauso: Eine Funktion wird gekauft, wenn sie zum Ges
 - **Fehler in der Tabelle.** Die Berechnung ist heute aufwendig, fehleranfällig oder hängt von einer einzelnen Person ab.
 - **Händler fragen nach.** Der Innendienst beantwortet regelmäßig Anfragen zum Bonusstand.
 
-Zurückhaltend wäre ich bei einem einfachen Jahresbonus für wenige Kunden. Den können viele ERP-Systeme über Konditionen abrechnen, ohne eine zweite Logik in Salesforce abzubilden. Boni belohnen Menge; Preisansprüche von Distributoren sind ein anderer Prozess, siehe [Ship and Debit](../ship-and-debit-preisschutz-haendler/). Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
+Zurückhaltend wäre ich bei einem einfachen Jahresbonus für wenige Kunden. Den können viele ERP-Systeme über Konditionen abrechnen, ohne eine zweite Logik in Salesforce abzubilden. Boni belohnen Menge; Preisansprüche von Distributoren sind ein anderer Prozess, siehe [Ship and Debit](/blog/ship-and-debit-preisschutz-haendler/). Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](/blog/manufacturing-cloud-wann-lohnt-sie-sich/).
 
 ## Jede Formel der heutigen Bonustabelle als Regel aufschreiben
 

@@ -82,7 +82,7 @@ The matrix should stay small enough that anyone can read it in two minutes. I re
 3. **Automation entry point**, meaning whether the object is automated through Flow or an Apex trigger framework.
 4. **Streams that use it**, so the owner knows who a change affects.
 
-The hard part is shared objects like Account, Contact or Product. I assign exactly one owner to them as well. The other streams submit their requirements to that owner, who incorporates them into the agreed automation, for example several ordered flows or one trigger with a handler framework. That is slower than each team building its own solution. In my experience it is what keeps the object maintainable two years from now. For a B2B store, the order needs the same clarity across Salesforce and the ERP. See [chapter 4 of the B2B Commerce masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/).
+The hard part is shared objects like Account, Contact or Product. I assign exactly one owner to them as well. The other streams submit their requirements to that owner, who incorporates them into the agreed automation, for example several ordered flows or one trigger with a handler framework. That is slower than each team building its own solution. In my experience it is what keeps the object maintainable two years from now. For a B2B store, the order needs the same clarity across Salesforce and the ERP. See [chapter 4 of the B2B Commerce masterclass](/en/masterclass/b2b-commerce/erp-integration-stock-orders/).
 
 What does not belong in the matrix: detailed rules for naming, tests or code style. Those live in the development standards. The matrix answers one main question: who decides.
 
@@ -90,16 +90,16 @@ What does not belong in the matrix: detailed rules for naming, tests or code sty
 
 A table in the wiki changes nothing on its own. The matrix only works once it is checked as part of the daily workflow.
 
-- **In the pull request review.** If a change touches another stream's object, the reviewer asks whether the owner agreed. How such reviews work is described in [why pull request reviews are a must in enterprise projects](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+- **In the pull request review.** If a change touches another stream's object, the reviewer asks whether the owner agreed. How such reviews work is described in [why pull request reviews are a must in enterprise projects](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 - **Technically in the repository.** Once the metadata lives in Git and changes to these objects only reach the org through the pipeline, parts of the matrix can be enforced technically, on GitHub for example with a CODEOWNERS file. Direct changes in the org bypass it, so emergency fixes need their own path back into the repository.
-- **In the center of excellence.** These are regular calls where streams present upcoming changes to shared objects, with enough lead time for everyone else. How to set one up is described in [Salesforce Center of Excellence: format and cadence](../salesforce-center-of-excellence-cadence/).
+- **In the center of excellence.** These are regular calls where streams present upcoming changes to shared objects, with enough lead time for everyone else. How to set one up is described in [Salesforce Center of Excellence: format and cadence](/en/blog/salesforce-center-of-excellence-cadence/).
 
 ```vertiefung For developers
 title: How does CODEOWNERS map the matrix?
 A [CODEOWNERS file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) assigns paths to a team, for example an object's folder. Layouts, Lightning pages, flows and triggers sit in other folders, so they need their own patterns and a naming convention. If a pull request changes those files, the team is automatically requested as a reviewer. Its approval becomes mandatory only with "Require review from Code Owners" in branch protection. The team also needs write access, and the CODEOWNERS file itself needs an owner.
 ```
 
-The matrix belongs to the client, not to a partner. If a partner decides who owns which object, it also decides what its competitors may build. The same applies to the repository and the pipeline, as described in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
+The matrix belongs to the client, not to a partner. If a partner decides who owns which object, it also decides what its competitors may build. The same applies to the repository and the pipeline, as described in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/).
 
 ## List the 15 to 20 most important objects
 
@@ -111,4 +111,4 @@ A first matrix is ready sooner than most people expect:
 4. **Ask about it in every review**, from day one.
 5. **Settle edge cases in the center of excellence** and update the matrix.
 
-In my experience the first version is never complete, and it does not need to be. You start with 80 percent, and the reviews deliver the rest. You can find more on how I steer programs with several partners on the [partner governance](../../services/partner-governance/) page.
+In my experience the first version is never complete, and it does not need to be. You start with 80 percent, and the reviews deliver the rest. You can find more on how I steer programs with several partners on the [partner governance](/en/services/partner-governance/) page.

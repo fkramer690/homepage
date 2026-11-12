@@ -48,21 +48,21 @@ Ein Work Type ist eine Vorlage für eine Einsatzart, etwa Jahreswartung, Störun
 
 Die wichtigste Einstellung heißt Auto-Create Service Appointment. Ist sie gesetzt, entsteht laut Trailhead bei jedem Arbeitsauftrag mit diesem Work Type ein Servicetermin. Der Termin übernimmt Dauer und Datumseinstellungen aus dem Work Type. Ohne diese Option muss der Termin von einem Nutzer oder durch eine andere Automatisierung wie einen Flow angelegt werden, und genau dieser Schritt wird vergessen.
 
-Saubere Work Types gehören zu den Stammdaten, die die Planung braucht. Welche das sind und welches System führend ist, steht in [Salesforce Field Service: Welche Daten braucht die Planung?](../salesforce-field-service-stammdaten/).
+Saubere Work Types gehören zu den Stammdaten, die die Planung braucht. Welche das sind und welches System führend ist, steht in [Salesforce Field Service: Welche Daten braucht die Planung?](/blog/salesforce-field-service-stammdaten/).
 
 ## Braucht jeder Case einen Techniker?
 
 Nein, und hier wird im Service das meiste Geld gespart oder verloren. Bevor ein Arbeitsauftrag entsteht, sollte die Hotline zwei Fragen beantworten.
 
-**Worauf hat der Kunde Anspruch?** Der Anspruch (Entitlement) am Asset oder Servicevertrag sagt, welche Reaktionszeit gilt und was abgedeckt ist. Salesforce misst Reaktionszeiten mit Entitlement-Prozessen und Meilensteinen. Ein Detail aus der [Trailhead-Einheit zu Ansprüchen auf Arbeitsaufträgen](https://trailhead.salesforce.com/content/learn/modules/entitlement-management-for-lightning-experience/use-entitlements-with-work-orders): Entitlement-Prozesse laufen nur auf Datensätzen ihres Typs, Cases und Arbeitsaufträge brauchen also getrennte Prozesse. Wie Servicevertrag, Wartungsplan und Anspruch zusammenhängen, steht in [Field Service: Wartungsverträge abbilden](../salesforce-field-service-wartungsvertraege/).
+**Worauf hat der Kunde Anspruch?** Der Anspruch (Entitlement) am Asset oder Servicevertrag sagt, welche Reaktionszeit gilt und was abgedeckt ist. Salesforce misst Reaktionszeiten mit Entitlement-Prozessen und Meilensteinen. Ein Detail aus der [Trailhead-Einheit zu Ansprüchen auf Arbeitsaufträgen](https://trailhead.salesforce.com/content/learn/modules/entitlement-management-for-lightning-experience/use-entitlements-with-work-orders): Entitlement-Prozesse laufen nur auf Datensätzen ihres Typs, Cases und Arbeitsaufträge brauchen also getrennte Prozesse. Wie Servicevertrag, Wartungsplan und Anspruch zusammenhängen, steht in [Field Service: Wartungsverträge abbilden](/blog/salesforce-field-service-wartungsvertraege/).
 
 **Was löst das Problem?** Ich empfehle eine kurze Triage-Checkliste, die Anrufe in drei Ergebnisse sortiert:
 
-- **Fernhilfe.** Es geht um einen Bedienfehler, einen Parameter oder einen Reset. Der Case wird ohne Arbeitsauftrag geschlossen. Mit [Visual Remote Assistance](../visual-remote-assistant-fernhilfe-statt-einsatz/) sieht der Mitarbeiter die Maschine über die Handykamera des Kunden, statt nach einer Beschreibung zu raten.
+- **Fernhilfe.** Es geht um einen Bedienfehler, einen Parameter oder einen Reset. Der Case wird ohne Arbeitsauftrag geschlossen. Mit [Visual Remote Assistance](/blog/visual-remote-assistant-fernhilfe-statt-einsatz/) sieht der Mitarbeiter die Maschine über die Handykamera des Kunden, statt nach einer Beschreibung zu raten.
 - **Teileversand.** Der Fehler ist klar, und das Personal des Kunden kann das Teil tauschen. Der Auftrag wird ins ERP übertragen, der Case bleibt bis zur Bestätigung offen.
 - **Technikereinsatz.** Erst dann entsteht ein Arbeitsauftrag.
 
-An einer Störungshotline kann ein Sprachagent die Aufnahme des Falls und die Triage übernehmen. Wo er an seine Grenzen stößt und an einen Menschen übergeben sollte, steht in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/). Welche Funktionen Service Cloud für die Mitarbeitenden in der Konsole ergänzt, beschreibt [Casey und der Service Rep Assistant](../service-cloud-casey-und-service-rep-assistant/).
+An einer Störungshotline kann ein Sprachagent die Aufnahme des Falls und die Triage übernehmen. Wo er an seine Grenzen stößt und an einen Menschen übergeben sollte, steht in [Störungshotline mit Agentforce Voice](/blog/stoerungshotline-agentforce-voice-deutsch/). Welche Funktionen Service Cloud für die Mitarbeitenden in der Konsole ergänzt, beschreibt [Casey und der Service Rep Assistant](/blog/service-cloud-casey-und-service-rep-assistant/).
 
 ## Wer legt welchen Datensatz an?
 
@@ -85,7 +85,7 @@ Die Folge: Nutzen geplante und ungeplante Arbeit dieselben Gebiete und Techniker
 Laut [Field-Service-Preisseite](https://www.salesforce.com/de/products/field-service/pricing) dürfen Dispatcher- und Technician-Lizenzen nicht für Contact Center, Call Center oder Case Management genutzt werden. Die Fußnote erlaubt es für Field Service and Operations Plus, einen Namen, den die aktuelle Preistabelle nicht mehr nutzt. Wer Cases bearbeitet, braucht Service Cloud oder eine Field-Service+-Edition.
 ```
 
-In der Praxis trifft das kleine Serviceteams, in denen der Disponent auch die Anrufe der Hotline annimmt. Eine Dispatcher-Lizenz für 175 € deckt allein kein Case Management ab; laut deutscher Preisliste passt Field Service Plus für 230 €. Die US-Preisseite wurde am 5. November 2026 umgestellt und nennt dafür Field Service+ Core (250 $). Ich würde im Angebot klären, welches Modell für Ihren Vertrag gilt und ob es das Recht zum Case Management enthält. Die vollständige Rollenmatrix steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/).
+In der Praxis trifft das kleine Serviceteams, in denen der Disponent auch die Anrufe der Hotline annimmt. Eine Dispatcher-Lizenz für 175 € deckt allein kein Case Management ab; laut deutscher Preisliste passt Field Service Plus für 230 €. Die US-Preisseite wurde am 5. November 2026 umgestellt und nennt dafür Field Service+ Core (250 $). Ich würde im Angebot klären, welches Modell für Ihren Vertrag gilt und ob es das Recht zum Case Management enthält. Die vollständige Rollenmatrix steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](/blog/field-service-lizenzen-rollen-dispatcher-techniker/).
 
 ## Rechenbeispiel: der Anruf "Maschine steht"
 
@@ -110,4 +110,4 @@ Bei den Schritten 3 und 4 zahlt sich das Datenmodell aus. Ohne Work Type muss di
 
 ## Die drei häufigsten Anrufarten aufzeichnen
 
-Zeichnen Sie den Weg für Ihre drei häufigsten Anrufarten auf, vom ersten Anruf bis zum geschlossenen Arbeitsauftrag, und schreiben Sie dazu, wer welchen Datensatz anlegt. Diese Zeichnung beantwortet die Lizenzfrage und zeigt, welche Work Types Sie brauchen. Wie das in den Business Case passt, steht in [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/).
+Zeichnen Sie den Weg für Ihre drei häufigsten Anrufarten auf, vom ersten Anruf bis zum geschlossenen Arbeitsauftrag, und schreiben Sie dazu, wer welchen Datensatz anlegt. Diese Zeichnung beantwortet die Lizenzfrage und zeigt, welche Work Types Sie brauchen. Wie das in den Business Case passt, steht in [Kapitel 1 der Masterclass Field Service](/masterclass/field-service/field-service-lohnt-sich-lizenzen/).

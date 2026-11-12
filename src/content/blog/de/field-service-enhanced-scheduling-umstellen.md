@@ -31,7 +31,7 @@ Eine bestehende Field-Service-Org sollte auf Enhanced Scheduling and Optimizatio
 
 ## Was ist Enhanced Scheduling and Optimization?
 
-Enhanced Scheduling and Optimization, kurz ESO, ist die neuere Engine hinter der Terminplanung in Salesforce Field Service. Sie macht dieselbe Arbeit wie die ältere Engine: Sie liest die Scheduling Policy, filtert mit Work Rules ungeeignete Techniker heraus, bewertet die übrigen mit Service Objectives und bucht einen Termin. Wie diese Entscheidung abläuft, beschreibe ich in [wie viel Terminplanung im Field Service automatisch laufen sollte](../salesforce-field-service-terminplanung-automatisieren/).
+Enhanced Scheduling and Optimization, kurz ESO, ist die neuere Engine hinter der Terminplanung in Salesforce Field Service. Sie macht dieselbe Arbeit wie die ältere Engine: Sie liest die Scheduling Policy, filtert mit Work Rules ungeeignete Techniker heraus, bewertet die übrigen mit Service Objectives und bucht einen Termin. Wie diese Entscheidung abläuft, beschreibe ich in [wie viel Terminplanung im Field Service automatisch laufen sollte](/blog/salesforce-field-service-terminplanung-automatisieren/).
 
 Die [Release Notes zu Summer '23](https://resources.docs.salesforce.com/244/latest/en-us/sfdc/pdf/salesforce_summer23_release_notes.pdf) beschreiben die neue Engine als standardmäßig verfügbar für neue Nutzer. Der aktuelle [Field-Service-Leitfaden](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/support_field_service.pdf) sagt es deutlich: In neuen Orgs ist Enhanced Scheduling and Optimization für alle Servicegebiete aktiviert, bestehende Orgs können alle Gebiete umstellen oder die Engine pro Gebiet aktivieren.
 
@@ -73,7 +73,7 @@ titel: Welche Work Rules verhalten sich anders?
 - **In-Day-Optimierung** hat eine andere Laufzeit.
 ```
 
-Die meisten Punkte haben eines gemeinsam: leere Felder. Ein Termin ohne Servicegebiet, eine Ressource ohne Wert in einem Checkbox-Feld, ein Arbeitsauftrag mit fehlendem Vergleichsfeld. Bei der älteren Engine waren solche Lücken vielleicht zufällig harmlos. Bei der neuen führen sie zu anderen Kandidaten. Deshalb ist der Wechsel zuerst ein Datenthema, und deshalb würde ich mit den Prüfungen aus [welche Daten die Terminplanung im Field Service braucht](../salesforce-field-service-stammdaten/) beginnen.
+Die meisten Punkte haben eines gemeinsam: leere Felder. Ein Termin ohne Servicegebiet, eine Ressource ohne Wert in einem Checkbox-Feld, ein Arbeitsauftrag mit fehlendem Vergleichsfeld. Bei der älteren Engine waren solche Lücken vielleicht zufällig harmlos. Bei der neuen führen sie zu anderen Kandidaten. Deshalb ist der Wechsel zuerst ein Datenthema, und deshalb würde ich mit den Prüfungen aus [welche Daten die Terminplanung im Field Service braucht](/blog/salesforce-field-service-stammdaten/) beginnen.
 
 Eine Änderung hilft Herstellern unmittelbar. Die ältere Engine konnte Termine, die gegen eine Regel verstoßen, nicht optimieren. Mit der neuen Engine kann die Optimierung für solche Termine einen vertretbaren Zeitpunkt finden oder die Termine aus dem Plan nehmen.
 
@@ -81,7 +81,7 @@ Eine Änderung hilft Herstellern unmittelbar. Die ältere Engine konnte Termine,
 
 Salesforce hat inzwischen zwei Oberflächen für Disponenten: die Classic Dispatch Console mit dem bekannten Gantt und die neue Scheduling Console. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-quick-look/didispatch-smarter-with-the-scheduling-console) ist die Scheduling Console nur mit Enhanced Scheduling and Optimization verfügbar.
 
-Damit sind zwei scheinbar getrennte Entscheidungen verknüpft, allerdings nur in eine Richtung. Eine Org, die bei der älteren Engine bleibt, bleibt auch bei der Classic Dispatch Console; eine Org mit der neuen Engine kann die Classic Dispatch Console im Übergang weiter nutzen. Neue Funktionen der Konsole, etwa KI-Erklärungen zu vorgeschlagenen Terminen oder mehrtägige Einsätze, die in Winter '27 als zusammenhängender Auftrag angezeigt werden, bleiben dann außer Reichweite. Ob Ihre Disponenten jetzt wechseln sollten, behandle ich in [Scheduling Console im Field Service: Disponenten umstellen?](../field-service-scheduling-console-disponenten/).
+Damit sind zwei scheinbar getrennte Entscheidungen verknüpft, allerdings nur in eine Richtung. Eine Org, die bei der älteren Engine bleibt, bleibt auch bei der Classic Dispatch Console; eine Org mit der neuen Engine kann die Classic Dispatch Console im Übergang weiter nutzen. Neue Funktionen der Konsole, etwa KI-Erklärungen zu vorgeschlagenen Terminen oder mehrtägige Einsätze, die in Winter '27 als zusammenhängender Auftrag angezeigt werden, bleiben dann außer Reichweite. Ob Ihre Disponenten jetzt wechseln sollten, behandle ich in [Scheduling Console im Field Service: Disponenten umstellen?](/blog/field-service-scheduling-console-disponenten/).
 
 ## Rechenbeispiel: erst ein Pilotgebiet
 
@@ -98,8 +98,8 @@ Vergleich
   Liegt der Anteil geänderter Vorschläge im Pilotgebiet nicht höher als in den anderen und werden Fahrzeit, Überstunden und ungeplante Termine nicht schlechter, folgen die übrigen Gebiete, eines pro Woche.
 ```
 
-Die Konfiguration dafür, also die Einstellungen pro Gebiet, Scheduling Policies und Work Rules, besteht aus Datensätzen, nicht aus Metadaten. Sie gehört in die Pipeline, wie im Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass beschrieben. Sonst weichen der getestete Sandbox-Stand und die Produktion voneinander ab.
+Die Konfiguration dafür, also die Einstellungen pro Gebiet, Scheduling Policies und Work Rules, besteht aus Datensätzen, nicht aus Metadaten. Sie gehört in die Pipeline, wie im Kapitel [Daten und Konfiguration](/masterclass/devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass beschrieben. Sonst weichen der getestete Sandbox-Stand und die Produktion voneinander ab.
 
 ## Termine ohne Gebiet, Work Rules und Recipes auflisten
 
-Fangen Sie mit drei Listen an: Termine ohne Servicegebiet, Work Rules, die häufig leere Felder auswerten, und genutzte Recipes. Sie zeigen, wie viel Arbeit der Wechsel macht. Wählen Sie dann das Gebiet mit den saubersten Daten als Pilot. Wie die Engine in die gesamte Disposition passt, steht im Masterclass-Kapitel [Terminplanung und Disposition](../../masterclass/field-service/field-service-terminplanung-disposition/).
+Fangen Sie mit drei Listen an: Termine ohne Servicegebiet, Work Rules, die häufig leere Felder auswerten, und genutzte Recipes. Sie zeigen, wie viel Arbeit der Wechsel macht. Wählen Sie dann das Gebiet mit den saubersten Daten als Pilot. Wie die Engine in die gesamte Disposition passt, steht im Masterclass-Kapitel [Terminplanung und Disposition](/masterclass/field-service/field-service-terminplanung-disposition/).

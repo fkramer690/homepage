@@ -29,7 +29,7 @@ A pull request review is a must in enterprise projects because it is one of the 
 
 ## What is a pull request review?
 
-A pull request is a request to merge a set of changes from one branch into another, for example from a feature branch into the integration branch. A pull request review means that at least one other person looks at those changes and approves them before the merge. In a proper [Salesforce DevOps setup](../why-devops-matters-salesforce-enterprise/) the pipeline also runs a validation deployment, Apex tests and static code analysis on every pull request. On sandboxes that is a dry run with `sf project deploy start --dry-run`; `sf project deploy validate` is meant for production. With branch protection and required status checks, the change can move on only when the review is approved and the pipeline is green.
+A pull request is a request to merge a set of changes from one branch into another, for example from a feature branch into the integration branch. A pull request review means that at least one other person looks at those changes and approves them before the merge. In a proper [Salesforce DevOps setup](/en/blog/why-devops-matters-salesforce-enterprise/) the pipeline also runs a validation deployment, Apex tests and static code analysis on every pull request. On sandboxes that is a dry run with `sf project deploy start --dry-run`; `sf project deploy validate` is meant for production. With branch protection and required status checks, the change can move on only when the review is approved and the pipeline is green.
 
 This works for low-code as well. Flows, page layouts, permission sets and custom fields are metadata in the repository. Once the change is fully retrieved from the org, they appear in the pull request like any other file.
 
@@ -100,7 +100,7 @@ The most common objection is speed. In my experience reviews slow a project down
 
 ## The client owns the review process
 
-This matters to me as an [architect on the client side](../../#about). If one implementation partner owns the review rules, that partner decides how everyone else builds, including its competitors. When the client owns the rules and approval rights for architecture-relevant changes, partners stay comparable and replaceable. That is the basis of good [partner steering and governance](../../services/partner-governance/).
+This matters to me as an [architect on the client side](/en/#about). If one implementation partner owns the review rules, that partner decides how everyone else builds, including its competitors. When the client owns the rules and approval rights for architecture-relevant changes, partners stay comparable and replaceable. That is the basis of good [partner steering and governance](/en/services/partner-governance/).
 
 This does not mean the client has to review every line personally. Partners can and should review each other's work. But the standards, the approval rights and the repository should sit with the client, ideally with an internal person who takes over the process long term.
 

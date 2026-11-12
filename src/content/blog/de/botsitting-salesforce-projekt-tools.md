@@ -69,12 +69,12 @@ Die Hersteller der Werkzeuge haben darauf reagiert. Miro hat im Februar 2026 ein
 
 Das hilft, wenn das Artefakt ohnehin existieren muss. MCP überträgt aber nur das Artefakt. Ein Diagramm zeigt, welche Systeme verbunden sind. Es zeigt nicht, warum die SAP-Schnittstelle asynchron sein muss, welcher Bereichsleiter das Pflichtfeld verlangt hat oder welche Variante im Workshop verworfen wurde. Diese Gründe stehen in der Mitschrift, im Ticket und im Repository. Wenn Claude diese Quellen direkt liest, ist das Diagramm als Zwischenschritt überflüssig.
 
-Für die IT-Leitung ist ein zweiter Punkt wichtig. Jedes zusätzliche Werkzeug bedeutet in der Regel eine Lizenz, ein Berechtigungskonzept, eine Datenschutzprüfung und eine weitere Schnittstelle, die ein Agent nutzen darf. Was das für Freigaben bedeutet, beschreibe ich in [Connected Apps und OAuth für KI-Integrationen](../connected-apps-oauth-ki-integrationen/) und in [Community-MCP-Server: Risiken für Salesforce](../community-mcp-server-salesforce-risiken/).
+Für die IT-Leitung ist ein zweiter Punkt wichtig. Jedes zusätzliche Werkzeug bedeutet in der Regel eine Lizenz, ein Berechtigungskonzept, eine Datenschutzprüfung und eine weitere Schnittstelle, die ein Agent nutzen darf. Was das für Freigaben bedeutet, beschreibe ich in [Connected Apps und OAuth für KI-Integrationen](/blog/connected-apps-oauth-ki-integrationen/) und in [Community-MCP-Server: Risiken für Salesforce](/blog/community-mcp-server-salesforce-risiken/).
 
 ## Was Claude statt der Zwischenwerkzeuge liefert
 
 ```praxis
-Ich habe die komplette Kette vom Workshop bis zum Deployment KI-gestützt umgesetzt, nach dem [KI-nativen Delivery-Prozess](../ki-native-salesforce-delivery-prozess/). Dabei habe ich gemerkt, wie viel Qualität an jeder Stelle verloren geht, an der ein Ergebnis in ein anderes Werkzeug übertragen und danach wieder an die KI übergeben wird.
+Ich habe die komplette Kette vom Workshop bis zum Deployment KI-gestützt umgesetzt, nach dem [KI-nativen Delivery-Prozess](/blog/ki-native-salesforce-delivery-prozess/). Dabei habe ich gemerkt, wie viel Qualität an jeder Stelle verloren geht, an der ein Ergebnis in ein anderes Werkzeug übertragen und danach wieder an die KI übergeben wird.
 ```
 
 Seitdem lasse ich keine Zwischenversionen in Miro oder Figma mehr erstellen. Die Handgriffe führt die KI aus, also reicht ein Ausgabeformat, das Claude selbst erzeugt. Am häufigsten nutze ich Artifacts aus Claude Code: Seiten mit eigenem Link, die ich teilen und mit dem Jira-Ticket verknüpfen kann. Sie sind klickbar, und einige nutzen wir als vollwertiges Dashboard. Das ist deutlich interaktiver als ein Screenshot oder ein PDF.
@@ -89,7 +89,7 @@ Oberfläche | Figma-Entwurf, danach Umsetzung | Klickbarer Prototyp in HTML und 
 Projektstatus | Folien oder PDF | Interaktives Dashboard als Artifact
 ```
 
-Bei Oberflächen ist der Unterschied am größten. Claude erzeugt HTML und CSS nach dem Salesforce Lightning Design System (SLDS) und baut daraus anschließend die Lightning Web Component. Nach meiner Erfahrung entstehen dabei keine Reibungsverluste. Salesforce zeigt im [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2025/10/vibe-code-lightning-web-components-with-salesforce-dx-mcp) selbst, wie ein Figma-Link in Agentforce Vibes zur Lightning Web Component wird. Figma ist dort nur noch die Eingabe für die KI. Wenn kein Figma-Entwurf existiert, beschreibt der Fachbereich die Maske im Workshop, und Claude baut den Prototyp direkt. Welcher Coding-Agent dafür passt, vergleiche ich in [Agentforce Vibes, Claude Code, Codex oder Copilot](../agentforce-vibes-claude-code-copilot-vergleich/).
+Bei Oberflächen ist der Unterschied am größten. Claude erzeugt HTML und CSS nach dem Salesforce Lightning Design System (SLDS) und baut daraus anschließend die Lightning Web Component. Nach meiner Erfahrung entstehen dabei keine Reibungsverluste. Salesforce zeigt im [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2025/10/vibe-code-lightning-web-components-with-salesforce-dx-mcp) selbst, wie ein Figma-Link in Agentforce Vibes zur Lightning Web Component wird. Figma ist dort nur noch die Eingabe für die KI. Wenn kein Figma-Entwurf existiert, beschreibt der Fachbereich die Maske im Workshop, und Claude baut den Prototyp direkt. Welcher Coding-Agent dafür passt, vergleiche ich in [Agentforce Vibes, Claude Code, Codex oder Copilot](/blog/agentforce-vibes-claude-code-copilot-vergleich/).
 
 ## Welche Einwände höre ich, und was antworte ich?
 
@@ -99,7 +99,7 @@ Bei Oberflächen ist der Unterschied am größten. Claude erzeugt HTML und CSS n
 
 **„Das Designteam arbeitet in Figma.“** Für interne Salesforce-Oberflächen gibt SLDS das Designsystem vor. Claude hält sich daran und braucht keinen Entwurf als Vorlage. Jedes Werkzeug, das sich einsparen lässt, sollte eingespart werden.
 
-**„Gut genug heißt ungeprüft.“** Das ist der ernsteste Einwand, und die Glean-Studie stützt ihn. Sie nennt das Gegenstück zum Botsitting „Botshitting“: Ergebnisse weitergeben, die man nicht geprüft hat und nicht erklären könnte. Ausgerechnet unter Claude-Nutzern gaben das 92 % zu, bei ChatGPT 71 % und bei Microsoft Copilot 34 %. Weniger Werkzeuge rechtfertigen also keine schwächere Prüfung. Geprüft wird aber am Ergebnis: Der Architekt prüft das Lösungsdesign, der Entwickler den Pull Request, der Fachbereich klickt den Prototyp durch. Wie ich KI-Code prüfe, steht in [KI-generierten Salesforce-Code prüfen](../ki-generierten-salesforce-code-pruefen/). Die Zeit, die vorher für Übergaben nötig war, steht für diese Prüfung zur Verfügung.
+**„Gut genug heißt ungeprüft.“** Das ist der ernsteste Einwand, und die Glean-Studie stützt ihn. Sie nennt das Gegenstück zum Botsitting „Botshitting“: Ergebnisse weitergeben, die man nicht geprüft hat und nicht erklären könnte. Ausgerechnet unter Claude-Nutzern gaben das 92 % zu, bei ChatGPT 71 % und bei Microsoft Copilot 34 %. Weniger Werkzeuge rechtfertigen also keine schwächere Prüfung. Geprüft wird aber am Ergebnis: Der Architekt prüft das Lösungsdesign, der Entwickler den Pull Request, der Fachbereich klickt den Prototyp durch. Wie ich KI-Code prüfe, steht in [KI-generierten Salesforce-Code prüfen](/blog/ki-generierten-salesforce-code-pruefen/). Die Zeit, die vorher für Übergaben nötig war, steht für diese Prüfung zur Verfügung.
 
 ```vergleich
 ohne: Zwischenstände in vier Werkzeugen

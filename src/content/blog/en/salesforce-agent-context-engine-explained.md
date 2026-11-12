@@ -87,10 +87,10 @@ The Agent Context Engine is in preview, and Salesforce did not publish pricing i
 | Source authority and freshness | Decide which system wins when prices, contracts or asset states contradict each other, and how current each piece of context must be. |
 | Agent identity and memory scope | Decide which agents identify themselves, which agents may share memories about the same customer, and who approves memories before other agents use them. |
 
-I describe why these foundations matter more than the agent itself in [Agentforce pilots: business value and data quality first](../agentforce-business-value-data-quality-first/).
+I describe why these foundations matter more than the agent itself in [Agentforce pilots: business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/).
 
 ## Should Data 360 become the core of the AI architecture?
 
 The Agent Context Engine is a sign of where Salesforce is heading: Data 360 as the shared foundation for data, context and governance, with agents from different platforms on top. Whether that fits your architecture is a decision, not a given. For an architect on the client side, it raises the usual questions: how much depends on one vendor, which data really needs to flow into Data 360, what it costs at scale, how memories and definitions can be exported if you change course, and who owns definitions and permissions.
 
-These are decisions for the client, not for a single implementation partner, and they belong in the target architecture before the first production agent. That is a core part of my [architecture and governance work](../../services/salesforce-architecture/).
+These are decisions for the client, not for a single implementation partner, and they belong in the target architecture before the first production agent. That is a core part of my [architecture and governance work](/en/services/salesforce-architecture/).

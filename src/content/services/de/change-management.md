@@ -96,10 +96,10 @@ K | Knowledge | Wissen | Wie geht es?
 A | Ability | Fähigkeit | Kann ich es im Alltag?
 R | Reinforcement | Verankerung | Bleibt es, oder falle ich zurück? *
 fall: Es fehlt Awareness | Ein Vertriebsteam weiß nicht, wofür die gepflegten Opportunities gebraucht werden. | Das muss der zuständige Vertriebsleiter erklären, nicht der Trainer.
-fall: Es fehlt Reinforcement | Die Entwickler eines Partners kennen die Namenskonventionen, aber niemand prüft sie in der Pipeline. | Dann gehört eine automatische Prüfung in den [Release-Prozess](../devops-und-release-management/).
+fall: Es fehlt Reinforcement | Die Entwickler eines Partners kennen die Namenskonventionen, aber niemand prüft sie in der Pipeline. | Dann gehört eine automatische Prüfung in den [Release-Prozess](/leistungen/devops-und-release-management/).
 ```
 
-Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte über angelegte und gepflegte Datensätze zuverlässiger als eine Umfrage. Diese Zahlen legen wir in der ersten Phase fest und werten sie in der zweiten regelmäßig aus. Die einzelnen Themen, von Key Usern bis zur Messung der Nutzung, beschreibe ich in [Salesforce Change Management: warum Einführungen scheitern](../../blog/change-management-salesforce-einfuehrung/). Kapitel für Kapitel entlang der fünf Stufen führt die [Masterclass Change Management](../../masterclass/change-management/).
+Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte über angelegte und gepflegte Datensätze zuverlässiger als eine Umfrage. Diese Zahlen legen wir in der ersten Phase fest und werten sie in der zweiten regelmäßig aus. Die einzelnen Themen, von Key Usern bis zur Messung der Nutzung, beschreibe ich in [Salesforce Change Management: warum Einführungen scheitern](/blog/change-management-salesforce-einfuehrung/). Kapitel für Kapitel entlang der fünf Stufen führt die [Masterclass Change Management](/masterclass/change-management/).
 
 ## Gemeinsame Standards für fünf Partner in drei Monaten
 
@@ -111,9 +111,9 @@ Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte
 quelle: mein größtes Programm als Architekt auf Kundenseite
 ```
 
-Zu Beginn dieses Programms lagen die technischen Ansätze der Teams weit auseinander. Gemeinsame Standards für Namenskonventionen, einen Einstiegspunkt für Automatisierung je Objekt, Testabdeckung und eine [Object Ownership Matrix](../../blog/object-ownership-matrix-salesforce/) haben wir deshalb in Etappen eingeführt.
+Zu Beginn dieses Programms lagen die technischen Ansätze der Teams weit auseinander. Gemeinsame Standards für Namenskonventionen, einen Einstiegspunkt für Automatisierung je Objekt, Testabdeckung und eine [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/) haben wir deshalb in Etappen eingeführt.
 
-Die erste Version deckte rund 80 Prozent der Fälle ab. Die Randfälle haben wir Schritt für Schritt ergänzt, sobald sie im Projekt auftauchten. Später haben wir neue Themen mit Vorlauf in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) besprochen, bevor sie zum Problem wurden. Mit der Zeit kamen kaum noch neue Randfälle hinzu. Wie die Regeln für mehrere Partner aussehen, beschreibe ich unter [Partnersteuerung](../partnersteuerung/).
+Die erste Version deckte rund 80 Prozent der Fälle ab. Die Randfälle haben wir Schritt für Schritt ergänzt, sobald sie im Projekt auftauchten. Später haben wir neue Themen mit Vorlauf in regelmäßigen [Center-of-Excellence-Calls](/blog/salesforce-center-of-excellence-format/) besprochen, bevor sie zum Problem wurden. Mit der Zeit kamen kaum noch neue Randfälle hinzu. Wie die Regeln für mehrere Partner aussehen, beschreibe ich unter [Partnersteuerung](/leistungen/partnersteuerung/).
 
 ## Kleinere Releases brauchen einen festen Weg in die Fachbereiche
 
@@ -143,6 +143,6 @@ quelle: Prosci, Best Practices in Change Management, 12. Ausgabe, 2.668 Teilnehm
 
 In der 12. Ausgabe der Studie [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) zeigt Prosci anhand seiner Benchmark-Daten: Projekte mit sehr gutem Change Management erreichten ihre Ziele siebenmal so oft wie Projekte mit schlechtem, 88 gegenüber 13 Prozent. Als wichtigsten Erfolgsfaktor nennen die Teilnehmenden aktives und sichtbares Sponsoring durch das Management. Das deckt sich mit dem, was ich in Salesforce-Programmen erlebe.
 
-Zusammen mit [Juliane Winterscheid](../../partner/juliane-winterscheid/), die Prosci-zertifiziert ist, habe ich zwei Bausteine von Prosci auf Salesforce-Programme übertragen: das ADKAR-Modell von oben und den [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). Der 3-Phase Process gibt der Einführung auf Ebene der Organisation einen Rahmen: Vorgehen vorbereiten (Prepare Approach), Veränderung steuern (Manage Change) und Ergebnisse sichern (Sustain Outcomes). Die Schritte unter „So läuft die Zusammenarbeit“ folgen diesen Phasen.
+Zusammen mit [Juliane Winterscheid](/partner/juliane-winterscheid/), die Prosci-zertifiziert ist, habe ich zwei Bausteine von Prosci auf Salesforce-Programme übertragen: das ADKAR-Modell von oben und den [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). Der 3-Phase Process gibt der Einführung auf Ebene der Organisation einen Rahmen: Vorgehen vorbereiten (Prepare Approach), Veränderung steuern (Manage Change) und Ergebnisse sichern (Sustain Outcomes). Die Schritte unter „So läuft die Zusammenarbeit“ folgen diesen Phasen.
 
 Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Die Prosci-Zertifizierung hat Juliane Winterscheid, nicht FK Solution Design, und FK Solution Design ist kein Partner von Prosci. Diese Seite beschreibt, wie wir Elemente des Vorgehens in Salesforce-Programmen anwenden.

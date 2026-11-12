@@ -31,7 +31,7 @@ Rufbereitschaft, Wochenendservice und Überstunden planen Sie in Salesforce Fiel
 
 ## Was sind Arbeitszeiten, und was sind Schichten?
 
-Arbeitszeiten sind die Zeitfenster pro Wochentag, in denen ein Servicegebiet arbeitet. Techniker übernehmen sie über ihre Mitgliedschaft im Servicegebiet, sofern die Mitgliedschaft keine eigenen Arbeitszeiten hat. Das gehört zu den Stammdaten, die die Planung braucht, beschrieben in [Welche Daten braucht die Planung?](../salesforce-field-service-stammdaten/).
+Arbeitszeiten sind die Zeitfenster pro Wochentag, in denen ein Servicegebiet arbeitet. Techniker übernehmen sie über ihre Mitgliedschaft im Servicegebiet, sofern die Mitgliedschaft keine eigenen Arbeitszeiten hat. Das gehört zu den Stammdaten, die die Planung braucht, beschrieben in [Welche Daten braucht die Planung?](/blog/salesforce-field-service-stammdaten/).
 
 Schichten decken ab, was nicht in dieses Raster passt. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/shift-creation-assignment/get-to-know-shifts) definiert eine Schicht als "any set of working hours that are not normal operating hours", also jede Arbeitszeit außerhalb der normalen Arbeitszeiten. Sie kann zusätzlich zu den Arbeitszeiten gelten, wie bei Überstunden, oder sich mit ihnen überschneiden. Shift ist ein Standardobjekt von Salesforce; für den vollen Funktionsumfang ist aber das Field Service Managed Package erforderlich. Vor der ersten Schicht müssen Servicegebiete, Serviceressourcen und Arbeitszeiten eingerichtet sein.
 
@@ -69,11 +69,11 @@ Haben weder das Gebiet noch die Mitgliedschaft des Technikers Arbeitszeiten am S
 
 Damit die Störung beim Bereitschaftstechniker ankommt, muss Folgendes zusammenpassen:
 
-1. **Entitlement und Terminfenster.** Der Milestone des Entitlements überwacht die Reaktionszeit, begrenzt die Planung aber nicht von selbst. Eine Automatisierung muss die Reaktionszeit in Earliest Start Permitted und Due Date des Servicetermins übersetzen. Wie Reaktionszeiten in die Disposition einfließen, steht in [Wie bildet man Wartungsverträge ab?](../salesforce-field-service-wartungsvertraege/).
+1. **Entitlement und Terminfenster.** Der Milestone des Entitlements überwacht die Reaktionszeit, begrenzt die Planung aber nicht von selbst. Eine Automatisierung muss die Reaktionszeit in Earliest Start Permitted und Due Date des Servicetermins übersetzen. Wie Reaktionszeiten in die Disposition einfließen, steht in [Wie bildet man Wartungsverträge ab?](/blog/salesforce-field-service-wartungsvertraege/).
 2. **Die Schicht.** Eine bestätigte Extended-Schicht für das Wochenende, mit einem Filter, der Störungen durchlässt.
 3. **Die Policy.** In der Policy für Störungen ist Overtime in der Work Rule Service Resource Availability eingeschaltet; außerdem enthält sie die Work Rule Timeslot Designated.
 
-Nimmt außerhalb der Geschäftszeiten ein Sprachagent den Anruf an, erhält der Bereitschaftstechniker einen klassifizierten Case statt eines rohen Anrufs. Wie ich die Triage an der Hotline aufsetzen würde, steht in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/). Buchen kann der Agent aber nichts, wenn keine Verfügbarkeit dahintersteht.
+Nimmt außerhalb der Geschäftszeiten ein Sprachagent den Anruf an, erhält der Bereitschaftstechniker einen klassifizierten Case statt eines rohen Anrufs. Wie ich die Triage an der Hotline aufsetzen würde, steht in [Störungshotline mit Agentforce Voice](/blog/stoerungshotline-agentforce-voice-deutsch/). Buchen kann der Agent aber nichts, wenn keine Verfügbarkeit dahintersteht.
 
 ## Der Betriebsrat bestimmt nach § 87 BetrVG mit
 
@@ -86,7 +86,7 @@ Ein Bereitschaftsplan in Field Service berührt diese Punkte meist. Schichten ve
 - ob Auswertungen pro Techniker erlaubt sind und wer sie sieht
 - wie der Bereitschaftsplan mit Zeiterfassung und Vergütung zusammenhängt
 
-Das ist dasselbe Gespräch wie bei Timesheets und Standortdaten, das ich in [Salesforce Field Service Einführung: Warum in Wellen?](../salesforce-field-service-einfuehrung/) beschreibe. Einfacher ist es, dieses Gespräch einmal für alle Themen zu führen. Ich bin kein Jurist; die rechtliche Bewertung gehört zu Ihren Fachleuten für Arbeitsrecht.
+Das ist dasselbe Gespräch wie bei Timesheets und Standortdaten, das ich in [Salesforce Field Service Einführung: Warum in Wellen?](/blog/salesforce-field-service-einfuehrung/) beschreibe. Einfacher ist es, dieses Gespräch einmal für alle Themen zu führen. Ich bin kein Jurist; die rechtliche Bewertung gehört zu Ihren Fachleuten für Arbeitsrecht.
 
 ## Rechenbeispiel: Wochenendbereitschaft in drei Regionen
 
@@ -104,4 +104,4 @@ Die 36-Stunden-Schicht stellt Verfügbarkeit für die Planung dar; sie bedeutet 
 
 ## Die heutigen Bereitschaftsregeln aufschreiben
 
-Schreiben Sie Ihre heutigen Bereitschaftsregeln auf: wer wann Bereitschaft hat, für welche Kunden und welche Arten von Einsätzen. Prüfen Sie dann, ob Ihre Scheduling Policies zwischen geplanter Arbeit und Störungen unterscheiden. Wenn nicht, beheben Sie das zuerst, denn Extended-Schichten funktionieren nur über diese Unterscheidung. Wo Schichten in die Planung insgesamt passen, steht in [Kapitel 2 der Masterclass Field Service](../../masterclass/field-service/field-service-terminplanung-disposition/). Informationen zu langen Einsätzen über mehrere Tage finden Sie in [Mehrtägige Einsätze im Field Service](../field-service-mehrtaegige-einsaetze-inbetriebnahme/).
+Schreiben Sie Ihre heutigen Bereitschaftsregeln auf: wer wann Bereitschaft hat, für welche Kunden und welche Arten von Einsätzen. Prüfen Sie dann, ob Ihre Scheduling Policies zwischen geplanter Arbeit und Störungen unterscheiden. Wenn nicht, beheben Sie das zuerst, denn Extended-Schichten funktionieren nur über diese Unterscheidung. Wo Schichten in die Planung insgesamt passen, steht in [Kapitel 2 der Masterclass Field Service](/masterclass/field-service/field-service-terminplanung-disposition/). Informationen zu langen Einsätzen über mehrere Tage finden Sie in [Mehrtägige Einsätze im Field Service](/blog/field-service-mehrtaegige-einsaetze-inbetriebnahme/).

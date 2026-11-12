@@ -49,11 +49,11 @@ Die Funktionen lassen sich nach vier Bereichen ordnen. Die Liste folgt dem Trail
 | Kanal | Rebate Management, Partner Lead, Partner Performance und Partner Visit Management | 3 |
 | Werkzeuge | Omnistudio, Business Rules Engine, Data Processing Engine | alle |
 
-Welche Frage jede Funktion beantwortet und wo sie aufhört, steht in [Manufacturing Cloud Funktionen: was enthalten ist](../../../blog/manufacturing-cloud-funktionen-ueberblick/). Für den Business Case ist daraus vor allem wichtig, dass fast jede Vertriebs- und Partnerfunktion einen eigenen Schalter hat. Die [Metadaten IndustriesManufacturingSettings](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) führen je ein Feld für Rahmenverträge, Account Forecasts, Advanced Forecasting, Targets, Programme und die drei Partnerfunktionen, alle standardmäßig auf false. Eine Lizenz sagt also nichts darüber, was in Ihrer Org läuft. Eine Org kann jahrelang Manufacturing Cloud bezahlen und nur Rahmenverträge nutzen.
+Welche Frage jede Funktion beantwortet und wo sie aufhört, steht in [Manufacturing Cloud Funktionen: was enthalten ist](/blog/manufacturing-cloud-funktionen-ueberblick/). Für den Business Case ist daraus vor allem wichtig, dass fast jede Vertriebs- und Partnerfunktion einen eigenen Schalter hat. Die [Metadaten IndustriesManufacturingSettings](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) führen je ein Feld für Rahmenverträge, Account Forecasts, Advanced Forecasting, Targets, Programme und die drei Partnerfunktionen, alle standardmäßig auf false. Eine Lizenz sagt also nichts darüber, was in Ihrer Org läuft. Eine Org kann jahrelang Manufacturing Cloud bezahlen und nur Rahmenverträge nutzen.
 
 Außerdem stehen in der Funktionsliste Dinge, die Salesforce getrennt verkauft. Trailhead führt Ship and Debit und Price Protection unter „Rebates“ und Connected Assets unter „Agentforce Service“. Auf der [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) haben beide einen eigenen Preis.
 
-Was in keiner dieser Listen steht, ist ein Angebotssystem mit Konfigurator, Freigaben und Vertragserstellung. Trailhead nennt nur Produktkatalog-Management. Angebote und Konfiguration behandelt die Masterclass zu Revenue Cloud, beginnend mit dem [Überblick und der Entscheidung](../../revenue-cloud/revenue-cloud-ueberblick/) und dem Kapitel zu [Produktkatalog, Konfigurator und Preisen](../../revenue-cloud/produktkatalog-konfigurator-preise/).
+Was in keiner dieser Listen steht, ist ein Angebotssystem mit Konfigurator, Freigaben und Vertragserstellung. Trailhead nennt nur Produktkatalog-Management. Angebote und Konfiguration behandelt die Masterclass zu Revenue Cloud, beginnend mit dem [Überblick und der Entscheidung](/masterclass/revenue-cloud/revenue-cloud-ueberblick/) und dem Kapitel zu [Produktkatalog, Konfigurator und Preisen](/masterclass/revenue-cloud/produktkatalog-konfigurator-preise/).
 
 ## Was kostet Manufacturing Cloud im Vergleich zu Sales Cloud?
 
@@ -75,7 +75,7 @@ quelle: Preisseiten von Manufacturing Cloud und Sales Cloud, Listenpreise Oktobe
 
 Die Preisseite nennt auch Euro-Preise, für Sales Core 275 Euro.
 
-Eine Unklarheit gehört in jede Kalkulation. Die Preisseite hat zwei Fußnoten, die sich widersprechen. Die eine sagt, die Preise gelten für Enterprise Edition, und Unlimited koste 425 Dollar. Die andere sagt, sie gelten für Unlimited Edition, und Enterprise koste 275 Dollar. Welcher Preis für Ihre Edition gilt, zeigt erst das Angebot. Außerdem hat Salesforce [im September 2026 angekündigt](https://www.salesforce.com/in/news/?p=14535), dass „new pricing for Agentforce Industry Editions will go into effect later this fall“. Die Seite der Manufacturing Cloud nutzt schon Core und Max, ihre Fußnoten sprechen aber noch von Enterprise und Unlimited. Wie sich die neuen Editionen unterscheiden, steht in [Salesforce-Editionen Core, Advanced und Max](../../../blog/salesforce-editionen-core-advanced-max/). Wer jetzt verlängert, sollte sich den Wechsel der Edition offenhalten, bis die Branchenpreise feststehen.
+Eine Unklarheit gehört in jede Kalkulation. Die Preisseite hat zwei Fußnoten, die sich widersprechen. Die eine sagt, die Preise gelten für Enterprise Edition, und Unlimited koste 425 Dollar. Die andere sagt, sie gelten für Unlimited Edition, und Enterprise koste 275 Dollar. Welcher Preis für Ihre Edition gilt, zeigt erst das Angebot. Außerdem hat Salesforce [im September 2026 angekündigt](https://www.salesforce.com/in/news/?p=14535), dass „new pricing for Agentforce Industry Editions will go into effect later this fall“. Die Seite der Manufacturing Cloud nutzt schon Core und Max, ihre Fußnoten sprechen aber noch von Enterprise und Unlimited. Wie sich die neuen Editionen unterscheiden, steht in [Salesforce-Editionen Core, Advanced und Max](/blog/salesforce-editionen-core-advanced-max/). Wer jetzt verlängert, sollte sich den Wechsel der Edition offenhalten, bis die Branchenpreise feststehen.
 
 ### Core oder Max: was sich außer dem Preis ändert
 
@@ -89,7 +89,7 @@ Der Abstand zwischen Core und Max ist groß, und er kauft mehr als Agenten. Die 
 | Datenspeicher | 20 MB pro Nutzer | 1 GB pro Nutzer |
 | Agentforce | über Flex Credits | volle Agentforce-for-Industries-Suite |
 
-Flex Credits sind die Verbrauchswährung, in der Salesforce Agentenaktionen, Prompts und Datenverarbeitung abrechnet. Wie weit ein Pool reicht, rechnet das Kapitel [Kosten und Token](../../ki-salesforce/kosten-und-token/) der KI-Masterclass vor. Die Pools gelten pro Org, unabhängig von der Zahl der Nutzer.
+Flex Credits sind die Verbrauchswährung, in der Salesforce Agentenaktionen, Prompts und Datenverarbeitung abrechnet. Wie weit ein Pool reicht, rechnet das Kapitel [Kosten und Token](/masterclass/ki-salesforce/kosten-und-token/) der KI-Masterclass vor. Die Pools gelten pro Org, unabhängig von der Zahl der Nutzer.
 
 Für Hersteller zählen die Aufrufgrenzen oft mehr als die Credits. Omnistudio baut geführte Prozesse, die Business Rules Engine prüft Regeln, etwa bei der Freigabe von Garantieansprüchen. Laufen Garantie, Boni und Portalprozesse auf diesen Engines, sind 10.000 Regelaufrufe im Monat schnell erreicht. Für Max spricht aus meiner Sicht nur ein Bedarf an Funktionen, den Core nicht abdeckt. Für mehr Credits allein ist Max zu teuer.
 
@@ -106,7 +106,7 @@ Die Edition ist die erste Zeile eines Angebots. Die folgenden Add-ons stehen auf
 | Omnistudio-Zusatzaufrufe | 2 Millionen Aufrufe für 10.000 Dollar pro Monat, eine kleinere Einheit gibt es nicht. |
 | Manufacturing Intelligence | Die [eigene Seite](https://salesforce.com/manufacturing/cloud/manufacturing-intelligence) nennt 220 Dollar pro Login und Monat, die [Experience-Cloud-Seite](https://salesforce.com/manufacturing/cloud/experience-cloud) „ab 165 Dollar“ ohne Einheit. Dieselbe Seite listet Rebate Management „ab 75 Dollar“, ebenfalls ohne Einheit. |
 
-Wie viel das in einem angenommenen Szenario mit 150 Nutzern und 400 Händlern ausmacht, rechnet [Manufacturing Cloud Add-ons: was extra kostet](../../../blog/manufacturing-cloud-zusatzkosten-add-ons/) vor. Dort erhöhen die typischen Add-ons die Lizenzzeile um etwa 40 Prozent.
+Wie viel das in einem angenommenen Szenario mit 150 Nutzern und 400 Händlern ausmacht, rechnet [Manufacturing Cloud Add-ons: was extra kostet](/blog/manufacturing-cloud-zusatzkosten-add-ons/) vor. Dort erhöhen die typischen Add-ons die Lizenzzeile um etwa 40 Prozent.
 
 ## Wer braucht welche Lizenz?
 
@@ -114,7 +114,7 @@ Das Angebot eines Partners oder Account Teams geht oft davon aus, dass alle Nutz
 
 1. **Vertrieb mit Rahmenverträgen und Prognosen** braucht Sales Core oder Sales Max.
 2. **Sachbearbeitung für Garantieansprüche und Rückrufe** arbeitet mit Servicefunktionen, also Service Core oder Service Max. Wer auf beiden Seiten arbeitet, benötigt Sales & Service Max für 700 Dollar.
-3. **Lesen, Freigeben, Berichte** braucht oft keine volle Lizenz. Ob eine Platform-Lizenz die nötigen Objekte sehen darf, etwa einen Rahmenvertrag, klären Sie vor dem Kauf. Grenzen und Preise der Platform-Lizenzen stehen in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../../../blog/salesforce-lizenzen-volle-lizenz/).
+3. **Lesen, Freigeben, Berichte** braucht oft keine volle Lizenz. Ob eine Platform-Lizenz die nötigen Objekte sehen darf, etwa einen Rahmenvertrag, klären Sie vor dem Kauf. Grenzen und Preise der Platform-Lizenzen stehen in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](/blog/salesforce-lizenzen-volle-lizenz/).
 4. **Händler und Kunden** erhalten Portallizenzen, Mitglied bei häufiger Nutzung, Login bei seltener.
 5. **Schnittstellen** zum ERP laufen über Integrationsnutzer ohne Oberfläche.
 
@@ -124,7 +124,7 @@ Welche Funktionen ein Sales-Core-Nutzer aus dem Servicebereich nutzen darf, steh
 
 ## Wann ist Manufacturing Cloud die falsche Wahl?
 
-Der wichtigste Fall: Ihr Vertrieb arbeitet nicht mit langfristigen Mengenvereinbarungen. Rahmenverträge sind die zentrale Vertriebsfunktion. Ein Rahmenvertrag hält Preise und geplante Mengen pro Kunde, Produkt und Periode fest und stellt ihnen die Ist-Mengen gegenüber. In [Teil 1 der Serie](../../../blog/manufacturing-cloud-wann-lohnt-sie-sich/) beschreibe ich ein Fertigungsprojekt, in dem genau diese Funktion keine Rolle spielte; dort war ein Eigenbau auf der Plattform günstiger und leichter zu warten.
+Der wichtigste Fall: Ihr Vertrieb arbeitet nicht mit langfristigen Mengenvereinbarungen. Rahmenverträge sind die zentrale Vertriebsfunktion. Ein Rahmenvertrag hält Preise und geplante Mengen pro Kunde, Produkt und Periode fest und stellt ihnen die Ist-Mengen gegenüber. In [Teil 1 der Serie](/blog/manufacturing-cloud-wann-lohnt-sie-sich/) beschreibe ich ein Fertigungsprojekt, in dem genau diese Funktion keine Rolle spielte; dort war ein Eigenbau auf der Plattform günstiger und leichter zu warten.
 
 Der zweite Fall: Rahmenverträge und Abrufe liegen bereits sauber im ERP. Dann stellt sich die Frage, ob Salesforce sie überhaupt führen soll. Zwei Systeme, die beide Mengen und Preise pflegen, laufen früher oder später auseinander. Oft reicht es, wenn Salesforce die Zahlen aus dem ERP anzeigt.
 
@@ -138,7 +138,7 @@ Nur, wenn eine andere Funktion den Aufschlag allein trägt. Ein Maschinenbauer v
 - **Rückrufe und Nachrüstungen** über viele ausgelieferte Maschinen. Product Service Campaigns setzen eine gepflegte installierte Basis mit Seriennummern voraus.
 - **Händlerboni**, die heute in Tabellen berechnet werden.
 
-Trifft keiner dieser Punkte klar zu, bleibe ich bei Sales Cloud und Service Cloud. Die Funktionen im Detail behandeln [Kapitel 3 zum Händlerkanal](../haendler-und-partnerkanal/) und [Kapitel 4 zu Garantie und After-Sales](../garantie-und-after-sales/).
+Trifft keiner dieser Punkte klar zu, bleibe ich bei Sales Cloud und Service Cloud. Die Funktionen im Detail behandeln [Kapitel 3 zum Händlerkanal](/masterclass/manufacturing-cloud/haendler-und-partnerkanal/) und [Kapitel 4 zu Garantie und After-Sales](/masterclass/manufacturing-cloud/garantie-und-after-sales/).
 
 ## Make-or-Buy über fünf Jahre
 
@@ -160,10 +160,10 @@ Rechenbeispiel: Ein Komponentenhersteller mit 120 Vertriebsnutzern will Plan geg
 
 Für eine schlanke Plan-gegen-Ist-Ansicht gewinnt der Eigenbau deutlich. Das Bild dreht sich, sobald Verlängerungen, Freigaben, Prognosen, Händlerzugriff und Boni dazukommen. Jede dieser Funktionen erhöht Einführung und Wartung im Eigenbau, während der Lizenzaufschlag gleich bleibt. Rechnen Sie deshalb den Funktionsumfang, den Sie in drei Jahren brauchen, und nicht nur den ersten Schritt.
 
-Das Ergebnis gehört in ein Entscheidungsprotokoll: welche Funktionen geprüft wurden, welche Zahlen galten, wer entschieden hat. Nach einem Partnerwechsel ist das oft das einzige Dokument, das erklärt, warum die Org so aussieht, wie sie aussieht. Wie ich solche Rechnungen aufbaue, beschreibe ich unter [Make-or-Buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/); die Einordnung in die Gesamtarchitektur gehört zur [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).
+Das Ergebnis gehört in ein Entscheidungsprotokoll: welche Funktionen geprüft wurden, welche Zahlen galten, wer entschieden hat. Nach einem Partnerwechsel ist das oft das einzige Dokument, das erklärt, warum die Org so aussieht, wie sie aussieht. Wie ich solche Rechnungen aufbaue, beschreibe ich unter [Make-or-Buy und Lizenzprognosen](/leistungen/make-or-buy-lizenzen/); die Einordnung in die Gesamtarchitektur gehört zur [Salesforce-Architektur](/leistungen/salesforce-architektur/).
 
 ## Vertrieb und Service nach Rahmenverträgen, Boni und Garantie fragen
 
 Bevor ein Angebot auf dem Tisch liegt, helfen drei Fragen an Vertrieb und Service: Welcher Anteil des Umsatzes läuft über Mengenvereinbarungen? Wie werden Händlerboni heute berechnet? Wer prüft Garantieansprüche, und wie lange dauert das? Die Antworten zeigen früher als eine Demo, ob Manufacturing Cloud passt. Liegt schon ein Angebot vor, prüfen Sie es gegen die Checkliste aus dem Funktionsüberblick: jede Funktion aus dem Business Case mit der Lizenz, die sie abdeckt.
 
-Lautet die Antwort Rahmenverträge, geht es in [Kapitel 2 um Rahmenverträge und Prognosen](../rahmenvertraege-und-prognosen/) weiter, mit den Daten, die dafür aus dem ERP kommen müssen. Alle Kapitel finden Sie auf der [Übersichtsseite](../).
+Lautet die Antwort Rahmenverträge, geht es in [Kapitel 2 um Rahmenverträge und Prognosen](/masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/) weiter, mit den Daten, die dafür aus dem ERP kommen müssen. Alle Kapitel finden Sie auf der [Übersichtsseite](/masterclass/manufacturing-cloud/).

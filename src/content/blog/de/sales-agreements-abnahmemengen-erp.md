@@ -31,7 +31,7 @@ Mit Sales Agreements sieht der Vertrieb, welche Kunden hinter ihren vereinbarten
 
 ## Welche Frage beantwortet ein Sales Agreement im Alltag?
 
-Was ein Sales Agreement ist und wann sich die Manufacturing Cloud dafür lohnt, beschreibe ich in [Manufacturing Cloud vs. Sales Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/). Hier geht es um den Betrieb danach.
+Was ein Sales Agreement ist und wann sich die Manufacturing Cloud dafür lohnt, beschreibe ich in [Manufacturing Cloud vs. Sales Cloud: Wann lohnt sie sich?](/blog/manufacturing-cloud-wann-lohnt-sie-sich/). Hier geht es um den Betrieb danach.
 
 Im Alltag stellt der Vertrieb eine einfache Frage: Wer bleibt hinter seiner Zusage zurück? Ein Kunde hat für das Jahr eine Menge zugesagt, aufgeteilt in Monate oder Quartale. Pro Zeitraum und Produkt stehen im Sales Agreement geplante Menge, tatsächliche Menge und Prognose nebeneinander. Die Abweichung ist die Zahl, mit der Account Manager arbeiten.
 
@@ -73,7 +73,7 @@ ERP-Aufträge --> Middleware
 Middleware --Summen per API--> Sales Agreement
 ```
 
-Welche Variante passt, hängt davon ab, was Salesforce sonst noch über Aufträge wissen muss. Die Grundregel ist dieselbe wie bei jeder Integration: ein führendes System pro Datenart. Wie ich das für Kunden, Produkte, Preise und Aufträge aufteile, beschreibe ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/). Welche Daten insgesamt zwischen SAP und der Manufacturing Cloud fließen, steht in [Manufacturing Cloud und SAP: welche Daten wohin](../manufacturing-cloud-sap-integration-datenfluesse/).
+Welche Variante passt, hängt davon ab, was Salesforce sonst noch über Aufträge wissen muss. Die Grundregel ist dieselbe wie bei jeder Integration: ein führendes System pro Datenart. Wie ich das für Kunden, Produkte, Preise und Aufträge aufteile, beschreibe ich unter [Integration mit ERP, Middleware und Telefonie](/leistungen/salesforce-schnittstellen/). Welche Daten insgesamt zwischen SAP und der Manufacturing Cloud fließen, steht in [Manufacturing Cloud und SAP: welche Daten wohin](/blog/manufacturing-cloud-sap-integration-datenfluesse/).
 
 ## Was ich im Projekt gesehen habe
 
@@ -118,7 +118,7 @@ Außerdem ist die Saison zu berücksichtigen. Ein Rückstand im ersten Quartal k
 
 Salesforce kann Kunden nach Abweichung sortieren, Lager und Saison danebenstellen und eine Aufgabe für den Account Manager anlegen. Ob ein Kunde einen Preisnachlass erhält, einen Abruf vorzieht oder die Zusage im nächsten Jahr angepasst wird, entscheiden Menschen, die den Kunden kennen.
 
-Ich würde diesen Schritt auch nicht automatisieren wollen. Die Gründe für einen Rückstand reichen von einer schwachen Saison beim Kunden bis zu einem Wettbewerber, der gerade billiger liefert, und keine Kennzahl im System bildet sie vollständig ab. Wer Agenten mit solchen Daten arbeiten lassen möchte, sollte zuerst die Datenqualität prüfen, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) beschreibe.
+Ich würde diesen Schritt auch nicht automatisieren wollen. Die Gründe für einen Rückstand reichen von einer schwachen Saison beim Kunden bis zu einem Wettbewerber, der gerade billiger liefert, und keine Kennzahl im System bildet sie vollständig ab. Wer Agenten mit solchen Daten arbeiten lassen möchte, sollte zuerst die Datenqualität prüfen, wie ich in [Agentforce: Business Value und Datenqualität zuerst](/blog/agentforce-business-value-datenqualitaet/) beschreibe.
 
 ## Modus für die Ist-Mengen vor dem ersten Agreement festlegen
 

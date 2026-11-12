@@ -51,7 +51,7 @@ For products Salesforce offers a [product import API](https://developer.salesfor
 
 Buyer groups and entitlement policies decide who sees which product. They rarely exist in SAP in that form. They have to be derived, for example from sales organization, customer group or brand. Write that derivation down as a rule, because otherwise someone maintains buyer groups by hand in Salesforce and the store drifts away from SAP within months.
 
-Who owns which object is the question my [object ownership matrix](../salesforce-object-ownership-matrix/) answers. For a store I add one column: copied or live.
+Who owns which object is the question my [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/) answers. For a store I add one column: copied or live.
 
 ## Price, stock, tax and shipping live through extension points
 
@@ -65,7 +65,7 @@ Salesforce B2B Commerce has named extension points where your own Apex code take
 
 Each extension can call SAP live. Each live call also means waiting time for the buyer, load on SAP and a question nobody likes to answer: what does the store do when SAP does not respond?
 
-My rule: call live where a wrong value costs money or trust, copy everything else. Contract prices from SAP condition logic often fall into the first group, which I cover in [customer prices in B2B Commerce](../b2b-commerce-customer-prices-price-books-erp/). Stock is a case of its own, so I cover it separately in [live or copied stock](../b2b-store-stock-availability-erp/). The credit check belongs in `validate` before the order exists, as described in [B2B checkout with purchase order](../b2b-checkout-purchase-order-card-invoice/).
+My rule: call live where a wrong value costs money or trust, copy everything else. Contract prices from SAP condition logic often fall into the first group, which I cover in [customer prices in B2B Commerce](/en/blog/b2b-commerce-customer-prices-price-books-erp/). Stock is a case of its own, so I cover it separately in [live or copied stock](/en/blog/b2b-store-stock-availability-erp/). The credit check belongs in `validate` before the order exists, as described in [B2B checkout with purchase order](/en/blog/b2b-checkout-purchase-order-card-invoice/).
 
 ## Extensions or the older integrations?
 
@@ -73,7 +73,7 @@ The [integration architecture page](https://developer.salesforce.com/docs/commer
 
 There is one exception. According to the [extensions guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html), payments cannot be customized with an extension yet; for payments, the older integrations framework remains the way. In practice that rarely touches SAP, because dealers usually buy on account with a purchase order.
 
-For new stores I would build every synchronous SAP call in the cart and at checkout, such as price, stock, tax and the order check, as an extension. Batch imports, the order export and SAP callbacks use import APIs, middleware or other integration patterns. Registration and store mapping run through the Salesforce CLI, so they can live in the repository and the pipeline. More on that in [Commerce extensions: custom code that survives updates](../commerce-extensions-custom-code/).
+For new stores I would build every synchronous SAP call in the cart and at checkout, such as price, stock, tax and the order check, as an extension. Batch imports, the order export and SAP callbacks use import APIs, middleware or other integration patterns. Registration and store mapping run through the Salesforce CLI, so they can live in the repository and the pipeline. More on that in [Commerce extensions: custom code that survives updates](/en/blog/commerce-extensions-custom-code/).
 
 ## How does the order get to SAP, and what comes back?
 
@@ -92,7 +92,7 @@ Sales order ..number, dates..> Order Summary
 Delivery and invoice ..status back..> Order Summary
 ```
 
-Users with the B2B Commerce Integrator User or Edit Unmanaged Order Summaries permission may update supported fields on these summaries and their related records. Order number and confirmation can be stored on the order summary; several deliveries with tracking or partial invoices need their own objects or a link to SAP documents. Who should own the order, and when Salesforce Order Management makes sense instead, is the subject of [B2B store orders to the ERP](../b2b-store-orders-to-erp/).
+Users with the B2B Commerce Integrator User or Edit Unmanaged Order Summaries permission may update supported fields on these summaries and their related records. Order number and confirmation can be stored on the order summary; several deliveries with tracking or partial invoices need their own objects or a link to SAP documents. Who should own the order, and when Salesforce Order Management makes sense instead, is the subject of [B2B store orders to the ERP](/en/blog/b2b-store-orders-to-erp/).
 
 Plan the return flow as carefully as the outbound one. A dealer who sees "order received" for three days calls inside sales, and the store has saved nothing.
 
@@ -100,10 +100,10 @@ Plan the return flow as carefully as the outbound one. A dealer who sees "order 
 
 MuleSoft offers an [Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/) for SAP ECC, S/4HANA and Salesforce. It provides reusable SAP and Salesforce APIs, for example for accounts, products, orders, pricing and availability, and templates including a quote-to-cash use case between Sales Cloud and S/4HANA and a B2B EDI use case. It does not contain a ready-made B2B Commerce store integration, so you still have to build the store side.
 
-Direct Apex callouts with named credentials can be fine for one store with a few fast live calls, as long as timeouts, retries and monitoring are designed carefully; Apex has no guaranteed delivery and a default timeout of ten seconds per callout. The order export often benefits from an asynchronous or queued pattern even with one store. A middleware layer pays off when the same SAP data also feeds Field Service, Manufacturing Cloud or Agentforce agents. Then one order status API serves the store, the [order status agent](../agentforce-sap-order-status-mulesoft/) and the service team. The AI masterclass explains in the chapter on [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/) why agents should reuse such APIs instead of getting their own.
+Direct Apex callouts with named credentials can be fine for one store with a few fast live calls, as long as timeouts, retries and monitoring are designed carefully; Apex has no guaranteed delivery and a default timeout of ten seconds per callout. The order export often benefits from an asynchronous or queued pattern even with one store. A middleware layer pays off when the same SAP data also feeds Field Service, Manufacturing Cloud or Agentforce agents. Then one order status API serves the store, the [order status agent](/en/blog/agentforce-sap-order-status-mulesoft/) and the service team. The AI masterclass explains in the chapter on [MCP and interfaces](/en/masterclass/ai-salesforce/mcp-and-interfaces/) why agents should reuse such APIs instead of getting their own.
 
 ```hinweis achtung
-One deadline applies to many batch interfaces. Salesforce retires the [OAuth username-password flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) for connected apps on 20 February 2027. A nightly product import that uses this flow can then no longer get an access token. Salesforce recommends the client credentials flow for server-to-server integrations. Logins through SOAP `login()` follow their own schedule and need to be checked separately. How to find and move those interfaces is described in [password integrations end in 2027](../salesforce-password-integrations-end-2027/).
+One deadline applies to many batch interfaces. Salesforce retires the [OAuth username-password flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) for connected apps on 20 February 2027. A nightly product import that uses this flow can then no longer get an access token. Salesforce recommends the client credentials flow for server-to-server integrations. Logins through SOAP `login()` follow their own schedule and need to be checked separately. How to find and move those interfaces is described in [password integrations end in 2027](/en/blog/salesforce-password-integrations-end-2027/).
 ```
 
 ## Worked example: S/4HANA and 300 dealers in Europe
@@ -122,4 +122,4 @@ Seven data flows, three of them with live calls, become more than seven technica
 
 ## First step: object ownership matrix and interface list
 
-Write the object ownership matrix and the interface list before anyone designs the store pages. For every data item, note the master system, copy or live, maximum age and what happens when SAP is down. The [ERP integration chapter of the B2B Commerce masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/) puts these decisions in order, and an independent review of interfaces is part of my work on [Salesforce integration](../../services/salesforce-integration/).
+Write the object ownership matrix and the interface list before anyone designs the store pages. For every data item, note the master system, copy or live, maximum age and what happens when SAP is down. The [ERP integration chapter of the B2B Commerce masterclass](/en/masterclass/b2b-commerce/erp-integration-stock-orders/) puts these decisions in order, and an independent review of interfaces is part of my work on [Salesforce integration](/en/services/salesforce-integration/).

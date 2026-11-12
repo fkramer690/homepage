@@ -34,9 +34,9 @@ Scheduling in Salesforce Field Service rests on four things: clean master data, 
 
 ## What does scheduling need before the engine runs?
 
-Field Service, which Salesforce sells today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/), plans with the data it has, and gaps in that data lead to wrong proposals. Chapter 1 covered whether it pays off and which licenses each role needs, in [business case and licenses](../field-service-business-case-licences/). This chapter starts where the first technician gets planned.
+Field Service, which Salesforce sells today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/), plans with the data it has, and gaps in that data lead to wrong proposals. Chapter 1 covered whether it pays off and which licenses each role needs, in [business case and licenses](/en/masterclass/field-service/field-service-business-case-licences/). This chapter starts where the first technician gets planned.
 
-The engine needs six kinds of master data, described in detail in [what data Field Service scheduling needs](../../../blog/salesforce-field-service-master-data/):
+The engine needs six kinds of master data, described in detail in [what data Field Service scheduling needs](/en/blog/salesforce-field-service-master-data/):
 
 | Master data | What the engine needs from it |
 |---|---|
@@ -47,7 +47,7 @@ The engine needs six kinds of master data, described in detail in [what data Fie
 | Customer visiting hours | Operating hours on the account, which only count when the visiting hours work rule is active. |
 | Absences | Vacation and training from time tracking. |
 
-Hardly any of this is created in Field Service. Assets come from the ERP, skills from HR or the training system, absences from time tracking. So for each kind I set a leading system and an owner before the first interface is built. Which system leads between ERP and Salesforce is the subject of [Salesforce integration](../../../services/salesforce-integration/).
+Hardly any of this is created in Field Service. Assets come from the ERP, skills from HR or the training system, absences from time tracking. So for each kind I set a leading system and an owner before the first interface is built. Which system leads between ERP and Salesforce is the subject of [Salesforce integration](/en/services/salesforce-integration/).
 
 My starting point for the data check is always the same: the failed visits of the last three months, each with a cause. Typical causes are missing parts, no access to the machine, the wrong technician or an absent technician. The most frequent cause shows which data needs to be clean first.
 
@@ -61,11 +61,11 @@ The engine assigns appointments by a scheduling policy. Work rules filter out te
 
 The second decision is how far automation goes. A service appointment moves from None to Scheduled when it has a technician and a slot, and to Dispatched when it is released to the technician's app. Between Scheduled and Dispatched a dispatcher can still step in. For manufacturers I recommend exactly that split at the start: the engine schedules, the dispatcher reviews and releases. The dispatcher knows that a customer has to shut down a line before maintenance, and that is not recorded in any field.
 
-Automation can be extended once dispatchers hardly change the proposals any more. To get there, they note for four weeks why they changed a proposal, and each reason becomes data or a work rule. The full path, including drip feed for automatic release, is in [how to automate technician scheduling and dispatch step by step](../../../blog/salesforce-field-service-scheduling-automation/).
+Automation can be extended once dispatchers hardly change the proposals any more. To get there, they note for four weeks why they changed a proposal, and each reason becomes data or a work rule. The full path, including drip feed for automatic release, is in [how to automate technician scheduling and dispatch step by step](/en/blog/salesforce-field-service-scheduling-automation/).
 
 ## Should you switch to Enhanced Scheduling and Optimization?
 
-Enhanced Scheduling and Optimization, ESO for short, is the newer scheduling engine. According to the [Field Service guide](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/support_field_service.pdf), new orgs have it on for all territories, and existing orgs can switch all territories or one at a time. For an org that went live on the older engine, my answer is yes, but territory by territory. The details are in [Enhanced Scheduling and Optimization: switch now?](../../../blog/field-service-enhanced-scheduling-optimization-switch/).
+Enhanced Scheduling and Optimization, ESO for short, is the newer scheduling engine. According to the [Field Service guide](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/support_field_service.pdf), new orgs have it on for all territories, and existing orgs can switch all territories or one at a time. For an org that went live on the older engine, my answer is yes, but territory by territory. The details are in [Enhanced Scheduling and Optimization: switch now?](/en/blog/field-service-enhanced-scheduling-optimization-switch/).
 
 These points decide the effort:
 
@@ -91,7 +91,7 @@ According to [Salesforce Help on resource schedule optimization](https://help.sa
 
 Salesforce has two dispatcher screens now. The Classic Dispatch Console is the familiar Gantt, renamed with Summer '26. The new Scheduling Console shows Gantt, appointment list and map on one screen. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-quick-look/didispatch-smarter-with-the-scheduling-console), it is available only with ESO, and it shows readable recommendations with a **Why?** that explains a suggested slot with AI. Customizations of the old console carry over according to Trailhead.
 
-The two are not at parity yet. In a [Trailblazer Community thread](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pMqC00AK) from May 2026, a Salesforce team member confirmed this after a customer missed long-range views such as Utilization and Long-Term. For a manufacturer that matters: the planner who books annual maintenance weeks ahead works in exactly those views. As of October 2026 I found no retirement date for the Classic Dispatch Console, so I let two dispatchers test the new console in one territory first. The test plan is in [Scheduling Console: move dispatchers now?](../../../blog/field-service-scheduling-console-dispatchers/).
+The two are not at parity yet. In a [Trailblazer Community thread](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pMqC00AK) from May 2026, a Salesforce team member confirmed this after a customer missed long-range views such as Utilization and Long-Term. For a manufacturer that matters: the planner who books annual maintenance weeks ahead works in exactly those views. As of October 2026 I found no retirement date for the Classic Dispatch Console, so I let two dispatchers test the new console in one territory first. The test plan is in [Scheduling Console: move dispatchers now?](/en/blog/field-service-scheduling-console-dispatchers/).
 
 ## How do you plan commissioning and other long jobs?
 
@@ -103,7 +103,7 @@ Field Service was built for many short jobs per day. Commissioning, overhauls an
 | Crews | A service resource of type Crew. Absences and efficiency count only on the crew, not on its members, and members get no assignment notification. |
 | Complex work | Links appointments in a fixed order. With ESO, a dependency group of up to five appointments is scheduled all or none. Multiday appointments cannot be part of it. |
 
-The last limit hits commissioning hardest: a site survey cannot be linked to the two-week installation that follows it. Capacity-based resources cannot take multiday jobs either, so a partner company modeled only as capacity drops out. My rule: the project plan with phases and milestones stays in the ERP or a project tool, and Field Service covers the work on site, the time and the documentation. The setup is in [Field Service multiday jobs: commissioning and crews](../../../blog/field-service-multiday-jobs-crews-commissioning/).
+The last limit hits commissioning hardest: a site survey cannot be linked to the two-week installation that follows it. Capacity-based resources cannot take multiday jobs either, so a partner company modeled only as capacity drops out. My rule: the project plan with phases and milestones stays in the ERP or a project tool, and Field Service covers the work on site, the time and the documentation. The setup is in [Field Service multiday jobs: commissioning and crews](/en/blog/field-service-multiday-jobs-crews-commissioning/).
 
 ## On-call duty and overtime
 
@@ -113,13 +113,13 @@ Operating hours describe the regular working time of a territory, usually Monday
 A typical surprise after go-live: a contract promises a technician within 24 hours, a machine breaks down on Saturday, and the appointment stays at None because no confirmed shift exists. Entitlement, shift and policy have to fit together.
 ```
 
-In Germany the works council has a say on on-call rotas and overtime under [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html). Setup and the points to agree are in [Field Service on-call duty](../../../blog/field-service-on-call-shifts/).
+In Germany the works council has a say on on-call rotas and overtime under [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html). Setup and the points to agree are in [Field Service on-call duty](/en/blog/field-service-on-call-shifts/).
 
 ## Where does the human dispatcher stay when AI agents schedule?
 
 Salesforce is moving scheduling towards agents. Gap filling after cancellations is generally available for dispatchers, and customers can book and reschedule through an agent that runs on Flex Credits. The [Winter '27 highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) add autonomous scheduling with Agentforce Voice: voice agents book around the clock, check availability and pick a technician in the right territory while the customer is on the phone. The same release lets Agentforce handle rebooking calls for dispatchers.
 
-For a machine builder I see the dispatcher staying in three places: breakdowns with an unclear cause, visits that need a shutdown at the customer, and long jobs. Planned maintenance from maintenance plans is the first candidate for an agent, because the rules are known. Which agents work today is in [AI agents in Field Service: what works today?](../../../blog/field-service-ai-agents-what-works-today/), the manufacturing view in the AI masterclass chapter on [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/), and rollout and cost in [chapter 5](../field-service-ai-agents-rollout/). An agent books with the same policy as the engine, so everything in this chapter applies to it too.
+For a machine builder I see the dispatcher staying in three places: breakdowns with an unclear cause, visits that need a shutdown at the customer, and long jobs. Planned maintenance from maintenance plans is the first candidate for an agent, because the rules are known. Which agents work today is in [AI agents in Field Service: what works today?](/en/blog/field-service-ai-agents-what-works-today/), the manufacturing view in the AI masterclass chapter on [AI agents in manufacturing](/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/), and rollout and cost in [chapter 5](/en/masterclass/field-service/field-service-ai-agents-rollout/). An agent books with the same policy as the engine, so everything in this chapter applies to it too.
 
 ## Worked example: four dispatchers leave Excel
 
@@ -151,7 +151,7 @@ These decisions need a name next to them before a partner configures scheduling:
 | Policy owner | One person in service management owns scheduling policies, work rules and weights, and approves every change. |
 
 ```hinweis achtung
-Policies, work rules, operating hours and territories are records, not metadata. A metadata deployment does not carry them, so they belong in the pipeline as described in the DevOps masterclass chapter on [data and configuration](../../devops-release-management/data-and-configuration/). Otherwise the tested sandbox and production drift apart after the first change.
+Policies, work rules, operating hours and territories are records, not metadata. A metadata deployment does not carry them, so they belong in the pipeline as described in the DevOps masterclass chapter on [data and configuration](/en/masterclass/devops-release-management/data-and-configuration/). Otherwise the tested sandbox and production drift apart after the first change.
 ```
 
-Where the scheduling design touches ERP, project tools and partners, I help with the [Salesforce architecture](../../../services/salesforce-architecture/). The next step for technicians is the app: [chapter 3](../field-service-mobile-app-documents/) covers offline data, forms and service reports, and the [overview](../) lists all chapters.
+Where the scheduling design touches ERP, project tools and partners, I help with the [Salesforce architecture](/en/services/salesforce-architecture/). The next step for technicians is the app: [chapter 3](/en/masterclass/field-service/field-service-mobile-app-documents/) covers offline data, forms and service reports, and the [overview](/en/masterclass/field-service/) lists all chapters.

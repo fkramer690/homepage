@@ -34,7 +34,7 @@ Once the features are designed, three questions decide a Manufacturing Cloud pro
 
 ## Which system owns which object?
 
-Before anyone builds an interface, every object needs a leading system and a named owner. Manufacturing Cloud produces few of its numbers itself. A sales agreement from [chapter 2](../agreements-and-forecasting/) compares plan against actuals, and the actuals come from SAP. Rebates from [chapter 3](../dealer-and-partner-channel/) and warranty from [chapter 4](../warranty-and-after-sales/) work the other way round: Salesforce approves, SAP pays.
+Before anyone builds an interface, every object needs a leading system and a named owner. Manufacturing Cloud produces few of its numbers itself. A sales agreement from [chapter 2](/en/masterclass/manufacturing-cloud/agreements-and-forecasting/) compares plan against actuals, and the actuals come from SAP. Rebates from [chapter 3](/en/masterclass/manufacturing-cloud/dealer-and-partner-channel/) and warranty from [chapter 4](/en/masterclass/manufacturing-cloud/warranty-and-after-sales/) work the other way round: Salesforce approves, SAP pays.
 
 This is how I would split ownership at a typical manufacturer running SAP:
 
@@ -48,11 +48,11 @@ This is how I would split ownership at a typical manufacturer running SAP:
 | Sales agreements, forecasts, targets | Salesforce | Sales planning |
 | Approved rebates and warranty amounts | Salesforce, paid in SAP | Credit memo to the dealer |
 
-For objects inside the org I use the [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/). For ERP interfaces I add two columns, direction and frequency. The most common gap is the account hierarchy: if the sold-to party in SAP does not sit on the same level as the account that holds the sales agreement, you need a mapping table, and that table needs an owner too.
+For objects inside the org I use the [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/). For ERP interfaces I add two columns, direction and frequency. The most common gap is the account hierarchy: if the sold-to party in SAP does not sit on the same level as the account that holds the sales agreement, you need a mapping table, and that table needs an owner too.
 
 ## Data flows between SAP and Manufacturing Cloud
 
-Master data and actuals flow into Salesforce, money flows back. The frequency follows the question the data answers. Sales agreements run for months, so a daily load is enough for their actuals. A dealer asking about an order wants today's status; I call that live in SAP instead of copying it, as in [Agentforce and SAP: order status through MuleSoft](../../../blog/agentforce-sap-order-status-mulesoft/). All flows with direction and frequency are in [Manufacturing Cloud and SAP: which data flows where](../../../blog/manufacturing-cloud-sap-integration-data-flows/).
+Master data and actuals flow into Salesforce, money flows back. The frequency follows the question the data answers. Sales agreements run for months, so a daily load is enough for their actuals. A dealer asking about an order wants today's status; I call that live in SAP instead of copying it, as in [Agentforce and SAP: order status through MuleSoft](/en/blog/agentforce-sap-order-status-mulesoft/). All flows with direction and frequency are in [Manufacturing Cloud and SAP: which data flows where](/en/blog/manufacturing-cloud-sap-integration-data-flows/).
 
 ```ablauf
 erp: SAP master data, SAP orders, SAP credit memo
@@ -68,7 +68,7 @@ The [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufactu
 
 For late orders and corrections there is the [Refresh Actuals Calculation](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_refresh_actuals_calculation.htm) action. It is available from API version 47.0 and recalculates the actuals of a sales agreement for the current, past or future periods. When SAP books a return for last month, the middleware calls it for the affected agreements. Otherwise account managers call customers about a shortfall that no longer exists.
 
-How the same question looks for a B2B store is covered in the [ERP integration](../../b2b-commerce/erp-integration-stock-orders/) chapter of the B2B Commerce masterclass. I help design these interfaces under [Salesforce integration](../../../services/salesforce-integration/).
+How the same question looks for a B2B store is covered in the [ERP integration](/en/masterclass/b2b-commerce/erp-integration-stock-orders/) chapter of the B2B Commerce masterclass. I help design these interfaces under [Salesforce integration](/en/services/salesforce-integration/).
 
 ### Which login deadlines apply to ERP interfaces?
 
@@ -81,23 +81,23 @@ Summer '27 | SOAP, REST and Bulk API versions 31.0 to 40.0 stop getting fixes
 Summer '28 | Calls to SOAP, REST and Bulk API versions 31.0 to 40.0 fail
 ```
 
-The risk is an actuals load that fails silently: sales sees an old shortfall and believes it. How to find the affected interfaces is in [Salesforce password integrations end in 2027](../../../blog/salesforce-password-integrations-end-2027/).
+The risk is an actuals load that fails silently: sales sees an old shortfall and believes it. How to find the affected interfaces is in [Salesforce password integrations end in 2027](/en/blog/salesforce-password-integrations-end-2027/).
 
 ## Who owns prices: SAP or Penny Perfect Pricing?
 
 With Winter '27, [generally available since 12 October 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), Salesforce offers its own price engine for orders. According to the [developer guide](https://developer.salesforce.com/docs/industries/penny-perfect-pricing/guide/overview.html), Penny Perfect Pricing prices advanced order line items, which is the telesales ordering flow, and describes 19 objects from API version 68.0. Calculation schema, search strategies and condition records with tiers look a lot like the SAP condition technique.
 
 ```hinweis tipp
-For most manufacturers I would still keep SAP as the price master. Two price engines drift apart as soon as the pricing team changes a condition in SAP and the copy only arrives overnight. Two points are also open: the developer documentation names no license and no standard way to load SAP condition records. Settle both in writing before a project plan depends on them. The trade-off, with a scenario for spare parts telesales, is in [Penny Perfect Pricing: ERP prices in Salesforce?](../../../blog/penny-perfect-pricing-erp-prices/).
+For most manufacturers I would still keep SAP as the price master. Two price engines drift apart as soon as the pricing team changes a condition in SAP and the copy only arrives overnight. Two points are also open: the developer documentation names no license and no standard way to load SAP condition records. Settle both in writing before a project plan depends on them. The trade-off, with a scenario for spare parts telesales, is in [Penny Perfect Pricing: ERP prices in Salesforce?](/en/blog/penny-perfect-pricing-erp-prices/).
 ```
 
-The boundaries stay as in the other chapters: quotes with a configurator belong to Revenue Cloud, see [catalog, configurator, pricing](../../revenue-cloud/product-catalog-configurator-pricing/), and store prices to B2B Commerce, see [prices, cart, checkout](../../b2b-commerce/prices-cart-checkout/).
+The boundaries stay as in the other chapters: quotes with a configurator belong to Revenue Cloud, see [catalog, configurator, pricing](/en/masterclass/revenue-cloud/product-catalog-configurator-pricing/), and store prices to B2B Commerce, see [prices, cart, checkout](/en/masterclass/b2b-commerce/prices-cart-checkout/).
 
 ## When does Agentforce pay off for manufacturers?
 
-When a process meets the criteria I describe in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/): enough volume, data that holds up, API access to the ERP, a cost model that works and an edition that fits. Dealer questions about order status and delivery dates often meet them. A warranty pre-check where the installed base lacks warranty start dates does not.
+When a process meets the criteria I describe in [Agentforce for manufacturers: start now or wait?](/en/blog/agentforce-yes-or-no-manufacturers/): enough volume, data that holds up, API access to the ERP, a cost model that works and an edition that fits. Dealer questions about order status and delivery dates often meet them. A warranty pre-check where the installed base lacks warranty start dates does not.
 
-Two numbers drive the cost. A standard or custom action costs 20 Flex Credits according to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), which at [$500 per 100,000 credits](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) is $0.10. And the edition sets the pool: according to the [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/), the Core editions include 500,000 Flex Credits per org and year, the Max editions 2.75 million and, as the only ones, the full Agentforce for Industries suite. For Core there is the Agentforce for Manufacturing Cloud Add-on: the add-ons page says $150 per user and month, the pricing page "from $ 150 login/month". Get the unit confirmed in writing. How to estimate credits per action is covered in the [costs and tokens](../../ai-salesforce/costs-and-tokens/) chapter of the AI masterclass.
+Two numbers drive the cost. A standard or custom action costs 20 Flex Credits according to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), which at [$500 per 100,000 credits](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) is $0.10. And the edition sets the pool: according to the [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/), the Core editions include 500,000 Flex Credits per org and year, the Max editions 2.75 million and, as the only ones, the full Agentforce for Industries suite. For Core there is the Agentforce for Manufacturing Cloud Add-on: the add-ons page says $150 per user and month, the pricing page "from $ 150 login/month". Get the unit confirmed in writing. How to estimate credits per action is covered in the [costs and tokens](/en/masterclass/ai-salesforce/costs-and-tokens/) chapter of the AI masterclass.
 
 ```kennzahlen
 20 | Flex Credits per standard or custom action, so $0.10
@@ -106,17 +106,17 @@ Two numbers drive the cost. A standard or custom action costs 20 Flex Credits ac
 source: Salesforce Flex Credits rate card, Agentforce pricing announcement and Manufacturing Cloud pricing page
 ```
 
-The most visible industry reference shows where to start. In the [Siemens and Salesforce announcement](https://www.salesforce.com/news/press-releases/2026/09/15/siemens-agentforce-redefine-industrial-sales-service/) of 15 September 2026, two agents for inbound leads are live, for 18,000 sellers in 132 countries. Teamcenter answers for service and supplier onboarding in SAP are only announced. In [Siemens and Agentforce: lessons for manufacturers](../../../blog/siemens-agentforce-lessons-for-manufacturers/) I derive an order from it: read-only with high volume first, then reading from the ERP, then answers from PLM and serial numbers, and write steps into the ERP last. Which agents exist today for sales, service and warranty is in the [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/) chapter.
+The most visible industry reference shows where to start. In the [Siemens and Salesforce announcement](https://www.salesforce.com/news/press-releases/2026/09/15/siemens-agentforce-redefine-industrial-sales-service/) of 15 September 2026, two agents for inbound leads are live, for 18,000 sellers in 132 countries. Teamcenter answers for service and supplier onboarding in SAP are only announced. In [Siemens and Agentforce: lessons for manufacturers](/en/blog/siemens-agentforce-lessons-for-manufacturers/) I derive an order from it: read-only with high volume first, then reading from the ERP, then answers from PLM and serial numbers, and write steps into the ERP last. Which agents exist today for sales, service and warranty is in the [AI agents in manufacturing](/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/) chapter.
 
 ## One agent for dealers in many languages
 
 For exporters with dealers in many countries, language is a planning question of its own. Salesforce separates generally available languages from beta languages in Agentforce, and according to its [multi-language guide](https://www.salesforce.com/blog/multi-language-guide/) the customer is responsible for quality assurance in beta languages. Check every dealer language against the current list, because Salesforce changes it regularly. Translation itself is cheap: the rate card lists 4,000 Flex Credits per million characters translated, which is $20 at list price.
 
-Knowledge costs more. According to the same guide, the retriever filters out knowledge articles whose language does not match the session language, so an Italian dealer only finds Italian articles. If you do not want that, you build a custom retriever without the language filter. I would maintain knowledge in one or two languages, keep safety and warranty content per country and test every approved language with real dealer questions before go-live. The worked example and the split are in [Multilingual Agentforce agents for export dealers](../../../blog/multilingual-agentforce-agents-export-dealers/). In the rollout, language becomes a column in the country table.
+Knowledge costs more. According to the same guide, the retriever filters out knowledge articles whose language does not match the session language, so an Italian dealer only finds Italian articles. If you do not want that, you build a custom retriever without the language filter. I would maintain knowledge in one or two languages, keep safety and warranty content per country and test every approved language with real dealer questions before go-live. The worked example and the split are in [Multilingual Agentforce agents for export dealers](/en/blog/multilingual-agentforce-agents-export-dealers/). In the rollout, language becomes a column in the country table.
 
 ## In which order do you roll out Manufacturing Cloud globally?
 
-First the goal has to be set, usually harmonizing processes. That leads to a global template with the decisions that are hard to change after the first country: the account level of sales agreements, the rule for when a configuration becomes its own product, and what customers and dealers see in the portal. In [Rolling out Manufacturing Cloud globally](../../../blog/manufacturing-cloud-global-rollout/) I describe the rules I derive from that:
+First the goal has to be set, usually harmonizing processes. That leads to a global template with the decisions that are hard to change after the first country: the account level of sales agreements, the rule for when a configuration becomes its own product, and what customers and dealers see in the portal. In [Rolling out Manufacturing Cloud globally](/en/blog/manufacturing-cloud-global-rollout/) I describe the rules I derive from that:
 
 | Rule | What it means |
 |---|---|
@@ -126,11 +126,11 @@ First the goal has to be set, usually harmonizing processes. That leads to a glo
 | 80 percent the same | legal requirements are given, every other local requirement is justified and decided by one role on the client side. |
 | Change management | key users, communication before go-live and a look at usage afterwards, in every country. |
 
-The ERP column carries the most weight. A country with its own SAP system or its own middleware needs new interfaces for actuals, rebates and warranty. If it shares the ERP with a country that is already live, the path is shorter. How I build a roadmap with phases and gates is in the [rollout roadmap](../../devops-release-management/rollout-roadmap/) chapter of the DevOps masterclass, and the work with people in each country under [change management for Salesforce programs](../../../services/change-management-salesforce/).
+The ERP column carries the most weight. A country with its own SAP system or its own middleware needs new interfaces for actuals, rebates and warranty. If it shares the ERP with a country that is already live, the path is shorter. How I build a roadmap with phases and gates is in the [rollout roadmap](/en/masterclass/devops-release-management/rollout-roadmap/) chapter of the DevOps masterclass, and the work with people in each country under [change management for Salesforce programs](/en/services/change-management-salesforce/).
 
 ## Retest after every Salesforce release
 
-Salesforce ships three releases a year, and preview sandboxes get each one before production. How to align that with your own release calendar is in the [release planning](../../devops-release-management/release-planning-salesforce-releases/) chapter of the DevOps masterclass. In a Manufacturing Cloud org the parts that produce numbers belong in the regression test first:
+Salesforce ships three releases a year, and preview sandboxes get each one before production. How to align that with your own release calendar is in the [release planning](/en/masterclass/devops-release-management/release-planning-salesforce-releases/) chapter of the DevOps masterclass. In a Manufacturing Cloud org the parts that produce numbers belong in the regression test first:
 
 | What | Why it is tested after every release |
 |---|---|
@@ -139,8 +139,8 @@ Salesforce ships three releases a year, and preview sandboxes get each one befor
 | Business Rules Engine expression sets | The metadata type is [ExpressionSetDefinition](https://developer.salesforce.com/docs/atlas.en-us.264.0.api_meta.meta/api_meta/meta_expressionsetdefinition.htm); in many orgs they hold warranty and rebate rules. |
 | ERP interfaces | Every new API version is a reason to check the API versions of your interfaces against the deadlines above. |
 
-My test per release is deliberately small: one forecast regeneration, one actuals refresh for three sales agreements, one warranty claim through the expression set and one rebate run for a period, each in the preview sandbox and compared with production. If a number differs, you know before your account managers do. For these definitions to move between orgs like any other configuration, they belong in the repository, as described in the [data and configuration](../../devops-release-management/data-and-configuration/) chapter.
+My test per release is deliberately small: one forecast regeneration, one actuals refresh for three sales agreements, one warranty claim through the expression set and one rebate run for a period, each in the preview sandbox and compared with production. If a number differs, you know before your account managers do. For these definitions to move between orgs like any other configuration, they belong in the repository, as described in the [data and configuration](/en/masterclass/devops-release-management/data-and-configuration/) chapter.
 
 ## First step: agree the object list with the SAP team
 
-Agree with the SAP team which system owns which object before the first interface is built, and settle the template in the first large country before the second country starts planning. This chapter closes the masterclass. It assumes the decisions from the business case, agreements, dealer channel and warranty, and settles what they need in operation and across many countries. The previous chapter is [chapter 4 on warranty and after-sales](../warranty-and-after-sales/), and all five chapters are on the [overview page](../).
+Agree with the SAP team which system owns which object before the first interface is built, and settle the template in the first large country before the second country starts planning. This chapter closes the masterclass. It assumes the decisions from the business case, agreements, dealer channel and warranty, and settles what they need in operation and across many countries. The previous chapter is [chapter 4 on warranty and after-sales](/en/masterclass/manufacturing-cloud/warranty-and-after-sales/), and all five chapters are on the [overview page](/en/masterclass/manufacturing-cloud/).

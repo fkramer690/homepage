@@ -32,7 +32,7 @@ Release-Planung für Salesforce heißt, zwei Kalender übereinanderzulegen. Ihr 
 
 ## Was gehört in einen Salesforce-Release-Kalender?
 
-Ein Release-Kalender ist die eine Übersicht, aus der jedes Team abliest, wann es liefern darf und wann nicht. In einem Programm mit mehreren Implementierungspartnern auf einer Org hat jeder Partner seinen eigenen Sprintplan. Der Kalender gehört deshalb dem Kunden, gepflegt vom Release-Manager aus [Kapitel 2](../release-prozess-eigentum-rollen/), und die Partner planen in ihn hinein. Bei acht Teams auf einer Org, wie in einem meiner Programme, ist er die einzige Stelle, an der alle Termine zusammenkommen.
+Ein Release-Kalender ist die eine Übersicht, aus der jedes Team abliest, wann es liefern darf und wann nicht. In einem Programm mit mehreren Implementierungspartnern auf einer Org hat jeder Partner seinen eigenen Sprintplan. Der Kalender gehört deshalb dem Kunden, gepflegt vom Release-Manager aus [Kapitel 2](/masterclass/devops-release-management/release-prozess-eigentum-rollen/), und die Partner planen in ihn hinein. Bei acht Teams auf einer Org, wie in einem meiner Programme, ist er die einzige Stelle, an der alle Termine zusammenkommen.
 
 Vier Ebenen gehören hinein:
 
@@ -47,7 +47,7 @@ Die vierte Ebene wird am häufigsten vergessen. Ein Release am letzten Tag des Q
 
 ## Ein fester Rhythmus mit Freeze-Fenstern
 
-Ich empfehle einen festen Rhythmus statt Releases nach Bedarf. Alle zwei oder drei Wochen am selben Wochentag ist für die meisten Programme ein guter Start. Ein fester Termin zwingt die Partner, kleine Pakete zu schnüren, und die Fachbereiche wissen, wann sich etwas ändert. Was dringend ist und nicht warten kann, läuft über den Hotfix-Pfad aus [Kapitel 3](../umgebungen-und-branching/), nicht über ein Sonder-Release.
+Ich empfehle einen festen Rhythmus statt Releases nach Bedarf. Alle zwei oder drei Wochen am selben Wochentag ist für die meisten Programme ein guter Start. Ein fester Termin zwingt die Partner, kleine Pakete zu schnüren, und die Fachbereiche wissen, wann sich etwas ändert. Was dringend ist und nicht warten kann, läuft über den Hotfix-Pfad aus [Kapitel 3](/masterclass/devops-release-management/umgebungen-und-branching/), nicht über ein Sonder-Release.
 
 Ein Freeze-Fenster ist ein Zeitraum, in dem nichts nach Produktion deployt wird außer Hotfixes mit Freigabe. Drei Arten sind bei Salesforce sinnvoll:
 
@@ -82,7 +82,7 @@ Ob eine Sandbox das neue Release früh erhält, hängt von ihrer Instanz ab. All
 
 Für den Release-Kalender folgen daraus zwei Regeln:
 
-- **Mindestens eine Sandbox bewusst auf Preview.** Salesforce empfiehlt das im [Trailhead-Modul zur Sandbox Preview](https://trailhead.salesforce.com/content/learn/modules/sf_releases/sf-releases-sandbox-preview). Dort laufen Regressionstests, die Schnittstellentests zu SAP und der Test der Release Updates. Geplante Sandbox-Refreshes aus [Kapitel 3](../umgebungen-und-branching/) legen Sie vor den Stichtag.
+- **Mindestens eine Sandbox bewusst auf Preview.** Salesforce empfiehlt das im [Trailhead-Modul zur Sandbox Preview](https://trailhead.salesforce.com/content/learn/modules/sf_releases/sf-releases-sandbox-preview). Dort laufen Regressionstests, die Schnittstellentests zu SAP und der Test der Release Updates. Geplante Sandbox-Refreshes aus [Kapitel 3](/masterclass/devops-release-management/umgebungen-und-branching/) legen Sie vor den Stichtag.
 - **Preview-Sandboxes nicht in der Deployment-Kette nach Produktion.** Eine Preview-Sandbox arbeitet mit der neuen API-Version und kennt Metadaten, die Produktion noch nicht kennt. Gearset rät in seiner [Dokumentation zu Preview-Sandboxes](https://docs.gearset.com/en/articles/9297189-salesforce-preview-and-non-preview-sandboxes) ausdrücklich, sie nicht in die Pipeline aufzunehmen, und stellt neue API-Versionen erst nach dem allgemeinen Release als [Standard](https://docs.gearset.com/en/articles/4934349-how-does-gearset-handle-salesforce-metadata-api-releases) ein. Salesforce selbst hat für Winter '27 eine Apex-Einstellung angeboten, mit der ein Deployment aus einer Winter-'27-Sandbox in eine Produktion auf Summer '26 das alte Heap-Limit behält, wie der [Entwickler-Leitfaden zu Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) beschreibt.
 
 ```vertiefung Für Entwickler
@@ -96,11 +96,11 @@ Release Updates sind Änderungen, die Salesforce ankündigt und zu einem festen 
 
 Daraus wird ein fester Punkt im Kalender: Nach jedem Salesforce-Release geht der Release-Manager die Liste durch, gibt jedem Update einen Verantwortlichen, startet den Testlauf zuerst in der Preview- oder Integrationssandbox und aktiviert das Update in Produktion an einem eigenen Termin, bevor Salesforce es tut. Zwei aktuelle Beispiele: Die neue Berechtigung „Use Any API Auth“ für SOAP-Logins ab 1. Dezember 2026 lässt sich laut Salesforce über das Release Update im Setup vorab testen. Das Ende des OAuth-Passwort-Flows ist ebenfalls als [Release Update](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) veröffentlicht.
 
-Wer die Liste nicht von Hand prüfen will: Das Monitoring von sfdx-hardis sammelt laut [Dokumentation](https://sfdx-hardis.cloudity.com/salesforce-monitoring-home/) wöchentlich Warnungen zu anstehenden und überfälligen Release Updates und meldet den nächsten Upgrade-Termin der Instanz. Mehr zum Monitoring in [Kapitel 9](../betrieb-monitoring-backup/).
+Wer die Liste nicht von Hand prüfen will: Das Monitoring von sfdx-hardis sammelt laut [Dokumentation](https://sfdx-hardis.cloudity.com/salesforce-monitoring-home/) wöchentlich Warnungen zu anstehenden und überfälligen Release Updates und meldet den nächsten Upgrade-Termin der Instanz. Mehr zum Monitoring in [Kapitel 9](/masterclass/devops-release-management/betrieb-monitoring-backup/).
 
 ### API-Versionen: jedes Release bringt eine neue
 
-Mit jedem Release erscheint eine neue API-Version, mit Winter '27 die 68.0. Das allein ändert nichts an Ihrem Code, denn jede Apex-Klasse und jeder Trigger speichert seine eigene Version. Riskant wird das Anheben. Ab API 67.0 laufen Apex-Klassen im User Mode und mit Sharing, Abfragen liefern dann still weniger Datensätze. Warum das passiert und wie Sie das Anheben planen, steht in [API 67.0: warum Apex weniger Datensätze sieht](../../../blog/api-67-apex-user-mode-weniger-datensaetze/). Coding-Agenten heben Versionen gern nebenbei an, deshalb gehört eine Regel dazu auch in die Regeldatei aus [Kapitel 8 der KI-Masterclass](../../ki-salesforce/best-practices-ki-code/).
+Mit jedem Release erscheint eine neue API-Version, mit Winter '27 die 68.0. Das allein ändert nichts an Ihrem Code, denn jede Apex-Klasse und jeder Trigger speichert seine eigene Version. Riskant wird das Anheben. Ab API 67.0 laufen Apex-Klassen im User Mode und mit Sharing, Abfragen liefern dann still weniger Datensätze. Warum das passiert und wie Sie das Anheben planen, steht in [API 67.0: warum Apex weniger Datensätze sieht](/blog/api-67-apex-user-mode-weniger-datensaetze/). Coding-Agenten heben Versionen gern nebenbei an, deshalb gehört eine Regel dazu auch in die Regeldatei aus [Kapitel 8 der KI-Masterclass](/masterclass/ki-salesforce/best-practices-ki-code/).
 
 Mein Vorschlag für den Kalender: einmal im Jahr ein geplantes Paket, das `sourceApiVersion` und die Klassen in Schüben nach Fachbereich anhebt, mit Tests als echte Benutzer. Dazu gehören die Klassen, für die der Compiler seit Winter '27 warnt, weil sie auf Version 9.0 bis 19.0 gespeichert sind.
 
@@ -117,7 +117,7 @@ Abschaltungen sind Termine, an denen etwas aufhört zu funktionieren. Bis Summer
 | Summer '27 | SOAP login() in API 31.0 bis 64.0; API 31.0 bis 40.0 ohne Updates | ältere Schnittstellen |
 | Summer '28 | SOAP-, REST- und Bulk-API 31.0 bis 40.0 fallen aus | ältere Schnittstellen |
 
-Dazu braucht die Salesforce CLI seit Winter '27 Node.js 22 oder neuer, was CI-Runner und Docker-Images betrifft. Die Details stehen in vier Artikeln: [Winter '27 und Ihre Pipeline](../../../blog/salesforce-winter-27-aenderungen-pipeline/), [Passwort-Integrationen enden 2027](../../../blog/salesforce-passwort-integrationen-2027/), [Ende des DX MCP Servers](../../../blog/salesforce-dx-mcp-server-ende/) und der Artikel zu API 67.0 oben. Wie die Pipeline sich ohne Passwörter anmeldet, steht in [Kapitel 5](../pipeline-aufbauen/).
+Dazu braucht die Salesforce CLI seit Winter '27 Node.js 22 oder neuer, was CI-Runner und Docker-Images betrifft. Die Details stehen in vier Artikeln: [Winter '27 und Ihre Pipeline](/blog/salesforce-winter-27-aenderungen-pipeline/), [Passwort-Integrationen enden 2027](/blog/salesforce-passwort-integrationen-2027/), [Ende des DX MCP Servers](/blog/salesforce-dx-mcp-server-ende/) und der Artikel zu API 67.0 oben. Wie die Pipeline sich ohne Passwörter anmeldet, steht in [Kapitel 5](/masterclass/devops-release-management/pipeline-aufbauen/).
 
 Für die Planung zählt, dass jede Abschaltung einen Verantwortlichen auf Kundenseite und einen Erledigt-Termin vor dem Salesforce-Termin erhält. Beim Passwort-Flow würde ich das Setting in Produktion einige Tage vorher selbst abschalten, mit dem Team in Bereitschaft. Dann passiert der Ausfall an einem Tag, den Sie gewählt haben.
 
@@ -150,4 +150,4 @@ Kalender verteilen | an alle Partner
   Die Partner erhalten den Kalender schriftlich. Wer im Freeze liefern will, braucht ihre Freigabe.
 ```
 
-Keiner dieser Schritte braucht ein neues Werkzeug. Er braucht jemanden auf Kundenseite, der den Kalender besitzt, und Partner, die vertraglich in ihn hinein planen. Wie solche Regeln in Partnerverträgen verankert werden, beschreibe ich unter [Partnersteuerung](../../../leistungen/partnersteuerung/); die Datenseite eines Releases behandelt [Kapitel 7](../daten-und-konfiguration/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
+Keiner dieser Schritte braucht ein neues Werkzeug. Er braucht jemanden auf Kundenseite, der den Kalender besitzt, und Partner, die vertraglich in ihn hinein planen. Wie solche Regeln in Partnerverträgen verankert werden, beschreibe ich unter [Partnersteuerung](/leistungen/partnersteuerung/); die Datenseite eines Releases behandelt [Kapitel 7](/masterclass/devops-release-management/daten-und-konfiguration/), alle Kapitel finden Sie auf der [Übersichtsseite](/masterclass/devops-release-management/).

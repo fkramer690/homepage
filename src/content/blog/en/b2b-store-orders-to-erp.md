@@ -80,7 +80,7 @@ I see three reasons in manufacturing.
 
 **Fulfillment is in SAP.** Availability check, delivery, picking, goods issue and invoicing are configured there, often with years of customer-specific logic. Rebuilding that in Salesforce is a program of its own.
 
-**Credit, prices and taxes are in SAP.** The order is only final when SAP has accepted it. My article on [distributor replenishment](../distributor-inventory-replenishment-agentforce/) follows the same rule: a request becomes a binding order only once the ERP has accepted it and returned an order number.
+**Credit, prices and taxes are in SAP.** The order is only final when SAP has accepted it. My article on [distributor replenishment](/en/blog/distributor-inventory-replenishment-agentforce/) follows the same rule: a request becomes a binding order only once the ERP has accepted it and returned an order number.
 
 So the store is the place where the order starts and where the buyer follows it. SAP is the place where it is processed.
 
@@ -109,13 +109,13 @@ For unmanaged summaries, your integration populates all of that data. Invoices a
 - invoices or a link to them,
 - cancellations and changes made by inside sales in SAP.
 
-Per the developer guide, the integration user needs B2B Commerce Integrator User or the Edit Unmanaged Order Summaries permission. Use a dedicated integration user with a certificate or client credentials. The OAuth username-password flow for connected apps ends on February 20, 2027, as described in [password integrations end in 2027](../salesforce-password-integrations-end-2027/).
+Per the developer guide, the integration user needs B2B Commerce Integrator User or the Edit Unmanaged Order Summaries permission. Use a dedicated integration user with a certificate or client credentials. The OAuth username-password flow for connected apps ends on February 20, 2027, as described in [password integrations end in 2027](/en/blog/salesforce-password-integrations-end-2027/).
 
-Dealers who want order status in a chat need the same data. An [agent reading order status from SAP](../agentforce-sap-order-status-mulesoft/) and the store's order history should use the same API, so both show the same date.
+Dealers who want order status in a chat need the same data. An [agent reading order status from SAP](/en/blog/agentforce-sap-order-status-mulesoft/) and the store's order history should use the same API, so both show the same date.
 
 ## Shape the order for SAP with CreateOrder
 
-The extension point **Commerce_Domain_Checkout_CreateOrder** "creates an order from cart information during checkout", according to the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html). That is where you add fields that SAP needs and that the standard order does not have, such as a sales organization, an order type or a shipping condition. Checks that must run before the order exists, such as credit checks or order blocks, belong in **Commerce_Domain_Checkout_PlaceOrder**, as described in [B2B checkout with purchase order](../b2b-checkout-purchase-order-card-invoice/). That extension allows only one external callout and no DML. A synchronous check in SAP also makes checkout depend on SAP being available.
+The extension point **Commerce_Domain_Checkout_CreateOrder** "creates an order from cart information during checkout", according to the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html). That is where you add fields that SAP needs and that the standard order does not have, such as a sales organization, an order type or a shipping condition. Checks that must run before the order exists, such as credit checks or order blocks, belong in **Commerce_Domain_Checkout_PlaceOrder**, as described in [B2B checkout with purchase order](/en/blog/b2b-checkout-purchase-order-card-invoice/). That extension allows only one external callout and no DML. A synchronous check in SAP also makes checkout depend on SAP being available.
 
 Keep the order lean. Each extra field is a mapping that has to be tested in every Salesforce release.
 
@@ -133,4 +133,4 @@ Point five is a real limit. Showing all SAP orders in the store means bringing p
 
 ## First step: write down who owns the order at each step
 
-Write down who owns the order at each step, from cart to invoice, and what status the buyer sees at each step. Also record which number links the Salesforce order to the SAP sales order, and what happens when SAP rejects an order or is unreachable. Then decide whether Order Management has a role at all. How the order fits into the other data flows is covered in [B2B Commerce and SAP: which data flows where](../b2b-commerce-sap-data-flows/), and the [ERP integration chapter of the masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/) puts it into context. An independent review of such designs is part of my work on [Salesforce architecture](../../services/salesforce-architecture/).
+Write down who owns the order at each step, from cart to invoice, and what status the buyer sees at each step. Also record which number links the Salesforce order to the SAP sales order, and what happens when SAP rejects an order or is unreachable. Then decide whether Order Management has a role at all. How the order fits into the other data flows is covered in [B2B Commerce and SAP: which data flows where](/en/blog/b2b-commerce-sap-data-flows/), and the [ERP integration chapter of the masterclass](/en/masterclass/b2b-commerce/erp-integration-stock-orders/) puts it into context. An independent review of such designs is part of my work on [Salesforce architecture](/en/services/salesforce-architecture/).

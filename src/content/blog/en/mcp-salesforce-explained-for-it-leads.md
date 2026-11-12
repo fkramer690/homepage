@@ -49,9 +49,9 @@ One sentence in the overview is worth reading twice: MCP covers only the exchang
 
 For an IT lead, it is enough to distinguish three directions:
 
-1. **External AI to Salesforce.** Claude, ChatGPT or Cursor read and change records through Salesforce Hosted MCP Servers, [generally available since 29 April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) for Enterprise Edition and above. Salesforce in Claude, covered in [AIforce: Salesforce in Claude and Slack](../aiforce-salesforce-in-claude-and-slack/), uses the same path.
+1. **External AI to Salesforce.** Claude, ChatGPT or Cursor read and change records through Salesforce Hosted MCP Servers, [generally available since 29 April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) for Enterprise Edition and above. Salesforce in Claude, covered in [AIforce: Salesforce in Claude and Slack](/en/blog/aiforce-salesforce-in-claude-and-slack/), uses the same path.
 2. **Agentforce to external tools.** Agentforce acts as an MCP client. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce), external servers are registered in Agentforce Registry, MuleSoft and Salesforce servers in API Catalog, and the admin picks the tools an agent may use. Salesforce first [announced the client as a pilot](https://developer.salesforce.com/blogs/2025/06/introducing-mcp-support-across-salesforce) in 2025; [Salesforce Help](https://help.salesforce.com/s/articleView?id=ai.agent_mcp.htm&language=en_US&type=5) now describes it as built into Agentforce for Enterprise, Performance, Unlimited and Developer Editions.
-3. **Coding agents to your project.** Your partner's developers connect Claude Code, Cursor or Agentforce Vibes to sandboxes through local tooling and MCP servers. I cover what changed for the former Salesforce DX MCP Server in [the end of the Salesforce DX MCP Server](../salesforce-dx-mcp-server-end-of-life/).
+3. **Coding agents to your project.** Your partner's developers connect Claude Code, Cursor or Agentforce Vibes to sandboxes through local tooling and MCP servers. I cover what changed for the former Salesforce DX MCP Server in [the end of the Salesforce DX MCP Server](/en/blog/salesforce-dx-mcp-server-end-of-life/).
 
 ```ablauf
 sf: Salesforce org, Agentforce, Sandbox
@@ -61,7 +61,7 @@ Agentforce --as MCP client--> External MCP servers
 Coding agents --local server--> Sandbox
 ```
 
-The full interface overview with Agent API, Models API and the ERP path through MuleSoft is in [chapter 3 of my AI masterclass](../../masterclass/ai-salesforce/mcp-and-interfaces/).
+The full interface overview with Agent API, Models API and the ERP path through MuleSoft is in [chapter 3 of my AI masterclass](/en/masterclass/ai-salesforce/mcp-and-interfaces/).
 
 ## The protocol leaves security to you
 
@@ -87,13 +87,13 @@ Because every call runs as the named user, your sharing model becomes the bounda
 
 ### 3. Which data may the tools reach?
 
-Start with `sobject-reads`, the read-only server that Salesforce calls "a great place to start". I would test it in a sandbox first. The next level is narrower than any standard server: Named Queries expose predefined SOQL instead of free queries, and a Flow "machine history by serial number" returns exactly the fields a service agent needs. The MCP project lists wildcard scopes as a common mistake, and the same logic applies to tools. Order status, stock and prices from SAP or proALPHA stay behind a deterministic API, as described in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/).
+Start with `sobject-reads`, the read-only server that Salesforce calls "a great place to start". I would test it in a sandbox first. The next level is narrower than any standard server: Named Queries expose predefined SOQL instead of free queries, and a Flow "machine history by serial number" returns exactly the fields a service agent needs. The MCP project lists wildcard scopes as a common mistake, and the same logic applies to tools. Order status, stock and prices from SAP or proALPHA stay behind a deterministic API, as described in [Agentforce and SAP order status](/en/blog/agentforce-sap-order-status-mulesoft/).
 
 ### 4. Which AI clients and agents do you approve?
 
 Salesforce names [Claude, ChatGPT, Cursor and Postman](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/setup-overview.html) as clients. An admin registers each external client as an External Client App with a callback URL specific to that client; dynamic client registration is not supported. Agentforce Vibes is the [documented exception](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/client-connection-overview.html). With these policies in place, no employee connects a new external AI tool without IT, and every External Client App is a decision about a vendor, a contract and a data flow.
 
-For Salesforce in Claude, which is still a beta that Salesforce has to approve for your organization, [Anthropic's setup guide](https://support.claude.com/en/articles/16952184-set-up-salesforce-in-claude-for-your-organization) says that Claude owners can set an installation preference per group, each member signs in with their own Salesforce account, and by default Claude asks before each change is written. For Agentforce as an MCP client, Trailhead says the [Einstein Trust Layer](../einstein-trust-layer-what-it-protects/) applies and Agentforce Gateway policies can limit how often an agent calls a tool. For external clients reading your data I found no comparable statement; that gap is the topic of [hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/).
+For Salesforce in Claude, which is still a beta that Salesforce has to approve for your organization, [Anthropic's setup guide](https://support.claude.com/en/articles/16952184-set-up-salesforce-in-claude-for-your-organization) says that Claude owners can set an installation preference per group, each member signs in with their own Salesforce account, and by default Claude asks before each change is written. For Agentforce as an MCP client, Trailhead says the [Einstein Trust Layer](/en/blog/einstein-trust-layer-what-it-protects/) applies and Agentforce Gateway policies can limit how often an agent calls a tool. For external clients reading your data I found no comparable statement; that gap is the topic of [hosted MCP servers and data access](/en/blog/salesforce-hosted-mcp-servers-data-access/).
 
 ## Example: four MCP requests in one month
 
@@ -101,15 +101,15 @@ Assume a machine builder with Sales Cloud, Service Cloud, a dealer portal and SA
 
 - **After-sales:** 20 people in the service back office want to ask Claude about open cases, installed machines and warranty status. Decision: pilot. A custom server with three tools (open cases per account, machine history per serial number as a Flow, warranty status as a Named Query), linked to a dedicated permission set and tested in a sandbox first.
 - **Sales operations:** wants ChatGPT to update opportunities after dealer visits. Decision: later. A second AI vendor means a second contract review, and write access waits until the read pilot has run for eight weeks.
-- **Implementation partner:** wants a community MCP server with a production login to fix data faster. Decision: no. Partners work in sandboxes, and production changes go through the pipeline. This belongs in the contract. See [partners using AI coding: contract rules](../partners-using-ai-coding-contract-rules/).
+- **Implementation partner:** wants a community MCP server with a production login to fix data faster. Decision: no. Partners work in sandboxes, and production changes go through the pipeline. This belongs in the contract. See [partners using AI coding: contract rules](/en/blog/partners-using-ai-coding-contract-rules/).
 - **Spare parts:** wants an Agentforce agent that queries a parts supplier's MCP server for availability. Decision: test. Register the server in Agentforce Registry, make two tools available, set a Gateway limit, and check the supplier's terms for what happens to your queries.
 
 One pilot, one deferral, one refusal and one test. That beats four tools connected without anyone deciding.
 
 ## Where is MCP the wrong interface?
 
-Hosted MCP Servers use per-user OAuth: a named user authorises each connection, and Salesforce does not plan to support machine-to-machine flows. Choosing the right interface for each consumer and identity is part of my work on [Salesforce integration](../../services/salesforce-integration/). Three cases need a different path:
+Hosted MCP Servers use per-user OAuth: a named user authorises each connection, and Salesforce does not plan to support machine-to-machine flows. Choosing the right interface for each consumer and identity is part of my work on [Salesforce integration](/en/services/salesforce-integration/). Three cases need a different path:
 
 - **Unattended agents.** A nightly job that pre-sorts warranty claims has no user who could authorise it. The [Agent API](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html) works with client credentials and a run-as user, which I would treat like any integration user.
 - **System-to-system integration.** The SAP order sync belongs in middleware.
-- **Mass operations.** Checking thousands of records is a job for a report or a batch job. Salesforce says hosted servers are ["intended only for customers with Flex Credits"](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) and usage may be billed. I explain why that becomes a budget line in [MCP calls as a budget risk](../flex-credits-agentforce-cost-per-action/).
+- **Mass operations.** Checking thousands of records is a job for a report or a batch job. Salesforce says hosted servers are ["intended only for customers with Flex Credits"](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) and usage may be billed. I explain why that becomes a budget line in [MCP calls as a budget risk](/en/blog/flex-credits-agentforce-cost-per-action/).

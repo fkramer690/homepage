@@ -35,17 +35,17 @@ Bevor Sie über Funktionen sprechen, lohnt ein Blick darauf, wie Ihre Ware zum E
 
 | Kanalmodell | Typisch für | Was in der Manufacturing Cloud passt |
 |---|---|---|
-| Direkter Vertrieb an Schlüsselkunden | Komponenten, Serienteile für OEMs | Sales Agreements und Prognosen aus [Kapitel 2](../rahmenvertraege-und-prognosen/), Kundenportal |
+| Direkter Vertrieb an Schlüsselkunden | Komponenten, Serienteile für OEMs | Sales Agreements und Prognosen aus [Kapitel 2](/masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/), Kundenportal |
 | Händler, die weiterverkaufen und Service leisten | Landmaschinen, Baumaschinen, Nutzfahrzeuge | Rebate Management, Partnerportal, Partner Visit Management, Garantie über Händler |
 | Distributoren mit eigenem Lager | Elektronik, Antriebstechnik, Industriebedarf | zusätzlich Ship and Debit, Preisschutz, Bestandsdaten der Distributoren |
 
 Die Tabelle ist meine Einordnung, keine Vorgabe von Salesforce. Sie hilft beim Lesen eines Angebots: Ein Partner, der einem Händlernetz mit 80 Landmaschinenhändlern Ship and Debit verkauft, löst vermutlich ein Problem, das Sie nicht haben. Umgekehrt reicht einem Distributionsgeschäft mit vielen Sonderpreisen ein Bonusprogramm nicht.
 
-Ob sich Manufacturing Cloud insgesamt rechnet, behandelt [Kapitel 1](../einordnung-und-business-case/). Dieses Kapitel geht davon aus, dass die Entscheidung gefallen ist, und klärt, welche Kanalfunktionen Sie einschalten, kaufen oder weglassen.
+Ob sich Manufacturing Cloud insgesamt rechnet, behandelt [Kapitel 1](/masterclass/manufacturing-cloud/einordnung-und-business-case/). Dieses Kapitel geht davon aus, dass die Entscheidung gefallen ist, und klärt, welche Kanalfunktionen Sie einschalten, kaufen oder weglassen.
 
 ## Händlerboni mit Rebate Management
 
-Rebate Management verwaltet Bonusprogramme: Programm, Teilnehmer, Bonusarten mit Staffeln, Auszahlungszeiträume und die Freigabe der Beträge. Gerechnet wird mit der Data Processing Engine auf Basis von Transaktionen im Objekt Transaction Journal. Die Details, auch die drei Wege, auf denen Umsätze in dieses Objekt gelangen, stehen in [Rebate Management: Händlerboni statt Excel](../../../blog/rebate-management-haendlerboni/).
+Rebate Management verwaltet Bonusprogramme: Programm, Teilnehmer, Bonusarten mit Staffeln, Auszahlungszeiträume und die Freigabe der Beträge. Gerechnet wird mit der Data Processing Engine auf Basis von Transaktionen im Objekt Transaction Journal. Die Details, auch die drei Wege, auf denen Umsätze in dieses Objekt gelangen, stehen in [Rebate Management: Händlerboni statt Excel](/blog/rebate-management-haendlerboni/).
 
 Für die Entscheidung zählt Folgendes:
 
@@ -57,7 +57,7 @@ Lohnend wird das ab Dutzenden Händlern mit gestaffelten Programmen, die heute j
 
 ## Ship and Debit und Preisschutz mit Channel Revenue Management
 
-Ship and Debit ist ein Sonderpreis für ein Geschäft. Salesforce beschreibt es auf [Trailhead](https://trailhead.salesforce.com/content/learn/modules/ship-and-debit-process-management/get-to-know-ship-and-debit) als Vertrag, der den rabattierten Preis für einen bestimmten Kunden, die Laufzeit und die Produkte festlegt. Der Distributor verkauft unter seinem Einkaufspreis und fordert die Differenz beim Hersteller ein. Preisschutz gleicht Lagerware aus, wenn der Hersteller den Listenpreis senkt. Beides prüft Channel Revenue Management gegen Programmregeln und Transaktionsdaten. Wie ein Anspruch bearbeitet wird und welche Prüfungen Salesforce beschreibt, steht in [Ship and Debit: Händleransprüche in Salesforce](../../../blog/ship-and-debit-preisschutz-haendler/).
+Ship and Debit ist ein Sonderpreis für ein Geschäft. Salesforce beschreibt es auf [Trailhead](https://trailhead.salesforce.com/content/learn/modules/ship-and-debit-process-management/get-to-know-ship-and-debit) als Vertrag, der den rabattierten Preis für einen bestimmten Kunden, die Laufzeit und die Produkte festlegt. Der Distributor verkauft unter seinem Einkaufspreis und fordert die Differenz beim Hersteller ein. Preisschutz gleicht Lagerware aus, wenn der Hersteller den Listenpreis senkt. Beides prüft Channel Revenue Management gegen Programmregeln und Transaktionsdaten. Wie ein Anspruch bearbeitet wird und welche Prüfungen Salesforce beschreibt, steht in [Ship and Debit: Händleransprüche in Salesforce](/blog/ship-and-debit-preisschutz-haendler/).
 
 Beim Preis widersprechen sich die Salesforce-Seiten:
 
@@ -82,7 +82,7 @@ Partner Community for Manufacturing. Die [Add-on-Liste](https://www.salesforce.c
 | Partner Community for Manufacturing | 20 Dollar | 50 Dollar | Händler, Distributoren, Lieferanten |
 | Customer Community Plus for Manufacturing | 15 Dollar | 35 Dollar | Kunden |
 
-Was jede Lizenz abdeckt, beschreibt Salesforce Help; die Übersicht habe ich in [Kundenportal in der Manufacturing Cloud](../../../blog/manufacturing-cloud-kundenportal/) aufbereitet. Für die Partnerlizenz nennt Help unter anderem Sales Agreements, Account Forecasts, Leads, Angebote, Garantie- und Bonusansprüche und Besuche. Für Customer Community Plus nennt Help Cases, Knowledge, Bestellungen, Assets und Garantien. Ein Händler, der seinen Bonusstand sehen, Ship-and-Debit-Ansprüche einreichen oder Leads bearbeiten soll, braucht also die Partnerlizenz. Die günstigere Kundenlizenz spart nur dort, wo Händler wie Kunden behandelt werden.
+Was jede Lizenz abdeckt, beschreibt Salesforce Help; die Übersicht habe ich in [Kundenportal in der Manufacturing Cloud](/blog/manufacturing-cloud-kundenportal/) aufbereitet. Für die Partnerlizenz nennt Help unter anderem Sales Agreements, Account Forecasts, Leads, Angebote, Garantie- und Bonusansprüche und Besuche. Für Customer Community Plus nennt Help Cases, Knowledge, Bestellungen, Assets und Garantien. Ein Händler, der seinen Bonusstand sehen, Ship-and-Debit-Ansprüche einreichen oder Leads bearbeiten soll, braucht also die Partnerlizenz. Die günstigere Kundenlizenz spart nur dort, wo Händler wie Kunden behandelt werden.
 
 Drei Entscheidungen fallen vor dem Bau:
 
@@ -90,7 +90,7 @@ Drei Entscheidungen fallen vor dem Bau:
 2. **Was Händler sehen.** Das Sales Agreement trägt Felder wie Marge und Kosten. Händler sehen eine reduzierte Sicht, mit Mengen, Preisen, Laufzeit und Ist-Mengen, und nur ihre eigenen Kunden.
 3. **Wer die Stammdaten führt.** Ändert ein Händler im Portal seine Adresse, wird Salesforce für dieses Feld zum Erfassungssystem. Eine Liste der änderbaren Felder, eine Richtung pro Feld und sichtbare Fehler bei der Übertragung ins ERP gehören dazu.
 
-Wie Sie Lizenzen über fünf Jahre gegen einen Eigenbau rechnen, beschreibe ich unter [Make-or-Buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/).
+Wie Sie Lizenzen über fünf Jahre gegen einen Eigenbau rechnen, beschreibe ich unter [Make-or-Buy und Lizenzprognosen](/leistungen/make-or-buy-lizenzen/).
 
 ## Händlerbesuche mit Partner Visit Management
 
@@ -102,7 +102,7 @@ Die Funktion hat einen eigenen Schalter. In den [IndustriesManufacturingSettings
 Zwei Punkte sind in den Quellen offen: welche Lizenz der Außendienst für die Besuchs-App braucht und ob sie offline arbeitet. Beides gehört schriftlich geklärt, bevor Sie planen.
 ```
 
-Den Ablauf vom Besuchsplan bis zur Kennzahl und die Frage, wann ein einfaches Besuchsberichtsobjekt reicht, behandelt [Partner Visit Management: Händlerbesuche mit KPIs](../../../blog/partner-visit-management-haendlerbesuche/). Meine kurze Regel: Ohne fünf vereinbarte Kennzahlen mit Sollwert pro Händlergruppe sammelt die Funktion Daten, die niemand vergleicht.
+Den Ablauf vom Besuchsplan bis zur Kennzahl und die Frage, wann ein einfaches Besuchsberichtsobjekt reicht, behandelt [Partner Visit Management: Händlerbesuche mit KPIs](/blog/partner-visit-management-haendlerbesuche/). Meine kurze Regel: Ohne fünf vereinbarte Kennzahlen mit Sollwert pro Händlergruppe sammelt die Funktion Daten, die niemand vergleicht.
 
 ## Händlerleistung messen: Dashboards und ihre Daten
 
@@ -114,11 +114,11 @@ Die [CRM-Analytics-Vorlage für Manufacturing Cloud](https://trailhead.salesforc
 
 Für Ship and Debit nennt die [Trailhead-Einheit](https://trailhead.salesforce.com/content/learn/modules/ship-and-debit-process-management/get-to-know-ship-and-debit) ebenfalls CRM-Analytics-Dashboards. Welche CRM-Analytics-Lizenz dafür nötig ist, sagen die Einheiten nicht.
 
-Jedes dieser Dashboards zeigt nur die Daten, die tatsächlich geliefert werden. Rechnungen als Transaktionen stammen aus dem ERP, Abverkauf und Lagerbestand liefern die Distributoren selbst, per Upload, EDI oder Schnittstelle. Wenn ein Händler wöchentlich meldet, ist jede Zahl bis zu sieben Tage alt, und das Dashboard sollte das Datum der letzten Meldung zeigen. Welche Daten zwischen ERP und Salesforce fließen, entscheide ich im Rahmen der [Schnittstellenarchitektur](../../../leistungen/salesforce-schnittstellen/).
+Jedes dieser Dashboards zeigt nur die Daten, die tatsächlich geliefert werden. Rechnungen als Transaktionen stammen aus dem ERP, Abverkauf und Lagerbestand liefern die Distributoren selbst, per Upload, EDI oder Schnittstelle. Wenn ein Händler wöchentlich meldet, ist jede Zahl bis zu sieben Tage alt, und das Dashboard sollte das Datum der letzten Meldung zeigen. Welche Daten zwischen ERP und Salesforce fließen, entscheide ich im Rahmen der [Schnittstellenarchitektur](/leistungen/salesforce-schnittstellen/).
 
 ## Agenten im Kanal: erst lesen, dann schreiben
 
-Für den Kanal nennt Salesforce zwei Agentenfunktionen. Der AI Partner Sales Assistant aus Summer '26 soll laut [Produktseite](https://www.salesforce.com/manufacturing/cloud/) Produkte finden und Angebote bauen; für dasselbe Release nennt die Seite die Automatisierung der Distributor-Beschaffung. Was er an Katalog, Preisen pro Händlerstufe und Rabattgrenzen voraussetzt, steht in [KI-Angebote für Händler: Partner Sales Assistant](../../../blog/ki-angebote-haendler-partner-sales-assistant/). Die Inventory-Vorlage von Agentforce for Manufacturing sucht Bestände, fasst sie zusammen und legt Nachschubanforderungen an; die Details stehen in [Händlerbestand und Nachschub mit Agentforce](../../../blog/haendlerbestand-nachschub-agentforce/).
+Für den Kanal nennt Salesforce zwei Agentenfunktionen. Der AI Partner Sales Assistant aus Summer '26 soll laut [Produktseite](https://www.salesforce.com/manufacturing/cloud/) Produkte finden und Angebote bauen; für dasselbe Release nennt die Seite die Automatisierung der Distributor-Beschaffung. Was er an Katalog, Preisen pro Händlerstufe und Rabattgrenzen voraussetzt, steht in [KI-Angebote für Händler: Partner Sales Assistant](/blog/ki-angebote-haendler-partner-sales-assistant/). Die Inventory-Vorlage von Agentforce for Manufacturing sucht Bestände, fasst sie zusammen und legt Nachschubanforderungen an; die Details stehen in [Händlerbestand und Nachschub mit Agentforce](/blog/haendlerbestand-nachschub-agentforce/).
 
 Das Agentforce for Manufacturing Cloud Add-on steht mit 150 Dollar pro Benutzer und Monat in der [Add-on-Liste](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/), verfügbar mit Core und Advanced. Welche Lizenz Händler im Portal für die Agenten brauchen, war in den Quellen nicht zu finden.
 
@@ -133,13 +133,13 @@ Schreiben hinter Sperren
   Schreibende Aktionen nur hinter Sperren im Code: Kreditstatus aus dem ERP, Mengengrenze, Bestätigung durch den Händler, Prüfung auf Dubletten.
 ```
 
-Jedes Feld, das ein Händler im Portal beschreibt, ist Eingabe von außen, die ein Agent liest. Wie Sie das absichern, steht in [Prompt Injection im Händlerportal](../../../blog/prompt-injection-haendlerportal-agentforce/). Wo diese Agenten neben den übrigen Agenten in der Fertigung stehen, zeigt das Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/) der KI-Masterclass.
+Jedes Feld, das ein Händler im Portal beschreibt, ist Eingabe von außen, die ein Agent liest. Wie Sie das absichern, steht in [Prompt Injection im Händlerportal](/blog/prompt-injection-haendlerportal-agentforce/). Wo diese Agenten neben den übrigen Agenten in der Fertigung stehen, zeigt das Kapitel [KI-Agenten in der Fertigung](/masterclass/ki-salesforce/ki-agenten-in-der-fertigung/) der KI-Masterclass.
 
 ## Wo endet das Partnerportal und wo beginnt B2B Commerce?
 
 Beim Warenkorb. Das Partnerportal der Manufacturing Cloud zeigt Händlern ihre Sales Agreements, Boni, Leads und Garantieansprüche und nimmt Anfragen und einfache Bestellungen an. Sobald Händler Ersatzteile aus einem Katalog mit ihren eigenen Preisen suchen, in einen Warenkorb legen, auf Rechnung bestellen und regelmäßig nachbestellen sollen, brauchen Sie einen Shop. Das ist B2B Commerce, mit eigener Lizenz und eigenem Projekt.
 
-Beides läuft auf Experience Cloud und kann in einer Org zusammenleben. Die Frage ist, wer was baut und wer was bezahlt. Ich würde vor dem Portalprojekt festlegen, welche Händleraktionen ins Portal gehören und welche in den Shop, sonst baut der Portalpartner einen halben Warenkorb nach. Wann sich ein Shop lohnt, behandelt das erste Kapitel der [B2B-Commerce-Masterclass](../../b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/).
+Beides läuft auf Experience Cloud und kann in einer Org zusammenleben. Die Frage ist, wer was baut und wer was bezahlt. Ich würde vor dem Portalprojekt festlegen, welche Händleraktionen ins Portal gehören und welche in den Shop, sonst baut der Portalpartner einen halben Warenkorb nach. Wann sich ein Shop lohnt, behandelt das erste Kapitel der [B2B-Commerce-Masterclass](/masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/).
 
 ## Rechenbeispiel: Kompaktmaschinen über 80 Händler
 
@@ -151,6 +151,6 @@ Ein Hersteller von Kompaktmaschinen verkauft über 80 Händler in Deutschland, �
 - **Ship and Debit:** nein. Sechs Distributoren mit wenigen Sonderpreisen rechtfertigen keine 30.000 Dollar im Jahr; schärfere Freigaberegeln reichen.
 - **Agenten:** später, lesend, nachdem Bonusdaten und Bestände ein Quartal lang gestimmt haben.
 
-Die größte Position ist hier das Portal und nicht die Bonuslogik. Händlerbenutzer fehlen in einem ersten Angebot leicht, deshalb würde ich sie vor jeder Lizenzverhandlung zählen, ebenso wie die Rollen der Partner, die das Portal bauen; das gehört zur [Partnersteuerung](../../../leistungen/partnersteuerung/).
+Die größte Position ist hier das Portal und nicht die Bonuslogik. Händlerbenutzer fehlen in einem ersten Angebot leicht, deshalb würde ich sie vor jeder Lizenzverhandlung zählen, ebenso wie die Rollen der Partner, die das Portal bauen; das gehört zur [Partnersteuerung](/leistungen/partnersteuerung/).
 
-Garantieansprüche, die Händler einreichen, und Rückrufaktionen über das Händlernetz behandelt [Kapitel 4](../garantie-und-after-sales/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
+Garantieansprüche, die Händler einreichen, und Rückrufaktionen über das Händlernetz behandelt [Kapitel 4](/masterclass/manufacturing-cloud/garantie-und-after-sales/). Alle Kapitel finden Sie auf der [Übersichtsseite](/masterclass/manufacturing-cloud/).

@@ -37,7 +37,7 @@ A machine builder with Salesforce, SAP and Microsoft 365 receives three agent pi
 
 A dealer's question ignores these boundaries. "Is the seal kit for machine 4711 in stock, and has my warranty claim for that machine been approved?" touches availability in SAP and the claim and asset in Salesforce. If every system's agent wants to answer, the dealer faces three front doors or a chain of agents asking each other. Both are worse than one agent that owns the conversation and fetches what it needs.
 
-A2A (Agent2Agent) is an open protocol through which agents from different vendors discover each other through an "agent card", hand over tasks and return results. The difference from MCP matters for the design: MCP connects an agent to tools and data; A2A connects it to another agent that reasons on its own. What MCP means for IT is covered in [MCP explained for IT leads](../mcp-salesforce-explained-for-it-leads/).
+A2A (Agent2Agent) is an open protocol through which agents from different vendors discover each other through an "agent card", hand over tasks and return results. The difference from MCP matters for the design: MCP connects an agent to tools and data; A2A connects it to another agent that reasons on its own. What MCP means for IT is covered in [MCP explained for IT leads](/en/blog/mcp-salesforce-explained-for-it-leads/).
 
 ## What does agent-to-agent interoperability deliver today?
 
@@ -68,7 +68,7 @@ My default: the owner is the agent of the system where the person authenticates 
 3. **Which channel?** Here portal chat, the service hotline and email-to-case run on Salesforce. Teams is Microsoft's.
 4. **Who takes over from the agent?** In this example the escalation queue of the service team runs in Salesforce Omni-Channel.
 
-For a manufacturer this gives a clear split. Dealers and service customers talk to Agentforce, and SAP data is retrieved through an API action, as described in [Agentforce and SAP: order status through MuleSoft](../agentforce-sap-order-status-mulesoft/). Sales reps who work in Teams and Outlook can have Copilot as their front door, with an Agentforce agent behind it for CRM questions. Clerks in credit management or billing work in SAP and use Joule.
+For a manufacturer this gives a clear split. Dealers and service customers talk to Agentforce, and SAP data is retrieved through an API action, as described in [Agentforce and SAP: order status through MuleSoft](/en/blog/agentforce-sap-order-status-mulesoft/). Sales reps who work in Teams and Outlook can have Copilot as their front door, with an Agentforce agent behind it for CRM questions. Clerks in credit management or billing work in SAP and use Joule.
 
 ```ablauf
 sf: Portal agent, Agentforce specialist
@@ -88,10 +88,10 @@ A data read with one right answer should be handled by an API or an MCP tool. An
 
 Every hop raises four questions before go-live:
 
-- **As whom does the specialist run?** The A2A Bridge authenticates to the Salesforce org with client ID and secret. In the documented [client credentials setup](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html) with `bypassUser` set to true, the API uses the user associated with the agent, not the person who asked in Teams. That user's sharing decides what the specialist can read. The bridge authenticates the technical client, not the end user, so map the external identity explicitly, check per request which dealer or account the caller may see, give the agent user least privilege and log who initiated the request. Access checks belong in code on the receiving side, as in [Agent Script: rules instead of the LLM](../agent-script-deterministic-rules/).
+- **As whom does the specialist run?** The A2A Bridge authenticates to the Salesforce org with client ID and secret. In the documented [client credentials setup](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html) with `bypassUser` set to true, the API uses the user associated with the agent, not the person who asked in Teams. That user's sharing decides what the specialist can read. The bridge authenticates the technical client, not the end user, so map the external identity explicitly, check per request which dealer or account the caller may see, give the agent user least privilege and log who initiated the request. Access checks belong in code on the receiving side, as in [Agent Script: rules instead of the LLM](/en/blog/agent-script-deterministic-rules/).
 - **How long may it take?** The Agent API allows at most 120 seconds; a lower gateway timeout configured in the bridge applies earlier.
 - **Who pays?** Salesforce states that Agent API usage counts toward credit consumption, and the calling platform can bill its own usage, depending on its license model. One dealer question can then incur charges on two meters; check both billing models before the design.
-- **Where is the trace?** A failure across two vendors means two logs and two support contracts. Cross-vendor cases belong in the test set described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+- **Where is the trace?** A failure across two vendors means two logs and two support contracts. Cross-vendor cases belong in the test set described in [testing Agentforce agents before go-live](/en/blog/testing-agentforce-agents-before-go-live/).
 
 ## Worked example: dealer portal, Teams and a Joule agent
 
@@ -113,4 +113,4 @@ One of three requests is handled through A2A. For the first year, I consider tha
 4. **Check identity, timeout, cost and logging** for every cross-vendor hop before building it.
 5. **Pilot one read-only A2A hop** if your company already uses MuleSoft, and ask SAP and Microsoft for the GA status of their side in writing.
 
-For the first point, a table with audience, channel, owner agent and the systems it queries is enough. Which integration pattern fits which system is covered in [Salesforce integration](../../services/salesforce-integration/), and the masterclass chapter [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/) maps the protocols.
+For the first point, a table with audience, channel, owner agent and the systems it queries is enough. Which integration pattern fits which system is covered in [Salesforce integration](/en/services/salesforce-integration/), and the masterclass chapter [MCP and interfaces](/en/masterclass/ai-salesforce/mcp-and-interfaces/) maps the protocols.

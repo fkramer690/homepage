@@ -56,7 +56,7 @@ quelle: McKinsey, Beyond the copilot, August 2026
 
 Dieses Technologieunternehmen stellte von Produktteams mit 8 bis 10 Personen auf agentische Teams mit 4 bis 6 Personen um und meldet etwa doppelte Kapazität. McKinsey sieht zwei Rollenfamilien entstehen: „Definers“, die Produkt und Design verbinden, und „Builders“, die Entwicklung, Test und Betrieb verbinden.
 
-Zwei Einschränkungen stammen aus derselben Quelle. Die Zahlen sind Selbstauskünfte von Führungskräften, und 30 Prozent der Befragten sagen, die Produktivität ihrer Teams sei gesunken. McKinsey schreibt außerdem, dass sich das Tempo schneller verbessert als die Qualität. Der DORA-Bericht 2025 fand weiter einen [negativen Zusammenhang zwischen KI-Einsatz und Lieferstabilität](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), und DORA zählt [kleine Batches und Nutzerzentrierung](https://dora.dev/capabilities/) zu den sieben Fähigkeiten, die den Nutzen von KI verstärken. Kleine Pods mit täglichem Feedback sind eine direkte Antwort auf beide Punkte. Wie Sie prüfen, ob Ihr eigenes Programm schneller wird, beschreibe ich in [KI-Nutzen im Salesforce-Projekt messen](../ki-nutzen-salesforce-projekt-messen/).
+Zwei Einschränkungen stammen aus derselben Quelle. Die Zahlen sind Selbstauskünfte von Führungskräften, und 30 Prozent der Befragten sagen, die Produktivität ihrer Teams sei gesunken. McKinsey schreibt außerdem, dass sich das Tempo schneller verbessert als die Qualität. Der DORA-Bericht 2025 fand weiter einen [negativen Zusammenhang zwischen KI-Einsatz und Lieferstabilität](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), und DORA zählt [kleine Batches und Nutzerzentrierung](https://dora.dev/capabilities/) zu den sieben Fähigkeiten, die den Nutzen von KI verstärken. Kleine Pods mit täglichem Feedback sind eine direkte Antwort auf beide Punkte. Wie Sie prüfen, ob Ihr eigenes Programm schneller wird, beschreibe ich in [KI-Nutzen im Salesforce-Projekt messen](/blog/ki-nutzen-salesforce-projekt-messen/).
 
 ## In der Programmorganisation wird der Fachbereich zum Engpass
 
@@ -74,7 +74,7 @@ Die tägliche Demo ersetzt das Standup und einen Teil des Statusberichts. Ein Le
 
 ### Verantwortung muss aufgeschrieben werden
 
-Mit weniger Personen trägt jede einzelne mehr Wissen, und ein Agent verantwortet nichts. Der benannte Verantwortliche pro Artefakt passt zur [Object Ownership Matrix](../object-ownership-matrix-salesforce/), die ich nutze, wenn sich mehrere Partner eine Org teilen: Für jedes Objekt ist ein Team verantwortlich, für jeden Flow, jede Klasse und jeden Agenten eine Person. Dazu kommen die Prüfungen in der Pipeline, siehe [Quality Gates für KI-Code in der Salesforce-Pipeline](../quality-gates-ki-code-salesforce-pipeline/).
+Mit weniger Personen trägt jede einzelne mehr Wissen, und ein Agent verantwortet nichts. Der benannte Verantwortliche pro Artefakt passt zur [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/), die ich nutze, wenn sich mehrere Partner eine Org teilen: Für jedes Objekt ist ein Team verantwortlich, für jeden Flow, jede Klasse und jeden Agenten eine Person. Dazu kommen die Prüfungen in der Pipeline, siehe [Quality Gates für KI-Code in der Salesforce-Pipeline](/blog/quality-gates-ki-code-salesforce-pipeline/).
 
 ## Rechenbeispiel: aus einem großen Partnerteam werden drei Pods
 
@@ -88,14 +88,14 @@ Drei Entscheidungen bestimmen, ob dieses Setup trägt oder kippt:
 - **Ein leitender Architekt über alle Pods.** Drei Pod-Architekten würden jeweils ihr eigenes Account- und Asset-Modell entwerfen. Datenmodell, Freigabemodell und die SAP-Schnittstelle würde ich einem leitenden Architekten auf Kundenseite zuordnen, der den Rahmen für die Pod-Architekten setzt.
 - **Formaler Test bleibt dort, wo SAP bucht.** Garantiegutschriften gehen nach SAP, dieser Stream behält deshalb vor jedem Release einen End-to-End-Test. Der Portal-Stream wird nach täglicher Abnahme, automatisierter Regression und Prüfung des Freigabemodells live geschaltet, denn Händlerpreise und Bestellungen dürfen nur für den richtigen Händler sichtbar sein.
 
-Ob sieben Personen liefern, was vorher zwölf geliefert haben, bleibt offen, bis Durchlaufzeiten, Nacharbeit, durchgerutschte Fehler und Gesamtkosten gemessen sind. Der Preis des Partners für das neue Setup gehört ins kaufmännische Modell, siehe [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/).
+Ob sieben Personen liefern, was vorher zwölf geliefert haben, bleibt offen, bis Durchlaufzeiten, Nacharbeit, durchgerutschte Fehler und Gesamtkosten gemessen sind. Der Preis des Partners für das neue Setup gehört ins kaufmännische Modell, siehe [Festpreis statt Aufwand](/blog/festpreis-statt-aufwand-ki-salesforce/).
 
 ## Wo passt das Pod-Modell noch nicht?
 
 - **Streams, in denen vor allem gewartet wird.** Verbringt eine Story den größten Teil ihrer Durchlaufzeit mit Warten auf das SAP-Team oder eine Middleware-Änderung, ändert ein schnellerer Salesforce-Pod wenig.
 - **Fachbereiche, die niemanden freistellen können.** Ohne tägliche Entscheidungen aus Service oder Vertrieb ist ein klassisches Team mit Product Owner und geplantem Abnahmetest die sicherere Aufstellung. Dessen Entwickler können trotzdem mit Coding-Agenten arbeiten.
 - **Teams ohne funktionierende Pipeline.** Pods liefern mehr Änderungen pro Tag. Ohne Versionskontrolle, automatisierte Tests und Validierungsdeployments entstehen vor allem Fehler schneller.
-- **Dünne Seniorität beim Partner.** Ein Pod hat keine Juniors, die nebenbei lernen. Geht der Builder-Reviewer, geht ein großer Teil des Wissens mit. Mindestverweildauern zählen hier noch mehr als in dem Setup, das ich in [warum Nearshore-Teams höchstens acht Entwickler haben sollten](../nearshore-teams-salesforce-acht-entwickler/) beschreibe. Was sich für Nearshore-Teams mit KI-Agenten ändert, steht in [Nearshore-Teams für Salesforce mit KI-Agenten](../nearshore-salesforce-teams-ki-agenten/).
+- **Dünne Seniorität beim Partner.** Ein Pod hat keine Juniors, die nebenbei lernen. Geht der Builder-Reviewer, geht ein großer Teil des Wissens mit. Mindestverweildauern zählen hier noch mehr als in dem Setup, das ich in [warum Nearshore-Teams höchstens acht Entwickler haben sollten](/blog/nearshore-teams-salesforce-acht-entwickler/) beschreibe. Was sich für Nearshore-Teams mit KI-Agenten ändert, steht in [Nearshore-Teams für Salesforce mit KI-Agenten](/blog/nearshore-salesforce-teams-ki-agenten/).
 
 ## Einen Stream mit klarem Prozess wählen
 
@@ -107,9 +107,9 @@ Fachexperten zuerst benennen
 Intents schreiben
   Für die ersten zehn Stories, mit prüfbaren Akzeptanzkriterien; genaue Spezifikationen bleiben für Schnittstellen und Regeln mit finanzieller Wirkung.
 Leitplanken vereinbaren
-  Mit dem Partner: benannter Verantwortlicher pro Artefakt, Agenten nur in Sandboxes und Scratch Orgs, dieselben Prüfungen für den gesamten Code. Die Vertragsseite beschreibe ich in [Partner mit KI-Coding: Regeln für den Vertrag](../partner-ki-coding-regeln-vertrag/).
+  Mit dem Partner: benannter Verantwortlicher pro Artefakt, Agenten nur in Sandboxes und Scratch Orgs, dieselben Prüfungen für den gesamten Code. Die Vertragsseite beschreibe ich in [Partner mit KI-Coding: Regeln für den Vertrag](/blog/partner-ki-coding-regeln-vertrag/).
 Messen und entscheiden | 3 Monate
   Durchlaufzeit und Nacharbeit messen und erst dann über die anderen Streams entscheiden.
 ```
 
-Die zehn Intents aus dem dritten Schritt sind zugleich der Maßstab für die Messung nach drei Monaten. Streams, Teamaufstellungen und die dafür nötige Zeit im Fachbereich zu planen, ist der Kern meiner [Programmsteuerung für Salesforce-Programme](../../leistungen/projektsteuerung-nearshore/).
+Die zehn Intents aus dem dritten Schritt sind zugleich der Maßstab für die Messung nach drei Monaten. Streams, Teamaufstellungen und die dafür nötige Zeit im Fachbereich zu planen, ist der Kern meiner [Programmsteuerung für Salesforce-Programme](/leistungen/projektsteuerung-nearshore/).

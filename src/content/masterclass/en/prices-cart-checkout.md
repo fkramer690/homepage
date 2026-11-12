@@ -32,7 +32,7 @@ A B2B store on Salesforce shows customer prices from price books by default. Tha
 
 ## Where do prices in a B2B store come from?
 
-Salesforce B2B Commerce, which according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping) Salesforce now also markets as "Agentforce Commerce for B2B", uses the same price book objects as Sales Cloud. According to [Salesforce Help on pricing in B2B stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5), every new store automatically gets a default price book and a default strikethrough price book, which shows a crossed-out reference price. You assign further price books to the store or to buyer groups. How buyer groups and visibility fit together is covered in [chapter 2](../catalog-search-entitlements/).
+Salesforce B2B Commerce, which according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping) Salesforce now also markets as "Agentforce Commerce for B2B", uses the same price book objects as Sales Cloud. According to [Salesforce Help on pricing in B2B stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5), every new store automatically gets a default price book and a default strikethrough price book, which shows a crossed-out reference price. You assign further price books to the store or to buyer groups. How buyer groups and visibility fit together is covered in [chapter 2](/en/masterclass/b2b-commerce/catalog-search-entitlements/).
 
 When a buyer has access to several price books, the [pricing strategy](https://help.salesforce.com/s/articleView?id=sf.comm_priority_pricing.htm&language=en_US&type=5) decides:
 
@@ -53,7 +53,7 @@ The [price book limits](https://developer.salesforce.com/docs/commerce/salesforc
 | Buyer groups per price book | 100 (soft) |
 | Price books per buyer group | 50 in the table, 25 in a note on the same page |
 
-The 25 per call is the limit that can cause problems in projects: price books beyond it are left out of the price evaluation, without an error. Get the contradictory figure per buyer group confirmed by Salesforce in writing if your design depends on it. Details and patterns are in [customer prices in B2B Commerce](../../../blog/b2b-commerce-customer-prices-price-books-erp/).
+The 25 per call is the limit that can cause problems in projects: price books beyond it are left out of the price evaluation, without an error. Get the contradictory figure per buyer group confirmed by Salesforce in writing if your design depends on it. Details and patterns are in [customer prices in B2B Commerce](/en/blog/b2b-commerce-customer-prices-price-books-erp/).
 
 ## Copy price books or query the ERP live?
 
@@ -73,7 +73,7 @@ contra: The price you pay
 
 With four dealer tiers and a stable price list, four price books and a nightly load are enough. With prices negotiated per customer I would call SAP live or split: price books for the bulk of dealers, a live call for key accounts. One detail from the extension list: if the store uses Faster Add-to-Cart, every product still needs an entry in a store price book.
 
-Whichever route you choose, one question needs an answer before go-live: which price applies when the store shows a different price from the one SAP calculates when the order arrives? Without a rule, inside sales has to resolve it order by order. I describe the same risk for AI quotes in [AI dealer quotes with the Partner Sales Assistant](../../../blog/ai-partner-sales-assistant-dealer-quotes/). Which interfaces follow from it is the topic of [chapter 4](../erp-integration-stock-orders/).
+Whichever route you choose, one question needs an answer before go-live: which price applies when the store shows a different price from the one SAP calculates when the order arrives? Without a rule, inside sales has to resolve it order by order. I describe the same risk for AI quotes in [AI dealer quotes with the Partner Sales Assistant](/en/blog/ai-partner-sales-assistant-dealer-quotes/). Which interfaces follow from it is the topic of [chapter 4](/en/masterclass/b2b-commerce/erp-integration-stock-orders/).
 
 ## When does the store need Advanced Pricing from Revenue Cloud?
 
@@ -82,7 +82,7 @@ The third option is a pricing engine inside Salesforce. [Salesforce Help on Agen
 On budget: the B2B editions say "Contact for Pricing", and the [Revenue Cloud pricing page](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) lists Revenue Cloud Advanced at $200 per user per month, billed annually. Neither page says how many of these user licenses a store with external buyers needs. Ask Salesforce in writing before you build a business case.
 
 ```hinweis tipp
-My rule: Advanced Pricing pays off when sales already calculates quotes in Revenue Cloud, when contract prices are negotiated in Salesforce or when you need Request for Quote. If SAP calculates every customer price and should keep doing so, Revenue Cloud gives you a second pricing engine that has to agree with SAP. Then the live call is simpler. The trade-offs in detail are in [Advanced Pricing in B2B stores](../../../blog/advanced-pricing-b2b-store-revenue-cloud/). Sales agreements with volumes and terms, which plan demand rather than set the store price, belong to Manufacturing Cloud; the chapter [agreements and forecasting](../../manufacturing-cloud/agreements-and-forecasting/) covers them.
+My rule: Advanced Pricing pays off when sales already calculates quotes in Revenue Cloud, when contract prices are negotiated in Salesforce or when you need Request for Quote. If SAP calculates every customer price and should keep doing so, Revenue Cloud gives you a second pricing engine that has to agree with SAP. Then the live call is simpler. The trade-offs in detail are in [Advanced Pricing in B2B stores](/en/blog/advanced-pricing-b2b-store-revenue-cloud/). Sales agreements with volumes and terms, which plan demand rather than set the store price, belong to Manufacturing Cloud; the chapter [agreements and forecasting](/en/masterclass/manufacturing-cloud/agreements-and-forecasting/) covers them.
 ```
 
 ## From request to quote to order
@@ -98,7 +98,7 @@ For custom components there is the Apex class [ConnectApi.CommerceQuotes](https:
 On licensing, the sources differ. Help names Advanced Pricing as a prerequisite for RFQ, while the Apex reference supports simple products in createQuoteFromProduct with a B2B Commerce license alone. Get the answer for your products in writing.
 ```
 
-Inside sales matters more than the technology. A buyer who waits three days for a quote from the store sends the next request by email again. Response time, ownership per queue and discount limits should be set in writing before go-live. I describe the whole loop in [Request for Quote in B2B Commerce](../../../blog/request-for-quote-b2b-commerce-cart-to-quote/).
+Inside sales matters more than the technology. A buyer who waits three days for a quote from the store sends the next request by email again. Response time, ownership per queue and discount limits should be set in writing before go-live. I describe the whole loop in [Request for Quote in B2B Commerce](/en/blog/request-for-quote-b2b-commerce-cart-to-quote/).
 
 ## Checkout on account: purchase order instead of card
 
@@ -113,7 +113,7 @@ The options for B2B stores:
 
 According to the [extensions guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html), payments cannot be customized with extensions. Special payment rules are therefore custom code your team has to maintain with every release.
 
-What the standard does not do is check whether a dealer may order at all. Credit limit and order block are held in the ERP. The place for that check is `Commerce_Domain_Checkout_PlaceOrder`: it runs cart validations when the buyer places the order, and you override its `validate` method with a live call to the ERP. Decide what happens on a timeout and what the buyer reads when blocked. Copying credit limits into Salesforce every night is wrong in my view: the copy is out of date exactly when a dealer placed three large orders this morning. More in [B2B checkout: purchase order, card or invoice?](../../../blog/b2b-checkout-purchase-order-card-invoice/).
+What the standard does not do is check whether a dealer may order at all. Credit limit and order block are held in the ERP. The place for that check is `Commerce_Domain_Checkout_PlaceOrder`: it runs cart validations when the buyer places the order, and you override its `validate` method with a live call to the ERP. Decide what happens on a timeout and what the buyer reads when blocked. Copying credit limits into Salesforce every night is wrong in my view: the copy is out of date exactly when a dealer placed three large orders this morning. More in [B2B checkout: purchase order, card or invoice?](/en/blog/b2b-checkout-purchase-order-card-invoice/).
 
 ## Reordering: where does the volume come from?
 
@@ -131,7 +131,7 @@ Add Order to Cart works with order summaries in Salesforce. A phone order that e
 
 The [cart limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-cart-limits.html): most stores cap a cart at 500 lines, 2,000 with large cart support. A user has up to 100 carts, one active and 99 secondary. Before anyone promises "upload your whole list", check how long the longest orders in the ERP really are.
 
-The [reorder portal](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal) is the lightweight option: sales reps invite buyers, who then repeat their past orders. Integrating it with Sales Cloud needs an Agentforce Commerce license and an enabled Digital Experience. It fits when no catalog project is planned. Which feature fits which ordering pattern is in [reorders in B2B Commerce](../../../blog/b2b-commerce-reorder-order-templates/).
+The [reorder portal](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal) is the lightweight option: sales reps invite buyers, who then repeat their past orders. Integrating it with Sales Cloud needs an Agentforce Commerce license and an enabled Digital Experience. It fits when no catalog project is planned. Which feature fits which ordering pattern is in [reorders in B2B Commerce](/en/blog/b2b-commerce-reorder-order-templates/).
 
 ## Worked example: 600 dealers in 9 countries
 
@@ -158,4 +158,4 @@ Write one page on the price master decision before anyone designs the store:
 4. If store and ERP disagree: which price counts, and who resolves the difference?
 5. Which buyer groups pay by purchase order, which by card, and who checks credit?
 
-This page belongs next to your [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) and drives the interface list for [chapter 4](../erp-integration-stock-orders/). I design the price and credit calls as part of [Salesforce integration](../../../services/salesforce-integration/), and the Revenue Cloud license question under [make or buy and licenses](../../../services/make-or-buy-licences/). All chapters are on the [overview page](../).
+This page belongs next to your [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/) and drives the interface list for [chapter 4](/en/masterclass/b2b-commerce/erp-integration-stock-orders/). I design the price and credit calls as part of [Salesforce integration](/en/services/salesforce-integration/), and the Revenue Cloud license question under [make or buy and licenses](/en/services/make-or-buy-licences/). All chapters are on the [overview page](/en/masterclass/b2b-commerce/).

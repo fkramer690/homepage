@@ -84,7 +84,7 @@ Cases and service history | Cases and service history * | Orders and installed p
 mark: leads
 note: Only the leading system changes the data, the other one reads it or links to it.
 ```
-The details differ in every company, which is why this map is part of the [Salesforce architecture](../salesforce-architecture/) and not a decision left to the individual interface. Which data usually stays in SAP at machine builders, from spare part prices to customer orders, is described on the page [Salesforce for machinery manufacturers](../../salesforce-for-machinery-manufacturers/).
+The details differ in every company, which is why this map is part of the [Salesforce architecture](/en/services/salesforce-architecture/) and not a decision left to the individual interface. Which data usually stays in SAP at machine builders, from spare part prices to customer orders, is described on the page [Salesforce for machinery manufacturers](/en/salesforce-for-machinery-manufacturers/).
 
 ## Do you need a middleware?
 
@@ -120,7 +120,7 @@ I have worked with the CTI providers Genesys and Mirage, and Microsoft Teams is 
 
 ## Integration users need fewer permissions and a new way to log in
 
-Every integration has a technical user, and those users often have more permissions than they need. Authentication is changing as well: integrations that log in with username and password need to move to modern methods, as described in [Salesforce password integrations end in 2027](../../blog/salesforce-password-integrations-end-2027/). I review integration users, their permissions and their authentication as part of the architecture. The key dates for how integrations log in:
+Every integration has a technical user, and those users often have more permissions than they need. Authentication is changing as well: integrations that log in with username and password need to move to modern methods, as described in [Salesforce password integrations end in 2027](/en/blog/salesforce-password-integrations-end-2027/). I review integration users, their permissions and their authentication as part of the architecture. The key dates for how integrations log in:
 
 ```zeitleiste
 2026-12-01 | SOAP login() requires the Use Any API Auth permission

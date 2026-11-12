@@ -41,7 +41,7 @@ In manufacturing companies with several partners, the second point is the most u
 
 ## Why does the CoE belong on the client side?
 
-A partner can moderate a CoE, and some sell that as a service. The problem: whoever sets the rules decides how everyone else builds. If five partners work on one org and one of them runs the CoE, it decides what its competitors are allowed to do. That is the same reason I insist on client ownership for the [object ownership matrix](../salesforce-object-ownership-matrix/) and for [repository and pipeline](../why-clients-should-own-their-devops-tools/).
+A partner can moderate a CoE, and some sell that as a service. The problem: whoever sets the rules decides how everyone else builds. If five partners work on one org and one of them runs the CoE, it decides what its competitors are allowed to do. That is the same reason I insist on client ownership for the [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/) and for [repository and pipeline](/en/blog/why-clients-should-own-their-devops-tools/).
 
 Partners still sit at the table. Their leads present changes, bring edge cases from the project and push back when a standard does not work in practice. The chair, decision-making authority and documentation stay with the client, represented by a CoE lead and an architect.
 
@@ -57,14 +57,14 @@ Salesforce suggests trying a [weekly schedule for operational and technical topi
 | Content | upcoming changes to shared objects, integrations, permissions and other cross-cutting components, edge cases from reviews, new or changed standards | priorities, roadmap, budget, new partners |
 | Outcome | a decision, an updated standard or matrix | an updated roadmap with priorities, funding, owners and milestones |
 
-The roadmap meeting is also the place for budget questions that cut across units. One example is the Agentforce allowance I describe in [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/): if the company buys Flex Credits centrally, the CoE should name an owner for consumption monitoring and decide whether plants and subsidiaries receive showback, chargeback or a central budget.
+The roadmap meeting is also the place for budget questions that cut across units. One example is the Agentforce allowance I describe in [Agentforce costs for manufacturers](/en/blog/flex-credits-agentforce-cost-per-action/): if the company buys Flex Credits centrally, the CoE should name an owner for consumption monitoring and decide whether plants and subsidiaries receive showback, chargeback or a central budget.
 
 ## The technical call always follows the same agenda
 
 The technical call is the part that makes the difference. To keep it from turning into a status meeting, streams submit their topics in advance and the agenda is sent to all attendees before the meeting. That way the owning stream can prepare instead of deciding on the spot. The agenda always follows the same order:
 
 1. **Upcoming changes to shared components.** A stream presents what it wants to change in Account, Asset, a shared integration or a permission set before it starts building. The owning stream according to the matrix assesses whether the change fits and where it should be made.
-2. **Edge cases from reviews.** Anything that was raised in [pull request reviews](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) and is not covered by a standard is discussed here.
+2. **Edge cases from reviews.** Anything that was raised in [pull request reviews](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/) and is not covered by a standard is discussed here.
 3. **Record decisions.** Every decision is documented where the standards live, not into one partner's meeting minutes.
 
 Status reports do not belong in this call. Whoever wants to report what their team finished in the sprint does that in the sprint review. Otherwise, 15 people spend an hour in the meeting and the one Account change the call was meant to address gets five minutes at the end.
@@ -125,4 +125,4 @@ Hand over | internal owner
   An internal colleague takes over the calls and maintains the standards.
 ```
 
-How to anchor new rules in daily work is described under [Salesforce change management consulting](../../services/change-management-salesforce/), and how the call keeps standards in place with partners in [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/). The overall frame for several partners is described under [partner governance](../../services/partner-governance/).
+How to anchor new rules in daily work is described under [Salesforce change management consulting](/en/services/change-management-salesforce/), and how the call keeps standards in place with partners in [Reinforcement: making standards stick with partners](/en/blog/partner-standards-reinforcement/). The overall frame for several partners is described under [partner governance](/en/services/partner-governance/).

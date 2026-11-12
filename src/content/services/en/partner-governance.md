@@ -109,15 +109,15 @@ Asset | coordinates | Owner * | coordinates
 Work Order | coordinates | coordinates | Owner *
 ```
 
-The structure of the matrix, with an example, is described in [Salesforce Object Ownership Matrix: Who Owns What?](../../blog/salesforce-object-ownership-matrix/).
+The structure of the matrix, with an example, is described in [Salesforce Object Ownership Matrix: Who Owns What?](/en/blog/salesforce-object-ownership-matrix/).
 
-In the weeks after the first version, new edge cases came up. We addressed them in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), where we presented upcoming changes with enough lead time for all streams. Over time, hardly any new edge cases appeared, because topics were discussed before they turned into conflicts. Once the process ran smoothly, I handed it over to an internal colleague who has owned it since.
+In the weeks after the first version, new edge cases came up. We addressed them in regular [Center of Excellence calls](/en/blog/salesforce-center-of-excellence-cadence/), where we presented upcoming changes with enough lead time for all streams. Over time, hardly any new edge cases appeared, because topics were discussed before they turned into conflicts. Once the process ran smoothly, I handed it over to an internal colleague who has owned it since.
 
 ## Rules and tools belong to the client
 
 A partner can write good standards too. But if it sets the rules, it decides how everyone else builds, including its competitors. If the repository, the pipeline and tools like Jira or Miro also sit with that partner, every change of partner becomes expensive.
 
-When the client owns the standards, the approval rights and the tools, a new partner starts with the same rules, tools and rights as everyone else. A partner who leaves hands over open work and knowledge, while the repository, pipeline and standards stay where they are. Offers can then be compared fairly, because everyone delivers under the same conditions. More on this in [why clients should own their DevOps tools](../../blog/why-clients-should-own-their-devops-tools/). What to ask about this when you select a partner is covered in [how to choose a Salesforce implementation partner](../../blog/how-to-choose-a-salesforce-implementation-partner/).
+When the client owns the standards, the approval rights and the tools, a new partner starts with the same rules, tools and rights as everyone else. A partner who leaves hands over open work and knowledge, while the repository, pipeline and standards stay where they are. Offers can then be compared fairly, because everyone delivers under the same conditions. More on this in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/). What to ask about this when you select a partner is covered in [how to choose a Salesforce implementation partner](/en/blog/how-to-choose-a-salesforce-implementation-partner/).
 
 ## How do reviews fit in without slowing the program down?
 
@@ -129,4 +129,4 @@ Reviews turn written standards into daily practice. They do not slow things down
 3 | Agreed response times | Review by the client | Everyone knows when the review will come.
 ```
 
-I describe the details in [why pull request reviews are a must in enterprise projects](../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). The pipeline these checks run on is part of [DevOps and release management](../devops-release-management/); without one shared release process, no governance framework holds.
+I describe the details in [why pull request reviews are a must in enterprise projects](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). The pipeline these checks run on is part of [DevOps and release management](/en/services/devops-release-management/); without one shared release process, no governance framework holds.

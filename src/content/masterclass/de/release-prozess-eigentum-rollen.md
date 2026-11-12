@@ -32,7 +32,7 @@ Im Salesforce-Release-Prozess gehören Repository, Pipeline, DevOps-Werkzeug, Sa
 
 ## Was sollte Ihnen als Auftraggeber gehören?
 
-[Kapitel 1](../release-management-grundlagen/) hat die Grundannahme gesetzt: Der Release-Prozess gehört Ihnen. Konkret heißt das, dass Verträge, Lizenzen und Admin-Rechte der folgenden Bausteine auf Ihren Namen ausgestellt sind. Besitzen heißt dabei nicht, eigene Server zu betreiben. Eine GitHub-Organisation in der Cloud reicht, solange sie Ihnen gehört.
+[Kapitel 1](/masterclass/devops-release-management/release-management-grundlagen/) hat die Grundannahme gesetzt: Der Release-Prozess gehört Ihnen. Konkret heißt das, dass Verträge, Lizenzen und Admin-Rechte der folgenden Bausteine auf Ihren Namen ausgestellt sind. Besitzen heißt dabei nicht, eigene Server zu betreiben. Eine GitHub-Organisation in der Cloud reicht, solange sie Ihnen gehört.
 
 | Baustein | Gehört | Partner erhalten |
 |---|---|---|
@@ -43,20 +43,20 @@ Im Salesforce-Release-Prozess gehören Repository, Pipeline, DevOps-Werkzeug, Sa
 | Zertifikate, technische Benutzer, Integrationszugänge zu SAP | Ihnen, im eigenen Tresor | keinen direkten Zugriff |
 | Backlog, Wiki, Standards | Ihnen | Bearbeitungsrechte im Projekt |
 
-Wie das bei den Werkzeugen aussieht, hängt vom Produkt ab. Bei sfdx-hardis liegt die Konfiguration als Dateien im Repository, wer das Repository besitzt, besitzt also den Prozess. Bei Gearset verwalten laut [Gearset-Dokumentation](https://docs.gearset.com/en/articles/2477938-team-ownership-and-management) nur Team Owner die Zuweisung der Lizenzen, und wer aus dem Team entfernt wird, verliert sofort den Zugriff auf die gemeinsame Historie, während die Historie beim Team bleibt. Das ist genau das Verhalten, das Sie wollen, aber nur, wenn das Team Ihnen gehört. Flosum ist laut [Hersteller](https://www.flosum.com/) Salesforce-nativ, läuft also auf der Salesforce-Plattform selbst. Achten Sie dort darauf, dass die Org, in der Flosum läuft, Ihnen gehört. Welches Werkzeug zu Ihnen passt, vergleicht [Kapitel 4](../devops-werkzeuge-vergleich/). Für dieses Kapitel zählt nur: Wer den Vertrag des Werkzeugs hält, entscheidet, wer Zugriff hat.
+Wie das bei den Werkzeugen aussieht, hängt vom Produkt ab. Bei sfdx-hardis liegt die Konfiguration als Dateien im Repository, wer das Repository besitzt, besitzt also den Prozess. Bei Gearset verwalten laut [Gearset-Dokumentation](https://docs.gearset.com/en/articles/2477938-team-ownership-and-management) nur Team Owner die Zuweisung der Lizenzen, und wer aus dem Team entfernt wird, verliert sofort den Zugriff auf die gemeinsame Historie, während die Historie beim Team bleibt. Das ist genau das Verhalten, das Sie wollen, aber nur, wenn das Team Ihnen gehört. Flosum ist laut [Hersteller](https://www.flosum.com/) Salesforce-nativ, läuft also auf der Salesforce-Plattform selbst. Achten Sie dort darauf, dass die Org, in der Flosum läuft, Ihnen gehört. Welches Werkzeug zu Ihnen passt, vergleicht [Kapitel 4](/masterclass/devops-release-management/devops-werkzeuge-vergleich/). Für dieses Kapitel zählt nur: Wer den Vertrag des Werkzeugs hält, entscheidet, wer Zugriff hat.
 
-Warum das auch für Jira, Confluence und Miro gilt und wie Sie einen Umzug planen, wenn ein Partner heute Teile davon besitzt, beschreibe ich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
+Warum das auch für Jira, Confluence und Miro gilt und wie Sie einen Umzug planen, wenn ein Partner heute Teile davon besitzt, beschreibe ich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
 ## Welche Rollen braucht ein Release-Prozess?
 
 In Programmen mit mehreren Partnern entsteht leicht dieselbe Lücke: Jeder Partner verantwortet seinen Stream, niemand das Ganze. Vier Rollen schließen sie. Eine Person kann in kleinen Programmen zwei Rollen tragen, die Verantwortung muss trotzdem benannt sein.
 
 - **Release Manager (Kundenseite).** Verantwortet Pipeline, Release-Kalender und jede Promotion von Integration über UAT bis Produktion. Die [Release-Manager-Anleitung von sfdx-hardis](https://sfdx-hardis.cloudity.com/salesforce-devops-release-home/) beschreibt die Aufgaben gut: Validierungsjobs prüfen, Konflikte lösen, in die Stufen-Branches mergen, Hotfixes ausliefern und danach zurück in die Entwicklungs-Branches bringen, Release Notes und DORA-Kennzahlen erzeugen. Laut derselben Seite übernehmen das ein oder zwei Teammitglieder, in kleinen Projekten ein Tech Lead oder erfahrener Admin in Teilzeit.
-- **Architekt (Kundenseite).** Schreibt die Entwicklungs- und Architekturstandards, gibt architekturrelevante Änderungen frei (neue Objekte, Schnittstellen, Sharing, Rechtekonzept) und entscheidet, wenn zwei Streams dasselbe Objekt brauchen. Welcher Stream welches Objekt verantwortet, steht in einer [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/).
+- **Architekt (Kundenseite).** Schreibt die Entwicklungs- und Architekturstandards, gibt architekturrelevante Änderungen frei (neue Objekte, Schnittstellen, Sharing, Rechtekonzept) und entscheidet, wenn zwei Streams dasselbe Objekt brauchen. Welcher Stream welches Objekt verantwortet, steht in einer [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/).
 - **Technischer Lead pro Partner.** Sorgt dafür, dass die Pull Requests seines Teams vollständig, klein und geprüft eingereicht werden, macht das erste Review im eigenen Stream und liefert die Angaben für die Release Notes. Er hat keine Freigaberechte für Stufen, die andere Partner betreffen.
 - **Product Owner im Fachbereich.** Etwa die Serviceleitung für Field Service oder die Vertriebsleitung für das Händlerportal. Nimmt Stories in UAT ab und entscheidet fachlich, ob eine Funktion mit dem nächsten Release für Anwender freigeschaltet wird.
 
-Die Release-Rolle ist die, an der am häufigsten gespart wird. Meine Position dazu steht in mehreren Artikeln: Wer mit einem Open-Source-Werkzeug wie sfdx-hardis Lizenzkosten spart, investiert das Geld am besten in eine interne Release-Rolle. Bei kommerziellen Plattformen wie Gearset, Copado oder Flosum gilt dasselbe. Ihr Vorteil ist, dass sich Rollen und Freigaben in einer Oberfläche einrichten lassen und der Hersteller Support leistet; verantworten muss die Freigaben trotzdem ein Mensch auf Ihrer Seite. Mehr dazu steht in [warum DevOps über Salesforce-Großprojekte entscheidet](../../../blog/warum-devops-salesforce-enterprise-projekte/).
+Die Release-Rolle ist die, an der am häufigsten gespart wird. Meine Position dazu steht in mehreren Artikeln: Wer mit einem Open-Source-Werkzeug wie sfdx-hardis Lizenzkosten spart, investiert das Geld am besten in eine interne Release-Rolle. Bei kommerziellen Plattformen wie Gearset, Copado oder Flosum gilt dasselbe. Ihr Vorteil ist, dass sich Rollen und Freigaben in einer Oberfläche einrichten lassen und der Hersteller Support leistet; verantworten muss die Freigaben trotzdem ein Mensch auf Ihrer Seite. Mehr dazu steht in [warum DevOps über Salesforce-Großprojekte entscheidet](/blog/warum-devops-salesforce-enterprise-projekte/).
 
 ```praxis
 In einem Programm, das ich begleitet habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil war, habe ich ihn an einen internen Kollegen übergeben. Das ist der Weg, den ich empfehle: extern aufbauen, intern übergeben.
@@ -76,7 +76,7 @@ Eine Freigabematrix beantwortet für jede Art von Änderung zwei Fragen: Wer pr�
 | Hotfix | Architekt oder Lead | Release Manager und betroffener Product Owner |
 | Pipeline, Branch-Schutz, Werkzeugkonfiguration | Release Manager | nur Kundenseite |
 
-Was ein gutes Review prüft und wie es schnell bleibt, beschreibe ich in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/). Hier geht es um die Durchsetzung, denn eine Matrix im Wiki hält niemanden auf.
+Was ein gutes Review prüft und wie es schnell bleibt, beschreibe ich in [warum Pull-Request-Reviews Pflicht sind](/blog/warum-pull-request-reviews-pflicht-sind/). Hier geht es um die Durchsetzung, denn eine Matrix im Wiki hält niemanden auf.
 
 ### In der Git-Plattform
 
@@ -96,7 +96,7 @@ Die Pipeline nützt wenig, wenn jemand an ihr vorbei deployen kann.
 Für Deployments über die Metadata API braucht ein Benutzer laut [Metadata API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_metadata_perm.htm) „Modify Metadata Through Metadata API Functions“ oder „Modify All Data“. Die erste Berechtigung wird automatisch aktiv, sobald jemand „Deploy Change Sets“ oder „Author Apex“ hat.
 ```
 
-Prüfen Sie also in Produktion, UAT und Staging, welche Partnerbenutzer eine dieser Berechtigungen tragen. Deployen sollte dort nur der technische Benutzer der Pipeline, wie [Kapitel 5](../pipeline-aufbauen/) beschreibt. Für befristete Rechte, etwa für eine Analyse in Produktion, können Permission-Set-Zuweisungen laut [Salesforce Admins Blog](https://admin.salesforce.com/blog/2021/how-to-set-assignment-expiration-on-permission-sets-and-permission-set-groups) ein Ablaufdatum erhalten, nach dem die Rechte automatisch entfallen.
+Prüfen Sie also in Produktion, UAT und Staging, welche Partnerbenutzer eine dieser Berechtigungen tragen. Deployen sollte dort nur der technische Benutzer der Pipeline, wie [Kapitel 5](/masterclass/devops-release-management/pipeline-aufbauen/) beschreibt. Für befristete Rechte, etwa für eine Analyse in Produktion, können Permission-Set-Zuweisungen laut [Salesforce Admins Blog](https://admin.salesforce.com/blog/2021/how-to-set-assignment-expiration-on-permission-sets-and-permission-set-groups) ein Ablaufdatum erhalten, nach dem die Rechte automatisch entfallen.
 
 ## Eine Vertragsanlage, gleich für jeden Partner
 
@@ -107,9 +107,9 @@ Ich bin Architekt, kein Anwalt. Die folgenden Punkte beschreiben, was ich aus te
 3. **Jede Änderung per Pull Request.** Auch Flows, Permission Sets und Layouts. In Integration, UAT, Staging und Produktion ändert niemand etwas direkt im Setup.
 4. **Standards und Review-Regeln gelten.** Das Standarddokument des Kunden ist Teil des Vertrags, ebenso vereinbarte Reaktionszeiten für Reviews.
 5. **Definition of Done.** Tests mit echten Asserts, Pull-Request-Beschreibung mit Bezug zur Story, dokumentierte Vor- und Nacharbeiten für das Deployment.
-6. **Release-Kalender und Freeze-Fenster.** Der Partner plant gegen Ihren Kalender, nicht gegen seinen eigenen. Wie der Kalender entsteht, beschreibt [Kapitel 8](../release-planung-salesforce-releases/).
+6. **Release-Kalender und Freeze-Fenster.** Der Partner plant gegen Ihren Kalender, nicht gegen seinen eigenen. Wie der Kalender entsteht, beschreibt [Kapitel 8](/masterclass/devops-release-management/release-planung-salesforce-releases/).
 7. **Hotfixes über dieselbe Pipeline.** Ohne Ausnahme für „dringend“.
-8. **Regeln für KI-Coding.** Welche Tools, welche Daten, welches Review. Die Prüfpunkte dafür stehen in [Partner codet mit KI: Was in den Vertrag gehört](../../../blog/partner-ki-coding-regeln-vertrag/).
+8. **Regeln für KI-Coding.** Welche Tools, welche Daten, welches Review. Die Prüfpunkte dafür stehen in [Partner codet mit KI: Was in den Vertrag gehört](/blog/partner-ki-coding-regeln-vertrag/).
 9. **Ausstieg.** Übergabe ohne Arbeit außerhalb des Repositorys, Bestätigung, dass lokale Kopien mit Ihrem Code und Ihren Zugangsdaten gelöscht sind, aktive Mitarbeit an der Übergabe für einen vereinbarten Zeitraum.
 
 ```hinweis tipp
@@ -122,7 +122,7 @@ Wenn Eigentum, Rollen und Vertragsregeln feststehen, ist ein Partnerwechsel ein 
 
 ```schritte
 Bestand aufnehmen, bevor der Ausstieg verkündet wird
-  Ein Abgleich zwischen Produktion und Repository zeigt, was nie ins Repository übernommen wurde. Das Setup Audit Trail hilft dabei, es zeigt laut [Salesforce-Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm) Setup-Änderungen der mindestens letzten 180 Tage. Ältere Abweichungen findet nur der Abgleich. Wie eine Analyse technischer Schulden vor dem Wechsel aussieht, beschreibe ich in [KI-Org-Analyse: technische Schulden vor dem Partnerwechsel](../../../blog/ki-org-analyse-technische-schulden/).
+  Ein Abgleich zwischen Produktion und Repository zeigt, was nie ins Repository übernommen wurde. Das Setup Audit Trail hilft dabei, es zeigt laut [Salesforce-Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm) Setup-Änderungen der mindestens letzten 180 Tage. Ältere Abweichungen findet nur der Abgleich. Wie eine Analyse technischer Schulden vor dem Wechsel aussieht, beschreibe ich in [KI-Org-Analyse: technische Schulden vor dem Partnerwechsel](/blog/ki-org-analyse-technische-schulden/).
 Den neuen Partner im bestehenden Setup einarbeiten
   Er erhält Benutzer im Repository, im Werkzeug und in den Sandboxes, liest die Standards und reicht in der ersten Woche kleine Pull Requests ein, die der Release Manager eng begleitet.
 CODEOWNERS umstellen
@@ -143,4 +143,4 @@ Der Release-Kalender läuft in diesem Szenario ohne Pause weiter, denn Pipeline,
 4. Entziehen Sie Partnerbenutzern in Stufen-Orgs die Rechte für direkte Deployments.
 5. Entwerfen Sie mit Ihrer Rechtsabteilung die Anlage für alle Partnerverträge.
 
-Diese Steuerung über alle Partner hinweg ist der Kern meiner Arbeit in der [Partnersteuerung](../../../leistungen/partnersteuerung/). Welche Orgs und Branches die Rollen aus diesem Kapitel bespielen, folgt in [Kapitel 3 zu Umgebungen und Branches](../umgebungen-und-branching/).
+Diese Steuerung über alle Partner hinweg ist der Kern meiner Arbeit in der [Partnersteuerung](/leistungen/partnersteuerung/). Welche Orgs und Branches die Rollen aus diesem Kapitel bespielen, folgt in [Kapitel 3 zu Umgebungen und Branches](/masterclass/devops-release-management/umgebungen-und-branching/).

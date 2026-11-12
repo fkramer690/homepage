@@ -46,7 +46,7 @@ contra: What you give up
 ```
 
 Use at least one content block or table (two kinds over 1,300 words), chosen by content: see docs/content-blocks.md for all eight (hinweis, praxis, kennzahlen, zeitleiste, ablauf, pro-contra, vertiefung, schritte).
-Link related topics, e.g. [partner steering](../../#services) or [references](../../#references).
+Link related topics, e.g. [partner steering](/en/#services) or [references](/en/#references).
 
 ## First step: name the concrete action here
 

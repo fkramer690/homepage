@@ -44,7 +44,7 @@ In Salesforce hinterlässt fast jede Handlung einen Datensatz mit Zeitstempel un
 | Datenqualität | Pflichtfelder mit echtem Inhalt, neue Dubletten | Desire oder Knowledge: Felder werden ausgefüllt, weil es Pflicht ist, ohne den Zweck zu kennen |
 | Ergebnis | Prognosegenauigkeit, Durchlaufzeit Angebot bis Auftrag | Reinforcement: Niemand fragt nach den Zahlen, also bleibt alles beim Alten |
 
-Die erste Ebene liefert Salesforce fast ohne Aufwand über Login-Historie und Nutzungsdaten der Lightning-Oberfläche. Die aussagekräftigen Zahlen liegen auf der zweiten und dritten Ebene, und die müssen Sie für Ihre Prozesse selbst definieren. Für den Außendienst steht die Kennzahlenliste in [Field Service Kennzahlen nach dem Go-live](../../../blog/field-service-kennzahlen-operations-home/), für alle anderen Bereiche die Methode in [Salesforce-Nutzung nach dem Go-live messen](../../../blog/salesforce-nutzung-messen-nach-go-live/).
+Die erste Ebene liefert Salesforce fast ohne Aufwand über Login-Historie und Nutzungsdaten der Lightning-Oberfläche. Die aussagekräftigen Zahlen liegen auf der zweiten und dritten Ebene, und die müssen Sie für Ihre Prozesse selbst definieren. Für den Außendienst steht die Kennzahlenliste in [Field Service Kennzahlen nach dem Go-live](/blog/field-service-kennzahlen-operations-home/), für alle anderen Bereiche die Methode in [Salesforce-Nutzung nach dem Go-live messen](/blog/salesforce-nutzung-messen-nach-go-live/).
 
 ```hinweis achtung
 Halten Sie vor dem Go-live fest, wie viele Angebote heute im Monat entstehen, ganz gleich in welchem Werkzeug. Fehlt diese Zahl, können Sie 200 Angebote in Salesforce später weder als Erfolg noch als Warnsignal lesen.
@@ -54,11 +54,11 @@ Halten Sie vor dem Go-live fest, wie viele Angebote heute im Monat entstehen, ga
 
 Am teuersten wird niedrige Nutzung, wenn neben Salesforce eine eigene Liste weitergeführt wird. Sie verrät sich auf drei Wegen. Hohe Anmeldezahlen bei wenigen neuen Datensätzen bedeuten, dass das Team nur nachschaut und woanders arbeitet. Große Aktualisierungswellen kurz vor dem Monatsbericht an die Geschäftsführung deuten darauf hin, dass Daten nachgetragen werden. Und Berichte, die regelmäßig als Excel-Datei exportiert werden, füttern oft genau diese Liste.
 
-Beweisen lässt sich damit nichts, aber jedes Zeichen ist Anlass für ein Gespräch mit dem Team, am besten über den Key User aus [Kapitel 3](../key-user-und-schulung/). Dann folgt die Diagnose aus [Kapitel 1](../change-management-adkar-diagnose/): Auf welcher Stufe kommt die Gruppe nicht weiter?
+Beweisen lässt sich damit nichts, aber jedes Zeichen ist Anlass für ein Gespräch mit dem Team, am besten über den Key User aus [Kapitel 3](/masterclass/change-management/key-user-und-schulung/). Dann folgt die Diagnose aus [Kapitel 1](/masterclass/change-management/change-management-adkar-diagnose/): Auf welcher Stufe kommt die Gruppe nicht weiter?
 
 ## Wer erhält welche Zahl?
 
-Im Lenkungsausschuss reichen je Prozess zwei bis drei Zahlen aus Prozessnutzung und Ergebnis, jeweils mit dem Verlauf seit dem Go-live. Der Sponsor eines Landes oder Bereichs sieht dieselben Zahlen für seine Teams, und schon seine Nachfrage im Monatsbericht wirkt als Reinforcement. Key User und Teamleitungen erhalten die Detailsicht, als Grundlage für Gespräche. Eine öffentliche Rangliste einzelner Personen führt dazu, dass Zahlen geschönt werden statt Daten gepflegt, und in Deutschland muss eine solche Auswertung vorher mit dem Betriebsrat geklärt werden, wie in [Kapitel 2](../sponsor-und-kommunikation/) beschrieben. Bei einem weltweiten Rollout messen Sie pro Land, weil jedes Land einen eigenen Verlauf hat.
+Im Lenkungsausschuss reichen je Prozess zwei bis drei Zahlen aus Prozessnutzung und Ergebnis, jeweils mit dem Verlauf seit dem Go-live. Der Sponsor eines Landes oder Bereichs sieht dieselben Zahlen für seine Teams, und schon seine Nachfrage im Monatsbericht wirkt als Reinforcement. Key User und Teamleitungen erhalten die Detailsicht, als Grundlage für Gespräche. Eine öffentliche Rangliste einzelner Personen führt dazu, dass Zahlen geschönt werden statt Daten gepflegt, und in Deutschland muss eine solche Auswertung vorher mit dem Betriebsrat geklärt werden, wie in [Kapitel 2](/masterclass/change-management/sponsor-und-kommunikation/) beschrieben. Bei einem weltweiten Rollout messen Sie pro Land, weil jedes Land einen eigenen Verlauf hat.
 
 ## Bei Partnern verankern Pipeline, Review und Center-of-Excellence-Call die Standards
 
@@ -72,14 +72,14 @@ Jeder Hebel deckt einen anderen Teil ab:
 
 - **Automatische Prüfung in der Pipeline** für Namen, verbotene Muster und Testabdeckung. Sie ist der günstigste Hebel, weil sie nie müde wird.
 - **Pull-Request-Review auf Kundenseite** für Design, Verantwortung für Objekte und Passung zur Architektur.
-- **Center-of-Excellence-Call** für neue Randfälle. Die technischen Leads tragen die Entscheidungen in ihre Teams, Format und Rhythmus stehen in [Salesforce Center of Excellence: Format und Rhythmus](../../../blog/salesforce-center-of-excellence-format/).
+- **Center-of-Excellence-Call** für neue Randfälle. Die technischen Leads tragen die Entscheidungen in ihre Teams, Format und Rhythmus stehen in [Salesforce Center of Excellence: Format und Rhythmus](/blog/salesforce-center-of-excellence-format/).
 - **Einarbeitung neuer Entwickler,** verantwortet vom Partner und geprüft vom Kunden.
 - **Vertrag,** der auf die geltende Fassung der Standards verweist und Verstöße von der Abnahme ausschließt.
 
-Ausnahmen unter Termindruck wird es geben. Sie brauchen im Pull Request eine Begründung und ein Ticket für die Korrektur. Alle Hebel im Detail beschreibe ich in [Reinforcement: Standards bei Partnern verankern](../../../blog/standards-partner-verankern-reinforcement/).
+Ausnahmen unter Termindruck wird es geben. Sie brauchen im Pull Request eine Begründung und ein Ticket für die Korrektur. Alle Hebel im Detail beschreibe ich in [Reinforcement: Standards bei Partnern verankern](/blog/standards-partner-verankern-reinforcement/).
 
 ## Die Veränderung ist verankert, wenn sie ohne ihre Einführer funktioniert
 
-Bei Fachbereichen bleiben die Zahlen auf der Ebene des Prozesses nach sechs Monaten stabil, und neue Kollegen lernen den Prozess von Key Usern statt aus alten Listen. Bei Partnern merken Reviewer seltener dieselben Punkte an, neue Randfälle werden vor der Umsetzung im Call besprochen, und neue Entwickler halten die Regeln ein, ohne dass jemand sie einzeln erklärt. In beiden Fällen gilt: Die Veränderung ist verankert, wenn sie auch ohne die Person Bestand hat, die sie eingeführt hat. Planen Sie deshalb von Anfang an, wer auf Kundenseite übernimmt. Wie ich Sie dabei begleite, steht auf der Seite [Change Management für Salesforce-Programme](../../../leistungen/change-management/).
+Bei Fachbereichen bleiben die Zahlen auf der Ebene des Prozesses nach sechs Monaten stabil, und neue Kollegen lernen den Prozess von Key Usern statt aus alten Listen. Bei Partnern merken Reviewer seltener dieselben Punkte an, neue Randfälle werden vor der Umsetzung im Call besprochen, und neue Entwickler halten die Regeln ein, ohne dass jemand sie einzeln erklärt. In beiden Fällen gilt: Die Veränderung ist verankert, wenn sie auch ohne die Person Bestand hat, die sie eingeführt hat. Planen Sie deshalb von Anfang an, wer auf Kundenseite übernimmt. Wie ich Sie dabei begleite, steht auf der Seite [Change Management für Salesforce-Programme](/leistungen/change-management/).
 
-Mit diesem Kapitel endet die Masterclass. Alle Kapitel und Fachartikel finden Sie auf der [Übersichtsseite](../).
+Mit diesem Kapitel endet die Masterclass. Alle Kapitel und Fachartikel finden Sie auf der [Übersichtsseite](/masterclass/change-management/).

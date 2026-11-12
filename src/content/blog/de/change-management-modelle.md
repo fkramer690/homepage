@@ -43,7 +43,7 @@ Modelle für Veränderungen gibt es viele. Vier davon begegnen mir in Unternehme
 | ADKAR | Einzelne Person | 5 Stufen: Bewusstsein bis Verankerung | Diagnose, wo es hängt | Kein Plan für die Organisation |
 | Prosci 3-Phase Process | Organisation | 3 Phasen: vorbereiten, steuern, sichern | Verbindet Plan und ADKAR | Methodik eines Anbieters, für kleine Veränderungen oft zu aufwendig |
 
-Daneben gibt es Phasenmodelle, die beschreiben, wie Menschen emotional auf eine Veränderung reagieren, vom ersten Schock bis zur Integration. Sie werden oft als [Veränderungskurve oder Change-Kurve](../change-kurve/) gezeichnet und helfen Führungskräften zu verstehen, warum ein Team nach anfänglicher Zustimmung plötzlich bremst. Einen Plan für die Einführung liefern sie nicht.
+Daneben gibt es Phasenmodelle, die beschreiben, wie Menschen emotional auf eine Veränderung reagieren, vom ersten Schock bis zur Integration. Sie werden oft als [Veränderungskurve oder Change-Kurve](/blog/change-kurve/) gezeichnet und helfen Führungskräften zu verstehen, warum ein Team nach anfänglicher Zustimmung plötzlich bremst. Einen Plan für die Einführung liefern sie nicht.
 
 ## Lewin: auftauen, verändern, einfrieren
 
@@ -104,6 +104,6 @@ Eine Faustregel nach Art der Veränderung:
 - **Eine neue Software für mehrere Abteilungen.** Prosci-Prozess mit ADKAR je Gruppe. Bei einer CRM-Einführung haben Vertrieb, Innendienst und Service unterschiedliche Fragen, und eine Diagnose je Gruppe verhindert, dass Schulung die Standardantwort auf jedes Problem wird.
 - **Eine Transformation über Länder und Bereiche.** Prosci-Prozess als Rahmen, Kotter als Prüfliste für die Führung, ADKAR je Gruppe und Land. Bei solchen Vorhaben wird die Planung je Land aufwendig, und ohne Sponsor vor Ort bleibt die Veränderung eine Ansage aus der Zentrale.
 
-Aus meinen Projekten kenne ich beide Enden dieser Skala: einen weltweiten Rollout der Salesforce Sales Cloud mit mehr als 500 Anwenderinnen und Anwendern und eine IT-Transformation bei einem Versicherer mit mehr als 20.000 Betroffenen in 19 Ländern. Welche Rolle die Modelle in einem Salesforce-Programm spielen, beschreibe ich mit Fabian Kramer in der [Masterclass Change Management](../../masterclass/change-management/). Die Grundlagen stehen in [Was ist Change Management?](../was-ist-change-management/). Wie wir das in Programmen umsetzen, steht unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).
+Aus meinen Projekten kenne ich beide Enden dieser Skala: einen weltweiten Rollout der Salesforce Sales Cloud mit mehr als 500 Anwenderinnen und Anwendern und eine IT-Transformation bei einem Versicherer mit mehr als 20.000 Betroffenen in 19 Ländern. Welche Rolle die Modelle in einem Salesforce-Programm spielen, beschreibe ich mit Fabian Kramer in der [Masterclass Change Management](/masterclass/change-management/). Die Grundlagen stehen in [Was ist Change Management?](/blog/was-ist-change-management/). Wie wir das in Programmen umsetzen, steht unter [Change Management Beratung für Salesforce](/leistungen/change-management/).
 
 *Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.*

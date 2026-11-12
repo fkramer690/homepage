@@ -66,7 +66,7 @@ Deflection is the number vendors like to show, and the weakest of the set. Under
 Since an LLM judges deflection and abandonment, the definition can change under your trend line. Note the switch date and the prompt version next to each monthly figure.
 ```
 
-Billing adds a third definition. For resolution-based Help Agent pricing, [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.service_cloud_billable_usage_types.htm&language=en_US&type=5) bills 400 credits per resolution when the session is not abandoned, has at least two user messages and two agent responses, and ends with positive feedback or, without feedback, with no escalation request. In Enhanced Chat one resolution covers up to two hours; a longer session counts again. That model is compared with Flex Credits in [what a dealer service agent costs](../flex-credits-agentforce-cost-per-action/).
+Billing adds a third definition. For resolution-based Help Agent pricing, [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.service_cloud_billable_usage_types.htm&language=en_US&type=5) bills 400 credits per resolution when the session is not abandoned, has at least two user messages and two agent responses, and ends with positive feedback or, without feedback, with no escalation request. In Enhanced Chat one resolution covers up to two hours; a longer session counts again. That model is compared with Flex Credits in [what a dealer service agent costs](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 So I count an enquiry as resolved only when the task resolution detector says so, and I have a senior service rep read 50 sessions a month. Wrong answers in sessions marked as resolved mean the KPI is too optimistic, and that gap goes into the report.
 
@@ -91,13 +91,13 @@ $8.94 | per resolved enquiry, spare parts subagent
 source: worked example with assumed values; credit multipliers from the Flex Credits rate card of November 3, 2026, list price from Salesforce
 ```
 
-The decision on day 90: order status stays and goes to the next dealer group. Spare parts are taken out of the agent and go to the parts desk through a structured portal form until regional stock data reaches Salesforce. Part identification is covered in [spare parts by serial number](../spare-parts-by-serial-number-ai/).
+The decision on day 90: order status stays and goes to the next dealer group. Spare parts are taken out of the agent and go to the parts desk through a structured portal form until regional stock data reaches Salesforce. Part identification is covered in [spare parts by serial number](/en/blog/spare-parts-by-serial-number-ai/).
 
 ## When should you switch an agent off?
 
-Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be canceled by the end of 2027, citing "escalating costs, unclear business value or inadequate risk controls". For vendor-led AI engineering efforts, for example with [forward deployed engineers](../salesforce-forward-deployed-engineer/), Gartner even expects around 70 percent to be abandoned by 2028, according to [CIO Dive](https://www.ciodive.com/news/can-forward-deployed-engineers-fdes-fix-ai-gartner/831833/). A stop rule written down before go-live makes that a routine decision. I would agree these triggers with the head of service and apply them per subagent:
+Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be canceled by the end of 2027, citing "escalating costs, unclear business value or inadequate risk controls". For vendor-led AI engineering efforts, for example with [forward deployed engineers](/en/blog/salesforce-forward-deployed-engineer/), Gartner even expects around 70 percent to be abandoned by 2028, according to [CIO Dive](https://www.ciodive.com/news/can-forward-deployed-engineers-fdes-fix-ai-gartner/831833/). A stop rule written down before go-live makes that a routine decision. I would agree these triggers with the head of service and apply them per subagent:
 
-1. **Immediately:** a confirmed breach of a hard rule, such as a wrong warranty statement or exposing another dealer's order data. The subagent stays off until the fix passes the regression tests from [testing before go-live](../testing-agentforce-agents-before-go-live/).
+1. **Immediately:** a confirmed breach of a hard rule, such as a wrong warranty statement or exposing another dealer's order data. The subagent stays off until the fix passes the regression tests from [testing before go-live](/en/blog/testing-agentforce-agents-before-go-live/).
 2. **After two improvement cycles of 30 days:** escalation rate above 40 percent or task resolution below 40 percent.
 3. **On day 90:** cost per resolved enquiry above the cost of a service rep per enquiry, unless the business case explicitly pays for something else, such as out-of-hours coverage.
 4. **At any time:** handle time on escalated enquiries clearly above the baseline for the same enquiry type, because then the agent shifts work instead of saving it.
@@ -113,4 +113,4 @@ The 40 percent values are my starting points, not Salesforce figures. Switching 
 5. **Book the sample reading** of 50 sessions a month into a named person's calendar, weighted toward warranty and other high-risk intents.
 6. **Fix the review dates:** day 30, day 60, decision on day 90.
 
-The KPIs need a business case from before go-live, which is why I put [business value and data quality first](../agentforce-business-value-data-quality-first/). Deciding which agents are worth their costs is part of my [make-or-buy and license planning](../../services/make-or-buy-licences/) work.
+The KPIs need a business case from before go-live, which is why I put [business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/). Deciding which agents are worth their costs is part of my [make-or-buy and license planning](/en/services/make-or-buy-licences/) work.

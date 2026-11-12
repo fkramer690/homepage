@@ -32,7 +32,7 @@ Every Salesforce change should pass the same checks before it is merged, and eve
 
 ## What is a quality gate in a Salesforce pipeline?
 
-A quality gate is an automated or human check that holds a change back until it passes. The holding back is what matters: a report with 300 findings that does not block the merge changes nothing about the release. [Chapter 5](../building-the-pipeline/) showed how a pull request moves through the pipeline and which Apex test level belongs where. This chapter covers what gets checked at each station and who sets the bar.
+A quality gate is an automated or human check that holds a change back until it passes. The holding back is what matters: a report with 300 findings that does not block the merge changes nothing about the release. [Chapter 5](/en/masterclass/devops-release-management/building-the-pipeline/) showed how a pull request moves through the pipeline and which Apex test level belongs where. This chapter covers what gets checked at each station and who sets the bar.
 
 I order gates by cost, cheap ones first:
 
@@ -51,9 +51,9 @@ Your Git platform does the blocking. On GitHub, a protected branch can require, 
 
 ## Why are reviews mandatory, even with good automation?
 
-Tools check rules. Whether a change fits the architecture, whether a new field is really needed, or whether a trigger collides with another team's flow is something only a person who knows the org can see. That is why, for me, every pull request without approval is blocked, no exceptions. The reasoning, and how to introduce reviews without slowing down, is in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+Tools check rules. Whether a change fits the architecture, whether a new field is really needed, or whether a trigger collides with another team's flow is something only a person who knows the org can see. That is why, for me, every pull request without approval is blocked, no exceptions. The reasoning, and how to introduce reviews without slowing down, is in [why pull request reviews are a must](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 
-For the roles from [chapter 2](../release-process-ownership-roles/), that means:
+For the roles from [chapter 2](/en/masterclass/devops-release-management/release-process-ownership-roles/), that means:
 
 - **Partners review each other** for changes within their own area.
 - **The client-side architect approves** anything touching the data model, sharing, permission sets or SAP integrations. On GitHub you enforce this with code owners: a file with a code owner needs that owner's approval.
@@ -82,7 +82,7 @@ source: Apex Developer Guide (testing best practices), sfdx-hardis parameter ape
 
 PMD rules from the [best practices category](https://docs.pmd-code.org/latest/pmd_rules_apex_bestpractices.html) enforce the machine-checkable part: `ApexUnitTestClassShouldHaveAsserts` requires at least one assert, `ApexUnitTestShouldNotUseSeeAllDataTrue` forbids access to org data, `ApexUnitTestClassShouldHaveRunAs` requires at least one `runAs`. A test that only checks for "not null" still passes the first rule. Whether an assert proves anything remains a job for the review.
 
-You can raise the coverage threshold itself. In sfdx-hardis the parameter is [`apexTestsMinCoverageOrgWide`](https://sfdx-hardis.cloudity.com/schema/sfdx-hardis-json-schema-parameters.html), default 75, and the documentation recommends stricter values such as 80 or 90 for clean projects. In a mature org with years of legacy code, I would raise the bar for new and changed classes and bring overall coverage up step by step. API version 67.0 is a special case: Apex runs in user mode by default there, and a test without `runAs` cannot see which records a restricted user loses. Details in [API 67.0: why Apex sees fewer records](../../../blog/api-67-apex-user-mode-fewer-records/).
+You can raise the coverage threshold itself. In sfdx-hardis the parameter is [`apexTestsMinCoverageOrgWide`](https://sfdx-hardis.cloudity.com/schema/sfdx-hardis-json-schema-parameters.html), default 75, and the documentation recommends stricter values such as 80 or 90 for clean projects. In a mature org with years of legacy code, I would raise the bar for new and changed classes and bring overall coverage up step by step. API version 67.0 is a special case: Apex runs in user mode by default there, and a test without `runAs` cannot see which records a restricted user loses. Details in [API 67.0: why Apex sees fewer records](/en/blog/api-67-apex-user-mode-fewer-records/).
 
 ## How do you test flows?
 
@@ -117,11 +117,11 @@ In the pipeline you call `sf code-analyzer run` or the GitHub Action. According 
 The run only becomes a gate with `--severity-threshold`: according to the [command reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html), the command exits with an error code as soon as a finding meets that severity. Without the flag everything stays green.
 ```
 
-In an org with ten years of Apex, I would block from "High" and report the rest. Block everything on day one and you get hundreds of legacy findings, and partners start switching off rules instead of fixing code. Lower the threshold once the backlog is cleaned up; how to make technical debt visible first is covered in [chapter 9](../operations-monitoring-backup/).
+In an org with ten years of Apex, I would block from "High" and report the rest. Block everything on day one and you get hundreds of legacy findings, and partners start switching off rules instead of fixing code. Lower the threshold once the backlog is cleaned up; how to make technical debt visible first is covered in [chapter 9](/en/masterclass/devops-release-management/operations-monitoring-backup/).
 
 ## How do the gates work in sfdx-hardis and in commercial tools?
 
-All tools from [chapter 4](../devops-tools-compared/) cover the gates, with different ways of working.
+All tools from [chapter 4](/en/masterclass/devops-release-management/devops-tools-compared/) cover the gates, with different ways of working.
 
 **sfdx-hardis**, which I have used in client projects for about two years, starts two control jobs on every pull request, according to its [documentation](https://sfdx-hardis.cloudity.com/salesforce-devops-handle-merge-request-results/). The first simulates the deployment to the target org, runs the Apex tests, calculates coverage and posts the result to the pull request with a visual diff of changed flows. The second runs MegaLinter with PMD for Apex, ESLint for Lightning Web Components, a search for hard-coded tokens and copy-paste detection. According to the documentation, merging happens only when both are green. The [MegaLinter configuration](https://sfdx-hardis.cloudity.com/salesforce-devops-solve-megalinter-errors/) marks the PMD threshold with a comment that only the release manager may change it, and `// NOPMD` is meant "only for false positives, never to publish faster". Watch out for the `testCoverageNotBlocking` option, which according to the [documentation](https://sfdx-hardis.cloudity.com/salesforce-devops-smart-deployment/) allows deployments despite insufficient coverage. It has no place in a production setup.
 
@@ -139,7 +139,7 @@ The commercial tools score on interface, rule sets and support, sfdx-hardis on t
 
 When your partners work with coding agents, the number of pull requests goes up and your review capacity stays the same. That argues for enforcing the gates above without exceptions. New gates are hardly needed. Typical AI defects such as queries in loops, missing sharing declarations and tests that prove nothing are caught by the same combination of Code Analyzer, validation and review. Two additions pay off: a check that stops an API version jump to 67.0 without a task, and a rule that AI-generated parts are flagged in the pull request.
 
-What AI code needs beyond that, from the rules file to org boundaries for agents, is covered in [chapter 8 of the AI masterclass](../../ai-salesforce/ai-code-best-practices/). The gates in detail are in [quality gates for AI code](../../../blog/quality-gates-for-ai-code-salesforce-pipeline/), and the review from the client's side in [reviewing AI-generated Salesforce code](../../../blog/reviewing-ai-generated-salesforce-code/).
+What AI code needs beyond that, from the rules file to org boundaries for agents, is covered in [chapter 8 of the AI masterclass](/en/masterclass/ai-salesforce/ai-code-best-practices/). The gates in detail are in [quality gates for AI code](/en/blog/quality-gates-for-ai-code-salesforce-pipeline/), and the review from the client's side in [reviewing AI-generated Salesforce code](/en/blog/reviewing-ai-generated-salesforce-code/).
 
 ## Walk-through: a flow with an update inside a loop
 
@@ -149,4 +149,4 @@ An admin from the first partner builds a record-triggered flow on the work order
 
 In the validation deployment, an Apex test from the second partner then fails: the bulk test of the SAP import class creates 200 work orders and now triggers the new flow. Without that test, the problem would have shown up during the nightly import in production. Finally, the review by the client's architect settles the business question no tool asks: whether the appointment on a canceled order should be deleted or only canceled.
 
-Which configuration data such flows need in sandboxes for tests to mean something is covered in [chapter 7](../data-and-configuration/). How I support programs with this is described under [DevOps and release management](../../../services/devops-release-management/) and [partner governance](../../../services/partner-governance/).
+Which configuration data such flows need in sandboxes for tests to mean something is covered in [chapter 7](/en/masterclass/devops-release-management/data-and-configuration/). How I support programs with this is described under [DevOps and release management](/en/services/devops-release-management/) and [partner governance](/en/services/partner-governance/).

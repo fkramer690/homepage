@@ -31,7 +31,7 @@ faq:
 
 sfdx-hardis ist ein kostenloses Open-Source-Toolkit für Salesforce DevOps. Es verbindet ein Salesforce-CLI-Plugin mit einer VS-Code-Erweiterung und liefert eine fertige CI/CD-Pipeline, optionale Delta-Deployments, Qualitätsprüfungen, Org-Monitoring, Metadaten-Backups und automatisch erzeugte Dokumentation. Es läuft auf der Git-Plattform, die ein Unternehmen bereits nutzt. Ich setze sfdx-hardis in Kundenprojekten ein und halte es für sehr gut, vor allem weil es das liefert, was die meisten Enterprise-Programme brauchen, ohne Lizenzgebühren für das Tool selbst.
 
-Dieser Artikel gibt meinen Überblick über sfdx-hardis. Zwei weitere Artikel gehen mehr ins Detail: Der [Vergleich von sfdx-hardis und DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/) zeigt, wann das native Werkzeug von Salesforce reicht, und mein [Erfahrungsbericht zum kostenlosen sfdx-hardis-Training](../sfdx-hardis-kostenloses-devops-training/) beschreibt, wie Sie das Toolkit in einem Tag selbst ausprobieren.
+Dieser Artikel gibt meinen Überblick über sfdx-hardis. Zwei weitere Artikel gehen mehr ins Detail: Der [Vergleich von sfdx-hardis und DevOps Center](/blog/sfdx-hardis-oder-devops-center-vergleich/) zeigt, wann das native Werkzeug von Salesforce reicht, und mein [Erfahrungsbericht zum kostenlosen sfdx-hardis-Training](/blog/sfdx-hardis-kostenloses-devops-training/) beschreibt, wie Sie das Toolkit in einem Tag selbst ausprobieren.
 
 ## Was ist sfdx-hardis?
 
@@ -42,7 +42,7 @@ Dieser Artikel gibt meinen Überblick über sfdx-hardis. Zwei weitere Artikel ge
 
 Beide werden unter der AGPL-3.0-Lizenz veröffentlicht und sollten deshalb in die übliche Open-Source-Prüfung einbezogen werden.
 
-Die Idee dahinter: Salesforce DevOps soll nicht von einer teuren Plattform abhängen. Die meisten Bausteine eines guten Release-Prozesses lassen sich aus offenen Werkzeugen zusammensetzen, und sfdx-hardis bündelt sie zu einem stimmigen Setup. Wenn Sie neu im Thema sind, erklärt mein Artikel [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/) zuerst die Grundlagen.
+Die Idee dahinter: Salesforce DevOps soll nicht von einer teuren Plattform abhängen. Die meisten Bausteine eines guten Release-Prozesses lassen sich aus offenen Werkzeugen zusammensetzen, und sfdx-hardis bündelt sie zu einem stimmigen Setup. Wenn Sie neu im Thema sind, erklärt mein Artikel [warum DevOps über Salesforce-Großprojekte entscheidet](/blog/warum-devops-salesforce-enterprise-projekte/) zuerst die Grundlagen.
 
 Zur Transparenz: Ich unterstütze das Open-Source-Projekt, habe aber keine finanziellen oder sonstigen Verbindungen zu Cloudity.
 
@@ -79,7 +79,7 @@ Wissen | Git-Grundlagen nötig. Die VS-Code-Erweiterung schließt für Admins ei
 Support | Community-Support, bezahltes Support-Abonnement oder Beratung | Herstellersupport
 fazit: Kein Tool passt für jedes Team. Früh wählen, sauber begründen, für jeden Partner verbindlich machen.
 ```
-Das DevOps Center von Salesforce, das jetzt Lifecycle Center heißt, ist eine weitere kostenlose Option. Es ist ein guter Einstieg für Teams, die vor allem über die Oberfläche arbeiten, deckt aber weniger Funktionen in den Bereichen Pipeline, Monitoring und Dokumentation ab. Den ausführlichen Vergleich, inklusive der unterstützten Git-Plattformen, finden Sie in [sfdx-hardis und DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/).
+Das DevOps Center von Salesforce, das jetzt Lifecycle Center heißt, ist eine weitere kostenlose Option. Es ist ein guter Einstieg für Teams, die vor allem über die Oberfläche arbeiten, deckt aber weniger Funktionen in den Bereichen Pipeline, Monitoring und Dokumentation ab. Den ausführlichen Vergleich, inklusive der unterstützten Git-Plattformen, finden Sie in [sfdx-hardis und DevOps Center](/blog/sfdx-hardis-oder-devops-center-vergleich/).
 
 Wichtig ist mir dabei: Es gibt kein Tool, das für jedes Team richtig ist. Entscheidend ist, dass die Wahl früh getroffen, sauber begründet und dann für alle Beteiligten verbindlich wird, auch für jeden Partner. Ein Programm, in dem jeder Partner sein eigenes Werkzeug mitbringt, hat am Ende mehrere Release-Prozesse und damit keinen.
 
@@ -101,13 +101,13 @@ contra: Weniger geeignet, wenn
 
 Im zweiten Fall kann eine kommerzielle Plattform die ehrlichere Antwort sein.
 
-Das Thema Lizenzbudgets wird oft unterschätzt. Die eingesparten Lizenzkosten investieren Sie am besten in eine interne Rolle, die das Setup pflegt, neue Teams einarbeitet und den Release-Kalender verantwortet. Ohne diese Rolle verliert auch das beste Werkzeug nach einigen Monaten an Wirkung. Mit Entwicklungsstandards bei Partnern ist es genauso, siehe [Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/).
+Das Thema Lizenzbudgets wird oft unterschätzt. Die eingesparten Lizenzkosten investieren Sie am besten in eine interne Rolle, die das Setup pflegt, neue Teams einarbeitet und den Release-Kalender verantwortet. Ohne diese Rolle verliert auch das beste Werkzeug nach einigen Monaten an Wirkung. Mit Entwicklungsstandards bei Partnern ist es genauso, siehe [Reinforcement: Standards bei Partnern verankern](/blog/standards-partner-verankern-reinforcement/).
 
 ## Mit dem kostenlosen Training einsteigen
 
-Am schnellsten verstehen Sie sfdx-hardis, indem Sie es ausprobieren. Cloudity bietet ein kostenloses Praxistraining mit drei Levels und verifizierten Badges an. Ich habe alle drei abgeschlossen und meine Erfahrungen in [was ich aus dem kostenlosen sfdx-hardis-Training mitgenommen habe](../sfdx-hardis-kostenloses-devops-training/) aufgeschrieben.
+Am schnellsten verstehen Sie sfdx-hardis, indem Sie es ausprobieren. Cloudity bietet ein kostenloses Praxistraining mit drei Levels und verifizierten Badges an. Ich habe alle drei abgeschlossen und meine Erfahrungen in [was ich aus dem kostenlosen sfdx-hardis-Training mitgenommen habe](/blog/sfdx-hardis-kostenloses-devops-training/) aufgeschrieben.
 
-Die Wahl der Werkzeuge gehört zu [Architektur und Partnersteuerung](../../leistungen/partnersteuerung/) und ist keine Nebenentscheidung der Entwickler. Für ein laufendes Programm empfehle ich diese Reihenfolge:
+Die Wahl der Werkzeuge gehört zu [Architektur und Partnersteuerung](/leistungen/partnersteuerung/) und ist keine Nebenentscheidung der Entwickler. Für ein laufendes Programm empfehle ich diese Reihenfolge:
 
 ```schritte
 Repository aufbauen

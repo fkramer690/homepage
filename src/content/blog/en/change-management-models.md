@@ -43,7 +43,7 @@ There are many models for change. Four of them come up in companies again and ag
 | ADKAR | Individual | 5 stages: awareness to reinforcement | Diagnosis of where it is stuck | No plan for the organization |
 | Prosci 3-Phase Process | Organization | 3 phases: prepare, manage, sustain | Connects the plan and ADKAR | A vendor's method, often too heavy for small changes |
 
-There are also phase models that describe how people react emotionally to a change, from the first shock to integration. They are often drawn as a [change curve](../change-curve/) and help managers understand why a team that agreed at first suddenly pushes back. They do not provide a plan for the rollout.
+There are also phase models that describe how people react emotionally to a change, from the first shock to integration. They are often drawn as a [change curve](/en/blog/change-curve/) and help managers understand why a team that agreed at first suddenly pushes back. They do not provide a plan for the rollout.
 
 ## Lewin: unfreeze, move, refreeze
 
@@ -104,6 +104,6 @@ A rule of thumb by type of change:
 - **New software for several departments.** Use the Prosci process with ADKAR for each group. In a CRM rollout, field sales, inside sales and service have different questions, and a diagnosis per group keeps training from becoming the default answer to every problem.
 - **A transformation across countries and divisions.** Use the Prosci process as the framework, Kotter as a checklist for leadership, and ADKAR for each group and country. In initiatives like this, planning for each country becomes demanding, and without a local sponsor the change remains an announcement from headquarters.
 
-I know both ends of this scale from my projects: a global Salesforce Sales Cloud rollout with more than 500 users and an IT transformation at an insurer with more than 20,000 people affected in 19 countries. Fabian Kramer and I describe the role these models play in a Salesforce program in the [change management masterclass](../../masterclass/change-management/); the basics are in [what is change management?](../what-is-change-management/). We describe how we apply this in programs on the [Salesforce change management consulting](../../services/change-management-salesforce/) page.
+I know both ends of this scale from my projects: a global Salesforce Sales Cloud rollout with more than 500 users and an IT transformation at an insurer with more than 20,000 people affected in 19 countries. Fabian Kramer and I describe the role these models play in a Salesforce program in the [change management masterclass](/en/masterclass/change-management/); the basics are in [what is change management?](/en/blog/what-is-change-management/). We describe how we apply this in programs on the [Salesforce change management consulting](/en/services/change-management-salesforce/) page.
 
 *Prosci and ADKAR are registered trademarks of Prosci, Inc.*

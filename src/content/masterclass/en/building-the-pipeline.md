@@ -32,13 +32,13 @@ A Salesforce pipeline takes every change to production along the same route: fea
 
 ## How does a pull request move through the pipeline?
 
-A pipeline is a fixed sequence of automated steps that takes a change from the repository into an org. Which environments and branches exist is covered in [chapter 3](../environments-and-branching/), which tool to pick in [chapter 4](../devops-tools-compared/). This chapter is about the route itself. For one change it looks like this:
+A pipeline is a fixed sequence of automated steps that takes a change from the repository into an org. Which environments and branches exist is covered in [chapter 3](/en/masterclass/devops-release-management/environments-and-branching/), which tool to pick in [chapter 4](/en/masterclass/devops-release-management/devops-tools-compared/). This chapter is about the route itself. For one change it looks like this:
 
 1. A developer or admin builds in their developer sandbox and commits to a feature branch, one user story per branch.
 2. They open a pull request against the integration branch.
 3. The pipeline works out the changed metadata, runs static analysis and starts a validation deployment against the org behind the target branch, with Apex tests.
 4. The results appear as a comment on the pull request. According to its [documentation](https://sfdx-hardis.cloudity.com/salesforce-devops-home/), sfdx-hardis posts the deployment simulation results on every pull request.
-5. A person reviews architecture, data model and side effects. Why I consider that review mandatory is in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+5. A person reviews architecture, data model and side effects. Why I consider that review mandatory is in [why pull request reviews are a must](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 6. Merging requires a green validation and an approval. Your Git platform's branch protection enforces this, not the discipline of the teams.
 7. After the merge, the pipeline deploys to the org, as a quick deploy where possible, and runs the steps before and after the deployment.
 8. The team learns the result, and the ticket is updated.
@@ -84,7 +84,7 @@ According to the [Salesforce blog](https://www.salesforce.com/blog/faster-deploy
 Two annotations cover that: `@IsTest(testFor=...)` ties a test class to specific classes, and `@IsTest(critical=true)` makes it run in every deployment.
 ```
 
-sfdx-hardis also offers `RunRepositoryTests`, which detects and runs all test classes in the repository. That helps when the org holds old tests that nobody manages in the repository. Why 75 percent coverage is only the floor is covered in [chapter 6](../quality-tests-reviews/).
+sfdx-hardis also offers `RunRepositoryTests`, which detects and runs all test classes in the repository. That helps when the org holds old tests that nobody manages in the repository. Why 75 percent coverage is only the floor is covered in [chapter 6](/en/masterclass/devops-release-management/quality-tests-reviews/).
 
 ## Delta deployments: deploy only what changed
 
@@ -107,7 +107,7 @@ In sfdx-hardis they are called [deployment actions](https://sfdx-hardis.cloudity
 - **Evidence:** the results appear in a dedicated "Deployment Actions" comment on the pull request.
 ```
 
-The commercial tools solve the same problem with their own interface. According to its [documentation](https://docs.gearset.com/en/articles/9859659-pre-and-post-deployment-steps-in-gearset-pipelines), Gearset attaches manual steps before and after the deployment, plus automatic steps after it, to the pull request, including activating flows, agents and bots. What I like is that a pull request cannot move forward until its pre-deployment steps are done. The feature is tied to the Automation Starter, Teams and Enterprise Add-on tiers. Copado's [documentation](https://docs.copado.com/article/7y7p18g4ef-deployment-steps) lists its own deployment steps attached to the user story, including Apex steps. How they look in your edition is best checked in a demo with your own org. How to move reference and configuration data cleanly is covered in [chapter 7](../data-and-configuration/).
+The commercial tools solve the same problem with their own interface. According to its [documentation](https://docs.gearset.com/en/articles/9859659-pre-and-post-deployment-steps-in-gearset-pipelines), Gearset attaches manual steps before and after the deployment, plus automatic steps after it, to the pull request, including activating flows, agents and bots. What I like is that a pull request cannot move forward until its pre-deployment steps are done. The feature is tied to the Automation Starter, Teams and Enterprise Add-on tiers. Copado's [documentation](https://docs.copado.com/article/7y7p18g4ef-deployment-steps) lists its own deployment steps attached to the user story, including Apex steps. How they look in your edition is best checked in a demo with your own org. How to move reference and configuration data cleanly is covered in [chapter 7](/en/masterclass/devops-release-management/data-and-configuration/).
 
 ## Destructive changes: deleting with a plan
 
@@ -124,12 +124,12 @@ My rule: deleting a field also deletes its data. Think of a field on the asset t
 The pipeline needs a login for every org, and it must not be a password. The [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-auth-jwt-flow.html) describes the JWT bearer flow for this: the pipeline signs a token with a private key, and Salesforce checks it against the certificate of an external client app. For a Dev Hub that creates scratch orgs or sandboxes, the guide says you need a connected app instead. The command is `sf org login jwt` with client ID, key file and username.
 
 ```hinweis achtung
-The OAuth username-password flow ends on February 20, 2027. If your pipeline still logs in with username, password and security token, the details are in [Salesforce password integrations end in 2027](../../../blog/salesforce-password-integrations-end-2027/).
+The OAuth username-password flow ends on February 20, 2027. If your pipeline still logs in with username, password and security token, the details are in [Salesforce password integrations end in 2027](/en/blog/salesforce-password-integrations-end-2027/).
 ```
 
 sfdx-hardis sets this up with [`hardis:project:configure:auth`](https://sfdx-hardis.cloudity.com/hardis/project/configure/auth/): the command creates an external client app with the JWT bearer flow and a certificate, per branch. The certificate is stored encrypted in the repository or, if you prefer, in a password manager; client ID and decryption key are variables on the Git platform. With commercial platforms you authorize the orgs inside the vendor's platform. Ask which flow it uses and how the connection is removed when you cancel.
 
-For the ownership question from [chapter 2](../release-process-ownership-roles/), this means:
+For the ownership question from [chapter 2](/en/masterclass/devops-release-management/release-process-ownership-roles/), this means:
 
 - a dedicated technical user per org for the pipeline, with only the permissions a deployment needs,
 - certificates, keys and pipeline variables in the client's vault and on the client's Git platform,
@@ -141,7 +141,7 @@ A pipeline whose result nobody sees is just a log. Three audiences need differen
 
 - **The author** needs details in the pull request: which component, which test, which error.
 - **The team** needs a channel for failed runs and successful deployments. According to its [documentation](https://sfdx-hardis.cloudity.com/salesforce-devops-home/), sfdx-hardis notifies Slack, Microsoft Teams, Google Chat and email, and updates tickets when a change reaches an org. According to [Gearset](https://docs.gearset.com/en/articles/10264886-setting-up-notifications-in-pipelines), Gearset Pipelines reports validations, deployments and merge conflicts to Slack and Microsoft Teams.
-- **The business** needs only the production releases, in its own language. How to tie this to the release calendar is covered in [chapter 8](../release-planning-salesforce-releases/).
+- **The business** needs only the production releases, in its own language. How to tie this to the release calendar is covered in [chapter 8](/en/masterclass/devops-release-management/release-planning-salesforce-releases/).
 
 A channel that announces every successful validation gets muted after two weeks.
 
@@ -155,4 +155,4 @@ A maker of industrial equipment uses Field Service and an SAP interface. All det
 - Against UAT and production the pipeline validates in full with `RunLocalTests`. The production validation runs in the morning, the quick deploy follows in the evening.
 - The pipeline logs in with JWT, and the service team gets a message in its Teams channel.
 
-None of this needs an expensive tool, but someone has to set it up and look after it. I have used sfdx-hardis in client projects for about two years; how it is built is explained in the [sfdx-hardis introduction](../../../blog/sfdx-hardis-open-source-salesforce-devops/), and if you want to build the route once yourself, the [free sfdx-hardis training](../../../blog/sfdx-hardis-free-devops-training/) covers exactly these steps as labs. I help with the setup as part of [DevOps and release management](../../../services/devops-release-management/), and all chapters are on the [overview page](../).
+None of this needs an expensive tool, but someone has to set it up and look after it. I have used sfdx-hardis in client projects for about two years; how it is built is explained in the [sfdx-hardis introduction](/en/blog/sfdx-hardis-open-source-salesforce-devops/), and if you want to build the route once yourself, the [free sfdx-hardis training](/en/blog/sfdx-hardis-free-devops-training/) covers exactly these steps as labs. I help with the setup as part of [DevOps and release management](/en/services/devops-release-management/), and all chapters are on the [overview page](/en/masterclass/devops-release-management/).

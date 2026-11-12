@@ -31,7 +31,7 @@ An AI-native delivery process for Salesforce turns the Jira ticket into an execu
 
 ## What does AI-native mean in a Salesforce project?
 
-AI-native delivery means building the delivery process around the agent instead of adding a coding assistant to the old process. I described how this changes the team set-up in [AI-native delivery: smaller Salesforce teams](../ai-native-delivery-smaller-salesforce-teams/). This article is about the flow itself. I have implemented it end to end, from the workshop to production. A few gaps remain. It is built on four ideas:
+AI-native delivery means building the delivery process around the agent instead of adding a coding assistant to the old process. I described how this changes the team set-up in [AI-native delivery: smaller Salesforce teams](/en/blog/ai-native-delivery-smaller-salesforce-teams/). This article is about the flow itself. I have implemented it end to end, from the workshop to production. A few gaps remain. It is built on four ideas:
 
 ```saeulen
 roof: AI-native delivery
@@ -64,7 +64,7 @@ Agent | Story diff and impact | Changes, test cases, metadata | Stories updated 
 gate: BA and architect approve the story | Ready for Agent Â· BA
 ```
 
-Before the workshop the agent analyzes the existing org: objects, flows, validation rules, permissions. Based on that, it drafts the agenda, hypotheses and targeted questions, for example: "Three flows on Opportunity overlap. Who owns them on the business side?" The business analyst sharpens the agenda and removes hypotheses that are politically sensitive. I show what such an org analysis looks like in [AI org assessment: finding technical debt](../ai-org-assessment-technical-debt/).
+Before the workshop the agent analyzes the existing org: objects, flows, validation rules, permissions. Based on that, it drafts the agenda, hypotheses and targeted questions, for example: "Three flows on Opportunity overlap. Who owns them on the business side?" The business analyst sharpens the agenda and removes hypotheses that are politically sensitive. I show what such an org analysis looks like in [AI org assessment: finding technical debt](/en/blog/ai-org-assessment-technical-debt/).
 
 In the workshop the business analyst moderates and does not have to take notes. From the transcript the agent produces minutes with decisions, open questions and owners, plus drafts of epics and stories in Jira, each with a timestamp. It keeps "the client said" strictly apart from "the agent interprets". The business analyst curates the result: they strike, sharpen, add the fit-gap (standard, configuration or code) and correct misheard terms and mixed-up speakers.
 
@@ -88,7 +88,7 @@ Only when business analyst and architect set a story to "Ready for Agent" does t
 
 Before anyone merges, the pipeline runs as a required status check on the pull request: it builds a delta package, for example with the third-party tool `sfdx-git-delta` in a pinned version and a full deploy as a fallback, runs a check-only deploy against the integration sandbox, executes defined tests and applies a Code Analyzer v5 gate whose rules and thresholds are versioned in the repository. If it fails, the agent gets the log and may create a fix commit, with at most two attempts. After that the developer takes over.
 
-Nothing is merged without a green pipeline and a developer's review. Here the developer reviews more code than they write. I explain why I never skip this gate in [Why pull request reviews are a must](../why-pull-request-reviews-are-a-must-in-enterprise-projects/). I describe the checks I put into the pipeline for AI code in [Quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
+Nothing is merged without a green pipeline and a developer's review. Here the developer reviews more code than they write. I explain why I never skip this gate in [Why pull request reviews are a must](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). I describe the checks I put into the pipeline for AI code in [Quality gates for AI code](/en/blog/quality-gates-for-ai-code-salesforce-pipeline/).
 
 ### Release: the client tests, the agent classifies
 
@@ -108,7 +108,7 @@ Pipeline | Release to production | Validate in production, quick deploy | Done Â
 note: **Rule:** The agent has no access to production. Only the pipeline deploys there.
 ```
 
-After the merge the pipeline deploys to the UAT sandbox. The agent drafted the test scripts, including negative cases, role permissions and regression, from the acceptance criteria; they were approved before this deployment. The client tests, the business analyst supports the sessions. The agent classifies every piece of feedback: **bug** when it contradicts a confirmed criterion, **change request** when it is new, and **open question** when evidence is missing. Business analyst and client confirm the classification. Bugs go back to implementation, and change requests are assessed as a new story, including their commercial impact. Scope creep becomes visible, backed by evidence instead of gut feeling. I describe how to set up an acceptance test with the business in [Salesforce UAT with the business](../salesforce-uat-business-acceptance-testing/).
+After the merge the pipeline deploys to the UAT sandbox. The agent drafted the test scripts, including negative cases, role permissions and regression, from the acceptance criteria; they were approved before this deployment. The client tests, the business analyst supports the sessions. The agent classifies every piece of feedback: **bug** when it contradicts a confirmed criterion, **change request** when it is new, and **open question** when evidence is missing. Business analyst and client confirm the classification. Bugs go back to implementation, and change requests are assessed as a new story, including their commercial impact. Scope creep becomes visible, backed by evidence instead of gut feeling. I describe how to set up an acceptance test with the business in [Salesforce UAT with the business](/en/blog/salesforce-uat-business-acceptance-testing/).
 
 Before the release decision the agent drafts release notes and a user guide in business language, and the business analyst proofreads. After approval, the pipeline validates the unchanged release artifact against production, runs the required tests there, and uses exactly that validation ID for a quick deploy within ten days. A validation against a sandbox cannot be reused for production.
 
@@ -129,7 +129,7 @@ mark: Gate
 note: The marked cells are the decisions at the five gates. Everything else is groundwork for them.
 ```
 
-The roles change more than the tools do. The business analyst writes less and makes more decisions; the core skill becomes spotting contradictions between what was said and what was meant. The architect becomes the keeper of the rules file, the Markdown file in the repository that contains the trigger framework, naming conventions, sharing rules and prohibitions that the agent reads at the start of every session. It is the biggest lever for the quality of everything the agent produces; see [AI rules file in the Salesforce repository](../ai-rules-file-salesforce-repository/). The client needs more discipline around confirmations; otherwise, speed turns into chaos.
+The roles change more than the tools do. The business analyst writes less and makes more decisions; the core skill becomes spotting contradictions between what was said and what was meant. The architect becomes the keeper of the rules file, the Markdown file in the repository that contains the trigger framework, naming conventions, sharing rules and prohibitions that the agent reads at the start of every session. It is the biggest lever for the quality of everything the agent produces; see [AI rules file in the Salesforce repository](/en/blog/ai-rules-file-salesforce-repository/). The client needs more discipline around confirmations; otherwise, speed turns into chaos.
 
 ## An example: from a sentence in the workshop to the release note
 
@@ -159,9 +159,9 @@ note: Every link points to the one before. That keeps every deployed change trac
 The process works with any coding agent. It needs four connections, as of October 2026:
 
 - **Jira as the shared ticket system.** Agent and pipeline do not run in Jira; they only read and write the same tickets. The agent runs on the developer's machine and accesses Jira through the Atlassian Rovo MCP Server; according to [Atlassian](https://www.atlassian.com/blog/jira/mcp-enhancements), it also reads the development panel there with linked branches, pull requests and commits. The pipeline runs on the Git platform and sets the ticket status itself after every run.
-- **Access to the sandboxes.** Skills from [sf-skills](https://github.com/forcedotcom/sf-skills) provide instructions, the Salesforce CLI carries out org actions, and the [Salesforce plugin for Claude Code](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) adds MCP servers for context. The local Salesforce DX MCP Server [reached end of life on November 2, 2026](../salesforce-dx-mcp-server-end-of-life/). The agent can access every org for which the CLI on its machine holds credentials. A sandbox alias is not a security boundary, so the agent runs under its own identity without production credentials, with limited commands and logging.
-- **A Git pipeline** that validates and deploys without AI, with production access only for the pipeline identity. I describe how I set it up under [DevOps and release management](../../services/devops-release-management/).
-- **Transcription in the client's tenant**, for example a Teams recording, which is stored with the organizer, so a client employee should send the invitation. That covers storage only: the model provider that reads the transcript also needs a data processing agreement, a fixed processing region and an exclusion from model training. I cover consent and the works council in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
+- **Access to the sandboxes.** Skills from [sf-skills](https://github.com/forcedotcom/sf-skills) provide instructions, the Salesforce CLI carries out org actions, and the [Salesforce plugin for Claude Code](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) adds MCP servers for context. The local Salesforce DX MCP Server [reached end of life on November 2, 2026](/en/blog/salesforce-dx-mcp-server-end-of-life/). The agent can access every org for which the CLI on its machine holds credentials. A sandbox alias is not a security boundary, so the agent runs under its own identity without production credentials, with limited commands and logging.
+- **A Git pipeline** that validates and deploys without AI, with production access only for the pipeline identity. I describe how I set it up under [DevOps and release management](/en/services/devops-release-management/).
+- **Transcription in the client's tenant**, for example a Teams recording, which is stored with the organizer, so a client employee should send the invitation. That covers storage only: the model provider that reads the transcript also needs a data processing agreement, a fixed processing region and an exclusion from model training. I cover consent and the works council in [AI coding tools, works council and GDPR](/en/blog/ai-coding-tools-works-council-gdpr/).
 
 ## Where does the process stumble?
 

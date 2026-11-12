@@ -82,11 +82,11 @@ basis: Sales Cloud, Service Cloud | In fast jedem Enterprise-Projekt gesetzt
 fazit: Sales Cloud und Service Cloud sind meist gesetzt, entschieden wird bei den Add-ons.
 ```
 
-Bei Field Service zählen neben der Art der Arbeit auch die Standorte und die Dauer der Einsätze. Über die aktuellen mobilen Funktionen habe ich in [Field Service Mobile im Außendienst](../../blog/salesforce-field-service-mobile-aussendienst/) geschrieben. Experience Cloud spart Kapazität, weil Kunden Antworten selbst finden und Anfragen selbst stellen. Den Fit der Manufacturing Cloud rechne ich im ROI-Case, den ich auf der Seite [Make-or-buy und Lizenzen](../make-or-buy-lizenzen/) beschreibe. Welche Clouds Maschinen- und Anlagenbauer meist brauchen, von Service Cloud bis Field Service, zeigt die Seite [Salesforce im Maschinen- und Anlagenbau](../../salesforce-maschinenbau/).
+Bei Field Service zählen neben der Art der Arbeit auch die Standorte und die Dauer der Einsätze. Über die aktuellen mobilen Funktionen habe ich in [Field Service Mobile im Außendienst](/blog/salesforce-field-service-mobile-aussendienst/) geschrieben. Experience Cloud spart Kapazität, weil Kunden Antworten selbst finden und Anfragen selbst stellen. Den Fit der Manufacturing Cloud rechne ich im ROI-Case, den ich auf der Seite [Make-or-buy und Lizenzen](/leistungen/make-or-buy-lizenzen/) beschreibe. Welche Clouds Maschinen- und Anlagenbauer meist brauchen, von Service Cloud bis Field Service, zeigt die Seite [Salesforce im Maschinen- und Anlagenbau](/salesforce-maschinenbau/).
 
 ## Das Datenmodell trägt Reports, Automatisierung und KI
 
-Jeder Report, jede Automatisierung und jeder KI-Anwendungsfall hängt vom Datenmodell ab. Deshalb behandle ich das Datenmodell als Teil der Architektur, inklusive seiner Beziehungen zum ERP. Bei KI sehe ich das genauso: Business Value und Datenqualität stehen an erster Stelle, wie in [Agentforce: Business Value und Datenqualität zuerst](../../blog/agentforce-business-value-datenqualitaet/) beschrieben.
+Jeder Report, jede Automatisierung und jeder KI-Anwendungsfall hängt vom Datenmodell ab. Deshalb behandle ich das Datenmodell als Teil der Architektur, inklusive seiner Beziehungen zum ERP. Bei KI sehe ich das genauso: Business Value und Datenqualität stehen an erster Stelle, wie in [Agentforce: Business Value und Datenqualität zuerst](/blog/agentforce-business-value-datenqualitaet/) beschrieben.
 
 ```vergleich
 ohne: Jedes Projekt modelliert anders
@@ -111,4 +111,4 @@ Folgen | Was bedeutet die Entscheidung später? *
 fazit: Fragt zwei Jahre später jemand, warum ein Prozess so gebaut wurde, steht die Antwort hier, auch wenn die Beteiligten längst weitergezogen sind.
 ```
 
-Die Integrationsarchitektur gehört dazu, weil Salesforce nie das einzige System ist. Mehr dazu unter [Integration mit ERP, Middleware und Telefonie](../salesforce-schnittstellen/).
+Die Integrationsarchitektur gehört dazu, weil Salesforce nie das einzige System ist. Mehr dazu unter [Integration mit ERP, Middleware und Telefonie](/leistungen/salesforce-schnittstellen/).

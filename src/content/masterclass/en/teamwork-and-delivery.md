@@ -45,7 +45,7 @@ Sources: [McKinsey: Beyond the copilot](https://www.mckinsey.com/capabilities/te
 
 McKinsey's figures temper expectations. Only 25 percent of director-level and above respondents report meaningful acceleration, and 30 percent of respondents say productivity fell. About 80 percent of engineers gain around 3 percent on average, the top 20 percent around 55 percent. DORA puts it this way: "AI doesn't fix a team; it amplifies what's already there."
 
-For a manufacturer's Salesforce program I read this as follows: if you only buy coding agent licenses, you get faster code and the same queue in front of review, integration testing with SAP and acceptance by the service team. What has to change in the organization is covered in [AI-native delivery: smaller Salesforce teams](../../../blog/ai-native-delivery-smaller-salesforce-teams/).
+For a manufacturer's Salesforce program I read this as follows: if you only buy coding agent licenses, you get faster code and the same queue in front of review, integration testing with SAP and acceptance by the service team. What has to change in the organization is covered in [AI-native delivery: smaller Salesforce teams](/en/blog/ai-native-delivery-smaller-salesforce-teams/).
 
 ## Which roles does a Salesforce team with coding agents need?
 
@@ -63,9 +63,9 @@ In my view the domain lead is the most critical role at a manufacturer. Without 
 
 ### Nearshore teams and partners
 
-In nearshore teams the load also shifts to review. More code per developer means more pull requests per reviewer, and that is exactly where many teams lack seniority. Why I cap nearshore teams at about eight developers anyway is explained in [Salesforce nearshore teams: why eight developers at most](../../../blog/salesforce-nearshore-teams-eight-developers/). What changes with agents in roles, onboarding and access rules is covered in [nearshore Salesforce teams with AI agents](../../../blog/nearshore-salesforce-teams-ai-agents/).
+In nearshore teams the load also shifts to review. More code per developer means more pull requests per reviewer, and that is exactly where many teams lack seniority. Why I cap nearshore teams at about eight developers anyway is explained in [Salesforce nearshore teams: why eight developers at most](/en/blog/salesforce-nearshore-teams-eight-developers/). What changes with agents in roles, onboarding and access rules is covered in [nearshore Salesforce teams with AI agents](/en/blog/nearshore-salesforce-teams-ai-agents/).
 
-When a partner works with agents, the ground rules belong in the contract. ApexHours lists permitted tools, data handling without production or personal data, IP ownership and disclosure of AI use, all settled before kickoff. My checklist is in [partners coding with AI: what belongs in the contract](../../../blog/partners-using-ai-coding-contract-rules/); how partner incentives are shifting is in [chapter 5](../aiforce-and-system-integrators/).
+When a partner works with agents, the ground rules belong in the contract. ApexHours lists permitted tools, data handling without production or personal data, IP ownership and disclosure of AI use, all settled before kickoff. My checklist is in [partners coding with AI: what belongs in the contract](/en/blog/partners-using-ai-coding-contract-rules/); how partner incentives are shifting is in [chapter 5](/en/masterclass/ai-salesforce/aiforce-and-system-integrators/).
 
 ## What does the workflow from intent to release look like?
 
@@ -83,7 +83,7 @@ This leads to a workflow I recommend for Salesforce programs:
 
 ### Review gates: a recommendation
 
-Which automated checks belong in the pipeline is covered in [chapter 8](../ai-code-best-practices/). Here the question is who decides at which point. My proposal:
+Which automated checks belong in the pipeline is covered in [chapter 8](/en/masterclass/ai-salesforce/ai-code-best-practices/). Here the question is who decides at which point. My proposal:
 
 | Gate | Check | Who | Blocking? |
 |---|---|---|---|
@@ -97,7 +97,7 @@ Which automated checks belong in the pipeline is covered in [chapter 8](../ai-co
 
 G2 is deliberately non-blocking. A second agent spots anomalies; accountability stays with G3.
 
-Why every pull request needs a human review no matter who wrote the code is explained in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). For Agentforce agents themselves a test gate with Testing Center is added, described in [testing Agentforce agents before go-live](../../../blog/testing-agentforce-agents-before-go-live/).
+Why every pull request needs a human review no matter who wrote the code is explained in [why pull request reviews are a must](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). For Agentforce agents themselves a test gate with Testing Center is added, described in [testing Agentforce agents before go-live](/en/blog/testing-agentforce-agents-before-go-live/).
 
 ### Definition of Done: a recommendation
 
@@ -125,7 +125,7 @@ Self-reports are no evidence. In the [METR study](https://metr.org/blog/2025-07-
 | DORA metrics | change lead time, deployment frequency, failed deployment recovery time, change fail rate, deployment rework rate | comparable across teams and partners |
 | AI cost per story | tool and token costs divided by stories delivered | budget control |
 
-The five DORA metrics are defined in the [DORA guide](https://dora.dev/guides/dora-metrics/). The baseline is what matters: record the values before the first agent is introduced, and report them as a trend, never as a ranking of individuals. Why a ranking is also a problem under German labor law is explained in the next section. How to set up the measurement and which numbers mislead is in [measuring AI productivity in Salesforce projects](../../../blog/measuring-ai-productivity-salesforce-projects/). The cost side is in [chapter 7](../costs-and-tokens/).
+The five DORA metrics are defined in the [DORA guide](https://dora.dev/guides/dora-metrics/). The baseline is what matters: record the values before the first agent is introduced, and report them as a trend, never as a ranking of individuals. Why a ranking is also a problem under German labor law is explained in the next section. How to set up the measurement and which numbers mislead is in [measuring AI productivity in Salesforce projects](/en/blog/measuring-ai-productivity-salesforce-projects/). The cost side is in [chapter 7](/en/masterclass/ai-salesforce/costs-and-tokens/).
 
 ### Learning time belongs in the budget
 
@@ -141,7 +141,7 @@ This part applies to German companies. According to [CMS](https://cms.law/de/deu
 
 ### GDPR
 
-Production data and personal data do not belong in a coding agent's context. Agents work in scratch orgs and sandboxes with anonymized test data; dealer and customer master data from the full copy sandbox is kept out. For model routes: according to the [data residency documentation](https://platform.claude.com/docs/en/manage-claude/data-residency), the Anthropic API offers only "us" and "global" for inference, with no EU option. Through Amazon Bedrock or Google Cloud, the regional endpoint determines the location. [Chapter 4](../external-coding-agents/) compares the vendors' options, and [AI coding tools, works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/) walks through the approval path.
+Production data and personal data do not belong in a coding agent's context. Agents work in scratch orgs and sandboxes with anonymized test data; dealer and customer master data from the full copy sandbox is kept out. For model routes: according to the [data residency documentation](https://platform.claude.com/docs/en/manage-claude/data-residency), the Anthropic API offers only "us" and "global" for inference, with no EU option. Through Amazon Bedrock or Google Cloud, the regional endpoint determines the location. [Chapter 4](/en/masterclass/ai-salesforce/external-coding-agents/) compares the vendors' options, and [AI coding tools, works council and GDPR](/en/blog/ai-coding-tools-works-council-gdpr/) walks through the approval path.
 
 ### EU AI Act
 
@@ -154,7 +154,7 @@ According to [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibu
 | Most Art. 50 transparency obligations | since 2 August 2026 | White & Case |
 | Art. 50(2) marking for generative systems on the market before 2 August 2026 | 2 December 2026 | [Cuatrecasas](https://www.cuatrecasas.com/en/spain/intellectual-property/art/digital-omnibus-ai-has-been-published) |
 
-In my judgment, coding assistants in a Salesforce project are as a rule not high-risk systems. An Agentforce agent that pre-sorts job applications, on the other hand, could fall under Annex III. Machine builders have a second, separate topic: according to Cuatrecasas, the Machinery Regulation is moved to section B of Annex I, and the substantive high-risk requirements are to follow through delegated acts by 2 August 2028 at the latest. That concerns AI in your machines, not your CRM, and belongs with product engineering and legal. What the deadlines mean for Agentforce projects is in [EU AI Act deadlines for Agentforce](../../../blog/eu-ai-act-deadlines-agentforce/); agents in service and sales are covered in [chapter 10](../ai-agents-in-manufacturing/).
+In my judgment, coding assistants in a Salesforce project are as a rule not high-risk systems. An Agentforce agent that pre-sorts job applications, on the other hand, could fall under Annex III. Machine builders have a second, separate topic: according to Cuatrecasas, the Machinery Regulation is moved to section B of Annex I, and the substantive high-risk requirements are to follow through delegated acts by 2 August 2028 at the latest. That concerns AI in your machines, not your CRM, and belongs with product engineering and legal. What the deadlines mean for Agentforce projects is in [EU AI Act deadlines for Agentforce](/en/blog/eu-ai-act-deadlines-agentforce/); agents in service and sales are covered in [chapter 10](/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
 ## Assumed: the first eight weeks at a machine builder
 
@@ -175,4 +175,4 @@ Evaluation | weeks 7 to 8
   Assume cycle time in the pilot stream falls to 12 days, but rework rises to 13 percent because pull requests grew. Consequence: smaller pull requests as a rule, a second reviewer on the client side, then the next stream.
 ```
 
-The warranty stream follows later, because credit notes are posted in SAP and still need an end-to-end test before each release. This sequencing is part of what I set up in [program management for Salesforce programs](../../../services/program-management-nearshore/); getting business time released and communicating with the team belong to [change management](../../../services/change-management-salesforce/). All chapters are on the [masterclass overview](../).
+The warranty stream follows later, because credit notes are posted in SAP and still need an end-to-end test before each release. This sequencing is part of what I set up in [program management for Salesforce programs](/en/services/program-management-nearshore/); getting business time released and communicating with the team belong to [change management](/en/services/change-management-salesforce/). All chapters are on the [masterclass overview](/en/masterclass/ai-salesforce/).

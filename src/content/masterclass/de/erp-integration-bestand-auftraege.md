@@ -34,7 +34,7 @@ Bei einem B2B-Shop auf Salesforce bleibt das ERP führend für Preise, Bestand, 
 
 ## Welche Daten fließen zwischen Shop und ERP?
 
-In [Kapitel 3](../preise-warenkorb-checkout/) ging es darum, was der Käufer im Warenkorb sieht und zahlt. Hier geht es darum, woher diese Werte kommen. Salesforce vermarktet das Produkt inzwischen auch als [Agentforce Commerce for B2B](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping); an der Integrationsarchitektur ändert der Name nichts.
+In [Kapitel 3](/masterclass/b2b-commerce/preise-warenkorb-checkout/) ging es darum, was der Käufer im Warenkorb sieht und zahlt. Hier geht es darum, woher diese Werte kommen. Salesforce vermarktet das Produkt inzwischen auch als [Agentforce Commerce for B2B](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping); an der Integrationsarchitektur ändert der Name nichts.
 
 Am Anfang jeder Schnittstellendiskussion zeichne ich dieselbe Landkarte mit vier Blöcken:
 
@@ -45,9 +45,9 @@ Am Anfang jeder Schnittstellendiskussion zeichne ich dieselbe Landkarte mit vier
 | Auftrag mit Bestellnummer, Lieferadresse, Wunschtermin | Salesforce nach ERP | Beim Absenden |
 | Auftragsnummer, bestätigte Termine, Lieferung, Rechnung | ERP nach Salesforce | Bei Änderung |
 
-Die Tabelle sieht einfach aus. Die Entscheidungen stecken in zwei Fragen pro Zeile: Welches System schreibt, und wie alt dürfen die Daten im Shop sein? Die ausführliche Fassung mit Produktimport-API und der Ableitung von Käufergruppen aus SAP steht in [B2B Commerce und SAP: Welche Daten fließen wohin?](../../../blog/b2b-commerce-sap-datenfluesse/).
+Die Tabelle sieht einfach aus. Die Entscheidungen stecken in zwei Fragen pro Zeile: Welches System schreibt, und wie alt dürfen die Daten im Shop sein? Die ausführliche Fassung mit Produktimport-API und der Ableitung von Käufergruppen aus SAP steht in [B2B Commerce und SAP: Welche Daten fließen wohin?](/blog/b2b-commerce-sap-datenfluesse/).
 
-Käufergruppen und Entitlement Policies stehen fast nie so im ERP. Sie werden aus Verkaufsorganisation, Kundengruppe oder Marke abgeleitet, wie in [Kapitel 2](../katalog-suche-sichtbarkeit/) beschrieben. Schreiben Sie diese Ableitung als Regel auf, sonst pflegt jemand die Gruppen von Hand, und der Shop weicht vom ERP ab.
+Käufergruppen und Entitlement Policies stehen fast nie so im ERP. Sie werden aus Verkaufsorganisation, Kundengruppe oder Marke abgeleitet, wie in [Kapitel 2](/masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) beschrieben. Schreiben Sie diese Ableitung als Regel auf, sonst pflegt jemand die Gruppen von Hand, und der Shop weicht vom ERP ab.
 
 ## Kopieren oder live abfragen: die Regel
 
@@ -56,7 +56,7 @@ Meine Regel lautet: kopieren, was sich seltener ändert, als ein Händler klickt
 - **Kopie:** schnell, der Shop funktioniert weiter, wenn das ERP ausfällt, aber die Daten sind so alt wie das letzte Update.
 - **Live-Abfrage:** genau, aber jeder Aufruf kostet Wartezeit für den Händler und Last im ERP, und Sie brauchen eine Antwort auf die Frage, was der Shop tut, wenn das ERP nicht antwortet.
 
-Vertragspreise aus der SAP-Konditionslogik und die Kreditprüfung gehören meist in die Live-Gruppe, Listenpreise, Händlerstaffeln und Produktdaten in die Kopie. Für jede Live-Abfrage schreiben Sie eine Rückfallregel auf, bevor die erste Zeile Code entsteht. Ein ERP ohne nutzbare API ändert die Rechnung: Dann bleibt oft nur eine lesende Replik hinter einer kleinen API, wie ich in [Altes ERP ohne API](../../../blog/altes-erp-ohne-api-ki-agenten/) beschreibe. Für einen Shop würde ich darüber nur lesen, nie Aufträge über Masken erfassen.
+Vertragspreise aus der SAP-Konditionslogik und die Kreditprüfung gehören meist in die Live-Gruppe, Listenpreise, Händlerstaffeln und Produktdaten in die Kopie. Für jede Live-Abfrage schreiben Sie eine Rückfallregel auf, bevor die erste Zeile Code entsteht. Ein ERP ohne nutzbare API ändert die Rechnung: Dann bleibt oft nur eine lesende Replik hinter einer kleinen API, wie ich in [Altes ERP ohne API](/blog/altes-erp-ohne-api-ki-agenten/) beschreibe. Für einen Shop würde ich darüber nur lesen, nie Aufträge über Masken erfassen.
 
 ## Commerce Extensions fragen das ERP live ab
 
@@ -75,7 +75,7 @@ Laut der [Seite zur Integrationsarchitektur](https://developer.salesforce.com/do
 
 ```vertiefung Für Entwickler
 titel: Extensions wartbar halten: `super()` und Registrierung im Repository
-Für die Wartbarkeit zählen zwei Punkte aus demselben Leitfaden. Salesforce empfiehlt ausdrücklich, in Domain Extensions `super()` aufzurufen, damit Ihr Code den Standard ergänzt und spätere Releases weiter wirksam werden. Und Registrierung und Zuordnung zum Store erfolgen am einfachsten über die Salesforce CLI mit dem Commerce-Plug-in, alternativ über die Objekte `RegisteredExternalService` und `StoreIntegratedService`. Damit können Code, Registrierung und Mapping im Repository und in der Pipeline des Kunden liegen. Wie Sie Partnercode daraufhin prüfen, steht in [Commerce Extensions: Eigenentwicklung, die Updates übersteht](../../../blog/commerce-extensions-eigenentwicklung/), wie Store-Konfiguration durch die Umgebungen befördert wird, im Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass.
+Für die Wartbarkeit zählen zwei Punkte aus demselben Leitfaden. Salesforce empfiehlt ausdrücklich, in Domain Extensions `super()` aufzurufen, damit Ihr Code den Standard ergänzt und spätere Releases weiter wirksam werden. Und Registrierung und Zuordnung zum Store erfolgen am einfachsten über die Salesforce CLI mit dem Commerce-Plug-in, alternativ über die Objekte `RegisteredExternalService` und `StoreIntegratedService`. Damit können Code, Registrierung und Mapping im Repository und in der Pipeline des Kunden liegen. Wie Sie Partnercode daraufhin prüfen, steht in [Commerce Extensions: Eigenentwicklung, die Updates übersteht](/blog/commerce-extensions-eigenentwicklung/), wie Store-Konfiguration durch die Umgebungen befördert wird, im Kapitel [Daten und Konfiguration](/masterclass/devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass.
 ```
 
 Meine Regel für Bestandsshops: Neue Logik gehört in Extensions, funktionierende alte Integrationen bleiben, bis sich der Code ohnehin ändern muss.
@@ -86,7 +86,7 @@ Im Standard liest der Shop den Bestand aus Omnichannel Inventory. [Trailhead](ht
 
 Die Alternative ist die Inventory-Extension, die die Verfügbarkeitsprüfung in SAP aufruft. Sie liefert einen bestätigten Termin, den eine Bestandskopie nie kennt, weil SAP dabei je nach Customizing auch geplante Zugänge und bestehende Bedarfe berücksichtigt. Ich würde diese Logik nicht in Salesforce nachbauen.
 
-Meine Empfehlung ist eine Mischung: Produktliste und Produktseite lesen die Kopie und zeigen "lieferbar" oder "auf Anfrage", der Checkout fragt den Termin live in SAP ab. Exakte Mengen braucht ein Händler selten. Details und eine Vergleichstabelle stehen in [Bestand im B2B-Shop: live aus dem ERP oder kopiert?](../../../blog/bestand-b2b-shop-erp-live/). Ein Agent, der Händlern den Auftragsstatus nennt, folgt derselben Regel und gibt nur den bestätigten Termin aus SAP weiter, wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](../../../blog/agentforce-sap-auftragsstatus/) beschrieben.
+Meine Empfehlung ist eine Mischung: Produktliste und Produktseite lesen die Kopie und zeigen "lieferbar" oder "auf Anfrage", der Checkout fragt den Termin live in SAP ab. Exakte Mengen braucht ein Händler selten. Details und eine Vergleichstabelle stehen in [Bestand im B2B-Shop: live aus dem ERP oder kopiert?](/blog/bestand-b2b-shop-erp-live/). Ein Agent, der Händlern den Auftragsstatus nennt, folgt derselben Regel und gibt nur den bestätigten Termin aus SAP weiter, wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](/blog/agentforce-sap-auftragsstatus/) beschrieben.
 
 ## Wem gehört der Auftrag?
 
@@ -98,7 +98,7 @@ Die Editionen unterscheiden sich hier deutlich. Growth enthält Order Management
 Was Order Management Lite in Growth weglässt, schlüsselt die Preisseite nicht auf. Lassen Sie sich das schriftlich geben, bevor Sie eine Edition wählen.
 ```
 
-Order Management deckt laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scom-order-management/scom-som-get-started) Zuteilung, Erfüllung und Service mit Stornos, Retouren und Umtausch ab und exportiert Rechnungen ins ERP. Ein Maschinenbauer mit SAP SD, Lagerverwaltung und Fakturierung hat all das schon. Hinzu kommen Telefon-, E-Mail- und EDI-Aufträge, die weiterhin direkt in SAP erfasst werden. Deshalb sollte bei den meisten Herstellern SAP Herr des Auftrags bleiben: Der Shop nimmt an, SAP wickelt ab, die Schnittstelle schreibt Auftragsnummer, Termine, Lieferungen und Rechnungen zurück. Die Begründung und welche Daten der Rückweg mindestens liefern muss, stehen in [Shop-Bestellungen ins ERP: Wem gehört der Auftrag?](../../../blog/shop-bestellungen-erp-auftrag/).
+Order Management deckt laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scom-order-management/scom-som-get-started) Zuteilung, Erfüllung und Service mit Stornos, Retouren und Umtausch ab und exportiert Rechnungen ins ERP. Ein Maschinenbauer mit SAP SD, Lagerverwaltung und Fakturierung hat all das schon. Hinzu kommen Telefon-, E-Mail- und EDI-Aufträge, die weiterhin direkt in SAP erfasst werden. Deshalb sollte bei den meisten Herstellern SAP Herr des Auftrags bleiben: Der Shop nimmt an, SAP wickelt ab, die Schnittstelle schreibt Auftragsnummer, Termine, Lieferungen und Rechnungen zurück. Die Begründung und welche Daten der Rückweg mindestens liefern muss, stehen in [Shop-Bestellungen ins ERP: Wem gehört der Auftrag?](/blog/shop-bestellungen-erp-auftrag/).
 
 ```ablauf
 sf: Checkout, Order Summary
@@ -116,19 +116,19 @@ Der Weg zurück aus SAP braucht dieselbe Sorgfalt wie der Weg hin. Steht eine Be
 
 ## Middleware oder direkte Callouts?
 
-Für einen Shop mit zwei oder drei Live-Abfragen und einem Auftragsexport reichen direkte Apex-Callouts mit Named Credentials. Eine Middleware lohnt sich, wenn dieselben SAP-Daten auch Service, Field Service und Agenten versorgen. Dann bedient eine Auftragsstatus-API den Shop, den Agenten und den Innendienst, und alle zeigen denselben Termin. Warum Agenten bestehende APIs mitnutzen sollten, beschreibt das Kapitel [MCP und Schnittstellen](../../ki-salesforce/mcp-und-schnittstellen/) der KI-Masterclass.
+Für einen Shop mit zwei oder drei Live-Abfragen und einem Auftragsexport reichen direkte Apex-Callouts mit Named Credentials. Eine Middleware lohnt sich, wenn dieselben SAP-Daten auch Service, Field Service und Agenten versorgen. Dann bedient eine Auftragsstatus-API den Shop, den Agenten und den Innendienst, und alle zeigen denselben Termin. Warum Agenten bestehende APIs mitnutzen sollten, beschreibt das Kapitel [MCP und Schnittstellen](/masterclass/ki-salesforce/mcp-und-schnittstellen/) der KI-Masterclass.
 
 Der [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/) enthält einen Quote-to-Cash-Fall, der Auftrags-, Bestands- und Kundendaten zwischen Sales Cloud und S/4HANA synchronisiert, und einen Fall für B2B-EDI. Das sind API-Vorlagen als Startpunkt. Eine fertige Anbindung für einen B2B-Commerce-Store ist es nicht.
 
 ```hinweis achtung
-Für alle Batch-Schnittstellen läuft eine Frist. Salesforce schaltet den [OAuth Username-Password Flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) für Connected Apps am 20. Februar 2027 ab. Ein nächtlicher Produktimport, der sich mit Passwort anmeldet, funktioniert dann nicht mehr, oft ohne dass es jemand sofort merkt. Wie Sie diese Schnittstellen finden und umstellen, steht in [Passwort-Integrationen enden 2027](../../../blog/salesforce-passwort-integrationen-2027/).
+Für alle Batch-Schnittstellen läuft eine Frist. Salesforce schaltet den [OAuth Username-Password Flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) für Connected Apps am 20. Februar 2027 ab. Ein nächtlicher Produktimport, der sich mit Passwort anmeldet, funktioniert dann nicht mehr, oft ohne dass es jemand sofort merkt. Wie Sie diese Schnittstellen finden und umstellen, steht in [Passwort-Integrationen enden 2027](/blog/salesforce-passwort-integrationen-2027/).
 ```
 
 ## Wann lohnt sich ein headless Shop?
 
 Headless heißt: Ihre eigene Website oder App ist der Shop, und Salesforce liefert Katalog, Preise, Warenkorb, Checkout und Aufträge über die Commerce Connect REST APIs. Auf der [Seite zu den Commerce-Neuerungen](https://www.salesforce.com/de/commerce/innovations/) steht Headless B2B Commerce als heute verfügbar, mit einem React B2B Storefront Blueprint. Der [Developer Guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-journey-overview.html) verweist auf eine Referenz-App im GitHub-Repository `commerce-b2b-headless`.
 
-Für die ERP-Anbindung heißt das: Extensions werden durch Connect-API-Aufrufe ausgelöst, dieselbe Preis- und Bestandslogik gilt also im LWR-Store und in Ihrer App. Die Kosten liegen beim Frontend. Hosting, Login, Pipeline und Regressionstests gegen jedes Salesforce-Release tragen Sie selbst. Ich würde headless nur empfehlen, wenn eine genutzte Website oder Kunden-App schon existiert und ein Team sie über Jahre betreibt. Welche Lizenz headless Käufer brauchen, habe ich in der Dokumentation nicht gefunden; das sollten Sie sich schriftlich bestätigen lassen. Mehr in [Headless B2B Commerce: eigenes Frontend, Salesforce-Kern](../../../blog/headless-b2b-commerce-eigenes-frontend/).
+Für die ERP-Anbindung heißt das: Extensions werden durch Connect-API-Aufrufe ausgelöst, dieselbe Preis- und Bestandslogik gilt also im LWR-Store und in Ihrer App. Die Kosten liegen beim Frontend. Hosting, Login, Pipeline und Regressionstests gegen jedes Salesforce-Release tragen Sie selbst. Ich würde headless nur empfehlen, wenn eine genutzte Website oder Kunden-App schon existiert und ein Team sie über Jahre betreibt. Welche Lizenz headless Käufer brauchen, habe ich in der Dokumentation nicht gefunden; das sollten Sie sich schriftlich bestätigen lassen. Mehr in [Headless B2B Commerce: eigenes Frontend, Salesforce-Kern](/blog/headless-b2b-commerce-eigenes-frontend/).
 
 ## Rechenbeispiel: Schnittstellenliste für 250 Händler
 
@@ -145,4 +145,4 @@ Sechs Schnittstellen, drei davon live, alle über einen Integrationsnutzer mit Z
 
 ## Ownership-Matrix und Schnittstellenliste schreiben, bevor jemand Shopseiten entwirft
 
-Schreiben Sie zwei Dokumente, bevor jemand die Shopseiten entwirft. Das eine ist eine [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/) mit einer zusätzlichen Spalte: kopiert oder live. Das andere ist eine Schnittstellenliste mit führendem System, maximalem Alter der Daten, Rückfallregel und Anmeldeverfahren pro Schnittstelle. Mit diesen beiden Seiten lässt sich jedes Partnerangebot vergleichen. Danach geht es in [Kapitel 5](../agentforce-migration-einfuehrung/) um Agenten, die auf denselben Schnittstellen aufsetzen, und um die Einführung bei den Händlern. Eine unabhängige Prüfung solcher Designs gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/) und in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).
+Schreiben Sie zwei Dokumente, bevor jemand die Shopseiten entwirft. Das eine ist eine [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/) mit einer zusätzlichen Spalte: kopiert oder live. Das andere ist eine Schnittstellenliste mit führendem System, maximalem Alter der Daten, Rückfallregel und Anmeldeverfahren pro Schnittstelle. Mit diesen beiden Seiten lässt sich jedes Partnerangebot vergleichen. Danach geht es in [Kapitel 5](/masterclass/b2b-commerce/agentforce-migration-einfuehrung/) um Agenten, die auf denselben Schnittstellen aufsetzen, und um die Einführung bei den Händlern. Eine unabhängige Prüfung solcher Designs gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/) und in der [Salesforce-Architektur](/leistungen/salesforce-architektur/).

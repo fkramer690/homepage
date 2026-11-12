@@ -39,7 +39,7 @@ The [setup guide](https://help.salesforce.com/s/articleView?id=ind.mfg_genai_war
 
 Salesforce also documents the [Agentforce for Manufacturing warranty actions](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5): Check Asset For Warranty, Check Coverage for Parts, Get Asset Warranties and Get Warranty Claims for Account, which finds claims by asset ID, serial number or claim number. They require the Agentforce for Manufacturing add-on for each user, or Agentforce 1 Manufacturing Edition. I expect the adjudication agent to build on these actions, but that is my assumption.
 
-The data model underneath, from warranty terms to supplier recovery, is described in [warranty claims from dealers in Salesforce](../warranty-claims-dealers-salesforce/). Here I look only at the agent and what it needs.
+The data model underneath, from warranty terms to supplier recovery, is described in [warranty claims from dealers in Salesforce](/en/blog/warranty-claims-dealers-salesforce/). Here I look only at the agent and what it needs.
 
 ## Rules-based adjudication exists today
 
@@ -47,13 +47,13 @@ Manufacturing Cloud can adjudicate claims without any AI today. According to [Sa
 
 In practice such a rule set looks like this: a claim goes to manual review if its amount exceeds a limit per product family or if the fault occurred within a few months of installation. Routine claims pass, the rest go to a person.
 
-So the question "is this covered?" can have a deterministic answer once rules and data are in place. An agent adds value where rules are weak. The documented functions are queue ranking, completeness checks, fraud flags and drafted requests for missing information. Comparing the dealer's free-text fault description with the fault code and the parts claimed is not described as a standard function; I would treat it as an extension and test it separately. Salesforce's own [architect guide on hybrid reasoning](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) states the rule I would apply: "if you can express a decision as code, it should be written as logic." How to design that separation is the topic of [Agent Script: rules instead of the LLM](../agent-script-deterministic-rules/).
+So the question "is this covered?" can have a deterministic answer once rules and data are in place. An agent adds value where rules are weak. The documented functions are queue ranking, completeness checks, fraud flags and drafted requests for missing information. Comparing the dealer's free-text fault description with the fault code and the parts claimed is not described as a standard function; I would treat it as an extension and test it separately. Salesforce's own [architect guide on hybrid reasoning](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) states the rule I would apply: "if you can express a decision as code, it should be written as logic." How to design that separation is the topic of [Agent Script: rules instead of the LLM](/en/blog/agent-script-deterministic-rules/).
 
 ## What has to be in place before the agent
 
 ### Asset data with serial numbers and start dates
 
-Every coverage check is a question about one machine. The setup guide names the records the agent relies on: account, asset, warranty term, asset warranty, claim, claim item, claim coverage and claim coverage payment detail. Serial number and start date are not listed as required fields, but in my view they determine whether the asset warranty applies. If the asset is missing in Salesforce or has no warranty start date, the agent has nothing to check against and will base its assessment on incomplete data. For manufacturers selling through dealers, the gap usually occurs during registration: the dealer knows when the machine was handed over, the manufacturer does not. Take the claims from the last twelve months and count how many serial numbers exist as assets with a start date. Below about 95 percent I would fix registration first. How to build that asset data is covered in [installed base in Manufacturing Cloud](../installed-base-asset-milestones/).
+Every coverage check is a question about one machine. The setup guide names the records the agent relies on: account, asset, warranty term, asset warranty, claim, claim item, claim coverage and claim coverage payment detail. Serial number and start date are not listed as required fields, but in my view they determine whether the asset warranty applies. If the asset is missing in Salesforce or has no warranty start date, the agent has nothing to check against and will base its assessment on incomplete data. For manufacturers selling through dealers, the gap usually occurs during registration: the dealer knows when the machine was handed over, the manufacturer does not. Take the claims from the last twelve months and count how many serial numbers exist as assets with a start date. Below about 95 percent I would fix registration first. How to build that asset data is covered in [installed base in Manufacturing Cloud](/en/blog/installed-base-asset-milestones/).
 
 ### Warranty terms as rules, not as PDFs
 
@@ -65,7 +65,7 @@ Decide before go-live which claims may pass automatically and which always go to
 
 ### The dealer portal as an attack surface
 
-The agent reads text that dealers write. In 2025 the ForcedLeak vulnerability (rated CVSS 9.4 by its finder, Noma Security) showed that instructions hidden in the description field of a Web-to-Lead form could make Agentforce embed lead data in an image URL on an expired but still trusted domain, which the browser then loaded; Salesforce responded by enforcing a Trusted URL allowlist, as [The Hacker News reported](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html). An allowlist limits where data can be sent; it does not make the text safe. A fault description in a warranty claim is the same kind of field. I cover the protective measures in [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/).
+The agent reads text that dealers write. In 2025 the ForcedLeak vulnerability (rated CVSS 9.4 by its finder, Noma Security) showed that instructions hidden in the description field of a Web-to-Lead form could make Agentforce embed lead data in an image URL on an expired but still trusted domain, which the browser then loaded; Salesforce responded by enforcing a Trusted URL allowlist, as [The Hacker News reported](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html). An allowlist limits where data can be sent; it does not make the text safe. A fault description in a warranty claim is the same kind of field. I cover the protective measures in [prompt injection in dealer portals](/en/blog/prompt-injection-dealer-portals-agentforce/).
 
 ### License and test budget
 
@@ -107,7 +107,7 @@ Prompts and Data 360 are additional, so measure them in the sandbox. The share o
 | Amounts above the limit, goodwill | Adjudicator | Commercial responsibility |
 | Credit note to the dealer | ERP | Finance books the payment |
 
-The agent goes to production like any other change: with a test set of real claims, an agreed pass rate and monitoring afterwards, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). Drawing these lines between rules, agent and people is part of my [architecture work](../../services/salesforce-architecture/). If you have not decided on Manufacturing Cloud itself yet, start with [whether Manufacturing Cloud pays off](../salesforce-manufacturing-cloud-is-it-worth-it/).
+The agent goes to production like any other change: with a test set of real claims, an agreed pass rate and monitoring afterwards, as described in [testing Agentforce agents before go-live](/en/blog/testing-agentforce-agents-before-go-live/). Drawing these lines between rules, agent and people is part of my [architecture work](/en/services/salesforce-architecture/). If you have not decided on Manufacturing Cloud itself yet, start with [whether Manufacturing Cloud pays off](/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/).
 
 ## Check your data before go-live
 

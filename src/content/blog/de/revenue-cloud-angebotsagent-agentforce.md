@@ -45,10 +45,10 @@ Die Arbeit erledigt der Subagent Quote Management, dessen Aktionen auf Flows ber
 
 Der Agent liest dieselben Datensätze wie Ihr Innendienst. Was eine erfahrene Kollegin aus Gewohnheit korrigiert, gibt der Agent einfach weiter. Die Vorbereitung ist deshalb vor allem Arbeit an Daten und Regeln:
 
-- **Katalog.** Jedes verkaufsfähige Produkt, jede Option und jedes Ersatzteil als Katalogeintrag mit Aktiv-Kennzeichen und einer Beschreibung, wie sie ein Vertriebsmitarbeiter eintippen würde. Wie Sie Varianten abbilden, ohne den ERP-Materialstamm zu kopieren, beschreibt das Kapitel [Katalog, Konfigurator, Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/).
+- **Katalog.** Jedes verkaufsfähige Produkt, jede Option und jedes Ersatzteil als Katalogeintrag mit Aktiv-Kennzeichen und einer Beschreibung, wie sie ein Vertriebsmitarbeiter eintippen würde. Wie Sie Varianten abbilden, ohne den ERP-Materialstamm zu kopieren, beschreibt das Kapitel [Katalog, Konfigurator, Preise](/masterclass/revenue-cloud/produktkatalog-konfigurator-preise/).
 - **Synchronisierte Preisdaten.** Die Einrichtung auf Trailhead beginnt mit Sync Pricing Data im Salesforce Pricing Setup. Ohne synchronisierte Preise liefert der Agent kein brauchbares Angebot.
 - **Konfigurationsregeln in Salesforce.** Der Agent hält sich an die Katalogregeln. Liegen Ihre Regeln in der SAP-Variantenkonfiguration oder im Kopf eines Konstrukteurs, sehen die Standardaktionen sie nicht; das ginge nur über eine eigene Aktion mit Schnittstelle.
-- **Rabattgrenzen als Freigaben.** Der Agent setzt einen Rabatt, den der Vertrieb verlangt. Ob dieser Rabatt eine Freigabe braucht, sollte der Freigabe-Workflow entscheiden, wie in [Rabattfreigaben in Revenue Cloud](../revenue-cloud-rabattfreigaben/) beschrieben.
+- **Rabattgrenzen als Freigaben.** Der Agent setzt einen Rabatt, den der Vertrieb verlangt. Ob dieser Rabatt eine Freigabe braucht, sollte der Freigabe-Workflow entscheiden, wie in [Rabattfreigaben in Revenue Cloud](/blog/revenue-cloud-rabattfreigaben/) beschrieben.
 - **Agentforce-Einrichtung.** Agentforce aktiviert, ein Mitarbeiter-Agent mit dem Subagenten Quote Management, ein Permission Set, das den Zugriff auf den Agenten erlaubt, und die Suchindizierung für die Produktsuche. Prüfen Sie, welche Edition und welches Add-on der Agent braucht, und lesen Sie die [Considerations](https://help.salesforce.com/s/articleView?id=ind.qocal_agentforce_considerations.htm&language=en_US&type=5) in der Hilfe: Stand 9. November 2026 unterstützt der Agent nur Englisch (en_US). Als Mitarbeiter-Agent gelten für ihn außerdem die Considerations und die Abrechnung dieses Agententyps. Für einen deutschsprachigen Innendienst ist das der erste Prüfpunkt.
 
 Ich würde zuerst zählen, welcher Anteil der Produkte sich mit den Worten finden lässt, die Kunden benutzen. Ist er niedrig, beheben Sie das vor dem Pilot.
@@ -63,7 +63,7 @@ Verlängerungsangebote selbst konnte der Agent schon vorher anlegen; neu ist das
 Die Hilfe dokumentiert eine Einrichtungsseite für den Zugriff von Communities und Partnern auf Agentforce in Revenue Management. Die Lizenzen für externe Nutzer sind ein eigener Klärungspunkt.
 ```
 
-Wenn Ihre Händler stattdessen in Manufacturing Cloud Angebote erstellen, sehen Sie sich den [AI Partner Sales Assistant für Händlerangebote](../ki-angebote-haendler-partner-sales-assistant/) an. Zwei Angebotsagenten für zwei Angebotsmodelle würde ich vermeiden.
+Wenn Ihre Händler stattdessen in Manufacturing Cloud Angebote erstellen, sehen Sie sich den [AI Partner Sales Assistant für Händlerangebote](/blog/ki-angebote-haendler-partner-sales-assistant/) an. Zwei Angebotsagenten für zwei Angebotsmodelle würde ich vermeiden.
 
 ## Was kostet der Angebotsagent?
 
@@ -78,7 +78,7 @@ quelle: Agentforce-Preisseite und Flex-Credits-Rate-Card von Salesforce, 3. Nove
 
 Prompts kommen je nach Modellstufe dazu.
 
-Eine grobe Schätzung, als Annahme: Ein Angebotsdialog braucht fünf Aktionen, etwa Account finden, Produkte suchen, Angebot anlegen, Positionen hinzufügen und Rabatt setzen. Das sind 100 Credits oder 0,50 Dollar je Angebot in Produktion. Das ist der Idealfall: Schon ein einzelnes Produkt hinzuzufügen kann mehrere Aktionen brauchen, Angebote mit vielen Positionen, Rückfragen oder Wiederholungen kosten also mehr. Bei 1.500 Agentenangeboten im Monat liegen Sie bei rund 750 Dollar plus Prompts. Auch Tests in der Sandbox verbrauchen Credits, 16 statt 20 je Aktion. Wie Sie alle Zähler schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), und das Kapitel [Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/) der KI-Masterclass macht daraus ein Budget.
+Eine grobe Schätzung, als Annahme: Ein Angebotsdialog braucht fünf Aktionen, etwa Account finden, Produkte suchen, Angebot anlegen, Positionen hinzufügen und Rabatt setzen. Das sind 100 Credits oder 0,50 Dollar je Angebot in Produktion. Das ist der Idealfall: Schon ein einzelnes Produkt hinzuzufügen kann mehrere Aktionen brauchen, Angebote mit vielen Positionen, Rückfragen oder Wiederholungen kosten also mehr. Bei 1.500 Agentenangeboten im Monat liegen Sie bei rund 750 Dollar plus Prompts. Auch Tests in der Sandbox verbrauchen Credits, 16 statt 20 je Aktion. Wie Sie alle Zähler schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](/blog/flex-credits-agentforce-kosten-pro-aktion/), und das Kapitel [Kosten und Token](/masterclass/ki-salesforce/kosten-und-token/) der KI-Masterclass macht daraus ein Budget.
 
 ## Wann ist der Angebotsagent das falsche Werkzeug?
 
@@ -97,4 +97,4 @@ Hier passt der Agent gut. Eine Mitarbeiterin tippt "Verschleißteilsatz für Lin
 
 ## 30 Testanfragen für eine Angebotsart schreiben
 
-Wählen Sie eine Angebotsart mit Standardprodukten und synchronisierten Preisen, schreiben Sie 30 Testanfragen aus echten Fällen und legen Sie für jede das erwartete Angebot fest. Lassen Sie diese in einer Sandbox laufen, bevor ein Kunde oder Händler ein Agentenangebot sieht, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben. Wo Agenten in der Fertigung über Angebote hinaus sinnvoll sind, zeigt das Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/). Den ganzen Weg vom Angebot zum Auftrag beschreibt das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/).
+Wählen Sie eine Angebotsart mit Standardprodukten und synchronisierten Preisen, schreiben Sie 30 Testanfragen aus echten Fällen und legen Sie für jede das erwartete Angebot fest. Lassen Sie diese in einer Sandbox laufen, bevor ein Kunde oder Händler ein Agentenangebot sieht, wie in [Agentforce-Agenten testen und freigeben](/blog/agentforce-agenten-testen-freigeben/) beschrieben. Wo Agenten in der Fertigung über Angebote hinaus sinnvoll sind, zeigt das Kapitel [KI-Agenten in der Fertigung](/masterclass/ki-salesforce/ki-agenten-in-der-fertigung/). Den ganzen Weg vom Angebot zum Auftrag beschreibt das Kapitel [Angebot, Vertrag, Auftrag](/masterclass/revenue-cloud/angebot-vertrag-auftrag/).

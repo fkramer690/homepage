@@ -30,7 +30,7 @@ Die Salesforce Manufacturing Cloud enthält drei Gruppen von Funktionen: Sales A
 
 ## Was enthält die Manufacturing Cloud für den Vertrieb?
 
-Die Manufacturing Cloud ist eine Industry Cloud auf Basis von Sales Cloud und Service Cloud, mit einem eigenen Datenmodell für Hersteller. Ob sie sich überhaupt lohnt, steht in [wann lohnt sich die Manufacturing Cloud](../manufacturing-cloud-wann-lohnt-sie-sich/). Hier geht es um die engere Frage, was im Paket steckt. Die [Produktseite für den Vertrieb](https://salesforce.com/manufacturing/cloud/sales) und der [Trailhead-Überblick](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) nennen fünf Vertriebsfunktionen:
+Die Manufacturing Cloud ist eine Industry Cloud auf Basis von Sales Cloud und Service Cloud, mit einem eigenen Datenmodell für Hersteller. Ob sie sich überhaupt lohnt, steht in [wann lohnt sich die Manufacturing Cloud](/blog/manufacturing-cloud-wann-lohnt-sie-sich/). Hier geht es um die engere Frage, was im Paket steckt. Die [Produktseite für den Vertrieb](https://salesforce.com/manufacturing/cloud/sales) und der [Trailhead-Überblick](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) nennen fünf Vertriebsfunktionen:
 
 | Funktion | Was sie tut | Welche Frage sie beantwortet |
 |---|---|---|
@@ -40,7 +40,7 @@ Die Manufacturing Cloud ist eine Industry Cloud auf Basis von Sales Cloud und Se
 | Account Manager Targets | Ziele von oben nach unten, nach Menge, Umsatz oder eigener Kennzahl | Liegt das Team pro Kunde, Produkt und Region im Plan? |
 | Besuchsmanagement | Besuche aus Aktionsplanvorlagen geplant, Aufgaben und Kennzahlen mobil erfasst | Was hat der Vertrieb beim Kunden oder Händler geprüft? |
 
-Prognosen gibt es zweimal: Die Einstellungen kennen einen Schalter für Account Forecasts und einen für Advanced Account Forecasting. Der Trailhead-Überblick nennt nur die erweiterte Variante. Wie sie arbeitet und wo sie endet, steht in [Account Forecasting für die Absatzprognose](../account-forecasting-absatzprognose-vertrieb/), das Programmgeschäft in [Programmgeschäft: Prognosen für Zulieferer](../programmgeschaeft-zulieferer-prognose/).
+Prognosen gibt es zweimal: Die Einstellungen kennen einen Schalter für Account Forecasts und einen für Advanced Account Forecasting. Der Trailhead-Überblick nennt nur die erweiterte Variante. Wie sie arbeitet und wo sie endet, steht in [Account Forecasting für die Absatzprognose](/blog/account-forecasting-absatzprognose-vertrieb/), das Programmgeschäft in [Programmgeschäft: Prognosen für Zulieferer](/blog/programmgeschaeft-zulieferer-prognose/).
 
 Trailhead nennt außerdem Product Catalog Management, das Produktdefinitionen und Preisstrukturen an einer Stelle verwaltet. Einfache Angebote bringt die zugrunde liegende Sales Cloud mit. Ein Angebotssystem mit Konfigurator, komplexer Preisfindung, Freigaben und Vertragserstellung taucht in keiner dieser Listen auf; dafür würde ich Revenue Cloud prüfen.
 
@@ -54,7 +54,7 @@ Die [Produktseite für den Service](https://salesforce.com/manufacturing/cloud/s
 
 Trailhead ergänzt drei weitere Funktionen: Product Service Campaigns für Rückrufe und Nachrüstungen an einer definierten Gruppe von Assets, Prework Estimation, also die Schätzung von Arbeit, Teilen und Kosten vor Arbeitsbeginn, und Bestandsfunktionen für Teileverfügbarkeit und Nachschub. Die Salesforce-Hilfe führt alle drei unter [Asset Service Lifecycle Management](https://help.salesforce.com/s/articleView?id=xcloud.aslm_psc_enable_aslm.htm&language=en_US&type=5), die Schätzung heißt dort Work Order Estimation. Die [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) verkauft dieses Add-on für 75 $ pro Nutzer und Monat für Field-Service-Editionen. Trailhead beschreibt Fähigkeiten, nicht den Lizenzumfang.
 
-Die Preisseite führt den Service als eigene Edition auf, Service Core zu 275 $ pro Nutzer und Monat, und fasst beide Seiten nur in Sales & Service Max zu 700 $ zusammen. Die Vergleichstabelle ordnet Funktionen den einzelnen Editionen zu. In der Textfassung, die ich gelesen habe, waren die Häkchen jedoch nicht auslesbar; prüfen Sie die Tabelle auf der Seite und im Angebot. Die Einsatzplanung für Techniker und die mobile App im Außendienst gehören zu Field Service mit eigenen Lizenzen, sofern kein Paket im Angebot sie enthält, wie in [lohnt sich Salesforce Field Service](../salesforce-field-service-lohnt-sich/) beschrieben.
+Die Preisseite führt den Service als eigene Edition auf, Service Core zu 275 $ pro Nutzer und Monat, und fasst beide Seiten nur in Sales & Service Max zu 700 $ zusammen. Die Vergleichstabelle ordnet Funktionen den einzelnen Editionen zu. In der Textfassung, die ich gelesen habe, waren die Häkchen jedoch nicht auslesbar; prüfen Sie die Tabelle auf der Seite und im Angebot. Die Einsatzplanung für Techniker und die mobile App im Außendienst gehören zu Field Service mit eigenen Lizenzen, sofern kein Paket im Angebot sie enthält, wie in [lohnt sich Salesforce Field Service](/blog/salesforce-field-service-lohnt-sich/) beschrieben.
 
 ## Was bietet Manufacturing Cloud für Händler und den Kanal?
 
@@ -71,7 +71,7 @@ Partner Visit Management ist der umgekehrte Fall. Es hat einen eigenen Schalter 
 Lassen Sie im Bestellschein bestätigen, dass Ihre Edition die Berechtigungssätze für Partner Visit Management bereitstellt, bevor Sie Händlerbesuche darauf aufbauen.
 ```
 
-Rebate Management selbst beschreibe ich in [Teil 5 der Serie](../rebate-management-haendlerboni/). Die Salesforce-Hilfe knüpft die Rebate-Berechtigungen für Portalnutzer an eine Add-on-Lizenz für Rebate Management, planen Sie es also als Add-on, nicht als Teil der Edition. Die widersprüchlichen Preise stehen in [Manufacturing Cloud Add-ons: was extra kostet](../manufacturing-cloud-zusatzkosten-add-ons/).
+Rebate Management selbst beschreibe ich in [Teil 5 der Serie](/blog/rebate-management-haendlerboni/). Die Salesforce-Hilfe knüpft die Rebate-Berechtigungen für Portalnutzer an eine Add-on-Lizenz für Rebate Management, planen Sie es also als Add-on, nicht als Teil der Edition. Die widersprüchlichen Preise stehen in [Manufacturing Cloud Add-ons: was extra kostet](/blog/manufacturing-cloud-zusatzkosten-add-ons/).
 
 ## Zentrale Vertriebs- und Partnerfunktionen haben eigene Schalter
 
@@ -95,7 +95,7 @@ Lizenz und aktive Funktion sind zwei verschiedene Sachen. Eine nutzbare Funktion
 
 Beide Namen werden verwendet. Die Preisseite verkauft „Manufacturing Cloud Sales Core“, ihre Fußnoten sprechen von „Agentforce Manufacturing for Sales“. Trailhead nennt das gesamte Produkt Agentforce Manufacturing. Es ist ein Produkt mit zwei Namen.
 
-Die doppelte Benennung führt in der Praxis zu Verwechslungen. Trailhead führt „Agent-powered sales agreements“ auf. Die Beschreibung behandelt aber langfristige Vereinbarungen über Preise und Produkte, ohne eine Agentenaktion zu nennen. „Agentforce for sales planning“ ist dagegen eine Agentenvorlage mit drei dokumentierten Subagenten, wie in [was der Sales-Planning-Agent wirklich tut](../agentforce-vertriebsplanung-rahmenvertraege/) beschrieben. Und die automatische Prognose für neue Produkte, die Trailhead Agentforce Manufacturing zuschreibt, ist eine geplante Berechnung.
+Die doppelte Benennung führt in der Praxis zu Verwechslungen. Trailhead führt „Agent-powered sales agreements“ auf. Die Beschreibung behandelt aber langfristige Vereinbarungen über Preise und Produkte, ohne eine Agentenaktion zu nennen. „Agentforce for sales planning“ ist dagegen eine Agentenvorlage mit drei dokumentierten Subagenten, wie in [was der Sales-Planning-Agent wirklich tut](/blog/agentforce-vertriebsplanung-rahmenvertraege/) beschrieben. Und die automatische Prognose für neue Produkte, die Trailhead Agentforce Manufacturing zuschreibt, ist eine geplante Berechnung.
 
 In jedem Hersteller-Workshop würde ich deshalb dieselbe Frage stellen: Welcher Subagent, welche Aktion, welche Lizenz? Achten Sie auf das kleine Wort: Agentforce Manufacturing ist das Produkt, Agentforce for Manufacturing bezeichnet die Agentenvorlagen. Für Core weist die Preisseite Agentforce über Flex Credits aus, und die Add-on-Seite verkauft das Add-on Agentforce for Manufacturing Cloud für 150 $ pro Nutzer und Monat für Core und Advanced; die volle Agentforce-for-Industries-Ausstattung gibt es nur in den Max-Editionen.
 
@@ -124,4 +124,4 @@ Nur zwei der sechs Punkte sind mit der Edition klar abgedeckt, die Händlerbesuc
 7. **Plattformgrenzen:** Flex Credits, Omnistudio- und Business-Rules-Engine-Aufrufe der Edition.
 8. **Die Preisbasis:** Die Fußnoten der Preisseite widersprechen sich bei Enterprise und Unlimited Edition.
 
-Diese Liste entspricht der ersten Hälfte von Kapitel 1 der [Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/einordnung-und-business-case/). Die Funktionen gegenüber einer Eigenentwicklung abzuwägen, gehört zu meiner Arbeit bei [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+Diese Liste entspricht der ersten Hälfte von Kapitel 1 der [Masterclass Manufacturing Cloud](/masterclass/manufacturing-cloud/einordnung-und-business-case/). Die Funktionen gegenüber einer Eigenentwicklung abzuwägen, gehört zu meiner Arbeit bei [Make-or-buy und Lizenzprognosen](/leistungen/make-or-buy-lizenzen/).

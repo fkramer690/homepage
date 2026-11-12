@@ -45,7 +45,7 @@ Extension | The enforcement date moves for your org | Only some updates offer a 
 note: Read in each update whether it has a test run and whether the test run can be switched off again.
 ```
 
-Release updates are one of the six checks I recommend for every Salesforce release, alongside release notes, regression testing, interfaces, communication and post-upgrade checks. The whole sequence is in [Salesforce release schedule and what IT checks each time](../salesforce-release-schedule-what-it-checks/). This article goes deeper into release updates because, if you miss the date, Salesforce determines the outcome for you.
+Release updates are one of the six checks I recommend for every Salesforce release, alongside release notes, regression testing, interfaces, communication and post-upgrade checks. The whole sequence is in [Salesforce release schedule and what IT checks each time](/en/blog/salesforce-release-schedule-what-it-checks/). This article goes deeper into release updates because, if you miss the date, Salesforce determines the outcome for you.
 
 Dates move. The end of the OAuth password flow, first planned for the Winter '27 release, now has its own date, 20 February 2027, according to the [Salesforce knowledge article on the username-password flow](https://help.salesforce.com/s/articleView?id=005461279&language=en_US&type=1). The date that counts is the one shown in your production org's Setup, and you should check it again shortly before each release.
 
@@ -68,7 +68,7 @@ note: For release updates, check the date in Setup of your production org. For s
 
 The SOAP milestones are in the [Salesforce article on the SOAP login() retirement](https://help.salesforce.com/s/articleView?id=005132110&language=en_US&type=1): from 15 December 2026 in sandboxes and 31 January 2027 in production, calls from very broad trusted IP ranges need a security token or mutual TLS, and in orgs that had no SOAP login at all in the previous six months, Salesforce disables SOAP login once. That check is evaluated across the whole org: one regular SOAP caller keeps SOAP login enabled. If an annual inventory sync or a seasonal price upload is the only SOAP caller, that caller is already at risk; every remaining SOAP caller is at risk in Summer '27. The API versions follow the [API end-of-life policy](https://developer.salesforce.com/docs/platform/api-rest/guide/api-rest-eol.html): from Summer '27 versions 31.0 to 40.0 of the SOAP, REST and Bulk APIs receive no fixes and no security updates, and from Summer '28 calls to them fail.
 
-The instance URL change only affects calls to a host name of an instance that no longer hosts your org, for example after an org migration. According to the [Salesforce end-of-support schedule](https://help.salesforce.com/s/articleView?id=005228941&language=en_US&type=1), most sandboxes were switched on 3 to 5 November 2026. So your sandboxes may already behave like production will in the spring. How to find every integration that still logs in with a password is in [Salesforce password integrations end in 2027](../salesforce-password-integrations-end-2027/).
+The instance URL change only affects calls to a host name of an instance that no longer hosts your org, for example after an org migration. According to the [Salesforce end-of-support schedule](https://help.salesforce.com/s/articleView?id=005228941&language=en_US&type=1), most sandboxes were switched on 3 to 5 November 2026. So your sandboxes may already behave like production will in the spring. How to find every integration that still logs in with a password is in [Salesforce password integrations end in 2027](/en/blog/salesforce-password-integrations-end-2027/).
 
 One update from Winter '27 matters in service: [profile filtering](https://help.salesforce.com/s/articleView?id=release-notes.rn_permissions_profile_filtering_enforced.htm&language=en_US&type=5). Users only see their own profile name unless they have a permission that allows them to see more, such as View All Profiles. Review automation and components that read other users' profile names, for example in assignment to queues or technicians, and test them with the user that executes them.
 
@@ -97,7 +97,7 @@ Watch | first week · operations
   Login history, middleware logs and the queues the update could affect.
 ```
 
-Choose the sandbox by risk, not by type. What counts is a configuration close to production, the same permissions, the same endpoint configuration in the middleware and data that represents your processes. A full copy is not always the best choice: it increases the data protection effort, and external systems are often disabled or pointed to different endpoints in it. Which sandbox is on the preview for the next release is covered in the [sandbox strategy with several partners](../salesforce-sandbox-strategy-multiple-partners/).
+Choose the sandbox by risk, not by type. What counts is a configuration close to production, the same permissions, the same endpoint configuration in the middleware and data that represents your processes. A full copy is not always the best choice: it increases the data protection effort, and external systems are often disabled or pointed to different endpoints in it. Which sandbox is on the preview for the next release is covered in the [sandbox strategy with several partners](/en/blog/salesforce-sandbox-strategy-multiple-partners/).
 
 ## Switch on in production on your date, before Salesforce enforces it
 
@@ -136,7 +136,7 @@ These tests take time from key users and integration owners who also have a day 
 In every project so far, UAT or the acceptance of stories took longer than the client planned because the client's stakeholders were not available.
 ```
 
-Book the key users' time for release update tests as soon as the date in Setup is known. How to organise acceptance with the business is described in [Salesforce UAT: business acceptance testing](../salesforce-uat-business-acceptance-testing/). Release updates belong in the same release rhythm I describe under [DevOps and release management](../../services/devops-release-management/).
+Book the key users' time for release update tests as soon as the date in Setup is known. How to organise acceptance with the business is described in [Salesforce UAT: business acceptance testing](/en/blog/salesforce-uat-business-acceptance-testing/). Release updates belong in the same release rhythm I describe under [DevOps and release management](/en/services/devops-release-management/).
 
 ```vertiefung For developers
 title: How to find the callers behind an integration update

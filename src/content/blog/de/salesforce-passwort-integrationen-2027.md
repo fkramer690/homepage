@@ -48,7 +48,7 @@ Die Details stehen im [Entwickler-Leitfaden zu Winter '27](https://developer.sal
 
 Eine kleine Org hat eine Handvoll Integrationen, und der Admin kennt sie. Eine Enterprise-Org ist über Jahre gewachsen. Typische Quellen für Passwort-Logins sind:
 
-- **ERP- und Auftragsschnittstellen**, die vor Jahren von einem Partner gebaut wurden, der heute nicht mehr beteiligt ist. Betreiben Sie einen B2B-Shop mit SAP, gehören dessen Datenflüsse ebenfalls auf die Liste, siehe [B2B Commerce und SAP: Welche Daten fließen wohin?](../b2b-commerce-sap-datenfluesse/).
+- **ERP- und Auftragsschnittstellen**, die vor Jahren von einem Partner gebaut wurden, der heute nicht mehr beteiligt ist. Betreiben Sie einen B2B-Shop mit SAP, gehören dessen Datenflüsse ebenfalls auf die Liste, siehe [B2B Commerce und SAP: Welche Daten fließen wohin?](/blog/b2b-commerce-sap-datenfluesse/).
 - **Middleware und Integrationsplattformen**, in deren Konfiguration das Passwort eines technischen Benutzers hinterlegt ist.
 - **Data Loader und geplante Skripte**, die auf irgendeinem Server laufen.
 - **Backup-, Archiv- und Reporting-Tools**, die jede Nacht Daten abziehen.
@@ -68,7 +68,7 @@ Beginnen Sie die Bestandsaufnahme jetzt und nicht im Januar. Diese Quellen ergä
 4. **Sandbox-Test.** Schalten Sie in einer Full- oder Partial-Copy-Sandbox die Einstellung „Allow OAuth Username-Password Flows“ ab und lassen Sie die Integrationen laufen. Der Test ist nur aussagekräftig, wenn externe Systeme, App-Konfiguration, Benutzer und geplante Jobs wirklich auf diese Sandbox zeigen. Was dort scheitert, würde im Februar in der Produktion scheitern.
 5. **SOAP-Logins.** Prüfen Sie, welche Integrationsuser sich per SOAP anmelden und welche API-Versionen sie nutzen, damit Sie die Schritte im Dezember und mit Summer '27 nicht überraschen.
 
-Das Ergebnis sollte eine einzige Liste sein: Integration, Zweck, Verantwortlicher auf Kundenseite, technischer Benutzer, Flow, API-Version, Hersteller oder Partner, Umstellungstermin. Diese Liste ist auch nach der Umstellung nützlich, als Teil der [Architekturdokumentation](../../leistungen/salesforce-schnittstellen/).
+Das Ergebnis sollte eine einzige Liste sein: Integration, Zweck, Verantwortlicher auf Kundenseite, technischer Benutzer, Flow, API-Version, Hersteller oder Partner, Umstellungstermin. Diese Liste ist auch nach der Umstellung nützlich, als Teil der [Architekturdokumentation](/leistungen/salesforce-schnittstellen/).
 
 ## Welcher Flow ersetzt den Passwort-Login?
 
@@ -96,7 +96,7 @@ Integrationen verbinden die Systeme des Kunden, und die Zugangsdaten gehören in
 
 - **Ein benannter Verantwortlicher pro Integration** auf Kundenseite, auch wenn ein Partner die technische Arbeit macht.
 - **Ein eigener Integrationsuser pro System oder Vertrauensgrenze**, nur mit den Rechten, die er braucht. Getrennte Benutzer lohnen sich, wo Verantwortliche, Rechte, Kritikalität oder Secret-Rotation verschieden sind. Geteilte technische Benutzer machen es unmöglich zu erkennen, welches System was tut.
-- **Secrets und Zertifikate im Tresor des Kunden**, erneuert beim Partnerwechsel. Das grundsätzliche Prinzip erkläre ich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/).
+- **Secrets und Zertifikate im Tresor des Kunden**, erneuert beim Partnerwechsel. Das grundsätzliche Prinzip erkläre ich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 - **Änderungen folgen dem normalen Release-Prozess**, mit der Konfiguration der neuen Connected App oder External Client App im Repository und Deployment über die Pipeline.
 
 ## Erster Schritt: Bestandsaufnahme bis Ende November 2026

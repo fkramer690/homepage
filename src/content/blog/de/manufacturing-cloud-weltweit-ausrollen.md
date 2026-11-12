@@ -29,13 +29,13 @@ Ein weltweiter Rollout der Manufacturing Cloud beginnt mit einer Entscheidung, d
 
 ## Was muss vor dem ersten Land feststehen?
 
-Das Ziel. Ein Rollout, der Prozesse harmonisieren soll, wird anders geplant als einer, der jedem Land ein eigenes CRM geben soll. Bei Herstellern mit Gesellschaften in vielen Ländern geht es meistens um Harmonisierung: gleiche Abläufe im Vertrieb, gleiche Sales Agreements, gleiche Berichte für die Zentrale. Wie der Rollout mit ERP-Anbindung und KI zusammenhängt, steht in [Kapitel 5 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/erp-ki-und-rollout/).
+Das Ziel. Ein Rollout, der Prozesse harmonisieren soll, wird anders geplant als einer, der jedem Land ein eigenes CRM geben soll. Bei Herstellern mit Gesellschaften in vielen Ländern geht es meistens um Harmonisierung: gleiche Abläufe im Vertrieb, gleiche Sales Agreements, gleiche Berichte für die Zentrale. Wie der Rollout mit ERP-Anbindung und KI zusammenhängt, steht in [Kapitel 5 der Masterclass Manufacturing Cloud](/masterclass/manufacturing-cloud/erp-ki-und-rollout/).
 
 Aus diesem Ziel ergibt sich ein globales Template, also die gemeinsame Konfiguration, die jedes Land übernimmt. Für die Manufacturing Cloud gehören dazu mindestens die Entscheidungen aus den früheren Teilen dieser Serie:
 
-- **Die Ebene der Account-Struktur**, auf der Sales Agreements liegen, aus [Teil 3](../sales-agreements-abnahmemengen-erp/).
-- **Die Regel, wann eine Konfiguration ein eigenes Produkt wird**, aus [Teil 2](../angebot-zu-sales-agreement-produktkonfigurator/).
-- **Was Kunden im Portal sehen**, aus [Teil 7](../manufacturing-cloud-kundenportal/).
+- **Die Ebene der Account-Struktur**, auf der Sales Agreements liegen, aus [Teil 3](/blog/sales-agreements-abnahmemengen-erp/).
+- **Die Regel, wann eine Konfiguration ein eigenes Produkt wird**, aus [Teil 2](/blog/angebot-zu-sales-agreement-produktkonfigurator/).
+- **Was Kunden im Portal sehen**, aus [Teil 7](/blog/manufacturing-cloud-kundenportal/).
 
 ```hinweis achtung
 Diese Punkte lassen sich nach dem ersten Land kaum noch ändern, ohne alle bereits eingeführten Länder anzufassen. Jeder davon gehört deshalb ins Entscheidungslog, bevor das erste Land live geht.
@@ -43,7 +43,7 @@ Diese Punkte lassen sich nach dem ersten Land kaum noch ändern, ohne alle berei
 
 Sie lassen sich später trotzdem ändern, aber dann ist es eine neue Version des globalen Templates: mit einem Verantwortlichen, einer Folgenabschätzung, Regressionstests in jedem eingeführten Land und einem Datum, ab dem die nächsten Länder auf dieser Grundlage ausgerollt werden. Ohne diese Versionierung werden die Fehler des ersten Landes in jedes weitere Land weitergetragen.
 
-Wie ich dieses Log führe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+Wie ich dieses Log führe, beschreibe ich unter [Salesforce-Architektur](/leistungen/salesforce-architektur/).
 
 ## Das erste Land ist groß und nicht zu speziell
 
@@ -88,7 +88,7 @@ Der Prozess dazu ist einfach, braucht aber Disziplin:
 3. **Alles andere wird entschieden**, von einer Stelle, die für das Template verantwortlich ist. Entweder wird die Anforderung ins Template für alle übernommen, oder sie wird eine lokale Ausnahme, oder sie wird abgelehnt.
 4. **Ausnahmen werden gezählt.** Wer die Ausnahmen pro Land kennt, sieht früh, wenn ein Land aus dem Template driftet.
 
-Bei mehreren Implementierungspartnern, etwa einem pro Region, muss diese Entscheidung auf Kundenseite liegen. Sonst baut jeder Partner sein eigenes Template. Wie ich mehrere Partner in einem gemeinsamen Rahmen führe, steht unter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).
+Bei mehreren Implementierungspartnern, etwa einem pro Region, muss diese Entscheidung auf Kundenseite liegen. Sonst baut jeder Partner sein eigenes Template. Wie ich mehrere Partner in einem gemeinsamen Rahmen führe, steht unter [Partnersteuerung und Governance](/leistungen/partnersteuerung/).
 
 ## Warum Change Management, auch wenn niemand danach fragt?
 
@@ -104,7 +104,7 @@ Pro Land gehört mindestens dazu:
 - **Kommunikation vor dem Go-live**, die erklärt, was sich ändert und warum, nicht nur, wo man klickt.
 - **Ein Blick auf die Nutzung nach dem Go-live**, damit auffällt, wenn ein Land neben Salesforce weiter mit eigenen Listen arbeitet.
 
-Wie ich die Einführung neuer Prozesse auf Kundenseite plane, beschreibe ich unter [Change Management Beratung für Salesforce](../../leistungen/change-management/). Was pro Land dazugehört, steht in [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/), den Überblick finden Sie in [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
+Wie ich die Einführung neuer Prozesse auf Kundenseite plane, beschreibe ich unter [Change Management Beratung für Salesforce](/leistungen/change-management/). Was pro Land dazugehört, steht in [Change Management im weltweiten Salesforce-Rollout](/blog/change-management-weltweiter-rollout/), den Überblick finden Sie in [Salesforce Change Management: warum Einführungen scheitern](/blog/change-management-salesforce-einfuehrung/).
 
 ## Das Ziel des Rollouts schriftlich festlegen
 

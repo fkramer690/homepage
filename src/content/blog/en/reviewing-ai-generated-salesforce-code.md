@@ -35,14 +35,14 @@ The code compiles and looks tidy. That is the trap. Veracode tested current mode
 
 Volume is the second difference: with coding agents, the partner opens more pull requests, while your review capacity stays the same. The [2025 DORA report](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), based on nearly 5,000 technology professionals, found AI adoption associated with higher delivery throughput but still a negative relationship with delivery stability. As I read it, more changes can reach your org faster, and the review decides whether they also break things faster.
 
-Salesforce says it plainly in the documentation for its own coding agent, Agentforce Vibes: "Permission modes protect your filesystem. Code review protects your application." ([Trust and Verification](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-trust.html)). The basics are in [why pull request reviews are a must](../why-pull-request-reviews-are-a-must-in-enterprise-projects/); here I focus on what changes when an agent wrote the code.
+Salesforce says it plainly in the documentation for its own coding agent, Agentforce Vibes: "Permission modes protect your filesystem. Code review protects your application." ([Trust and Verification](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-trust.html)). The basics are in [why pull request reviews are a must](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/); here I focus on what changes when an agent wrote the code.
 
 ## Six typical defects in AI-generated Salesforce code
 
 Salesforce lists most of these in its own checklists for agent output. Some are a job for the pipeline, the rest need a person who knows your org.
 
 1. **SOQL and DML inside loops.** The code works with one record and fails during a data load or a bulk update from the ERP. Salesforce's checklist asks whether queries in triggers "could hit the 100 SOQL limit in bulk operations". The PMD rule `OperationWithLimitsInLoop` flags queries, DML and other limited operations inside loops ([PMD performance rules](https://docs.pmd-code.org/latest/pmd_rules_apex_performance.html)). Pipeline.
-2. **Missing sharing and field-level security.** PMD flags classes with DML but no sharing declaration and data access without a permission check. Since API version 67.0, Apex database operations run in user mode by default and classes without a declaration run `with sharing`; for new classes, the declaration is therefore a coding rule, while classes on 66.0 or older and code that explicitly uses system mode remain the real risk. In my judgment, models trained mostly on older Apex will keep producing old patterns, and an agent may raise a class's API version as part of another change. Why that can make queries return fewer records is the topic of [API 67.0 and user mode](../api-67-apex-user-mode-fewer-records/). Pipeline for the declaration, person for the intent.
+2. **Missing sharing and field-level security.** PMD flags classes with DML but no sharing declaration and data access without a permission check. Since API version 67.0, Apex database operations run in user mode by default and classes without a declaration run `with sharing`; for new classes, the declaration is therefore a coding rule, while classes on 66.0 or older and code that explicitly uses system mode remain the real risk. In my judgment, models trained mostly on older Apex will keep producing old patterns, and an agent may raise a class's API version as part of another change. Why that can make queries return fewer records is the topic of [API 67.0 and user mode](/en/blog/api-67-apex-user-mode-fewer-records/). Pipeline for the declaration, person for the intent.
 3. **Tests that prove nothing.** Salesforce requires 75 percent coverage for a production deployment and says in the same guide "don't focus on the percentage" ([Apex testing best practices](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_testing_best_practices.htm)). An agent told to reach 75 percent reaches it. Salesforce's checklist for agent output names `System.assertNotEquals(null, result)` as an example of an assertion that is not meaningful. Person.
 4. **Invented or wrong fields.** Salesforce asks reviewers whether the code references "real fields and objects from your org (not placeholder names)" ([Workflow Patterns](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html)). A field that does not exist usually fails the validation deploy. The expensive case is a field that exists but is the wrong one, for example an old warranty date from a data migration next to the one your SAP interface maintains. Only someone who knows your data model sees that. Person.
 5. **Incomplete metadata.** New fields that are missing from the permission sets, or references to objects that are not part of the deployment. The validation deploy finds missing references; missing permissions show up when service reps report empty fields. Pipeline plus checklist.
@@ -63,7 +63,7 @@ Everything a rule can decide belongs in the pipeline, so your reviewer never has
 - **Apex tests and a validation deploy** against an integration sandbox, so missing fields and dependencies fail before anyone reviews.
 - **A merge block** until the pipeline is green.
 
-I cover the order of gates and open source options in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/). One point belongs here: AI reviewers. GitHub Copilot and Claude Code can review pull requests, and a fresh reviewer does find things. Anthropic warns in its [Claude Code best practices](https://code.claude.com/docs/en/best-practices) that "a reviewer that's asked to find problems will always find *something*", and that fixing every finding leads to extra abstraction layers. GitHub can let Copilot approvals satisfy the required approval rule, but that is in public preview and off by default ([GitHub Docs](https://docs.github.com/en/copilot/concepts/agents/code-review)). I would keep it off. An AI review is a useful hint for the partner; the approval for your org stays with a person.
+I cover the order of gates and open source options in [quality gates for AI code](/en/blog/quality-gates-for-ai-code-salesforce-pipeline/). One point belongs here: AI reviewers. GitHub Copilot and Claude Code can review pull requests, and a fresh reviewer does find things. Anthropic warns in its [Claude Code best practices](https://code.claude.com/docs/en/best-practices) that "a reviewer that's asked to find problems will always find *something*", and that fixing every finding leads to extra abstraction layers. GitHub can let Copilot approvals satisfy the required approval rule, but that is in public preview and off by default ([GitHub Docs](https://docs.github.com/en/copilot/concepts/agents/code-review)). I would keep it off. An AI review is a useful hint for the partner; the approval for your org stays with a person.
 
 ## What does the human reviewer on the client side check?
 
@@ -75,7 +75,7 @@ You do not need to read every line. Once the pipeline is green, I would go throu
 4. **Scope.** Does the diff touch only what the story needs? An agent that "also tidied up" three other classes or raised their API version adds risk nobody asked for.
 5. **Business rule.** Does the logic match the acceptance criteria, including the exceptions? For anything around warranty, prices or credit limits I would pull in the domain lead.
 
-Ask the partner for evidence: as Anthropic's guidance puts it, "All tests pass" on its own tells you very little. I want the test run and the Code Analyzer result in the pull request, plus a note indicating which parts an agent generated. That belongs in the contract, as described in [rules for partners who code with AI](../partners-using-ai-coding-contract-rules/), and it is part of my [partner governance](../../services/partner-governance/) work.
+Ask the partner for evidence: as Anthropic's guidance puts it, "All tests pass" on its own tells you very little. I want the test run and the Code Analyzer result in the pull request, plus a note indicating which parts an agent generated. That belongs in the contract, as described in [rules for partners who code with AI](/en/blog/partners-using-ai-coding-contract-rules/), and it is part of my [partner governance](/en/services/partner-governance/) work.
 
 ## Worked example: a dealer portal story
 
@@ -97,7 +97,7 @@ The third finding is the expensive one: a data leak between competing dealers th
 Protect the main branches
   Require approval from a person on your side for changes to the data model, sharing, integrations and portal access.
 Gates before every merge
-  Put Code Analyzer, Apex tests and a validation deploy in front of every merge, in a pipeline you own. This is the core of my [DevOps and release management](../../services/devops-release-management/) work.
+  Put Code Analyzer, Apex tests and a validation deploy in front of every merge, in a pipeline you own. This is the core of my [DevOps and release management](/en/services/devops-release-management/) work.
 Write a review checklist
   Write a one-page checklist with the six defects above and give it to every partner.
 Require evidence
@@ -105,5 +105,5 @@ Require evidence
 Keep pull requests small
   One story per pull request; a 400-line agent diff is reviewable, a 4,000-line one is waved through.
 Count findings
-  Count review findings by category. After a few sprints you know which rules belong in the [AI rules file of your repository](../ai-rules-file-salesforce-repository/) and which gate is missing.
+  Count review findings by category. After a few sprints you know which rules belong in the [AI rules file of your repository](/en/blog/ai-rules-file-salesforce-repository/) and which gate is missing.
 ```

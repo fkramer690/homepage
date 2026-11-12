@@ -47,7 +47,7 @@ Ein Kommunikationsplan ist eine Tabelle, keine Strategie auf zwanzig Folien. Jed
 | Verantwortlich | Wer bereitet die Nachricht vor und sorgt dafür, dass sie versendet wird? | Change-Managerin |
 | Rückkanal | Wohin gehen Fragen? | Key User der Region, Sammelpostfach |
 
-Die Spalte Ziel ist die wichtigste und fehlt am häufigsten. Sie verbindet die Nachricht mit der Stufe, auf der eine Gruppe gerade steht. Im [ADKAR-Modell](../change-management-modelle/) sind das Bewusstsein, Bereitschaft, Wissen, Fähigkeit und Verankerung. Eine Nachricht, die Bewusstsein schaffen soll, sieht ganz anders aus als eine, die Wissen vermittelt. Wer beides in dieselbe Rundmail packt, erreicht meist keins von beidem.
+Die Spalte Ziel ist die wichtigste und fehlt am häufigsten. Sie verbindet die Nachricht mit der Stufe, auf der eine Gruppe gerade steht. Im [ADKAR-Modell](/blog/change-management-modelle/) sind das Bewusstsein, Bereitschaft, Wissen, Fähigkeit und Verankerung. Eine Nachricht, die Bewusstsein schaffen soll, sieht ganz anders aus als eine, die Wissen vermittelt. Wer beides in dieselbe Rundmail packt, erreicht meist keins von beidem.
 
 ## Die Leitung erklärt das Warum, die Führungskraft die Folgen
 
@@ -78,7 +78,7 @@ Rückkanal einrichten und nachsteuern | laufend · Change-Managerin
   Fragen sammeln, häufige Fragen in die nächste Nachricht aufnehmen, den Plan anpassen, wenn eine Gruppe die Veränderung nicht mitträgt.
 ```
 
-Ein Kommunikationsplan lebt. Wenn nach einer Ankündigung immer wieder dieselbe Frage gestellt wird, gehört die Antwort in die nächste Nachricht, und vielleicht fehlt eine Zeile für eine Gruppe, die Sie unterschätzt haben. Die Grundlage dafür liefert die [Stakeholder-Analyse](../stakeholder-analyse/).
+Ein Kommunikationsplan lebt. Wenn nach einer Ankündigung immer wieder dieselbe Frage gestellt wird, gehört die Antwort in die nächste Nachricht, und vielleicht fehlt eine Zeile für eine Gruppe, die Sie unterschätzt haben. Die Grundlage dafür liefert die [Stakeholder-Analyse](/blog/stakeholder-analyse/).
 
 ## Beispiel: Kommunikationsplan für eine CRM-Einführung
 
@@ -94,13 +94,13 @@ Für die Einführung eines CRM-Systems wie Salesforce im Vertrieb könnte ein Au
 | −2 | Alle Betroffenen | Wissen | Was am Tag des Go-lives passiert, wen Sie fragen | Key User | Teammeeting |
 | +2 | Alle Betroffenen | Verankerung | Erste Erfolge, häufigste Fragen, was wir verbessern | Vertriebsleitung | Teammeeting und Mail |
 
-Auffällig ist, wie wenige Zeilen vom Projektteam stammen, und dass die Kommunikation mit dem Go-live nicht endet. Die Nachricht in Woche +2 ist eine der wichtigsten: In dieser Zeit sinken Stimmung und Produktivität oft, wie die [Change-Kurve](../change-kurve/) beschreibt, und sichtbare Erfolge helfen, das Tal zu durchqueren.
+Auffällig ist, wie wenige Zeilen vom Projektteam stammen, und dass die Kommunikation mit dem Go-live nicht endet. Die Nachricht in Woche +2 ist eine der wichtigsten: In dieser Zeit sinken Stimmung und Produktivität oft, wie die [Change-Kurve](/blog/change-kurve/) beschreibt, und sichtbare Erfolge helfen, das Tal zu durchqueren.
 
 Bei einer weltweiten Einführung kommt eine Dimension hinzu. Wenn, wie bei einem Rollout der Salesforce Sales Cloud, den ich begleitet habe, Teams in den USA, Asien und Europa beteiligt sind, braucht jedes Land in der Regel eigene Absender und Botschaften in der eigenen Sprache. Eine englische Botschaft aus der Zentrale reicht nicht aus. Die Landesleitung sollte die Gründe in einem eigenen Meeting erläutern.
 
 ## Vorlage für den Kommunikationsplan
 
-Die [Vorlage als Excel-Datei](../../downloads/kommunikationsplan-vorlage.xlsx) enthält eine leere Tabelle mit allen Spalten aus diesem Artikel und das Beispiel von oben. Sie ist so aufgebaut, dass Sie die Gruppen direkt aus der Vorlage zur Stakeholder-Analyse übernehmen können.
+Die [Vorlage als Excel-Datei](/downloads/kommunikationsplan-vorlage.xlsx) enthält eine leere Tabelle mit allen Spalten aus diesem Artikel und das Beispiel von oben. Sie ist so aufgebaut, dass Sie die Gruppen direkt aus der Vorlage zur Stakeholder-Analyse übernehmen können.
 
 ```hinweis tipp
 Planen Sie jede Kernbotschaft mindestens dreimal ein, über verschiedene Absender und Kanäle. Prosci empfiehlt fünf bis sieben Wiederholungen. Was Ihnen nach der dritten Wiederholung selbst langweilig vorkommt, hören viele Betroffene gerade zum ersten Mal richtig.
@@ -114,10 +114,10 @@ Planen Sie jede Kernbotschaft mindestens dreimal ein, über verschiedene Absende
 - **Kein Rückkanal.** Wenn Fragen keinen Ort haben, werden sie in der Kaffeeküche besprochen und kehren als Gerücht zurück.
 - **Funkstille nach dem Go-live.** Nach dem Go-live fängt die schwierigste Phase erst an. Wer dann verstummt, überlässt die Deutung den Unzufriedenen.
 
-Für Salesforce-Programme mit regelmäßigen Releases gibt es eine eigene Form: Salesforce veröffentlicht drei saisonale Releases pro Jahr, und das Programm spielt zusätzlich eigene Änderungen ein. Nur Änderungen, die Prozesse, Oberflächen oder Verantwortlichkeiten eines Fachbereichs verändern, brauchen eine kurze, gezielte Ankündigung. Wie das funktioniert, beschreibt Fabian Kramer in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
+Für Salesforce-Programme mit regelmäßigen Releases gibt es eine eigene Form: Salesforce veröffentlicht drei saisonale Releases pro Jahr, und das Programm spielt zusätzlich eigene Änderungen ein. Nur Änderungen, die Prozesse, Oberflächen oder Verantwortlichkeiten eines Fachbereichs verändern, brauchen eine kurze, gezielte Ankündigung. Wie das funktioniert, beschreibt Fabian Kramer in [Salesforce-Releases an den Fachbereich kommunizieren](/blog/salesforce-releases-fachbereich-kommunizieren/).
 
 ## Unterstützung lohnt sich bei vielen Gruppen und Ländern
 
-Bei einer Veränderung für ein Team reicht die Vorlage. Wenn viele Gruppen und Länder betroffen sind, wenn heikle Botschaften anstehen oder wenn Führungskräfte selbst noch unsicher sind, hilft ein Blick von außen, der Botschaften schärft und Führungskräfte vorbereitet. In Salesforce-Programmen arbeite ich dafür mit Fabian Kramer zusammen. Mehr dazu finden Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/) und [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
+Bei einer Veränderung für ein Team reicht die Vorlage. Wenn viele Gruppen und Länder betroffen sind, wenn heikle Botschaften anstehen oder wenn Führungskräfte selbst noch unsicher sind, hilft ein Blick von außen, der Botschaften schärft und Führungskräfte vorbereitet. In Salesforce-Programmen arbeite ich dafür mit Fabian Kramer zusammen. Mehr dazu finden Sie unter [Change Management Beratung für Salesforce](/leistungen/change-management/) und [Salesforce Change Management: warum Einführungen scheitern](/blog/change-management-salesforce-einfuehrung/).
 
 *Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.*

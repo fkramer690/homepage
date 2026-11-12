@@ -46,17 +46,17 @@ source: Salesforce Commerce developer guide, entitlement limits and buyer group 
 
 During search indexing "only the first two thousand buyer groups for a product are included in the index". A standard screw built into 6,000 machines would appear in search for only a third of them. And a dealer with 40 machines exceeds the default limit per buyer account. The Apex extension also requires turning off the Salesforce CDN and Edge Network for the store.
 
-So entitlements stick to what they are good at: which countries, tiers and brands may buy which parts. How to define those groups is covered in [buyer groups and entitlements](../buyer-groups-entitlements-product-visibility/).
+So entitlements stick to what they are good at: which countries, tiers and brands may buy which parts. How to define those groups is covered in [buyer groups and entitlements](/en/blog/buyer-groups-entitlements-product-visibility/).
 
 ## Which data does a parts list per machine need?
 
-A parts list per machine needs three sources, the same as for the [spare parts agent by serial number](../spare-parts-by-serial-number-ai/):
+A parts list per machine needs three sources, the same as for the [spare parts agent by serial number](/en/blog/spare-parts-by-serial-number-ai/):
 
 - **Installed base in Salesforce.** The machine as an asset with serial number, account and machine type, ideally as an asset hierarchy with main assemblies. This is the anchor for the dealer: which machines are mine?
 - **As-built parts list from PLM.** The bill of materials of the delivered machine, with the variants and revisions actually installed, and a flag for spare-relevant positions.
 - **Material data from the ERP.** Material number, successor material and sales status. Prices and availability reach the store through the usual pricing and inventory route.
 
-The third source is the one projects forget. A part that PLM lists as built in may have been superseded years ago. If the successor is not resolved before the store shows the part, the dealer orders a part that no longer exists. Confirmed part replacements on completed work orders also change the machine over time. Consumed material alone is not proof, because a part may have been taken along and not installed. Why parts belong in the system is explained in [Field Service spare parts: ERP or Salesforce](../salesforce-field-service-spare-parts-erp/).
+The third source is the one projects forget. A part that PLM lists as built in may have been superseded years ago. If the successor is not resolved before the store shows the part, the dealer orders a part that no longer exists. Confirmed part replacements on completed work orders also change the machine over time. Consumed material alone is not proof, because a part may have been taken along and not installed. Why parts belong in the system is explained in [Field Service spare parts: ERP or Salesforce](/en/blog/salesforce-field-service-spare-parts-erp/).
 
 ## Option A: a machine page with its own component
 
@@ -81,13 +81,13 @@ I would use this only as a second step, for three reasons:
 2. **Distorted results.** Search returns at most 200 results per page, according to the [search limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html). If the extension removes 150 of them afterwards, the page shows 50, and in my assessment facet counts and total hits no longer match what the dealer sees.
 3. **Speed.** Every search then needs the parts list of the selected machine. Without a cache in Salesforce, frequent searches and suggestions hit PLM synchronously.
 
-A compromise avoids extensions: the machine page sets a search filter on an attribute such as machine series. That works only if parts carry the series as a filterable attribute and the series is precise enough. How attributes and synonyms for part numbers are set up is covered in [B2B Commerce search by part number](../b2b-commerce-search-part-numbers/).
+A compromise avoids extensions: the machine page sets a search filter on an attribute such as machine series. That works only if parts carry the series as a filterable attribute and the series is precise enough. How attributes and synonyms for part numbers are set up is covered in [B2B Commerce search by part number](/en/blog/b2b-commerce-search-part-numbers/).
 
 ## Who may see which machine?
 
 This is the rule I would never relax: the dealer sees only machines registered to their own account. Whether the serial number comes from a list or a text field, the server resolves it to the asset and checks it against the assets shared with the buyer's account before it calls PLM. A selection made only in the browser can be manipulated, and then one dealer reads the configuration of a machine another dealer sold.
 
-On the license side, [Salesforce Help on Experience Cloud licenses](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) lists read, create and edit access to assets for Customer Community Plus and Partner Community, among other licenses. Which assets a buyer actually sees is a question of sharing. In practice that means: the asset's account must be the buyer account, or the dealer relationship must be modeled so that sharing follows it. Machines sold through a dealer but registered to the end customer need a clear rule before the store goes live. Which portal license covers what in Manufacturing Cloud is described in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
+On the license side, [Salesforce Help on Experience Cloud licenses](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) lists read, create and edit access to assets for Customer Community Plus and Partner Community, among other licenses. Which assets a buyer actually sees is a question of sharing. In practice that means: the asset's account must be the buyer account, or the dealer relationship must be modeled so that sharing follows it. Machines sold through a dealer but registered to the end customer need a clear rule before the store goes live. Which portal license covers what in Manufacturing Cloud is described in [the Manufacturing Cloud customer portal](/en/blog/manufacturing-cloud-customer-portal/).
 
 ## Worked example: 6,000 machines and 150 dealers
 
@@ -105,9 +105,9 @@ Check the data first
 Clean up the asset sharing
   Settle which machines belong to which dealer account, including machines sold to end customers.
 Build the parts API before the page
-  The parts desk can use it first; the store, the [Field Service technicians](../salesforce-field-service-spare-parts-erp/) and an agent can reuse it later.
+  The parts desk can use it first; the store, the [Field Service technicians](/en/blog/salesforce-field-service-spare-parts-erp/) and an agent can reuse it later.
 Start with the machine page
   Consider search filtering only when dealers ask for it.
 ```
 
-The chapter [catalog, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) places this topic in the broader store design. Which system is the system of record for which data is the subject of [Salesforce integration](../../services/salesforce-integration/). Which other Salesforce topics machine builders face besides the spare parts shop is covered under [Salesforce consulting for machine builders](../../salesforce-for-machinery-manufacturers/).
+The chapter [catalog, search and entitlements](/en/masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](/en/masterclass/b2b-commerce/) places this topic in the broader store design. Which system is the system of record for which data is the subject of [Salesforce integration](/en/services/salesforce-integration/). Which other Salesforce topics machine builders face besides the spare parts shop is covered under [Salesforce consulting for machine builders](/en/salesforce-for-machinery-manufacturers/).

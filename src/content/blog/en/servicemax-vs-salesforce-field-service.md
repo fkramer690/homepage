@@ -57,13 +57,13 @@ ServiceMax is a product family. Two core products and several add-ons matter for
 | Service Board, Schedule Optimization | Dispatch board and optimization | PTC platform on AWS in Ireland |
 | ServiceMax AI | Assistant for technicians, since February 2025 | Own package, uses [OpenAI models](https://support.ptc.com/help/servicemaxcore/en/articles/ai/ai-architecture-overview.html) and Pinecone; model versions not documented |
 
-The key point is in the first row. The [work order in Core](https://support.ptc.com/help/servicemaxcore/en/articles/core/work-order1.html) is a separate object with 207 fields, and the installed base is a separate object called Installed Product. Core does not use WorkOrder, ServiceAppointment and Asset from Salesforce Field Service; it builds a parallel model in the same org. Asset 360 does the opposite and extends the standard objects, see [ServiceMax Asset 360: worth adding to Field Service?](../servicemax-asset-360-salesforce-field-service/).
+The key point is in the first row. The [work order in Core](https://support.ptc.com/help/servicemaxcore/en/articles/core/work-order1.html) is a separate object with 207 fields, and the installed base is a separate object called Installed Product. Core does not use WorkOrder, ServiceAppointment and Asset from Salesforce Field Service; it builds a parallel model in the same org. Asset 360 does the opposite and extends the standard objects, see [ServiceMax Asset 360: worth adding to Field Service?](/en/blog/servicemax-asset-360-salesforce-field-service/).
 
 ## ServiceMax Core brings depot repair, returns and entitlements
 
 The gap between the products is smaller than it was ten years ago. Salesforce provides the standard objects for assets with hierarchies, maintenance plans, service contracts and entitlements. Ready-made workflows such as the interactive asset hierarchy, coverage selection and estimation can require an add-on. The main differences lie in those workflows around the installed base.
 
-ServiceMax Core lists spare parts, returns and depot repair, contracts with a rule-based entitlement engine and a Service Flow Manager for your own workflows as core functions. At Salesforce, depot repair, Work Order Estimation and coverage selection come with the Asset Service Lifecycle Management add-on, listed at $75 per user per month in the US; the editions that already include it are changing, see the article below. For details on what the add-on contains, see [Asset Service Lifecycle Management: worth the add-on?](../asset-service-lifecycle-management-add-on/).
+ServiceMax Core lists spare parts, returns and depot repair, contracts with a rule-based entitlement engine and a Service Flow Manager for your own workflows as core functions. At Salesforce, depot repair, Work Order Estimation and coverage selection come with the Asset Service Lifecycle Management add-on, listed at $75 per user per month in the US; the editions that already include it are changing, see the article below. For details on what the add-on contains, see [Asset Service Lifecycle Management: worth the add-on?](/en/blog/asset-service-lifecycle-management-add-on/).
 
 With release 26R2 in mid-2026, PTC added work plans with dependencies, intraday optimization as often as every 15 minutes and part filtering by asset configuration, according to its [overview of new features](https://www.ptc.com/en/products/servicemax/whats-new). That targets complex repairs on machines with many variants. Release 26R3 followed on 9 October 2026, and the planned 26R4 moved to January 2027 as 2027.0.
 
@@ -90,7 +90,7 @@ I have not implemented ServiceMax myself, and I have not seen it evaluated again
 In my Field Service projects with maintenance, breakdown jobs and commissioning, the installed base and spare parts came from the ERP and scheduling ran automatically. The stumbling blocks were asset data quality, technician acceptance and the ERP interfaces.
 ```
 
-No product choice solves these three alone, though the architecture can make each easier or harder. A better entitlement engine does not help when the serial numbers in the ERP are wrong. So in a selection, I give more weight to the question of which product needs the fewest workarounds for your data and interfaces than to the feature list. For how parts flow between the ERP and Salesforce, see [Spare parts between ERP and Salesforce](../salesforce-field-service-spare-parts-erp/).
+No product choice solves these three alone, though the architecture can make each easier or harder. A better entitlement engine does not help when the serial numbers in the ERP are wrong. So in a selection, I give more weight to the question of which product needs the fewest workarounds for your data and interfaces than to the feature list. For how parts flow between the ERP and Salesforce, see [Spare parts between ERP and Salesforce](/en/blog/salesforce-field-service-spare-parts-erp/).
 
 ## How do you choose between ServiceMax and Salesforce Field Service?
 
@@ -106,11 +106,11 @@ contra: What you accept in return
 - No public list prices found
 ```
 
-My rule of thumb: Salesforce Field Service is the default for manufacturers who already run sales and service on Salesforce and mainly schedule maintenance and breakdown jobs. Whether Field Service pays off at all is covered in [Salesforce Field Service: when is it worth it?](../salesforce-field-service-worth-it/). ServiceMax Core deserves a closer look when repairs in your own depot, returns and contractual entitlements shape your service and your PLM comes from PTC. If you want to keep Salesforce Field Service and only add asset depth, Asset 360 is the variant I would look at first.
+My rule of thumb: Salesforce Field Service is the default for manufacturers who already run sales and service on Salesforce and mainly schedule maintenance and breakdown jobs. Whether Field Service pays off at all is covered in [Salesforce Field Service: when is it worth it?](/en/blog/salesforce-field-service-worth-it/). ServiceMax Core deserves a closer look when repairs in your own depot, returns and contractual entitlements shape your service and your PLM comes from PTC. If you want to keep Salesforce Field Service and only add asset depth, Asset 360 is the variant I would look at first.
 
 ## Mark the service processes with depot, returns and contracts
 
 1. **List your service processes** and mark the ones that involve the depot, returns and entitlement checks.
-2. **Request two quotes**: one from PTC including all Salesforce licenses, and one for Salesforce Field Service including add-ons. The role logic for Salesforce is in [Salesforce Field Service licenses by role](../field-service-licences-by-role/).
+2. **Request two quotes**: one from PTC including all Salesforce licenses, and one for Salesforce Field Service including add-ons. The role logic for Salesforce is in [Salesforce Field Service licenses by role](/en/blog/field-service-licences-by-role/).
 3. **Ask PTC four questions in writing**: data locations, availability, which OpenAI models ServiceMax AI uses and where prompts are processed, and how it works with Salesforce features.
-4. **Have the comparison calculated independently.** I describe how I compare such options under [make-or-buy and license forecasts](../../services/make-or-buy-licences/). How I support machine builders with such decisions is described under [Salesforce consulting for machine builders](../../salesforce-for-machinery-manufacturers/).
+4. **Have the comparison calculated independently.** I describe how I compare such options under [make-or-buy and license forecasts](/en/services/make-or-buy-licences/). How I support machine builders with such decisions is described under [Salesforce consulting for machine builders](/en/salesforce-for-machinery-manufacturers/).

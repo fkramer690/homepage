@@ -69,12 +69,12 @@ The tool vendors have responded. Miro released a beta [MCP server](https://miro.
 
 That helps when the artefact has to exist anyway. But the MCP server only passes on the artefact. A diagram shows which systems are connected. It does not show why the SAP interface has to be asynchronous, which department head asked for the mandatory field or which option the participants rejected in the workshop. Those reasons are in the notes, the ticket and the repository. When Claude reads those sources directly, the diagram is no longer needed as an intermediate step.
 
-IT leadership has a second point to consider. Every additional tool usually means a licence, a permission concept, a data protection review and one more interface an agent is allowed to use. What that means for approvals is covered in [Connected Apps and OAuth for AI integrations](../connected-apps-oauth-ai-integrations/) and in [Community MCP servers: risks for Salesforce](../community-mcp-servers-salesforce-risks/).
+IT leadership has a second point to consider. Every additional tool usually means a licence, a permission concept, a data protection review and one more interface an agent is allowed to use. What that means for approvals is covered in [Connected Apps and OAuth for AI integrations](/en/blog/connected-apps-oauth-ai-integrations/) and in [Community MCP servers: risks for Salesforce](/en/blog/community-mcp-servers-salesforce-risks/).
 
 ## What Claude delivers in place of the intermediate tools
 
 ```praxis
-I have implemented the whole chain from workshop to deployment with AI, following the [AI-native delivery process](../ai-native-salesforce-delivery-process/). It showed me how much quality is lost at every point where a result is moved into another tool and then handed back to the AI.
+I have implemented the whole chain from workshop to deployment with AI, following the [AI-native delivery process](/en/blog/ai-native-salesforce-delivery-process/). It showed me how much quality is lost at every point where a result is moved into another tool and then handed back to the AI.
 ```
 
 Since then I no longer ask for intermediate versions in Miro or Figma. The AI does the hands-on work, so an output format that Claude creates itself is good enough. Most often I use artifacts from Claude Code: pages with their own link that I can share and attach to the Jira ticket. They are clickable, and we use some of them as full dashboards. That is far more interactive than a screenshot or a PDF.
@@ -89,7 +89,7 @@ User interface | Figma mock-up, then implementation | Clickable prototype in HTM
 Project status | Slides or PDF | Interactive dashboard as an artifact
 ```
 
-The difference is largest for user interfaces. Claude creates HTML and CSS following the Salesforce Lightning Design System (SLDS) and then builds the Lightning Web Component from it. In my experience nothing gets lost in that step. Salesforce itself shows in the [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2025/10/vibe-code-lightning-web-components-with-salesforce-dx-mcp) how a Figma link turns into a Lightning Web Component in Agentforce Vibes. Figma is only the input for the AI there. If there is no Figma mock-up, the business describes the screen in the workshop and Claude builds the prototype directly. I compare which coding agent fits the job in [Agentforce Vibes, Claude Code, Codex or Copilot](../agentforce-vibes-claude-code-copilot/).
+The difference is largest for user interfaces. Claude creates HTML and CSS following the Salesforce Lightning Design System (SLDS) and then builds the Lightning Web Component from it. In my experience nothing gets lost in that step. Salesforce itself shows in the [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2025/10/vibe-code-lightning-web-components-with-salesforce-dx-mcp) how a Figma link turns into a Lightning Web Component in Agentforce Vibes. Figma is only the input for the AI there. If there is no Figma mock-up, the business describes the screen in the workshop and Claude builds the prototype directly. I compare which coding agent fits the job in [Agentforce Vibes, Claude Code, Codex or Copilot](/en/blog/agentforce-vibes-claude-code-copilot/).
 
 ## Which objections do I hear, and how do I answer them?
 
@@ -99,7 +99,7 @@ The difference is largest for user interfaces. Claude creates HTML and CSS follo
 
 **“Our design team works in Figma.”** For internal Salesforce screens, SLDS is the design system. Claude follows it and needs no mock-up as a template. Every tool that can be cut should be cut.
 
-**“Good enough means unchecked.”** This is the most serious objection, and the Glean study supports it. It calls the flip side of botsitting botshitting: passing on output you have not checked and could not explain. Of all groups, Claude users admitted to it most often, at 92 %, compared with 71 % for ChatGPT and 34 % for Microsoft Copilot. Fewer tools do not justify weaker review. Review happens on the result: the architect reviews the solution design, the developer reviews the pull request, and the business clicks through the prototype. How I review AI code is described in [Reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/). The time previously spent on handoffs is now available for that review.
+**“Good enough means unchecked.”** This is the most serious objection, and the Glean study supports it. It calls the flip side of botsitting botshitting: passing on output you have not checked and could not explain. Of all groups, Claude users admitted to it most often, at 92 %, compared with 71 % for ChatGPT and 34 % for Microsoft Copilot. Fewer tools do not justify weaker review. Review happens on the result: the architect reviews the solution design, the developer reviews the pull request, and the business clicks through the prototype. How I review AI code is described in [Reviewing AI-generated Salesforce code](/en/blog/reviewing-ai-generated-salesforce-code/). The time previously spent on handoffs is now available for that review.
 
 ```vergleich
 without: Intermediate versions in four tools

@@ -95,14 +95,14 @@ From an architecture point of view, these points determine whether Casey and the
 2. **Clear approval rules.** Define which decisions Casey may make alone, which decisions need approval and which approval thresholds apply. Write them down before the first conversation.
 3. **Clean data.** Order status, asset data and contracts must be current in Salesforce or reliably available from the ERP. Otherwise the agent gives confident but outdated answers.
 4. **Identity and permissions.** Define which portal users may see which orders, assets, contracts and prices, and which actions (read, change, cancel, credit) the agent may perform for them. An agent must never show one customer another customer's data.
-5. **Monitoring and fallback.** Answers, actions and handovers are logged, and the agent knows what to do when the ERP is down or sources contradict each other. PDFs and web pages as sources also introduce a [prompt injection](../prompt-injection-dealer-portals-agentforce/) risk.
+5. **Monitoring and fallback.** Answers, actions and handovers are logged, and the agent knows what to do when the ERP is down or sources contradict each other. PDFs and web pages as sources also introduce a [prompt injection](/en/blog/prompt-injection-dealer-portals-agentforce/) risk.
 6. **Measurable goals.** For example, the share of requests solved without a rep, first-contact resolution or time to the first answer, measured before and after.
 
-These points apply to every AI agent, which is why I argue for putting [business value and data quality first](../agentforce-business-value-data-quality-first/). They also explain why AI features belong in the target architecture and not only in a pilot.
+These points apply to every AI agent, which is why I argue for putting [business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/). They also explain why AI features belong in the target architecture and not only in a pilot.
 
 ## Begin with the Service Rep Assistant in one team
 
-Choosing the right Service Cloud building blocks is part of [architecture and partner governance](../../services/salesforce-architecture/). My path:
+Choosing the right Service Cloud building blocks is part of [architecture and partner governance](/en/services/salesforce-architecture/). My path:
 
 ```schritte
 Check licenses

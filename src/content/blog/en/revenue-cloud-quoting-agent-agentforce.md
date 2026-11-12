@@ -45,10 +45,10 @@ The work is done by the Quote Management subagent, whose actions are based on fl
 
 The agent reads the same records your sales desk reads. What an experienced rep corrects by habit, the agent passes on. So the preparation is mostly data and rules work:
 
-- **Catalog.** Every sellable product, option and spare part should have a catalog entry with an active flag and a description that uses the words a rep would type. How to model variants without copying the ERP material master is covered in the chapter [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/).
+- **Catalog.** Every sellable product, option and spare part should have a catalog entry with an active flag and a description that uses the words a rep would type. How to model variants without copying the ERP material master is covered in the chapter [catalog, configurator, pricing](/en/masterclass/revenue-cloud/product-catalog-configurator-pricing/).
 - **Synced pricing data.** The Trailhead setup starts with Sync Pricing Data in Salesforce Pricing Setup. If prices are not synced, the agent quotes nothing useful.
 - **Configuration rules in Salesforce.** The agent stays within catalog rules. If your rules sit in SAP variant configuration or in an engineer's head, the standard actions do not see them; only a custom action with an integration could.
-- **Discount limits as approvals.** The agent may apply a discount a rep asks for. Whether it needs approval should be decided by the approval workflow, as described in [discount approvals in Revenue Cloud](../revenue-cloud-discount-approvals/).
+- **Discount limits as approvals.** The agent may apply a discount a rep asks for. Whether it needs approval should be decided by the approval workflow, as described in [discount approvals in Revenue Cloud](/en/blog/revenue-cloud-discount-approvals/).
 - **Agentforce setup.** Agentforce must be enabled, with an employee agent that has the Quote Management subagent, a permission set that grants agent access and search indexing for the product search. Check the edition and add-on the agent needs, and read the [considerations page](https://help.salesforce.com/s/articleView?id=ind.qocal_agentforce_considerations.htm&language=en_US&type=5) in Help: as of 9 November 2026 the agent supports English (en_US) only, and as an employee agent it inherits the considerations and billing of that agent type. For a German sales desk, that is the first thing to check.
 
 I would count the share of products that a rep can find by the words customers use. If it is low, fix that before the pilot.
@@ -63,7 +63,7 @@ The agent could already create renewal quotes before; what is new is the prepare
 Salesforce Help includes a setup page for community and partner access to Agentforce in Revenue Management. The licenses for external users are a separate item to clarify.
 ```
 
-If your dealers quote in Manufacturing Cloud instead, look at the [AI Partner Sales Assistant for dealer quotes](../ai-partner-sales-assistant-dealer-quotes/). Using two quoting agents with two quote models is the setup I would avoid.
+If your dealers quote in Manufacturing Cloud instead, look at the [AI Partner Sales Assistant for dealer quotes](/en/blog/ai-partner-sales-assistant-dealer-quotes/). Using two quoting agents with two quote models is the setup I would avoid.
 
 ## What does the quoting agent cost?
 
@@ -78,7 +78,7 @@ source: Salesforce Agentforce pricing page and Flex Credits rate card, 3 Novembe
 
 Prompts are charged on top and depend on the model tier.
 
-As a rough estimate, assume that a quote dialogue needs five actions, such as finding the account, searching products, creating the quote, adding lines and applying a discount. That is 100 credits or $0.50 per quote in production. It is a happy-path example: adding a single product can already take several actions, so quotes with many lines, clarifying questions or retries cost more. At 1,500 agent quotes a month you are at about $750 plus prompts. Tests in a sandbox also consume credits, at 16 instead of 20 per action. [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/) explains how to estimate all meters, and the AI masterclass chapter on [costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/) shows how to put them into a budget.
+As a rough estimate, assume that a quote dialogue needs five actions, such as finding the account, searching products, creating the quote, adding lines and applying a discount. That is 100 credits or $0.50 per quote in production. It is a happy-path example: adding a single product can already take several actions, so quotes with many lines, clarifying questions or retries cost more. At 1,500 agent quotes a month you are at about $750 plus prompts. Tests in a sandbox also consume credits, at 16 instead of 20 per action. [Agentforce costs for manufacturers](/en/blog/flex-credits-agentforce-cost-per-action/) explains how to estimate all meters, and the AI masterclass chapter on [costs and tokens](/en/masterclass/ai-salesforce/costs-and-tokens/) shows how to put them into a budget.
 
 ## When is the quoting agent the wrong tool?
 
@@ -97,4 +97,4 @@ Here the agent fits well. A rep types "wear part kit for line 3 plus two service
 
 ## Write 30 test requests for one quote type
 
-Pick one quote type with standard products and synced prices, write 30 test requests from real cases and define the expected quote for each. Run them in a sandbox before any customer or dealer sees an agent quote, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). The chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/) covers where agents fit in manufacturing beyond quoting, and [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/) covers the whole path from quote to order.
+Pick one quote type with standard products and synced prices, write 30 test requests from real cases and define the expected quote for each. Run them in a sandbox before any customer or dealer sees an agent quote, as described in [testing Agentforce agents before go-live](/en/blog/testing-agentforce-agents-before-go-live/). The chapter [AI agents in manufacturing](/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/) covers where agents fit in manufacturing beyond quoting, and [quote, contract, order](/en/masterclass/revenue-cloud/quote-contract-order/) covers the whole path from quote to order.

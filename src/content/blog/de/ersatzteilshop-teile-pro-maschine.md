@@ -46,17 +46,17 @@ quelle: Salesforce Commerce Developer Guide, Entitlement-Limits und Käufergrupp
 
 Bei der Suchindexierung werden nur die ersten 2.000 Käufergruppen eines Produkts in den Index übernommen. Eine Standardschraube, die in 6.000 Maschinen verbaut ist, wäre nur für ein Drittel davon auffindbar. Und ein Händler mit 40 Maschinen sprengt das Standardlimit pro Käuferkonto. Die Apex-Extension erfordert außerdem, Salesforce CDN und Edge Network für den Store zu deaktivieren.
 
-Entitlements bleiben also bei dem, was sie gut können: welche Länder, Stufen und Marken welche Teile kaufen dürfen. Wie man diese Gruppen schneidet, steht in [Buyer Groups und Entitlements](../buyer-groups-entitlements-sichtbarkeit/).
+Entitlements bleiben also bei dem, was sie gut können: welche Länder, Stufen und Marken welche Teile kaufen dürfen. Wie man diese Gruppen schneidet, steht in [Buyer Groups und Entitlements](/blog/buyer-groups-entitlements-sichtbarkeit/).
 
 ## Welche Daten braucht eine Teileliste pro Maschine?
 
-Dafür braucht es drei Quellen, dieselben wie beim [KI-Agenten für Ersatzteile per Seriennummer](../ersatzteile-seriennummer-ki-agent/):
+Dafür braucht es drei Quellen, dieselben wie beim [KI-Agenten für Ersatzteile per Seriennummer](/blog/ersatzteile-seriennummer-ki-agent/):
 
 - **Installierte Basis in Salesforce.** Die Maschine als Asset mit Seriennummer, Konto und Maschinentyp, am besten als Asset-Hierarchie mit Hauptbaugruppen. Das ist der Anker für den Händler: Welche Maschinen gehören zu mir?
 - **As-built-Stückliste aus dem PLM.** Die Stückliste der ausgelieferten Maschine mit den tatsächlich verbauten Varianten und Revisionen, dazu ein Kennzeichen für ersatzteilrelevante Positionen.
 - **Materialdaten aus dem ERP.** Materialnummer, Nachfolgematerial und Vertriebsstatus. Preise und Verfügbarkeit gelangen über den üblichen Preis- und Bestandsprozess in den Store.
 
-Die dritte Quelle vergessen Projekte gern. Ein laut PLM verbautes Teil kann bereits vor Jahren durch ein Nachfolgematerial abgelöst worden sein. Wird der Nachfolger nicht aufgelöst, bevor der Shop das Teil zeigt, bestellt der Händler etwas, das es nicht mehr gibt. Auch bestätigte Teilewechsel auf abgeschlossenen Arbeitsaufträgen verändern die Maschine mit der Zeit. Verbrauchtes Material allein ist kein Beleg, weil ein Teil mitgenommen, aber nicht eingebaut worden sein kann. Warum Teile ins System gehören, erklärt [Ersatzteile im Außendienst: ERP oder Salesforce](../salesforce-field-service-ersatzteile-erp/).
+Die dritte Quelle vergessen Projekte gern. Ein laut PLM verbautes Teil kann bereits vor Jahren durch ein Nachfolgematerial abgelöst worden sein. Wird der Nachfolger nicht aufgelöst, bevor der Shop das Teil zeigt, bestellt der Händler etwas, das es nicht mehr gibt. Auch bestätigte Teilewechsel auf abgeschlossenen Arbeitsaufträgen verändern die Maschine mit der Zeit. Verbrauchtes Material allein ist kein Beleg, weil ein Teil mitgenommen, aber nicht eingebaut worden sein kann. Warum Teile ins System gehören, erklärt [Ersatzteile im Außendienst: ERP oder Salesforce](/blog/salesforce-field-service-ersatzteile-erp/).
 
 ## Option A: eine Maschinenseite mit eigener Komponente
 
@@ -81,13 +81,13 @@ Ich würde das nur als zweiten Schritt nutzen, aus drei Gründen:
 2. **Verzerrte Ergebnisse.** Die Suche liefert laut [Such-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html) höchstens 200 Ergebnisse pro Seite. Entfernt die Extension danach 150 davon, zeigt die Seite nur noch 50 Ergebnisse, und nach meiner Einschätzung passen Facettenzahlen und Trefferzahl nicht mehr zu dem, was der Händler sieht.
 3. **Geschwindigkeit.** Jede Suche braucht dann die Teileliste der gewählten Maschine. Ohne Zwischenspeicher in Salesforce belasten häufige Suchanfragen und Suchvorschläge synchron das PLM.
 
-Ein Mittelweg kommt ohne Extensions aus: Die Maschinenseite wendet einen Suchfilter auf ein Attribut wie die Baureihe an. Das funktioniert nur, wenn Teile die Baureihe als filterbares Attribut tragen und die Baureihe genau genug ist. Wie Attribute und Synonyme für Teilenummern eingerichtet werden, steht in [B2B-Shop-Suche: Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/).
+Ein Mittelweg kommt ohne Extensions aus: Die Maschinenseite wendet einen Suchfilter auf ein Attribut wie die Baureihe an. Das funktioniert nur, wenn Teile die Baureihe als filterbares Attribut tragen und die Baureihe genau genug ist. Wie Attribute und Synonyme für Teilenummern eingerichtet werden, steht in [B2B-Shop-Suche: Ersatzteile über die Teilenummer finden](/blog/b2b-shop-suche-teilenummer/).
 
 ## Wer darf welche Maschine sehen?
 
 Diese Regel würde ich nie lockern: Der Händler sieht nur Maschinen, die auf sein eigenes Konto registriert sind. Egal ob die Seriennummer aus einer Liste oder einem Textfeld stammt: Der Server löst sie zum Asset auf und prüft sie gegen die Assets, die für das Käuferkonto freigegeben sind, bevor er das PLM aufruft. Eine Auswahl allein im Browser lässt sich manipulieren, und dann liest ein Händler die Konfiguration einer Maschine, die ein anderer Händler verkauft hat.
 
-Auf der Lizenzseite nennt die [Salesforce-Hilfe zu Experience-Cloud-Lizenzen](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) unter anderem Lese-, Anlage- und Bearbeitungsrechte auf Assets für Customer Community Plus und Partner Community. Welche Assets ein Käufer tatsächlich sieht, ist eine Frage der Freigabe. Praktisch heißt das: Das Konto des Assets muss das Käuferkonto sein, oder die Händlerbeziehung muss so modelliert sein, dass die Freigabe ihr folgt. Maschinen, die über einen Händler verkauft, aber auf den Endkunden registriert sind, brauchen vor dem Go-live eine klare Regel. Welche Portallizenz in Manufacturing Cloud welche Funktionen abdeckt, steht im Beitrag zum [Kundenportal in Manufacturing Cloud](../manufacturing-cloud-kundenportal/).
+Auf der Lizenzseite nennt die [Salesforce-Hilfe zu Experience-Cloud-Lizenzen](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) unter anderem Lese-, Anlage- und Bearbeitungsrechte auf Assets für Customer Community Plus und Partner Community. Welche Assets ein Käufer tatsächlich sieht, ist eine Frage der Freigabe. Praktisch heißt das: Das Konto des Assets muss das Käuferkonto sein, oder die Händlerbeziehung muss so modelliert sein, dass die Freigabe ihr folgt. Maschinen, die über einen Händler verkauft, aber auf den Endkunden registriert sind, brauchen vor dem Go-live eine klare Regel. Welche Portallizenz in Manufacturing Cloud welche Funktionen abdeckt, steht im Beitrag zum [Kundenportal in Manufacturing Cloud](/blog/manufacturing-cloud-kundenportal/).
 
 ## Rechenbeispiel: 6.000 Maschinen und 150 Händler
 
@@ -105,9 +105,9 @@ Zuerst die Daten prüfen
 Die Asset-Freigabe aufräumen
   Klären Sie, welche Maschinen zu welchem Händlerkonto gehören, einschließlich der an Endkunden verkauften.
 Die Teile-API vor der Seite bauen
-  Der Ersatzteilinnendienst kann sie zuerst nutzen, Store, [Außendienst](../salesforce-field-service-ersatzteile-erp/) und ein Agent später.
+  Der Ersatzteilinnendienst kann sie zuerst nutzen, Store, [Außendienst](/blog/salesforce-field-service-ersatzteile-erp/) und ein Agent später.
 Mit der Maschinenseite starten
   Das Filtern der Suche gehen Sie erst an, wenn Händler danach fragen.
 ```
 
-Das Kapitel [Katalog, Suche, Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) ordnet diesen Ansatz in das Store-Design ein. Welches System welche Daten führt, ist Thema von [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/). Welche Salesforce-Themen bei Maschinenbauern außer dem Ersatzteilshop anstehen, steht unter [Salesforce-Beratung für Maschinenbauer](../../salesforce-maschinenbau/).
+Das Kapitel [Katalog, Suche, Sichtbarkeit](/masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) der [Masterclass B2B Commerce](/masterclass/b2b-commerce/) ordnet diesen Ansatz in das Store-Design ein. Welches System welche Daten führt, ist Thema von [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/). Welche Salesforce-Themen bei Maschinenbauern außer dem Ersatzteilshop anstehen, steht unter [Salesforce-Beratung für Maschinenbauer](/salesforce-maschinenbau/).

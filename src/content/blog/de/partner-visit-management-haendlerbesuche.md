@@ -59,7 +59,7 @@ Besuch
 
 Der Außendienst öffnet die Besuchs-App über den App Launcher (die Salesforce-Doku nennt sie derzeit mal Partner Visits, mal Generic Visits; prüfen Sie den Namen in Ihrer Org), sieht die geplanten Besuche, tippt auf Get Directions und bearbeitet die Aufgaben. Zu jeder Aufgabe zeigt die App Kontext, Kennzahlen und Sollwerte. Der Mitarbeiter trägt Werte ein, ergänzt Notizen und lädt Screenshots hoch. Sobald alle Kennzahlen einer Aufgabe erfasst sind, ist die Aufgabe erledigt. Sobald alle Aufgaben erledigt sind, beendet der Mitarbeiter den Besuch. Sind nur optionale Aufgaben offen, kann er den Besuch mit Begründung abschließen. Lässt sich eine Pflichtaufgabe nicht erledigen, bricht er den Besuch ab und muss einen Grund angeben. „Abgeschlossen“ heißt also nicht immer, dass jede Aufgabe erledigt ist.
 
-Die erste Unit zeigt außerdem Aufgaben mit verknüpften Kundendatensätzen, etwa eine Garantiebedingung bei einer Aufgabe zur Garantieverlängerung oder ein Asset bei einer Schadensprüfung. Das hilft bei Händlern, die [Garantieansprüche](../garantieansprueche-haendler-salesforce/) abwickeln: Der Mitarbeiter sieht in der Werkstatt die offenen Garantiebedingungen.
+Die erste Unit zeigt außerdem Aufgaben mit verknüpften Kundendatensätzen, etwa eine Garantiebedingung bei einer Aufgabe zur Garantieverlängerung oder ein Asset bei einer Schadensprüfung. Das hilft bei Händlern, die [Garantieansprüche](/blog/garantieansprueche-haendler-salesforce/) abwickeln: Der Mitarbeiter sieht in der Werkstatt die offenen Garantiebedingungen.
 
 ## Einschalten ist einfach, Lizenzumfang und Offline sind offen
 
@@ -70,7 +70,7 @@ Zwei Punkte sollten Sie klären, bevor Sie die Planung darauf stützen:
 - **Lizenz.** Die Salesforce-Hilfe nennt für interne Nutzer das Permission Set und die Permission Set License für Partner Visit Management sowie für externe Nutzer Partner Visit Management for Experience Cloud, im Beispiel mit einer Partner-Community-Lizenz. Die [Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) führt „Visit Management“ im Editionsvergleich auf. Lassen Sie sich schriftlich bestätigen, welche Ihrer Editionen diese Permission Set Licenses in welcher Menge enthalten und ob der externe Ablauf dem internen mobilen Ablauf entspricht.
 - **Offline.** Die Quellen zu Partner Visit Management, die ich geprüft habe, bestätigen keinen Offline-Betrieb. Die allgemeine Angabe „Full Offline Mobile Functionality“ auf der Preisseite sagt nichts über die Besuchskomponenten aus. In Händlerwerkstätten und Lagern ist der Empfang oft schlecht. Fragen Sie Salesforce, ob Start und Ende des Besuchs, Aufgaben, Kennzahlen und Datei-Upload offline funktionieren, und testen Sie vor dem Rollout Flugmodus und Wiederverbindung mit widersprüchlichen Änderungen.
 
-Wie ich beide Punkte in der Lizenzplanung behandle, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
+Wie ich beide Punkte in der Lizenzplanung behandle, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](/blog/salesforce-lizenzen-volle-lizenz/).
 
 ## Rechenbeispiel: 60 Händler, quartalsweise, fünf Kennzahlen
 
@@ -97,14 +97,14 @@ pro: Partner Visit Management ist ein starker Kandidat bei
 - Vielen Händlern in festem Rhythmus, sodass Vorlagen Planungszeit sparen
 - Denselben Kennzahlen für jeden Händler, sodass Vergleiche Sinn ergeben
 - Kontext wie Sales Agreements, Assets oder Garantiebedingungen, den der Mitarbeiter vor Ort braucht
-- Gezielter Steuerung der Händlerleistung, etwa als Grundlage für [Händlerboni](../rebate-management-haendlerboni/) oder für das [Manufacturing-Cloud-Kundenportal](../manufacturing-cloud-kundenportal/)
+- Gezielter Steuerung der Händlerleistung, etwa als Grundlage für [Händlerboni](/blog/rebate-management-haendlerboni/) oder für das [Manufacturing-Cloud-Kundenportal](/blog/manufacturing-cloud-kundenportal/)
 contra: Was für den einfachen Bericht spricht
 - Für einen engen Ablauf ist er schnell gebaut und eventuell mit den Lizenzen nutzbar, die Ihr Vertrieb schon hat (prüfen)
 - Er lässt sich leicht auswerten
 - Lizenzumfang und Offline-Betrieb der Besuchs-App sind noch zu bestätigen
 ```
 
-Das Kapitel [Händler und Partnerkanal](../../masterclass/manufacturing-cloud/haendler-und-partnerkanal/) der Masterclass zeigt, wie Besuche neben Boni, Portalen und Ship and Debit eingeordnet sind. Ob man eine solche Funktion kauft oder baut, gehört zu meiner Arbeit an [Make-or-Buy und Lizenzprognose](../../leistungen/make-or-buy-lizenzen/).
+Das Kapitel [Händler und Partnerkanal](/masterclass/manufacturing-cloud/haendler-und-partnerkanal/) der Masterclass zeigt, wie Besuche neben Boni, Portalen und Ship and Debit eingeordnet sind. Ob man eine solche Funktion kauft oder baut, gehört zu meiner Arbeit an [Make-or-Buy und Lizenzprognose](/leistungen/make-or-buy-lizenzen/).
 
 ## Kennzahlen mit Sollwert aufschreiben, dann eine Region pilotieren
 

@@ -49,7 +49,7 @@ The difference from the forecast that many know from Sales Cloud is this: there,
 There is no single Salesforce formula. For each measure in the forecast set, the company decides whether the Data Processing Engine calculates it, a forecast formula derives it, or users enter or import the value. The calculation template Salesforce provides aggregates orders, opportunities and sales agreements, and at manufacturing companies, two of these sources rarely live in Salesforce:
 
 1. **Order history.** For products customers buy regularly, what a customer bought in recent months is a good starting point for the coming months. For new products or after a shift in the market, it is less informative. That history lives in the ERP. Trailhead describes exactly this problem in its example: forecasts were inaccurate because sales had no access to the history in the ERP.
-2. **Sales agreements.** Agreed volumes are a fixed input to the forecast. How actuals for sales agreements come from the ERP is covered in [part 3: sales agreements, spotting customers behind on volume](../sales-agreements-volume-shortfall-erp/).
+2. **Sales agreements.** Agreed volumes are a fixed input to the forecast. How actuals for sales agreements come from the ERP is covered in [part 3: sales agreements, spotting customers behind on volume](/en/blog/sales-agreements-volume-shortfall-erp/).
 3. **Opportunities.** New business that has not closed yet. This is the only one of these sources that is created in Salesforce in any case.
 
 ```ablauf
@@ -61,7 +61,7 @@ Opportunities --> Account forecast
 Account forecast ..handover..> ERP planning
 ```
 
-From an architecture perspective, that means account forecasting is first and foremost an integration project. In the global rollout I describe in part 3, orders and inventory came from the ERP. A forecast needs exactly that data too. Anyone introducing account forecasting should therefore plan the order history integration before configuring the forecast set. How I decide which systems of record to use for orders and prices is described under [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
+From an architecture perspective, that means account forecasting is first and foremost an integration project. In the global rollout I describe in part 3, orders and inventory came from the ERP. A forecast needs exactly that data too. Anyone introducing account forecasting should therefore plan the order history integration before configuring the forecast set. How I decide which systems of record to use for orders and prices is described under [integration with ERP, middleware and telephony](/en/services/salesforce-integration/).
 
 ## How big does the forecast get?
 
@@ -91,14 +91,14 @@ That requires a fixed cadence in sales. After three months, a forecast that is a
 
 ## Sales forecasting ends where production planning begins
 
-Sales forecasting ends when the question is what is produced. Account forecasting provides what sales expects: which customer will buy which quantity of which product in which month. Whether that quantity can be produced, with which materials and on which line, is decided by planning in the ERP or a dedicated planning system. How forecasts, sales agreements and targets fit together is covered in [chapter 2 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/agreements-and-forecasting/).
+Sales forecasting ends when the question is what is produced. Account forecasting provides what sales expects: which customer will buy which quantity of which product in which month. Whether that quantity can be produced, with which materials and on which line, is decided by planning in the ERP or a dedicated planning system. How forecasts, sales agreements and targets fit together is covered in [chapter 2 of the Manufacturing Cloud masterclass](/en/masterclass/manufacturing-cloud/agreements-and-forecasting/).
 
 Two points matter for the architecture:
 
 1. **A clear role for each number.** A sales forecast in Salesforce and a demand plan in the ERP may differ, because one is the unconstrained sales view and the other takes capacity into account. The team has to settle which number serves which decision, who owns it, which version is handed over when, and how capacity limits are fed back to sales. Two forecasts for the same purpose that are both maintained drift apart, and then people argue about numbers instead of customers.
 2. **Matching granularity.** If the sales forecast flows into the ERP, the integration needs the same granularity as planning there. If the ERP plans by material number and plant, a forecast by product category helps only so much.
 
-A note on Agentforce: Trailhead says that "Agentforce Manufacturing" generates forecasts automatically for new products at the start of each adjustment period. Agentforce Manufacturing is the product name used there. As I read the Trailhead unit, this is the forecast calculation at the start of the period, not an agent, and the Salesforce Help page for the Sales Planning agent does not document a subagent for it ([what the agent really does](../agentforce-sales-planning-agreements-forecasts/)). That sounds useful. I would only rely on it once history from the ERP arrives cleanly, because an automatic forecast based on bad data only produces the wrong result faster.
+A note on Agentforce: Trailhead says that "Agentforce Manufacturing" generates forecasts automatically for new products at the start of each adjustment period. Agentforce Manufacturing is the product name used there. As I read the Trailhead unit, this is the forecast calculation at the start of the period, not an agent, and the Salesforce Help page for the Sales Planning agent does not document a subagent for it ([what the agent really does](/en/blog/agentforce-sales-planning-agreements-forecasts/)). That sounds useful. I would only rely on it once history from the ERP arrives cleanly, because an automatic forecast based on bad data only produces the wrong result faster.
 
 ## When does account forecasting pay off?
 
@@ -116,7 +116,7 @@ contra: I would hold back
 - When the order history cannot reach Salesforce.
 ```
 
-In the last case the company pays for a feature that cannot work with its own data. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
+In the last case the company pays for a feature that cannot work with its own data. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/).
 
 ## Settle order history and scope before the first forecast set
 

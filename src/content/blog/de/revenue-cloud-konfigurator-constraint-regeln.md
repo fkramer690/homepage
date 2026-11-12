@@ -31,7 +31,7 @@ Der Konfigurator in Revenue Cloud mit der Constraint Rules Engine reicht für te
 
 ## Was kann der Konfigurator in Revenue Cloud?
 
-Der Product Configurator ist die Oberfläche, in der der Vertrieb Optionen eines Bundles auswählt und Attributwerte setzt. Er übernimmt das konfigurierte Produkt in ein Angebot oder einen Auftrag, und Konfigurationen lassen sich speichern und wiederverwenden, so die [Trailhead-Einheit zum Konfigurator](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/get-started-with-product-configurator). Trailhead nennt drei Ansätze, die mit der Produktkomplexität wachsen: einfache Validierungsregeln, Auswahlregeln und Constraint-basierte Modellierung. (Salesforce Help nennt das Produkt inzwischen Revenue Management, Trailhead Agentforce Revenue Management, und die Lizenzen heißen weiterhin Revenue Cloud Growth und Advanced; der [Artikel zu den Produktnamen](../revenue-cloud-produktnamen-rlm-rca/) ordnet das.)
+Der Product Configurator ist die Oberfläche, in der der Vertrieb Optionen eines Bundles auswählt und Attributwerte setzt. Er übernimmt das konfigurierte Produkt in ein Angebot oder einen Auftrag, und Konfigurationen lassen sich speichern und wiederverwenden, so die [Trailhead-Einheit zum Konfigurator](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/get-started-with-product-configurator). Trailhead nennt drei Ansätze, die mit der Produktkomplexität wachsen: einfache Validierungsregeln, Auswahlregeln und Constraint-basierte Modellierung. (Salesforce Help nennt das Produkt inzwischen Revenue Management, Trailhead Agentforce Revenue Management, und die Lizenzen heißen weiterhin Revenue Cloud Growth und Advanced; der [Artikel zu den Produktnamen](/blog/revenue-cloud-produktnamen-rlm-rca/) ordnet das.)
 
 Dahinter stehen zwei Regel-Engines, die in den Revenue Settings jeweils separat aktiviert werden. Welche Engine eine Transaktion auswertet, wird in ihrem Transaktionsverarbeitungstyp festgelegt, mit AdvancedConfigurator als Regel-Engine für Constraint-Regeln. Planen Sie deshalb Auswahl und Migration pro Produktlinie, nicht zwei übereinanderliegende Ebenen:
 
@@ -40,7 +40,7 @@ Dahinter stehen zwei Regel-Engines, die in den Revenue Settings jeweils separat 
 
 Der [Constraint Builder](https://help.salesforce.com/s/articleView?id=ind.product_configurator_constraint_builder.htm&language=en_US&type=5) hat Grenzen, die ein Hersteller früh prüfen muss: „Constraint-Modelle unterstützen keine Produktvarianten“, im Sinne des Katalogbegriffs; Datetime-Attribute und Dezimalmengen werden nicht unterstützt; jedes Produkt kann nur zu einem aktiven Constraint-Modell gehören; und die Auswertung von Constraints darf höchstens 10 Sekunden dauern.
 
-Der Konfigurator arbeitet mit dem Katalog: Klassifizierungen, Attribute und Bundles. Ist der Katalog schlecht modelliert, rettet das keine Regel-Engine. Wie ich ihn modelliere, steht in [Produktkatalog in Revenue Cloud: Varianten abbilden](../revenue-cloud-produktkatalog-varianten/).
+Der Konfigurator arbeitet mit dem Katalog: Klassifizierungen, Attribute und Bundles. Ist der Katalog schlecht modelliert, rettet das keine Regel-Engine. Wie ich ihn modelliere, steht in [Produktkatalog in Revenue Cloud: Varianten abbilden](/blog/revenue-cloud-produktkatalog-varianten/).
 
 ## Wann lohnen sich Constraint-Regeln?
 
@@ -90,7 +90,7 @@ Ich ergänze für jede Produktfamilie zwei Arten von Tests:
 1. **Regressionsfälle.** Eine Liste gültiger Konfigurationen, die funktionieren müssen, und ungültiger, die abgelehnt werden müssen, jeweils mit der erwarteten Meldung. Das Team führt sie nach jeder Modelländerung aus, idealerweise automatisiert in der Pipeline.
 2. **Performancefälle.** Die größte realistische Konfiguration und typische Änderungsfolgen, gemessen am Ziel von 100 Millisekunden und mit großem Abstand zur Grenze von 10 Sekunden.
 
-Wer ein Modell ohne diese Fälle ändert, findet den Fehler beim Kunden. Wie Tests und Reviews in den Release-Prozess passen, beschreibt das DevOps-Kapitel [Qualität, Tests und Reviews](../../masterclass/devops-release-management/qualitaet-tests-reviews/). Wer von Salesforce CPQ umsteigt, baut Produktregeln in diesem Modell neu; die Unterschiede stehen in [Salesforce CPQ vs. Revenue Cloud](../salesforce-cpq-revenue-cloud-unterschiede/).
+Wer ein Modell ohne diese Fälle ändert, findet den Fehler beim Kunden. Wie Tests und Reviews in den Release-Prozess passen, beschreibt das DevOps-Kapitel [Qualität, Tests und Reviews](/masterclass/devops-release-management/qualitaet-tests-reviews/). Wer von Salesforce CPQ umsteigt, baut Produktregeln in diesem Modell neu; die Unterschiede stehen in [Salesforce CPQ vs. Revenue Cloud](/blog/salesforce-cpq-revenue-cloud-unterschiede/).
 
 ## Wann sollten Sie einen externen Konfigurator behalten?
 
@@ -99,10 +99,10 @@ Laut Trailhead verbindet sich ein Drittanbieter-Konfigurator über APIs mit Sale
 Ich schaue zuerst darauf, wo sie heute liegen, dann auf Änderungshäufigkeit, Verantwortliche und Laufzeitanforderungen:
 
 - **In Excel-Tabellen und in den Köpfen der Anwendungstechniker.** Das ist der beste Fall für Revenue Cloud. Die Regeln müssen ohnehin aufgeschrieben werden, und CML bietet dafür einen Ort mit Tests.
-- **In der SAP-Variantenkonfiguration.** Prüft SAP die Konfiguration beim Auftragseingang noch einmal, gibt es nach einem Nachbau der Regeln in CML zwei Regelwerke. Sie weichen voneinander ab, sobald eine Änderung nur an einer Stelle gepflegt wird. Hier lasse ich entweder SAP führen und rufe es auf, oder ich verlege die Führung nach Salesforce, und SAP übernimmt das Ergebnis. Beides funktioniert. Zwei führende Systeme für dieselbe Regel funktionieren nicht. Eine Laufzeitkopie ist in Ordnung, wenn Synchronisierung und Versionierung ausdrücklich geregelt sind. Dasselbe Argument gilt für Agenten: Geschäftsregeln gehören an eine deterministische Stelle, wie in [Agent Script: Geschäftsregeln gehören nicht ins LLM](../agent-script-regeln-statt-llm/).
+- **In der SAP-Variantenkonfiguration.** Prüft SAP die Konfiguration beim Auftragseingang noch einmal, gibt es nach einem Nachbau der Regeln in CML zwei Regelwerke. Sie weichen voneinander ab, sobald eine Änderung nur an einer Stelle gepflegt wird. Hier lasse ich entweder SAP führen und rufe es auf, oder ich verlege die Führung nach Salesforce, und SAP übernimmt das Ergebnis. Beides funktioniert. Zwei führende Systeme für dieselbe Regel funktionieren nicht. Eine Laufzeitkopie ist in Ordnung, wenn Synchronisierung und Versionierung ausdrücklich geregelt sind. Dasselbe Argument gilt für Agenten: Geschäftsregeln gehören an eine deterministische Stelle, wie in [Agent Script: Geschäftsregeln gehören nicht ins LLM](/blog/agent-script-regeln-statt-llm/).
 - **Im PLM oder in einem Konstruktionskonfigurator**, der Zeichnungen oder Stücklisten erzeugt. Dann bleibt der externe Konfigurator, und Salesforce erhält das konfigurierte Produkt mit seinen preisrelevanten Attributen.
 
-Für Angebote mit KI hat das eine Nebenwirkung. Ein Agent kann nur Regeln einhalten, die er aufrufen kann. Liegen die Regeln außerhalb von Salesforce, überlasse ich Angebote für konfigurierte Maschinen dem Innendienst, wie in [KI-Angebote für Händler: Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschrieben.
+Für Angebote mit KI hat das eine Nebenwirkung. Ein Agent kann nur Regeln einhalten, die er aufrufen kann. Liegen die Regeln außerhalb von Salesforce, überlasse ich Angebote für konfigurierte Maschinen dem Innendienst, wie in [KI-Angebote für Händler: Partner Sales Assistant](/blog/ki-angebote-haendler-partner-sales-assistant/) beschrieben.
 
 ## Rechenbeispiel: drei Produktlinien, eine bleibt in SAP
 
@@ -118,4 +118,4 @@ Meine Empfehlung in diesem Fall, vorausgesetzt, die Org liegt nicht in der EU Op
 4. **Legen Sie pro Produktlinie das führende System fest**: Revenue Cloud, SAP oder ein externer Konfigurator, nie zwei für dieselbe Regel.
 5. **Benennen Sie den Verantwortlichen**, der das Modell nach dem Go-live pflegt.
 
-Das ganze Kapitel steht im Masterclass-Teil [Katalog, Konfigurator, Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/), und wie Hersteller konfigurierte Produkte in ein Sales Agreement übernehmen, beschreibt [vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/). Festzulegen, welches System für Regeln zwischen SAP und Salesforce führt, gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+Das ganze Kapitel steht im Masterclass-Teil [Katalog, Konfigurator, Preise](/masterclass/revenue-cloud/produktkatalog-konfigurator-preise/), und wie Hersteller konfigurierte Produkte in ein Sales Agreement übernehmen, beschreibt [vom Angebot zum Sales Agreement](/blog/angebot-zu-sales-agreement-produktkonfigurator/). Festzulegen, welches System für Regeln zwischen SAP und Salesforce führt, gehört zu meiner Arbeit in der [Salesforce-Architektur](/leistungen/salesforce-architektur/).

@@ -49,7 +49,7 @@ Der Unterschied zur Prognose, die viele aus Sales Cloud kennen: Dort schätzt de
 Eine feste Salesforce-Formel gibt es nicht. Für jede Kennzahl im Forecast Set legt das Unternehmen fest, ob die Data Processing Engine sie berechnet, eine Prognoseformel sie ableitet oder Nutzer den Wert eingeben oder importieren. Die Berechnungsvorlage von Salesforce rechnet Aufträge, Opportunities und Sales Agreements zusammen, und zwei davon liegen bei Herstellern selten in Salesforce:
 
 1. **Auftragshistorie.** Bei Produkten, die Kunden regelmäßig kaufen, ist das, was ein Kunde in den letzten Monaten abgenommen hat, ein guter Ausgangspunkt für die nächsten Monate. Bei neuen Produkten oder nach einer Marktverschiebung sagt sie weniger. Diese Historie liegt im ERP. Trailhead beschreibt genau dieses Problem in seinem Beispiel: Die Prognosen waren ungenau, weil der Vertrieb keinen Zugriff auf die Historie aus dem ERP hatte.
-2. **Sales Agreements.** Vereinbarte Mengen sind eine feste Größe in der Prognose. Wie die Ist-Mengen dafür aus dem ERP übertragen werden, beschreibe ich in [Teil 3: Sales Agreements, fehlende Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/).
+2. **Sales Agreements.** Vereinbarte Mengen sind eine feste Größe in der Prognose. Wie die Ist-Mengen dafür aus dem ERP übertragen werden, beschreibe ich in [Teil 3: Sales Agreements, fehlende Abnahmemengen erkennen](/blog/sales-agreements-abnahmemengen-erp/).
 3. **Opportunities.** Neugeschäft, das noch nicht abgeschlossen ist. Das ist die einzige Quelle, die ohnehin in Salesforce entsteht.
 
 ```ablauf
@@ -61,7 +61,7 @@ Opportunities --> Absatzprognose
 Absatzprognose ..Übergabe..> Planung im ERP
 ```
 
-Für die Architektur heißt das: Account Forecasting ist zuerst ein Integrationsprojekt. In dem weltweiten Rollout, den ich in Teil 3 beschreibe, stammten Aufträge und Lagerbestände aus dem ERP. Genau diese Daten braucht auch eine Prognose. Wer Account Forecasting einführen will, plant die Schnittstelle für die Auftragshistorie deshalb vor der Konfiguration des Forecast Sets. Wie ich führende Systeme für Aufträge und Preise festlege, steht unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/).
+Für die Architektur heißt das: Account Forecasting ist zuerst ein Integrationsprojekt. In dem weltweiten Rollout, den ich in Teil 3 beschreibe, stammten Aufträge und Lagerbestände aus dem ERP. Genau diese Daten braucht auch eine Prognose. Wer Account Forecasting einführen will, plant die Schnittstelle für die Auftragshistorie deshalb vor der Konfiguration des Forecast Sets. Wie ich führende Systeme für Aufträge und Preise festlege, steht unter [Integration mit ERP, Middleware und Telefonie](/leistungen/salesforce-schnittstellen/).
 
 ## Wie groß wird die Prognose?
 
@@ -91,14 +91,14 @@ Das verlangt einen festen Rhythmus im Vertrieb. Eine Prognose, die nur angepasst
 
 ## Die Absatzprognose endet, wo die Produktionsplanung beginnt
 
-Die Absatzprognose endet bei der Frage, was produziert wird. Account Forecasting liefert die Erwartung des Vertriebs: welcher Kunde welche Menge welchen Produkts in welchem Monat abnehmen wird. Ob diese Menge produziert werden kann, mit welchem Material und auf welcher Anlage, entscheidet die Planung im ERP oder in einem eigenen Planungssystem. Wie Prognosen, Sales Agreements und Ziele zusammenspielen, steht in [Kapitel 2 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/).
+Die Absatzprognose endet bei der Frage, was produziert wird. Account Forecasting liefert die Erwartung des Vertriebs: welcher Kunde welche Menge welchen Produkts in welchem Monat abnehmen wird. Ob diese Menge produziert werden kann, mit welchem Material und auf welcher Anlage, entscheidet die Planung im ERP oder in einem eigenen Planungssystem. Wie Prognosen, Sales Agreements und Ziele zusammenspielen, steht in [Kapitel 2 der Masterclass Manufacturing Cloud](/masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/).
 
 Für die Architektur sind zwei Punkte wichtig:
 
 1. **Eine klare Rolle für jede Zahl.** Eine Vertriebsprognose in Salesforce und eine Absatzplanung im ERP dürfen sich unterscheiden, weil die eine die unbeschränkte Sicht des Vertriebs ist und die andere Kapazitäten berücksichtigt. Festgelegt sein muss, welche Zahl welcher Entscheidung dient, wem sie gehört, welche Version wann übergeben wird und wie Kapazitätsgrenzen an den Vertrieb zurückgemeldet werden. Zwei Prognosen für denselben Zweck, die beide gepflegt werden, weichen voneinander ab, und dann diskutieren die Beteiligten im Meeting über Zahlen statt über Kunden.
 2. **Passende Granularität.** Fließt die Vertriebsprognose ins ERP, braucht die Schnittstelle dieselbe Granularität wie die Planung dort. Plant das ERP auf Materialnummer und Werk, hilft eine Prognose auf Produktkategorie nur begrenzt.
 
-Ein Hinweis zu Agentforce: Laut Trailhead erzeugt „Agentforce Manufacturing“ zu Beginn jedes Anpassungszeitraums automatisch Prognosen für neue Produkte. Agentforce Manufacturing ist dort der Produktname. So wie ich die Trailhead-Einheit lese, ist das die Prognoseberechnung zum Periodenstart und kein Agent, und die Salesforce-Hilfe zum Sales-Planning-Agenten dokumentiert dafür keinen Subagenten ([was der Agent wirklich kann](../agentforce-vertriebsplanung-rahmenvertraege/)). Automatische Prognosen zum Periodenstart klingen praktisch. Ich würde mich erst darauf verlassen, wenn die Historie aus dem ERP sauber ankommt, weil eine automatische Prognose auf schlechten Daten nur schneller falsch ist.
+Ein Hinweis zu Agentforce: Laut Trailhead erzeugt „Agentforce Manufacturing“ zu Beginn jedes Anpassungszeitraums automatisch Prognosen für neue Produkte. Agentforce Manufacturing ist dort der Produktname. So wie ich die Trailhead-Einheit lese, ist das die Prognoseberechnung zum Periodenstart und kein Agent, und die Salesforce-Hilfe zum Sales-Planning-Agenten dokumentiert dafür keinen Subagenten ([was der Agent wirklich kann](/blog/agentforce-vertriebsplanung-rahmenvertraege/)). Automatische Prognosen zum Periodenstart klingen praktisch. Ich würde mich erst darauf verlassen, wenn die Historie aus dem ERP sauber ankommt, weil eine automatische Prognose auf schlechten Daten nur schneller falsch ist.
 
 ## Wann lohnt sich Account Forecasting?
 
@@ -116,7 +116,7 @@ contra: Zurückhaltend wäre ich
 - Wenn die Auftragshistorie nicht nach Salesforce übertragen werden kann.
 ```
 
-Im letzten Fall zahlt das Unternehmen für eine Funktion, die mit den eigenen Daten nicht arbeiten kann. Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
+Im letzten Fall zahlt das Unternehmen für eine Funktion, die mit den eigenen Daten nicht arbeiten kann. Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](/blog/manufacturing-cloud-wann-lohnt-sie-sich/).
 
 ## Auftragshistorie und Zuschnitt vor dem ersten Forecast Set klären
 

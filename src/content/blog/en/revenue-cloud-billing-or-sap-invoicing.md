@@ -40,7 +40,7 @@ Revenue Cloud Billing is the billing add-on for Revenue Cloud, which Salesforce 
 
 The mechanics follow the order. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/generate-invoices), activating an order creates billing schedule groups and billing schedules. Invoice runs pick up the schedules that are ready for invoicing and use the Data Processing Engine for large volumes. Draft invoices show estimated tax; posting an invoice calculates the actual tax in the external engine. The [Billing module on Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/generate-invoices-revenue) also covers invoice previews, credit memos, payment runs and invoice PDFs that can be emailed to the bill-to contact.
 
-The [developer guide](https://developer.salesforce.com/docs/revenue/revenue-management/guide/billing-overview.html) describes standard objects for billing and tax configuration, credit memos, invoices and "accounting periods for legal entities", plus payment objects that require the Revenue Cloud Billing license. Pricing is available on request. Salesforce measures billing usage based on the positive amounts of posted invoice lines; the details are in [Revenue Cloud Billing costs](../revenue-cloud-billing-costs/).
+The [developer guide](https://developer.salesforce.com/docs/revenue/revenue-management/guide/billing-overview.html) describes standard objects for billing and tax configuration, credit memos, invoices and "accounting periods for legal entities", plus payment objects that require the Revenue Cloud Billing license. Pricing is available on request. Salesforce measures billing usage based on the positive amounts of posted invoice lines; the details are in [Revenue Cloud Billing costs](/en/blog/revenue-cloud-billing-costs/).
 
 ## What does "Salesforce as a subledger" mean for finance?
 
@@ -66,17 +66,17 @@ For one-off machine sales I would keep the invoice in SAP when shipment, accepta
 - **Delivery drives the invoice.** Machines are often invoiced after shipment or acceptance, and in many companies shipping, customs and acceptance are handled in SAP.
 - **Down payments and milestones** are usually booked against the SAP order. Billing has billing milestone plans in its data model, but moving down payment accounting out of SAP for one product line rarely pays off.
 - **Cost.** Billing usage is measured by the positive amounts of posted invoice lines. A €2 million machine invoice posted in Salesforce uses up billing events for the full amount, even though SAP could create the invoice anyway. Whether that costs extra depends on the events included in your contract.
-- **E-invoicing.** From 1 January 2027, issuers with more than €800,000 prior-year turnover generally lose the transitional option to send paper or unstructured invoices for domestic B2B transactions. Statutory exceptions and the EDI transition until the end of 2027 still have to be checked. If SAP already produces e-invoices, a second invoicing system means a second compliance project. Details are in [e-invoicing in Germany from 2027](../e-invoicing-germany-2027-revenue-cloud/).
+- **E-invoicing.** From 1 January 2027, issuers with more than €800,000 prior-year turnover generally lose the transitional option to send paper or unstructured invoices for domestic B2B transactions. Statutory exceptions and the EDI transition until the end of 2027 still have to be checked. If SAP already produces e-invoices, a second invoicing system means a second compliance project. Details are in [e-invoicing in Germany from 2027](/en/blog/e-invoicing-germany-2027-revenue-cloud/).
 
-The same applies to spare parts that are invoiced with the delivery. Payment in a B2B store is a separate question, covered in [B2B checkout: purchase order, card or invoice](../b2b-checkout-purchase-order-card-invoice/).
+The same applies to spare parts that are invoiced with the delivery. Payment in a B2B store is a separate question, covered in [B2B checkout: purchase order, card or invoice](/en/blog/b2b-checkout-purchase-order-card-invoice/).
 
 ## When does Revenue Cloud Billing pay off?
 
 Billing pays off where the invoice follows the contract rather than the delivery:
 
 - **Subscriptions** such as remote monitoring, software options or data services, billed monthly or quarterly.
-- **Service and maintenance contracts** with a fixed fee per period, amended when machines are added or retired. The billing approach is covered in [maintenance contracts with recurring billing](../maintenance-contracts-recurring-billing/).
-- **Usage-based fees** such as machine hours or output, where Revenue Cloud rates the usage and passes it to billing. The machine case is in [pay-per-use for machines](../pay-per-use-machines-revenue-cloud/).
+- **Service and maintenance contracts** with a fixed fee per period, amended when machines are added or retired. The billing approach is covered in [maintenance contracts with recurring billing](/en/blog/maintenance-contracts-recurring-billing/).
+- **Usage-based fees** such as machine hours or output, where Revenue Cloud rates the usage and passes it to billing. The machine case is in [pay-per-use for machines](/en/blog/pay-per-use-machines-revenue-cloud/).
 - **Frequent amendments.** In Revenue Cloud an amendment creates a quote and an order against the existing assets, and the billing schedules follow. If SAP invoices instead, every amendment has to reach SAP through an interface before the next invoice run.
 
 The signal I look for is this: if sales changes contracts every week and finance corrects invoices every month because SAP did not hear about a change, Billing in Salesforce removes a handoff. If contracts rarely change, usage is small and there is one invoice a year, invoicing from SAP is usually enough. The number of contracts alone is not decisive: change frequency, retroactive changes, usage volume, legal entities and reconciliation effort matter more.
@@ -108,11 +108,11 @@ SAP delivery --> SAP invoice
 SAP invoice --> SAP general ledger
 ```
 
-The customer gets two kinds of invoices, which customer service has to be able to explain. If that is not acceptable, the alternative is to keep every invoice in SAP and send SAP the billing data from Revenue Cloud, which requires a reliable interface for amendments. The question of which system owns which object is covered in [Revenue Cloud and SAP: who owns what in quote to cash](../revenue-cloud-sap-quote-to-cash-ownership/).
+The customer gets two kinds of invoices, which customer service has to be able to explain. If that is not acceptable, the alternative is to keep every invoice in SAP and send SAP the billing data from Revenue Cloud, which requires a reliable interface for amendments. The question of which system owns which object is covered in [Revenue Cloud and SAP: who owns what in quote to cash](/en/blog/revenue-cloud-sap-quote-to-cash-ownership/).
 
 ## Finance draws the line
 
-Finance. The CRM team can show what Billing does, but finance carries the consequences: a second receivables ledger, a second period close and a second place for auditors to examine. The [object ownership matrix](../salesforce-object-ownership-matrix/) helps here as well: every billing object needs an owner, and for legal entities, accounting periods and general ledger accounts that owner is in finance.
+Finance. The CRM team can show what Billing does, but finance carries the consequences: a second receivables ledger, a second period close and a second place for auditors to examine. The [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/) helps here as well: every billing object needs an owner, and for legal entities, accounting periods and general ledger accounts that owner is in finance.
 
 I would bring the head of accounting into the first architecture workshop, not into user acceptance testing.
 
@@ -120,8 +120,8 @@ I would bring the head of accounting into the first architecture workshop, not i
 At a minimum, agree with finance in writing on: which revenue types Salesforce invoices, invoice numbering and legal issuer, who closes periods, cancellation and correction, payment and clearing ownership, dunning and write-offs, document retention, error handling of the SAP interface, and how the reconciliation with SAP works.
 ```
 
-The interfaces for journal entries and invoice status are part of my work on [Salesforce integration](../../services/salesforce-integration/).
+The interfaces for journal entries and invoice status are part of my work on [Salesforce integration](/en/services/salesforce-integration/).
 
 ## List revenue types with their invoice source
 
-List your revenue types and note for each one which system invoices today and how often the contract changes. Rows with recurring fees and frequent changes are candidates for Billing; everything else stays in SAP. The masterclass chapter [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) places this decision in the wider quote-to-cash process.
+List your revenue types and note for each one which system invoices today and how often the contract changes. Rows with recurring fees and frequent changes are candidates for Billing; everything else stays in SAP. The masterclass chapter [billing and usage-based pricing](/en/masterclass/revenue-cloud/billing-and-usage-based-pricing/) places this decision in the wider quote-to-cash process.

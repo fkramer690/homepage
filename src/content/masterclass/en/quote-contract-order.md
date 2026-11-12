@@ -38,7 +38,7 @@ Help and the developer guide currently call Revenue Cloud Revenue Management, Tr
 
 | No. | Step | What happens |
 |---|---|---|
-| 1 | Quote | Sales creates a quote, picks products from the catalog, configures them and has them priced. Catalog, configurator and pricing procedures are covered in [chapter 2](../product-catalog-configurator-pricing/). |
+| 1 | Quote | Sales creates a quote, picks products from the catalog, configures them and has them priced. Catalog, configurator and pricing procedures are covered in [chapter 2](/en/masterclass/revenue-cloud/product-catalog-configurator-pricing/). |
 | 2 | Approval | If the price deviates from the approval matrix, an approval starts. |
 | 3 | Quote to the customer | The customer receives the quote, if needed together with a contract from Salesforce Contracts. |
 | 4 | Order | Once the quote is accepted, sales creates an order from it. In the [Trailhead unit on orders](https://trailhead.salesforce.com/content/learn/modules/efficient-sales-with-revenue-cloud/create-and-fulfill-orders), the rep sets the quote to Accepted and clicks Create Order. |
@@ -59,10 +59,10 @@ I would build groups along a structure the customer recognises: one group per li
 
 Approvals in Revenue Cloud run on Advanced Approvals. The [developer guide](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/advanced_approvals_overview.htm) describes actions for parallel or sequential approval chains with an audit trail, and Business APIs that show the approval levels before submission. I would use that preview from day one, so nobody submits a quote and then wonders who has it.
 
-I keep the approval matrix short: discount on list price, margin per quote, deal size, non-standard payment terms. Each trigger has exactly one owner for its threshold. A margin approval needs a cost per line from the ERP. Without it, approve on discount and deal size only, rather than on a margin field nobody trusts. Matrix, cost sources and the rebuild from CPQ are covered in [discount approvals in Revenue Cloud](../../../blog/revenue-cloud-discount-approvals/).
+I keep the approval matrix short: discount on list price, margin per quote, deal size, non-standard payment terms. Each trigger has exactly one owner for its threshold. A margin approval needs a cost per line from the ERP. Without it, approve on discount and deal size only, rather than on a margin field nobody trusts. Matrix, cost sources and the rebuild from CPQ are covered in [discount approvals in Revenue Cloud](/en/blog/revenue-cloud-discount-approvals/).
 
 ```hinweis achtung
-One rule holds with agents too: the threshold and the approver come from the workflow. An agent may submit, search and summarise approvals, it does not decide them. Why business rules do not belong in the language model is explained in [Agent Script: deterministic rules](../../../blog/agent-script-deterministic-rules/). If you are moving from CPQ, plan approvals as a rebuild, because CPQ's Advanced Approvals package does not carry over; more in [chapter 5](../from-cpq-to-revenue-cloud/).
+One rule holds with agents too: the threshold and the approver come from the workflow. An agent may submit, search and summarise approvals, it does not decide them. Why business rules do not belong in the language model is explained in [Agent Script: deterministic rules](/en/blog/agent-script-deterministic-rules/). If you are moving from CPQ, plan approvals as a rebuild, because CPQ's Advanced Approvals package does not carry over; more in [chapter 5](/en/masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
 ```
 
 ## What can the quoting agent do today?
@@ -71,7 +71,7 @@ The quoting agent creates, modifies and summarises quotes. According to the [Tra
 
 With Winter '27, [generally available since 12 October 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), three groups are added: self-service quoting for customer buyers, integrated quoting for partners in their own workspace and drafted renewal quotes for account executives. For manufacturers I see renewals as the most useful part, because maintenance and remote monitoring subscriptions create routine work every year.
 
-What the agent cannot do is see rules that live in SAP variant configuration, in a PLM or in an application engineer's head. For configured machines with such rules I would not use it yet. What must be in place first and where it is the wrong tool is in [Revenue Cloud quoting agent](../../../blog/revenue-cloud-quoting-agent-agentforce/). Costs are billed in Flex Credits: the [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) lists $500 per 100,000 credits, and its examples use 20 credits per standard action. How to budget that is in the AI masterclass chapter [costs and tokens](../../ai-salesforce/costs-and-tokens/).
+What the agent cannot do is see rules that live in SAP variant configuration, in a PLM or in an application engineer's head. For configured machines with such rules I would not use it yet. What must be in place first and where it is the wrong tool is in [Revenue Cloud quoting agent](/en/blog/revenue-cloud-quoting-agent-agentforce/). Costs are billed in Flex Credits: the [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) lists $500 per 100,000 credits, and its examples use 20 credits per standard action. How to budget that is in the AI masterclass chapter [costs and tokens](/en/masterclass/ai-salesforce/costs-and-tokens/).
 
 ```pro-contra
 pro: What the quoting agent can do
@@ -84,7 +84,7 @@ contra: What it cannot do
 - Quote configured machines with such rules safely
 ```
 
-If your dealers work in Manufacturing Cloud, there is a separate agent there, the [AI Partner Sales Assistant](../../../blog/ai-partner-sales-assistant-dealer-quotes/). Two quoting agents on two quote models is a setup I would avoid. Where agents help elsewhere in manufacturing is shown in the chapter [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/). If customers order on their own anyway, the cart belongs in the store; the B2B Commerce masterclass covers that in [prices, cart, checkout](../../b2b-commerce/prices-cart-checkout/).
+If your dealers work in Manufacturing Cloud, there is a separate agent there, the [AI Partner Sales Assistant](/en/blog/ai-partner-sales-assistant-dealer-quotes/). Two quoting agents on two quote models is a setup I would avoid. Where agents help elsewhere in manufacturing is shown in the chapter [AI agents in manufacturing](/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/). If customers order on their own anyway, the cart belongs in the store; the B2B Commerce masterclass covers that in [prices, cart, checkout](/en/masterclass/b2b-commerce/prices-cart-checkout/).
 
 ## Salesforce Contracts or legal's own CLM?
 
@@ -92,7 +92,7 @@ Salesforce Contracts is the contract management of Revenue Cloud. According to [
 
 The [pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/contracts-pricing/) lists Salesforce Contracts from €50 or $50 per user and month, billed annually, with a note that it requires prerequisite products. According to the [Revenue Cloud pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/), Revenue Cloud Advanced at €200 includes Contracts & Orders, while Growth customers can buy Contract Lifecycle Management as an add-on.
 
-My line: for customer contracts from the sales process on your own paper, Salesforce Contracts is usually enough. If legal manages purchasing, NDAs and group contracts in its own tool, or most contracts follow the customer's purchasing terms, that tool stays in place, and Salesforce hands over the signed contract. Also note that three objects are called "contract": the contract in Salesforce Contracts, the sales agreement in Manufacturing Cloud and the service contract in Field Service. The boundaries are in [Salesforce Contracts: is the built-in CLM enough?](../../../blog/salesforce-contracts-clm-revenue-cloud/).
+My line: for customer contracts from the sales process on your own paper, Salesforce Contracts is usually enough. If legal manages purchasing, NDAs and group contracts in its own tool, or most contracts follow the customer's purchasing terms, that tool stays in place, and Salesforce hands over the signed contract. Also note that three objects are called "contract": the contract in Salesforce Contracts, the sales agreement in Manufacturing Cloud and the service contract in Field Service. The boundaries are in [Salesforce Contracts: is the built-in CLM enough?](/en/blog/salesforce-contracts-clm-revenue-cloud/).
 
 ## The order reaches SAP through a callout
 
@@ -110,7 +110,7 @@ DRO ..Rejected..> Fallout queue
 SAP order --> Delivery and invoice
 ```
 
-If the order is sent to SAP in one piece and nothing else happens in Salesforce, a plain integration on activation is enough. Details and criteria are in [handing orders to SAP](../../../blog/revenue-cloud-order-orchestration-sap/). Which system owns which step is covered in [Revenue Cloud and SAP: who owns what?](../../../blog/revenue-cloud-sap-quote-to-cash-ownership/), and I support the interface design as part of [Salesforce integration](../../../services/salesforce-integration/).
+If the order is sent to SAP in one piece and nothing else happens in Salesforce, a plain integration on activation is enough. Details and criteria are in [handing orders to SAP](/en/blog/revenue-cloud-order-orchestration-sap/). Which system owns which step is covered in [Revenue Cloud and SAP: who owns what?](/en/blog/revenue-cloud-sap-quote-to-cash-ownership/), and I support the interface design as part of [Salesforce integration](/en/services/salesforce-integration/).
 
 ```hinweis offen
 According to the pricing page, DRO is an add-on to Revenue Cloud Advanced with "Freemium access available". What that covers is not stated. Get the scope confirmed in writing before you plan on orchestration.
@@ -120,7 +120,7 @@ According to the pricing page, DRO is an add-on to Revenue Cloud Advanced with "
 
 When the order is activated, the sold products appear as assets on the customer account. According to [Trailhead on amendments](https://trailhead.salesforce.com/content/learn/modules/asset-lifecycle-management-with-revenue-cloud/manage-customer-asset-amendments), every later change goes through an amendment quote with start quantity, delta and end quantity, then through an order. Each change creates an asset action, and asset state periods record quantity, amount and monthly recurring revenue per time span. [Renewals](https://trailhead.salesforce.com/content/learn/modules/asset-lifecycle-management-with-revenue-cloud/manage-customer-asset-renewals-and-cancellations) use the asset's renewal term automatically, or an overridden term, and a cancellation sets the end quantity to zero. An SAP interface should therefore never overwrite these quantities.
 
-Field Service uses the same Asset object, there as the machine at the customer site with serial number and assembly hierarchy. Revenue Cloud counts quantities, Field Service needs one record per serial number. For most machine builders I recommend two kinds of assets, the sold one and the physical machine, with a defined link between them. I compare both models and their risks in [assets in Revenue Cloud: amendments and renewals](../../../blog/revenue-cloud-assets-amendments-renewals/). How Field Service models machines, maintenance and parts is in the chapter [assets, maintenance and parts](../../field-service/field-service-assets-maintenance-parts/). Who owns which object belongs in an [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/), before two teams build triggers on Asset against each other.
+Field Service uses the same Asset object, there as the machine at the customer site with serial number and assembly hierarchy. Revenue Cloud counts quantities, Field Service needs one record per serial number. For most machine builders I recommend two kinds of assets, the sold one and the physical machine, with a defined link between them. I compare both models and their risks in [assets in Revenue Cloud: amendments and renewals](/en/blog/revenue-cloud-assets-amendments-renewals/). How Field Service models machines, maintenance and parts is in the chapter [assets, maintenance and parts](/en/masterclass/field-service/field-service-assets-maintenance-parts/). Who owns which object belongs in an [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/), before two teams build triggers on Asset against each other.
 
 ## Worked example: spare parts package and remote monitoring
 
@@ -134,7 +134,7 @@ A maker of packaging lines sells an existing customer two things on one quote: a
 | Assets | The subscription is sold per machine as its own line with quantity one and linked to the Field Service machine asset. If a machine is taken out later, an amendment cancels exactly that line. |
 | Renewal | Before the term ends, the agent drafts the renewal quote, and sales reviews and sends it. |
 
-The invoice for the subscription can come from SAP or from Revenue Cloud Billing. That decision and recurring billing are covered in [chapter 4](../billing-and-usage-based-pricing/), for example in [maintenance contracts: recurring billing](../../../blog/maintenance-contracts-recurring-billing/).
+The invoice for the subscription can come from SAP or from Revenue Cloud Billing. That decision and recurring billing are covered in [chapter 4](/en/masterclass/revenue-cloud/billing-and-usage-based-pricing/), for example in [maintenance contracts: recurring billing](/en/blog/maintenance-contracts-recurring-billing/).
 
 ## Settle the approval matrix and the SAP hand-over in writing
 
@@ -148,4 +148,4 @@ Before a partner builds the first quote layout, I would settle these points in w
 | Order | DRO or a plain integration, who works the fallout queue, which checks run before activation. |
 | Assets | Counted or tied to a serial number, and who owns the Asset object. |
 
-I start with the approval matrix, because the agent and the order build on its thresholds. All chapters are on the [overview page](../).
+I start with the approval matrix, because the agent and the order build on its thresholds. All chapters are on the [overview page](/en/masterclass/revenue-cloud/).

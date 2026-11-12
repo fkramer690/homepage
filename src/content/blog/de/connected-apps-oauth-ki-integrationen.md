@@ -76,7 +76,7 @@ Die Schritte im Einzelnen:
 Ein Satz in dieser FAQ ist für Käufer wichtig: Ob der Ablauf nach 30 Tagen aktiv ist, können Admins der Kunden-Org ableiten; PKCE, Rotation und IP-Allowlist können sie aber nicht direkt prüfen. Bei diesen Punkten verlassen Sie sich auf die Auskunft des Anbieters; lassen Sie sich diese Angaben deshalb mit dem Datum der Aktivierung schriftlich bestätigen. Ihre eigenen Einstellungen wie Installation, Benutzerzuordnung, Scopes und Profil-IP-Bereiche prüfen Sie selbst.
 ```
 
-ECAs unterstützen außerdem den Username-Password Flow nicht. Was das für ältere ERP- und Middleware-Anbindungen heißt, steht in [Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
+ECAs unterstützen außerdem den Username-Password Flow nicht. Was das für ältere ERP- und Middleware-Anbindungen heißt, steht in [Passwort-Integrationen enden 2027](/blog/salesforce-passwort-integrationen-2027/).
 
 ## Welche Kontrollen braucht ein Hersteller jetzt?
 
@@ -100,7 +100,7 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, SAP und 80 Händ
 
 Der Chatbot ist das Drift-Muster. Sein Integrationsuser wurde im Proof of Concept von einem Systemadministrator kopiert, der Scope ist `full`, das Refresh Token gilt bis zum Widerruf, IP-Beschränkungen sind gelockert. Er muss nur Leads und Fälle anlegen, könnte aber jede Preisvereinbarung mit Händlern lesen.
 
-Der Meeting-Recorder läuft benutzerbezogen; jedes Token hat die Rechte des jeweiligen Benutzers, ähnlich dem Named-User-Modell in [Hosted MCP Server und Datenzugriff](../salesforce-hosted-mcp-server-datenzugriff/). Der Unterschied: Der Anbieter speichert 25 Refresh Tokens auf seinen eigenen Servern.
+Der Meeting-Recorder läuft benutzerbezogen; jedes Token hat die Rechte des jeweiligen Benutzers, ähnlich dem Named-User-Modell in [Hosted MCP Server und Datenzugriff](/blog/salesforce-hosted-mcp-server-datenzugriff/). Der Unterschied: Der Anbieter speichert 25 Refresh Tokens auf seinen eigenen Servern.
 
 In diesem Beispiel dauern die Korrekturen zwei Wochen. Der Chatbot erhält einen eigenen Integrationsuser, der nur Leads und Fälle anlegen darf, `full` entfällt, die IP-Bereiche des Anbieters werden als Login-IP-Bereiche in sein Profil eingetragen. Der Meeting-Recorder wird installiert, auf ein Permission Set beschränkt, seine Tokens laufen nach 30 Tagen ohne Nutzung ab. Die unbekannte App wird gesperrt. Eine Suche in den Servicefällen findet in diesem Beispiel 340 Datensätze mit Passwörtern oder Fernwartungsdaten; sie werden bereinigt und die Zugänge mit den betroffenen Kunden geändert.
 
@@ -108,4 +108,4 @@ Nichts davon verhindert, dass ein Anbieter Ihre Tokens verliert. Es entscheidet,
 
 ## Jede App markieren, die Salesforce-Daten an ein Modell schickt
 
-Fangen Sie mit den KI-Tools an, weil sie die neuesten und am wenigsten geprüften sind: Markieren Sie jede App, die Salesforce-Daten an ein Modell schickt, und prüfen Sie für diese zuerst Benutzer, Scopes und Token-Richtlinie. Ihr zweites Risiko ist [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/). Eine Liste aller Schnittstellen mit benannten Verantwortlichen gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Fangen Sie mit den KI-Tools an, weil sie die neuesten und am wenigsten geprüften sind: Markieren Sie jede App, die Salesforce-Daten an ein Modell schickt, und prüfen Sie für diese zuerst Benutzer, Scopes und Token-Richtlinie. Ihr zweites Risiko ist [Prompt Injection im Händlerportal](/blog/prompt-injection-haendlerportal-agentforce/). Eine Liste aller Schnittstellen mit benannten Verantwortlichen gehört zu meiner Arbeit an [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/).

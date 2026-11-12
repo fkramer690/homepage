@@ -50,7 +50,7 @@ Salesforce made its own FDE model public in 2025 and extended it to partners in 
 
 Besides Accenture and Deloitte, the [FDE Partner Network](https://www.salesforce.com/news/stories/salesforce-launches-forward-deployed-engineer-partner-network-announcement/) includes Capgemini, Cognizant, IBM Consulting, KPMG, PwC, Slalom, TCS and a few regional firms. The partners get a direct line to the product teams. Salesforce ties their incentives to agents going into production and describes four components: solution architecture, agent design, go-live with hypercare, and adoption and change management.
 
-Individual partner engineers can become verified FDE practitioners. According to [diginomica](https://diginomica.com/node/31193), this takes a knowledge assessment, a two-day workshop and proof on a live client project. Salesforce named 84 partners and more than 800 verified practitioners there. What the new partner model means for your implementation partner's interests is covered in the chapter [AIforce and system integrators](../../masterclass/ai-salesforce/aiforce-and-system-integrators/) of the AI masterclass.
+Individual partner engineers can become verified FDE practitioners. According to [diginomica](https://diginomica.com/node/31193), this takes a knowledge assessment, a two-day workshop and proof on a live client project. Salesforce named 84 partners and more than 800 verified practitioners there. What the new partner model means for your implementation partner's interests is covered in the chapter [AIforce and system integrators](/en/masterclass/ai-salesforce/aiforce-and-system-integrators/) of the AI masterclass.
 
 ## What an FDE costs and who pays
 
@@ -78,9 +78,9 @@ Client-side architect | The manufacturer | Target architecture, standards, decis
 note: The FDE pod is limited in time and to one use case. The other roles stay for the whole programme.
 ```
 
-In my largest programme, five implementation partners worked with more than 30 developers in eight streams on one org. An FDE pod would have been one more party developing in the same org. It has to follow the same development standards, the same [object ownership matrix](../salesforce-object-ownership-matrix/) that defines which stream owns which object, and the same release process. Otherwise a very good team builds a very good agent that nobody can maintain and extend safely after hypercare.
+In my largest programme, five implementation partners worked with more than 30 developers in eight streams on one org. An FDE pod would have been one more party developing in the same org. It has to follow the same development standards, the same [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/) that defines which stream owns which object, and the same release process. Otherwise a very good team builds a very good agent that nobody can maintain and extend safely after hypercare.
 
-This belongs to [partner governance](../../services/partner-governance/): who brings which rules, who approves, who owns the repository and the pipeline. An FDE pod changes none of that. It makes the questions more urgent, because it works fast and leaves the project after a few weeks.
+This belongs to [partner governance](/en/services/partner-governance/): who brings which rules, who approves, who owns the repository and the pipeline. An FDE pod changes none of that. It makes the questions more urgent, because it works fast and leaves the project after a few weeks.
 
 ## What Salesforce FDEs name as the biggest blockers
 
@@ -88,10 +88,10 @@ The FDE director for Agentforce summed up on the Salesforce engineering blog wha
 
 - **Decision paralysis.** AI councils and architecture boards take a long time over fundamental decisions, and governance reviews on security, compliance and observability ask for detailed scorecards. According to Salesforce, mid-sized companies decide faster.
 - **Unfinished platforms.** Many orgs are in the middle of a migration, and the data is spread across systems. Whether Data 360 connects it by API or by zero copy is an architecture decision with consequences for performance and cost.
-- **Too many instructions.** Clients keep adding rules to the agent's instructions, and the agent answers worse as a result. Fixed business logic belongs in flows or code, as I describe in [Agent Script: keep business rules out of the LLM](../agent-script-deterministic-rules/).
-- **Missing tests.** Single-turn tests do not show whether a conversation over several steps works. Salesforce built its own framework for multi-turn tests. How to solve this in your project is covered in [Testing Agentforce agents](../testing-agentforce-agents-before-go-live/).
+- **Too many instructions.** Clients keep adding rules to the agent's instructions, and the agent answers worse as a result. Fixed business logic belongs in flows or code, as I describe in [Agent Script: keep business rules out of the LLM](/en/blog/agent-script-deterministic-rules/).
+- **Missing tests.** Single-turn tests do not show whether a conversation over several steps works. Salesforce built its own framework for multi-turn tests. How to solve this in your project is covered in [Testing Agentforce agents](/en/blog/testing-agentforce-agents-before-go-live/).
 
-Salesforce says this cut rollout time from about six months to a few weeks. The method behind that figure is not disclosed. The first two blockers, however, no FDE can remove alone. If nobody has prepared the decision for the architecture board, even the best pod waits. That is also the subject of [Decision makers as the bottleneck in AI Salesforce projects](../decision-makers-bottleneck-ai-salesforce/).
+Salesforce says this cut rollout time from about six months to a few weeks. The method behind that figure is not disclosed. The first two blockers, however, no FDE can remove alone. If nobody has prepared the decision for the architecture board, even the best pod waits. That is also the subject of [Decision makers as the bottleneck in AI Salesforce projects](/en/blog/decision-makers-bottleneck-ai-salesforce/).
 
 ## When does an FDE pay off for manufacturers?
 
@@ -102,7 +102,7 @@ I would base an FDE engagement on these criteria:
 - **Someone takes over afterwards.** Your team or your implementation partner can develop the agent further after hypercare. Otherwise you buy a prototype with production access.
 - **Decision paths are short.** Data access, permissions and approval in the architecture board can be settled in days, not months.
 
-An FDE would not pay off when most of the effort is process design across several clouds, a deep SAP integration or data cleansing. That is work for an implementation partner over months. And if it is still open whether an agent is the right approach at all, settle that first. The criteria are in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/)
+An FDE would not pay off when most of the effort is process design across several clouds, a deep SAP integration or data cleansing. That is work for an implementation partner over months. And if it is still open whether an agent is the right approach at all, settle that first. The criteria are in [Agentforce for manufacturers: start now or wait?](/en/blog/agentforce-yes-or-no-manufacturers/)
 
 A shorter version for CIOs is on LinkedIn: [Before Salesforce sends you forward deployed engineers, answer three questions](https://www.linkedin.com/pulse/before-salesforce-sends-you-forward-deployed-engineers-fabian-kramer-jqxde/).
 

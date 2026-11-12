@@ -35,7 +35,7 @@ Dealers do more than reorder known parts at known prices. They ask for pricing o
 
 Request for Quote (RFQ) keeps that conversation in the store. Salesforce described this in its [Spring '26 B2B innovations post](https://www.salesforce.com/blog/b2b-commerce-innovations-spring-26/) as the move "from self-service to sales-assisted": buyers request a quote without leaving the storefront. The [June 2026 post](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) calls RFQ "already generally available". Trailhead also calls the product Agentforce Commerce for B2B; the feature is the same under both names.
 
-[Salesforce Help on pricing for B2B stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) describes it like this: buyers in B2B stores can request quotes for complex or high-value purchases directly from their cart, and you review and manage the quotes in Sales Cloud or Agentforce Revenue Management. Which products are supported depends on the license: according to the [Apex reference for ConnectApi.CommerceCart](https://developer.salesforce.com/docs/platform/apex-ref/references/apex-ref/apex-connectapi-commercecart-static-methods.html), simple products are supported with B2B Commerce alone, static and dynamic bundles only with B2B Commerce and Revenue Cloud, and subscription products are not supported at all. When Revenue Cloud pricing in the store is worth the license is covered in [Advanced Pricing in B2B stores](../advanced-pricing-b2b-store-revenue-cloud/).
+[Salesforce Help on pricing for B2B stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) describes it like this: buyers in B2B stores can request quotes for complex or high-value purchases directly from their cart, and you review and manage the quotes in Sales Cloud or Agentforce Revenue Management. Which products are supported depends on the license: according to the [Apex reference for ConnectApi.CommerceCart](https://developer.salesforce.com/docs/platform/apex-ref/references/apex-ref/apex-connectapi-commercecart-static-methods.html), simple products are supported with B2B Commerce alone, static and dynamic bundles only with B2B Commerce and Revenue Cloud, and subscription products are not supported at all. When Revenue Cloud pricing in the store is worth the license is covered in [Advanced Pricing in B2B stores](/en/blog/advanced-pricing-b2b-store-revenue-cloud/).
 
 ## How does a cart become a quote and the quote a cart again?
 
@@ -49,7 +49,7 @@ Negotiation | Sales desk
 Response | Buyer
   The buyer sees the quote on the My Quotes page and either accepts, asks for changes or declines.
 Order | Buyer
-  With Accept & Buy, the approved quote becomes a cart. The buyer checks out with the negotiated prices, usually with a purchase order number, as described in [B2B checkout: purchase order, card or invoice?](../b2b-checkout-purchase-order-card-invoice/).
+  With Accept & Buy, the approved quote becomes a cart. The buyer checks out with the negotiated prices, usually with a purchase order number, as described in [B2B checkout: purchase order, card or invoice?](/en/blog/b2b-checkout-purchase-order-card-invoice/).
 ```
 
 For step 4, the June 2026 post says: "once a quote is negotiated and approved, sellers can share it with customers as a cart". Salesforce calls this round-trip quoting and lists it as generally available since June 2026. It is not automatic, though: the store needs the quote components on the My Quotes page, and the buyer triggers the conversion. The Apex reference defines limits that matter for the design:
@@ -92,7 +92,7 @@ Before go-live I would settle these points in writing:
 - **Validity.** How long an approved quote remains valid before prices are checked again.
 - **Order path.** What happens when a buyer accepts by email instead of in the store. If the desk then enters the order by hand, the round trip breaks.
 
-Large dealers also request quotes through sales reps and partner portals. If AI builds quotes in those channels too, the same desk and the same price rules should serve both channels, as I describe for the [AI Partner Sales Assistant](../ai-partner-sales-assistant-dealer-quotes/).
+Large dealers also request quotes through sales reps and partner portals. If AI builds quotes in those channels too, the same desk and the same price rules should serve both channels, as I describe for the [AI Partner Sales Assistant](/en/blog/ai-partner-sales-assistant-dealer-quotes/).
 
 ## Worked example: 400 system integrators
 
@@ -106,4 +106,4 @@ The numbers are invented to show the method. In the first three months, I would 
 
 Start with the sales desk, not the component. Write down the response time, the queue owners and the price authority, and test the round trip with one buyer group that already sends many quote requests. Then check the licensing question for your product types with Salesforce, especially bundles and subscriptions.
 
-The chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) shows how RFQ fits alongside customer prices, checkout and reorders. How a quote in Revenue Cloud moves on to contract and order is covered in the chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/) of the Revenue Cloud masterclass. When RFQ involves several partners and teams, governing it is part of my work on [partner governance](../../services/partner-governance/).
+The chapter [prices, cart and checkout](/en/masterclass/b2b-commerce/prices-cart-checkout/) of the [B2B Commerce masterclass](/en/masterclass/b2b-commerce/) shows how RFQ fits alongside customer prices, checkout and reorders. How a quote in Revenue Cloud moves on to contract and order is covered in the chapter [quote, contract, order](/en/masterclass/revenue-cloud/quote-contract-order/) of the Revenue Cloud masterclass. When RFQ involves several partners and teams, governing it is part of my work on [partner governance](/en/services/partner-governance/).

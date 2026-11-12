@@ -83,7 +83,7 @@ Eine schnelle digitale Kopie übernimmt aber jeden Fehler des Papierformulars. T
 - **Fehlende Struktur**, zum Beispiel Fehlerbeschreibungen als Freitext statt als Codes, die das Qualitätsmanagement auswerten kann.
 - **Formulare, die sich je Region oder Team unterscheiden**, für denselben Einsatz.
 
-Bevor Formulare in großem Stil digitalisiert werden, lohnt sich eine Entscheidung über ein Zieldatenmodell für Serviceprotokolle: Welche Werte werden als Felder erfasst, welche Auswahllisten werden gemeinsam verwendet und wie werden Ergebnisse mit dem Asset und dem Arbeitsauftrag verknüpft? Das ist klassische [Architekturarbeit](../../leistungen/salesforce-architektur/), und sie entscheidet, ob die Daten später für Reporting, KI-Agenten oder die Anbindung an das ERP nutzbar sind. Wie Prüfprotokolle mit Data Capture aussehen, steht in [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/).
+Bevor Formulare in großem Stil digitalisiert werden, lohnt sich eine Entscheidung über ein Zieldatenmodell für Serviceprotokolle: Welche Werte werden als Felder erfasst, welche Auswahllisten werden gemeinsam verwendet und wie werden Ergebnisse mit dem Asset und dem Arbeitsauftrag verknüpft? Das ist klassische [Architekturarbeit](/leistungen/salesforce-architektur/), und sie entscheidet, ob die Daten später für Reporting, KI-Agenten oder die Anbindung an das ERP nutzbar sind. Wie Prüfprotokolle mit Data Capture aussehen, steht in [Field Service Data Capture: Prüfprotokolle ohne Papier](/blog/field-service-data-capture-pruefprotokolle/).
 
 ## Was muss vor dem Einsatz von Spracheingabe geklärt sein?
 
@@ -114,4 +114,4 @@ Wirkung messen
   Zeit für Dokumentation, Vollständigkeit der Berichte, Zeit bis zur Abrechnung.
 ```
 
-Ob die Techniker die neuen Funktionen dann auch nutzen, hängt davon ab, welchen Nutzen sie selbst davon haben. Darum geht es in [Field Service App: wie Techniker sie annehmen](../field-service-app-akzeptanz-techniker/). Vollständige Field-Service-Daten braucht später auch jeder KI-Agent im Service, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) erkläre.
+Ob die Techniker die neuen Funktionen dann auch nutzen, hängt davon ab, welchen Nutzen sie selbst davon haben. Darum geht es in [Field Service App: wie Techniker sie annehmen](/blog/field-service-app-akzeptanz-techniker/). Vollständige Field-Service-Daten braucht später auch jeder KI-Agent im Service, wie ich in [Agentforce: Business Value und Datenqualität zuerst](/blog/agentforce-business-value-datenqualitaet/) erkläre.

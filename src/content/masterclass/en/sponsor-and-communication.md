@@ -54,11 +54,11 @@ A good release process makes releases smaller and more frequent. The business th
 | Field service | new maintenance report in the app | Knowledge and ability | Key user of the region, before the app update |
 | Sales in all countries | nothing visible | none | nobody |
 
-The empty row is the important one. Someone who gets release emails every week that have nothing to do with their work will eventually skip the one that does. How the repository, pipeline and approvals behind this are organized is in the DevOps chapter [Release process: ownership, roles and approvals](../../devops-release-management/release-process-ownership-roles/).
+The empty row is the important one. Someone who gets release emails every week that have nothing to do with their work will eventually skip the one that does. How the repository, pipeline and approvals behind this are organized is in the DevOps chapter [Release process: ownership, roles and approvals](/en/masterclass/devops-release-management/release-process-ownership-roles/).
 
 ## What do release notes for users look like?
 
-User stories, fields and flows mean nothing to the business. Release notes for users are therefore a document of their own, and each of their questions strengthens one ADKAR stage. What changes for my group, with a screenshot if needed, and from which date creates awareness. The reason in one sentence, for example that sales planning needs the delivery date, supports desire. What stays the same removes uncertainty and is almost always missing. The key user's name as contact secures knowledge. Half a page per group is enough, in several countries in each local language. As a test I hand the text to a key user without further explanation. The full routine with examples is in [Communicating Salesforce releases to business teams](../../../blog/salesforce-release-communication-business/).
+User stories, fields and flows mean nothing to the business. Release notes for users are therefore a document of their own, and each of their questions strengthens one ADKAR stage. What changes for my group, with a screenshot if needed, and from which date creates awareness. The reason in one sentence, for example that sales planning needs the delivery date, supports desire. What stays the same removes uncertainty and is almost always missing. The key user's name as contact secures knowledge. Half a page per group is enough, in several countries in each local language. As a test I hand the text to a key user without further explanation. The full routine with examples is in [Communicating Salesforce releases to business teams](/en/blog/salesforce-release-communication-business/).
 
 ```schritte
 Planning | once the scope is clear · product owner and business
@@ -85,8 +85,8 @@ In Germany the works council has a right of co-determination under [section 87 o
 Agree location data, working times and evaluations of individuals with the works council before they are set up, and put the result in plain words into the communication before go-live. Agreeing afterwards costs weeks and trust.
 ```
 
-The same applies to AI tools in development, see [AI coding tools: works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/). How technicians adopt the app is covered in [chapter 3](../key-users-and-training/).
+The same applies to AI tools in development, see [AI coding tools: works council and GDPR](/en/blog/ai-coding-tools-works-council-gdpr/). How technicians adopt the app is covered in [chapter 3](/en/masterclass/change-management/key-users-and-training/).
 
 ## Write the rollout plan for the next release
 
-Write a rollout plan for the next release with one row per affected group and mark the contested rows. Take this list to the sponsor and agree when they explain which change. If no sponsor can be found, that is the most important finding of the plan. The diagnosis behind it is in [chapter 1](../change-management-adkar-diagnosis/), my work on it on the page [Change management for Salesforce programs](../../../services/change-management-salesforce/).
+Write a rollout plan for the next release with one row per affected group and mark the contested rows. Take this list to the sponsor and agree when they explain which change. If no sponsor can be found, that is the most important finding of the plan. The diagnosis behind it is in [chapter 1](/en/masterclass/change-management/change-management-adkar-diagnosis/), my work on it on the page [Change management for Salesforce programs](/en/services/change-management-salesforce/).

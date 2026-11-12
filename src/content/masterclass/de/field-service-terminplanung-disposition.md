@@ -34,9 +34,9 @@ Terminplanung in Salesforce Field Service trägt, wenn vier Dinge stimmen: saube
 
 ## Was braucht die Planung, bevor die Engine läuft?
 
-Field Service, das Salesforce heute als [Field Service and Operations](https://www.salesforce.com/de/products/field-service/pricing) verkauft, plant mit den Daten, die es hat, und Lücken darin führen zu falschen Vorschlägen. Ob sich das Produkt lohnt und welche Rolle welche Lizenz braucht, steht in Kapitel 1, [Nutzen und Lizenzen](../field-service-lohnt-sich-lizenzen/). Dieses Kapitel beginnt dort, wo der erste Techniker eingeplant wird.
+Field Service, das Salesforce heute als [Field Service and Operations](https://www.salesforce.com/de/products/field-service/pricing) verkauft, plant mit den Daten, die es hat, und Lücken darin führen zu falschen Vorschlägen. Ob sich das Produkt lohnt und welche Rolle welche Lizenz braucht, steht in Kapitel 1, [Nutzen und Lizenzen](/masterclass/field-service/field-service-lohnt-sich-lizenzen/). Dieses Kapitel beginnt dort, wo der erste Techniker eingeplant wird.
 
-Die Engine braucht sechs Arten von Stammdaten, ausführlich beschrieben in [welche Daten die Planung im Field Service braucht](../../../blog/salesforce-field-service-stammdaten/):
+Die Engine braucht sechs Arten von Stammdaten, ausführlich beschrieben in [welche Daten die Planung im Field Service braucht](/blog/salesforce-field-service-stammdaten/):
 
 | Stammdaten | Was die Engine daraus braucht |
 |---|---|
@@ -47,7 +47,7 @@ Die Engine braucht sechs Arten von Stammdaten, ausführlich beschrieben in [welc
 | Besuchszeiten der Kunden | Arbeitszeiten am Account, die nur zählen, wenn die Work Rule für Besuchszeiten aktiv ist. |
 | Abwesenheiten | Urlaub und Schulungen aus der Zeiterfassung. |
 
-Kaum etwas davon entsteht in Field Service. Assets kommen aus dem ERP, Skills aus HR oder dem Schulungssystem, Abwesenheiten aus der Zeiterfassung. Deshalb lege ich für jede Art ein führendes System und einen Verantwortlichen fest, bevor die erste Schnittstelle gebaut wird. Welches System zwischen ERP und Salesforce führt, behandle ich unter [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/).
+Kaum etwas davon entsteht in Field Service. Assets kommen aus dem ERP, Skills aus HR oder dem Schulungssystem, Abwesenheiten aus der Zeiterfassung. Deshalb lege ich für jede Art ein führendes System und einen Verantwortlichen fest, bevor die erste Schnittstelle gebaut wird. Welches System zwischen ERP und Salesforce führt, behandle ich unter [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/).
 
 Mein Einstieg in die Datenprüfung ist immer derselbe: die gescheiterten Einsätze der letzten drei Monate, jeweils mit Ursache. Typische Ursachen sind fehlende Teile, kein Zugang zur Maschine, der falsche Techniker oder ein abwesender Techniker. Die häufigste Ursache zeigt, welche Daten zuerst sauber sein müssen.
 
@@ -61,11 +61,11 @@ Die Engine vergibt Termine nach einer Scheduling Policy. Work Rules filtern Tech
 
 Die zweite Entscheidung betrifft die Reichweite der Automatik. Ein Termin wechselt vom Status None zu Scheduled, sobald er Techniker und Zeitfenster hat, und zu Dispatched, wenn er in der App des Technikers freigegeben ist. Zwischen Scheduled und Dispatched kann ein Disponent noch eingreifen. Für Hersteller empfehle ich genau diese Aufteilung zum Start: Die Engine plant, der Disponent prüft und gibt frei. Er weiß, dass ein Kunde vor der Wartung eine Linie abschalten muss, und das steht in keinem Feld.
 
-Die Automatik lässt sich ausweiten, sobald Disponenten die Vorschläge kaum noch ändern. Dafür notieren sie vier Wochen lang, warum sie einen Vorschlag geändert haben, und jeder Grund wird zu einer Datenkorrektur oder einer Work Rule. Den ganzen Weg bis zur automatischen Freigabe mit Drip Feed beschreibe ich in [Terminplanung und Dispatch Schritt für Schritt automatisieren](../../../blog/salesforce-field-service-terminplanung-automatisieren/).
+Die Automatik lässt sich ausweiten, sobald Disponenten die Vorschläge kaum noch ändern. Dafür notieren sie vier Wochen lang, warum sie einen Vorschlag geändert haben, und jeder Grund wird zu einer Datenkorrektur oder einer Work Rule. Den ganzen Weg bis zur automatischen Freigabe mit Drip Feed beschreibe ich in [Terminplanung und Dispatch Schritt für Schritt automatisieren](/blog/salesforce-field-service-terminplanung-automatisieren/).
 
 ## Sollten Sie auf Enhanced Scheduling and Optimization umstellen?
 
-Enhanced Scheduling and Optimization, kurz ESO, ist die neuere Engine der Terminplanung. Laut [Field-Service-Leitfaden](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/support_field_service.pdf) haben neue Orgs sie für alle Gebiete aktiv, bestehende Orgs können alle Gebiete auf einmal oder einzeln umstellen. Für eine Org, die mit der älteren Engine live gegangen ist, lautet meine Antwort: ja, aber Gebiet für Gebiet. Die Details stehen in [Enhanced Scheduling and Optimization: jetzt umstellen?](../../../blog/field-service-enhanced-scheduling-umstellen/).
+Enhanced Scheduling and Optimization, kurz ESO, ist die neuere Engine der Terminplanung. Laut [Field-Service-Leitfaden](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/support_field_service.pdf) haben neue Orgs sie für alle Gebiete aktiv, bestehende Orgs können alle Gebiete auf einmal oder einzeln umstellen. Für eine Org, die mit der älteren Engine live gegangen ist, lautet meine Antwort: ja, aber Gebiet für Gebiet. Die Details stehen in [Enhanced Scheduling and Optimization: jetzt umstellen?](/blog/field-service-enhanced-scheduling-umstellen/).
 
 Den Aufwand bestimmen diese Punkte:
 
@@ -91,7 +91,7 @@ Laut [Salesforce Help zur Resource Schedule Optimization](https://help.salesforc
 
 Salesforce hat inzwischen zwei Oberflächen für Disponenten. Die Classic Dispatch Console ist das bekannte Gantt, mit Summer '26 umbenannt. Die neue Scheduling Console zeigt Gantt, Terminliste und Karte auf einem Bildschirm. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-quick-look/didispatch-smarter-with-the-scheduling-console) gibt es sie nur mit ESO, und sie zeigt lesbare Empfehlungen mit einem **Why?**, das einen vorgeschlagenen Termin per KI erklärt. Anpassungen der alten Konsole übernimmt sie laut Trailhead.
 
-Gleichwertig sind beide noch nicht. In einem [Thread der Trailblazer Community](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pMqC00AK) vom Mai 2026 hat ein Salesforce-Mitarbeiter das bestätigt, nachdem ein Kunde Ansichten mit langem Horizont wie Utilization und Long-Term vermisst hatte. Für Hersteller zählt das: Wer Jahreswartungen Wochen im Voraus plant, arbeitet genau in diesen Ansichten. Ein Abschaltdatum für die Classic Dispatch Console habe ich bis Oktober 2026 nicht gefunden. Deshalb lasse ich zuerst zwei Disponenten die neue Konsole in einem Gebiet testen. Den Testplan finden Sie in [Scheduling Console im Field Service: Disponenten umstellen?](../../../blog/field-service-scheduling-console-disponenten/).
+Gleichwertig sind beide noch nicht. In einem [Thread der Trailblazer Community](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pMqC00AK) vom Mai 2026 hat ein Salesforce-Mitarbeiter das bestätigt, nachdem ein Kunde Ansichten mit langem Horizont wie Utilization und Long-Term vermisst hatte. Für Hersteller zählt das: Wer Jahreswartungen Wochen im Voraus plant, arbeitet genau in diesen Ansichten. Ein Abschaltdatum für die Classic Dispatch Console habe ich bis Oktober 2026 nicht gefunden. Deshalb lasse ich zuerst zwei Disponenten die neue Konsole in einem Gebiet testen. Den Testplan finden Sie in [Scheduling Console im Field Service: Disponenten umstellen?](/blog/field-service-scheduling-console-disponenten/).
 
 ## Wie planen Sie Inbetriebnahmen und andere lange Einsätze?
 
@@ -103,7 +103,7 @@ Field Service ist für viele kurze Einsätze pro Tag gebaut. Inbetriebnahmen, Ge
 | Crews | Eine Serviceressource vom Typ Crew. Abwesenheiten und Effizienz zählen nur an der Crew, nicht an den Mitgliedern, und die Mitglieder erhalten keine Benachrichtigung über die Zuweisung. |
 | Complex Work | Verknüpft Termine in fester Reihenfolge. Mit ESO plant die Engine eine Gruppe von bis zu fünf abhängigen Terminen ganz oder gar nicht. Mehrtägige Termine können nicht dazugehören. |
 
-Die letzte Grenze trifft Inbetriebnahmen am härtesten: Eine Baustellenbegehung lässt sich nicht mit der zweiwöchigen Montage verknüpfen, die auf sie folgt. Kapazitätsbasierte Ressourcen können keine mehrtägigen Einsätze übernehmen, ein Partnerunternehmen, das nur als Kapazität abgebildet ist, fällt also heraus. Meine Regel: Der Projektplan mit Phasen und Meilensteinen bleibt im ERP oder einem Projektwerkzeug, Field Service bildet die Arbeit vor Ort, die Zeiten und die Dokumentation ab. Den Aufbau beschreibe ich in [mehrtägige Einsätze im Field Service](../../../blog/field-service-mehrtaegige-einsaetze-inbetriebnahme/).
+Die letzte Grenze trifft Inbetriebnahmen am härtesten: Eine Baustellenbegehung lässt sich nicht mit der zweiwöchigen Montage verknüpfen, die auf sie folgt. Kapazitätsbasierte Ressourcen können keine mehrtägigen Einsätze übernehmen, ein Partnerunternehmen, das nur als Kapazität abgebildet ist, fällt also heraus. Meine Regel: Der Projektplan mit Phasen und Meilensteinen bleibt im ERP oder einem Projektwerkzeug, Field Service bildet die Arbeit vor Ort, die Zeiten und die Dokumentation ab. Den Aufbau beschreibe ich in [mehrtägige Einsätze im Field Service](/blog/field-service-mehrtaegige-einsaetze-inbetriebnahme/).
 
 ## Bereitschaft und Überstunden
 
@@ -113,13 +113,13 @@ Arbeitszeiten beschreiben die reguläre Arbeitszeit eines Gebiets, meist Montag 
 Eine typische Überraschung nach dem Go-live: Ein Vertrag verspricht einen Techniker binnen 24 Stunden, am Samstag steht eine Maschine still, und der Termin bleibt auf None, weil keine bestätigte Schicht existiert. Entitlement, Schicht und Policy müssen zusammenpassen.
 ```
 
-In Deutschland bestimmt der Betriebsrat bei Bereitschaftsplänen und Überstunden nach [§ 87 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) mit. Einrichtung und Abstimmungspunkte stehen in [Bereitschaftsdienst im Field Service](../../../blog/field-service-bereitschaft-schichten/).
+In Deutschland bestimmt der Betriebsrat bei Bereitschaftsplänen und Überstunden nach [§ 87 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) mit. Einrichtung und Abstimmungspunkte stehen in [Bereitschaftsdienst im Field Service](/blog/field-service-bereitschaft-schichten/).
 
 ## Wo bleibt der Disponent, wenn KI-Agenten planen?
 
 Salesforce bewegt die Terminplanung in Richtung Agenten. Das Füllen von Lücken nach Absagen ist für Disponenten allgemein verfügbar, und Kunden können über einen Agenten buchen und umbuchen, der mit Flex Credits abgerechnet wird. Die [Highlights zu Winter '27](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) bringen Autonomous Scheduling mit Agentforce Voice: Sprachagenten buchen rund um die Uhr, prüfen die Verfügbarkeit und wählen einen Techniker im passenden Gebiet, während der Kunde am Telefon ist. Dasselbe Release lässt Agentforce Umbuchungsanrufe für Disponenten übernehmen.
 
-Bei einem Maschinenbauer sehe ich den Disponenten an drei Stellen: bei Störungen mit unklarer Ursache, bei Einsätzen, die eine Abschaltung beim Kunden brauchen, und bei langen Einsätzen. Geplante Wartung aus Wartungsplänen ist der erste Kandidat für einen Agenten, weil die Regeln bekannt sind. Welche Agenten heute schon funktionieren, steht in [KI-Agenten im Field Service](../../../blog/ki-agenten-aussendienst-field-service/), die Sicht auf die Fertigung im Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/) der KI-Masterclass, Einführung und Kosten in [Kapitel 5](../field-service-ki-agenten-einfuehrung/). Ein Agent bucht mit derselben Policy wie die Engine, alles aus diesem Kapitel gilt also auch für ihn.
+Bei einem Maschinenbauer sehe ich den Disponenten an drei Stellen: bei Störungen mit unklarer Ursache, bei Einsätzen, die eine Abschaltung beim Kunden brauchen, und bei langen Einsätzen. Geplante Wartung aus Wartungsplänen ist der erste Kandidat für einen Agenten, weil die Regeln bekannt sind. Welche Agenten heute schon funktionieren, steht in [KI-Agenten im Field Service](/blog/ki-agenten-aussendienst-field-service/), die Sicht auf die Fertigung im Kapitel [KI-Agenten in der Fertigung](/masterclass/ki-salesforce/ki-agenten-in-der-fertigung/) der KI-Masterclass, Einführung und Kosten in [Kapitel 5](/masterclass/field-service/field-service-ki-agenten-einfuehrung/). Ein Agent bucht mit derselben Policy wie die Engine, alles aus diesem Kapitel gilt also auch für ihn.
 
 ## Rechenbeispiel: vier Disponenten verlassen Excel
 
@@ -151,7 +151,7 @@ Diese Entscheidungen brauchen einen Namen, bevor ein Partner die Terminplanung k
 | Policy-Verantwortung | Eine Person im Servicemanagement verantwortet Scheduling Policies, Work Rules und Gewichte und gibt jede Änderung frei. |
 
 ```hinweis achtung
-Policies, Work Rules, Arbeitszeiten und Gebiete sind Datensätze und keine Metadaten. Ein Metadaten-Deployment überträgt sie nicht, sie gehören deshalb in die Pipeline, wie im Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass beschrieben. Sonst laufen getestete Sandbox und Produktion nach der ersten Änderung auseinander.
+Policies, Work Rules, Arbeitszeiten und Gebiete sind Datensätze und keine Metadaten. Ein Metadaten-Deployment überträgt sie nicht, sie gehören deshalb in die Pipeline, wie im Kapitel [Daten und Konfiguration](/masterclass/devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass beschrieben. Sonst laufen getestete Sandbox und Produktion nach der ersten Änderung auseinander.
 ```
 
-Wo das Planungsdesign ERP, Projektwerkzeuge und Partner berührt, unterstütze ich bei der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Der nächste Schritt für die Techniker ist die App: [Kapitel 3](../field-service-mobile-app-dokumente/) behandelt Offline-Daten, Formulare und Serviceberichte, die [Übersicht](../) zeigt alle Kapitel.
+Wo das Planungsdesign ERP, Projektwerkzeuge und Partner berührt, unterstütze ich bei der [Salesforce-Architektur](/leistungen/salesforce-architektur/). Der nächste Schritt für die Techniker ist die App: [Kapitel 3](/masterclass/field-service/field-service-mobile-app-dokumente/) behandelt Offline-Daten, Formulare und Serviceberichte, die [Übersicht](/masterclass/field-service/) zeigt alle Kapitel.

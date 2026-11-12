@@ -50,15 +50,15 @@ The [product service campaign data model](https://developer.salesforce.com/docs/
 | Preferred partner | The service partner that carries out the work in a region, with a ranking |
 | [Definition partner inventory](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_prodtsvccmpndefptnrinv.htm) | Unsold affected units at a partner, with quantity and inventory status |
 
-The causal item also stores a replacement request type: either a credit from the supplier without returning the part, or a credit against a product return. That records the intended treatment; the actual recovery is handled as a separate supplier recovery claim, which the supplier can approve in full, in part or not at all. [Warranty claims from dealers](../warranty-claims-dealers-salesforce/) describes that process for single claims. The data model diagram also lists work orders, service appointments, return orders and claims.
+The causal item also stores a replacement request type: either a credit from the supplier without returning the part, or a credit against a product return. That records the intended treatment; the actual recovery is handled as a separate supplier recovery claim, which the supplier can approve in full, in part or not at all. [Warranty claims from dealers](/en/blog/warranty-claims-dealers-salesforce/) describes that process for single claims. The data model diagram also lists work orders, service appointments, return orders and claims.
 
 ## How do you find the affected machines?
 
 This is where most recalls go wrong, in Salesforce or anywhere else. The definition records the scope by product, production period and serial number range, and it can link production batches. The selection itself is done through an actionable list that segments the assets and adds them to the campaign, or you create items by hand. Either way, the data has to be in place:
 
-- **Every machine exists as an asset, usually with a serial number.** How to load the installed base is covered in [installed base in Manufacturing Cloud](../installed-base-asset-milestones/).
+- **Every machine exists as an asset, usually with a serial number.** How to load the installed base is covered in [installed base in Manufacturing Cloud](/en/blog/installed-base-asset-milestones/).
 - **Serial numbers run in order** within a product, if you want to use ranges at all.
-- **The link from component batch to machine is known.** If a supplier's valve batch is faulty, you need to know which machines it was installed in. That as-built information is usually stored in production or PLM, as described in [spare parts by serial number](../spare-parts-by-serial-number-ai/).
+- **The link from component batch to machine is known.** If a supplier's valve batch is faulty, you need to know which machines it was installed in. That as-built information is usually stored in production or PLM, as described in [spare parts by serial number](/en/blog/spare-parts-by-serial-number-ai/).
 
 If one of these is missing, you choose between two bad options. If you select too broadly, you pay for work on machines that are unaffected. If you select too narrowly, faulty machines remain in the field. I would test the selection logic against one past quality case before trusting it with a real recall.
 
@@ -72,9 +72,9 @@ In the data model this becomes a campaign and a group definition. The causal ite
 
 ## Who carries out the work?
 
-The work is usually carried out by dealers and service partners, and sometimes by the manufacturer's own technicians. Licenses depend on the role: the campaign itself needs the Asset Service Lifecycle Management add-on, work orders depend on your base product, and dispatching, scheduling and the technician app need Field Service dispatcher and technician licenses. How partner technicians work with Field Service is covered in [Field Service service partners](../salesforce-field-service-service-partners/) and in the [Field Service masterclass chapter on assets and parts](../../masterclass/field-service/field-service-assets-maintenance-parts/).
+The work is usually carried out by dealers and service partners, and sometimes by the manufacturer's own technicians. Licenses depend on the role: the campaign itself needs the Asset Service Lifecycle Management add-on, work orders depend on your base product, and dispatching, scheduling and the technician app need Field Service dispatcher and technician licenses. How partner technicians work with Field Service is covered in [Field Service service partners](/en/blog/salesforce-field-service-service-partners/) and in the [Field Service masterclass chapter on assets and parts](/en/masterclass/field-service/field-service-assets-maintenance-parts/).
 
-Dealers without Field Service can report through an Experience Cloud portal, but the external license, object permissions and update flow have to be designed and confirmed separately. Licenses for the portal are covered in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/). Whichever path you choose, completion must be reported per machine, not per dealer as a number, or the campaign status in Salesforce does not reflect reality.
+Dealers without Field Service can report through an Experience Cloud portal, but the external license, object permissions and update flow have to be designed and confirmed separately. Licenses for the portal are covered in [the Manufacturing Cloud customer portal](/en/blog/manufacturing-cloud-customer-portal/). Whichever path you choose, completion must be reported per machine, not per dealer as a number, or the campaign status in Salesforce does not reflect reality.
 
 ## When is a list in the quality system enough?
 
@@ -109,4 +109,4 @@ Then there is the license question:
 Salesforce Help names the Industries Field Service add-on (Asset Service Lifecycle Management) as the license for product service campaigns, but the [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) does not mention them. Ask Salesforce to confirm in writing which of your editions include the feature, for which users and at what price.
 ```
 
-I walk through the reporting route from question 3 with two dealers before the first campaign starts. For the full after-sales picture, see the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.
+I walk through the reporting route from question 3 with two dealers before the first campaign starts. For the full after-sales picture, see the [warranty and after-sales chapter](/en/masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.

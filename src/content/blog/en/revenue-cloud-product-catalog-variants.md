@@ -30,7 +30,7 @@ In the Revenue Cloud product catalog, a machine builder models the sales view, n
 
 ## What does the Revenue Cloud product catalog consist of?
 
-Product Catalog Management is the part of Agentforce Revenue Management, formerly Revenue Cloud, that holds products and their structure. I keep the name Revenue Cloud here because the licenses still carry it, for example Revenue Cloud Advanced. Trailhead calls it "a centralized product model that's the single source of truth for product data", and other clouds such as Agentforce Manufacturing (Manufacturing Cloud) can use the same product and pricing information through APIs, according to the [Revenue Cloud foundations module](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management). The documentation also uses the shorter Revenue Management; the [overview of product names](../revenue-cloud-product-names-rlm-rca/) sorts this out.
+Product Catalog Management is the part of Agentforce Revenue Management, formerly Revenue Cloud, that holds products and their structure. I keep the name Revenue Cloud here because the licenses still carry it, for example Revenue Cloud Advanced. Trailhead calls it "a centralized product model that's the single source of truth for product data", and other clouds such as Agentforce Manufacturing (Manufacturing Cloud) can use the same product and pricing information through APIs, according to the [Revenue Cloud foundations module](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management). The documentation also uses the shorter Revenue Management; the [overview of product names](/en/blog/revenue-cloud-product-names-rlm-rca/) sorts this out.
 
 The building blocks, per the [Trailhead module on product catalog management](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/get-started-with-product-catalog-management):
 
@@ -56,7 +56,7 @@ The key decision is when a variant becomes a product and when it stays an attrib
 
 A separate material number in SAP is not enough for a separate product. Salesforce [describes the opposite](https://help.salesforce.com/s/articleView?id=ind.rev_product_and_attributes_migration.htm&language=en_US&type=5): several ERP SKUs can become one commercial product with attributes, and Dynamic Revenue Orchestrator uses decomposition rules to map the selection to the SKU fulfillment needs. Product variations, available since Summer '26, group sellable products under a shared parent.
 
-Sales agreements do not force separate products either. The [help article](https://help.salesforce.com/s/articleView?id=ind.sa_user_addprod_task.htm&language=en_US&type=5) shows the same diesel generator twice, with 2,000 and 2,500 kilowatts, as two lines in one agreement. See also [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
+Sales agreements do not force separate products either. The [help article](https://help.salesforce.com/s/articleView?id=ind.sa_user_addprod_task.htm&language=en_US&type=5) shows the same diesel generator twice, with 2,000 and 2,500 kilowatts, as two lines in one agreement. See also [from quote to sales agreement](/en/blog/quote-to-sales-agreement-product-configurator/).
 
 I give a variant its own product when it has its own price list, its own service model or its own lifecycle. A serial number alone is not a reason, because it identifies one installed machine, not a product definition. A press brake with three bending lengths, two controls and an optional backgauge is one product with three attributes.
 
@@ -64,7 +64,7 @@ The classification contains the attributes for each machine family. Trailhead sh
 
 Accessories and packages that sales chooses, prices or counts separately belong in a bundle. The [Trailhead unit on bundles](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/create-a-product-bundle) explains the parts: product groups inside the bundle, local cardinality per component (required, included by default, whether the quantity can be changed, with default, minimum and maximum quantity) and group cardinality with a minimum and maximum number of products. Customers cannot change static bundles, while configurable bundles can be customized during the sale. For a machine with tooling, a safety package and commissioning, that is a configurable bundle with three groups.
 
-The configurator, not the catalog, determines which combinations are allowed. How its rules work is covered in [Revenue Cloud configurator: when constraint rules pay off](../revenue-cloud-configurator-constraint-rules/).
+The configurator, not the catalog, determines which combinations are allowed. How its rules work is covered in [Revenue Cloud configurator: when constraint rules pay off](/en/blog/revenue-cloud-configurator-constraint-rules/).
 
 ## Which data comes from the ERP and which lives only in Salesforce?
 
@@ -87,7 +87,7 @@ The fifth row needs care.
 When the attribute "control" has the value "S2" in Salesforce, that value must map to a valid characteristic value or a technical product in SAP, or the order fails at handover. The codes do not have to be identical, but the mapping must be complete. I would keep a mapping table per attribute and let the integration check it before the order is activated.
 ```
 
-Who owns each object in the org is set in an [object ownership matrix](../salesforce-object-ownership-matrix/). How prices are then determined from the price book is covered in [Salesforce Pricing: how Revenue Cloud calculates prices](../revenue-cloud-pricing-procedures-explained/).
+Who owns each object in the org is set in an [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/). How prices are then determined from the price book is covered in [Salesforce Pricing: how Revenue Cloud calculates prices](/en/blog/revenue-cloud-pricing-procedures-explained/).
 
 ## Should spare parts and services get their own catalog?
 
@@ -110,7 +110,7 @@ The catalog for machine sales then contains around 140 product records. The org 
 
 ## Catalog data is configuration and needs an owner
 
-Classifications, attributes and bundles are records, not metadata. So catalog changes are tested in a sandbox and moved as data through the same pipeline as metadata. How that works with SFDMU or commercial tools is in the DevOps chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/), and the Revenue Cloud specifics are in [Revenue Cloud deployments](../revenue-cloud-configuration-deployment/).
+Classifications, attributes and bundles are records, not metadata. So catalog changes are tested in a sandbox and moved as data through the same pipeline as metadata. How that works with SFDMU or commercial tools is in the DevOps chapter on [data and configuration](/en/masterclass/devops-release-management/data-and-configuration/), and the Revenue Cloud specifics are in [Revenue Cloud deployments](/en/blog/revenue-cloud-configuration-deployment/).
 
 ```vertiefung For developers
 title: What the object deployment reference sets
@@ -127,4 +127,4 @@ The owner should be product management at the manufacturer, not the implementati
 4. **Separate machines, spare parts and services** into catalogs with different owners.
 5. **Name the catalog owner** and put the catalog under version control as data.
 
-Point 2 decides the size of the catalog: a variant without its own price list, service model or lifecycle stays an attribute and receives no product record of its own. The full chapter is in the masterclass section [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/), and drawing the line between SAP and Salesforce is part of my [Salesforce architecture](../../services/salesforce-architecture/) work.
+Point 2 decides the size of the catalog: a variant without its own price list, service model or lifecycle stays an attribute and receives no product record of its own. The full chapter is in the masterclass section [catalog, configurator, pricing](/en/masterclass/revenue-cloud/product-catalog-configurator-pricing/), and drawing the line between SAP and Salesforce is part of my [Salesforce architecture](/en/services/salesforce-architecture/) work.

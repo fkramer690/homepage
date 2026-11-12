@@ -52,7 +52,7 @@ Eine Agentur oder ein Implementierungspartner ist die richtige Wahl, wenn Sie Ka
 - **Betrieb und Support.** Störungen am Montagmorgen, Releases dreimal im Jahr, neue Nutzer: Das braucht eine Organisation, keinen Einzelnen.
 - **Spitzen in der Umsetzung.** Vor einem Go-live mehr Leute, danach weniger. Das kann ein Partner leisten, ein Freelancer nicht.
 
-Ein guter Partner bringt dazu eigene Architekten mit. Das ist sinnvoll, solange es nur einen Partner gibt und der Kunde dessen Entscheidungen nachvollziehen kann. Woran Sie einen guten Partner schon im Angebot erkennen, steht in [Salesforce-Implementierungspartner auswählen](../salesforce-implementierungspartner-auswaehlen/).
+Ein guter Partner bringt dazu eigene Architekten mit. Das ist sinnvoll, solange es nur einen Partner gibt und der Kunde dessen Entscheidungen nachvollziehen kann. Woran Sie einen guten Partner schon im Angebot erkennen, steht in [Salesforce-Implementierungspartner auswählen](/blog/salesforce-implementierungspartner-auswaehlen/).
 
 ## Wann passt ein unabhängiger Architekt besser?
 
@@ -73,10 +73,10 @@ contra: Was er nicht leistet
 
 Typische Situationen, in denen ich gerufen werde:
 
-- **Mehrere Partner an einer Org.** Jeder Partner baut nach seinen eigenen Regeln, bis die Automationen auf einem Objekt sich gegenseitig blockieren. Wer welches Objekt verantwortet, regelt eine [Object Ownership Matrix](../object-ownership-matrix-salesforce/), und die gehört dem Kunden.
+- **Mehrere Partner an einer Org.** Jeder Partner baut nach seinen eigenen Regeln, bis die Automationen auf einem Objekt sich gegenseitig blockieren. Wer welches Objekt verantwortet, regelt eine [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/), und die gehört dem Kunden.
 - **Entscheidungen vor der Unterschrift.** Ob sich die Manufacturing Cloud lohnt oder ein Eigenbau auf der Plattform reicht, sollte nicht der beantworten, der die Lizenzen oder das Projekt verkauft. Bei Lizenzen sehe ich regelmäßig, dass standardmäßig volle Lizenzen angeboten werden, obwohl viele Nutzer sie nicht brauchen. Das kann schnell sechsstellige Beträge pro Jahr ausmachen.
-- **Qualität sichern, die der Kunde nicht selbst prüfen kann.** Ein Architekt auf Kundenseite liest mit, bevor etwas in Produktion geht. Warum das in Enterprise-Projekten Pflicht ist, steht in [Pull-Request-Reviews](../warum-pull-request-reviews-pflicht-sind/).
-- **Werkzeuge und Wissen beim Kunden halten.** Repository, Pipeline und Entscheidungen gehören dem Kunden, damit ein Partnerwechsel möglich bleibt. Das beschreibe ich ausführlich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/).
+- **Qualität sichern, die der Kunde nicht selbst prüfen kann.** Ein Architekt auf Kundenseite liest mit, bevor etwas in Produktion geht. Warum das in Enterprise-Projekten Pflicht ist, steht in [Pull-Request-Reviews](/blog/warum-pull-request-reviews-pflicht-sind/).
+- **Werkzeuge und Wissen beim Kunden halten.** Repository, Pipeline und Entscheidungen gehören dem Kunden, damit ein Partnerwechsel möglich bleibt. Das beschreibe ich ausführlich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
 ## Architekt und Partner haben getrennte Rollen
 
@@ -94,13 +94,13 @@ In den meisten Programmen, in denen ich arbeite, gibt es beides: Partner, die ba
 In meinem größten Programm haben 5 Implementierungspartner mit über 30 Entwicklern in 8 Streams an derselben Org gebaut. Die Standards dafür, von Namenskonventionen über einen Einstiegspunkt für Automatisierung pro Objekt bis zur Object Ownership Matrix, haben rund drei Monate gebraucht. 80 Prozent standen nach der ersten Runde, die Randfälle folgten nach und nach. Später wurden Änderungen mit Vorlauf im alle zwei Wochen stattfindenden technischen CoE-Call vorgestellt, bis neue Randfälle kaum noch auftraten.
 ```
 
-Kein einzelner Partner hätte diese Rolle übernehmen können, ohne Regeln für seine Wettbewerber festzulegen. Und kein Freelancer hätte die Arbeit der 30 Entwickler leisten können. Wie das passende Gremium aussieht, steht in [Salesforce Center of Excellence: Format und Rhythmus](../salesforce-center-of-excellence-format/).
+Kein einzelner Partner hätte diese Rolle übernehmen können, ohne Regeln für seine Wettbewerber festzulegen. Und kein Freelancer hätte die Arbeit der 30 Entwickler leisten können. Wie das passende Gremium aussieht, steht in [Salesforce Center of Excellence: Format und Rhythmus](/blog/salesforce-center-of-excellence-format/).
 
 ## Mit diesen Fragen prüfen Sie einen freiberuflichen Architekten
 
 Wenn Sie einen Architekten für Ihre Seite des Tisches suchen, helfen andere Fragen als bei einem Entwickler:
 
-- **Welche Entscheidung hat er zuletzt vorbereitet, und wie ist sie dokumentiert?** Lassen Sie sich ein anonymisiertes [Entscheidungslog](../salesforce-architektur-entscheidungslog/) zeigen. Wer keines führt, hinterlässt Ihnen später nur seine Erinnerung.
+- **Welche Entscheidung hat er zuletzt vorbereitet, und wie ist sie dokumentiert?** Lassen Sie sich ein anonymisiertes [Entscheidungslog](/blog/salesforce-architektur-entscheidungslog/) zeigen. Wer keines führt, hinterlässt Ihnen später nur seine Erinnerung.
 - **Wie viele Partner hat er gleichzeitig gesteuert?** Ein Architekt, der nur innerhalb eines Partners gearbeitet hat, kennt die Konflikte zwischen Partnern nicht aus eigener Anschauung.
 - **Wo sagt er Nein?** Fragen Sie nach einer Rolle, die er abgelehnt hat. Ich nehme zum Beispiel keine reinen Admin- oder Entwicklerrollen an und keine Rollen, in denen die Architektur schon feststeht und nur noch abgenommen werden soll.
 - **Wie regelt er Ausfälle?** Auf Kollegen als Vertretung kann ein Freelancer nicht ohne Weiteres zurückgreifen, außer es ist eine benannte Vertretung vereinbart. Was es geben muss: dokumentierte Standards, ein Entscheidungslog und einen internen Kollegen, der Reviews und Calls übernehmen kann. In einem Programm ging anfangs jeder Pull Request über meinen Schreibtisch; sobald der Prozess stabil funktionierte, habe ich das an einen internen Kollegen übergeben.
@@ -108,4 +108,4 @@ Wenn Sie einen Architekten für Ihre Seite des Tisches suchen, helfen andere Fra
 
 ## Aufschreiben, welche Rolle fehlt
 
-Schreiben Sie zuerst auf, welche Rolle fehlt: Kapazität, die baut, oder Kontrolle, die entscheidet. Fehlt Kapazität, suchen Sie einen Partner; ein Freelancer-Portal löst dieses Problem nicht. Fehlt Kontrolle, weil ein Partner seine eigene Arbeit prüft oder mehrere Partner nach eigenen Regeln bauen, holen Sie sich einen Architekten auf Ihre Seite, bevor die nächste Ausschreibung veröffentlicht wird. Wie ich diese Rolle ausfülle, steht auf der Seite [Freiberuflicher Salesforce Architect](../../freiberuflicher-salesforce-architect/) und unter [Partnersteuerung](../../leistungen/partnersteuerung/).
+Schreiben Sie zuerst auf, welche Rolle fehlt: Kapazität, die baut, oder Kontrolle, die entscheidet. Fehlt Kapazität, suchen Sie einen Partner; ein Freelancer-Portal löst dieses Problem nicht. Fehlt Kontrolle, weil ein Partner seine eigene Arbeit prüft oder mehrere Partner nach eigenen Regeln bauen, holen Sie sich einen Architekten auf Ihre Seite, bevor die nächste Ausschreibung veröffentlicht wird. Wie ich diese Rolle ausfülle, steht auf der Seite [Freiberuflicher Salesforce Architect](/freiberuflicher-salesforce-architect/) und unter [Partnersteuerung](/leistungen/partnersteuerung/).

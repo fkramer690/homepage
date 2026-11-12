@@ -31,7 +31,7 @@ A B2B store needs Advanced Pricing powered by Revenue Cloud when its prices foll
 
 ## What does Advanced Pricing add to a B2B store?
 
-Standard pricing in Salesforce B2B Commerce, which Salesforce now also markets as Agentforce Commerce for B2B, works with price books and a pricing strategy. That covers list prices and dealer tiers, as I describe in [customer prices in B2B Commerce](../b2b-commerce-customer-prices-price-books-erp/). Simple volume tiers work there too, with price adjustment schedules. More complex calculations, such as surcharges by product attribute or contract prices with their own tiers, need either custom code or a pricing engine.
+Standard pricing in Salesforce B2B Commerce, which Salesforce now also markets as Agentforce Commerce for B2B, works with price books and a pricing strategy. That covers list prices and dealer tiers, as I describe in [customer prices in B2B Commerce](/en/blog/b2b-commerce-customer-prices-price-books-erp/). Simple volume tiers work there too, with price adjustment schedules. More complex calculations, such as surcharges by product attribute or contract prices with their own tiers, need either custom code or a pricing engine.
 
 [Salesforce Help on Agentforce Revenue Management for B2B Commerce](https://help.salesforce.com/s/articleView?id=commerce.comm_revenue_intro.htm&language=en_US&type=5) lists what the Revenue Cloud side brings into the store. Not all of it is pricing: bundles, Request for Quote, qualification rules and subscriptions come with the same license combination.
 
@@ -87,7 +87,7 @@ contra: I would be cautious when
 - the store sells mainly spare parts at tier prices, which price books and price adjustment schedules handle
 ```
 
-Where your pricing engine should live in general is covered in the chapter [catalog, configurator and pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/) of the Revenue Cloud masterclass. For the store, the decision follows the price master: the system that sales trusts for a quote should also price the cart.
+Where your pricing engine should live in general is covered in the chapter [catalog, configurator and pricing](/en/masterclass/revenue-cloud/product-catalog-configurator-pricing/) of the Revenue Cloud masterclass. For the store, the decision follows the price master: the system that sales trusts for a quote should also price the cart.
 
 ## Worked example: spare parts store with 30 contract customers
 
@@ -99,6 +99,6 @@ Change one assumption: the manufacturer quotes machines in SAP and has no Revenu
 
 ## Write down your pricing logic and contract prices
 
-Write down three things before you talk to Salesforce about licenses: where your pricing logic lives today, who maintains contract prices, and whether you need Request for Quote or configured bundles in the store. If two of the three point to Salesforce, Advanced Pricing is worth a proof of concept with your real procedures. The license question belongs in the same make-or-buy review I describe under [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
+Write down three things before you talk to Salesforce about licenses: where your pricing logic lives today, who maintains contract prices, and whether you need Request for Quote or configured bundles in the store. If two of the three point to Salesforce, Advanced Pricing is worth a proof of concept with your real procedures. The license question belongs in the same make-or-buy review I describe under [make-or-buy and license forecasts](/en/services/make-or-buy-licences/).
 
-The wider picture of prices, quotes and checkout is in the chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/). How buyers turn a cart into a quote is covered in [Request for Quote in B2B Commerce](../request-for-quote-b2b-commerce-cart-to-quote/), and the dealer side of AI-built quotes is covered in [AI Partner Sales Assistant](../ai-partner-sales-assistant-dealer-quotes/).
+The wider picture of prices, quotes and checkout is in the chapter [prices, cart and checkout](/en/masterclass/b2b-commerce/prices-cart-checkout/) of the [B2B Commerce masterclass](/en/masterclass/b2b-commerce/). How buyers turn a cart into a quote is covered in [Request for Quote in B2B Commerce](/en/blog/request-for-quote-b2b-commerce-cart-to-quote/), and the dealer side of AI-built quotes is covered in [AI Partner Sales Assistant](/en/blog/ai-partner-sales-assistant-dealer-quotes/).

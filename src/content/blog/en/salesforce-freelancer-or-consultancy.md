@@ -52,7 +52,7 @@ A consultancy or implementation partner is the right choice when you need delive
 - **Run and support.** Incidents on Monday morning, releases three times a year, new users: that needs an organization, not one person.
 - **Peaks in delivery.** More people before go-live, fewer afterwards. A partner can do that, a freelancer cannot.
 
-A good partner brings its own architects. That works as long as there is one partner and the client can follow its decisions. How to spot a good partner in the proposal is covered in [how to choose a Salesforce implementation partner](../how-to-choose-a-salesforce-implementation-partner/).
+A good partner brings its own architects. That works as long as there is one partner and the client can follow its decisions. How to spot a good partner in the proposal is covered in [how to choose a Salesforce implementation partner](/en/blog/how-to-choose-a-salesforce-implementation-partner/).
 
 ## When does an independent architect fit better?
 
@@ -73,10 +73,10 @@ contra: What he does not provide
 
 Typical situations in which I am called in:
 
-- **Several partners on one org.** Each partner builds by its own rules until the automations on one object block each other. Who owns which object is settled by an [object ownership matrix](../salesforce-object-ownership-matrix/), and it belongs to the client.
+- **Several partners on one org.** Each partner builds by its own rules until the automations on one object block each other. Who owns which object is settled by an [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/), and it belongs to the client.
 - **Decisions before signing.** Whether Manufacturing Cloud is worth it or whether a custom build on the platform is enough should not be answered by whoever sells the licenses or the project. For licenses, I regularly see full licenses offered by default although many users do not need them. That can easily add up to six figures per year.
-- **Ensuring quality the client cannot check alone.** An architect on the client side reviews changes before anything goes to production. I explain why that is a must in enterprise projects in [pull request reviews](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
-- **Keeping tools and knowledge with the client.** The repository, pipeline and decisions belong to the client, so changing partners remains possible. I describe this in detail in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
+- **Ensuring quality the client cannot check alone.** An architect on the client side reviews changes before anything goes to production. I explain why that is a must in enterprise projects in [pull request reviews](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+- **Keeping tools and knowledge with the client.** The repository, pipeline and decisions belong to the client, so changing partners remains possible. I describe this in detail in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/).
 
 ## The architect and the partners have separate roles
 
@@ -94,13 +94,13 @@ In most programs I work in, there are both: partners who build, and me on the cl
 In my largest program, 5 implementation partners worked on the same org, with more than 30 developers across 8 streams. The standards for that org, from naming conventions to one automation entry point per object to the object ownership matrix, took about three months to define. 80 percent of the standards were in place after the first round, and the edge cases emerged step by step. Later, changes were presented ahead of time in the technical CoE call every two weeks, until hardly any new edge cases appeared.
 ```
 
-No single partner could have taken this role without setting the rules for its competitors. And no freelancer could have done the work of the 30 developers. How that board works is covered in [Salesforce Center of Excellence: cadence and format](../salesforce-center-of-excellence-cadence/).
+No single partner could have taken this role without setting the rules for its competitors. And no freelancer could have done the work of the 30 developers. How that board works is covered in [Salesforce Center of Excellence: cadence and format](/en/blog/salesforce-center-of-excellence-cadence/).
 
 ## These questions help you check an independent architect
 
 If you are looking for an architect on your side of the table, you need different questions than you would ask a developer:
 
-- **What was the last decision he prepared, and how is it documented?** Ask to see an anonymized [decision log](../salesforce-architecture-decision-log/). Someone who keeps no decision log leaves you with nothing but his memory.
+- **What was the last decision he prepared, and how is it documented?** Ask to see an anonymized [decision log](/en/blog/salesforce-architecture-decision-log/). Someone who keeps no decision log leaves you with nothing but his memory.
 - **How many partners has he steered at the same time?** An architect who only worked inside one partner does not know the conflicts between partners first hand.
 - **Where does he say no?** Ask about a role he turned down. I, for example, do not take pure admin or developer roles, or roles where the architecture is already fixed and only needs to be signed off.
 - **What happens if he drops out?** A freelancer has no bench of colleagues unless a named backup is agreed. The minimum is documented standards, a decision log and an internal colleague who can take over reviews and calls. In one program, every pull request crossed my desk at first, and once the process was stable, I handed it over to an internal colleague.
@@ -108,4 +108,4 @@ If you are looking for an architect on your side of the table, you need differen
 
 ## Write down which role is missing
 
-First write down which role is missing: capacity that builds, or control that decides. If capacity is missing, look for a partner, and no freelancer portal solves that. If control is missing, because a partner checks its own work or several partners build by their own rules, get an architect on your side before the next tender goes out. I describe how I fill this role on the page [Freelance Salesforce Architect](../../freelance-salesforce-architect/) and under [partner governance](../../services/partner-governance/).
+First write down which role is missing: capacity that builds, or control that decides. If capacity is missing, look for a partner, and no freelancer portal solves that. If control is missing, because a partner checks its own work or several partners build by their own rules, get an architect on your side before the next tender goes out. I describe how I fill this role on the page [Freelance Salesforce Architect](/en/freelance-salesforce-architect/) and under [partner governance](/en/services/partner-governance/).

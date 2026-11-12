@@ -44,7 +44,7 @@ What that means for the migration, block by block:
 | Billing | `blng` package | Revenue Cloud Billing on standard objects | Separate cutover, see below |
 | Reporting | Reports on package objects | Reports on standard objects | Recreate reports on CPQ objects |
 
-The detailed comparison is in [Salesforce CPQ vs Revenue Cloud: the real differences](../salesforce-cpq-vs-revenue-cloud-differences/). For planning, one point is enough: there is no upgrade button, and every line in this table is a work package.
+The detailed comparison is in [Salesforce CPQ vs Revenue Cloud: the real differences](/en/blog/salesforce-cpq-vs-revenue-cloud-differences/). For planning, one point is enough: there is no upgrade button, and every line in this table is a work package.
 
 ## Salesforce puts three readiness phases before the migration
 
@@ -61,7 +61,7 @@ Migrate
   Move product data, asset data and billing data, rebuild reporting and run change management as a parallel workstream from the start.
 ```
 
-Salesforce Help gives no fixed timeframe. The CPQ page gives 3 to 6 months as typical and adds that complex implementations can take longer. My reading: 3 months is realistic for a clean org with few price rules, while an org that has grown over years with custom scripts belongs at the upper end or beyond. A [technical debt assessment](../ai-org-assessment-technical-debt/) before the estimate tells you which one you have.
+Salesforce Help gives no fixed timeframe. The CPQ page gives 3 to 6 months as typical and adds that complex implementations can take longer. My reading: 3 months is realistic for a clean org with few price rules, while an org that has grown over years with custom scripts belongs at the upper end or beyond. A [technical debt assessment](/en/blog/ai-org-assessment-technical-debt/) before the estimate tells you which one you have.
 
 The license point matters for the budget. Help asks you to [retain at least one active CPQ license](https://help.salesforce.com/s/articleView?id=ind.rev_migration_operational_considerations_cpq_license.htm&language=en_US&type=5) throughout the migration and as long as CPQ data is still referenced; without one you lose access to historical CPQ data and reports. While you build, CPQ usually keeps quoting in production, so plan for overlapping license costs and confirm the commercial terms with Salesforce. That is one more reason not to stretch the migration over years.
 
@@ -73,7 +73,7 @@ Salesforce Help identifies three groups: product data, asset data and billing da
 2. **Selling and pricing:** product selling models and their options, price books, cost books, price book entries, then price adjustments.
 3. **Bundles and catalogs:** component groups and related components, catalogs and categories.
 4. **Assets:** CPQ subscriptions become assets, and Help says the full history chain is required. The preferred method generates assets from historical orders; creating assets directly is the alternative when the order history cannot be rebuilt. Without that chain, amendments and renewals do not work. On [Trailhead](https://trailhead.salesforce.com/content/learn/modules/asset-lifecycle-management-with-revenue-cloud/manage-customer-asset-amendments), every amendment starts from an asset and runs through a quote and an order.
-5. **Billing data:** only if you use Salesforce Billing today, with its own method and cutover plan. That part has its own article: [from Salesforce Billing to Revenue Cloud Billing](../from-salesforce-billing-to-revenue-cloud-billing/).
+5. **Billing data:** only if you use Salesforce Billing today, with its own method and cutover plan. That part has its own article: [from Salesforce Billing to Revenue Cloud Billing](/en/blog/from-salesforce-billing-to-revenue-cloud-billing/).
 
 ```hinweis tipp
 Two rules from my side. First, **if a renewal is meant to run in Revenue Cloud, migrate the subscription before its renewal date.** A contract that renews in CPQ two weeks after go-live creates exactly the double work you want to avoid.
@@ -81,7 +81,7 @@ Two rules from my side. First, **if a renewal is meant to run in Revenue Cloud, 
 Second, **leave closed quotes behind**, as Help says is typical, unless audit or reporting needs them. They either stay in CPQ as read-only history, which requires a CPQ license, or go to an archive.
 ```
 
-How catalog and prices then move from sandbox to production is a separate topic: [Revenue Cloud deployments](../revenue-cloud-configuration-deployment/).
+How catalog and prices then move from sandbox to production is a separate topic: [Revenue Cloud deployments](/en/blog/revenue-cloud-configuration-deployment/).
 
 ## What do migration tools do, and what don't they do?
 
@@ -89,7 +89,7 @@ On its CPQ page, Salesforce names three partner offerings: Forsys RevRamp for da
 
 These tools save time on products, price book entries and subscriptions. Salesforce Help is clear about the limit: tools do not replace human design decisions, "especially for custom logic and integration remapping". A price rule that fixes a historical rounding problem, a script that reads a field from SAP, an approval chain with exceptions for one country: someone has to decide whether that logic is still needed and how it should be represented in a pricing procedure.
 
-When you compare partner offers, I would ask each partner for the same three numbers: how many price rules, product rules and scripts they found in your org, and what they plan to do with each. A partner who quotes without counting is selling a range. How to set up such a comparison and which commercial model fits is covered in [fixed price vs time and materials](../fixed-price-vs-time-and-materials-ai/) and in the AI masterclass chapter on [AIforce and system integrators](../../masterclass/ai-salesforce/aiforce-and-system-integrators/).
+When you compare partner offers, I would ask each partner for the same three numbers: how many price rules, product rules and scripts they found in your org, and what they plan to do with each. A partner who quotes without counting is selling a range. How to set up such a comparison and which commercial model fits is covered in [fixed price vs time and materials](/en/blog/fixed-price-vs-time-and-materials-ai/) and in the AI masterclass chapter on [AIforce and system integrators](/en/masterclass/ai-salesforce/aiforce-and-system-integrators/).
 
 ## Worked example: a component maker on CPQ since 2018
 
@@ -104,7 +104,7 @@ The plan could look like this:
 
 Since Billing is not in use, this scenario has no billing cutover. With Salesforce Billing, the plan would also include a period-end cutover and sign-off from finance.
 
-Training per product line covers only part of the change management that Help asks for as a parallel workstream. 60 users who have quoted in CPQ for years also need to understand why their tool is changing. Why training alone rarely does it is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
+Training per product line covers only part of the change management that Help asks for as a parallel workstream. 60 users who have quoted in CPQ for years also need to understand why their tool is changing. Why training alone rarely does it is described in [Salesforce change management: why rollouts fail](/en/blog/change-management-salesforce-rollout/).
 
 ## What must the client decide itself?
 
@@ -113,7 +113,7 @@ These decisions belong to you, not to the partner or the tool:
 - **Price master:** which prices come from SAP, which are calculated in Revenue Cloud. Each price component needs one source.
 - **Cutover model:** all at once, per product line or per country, and the date CPQ becomes read-only.
 - **History:** what moves, what is archived, what stays readable in CPQ.
-- **Ownership after go-live:** who maintains classifications, constraint rules and pricing procedures. An [object ownership matrix](../salesforce-object-ownership-matrix/) helps when several partners work in the same org.
+- **Ownership after go-live:** who maintains classifications, constraint rules and pricing procedures. An [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/) helps when several partners work in the same org.
 - **License end:** when the CPQ contract ends. CPQ has no end-of-life date, so this date is yours to choose, subject to your contract terms and the need to keep CPQ data readable.
 
-Whether you should move at all, or stay on CPQ for now, is the question of [keep Salesforce CPQ or move to Revenue Cloud](../keep-salesforce-cpq-or-revenue-cloud/). The whole topic is covered in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/), and steering several partners through such a move is part of my work in [partner governance](../../services/partner-governance/).
+Whether you should move at all, or stay on CPQ for now, is the question of [keep Salesforce CPQ or move to Revenue Cloud](/en/blog/keep-salesforce-cpq-or-revenue-cloud/). The whole topic is covered in the masterclass chapter [from CPQ to Revenue Cloud](/en/masterclass/revenue-cloud/from-cpq-to-revenue-cloud/), and steering several partners through such a move is part of my work in [partner governance](/en/services/partner-governance/).

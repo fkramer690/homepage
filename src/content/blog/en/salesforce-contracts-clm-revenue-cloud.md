@@ -51,7 +51,7 @@ The authoring side is the strongest part. Trailhead lists these capabilities:
 
 For a manufacturer, the clause library and the Word integration determine whether users accept the tool. Sales wants a contract quickly from the quote; legal wants approved clauses and to negotiate in Word, not in a web form. Salesforce Contracts gives both sides their tool on the same record. Because Word documents are stored in SharePoint or OneDrive during the process, decide up front which storage location is authoritative for retention, deletion and permissions.
 
-The approval step uses the same logic as quote approvals. If approvals are already modeled for discounts, use the same approval framework for non-standard clauses, with its own business rules: sales approves the discount, legal the liability clause, finance the payment term. I explain how to set up such a matrix in [discount approvals in Revenue Cloud](../revenue-cloud-discount-approvals/).
+The approval step uses the same logic as quote approvals. If approvals are already modeled for discounts, use the same approval framework for non-standard clauses, with its own business rules: sales approves the discount, legal the liability clause, finance the payment term. I explain how to set up such a matrix in [discount approvals in Revenue Cloud](/en/blog/revenue-cloud-discount-approvals/).
 
 ## What happens after signature?
 
@@ -78,7 +78,7 @@ source: Salesforce pricing pages for Salesforce Contracts and Revenue Cloud
 The feature matrix on both pricing pages does not clearly show which edition includes which contract feature. Get the combination of base product and Contracts confirmed in the quote, and also confirm what the DocuSign integration needs on the DocuSign side.
 ```
 
-For more on license planning, see [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+For more on license planning, see [Salesforce licenses: does everyone need a full one?](/en/blog/salesforce-licences-full-licence-needed/).
 
 ## Sales agreements and service contracts stay separate objects
 
@@ -90,7 +90,7 @@ Manufacturers who use several Salesforce products quickly have three things call
 | Sales agreement | Manufacturing Cloud | Which volumes and prices were agreed per period, and are they being met? |
 | Service contract with entitlements | Service Cloud, used in Field Service for work orders | Which assets are covered, with which service level? |
 
-The sales agreement tracks planned volumes against actual volumes, as described in [sales agreements and volume shortfall](../sales-agreements-volume-shortfall-erp/). The service contract with entitlements controls what the technician may do, covered in [how to model maintenance contracts](../salesforce-field-service-maintenance-contracts/). Salesforce Contracts holds the signed document. A framework agreement may require all three: the legal text, the volume plan and the service coverage. Decide early which record is the master for which field, or you will maintain the term in three places.
+The sales agreement tracks planned volumes against actual volumes, as described in [sales agreements and volume shortfall](/en/blog/sales-agreements-volume-shortfall-erp/). The service contract with entitlements controls what the technician may do, covered in [how to model maintenance contracts](/en/blog/salesforce-field-service-maintenance-contracts/). Salesforce Contracts holds the signed document. A framework agreement may require all three: the legal text, the volume plan and the service coverage. Decide early which record is the master for which field, or you will maintain the term in three places.
 
 ## When should legal keep its own CLM tool?
 
@@ -100,8 +100,8 @@ I would keep or choose a dedicated CLM tool outside Salesforce in these cases:
 - **Most contracts are on the customer's paper.** Large OEM customers send their own purchasing terms. Then review and redlining of third-party documents matter more than templates. Salesforce Contracts offers redlining in Word and AI-assisted extraction for this scenario; test with real customer documents whether that is enough for legal.
 - **Legal does not work in Salesforce.** If lawyers would need a license only for contract review, the per-user price adds up and adoption suffers.
 
-In these cases Salesforce creates the commercial data, and an integration connects both systems through a shared contract ID. A worked example: a supplier of drive components has an in-house legal team with an existing CLM tool for all group contracts. Sales sends 300 standard supply contracts a year from quotes. Here I would generate the standard contracts in Salesforce Contracts with approved clauses and DocuSign, and send only contracts with deviating clauses to legal's tool as drafts. The signed version, status and deadlines come back from there to the Salesforce record. That keeps routine cases fast and leaves the exceptions with legal. This make-or-buy question is part of my work on [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
+In these cases Salesforce creates the commercial data, and an integration connects both systems through a shared contract ID. A worked example: a supplier of drive components has an in-house legal team with an existing CLM tool for all group contracts. Sales sends 300 standard supply contracts a year from quotes. Here I would generate the standard contracts in Salesforce Contracts with approved clauses and DocuSign, and send only contracts with deviating clauses to legal's tool as drafts. The signed version, status and deadlines come back from there to the Salesforce record. That keeps routine cases fast and leaves the exceptions with legal. This make-or-buy question is part of my work on [make-or-buy and license forecasts](/en/services/make-or-buy-licences/).
 
 ## Count your customer contracts and sort them into three groups
 
-Count your customer contracts per year and sort them into three groups: own template without changes, own template with negotiated clauses, customer's paper. If the first two groups dominate, that is a strong case for Salesforce Contracts; legal's requirements for storage, retention and review must still be part of the selection process. Then build the clause library with legal before creating the first template. How contracts fit into the path from quote to order is in the chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/).
+Count your customer contracts per year and sort them into three groups: own template without changes, own template with negotiated clauses, customer's paper. If the first two groups dominate, that is a strong case for Salesforce Contracts; legal's requirements for storage, retention and review must still be part of the selection process. Then build the clause library with legal before creating the first template. How contracts fit into the path from quote to order is in the chapter [quote, contract, order](/en/masterclass/revenue-cloud/quote-contract-order/).

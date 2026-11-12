@@ -54,11 +54,11 @@ Ein guter Release-Prozess macht Releases kleiner und häufiger. Der Fachbereich 
 | Außendienst Service | neues Wartungsprotokoll in der App | Knowledge und Ability | Key User der Region, vor dem App-Update |
 | Vertrieb in allen Ländern | nichts Sichtbares | keine | niemand |
 
-Gerade die leere Zeile zählt. Wer jede Woche Release-Mails ohne Bezug zur eigenen Arbeit erhält, überliest irgendwann auch die eine, die ihn betrifft. Wie Repository, Pipeline und Freigaben dahinter organisiert sind, steht im DevOps-Kapitel [Release-Prozess: Eigentum, Rollen und Freigaben](../../devops-release-management/release-prozess-eigentum-rollen/).
+Gerade die leere Zeile zählt. Wer jede Woche Release-Mails ohne Bezug zur eigenen Arbeit erhält, überliest irgendwann auch die eine, die ihn betrifft. Wie Repository, Pipeline und Freigaben dahinter organisiert sind, steht im DevOps-Kapitel [Release-Prozess: Eigentum, Rollen und Freigaben](/masterclass/devops-release-management/release-prozess-eigentum-rollen/).
 
 ## Wie sehen Release Notes für Anwender aus?
 
-User Stories, Felder und Flows interessieren den Fachbereich nicht. Release Notes für Anwender sind deshalb ein eigenes Dokument, und jede ihrer Fragen stärkt eine ADKAR-Stufe. Was sich für meine Gruppe ändert, notfalls mit Bildschirmfoto, und ab welchem Datum, schafft Awareness. Der Grund in einem Satz, etwa dass die Absatzplanung den Liefertermin braucht, stützt Desire. Was gleich bleibt, nimmt Unsicherheit und fehlt fast immer. Der Name des Key Users als Ansprechpartner sichert Knowledge. Pro Gruppe genügt eine halbe Seite, in mehreren Ländern in der jeweiligen Landessprache. Als Probe gebe ich den Text einem Key User ohne weitere Erklärung. Den ganzen Ablauf mit Beispielen beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../../../blog/salesforce-releases-fachbereich-kommunizieren/).
+User Stories, Felder und Flows interessieren den Fachbereich nicht. Release Notes für Anwender sind deshalb ein eigenes Dokument, und jede ihrer Fragen stärkt eine ADKAR-Stufe. Was sich für meine Gruppe ändert, notfalls mit Bildschirmfoto, und ab welchem Datum, schafft Awareness. Der Grund in einem Satz, etwa dass die Absatzplanung den Liefertermin braucht, stützt Desire. Was gleich bleibt, nimmt Unsicherheit und fehlt fast immer. Der Name des Key Users als Ansprechpartner sichert Knowledge. Pro Gruppe genügt eine halbe Seite, in mehreren Ländern in der jeweiligen Landessprache. Als Probe gebe ich den Text einem Key User ohne weitere Erklärung. Den ganzen Ablauf mit Beispielen beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](/blog/salesforce-releases-fachbereich-kommunizieren/).
 
 ```schritte
 Planung | sobald der Umfang klar ist · Product Owner und Fachbereich
@@ -85,8 +85,8 @@ In Deutschland hat der Betriebsrat nach [§ 87 BetrVG](https://www.gesetze-im-in
 Klären Sie Standortdaten, Zeiten und Auswertungen über Personen mit dem Betriebsrat, bevor sie eingerichtet sind, und schreiben Sie das Ergebnis in einfachen Worten in die Kommunikation vor dem Go-live. Eine nachträgliche Einigung kostet Wochen und Vertrauen.
 ```
 
-Für KI-Werkzeuge in der Entwicklung gilt dasselbe, siehe [KI-Coding: Betriebsrat und DSGVO](../../../blog/ki-coding-betriebsrat-dsgvo/). Wie Techniker die App annehmen, behandelt [Kapitel 3](../key-user-und-schulung/).
+Für KI-Werkzeuge in der Entwicklung gilt dasselbe, siehe [KI-Coding: Betriebsrat und DSGVO](/blog/ki-coding-betriebsrat-dsgvo/). Wie Techniker die App annehmen, behandelt [Kapitel 3](/masterclass/change-management/key-user-und-schulung/).
 
 ## Einführungsplan für das nächste Release schreiben
 
-Schreiben Sie für das nächste Release einen Einführungsplan mit einer Zeile pro betroffener Gruppe und markieren Sie die umstrittenen Zeilen. Gehen Sie mit dieser Liste zum Sponsor und vereinbaren Sie, wann er welche Änderung erklärt. Wenn kein Sponsor zu finden ist, ist das die wichtigste Erkenntnis des Plans. Die Diagnose dahinter steht in [Kapitel 1](../change-management-adkar-diagnose/), meine Arbeit dazu auf der Seite [Change Management für Salesforce-Programme](../../../leistungen/change-management/).
+Schreiben Sie für das nächste Release einen Einführungsplan mit einer Zeile pro betroffener Gruppe und markieren Sie die umstrittenen Zeilen. Gehen Sie mit dieser Liste zum Sponsor und vereinbaren Sie, wann er welche Änderung erklärt. Wenn kein Sponsor zu finden ist, ist das die wichtigste Erkenntnis des Plans. Die Diagnose dahinter steht in [Kapitel 1](/masterclass/change-management/change-management-adkar-diagnose/), meine Arbeit dazu auf der Seite [Change Management für Salesforce-Programme](/leistungen/change-management/).

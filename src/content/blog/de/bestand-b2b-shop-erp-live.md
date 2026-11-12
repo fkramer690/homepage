@@ -88,7 +88,7 @@ Verfügbarkeit SAP ..Termin..> Checkout
 
 Das hat drei Vorteile. Die Produktliste bleibt schnell, weil sie nur die Kopie liest. In dem einen Moment, in dem der Shop etwas verspricht, nämlich bei der Bestellung, nutzt er den aktuellen Wert aus SAP. Verbindlich wird die Zusage erst, wenn SAP den Auftrag anlegt oder die Menge reserviert; Prüfung und Bestellung sollten also dicht beieinander liegen. Und exakte Mengen bleiben intern, was zählt, wenn Wiederverkäufer oder Wettbewerber Zugang zum Shop haben.
 
-Dieselbe Logik gilt für Agenten. In meinem Artikel zum [Auftragsstatus aus SAP](../agentforce-sap-auftragsstatus/) gibt der Agent den bestätigten Termin aus SAP weiter und leitet keinen Termin aus Bestandszahlen ab. Ein Shop sollte es genauso halten.
+Dieselbe Logik gilt für Agenten. In meinem Artikel zum [Auftragsstatus aus SAP](/blog/agentforce-sap-auftragsstatus/) gibt der Agent den bestätigten Termin aus SAP weiter und leitet keinen Termin aus Bestandszahlen ab. Ein Shop sollte es genauso halten.
 
 ## Rechenbeispiel: 12.000 Ersatzteile in drei Lagern
 
@@ -106,9 +106,9 @@ Den fünften Punkt vergessen Teams am häufigsten. Schreiben Sie die Fallback-Re
 
 ## Wie passt das zu Field Service und Händlerbeständen?
 
-Der Bestand, den der Shop zeigt, ist oft derselbe, aus dem Field-Service-Techniker ihre Ersatzteile entnehmen. In meinem Artikel zu [Ersatzteilen in Field Service](../salesforce-field-service-ersatzteile-erp/) führt das ERP den Bestand bis ins Servicefahrzeug, Salesforce arbeitet mit einer Kopie. Der Shop ist ein zweiter Verbraucher derselben Daten. Greifen Shop und Field Service auf verschiedene Kopien mit unterschiedlichen Update-Zyklen zu, sehen Techniker und Händler für dasselbe Teil verschiedene Zahlen.
+Der Bestand, den der Shop zeigt, ist oft derselbe, aus dem Field-Service-Techniker ihre Ersatzteile entnehmen. In meinem Artikel zu [Ersatzteilen in Field Service](/blog/salesforce-field-service-ersatzteile-erp/) führt das ERP den Bestand bis ins Servicefahrzeug, Salesforce arbeitet mit einer Kopie. Der Shop ist ein zweiter Verbraucher derselben Daten. Greifen Shop und Field Service auf verschiedene Kopien mit unterschiedlichen Update-Zyklen zu, sehen Techniker und Händler für dasselbe Teil verschiedene Zahlen.
 
-Händlerbestände sind noch einmal ein eigenes Thema. Bestand beim Händler und Nachschubvorschläge dafür behandle ich in [Agentforce für Händlerbestand und Nachschub](../haendlerbestand-nachschub-agentforce/). Der Shop zeigt nur den eigenen Bestand des Herstellers.
+Händlerbestände sind noch einmal ein eigenes Thema. Bestand beim Händler und Nachschubvorschläge dafür behandle ich in [Agentforce für Händlerbestand und Nachschub](/blog/haendlerbestand-nachschub-agentforce/). Der Shop zeigt nur den eigenen Bestand des Herstellers.
 
 ## Unified Omnichannel Inventory aus Winter '27 erst auf B2B prüfen
 
@@ -116,4 +116,4 @@ Die [Winter-'27-Highlights auf Trailhead](https://trailhead.salesforce.com/conte
 
 ## Die Bestandsquelle pro Ansicht festlegen
 
-Legen Sie pro Ansicht fest, welche Bestandsquelle gilt: Produktliste, Produktseite, Warenkorb, Checkout. Definieren Sie dann die drei Zustände für Händler, den Update-Zyklus der Kopie und die Fallback-Regel, wenn SAP nicht antwortet. Wie der Bestand in die gesamte Schnittstellenliste passt, steht in [B2B Commerce und SAP: Welche Daten fließen wohin](../b2b-commerce-sap-datenfluesse/), und das [Kapitel zur ERP-Anbindung der Masterclass](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) ordnet es ein. Solche Schnittstellen unabhängig zu prüfen, gehört zu meiner Arbeit im Bereich [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Legen Sie pro Ansicht fest, welche Bestandsquelle gilt: Produktliste, Produktseite, Warenkorb, Checkout. Definieren Sie dann die drei Zustände für Händler, den Update-Zyklus der Kopie und die Fallback-Regel, wenn SAP nicht antwortet. Wie der Bestand in die gesamte Schnittstellenliste passt, steht in [B2B Commerce und SAP: Welche Daten fließen wohin](/blog/b2b-commerce-sap-datenfluesse/), und das [Kapitel zur ERP-Anbindung der Masterclass](/masterclass/b2b-commerce/erp-integration-bestand-auftraege/) ordnet es ein. Solche Schnittstellen unabhängig zu prüfen, gehört zu meiner Arbeit im Bereich [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/).

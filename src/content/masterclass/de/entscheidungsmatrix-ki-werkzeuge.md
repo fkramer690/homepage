@@ -35,7 +35,7 @@ Die erste Frage ist, ob Sie über Bauen oder über Betreiben sprechen. Das kling
 - **Bauen:** Ein Coding-Agent wie Agentforce Vibes, Claude Code, Codex oder Copilot schreibt Apex, LWC, Flows und Metadaten. Abgerechnet wird nach Tokens oder pro Nutzer. Das Ergebnis ist Code, der Review und Pipeline durchlaufen muss.
 - **Betreiben:** Ein Agentforce-Agent beantwortet Händleranfragen, prüft Garantieanträge oder liest Auftragsstatus aus dem ERP. Abgerechnet wird pro Aktion in Flex Credits. Das Ergebnis ist eine Antwort an einen Kunden oder Händler.
 
-Für beide Welten gibt es eigene Kriterien, eigene Budgets und eigene Tests. Die Begriffe dahinter erkläre ich in [Kapitel 1](../begriffe-und-landkarte/), die Salesforce-eigenen Werkzeuge in [Kapitel 2](../salesforce-werkzeuge-ki-entwicklung/) und die externen Coding-Agenten in [Kapitel 4](../externe-coding-agenten/).
+Für beide Welten gibt es eigene Kriterien, eigene Budgets und eigene Tests. Die Begriffe dahinter erkläre ich in [Kapitel 1](/masterclass/ki-salesforce/begriffe-und-landkarte/), die Salesforce-eigenen Werkzeuge in [Kapitel 2](/masterclass/ki-salesforce/salesforce-werkzeuge-ki-entwicklung/) und die externen Coding-Agenten in [Kapitel 4](/masterclass/ki-salesforce/externe-coding-agenten/).
 
 ## Die Entscheidungsmatrix für Hersteller
 
@@ -66,7 +66,7 @@ Stand 27. Oktober 2026, gestützt auf die verlinkten Seiten. Preise von Salesfor
 ```hinweis achtung
 Zeile 5 ist für deutsche Hersteller oft die entscheidende, weil sie Zeile 2 ausschließen kann. Ob eine Org in der EU Operating Zone liegt, sollte die IT vor jedem Werkzeugvergleich klären.
 
-Zeile 6 sieht harmlos aus, ist aber der Punkt, an dem ein externes Modell Kundendaten aus Produktion liest. Was dabei zu prüfen ist, steht in [Kapitel 3](../mcp-und-schnittstellen/).
+Zeile 6 sieht harmlos aus, ist aber der Punkt, an dem ein externes Modell Kundendaten aus Produktion liest. Was dabei zu prüfen ist, steht in [Kapitel 3](/masterclass/ki-salesforce/mcp-und-schnittstellen/).
 ```
 
 ## Sechs Fragen in der richtigen Reihenfolge
@@ -79,16 +79,16 @@ Prototyp oder Produktion?
 Welche Daten- und Residenzvorgaben gelten?
   Liegt die Org in der EU Operating Zone, fällt Agentforce Vibes weg. Verlangt der Datenschutz EU-Verarbeitung, fällt die Claude API von Anthropic im direkten Zugang weg, Claude über Bedrock in einer EU-Region bleibt. Für Codex habe ich keine Aussage von OpenAI gefunden, dass die [EU-Residenz für API-Projekte](https://openai.com/index/introducing-data-residency-in-europe/) auch dort gilt; das würde ich schriftlich klären.
 Welche Verträge und Werkzeuge gibt es schon?
-  Sind Flex Credits schon im Salesforce-Vertrag, liegt Vibes nahe. Hat die IT GitHub Enterprise, liegt Copilot nahe. Bei freier Wahl nehme ich Claude Code als Referenz, weil Salesforce dafür das erste offizielle Plugin gebaut hat. Den Vergleich mit allen Kriterien finden Sie in [Agentforce Vibes, Claude Code oder Copilot](../../../blog/agentforce-vibes-claude-code-copilot-vergleich/).
+  Sind Flex Credits schon im Salesforce-Vertrag, liegt Vibes nahe. Hat die IT GitHub Enterprise, liegt Copilot nahe. Bei freier Wahl nehme ich Claude Code als Referenz, weil Salesforce dafür das erste offizielle Plugin gebaut hat. Den Vergleich mit allen Kriterien finden Sie in [Agentforce Vibes, Claude Code oder Copilot](/blog/agentforce-vibes-claude-code-copilot-vergleich/).
 Was ist die Aufgabe?
   Code geht an den Coding-Agenten, Metadaten-Wissen an den API-Context-Server, Daten an Hosted MCP, Geschäftsregeln eines Laufzeit-Agenten an Agent Script, Releases an die Pipeline.
 Welches Kostenmodell passt?
-  Hohe und gleichmäßige Nutzung spricht für Pauschalen pro Nutzer, wenig oder schwankende Nutzung für Abrechnung nach Verbrauch. Die Rechnung dazu steht in [Kapitel 7](../kosten-und-token/).
+  Hohe und gleichmäßige Nutzung spricht für Pauschalen pro Nutzer, wenig oder schwankende Nutzung für Abrechnung nach Verbrauch. Die Rechnung dazu steht in [Kapitel 7](/masterclass/ki-salesforce/kosten-und-token/).
 Welche Prüfungen sind deterministisch?
-  Code Analyzer, Apex-Tests, Validierungs-Deploy und ein menschlicher Review stehen vor jedem Merge, egal welcher Agent den Code geschrieben hat. Wie diese Prüfungen aussehen, beschreibt [Kapitel 8](../best-practices-ki-code/).
+  Code Analyzer, Apex-Tests, Validierungs-Deploy und ein menschlicher Review stehen vor jedem Merge, egal welcher Agent den Code geschrieben hat. Wie diese Prüfungen aussehen, beschreibt [Kapitel 8](/masterclass/ki-salesforce/best-practices-ki-code/).
 ```
 
-Für Agenten im Betrieb steht eine siebte Frage vor allen anderen: Lohnt sich der Prozess überhaupt? Volumen, Datenqualität, ERP-Zugriff, Kostenmodell und Edition prüfe ich in [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/).
+Für Agenten im Betrieb steht eine siebte Frage vor allen anderen: Lohnt sich der Prozess überhaupt? Volumen, Datenqualität, ERP-Zugriff, Kostenmodell und Edition prüfe ich in [Agentforce für Hersteller: jetzt starten oder warten?](/blog/agentforce-ja-oder-nein-hersteller/).
 
 ## Beispiel: drei Vorhaben bei einem Maschinenbauer
 
@@ -96,9 +96,9 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud und Service Cloud, deren Org in 
 
 **Ein Prototyp für das Händlerportal.** Der Vertrieb möchte im Workshop zeigen, wie Händler Ersatzteile bestellen könnten. Das ist Zeile 1. Eine separate Developer Edition enthält keine Kundendaten, also kann der Partner dort mit Vibes oder Claude Code bauen, solange der Datenschutz das für Testdaten freigibt. Nach dem Workshop wird der Code gelöscht, nicht übernommen.
 
-**Die Coding-Agenten des Partners.** Weil die Org in der EU Operating Zone liegt, fällt Vibes für die Projektarbeit weg (Zeile 5). Übrig bleiben Copilot Enterprise über die vorhandene GitHub-Lizenz (Zeile 4) oder Claude Code über Bedrock in einer EU-Region (Zeile 3 und 5). Bei Bedrock rechnet AWS ab, also gehört dessen Preisliste in den Vergleich, nicht die von Anthropic. Wie ich Freigabeliste, Kosten und einen Vergleich an echten Backlog-Aufgaben aufsetze, steht im Szenario von [Kapitel 4](../externe-coding-agenten/). Vor der Entscheidung stehen der Betriebsrat und die Auftragsverarbeitung, beschrieben in [KI-Coding, Betriebsrat und DSGVO](../../../blog/ki-coding-betriebsrat-dsgvo/). Unabhängig vom Werkzeug arbeiten die Agenten nur in Sandboxes, und die Pipeline prüft mit Code Analyzer und Apex-Tests (Zeile 7).
+**Die Coding-Agenten des Partners.** Weil die Org in der EU Operating Zone liegt, fällt Vibes für die Projektarbeit weg (Zeile 5). Übrig bleiben Copilot Enterprise über die vorhandene GitHub-Lizenz (Zeile 4) oder Claude Code über Bedrock in einer EU-Region (Zeile 3 und 5). Bei Bedrock rechnet AWS ab, also gehört dessen Preisliste in den Vergleich, nicht die von Anthropic. Wie ich Freigabeliste, Kosten und einen Vergleich an echten Backlog-Aufgaben aufsetze, steht im Szenario von [Kapitel 4](/masterclass/ki-salesforce/externe-coding-agenten/). Vor der Entscheidung stehen der Betriebsrat und die Auftragsverarbeitung, beschrieben in [KI-Coding, Betriebsrat und DSGVO](/blog/ki-coding-betriebsrat-dsgvo/). Unabhängig vom Werkzeug arbeiten die Agenten nur in Sandboxes, und die Pipeline prüft mit Code Analyzer und Apex-Tests (Zeile 7).
 
-**Ein Agent für Auftragsstatus.** Händler fragen täglich nach Lieferterminen. Für SAP S/4 gibt es eine MuleSoft-API, das ist Zeile 10. Der Agent ruft sie als Aktion auf, die Entscheidung, welche Daten ein Händler sehen darf, liegt in Agent Script. Wie das im Detail aussieht, beschreibe ich in [Agentforce und SAP-Auftragsstatus](../../../blog/agentforce-sap-auftragsstatus/). Für das zugekaufte Werk ohne API (Zeile 11) würde ich den Agenten zunächst nicht ausrollen. RPA bricht, wenn sich Masken ändern, und ob der Systems Integration Agent das wirklich abfängt, würde ich erst an einer Kopie des Systems testen. Die Optionen dafür stehen in [altes ERP ohne API](../../../blog/altes-erp-ohne-api-ki-agenten/).
+**Ein Agent für Auftragsstatus.** Händler fragen täglich nach Lieferterminen. Für SAP S/4 gibt es eine MuleSoft-API, das ist Zeile 10. Der Agent ruft sie als Aktion auf, die Entscheidung, welche Daten ein Händler sehen darf, liegt in Agent Script. Wie das im Detail aussieht, beschreibe ich in [Agentforce und SAP-Auftragsstatus](/blog/agentforce-sap-auftragsstatus/). Für das zugekaufte Werk ohne API (Zeile 11) würde ich den Agenten zunächst nicht ausrollen. RPA bricht, wenn sich Masken ändern, und ob der Systems Integration Agent das wirklich abfängt, würde ich erst an einer Kopie des Systems testen. Die Optionen dafür stehen in [altes ERP ohne API](/blog/altes-erp-ohne-api-ki-agenten/).
 
 ```hinweis tipp
 Am Ende hat jedes Vorhaben ein anderes Werkzeug, und das ist normal. Einheitlich sind die Regeln: kein Agent in Produktion, Daten nur lesend und benannt, Release nur über die Pipeline.
@@ -110,8 +110,8 @@ Drei Fragen beantwortet keine Tabelle.
 
 | Frage | Warum die Matrix sie nicht beantwortet |
 |---|---|
-| Modellqualität für Apex | Einen öffentlichen Benchmark für Apex, Flows und Metadaten gibt es nicht, wie in [Kapitel 4](../externe-coding-agenten/) beschrieben. Entscheiden kann nur ein Vergleich an Ihrem eigenen Backlog, gemessen an Befunden im Review und Nacharbeit. |
-| Verantwortung | Wer die Regeldatei im Repository pflegt, wer Hosted-MCP-Zugänge freigibt und wer Flex Credits bezahlt, ist eine Vertragsfrage zwischen Ihnen und Ihrem Partner. Das habe ich in [Kapitel 5](../aiforce-und-systemintegratoren/) behandelt. |
+| Modellqualität für Apex | Einen öffentlichen Benchmark für Apex, Flows und Metadaten gibt es nicht, wie in [Kapitel 4](/masterclass/ki-salesforce/externe-coding-agenten/) beschrieben. Entscheiden kann nur ein Vergleich an Ihrem eigenen Backlog, gemessen an Befunden im Review und Nacharbeit. |
+| Verantwortung | Wer die Regeldatei im Repository pflegt, wer Hosted-MCP-Zugänge freigibt und wer Flex Credits bezahlt, ist eine Vertragsfrage zwischen Ihnen und Ihrem Partner. Das habe ich in [Kapitel 5](/masterclass/ki-salesforce/aiforce-und-systemintegratoren/) behandelt. |
 | Ob Salesforce der richtige Ort ist | Entscheidungen, die SAP schon trifft, gehören nicht in einen Agenten in Salesforce. Ein Flow oder ein ERP-Job ist für Routine ohne Sprache oft günstiger als jeder Agent. |
 
-Wenn Sie diese Entscheidungen für Ihre Org und Ihre Partner sortieren möchten, gehört das zu meiner Arbeit in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Wo Agenten in der Fertigung heute Nutzen bringen, behandelt [Kapitel 10](../ki-agenten-in-der-fertigung/); alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
+Wenn Sie diese Entscheidungen für Ihre Org und Ihre Partner sortieren möchten, gehört das zu meiner Arbeit in der [Salesforce-Architektur](/leistungen/salesforce-architektur/). Wo Agenten in der Fertigung heute Nutzen bringen, behandelt [Kapitel 10](/masterclass/ki-salesforce/ki-agenten-in-der-fertigung/); alle Kapitel finden Sie in der [Übersicht der Masterclass](/masterclass/ki-salesforce/).

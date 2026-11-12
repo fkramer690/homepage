@@ -31,7 +31,7 @@ Ein Hersteller braucht Salesforce B2B Commerce statt eines Portals, wenn Händle
 
 ## Was leistet ein Portal, und was ergänzt ein Shop?
 
-Ein Portal ist eine Experience-Cloud-Site, auf der externe Nutzer ihre eigenen Datensätze sehen und bearbeiten. In [Kundenportal in der Manufacturing Cloud: was Kunden sehen](../manufacturing-cloud-kundenportal/) beschreibe ich ein Portal, in dem Kunden Sales Agreements, Bestellungen, Stammdaten und Cases sahen und Produkte und Preise anfragen oder Bestellungen aufgeben konnten. Das deckt "zeig mir" und "erledige das bitte für mich" ab.
+Ein Portal ist eine Experience-Cloud-Site, auf der externe Nutzer ihre eigenen Datensätze sehen und bearbeiten. In [Kundenportal in der Manufacturing Cloud: was Kunden sehen](/blog/manufacturing-cloud-kundenportal/) beschreibe ich ein Portal, in dem Kunden Sales Agreements, Bestellungen, Stammdaten und Cases sahen und Produkte und Preise anfragen oder Bestellungen aufgeben konnten. Das deckt "zeig mir" und "erledige das bitte für mich" ab.
 
 Salesforce B2B Commerce deckt "ich kaufe das selbst" ab. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5) starten Shopbetreiber einen Store aus einer Vorlage im Experience Builder und legen Suche, Warenkorb und Checkout für Geschäftskunden fest. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) beschreibt das Datenmodell dahinter so:
 
@@ -65,7 +65,7 @@ Für Händler hängt die Portallizenz davon ab, was das Portal leisten soll: Cus
 quelle: Salesforce, Add-on Experience Cloud for Manufacturing, Listenpreise, jährliche Abrechnung
 ```
 
-Die Käuferlizenz entscheidet also selten zwischen Portal und Shop; pro einfachem Käufer kann der Store sogar günstiger sein. Den Unterschied machen die Commerce-Edition und der Aufwand für Katalog, Preise und ERP-Aufrufe. Die Preisseite berechnet die Edition als Anteil am Warenwert, der über den Store umgesetzt wird (GMV), und nennt Preise nur auf Anfrage. Die Gebühr erkläre ich in [B2B Commerce Preise: Was das GMV-Modell kostet](../b2b-commerce-preise-gmv-modell/). Wie sich Portallizenzen von internen Lizenzen unterscheiden, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
+Die Käuferlizenz entscheidet also selten zwischen Portal und Shop; pro einfachem Käufer kann der Store sogar günstiger sein. Den Unterschied machen die Commerce-Edition und der Aufwand für Katalog, Preise und ERP-Aufrufe. Die Preisseite berechnet die Edition als Anteil am Warenwert, der über den Store umgesetzt wird (GMV), und nennt Preise nur auf Anfrage. Die Gebühr erkläre ich in [B2B Commerce Preise: Was das GMV-Modell kostet](/blog/b2b-commerce-preise-gmv-modell/). Wie sich Portallizenzen von internen Lizenzen unterscheiden, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](/blog/salesforce-lizenzen-volle-lizenz/).
 
 ## Wann lohnt sich ein Shop?
 
@@ -76,7 +76,7 @@ Ich schaue auf vier Zahlen, bevor jemand über Store-Vorlagen spricht:
 3. **Anzahl bestellender Händler und Kunden.** Bei fünf Großkunden, die über EDI bestellen, bringt ein Store wenig. Bei Hunderten kleiner Händler, die per E-Mail bestellen, bringt er viel.
 4. **Anteil der Bestellungen per Telefon und E-Mail.** Das ist das Volumen, das ein Store tatsächlich verschieben kann. Was heute schon per EDI bestellt wird, bleibt dort.
 
-Erhalten Sie diese Zahlen nicht innerhalb einer Woche aus dem ERP, würde ich sie vor jedem weiteren Schritt erheben. Sie zeigen, ob ein Store passt. Ob er sich lohnt, zeigt eine Dreijahresrechnung: Gebühr, Lizenzen, Umsetzung und Betrieb werden gesparter Zeit, weniger Fehlern und zusätzlicher Marge gegenübergestellt. Diese Rechnung gehe ich im [Business Case eines B2B-Webshops](../b2b-webshop-business-case-hersteller/) durch.
+Erhalten Sie diese Zahlen nicht innerhalb einer Woche aus dem ERP, würde ich sie vor jedem weiteren Schritt erheben. Sie zeigen, ob ein Store passt. Ob er sich lohnt, zeigt eine Dreijahresrechnung: Gebühr, Lizenzen, Umsetzung und Betrieb werden gesparter Zeit, weniger Fehlern und zusätzlicher Marge gegenübergestellt. Diese Rechnung gehe ich im [Business Case eines B2B-Webshops](/blog/b2b-webshop-business-case-hersteller/) durch.
 
 ## Rechenbeispiel: 250 Händler, 30.000 Positionen im Jahr
 
@@ -98,4 +98,4 @@ Und manchmal ist Salesforce gar nicht die Antwort. Hat das Unternehmen kein Sale
 
 ## Erster Schritt: vier Zahlen aus zwölf Monaten Bestellungen
 
-Ermitteln Sie die vier Zahlen für die letzten zwölf Monate: Bestellpositionen, Anteil mit Teilenummer, bestellende Händler, Anteil per Telefon und E-Mail. Sprechen diese Zahlen für einen Store, folgen die Fragen, wer für Preise und Bestand verantwortlich ist, welche Käufergruppen Sie brauchen und welche ERP-Aufrufe in Echtzeit laufen müssen. Diese Fragen behandle ich im [Masterclass-Kapitel zur Frage, ob sich B2B Commerce lohnt](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/). Eine unabhängige Sicht auf Make or Buy biete ich im Rahmen von [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+Ermitteln Sie die vier Zahlen für die letzten zwölf Monate: Bestellpositionen, Anteil mit Teilenummer, bestellende Händler, Anteil per Telefon und E-Mail. Sprechen diese Zahlen für einen Store, folgen die Fragen, wer für Preise und Bestand verantwortlich ist, welche Käufergruppen Sie brauchen und welche ERP-Aufrufe in Echtzeit laufen müssen. Diese Fragen behandle ich im [Masterclass-Kapitel zur Frage, ob sich B2B Commerce lohnt](/masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/). Eine unabhängige Sicht auf Make or Buy biete ich im Rahmen von [Make-or-Buy und Lizenzprognosen](/leistungen/make-or-buy-lizenzen/).

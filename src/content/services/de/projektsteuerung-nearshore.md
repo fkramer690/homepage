@@ -70,7 +70,7 @@ Programmsteuerung auf Kundenseite heißt, ein Salesforce-Programm über interne 
 
 ## Warum tun sich Nearshore-Teams schwer?
 
-Selten wegen fehlender Skills. Wenn ich ein laufendes Nearshore-Setup übernehme, finde ich fast immer dieselben vier Ursachen. Mit dem richtigen Setup lässt sich jede davon abschwächen. Die Begründung im Detail steht in [Nearshore-Teams für Salesforce: Warum höchstens acht?](../../blog/nearshore-teams-salesforce-acht-entwickler/).
+Selten wegen fehlender Skills. Wenn ich ein laufendes Nearshore-Setup übernehme, finde ich fast immer dieselben vier Ursachen. Mit dem richtigen Setup lässt sich jede davon abschwächen. Die Begründung im Detail steht in [Nearshore-Teams für Salesforce: Warum höchstens acht?](/blog/nearshore-teams-salesforce-acht-entwickler/).
 
 ```vergleich
 ohne: Was ich in schwachen Setups vorfinde
@@ -98,11 +98,11 @@ Jedes Team, das ich aufsetze, hat höchstens acht Entwickler. Mehr Kapazität be
 
 Bei der Partnerauswahl zählen für mich Kultur und Lieferbereitschaft genauso viel wie Zertifikate. Dazu gehört die Frage, wie der Partner Besetzung und Rotation regelt, denn genau dort entscheidet sich, ob das Team nach einem halben Jahr noch dasselbe ist.
 
-Ab dem ersten Tag liefert ein neues Team über dasselbe Repository, dieselben Reviews und dieselbe Pipeline wie alle anderen Teams. Wie Reviews dabei Qualität sichern und Wissen weitergeben, steht in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../../blog/warum-pull-request-reviews-pflicht-sind/).
+Ab dem ersten Tag liefert ein neues Team über dasselbe Repository, dieselben Reviews und dieselbe Pipeline wie alle anderen Teams. Wie Reviews dabei Qualität sichern und Wissen weitergeben, steht in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](/blog/warum-pull-request-reviews-pflicht-sind/).
 
 ## Steuerung über mehrere Teams und Partner
 
-Mit mehreren Teams und Partnern hält der Plan nur, wenn Abhängigkeiten und Releases abgestimmt sind. Die Regeln, mit denen mehrere Partner zusammenarbeiten, beschreibe ich unter [Partnersteuerung](../partnersteuerung/), den gemeinsamen Release-Prozess unter [DevOps und Release-Management](../devops-und-release-management/). Auf Kundenseite führe ich dafür den Programmplan, den Release-Prozess und das Reporting:
+Mit mehreren Teams und Partnern hält der Plan nur, wenn Abhängigkeiten und Releases abgestimmt sind. Die Regeln, mit denen mehrere Partner zusammenarbeiten, beschreibe ich unter [Partnersteuerung](/leistungen/partnersteuerung/), den gemeinsamen Release-Prozess unter [DevOps und Release-Management](/leistungen/devops-und-release-management/). Auf Kundenseite führe ich dafür den Programmplan, den Release-Prozess und das Reporting:
 
 ```stufen
 1 | Programmplan | Streams und Abhängigkeiten | Wer liefert wann was?

@@ -86,7 +86,7 @@ mit: Eigener Integrationsnutzer
 zitat: Der Agent darf, was der angemeldete Nutzer darf. Deshalb meldet sich bei mir nie ein Admin an.
 ```
 
-Die Verbindung über [Salesforce Headless 360](https://docs.meshmesh.io/guides/connect-salesforce-headless-360) ist selbst noch in der Beta; MeshMesh lässt dabei bei jeder Anfrage nur Lesezugriff zu. Die FAQ von MeshMesh rät ebenfalls, immer eine Sandbox oder Testumgebung zu verbinden. Welche Daten dort gespeichert sein dürfen, beschreibe ich in [Sandbox-Kundendaten: was KI-Coding-Agenten lesen dürfen](../sandbox-kundendaten-ki-coding-agenten/).
+Die Verbindung über [Salesforce Headless 360](https://docs.meshmesh.io/guides/connect-salesforce-headless-360) ist selbst noch in der Beta; MeshMesh lässt dabei bei jeder Anfrage nur Lesezugriff zu. Die FAQ von MeshMesh rät ebenfalls, immer eine Sandbox oder Testumgebung zu verbinden. Welche Daten dort gespeichert sein dürfen, beschreibe ich in [Sandbox-Kundendaten: was KI-Coding-Agenten lesen dürfen](/blog/sandbox-kundendaten-ki-coding-agenten/).
 
 ## Änderungen von MeshMesh gehören ins Repository
 
@@ -98,7 +98,7 @@ MeshMesh kann laut [Anleitung zur GitHub-Anbindung](https://docs.meshmesh.io/gui
 In einem Programm mit mehreren Implementierungspartnern lief anfangs jeder Pull Request über meinen Schreibtisch, später habe ich das an einen internen Kollegen übergeben. Die gemeinsamen Standards haben nur gegriffen, weil keine Änderung diesen Weg umging. Einen KI-Agenten behandle ich wie einen weiteren Entwickler: Er hält sich an dieselben Regeln, oder er arbeitet nur in seiner eigenen Sandbox.
 ```
 
-Was ein Review bei Code von Agenten zusätzlich prüfen sollte, steht in [KI-generierten Salesforce-Code prüfen](../ki-generierten-salesforce-code-pruefen/). Wie eine Pipeline für mehrere Teams aufgebaut ist, beschreibe ich auf der Seite zu [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
+Was ein Review bei Code von Agenten zusätzlich prüfen sollte, steht in [KI-generierten Salesforce-Code prüfen](/blog/ki-generierten-salesforce-code-pruefen/). Wie eine Pipeline für mehrere Teams aufgebaut ist, beschreibe ich auf der Seite zu [DevOps und Release-Management](/leistungen/devops-und-release-management/).
 
 ## Wo verarbeitet MeshMesh Ihre Daten?
 
@@ -109,7 +109,7 @@ Für Ihre Datenschutzprüfung zählen diese Angaben aus der Dokumentation von Me
 - **Netzwerk:** zwei feste IPv4-Adressen, die sich alle Kunden teilen. Wer die Login-IP-Bereiche seiner Org einschränkt, muss beide freigeben.
 - **Protokolle:** vollständige Audit Trails für alle Aktionen laut [Sicherheitsseite](https://docs.meshmesh.io/security).
 
-Für Ihren Datenschutzbeauftragten ist MeshMesh damit ein weiterer Dienstleister mit Verarbeitung in den USA. Das schließt einen Test nicht aus, gehört aber vor den ersten Login in die Prüfung. An deutschen Standorten ist außerdem der Betriebsrat beteiligt: Ein Werkzeug, das Nutzungsdaten pro Person erzeugt, unterliegt in der Regel der Mitbestimmung nach § 87 Abs. 1 Nr. 6 BetrVG. Die Einzelheiten beschreibe ich in [KI-Coding-Tools: Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/). Lassen Sie sich vor dem ersten Login außerdem schriftlich bestätigen, welche Unterauftragsverarbeiter beteiligt sind, wie lange MeshMesh Org-Metadaten und Abfrageergebnisse aufbewahrt und auf welcher Vertragsgrundlage Sie an der Beta teilnehmen.
+Für Ihren Datenschutzbeauftragten ist MeshMesh damit ein weiterer Dienstleister mit Verarbeitung in den USA. Das schließt einen Test nicht aus, gehört aber vor den ersten Login in die Prüfung. An deutschen Standorten ist außerdem der Betriebsrat beteiligt: Ein Werkzeug, das Nutzungsdaten pro Person erzeugt, unterliegt in der Regel der Mitbestimmung nach § 87 Abs. 1 Nr. 6 BetrVG. Die Einzelheiten beschreibe ich in [KI-Coding-Tools: Betriebsrat und DSGVO](/blog/ki-coding-betriebsrat-dsgvo/). Lassen Sie sich vor dem ersten Login außerdem schriftlich bestätigen, welche Unterauftragsverarbeiter beteiligt sind, wie lange MeshMesh Org-Metadaten und Abfrageergebnisse aufbewahrt und auf welcher Vertragsgrundlage Sie an der Beta teilnehmen.
 
 ## Der Health Check von MeshMesh ersetzt keine eigene Prüfung
 
@@ -125,7 +125,7 @@ titel: Audit Snapshot of Org Health: guter Startpunkt, kein Gutachten
 besser: Für Lizenzverhandlung und Zielarchitektur: Aufgaben der Nutzer und Datenflüsse unabhängig prüfen.
 ```
 
-Aus meiner Pre-Sales-Arbeit mit Salesforce weiß ich, dass standardmäßig volle Lizenzen angeboten werden, auch für Nutzer, die nur lesen oder Datensätze freigeben. Bei großer Nutzerbasis sind das schnell sechsstellige Beträge pro Jahr. Ungenutzte Plätze zeigt der Health Check an; ob ein aktiver Nutzer eine günstigere Lizenzart bräuchte, zeigt erst der Blick auf seine Aufgaben, wie ich ihn bei [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/) mache. Was eine KI-gestützte Analyse vor einem Partnerwechsel leisten muss, beschreibe ich in [KI-Org-Analyse: technische Schulden vor dem Partnerwechsel](../ki-org-analyse-technische-schulden/).
+Aus meiner Pre-Sales-Arbeit mit Salesforce weiß ich, dass standardmäßig volle Lizenzen angeboten werden, auch für Nutzer, die nur lesen oder Datensätze freigeben. Bei großer Nutzerbasis sind das schnell sechsstellige Beträge pro Jahr. Ungenutzte Plätze zeigt der Health Check an; ob ein aktiver Nutzer eine günstigere Lizenzart bräuchte, zeigt erst der Blick auf seine Aufgaben, wie ich ihn bei [Make-or-Buy und Lizenzen](/leistungen/make-or-buy-lizenzen/) mache. Was eine KI-gestützte Analyse vor einem Partnerwechsel leisten muss, beschreibe ich in [KI-Org-Analyse: technische Schulden vor dem Partnerwechsel](/blog/ki-org-analyse-technische-schulden/).
 
 ## Erster Schritt: MeshMesh bis Ende Januar in einer Developer-Sandbox testen
 

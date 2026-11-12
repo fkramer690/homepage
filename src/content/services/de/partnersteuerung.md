@@ -109,15 +109,15 @@ Asset | stimmt sich ab | Verantwortlich * | stimmt sich ab
 Work Order | stimmt sich ab | stimmt sich ab | Verantwortlich *
 ```
 
-Aufbau und Beispiel der Matrix stehen in [Object Ownership Matrix: Wer ändert welches Objekt?](../../blog/object-ownership-matrix-salesforce/).
+Aufbau und Beispiel der Matrix stehen in [Object Ownership Matrix: Wer ändert welches Objekt?](/blog/object-ownership-matrix-salesforce/).
 
-In den Wochen nach der ersten Version tauchten neue Randfälle auf. Wir haben sie in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) besprochen, in denen wir anstehende Änderungen mit genug Vorlauf für alle Streams vorgestellt haben. Mit der Zeit gab es kaum noch neue Randfälle, weil Themen besprochen wurden, bevor sie zu Konflikten wurden. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
+In den Wochen nach der ersten Version tauchten neue Randfälle auf. Wir haben sie in regelmäßigen [Center-of-Excellence-Calls](/blog/salesforce-center-of-excellence-format/) besprochen, in denen wir anstehende Änderungen mit genug Vorlauf für alle Streams vorgestellt haben. Mit der Zeit gab es kaum noch neue Randfälle, weil Themen besprochen wurden, bevor sie zu Konflikten wurden. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
 
 ## Regeln und Werkzeuge gehören dem Kunden
 
 Auch ein Partner kann gute Standards schreiben. Legt er die Regeln fest, entscheidet er aber, wie alle anderen bauen, auch seine Wettbewerber. Liegen dazu Repository, Pipeline und Tools wie Jira oder Miro bei ihm, wird jeder Partnerwechsel teuer.
 
-Gehören Standards, Freigaberechte und Tools dem Kunden, startet ein neuer Partner mit denselben Regeln, Tools und Rechten wie alle anderen. Ein Partner, der geht, übergibt offene Arbeit und Wissen, während Repository, Pipeline und Standards bleiben, wo sie sind. Angebote lassen sich dann fair vergleichen, weil alle unter denselben Bedingungen liefern. Mehr dazu in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/). Was Sie schon bei der Auswahl eines Partners dazu fragen sollten, steht in [Salesforce-Implementierungspartner auswählen](../../blog/salesforce-implementierungspartner-auswaehlen/).
+Gehören Standards, Freigaberechte und Tools dem Kunden, startet ein neuer Partner mit denselben Regeln, Tools und Rechten wie alle anderen. Ein Partner, der geht, übergibt offene Arbeit und Wissen, während Repository, Pipeline und Standards bleiben, wo sie sind. Angebote lassen sich dann fair vergleichen, weil alle unter denselben Bedingungen liefern. Mehr dazu in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/). Was Sie schon bei der Auswahl eines Partners dazu fragen sollten, steht in [Salesforce-Implementierungspartner auswählen](/blog/salesforce-implementierungspartner-auswaehlen/).
 
 ## Wie passen Reviews hinein, ohne das Programm auszubremsen?
 
@@ -129,4 +129,4 @@ Reviews machen aus schriftlichen Standards tägliche Praxis. Sie bremsen nicht, 
 3 | Feste Reaktionszeiten | Review beim Kunden | Jeder weiß, bis wann das Review kommt.
 ```
 
-Die Details beschreibe ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../../blog/warum-pull-request-reviews-pflicht-sind/). Die Pipeline, auf der diese Prüfungen laufen, baue ich unter [DevOps und Release-Management](../devops-und-release-management/) auf; ohne einen gemeinsamen Release-Prozess hält kein Governance-Rahmen.
+Die Details beschreibe ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](/blog/warum-pull-request-reviews-pflicht-sind/). Die Pipeline, auf der diese Prüfungen laufen, baue ich unter [DevOps und Release-Management](/leistungen/devops-und-release-management/) auf; ohne einen gemeinsamen Release-Prozess hält kein Governance-Rahmen.

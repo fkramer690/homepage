@@ -30,7 +30,7 @@ draft: false
 
 In Salesforce Field Service, the license is determined by what a person does in the system, not by the job title, and the price list sets hard rules for the mix. Dispatchers and technicians get Dispatcher or Technician at $175 per user per month. Hotline agents who work cases need Service Cloud, and if they also dispatch, a Field Service+ edition, from $250. Partner technicians get Contractor Plus at $80 per user or $32 per login. Two rules decide most bills: Dispatcher and Technician licenses may not be used for case management, and scheduling in Salesforce needs at least one Service Cloud license and dispatcher rights in the org.
 
-Further questions about the product, from implementation to the ERP, are answered in the topic hub [Salesforce Field Service for manufacturers](../../masterclass/field-service/).
+Further questions about the product, from implementation to the ERP, are answered in the topic hub [Salesforce Field Service for manufacturers](/en/masterclass/field-service/).
 
 ## What do the Field Service licenses cost?
 
@@ -45,7 +45,7 @@ Salesforce now sells the product as Field Service and Operations. The [Field Ser
 | Contractor Plus | Contractor portal and mobile app access | $80 per user or $32 per login |
 | Field Service Max | Advanced plus the Agentforce suite, Visual Remote Assistant, Asset Service Lifecycle Management, 2.75M Flex Credits per org and year | $650 |
 
-On Unlimited Edition, Dispatcher and Technician cost $330 according to the footnote. The German pricing page still showed the old model with Field Service Plus on 9 November 2026, so confirm in the quote which model your contract uses. Whether the $650 Max edition pays off is a separate calculation, covered in [Field Service Max: when does the bundle pay off?](../agentforce-1-field-service-edition-worth-it/).
+On Unlimited Edition, Dispatcher and Technician cost $330 according to the footnote. The German pricing page still showed the old model with Field Service Plus on 9 November 2026, so confirm in the quote which model your contract uses. Whether the $650 Max edition pays off is a separate calculation, covered in [Field Service Max: when does the bundle pay off?](/en/blog/agentforce-1-field-service-edition-worth-it/).
 
 ## The small print changes the bill
 
@@ -74,7 +74,7 @@ I build the license matrix from what a person does in the system, not from their
 
 Service Cloud itself now comes in new editions. The [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) lists Core at $195 per user per month and says Core replaces Enterprise. For the hotline, that is the comparison price: $195 for Service Cloud Core versus $250 for Field Service+ Core. The $55 difference is the price gap between two bundles; have the exact rights confirmed in the order form.
 
-The back office is the role I check most carefully. People who only invoice in the ERP need no Salesforce license at all. People who read service reports or maintain contracts may need only a cheaper license, depending on which objects they edit. How to test that without rebuilding standard functions is covered in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+The back office is the role I check most carefully. People who only invoice in the ERP need no Salesforce license at all. People who read service reports or maintain contracts may need only a cheaper license, depending on which objects they edit. How to test that without rebuilding standard functions is covered in [Salesforce licenses: does everyone need a full one?](/en/blog/salesforce-licences-full-licence-needed/).
 
 ## When does Contractor Plus per login pay off?
 
@@ -84,7 +84,7 @@ Contractor Plus costs $80 per user per month or $32 per login. The break-even is
 The pricing page says contractor licenses are also available based on monthly logins and refers to sales for details, so I would have the counting rule written into the order form.
 ```
 
-Salesforce's [architecture guide on contractor sharing](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns.html) describes a contractor company as a third-party entity that manages its own workforce. That is who these licenses are for: your service partners, not a cheaper way to license your own staff. How partner technicians get their own service resource and territory is covered in [Field Service: how to bring in service partners](../salesforce-field-service-service-partners/).
+Salesforce's [architecture guide on contractor sharing](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns.html) describes a contractor company as a third-party entity that manages its own workforce. That is who these licenses are for: your service partners, not a cheaper way to license your own staff. How partner technicians get their own service resource and territory is covered in [Field Service: how to bring in service partners](/en/blog/salesforce-field-service-service-partners/).
 
 ## Worked example: hotline, dispatch, internal technicians and two partners
 
@@ -108,11 +108,11 @@ The point of the exercise is less the total than the decisions it forces. Who an
 - **Who handles case management.** Every person who works cases and also schedules technicians needs a Field Service+ edition. That is a process question first.
 - **How partners work.** Put regular partner technicians on user licenses and occasional ones on per-login licenses. Agree on the counting rule.
 - **Which edition.** The prices above apply to Enterprise Edition. On Unlimited Edition, Dispatcher and Technician cost $330.
-- **Which add-ons.** Agentforce for Field Service and Operations, [Visual Remote Assistant](../visual-remote-assistant-remote-help-instead-of-visit/) and Appointment Assistant are sold as add-ons; since 5 November 2026 the pricing page shows no price for them, and Field Service Max includes several. Only the roles that use these add-ons need them.
+- **Which add-ons.** Agentforce for Field Service and Operations, [Visual Remote Assistant](/en/blog/visual-remote-assistant-remote-help-instead-of-visit/) and Appointment Assistant are sold as add-ons; since 5 November 2026 the pricing page shows no price for them, and Field Service Max includes several. Only the roles that use these add-ons need them.
 - **Growth.** A three-year license forecast by role and rollout wave avoids buying 45 technician licenses on day one when the first wave has 15.
 
-How all this fits into the overall business case for Field Service is covered in [part 1 of the series](../salesforce-field-service-worth-it/) and in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/). If the service organization also runs warranty claims, check the [Manufacturing Cloud chapter on warranty and after-sales](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) before you buy licenses for the same people twice.
+How all this fits into the overall business case for Field Service is covered in [part 1 of the series](/en/blog/salesforce-field-service-worth-it/) and in [chapter 1 of the Field Service masterclass](/en/masterclass/field-service/field-service-business-case-licences/). If the service organization also runs warranty claims, check the [Manufacturing Cloud chapter on warranty and after-sales](/en/masterclass/manufacturing-cloud/warranty-and-after-sales/) before you buy licenses for the same people twice.
 
 ## List every person and what they do in the system
 
-List every person in the service organization along with what they do in the system each week, then assign the license by the rules above. I do this as part of [make-or-buy and license forecasts](../../services/make-or-buy-licences/), before the negotiation starts.
+List every person in the service organization along with what they do in the system each week, then assign the license by the rules above. I do this as part of [make-or-buy and license forecasts](/en/services/make-or-buy-licences/), before the negotiation starts.

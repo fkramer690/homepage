@@ -46,7 +46,7 @@ Learning | Which project went wrong, and what did you change? * | Only reference
 note: Each point can be clarified before the award. After the award it costs money.
 ```
 
-The first point is often underrated. In the cases I saw, the fixed price was too optimistic, and the client did not even know which functions were included in the individual work packages or whether they covered its needs. When a process then turns out to be missing, the price no longer covers the actual scope, and the protection of the fixed price erodes with every change request. How fixed price and time and materials shift now that partners build with AI is covered in [fixed price vs. time and materials](../fixed-price-vs-time-and-materials-ai/).
+The first point is often underrated. In the cases I saw, the fixed price was too optimistic, and the client did not even know which functions were included in the individual work packages or whether they covered its needs. When a process then turns out to be missing, the price no longer covers the actual scope, and the protection of the fixed price erodes with every change request. How fixed price and time and materials shift now that partners build with AI is covered in [fixed price vs. time and materials](/en/blog/fixed-price-vs-time-and-materials-ai/).
 
 ## Why references tell you little about an implementation partner
 
@@ -101,8 +101,8 @@ That gives you the questions for the pitch. Who fills the key roles from day one
 
 Ask "Will you work in our repository to our standards?" and every partner says yes. So I ask these questions indirectly: I describe a problem and let the partner explain how they would solve it. A partner with a good approach then brings it up on their own, without me prompting. Code review and test rules rarely appear in a proposal, and especially now that partners code with AI tools, a partner should explain unprompted how it reviews every change, whoever or whatever wrote it.
 
-- **Milestones and quality.** "How do your project milestones connect with delivery and quality gates?" Good answers name concrete checks: code review, test coverage and automated checks in the pipeline, but also data migration, integration tests and readiness for acceptance testing. A milestone only counts as technically complete once they all pass; the business acceptance follows, with its own criteria. More in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/) and [partners using AI coding](../partners-using-ai-coding-contract-rules/).
-- **A second partner.** "In two years another partner joins for Field Service. How do we keep the two from overwriting each other?" Good answers mention pull requests, an [object ownership matrix](../salesforce-object-ownership-matrix/) and a shared [sandbox strategy](../salesforce-sandbox-strategy-multiple-partners/).
+- **Milestones and quality.** "How do your project milestones connect with delivery and quality gates?" Good answers name concrete checks: code review, test coverage and automated checks in the pipeline, but also data migration, integration tests and readiness for acceptance testing. A milestone only counts as technically complete once they all pass; the business acceptance follows, with its own criteria. More in [quality gates for AI code](/en/blog/quality-gates-for-ai-code-salesforce-pipeline/) and [partners using AI coding](/en/blog/partners-using-ai-coding-contract-rules/).
+- **A second partner.** "In two years another partner joins for Field Service. How do we keep the two from overwriting each other?" Good answers mention pull requests, an [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/) and a shared [sandbox strategy](/en/blog/salesforce-sandbox-strategy-multiple-partners/).
 - **Taking over after go-live.** "We want to run the platform ourselves later. What do we get from you then?" This shows whether code, configuration and documentation are meant to sit with you or stay with the partner.
 
 Why I ask partners directly about projects that went wrong is the subject of an article on LinkedIn: [Every Salesforce partner has skeletons in the closet. Ask about them.](https://www.linkedin.com/pulse/every-salesforce-partner-has-skeletons-closet-ask-them-fabian-kramer-crtke/)
@@ -116,7 +116,7 @@ What sounds good in the pitch has to go into the contract, or it does not count.
 - **Quality gates with defined checks** for the technical completion of every milestone, with the evidence the partner delivers.
 - **Assumptions and exclusions** of the estimate, and a rule for edge cases the discovery did not cover: who assesses them, and under what conditions do they become change requests?
 
-If several partners work on one org, there is one more question: who sets the rules for all of them. In my largest program, five partners worked with more than 30 developers on one org, and the standards came from the client side, as described on the [partner governance](../../services/partner-governance/) page. The question of when an independent architect makes sense for this is covered in [Salesforce freelancer or consultancy](../salesforce-freelancer-or-consultancy/).
+If several partners work on one org, there is one more question: who sets the rules for all of them. In my largest program, five partners worked with more than 30 developers on one org, and the standards came from the client side, as described on the [partner governance](/en/services/partner-governance/) page. The question of when an independent architect makes sense for this is covered in [Salesforce freelancer or consultancy](/en/blog/salesforce-freelancer-or-consultancy/).
 
 ## First step: write down three problem cases for every partner
 

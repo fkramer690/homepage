@@ -36,7 +36,7 @@ Eine KI-Org-Analyse lohnt sich vor einem Relaunch oder Partnerwechsel, solange d
 
 Eine Salesforce-Org, die über zehn Jahre mit mehreren Partnern gewachsen ist, trägt deren Handschrift. Bei einem Maschinenbauer hat vielleicht ein Partner das Händlerportal gebaut, ein zweiter die Prozesse für den Außendienst mit Field Service, ein dritter die SAP-Schnittstelle für Aufträge und Ersatzteile. Jeder brachte sein eigenes Trigger-Framework, seine Namenskonventionen und seinen Teststil mit. Bevor ein neuer Partner übernimmt oder ein Relaunch startet, muss jemand klären, was in der Org enthalten ist, was davon genutzt wird und was riskant wäre, einfach weiterzubetreiben.
 
-Die naheliegenden Kandidaten für diese Analyse sind schlecht geeignet. Der scheidende Partner verteidigt seinen Code. Der neue Partner hat ein Interesse daran, möglichst viel Neubaubedarf zu finden. Eine Analyse, die der Kunde mit eigenen Tools durchführt, ist die neutrale Ausgangslage, und sie fließt später in die [Object Ownership Matrix](../object-ownership-matrix-salesforce/) für die neue Aufstellung.
+Die naheliegenden Kandidaten für diese Analyse sind schlecht geeignet. Der scheidende Partner verteidigt seinen Code. Der neue Partner hat ein Interesse daran, möglichst viel Neubaubedarf zu finden. Eine Analyse, die der Kunde mit eigenen Tools durchführt, ist die neutrale Ausgangslage, und sie fließt später in die [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/) für die neue Aufstellung.
 
 ## Was kann eine KI-Org-Analyse, was Scanner nicht können?
 
@@ -61,7 +61,7 @@ Alle Befunde, die eine Anzahl, eine Nutzungszahl oder einen Regelverstoß betref
 - **Ein neu ausgeführter Apex-Testlauf** mit festgelegtem Testlevel liefert reproduzierbare Zeilenabdeckung pro Klasse, die kein Modell schätzen sollte. Über die Qualität der Prüfungen sagt die Abdeckung nichts.
 - **Abhängigkeiten** stammen aus dem Tooling-API-Objekt [MetadataComponentDependency](https://developer.salesforce.com/docs/atlas.en-us.api_tooling.meta/api_tooling/tooling_api_objects_metadatacomponentdependency.htm), das Salesforce weiterhin als Beta kennzeichnet. Eine Abfrage liefert höchstens 2.000 Datensätze, es ist also eine Quelle unter mehreren, neben statischen Verweisen im Code und den Flow-Metadaten. Welche Person oder welcher Partner etwas gebaut hat, lässt sich aus der Git-Historie oder aus den Feldern LastModifiedBy ableiten, nicht aus Vermutungen eines Modells über den Programmierstil.
 
-Meine Regel: Enthält ein Satz im Bericht eine Zahl oder das Wort „ungenutzt“, hat ihn ein Tool erzeugt. Auch dann ist es ein Hinweis, kein Beweis dafür, dass etwas gelöscht werden kann. Wie dieselben Tools als Prüfschritte in der Pipeline eingesetzt werden, beschreibe ich in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/); für die Analyse werden sie einmal gegen die ganze Org ausgeführt.
+Meine Regel: Enthält ein Satz im Bericht eine Zahl oder das Wort „ungenutzt“, hat ihn ein Tool erzeugt. Auch dann ist es ein Hinweis, kein Beweis dafür, dass etwas gelöscht werden kann. Wie dieselben Tools als Prüfschritte in der Pipeline eingesetzt werden, beschreibe ich in [Quality Gates für KI-Code](/blog/quality-gates-ki-code-salesforce-pipeline/); für die Analyse werden sie einmal gegen die ganze Org ausgeführt.
 
 ## Rechenbeispiel: drei Partner, eine Org, ein Relaunch
 
@@ -97,7 +97,7 @@ Die [Claude Batch API](https://platform.claude.com/docs/en/build-with-claude/bat
 quelle: Claude Preisseite (Batch-Listenpreise, globale Verarbeitung, Stand 9. November 2026), Token-Mengen als Annahmen im Rechenbeispiel
 ```
 
-Prompt-Caching lässt sich mit dem Batch-Rabatt kombinieren, im Batch sind Cache-Treffer aber nicht garantiert; Anthropic nennt Trefferquoten von 30 bis 98 Prozent. Ich rechne ohne Caching und betrachte jede Ersparnis als Zugabe. Thinking-Tokens werden [als Output abgerechnet](https://code.claude.com/docs/en/costs) und lassen sich bei den 5.5-Modellen nicht abschalten; verdreifachen sie den Output, steigt der Opus-Lauf auf rund 187 $. Die Grundlagen der Token-Rechnung stehen im [Masterclass-Kapitel zu Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/).
+Prompt-Caching lässt sich mit dem Batch-Rabatt kombinieren, im Batch sind Cache-Treffer aber nicht garantiert; Anthropic nennt Trefferquoten von 30 bis 98 Prozent. Ich rechne ohne Caching und betrachte jede Ersparnis als Zugabe. Thinking-Tokens werden [als Output abgerechnet](https://code.claude.com/docs/en/costs) und lassen sich bei den 5.5-Modellen nicht abschalten; verdreifachen sie den Output, steigt der Opus-Lauf auf rund 187 $. Die Grundlagen der Token-Rechnung stehen im [Masterclass-Kapitel zu Kosten und Token](/masterclass/ki-salesforce/kosten-und-token/).
 
 ### Wo die echten Kosten liegen
 
@@ -105,15 +105,15 @@ Die Tokenkosten sind gering; den größten Aufwand verursachen die beteiligten F
 
 ## Was ist mit Quellcode und Datenschutz?
 
-Bevor Sie Quellcode hochladen, prüfen Sie, ob der Kunde ihn bei einem externen KI-Anbieter verarbeiten lassen darf. Das gilt auch für Partner-Frameworks und Komponenten Dritter in der Org. Testklassen enthalten außerdem oft Namen, E-Mail-Adressen oder Datensatz-IDs. Anthropics [Seite zur Datenaufbewahrung](https://platform.claude.com/docs/en/manage-claude/api-and-data-retention) weist die Batch-Verarbeitung als von Zero Data Retention ausgeschlossen aus, mit 29 Tagen Aufbewahrung für die gesendeten Daten wie für die Ergebnisse. Auf derselben Seite steht, dass gespeicherte Daten „never used for model training without your express permission“ werden. Entfernen Sie fest codierte personenbezogene Daten vor dem Lauf und stimmen Sie das Setup mit Ihrem Datenschutzbeauftragten ab; Betriebsrat und DSGVO behandle ich in [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
+Bevor Sie Quellcode hochladen, prüfen Sie, ob der Kunde ihn bei einem externen KI-Anbieter verarbeiten lassen darf. Das gilt auch für Partner-Frameworks und Komponenten Dritter in der Org. Testklassen enthalten außerdem oft Namen, E-Mail-Adressen oder Datensatz-IDs. Anthropics [Seite zur Datenaufbewahrung](https://platform.claude.com/docs/en/manage-claude/api-and-data-retention) weist die Batch-Verarbeitung als von Zero Data Retention ausgeschlossen aus, mit 29 Tagen Aufbewahrung für die gesendeten Daten wie für die Ergebnisse. Auf derselben Seite steht, dass gespeicherte Daten „never used for model training without your express permission“ werden. Entfernen Sie fest codierte personenbezogene Daten vor dem Lauf und stimmen Sie das Setup mit Ihrem Datenschutzbeauftragten ab; Betriebsrat und DSGVO behandle ich in [KI-Coding, Betriebsrat und DSGVO](/blog/ki-coding-betriebsrat-dsgvo/).
 
 Gilt eine strenge Vorgabe ohne Datenaufbewahrung, gibt es zwei Alternativen. Sie zahlen den vollen Preis ohne Batch, im Rechenbeispiel rund 119 $ bis 238 $. Das hilft nur, wenn Anthropic Zero Data Retention für Ihre Organisation aktiviert hat; Anthropic aktiviert das nur über sein Vertriebsteam. Oder Sie nutzen die KI-Dokumentation von sfdx-hardis, die laut [Seite zum KI-Setup](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/) mit Agentforce, OpenAI oder über LangChain.js mit Anthropic, Google GenAI und Ollama für lokal betriebene Modelle arbeitet. Dieselbe Seite warnt, dass der erste Dokumentationslauf „can make hundreds of API calls“, empfiehlt, den KI-Cache einzuchecken, und begrenzt die Aufrufe pro Befehl standardmäßig auf 10.000.
 
 ## Wem sollte die Analyse gehören?
 
-Dem Kunden. Führen Sie die Scans in Ihrer Pipeline und die Modellaufrufe in Ihrem eigenen API-Account aus und legen Sie die Ergebnisse in Ihr Repository, so wie ich es für DevOps-Werkzeuge in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/) begründe. Übernimmt ein Partner die Arbeit, nennt sein Vertrag die erlaubten Tools und Datenregeln, siehe [Regeln für Partner mit KI-Coding im Vertrag](../partner-ki-coding-regeln-vertrag/).
+Dem Kunden. Führen Sie die Scans in Ihrer Pipeline und die Modellaufrufe in Ihrem eigenen API-Account aus und legen Sie die Ergebnisse in Ihr Repository, so wie ich es für DevOps-Werkzeuge in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/) begründe. Übernimmt ein Partner die Arbeit, nennt sein Vertrag die erlaubten Tools und Datenregeln, siehe [Regeln für Partner mit KI-Coding im Vertrag](/blog/partner-ki-coding-regeln-vertrag/).
 
-Die Analyse ist der Startpunkt für die Übergabe: welche Objekte welchem Partner zugeordnet werden, welche Komponenten gelöscht und welche neu gebaut werden. Diese Steuerung gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
+Die Analyse ist der Startpunkt für die Übergabe: welche Objekte welchem Partner zugeordnet werden, welche Komponenten gelöscht und welche neu gebaut werden. Diese Steuerung gehört zu meiner Arbeit in der [Partnersteuerung](/leistungen/partnersteuerung/).
 
 ## Alle Metadaten in ein eigenes Repository abrufen
 

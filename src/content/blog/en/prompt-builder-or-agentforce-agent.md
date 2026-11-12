@@ -34,11 +34,11 @@ Use Prompt Builder when one record goes in, one piece of text comes out and a pe
 
 ## What is the difference between a prompt template and an agent?
 
-[Prompt Builder](https://trailhead.salesforce.com/content/learn/modules/prompt-builder-basics/get-to-know-prompt-builder) creates reusable prompt templates. Trailhead introduces four general types: Sales Email, Field Generation, Record Summary and Flex for everything else; product-specific standard types are available in addition. A template reads Salesforce data through merge fields, related lists, Flow, Data 360 or Apex, but only the data you ground it with. The resolved prompt passes the [Einstein Trust Layer](../einstein-trust-layer-what-it-protects/) and its configured masking. [When a template runs through an agent action](https://help.salesforce.com/s/articleView?id=ai.agent_trust_data_masking.htm&language=en_US&type=5), Salesforce disables data masking. A template is called from outside: an Einstein button next to a field on the record page, an [invocable action in Flow, Apex or the Connect REST API](https://developer.salesforce.com/blogs/2024/04/invoke-prompt-templates-from-flow-apex-or-the-rest-api).
+[Prompt Builder](https://trailhead.salesforce.com/content/learn/modules/prompt-builder-basics/get-to-know-prompt-builder) creates reusable prompt templates. Trailhead introduces four general types: Sales Email, Field Generation, Record Summary and Flex for everything else; product-specific standard types are available in addition. A template reads Salesforce data through merge fields, related lists, Flow, Data 360 or Apex, but only the data you ground it with. The resolved prompt passes the [Einstein Trust Layer](/en/blog/einstein-trust-layer-what-it-protects/) and its configured masking. [When a template runs through an agent action](https://help.salesforce.com/s/articleView?id=ai.agent_trust_data_masking.htm&language=en_US&type=5), Salesforce disables data masking. A template is called from outside: an Einstein button next to a field on the record page, an [invocable action in Flow, Apex or the Connect REST API](https://developer.salesforce.com/blogs/2024/04/invoke-prompt-templates-from-flow-apex-or-the-rest-api).
 
 An agent can choose at runtime which action comes next. According to [Trailhead on agent customisation](https://trailhead.salesforce.com/content/learn/modules/agent-customization-quick-look/customize-your-agents), an agent can read data but "can't change records without a predefined agent action". Actions are built on Flow, Apex or a prompt template. Salesforce calls Flow and Apex actions deterministic and says a prompt template action "involves a degree of randomness".
 
-So the real question is who decides the next step. With a template, your process decides: the technician presses the button, the Flow runs at 2 a.m. With an agent, the language model decides within limits you design, as described in [Agent Script instead of LLM judgment](../agent-script-deterministic-rules/).
+So the real question is who decides the next step. With a template, your process decides: the technician presses the button, the Flow runs at 2 a.m. With an agent, the language model decides within limits you design, as described in [Agent Script instead of LLM judgment](/en/blog/agent-script-deterministic-rules/).
 
 ## After-sales tasks a template covers
 
@@ -47,7 +47,7 @@ Four typical tasks in after-sales service work well with a template:
 - **Service report text.** The technician's notes and the parts used on the work order become readable text for the customer. A Field Generation template writes into a long text field, and [Trailhead](https://trailhead.salesforce.com/content/learn/modules/prompt-builder-basics/build-a-field-generation-prompt-template) notes that read-only fields are not supported. The technician corrects the text before the report goes out.
 - **Case summary.** A Record Summary template condenses a case with its emails and history when second-level support or field service takes over. The reader is a colleague who knows the machine.
 - **Dealer reply draft.** A Sales Email or Flex template drafts the answer to a dealer's question about a spare part or a delivery date. The service rep checks it and sends it.
-- **Nightly summary of open warranty claims.** Salesforce's [October 2025 developer blog](https://developer.salesforce.com/blogs/2025/10/build-and-optimize-agents-with-new-agentforce-360-features) lists batch processing for Winter '26: prompts run asynchronously, started from Flow or through an `AiJobRun` record in Apex. The same post adds JSON output with syntax checks, which a Flow or Apex then maps into fields; for a stable structure Salesforce recommends a Lightning Type as schema. The warranty reviewer starts the morning with a short status per claim. The process behind it is in [warranty claims from dealers](../warranty-claims-dealers-salesforce/).
+- **Nightly summary of open warranty claims.** Salesforce's [October 2025 developer blog](https://developer.salesforce.com/blogs/2025/10/build-and-optimize-agents-with-new-agentforce-360-features) lists batch processing for Winter '26: prompts run asynchronously, started from Flow or through an `AiJobRun` record in Apex. The same post adds JSON output with syntax checks, which a Flow or Apex then maps into fields; for a stable structure Salesforce recommends a Lightning Type as schema. The warranty reviewer starts the morning with a short status per claim. The process behind it is in [warranty claims from dealers](/en/blog/warranty-claims-dealers-salesforce/).
 
 The current [help page on batch processing](https://help.salesforce.com/s/articleView?id=ai.prompt_builder_batch_processing.htm&language=en_US&type=5) sets the limits: 1,000 items per Apex job, and, with models that support native batch processing, 10,000 items per job and up to 50,000 generations per day from Flow.
 
@@ -83,7 +83,7 @@ A 5,000-token case summary on a Standard model is three prompts, 12 credits. On 
 A prompt template called by an agent is not billed twice. According to the [help article on Help Agent billing](https://help.salesforce.com/s/articleView?id=ai.help_agent_billing.htm&language=en_US&type=5), "Prompt-Template agent actions are billed as agent actions", and the prompt usage types do not apply to actions run by an Agentforce agent.
 ```
 
-All other meters are in [Flex Credits per action](../flex-credits-agentforce-cost-per-action/).
+All other meters are in [Flex Credits per action](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 ## Worked example: templates first, then the dealer agent
 
@@ -101,13 +101,13 @@ The head of service now wants dealers to get answers in the portal without a rep
 
 A test suite of 100 conversations with four actions at 16 credits costs 6,400 credits per run. Ten runs before go-live are 64,000 credits, about $320.
 
-The agent is worth it if it saves more rep time than the extra $540 a month and the cost of testing, for example when dealers in other time zones currently have to wait until the next morning. If reps answer within the hour anyway, I would keep the drafts. The full calculation for an order status agent is in [what a dealer service agent costs](../flex-credits-agentforce-cost-per-action/).
+The agent is worth it if it saves more rep time than the extra $540 a month and the cost of testing, for example when dealers in other time zones currently have to wait until the next morning. If reps answer within the hour anyway, I would keep the drafts. The full calculation for an order status agent is in [what a dealer service agent costs](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 ## You test a template differently from an agent
 
 A template is one bounded generation step, so you test it with real records. At [Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/), Salesforce announced batch prompt testing as a beta; it runs a template against many real inputs in one pass. Reference visibility is GA and shows every Flow and action that depends on a template before you change it. Templates are metadata of type [GenAiPromptTemplate](https://developer.salesforce.com/docs/atlas.en-us.252.0.api_meta.meta/api_meta/meta_genaiprompttemplate.htm), so they belong in the repository and go through the pipeline; plan the pipeline around a template's draft and published versions.
 
-An agent needs more. [Agent tests run only in sandboxes](https://developer.salesforce.com/docs/ai/agentforce/guide/testing-api-get-started.html), and Salesforce warns that "running tests consumes requests and credits and can modify data". You test action choice and answers, define pass rates and decide which user the agent runs as, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). For a draft that a rep corrects anyway, this effort is out of proportion.
+An agent needs more. [Agent tests run only in sandboxes](https://developer.salesforce.com/docs/ai/agentforce/guide/testing-api-get-started.html), and Salesforce warns that "running tests consumes requests and credits and can modify data". You test action choice and answers, define pass rates and decide which user the agent runs as, as described in [testing Agentforce agents before go-live](/en/blog/testing-agentforce-agents-before-go-live/). For a draft that a rep corrects anyway, this effort is out of proportion.
 
 A Flex template also works outside Salesforce. [Hosted MCP servers](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/prompt-builder.html) publish it as an MCP prompt that a user picks in Claude or Cursor, with the user's permissions and the same credit consumption as in the Salesforce UI. According to that page, ChatGPT does not support MCP prompts, but it can still use the tools provided by the Hosted MCP Servers.
 
@@ -124,4 +124,4 @@ Add an agent
   Only where nobody should have to read first, where the path varies or where something must be written. Reuse the tested template as the agent's reference action.
 ```
 
-Which tool fits which job across the Salesforce platform is in the masterclass chapter on [Salesforce AI development tools](../../masterclass/ai-salesforce/salesforce-ai-development-tools/). This kind of decision is part of my [Salesforce architecture work](../../services/salesforce-architecture/).
+Which tool fits which job across the Salesforce platform is in the masterclass chapter on [Salesforce AI development tools](/en/masterclass/ai-salesforce/salesforce-ai-development-tools/). This kind of decision is part of my [Salesforce architecture work](/en/services/salesforce-architecture/).

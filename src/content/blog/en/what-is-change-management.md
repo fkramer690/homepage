@@ -78,9 +78,9 @@ Sustain outcomes | after the start · managers and internal owners
   Measure whether the new way of working is used, close gaps, make successes visible and anchor ownership inside the company for good.
 ```
 
-A common and costly mistake occurs in the first phase: change management starts too late. When communication begins two weeks before go-live, it can only inform. Identifying who is affected and what changes for each group belongs at the beginning, because it also shapes the solution itself. The tool for this is the [stakeholder analysis](../stakeholder-analysis/), from which the [communication plan](../change-management-communication-plan/) follows.
+A common and costly mistake occurs in the first phase: change management starts too late. When communication begins two weeks before go-live, it can only inform. Identifying who is affected and what changes for each group belongs at the beginning, because it also shapes the solution itself. The tool for this is the [stakeholder analysis](/en/blog/stakeholder-analysis/), from which the [communication plan](/en/blog/change-management-communication-plan/) follows.
 
-At the level of the individual, the ADKAR model helps diagnose the issue. When a rollout stalls, one of the five stages is usually missing, and each needs a different measure. Another training session only helps when knowledge or ability is missing. When nobody has understood why the change is necessary, the manager has to explain it. The article [change management models compared](../change-management-models/) explains how ADKAR differs from other well-known models.
+At the level of the individual, the ADKAR model helps diagnose the issue. When a rollout stalls, one of the five stages is usually missing, and each needs a different measure. Another training session only helps when knowledge or ability is missing. When nobody has understood why the change is necessary, the manager has to explain it. The article [change management models compared](/en/blog/change-management-models/) explains how ADKAR differs from other well-known models.
 
 ## Sponsor, managers, change team and key users share the work
 
@@ -89,7 +89,7 @@ Change management is teamwork with clearly assigned roles:
 - **The sponsor.** A person from management who visibly backs the change, makes decisions and allocates resources. In the Prosci study, participants name active and visible sponsorship as the biggest contributor to success.
 - **Direct managers.** They translate the change into the daily work of their team, answer the question "what does this mean for me?" and are the first to notice resistance.
 - **The change manager.** Plans the approach, advises sponsor and managers, prepares communication and training and measures progress. They do not bear sole responsibility for the outcome; that responsibility remains with the company.
-- **Multipliers.** In software rollouts, these are usually [key users](../salesforce-key-user-network/): colleagues from the business who are involved early and answer the first questions in day-to-day work.
+- **Multipliers.** In software rollouts, these are usually [key users](/en/blog/salesforce-key-user-network/): colleagues from the business who are involved early and answer the first questions in day-to-day work.
 
 In Germany, there is one more role that international guides often omit: the works council. Under [section 87 (1) no. 6 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) (German text) it has a right of co-determination when technical equipment is introduced that is designed to monitor the behavior or performance of employees. According to the Federal Labor Court, a system need only be objectively capable of recording individual behavior or performance, and many business systems record which user performed which action and when. Therefore, check this early for every new system. Involving the works council early does not guarantee agreement, but it allows rules on data and monitoring to be designed before go-live; addressing it late can delay the project by months.
 
@@ -102,12 +102,12 @@ Take the introduction of a CRM system such as Salesforce in a company with field
 3. **Check the ADKAR stage per group.** Inside sales are willing to take part but do not know the new steps yet: training on real cases helps. Field sales see no benefit: a conversation with their manager helps, another training session will not change anything.
 4. **Measure usage.** What counts is whether records are created and maintained; the number of training sessions says little about that. Reports in the system show it more reliably than a survey.
 
-Two projects from my work show the range: a global Salesforce Sales Cloud rollout with more than 500 users in the US, Asia and Europe, and an IT transformation at an insurer with more than 20,000 people affected in 19 countries. The phases are the same; the plan for each group and country becomes more demanding as the size increases. How I set this up with Fabian Kramer for Salesforce programs is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
+Two projects from my work show the range: a global Salesforce Sales Cloud rollout with more than 500 users in the US, Asia and Europe, and an IT transformation at an insurer with more than 20,000 people affected in 19 countries. The phases are the same; the plan for each group and country becomes more demanding as the size increases. How I set this up with Fabian Kramer for Salesforce programs is described in [Salesforce change management: why rollouts fail](/en/blog/change-management-salesforce-rollout/).
 
 ## Outside help pays off once several groups or countries are affected
 
 Not every change needs an external change manager. If only one process changes for a team of ten, a manager who uses ADKAR as a checklist and answers the five questions honestly is enough.
 
-Outside support is worthwhile when several groups or countries are affected, when no one internally has the time and experience to plan it, or when the sponsor is still unclear. Then an outside view helps clarify roles, coach the managers and hand the work over to internal owners at the end. For Salesforce programs there is [Salesforce change management consulting](../../services/change-management-salesforce/).
+Outside support is worthwhile when several groups or countries are affected, when no one internally has the time and experience to plan it, or when the sponsor is still unclear. Then an outside view helps clarify roles, coach the managers and hand the work over to internal owners at the end. For Salesforce programs there is [Salesforce change management consulting](/en/services/change-management-salesforce/).
 
 *Prosci and ADKAR are registered trademarks of Prosci, Inc.*

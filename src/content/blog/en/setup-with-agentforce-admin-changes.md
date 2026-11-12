@@ -50,18 +50,18 @@ On cost, the [usage page in Salesforce Help](https://help.salesforce.com/s/artic
 I could not find on any Salesforce page I opened whether flows the agent builds are saved active or inactive, or whether behavior or the allowance differs between sandbox and production.
 ```
 
-One independent test is worth knowing. Andy Engin Utkan tried the agent in a production org for [Salesforce Break in July 2026](https://salesforcebreak.com/2026/07/07/setup-with-agentforce-review/); at that time it could not list users with View All Data or Modify All Data, and his verdict was "This feature launched before it was fully baked." That is one author's test from July. He did not try flow creation, and the product has changed since. For a broader tool overview, see the masterclass chapter on [Salesforce AI development tools](../../masterclass/ai-salesforce/salesforce-ai-development-tools/).
+One independent test is worth knowing. Andy Engin Utkan tried the agent in a production org for [Salesforce Break in July 2026](https://salesforcebreak.com/2026/07/07/setup-with-agentforce-review/); at that time it could not list users with View All Data or Modify All Data, and his verdict was "This feature launched before it was fully baked." That is one author's test from July. He did not try flow creation, and the product has changed since. For a broader tool overview, see the masterclass chapter on [Salesforce AI development tools](/en/masterclass/ai-salesforce/salesforce-ai-development-tools/).
 
 Agentforce for Flow, formerly Einstein for Flow, is the narrower tool. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.flow_build_let_einstein_help_you_build_flows.htm&language=en_US&type=5), it drafts flows from a text prompt inside Flow Builder, summarizes flows and edits existing flows through prompts. Help labels it beta and requires the Foundations or Agentforce 1 editions with Data 360 enabled. A draft is not saved automatically.
 
 ## An agent change in production breaks the release process
 
-A governed Salesforce program rests on one rule: production contains what the repository contains, and every change gets there through the pipeline. I describe why in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/). A field, flow or Lightning page created directly in production breaks that rule, whether a person builds it manually or an agent does.
+A governed Salesforce program rests on one rule: production contains what the repository contains, and every change gets there through the pipeline. I describe why in [why DevOps decides Salesforce enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/). A field, flow or Lightning page created directly in production breaks that rule, whether a person builds it manually or an agent does.
 
 The agent makes it worse in three ways:
 
 - **Speed.** A data model with seven fields and a flow takes minutes. More direct changes reach production per week, and each one creates drift between repository and org.
-- **The approval looks like a review.** The admin who wrote the prompt approves the proposal. Nobody else checks whether the object belongs to another stream in the [object ownership matrix](../salesforce-object-ownership-matrix/), whether a flow on that object already exists, or whether the permission set is too broad.
+- **The approval looks like a review.** The admin who wrote the prompt approves the proposal. Nobody else checks whether the object belongs to another stream in the [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/), whether a flow on that object already exists, or whether the permission set is too broad.
 - **The audit trail records what, not why.** It shows the supported Setup change, admin, agent and a timestamp. It does not show a user story, a reviewer or a test, and after 180 days you need your own export.
 
 Then the next deployment arrives. A partner deploys a Lightning record page and its activation from the repository, and the page built in production loses its assignment. A validation in the pipeline runs against a sandbox that does not have the new flow, so it tests a different org from the one it deploys to.
@@ -96,7 +96,7 @@ The same request in a developer sandbox with source tracking would have taken th
 
 ## Write the pipeline rule next to the ownership matrix
 
-Setting up the release process and the rights model for admin AI is part of my [DevOps and release management](../../services/devops-release-management/) work. The sequence follows the permissions: whatever an admin may not do in production, the agent cannot do there either.
+Setting up the release process and the rights model for admin AI is part of my [DevOps and release management](/en/services/devops-release-management/) work. The sequence follows the permissions: whatever an admin may not do in production, the agent cannot do there either.
 
 ```schritte
 Write the rule down
@@ -106,7 +106,7 @@ Check production rights
 Sandboxes first
   Enable the agent in developer sandboxes first. [Source tracking](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html) works only in Developer and Developer Pro sandboxes, so supported metadata changes by the agent can be retrieved and added to a pull request.
 Run the same gates
-  Agent-built flows and fields pass the same checks as partner code, as described in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
+  Agent-built flows and fields pass the same checks as partner code, as described in [quality gates for AI code](/en/blog/quality-gates-for-ai-code-salesforce-pipeline/).
 Read the audit trail
   Review production's Setup Audit Trail every week for changes not made by the release user, filter on the AI Agent column, and export it before the 180 days run out.
 Watch consumption

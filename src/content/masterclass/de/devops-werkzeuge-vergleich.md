@@ -41,7 +41,7 @@ Salesforce liefert drei Werkzeuge ohne zusätzliche Lizenz. Sie bauen aufeinande
 Ein Change Set überträgt Anpassungen von einer Org in eine andere, typischerweise aus einer Sandbox in die Produktion. Laut [Salesforce-Hilfe zu Change Sets](https://help.salesforce.com/apex/HTViewHelpDoc?id=changesets.htm) gelten drei Grenzen: Change Sets enthalten nur Änderungen, die man über das Setup-Menü machen kann, sie enthalten keine Daten, und sie funktionieren nur zwischen Orgs, die zur selben Produktion gehören und über eine Deployment-Verbindung verknüpft sind. Ein eingehendes Change Set wird immer als Ganzes deployt.
 
 ```hinweis achtung
-Für einen Admin, der alle paar Wochen ein Feld und eine Validierungsregel überträgt, ist das ausreichend. Für ein Programm mit mehreren Teams fehlt das Wesentliche: Es gibt keinen Verlauf in Git, keinen Pull Request, kein Review und keinen Vergleich, welcher Stand wo liegt. Wenn zwei Partner dasselbe Page Layout oder dieselbe Flow-Version ändern, gewinnt, wer zuletzt deployt. Genau diesen Zustand beschreibt [Kapitel 1](../release-management-grundlagen/) als Ausgangspunkt des Reifegrads.
+Für einen Admin, der alle paar Wochen ein Feld und eine Validierungsregel überträgt, ist das ausreichend. Für ein Programm mit mehreren Teams fehlt das Wesentliche: Es gibt keinen Verlauf in Git, keinen Pull Request, kein Review und keinen Vergleich, welcher Stand wo liegt. Wenn zwei Partner dasselbe Page Layout oder dieselbe Flow-Version ändern, gewinnt, wer zuletzt deployt. Genau diesen Zustand beschreibt [Kapitel 1](/masterclass/devops-release-management/release-management-grundlagen/) als Ausgangspunkt des Reifegrads.
 ```
 
 ### Salesforce CLI
@@ -68,7 +68,7 @@ contra: Was Sie vorher prüfen
 - Die Migration von Projekten aus dem Managed Package ist eine Developer Preview. Für produktive Projekte würde ich mich darauf nicht verlassen, bis sie allgemein verfügbar ist.
 ```
 
-Wie sich Lifecycle Center im Detail von sfdx-hardis unterscheidet, habe ich im [Vergleich sfdx-hardis oder DevOps Center](../../../blog/sfdx-hardis-oder-devops-center-vergleich/) beschrieben. Kurz: Lifecycle Center liefert Ablauf und Kontrollen, das angebundene Git-Repository bleibt die verbindliche Quelle.
+Wie sich Lifecycle Center im Detail von sfdx-hardis unterscheidet, habe ich im [Vergleich sfdx-hardis oder DevOps Center](/blog/sfdx-hardis-oder-devops-center-vergleich/) beschrieben. Kurz: Lifecycle Center liefert Ablauf und Kontrollen, das angebundene Git-Repository bleibt die verbindliche Quelle.
 
 ## sfdx-hardis: der Open-Source-Weg
 
@@ -76,7 +76,7 @@ Wie sich Lifecycle Center im Detail von sfdx-hardis unterscheidet, habe ich im [
 
 Ich setze sfdx-hardis seit rund zwei Jahren in Kundenprojekten ein. Für Programme mit mehreren Implementierungspartnern zählt für mich, dass der ganze Prozess als Konfiguration im Repository des Kunden liegt. Mit Branch-Schutz ändert ihn ein Partner nur per Pull Request, den der Kunde freigibt.
 
-Dafür braucht es Know-how. Lizenzgebühren fallen nicht an, wohl aber CI-Minuten, die Einrichtung und eine Person beim Kunden, die die Pipeline versteht. Unterstützung bietet Cloudity als Dienstleister an, nötig ist sie nicht. Was das Toolkit alles abdeckt, steht in meiner [Einführung in sfdx-hardis](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/).
+Dafür braucht es Know-how. Lizenzgebühren fallen nicht an, wohl aber CI-Minuten, die Einrichtung und eine Person beim Kunden, die die Pipeline versteht. Unterstützung bietet Cloudity als Dienstleister an, nötig ist sie nicht. Was das Toolkit alles abdeckt, steht in meiner [Einführung in sfdx-hardis](/blog/sfdx-hardis-einfuehrung-salesforce-devops/).
 
 ## Was können Gearset, Copado und Flosum besser?
 
@@ -95,7 +95,7 @@ quelle: Gearset-Preisliste, Stand Oktober 2026
 
 **Flosum** ist laut [Hersteller](https://www.flosum.com/products/devops) ebenfalls Salesforce-native und hat eine eigene, metadatenbewusste Versionskontrolle. Git ist dort ausdrücklich optional; angebunden werden können GitHub, GitLab, Bitbucket und Azure DevOps. Flosum betont Nachweise für Audits, die direkt in der Pipeline entstehen, und nennt Regelwerke wie SOX und GxP. Das ist für Hersteller von Medizintechnik oder Laborgeräten interessant. Neben DevOps gibt es Backup and Archive, einen Data Migrator und ein Trust Center. Die Preise sind laut Flosum angebotsbasiert.
 
-Weitere Anbieter wie AutoRABIT oder Blue Canvas habe ich für dieses Kapitel nicht geprüft. Wie Copado und Gearset gerade KI-Agenten einbauen und was Sie vorher fragen sollten, steht in [Copado, Gearset und Provar mit KI-Agenten](../../../blog/copado-gearset-provar-ki-agenten/).
+Weitere Anbieter wie AutoRABIT oder Blue Canvas habe ich für dieses Kapitel nicht geprüft. Wie Copado und Gearset gerade KI-Agenten einbauen und was Sie vorher fragen sollten, steht in [Copado, Gearset und Provar mit KI-Agenten](/blog/copado-gearset-provar-ki-agenten/).
 
 ## Nach welchen Kriterien wählen Sie aus?
 
@@ -103,8 +103,8 @@ Ich gehe die Kriterien in dieser Reihenfolge durch, weil die ersten am meisten a
 
 1. **Git-Plattform.** Welche Plattform betreibt Ihre IT schon? Auf Azure DevOps oder einem selbst gehosteten GitLab scheidet Lifecycle Center heute aus. Die Git-Plattform wechselt man nicht für ein Release-Werkzeug.
 2. **Team.** Wer arbeitet täglich mit dem Werkzeug: Admins, die klicken, oder Entwickler, die mit VS Code und Branches umgehen? Und gibt es beim Kunden jemanden, der eine Pipeline verantworten kann?
-3. **Partner.** Wie viele Teams und Implementierungspartner arbeiten an derselben Org? Ab dem zweiten Partner brauchen Sie Pull Requests mit [Pflicht-Review](../../../blog/warum-pull-request-reviews-pflicht-sind/) und einen Prozess, den alle gleich nutzen.
-4. **Eigentum.** Ist der Vertrag auf Sie ausgestellt, haben Ihre Mitarbeitenden Admin-Rechte, liegt das Repository in Ihrer Organisation? Warum das zählt, steht in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
+3. **Partner.** Wie viele Teams und Implementierungspartner arbeiten an derselben Org? Ab dem zweiten Partner brauchen Sie Pull Requests mit [Pflicht-Review](/blog/warum-pull-request-reviews-pflicht-sind/) und einen Prozess, den alle gleich nutzen.
+4. **Eigentum.** Ist der Vertrag auf Sie ausgestellt, haben Ihre Mitarbeitenden Admin-Rechte, liegt das Repository in Ihrer Organisation? Warum das zählt, steht in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 5. **Kosten.** Lizenz, CI-Minuten, Einrichtung und vor allem die Release-Rolle. Nach meiner Einschätzung kostet diese Rolle in einem Programm mit mehreren Partnern mehr als die Lizenz des Werkzeugs.
 6. **Support.** Brauchen Sie einen Vertrag mit Reaktionszeiten, oder reichen Community und ein Dienstleister bei Bedarf?
 
@@ -134,7 +134,7 @@ Die Git-Plattform schließt Lifecycle Center aus. Change Sets scheiden wegen der
 
 ## Wie machen Sie die Entscheidung verbindlich?
 
-Die Werkzeugwahl gehört an den Anfang eines Programms und gilt für jeden Partner. Wer später dazukommt, arbeitet im bestehenden Setup und bringt kein eigenes mit. Das gehört in den Vertrag, wie in [Kapitel 2 zu Eigentum und Rollen](../release-prozess-eigentum-rollen/) beschrieben.
+Die Werkzeugwahl gehört an den Anfang eines Programms und gilt für jeden Partner. Wer später dazukommt, arbeitet im bestehenden Setup und bringt kein eigenes mit. Das gehört in den Vertrag, wie in [Kapitel 2 zu Eigentum und Rollen](/masterclass/devops-release-management/release-prozess-eigentum-rollen/) beschrieben.
 
 Drei Regeln halte ich für nicht verhandelbar:
 
@@ -142,4 +142,4 @@ Drei Regeln halte ich für nicht verhandelbar:
 - **Lizenzen und Admin-Rechte liegen beim Kunden.** Das gilt für Gearset, Copado und Flosum genauso wie für die Git-Plattform unter sfdx-hardis.
 - **Die Historie bleibt portabel.** Bei Flosum, wo Git optional ist, würde ich die Git-Anbindung trotzdem einschalten, damit die Versionsgeschichte auch ohne das Werkzeug lesbar bleibt.
 
-Die Sandboxes und Branches, auf denen jedes dieser Werkzeuge aufsetzt, beschreibt [Kapitel 3](../umgebungen-und-branching/). Wie daraus eine Pipeline mit Pull Requests, Validierungen und Delta-Deployments wird, folgt in [Kapitel 5](../pipeline-aufbauen/). Bei der Auswahl und dem Aufbau unterstütze ich im Rahmen von [DevOps und Release-Management](../../../leistungen/devops-und-release-management/) und, wenn mehrere Partner beteiligt sind, in der [Partnersteuerung](../../../leistungen/partnersteuerung/).
+Die Sandboxes und Branches, auf denen jedes dieser Werkzeuge aufsetzt, beschreibt [Kapitel 3](/masterclass/devops-release-management/umgebungen-und-branching/). Wie daraus eine Pipeline mit Pull Requests, Validierungen und Delta-Deployments wird, folgt in [Kapitel 5](/masterclass/devops-release-management/pipeline-aufbauen/). Bei der Auswahl und dem Aufbau unterstütze ich im Rahmen von [DevOps und Release-Management](/leistungen/devops-und-release-management/) und, wenn mehrere Partner beteiligt sind, in der [Partnersteuerung](/leistungen/partnersteuerung/).

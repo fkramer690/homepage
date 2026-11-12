@@ -34,7 +34,7 @@ Business users should learn before every Salesforce release what changes for the
 
 With a well structured release process, releases usually become smaller and more frequent. With automated tests and controlled dependencies, that can lower the risk of each release. For the business, though, it also means receiving small changes more often instead of one large package per quarter. Users who do not know that something has changed may assume it is a defect, call support or build a workaround.
 
-In the [ADKAR model](../change-management-salesforce-rollout/) the first stage, awareness, is missing in this case. The user does not know that something is changing or why. Training cannot make up for missing awareness if users receive it only after the release.
+In the [ADKAR model](/en/blog/change-management-salesforce-rollout/) the first stage, awareness, is missing in this case. The user does not know that something is changing or why. Training cannot make up for missing awareness if users receive it only after the release.
 
 ```praxis
 Before every release, I clarify with the responsible business stakeholders which teams are affected, what will change in their workflows and who will inform them. That is in the release plan before development is finished. After the release, I check whether the new processes are being used and feed feedback from daily work into the backlog.
@@ -63,7 +63,7 @@ Technical release notes list user stories, components, dependencies and deployme
 - **What stays the same?** That removes a lot of uncertainty.
 - **Whom do I ask?** The team's key user, by name.
 
-More than half a page per group is too much. At manufacturers with subsidiaries in several countries the release notes are issued in the local language. Key users share them with their teams and answer the first questions, see [key users in Salesforce rollouts](../salesforce-key-user-network/).
+More than half a page per group is too much. At manufacturers with subsidiaries in several countries the release notes are issued in the local language. Key users share them with their teams and answer the first questions, see [key users in Salesforce rollouts](/en/blog/salesforce-key-user-network/).
 
 ## Who learns what, and when?
 
@@ -98,8 +98,8 @@ Some changes are unpopular, such as a new required field that creates work for i
 
 ## What about Salesforce's own releases?
 
-Salesforce publishes three major seasonal releases a year, Spring, Summer and Winter, and some products and features are also updated monthly. They can change interfaces, introduce features or switch off old ones. Most changes affect admins and developers, some affect users too. I described what mattered for the pipeline in [Winter '27](../salesforce-winter-27-what-changes-for-your-pipeline/). For the business, the same communication process applies, but the timing follows Salesforce: these changes are deployed to production on Salesforce's date, and some are activated automatically or enforced later as release updates. I check the release notes and release updates, test in the preview sandbox and inform the affected users before the change becomes active, in the rollout plan of the release that is scheduled first.
+Salesforce publishes three major seasonal releases a year, Spring, Summer and Winter, and some products and features are also updated monthly. They can change interfaces, introduce features or switch off old ones. Most changes affect admins and developers, some affect users too. I described what mattered for the pipeline in [Winter '27](/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/). For the business, the same communication process applies, but the timing follows Salesforce: these changes are deployed to production on Salesforce's date, and some are activated automatically or enforced later as release updates. I check the release notes and release updates, test in the preview sandbox and inform the affected users before the change becomes active, in the rollout plan of the release that is scheduled first.
 
 ## First step: a rollout plan for your next release
 
-For your next release, create a rollout plan with one row per affected group before development is finished. Write the release notes for users separately from the technical ones and have a key user read them: if they understand them without explanation, the notes are fit for purpose. After the release, ask the key users which questions were raised and add the answers to the next release notes. Repeat this in the same order for every release, so the business knows when to expect information. I describe how I set up releases in programs in [DevOps and release management](../../services/devops-release-management/).
+For your next release, create a rollout plan with one row per affected group before development is finished. Write the release notes for users separately from the technical ones and have a key user read them: if they understand them without explanation, the notes are fit for purpose. After the release, ask the key users which questions were raised and add the answers to the next release notes. Repeat this in the same order for every release, so the business knows when to expect information. I describe how I set up releases in programs in [DevOps and release management](/en/services/devops-release-management/).

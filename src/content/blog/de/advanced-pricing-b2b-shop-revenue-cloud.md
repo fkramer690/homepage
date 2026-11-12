@@ -31,7 +31,7 @@ Ein B2B-Shop braucht Advanced Pricing powered by Revenue Cloud, wenn seine Preis
 
 ## Was bringt Advanced Pricing in einen B2B-Store?
 
-Die Standardpreisfindung in Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet, basiert auf Preisbüchern und einer Preisstrategie. Das deckt Listenpreise und Händlerstufen ab, wie ich in [Kundenpreise in B2B Commerce](../kundenpreise-b2b-commerce-preisbuecher-erp/) beschreibe. Einfache Mengenstaffeln lassen sich dort ebenfalls mit Price Adjustment Schedules abbilden. Komplexere Berechnungen, etwa Zuschläge nach Produktattribut oder Vertragspreise mit eigenen Staffeln, brauchen eigenen Code oder eine Preis-Engine.
+Die Standardpreisfindung in Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet, basiert auf Preisbüchern und einer Preisstrategie. Das deckt Listenpreise und Händlerstufen ab, wie ich in [Kundenpreise in B2B Commerce](/blog/kundenpreise-b2b-commerce-preisbuecher-erp/) beschreibe. Einfache Mengenstaffeln lassen sich dort ebenfalls mit Price Adjustment Schedules abbilden. Komplexere Berechnungen, etwa Zuschläge nach Produktattribut oder Vertragspreise mit eigenen Staffeln, brauchen eigenen Code oder eine Preis-Engine.
 
 Die [Salesforce-Hilfe zu Agentforce Revenue Management for B2B Commerce](https://help.salesforce.com/s/articleView?id=commerce.comm_revenue_intro.htm&language=en_US&type=5) zählt auf, was die Revenue-Cloud-Seite in den Store bringt. Nicht alles davon betrifft die Preisfindung: Bundles, Request for Quote, Qualification Rules und Abonnements sind mit derselben Lizenzkombination ebenfalls enthalten.
 
@@ -87,7 +87,7 @@ contra: Vorsichtig wäre ich, wenn
 - der Shop vor allem Ersatzteile zu Stufenpreisen verkauft, die Preisbücher und Price Adjustment Schedules abdecken
 ```
 
-Wo Ihre Preis-Engine grundsätzlich liegen sollte, behandelt das Kapitel [Produktkatalog, Konfigurator und Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/) der Masterclass Revenue Cloud. Für den Shop richtet sich die Entscheidung nach dem Preis-Master: Das System, dem der Vertrieb bei einem Angebot vertraut, sollte auch den Warenkorb rechnen.
+Wo Ihre Preis-Engine grundsätzlich liegen sollte, behandelt das Kapitel [Produktkatalog, Konfigurator und Preise](/masterclass/revenue-cloud/produktkatalog-konfigurator-preise/) der Masterclass Revenue Cloud. Für den Shop richtet sich die Entscheidung nach dem Preis-Master: Das System, dem der Vertrieb bei einem Angebot vertraut, sollte auch den Warenkorb rechnen.
 
 ## Rechenbeispiel: Ersatzteilshop mit 30 Vertragskunden
 
@@ -99,6 +99,6 @@ Hier ist Advanced Pricing ein starker Kandidat. Listenpreise werden wie heute au
 
 ## Preislogik und Vertragspreise aufschreiben
 
-Schreiben Sie drei Dinge auf, bevor Sie mit Salesforce über Lizenzen sprechen: wo Ihre Preislogik heute liegt, wer Vertragspreise pflegt und ob Sie Request for Quote oder konfigurierte Bundles im Shop brauchen. Weisen zwei der drei Antworten in Richtung Salesforce, lohnt sich ein Proof of Concept mit Ihren echten Procedures. Die Lizenzfrage gehört in dieselbe Prüfung, die ich unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/) beschreibe.
+Schreiben Sie drei Dinge auf, bevor Sie mit Salesforce über Lizenzen sprechen: wo Ihre Preislogik heute liegt, wer Vertragspreise pflegt und ob Sie Request for Quote oder konfigurierte Bundles im Shop brauchen. Weisen zwei der drei Antworten in Richtung Salesforce, lohnt sich ein Proof of Concept mit Ihren echten Procedures. Die Lizenzfrage gehört in dieselbe Prüfung, die ich unter [Make-or-Buy und Lizenzprognosen](/leistungen/make-or-buy-lizenzen/) beschreibe.
 
-Das Gesamtbild zu Preisen, Angeboten und Checkout steht im Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/). Wie Käufer aus dem Warenkorb ein Angebot anfordern, zeigt [Request for Quote im B2B-Shop](../request-for-quote-b2b-shop-angebot/). Die Händlerseite von KI-Angeboten behandelt [KI-Angebote mit dem Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/).
+Das Gesamtbild zu Preisen, Angeboten und Checkout steht im Kapitel [Preise, Warenkorb, Checkout](/masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](/masterclass/b2b-commerce/). Wie Käufer aus dem Warenkorb ein Angebot anfordern, zeigt [Request for Quote im B2B-Shop](/blog/request-for-quote-b2b-shop-angebot/). Die Händlerseite von KI-Angeboten behandelt [KI-Angebote mit dem Partner Sales Assistant](/blog/ki-angebote-haendler-partner-sales-assistant/).

@@ -50,9 +50,9 @@ How many of each type you have depends on your edition and the licenses you boug
 | Staging (preprod) | Full | release manager, tests against the SAP QA system | all data |
 | Production | production | only the pipeline deploys | real data |
 
-Two rules are not negotiable for me. In integration, UAT, staging and production only the pipeline deploys, never a person through change sets or Setup. And which data may be stored in which stage is a decision you make with your data protection officer; the details are in [sandbox customer data: what AI coding agents may read](../../../blog/sandbox-customer-data-ai-coding-agents/). If you have no Partial Copy license, UAT and staging share the Full sandbox, and acceptance and the dress rehearsal have to take place one after the other.
+Two rules are not negotiable for me. In integration, UAT, staging and production only the pipeline deploys, never a person through change sets or Setup. And which data may be stored in which stage is a decision you make with your data protection officer; the details are in [sandbox customer data: what AI coding agents may read](/en/blog/sandbox-customer-data-ai-coding-agents/). If you have no Partial Copy license, UAT and staging share the Full sandbox, and acceptance and the dress rehearsal have to take place one after the other.
 
-Who owns which org and who approves deployments to it is set out in [chapter 2 on ownership and roles](../release-process-ownership-roles/). The sandboxes belong to the client, even if a partner uses them every day.
+Who owns which org and who approves deployments to it is set out in [chapter 2 on ownership and roles](/en/masterclass/devops-release-management/release-process-ownership-roles/). The sandboxes belong to the client, even if a partner uses them every day.
 
 ## When do scratch orgs fit, and where do they hit limits?
 
@@ -69,7 +69,7 @@ Each scratch org has 500 MB of data and 50 MB of file storage. For a program wit
 
 The real limit lies elsewhere. A scratch org contains only what is in the repository and can be deployed, plus the features and settings from the definition file, which Salesforce calls the org's "shape". In my assessment, an org that has grown over years with Service Cloud, Field Service, a dealer portal, managed packages and manual settings can rarely be deployed in full into an empty scratch org. Getting there is a project of its own.
 
-My advice for mature orgs: developer or Developer Pro sandboxes as the workplace, with [source tracking](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html) switched on. It exists only for these two types, not for Partial Copy and Full. Scratch orgs pay off for new, self-contained parts, for example a separate package for a warranty app. sfdx-hardis supports both; the [free training](../../../blog/sfdx-hardis-free-devops-training/) sets up a Dev Hub and scratch orgs, for example, but for a mature client org I would still start with sandboxes.
+My advice for mature orgs: developer or Developer Pro sandboxes as the workplace, with [source tracking](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html) switched on. It exists only for these two types, not for Partial Copy and Full. Scratch orgs pay off for new, self-contained parts, for example a separate package for a warranty app. sfdx-hardis supports both; the [free training](/en/blog/sfdx-hardis-free-devops-training/) sets up a Dev Hub and scratch orgs, for example, but for a mature client org I would still start with sandboxes.
 
 ## What does a branch model look like that several partners can share?
 
@@ -86,7 +86,7 @@ uat --Promotion--> preprod
 preprod --Promotion--> main production
 ```
 
-From there, changes are promoted up the stage branches by pull request. According to sfdx-hardis, such a pull request promotes everything merged into the source branch since its last promotion. Gearset also works with long-lived environment branches in its pipelines. The tools are compared in [chapter 4](../devops-tools-compared/).
+From there, changes are promoted up the stage branches by pull request. According to sfdx-hardis, such a pull request promotes everything merged into the source branch since its last promotion. Gearset also works with long-lived environment branches in its pipelines. The tools are compared in [chapter 4](/en/masterclass/devops-release-management/devops-tools-compared/).
 
 One honest caveat: DORA recommends [trunk-based development](https://dora.dev/capabilities/trunk-based-development/) for high-performing teams, with three or fewer active branches and merging to trunk at least once a day. A model with four stage branches goes against that. I still consider it right for programs with business acceptance and several partners, because each stage stands for a different approval. The risk lies in long-lived feature branches. So my rule is: feature branches live for days, not weeks, and a story that does not fit into a sprint is split.
 
@@ -94,7 +94,7 @@ Stories not yet accepted in UAT block a promotion from `uat` to `preprod`. sfdx-
 
 ## How do developer sandboxes stay current?
 
-Every merge into `integration` leaves every developer sandbox a little further behind. Whoever builds on a state from three weeks ago creates conflicts that only show up in the pull request, or deploys old versions of other people's components along with their own. That is how the changes that overwrite each other, which I described in [why DevOps decides Salesforce enterprise projects](../../../blog/why-devops-matters-salesforce-enterprise/), come about.
+Every merge into `integration` leaves every developer sandbox a little further behind. Whoever builds on a state from three weeks ago creates conflicts that only show up in the pull request, or deploys old versions of other people's components along with their own. That is how the changes that overwrite each other, which I described in [why DevOps decides Salesforce enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/), come about.
 
 The process is called back promotion or backpromote: changes from a higher stage are brought back into the development environments. This is how the tools handle it:
 
@@ -122,14 +122,14 @@ Deploy the stage branch
 Check interfaces
   Do named credentials and endpoints point to the SAP QA system instead of the production one?
 Restore the data
-  Contact addresses, masking and seed data, as described in [chapter 7 on data and configuration](../data-and-configuration/).
+  Contact addresses, masking and seed data, as described in [chapter 7 on data and configuration](/en/masterclass/devops-release-management/data-and-configuration/).
 Reconnect the pipeline
   If its authentication was tied to the old org.
 ```
 
 Developer sandboxes are simpler: after the refresh, run a backpromote and the developer is up to date. sfdx-hardis then marks earlier runs as "Before refresh" and treats deployment actions as not yet run.
 
-The timing of a refresh has one more side effect: it decides whether a sandbox is on a [preview instance](https://trailhead.salesforce.com/content/learn/modules/sf_releases/sf-releases-sandbox-preview) and receives the next Salesforce release about four to six weeks before production. How to plan for that is covered in [chapter 8 on release planning](../release-planning-salesforce-releases/).
+The timing of a refresh has one more side effect: it decides whether a sandbox is on a [preview instance](https://trailhead.salesforce.com/content/learn/modules/sf_releases/sf-releases-sandbox-preview) and receives the next Salesforce release about four to six weeks before production. How to plan for that is covered in [chapter 8 on release planning](/en/masterclass/devops-release-management/release-planning-salesforce-releases/).
 
 ## The hotfix path
 
@@ -141,7 +141,7 @@ The second pull request to `main` promotes everything merged into `preprod` sinc
 
 The critical step follows afterwards. The stage branches below were cut before the fix and hold the old version of the same metadata. Once they are promoted, the fix disappears from production again. sfdx-hardis calls the way back a [retrofit](https://sfdx-hardis.cloudity.com/salesforce-devops-retrofit/): `main` is merged into a `retrofit/from-main` branch and brought to `integration` by pull request, and right away, because a delayed retrofit turns into a growing conflict. After a hotfix into `main`, Gearset automatically creates [back propagation pull requests](https://docs.gearset.com/en/articles/9773388-org-syncing-with-pipelines) for the lower environments, but does not promote them itself. Someone still has to review and merge them.
 
-The same logic applies to changes someone made by hand in production. They return to the repository as a normal story, starting from the lowest stage. How you notice such changes at all is covered in [chapter 9 on operations and monitoring](../operations-monitoring-backup/).
+The same logic applies to changes someone made by hand in production. They return to the repository as a normal story, starting from the lowest stage. How you notice such changes at all is covered in [chapter 9 on operations and monitoring](/en/masterclass/devops-release-management/operations-monitoring-backup/).
 
 ## Example: three partners on one service org
 
@@ -153,4 +153,4 @@ A machine builder runs Service Cloud, Field Service and a dealer portal on one o
 - **One Full sandbox** for staging and end-to-end tests against the SAP QA system, refreshed after each of the company's quarterly releases.
 - **One hotfix path** through `preprod`, with the retrofit on the same day.
 
-The rules for this are in the contract with every partner: backpromote before every story, no changes in Setup of a stage org, no feature branch older than two weeks. How the pipeline works technically between these stages is described in [chapter 5](../building-the-pipeline/). I design such models as part of my work in [DevOps and release management](../../../services/devops-release-management/).
+The rules for this are in the contract with every partner: backpromote before every story, no changes in Setup of a stage org, no feature branch older than two weeks. How the pipeline works technically between these stages is described in [chapter 5](/en/masterclass/devops-release-management/building-the-pipeline/). I design such models as part of my work in [DevOps and release management](/en/services/devops-release-management/).

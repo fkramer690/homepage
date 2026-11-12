@@ -33,7 +33,7 @@ Key User sind Fachanwender, die das neue Salesforce-System vor allen anderen ken
 
 ## Key User stärken vor allem Wissen und Fähigkeit
 
-Im [ADKAR-Modell](../change-management-salesforce-einfuehrung/) tragen Key User vor allem zu zwei Stufen bei: Wissen (Knowledge) und Fähigkeit (Ability). Je nach Auswahl fördern sie auch die Bereitschaft und helfen, die neue Arbeitsweise nach dem Go-live zu halten. Sponsor und Führung ersetzen sie aber nicht. Eine Schulung vermittelt Wissen, aber erst im Alltag zeigt sich, ob jemand die Funktion im Kundentermin oder am Telefon anwenden kann. In diesem Moment hilft keine Hotline, sondern die Kollegin am Nachbartisch, die es schon einmal gemacht hat.
+Im [ADKAR-Modell](/blog/change-management-salesforce-einfuehrung/) tragen Key User vor allem zu zwei Stufen bei: Wissen (Knowledge) und Fähigkeit (Ability). Je nach Auswahl fördern sie auch die Bereitschaft und helfen, die neue Arbeitsweise nach dem Go-live zu halten. Sponsor und Führung ersetzen sie aber nicht. Eine Schulung vermittelt Wissen, aber erst im Alltag zeigt sich, ob jemand die Funktion im Kundentermin oder am Telefon anwenden kann. In diesem Moment hilft keine Hotline, sondern die Kollegin am Nachbartisch, die es schon einmal gemacht hat.
 
 Bei Herstellern kommt noch etwas hinzu: Vertrieb, Innendienst und Service arbeiten in jedem Land und an jedem Standort ein wenig anders. Das Projektteam kennt diese Unterschiede nicht. Key User kennen sie und können früh sagen, wo der geplante Prozess im eigenen Team nicht funktionieren wird.
 
@@ -56,7 +56,7 @@ Betrieb | laufend · Key User und Admin
   Neue Kollegen einarbeiten, vor jedem Release erfahren, was sich ändert, und es im Team weitergeben.
 ```
 
-Key User gehören in den Abnahmetest, weil sie wissen, welche Fälle und Ausnahmen in ihrem Team vorkommen. Sie prüfen vorab festgelegte Abläufe von Anfang bis Ende mit realistischen Daten; die formale Freigabe bleibt bei den benannten Fachverantwortlichen. Wie UAT aufgebaut sein sollte, beschreibe ich in [Salesforce UAT: Wer testet vor dem Release?](../salesforce-uat-abnahmetest-fachbereich/).
+Key User gehören in den Abnahmetest, weil sie wissen, welche Fälle und Ausnahmen in ihrem Team vorkommen. Sie prüfen vorab festgelegte Abläufe von Anfang bis Ende mit realistischen Daten; die formale Freigabe bleibt bei den benannten Fachverantwortlichen. Wie UAT aufgebaut sein sollte, beschreibe ich in [Salesforce UAT: Wer testet vor dem Release?](/blog/salesforce-uat-abnahmetest-fachbereich/).
 
 ## Wie wählen Sie die richtigen Key User aus?
 
@@ -85,10 +85,10 @@ Vereinbaren Sie die Zeit der Key User schriftlich mit der Führungskraft, einsch
 
 ## Das Netzwerk braucht einen festen Termin
 
-Ein Netzwerk aus Key Usern lebt von regelmäßigen Treffen. Ich empfehle einen kurzen Austausch, in dem Key User ihre wichtigsten Rückmeldungen einbringen und vorab erfahren, was das nächste Release ändert. So wird jeder Key User zum Kanal in beide Richtungen: Änderungen gelangen über ihn ins Team, und Probleme aus dem Team gelangen über ihn ins Projekt. Wie dieser Weg vor einem Release aussieht, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
+Ein Netzwerk aus Key Usern lebt von regelmäßigen Treffen. Ich empfehle einen kurzen Austausch, in dem Key User ihre wichtigsten Rückmeldungen einbringen und vorab erfahren, was das nächste Release ändert. So wird jeder Key User zum Kanal in beide Richtungen: Änderungen gelangen über ihn ins Team, und Probleme aus dem Team gelangen über ihn ins Projekt. Wie dieser Weg vor einem Release aussieht, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](/blog/salesforce-releases-fachbereich-kommunizieren/).
 
 Wichtig ist auch, dass die Rolle sichtbar anerkannt wird. Wer zusätzliche Arbeit für das Projekt übernimmt, sollte diese Arbeit im Jahresgespräch und in angepassten Tageszielen wiederfinden. Das entscheidet darüber, ob sich beim nächsten Projekt wieder jemand meldet.
 
 ## Fragen, wen das Team heute um Rat bittet
 
-Fragen Sie in jedem betroffenen Team: Wen fragen Sie heute, wenn Sie im System nicht weiterkommen? Die Namen, die mehrfach fallen, sind Ihre Kandidaten. Danach vereinbaren Sie mit den Führungskräften die Zeitbudgets und nehmen die Key User in die ersten Workshops mit, bevor die Umsetzung beginnt. Fällt in einem Team kein Name, fühlt sich dort noch niemand für das Thema verantwortlich, und dieses Team braucht in der Schulung mehr Begleitung. Wie wir das Netzwerk in Programmen aufbauen, steht unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).
+Fragen Sie in jedem betroffenen Team: Wen fragen Sie heute, wenn Sie im System nicht weiterkommen? Die Namen, die mehrfach fallen, sind Ihre Kandidaten. Danach vereinbaren Sie mit den Führungskräften die Zeitbudgets und nehmen die Key User in die ersten Workshops mit, bevor die Umsetzung beginnt. Fällt in einem Team kein Name, fühlt sich dort noch niemand für das Thema verantwortlich, und dieses Team braucht in der Schulung mehr Begleitung. Wie wir das Netzwerk in Programmen aufbauen, steht unter [Change Management für Salesforce-Programme](/leistungen/change-management/).

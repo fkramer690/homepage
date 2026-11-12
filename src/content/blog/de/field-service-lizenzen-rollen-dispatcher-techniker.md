@@ -30,7 +30,7 @@ draft: false
 
 In Salesforce Field Service richtet sich die Lizenz danach, was eine Person im System tut, nicht nach der Stellenbezeichnung, und die Preisliste setzt feste Regeln für den Mix. Disponenten und Techniker erhalten Dispatcher oder Technician für 175 € pro Nutzer und Monat. Die Hotline, die Cases bearbeitet, braucht Service Cloud, und wenn sie auch disponiert, Field Service Plus für 230 €. Techniker von Servicepartnern erhalten Contractor Plus für 80 € pro Nutzer oder 32 € pro Login. Zwei Regeln entscheiden die meisten Rechnungen: Dispatcher und Technician dürfen kein Case Management machen, und die Planung in Salesforce braucht mindestens eine Service-Cloud-Lizenz und Dispatcher-Rechte in der Org.
 
-Weitere Fragen zum Produkt, von der Einführung bis zur ERP-Anbindung, beantwortet der Themen-Hub [Salesforce Field Service für Hersteller](../../masterclass/field-service/).
+Weitere Fragen zum Produkt, von der Einführung bis zur ERP-Anbindung, beantwortet der Themen-Hub [Salesforce Field Service für Hersteller](/masterclass/field-service/).
 
 ## Was kosten die Field Service Lizenzen?
 
@@ -44,7 +44,7 @@ Salesforce verkauft das Produkt heute als Field Service and Operations. Die [deu
 | Contractor Plus | Portal und mobile App für Servicepartner | 80 € pro Nutzer oder 32 € pro Login |
 | Agentforce 1 Field Service | Field Service Plus mit KI, Credits und weiteren Produkten | 650 € |
 
-In der Unlimited Edition kosten Dispatcher und Technician laut Fußnote 330 Dollar, das Plus-Paket 380 Dollar. Ob sich das Paket für 650 € rechnet, ist eine eigene Rechnung, die ich in [Agentforce 1 Field Service: Wann rechnet sich das Paket?](../agentforce-1-field-service-paket-rechnung/) aufmache.
+In der Unlimited Edition kosten Dispatcher und Technician laut Fußnote 330 Dollar, das Plus-Paket 380 Dollar. Ob sich das Paket für 650 € rechnet, ist eine eigene Rechnung, die ich in [Agentforce 1 Field Service: Wann rechnet sich das Paket?](/blog/agentforce-1-field-service-paket-rechnung/) aufmache.
 
 **Stand 9. November 2026:** Die [US-Preisseite](https://www.salesforce.com/service/field-service-management/pricing/) wurde am 5. November 2026 umgestellt: Statt Field Service Plus und Agentforce 1 Field Service stehen dort Field Service+ Core (250 $), Field Service+ Advanced (450 $) und Field Service Max (650 $), Dispatcher und Technician bleiben bei 175 $. Die deutsche Seite zeigt noch das alte Modell. Ich würde im Angebot klären, welches Modell für Ihren Vertrag gilt und ob Field Service+ Core das Recht zum Case Management hat.
 
@@ -75,7 +75,7 @@ Ich leite die Lizenzmatrix daraus ab, was jemand im System tut, nicht aus der St
 
 Service Cloud selbst gibt es inzwischen in neuen Editionen. Die [Service-Cloud-Preisseite](https://www.salesforce.com/service/pricing/) nennt Core für 195 € pro Nutzer und Monat und schreibt, dass Core die Enterprise Edition ersetzt. Für die Hotline ist das der Vergleichspreis: 195 € für Service Cloud Core gegen 230 € für Field Service Plus. Für 35 € Unterschied erhält die Hotline das Recht zu disponieren.
 
-Das Backoffice prüfe ich am genauesten. Wer nur im ERP fakturiert, braucht gar keine Salesforce-Lizenz. Wer Serviceberichte liest oder Verträge pflegt, kommt je nach bearbeiteten Objekten vielleicht mit einer günstigeren Lizenz aus. Wie man das prüft, ohne Standardfunktionen nachzubauen, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
+Das Backoffice prüfe ich am genauesten. Wer nur im ERP fakturiert, braucht gar keine Salesforce-Lizenz. Wer Serviceberichte liest oder Verträge pflegt, kommt je nach bearbeiteten Objekten vielleicht mit einer günstigeren Lizenz aus. Wie man das prüft, ohne Standardfunktionen nachzubauen, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](/blog/salesforce-lizenzen-volle-lizenz/).
 
 ## Wann lohnt sich Contractor Plus pro Login?
 
@@ -85,7 +85,7 @@ Contractor Plus kostet 80 € pro Nutzer und Monat oder 32 € pro Login. Die Sc
 Die Preisseite schreibt, dass Contractor-Lizenzen auch auf Basis monatlicher Logins erhältlich sind, und verweist für Details an den Vertrieb. Die Zählregel würde ich deshalb im Bestellformular festhalten lassen.
 ```
 
-Der [Architektur-Leitfaden von Salesforce zu Servicepartnern](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns.html) beschreibt eine Contractor-Firma als Drittunternehmen, das seine eigenen Leute steuert. Diese Lizenzen sind für Ihre Servicepartner gedacht, nicht für eigene Mitarbeitende, die günstiger lizenziert werden sollen. Wie Partnertechniker eine eigene Ressource und ein eigenes Gebiet erhalten, steht in [Field Service: Servicepartner einbinden](../salesforce-field-service-servicepartner/).
+Der [Architektur-Leitfaden von Salesforce zu Servicepartnern](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns.html) beschreibt eine Contractor-Firma als Drittunternehmen, das seine eigenen Leute steuert. Diese Lizenzen sind für Ihre Servicepartner gedacht, nicht für eigene Mitarbeitende, die günstiger lizenziert werden sollen. Wie Partnertechniker eine eigene Ressource und ein eigenes Gebiet erhalten, steht in [Field Service: Servicepartner einbinden](/blog/salesforce-field-service-servicepartner/).
 
 ## Rechenbeispiel: Hotline, Disposition, eigene Techniker und zwei Partner
 
@@ -109,11 +109,11 @@ Der Wert der Übung liegt weniger in der Summe als in den Entscheidungen, die si
 - **Wer Case Management macht.** Jede Person, die Cases bearbeitet und auch Techniker plant, braucht Field Service Plus. Das ist zuerst eine Prozessfrage.
 - **Wie Partner arbeiten.** Regelmäßige Partnertechniker mit Nutzerlizenz, gelegentliche pro Login. Die Zählregel vereinbaren.
 - **Welche Edition.** Die Preise oben gelten für die Enterprise Edition. In der Unlimited Edition kosten Dispatcher und Technician 330 Dollar.
-- **Welche Add-ons.** Agentforce for Field Service and Operations, [Visual Remote Assistant](../visual-remote-assistant-fernhilfe-statt-einsatz/) und Appointment Assistant werden als Add-ons verkauft; die US-Preisseite nennt seit 5. November 2026 keinen Preis mehr dafür. Nur die Rollen, die sie nutzen, brauchen sie.
+- **Welche Add-ons.** Agentforce for Field Service and Operations, [Visual Remote Assistant](/blog/visual-remote-assistant-fernhilfe-statt-einsatz/) und Appointment Assistant werden als Add-ons verkauft; die US-Preisseite nennt seit 5. November 2026 keinen Preis mehr dafür. Nur die Rollen, die sie nutzen, brauchen sie.
 - **Wachstum.** Eine Lizenzprognose über drei Jahre, nach Rolle und Welle, verhindert, dass am ersten Tag 45 Techniker-Lizenzen gekauft werden, wenn die erste Welle 15 Techniker hat.
 
-Wie das in den Business Case für Field Service passt, steht in [Teil 1 der Serie](../salesforce-field-service-lohnt-sich/) und in [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/). Bearbeitet die Serviceorganisation auch Garantieansprüche, lohnt vor dem Kauf ein Blick in das [Manufacturing-Cloud-Kapitel zu Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/), damit dieselben Personen nicht zweimal lizenziert werden.
+Wie das in den Business Case für Field Service passt, steht in [Teil 1 der Serie](/blog/salesforce-field-service-lohnt-sich/) und in [Kapitel 1 der Masterclass Field Service](/masterclass/field-service/field-service-lohnt-sich-lizenzen/). Bearbeitet die Serviceorganisation auch Garantieansprüche, lohnt vor dem Kauf ein Blick in das [Manufacturing-Cloud-Kapitel zu Garantie und After-Sales](/masterclass/manufacturing-cloud/garantie-und-after-sales/), damit dieselben Personen nicht zweimal lizenziert werden.
 
 ## Jede Person mit ihrer Arbeit im System auflisten
 
-Listen Sie für jede Person der Serviceorganisation auf, was sie jede Woche im System tut, und ordnen Sie dann die Lizenz nach den Regeln oben zu. Das mache ich im Rahmen von [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/), bevor die Verhandlung beginnt.
+Listen Sie für jede Person der Serviceorganisation auf, was sie jede Woche im System tut, und ordnen Sie dann die Lizenz nach den Regeln oben zu. Das mache ich im Rahmen von [Make-or-Buy und Lizenzprognosen](/leistungen/make-or-buy-lizenzen/), bevor die Verhandlung beginnt.

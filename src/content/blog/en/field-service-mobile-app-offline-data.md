@@ -39,7 +39,7 @@ The [Trailhead module on offline briefcases](https://trailhead.salesforce.com/co
 
 The product now runs as Agentforce Field Service and Operations; the app and much of the documentation still say Field Service.
 
-Changes made offline are saved on the device and sent to Salesforce when the connection returns. That sync can fail: validation rules reject a record, a device clock set ahead causes "CreatedDate in future", and date fields show the sync time instead of the offline time unless Support enables accurate record dates, according to the [offline considerations](https://help.salesforce.com/s/articleView?id=service.mfs_offline_considerations.htm&language=en_US&type=5). Supported mobile flows can run offline if all the data and metadata they need are cached; if a flow needs additional data, it fails. When used offline, Data Capture creates and updates records only after the device is online again; this and other flow limits are listed in [Field Service mobile flow limitations](../field-service-mobile-flow-limitations/).
+Changes made offline are saved on the device and sent to Salesforce when the connection returns. That sync can fail: validation rules reject a record, a device clock set ahead causes "CreatedDate in future", and date fields show the sync time instead of the offline time unless Support enables accurate record dates, according to the [offline considerations](https://help.salesforce.com/s/articleView?id=service.mfs_offline_considerations.htm&language=en_US&type=5). Supported mobile flows can run offline if all the data and metadata they need are cached; if a flow needs additional data, it fails. When used offline, Data Capture creates and updates records only after the device is online again; this and other flow limits are listed in [Field Service mobile flow limitations](/en/blog/field-service-mobile-flow-limitations/).
 
 Salesforce does publish limits. According to the [overview of briefcase types](https://help.salesforce.com/s/articleView?id=service.mfs_hvb_briefcase_types.htm&language=en_US&type=5), a standard briefcase primes up to 50,000 records per user, a profile briefcase for performance priming up to 100,000 unique records and a high-volume briefcase up to 400,000. Performance priming also caps a briefcase at 2,000 service appointments and 75,000 records per rule. I would plan well below these numbers and measure how long priming takes on a real device.
 
@@ -63,9 +63,9 @@ My rule, for a model where prices are set in the office: whatever the technician
 | Stock of all warehouses | In this model the ERP owns it and the back office looks it up |
 | Closed work orders older than a few months | Rarely needed, heavy to sync |
 
-Van stock is easy to underestimate. A live lookup in the ERP does not work in the basement of a factory, as I described in [Field Service spare parts: ERP or Salesforce?](../salesforce-field-service-spare-parts-erp/). A copy of the van stock has to be in Salesforce and on the device.
+Van stock is easy to underestimate. A live lookup in the ERP does not work in the basement of a factory, as I described in [Field Service spare parts: ERP or Salesforce?](/en/blog/salesforce-field-service-spare-parts-erp/). A copy of the van stock has to be in Salesforce and on the device.
 
-Manuals need a second look. A troubleshooting agent finds the right manual only if every document carries the same product key as the asset, which is covered in [Field Service AI troubleshooting: fix the manuals first](../field-service-ai-troubleshooting-manuals/). The same key determines whether the briefcase can filter the right manual for the device. Whether the file itself opens without a network depends on how it is stored, so test it with a large PDF. Do the same for related records such as line items and the asset's previous work orders: check on the device which screen, tab or flow makes them reachable offline, because a table like the one above is a target state, not a guarantee of what is primed.
+Manuals need a second look. A troubleshooting agent finds the right manual only if every document carries the same product key as the asset, which is covered in [Field Service AI troubleshooting: fix the manuals first](/en/blog/field-service-ai-troubleshooting-manuals/). The same key determines whether the briefcase can filter the right manual for the device. Whether the file itself opens without a network depends on how it is stored, so test it with a large PDF. Do the same for related records such as line items and the asset's previous work orders: check on the device which screen, tab or flow makes them reachable offline, because a table like the one above is a target state, not a guarantee of what is primed.
 
 ## Which offline gaps does Salesforce document?
 
@@ -78,12 +78,12 @@ The [considerations for LWC Offline in the Field Service mobile app](https://dev
 5. **iOS cold start.** Changes to Lightning web components load on iOS only after the app is fully closed and started again. A technician who never closes the app keeps the old version.
 
 ```hinweis achtung
-Point 5 also matters for every release of your own components. Who tells 50 technicians to close the app completely after a deployment? This belongs in the release plan, together with the app versions Salesforce ships. I cover the routine for that in [Field Service app updates: how to test each release](../field-service-mobile-app-updates-testing/).
+Point 5 also matters for every release of your own components. Who tells 50 technicians to close the app completely after a deployment? This belongs in the release plan, together with the app versions Salesforce ships. I cover the routine for that in [Field Service app updates: how to test each release](/en/blog/field-service-mobile-app-updates-testing/).
 ```
 
 ## Partner technicians test offline separately
 
-Many manufacturers bring subcontractors into the same app. Partner technicians then work as community users with Field Service permissions, as described in [Field Service: how to bring in service partners](../salesforce-field-service-service-partners/). If partners are in scope, point 3 of the list above can affect exactly these users.
+Many manufacturers bring subcontractors into the same app. Partner technicians then work as community users with Field Service permissions, as described in [Field Service: how to bring in service partners](/en/blog/salesforce-field-service-service-partners/). If partners are in scope, point 3 of the list above can affect exactly these users.
 
 Partners also usually have different sharing, often limited to their own territory and appointments. A briefcase that works for internal technicians can therefore deliver fewer records to a partner, or none of the related ones. My advice: give partners a briefcase of their own and test it with a real partner user, never with an admin who switches profiles.
 
@@ -98,7 +98,7 @@ A machine builder sends a technician to a customer's production hall. The compre
 
 The scenario shows what offline really means for planning. The device works, but the plan freezes at the last sync. Dispatchers need to know which technicians are in halls without a network connection, and a short call is part of the process.
 
-The service document in this scenario is generated with [Document Builder](../salesforce-service-documents-document-builder/). The data and signature are captured offline, but the final PDF can depend on the sync completing, and custom components in its template have to read their data offline as well. How that works is shown in [Document Builder: five limits and workarounds](../salesforce-document-builder-limits-workarounds/).
+The service document in this scenario is generated with [Document Builder](/en/blog/salesforce-service-documents-document-builder/). The data and signature are captured offline, but the final PDF can depend on the sync completing, and custom components in its template have to read their data offline as well. How that works is shown in [Document Builder: five limits and workarounds](/en/blog/salesforce-document-builder-limits-workarounds/).
 
 ## Cut the briefcases by role
 
@@ -115,4 +115,4 @@ Measure the sync
   Time for the morning priming and size on the device, with the briefcase of your busiest region.
 ```
 
-Offline design determines whether forms and documents work later. The next step is the form itself, covered in [Field Service Data Capture: inspection forms without paper](../field-service-data-capture-inspection-forms/), and the whole topic is part of [chapter 3 of the Field Service masterclass](../../masterclass/field-service/field-service-mobile-app-documents/).
+Offline design determines whether forms and documents work later. The next step is the form itself, covered in [Field Service Data Capture: inspection forms without paper](/en/blog/field-service-data-capture-inspection-forms/), and the whole topic is part of [chapter 3 of the Field Service masterclass](/en/masterclass/field-service/field-service-mobile-app-documents/).

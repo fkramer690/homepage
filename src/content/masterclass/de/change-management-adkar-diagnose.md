@@ -29,7 +29,7 @@ Salesforce-Einführungen bei Herstellern scheitern selten an der Technik. Sie sc
 
 ## Warum wird Salesforce im Alltag nicht genutzt?
 
-Ein Release ist technisch in Minuten ausgerollt. Ob danach jemand anders arbeitet, entscheidet sich in den Wochen danach. Die Ursachen, die ich in Salesforce-Programmen sehe, lassen sich fast immer einer ADKAR-Stufe zuordnen: Wer eine Änderung erst in Produktion entdeckt, hatte keine Awareness und baut sich einen Umweg. Wer Opportunities nur pflegt, weil es Pflicht ist, kennt den Zweck nicht, etwa die Absatzplanung, die darauf aufbaut. Ohne Entscheidungen aus dem Management bleibt jede neue Regel freiwillig, das schwächt Desire und Reinforcement. Und wenn Probleme aus dem Alltag in E-Mails untergehen, statt im Backlog erfasst zu werden, fehlt der Rückkanal, über den Knowledge und Ability nachwachsen. Die ausführliche Liste der Gründe steht im Artikel [Salesforce Change Management: warum Einführungen scheitern](../../../blog/change-management-salesforce-einfuehrung/).
+Ein Release ist technisch in Minuten ausgerollt. Ob danach jemand anders arbeitet, entscheidet sich in den Wochen danach. Die Ursachen, die ich in Salesforce-Programmen sehe, lassen sich fast immer einer ADKAR-Stufe zuordnen: Wer eine Änderung erst in Produktion entdeckt, hatte keine Awareness und baut sich einen Umweg. Wer Opportunities nur pflegt, weil es Pflicht ist, kennt den Zweck nicht, etwa die Absatzplanung, die darauf aufbaut. Ohne Entscheidungen aus dem Management bleibt jede neue Regel freiwillig, das schwächt Desire und Reinforcement. Und wenn Probleme aus dem Alltag in E-Mails untergehen, statt im Backlog erfasst zu werden, fehlt der Rückkanal, über den Knowledge und Ability nachwachsen. Die ausführliche Liste der Gründe steht im Artikel [Salesforce Change Management: warum Einführungen scheitern](/blog/change-management-salesforce-einfuehrung/).
 
 Dass sich der Aufwand lohnt, belegt die Langzeitstudie von Prosci. Für die 12. Ausgabe von [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) gaben 2.668 Personen Auskunft. Der Abstand zwischen gutem und schlechtem Change Management ist groß, und an erster Stelle der Erfolgsfaktoren steht ein Management, das die Einführung aktiv und sichtbar trägt.
 
@@ -40,7 +40,7 @@ Dass sich der Aufwand lohnt, belegt die Langzeitstudie von Prosci. Für die 12. 
 quelle: Prosci, Best Practices in Change Management, 12. Ausgabe, Executive Summary
 ```
 
-Die Diagnose gilt auch für die Technik. Führt ein Programm neue Regeln für Entwicklung und Release ein, stehen Entwicklerteams und Umsetzungspartner an denselben Stufen wie der Vertrieb. Darum geht es in [Kapitel 5](../nutzung-messen-und-verankern/).
+Die Diagnose gilt auch für die Technik. Führt ein Programm neue Regeln für Entwicklung und Release ein, stehen Entwicklerteams und Umsetzungspartner an denselben Stufen wie der Vertrieb. Darum geht es in [Kapitel 5](/masterclass/change-management/nutzung-messen-und-verankern/).
 
 ## Die fünf ADKAR-Stufen im Salesforce-Programm
 
@@ -58,7 +58,7 @@ Kapitel 4 nimmt dieselben Stufen für einen Rollout über mehrere Länder und Te
 
 Der Nutzen liegt in der Diagnose. Bei niedriger Nutzung setzen viele Programme reflexhaft die nächste Schulung an. Mit ADKAR fragen wir stattdessen je Gruppe, auf welcher Stufe es stockt. Weiß der Vertrieb nicht, wofür gepflegte Opportunities gebraucht werden, fehlt Awareness, und das muss der Vertriebsleiter erklären, nicht der Trainer. Kennen Techniker die App, kommen aber offline nicht weiter, fehlt Ability, und das löst eine technische Änderung.
 
-Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Übertragen auf Salesforce-Programme habe ich das Modell zusammen mit [Juliane Winterscheid](../../../partner/juliane-winterscheid/), mit der ich beim Change Management zusammenarbeite.
+Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Übertragen auf Salesforce-Programme habe ich das Modell zusammen mit [Juliane Winterscheid](/partner/juliane-winterscheid/), mit der ich beim Change Management zusammenarbeite.
 
 ## Diagnose mit einer Zeile je Gruppe
 
@@ -68,7 +68,7 @@ Eine Diagnose für „die Anwender“ ist zu grob. Innendienst, Außendienst, Di
 2. **Auf welcher ADKAR-Stufe steht die Gruppe heute?** Eine ehrliche Schätzung aus Gesprächen mit Teamleitung und künftigen Key Usern reicht für den Anfang.
 3. **Wer hilft an dieser Stufe?** Ein Name, keine Rolle.
 
-Vor dem Go-live ist die Einschätzung eine Annahme. Nach dem Go-live ersetzen Nutzungszahlen die Schätzung: Ein Team, das sich täglich anmeldet, aber kaum Angebote anlegt, arbeitet woanders. Wie Sie das messen, beschreibt [Salesforce-Nutzung nach dem Go-live messen](../../../blog/salesforce-nutzung-messen-nach-go-live/).
+Vor dem Go-live ist die Einschätzung eine Annahme. Nach dem Go-live ersetzen Nutzungszahlen die Schätzung: Ein Team, das sich täglich anmeldet, aber kaum Angebote anlegt, arbeitet woanders. Wie Sie das messen, beschreibt [Salesforce-Nutzung nach dem Go-live messen](/blog/salesforce-nutzung-messen-nach-go-live/).
 
 ```praxis
 Den Satz „Change Management brauchen wir nicht“ höre ich oft. Das Budget ist vergeben, Schulungen stehen im Plan, an den Rest gewöhne man sich. Ich spreche das Thema trotzdem an, bei der Planung, vor jedem neuen Land und nach jedem Go-live.
@@ -87,7 +87,7 @@ Ergebnisse sichern | nach dem Go-live · interne Verantwortliche
   Offene Lücken schließen, Regeln in Pipeline, Berichten und Center-of-Excellence-Runden festschreiben, Verantwortung an das Unternehmen übergeben.
 ```
 
-Der Zeitpunkt entscheidet. Startet Change Management zwei Wochen vor dem Go-live, bleibt nur noch Information. Welche Gruppen sich umstellen müssen, gehört deshalb in die Planung, bevor gebaut wird. Bei einem globalen Template wird das zur Architekturfrage, denn hinter vielen Abweichungswünschen eines Landes steht Gewohnheit, wie [Kapitel 4](../change-management-rollout-laender/) zeigt.
+Der Zeitpunkt entscheidet. Startet Change Management zwei Wochen vor dem Go-live, bleibt nur noch Information. Welche Gruppen sich umstellen müssen, gehört deshalb in die Planung, bevor gebaut wird. Bei einem globalen Template wird das zur Architekturfrage, denn hinter vielen Abweichungswünschen eines Landes steht Gewohnheit, wie [Kapitel 4](/masterclass/change-management/change-management-rollout-laender/) zeigt.
 
 ## Wer verantwortet Change Management?
 
@@ -95,14 +95,14 @@ Der Kunde. Ein Umsetzungspartner baut das System, die Veränderung im eigenen Un
 
 | Rolle | Aufgabe |
 |---|---|
-| Sponsor im Management | Steht sichtbar hinter der Einführung, entscheidet bei Konflikten zwischen Bereichen und fragt nach der Nutzung. Mehr in [Kapitel 2](../sponsor-und-kommunikation/). |
+| Sponsor im Management | Steht sichtbar hinter der Einführung, entscheidet bei Konflikten zwischen Bereichen und fragt nach der Nutzung. Mehr in [Kapitel 2](/masterclass/change-management/sponsor-und-kommunikation/). |
 | Product Owner und Programmleitung | Halten den Einführungsplan je Release mit dem Release-Plan zusammen. |
-| Key User | Tragen Wissen ins Team und Rückmeldungen ins Projekt, siehe [Kapitel 3](../key-user-und-schulung/). |
+| Key User | Tragen Wissen ins Team und Rückmeldungen ins Projekt, siehe [Kapitel 3](/masterclass/change-management/key-user-und-schulung/). |
 | Change-Managerin oder Change-Manager | Plant die Maßnahmen je Gruppe und Stufe und berät Sponsor und Führungskräfte. In großen Programmen lohnt dafür eine eigene Person mit Methodenerfahrung. |
 | Architekt | Achtet darauf, dass Entscheidungen zu Template, Pflichtfeldern und Releases die Betroffenen mitdenken. |
 
 ## Erster Schritt: den Sponsor für das nächste Release benennen
 
-Nehmen Sie sich das nächste Release vor und schreiben Sie drei Antworten auf: welche Gruppen es betrifft, was sich für jede im Alltag ändert und wer im Management sich dafür sichtbar einsetzt. Bleibt die letzte Antwort leer, fangen Sie dort an. Dann legen Sie das Erfolgsmaß fest, etwa den Anteil der Angebote aus Salesforce, und nicht die Zahl der Schulungen. Wie ich diese Arbeit mit Ihnen aufsetze, steht auf der Seite [Change Management für Salesforce-Programme](../../../leistungen/change-management/).
+Nehmen Sie sich das nächste Release vor und schreiben Sie drei Antworten auf: welche Gruppen es betrifft, was sich für jede im Alltag ändert und wer im Management sich dafür sichtbar einsetzt. Bleibt die letzte Antwort leer, fangen Sie dort an. Dann legen Sie das Erfolgsmaß fest, etwa den Anteil der Angebote aus Salesforce, und nicht die Zahl der Schulungen. Wie ich diese Arbeit mit Ihnen aufsetze, steht auf der Seite [Change Management für Salesforce-Programme](/leistungen/change-management/).
 
-Das nächste Kapitel behandelt die ersten beiden Stufen, Awareness und Desire, mit Sponsor-Plan und Kommunikation je Release. Alle Kapitel finden Sie auf der [Übersichtsseite](../).
+Das nächste Kapitel behandelt die ersten beiden Stufen, Awareness und Desire, mit Sponsor-Plan und Kommunikation je Release. Alle Kapitel finden Sie auf der [Übersichtsseite](/masterclass/change-management/).

@@ -31,7 +31,7 @@ faq:
 
 sfdx-hardis is a free, open-source toolkit for Salesforce DevOps. It combines a Salesforce CLI plugin with a VS Code extension and gives teams a ready-made CI/CD pipeline, optional delta deployments, quality checks, org monitoring, metadata backups and generated documentation. It runs on the Git platform a company already uses. I use sfdx-hardis in client projects and rate it very highly, mainly because it delivers what most enterprise programs need without license fees for the tool itself.
 
-This article is my overview of sfdx-hardis. Two related articles go into more detail: the [comparison of sfdx-hardis and DevOps Center](../sfdx-hardis-vs-devops-center-comparison/) shows when the native Salesforce tool is enough, and my [review of the free sfdx-hardis training](../sfdx-hardis-free-devops-training/) explains how to try the toolkit yourself in one day.
+This article is my overview of sfdx-hardis. Two related articles go into more detail: the [comparison of sfdx-hardis and DevOps Center](/en/blog/sfdx-hardis-vs-devops-center-comparison/) shows when the native Salesforce tool is enough, and my [review of the free sfdx-hardis training](/en/blog/sfdx-hardis-free-devops-training/) explains how to try the toolkit yourself in one day.
 
 ## What is sfdx-hardis?
 
@@ -42,7 +42,7 @@ This article is my overview of sfdx-hardis. Two related articles go into more de
 
 Both components are published under the AGPL-3.0 license, so they should be included in your normal open-source review.
 
-The idea behind sfdx-hardis is that Salesforce DevOps should not depend on an expensive platform. Most building blocks of a good release process can be assembled from open tools, and sfdx-hardis bundles them into one consistent setup. If you are new to the topic, my article on [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/) explains the basics first.
+The idea behind sfdx-hardis is that Salesforce DevOps should not depend on an expensive platform. Most building blocks of a good release process can be assembled from open tools, and sfdx-hardis bundles them into one consistent setup. If you are new to the topic, my article on [why DevOps decides Salesforce enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/) explains the basics first.
 
 A note on transparency: I support the open-source project, but I have no financial or other ties to Cloudity.
 
@@ -79,7 +79,7 @@ Know-how | Git basics needed. The VS Code extension closes much of the gap for a
 Support | Community support, paid support subscription or consulting | Vendor support
 note: No tool is right for every team. Choose early, justify it, make it binding for every partner.
 ```
-Salesforce's own DevOps Center, now called Lifecycle Center, is another free option. It is a good start for click-based teams, but covers fewer pipeline, monitoring and documentation capabilities. The full comparison, including the supported Git platforms, is in [sfdx-hardis vs DevOps Center](../sfdx-hardis-vs-devops-center-comparison/).
+Salesforce's own DevOps Center, now called Lifecycle Center, is another free option. It is a good start for click-based teams, but covers fewer pipeline, monitoring and documentation capabilities. The full comparison, including the supported Git platforms, is in [sfdx-hardis vs DevOps Center](/en/blog/sfdx-hardis-vs-devops-center-comparison/).
 
 What matters most to me: no tool is right for every team. The choice should be made early, justified properly and then made binding for everyone involved, including every partner. A program where each partner brings its own tool ends up with several release processes, and therefore with none.
 
@@ -101,13 +101,13 @@ contra: Less suitable when
 
 In the second case a commercial platform can be the more honest answer.
 
-The point about license budgets is often underestimated. The saved license costs are best invested in an internal role that maintains the setup, onboards new teams and owns the release calendar. Without that role, even the best tool loses its impact after a few months. The same goes for development standards at partners. See [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/).
+The point about license budgets is often underestimated. The saved license costs are best invested in an internal role that maintains the setup, onboards new teams and owns the release calendar. Without that role, even the best tool loses its impact after a few months. The same goes for development standards at partners. See [Reinforcement: making standards stick with partners](/en/blog/partner-standards-reinforcement/).
 
 ## Get started with the free training
 
-The fastest way to understand sfdx-hardis is to try it. Cloudity offers a free, hands-on training with three levels and verified badges. I completed all three and wrote about my experience in [what I learned from the free sfdx-hardis training](../sfdx-hardis-free-devops-training/).
+The fastest way to understand sfdx-hardis is to try it. Cloudity offers a free, hands-on training with three levels and verified badges. I completed all three and wrote about my experience in [what I learned from the free sfdx-hardis training](/en/blog/sfdx-hardis-free-devops-training/).
 
-Choosing the toolchain is part of [architecture and partner governance](../../services/partner-governance/), not a secondary decision left to developers. For an ongoing program I recommend this order:
+Choosing the toolchain is part of [architecture and partner governance](/en/services/partner-governance/), not a secondary decision left to developers. For an ongoing program I recommend this order:
 
 ```schritte
 Build the repository

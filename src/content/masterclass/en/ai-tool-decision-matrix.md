@@ -35,7 +35,7 @@ The first question is whether you are talking about building or running. That so
 - **Building:** a coding agent such as Agentforce Vibes, Claude Code, Codex or Copilot writes Apex, LWC, flows and metadata. Billing is by tokens or per user. The output is code that has to pass review and the pipeline.
 - **Running:** an Agentforce agent answers dealer enquiries, pre-checks warranty claims or reads order status from the ERP. Billing is per action in Flex Credits. The output is an answer to a customer or dealer.
 
-Each world has its own criteria, its own budget and its own tests. The terms behind them are explained in [chapter 1](../terms-and-map/), Salesforce's own tools in [chapter 2](../salesforce-ai-development-tools/) and the external coding agents in [chapter 4](../external-coding-agents/).
+Each world has its own criteria, its own budget and its own tests. The terms behind them are explained in [chapter 1](/en/masterclass/ai-salesforce/terms-and-map/), Salesforce's own tools in [chapter 2](/en/masterclass/ai-salesforce/salesforce-ai-development-tools/) and the external coding agents in [chapter 4](/en/masterclass/ai-salesforce/external-coding-agents/).
 
 ## The decision matrix for manufacturers
 
@@ -66,7 +66,7 @@ Status as of 27 October 2026, based on the linked pages. Prices are US list pric
 ```hinweis achtung
 Row 5 is often the decisive one for European manufacturers, because it can rule out row 2. IT should check whether the org sits in the EU Operating Zone before any tool comparison starts.
 
-Row 6 looks harmless, but it is the point where an external model reads real customer data. What to check there is covered in [chapter 3](../mcp-and-interfaces/).
+Row 6 looks harmless, but it is the point where an external model reads real customer data. What to check there is covered in [chapter 3](/en/masterclass/ai-salesforce/mcp-and-interfaces/).
 ```
 
 ## Six questions in the right order
@@ -79,16 +79,16 @@ Prototype or production?
 Which data and residency rules apply?
   If the org sits in the EU Operating Zone, Agentforce Vibes is out. If data protection requires EU processing, Anthropic's direct Claude API is out, while Claude through Bedrock in an EU region remains. For Codex I found no statement from OpenAI that the [EU residency for API projects](https://openai.com/index/introducing-data-residency-in-europe/) applies there too; I would get that in writing.
 Which contracts and tools already exist?
-  If Flex Credits are already in the Salesforce contract, Vibes is the natural choice. If IT runs GitHub Enterprise, Copilot is. With a free choice I use Claude Code as the reference, because Salesforce built its first official plugin for it. The full comparison is in [Agentforce Vibes, Claude Code or Copilot](../../../blog/agentforce-vibes-claude-code-copilot/).
+  If Flex Credits are already in the Salesforce contract, Vibes is the natural choice. If IT runs GitHub Enterprise, Copilot is. With a free choice I use Claude Code as the reference, because Salesforce built its first official plugin for it. The full comparison is in [Agentforce Vibes, Claude Code or Copilot](/en/blog/agentforce-vibes-claude-code-copilot/).
 What is the job?
   Code goes to the coding agent, metadata knowledge to the API context server, data to Hosted MCP, business rules of a runtime agent to Agent Script, releases to the pipeline.
 Which cost model fits?
-  Heavy, steady use favors flat per-user fees; light or fluctuating use favors pay-per-use. The numbers are in [chapter 7](../costs-and-tokens/).
+  Heavy, steady use favors flat per-user fees; light or fluctuating use favors pay-per-use. The numbers are in [chapter 7](/en/masterclass/ai-salesforce/costs-and-tokens/).
 Which checks are deterministic?
-  Code Analyzer, Apex tests, a validation deploy and human review come before every merge, whichever agent wrote the code. What those checks look like is covered in [chapter 8](../ai-code-best-practices/).
+  Code Analyzer, Apex tests, a validation deploy and human review come before every merge, whichever agent wrote the code. What those checks look like is covered in [chapter 8](/en/masterclass/ai-salesforce/ai-code-best-practices/).
 ```
 
-For agents in production a seventh question comes before all others: is the process worth it at all? I go through volume, data quality, ERP access, cost model and edition in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/).
+For agents in production a seventh question comes before all others: is the process worth it at all? I go through volume, data quality, ERP access, cost model and edition in [Agentforce for manufacturers: start now or wait?](/en/blog/agentforce-yes-or-no-manufacturers/).
 
 ## Example: three initiatives at a machine builder
 
@@ -96,9 +96,9 @@ Assume a machine builder with Sales Cloud and Service Cloud in an org that sits 
 
 **A prototype for the dealer portal.** Sales wants to show in a workshop how dealers could order spare parts. That is row 1. A separate Developer Edition org holds no customer data, so the partner can build there with Vibes or Claude Code, as long as data protection signs off on the test data. After the workshop the code is deleted, not reused.
 
-**The partner's coding agents.** Because the org sits in the EU Operating Zone, Vibes is out for project work (row 5). That leaves Copilot Enterprise on the existing GitHub license (row 4) or Claude Code through Bedrock in an EU region (rows 3 and 5). With Bedrock, AWS bills the usage, so its price list belongs in the comparison, not Anthropic's. How I set up an approved-tools list, a cost estimate and a comparison on real backlog tasks is shown in the scenario in [chapter 4](../external-coding-agents/). The works council and the data processing agreement come before the decision, as described in [AI coding tools, works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/). Whatever the tool, agents work only in sandboxes, and the pipeline checks with Code Analyzer and Apex tests (row 7).
+**The partner's coding agents.** Because the org sits in the EU Operating Zone, Vibes is out for project work (row 5). That leaves Copilot Enterprise on the existing GitHub license (row 4) or Claude Code through Bedrock in an EU region (rows 3 and 5). With Bedrock, AWS bills the usage, so its price list belongs in the comparison, not Anthropic's. How I set up an approved-tools list, a cost estimate and a comparison on real backlog tasks is shown in the scenario in [chapter 4](/en/masterclass/ai-salesforce/external-coding-agents/). The works council and the data processing agreement come before the decision, as described in [AI coding tools, works council and GDPR](/en/blog/ai-coding-tools-works-council-gdpr/). Whatever the tool, agents work only in sandboxes, and the pipeline checks with Code Analyzer and Apex tests (row 7).
 
-**An agent for order status.** Dealers ask about delivery dates every day. A MuleSoft API to SAP S/4 exists, which is row 10. The agent calls it as an action, and the decision about which data a dealer may see is made in Agent Script. The details are in [Agentforce and SAP order status](../../../blog/agentforce-sap-order-status-mulesoft/). For the acquired plant without an API (row 11) I would not roll out the agent at first. RPA breaks when screens change, and I would test whether the Systems Integration Agent really copes with that on a copy of the system first. The options are in [legacy ERP without an API](../../../blog/legacy-erp-without-api-ai-agents/).
+**An agent for order status.** Dealers ask about delivery dates every day. A MuleSoft API to SAP S/4 exists, which is row 10. The agent calls it as an action, and the decision about which data a dealer may see is made in Agent Script. The details are in [Agentforce and SAP order status](/en/blog/agentforce-sap-order-status-mulesoft/). For the acquired plant without an API (row 11) I would not roll out the agent at first. RPA breaks when screens change, and I would test whether the Systems Integration Agent really copes with that on a copy of the system first. The options are in [legacy ERP without an API](/en/blog/legacy-erp-without-api-ai-agents/).
 
 ```hinweis tipp
 In the end each initiative uses a different tool, and that is normal. What stays the same are the rules: no agent in production, data only read-only and under a named user, releases only through the pipeline.
@@ -110,8 +110,8 @@ Three questions no table answers.
 
 | Question | Why the matrix does not answer it |
 |---|---|
-| Model quality for Apex | There is no public benchmark for Apex, flows and metadata, as described in [chapter 4](../external-coding-agents/). Only a comparison on your own backlog can decide, measured by review findings and rework. |
-| Ownership | Who maintains the rules file in the repository, who approves Hosted MCP access and who pays for Flex Credits is a contract question between you and your partner. I covered that in [chapter 5](../aiforce-and-system-integrators/). |
+| Model quality for Apex | There is no public benchmark for Apex, flows and metadata, as described in [chapter 4](/en/masterclass/ai-salesforce/external-coding-agents/). Only a comparison on your own backlog can decide, measured by review findings and rework. |
+| Ownership | Who maintains the rules file in the repository, who approves Hosted MCP access and who pays for Flex Credits is a contract question between you and your partner. I covered that in [chapter 5](/en/masterclass/ai-salesforce/aiforce-and-system-integrators/). |
 | Whether Salesforce is the right place | Decisions SAP already makes do not belong in an agent in Salesforce. For routine work without language, a flow or an ERP job is often cheaper than any agent. |
 
-Sorting out these decisions for your org and your partners is part of my work in [Salesforce architecture](../../../services/salesforce-architecture/). Where agents deliver value in manufacturing today is the subject of [chapter 10](../ai-agents-in-manufacturing/); all chapters are listed on the [masterclass overview](../).
+Sorting out these decisions for your org and your partners is part of my work in [Salesforce architecture](/en/services/salesforce-architecture/). Where agents deliver value in manufacturing today is the subject of [chapter 10](/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/); all chapters are listed on the [masterclass overview](/en/masterclass/ai-salesforce/).

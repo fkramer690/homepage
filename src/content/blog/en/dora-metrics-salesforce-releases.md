@@ -42,7 +42,7 @@ DORA stands for DevOps Research and Assessment, a research program that has stud
 
 The rework rate was added as the fifth metric in 2024. That is why many tools and articles still talk about the four DORA metrics.
 
-I liked the numbers when I first looked at them in sfdx-hardis, because a steering committee understands them. Nobody there wants to know how many pull requests were merged. But everybody understands the question of whether a release disrupts operations less often than six months ago. What I learned about this in the training is described in [what I learned from the free sfdx-hardis training](../sfdx-hardis-free-devops-training/).
+I liked the numbers when I first looked at them in sfdx-hardis, because a steering committee understands them. Nobody there wants to know how many pull requests were merged. But everybody understands the question of whether a release disrupts operations less often than six months ago. What I learned about this in the training is described in [what I learned from the free sfdx-hardis training](/en/blog/sfdx-hardis-free-devops-training/).
 
 ## Where do the numbers come from in Salesforce?
 
@@ -53,7 +53,7 @@ The metrics need a data source in which every change has a timestamp. In Salesfo
 - **Change fail rate and rework rate** from incidents and hotfixes: an incident is assigned to the deployment that caused it. Hotfix branches and rollbacks are clues, but not every hotfix fixes the last deployment.
 - **Recovery time** from the ticket system: time from the impairment caused by the deployment until service is restored, by a fix, a rollback or deactivating the change.
 
-sfdx-hardis provides a report on these metrics, and commercial DevOps tools for Salesforce offer similar analyses. Note what such a report measures: sfdx-hardis counts failed deployment jobs as change failures and measures lead time from pull request creation, so its values are pipeline approximations. A red job that never reached production is not a DORA failure, and a green job can still disrupt operations. The tool also rates values as Elite to Low against DORA benchmarks; I would not present that rating to the steering committee without validating it. I set up the pipeline for this on the client's own platform, see [DevOps and release management](../../services/devops-release-management/).
+sfdx-hardis provides a report on these metrics, and commercial DevOps tools for Salesforce offer similar analyses. Note what such a report measures: sfdx-hardis counts failed deployment jobs as change failures and measures lead time from pull request creation, so its values are pipeline approximations. A red job that never reached production is not a DORA failure, and a green job can still disrupt operations. The tool also rates values as Elite to Low against DORA benchmarks; I would not present that rating to the steering committee without validating it. I set up the pipeline for this on the client's own platform, see [DevOps and release management](/en/services/devops-release-management/).
 
 ```hinweis achtung
 Changes made directly in the production org do not show up in any Git statistics. Check the Setup Audit Trail regularly and export it, because Salesforce keeps it for only 180 days and it covers setup changes, not data. If it lists many changes by users outside the pipeline, the DORA numbers are too good to be true.
@@ -74,7 +74,7 @@ I recommend three rules:
 
 1. **Trend instead of single value.** One month says little. With monthly releases, look at a rolling window of at least six to twelve deployments, and show absolute numbers such as "2 of 6" next to the percentage.
 2. **No comparison with software companies.** The top values in the DORA reports come from teams that deploy several times a day. A manufacturer with a monthly Salesforce release should use its own trend as the benchmark.
-3. **No ranking of partners.** With several partners it is tempting to measure every partner by their change fail rate. Then hotfixes are renamed and defects are logged as new requirements. The metrics belong to the program; the quality of individual deliveries is what the [pull request review](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) is for.
+3. **No ranking of partners.** With several partners it is tempting to measure every partner by their change fail rate. Then hotfixes are renamed and defects are logged as new requirements. The metrics belong to the program; the quality of individual deliveries is what the [pull request review](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/) is for.
 
 ```pro-contra
 pro: DORA metrics in the steering committee
@@ -93,7 +93,7 @@ The metrics are only useful if a bad number leads to an action. This mapping fit
 
 - **Long lead time:** where does the change wait? Often for the review, for UAT or for the release date. Smaller pull requests and agreed review response times help with the first cause, a shorter release cycle with the last.
 - **Low deployment frequency:** releases are too big or require too much effort. Automated post-deployment steps make a release cheaper and therefore possible more often.
-- **High change fail rate:** defects slip past the tests. A [UAT with test users per role](../salesforce-uat-business-acceptance-testing/) and regression tests for the most important processes catch many of them before production.
+- **High change fail rate:** defects slip past the tests. A [UAT with test users per role](/en/blog/salesforce-uat-business-acceptance-testing/) and regression tests for the most important processes catch many of them before production.
 - **Long recovery time:** there is no fast path for fixes. A hotfix sandbox refreshed recently enough to be close to the production state and a dedicated hotfix branch shorten it.
 
 Worked example: a program with twelve releases a year, four of which caused an incident that needed immediate intervention, has a change fail rate of 33 percent. Together with the recovery time and the affected processes, this tells the steering committee more than a list of open tickets, and it can be checked again after every improvement measure.

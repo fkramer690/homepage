@@ -34,7 +34,7 @@ Das Programmgeschäft in der Manufacturing Cloud hilft Zulieferern, die Komponen
 
 Die [Produktseite für den Vertrieb](https://salesforce.com/manufacturing/cloud/sales) nennt, was die Funktion abdeckt: Marktgröße pro Hersteller und Programm, externe Bedarfsdaten mit IHS und Dodge als Beispielen, Margen und die Wirkung von Mengenänderungen auf die Fixkostenverteilung sowie Verbauraten und Preise für technische Änderungen. Das Beispiel bei Trailhead ist ein Fahrzeugprogramm, das Modell passt aber zu jedem Zulieferer, dessen Teile in Serienprodukte einiger weniger Großkunden gehen.
 
-Die Funktion gehört zu Kapitel 2 der Masterclass, [Rahmenverträge und Prognosen](../../masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/), neben Account Forecasting. Account Forecasting plant, was bestehende Kunden von bestehenden Produkten abnehmen. Das Programmgeschäft plant den Bedarf von Programmen, die vielleicht noch gar nicht in Serie sind.
+Die Funktion gehört zu Kapitel 2 der Masterclass, [Rahmenverträge und Prognosen](/masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/), neben Account Forecasting. Account Forecasting plant, was bestehende Kunden von bestehenden Produkten abnehmen. Das Programmgeschäft plant den Bedarf von Programmen, die vielleicht noch gar nicht in Serie sind.
 
 ## Ein Programm hat drei Ebenen mit eigener Prognose
 
@@ -69,7 +69,7 @@ Komponentenprognosen werden laut [Trailhead](https://trailhead.salesforce.com/co
 
 Admins klonen die Vorlagen und passen sie an; geplante Flows starten die Vorlagen, im Beispiel wöchentlich. Die Engine liest Programme, Variantenprognosen, Product Related Material, Produkte, Preisbucheinträge und Perioden und schreibt prognostizierte Menge und Umsatz pro Komponente und Periode.
 
-Für die Architektur folgt daraus zweierlei. Geklonte DPE-Definitionen, Forecast Sets und Flows sind Konfiguration, die wie alles andere durch den Release-Prozess muss, wie in [Daten und Konfiguration in der Pipeline](../../masterclass/devops-release-management/daten-und-konfiguration/) beschrieben. Und die Zahl der Datensätze wächst mit Programmen, Varianten, Komponenten, Dimensionen und Perioden.
+Für die Architektur folgt daraus zweierlei. Geklonte DPE-Definitionen, Forecast Sets und Flows sind Konfiguration, die wie alles andere durch den Release-Prozess muss, wie in [Daten und Konfiguration in der Pipeline](/masterclass/devops-release-management/daten-und-konfiguration/) beschrieben. Und die Zahl der Datensätze wächst mit Programmen, Varianten, Komponenten, Dimensionen und Perioden.
 
 ```hinweis offen
 Salesforce dokumentiert [empfohlene Mengen für das Programmgeschäft](https://help.salesforce.com/s/articleView?id=ind.mfg_pbb_admin_considerations_large_volumes_concept.htm&language=en_US&type=5): für große Orgs bis 150 Programme, 60 Perioden und 58,5 Millionen Komponentenprognosen. Pro Org ist täglich 1 GB Exportvolumen der Data Processing Engine enthalten, mit den Standardvorlagen etwa 3 Millionen Prognosedatensätze am Tag; für mehr braucht es das Data-Pipelines-Add-on.
@@ -79,7 +79,7 @@ Salesforce dokumentiert [empfohlene Mengen für das Programmgeschäft](https://h
 
 Dafür gibt es zwei API-Schritte. Zuerst wandelt die Transformation API abgeschlossene Komponentenprognosen in eine Opportunity um. Die Zuordnungen werden über die Metadaten ObjectHierarchyRelationship mit dem Usage Type Transformation Mapping definiert: Komponentenprognose zu Opportunity, zu Opportunity-Produkt und zu dessen Zeitplan, dazu eine Hilfszuordnung vom Programm zur Opportunity, weil der Account nicht automatisch gesetzt wird. Ergebnis ist eine Opportunity mit einem Opportunity-Produkt pro Komponente und einem Zeitplan pro Periode.
 
-Ist die Opportunity gewonnen (eine Prozessregel, die ich empfehle, keine technische Voraussetzung), macht die Sales Agreement Connect API aus Opportunity und Opportunity-Produkten ein Sales Agreement mit Produkten. Ab dann übernehmen die Ist-Mengen aus dem ERP, wie in [Sales Agreements: Kunden mit offenen Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/) beschrieben. Entsteht das Agreement stattdessen aus einem konfigurierten Angebot, steht der Weg in [vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/).
+Ist die Opportunity gewonnen (eine Prozessregel, die ich empfehle, keine technische Voraussetzung), macht die Sales Agreement Connect API aus Opportunity und Opportunity-Produkten ein Sales Agreement mit Produkten. Ab dann übernehmen die Ist-Mengen aus dem ERP, wie in [Sales Agreements: Kunden mit offenen Abnahmemengen erkennen](/blog/sales-agreements-abnahmemengen-erp/) beschrieben. Entsteht das Agreement stattdessen aus einem konfigurierten Angebot, steht der Weg in [vom Angebot zum Sales Agreement](/blog/angebot-zu-sales-agreement-produktkonfigurator/).
 
 ```ablauf
 ext: Marktdaten CSV
@@ -92,13 +92,13 @@ Opportunity --gewonnen--> Sales Agreement
 ERP ..Ist-Mengen..> Sales Agreement
 ```
 
-Einen Freigabestatus für die Prognose beschreibt Trailhead nicht. Sie müssen selbst festlegen, wer eine Komponentenprognose wann für abgeschlossen erklärt. Der Sales-Planning-Agent hat einen dokumentierten Subagenten, der Programmkomponentenprognosen in Opportunities umwandelt, beschrieben in [was der Sales-Planning-Agent wirklich tut](../agentforce-vertriebsplanung-rahmenvertraege/). Einsetzen würde ich ihn erst, wenn dieser Freigabeschritt existiert.
+Einen Freigabestatus für die Prognose beschreibt Trailhead nicht. Sie müssen selbst festlegen, wer eine Komponentenprognose wann für abgeschlossen erklärt. Der Sales-Planning-Agent hat einen dokumentierten Subagenten, der Programmkomponentenprognosen in Opportunities umwandelt, beschrieben in [was der Sales-Planning-Agent wirklich tut](/blog/agentforce-vertriebsplanung-rahmenvertraege/). Einsetzen würde ich ihn erst, wenn dieser Freigabeschritt existiert.
 
 ## Was brauchen Sie, bevor Sie anfangen?
 
 - **Funktionen im Setup:** Advanced Account Forecasting, Data Pipelines und Program Based Business. Den Metadatentyp für Programmvorlagen gibt es seit API 54.0, die Programmobjekte seit API 55.0.
 - **Berechtigungssätze:** Manufacturing Advanced Account Forecast und Manufacturing Program Based Business für Anwender, Data Pipelines Base User für Admins.
-- **Lizenz:** Die Salesforce-Hilfe listet die Permission Set Licenses für Manufacturing-Cloud-Nutzer; lassen Sie die genaue Kombination im Angebot bestätigen, wie bei jeder Funktion aus [Manufacturing Cloud Funktionen: was enthalten ist](../manufacturing-cloud-funktionen-ueberblick/).
+- **Lizenz:** Die Salesforce-Hilfe listet die Permission Set Licenses für Manufacturing-Cloud-Nutzer; lassen Sie die genaue Kombination im Angebot bestätigen, wie bei jeder Funktion aus [Manufacturing Cloud Funktionen: was enthalten ist](/blog/manufacturing-cloud-funktionen-ueberblick/).
 - **Daten:** eine Quelle für Programm- und Variantenprognosen, Product Related Material aus Konstruktion oder ERP und Preisbucheinträge für Verkaufspreise.
 
 ## Rechenbeispiel: Hydraulikzylinder für 12 Programme
@@ -114,4 +114,4 @@ Bei 24 Monatsperioden sind das unter diesen vereinfachten Annahmen etwa 12 x 4 x
 - **Keine externen oder OEM-Prognosen.** Ohne Programmzahlen gibt es nichts, woraus sich Komponenten ableiten lassen.
 - **Keine Sales Agreements danach.** Die Umwandlung in Opportunities und Rahmenverträge ist die Hälfte des Nutzens.
 
-Wenn Sie es einführen, braucht es eine benannte Person für die Komponentendaten, und für die Anbindung an die Planung im ERP muss feststehen, welches System die maßgebliche Zahl liefert. Das gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Wenn Sie es einführen, braucht es eine benannte Person für die Komponentendaten, und für die Anbindung an die Planung im ERP muss feststehen, welches System die maßgebliche Zahl liefert. Das gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/).

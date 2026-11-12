@@ -33,7 +33,7 @@ Daten und Konfiguration, die keine Metadaten sind, werden in vielen Salesforce-P
 
 ## Welche Daten gehören zur Konfiguration, und welche nicht?
 
-[Kapitel 6](../qualitaet-tests-reviews/) hat beschrieben, wie Metadaten geprüft in die Produktion gelangen. Eine Salesforce-Org lebt aber auch von Datensätzen, die Verhalten steuern. Ich teile sie in vier Gruppen, weil jede Gruppe einen anderen Weg braucht:
+[Kapitel 6](/masterclass/devops-release-management/qualitaet-tests-reviews/) hat beschrieben, wie Metadaten geprüft in die Produktion gelangen. Eine Salesforce-Org lebt aber auch von Datensätzen, die Verhalten steuern. Ich teile sie in vier Gruppen, weil jede Gruppe einen anderen Weg braucht:
 
 | Gruppe | Beispiele in der Fertigung | Quelle der Wahrheit | Weg in die Orgs |
 |---|---|---|---|
@@ -57,7 +57,7 @@ Für einen Hersteller heißt das:
 - **Eigene Objekte und Standardobjekte als Konfiguration**, etwa die Field-Service-Objekte oder Preisregeln in einem Konfigurator. Hier haben Sie keine Wahl, sie sind Daten.
 
 ```hinweis tipp
-Bei bestehenden Orgs würde ich Custom Settings nicht pauschal umbauen. Ich würde aber in die Partnerregeln schreiben, dass neue Konfiguration als Custom Metadata Type entsteht, sofern es keinen fachlichen Grund dagegen gibt. Wer diese Regeln festlegt und durchsetzt, beschreibt [Kapitel 2](../release-prozess-eigentum-rollen/).
+Bei bestehenden Orgs würde ich Custom Settings nicht pauschal umbauen. Ich würde aber in die Partnerregeln schreiben, dass neue Konfiguration als Custom Metadata Type entsteht, sofern es keinen fachlichen Grund dagegen gibt. Wer diese Regeln festlegt und durchsetzt, beschreibt [Kapitel 2](/masterclass/devops-release-management/release-prozess-eigentum-rollen/).
 ```
 
 ## Konfigurationsdaten durchlaufen dieselbe Pipeline
@@ -72,7 +72,7 @@ Bei bestehenden Orgs würde ich Custom Settings nicht pauschal umbauen. Ich wür
 
 [SFDMU](https://help.sfdmu.com/) ist ein Open-Source-Plugin der Salesforce CLI für Datenmigrationen, laut [npm-Eintrag](https://www.npmjs.com/package/sfdmu) unter BSD-3-Lizenz. Es kopiert Datensätze direkt von Org zu Org oder aus CSV-Dateien, beherrscht Insert, Upsert, Update und Delete, verarbeitet mehrere verknüpfte Objekte in einem Lauf und wird über eine einzige Datei `export.json` konfiguriert. Hinzu kommen Feldzuordnungen, Anonymisierung und zusammengesetzte externe ID-Schlüssel. Die Verarbeitung läuft lokal oder auf dem Pipeline-Runner, ohne Cloud-Dienst dazwischen.
 
-sfdx-hardis bindet SFDMU über [Deployment Actions](https://sfdx-hardis.cloudity.com/salesforce-devops-work-on-user-story-deployment-actions/) ein. Wie Deployment Actions in den Pull-Request-Fluss passen, steht in [Kapitel 5](../pipeline-aufbauen/). Im kostenlosen sfdx-hardis-Training gehören Deployment Actions für Referenzdaten zu Level 2; meine Eindrücke stehen in [was ich aus dem sfdx-hardis-Training mitgenommen habe](../../../blog/sfdx-hardis-kostenloses-devops-training/), eine Einführung in [sfdx-hardis: Open-Source-DevOps erklärt](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/).
+sfdx-hardis bindet SFDMU über [Deployment Actions](https://sfdx-hardis.cloudity.com/salesforce-devops-work-on-user-story-deployment-actions/) ein. Wie Deployment Actions in den Pull-Request-Fluss passen, steht in [Kapitel 5](/masterclass/devops-release-management/pipeline-aufbauen/). Im kostenlosen sfdx-hardis-Training gehören Deployment Actions für Referenzdaten zu Level 2; meine Eindrücke stehen in [was ich aus dem sfdx-hardis-Training mitgenommen habe](/blog/sfdx-hardis-kostenloses-devops-training/), eine Einführung in [sfdx-hardis: Open-Source-DevOps erklärt](/blog/sfdx-hardis-einfuehrung-salesforce-devops/).
 
 ```vertiefung Für Entwickler
 titel: Wie laufen Deployment Actions vom Typ data?
@@ -93,17 +93,17 @@ Die kommerziellen Plattformen haben eigene Datenmodule mit Oberfläche. Laut Dok
 | [Copado Data Deploy](https://www.copado.com/platform/deliver/) | Datenvorlagen für Konfigurationsdatensätze mit komplexen Beziehungen, fertige Vorlagen aus der DevOps Exchange, Maskierung sensibler Werte | in Copado Essentials laut [Dokumentation](https://docs.essentials.copado.com/en/articles/6325474-how-to-deploy-relational-data-with-data-deploy-essentials) eine Option von Essentials Plus mit Lizenz pro Benutzer |
 | [Flosum Data Migrator](https://docs.flosum.com/data-migrator) | Vorlagen mit Objekten, Feldern und Filtern, Beziehungen bleiben erhalten, Maskierung, Trigger abschaltbar | Fehlerbericht pro Datensatz |
 
-Was diese Werkzeuge gut machen: Ein Admin sieht vor dem Lauf, welche verknüpften Datensätze mitübertragen werden, und muss keine `export.json` schreiben. Für CPQ-Konfiguration mit vielen verschachtelten Objekten ist das ein echter Vorteil. Welches Werkzeug insgesamt zu Ihrem Programm passt, entscheidet [Kapitel 4](../devops-werkzeuge-vergleich/); für Daten gilt dieselbe Regel wie für Metadaten. Der Vertrag für das Werkzeug ist auf Ihren Namen ausgestellt, und die Datenvorlagen liegen bei Ihnen, nicht im Konto eines Partners. Warum, steht in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
+Was diese Werkzeuge gut machen: Ein Admin sieht vor dem Lauf, welche verknüpften Datensätze mitübertragen werden, und muss keine `export.json` schreiben. Für CPQ-Konfiguration mit vielen verschachtelten Objekten ist das ein echter Vorteil. Welches Werkzeug insgesamt zu Ihrem Programm passt, entscheidet [Kapitel 4](/masterclass/devops-release-management/devops-werkzeuge-vergleich/); für Daten gilt dieselbe Regel wie für Metadaten. Der Vertrag für das Werkzeug ist auf Ihren Namen ausgestellt, und die Datenvorlagen liegen bei Ihnen, nicht im Konto eines Partners. Warum, steht in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
 Ein Punkt gilt für alle Werkzeuge:
 
 ```hinweis achtung
-Gearset schreibt offen, dass ein abgebrochenes Datendeployment Daten nur teilweise einspielen kann. Sichern Sie die betroffenen Objekte vor jedem Release mit Datenschritt; Backup und Wiederherstellung behandelt [Kapitel 9](../betrieb-monitoring-backup/).
+Gearset schreibt offen, dass ein abgebrochenes Datendeployment Daten nur teilweise einspielen kann. Sichern Sie die betroffenen Objekte vor jedem Release mit Datenschritt; Backup und Wiederherstellung behandelt [Kapitel 9](/masterclass/devops-release-management/betrieb-monitoring-backup/).
 ```
 
 ## Wie bleiben Kundendaten in Sandboxes geschützt?
 
-Partial- und Full-Sandboxes enthalten nach jedem Refresh echte Kundendaten. Welche Umgebung welche Daten tragen darf, habe ich in [Kapitel 3](../umgebungen-und-branching/) festgelegt; welche Felder bei einem Hersteller heikel sind und was Coding-Agenten lesen dürfen, steht in [Sandbox-Kundendaten: was KI-Coding-Agenten lesen dürfen](../../../blog/sandbox-kundendaten-ki-coding-agenten/).
+Partial- und Full-Sandboxes enthalten nach jedem Refresh echte Kundendaten. Welche Umgebung welche Daten tragen darf, habe ich in [Kapitel 3](/masterclass/devops-release-management/umgebungen-und-branching/) festgelegt; welche Felder bei einem Hersteller heikel sind und was Coding-Agenten lesen dürfen, steht in [Sandbox-Kundendaten: was KI-Coding-Agenten lesen dürfen](/blog/sandbox-kundendaten-ki-coding-agenten/).
 
 Salesforce verkauft dafür [Data Mask & Seed](https://www.salesforce.com/de/platform/data-masking/). Laut Trailhead ist [Data Mask](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/get-to-know-salesforce-data-mask) ein Managed Package, das Sie in der Produktion installieren und das Daten in Full- und Partial-Sandboxes maskiert; die Produktion bleibt unverändert, und maskierte Daten lassen sich nicht zurückholen. Pro Feld wählen Sie laut [Konfigurationsmodul](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/install-and-configure-salesforce-data-mask) Zufallszeichen oder Zufallszahlen, einen Ersatz aus einer Bibliothek wie Namen oder Adressen, oder Löschen. Checkbox-, Lookup- und Picklist-Felder werden nicht unterstützt. Die Konfiguration wird beim Refresh übernommen, den Lauf starten Sie in der Sandbox.
 
@@ -124,7 +124,7 @@ Zugänge freigeben
   Erst danach Zugänge für Partner und Fachbereich freigeben.
 ```
 
-Für Coding-Agenten gilt eine strengere Regel, die [Kapitel 8 der KI-Masterclass](../../ki-salesforce/best-practices-ki-code/) beschreibt: Sie arbeiten in Scratch Orgs und Developer-Sandboxes mit Seed-Daten, nie in einer Full Copy.
+Für Coding-Agenten gilt eine strengere Regel, die [Kapitel 8 der KI-Masterclass](/masterclass/ki-salesforce/best-practices-ki-code/) beschreibt: Sie arbeiten in Scratch Orgs und Developer-Sandboxes mit Seed-Daten, nie in einer Full Copy.
 
 ## Rechenbeispiel: Field Service für den Wartungsservice
 
@@ -152,4 +152,4 @@ In jeden Vertrag würde ich schreiben:
 4. Stammdaten aus SAP werden nie über die Release-Pipeline in die Produktion übertragen.
 5. Kein Partner erhält Zugang zu einer Sandbox, bevor die Maskierung nach dem Refresh gelaufen ist.
 
-Wann Sie Datenschritte im Release-Kalender einplanen und wie die drei Salesforce-Releases pro Jahr hineinspielen, behandelt [Kapitel 8](../release-planung-salesforce-releases/). Datenschritte und Sandbox-Stufen gehören zu meiner Arbeit in [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
+Wann Sie Datenschritte im Release-Kalender einplanen und wie die drei Salesforce-Releases pro Jahr hineinspielen, behandelt [Kapitel 8](/masterclass/devops-release-management/release-planung-salesforce-releases/). Datenschritte und Sandbox-Stufen gehören zu meiner Arbeit in [DevOps und Release-Management](/leistungen/devops-und-release-management/).

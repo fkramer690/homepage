@@ -32,13 +32,13 @@ Eine Salesforce-Pipeline bringt jede Änderung auf demselben Weg in Produktion: 
 
 ## Wie durchläuft ein Pull Request die Pipeline?
 
-Eine Pipeline ist eine feste Folge automatischer Schritte, die eine Änderung aus dem Repository in eine Org bringt. Welche Umgebungen und Branches es gibt, steht in [Kapitel 3](../umgebungen-und-branching/), welches Werkzeug Sie wählen, in [Kapitel 4](../devops-werkzeuge-vergleich/). Hier geht es um die Strecke selbst. Für eine Änderung sieht sie so aus:
+Eine Pipeline ist eine feste Folge automatischer Schritte, die eine Änderung aus dem Repository in eine Org bringt. Welche Umgebungen und Branches es gibt, steht in [Kapitel 3](/masterclass/devops-release-management/umgebungen-und-branching/), welches Werkzeug Sie wählen, in [Kapitel 4](/masterclass/devops-release-management/devops-werkzeuge-vergleich/). Hier geht es um die Strecke selbst. Für eine Änderung sieht sie so aus:
 
 1. Ein Entwickler oder Admin baut in seiner Entwickler-Sandbox und committet auf einen Feature-Branch, eine User Story pro Branch.
 2. Er öffnet einen Pull Request gegen den Integrations-Branch.
 3. Die Pipeline ermittelt die geänderten Metadaten, startet die statische Analyse und ein Validierungs-Deployment gegen die Org hinter dem Ziel-Branch, mit Apex-Tests.
 4. Die Ergebnisse stehen als Kommentar im Pull Request. sfdx-hardis schreibt laut [Dokumentation](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) die Ergebnisse der Deployment-Simulation in jeden Pull Request.
-5. Ein Mensch prüft Architektur, Datenmodell und Seiteneffekte. Warum ich dieses Review für Pflicht halte, steht in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/).
+5. Ein Mensch prüft Architektur, Datenmodell und Seiteneffekte. Warum ich dieses Review für Pflicht halte, steht in [warum Pull-Request-Reviews Pflicht sind](/blog/warum-pull-request-reviews-pflicht-sind/).
 6. Gemergt wird nur mit grüner Validierung und Freigabe. Das erzwingt der Branch-Schutz Ihrer Git-Plattform, nicht die Disziplin der Teams.
 7. Nach dem Merge deployt die Pipeline in die Org, wenn möglich als Quick Deploy, und führt die Schritte vor und nach dem Deployment aus.
 8. Das Team erfährt das Ergebnis, und das Ticket wird aktualisiert.
@@ -84,7 +84,7 @@ Die Plattform wählt die Tests laut [Salesforce-Blog](https://www.salesforce.com
 Dafür gibt es zwei Annotationen: `@IsTest(testFor=...)` bindet eine Testklasse an bestimmte Klassen, `@IsTest(critical=true)` lässt sie bei jedem Deployment laufen.
 ```
 
-sfdx-hardis kennt zusätzlich `RunRepositoryTests`, das alle Testklassen aus dem Repository erkennt und ausführt. Das hilft, wenn die Org alte Tests enthält, die nicht im Repository verwaltet werden. Warum 75 Prozent Abdeckung nur die Untergrenze sind, behandelt [Kapitel 6](../qualitaet-tests-reviews/).
+sfdx-hardis kennt zusätzlich `RunRepositoryTests`, das alle Testklassen aus dem Repository erkennt und ausführt. Das hilft, wenn die Org alte Tests enthält, die nicht im Repository verwaltet werden. Warum 75 Prozent Abdeckung nur die Untergrenze sind, behandelt [Kapitel 6](/masterclass/devops-release-management/qualitaet-tests-reviews/).
 
 ## Delta-Deployments: nur deployen, was sich geändert hat
 
@@ -107,7 +107,7 @@ In sfdx-hardis heißen sie [Deployment Actions](https://sfdx-hardis.cloudity.com
 - **Nachweis:** Die Ergebnisse stehen in einem eigenen Kommentar „Deployment Actions“ im Pull Request.
 ```
 
-Die kommerziellen Werkzeuge lösen dasselbe Problem mit eigener Oberfläche. Gearset hängt laut [Dokumentation](https://docs.gearset.com/en/articles/9859659-pre-and-post-deployment-steps-in-gearset-pipelines) manuelle Schritte vor und nach dem Deployment sowie automatische Schritte nach dem Deployment an den Pull Request, darunter Flows, Agenten und Bots aktivieren. Gut gelöst finde ich, dass ein Pull Request erst in die nächste Stufe übernommen wird, wenn die Vorab-Schritte erledigt sind. Die Funktion ist an die Stufen Automation Starter, Teams und Enterprise Add-on gebunden. Copado führt in seiner [Dokumentation](https://docs.copado.com/article/7y7p18g4ef-deployment-steps) eigene Deployment Steps, die an der User Story hinterlegt sind, darunter Schritte mit Apex. Wie sie in Ihrer Edition aussehen, klären Sie am besten in einer Demo mit Ihrer eigenen Org. Wie Sie Referenz- und Konfigurationsdaten sauber bewegen, behandelt [Kapitel 7](../daten-und-konfiguration/).
+Die kommerziellen Werkzeuge lösen dasselbe Problem mit eigener Oberfläche. Gearset hängt laut [Dokumentation](https://docs.gearset.com/en/articles/9859659-pre-and-post-deployment-steps-in-gearset-pipelines) manuelle Schritte vor und nach dem Deployment sowie automatische Schritte nach dem Deployment an den Pull Request, darunter Flows, Agenten und Bots aktivieren. Gut gelöst finde ich, dass ein Pull Request erst in die nächste Stufe übernommen wird, wenn die Vorab-Schritte erledigt sind. Die Funktion ist an die Stufen Automation Starter, Teams und Enterprise Add-on gebunden. Copado führt in seiner [Dokumentation](https://docs.copado.com/article/7y7p18g4ef-deployment-steps) eigene Deployment Steps, die an der User Story hinterlegt sind, darunter Schritte mit Apex. Wie sie in Ihrer Edition aussehen, klären Sie am besten in einer Demo mit Ihrer eigenen Org. Wie Sie Referenz- und Konfigurationsdaten sauber bewegen, behandelt [Kapitel 7](/masterclass/devops-release-management/daten-und-konfiguration/).
 
 ## Destruktive Änderungen: Löschen mit Plan
 
@@ -124,12 +124,12 @@ Meine Regel: Ein gelöschtes Feld löscht auch seine Daten. Nehmen Sie ein Feld 
 Die Pipeline braucht für jede Org einen Login, und der darf kein Passwort sein. Der [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-auth-jwt-flow.html) beschreibt dafür den JWT Bearer Flow: Die Pipeline signiert ein Token mit einem privaten Schlüssel, Salesforce prüft es mit dem Zertifikat einer External Client App. Für einen Dev Hub, der Scratch Orgs oder Sandboxes anlegt, ist laut Guide eine Connected App nötig. Der Befehl lautet `sf org login jwt` mit Client-ID, Schlüsseldatei und Benutzername.
 
 ```hinweis achtung
-Der OAuth Username-Password Flow endet am 20. Februar 2027. Wer seine Pipeline noch mit Benutzer, Passwort und Security Token anmeldet, findet die Details in [Passwort-Integrationen enden 2027](../../../blog/salesforce-passwort-integrationen-2027/).
+Der OAuth Username-Password Flow endet am 20. Februar 2027. Wer seine Pipeline noch mit Benutzer, Passwort und Security Token anmeldet, findet die Details in [Passwort-Integrationen enden 2027](/blog/salesforce-passwort-integrationen-2027/).
 ```
 
 sfdx-hardis richtet das mit [`hardis:project:configure:auth`](https://sfdx-hardis.cloudity.com/hardis/project/configure/auth/) ein: Der Befehl legt eine External Client App mit JWT Bearer Flow und Zertifikat an, pro Branch. Das Zertifikat liegt verschlüsselt im Repository oder auf Wunsch in einem Passwortmanager, Client-ID und Entschlüsselungsschlüssel liegen als Variablen auf der Git-Plattform. Bei kommerziellen Plattformen autorisieren Sie die Orgs in der Plattform des Herstellers. Fragen Sie dort, welcher Flow dahintersteht und wie die Verbindung beim Kündigen getrennt wird.
 
-Für die Eigentumsfrage aus [Kapitel 2](../release-prozess-eigentum-rollen/) heißt das:
+Für die Eigentumsfrage aus [Kapitel 2](/masterclass/devops-release-management/release-prozess-eigentum-rollen/) heißt das:
 
 - ein eigener technischer Benutzer pro Org für die Pipeline, nur mit den Rechten, die ein Deployment braucht,
 - Zertifikate, Schlüssel und Pipeline-Variablen im Tresor und auf der Git-Plattform des Kunden,
@@ -141,7 +141,7 @@ Eine Pipeline, deren Ergebnis niemand sieht, ist ein Log. Drei Empfänger brauch
 
 - **Der Autor** braucht Details im Pull Request: welche Komponente, welcher Test, welcher Fehler.
 - **Das Team** braucht einen Kanal für fehlgeschlagene Läufe und erfolgreiche Deployments. sfdx-hardis meldet laut [Dokumentation](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) an Slack, Microsoft Teams, Google Chat und per E-Mail und aktualisiert Tickets, wenn eine Änderung eine Org erreicht. Gearset Pipelines meldet laut [Gearset](https://docs.gearset.com/en/articles/10264886-setting-up-notifications-in-pipelines) Validierungen, Deployments und Merge-Konflikte an Slack und Microsoft Teams.
-- **Der Fachbereich** braucht nur die Produktions-Releases, in seiner Sprache. Wie Sie das mit dem Release-Kalender verbinden, steht in [Kapitel 8](../release-planung-salesforce-releases/).
+- **Der Fachbereich** braucht nur die Produktions-Releases, in seiner Sprache. Wie Sie das mit dem Release-Kalender verbinden, steht in [Kapitel 8](/masterclass/devops-release-management/release-planung-salesforce-releases/).
 
 Ein Kanal, der jede erfolgreiche Validierung meldet, wird nach zwei Wochen stummgeschaltet.
 
@@ -155,4 +155,4 @@ Ein Hersteller von Industrieanlagen nutzt Field Service und eine Schnittstelle z
 - Gegen UAT und Produktion validiert die Pipeline vollständig mit `RunLocalTests`. Die Produktionsvalidierung läuft am Vormittag, am Abend folgt der Quick Deploy.
 - Die Pipeline meldet sich per JWT an, das Service-Team erhält eine Nachricht in seinem Teams-Kanal.
 
-Nichts davon braucht ein teures Werkzeug, aber jemand muss es einrichten und pflegen. Ich setze sfdx-hardis seit rund zwei Jahren in Kundenprojekten ein; wie es aufgebaut ist, steht in der [Einführung in sfdx-hardis](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/), und wer die Strecke einmal selbst bauen will, findet im [kostenlosen sfdx-hardis-Training](../../../blog/sfdx-hardis-kostenloses-devops-training/) genau diese Schritte als Labs. Bei der Einrichtung unterstütze ich im Rahmen von [DevOps und Release-Management](../../../leistungen/devops-und-release-management/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
+Nichts davon braucht ein teures Werkzeug, aber jemand muss es einrichten und pflegen. Ich setze sfdx-hardis seit rund zwei Jahren in Kundenprojekten ein; wie es aufgebaut ist, steht in der [Einführung in sfdx-hardis](/blog/sfdx-hardis-einfuehrung-salesforce-devops/), und wer die Strecke einmal selbst bauen will, findet im [kostenlosen sfdx-hardis-Training](/blog/sfdx-hardis-kostenloses-devops-training/) genau diese Schritte als Labs. Bei der Einrichtung unterstütze ich im Rahmen von [DevOps und Release-Management](/leistungen/devops-und-release-management/), alle Kapitel finden Sie auf der [Übersichtsseite](/masterclass/devops-release-management/).

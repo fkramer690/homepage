@@ -86,7 +86,7 @@ mit: Pipeline beim Kunden
 zitat: Die Pipeline gehört dem Kunden, nicht dem Partner. Wer den Release-Prozess besitzt, besitzt die Plattform.
 ```
 
-Dieser letzte Punkt ist mir als [Architekt auf Kundenseite](../../#about) besonders wichtig. Ein Repository und eine Pipeline unter Kontrolle des Kunden machen Partner vergleichbar und austauschbar. Das ist die Grundlage für [Partnersteuerung und Governance](../../leistungen/partnersteuerung/). Außerdem wird das Onboarding eines neuen Partners deutlich leichter, weil die Standards aufgeschrieben sind und automatisch durchgesetzt werden.
+Dieser letzte Punkt ist mir als [Architekt auf Kundenseite](/#about) besonders wichtig. Ein Repository und eine Pipeline unter Kontrolle des Kunden machen Partner vergleichbar und austauschbar. Das ist die Grundlage für [Partnersteuerung und Governance](/leistungen/partnersteuerung/). Außerdem wird das Onboarding eines neuen Partners deutlich leichter, weil die Standards aufgeschrieben sind und automatisch durchgesetzt werden.
 
 ## So sah das in einem Programm aus, in das ich eingestiegen bin
 
@@ -114,13 +114,13 @@ Um dorthin zu gelangen, muss man keine kommerzielle Plattform kaufen. Ein gutes 
 - **Generierte Dokumentation** des Projekts, einschließlich Flows, direkt aus dem Repository.
 - **Eine VS-Code-Erweiterung**, die Admins und Beratern einen visuellen Zugang zum Git-Workflow gibt. So ist DevOps nicht nur etwas für Entwickler.
 
-Das DevOps Center von Salesforce selbst ist eine weitere Option ohne zusätzliche Lizenzgebühr in Professional, Enterprise, Performance, Unlimited und Developer Edition. Es macht Versionsverwaltung auch für Teams zugänglich, die vor allem mit Klicks arbeiten, hat aber kein Org-Monitoring und keine generierte Dokumentation wie sfdx-hardis; den direkten Vergleich mit sfdx-hardis finden Sie in [sfdx-hardis oder DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/). Kommerzielle Tools wie Gearset oder Copado haben ebenfalls ihre Berechtigung, vor allem wenn ein Team eine komplett verwaltete Oberfläche möchte. Die Wahl hängt vom Team, der vorhandenen Toolchain und dem Budget ab. Entscheidend ist, dass früh entschieden und für alle verbindlich durchgesetzt wird, auch für jeden Partner.
+Das DevOps Center von Salesforce selbst ist eine weitere Option ohne zusätzliche Lizenzgebühr in Professional, Enterprise, Performance, Unlimited und Developer Edition. Es macht Versionsverwaltung auch für Teams zugänglich, die vor allem mit Klicks arbeiten, hat aber kein Org-Monitoring und keine generierte Dokumentation wie sfdx-hardis; den direkten Vergleich mit sfdx-hardis finden Sie in [sfdx-hardis oder DevOps Center](/blog/sfdx-hardis-oder-devops-center-vergleich/). Kommerzielle Tools wie Gearset oder Copado haben ebenfalls ihre Berechtigung, vor allem wenn ein Team eine komplett verwaltete Oberfläche möchte. Die Wahl hängt vom Team, der vorhandenen Toolchain und dem Budget ab. Entscheidend ist, dass früh entschieden und für alle verbindlich durchgesetzt wird, auch für jeden Partner.
 
 ## Was gewinnt der Fachbereich?
 
 DevOps klingt nach einem Thema für Entwickler. In der Praxis profitiert oft der Fachbereich am meisten:
 
-- **Planbare Releases.** Ein fester Release-Kalender ersetzt „wir deployen, wenn es fertig ist“. Fachbereiche können Schulungen und Kommunikation darauf ausrichten. Wie das pro Release aussieht, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
+- **Planbare Releases.** Ein fester Release-Kalender ersetzt „wir deployen, wenn es fertig ist“. Fachbereiche können Schulungen und Kommunikation darauf ausrichten. Wie das pro Release aussieht, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](/blog/salesforce-releases-fachbereich-kommunizieren/).
 - **Schnellere Korrekturen.** Tritt ein Fehler in Produktion auf, kann ein Hotfix dieselbe getestete Pipeline durchlaufen, statt auf das nächste große Release zu warten.
 - **Weniger Überraschungen beim Go-live.** Jede Änderung wurde in Integration und UAT bereits über dieselbe Pipeline deployt und getestet, die sie in Produktion bringt.
 - **Nachvollziehbarkeit für Audits.** Für jede über die Pipeline vorgenommene Änderung lässt sich zeigen, wer sie wann und warum gemacht und wer sie freigegeben hat. Direkte Änderungen in Produktion finden Sie im Setup Audit Trail.
@@ -145,4 +145,4 @@ Betrieb
   Monitoring, Metadaten-Backups und generierte Dokumentation ergänzen.
 ```
 
-Nach meiner Erfahrung sollten die ersten beiden Schritte sowie klare Verantwortlichkeiten und Zugriffsregeln geklärt sein, bevor der zweite Partner an der Org arbeitet. Wie ich das mit Open Source aufsetze, steht in der [Einführung in sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/).
+Nach meiner Erfahrung sollten die ersten beiden Schritte sowie klare Verantwortlichkeiten und Zugriffsregeln geklärt sein, bevor der zweite Partner an der Org arbeitet. Wie ich das mit Open Source aufsetze, steht in der [Einführung in sfdx-hardis](/blog/sfdx-hardis-einfuehrung-salesforce-devops/).

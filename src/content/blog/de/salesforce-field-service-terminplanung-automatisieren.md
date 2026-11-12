@@ -32,7 +32,7 @@ draft: false
 
 Wie viel Terminplanung in Salesforce Field Service automatisch laufen sollte, hängt vor allem davon ab, wie viel Vertrauen das Unternehmen in die Technik hat, und dieses Vertrauen sollte auf gemessener Planungsqualität beruhen. Ein guter Einstieg ist eine Arbeitsteilung: Die Automatik plant Termine bis zum Status Scheduled. Ein Disponent schaut über den Plan, korrigiert, wo nötig, und gibt jeden Termin mit dem Status Dispatched an den Techniker frei. Wenn die Zahlen die Planungsqualität bestätigen, übernimmt die Automatik mehr, bis einfache Einsätze ganz ohne Disponent geplant werden.
 
-Dieser Artikel ist Teil 3 der Serie. Ob sich Field Service lohnt, steht in [Teil 1](../salesforce-field-service-lohnt-sich/). Welche Stammdaten die Planung braucht, steht in [Teil 2](../salesforce-field-service-stammdaten/). Ohne diese Daten plant auch die beste Automatik falsch.
+Dieser Artikel ist Teil 3 der Serie. Ob sich Field Service lohnt, steht in [Teil 1](/blog/salesforce-field-service-lohnt-sich/). Welche Stammdaten die Planung braucht, steht in [Teil 2](/blog/salesforce-field-service-stammdaten/). Ohne diese Daten plant auch die beste Automatik falsch.
 
 ## Was passiert zwischen None und Dispatched?
 
@@ -53,7 +53,7 @@ Die Engine vergibt Termine nach einer Scheduling Policy. Laut [Salesforce-Hilfe]
 
 Salesforce liefert vier Policies mit. Customer First wägt Kundenwunsch und kurze Fahrzeit ab. High Intensity stellt die Produktivität der Techniker über Kundenwünsche und ist für Spitzenzeiten gedacht. Soft Boundaries erlaubt, Techniker über Gebietsgrenzen hinweg einzusetzen. Emergency ist für Notfälle. Welche Sie als Ausgangspunkt wählen, hängt vom wichtigsten Ziel ab: zugesagte Reaktionszeiten, kurze Fahrten, Kundenwunsch, Auslastung oder knappe Spezialisten. Starten Sie in jedem Fall mit einer mitgelieferten Policy und passen Sie die Gewichte an, statt eine von null aufzubauen.
 
-Dazu kommt die Optimierung. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) kann sie den Plan für ein oder mehrere Gebiete über mehrere Tage neu ordnen, etwa jede Nacht. Am Einsatztag fängt eine In-Day-Optimierung kurzfristige Änderungen auf, und für einzelne Techniker gibt es eine eigene Optimierung, wenn ein Termin ausfällt oder sich verspätet. Ob sich der Umstieg auf die neuere Engine lohnt, steht in [Enhanced Scheduling and Optimization: jetzt umstellen?](../field-service-enhanced-scheduling-umstellen/), das Gesamtbild aus Engine, Konsole und Regeln in [Kapitel 2 der Masterclass Field Service](../../masterclass/field-service/field-service-terminplanung-disposition/).
+Dazu kommt die Optimierung. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) kann sie den Plan für ein oder mehrere Gebiete über mehrere Tage neu ordnen, etwa jede Nacht. Am Einsatztag fängt eine In-Day-Optimierung kurzfristige Änderungen auf, und für einzelne Techniker gibt es eine eigene Optimierung, wenn ein Termin ausfällt oder sich verspätet. Ob sich der Umstieg auf die neuere Engine lohnt, steht in [Enhanced Scheduling and Optimization: jetzt umstellen?](/blog/field-service-enhanced-scheduling-umstellen/), das Gesamtbild aus Engine, Konsole und Regeln in [Kapitel 2 der Masterclass Field Service](/masterclass/field-service/field-service-terminplanung-disposition/).
 
 ## Der Disponent ergänzt, was nicht in den Daten steht
 

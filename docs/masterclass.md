@@ -53,7 +53,7 @@ Hub plus ten chapters, `course: devops`, translationKeys `devops-01` … `devops
 
 A hub page plus ten chapter pages: DE under `/masterclass/ki-salesforce/` and `/masterclass/ki-salesforce/<slug>/`, EN under `/en/masterclass/ai-salesforce/` and `/en/masterclass/ai-salesforce/<slug>/`. Chapters are Markdown files in `src/content/masterclass/<lang>/`. `src/content.config.ts` checks the frontmatter and `scripts/check-blog.mjs` checks the body, both in `npm run build`. There is no PDF download.
 
-Chapters follow the content rules of the [blog guidelines](blog-guidelines.md): plain language, no AI slop, no en or em dashes, no raw HTML, only experience Fabian has confirmed, no client names, never the energy or utility sector, relative links only.
+Chapters follow the content rules of the [blog guidelines](blog-guidelines.md): plain language, no AI slop, no en or em dashes, no raw HTML, only experience Fabian has confirmed, no client names, never the energy or utility sector, internal links as root paths starting with `/`, never relative.
 
 ## Hub page
 
@@ -102,7 +102,7 @@ The first one is the DevOps intro (German, 16:9). It is rendered from an HTML an
 
 - 900–3,000 words, at least 3 H2 sections, at least one phrased as a question, no H1 and no H4+.
 - First paragraph gives the answer in at most 110 words.
-- At least 2 relative links, e.g. other chapters (`../<slug>/`), the hub (`../`), blog articles (`../../../blog/<slug>/`), service pages (`../../../leistungen/<slug>/` in DE, `../../../services/<slug>/` in EN). Chapters sit three levels deep, so links outside the masterclass start with `../../../`.
+- At least 2 internal links as root paths, e.g. other chapters (`/masterclass/<course>/<slug>/`, EN `/en/masterclass/<course>/<slug>/`), the hub (`/masterclass/<course>/`), blog articles (`/blog/<slug>/`, EN `/en/blog/<slug>/`), service pages (`/leistungen/<slug>/` in DE, `/en/services/<slug>/` in EN).
 - Blog articles link to chapters with `../../masterclass/ki-salesforce/<slug>/` (DE) or `../../masterclass/ai-salesforce/<slug>/` (EN).
 - EN and DE versions are both required. No card drawing is needed.
 - The banned terms, slop phrases, dash and "it is not X, it is Y" checks of the blog apply unchanged.

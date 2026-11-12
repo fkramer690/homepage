@@ -32,7 +32,7 @@ draft: false
 
 How much scheduling in Salesforce Field Service should run automatically depends above all on how much the company trusts the technology, and that trust should rest on measured planning quality. A good start is a division of work: automation schedules appointments up to the Scheduled status. A dispatcher reviews the plan, corrects it where needed and releases each appointment to the technician by setting it to Dispatched. As the numbers prove that the plan works, automation takes over more, until simple jobs run without a dispatcher at all.
 
-This article is part 3 of the series. Whether Field Service is worth it is covered in [part 1](../salesforce-field-service-worth-it/). The master data that scheduling needs is covered in [part 2](../salesforce-field-service-master-data/). Without that data, even the best automation produces bad plans.
+This article is part 3 of the series. Whether Field Service is worth it is covered in [part 1](/en/blog/salesforce-field-service-worth-it/). The master data that scheduling needs is covered in [part 2](/en/blog/salesforce-field-service-master-data/). Without that data, even the best automation produces bad plans.
 
 ## What happens between None and Dispatched?
 
@@ -53,7 +53,7 @@ The engine assigns appointments using a scheduling policy. According to [Salesfo
 
 Salesforce ships four policies. Customer First balances customer preference and short travel time. High Intensity puts technician productivity above customer preferences and is meant for peak periods. Soft Boundaries lets technicians work across territory borders. Emergency is for urgent jobs. Which one to start from depends on your main goal: committed response times, short travel, customer preference, utilization or scarce specialists. Whatever you pick, start from a shipped policy and adjust the weights instead of building one from scratch.
 
-Optimization is added on top of that. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) it can rearrange the plan for one or more territories over several days, for example every night. On the day of service, in-day optimization absorbs short-notice changes, and a separate optimization option handles a single technician when an appointment is canceled or runs late. Whether to switch to the newer engine is covered in [Enhanced Scheduling and Optimization: switch now?](../field-service-enhanced-scheduling-optimization-switch/). The full picture of engine, console and rules is in [chapter 2 of the Field Service masterclass](../../masterclass/field-service/field-service-scheduling-dispatch/).
+Optimization is added on top of that. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) it can rearrange the plan for one or more territories over several days, for example every night. On the day of service, in-day optimization absorbs short-notice changes, and a separate optimization option handles a single technician when an appointment is canceled or runs late. Whether to switch to the newer engine is covered in [Enhanced Scheduling and Optimization: switch now?](/en/blog/field-service-enhanced-scheduling-optimization-switch/). The full picture of engine, console and rules is in [chapter 2 of the Field Service masterclass](/en/masterclass/field-service/field-service-scheduling-dispatch/).
 
 ## The dispatcher adds what is not in the data
 
