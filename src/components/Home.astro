@@ -291,7 +291,7 @@ const refPhotos: { photo: PhotoKey; focus: string }[] = [
           {t.about.blocks.map((b) => (
             <div class="about-block">
               <h3 class="mono">{b.head}</h3>
-              <p>{b.text}{b.link && <> <a class="text-link" href={b.link.href.startsWith('#') ? b.link.href : localHref(lang, b.link.href)}>{b.link.text}</a>.</>}</p>
+              <p>{b.text}{b.link && <> <a class="text-link" href={b.link.href.startsWith('#') ? b.link.href : localHref(lang, b.link.href)}>{b.link.text}</a>{'link2' in b && b.link2 && <>{b.link2.before} <a class="text-link" href={localHref(lang, b.link2.href)}>{b.link2.text}</a></>}.</>}</p>
             </div>
           ))}
           <ul class="about-links">

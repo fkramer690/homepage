@@ -115,4 +115,4 @@ How all this fits into the overall business case for Field Service is covered in
 
 ## List every person and what they do in the system
 
-List every person in the service organization along with what they do in the system each week, then assign the license by the rules above. I do this as part of [make-or-buy and license forecasts](/en/services/make-or-buy-licences/), before the negotiation starts.
+List every person in the service organization along with what they do in the system each week, then assign the license by the rules above. I do this as part of [make-or-buy and license forecasts](/en/services/make-or-buy-licences/), before the negotiation starts. How I support the whole rollout on the client side, from the license question to the first wave, is described on the page [Salesforce Field Service consultant](/en/salesforce-field-service-consultant/).

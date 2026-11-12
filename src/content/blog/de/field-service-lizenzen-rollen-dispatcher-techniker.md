@@ -116,4 +116,4 @@ Wie das in den Business Case für Field Service passt, steht in [Teil 1 der Seri
 
 ## Jede Person mit ihrer Arbeit im System auflisten
 
-Listen Sie für jede Person der Serviceorganisation auf, was sie jede Woche im System tut, und ordnen Sie dann die Lizenz nach den Regeln oben zu. Das mache ich im Rahmen von [Make-or-Buy und Lizenzprognosen](/leistungen/make-or-buy-lizenzen/), bevor die Verhandlung beginnt.
+Listen Sie für jede Person der Serviceorganisation auf, was sie jede Woche im System tut, und ordnen Sie dann die Lizenz nach den Regeln oben zu. Das mache ich im Rahmen von [Make-or-Buy und Lizenzprognosen](/leistungen/make-or-buy-lizenzen/), bevor die Verhandlung beginnt. Wie ich die gesamte Einführung auf Kundenseite begleite, von der Lizenzfrage bis zur ersten Welle, beschreibt die Seite [Salesforce-Field-Service-Berater](/salesforce-field-service-berater/).
