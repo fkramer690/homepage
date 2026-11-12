@@ -246,6 +246,7 @@ export const en = {
         head: 'What I do',
         text: 'I work as the architect on the client side for manufacturing companies that run sales, service and after-sales in Salesforce. What this means for machine builders is shown on the page',
         link: { text: 'Salesforce for machinery manufacturers', href: 'salesforce-for-machinery-manufacturers/' },
+        link2: { before: ', and for field service teams on the page', text: 'Salesforce Field Service consultant', href: 'salesforce-field-service-consultant/' },
       },
       {
         head: 'Projects',

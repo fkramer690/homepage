@@ -212,6 +212,7 @@ export const de: Dict = {
         head: 'Was ich mache',
         text: 'Ich arbeite als Architekt auf Kundenseite für Fertigungsunternehmen, die Vertrieb, Service und After-Sales in Salesforce führen. Was das im Maschinen- und Anlagenbau heißt, beschreibt die Seite',
         link: { text: 'Salesforce für Maschinen- und Anlagenbau', href: 'salesforce-maschinenbau/' },
+        link2: { before: ', für den Außendienst mit Field Service die Seite', text: 'Salesforce-Field-Service-Berater', href: 'salesforce-field-service-berater/' },
       },
       {
         head: 'Projekte',
