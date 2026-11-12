@@ -222,6 +222,10 @@ export const de: Dict = {
         head: 'Warum unabhängig',
         text: 'Ich bin an keinen Hersteller und keinen Implementierungspartner gebunden. Deshalb frage ich regelmäßig, ob etwas überhaupt in Salesforce gebaut werden sollte. Wenn andere das fragen, kennen sie die Plattform oft nicht gut genug. Ich frage es, weil ich weiß, wo ihre Grenzen liegen und wo sie das richtige Werkzeug ist. Make-or-Buy-Bewertungen, Lizenzprognosen und Best-of-Breed-Alternativen gehören von Anfang an zur Arbeit.',
       },
+      {
+        head: 'Warum Kundenseite',
+        text: 'Mit Blue Apes habe ich selbst einen Salesforce-Implementierungspartner mitgegründet und später verkauft. Ich weiß daher, wie ein Partner Angebote kalkuliert, Teams besetzt und unter Termindruck liefert. Heute arbeite ich nur für den Hersteller und prüfe, ob jede Lieferung in die Gesamtarchitektur passt.',
+      },
     ],
     facts: [
       { label: 'Seit 2020', text: 'Gründer der FK Solution Design GmbH, Köln' },
