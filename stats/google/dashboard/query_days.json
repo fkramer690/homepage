@@ -6238,10 +6238,101 @@
  },
  {
   "day": "2026-11-12",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 7
+ },
+ {
+  "day": "2026-11-12",
   "query": "field service application software",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 71.8
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field engineer scheduling",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 99
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service scheduling and dispatch",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 81.7
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service shift planning",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 71.7
+ },
+ {
+  "day": "2026-11-12",
+  "query": "how to automate technician scheduling and dispatch?",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 17.3
+ },
+ {
+  "day": "2026-11-12",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 7
+ },
+ {
+  "day": "2026-11-12",
+  "query": "agentforce api",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 20.5
+ },
+ {
+  "day": "2026-11-12",
+  "query": "devops release management",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 50
+ },
+ {
+  "day": "2026-11-12",
+  "query": "erp field service",
   "clicks": 0,
   "impressions": 2,
   "position": 83
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service dispatch",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 93
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service dispatcher",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 91.5
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service scheduling",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 89.5
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field software",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 79
  },
  {
   "day": "2026-11-12",
@@ -6256,6 +6347,13 @@
   "clicks": 0,
   "impressions": 2,
   "position": 11.5
+ },
+ {
+  "day": "2026-11-12",
+  "query": "services scheduling dispatch",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 74
  },
  {
   "day": "2026-11-12",
@@ -6280,6 +6378,83 @@
  },
  {
   "day": "2026-11-12",
+  "query": "click field service edge",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 91
+ },
+ {
+  "day": "2026-11-12",
+  "query": "click field service management software",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 82
+ },
+ {
+  "day": "2026-11-12",
+  "query": "click software field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 79
+ },
+ {
+  "day": "2026-11-12",
+  "query": "clicksoftware field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 98
+ },
+ {
+  "day": "2026-11-12",
+  "query": "dispatching field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 86
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service erp",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 73
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service management cloud",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 90
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service planning",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 96
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service pricing",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 100
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service schedule",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 82
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service system",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 71
+ },
+ {
+  "day": "2026-11-12",
   "query": "headless commerce for b2b",
   "clicks": 0,
   "impressions": 1,
@@ -6291,6 +6466,13 @@
   "clicks": 0,
   "impressions": 1,
   "position": 30
+ },
+ {
+  "day": "2026-11-12",
+  "query": "is salesforce devops center enough for enterprise teams?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
  },
  {
   "day": "2026-11-12",
@@ -6308,10 +6490,52 @@
  },
  {
   "day": "2026-11-12",
+  "query": "manufacturing cloud",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 45
+ },
+ {
+  "day": "2026-11-12",
+  "query": "manufacturing cloud implementeren",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 62
+ },
+ {
+  "day": "2026-11-12",
+  "query": "nearshore salesforce development",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 99
+ },
+ {
+  "day": "2026-11-12",
   "query": "salesforce architektur",
   "clicks": 0,
   "impressions": 1,
   "position": 19
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce commerce product data",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce manufacturing cloud",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 72
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce manufacturing cloud partner",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 83
  },
  {
   "day": "2026-11-12",
@@ -6322,6 +6546,13 @@
  },
  {
   "day": "2026-11-12",
+  "query": "salesforce release dates",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 29
+ },
+ {
+  "day": "2026-11-12",
   "query": "salesforce zertifizierte experten",
   "clicks": 0,
   "impressions": 1,
@@ -6329,9 +6560,37 @@
  },
  {
   "day": "2026-11-12",
-  "query": "what does a typical salesforce devops rollout look like?",
+  "query": "sfdx-hardis",
   "clicks": 0,
   "impressions": 1,
   "position": 6
+ },
+ {
+  "day": "2026-11-12",
+  "query": "solutions factory consulting gmbh",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 41
+ },
+ {
+  "day": "2026-11-12",
+  "query": "wechsel von cpq zu revenue cloud",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "day": "2026-11-12",
+  "query": "what software manages preferred supplier lists in field service?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 33
+ },
+ {
+  "day": "2026-11-12",
+  "query": "wo kann ich eine demo für f&e software anfragen",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 65
  }
 ]

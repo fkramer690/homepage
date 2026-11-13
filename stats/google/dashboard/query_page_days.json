@@ -8361,11 +8361,115 @@
  },
  {
   "day": "2026-11-12",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 7
+ },
+ {
+  "day": "2026-11-12",
   "query": "field service application software",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 71.8
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field engineer scheduling",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 99
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service scheduling and dispatch",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 81.7
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service shift planning",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 71.7
+ },
+ {
+  "day": "2026-11-12",
+  "query": "how to automate technician scheduling and dispatch?",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 17.3
+ },
+ {
+  "day": "2026-11-12",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 7
+ },
+ {
+  "day": "2026-11-12",
+  "query": "agentforce api",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-agent-api-dealer-apps/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 20.5
+ },
+ {
+  "day": "2026-11-12",
+  "query": "devops release management",
+  "page": "https://www.fk-sd.de/leistungen/devops-und-release-management/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 50
+ },
+ {
+  "day": "2026-11-12",
+  "query": "erp field service",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
   "impressions": 2,
   "position": 83
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service dispatch",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 93
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service dispatcher",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 91.5
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service scheduling",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 89.5
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field software",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 79
  },
  {
   "day": "2026-11-12",
@@ -8382,6 +8486,14 @@
   "clicks": 0,
   "impressions": 2,
   "position": 11.5
+ },
+ {
+  "day": "2026-11-12",
+  "query": "services scheduling dispatch",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 74
  },
  {
   "day": "2026-11-12",
@@ -8409,6 +8521,94 @@
  },
  {
   "day": "2026-11-12",
+  "query": "click field service edge",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 91
+ },
+ {
+  "day": "2026-11-12",
+  "query": "click field service management software",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 82
+ },
+ {
+  "day": "2026-11-12",
+  "query": "click software field service",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 79
+ },
+ {
+  "day": "2026-11-12",
+  "query": "clicksoftware field service",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 98
+ },
+ {
+  "day": "2026-11-12",
+  "query": "dispatching field service",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 86
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service erp",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 73
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service management cloud",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 90
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service planning",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 96
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service pricing",
+  "page": "https://www.fk-sd.de/blog/agentforce-1-field-service-paket-rechnung/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 100
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service schedule",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 82
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service system",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 71
+ },
+ {
+  "day": "2026-11-12",
   "query": "headless commerce for b2b",
   "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
   "clicks": 0,
@@ -8422,6 +8622,14 @@
   "clicks": 0,
   "impressions": 1,
   "position": 30
+ },
+ {
+  "day": "2026-11-12",
+  "query": "is salesforce devops center enough for enterprise teams?",
+  "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
  },
  {
   "day": "2026-11-12",
@@ -8441,11 +8649,59 @@
  },
  {
   "day": "2026-11-12",
+  "query": "manufacturing cloud",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 45
+ },
+ {
+  "day": "2026-11-12",
+  "query": "manufacturing cloud implementeren",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 62
+ },
+ {
+  "day": "2026-11-12",
+  "query": "nearshore salesforce development",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 99
+ },
+ {
+  "day": "2026-11-12",
   "query": "salesforce architektur",
   "page": "https://www.fk-sd.de/leistungen/",
   "clicks": 0,
   "impressions": 1,
   "position": 19
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce manufacturing cloud",
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 72
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce manufacturing cloud partner",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 83
  },
  {
   "day": "2026-11-12",
@@ -8457,6 +8713,14 @@
  },
  {
   "day": "2026-11-12",
+  "query": "salesforce release dates",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 29
+ },
+ {
+  "day": "2026-11-12",
   "query": "salesforce zertifizierte experten",
   "page": "https://www.fk-sd.de/certifications/",
   "clicks": 0,
@@ -8465,10 +8729,58 @@
  },
  {
   "day": "2026-11-12",
-  "query": "what does a typical salesforce devops rollout look like?",
-  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/en/partners/recruiters/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "day": "2026-11-12",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/partner/recruiter/",
   "clicks": 0,
   "impressions": 1,
   "position": 6
+ },
+ {
+  "day": "2026-11-12",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/speaking/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-12",
+  "query": "solutions factory consulting gmbh",
+  "page": "https://www.fk-sd.de/en/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 41
+ },
+ {
+  "day": "2026-11-12",
+  "query": "wechsel von cpq zu revenue cloud",
+  "page": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "day": "2026-11-12",
+  "query": "what software manages preferred supplier lists in field service?",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 33
+ },
+ {
+  "day": "2026-11-12",
+  "query": "wo kann ich eine demo für f&e software anfragen",
+  "page": "https://www.fk-sd.de/speaking/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 65
  }
 ]

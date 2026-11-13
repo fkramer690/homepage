@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T04:48:18.881Z",
+  "generatedAt": "2026-11-13T13:04:08.968Z",
   "range": {
     "start": "2026-10-14",
     "end": "2026-11-13"
@@ -1918,7 +1918,7 @@
       "count": 10,
       "dimensions": {
         "date": "2026-10-30",
-        "refererHost": ""
+        "refererHost": "teams.public.onecdn.static.microsoft"
       },
       "sum": {
         "visits": 10
@@ -1928,7 +1928,7 @@
       "count": 10,
       "dimensions": {
         "date": "2026-10-30",
-        "refererHost": "teams.public.onecdn.static.microsoft"
+        "refererHost": ""
       },
       "sum": {
         "visits": 10
