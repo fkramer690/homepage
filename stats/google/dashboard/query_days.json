@@ -5895,10 +5895,31 @@
  },
  {
   "day": "2026-11-11",
+  "query": "manufacturing cloud",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 41.7
+ },
+ {
+  "day": "2026-11-11",
+  "query": "service pro vs ptc servicemax",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 9.3
+ },
+ {
+  "day": "2026-11-11",
   "query": "change management salesforce projekt",
   "clicks": 0,
   "impressions": 2,
   "position": 10
+ },
+ {
+  "day": "2026-11-11",
+  "query": "click field service edge",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 86.5
  },
  {
   "day": "2026-11-11",
@@ -5937,6 +5958,20 @@
  },
  {
   "day": "2026-11-11",
+  "query": "field service management cloud",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 88
+ },
+ {
+  "day": "2026-11-11",
+  "query": "field service management erp",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 95.5
+ },
+ {
+  "day": "2026-11-11",
   "query": "field service scheduling",
   "clicks": 0,
   "impressions": 2,
@@ -5951,10 +5986,17 @@
  },
  {
   "day": "2026-11-11",
-  "query": "manufacturing cloud",
+  "query": "kommunikationsplan",
   "clicks": 0,
   "impressions": 2,
-  "position": 34
+  "position": 92.5
+ },
+ {
+  "day": "2026-11-11",
+  "query": "sap order in mulesoft",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 12
  },
  {
   "day": "2026-11-11",
@@ -5972,6 +6014,20 @@
  },
  {
   "day": "2026-11-11",
+  "query": "(intitle:mulesoft or mulesoft) -\"stock price\" -\"investor relations\" -\"financial results\" site:.de",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-11",
+  "query": "b2b headless commerce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 53
+ },
+ {
+  "day": "2026-11-11",
   "query": "can agentforce agents be tested and monitored before going live?",
   "clicks": 0,
   "impressions": 1,
@@ -5983,6 +6039,48 @@
   "clicks": 0,
   "impressions": 1,
   "position": 5
+ },
+ {
+  "day": "2026-11-11",
+  "query": "clicksoftware field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 96
+ },
+ {
+  "day": "2026-11-11",
+  "query": "cloud field service management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 82
+ },
+ {
+  "day": "2026-11-11",
+  "query": "cloud manufacturing",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 74
+ },
+ {
+  "day": "2026-11-11",
+  "query": "fertigung salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 19
+ },
+ {
+  "day": "2026-11-11",
+  "query": "field service affald",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 28
+ },
+ {
+  "day": "2026-11-11",
+  "query": "field service erp",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 78
  },
  {
   "day": "2026-11-11",
@@ -6021,17 +6119,17 @@
  },
  {
   "day": "2026-11-11",
+  "query": "headless commerce b2b",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 46
+ },
+ {
+  "day": "2026-11-11",
   "query": "key user training",
   "clicks": 0,
   "impressions": 1,
   "position": 66
- },
- {
-  "day": "2026-11-11",
-  "query": "kommunikationsplan",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 97
  },
  {
   "day": "2026-11-11",
@@ -6049,10 +6147,45 @@
  },
  {
   "day": "2026-11-11",
+  "query": "nearshore salesforce development",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 58
+ },
+ {
+  "day": "2026-11-11",
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 56
+ },
+ {
+  "day": "2026-11-11",
+  "query": "ownership matrix",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
+ },
+ {
+  "day": "2026-11-11",
   "query": "predictive maintenance salesforce",
   "clicks": 0,
   "impressions": 1,
   "position": 20
+ },
+ {
+  "day": "2026-11-11",
+  "query": "salesforce commerce product data",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 50
+ },
+ {
+  "day": "2026-11-11",
+  "query": "salesforce manufacturing cloud",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 64
  },
  {
   "day": "2026-11-11",
@@ -6077,17 +6210,17 @@
  },
  {
   "day": "2026-11-11",
-  "query": "sap order in mulesoft",
+  "query": "scalable b2b headless commerce",
   "clicks": 0,
   "impressions": 1,
-  "position": 12
+  "position": 76
  },
  {
   "day": "2026-11-11",
-  "query": "service pro vs ptc servicemax",
+  "query": "sfdx-hardis",
   "clicks": 0,
   "impressions": 1,
-  "position": 10
+  "position": 9
  },
  {
   "day": "2026-11-11",
@@ -6102,5 +6235,103 @@
   "clicks": 0,
   "impressions": 1,
   "position": 8
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service application software",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 83
+ },
+ {
+  "day": "2026-11-12",
+  "query": "kotter modell",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 85.5
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce beratung maschinenbau",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 11.5
+ },
+ {
+  "day": "2026-11-12",
+  "query": "can agentforce agents be tested and monitored before going live?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-12",
+  "query": "change kurve kotter",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 42
+ },
+ {
+  "day": "2026-11-12",
+  "query": "change management kommunikationsplan",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-12",
+  "query": "headless commerce for b2b",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 94
+ },
+ {
+  "day": "2026-11-12",
+  "query": "intitle:\"agentforce for sales\" (apk or app or download or extension or application) -site:salesforce.com",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 30
+ },
+ {
+  "day": "2026-11-12",
+  "query": "ki chatbot audit trail",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 70
+ },
+ {
+  "day": "2026-11-12",
+  "query": "kommunikationsplan vorlage",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce architektur",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 19
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce maschinenbau",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 20
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce zertifizierte experten",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 40
+ },
+ {
+  "day": "2026-11-12",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
  }
 ]

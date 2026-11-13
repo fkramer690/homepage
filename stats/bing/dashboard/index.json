@@ -40,5 +40,17 @@
   "inIndex": 432,
   "crawledPages": 134,
   "crawlErrors": 0
+ },
+ {
+  "day": "2026-11-06",
+  "inIndex": 434,
+  "crawledPages": 159,
+  "crawlErrors": 0
+ },
+ {
+  "day": "2026-11-07",
+  "inIndex": 434,
+  "crawledPages": 94,
+  "crawlErrors": 13
  }
 ]

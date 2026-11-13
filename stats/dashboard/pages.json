@@ -70,6 +70,11 @@
   "visits": 30
  },
  {
+  "page": "/en/blog/salesforce-forward-deployed-engineer/",
+  "pageviews": 40,
+  "visits": 40
+ },
+ {
   "page": "/homepage/",
   "pageviews": 30,
   "visits": 10
@@ -80,23 +85,18 @@
   "visits": 30
  },
  {
-  "page": "/en/blog/salesforce-forward-deployed-engineer/",
-  "pageviews": 30,
-  "visits": 30
- },
- {
   "page": "/masterclass/b2b-commerce/",
   "pageviews": 30,
   "visits": 30
  },
  {
-  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
-  "pageviews": 20,
-  "visits": 20
- },
- {
   "page": "/en/blog/ai-coding-tools-works-council-gdpr/",
   "pageviews": 20,
   "visits": 0
+ },
+ {
+  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
+  "pageviews": 20,
+  "visits": 20
  }
 ]

@@ -60,25 +60,31 @@
   "position": 4
  },
  {
-  "page": "https://www.fk-sd.de/blog/salesforce-berechtigungskonzept-permission-sets/",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 10
- },
- {
   "page": "https://www.fk-sd.de/blog/salesforce-key-user-netzwerk/",
   "clicks": 0,
   "impressions": 3,
   "position": 5
  },
  {
-  "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
+  "page": "https://www.fk-sd.de/blog/salesforce-berechtigungskonzept-permission-sets/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 10
+ },
+ {
+  "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
   "clicks": 0,
   "impressions": 2,
-  "position": 9
+  "position": 7
  },
  {
   "page": "https://www.fk-sd.de/blog/merchandising-agent-teilekatalog/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/salesforce-uat-abnahmetest-fachbereich/",
   "clicks": 0,
   "impressions": 2,
   "position": 4
@@ -90,16 +96,10 @@
   "position": 7
  },
  {
-  "page": "https://www.fk-sd.de/blog/salesforce-uat-abnahmetest-fachbereich/",
+  "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
   "clicks": 0,
   "impressions": 2,
-  "position": 4
- },
- {
-  "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 7
+  "position": 9
  },
  {
   "page": "https://www.fk-sd.de/blog/b2b-commerce-preise-gmv-modell/",
@@ -114,22 +114,28 @@
   "position": 4
  },
  {
-  "page": "https://www.fk-sd.de/blog/shop-bestellungen-erp-auftrag/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 8
- },
- {
   "page": "https://www.fk-sd.de/blog/sfdx-hardis-oder-devops-center-vergleich/",
   "clicks": 0,
   "impressions": 1,
   "position": 5
  },
  {
-  "page": "https://www.fk-sd.de/blog/ship-and-debit-preisschutz-haendler/",
+  "page": "https://www.fk-sd.de/blog/shop-bestellungen-erp-auftrag/",
   "clicks": 0,
   "impressions": 1,
   "position": 8
+ },
+ {
+  "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
+ },
+ {
+  "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  },
  {
   "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
@@ -144,21 +150,15 @@
   "position": 10
  },
  {
-  "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
- },
- {
-  "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 2
- },
- {
   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
   "clicks": 0,
   "impressions": 1,
   "position": 2
+ },
+ {
+  "page": "https://www.fk-sd.de/blog/ship-and-debit-preisschutz-haendler/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
  }
 ]

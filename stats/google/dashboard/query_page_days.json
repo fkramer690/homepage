@@ -7961,11 +7961,35 @@
  },
  {
   "day": "2026-11-11",
+  "query": "manufacturing cloud",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 41.7
+ },
+ {
+  "day": "2026-11-11",
+  "query": "service pro vs ptc servicemax",
+  "page": "https://www.fk-sd.de/blog/servicemax-oder-salesforce-field-service/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 9.3
+ },
+ {
+  "day": "2026-11-11",
   "query": "change management salesforce projekt",
   "page": "https://www.fk-sd.de/blog/change-management-prozess-salesforce/",
   "clicks": 0,
   "impressions": 2,
   "position": 10
+ },
+ {
+  "day": "2026-11-11",
+  "query": "click field service edge",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 86.5
  },
  {
   "day": "2026-11-11",
@@ -8009,6 +8033,22 @@
  },
  {
   "day": "2026-11-11",
+  "query": "field service management cloud",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 88
+ },
+ {
+  "day": "2026-11-11",
+  "query": "field service management erp",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 95.5
+ },
+ {
+  "day": "2026-11-11",
   "query": "field service scheduling",
   "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
   "clicks": 0,
@@ -8025,11 +8065,19 @@
  },
  {
   "day": "2026-11-11",
-  "query": "manufacturing cloud",
-  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "query": "kommunikationsplan",
+  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
   "clicks": 0,
   "impressions": 2,
-  "position": 34
+  "position": 92.5
+ },
+ {
+  "day": "2026-11-11",
+  "query": "sap order in mulesoft",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-sap-order-status-mulesoft/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 12
  },
  {
   "day": "2026-11-11",
@@ -8049,6 +8097,22 @@
  },
  {
   "day": "2026-11-11",
+  "query": "(intitle:mulesoft or mulesoft) -\"stock price\" -\"investor relations\" -\"financial results\" site:.de",
+  "page": "https://www.fk-sd.de/en/salesforce-for-machinery-manufacturers/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-11",
+  "query": "b2b headless commerce",
+  "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 53
+ },
+ {
+  "day": "2026-11-11",
   "query": "can agentforce agents be tested and monitored before going live?",
   "page": "https://www.fk-sd.de/en/blog/testing-agentforce-agents-before-go-live/",
   "clicks": 0,
@@ -8062,6 +8126,54 @@
   "clicks": 0,
   "impressions": 1,
   "position": 5
+ },
+ {
+  "day": "2026-11-11",
+  "query": "clicksoftware field service",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 96
+ },
+ {
+  "day": "2026-11-11",
+  "query": "cloud field service management",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 82
+ },
+ {
+  "day": "2026-11-11",
+  "query": "cloud manufacturing",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 74
+ },
+ {
+  "day": "2026-11-11",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 19
+ },
+ {
+  "day": "2026-11-11",
+  "query": "field service affald",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 28
+ },
+ {
+  "day": "2026-11-11",
+  "query": "field service erp",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 78
  },
  {
   "day": "2026-11-11",
@@ -8105,19 +8217,19 @@
  },
  {
   "day": "2026-11-11",
+  "query": "headless commerce b2b",
+  "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 46
+ },
+ {
+  "day": "2026-11-11",
   "query": "key user training",
   "page": "https://www.fk-sd.de/masterclass/change-management/key-user-und-schulung/",
   "clicks": 0,
   "impressions": 1,
   "position": 66
- },
- {
-  "day": "2026-11-11",
-  "query": "kommunikationsplan",
-  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 97
  },
  {
   "day": "2026-11-11",
@@ -8137,11 +8249,59 @@
  },
  {
   "day": "2026-11-11",
+  "query": "nearshore salesforce development",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 58
+ },
+ {
+  "day": "2026-11-11",
+  "query": "nearshore teams",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 56
+ },
+ {
+  "day": "2026-11-11",
+  "query": "ownership matrix",
+  "page": "https://www.fk-sd.de/blog/object-ownership-matrix-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
+ },
+ {
+  "day": "2026-11-11",
   "query": "predictive maintenance salesforce",
   "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
   "clicks": 0,
   "impressions": 1,
   "position": 20
+ },
+ {
+  "day": "2026-11-11",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 50
+ },
+ {
+  "day": "2026-11-11",
+  "query": "salesforce manufacturing cloud",
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 64
+ },
+ {
+  "day": "2026-11-11",
+  "query": "salesforce manufacturing cloud",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 68
  },
  {
   "day": "2026-11-11",
@@ -8169,19 +8329,19 @@
  },
  {
   "day": "2026-11-11",
-  "query": "sap order in mulesoft",
-  "page": "https://www.fk-sd.de/en/blog/agentforce-sap-order-status-mulesoft/",
+  "query": "scalable b2b headless commerce",
+  "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
   "clicks": 0,
   "impressions": 1,
-  "position": 12
+  "position": 76
  },
  {
   "day": "2026-11-11",
-  "query": "service pro vs ptc servicemax",
-  "page": "https://www.fk-sd.de/blog/servicemax-oder-salesforce-field-service/",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/speaking/",
   "clicks": 0,
   "impressions": 1,
-  "position": 10
+  "position": 9
  },
  {
   "day": "2026-11-11",
@@ -8198,5 +8358,117 @@
   "clicks": 0,
   "impressions": 1,
   "position": 8
+ },
+ {
+  "day": "2026-11-12",
+  "query": "field service application software",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 83
+ },
+ {
+  "day": "2026-11-12",
+  "query": "kotter modell",
+  "page": "https://www.fk-sd.de/blog/change-management-modelle/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 85.5
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce beratung maschinenbau",
+  "page": "https://www.fk-sd.de/salesforce-maschinenbau/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 11.5
+ },
+ {
+  "day": "2026-11-12",
+  "query": "can agentforce agents be tested and monitored before going live?",
+  "page": "https://www.fk-sd.de/en/blog/testing-agentforce-agents-before-go-live/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-12",
+  "query": "change kurve kotter",
+  "page": "https://www.fk-sd.de/blog/change-management-modelle/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 42
+ },
+ {
+  "day": "2026-11-12",
+  "query": "change management kommunikationsplan",
+  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-12",
+  "query": "headless commerce for b2b",
+  "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 94
+ },
+ {
+  "day": "2026-11-12",
+  "query": "intitle:\"agentforce for sales\" (apk or app or download or extension or application) -site:salesforce.com",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-agent-api-dealer-apps/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 30
+ },
+ {
+  "day": "2026-11-12",
+  "query": "ki chatbot audit trail",
+  "page": "https://www.fk-sd.de/blog/audit-trail-ki-agenten-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 70
+ },
+ {
+  "day": "2026-11-12",
+  "query": "kommunikationsplan vorlage",
+  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce architektur",
+  "page": "https://www.fk-sd.de/leistungen/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 19
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce maschinenbau",
+  "page": "https://www.fk-sd.de/salesforce-maschinenbau/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 20
+ },
+ {
+  "day": "2026-11-12",
+  "query": "salesforce zertifizierte experten",
+  "page": "https://www.fk-sd.de/certifications/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 40
+ },
+ {
+  "day": "2026-11-12",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
  }
 ]
