@@ -18,15 +18,21 @@
   "position": 4
  },
  {
+  "query": "sfdx hardis",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 6
+ },
+ {
   "query": "salesforce dx mcp end of life",
   "clicks": 0,
   "impressions": 4,
   "position": 8
  },
  {
-  "query": "sfdx hardis",
+  "query": "veränderungskurve kühn-rosch",
   "clicks": 0,
-  "impressions": 4,
+  "impressions": 3,
   "position": 6
  },
  {
@@ -34,12 +40,6 @@
   "clicks": 0,
   "impressions": 3,
   "position": 10
- },
- {
-  "query": "veränderungskurve kühn-rosch",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 6
  },
  {
   "query": "primäradresse im salesforce ändern",
@@ -54,28 +54,10 @@
   "position": 7
  },
  {
-  "query": "salesforce well architected framework",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
- },
- {
-  "query": "changekonzept nach lewin",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
- },
- {
   "query": "sfdx-hardis vs salesforce devops center lifecycle center comparison 2026",
   "clicks": 0,
   "impressions": 2,
   "position": 2
- },
- {
-  "query": "scheduling console salesforce",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
  },
  {
   "query": "4-seiten-analyse nach stakeholder meetings",
@@ -96,10 +78,28 @@
   "position": 3
  },
  {
+  "query": "salesforce well architected framework",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
+  "query": "changekonzept nach lewin",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
   "query": "暴食后第二天轻断食有用吗",
   "clicks": 0,
   "impressions": 2,
   "position": 4
+ },
+ {
+  "query": "scheduling console salesforce",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
  },
  {
   "query": "brauch salesforce voice flex credits",
@@ -108,52 +108,16 @@
   "position": 10
  },
  {
-  "query": "salesforce gmv",
-  "clicks": 1,
-  "impressions": 1,
-  "position": 4
- },
- {
   "query": "unterschiede adkar und drei phasen modell von lewis",
   "clicks": 1,
   "impressions": 1,
   "position": 2
  },
  {
-  "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
-  "clicks": 0,
+  "query": "salesforce gmv",
+  "clicks": 1,
   "impressions": 1,
   "position": 4
- },
- {
-  "query": "change management definition kotter lewin widerstand organisation",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 3
- },
- {
-  "query": "trailhead new dispatch console",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
-  "query": "\"snelstart\" \"verkooporders\" \"post\"",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
- },
- {
-  "query": "salesforce scheduling console update service appointment duration on gantt",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
  },
  {
   "query": "new dispatch console salesforce",
@@ -162,49 +126,7 @@
   "position": 5
  },
  {
-  "query": "what is salesforce devopps now called",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 8
- },
- {
-  "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
- },
- {
-  "query": "what is rca latest name for by salesforce",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "query": "migrate list views scheudling console sfdc",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 3
- },
- {
-  "query": "hardifs",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
-  "query": "difference between devops centre and salesforce dx",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 1
- },
- {
-  "query": "adjust duration in new cheudling console salesforce field service",
+  "query": "trailhead new dispatch console",
   "clicks": 0,
   "impressions": 1,
   "position": 4
@@ -228,6 +150,66 @@
   "position": 6
  },
  {
+  "query": "salesforce scheduling console update service appointment duration on gantt",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "query": "what is rca latest name for by salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "query": "hardifs",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "query": "difference between devops centre and salesforce dx",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 1
+ },
+ {
+  "query": "adjust duration in new cheudling console salesforce field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "query": "what is salesforce devopps now called",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "query": "migrate list views scheudling console sfdc",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "query": "\"snelstart\" \"verkooporders\" \"post\"",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
   "query": "trailhead scheduling console",
   "clicks": 0,
   "impressions": 1,
@@ -246,40 +228,22 @@
   "position": 7
  },
  {
-  "query": "salesforce agent context engine",
+  "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
   "clicks": 0,
   "impressions": 1,
   "position": 4
  },
  {
-  "query": "model viom lewin und kotter",
+  "query": "change management definition kotter lewin widerstand organisation",
   "clicks": 0,
   "impressions": 1,
   "position": 3
  },
  {
-  "query": "what does active hypercare in salesforce",
+  "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
   "clicks": 0,
   "impressions": 1,
-  "position": 5
- },
- {
-  "query": "was bedeutet cma im vergleich zu bill-to oder ship-to in den top kunden umsätzen im salesforce programm?",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 8
- },
- {
-  "query": "die veränderungskurve steich",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
-  "query": "siforce meaning",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
+  "position": 7
  },
  {
   "query": "hypercare phase wie lange ist das",
@@ -294,7 +258,43 @@
   "position": 7
  },
  {
-  "query": "agentforce flexcredits voice minutes",
+  "query": "360 blog salesforce context engine",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "query": "veränderungskurve management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "query": "what it is new on salesforce well architected framework ?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "query": "was bedeutet cma im vergleich zu bill-to oder ship-to in den top kunden umsätzen im salesforce programm?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "query": "\"pflege\" \"schulungskonzept\" \"key-user\" studie",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
+ },
+ {
+  "query": "how can i see the weekends in field service dispatch 2 scheduling console like i can in the classic dispatch console in field service lightning",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
+  "query": "coe waht does that mean salesforce",
   "clicks": 0,
   "impressions": 1,
   "position": 10

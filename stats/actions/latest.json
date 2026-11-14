@@ -1,9 +1,9 @@
 {
- "generatedAt": "2026-11-13T05:02:58.735Z",
+ "generatedAt": "2026-11-14T05:03:16.560Z",
  "window": {
   "google": {
-   "from": "2026-10-16",
-   "to": "2026-11-12"
+   "from": "2026-10-17",
+   "to": "2026-11-13"
   },
   "bingWeek": "2026-11-06"
  },
@@ -41,6 +41,54 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
+   "path": "/en/blog/sfdx-hardis-open-source-salesforce-devops/",
+   "impressions": 32,
+   "clicks": 0,
+   "position": 7.1,
+   "title": "sfdx-hardis: free open-source Salesforce DevOps toolkit",
+   "file": "src/content/blog/en/sfdx-hardis-open-source-salesforce-devops.md",
+   "topQueries": [
+    {
+     "query": "sfdx hardis",
+     "impressions": 6,
+     "position": 5.8
+    },
+    {
+     "query": "hardis salesforce",
+     "impressions": 1,
+     "position": 5
+    },
+    {
+     "query": "sfdx-hardis",
+     "impressions": 1,
+     "position": 16
+    }
+   ],
+   "hint": "Antwort auf „sfdx hardis“ in Description und ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/",
+   "path": "/en/blog/",
+   "impressions": 26,
+   "clicks": 0,
+   "position": 8.7,
+   "title": null,
+   "file": null,
+   "topQueries": [
+    {
+     "query": "sfdx-hardis",
+     "impressions": 8,
+     "position": 14.3
+    }
+   ],
+   "hint": "Antwort auf „sfdx-hardis“ in Description und ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/agentforce-sales-planning-agreements-forecasts/",
    "path": "/en/blog/agentforce-sales-planning-agreements-forecasts/",
    "impressions": 25,
@@ -73,72 +121,40 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
-   "path": "/en/blog/sfdx-hardis-open-source-salesforce-devops/",
-   "impressions": 24,
+   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+   "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
+   "impressions": 22,
    "clicks": 0,
-   "position": 7.1,
-   "title": "sfdx-hardis: free open-source Salesforce DevOps toolkit",
-   "file": "src/content/blog/en/sfdx-hardis-open-source-salesforce-devops.md",
+   "position": 6.6,
+   "title": "Why DevOps decides Salesforce enterprise projects",
+   "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
    "topQueries": [
     {
-     "query": "sfdx hardis",
-     "impressions": 6,
-     "position": 5.8
+     "query": "what makes a salesforce devops platform enterprise-ready?",
+     "impressions": 20,
+     "position": 6.4
     },
     {
-     "query": "hardis salesforce",
+     "query": "salesforce devops for finance",
      "impressions": 1,
-     "position": 5
+     "position": 14
     },
     {
-     "query": "sfdx-hardis",
+     "query": "is salesforce devops center enough for enterprise teams?",
      "impressions": 1,
-     "position": 16
+     "position": 4
     }
    ],
-   "hint": "Antwort auf „sfdx hardis“ in Description und ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/",
-   "path": "/en/blog/",
-   "impressions": 23,
-   "clicks": 0,
-   "position": 9.1,
-   "title": null,
-   "file": null,
-   "topQueries": [
-    {
-     "query": "sfdx-hardis",
-     "impressions": 8,
-     "position": 14.3
-    }
-   ],
-   "hint": "Antwort auf „sfdx-hardis“ in Description und ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
-   "path": "/en/blog/flex-credits-agentforce-cost-per-action/",
-   "impressions": 21,
-   "clicks": 0,
-   "position": 7.9,
-   "title": "Agentforce pricing 2026: $0.10 per action, full cost example",
-   "file": "src/content/blog/en/flex-credits-agentforce-cost-per-action.md",
-   "topQueries": [],
-   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
+   "hint": "Antwort auf „what makes a salesforce devops platform enterprise-ready?“ in Description und ersten Satz",
    "new": false
   },
   {
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
    "path": "/en/blog/servicemax-vs-salesforce-field-service/",
-   "impressions": 20,
+   "impressions": 22,
    "clicks": 0,
-   "position": 9.8,
+   "position": 9,
    "title": "ServiceMax vs Salesforce Field Service: part of Salesforce?",
    "file": "src/content/blog/en/servicemax-vs-salesforce-field-service.md",
    "topQueries": [
@@ -159,6 +175,19 @@
     }
    ],
    "hint": "Antwort auf „servicemax“ in Description und ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
+   "path": "/en/blog/flex-credits-agentforce-cost-per-action/",
+   "impressions": 21,
+   "clicks": 0,
+   "position": 7.9,
+   "title": "Agentforce pricing 2026: $0.10 per action, full cost example",
+   "file": "src/content/blog/en/flex-credits-agentforce-cost-per-action.md",
+   "topQueries": [],
+   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
    "new": false
   },
   {
@@ -189,35 +218,11 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
-   "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
-   "impressions": 15,
-   "clicks": 0,
-   "position": 6.6,
-   "title": "Why DevOps decides Salesforce enterprise projects",
-   "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
-   "topQueries": [
-    {
-     "query": "what makes a salesforce devops platform enterprise-ready?",
-     "impressions": 14,
-     "position": 6.1
-    },
-    {
-     "query": "salesforce devops for finance",
-     "impressions": 1,
-     "position": 14
-    }
-   ],
-   "hint": "Antwort auf „what makes a salesforce devops platform enterprise-ready?“ in Description und ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
    "path": "/en/blog/field-service-mobile-flow-limitations/",
-   "impressions": 13,
+   "impressions": 15,
    "clicks": 0,
-   "position": 7.8,
+   "position": 7.5,
    "title": "Field Service mobile flow limitations: Winter '27 update",
    "file": "src/content/blog/en/field-service-mobile-flow-limitations.md",
    "topQueries": [
@@ -228,6 +233,63 @@
     }
    ],
    "hint": "Antwort auf „field service mobile flow limitations“ in Description und ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/partner/",
+   "path": "/partner/",
+   "impressions": 15,
+   "clicks": 0,
+   "position": 9.9,
+   "title": null,
+   "file": null,
+   "topQueries": [
+    {
+     "query": "juliane winterscheid",
+     "impressions": 1,
+     "position": 13
+    }
+   ],
+   "hint": "Antwort auf „juliane winterscheid“ in Description und ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+   "path": "/en/masterclass/devops-release-management/rollout-roadmap/",
+   "impressions": 13,
+   "clicks": 0,
+   "position": 7,
+   "title": "Salesforce DevOps rollout: roadmap and metrics",
+   "file": "src/content/masterclass/en/rollout-roadmap.md",
+   "topQueries": [
+    {
+     "query": "what does a typical salesforce devops rollout look like?",
+     "impressions": 12,
+     "position": 6
+    }
+   ],
+   "hint": "Antwort auf „what does a typical salesforce devops rollout look like?“ in Description und ersten Satz",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/manufacturing-cloud-service-vs-service-cloud/",
+   "path": "/en/blog/manufacturing-cloud-service-vs-service-cloud/",
+   "impressions": 12,
+   "clicks": 0,
+   "position": 5.5,
+   "title": "Manufacturing Cloud vs Service Cloud: $275 vs $195 per user",
+   "file": "src/content/blog/en/manufacturing-cloud-service-vs-service-cloud.md",
+   "topQueries": [
+    {
+     "query": "manufacturing cloud vs service cloud",
+     "impressions": 3,
+     "position": 3
+    }
+   ],
+   "hint": "Antwort auf „manufacturing cloud vs service cloud“ in Description und ersten Satz",
    "new": false
   },
   {
@@ -251,25 +313,6 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/manufacturing-cloud-service-vs-service-cloud/",
-   "path": "/en/blog/manufacturing-cloud-service-vs-service-cloud/",
-   "impressions": 10,
-   "clicks": 0,
-   "position": 6,
-   "title": "Manufacturing Cloud vs Service Cloud: $275 vs $195 per user",
-   "file": "src/content/blog/en/manufacturing-cloud-service-vs-service-cloud.md",
-   "topQueries": [
-    {
-     "query": "manufacturing cloud vs service cloud",
-     "impressions": 2,
-     "position": 3
-    }
-   ],
-   "hint": "Antwort auf „manufacturing cloud vs service cloud“ in Description und ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/b2b-commerce-customer-prices-price-books-erp/",
    "path": "/en/blog/b2b-commerce-customer-prices-price-books-erp/",
    "impressions": 10,
@@ -285,11 +328,40 @@
  "nearPage1": [
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/agentforce-agent-api-dealer-apps/",
+   "path": "/en/blog/agentforce-agent-api-dealer-apps/",
+   "impressions": 70,
+   "clicks": 0,
+   "position": 19.3,
+   "title": "Agentforce Agent API: agents in your own dealer apps",
+   "file": "src/content/blog/en/agentforce-agent-api-dealer-apps.md",
+   "topQueries": [
+    {
+     "query": "agentforce api",
+     "impressions": 14,
+     "position": 22.6
+    },
+    {
+     "query": "salesforce agentforce api",
+     "impressions": 2,
+     "position": 41.5
+    },
+    {
+     "query": "agentforce agent api",
+     "impressions": 1,
+     "position": 8
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „agentforce api“",
+   "new": false
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/blog/",
    "path": "/blog/",
-   "impressions": 61,
+   "impressions": 62,
    "clicks": 1,
-   "position": 19.6,
+   "position": 19.5,
    "title": null,
    "file": null,
    "topQueries": [
@@ -314,35 +386,11 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/agentforce-agent-api-dealer-apps/",
-   "path": "/en/blog/agentforce-agent-api-dealer-apps/",
-   "impressions": 57,
-   "clicks": 0,
-   "position": 18.9,
-   "title": "Agentforce Agent API: agents in your own dealer apps",
-   "file": "src/content/blog/en/agentforce-agent-api-dealer-apps.md",
-   "topQueries": [
-    {
-     "query": "agentforce api",
-     "impressions": 11,
-     "position": 23.4
-    },
-    {
-     "query": "salesforce agentforce api",
-     "impressions": 2,
-     "position": 41.5
-    }
-   ],
-   "hint": "Abschnitt und interne Links zu „agentforce api“",
-   "new": false
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/en/",
    "path": "/en/",
-   "impressions": 28,
+   "impressions": 30,
    "clicks": 0,
-   "position": 10.4,
+   "position": 11.1,
    "title": null,
    "file": null,
    "topQueries": [
@@ -352,17 +400,36 @@
      "position": 21.7
     },
     {
+     "query": "solutions factory consulting gmbh",
+     "impressions": 2,
+     "position": 44.5
+    },
+    {
      "query": "fk solutions",
      "impressions": 1,
      "position": 9
-    },
-    {
-     "query": "solutions factory consulting gmbh",
-     "impressions": 1,
-     "position": 48
     }
    ],
    "hint": "Abschnitt und interne Links zu „sfdx-hardis“",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-billing-costs/",
+   "path": "/en/blog/revenue-cloud-billing-costs/",
+   "impressions": 26,
+   "clicks": 0,
+   "position": 12.3,
+   "title": "Revenue Cloud Billing pricing: one billing event per $50",
+   "file": "src/content/blog/en/revenue-cloud-billing-costs.md",
+   "topQueries": [
+    {
+     "query": "revenue cloud billing",
+     "impressions": 1,
+     "position": 76
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „revenue cloud billing“",
    "new": false
   },
   {
@@ -396,11 +463,30 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
+   "path": "/en/blog/agentforce-llm-choice-bring-your-own/",
+   "impressions": 23,
+   "clicks": 0,
+   "position": 10.8,
+   "title": "Agentforce LLM choice: default, Claude or your own model",
+   "file": "src/content/blog/en/agentforce-llm-choice-bring-your-own.md",
+   "topQueries": [
+    {
+     "query": "what llms does agentforce use and can enterprises bring their own model?",
+     "impressions": 2,
+     "position": 11
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „what llms does agentforce use and can enterprises bring their own model?“",
+   "new": false
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/salesforce-service-documents-document-builder/",
    "path": "/en/blog/salesforce-service-documents-document-builder/",
-   "impressions": 22,
+   "impressions": 23,
    "clicks": 0,
-   "position": 12.2,
+   "position": 12,
    "title": "Salesforce Document Builder for Field Service reports",
    "file": "src/content/blog/en/salesforce-service-documents-document-builder.md",
    "topQueries": [
@@ -411,19 +497,6 @@
     }
    ],
    "hint": "Abschnitt und interne Links zu „salesforce document builder“",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-billing-costs/",
-   "path": "/en/blog/revenue-cloud-billing-costs/",
-   "impressions": 21,
-   "clicks": 0,
-   "position": 10.2,
-   "title": "Revenue Cloud Billing pricing: one billing event per $50",
-   "file": "src/content/blog/en/revenue-cloud-billing-costs.md",
-   "topQueries": [],
-   "hint": "Interne Links von verwandten Seiten",
    "new": false
   },
   {
@@ -510,44 +583,6 @@
     }
    ],
    "hint": "Abschnitt und interne Links zu „salesforce document builder“",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/partner/",
-   "path": "/partner/",
-   "impressions": 14,
-   "clicks": 0,
-   "position": 10.5,
-   "title": null,
-   "file": null,
-   "topQueries": [
-    {
-     "query": "juliane winterscheid",
-     "impressions": 1,
-     "position": 13
-    }
-   ],
-   "hint": "Abschnitt und interne Links zu „juliane winterscheid“",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
-   "path": "/en/blog/agentforce-llm-choice-bring-your-own/",
-   "impressions": 14,
-   "clicks": 0,
-   "position": 11.1,
-   "title": "Agentforce LLM choice: default, Claude or your own model",
-   "file": "src/content/blog/en/agentforce-llm-choice-bring-your-own.md",
-   "topQueries": [
-    {
-     "query": "what llms does agentforce use and can enterprises bring their own model?",
-     "impressions": 1,
-     "position": 11
-    }
-   ],
-   "hint": "Abschnitt und interne Links zu „what llms does agentforce use and can enterprises bring their own model?“",
    "new": false
   },
   {
@@ -661,6 +696,25 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/en/masterclass/b2b-commerce/prices-cart-checkout/",
+   "path": "/en/masterclass/b2b-commerce/prices-cart-checkout/",
+   "impressions": 12,
+   "clicks": 0,
+   "position": 16.3,
+   "title": "B2B Commerce: prices, cart and checkout",
+   "file": "src/content/masterclass/en/prices-cart-checkout.md",
+   "topQueries": [
+    {
+     "query": "b2b commerce pricing",
+     "impressions": 4,
+     "position": 33.8
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „b2b commerce pricing“",
+   "new": true
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/leistungen/change-management/",
    "path": "/leistungen/change-management/",
    "impressions": 12,
@@ -701,14 +755,33 @@
    ],
    "hint": "Abschnitt und interne Links zu „commerce extensions“",
    "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/field-service-enhanced-scheduling-optimization-switch/",
+   "path": "/en/blog/field-service-enhanced-scheduling-optimization-switch/",
+   "impressions": 10,
+   "clicks": 0,
+   "position": 16.7,
+   "title": "Enhanced Scheduling and Optimization: switch now?",
+   "file": "src/content/blog/en/field-service-enhanced-scheduling-optimization-switch.md",
+   "topQueries": [
+    {
+     "query": "replace drs scheduling",
+     "impressions": 3,
+     "position": 43.7
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „replace drs scheduling“",
+   "new": true
   }
  ],
  "questions": [
   {
    "source": "google",
    "query": "what makes a salesforce devops platform enterprise-ready?",
-   "impressions": 14,
-   "position": 6.1,
+   "impressions": 20,
+   "position": 6.4,
    "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
    "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
    "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
@@ -718,8 +791,8 @@
   {
    "source": "google",
    "query": "what does a typical salesforce devops rollout look like?",
-   "impressions": 4,
-   "position": 5.5,
+   "impressions": 12,
+   "position": 6,
    "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
    "path": "/en/masterclass/devops-release-management/rollout-roadmap/",
    "file": "src/content/masterclass/en/rollout-roadmap.md",
@@ -794,6 +867,17 @@
   },
   {
    "source": "google",
+   "query": "can salesforce handle asset-heavy maintenance like maximo? in 2026",
+   "impressions": 2,
+   "position": 5.5,
+   "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
+   "path": "/en/blog/predictive-maintenance-salesforce-data-needed/",
+   "file": "src/content/blog/en/predictive-maintenance-salesforce-data-needed.md",
+   "covered": false,
+   "new": false
+  },
+  {
+   "source": "google",
    "query": "what ensures that agentforce protects your company’s data and detects toxicity? a data 360 b einstein trust layer c external apis d external human audits",
    "impressions": 2,
    "position": 6,
@@ -811,6 +895,17 @@
    "page": "https://www.fk-sd.de/en/blog/copado-gearset-provar-ai-agents/",
    "path": "/en/blog/copado-gearset-provar-ai-agents/",
    "file": "src/content/blog/en/copado-gearset-provar-ai-agents.md",
+   "covered": false,
+   "new": false
+  },
+  {
+   "source": "google",
+   "query": "what llms does agentforce use and can enterprises bring their own model?",
+   "impressions": 2,
+   "position": 11,
+   "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
+   "path": "/en/blog/agentforce-llm-choice-bring-your-own/",
+   "file": "src/content/blog/en/agentforce-llm-choice-bring-your-own.md",
    "covered": false,
    "new": false
   },
@@ -859,6 +954,28 @@
    "new": false
   },
   {
+   "source": "google",
+   "query": "is salesforce devops center enough for enterprise teams?",
+   "impressions": 1,
+   "position": 4,
+   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+   "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
+   "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
+   "covered": false,
+   "new": true
+  },
+  {
+   "source": "google",
+   "query": "wie verlieren wir pipeline-daten, wenn vertriebsteams zwischen ihrem crm und salesforce wechseln?",
+   "impressions": 1,
+   "position": 4,
+   "page": "https://www.fk-sd.de/blog/salesforce-partner-wechseln/",
+   "path": "/blog/salesforce-partner-wechseln/",
+   "file": "src/content/blog/de/salesforce-partner-wechseln.md",
+   "covered": false,
+   "new": true
+  },
+  {
    "source": "bing",
    "query": "what is rca latest name for by salesforce",
    "impressions": 1,
@@ -866,17 +983,6 @@
    "page": null,
    "path": null,
    "file": null,
-   "covered": false,
-   "new": false
-  },
-  {
-   "source": "google",
-   "query": "can salesforce handle asset-heavy maintenance like maximo? in 2026",
-   "impressions": 1,
-   "position": 5,
-   "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
-   "path": "/en/blog/predictive-maintenance-salesforce-data-needed/",
-   "file": "src/content/blog/en/predictive-maintenance-salesforce-data-needed.md",
    "covered": false,
    "new": false
   },
@@ -890,6 +996,17 @@
    "file": "src/content/masterclass/en/aiforce-and-system-integrators.md",
    "covered": false,
    "new": false
+  },
+  {
+   "source": "bing",
+   "query": "how can i see the weekends in field service dispatch 2 scheduling console like i can in the classic dispatch console in field service lightning",
+   "impressions": 1,
+   "position": 6,
+   "page": null,
+   "path": null,
+   "file": null,
+   "covered": false,
+   "new": true
   },
   {
    "source": "google",
@@ -923,6 +1040,17 @@
    "file": "src/content/masterclass/de/field-service-ki-agenten-einfuehrung.md",
    "covered": false,
    "new": false
+  },
+  {
+   "source": "bing",
+   "query": "was bedeutet cma im vergleich zu bill-to oder ship-to in den top kunden umsätzen im salesforce programm?",
+   "impressions": 1,
+   "position": 8,
+   "page": null,
+   "path": null,
+   "file": null,
+   "covered": false,
+   "new": true
   },
   {
    "source": "google",
@@ -981,17 +1109,6 @@
   },
   {
    "source": "google",
-   "query": "what llms does agentforce use and can enterprises bring their own model?",
-   "impressions": 1,
-   "position": 11,
-   "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
-   "path": "/en/blog/agentforce-llm-choice-bring-your-own/",
-   "file": "src/content/blog/en/agentforce-llm-choice-bring-your-own.md",
-   "covered": false,
-   "new": false
-  },
-  {
-   "source": "google",
    "query": "welche field-service-management-software ist für ein kleines unternehmen am besten geeignet?",
    "impressions": 1,
    "position": 14,
@@ -1004,7 +1121,7 @@
  ],
  "spam": {
   "queries": 17,
-  "impressions": 57,
+  "impressions": 62,
   "list": [
    {
     "source": "google",
@@ -1014,7 +1131,7 @@
    {
     "source": "google",
     "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
-    "impressions": 10
+    "impressions": 11
    },
    {
     "source": "google",
@@ -1023,27 +1140,27 @@
    },
    {
     "source": "google",
+    "query": "\"agentforce for service\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
+    "impressions": 4
+   },
+   {
+    "source": "google",
     "query": "\"agentforce studio\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
     "impressions": 4
    },
    {
     "source": "google",
-    "query": "intitle:\"agentforce for sales\" (apk or app or download or extension or application) -site:salesforce.com",
-    "impressions": 2
-   },
-   {
-    "source": "google",
     "query": "\"agentforce for sales\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
-    "impressions": 2
-   },
-   {
-    "source": "google",
-    "query": "\"agentforce for service\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
-    "impressions": 2
+    "impressions": 3
    },
    {
     "source": "google",
     "query": "\"agentforce 360\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
+    "impressions": 3
+   },
+   {
+    "source": "google",
+    "query": "intitle:\"agentforce for sales\" (apk or app or download or extension or application) -site:salesforce.com",
     "impressions": 2
    },
    {
@@ -1067,8 +1184,8 @@
     "impressions": 1
    },
    {
-    "source": "bing",
-    "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
+    "source": "google",
+    "query": "\"agentforce service agent\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
     "impressions": 1
    },
    {
@@ -1088,16 +1205,16 @@
    },
    {
     "source": "bing",
-    "query": "warenkorb#R##N#3 positionen#R##N#1 produkt zum warenkorb hinzugefügt.#R##N##R##N#produkt-informationen:viskose-bluse#R##N#größe: 50 | farbe: druck_petrol#R##N#produkt-nr.: 29521250#R##N##R##N#vom merkzettel entfernen#R##N#anzahl#R##N#produkt anzahl: gib den gewünschten wert ein oder benutze die schaltflächen um die anzahl zu erhöhen oder zu reduzieren.#R##N##R##N##R##N#59,95 €#R##N##R##N##R##N#produkt-informationen:viskose-bluse#R##N#größe: 48 | farbe: druck_petrol#R##N#produkt-nr.: 29521248#R##N##R##N#zum merkzettel hinzufügen#R##N#anzahl#R##N#produkt anzahl: gib den gewünschten wert ein oder benutze die schaltflächen um die anzahl zu erhöhen oder zu reduzieren.#R##N##R##N##R##N#59,95 €#R##N##R##N##R##N#produkt-informationen:viskose-rock#R##N#größe: 50 | farbe: druck_petrol#R##N#produkt-nr.: 29516250#R##N##R##N#vom merkzettel entfernen#R##N#anzahl#R##N#produkt anzahl: gib den gewünschten wert ein oder benutze die schaltflächen um die anzahl zu erhöhen oder zu reduzieren.#R##N##R##N##R##N#69,95 €#R##N##R##N#gutscheincode#R##N##R##N#hier können sie aktions- und gutscheincodes eintragen.#R##N##R##N#warenkorb enthält 3 positionen. der gesamtwert beträgt 189",
+    "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
     "impressions": 1
    }
   ]
  },
  "counts": {
-  "snippet": 15,
-  "nearPage1": 19,
-  "questions": 27,
-  "new": 0,
+  "snippet": 17,
+  "nearPage1": 20,
+  "questions": 31,
+  "new": 7,
   "spam": 17
  }
 }
