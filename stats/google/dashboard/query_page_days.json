@@ -8857,11 +8857,27 @@
  },
  {
   "day": "2026-11-13",
+  "query": "click field service management software",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 67.8
+ },
+ {
+  "day": "2026-11-13",
   "query": "field engineer scheduling",
   "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
   "clicks": 0,
   "impressions": 5,
   "position": 98
+ },
+ {
+  "day": "2026-11-13",
+  "query": "kommunikationsplan",
+  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 90
  },
  {
   "day": "2026-11-13",
@@ -8881,6 +8897,14 @@
  },
  {
   "day": "2026-11-13",
+  "query": "dispatching field service",
+  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 66.7
+ },
+ {
+  "day": "2026-11-13",
   "query": "field service application software",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
@@ -8889,11 +8913,19 @@
  },
  {
   "day": "2026-11-13",
-  "query": "kommunikationsplan",
-  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "query": "field service management cloud",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
   "impressions": 3,
-  "position": 94
+  "position": 74.7
+ },
+ {
+  "day": "2026-11-13",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 23.7
  },
  {
   "day": "2026-11-13",
@@ -8929,22 +8961,6 @@
  },
  {
   "day": "2026-11-13",
-  "query": "click field service management software",
-  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 71.5
- },
- {
-  "day": "2026-11-13",
-  "query": "dispatching field service",
-  "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 52
- },
- {
-  "day": "2026-11-13",
   "query": "erp field service",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
@@ -8953,11 +8969,11 @@
  },
  {
   "day": "2026-11-13",
-  "query": "field service management cloud",
+  "query": "erp field service management",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
   "impressions": 2,
-  "position": 70
+  "position": 94.5
  },
  {
   "day": "2026-11-13",
@@ -9046,6 +9062,14 @@
   "clicks": 0,
   "impressions": 1,
   "position": 10
+ },
+ {
+  "day": "2026-11-13",
+  "query": "agentforce",
+  "page": "https://www.fk-sd.de/en/blog/what-is-agentforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
  },
  {
   "day": "2026-11-13",
@@ -9145,6 +9169,14 @@
  },
  {
   "day": "2026-11-13",
+  "query": "fields service erp",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 79
+ },
+ {
+  "day": "2026-11-13",
   "query": "how to automate technician scheduling and dispatch?",
   "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-scheduling-dispatch/",
   "clicks": 0,
@@ -9225,6 +9257,22 @@
  },
  {
   "day": "2026-11-13",
+  "query": "salesforce release management tools",
+  "page": "https://www.fk-sd.de/en/services/devops-release-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 100
+ },
+ {
+  "day": "2026-11-13",
+  "query": "sap order in mulesoft",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-sap-order-status-mulesoft/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "day": "2026-11-13",
   "query": "syteline salesforce warranty claim handoff",
   "page": "https://www.fk-sd.de/en/blog/warranty-claims-dealers-salesforce/",
   "clicks": 0,
@@ -9270,6 +9318,14 @@
   "clicks": 0,
   "impressions": 1,
   "position": 11
+ },
+ {
+  "day": "2026-11-13",
+  "query": "what software manages preferred supplier lists in field service?",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 22
  },
  {
   "day": "2026-11-13",

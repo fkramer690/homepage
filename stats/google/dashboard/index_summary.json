@@ -12,11 +12,15 @@
    },
    {
     "coverage": "Discovered - currently not indexed",
-    "urls": 62
+    "urls": 57
    },
    {
     "coverage": "URL is unknown to Google",
-    "urls": 9
+    "urls": 13
+   },
+   {
+    "coverage": "Crawled - currently not indexed",
+    "urls": 1
    }
   ]
  }

@@ -6658,10 +6658,24 @@
  },
  {
   "day": "2026-11-13",
+  "query": "click field service management software",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 67.8
+ },
+ {
+  "day": "2026-11-13",
   "query": "field engineer scheduling",
   "clicks": 0,
   "impressions": 5,
   "position": 98
+ },
+ {
+  "day": "2026-11-13",
+  "query": "kommunikationsplan",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 90
  },
  {
   "day": "2026-11-13",
@@ -6679,6 +6693,13 @@
  },
  {
   "day": "2026-11-13",
+  "query": "dispatching field service",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 66.7
+ },
+ {
+  "day": "2026-11-13",
   "query": "field service application software",
   "clicks": 0,
   "impressions": 3,
@@ -6686,10 +6707,17 @@
  },
  {
   "day": "2026-11-13",
-  "query": "kommunikationsplan",
+  "query": "field service management cloud",
   "clicks": 0,
   "impressions": 3,
-  "position": 94
+  "position": 74.7
+ },
+ {
+  "day": "2026-11-13",
+  "query": "salesforce commerce product data",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 23.7
  },
  {
   "day": "2026-11-13",
@@ -6721,20 +6749,6 @@
  },
  {
   "day": "2026-11-13",
-  "query": "click field service management software",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 71.5
- },
- {
-  "day": "2026-11-13",
-  "query": "dispatching field service",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 52
- },
- {
-  "day": "2026-11-13",
   "query": "erp field service",
   "clicks": 0,
   "impressions": 2,
@@ -6742,10 +6756,10 @@
  },
  {
   "day": "2026-11-13",
-  "query": "field service management cloud",
+  "query": "erp field service management",
   "clicks": 0,
   "impressions": 2,
-  "position": 70
+  "position": 94.5
  },
  {
   "day": "2026-11-13",
@@ -6823,6 +6837,13 @@
   "clicks": 0,
   "impressions": 1,
   "position": 10
+ },
+ {
+  "day": "2026-11-13",
+  "query": "agentforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
  },
  {
   "day": "2026-11-13",
@@ -6910,6 +6931,13 @@
  },
  {
   "day": "2026-11-13",
+  "query": "fields service erp",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 79
+ },
+ {
+  "day": "2026-11-13",
   "query": "how to automate technician scheduling and dispatch?",
   "clicks": 0,
   "impressions": 1,
@@ -6980,6 +7008,20 @@
  },
  {
   "day": "2026-11-13",
+  "query": "salesforce release management tools",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 100
+ },
+ {
+  "day": "2026-11-13",
+  "query": "sap order in mulesoft",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "day": "2026-11-13",
   "query": "syteline salesforce warranty claim handoff",
   "clicks": 0,
   "impressions": 1,
@@ -7019,6 +7061,13 @@
   "clicks": 0,
   "impressions": 1,
   "position": 11
+ },
+ {
+  "day": "2026-11-13",
+  "query": "what software manages preferred supplier lists in field service?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 22
  },
  {
   "day": "2026-11-13",

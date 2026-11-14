@@ -92,17 +92,17 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/stakeholder-analyse/",
-  "clicks": 0,
-  "impressions": 5,
-  "position": 6
- },
- {
-  "period": "2026-11-06",
   "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
   "clicks": 0,
   "impressions": 5,
   "position": 4
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/blog/stakeholder-analyse/",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 6
  },
  {
   "period": "2026-11-06",
@@ -120,10 +120,10 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
+  "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
   "clicks": 0,
   "impressions": 2,
-  "position": 9
+  "position": 8
  },
  {
   "period": "2026-11-06",
@@ -134,17 +134,24 @@
  },
  {
   "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
+ },
+ {
+  "period": "2026-11-06",
+  "page": "https://www.fk-sd.de/blog/salesforce-dx-mcp-server-ende/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 9
+ },
+ {
+  "period": "2026-11-06",
   "page": "https://www.fk-sd.de/en/blog/salesforce-hypercare-after-go-live/",
   "clicks": 0,
   "impressions": 2,
   "position": 7
- },
- {
-  "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
  },
  {
   "period": "2026-11-06",
@@ -169,13 +176,6 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/blog/nachbestellen-b2b-shop-vorlagen/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "period": "2026-11-06",
   "page": "https://www.fk-sd.de/blog/b2b-commerce-preise-gmv-modell/",
   "clicks": 1,
   "impressions": 1,
@@ -190,7 +190,7 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
+  "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
   "clicks": 0,
   "impressions": 1,
   "position": 2
@@ -204,7 +204,7 @@
  },
  {
   "period": "2026-11-06",
-  "page": "https://www.fk-sd.de/en/blog/buyer-groups-entitlements-product-visibility/",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
   "clicks": 0,
   "impressions": 1,
   "position": 2

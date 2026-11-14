@@ -25,6 +25,11 @@
   "visits": 50
  },
  {
+  "page": "/en/blog/salesforce-forward-deployed-engineer/",
+  "pageviews": 50,
+  "visits": 50
+ },
+ {
   "page": "/fragen/",
   "pageviews": 50,
   "visits": 0
@@ -32,11 +37,6 @@
  {
   "page": "/en/blog/",
   "pageviews": 50,
-  "visits": 20
- },
- {
-  "page": "/en/blog/ai-native-salesforce-delivery-process/",
-  "pageviews": 40,
   "visits": 20
  },
  {
@@ -70,9 +70,9 @@
   "visits": 30
  },
  {
-  "page": "/en/blog/salesforce-forward-deployed-engineer/",
+  "page": "/en/blog/ai-native-salesforce-delivery-process/",
   "pageviews": 40,
-  "visits": 40
+  "visits": 20
  },
  {
   "page": "/homepage/",
