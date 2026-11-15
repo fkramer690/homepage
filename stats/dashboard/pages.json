@@ -90,13 +90,13 @@
   "visits": 30
  },
  {
-  "page": "/en/blog/ai-coding-tools-works-council-gdpr/",
-  "pageviews": 20,
-  "visits": 0
- },
- {
   "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
   "pageviews": 20,
   "visits": 20
+ },
+ {
+  "page": "/en/blog/ai-coding-tools-works-council-gdpr/",
+  "pageviews": 20,
+  "visits": 0
  }
 ]

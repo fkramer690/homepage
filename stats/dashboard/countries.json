@@ -6,8 +6,8 @@
  },
  {
   "country": "US",
-  "pageviews": 530,
-  "visits": 510
+  "pageviews": 540,
+  "visits": 520
  },
  {
   "country": "FR",
@@ -48,5 +48,10 @@
   "country": "CZ",
   "pageviews": 10,
   "visits": 0
+ },
+ {
+  "country": "BR",
+  "pageviews": 10,
+  "visits": 10
  }
 ]
