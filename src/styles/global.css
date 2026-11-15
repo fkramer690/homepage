@@ -2829,6 +2829,17 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .svc-reading-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--radius-pill); background: var(--tint); color: var(--cyan-dark); }
 .svc-reading-icon svg { width: 22px; height: 22px; }
 .svc-reading-arrow { color: var(--cyan-dark); font-weight: 600; }
+/* Guest article card (src/components/GuestArticle.astro): service reading list and after a blog article body. */
+.guest-article { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; align-items: start; margin: 4px 0 0; padding: 16px 0; border-top: 1px dashed var(--line); color: var(--text); text-decoration: none; }
+.guest-article.is-box { margin: 32px 0; padding: 18px 22px; border: 1px solid var(--line); border-left: 3px solid var(--cyan); border-radius: var(--radius); background: var(--white); }
+.guest-article:hover strong { color: var(--cyan-dark); }
+.guest-article-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: var(--radius-pill); background: var(--tint); color: var(--cyan-dark); }
+.guest-article-icon svg { width: 22px; height: 22px; }
+.guest-article-body { display: grid; gap: 4px; min-width: 0; }
+.guest-article-body .label { display: block; margin: 0; }
+.guest-article strong { font-size: var(--fs-md); font-weight: 600; line-height: 1.35; }
+.guest-article-teaser { color: var(--text-2); font-size: var(--fs-ui); line-height: 1.5; }
+.guest-article-meta { font-size: var(--fs-xs); color: var(--text-2); }
 .svc-case { margin: 8px 0 32px; background: var(--white); border: 1px solid var(--line); border-left: 3px solid var(--cyan); border-radius: var(--radius); }
 .svc-case > .label { margin: 0; padding: 16px 26px 0; }
 .svc-case .rf-body { padding-top: 6px; }

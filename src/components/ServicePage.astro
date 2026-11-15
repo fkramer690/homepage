@@ -9,6 +9,8 @@ import ContactBrief from './ContactBrief.astro';
 import ReadingGrid from './ReadingGrid.astro';
 import Photo from './Photo.astro';
 import Icon from './Icon.astro';
+import GuestArticle from './GuestArticle.astro';
+import { guestArticlesFor } from '../data/guest-articles';
 import ChangeTeam from './ChangeTeam.astro';
 import ChangeArticles from './ChangeArticles.astro';
 import { changeSection } from '../data/change-management';
@@ -46,6 +48,7 @@ const caseRef = reference ? t.references.items.find((r) => r.key === reference) 
 if (reference && !caseRef) throw new Error(`${service.id}: reference "${reference}" not found in references.items`);
 const { Content, headings, remarkPluginFrontmatter } = await render(service);
 const intro: string = remarkPluginFrontmatter.serviceIntro;
+const guests = guestArticlesFor(service.data.translationKey);
 const photo = servicePhotos[service.data.translationKey];
 const toc = [
   { slug: 'situations', text: t.servicePage.situations },
@@ -196,6 +199,7 @@ const schema = {
                   <span class="svc-reading-arrow" aria-hidden="true">→</span>
                 </a>
               )}
+              {guests.map((g) => <GuestArticle article={g} lang={lang} label={t.blog.guestArticle} langNote={t.blog.guestArticleLang} newTab={t.nav.externalTab} />)}
             </section>
           )}
           <section class="service-block" aria-labelledby="phases">

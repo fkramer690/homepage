@@ -1,0 +1,29 @@
+---
+// Card for a guest article published on another site (src/data/guest-articles.ts).
+// Used on service pages (reading list) and blog articles (after the body).
+import Icon from './Icon.astro';
+import ExternalMark from './ExternalMark.astro';
+import type { GuestArticle } from '../data/guest-articles';
+
+interface Props {
+  article: GuestArticle;
+  lang: 'en' | 'de';
+  label: string;
+  langNote: string;
+  newTab: string;
+  // Framed box after a blog article body; without it a row in the service reading list.
+  box?: boolean;
+}
+const { article, lang, label, langNote, newTab, box = false } = Astro.props;
+const date = new Date(article.date).toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const meta = [article.site, date, article.lang !== lang ? langNote : ''].filter(Boolean).join(' · ');
+---
+<a class:list={["guest-article", { "is-box": box }]} href={article.url} target="_blank" rel="noopener">
+  <span class="guest-article-icon"><Icon name="contract" /></span>
+  <span class="guest-article-body">
+    <span class="label mono">{label}</span>
+    <strong>{article.title}<ExternalMark label={newTab} /></strong>
+    <span class="guest-article-teaser">{article.teaser[lang]}</span>
+    <span class="guest-article-meta mono">{meta}</span>
+  </span>
+</a>

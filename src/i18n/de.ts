@@ -345,6 +345,8 @@ export const de: Dict = {
     authorRole: 'Salesforce Enterprise Architect · Köln',
     authorMore: 'Mehr über mich',
     relatedService: 'Passende Leistung',
+    guestArticle: 'Gastbeitrag',
+    guestArticleLang: 'auf Englisch',
     authorLinkedIn: 'LinkedIn-Profil',
     // Shared author box for an article with a co-author (AuthorBox.astro with coAuthor).
     authorsLabel: 'Über die Autoren',
