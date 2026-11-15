@@ -6798,6 +6798,13 @@
  },
  {
   "day": "2026-11-13",
+  "query": "how do you compare salesforce implementation proposals fairly?",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 3
+ },
+ {
+  "day": "2026-11-13",
   "query": "manufacturing cloud",
   "clicks": 0,
   "impressions": 2,
@@ -7106,6 +7113,27 @@
  },
  {
   "day": "2026-11-14",
+  "query": "erp field service management",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 94.3
+ },
+ {
+  "day": "2026-11-14",
+  "query": "kommunikationsplan",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 86
+ },
+ {
+  "day": "2026-11-14",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 5.5
+ },
+ {
+  "day": "2026-11-14",
   "query": "click field service management software",
   "clicks": 0,
   "impressions": 3,
@@ -7148,10 +7176,10 @@
  },
  {
   "day": "2026-11-14",
-  "query": "kommunikationsplan",
+  "query": "salesforce release cycle",
   "clicks": 0,
   "impressions": 3,
-  "position": 85
+  "position": 43
  },
  {
   "day": "2026-11-14",
@@ -7162,13 +7190,6 @@
  },
  {
   "day": "2026-11-14",
-  "query": "what does a typical salesforce devops rollout look like?",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 7
- },
- {
-  "day": "2026-11-14",
   "query": "agentforce",
   "clicks": 0,
   "impressions": 2,
@@ -7176,17 +7197,24 @@
  },
  {
   "day": "2026-11-14",
+  "query": "agentforce definition",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 23
+ },
+ {
+  "day": "2026-11-14",
+  "query": "change management kommunikation praxisbeispiel",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 42.5
+ },
+ {
+  "day": "2026-11-14",
   "query": "erp field service",
   "clicks": 0,
   "impressions": 2,
   "position": 74.5
- },
- {
-  "day": "2026-11-14",
-  "query": "erp field service management",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 95
  },
  {
   "day": "2026-11-14",
@@ -7309,6 +7337,13 @@
  },
  {
   "day": "2026-11-14",
+  "query": "cloud field service management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 85
+ },
+ {
+  "day": "2026-11-14",
   "query": "devops release management",
   "clicks": 0,
   "impressions": 1,
@@ -7379,6 +7414,13 @@
  },
  {
   "day": "2026-11-14",
+  "query": "flosum certification",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 55
+ },
+ {
+  "day": "2026-11-14",
   "query": "how does a new team take over an unfinished salesforce development project?",
   "clicks": 0,
   "impressions": 1,
@@ -7400,6 +7442,13 @@
  },
  {
   "day": "2026-11-14",
+  "query": "kommunikationskonzept change management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 14
+ },
+ {
+  "day": "2026-11-14",
   "query": "manufacturing cloud",
   "clicks": 0,
   "impressions": 1,
@@ -7407,10 +7456,38 @@
  },
  {
   "day": "2026-11-14",
+  "query": "nearshore salesforce development",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 89
+ },
+ {
+  "day": "2026-11-14",
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 26
+ },
+ {
+  "day": "2026-11-14",
+  "query": "salesforce architektur dortmund",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
+ },
+ {
+  "day": "2026-11-14",
   "query": "salesforce beratung maschinenbau",
   "clicks": 0,
   "impressions": 1,
   "position": 9
+ },
+ {
+  "day": "2026-11-14",
+  "query": "salesforce erp schnittstelle",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 26
  },
  {
   "day": "2026-11-14",
@@ -7456,10 +7533,24 @@
  },
  {
   "day": "2026-11-14",
+  "query": "salesforce pim",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 32
+ },
+ {
+  "day": "2026-11-14",
   "query": "salesforce zertifizierte experten",
   "clicks": 0,
   "impressions": 1,
   "position": 36
+ },
+ {
+  "day": "2026-11-14",
+  "query": "sfdx-hardis",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
  },
  {
   "day": "2026-11-14",

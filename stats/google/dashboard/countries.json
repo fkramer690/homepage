@@ -2,14 +2,14 @@
  {
   "country": "deu",
   "clicks": 13,
-  "impressions": 1279,
-  "position": 45.7
+  "impressions": 1292,
+  "position": 45.6
  },
  {
   "country": "usa",
   "clicks": 3,
-  "impressions": 1002,
-  "position": 26
+  "impressions": 1009,
+  "position": 26.1
  },
  {
   "country": "gbr",
@@ -20,8 +20,8 @@
  {
   "country": "ind",
   "clicks": 3,
-  "impressions": 83,
-  "position": 14.2
+  "impressions": 86,
+  "position": 15.2
  },
  {
   "country": "bra",
@@ -38,14 +38,14 @@
  {
   "country": "fra",
   "clicks": 1,
-  "impressions": 58,
-  "position": 8.7
+  "impressions": 60,
+  "position": 8.6
  },
  {
   "country": "aut",
   "clicks": 1,
-  "impressions": 54,
-  "position": 33.5
+  "impressions": 55,
+  "position": 34.5
  },
  {
   "country": "aus",
@@ -98,8 +98,8 @@
  {
   "country": "bel",
   "clicks": 0,
-  "impressions": 20,
-  "position": 20.7
+  "impressions": 21,
+  "position": 20
  },
  {
   "country": "prt",

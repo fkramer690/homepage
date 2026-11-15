@@ -54,16 +54,16 @@
   "position": 73.1
  },
  {
+  "query": "sfdx-hardis",
+  "clicks": 1,
+  "impressions": 29,
+  "position": 9.9
+ },
+ {
   "query": "field service pricing",
   "clicks": 0,
   "impressions": 29,
   "position": 88.3
- },
- {
-  "query": "sfdx-hardis",
-  "clicks": 1,
-  "impressions": 28,
-  "position": 9.9
  },
  {
   "query": "services scheduling dispatch",
@@ -122,8 +122,14 @@
  {
   "query": "kommunikationsplan",
   "clicks": 0,
+  "impressions": 17,
+  "position": 89.5
+ },
+ {
+  "query": "what does a typical salesforce devops rollout look like?",
+  "clicks": 0,
   "impressions": 16,
-  "position": 89.6
+  "position": 5.9
  },
  {
   "query": "b2b dealer portal",
@@ -136,12 +142,6 @@
   "clicks": 0,
   "impressions": 15,
   "position": 28.3
- },
- {
-  "query": "what does a typical salesforce devops rollout look like?",
-  "clicks": 0,
-  "impressions": 15,
-  "position": 6.2
  },
  {
   "query": "advanced field service",
@@ -168,6 +168,12 @@
   "position": 87.2
  },
  {
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 13,
+  "position": 52.6
+ },
+ {
   "query": "salesforce manufacturing cloud",
   "clicks": 0,
   "impressions": 13,
@@ -184,12 +190,6 @@
   "clicks": 0,
   "impressions": 12,
   "position": 73.8
- },
- {
-  "query": "nearshore teams",
-  "clicks": 0,
-  "impressions": 12,
-  "position": 54.8
  },
  {
   "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
@@ -306,6 +306,12 @@
   "position": 68.1
  },
  {
+  "query": "nearshore salesforce development",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 81.9
+ },
+ {
   "query": "salesforce b2b commerce headless",
   "clicks": 0,
   "impressions": 9,
@@ -334,12 +340,6 @@
   "clicks": 0,
   "impressions": 8,
   "position": 37
- },
- {
-  "query": "nearshore salesforce development",
-  "clicks": 0,
-  "impressions": 8,
-  "position": 81
  },
  {
   "query": "revenue cloud advanced vs revenue cloud",
@@ -430,6 +430,12 @@
   "clicks": 0,
   "impressions": 6,
   "position": 32.3
+ },
+ {
+  "query": "erp field service management",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 94.3
  },
  {
   "query": "field service erp",
@@ -558,6 +564,12 @@
   "position": 54.2
  },
  {
+  "query": "salesforce release cycle",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 45
+ },
+ {
   "query": "salesforce revenue cloud advanced",
   "clicks": 0,
   "impressions": 5,
@@ -646,12 +658,6 @@
   "clicks": 0,
   "impressions": 4,
   "position": 23.8
- },
- {
-  "query": "erp field service management",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 94.8
  },
  {
   "query": "exzellentes field service management",
@@ -834,6 +840,12 @@
   "position": 41
  },
  {
+  "query": "cloud field service management",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 84.3
+ },
+ {
   "query": "contract lifecycle management salesforce",
   "clicks": 0,
   "impressions": 3,
@@ -996,6 +1008,12 @@
   "position": 85.5
  },
  {
+  "query": "agentforce definition",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 23
+ },
+ {
   "query": "b2b kundeportal",
   "clicks": 0,
   "impressions": 2,
@@ -1020,6 +1038,12 @@
   "position": 60.5
  },
  {
+  "query": "change management kommunikation praxisbeispiel",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 42.5
+ },
+ {
   "query": "click field service",
   "clicks": 0,
   "impressions": 2,
@@ -1042,12 +1066,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 95.5
- },
- {
-  "query": "cloud field service management",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 84
  },
  {
   "query": "cloud-angebotskonfigurator",
@@ -1152,6 +1170,12 @@
   "position": 36
  },
  {
+  "query": "how do you compare salesforce implementation proposals fairly?",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 3
+ },
+ {
   "query": "how does gearset position its agent and ai solutions?",
   "clicks": 0,
   "impressions": 2,
@@ -1218,6 +1242,12 @@
   "position": 34
  },
  {
+  "query": "salesforce architektur dortmund",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 13
+ },
+ {
   "query": "salesforce b2b commerce sap",
   "clicks": 0,
   "impressions": 2,
@@ -1234,6 +1264,12 @@
   "clicks": 0,
   "impressions": 2,
   "position": 16.5
+ },
+ {
+  "query": "salesforce erp schnittstelle",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 24.5
  },
  {
   "query": "salesforce manufacturing cloud implementation",
@@ -1260,10 +1296,10 @@
   "position": 54
  },
  {
-  "query": "salesforce release cycle",
+  "query": "salesforce pim",
   "clicks": 0,
   "impressions": 2,
-  "position": 48
+  "position": 32
  },
  {
   "query": "salesforce release dates",
@@ -1854,6 +1890,12 @@
   "position": 2
  },
  {
+  "query": "flosum certification",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 55
+ },
+ {
   "query": "grax vs flosum",
   "clicks": 0,
   "impressions": 1,
@@ -1956,6 +1998,12 @@
   "position": 94
  },
  {
+  "query": "kommunikationskonzept change management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 14
+ },
+ {
   "query": "konfigurator händleranbindung",
   "clicks": 0,
   "impressions": 1,
@@ -2040,12 +2088,6 @@
   "position": 33
  },
  {
-  "query": "salesforce architektur dortmund",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 15
- },
- {
   "query": "salesforce architektur essen",
   "clicks": 0,
   "impressions": 1,
@@ -2124,12 +2166,6 @@
   "position": 69
  },
  {
-  "query": "salesforce erp schnittstelle",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 23
- },
- {
   "query": "salesforce field service job costing time capture",
   "clicks": 0,
   "impressions": 1,
@@ -2188,12 +2224,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 95
- },
- {
-  "query": "salesforce pim",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 32
  },
  {
   "query": "salesforce release management",

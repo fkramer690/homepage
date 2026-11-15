@@ -117,12 +117,18 @@
   "day": "2026-11-13",
   "clicks": 0,
   "impressions": 183,
-  "position": 35.6
+  "position": 35.7
  },
  {
   "day": "2026-11-14",
   "clicks": 0,
-  "impressions": 117,
-  "position": 49.8
+  "impressions": 144,
+  "position": 47.2
+ },
+ {
+  "day": "2026-11-15",
+  "clicks": 0,
+  "impressions": 0,
+  "position": 0
  }
 ]

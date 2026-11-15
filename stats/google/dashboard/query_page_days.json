@@ -9017,6 +9017,14 @@
  },
  {
   "day": "2026-11-13",
+  "query": "how do you compare salesforce implementation proposals fairly?",
+  "page": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 3
+ },
+ {
+  "day": "2026-11-13",
   "query": "manufacturing cloud",
   "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
   "clicks": 0,
@@ -9369,6 +9377,30 @@
  },
  {
   "day": "2026-11-14",
+  "query": "erp field service management",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 94.3
+ },
+ {
+  "day": "2026-11-14",
+  "query": "kommunikationsplan",
+  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 86
+ },
+ {
+  "day": "2026-11-14",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 5.5
+ },
+ {
+  "day": "2026-11-14",
   "query": "click field service management software",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
@@ -9417,11 +9449,11 @@
  },
  {
   "day": "2026-11-14",
-  "query": "kommunikationsplan",
-  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "query": "salesforce release cycle",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
   "clicks": 0,
   "impressions": 3,
-  "position": 85
+  "position": 43
  },
  {
   "day": "2026-11-14",
@@ -9433,14 +9465,6 @@
  },
  {
   "day": "2026-11-14",
-  "query": "what does a typical salesforce devops rollout look like?",
-  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 7
- },
- {
-  "day": "2026-11-14",
   "query": "agentforce",
   "page": "https://www.fk-sd.de/en/blog/what-is-agentforce/",
   "clicks": 0,
@@ -9449,19 +9473,27 @@
  },
  {
   "day": "2026-11-14",
+  "query": "agentforce definition",
+  "page": "https://www.fk-sd.de/en/blog/what-is-agentforce/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 23
+ },
+ {
+  "day": "2026-11-14",
+  "query": "change management kommunikation praxisbeispiel",
+  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 42.5
+ },
+ {
+  "day": "2026-11-14",
   "query": "erp field service",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
   "impressions": 2,
   "position": 74.5
- },
- {
-  "day": "2026-11-14",
-  "query": "erp field service management",
-  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 95
  },
  {
   "day": "2026-11-14",
@@ -9593,6 +9625,14 @@
  },
  {
   "day": "2026-11-14",
+  "query": "cloud field service management",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 85
+ },
+ {
+  "day": "2026-11-14",
   "query": "devops release management",
   "page": "https://www.fk-sd.de/leistungen/devops-und-release-management/",
   "clicks": 0,
@@ -9689,6 +9729,14 @@
  },
  {
   "day": "2026-11-14",
+  "query": "flosum certification",
+  "page": "https://www.fk-sd.de/en/certifications/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 55
+ },
+ {
+  "day": "2026-11-14",
   "query": "how does a new team take over an unfinished salesforce development project?",
   "page": "https://www.fk-sd.de/en/blog/switching-salesforce-implementation-partner/",
   "clicks": 0,
@@ -9713,6 +9761,14 @@
  },
  {
   "day": "2026-11-14",
+  "query": "kommunikationskonzept change management",
+  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 14
+ },
+ {
+  "day": "2026-11-14",
   "query": "manufacturing cloud",
   "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
   "clicks": 0,
@@ -9721,11 +9777,43 @@
  },
  {
   "day": "2026-11-14",
+  "query": "nearshore salesforce development",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 89
+ },
+ {
+  "day": "2026-11-14",
+  "query": "nearshore teams",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 26
+ },
+ {
+  "day": "2026-11-14",
+  "query": "salesforce architektur dortmund",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
+ },
+ {
+  "day": "2026-11-14",
   "query": "salesforce beratung maschinenbau",
   "page": "https://www.fk-sd.de/salesforce-maschinenbau/",
   "clicks": 0,
   "impressions": 1,
   "position": 9
+ },
+ {
+  "day": "2026-11-14",
+  "query": "salesforce erp schnittstelle",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-schnittstellen/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 26
  },
  {
   "day": "2026-11-14",
@@ -9777,11 +9865,43 @@
  },
  {
   "day": "2026-11-14",
+  "query": "salesforce pim",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 32
+ },
+ {
+  "day": "2026-11-14",
   "query": "salesforce zertifizierte experten",
   "page": "https://www.fk-sd.de/certifications/",
   "clicks": 0,
   "impressions": 1,
   "position": 36
+ },
+ {
+  "day": "2026-11-14",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/en/partners/recruiters/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "day": "2026-11-14",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/partner/recruiter/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
+ },
+ {
+  "day": "2026-11-14",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/speaking/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 12
  },
  {
   "day": "2026-11-14",
