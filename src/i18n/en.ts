@@ -380,6 +380,8 @@ export const en = {
     authorRole: 'Salesforce Enterprise Architect · Cologne',
     authorMore: 'More about me',
     relatedService: 'Related service',
+    guestArticle: 'Guest article',
+    guestArticleLang: 'in German',
     authorLinkedIn: 'LinkedIn profile',
     // Shared author box for an article with a co-author (AuthorBox.astro with coAuthor).
     authorsLabel: 'About the authors',

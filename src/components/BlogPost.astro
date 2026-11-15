@@ -7,6 +7,8 @@ import PhoneLine from './PhoneLine.astro';
 import AuthorBox from './AuthorBox.astro';
 import PartnerBox from './PartnerBox.astro';
 import ContactBrief from './ContactBrief.astro';
+import GuestArticle from './GuestArticle.astro';
+import { guestArticlesFor } from '../data/guest-articles';
 import ReadingGrid from './ReadingGrid.astro';
 import VideoCard from './VideoCard.astro';
 import PostMeta from './PostMeta.astro';
@@ -34,6 +36,7 @@ const { Content, headings } = await render(post);
 const toc = [...headings.filter((h) => h.depth === 2), { slug: 'faq', text: t.blog.faq }];
 const translation = await getTranslation(post);
 const related = await getRelated(post);
+const guests = guestArticlesFor(post.data.translationKey);
 const service = await getPostService(post);
 const seriesRef = post.data.series;
 const seriesInfo = seriesRef && allSeries[seriesRef.id];
@@ -156,6 +159,7 @@ const schema = {
           <CallHint slot="hint1" kicker={t.blog.callHintKicker} title={brief.title} text={brief.text} label={t.nav.cta} newTab={t.nav.newTab} subject={title} />
           <CallHint slot="hint2" kicker={t.blog.callHintPrepKicker} title={t.blog.callHintPrepTitle} text={`${brief.bring[1] ?? brief.bring[0]}.`} label={t.nav.cta} newTab={t.nav.newTab} subject={title} />
         </ProseWithHints>
+        {guests.map((g) => <GuestArticle article={g} lang={lang} label={t.blog.guestArticle} langNote={t.blog.guestArticleLang} newTab={t.nav.externalTab} box />)}
         <section class="post-faq" aria-labelledby="faq">
           <h2 id="faq">{t.blog.faq}</h2>
           {faq.map(({ q, a }) => (
