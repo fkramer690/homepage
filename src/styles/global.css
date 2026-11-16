@@ -2333,22 +2333,6 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .fa-practice-text { max-width: 70ch; color: rgba(255, 255, 255, 0.85); }
 .fa-terms-grid { grid-template-columns: repeat(3, 1fr); }
 .fa-faq { max-width: 820px; }
-/* Price block of an offer page (src/data/ki-readiness-check.ts) */
-.offer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 1.6em; align-items: start; }
-.offer-price { padding: 28px 30px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--accent-top); }
-.offer-amount { margin: 0; font-size: var(--fs-xl); font-weight: 600; color: var(--anthracite); line-height: 1.1; }
-.offer-note { margin: 0.3em 0 1.2em; color: var(--text-2); font-size: var(--fs-sm); }
-.offer-items { list-style: none; margin: 0 0 1.6em; padding: 0; display: grid; gap: 10px; }
-.offer-items li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; font-size: var(--fs-ui); color: var(--text); }
-.offer-tick { width: 18px; height: 18px; color: var(--cyan-dark); margin-top: 2px; }
-.offer-ctas { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; }
-.offer-next h3 { margin: 0 0 0.8em; font-size: var(--fs-md); }
-.offer-next-item { padding: 16px 0; border-top: 1px solid var(--line); }
-.offer-next-item h4 { margin: 0 0 0.3em; font-size: var(--fs-base); }
-.offer-next-item p { margin: 0; color: var(--text-2); font-size: var(--fs-ui); }
-@media (max-width: 860px) {
-  .offer-grid { grid-template-columns: 1fr; gap: 28px; }
-}
 @media (max-width: 960px) {
   .fa-cards { grid-template-columns: repeat(2, 1fr); }
   .fa-terms-grid { grid-template-columns: 1fr; }
