@@ -1,8 +1,9 @@
 ---
 title: "Salesforce Pricing: how Revenue Cloud calculates prices"
-description: "How pricing procedures, decision tables and context definitions calculate a price in Revenue Cloud, and what that means for maintenance and regression tests."
+metaTitle: "Revenue Cloud pricing procedures: how a price is built"
+description: "A pricing procedure runs list price, volume, attribute and manual discounts in a fixed order. How Revenue Cloud calculates prices and what to test."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-16
 lang: en
 slug: revenue-cloud-pricing-procedures-explained
 translationKey: revenue-cloud-pricing-procedures

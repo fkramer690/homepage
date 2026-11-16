@@ -1,8 +1,9 @@
 ---
 title: "Salesforce-Editionen Core, Advanced, Max für Hersteller"
-description: "Was die Editionen Core, Advanced und Max für die Lizenzplanung von Herstellern bedeuten, wie weit die Flex-Credit-Pools reichen und wann Credits Max tragen."
+metaTitle: "Salesforce Core, Advanced, Max: 195, 395 oder 550 €?"
+description: "Core, Advanced und Max kosten 195, 395 und 550 € je Nutzer und Monat. Wie weit die Flex-Credit-Pools reichen und warum Credits Max selten rechtfertigen."
 pubDate: 2026-10-27
-updatedDate: 2026-11-09
+updatedDate: 2026-11-16
 lang: de
 slug: salesforce-editionen-core-advanced-max
 translationKey: salesforce-editions-core-advanced-max

@@ -1,8 +1,9 @@
 ---
 title: "Dubletten in Salesforce: Stammdaten vor der KI bereinigen"
-description: "Wie Hersteller Dubletten bei Accounts, Kontakten und Anlagen in Salesforce finden, bereinigen und verhindern, bevor ein KI-Agent mit den Daten arbeitet."
+metaTitle: "Dubletten in Salesforce bereinigen: 4 Schritte vor der KI"
+description: "Dubletten in Salesforce bereinigen Sie in vier Schritten: messen, Schlüssel festlegen, zusammenführen, verhindern. Für Accounts, Kontakte und Anlagen."
 pubDate: 2026-10-29
-updatedDate: 2026-11-09
+updatedDate: 2026-11-16
 lang: de
 slug: salesforce-dubletten-stammdaten-bereinigen
 translationKey: duplicates-master-data-cleanup

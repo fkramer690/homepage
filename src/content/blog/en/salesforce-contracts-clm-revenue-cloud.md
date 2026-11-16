@@ -1,8 +1,9 @@
 ---
 title: "Salesforce Contracts: is the built-in CLM enough?"
-description: "What Salesforce Contracts covers from quote to signature and obligations, what it costs, and when a manufacturer's legal team should keep its own CLM tool."
+metaTitle: "Salesforce Contracts CLM: enough from €50 per user?"
+description: "Salesforce Contracts covers sales-driven contracts from €50 per user and month: clauses, Word, DocuSign, obligations. When legal should keep its own CLM tool."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-16
 lang: en
 slug: salesforce-contracts-clm-revenue-cloud
 translationKey: salesforce-contracts-revenue-cloud

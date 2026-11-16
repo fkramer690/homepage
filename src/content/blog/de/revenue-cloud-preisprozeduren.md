@@ -1,8 +1,9 @@
 ---
 title: "Salesforce Pricing: Wie Revenue Cloud Preise berechnet"
-description: "Wie Pricing Procedures, Decision Tables und Kontextdefinitionen in Revenue Cloud einen Preis berechnen und was das für Pflege und Regressionstests heißt."
+metaTitle: "Revenue Cloud Pricing Procedures: So entsteht der Preis"
+description: "Eine Pricing Procedure rechnet Listenpreis, Mengen-, Attribut- und manuellen Rabatt in fester Reihenfolge. So rechnet Revenue Cloud, das testen Sie."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-16
 lang: de
 slug: revenue-cloud-preisprozeduren
 translationKey: revenue-cloud-pricing-procedures

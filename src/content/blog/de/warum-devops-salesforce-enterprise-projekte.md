@@ -1,8 +1,9 @@
 ---
 title: "Warum DevOps über Salesforce-Großprojekte entscheidet"
-description: "Change Sets genügen im Kleinen. Mit mehreren Partnern, globalen Rollouts und drei Releases im Jahr entscheidet DevOps, ob ein Programm beherrschbar bleibt."
+metaTitle: "Salesforce DevOps für Großprojekte: die 6 Bausteine"
+description: "Salesforce DevOps für Großprojekte braucht Git, Branch-Strategie, Reviews, Qualitätsschranken, Delta-Deployments, Backups. Warum Change Sets nicht mitwachsen."
 pubDate: 2026-10-23
-updatedDate: 2026-11-09
+updatedDate: 2026-11-16
 lang: de
 slug: warum-devops-salesforce-enterprise-projekte
 translationKey: devops-salesforce-enterprise
@@ -26,7 +27,7 @@ faq:
     a: "Ja, Lizenzgebühren fallen nicht an. sfdx-hardis ist ein Open-Source-Toolkit unter der Lizenz AGPL 3.0, das Cloudity mit seiner Community pflegt. Es läuft auf gängigen CI/CD-Plattformen wie GitHub, GitLab, Azure DevOps, Bitbucket und Jenkins."
 ---
 
-Der Einstieg in Salesforce ist leicht. Ein paar Klicks im Setup, ein Change Set, fertig. Genau diese Leichtigkeit ist der Grund, warum viele Enterprise-Programme ein Jahr später in Schwierigkeiten geraten. Sobald mehrere Teams, Partner und Länder an derselben Org arbeiten, lautet die Frage nicht mehr, wie man etwas baut. Sie lautet, wie man es sicher, wiederholbar und nachvollziehbar in Produktion bringt. Darum geht es bei DevOps, und in Großprojekten entscheidet es darüber, ob ein Programm beherrschbar bleibt.
+Salesforce DevOps für Großprojekte besteht aus sechs Bausteinen: Git als Quelle der Wahrheit, eine Branch- und Umgebungsstrategie, Pull Requests mit Review, automatisierte Qualitätsschranken, Delta-Deployments sowie Monitoring und Backup. Change Sets decken keinen davon ab. Für ein paar Klicks im Setup reicht das, aber sobald mehrere Teams, Partner und Länder an derselben Org arbeiten, lautet die Frage nicht mehr, wie man etwas baut. Sie lautet, wie man es sicher, wiederholbar und nachvollziehbar in Produktion bringt, und in Großprojekten entscheidet das darüber, ob ein Programm beherrschbar bleibt.
 
 ## Was geht schief, wenn ein Salesforce-Programm wächst?
 

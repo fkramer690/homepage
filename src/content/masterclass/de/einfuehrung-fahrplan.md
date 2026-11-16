@@ -1,6 +1,6 @@
 ---
 title: "Salesforce DevOps einführen: Fahrplan und Messung"
-description: "Der Fahrplan von Change Sets zur eigenen Salesforce-Pipeline in sieben Phasen: Teams schulen, typische Fehler vermeiden, Fortschritt messen, Agenten einplanen."
+description: "Eine Salesforce-DevOps-Einführung läuft in sieben Phasen, von Ownership und Git bis zu Qualitätsschranken und Releasekalender, mit einem Pilot-Stream zuerst."
 lang: de
 slug: einfuehrung-fahrplan
 course: devops

@@ -1,8 +1,9 @@
 ---
 title: "Why DevOps decides Salesforce enterprise projects"
-description: "Change sets work for small changes. With several partners, global rollouts and three releases a year, DevOps decides whether a program stays in control."
+metaTitle: "Enterprise Salesforce DevOps: the 6 building blocks"
+description: "Enterprise-ready Salesforce DevOps needs Git, a branch strategy, reviewed pull requests, quality gates, delta deploys and backups. Why change sets stop scaling."
 pubDate: 2026-10-23
-updatedDate: 2026-11-09
+updatedDate: 2026-11-16
 lang: en
 slug: why-devops-matters-salesforce-enterprise
 translationKey: devops-salesforce-enterprise
@@ -26,7 +27,7 @@ faq:
     a: "Yes, there are no license fees. sfdx-hardis is an open-source toolkit under the AGPL 3.0 license, maintained by Cloudity and its community. It runs on common CI/CD platforms such as GitHub, GitLab, Azure DevOps, Bitbucket and Jenkins."
 ---
 
-Salesforce is easy to start with. You make a few clicks in Setup, create a change set, and you are done. That ease is exactly why many enterprise programs run into trouble a year later. As soon as several teams, partners and countries work on the same org, the question is no longer how to build something. It is how to get it into production safely, repeatedly and traceably. That is what DevOps is about, and in enterprise projects it decides whether a program stays in control.
+An enterprise-ready Salesforce DevOps setup has six building blocks: Git as the source of truth, a branch and environment strategy, pull requests with review, automated quality gates, delta deployments, and monitoring with backups. Change sets cover none of them. That is fine for a few clicks in Setup, but as soon as several teams, partners and countries work on the same org, the question is no longer how to build something. It is how to get it into production safely, repeatedly and traceably, and in enterprise projects that decides whether a program stays in control.
 
 ## What goes wrong when a Salesforce program grows?
 

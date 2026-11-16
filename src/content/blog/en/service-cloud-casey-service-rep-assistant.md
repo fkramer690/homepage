@@ -1,8 +1,9 @@
 ---
 title: "Service Cloud: Casey and the Service Rep Assistant"
-description: "Casey answers customers, the Service Rep Assistant supports human reps, and Agentforce Contact Center launched in Europe. What it means for B2B service."
+metaTitle: "Salesforce Casey: Help Agent vs Service Rep Assistant"
+description: "Casey is Salesforce's AI Help Agent that answers customers; the Service Rep Assistant helps human reps on a case. What both need to work in B2B service."
 pubDate: 2026-10-23
-updatedDate: 2026-11-09
+updatedDate: 2026-11-16
 lang: en
 slug: service-cloud-casey-service-rep-assistant
 translationKey: service-cloud-casey-assistant
@@ -26,7 +27,7 @@ faq:
     a: "For standard questions with clear answers, such as questions about order status, documentation or return rules, it can be suitable, provided identity, permissions and data access for each customer account have been defined. For technical diagnosis, warranty decisions or goodwill, Casey should hand over to a human or ask for approval."
 ---
 
-This article looks at two kinds of help in Salesforce Service Cloud: Casey, an AI agent that answers customers directly, and the Service Rep Assistant, which supports human service reps during a case. In October 2026 Salesforce also announced Agentforce Contact Center as generally available in Europe. For manufacturers with B2B service, these launches can shorten response times and relieve service teams, but only if the knowledge behind them is reliable and the rules for handing over to people are clear. Here is an overview of the launches and an assessment from the client's perspective.
+Casey is Salesforce's AI Help Agent and answers customers directly; the Service Rep Assistant is the counterpart for human service reps and supports them during a case. In October 2026 Salesforce also announced Agentforce Contact Center as generally available in Europe. For manufacturers with B2B service, these launches can shorten response times and relieve service teams, but only if the knowledge behind them is reliable and the rules for handing over to people are clear. Here is an overview of the launches and an assessment from the client's perspective.
 
 ## Selected Service Cloud launches from October 13, 2026
 
