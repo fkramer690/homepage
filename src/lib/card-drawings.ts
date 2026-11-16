@@ -952,7 +952,7 @@ const drawings: Record<string, Drawing> = {
     ${check(18, 104)}${t(30, 110, l('pipeline on your licence', 'Pipeline auf eigener Lizenz'), { size: 7 })}
     ${check(170, 92)}${t(182, 98, l('own integration users', 'eigene Integrationsbenutzer'), { size: 7 })}
     ${check(170, 104)}${t(182, 110, l('decision log', 'Entscheidungslog'), { size: 7 })}
-    ${tag(18, 128, 170, l('4 to 8 weeks overlap', '4 bis 8 Wochen Überlappung'))}`,
+    ${tag(18, 128, 170, l('hard cut on a fixed date', 'harter Cut zum Stichtag'))}`,
 
   'salesforce-architect-or-system-integrator': (l) => `
     ${t(18, 20, l('SAME SKILLS, OTHER EMPLOYER', 'GLEICHES WISSEN, ANDERER AUFTRAG'), { fill: D, size: 7 })}
@@ -962,6 +962,12 @@ const drawings: Record<string, Drawing> = {
     ${t(182, 62, l('works for: client', 'arbeitet für: Kunde'), { size: 7 })}${t(182, 76, l('plans for 10 years', 'plant für 10 Jahre'), { size: 7 })}
     ${t(18, 110, l('scope · licences · repo · change requests', 'Umfang · Lizenzen · Repo · Change Requests'), { size: 7 })}
     ${tag(18, 122, 200, l('from 2 partners: own architect', 'ab 2 Partnern: eigener Architekt'))}`,
+
+  'gearset-copado-alternatives': (l) => `
+    ${t(18, 20, l('COST MODEL PER TOOL', 'KOSTENMODELL JE TOOL'), { fill: D, size: 7 })}
+    ${[['sfdx-hardis', l('open source, $0 licence', 'Open Source, 0 $ Lizenz'), C], ['Lifecycle Center', l('included in Salesforce', 'in Salesforce enthalten'), G], ['Gearset', l('from $215 per user/month', 'ab 215 $ je Nutzer/Monat'), G], ['Copado', l('Enterprise on request', 'Enterprise auf Anfrage'), G], ['Flosum', l('on request', 'auf Anfrage'), G]]
+      .map(([n, d, c], i) => dot(24, 34 + i * 16, c) + t(34, 37 + i * 16, n, { size: 7, fill: c === C ? C : D }) + t(130, 37 + i * 16, d, { size: 7, fill: c }) + `<path d="M34 ${42 + i * 16}H302" stroke="${L}"/>`).join('')}
+    ${tag(18, 122, 230, l('12 users on Gearset: $59,280 a year', '12 Nutzer mit Gearset: 59.280 $ im Jahr'))}`,
 
   'salesforce-freelancer-or-consultancy': (l) => `
     ${t(18, 20, l('WHO BUILDS, WHO DECIDES', 'WER BAUT, WER ENTSCHEIDET'), { fill: D, size: 7 })}

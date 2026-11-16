@@ -80,7 +80,7 @@ const services = defineCollection({
     lang: z.enum(['en', 'de']),
     slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
     translationKey: z.string(),
-    order: z.number().int().min(1).max(7),
+    order: z.number().int().min(1).max(8),
     // Optional note at the very top, e.g. who the approach was developed with. notePartner is a
     // name from partnerPage.partners in src/i18n; it is linked to the partner page and LinkedIn.
     note: z.string().max(240).optional(),
