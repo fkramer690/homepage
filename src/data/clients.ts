@@ -63,4 +63,5 @@ export const clients: Client[] = [
   { name: 'Schubert', file: 'schubert.svg' },
   { name: 'Reemtsma (Imperial Brands)', file: 'reemtsma.svg' },
   { name: 'Lieferando', file: 'lieferando.webp' },
+  { name: 'Bayerische Hausbau', file: 'bayerische-hausbau.svg' },
 ];

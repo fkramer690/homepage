@@ -118,5 +118,10 @@
     "file": "mono/lieferando.webp",
     "ratio": 4.365,
     "ink": 0.312
+  },
+  "bayerische-hausbau.svg": {
+    "file": "mono/bayerische-hausbau.webp",
+    "ratio": 3.038,
+    "ink": 0.244
   }
 }
