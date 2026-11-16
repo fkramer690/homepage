@@ -45,16 +45,16 @@ An Agentforce Service Agent works with topics, instructions and actions, and a l
 
 Two consequences:
 
-- **Decisions with consequences move into deterministic logic** behind the agent, for example warranty eligibility or goodwill limits. I describe the mechanics in [Agent Script rules instead of LLM decisions](../agent-script-deterministic-rules/).
+- **Decisions with consequences move into deterministic logic** behind the agent, for example warranty eligibility or goodwill limits. I describe the mechanics in [Agent Script rules instead of LLM decisions](/en/blog/agent-script-deterministic-rules/).
 - **Knowledge becomes a production system.** A bot showed articles through configured dialogs and article answers. An agent reads, combines and rephrases whatever grounding it is given, so every manual and article needs an owner and a review date.
 
 ## The allowance becomes consumption
 
 Einstein Bots were budgeted against a license allowance. Salesforce's [Einstein features cheat sheet](https://www.salesforce.com/en-ca/wp-content/uploads/sites/4/documents/datasheets/einstein-features-cheat-sheet.pdf), updated April 2024, says "Service Cloud UE licenses come 25 Einstein Bot conversations PUPM" (per user per month), Enterprise Edition includes them only with the Digital Engagement add-on, and extra capacity was sold as "100 conversations for $50 per month".
 
-Agentforce uses consumption-based billing. The [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) lists Flex Credits at $500 per 100,000, and Salesforce's [May 2025 announcement](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) says "One Agentforce action consumes 20 Flex Credits ($0.10 USD)". The alternative is $2 per conversation, and the pricing page states that Flex Credits and conversations "will not be supported in the same org". Prompts and Data 360 grounding are charged in addition to actions; I break them down in [Flex Credits per action](../flex-credits-agentforce-cost-per-action/).
+Agentforce uses consumption-based billing. The [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) lists Flex Credits at $500 per 100,000, and Salesforce's [May 2025 announcement](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) says "One Agentforce action consumes 20 Flex Credits ($0.10 USD)". The alternative is $2 per conversation, and the pricing page states that Flex Credits and conversations "will not be supported in the same org". Prompts and Data 360 grounding are charged in addition to actions; I break them down in [Flex Credits per action](/en/blog/flex-credits-agentforce-cost-per-action/).
 
-There is a third model. The [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) (as of November 3, 2026) lists Help Agent resolutions at 400 credits, and Salesforce's [June 2026 announcement](https://www.salesforce.com/de/news/press-releases/2026/06/30/salesforce-agentforce-help-agent/) says there is no charge when the customer is handed off to a human. Salesforce announced this for Help Agent, now marketed as Casey, which I cover in [the Casey article](../service-cloud-casey-service-rep-assistant/). Salesforce's Dreamforce post says Upgrade Agent can also convert a bot into a Help Agent, so for simple service portals that is a third option worth pricing separately. For a custom service agent built from your bot, the resolution model does not apply.
+There is a third model. The [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-11.3.2026.pdf) (as of November 3, 2026) lists Help Agent resolutions at 400 credits, and Salesforce's [June 2026 announcement](https://www.salesforce.com/de/news/press-releases/2026/06/30/salesforce-agentforce-help-agent/) says there is no charge when the customer is handed off to a human. Salesforce announced this for Help Agent, now marketed as Casey, which I cover in [the Casey article](/en/blog/service-cloud-casey-service-rep-assistant/). Salesforce's Dreamforce post says Upgrade Agent can also convert a bot into a Help Agent, so for simple service portals that is a third option worth pricing separately. For a custom service agent built from your bot, the resolution model does not apply.
 
 The [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) lists Max as including "2.75M Flex Credits per org per year". That pool is shared by every agent in the org; whether Data 360 jobs draw from it too depends on whether your contract also contains Data Services Credits.
 
@@ -91,10 +91,10 @@ Cost is not the main argument for option 2: the free-text category is where the 
 
 My criteria, in this order:
 
-- **Identification and verification.** Customer number, dealer ID and serial number decide what the conversation may see. That should not depend on how a model reads a sentence, and free-text entry points are one place where [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/) can start. A menu does not replace authorization, though: the server still checks every value against the signed-in portal user.
+- **Identification and verification.** Customer number, dealer ID and serial number decide what the conversation may see. That should not depend on how a model reads a sentence, and free-text entry points are one place where [prompt injection in dealer portals](/en/blog/prompt-injection-dealer-portals-agentforce/) can start. A menu does not replace authorization, though: the server still checks every value against the signed-in portal user.
 - **Data capture with legal weight.** Warranty registration, commissioning date and the contact for safety notices. A menu or form captures exactly the mandatory fields.
-- **Safety-relevant reports.** A breakdown that poses a risk to people goes straight to a human queue with serial number and photos, without an intermediate summary. For the phone channel I cover the same question in [the breakdown hotline article](../breakdown-hotline-agentforce-voice/).
-- **Single lookups with one key.** Order status by order number is one SAP call. An agent can answer it too, as described in [the SAP order status article](../agentforce-sap-order-status-mulesoft/), but depending on the build it may use one or more billable actions to produce an answer that the menu provides in two clicks.
+- **Safety-relevant reports.** A breakdown that poses a risk to people goes straight to a human queue with serial number and photos, without an intermediate summary. For the phone channel I cover the same question in [the breakdown hotline article](/en/blog/breakdown-hotline-agentforce-voice/).
+- **Single lookups with one key.** Order status by order number is one SAP call. An agent can answer it too, as described in [the SAP order status article](/en/blog/agentforce-sap-order-status-mulesoft/), but depending on the build it may use one or more billable actions to produce an answer that the menu provides in two clicks.
 - **Promises with liability**, such as confirmed delivery dates.
 
 Convert these to the agent: troubleshooting questions answered from manuals, mixed questions, dealers writing in their own language and follow-up questions in the same conversation.
@@ -103,11 +103,11 @@ If you move everything to Agentforce anyway, the deterministic paths can be impl
 
 ## How do testing and go-live change?
 
-A bot is tested by following its dialog paths, including unrecognized input and backend errors, and the same input leads to the same path. An agent needs a test set that is run several times and evaluated against an agreed pass rate. The implementation guide scores response quality from 0 to 5 and counts 3 or higher as a pass, while topic and action checks are pass or fail. Thresholds and tooling are covered in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). Test runs in a sandbox cost 16 credits per action according to the rate card.
+A bot is tested by following its dialog paths, including unrecognized input and backend errors, and the same input leads to the same path. An agent needs a test set that is run several times and evaluated against an agreed pass rate. The implementation guide scores response quality from 0 to 5 and counts 3 or higher as a pass, while topic and action checks are pass or fail. Thresholds and tooling are covered in [testing Agentforce agents before go-live](/en/blog/testing-agentforce-agents-before-go-live/). Test runs in a sandbox cost 16 credits per action according to the rate card.
 
 The bot gives you a head start. The example phrases used to train each intent, plus the transcripts of the "something else" path, are a ready-made test set of real dealer questions.
 
-This split is an [architecture decision](../../services/salesforce-architecture/) worth making before you click Upgrade Agent for the first time. The order I would follow:
+This split is an [architecture decision](/en/services/salesforce-architecture/) worth making before you click Upgrade Agent for the first time. The order I would follow:
 
 ```schritte
 Review the paths

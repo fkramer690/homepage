@@ -11,8 +11,9 @@
 import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { iconHtml } from './icons.mjs';
+import { ringHtml, ringProblems, cycleHtml, cycleProblems } from './ring-cycle.mjs';
 
-export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen', 'partnerfluss', 'tabelle', 'staerken-grenzen', 'pipeline', 'saeulenwechsel', 'basis-addons', 'level', 'prozess', 'kette', 'steuerzentrale', 'eisberg'];
+export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen', 'partnerfluss', 'tabelle', 'staerken-grenzen', 'pipeline', 'saeulenwechsel', 'basis-addons', 'level', 'prozess', 'kette', 'steuerzentrale', 'eisberg', 'ring', 'kreislauf'];
 
 const labels = {
   de: {
@@ -452,6 +453,32 @@ export function parseIceberg(content) {
   return out;
 }
 
+// Ring and cycle (src/lib/ring-cycle.mjs): "titel:" (EN "title:") names the drawing,
+// "mitte: Eyebrow | Title" (EN "centre:") fills the centre, the cycle adds
+// "hinweis: Title | text" (EN "hint:") for the panel at rest. One line per segment or
+// station: ring "- icon | Name | Subtitle | point; point; point" ("Name ~ LABEL" for a
+// shorter segment label), cycle "- icon | Name | Subtitle | Sentence | point; point; point".
+export function parseRingCycle(content, cycle) {
+  const out = { title: '', centre: ['', ''], intro: ['', ''], items: [] };
+  for (const raw of lines(content)) {
+    const l = raw.trim();
+    if (!l) continue;
+    const k = keyLine(l, ['titel', 'title', 'mitte', 'centre', 'hinweis', 'hint']);
+    if (k && isTitle(k.key)) { out.title = k.value; continue; }
+    if (k && ['mitte', 'centre'].includes(k.key)) { const [a, b = ''] = k.value.split('|').map((x) => x.trim()); out.centre = [a, b]; continue; }
+    if (k) { const [a, b = ''] = k.value.split('|').map((x) => x.trim()); out.intro = [a, b]; continue; }
+    const m = l.match(/^-\s+(.*)$/);
+    if (!m) { out.unknown = l; continue; }
+    const f = m[1].split('|').map((x) => x.trim());
+    const [nameRaw = '', label] = f[1] ? f[1].split('~').map((x) => x.trim()) : [''];
+    const item = cycle
+      ? { icon: f[0], name: nameRaw, sub: f[2] ?? '', text: f[3] ?? '', points: (f[4] ?? '').split(';').map((x) => x.trim()).filter(Boolean) }
+      : { icon: f[0], name: nameRaw, label, sub: f[2] ?? '', points: (f[3] ?? '').split(';').map((x) => x.trim()).filter(Boolean) };
+    out.items.push(item);
+  }
+  return out;
+}
+
 // Diagram: "sf: A, B" / "erp: C" / "ext: D" assign nodes to systems; edges are
 // "A --> B", "A --Label--> B" (solid) and "A ..> B", "A ..Label..> B" (dashed).
 export function parseFlow(content) {
@@ -639,6 +666,21 @@ export function validateBlock(block) {
       if (x.boxes.length !== 2) errs.push(`steuerzentrale: "${x.name}" needs exactly two "- Role | Name | detail | link" boxes`);
       if (x.boxes.some((b) => !b.role || !b.name || !b.link)) errs.push(`steuerzentrale: every box of "${x.name}" needs role, name and link label`);
     }
+  } else if (name === 'ring' || name === 'kreislauf') {
+    const cycle = name === 'kreislauf';
+    const { title, centre, intro, items, unknown } = parseRingCycle(content, cycle);
+    if (!title) errs.push(`${name}: add a "titel:" (DE) or "title:" (EN) line`);
+    if (!centre[0] || !centre[1]) errs.push(`${name}: add "mitte: Eyebrow | Title" (EN "centre:")`);
+    if (cycle && (!intro[0] || !intro[1])) errs.push('kreislauf: add "hinweis: Title | text" (EN "hint:")');
+    if (unknown) errs.push(`${name}: cannot read "${unknown}"`);
+    between(items.length, cycle ? 3 : 3, cycle ? 6 : 7, cycle ? 'stations' : 'segments');
+    for (const x of items) {
+      if (!x.icon || !x.name || !x.sub || (cycle && !x.text)) errs.push(`${name}: "${x.name}" needs ${cycle ? '"- icon | Name | Subtitle | Sentence | point; point"' : '"- icon | Name | Subtitle | point; point"'}`);
+      if (x.points.length < 2 || x.points.length > 4) errs.push(`${name}: "${x.name}" needs 2 to 4 points separated by ";"`);
+      if (x.icon && !existsSync(new URL(`../icons/${x.icon}.svg`, import.meta.url))) errs.push(`${name}: icon "${x.icon}" is not in src/icons/`);
+    }
+    const problems = cycle ? cycleProblems(items.map((x) => x.name)) : ringProblems(items.map((x) => (x.label ?? x.name).toUpperCase()));
+    for (const p of problems) errs.push(`${name}: ${p}`);
   } else if (name === 'eisberg') {
     const { title, tip, items, unknown } = parseIceberg(content);
     if (!title) errs.push('eisberg: add a "titel:" (DE) or "title:" (EN) line');
@@ -654,7 +696,7 @@ export function validateBlock(block) {
 // Prose of a block, for word counts and the wording checks in check-blog.
 export function blockProse(block) {
   return block.content
-    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with|fazit|note|dach|roof|basis|base|spalten|columns|marke|mark|besser|better|schranke|gate|hotfix|bisher|before|alt|old|abschluss|done|spuren|lanes|ticket|start|phase|tor|zurueck|loop|seite|side|sichtbar|visible):\s*/gim, '')
+    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with|fazit|note|dach|roof|basis|base|spalten|columns|marke|mark|besser|better|schranke|gate|hotfix|bisher|before|alt|old|abschluss|done|spuren|lanes|ticket|start|phase|tor|zurueck|loop|seite|side|sichtbar|visible|mitte|centre|hinweis|hint):\s*/gim, '')
     .replace(/\s\*(?=\s*(\||$))/gm, '')
     .replace(/(--|\.\.)>?/g, ' ')
     .replace(/\s<\s/g, ' ')
@@ -949,6 +991,13 @@ export function renderBlock(block, { lang, isExternal, readDiagram, base = '/', 
     const rows = items.map((x, i) => `<li class="${x.mark ? 'cz-big' : ''}" style="--w:${Math.round(58 + i * step)}%;--i:${i}"><strong>${inline(x.title, o)}</strong><small>${inline(x.text, o)}</small>${x.tag ? `<b>${inline(x.tag, o)}</b>` : ''}</li>`).join('');
     const note = notes.length ? `<figcaption class="cx-note">${notes.map((n) => inline(n, o)).join(' ')}</figcaption>` : '';
     return `<figure class="cb cb-iceberg" style="--n:${items.length}">${label(title)}<div class="cz-sea"><div class="cz-tip"><span class="cz-role">${escHtml(t.sichtbar)}</span><strong>${inline(tip.title, o)}</strong>${tip.text ? `<small>${inline(tip.text, o)}</small>` : ''}</div><div class="cz-under"><span class="cz-water">${escHtml(t.darunter)}</span><ol class="cz-ice">${rows}</ol></div></div>${note}</figure>`;
+  }
+  if (name === 'ring' || name === 'kreislauf') {
+    const cycle = name === 'kreislauf';
+    const { title, centre, intro, items } = parseRingCycle(content, cycle);
+    const id = `rc-${createHash('sha1').update(content).digest('hex').slice(0, 8)}`;
+    const fig = cycle ? cycleHtml({ id, label: title, centre, intro, items }) : ringHtml({ id, label: title, centre, items });
+    return `<div class="cb cb-wheel">${label(title)}${fig}</div>`;
   }
   return '';
 }

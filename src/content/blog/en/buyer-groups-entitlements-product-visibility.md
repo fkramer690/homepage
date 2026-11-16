@@ -41,7 +41,7 @@ Salesforce B2B Commerce, which some Salesforce documentation also calls "Agentfo
 - **Entitlement policy** (CommerceEntitlementPolicy): links buyer groups to products. According to the [data model overview](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-dev-data-model.html), it carries the fields CanViewProduct and CanViewPrice.
 - **Buyer group price book** (BuyerGroupPricebook): assigns price books to buyer groups.
 
-Visibility and price therefore depend on the same buyer groups. Store price books, contract pricing and a custom pricing service are further price sources. That is why I design both together. How the pricing side works, and when prices should be fetched live from the ERP instead, is covered in [customer prices in B2B Commerce](../b2b-commerce-customer-prices-price-books-erp/).
+Visibility and price therefore depend on the same buyer groups. Store price books, contract pricing and a custom pricing service are further price sources. That is why I design both together. How the pricing side works, and when prices should be fetched live from the ERP instead, is covered in [customer prices in B2B Commerce](/en/blog/b2b-commerce-customer-prices-price-books-erp/).
 
 ## 20, 200 and 2,000: the limits that shape the design
 
@@ -89,7 +89,7 @@ Entitlement policies then follow assortments, not customers: "spare parts genera
 
 Worked example: a manufacturer with 800 dealers in 12 countries, three dealer tiers and two brands. Country and tier give 36 buyer groups, and the two brands add two more. Each dealer account belongs to two groups, well below 20. One point matters here: buyer groups add up. A dealer in "Germany service partner" and "brand B" gets the policies of both groups, and the brand group does not filter the other one. If a product may be available only to service partners in Germany who carry brand B, you need a combined group or a policy assigned only to that intersection. A common spare part is available to 36 groups instead of 800, and the policy "spare parts general" serves 36 groups instead of hitting 200. A new dealer means two memberships and no new policy.
 
-Exceptions stay exceptions. If one dealer needs a special part for a special machine, a small "special agreements" group is fine. Showing every dealer only the parts for the machines it owns is a different problem that buyer groups do not solve. I describe the options in [show only parts for each machine](../spare-parts-shop-parts-per-machine/). And if countries or brands differ so much that the catalog or checkout process differs, the question becomes [one store or several](../b2b-stores-countries-brands-dealers/).
+Exceptions stay exceptions. If one dealer needs a special part for a special machine, a small "special agreements" group is fine. Showing every dealer only the parts for the machines it owns is a different problem that buyer groups do not solve. I describe the options in [show only parts for each machine](/en/blog/spare-parts-shop-parts-per-machine/). And if countries or brands differ so much that the catalog or checkout process differs, the question becomes [one store or several](/en/blog/b2b-stores-countries-brands-dealers/).
 
 ## When do rules beat manual upkeep?
 
@@ -110,4 +110,4 @@ Write the entitlement concept on a single page before anyone loads data:
 - a matrix of which group gets which policy and price book,
 - a count checked against the limits above, for today and for three years from now.
 
-The ERP fields that drive membership then go into the interface list. This page is the first deliverable of the [chapter on catalog, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) in my [B2B Commerce masterclass](../../masterclass/b2b-commerce/). Whether dealers then actually find the parts they are entitled to depends on search, covered in [finding parts by part number](../b2b-commerce-search-part-numbers/). Reviewing such concepts before an implementation partner starts building is part of my work on [Salesforce architecture](../../services/salesforce-architecture/).
+The ERP fields that drive membership then go into the interface list. This page is the first deliverable of the [chapter on catalog, search and entitlements](/en/masterclass/b2b-commerce/catalog-search-entitlements/) in my [B2B Commerce masterclass](/en/masterclass/b2b-commerce/). Whether dealers then actually find the parts they are entitled to depends on search, covered in [finding parts by part number](/en/blog/b2b-commerce-search-part-numbers/). Reviewing such concepts before an implementation partner starts building is part of my work on [Salesforce architecture](/en/services/salesforce-architecture/).

@@ -76,7 +76,7 @@ The steps in detail:
 One line in that FAQ matters for buyers: subscriber admins can infer the 30-day idle expiry, but cannot directly verify PKCE, rotation or the IP allowlist. For those you depend on what the vendor tells you, so get it in writing, with the date each control was activated. Your own settings, such as installation, user assignment, scopes and profile IP ranges, you can check yourself.
 ```
 
-ECAs also do not support the username-password flow. What that means for older ERP and middleware connections is covered in [the end of password integrations in 2027](../salesforce-password-integrations-end-2027/).
+ECAs also do not support the username-password flow. What that means for older ERP and middleware connections is covered in [the end of password integrations in 2027](/en/blog/salesforce-password-integrations-end-2027/).
 
 ## Which controls must a manufacturer have now?
 
@@ -100,7 +100,7 @@ Assume a machine builder with Sales Cloud, Service Cloud, SAP and 80 dealers. Al
 
 The chatbot matches the Drift pattern. Its integration user was created by cloning a system administrator during the proof of concept, the scope is `full`, the refresh token is valid until revoked and IP restrictions are relaxed. It needs to create leads and cases. It could read every dealer price agreement.
 
-The meeting recorder runs per user, with each rep using their own rights, much like the named user model in [hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/). The difference: the vendor stores 25 refresh tokens on its own servers.
+The meeting recorder runs per user, with each rep using their own rights, much like the named user model in [hosted MCP servers and data access](/en/blog/salesforce-hosted-mcp-servers-data-access/). The difference: the vendor stores 25 refresh tokens on its own servers.
 
 In this example the fixes take two weeks. The chatbot gets its own integration user with create rights on leads and cases only, `full` is removed and the vendor's IP ranges are added to its profile as login IP ranges. The meeting recorder is installed, limited to a permission set, with tokens expiring after 30 days unused. The unknown app is blocked. A search of service cases finds 340 records with passwords or remote access details in this example; the records are cleaned up and the credentials changed with the affected customers.
 
@@ -108,4 +108,4 @@ None of this stops a vendor from losing your tokens. It decides what a stolen to
 
 ## Mark every app that sends Salesforce data to a model
 
-Start with the AI tools, because they are the newest and least reviewed: mark every app that sends Salesforce data to a model and check the user, scopes and token policy for those first. Your second risk is [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/). An inventory of interfaces with named owners is part of my [Salesforce integration work](../../services/salesforce-integration/).
+Start with the AI tools, because they are the newest and least reviewed: mark every app that sends Salesforce data to a model and check the user, scopes and token policy for those first. Your second risk is [prompt injection in dealer portals](/en/blog/prompt-injection-dealer-portals-agentforce/). An inventory of interfaces with named owners is part of my [Salesforce integration work](/en/services/salesforce-integration/).

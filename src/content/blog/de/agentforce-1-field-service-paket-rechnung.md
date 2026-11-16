@@ -57,7 +57,7 @@ Dieselbe Preisseite nennt die Add-ons einzeln, und zwar nur in Dollar. Die Preis
 |---|---|
 | Field Service Plus | 230 Dollar |
 | Agentforce for Field Service and Operations | 125 Dollar |
-| [Visual Remote Assistant](../visual-remote-assistant-fernhilfe-statt-einsatz/) | 50 Dollar |
+| [Visual Remote Assistant](/blog/visual-remote-assistant-fernhilfe-statt-einsatz/) | 50 Dollar |
 | Appointment Assistant | 25 Dollar |
 | **Summe** | **430 Dollar** |
 | Agentforce 1 Field Service | 650 Dollar |
@@ -71,7 +71,7 @@ Das Agentforce-Add-on enthält bereits unbegrenzte Nutzung für Mitarbeitende. D
 
 Salesforce nennt für Flex Credits [500 Dollar pro 100.000 Credits](https://www.salesforce.com/agentforce/pricing/), und eine Standardaktion kostet laut [Ankündigung des Preismodells](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) 20 Credits. 1 Million Flex Credits sind zum Listenpreis also höchstens 5.000 Dollar im Jahr wert. Das entspricht 50.000 Standardaktionen, aber nur dann, wenn Sie die Credits sonst gekauft hätten. Meint die Zeile zum Scheduling Agent eine zweite Million, sind es 10.000 Dollar.
 
-Der Aufpreis gilt pro Nutzer, die Credits pro Org. 220 Dollar pro Nutzer und Monat sind 2.640 Dollar pro Nutzer und Jahr. 5.000 Dollar an Credits decken den Aufpreis für 1,9 Nutzer, 10.000 Dollar für 3,8 Nutzer. Ab dem fünften Nutzer rechtfertigen die Credits allein das Paket nicht mehr. Wie man Credits pro Prozess genauer schätzt, steht in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/).
+Der Aufpreis gilt pro Nutzer, die Credits pro Org. 220 Dollar pro Nutzer und Monat sind 2.640 Dollar pro Nutzer und Jahr. 5.000 Dollar an Credits decken den Aufpreis für 1,9 Nutzer, 10.000 Dollar für 3,8 Nutzer. Ab dem fünften Nutzer rechtfertigen die Credits allein das Paket nicht mehr. Wie man Credits pro Prozess genauer schätzt, steht in [Agentforce-Kosten für Hersteller](/blog/flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Rechenbeispiel: 50 Nutzer und ein Buchungsagent
 
@@ -101,7 +101,7 @@ contra: Einzel-Add-ons gewinnen, wenn
 - Agenten mit Kundenkontakt noch ein Pilot sind und der Credit-Bedarf unbekannt ist
 ```
 
-Ein dritter Weg liegt außerhalb beider Listen: das Agentic Enterprise License Agreement (AELA), eine Pauschale für Verbrauchsdienste, deren genauer Umfang vom Vertrag abhängt. Wann sich das lohnt, steht in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/). Welche Agenten für Kundenkontakt, Disposition und Techniker heute einsatzbereit sind, steht in [KI-Agenten im Außendienst: Was funktioniert heute?](../ki-agenten-aussendienst-field-service/).
+Ein dritter Weg liegt außerhalb beider Listen: das Agentic Enterprise License Agreement (AELA), eine Pauschale für Verbrauchsdienste, deren genauer Umfang vom Vertrag abhängt. Wann sich das lohnt, steht in [Agentforce-Kosten für Hersteller](/blog/flex-credits-agentforce-kosten-pro-aktion/). Welche Agenten für Kundenkontakt, Disposition und Techniker heute einsatzbereit sind, steht in [KI-Agenten im Außendienst: Was funktioniert heute?](/blog/ki-agenten-aussendienst-field-service/).
 
 ## Was ändert sich mit Field Service Max?
 
@@ -109,4 +109,4 @@ Field Service Max kostet in den USA ebenfalls 650 Dollar, aber die Vergleichsbas
 
 ## KI-Funktionen pro Rolle aufschreiben und drei Spalten vergleichen
 
-Schreiben Sie pro Rolle auf, welche KI-Funktionen im ersten Jahr wirklich genutzt werden, und schätzen Sie die Zahl der monatlichen Aktionen von Agenten mit Kundenkontakt. Dann vergleichen Sie drei Spalten: Paket, Einzelteile und Einzelteile nach Rolle. Credits erklärt das [Kapitel Kosten und Token der KI-Masterclass](../../masterclass/ki-salesforce/kosten-und-token/). Die Lizenzmatrix nach Rollen erklärt [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/), den Business Case insgesamt [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/).
+Schreiben Sie pro Rolle auf, welche KI-Funktionen im ersten Jahr wirklich genutzt werden, und schätzen Sie die Zahl der monatlichen Aktionen von Agenten mit Kundenkontakt. Dann vergleichen Sie drei Spalten: Paket, Einzelteile und Einzelteile nach Rolle. Credits erklärt das [Kapitel Kosten und Token der KI-Masterclass](/masterclass/ki-salesforce/kosten-und-token/). Die Lizenzmatrix nach Rollen erklärt [Salesforce Field Service Lizenzen: Wer braucht welche?](/blog/field-service-lizenzen-rollen-dispatcher-techniker/), den Business Case insgesamt [Kapitel 1 der Masterclass Field Service](/masterclass/field-service/field-service-lohnt-sich-lizenzen/).

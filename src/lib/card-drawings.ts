@@ -972,7 +972,7 @@ const drawings: Record<string, Drawing> = {
     ${check(18, 104)}${t(30, 110, l('pipeline on your licence', 'Pipeline auf eigener Lizenz'), { size: 7 })}
     ${check(170, 92)}${t(182, 98, l('own integration users', 'eigene Integrationsbenutzer'), { size: 7 })}
     ${check(170, 104)}${t(182, 110, l('decision log', 'Entscheidungslog'), { size: 7 })}
-    ${tag(18, 128, 170, l('4 to 8 weeks overlap', '4 bis 8 Wochen Überlappung'))}`,
+    ${tag(18, 128, 170, l('hard cut on a fixed date', 'harter Cut zum Stichtag'))}`,
 
   'salesforce-architect-or-system-integrator': (l) => `
     ${t(18, 20, l('SAME SKILLS, OTHER EMPLOYER', 'GLEICHES WISSEN, ANDERER AUFTRAG'), { fill: D, size: 7 })}
@@ -982,6 +982,12 @@ const drawings: Record<string, Drawing> = {
     ${t(182, 62, l('works for: client', 'arbeitet für: Kunde'), { size: 7 })}${t(182, 76, l('plans for 10 years', 'plant für 10 Jahre'), { size: 7 })}
     ${t(18, 110, l('scope · licences · repo · change requests', 'Umfang · Lizenzen · Repo · Change Requests'), { size: 7 })}
     ${tag(18, 122, 200, l('from 2 partners: own architect', 'ab 2 Partnern: eigener Architekt'))}`,
+
+  'gearset-copado-alternatives': (l) => `
+    ${t(18, 20, l('COST MODEL PER TOOL', 'KOSTENMODELL JE TOOL'), { fill: D, size: 7 })}
+    ${[['sfdx-hardis', l('open source, $0 licence', 'Open Source, 0 $ Lizenz'), C], ['Lifecycle Center', l('included in Salesforce', 'in Salesforce enthalten'), G], ['Gearset', l('from $215 per user/month', 'ab 215 $ je Nutzer/Monat'), G], ['Copado', l('Enterprise on request', 'Enterprise auf Anfrage'), G], ['Flosum', l('on request', 'auf Anfrage'), G]]
+      .map(([n, d, c], i) => dot(24, 34 + i * 16, c) + t(34, 37 + i * 16, n, { size: 7, fill: c === C ? C : D }) + t(130, 37 + i * 16, d, { size: 7, fill: c }) + `<path d="M34 ${42 + i * 16}H302" stroke="${L}"/>`).join('')}
+    ${tag(18, 122, 230, l('12 users on Gearset: $59,280 a year', '12 Nutzer mit Gearset: 59.280 $ im Jahr'))}`,
 
   'salesforce-freelancer-or-consultancy': (l) => `
     ${t(18, 20, l('WHO BUILDS, WHO DECIDES', 'WER BAUT, WER ENTSCHEIDET'), { fill: D, size: 7 })}
@@ -1294,6 +1300,29 @@ const drawings: Record<string, Drawing> = {
     <path d="M18 120H302" stroke="${L}"/>
     ${t(18, 136, l('1 action = 20 Flex Credits = $0.10', '1 Aktion = 20 Flex Credits = 0,10 €'), { fill: D, size: 7.5 })}
     ${t(18, 150, l('sandbox: 16 credits per action', 'Sandbox: 16 Credits pro Aktion'), { size: 7 })}`,
+
+  'salesforce-forward-deployed-engineer': (l) => `
+    ${t(18, 20, l('FDE POD · ONE USE CASE', 'FDE-POD · EIN ANWENDUNGSFALL'), { fill: D, size: 7 })}
+    ${box(18, 30, 84, 36)}${t(60, 45, '2 FDEs', { fill: D, size: 7.5, anchor: 'middle' })}${t(60, 58, l('+ strategist', '+ Strategist'), { size: 7, anchor: 'middle' })}
+    ${arrow(102, 48, 122)}
+    ${box(122, 30, 84, 36, C)}${t(164, 45, 'AGENTFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(164, 58, l('your org', 'Ihre Org'), { fill: C, size: 7, anchor: 'middle' })}
+    ${arrow(206, 48, 226, C)}
+    ${box(226, 30, 76, 36)}${t(264, 45, l('PRODUCTION', 'PRODUKTION'), { fill: D, size: 7.5, anchor: 'middle' })}${t(264, 58, l('+ hypercare', '+ Hypercare'), { size: 7, anchor: 'middle' })}
+    <path d="M18 80H302" stroke="${L}"/>
+    ${t(18, 96, l('STAYS ON THE CLIENT SIDE', 'BLEIBT AUF KUNDENSEITE'), { fill: D, size: 7 })}
+    ${[l('decisions within a week', 'Entscheidungen in einer Woche'), l('data access, permissions', 'Datenzugang, Berechtigungen'), l('owner after hypercare', 'Owner nach der Hypercare')].map((s, i) => check(18, 104 + i * 14, i === 2 ? C : G) + t(32, 110 + i * 14, s, { size: 7 })).join('')}
+    ${box(196, 104, 106, 36)}${t(249, 119, 'Gartner', { fill: D, size: 7, anchor: 'middle' })}${t(249, 132, l('> $200k per quarter', '> 200 Tsd. $/Quartal'), { size: 7, anchor: 'middle' })}`,
+
+  'botsitting-salesforce-tools': (l) => `
+    ${t(18, 20, l('4 HANDOFFS, CONTEXT LOST', '4 ÜBERGABEN, KONTEXT WEG'), { fill: D, size: 7 })}${t(302, 20, 'Glean: 6.4 h/week', { size: 7, anchor: 'end' })}
+    ${['Miro', 'Lucidchart', 'Figma', 'Jira'].map((a, i) => box(18 + i * 74, 30, 62, 26) + t(49 + i * 74, 46, a, { fill: D, size: 6.5, anchor: 'middle' })).join('')}
+    ${[0, 1, 2].map((i) => arrow(80 + i * 74, 43, 92 + i * 74)).join('')}
+    ${t(271, 72, l('exception missing', 'Ausnahme fehlt'), { size: 7, anchor: 'middle' })}
+    <path d="M18 86H302" stroke="${L}"/>
+    ${t(18, 102, l('CLAUDE: ONE CONTEXT', 'CLAUDE: EIN KONTEXT'), { fill: D, size: 7 })}
+    ${box(18, 110, 124, 34)}${t(80, 124, 'CLAUDE', { fill: D, size: 7.5, anchor: 'middle' })}${t(80, 137, l('notes, org, repo', 'Mitschrift, Org, Repo'), { size: 7, anchor: 'middle' })}
+    ${arrow(142, 127, 178, C)}
+    ${box(178, 110, 124, 34, C)}${t(240, 124, 'ARTIFACT', { fill: D, size: 7.5, anchor: 'middle' })}${t(240, 137, l('LWC, Mermaid, dashboard', 'LWC, Mermaid, Dashboard'), { fill: C, size: 7, anchor: 'middle' })}`,
 
   'agent-script-deterministic-rules': (l) => `
     ${box(18, 26, 86, 50)}${t(61, 44, l('DEALER', 'HÄNDLER'), { fill: D, anchor: 'middle' })}${t(61, 58, l('free text', 'Freitext'), { size: 7, anchor: 'middle' })}
@@ -1924,6 +1953,16 @@ const drawings: Record<string, Drawing> = {
     ${box(166, 76, 140, 40, C)}${t(176, 91, 'PIVOT', { fill: C, size: 7.5 })}${t(176, 106, l('question to EN, answer back', 'Frage nach EN, Antwort zurück'), { size: 7 })}
     <path d="M166 128H306" stroke="${L}"/>
     ${t(166, 140, l('other languages: often more tokens', 'andere Sprachen: oft mehr Tokens'), { size: 7 })}${t(166, 152, l('prompts: 2,000-token units', 'Prompts: 2.000-Token-Einheiten'), { size: 7 })}`,
+
+  'meshmesh-salesforce-checklist': (l) => `
+    ${t(18, 20, l('MESHMESH · RIGHTS OF THE SIGNED-IN USER', 'MESHMESH · RECHTE DES ANGEMELDETEN NUTZERS'), { fill: D, size: 7 })}
+    ${[l('Plan: reads', 'Plan: liest'), l('Research: reads', 'Research: liest'), l('Build: changes', 'Build: ändert')].map((s, i) => box(18, 30 + i * 28, 96, 22, i === 2 ? C : G) + t(28, 44 + i * 28, s, { fill: i === 2 ? C : G, size: 7 })).join('')}
+    ${check(140, 38)}${t(154, 44, l('agent = one more dev', 'Agent = ein Entwickler mehr'), { size: 7 })}
+    ${cross(144, 62)}${t(154, 66, l('no direct deploy', 'kein Direkt-Deploy'), { size: 7 })}
+    ${[['Branch', 140, 48], ['Pipeline', 198, 52], ['Org', 260, 42]].map(([s, x, w]) => box(x as number, 86, w as number, 22, s === 'Pipeline' ? C : G) + t((x as number) + (w as number) / 2, 100, s as string, { fill: s === 'Pipeline' ? C : G, size: 7, anchor: 'middle' })).join('')}
+    ${arrow(114, 97, 140, C)}${arrow(188, 97, 198)}${arrow(250, 97, 260)}
+    <path d="M18 118H302" stroke="${L}"/>
+    ${tag(18, 126, 120, 'US East · Anthropic')}${t(148, 139, l('beta: 1,000 accounts to 31 Jan 2027', 'Beta: 1.000 Accounts bis 31.01.2027'), { size: 7 })}`,
 
   'sandbox-data-ai-coding-agents': (l) => `
     ${box(14, 58, 72, 44, C)}${t(50, 76, l('CODING AGENT', 'CODING-AGENT'), { fill: C, size: 7.5, anchor: 'middle' })}${t(50, 90, l('read = prompt', 'gelesen = Prompt'), { size: 6.5, anchor: 'middle' })}

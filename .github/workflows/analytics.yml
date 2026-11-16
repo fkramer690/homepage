@@ -43,6 +43,17 @@ jobs:
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
         run: node scripts/fetch-gsc.mjs /tmp/google
+      - name: Query event counter
+        # "Book a call" clicks and sent contact forms (workers/events). Keeps the
+        # history from the stats branch, because Analytics Engine keeps 3 months.
+        continue-on-error: true
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          git fetch -q origin stats || true
+          git show origin/stats:stats/events/latest.json > /tmp/events-prev.json 2>/dev/null || rm -f /tmp/events-prev.json
+          node scripts/fetch-events.mjs /tmp/events /tmp/events-prev.json
       - name: Weekly search actions ("Was tun?")
         # Mondays and manual runs: snippet, near page 1 and FAQ candidates
         # from the Google and Bing tables, compared with the previous list.
@@ -83,6 +94,10 @@ jobs:
             mkdir -p stats/actions
             cp /tmp/actions/latest.json stats/actions/latest.json
             cp /tmp/actions/latest.json "stats/actions/$(date -u +%F).json"
+          fi
+          if [ -f /tmp/events/latest.json ]; then
+            mkdir -p stats/events
+            cp /tmp/events/latest.json stats/events/latest.json
           fi
           git add stats
           git commit -m "Analytics snapshot $(date -u +%F)" || exit 0

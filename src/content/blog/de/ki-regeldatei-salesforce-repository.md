@@ -52,7 +52,7 @@ Legt sich ein Entwickler eine persönliche CLAUDE.local.md an, liest Claude die 
 
 ## Die Regeldatei gehört dem Kunden
 
-Partner bringen gern ihre eigene Vorlage mit. Das geht am Anfang schnell, wird aber später aus den Gründen teuer, die ich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/) beschreibe: Wer die Regeln schreibt, setzt den Standard. Für Regeldateien sehe ich drei konkrete Gründe.
+Partner bringen gern ihre eigene Vorlage mit. Das geht am Anfang schnell, wird aber später aus den Gründen teuer, die ich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/) beschreibe: Wer die Regeln schreibt, setzt den Standard. Für Regeldateien sehe ich drei konkrete Gründe.
 
 **Die Datei hält Entscheidungen fest, die nur Sie treffen können.** Dazu gehört, welche API-Version neue Apex-Klassen nutzen, welcher Named Credential der einzige Weg zu SAP ist und welches von zwei Garantiedatumsfeldern gepflegt wird. Die Zeile zur API-Version ist keine Formalie: Ab API 67.0 läuft Apex laut [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm) bei Datenbankzugriffen standardmäßig im User Mode, und Klassen ohne Sharing-Deklaration laufen `with sharing`. Das sind zwei getrennte Stellschrauben. Ob eine alte Klasse auf 67.0 oder höher wechseln darf, ist eine Architekturentscheidung für Ihre Org, keine Gewohnheit des Partners.
 
@@ -60,7 +60,7 @@ Partner bringen gern ihre eigene Vorlage mit. Das geht am Anfang schnell, wird a
 
 **Die Datei hält Partner vergleichbar.** Eine Datei, eine Definition of Done für alle Teams. Mit zwei Partnern und zwei Vorlagen auf einer Org wird sonst still die lautere Vorlage zu Ihrem Standard.
 
-Verantwortung heißt: Eine benannte Person auf Kundenseite gibt jede Änderung frei, typischerweise der Lead-Architekt oder der interne Tech Lead, mit Vertretung. Partner schlagen vor, sie mergen nicht. Das würde ich in die Anlage schreiben, die ich in [was in den Vertrag gehört, wenn Partner mit KI programmieren](../partner-ki-coding-regeln-vertrag/) beschreibe.
+Verantwortung heißt: Eine benannte Person auf Kundenseite gibt jede Änderung frei, typischerweise der Lead-Architekt oder der interne Tech Lead, mit Vertretung. Partner schlagen vor, sie mergen nicht. Das würde ich in die Anlage schreiben, die ich in [was in den Vertrag gehört, wenn Partner mit KI programmieren](/blog/partner-ki-coding-regeln-vertrag/) beschreibe.
 
 ## Was gehört in die Regeldatei, und was muss anderswo erzwungen werden?
 
@@ -119,9 +119,9 @@ Partner A reicht seine Vorlage als Pull Request ein; nur eine Handvoll Zeilen wi
 
 Regeldateien sind Teil Ihrer Kontrollen. Laut GitHub-Dokumentation liest Copilot Code Review die Anweisungen aus dem Head-Branch des Pull Requests. Ein Pull Request, der copilot-instructions.md ändert, ändert also die Anweisungen, nach denen sein eigenes KI-Review arbeitet. Genauso lässt sich eine eingecheckte Deny-Regel per Pull Request löschen wie jede andere Zeile.
 
-Deshalb würde ich jede Regel- und Settings-Datei unter [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) stellen: AGENTS.md, CLAUDE.md, .claude/, .vibes/ und den gesamten Ordner .github/, denn laut GitHub muss auch der CODEOWNERS-Datei selbst eine verantwortliche Person zugeordnet sein. Mit „Require review from Code Owners“ in der Branch Protection wird die Freigabe zur Pflicht, solange niemand ungeprüfte Bypass-Rechte hat. GitHub verlangt Schreibrechte für Code Owner; damit Sie Zugriffe, Rulesets und Bypass-Rechte selbst steuern, sollte das Repository in Ihrer Organisation liegen. Dieselbe Logik gilt für gemeinsam genutzte Objekte, wie in der [Object Ownership Matrix](../object-ownership-matrix-salesforce/) beschrieben.
+Deshalb würde ich jede Regel- und Settings-Datei unter [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) stellen: AGENTS.md, CLAUDE.md, .claude/, .vibes/ und den gesamten Ordner .github/, denn laut GitHub muss auch der CODEOWNERS-Datei selbst eine verantwortliche Person zugeordnet sein. Mit „Require review from Code Owners“ in der Branch Protection wird die Freigabe zur Pflicht, solange niemand ungeprüfte Bypass-Rechte hat. GitHub verlangt Schreibrechte für Code Owner; damit Sie Zugriffe, Rulesets und Bypass-Rechte selbst steuern, sollte das Repository in Ihrer Organisation liegen. Dieselbe Logik gilt für gemeinsam genutzte Objekte, wie in der [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/) beschrieben.
 
-Die Datei wächst aus Belegen, nicht aus Wunschlisten. OpenAI empfiehlt, Regeln nach wiederholten Fehlern zu ergänzen; Anthropic empfiehlt das nach der zweiten Korrektur. In der Praxis sind die Review-Funde nach Kategorie die Grundlage, wie in [KI-generierten Salesforce-Code prüfen](../ki-generierten-salesforce-code-pruefen/) beschrieben. Zeilen fliegen wieder raus, sobald ein Pipeline-Gate sie abdeckt. Nach jedem Salesforce-Release prüft die verantwortliche Person zuerst die Zeile zur API-Version.
+Die Datei wächst aus Belegen, nicht aus Wunschlisten. OpenAI empfiehlt, Regeln nach wiederholten Fehlern zu ergänzen; Anthropic empfiehlt das nach der zweiten Korrektur. In der Praxis sind die Review-Funde nach Kategorie die Grundlage, wie in [KI-generierten Salesforce-Code prüfen](/blog/ki-generierten-salesforce-code-pruefen/) beschrieben. Zeilen fliegen wieder raus, sobald ein Pipeline-Gate sie abdeckt. Nach jedem Salesforce-Release prüft die verantwortliche Person zuerst die Zeile zur API-Version.
 
 ## Vorhandene Regeldateien im Repository aufnehmen
 
@@ -135,9 +135,9 @@ Erste Fassung schreiben
 Verweise anlegen
   Eine kurze CLAUDE.md, die auf AGENTS.md verweist, und eine Vibes-Regel.
 Harte Regeln auslagern
-  Deny-Regeln, ein Hook, der den Agenten bei roten Tests nicht aufhören lässt, und die Gates aus [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/), Vibes in Produktion deaktiviert.
+  Deny-Regeln, ein Hook, der den Agenten bei roten Tests nicht aufhören lässt, und die Gates aus [Quality Gates für KI-Code](/blog/quality-gates-ki-code-salesforce-pipeline/), Vibes in Produktion deaktiviert.
 Dateien schützen
   Mit CODEOWNERS und Branch Protection.
 ```
 
-Das Einrichten gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/) und in der [Partnersteuerung](../../leistungen/partnersteuerung/). Für die erste Fassung rechne ich mit wenigen Tagen.
+Das Einrichten gehört zu meiner Arbeit in [DevOps und Release-Management](/leistungen/devops-und-release-management/) und in der [Partnersteuerung](/leistungen/partnersteuerung/). Für die erste Fassung rechne ich mit wenigen Tagen.

@@ -55,7 +55,7 @@ Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/warranty
 
 Der Partner trägt pro Posten den geforderten Betrag ein und setzt den Anspruch auf den Status eingereicht. Der Prüfer trägt den genehmigten Betrag ein. Auf der [Produktseite](https://www.salesforce.com/manufacturing/cloud/service/) nennt Salesforce außerdem automatische Freigaben über Geschäftsregeln. Laut [Produktseite](https://www.salesforce.com/manufacturing/cloud/) ergänzt Winter '27 den Warranty Claims Adjudication Agent und eine geführte Rücksendung von Garantieteilen für Händler. Die [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=ind.mfg_genai_warranty_claims_adjudication.htm&language=en_US&type=5) beschreibt den Agenten als Unterstützung für den Prüfer: Er prüft Ansprüche auf Vollständigkeit, markiert fehlende Angaben, entwirft Rückfragen, priorisiert offene Ansprüche und weist auf mögliche Betrugsfälle hin. Er genehmigt oder verwirft keine Ansprüche. Er braucht das Add-on Agentforce for Manufacturing oder eine Agentforce-1-Edition und gehört deshalb als eigene Position ins Angebot.
 
-Die Gutschrift an den Händler würde ich wie bei den Boni in [Teil 5](../rebate-management-haendlerboni/) im ERP buchen. Salesforce prüft und gibt frei, eine Schnittstelle überträgt den genehmigten Betrag, und die Finanzabteilung bucht. Diese Schnittstelle gehört von Anfang an in die Planung, sonst sieht der Händler einen genehmigten Anspruch im Portal und wartet trotzdem auf sein Geld.
+Die Gutschrift an den Händler würde ich wie bei den Boni in [Teil 5](/blog/rebate-management-haendlerboni/) im ERP buchen. Salesforce prüft und gibt frei, eine Schnittstelle überträgt den genehmigten Betrag, und die Finanzabteilung bucht. Diese Schnittstelle gehört von Anfang an in die Planung, sonst sieht der Händler einen genehmigten Anspruch im Portal und wartet trotzdem auf sein Geld.
 
 ```ablauf
 sf: Händlerportal, Garantieanspruch, Prüfung, Regressanspruch
@@ -75,12 +75,12 @@ Ist diese Seriennummer noch in der Garantie? Ab wann gilt die Garantie, ab Kauf 
 Diese Fragen beantwortet die Asset Warranty nur, wenn die Anlage mit ihren Daten in Salesforce steht. Bei vielen Herstellern ist genau das die Lücke:
 
 - **Verkauf über Händler.** Der Hersteller liefert an den Händler, der Händler verkauft an den Endkunden. Ob und wann die Anlage installiert wurde, weiß nur der Händler. Ohne Registrierung beim Verkauf fehlt das Startdatum der Garantie.
-- **Installierte Basis im ERP.** Seriennummern stehen im ERP oder in der Fertigung, aber nicht als Anlagen in Salesforce. Dann braucht es eine Schnittstelle, bevor der erste Anspruch geprüft werden kann. Wie die installierte Basis nach Salesforce gelangt, steht in [Installierte Basis in Manufacturing Cloud](../installierte-basis-asset-meilensteine/).
+- **Installierte Basis im ERP.** Seriennummern stehen im ERP oder in der Fertigung, aber nicht als Anlagen in Salesforce. Dann braucht es eine Schnittstelle, bevor der erste Anspruch geprüft werden kann. Wie die installierte Basis nach Salesforce gelangt, steht in [Installierte Basis in Manufacturing Cloud](/blog/installierte-basis-asset-meilensteine/).
 - **Nutzung.** Betriebsstunden oder Zyklen stammen von der Anlage selbst, vom Händler oder gar nicht. Ist die Nutzung Teil der Bedingung, braucht sie eine Quelle.
 
-Für den Agenten aus Winter '27 gilt das noch stärker. Ein Agent, der die Prüfung vorbereitet, arbeitet mit denselben Feldern wie ein Mensch. Fehlen die Daten, meldet er in der Vollständigkeitsprüfung Lücken, statt dem Prüfer bei der Entscheidung zu helfen. Warum ich bei Agenten zuerst auf die Datenqualität schaue, beschreibe ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
+Für den Agenten aus Winter '27 gilt das noch stärker. Ein Agent, der die Prüfung vorbereitet, arbeitet mit denselben Feldern wie ein Mensch. Fehlen die Daten, meldet er in der Vollständigkeitsprüfung Lücken, statt dem Prüfer bei der Entscheidung zu helfen. Warum ich bei Agenten zuerst auf die Datenqualität schaue, beschreibe ich in [Agentforce: Business Value und Datenqualität zuerst](/blog/agentforce-business-value-datenqualitaet/).
 
-Laut der Übersicht der Portallizenzen, die ich in [Teil 7](../manufacturing-cloud-kundenportal/) beschreibe, deckt die Kundenlizenz Customer Community Plus for Manufacturing Anlagen und Garantien ab, Garantieansprüche führt Salesforce bei der Partnerlizenz auf. Für Händler, die Ansprüche einreichen, plant man also Partnerlizenzen ein.
+Laut der Übersicht der Portallizenzen, die ich in [Teil 7](/blog/manufacturing-cloud-kundenportal/) beschreibe, deckt die Kundenlizenz Customer Community Plus for Manufacturing Anlagen und Garantien ab, Garantieansprüche führt Salesforce bei der Partnerlizenz auf. Für Händler, die Ansprüche einreichen, plant man also Partnerlizenzen ein.
 
 ## Was ist Supplier Recovery?
 
@@ -90,9 +90,9 @@ Damit das funktioniert, muss das verursachende Teil im Anspruch sauber erfasst s
 
 ## Wo endet die Garantie, wo beginnt Field Service?
 
-Die Grenze verläuft zwischen der Ausführung der Leistung und der Entscheidung über die kaufmännische Deckung. Die Manufacturing Cloud klärt, ob ein Schaden gedeckt ist, wer welchen Betrag erhält und wer am Ende zahlt. Wer wann mit welchem Ersatzteil zum Kunden fährt, ist eine Frage für Field Service. Beides überschneidet sich: Ein Arbeitsauftrag kann eine Garantieprüfung auslösen, die Diagnose vor Ort liefert den Fehlercode und das verursachende Teil, und Teile sowie Arbeitszeit aus dem Einsatz fließen in den Anspruch. Dasselbe gilt für Wartungsverträge und zugesagte Reaktionszeiten, die in Salesforce über Service-Verträge und Entitlements abgebildet werden. Wie das aussieht, beschreibt [Teil 5 der Field-Service-Serie](../salesforce-field-service-wartungsvertraege/).
+Die Grenze verläuft zwischen der Ausführung der Leistung und der Entscheidung über die kaufmännische Deckung. Die Manufacturing Cloud klärt, ob ein Schaden gedeckt ist, wer welchen Betrag erhält und wer am Ende zahlt. Wer wann mit welchem Ersatzteil zum Kunden fährt, ist eine Frage für Field Service. Beides überschneidet sich: Ein Arbeitsauftrag kann eine Garantieprüfung auslösen, die Diagnose vor Ort liefert den Fehlercode und das verursachende Teil, und Teile sowie Arbeitszeit aus dem Einsatz fließen in den Anspruch. Dasselbe gilt für Wartungsverträge und zugesagte Reaktionszeiten, die in Salesforce über Service-Verträge und Entitlements abgebildet werden. Wie das aussieht, beschreibt [Teil 5 der Field-Service-Serie](/blog/salesforce-field-service-wartungsvertraege/).
 
-Beide Themen treffen sich an der Anlage. Dieselbe Anlage bündelt die Garantie, die Wartungshistorie und die Arbeitsaufträge. Wer beides einführt, sollte das Anlagenmodell einmal entwerfen und nicht für jedes Projekt neu. Wo die Grenze im Detail verläuft, steht in [Kapitel 4 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/garantie-und-after-sales/). Ob sich Field Service lohnt, beschreibt die [Field-Service-Serie](../salesforce-field-service-lohnt-sich/).
+Beide Themen treffen sich an der Anlage. Dieselbe Anlage bündelt die Garantie, die Wartungshistorie und die Arbeitsaufträge. Wer beides einführt, sollte das Anlagenmodell einmal entwerfen und nicht für jedes Projekt neu. Wo die Grenze im Detail verläuft, steht in [Kapitel 4 der Masterclass Manufacturing Cloud](/masterclass/manufacturing-cloud/garantie-und-after-sales/). Ob sich Field Service lohnt, beschreibt die [Field-Service-Serie](/blog/salesforce-field-service-lohnt-sich/).
 
 ## Wann lohnt sich die Garantieabwicklung in Salesforce?
 
@@ -109,7 +109,7 @@ contra: Zurückhaltend wäre ich, wenn
 - die Anlagendaten fehlen und niemand sie beschaffen will
 ```
 
-Im zweiten Fall bringt das Datenmodell wenig. Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
+Im zweiten Fall bringt das Datenmodell wenig. Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](/blog/manufacturing-cloud-wann-lohnt-sie-sich/).
 
 ## Anlagendaten finden und nach Salesforce holen
 

@@ -42,7 +42,7 @@ Die App hat zusätzlich zu den Plattform-Releases eigene Versionsnummern: Die Ha
 
 Der [Beitrag zu 262.3](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pPWBC0A4) zeigt, warum Patches wichtig sind. Unter iOS konnte die App Nutzer unerwartet abmelden, nachdem sie im Hintergrund gelaufen war, und eine Startüberwachung rechnete die Zeit im Hintergrund mit und meldete falsche Zeitüberschreitungen. Unter Android konnten Nutzer bei der Anmeldung im App-internen Browser hängen bleiben. Genau solche Fehler halten einen Techniker vor der Tür des Kunden auf.
 
-In beiden Beiträgen steht außerdem, dass Salesforce Haupt- und Patch-Versionen über mehrere Tage verteilt und Updates unter Umständen erst sieben Tage nach der allgemeinen Verfügbarkeit alle Nutzer erreichen. Für eine Serviceorganisation heißt das: Bis zu einer Woche arbeiten manche Techniker mit der alten und manche mit der neuen Version. Salesforce sagt nicht zu, dass Ihre Pilotgruppe das Update zuerst erhält; die Verteilung ist also kein zusätzliches Testfenster. Mit Winter '27 hat Salesforce außerdem begonnen, mobile Flows auf eine native Laufzeit umzustellen. Auch mobile Flows gehören deshalb in die Testroutine, siehe [Field Service Mobile App: Flow-Grenzen](../field-service-mobile-flows-grenzen/).
+In beiden Beiträgen steht außerdem, dass Salesforce Haupt- und Patch-Versionen über mehrere Tage verteilt und Updates unter Umständen erst sieben Tage nach der allgemeinen Verfügbarkeit alle Nutzer erreichen. Für eine Serviceorganisation heißt das: Bis zu einer Woche arbeiten manche Techniker mit der alten und manche mit der neuen Version. Salesforce sagt nicht zu, dass Ihre Pilotgruppe das Update zuerst erhält; die Verteilung ist also kein zusätzliches Testfenster. Mit Winter '27 hat Salesforce außerdem begonnen, mobile Flows auf eine native Laufzeit umzustellen. Auch mobile Flows gehören deshalb in die Testroutine, siehe [Field Service Mobile App: Flow-Grenzen](/blog/field-service-mobile-flows-grenzen/).
 
 ```hinweis tipp
 Notieren Sie bei jedem Ticket zur App die genaue App-Version, dazu Plattform, Betriebssystem, Netzzustand und Schritte zur Reproduktion. Die Version steht in der App unter Profil, Einstellungen, Info.
@@ -71,9 +71,9 @@ Eine gute Routine ist kurz genug für einen halben Tag und deckt die Stellen ab,
 7. **Partnernutzer.** Schritte 1 bis 3 mit einem echten Partnernutzer wiederholen: Experience-Cloud-Lizenz, Field-Service-Mobile-Lizenz, Berechtigungssätze und Freigaben wie in Produktion.
 8. **Innendienst und ERP.** Nach der Synchronisation prüfen, ob Verbrauchsbuchungen und Bericht angekommen sind, einschließlich der Schnittstelle ins ERP.
 
-Die Schritte 2 und 7 zielen auf die bekannten Offline-Lücken, beschrieben in [Field Service App offline: Welche Daten aufs Gerät?](../field-service-app-offline-briefcase/). Schritt 4 ist wichtig, weil Data Capture häufig neue Funktionen und Korrekturen erhält, siehe [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/). Schritt 5 mit [Document Builder](../salesforce-service-documents-document-builder-servicebericht/) testet die eigenen Komponenten in Ihren Vorlagen; typische Grenzen habe ich in [Salesforce Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/) beschrieben.
+Die Schritte 2 und 7 zielen auf die bekannten Offline-Lücken, beschrieben in [Field Service App offline: Welche Daten aufs Gerät?](/blog/field-service-app-offline-briefcase/). Schritt 4 ist wichtig, weil Data Capture häufig neue Funktionen und Korrekturen erhält, siehe [Field Service Data Capture: Prüfprotokolle ohne Papier](/blog/field-service-data-capture-pruefprotokolle/). Schritt 5 mit [Document Builder](/blog/salesforce-service-documents-document-builder-servicebericht/) testet die eigenen Komponenten in Ihren Vorlagen; typische Grenzen habe ich in [Salesforce Document Builder: fünf Grenzen und Workarounds](/blog/salesforce-document-builder-grenzen-workarounds/) beschrieben.
 
-Schreiben Sie die Schritte als Skripte mit erwartetem Ergebnis, genauso wie Testfälle für ein Plattform-Release. Das [Kapitel zu Qualität und Tests in der DevOps-Masterclass](../../masterclass/devops-release-management/qualitaet-tests-reviews/) erklärt, wie solche Tests in Quality Gates passen.
+Schreiben Sie die Schritte als Skripte mit erwartetem Ergebnis, genauso wie Testfälle für ein Plattform-Release. Das [Kapitel zu Qualität und Tests in der DevOps-Masterclass](/masterclass/devops-release-management/qualitaet-tests-reviews/) erklärt, wie solche Tests in Quality Gates passen.
 
 ## Wer verantwortet App-Versionen und Geräte?
 
@@ -81,7 +81,7 @@ Die Verantwortung verteilt sich auf zwei Teams. Das Salesforce-Team kennt die Or
 
 Ich würde eine Person für jede App-Version verantwortlich machen, meist den Release-Manager des Salesforce-Programms. Diese Person verfolgt die Release-Beiträge, startet den Beta-Test, sammelt Ergebnisse und entscheidet mit dem Gerätemanagement, ob ein Update warten muss. Betriebssystem-Updates auf den Geräten gehören in denselben Plan, denn ein großes iOS- oder Android-Update kann Anmeldung, Hintergrundverarbeitung und Offline-Verhalten verändern. Gleichen Sie vor jedem Testzyklus die Geräteflotte mit der Salesforce-Liste der unterstützten Betriebssysteme ab.
 
-Dafür nutzen Sie denselben Kalender, der auch die Plattform-Releases enthält. Wie Sie ihn mit Freeze-Fenstern und Preview-Sandboxes aufbauen, steht im [Kapitel Release-Planung der DevOps-Masterclass](../../masterclass/devops-release-management/release-planung-salesforce-releases/). Welche Änderungen Winter '27 für Pipelines gebracht hat, steht in [Salesforce Winter '27: Was sich für CI/CD-Pipelines ändert](../salesforce-winter-27-aenderungen-pipeline/).
+Dafür nutzen Sie denselben Kalender, der auch die Plattform-Releases enthält. Wie Sie ihn mit Freeze-Fenstern und Preview-Sandboxes aufbauen, steht im [Kapitel Release-Planung der DevOps-Masterclass](/masterclass/devops-release-management/release-planung-salesforce-releases/). Welche Änderungen Winter '27 für Pipelines gebracht hat, steht in [Salesforce Winter '27: Was sich für CI/CD-Pipelines ändert](/blog/salesforce-winter-27-aenderungen-pipeline/).
 
 ## Rechenbeispiel: acht Pilottechniker
 
@@ -100,7 +100,7 @@ Veröffentlichung | Woche der Veröffentlichung · Pilottechniker
 
 Der Aufwand liegt bei etwa 32 Stunden Technikerzeit pro Hauptversion, dazu die Zeit des Release-Managers. Eine fehlgeschlagene Anmeldewelle bei 100 Technikern an einem Montagmorgen kostet mehr.
 
-Die übrigen Techniker sollten vor dem Update wissen, was sich für sie ändert und an wen sie sich wenden. Das ist dieselbe Aufgabe wie bei jedem Release für den Innendienst, beschrieben in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
+Die übrigen Techniker sollten vor dem Update wissen, was sich für sie ändert und an wen sie sich wenden. Das ist dieselbe Aufgabe wie bei jedem Release für den Innendienst, beschrieben in [Salesforce-Releases an den Fachbereich kommunizieren](/blog/salesforce-releases-fachbereich-kommunizieren/).
 
 ## Für das Beta-Programm anmelden
 
@@ -110,4 +110,4 @@ Die übrigen Techniker sollten vor dem Update wissen, was sich für sie ändert 
 4. **App-Versionen in den Release-Kalender aufnehmen**, neben die Plattform-Releases.
 5. **Mit dem Gerätemanagement klären**, wie App- und Betriebssystem-Updates auf die Geräte gelangen.
 
-App-Tests gehören zu [Kapitel 3 der Masterclass Field Service](../../masterclass/field-service/field-service-mobile-app-dokumente/). Einen Release-Prozess aufzusetzen, der sie abdeckt, gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
+App-Tests gehören zu [Kapitel 3 der Masterclass Field Service](/masterclass/field-service/field-service-mobile-app-dokumente/). Einen Release-Prozess aufzusetzen, der sie abdeckt, gehört zu meiner Arbeit in [DevOps und Release-Management](/leistungen/devops-und-release-management/).

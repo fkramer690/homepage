@@ -46,13 +46,13 @@ Was zu tun ist:
 
 ![Pipeline-Authentifizierung ab 28. Oktober 2026: Pipelines, die sf org display aufrufen, das accessToken lesen und weiterreichen, brechen, weil der Befehl keine Secrets mehr zeigt und die Übergangslösung SF_TEMP_SHOW_SECRETS am 28. Oktober 2026 endet. Der Ansatz funktioniert, wenn sich jeder Pipeline-Job selbst authentifiziert, mit dem JWT Bearer Flow und einem Zertifikat im Secret Store des Kunden, keine Tokens zwischen Schritten weitergereicht werden und die geänderten Jobs zuerst in einem Feature-Branch getestet werden. Außerdem prüfen, dass die Salesforce CLI mit Node.js 22 oder neuer läuft.](../../../assets/blog/winter-27-org-display-de.png)
 
-**Die CLI braucht Node.js 22 oder neuer.** Das ist dort relevant, wo die CLI per npm installiert wird oder in einem selbst gebauten Image läuft: Hat ein solcher Runner noch eine ältere Node-Version, schlägt die Installation oder das Update der CLI fehl. Die Installer für die Betriebssysteme bringen ihre eigene Laufzeit mit, derzeit Node.js 24. Prüfen Sie die Basis-Images Ihrer Pipeline, die Setup-Schritte gehosteter Runner und die Rechner Ihrer Entwickler. Prüfen Sie auch Tools, die auf der Salesforce CLI aufbauen, wie [sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/).
+**Die CLI braucht Node.js 22 oder neuer.** Das ist dort relevant, wo die CLI per npm installiert wird oder in einem selbst gebauten Image läuft: Hat ein solcher Runner noch eine ältere Node-Version, schlägt die Installation oder das Update der CLI fehl. Die Installer für die Betriebssysteme bringen ihre eigene Laufzeit mit, derzeit Node.js 24. Prüfen Sie die Basis-Images Ihrer Pipeline, die Setup-Schritte gehosteter Runner und die Rechner Ihrer Entwickler. Prüfen Sie auch Tools, die auf der Salesforce CLI aufbauen, wie [sfdx-hardis](/blog/sfdx-hardis-einfuehrung-salesforce-devops/).
 
 ## Die Developer Console ist im Setup ausgeblendet
 
 Mit Winter '27 erscheint die Developer Console standardmäßig nicht mehr im Setup-Menü. Laut [Release Note](https://help.salesforce.com/s/articleView?id=release-notes.rn_developer_console.htm&language=en_US&type=5) ist sie im Wartungsmodus, erhält nur noch Fixes für schwere Sicherheitslücken, und ein Admin kann sie wieder einschalten. Ihr Nachfolger ist die Web Console, die allgemein verfügbar ist. In Produktions-Orgs ist Apex in der Web Console nur lesbar.
 
-Für gut geführte Programme ändert sich damit wenig. Code direkt in der Produktion zu ändern oder Ad-hoc-Änderungen dort auszuführen, war schon immer ein Risiko: kein Review, keine Historie, kein Weg zurück. Die neue Voreinstellung unterstützt die Vorgehensweise, die ohnehin richtig ist: Jede Code- und Metadatenänderung gehört ins Repository, wird in einem Pull Request geprüft und über die Pipeline deployt. Warum das wichtig ist, erkläre ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
+Für gut geführte Programme ändert sich damit wenig. Code direkt in der Produktion zu ändern oder Ad-hoc-Änderungen dort auszuführen, war schon immer ein Risiko: kein Review, keine Historie, kein Weg zurück. Die neue Voreinstellung unterstützt die Vorgehensweise, die ohnehin richtig ist: Jede Code- und Metadatenänderung gehört ins Repository, wird in einem Pull Request geprüft und über die Pipeline deployt. Warum das wichtig ist, erkläre ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](/blog/warum-pull-request-reviews-pflicht-sind/).
 
 Manche Teams nutzen die Developer Console noch für schnelle Abfragen, Log-Analysen oder anonymes Apex in der Produktion. Für diese Gewohnheiten braucht es jetzt einen Ersatz. Legen Sie fest, welche Aufgaben in der Produktion erlaubt sind, wer sie ausführen darf und wie sie dokumentiert werden.
 
@@ -80,7 +80,7 @@ Summer '27 | SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 erhalten k
 Summer '28 | SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 fallen aus
 ```
 
-Die Berechtigung deckt nur den 1. Dezember ab. Selten laufende Jobs, etwa Jahresläufe oder Notfallprozesse, brauchen vor dem 15. Dezember eine Prüfung, denn die Sechs-Monats-Prüfung findet einmalig statt. Zusammen mit dem Ende des Username-Password Flow ist das echte Arbeit für Integrationsteams. Die Bestandsaufnahme und Umstellung beschreibe ich in [Salesforce: Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
+Die Berechtigung deckt nur den 1. Dezember ab. Selten laufende Jobs, etwa Jahresläufe oder Notfallprozesse, brauchen vor dem 15. Dezember eine Prüfung, denn die Sechs-Monats-Prüfung findet einmalig statt. Zusammen mit dem Ende des Username-Password Flow ist das echte Arbeit für Integrationsteams. Die Bestandsaufnahme und Umstellung beschreibe ich in [Salesforce: Passwort-Integrationen enden 2027](/blog/salesforce-passwort-integrationen-2027/).
 
 ## Was Release Manager außerdem wissen sollten
 
@@ -92,7 +92,7 @@ Drei kleinere Punkte mit Auswirkungen auf die Governance:
 
 ## Checkliste für Winter '27, beginnend mit den Token-Skripten
 
-Bei drei Releases pro Jahr entsteht alle paar Monate eine solche Liste. Eine Pipeline, die jede Änderung validiert und testet, fängt die meisten dieser Probleme früh ab, und das ist einer der Gründe, [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/). Für ein Release-Team decken diese Schritte das Wesentliche ab:
+Bei drei Releases pro Jahr entsteht alle paar Monate eine solche Liste. Eine Pipeline, die jede Änderung validiert und testet, fängt die meisten dieser Probleme früh ab, und das ist einer der Gründe, [warum DevOps über Salesforce-Großprojekte entscheidet](/blog/warum-devops-salesforce-enterprise-projekte/). Für ein Release-Team decken diese Schritte das Wesentliche ab:
 
 1. Jede Nutzung von Tokens aus org display in Pipelines finden und beheben; Jobs, die sich noch darauf verlassen, schlagen ab CLI 2.156.8 fehl.
 2. Node.js auf Version 22 oder neuer bringen, überall dort, wo die CLI per npm oder in eigenen Images installiert wird.

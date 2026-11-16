@@ -77,7 +77,7 @@ The best known form is the power-interest grid, which is often attributed to Aub
 
 For project management, this matrix is often enough. In change management it misses an axis. The group that has to use a new system every day often has little formal power and, at first, little interest. In the classic matrix it can easily end up in "monitor". Yet this group decides whether the change takes hold in day-to-day work.
 
-That is why, in change management, I work with a second view: **influence multiplied by impact**. Groups with high impact always need a plan of their own, whatever their influence. Groups with high influence and low impact mainly need information and the occasional decision. This turns the stakeholder analysis into the basis for a change plan for each group, as I describe in [What is change management?](../what-is-change-management/).
+That is why, in change management, I work with a second view: **influence multiplied by impact**. Groups with high impact always need a plan of their own, whatever their influence. Groups with high influence and low impact mainly need information and the occasional decision. This turns the stakeholder analysis into the basis for a change plan for each group, as I describe in [What is change management?](/en/blog/what-is-change-management/).
 
 ## Example: stakeholder analysis for a CRM rollout
 
@@ -92,15 +92,15 @@ Take a company that introduces a CRM system such as Salesforce for sales and ser
 | IT operations | medium | medium | supportive | plan the handover to operations | Head of IT |
 | Finance | low | medium | neutral | inform about new reports | Project manager |
 
-The works council row says "unknown", which is more honest than a guess. In Germany it has a right of co-determination for technical systems that are suitable for monitoring employees' behavior or performance ([section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html)), so this conversation belongs at the start, before activity reports and analyses are configured. Field sales is the most critical group: strongly affected, sceptical and with enough informal influence to work around the system. A circular email will not help here; their own manager and colleagues acting as [key users](../salesforce-key-user-network/) will. Every row has an owner, and that owner is rarely the change manager.
+The works council row says "unknown", which is more honest than a guess. In Germany it has a right of co-determination for technical systems that are suitable for monitoring employees' behavior or performance ([section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html)), so this conversation belongs at the start, before activity reports and analyses are configured. Field sales is the most critical group: strongly affected, sceptical and with enough informal influence to work around the system. A circular email will not help here; their own manager and colleagues acting as [key users](/en/blog/salesforce-key-user-network/) will. Every row has an owner, and that owner is rarely the change manager.
 
-I left out the ADKAR stage column in the example; the template contains it. It shows where a group stands right now: is the group missing awareness of why something is changing, or knowledge of how it works? Depending on the answer, a completely different action is needed. How the model works is explained in [Change management models compared](../change-management-models/).
+I left out the ADKAR stage column in the example; the template contains it. It shows where a group stands right now: is the group missing awareness of why something is changing, or knowledge of how it works? Depending on the answer, a completely different action is needed. How the model works is explained in [Change management models compared](/en/blog/change-management-models/).
 
 In larger initiatives the table grows quickly. In a global rollout of Salesforce Sales Cloud with more than 500 users in the US, Asia and Europe that I supported, every group also had to be split by country, because leadership, language and attitude differ from country to country. In an IT transformation with more than 20,000 affected people in 19 countries you work with groups by function and region, not with individuals.
 
 ## Stakeholder analysis template
 
-The [template as an Excel file](../../../downloads/stakeholder-analysis-template.xlsx) contains two sheets: an empty table with all columns and the example from above, extended by the ADKAR stage. The columns:
+The [template as an Excel file](/downloads/stakeholder-analysis-template.xlsx) contains two sheets: an empty table with all columns and the example from above, extended by the ADKAR stage. The columns:
 
 - **Group or person:** granular enough for one action to fit.
 - **What changes:** one sentence about daily work after the change.
@@ -121,10 +121,10 @@ These are the typical ones:
 - **Groups are too coarse.** "Sales" is not one group if field sales, inside sales and key account management are affected in completely different ways.
 - **Attitude is guessed.** If nobody has talked to a group, the table says "unknown" and lists an action to clarify its attitude.
 - **The most affected groups are missing from the strategy.** The classic matrix overlooks them because they have little formal power.
-- **There is no link to the communication plan.** The analysis tells you who needs to hear what, when and from whom. How to build that is in the article on the [change management communication plan](../change-management-communication-plan/).
+- **There is no link to the communication plan.** The analysis tells you who needs to hear what, when and from whom. How to build that is in the article on the [change management communication plan](/en/blog/change-management-communication-plan/).
 
 ## Outside support pays off for unclear attitudes and difficult conversations
 
-For an initiative with three or four groups, the project manager can build the analysis alone using the template. Support pays off when many groups or countries are affected, when the attitude of important groups is unclear, or when nobody inside the organisation can handle the difficult conversations, for example with the works council or a sceptical manager. In Salesforce programs I work together with Fabian Kramer; how we set this up is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/) and on the page [Salesforce change management consulting](../../services/change-management-salesforce/).
+For an initiative with three or four groups, the project manager can build the analysis alone using the template. Support pays off when many groups or countries are affected, when the attitude of important groups is unclear, or when nobody inside the organisation can handle the difficult conversations, for example with the works council or a sceptical manager. In Salesforce programs I work together with Fabian Kramer; how we set this up is described in [Salesforce change management: why rollouts fail](/en/blog/change-management-salesforce-rollout/) and on the page [Salesforce change management consulting](/en/services/change-management-salesforce/).
 
 *Prosci and ADKAR are registered trademarks of Prosci, Inc.*

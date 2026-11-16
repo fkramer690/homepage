@@ -34,7 +34,7 @@ In my worked example, Data 360 costs for AI agents stem mostly from documents th
 
 ## What does Data 360 charge when an agent reads documents?
 
-An agent does not read a PDF directly. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/enable-trusted-agents-with-data-cloud), Data 360 splits the document into chunks, turns each chunk into a vector embedding and stores it in a search index. At runtime a retriever fetches the matching chunks for the prompt. Salesforce's [billing notes for Agentforce Coworker](https://developer.salesforce.com/docs/data/agentforce-coworker/guide/agentforce-coworker-billing-considerations.html) summarize it in one sentence: Data 360 consumes credits "to process, semantically index, and query content". How Data 360 assembles context beyond documents is covered in [the Agent Context Engine explained](../salesforce-agent-context-engine-explained/).
+An agent does not read a PDF directly. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/enable-trusted-agents-with-data-cloud), Data 360 splits the document into chunks, turns each chunk into a vector embedding and stores it in a search index. At runtime a retriever fetches the matching chunks for the prompt. Salesforce's [billing notes for Agentforce Coworker](https://developer.salesforce.com/docs/data/agentforce-coworker/guide/agentforce-coworker-billing-considerations.html) summarize it in one sentence: Data 360 consumes credits "to process, semantically index, and query content". How Data 360 assembles context beyond documents is covered in [the Agent Context Engine explained](/en/blog/salesforce-agent-context-engine-explained/).
 
 This creates three billing meters:
 
@@ -82,7 +82,7 @@ Assume a machine builder whose agent answers questions from dealers and service 
 
 For the searches I assume each query counts the whole index. The help article says that for hybrid search "the number of vectors and keyword records in the search index are counted", and that a typical index has as many keyword records as vectors. Salesforce's own [pricing example](https://www.salesforce.com/data/pricing/agentforce-use-case/) assumes a query scans 20 percent of the unstructured data, so my figure errs on the safe side.
 
-The dollar figures are list-price equivalents; your contract sets the actual price per credit. Storage beyond the allocation, ingestion and agent actions are not included in the table. Three results stand out. Searches are 7 percent of the running cost. If the default parser were also used for the catalogs, the initial load would cost 1,164,000 credits instead of 2,664,000. And the first year adds up to about 5 million processing and query credits, more than the 2.75 million Flex Credits per org per year that Salesforce lists for Max Edition, before a single agent action. The agent side of the bill is in [what a dealer service agent costs](../flex-credits-agentforce-cost-per-action/).
+The dollar figures are list-price equivalents; your contract sets the actual price per credit. Storage beyond the allocation, ingestion and agent actions are not included in the table. Three results stand out. Searches are 7 percent of the running cost. If the default parser were also used for the catalogs, the initial load would cost 1,164,000 credits instead of 2,664,000. And the first year adds up to about 5 million processing and query credits, more than the 2.75 million Flex Credits per org per year that Salesforce lists for Max Edition, before a single agent action. The agent side of the bill is in [what a dealer service agent costs](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 ## The hidden Data 360 costs
 
@@ -114,7 +114,7 @@ Trailhead recommends hybrid search for long queries with specific search terms, 
 
 The cheapest megabyte is the one you never process.
 
-- **Stock, prices and delivery dates.** These are maintained in the ERP and change daily. The agent should read them through an API action, as described in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/), not from an indexed price list. Why the ERP owns spare parts stock is explained in [spare parts between ERP and Field Service](../salesforce-field-service-spare-parts-erp/).
+- **Stock, prices and delivery dates.** These are maintained in the ERP and change daily. The agent should read them through an API action, as described in [Agentforce and SAP order status](/en/blog/agentforce-sap-order-status-mulesoft/), not from an indexed price list. Why the ERP owns spare parts stock is explained in [spare parts between ERP and Field Service](/en/blog/salesforce-field-service-spare-parts-erp/).
 - **Superseded catalog versions.** With both versions in the index you pay twice, and the agent may quote an old part number.
 - **Files above the Data Library limits.** Trailhead lists [100 MB per PDF and 4 MB per text or HTML file](https://trailhead.salesforce.com/content/learn/modules/agentforce-data-library-basics/build-a-file-based-data-library-for-an-agent), and the data source of a library cannot be changed later. Large catalogs need splitting, ideally by product line.
 - **Documents nobody asks about.** Start with the catalogs associated with the most frequent dealer enquiries.
@@ -129,4 +129,4 @@ The cheapest megabyte is the one you never process.
 6. **Calculate query usage** as searches × rows in the index, doubled for hybrid search, as the upper bound, and check the actual rows per query in Digital Wallet.
 7. **Set alerts in [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/)**, which tracks consumption down to agent, action and channel, and compare with the estimate after four weeks.
 
-How to plan credits across all billing meters is covered in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/). Whether this budget belongs in Salesforce at all is part of my [make-or-buy and license planning](../../services/make-or-buy-licences/).
+How to plan credits across all billing meters is covered in [Flex Credits and Agentforce cost per action](/en/blog/flex-credits-agentforce-cost-per-action/). Whether this budget belongs in Salesforce at all is part of my [make-or-buy and license planning](/en/services/make-or-buy-licences/).

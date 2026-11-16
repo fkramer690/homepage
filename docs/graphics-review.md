@@ -11,7 +11,7 @@ can never slip past the review, and it is always clear what was rated and what w
 |---|---|---|
 | 1 | Super | Becomes a reference: entry in `docs/layouts.md`, reuse it for similar content |
 | 2 | Okay, could be better some day | Stays as it is; listed below under "Rated 2" |
-| 3 | Not good enough | Todo in `docs/backlog.md` ("Grafiken verbessern") |
+| 3 | Not good enough | Todo in the backlog ("Grafiken verbessern", project files, see `docs/backlog.md`) |
 | `null` | Open, not rated yet | Goes into the next review round |
 
 ## Register
@@ -51,14 +51,14 @@ When open entries have piled up, or when Fabian asks for it:
 1. Screenshot every open entry (German page, desktop) and present them in one overview
    with Claude's proposal and a one-line reason; Fabian rates 1, 2 or 3.
 2. Write his ratings and `ratedOn` into the register, 1s into `docs/layouts.md`,
-   3s as todos into `docs/backlog.md`, 2s into the list below.
+   3s as todos into the backlog (project files), 2s into the list below.
 
 First round: 30.10.2026, overview https://claude.ai/artifact/KusEFgFZ7i7THrd8Lz2FeC (ratings are stored in the page and copied into the register afterwards).
 
 ## Rated 2
 
 From the first round (30.10.2026); they stay as they are unless a backlog item says otherwise
-(G-numbers in `docs/backlog.md`):
+(G-numbers in the backlog):
 
 - Layout: speaking page pattern (tabs, figures strip, tiles)
 - Content blocks: `hinweis achtung`, `hinweis offen`, `praxis`, `zeitleiste`, `pro-contra`, `vertiefung`

@@ -42,7 +42,7 @@ Salesforce B2B Commerce ist inzwischen in "Agentforce Commerce for B2B" umbenann
 | Merchandiser | Pflegt Katalog, Store-Funktionen und Einführungen | Salesforce-Standard- oder Identity-Lizenz | Berechtigungssatz Merchandiser oder Commerce Admin |
 | Entwickler, Frontend-Builder | Lädt Produktdaten, baut Checkout und Seiten | Interne Salesforce-Lizenz, je nach Aufgabe | Customize Application, Author Apex, Create and Set Up Experiences |
 
-Die [Preisseite für B2B Commerce](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) nennt 6 oder 10 Storefronts, 20 Lagerorte, Order Management, Data-Cloud-Credits, den Merchant Agent und je 3 oder 5 Nutzer für CRM Analytics und Knowledge. Käuferlizenzen erscheinen dort nicht; fragen Sie, ob Ihre Edition welche enthält. Sonst fallen sie zusätzlich zur GMV-Gebühr an, die ich in [B2B Commerce Preise: Was das GMV-Modell kostet](../b2b-commerce-preise-gmv-modell/) beschreibe.
+Die [Preisseite für B2B Commerce](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) nennt 6 oder 10 Storefronts, 20 Lagerorte, Order Management, Data-Cloud-Credits, den Merchant Agent und je 3 oder 5 Nutzer für CRM Analytics und Knowledge. Käuferlizenzen erscheinen dort nicht; fragen Sie, ob Ihre Edition welche enthält. Sonst fallen sie zusätzlich zur GMV-Gebühr an, die ich in [B2B Commerce Preise: Was das GMV-Modell kostet](/blog/b2b-commerce-preise-gmv-modell/) beschreibe.
 
 ## Buyer Manager brauchen Customer Community Plus, einfache Käufer nicht
 
@@ -58,7 +58,7 @@ Ein Buyer Manager kann laut Trailhead:
 - Warenkörbe und Bestellungen wie ein Käufer lesen, anlegen und bearbeiten,
 - Adressfelder von Kontaktpunktadressen bearbeiten, die Käufer nur lesen können.
 
-Weisen Sie Delegated External User Administration zu, legt der Buyer Manager beim Händler neue Mitarbeiter selbst an, ohne ein Ticket an Ihren Innendienst zu schicken. Bei einer Einführung spart das mehr Arbeit als die meisten Shop-Funktionen. Deshalb sollte es Teil der [Einführung bei Händlern](../b2b-shop-haendler-einfuehren/) sein.
+Weisen Sie Delegated External User Administration zu, legt der Buyer Manager beim Händler neue Mitarbeiter selbst an, ohne ein Ticket an Ihren Innendienst zu schicken. Bei einer Einführung spart das mehr Arbeit als die meisten Shop-Funktionen. Deshalb sollte es Teil der [Einführung bei Händlern](/blog/b2b-shop-haendler-einfuehren/) sein.
 
 ## Member- oder Login-Lizenz: Was ist bei Customer Community Plus günstiger?
 
@@ -95,8 +95,8 @@ Interne Mitarbeiter arbeiten in Salesforce mit ihrer internen Lizenz. In der Tra
 - **Bestellvorlagen**, laut [Seite zu den Commerce-Neuerungen](https://www.salesforce.com/de/commerce/innovations/) seit September 2026 allgemein verfügbar: Käufer und Vertriebsmitarbeiter legen häufige Bestellungen an, speichern sie und verwenden sie wieder.
 - **Reorder Portal**: Ein Vertriebsmitarbeiter lädt einen Käufer auf eine Seite mit früheren Bestellungen ein, die er direkt nachbestellen kann. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal) braucht die Anbindung an Sales Cloud eine Agentforce-Commerce-Lizenz und eine aktivierte Digital Experience.
 
-Mein Rat: Schreiben Sie pro interner Gruppe auf, was sie im Store tut, zum Beispiel ob sie den Shop aus Händlersicht ansieht, im Namen eines Händlers bestellt oder den Katalog pflegt, und lassen Sie sich im Angebot bestätigen, welche Lizenz welche Tätigkeit abdeckt. Welche internen Nutzer wirklich eine volle Lizenz brauchen, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
+Mein Rat: Schreiben Sie pro interner Gruppe auf, was sie im Store tut, zum Beispiel ob sie den Shop aus Händlersicht ansieht, im Namen eines Händlers bestellt oder den Katalog pflegt, und lassen Sie sich im Angebot bestätigen, welche Lizenz welche Tätigkeit abdeckt. Welche internen Nutzer wirklich eine volle Lizenz brauchen, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](/blog/salesforce-lizenzen-volle-lizenz/).
 
 ## Login-Tage pro Käufer zählen
 
-Legen Sie eine Liste mit vier Spalten an: Rolle, Anzahl Personen, Login-Tage pro Monat und Lizenz. Füllen Sie die Liste mit Daten aus Ihren Aufträgen der letzten zwölf Monate: Wer hat wie oft per Telefon, E-Mail oder Portal bestellt? Prüfen Sie dann die Limits oben, vor allem Rollen und den Account Switcher bei Händlergruppen. Ob ein Shop oder ein Portal überhaupt zu Ihren Händlern passt, klärt [B2B Commerce oder Händlerportal](../b2b-commerce-oder-haendlerportal/), das ganze Kostenbild steht in [Kapitel 1 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/). Lizenzprognosen wie diese gehören zu meiner Arbeit bei [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).
+Legen Sie eine Liste mit vier Spalten an: Rolle, Anzahl Personen, Login-Tage pro Monat und Lizenz. Füllen Sie die Liste mit Daten aus Ihren Aufträgen der letzten zwölf Monate: Wer hat wie oft per Telefon, E-Mail oder Portal bestellt? Prüfen Sie dann die Limits oben, vor allem Rollen und den Account Switcher bei Händlergruppen. Ob ein Shop oder ein Portal überhaupt zu Ihren Händlern passt, klärt [B2B Commerce oder Händlerportal](/blog/b2b-commerce-oder-haendlerportal/), das ganze Kostenbild steht in [Kapitel 1 der Masterclass B2B Commerce](/masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/). Lizenzprognosen wie diese gehören zu meiner Arbeit bei [Make-or-Buy und Lizenzen](/leistungen/make-or-buy-lizenzen/).

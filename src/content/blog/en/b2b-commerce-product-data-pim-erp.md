@@ -55,7 +55,7 @@ My rule is one owner per field, and the owner is the system where the data is cr
 | Images, drawings, data sheets | PIM or DAM | Reference or copy |
 | Store categories, search settings, sort order | Salesforce | Maintained here |
 
-In this split, the last row is the only one that merchandisers maintain in the store; store-specific fields such as badges or SEO texts can be added to it if you decide to do so. Everything else arrives through an interface, and that interface has to say which side wins. If a merchandiser corrects a typo in Salesforce and the nightly ERP load overwrites it, the dealer sees the typo again the next day, and the merchandiser stops trusting the store. The same principle applies to every object in a Salesforce org. I describe it in the [object ownership matrix](../salesforce-object-ownership-matrix/).
+In this split, the last row is the only one that merchandisers maintain in the store; store-specific fields such as badges or SEO texts can be added to it if you decide to do so. Everything else arrives through an interface, and that interface has to say which side wins. If a merchandiser corrects a typo in Salesforce and the nightly ERP load overwrites it, the dealer sees the typo again the next day, and the merchandiser stops trusting the store. The same principle applies to every object in a Salesforce org. I describe it in the [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/).
 
 Do you need a PIM? Not for every store. Worked example: a manufacturer with 6,000 spare parts, German and English texts from the ERP, and one photo per part. The ERP can be the only source here, and a PIM would add another system without adding more data. With 60,000 parts, 15 languages, technical attributes for filters and several images per part, I would want a PIM, because ERP material masters are rarely built for that kind of enrichment. The numbers are examples; languages, attributes and approval workflows decide, not the part count alone.
 
@@ -74,7 +74,7 @@ Salesforce lists the [product and category limits](https://developer.salesforce.
 | Category depth | 5 levels | soft |
 | Categories per catalog | 15,000 | soft |
 
-Two of these shape the design. One catalog per store means that a second assortment with its own category structure needs a second store, while different assortments for customer groups work in one store through buyer groups and entitlements, which I discuss in [one B2B store or several](../b2b-stores-countries-brands-dealers/). And the gap between 4 million products and 1 million searchable ones matters for manufacturers with large spare parts ranges.
+Two of these shape the design. One catalog per store means that a second assortment with its own category structure needs a second store, while different assortments for customer groups work in one store through buyer groups and entitlements, which I discuss in [one B2B store or several](/en/blog/b2b-stores-countries-brands-dealers/). And the gap between 4 million products and 1 million searchable ones matters for manufacturers with large spare parts ranges.
 
 ```hinweis achtung
 Salesforce writes that only up to 1 million products are supported for search and asks you to contact your account representative if you need to upload more than a million SKUs. With a third-party search provider such as Coveo, Algolia or Bloomreach, the 4 million limit does not apply.
@@ -111,8 +111,8 @@ For a parts catalog, that has direct consequences:
 - An old part number that only exists in the ERP history cannot be found at all.
 - Text that exists only on a variation parent is not found.
 
-All of this is fixed in the product data and in the search setup, which I cover in [finding parts by part number](../b2b-commerce-search-part-numbers/).
+All of this is fixed in the product data and in the search setup, which I cover in [finding parts by part number](/en/blog/b2b-commerce-search-part-numbers/).
 
 ## Check 200 spare parts from the ERP
 
-Take a sample of 200 typical spare parts from the ERP and check each one against the list above: is there a usable name, a picture, the attributes a dealer would filter by, a clean sales status? The result shows how much data work is needed before the store can launch. Then write the ownership table for product fields and add it to the interface list. Which data flows from SAP to the store and how often is covered in [B2B Commerce and SAP data flows](../b2b-commerce-sap-data-flows/), and the whole topic sits in the [chapter on catalog, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of my B2B Commerce masterclass. Designing such interfaces is part of my work on [Salesforce integration](../../services/salesforce-integration/).
+Take a sample of 200 typical spare parts from the ERP and check each one against the list above: is there a usable name, a picture, the attributes a dealer would filter by, a clean sales status? The result shows how much data work is needed before the store can launch. Then write the ownership table for product fields and add it to the interface list. Which data flows from SAP to the store and how often is covered in [B2B Commerce and SAP data flows](/en/blog/b2b-commerce-sap-data-flows/), and the whole topic sits in the [chapter on catalog, search and entitlements](/en/masterclass/b2b-commerce/catalog-search-entitlements/) of my B2B Commerce masterclass. Designing such interfaces is part of my work on [Salesforce integration](/en/services/salesforce-integration/).

@@ -95,14 +95,14 @@ Aus Architektursicht entscheiden diese Punkte, ob Casey und der Assistent helfen
 2. **Klare Freigaberegeln.** Legen Sie fest, welche Entscheidungen Casey allein treffen darf, welche eine Freigabe brauchen und bis zu welchem Betrag. Schreiben Sie sie vor dem ersten Gespräch auf.
 3. **Saubere Daten.** Auftragsstatus, Anlagendaten und Verträge müssen in Salesforce aktuell oder zuverlässig aus dem ERP verfügbar sein. Sonst gibt der Agent selbstsicher formulierte, aber veraltete Antworten.
 4. **Identität und Rechte.** Legen Sie fest, welcher Portalnutzer welche Aufträge, Assets, Verträge und Preise sehen darf und welche Aktionen (lesen, ändern, stornieren, gutschreiben) der Agent für ihn ausführen darf. Ein Agent darf einem Kunden nie Daten eines anderen zeigen.
-5. **Überwachung und Ausweichverfahren.** Antworten, Aktionen und Übergaben werden protokolliert, und der Agent weiß, was zu tun ist, wenn das ERP ausfällt oder Quellen sich widersprechen. PDFs und Webseiten als Quellen bergen außerdem das Risiko der [Prompt Injection](../prompt-injection-haendlerportal-agentforce/).
+5. **Überwachung und Ausweichverfahren.** Antworten, Aktionen und Übergaben werden protokolliert, und der Agent weiß, was zu tun ist, wenn das ERP ausfällt oder Quellen sich widersprechen. PDFs und Webseiten als Quellen bergen außerdem das Risiko der [Prompt Injection](/blog/prompt-injection-haendlerportal-agentforce/).
 6. **Messbare Ziele.** Zum Beispiel der Anteil der Anfragen, die ohne Servicemitarbeitende gelöst werden, die Erstlösungsquote oder die Zeit bis zur ersten Antwort, jeweils vorher und nachher gemessen.
 
-Diese Punkte gelten für jeden KI-Agenten, und deshalb plädiere ich dafür, [Business Value und Datenqualität an die erste Stelle zu setzen](../agentforce-business-value-datenqualitaet/). Sie erklären auch, warum KI-Funktionen in die Zielarchitektur gehören und nicht nur in ein Pilotprojekt.
+Diese Punkte gelten für jeden KI-Agenten, und deshalb plädiere ich dafür, [Business Value und Datenqualität an die erste Stelle zu setzen](/blog/agentforce-business-value-datenqualitaet/). Sie erklären auch, warum KI-Funktionen in die Zielarchitektur gehören und nicht nur in ein Pilotprojekt.
 
 ## Mit dem Service Rep Assistant in einem Team beginnen
 
-Welche Bausteine der Service Cloud passen, kläre ich im Rahmen von [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/). Mein Weg:
+Welche Bausteine der Service Cloud passen, kläre ich im Rahmen von [Architektur und Partnersteuerung](/leistungen/salesforce-architektur/). Mein Weg:
 
 ```schritte
 Lizenzen prüfen

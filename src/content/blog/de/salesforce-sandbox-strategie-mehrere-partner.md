@@ -53,7 +53,7 @@ In einer kleinen Org mit einem Admin gibt es selten Ärger mit Sandboxes. Mit me
 - **Niemand weiß, wofür eine Sandbox da ist.** Nach zwei Jahren hat eine Org zwanzig Sandboxes mit Namen wie `test2` und `partnerneu`, und keiner traut sich, eine zu löschen.
 - **Refresh ohne Plan.** Jemand aktualisiert eine Sandbox, und eine Schnittstellenkonfiguration verweist danach noch auf das produktive ERP, während die Zugangsdaten für das Test-ERP fehlen, weil Secrets nicht kopiert werden.
 
-Die Symptome sind immer gleich: Ein Feature funktioniert in UAT und fällt im Produktivsystem aus. Mehr zu den Ursachen steht in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/).
+Die Symptome sind immer gleich: Ein Feature funktioniert in UAT und fällt im Produktivsystem aus. Mehr zu den Ursachen steht in [warum DevOps über Salesforce-Großprojekte entscheidet](/blog/warum-devops-salesforce-enterprise-projekte/).
 
 ## Wie sieht eine Sandbox-Strategie für mehrere Partner aus?
 
@@ -71,11 +71,11 @@ Größere Programme mit parallel laufenden Releases können eine zweite Integrat
 Ein Refresh erstellt aus der Quell-Org, meist der Produktion, eine neue Org mit einer neuen Org-ID und ersetzt bei der Aktivierung die alte. Alles, was nur in der Sandbox gebaut wurde, ist danach weg. Deshalb gilt: Jede Änderung liegt zuerst in Git und gelangt über die Pipeline in die Sandbox. Daten, Secrets, geplante Jobs und Verbindungen liegen nicht in Git und brauchen die Post-Refresh-Schritte.
 ```
 
-Mit einer Pipeline auf der Git-Plattform des Kunden ist sichtbar, welches Release zuletzt in welche Umgebung deployt wurde. Trotzdem muss regelmäßig geprüft werden, ob es Abweichungen durch direkte Änderungen gibt. Diesen Teil setze ich im Rahmen von [DevOps und Release-Management](../../leistungen/devops-und-release-management/) um.
+Mit einer Pipeline auf der Git-Plattform des Kunden ist sichtbar, welches Release zuletzt in welche Umgebung deployt wurde. Trotzdem muss regelmäßig geprüft werden, ob es Abweichungen durch direkte Änderungen gibt. Diesen Teil setze ich im Rahmen von [DevOps und Release-Management](/leistungen/devops-und-release-management/) um.
 
 ## Die Sandboxes gehören dem Kunden
 
-Alle Sandboxes sind der Produktions-Org zugeordnet und gehören damit technisch immer dem Kunden. In der Praxis entscheidet aber oft ein Partner, wer Zugang erhält und wann aktualisiert wird. Das halte ich für einen Fehler, aus demselben Grund, aus dem [Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/): Wer die Umgebungen steuert, bestimmt den Takt aller anderen.
+Alle Sandboxes sind der Produktions-Org zugeordnet und gehören damit technisch immer dem Kunden. In der Praxis entscheidet aber oft ein Partner, wer Zugang erhält und wann aktualisiert wird. Das halte ich für einen Fehler, aus demselben Grund, aus dem [Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/): Wer die Umgebungen steuert, bestimmt den Takt aller anderen.
 
 Ich führe deshalb eine einfache Liste, die der Kunde besitzt:
 
@@ -87,7 +87,7 @@ Ich führe deshalb eine einfache Liste, die der Kunde besitzt:
 - Preview- oder Non-Preview-Status rund um Salesforce-Releases
 - Datenklassifizierung und Maskierungsstatus
 
-Eine Sandbox ohne Eintrag in dieser Liste wird nach Ankündigung gelöscht. Das klingt streng, gibt aber eine belegte Sandbox für einen echten Zweck frei und verhindert, dass vergessene Umgebungen mit Kundendaten herumstehen. Was Coding-Agenten in solchen Umgebungen lesen dürfen, beschreibe ich in [Sandbox-Kundendaten und KI-Coding-Agenten](../sandbox-kundendaten-ki-coding-agenten/).
+Eine Sandbox ohne Eintrag in dieser Liste wird nach Ankündigung gelöscht. Das klingt streng, gibt aber eine belegte Sandbox für einen echten Zweck frei und verhindert, dass vergessene Umgebungen mit Kundendaten herumstehen. Was Coding-Agenten in solchen Umgebungen lesen dürfen, beschreibe ich in [Sandbox-Kundendaten und KI-Coding-Agenten](/blog/sandbox-kundendaten-ki-coding-agenten/).
 
 ## Wie oft sollten Sie Sandboxes aktualisieren?
 

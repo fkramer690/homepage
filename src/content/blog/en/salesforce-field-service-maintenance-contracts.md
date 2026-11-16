@@ -29,7 +29,7 @@ draft: false
 
 In Salesforce Field Service, a maintenance contract is typically modeled with three separate objects. The service contract records what was sold. The maintenance plan generates the planned maintenance. The entitlement describes the service level the customer is entitled to, such as a response time. Entitlements are only partly about maintenance contracts, because a right to service can also come from a warranty or a support package. In one project, entitlements were part of the scope and influenced prioritization in dispatching. They do not do that by themselves: automation has to translate the service level into a scheduling priority. That is where their value for field service becomes visible.
 
-This article is part 5 of the series. How Field Service schedules and what the dispatcher checks are covered in [part 3](../salesforce-field-service-scheduling-automation/). The master data needed for this, such as assets and visiting hours, is covered in [part 2](../salesforce-field-service-master-data/).
+This article is part 5 of the series. How Field Service schedules and what the dispatcher checks are covered in [part 3](/en/blog/salesforce-field-service-scheduling-automation/). The master data needed for this, such as assets and visiting hours, is covered in [part 2](/en/blog/salesforce-field-service-master-data/).
 
 ## Which object covers what?
 
@@ -43,7 +43,7 @@ The terms sound alike and are often confused in projects. According to [Salesfor
 | Entitlement | What the customer is entitled to | Technician on site within 24 hours |
 | Entitlement process with milestones | How the entitlement is measured | Clock starts when the work order is created |
 
-The service contract is the commercial side; how it is billed on a recurring basis is covered in [maintenance contracts: recurring billing in Revenue Cloud](../maintenance-contracts-recurring-billing/). The maintenance plan is the plannable work. The entitlement is a right to a service level; in field service it matters most for breakdowns where a response time applies. A contract can have all three, but does not have to. A pure warranty case often has only an entitlement on the asset and no maintenance plan. How warranty claims are handled in Manufacturing Cloud is covered in [chapter 4 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/warranty-and-after-sales/).
+The service contract is the commercial side; how it is billed on a recurring basis is covered in [maintenance contracts: recurring billing in Revenue Cloud](/en/blog/maintenance-contracts-recurring-billing/). The maintenance plan is the plannable work. The entitlement is a right to a service level; in field service it matters most for breakdowns where a response time applies. A contract can have all three, but does not have to. A pure warranty case often has only an entitlement on the asset and no maintenance plan. How warranty claims are handled in Manufacturing Cloud is covered in [chapter 4 of the Manufacturing Cloud masterclass](/en/masterclass/manufacturing-cloud/warranty-and-after-sales/).
 
 ## How is planned maintenance created?
 
@@ -113,4 +113,4 @@ Three warning signs that the contract model is not working: response times live 
 
 ## Write down your three most common contract types
 
-Take your three most common contract types and write down for each what the customer bought, which maintenance is planned and what response time has been committed. Service contracts, maintenance plans and entitlements will then be almost self-evident. Then decide which scheduling priority each commitment gets. How service partners and subcontractors fit into the same scheduling is covered in the [next part of the series](../salesforce-field-service-service-partners/).
+Take your three most common contract types and write down for each what the customer bought, which maintenance is planned and what response time has been committed. Service contracts, maintenance plans and entitlements will then be almost self-evident. Then decide which scheduling priority each commitment gets. How service partners and subcontractors fit into the same scheduling is covered in the [next part of the series](/en/blog/salesforce-field-service-service-partners/).

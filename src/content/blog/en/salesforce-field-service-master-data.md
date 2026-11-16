@@ -29,7 +29,7 @@ draft: false
 
 Salesforce Field Service schedules with the data it knows and nothing else. Six data areas determine how good the plan is: service territories with operating hours, technicians with their skills, work types, the assets at the customer site, customer visiting hours and absences. Technically, the engine needs less: territories, resources, a scheduling policy and appointments with an address, an earliest start and a due date. But if one of the six areas is missing or out of date, the engine sends the wrong technician or sends them at the wrong time. Most of this data already exists, spread across the ERP, HR and the dispatchers' heads.
 
-Whether Field Service is worthwhile for your field service operation is the topic of the first part of this series: [Salesforce Field Service: is it worth it?](../salesforce-field-service-worth-it/). This part covers the next question: what has to be in place before scheduling starts?
+Whether Field Service is worthwhile for your field service operation is the topic of the first part of this series: [Salesforce Field Service: is it worth it?](/en/blog/salesforce-field-service-worth-it/). This part covers the next question: what has to be in place before scheduling starts?
 
 ## Missing data leads to failed visits
 
@@ -66,16 +66,16 @@ Four details from Salesforce Help decide whether this works in practice:
 - **Visiting hours.** They are recorded as operating hours on the account and copied to each new work order according to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5). They are only considered when the visiting hours work rule is active.
 - **Absences.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_create_absences.htm&type=5), optimization does not assign technicians to appointments that conflict with them, but only if leave and training are actually recorded in Salesforce.
 
-How a case becomes a work order with the right work type is covered in [from case to technician](../field-service-case-to-work-order/). Parts and van stock are covered in [their own part](../salesforce-field-service-spare-parts-erp/) in this series.
+How a case becomes a work order with the right work type is covered in [from case to technician](/en/blog/field-service-case-to-work-order/). Parts and van stock are covered in [their own part](/en/blog/salesforce-field-service-spare-parts-erp/) in this series.
 
 ## What do you need to decide before scheduling starts?
 
 The table above is a proposal. The decisions behind it belong to service management and IT together, and nobody else will make them:
 
 - **An owner for each data area.** Someone has to be accountable when skills are out of date or an asset is missing. Without a name in the table, data quality becomes nobody's job after go-live.
-- **Interface or manual maintenance.** Maintaining assets and skills by hand in Salesforce works for a pilot but breaks down in day-to-day operation. Every interface costs money to build and run; every manual list costs time and creates errors. Decide for each area, based on volume and rate of change. The page [Salesforce integration](../../services/salesforce-integration/) describes how to decide which system is the system of record.
+- **Interface or manual maintenance.** Maintaining assets and skills by hand in Salesforce works for a pilot but breaks down in day-to-day operation. Every interface costs money to build and run; every manual list costs time and creates errors. Decide for each area, based on volume and rate of change. The page [Salesforce integration](/en/services/salesforce-integration/) describes how to decide which system is the system of record.
 - **Which cause of failed visits to fix first.** Not all six areas can be clean on day one. The failed visits in your own region show where money is being lost.
-- **Employee data.** Skills and absences are data about employees. Agree early with the data protection team and, where applicable, the works council on which of these data points may be stored in Salesforce. The same applies to the app features in [Field Service Mobile: guided flows and voice](../salesforce-field-service-mobile-guided-voice/).
+- **Employee data.** Skills and absences are data about employees. Agree early with the data protection team and, where applicable, the works council on which of these data points may be stored in Salesforce. The same applies to the app features in [Field Service Mobile: guided flows and voice](/en/blog/salesforce-field-service-mobile-guided-voice/).
 
 Three warning signs that the data architecture will not hold up: dispatchers keep a private list of who can do what, skills are only updated when a visit has already failed, and nobody can say which system is authoritative when Salesforce and the ERP disagree about an asset.
 

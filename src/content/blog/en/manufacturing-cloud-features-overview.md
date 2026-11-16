@@ -30,7 +30,7 @@ Salesforce Manufacturing Cloud contains three groups of features: sales agreemen
 
 ## What does Manufacturing Cloud contain for sales?
 
-Manufacturing Cloud is an industry cloud on top of Sales Cloud and Service Cloud, with its own data model for manufacturers. Whether it is worth the cost is covered in [Manufacturing Cloud: is it worth it?](../salesforce-manufacturing-cloud-is-it-worth-it/). Here the question is narrower: what is in the box. The [product page for sales](https://salesforce.com/manufacturing/cloud/sales) and the [Trailhead quick look](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) name five sales features:
+Manufacturing Cloud is an industry cloud on top of Sales Cloud and Service Cloud, with its own data model for manufacturers. Whether it is worth the cost is covered in [Manufacturing Cloud: is it worth it?](/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/). Here the question is narrower: what is in the box. The [product page for sales](https://salesforce.com/manufacturing/cloud/sales) and the [Trailhead quick look](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) name five sales features:
 
 | Feature | What it does | The question it answers |
 |---|---|---|
@@ -40,7 +40,7 @@ Manufacturing Cloud is an industry cloud on top of Sales Cloud and Service Cloud
 | Account manager targets | Top-down targets by volume, revenue or a custom measure | Is the team on track per customer, product and region? |
 | Visit management | Visits planned from action plan templates, tasks and metrics captured on mobile | What did the rep check at the customer or dealer? |
 
-Forecasting exists twice: the settings have one switch for account forecasts and one for advanced account forecasting. The Trailhead quick look lists only the advanced version. How it works and where its limits are is covered in [account forecasting for sales volume planning](../account-forecasting-sales-volume-planning/), while programs are covered in [program-based business for suppliers](../program-based-business-supplier-forecasts/).
+Forecasting exists twice: the settings have one switch for account forecasts and one for advanced account forecasting. The Trailhead quick look lists only the advanced version. How it works and where its limits are is covered in [account forecasting for sales volume planning](/en/blog/account-forecasting-sales-volume-planning/), while programs are covered in [program-based business for suppliers](/en/blog/program-based-business-supplier-forecasts/).
 
 Trailhead also lists product catalog management, which keeps product definitions and pricing structures in one place. Standard quotes come with the underlying Sales Cloud. A quoting system with configurator, complex pricing, approvals and contract generation does not appear in any of these feature lists; for that I look at Revenue Cloud.
 
@@ -54,7 +54,7 @@ The [product page for service](https://salesforce.com/manufacturing/cloud/servic
 
 Trailhead adds three more: product service campaigns for recalls and upgrades on a defined set of assets, prework estimation of labor, parts and cost before work begins, and inventory features for parts availability and replenishment. Salesforce Help lists all three under [Asset Service Lifecycle Management](https://help.salesforce.com/s/articleView?id=xcloud.aslm_psc_enable_aslm.htm&language=en_US&type=5), where the estimation is called work order estimation. The [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) sells that add-on at $75 per user per month for Field Service editions. Trailhead describes capabilities, not what a license includes.
 
-The pricing page lists a separate service edition, Service Core at $275 per user per month, and combines sales and service only in Sales & Service Max at $700. The comparison table assigns features per edition, but the checkmarks did not come through in the text version I read, so check the table on the page and in the quote. Technician scheduling and the field mobile app belong to Field Service, with their own licenses unless a bundle in the quote includes them, as described in [is Salesforce Field Service worth it?](../salesforce-field-service-worth-it/).
+The pricing page lists a separate service edition, Service Core at $275 per user per month, and combines sales and service only in Sales & Service Max at $700. The comparison table assigns features per edition, but the checkmarks did not come through in the text version I read, so check the table on the page and in the quote. Technician scheduling and the field mobile app belong to Field Service, with their own licenses unless a bundle in the quote includes them, as described in [is Salesforce Field Service worth it?](/en/blog/salesforce-field-service-worth-it/).
 
 ## What is in it for dealers and the channel?
 
@@ -71,7 +71,7 @@ Partner visit management is the opposite case. It has its own switch in the Manu
 Make sure the order form confirms that your edition provisions the permission sets for partner visit management before you plan dealer visits around it.
 ```
 
-Rebate management itself is covered in [part 5 of the series](../rebate-management-dealer-rebates/). Salesforce Help ties the rebate permission sets for portal users to an add-on license for Rebate Management, so plan it as an add-on, not as part of the edition. The conflicting prices are listed in [Manufacturing Cloud add-ons: what costs extra](../manufacturing-cloud-add-ons-extra-costs/).
+Rebate management itself is covered in [part 5 of the series](/en/blog/rebate-management-dealer-rebates/). Salesforce Help ties the rebate permission sets for portal users to an add-on license for Rebate Management, so plan it as an add-on, not as part of the edition. The conflicting prices are listed in [Manufacturing Cloud add-ons: what costs extra](/en/blog/manufacturing-cloud-add-ons-extra-costs/).
 
 ## Core sales and partner features have their own switch
 
@@ -95,7 +95,7 @@ A license and an active feature are two different things. A usable feature needs
 
 Both names are in use. The pricing page sells "Manufacturing Cloud Sales Core", while its footnotes refer to "Agentforce Manufacturing for Sales". Trailhead calls the whole product Agentforce Manufacturing. It is one product with two names.
 
-The name causes a practical problem. Trailhead lists "Agent-powered sales agreements", but the description is about long-term agreements on prices and products, without naming any agent action. "Agentforce for sales planning" is a real agent template with three documented subagents, as described in [what the Sales Planning agent really does](../agentforce-sales-planning-agreements-forecasts/). And the automatic forecast for new products, which Trailhead attributes to Agentforce Manufacturing, is a scheduled calculation.
+The name causes a practical problem. Trailhead lists "Agent-powered sales agreements", but the description is about long-term agreements on prices and products, without naming any agent action. "Agentforce for sales planning" is a real agent template with three documented subagents, as described in [what the Sales Planning agent really does](/en/blog/agentforce-sales-planning-agreements-forecasts/). And the automatic forecast for new products, which Trailhead attributes to Agentforce Manufacturing, is a scheduled calculation.
 
 In every vendor workshop I would ask the same question: which subagent, which action, which license? Mind the small word: Agentforce Manufacturing is the product, while Agentforce for Manufacturing refers to the agent templates. For Core, the pricing page lists Agentforce via Flex Credits, and the add-ons page sells the Agentforce for Manufacturing Cloud add-on at $150 per user per month for Core and Advanced; the full Agentforce for Industries suite is only in the Max editions.
 
@@ -124,4 +124,4 @@ Only two of the six points are clearly covered by the edition, and dealer visits
 7. **Platform limits:** Flex Credits, Omnistudio and Business Rules Engine calls in the edition.
 8. **The price basis:** the pricing page footnotes contradict each other on Enterprise and Unlimited Edition.
 
-This list is the first half of chapter 1 of the [Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/scope-and-business-case/). Weighing the features against a custom build is part of my work on [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
+This list is the first half of chapter 1 of the [Manufacturing Cloud masterclass](/en/masterclass/manufacturing-cloud/scope-and-business-case/). Weighing the features against a custom build is part of my work on [make-or-buy and license forecasts](/en/services/make-or-buy-licences/).

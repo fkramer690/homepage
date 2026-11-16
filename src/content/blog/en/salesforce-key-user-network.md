@@ -33,7 +33,7 @@ Key users are business users who know the new Salesforce system before everyone 
 
 ## Key users mainly strengthen knowledge and ability
 
-In the [ADKAR model](../change-management-salesforce-rollout/) key users mainly contribute to two stages: knowledge and ability. Depending on who is chosen, they also build desire and help the new way of working stick after go-live. They do not replace the sponsor or line management, though. Training provides knowledge, but only daily work shows whether someone can use the feature in a customer meeting or on the phone. In that moment, what helps is not a hotline but the colleague at the next desk who has done it before.
+In the [ADKAR model](/en/blog/change-management-salesforce-rollout/) key users mainly contribute to two stages: knowledge and ability. Depending on who is chosen, they also build desire and help the new way of working stick after go-live. They do not replace the sponsor or line management, though. Training provides knowledge, but only daily work shows whether someone can use the feature in a customer meeting or on the phone. In that moment, what helps is not a hotline but the colleague at the next desk who has done it before.
 
 Manufacturers have an extra layer: sales, inside sales and service work a little differently in every country and at every site. The project team does not know these differences. Key users do, and they can point out early where the planned process will not work in their own team.
 
@@ -56,7 +56,7 @@ Operations | ongoing · key users and admin
   Onboard new colleagues, learn before every release what is coming and pass it on to the team.
 ```
 
-Key users belong in the acceptance test, because they know which cases and exceptions occur in their team. They run predefined end-to-end scenarios with realistic data; the formal sign-off stays with the named business owners. How to set up UAT is covered in [Salesforce UAT: who tests before the release?](../salesforce-uat-business-acceptance-testing/).
+Key users belong in the acceptance test, because they know which cases and exceptions occur in their team. They run predefined end-to-end scenarios with realistic data; the formal sign-off stays with the named business owners. How to set up UAT is covered in [Salesforce UAT: who tests before the release?](/en/blog/salesforce-uat-business-acceptance-testing/).
 
 ## How do you choose the right key users?
 
@@ -85,10 +85,10 @@ Agree the key users' time in writing with their manager, including weeks and hou
 
 ## The network needs a fixed slot
 
-A key user network lives on regular meetings. I recommend a short meeting where key users share their most important feedback and learn in advance what the next release changes. That turns every key user into a channel in both directions: changes reach the team through them, and problems from the team reach the project through them. What this looks like before a release is described in [communicating Salesforce releases to the business](../salesforce-release-communication-business/).
+A key user network lives on regular meetings. I recommend a short meeting where key users share their most important feedback and learn in advance what the next release changes. That turns every key user into a channel in both directions: changes reach the team through them, and problems from the team reach the project through them. What this looks like before a release is described in [communicating Salesforce releases to the business](/en/blog/salesforce-release-communication-business/).
 
 It also matters that the role is visibly recognized. Anyone who takes on extra work for the project should see it reflected in their annual review and in adjusted daily targets. That decides whether anyone volunteers for the next project.
 
 ## Ask whom the team turns to today
 
-Ask every affected team: whom do you ask today when you get stuck in the system? The names that come up several times are your candidates. Then agree the time with the managers and bring the key users into the first workshops, before anything is built. If no name comes up in a team, nobody there owns the topic yet, and that team needs more support during training. How we build the network in programs is described in [change management for Salesforce programs](../../services/change-management-salesforce/).
+Ask every affected team: whom do you ask today when you get stuck in the system? The names that come up several times are your candidates. Then agree the time with the managers and bring the key users into the first workshops, before anything is built. If no name comes up in a team, nobody there owns the topic yet, and that team needs more support during training. How we build the network in programs is described in [change management for Salesforce programs](/en/services/change-management-salesforce/).

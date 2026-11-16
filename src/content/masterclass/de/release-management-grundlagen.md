@@ -10,7 +10,7 @@ pubDate: 2026-10-28
 short: "Warum Releases entscheiden"
 summary: "Die Grundbegriffe, die Kosten schlechter Releases mit mehreren Partnern und fünf Reifestufen von Change Sets bis zur eigenen Pipeline."
 takeaways:
-  - "Jede Änderung kommt aus Git über eine feste Pipeline mit Review und Tests in Produktion, und Releases werden zu geplanten Terminen freigeschaltet."
+  - "Jede Änderung gelangt aus Git über eine feste Pipeline mit Review und Tests in die Produktion, und Releases werden zu geplanten Terminen freigeschaltet."
   - "Ein Deployment transportiert Metadaten in eine Org. Ein Release ist die geplante Freigabe für Anwender, mit Kommunikation und Abnahme durch den Fachbereich."
   - "Schlechte Releases kosten vor allem Nacharbeit über Teamgrenzen, wiederholte Tests in UAT und Stillstand im Service oder im Händlerportal."
   - "Change Sets funktionieren nur zwischen Orgs derselben Produktion und haben weder Daten noch Historie. Für mehrere Teams auf einer Org reichen sie nicht."
@@ -24,11 +24,11 @@ faq:
   - q: "Brauche ich für den Einstieg ein kommerzielles DevOps-Werkzeug?"
     a: "Nein. Ein Git-Repository, die Salesforce CLI und eine Open-Source-Lösung wie sfdx-hardis reichen für eine vollständige Pipeline. Kommerzielle Plattformen wie Gearset, Copado oder Flosum bieten mehr Oberfläche und Herstellersupport. Wichtig ist, dass die Wahl früh fällt und für alle Partner gilt."
   - q: "Wem sollte die Release-Pipeline gehören?"
-    a: "Ihnen als Auftraggeber. Repository, Pipeline und Werkzeuge laufen auf Ihren Namen, Partner arbeiten mit persönlichen Benutzern darin. So bleibt der Prozess stabil, wenn ein Partner wechselt."
+    a: "Ihnen als Auftraggeber. Repository, Pipeline und Werkzeuge sind auf Ihren Namen registriert, Partner arbeiten mit persönlichen Benutzern darin. So bleibt der Prozess stabil, wenn ein Partner wechselt."
 draft: false
 ---
 
-Release-Management für Salesforce entscheidet, ob ein Programm mit mehreren Partnern planbar bleibt. Sobald zwei Teams an derselben Org arbeiten, reicht es nicht mehr, Änderungen per Change Set von Sandbox zu Sandbox zu schieben. Sie brauchen ein Git-Repository als einzige Quelle der Wahrheit, eine Pipeline, die jede Änderung gleich prüft und ausrollt, und klare Regeln, wer was wann freigibt. Repository, Pipeline und Werkzeuge gehören dabei Ihnen als Auftraggeber, nicht dem Implementierungspartner. Der Weg dorthin führt in fünf Stufen von Change Sets zur eigenen Pipeline, und keine Stufe verlangt einen Big Bang.
+Release-Management für Salesforce entscheidet, ob ein Programm mit mehreren Partnern planbar bleibt. Sobald zwei Teams an derselben Org arbeiten, reicht es nicht mehr, Änderungen per Change Set von Sandbox zu Sandbox zu übertragen. Sie brauchen ein Git-Repository als einzige Quelle der Wahrheit, eine Pipeline, die jede Änderung gleich prüft und ausrollt, und klare Regeln, wer was wann freigibt. Repository, Pipeline und Werkzeuge gehören dabei Ihnen als Auftraggeber, nicht dem Implementierungspartner. Der Weg dorthin führt in fünf Stufen von Change Sets zur eigenen Pipeline, und keine Stufe verlangt einen Big Bang.
 
 ## Was bedeutet Release-Management für Salesforce?
 
@@ -45,20 +45,20 @@ titel: Sieben Begriffe, wie ich sie in dieser Masterclass verwende
 - **Release** ist ein geplantes Paket von Änderungen, das zu einem festen Termin für Anwender freigeschaltet wird. Dazu gehören Kommunikation, Schulung und die Abnahme durch den Fachbereich.
 ```
 
-Die Unterscheidung zwischen Deployment und Release ist für Entscheider die wichtigste. Deployments können täglich laufen, in Sandboxes sogar mehrmals am Tag. Ein Release ist eine fachliche Entscheidung: Der Leiter Service entscheidet, ab wann die Techniker im Außendienst (Field Service) die neue Rückmeldemaske nutzen. Wer beides verwechselt, plant entweder zu wenige Deployments und bekommt riesige, riskante Pakete, oder schaltet Funktionen frei, bevor der Fachbereich bereit ist.
+Die Unterscheidung zwischen Deployment und Release ist für Entscheider die wichtigste. Deployments können täglich laufen, in Sandboxes sogar mehrmals am Tag. Ein Release ist eine fachliche Entscheidung: Der Leiter Service entscheidet, ab wann die Techniker im Außendienst (Field Service) die neue Rückmeldemaske nutzen. Wer beides verwechselt, plant entweder zu wenige Deployments und erzeugt riesige, riskante Pakete, oder schaltet Funktionen frei, bevor der Fachbereich bereit ist.
 
-Ein Termin liegt dabei nie bei Ihnen. Salesforce liefert laut [Release-Übersicht](https://www.salesforce.com/products/innovation/releases/) drei saisonale Releases pro Jahr, typischerweise Spring im Februar, Summer im Juni und Winter im Oktober, mit einer Sandbox Preview von vier bis sechs Wochen vorher. Ihr Release-Kalender muss um diese Termine herum funktionieren. Wie, beschreibt [Kapitel 8](../release-planung-salesforce-releases/).
+Einige Termine legen Sie dabei nicht selbst fest. Salesforce liefert laut [Release-Übersicht](https://www.salesforce.com/products/innovation/releases/) drei saisonale Releases pro Jahr, typischerweise Spring im Februar, Summer im Juni und Winter im Oktober, mit einer Sandbox Preview von vier bis sechs Wochen vorher. Ihr Release-Kalender muss um diese Termine herum funktionieren. Wie, beschreibt [Kapitel 8](/masterclass/devops-release-management/release-planung-salesforce-releases/).
 
 ## Was kosten schlechte Releases in einem Programm mit mehreren Partnern?
 
-Ich habe ein Programm mit acht Teams und 32 Entwicklern begleitet, Orgs betreut, auf denen mehrere Implementierungspartner gleichzeitig arbeiteten, und mit Nearshore-Teams in Osteuropa und Indien gearbeitet. Ohne gemeinsamen Release-Prozess entstehen immer dieselben Muster, die ich in [warum DevOps über Salesforce-Großprojekte entscheidet](../../../blog/warum-devops-salesforce-enterprise-projekte/) ausführlicher beschreibe. Für ein Budget lassen sie sich in fünf Kostenarten übersetzen:
+Ich habe ein Programm mit acht Teams und 32 Entwicklern begleitet, Orgs betreut, auf denen mehrere Implementierungspartner gleichzeitig arbeiteten, und mit Nearshore-Teams in Osteuropa und Indien gearbeitet. Ohne gemeinsamen Release-Prozess entstehen immer dieselben Muster, die ich in [warum DevOps über Salesforce-Großprojekte entscheidet](/blog/warum-devops-salesforce-enterprise-projekte/) ausführlicher beschreibe. Für ein Budget lassen sie sich in fünf Kostenarten übersetzen:
 
 | Kostenart | Was passiert |
 |---|---|
 | Nacharbeit über Teamgrenzen | Team A deployt ein Page Layout, Team B einen Tag später dasselbe Objekt mit einem älteren Stand. Die Korrektur bindet beide Teams, und bei verteilten Teams in mehreren Zeitzonen dauert jede Abstimmung länger. |
 | Wiederholte Tests | Jedes fehlerhafte Deployment nach UAT macht die Testergebnisse anderer Teams wertlos. Key User aus Vertrieb und Service testen dieselben Fälle zweimal und verlieren das Vertrauen in die Abnahme. |
 | Stillstand im Fachbereich | Ein Fehler in Produktion trifft in der Fertigung oft die Prozesse mit dem meisten Kundenkontakt: Serviceaufträge, Ersatzteilbestellungen im Händlerportal, die Auftragsübergabe an SAP. |
-| Wachsende Pakete | Wer schlechte Erfahrungen mit Releases macht, released seltener. Seltenere Releases werden größer, größere Releases riskanter. Messbar wird das mit den [fünf Kennzahlen von DORA](https://dora.dev/guides/dora-metrics/), etwa der Deployment-Frequenz und der Change Fail Rate, dem Anteil der Deployments, die sofortige Nacharbeit wie ein Rollback oder einen Notfall-Patch brauchen. |
+| Wachsende Pakete | Wer schlechte Erfahrungen mit Releases macht, liefert seltener aus. Seltenere Releases werden größer, größere Releases riskanter. Messbar wird das mit den [fünf Kennzahlen von DORA](https://dora.dev/guides/dora-metrics/), etwa der Deployment-Frequenz und der Change Fail Rate, dem Anteil der Deployments, die sofortige Nacharbeit wie ein Rollback oder einen Notfall-Patch brauchen. |
 | Abhängigkeit und Schuldfrage | Ohne Historie im Repository kann niemand belegen, welcher Partner welche Änderung gemacht hat. Die Diskussion darüber kostet Steuerungszeit und belastet die Zusammenarbeit. |
 
 Angenommen, ein Maschinenbauer betreibt Service Cloud mit Field Service, ein Händlerportal auf Experience Cloud und eine Schnittstelle zu SAP. Drei Partner arbeiten auf derselben Org, je einer für Service, Vertrieb mit Portal und Integration. Am Freitagabend deployt der Vertriebspartner per Change Set eine neue Validierungsregel auf dem Auftragsobjekt. Sie ist in seiner Sandbox korrekt, kennt aber ein Feld nicht, das der Integrationspartner zwei Wochen zuvor eingeführt hat. Am Montag schlägt die nächtliche Auftragsübergabe aus SAP fehl, Händler sehen keine Liefertermine, und das Service-Team muss den eigenen UAT-Lauf verschieben, weil die Org nicht stabil ist. Keine dieser Kosten taucht als eigene Zeile im Projektbudget auf. Ein Validierungs-Deployment gegen den gemeinsamen Stand im Repository hätte den Konflikt vor dem Merge gezeigt.
@@ -107,15 +107,15 @@ titel: Wie funktionieren Validierung und Quick Deploy?
 Mit `sf project deploy validate` prüft die [Salesforce CLI](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_validate.html), ob ein Deployment gelingen würde, ohne etwas zu ändern. Nach einer erfolgreichen Validierung lässt sich das Paket bis zu zehn Tage lang per Quick Deploy ohne erneuten Testlauf ausrollen.
 ```
 
-Für die Stufen 3 bis 5 brauchen Sie ein Werkzeug. Eine Open-Source-Option ist [sfdx-hardis](https://sfdx-hardis.cloudity.com/), das Cloudity mit einer Community pflegt; es bringt Pipelines für GitHub, GitLab, Azure DevOps, Bitbucket und Jenkins sowie Monitoring und Metadaten-Backup mit. Ich setze es seit rund zwei Jahren in Kundenprojekten ein. Kommerzielle Plattformen wie [Gearset](https://gearset.com/), [Copado](https://www.copado.com/) oder [Flosum](https://www.flosum.com/products/devops) bieten eine verwaltete Oberfläche, Herstellersupport und weniger eigenen Betriebsaufwand; Flosum beschreibt sich als native Lösung auf der Salesforce-Plattform. Welches Werkzeug zu welchem Programm passt, vergleicht [Kapitel 4](../devops-werkzeuge-vergleich/). Für dieses Kapitel zählen zwei Regeln: Die Wahl fällt früh und gilt für jeden Partner. Und wenn Sie mit Open Source Lizenzkosten sparen, investieren Sie das Geld am besten in eine interne Release-Rolle.
+Für die Stufen 3 bis 5 brauchen Sie ein Werkzeug. Eine Open-Source-Option ist [sfdx-hardis](https://sfdx-hardis.cloudity.com/), das Cloudity mit einer Community pflegt; es bringt Pipelines für GitHub, GitLab, Azure DevOps, Bitbucket und Jenkins sowie Monitoring und Metadaten-Backup mit. Ich setze es seit rund zwei Jahren in Kundenprojekten ein. Kommerzielle Plattformen wie [Gearset](https://gearset.com/), [Copado](https://www.copado.com/) oder [Flosum](https://www.flosum.com/products/devops) bieten eine verwaltete Oberfläche, Herstellersupport und weniger eigenen Betriebsaufwand; Flosum beschreibt sich als native Lösung auf der Salesforce-Plattform. Welches Werkzeug zu welchem Programm passt, vergleicht [Kapitel 4](/masterclass/devops-release-management/devops-werkzeuge-vergleich/). Für dieses Kapitel zählen zwei Regeln: Die Wahl fällt früh und gilt für jeden Partner. Und wenn Sie mit Open Source Lizenzkosten sparen, investieren Sie das Geld am besten in eine interne Release-Rolle.
 
 ## Wem gehört der Release-Prozess?
 
-Ihnen. Das ist die Grundannahme aller folgenden Kapitel. Repository, Pipeline, DevOps-Werkzeug und Sandboxes laufen auf Ihren Namen, Partner bekommen persönliche Benutzer mit den Rechten, die ihre Aufgabe braucht. Warum das auch für Jira, Confluence und Miro gilt, beschreibe ich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
+Ihnen. Das ist die Grundannahme aller folgenden Kapitel. Repository, Pipeline, DevOps-Werkzeug und Sandboxes sind auf Ihren Namen registriert, Partner erhalten persönliche Benutzer mit den Rechten, die ihre Aufgabe braucht. Warum das auch für Jira, Confluence und Miro gilt, beschreibe ich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
-Der zweite Grundsatz: Jede Änderung geht über einen Pull Request mit Review, auch Flows und Permission Sets. Das Review ist die günstigste Stelle, an der ein Programm mit vielen Teams sich auf eine Bauweise einigt. Was ein gutes Review prüft, steht in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/).
+Der zweite Grundsatz: Jede Änderung geht über einen Pull Request mit Review, auch Flows und Permission Sets. Das Review ist die günstigste Stelle, an der ein Programm mit vielen Teams sich auf eine Bauweise einigt. Was ein gutes Review prüft, steht in [warum Pull-Request-Reviews Pflicht sind](/blog/warum-pull-request-reviews-pflicht-sind/).
 
-Beide Grundsätze sind eine Frage der Steuerung und gehören in die Verträge mit den Partnern. Genau dort setze ich in [DevOps und Release-Management](../../../leistungen/devops-und-release-management/) und in der [Partnersteuerung](../../../leistungen/partnersteuerung/) an.
+Beide Grundsätze sind eine Frage der Steuerung und gehören in die Verträge mit den Partnern. Genau dort setze ich in [DevOps und Release-Management](/leistungen/devops-und-release-management/) und in der [Partnersteuerung](/leistungen/partnersteuerung/) an.
 
 ## Der Weg durch die zehn Kapitel
 
@@ -124,27 +124,27 @@ Die Masterclass folgt einem Unternehmen auf diesem Weg. Jedes Kapitel baut auf d
 | Nr. | Kapitel | Die Frage dahinter |
 |---|---|---|
 | 1 | Warum Releases entscheiden | Welche Begriffe, welche Kosten, welcher Reifegrad? |
-| 2 | [Eigentum und Rollen](../release-prozess-eigentum-rollen/) | Wer besitzt was, wer gibt was frei, was steht im Partnervertrag? |
-| 3 | [Umgebungen und Branches](../umgebungen-und-branching/) | Welche Sandboxes, welches Branch-Modell, welcher Hotfix-Pfad? |
-| 4 | [Werkzeuge im Überblick](../devops-werkzeuge-vergleich/) | Salesforce-Standard, Open Source oder kommerzielle Plattform? |
-| 5 | [Die Pipeline bauen](../pipeline-aufbauen/) | Wie laufen Pull Request, Validierung, Tests und Deployment ab? |
-| 6 | [Qualität, Tests, Reviews](../qualitaet-tests-reviews/) | Welche Quality Gates muss jede Änderung bestehen? |
-| 7 | [Daten und Konfiguration](../daten-und-konfiguration/) | Wie kommen Preisbücher, Produktdaten und Konfigurationsdatensätze mit? |
-| 8 | [Release-Planung](../release-planung-salesforce-releases/) | Wie passen eigener Kalender und drei Salesforce-Releases zusammen? |
-| 9 | [Betrieb und Monitoring](../betrieb-monitoring-backup/) | Was passiert nach dem Go-live, wie messen Sie Stabilität? |
-| 10 | [Einführung und Fahrplan](../einfuehrung-fahrplan/) | In welcher Reihenfolge führen Sie das alles ein? |
+| 2 | [Eigentum und Rollen](/masterclass/devops-release-management/release-prozess-eigentum-rollen/) | Wer besitzt was, wer gibt was frei, was steht im Partnervertrag? |
+| 3 | [Umgebungen und Branches](/masterclass/devops-release-management/umgebungen-und-branching/) | Welche Sandboxes, welches Branch-Modell, welcher Hotfix-Pfad? |
+| 4 | [Werkzeuge im Überblick](/masterclass/devops-release-management/devops-werkzeuge-vergleich/) | Salesforce-Standard, Open Source oder kommerzielle Plattform? |
+| 5 | [Die Pipeline bauen](/masterclass/devops-release-management/pipeline-aufbauen/) | Wie laufen Pull Request, Validierung, Tests und Deployment ab? |
+| 6 | [Qualität, Tests, Reviews](/masterclass/devops-release-management/qualitaet-tests-reviews/) | Welche Quality Gates muss jede Änderung bestehen? |
+| 7 | [Daten und Konfiguration](/masterclass/devops-release-management/daten-und-konfiguration/) | Wie gelangen Preisbücher, Produktdaten und Konfigurationsdatensätze durch die Pipeline? |
+| 8 | [Release-Planung](/masterclass/devops-release-management/release-planung-salesforce-releases/) | Wie passen eigener Kalender und drei Salesforce-Releases zusammen? |
+| 9 | [Betrieb und Monitoring](/masterclass/devops-release-management/betrieb-monitoring-backup/) | Was passiert nach dem Go-live, wie messen Sie Stabilität? |
+| 10 | [Einführung und Fahrplan](/masterclass/devops-release-management/einfuehrung-fahrplan/) | In welcher Reihenfolge führen Sie das alles ein? |
 
-Kapitel 10 schlägt auch die Brücke zu Coding-Agenten in der Pipeline. Wer dazu tiefer einsteigen will, findet in der Masterclass KI das Kapitel [Teamarbeit und Delivery](../../ki-salesforce/teamarbeit-und-delivery/).
+Kapitel 10 schlägt auch die Brücke zu Coding-Agenten in der Pipeline. Wer dazu tiefer einsteigen will, findet in der Masterclass KI das Kapitel [Teamarbeit und Delivery](/masterclass/ki-salesforce/teamarbeit-und-delivery/).
 
 ## Wo stehen Sie heute?
 
 Sechs Fragen genügen für eine erste Einordnung. Sie sollten jede in einem Satz beantworten können:
 
-- Auf wessen Namen laufen Git-Repository und DevOps-Werkzeug?
+- Auf wessen Namen sind Git-Repository und DevOps-Werkzeug registriert?
 - Kann heute jemand in Produktion etwas im Setup ändern, ohne dass es im Repository auftaucht?
-- Läuft jede Änderung über einen Pull Request mit Review, auch die des Partners mit dem größten Team?
+- Durchläuft jede Änderung einen Pull Request mit Review, auch die des Partners mit dem größten Team?
 - Welcher Stand ist gerade in UAT, und woher wissen Sie das?
 - Wer gibt ein Release frei, und wer entscheidet über einen Hotfix?
 - Wie lange dauert es, eine fehlerhafte Änderung in Produktion zurückzunehmen?
 
-Wenn Sie bei mehr als zwei Fragen zögern, liegt Ihr Programm in Stufe 1 oder 2. Dann klären Sie zuerst Eigentum und Rollen und erst danach das Werkzeug. Damit geht es weiter in [Kapitel 2: Eigentum und Rollen](../release-prozess-eigentum-rollen/).
+Wenn Sie bei mehr als zwei Fragen zögern, liegt Ihr Programm in Stufe 1 oder 2. Dann klären Sie zuerst Eigentum und Rollen und erst danach das Werkzeug. Damit geht es weiter in [Kapitel 2: Eigentum und Rollen](/masterclass/devops-release-management/release-prozess-eigentum-rollen/).

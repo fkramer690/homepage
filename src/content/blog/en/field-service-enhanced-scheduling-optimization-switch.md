@@ -31,7 +31,7 @@ An existing Field Service org should move to Enhanced Scheduling and Optimizatio
 
 ## What is Enhanced Scheduling and Optimization?
 
-Enhanced Scheduling and Optimization, often shortened to ESO, is the newer engine behind scheduling in Salesforce Field Service. It does the same job as the older engine: it reads the scheduling policy, filters out technicians with work rules, ranks the rest with service objectives and books a slot. How that decision works is covered in [how much Field Service scheduling should be automatic](../salesforce-field-service-scheduling-automation/).
+Enhanced Scheduling and Optimization, often shortened to ESO, is the newer engine behind scheduling in Salesforce Field Service. It does the same job as the older engine: it reads the scheduling policy, filters out technicians with work rules, ranks the rest with service objectives and books a slot. How that decision works is covered in [how much Field Service scheduling should be automatic](/en/blog/salesforce-field-service-scheduling-automation/).
 
 The [Summer '23 release notes](https://resources.docs.salesforce.com/244/latest/en-us/sfdc/pdf/salesforce_summer23_release_notes.pdf) say that the enhanced engine is available for new users by default. The current [Field Service guide](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/support_field_service.pdf) says it plainly: new orgs have Enhanced Scheduling and Optimization enabled for all service territories, and existing orgs can switch all territories or enable it per territory.
 
@@ -73,7 +73,7 @@ title: Which work rules behave differently?
 - **In-day optimization** has a different run time.
 ```
 
-Most of these points have one thing in common: empty fields. These include appointments without a territory, resources without a value in a checkbox field and work orders with a missing match field. On the older engine, these gaps may have been harmless by chance. On the new engine, they lead to different candidates. That is why the switch is first and foremost a data project, and why I would start with the checks from [what data Field Service scheduling needs](../salesforce-field-service-master-data/).
+Most of these points have one thing in common: empty fields. These include appointments without a territory, resources without a value in a checkbox field and work orders with a missing match field. On the older engine, these gaps may have been harmless by chance. On the new engine, they lead to different candidates. That is why the switch is first and foremost a data project, and why I would start with the checks from [what data Field Service scheduling needs](/en/blog/salesforce-field-service-master-data/).
 
 One change helps manufacturers directly. Appointments that violate a rule could not be optimized on the older engine. With the enhanced engine, optimization can find an acceptable slot for them or drop them from the schedule.
 
@@ -81,7 +81,7 @@ One change helps manufacturers directly. Appointments that violate a rule could 
 
 Salesforce now has two dispatcher screens: the Classic Dispatch Console with the familiar Gantt, and the new Scheduling Console. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-quick-look/didispatch-smarter-with-the-scheduling-console), the Scheduling Console is available only with Enhanced Scheduling and Optimization.
 
-This creates a one-way dependency between two decisions that may look separate. An org that stays on the older engine also stays on the Classic Dispatch Console, while an org on the enhanced engine can keep the Classic Dispatch Console during the transition. New console features, such as AI explanations for proposed slots or multiday jobs shown as one connected job in Winter '27, then remain out of reach. Whether dispatchers should move now is covered in [the Field Service Scheduling Console: move dispatchers now?](../field-service-scheduling-console-dispatchers/).
+This creates a one-way dependency between two decisions that may look separate. An org that stays on the older engine also stays on the Classic Dispatch Console, while an org on the enhanced engine can keep the Classic Dispatch Console during the transition. New console features, such as AI explanations for proposed slots or multiday jobs shown as one connected job in Winter '27, then remain out of reach. Whether dispatchers should move now is covered in [the Field Service Scheduling Console: move dispatchers now?](/en/blog/field-service-scheduling-console-dispatchers/).
 
 ## Worked example: one pilot territory first
 
@@ -98,8 +98,8 @@ Comparison
   If the share of changed proposals in the pilot territory is no higher than in the others, and travel time, overtime and unscheduled appointments do not get worse, the remaining territories follow one per week.
 ```
 
-This configuration, including the territory setting, scheduling policies and work rules, consists of records rather than metadata. It belongs in the pipeline as described in the DevOps masterclass chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/), otherwise the tested sandbox state and production drift apart.
+This configuration, including the territory setting, scheduling policies and work rules, consists of records rather than metadata. It belongs in the pipeline as described in the DevOps masterclass chapter on [data and configuration](/en/masterclass/devops-release-management/data-and-configuration/), otherwise the tested sandbox state and production drift apart.
 
 ## List appointments without a territory, work rules and recipes
 
-Start with three lists: appointments without a territory, work rules that reference fields which are often empty, and recipes currently in use. They show how much work the switch will require. Then pick the territory with the cleanest data as the pilot. How the engine fits into dispatching as a whole is covered in the masterclass chapter on [scheduling and dispatch](../../masterclass/field-service/field-service-scheduling-dispatch/).
+Start with three lists: appointments without a territory, work rules that reference fields which are often empty, and recipes currently in use. They show how much work the switch will require. Then pick the territory with the cleanest data as the pilot. How the engine fits into dispatching as a whole is covered in the masterclass chapter on [scheduling and dispatch](/en/masterclass/field-service/field-service-scheduling-dispatch/).

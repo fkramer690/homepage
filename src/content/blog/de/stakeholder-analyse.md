@@ -77,7 +77,7 @@ Die bekannteste Form ist die Einfluss-Interesse-Matrix, die häufig Aubrey Mende
 
 Für das Projektmanagement reicht diese Matrix oft. Im Change Management fehlt ihr eine Achse. Die Gruppe, die eine neue Software jeden Tag nutzen muss, hat oft wenig formellen Einfluss und am Anfang auch wenig Interesse. In der klassischen Matrix wird sie dann leicht „Beobachten“ zugeordnet. Genau diese Gruppe entscheidet aber, ob die Veränderung im Alltag ankommt.
 
-Deshalb arbeite ich im Change Management mit einer zweiten Sicht: **Einfluss mal Betroffenheit**. Gruppen mit hoher Betroffenheit brauchen immer einen eigenen Plan, unabhängig von ihrem Einfluss. Gruppen mit hohem Einfluss und geringer Betroffenheit brauchen vor allem Information und gelegentlich eine Entscheidung. So wird aus der Stakeholder-Analyse die Grundlage für den Change-Plan je Gruppe, wie ich ihn in [Was ist Change Management?](../was-ist-change-management/) beschreibe.
+Deshalb arbeite ich im Change Management mit einer zweiten Sicht: **Einfluss mal Betroffenheit**. Gruppen mit hoher Betroffenheit brauchen immer einen eigenen Plan, unabhängig von ihrem Einfluss. Gruppen mit hohem Einfluss und geringer Betroffenheit brauchen vor allem Information und gelegentlich eine Entscheidung. So wird aus der Stakeholder-Analyse die Grundlage für den Change-Plan je Gruppe, wie ich ihn in [Was ist Change Management?](/blog/was-ist-change-management/) beschreibe.
 
 ## Beispiel: Stakeholder-Analyse für eine CRM-Einführung
 
@@ -92,15 +92,15 @@ Nehmen wir ein Unternehmen, das ein CRM-System wie Salesforce für Vertrieb und 
 | IT-Betrieb | mittel | mittel | unterstützend | Betriebsübergabe planen | IT-Leitung |
 | Controlling | niedrig | mittel | neutral | über neue Berichte informieren | Projektleitung |
 
-Beim Betriebsrat steht „unbekannt“; das ist ehrlicher als eine Schätzung. Bei technischen Einrichtungen, die geeignet sind, Verhalten oder Leistung der Beschäftigten zu überwachen, hat er in Deutschland ein Mitbestimmungsrecht nach [§ 87 Abs. 1 Nr. 6 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html), deshalb gehört das Gespräch an den Anfang, bevor Aktivitätsberichte und Auswertungen konfiguriert werden. Der Außendienst ist die kritischste Gruppe: stark betroffen, mit genug informellem Einfluss, um das System zu umgehen, und skeptisch. Hier hilft keine Rundmail, sondern die eigene Führungskraft sowie Kolleginnen und Kollegen als [Key User](../salesforce-key-user-netzwerk/). Für jede Zeile ist eine Person verantwortlich, und das ist selten die Change-Managerin.
+Beim Betriebsrat steht „unbekannt“; das ist ehrlicher als eine Schätzung. Bei technischen Einrichtungen, die geeignet sind, Verhalten oder Leistung der Beschäftigten zu überwachen, hat er in Deutschland ein Mitbestimmungsrecht nach [§ 87 Abs. 1 Nr. 6 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html), deshalb gehört das Gespräch an den Anfang, bevor Aktivitätsberichte und Auswertungen konfiguriert werden. Der Außendienst ist die kritischste Gruppe: stark betroffen, mit genug informellem Einfluss, um das System zu umgehen, und skeptisch. Hier hilft keine Rundmail, sondern die eigene Führungskraft sowie Kolleginnen und Kollegen als [Key User](/blog/salesforce-key-user-netzwerk/). Für jede Zeile ist eine Person verantwortlich, und das ist selten die Change-Managerin.
 
-Die Spalte ADKAR-Stufe habe ich im Beispiel weggelassen, in der Vorlage ist sie enthalten. Sie zeigt, wo eine Gruppe im Moment steht: Fehlt das Bewusstsein, warum sich etwas ändert, oder fehlt das Wissen, wie es geht? Je nach Antwort ist die Maßnahme eine ganz andere. Wie das Modell funktioniert, steht in [Change-Management-Modelle im Vergleich](../change-management-modelle/).
+Die Spalte ADKAR-Stufe habe ich im Beispiel weggelassen, in der Vorlage ist sie enthalten. Sie zeigt, wo eine Gruppe im Moment steht: Fehlt das Bewusstsein, warum sich etwas ändert, oder fehlt das Wissen, wie es geht? Je nach Antwort ist die Maßnahme eine ganz andere. Wie das Modell funktioniert, steht in [Change-Management-Modelle im Vergleich](/blog/change-management-modelle/).
 
 In größeren Vorhaben wächst die Tabelle schnell. Bei einem weltweiten Rollout der Salesforce Sales Cloud mit mehr als 500 Anwenderinnen und Anwendern in den USA, Asien und Europa, den ich begleitet habe, musste jede Gruppe zusätzlich nach Land aufgeteilt werden, weil Führung, Sprache und Haltung je Land verschieden sind. Bei einer IT-Transformation mit mehr als 20.000 Betroffenen in 19 Ländern arbeitet man mit Gruppen je Funktion und Region, nicht mit Einzelpersonen.
 
 ## Vorlage für die Stakeholder-Analyse
 
-Die [Vorlage als Excel-Datei](../../downloads/stakeholder-analyse-vorlage.xlsx) enthält zwei Blätter: eine leere Tabelle mit allen Spalten und das Beispiel von oben, um die ADKAR-Stufe ergänzt. Die Spalten:
+Die [Vorlage als Excel-Datei](/downloads/stakeholder-analyse-vorlage.xlsx) enthält zwei Blätter: eine leere Tabelle mit allen Spalten und das Beispiel von oben, um die ADKAR-Stufe ergänzt. Die Spalten:
 
 - **Gruppe oder Person:** so fein abgegrenzt, dass eine Maßnahme passt.
 - **Was ändert sich:** ein Satz zum Alltag nach der Veränderung.
@@ -121,10 +121,10 @@ Typisch sind diese:
 - **Gruppen sind zu grob.** „Vertrieb“ ist keine Gruppe, wenn Außendienst, Innendienst und Key Account Management völlig unterschiedlich betroffen sind.
 - **Haltung wird geraten.** Wenn niemand mit einer Gruppe gesprochen hat, steht dort „unbekannt“ und eine Maßnahme, die das ändert.
 - **Die stark Betroffenen fehlen in der Strategie.** Die klassische Matrix übersieht sie, weil sie wenig formellen Einfluss haben.
-- **Es fehlt die Verbindung zum Kommunikationsplan.** Aus der Analyse folgt, wer was wann von wem hört. Wie Sie das aufbauen, beschreibe ich im Artikel zum [Kommunikationsplan im Change Management](../kommunikationsplan-change-management/).
+- **Es fehlt die Verbindung zum Kommunikationsplan.** Aus der Analyse folgt, wer was wann von wem hört. Wie Sie das aufbauen, beschreibe ich im Artikel zum [Kommunikationsplan im Change Management](/blog/kommunikationsplan-change-management/).
 
 ## Unterstützung lohnt sich bei unklaren Haltungen und heiklen Gesprächen
 
-Für ein Vorhaben mit drei, vier Gruppen kann die Projektleitung die Analyse mit der Vorlage allein erstellen. Unterstützung lohnt sich, wenn viele Gruppen oder Länder betroffen sind, wenn die Haltung wichtiger Gruppen unklar ist oder wenn intern niemand die heiklen Gespräche führen kann, etwa mit dem Betriebsrat oder einer skeptischen Führungskraft. In Salesforce-Programmen arbeite ich dabei mit Fabian Kramer zusammen; wie wir das aufsetzen, steht in [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/) und auf der Seite [Change Management Beratung für Salesforce](../../leistungen/change-management/).
+Für ein Vorhaben mit drei, vier Gruppen kann die Projektleitung die Analyse mit der Vorlage allein erstellen. Unterstützung lohnt sich, wenn viele Gruppen oder Länder betroffen sind, wenn die Haltung wichtiger Gruppen unklar ist oder wenn intern niemand die heiklen Gespräche führen kann, etwa mit dem Betriebsrat oder einer skeptischen Führungskraft. In Salesforce-Programmen arbeite ich dabei mit Fabian Kramer zusammen; wie wir das aufsetzen, steht in [Salesforce Change Management: warum Einführungen scheitern](/blog/change-management-salesforce-einfuehrung/) und auf der Seite [Change Management Beratung für Salesforce](/leistungen/change-management/).
 
 *Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.*

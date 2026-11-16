@@ -32,7 +32,7 @@ Agentforce is Salesforce's platform for AI agents: software that uses generative
 
 In its [Agentforce Guide](https://www.salesforce.com/agentforce/guide/), Salesforce describes Agentforce as a platform for building agents that go beyond simple chat interactions. According to Salesforce, an agent is a type of software that uses generative AI to make decisions about what to do next and how to do it.
 
-The difference from earlier automation is that decision. A flow runs a process whose paths and criteria were modeled in advance. An agent receives a request in natural language, such as "When will my spare parts order arrive?", recognises the task, picks an action and writes the answer. Agents work in customer service, in sales or for employees. They can be called from chat and portals, from Flow or Apex, and through an API, as described in [Agentforce Agent API](../agentforce-agent-api-dealer-apps/).
+The difference from earlier automation is that decision. A flow runs a process whose paths and criteria were modeled in advance. An agent receives a request in natural language, such as "When will my spare parts order arrive?", recognises the task, picks an action and writes the answer. Agents work in customer service, in sales or for employees. They can be called from chat and portals, from Flow or Apex, and through an API, as described in [Agentforce Agent API](/en/blog/agentforce-agent-api-dealer-apps/).
 
 ## What you configure and what runs underneath
 
@@ -50,13 +50,13 @@ Data 360 | Depends on use | Needed for native knowledge from your documents and 
 note: An agent can only do what its actions can do. The actions are where architecture work happens.
 ```
 
-One point in the table surprises many: according to [Salesforce Help on the trust layer](https://help.salesforce.com/s/articleView?id=sf.copilot_trust.htm&language=en_US&type=5), pattern-based and field-based data masking is disabled for agents. Protecting sensitive data therefore depends on what the agent user and the actions are allowed to read in the first place. What the trust layer does instead is described in [Einstein Trust Layer: what it protects in Agentforce](../einstein-trust-layer-what-it-protects/).
+One point in the table surprises many: according to [Salesforce Help on the trust layer](https://help.salesforce.com/s/articleView?id=sf.copilot_trust.htm&language=en_US&type=5), pattern-based and field-based data masking is disabled for agents. Protecting sensitive data therefore depends on what the agent user and the actions are allowed to read in the first place. What the trust layer does instead is described in [Einstein Trust Layer: what it protects in Agentforce](/en/blog/einstein-trust-layer-what-it-protects/).
 
 ```hinweis achtung
 The permissions depend on the agent type. An employee agent can run in the context of the logged-in user. A service agent for customers or dealers usually runs as a dedicated agent user. For a dealer portal, that is the core question. The portal user must be authenticated, and each action must derive the dealer from that verified login, not from what someone types into the chat. Only then do the agent user's rights and the filters in the actions restrict each dealer to its own installed base.
 ```
 
-How to protect such a portal against manipulated input is covered in [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/).
+How to protect such a portal against manipulated input is covered in [prompt injection in dealer portals](/en/blog/prompt-injection-dealer-portals-agentforce/).
 
 Salesforce has renamed topics to subagents. Older Trailhead modules and articles, including some of my own, still say "topics". They mean the same thing. Whether a planned action needs an extra license depends on what it invokes, for example a product-specific standard action. Check this for each action before you estimate costs.
 
@@ -66,7 +66,7 @@ A common objection to AI agents is that their behavior is not predictable. Sales
 
 For manufacturers, this suggests a division of responsibilities. Whether a warranty applies, which price a dealer gets or whether a spare part fits an asset should be checked by a deterministic action, such as a flow, Apex or a call to the ERP. Agent Script makes sure the agent calls that check before it answers, and the language model phrases the answer.
 
-Testing follows the same logic. The Testing Center runs defined test cases repeatedly and evaluates whether the right subagents and actions were selected and what results they produced. It supports the release, but it does not replace business acceptance, integration and security tests. How to prepare an agent for production is described in [testing Agentforce agents](../testing-agentforce-agents-before-go-live/).
+Testing follows the same logic. The Testing Center runs defined test cases repeatedly and evaluates whether the right subagents and actions were selected and what results they produced. It supports the release, but it does not replace business acceptance, integration and security tests. How to prepare an agent for production is described in [testing Agentforce agents](/en/blog/testing-agentforce-agents-before-go-live/).
 
 ## How does Agentforce differ from bots and Prompt Builder?
 
@@ -81,7 +81,7 @@ Agentforce agent | Chooses subagents and actions per request, reads and changes 
 note: Many tasks in service and sales do not need an agent. A flow with a prompt template is usually simpler to test.
 ```
 
-According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.bots_service_terminology.htm&language=en_US&type=5), Einstein Bots have been in maintenance mode since 17 August 2026; for new implementations, Salesforce points to Agentforce. When switching pays off is covered in [moving an Einstein Bot to Agentforce](../einstein-bots-to-agentforce-upgrade/), and when a template is enough is covered in [Prompt Builder or Agentforce agent](../prompt-builder-or-agentforce-agent/).
+According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.bots_service_terminology.htm&language=en_US&type=5), Einstein Bots have been in maintenance mode since 17 August 2026; for new implementations, Salesforce points to Agentforce. When switching pays off is covered in [moving an Einstein Bot to Agentforce](/en/blog/einstein-bots-to-agentforce-upgrade/), and when a template is enough is covered in [Prompt Builder or Agentforce agent](/en/blog/prompt-builder-or-agentforce-agent/).
 
 ## What does Agentforce cost?
 
@@ -95,18 +95,18 @@ $0.10 | per standard action at $500 per 100,000 credits
 source: Salesforce Agentforce pricing page and Flex Credits rate card, list prices as of November 2026
 ```
 
-These are list prices, not contract prices. Depending on the license and context, prompts priced by model tier and Data 360 processing may be added. How to estimate this for one agent is shown in [Flex Credits: Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), which also compares flat fees such as the AELA.
+These are list prices, not contract prices. Depending on the license and context, prompts priced by model tier and Data 360 processing may be added. How to estimate this for one agent is shown in [Flex Credits: Agentforce cost per action](/en/blog/flex-credits-agentforce-cost-per-action/), which also compares flat fees such as the AELA.
 
-Another question to address early is which language model answers and where it runs, covered in [Agentforce data residency](../agentforce-eu-data-residency-models/).
+Another question to address early is which language model answers and where it runs, covered in [Agentforce data residency](/en/blog/agentforce-eu-data-residency-models/).
 
 ## For manufacturers, the data from the ERP counts
 
-An agent in the dealer portal that does not know the order status does not help anyone. For manufacturers, the data customers and dealers ask about is often in the ERP or the installed base: order status and confirmed delivery dates, stock, customer-specific prices, serial numbers and the spare parts that fit a machine. The agent needs actions that query these sources, for example through MuleSoft, as in [Agentforce and SAP: order status via MuleSoft](../agentforce-sap-order-status-mulesoft/).
+An agent in the dealer portal that does not know the order status does not help anyone. For manufacturers, the data customers and dealers ask about is often in the ERP or the installed base: order status and confirmed delivery dates, stock, customer-specific prices, serial numbers and the spare parts that fit a machine. The agent needs actions that query these sources, for example through MuleSoft, as in [Agentforce and SAP: order status via MuleSoft](/en/blog/agentforce-sap-order-status-mulesoft/).
 
 Three questions determine whether that works. Which dealer may see which assets and prices? What does the agent say when the ERP is down or the data is old? And which dates may the agent pass on? Before go-live, decide which system is the system of record for the delivery date, which status the date has, whether that status may be shared with a customer and when a person has to approve, for example for a return. Read-only actions are the easier start. As soon as an agent changes something in the ERP, the interface needs the same checks as for someone in inside sales: permission, plausibility and a log.
 
-The quality of the data in Salesforce matters just as much. If assets are assigned to the wrong customer, the agent gives wrong answers, only faster and more politely. Why business value and data quality come first is in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
+The quality of the data in Salesforce matters just as much. If assets are assigned to the wrong customer, the agent gives wrong answers, only faster and more politely. Why business value and data quality come first is in [Agentforce: business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/).
 
 ## Pick one process with a target figure for the first agent
 
-To start, pick a process with many similar requests, clear rules and data an action can access, such as order status or spare parts requests from dealers. Set target metrics that measure the result, not just deflection: the share of correctly resolved requests, how often customers come back with the same question, correct handovers to people and the cost per resolved request. Set a date to decide whether to expand. The criteria that matter are described in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/). The architecture questions behind it, from actions and permissions to ERP integration, are part of my [Salesforce architecture](../../services/salesforce-architecture/) service.
+To start, pick a process with many similar requests, clear rules and data an action can access, such as order status or spare parts requests from dealers. Set target metrics that measure the result, not just deflection: the share of correctly resolved requests, how often customers come back with the same question, correct handovers to people and the cost per resolved request. Set a date to decide whether to expand. The criteria that matter are described in [Agentforce for manufacturers: start now or wait?](/en/blog/agentforce-yes-or-no-manufacturers/). The architecture questions behind it, from actions and permissions to ERP integration, are part of my [Salesforce architecture](/en/services/salesforce-architecture/) service.

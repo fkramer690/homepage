@@ -49,7 +49,7 @@ Salesforce verkauft die meisten Lizenzen pro Nutzer. Die Lizenz legt die Obergre
 | Service Portal Login | Kunden, die sich selten anmelden (setzt eine Service-Cloud-Edition voraus) | 4 € pro Login |
 | Partner Relationship Management | Händler und Partner im Portal | 25 € pro Mitglied |
 
-Die Preise stammen von den Salesforce-Seiten für [Sales Cloud](https://www.salesforce.com/products/sales-cloud-pricing/), [Platform](https://www.salesforce.com/eu/editions-pricing/app-cloud/), [Field Service](https://www.salesforce.com/service/field-service-management/pricing/), [Self-Service-Portale](https://www.salesforce.com/products/customer-self-service-pricing/) und [Partnerportale](https://www.salesforce.com/products/experience-cloud/pricing/partner-relationship-management/). Listenpreise sind ein Ausgangspunkt, keine Lösungskosten: Field Service braucht zum Beispiel zusätzlich mindestens eine Service-Cloud-Lizenz und eine Dispatcher-Lizenz. Seit 5. November 2026 listet die US-Seite von Field Service außerdem Field-Service+-Editionen auf, siehe [Field-Service-Lizenzen nach Rolle](../field-service-lizenzen-rollen-dispatcher-techniker/).
+Die Preise stammen von den Salesforce-Seiten für [Sales Cloud](https://www.salesforce.com/products/sales-cloud-pricing/), [Platform](https://www.salesforce.com/eu/editions-pricing/app-cloud/), [Field Service](https://www.salesforce.com/service/field-service-management/pricing/), [Self-Service-Portale](https://www.salesforce.com/products/customer-self-service-pricing/) und [Partnerportale](https://www.salesforce.com/products/experience-cloud/pricing/partner-relationship-management/). Listenpreise sind ein Ausgangspunkt, keine Lösungskosten: Field Service braucht zum Beispiel zusätzlich mindestens eine Service-Cloud-Lizenz und eine Dispatcher-Lizenz. Seit 5. November 2026 listet die US-Seite von Field Service außerdem Field-Service+-Editionen auf, siehe [Field-Service-Lizenzen nach Rolle](/blog/field-service-lizenzen-rollen-dispatcher-techniker/).
 
 Dazu kommen Schnittstellen. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.integration_user.htm&type=5) erhalten Orgs in Enterprise, Unlimited und Performance Edition derzeit fünf kostenlose Salesforce-Integration-Lizenzen. Sie erlauben nur API-Zugriff, keine Benutzeroberfläche. Für eine typische Schnittstelle zu SAP prüfen Sie deshalb zuerst die Integrationslizenz, bevor Sie eine volle Lizenz vergeben, weil ein technischer Benutzer mit voller Lizenz meist mehr Rechte hat als nötig. Prüfen Sie vorher, welche Objekte, APIs und Paketrechte benötigt werden.
 
@@ -76,7 +76,7 @@ Ein Rechenbeispiel mit Listenpreisen: 100 Nutzer lesen Accounts und Kontakte und
 quelle: Salesforce-Preisseiten für Sales Cloud und Platform, Listenpreise Stand Oktober 2026
 ```
 
-Bei externen Nutzern ist der Fehler noch teurer. Für Händler oder Kunden, die mit internen Lizenzen arbeiten, weil ein Portal „später“ folgen sollte, fällt ein Vielfaches der Kosten einer Portallizenz an. Käufer, die in einem B2B-Shop bestellen, brauchen einen eigenen Lizenztyp, siehe [B2B Commerce Lizenzen für Käufer: Wer braucht welche?](../b2b-commerce-lizenzen-kaeufer/).
+Bei externen Nutzern ist der Fehler noch teurer. Für Händler oder Kunden, die mit internen Lizenzen arbeiten, weil ein Portal „später“ folgen sollte, fällt ein Vielfaches der Kosten einer Portallizenz an. Käufer, die in einem B2B-Shop bestellen, brauchen einen eigenen Lizenztyp, siehe [B2B Commerce Lizenzen für Käufer: Wer braucht welche?](/blog/b2b-commerce-lizenzen-kaeufer/).
 
 ## Keine Opportunities, wenige Custom Objects: die Grenzen der Platform-Lizenz
 
@@ -115,7 +115,7 @@ Der Zeitpunkt zählt auch. Das [Geschäftsjahr von Salesforce](https://investor.
 
 Sparen um jeden Preis ist auch falsch. Eine volle Lizenz ist richtig, wenn ein Nutzer Leads, Opportunities oder Forecasts bearbeitet oder als Servicemitarbeiter Fälle bearbeitet, auch wenn er das nur gelegentlich tut. Sie ist auch richtig, wenn absehbar ist, dass eine Gruppe in einem Jahr mehr Funktionen braucht. Ein Lizenzwechsel mitten in der Vertragslaufzeit kostet Verhandlungszeit, und ein Prozess, der um eine zu kleine Lizenz herumgebaut wurde, kostet Wartung.
 
-Dieselbe Abwägung gilt bei Industry Clouds. Wann sich zum Beispiel die Manufacturing Cloud gegenüber Sales Cloud lohnt, ist eine eigene Make-or-buy-Frage, die ich unter [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/) beschreibe. Bei KI-Funktionen fallen je nach Produkt zusätzlich Kosten pro Nutzer oder verbrauchsabhängige Kosten an, und dort zählt zuerst der Nutzen, wie in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) beschrieben.
+Dieselbe Abwägung gilt bei Industry Clouds. Wann sich zum Beispiel die Manufacturing Cloud gegenüber Sales Cloud lohnt, ist eine eigene Make-or-buy-Frage, die ich unter [Make-or-buy und Lizenzprognosen](/leistungen/make-or-buy-lizenzen/) beschreibe. Bei KI-Funktionen fallen je nach Produkt zusätzlich Kosten pro Nutzer oder verbrauchsabhängige Kosten an, und dort zählt zuerst der Nutzen, wie in [Agentforce: Business Value und Datenqualität zuerst](/blog/agentforce-business-value-datenqualitaet/) beschrieben.
 
 ## Prüfen, wer im letzten Jahr an Opportunities oder Fällen gearbeitet hat
 

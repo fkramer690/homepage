@@ -49,7 +49,7 @@ Salesforce sells most licenses per user. A user's license sets the upper limit o
 | Service Portal Login | Customers who rarely log in (requires a Service Cloud edition) | $4 per login |
 | Partner Relationship Management | Dealers and partners in a portal | $25 per member |
 
-The prices come from the Salesforce pages for [Sales Cloud](https://www.salesforce.com/products/sales-cloud-pricing/), [Platform](https://www.salesforce.com/eu/editions-pricing/app-cloud/), [Field Service](https://www.salesforce.com/service/field-service-management/pricing/), [self-service portals](https://www.salesforce.com/products/customer-self-service-pricing/) and [partner portals](https://www.salesforce.com/products/experience-cloud/pricing/partner-relationship-management/). List prices are a starting point, not the total cost of a solution: Field Service, for example, also needs at least one Service Cloud and one Dispatcher license. Since 5 November 2026 the US Field Service page also lists Field Service+ editions, see [Field Service licenses by role](../field-service-licences-by-role/).
+The prices come from the Salesforce pages for [Sales Cloud](https://www.salesforce.com/products/sales-cloud-pricing/), [Platform](https://www.salesforce.com/eu/editions-pricing/app-cloud/), [Field Service](https://www.salesforce.com/service/field-service-management/pricing/), [self-service portals](https://www.salesforce.com/products/customer-self-service-pricing/) and [partner portals](https://www.salesforce.com/products/experience-cloud/pricing/partner-relationship-management/). List prices are a starting point, not the total cost of a solution: Field Service, for example, also needs at least one Service Cloud and one Dispatcher license. Since 5 November 2026 the US Field Service page also lists Field Service+ editions, see [Field Service licenses by role](/en/blog/field-service-licences-by-role/).
 
 Then there are interfaces. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.integration_user.htm&type=5), orgs on Enterprise, Unlimited and Performance Edition currently get five free Salesforce Integration licenses. They allow API access only and do not include a user interface. A typical SAP interface should therefore be checked for an Integration license before anyone assigns a full license, because a technical user with a full license usually has more rights than the integration needs. Check required objects, APIs and package entitlements first.
 
@@ -76,7 +76,7 @@ $204,000 | Difference per year for 100 users who only read and approve
 source: Salesforce pricing pages for Sales Cloud and Platform, list prices October 2026
 ```
 
-With external users the mistake costs even more. Dealers or customers who use internal licenses because a portal was supposed to come "later" cost many times more than a portal license. Buyers who order in a B2B store need their own license type, covered in [B2B Commerce buyer licenses: who needs which one?](../b2b-commerce-buyer-licences/).
+With external users the mistake costs even more. Dealers or customers who use internal licenses because a portal was supposed to come "later" cost many times more than a portal license. Buyers who order in a B2B store need their own license type, covered in [B2B Commerce buyer licenses: who needs which one?](/en/blog/b2b-commerce-buyer-licences/).
 
 ## No opportunities, few custom objects: the limits of a Platform license
 
@@ -115,7 +115,7 @@ Timing matters too. Salesforce's [fiscal year](https://investor.salesforce.com/n
 
 Saving at all costs is wrong too. A full license is right when a user works on leads, opportunities or forecasts, or handles cases as a service agent, even occasionally. It is also right when a group will clearly need more within a year. Changing licenses in the middle of a contract costs negotiation time, and a process built around a license that is too small costs maintenance.
 
-The same trade-off applies to industry clouds. Whether Manufacturing Cloud pays off compared to Sales Cloud, for example, is a separate make-or-buy question, which I describe under [make-or-buy and license forecasts](../../services/make-or-buy-licences/). AI features can add user-based or consumption-based charges, and in that case the business value comes first, as described in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
+The same trade-off applies to industry clouds. Whether Manufacturing Cloud pays off compared to Sales Cloud, for example, is a separate make-or-buy question, which I describe under [make-or-buy and license forecasts](/en/services/make-or-buy-licences/). AI features can add user-based or consumption-based charges, and in that case the business value comes first, as described in [Agentforce: business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/).
 
 ## Check who worked on opportunities or cases in the last year
 

@@ -31,7 +31,7 @@ The Revenue Cloud configurator with the constraint rules engine is enough for te
 
 ## What can the Revenue Cloud configurator do?
 
-The Product Configurator is the interface in which sales teams pick options for a bundle and set attribute values. It adds the configured product to the quote or order, and configurations can be saved and reused, according to the [Trailhead unit on the configurator](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/get-started-with-product-configurator). Trailhead describes three approaches that scale with product complexity: basic validation rules, selection rules and constraint-based modeling. (Salesforce Help now calls the product Revenue Management, Trailhead Agentforce Revenue Management, and the licenses are still Revenue Cloud Growth and Advanced; the [product names article](../revenue-cloud-product-names-rlm-rca/) sorts this out.)
+The Product Configurator is the interface in which sales teams pick options for a bundle and set attribute values. It adds the configured product to the quote or order, and configurations can be saved and reused, according to the [Trailhead unit on the configurator](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/get-started-with-product-configurator). Trailhead describes three approaches that scale with product complexity: basic validation rules, selection rules and constraint-based modeling. (Salesforce Help now calls the product Revenue Management, Trailhead Agentforce Revenue Management, and the licenses are still Revenue Cloud Growth and Advanced; the [product names article](/en/blog/revenue-cloud-product-names-rlm-rca/) sorts this out.)
 
 Behind it are two rule engines, each switched on in Revenue Settings. The transaction processing type determines which one evaluates a transaction, with AdvancedConfigurator as the rule engine for constraint rules. Plan this as a choice and migration per product line, not as two stacked layers:
 
@@ -40,7 +40,7 @@ Behind it are two rule engines, each switched on in Revenue Settings. The transa
 
 The [Constraint Builder](https://help.salesforce.com/s/articleView?id=ind.product_configurator_constraint_builder.htm&language=en_US&type=5) has limits a manufacturer must check early: "Constraint models don't support product variants", in the catalog sense of the term; datetime attributes and decimal quantities are not supported; each product can belong to only one active constraint model; and constraints may run for at most 10 seconds.
 
-The configurator works on the catalog: classifications, attributes and bundles. If the catalog is modeled badly, no rule engine fixes it. I describe how I model it in [Revenue Cloud product catalog: modeling machine variants](../revenue-cloud-product-catalog-variants/).
+The configurator works on the catalog: classifications, attributes and bundles. If the catalog is modeled badly, no rule engine fixes it. I describe how I model it in [Revenue Cloud product catalog: modeling machine variants](/en/blog/revenue-cloud-product-catalog-variants/).
 
 ## When do constraint rules pay off?
 
@@ -90,7 +90,7 @@ I add two kinds of tests for every product family:
 1. **Regression cases.** A list of valid configurations that must work and invalid ones that must be rejected, with the expected message. The team runs them after every model change, ideally automated in the pipeline.
 2. **Performance cases.** The largest realistic configuration and typical change sequences, measured against the 100-millisecond target and far from the 10-second limit.
 
-Whoever changes a model without these cases discovers errors in front of the customer. How tests and reviews fit into the release process is covered in the DevOps chapter on [quality, tests and reviews](../../masterclass/devops-release-management/quality-tests-reviews/). Anyone coming from Salesforce CPQ has to rebuild product rules in this model; the differences are in [Salesforce CPQ vs Revenue Cloud](../salesforce-cpq-vs-revenue-cloud-differences/).
+Whoever changes a model without these cases discovers errors in front of the customer. How tests and reviews fit into the release process is covered in the DevOps chapter on [quality, tests and reviews](/en/masterclass/devops-release-management/quality-tests-reviews/). Anyone coming from Salesforce CPQ has to rebuild product rules in this model; the differences are in [Salesforce CPQ vs Revenue Cloud](/en/blog/salesforce-cpq-vs-revenue-cloud-differences/).
 
 ## When should you keep an external configurator?
 
@@ -99,10 +99,10 @@ According to Trailhead, a third-party configurator connects to Salesforce throug
 I look first at where they are today, then at change frequency, owners and runtime needs:
 
 - **In spreadsheets and in the heads of application engineers.** This is the best case for Revenue Cloud. The rules have to be written down anyway, and CML gives them a home with tests.
-- **In SAP variant configuration.** If SAP checks the configuration again when the order arrives, rebuilding the rules in CML creates two rule sets. They drift apart with the first change that is maintained in only one place. Here I either keep SAP as the master and call SAP, or I move the master to Salesforce and let SAP accept the result. Both work. Two masters of the same rule do not. A runtime copy is fine if synchronization and versioning are explicit. The same argument applies to agents: business rules belong in one deterministic place, as in [Agent Script: why business rules don't belong in the LLM](../agent-script-deterministic-rules/).
+- **In SAP variant configuration.** If SAP checks the configuration again when the order arrives, rebuilding the rules in CML creates two rule sets. They drift apart with the first change that is maintained in only one place. Here I either keep SAP as the master and call SAP, or I move the master to Salesforce and let SAP accept the result. Both work. Two masters of the same rule do not. A runtime copy is fine if synchronization and versioning are explicit. The same argument applies to agents: business rules belong in one deterministic place, as in [Agent Script: why business rules don't belong in the LLM](/en/blog/agent-script-deterministic-rules/).
 - **In PLM or in an engineering configurator** that produces drawings or bills of materials. Then the external configurator stays, and Salesforce receives the configured product with its price-relevant attributes.
 
-There is a side effect for AI quoting. An agent can only respect rules it can call. If the rules are kept outside Salesforce, I keep configured machines with the sales desk, as described in [AI Partner Sales Assistant: dealer quotes with AI](../ai-partner-sales-assistant-dealer-quotes/).
+There is a side effect for AI quoting. An agent can only respect rules it can call. If the rules are kept outside Salesforce, I keep configured machines with the sales desk, as described in [AI Partner Sales Assistant: dealer quotes with AI](/en/blog/ai-partner-sales-assistant-dealer-quotes/).
 
 ## Worked example: three product lines, one stays in SAP
 
@@ -118,4 +118,4 @@ My recommendation in that case, assuming the org is not in the EU Operating Zone
 4. **Decide the master** per product line: Revenue Cloud, SAP or an external configurator, never two for the same rule.
 5. **Name the owner** who maintains the model after go-live.
 
-The full chapter is in the masterclass section [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/), and I cover how manufacturers carry configured products into a sales agreement in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/). Defining the rule master between SAP and Salesforce is part of my [Salesforce architecture](../../services/salesforce-architecture/) work.
+The full chapter is in the masterclass section [catalog, configurator, pricing](/en/masterclass/revenue-cloud/product-catalog-configurator-pricing/), and I cover how manufacturers carry configured products into a sales agreement in [from quote to sales agreement](/en/blog/quote-to-sales-agreement-product-configurator/). Defining the rule master between SAP and Salesforce is part of my [Salesforce architecture](/en/services/salesforce-architecture/) work.

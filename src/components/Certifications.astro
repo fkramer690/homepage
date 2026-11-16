@@ -39,22 +39,34 @@ const credential = (cert: Cert, issuer?: typeof salesforce) => ({
   dateCreated: String(cert.year),
   ...(issuer ? { recognizedBy: issuer } : {}),
 });
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'ProfilePage',
-  '@id': new URL(Astro.url.pathname, Astro.site).href,
-  name: c.metaTitle,
-  inLanguage: lang,
-  mainEntity: {
-    '@type': 'Person',
-    '@id': `${root}#person`,
-    name: site.person,
-    jobTitle: 'Salesforce Enterprise Architect',
-    hasCredential: [
-      ...[...architectCerts, ...salesforceCerts].map((cert) => credential(cert, salesforce)),
-      ...groups.flatMap(([, certs]) => certs.map((cert) => credential(cert))),
-    ],
-  },
+  '@graph': [
+    {
+      '@type': 'ProfilePage',
+      '@id': pageUrl,
+      name: c.metaTitle,
+      inLanguage: lang,
+      mainEntity: {
+        '@type': 'Person',
+        '@id': `${root}#person`,
+        name: site.person,
+        jobTitle: 'Salesforce Enterprise Architect',
+        hasCredential: [
+          ...[...architectCerts, ...salesforceCerts].map((cert) => credential(cert, salesforce)),
+          ...groups.flatMap(([, certs]) => certs.map((cert) => credential(cert))),
+        ],
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'FK Solution Design', item: new URL(home, Astro.site).href },
+        { '@type': 'ListItem', position: 2, name: c.title, item: pageUrl },
+      ],
+    },
+  ],
 };
 const toc = [
   { slug: 'why', text: c.whyTitle },
@@ -70,7 +82,7 @@ const toc = [
   <section class="section blog">
     <div class="container">
       <p class="eyebrow mono">{t.about.title}</p>
-      <h1>{c.title}</h1>
+      <h1>{c.h1}</h1>
       <p class="blog-intro">{c.intro}</p>
       <ReadingGrid t={t} headings={toc} cta={c.title}>
         <picture class="cert-graphic">

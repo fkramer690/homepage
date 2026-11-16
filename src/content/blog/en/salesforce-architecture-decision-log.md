@@ -71,17 +71,17 @@ Not every field-level decision needs an entry. My rule of thumb: the log holds w
 | Custom build | own configurator instead of a standard product |
 | Platform | one org for all countries instead of one org per region |
 
-The choice of clouds and add-ons is one of the areas that most often needs a durable record, because partners or the vendor regularly propose a product again. If the reasoning is in the log, the answer takes five minutes instead of a new assessment. I describe how I evaluate such assessments in [make-or-buy and licenses](../../services/make-or-buy-licences/).
+The choice of clouds and add-ons is one of the areas that most often needs a durable record, because partners or the vendor regularly propose a product again. If the reasoning is in the log, the answer takes five minutes instead of a new assessment. I describe how I evaluate such assessments in [make-or-buy and licenses](/en/services/make-or-buy-licences/).
 
 ```praxis
 In one manufacturing project, I assessed Manufacturing Cloud against the program's scope and rejected it because sales agreements, the core of the product at the time, were not relevant to this client's business. This is exactly the kind of decision that belongs in the log: when the product is proposed again next year, the entry explains why it does not fit and what would have to change for it to fit.
 ```
 
-I discuss the questions such an assessment has to answer in [Salesforce Manufacturing Cloud: is it worth it?](../salesforce-manufacturing-cloud-is-it-worth-it/).
+I discuss the questions such an assessment has to answer in [Salesforce Manufacturing Cloud: is it worth it?](/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/).
 
 ## The log belongs to the client and lives in the client's repository
 
-The log belongs to the client and is kept in the client's tools. I prefer to keep it as Markdown files in the client-owned Salesforce source repository, one file per decision. That way it is versioned, changes go through a pull request, and a developer finds the reasoning right next to the code. Heads of service or sales rarely open a repository, so I publish a readable view in the company wiki or keep the log in the wiki itself, as long as it does not belong to the partner. The reasons are the same as those I describe in [repository and pipeline](../why-clients-should-own-their-devops-tools/).
+The log belongs to the client and is kept in the client's tools. I prefer to keep it as Markdown files in the client-owned Salesforce source repository, one file per decision. That way it is versioned, changes go through a pull request, and a developer finds the reasoning right next to the code. Heads of service or sales rarely open a repository, so I publish a readable view in the company wiki or keep the log in the wiki itself, as long as it does not belong to the partner. The reasons are the same as those I describe in [repository and pipeline](/en/blog/why-clients-should-own-their-devops-tools/).
 
 The roles are simple:
 
@@ -101,4 +101,4 @@ A log nobody reads is paperwork. Three occasions make it useful:
 
 ## Write up the five most questioned decisions
 
-Begin with the five decisions that are questioned most often in your program; you do not need a wiki template for that. The first entry is almost always the question that remained unresolved in the last steering committee. Write an entry for each, even after the fact. From then on, the rule is that a material architecture decision must be accepted before implementation for production begins. Urgent changes go through a fast track and are documented within a few days. After six months you have twenty to thirty entries and documentation a new partner can read in an afternoon. I describe how I run the log as the architect on the client side in [Salesforce architecture on the client side](../../services/salesforce-architecture/).
+Begin with the five decisions that are questioned most often in your program; you do not need a wiki template for that. The first entry is almost always the question that remained unresolved in the last steering committee. Write an entry for each, even after the fact. From then on, the rule is that a material architecture decision must be accepted before implementation for production begins. Urgent changes go through a fast track and are documented within a few days. After six months you have twenty to thirty entries and documentation a new partner can read in an afternoon. I describe how I run the log as the architect on the client side in [Salesforce architecture on the client side](/en/services/salesforce-architecture/).

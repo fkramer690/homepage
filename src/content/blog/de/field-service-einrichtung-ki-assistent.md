@@ -30,7 +30,7 @@ Bei der Headless-Einrichtung von Field Service liest ein KI-Assistent wie Gemini
 
 ## Was heißt Headless-Einrichtung bei Field Service?
 
-Salesforce nennt das Produkt jetzt Agentforce Field Service and Operations, verwendet in der Dokumentation aber weiterhin Field Service als Kurzform. Im April 2026 hat Salesforce [Headless 360 vorgestellt](https://www.salesforce.com/news/?p=93116): Funktionen der Plattform stehen als API, als MCP-Tool oder als CLI-Befehl bereit, damit Menschen und KI-Agenten mit Salesforce arbeiten können, ohne die Browseroberfläche zu öffnen. MCP, das Model Context Protocol, ist der offene Standard, über den ein KI-Werkzeug Funktionen in einem anderen System aufruft. Wo es in einer Salesforce-Architektur steht, beschreibt das Masterclass-Kapitel [MCP und Salesforce-Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
+Salesforce nennt das Produkt jetzt Agentforce Field Service and Operations, verwendet in der Dokumentation aber weiterhin Field Service als Kurzform. Im April 2026 hat Salesforce [Headless 360 vorgestellt](https://www.salesforce.com/news/?p=93116): Funktionen der Plattform stehen als API, als MCP-Tool oder als CLI-Befehl bereit, damit Menschen und KI-Agenten mit Salesforce arbeiten können, ohne die Browseroberfläche zu öffnen. MCP, das Model Context Protocol, ist der offene Standard, über den ein KI-Werkzeug Funktionen in einem anderen System aufruft. Wo es in einer Salesforce-Architektur steht, beschreibt das Masterclass-Kapitel [MCP und Salesforce-Schnittstellen](/masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
 Die [Trailhead-Einheit zur Headless-Einrichtung von Field Service](https://trailhead.salesforce.com/content/learn/modules/headless-360-use-cases-in-action/set-up-field-service-headlessly) wendet das auf Field Service an. Sie nennt drei Stufen von Headless Skills:
 
@@ -38,11 +38,11 @@ Die [Trailhead-Einheit zur Headless-Einrichtung von Field Service](https://trail
 - **Konfiguration** läuft nach der Freigabe des Plans und richtet die Grundstruktur ein.
 - **Feature** ist die Stufe, die den Aufbau in zwei Bereichen umsetzt. Die Grundeinrichtung legt Servicegebiete, Betriebszeiten, Arbeitstypen, Skill-Anforderungen und Scheduling Policies an. Die Konfiguration der mobilen App richtet individuelles Branding, Pre-Work Briefs und Datenerfassungs-Flows wie Voice to Form ein.
 
-Die Einheit nennt keine Editionen, Lizenzen, Berechtigungen oder Schritte zur Aktivierung, und die reguläre Dokumentation zur Field-Service-Einrichtung führt die Headless-Einrichtung noch nicht auf, Stand 9. November 2026. Behandeln Sie die Headless-Einrichtung als eine von Salesforce demonstrierte Funktion und klären Sie die Verfügbarkeit für Ihre Org. In Slack erscheinen die vorgeschlagenen Gebiete, Arbeitstypen und Policies als Listenansichten neben den Antworten des Assistenten. Laut Trailhead ist nichts endgültig, bevor Sie freigeben, und gebaut wird genau die freigegebene Konfiguration. Die Techniker finden danach Branding, vorab geladene Beispiel-Servicetermine, Pre-Work Briefs, Arbeitspläne und Erfassungsformulare in der App. Wie Salesforce seine Plattform allgemein in Claude und Slack bringt, steht in [AIforce: Salesforce in Claude und Slack](../aiforce-salesforce-in-claude-und-slack/).
+Die Einheit nennt keine Editionen, Lizenzen, Berechtigungen oder Schritte zur Aktivierung, und die reguläre Dokumentation zur Field-Service-Einrichtung führt die Headless-Einrichtung noch nicht auf, Stand 9. November 2026. Behandeln Sie die Headless-Einrichtung als eine von Salesforce demonstrierte Funktion und klären Sie die Verfügbarkeit für Ihre Org. In Slack erscheinen die vorgeschlagenen Gebiete, Arbeitstypen und Policies als Listenansichten neben den Antworten des Assistenten. Laut Trailhead ist nichts endgültig, bevor Sie freigeben, und gebaut wird genau die freigegebene Konfiguration. Die Techniker finden danach Branding, vorab geladene Beispiel-Servicetermine, Pre-Work Briefs, Arbeitspläne und Erfassungsformulare in der App. Wie Salesforce seine Plattform allgemein in Claude und Slack bringt, steht in [AIforce: Salesforce in Claude und Slack](/blog/aiforce-salesforce-in-claude-und-slack/).
 
 ## Der Assistent kennt Ihre Website, nicht Ihre Disposition
 
-Er beginnt mit der Adresse Ihrer Website. Die Website eines Maschinenbauers zeigt Produktlinien, Standorte und vielleicht ein Serviceversprechen. Das Wissen, mit dem die Terminplanung funktioniert, steht dort nicht. In [Welche Stammdaten Field Service braucht](../salesforce-field-service-stammdaten/) nenne ich sechs Datenarten und ihre führenden Systeme:
+Er beginnt mit der Adresse Ihrer Website. Die Website eines Maschinenbauers zeigt Produktlinien, Standorte und vielleicht ein Serviceversprechen. Das Wissen, mit dem die Terminplanung funktioniert, steht dort nicht. In [Welche Stammdaten Field Service braucht](/blog/salesforce-field-service-stammdaten/) nenne ich sechs Datenarten und ihre führenden Systeme:
 
 | Daten | Führendes System | Kann der Assistent das wissen? |
 |---|---|---|
@@ -55,7 +55,7 @@ Er beginnt mit der Adresse Ihrer Website. Die Website eines Maschinenbauers zeig
 
 Der Assistent baut also den Rahmen gut und den Inhalt schlecht. Gebiete sind das typische Beispiel. Ein aus der Website abgeleiteter Vorschlag orientiert sich an den Vertriebsbüros. Die [Richtlinien für Servicegebiete](https://help.salesforce.com/s/articleView?id=service.fs_territory_guidelines.htm&language=en_US&type=5) schlagen bis zu 50 Service Resources pro Gebiet vor. In der Serviceorganisation eines Maschinenbauers würde ich den Schnitt außerdem anhand von Depots, Ausgangsorten der Techniker und tatsächlichen Fahrtmustern prüfen. Das weiß Ihre Serviceleitung, die Website weiß es nicht.
 
-Ähnlich ist es bei den Scheduling Policies. Salesforce liefert vier Standard-Policies mit, wie in [Wie viel Terminplanung automatisch laufen sollte](../salesforce-field-service-terminplanung-automatisieren/) beschrieben. Welche passt und wie die Gewichte gesetzt werden sollten, hängt davon ab, was Ihre Disponenten heute ändern und warum.
+Ähnlich ist es bei den Scheduling Policies. Salesforce liefert vier Standard-Policies mit, wie in [Wie viel Terminplanung automatisch laufen sollte](/blog/salesforce-field-service-terminplanung-automatisieren/) beschrieben. Welche passt und wie die Gewichte gesetzt werden sollten, hängt davon ab, was Ihre Disponenten heute ändern und warum.
 
 ## Was prüfen Sie, bevor Sie den Plan freigeben?
 
@@ -71,11 +71,11 @@ Ich würde den Plan in Workshops mit Serviceleitung und Dispositionsleitung Absc
 | Mobile App | Welche Werte ein Formular in Feldern erfasst, Spracheingabe, Standortdaten | Service, Datenschutz |
 | Zugriff und Governance | Identität und Berechtigungen des Assistenten, Ziel-Org, erlaubte Skills, Audit Logs | Plattformverantwortung, Sicherheit |
 
-Zwei Punkte verdienen besondere Aufmerksamkeit. Erstens die Erfassungsformulare. Bevor Formulare in großem Stil entstehen, legen Sie fest, welche Werte als Felder am Asset oder Arbeitsauftrag gespeichert werden, wie ich in [Field Service mobil: Führung und Sprache](../salesforce-field-service-mobile-aussendienst/) begründe. Beziehen Sie in Deutschland Datenschutz und Betriebsrat früh ein, besonders wenn Spracheingaben oder die daraus entstehenden Datensätze zur Überwachung von Technikern genutzt werden könnten. Zweitens die Beispieldaten. Die Einrichtung lädt Beispiel-Servicetermine für Techniker. Diese gehören in eine Sandbox und nirgendwo sonst hin.
+Zwei Punkte verdienen besondere Aufmerksamkeit. Erstens die Erfassungsformulare. Bevor Formulare in großem Stil entstehen, legen Sie fest, welche Werte als Felder am Asset oder Arbeitsauftrag gespeichert werden, wie ich in [Field Service mobil: Führung und Sprache](/blog/salesforce-field-service-mobile-aussendienst/) begründe. Beziehen Sie in Deutschland Datenschutz und Betriebsrat früh ein, besonders wenn Spracheingaben oder die daraus entstehenden Datensätze zur Überwachung von Technikern genutzt werden könnten. Zweitens die Beispieldaten. Die Einrichtung lädt Beispiel-Servicetermine für Techniker. Diese gehören in eine Sandbox und nirgendwo sonst hin.
 
 ## Auch eine KI-gebaute Konfiguration geht über Git
 
-Der Grund: Der Assistent legt viele Datensätze an. Gebiete, Betriebszeiten, Arbeitstypen, Skill-Anforderungen und Scheduling Policies mit ihren Work Rules werden in Salesforce als Daten geführt. Ein Metadaten-Deployment nimmt sie nicht mit, wie das DevOps-Masterclass-Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/) zeigt. Die Erfassungsformulare dagegen sind Flows und damit Metadaten.
+Der Grund: Der Assistent legt viele Datensätze an. Gebiete, Betriebszeiten, Arbeitstypen, Skill-Anforderungen und Scheduling Policies mit ihren Work Rules werden in Salesforce als Daten geführt. Ein Metadaten-Deployment nimmt sie nicht mit, wie das DevOps-Masterclass-Kapitel [Daten und Konfiguration](/masterclass/devops-release-management/daten-und-konfiguration/) zeigt. Die Erfassungsformulare dagegen sind Flows und damit Metadaten.
 
 Daraus folgt ein klarer Weg:
 
@@ -90,7 +90,7 @@ Prüfen und ausrollen
   Beides wird im Pull Request geprüft und über die Pipeline in einer auf Abhängigkeiten getesteten Reihenfolge ausgerollt.
 ```
 
-Eine Freigabe im Chat ersetzt kein Review. Das Trailhead-Beispiel zeigt keine zweite Person, die die Freigabe erteilt. Bauen Sie deshalb ein unabhängiges Review und Deployment-Gate in Ihren eigenen Prozess ein, genau wie beim Setup-Agenten. Warum das zählt, habe ich in [Setup with Agentforce: Admin-KI in Produktion zulassen?](../setup-with-agentforce-admin-aenderungen/) beschrieben. Der Assistent baut eine Konfiguration schnell, ist aber schlecht dafür geeignet, sie auszurollen.
+Eine Freigabe im Chat ersetzt kein Review. Das Trailhead-Beispiel zeigt keine zweite Person, die die Freigabe erteilt. Bauen Sie deshalb ein unabhängiges Review und Deployment-Gate in Ihren eigenen Prozess ein, genau wie beim Setup-Agenten. Warum das zählt, habe ich in [Setup with Agentforce: Admin-KI in Produktion zulassen?](/blog/setup-with-agentforce-admin-aenderungen/) beschrieben. Der Assistent baut eine Konfiguration schnell, ist aber schlecht dafür geeignet, sie auszurollen.
 
 ## Rechenbeispiel: aus 14 Gebieten werden 6
 
@@ -106,10 +106,10 @@ Angenommen, ein Maschinenbauer hat 45 Techniker in Deutschland, Österreich und 
 
 ## Erster Schritt: vorbereiten, was die Website nicht hergibt
 
-Die Website liefert dem Assistenten Standorte und Produkte, aber keine Skills, Depots und Reaktionszeiten. Wie die Headless-Einrichtung neben Agenten und Einführungswellen einzuordnen ist, behandelt das [Kapitel KI-Agenten, Einführung und Betrieb der Field-Service-Masterclass](../../masterclass/field-service/field-service-ki-agenten-einfuehrung/).
+Die Website liefert dem Assistenten Standorte und Produkte, aber keine Skills, Depots und Reaktionszeiten. Wie die Headless-Einrichtung neben Agenten und Einführungswellen einzuordnen ist, behandelt das [Kapitel KI-Agenten, Einführung und Betrieb der Field-Service-Masterclass](/masterclass/field-service/field-service-ki-agenten-einfuehrung/).
 
 1. **Bereiten Sie vor, was die Website nicht hergibt**: Depotliste mit Technikern, Schulungsmatrix, Liste der Arbeitstypen mit Dauern, Reaktionszeiten aus den Verträgen.
 2. **Wählen Sie eine Sandbox** ohne Produktionsdaten für die Headless-Einrichtung und lassen Sie sich von Salesforce bestätigen, dass sie dort unterstützt wird.
 3. **Prüfen Sie den Plan** mit Service- und Dispositionsleitung, bevor Sie freigeben.
 4. **Bringen Sie das Ergebnis in Git**: Flows als Metadaten, Konfigurationsdatensätze als Datenbereich.
-5. **Legen Sie fest, wer einen Assistenten mit welcher Org verbinden darf.** Produktion bleibt der Pipeline vorbehalten, wie in meiner Arbeit zu [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
+5. **Legen Sie fest, wer einen Assistenten mit welcher Org verbinden darf.** Produktion bleibt der Pipeline vorbehalten, wie in meiner Arbeit zu [DevOps und Release-Management](/leistungen/devops-und-release-management/).

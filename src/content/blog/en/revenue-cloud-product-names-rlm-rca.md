@@ -56,7 +56,7 @@ Revenue Cloud Advanced is the larger edition of today's Revenue Cloud, next to R
 | Scope | Configure, price, quote; billing is the separate blng package | Quoting and configurator, order capture, subscriptions | Everything in Growth plus contracts and orders, consumption and invoicing, AI and analytics |
 | New customers | No longer sold | €150 per user and month | €200 per user and month |
 
-Prices are list prices from the pricing page in October 2026, on top of Sales Cloud. Moving from CPQ to either edition means a new implementation, because there is no upgrade path. The differences in data model, configurator, pricing and renewals are covered in [Salesforce CPQ vs Revenue Cloud: the real differences](../salesforce-cpq-vs-revenue-cloud-differences/). Prices and add-ons are covered in [Revenue Cloud pricing](../revenue-cloud-editions-pricing/).
+Prices are list prices from the pricing page in October 2026, on top of Sales Cloud. Moving from CPQ to either edition means a new implementation, because there is no upgrade path. The differences in data model, configurator, pricing and renewals are covered in [Salesforce CPQ vs Revenue Cloud: the real differences](/en/blog/salesforce-cpq-vs-revenue-cloud-differences/). Prices and add-ons are covered in [Revenue Cloud pricing](/en/blog/revenue-cloud-editions-pricing/).
 
 ## Why do Salesforce sources use different names?
 
@@ -70,7 +70,7 @@ Because they were updated at different times. As of late October 2026:
 
 Search engines add to the confusion. In late October 2026 several salesforce.com pages still appear in search results with the title "Agentforce Revenue Management (formerly Revenue Cloud)", while the pages themselves now say Revenue Cloud. Salesforce has not published one naming timeline that reconciles marketing, documentation and Trailhead.
 
-The same pattern runs through the portfolio: the Agentforce name now appears on many Salesforce products, and Trailhead, for example, also uses Agentforce Manufacturing. The [chapter on terms and the AI map](../../masterclass/ai-salesforce/terms-and-map/) in my AI masterclass organizes these names.
+The same pattern runs through the portfolio: the Agentforce name now appears on many Salesforce products, and Trailhead, for example, also uses Agentforce Manufacturing. The [chapter on terms and the AI map](/en/masterclass/ai-salesforce/terms-and-map/) in my AI masterclass organizes these names.
 
 ## Which Revenue Cloud does a partner mean?
 
@@ -89,7 +89,7 @@ A partner who says "we have done 30 Revenue Cloud projects" may mean CPQ project
 The reverse applies to existing CPQ customers: if a proposal says "Revenue Cloud", check whether it describes a new implementation on the new data model. There is no version upgrade from CPQ. Salesforce itself writes that Revenue Cloud Advanced is not simply CPQ with a new name, and gives three to six months from discovery to go-live for a typical migration, depending heavily on complexity.
 ```
 
-The status of the old packages is a topic of its own: CPQ is no longer sold to new customers, but existing customers can renew and get support. The [chapter on moving from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/) covers what that means.
+The status of the old packages is a topic of its own: CPQ is no longer sold to new customers, but existing customers can renew and get support. The [chapter on moving from CPQ to Revenue Cloud](/en/masterclass/revenue-cloud/from-cpq-to-revenue-cloud/) covers what that means.
 
 ## Name the edition, add-ons and line items in the order form
 
@@ -97,7 +97,7 @@ Marketing names change faster than contracts expire. A three-year order form sig
 
 - **Order form:** take the exact line-item names and product codes from the Salesforce quote, including the edition (Growth or Advanced) and every add-on, such as Revenue Cloud Billing, Dynamic Revenue Orchestration, Invoice Management or Contract Lifecycle Management. "Revenue Cloud" on its own is not enough.
 - **Tender:** describe the product by name and by data model, for example "Revenue Cloud Advanced (also Revenue Lifecycle Management or Revenue Management), native on the Salesforce platform, not the Salesforce CPQ managed package". That rules out a misunderstanding about the 2020 bundle.
-- **License forecast:** list Revenue Cloud as its own line next to Sales Cloud, because it is purchased in addition to a Sales Cloud subscription. How I build such a forecast is described in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+- **License forecast:** list Revenue Cloud as its own line next to Sales Cloud, because it is purchased in addition to a Sales Cloud subscription. How I build such a forecast is described in [Salesforce licenses: does everyone need a full one?](/en/blog/salesforce-licences-full-licence-needed/).
 - **Project glossary:** pick one name for the project and stick to it. I would use Revenue Cloud, because that is what the licenses and salesforce.com show today.
 
 An example of the difference: "Implementation of Salesforce Revenue Cloud" is too vague. Better: "Implementation on the native Salesforce Revenue Management platform with the Revenue Cloud Advanced and Revenue Cloud Billing line items from the Salesforce quote [number, date]. Salesforce CPQ managed package functionality is out of scope unless explicitly listed."
@@ -111,4 +111,4 @@ Each source has its own name, so you miss half of the material if you search for
 - **Partner blogs and forums:** add "RLM" and "RCA", the abbreviations used most there.
 - **Watch out for other vendors:** Certinia, a vendor built on the Salesforce platform, runs its own product area called Revenue Management with its own [release notes](https://help.certinia.com/main/2026.1/Content/RevenueManagement/Release/WhatsNew/WhatsNew.htm). Results from help.certinia.com describe a different product.
 
-What the product covers, under whatever name, is explained in [Revenue Cloud for manufacturers: when is it worth it?](../revenue-cloud-worth-it-manufacturers/), and what it costs in [Revenue Cloud pricing: Growth, Advanced and add-ons](../revenue-cloud-editions-pricing/). The [overview chapter of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/) brings these topics together.
+What the product covers, under whatever name, is explained in [Revenue Cloud for manufacturers: when is it worth it?](/en/blog/revenue-cloud-worth-it-manufacturers/), and what it costs in [Revenue Cloud pricing: Growth, Advanced and add-ons](/en/blog/revenue-cloud-editions-pricing/). The [overview chapter of the Revenue Cloud masterclass](/en/masterclass/revenue-cloud/revenue-cloud-overview/) brings these topics together.

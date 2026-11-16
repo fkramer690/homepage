@@ -64,7 +64,7 @@ Die Seite nennt auch die Standards, die Sie ersetzen: Bestand stammt aus Omnicha
 Nutzt der Store Faster Add-to-Cart, benötigt laut derselben Seite jedes Produkt einen Eintrag in einem Store-Preisbuch, bevor Sie die Preis-Extension umsetzen, auch wenn der echte Preis später aus dem ERP stammt.
 ```
 
-Welche Daten live aus dem ERP abgerufen werden und welche nach Salesforce kopiert werden, ist eine eigene Designentscheidung. Sie steht in [B2B Commerce und SAP: Welche Daten fließen wohin?](../b2b-commerce-sap-datenfluesse/).
+Welche Daten live aus dem ERP abgerufen werden und welche nach Salesforce kopiert werden, ist eine eigene Designentscheidung. Sie steht in [B2B Commerce und SAP: Welche Daten fließen wohin?](/blog/b2b-commerce-sap-datenfluesse/).
 
 ## Warum sollte eine Domain Extension den Standard weiterlaufen lassen?
 
@@ -93,7 +93,7 @@ Eine Einschränkung bestimmt das Vorgehen: Laut dem [Guide zur Cart Calculate AP
 
 Meine Regel: Neue Stores starten mit Extensions. Bestehende Integrationen bleiben, bis der Code ohnehin geändert werden muss, etwa weil sich die ERP-Schnittstelle ändert oder der Store von Aura auf LWR wechselt. Entscheiden Sie dann für den ganzen Store, ob er auf Cart Calculate und Extensions wechselt oder die Integrationen bei deaktiviertem Cart Calculate behält. Funktionierende Integrationen nur umzuschreiben, weil es einen neueren Mechanismus gibt, lohnt sich selten.
 
-Zahlungen sind die Ausnahme. Salesforce schreibt: Zahlungen können derzeit nicht per Extension angepasst werden. Payment Gateways werden weiter über ihren eigenen Adapter angebunden, siehe [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../b2b-checkout-bestellnummer-rechnung/).
+Zahlungen sind die Ausnahme. Salesforce schreibt: Zahlungen können derzeit nicht per Extension angepasst werden. Payment Gateways werden weiter über ihren eigenen Adapter angebunden, siehe [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](/blog/b2b-checkout-bestellnummer-rechnung/).
 
 ## Registrierung und Mapping gehören ins Repository
 
@@ -111,14 +111,14 @@ titel: Klassennamen, Namen der Erweiterungspunkte und CLI-Befehle
 
 Was ich im Vertrag und in der Pipeline festlegen würde:
 
-- Extension-Klassen, Tests und die Befehle für Registrierung und Mapping liegen im Repository des Kunden, wie ich es im Artikel [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/) begründe.
+- Extension-Klassen, Tests und die Befehle für Registrierung und Mapping liegen im Repository des Kunden, wie ich es im Artikel [warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/) begründe.
 - Die Pipeline führt die CLI-Befehle je Umgebung mit den jeweiligen Store-Namen und IDs aus, damit Mappings reproduzierbar sind. Salesforce weist darauf hin, dass für Extensions die neueste Salesforce CLI nötig ist. Legen Sie daher getestete Versionen der CLI und des Commerce-Plug-ins fest und aktualisieren Sie beide in einem festen Rhythmus.
-- Jede Änderung an einer Extension durchläuft ein [Pull-Request-Review](../warum-pull-request-reviews-pflicht-sind/). Dabei wird geprüft, ob der Standard weiter ausgeführt wird, welche Timeouts für ERP-Aufrufe gelten und ob die Tests aussagekräftige Assertions enthalten.
+- Jede Änderung an einer Extension durchläuft ein [Pull-Request-Review](/blog/warum-pull-request-reviews-pflicht-sind/). Dabei wird geprüft, ob der Standard weiter ausgeführt wird, welche Timeouts für ERP-Aufrufe gelten und ob die Tests aussagekräftige Assertions enthalten.
 - Manuelles Mapping in der Produktion bleibt Notfällen vorbehalten, und am selben Tag folgt ein Commit.
 - Für jede Extension gibt es eine schriftliche Laufzeitregel: ERP-Timeout, Wiederholungsversuche, Fallback, Monitoring und die Anzeige für Käufer, wenn Live-Preis oder Bestand nicht verfügbar sind.
 
-Wie Store-Konfiguration gemeinsam mit den Metadaten übertragen wird, beschreibt die DevOps-Masterclass im Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/), den Aufbau der Pipeline im Kapitel [Pipeline aufbauen](../../masterclass/devops-release-management/pipeline-aufbauen/).
+Wie Store-Konfiguration gemeinsam mit den Metadaten übertragen wird, beschreibt die DevOps-Masterclass im Kapitel [Daten und Konfiguration](/masterclass/devops-release-management/daten-und-konfiguration/), den Aufbau der Pipeline im Kapitel [Pipeline aufbauen](/masterclass/devops-release-management/pipeline-aufbauen/).
 
 ## Jede eigene Logik einem Erweiterungspunkt zuordnen
 
-Listen Sie jede eigene Logik in Ihrem Store auf und ordnen Sie sie einem Erweiterungspunkt, einer alten Integration oder einer eigenen Komponente zu. Beachten Sie dabei, dass die Warenkorbberechnung entweder mit Extensions oder mit Integrationen arbeitet. Markieren Sie jeden Domain Provider, der den Standard ersetzt, und fragen Sie nach dem Grund. Prüfen Sie dann, ob sich Registrierung und Mapping aus dem Repository in einer frischen Sandbox wieder aufbauen lassen. Gelingt das nicht, haben Sie Ihre größte Abhängigkeit vom aktuellen Partner gefunden. Die ERP-Perspektive auf dieselben Entscheidungen ist Teil des Kapitels [ERP-Anbindung](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/), und dieselben Extensions lassen sich auch für eine [headless Storefront](../headless-b2b-commerce-eigenes-frontend/) nutzen.
+Listen Sie jede eigene Logik in Ihrem Store auf und ordnen Sie sie einem Erweiterungspunkt, einer alten Integration oder einer eigenen Komponente zu. Beachten Sie dabei, dass die Warenkorbberechnung entweder mit Extensions oder mit Integrationen arbeitet. Markieren Sie jeden Domain Provider, der den Standard ersetzt, und fragen Sie nach dem Grund. Prüfen Sie dann, ob sich Registrierung und Mapping aus dem Repository in einer frischen Sandbox wieder aufbauen lassen. Gelingt das nicht, haben Sie Ihre größte Abhängigkeit vom aktuellen Partner gefunden. Die ERP-Perspektive auf dieselben Entscheidungen ist Teil des Kapitels [ERP-Anbindung](/masterclass/b2b-commerce/erp-integration-bestand-auftraege/), und dieselben Extensions lassen sich auch für eine [headless Storefront](/blog/headless-b2b-commerce-eigenes-frontend/) nutzen.

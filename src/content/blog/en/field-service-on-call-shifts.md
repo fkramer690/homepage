@@ -31,7 +31,7 @@ On-call duty, weekend service and overtime are planned in Salesforce Field Servi
 
 ## What are operating hours, and what are shifts?
 
-Operating hours are the weekday time slots during which a service territory works. Technicians inherit them through their territory membership, unless the membership has its own operating hours. This is part of the master data that scheduling needs, as described in [what data scheduling needs](../salesforce-field-service-master-data/).
+Operating hours are the weekday time slots during which a service territory works. Technicians inherit them through their territory membership, unless the membership has its own operating hours. This is part of the master data that scheduling needs, as described in [what data scheduling needs](/en/blog/salesforce-field-service-master-data/).
 
 Shifts cover what does not fit into this pattern. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/shift-creation-assignment/get-to-know-shifts) defines a shift as "any set of working hours that are not normal operating hours". It can be added to operating hours, as with overtime, or overlap with them. Shift is a core Salesforce object, but the full function needs the Field Service managed package. Before the first shift, territories, service resources and operating hours have to be set up.
 
@@ -69,11 +69,11 @@ If neither the territory nor the technician's membership has Saturday hours, and
 
 For the call to be assigned to the on-call technician, the following elements have to fit together:
 
-1. **The entitlement and the appointment window.** The entitlement milestone tracks the response time, but it does not limit scheduling by itself. Automation has to turn the response time into Earliest Start Permitted and Due Date on the service appointment. How response times reach dispatching is described in [modeling maintenance contracts](../salesforce-field-service-maintenance-contracts/).
+1. **The entitlement and the appointment window.** The entitlement milestone tracks the response time, but it does not limit scheduling by itself. Automation has to turn the response time into Earliest Start Permitted and Due Date on the service appointment. How response times reach dispatching is described in [modeling maintenance contracts](/en/blog/salesforce-field-service-maintenance-contracts/).
 2. **The shift.** A confirmed Extended shift for the weekend, with a filter that lets breakdowns through.
 3. **The policy.** The policy used for breakdowns has Overtime switched on in the Service Resource Availability rule and contains the Timeslot Designated rule.
 
-If a voice agent takes the call outside business hours, the on-call technician gets a classified case instead of a raw call. How I would set up triage on the hotline is in [Breakdown hotline with Agentforce Voice](../breakdown-hotline-agentforce-voice/). The agent cannot book anything, though, if there is no availability behind it.
+If a voice agent takes the call outside business hours, the on-call technician gets a classified case instead of a raw call. How I would set up triage on the hotline is in [Breakdown hotline with Agentforce Voice](/en/blog/breakdown-hotline-agentforce-voice/). The agent cannot book anything, though, if there is no availability behind it.
 
 ## The works council co-determines under section 87 BetrVG
 
@@ -86,7 +86,7 @@ An on-call rota in Field Service usually touches these points. Shifts distribute
 - whether evaluations per technician are allowed, and who sees them
 - how the on-call rota relates to time recording and pay
 
-This is the same conversation as for timesheets and location data, which I describe in [rolling out Field Service in waves](../salesforce-field-service-rollout/). It is easier to have that conversation once for all topics. I am not a lawyer; the legal assessment is for your labour law experts.
+This is the same conversation as for timesheets and location data, which I describe in [rolling out Field Service in waves](/en/blog/salesforce-field-service-rollout/). It is easier to have that conversation once for all topics. I am not a lawyer; the legal assessment is for your labour law experts.
 
 ## Worked example: weekend call in three regions
 
@@ -104,4 +104,4 @@ The 36-hour shift is scheduling availability, not 36 hours of permitted work. De
 
 ## Write down today's on-call rules
 
-List your current on-call rules: who is on call when, for which customers and which kinds of jobs. Then check whether your scheduling policies distinguish between planned work and breakdowns. If they do not, fix that first, because Extended shifts only work through that distinction. Where shifts fit into scheduling as a whole is covered in [chapter 2 of the Field Service masterclass](../../masterclass/field-service/field-service-scheduling-dispatch/), and long jobs over several days are covered in [Field Service multiday jobs](../field-service-multiday-jobs-crews-commissioning/).
+List your current on-call rules: who is on call when, for which customers and which kinds of jobs. Then check whether your scheduling policies distinguish between planned work and breakdowns. If they do not, fix that first, because Extended shifts only work through that distinction. Where shifts fit into scheduling as a whole is covered in [chapter 2 of the Field Service masterclass](/en/masterclass/field-service/field-service-scheduling-dispatch/), and long jobs over several days are covered in [Field Service multiday jobs](/en/blog/field-service-multiday-jobs-crews-commissioning/).

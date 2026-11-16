@@ -17,7 +17,7 @@ takeaways:
 articles: [commerce-shop-or-portal, commerce-gmv-pricing, commerce-business-case, commerce-buyer-licences, commerce-versions-visualforce-aura-lwr, manufacturing-cloud-customer-portal, salesforce-licence-types]
 faq:
   - q: "What is Salesforce B2B Commerce?"
-    a: "Salesforce B2B Commerce is the Salesforce shop for business customers. The store runs as an Experience Cloud site and its data lives on the core platform: buyer accounts, buyer groups, entitlement policies, price books, cart, checkout and order summaries. Salesforce now also markets the product as Agentforce Commerce for B2B."
+    a: "Salesforce B2B Commerce is the Salesforce shop for business customers. The store is an Experience Cloud site and its data lives on the core platform: buyer accounts, buyer groups, entitlement policies, price books, cart, checkout and order summaries. Salesforce now also markets the product as Agentforce Commerce for B2B."
   - q: "How much does Salesforce B2B Commerce cost?"
     a: "Salesforce publishes no price. Growth and Advanced Edition both show \"Contact for Pricing\", and the fee is a percentage of gross merchandise value through the store. On top come buyer licenses, which the Experience Cloud for Manufacturing price list shows at $35 per member or $15 per login per month for Customer Community Plus, plus implementation and ERP integration."
   - q: "Is a dealer portal enough instead of a B2B store?"
@@ -27,27 +27,27 @@ faq:
 draft: false
 ---
 
-Salesforce B2B Commerce pays off for manufacturers whose dealers and customers reorder known items in volume: spare parts, consumables, accessories. For configured machines it does not replace sales. The store runs as an Experience Cloud site, and buyer groups and price books control visibility and prices. Salesforce charges a share of store revenue and publishes no percentage; on top come buyer licenses, implementation and the ERP integration, which in manufacturing is often the largest item. A portal is enough when dealers mostly ask rather than buy. Before a partner builds, settle who owns prices and stock, which buyer groups exist and which ERP calls run live.
+Salesforce B2B Commerce pays off for manufacturers whose dealers and customers reorder known items in volume: spare parts, consumables, accessories. For configured machines it does not replace sales. The store is an Experience Cloud site, and buyer groups and price books control visibility and prices. Salesforce charges a share of store revenue and publishes no percentage; on top come buyer licenses, implementation and the ERP integration, which in manufacturing is often the largest item. A portal is enough when dealers mostly send requests rather than buy. Before a partner builds, settle who owns prices and stock, which buyer groups exist and which ERP calls run live.
 
 ## The path through the masterclass
 
 The masterclass has five chapters. Each answers one decision and points to separate articles for the detail.
 
 1. **Is B2B Commerce worth it?** This chapter: product, names, generations, costs, portal or shop.
-2. **[Catalog, search, entitlements](../catalog-search-entitlements/):** buyer groups, entitlements, product data and search by part number.
-3. **[Prices, cart and checkout](../prices-cart-checkout/):** customer prices, request for quote, buying on account, reordering.
-4. **[ERP integration](../erp-integration-stock-orders/):** which data comes live from SAP and who owns the order.
-5. **[Agents, migration, rollout](../agentforce-migration-rollout/):** Buyer Agent, the path from Aura to LWR and rolling out to dealers in waves.
+2. **[Catalog, search, entitlements](/en/masterclass/b2b-commerce/catalog-search-entitlements/):** buyer groups, entitlements, product data and search by part number.
+3. **[Prices, cart and checkout](/en/masterclass/b2b-commerce/prices-cart-checkout/):** customer prices, request for quote, buying on account, reordering.
+4. **[ERP integration](/en/masterclass/b2b-commerce/erp-integration-stock-orders/):** which data comes live from SAP and who owns the order.
+5. **[Agents, migration, rollout](/en/masterclass/b2b-commerce/agentforce-migration-rollout/):** Buyer Agent, the path from Aura to LWR and rolling out to dealers in waves.
 
 If you have one question, jump straight to the matching chapter. If you face the decision, read this one first.
 
 ## What is Salesforce B2B Commerce?
 
-Salesforce B2B Commerce is the Salesforce shop for business customers. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5), you create the store from a template and design it in Experience Builder, while checkout and configuration use standard platform tools. Technically the store is an Experience Cloud site, and its data sits in the same objects as your CRM.
+Salesforce B2B Commerce is the Salesforce shop for business customers. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5), you create the store from a template and design it in Experience Builder, while checkout and configuration use standard platform tools. Technically the store is an Experience Cloud site, and its data is stored in the same objects as your CRM.
 
 ```vertiefung For admins
 title: What does the data model look like?
-The data model in one paragraph, as [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) describes it: a **buyer account** is a normal account whose contacts are enabled as buyers. **Buyer groups** bundle similar buyer accounts, for example all premium dealers in one country, and connect them to a store. **Entitlement policies** decide which products a buyer group sees, **price books** which prices it gets. The buyer puts products in the **cart**, completes the **checkout**, and the order appears as an **order summary** in the order history. According to the [developer docs](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html), an external system can own the lifecycle of that order summary; changes made there must then flow back into Salesforce. For manufacturers with SAP this is the normal case, more on it in chapter 4.
+The data model in one paragraph, as [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) describes it: a **buyer account** is a normal account whose contacts are enabled as buyers. **Buyer groups** bundle similar buyer accounts, for example all premium dealers in one country, and connect them to a store. **Entitlement policies** decide which products a buyer group sees, **price books** which prices it receives. The buyer puts products in the **cart**, completes the **checkout**, and the order appears as an **order summary** in the order history. According to the [developer docs](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html), an external system can own the lifecycle of that order summary; changes made there must then flow back into Salesforce. For manufacturers with SAP this is the normal case, more on it in chapter 4.
 ```
 
 The advantage over a separate shop system is that accounts, contacts, cases and sales data are already in Salesforce. Inside sales sees the same orders as the dealer, and a service agent sees in the case what the customer bought last.
@@ -66,7 +66,7 @@ Many manufacturers already have a shop on Salesforce, often set up by a partner 
 | Aura store | Core platform, Experience Cloud site with Aura template | only for orgs enabled for Commerce before Spring '23 |
 | LWR store | Core platform, Experience Cloud site with LWR template | recommended by Salesforce for new stores |
 
-Salesforce announced the completion of the [CloudCraze acquisition](https://salesforce.com/news/stories/salesforce-completes-its-acquisition-of-cloudcraze/) in April 2018. On the Visualforce variant, Salesforce's training material said customers do not need to move and Salesforce will continue to support it. The note on Spring '23 and the recommendation for LWR are in the [migration guide](https://developer.salesforce.com/docs/commerce/lwr-migration/guide). As of 27 October 2026 Salesforce has published no retirement date for Aura stores or the Visualforce package; neither appears in the [list of active retirements](https://help.salesforce.com/s/articleView?id=000381744&language=en_US&type=1). So I plan by features: if your roadmap needs something Salesforce documents only for LWR, move. Otherwise invest in data and processes. How to find out within an hour what you run is in [B2B Commerce versions: Visualforce, Aura or LWR?](../../../blog/b2b-commerce-versions-visualforce-aura-lwr/).
+Salesforce announced the completion of the [CloudCraze acquisition](https://salesforce.com/news/stories/salesforce-completes-its-acquisition-of-cloudcraze/) in April 2018. On the Visualforce variant, Salesforce's training material said customers do not need to move and Salesforce will continue to support it. The note on Spring '23 and the recommendation for LWR are in the [migration guide](https://developer.salesforce.com/docs/commerce/lwr-migration/guide). As of 27 October 2026 Salesforce has published no retirement date for Aura stores or the Visualforce package; neither appears in the [list of active retirements](https://help.salesforce.com/s/articleView?id=000381744&language=en_US&type=1). So I plan by features: if your roadmap needs something Salesforce documents only for LWR, move. Otherwise invest in data and processes. How to find out within an hour what you run is in [B2B Commerce versions: Visualforce, Aura or LWR?](/en/blog/b2b-commerce-versions-visualforce-aura-lwr/).
 
 ## What does B2B Commerce cost?
 
@@ -86,24 +86,24 @@ The pricing page lists this scope:
 | Data Cloud credits | 250,000 | 500,000 |
 | Agentforce | Merchant Agent | Merchant Agent |
 
-For most manufacturers the Order Management row matters less than expected, because SAP owns the order. Orders from other channels that should run through Salesforce Order Management need a standalone Order Management purchase, according to the pricing page.
+For most manufacturers the Order Management row matters less than expected, because SAP owns the order. Orders from other channels that should be processed by Salesforce Order Management need a standalone Order Management purchase, according to the pricing page.
 
 What the GMV fee does not cover:
 
 | Item | What is behind it |
 |---|---|
-| Buyer licenses | According to Salesforce, buyers and buyer managers need Customer Community Plus, merchandisers the "B2B and D2C Commerce" license. The [Experience Cloud for Manufacturing price list](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) shows $35 per member or $15 per login per month, billed annually. Whether member or login is cheaper depends on login days, see [B2B Commerce buyer licenses](../../../blog/b2b-commerce-buyer-licences/). How external licenses differ from internal ones is in [Salesforce licenses: does everyone need a full license?](../../../blog/salesforce-licences-full-licence-needed/). |
+| Buyer licenses | According to Salesforce, buyers and buyer managers need Customer Community Plus, merchandisers the "B2B and D2C Commerce" license. The [Experience Cloud for Manufacturing price list](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) shows $35 per member or $15 per login per month, billed annually. Whether member or login is cheaper depends on login days, see [B2B Commerce buyer licenses](/en/blog/b2b-commerce-buyer-licences/). How external licenses differ from internal ones is in [Salesforce licenses: does everyone need a full license?](/en/blog/salesforce-licences-full-licence-needed/). |
 | Advanced pricing logic | with Revenue Cloud, the topic of chapter 3. |
 | Implementation and ERP integration | Catalog, buyer groups, price and stock calls, order handover. |
-| Consumption beyond the included credits | How Data Cloud and Flex Credits add up is explained in the [costs and tokens](../../ai-salesforce/costs-and-tokens/) chapter of the AI masterclass. |
+| Consumption beyond the included credits | How Data Cloud and Flex Credits add up is explained in the [costs and tokens](/en/masterclass/ai-salesforce/costs-and-tokens/) chapter of the AI masterclass. |
 
 ```hinweis tipp
-The GMV fee grows with the store's success. Every dealer you move from email into the shop raises the bill. So I always model three years with a rising digital share and the rate as a variable at 1, 2 and 3 percent. The detail is in [B2B Commerce pricing: what the GMV model costs](../../../blog/b2b-commerce-pricing-gmv-model/), and the full calculation with inside sales time and error costs in the [B2B webshop business case for manufacturers](../../../blog/b2b-webshop-business-case-manufacturers/). An assumed scenario there also shows that time savings alone rarely carry a shop. It usually pays off through additional revenue.
+The GMV fee grows with the store's success. Every dealer you move from email into the shop raises the bill. So I always model three years with a rising digital share and the rate as a variable at 1, 2 and 3 percent. The detail is in [B2B Commerce pricing: what the GMV model costs](/en/blog/b2b-commerce-pricing-gmv-model/), and the full calculation with inside sales time and error costs in the [B2B webshop business case for manufacturers](/en/blog/b2b-webshop-business-case-manufacturers/). An assumed scenario there also shows that time savings alone rarely justify a shop. It usually pays off through additional revenue.
 ```
 
 ## Portal or shop: what do your dealers need?
 
-A portal on Experience Cloud or Manufacturing Cloud shows records and takes requests. Customers see agreements, orders, master data and cases and send requests through forms. What such a portal looks like is in [Manufacturing Cloud customer portal](../../../blog/manufacturing-cloud-customer-portal/). A shop adds what repeat buying needs: a searchable catalog, visibility per buyer group, prices per buyer, cart, checkout and reordering from past orders.
+A portal on Experience Cloud or Manufacturing Cloud shows records and takes requests. Customers see agreements, orders, master data and cases and send requests through forms. What such a portal looks like is in [Manufacturing Cloud customer portal](/en/blog/manufacturing-cloud-customer-portal/). A shop adds what repeat buying needs: a searchable catalog, visibility per buyer group, prices per buyer, cart, checkout and reordering from past orders.
 
 The buyer license does not decide the question, since both use Customer Community Plus. The GMV fee and the implementation effort do. I look at four figures from the last twelve months:
 
@@ -112,7 +112,7 @@ The buyer license does not decide the question, since both use Customer Communit
 3. number of ordering dealers and customers,
 4. share of orders by phone and email.
 
-Worked example: a compressor manufacturer has 250 dealers who order 30,000 spare parts lines a year, mostly as emails with part numbers. That is about ten lines per dealer per month. Here I would build a store and keep the existing portal for warranty and cases. If the same manufacturer had 20 dealers who buy a configured system twice a year, a store would add nothing. The system needs a quote, and the portal shows its status. The criteria in detail are in [B2B Commerce or dealer portal: when a shop pays off](../../../blog/b2b-commerce-or-dealer-portal/). What Manufacturing Cloud offers for selling through dealers, from rebates to the partner portal, is covered in the [dealer and partner channel](../../manufacturing-cloud/dealer-and-partner-channel/) chapter of the Manufacturing Cloud masterclass.
+Worked example: a compressor manufacturer has 250 dealers who order 30,000 spare parts lines a year, mostly as emails with part numbers. That is about ten lines per dealer per month. Here I would build a store and keep the existing portal for warranty and cases. If the same manufacturer had 20 dealers who buy a configured system twice a year, a store would add nothing. The system needs a quote, and the portal shows its status. The criteria in detail are in [B2B Commerce or dealer portal: when a shop pays off](/en/blog/b2b-commerce-or-dealer-portal/). What Manufacturing Cloud offers for selling through dealers, from rebates to the partner portal, is covered in the [dealer and partner channel](/en/masterclass/manufacturing-cloud/dealer-and-partner-channel/) chapter of the Manufacturing Cloud masterclass.
 
 ## When is Salesforce not the answer?
 
@@ -128,9 +128,9 @@ Creating a store from the template is the smallest part of the project. The deci
 
 | Decision | What you clarify |
 |---|---|
-| Who owns prices and stock? | Do dealer prices come from price books in Salesforce or live from SAP conditions? Is stock copied or called live? Chapters 3 and 4 answer this; decide it in writing before the first sprint. |
+| Who owns prices and stock? | Do dealer prices come from price books in Salesforce or live from SAP conditions? Is stock copied or queried live? Chapters 3 and 4 answer this; decide it in writing before the first sprint. |
 | Which buyer groups exist? | Group by country, dealer tier and brand, never one group per account. The limits are in chapter 2. |
 | Which store template? | LWR for new stores, a feature-based decision for existing Aura stores. |
 | Which ERP calls run live? | Price, availability, credit check and order handover need an ERP that answers fast. Settle this with the SAP team before the store design is fixed. |
 
-These four points belong in a short document that you own, not the partner. How I support architecture decisions of this kind on the client side is described under [Salesforce architecture](../../../services/salesforce-architecture/). An independent review of quote and license plan is part of [make or buy and licenses](../../../services/make-or-buy-licences/). Continue with [chapter 2 on catalog, search and entitlements](../catalog-search-entitlements/); all chapters are on the [overview page](../).
+These four points belong in a short document that you own, not the partner. How I support architecture decisions of this kind on the client side is described under [Salesforce architecture](/en/services/salesforce-architecture/). An independent review of quote and license plan is part of [make or buy and licenses](/en/services/make-or-buy-licences/). Continue with [chapter 2 on catalog, search and entitlements](/en/masterclass/b2b-commerce/catalog-search-entitlements/); all chapters are on the [overview page](/en/masterclass/b2b-commerce/).

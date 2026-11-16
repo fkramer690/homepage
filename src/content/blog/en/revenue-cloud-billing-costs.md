@@ -42,7 +42,7 @@ The [Revenue Cloud pricing page](https://www.salesforce.com/sales/cpq/pricing/) 
 
 The footnote says the add-on products "are sold separately from pre-requisite products and require an annual contract". The [EU pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) also lists Invoice Management as an add-on for Advanced, with "freemium access available". Salesforce Help and the Winter '27 developer documentation call the product family Revenue Management, and the product started as Revenue Lifecycle Management, so you may find all three names in Salesforce quotes.
 
-The page does not explain where "Consumption & Invoicing" in Advanced ends and where Invoice Management or the Billing add-on begins. Ask your account executive to document that boundary for each feature you need. The editions themselves are covered in [Revenue Cloud pricing: Growth, Advanced and add-ons](../revenue-cloud-editions-pricing/).
+The page does not explain where "Consumption & Invoicing" in Advanced ends and where Invoice Management or the Billing add-on begins. Ask your account executive to document that boundary for each feature you need. The editions themselves are covered in [Revenue Cloud pricing: Growth, Advanced and add-ons](/en/blog/revenue-cloud-editions-pricing/).
 
 ## What is a billing event?
 
@@ -54,7 +54,7 @@ $50 | Invoice amount per billing event, before rounding
 source: Revenue Cloud Billing rate sheet, February 2026
 ```
 
-The entitlement appears in the usage details table of the order form. Billing events "must be used before the Order End Date", and no rollover is permitted. The rate sheet also says that usage types and multipliers may change over time. That is the same logic as with [Flex Credits for Agentforce](../flex-credits-agentforce-cost-per-action/): you buy a pool for the term and lose what you do not use.
+The entitlement appears in the usage details table of the order form. Billing events "must be used before the Order End Date", and no rollover is permitted. The rate sheet also says that usage types and multipliers may change over time. That is the same logic as with [Flex Credits for Agentforce](/en/blog/flex-credits-agentforce-cost-per-action/): you buy a pool for the term and lose what you do not use.
 
 ## The subtotal without tax counts
 
@@ -82,7 +82,7 @@ Worked example: a machine builder plans to invoice remote monitoring subscriptio
 | Subscriptions and maintenance contracts | €18 million | $20.7 million | 414,000 |
 | Plus machine invoices of €120 million | €138 million | $158.7 million | 3,174,000 |
 
-The second row shows why scope drives the cost. Machine invoices would increase the event count by a factor of more than seven, for invoices that SAP creates anyway. That is one reason I keep machine invoices in SAP, as described in [Revenue Cloud Billing or SAP](../revenue-cloud-billing-or-sap-invoicing/).
+The second row shows why scope drives the cost. Machine invoices would increase the event count by a factor of more than seven, for invoices that SAP creates anyway. That is one reason I keep machine invoices in SAP, as described in [Revenue Cloud Billing or SAP](/en/blog/revenue-cloud-billing-or-sap-invoicing/).
 
 Two effects are easy to miss. Invoice frequency matters little: twelve monthly invoices of $1,000 count about the same as one annual invoice of $12,000, unless rounding applies per invoice. For invoices in euros, timing can shift the result because of the daily exchange rate. Growth matters a lot: if recurring revenue grows by 20 percent a year, year three needs about 44 percent more events than year one.
 
@@ -99,8 +99,8 @@ I would bring these points into the negotiation:
 5. **Feature split.** Clarify which features you need come with Advanced, which come with Invoice Management and which come only with the Billing add-on.
 6. **Renewal.** A price cap for the event price at renewal, because consumption usually grows.
 
-License decisions like this belong in a license forecast with real numbers, not in the last week before signing. The same applies to user licenses, as described in [does everyone need a full license](../salesforce-licences-full-licence-needed/) and [Salesforce editions Core, Advanced, Max](../salesforce-editions-core-advanced-max/). Preparing such forecasts is part of [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
+License decisions like this belong in a license forecast with real numbers, not in the last week before signing. The same applies to user licenses, as described in [does everyone need a full license](/en/blog/salesforce-licences-full-licence-needed/) and [Salesforce editions Core, Advanced, Max](/en/blog/salesforce-editions-core-advanced-max/). Preparing such forecasts is part of [make-or-buy and license forecasts](/en/services/make-or-buy-licences/).
 
 ## First step: finance owns the forecast
 
-Finance has the invoice volumes per revenue type, sales knows the planned growth of subscriptions, and procurement negotiates. I would have finance own the number, because finance will also see the subledger and the invoices. The masterclass chapter [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) shows where Billing fits into the rest of quote-to-cash.
+Finance has the invoice volumes per revenue type, sales knows the planned growth of subscriptions, and procurement negotiates. I would have finance own the number, because finance will also see the subledger and the invoices. The masterclass chapter [billing and usage-based pricing](/en/masterclass/revenue-cloud/billing-and-usage-based-pricing/) shows where Billing fits into the rest of quote-to-cash.

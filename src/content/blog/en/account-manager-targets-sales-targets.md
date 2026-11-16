@@ -77,10 +77,10 @@ At a manufacturer with a yearly sales reorganisation in January, this creates si
 They need the same structure. Salesforce promises to "track business performance from target performance to forecasts in one place". That only works when three numbers line up:
 
 - **Target** per account manager, account, product and month, from this feature.
-- **Forecast** per account, product and period, from [account forecasting](../account-forecasting-sales-volume-planning/).
-- **Actuals** per account, product and period, usually from the ERP, as described for [sales agreements and volume shortfalls](../sales-agreements-volume-shortfall-erp/).
+- **Forecast** per account, product and period, from [account forecasting](/en/blog/account-forecasting-sales-volume-planning/).
+- **Actuals** per account, product and period, usually from the ERP, as described for [sales agreements and volume shortfalls](/en/blog/sales-agreements-volume-shortfall-erp/).
 
-If targets are set per product and the forecast runs per product category, the review compares two numbers that cannot match. The same happens when the ERP posts revenue to the sold-to party and the target is assigned to a parent account. I would fix one customer level, one product level and one period type for all three before anyone enters a target. I cover the design of the actuals feed from SAP in [integration with ERP and middleware](../../services/salesforce-integration/).
+If targets are set per product and the forecast runs per product category, the review compares two numbers that cannot match. The same happens when the ERP posts revenue to the sold-to party and the target is assigned to a parent account. I would fix one customer level, one product level and one period type for all three before anyone enters a target. I cover the design of the actuals feed from SAP in [integration with ERP and middleware](/en/services/salesforce-integration/).
 
 For the comparison itself, Trailhead describes the [dashboards of the CRM Analytics template](https://trailhead.salesforce.com/content/learn/modules/crm-analytics-dashboards-for-account-manager-targets/explore-sales-targets) for targets, including a Team Performance dashboard for the account manager target record page. It compares targets with actual data for the current year and the previous year and shows the unassigned share. It comes from the CRM Analytics app for Manufacturing Cloud, and its content depends on the objects the admin selects when creating the app. The unit does not name a license. The current [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) lists Tableau Next by edition and does not mention CRM Analytics, so ask Salesforce whether your edition includes the dashboard.
 
@@ -102,7 +102,7 @@ Outside this feature. Account manager targets distribute and display targets. Th
 
 A clean split is this: Salesforce holds the target and the attainment data, and the compensation system reads both and calculates the payout. Then the target in Salesforce must be the one the contract refers to, frozen as of a defined date. If managers keep changing targets during the year, document who changed what, because someone will ask at bonus time.
 
-The Sales Planning agent does not manage targets either. I cover the subagents Salesforce documents in [what the Sales Planning agent really does](../agentforce-sales-planning-agreements-forecasts/), and the wider chapter on [agreements and forecasting](../../masterclass/manufacturing-cloud/agreements-and-forecasting/) shows where targets fit next to sales agreements and forecasts.
+The Sales Planning agent does not manage targets either. I cover the subagents Salesforce documents in [what the Sales Planning agent really does](/en/blog/agentforce-sales-planning-agreements-forecasts/), and the wider chapter on [agreements and forecasting](/en/masterclass/manufacturing-cloud/agreements-and-forecasting/) shows where targets fit next to sales agreements and forecasts.
 
 ## Fix hierarchy and levels with sales and controlling
 

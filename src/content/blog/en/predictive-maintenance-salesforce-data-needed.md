@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-A machine builder has enough data for predictive maintenance in Salesforce when there are at least 400 historical asset repairs, the minimum Salesforce specifies for Asset Service Prediction. In my experience the repairs also need comparable units per series, a link to the serial number and coded failure causes. The model learns from that service history, and sensor data comes second. If the history is thin, [maintenance plans with usage and condition triggers](../field-service-usage-based-maintenance/) are the better choice. Telemetry is affordable as aggregates: in my example below, raw one-second readings from 300 machines, one row per signal, cost about $65,900 a month in Flex Credits, while 15-minute aggregates cost about $180.
+A machine builder has enough data for predictive maintenance in Salesforce when there are at least 400 historical asset repairs, the minimum Salesforce specifies for Asset Service Prediction. In my experience the repairs also need comparable units per series, a link to the serial number and coded failure causes. The model learns from that service history, and sensor data comes second. If the history is thin, [maintenance plans with usage and condition triggers](/en/blog/field-service-usage-based-maintenance/) are the better choice. Telemetry is affordable as aggregates: in my example below, raw one-second readings from 300 machines, one row per signal, cost about $65,900 a month in Flex Credits, while 15-minute aggregates cost about $180.
 
 ## What does Salesforce offer for predictive maintenance today?
 
@@ -42,17 +42,17 @@ Salesforce sells several functions under the heading of proactive service, and o
 | Asset Health Score | Scores assets by age, usage, telemetry and repair history via Data 360 | Part of Connected Assets, $15,000 per org per month |
 | Asset Service Prediction | Forecasts the probability of future work orders from historical repairs | Installation documented in Help, no price on the product page |
 
-The manufacturing announcement avoids the term predictive maintenance and speaks of agents that "warn customers and service teams of issues before they happen". The [asset management page](https://www.salesforce.com/service/field-service-management/asset-management/) lists Connected Assets with 10,000 connected digital assets, the Asset Health Score and an "Actionable Telematics Framework". For a function overview, see [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/). Here the question is narrower: is your data ready for the last two rows? Both capabilities start with machines represented as asset records; see [installed base in Manufacturing Cloud](../installed-base-asset-milestones/).
+The manufacturing announcement avoids the term predictive maintenance and speaks of agents that "warn customers and service teams of issues before they happen". The [asset management page](https://www.salesforce.com/service/field-service-management/asset-management/) lists Connected Assets with 10,000 connected digital assets, the Asset Health Score and an "Actionable Telematics Framework". For a function overview, see [AI agents in Field Service: what works today?](/en/blog/field-service-ai-agents-what-works-today/). Here the question is narrower: is your data ready for the last two rows? Both capabilities start with machines represented as asset records; see [installed base in Manufacturing Cloud](/en/blog/installed-base-asset-milestones/).
 
 ## When is the service history enough for failure prediction?
 
 Salesforce describes Asset Service Prediction as a model that can "identify common issues based on current asset data and service history of similar assets". Its own example: a cooling fan failure on a certain generator model is often followed by fuel system service, so a technician handles both in one visit. That example only works because past work orders say which component failed. The [prediction guide](https://help.salesforce.com/s/articleView?id=service.fs_asp_review_einstein_predictions.htm&language=en_US&type=5) is more specific: the model returns a score in the field Predicted Is Subsequent Likely, and Einstein Studio needs at least 400 historical asset repairs to generate a model. The [installation](https://help.salesforce.com/s/articleView?id=service.fs_asp_install.htm&language=en_US&type=5) creates batch data transforms that consume Data 360 credits. I check six points before talking about licenses:
 
 - **Similar assets exist in the data.** Similarity is a modeling decision. If every special machine is its own product record, without series, variant and retrofit status, the model has no comparable units.
-- **Corrective work orders are linked to the asset.** Every repair carries the serial number. Old work orders with only an account and a free text field are of little use until someone links them to an asset. The groundwork is the same as in [master data for Field Service](../salesforce-field-service-master-data/).
+- **Corrective work orders are linked to the asset.** Every repair carries the serial number. Old work orders with only an account and a free text field are of little use until someone links them to an asset. The groundwork is the same as in [master data for Field Service](/en/blog/salesforce-field-service-master-data/).
 - **Failure causes are coded.** Component and cause are picklists. A job report in prose helps the customer; for the model, it must be prepared first.
 - **A usage axis exists.** Record operating hours or cycles at the time of failure. Without them the model sees calendar age only, and a machine on three shifts wears out faster than one on a single shift.
-- **Third-party repairs are reported.** If dealers or [service partners](../salesforce-field-service-service-partners/) repair machines in their respective countries and report only warranty cases, the history has holes exactly where the fleet is largest.
+- **Third-party repairs are reported.** If dealers or [service partners](/en/blog/salesforce-field-service-service-partners/) repair machines in their respective countries and report only warranty cases, the history has holes exactly where the fleet is largest.
 - **Enough repairs.** Salesforce names 400 historical asset repairs as the minimum for a model. My own additional rule of thumb: a few dozen documented, coded failures per model series and failure mode before a prediction steers dispatching.
 
 A report of corrective work orders per series and failure code can show within an afternoon whether prediction is realistic.
@@ -82,7 +82,7 @@ For time series already in a data lake, Salesforce advertises zero copy access. 
 The rate card shows no line of its own for bulk ingestion (Batch Data Pipeline) or for federation. Ask your account executive which line applies to each, and get both rates in writing.
 ```
 
-Grounding agents on manuals is a separate cost block, described in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
+Grounding agents on manuals is a separate cost block, described in [Data 360 costs for AI agents](/en/blog/data-360-costs-for-ai-agents/).
 
 Raw time series belong in the IoT platform or historian the machine builder already runs. Salesforce needs counters, aggregates and threshold events. Ingestion alone creates nothing: a flow or a maintenance rule on the asset turns those records into work orders.
 
@@ -90,7 +90,7 @@ Raw time series belong in the IoT platform or historian the machine builder alre
 
 Much of the value promised under "predictive" comes from two simpler things: no planned maintenance is missed, and intervals follow real usage instead of the calendar. Field Service covers both without a prediction model.
 
-Maintenance plans generate the work orders, and maintenance work rules on the asset handle different intervals, as described in [modeling maintenance contracts](../salesforce-field-service-maintenance-contracts/). The product page adds plans around asset use and condition, with service scheduled when "an asset's temperature exceeds a set threshold". The data model has an [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm) that "stores asset attributes to track and analyze asset conditions". An operating hours counter written once a day from SAP, proALPHA or the IoT platform is often enough for usage-based intervals, as long as a day of delay is acceptable.
+Maintenance plans generate the work orders, and maintenance work rules on the asset handle different intervals, as described in [modeling maintenance contracts](/en/blog/salesforce-field-service-maintenance-contracts/). The product page adds plans around asset use and condition, with service scheduled when "an asset's temperature exceeds a set threshold". The data model has an [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm) that "stores asset attributes to track and analyze asset conditions". An operating hours counter written once a day from SAP, proALPHA or the IoT platform is often enough for usage-based intervals, as long as a day of delay is acceptable.
 
 The proactive maintenance agent then books the visit. Assuming five actions per booking, that is 100 credits or $0.50 for the actions; prompts are additional, so measure them in Digital Wallet.
 
@@ -118,7 +118,7 @@ Ingestion and agent actions come to about 34,000 credits, roughly $170 a month; 
 1. **Count** corrective work orders per series and coded failure cause for the last three years.
 2. **Close the gaps**: asset links, picklists for causes, reporting duties for dealers and service partners.
 3. **Decide where raw data lives** and define which aggregates, counters and events are sent to Salesforce.
-4. **Estimate credits per signal** before the first machine is connected, using [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
+4. **Estimate credits per signal** before the first machine is connected, using [Flex Credits and Agentforce cost per action](/en/blog/flex-credits-agentforce-cost-per-action/).
 5. **Ask Salesforce in writing** which add-on includes Asset Service Prediction for your edition and how much Data 360 usage it consumes.
 
-How machine data, ERP and Salesforce fit together is part of my [integration architecture work](../../services/salesforce-integration/). I plan the sensor integration only once steps 1 and 2 are done.
+How machine data, ERP and Salesforce fit together is part of my [integration architecture work](/en/services/salesforce-integration/). I plan the sensor integration only once steps 1 and 2 are done.

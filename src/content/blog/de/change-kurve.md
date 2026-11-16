@@ -56,7 +56,7 @@ Die Gegenüberstellung ist eine Annäherung, die Phasen beider Modelle decken si
 
 ## ADKAR zeigt, was in welcher Phase hilft
 
-Die Kurve beschreibt Reaktionen. Was eine Führungskraft tun kann, sagt sie nicht. Hier hilft das [ADKAR-Modell](../change-management-modelle/), denn Prosci ordnet jeder Phase der Kurve eine Stufe von ADKAR zu. So wird aus einer Beobachtung eine Maßnahme:
+Die Kurve beschreibt Reaktionen. Was eine Führungskraft tun kann, sagt sie nicht. Hier hilft das [ADKAR-Modell](/blog/change-management-modelle/), denn Prosci ordnet jeder Phase der Kurve eine Stufe von ADKAR zu. So wird aus einer Beobachtung eine Maßnahme:
 
 | Phase | Was fehlt meist (ADKAR) | Was hilft |
 |---|---|---|
@@ -74,9 +74,9 @@ Bei der Einführung eines neuen Systems wie eines CRM-Systems lässt sich die Ku
 
 Nach der Ankündigung reagieren viele neutral bis neugierig, der Einsatz des Systems scheint noch weit entfernt. Ablehnung entsteht meist erst, wenn es konkret wird: in den ersten Demos, wenn der Außendienst sieht, dass Besuchsberichte künftig im System statt in der eigenen Tabelle erfasst werden. Das Tal liegt typischerweise in den Wochen nach dem Start. Die alte Tabelle ist abgeschaltet, im neuen System dauert alles länger, und die ersten Fehler passieren vor Kunden.
 
-Genau für diese Wochen ist die [Hypercare-Phase nach dem Go-live](../hypercare-phase-salesforce-go-live/) da: Ansprechpersonen sind schnell erreichbar, Rückmeldungen werden ernst genommen und kleine Verbesserungen werden zügig umgesetzt. Das verkürzt das Tal. Ein häufiger Fehler ist das Gegenteil: Das Projektteam löst sich am Tag nach dem Start auf, weil technisch alles fertig ist.
+Genau für diese Wochen ist die [Hypercare-Phase nach dem Go-live](/blog/hypercare-phase-salesforce-go-live/) da: Ansprechpersonen sind schnell erreichbar, Rückmeldungen werden ernst genommen und kleine Verbesserungen werden zügig umgesetzt. Das verkürzt das Tal. Ein häufiger Fehler ist das Gegenteil: Das Projektteam löst sich am Tag nach dem Start auf, weil technisch alles fertig ist.
 
-In großen Vorhaben stehen Gruppen und Länder zudem zeitversetzt an verschiedenen Stellen der Kurve. Bei einem weltweiten Rollout in den USA, Asien und Europa, wie ich ihn für die Salesforce Sales Cloud begleitet habe, hilft ein einziger Blick auf „die Stimmung im Projekt“ wenig. Sinnvoll ist eine Einschätzung je Gruppe und Land, am besten verbunden mit der [Stakeholder-Analyse](../stakeholder-analyse/).
+In großen Vorhaben stehen Gruppen und Länder zudem zeitversetzt an verschiedenen Stellen der Kurve. Bei einem weltweiten Rollout in den USA, Asien und Europa, wie ich ihn für die Salesforce Sales Cloud begleitet habe, hilft ein einziger Blick auf „die Stimmung im Projekt“ wenig. Sinnvoll ist eine Einschätzung je Gruppe und Land, am besten verbunden mit der [Stakeholder-Analyse](/blog/stakeholder-analyse/).
 
 ## Die Kurve ist eine Gesprächsgrundlage, keine Diagnose
 
@@ -103,6 +103,6 @@ Zeigen Sie die Change-Kurve nicht dem betroffenen Team mit dem Hinweis, es sei j
 
 ## Das Tal einplanen
 
-Planen Sie das Tal ein. Wer weiß, dass Stimmung und Produktivität nach dem Start sinken, kann Ansprechpersonen bereitstellen, Ziele für die ersten Wochen anpassen und dem Management erklären, warum die ersten Zahlen schlechter aussehen. Fragen Sie je Gruppe, wo sie steht, statt für alle dieselbe Maßnahme zu wählen. Und verbinden Sie die Kurve mit einem Modell, aus dem sich Maßnahmen ableiten lassen; die Grundlagen dazu stehen in [Was ist Change Management?](../was-ist-change-management/). In Salesforce-Programmen begleite ich das gemeinsam mit Fabian Kramer, siehe [Change Management Beratung für Salesforce](../../leistungen/change-management/).
+Planen Sie das Tal ein. Wer weiß, dass Stimmung und Produktivität nach dem Start sinken, kann Ansprechpersonen bereitstellen, Ziele für die ersten Wochen anpassen und dem Management erklären, warum die ersten Zahlen schlechter aussehen. Fragen Sie je Gruppe, wo sie steht, statt für alle dieselbe Maßnahme zu wählen. Und verbinden Sie die Kurve mit einem Modell, aus dem sich Maßnahmen ableiten lassen; die Grundlagen dazu stehen in [Was ist Change Management?](/blog/was-ist-change-management/). In Salesforce-Programmen begleite ich das gemeinsam mit Fabian Kramer, siehe [Change Management Beratung für Salesforce](/leistungen/change-management/).
 
 *Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.*

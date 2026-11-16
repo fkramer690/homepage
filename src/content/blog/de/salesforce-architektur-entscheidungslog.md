@@ -71,17 +71,17 @@ Nicht jede Feldentscheidung braucht einen Eintrag. Meine Faustregel: Ins Log geh
 | Eigenentwicklung | eigener Konfigurator statt Standardprodukt |
 | Plattform | eine Org für alle Länder statt einer Org pro Region |
 
-Die Wahl von Clouds und Add-ons gehört zu den Bereichen, die am häufigsten eine dauerhafte Begründung brauchen, weil Partner oder Hersteller ein Produkt regelmäßig neu vorschlagen. Steht die Begründung im Log, dauert die Antwort fünf Minuten statt einer neuen Bewertung. Wie ich solche Bewertungen rechne, beschreibe ich unter [Make-or-buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).
+Die Wahl von Clouds und Add-ons gehört zu den Bereichen, die am häufigsten eine dauerhafte Begründung brauchen, weil Partner oder Hersteller ein Produkt regelmäßig neu vorschlagen. Steht die Begründung im Log, dauert die Antwort fünf Minuten statt einer neuen Bewertung. Wie ich solche Bewertungen rechne, beschreibe ich unter [Make-or-buy und Lizenzen](/leistungen/make-or-buy-lizenzen/).
 
 ```praxis
 In einem Fertigungsprojekt habe ich die Manufacturing Cloud für den Umfang des Programms bewertet und abgelehnt, weil Sales Agreements, damals der Kern des Produkts, für das Geschäft dieses Kunden nicht relevant waren. Genau diese Art von Entscheidung gehört ins Log: Wird das Produkt im nächsten Jahr erneut vorgeschlagen, steht dort, warum es nicht passt und was sich ändern müsste, damit es passt.
 ```
 
-Welche Fragen eine solche Bewertung klären muss, steht in [Manufacturing Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/).
+Welche Fragen eine solche Bewertung klären muss, steht in [Manufacturing Cloud: Wann lohnt sie sich?](/blog/manufacturing-cloud-wann-lohnt-sie-sich/).
 
 ## Das Log gehört dem Kunden und liegt in seinem Repository
 
-Das Log gehört dem Kunden und liegt in seinen Tools. Ich lege es am liebsten als Markdown-Dateien im kundeneigenen Salesforce-Quellcode-Repository ab, eine Datei pro Entscheidung. Dann ist es versioniert, Änderungen erfolgen über einen Pull Request, und ein Entwickler findet die Begründung direkt neben dem Code. Service- und Vertriebsleitung öffnen selten ein Repository, deshalb veröffentliche ich eine lesbare Ansicht im Wiki des Unternehmens oder führe das Log direkt im Wiki, solange es nicht dem Partner gehört. Die Gründe sind dieselben wie bei [Repository und Pipeline](../warum-kunden-devops-tools-selbst-besitzen-sollten/).
+Das Log gehört dem Kunden und liegt in seinen Tools. Ich lege es am liebsten als Markdown-Dateien im kundeneigenen Salesforce-Quellcode-Repository ab, eine Datei pro Entscheidung. Dann ist es versioniert, Änderungen erfolgen über einen Pull Request, und ein Entwickler findet die Begründung direkt neben dem Code. Service- und Vertriebsleitung öffnen selten ein Repository, deshalb veröffentliche ich eine lesbare Ansicht im Wiki des Unternehmens oder führe das Log direkt im Wiki, solange es nicht dem Partner gehört. Die Gründe sind dieselben wie bei [Repository und Pipeline](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
 Die Rollen sind einfach:
 
@@ -101,4 +101,4 @@ Ein Log, das niemand liest, ist Papierkram. Drei Gelegenheiten machen es nützli
 
 ## Die fünf meistdiskutierten Entscheidungen nachtragen
 
-Beginnen Sie mit den fünf Entscheidungen, die in Ihrem Programm am häufigsten angezweifelt werden. Eine Vorlage im Wiki ist dafür nicht nötig. Für den ersten Eintrag eignet sich fast immer die Frage, die im letzten Lenkungsausschuss offen geblieben ist. Schreiben Sie für jede dieser Entscheidungen einen Eintrag, auch rückwirkend. Danach gilt die Regel, dass eine wesentliche Architekturentscheidung angenommen ist, bevor sie in der Produktion umgesetzt wird. Dringende Änderungen durchlaufen ein beschleunigtes Verfahren und werden binnen weniger Tage dokumentiert. Nach einem halben Jahr haben Sie zwanzig bis dreißig Einträge und eine Dokumentation, die ein neuer Partner in einem Nachmittag liest. Wie ich das Log als Architekt auf Kundenseite führe, beschreibe ich unter [Salesforce-Architektur auf Kundenseite](../../leistungen/salesforce-architektur/).
+Beginnen Sie mit den fünf Entscheidungen, die in Ihrem Programm am häufigsten angezweifelt werden. Eine Vorlage im Wiki ist dafür nicht nötig. Für den ersten Eintrag eignet sich fast immer die Frage, die im letzten Lenkungsausschuss offen geblieben ist. Schreiben Sie für jede dieser Entscheidungen einen Eintrag, auch rückwirkend. Danach gilt die Regel, dass eine wesentliche Architekturentscheidung angenommen ist, bevor sie in der Produktion umgesetzt wird. Dringende Änderungen durchlaufen ein beschleunigtes Verfahren und werden binnen weniger Tage dokumentiert. Nach einem halben Jahr haben Sie zwanzig bis dreißig Einträge und eine Dokumentation, die ein neuer Partner in einem Nachmittag liest. Wie ich das Log als Architekt auf Kundenseite führe, beschreibe ich unter [Salesforce-Architektur auf Kundenseite](/leistungen/salesforce-architektur/).

@@ -33,7 +33,7 @@ A community MCP server for Salesforce is third-party code or a third-party servi
 
 ## Why is a community MCP server a different risk?
 
-MCP (Model Context Protocol) lets an AI client call tools in other systems; the basics are covered in [MCP for IT leads](../mcp-salesforce-explained-for-it-leads/). A community server is one that neither Salesforce nor your AI vendor operates. The operating model changes the risk:
+MCP (Model Context Protocol) lets an AI client call tools in other systems; the basics are covered in [MCP for IT leads](/en/blog/mcp-salesforce-explained-for-it-leads/). A community server is one that neither Salesforce nor your AI vendor operates. The operating model changes the risk:
 
 | Type | Main risk |
 |---|---|
@@ -68,17 +68,17 @@ I would ask the partner or developer for written answers to six questions before
 
 **Identity.** Hosted MCP executes every call as the named user, so the audit trail shows a person. A server or gateway that logs in once with a technical user, instead of using per-user OAuth, reverses this: your logs show "integration user read 4,000 cases", and nobody can say on whose behalf the access occurred.
 
-**Credentials.** A server that logs in with username, password and security token has two problems. The secret is stored on a laptop, and the login method is ending: according to [Salesforce Time](https://salesforcetime.com/2026/10/15/salesforce-oauth-username-password-flow-retirement/) Salesforce enforces the retirement of the OAuth username-password flow on February 20, 2027, and SOAP API login(), which many libraries use for username, password and token, is retired separately with Summer '27. More on that deadline in [password-based integrations end in 2027](../salesforce-password-integrations-end-2027/). A gateway that stores refresh tokens for your org is a third party that holds long-lived access, which is the pattern behind the Salesloft Drift breach covered in [connected apps and OAuth lessons](../connected-apps-oauth-ai-integrations/).
+**Credentials.** A server that logs in with username, password and security token has two problems. The secret is stored on a laptop, and the login method is ending: according to [Salesforce Time](https://salesforcetime.com/2026/10/15/salesforce-oauth-username-password-flow-retirement/) Salesforce enforces the retirement of the OAuth username-password flow on February 20, 2027, and SOAP API login(), which many libraries use for username, password and token, is retired separately with Summer '27. More on that deadline in [password-based integrations end in 2027](/en/blog/salesforce-password-integrations-end-2027/). A gateway that stores refresh tokens for your org is a third party that holds long-lived access, which is the pattern behind the Salesloft Drift breach covered in [connected apps and OAuth lessons](/en/blog/connected-apps-oauth-ai-integrations/).
 
 **Maintainer and version.** Pin an exact version and review the change before every update. For a SaaS gateway, you usually cannot pin the server version, so ask instead whether the vendor can change functions or tool descriptions without your approval. The postmark case shows why: the harmful code was shipped with one specific version.
 
 **Tools.** Get the full tool list with descriptions. A server that offers one read tool for open cases requires a different decision than one that runs arbitrary SOQL or anonymous Apex.
 
-**Combination.** Willison's [lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) is private data, untrusted content and a way to send data out. Willison writes that MCP "encourages users to mix and match tools from different sources". At a machine builder, case descriptions from the dealer portal or warranty forms are untrusted content, see [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/).
+**Combination.** Willison's [lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) is private data, untrusted content and a way to send data out. Willison writes that MCP "encourages users to mix and match tools from different sources". At a machine builder, case descriptions from the dealer portal or warranty forms are untrusted content, see [prompt injection in dealer portals](/en/blog/prompt-injection-dealer-portals-agentforce/).
 
 For a commercial gateway, the six questions are not enough. Add the vendor checks you would ask of any SaaS that sees CRM data: which data, prompts and tool results leave which region, what is stored and for how long, which subprocessors and models are involved, how tokens are protected and revoked, how tenants are separated, and which audit logs you can see.
 
-**Target org.** Coding agents work in sandboxes. Production changes go through the pipeline, and this requirement belongs in the contract, see [partners using AI coding: contract rules](../partners-using-ai-coding-contract-rules/).
+**Target org.** Coding agents work in sandboxes. Production changes go through the pipeline, and this requirement belongs in the contract, see [partners using AI coding: contract rules](/en/blog/partners-using-ai-coding-contract-rules/).
 
 ```vertiefung For developers
 title: How does Claude Code help with pinning and new servers?
@@ -89,12 +89,12 @@ Claude Code asks for trust verification when a new MCP server appears, but its s
 
 ## When is Salesforce Hosted MCP the safer route?
 
-Salesforce Hosted MCP Servers are [generally available since April 29, 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) for every Enterprise Edition org and above. For a person who works interactively with Claude, ChatGPT or Cursor, they address most rows of the table: no third-party code on the laptop, every call is made under the named user, OAuth with PKCE, servers remain off until an admin enables them, MCP traffic can be filtered in the API logs, and an `mcp_api` scope grants "access to MCP, but not our existing REST APIs". This holds when the External Client App is restricted to pre-authorized users or permission sets and only the needed servers and tools are enabled; refresh token policy, IP restrictions and revocation belong in the approval too. What each user may read is covered in [hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/).
+Salesforce Hosted MCP Servers are [generally available since April 29, 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) for every Enterprise Edition org and above. For a person who works interactively with Claude, ChatGPT or Cursor, they address most rows of the table: no third-party code on the laptop, every call is made under the named user, OAuth with PKCE, servers remain off until an admin enables them, MCP traffic can be filtered in the API logs, and an `mcp_api` scope grants "access to MCP, but not our existing REST APIs". This holds when the External Client App is restricted to pre-authorized users or permission sets and only the needed servers and tools are enabled; refresh token policy, IP restrictions and revocation belong in the approval too. What each user may read is covered in [hosted MCP servers and data access](/en/blog/salesforce-hosted-mcp-servers-data-access/).
 
 Hosted MCP has limits that drive people to community servers:
 
 - **No machine-to-machine access.** The security guide says: "There are no service accounts, no machine-to-machine flows". A nightly agent cannot use it.
-- **Edition and cost.** The [overview](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) says the servers are "intended only for customers with Flex Credits and you may be billed for server usage". Why that becomes a budget line is explained in [MCP calls as a budget risk](../flex-credits-agentforce-cost-per-action/).
+- **Edition and cost.** The [overview](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) says the servers are "intended only for customers with Flex Credits and you may be billed for server usage". Why that becomes a budget line is explained in [MCP calls as a budget risk](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 Neither limit makes a community server the answer. A nightly job is an integration with its own user and the client credentials flow or JWT flow. When Agentforce is the client, [Trailhead](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce) describes registering third-party servers in Agentforce Registry, selecting tools and limiting calls through Agentforce Gateway. That governs the agent's side; the server behind it still needs the six checks.
 
@@ -106,15 +106,15 @@ Assume a machine builder with Sales Cloud, Service Cloud, a dealer portal and SA
 
 **Request 2.** The service back office wants a commercial gateway that connects ChatGPT to Salesforce and SAP. Decision: deferred. The gateway would hold refresh tokens for the org, and its documentation does not show whether each of the 25 users receives their own token or all calls are made as one technical user. The vendor has to describe the OAuth client, token subject, run-as identity and audit trail per target system. The Salesforce part is handled through Hosted MCP, and the SAP part waits for the contract review of the gateway vendor.
 
-**Request 3.** The partner proposes a community server for a nightly agent that compares dealer stock with SAP. Decision: no MCP. This is an integration with a run-as user and client credentials, implemented in the same pattern as the order status integration in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/).
+**Request 3.** The partner proposes a community server for a nightly agent that compares dealer stock with SAP. Decision: no MCP. This is an integration with a run-as user and client credentials, implemented in the same pattern as the order status integration in [Agentforce and SAP order status](/en/blog/agentforce-sap-order-status-mulesoft/).
 
 Each request has a governed next step, and no community server is granted access to the org.
 
 ## Inventory the MCP servers at every partner
 
-1. **Inventory.** Ask every partner which MCP servers are configured in their clients for your orgs, including versions. The DX MCP server deadline is a good opportunity, see [the end of the Salesforce DX MCP Server](../salesforce-dx-mcp-server-end-of-life/).
+1. **Inventory.** Ask every partner which MCP servers are configured in their clients for your orgs, including versions. The DX MCP server deadline is a good opportunity, see [the end of the Salesforce DX MCP Server](/en/blog/salesforce-dx-mcp-server-end-of-life/).
 2. **Put the rule in writing.** Use hosted or Salesforce-operated servers by default; allow community servers only after the six checks, in sandboxes, with a pinned version.
 3. **Enforce it where you can.** If you license Claude Code centrally, [managed settings](https://code.claude.com/docs/en/managed-mcp) with `allowedMcpServers` and `allowManagedMcpServersOnly` block every server that is not on your list.
 4. **Review on every update.** A new version is a new approval.
 
-For the inventory, a table with partner, server, version, user and target org is enough. Guiding partners on tools like this is part of my [partner governance](../../services/partner-governance/) work, and the interface overview is in [chapter 3 of the masterclass](../../masterclass/ai-salesforce/mcp-and-interfaces/).
+For the inventory, a table with partner, server, version, user and target org is enough. Guiding partners on tools like this is part of my [partner governance](/en/services/partner-governance/) work, and the interface overview is in [chapter 3 of the masterclass](/en/masterclass/ai-salesforce/mcp-and-interfaces/).

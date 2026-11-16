@@ -39,7 +39,7 @@ Das [Trailhead-Modul zu Offline-Briefcases](https://trailhead.salesforce.com/con
 
 Das Produkt heißt inzwischen Agentforce Field Service and Operations; App und große Teile der Dokumentation verwenden weiterhin Field Service.
 
-Offline erfasste Änderungen speichert das Gerät und überträgt sie an Salesforce, sobald die Verbindung zurück ist. Diese Übertragung kann scheitern: Validierungsregeln lehnen einen Datensatz ab, eine zu weit vorgestellte Geräteuhr führt zu "CreatedDate in future", und Datumsfelder zeigen die Synchronisationszeit statt der Offline-Zeit, sofern der Salesforce Support nicht „Accurate Record Dates“ aktiviert, so die [Offline-Hinweise](https://help.salesforce.com/s/articleView?id=service.mfs_offline_considerations.htm&language=en_US&type=5). Unterstützte mobile Flows laufen offline, wenn alle nötigen Daten und Metadaten geladen sind; braucht ein Flow mehr, scheitert er. Im Offlinebetrieb erstellt oder ändert Data Capture Datensätze jedoch erst, wenn das Gerät wieder online ist; diese und weitere Grenzen stehen in [Field Service Mobile App: Flow-Grenzen](../field-service-mobile-flows-grenzen/).
+Offline erfasste Änderungen speichert das Gerät und überträgt sie an Salesforce, sobald die Verbindung zurück ist. Diese Übertragung kann scheitern: Validierungsregeln lehnen einen Datensatz ab, eine zu weit vorgestellte Geräteuhr führt zu "CreatedDate in future", und Datumsfelder zeigen die Synchronisationszeit statt der Offline-Zeit, sofern der Salesforce Support nicht „Accurate Record Dates“ aktiviert, so die [Offline-Hinweise](https://help.salesforce.com/s/articleView?id=service.mfs_offline_considerations.htm&language=en_US&type=5). Unterstützte mobile Flows laufen offline, wenn alle nötigen Daten und Metadaten geladen sind; braucht ein Flow mehr, scheitert er. Im Offlinebetrieb erstellt oder ändert Data Capture Datensätze jedoch erst, wenn das Gerät wieder online ist; diese und weitere Grenzen stehen in [Field Service Mobile App: Flow-Grenzen](/blog/field-service-mobile-flows-grenzen/).
 
 Salesforce veröffentlicht durchaus Grenzen. Laut [Übersicht der Briefcase-Typen](https://help.salesforce.com/s/articleView?id=service.mfs_hvb_briefcase_types.htm&language=en_US&type=5) lädt ein Standard-Briefcase bis zu 50.000 Datensätze pro Nutzer, ein Profil-Briefcase für Performance Priming bis zu 100.000 eindeutige und ein High-Volume-Briefcase bis zu 400.000. Performance Priming begrenzt einen Briefcase außerdem auf 2.000 Service-Termine und 75.000 Datensätze pro Regel. Ich würde deutlich darunter planen und messen, wie lange das Priming auf einem echten Gerät dauert.
 
@@ -63,9 +63,9 @@ Meine Regel für ein Modell, in dem Preise im Innendienst festgelegt werden: Off
 | Bestände aller Lager | In diesem Modell führt das ERP sie, der Innendienst schaut dort nach |
 | Abgeschlossene Aufträge, älter als einige Monate | Selten gebraucht, schwer zu synchronisieren |
 
-Das Fahrzeuglager wird leicht unterschätzt. Eine Live-Abfrage im ERP funktioniert im Keller einer Werkshalle nicht, wie ich in [Ersatzteile im Außendienst: ERP oder Salesforce?](../salesforce-field-service-ersatzteile-erp/) beschrieben habe. Die Kopie des Fahrzeugbestands muss in Salesforce und auf dem Gerät liegen.
+Das Fahrzeuglager wird leicht unterschätzt. Eine Live-Abfrage im ERP funktioniert im Keller einer Werkshalle nicht, wie ich in [Ersatzteile im Außendienst: ERP oder Salesforce?](/blog/salesforce-field-service-ersatzteile-erp/) beschrieben habe. Die Kopie des Fahrzeugbestands muss in Salesforce und auf dem Gerät liegen.
 
-Handbücher brauchen einen zweiten Blick. Ein Agent zur Fehlersuche findet das richtige Handbuch nur, wenn jedes Dokument denselben Produktschlüssel trägt wie das Asset. Das steht in [KI-Fehlersuche im Außendienst: erst die Handbücher](../ki-fehlersuche-handbuecher-aussendienst/). Derselbe Schlüssel entscheidet, ob der Briefcase das richtige Handbuch für das Gerät filtern kann. Ob sich die Datei selbst ohne Netz öffnet, hängt davon ab, wie sie gespeichert ist. Testen Sie das mit einem großen PDF. Dasselbe gilt für verknüpfte Datensätze wie Positionen und frühere Aufträge am Asset: Prüfen Sie auf dem Gerät, über welche Ansicht, welchen Tab oder welchen Flow sie offline erreichbar sind. Die Tabelle oben ist ein Zielbild, keine Zusage, was geladen wird.
+Handbücher brauchen einen zweiten Blick. Ein Agent zur Fehlersuche findet das richtige Handbuch nur, wenn jedes Dokument denselben Produktschlüssel trägt wie das Asset. Das steht in [KI-Fehlersuche im Außendienst: erst die Handbücher](/blog/ki-fehlersuche-handbuecher-aussendienst/). Derselbe Schlüssel entscheidet, ob der Briefcase das richtige Handbuch für das Gerät filtern kann. Ob sich die Datei selbst ohne Netz öffnet, hängt davon ab, wie sie gespeichert ist. Testen Sie das mit einem großen PDF. Dasselbe gilt für verknüpfte Datensätze wie Positionen und frühere Aufträge am Asset: Prüfen Sie auf dem Gerät, über welche Ansicht, welchen Tab oder welchen Flow sie offline erreichbar sind. Die Tabelle oben ist ein Zielbild, keine Zusage, was geladen wird.
 
 ## Welche Offline-Lücken dokumentiert Salesforce?
 
@@ -78,12 +78,12 @@ Die [Hinweise zu LWC Offline in der Field Service App](https://developer.salesfo
 5. **Kaltstart unter iOS.** Änderungen an Lightning Web Components lädt die App unter iOS erst, wenn sie vollständig beendet und neu gestartet wurde. Ein Techniker, der die App nie schließt, arbeitet mit der alten Version weiter.
 
 ```hinweis achtung
-Punkt 5 betrifft auch jedes Release Ihrer eigenen Komponenten. Wer sagt 50 Technikern, dass sie die App nach einem Deployment komplett schließen sollen? Das gehört in den Release-Plan, zusammen mit den App-Versionen, die Salesforce ausliefert. Die Routine dafür beschreibe ich in [Field Service App Updates: jede Version vorher testen](../field-service-app-updates-testen/).
+Punkt 5 betrifft auch jedes Release Ihrer eigenen Komponenten. Wer sagt 50 Technikern, dass sie die App nach einem Deployment komplett schließen sollen? Das gehört in den Release-Plan, zusammen mit den App-Versionen, die Salesforce ausliefert. Die Routine dafür beschreibe ich in [Field Service App Updates: jede Version vorher testen](/blog/field-service-app-updates-testen/).
 ```
 
 ## Partnertechniker testen offline getrennt
 
-Viele Hersteller holen Subunternehmer in dieselbe App. Partnertechniker arbeiten dann als Community-Nutzer mit Field-Service-Berechtigungen, wie in [Field Service: Wie bindet man Servicepartner ein?](../salesforce-field-service-servicepartner/) beschrieben. Sind Partner dabei, kann Punkt 3 der Liste oben genau diese Nutzer treffen.
+Viele Hersteller holen Subunternehmer in dieselbe App. Partnertechniker arbeiten dann als Community-Nutzer mit Field-Service-Berechtigungen, wie in [Field Service: Wie bindet man Servicepartner ein?](/blog/salesforce-field-service-servicepartner/) beschrieben. Sind Partner dabei, kann Punkt 3 der Liste oben genau diese Nutzer treffen.
 
 Partner haben außerdem meist andere Freigaben, oft begrenzt auf ihr eigenes Gebiet und ihre eigenen Termine. Ein Briefcase, der für interne Techniker funktioniert, liefert einem Partner deshalb unter Umständen weniger Datensätze oder keine verknüpften Datensätze. Mein Rat: Geben Sie Partnern einen eigenen Briefcase und testen Sie ihn mit einem echten Partnernutzer, nie mit einem Admin, der das Profil wechselt.
 
@@ -98,7 +98,7 @@ Ein Maschinenbauer schickt einen Techniker in die Produktionshalle eines Kunden.
 
 Das Szenario zeigt, was offline für die Planung bedeutet. Das Gerät arbeitet, aber der Plan bleibt auf dem Stand der letzten Synchronisation stehen. Disponenten müssen wissen, welche Techniker in Hallen ohne Netz arbeiten, und ein kurzer Anruf gehört zum Prozess.
 
-Der Servicebericht in diesem Szenario wird mit [Document Builder](../salesforce-service-documents-document-builder-servicebericht/) erzeugt. Daten und Unterschrift werden offline erfasst, die Erstellung des fertigen PDFs kann aber von der Synchronisation abhängen, und eigene Komponenten in der Vorlage müssen ihre Daten ebenfalls offline lesen. Wie das geht, steht in [Salesforce Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/).
+Der Servicebericht in diesem Szenario wird mit [Document Builder](/blog/salesforce-service-documents-document-builder-servicebericht/) erzeugt. Daten und Unterschrift werden offline erfasst, die Erstellung des fertigen PDFs kann aber von der Synchronisation abhängen, und eigene Komponenten in der Vorlage müssen ihre Daten ebenfalls offline lesen. Wie das geht, steht in [Salesforce Document Builder: fünf Grenzen und Workarounds](/blog/salesforce-document-builder-grenzen-workarounds/).
 
 ## Briefcases nach Rolle zuschneiden
 
@@ -115,4 +115,4 @@ Die Synchronisation messen
   Dauer des Primings am Morgen und Speicherbedarf auf dem Gerät, mit dem Briefcase der Region mit dem höchsten Einsatzvolumen.
 ```
 
-Das Offline-Design entscheidet, ob Formulare und Dokumente später funktionieren. Der nächste Schritt ist das Formular selbst, beschrieben in [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/). Das ganze Thema gehört zu [Kapitel 3 der Masterclass Field Service](../../masterclass/field-service/field-service-mobile-app-dokumente/).
+Das Offline-Design entscheidet, ob Formulare und Dokumente später funktionieren. Der nächste Schritt ist das Formular selbst, beschrieben in [Field Service Data Capture: Prüfprotokolle ohne Papier](/blog/field-service-data-capture-pruefprotokolle/). Das ganze Thema gehört zu [Kapitel 3 der Masterclass Field Service](/masterclass/field-service/field-service-mobile-app-dokumente/).

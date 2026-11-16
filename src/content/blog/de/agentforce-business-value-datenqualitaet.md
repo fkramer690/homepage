@@ -77,7 +77,7 @@ In der Praxis prüfe ich diese Punkte, bevor ein Agent live geht:
 - **Prozessdaten.** Werden Status, Termine und Felder zuverlässig gepflegt? Wird der Liefertermin in Salesforce nur einmal pro Woche aktualisiert, gibt der Agent veraltete Antworten.
 - **Zugriffsrechte.** Was darf der Agent sehen und wem darf er was zeigen? Freigaberegeln, Sicherheit auf Feldebene und Datenklassifizierung müssen stimmen, bevor ein Agent damit arbeitet. Welcher Benutzerkontext gilt, hängt vom Agententyp ab: Agenten für Mitarbeitende können mit den Rechten des angemeldeten Benutzers laufen, externe Service-Agenten laufen oft als eigener Agent User. Eine Kunden-ID in einer Kontextvariablen schränkt den Datenzugriff nicht von selbst ein. Flows und Aktionen müssen die Daten deshalb auf den geprüften Kunden begrenzen.
 
-Salesforce entwickelt dafür weitere Werkzeuge, etwa die Agent Context Engine, die Agenten kontrollierten Kontext aus Data 360 bereitstellt. Prüfen Sie ihre Verfügbarkeit, bevor Sie damit planen. Ich beschreibe sie ausführlicher im Beitrag [die Agent Context Engine erklärt](../salesforce-agent-context-engine-erklaert/). Aber auch die beste Kontextschicht kann nur weitergeben, was in den Daten steht.
+Salesforce entwickelt dafür weitere Werkzeuge, etwa die Agent Context Engine, die Agenten kontrollierten Kontext aus Data 360 bereitstellt. Prüfen Sie ihre Verfügbarkeit, bevor Sie damit planen. Ich beschreibe sie ausführlicher im Beitrag [die Agent Context Engine erklärt](/blog/salesforce-agent-context-engine-erklaert/). Aber auch die beste Kontextschicht kann nur weitergeben, was in den Daten steht.
 
 Daten aufzuräumen ist keine glanzvolle Arbeit, und man schiebt sie leicht auf „später“ oder auf jemand anderen. In den Projekten, die vorankommen, steht sie von Anfang an im Projektplan.
 
@@ -100,8 +100,8 @@ Begrenzt live gehen
   In einem Kanal oder einer Region, gegen das Ziel messen und erst dann ausweiten.
 ```
 
-Das ist ganz normale Projektdisziplin, angewendet auf eine neue Art von System. Agenten sollten denselben Release-Prozess durchlaufen wie jede andere Änderung: mit den unterstützten Metadaten im Repository, Deployment über eine Pipeline und dokumentierten Einrichtungsschritten für das, was Salesforce nicht paketiert, etwa MCP-Server-Registrierungen, wie ich es in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/) beschreibe.
+Das ist ganz normale Projektdisziplin, angewendet auf eine neue Art von System. Agenten sollten denselben Release-Prozess durchlaufen wie jede andere Änderung: mit den unterstützten Metadaten im Repository, Deployment über eine Pipeline und dokumentierten Einrichtungsschritten für das, was Salesforce nicht paketiert, etwa MCP-Server-Registrierungen, wie ich es in [warum DevOps über Salesforce-Großprojekte entscheidet](/blog/warum-devops-salesforce-enterprise-projekte/) beschreibe.
 
 ## Der Architekt fragt, ob der Agent seine Kosten wert ist
 
-Auf Kundenseite ist es meine Aufgabe in Agentforce-Projekten, den Fokus auf dem Nutzen zu halten und dafür zu sorgen, dass die Grundlagen tragfähig sind: Datenmodell, Schnittstellen, Berechtigungen und Release-Prozess. Partner und Hersteller möchten verständlicherweise zeigen, was die Technik kann. Jemand muss fragen, ob ein bestimmter Agent seine Kosten wert ist und ob die Daten ihn tragen. Das ist ein Kernteil von [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/).
+Auf Kundenseite ist es meine Aufgabe in Agentforce-Projekten, den Fokus auf dem Nutzen zu halten und dafür zu sorgen, dass die Grundlagen tragfähig sind: Datenmodell, Schnittstellen, Berechtigungen und Release-Prozess. Partner und Hersteller möchten verständlicherweise zeigen, was die Technik kann. Jemand muss fragen, ob ein bestimmter Agent seine Kosten wert ist und ob die Daten ihn tragen. Das ist ein Kernteil von [Architektur und Partnersteuerung](/leistungen/salesforce-architektur/).

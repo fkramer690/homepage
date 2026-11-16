@@ -33,7 +33,7 @@ Ob Agentforce Vibes, Claude Code, Codex oder Copilot: Die Wahl des Coding-Agente
 
 Entwickler und Partner bringen Vorlieben mit. Ein Nearshore-Team kennt vielleicht Claude Code, Ihre internen Entwickler haben Copilot in VS Code, und Ihr Salesforce-Account-Executive bietet Agentforce Vibes an. Jede Option schickt Ihren Quellcode, Ihre Metadaten und manchmal Testdaten aus einer Sandbox an einen Modellanbieter, jeweils unter einem bestimmten Vertrag. Bei einem Hersteller stecken in diesem Code die Logik für Rabattfreigaben, Garantieregeln und die Schnittstellendefinitionen zu SAP oder proALPHA, und Testdaten oder Konfiguration können echte Händlerkonditionen enthalten.
 
-Mir ist kein öffentlicher, Salesforce-spezifischer Beleg bekannt, der die Werkzeuge verlässlich einordnet; außerdem nutzen viele von ihnen die gleichen Bausteine. Salesforce beschreibt seine offene Skills-Bibliothek als [kompatibel mit jedem Coding-Agenten](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release) und nennt Claude Code und Codex; die Hosted MCP Server verbinden sich mit jedem MCP-fähigen Client. Sein erstes offizielles Plugin hat Salesforce für Claude Code gebaut: Laut [Ankündigung vom 19. August 2026](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) bündelt es rund 40 Skills, drei MCP-Server, Hooks zur Deployment-Validierung und einen lesenden Agenten für Architektur-Reviews. Den Funktionsvergleich finden Sie in [Kapitel 4 der Masterclass KI](../../masterclass/ki-salesforce/externe-coding-agenten/). Hier geht es um die Entscheidung.
+Mir ist kein öffentlicher, Salesforce-spezifischer Beleg bekannt, der die Werkzeuge verlässlich einordnet; außerdem nutzen viele von ihnen die gleichen Bausteine. Salesforce beschreibt seine offene Skills-Bibliothek als [kompatibel mit jedem Coding-Agenten](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release) und nennt Claude Code und Codex; die Hosted MCP Server verbinden sich mit jedem MCP-fähigen Client. Sein erstes offizielles Plugin hat Salesforce für Claude Code gebaut: Laut [Ankündigung vom 19. August 2026](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) bündelt es rund 40 Skills, drei MCP-Server, Hooks zur Deployment-Validierung und einen lesenden Agenten für Architektur-Reviews. Den Funktionsvergleich finden Sie in [Kapitel 4 der Masterclass KI](/masterclass/ki-salesforce/externe-coding-agenten/). Hier geht es um die Entscheidung.
 
 ## Vier Fragen, die den Coding-Agenten für Salesforce bestimmen
 
@@ -60,7 +60,7 @@ Diese Frage streicht Optionen. Was die Anbieter auf ihren eigenen Seiten sagen:
 | GitHub Copilot | [EU-Datenresidenz seit 13. April 2026](https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available) auf GitHub Enterprise Cloud with data residency, für allgemein verfügbare Funktionen inklusive Cloud Agent und CLI (Vorschaufunktionen erst ab GA), standardmäßig aus, 10 Prozent mehr AI Credits |
 | Codex | Daten- und Inferenzresidenz nur mit ChatGPT Enterprise, Region „Europe (EEA + Switzerland)“; [Codex-App und CLI werden unterstützt, Codex Web ist ausgenommen](https://help.openai.com/en/articles/9903489); Verarbeitung ohne GPU kann außerhalb der Region laufen |
 
-Zwei Details zählen für Salesforce-Teams. Die [EU-Modellliste für Copilot](https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency) enthält Claude Opus 5.5 und Sonnet 5.5; ein Team kann also ohne AWS-Konto mit Claude-Modellen unter EU-Verarbeitung arbeiten. Das zweite: „EU“ kann bei GitHub und OpenAI auch EFTA-Staaten oder die Schweiz einschließen, gleichen Sie das mit Ihrer Datenschutzvorgabe ab. Ob der Betriebsrat mitbestimmt, ist eine eigene Frage, beschrieben in [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
+Zwei Details zählen für Salesforce-Teams. Die [EU-Modellliste für Copilot](https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency) enthält Claude Opus 5.5 und Sonnet 5.5; ein Team kann also ohne AWS-Konto mit Claude-Modellen unter EU-Verarbeitung arbeiten. Das zweite: „EU“ kann bei GitHub und OpenAI auch EFTA-Staaten oder die Schweiz einschließen, gleichen Sie das mit Ihrer Datenschutzvorgabe ab. Ob der Betriebsrat mitbestimmt, ist eine eigene Frage, beschrieben in [KI-Coding, Betriebsrat und DSGVO](/blog/ki-coding-betriebsrat-dsgvo/).
 
 ```hinweis offen
 Bei Vibes nennt Salesforce keine Verarbeitungsregion, und die FAQ (nach der Sitzung nicht gespeichert) und die Abrechnungsseite (Data Cloud speichert Daten) lesen sich unterschiedlich. Region und Aufbewahrung würde ich mir von Salesforce schriftlich geben lassen, bevor Ihr Datenschutzbeauftragter zustimmt.
@@ -75,14 +75,14 @@ Die Werkzeuge unterscheiden sich weniger im Preis als darin, wer die Ausgaben si
 - **Claude Code über Bedrock** erscheint auf der AWS-Rechnung. Die Analytics von Anthropic erfassen das nicht; Zahlen pro Nutzer erfordern OpenTelemetry oder ein Gateway.
 - **Vibes nach Verbrauch** zieht aus demselben Flex-Credit-Pool wie Ihre produktiven Agenten. Ein Partnerteam kann das Budget aufbrauchen, das Sie für einen Serviceagenten für Händleranfragen eingeplant haben.
 
-Die Rechnung für ein ganzes Team und die Frage, ob Kunde oder Partner zahlt, stehen in [was KI-Coding im Salesforce-Projekt kostet](../ki-coding-kosten-salesforce-projekt/).
+Die Rechnung für ein ganzes Team und die Frage, ob Kunde oder Partner zahlt, stehen in [was KI-Coding im Salesforce-Projekt kostet](/blog/ki-coding-kosten-salesforce-projekt/).
 
 ### 4. Welche Governance erwartet Ihre IT-Sicherheit?
 
 - **Identität und Audit.** Claude Enterprise ergänzt das SSO, das schon Claude Team hat, um SCIM, Audit-Logs, eine Compliance-API und eigene Aufbewahrungsregeln. ChatGPT Business hat SSO, aber kein SCIM, keine rollenbasierten Rechte und keine Compliance-API; Enterprise hat alle drei.
 - **Umfang der Nutzung.** Bei OpenAI können Admins [Codex Local und Codex Cloud getrennt steuern](https://help.openai.com/en/articles/11369540), also die CLI erlauben und delegierte Cloud-Aufgaben sperren. Vibes lässt sich in Setup [für eine Produktiv-Org abschalten](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes).
 - **Training und Aufbewahrung.** Anthropic [trainiert nicht mit Code, der unter kommerziellen Bedingungen übermittelt wird](https://code.claude.com/docs/en/data-usage). Standard sind 30 Tage Aufbewahrung, Enterprise kann eigene Fristen setzen, und Zero Data Retention gibt es für berechtigte Organisationen und geeignete Produkte; über Bedrock gelten die Einstellungen von AWS. OpenAI nutzt Eingaben von Geschäftskunden standardmäßig nicht fürs Training.
-- **Eine führende Regeldatei.** Der Copilot Coding Agent [liest AGENTS.md und CLAUDE.md](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions), Codex liest AGENTS.md, Claude Code liest CLAUDE.md, die AGENTS.md importieren kann. Eine führende Datei steuert also mehrere Werkzeuge, wenn Sie das entsprechend einrichten und testen, siehe [die KI-Regeldatei im Salesforce-Repository](../ki-regeldatei-salesforce-repository/).
+- **Eine führende Regeldatei.** Der Copilot Coding Agent [liest AGENTS.md und CLAUDE.md](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions), Codex liest AGENTS.md, Claude Code liest CLAUDE.md, die AGENTS.md importieren kann. Eine führende Datei steuert also mehrere Werkzeuge, wenn Sie das entsprechend einrichten und testen, siehe [die KI-Regeldatei im Salesforce-Repository](/blog/ki-regeldatei-salesforce-repository/).
 
 ## Rechenbeispiel: zwei freigegebene Werkzeuge statt vier
 
@@ -97,7 +97,7 @@ So würde ich entscheiden:
 3. **Keine Partnerkonten.** Besteht der Partner wegen des offiziellen Plugins auf Claude Code, läuft es über das AWS-Konto des Kunden in einer EU-Region, mit Budget und OpenTelemetry.
 4. **Vorerst kein Codex.** ChatGPT Business hat keine Datenresidenz, und Enterprise wäre ein dritter Vertrag für einen Entwickler.
 
-Am Ende stehen zwei Werkzeuge und eine führende `AGENTS.md`, die der interne Architekt verantwortet. Wie sich das im Partnervertrag niederschlägt, steht in [Partner codet mit KI: was in den Vertrag gehört](../partner-ki-coding-regeln-vertrag/).
+Am Ende stehen zwei Werkzeuge und eine führende `AGENTS.md`, die der interne Architekt verantwortet. Wie sich das im Partnervertrag niederschlägt, steht in [Partner codet mit KI: was in den Vertrag gehört](/blog/partner-ki-coding-regeln-vertrag/).
 
 ## Wann ist welches Werkzeug die falsche Wahl?
 
@@ -108,7 +108,7 @@ Am Ende stehen zwei Werkzeuge und eine führende `AGENTS.md`, die der interne Ar
 
 ## Erster Schritt: in Woche 1 EU Operating Zone und Verträge prüfen
 
-Diese Regeln über mehrere Partner hinweg festzulegen, gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/) und im [DevOps- und Release-Management](../../leistungen/devops-und-release-management/). Eine vierwöchige technische Bewertung liefert eine Empfehlung; Datenschutz, Einkauf und Betriebsrat können länger brauchen:
+Diese Regeln über mehrere Partner hinweg festzulegen, gehört zu meiner Arbeit in der [Partnersteuerung](/leistungen/partnersteuerung/) und im [DevOps- und Release-Management](/leistungen/devops-und-release-management/). Eine vierwöchige technische Bewertung liefert eine Empfehlung; Datenschutz, Einkauf und Betriebsrat können länger brauchen:
 
 ```schritte
 Bestand aufnehmen | Woche 1
@@ -118,5 +118,5 @@ Regeln klären | Woche 2
 Freigeben | Woche 3
   Geben Sie höchstens zwei Werkzeuge frei, alle Konten auf den Kunden, und schreiben Sie die Regeldatei.
 Testen | Woche 4
-  Lassen Sie 10 bis 15 Backlog-Aufgaben durch die freigegebenen Werkzeuge und dieselben Pipeline-Prüfungen laufen, wie in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) beschrieben.
+  Lassen Sie 10 bis 15 Backlog-Aufgaben durch die freigegebenen Werkzeuge und dieselben Pipeline-Prüfungen laufen, wie in [Quality Gates für KI-Code](/blog/quality-gates-ki-code-salesforce-pipeline/) beschrieben.
 ```

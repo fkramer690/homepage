@@ -48,7 +48,7 @@ Drei Details derselben Seite sind für das Budget wichtig:
 
 Eine kostenlose Testversion gibt es nicht. Die FAQ verweist stattdessen auf praktische Workshops.
 
-Wie sich die beiden Editionen zu Salesforce CPQ und dem älteren Revenue Cloud von 2020 verhalten, zeigt [Revenue Cloud Advanced, Revenue Cloud und CPQ](../revenue-cloud-produktnamen-rlm-rca/).
+Wie sich die beiden Editionen zu Salesforce CPQ und dem älteren Revenue Cloud von 2020 verhalten, zeigt [Revenue Cloud Advanced, Revenue Cloud und CPQ](/blog/revenue-cloud-produktnamen-rlm-rca/).
 
 ## Advanced ergänzt Verträge, Orchestrierung und Rechnungen
 
@@ -69,7 +69,7 @@ contra: Advanced oder Billing ist der Ausgangspunkt, wenn
 - Verbrauch, Meilensteine oder Zahlungen in Salesforce abgerechnet werden sollen (Billing)
 ```
 
-Welche Schritte bei SAP bleiben, behandelt [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
+Welche Schritte bei SAP bleiben, behandelt [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](/blog/revenue-cloud-sap-quote-to-cash-aufteilung/).
 
 ## Welche Add-ons gibt es?
 
@@ -98,7 +98,7 @@ Revenue Cloud Billing ist ein eigenes Add-on, für das als Preis "Request a Quot
 
 Der Verbrauch wird in Billing Events gezählt. Das [Rate Sheet vom Februar 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) setzt 0,02 Billing Events pro Dollar Gesamtrechnungsbetrag an, also ein Event pro 50 Dollar. Die Zwischensumme enthält Versand- und Bearbeitungskosten, Steuern nicht. Rechnungen in anderen Währungen werden zum durchschnittlichen Tageskurs in Dollar umgerechnet. Es zählen nur positive Beträge gebuchter Rechnungspositionen, und das Stornieren einer Rechnung gibt die Events nicht zurück. Die enthaltenen Events und der Preis zusätzlicher Events stehen im Order Form. Events müssen vor dem Order End Date verbraucht werden, ein Übertrag ist nicht erlaubt.
 
-Eine Beispielannahme: Ein Hersteller stellt über Revenue Cloud Billing Rechnungen über 20 Millionen Dollar im Jahr. Das sind 400.000 Billing Events. Was ein Event kostet, ist nicht öffentlich, das Budget ergibt sich also erst aus dem Angebot. Wie Sie das Volumen schätzen und was Sie verhandeln sollten, steht in [Revenue Cloud Billing Kosten: Was Billing Events bedeuten](../revenue-cloud-billing-kosten/).
+Eine Beispielannahme: Ein Hersteller stellt über Revenue Cloud Billing Rechnungen über 20 Millionen Dollar im Jahr. Das sind 400.000 Billing Events. Was ein Event kostet, ist nicht öffentlich, das Budget ergibt sich also erst aus dem Angebot. Wie Sie das Volumen schätzen und was Sie verhandeln sollten, steht in [Revenue Cloud Billing Kosten: Was Billing Events bedeuten](/blog/revenue-cloud-billing-kosten/).
 
 ## Wie viele Revenue-Cloud-Lizenzen braucht ein Hersteller?
 
@@ -113,11 +113,11 @@ Die Edition bestimmt den Preis pro Nutzer. Die Lizenzprognose bestimmt die Zahl 
 
 Rechenbeispiel: Ein Maschinenbauer hat 80 Sales-Cloud-Nutzer. 35 davon erstellen Angebote, die anderen 45 arbeiten an Accounts und Opportunities und sehen Angebote gelegentlich an. 35 Nutzer auf Advanced kosten 35 × 200 Euro × 12 = 84.000 Euro im Jahr zum Listenpreis, auf Growth 63.000 Euro. Bekämen alle 80 Nutzer Advanced, wären es 192.000 Euro. Die Differenz von 108.000 Euro im Jahr gilt nur, wenn Lesezugriff ohne Revenue-Cloud-Lizenz funktioniert, und genau deshalb gehört diese Frage ins Angebot.
 
-Ob Growth und Advanced in einer Org gemischt werden können, steht auf der Preisseite ebenfalls nicht. Braucht nur der Projektvertrieb Verträge und Verbrauchsabrechnung, wäre eine Mischung die günstigere Variante, also fragen Sie ausdrücklich danach. Wie ich eine solche Prognose allgemein aufbaue, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
+Ob Growth und Advanced in einer Org gemischt werden können, steht auf der Preisseite ebenfalls nicht. Braucht nur der Projektvertrieb Verträge und Verbrauchsabrechnung, wäre eine Mischung die günstigere Variante, also fragen Sie ausdrücklich danach. Wie ich eine solche Prognose allgemein aufbaue, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](/blog/salesforce-lizenzen-volle-lizenz/).
 
 ## Lizenzbedarf für Leser und Freigeber schriftlich klären
 
-Listenpreise sind ein Ausgangspunkt, und Salesforce stellt sein Editionsmodell gerade in mehreren Clouds um. Sales Cloud gibt es jetzt als Core, Advanced und Max, wie in [Salesforce-Editionen Core, Advanced, Max für Hersteller](../salesforce-editionen-core-advanced-max/) beschrieben. Vor der Unterschrift würde ich mir diese Punkte schriftlich geben lassen:
+Listenpreise sind ein Ausgangspunkt, und Salesforce stellt sein Editionsmodell gerade in mehreren Clouds um. Sales Cloud gibt es jetzt als Core, Advanced und Max, wie in [Salesforce-Editionen Core, Advanced, Max für Hersteller](/blog/salesforce-editionen-core-advanced-max/) beschrieben. Vor der Unterschrift würde ich mir diese Punkte schriftlich geben lassen:
 
 - die Funktionsliste pro Edition, wie sie für Ihren Vertrag gilt, abgeglichen mit dem Lizenzvergleich,
 - ob reine Leser und Freigeber eine Revenue-Cloud-Lizenz brauchen,
@@ -126,4 +126,4 @@ Listenpreise sind ein Ausgangspunkt, und Salesforce stellt sein Editionsmodell g
 - den Preis pro Billing Event und die Zahl der enthaltenen Events,
 - eine Preisobergrenze für die Verlängerung.
 
-Ob sich Revenue Cloud überhaupt lohnt, steht in [Revenue Cloud für Hersteller: Wann lohnt es sich?](../revenue-cloud-lohnt-sich-hersteller/), und das [Überblickskapitel der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/) stellt die Preise neben die anderen Entscheidungen. Lizenzprognosen gehören zu meiner Arbeit in [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+Ob sich Revenue Cloud überhaupt lohnt, steht in [Revenue Cloud für Hersteller: Wann lohnt es sich?](/blog/revenue-cloud-lohnt-sich-hersteller/), und das [Überblickskapitel der Masterclass Revenue Cloud](/masterclass/revenue-cloud/revenue-cloud-ueberblick/) stellt die Preise neben die anderen Entscheidungen. Lizenzprognosen gehören zu meiner Arbeit in [Make-or-Buy und Lizenzprognosen](/leistungen/make-or-buy-lizenzen/).

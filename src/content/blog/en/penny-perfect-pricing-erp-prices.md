@@ -68,9 +68,9 @@ In Manufacturing Cloud, the clearest documented use case is telesales. The [Adva
 It does not replace two other price engines:
 
 - **Quotes** with configuration, approval and contract terms belong to Revenue Cloud. Penny Perfect Pricing prices order lines, not quotes.
-- **Store prices** for dealers ordering online come from B2B Commerce's own pricing: price books, pricing strategies, a custom pricing provider such as a live ERP call, or Advanced Pricing powered by Revenue Cloud, as described in [customer prices in B2B Commerce](../b2b-commerce-customer-prices-price-books-erp/) and in the masterclass chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/).
+- **Store prices** for dealers ordering online come from B2B Commerce's own pricing: price books, pricing strategies, a custom pricing provider such as a live ERP call, or Advanced Pricing powered by Revenue Cloud, as described in [customer prices in B2B Commerce](/en/blog/b2b-commerce-customer-prices-price-books-erp/) and in the masterclass chapter [prices, cart and checkout](/en/masterclass/b2b-commerce/prices-cart-checkout/).
 
-Agents that build dealer quotes, such as the AI Partner Sales Assistant, have the same problem from the other side: if Salesforce holds only list prices, the agent quotes list prices. I describe that in [AI Partner Sales Assistant: dealer quotes with AI](../ai-partner-sales-assistant-dealer-quotes/).
+Agents that build dealer quotes, such as the AI Partner Sales Assistant, have the same problem from the other side: if Salesforce holds only list prices, the agent quotes list prices. I describe that in [AI Partner Sales Assistant: dealer quotes with AI](/en/blog/ai-partner-sales-assistant-dealer-quotes/).
 
 ## What is documented, and what is not?
 
@@ -100,7 +100,7 @@ These gaps are manageable once four roles are defined before any rep relies on a
 
 Assume a machine builder has a telesales desk of ten people who take spare parts orders by phone. It has 30,000 spare parts, 2,500 customers and prices from SAP with four condition types: list price, customer discount, a small quantity surcharge and quantity scales. Orders should be entered in Salesforce, where the rep also sees the customer's installed base and open cases.
 
-**Option A: SAP stays price master.** Salesforce calls SAP for the price of each line while the order is built, through an API like the one in [order status from SAP via MuleSoft](../agentforce-sap-order-status-mulesoft/). Salesforce shows SAP's current price, and the order and invoice match as long as SAP prices the order with the same partners, date and quantities. The cost is a dependency: if SAP is in a maintenance window, the desk cannot price orders.
+**Option A: SAP stays price master.** Salesforce calls SAP for the price of each line while the order is built, through an API like the one in [order status from SAP via MuleSoft](/en/blog/agentforce-sap-order-status-mulesoft/). Salesforce shows SAP's current price, and the order and invoice match as long as SAP prices the order with the same partners, date and quantities. The cost is a dependency: if SAP is in a maintenance window, the desk cannot price orders.
 
 **Option B: Penny Perfect Pricing calculates.** The four condition types are rebuilt as pricing specifications, and the condition records for 2,500 customers are copied to External Pricing Key Values, with a delta load and a consolidation run several times a day. The limits of 1,000 lines per order and 28 schema steps are no issue here, but they should still be checked. Prices are returned instantly without calling SAP. The cost is the sync and one more pricing configuration that someone has to own.
 
@@ -111,7 +111,7 @@ I would choose A when SAP responds quickly and is reliably available. I would lo
 1. **Count your condition types** and how often condition records change per week.
 2. **Write down the four roles**: who owns pricing rules and condition data, which system calculates the order price and which one decides the invoice price, and which price wins when Salesforce and SAP disagree.
 3. **Ask Salesforce in writing** what the required add-ons cost for your edition, and check the documented limits against your largest orders and your condition volume.
-4. **Plan the data flows** together with the rest of the SAP interface, as in [Manufacturing Cloud and SAP: which data flows where](../manufacturing-cloud-sap-integration-data-flows/).
+4. **Plan the data flows** together with the rest of the SAP interface, as in [Manufacturing Cloud and SAP: which data flows where](/en/blog/manufacturing-cloud-sap-integration-data-flows/).
 5. **Test with real orders**: 200 historical orders priced in both systems, compared line by line.
 
-The full chapter on ERP integration, agents and rollout is [ERP, AI and rollout](../../masterclass/manufacturing-cloud/erp-ai-and-rollout/) in the Manufacturing Cloud masterclass. Drawing the line between ERP and Salesforce is part of my [architecture work](../../services/salesforce-architecture/).
+The full chapter on ERP integration, agents and rollout is [ERP, AI and rollout](/en/masterclass/manufacturing-cloud/erp-ai-and-rollout/) in the Manufacturing Cloud masterclass. Drawing the line between ERP and Salesforce is part of my [architecture work](/en/services/salesforce-architecture/).

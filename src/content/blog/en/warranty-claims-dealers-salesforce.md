@@ -55,7 +55,7 @@ According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/
 
 The partner enters the claimed amount per item and sets the claim status to submitted. The adjudicator enters the approved amount. On the [product page](https://www.salesforce.com/manufacturing/cloud/service/), Salesforce also lists automated approvals through business rules. According to the [product page](https://www.salesforce.com/manufacturing/cloud/), Winter '27 adds the Warranty Claims Adjudication Agent and guided warranty parts returns for dealers. [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.mfg_genai_warranty_claims_adjudication.htm&language=en_US&type=5) describes the agent as supporting the adjudicator: it checks claims for completeness, flags missing information, drafts requests for more details, prioritizes open claims and points out possible fraud. It does not approve or reject claims. It needs the Agentforce for Manufacturing add-on or an Agentforce 1 edition, so it belongs in the quote as a separate line.
 
-I would create the credit note for the dealer in the ERP, as with rebates in [part 5](../rebate-management-dealer-rebates/). Salesforce handles checking and approval, an integration transfers the approved amount, and finance posts it. That integration belongs in the plan from the start, or the dealer sees an approved claim in the portal and is still waiting for the money.
+I would create the credit note for the dealer in the ERP, as with rebates in [part 5](/en/blog/rebate-management-dealer-rebates/). Salesforce handles checking and approval, an integration transfers the approved amount, and finance posts it. That integration belongs in the plan from the start, or the dealer sees an approved claim in the portal and is still waiting for the money.
 
 ```ablauf
 sf: Dealer portal, Warranty claim, Adjudication, Recovery claim
@@ -75,12 +75,12 @@ Is this serial number still under warranty? When did the warranty start, at purc
 The asset warranty can answer these questions only when the asset and its data are in Salesforce. For many manufacturers that is exactly the gap:
 
 - **Sales through dealers.** The manufacturer ships to the dealer, the dealer sells to the end customer. Only the dealer knows whether and when the asset was installed. Unless the sale is registered, the warranty start date is missing.
-- **Installed base in the ERP.** Serial numbers live in the ERP or in production, but not as assets in Salesforce. Then an integration is needed before the first claim can be checked. How to get the installed base into Salesforce is covered in [installed base in Manufacturing Cloud](../installed-base-asset-milestones/).
+- **Installed base in the ERP.** Serial numbers live in the ERP or in production, but not as assets in Salesforce. Then an integration is needed before the first claim can be checked. How to get the installed base into Salesforce is covered in [installed base in Manufacturing Cloud](/en/blog/installed-base-asset-milestones/).
 - **Usage.** Operating hours or cycles come from the asset itself, from the dealer or may not be available at all. If usage is part of the term, it needs a source.
 
-For the Winter '27 agent this matters even more. An agent that helps prepare the check works with the same fields as a person. If the data is missing, its completeness check flags gaps instead of helping the adjudicator decide. Why I look at data quality first for agents is described in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
+For the Winter '27 agent this matters even more. An agent that helps prepare the check works with the same fields as a person. If the data is missing, its completeness check flags gaps instead of helping the adjudicator decide. Why I look at data quality first for agents is described in [Agentforce: business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/).
 
-In the portal license overview in [part 7](../manufacturing-cloud-customer-portal/), the customer license Customer Community Plus for Manufacturing covers assets and warranties, while Salesforce lists warranty claims under the partner license. So for dealers who submit claims, plan for partner licenses.
+In the portal license overview in [part 7](/en/blog/manufacturing-cloud-customer-portal/), the customer license Customer Community Plus for Manufacturing covers assets and warranties, while Salesforce lists warranty claims under the partner license. So for dealers who submit claims, plan for partner licenses.
 
 ## What is supplier recovery?
 
@@ -90,9 +90,9 @@ For that to work, the causal part has to be captured cleanly in the claim, with 
 
 ## Where does warranty end and Field Service begin?
 
-Between carrying out the service and deciding commercial coverage. Manufacturing Cloud determines whether damage is covered, who receives which amount and who pays in the end. Field Service answers who goes to the customer, when, and with which spare part. The two overlap: a work order can trigger a warranty check, the on-site diagnosis provides the fault code and causal part, and parts and labor from the visit go into the claim. The same goes for maintenance contracts and committed response times, which run through service contracts and entitlements in Salesforce. How that works is covered in [part 5 of the Field Service series](../salesforce-field-service-maintenance-contracts/).
+Between carrying out the service and deciding commercial coverage. Manufacturing Cloud determines whether damage is covered, who receives which amount and who pays in the end. Field Service answers who goes to the customer, when, and with which spare part. The two overlap: a work order can trigger a warranty check, the on-site diagnosis provides the fault code and causal part, and parts and labor from the visit go into the claim. The same goes for maintenance contracts and committed response times, which run through service contracts and entitlements in Salesforce. How that works is covered in [part 5 of the Field Service series](/en/blog/salesforce-field-service-maintenance-contracts/).
 
-Both topics meet at the asset. The same asset carries the warranty, the maintenance history and the work orders. If you introduce both, design the asset model once, not per project. Where the line runs in detail is in [chapter 4 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/warranty-and-after-sales/). Whether Field Service pays off is covered in the [Field Service series](../salesforce-field-service-worth-it/).
+Both topics meet at the asset. The same asset carries the warranty, the maintenance history and the work orders. If you introduce both, design the asset model once, not per project. Where the line runs in detail is in [chapter 4 of the Manufacturing Cloud masterclass](/en/masterclass/manufacturing-cloud/warranty-and-after-sales/). Whether Field Service pays off is covered in the [Field Service series](/en/blog/salesforce-field-service-worth-it/).
 
 ## When does warranty management in Salesforce pay off?
 
@@ -109,7 +109,7 @@ contra: I would hold back when
 - asset data is missing and nobody wants to collect it
 ```
 
-In the second case the data model adds little. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
+In the second case the data model adds little. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/).
 
 ## Find the asset data and bring it into Salesforce
 

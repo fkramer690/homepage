@@ -42,7 +42,7 @@ Die [Preisseite von Revenue Cloud](https://www.salesforce.com/sales/cpq/pricing/
 
 Die Fußnote sagt, dass die Add-ons getrennt von den vorausgesetzten Produkten verkauft werden und einen Jahresvertrag brauchen. Die [EU-Preisseite](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) führt außerdem Invoice Management als Add-on zu Advanced, mit dem Hinweis "Freemium access available". In der Salesforce-Hilfe und der Entwicklerdokumentation zu Winter '27 heißt die Produktfamilie Revenue Management. Eingeführt wurde sie als Revenue Lifecycle Management. In Angeboten können Ihnen also alle drei Namen begegnen.
 
-Wo "Consumption & Invoicing" in Advanced endet und wo Invoice Management oder das Billing-Add-on beginnt, erklärt die Seite nicht. Lassen Sie sich diese Grenze vom Account Executive für jede Funktion, die Sie brauchen, schriftlich bestätigen. Die Editionen selbst behandelt [Revenue Cloud Preise: Growth, Advanced und Add-ons](../revenue-cloud-editionen-preise/).
+Wo "Consumption & Invoicing" in Advanced endet und wo Invoice Management oder das Billing-Add-on beginnt, erklärt die Seite nicht. Lassen Sie sich diese Grenze vom Account Executive für jede Funktion, die Sie brauchen, schriftlich bestätigen. Die Editionen selbst behandelt [Revenue Cloud Preise: Growth, Advanced und Add-ons](/blog/revenue-cloud-editionen-preise/).
 
 ## Was ist ein Billing Event?
 
@@ -54,7 +54,7 @@ Ein Billing Event ist die Einheit, in der Salesforce den Verbrauch von Revenue C
 quelle: Revenue Cloud Billing Rate Sheet, Februar 2026
 ```
 
-Das Kontingent steht im Order Form, in der Tabelle Usage Details. Billing Events müssen bis zum Order End Date verbraucht werden. Ein Übertrag ist ausgeschlossen. Das Rate Sheet sagt außerdem, dass sich Verbrauchstypen und Faktoren ändern können. Das ist dieselbe Logik wie bei [Flex Credits für Agentforce](../flex-credits-agentforce-kosten-pro-aktion/): Sie kaufen ein Kontingent für die Laufzeit, und was Sie nicht nutzen, verfällt.
+Das Kontingent steht im Order Form, in der Tabelle Usage Details. Billing Events müssen bis zum Order End Date verbraucht werden. Ein Übertrag ist ausgeschlossen. Das Rate Sheet sagt außerdem, dass sich Verbrauchstypen und Faktoren ändern können. Das ist dieselbe Logik wie bei [Flex Credits für Agentforce](/blog/flex-credits-agentforce-kosten-pro-aktion/): Sie kaufen ein Kontingent für die Laufzeit, und was Sie nicht nutzen, verfällt.
 
 ## Gezählt wird die Zwischensumme ohne Steuer
 
@@ -82,7 +82,7 @@ Rechenbeispiel: Ein Maschinenbauer will Fernüberwachungs-Abos und Wartungsvertr
 | Abos und Wartungsverträge | 18 Mio. Euro | 20,7 Mio. Dollar | 414.000 |
 | Zusätzlich Maschinenrechnungen über 120 Mio. Euro | 138 Mio. Euro | 158,7 Mio. Dollar | 3.174.000 |
 
-Die zweite Zeile zeigt, warum der Umfang die Kosten bestimmt. Maschinenrechnungen würden die Zahl der Events mehr als versiebenfachen, obwohl SAP diese Rechnungen ohnehin erstellt. Das ist ein Grund, warum ich Maschinenrechnungen in SAP lasse, wie in [Revenue Cloud Billing oder SAP](../revenue-cloud-billing-oder-sap-rechnung/) beschrieben.
+Die zweite Zeile zeigt, warum der Umfang die Kosten bestimmt. Maschinenrechnungen würden die Zahl der Events mehr als versiebenfachen, obwohl SAP diese Rechnungen ohnehin erstellt. Das ist ein Grund, warum ich Maschinenrechnungen in SAP lasse, wie in [Revenue Cloud Billing oder SAP](/blog/revenue-cloud-billing-oder-sap-rechnung/) beschrieben.
 
 Zwei Effekte übersieht man leicht. Die Rechnungsfrequenz spielt wenig Rolle: Zwölf Monatsrechnungen über je 1.000 Euro verbrauchen etwa so viele Events wie eine Jahresrechnung über 12.000 Euro, es sei denn, die Rundung gilt je Rechnung. Bei Rechnungen in Euro kann der Rechnungszeitpunkt das Ergebnis aber wegen des täglichen Wechselkurses beeinflussen. Das Wachstum spielt eine große Rolle: Wächst das wiederkehrende Geschäft um 20 Prozent im Jahr, braucht das dritte Jahr etwa 44 Prozent mehr Events als das erste.
 
@@ -99,8 +99,8 @@ Diese Punkte würde ich in die Verhandlung mitnehmen:
 5. **Funktionsabgrenzung.** Klären Sie, welche benötigten Funktionen in Advanced stecken, welche in Invoice Management und welche nur im Billing-Add-on.
 6. **Verlängerung.** Vereinbaren Sie eine Preisobergrenze für den Event-Preis bei der Verlängerung, weil der Verbrauch meist wächst.
 
-Solche Lizenzentscheidungen gehören in eine Lizenzprognose mit echten Zahlen, nicht in die letzte Woche vor der Unterschrift. Bei Nutzerlizenzen ist es genauso. Das beschreiben [Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/) und [Salesforce-Editionen Core, Advanced, Max](../salesforce-editionen-core-advanced-max/). Solche Prognosen erstelle ich im Rahmen von [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).
+Solche Lizenzentscheidungen gehören in eine Lizenzprognose mit echten Zahlen, nicht in die letzte Woche vor der Unterschrift. Bei Nutzerlizenzen ist es genauso. Das beschreiben [Braucht jeder eine volle Lizenz?](/blog/salesforce-lizenzen-volle-lizenz/) und [Salesforce-Editionen Core, Advanced, Max](/blog/salesforce-editionen-core-advanced-max/). Solche Prognosen erstelle ich im Rahmen von [Make-or-Buy und Lizenzen](/leistungen/make-or-buy-lizenzen/).
 
 ## Erster Schritt: Finance übernimmt die Prognose
 
-Finance kennt die Rechnungsvolumen je Umsatzart, der Vertrieb kennt das geplante Wachstum der Abos, und der Einkauf verhandelt. Ich würde die Verantwortung für diese Zahl bei Finance verankern, weil Finance später auch mit dem Nebenbuch und den Rechnungen arbeitet. Das Masterclass-Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) zeigt, wo Billing im übrigen Quote-to-Cash-Prozess steht.
+Finance kennt die Rechnungsvolumen je Umsatzart, der Vertrieb kennt das geplante Wachstum der Abos, und der Einkauf verhandelt. Ich würde die Verantwortung für diese Zahl bei Finance verankern, weil Finance später auch mit dem Nebenbuch und den Rechnungen arbeitet. Das Masterclass-Kapitel [Abrechnung und nutzungsbasierte Preise](/masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) zeigt, wo Billing im übrigen Quote-to-Cash-Prozess steht.

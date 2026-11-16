@@ -83,7 +83,7 @@ But a fast digital copy keeps every flaw of the paper form. Typical problems I w
 - **Missing structure**, for example fault descriptions as free text instead of codes that quality management can evaluate.
 - **Forms that differ by region or team** for the same job.
 
-Before forms are digitized at scale, it is worth deciding on a target data model for service protocols: which values are captured as fields, which picklists are shared, how results link to the asset and the work order. This is classic [architecture work](../../services/salesforce-architecture/), and it decides whether the data can be used later for reporting, AI agents or integration with the ERP. How inspection forms look in Data Capture is covered in [Field Service Data Capture: inspection forms without paper](../field-service-data-capture-inspection-forms/).
+Before forms are digitized at scale, it is worth deciding on a target data model for service protocols: which values are captured as fields, which picklists are shared, how results link to the asset and the work order. This is classic [architecture work](/en/services/salesforce-architecture/), and it decides whether the data can be used later for reporting, AI agents or integration with the ERP. How inspection forms look in Data Capture is covered in [Field Service Data Capture: inspection forms without paper](/en/blog/field-service-data-capture-inspection-forms/).
 
 ## What needs to be clarified before using voice input?
 
@@ -114,4 +114,4 @@ Measure the effect
   Time spent on documentation, completeness of reports, time until invoicing.
 ```
 
-Whether technicians then actually use the new features depends on what they get out of them. That is the subject of [Field Service app: getting technicians on board](../field-service-app-technician-adoption/). Complete field service data is also what any AI agent for service will need later, as I explain in [why Agentforce needs business value and data quality first](../agentforce-business-value-data-quality-first/).
+Whether technicians then actually use the new features depends on what they get out of them. That is the subject of [Field Service app: getting technicians on board](/en/blog/field-service-app-technician-adoption/). Complete field service data is also what any AI agent for service will need later, as I explain in [why Agentforce needs business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/).

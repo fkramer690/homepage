@@ -33,13 +33,13 @@ Vibe coding in Salesforce pays off where the code is meant to be thrown away: a 
 
 Andrej Karpathy coined the term in February 2025: you "fully give in to the vibes" and "forget that the code even exists". Simon Willison [narrowed it down](https://simonwillison.net/2025/May/1/not-vibe-coding/) to "generating code with AI without caring about the code that is produced" and stressed that this differs from using AI tools to build production code responsibly. In May 2026 Martin Fowler gave the responsible version its own name. In his [bliki entry](https://martinfowler.com/bliki/VibeCoding.html), programmers who let an LLM write the code but still review it "aren't forgetting the code exists", and he calls that agentic engineering.
 
-So the boundary comes down to one question: does anyone read the code? The same Agentforce Vibes session can be vibe coding in a Developer Edition and agentic engineering in a scratch org built from your repository. The terms and the four layers of AI in a Salesforce program are covered in [chapter 1 of the AI masterclass](../../masterclass/ai-salesforce/terms-and-map/); here the question is what the line means for your projects.
+So the boundary comes down to one question: does anyone read the code? The same Agentforce Vibes session can be vibe coding in a Developer Edition and agentic engineering in a scratch org built from your repository. The terms and the four layers of AI in a Salesforce program are covered in [chapter 1 of the AI masterclass](/en/masterclass/ai-salesforce/terms-and-map/); here the question is what the line means for your projects.
 
 ## Where does vibe coding help a manufacturer?
 
 Fowler names disposable software and prototypes as suitable uses: "Experienced programmers may also find it handy for rapid development of disposable software or prototypes." In a manufacturing program I would consider four candidates:
 
-- **Dealer-portal mock-ups.** A page where a dealer orders spare parts for a machine by serial number, shown to a few dealers in a workshop before anyone writes a user story. What the real portal involves is covered in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
+- **Dealer-portal mock-ups.** A page where a dealer orders spare parts for a machine by serial number, shown to a few dealers in a workshop before anyone writes a user story. What the real portal involves is covered in [the Manufacturing Cloud customer portal](/en/blog/manufacturing-cloud-customer-portal/).
 - **A service cockpit LWC.** One screen with open cases, installed base, next maintenance date and the assigned field technician, so the head of service can point at what is missing. Agentforce Vibes 2.0 offers [live previews for Lightning Web Components](https://developer.salesforce.com/developer-centers/agentforce-vibes/announcements/agentforce-vibes-4-1-0) once the preview tooling is set up, which makes this quick.
 - **Test data scripts.** Spare parts, assets and service contracts in plausible quantities for a demo.
 - **Throwaway analyses.** A one-off script that counts which asset fields are filled, run against an approved, anonymized export rather than production.
@@ -61,11 +61,11 @@ How harmless a prototype is depends on the org it runs in. Fowler calls security
 
 1. **No real data.** No dealer names, no customer machines, no prices from the price list. Generated dummy data is enough for a mock-up.
 2. **No connections.** No Named Credential to SAP or proALPHA, no integration user, no copy of production secrets. The SAP response is a static JSON file.
-3. **No coding agent in production.** Salesforce lets admins [disable Agentforce Vibes per org](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes) in Setup under Agentforce Vibes Extensions. I would do that in production on day one. Salesforce says Agentforce Vibes is not available in the EU Operating Zone ([Vibes FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html)), so the question does not arise for an org in that zone; [chapter 2 of the AI masterclass](../../masterclass/ai-salesforce/salesforce-ai-development-tools/) covers the alternatives.
+3. **No coding agent in production.** Salesforce lets admins [disable Agentforce Vibes per org](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes) in Setup under Agentforce Vibes Extensions. I would do that in production on day one. Salesforce says Agentforce Vibes is not available in the EU Operating Zone ([Vibes FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html)), so the question does not arise for an org in that zone; [chapter 2 of the AI masterclass](/en/masterclass/ai-salesforce/salesforce-ai-development-tools/) covers the alternatives.
 4. **An owner and an end date.** Scratch orgs expire by design. A Developer Edition stays active as long as someone logs in regularly, so somebody has to retire it or at least record what is in it.
 5. **A visible label.** "Prototype, not for production" in the component title, so a screenshot in a steering committee deck does not become a commitment.
 
-These rules belong in the contract with your partner as well, as described in [rules for partners who code with AI](../partners-using-ai-coding-contract-rules/).
+These rules belong in the contract with your partner as well, as described in [rules for partners who code with AI](/en/blog/partners-using-ai-coding-contract-rules/).
 
 ## Why should a vibe-coded prototype not go to production?
 
@@ -79,7 +79,7 @@ In Salesforce, a workshop prototype typically has the same gaps:
 - It has no tests, or tests written only to reach coverage.
 - In this kind of workshop, its metadata stays in the Developer Edition and never reaches your repository or a review.
 
-Fowler adds maintainability: unreviewed code grows into code that is hard to change, for people and for LLMs alike. In my judgment, closing these gaps one by one inside the prototype takes longer than building the feature properly. Which defects to look for in AI code is the topic of [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/).
+Fowler adds maintainability: unreviewed code grows into code that is hard to change, for people and for LLMs alike. In my judgment, closing these gaps one by one inside the prototype takes longer than building the feature properly. Which defects to look for in AI code is the topic of [reviewing AI-generated Salesforce code](/en/blog/reviewing-ai-generated-salesforce-code/).
 
 ## The path from prototype to production
 
@@ -89,13 +89,13 @@ I treat the prototype as a specification. What survives the workshop are screens
 Freeze the result
   Screenshots or a short recording, the field list, the open questions and acceptance criteria written with the business, for example "a dealer sees only orders for machines sold through that dealer".
 Start in your repository
-  The developer works in a scratch org or developer sandbox created from the client's repository, with a rules file that names your Named Credentials, API version and test rules. Why that file belongs to you is explained in [the AI rules file of your repository](../ai-rules-file-salesforce-repository/).
+  The developer works in a scratch org or developer sandbox created from the client's repository, with a rules file that names your Named Credentials, API version and test rules. Why that file belongs to you is explained in [the AI rules file of your repository](/en/blog/ai-rules-file-salesforce-repository/).
 Plan before code
   Agentforce Vibes' [Plan Mode](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html) produces goals, non-goals, an approach and numbered tasks, and "No files change until you click Approve Plan." The developer checks the plan against the acceptance criteria, sharing and permissions first.
 Configure security by hand
   The same Salesforce guide recommends building permission sets, profiles, sharing rules and org-wide defaults manually in Setup and reviewing every generated security change before accepting it.
 Review and gates
-  Pull request, human review, Code Analyzer, validation deploy with Apex tests. The gates are described in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
+  Pull request, human review, Code Analyzer, validation deploy with Apex tests. The gates are described in [quality gates for AI code](/en/blog/quality-gates-for-ai-code-salesforce-pipeline/).
 ```
 
 One exception I accept: the HTML template and CSS of a mock-up LWC can be carried over if they pass the same review. Apex and data access I rebuild by default, because checking and cleaning up prototype code usually costs more than writing it properly.
@@ -106,7 +106,7 @@ Assume a machine builder with Service Cloud, SAP S/4 and 400 dealers, planning a
 
 After the workshop the architect reads the prototype code once, as a reference. The order query ignores the dealer relationship, because the developer was logged in as administrator. Delivery dates come from a hard-coded list. The cockpit runs one query per case.
 
-The production build therefore starts from the repository: three user stories, each with an approved plan, a `runAs` test as a dealer user and an SAP call through the existing MuleSoft API. Assume that takes two sprints for a partner team of three. Without the workshop, my estimate is that the first sprint would have been spent finding out what the screens should show. The prototype paid for itself during requirements work and contributed not a single line of Apex. The cost of the AI tools for such a team is covered in [AI coding costs in a Salesforce project](../ai-coding-costs-salesforce-project/).
+The production build therefore starts from the repository: three user stories, each with an approved plan, a `runAs` test as a dealer user and an SAP call through the existing MuleSoft API. Assume that takes two sprints for a partner team of three. Without the workshop, my estimate is that the first sprint would have been spent finding out what the screens should show. The prototype paid for itself during requirements work and contributed not a single line of Apex. The cost of the AI tools for such a team is covered in [AI coding costs in a Salesforce project](/en/blog/ai-coding-costs-salesforce-project/).
 
 ## Allow vibe coding explicitly in Developer Editions
 
@@ -114,4 +114,4 @@ The production build therefore starts from the repository: three user stories, e
 2. **Disable Agentforce Vibes in production** and keep production deployments in the pipeline.
 3. **Define the hand-over:** screens, acceptance criteria and open questions leave the workshop; prototype Apex does not.
 4. **Make plans visible.** Ask your partner to attach the approved plan to the pull request.
-5. **Own the pipeline.** Setting it up for programs with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work.
+5. **Own the pipeline.** Setting it up for programs with several partners is the core of my [DevOps and release management](/en/services/devops-release-management/) work.

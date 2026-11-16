@@ -69,7 +69,7 @@ A price book entry is one price for one product in one price book, with a curren
 
 To bring that into price books, you have to calculate the result in advance for every combination a buyer can see. With four dealer tiers and a stable price list that is easy: four price books, one nightly load. With prices negotiated per customer, the number of combinations grows quickly, and every change in SAP needs a new load before the store shows the right price. Temporary promotions, freight surcharges and minimum quantity surcharges are usually where replication fails first.
 
-The second risk is more subtle. If the store shows a price calculated from a copy and SAP calculates a different one when the order arrives, someone has to decide which one applies. If nobody decided it before go-live, inside sales has to settle that question, one order at a time. I describe the same risk for AI-built quotes in [AI Partner Sales Assistant: dealer quotes with AI](../ai-partner-sales-assistant-dealer-quotes/).
+The second risk is more subtle. If the store shows a price calculated from a copy and SAP calculates a different one when the order arrives, someone has to decide which one applies. If nobody decided it before go-live, inside sales has to settle that question, one order at a time. I describe the same risk for AI-built quotes in [AI Partner Sales Assistant: dealer quotes with AI](/en/blog/ai-partner-sales-assistant-dealer-quotes/).
 
 ## When should the price be retrieved live from the ERP?
 
@@ -83,7 +83,7 @@ The trade-offs are clear:
 - **Replicated price books:** fast and independent of the ERP. In return, prices are as old as the last load, and the pricing logic exists twice.
 - **Mixed:** use price books for list and tier prices on product pages, and use the live call where the price becomes binding. The guide separates this cleanly: processPrice runs on product lists and product pages, processTransactionalPrice affects cart and checkout. I would still test response times, price jumps between product page and cart, and behavior during outages in a prototype before committing to it.
 
-A third option is Advanced Pricing powered by Revenue Cloud, a pricing engine inside Salesforce. When it is worth the extra license is covered in [Advanced Pricing in B2B stores](../advanced-pricing-b2b-store-revenue-cloud/).
+A third option is Advanced Pricing powered by Revenue Cloud, a pricing engine inside Salesforce. When it is worth the extra license is covered in [Advanced Pricing in B2B stores](/en/blog/advanced-pricing-b2b-store-revenue-cloud/).
 
 ## Worked example: compressor maker with 600 dealers
 
@@ -113,4 +113,4 @@ Document a one-page price master decision before you design the store:
 4. What does the store show when the live call fails?
 5. Which price applies when store and ERP differ, and who resolves it?
 
-This decision belongs in the same document as your [object ownership matrix](../salesforce-object-ownership-matrix/), and it shapes the list of ERP interfaces, as described in [B2B Commerce and SAP: which data flows where?](../b2b-commerce-sap-data-flows/). How prices, quotes, checkout and reorders fit together is the subject of the chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) in the [B2B Commerce masterclass](../../masterclass/b2b-commerce/). Designing the interface itself is part of my work on [Salesforce integration](../../services/salesforce-integration/).
+This decision belongs in the same document as your [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/), and it shapes the list of ERP interfaces, as described in [B2B Commerce and SAP: which data flows where?](/en/blog/b2b-commerce-sap-data-flows/). How prices, quotes, checkout and reorders fit together is the subject of the chapter [prices, cart and checkout](/en/masterclass/b2b-commerce/prices-cart-checkout/) in the [B2B Commerce masterclass](/en/masterclass/b2b-commerce/). Designing the interface itself is part of my work on [Salesforce integration](/en/services/salesforce-integration/).

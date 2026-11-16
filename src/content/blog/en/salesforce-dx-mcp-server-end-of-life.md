@@ -64,7 +64,7 @@ MCP (Model Context Protocol) is the open standard through which an AI tool calls
 
 The tools controlled by that setting are not harmless. One tool deploys to an org, another assigns permission sets, including on behalf of other users, and another reads data. Telemetry is on by default. A partner developer who supports your production org on Monday and builds in a sandbox on Tuesday may have both orgs on the same laptop.
 
-For a manufacturer, the production org holds dealer price agreements, warranty claims, the installed base and service contracts. You would not give an integration user broad rights without a review. An AI agent with a developer's login deserves the same scrutiny, and the end of life is a good occasion to apply it. How MCP fits into your architecture overall is the topic of [MCP in Salesforce, explained for IT leads](../mcp-salesforce-explained-for-it-leads/).
+For a manufacturer, the production org holds dealer price agreements, warranty claims, the installed base and service contracts. You would not give an integration user broad rights without a review. An AI agent with a developer's login deserves the same scrutiny, and the end of life is a good occasion to apply it. How MCP fits into your architecture overall is the topic of [MCP in Salesforce, explained for IT leads](/en/blog/mcp-salesforce-explained-for-it-leads/).
 
 ## What replaces the Salesforce DX MCP Server?
 
@@ -82,7 +82,7 @@ Read records for context | Query tool on the laptop | Hosted MCP server for read
 
 **The Claude Code plugin** bundles about 40 of these skills plus three MCP servers: one for API context, one for metadata knowledge and one for language support in the editor. The first two run on Salesforce infrastructure. According to the [Metadata API guide](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_salesforce_api_mcp_intro.htm), the Metadata API context tools on the API Context server are part of a beta service under the Beta Services Terms, require Hosted MCP to be set up in the org first, and have calls that count against your API quota. Your admin has to enable this, which means your legal and IT teams should know they are approving a beta service.
 
-**Hosted MCP Servers** have been [generally available since 29 April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) for Enterprise Edition and above. According to the [security best practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html) they are off by default, every call runs with the rights of the user who authorised the connection, and there are no service accounts. I cover who may read what through them in [Hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/), and why the calls will become a cost item in [MCP calls as a budget risk](../flex-credits-agentforce-cost-per-action/).
+**Hosted MCP Servers** have been [generally available since 29 April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) for Enterprise Edition and above. According to the [security best practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html) they are off by default, every call runs with the rights of the user who authorised the connection, and there are no service accounts. I cover who may read what through them in [Hosted MCP servers and data access](/en/blog/salesforce-hosted-mcp-servers-data-access/), and why the calls will become a cost item in [MCP calls as a budget risk](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 ## Worked example: three partners, one deadline
 
@@ -98,9 +98,9 @@ The decision I would expect to take longest is who approves hosted servers in pr
 
 1. **Inventory.** Ask every partner which machines, repositories and tools run the DX MCP Server. Each tool keeps the setting in its own file; the box below shows where to look.
 2. **Remove or pin.** Stop new installations and remove every entry that loads the latest version. Where the server cannot be removed immediately, pin the fixed version 0.30.15 as a temporary exception for named sandboxes, with an owner and a removal date. A pinned version keeps the setup stable, but it gets no fixes.
-3. **Lock the orgs.** Named sandboxes only, no access to all orgs, no production. Deployments to production go through the pipeline, as described in [partners coding with AI: what belongs in the contract](../partners-using-ai-coding-contract-rules/).
+3. **Lock the orgs.** Named sandboxes only, no access to all orgs, no production. Deployments to production go through the pipeline, as described in [partners coding with AI: what belongs in the contract](/en/blog/partners-using-ai-coding-contract-rules/).
 4. **Activate hosted servers deliberately.** Activate them in a sandbox first, with the read-only server before any server that writes and with an External Client App restricted to a permission set.
-5. **Update the repository.** The shared MCP configuration and the [AI rules file](../ai-rules-file-salesforce-repository/) belong in your repository and should be changed through a reviewed pull request, like any other code. Claude Code also supports organisation-managed MCP configuration with allowlists, if you license it centrally.
+5. **Update the repository.** The shared MCP configuration and the [AI rules file](/en/blog/ai-rules-file-salesforce-repository/) belong in your repository and should be changed through a reviewed pull request, like any other code. Claude Code also supports organisation-managed MCP configuration with allowlists, if you license it centrally.
 
 ```vertiefung For developers
 title: Where the DX MCP Server is configured and how to pin it
@@ -111,4 +111,4 @@ title: Where the DX MCP Server is configured and how to pin it
 - **Replacements:** `npx skills add forcedotcom/sf-skills`, the plugin `salesforce-development` with the servers `salesforce-api-context`, `salesforce-metadata-experts` and `salesforce-lsp`, the hosted server `sobject-reads`.
 ```
 
-This is ordinary dependency and access management applied to AI tools, and it belongs in [DevOps and release management](../../services/devops-release-management/) on the client side. The other interfaces are covered in [chapter 3 of the masterclass](../../masterclass/ai-salesforce/mcp-and-interfaces/).
+This is ordinary dependency and access management applied to AI tools, and it belongs in [DevOps and release management](/en/services/devops-release-management/) on the client side. The other interfaces are covered in [chapter 3 of the masterclass](/en/masterclass/ai-salesforce/mcp-and-interfaces/).

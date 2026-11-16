@@ -48,21 +48,21 @@ A work type is a template for a kind of job, for example annual maintenance, bre
 
 The most important setting is Auto-Create Service Appointment. If it is set, Trailhead says, "every time a work order is created with this work type, a service appointment is created". The appointment uses the duration and date settings from the work type. Without this option, the appointment has to be created by a user or by other automation such as a flow, and that step can be forgotten.
 
-Clean work types are part of the master data that scheduling needs. Which data that is and which system leads is covered in [Salesforce Field Service: what data does scheduling need?](../salesforce-field-service-master-data/).
+Clean work types are part of the master data that scheduling needs. Which data that is and which system leads is covered in [Salesforce Field Service: what data does scheduling need?](/en/blog/salesforce-field-service-master-data/).
 
 ## Does every case need a technician?
 
 No, and this is where most of the money in service is saved or lost. Before a work order is created, the hotline should answer two questions.
 
-**What is the customer entitled to?** The entitlement on the asset or the service contract says which response time applies and what is covered. Salesforce measures response times with entitlement processes and milestones. One detail from the [Trailhead unit on entitlements with work orders](https://trailhead.salesforce.com/content/learn/modules/entitlement-management-for-lightning-experience/use-entitlements-with-work-orders) is that entitlement processes only run on records of their type, so cases and work orders need separate processes. How the service contract, maintenance plan and entitlement fit together is covered in [Field Service: how to model maintenance contracts](../salesforce-field-service-maintenance-contracts/).
+**What is the customer entitled to?** The entitlement on the asset or the service contract says which response time applies and what is covered. Salesforce measures response times with entitlement processes and milestones. One detail from the [Trailhead unit on entitlements with work orders](https://trailhead.salesforce.com/content/learn/modules/entitlement-management-for-lightning-experience/use-entitlements-with-work-orders) is that entitlement processes only run on records of their type, so cases and work orders need separate processes. How the service contract, maintenance plan and entitlement fit together is covered in [Field Service: how to model maintenance contracts](/en/blog/salesforce-field-service-maintenance-contracts/).
 
 **What solves the problem?** I recommend a short triage checklist that sorts calls into three outcomes:
 
-- **Remote help.** The issue is operator error, a parameter setting or a reset. The case is closed without a work order. With [visual remote assistance](../visual-remote-assistant-remote-help-instead-of-visit/) the agent sees the machine through the customer's phone camera instead of guessing from a description.
+- **Remote help.** The issue is operator error, a parameter setting or a reset. The case is closed without a work order. With [visual remote assistance](/en/blog/visual-remote-assistant-remote-help-instead-of-visit/) the agent sees the machine through the customer's phone camera instead of guessing from a description.
 - **Part shipment.** The fault is clear and the customer's staff can swap the part. The order is passed to the ERP, and the case stays open until confirmation.
 - **Technician visit.** Only then is a work order created.
 
-On a breakdown hotline, a voice agent can take over the intake and triage. Where it should stop and hand over to a person is covered in [Breakdown hotline with Agentforce Voice](../breakdown-hotline-agentforce-voice/). For human agents working in the console, [Casey and the Service Rep Assistant](../service-cloud-casey-service-rep-assistant/) describes what Service Cloud adds.
+On a breakdown hotline, a voice agent can take over the intake and triage. Where it should stop and hand over to a person is covered in [Breakdown hotline with Agentforce Voice](/en/blog/breakdown-hotline-agentforce-voice/). For human agents working in the console, [Casey and the Service Rep Assistant](/en/blog/service-cloud-casey-service-rep-assistant/) describes what Service Cloud adds.
 
 ## Who creates which record?
 
@@ -85,7 +85,7 @@ The consequence: if planned and unplanned work use the same territories and tech
 According to the [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/), Dispatcher and Technician licenses may not be used for contact center, call center or customer case management. The footnote allows it for Field Service and Operations Plus, a name the current price table no longer uses. Whoever handles cases needs Service Cloud or a Field Service+ edition.
 ```
 
-In practice this hits the small service team where the dispatcher also answers the hotline. A Dispatcher license at $175 per user per month does not cover case management on its own. Since the US price list changed on 5 November 2026, the obvious bundle is Field Service+ Core at $250, though the footnote on case management still names the old Field Service and Operations Plus. I would have the exact combination and the right to perform case management confirmed in the order form. The full role matrix is in [Salesforce Field Service licenses: who needs which?](../field-service-licences-by-role/).
+In practice this hits the small service team where the dispatcher also answers the hotline. A Dispatcher license at $175 per user per month does not cover case management on its own. Since the US price list changed on 5 November 2026, the obvious bundle is Field Service+ Core at $250, though the footnote on case management still names the old Field Service and Operations Plus. I would have the exact combination and the right to perform case management confirmed in the order form. The full role matrix is in [Salesforce Field Service licenses: who needs which?](/en/blog/field-service-licences-by-role/).
 
 ## Worked example: a "machine down" call
 
@@ -110,4 +110,4 @@ Steps 3 and 4 are where the data model pays off. Without the work type, the agen
 
 ## Map your three most common call types
 
-Draw the path for your three most common call types, from the first call to the closed work order, and write down who creates which record. That drawing answers the license question and shows which work types you need. How this fits into the business case is covered in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
+Draw the path for your three most common call types, from the first call to the closed work order, and write down who creates which record. That drawing answers the license question and shows which work types you need. How this fits into the business case is covered in [chapter 1 of the Field Service masterclass](/en/masterclass/field-service/field-service-business-case-licences/).

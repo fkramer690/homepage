@@ -50,15 +50,15 @@ Das [Datenmodell für Product Service Campaigns](https://developer.salesforce.co
 | Preferred Partner | Servicepartner, der die Arbeit in einer Region ausführt, mit Rangfolge |
 | [Definition Partner Inventory](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_prodtsvccmpndefptnrinv.htm) | Unverkaufte betroffene Einheiten bei einem Partner, mit Menge und Bestandsstatus |
 
-Das Causal Item enthält außerdem die Art der Ersatzforderung: entweder eine Gutschrift vom Lieferanten ohne Rücksendung des Teils oder eine Gutschrift gegen Rücksendung. Das hält die beabsichtigte Behandlung fest; der eigentliche Regress wird als eigener Lieferantenanspruch abgewickelt, den der Lieferant ganz, teilweise oder gar nicht genehmigen kann. [Garantieansprüche von Händlern](../garantieansprueche-haendler-salesforce/) beschreibt diesen Ablauf für einzelne Anträge. Das Diagramm des Datenmodells enthält außerdem Arbeitsaufträge, Termine, Retouren und Garantieanträge.
+Das Causal Item enthält außerdem die Art der Ersatzforderung: entweder eine Gutschrift vom Lieferanten ohne Rücksendung des Teils oder eine Gutschrift gegen Rücksendung. Das hält die beabsichtigte Behandlung fest; der eigentliche Regress wird als eigener Lieferantenanspruch abgewickelt, den der Lieferant ganz, teilweise oder gar nicht genehmigen kann. [Garantieansprüche von Händlern](/blog/garantieansprueche-haendler-salesforce/) beschreibt diesen Ablauf für einzelne Anträge. Das Diagramm des Datenmodells enthält außerdem Arbeitsaufträge, Termine, Retouren und Garantieanträge.
 
 ## Wie finden Sie die betroffenen Maschinen?
 
 Hier scheitern die meisten Rückrufe, in Salesforce wie anderswo. Die Definition hält den Umfang nach Produkt, Produktionszeitraum und Seriennummernbereich fest und kann Fertigungschargen verknüpfen. Ausgewählt wird über eine Actionable List, die die Assets segmentiert und der Kampagne hinzufügt, oder Sie legen Posten von Hand an. In beiden Fällen müssen die Daten vorhanden sein:
 
-- **Jede Maschine existiert als Asset, meist mit Seriennummer.** Wie die installierte Basis nach Salesforce gelangt, steht in [Installierte Basis in Manufacturing Cloud](../installierte-basis-asset-meilensteine/).
+- **Jede Maschine existiert als Asset, meist mit Seriennummer.** Wie die installierte Basis nach Salesforce gelangt, steht in [Installierte Basis in Manufacturing Cloud](/blog/installierte-basis-asset-meilensteine/).
 - **Seriennummern sind innerhalb eines Produkts fortlaufend**, falls Sie überhaupt mit Bereichen arbeiten wollen.
-- **Die Verbindung von Bauteilcharge zu Maschine ist bekannt.** Ist die Ventilcharge eines Lieferanten fehlerhaft, müssen Sie wissen, in welche Maschinen sie verbaut wurde. Diese Verbauinformation liegt meist in Fertigungssystemen oder im PLM, wie in [Ersatzteile per Seriennummer](../ersatzteile-seriennummer-ki-agent/) beschrieben.
+- **Die Verbindung von Bauteilcharge zu Maschine ist bekannt.** Ist die Ventilcharge eines Lieferanten fehlerhaft, müssen Sie wissen, in welche Maschinen sie verbaut wurde. Diese Verbauinformation liegt meist in Fertigungssystemen oder im PLM, wie in [Ersatzteile per Seriennummer](/blog/ersatzteile-seriennummer-ki-agent/) beschrieben.
 
 Fehlt eines davon, wählen Sie zwischen zwei schlechten Varianten. Wenn Sie zu breit auswählen, bezahlen Sie Arbeit an Maschinen, die in Ordnung sind. Wenn Sie zu eng auswählen, bleiben fehlerhafte Maschinen im Feld. Ich würde die Auswahllogik an einem vergangenen Qualitätsfall testen, bevor ich ihr einen echten Rückruf anvertraue.
 
@@ -72,9 +72,9 @@ Im Datenmodell wird daraus eine Kampagne und eine Group Definition. Das Causal I
 
 ## Wer führt die Arbeit aus?
 
-Meist Händler und Servicepartner, manchmal eigene Techniker des Herstellers. Die Lizenzen richten sich nach der Rolle: Die Kampagne selbst erfordert das Add-on für Asset Service Lifecycle Management. Ob Arbeitsaufträge verfügbar sind, hängt vom Basisprodukt ab; Disposition, Einsatzplanung und Techniker-App erfordern Field-Service-Lizenzen für Disponenten und Techniker. Wie Partnertechniker in Field Service arbeiten, beschreiben der Beitrag zu [Servicepartnern in Field Service](../salesforce-field-service-servicepartner/) und das [Kapitel zu Assets und Teilen der Field-Service-Masterclass](../../masterclass/field-service/field-service-assets-wartung-teile/).
+Meist Händler und Servicepartner, manchmal eigene Techniker des Herstellers. Die Lizenzen richten sich nach der Rolle: Die Kampagne selbst erfordert das Add-on für Asset Service Lifecycle Management. Ob Arbeitsaufträge verfügbar sind, hängt vom Basisprodukt ab; Disposition, Einsatzplanung und Techniker-App erfordern Field-Service-Lizenzen für Disponenten und Techniker. Wie Partnertechniker in Field Service arbeiten, beschreiben der Beitrag zu [Servicepartnern in Field Service](/blog/salesforce-field-service-servicepartner/) und das [Kapitel zu Assets und Teilen der Field-Service-Masterclass](/masterclass/field-service/field-service-assets-wartung-teile/).
 
-Händler ohne Field Service können die Erledigung über ein Experience-Cloud-Portal melden, aber externe Lizenzen, Objektrechte und Ablauf müssen Sie eigens planen und bestätigen lassen. Lizenzen für das Portal behandelt der Beitrag zum [Kundenportal der Manufacturing Cloud](../manufacturing-cloud-kundenportal/). Unabhängig vom gewählten Weg: Die Erledigung muss pro Maschine gemeldet werden, nicht als Zahl pro Händler, sonst bildet der Kampagnenstatus in Salesforce nicht die Wirklichkeit ab.
+Händler ohne Field Service können die Erledigung über ein Experience-Cloud-Portal melden, aber externe Lizenzen, Objektrechte und Ablauf müssen Sie eigens planen und bestätigen lassen. Lizenzen für das Portal behandelt der Beitrag zum [Kundenportal der Manufacturing Cloud](/blog/manufacturing-cloud-kundenportal/). Unabhängig vom gewählten Weg: Die Erledigung muss pro Maschine gemeldet werden, nicht als Zahl pro Händler, sonst bildet der Kampagnenstatus in Salesforce nicht die Wirklichkeit ab.
 
 ## Wann reicht eine Liste im Qualitätssystem?
 
@@ -109,4 +109,4 @@ Hinzu kommt die Lizenzfrage:
 Die Salesforce-Hilfe nennt das Add-on Industries Field Service (Asset Service Lifecycle Management) als Lizenz für Product Service Campaigns, die [Preisseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/) erwähnt sie aber nicht. Lassen Sie sich von Salesforce schriftlich bestätigen, welche Ihrer Editionen es enthalten, für welche Nutzer und zu welchem Preis.
 ```
 
-Den Meldeweg aus Frage 3 teste ich mit zwei Händlern, bevor die erste Kampagne startet. Einen umfassenden Überblick zum After-Sales finden Sie im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.
+Den Meldeweg aus Frage 3 teste ich mit zwei Händlern, bevor die erste Kampagne startet. Einen umfassenden Überblick zum After-Sales finden Sie im [Kapitel Garantie und After-Sales](/masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.

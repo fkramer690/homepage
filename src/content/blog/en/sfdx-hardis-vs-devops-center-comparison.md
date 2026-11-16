@@ -29,13 +29,13 @@ faq:
     a: "Lifecycle Center is the easier starting point for admins because most day-to-day work starts in Salesforce, although pull requests are still reviewed on GitHub or Bitbucket. The sfdx-hardis VS Code extension handles most Git commands for admins, but it requires VS Code and some basic knowledge of branches."
 ---
 
-[sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) and Salesforce DevOps Center, called Lifecycle Center since October 2026, both have no separate license fee and both move changes to production through Git. The difference is where the process is controlled. Lifecycle Center is a native app in a Salesforce org with a click-based interface, and it works only with GitHub.com and Bitbucket Cloud. sfdx-hardis runs as a pipeline in the client's CI, on GitHub, GitLab, Azure DevOps, Bitbucket or Jenkins, and adds monitoring, metadata backup and documentation. My rule of thumb from the programs I support is this: Lifecycle Center for click-based teams without multiple partners, sfdx-hardis for programs with several partners.
+[sfdx-hardis](/en/blog/sfdx-hardis-open-source-salesforce-devops/) and Salesforce DevOps Center, called Lifecycle Center since October 2026, both have no separate license fee and both move changes to production through Git. The difference is where the process is controlled. Lifecycle Center is a native app in a Salesforce org with a click-based interface, and it works only with GitHub.com and Bitbucket Cloud. sfdx-hardis runs as a pipeline in the client's CI, on GitHub, GitLab, Azure DevOps, Bitbucket or Jenkins, and adds monitoring, metadata backup and documentation. My rule of thumb from the programs I support is this: Lifecycle Center for click-based teams without multiple partners, sfdx-hardis for programs with several partners.
 
 ## What is the difference between sfdx-hardis and DevOps Center?
 
 **Lifecycle Center** is what used to be called Next Generation DevOps Center. Salesforce moved the app into the platform in 2026: you open it from the App Launcher, and there is no package to install. Salesforce calls the org it runs in the hub org. That is where you create projects, pipelines and work items. A work item is one business change that you promote from stage to stage with a click, while the app creates branches, pull requests and deployments in the background. The old DevOps Center managed package continues to run for existing customers, but Salesforce recommends switching and using only one of the two at a time. The details of the move are in the [Salesforce help on Lifecycle Center](https://help.salesforce.com/s/articleView?id=platform.devops_center_overview.htm&language=en_US&type=5).
 
-**sfdx-hardis** is an open source toolkit from Cloudity and a large community. It consists of a Salesforce CLI plugin, a VS Code extension and Docker images for the pipeline. The process is defined in configuration files in the repository and in the client's CI pipeline. I cover its scope in my [introduction to sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/).
+**sfdx-hardis** is an open source toolkit from Cloudity and a large community. It consists of a Salesforce CLI plugin, a VS Code extension and Docker images for the pipeline. The process is defined in configuration files in the repository and in the client's CI pipeline. I cover its scope in my [introduction to sfdx-hardis](/en/blog/sfdx-hardis-open-source-salesforce-devops/).
 
 In short: with Lifecycle Center, the process is controlled from Salesforce, and the repository holds the versioned state of the metadata. With sfdx-hardis, process and pipeline reside on the Git platform, and Salesforce is the target.
 
@@ -103,7 +103,7 @@ title: What IT should know before connecting Lifecycle Center
 - If the Git platform has IP restrictions, the Lifecycle Center addresses must be added to the allowlist.
 ```
 
-With sfdx-hardis, everything is stored in files in the repository and in the pipeline configuration. With branch protection, a partner can only change them through a pull request the client approves. That fits my basic rule that [clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/): whoever controls the repository and the pipeline controls the release process.
+With sfdx-hardis, everything is stored in files in the repository and in the pipeline configuration. With branch protection, a partner can only change them through a pull request the client approves. That fits my basic rule that [clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/): whoever controls the repository and the pipeline controls the release process.
 
 For operations this means: Lifecycle Center needs an admin in the hub org, sfdx-hardis needs someone who understands the pipeline. Either way it is a role that someone on the client side should hold.
 
@@ -127,7 +127,7 @@ In the programs I support, the cost of a responsible release role is always high
 
 ## What I see in projects
 
-I have used sfdx-hardis in client projects for about two years, and in October 2026 I completed all three levels of the [free sfdx-hardis training](../sfdx-hardis-free-devops-training/). In programs with several implementation partners, what counts most for me is that the process is binding: every partner works through the same pipeline, every pull request is validated the same way, and [reviews are mandatory](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) before anything is merged. Monitoring and generated documentation are included without a separate project.
+I have used sfdx-hardis in client projects for about two years, and in October 2026 I completed all three levels of the [free sfdx-hardis training](/en/blog/sfdx-hardis-free-devops-training/). In programs with several implementation partners, what counts most for me is that the process is binding: every partner works through the same pipeline, every pull request is validated the same way, and [reviews are mandatory](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/) before anything is merged. Monitoring and generated documentation are included without a separate project.
 
 ```partnerfluss review
 without: Every partner on its own path | Changes only meet in the org, conflicts show up late.
@@ -152,7 +152,7 @@ sfdx-hardis fits when
 - monitoring, metadata backup and documentation are needed,
 - someone on the client side can own the pipeline, or the organization is building that role.
 
-If you need a fully managed service with org comparisons and contractual support instead, commercial platforms such as Gearset or Copado should be on the list as well. How these vendors are currently adding AI agents to their products is summarized in [Copado, Gearset and Provar AI agents](../copado-gearset-provar-ai-agents/).
+If you need a fully managed service with org comparisons and contractual support instead, commercial platforms such as Gearset or Copado should be on the list as well. How these vendors are currently adding AI agents to their products is summarized in [Copado, Gearset and Provar AI agents](/en/blog/copado-gearset-provar-ai-agents/).
 
 ## Do not let both tools own promotions
 
@@ -160,8 +160,8 @@ Technically both can point at the same org and even the same repository. Lifecyc
 
 Decide per repository which tool owns merges and promotions. If you switch later, make it a planned cutover, not a gradual drift.
 
-For teams using coding agents, this question matters even more. Lifecycle Center is building a governance layer for agents in the hub org, sfdx-hardis relies on the checks in the pipeline. The same [quality gates for AI-generated code](../quality-gates-for-ai-code-salesforce-pipeline/) apply to both tools.
+For teams using coding agents, this question matters even more. Lifecycle Center is building a governance layer for agents in the hub org, sfdx-hardis relies on the checks in the pipeline. The same [quality gates for AI-generated code](/en/blog/quality-gates-for-ai-code-salesforce-pipeline/) apply to both tools.
 
 ## Settle Git platform, teams and release role
 
-Answer three questions first: which Git platform is standardized at your company, how many teams and partners work on the org, and who takes on the release role? In most cases, these answers determine the choice. If you are new to the topic, [why DevOps matters in Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/) explains the basics, and setting up a binding process is part of my work in [DevOps and release management](../../services/devops-release-management/).
+Answer three questions first: which Git platform is standardized at your company, how many teams and partners work on the org, and who takes on the release role? In most cases, these answers determine the choice. If you are new to the topic, [why DevOps matters in Salesforce enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/) explains the basics, and setting up a binding process is part of my work in [DevOps and release management](/en/services/devops-release-management/).

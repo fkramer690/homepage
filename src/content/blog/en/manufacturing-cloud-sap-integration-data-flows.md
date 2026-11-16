@@ -48,7 +48,7 @@ This is how I would split the flows for a typical manufacturer with SAP as ERP:
 | Approved warranty amounts | Salesforce | Salesforce to SAP | on approval |
 | Payment status of credit memos | SAP | SAP to Salesforce | scheduled |
 
-Prices are a separate question as of Winter '27, because Salesforce now offers its own pricing engine for orders, with its own add-ons. I cover that in [Penny Perfect Pricing: ERP prices in Salesforce?](../penny-perfect-pricing-erp-prices/). The full picture, from data flows to rollout, is covered in the masterclass chapter [ERP, AI and rollout](../../masterclass/manufacturing-cloud/erp-ai-and-rollout/).
+Prices are a separate question as of Winter '27, because Salesforce now offers its own pricing engine for orders, with its own add-ons. I cover that in [Penny Perfect Pricing: ERP prices in Salesforce?](/en/blog/penny-perfect-pricing-erp-prices/). The full picture, from data flows to rollout, is covered in the masterclass chapter [ERP, AI and rollout](/en/masterclass/manufacturing-cloud/erp-ai-and-rollout/).
 
 ## What does the MuleSoft Accelerator for Manufacturing cover?
 
@@ -60,9 +60,9 @@ The [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufactu
 - Only one product catalog is supported.
 - The SAP side needs a communication arrangement for product hierarchies and a custom flag field on the product master.
 
-**Sales rebate management.** According to the [rebate use case](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/Use%20case%202%20-%20Sales%20rebate%20management/), Manufacturing Cloud is the system of record for rebate payouts. When a payout is approved, an event creates a draft credit memo in SAP. The documented bulk path is different: it polls all new payouts "irrespective of status" and pushes them to SAP, so your build needs a status filter and a test that verifies the filter. A scheduled job later marks payouts as paid once SAP has paid the credit memo. Sales orders flow from SAP into Manufacturing Cloud. How rebate programs work on the Salesforce side is covered in [Rebate Management: dealer rebates without Excel](../rebate-management-dealer-rebates/).
+**Sales rebate management.** According to the [rebate use case](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-manufacturing/minor/1.4/pages/Use%20case%202%20-%20Sales%20rebate%20management/), Manufacturing Cloud is the system of record for rebate payouts. When a payout is approved, an event creates a draft credit memo in SAP. The documented bulk path is different: it polls all new payouts "irrespective of status" and pushes them to SAP, so your build needs a status filter and a test that verifies the filter. A scheduled job later marks payouts as paid once SAP has paid the credit memo. Sales orders flow from SAP into Manufacturing Cloud. How rebate programs work on the Salesforce side is covered in [Rebate Management: dealer rebates without Excel](/en/blog/rebate-management-dealer-rebates/).
 
-The accelerator does not create sales agreements and does not define a warranty flow. The approved amount from a warranty claim, which I would book in the ERP as a credit note to the dealer as described in [warranty claims from dealers](../warranty-claims-dealers-salesforce/), needs its own interface.
+The accelerator does not create sales agreements and does not define a warranty flow. The approved amount from a warranty claim, which I would book in the ERP as a credit note to the dealer as described in [warranty claims from dealers](/en/blog/warranty-claims-dealers-salesforce/), needs its own interface.
 
 One contradiction to settle early: in the order sync, customers flow one way, with SAP as the system of record. In the rebate use case, customers sync in both directions and either system can be the system of record. Both come from the same accelerator. Pick one rule for customers before you deploy both templates.
 
@@ -70,7 +70,7 @@ Salesforce lists MuleSoft Anypoint Platform on the [Manufacturing Cloud add-ons 
 
 ## How do actuals get into sales agreements?
 
-Sales agreements derive their actuals from orders in Salesforce, from an API upload or from a Data Processing Engine definition. The Actuals Calculation Mode setting determines which source is used. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_reference.htm&language=en_US&type=5), actuals are calculated with the mode in effect when the agreement is activated, and a change during the active period is ignored by the automated process. I describe the four modes and when each fits in [Sales agreements: spot customers behind on volume](../sales-agreements-volume-shortfall-erp/).
+Sales agreements derive their actuals from orders in Salesforce, from an API upload or from a Data Processing Engine definition. The Actuals Calculation Mode setting determines which source is used. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_reference.htm&language=en_US&type=5), actuals are calculated with the mode in effect when the agreement is activated, and a change during the active period is ignored by the automated process. I describe the four modes and when each fits in [Sales agreements: spot customers behind on volume](/en/blog/sales-agreements-volume-shortfall-erp/).
 
 For the interface, one action matters: [Refresh Actuals Calculation](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_refresh_actuals_calculation.htm). It has been available since API version 47.0 for users with the Manufacturing Sales Agreements permission set and recalculates the actuals of one sales agreement. Two flags determine which periods are included: the current period only, the current and past periods, or the current and future periods. How many future periods are included is set by a field on the sales agreement. Setting both flags to true makes the call fail, and the documentation notes that undoing the action requires a database rollback.
 
@@ -78,7 +78,7 @@ That gives the integration a clean pattern. After SAP has provided late orders o
 
 ## Frequency follows the question the data answers
 
-Frequency follows the question the data answers. Sales agreements run over months or a year, so a daily feed of actuals is enough. A dealer asking where an order is wants today's answer, so order status should be queried live in SAP, as in [Agentforce and SAP: order status through MuleSoft](../agentforce-sap-order-status-mulesoft/). One frequency for everything either wastes API calls or shows stale data where current data matters.
+Frequency follows the question the data answers. Sales agreements run over months or a year, so a daily feed of actuals is enough. A dealer asking where an order is wants today's answer, so order status should be queried live in SAP, as in [Agentforce and SAP: order status through MuleSoft](/en/blog/agentforce-sap-order-status-mulesoft/). One frequency for everything either wastes API calls or shows stale data where current data matters.
 
 Data volume determines whether you replicate full orders or totals. Consider a worked example with assumed numbers: 800 accounts with sales agreements, on average 40 products per agreement and monthly periods. Totals per customer, product and month result in at most 800 × 40 = 32,000 values per month, and a daily delta run only sends the values that changed. Replicating every order line as well requires additional data storage and a linking step per order, which is worthwhile only when sales or service should see the orders themselves in Salesforce.
 
@@ -94,11 +94,11 @@ Summer '27 | SOAP login() in API versions 31.0 to 64.0 is retired; SOAP, REST an
 Summer '28 | Calls to SOAP, REST and Bulk API 31.0 to 40.0 fail
 ```
 
-Salesforce's advice in the same guide is to "move those integrations to OAuth with external client apps". An actuals feed that fails silently is worse than one that raises an error, because sales sees an old shortfall and believes it. How to find every affected interface is described in [Salesforce password integrations end in 2027](../salesforce-password-integrations-end-2027/).
+Salesforce's advice in the same guide is to "move those integrations to OAuth with external client apps". An actuals feed that fails silently is worse than one that raises an error, because sales sees an old shortfall and believes it. How to find every affected interface is described in [Salesforce password integrations end in 2027](/en/blog/salesforce-password-integrations-end-2027/).
 
 ## Every object needs one leading system and one person
 
-Every row in the table above needs one leading system and one named person, documented before implementation begins. The [object ownership matrix](../salesforce-object-ownership-matrix/) does this for objects inside the org; for an ERP interface I add two columns: direction and frequency.
+Every row in the table above needs one leading system and one named person, documented before implementation begins. The [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/) does this for objects inside the org; for an ERP interface I add two columns: direction and frequency.
 
 These questions arise in almost every design:
 
@@ -107,7 +107,7 @@ These questions arise in almost every design:
 - **Corrections.** Who triggers the recalculation of actuals when SAP posts a credit or a return for a past period?
 - **Errors.** Who receives the alert when the nightly run fails, and by when must it be fixed?
 
-How I set up interfaces between ERP, middleware and Salesforce is described under [Salesforce integration](../../services/salesforce-integration/).
+How I set up interfaces between ERP, middleware and Salesforce is described under [Salesforce integration](/en/services/salesforce-integration/).
 
 ## Fill in the table with objects, direction and frequency
 

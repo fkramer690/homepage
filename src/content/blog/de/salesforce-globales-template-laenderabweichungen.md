@@ -43,7 +43,7 @@ Jede einzelne Ausnahme ist klein. Zusammen haben sie drei Folgen:
 Beim weltweiten Manufacturing-Cloud-Rollout, den ich als Architekt begleitet habe, stand vorher fest, dass das Ziel die Harmonisierung der Prozesse ist. Wir sind mit einem großen Land mit angemessener Komplexität gestartet, und die anderen Länder hatten nur marginale Abweichungen. Mein Richtwert seitdem lautet: Alle Länder sind mindestens zu 80 Prozent identisch, und das Delta pro Land wird minimiert. Was ich anders machen würde: Change Management immer wieder ins Gespräch bringen, auch wenn der Kunde meint, er brauche kein Change Management.
 ```
 
-Die Reihenfolge der Länder beschreibe ich ausführlich in [Manufacturing Cloud weltweit ausrollen](../manufacturing-cloud-weltweit-ausrollen/). Hier geht es um die Frage, die in jedem Land neu gestellt wird: Darf diese Abweichung ins System?
+Die Reihenfolge der Länder beschreibe ich ausführlich in [Manufacturing Cloud weltweit ausrollen](/blog/manufacturing-cloud-weltweit-ausrollen/). Hier geht es um die Frage, die in jedem Land neu gestellt wird: Darf diese Abweichung ins System?
 
 ## Welche Abweichungen sind berechtigt?
 
@@ -68,9 +68,9 @@ Die technische Regel ist einfach: Landesunterschiede gehören in die Konfigurati
 - **Werte pro Land in Custom Metadata Types.** Freigabegrenzen, Routing-Parameter oder Pflichtfelder pro Land stehen in einer Tabelle. Eine Validierungsregel oder ein Flow liest den Wert für das Land des Datensatzes aus und setzt ihn durch. Für ein neues Land werden dann neue Einträge statt neuer Automatisierung angelegt; sie werden wie jede Änderung getestet und ausgerollt. Steuersätze bleiben im ERP oder Steuersystem, das sie führt.
 - **Übersetzungen über die Übersetzungsfunktionen von Salesforce**, nicht über eigene Felder pro Sprache.
 - **Datensatztypen nur für echte Prozessvarianten**, nicht pro Land. Bei zehn Ländern mit je einem Datensatztyp vervielfachen sich Layouts, Picklistenwerte und Tests, und sie weichen voneinander ab.
-- **Sichtbarkeit nach Land, Gesellschaft oder Region über Rollen, Territorien und Freigaberegeln**, wie im [Berechtigungskonzept](../salesforce-berechtigungskonzept-permission-sets/) beschrieben.
+- **Sichtbarkeit nach Land, Gesellschaft oder Region über Rollen, Territorien und Freigaberegeln**, wie im [Berechtigungskonzept](/blog/salesforce-berechtigungskonzept-permission-sets/) beschrieben.
 
-Diese Regeln gehören in die [Entwicklungsstandards](../salesforce-entwicklungsstandards-definition-of-done/), damit jeder Partner sie kennt, der den Rollout in einem Land übernimmt.
+Diese Regeln gehören in die [Entwicklungsstandards](/blog/salesforce-entwicklungsstandards-definition-of-done/), damit jeder Partner sie kennt, der den Rollout in einem Land übernimmt.
 
 ```pro-contra
 pro: Strenges Template
@@ -84,9 +84,9 @@ contra: Was Sie dafür aufgeben
 
 ## Wer entscheidet über Abweichungen?
 
-Ein Land beantragt eine Abweichung schriftlich: was es braucht, warum es das braucht und was es kostet, wenn es das Template übernimmt. Darüber entscheidet ein globaler Prozessverantwortlicher zusammen mit dem Architekten auf Kundenseite. Die Entscheidung wird im [Entscheidungslog](../salesforce-architektur-entscheidungslog/), festgehalten, damit das nächste Land dieselbe Frage nicht noch einmal stellt.
+Ein Land beantragt eine Abweichung schriftlich: was es braucht, warum es das braucht und was es kostet, wenn es das Template übernimmt. Darüber entscheidet ein globaler Prozessverantwortlicher zusammen mit dem Architekten auf Kundenseite. Die Entscheidung wird im [Entscheidungslog](/blog/salesforce-architektur-entscheidungslog/), festgehalten, damit das nächste Land dieselbe Frage nicht noch einmal stellt.
 
-Zwei Regeln helfen dabei. Erstens trägt das Land die Folgekosten seiner Abweichung, auch die Tests bei jedem künftigen Release. Das macht viele Wünsche kleiner. Zweitens wird jede Abweichung nach einem Jahr geprüft: Wird sie noch gebraucht, oder kann das Land zum Template zurück? Viele Wünsche entstehen aus Gewohnheit. Versteht der Sponsor im Land, warum das Template so aufgebaut ist, kann er diese Wünsche einordnen, bevor sie beim Architekten ankommen. Mehr dazu steht in [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/).
+Zwei Regeln helfen dabei. Erstens trägt das Land die Folgekosten seiner Abweichung, auch die Tests bei jedem künftigen Release. Das macht viele Wünsche kleiner. Zweitens wird jede Abweichung nach einem Jahr geprüft: Wird sie noch gebraucht, oder kann das Land zum Template zurück? Viele Wünsche entstehen aus Gewohnheit. Versteht der Sponsor im Land, warum das Template so aufgebaut ist, kann er diese Wünsche einordnen, bevor sie beim Architekten ankommen. Mehr dazu steht in [Change Management im weltweiten Salesforce-Rollout](/blog/change-management-weltweiter-rollout/).
 
 ## Ob das Template hält, zeigen Kennzahlen pro Land
 
@@ -98,4 +98,4 @@ Die 80 Prozent sind ein Richtwert, keine exakte Messung. Trotzdem lässt sich di
 
 ## Das Ziel vor dem ersten Land aufschreiben
 
-Legen Sie vor dem Rollout im ersten Land fest, was das Ziel ist, und schreiben Sie es auf. Ist das Ziel Harmonisierung, folgen daraus der Richtwert für die Übereinstimmung und der Antragsweg für Abweichungen. Führen Sie dann eine Liste der Abweichungen pro Land, mit Grund und Datum der Freigabe. In die Liste gehört auch, was die Abweichung im Betrieb kostet, etwa einen zusätzlichen Testfall in jedem Release. Im Lenkungsausschuss zeigt sie auf einen Blick, ob das Template hält. Wie Länder das Template annehmen, ist auch eine Frage des [Change Managements](../../leistungen/change-management/).
+Legen Sie vor dem Rollout im ersten Land fest, was das Ziel ist, und schreiben Sie es auf. Ist das Ziel Harmonisierung, folgen daraus der Richtwert für die Übereinstimmung und der Antragsweg für Abweichungen. Führen Sie dann eine Liste der Abweichungen pro Land, mit Grund und Datum der Freigabe. In die Liste gehört auch, was die Abweichung im Betrieb kostet, etwa einen zusätzlichen Testfall in jedem Release. Im Lenkungsausschuss zeigt sie auf einen Blick, ob das Template hält. Wie Länder das Template annehmen, ist auch eine Frage des [Change Managements](/leistungen/change-management/).

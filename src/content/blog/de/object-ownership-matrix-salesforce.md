@@ -82,7 +82,7 @@ Die Matrix sollte so klein bleiben, dass jeder sie in zwei Minuten lesen kann. I
 3. **Einstiegspunkt der Automatisierung**, also ob das Objekt über Flow oder über ein Apex-Trigger-Framework automatisiert wird.
 4. **Mitnutzende Streams**, damit der Verantwortliche weiß, wen eine Änderung betrifft.
 
-Schwierig sind die gemeinsam genutzten Objekte wie Account, Contact oder Product. Auch sie erhalten bei mir genau einen Verantwortlichen. Die anderen Streams melden ihre Anforderungen beim Verantwortlichen an, und er baut sie in die vereinbarte Automatisierung ein, etwa in mehrere geordnete Flows oder in einen Trigger mit Handler-Framework. Das ist langsamer, als wenn jeder selbst baut. Nach meiner Erfahrung ist das Objekt aber nur so in zwei Jahren noch wartbar. Kommt ein B2B-Shop hinzu, braucht der Auftrag dieselbe Klarheit zwischen Salesforce und ERP, siehe [Kapitel 4 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/).
+Schwierig sind die gemeinsam genutzten Objekte wie Account, Contact oder Product. Auch sie erhalten bei mir genau einen Verantwortlichen. Die anderen Streams melden ihre Anforderungen beim Verantwortlichen an, und er baut sie in die vereinbarte Automatisierung ein, etwa in mehrere geordnete Flows oder in einen Trigger mit Handler-Framework. Das ist langsamer, als wenn jeder selbst baut. Nach meiner Erfahrung ist das Objekt aber nur so in zwei Jahren noch wartbar. Kommt ein B2B-Shop hinzu, braucht der Auftrag dieselbe Klarheit zwischen Salesforce und ERP, siehe [Kapitel 4 der Masterclass B2B Commerce](/masterclass/b2b-commerce/erp-integration-bestand-auftraege/).
 
 Was nicht in die Matrix gehört: Detailregeln für Namenskonventionen, Tests oder Code-Stil. Die stehen in den Entwicklungsstandards. Die Matrix beantwortet vor allem die Frage, wer entscheidet.
 
@@ -90,16 +90,16 @@ Was nicht in die Matrix gehört: Detailregeln für Namenskonventionen, Tests ode
 
 Eine Tabelle im Wiki ändert allein nichts. Die Matrix wirkt erst, wenn sie im täglichen Ablauf geprüft wird.
 
-- **Im Pull-Request-Review.** Berührt eine Änderung ein fremdes Objekt, fragt der Reviewer, ob der Verantwortliche zugestimmt hat. Wie solche Reviews ablaufen, beschreibe ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
+- **Im Pull-Request-Review.** Berührt eine Änderung ein fremdes Objekt, fragt der Reviewer, ob der Verantwortliche zugestimmt hat. Wie solche Reviews ablaufen, beschreibe ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](/blog/warum-pull-request-reviews-pflicht-sind/).
 - **Technisch im Repository.** Liegen die Metadaten in Git und gelangen Änderungen an diesen Objekten nur über die Pipeline in die Org, lässt sich die Matrix teilweise technisch abbilden, bei GitHub etwa mit einer CODEOWNERS-Datei. Direkte Änderungen in der Org umgehen das, deshalb brauchen Notfallkorrekturen einen eigenen Weg zurück ins Repository.
-- **Im Center of Excellence.** Regelmäßige Calls, in denen Streams anstehende Änderungen an gemeinsamen Objekten vorstellen, mit genug Vorlauf für alle anderen. Wie ein solches Gremium aufgebaut ist, beschreibe ich in [Salesforce Center of Excellence: Format und Rhythmus](../salesforce-center-of-excellence-format/).
+- **Im Center of Excellence.** Regelmäßige Calls, in denen Streams anstehende Änderungen an gemeinsamen Objekten vorstellen, mit genug Vorlauf für alle anderen. Wie ein solches Gremium aufgebaut ist, beschreibe ich in [Salesforce Center of Excellence: Format und Rhythmus](/blog/salesforce-center-of-excellence-format/).
 
 ```vertiefung Für Entwickler
 titel: Wie bildet CODEOWNERS die Matrix ab?
 Eine [CODEOWNERS-Datei](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) ordnet Pfade einem Team zu, zum Beispiel den Ordner eines Objekts. Layouts, Lightning-Seiten, Flows und Trigger liegen in anderen Ordnern und brauchen deshalb eigene Muster und eine Namenskonvention. Ändert ein Pull Request diese Dateien, wird das Team automatisch als Reviewer angefragt. Seine Freigabe wird erst mit "Require review from Code Owners" in der Branch Protection verpflichtend. Das Team braucht Schreibrechte, und die CODEOWNERS-Datei selbst braucht einen Verantwortlichen.
 ```
 
-Die Matrix gehört dem Kunden, nicht einem Partner. Legt ein Partner fest, wer welches Objekt verantwortet, entscheidet er auch darüber, was seine Wettbewerber bauen dürfen. Dasselbe gilt für das Repository und die Pipeline, wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/) beschrieben.
+Die Matrix gehört dem Kunden, nicht einem Partner. Legt ein Partner fest, wer welches Objekt verantwortet, entscheidet er auch darüber, was seine Wettbewerber bauen dürfen. Dasselbe gilt für das Repository und die Pipeline, wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/) beschrieben.
 
 ## Die 15 bis 20 wichtigsten Objekte auflisten
 
@@ -111,4 +111,4 @@ Eine erste Matrix steht schneller, als die meisten erwarten:
 4. **Im Review danach fragen**, ab dem ersten Tag.
 5. **Randfälle im Center of Excellence klären** und die Matrix aktualisieren.
 
-Nach meiner Erfahrung ist die erste Version nie vollständig, und das muss sie auch nicht sein. Mit 80 Prozent fängt man an, und den Rest liefern die Reviews. Mehr dazu, wie ich Programme mit mehreren Partnern steuere, steht unter [Partnersteuerung](../../leistungen/partnersteuerung/).
+Nach meiner Erfahrung ist die erste Version nie vollständig, und das muss sie auch nicht sein. Mit 80 Prozent fängt man an, und den Rest liefern die Reviews. Mehr dazu, wie ich Programme mit mehreren Partnern steuere, steht unter [Partnersteuerung](/leistungen/partnersteuerung/).

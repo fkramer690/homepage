@@ -50,18 +50,18 @@ Bei den Kosten ist die [Nutzungsseite in der Salesforce-Hilfe](https://help.sale
 Auf keiner der geprüften Salesforce-Seiten habe ich Angaben dazu gefunden, ob Flows, die der Agent baut, aktiv oder inaktiv gespeichert werden und ob sich das Verhalten oder das Kontingent zwischen Sandbox und Produktion unterscheidet.
 ```
 
-Ein unabhängiger Test ist einen Blick wert. Andy Engin Utkan hat den Agenten für [Salesforce Break im Juli 2026](https://salesforcebreak.com/2026/07/07/setup-with-agentforce-review/) in einer Produktions-Org ausprobiert. Damals konnte der Agent Benutzer mit View All Data oder Modify All Data nicht auflisten. Sein Urteil lautete: „This feature launched before it was fully baked.“ Das ist der Test eines einzelnen Autors vom Juli. Die Flow-Erstellung hat er nicht geprüft, und das Produkt hat sich seitdem geändert. Den Überblick über alle Werkzeuge gibt das Masterclass-Kapitel zu [Salesforce-Werkzeugen für KI-Entwicklung](../../masterclass/ki-salesforce/salesforce-werkzeuge-ki-entwicklung/).
+Ein unabhängiger Test ist einen Blick wert. Andy Engin Utkan hat den Agenten für [Salesforce Break im Juli 2026](https://salesforcebreak.com/2026/07/07/setup-with-agentforce-review/) in einer Produktions-Org ausprobiert. Damals konnte der Agent Benutzer mit View All Data oder Modify All Data nicht auflisten. Sein Urteil lautete: „This feature launched before it was fully baked.“ Das ist der Test eines einzelnen Autors vom Juli. Die Flow-Erstellung hat er nicht geprüft, und das Produkt hat sich seitdem geändert. Den Überblick über alle Werkzeuge gibt das Masterclass-Kapitel zu [Salesforce-Werkzeugen für KI-Entwicklung](/masterclass/ki-salesforce/salesforce-werkzeuge-ki-entwicklung/).
 
 Agentforce for Flow, früher Einstein for Flow, ist das enger gefasste Werkzeug. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.flow_build_let_einstein_help_you_build_flows.htm&language=en_US&type=5) entwirft es im Flow Builder Flows aus einem Text, fasst Flows zusammen und ändert bestehende Flows per Prompt. Die Hilfe kennzeichnet es als Beta und setzt die Editionen Foundations oder Agentforce 1 mit aktiviertem Data 360 voraus. Ein Entwurf wird nicht automatisch gespeichert.
 
 ## Eine Agentenänderung in Produktion bricht den Release-Prozess
 
-Ein geregeltes Salesforce-Programm beruht auf einer Regel: In Produktion steht, was im Repository steht, und jede Änderung gelangt über die Pipeline dorthin. Warum, beschreibe ich in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/). Ein Feld, ein Flow oder eine Lightning-Seite, direkt in Produktion angelegt, bricht diese Regel, egal ob ein Mensch klickt oder ein Agent.
+Ein geregeltes Salesforce-Programm beruht auf einer Regel: In Produktion steht, was im Repository steht, und jede Änderung gelangt über die Pipeline dorthin. Warum, beschreibe ich in [warum DevOps über Salesforce-Großprojekte entscheidet](/blog/warum-devops-salesforce-enterprise-projekte/). Ein Feld, ein Flow oder eine Lightning-Seite, direkt in Produktion angelegt, bricht diese Regel, egal ob ein Mensch klickt oder ein Agent.
 
 Der Agent verschärft das auf drei Wegen:
 
 - **Tempo.** Ein Datenmodell mit sieben Feldern und einem Flow dauert Minuten. Pro Woche gelangen mehr direkte Änderungen in die Produktion, und jede ist eine Abweichung zwischen Repository und Org.
-- **Die Freigabe sieht aus wie ein Review.** Der Admin, der den Prompt geschrieben hat, bestätigt auch den Vorschlag. Niemand sonst prüft, ob das Objekt laut [Object Ownership Matrix](../object-ownership-matrix-salesforce/) einem anderen Stream gehört, ob auf dem Objekt schon ein Flow läuft oder ob das Permission Set zu weit geht.
+- **Die Freigabe sieht aus wie ein Review.** Der Admin, der den Prompt geschrieben hat, bestätigt auch den Vorschlag. Niemand sonst prüft, ob das Objekt laut [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/) einem anderen Stream gehört, ob auf dem Objekt schon ein Flow läuft oder ob das Permission Set zu weit geht.
 - **Der Audit Trail zeigt was, nicht warum.** Er zeigt die unterstützte Setup-Änderung, den Admin, den Agenten und einen Zeitstempel. User Story, Reviewer und Tests fehlen, und nach 180 Tagen brauchen Sie einen eigenen Export.
 
 Dann folgt das nächste Deployment. Ein Partner deployt eine Lightning-Datensatzseite und ihre Aktivierung aus dem Repository, und die in Produktion erstellte Seite verliert ihre Zuweisung. Die Validierung der Pipeline läuft gegen eine Sandbox ohne den neuen Flow und testet damit eine andere Org als die, in die sie deployt.
@@ -96,7 +96,7 @@ Dieselbe Anfrage in einer Developer-Sandbox mit Source Tracking hätte ebenfalls
 
 ## Die Pipeline-Regel neben die Ownership Matrix schreiben
 
-Release-Prozess und Rechtemodell für Admin-KI aufzusetzen ist Teil meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Die Reihenfolge orientiert sich an den Rechten: Was ein Admin in Produktion nicht darf, kann auch der Agent dort nicht.
+Release-Prozess und Rechtemodell für Admin-KI aufzusetzen ist Teil meiner Arbeit in [DevOps und Release-Management](/leistungen/devops-und-release-management/). Die Reihenfolge orientiert sich an den Rechten: Was ein Admin in Produktion nicht darf, kann auch der Agent dort nicht.
 
 ```schritte
 Die Regel aufschreiben
@@ -106,7 +106,7 @@ Rechte in Produktion prüfen
 Erst in Developer-Sandboxes
   Aktivieren Sie den Agenten zuerst in Developer-Sandboxes. [Source Tracking](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html) ist nur in Developer- und Developer-Pro-Sandboxes verfügbar. Dort können unterstützte Metadatenänderungen des Agenten abgerufen und in einen Pull Request übernommen werden.
 Dieselben Prüfungen anwenden
-  Flows und Felder aus dem Agenten bestehen dieselben Prüfungen wie Partnercode, wie in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) beschrieben.
+  Flows und Felder aus dem Agenten bestehen dieselben Prüfungen wie Partnercode, wie in [Quality Gates für KI-Code](/blog/quality-gates-ki-code-salesforce-pipeline/) beschrieben.
 Den Audit Trail lesen
   Prüfen Sie den Setup Audit Trail der Produktion wöchentlich auf Änderungen, die nicht vom Release-User stammen, filtern Sie nach der Spalte AI Agent und exportieren Sie ihn, bevor die 180 Tage ablaufen.
 Den Verbrauch beobachten

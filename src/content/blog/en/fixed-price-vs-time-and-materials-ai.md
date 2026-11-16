@@ -44,7 +44,7 @@ The size of the gain remains uncertain, and that matters for pricing. McKinsey's
 source: McKinsey, survey of product and engineering leaders (334 overall, 173 director level and above), self-reported, August 2026
 ```
 
-METR's [randomized study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) measured experienced developers as 19 percent slower with AI in early 2025; its [February 2026 update](https://metr.org/blog/2026-02-24-uplift-update/) points to a speed-up but calls its own data "an unreliable signal". Before you renegotiate based on a partner's claim, measure it yourself, as described in [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
+METR's [randomized study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) measured experienced developers as 19 percent slower with AI in early 2025; its [February 2026 update](https://metr.org/blog/2026-02-24-uplift-update/) points to a speed-up but calls its own data "an unreliable signal". Before you renegotiate based on a partner's claim, measure it yourself, as described in [measuring AI productivity in Salesforce projects](/en/blog/measuring-ai-productivity-salesforce-projects/).
 
 So the gain is real for some tasks and uncertain on average. A commercial model has to settle who carries that uncertainty.
 
@@ -74,7 +74,7 @@ For a manufacturer this has two sides. A partner paid at go-live has less intere
 
 **Outcome components work as a share of the fee, not as the entire fee.** No partner controls your asset data, the availability of your SAP system or how many dealers use the portal. A fee that depends entirely on adoption is a gamble for both sides. In my view, 10 to 20 percent of the fee tied to a metric is a range worth discussing.
 
-**The price must specify who pays for tokens.** McKinsey estimates that tokens, compute, infrastructure and AI operations can reach up to 20 percent of existing labor costs. They stay with whichever party the contract assigns them to, under fixed price as well as under T&M. If a partner uses Agentforce Vibes in your org, it can consume your Flex Credits. The numbers are in [what AI coding costs in a Salesforce project](../ai-coding-costs-salesforce-project/).
+**The price must specify who pays for tokens.** McKinsey estimates that tokens, compute, infrastructure and AI operations can reach up to 20 percent of existing labor costs. They stay with whichever party the contract assigns them to, under fixed price as well as under T&M. If a partner uses Agentforce Vibes in your org, it can consume your Flex Credits. The numbers are in [what AI coding costs in a Salesforce project](/en/blog/ai-coding-costs-salesforce-project/).
 
 ## Worked example: renewing a framework contract
 
@@ -94,8 +94,8 @@ The T&M day rate stays at $1,100 for discovery and support. What changes is that
 
 1. **Sort the backlog** into packages with testable acceptance criteria, discovery work and continuous change. Each type gets its own commercial model.
 2. **Measure a baseline** of active work time and rework before you renegotiate, so you price on data instead of claims.
-3. **Ask for disclosure** of the coding agents in use and of the Salesforce incentives the project triggers. The contract clauses for AI use are covered in [partners using AI coding: contract rules](../partners-using-ai-coding-contract-rules/).
+3. **Ask for disclosure** of the coding agents in use and of the Salesforce incentives the project triggers. The contract clauses for AI use are covered in [partners using AI coding: contract rules](/en/blog/partners-using-ai-coding-contract-rules/).
 4. **Agree who pays** for tokens and Flex Credits in development, sandbox tests and production.
-5. **Review prices every six months** against measured numbers. Smaller AI-native teams change the cost base as well, see [AI-native delivery with smaller Salesforce teams](../ai-native-delivery-smaller-salesforce-teams/).
+5. **Review prices every six months** against measured numbers. Smaller AI-native teams change the cost base as well, see [AI-native delivery with smaller Salesforce teams](/en/blog/ai-native-delivery-smaller-salesforce-teams/).
 
-Setting up these commercial rules is part of my work in [partner governance](../../services/partner-governance/), on the client side and without a stake in any partner's revenue. For the baseline in point 2, about 20 comparable stories from your ticket system provide an initial indication, once you group them by type and size and separate active work from waiting time.
+Setting up these commercial rules is part of my work in [partner governance](/en/services/partner-governance/), on the client side and without a stake in any partner's revenue. For the baseline in point 2, about 20 comparable stories from your ticket system provide an initial indication, once you group them by type and size and separate active work from waiting time.

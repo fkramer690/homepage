@@ -37,11 +37,11 @@ In the project, the portal had two kinds of features. Customers could see:
 
 Customers could also take action:
 
-- **Request new products and prices.** The request goes into the quoting process I describe in [part 2: from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
-- **Place orders.** Simple order entry works in the portal. If customers need to search a large catalog with their own prices, cart and checkout, that is usually a B2B store. [Chapter 1 of the B2B Commerce masterclass](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/) covers when a portal is enough.
+- **Request new products and prices.** The request goes into the quoting process I describe in [part 2: from quote to sales agreement](/en/blog/quote-to-sales-agreement-product-configurator/).
+- **Place orders.** Simple order entry works in the portal. If customers need to search a large catalog with their own prices, cart and checkout, that is usually a B2B store. [Chapter 1 of the B2B Commerce masterclass](/en/masterclass/b2b-commerce/b2b-commerce-worth-it-overview/) covers when a portal is enough.
 - **Maintain certain master data themselves**, such as the billing address.
 
-For the manufacturer, the benefit is simple: customers can answer questions like "How much of my framework agreement have I called off?" or "Where is my order?" without emailing inside sales. For that to work, the numbers in the portal have to be right. Where the actuals in a sales agreement come from is covered in [part 3: sales agreements, spotting customers behind on volume](../sales-agreements-volume-shortfall-erp/).
+For the manufacturer, the benefit is simple: customers can answer questions like "How much of my framework agreement have I called off?" or "Where is my order?" without emailing inside sales. For that to work, the numbers in the portal have to be right. Where the actuals in a sales agreement come from is covered in [part 3: sales agreements, spotting customers behind on volume](/en/blog/sales-agreements-volume-shortfall-erp/).
 
 ## Which license do customers need in the portal?
 
@@ -60,7 +60,7 @@ In my project, customers had Customer Community Plus for Manufacturing and saw t
 If customers need to see sales agreements in the portal, include that in the quote as a requirement, specify the route (standard pages or a custom component), and get written confirmation from Salesforce that the chosen license covers it.
 ```
 
-What portal licenses cost and how they differ from internal licenses is covered in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/). How the portal fits into the dealer channel alongside rebates and partner visits is covered in [chapter 3 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/).
+What portal licenses cost and how they differ from internal licenses is covered in [Salesforce licenses: does everyone need a full one?](/en/blog/salesforce-licences-full-licence-needed/). How the portal fits into the dealer channel alongside rebates and partner visits is covered in [chapter 3 of the Manufacturing Cloud masterclass](/en/masterclass/manufacturing-cloud/dealer-and-partner-channel/).
 
 ## Customers see less of the sales agreement than sales does
 
@@ -91,7 +91,7 @@ That sounds like a detail, but it shifts the roles of the systems. At manufactur
 3. **Visible errors.** If the ERP rejects a change, for example because an address is incomplete, someone has to see it. Otherwise the portal shows an address that never reached the ERP, and the next invoice goes to the old one.
 4. **Status for the customer.** Some changes need a check before they take effect, for example a new bill-to party or a different legal entity. The customer should see whether a change is pending, accepted or rejected.
 
-How I decide which system is the leading system for customers, products, prices and orders is described under [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
+How I decide which system is the leading system for customers, products, prices and orders is described under [integration with ERP, middleware and telephony](/en/services/salesforce-integration/).
 
 ## Portal orders close the loop through the ERP
 
@@ -110,7 +110,7 @@ Sales agreement --> Portal view
 
 Requests for new products or prices take a different route. Sales handles them through configuration, quote and approval. What matters most to the customer is seeing the status of the request instead of having to chase it.
 
-Cases are the most familiar part of the portal. Manufacturing Cloud helps here with links to orders and assets, which Salesforce Help lists for the customer license. How warranty claims run through dealers is covered in [part 6](../warranty-claims-dealers-salesforce/).
+Cases are the most familiar part of the portal. Manufacturing Cloud helps here with links to orders and assets, which Salesforce Help lists for the customer license. How warranty claims run through dealers is covered in [part 6](/en/blog/warranty-claims-dealers-salesforce/).
 
 ## Check the feature list against the license
 

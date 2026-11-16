@@ -56,13 +56,13 @@ Ich sehe drei Schnitte, die funktionieren. Jeder verschiebt die Grenze zwischen 
 
 **Schnitt 1** passt, wenn der Auftrag ein einmaliger Maschinenverkauf ist und nach der Unterschrift nur noch Logistik folgt. Salesforce übergibt ein angenommenes Angebot, SAP legt den Auftrag an.
 
-**Schnitt 2** passt, wenn derselbe Kunde immer wieder kauft und ändert: nachgerüstete Optionen, Servicepakete, Abonnements für Fernüberwachung. Revenue Cloud hält dann Auftrag und Assets, und ein Nachtrag startet bei dem, was der Kunde schon hat. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders) kann ein aktivierter Auftrag an den Dynamic Revenue Orchestrator übermittelt werden, normalerweise automatisiert durch einen datensatzgetriggerten Flow, und der Orchestrator kann ein Fremdsystem per Callout aufrufen. An dieser Stelle wird der Auftrag an SAP übergeben, idealerweise über eine Integrations-API statt direkt an SAP. Der Dynamic Revenue Orchestrator gehört zu Revenue Cloud Advanced, nicht zu Growth. Einzelheiten stehen in [Auftrag an SAP übergeben mit dem Dynamic Revenue Orchestrator](../revenue-cloud-auftragsorchestrierung-sap/).
+**Schnitt 2** passt, wenn derselbe Kunde immer wieder kauft und ändert: nachgerüstete Optionen, Servicepakete, Abonnements für Fernüberwachung. Revenue Cloud hält dann Auftrag und Assets, und ein Nachtrag startet bei dem, was der Kunde schon hat. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders) kann ein aktivierter Auftrag an den Dynamic Revenue Orchestrator übermittelt werden, normalerweise automatisiert durch einen datensatzgetriggerten Flow, und der Orchestrator kann ein Fremdsystem per Callout aufrufen. An dieser Stelle wird der Auftrag an SAP übergeben, idealerweise über eine Integrations-API statt direkt an SAP. Der Dynamic Revenue Orchestrator gehört zu Revenue Cloud Advanced, nicht zu Growth. Einzelheiten stehen in [Auftrag an SAP übergeben mit dem Dynamic Revenue Orchestrator](/blog/revenue-cloud-auftragsorchestrierung-sap/).
 
-**Schnitt 3** nimmt [Revenue Cloud Billing](https://www.salesforce.com/sales/revenue-cloud-billing/) dazu. Salesforce schreibt, dass Revenue Cloud Billing als Nebenbuch ("sub-ledger") arbeiten kann, mit Buchungen, Periodenabschlüssen und Währungsumrechnung, und dass Abrechnungsdaten und Buchungen an das ERP synchronisiert werden können. Das ist sinnvoll für wiederkehrende Umsätze, die in Salesforce verkauft werden. Eine Maschinenrechnung mit Lieferung, Zoll und Anzahlungen würde ich in SAP lassen. Schnitt 3 braucht außerdem die Lizenz für Revenue Cloud Billing, weil Revenue Cloud Advanced nur grundlegende Fakturierung enthält. Zudem muss festgelegt werden, welches System Forderungen, Zahlungen und Mahnwesen übernimmt. Die Abwägung steht in [Revenue Cloud Billing oder SAP: Wo entsteht die Rechnung?](../revenue-cloud-billing-oder-sap-rechnung/), die Lizenzen in [Revenue Cloud Editionen und Preise](../revenue-cloud-editionen-preise/).
+**Schnitt 3** nimmt [Revenue Cloud Billing](https://www.salesforce.com/sales/revenue-cloud-billing/) dazu. Salesforce schreibt, dass Revenue Cloud Billing als Nebenbuch ("sub-ledger") arbeiten kann, mit Buchungen, Periodenabschlüssen und Währungsumrechnung, und dass Abrechnungsdaten und Buchungen an das ERP synchronisiert werden können. Das ist sinnvoll für wiederkehrende Umsätze, die in Salesforce verkauft werden. Eine Maschinenrechnung mit Lieferung, Zoll und Anzahlungen würde ich in SAP lassen. Schnitt 3 braucht außerdem die Lizenz für Revenue Cloud Billing, weil Revenue Cloud Advanced nur grundlegende Fakturierung enthält. Zudem muss festgelegt werden, welches System Forderungen, Zahlungen und Mahnwesen übernimmt. Die Abwägung steht in [Revenue Cloud Billing oder SAP: Wo entsteht die Rechnung?](/blog/revenue-cloud-billing-oder-sap-rechnung/), die Lizenzen in [Revenue Cloud Editionen und Preise](/blog/revenue-cloud-editionen-preise/).
 
 ## Welches System führt welches Objekt?
 
-Ein Schnitt nach Prozessschritten reicht nicht. Partner bauen auf Objekten, also muss die Aufteilung auch pro Objekt feststehen. Das ist dieselbe Idee wie die [Object Ownership Matrix](../object-ownership-matrix-salesforce/), nur zwischen Systemen statt zwischen Teams.
+Ein Schnitt nach Prozessschritten reicht nicht. Partner bauen auf Objekten, also muss die Aufteilung auch pro Objekt feststehen. Das ist dieselbe Idee wie die [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/), nur zwischen Systemen statt zwischen Teams.
 
 | Objekt | Führendes System | Was über die Grenze geht |
 |---|---|---|
@@ -74,7 +74,7 @@ Ein Schnitt nach Prozessschritten reicht nicht. Partner bauen auf Objekten, also
 | Asset | Revenue Cloud für das Verkaufte und seine Laufzeit | Seriennummer aus SAP oder Field Service |
 | Invoice | SAP in Schnitt 1 und 2; Revenue Cloud Billing in Schnitt 3 | Rechnungsstatus zurück oder Buchungen an SAP |
 
-Die Preiszeile macht den meisten Ärger. Zwei Systeme, die beide denselben Kundenpreis rechnen, gelangen früher oder später zu unterschiedlichen Ergebnissen, und der Kunde merkt es, wenn die Auftragsbestätigung aus SAP vom Angebots-PDF abweicht. Welcher Weg zu Ihren Konditionen passt, steht in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/).
+Die Preiszeile macht den meisten Ärger. Zwei Systeme, die beide denselben Kundenpreis rechnen, gelangen früher oder später zu unterschiedlichen Ergebnissen, und der Kunde merkt es, wenn die Auftragsbestätigung aus SAP vom Angebots-PDF abweicht. Welcher Weg zu Ihren Konditionen passt, steht in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](/blog/kundenpreise-sap-konditionen-oder-salesforce-pricing/).
 
 ## Was bedeutet Revenue Cloud Billing für die Finanzabteilung?
 
@@ -85,7 +85,7 @@ SAP hat für jeden dieser Datensätze ein Gegenstück, aber selten eine Eins-zu-
 1. **Welche Gesellschaften aus Salesforce heraus fakturieren** und welche in SAP bleiben.
 2. **Wie die Buchungsperioden in Salesforce an den SAP-Perioden ausgerichtet werden** und wer sie schließt.
 3. **Wie die Sachkonten zugeordnet werden** und wer die Zuordnung ändert, wenn sich der Kontenplan ändert.
-4. **In welchem Format der Kunde die Rechnung erhält.** Ab 2027 dürfen laut [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) nur noch Unternehmen mit bis zu 800.000 Euro Vorjahresumsatz inländischen Geschäftskunden mit deren Zustimmung ein PDF schicken, ab 2028 gelten die Anforderungen an die E-Rechnung für praktisch alle inländischen B2B-Rechnungen. Klären Sie außerdem, welches System das strukturierte Format erzeugt und wer es validiert. Was das für Revenue Cloud heißt, steht in [E-Rechnung ab 2027](../e-rechnung-pflicht-2027-revenue-cloud/).
+4. **In welchem Format der Kunde die Rechnung erhält.** Ab 2027 dürfen laut [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) nur noch Unternehmen mit bis zu 800.000 Euro Vorjahresumsatz inländischen Geschäftskunden mit deren Zustimmung ein PDF schicken, ab 2028 gelten die Anforderungen an die E-Rechnung für praktisch alle inländischen B2B-Rechnungen. Klären Sie außerdem, welches System das strukturierte Format erzeugt und wer es validiert. Was das für Revenue Cloud heißt, steht in [E-Rechnung ab 2027](/blog/e-rechnung-pflicht-2027-revenue-cloud/).
 
 War die Finanzabteilung an diesen vier Punkten nicht beteiligt, ist Schnitt 3 nicht reif.
 
@@ -107,7 +107,7 @@ Auftrag --> Abonnement-Asset
 SAP-Auftrag --> SAP-Rechnung
 ```
 
-Wenn der Vertriebsinnendienst zusätzlich etwa den Auftragsstatus live aus SAP braucht, folgt das dem Muster aus [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/).
+Wenn der Vertriebsinnendienst zusätzlich etwa den Auftragsstatus live aus SAP braucht, folgt das dem Muster aus [Agentforce und SAP: Auftragsstatus über MuleSoft](/blog/agentforce-sap-auftragsstatus/).
 
 ## Eine Tabelle mit führendem System pro Objekt
 
@@ -119,7 +119,7 @@ Die Tabelle passt auf eine Seite, sodass ein neuer Partner sie in zehn Minuten v
 - **Pro Fehler:** wer einen Auftrag repariert, den SAP ablehnt. Fehlerhafte Aufträge ohne verantwortliche Person gehen an den Vertrieb, der sie nicht beheben kann.
 - **Unterschrift:** Vertriebsleitung, Finanzleitung und IT-Leitung, festgehalten im Decision Log.
 
-Diese Schnittstellen zu entwerfen, ist ein großer Teil meiner Arbeit im Bereich [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/). Die größere Frage, ob Revenue Cloud überhaupt passt, behandelt das Masterclass-Kapitel [Revenue Cloud: Überblick und Entscheidung](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/).
+Diese Schnittstellen zu entwerfen, ist ein großer Teil meiner Arbeit im Bereich [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/). Die größere Frage, ob Revenue Cloud überhaupt passt, behandelt das Masterclass-Kapitel [Revenue Cloud: Überblick und Entscheidung](/masterclass/revenue-cloud/revenue-cloud-ueberblick/).
 
 ## Die unklaren Zeilen mit der Finanzabteilung klären
 

@@ -47,7 +47,7 @@ A communication plan is a table, not a strategy on twenty slides. Each row is on
 | Owner | Who prepares it and makes sure it happens? | Change manager |
 | Feedback channel | Where do questions go? | Regional key user, shared mailbox |
 
-The purpose column is the most important one and the one most often missing. It links the message to the stage a group is at right now. In the [ADKAR model](../change-management-models/) these are awareness, desire, knowledge, ability and reinforcement. A message meant to build awareness looks completely different from one that passes on knowledge. Putting both into the same mass email usually achieves neither.
+The purpose column is the most important one and the one most often missing. It links the message to the stage a group is at right now. In the [ADKAR model](/en/blog/change-management-models/) these are awareness, desire, knowledge, ability and reinforcement. A message meant to build awareness looks completely different from one that passes on knowledge. Putting both into the same mass email usually achieves neither.
 
 ## Leadership explains the why, managers explain the impact
 
@@ -78,7 +78,7 @@ Set up feedback and adjust | ongoing · change manager
   Collect questions, add frequent ones to the next message, adjust the plan when a group does not follow.
 ```
 
-A communication plan is a living document. If the same question keeps coming back after an announcement, the answer belongs in the next message, and perhaps a row is missing for a group you underestimated. The basis for this is the [stakeholder analysis](../stakeholder-analysis/).
+A communication plan is a living document. If the same question keeps coming back after an announcement, the answer belongs in the next message, and perhaps a row is missing for a group you underestimated. The basis for this is the [stakeholder analysis](/en/blog/stakeholder-analysis/).
 
 ## Example: communication plan for a CRM rollout
 
@@ -94,13 +94,13 @@ When introducing a CRM system such as Salesforce in sales, an extract could look
 | −2 | Everyone affected | Knowledge | What happens on go-live day, whom to ask | Key users | Team meeting |
 | +2 | Everyone affected | Reinforcement | First successes, most frequent questions, what we improve | Head of sales | Team meeting and email |
 
-Notice that only a few rows come from the project team and that communication does not end at go-live. The message in week +2 is one of the most important: in this period morale and productivity often drop, as the [change curve](../change-curve/) describes, and visible successes help people through the valley.
+Notice that only a few rows come from the project team and that communication does not end at go-live. The message in week +2 is one of the most important: in this period morale and productivity often drop, as the [change curve](/en/blog/change-curve/) describes, and visible successes help people through the valley.
 
 A global rollout adds another dimension. When teams in the United States, Asia and Europe are involved, as in a Salesforce Sales Cloud rollout I supported, the teams in each country usually need their own senders and messages in their own language. A message from headquarters in English does not replace the country manager explaining the reasons in a local meeting.
 
 ## Communication plan template
 
-The [Excel template](../../../downloads/communication-plan-template.xlsx) contains an empty table with all the columns from this article and the example above. It is designed so that you can take the groups straight from the stakeholder analysis template.
+The [Excel template](/downloads/communication-plan-template.xlsx) contains an empty table with all the columns from this article and the example above. It is designed so that you can take the groups straight from the stakeholder analysis template.
 
 ```hinweis tipp
 Plan every key message at least three times, through different senders and channels. Prosci recommends five to seven repetitions. By the third time, it may feel boring to you, but many affected people will only just be hearing it properly for the first time.
@@ -114,10 +114,10 @@ Plan every key message at least three times, through different senders and chann
 - **No feedback channel.** If questions have nowhere to go, they turn into corridor gossip and come back as rumours.
 - **Silence after go-live.** The hardest phase starts only after go-live. If you go quiet then, you leave the interpretation to those who are unhappy.
 
-Salesforce programs with regular releases need their own format: Salesforce ships three seasonal releases a year, and the program deploys its own changes on top. Only changes that affect a business team's process, screens or responsibilities need a short, targeted announcement. Fabian Kramer describes how that works in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
+Salesforce programs with regular releases need their own format: Salesforce ships three seasonal releases a year, and the program deploys its own changes on top. Only changes that affect a business team's process, screens or responsibilities need a short, targeted announcement. Fabian Kramer describes how that works in [Communicating Salesforce releases to the business](/en/blog/salesforce-release-communication-business/).
 
 ## Support pays off when many groups and countries are affected
 
-For a change affecting one team, the template is enough. When many groups and countries are affected, when sensitive messages are due or when managers are unsure themselves, an outside view helps to sharpen messages and prepare managers. In Salesforce programs, I work with Fabian Kramer on this. See [Salesforce change management consulting](../../services/change-management-salesforce/) and [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
+For a change affecting one team, the template is enough. When many groups and countries are affected, when sensitive messages are due or when managers are unsure themselves, an outside view helps to sharpen messages and prepare managers. In Salesforce programs, I work with Fabian Kramer on this. See [Salesforce change management consulting](/en/services/change-management-salesforce/) and [Salesforce change management: why rollouts fail](/en/blog/change-management-salesforce-rollout/).
 
 *Prosci and ADKAR are registered trademarks of Prosci, Inc.*

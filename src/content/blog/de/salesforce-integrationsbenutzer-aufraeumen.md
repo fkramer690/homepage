@@ -42,13 +42,13 @@ Anmeldung per Passwort | Benutzername und Passwort, oft mit Sicherheitstoken | O
 fazit: Jedes Muster allein reicht, um den Benutzer auf die Liste für die Umstellung zu setzen.
 ```
 
-Welche Anmeldeverfahren wann enden, steht in [Salesforce-Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/). Das Risiko des ersten Musters liegt auf der Hand: Gelangen die Zugangsdaten nach außen, etwa bei einem Anbieter, hat der Angreifer die Rechte des Administrators. Wie schnell das passieren kann, zeigt der Vorfall, den ich in [Connected Apps und KI-Tools: Lehren aus Salesloft Drift](../connected-apps-oauth-ki-integrationen/) beschreibe.
+Welche Anmeldeverfahren wann enden, steht in [Salesforce-Passwort-Integrationen enden 2027](/blog/salesforce-passwort-integrationen-2027/). Das Risiko des ersten Musters liegt auf der Hand: Gelangen die Zugangsdaten nach außen, etwa bei einem Anbieter, hat der Angreifer die Rechte des Administrators. Wie schnell das passieren kann, zeigt der Vorfall, den ich in [Connected Apps und KI-Tools: Lehren aus Salesloft Drift](/blog/connected-apps-oauth-ki-integrationen/) beschreibe.
 
 ## Die Integration-User-Lizenz beschränkt den Benutzer auf die API
 
 Salesforce bietet eine eigene Lizenz für Integrationen zwischen Systemen. Laut [Salesforce Admin Blog](https://admin.salesforce.com/blog/2023/best-practices-for-configuring-your-integration-user) erhalten In der Enterprise, Unlimited und Performance Edition sind automatisch fünf Salesforce-Integration-Lizenzen ohne Aufpreis enthalten. Weitere Lizenzen können über den Account Executive bezogen werden.
 
-Das kann auch volle Lizenzen freigeben. Ein Integrationsbenutzer mit Sales- oder Service-Cloud-Lizenz belegt eine Lizenz, die ein Mensch nutzen könnte; die Umstellung kann also einen Zukauf vermeiden. Welche Lizenzen Benutzer wirklich brauchen, beschreibe ich in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/)
+Das kann auch volle Lizenzen freigeben. Ein Integrationsbenutzer mit Sales- oder Service-Cloud-Lizenz belegt eine Lizenz, die ein Mensch nutzen könnte; die Umstellung kann also einen Zukauf vermeiden. Welche Lizenzen Benutzer wirklich brauchen, beschreibe ich in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](/blog/salesforce-lizenzen-volle-lizenz/)
 
 Zur Lizenz gehört das Profil Minimum Access - API Only Integrations. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=User-Permission-for-API-Integration-User&language=en_US&type=1) erlaubt dieses Profil den API-Zugriff und beschränkt den Benutzer zugleich darauf; der reine API-Zugriff lässt sich nicht abschalten. Eine Anmeldung über die Oberfläche ist damit ausgeschlossen.
 
@@ -56,7 +56,7 @@ Zur Lizenz gehört das Profil Minimum Access - API Only Integrations. Laut [Sale
 Die Lizenz begrenzt die Rechte des Benutzers nicht von selbst. Die zugehörige Permission Set License Salesforce API Integration stellt viele administrative Rechte zur Verfügung; welche Rechte der Benutzer erhält, entscheiden Ihre Permission Sets. Und manche Berechtigungsarten fehlen in Permission Sets mit dieser Lizenz, zum Beispiel Apex-Klassenzugriff, benutzerdefinierte Berechtigungen und Zugriff auf Named Credentials. Als Ausweichlösung nennt Salesforce ein zweites Permission Set ohne diese Lizenz. Prüfen Sie das für jede Integration vor der Umstellung.
 ```
 
-Die Einzelheiten stehen im Salesforce-Artikel zu [fehlenden Berechtigungen mit der API-Integration-Lizenz](https://help.salesforce.com/s/articleView?id=001453686&language=en_US&type=1). Halten Sie das Profil auf minimalem Zugriff; es steuert Standardwerte, Anmeldezeiten und IP-Bereiche. Objekt- und Feldrechte vergeben Sie über ein eigenes Permission Set oder, wenn mehrere wiederverwendbare Sets zusammenkommen, über eine Permission Set Group. Der Zugriff auf Datensätze richtet sich weiterhin nach den Freigaben. OAuth-Scopes und Richtlinien der App sind eine eigene Ebene: Sie begrenzen, wie sich die Anwendung anmeldet und welche APIs sie nutzen darf, nicht aber, auf welche Datensätze sie zugreifen kann. Das entspricht dem Aufbau, den ich für Menschen in [Berechtigungskonzept mit Permission Sets](../salesforce-berechtigungskonzept-permission-sets/) beschreibe.
+Die Einzelheiten stehen im Salesforce-Artikel zu [fehlenden Berechtigungen mit der API-Integration-Lizenz](https://help.salesforce.com/s/articleView?id=001453686&language=en_US&type=1). Halten Sie das Profil auf minimalem Zugriff; es steuert Standardwerte, Anmeldezeiten und IP-Bereiche. Objekt- und Feldrechte vergeben Sie über ein eigenes Permission Set oder, wenn mehrere wiederverwendbare Sets zusammenkommen, über eine Permission Set Group. Der Zugriff auf Datensätze richtet sich weiterhin nach den Freigaben. OAuth-Scopes und Richtlinien der App sind eine eigene Ebene: Sie begrenzen, wie sich die Anwendung anmeldet und welche APIs sie nutzen darf, nicht aber, auf welche Datensätze sie zugreifen kann. Das entspricht dem Aufbau, den ich für Menschen in [Berechtigungskonzept mit Permission Sets](/blog/salesforce-berechtigungskonzept-permission-sets/) beschreibe.
 
 ## Benutzer, Apps und Anmeldeverfahren erfassen
 
@@ -74,7 +74,7 @@ Zuständigkeit | Meist nirgends | Niemand weiß, wofür der Benutzer da ist
 fazit: Erfassen Sie eine Zeile je Integration, nicht je Benutzer: Ein geteilter Benutzer erscheint dann mehrfach, und das ist bereits ein Befund.
 ```
 
-Für die ERP-Schnittstelle ergeben sich die Objekte meist aus den Datenflüssen, wie in [Manufacturing Cloud und SAP: Datenflüsse](../manufacturing-cloud-sap-integration-datenfluesse/) beschrieben.
+Für die ERP-Schnittstelle ergeben sich die Objekte meist aus den Datenflüssen, wie in [Manufacturing Cloud und SAP: Datenflüsse](/blog/manufacturing-cloud-sap-integration-datenfluesse/) beschrieben.
 
 Am heikelsten sind Benutzer, für die keine Zuständigkeit definiert ist. Prüfen Sie vor dem Sperren den Anmeldeverlauf, die Jobpläne und die Konfiguration der Middleware, denn eine Schnittstelle, die nur quartalsweise oder zum Jahresende ausgeführt wird, hat sich womöglich seit Wochen nicht angemeldet. Bleibt die Abhängigkeit unklar, frieren Sie den Benutzer für einen festen Zeitraum ein, mit einem benannten Ansprechpartner für Eskalationen.
 
@@ -103,7 +103,7 @@ Deaktivieren | nach dem Zyklus · Admin
   Alten Benutzer abschalten, Lizenz frei.
 ```
 
-Wer den alten Benutzer am Tag der Umstellung einfriert, schließt den privilegierten Zugang. Fehlt ein Recht, ergänzen Sie es im neuen Permission Set; die erneute Aktivierung des alten Benutzers bleibt eine befristete Ausnahme. Prüfen Sie fachliche Zahlen, nicht nur technische Protokolle: Anzahl der übertragenen Aufträge, offene Fehler und den Abgleich zwischen beiden Systemen. Legen Sie die Umstellung nicht auf das Wochenende eines Salesforce-Release, dann lassen sich Fehler leichter zuordnen; die Termine stehen in [Salesforce-Release-Termine: Was die IT je Release prüft](../salesforce-release-notes-termine-pruefen/). Wie ich Schnittstellen mit Kunden plane, beschreibe ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Wer den alten Benutzer am Tag der Umstellung einfriert, schließt den privilegierten Zugang. Fehlt ein Recht, ergänzen Sie es im neuen Permission Set; die erneute Aktivierung des alten Benutzers bleibt eine befristete Ausnahme. Prüfen Sie fachliche Zahlen, nicht nur technische Protokolle: Anzahl der übertragenen Aufträge, offene Fehler und den Abgleich zwischen beiden Systemen. Legen Sie die Umstellung nicht auf das Wochenende eines Salesforce-Release, dann lassen sich Fehler leichter zuordnen; die Termine stehen in [Salesforce-Release-Termine: Was die IT je Release prüft](/blog/salesforce-release-notes-termine-pruefen/). Wie ich Schnittstellen mit Kunden plane, beschreibe ich unter [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/).
 
 ## Die riskantesten Integrationsbenutzer zuerst umstellen
 

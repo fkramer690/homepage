@@ -36,13 +36,13 @@ In a worldwide Salesforce rollout with a global template, people in every countr
 
 The strategic goal of a worldwide rollout is usually to harmonize processes. At headquarters that goal is clear; in the countries it often is not. For a subsidiary that has worked successfully with its own processes for years, the global template is initially something imposed from outside. If nobody there explains why it is worth it, you get deviation requests instead of support. Here, "country" stands for the unit that goes live together; depending on the organization, that can also be a region, a subsidiary or a business unit.
 
-Prosci's [ADKAR model](../change-management-salesforce-rollout/) describes five stages every person goes through in a change: awareness, desire, knowledge, ability and reinforcement. In this situation the first two are often at risk: awareness, the understanding of why something changes, and desire, the willingness to take part. Only conversations with the affected groups show whether that is really where the barrier lies. Neither can be produced from headquarters by email. It takes a person in the country whom employees listen to. That person alone is not enough: if time, suitable targets or features are missing, even the best sponsor achieves little.
+Prosci's [ADKAR model](/en/blog/change-management-salesforce-rollout/) describes five stages every person goes through in a change: awareness, desire, knowledge, ability and reinforcement. In this situation the first two are often at risk: awareness, the understanding of why something changes, and desire, the willingness to take part. Only conversations with the affected groups show whether that is really where the barrier lies. Neither can be produced from headquarters by email. It takes a person in the country whom employees listen to. That person alone is not enough: if time, suitable targets or features are missing, even the best sponsor achieves little.
 
 ```praxis
 In the worldwide Manufacturing Cloud rollout it was clear from the start that the goal was to harmonize processes. What I would do differently today: keep bringing up change management, even when the client thinks they do not need it. Every country needed at least key users, communication before go-live and a look at usage afterwards.
 ```
 
-The order of countries is covered in [Manufacturing Cloud global rollout](../manufacturing-cloud-global-rollout/), and how to handle deviations in [global Salesforce template: how much country fits?](../salesforce-global-template-country-deviations/).
+The order of countries is covered in [Manufacturing Cloud global rollout](/en/blog/manufacturing-cloud-global-rollout/), and how to handle deviations in [global Salesforce template: how much country fits?](/en/blog/salesforce-global-template-country-deviations/).
 
 ## What does each country need?
 
@@ -58,7 +58,7 @@ I plan the same building blocks for every country. The content differs, the list
 | Co-determination and data protection | works council or comparable body where one exists, data protection, HR | early in the design, differs per country |
 | Measuring usage | sponsor, project team | baseline before go-live, then monthly |
 
-Two points are underestimated most often. The first is the sponsor in the country. A global sponsor at headquarters is necessary, but does not replace the person who stands in front of the local team and says that forecasts will come from Salesforce from now on. The second is co-determination. Whether and how a works council or a comparable body is involved differs by country and region and should be clarified early; for reports that can show performance or behavior, already during the design. For field service I describe this in the [Field Service rollout](../salesforce-field-service-rollout/).
+Two points are underestimated most often. The first is the sponsor in the country. A global sponsor at headquarters is necessary, but does not replace the person who stands in front of the local team and says that forecasts will come from Salesforce from now on. The second is co-determination. Whether and how a works council or a comparable body is involved differs by country and region and should be clarified early; for reports that can show performance or behavior, already during the design. For field service I describe this in the [Field Service rollout](/en/blog/salesforce-field-service-rollout/).
 
 ## What does the communication in the country have to explain?
 
@@ -83,7 +83,7 @@ Conversely, the list of deviations shows where change management has to start. I
 Change management is tested in the first wave too. After the first country goes live, I check with the sponsor and the key users:
 
 1. **Which questions came up most often after go-live?** They show where training or communication was missing.
-2. **Where do people keep working with their own lists alongside Salesforce?** That shows where the new process has not been adopted. Whether the issue is knowledge, usability, missing functions or willingness becomes clear in conversations with the users. How to measure this is covered in [measuring Salesforce adoption after go-live](../salesforce-adoption-metrics-after-go-live/).
+2. **Where do people keep working with their own lists alongside Salesforce?** That shows where the new process has not been adopted. Whether the issue is knowledge, usability, missing functions or willingness becomes clear in conversations with the users. How to measure this is covered in [measuring Salesforce adoption after go-live](/en/blog/salesforce-adoption-metrics-after-go-live/).
 3. **What would the key users have liked to know earlier?** The answer goes straight into the plan for the next country.
 
 Between two waves this needs a short checkpoint, even when waves overlap: critical defects from the first wave are fixed, training material is updated, decisions on changes to the template are made and the key users of the next wave are ready. Whoever starts the next wave while the first country still has questions spreads the project team's attention too thin, and the second country starts with the same gaps.
@@ -94,4 +94,4 @@ Have key users from the next country work for a few days in the country that is 
 
 ## Name a sponsor per country before planning starts
 
-Name a sponsor for every country before the country enters planning, and have them review the list of country deviations. Define key users per country and agree their availability with their managers, as described in [key users in Salesforce rollouts](../salesforce-key-user-network/). After the first country goes live, plan a review before the second one starts. Without a named sponsor, detailed design does not start for a country, even when the schedule is tight. How we set this up in programs is described in [change management for Salesforce programs](../../services/change-management-salesforce/).
+Name a sponsor for every country before the country enters planning, and have them review the list of country deviations. Define key users per country and agree their availability with their managers, as described in [key users in Salesforce rollouts](/en/blog/salesforce-key-user-network/). After the first country goes live, plan a review before the second one starts. Without a named sponsor, detailed design does not start for a country, even when the schedule is tight. How we set this up in programs is described in [change management for Salesforce programs](/en/services/change-management-salesforce/).

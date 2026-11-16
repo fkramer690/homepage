@@ -34,7 +34,7 @@ Program-based business in Manufacturing Cloud helps suppliers that deliver compo
 
 The [product page for sales](https://salesforce.com/manufacturing/cloud/sales) lists what the feature covers: market size per manufacturer and program, third-party demand streams such as IHS and Dodge, margins and the effect of volume changes on fixed-cost allocation, and attach rates and pricing for engineering change orders. Trailhead's example is a car program, but the model fits any supplier whose parts go into mass-produced products for a few large customers.
 
-It belongs to chapter 2 of the masterclass, [agreements and forecasting](../../masterclass/manufacturing-cloud/agreements-and-forecasting/), next to account forecasting. Account forecasting plans the quantities that existing customers will take of existing products. Program-based business plans demand for programs that may not have started production yet.
+It belongs to chapter 2 of the masterclass, [agreements and forecasting](/en/masterclass/manufacturing-cloud/agreements-and-forecasting/), next to account forecasting. Account forecasting plans the quantities that existing customers will take of existing products. Program-based business plans demand for programs that may not have started production yet.
 
 ## A program has three levels, each with its own forecast
 
@@ -69,7 +69,7 @@ According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/
 
 Admins clone and customize the templates, and scheduled flows run them weekly in the example. The engine reads programs, variant forecasts, Product Related Material, products, price book entries and periods, and writes forecasted quantity and revenue per component and period.
 
-This has two consequences for the architecture. Cloned DPE definitions, forecast sets and flows are configuration that has to move through the release process like everything else, as described in [data and configuration in the pipeline](../../masterclass/devops-release-management/data-and-configuration/). And the record count grows with programs, variants, components, dimensions and periods.
+This has two consequences for the architecture. Cloned DPE definitions, forecast sets and flows are configuration that has to move through the release process like everything else, as described in [data and configuration in the pipeline](/en/masterclass/devops-release-management/data-and-configuration/). And the record count grows with programs, variants, components, dimensions and periods.
 
 ```hinweis offen
 Salesforce documents [recommended volumes for program-based business](https://help.salesforce.com/s/articleView?id=ind.mfg_pbb_admin_considerations_large_volumes_concept.htm&language=en_US&type=5): for large orgs, up to 150 programs, 60 periods and 58.5 million component forecast records. An org includes 1 GB of Data Processing Engine export per day, which the standard templates turn into about 3 million forecast records a day; higher volumes need the Data Pipelines add-on.
@@ -79,7 +79,7 @@ Salesforce documents [recommended volumes for program-based business](https://he
 
 There are two API steps. First, the Transformation API converts finalised component forecasts into an opportunity. The mappings are defined with the ObjectHierarchyRelationship metadata, usage type Transformation Mapping: from component forecast to opportunity, opportunity line item and opportunity line item schedule, plus a supporting mapping from the program to the opportunity, because the account is not set automatically. The result is one opportunity with a line item per component and a schedule per period.
 
-Second, once the opportunity is won (a process rule I recommend, not a technical requirement), the Sales Agreement Connect API converts the opportunity and its line items into a sales agreement with sales agreement products. From there, actuals from the ERP take over, as described in [sales agreements: spot customers behind on volume](../sales-agreements-volume-shortfall-erp/). If the agreement comes out of a configured quote instead, the path is in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
+Second, once the opportunity is won (a process rule I recommend, not a technical requirement), the Sales Agreement Connect API converts the opportunity and its line items into a sales agreement with sales agreement products. From there, actuals from the ERP take over, as described in [sales agreements: spot customers behind on volume](/en/blog/sales-agreements-volume-shortfall-erp/). If the agreement comes out of a configured quote instead, the path is in [from quote to sales agreement](/en/blog/quote-to-sales-agreement-product-configurator/).
 
 ```ablauf
 ext: Market data CSV
@@ -92,13 +92,13 @@ Opportunity --Won--> Sales agreement
 ERP ..Actuals..> Sales agreement
 ```
 
-Trailhead does not describe an approval status for the forecast. Who declares a component forecast final, and when, is your process to define. The Sales Planning agent has a documented subagent that converts program component forecasts into opportunities, covered in [what the Sales Planning agent really does](../agentforce-sales-planning-agreements-forecasts/). I would only let it run once that approval step exists.
+Trailhead does not describe an approval status for the forecast. Who declares a component forecast final, and when, is your process to define. The Sales Planning agent has a documented subagent that converts program component forecasts into opportunities, covered in [what the Sales Planning agent really does](/en/blog/agentforce-sales-planning-agreements-forecasts/). I would only let it run once that approval step exists.
 
 ## What do you need before you start?
 
 - **Features in Setup:** Advanced Account Forecasting, Data Pipelines and Program Based Business. The metadata type for program templates has existed since API 54.0, the program objects since API 55.0.
 - **Permission sets:** Manufacturing Advanced Account Forecast and Manufacturing Program Based Business for users, Data Pipelines Base User for admins.
-- **License:** Salesforce Help lists the permission set licenses for Manufacturing Cloud users; get the exact set confirmed in the quote, as with every feature in [Manufacturing Cloud features: what is in the box](../manufacturing-cloud-features-overview/).
+- **License:** Salesforce Help lists the permission set licenses for Manufacturing Cloud users; get the exact set confirmed in the quote, as with every feature in [Manufacturing Cloud features: what is in the box](/en/blog/manufacturing-cloud-features-overview/).
 - **Data:** a source for program and variant forecasts, Product Related Material from engineering or the ERP, and price book entries for selling prices.
 
 ## Worked example: hydraulic cylinders for 12 programs
@@ -114,4 +114,4 @@ With 24 monthly periods, that is about 12 x 4 x 10 x 2 x 24 = 23,040 component f
 - **No third-party or OEM forecast data.** Without program forecast figures, there is nothing to derive component demand from.
 - **No sales agreements afterwards.** The conversion into opportunities and agreements is half the value.
 
-If you do go ahead, component data needs a named owner, and the integration with planning in the ERP needs one authoritative number. That integration is part of my work on [Salesforce integration](../../services/salesforce-integration/).
+If you do go ahead, component data needs a named owner, and the integration with planning in the ERP needs one authoritative number. That integration is part of my work on [Salesforce integration](/en/services/salesforce-integration/).

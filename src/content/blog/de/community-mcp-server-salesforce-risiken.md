@@ -33,7 +33,7 @@ Ein Community-MCP-Server für Salesforce ist Fremdcode oder ein fremder Dienst m
 
 ## Warum ist ein Community-MCP-Server ein eigenes Risiko?
 
-Über MCP (Model Context Protocol) ruft ein KI-Client Werkzeuge in anderen Systemen auf; die Grundlagen stehen in [MCP für die IT-Leitung erklärt](../mcp-salesforce-erklaert-it-leitung/). Ein Community-Server ist einer, den weder Salesforce noch Ihr KI-Anbieter betreibt. Das Betriebsmodell ändert das Risiko:
+Über MCP (Model Context Protocol) ruft ein KI-Client Werkzeuge in anderen Systemen auf; die Grundlagen stehen in [MCP für die IT-Leitung erklärt](/blog/mcp-salesforce-erklaert-it-leitung/). Ein Community-Server ist einer, den weder Salesforce noch Ihr KI-Anbieter betreibt. Das Betriebsmodell ändert das Risiko:
 
 | Typ | Hauptrisiko |
 |---|---|
@@ -68,17 +68,17 @@ Ich würde vom Partner oder Entwickler schriftliche Antworten auf sechs Fragen v
 
 **Identität.** Hosted MCP führt jeden Aufruf unter dem Named User aus, im Audit Trail steht also eine Person. Ein Server oder Gateway, das sich einmal mit einem technischen Benutzer anmeldet statt per OAuth je Benutzer, kehrt das um: Im Log steht dann "Integrationsbenutzer hat 4.000 Fälle gelesen", und niemand kann sagen, in wessen Auftrag.
 
-**Zugangsdaten.** Ein Server, der sich mit Benutzername, Passwort und Security Token anmeldet, wirft zwei Probleme auf. Die Zugangsdaten liegen auf einem Laptop, und laut [Salesforce Time](https://salesforcetime.com/2026/10/15/salesforce-oauth-username-password-flow-retirement/) beendet Salesforce den OAuth Username-Password Flow am 20. Februar 2027. Das SOAP-API-login(), das viele Bibliotheken für Benutzername, Passwort und Token nutzen, endet davon getrennt mit Summer '27. Mehr zu diesen Fristen steht in [Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/). Ein Gateway, das Refresh Tokens für Ihre Org speichert, ist ein Dritter mit langlebigem Zugriff. Das war das Muster hinter dem Salesloft-Drift-Vorfall, beschrieben in [Connected Apps und OAuth: Lehren für KI-Integrationen](../connected-apps-oauth-ki-integrationen/).
+**Zugangsdaten.** Ein Server, der sich mit Benutzername, Passwort und Security Token anmeldet, wirft zwei Probleme auf. Die Zugangsdaten liegen auf einem Laptop, und laut [Salesforce Time](https://salesforcetime.com/2026/10/15/salesforce-oauth-username-password-flow-retirement/) beendet Salesforce den OAuth Username-Password Flow am 20. Februar 2027. Das SOAP-API-login(), das viele Bibliotheken für Benutzername, Passwort und Token nutzen, endet davon getrennt mit Summer '27. Mehr zu diesen Fristen steht in [Passwort-Integrationen enden 2027](/blog/salesforce-passwort-integrationen-2027/). Ein Gateway, das Refresh Tokens für Ihre Org speichert, ist ein Dritter mit langlebigem Zugriff. Das war das Muster hinter dem Salesloft-Drift-Vorfall, beschrieben in [Connected Apps und OAuth: Lehren für KI-Integrationen](/blog/connected-apps-oauth-ki-integrationen/).
 
 **Maintainer und Version.** Pinnen Sie eine exakte Version und prüfen Sie die Änderungen vor jedem Update. Der Postmark-Fall zeigt den Grund: Der Schadcode wurde mit einer bestimmten Version ausgeliefert. Bei einem SaaS-Gateway können Sie die Serverversion meist nicht pinnen; fragen Sie stattdessen, ob der Anbieter Funktionen oder Werkzeugbeschreibungen ohne Ihre Freigabe ändern kann.
 
 **Werkzeuge.** Lassen Sie sich die vollständige Werkzeugliste mit Beschreibungen geben. Ein Server mit einem Lesewerkzeug für offene Fälle ist eine andere Entscheidung als einer, der beliebiges SOQL oder anonymes Apex ausführt.
 
-**Kombination.** Willisons [Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) besteht aus privaten Daten, nicht vertrauenswürdigen Inhalten und einem Weg, Daten nach außen zu senden. Willison schreibt, MCP "encourages users to mix and match tools from different sources". Bei einem Maschinenbauer sind Fallbeschreibungen aus dem Händlerportal oder aus Garantieformularen solche fremden Inhalte, siehe [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
+**Kombination.** Willisons [Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) besteht aus privaten Daten, nicht vertrauenswürdigen Inhalten und einem Weg, Daten nach außen zu senden. Willison schreibt, MCP "encourages users to mix and match tools from different sources". Bei einem Maschinenbauer sind Fallbeschreibungen aus dem Händlerportal oder aus Garantieformularen solche fremden Inhalte, siehe [Prompt Injection im Händlerportal](/blog/prompt-injection-haendlerportal-agentforce/).
 
 Für ein kommerzielles Gateway reichen die sechs Fragen nicht. Ergänzen Sie die Prüfungen, die Sie jedem SaaS mit CRM-Daten stellen: welche Daten, Prompts und Werkzeugergebnisse eine Region verlassen und welche Region das ist, was wie lange gespeichert wird, welche Unterauftragnehmer und Modelle beteiligt sind, wie Tokens geschützt und widerrufen werden, wie Mandanten getrennt sind und welche Audit-Logs Sie einsehen können.
 
-**Ziel-Org.** Coding-Agenten arbeiten in Sandboxes. Änderungen an der Produktion erfolgen über die Pipeline, und das gehört in den Vertrag, siehe [Partner mit KI-Coding: Regeln für den Vertrag](../partner-ki-coding-regeln-vertrag/).
+**Ziel-Org.** Coding-Agenten arbeiten in Sandboxes. Änderungen an der Produktion erfolgen über die Pipeline, und das gehört in den Vertrag, siehe [Partner mit KI-Coding: Regeln für den Vertrag](/blog/partner-ki-coding-regeln-vertrag/).
 
 ```vertiefung Für Entwickler
 titel: Wie hilft Claude Code beim Pinnen und bei neuen Servern?
@@ -89,12 +89,12 @@ Claude Code verlangt eine Vertrauensbestätigung, wenn ein neuer MCP-Server auft
 
 ## Wann ist Salesforce Hosted MCP der sicherere Weg?
 
-Salesforce Hosted MCP Server sind [seit 29. April 2026 allgemein verfügbar](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) und stehen jeder Org ab Enterprise Edition zur Verfügung. Für eine Person, die interaktiv mit Claude, ChatGPT oder Cursor arbeitet, decken sie die meisten Prüfpunkte der Tabelle ab: kein Fremdcode auf dem Laptop, jeder Aufruf unter dem Named User, OAuth mit PKCE, Server bleiben deaktiviert, bis ein Admin sie einschaltet, MCP-Zugriffe sind in den API-Logs filterbar und ein `mcp_api`-Scope gewährt laut Salesforce Zugriff auf MCP, "but not our existing REST APIs". Das gilt, wenn die External Client App auf vorab autorisierte Benutzer oder Permission Sets beschränkt ist und nur die nötigen Server und Werkzeuge aktiv sind; Refresh-Token-Richtlinie, IP-Beschränkung und Widerruf gehören ebenfalls in die Freigabe. Wer welche Daten lesen darf, steht in [Hosted MCP Server und Datenzugriff](../salesforce-hosted-mcp-server-datenzugriff/).
+Salesforce Hosted MCP Server sind [seit 29. April 2026 allgemein verfügbar](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) und stehen jeder Org ab Enterprise Edition zur Verfügung. Für eine Person, die interaktiv mit Claude, ChatGPT oder Cursor arbeitet, decken sie die meisten Prüfpunkte der Tabelle ab: kein Fremdcode auf dem Laptop, jeder Aufruf unter dem Named User, OAuth mit PKCE, Server bleiben deaktiviert, bis ein Admin sie einschaltet, MCP-Zugriffe sind in den API-Logs filterbar und ein `mcp_api`-Scope gewährt laut Salesforce Zugriff auf MCP, "but not our existing REST APIs". Das gilt, wenn die External Client App auf vorab autorisierte Benutzer oder Permission Sets beschränkt ist und nur die nötigen Server und Werkzeuge aktiv sind; Refresh-Token-Richtlinie, IP-Beschränkung und Widerruf gehören ebenfalls in die Freigabe. Wer welche Daten lesen darf, steht in [Hosted MCP Server und Datenzugriff](/blog/salesforce-hosted-mcp-server-datenzugriff/).
 
 Hosted MCP hat Grenzen, und genau sie treiben Teams zu Community-Servern:
 
 - **Kein Maschine-zu-Maschine-Zugriff.** Die Sicherheitsempfehlungen sagen: "There are no service accounts, no machine-to-machine flows". Ein nächtlicher Agent kann Hosted MCP nicht nutzen.
-- **Edition und Kosten.** Laut [Übersicht](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) sind die Server "intended only for customers with Flex Credits and you may be billed for server usage". Warum daraus eine Budgetposition wird, steht in [MCP-Zugriffe als Budgetrisiko](../flex-credits-agentforce-kosten-pro-aktion/).
+- **Edition und Kosten.** Laut [Übersicht](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) sind die Server "intended only for customers with Flex Credits and you may be billed for server usage". Warum daraus eine Budgetposition wird, steht in [MCP-Zugriffe als Budgetrisiko](/blog/flex-credits-agentforce-kosten-pro-aktion/).
 
 Keine der beiden Grenzen macht einen Community-Server zur Lösung. Ein nächtlicher Job gehört in eine Integration mit eigenem Benutzer und Client Credentials oder JWT Flow. Ist Agentforce der Client, beschreibt [Trailhead](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce), wie Sie Server von Drittanbietern in der Agentforce Registry registrieren, Werkzeuge auswählen und Aufrufe über das Agentforce Gateway begrenzen. Das regelt jedoch nur die Agentenseite. Für den dahinterliegenden Server gelten trotzdem die sechs Prüfpunkte.
 
@@ -106,15 +106,15 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Händlerportal u
 
 **Anfrage 2.** Der Serviceinnendienst möchte ein kommerzielles Gateway, das ChatGPT mit Salesforce und SAP verbindet. Entscheidung: zurückgestellt. Das Gateway würde Refresh Tokens für die Org halten, und seine Doku zeigt nicht, ob jeder der 25 Benutzer ein eigenes Token erhält oder alle Aufrufe unter einem technischen Benutzer erfolgen. Der Anbieter muss OAuth-Client, Token-Subjekt, Run-as-Identität und Audit Trail je Zielsystem beschreiben. Der Salesforce-Teil wird über Hosted MCP umgesetzt, der SAP-Teil wartet auf die Vertragsprüfung des Gateway-Anbieters.
 
-**Anfrage 3.** Der Partner schlägt einen Community-Server für einen nächtlichen Agenten vor, der Händlerbestände mit SAP abgleicht. Entscheidung: kein MCP. Das ist eine Integration mit Run-as-Benutzer und Client Credentials, gebaut wie der Auftragsstatus in [Agentforce und SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/).
+**Anfrage 3.** Der Partner schlägt einen Community-Server für einen nächtlichen Agenten vor, der Händlerbestände mit SAP abgleicht. Entscheidung: kein MCP. Das ist eine Integration mit Run-as-Benutzer und Client Credentials, gebaut wie der Auftragsstatus in [Agentforce und SAP-Auftragsstatus](/blog/agentforce-sap-auftragsstatus/).
 
 Jede Anfrage hat einen geregelten nächsten Schritt, und kein Community-Server erhält Zugriff auf die Org.
 
 ## Die MCP-Server bei allen Partnern erfassen
 
-1. **Bestandsaufnahme.** Fragen Sie jeden Partner, welche MCP-Server in seinen Clients für Ihre Orgs eingerichtet sind, mit Versionen. Das Ende des DX MCP Servers ist ein guter Anlass, siehe [das Ende des Salesforce DX MCP Servers](../salesforce-dx-mcp-server-ende/).
+1. **Bestandsaufnahme.** Fragen Sie jeden Partner, welche MCP-Server in seinen Clients für Ihre Orgs eingerichtet sind, mit Versionen. Das Ende des DX MCP Servers ist ein guter Anlass, siehe [das Ende des Salesforce DX MCP Servers](/blog/salesforce-dx-mcp-server-ende/).
 2. **Die Regel aufschreiben.** Standard sind Salesforce Hosted MCP oder andere von Salesforce betriebene Server; Community-Server nur nach den sechs Prüfpunkten, in Sandboxes und mit gepinnter Version.
 3. **Durchsetzen, wo es geht.** Wenn Sie Claude Code zentral lizenzieren, sperren [Managed Settings](https://code.claude.com/docs/en/managed-mcp) mit `allowedMcpServers` und `allowManagedMcpServersOnly` jeden Server, der nicht auf Ihrer Liste steht.
 4. **Bei jedem Update neu prüfen.** Eine neue Version ist eine neue Freigabe.
 
-Für die Bestandsaufnahme reicht eine Tabelle mit Partner, Server, Version, Benutzer und Ziel-Org. Partner bei solchen Werkzeugen zu steuern gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/), die Übersicht der Schnittstellen steht in [Kapitel 3 der Masterclass](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
+Für die Bestandsaufnahme reicht eine Tabelle mit Partner, Server, Version, Benutzer und Ziel-Org. Partner bei solchen Werkzeugen zu steuern gehört zu meiner Arbeit in der [Partnersteuerung](/leistungen/partnersteuerung/), die Übersicht der Schnittstellen steht in [Kapitel 3 der Masterclass](/masterclass/ki-salesforce/mcp-und-schnittstellen/).

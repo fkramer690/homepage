@@ -51,7 +51,7 @@ Für Produkte bietet Salesforce eine [Produktimport-API](https://developer.sales
 
 Käufergruppen (Buyer Groups) und Entitlement Policies, also die Regeln, wer welches Produkt sieht, stehen selten so in SAP. Sie müssen abgeleitet werden, zum Beispiel aus Verkaufsorganisation, Kundengruppe oder Marke. Schreiben Sie diese Ableitung als Regel auf. Sonst pflegt jemand die Käufergruppen von Hand in Salesforce, und der Shop weicht innerhalb weniger Monate von SAP ab.
 
-Wem welches Objekt gehört, beantwortet meine [Object Ownership Matrix](../object-ownership-matrix-salesforce/). Für einen Shop ergänze ich eine Spalte: kopiert oder live.
+Wem welches Objekt gehört, beantwortet meine [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/). Für einen Shop ergänze ich eine Spalte: kopiert oder live.
 
 ## Preis, Bestand, Steuer und Fracht live über Extension Points
 
@@ -65,7 +65,7 @@ Salesforce B2B Commerce hat benannte Extension Points, an denen eigener Apex-Cod
 
 Jede Extension kann SAP live aufrufen. Jeder Live-Aufruf bedeutet aber Wartezeit für den Händler, Last auf SAP und eine Frage, die niemand gern beantwortet: Was macht der Shop, wenn SAP nicht antwortet?
 
-Meine Regel: Live abfragen, wo ein falscher Wert Geld oder Vertrauen kostet, alles andere kopieren. Vertragspreise aus der SAP-Konditionslogik gehören oft in die erste Gruppe, das behandle ich in [Kundenpreise in B2B Commerce](../kundenpreise-b2b-commerce-preisbuecher-erp/). Bestand ist ein eigener Fall mit eigenem Artikel zu [Bestand live oder kopiert](../bestand-b2b-shop-erp-live/). Die Kreditprüfung gehört in `validate`, bevor der Auftrag existiert, wie in [B2B-Checkout mit Bestellnummer](../b2b-checkout-bestellnummer-rechnung/) beschrieben.
+Meine Regel: Live abfragen, wo ein falscher Wert Geld oder Vertrauen kostet, alles andere kopieren. Vertragspreise aus der SAP-Konditionslogik gehören oft in die erste Gruppe, das behandle ich in [Kundenpreise in B2B Commerce](/blog/kundenpreise-b2b-commerce-preisbuecher-erp/). Bestand ist ein eigener Fall mit eigenem Artikel zu [Bestand live oder kopiert](/blog/bestand-b2b-shop-erp-live/). Die Kreditprüfung gehört in `validate`, bevor der Auftrag existiert, wie in [B2B-Checkout mit Bestellnummer](/blog/b2b-checkout-bestellnummer-rechnung/) beschrieben.
 
 ## Extensions oder die älteren Integrationen?
 
@@ -73,7 +73,7 @@ Die [Seite zur Integrationsarchitektur](https://developer.salesforce.com/docs/co
 
 Eine Ausnahme gibt es. Laut [Extensions-Leitfaden](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html) lassen sich Zahlungen noch nicht per Extension anpassen, für Zahlungen bleibt das ältere Integrationsframework der Weg. Mit SAP hat das selten zu tun, weil Händler meist auf Rechnung mit Bestellnummer kaufen.
 
-Für neue Shops würde ich jeden synchronen SAP-Aufruf im Warenkorb und Checkout, etwa für Preis, Bestand, Steuer und die Auftragsprüfung, als Extension bauen. Batch-Importe, der Auftragsexport und Rückmeldungen aus SAP nutzen Import-APIs, Middleware oder andere Integrationsmuster. Registrierung und Zuordnung zum Store erfolgen über die Salesforce CLI und können damit im Repository und in der Pipeline liegen. Mehr dazu in [Commerce Extensions: Eigenentwicklung, die Updates übersteht](../commerce-extensions-eigenentwicklung/).
+Für neue Shops würde ich jeden synchronen SAP-Aufruf im Warenkorb und Checkout, etwa für Preis, Bestand, Steuer und die Auftragsprüfung, als Extension bauen. Batch-Importe, der Auftragsexport und Rückmeldungen aus SAP nutzen Import-APIs, Middleware oder andere Integrationsmuster. Registrierung und Zuordnung zum Store erfolgen über die Salesforce CLI und können damit im Repository und in der Pipeline liegen. Mehr dazu in [Commerce Extensions: Eigenentwicklung, die Updates übersteht](/blog/commerce-extensions-eigenentwicklung/).
 
 ## Wie kommt der Auftrag zu SAP, und was kommt zurück?
 
@@ -92,7 +92,7 @@ Kundenauftrag ..Nummer, Termine..> Order Summary
 Lieferung und Rechnung ..Status zurück..> Order Summary
 ```
 
-Nutzer mit einer der Berechtigungen B2B Commerce Integrator User oder Edit Unmanaged Order Summaries dürfen unterstützte Felder dieser Summaries und verknüpfter Datensätze aktualisieren. Auftragsnummer und Bestätigung lassen sich auf der Order Summary abbilden; mehrere Lieferungen mit Sendungsverfolgung oder Teilrechnungen brauchen eigene Objekte oder einen Link zu den SAP-Belegen. Wem der Auftrag gehören sollte und wann Salesforce Order Management stattdessen sinnvoll ist, steht in [Shop-Bestellungen ins ERP](../shop-bestellungen-erp-auftrag/).
+Nutzer mit einer der Berechtigungen B2B Commerce Integrator User oder Edit Unmanaged Order Summaries dürfen unterstützte Felder dieser Summaries und verknüpfter Datensätze aktualisieren. Auftragsnummer und Bestätigung lassen sich auf der Order Summary abbilden; mehrere Lieferungen mit Sendungsverfolgung oder Teilrechnungen brauchen eigene Objekte oder einen Link zu den SAP-Belegen. Wem der Auftrag gehören sollte und wann Salesforce Order Management stattdessen sinnvoll ist, steht in [Shop-Bestellungen ins ERP](/blog/shop-bestellungen-erp-auftrag/).
 
 Planen Sie den Rückweg so sorgfältig wie den Hinweg. Ein Händler, der drei Tage lang "Bestellung eingegangen" sieht, ruft im Innendienst an, und der Shop hat keine Arbeit erspart.
 
@@ -100,10 +100,10 @@ Planen Sie den Rückweg so sorgfältig wie den Hinweg. Ein Händler, der drei Ta
 
 MuleSoft bietet einen [Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/) für SAP ECC, S/4HANA und Salesforce. Er liefert wiederverwendbare SAP- und Salesforce-APIs, etwa für Kunden, Produkte, Aufträge, Preise und Verfügbarkeit, und Vorlagen, darunter einen Quote-to-Cash-Anwendungsfall zwischen Sales Cloud und S/4HANA und einen für B2B-EDI. Eine fertige Anbindung für einen B2B-Commerce-Store enthält er nicht; die Shop-Anbindung bleibt Ihre Aufgabe.
 
-Direkte Apex-Callouts mit Named Credentials können für einen Shop mit wenigen schnellen Live-Abfragen reichen, wenn Timeouts, Wiederholungen und Monitoring bewusst geplant sind; Apex bietet keine garantierte Zustellung und hat standardmäßig ein Timeout von zehn Sekunden pro Callout. Der Auftragsexport profitiert auch bei einem einzelnen Shop oft von einem asynchronen Muster mit Warteschlange. Eine Middleware lohnt sich, wenn dieselben SAP-Daten auch Field Service, Manufacturing Cloud oder Agentforce-Agenten versorgen. Dann bedient eine Auftragsstatus-API den Shop, den [Auftragsstatus-Agenten](../agentforce-sap-auftragsstatus/) und den Service. Warum Agenten solche APIs mitnutzen sollten, statt eigene APIs zu erhalten, erklärt die KI-Masterclass im Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
+Direkte Apex-Callouts mit Named Credentials können für einen Shop mit wenigen schnellen Live-Abfragen reichen, wenn Timeouts, Wiederholungen und Monitoring bewusst geplant sind; Apex bietet keine garantierte Zustellung und hat standardmäßig ein Timeout von zehn Sekunden pro Callout. Der Auftragsexport profitiert auch bei einem einzelnen Shop oft von einem asynchronen Muster mit Warteschlange. Eine Middleware lohnt sich, wenn dieselben SAP-Daten auch Field Service, Manufacturing Cloud oder Agentforce-Agenten versorgen. Dann bedient eine Auftragsstatus-API den Shop, den [Auftragsstatus-Agenten](/blog/agentforce-sap-auftragsstatus/) und den Service. Warum Agenten solche APIs mitnutzen sollten, statt eigene APIs zu erhalten, erklärt die KI-Masterclass im Kapitel [MCP und Schnittstellen](/masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
 ```hinweis achtung
-Eine Frist gilt für viele Batch-Schnittstellen. Salesforce schaltet den [OAuth Username-Password Flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) für Connected Apps am 20. Februar 2027 ab. Ein nächtlicher Produktimport mit diesem Flow erhält dann kein Access Token mehr. Für Server-zu-Server-Schnittstellen empfiehlt Salesforce den Client Credentials Flow. Anmeldungen über SOAP `login()` folgen einem eigenen Zeitplan und brauchen eine eigene Prüfung. Wie Sie diese Schnittstellen finden und umstellen, steht in [Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
+Eine Frist gilt für viele Batch-Schnittstellen. Salesforce schaltet den [OAuth Username-Password Flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) für Connected Apps am 20. Februar 2027 ab. Ein nächtlicher Produktimport mit diesem Flow erhält dann kein Access Token mehr. Für Server-zu-Server-Schnittstellen empfiehlt Salesforce den Client Credentials Flow. Anmeldungen über SOAP `login()` folgen einem eigenen Zeitplan und brauchen eine eigene Prüfung. Wie Sie diese Schnittstellen finden und umstellen, steht in [Passwort-Integrationen enden 2027](/blog/salesforce-passwort-integrationen-2027/).
 ```
 
 ## Rechenbeispiel: S/4HANA und 300 Händler in Europa
@@ -122,4 +122,4 @@ Es sind sieben Datenflüsse, drei davon mit Live-Abfragen, umgesetzt in mehr als
 
 ## Erster Schritt: Object Ownership Matrix und Schnittstellenliste
 
-Schreiben Sie die Object Ownership Matrix und die Schnittstellenliste, bevor jemand die Shopseiten entwirft. Notieren Sie für jede Datenart das führende System, ob die Daten kopiert oder live abgefragt werden, das maximale Alter und was passiert, wenn SAP nicht erreichbar ist. Das [Kapitel zur ERP-Anbindung der Masterclass B2B Commerce](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) bringt diese Entscheidungen in eine Reihenfolge, und eine unabhängige Prüfung von Schnittstellen gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Schreiben Sie die Object Ownership Matrix und die Schnittstellenliste, bevor jemand die Shopseiten entwirft. Notieren Sie für jede Datenart das führende System, ob die Daten kopiert oder live abgefragt werden, das maximale Alter und was passiert, wenn SAP nicht erreichbar ist. Das [Kapitel zur ERP-Anbindung der Masterclass B2B Commerce](/masterclass/b2b-commerce/erp-integration-bestand-auftraege/) bringt diese Entscheidungen in eine Reihenfolge, und eine unabhängige Prüfung von Schnittstellen gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/).

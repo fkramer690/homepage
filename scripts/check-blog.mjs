@@ -22,6 +22,15 @@ const slop = [
   /es ist (wichtig|erwähnenswert) zu (beachten|erwähnen)/i, /nicht zuletzt/i, /\bsynergie/i,
 ];
 
+// Colloquial German that reads like spoken language, not like a Fabian text (Fabian 2026-11-10/11:
+// "es kamen viele Change Requests", "Partner dazuholen"). Write the precise verb instead: "einbeziehen",
+// "beauftragen", "funktioniert", "wird gespeichert", "geht an". Rules under "Wording" in docs/blog-guidelines.md.
+const colloquial = [
+  /dazuhol/i, /\bhol(e|en|t|te|ten)?\b[^.!?\n]{0,60}\bdazu\b/i, /\bklapp(t|en|te|ten)\b/i,
+  /\bland(et|en|ete|eten)\b/i, /\bgelandet\b/i, /\bdrin\b/i, /\bkrieg(e|en|t|te|ten)\b/i, /\bchecken\b/i,
+  /\bjede Menge\b/i, /\bziemlich\b/i, /\bmal eben\b/i, /\bunterm Strich\b/i,
+];
+
 const errors = [];
 
 // Structural AI-slop patterns (AI-slop review 2026-10-31, "No AI slop" in docs/blog-guidelines.md). Errors since
@@ -43,6 +52,9 @@ const backReference = /\bwie (oben|bereits|schon) (beschrieben|erwähnt|gesagt|g
 const genericCloser = /^(wo (fangen sie an|starten sie|sollten sie (anfangen|starten))|womit (fangen sie an|sollten sie anfangen)|where (do|should) you (start|begin)|what should you start with)\??$/i;
 const countAnnounce = /\b(drei|vier|fünf|three|four|five) (dinge|punkte|fragen|regeln|gründe|entscheidungen|kriterien|hebel|things|points|questions|rules|reasons|decisions|criteria|levers)\b/gi;
 const intensifiers = { de: /\b(echt(e|er|en|es|em)?|wirklich|tatsächlich|ehrlich)\b/gi, en: /\b(really|actually|honest(ly)?|genuinely|truly)\b/gi };
+// Stock words the SEO test run of 2026-11-11 found in the same role on many pages ("Entscheidend ist …",
+// "einfach" as filler). Inflected adjectives ("einfache Produkte") are fine; at most 2 per text.
+const stockWords = { de: /\b(einfach|entscheidend)\b/gi, en: /\b(simply|crucial(ly)?)\b/gi };
 const contentWords = (str) => new Set((str.toLowerCase().match(/[a-zäöüß0-9]{4,}/g) ?? []));
 
 function checkStructure(name, lang, text, fm) {
@@ -58,6 +70,8 @@ function checkStructure(name, lang, text, fm) {
   if (counts.length > 1) issue(`counting formula used ${counts.length}× (${counts.slice(0, 3).join(', ')}), at most once`);
   const intens = text.match(intensifiers[lang] ?? intensifiers.en) ?? [];
   if (intens.length > 3) issue(`${intens.length} intensifiers (${[...new Set(intens.map((w) => w.toLowerCase()))].join(', ')}), at most 3`);
+  const stock = text.match(stockWords[lang] ?? stockWords.en) ?? [];
+  if (stock.length > 2) issue(`${stock.length} stock words (${[...new Set(stock.map((w) => w.toLowerCase()))].join(', ')}), at most 2: say what matters instead of "entscheidend ist" or "einfach"`);
   const insteadOf = (text.match(lang === 'de' ? /\bstatt\b/gi : /\binstead of\b/gi) ?? []).length;
   if (insteadOf > 5) issue(`"${lang === 'de' ? 'statt' : 'instead of'}" used ${insteadOf}×, at most 5`);
   // The last paragraph is not a one-sentence moral.
@@ -176,10 +190,13 @@ function check(collection, rules) {
       if (firstPara.startsWith('#')) fail('start with an intro paragraph that gives the answer');
       else if (firstPara.split(/\s+/).length > 110) fail('intro paragraph too long, give the answer in at most 110 words');
 
-      const internal = (text.match(/\]\(\.\.?\//g) ?? []).length;
-      if (internal < 2) fail(`${internal} internal links, at least 2 needed (relative, e.g. ../../#services)`);
-      if (/\]\(\/(?!\/)/.test(text)) fail('internal links must be relative (../../#services), not start with /');
-      if (/\]\(https?:\/\/fkramer690\.github\.io/.test(text)) fail('do not hardcode the site domain, use relative links');
+      // Internal links are root paths (/leistungen/architektur/, /en/blog/<slug>/): crawlers resolve
+      // them unambiguously and check-broken-links.mjs checks every one. Images stay relative (../../../assets/).
+      const internal = (text.match(/\]\(\/(?!\/)/g) ?? []).length;
+      if (internal < 2) fail(`${internal} internal links, at least 2 needed (root paths, e.g. /leistungen/architektur/)`);
+      const relative = text.match(/\]\(\.\.?\/(?![^)]*assets\/)[^)\s]*/);
+      if (relative) fail(`internal links must start with /, not be relative: ${relative[0].slice(2)}`);
+      if (/\]\(https?:\/\/(fkramer690\.github\.io|(www\.)?fk-sd\.de)/.test(text)) fail('do not hardcode the site domain, start internal links with /');
 
       if (/!\[\s*\]\(/.test(text)) fail('every image needs alt text: ![What the image shows](...)');
       if (/!\[[^\]]*\]\(https?:/.test(text)) fail('store images in src/assets/, do not hotlink external images');
@@ -189,6 +206,7 @@ function check(collection, rules) {
 
       for (const re of banned) if (re.test(raw)) fail(`contains a banned term (${re})`);
       for (const re of slop) if (re.test(raw)) fail(`sounds generated, rewrite in plain words (${re})`);
+      if (lang === 'de') for (const re of colloquial) if (re.test(raw)) fail(`colloquial wording, use the precise verb (${re}): "${raw.match(re)[0]}"`);
       if (/[\u2013\u2014]/.test(text)) fail('no en or em dashes (– —), use a comma, a full stop or "to"');
       const contrasts = (text.match(/\b(is|are|isn't|aren't) not (just |only )?(about|a|an)\b[^.]*\.\s+(it|they) (is|are)\b|geht es nicht (nur )?(um|darum)|\b(ist|sind) (kein|keine|nicht)\b[^.]*\.\s+(es|sie) (ist|sind)\b/gi) ?? []).length;
       if (contrasts > 0) fail('avoid the "it is not X, it is Y" pattern, state what it is');
@@ -219,8 +237,21 @@ for (const [, str] of text.matchAll(/'((?:[^'\\\n]|\\.)*)'/g)) {
   const fail = (msg) => errors.push(`${file}: "${str.slice(0, 50)}": ${msg}`);
   for (const re of banned) if (re.test(str)) fail(`contains a banned term (${re})`);
   for (const re of slop) if (re.test(str)) fail(`sounds generated, rewrite in plain words (${re})`);
+  for (const re of colloquial) if (re.test(str)) fail(`colloquial wording, use the precise verb (${re}): "${str.match(re)[0]}"`);
   if (/[\u2013\u2014]/.test(str)) fail('no en or em dashes (– —), use a comma, a full stop or "to"');
 }
+}
+
+// Page texts in src/data (service extras, landing pages, partner and speaking pages) follow the same wording
+// rules: no generated-sounding phrases and no colloquial German (Fabian 2026-11-11).
+for (const name of readdirSync(new URL('../src/data/', import.meta.url)).filter((f) => f.endsWith('.ts'))) {
+  const file = `src/data/${name}`;
+  const text = readFileSync(new URL(`../${file}`, import.meta.url), 'utf8').replace(/^\s*\/\/.*$/gm, '');
+  for (const [, , str] of text.matchAll(/(['"`])((?:(?!\1)[^\\\n]|\\.)*)\1/g)) {
+    const fail = (msg) => errors.push(`${file}: "${str.slice(0, 50)}": ${msg}`);
+    for (const re of slop) if (re.test(str)) fail(`sounds generated, rewrite in plain words (${re})`);
+    for (const re of colloquial) if (re.test(str)) fail(`colloquial wording, use the precise verb (${re}): "${str.match(re)[0]}"`);
+  }
 }
 
 // The German FAQ heading is always "Häufig gestellte Fragen" (Fabian, 2026-10-29), on every page.

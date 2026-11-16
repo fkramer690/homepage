@@ -42,7 +42,7 @@ The app has its own version numbers in addition to the platform releases: the ma
 
 The [262.3 post](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pPWBC0A4) shows why patches matter. On iOS the app could log users out unexpectedly after it had been in the background, and a startup watchdog counted time in the background and caused false timeouts. On Android users could get stuck in the in-app browser during sign-in. These are exactly the errors that stop a technician at the customer's door.
 
-Both posts add that Salesforce deploys major and patch releases over several days, and that updates may not reach all users until seven days after general availability. For a service organization this means that for up to a week some technicians run the old version and some the new one. Salesforce does not promise that your pilot group gets the update first, so the rollout is no extra test window. With Winter '27 Salesforce also started moving mobile flows to a native runtime, so mobile flows also belong in the test routine, see [Field Service mobile flow limitations](../field-service-mobile-flow-limitations/).
+Both posts add that Salesforce deploys major and patch releases over several days, and that updates may not reach all users until seven days after general availability. For a service organization this means that for up to a week some technicians run the old version and some the new one. Salesforce does not promise that your pilot group gets the update first, so the rollout is no extra test window. With Winter '27 Salesforce also started moving mobile flows to a native runtime, so mobile flows also belong in the test routine, see [Field Service mobile flow limitations](/en/blog/field-service-mobile-flow-limitations/).
 
 ```hinweis tipp
 Note the exact app version with every mobile ticket, together with platform, operating system, connectivity and reproduction steps. The version is shown in the app under Profile, Settings, About.
@@ -71,9 +71,9 @@ A good routine is short enough to run in half a day and covers the places where 
 7. **Partner user.** Repeat steps 1 to 3 with a real partner user: Experience Cloud license, Field Service Mobile license, permission sets and sharing as in production.
 8. **Back office and ERP.** After sync, check that the consumption data and the report have arrived, including through the interface to the ERP.
 
-Steps 2 and 7 target the known offline gaps described in [Field Service mobile offline: which data goes on the device?](../field-service-mobile-app-offline-data/). Step 4 matters because Data Capture gets frequent feature updates and fixes, see [Field Service Data Capture: inspection forms without paper](../field-service-data-capture-inspection-forms/). Step 5 with [Document Builder](../salesforce-service-documents-document-builder/) tests the custom components in your templates; their limits are covered in [Document Builder: five limits and workarounds](../salesforce-document-builder-limits-workarounds/).
+Steps 2 and 7 target the known offline gaps described in [Field Service mobile offline: which data goes on the device?](/en/blog/field-service-mobile-app-offline-data/). Step 4 matters because Data Capture gets frequent feature updates and fixes, see [Field Service Data Capture: inspection forms without paper](/en/blog/field-service-data-capture-inspection-forms/). Step 5 with [Document Builder](/en/blog/salesforce-service-documents-document-builder/) tests the custom components in your templates; their limits are covered in [Document Builder: five limits and workarounds](/en/blog/salesforce-document-builder-limits-workarounds/).
 
-Write the steps as scripts with expected results, the same way you would write test cases for a platform release. The [quality and tests chapter of the DevOps masterclass](../../masterclass/devops-release-management/quality-tests-reviews/) explains how such tests fit into quality gates.
+Write the steps as scripts with expected results, the same way you would write test cases for a platform release. The [quality and tests chapter of the DevOps masterclass](/en/masterclass/devops-release-management/quality-tests-reviews/) explains how such tests fit into quality gates.
 
 ## Who owns app versions and devices?
 
@@ -81,7 +81,7 @@ Responsibility for app versions sits between two teams. The Salesforce team know
 
 I would make one person responsible for each app version, usually the release manager of the Salesforce program. That person follows the release posts, starts the beta test, collects results and decides together with device management whether any update has to be delayed. Operating system updates on the devices belong in the same plan, because a major iOS or Android update can change sign-in, background processing and offline behavior. Before each test cycle, compare the device fleet with Salesforce's list of supported operating systems.
 
-The calendar for this is the same one that tracks the platform releases. How to build it with freeze windows and preview sandboxes is covered in the [release planning chapter of the DevOps masterclass](../../masterclass/devops-release-management/release-planning-salesforce-releases/). The pipeline changes from Winter '27 are covered in [Salesforce Winter '27: what changes for your CI/CD pipeline](../salesforce-winter-27-what-changes-for-your-pipeline/).
+The calendar for this is the same one that tracks the platform releases. How to build it with freeze windows and preview sandboxes is covered in the [release planning chapter of the DevOps masterclass](/en/masterclass/devops-release-management/release-planning-salesforce-releases/). The pipeline changes from Winter '27 are covered in [Salesforce Winter '27: what changes for your CI/CD pipeline](/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/).
 
 ## Worked example: eight pilot technicians
 
@@ -100,7 +100,7 @@ Release | release week · pilot technicians
 
 The effort is about 32 hours of technician time per major version, plus the release manager's time. One wave of failed logins across 100 technicians on a Monday morning costs more.
 
-The other technicians should know before the update what changes for them and whom to ask. That is the same task as with every release for the back office, described in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
+The other technicians should know before the update what changes for them and whom to ask. That is the same task as with every release for the back office, described in [Communicating Salesforce releases to the business](/en/blog/salesforce-release-communication-business/).
 
 ## Sign up for the beta program
 
@@ -110,4 +110,4 @@ The other technicians should know before the update what changes for them and wh
 4. **Put app versions in the release calendar** next to the platform releases.
 5. **Agree with device management** how app and operating system updates reach the devices.
 
-App testing is part of [chapter 3 of the Field Service masterclass](../../masterclass/field-service/field-service-mobile-app-documents/). Setting up a release process that covers it is part of my work in [DevOps and release management](../../services/devops-release-management/).
+App testing is part of [chapter 3 of the Field Service masterclass](/en/masterclass/field-service/field-service-mobile-app-documents/). Setting up a release process that covers it is part of my work in [DevOps and release management](/en/services/devops-release-management/).

@@ -66,7 +66,7 @@ The introduction unit on Trailhead names these prerequisites:
 | Add-on licenses | Agentforce and Einstein for Service |
 | Platform | Einstein generative AI, set up together with Data 360 |
 
-The current Help pages do not repeat this list, so I would have the SKUs confirmed in the quote, especially whether Service Cloud is really needed in addition to the store. Ongoing costs are clearer: Salesforce Help describes the agent as consumption-based. Each 24-hour conversation window counts under Agentforce ASA Messaging, model calls use Einstein Requests or Flex Credits, and Data 360 processing and storage count too. I found no separate list price, so the rates are set in your order form, and the volume depends on your dealer conversations. How such a calculation works for a dealer service agent is shown in [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/).
+The current Help pages do not repeat this list, so I would have the SKUs confirmed in the quote, especially whether Service Cloud is really needed in addition to the store. Ongoing costs are clearer: Salesforce Help describes the agent as consumption-based. Each 24-hour conversation window counts under Agentforce ASA Messaging, model calls use Einstein Requests or Flex Credits, and Data 360 processing and storage count too. I found no separate list price, so the rates are set in your order form, and the volume depends on your dealer conversations. How such a calculation works for a dealer service agent is shown in [Agentforce costs for manufacturers](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 ## Contract prices and credit come from the store and the ERP
 
@@ -85,7 +85,7 @@ ERP ..keeps current..> Order summaries
 Buyer Agent ..answer..> Dealer chat
 ```
 
-The same applies to credit limits, blocked accounts and delivery dates. The model understands the dealer's question and phrases the answer. The applicable price, whether the account may order on credit and the shipping date are determined by code, the store or the ERP. I explain the general rule for agents in the AI masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/), and how a confirmed delivery date is retrieved from SAP in [Agentforce and SAP: order status through MuleSoft](../agentforce-sap-order-status-mulesoft/).
+The same applies to credit limits, blocked accounts and delivery dates. The model understands the dealer's question and phrases the answer. The applicable price, whether the account may order on credit and the shipping date are determined by code, the store or the ERP. I explain the general rule for agents in the AI masterclass chapter [AI agents in manufacturing](/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/), and how a confirmed delivery date is retrieved from SAP in [Agentforce and SAP: order status through MuleSoft](/en/blog/agentforce-sap-order-status-mulesoft/).
 
 ```hinweis achtung
 If the store shows list prices because contract prices are still maintained only in SAP conditions, the agent will also quote list prices. Settle the price master before the agent goes live.
@@ -101,7 +101,7 @@ I would plan as if a filter might miss an injected instruction one day, and make
 - Actions that create orders or change data validate in code, not in the prompt.
 - No outbound action sends data to an address a dealer can influence.
 
-The attack patterns and defences are covered in [Prompt injection in dealer portals: protect Agentforce](../prompt-injection-dealer-portals-agentforce/).
+The attack patterns and defences are covered in [Prompt injection in dealer portals: protect Agentforce](/en/blog/prompt-injection-dealer-portals-agentforce/).
 
 ## Worked example: pilot with 15 of 150 dealers
 
@@ -109,7 +109,7 @@ Assume a machine manufacturer sells spare parts and consumables to 150 dealers i
 
 In the pilot, 15 dealers with many repeat orders are given the Buyer Agent in the store's web chat. Only two subagents are active: Commerce Order for status and reorder, and Commerce Product Search Assistant. Order status is taken from order summaries that the ERP keeps up to date. Escalations are routed to a named inside sales queue. After four weeks, compare calls per pilot dealer with the previous months, and review every conversation the agent escalated.
 
-Only when these answers are reliable would I add a messaging channel such as WhatsApp, and only once Carter for Buyers is generally available would I let the agent close orders with payment. Fast reorders in the store itself are the topic of [reorders in B2B Commerce: templates, CSV, reorder](../b2b-commerce-reorder-order-templates/), and the back office side of agents in [Merchandising Agent: what it does for a parts catalog](../merchandising-agent-parts-catalog/).
+Only when these answers are reliable would I add a messaging channel such as WhatsApp, and only once Carter for Buyers is generally available would I let the agent close orders with payment. Fast reorders in the store itself are the topic of [reorders in B2B Commerce: templates, CSV, reorder](/en/blog/b2b-commerce-reorder-order-templates/), and the back office side of agents in [Merchandising Agent: what it does for a parts catalog](/en/blog/merchandising-agent-parts-catalog/).
 
 ## Check the store without an agent
 
@@ -119,4 +119,4 @@ Only when these answers are reliable would I add a messaging channel such as Wha
 4. **Decide the channel.** Use web chat in the store first; add WhatsApp and SMS after questions about identity, data protection and support are answered.
 5. **Write down what code decides.** Price, credit decisions, delivery date and order creation stay in the store and the ERP.
 
-The chapter [Agents, migration, rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) places the Buyer Agent in the context of the store migration and the rollout to dealers. If the interfaces to your ERP are the unresolved issue, see [Salesforce integration](../../services/salesforce-integration/).
+The chapter [Agents, migration, rollout](/en/masterclass/b2b-commerce/agentforce-migration-rollout/) of the [B2B Commerce masterclass](/en/masterclass/b2b-commerce/) places the Buyer Agent in the context of the store migration and the rollout to dealers. If the interfaces to your ERP are the unresolved issue, see [Salesforce integration](/en/services/salesforce-integration/).

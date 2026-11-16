@@ -47,7 +47,7 @@ with: With a check for version changes
 quote: A green pipeline only checks what someone built into it as a check beforehand.
 ```
 
-That check is a short script, about an afternoon of work. On the other side is pipeline time: at 25 minutes per test deployment, 110 pull requests mean at least 46 hours a month, more with every new commit or rerun. You pay for that in CI minutes, and longer queues also slow feedback for developers. Why the version change matters is explained in [API 67.0 and user mode](../api-67-apex-user-mode-fewer-records/).
+That check is a short script, about an afternoon of work. On the other side is pipeline time: at 25 minutes per test deployment, 110 pull requests mean at least 46 hours a month, more with every new commit or rerun. You pay for that in CI minutes, and longer queues also slow feedback for developers. Why the version change matters is explained in [API 67.0 and user mode](/en/blog/api-67-apex-user-mode-fewer-records/).
 
 ## The partner's own checks are not enough
 
@@ -55,7 +55,7 @@ The [2025 DORA report](https://cloud.google.com/blog/products/ai-machine-learnin
 
 Salesforce's own skills for Claude Code already check a lot on the developer's machine. According to the [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills), they reject database queries inside loops, run Code Analyzer and the Apex tests and ensure 75 percent coverage before they finish. The same post still tells developers to "run Salesforce Code Analyzer manually as an extra safety check".
 
-For you as the client, a check on a partner's laptop is only the partner's assurance. Skills can be installed per project with the repository's configuration, but you still cannot audit whether the check was run, whether it was changed or whether its result controlled the merge. The check that matters runs in a pipeline you own, with the same thresholds for every partner. Meaningless tests, incorrect fields and business rules still need a person; that split is the topic of [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/).
+For you as the client, a check on a partner's laptop is only the partner's assurance. Skills can be installed per project with the repository's configuration, but you still cannot audit whether the check was run, whether it was changed or whether its result controlled the merge. The check that matters runs in a pipeline you own, with the same thresholds for every partner. Meaningless tests, incorrect fields and business rules still need a person; that split is the topic of [reviewing AI-generated Salesforce code](/en/blog/reviewing-ai-generated-salesforce-code/).
 
 ## Which quality gates should AI-generated code pass?
 
@@ -97,18 +97,18 @@ title: Commands and settings behind the five checks
 
 ## sfdx-hardis covers most of it as open source
 
-[sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/), open source under AGPL-3.0, runs two control jobs on pull requests into a major branch such as integration, according to its [documentation on pull request results](https://sfdx-hardis.cloudity.com/salesforce-devops-handle-merge-request-results/). One simulates the deployment in the target org, runs the tests, checks coverage and posts the result as a comment on the pull request. The other checks code quality and comments its findings as well. A comment is not a gate yet: the jobs only block the merge once they are required checks on the protected branch. In the documented configuration only the release manager may change the error threshold, and exceptions are meant "only for false positives, never to publish faster" ([MegaLinter errors](https://sfdx-hardis.cloudity.com/salesforce-devops-solve-megalinter-errors/)).
+[sfdx-hardis](/en/blog/sfdx-hardis-open-source-salesforce-devops/), open source under AGPL-3.0, runs two control jobs on pull requests into a major branch such as integration, according to its [documentation on pull request results](https://sfdx-hardis.cloudity.com/salesforce-devops-handle-merge-request-results/). One simulates the deployment in the target org, runs the tests, checks coverage and posts the result as a comment on the pull request. The other checks code quality and comments its findings as well. A comment is not a gate yet: the jobs only block the merge once they are required checks on the protected branch. In the documented configuration only the release manager may change the error threshold, and exceptions are meant "only for false positives, never to publish faster" ([MegaLinter errors](https://sfdx-hardis.cloudity.com/salesforce-devops-solve-megalinter-errors/)).
 
-ApexGuru and org-specific rules such as the version check are not part of the documented jobs; add them as extra steps. sfdx-hardis also lists an automatic coding-agent fix for failed deployments, which is still in beta ([overview](https://sfdx-hardis.cloudity.com/salesforce-devops-home/)). I would accept such fixes only if they pass the same checks and a person reviews them. How the rest of the pipeline fits together is covered in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
+ApexGuru and org-specific rules such as the version check are not part of the documented jobs; add them as extra steps. sfdx-hardis also lists an automatic coding-agent fix for failed deployments, which is still in beta ([overview](https://sfdx-hardis.cloudity.com/salesforce-devops-home/)). I would accept such fixes only if they pass the same checks and a person reviews them. How the rest of the pipeline fits together is covered in [why DevOps decides Salesforce enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/).
 
 ## Write the checks into every partner contract
 
-Setting up these checks for programs with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work. The order matters, because a partner can disable any threshold as long as they own the pipeline.
+Setting up these checks for programs with several partners is the core of my [DevOps and release management](/en/services/devops-release-management/) work. The order matters, because a partner can disable any threshold as long as they own the pipeline.
 
-1. **Own the pipeline.** You own the repository, pipeline and thresholds, as described in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
+1. **Own the pipeline.** You own the repository, pipeline and thresholds, as described in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/).
 2. **Let code analysis block from High** and publish the full report on every pull request.
 3. **Dry-run deploy every pull request** into an integration sandbox with all your own tests, and validate against production before each release.
-4. **Stop unrequested version changes** and require a test as a restricted user for every requested one. Put the same rule into the [AI rules file of your repository](../ai-rules-file-salesforce-repository/), so agents know the requirement before the pipeline stops them.
+4. **Stop unrequested version changes** and require a test as a restricted user for every requested one. Put the same rule into the [AI rules file of your repository](/en/blog/ai-rules-file-salesforce-repository/), so agents know the requirement before the pipeline stops them.
 5. **Protect the main branch** without an admin exception, with strict checks or a merge queue and code owners on your side for sharing and integrations.
 6. **Run ApexGuru** as a report, activated in an org where it has runtime data.
 7. **Count failed checks per partner and category** every month. A rise in a category shows which rule is missing from the rules file or the contract.

@@ -63,7 +63,7 @@ A database operation in user mode "always respects the user's sharing rules", sa
 For a manufacturer, who runs the code matters more than the code itself:
 
 - **Integration users.** An Apex REST service that SAP or proALPHA calls to update order status runs as the integration user, whose permission set was often designed for system mode.
-- **Dealers in the portal.** Controllers behind an Experience Cloud dealer portal mostly ran with sharing already, because @AuraEnabled methods did. The new part is field-level security: a field the dealer profile cannot read, selected but never shown, now breaks the component. More on portals in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
+- **Dealers in the portal.** Controllers behind an Experience Cloud dealer portal mostly ran with sharing already, because @AuraEnabled methods did. The new part is field-level security: a field the dealer profile cannot read, selected but never shown, now breaks the component. More on portals in [the Manufacturing Cloud customer portal](/en/blog/manufacturing-cloud-customer-portal/).
 - **Technicians and service reps.** Field Service technicians and service reps often see only their territory or their accounts. Logic that decides on goodwill, warranty or spare parts based on counts across all records gives different answers.
 
 ## Why is AI-generated Apex especially exposed?
@@ -74,11 +74,11 @@ For a manufacturer, who runs the code matters more than the code itself:
 
 **Generated tests often miss visibility.** Unless the repository rules require restricted-user tests, an agent asked for 75 percent coverage tends to write tests that create their own records and run as a user who sees everything. The architect highlights state that tests passing at 66.0 do not guarantee the behavior at 67.0 and recommend testing as restricted users. Without System.runAs() and a realistic profile, the missing records never show up.
 
-**Guardrails solve half the problem.** Salesforce's open-source development skills, which are also available as a plugin for Claude Code, "force the sharing keyword on all classes" ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills)). An explicit declaration beats the default, but an agent that adds with sharing to an SAP integration service has made a business decision nobody reviewed. The typical defects of AI code are covered in [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/); the point here is that the version number belongs on the review list.
+**Guardrails solve half the problem.** Salesforce's open-source development skills, which are also available as a plugin for Claude Code, "force the sharing keyword on all classes" ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills)). An explicit declaration beats the default, but an agent that adds with sharing to an SAP integration service has made a business decision nobody reviewed. The typical defects of AI code are covered in [reviewing AI-generated Salesforce code](/en/blog/reviewing-ai-generated-salesforce-code/); the point here is that the version number belongs on the review list.
 
 ## Worked example: consolidating API versions at a machine builder
 
-Assume a machine builder with Service Cloud, a dealer portal and SAP S/4, connected through Apex REST services. All numbers are assumptions. After the Winter '27 compiler warnings for very old API versions, described in [what Winter '27 changes for your pipeline](../salesforce-winter-27-what-changes-for-your-pipeline/), IT decides to move 220 Apex classes, saved between 38.0 and 62.0, to the current version 68.0. The partner's coding agent raises the versions, replaces WITH SECURITY_ENFORCED with WITH USER_MODE in 15 queries and fixes every compile error. All tests pass, coverage stays at 84 percent.
+Assume a machine builder with Service Cloud, a dealer portal and SAP S/4, connected through Apex REST services. All numbers are assumptions. After the Winter '27 compiler warnings for very old API versions, described in [what Winter '27 changes for your pipeline](/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/), IT decides to move 220 Apex classes, saved between 38.0 and 62.0, to the current version 68.0. The partner's coding agent raises the versions, replaces WITH SECURITY_ENFORCED with WITH USER_MODE in 15 queries and fixes every compile error. All tests pass, coverage stays at 84 percent.
 
 UAT finds three problems:
 
@@ -93,7 +93,7 @@ Two of the three problems surface on their own. The third would have gone live a
 I would run it as a small project with its own release plan:
 
 1. **Take inventory.** List classes and triggers by API version, and flag those without a sharing declaration, those using WITH SECURITY_ENFORCED and those called by integration users, the portal or trigger handlers.
-2. **Forbid bumps on the side.** A version change gets its own pull request. A pipeline check that compares API versions in changed metadata files catches accidental version changes, as described in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/), and the rule belongs in the [AI rules file of your repository](../ai-rules-file-salesforce-repository/) so agents know it in advance.
+2. **Forbid bumps on the side.** A version change gets its own pull request. A pipeline check that compares API versions in changed metadata files catches accidental version changes, as described in [quality gates for AI code](/en/blog/quality-gates-for-ai-code-salesforce-pipeline/), and the rule belongs in the [AI rules file of your repository](/en/blog/ai-rules-file-salesforce-repository/) so agents know it in advance.
 3. **Declare intent in code.** Every touched class gets an explicit sharing keyword, and every SOQL, SOSL, DML and Database operation gets an explicit access mode. System access needs a written reason in the class. See the box below.
 
 4. **Test as real users.** For each domain, write at least one test with System.runAs() as a technician, a dealer and the integration user, asserting record counts rather than only that values are not null.
@@ -107,4 +107,4 @@ title: What a declared system access looks like in code
 ```
 6. **Bump in batches by domain.** Integrations, dealer portal, service logic: each batch goes through UAT with someone from the business who knows what the numbers should be.
 
-The first stage, the interfaces, is the quickest way to see whether integration users are missing field access. Planning such a move across several partners is part of my [DevOps and release management](../../services/devops-release-management/) work.
+The first stage, the interfaces, is the quickest way to see whether integration users are missing field access. Planning such a move across several partners is part of my [DevOps and release management](/en/services/devops-release-management/) work.

@@ -56,13 +56,13 @@ I see three cuts that work. Each one moves the line between Salesforce and SAP o
 
 **Cut 1** fits when the order is a one-off machine sale and everything after the signature is logistics. Salesforce hands over an accepted quote; SAP creates the order.
 
-**Cut 2** fits when the same customer keeps buying and changing things: options added later, service packages, subscriptions for remote monitoring. Revenue Cloud then holds the order and the assets, so an amendment starts from what the customer already has. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders), an activated order can be submitted to Dynamic Revenue Orchestrator, usually by a record-triggered flow, and the orchestrator can make a callout to a third-party system. That callout, ideally to an integration API rather than straight to SAP, is where SAP gets its order. Dynamic Revenue Orchestrator comes with Revenue Cloud Advanced, not Growth. Details are in [handing orders to SAP with Dynamic Revenue Orchestrator](../revenue-cloud-order-orchestration-sap/).
+**Cut 2** fits when the same customer keeps buying and changing things: options added later, service packages, subscriptions for remote monitoring. Revenue Cloud then holds the order and the assets, so an amendment starts from what the customer already has. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders), an activated order can be submitted to Dynamic Revenue Orchestrator, usually by a record-triggered flow, and the orchestrator can make a callout to a third-party system. That callout, ideally to an integration API rather than straight to SAP, is where SAP gets its order. Dynamic Revenue Orchestrator comes with Revenue Cloud Advanced, not Growth. Details are in [handing orders to SAP with Dynamic Revenue Orchestrator](/en/blog/revenue-cloud-order-orchestration-sap/).
 
-**Cut 3** adds [Revenue Cloud Billing](https://www.salesforce.com/sales/revenue-cloud-billing/). Salesforce writes that it can "function as a sub-ledger", powering journal entries, closing periods and currency conversions, and that billing data and journal entries can be synchronised to the ERP. That makes sense for recurring revenue sold in Salesforce. For an invoice for a machine that involves delivery, customs and down payments, I would leave the invoice in SAP. Cut 3 also needs the Revenue Cloud Billing license, because Advanced only includes basic invoicing, and you still have to assign receivables, payments and dunning to one system. The trade-offs are covered in [Revenue Cloud Billing or SAP invoicing](../revenue-cloud-billing-or-sap-invoicing/), and the licenses in [Revenue Cloud editions and pricing](../revenue-cloud-editions-pricing/).
+**Cut 3** adds [Revenue Cloud Billing](https://www.salesforce.com/sales/revenue-cloud-billing/). Salesforce writes that it can "function as a sub-ledger", powering journal entries, closing periods and currency conversions, and that billing data and journal entries can be synchronised to the ERP. That makes sense for recurring revenue sold in Salesforce. For an invoice for a machine that involves delivery, customs and down payments, I would leave the invoice in SAP. Cut 3 also needs the Revenue Cloud Billing license, because Advanced only includes basic invoicing, and you still have to assign receivables, payments and dunning to one system. The trade-offs are covered in [Revenue Cloud Billing or SAP invoicing](/en/blog/revenue-cloud-billing-or-sap-invoicing/), and the licenses in [Revenue Cloud editions and pricing](/en/blog/revenue-cloud-editions-pricing/).
 
 ## Who owns which object?
 
-Cutting by process step is not enough. Partners build around objects, so the split has to be documented by object as well. This is the same idea as the [object ownership matrix](../salesforce-object-ownership-matrix/), applied to the systems instead of the teams.
+Cutting by process step is not enough. Partners build around objects, so the split has to be documented by object as well. This is the same idea as the [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/), applied to the systems instead of the teams.
 
 | Object | Owner | What crosses the line |
 |---|---|---|
@@ -74,7 +74,7 @@ Cutting by process step is not enough. Partners build around objects, so the spl
 | Asset | Revenue Cloud for what was sold and its term | Serial number from SAP or Field Service |
 | Invoice | SAP in cuts 1 and 2; Revenue Cloud Billing in cut 3 | Invoice status back, or journal entries to SAP |
 
-The price row causes the most trouble. Two systems that both calculate the same customer price will sooner or later disagree, and the customer will see it when the order confirmation from SAP differs from the quote PDF. Which route fits your conditions is covered in [customer prices: SAP conditions or Salesforce Pricing](../customer-prices-sap-conditions-or-salesforce-pricing/).
+The price row causes the most trouble. Two systems that both calculate the same customer price will sooner or later disagree, and the customer will see it when the order confirmation from SAP differs from the quote PDF. Which route fits your conditions is covered in [customer prices: SAP conditions or Salesforce Pricing](/en/blog/customer-prices-sap-conditions-or-salesforce-pricing/).
 
 ## What does Revenue Cloud Billing mean for finance?
 
@@ -85,7 +85,7 @@ SAP has a counterpart for each of them, but rarely a one-to-one match: a legal e
 1. **Which legal entities issue invoices from Salesforce**, and which stay in SAP.
 2. **How Salesforce accounting periods follow the SAP periods**, and who closes them.
 3. **How general ledger accounts map**, and who changes the mapping when the chart of accounts changes.
-4. **Which invoice format the customer receives.** From 2027, according to the [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094), only companies with prior-year turnover up to €800,000 may still send domestic business customers a PDF with their consent, and from 2028 the e-invoice requirements apply to practically all domestic B2B invoices. Also settle which system creates the structured format and who validates it. What that means for Revenue Cloud is in [e-invoicing in Germany from 2027](../e-invoicing-germany-2027-revenue-cloud/).
+4. **Which invoice format the customer receives.** From 2027, according to the [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094), only companies with prior-year turnover up to €800,000 may still send domestic business customers a PDF with their consent, and from 2028 the e-invoice requirements apply to practically all domestic B2B invoices. Also settle which system creates the structured format and who validates it. What that means for Revenue Cloud is in [e-invoicing in Germany from 2027](/en/blog/e-invoicing-germany-2027-revenue-cloud/).
 
 If finance has not been in the room for these four points, cut 3 is not ready.
 
@@ -107,7 +107,7 @@ Order --> Subscription asset
 SAP order --> SAP invoice
 ```
 
-Any additional sales desk needs, for example live order status from SAP, follow the pattern in [Agentforce and SAP: order status through MuleSoft](../agentforce-sap-order-status-mulesoft/).
+Any additional sales desk needs, for example live order status from SAP, follow the pattern in [Agentforce and SAP: order status through MuleSoft](/en/blog/agentforce-sap-order-status-mulesoft/).
 
 ## One table with an owner per object
 
@@ -119,7 +119,7 @@ Keep it to one page that a new partner understands in ten minutes:
 - **Per error:** who fixes an order that SAP rejects. Rejected orders without an owner end up with the sales rep, who cannot fix them.
 - **Sign-off:** heads of sales and finance and the IT lead, recorded in the decision log.
 
-Designing these interfaces is a large part of my work on [Salesforce integration](../../services/salesforce-integration/). The wider decision of whether Revenue Cloud fits at all is covered in the masterclass chapter [Revenue Cloud overview and decision](../../masterclass/revenue-cloud/revenue-cloud-overview/).
+Designing these interfaces is a large part of my work on [Salesforce integration](/en/services/salesforce-integration/). The wider decision of whether Revenue Cloud fits at all is covered in the masterclass chapter [Revenue Cloud overview and decision](/en/masterclass/revenue-cloud/revenue-cloud-overview/).
 
 ## Settle the unclear rows with finance
 

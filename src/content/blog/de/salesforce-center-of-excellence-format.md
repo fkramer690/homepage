@@ -41,7 +41,7 @@ In Fertigungsunternehmen mit mehreren Partnern ist nach meiner Erfahrung der zwe
 
 ## Warum gehört das CoE auf die Kundenseite?
 
-Ein Partner kann ein CoE moderieren, und manche bieten das als Leistung an. Das Problem: Wer die Regeln festlegt, entscheidet, wie alle anderen entwickeln. Arbeiten fünf Partner an einer Org und einer davon führt das CoE, bestimmt er, was seine Wettbewerber dürfen. Das ist derselbe Grund, aus dem ich bei der [Object Ownership Matrix](../object-ownership-matrix-salesforce/) und bei [Repository und Pipeline](../warum-kunden-devops-tools-selbst-besitzen-sollten/) auf Kundenbesitz bestehe.
+Ein Partner kann ein CoE moderieren, und manche bieten das als Leistung an. Das Problem: Wer die Regeln festlegt, entscheidet, wie alle anderen entwickeln. Arbeiten fünf Partner an einer Org und einer davon führt das CoE, bestimmt er, was seine Wettbewerber dürfen. Das ist derselbe Grund, aus dem ich bei der [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/) und bei [Repository und Pipeline](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/) auf Kundenbesitz bestehe.
 
 Partner sind im CoE trotzdem vertreten. Ihre Leads stellen Änderungen vor, bringen Randfälle aus dem Projekt ein und widersprechen, wenn ein Standard im Alltag nicht funktioniert. Den Vorsitz, die Entscheidungsbefugnis und die Dokumentation behält der Kunde, vertreten durch einen CoE-Lead und einen Architekten.
 
@@ -57,14 +57,14 @@ Salesforce schlägt vor, einen [wöchentlichen Rhythmus für operative und techn
 | Inhalt | anstehende Änderungen an gemeinsamen Objekten, Integrationen, Berechtigungen und anderen übergreifenden Bausteinen, Randfälle aus Reviews, neue oder geänderte Standards | Prioritäten, Roadmap, Budget, neue Partner |
 | Ergebnis | Entscheidung, aktualisierter Standard oder Matrix | aktualisierte Roadmap mit Prioritäten, Budget, Verantwortlichen und Meilensteinen |
 
-Der Roadmap-Termin ist auch der Ort für Budgetfragen, die mehrere Bereiche betreffen. Ein Beispiel ist das Kontingent für Agentforce, das ich in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/) beschreibe: Kauft das Unternehmen Flex Credits zentral, sollte das CoE einen Verantwortlichen für die Verbrauchsüberwachung benennen und entscheiden, ob Werke und Tochtergesellschaften Kostentransparenz per Showback, eine interne Verrechnung per Chargeback oder ein zentrales Budget erhalten.
+Der Roadmap-Termin ist auch der Ort für Budgetfragen, die mehrere Bereiche betreffen. Ein Beispiel ist das Kontingent für Agentforce, das ich in [Agentforce-Kosten für Hersteller](/blog/flex-credits-agentforce-kosten-pro-aktion/) beschreibe: Kauft das Unternehmen Flex Credits zentral, sollte das CoE einen Verantwortlichen für die Verbrauchsüberwachung benennen und entscheiden, ob Werke und Tochtergesellschaften Kostentransparenz per Showback, eine interne Verrechnung per Chargeback oder ein zentrales Budget erhalten.
 
 ## Der technische Call folgt immer derselben Agenda
 
 Der technische Call ist der Teil, der den Unterschied macht. Damit er kein Statusmeeting wird, reichen die Streams ihre Themen vorher ein, und die Agenda wird vor dem Termin an alle Teilnehmer verschickt. So können sich die Verantwortlichen im Stream vorbereiten, statt im Call spontan entscheiden zu müssen. Die Agenda folgt immer derselben Reihenfolge:
 
 1. **Anstehende Änderungen an gemeinsamen Bausteinen.** Ein Stream stellt vor, was er am Account, am Asset, an einer gemeinsamen Schnittstelle oder an einem Berechtigungssatz ändern will, bevor er mit der Umsetzung beginnt. Der laut Matrix verantwortliche Stream beurteilt, ob die Änderung passt und wo sie umgesetzt werden sollte.
-2. **Randfälle aus den Reviews.** Was im [Pull-Request-Review](../warum-pull-request-reviews-pflicht-sind/) aufgefallen ist und von keinem Standard abgedeckt wird, wird hier besprochen.
+2. **Randfälle aus den Reviews.** Was im [Pull-Request-Review](/blog/warum-pull-request-reviews-pflicht-sind/) aufgefallen ist und von keinem Standard abgedeckt wird, wird hier besprochen.
 3. **Entscheidungen festhalten.** Jede Entscheidung wird dort dokumentiert, wo die Standards stehen, und nicht im Protokoll eines einzelnen Partners.
 
 Statusberichte gehören nicht in diesen Call. Wer berichten will, was sein Team im Sprint geschafft hat, tut das im Sprint Review. Sonst beraten 15 Leute eine Stunde lang, und die eine Änderung am Account, um die es eigentlich gehen sollte, wird am Ende in fünf Minuten abgehandelt.
@@ -125,4 +125,4 @@ Messen und anpassen | CoE-Lead
   Ein interner Kollege übernimmt die Calls und die Pflege der Standards.
 ```
 
-Wie sich neue Regeln im Alltag verankern lassen, beschreibe ich unter [Change Management Beratung für Salesforce](../../leistungen/change-management/), und wie der Call Standards bei Partnern sichert, in [Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/). Den Rahmen für mehrere Partner insgesamt finden Sie unter [Partnersteuerung](../../leistungen/partnersteuerung/).
+Wie sich neue Regeln im Alltag verankern lassen, beschreibe ich unter [Change Management Beratung für Salesforce](/leistungen/change-management/), und wie der Call Standards bei Partnern sichert, in [Reinforcement: Standards bei Partnern verankern](/blog/standards-partner-verankern-reinforcement/). Den Rahmen für mehrere Partner insgesamt finden Sie unter [Partnersteuerung](/leistungen/partnersteuerung/).

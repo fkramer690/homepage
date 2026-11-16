@@ -35,7 +35,7 @@ When people say "mobile flow", they mean one of two process types in Flow Builde
 - **Field Service Mobile Flow.** This is the older type. Salesforce's [flow considerations for the mobile app](https://help.salesforce.com/s/articleView?id=service.mfs_flow_considerations.htm&type=5) list its restrictions.
 - **Data Capture flow.** This is the form type for technicians. It needs Lightning Data Service, which Salesforce made mandatory for all orgs by Spring '26 ([Lightning Data Service for Field Service Mobile](https://help.salesforce.com/s/articleView?id=service.mfs_lightning_data_service.htm&type=5)), and has its own [limitations page](https://help.salesforce.com/s/articleView?id=service.mfs_data_capture_limitations.htm&type=5).
 
-In the Data Capture release notes from Winter '26 to Summer '26 I counted a new flow capability in every release. For the classic type I found none in the same period (as of November 2026). The standard Screen Flow process type is not supported in the app; only these two types are. How Data Capture forms are built is covered in [Field Service Data Capture: inspection forms without paper](../field-service-data-capture-inspection-forms/).
+In the Data Capture release notes from Winter '26 to Summer '26 I counted a new flow capability in every release. For the classic type I found none in the same period (as of November 2026). The standard Screen Flow process type is not supported in the app; only these two types are. How Data Capture forms are built is covered in [Field Service Data Capture: inspection forms without paper](/en/blog/field-service-data-capture-inspection-forms/).
 
 ```tabelle
 title: What works in which flow type (help pages as of November 2026)
@@ -112,7 +112,7 @@ Since [Winter '27](https://help.salesforce.com/s/articleView?id=release-notes.rn
 The current limitations page still lists IN, sections and conditional visibility as restrictions, and the native runtime release note does not say that any of them have been removed. Do not assume the native runtime lifts any of them. I will add the results here once I have tested these points on a device.
 ```
 
-Until then I treat every mobile flow as untested after the switch. How to test app versions before they reach all technicians is described in [Field Service mobile app updates](../field-service-mobile-app-updates-testing/).
+Until then I treat every mobile flow as untested after the switch. How to test app versions before they reach all technicians is described in [Field Service mobile app updates](/en/blog/field-service-mobile-app-updates-testing/).
 
 ## First step: sort your mobile flows by type and test the gaps on a phone
 
@@ -129,4 +129,4 @@ Test on both platforms
   On iOS and Android, online and in flight mode, with the patch version your users have.
 ```
 
-Which records a flow can read offline is determined by the briefcase; see [Field Service mobile offline: which data goes on the device?](../field-service-mobile-app-offline-data/). In Field Service programs I work with the team to decide which mobile process belongs in Data Capture, in a mobile flow, in normal record editing or in the back end; that is part of my [solution architecture](../../services/salesforce-architecture/) work.
+Which records a flow can read offline is determined by the briefcase; see [Field Service mobile offline: which data goes on the device?](/en/blog/field-service-mobile-app-offline-data/). In Field Service programs I work with the team to decide which mobile process belongs in Data Capture, in a mobile flow, in normal record editing or in the back end; that is part of my [solution architecture](/en/services/salesforce-architecture/) work.

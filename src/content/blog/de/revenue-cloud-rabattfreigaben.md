@@ -65,7 +65,7 @@ Eine Freigabematrix ist die Tabelle, die festlegt, welche Abweichung welchen Fre
 
 Drei Regeln halten eine solche Matrix handhabbar. Jeder Auslöser hat genau einen Verantwortlichen, der die Schwelle ändern darf. Die Schwellen stehen auch außerhalb von Salesforce schriftlich fest, damit Vertrieb und Controlling über die Regel streiten und nicht über einen Flow. Und jeder neue Auslöser muss sich gegenüber den bestehenden rechtfertigen, sonst wächst die Matrix, bis jedes Angebot drei Unterschriften braucht.
 
-Der Rabatt selbst stammt aus der Preisfindung. Wie Revenue Cloud Listenpreis, Mengenrabatt und manuellen Rabatt nacheinander berechnet, steht in [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](../revenue-cloud-preisprozeduren/). Die Freigabe sollte das Ergebnis dieser Berechnung prüfen und nicht selbst neu rechnen.
+Der Rabatt selbst stammt aus der Preisfindung. Wie Revenue Cloud Listenpreis, Mengenrabatt und manuellen Rabatt nacheinander berechnet, steht in [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](/blog/revenue-cloud-preisprozeduren/). Die Freigabe sollte das Ergebnis dieser Berechnung prüfen und nicht selbst neu rechnen.
 
 ## Die Marge braucht Kostendaten aus dem ERP
 
@@ -77,13 +77,13 @@ Ich sehe drei Wege und würde den einfachsten wählen, den das Controlling akzep
 2. **Kosten auf Anfrage vom ERP berechnen lassen.** Das ist nötig bei konfigurierten Baugruppen, deren Kosten von den Optionen abhängen. Das bedeutet einen API-Aufruf bei der Preisberechnung.
 3. **Keine Margenfreigabe.** Geben Sie nur nach Rabatt und Auftragsgröße frei und prüfen Sie die Marge nach dem Auftrag im Controlling. Das ist ehrlich und besser als ein Margenfeld, dem niemand traut.
 
-Welchen Weg Sie auch wählen, legen Sie fest, wer für das Kostenfeld verantwortlich ist, und beschränken Sie den Schreibzugriff über die Feldebenensicherheit. Kann der Vertrieb es ändern, ist die Margenfreigabe Dekoration. Festhalten lässt sich das in meiner [Object Ownership Matrix](../object-ownership-matrix-salesforce/).
+Welchen Weg Sie auch wählen, legen Sie fest, wer für das Kostenfeld verantwortlich ist, und beschränken Sie den Schreibzugriff über die Feldebenensicherheit. Kann der Vertrieb es ändern, ist die Margenfreigabe Dekoration. Festhalten lässt sich das in meiner [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/).
 
 ## Warum bleiben Freigaberegeln deterministisch, auch mit einem Agenten davor?
 
 Weil die Weiterleitung einer Freigabe eindeutig sein muss. Der Rabatt liegt entweder über der Schwelle oder darunter; daraus ergibt sich der zuständige Freigebende. Ob die Vertriebsleitung dann freigibt, ist eine Ermessensentscheidung, und die gehört zu einem Menschen. Interpretiert ein Agent die Weiterleitungsregel, kann dasselbe Angebot am Montag einen anderen Weg nehmen als am Dienstag, und der Wirtschaftsprüfer fragt nach dem Grund.
 
-Die Salesforce-Hilfe enthält einen Agentforce-Bereich für Advanced Approvals mit drei Subagenten: Approval Management, Search Approval Record und Summarize Multiple Approval Work Items. Seit der Woche vom 14. September 2026 können Vertriebsmitarbeitende mit dem [Approval Agent](https://help.salesforce.com/s/articleView?id=release-notes.rn_rev_agentforce_approvals_agent.htm&type=5) Freigaben einreichen, zurückrufen und verfolgen. Prüfende sehen KI-Zusammenfassungen und Kommentare und können schneller freigeben oder ablehnen. Dafür müssen Advanced Approvals und Agentforce aktiviert sein. Agentforce for Revenue Management gehört zu Revenue Cloud Advanced, nicht zu Growth. Diese Aufteilung halte ich für vernünftig. Schwelle und Freigebender bleiben im Workflow, die Entscheidung bleibt beim Freigebenden. Denselben Gedanken beschreibe ich allgemein für Agenten in [Agent Script: Warum Geschäftsregeln nicht ins LLM gehören](../agent-script-regeln-statt-llm/).
+Die Salesforce-Hilfe enthält einen Agentforce-Bereich für Advanced Approvals mit drei Subagenten: Approval Management, Search Approval Record und Summarize Multiple Approval Work Items. Seit der Woche vom 14. September 2026 können Vertriebsmitarbeitende mit dem [Approval Agent](https://help.salesforce.com/s/articleView?id=release-notes.rn_rev_agentforce_approvals_agent.htm&type=5) Freigaben einreichen, zurückrufen und verfolgen. Prüfende sehen KI-Zusammenfassungen und Kommentare und können schneller freigeben oder ablehnen. Dafür müssen Advanced Approvals und Agentforce aktiviert sein. Agentforce for Revenue Management gehört zu Revenue Cloud Advanced, nicht zu Growth. Diese Aufteilung halte ich für vernünftig. Schwelle und Freigebender bleiben im Workflow, die Entscheidung bleibt beim Freigebenden. Denselben Gedanken beschreibe ich allgemein für Agenten in [Agent Script: Warum Geschäftsregeln nicht ins LLM gehören](/blog/agent-script-regeln-statt-llm/).
 
 ## Freigaben aus CPQ werden neu gebaut
 
@@ -96,8 +96,8 @@ Die Namen klingen gleich, aber planen Sie nicht mit einer Übernahme. Die [Sales
 - Die Freigabehistorie bleibt in den CPQ-Objekten, solange das Paket und seine Daten erhalten bleiben; entscheiden Sie, ob Sie sie archivieren, migrieren oder weiter auswerten.
 - Jede Regel bekommt einen Testfall mit dem erwarteten Freigebenden, vor und nach dem Go-live.
 
-Ich würde die Migration zum Aufräumen nutzen. In CPQ-Orgs sammeln sich gern Freigaberegeln, die niemand mehr erklären kann. Bauen Sie nur nach, was Vertriebsleitung und Controlling bestätigen. Den ganzen Migrationsweg beschreibt das Kapitel [Von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
+Ich würde die Migration zum Aufräumen nutzen. In CPQ-Orgs sammeln sich gern Freigaberegeln, die niemand mehr erklären kann. Bauen Sie nur nach, was Vertriebsleitung und Controlling bestätigen. Den ganzen Migrationsweg beschreibt das Kapitel [Von CPQ zu Revenue Cloud](/masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
 
 ## Die Freigabematrix auf eine Seite schreiben
 
-Schreiben Sie die Freigabematrix auf eine Seite, bevor jemand einen Workflow baut: Auslöser, Schwellen, Verantwortliche und die Quelle der Kostendaten. Bauen Sie dann die Workflows mit parallelen Freigebenden und Vertretung, und testen Sie jede Regel mit einem Angebot, das die Regel auslösen soll, und einem, das sie nicht auslösen soll. Wie Freigaben in den Weg vom Angebot zum Auftrag passen, zeigt das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/), und ich unterstütze Sie dabei im Rahmen der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+Schreiben Sie die Freigabematrix auf eine Seite, bevor jemand einen Workflow baut: Auslöser, Schwellen, Verantwortliche und die Quelle der Kostendaten. Bauen Sie dann die Workflows mit parallelen Freigebenden und Vertretung, und testen Sie jede Regel mit einem Angebot, das die Regel auslösen soll, und einem, das sie nicht auslösen soll. Wie Freigaben in den Weg vom Angebot zum Auftrag passen, zeigt das Kapitel [Angebot, Vertrag, Auftrag](/masterclass/revenue-cloud/angebot-vertrag-auftrag/), und ich unterstütze Sie dabei im Rahmen der [Salesforce-Architektur](/leistungen/salesforce-architektur/).

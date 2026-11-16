@@ -68,9 +68,9 @@ In der Manufacturing Cloud ist Telesales der am klarsten dokumentierte Einsatz, 
 Zwei andere Preisfindungen ersetzt sie nicht:
 
 - **Angebote** mit Konfiguration, Freigabe und Vertragsbedingungen gehören zu Revenue Cloud. Penny Perfect Pricing bepreist Auftragspositionen, keine Angebote.
-- **Shoppreise** für Händler, die online bestellen, stammen aus der eigenen Preisfindung von B2B Commerce: Preisbücher, Preisstrategien, ein eigener Pricing Provider wie ein Live-Aufruf ins ERP oder Advanced Pricing powered by Revenue Cloud, wie in [Kundenpreise in B2B Commerce](../kundenpreise-b2b-commerce-preisbuecher-erp/) und im Masterclass-Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) beschrieben.
+- **Shoppreise** für Händler, die online bestellen, stammen aus der eigenen Preisfindung von B2B Commerce: Preisbücher, Preisstrategien, ein eigener Pricing Provider wie ein Live-Aufruf ins ERP oder Advanced Pricing powered by Revenue Cloud, wie in [Kundenpreise in B2B Commerce](/blog/kundenpreise-b2b-commerce-preisbuecher-erp/) und im Masterclass-Kapitel [Preise, Warenkorb, Checkout](/masterclass/b2b-commerce/preise-warenkorb-checkout/) beschrieben.
 
-Agenten, die Händlerangebote erstellen, etwa der AI Partner Sales Assistant, haben dasselbe Problem von der anderen Seite: Hält Salesforce nur Listenpreise, nennt der Agent Listenpreise. Das beschreibe ich in [KI-Angebote für Händler mit dem Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/).
+Agenten, die Händlerangebote erstellen, etwa der AI Partner Sales Assistant, haben dasselbe Problem von der anderen Seite: Hält Salesforce nur Listenpreise, nennt der Agent Listenpreise. Das beschreibe ich in [KI-Angebote für Händler mit dem Partner Sales Assistant](/blog/ki-angebote-haendler-partner-sales-assistant/).
 
 ## Was ist dokumentiert, und was nicht?
 
@@ -100,7 +100,7 @@ Diese Lücken lassen sich beherrschen, wenn vier Rollen feststehen, bevor sich e
 
 Angenommen, ein Maschinenbauer nimmt mit einem Telesales-Team von zehn Personen Ersatzteilaufträge am Telefon an: 30.000 Ersatzteile, 2.500 Kunden, Preise aus SAP mit vier Konditionsarten: Listenpreis, Kundenrabatt, Mindermengenzuschlag und Mengenstaffeln. Die Aufträge sollen in Salesforce erfasst werden, wo der Mitarbeiter auch die installierte Basis und offene Fälle des Kunden sieht.
 
-**Variante A: SAP bleibt Preis-Master.** Salesforce fragt SAP pro Position nach dem Preis, während der Auftrag erfasst wird, über eine API, wie sie in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/) beschrieben ist. Salesforce zeigt den aktuellen SAP-Preis, und Auftrags- und Rechnungspreis stimmen überein, solange SAP den Auftrag mit denselben Partnern, demselben Datum und denselben Mengen bepreist. Der Nachteil ist die Abhängigkeit: Ist SAP in einem Wartungsfenster, kann das Team keine Aufträge bepreisen.
+**Variante A: SAP bleibt Preis-Master.** Salesforce fragt SAP pro Position nach dem Preis, während der Auftrag erfasst wird, über eine API, wie sie in [Agentforce und SAP: Auftragsstatus über MuleSoft](/blog/agentforce-sap-auftragsstatus/) beschrieben ist. Salesforce zeigt den aktuellen SAP-Preis, und Auftrags- und Rechnungspreis stimmen überein, solange SAP den Auftrag mit denselben Partnern, demselben Datum und denselben Mengen bepreist. Der Nachteil ist die Abhängigkeit: Ist SAP in einem Wartungsfenster, kann das Team keine Aufträge bepreisen.
 
 **Variante B: Penny Perfect Pricing rechnet.** Die vier Konditionsarten werden als Preisspezifikationen nachgebaut, und die Konditionssätze für 2.500 Kunden werden als External Pricing Key Values kopiert, mit Delta-Ladung und Konsolidierungslauf mehrmals am Tag. Die Grenzen von 1.000 Positionen pro Auftrag und 28 Schemaschritten sind hier kein Problem, sollten aber geprüft werden. Preise liegen sofort vor, ohne SAP. Der Aufwand liegt im Abgleich und in einer zweiten Preiskonfiguration, die jemand verantwortet.
 
@@ -111,7 +111,7 @@ Ich würde A wählen, wenn SAP schnell antwortet und zuverlässig erreichbar ist
 1. **Zählen Sie Ihre Konditionsarten** und wie oft sich Konditionssätze pro Woche ändern.
 2. **Halten Sie die vier Rollen fest**: wer Preisregeln und Konditionsdaten verantwortet, welches System den Auftragspreis rechnet und welches den Rechnungspreis bestimmt, und welcher Preis gilt, wenn Salesforce und SAP abweichen.
 3. **Fragen Sie Salesforce schriftlich**, was die nötigen Add-ons für Ihre Edition kosten, und prüfen Sie die dokumentierten Grenzen an Ihren größten Aufträgen und Ihrem Konditionsvolumen.
-4. **Planen Sie die Datenflüsse** zusammen mit der übrigen SAP-Schnittstelle, wie in [Manufacturing Cloud und SAP: welche Daten wohin](../manufacturing-cloud-sap-integration-datenfluesse/).
+4. **Planen Sie die Datenflüsse** zusammen mit der übrigen SAP-Schnittstelle, wie in [Manufacturing Cloud und SAP: welche Daten wohin](/blog/manufacturing-cloud-sap-integration-datenfluesse/).
 5. **Testen Sie mit echten Aufträgen**: Bepreisen Sie 200 historische Aufträge in beiden Systemen und vergleichen Sie sie Position für Position.
 
-Das vollständige Kapitel zu ERP-Anbindung, Agenten und Rollout finden Sie unter [ERP, KI und Rollout](../../masterclass/manufacturing-cloud/erp-ki-und-rollout/) in der Masterclass Manufacturing Cloud. Die Grenze zwischen ERP und Salesforce zu ziehen, gehört zu meiner [Arbeit als Salesforce-Architekt](../../leistungen/salesforce-architektur/).
+Das vollständige Kapitel zu ERP-Anbindung, Agenten und Rollout finden Sie unter [ERP, KI und Rollout](/masterclass/manufacturing-cloud/erp-ki-und-rollout/) in der Masterclass Manufacturing Cloud. Die Grenze zwischen ERP und Salesforce zu ziehen, gehört zu meiner [Arbeit als Salesforce-Architekt](/leistungen/salesforce-architektur/).

@@ -35,7 +35,7 @@ Wer "mobiler Flow" sagt, meint einen von zwei Prozesstypen im Flow Builder:
 - **Field Service Mobile Flow.** Der ältere Typ. Die [Flow-Hinweise für die Mobile App](https://help.salesforce.com/s/articleView?id=service.mfs_flow_considerations.htm&type=5) listen seine Einschränkungen.
 - **Data-Capture-Flow.** Der Formulartyp für den Außendienst. Er braucht Lightning Data Service, das Salesforce bis Spring '26 für alle Orgs verpflichtend gemacht hat ([Lightning Data Service für Field Service Mobile](https://help.salesforce.com/s/articleView?id=service.mfs_lightning_data_service.htm&type=5)), und hat eine eigene [Seite mit Einschränkungen](https://help.salesforce.com/s/articleView?id=service.mfs_data_capture_limitations.htm&type=5).
 
-In den Release Notes zu Data Capture von Winter '26 bis Summer '26 habe ich in jedem Release eine neue Flow-Funktion gezählt. Für den klassischen Typ habe ich im selben Zeitraum keine gefunden (Stand November 2026). Der normale Prozesstyp Screen Flow wird in der App nicht unterstützt; unterstützt werden nur diese beiden Typen. Wie man Data-Capture-Formulare aufbaut, steht in [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/).
+In den Release Notes zu Data Capture von Winter '26 bis Summer '26 habe ich in jedem Release eine neue Flow-Funktion gezählt. Für den klassischen Typ habe ich im selben Zeitraum keine gefunden (Stand November 2026). Der normale Prozesstyp Screen Flow wird in der App nicht unterstützt; unterstützt werden nur diese beiden Typen. Wie man Data-Capture-Formulare aufbaut, steht in [Field Service Data Capture: Prüfprotokolle ohne Papier](/blog/field-service-data-capture-pruefprotokolle/).
 
 ```tabelle
 titel: Was in welchem Flow-Typ geht (Hilfeseiten, Stand November 2026)
@@ -112,7 +112,7 @@ Seit [Winter '27](https://help.salesforce.com/s/articleView?id=release-notes.rn_
 Die aktuelle Seite mit den Einschränkungen listet IN, Sections und bedingte Sichtbarkeit weiterhin als Grenzen, und die Release Note zur nativen Laufzeit sagt nicht, dass eine dieser Grenzen wegfällt. Gehen Sie nicht davon aus, dass die native Laufzeit eine dieser Einschränkungen aufhebt. Sobald ich diese Punkte auf einem Gerät getestet habe, ergänze ich die Ergebnisse hier.
 ```
 
-Bis dahin behandle ich jeden mobilen Flow nach der Umstellung als ungetestet. Wie man App-Versionen testet, bevor sie alle Techniker erreichen, steht in [Field Service App-Updates testen](../field-service-app-updates-testen/).
+Bis dahin behandle ich jeden mobilen Flow nach der Umstellung als ungetestet. Wie man App-Versionen testet, bevor sie alle Techniker erreichen, steht in [Field Service App-Updates testen](/blog/field-service-app-updates-testen/).
 
 ## Erster Schritt: mobile Flows nach Typ sortieren und die Lücken am Handy testen
 
@@ -129,4 +129,4 @@ Auf beiden Plattformen testen
   Auf iOS und Android, online und im Flugmodus, mit der Patch-Version Ihrer Nutzer.
 ```
 
-Welche Datensätze ein Flow offline lesen kann, entscheidet der Briefcase, siehe [Field Service offline: welche Daten aufs Gerät gehören](../field-service-app-offline-briefcase/). In Field-Service-Programmen entscheide ich mit dem Team, welcher mobile Prozess in Data Capture, in einen mobilen Flow, in eine normale Datensatzbearbeitung oder ins Backend gehört; das ist Teil meiner Arbeit an der [Lösungsarchitektur](../../leistungen/salesforce-architektur/).
+Welche Datensätze ein Flow offline lesen kann, entscheidet der Briefcase, siehe [Field Service offline: welche Daten aufs Gerät gehören](/blog/field-service-app-offline-briefcase/). In Field-Service-Programmen entscheide ich mit dem Team, welcher mobile Prozess in Data Capture, in einen mobilen Flow, in eine normale Datensatzbearbeitung oder ins Backend gehört; das ist Teil meiner Arbeit an der [Lösungsarchitektur](/leistungen/salesforce-architektur/).

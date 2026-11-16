@@ -46,7 +46,7 @@ These are individual usage and output signals. They are not a valid measure of d
 
 People like to quote one exception. On January 16, 2024 the Hamburg Labor Court (24 BVGa 1/24), in a first-instance ruling in interim proceedings, found no co-determination right for ChatGPT used through employees' private accounts, because the employer had no data on who used it, when or for what. In its [note on the decision](https://cms.law/de/deu/legal-updates/kein-mitbestimmungsrecht-des-betriebsrats-bei-chatgpt-co), CMS points out that the assessment changes once the employer provides accounts or licenses. The court relied on the specific setup, and the browser use was already covered by a group agreement. For a Salesforce team on company licenses, the ruling does not help.
 
-Good news for planning: according to CMS, an AI tool added without changing the organization or responsibilities is not an operational change under section 111 BetrVG, so no social plan is needed. Tie the tool to smaller teams or new roles and that changes. CMS recommends separating the two and documenting it, which matters if you move to [AI-native delivery with smaller teams](../ai-native-delivery-smaller-salesforce-teams/) at the same time.
+Good news for planning: according to CMS, an AI tool added without changing the organization or responsibilities is not an operational change under section 111 BetrVG, so no social plan is needed. Tie the tool to smaller teams or new roles and that changes. CMS recommends separating the two and documenting it, which matters if you move to [AI-native delivery with smaller teams](/en/blog/ai-native-delivery-smaller-salesforce-teams/) at the same time.
 
 ## What belongs in the works agreement for coding agents?
 
@@ -62,7 +62,7 @@ CMS recommends framework works agreements that set the procedure for new IT and 
 
 Two details from the [Claude Code data usage page](https://code.claude.com/docs/en/data-usage) belong in every annex. Claude Code stores session transcripts locally in plaintext for 30 days by default, adjustable with `cleanupPeriodDays`. Commercial accounts have a 30-day retention period; zero data retention is not part of the standard Enterprise plan but is enabled per organization by the account team after an eligibility check. According to Anthropic, organizations with zero data retention also lose the GitHub contribution metrics, which can make the works council conversation easier.
 
-You do not need per-person data to see whether the tool pays off. Measure cycle time, defect escape and rework per story per team, as described in [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/). That commitment is the core of most negotiations.
+You do not need per-person data to see whether the tool pays off. Measure cycle time, defect escape and rework per story per team, as described in [measuring AI productivity in Salesforce projects](/en/blog/measuring-ai-productivity-salesforce-projects/). That commitment is the core of most negotiations.
 
 ## What does GDPR require from AI coding tools?
 
@@ -72,7 +72,7 @@ The full privacy review covers roles and the data processing agreement, legal ba
 
 **Training and account type.** Anthropic [does not train on code and prompts](https://code.claude.com/docs/en/data-usage) sent to Claude Code under commercial terms. On Free, Pro and Max, training depends on a user setting, and retention can then be five years. That is why I consider private accounts the worst way to avoid works council involvement: you swap a solvable co-determination topic for an unresolved data protection issue.
 
-**Data in context.** As an internal rule, no production personal data goes into a coding agent's context unless the use case has been explicitly approved and is lawful and necessary. For a manufacturer that means no service cases with customer names, no dealer contacts and no technician assignment data from the full copy sandbox. Agents work in scratch orgs and developer sandboxes with anonymized data. The data classes in detail are in [partners coding with AI: what belongs in the contract](../partners-using-ai-coding-contract-rules/).
+**Data in context.** As an internal rule, no production personal data goes into a coding agent's context unless the use case has been explicitly approved and is lawful and necessary. For a manufacturer that means no service cases with customer names, no dealer contacts and no technician assignment data from the full copy sandbox. Agents work in scratch orgs and developer sandboxes with anonymized data. The data classes in detail are in [partners coding with AI: what belongs in the contract](/en/blog/partners-using-ai-coding-contract-rules/).
 
 ## EU inference is available through Bedrock, Copilot and OpenAI
 
@@ -83,7 +83,7 @@ The GDPR does not generally require EU-only processing. A transfer to a third co
 - **GitHub Copilot:** for enterprises on GitHub Enterprise Cloud with data residency, the [policy](https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency) "Restrict Copilot to data residency compliant models" keeps inference and data in the region for generally available features. A normal GitHub.com organization does not get this. The policy is off by default, and requests made under it use 10 percent more AI credits. Claude Opus 5.5 and Sonnet 5.5 are on the EU model list.
 - **OpenAI:** API projects with [European data residency](https://openai.com/index/introducing-data-residency-in-europe/) have been available since February 2025, for supported models and endpoints. Eligible ChatGPT Enterprise customers have had in-region inference since January 2026, according to an update to the same post. The Codex app and CLI are covered according to [OpenAI](https://help.openai.com/en/articles/9903489), Codex Web is not; OpenAI notes that routing, authentication and external apps or MCP servers can run outside the region.
 
-The full comparison of the tools by contract, cost and governance is in [Agentforce Vibes, Claude Code, Codex or Copilot?](../agentforce-vibes-claude-code-copilot/). Agentforce agents in HR processes face separate EU AI Act deadlines, see [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/).
+The full comparison of the tools by contract, cost and governance is in [Agentforce Vibes, Claude Code, Codex or Copilot?](/en/blog/agentforce-vibes-claude-code-copilot/). Agentforce agents in HR processes face separate EU AI Act deadlines, see [EU AI Act deadlines for Agentforce](/en/blog/eu-ai-act-deadlines-agentforce/).
 
 ## Worked example: approval before the pilot
 
@@ -113,4 +113,4 @@ Six weeks sounds long, but in my view a pilot stopped halfway costs more. The re
 5. **Enforce it technically:** restrict dashboards, set `cleanupPeriodDays`, pin EU models, enable the EU policy in Copilot where available.
 6. **Train everyone who uses the tools**, as the AI literacy duty under the EU AI Act requires.
 
-Where an IT framework agreement and a clear data flow description exist, I have found that approval goes faster than for an unprepared pilot. Still, nobody can promise a timeline. Getting teams and partners to adopt new rules in daily work is part of my [change management](../../services/change-management-salesforce/) work; the framework for roles and review is in [chapter 9 of the masterclass](../../masterclass/ai-salesforce/teamwork-and-delivery/).
+Where an IT framework agreement and a clear data flow description exist, I have found that approval goes faster than for an unprepared pilot. Still, nobody can promise a timeline. Getting teams and partners to adopt new rules in daily work is part of my [change management](/en/services/change-management-salesforce/) work; the framework for roles and review is in [chapter 9 of the masterclass](/en/masterclass/ai-salesforce/teamwork-and-delivery/).

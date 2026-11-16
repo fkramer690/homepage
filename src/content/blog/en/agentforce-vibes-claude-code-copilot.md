@@ -33,7 +33,7 @@ Choosing a coding agent for Salesforce, whether Agentforce Vibes, Claude Code, C
 
 Developers and partners arrive with preferences. A nearshore team may know Claude Code, your internal developers may have Copilot in VS Code, and your Salesforce account executive will offer Agentforce Vibes. Each choice routes your source code, your metadata and sometimes test data from a sandbox to a model provider under a specific contract. For a manufacturer, that code contains discount approval logic, warranty rules and the interface definitions for SAP or proALPHA, and test data or configuration can include real dealer terms.
 
-I know of no public Salesforce-specific evidence that ranks the tools reliably, and the tools share much of the same tooling. Salesforce describes its open skills library as [compatible with any coding agent](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release), naming Claude Code and Codex, and the Hosted MCP servers connect to any MCP-compatible client. Salesforce built its first official plugin for Claude Code: according to [Salesforce's announcement of August 19, 2026](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin), it bundles about 40 skills, three MCP servers, deployment validation hooks and a read-only architecture review agent. The feature comparison is in [chapter 4 of the AI masterclass](../../masterclass/ai-salesforce/external-coding-agents/). This article covers the decision.
+I know of no public Salesforce-specific evidence that ranks the tools reliably, and the tools share much of the same tooling. Salesforce describes its open skills library as [compatible with any coding agent](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release), naming Claude Code and Codex, and the Hosted MCP servers connect to any MCP-compatible client. Salesforce built its first official plugin for Claude Code: according to [Salesforce's announcement of August 19, 2026](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin), it bundles about 40 skills, three MCP servers, deployment validation hooks and a read-only architecture review agent. The feature comparison is in [chapter 4 of the AI masterclass](/en/masterclass/ai-salesforce/external-coding-agents/). This article covers the decision.
 
 ## Four questions that decide the coding agent for Salesforce
 
@@ -60,7 +60,7 @@ This is the question that removes options. What the vendors state on their own p
 | GitHub Copilot | [EU data residency since April 13, 2026](https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available) on GitHub Enterprise Cloud with data residency, for generally available features including cloud agent and CLI (preview features only once GA), off by default and uses 10 percent more AI credits |
 | Codex | data and inference residency on ChatGPT Enterprise only, region "Europe (EEA + Switzerland)"; [Codex app and CLI supported, Codex Web excluded](https://help.openai.com/en/articles/9903489); some non-GPU processing can run outside the region |
 
-Two details matter for Salesforce teams. The [EU model list for Copilot](https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency) includes Claude Opus 5.5 and Sonnet 5.5, so a team can work with Claude models under EU processing without an AWS account. The second detail: "EU" at GitHub and OpenAI can include EFTA countries or Switzerland, so check that against your data protection policy. Whether the works council has to agree is a separate question, covered in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
+Two details matter for Salesforce teams. The [EU model list for Copilot](https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency) includes Claude Opus 5.5 and Sonnet 5.5, so a team can work with Claude models under EU processing without an AWS account. The second detail: "EU" at GitHub and OpenAI can include EFTA countries or Switzerland, so check that against your data protection policy. Whether the works council has to agree is a separate question, covered in [AI coding tools, works council and GDPR](/en/blog/ai-coding-tools-works-council-gdpr/).
 
 ```hinweis offen
 For Vibes, Salesforce does not state a processing region, and its FAQ (not stored after the session) and billing page (Data Cloud stores data) appear to say different things. I would get region and retention from Salesforce in writing before your data protection officer signs off.
@@ -75,14 +75,14 @@ The tools differ less by price than by who can see the spending. Prices below ar
 - **Claude Code on Bedrock** shows up in the AWS bill. Anthropic's analytics do not cover it, so per-user figures need OpenTelemetry or a gateway.
 - **Vibes metered** draws from the same Flex Credit pool as your production agents. A partner team can eat the budget you planned for a dealer service agent.
 
-The numbers for a full team, and whether client or partner should pay, are in [what AI coding costs in a Salesforce project](../ai-coding-costs-salesforce-project/).
+The numbers for a full team, and whether client or partner should pay, are in [what AI coding costs in a Salesforce project](/en/blog/ai-coding-costs-salesforce-project/).
 
 ### 4. Which governance does your IT security expect?
 
 - **Identity and audit.** Claude Enterprise adds SCIM, audit logs, a compliance API and custom retention to the SSO that Team already has. ChatGPT Business has SSO but no SCIM, no role-based access and no compliance API; Enterprise has all three.
 - **Scope of use.** OpenAI lets admins [govern Codex Local and Codex Cloud separately](https://help.openai.com/en/articles/11369540), so you can allow the CLI and block delegated cloud tasks. Vibes can be [disabled for a production org](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes) in Setup.
 - **Training and retention.** Anthropic [does not train on code sent under commercial terms](https://code.claude.com/docs/en/data-usage). Standard retention is 30 days, Enterprise can set custom retention, and zero data retention is available to qualifying organizations for eligible products; on Bedrock the AWS settings apply. OpenAI does not use business inputs for training by default.
-- **One primary rules file.** The Copilot coding agent [reads AGENTS.md and CLAUDE.md](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions), Codex reads AGENTS.md, and Claude Code reads CLAUDE.md, which can import AGENTS.md. One primary file can steer several tools if you wire it up and test it; see [the AI rules file for your Salesforce repository](../ai-rules-file-salesforce-repository/).
+- **One primary rules file.** The Copilot coding agent [reads AGENTS.md and CLAUDE.md](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions), Codex reads AGENTS.md, and Claude Code reads CLAUDE.md, which can import AGENTS.md. One primary file can steer several tools if you wire it up and test it; see [the AI rules file for your Salesforce repository](/en/blog/ai-rules-file-salesforce-repository/).
 
 ## Worked example: two approved tools instead of four
 
@@ -97,7 +97,7 @@ How I would decide:
 3. **No partner accounts.** If the partner insists on Claude Code for the official plugin, it runs through the client's AWS account in an EU region, with a budget and OpenTelemetry.
 4. **No Codex for now.** ChatGPT Business has no data residency, and Enterprise would be a third contract for one developer.
 
-The result is two tools and one primary `AGENTS.md`, owned by the internal architect. How the partner contract reflects this is in [contract rules for partners coding with AI](../partners-using-ai-coding-contract-rules/).
+The result is two tools and one primary `AGENTS.md`, owned by the internal architect. How the partner contract reflects this is in [contract rules for partners coding with AI](/en/blog/partners-using-ai-coding-contract-rules/).
 
 ## When is each tool the wrong choice?
 
@@ -108,7 +108,7 @@ The result is two tools and one primary `AGENTS.md`, owned by the internal archi
 
 ## First step: check EU Operating Zone and contracts in week 1
 
-Setting these rules across several partners is part of my work in [partner governance](../../services/partner-governance/) and [DevOps and release management](../../services/devops-release-management/). A four-week technical evaluation can produce a recommendation; data protection, procurement and the works council may take longer:
+Setting these rules across several partners is part of my work in [partner governance](/en/services/partner-governance/) and [DevOps and release management](/en/services/devops-release-management/). A four-week technical evaluation can produce a recommendation; data protection, procurement and the works council may take longer:
 
 ```schritte
 Take stock | Week 1
@@ -118,5 +118,5 @@ Settle the rules | Week 2
 Approve | Week 3
   Approve at most two tools, all accounts in the client's name, and write the rules file.
 Test | Week 4
-  Run 10 to 15 backlog tasks through the approved tools and the same pipeline gates, as described in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
+  Run 10 to 15 backlog tasks through the approved tools and the same pipeline gates, as described in [quality gates for AI code](/en/blog/quality-gates-for-ai-code-salesforce-pipeline/).
 ```

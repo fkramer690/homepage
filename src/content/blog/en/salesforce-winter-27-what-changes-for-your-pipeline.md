@@ -46,13 +46,13 @@ What to do:
 
 ![Pipeline authentication from 28 October 2026: pipelines that call sf org display, read the accessToken and pass it on break, because the command no longer shows secrets and the SF_TEMP_SHOW_SECRETS workaround ends on 28 October 2026. What works is each pipeline job authenticating itself with the JWT bearer flow and a certificate stored in the client's secret store, with no tokens passed between steps, tested in a feature branch first. Also check that the Salesforce CLI runs on Node.js 22 or later.](../../../assets/blog/winter-27-org-display-en.png)
 
-**The CLI requires Node.js 22 or later.** This matters where the CLI is installed with npm or runs in a self-built image: if such a runner still has an older Node version, installing or updating the CLI fails. The operating system installers bundle their own runtime, currently Node.js 24. Check the base images of your pipeline, the setup steps of hosted runners and your developers' machines. Check tools that build on the Salesforce CLI, such as [sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/), as well.
+**The CLI requires Node.js 22 or later.** This matters where the CLI is installed with npm or runs in a self-built image: if such a runner still has an older Node version, installing or updating the CLI fails. The operating system installers bundle their own runtime, currently Node.js 24. Check the base images of your pipeline, the setup steps of hosted runners and your developers' machines. Check tools that build on the Salesforce CLI, such as [sfdx-hardis](/en/blog/sfdx-hardis-open-source-salesforce-devops/), as well.
 
 ## The Developer Console is hidden from Setup
 
 With Winter '27 the Developer Console no longer appears in the Setup menu by default. According to the [release note](https://help.salesforce.com/s/articleView?id=release-notes.rn_developer_console.htm&language=en_US&type=5) it is in maintenance mode, gets only high-severity security fixes, and an admin can re-enable it. Its successor is the Web Console, which is generally available. In production orgs, Apex is read-only in the Web Console.
 
-For well-run programs, little changes. Editing code or running ad hoc changes directly in production has always been a risk: no review, no history, no way back. The new default pushes teams towards the way it should work anyway: every code or metadata change belongs in the repository, is reviewed in a pull request and is deployed through the pipeline. I explain why that matters in [why pull request reviews are a must in enterprise projects](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+For well-run programs, little changes. Editing code or running ad hoc changes directly in production has always been a risk: no review, no history, no way back. The new default pushes teams towards the way it should work anyway: every code or metadata change belongs in the repository, is reviewed in a pull request and is deployed through the pipeline. I explain why that matters in [why pull request reviews are a must in enterprise projects](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 
 Some teams still use the Developer Console for quick queries, log analysis or anonymous Apex in production. Those practices need to be replaced now. Agree on which tasks are allowed in production, who may do them and how they are documented.
 
@@ -80,7 +80,7 @@ Summer '27 | SOAP, REST and Bulk API versions 31.0 to 40.0 stop receiving update
 Summer '28 | SOAP, REST and Bulk API versions 31.0 to 40.0 fail
 ```
 
-The permission addresses only the 1 December change. Infrequently run jobs, such as annual or disaster recovery processes, need to be checked before 15 December because Salesforce runs the six-month check only once. Together with the end of the username-password flow, this creates substantial work for integration teams. I describe the inventory and migration in [Salesforce password integrations end in 2027](../salesforce-password-integrations-end-2027/).
+The permission addresses only the 1 December change. Infrequently run jobs, such as annual or disaster recovery processes, need to be checked before 15 December because Salesforce runs the six-month check only once. Together with the end of the username-password flow, this creates substantial work for integration teams. I describe the inventory and migration in [Salesforce password integrations end in 2027](/en/blog/salesforce-password-integrations-end-2027/).
 
 ## What else release managers should know
 
@@ -92,7 +92,7 @@ Three smaller points with governance impact:
 
 ## Winter '27 checklist, starting with the token scripts
 
-Three releases a year mean a checklist like this every few months. A pipeline that runs every change through validation and tests catches most of these issues early, which is one of the reasons [DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/). For a release team, these steps cover the essentials:
+Three releases a year mean a checklist like this every few months. A pipeline that runs every change through validation and tests catches most of these issues early, which is one of the reasons [DevOps decides Salesforce enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/). For a release team, these steps cover the essentials:
 
 1. Find and fix every pipeline use of tokens from org display; jobs that still rely on them fail on CLI 2.156.8 or later.
 2. Update Node.js to version 22 or later wherever the CLI is installed with npm or in self-built images.

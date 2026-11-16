@@ -29,7 +29,7 @@ draft: false
 
 Ein Wartungsvertrag nutzt in Salesforce Field Service typischerweise drei getrennte Objekte. Der Service Contract hält fest, was verkauft wurde. Der Maintenance Plan erzeugt die geplanten Wartungen. Das Entitlement beschreibt, auf welchen Service-Level der Kunde Anspruch hat, etwa eine Reaktionszeit. Entitlements haben dabei mit Wartungsverträgen nur bedingt zu tun, denn ein Anspruch kann auch aus einer Garantie oder einem Supportpaket stammen. In einem Projekt waren Entitlements Teil des Projektumfangs und haben die Priorisierung im Dispatching beeinflusst. Von selbst tun sie das nicht: Eine Automatisierung muss den Service-Level in eine Planungspriorität übersetzen. Genau dort zeigt sich der Wert für den Außendienst.
 
-Dieser Artikel ist Teil 5 der Serie. Wie Field Service plant und was der Disponent prüft, steht in [Teil 3](../salesforce-field-service-terminplanung-automatisieren/). Welche Stammdaten, etwa Anlagen und Öffnungszeiten, dafür nötig sind, steht in [Teil 2](../salesforce-field-service-stammdaten/).
+Dieser Artikel ist Teil 5 der Serie. Wie Field Service plant und was der Disponent prüft, steht in [Teil 3](/blog/salesforce-field-service-terminplanung-automatisieren/). Welche Stammdaten, etwa Anlagen und Öffnungszeiten, dafür nötig sind, steht in [Teil 2](/blog/salesforce-field-service-stammdaten/).
 
 ## Was bildet welches Objekt ab?
 
@@ -43,7 +43,7 @@ Die Begriffe klingen ähnlich und werden in Projekten oft vermischt. Laut [Sales
 | Entitlement | Worauf der Kunde Anspruch hat | Techniker vor Ort innerhalb von 24 Stunden |
 | Entitlement-Prozess mit Milestones | Wie der Anspruch gemessen wird | Uhr läuft ab Anlage des Arbeitsauftrags |
 
-Der Service Contract ist die kaufmännische Seite; wie er wiederkehrend abgerechnet wird, steht in [Wartungsverträge wiederkehrend abrechnen mit Revenue Cloud](../wartungsvertraege-wiederkehrend-abrechnen/). Der Maintenance Plan ist die planbare Arbeit. Das Entitlement ist ein Anspruch auf einen Service-Level; im Außendienst zählt er vor allem bei Störungen, für die eine Reaktionszeit gilt. Ein Vertrag kann alle drei haben, muss aber nicht. Ein reiner Garantiefall hat oft nur ein Entitlement für die Anlage und keinen Wartungsplan. Wie Garantieansprüche in der Manufacturing Cloud abgebildet werden, steht in [Kapitel 4 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/garantie-und-after-sales/).
+Der Service Contract ist die kaufmännische Seite; wie er wiederkehrend abgerechnet wird, steht in [Wartungsverträge wiederkehrend abrechnen mit Revenue Cloud](/blog/wartungsvertraege-wiederkehrend-abrechnen/). Der Maintenance Plan ist die planbare Arbeit. Das Entitlement ist ein Anspruch auf einen Service-Level; im Außendienst zählt er vor allem bei Störungen, für die eine Reaktionszeit gilt. Ein Vertrag kann alle drei haben, muss aber nicht. Ein reiner Garantiefall hat oft nur ein Entitlement für die Anlage und keinen Wartungsplan. Wie Garantieansprüche in der Manufacturing Cloud abgebildet werden, steht in [Kapitel 4 der Masterclass Manufacturing Cloud](/masterclass/manufacturing-cloud/garantie-und-after-sales/).
 
 ## Wie entstehen die geplanten Wartungen?
 
@@ -113,4 +113,4 @@ Drei Warnzeichen, dass das Vertragsmodell nicht trägt: Reaktionszeiten stehen i
 
 ## Die drei häufigsten Vertragsarten aufschreiben
 
-Nehmen Sie Ihre drei häufigsten Vertragsarten und schreiben Sie für jede auf, was der Kunde gekauft hat, welche Wartungen geplant sind und welche Reaktionszeit zugesagt ist. Daraus ergeben sich Service Contracts, Maintenance Plans und Entitlements fast von selbst. Danach legen Sie fest, welche Priorität jede Zusage in der Planung erhält. Wie Servicepartner und Subunternehmer in dieselbe Planung eingebunden werden, zeigt der [nächste Teil der Serie](../salesforce-field-service-servicepartner/).
+Nehmen Sie Ihre drei häufigsten Vertragsarten und schreiben Sie für jede auf, was der Kunde gekauft hat, welche Wartungen geplant sind und welche Reaktionszeit zugesagt ist. Daraus ergeben sich Service Contracts, Maintenance Plans und Entitlements fast von selbst. Danach legen Sie fest, welche Priorität jede Zusage in der Planung erhält. Wie Servicepartner und Subunternehmer in dieselbe Planung eingebunden werden, zeigt der [nächste Teil der Serie](/blog/salesforce-field-service-servicepartner/).

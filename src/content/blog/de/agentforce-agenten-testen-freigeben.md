@@ -2,7 +2,7 @@
 title: "Agentforce-Agenten testen: wann ist einer produktionsreif?"
 description: "Wann ist ein Agentforce-Agent reif für die Produktion? Testing Center, sf agent test, LLM als Prüfer, Passraten-Schwellen und Monitoring für Hersteller erklärt."
 pubDate: 2026-10-27
-updatedDate: 2026-11-09
+updatedDate: 2026-11-11
 lang: de
 slug: agentforce-agenten-testen-freigeben
 translationKey: testing-agentforce-agents
@@ -37,6 +37,8 @@ Ein Apex-Unit-Test ist so gebaut, dass er bei gleicher kontrollierter Eingabe da
 
 Die Frage lautet also: Wie oft besteht er, und mit welchen Fehlern können wir leben? Eine holprige Zusammenfassung eines Liefertermins ist ärgerlich. Eine falsche Aussage, die Maschine sei noch in der Garantie, kostet eine Gutschrift. Diese Fehler brauchen unterschiedliche Schwellen.
 
+Auch Salesforce hat das in eigenen Einführungen gelernt. Laut [Salesforce Engineering](https://engineering.salesforce.com/accelerating-agentforce-deployments-from-6-months-to-3-weeks-across-150-enterprises/) reichten den Forward Deployed Engineers Tests mit einzelnen Sätzen nicht, um komplexe Gespräche abzusichern. Das Team baute deshalb ein automatisiertes Framework für Tests über mehrere Gesprächsrunden, das Fehler findet, bevor viele Kunden sie sehen.
+
 ## Die Testwerkzeuge von Salesforce
 
 Salesforce hat das [Agentforce Testing Center](https://www.salesforce.com/news/?p=83400) im November 2024 vorgestellt. Es erzeugt Hunderte synthetische Anfragen aus einer Beschreibung in normaler Sprache und führt sie parallel in einer Sandbox aus. Für Teams mit Versionsverwaltung bietet [Agentforce DX](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx.html) dasselbe über VS Code, CLI-Befehle und eine Test-API.
@@ -62,10 +64,10 @@ Wenn eine Aktion in einem angebundenen Test-ERP ein Teil reserviert, geschieht d
 
 Salesforce liefert Bewertungen, aber keine Schwelle, ab der ein Agent als „bereit“ gilt. Der Lifecycle-Beitrag vom Juni 2026 nennt keine, die Testdokumentation auch nicht. Die Schwellen sind also eine Projektentscheidung, und ich teile sie nach Risiko auf:
 
-1. **Geschäftsregeln: 100 Prozent, exakt geprüft.** Garantieberechtigung, Kreditlimits, Rabattfreigaben. Sie gehören in deterministische Logik, wie in [Agent Script: Regeln statt LLM](../agent-script-regeln-statt-llm/) beschrieben, und Sie testen sie mit Aktionsprüfungen und eigenen Prüfungen ohne Interpretationsspielraum. Ein Fehler stoppt das Release.
+1. **Geschäftsregeln: 100 Prozent, exakt geprüft.** Garantieberechtigung, Kreditlimits, Rabattfreigaben. Sie gehören in deterministische Logik, wie in [Agent Script: Regeln statt LLM](/blog/agent-script-regeln-statt-llm/) beschrieben, und Sie testen sie mit Aktionsprüfungen und eigenen Prüfungen ohne Interpretationsspielraum. Ein Fehler stoppt das Release.
 2. **Routing und Aktionen: nahe 100 Prozent.** Wird eine Ersatzteilfrage an den falschen Subagenten geleitet oder wird die Auftragsabfrage nicht ausgeführt, kann die Antwort nicht stimmen. Diese Prüfungen sind binär und günstig zu wiederholen.
 3. **Antwortqualität: eine Passrate über mehrere Läufe.** Für das vom LLM bewertete Ergebnis starte ich mit 90 Prozent in jedem von drei vollständigen Läufen und schaue, welche Fälle scheitern: Ein Fall, der in jedem Lauf scheitert, ist ein Befund, auch wenn die Gesamtquote über 90 Prozent bleibt. Das ist mein Ausgangswert, keine Salesforce-Vorgabe; die Fachseite bestätigt oder ändert ihn.
-4. **Schutzfälle: keine Fehler.** Anfragen außerhalb des Auftrags, Fragen nach Aufträgen eines anderen Händlers, versteckte Anweisungen in Freitext. Händlerportale und Garantieformulare sind Einfallstore für Prompt Injection, das beschreibe ich in [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
+4. **Schutzfälle: keine Fehler.** Anfragen außerhalb des Auftrags, Fragen nach Aufträgen eines anderen Händlers, versteckte Anweisungen in Freitext. Händlerportale und Garantieformulare sind Einfallstore für Prompt Injection, das beschreibe ich in [Prompt Injection im Händlerportal](/blog/prompt-injection-haendlerportal-agentforce/).
 
 Auch die Bewertung durch den Prüfer muss kontrolliert werden. Anthropic empfiehlt, Modell-Bewerter eng mit den Urteilen menschlicher Fachleute abzugleichen. Die Serviceexpertin liest also in den ersten Läufen eine Stichprobe der bewerteten Antworten. Weichen Expertin und Prüfer oft voneinander ab, sind die Ergebnisbeschreibungen in den Testfällen zu vage.
 
@@ -75,11 +77,11 @@ Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und einem Händlerportal.
 
 **Der Testsatz.** Das Team schreibt 60 Testfälle: 40 typische Fragen aus echten Händler-E-Mails, 10 Grenzfälle wie ersetzte Teilenummern oder eine Seriennummer, die in der installierten Basis fehlt, und 10 Schutzfälle wie die Frage nach Aufträgen eines anderen Händlers. Jeder Fall nutzt im Schnitt drei Aktionen: Maschine identifizieren, SAP abfragen, Antwort formulieren. Der Leitfaden von Anthropic nennt 20 bis 50 aus realen Fehlerfällen abgeleitete Aufgaben als guten Start.
 
-**Die Kosten.** Werden Testaktionen zum Sandbox-Satz abgerechnet, sind ein vollständiger Lauf 60 × 3 = 180 Aktionen zu 16 Credits, also 2.880 Credits. Drei Läufe pro Release ergeben 8.640 Credits, beim [Listenpreis von 500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) rund 43 €, ohne Prompts und Data 360. Drei Läufe pro Woche über einen zwölfwöchigen Piloten kosteten rund 520 €, weniger als eine falsche Verfügbarkeitszusage an einen Händler, dessen Maschine steht. Werden Ihre Testläufe nicht abgerechnet, bleiben als Kostenfaktoren nur angebundene Systeme und Data 360. Wie Sie den Rest der Rechnung schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
+**Die Kosten.** Werden Testaktionen zum Sandbox-Satz abgerechnet, sind ein vollständiger Lauf 60 × 3 = 180 Aktionen zu 16 Credits, also 2.880 Credits. Drei Läufe pro Release ergeben 8.640 Credits, beim [Listenpreis von 500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) rund 43 €, ohne Prompts und Data 360. Drei Läufe pro Woche über einen zwölfwöchigen Piloten kosteten rund 520 €, weniger als eine falsche Verfügbarkeitszusage an einen Händler, dessen Maschine steht. Werden Ihre Testläufe nicht abgerechnet, bleiben als Kostenfaktoren nur angebundene Systeme und Data 360. Wie Sie den Rest der Rechnung schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](/blog/flex-credits-agentforce-kosten-pro-aktion/).
 
 **Das erste Ergebnis.** Routing und Aktionen bestehen in 58 von 60 Fällen, das Ergebnis in 49 von 60. Die Fehler häufen sich: Acht der elf betreffen ersetzte Teilenummern, bei denen SAP die alte Nummer liefert und der Agent das Teil als nicht verfügbar meldet. Das ist eine Aufgabe für das SAP-Team, kein Prompt-Problem. Liefert die API das Nachfolgeteil, besteht die Ergebnisprüfung in drei Läufen in 56, 55 und 56 von 60 Fällen, jedes Mal über 90 Prozent. Kein Fall scheitert in allen drei Läufen, alle Schutzfälle bestehen, eine Serviceexpertin hat eine Stichprobe der Bewertungen gelesen, und die Serviceleitung gibt den Go-live zuerst für die Händler eines Landes frei.
 
-Die meisten Fehler in so einem Lauf weisen auf Daten und Schnittstellen hin. Deshalb stelle ich [Business Value und Datenqualität an den Anfang](../agentforce-business-value-datenqualitaet/).
+Die meisten Fehler in so einem Lauf weisen auf Daten und Schnittstellen hin. Deshalb stelle ich [Business Value und Datenqualität an den Anfang](/blog/agentforce-business-value-datenqualitaet/).
 
 ## Nach dem Go-live läuft das Monitoring ab dem ersten Tag
 
@@ -92,9 +94,19 @@ Tests decken die Fragen ab, an die Sie gedacht haben. Händler stellen andere. D
 
 Testen Sie neu, sobald sich etwas unter dem Agenten ändert: ein Subagent, ein Flow, Wissensartikel, ein Salesforce-Release, die SAP-API.
 
+```kreislauf
+titel: Kein Agent geht ohne Tests live
+mitte: Vor jedem | Agent-Release
+hinweis: Vier Schritte | Jede Änderung unter dem Agenten startet den Kreis neu: Subagent, Flow, Wissensartikel, Salesforce-Release oder SAP-API.
+- check | Testen | Testsatz ausführen | Typische Fragen, Grenzfälle und Schutzfälle laufen in drei vollständigen Läufen. | Fragen aus echten Anfragen; Grenzfälle und Schutzfälle; Drei vollständige Läufe
+- search | Bewerten | Schwellen nach Risiko | Geschäftsregeln müssen exakt stimmen, die Antwortqualität braucht eine Passrate. | Regeln zu 100 Prozent; Antworten ab 90 Prozent; Stichprobe durch Fachleute
+- pipeline | Freigeben | Entscheidung der Fachseite | Die Fachseite gibt frei, die Pipeline stoppt unter der Schwelle. | Tests in der Pipeline; Freigabe durch die Fachseite; Rollout in Stufen
+- feedback | Beobachten | Monitoring ab Tag eins | Fehlgeschlagene Gespräche werden gesichtet und typische Fehler in die Regressionstests übernommen. | Traces und Alarme; Fehlgeschlagene Gespräche sichten; Neue Fälle in die Tests
+```
+
 ## Die Tests gehören dem Kunden
 
-Umsetzungspartner können die Tests schreiben und ausführen, aber Testsatz, Schwellen und Go-live-Entscheidung gehören dem Unternehmen, das gegenüber seinen Händlern verantwortlich ist. Das ist das Prinzip aus [DevOps in Enterprise-Projekten](../warum-devops-salesforce-enterprise-projekte/): Agententests liegen im selben Repository und laufen in derselben Pipeline, mit JUnit-Ausgabe und einer Regel, die das Deployment stoppt, wenn die Passrate unter der Schwelle liegt. Das aufzusetzen gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
+Umsetzungspartner können die Tests schreiben und ausführen, aber Testsatz, Schwellen und Go-live-Entscheidung gehören dem Unternehmen, das gegenüber seinen Händlern verantwortlich ist. Das ist das Prinzip aus [DevOps in Enterprise-Projekten](/blog/warum-devops-salesforce-enterprise-projekte/): Agententests liegen im selben Repository und laufen in derselben Pipeline, mit JUnit-Ausgabe und einer Regel, die das Deployment stoppt, wenn die Passrate unter der Schwelle liegt. Das aufzusetzen gehört zu meiner Arbeit in [DevOps und Release-Management](/leistungen/devops-und-release-management/).
 
 ```schritte
 Inakzeptable Fehler benennen

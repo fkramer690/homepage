@@ -31,7 +31,7 @@ A manufacturer needs Salesforce B2B Commerce instead of a portal when dealers an
 
 ## What does a portal do, and what does a store add?
 
-A portal is an Experience Cloud site where external users see their own records and act on them. In [Manufacturing Cloud customer portal: what to show](../manufacturing-cloud-customer-portal/) I describe a portal where customers saw sales agreements, orders, master data and cases, and could request products and prices or place orders. That covers "show me" and "please do this for me".
+A portal is an Experience Cloud site where external users see their own records and act on them. In [Manufacturing Cloud customer portal: what to show](/en/blog/manufacturing-cloud-customer-portal/) I describe a portal where customers saw sales agreements, orders, master data and cases, and could request products and prices or place orders. That covers "show me" and "please do this for me".
 
 Salesforce B2B Commerce covers "let me buy this myself". According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5), merchants launch a store from a template in Experience Builder and define search, carts and checkouts for business customers. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) describes the data model behind it as follows:
 
@@ -65,7 +65,7 @@ $20 | Partner Community per login per month
 source: Salesforce, Experience Cloud for Manufacturing add-on, US list prices, billed annually
 ```
 
-So the buyer license is rarely what decides between a portal and a store; a store can even be cheaper per standard buyer. The difference lies in the commerce edition and in the effort to build catalog, prices and ERP calls. The pricing page charges the edition as a share of the gross merchandise value (GMV) that runs through the store and gives prices only on request. I cover the fee in [B2B Commerce pricing: what the GMV model costs](../b2b-commerce-pricing-gmv-model/). I compare portal licenses with internal ones in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+So the buyer license is rarely what decides between a portal and a store; a store can even be cheaper per standard buyer. The difference lies in the commerce edition and in the effort to build catalog, prices and ERP calls. The pricing page charges the edition as a share of the gross merchandise value (GMV) that runs through the store and gives prices only on request. I cover the fee in [B2B Commerce pricing: what the GMV model costs](/en/blog/b2b-commerce-pricing-gmv-model/). I compare portal licenses with internal ones in [Salesforce licenses: does everyone need a full one?](/en/blog/salesforce-licences-full-licence-needed/).
 
 ## When does a shop pay off?
 
@@ -76,7 +76,7 @@ I look at four numbers before anyone talks about store templates:
 3. **Number of ordering dealers and customers.** With five large customers on EDI, a store adds little. With hundreds of small dealers ordering by email, it adds a lot.
 4. **Share of phone and email orders.** This is the volume a store can actually move. Orders already coming through EDI stay there.
 
-If you cannot get these numbers from the ERP within a week, I would collect them before taking any further steps. They tell you whether a store fits; whether it pays off requires a three-year calculation of fees, licenses, implementation and operations against saved time, fewer errors and extra margin, which I walk through in the [business case for a B2B webshop](../b2b-webshop-business-case-manufacturers/).
+If you cannot get these numbers from the ERP within a week, I would collect them before taking any further steps. They tell you whether a store fits; whether it pays off requires a three-year calculation of fees, licenses, implementation and operations against saved time, fewer errors and extra margin, which I walk through in the [business case for a B2B webshop](/en/blog/b2b-webshop-business-case-manufacturers/).
 
 ## Worked example: 250 dealers, 30,000 order lines a year
 
@@ -98,4 +98,4 @@ And sometimes Salesforce is not the answer at all. If the company has no Salesfo
 
 ## First step: four numbers from twelve months of orders
 
-Pull the four numbers for the last twelve months: order lines, the share of order lines that refer to a part number, ordering dealers, and the share ordered by phone and email. If they point to a store, the next questions are who owns pricing and inventory, which buyer groups you need and which ERP calls must run in real time. I cover these questions in the [masterclass chapter on whether B2B Commerce is worth it](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/). An independent make-or-buy view is part of my work on [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
+Pull the four numbers for the last twelve months: order lines, the share of order lines that refer to a part number, ordering dealers, and the share ordered by phone and email. If they point to a store, the next questions are who owns pricing and inventory, which buyer groups you need and which ERP calls must run in real time. I cover these questions in the [masterclass chapter on whether B2B Commerce is worth it](/en/masterclass/b2b-commerce/b2b-commerce-worth-it-overview/). An independent make-or-buy view is part of my work on [make-or-buy and license forecasts](/en/services/make-or-buy-licences/).

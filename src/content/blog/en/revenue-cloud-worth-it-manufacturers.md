@@ -41,7 +41,7 @@ Revenue Cloud is Salesforce's quote-to-cash product, from the product catalog to
 - **Dynamic Revenue Orchestrator:** the steps after an order, up to fulfillment.
 - **Billing:** invoices, tax calculation, payment terms and credit memos.
 
-The product has had several names, among them Revenue Lifecycle Management and Agentforce Revenue Management. Which one applies where is covered in [Revenue Cloud, RLM, RCA: which product name applies?](../revenue-cloud-product-names-rlm-rca/).
+The product has had several names, among them Revenue Lifecycle Management and Agentforce Revenue Management. Which one applies where is covered in [Revenue Cloud, RLM, RCA: which product name applies?](/en/blog/revenue-cloud-product-names-rlm-rca/).
 
 For a new project, one option is no longer available.
 
@@ -72,7 +72,7 @@ For manufacturers whose quotes are mostly standard items priced in the ERP, Reve
 - **Rules live elsewhere and stay there.** If variant rules sit in SAP variant configuration or in the heads of application engineers, and nobody will maintain them twice, the configurator in Salesforce stays empty.
 - **No recurring revenue.** If every sale is a one-off machine and the invoice stays in SAP FI, several of the product's strongest parts go unused, and the case rests on configuration and pricing alone.
 
-The alternatives are Sales Cloud quotes with an ERP interface, a CPQ product from a partner, or a custom approach on the platform, as described in [From quote to sales agreement: the configurator](../quote-to-sales-agreement-product-configurator/). Whether Manufacturing Cloud fits on top is a separate question, covered in [Manufacturing Cloud: is it worth it?](../salesforce-manufacturing-cloud-is-it-worth-it/).
+The alternatives are Sales Cloud quotes with an ERP interface, a CPQ product from a partner, or a custom approach on the platform, as described in [From quote to sales agreement: the configurator](/en/blog/quote-to-sales-agreement-product-configurator/). Whether Manufacturing Cloud fits on top is a separate question, covered in [Manufacturing Cloud: is it worth it?](/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/).
 
 ## Advanced costs €200 per user on top of Sales Cloud
 
@@ -85,7 +85,7 @@ The [pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-managem
 
 The FAQ on the same page states that Revenue Cloud is a paid add-on bought in addition to a Sales Cloud subscription. "Invoicing" in Advanced means basic invoicing; usage billing, payments and collections come with Revenue Cloud Billing, a separate add-on with pricing available on request.
 
-An example calculation at list price: 50 sales users who create quotes get Revenue Cloud Advanced. That is 50 × €200 × 12 = €120,000 a year. If these users do not have Sales Cloud yet and Sales Cloud Core is the chosen base edition, Core at €195 per user per month adds €117,000 a year. Implementation, the SAP integration and maintenance are extra. A license forecast clarifies who really needs a license, as described in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/). Editions and add-ons are covered in detail in [Revenue Cloud pricing: Growth, Advanced and add-ons](../revenue-cloud-editions-pricing/).
+An example calculation at list price: 50 sales users who create quotes get Revenue Cloud Advanced. That is 50 × €200 × 12 = €120,000 a year. If these users do not have Sales Cloud yet and Sales Cloud Core is the chosen base edition, Core at €195 per user per month adds €117,000 a year. Implementation, the SAP integration and maintenance are extra. A license forecast clarifies who really needs a license, as described in [Salesforce licenses: does everyone need a full one?](/en/blog/salesforce-licences-full-licence-needed/). Editions and add-ons are covered in detail in [Revenue Cloud pricing: Growth, Advanced and add-ons](/en/blog/revenue-cloud-editions-pricing/).
 
 ## Worked example: 400 quotes a month, one in ten is a project
 
@@ -93,7 +93,7 @@ A component maker sells valves and drives in about 3,000 variants. Most of the b
 
 For the 360 standard quotes a month, Revenue Cloud adds little. The price comes from SAP either way, and the dealer conditions would have to be rebuilt or queried for every quote. For the 40 project quotes, the picture is different: options with rules, a contract with a term and later amendments are exactly what the product is built for.
 
-My recommendation in such a case: first decide whether SAP remains the price master, then license only the project sales team. As a license illustration: instead of licensing the whole sales organization, 15 users on Advanced cost €36,000 a year at list price, plus their Sales Cloud licenses. How to make the price master decision is covered in [Customer prices: SAP conditions or Salesforce Pricing?](../customer-prices-sap-conditions-or-salesforce-pricing/).
+My recommendation in such a case: first decide whether SAP remains the price master, then license only the project sales team. As a license illustration: instead of licensing the whole sales organization, 15 users on Advanced cost €36,000 a year at list price, plus their Sales Cloud licenses. How to make the price master decision is covered in [Customer prices: SAP conditions or Salesforce Pricing?](/en/blog/customer-prices-sap-conditions-or-salesforce-pricing/).
 
 ## Settle price master and invoice owner before choosing a partner
 
@@ -102,6 +102,6 @@ Partners will ask about features. The decisions that drive cost and timeline are
 1. **Price master.** Does SAP calculate the price, or Salesforce Pricing? Use one engine per price element, never two for the same one.
 2. **Invoice owner.** Does the invoice stay in SAP FI, or does it come from Revenue Cloud Billing? Finance decides, not the CRM team.
 3. **Configurator owner.** Who maintains variant rules after go-live, and in which system?
-4. **CPQ coexistence.** Existing CPQ customers decide whether and when to move. The [chapter on moving from CPQ](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/) covers the options.
+4. **CPQ coexistence.** Existing CPQ customers decide whether and when to move. The [chapter on moving from CPQ](/en/masterclass/revenue-cloud/from-cpq-to-revenue-cloud/) covers the options.
 
-How the steps from quote to invoice are split between Revenue Cloud and SAP is the subject of [Revenue Cloud and SAP: who owns what in quote to cash?](../revenue-cloud-sap-quote-to-cash-ownership/). The [overview chapter of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/) puts all of this in context, and I cover the architecture side in [Salesforce architecture](../../services/salesforce-architecture/).
+How the steps from quote to invoice are split between Revenue Cloud and SAP is the subject of [Revenue Cloud and SAP: who owns what in quote to cash?](/en/blog/revenue-cloud-sap-quote-to-cash-ownership/). The [overview chapter of the Revenue Cloud masterclass](/en/masterclass/revenue-cloud/revenue-cloud-overview/) puts all of this in context, and I cover the architecture side in [Salesforce architecture](/en/services/salesforce-architecture/).

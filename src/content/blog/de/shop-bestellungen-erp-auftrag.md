@@ -80,7 +80,7 @@ Ich sehe in der Fertigung drei Gründe.
 
 **Die Abwicklung liegt in SAP.** Verfügbarkeitsprüfung, Lieferung, Kommissionierung, Warenausgang und Fakturierung sind dort eingerichtet, oft mit jahrelang gewachsener kundenspezifischer Logik. Das in Salesforce nachzubauen, ist ein eigenes Programm.
 
-**Kredit, Preise und Steuern liegen in SAP.** Endgültig ist der Auftrag erst, wenn SAP ihn angenommen hat. Mein Artikel zu [Händlerbestand und Nachschub](../haendlerbestand-nachschub-agentforce/) folgt derselben Regel: Eine Anforderung wird erst zum verbindlichen Auftrag, wenn das ERP sie angenommen und eine Auftragsnummer zurückgegeben hat.
+**Kredit, Preise und Steuern liegen in SAP.** Endgültig ist der Auftrag erst, wenn SAP ihn angenommen hat. Mein Artikel zu [Händlerbestand und Nachschub](/blog/haendlerbestand-nachschub-agentforce/) folgt derselben Regel: Eine Anforderung wird erst zum verbindlichen Auftrag, wenn das ERP sie angenommen und eine Auftragsnummer zurückgegeben hat.
 
 Der Shop ist also der Ort, an dem der Auftrag beginnt und an dem der Käufer ihn verfolgt. SAP ist der Ort, an dem er abgewickelt wird.
 
@@ -109,13 +109,13 @@ Bei unmanaged Summaries befüllt Ihre Schnittstelle all das. Rechnungen sind nic
 - Rechnungen oder einen Link auf die Rechnung,
 - Stornos und Änderungen, die der Innendienst in SAP vornimmt.
 
-Der Integrationsnutzer braucht laut Developer Guide eine der Berechtigungen B2B Commerce Integrator User oder Edit Unmanaged Order Summaries. Nutzen Sie einen eigenen Integrationsnutzer mit Zertifikat oder Client Credentials. Der OAuth Username-Password Flow für Connected Apps endet am 20. Februar 2027, wie in [Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/) beschrieben.
+Der Integrationsnutzer braucht laut Developer Guide eine der Berechtigungen B2B Commerce Integrator User oder Edit Unmanaged Order Summaries. Nutzen Sie einen eigenen Integrationsnutzer mit Zertifikat oder Client Credentials. Der OAuth Username-Password Flow für Connected Apps endet am 20. Februar 2027, wie in [Passwort-Integrationen enden 2027](/blog/salesforce-passwort-integrationen-2027/) beschrieben.
 
-Händler, die den Status im Chat abfragen wollen, brauchen dieselben Daten. Ein [Agent, der den Auftragsstatus aus SAP liest](../agentforce-sap-auftragsstatus/), und die Bestellhistorie im Shop sollten dieselbe API nutzen, damit beide denselben Termin zeigen.
+Händler, die den Status im Chat abfragen wollen, brauchen dieselben Daten. Ein [Agent, der den Auftragsstatus aus SAP liest](/blog/agentforce-sap-auftragsstatus/), und die Bestellhistorie im Shop sollten dieselbe API nutzen, damit beide denselben Termin zeigen.
 
 ## Den Auftrag für SAP mit CreateOrder formen
 
-Der Extension Point **Commerce_Domain_Checkout_CreateOrder** "creates an order from cart information during checkout", so die [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html). Dort ergänzen Sie, was SAP braucht, im Standardauftrag aber fehlt, etwa Verkaufsorganisation, Auftragsart oder Versandbedingung. Prüfungen vor dem Anlegen des Auftrags, etwa Kreditprüfung oder Liefersperre, gehören in **Commerce_Domain_Checkout_PlaceOrder**, wie in [B2B-Checkout mit Bestellnummer](../b2b-checkout-bestellnummer-rechnung/) beschrieben. Diese Extension erlaubt nur einen externen Aufruf und keine Datenbankänderung. Eine synchrone Prüfung in SAP macht den Checkout außerdem von der Erreichbarkeit von SAP abhängig.
+Der Extension Point **Commerce_Domain_Checkout_CreateOrder** "creates an order from cart information during checkout", so die [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html). Dort ergänzen Sie, was SAP braucht, im Standardauftrag aber fehlt, etwa Verkaufsorganisation, Auftragsart oder Versandbedingung. Prüfungen vor dem Anlegen des Auftrags, etwa Kreditprüfung oder Liefersperre, gehören in **Commerce_Domain_Checkout_PlaceOrder**, wie in [B2B-Checkout mit Bestellnummer](/blog/b2b-checkout-bestellnummer-rechnung/) beschrieben. Diese Extension erlaubt nur einen externen Aufruf und keine Datenbankänderung. Eine synchrone Prüfung in SAP macht den Checkout außerdem von der Erreichbarkeit von SAP abhängig.
 
 Halten Sie den Auftrag schlank. Jedes zusätzliche Feld erfordert ein Mapping, das in jedem Salesforce-Release getestet werden muss.
 
@@ -133,4 +133,4 @@ Punkt fünf ist eine echte Grenze. Sollen alle SAP-Aufträge im Shop erscheinen,
 
 ## Erster Schritt: aufschreiben, wem der Auftrag in jedem Schritt gehört
 
-Schreiben Sie auf, wem der Auftrag in jedem Schritt gehört, vom Warenkorb bis zur Rechnung, und welchen Status der Käufer in jedem Schritt sieht. Halten Sie dabei auch fest, über welche Nummer sich Salesforce-Auftrag und SAP-Kundenauftrag zuordnen lassen und was passiert, wenn SAP eine Bestellung ablehnt oder nicht erreichbar ist. Entscheiden Sie dann, ob Order Management überhaupt eine Rolle spielt. Wie der Auftrag in die übrigen Datenflüsse passt, steht in [B2B Commerce und SAP: Welche Daten fließen wohin](../b2b-commerce-sap-datenfluesse/). Das [Kapitel zur ERP-Anbindung der Masterclass](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) ordnet den Zusammenhang ein. Eine unabhängige Prüfung solcher Designs gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+Schreiben Sie auf, wem der Auftrag in jedem Schritt gehört, vom Warenkorb bis zur Rechnung, und welchen Status der Käufer in jedem Schritt sieht. Halten Sie dabei auch fest, über welche Nummer sich Salesforce-Auftrag und SAP-Kundenauftrag zuordnen lassen und was passiert, wenn SAP eine Bestellung ablehnt oder nicht erreichbar ist. Entscheiden Sie dann, ob Order Management überhaupt eine Rolle spielt. Wie der Auftrag in die übrigen Datenflüsse passt, steht in [B2B Commerce und SAP: Welche Daten fließen wohin](/blog/b2b-commerce-sap-datenfluesse/). Das [Kapitel zur ERP-Anbindung der Masterclass](/masterclass/b2b-commerce/erp-integration-bestand-auftraege/) ordnet den Zusammenhang ein. Eine unabhängige Prüfung solcher Designs gehört zu meiner Arbeit in der [Salesforce-Architektur](/leistungen/salesforce-architektur/).

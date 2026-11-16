@@ -56,7 +56,7 @@ source: McKinsey, Beyond the copilot, August 2026
 
 That technology company moved from product pods of 8 to 10 people to agentic teams of 4 to 6 and reported roughly twice the capacity. McKinsey sees two role families emerging: "definers who fuse product and design, and builders who fuse development, testing, and operations".
 
-There are two caveats from the same source. The figures are self-reported by leaders, and 30 percent of respondents said team productivity fell. McKinsey also writes that "Speed is improving faster than quality". DORA's 2025 report found that AI adoption still has a [negative relationship with delivery stability](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), and DORA lists [working in small batches and a user-centric focus](https://dora.dev/capabilities/) among the seven capabilities that amplify AI's benefit. Small pods with daily feedback are a direct answer to both points. How to check whether your own program gets faster is the topic of [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
+There are two caveats from the same source. The figures are self-reported by leaders, and 30 percent of respondents said team productivity fell. McKinsey also writes that "Speed is improving faster than quality". DORA's 2025 report found that AI adoption still has a [negative relationship with delivery stability](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), and DORA lists [working in small batches and a user-centric focus](https://dora.dev/capabilities/) among the seven capabilities that amplify AI's benefit. Small pods with daily feedback are a direct answer to both points. How to check whether your own program gets faster is the topic of [measuring AI productivity in Salesforce projects](/en/blog/measuring-ai-productivity-salesforce-projects/).
 
 ## In the program organization the business side becomes the bottleneck
 
@@ -74,7 +74,7 @@ The daily demo replaces the stand-up and part of the status reporting. A steerin
 
 ### Ownership has to be written down
 
-With fewer people, each one carries more knowledge, and an agent owns nothing. The idea of a named owner per artifact fits the [object ownership matrix](../salesforce-object-ownership-matrix/) I use when several partners share one org: one team owns each object, and one person owns each Flow, class and agent. The pipeline gates are added on top. See [quality gates for AI code in the Salesforce pipeline](../quality-gates-for-ai-code-salesforce-pipeline/).
+With fewer people, each one carries more knowledge, and an agent owns nothing. The idea of a named owner per artifact fits the [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/) I use when several partners share one org: one team owns each object, and one person owns each Flow, class and agent. The pipeline gates are added on top. See [quality gates for AI code in the Salesforce pipeline](/en/blog/quality-gates-for-ai-code-salesforce-pipeline/).
 
 ## Worked example: from one large partner team to three pods
 
@@ -88,14 +88,14 @@ Three decisions make or break this setup:
 - **One lead architect across the pods.** Three pod architects would each design their own Account and Asset model. I would put the data model, sharing and the SAP interface under one lead architect on the client side, who sets the guardrails for the pod architects.
 - **Formal testing stays where data is posted to SAP.** Warranty credit notes go to SAP, so that stream keeps an end-to-end test before each release. The portal stream releases after daily acceptance plus automated regression and a sharing check, because dealer prices and orders must stay with the right dealer.
 
-Whether seven people deliver what twelve did is an open question until cycle times, rework, escaped defects and total cost are measured. The partner's price for the new setup belongs in the commercial model, see [fixed price vs time and materials](../fixed-price-vs-time-and-materials-ai/).
+Whether seven people deliver what twelve did is an open question until cycle times, rework, escaped defects and total cost are measured. The partner's price for the new setup belongs in the commercial model, see [fixed price vs time and materials](/en/blog/fixed-price-vs-time-and-materials-ai/).
 
 ## Where does the pod model not fit yet?
 
 - **Streams dominated by waiting.** If most of a story's lead time is spent waiting for the SAP team or a middleware change, a faster Salesforce pod changes little.
 - **Businesses that cannot free up people.** Without daily decisions from service or sales, a classic team with a product owner and planned UAT is the safer setup. Its developers can still use coding agents.
 - **Teams without a working pipeline.** Pods push more changes per day. Without version control, automated tests and validation deploys, the faster pace mostly produces faster defects.
-- **Limited seniority at the partner.** A pod has no juniors who learn alongside the work. If the builder-reviewer leaves, a large share of the knowledge leaves with them. Minimum staffing periods matter even more than in the setup I describe in [why I cap nearshore teams at eight developers](../salesforce-nearshore-teams-eight-developers/), and what changes for nearshore teams working with agents is covered in [nearshore Salesforce teams with AI agents](../nearshore-salesforce-teams-ai-agents/).
+- **Limited seniority at the partner.** A pod has no juniors who learn alongside the work. If the builder-reviewer leaves, a large share of the knowledge leaves with them. Minimum staffing periods matter even more than in the setup I describe in [why I cap nearshore teams at eight developers](/en/blog/salesforce-nearshore-teams-eight-developers/), and what changes for nearshore teams working with agents is covered in [nearshore Salesforce teams with AI agents](/en/blog/nearshore-salesforce-teams-ai-agents/).
 
 ## Pick one stream with a clear process
 
@@ -107,9 +107,9 @@ Name the domain lead first
 Write intents
   For the first ten stories with testable acceptance criteria; keep precise specifications for interfaces and rules with financial effect.
 Agree the guardrails
-  With the partner: named owner per artifact, agents only in sandboxes and scratch orgs, the same gates for all code. The contract side is in [partners coding with AI: contract rules](../partners-using-ai-coding-contract-rules/).
+  With the partner: named owner per artifact, agents only in sandboxes and scratch orgs, the same gates for all code. The contract side is in [partners coding with AI: contract rules](/en/blog/partners-using-ai-coding-contract-rules/).
 Measure and decide | 3 months
   Measure cycle time and rework, and only then decide on the other streams.
 ```
 
-The ten intents from the third step are also the yardstick for the measurement after three months. Planning streams, team setups and the business time required for them is the core of my [program management for Salesforce programs](../../services/program-management-nearshore/).
+The ten intents from the third step are also the yardstick for the measurement after three months. Planning streams, team setups and the business time required for them is the core of my [program management for Salesforce programs](/en/services/program-management-nearshore/).

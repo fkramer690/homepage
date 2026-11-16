@@ -56,7 +56,7 @@ The calculation only uses the revenue stored in the Transaction Journal. Accordi
 | Partner documents | Partners upload invoices or proof of sale as CSV through Experience Cloud | the rebate depends on the dealer's sell-out |
 | External systems | Integration, Bulk API or Data Loader, for example from the ERP | invoices live in the ERP |
 
-For most manufacturers it will be the third route, because invoices are created in the ERP. That raises the same question as for sales agreements in [part 3](../sales-agreements-volume-shortfall-erp/): which data does the ERP deliver, at which level and how often?
+For most manufacturers it will be the third route, because invoices are created in the ERP. That raises the same question as for sales agreements in [part 3](/en/blog/sales-agreements-volume-shortfall-erp/): which data does the ERP deliver, at which level and how often?
 
 The second route is interesting for a particular kind of program. If the rebate depends on the dealer's sales to their own customers, only the dealer knows the numbers. They then upload the numbers, and the manufacturer has to review them before they lead to a payout.
 
@@ -91,13 +91,13 @@ Calculation --> Approval
 Approval --Amounts--> Payout
 ```
 
-Accruals deserve their own meeting with finance. A company that accrues an annual rebate monthly needs a figure every month. If that figure comes from Salesforce, it has to be in the ERP in time for month-end close. How I decide which system leads for each type of data is described under [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
+Accruals deserve their own meeting with finance. A company that accrues an annual rebate monthly needs a figure every month. If that figure comes from Salesforce, it has to be in the ERP in time for month-end close. How I decide which system leads for each type of data is described under [integration with ERP, middleware and telephony](/en/services/salesforce-integration/).
 
 ## Dealers can see their amounts in the portal
 
 That is optional. According to Salesforce Help, partners can see their payouts through Experience Cloud. For dealers who ask about their status by email today, that is the most visible benefit.
 
-In the overview of portal licenses I describe in [part 7: Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/), Salesforce lists rebate claims under the Partner Community for Manufacturing license. So if you want to show dealers their rebates in the portal, plan for partner licenses, not the cheaper customer license.
+In the overview of portal licenses I describe in [part 7: Manufacturing Cloud customer portal](/en/blog/manufacturing-cloud-customer-portal/), Salesforce lists rebate claims under the Partner Community for Manufacturing license. So if you want to show dealers their rebates in the portal, plan for partner licenses, not the cheaper customer license.
 
 ```hinweis achtung
 A dealer who sees their interim status adjusts their behavior based on it. If returns are missing there or numbers are a week old, disputes arise at the end of the period. I would only show the interim status once the calculation has produced correct internal results for a few periods.
@@ -116,7 +116,7 @@ The same rule applies here: you buy a feature when it fits the business. For reb
 - **Errors in the spreadsheet.** The calculation is laborious today, error-prone or depends on one person.
 - **Dealers ask.** Inside sales regularly answers questions about rebate status.
 
-I would hold back with a simple annual bonus for a few customers. Many ERP systems can settle that through pricing conditions, without maintaining a second set of logic in Salesforce. Rebates reward volume; price claims from distributors are a different process, see [ship and debit](../ship-and-debit-price-protection-distributors/). Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
+I would hold back with a simple annual bonus for a few customers. Many ERP systems can settle that through pricing conditions, without maintaining a second set of logic in Salesforce. Rebates reward volume; price claims from distributors are a different process, see [ship and debit](/en/blog/ship-and-debit-price-protection-distributors/). Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/).
 
 ## Write every formula in the current rebate spreadsheet down as a rule
 

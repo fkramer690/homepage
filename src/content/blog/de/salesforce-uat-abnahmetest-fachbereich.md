@@ -49,12 +49,12 @@ Fachanwender können schon früher beteiligt sein, etwa an Prototypen oder Demos
 Partnerlieferungen werden in vielen Programmen ohne technisches Review abgenommen, und die Probleme zeigen sich erst im UAT oder in der Produktion. Mit mehreren Partnern kommen zwei Effekte hinzu:
 
 - **Jeder testet seinen Teil.** Partner A testet den Angebotsprozess, Partner B die Auftragsübergabe ans ERP. Den Weg vom Angebot bis zum Auftrag im ERP testet erst der Fachbereich im UAT.
-- **UAT ist der erste gemeinsame Stand.** Wenn jeder Partner in seiner eigenen Umgebung testet, werden die Änderungen erst in der UAT-Sandbox zusammengeführt. Eine [Sandbox-Strategie mit einer gemeinsamen Integrationsumgebung](../salesforce-sandbox-strategie-mehrere-partner/) holt diesen Moment nach vorn.
+- **UAT ist der erste gemeinsame Stand.** Wenn jeder Partner in seiner eigenen Umgebung testet, werden die Änderungen erst in der UAT-Sandbox zusammengeführt. Eine [Sandbox-Strategie mit einer gemeinsamen Integrationsumgebung](/blog/salesforce-sandbox-strategie-mehrere-partner/) holt diesen Moment nach vorn.
 
 Der Kunde legt deshalb die Regeln fest, und jede Lieferung wird geprüft, bevor sie in die nächste Stufe geht. Für den Weg über mehrere Partner hinweg braucht es eine benannte Verantwortung: eine kundenseitige Testleitung, einen Lead-Partner oder die Programmleitung, die den Ende-zu-Ende-Test koordiniert und über den Start des UAT entscheidet. Ein Feature gelangt erst ins UAT, wenn diese Eingangskriterien erfüllt sind:
 
 - Der Release-Kandidat ist vollständig in der UAT-Sandbox installiert, mit eindeutiger Version.
-- System- und Integrationstests sind dokumentiert und bestanden, das [Pull-Request-Review](../warum-pull-request-reviews-pflicht-sind/) hat den Code freigegeben.
+- System- und Integrationstests sind dokumentiert und bestanden, das [Pull-Request-Review](/blog/warum-pull-request-reviews-pflicht-sind/) hat den Code freigegeben.
 - Testnutzer, Testdaten und Schnittstellen zum Test-ERP sind geprüft.
 - Bekannte Fehler sind dokumentiert, und ein kurzer Smoke-Test der Umgebung ist bestanden.
 
@@ -77,9 +77,9 @@ Freigabe | Ende des Zeitfensters · Fachbereich
 
 Drei Punkte entscheiden im Fachbereich darüber, ob das funktioniert:
 
-1. **Testnutzer pro Rolle.** Wer als Administrator testet, findet keine Rechteprobleme. Jede fachliche Rolle aus dem [Berechtigungskonzept](../salesforce-berechtigungskonzept-permission-sets/), etwa Innendienst oder Servicedisponent, braucht einen Testnutzer mit genau ihren Rechten: Lizenz, Permission Sets und Freigaben.
+1. **Testnutzer pro Rolle.** Wer als Administrator testet, findet keine Rechteprobleme. Jede fachliche Rolle aus dem [Berechtigungskonzept](/blog/salesforce-berechtigungskonzept-permission-sets/), etwa Innendienst oder Servicedisponent, braucht einen Testnutzer mit genau ihren Rechten: Lizenz, Permission Sets und Freigaben.
 2. **Echte Datenmengen.** Ein Report, der in einer fast leeren Sandbox schnell lädt, kann mit Millionen von Assets deutlich langsamer sein. Deshalb läuft UAT bei großen Datenmengen und komplexen Datenbeziehungen in der Full Sandbox. Für klar abgegrenzte Releases kann eine Partial Copy Sandbox mit gezielt ausgewählten Testdaten reichen. Eine Full Sandbox lässt sich nur alle 29 Tage aktualisieren, und der Refresh kann mehrere Tage dauern, deshalb gehört er früh in den Releaseplan. Wer Produktionsdaten kopiert, maskiert personenbezogene und vertrauliche Felder, gerade wenn mehrere Partner Zugriff auf die Sandbox haben.
-3. **Freigestellte Tester.** Fachanwender, die neben dem Tagesgeschäft testen, testen den einfachsten Weg und hören auf, sobald er funktioniert. Wer UAT plant, plant deshalb auch, wer im Fachbereich in dieser Zeit die Arbeit übernimmt. Gute Tester sind die Key User, die nach dem Go-live die erste Anlaufstelle in ihrem Team sind. Was sie sonst leisten und wie viel Zeit sie brauchen, steht in [Key User in Salesforce-Einführungen: was sie leisten](../salesforce-key-user-netzwerk/).
+3. **Freigestellte Tester.** Fachanwender, die neben dem Tagesgeschäft testen, testen den einfachsten Weg und hören auf, sobald er funktioniert. Wer UAT plant, plant deshalb auch, wer im Fachbereich in dieser Zeit die Arbeit übernimmt. Gute Tester sind die Key User, die nach dem Go-live die erste Anlaufstelle in ihrem Team sind. Was sie sonst leisten und wie viel Zeit sie brauchen, steht in [Key User in Salesforce-Einführungen: was sie leisten](/blog/salesforce-key-user-netzwerk/).
 
 ## Wie viel Zeit muss der Fachbereich einplanen?
 
@@ -99,8 +99,8 @@ Halten Sie im Vertrag mit dem Partner fest, was „abgenommen“ bedeutet: Wer s
 
 ## Automatisieren lässt sich, was vor und nach dem UAT kommt
 
-Die Abnahmeentscheidung bleibt beim Menschen, weil es um das Urteil der Fachanwender geht. Automatisieren lässt sich aber vieles davor und danach, etwa mit Apex-Tests und Flow-Tests in der Pipeline: Regressionstests für die wichtigsten Prozesse, die bei jedem Release laufen, und die Vorbereitung der Sandbox nach dem Refresh. Ein guter Anfang sind die fünf Prozesse mit dem größten finanziellen Einfluss, etwa Angebot, Auftrag und Rechnung. Je mehr Tests die Pipeline übernimmt, desto mehr Zeit bleibt den Testern für die neuen Funktionen. Für mobile Apps im Außendienst gilt das besonders, weil neue App-Versionen, Betriebssystem-Updates und geänderte Offline-Einstellungen die Abläufe der Techniker verändern können, siehe [Field Service App Updates testen](../field-service-app-updates-testen/).
+Die Abnahmeentscheidung bleibt beim Menschen, weil es um das Urteil der Fachanwender geht. Automatisieren lässt sich aber vieles davor und danach, etwa mit Apex-Tests und Flow-Tests in der Pipeline: Regressionstests für die wichtigsten Prozesse, die bei jedem Release laufen, und die Vorbereitung der Sandbox nach dem Refresh. Ein guter Anfang sind die fünf Prozesse mit dem größten finanziellen Einfluss, etwa Angebot, Auftrag und Rechnung. Je mehr Tests die Pipeline übernimmt, desto mehr Zeit bleibt den Testern für die neuen Funktionen. Für mobile Apps im Außendienst gilt das besonders, weil neue App-Versionen, Betriebssystem-Updates und geänderte Offline-Einstellungen die Abläufe der Techniker verändern können, siehe [Field Service App Updates testen](/blog/field-service-app-updates-testen/).
 
 ## Systemtest und Abnahmetest im nächsten Release trennen
 
-Trennen Sie im nächsten Release Systemtest und Abnahmetest. Verlangen Sie vom Partner einen dokumentierten Systemtest pro Feature, bevor es in die UAT-Sandbox geht; diese Regel gehört in die [Partnersteuerung](../../leistungen/partnersteuerung/). Legen Sie Testnutzer pro Rolle an. Für das Release danach schreibt der Fachbereich die Testfälle schon beim Verfeinern der User Stories.
+Trennen Sie im nächsten Release Systemtest und Abnahmetest. Verlangen Sie vom Partner einen dokumentierten Systemtest pro Feature, bevor es in die UAT-Sandbox geht; diese Regel gehört in die [Partnersteuerung](/leistungen/partnersteuerung/). Legen Sie Testnutzer pro Rolle an. Für das Release danach schreibt der Fachbereich die Testfälle schon beim Verfeinern der User Stories.

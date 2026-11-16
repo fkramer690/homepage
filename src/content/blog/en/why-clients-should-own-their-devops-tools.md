@@ -46,7 +46,7 @@ An empty GitHub organization, Jira Cloud site or Miro team can be created in an 
 In a typical Salesforce program, project knowledge and control are spread across more tools than people realize:
 
 1. **Salesforce orgs, sandboxes and the Dev Hub.** These usually belong to the client already. But check who holds the system administrator accounts and whether they are personal. The Dev Hub needs special attention: it owns scratch orgs, package versions and namespaces, so for client-specific packages it belongs in the client's production org, not in a partner's Developer Edition or trial org.
-2. **Git repository and CI/CD pipeline.** The repository is the history of every change, and the pipeline decides what reaches production. I explain why both are essential in my article on [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
+2. **Git repository and CI/CD pipeline.** The repository is the history of every change, and the pipeline decides what reaches production. I explain why both are essential in my article on [why DevOps decides Salesforce enterprise projects](/en/blog/why-devops-matters-salesforce-enterprise/).
 3. **Jira or Azure Boards.** User stories, acceptance criteria, defects and decisions. Without them, nobody can explain later why something was built the way it was.
 4. **Confluence or a wiki.** Architecture decisions, interface descriptions, operating manuals.
 5. **Miro or similar whiteboards.** Process maps, data models and workshop results, often the only place where the target picture was ever drawn.
@@ -80,9 +80,9 @@ None of this is a reproach to partners. Mature partners can work in a client-con
 
 ## Owning the tools keeps partners comparable and replaceable
 
-As an [architect on the client side](../../#about), one of my main goals is to keep implementation partners comparable and replaceable. That only works if the foundations belong to the client: the repository, the pipeline, the backlog and the documentation. Then a new partner can be onboarded into a known setup with written standards. A departing partner still hands over knowledge, open risks and running tasks, but nobody has to extract repositories or backlogs from its systems. Comparing partners also needs shared delivery standards and metrics.
+As an [architect on the client side](/en/#about), one of my main goals is to keep implementation partners comparable and replaceable. That only works if the foundations belong to the client: the repository, the pipeline, the backlog and the documentation. Then a new partner can be onboarded into a known setup with written standards. A departing partner still hands over knowledge, open risks and running tasks, but nobody has to extract repositories or backlogs from its systems. Comparing partners also needs shared delivery standards and metrics.
 
-Client-owned tools also make it possible to build up internal responsibility. In the program I described in my DevOps article, the release process was eventually handed over to an internal colleague. A handover like that is only realistic when the tools and rights are already on the client side. Otherwise, the internal person inherits a process that still depends on someone else's accounts. Ownership of tools is the basis of good [partner steering and governance](../../services/partner-governance/).
+Client-owned tools also make it possible to build up internal responsibility. In the program I described in my DevOps article, the release process was eventually handed over to an internal colleague. A handover like that is only realistic when the tools and rights are already on the client side. Otherwise, the internal person inherits a process that still depends on someone else's accounts. Ownership of tools is the basis of good [partner steering and governance](/en/services/partner-governance/).
 
 ## Rules for practice, before the first partner starts
 

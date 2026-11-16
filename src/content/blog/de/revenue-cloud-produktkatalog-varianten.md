@@ -30,7 +30,7 @@ Im Produktkatalog von Revenue Cloud bildet ein Maschinenbauer die Vertriebssicht
 
 ## Woraus besteht der Produktkatalog in Revenue Cloud?
 
-Product Catalog Management ist der Teil von Agentforce Revenue Management, früher Revenue Cloud, in dem Produkte und ihre Strukturen verwaltet werden. Ich bleibe hier beim Namen Revenue Cloud, weil die Lizenzen ihn noch verwenden, etwa Revenue Cloud Advanced. Trailhead nennt es "a centralized product model that's the single source of truth for product data", und andere Clouds wie Agentforce Manufacturing (Manufacturing Cloud) können dieselben Produkt- und Preisinformationen über APIs nutzen, wie das [Trailhead-Modul zu den Grundlagen](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management) erläutert. Die Dokumentation nutzt auch das kürzere Revenue Management; die [Übersicht der Produktnamen](../revenue-cloud-produktnamen-rlm-rca/) ordnet die Begriffe ein.
+Product Catalog Management ist der Teil von Agentforce Revenue Management, früher Revenue Cloud, in dem Produkte und ihre Strukturen verwaltet werden. Ich bleibe hier beim Namen Revenue Cloud, weil die Lizenzen ihn noch verwenden, etwa Revenue Cloud Advanced. Trailhead nennt es "a centralized product model that's the single source of truth for product data", und andere Clouds wie Agentforce Manufacturing (Manufacturing Cloud) können dieselben Produkt- und Preisinformationen über APIs nutzen, wie das [Trailhead-Modul zu den Grundlagen](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management) erläutert. Die Dokumentation nutzt auch das kürzere Revenue Management; die [Übersicht der Produktnamen](/blog/revenue-cloud-produktnamen-rlm-rca/) ordnet die Begriffe ein.
 
 Die Bausteine laut dem [Trailhead-Modul zu Product Catalog Management](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/get-started-with-product-catalog-management):
 
@@ -56,7 +56,7 @@ Die wichtigste Entscheidung lautet: Wann wird eine Variante ein Produkt, und wan
 
 Eine eigene Materialnummer in SAP reicht für ein eigenes Produkt nicht. Salesforce [beschreibt den umgekehrten Ansatz](https://help.salesforce.com/s/articleView?id=ind.rev_product_and_attributes_migration.htm&language=en_US&type=5): Mehrere ERP-SKUs können ein kommerzielles Produkt mit Attributen werden, und Dynamic Revenue Orchestrator ordnet die Auswahl über Dekompositionsregeln den SKUs zu, die die Auftragsabwicklung braucht. Produktvariationen gibt es seit Summer '26; sie fassen verkaufbare Produkte unter einem gemeinsamen Elternprodukt zusammen.
 
-Auch Sales Agreements erzwingen keine eigenen Produkte. Der [Hilfeartikel](https://help.salesforce.com/s/articleView?id=ind.sa_user_addprod_task.htm&language=en_US&type=5) zeigt denselben Dieselgenerator zweimal, mit 2.000 und 2.500 Kilowatt, als zwei Zeilen in einem Agreement. Siehe auch [vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/).
+Auch Sales Agreements erzwingen keine eigenen Produkte. Der [Hilfeartikel](https://help.salesforce.com/s/articleView?id=ind.sa_user_addprod_task.htm&language=en_US&type=5) zeigt denselben Dieselgenerator zweimal, mit 2.000 und 2.500 Kilowatt, als zwei Zeilen in einem Agreement. Siehe auch [vom Angebot zum Sales Agreement](/blog/angebot-zu-sales-agreement-produktkonfigurator/).
 
 Eine Variante erhält ein eigenes Produkt, wenn sie eine eigene Preisliste, ein eigenes Servicemodell oder einen eigenen Lebenszyklus hat. Eine Seriennummer allein ist kein Grund, weil sie eine installierte Maschine bezeichnet, keine Produktdefinition. Eine Abkantpresse mit drei Biegelängen, zwei Steuerungen und optionalem Hinteranschlag ist ein Produkt mit drei Attributen.
 
@@ -64,7 +64,7 @@ Die Klassifizierung trägt die Attribute pro Maschinenfamilie. Trailhead zeigt d
 
 Zubehör und Pakete, die der Vertrieb separat wählt, bepreist oder zählt, gehören in ein Bundle. Die [Trailhead-Einheit zu Bundles](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/create-a-product-bundle) erklärt die Bestandteile: Produktgruppen im Bundle, lokale Kardinalität pro Bestandteil (Pflicht, standardmäßig enthalten, Menge änderbar oder nicht, mit Standard-, Mindest- und Höchstmenge) und Gruppenkardinalität mit Mindest- und Höchstzahl an Produkten. Statische Bundles kann der Kunde nicht ändern, konfigurierbare Bundles lassen sich beim Verkauf anpassen. Für eine Maschine mit Werkzeugen, Sicherheitspaket und Inbetriebnahme ist das ein konfigurierbares Bundle mit drei Gruppen.
 
-Welche Kombinationen erlaubt sind, entscheidet der Konfigurator, nicht der Katalog. Wie seine Regeln funktionieren, steht in [Revenue Cloud Konfigurator: Wann lohnen Constraint-Regeln?](../revenue-cloud-konfigurator-constraint-regeln/).
+Welche Kombinationen erlaubt sind, entscheidet der Konfigurator, nicht der Katalog. Wie seine Regeln funktionieren, steht in [Revenue Cloud Konfigurator: Wann lohnen Constraint-Regeln?](/blog/revenue-cloud-konfigurator-constraint-regeln/).
 
 ## Welche Daten kommen aus dem ERP und welche gibt es nur in Salesforce?
 
@@ -87,7 +87,7 @@ Die fünfte Zeile erfordert besondere Sorgfalt.
 Hat das Attribut "Steuerung" in Salesforce den Wert "S2", muss dieser Wert einem gültigen Merkmalswert oder technischen Produkt in SAP zugeordnet sein, sonst scheitert der Auftrag bei der Übergabe. Die Codes müssen nicht gleich sein, die Zuordnung aber vollständig. Ich würde pro Attribut eine Zuordnungstabelle führen und sie von der Schnittstelle prüfen lassen, bevor der Auftrag aktiviert wird.
 ```
 
-Wer welches Objekt in der Org verantwortet, legt eine [Object Ownership Matrix](../object-ownership-matrix-salesforce/) fest. Wie die Preise dann aus dem Preisbuch ermittelt werden, steht in [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](../revenue-cloud-preisprozeduren/).
+Wer welches Objekt in der Org verantwortet, legt eine [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/) fest. Wie die Preise dann aus dem Preisbuch ermittelt werden, steht in [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](/blog/revenue-cloud-preisprozeduren/).
 
 ## Brauchen Ersatzteile und Services eigene Kataloge?
 
@@ -110,7 +110,7 @@ Das Sortiment für den Maschinenvertrieb umfasst dann rund 140 Produktdatensätz
 
 ## Katalogdaten sind Konfiguration und brauchen einen Verantwortlichen
 
-Klassifizierungen, Attribute und Bundles sind Datensätze, keine Metadaten. Katalogänderungen werden also in einer Sandbox getestet und als Daten durch dieselbe Pipeline geführt wie Metadaten. Wie das mit SFDMU oder kommerziellen Werkzeugen funktioniert, steht im DevOps-Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/); die Besonderheiten von Revenue Cloud stehen in [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/).
+Klassifizierungen, Attribute und Bundles sind Datensätze, keine Metadaten. Katalogänderungen werden also in einer Sandbox getestet und als Daten durch dieselbe Pipeline geführt wie Metadaten. Wie das mit SFDMU oder kommerziellen Werkzeugen funktioniert, steht im DevOps-Kapitel [Daten und Konfiguration](/masterclass/devops-release-management/daten-und-konfiguration/); die Besonderheiten von Revenue Cloud stehen in [Revenue Cloud Deployments](/blog/revenue-cloud-konfiguration-deployment/).
 
 ```vertiefung Für Entwickler
 titel: Was die Object Deployment Reference vorgibt
@@ -127,4 +127,4 @@ Verantwortlich sollte das Produktmanagement des Herstellers sein, nicht der Impl
 4. **Trennen Sie Maschinen, Ersatzteile und Services** in Kataloge mit unterschiedlichen Verantwortlichen.
 5. **Benennen Sie den Katalogverantwortlichen** und stellen Sie den Katalog als Daten unter Versionskontrolle.
 
-Punkt 2 entscheidet über die Größe des Katalogs: Eine Variante ohne eigene Preisliste, eigenes Servicemodell oder eigenen Lebenszyklus bleibt ein Attribut und erhält keinen eigenen Produktdatensatz. Das gesamte Kapitel finden Sie im Masterclass-Teil [Katalog, Konfigurator, Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/), und die Grenze zwischen SAP und Salesforce zu ziehen gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+Punkt 2 entscheidet über die Größe des Katalogs: Eine Variante ohne eigene Preisliste, eigenes Servicemodell oder eigenen Lebenszyklus bleibt ein Attribut und erhält keinen eigenen Produktdatensatz. Das gesamte Kapitel finden Sie im Masterclass-Teil [Katalog, Konfigurator, Preise](/masterclass/revenue-cloud/produktkatalog-konfigurator-preise/), und die Grenze zwischen SAP und Salesforce zu ziehen gehört zu meiner Arbeit in der [Salesforce-Architektur](/leistungen/salesforce-architektur/).

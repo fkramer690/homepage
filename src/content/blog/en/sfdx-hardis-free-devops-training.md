@@ -26,7 +26,7 @@ faq:
     a: "No. Cloudity describes it as a badge, not a certification. It is stronger evidence of hands-on work than a quiz, because an automated job checks your own repository."
 ---
 
-The free DevOps training for [sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) is the most useful Salesforce DevOps course I have taken. In 27 hands-on labs across three levels, you build an end-to-end reference pipeline on free Salesforce orgs, from your first user story to production releases, hotfixes and monitoring. Badges are only awarded when an automated job has verified your work in your own repository. I completed all three levels in October 2026, and even with almost two years of sfdx-hardis experience it took me nearly a full day.
+The free DevOps training for [sfdx-hardis](/en/blog/sfdx-hardis-open-source-salesforce-devops/) is the most useful Salesforce DevOps course I have taken. In 27 hands-on labs across three levels, you build an end-to-end reference pipeline on free Salesforce orgs, from your first user story to production releases, hotfixes and monitoring. Badges are only awarded when an automated job has verified your work in your own repository. I completed all three levels in October 2026, and even with almost two years of sfdx-hardis experience it took me nearly a full day.
 
 ## Why did I take the training?
 
@@ -34,7 +34,7 @@ Honestly, LinkedIn made me do it. Every day more sfdx-hardis badges appeared in 
 
 I did not start from zero. I use sfdx-hardis in client projects, have worked with it for almost two years and know Git well. I have also completed DevOps courses from Gearset, Flosum and Copado. That gave me a good comparison, and my criteria were simple: the share of hands-on work, exercises that are checked automatically, end-to-end coverage and cost. By those criteria, this course comes out on top for me.
 
-If you don't know the tool yet, start with my [introduction to sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/). It explains what the toolkit does and how it compares to commercial platforms.
+If you don't know the tool yet, start with my [introduction to sfdx-hardis](/en/blog/sfdx-hardis-open-source-salesforce-devops/). It explains what the toolkit does and how it compares to commercial platforms.
 
 ## What does the sfdx-hardis training cover?
 
@@ -91,9 +91,9 @@ I would recommend it to three groups:
 
 - **Admins and consultants** who want to stop fearing Git. Levels 1 and 2 show that branches, pull requests and merge conflicts are manageable with the VS Code extension.
 - **Developers and tech leads** who know Git but have not seen a complete Salesforce pipeline, including deployment actions, quality gates and monitoring.
-- **Release managers and architects** who own the release process. Level 3 is the part I would make mandatory for anyone in that role, especially in programs with several partners, where [pull request reviews](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) and a clear release rhythm make the difference.
+- **Release managers and architects** who own the release process. Level 3 is the part I would make mandatory for anyone in that role, especially in programs with several partners, where [pull request reviews](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/) and a clear release rhythm make the difference.
 
-For clients, it is also a license-free way to build internal DevOps knowledge. The real investment is about 13 hours per person, and that knowledge is the basis for owning the release process instead of leaving it with a partner. That is a theme in most of my [architecture and governance work](../../services/partner-governance/).
+For clients, it is also a license-free way to build internal DevOps knowledge. The real investment is about 13 hours per person, and that knowledge is the basis for owning the release process instead of leaving it with a partner. That is a theme in most of my [architecture and governance work](/en/services/partner-governance/).
 
 ## My verdict: plan one day with experience, two without
 

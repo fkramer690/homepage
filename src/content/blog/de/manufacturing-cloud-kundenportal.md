@@ -37,11 +37,11 @@ Im Projekt hatte das Portal zwei Arten von Funktionen. Kunden konnten sehen:
 
 Außerdem konnten Kunden selbst aktiv werden:
 
-- **Neue Produkte und Preise anfragen.** Die Anfrage geht in den Angebotsprozess, den ich in [Teil 2: Vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/) beschreibe.
-- **Bestellungen aufgeben.** Eine einfache Auftragserfassung ist im Portal möglich. Sollen Kunden einen großen Katalog mit eigenen Preisen sowie Warenkorb und Checkout nutzen, ist das meist ein B2B-Shop; wann ein Portal reicht, steht in [Kapitel 1 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/).
+- **Neue Produkte und Preise anfragen.** Die Anfrage geht in den Angebotsprozess, den ich in [Teil 2: Vom Angebot zum Sales Agreement](/blog/angebot-zu-sales-agreement-produktkonfigurator/) beschreibe.
+- **Bestellungen aufgeben.** Eine einfache Auftragserfassung ist im Portal möglich. Sollen Kunden einen großen Katalog mit eigenen Preisen sowie Warenkorb und Checkout nutzen, ist das meist ein B2B-Shop; wann ein Portal reicht, steht in [Kapitel 1 der Masterclass B2B Commerce](/masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/).
 - **Bestimmte Stammdaten selbst pflegen**, etwa die Rechnungsadresse.
 
-Für den Hersteller hat das einen einfachen Nutzen: Fragen wie „Wie viel habe ich von meinem Rahmenvertrag schon abgerufen?“ oder „Wo steht meine Bestellung?“ beantwortet der Kunde selbst, ohne E-Mail an den Innendienst. Damit das trägt, müssen die Zahlen im Portal stimmen. Woher die Ist-Mengen im Sales Agreement stammen, behandle ich in [Teil 3: Sales Agreements, fehlende Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/).
+Für den Hersteller hat das einen einfachen Nutzen: Fragen wie „Wie viel habe ich von meinem Rahmenvertrag schon abgerufen?“ oder „Wo steht meine Bestellung?“ beantwortet der Kunde selbst, ohne E-Mail an den Innendienst. Damit das trägt, müssen die Zahlen im Portal stimmen. Woher die Ist-Mengen im Sales Agreement stammen, behandle ich in [Teil 3: Sales Agreements, fehlende Abnahmemengen erkennen](/blog/sales-agreements-abnahmemengen-erp/).
 
 ## Welche Lizenz brauchen Kunden im Portal?
 
@@ -60,7 +60,7 @@ In meinem Projekt hatten die Kunden Customer Community Plus for Manufacturing un
 Wenn Kunden Sales Agreements im Portal sehen sollen, gehört das als Anforderung ins Angebot, mit dem geplanten Weg (Standardseiten oder eigene Komponente) und schriftlicher Bestätigung von Salesforce, dass die gewählte Lizenz das abdeckt.
 ```
 
-Was Portallizenzen kosten und wie sie sich von internen Lizenzen unterscheiden, beschreibe ich in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/). Wie das Portal neben Händlerboni und Partnerbesuchen in den Händlerkanal passt, steht in [Kapitel 3 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/haendler-und-partnerkanal/).
+Was Portallizenzen kosten und wie sie sich von internen Lizenzen unterscheiden, beschreibe ich in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](/blog/salesforce-lizenzen-volle-lizenz/). Wie das Portal neben Händlerboni und Partnerbesuchen in den Händlerkanal passt, steht in [Kapitel 3 der Masterclass Manufacturing Cloud](/masterclass/manufacturing-cloud/haendler-und-partnerkanal/).
 
 ## Kunden sehen weniger vom Sales Agreement als der Vertrieb
 
@@ -91,7 +91,7 @@ Das klingt nach einem Detail, verschiebt aber die Rollen der Systeme. Für Kunde
 3. **Sichtbare Fehler.** Lehnt das ERP eine Änderung ab, etwa weil eine Adresse unvollständig ist, muss das jemand sehen. Sonst zeigt das Portal eine Adresse, die im ERP nie angekommen ist, und die nächste Rechnung geht an die alte Adresse.
 4. **Status für den Kunden.** Manche Änderungen brauchen eine Prüfung, bevor sie gelten, etwa ein neuer Rechnungsempfänger oder eine andere Gesellschaft. Der Kunde sollte sehen, ob eine Änderung offen, übernommen oder abgelehnt ist.
 
-Wie ich das führende System für Kunden, Produkte, Preise und Aufträge festlege, beschreibe ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/).
+Wie ich das führende System für Kunden, Produkte, Preise und Aufträge festlege, beschreibe ich unter [Integration mit ERP, Middleware und Telefonie](/leistungen/salesforce-schnittstellen/).
 
 ## Bestellungen aus dem Portal schließen den Kreis über das ERP
 
@@ -110,7 +110,7 @@ Sales Agreement --> Anzeige im Portal
 
 Anfragen nach neuen Produkten oder Preisen gehen einen anderen Weg. Sie gehen an den Vertrieb und durchlaufen Konfiguration, Angebot und Freigabe. Für den Kunden zählt dabei vor allem, dass er den Stand seiner Anfrage sieht, statt nachzufragen.
 
-Cases sind im Portal der vertrauteste Teil. Hier hilft die Manufacturing Cloud mit Bezügen zu Aufträgen und Assets. Diese gehören laut Hilfe zur Kundenlizenz. Wie Garantieansprüche über Händler abgewickelt werden, steht in [Teil 6](../garantieansprueche-haendler-salesforce/).
+Cases sind im Portal der vertrauteste Teil. Hier hilft die Manufacturing Cloud mit Bezügen zu Aufträgen und Assets. Diese gehören laut Hilfe zur Kundenlizenz. Wie Garantieansprüche über Händler abgewickelt werden, steht in [Teil 6](/blog/garantieansprueche-haendler-salesforce/).
 
 ## Funktionsliste gegen die Lizenz prüfen
 

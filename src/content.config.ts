@@ -80,7 +80,7 @@ const services = defineCollection({
     lang: z.enum(['en', 'de']),
     slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
     translationKey: z.string(),
-    order: z.number().int().min(1).max(7),
+    order: z.number().int().min(1).max(8),
     // Optional note at the very top, e.g. who the approach was developed with. notePartner is a
     // name from partnerPage.partners in src/i18n; it is linked to the partner page and LinkedIn.
     note: z.string().max(240).optional(),
@@ -142,8 +142,8 @@ const masterclass = defineCollection({
     // Blog translationKeys covered by this chapter; unpublished ones are skipped.
     articles: z.array(z.string()).min(1).max(8),
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).max(6).default([]),
-    // First publication; used for datePublished and the sitemap's lastmod.
-    pubDate: z.coerce.date().optional(),
+    // First publication; used for datePublished, the visible date and the sitemap's lastmod.
+    pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     draft: z.boolean().default(false),
   }),

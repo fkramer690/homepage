@@ -30,7 +30,7 @@ After go-live, Salesforce Field Service has to improve the metrics from the busi
 
 ## Which KPIs show whether Field Service delivers?
 
-The KPIs after go-live are the four numbers I use to decide whether [Field Service is worth it](../salesforce-field-service-worth-it/), plus two that show whether scheduling works. They fit a business case built on scheduling and productivity; alongside them, I would track at least one outcome such as service margin, contract renewals or customer satisfaction. This is the operational set I would track per region and month:
+The KPIs after go-live are the four numbers I use to decide whether [Field Service is worth it](/en/blog/salesforce-field-service-worth-it/), plus two that show whether scheduling works. They fit a business case built on scheduling and productivity; alongside them, I would track at least one outcome such as service margin, contract renewals or customer satisfaction. This is the operational set I would track per region and month:
 
 | KPI | How I define it | Where the number comes from |
 |---|---|---|
@@ -41,9 +41,9 @@ The KPIs after go-live are the four numbers I use to decide whether [Field Servi
 | Arrival within window | Actual start within the arrival window promised to the customer | Service appointment fields |
 | Dispatcher change rate | Share of proposals changed before the status Dispatched | Your own snapshot of proposal and final assignment |
 
-Two of these use standard fields. The service appointment object has fields for the [actual start time and the arrival window](https://developer.salesforce.com/docs/service/salesforce-scheduler-dev-guide/guide/sforce-api-objects-serviceappointment.html), so a report can compare them, provided technicians set the start status on arrival and the promised window is not overwritten later. Response times need milestones on work orders, which in turn require an entitlement process of type Work Order, as described in [modeling maintenance contracts](../salesforce-field-service-maintenance-contracts/). A milestone gives the committed target; whether the technician actually arrived in time comes from the actual start or a defined check-in, and a rule or automation has to connect the two.
+Two of these use standard fields. The service appointment object has fields for the [actual start time and the arrival window](https://developer.salesforce.com/docs/service/salesforce-scheduler-dev-guide/guide/sforce-api-objects-serviceappointment.html), so a report can compare them, provided technicians set the start status on arrival and the promised window is not overwritten later. Response times need milestones on work orders, which in turn require an entitlement process of type Work Order, as described in [modeling maintenance contracts](/en/blog/salesforce-field-service-maintenance-contracts/). A milestone gives the committed target; whether the technician actually arrived in time comes from the actual start or a defined check-in, and a rule or automation has to connect the two.
 
-The dispatcher change rate takes some effort, and it is the most useful number in the first months. In [how much scheduling should be automatic](../salesforce-field-service-scheduling-automation/) I recommend having dispatchers note why they change a proposal. A reason picklist alone does not measure changes, though. You need a snapshot of the proposed resource and time, the final resource and time, who changed it and when, plus the reason; field history can supply part of it if the right fields are tracked. A high rate can mean missing data or a policy that does not fit, but also customer changes, emergencies, absences or dispatchers who do not trust the engine yet. The reasons show which explanation applies.
+The dispatcher change rate takes some effort, and it is the most useful number in the first months. In [how much scheduling should be automatic](/en/blog/salesforce-field-service-scheduling-automation/) I recommend having dispatchers note why they change a proposal. A reason picklist alone does not measure changes, though. You need a snapshot of the proposed resource and time, the final resource and time, who changed it and when, plus the reason; field history can supply part of it if the right fields are tracked. A high rate can mean missing data or a policy that does not fit, but also customer changes, emergencies, absences or dispatchers who do not trust the engine yet. The reasons show which explanation applies.
 
 ## Operations Home and Field Service Intelligence run on Data 360
 
@@ -70,7 +70,7 @@ A KPI name is not a formula. The [appointment dashboard of Field Service Intelli
 2. **Scope.** Same asset or same customer site?
 3. **Fault.** Same fault code, or any further visit?
 4. **Planned follow-ups.** A multiday commissioning job, or a second visit for a part that could not reasonably be on the van, should not count as a failure. A second visit because a common part was missing from the van does count, because that is exactly what van stock should fix.
-5. **Remote fixes.** Does a problem solved by phone or video count as fixed first time? With [visual remote assistance](../visual-remote-assistant-remote-help-instead-of-visit/), the share of remote fixes grows, so decide how to treat them before the first video session.
+5. **Remote fixes.** Does a problem solved by phone or video count as fixed first time? With [visual remote assistance](/en/blog/visual-remote-assistant-remote-help-instead-of-visit/), the share of remote fixes grows, so decide how to treat them before the first video session.
 
 The third decision only works with coded faults. If fault causes are stored as free text, the rate counts every further visit, including the annual maintenance a week later. If the vendor definition and yours differ, report yours and note the difference once.
 
@@ -78,7 +78,7 @@ The third decision only works with coded faults. If fault causes are stored as f
 
 Measure before go-live with the same definitions you will use afterwards, over a period long enough to cover seasonal swings; three months is a minimum, a year of history is better if the old system has it. The data is usually found in the ERP's service orders or the old scheduling tool: completed jobs per technician, travel from timesheets or vehicle logs, repeat visits per machine. If nobody can produce these numbers, that is already a finding, and it weakens every business case.
 
-Then compare results by region and by wave. The [rollout in waves](../salesforce-field-service-rollout/) gives you a comparison group: regions that are not live yet still run on the old process. If comparable regions had similar trends before go-live and only the live region improves, that strengthens the case that the rollout contributed. It is not proof, because regions differ in customers, staff and season.
+Then compare results by region and by wave. The [rollout in waves](/en/blog/salesforce-field-service-rollout/) gives you a comparison group: regions that are not live yet still run on the old process. If comparable regions had similar trends before go-live and only the live region improves, that strengthens the case that the rollout contributed. It is not proof, because regions differ in customers, staff and season.
 
 ## Worked example: baseline and the first wave
 
@@ -88,13 +88,13 @@ Assume a component maker with 90 technicians in three regions, SAP as ERP and a 
 
 **Region one, month three after go-live.** 2.4 jobs per day, 33 percent travel, 88 percent of response times met. First-time fix is still at 72 percent. Dispatchers changed 41 percent of proposals in month one and 24 percent in month three, mostly because of customer access times.
 
-**The reading.** Scheduling works, so jobs and travel improve. First-time fix does not move because technicians still arrive without the right part: van stock is not in Salesforce yet. Before wave two, the team models van stock as mobile locations, as described in [spare parts between ERP and Salesforce](../salesforce-field-service-spare-parts-erp/), and adds visiting hours for the accounts that caused most of the changes.
+**The reading.** Scheduling works, so jobs and travel improve. First-time fix does not move because technicians still arrive without the right part: van stock is not in Salesforce yet. Before wave two, the team models van stock as mobile locations, as described in [spare parts between ERP and Salesforce](/en/blog/salesforce-field-service-spare-parts-erp/), and adds visiting hours for the accounts that caused most of the changes.
 
 ## Who owns the numbers after go-live?
 
-The owner should be someone in the business, not the project team. I would assign ownership of the definitions to the head of service, the dispatcher change rate to the dispatch lead and the data pipeline to IT. A 30-minute review per region each month is enough: six numbers, the reasons behind outliers and one decision. These numbers show only indirectly whether dispatchers and technicians use the new process at all. The adoption numbers I put next to them are in [Measuring Salesforce adoption after go-live](../salesforce-adoption-metrics-after-go-live/). The technical side of operations, from monitoring to backup, is covered in the DevOps chapter on [operations, monitoring and backup](../../masterclass/devops-release-management/operations-monitoring-backup/).
+The owner should be someone in the business, not the project team. I would assign ownership of the definitions to the head of service, the dispatcher change rate to the dispatch lead and the data pipeline to IT. A 30-minute review per region each month is enough: six numbers, the reasons behind outliers and one decision. These numbers show only indirectly whether dispatchers and technicians use the new process at all. The adoption numbers I put next to them are in [Measuring Salesforce adoption after go-live](/en/blog/salesforce-adoption-metrics-after-go-live/). The technical side of operations, from monitoring to backup, is covered in the DevOps chapter on [operations, monitoring and backup](/en/masterclass/devops-release-management/operations-monitoring-backup/).
 
-If you add Field Service agents later, measure them separately with their own KPIs, as described in [Agentforce KPIs after go-live](../agentforce-kpis-after-go-live/). An agent that books maintenance visits affects jobs per day only indirectly.
+If you add Field Service agents later, measure them separately with their own KPIs, as described in [Agentforce KPIs after go-live](/en/blog/agentforce-kpis-after-go-live/). An agent that books maintenance visits affects jobs per day only indirectly.
 
 ## First step: at most six KPIs from the business case
 
@@ -111,4 +111,4 @@ Review monthly per region
   Tie every outlier to a data or process fix.
 ```
 
-Since the baseline takes at least three months, measurement has to start three months before go-live at the latest. How the KPIs fit into rollout and operations is covered in the [Field Service masterclass chapter on AI agents, rollout and operations](../../masterclass/field-service/field-service-ai-agents-rollout/).
+Since the baseline takes at least three months, measurement has to start three months before go-live at the latest. How the KPIs fit into rollout and operations is covered in the [Field Service masterclass chapter on AI agents, rollout and operations](/en/masterclass/field-service/field-service-ai-agents-rollout/).

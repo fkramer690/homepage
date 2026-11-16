@@ -49,7 +49,7 @@ Die Nachschubregeln liegen in [InventoryReplenishmentPolicy](https://developer.s
 
 Für Entscheider folgen daraus zwei Punkte:
 
-- **Ein Product Request ist ein Datensatz in Salesforce.** Er reserviert keinen Bestand in SAP und erzeugt weder Kundenauftrag noch Bestellung. Ein weiterer Schritt muss daraus einen Auftrag erzeugen, und diese Schnittstelle ist Ihr Projekt, kein Teil der Vorlage. Sollen Händler stattdessen selbst in einem B2B-Shop nachbestellen, siehe [Nachbestellen im B2B-Shop](../nachbestellen-b2b-shop-vorlagen/).
+- **Ein Product Request ist ein Datensatz in Salesforce.** Er reserviert keinen Bestand in SAP und erzeugt weder Kundenauftrag noch Bestellung. Ein weiterer Schritt muss daraus einen Auftrag erzeugen, und diese Schnittstelle ist Ihr Projekt, kein Teil der Vorlage. Sollen Händler stattdessen selbst in einem B2B-Shop nachbestellen, siehe [Nachbestellen im B2B-Shop](/blog/nachbestellen-b2b-shop-vorlagen/).
 - **Extern gemeldeter Bestand ist eine Kopie.** Melden Händler ihren Bestand wöchentlich per Portal-Upload, EDI oder Schnittstelle, arbeitet der Agent mit Zahlen, die bis zu sieben Tage alt sind, und muss darauf hinweisen sowie den Status der letzten erfolgreichen Übertragung nennen. Buchen Händler Wareneingänge in Salesforce, kann Salesforce stattdessen das operative Bestandsregister führen.
 
 ## Wo muss SAP oder proALPHA führendes System bleiben?
@@ -67,9 +67,9 @@ Für Entscheider folgen daraus zwei Punkte:
 | Händlerbestellung | Salesforce oder ERP, je nach Zielbild | bereitet sie zur Freigabe vor |
 | Kundenauftrag und Rechnung | SAP oder proALPHA | meldet die ERP-Auftragsnummer |
 
-Die lesende Seite, also wie ein Agent den Auftragsstatus über MuleSoft aus SAP holt, beschreibe ich in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/). Beim Nachschub kommt die schreibende Richtung hinzu. Die API braucht deshalb einen Simulationsaufruf, der Preis, Verfügbarkeit und Kreditstatus zurückgibt, ohne etwas anzulegen, und einen getrennten Aufruf zum Anlegen. Hat Ihr ERP keine solche Schnittstelle, lesen Sie zuerst [altes ERP ohne API](../altes-erp-ohne-api-ki-agenten/).
+Die lesende Seite, also wie ein Agent den Auftragsstatus über MuleSoft aus SAP holt, beschreibe ich in [Agentforce und SAP: Auftragsstatus über MuleSoft](/blog/agentforce-sap-auftragsstatus/). Beim Nachschub kommt die schreibende Richtung hinzu. Die API braucht deshalb einen Simulationsaufruf, der Preis, Verfügbarkeit und Kreditstatus zurückgibt, ohne etwas anzulegen, und einen getrennten Aufruf zum Anlegen. Hat Ihr ERP keine solche Schnittstelle, lesen Sie zuerst [altes ERP ohne API](/blog/altes-erp-ohne-api-ki-agenten/).
 
-Wem welche Zeile gehört, ist genauso eine Governance-Frage wie eine technische. Pflegt der Vertriebsinnendienst Min/Max in Salesforce und die Logistik Sicherheitsbestände in SAP, müssen beide festlegen, was gilt. Das ist dieselbe Disziplin wie bei der [Object Ownership Matrix](../object-ownership-matrix-salesforce/).
+Wem welche Zeile gehört, ist genauso eine Governance-Frage wie eine technische. Pflegt der Vertriebsinnendienst Min/Max in Salesforce und die Logistik Sicherheitsbestände in SAP, müssen beide festlegen, was gilt. Das ist dieselbe Disziplin wie bei der [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/).
 
 ## Schreibende Aktionen brauchen Sperren in Code
 
@@ -82,13 +82,13 @@ Für einen Nachschubauftrag würde ich vier Sperren in Code setzen:
 3. **Bestätigung durch den Händler.** Der Agent zeigt Positionen, ERP-Preise und bestätigte Termine, und der Händler gibt ausdrücklich frei.
 4. **Eine Dublettenprüfung.** Zeitüberschreitungen, wiederholte Eingaben oder Middleware können dieselbe Anfrage zweimal senden. Jeder Vorschlag trägt eine eindeutige Referenz, und die ERP-Schnittstelle lehnt einen zweiten Auftrag mit derselben Referenz ab.
 
-Wie diese Bausteine funktionieren, steht in [Agent Script: Geschäftsregeln gehören nicht ins LLM](../agent-script-regeln-statt-llm/). Wie viele Flex Credits Simulations- und Anlageaufrufe verbrauchen, rechne ich in [Flex Credits pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/) vor.
+Wie diese Bausteine funktionieren, steht in [Agent Script: Geschäftsregeln gehören nicht ins LLM](/blog/agent-script-regeln-statt-llm/). Wie viele Flex Credits Simulations- und Anlageaufrufe verbrauchen, rechne ich in [Flex Credits pro Aktion](/blog/flex-credits-agentforce-kosten-pro-aktion/) vor.
 
 ## Rechenbeispiel: Nachschub für 120 Händler
 
 Nehmen wir einen Hersteller von Druckluftkomponenten mit SAP S/4HANA, 120 Händlern in Deutschland, Österreich und den Benelux-Ländern und einem Händlerportal auf Experience Cloud. Alle Zahlen in diesem Beispiel sind Annahmen.
 
-Angenommen, jeder Händler lädt montags den Bestand für 300 Schnelldreher aus dem Ersatzteilsortiment hoch. Mit einer Min/Max-Regel pro Teil und Händlerstandort sind das in der feinsten Variante 36.000 Regeln; Regeln pro Produktkategorie oder für mehrere Standorte senken die Zahl. Die pflegt niemand von Hand. Die Mindestmenge sollte deshalb aus dem Verbrauch oder aus der [Absatzprognose mit Account Forecasting](../account-forecasting-absatzprognose-vertrieb/) stammen, und der Vertriebsinnendienst pflegt nur die Ausnahmen.
+Angenommen, jeder Händler lädt montags den Bestand für 300 Schnelldreher aus dem Ersatzteilsortiment hoch. Mit einer Min/Max-Regel pro Teil und Händlerstandort sind das in der feinsten Variante 36.000 Regeln; Regeln pro Produktkategorie oder für mehrere Standorte senken die Zahl. Die pflegt niemand von Hand. Die Mindestmenge sollte deshalb aus dem Verbrauch oder aus der [Absatzprognose mit Account Forecasting](/blog/account-forecasting-absatzprognose-vertrieb/) stammen, und der Vertriebsinnendienst pflegt nur die Ausnahmen.
 
 In der Nacht auf Dienstag findet der periodische Prozess bei einem Händler 40 Teile, deren Bestand unter der Mindestmenge liegt, und legt Product Requests an. Am Dienstag öffnet der Händler das Portal. Der Agent fasst den Vorschlag zusammen, weist darauf hin, dass die Bestände vom Montag stammen, und fragt, ob die Mengen noch stimmen. Der Händler streicht zwei Positionen. Dann ruft der Agent die SAP-Simulation auf. Die Preise stammen aus SAP, weil in diesem Beispiel SAP die Kundenkonditionen führt. Drei Positionen haben noch keinen bestätigten Termin, und genau das weist der Agent aus. Der Händler bestätigt, der Anlageaufruf liefert eine SAP-Auftragsnummer, und der Agent meldet sie.
 
@@ -107,7 +107,7 @@ Agent im Portal --bei Kreditsperre--> Kreditmanagement
 
 Nehmen wir nun an, derselbe Händler liegt über seinem Kreditlimit. Die Simulation meldet eine Sperre, die Aktion zum Anlegen bleibt verborgen, und der Agent übergibt das Gespräch mit dem Vorschlag an das Kreditmanagement. Die Kreditlage erklärt er nicht selbst; was ein Händler über eine Sperre erfährt, ist eine fachliche Entscheidung und muss in der Antwort der API vorgegeben sein.
 
-In so einem Piloten würde ich vor allem Datenthemen erwarten, keine KI-Themen: Händler, die nicht pünktlich melden, Teile mit falscher Materialnummer und Min/Max-Werte, die seit Jahren niemand angesehen hat. Upload-Dateien sind außerdem nicht vertrauenswürdige Eingaben, ein Risiko, das ich in [Prompt Injection über Händlerportale](../prompt-injection-haendlerportal-agentforce/) beschreibe.
+In so einem Piloten würde ich vor allem Datenthemen erwarten, keine KI-Themen: Händler, die nicht pünktlich melden, Teile mit falscher Materialnummer und Min/Max-Werte, die seit Jahren niemand angesehen hat. Upload-Dateien sind außerdem nicht vertrauenswürdige Eingaben, ein Risiko, das ich in [Prompt Injection über Händlerportale](/blog/prompt-injection-haendlerportal-agentforce/) beschreibe.
 
 ## Führendes System pro Datenzeile festlegen
 
@@ -118,4 +118,4 @@ In so einem Piloten würde ich vor allem Datenthemen erwarten, keine KI-Themen: 
 5. **Die vier Sperren und eine Freigabegrenze einbauen**, erst dann legt der Agent Aufträge an.
 6. **Lizenzen früh klären.** Auf der [EU-Preisseite von Manufacturing Cloud](https://www.salesforce.com/eu/manufacturing/cloud/) nennen die Core-Editionen (Listenpreis 275 € pro Nutzer und Monat bei jährlicher Abrechnung, Stand 9. November 2026) Flex Credits für KI, Agentforce und Daten, die Max-Editionen (ab 650 €) enthalten die Suite Agentforce for Industries. Die Hilfeseite des Inventory-Subagenten nennt weiterhin das Add-on Agentforce for Manufacturing oder die Agentforce 1 Manufacturing Edition. Lassen Sie sich die Berechtigung also im Angebot bestätigen. Lassen Sie sich den Summer-'26-Ablauf für Händlerbestellungen vom Partner in Ihrer Sandbox zeigen.
 
-Den größeren Teil der Arbeit macht das Schnittstellendesign zwischen Salesforce und ERP aus, also das, was ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/) anbiete. Das Gesamtbild der Agenten in der Fertigung finden Sie im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
+Den größeren Teil der Arbeit macht das Schnittstellendesign zwischen Salesforce und ERP aus, also das, was ich unter [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/) anbiete. Das Gesamtbild der Agenten in der Fertigung finden Sie im Masterclass-Kapitel [KI-Agenten in der Fertigung](/masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).

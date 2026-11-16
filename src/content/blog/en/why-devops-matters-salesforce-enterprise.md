@@ -86,7 +86,7 @@ with: Pipeline with the client
 quote: The pipeline belongs to the client, not to the partner. Whoever owns the release process owns the platform.
 ```
 
-That last point matters a lot to me as an [architect on the client side](../../#about). A repository and pipeline under the client's control make it easier to compare and replace partners, which is the basis for [partner steering and governance](../../services/partner-governance/). They also make onboarding a new partner much easier, because the standards are written down and enforced automatically.
+That last point matters a lot to me as an [architect on the client side](/en/#about). A repository and pipeline under the client's control make it easier to compare and replace partners, which is the basis for [partner steering and governance](/en/services/partner-governance/). They also make onboarding a new partner much easier, because the standards are written down and enforced automatically.
 
 ## What this looked like in a program I joined
 
@@ -114,13 +114,13 @@ You don't have to buy a commercial platform to get there. A good example is [sfd
 - **Generated documentation** of the project, including flows, straight from the repository.
 - **A VS Code extension** that gives admins and consultants a visual entry point into the Git workflow, so DevOps is not only for developers.
 
-Salesforce's own DevOps Center is another option without extra license fees in Professional, Enterprise, Performance, Unlimited and Developer Edition. It brings source control to teams that mostly work through the Salesforce UI, but it has no org monitoring or generated documentation like sfdx-hardis; you can find a direct comparison with sfdx-hardis in [sfdx-hardis vs DevOps Center](../sfdx-hardis-vs-devops-center-comparison/). Commercial tools like Gearset or Copado have their place too, especially when a team wants a fully managed interface. The choice depends on the team, the existing toolchain and the budget. What matters is that a decision is made early and enforced for everyone, including every partner.
+Salesforce's own DevOps Center is another option without extra license fees in Professional, Enterprise, Performance, Unlimited and Developer Edition. It brings source control to teams that mostly work through the Salesforce UI, but it has no org monitoring or generated documentation like sfdx-hardis; you can find a direct comparison with sfdx-hardis in [sfdx-hardis vs DevOps Center](/en/blog/sfdx-hardis-vs-devops-center-comparison/). Commercial tools like Gearset or Copado have their place too, especially when a team wants a fully managed interface. The choice depends on the team, the existing toolchain and the budget. What matters is that a decision is made early and enforced for everyone, including every partner.
 
 ## What does the business side gain?
 
 DevOps sounds like a topic for developers. In practice the business side often benefits most:
 
-- **Predictable releases.** A fixed release calendar replaces "we'll deploy when it's ready". Departments can plan training and communication around it. What this can look like for each release is described in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
+- **Predictable releases.** A fixed release calendar replaces "we'll deploy when it's ready". Departments can plan training and communication around it. What this can look like for each release is described in [Communicating Salesforce releases to the business](/en/blog/salesforce-release-communication-business/).
 - **Faster fixes.** When a bug occurs in production, a hotfix can move through the same tested pipeline without waiting for the next big release.
 - **Fewer surprises at go-live.** Every change has already been deployed and tested in integration and UAT through the same pipeline that takes it to production.
 - **Traceability for audits.** For every change made through the pipeline you can show who changed it, when, why and who approved it. You can find direct changes in production in the Setup Audit Trail.
@@ -145,4 +145,4 @@ Operations
   Add monitoring, metadata backups and generated documentation.
 ```
 
-In my experience, the first two steps, plus clear ownership and access rules, should be in place before the second partner starts working on the org. I explain how I set this up with open source in the [introduction to sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/).
+In my experience, the first two steps, plus clear ownership and access rules, should be in place before the second partner starts working on the org. I explain how I set this up with open source in the [introduction to sfdx-hardis](/en/blog/sfdx-hardis-open-source-salesforce-devops/).

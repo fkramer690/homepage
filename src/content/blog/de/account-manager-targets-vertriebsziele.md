@@ -77,10 +77,10 @@ Bei einem Hersteller, der seinen Vertrieb jeden Januar neu strukturiert, ist das
 Alle drei brauchen dieselbe Struktur. Salesforce verspricht, die Leistung von der Zielerreichung bis zur Prognose an einem Ort zu verfolgen. Das funktioniert nur, wenn drei Zahlen zusammenpassen:
 
 - **Ziel** pro Account Manager, Kunde, Produkt und Monat, aus dieser Funktion.
-- **Prognose** pro Kunde, Produkt und Zeitraum, aus dem [Account Forecasting](../account-forecasting-absatzprognose-vertrieb/).
-- **Ist** pro Kunde, Produkt und Zeitraum, meist aus dem ERP, wie bei [Sales Agreements und Abnahmerückständen](../sales-agreements-abnahmemengen-erp/) beschrieben.
+- **Prognose** pro Kunde, Produkt und Zeitraum, aus dem [Account Forecasting](/blog/account-forecasting-absatzprognose-vertrieb/).
+- **Ist** pro Kunde, Produkt und Zeitraum, meist aus dem ERP, wie bei [Sales Agreements und Abnahmerückständen](/blog/sales-agreements-abnahmemengen-erp/) beschrieben.
 
-Liegt das Ziel auf Produkten und die Prognose auf Produktkategorien, werden im Review zwei Zahlen verglichen, die nicht zusammenpassen können. Dasselbe passiert, wenn das ERP den Umsatz auf den Auftraggeber bucht und das Ziel an einem übergeordneten Account hängt. Ich würde vor dem ersten Ziel eine Kundenebene, eine Produktebene und einen Periodentyp für alle drei festlegen. Wie der Istwert-Feed aus SAP aussehen sollte, gehört zu meiner Arbeit an [Schnittstellen zu ERP und Middleware](../../leistungen/salesforce-schnittstellen/).
+Liegt das Ziel auf Produkten und die Prognose auf Produktkategorien, werden im Review zwei Zahlen verglichen, die nicht zusammenpassen können. Dasselbe passiert, wenn das ERP den Umsatz auf den Auftraggeber bucht und das Ziel an einem übergeordneten Account hängt. Ich würde vor dem ersten Ziel eine Kundenebene, eine Produktebene und einen Periodentyp für alle drei festlegen. Wie der Istwert-Feed aus SAP aussehen sollte, gehört zu meiner Arbeit an [Schnittstellen zu ERP und Middleware](/leistungen/salesforce-schnittstellen/).
 
 Für den Vergleich beschreibt Trailhead [Dashboards der CRM-Analytics-Vorlage](https://trailhead.salesforce.com/content/learn/modules/crm-analytics-dashboards-for-account-manager-targets/explore-sales-targets) für Ziele, darunter ein Team-Performance-Dashboard für die Datensatzseite des Ziels. Es stellt Ziele den Istdaten des laufenden und des vergangenen Jahres gegenüber und zeigt den nicht verteilten Anteil. Es stammt aus der CRM-Analytics-App für die Manufacturing Cloud, und sein Inhalt hängt von den Objekten ab, die der Admin beim Anlegen der App auswählt. In der Unit wird keine Lizenz genannt. Die aktuelle [Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) führt Tableau Next pro Edition auf und erwähnt CRM Analytics nicht. Fragen Sie Salesforce deshalb, ob Ihre Edition das Dashboard enthält.
 
@@ -102,7 +102,7 @@ Provisionen und Prämien liegen außerhalb dieser Funktion. Account Manager Targ
 
 Die saubere Trennung: Salesforce hält Ziel und Zielerreichung, das Vergütungssystem liest beides und rechnet die Auszahlung. Dann muss das Ziel in Salesforce dem Ziel entsprechen, auf das sich die Zielvereinbarung bezieht, und zu einem festen Stichtag eingefroren sein. Ändern Manager Ziele im Lauf des Jahres, dokumentieren Sie, wer was geändert hat. Spätestens bei der Bonusrunde fragt jemand nach.
 
-Auch der Sales-Planning-Agent arbeitet nicht mit Zielen. Welche Subagenten Salesforce dokumentiert, steht im Beitrag [Was der Vertriebsplanungs-Agent wirklich kann](../agentforce-vertriebsplanung-rahmenvertraege/). Wie Ziele neben Sales Agreements und Prognosen eingeordnet sind, zeigt das Kapitel [Rahmenverträge und Prognosen](../../masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/) der Masterclass.
+Auch der Sales-Planning-Agent arbeitet nicht mit Zielen. Welche Subagenten Salesforce dokumentiert, steht im Beitrag [Was der Vertriebsplanungs-Agent wirklich kann](/blog/agentforce-vertriebsplanung-rahmenvertraege/). Wie Ziele neben Sales Agreements und Prognosen eingeordnet sind, zeigt das Kapitel [Rahmenverträge und Prognosen](/masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/) der Masterclass.
 
 ## Hierarchie und Ebenen mit Vertrieb und Controlling festlegen
 

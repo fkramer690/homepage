@@ -49,12 +49,12 @@ Business users can be involved earlier, for example in prototypes or demos. By U
 In many programs partner deliveries are accepted without a technical review, and the problems only show up in UAT or in production. With several partners, two more effects come into play:
 
 - **Everyone tests their own part.** Partner A tests the quoting process, partner B the order handover to the ERP. The business is the first to test the path from quote to order in the ERP, in UAT.
-- **UAT is the first shared environment.** If every partner tests in their own environment, the changes are only combined in the UAT sandbox. A [sandbox strategy with one shared integration environment](../salesforce-sandbox-strategy-multiple-partners/) brings that moment forward.
+- **UAT is the first shared environment.** If every partner tests in their own environment, the changes are only combined in the UAT sandbox. A [sandbox strategy with one shared integration environment](/en/blog/salesforce-sandbox-strategy-multiple-partners/) brings that moment forward.
 
 So the client sets the rules, and every delivery is checked before it moves on. The path across several partners needs a named owner: a client-side test lead, a lead partner or program management, responsible for coordinating the end-to-end test and deciding when UAT starts. A feature only goes to UAT once these entry criteria are met:
 
 - The release candidate is fully deployed to the UAT sandbox, and its version is clearly identified.
-- System and integration tests are documented and have passed, and the [pull request review](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) has approved the code.
+- System and integration tests are documented and have passed, and the [pull request review](/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/) has approved the code.
 - Test users, test data and interfaces to the test ERP have been checked.
 - Known defects are documented, and a short smoke test of the environment has passed.
 
@@ -77,9 +77,9 @@ Approval | end of the time window · business
 
 On the business side, three factors determine whether this works:
 
-1. **Test users per role.** If you test as an administrator, you will not find permission problems. Every business role from the [permission concept](../salesforce-permission-concept-permission-sets/), such as inside sales or service dispatcher, needs a test user with exactly its permissions: license, permission sets and sharing.
+1. **Test users per role.** If you test as an administrator, you will not find permission problems. Every business role from the [permission concept](/en/blog/salesforce-permission-concept-permission-sets/), such as inside sales or service dispatcher, needs a test user with exactly its permissions: license, permission sets and sharing.
 2. **Real data volumes.** A report that loads quickly in a nearly empty sandbox can be much slower with millions of assets. That is why UAT runs in a Full sandbox when data volumes and data relationships are complex. For a clearly scoped release, a Partial Copy sandbox with selected test data can be enough. A Full sandbox can only be refreshed every 29 days, and the refresh can take several days, so it needs to be planned early in the release plan. If you copy production data, mask personal and confidential fields, especially when several partners have access to the sandbox.
-3. **Testers who are freed up.** Business users who test alongside their daily work test the simplest path and stop as soon as it works. So whoever plans UAT also plans who covers the testers' work during that time. Good testers are the key users who will be the first points of contact in their teams after go-live. What else they do and how much time they need is covered in [Key users in Salesforce rollouts: what they do](../salesforce-key-user-network/).
+3. **Testers who are freed up.** Business users who test alongside their daily work test the simplest path and stop as soon as it works. So whoever plans UAT also plans who covers the testers' work during that time. Good testers are the key users who will be the first points of contact in their teams after go-live. What else they do and how much time they need is covered in [Key users in Salesforce rollouts: what they do](/en/blog/salesforce-key-user-network/).
 
 ## How much time does the business need to plan?
 
@@ -99,8 +99,8 @@ Write down in the partner contract what "accepted" means: who agrees, in what fo
 
 ## Automation covers what comes before and after UAT
 
-The acceptance decision remains a human decision, because it is about the judgment of business users. Much of what comes before and after it can be automated, for example with Apex tests and Flow tests in the pipeline, regression tests for the most important processes that run with every release, and sandbox preparation after a refresh. A good place to start is the five processes where the most money is at stake, such as quote, order and invoice. The more of this the pipeline takes over, the more time testers have for the new features. This matters most for mobile apps in field service, because new app versions, operating system updates and changed offline settings can change how technicians work. See [testing Field Service app updates](../field-service-mobile-app-updates-testing/).
+The acceptance decision remains a human decision, because it is about the judgment of business users. Much of what comes before and after it can be automated, for example with Apex tests and Flow tests in the pipeline, regression tests for the most important processes that run with every release, and sandbox preparation after a refresh. A good place to start is the five processes where the most money is at stake, such as quote, order and invoice. The more of this the pipeline takes over, the more time testers have for the new features. This matters most for mobile apps in field service, because new app versions, operating system updates and changed offline settings can change how technicians work. See [testing Field Service app updates](/en/blog/field-service-mobile-app-updates-testing/).
 
 ## Separate system test and acceptance test in the next release
 
-In your next release, separate the system test from the acceptance test. Ask the partner for a documented system test per feature before the feature goes into the UAT sandbox; that rule belongs in your [partner governance](../../services/partner-governance/). Create test users per role. For the release after that, the business writes the test cases while the user stories are being refined.
+In your next release, separate the system test from the acceptance test. Ask the partner for a documented system test per feature before the feature goes into the UAT sandbox; that rule belongs in your [partner governance](/en/services/partner-governance/). Create test users per role. For the release after that, the business writes the test cases while the user stories are being refined.

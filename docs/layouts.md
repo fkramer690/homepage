@@ -284,6 +284,16 @@ a second filter by author next to the topic). Built in `src/components/BlogIndex
   first new card). Filter and search always
   look through all articles and start again at 24. Without JavaScript every
   article stays visible. The intro above is one sentence.
+- Only the first 25 cards carry their drawing in the HTML. The drawings of all
+  later cards come from one file per language (`/blog/zeichnungen.json`,
+  `/en/blog/drawings.json`, built from `src/lib/card-svg.ts`), fetched once when a
+  later card is first shown. Title, description and link of every card stay in the
+  HTML for crawlers. This took the overview from 1,081 KB to 577 KB (backlog UE5,
+  2026-11-12).
+- Phones (640px and below): cards without drawing (date, topic, title,
+  description, author), because the drawing labels would be 7 to 9px there;
+  no text on the overview is smaller than 12px. Chosen by Fabian 2026-11-12
+  (variant A of two; B kept the drawing without labels).
 - The filters combine; each list counts within the other one's choice and greys
   out empty entries. An article counts for its author and its `coAuthor`. The
   choice sits in the hash (`#juliane+change-management`), old topic links
@@ -352,6 +362,12 @@ for every service page.
   reading area. Cards and boxes on grey bands are white.
 - The running text, FAQ and author box stay in one white band with the
   ReadingGrid.
+- Few frames in the reading column (variant A "ruhiger", chosen 2026-11-11 after
+  the AI-slop re-audit, finding ND1): typical situations, "Was Sie erhalten",
+  the reading list with its masterclass row, "Woran Sie Fortschritt sehen" and
+  "Typischer Einsatz" stand without box, border or tint, separated only by
+  dashed lines. Only "Projekt im Fokus", the content blocks in the body and the
+  author box keep a frame, so they stand out.
 
 ## Profile card ("Steckbrief", start page About)
 
@@ -443,6 +459,52 @@ photo and crop per project in `refPhotos`.
 - Also used for Juliane's references on her partner page (`JulianePage.astro`, `.jw-rf`): no photo,
   logo and period on top of the panel, then *Rolle / Umfang / Aufgaben* with the tasks as tick list
   (details in `julianeProjectDetails`).
+
+## Ring with details in the centre (service overview, "Vier Bausteine")
+
+Chosen 2026-11-11 after two rounds, inspired by a "Managed CRM" ring Fabian had seen
+elsewhere and rebuilt in the site style (variant 2 of round 2; Fabian: "2 finde ich
+gut", after the centre box was laid out cleanly). Built in
+`src/components/ApproachRing.astro`, texts in `src/data/approach-ring.ts`, geometry and
+markup in `src/lib/ring-cycle.mjs` (`ringHtml`), section frame `src/components/WheelSection.astro`,
+interaction `src/components/RingCycleScript.astro`, CSS `.ar-*` and `.wheel-*`.
+Also used (approved 2026-11-11 in the click path): the areas ring on the machinery and
+Field Service consultant pages (`wheel` prop of `FreelanceArchitectPage.astro`, texts in
+`src/data/page-wheels.ts`), the masterclass ring on `/masterclass/` (one segment per
+masterclass, built from `src/lib/courses.ts`) and the `ring` content block.
+
+- **At rest only the ring:** four segments in brand colours (cyan, cyan-dark, text-2,
+  anthracite), each with a white icon badge near the inner edge and its name in mono
+  capitals along the outer arc (lower half mirrored, so nothing stands on its head).
+  The white centre names the whole ("Salesforce für Hersteller").
+- **Details on hover:** while the pointer rests on a segment, the others fade and the
+  centre shows icon, name, cyan mono subtitle, a short line in the segment colour,
+  three or four short points and "Zur Leistung →", all centred in the circle. Click on
+  a segment opens its service page; keyboard: Tab focuses a segment, Enter opens it.
+- **Phones and narrow rings** (below 540px): tap shows the segment's card below the
+  ring. Without script all four cards stand below the ring.
+- Points stay short (they must fit the circle); labels are checked by
+  `scripts/check-graphics.mjs` (`ringProblems`).
+- Fits: three to five equal building blocks of one offer where each leads to its own
+  page, not a sequence (for an order use the cycle below).
+
+## Cycle with labelled stations and a detail panel
+
+Variant 3 of the same round; Fabian 2026-11-11: "3 kann so bleiben", keep it for other
+pages. Draft: `/mnt/project-files/grafiken/managed-crm/entwuerfe-runde-2.html` (project
+files), section 3. Built 2026-11-11 as the `kreislauf` content block (`cycleHtml` in
+`src/lib/ring-cycle.mjs`, CSS `.cy-*`), used on the DevOps and change management service
+pages and in the hypercare and agent testing articles.
+
+- A thin grey ring with four cyan arcs and arrowheads between four white station
+  circles (icon, small dark number badge), the name of each station next to it on the
+  outside; a cyan dot slowly runs around the ring (hidden with reduced motion). The
+  centre names the loop ("Jedes Release / ein Durchlauf").
+- To the right a dashed panel with a short hint; on hover over a station its card
+  (icon, name, mono subtitle, sentence, tick list, link) replaces the hint. On phones
+  the card stands below the cycle after a tap.
+- Fits: anything that repeats in a fixed order (release cycle, hypercare loop,
+  continuous improvement, the ADKAR stages), where the numbers carry the order.
 
 ## References from the graphics review (30.10.2026)
 

@@ -66,7 +66,7 @@ Die Einführungseinheit auf Trailhead nennt diese Voraussetzungen:
 | Add-on-Lizenzen | Agentforce und Einstein for Service |
 | Plattform | Einstein generative AI, eingerichtet zusammen mit Data 360 |
 
-Die aktuelle Hilfe wiederholt diese Liste nicht, deshalb würde ich mir die SKUs im Angebot bestätigen lassen, vor allem, ob neben dem Shop wirklich Service Cloud nötig ist. Klarer sind die laufenden Kosten: Die Salesforce-Hilfe nennt den Agenten verbrauchsbasiert. Jedes 24-Stunden-Gesprächsfenster zählt unter Agentforce ASA Messaging, Modellaufrufe verbrauchen Einstein Requests oder Flex Credits, und Verarbeitung und Speicher in Data 360 zählen ebenfalls. Einen eigenen Listenpreis habe ich nicht gefunden, die Sätze stehen also in Ihrem Bestellformular, und das Volumen ergibt sich aus Ihren Händlergesprächen. Wie eine solche Rechnung für einen Serviceagenten im Händlergeschäft aussieht, zeige ich in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/).
+Die aktuelle Hilfe wiederholt diese Liste nicht, deshalb würde ich mir die SKUs im Angebot bestätigen lassen, vor allem, ob neben dem Shop wirklich Service Cloud nötig ist. Klarer sind die laufenden Kosten: Die Salesforce-Hilfe nennt den Agenten verbrauchsbasiert. Jedes 24-Stunden-Gesprächsfenster zählt unter Agentforce ASA Messaging, Modellaufrufe verbrauchen Einstein Requests oder Flex Credits, und Verarbeitung und Speicher in Data 360 zählen ebenfalls. Einen eigenen Listenpreis habe ich nicht gefunden, die Sätze stehen also in Ihrem Bestellformular, und das Volumen ergibt sich aus Ihren Händlergesprächen. Wie eine solche Rechnung für einen Serviceagenten im Händlergeschäft aussieht, zeige ich in [Agentforce-Kosten für Hersteller](/blog/flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Vertragspreis und Kredit kommen aus Shop und ERP
 
@@ -85,7 +85,7 @@ ERP ..hält aktuell..> Order Summaries
 Buyer Agent ..Antwort..> Händler-Chat
 ```
 
-Dasselbe gilt für Kreditlimits, gesperrte Kunden und Liefertermine. Das Modell versteht die Frage des Händlers und formuliert die Antwort. Welcher Preis gilt, ob der Kunde auf Rechnung bestellen darf und wann die Ware versendet wird, entscheiden Code, Shop oder ERP. Die allgemeine Regel für Agenten erkläre ich im Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/) der KI-Masterclass, und wie ein bestätigter Liefertermin aus SAP übernommen wird, in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/).
+Dasselbe gilt für Kreditlimits, gesperrte Kunden und Liefertermine. Das Modell versteht die Frage des Händlers und formuliert die Antwort. Welcher Preis gilt, ob der Kunde auf Rechnung bestellen darf und wann die Ware versendet wird, entscheiden Code, Shop oder ERP. Die allgemeine Regel für Agenten erkläre ich im Kapitel [KI-Agenten in der Fertigung](/masterclass/ki-salesforce/ki-agenten-in-der-fertigung/) der KI-Masterclass, und wie ein bestätigter Liefertermin aus SAP übernommen wird, in [Agentforce und SAP: Auftragsstatus über MuleSoft](/blog/agentforce-sap-auftragsstatus/).
 
 ```hinweis achtung
 Zeigt der Shop Listenpreise, weil Vertragspreise nur in SAP-Konditionen stehen, nennt auch der Agent Listenpreise. Klären Sie, welches System die Preise führt, bevor der Agent in Betrieb geht.
@@ -101,7 +101,7 @@ Ich würde so planen, als könne ein Filter eines Tages eine eingeschleuste Anwe
 - Aktionen, die Aufträge anlegen oder Daten ändern, prüfen im Code, nicht im Prompt.
 - Keine ausgehende Aktion sendet Daten an eine Adresse, die ein Händler beeinflussen kann.
 
-Angriffsmuster und Gegenmaßnahmen beschreibe ich in [Prompt Injection im Händlerportal: Agentforce schützen](../prompt-injection-haendlerportal-agentforce/).
+Angriffsmuster und Gegenmaßnahmen beschreibe ich in [Prompt Injection im Händlerportal: Agentforce schützen](/blog/prompt-injection-haendlerportal-agentforce/).
 
 ## Rechenbeispiel: Pilot mit 15 von 150 Händlern
 
@@ -109,7 +109,7 @@ Angenommen, ein Maschinenbauer verkauft Ersatzteile und Verbrauchsmaterial über
 
 Im Pilot erhalten 15 Händler mit vielen Wiederholungsbestellungen den Buyer Agent im Web-Chat des Shops. Nur zwei Subagenten sind aktiv: Commerce Order für Status und Nachbestellung und der Commerce Product Search Assistant. Der Auftragsstatus stammt aus Order Summaries, die das ERP aktuell hält. Übergaben werden an eine benannte Queue im Innendienst geleitet. Nach vier Wochen vergleichen Sie die Anrufe pro Pilothändler mit den Vormonaten und lesen jedes Gespräch, das der Agent übergeben hat.
 
-Erst wenn diese Antworten verlässlich sind, würde ich einen Messaging-Kanal wie WhatsApp ergänzen, und erst wenn Carter for Buyers allgemein verfügbar ist, würde ich den Agenten Aufträge mit Zahlung abschließen lassen. Schnelles Nachbestellen im Shop selbst ist das Thema von [Nachbestellen im B2B-Shop: Vorlagen, CSV, Reorder](../nachbestellen-b2b-shop-vorlagen/), die Backoffice-Seite der Agenten beschreibe ich in [Merchandising Agent: Was er im Teilekatalog leistet](../merchandising-agent-teilekatalog/).
+Erst wenn diese Antworten verlässlich sind, würde ich einen Messaging-Kanal wie WhatsApp ergänzen, und erst wenn Carter for Buyers allgemein verfügbar ist, würde ich den Agenten Aufträge mit Zahlung abschließen lassen. Schnelles Nachbestellen im Shop selbst ist das Thema von [Nachbestellen im B2B-Shop: Vorlagen, CSV, Reorder](/blog/nachbestellen-b2b-shop-vorlagen/), die Backoffice-Seite der Agenten beschreibe ich in [Merchandising Agent: Was er im Teilekatalog leistet](/blog/merchandising-agent-teilekatalog/).
 
 ## Den Shop ohne Agent prüfen
 
@@ -119,4 +119,4 @@ Erst wenn diese Antworten verlässlich sind, würde ich einen Messaging-Kanal wi
 4. **Den Kanal festlegen.** Erst Web-Chat im Shop, WhatsApp und SMS, wenn Identität, Datenschutz und Support geklärt sind.
 5. **Aufschreiben, was Code entscheidet.** Preis, Kredit, Liefertermin und Auftragsanlage bleiben in Shop und ERP.
 
-Das Kapitel [Agenten, Migration, Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) stellt den Buyer Agent neben die Migration des Shops und die Einführung bei Händlern. Wenn die Schnittstellen zu Ihrem ERP der noch offene Punkt sind, lesen Sie weiter bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Das Kapitel [Agenten, Migration, Einführung](/masterclass/b2b-commerce/agentforce-migration-einfuehrung/) der [Masterclass B2B Commerce](/masterclass/b2b-commerce/) stellt den Buyer Agent neben die Migration des Shops und die Einführung bei Händlern. Wenn die Schnittstellen zu Ihrem ERP der noch offene Punkt sind, lesen Sie weiter bei [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/).

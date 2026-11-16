@@ -49,7 +49,7 @@ The [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-on
 | OmniStudio, 2 million additional calls | $10,000 per unit and month ($120,000 per year) | Core, Advanced, Max | More guided processes |
 | MuleSoft Anypoint Platform | on request | Core, Advanced | Integration |
 
-The rest are Feedback Management and survey packs. One oddity: the page lists add-ons as available with "Advanced", while the [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) prices only Core and Max editions, as I noted in [Salesforce editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
+The rest are Feedback Management and survey packs. One oddity: the page lists add-ons as available with "Advanced", while the [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) prices only Core and Max editions, as I noted in [Salesforce editions Core, Advanced and Max](/en/blog/salesforce-editions-core-advanced-max/).
 
 ## Portal licenses for dealers and customers cost $15 to $50 a month
 
@@ -57,7 +57,7 @@ For manufacturers that expose agreements, claims, orders or service processes to
 
 That gives a simple break-even. A partner member license costs $50, and a partner login license costs $20, so the member license becomes cheaper starting with the third login day per month. For customers, the comparison is $35 versus $15, again starting with the third day. As a rule of thumb, dealers who check orders and agreements weekly should use member licenses, while those who submit a warranty claim once a quarter should use login licenses. For seasonal use, base planning on daily unique logins over the year.
 
-Which objects each license lets external users see, for example sales agreements or rebate claims, is covered in [part 7: the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/). If dealers need to order spare parts in a shop with cart and checkout, that is B2B Commerce with its own cost model; see chapter 1 of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/).
+Which objects each license lets external users see, for example sales agreements or rebate claims, is covered in [part 7: the Manufacturing Cloud customer portal](/en/blog/manufacturing-cloud-customer-portal/). If dealers need to order spare parts in a shop with cart and checkout, that is B2B Commerce with its own cost model; see chapter 1 of the [B2B Commerce masterclass](/en/masterclass/b2b-commerce/b2b-commerce-worth-it-overview/).
 
 ## Agentforce: add-on or Max edition?
 
@@ -79,15 +79,15 @@ contra: What Max adds
 - Editions are licensed at org level, so mixing Core and Max users needs explicit confirmation from the account team
 ```
 
-Employee use is unmetered with the add-on, and the pricing page lists Agentforce Coworker with "Unmetered usage" for Max. Customer-facing agents, prompts and Data 360 processing still consume Flex Credits, and for Core without the add-on the pricing page lists Agentforce "via Flex Credits". You can find guidance on estimating that consumption in [Flex Credits: Agentforce cost per action](../flex-credits-agentforce-cost-per-action/) and in the masterclass chapter [costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
+Employee use is unmetered with the add-on, and the pricing page lists Agentforce Coworker with "Unmetered usage" for Max. Customer-facing agents, prompts and Data 360 processing still consume Flex Credits, and for Core without the add-on the pricing page lists Agentforce "via Flex Credits". You can find guidance on estimating that consumption in [Flex Credits: Agentforce cost per action](/en/blog/flex-credits-agentforce-cost-per-action/) and in the masterclass chapter [costs and tokens](/en/masterclass/ai-salesforce/costs-and-tokens/).
 
 ## Which add-ons only matter for some manufacturers?
 
 **Channel Revenue Management for Manufacturing, $30,000 per org and year.** This is where ship and debit and price protection for distributors are handled. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/ship-and-debit-process-management/get-to-know-ship-and-debit) calls ship and debit "a feature within Channel Revenue Management". The $30,000 is the base price with ten admin users; according to the [Channel Revenue Management pricing page](https://www.salesforce.com/sales/channel-revenue-management/pricing/), partner access, extra users and payouts are bought separately, and payouts consume credits based on their total value. It is worth it for manufacturers who sell through stocking distributors with price claims, but not for a few dealers with an annual bonus.
 
-**Rebate Management: no longer renewable.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=005393495&language=en_US&type=1), Rebate Management, including Rebate Management for Manufacturing and the user add-on, has not been renewable since August 18, 2026. Existing subscriptions remain valid until the contract end date; the successor is Channel Revenue Management, which lists "Rebate Management and Payouts" as a feature. The "Rebate Management from $75" still shown on the [Experience Cloud add-on page](https://salesforce.com/manufacturing/cloud/experience-cloud) refers to the old add-on. [Part 5 of the series](../rebate-management-dealer-rebates/) explains what rebate management does.
+**Rebate Management: no longer renewable.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=005393495&language=en_US&type=1), Rebate Management, including Rebate Management for Manufacturing and the user add-on, has not been renewable since August 18, 2026. Existing subscriptions remain valid until the contract end date; the successor is Channel Revenue Management, which lists "Rebate Management and Payouts" as a feature. The "Rebate Management from $75" still shown on the [Experience Cloud add-on page](https://salesforce.com/manufacturing/cloud/experience-cloud) refers to the old add-on. [Part 5 of the series](/en/blog/rebate-management-dealer-rebates/) explains what rebate management does.
 
-**Connected Assets, $15,000 per org and month.** That is $180,000 per year for machine telemetry in Salesforce. It only pays off once the service history is good enough to act on the data, as described in [predictive maintenance: what data you need](../predictive-maintenance-salesforce-data-needed/).
+**Connected Assets, $15,000 per org and month.** That is $180,000 per year for machine telemetry in Salesforce. It only pays off once the service history is good enough to act on the data, as described in [predictive maintenance: what data you need](/en/blog/predictive-maintenance-salesforce-data-needed/).
 
 **Manufacturing Intelligence, $220 per login and month.** Its [own page](https://salesforce.com/manufacturing/cloud/manufacturing-intelligence) lists CRM Analytics Plus at $165 and Manufacturing Intelligence at $220 per login and month, billed annually. The "from $165" on the Experience Cloud add-on page refers to the cheaper of the two. Before anyone budgets for it, I would want the included features in writing.
 
@@ -130,4 +130,4 @@ In this scenario the add-ons raise the license line by 40 percent, before any Ch
 6. **OmniStudio and Business Rules Engine:** how calls are counted, and the price of an extra block.
 7. **Add-ons for years two and three** at today's price, if they are on the roadmap.
 
-Not every internal user needs the industry license either, as described in [does everyone need a full license?](../salesforce-licences-full-licence-needed/). The full business case is in chapter 1 of the [Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/scope-and-business-case/), and the feature list behind it in [Manufacturing Cloud features: what is in the box](../manufacturing-cloud-features-overview/). License forecasts are part of my work on [make-or-buy and licenses](../../services/make-or-buy-licences/).
+Not every internal user needs the industry license either, as described in [does everyone need a full license?](/en/blog/salesforce-licences-full-licence-needed/). The full business case is in chapter 1 of the [Manufacturing Cloud masterclass](/en/masterclass/manufacturing-cloud/scope-and-business-case/), and the feature list behind it in [Manufacturing Cloud features: what is in the box](/en/blog/manufacturing-cloud-features-overview/). License forecasts are part of my work on [make-or-buy and licenses](/en/services/make-or-buy-licences/).

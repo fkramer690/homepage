@@ -57,7 +57,7 @@ The same pricing page lists the add-ons separately. Per user per month, at list 
 |---|---|
 | Field Service Plus | $230 |
 | Agentforce for Field Service and Operations | $125 |
-| [Visual Remote Assistant](../visual-remote-assistant-remote-help-instead-of-visit/) | $50 |
+| [Visual Remote Assistant](/en/blog/visual-remote-assistant-remote-help-instead-of-visit/) | $50 |
 | Appointment Assistant | $25 |
 | **Sum** | **$430** |
 | Agentforce 1 Field Service | $650 |
@@ -71,7 +71,7 @@ The Agentforce add-on already includes unmetered use for employees. The Agentfor
 
 Salesforce lists Flex Credits at [$500 per 100,000](https://www.salesforce.com/agentforce/pricing/), and a standard action costs 20 credits, according to the [announcement of the pricing model](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/). One million Flex Credits are therefore worth at most $5,000 a year at list price, or 50,000 standard actions, but only if you would otherwise have bought them. If the Scheduling Agent row means a second million, it is $10,000.
 
-The premium is per user, the credits are per org. $220 per user per month is $2,640 per user per year. $5,000 in credits cover the premium for 1.9 users, $10,000 for 3.8 users. Starting with the fifth user, the credits alone never justify the bundle. How to estimate credits per process in detail is covered in [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/).
+The premium is per user, the credits are per org. $220 per user per month is $2,640 per user per year. $5,000 in credits cover the premium for 1.9 users, $10,000 for 3.8 users. Starting with the fifth user, the credits alone never justify the bundle. How to estimate credits per process in detail is covered in [Agentforce costs for manufacturers](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 ## Worked example: 50 users and a booking agent
 
@@ -101,7 +101,7 @@ contra: Single add-ons win when
 - customer-facing agents are still in a pilot phase and the credit requirement is unknown
 ```
 
-A third route falls outside both lists: the Agentic Enterprise License Agreement (AELA), a fixed fee for consumption-based services whose exact scope depends on the contract. When that is worth it is covered in [Salesforce AELA vs Flex Credits](../flex-credits-agentforce-cost-per-action/). Which agents for customers, dispatchers and technicians are ready today is covered in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/).
+A third route falls outside both lists: the Agentic Enterprise License Agreement (AELA), a fixed fee for consumption-based services whose exact scope depends on the contract. When that is worth it is covered in [Salesforce AELA vs Flex Credits](/en/blog/flex-credits-agentforce-cost-per-action/). Which agents for customers, dispatchers and technicians are ready today is covered in [AI agents in Field Service: what works today?](/en/blog/field-service-ai-agents-what-works-today/).
 
 ## What changes with Field Service Max?
 
@@ -109,4 +109,4 @@ Field Service Max costs the same $650, but the basis for comparison has changed.
 
 ## Write down the AI features per role and compare three columns
 
-For each role, write down which AI functions are really used in the first year, and estimate the customer-facing actions per month. Then compare three columns: bundle, parts, and parts by role. The credit side is explained in the [AI masterclass chapter on costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/), the license matrix by role in [Salesforce Field Service licenses: who needs which?](../field-service-licences-by-role/), and the overall business case in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
+For each role, write down which AI functions are really used in the first year, and estimate the customer-facing actions per month. Then compare three columns: bundle, parts, and parts by role. The credit side is explained in the [AI masterclass chapter on costs and tokens](/en/masterclass/ai-salesforce/costs-and-tokens/), the license matrix by role in [Salesforce Field Service licenses: who needs which?](/en/blog/field-service-licences-by-role/), and the overall business case in [chapter 1 of the Field Service masterclass](/en/masterclass/field-service/field-service-business-case-licences/).

@@ -77,7 +77,7 @@ On sales agreements, the documentation is concrete. The agent reads them, summar
 
 The help does not say whether the 100,000 cap also applies to the agent or whether its performance summary uses the same cutoff. I would test both with the largest agreement in the org before anyone relies on them.
 
-On account forecasts, the documentation is silent. The template page does not mention them in its body text, and none of the three subagents works on them. What exists are [Flow actions](https://help.salesforce.com/s/articleView?id=sf.admin_manufacturing_standard_invocable_actions.htm&language=en_US&type=5) such as Calculate Advanced Account Forecasts, Recalculate Forecasts Actions and Refresh Actuals Calculation. A custom agent action that calls one of these flows is technically plausible. At that point, it is your build, with your tests and your support, not the template. Sales targets per customer are a separate feature; see [account manager targets](../account-manager-targets-sales-targets/).
+On account forecasts, the documentation is silent. The template page does not mention them in its body text, and none of the three subagents works on them. What exists are [Flow actions](https://help.salesforce.com/s/articleView?id=sf.admin_manufacturing_standard_invocable_actions.htm&language=en_US&type=5) such as Calculate Advanced Account Forecasts, Recalculate Forecasts Actions and Refresh Actuals Calculation. A custom agent action that calls one of these flows is technically plausible. At that point, it is your build, with your tests and your support, not the template. Sales targets per customer are a separate feature; see [account manager targets](/en/blog/account-manager-targets-sales-targets/).
 
 The build plan comparison from the announcement is the biggest gap. I found no description of where the build plan comes from, which object holds it or what triggers an alert. As I read the help page, the agent answers when someone asks. Salesforce's [AI page for manufacturing](https://www.salesforce.com/manufacturing/artificial-intelligence/) speaks of "surfacing run-rate agreements, demand forecasts, and opportunity data conversationally" and adds that capabilities "may not reflect actual product details". I take that disclaimer literally.
 
@@ -100,9 +100,9 @@ Daily job --refreshes--> Sales Agreements
 Sales Agreements --plan and actuals--> Sales Planning agent
 ```
 
-Which calculation mode fits and why it is hard to change later is covered in [sales agreements: spot customers behind on volume](../sales-agreements-volume-shortfall-erp/). For the agent, three extra points matter. The feed has to cover every ERP that books orders for a customer, including a subsidiary that runs on a second system. The mapping from sold-to party to agreement account needs an owner. And the agent's answer should show the date of the last load, so a gap caused by a missed overnight run is visible for what it is. That is not a standard output of the template: store the load timestamp from the source system and add it to the agent's grounding.
+Which calculation mode fits and why it is hard to change later is covered in [sales agreements: spot customers behind on volume](/en/blog/sales-agreements-volume-shortfall-erp/). For the agent, three extra points matter. The feed has to cover every ERP that books orders for a customer, including a subsidiary that runs on a second system. The mapping from sold-to party to agreement account needs an owner. And the agent's answer should show the date of the last load, so a gap caused by a missed overnight run is visible for what it is. That is not a standard output of the template: store the load timestamp from the source system and add it to the agent's grounding.
 
-If you want the build plan comparison, the plan quantities from production planning also have to be available to the agent, either stored in Salesforce or fetched by an action from the planning system. Account forecasts need configured inputs, such as orders, opportunities or sales agreements, as described in [account forecasting for sales volume planning](../account-forecasting-sales-volume-planning/). How I split systems of record between ERP and Salesforce is part of my [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
+If you want the build plan comparison, the plan quantities from production planning also have to be available to the agent, either stored in Salesforce or fetched by an action from the planning system. Account forecasts need configured inputs, such as orders, opportunities or sales agreements, as described in [account forecasting for sales volume planning](/en/blog/account-forecasting-sales-volume-planning/). How I split systems of record between ERP and Salesforce is part of my [integration with ERP, middleware and telephony](/en/services/salesforce-integration/).
 
 ## Worked example: the Monday review at a compressor maker
 
@@ -116,14 +116,14 @@ Then a price increase for one product family has to be applied to 60 agreements.
 
 ## What would I check before switching it on?
 
-1. **License.** Help specifies the per-user add-on or Agentforce 1 Manufacturing Edition; the product page says the Max editions include the full Agentforce for Industries suite. Get written confirmation that your SKU provisions the Sales Planning template and its actions. Additional consumption is covered in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
+1. **License.** Help specifies the per-user add-on or Agentforce 1 Manufacturing Edition; the product page says the Max editions include the full Agentforce for Industries suite. Get written confirmation that your SKU provisions the Sales Planning template and its actions. Additional consumption is covered in [Flex Credits and Agentforce cost per action](/en/blog/flex-credits-agentforce-cost-per-action/).
 2. **Actuals feed.** Live, daily, reconciled with the ERP for the 20 largest agreements.
 3. **Limits.** Preview of 50 agreements, 450 products per bulk update, summary tested with your largest agreement.
 4. **Provisioning and permissions.** Feature settings from the setup page and the bulk update permission set assigned.
 5. **Language.** The help says the user interface is available in English only and may not be fully supported in other languages. Test with German questions from your sales team.
-6. **Write access.** Bulk updates in batches, with the built-in preview and confirmation, tested as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+6. **Write access.** Bulk updates in batches, with the built-in preview and confirmation, tested as described in [testing Agentforce agents before go-live](/en/blog/testing-agentforce-agents-before-go-live/).
 7. **Alerts.** If you need proactive alerts on build plan deviations, plan them as your own build or ask Salesforce for a dated roadmap.
 
-Whether agents fit your company at all is covered in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/), with an overview of manufacturing agents in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
+Whether agents fit your company at all is covered in [Agentforce for manufacturers: start now or wait?](/en/blog/agentforce-yes-or-no-manufacturers/), with an overview of manufacturing agents in the masterclass chapter [AI agents in manufacturing](/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
 Point 2 decides the rest. As long as actuals from the ERP are not reconciled daily, I do not switch the agent on for sales.

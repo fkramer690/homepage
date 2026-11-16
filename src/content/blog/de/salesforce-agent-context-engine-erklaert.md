@@ -87,10 +87,10 @@ Die Agent Context Engine ist in der Preview, und Preise hat Salesforce in der An
 | Führendes System und Aktualität | Legen Sie fest, welches System maßgeblich ist, wenn sich Preise, Verträge oder Anlagenstatus widersprechen, und wie aktuell jeder Teil des Kontexts sein muss. |
 | Agentenidentität und gemeinsame Erinnerungen | Legen Sie fest, welche Agenten sich ausweisen, welche Agenten Erinnerungen zum selben Kunden teilen dürfen und wer Erinnerungen freigibt, bevor andere Agenten sie nutzen. |
 
-Warum diese Grundlagen wichtiger sind als der Agent selbst, beschreibe ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
+Warum diese Grundlagen wichtiger sind als der Agent selbst, beschreibe ich in [Agentforce: Business Value und Datenqualität zuerst](/blog/agentforce-business-value-datenqualitaet/).
 
 ## Soll Data 360 zum Kern der KI-Architektur werden?
 
 Die Agent Context Engine zeigt, wohin Salesforce steuert: Data 360 als gemeinsame Grundlage für Daten, Kontext und Governance, mit Agenten verschiedener Plattformen darüber. Ob das passt, ist eine Entscheidung und keine Selbstverständlichkeit. Für einen Architekten auf Kundenseite stellen sich die üblichen Fragen: Wie viel hängt an einem Hersteller, welche Daten müssen wirklich in Data 360, welche Kosten entstehen im großen Maßstab, wie lassen sich Erinnerungen und Definitionen bei einem Kurswechsel exportieren, und wer verantwortet Definitionen und Berechtigungen?
 
-Das sind Entscheidungen des Kunden, nicht eines einzelnen Umsetzungspartners. Sie gehören in die Zielarchitektur, bevor der erste Agent produktiv geht. Das ist ein Kernteil meiner [Arbeit an Architektur und Governance](../../leistungen/salesforce-architektur/).
+Das sind Entscheidungen des Kunden, nicht eines einzelnen Umsetzungspartners. Sie gehören in die Zielarchitektur, bevor der erste Agent produktiv geht. Das ist ein Kernteil meiner [Arbeit an Architektur und Governance](/leistungen/salesforce-architektur/).

@@ -61,7 +61,7 @@ Settle | Finance
 
 Flows handle submission and approval, and the Data Processing Engine handles large volumes. The core object is the rebate partner special pricing term. It holds the special price, the reference price, the reimbursable difference, quantity thresholds, eligibility criteria and products. A claim that passes all checks is assigned the status System Processed. The first unit also names CRM Analytics dashboards and predefined workflows for claim validation, and lists Business Rules Engine as a prerequisite module.
 
-Payment itself remains in the existing system. In the typical target architecture Salesforce calculates and approves, and the credit note is booked in the ERP; Salesforce does not replace accounting. Whether the handoff happens when the claim is approved or when the payout is created is a solution design decision. That is the same split as in [rebate management](../rebate-management-dealer-rebates/), and the interface that transfers approved amounts to SAP should be planned with it.
+Payment itself remains in the existing system. In the typical target architecture Salesforce calculates and approves, and the credit note is booked in the ERP; Salesforce does not replace accounting. Whether the handoff happens when the claim is approved or when the payout is created is a solution design decision. That is the same split as in [rebate management](/en/blog/rebate-management-dealer-rebates/), and the interface that transfers approved amounts to SAP should be planned with it.
 
 ## What Salesforce publishes on price, and what stays open
 
@@ -78,11 +78,11 @@ So the $30,000 is the list price of the add-on for the org, not necessarily the 
 Payouts are counted: according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=xcloud.chrm_payout_usage.htm&language=en_US&type=5), usage is based on the total value of all payouts from rebates, ship and debit, price protection and stock rotation over the order term. The pages do not say how much is included. Ask Salesforce to confirm in writing which price and which payout volume apply to your contract.
 ```
 
-How I would turn that into a five-year comparison against the current process is described under [make-or-buy and license forecasts](../../services/make-or-buy-licences/).
+How I would turn that into a five-year comparison against the current process is described under [make-or-buy and license forecasts](/en/services/make-or-buy-licences/).
 
 ## How is ship and debit different from rebates?
 
-Rebates reward volume. A dealer reaches a tier over a quarter or a year and receives a percentage back afterwards, as described in [rebate management for dealer rebates](../rebate-management-dealer-rebates/). Ship and debit compensates for a price difference, deal by deal, for a specific end customer. Price protection also compensates for a price difference, triggered by a list price change instead of a deal.
+Rebates reward volume. A dealer reaches a tier over a quarter or a year and receives a percentage back afterwards, as described in [rebate management for dealer rebates](/en/blog/rebate-management-dealer-rebates/). Ship and debit compensates for a price difference, deal by deal, for a specific end customer. Price protection also compensates for a price difference, triggered by a list price change instead of a deal.
 
 That difference changes who works with the system. Rebates are calculated by program managers at period end. Ship and debit claims arrive continuously, from claim clerks at distributors, and someone at the manufacturer has to process them within days. Trailhead promises reimbursements "within hours instead of weeks" for claims that pass automated validation. Claims that fail still require manual review.
 
@@ -96,7 +96,7 @@ The essentials are sell-through and stock data. A claim says: I sold 1,200 units
 - **That the units came from stock supplied by you.** Channel inventory per distributor, so a claim for 1,200 units does not exceed what the distributor bought.
 - **That the end customer was eligible.** A clean customer master, so "Customer X Ltd" and "Customer X Limited" count as one company when they are one.
 
-Without structured sell-through data, the validation mainly checks whether the documents match the program. Without stock, it cannot check whether the claimed quantity fits the distributor's deliveries, returns and inventory, and that match is what reveals duplicate claims and overpayments. Overpayments in price protection come from the same gap: a distributor claims stock on hand at the old price that it no longer has. Channel inventory tracking is in the package; the data still has to be supplied by the distributors. I describe how distributor stock reaches Salesforce, and how old it is when it arrives, in [Agentforce for distributor stock and replenishment](../distributor-inventory-replenishment-agentforce/).
+Without structured sell-through data, the validation mainly checks whether the documents match the program. Without stock, it cannot check whether the claimed quantity fits the distributor's deliveries, returns and inventory, and that match is what reveals duplicate claims and overpayments. Overpayments in price protection come from the same gap: a distributor claims stock on hand at the old price that it no longer has. Channel inventory tracking is in the package; the data still has to be supplied by the distributors. I describe how distributor stock reaches Salesforce, and how old it is when it arrives, in [Agentforce for distributor stock and replenishment](/en/blog/distributor-inventory-replenishment-agentforce/).
 
 ## Example: 15 distributors and 600 claims a month
 
@@ -104,7 +104,7 @@ The figures are hypothetical. A manufacturer of electronic components sells thro
 
 With Channel Revenue Management, special prices become pricing terms, distributors submit claims through the portal, and the validation rejects duplicates and claims above the approved quantity before a person reviews them. Assume 80 percent of claims pass automated validation. The two people then handle 120 exceptions instead of 600 claims. The 80 percent is not a Salesforce figure. For a business case I would first run 100 to 200 historical claims against the planned rules and measure the real rate.
 
-Set against that are $30,000 a year for the add-on, portal licenses for 15 distributors and the interface work. For partner access, the customer portal article explains [what partners see and which license covers partner access](../manufacturing-cloud-customer-portal/). If only three distributors send twenty claims a month, I would keep the current process and tighten the approval rules first. The chapter on the [dealer and partner channel](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/) shows where ship and debit sits next to rebates, portals and dealer visits.
+Set against that are $30,000 a year for the add-on, portal licenses for 15 distributors and the interface work. For partner access, the customer portal article explains [what partners see and which license covers partner access](/en/blog/manufacturing-cloud-customer-portal/). If only three distributors send twenty claims a month, I would keep the current process and tighten the approval rules first. The chapter on the [dealer and partner channel](/en/masterclass/manufacturing-cloud/dealer-and-partner-channel/) shows where ship and debit sits next to rebates, portals and dealer visits.
 
 ## Count claims per month
 

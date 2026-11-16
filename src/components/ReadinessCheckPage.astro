@@ -1,0 +1,509 @@
+---
+// Offer page of the AI readiness check (package A of AI-native Delivery) in either language.
+// Content: src/data/ki-readiness-check.ts. The graphics follow the offer PDF
+// (public/downloads/angebot-ai-native-delivery.pdf): comparison with arrows, icon list,
+// decision brief miniature, license calculation, numbered timelines, principle row and
+// quality gate line. All drawings are HTML and CSS, no SVG text.
+import Page from '../layouts/Page.astro';
+import ExternalMark from './ExternalMark.astro';
+import ContactForm from './ContactForm.astro';
+import PhoneLine from './PhoneLine.astro';
+import Icon from './Icon.astro';
+import Photo from './Photo.astro';
+import { Image } from 'astro:assets';
+import portrait from '../assets/portrait.png';
+import { en } from '../i18n/en';
+import { de } from '../i18n/de';
+import { contactHref, contactExternal } from '../site';
+import { kiReadinessCheck, kiReadinessCheckPaths as paths, offerPdf } from '../data/ki-readiness-check';
+import { homeHref, localHref } from '../lib/paths';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+const { lang } = Astro.props;
+const t = lang === 'de' ? de : en;
+const c = kiReadinessCheck[lang];
+const base = import.meta.env.BASE_URL;
+const alternates = { en: localHref('en', paths.en), de: localHref('de', paths.de) };
+const url = new URL(alternates[lang], Astro.site).href;
+const abs = (path: string) => new URL(path, Astro.site).href;
+const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
+const ogImage = `${base}og/${lang}/ki-readiness-check.png`;
+const href = (path: string) => localHref(lang, path);
+const r = c.results;
+const p = c.principles;
+const o = c.offer;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${url}#service`,
+      name: c.title,
+      description: c.description,
+      provider: { '@type': 'Organization', name: 'FK Solution Design GmbH', url: abs(homeHref(lang)) },
+      areaServed: 'DE',
+      offers: { '@type': 'Offer', price: '3900', priceCurrency: 'EUR', url },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      inLanguage: lang,
+      mainEntity: c.faq.map(({ q, a }) => ({ '@type': 'Question', name: q, text: q, answerCount: 1, acceptedAnswer: { '@type': 'Answer', text: a } })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'FK Solution Design', item: abs(homeHref(lang)) },
+        { '@type': 'ListItem', position: 2, name: c.title, item: url },
+      ],
+    },
+  ],
+};
+---
+<Page layout="wide" lang={lang} title={c.metaTitle} description={c.description} alternates={alternates} image={ogImage} hasContact>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+
+  <section class="hero dark grid-bg rc-hero">
+    <div class="container hero-inner rc-hero-inner">
+      <div>
+        <p class="eyebrow mono">{c.eyebrow}</p>
+        <h1>{c.title}</h1>
+        <p class="hero-lead">{c.lead}</p>
+        <ul class="rc-promises">{c.promises.map((x) => <li>{x}</li>)}</ul>
+        <div class="hero-ctas">
+          <a class="btn" href="#contact">{c.ctaPrimary}</a>
+          <a class="btn btn-ghost" href="#process">{c.ctaSecondary}</a>
+        </div>
+      </div>
+      <figure class="rc-portrait">
+        <Image src={portrait} alt={c.portraitAlt} widths={[320, 640]} sizes="(max-width: 880px) 220px, 320px" />
+        <figcaption>Fabian Kramer · Salesforce Enterprise Architect</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="proof" aria-label={lang === 'de' ? 'Kennzahlen' : 'Key figures'}>
+    <div class="container">
+      <ul class="proof-list rc-facts">
+        {c.facts.map((f) => (
+          <li><span class="proof-value">{f.value}</span><span class="proof-label">{f.label}</span></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Comparison "KI-gestützt → AI-native" as in the PDF, page 2 -->
+  <section class="section" id="idea">
+    <div class="container">
+      <p class="label mono">{c.compare.label}</p>
+      <h2>{c.compare.title}</h2>
+      <p class="section-intro">{c.compare.intro}</p>
+      <table class="rk-vs">
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col" class="rk-vs-old">{c.compare.colOld}<small>{c.compare.colOldNote}</small></th>
+            <td class="rk-vs-gap"></td>
+            <th scope="col" class="rk-vs-new">{c.compare.colNew}<small>{c.compare.colNewNote}</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          {c.compare.rows.map((row) => (
+            <tr>
+              <th scope="row">{row.k}</th>
+              <td class="rk-vs-old" data-col={c.compare.colOld}>{row.old}</td>
+              <td class="rk-vs-arr" aria-hidden="true">→</td>
+              <td class="rk-vs-new" data-col={c.compare.colNew}>{row.now}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Situations as an icon list (PDF page 2, "Warum es ein Zukunftsthema ist") -->
+  <section class="section alt" id="situations">
+    <div class="container">
+      <p class="label mono">{c.situations.label}</p>
+      <h2>{c.situations.title}</h2>
+      <p class="section-intro">{c.situations.intro}</p>
+      <ul class="rk-reasons">
+        {c.situations.items.map((it) => (
+          <li>
+            <span class="rk-ic"><Icon name={it.icon} /></span>
+            <div>
+              <h3>{it.t}</h3>
+              <p>{it.d}</p>
+              <a class="rk-more" href={href(it.link)}>{it.linkText} →</a>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Results panel with decision brief miniature and license calculation (PDF page 4) -->
+  <section class="section" id="results">
+    <div class="container">
+      <p class="label mono">{r.label}</p>
+      <h2>{r.title}</h2>
+      <p class="section-intro">{r.intro}</p>
+      <div class="rk-panel">
+        <div>
+          <h3 class="rk-panel-title">{r.listTitle}</h3>
+          <ul class="rk-dl">
+            {r.items.map((it) => (
+              <li>
+                <span class="rk-ic"><Icon name={it.icon} /></span>
+                <div><strong>{it.t}</strong><span>{it.d}</span></div>
+              </li>
+            ))}
+          </ul>
+          <a class="rk-panel-cta" href="#contact">{r.cta} →</a>
+        </div>
+        <figure class="rk-paper">
+          <p class="rk-paper-title">{r.paper.title}</p>
+          <p class="rk-paper-sub">{r.paper.maturity}</p>
+          <dl class="rk-mat">
+            {r.paper.areas.map((a) => (
+              <>
+                <dt>{a.k}</dt>
+                <dd>
+                  <span class="rk-bars" aria-hidden="true">{[1, 2, 3, 4, 5].map((n) => <i class={n <= a.v ? 'on' : undefined} />)}</span>
+                  <span class="visually-hidden">{a.v} / 5</span>
+                </dd>
+              </>
+            ))}
+          </dl>
+          <p class="rk-paper-sub">{r.paper.plan}</p>
+          <ol class="rk-plan">
+            {r.paper.months.map((m) => <li><span>{m.m}</span>{m.t}</li>)}
+          </ol>
+          <figcaption>{r.paper.caption}</figcaption>
+        </figure>
+      </div>
+
+      <h3 class="rk-sub">{r.licence.title}</h3>
+      <div class="rk-lic">
+        {r.licence.parts.map((part, i) => (
+          <>
+            {i > 0 && <span class="rk-op" aria-hidden="true">+</span>}
+            <div class="rk-lt">
+              <p><b>{part.n}</b> {part.t}</p>
+              <span>{part.who}</span>
+              <em>{part.price}</em>
+            </div>
+          </>
+        ))}
+        <span class="rk-op" aria-hidden="true">=</span>
+        <div class="rk-lt rk-lt-sum">
+          <p><b>{r.licence.sum.t}</b></p>
+          <span>{r.licence.sum.who}</span>
+          <em>{r.licence.sum.price}</em>
+        </div>
+      </div>
+      <p class="rk-small">{r.licence.note}</p>
+    </div>
+  </section>
+
+  <!-- Three days as a numbered timeline (PDF page 4, "Ablauf") -->
+  <section class="section alt" id="process">
+    <div class="container">
+      <p class="label mono">{c.process.label}</p>
+      <h2>{c.process.title}</h2>
+      <p class="section-intro">{c.process.intro}</p>
+      <ol class="rk-tline">
+        {c.process.steps.map((s, i) => (
+          <li>
+            <span class="rk-dot" aria-hidden="true">{i + 1}</span>
+            <span class="rk-where">{s.tag}</span>
+            <h3>{s.t}</h3>
+            <p>{s.d}</p>
+          </li>
+        ))}
+      </ol>
+      <dl class="rk-meta">
+        {c.process.meta.map((m) => (
+          <div><dt>{m.k}</dt><dd>{m.v}</dd></div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- Four principles and the quality gate line (PDF page 3) -->
+  <section class="section" id="principles">
+    <div class="container">
+      <p class="label mono">{p.label}</p>
+      <h2>{p.title}</h2>
+      <p class="section-intro">{p.intro}</p>
+      <ul class="rk-principles">
+        {p.items.map((it) => (
+          <li>
+            <span class="rk-ic"><Icon name={it.icon} /></span>
+            <h3>{it.t}</h3>
+            <p>{it.d}</p>
+          </li>
+        ))}
+      </ul>
+      <h3 class="rk-sub">{p.gatesTitle}</h3>
+      <ol class="rk-gates">
+        {p.gates.map((g, i) => (
+          <li><span class="rk-dot rk-dot-dark" aria-hidden="true">{i + 1}</span><strong>{g.t}</strong><span>{g.who}</span></li>
+        ))}
+      </ol>
+      <p class="rk-note">{p.note}</p>
+      {p.links.map((l) => <p class="fa-more">{l.text} <a href={href(l.link)}>{l.linkText}</a></p>)}
+    </div>
+  </section>
+
+  <!-- Experience with photo (PDF page 3, "Meine Erfahrung") -->
+  <section class="section alt">
+    <div class="container rk-exp">
+      <figure class="rk-exp-photo"><Photo photo="02-workshop-whiteboard-v03" lang={lang} sizes="(max-width: 860px) 100vw, 480px" /></figure>
+      <div>
+        <p class="label mono">{c.practice.label}</p>
+        <h2>{c.practice.title}</h2>
+        <ul class="rk-ticks">
+          {c.practice.items.map((it) => <li><span class="rk-tick"><Icon name="tick" /></span><span>{it}</span></li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Package head, entry timeline, terms and the follow-up packages (PDF pages 4 and 7) -->
+  <section class="section" id="price">
+    <div class="container">
+      <p class="label mono">{o.label}</p>
+      <h2>{o.title}</h2>
+      <div class="rk-pkghead">
+        <p class="rk-pkgname"><small>{o.pkg}</small>{o.name}</p>
+        <p class="rk-pkgprice">{o.price}<small>{o.priceNote}</small></p>
+      </div>
+      <p class="rk-pkgwho">{o.who}</p>
+
+      <h3 class="rk-sub">{o.entryTitle}</h3>
+      <ol class="rk-tline">
+        {o.entry.map((s, i) => (
+          <li>
+            <span class="rk-dot" aria-hidden="true">{i + 1}</span>
+            <span class="rk-where">{s.tag}</span>
+            <h4>{s.t}</h4>
+            <p>{s.d}</p>
+          </li>
+        ))}
+      </ol>
+
+      <div class="rk-twocol">
+        <div>
+          <h3 class="rk-sub">{o.termsTitle}</h3>
+          <ul class="rk-ticks">
+            {o.terms.map((it) => <li><span class="rk-tick"><Icon name="tick" /></span><span>{it}</span></li>)}
+          </ul>
+          <div class="rk-ctas">
+            <a class="btn" href="#contact">{o.cta}</a>
+            <a class="text-link" href={`${base}${offerPdf}`} target="_blank" rel="noopener">{o.pdfText}<ExternalMark label={t.nav.newTab} /></a>
+          </div>
+        </div>
+        <div>
+          <h3 class="rk-sub">{o.nextTitle}</h3>
+          <div class="rk-next">
+            {o.next.map((n) => (
+              <div class="rk-pillar">
+                <span class="rk-tag">{n.tag}</span>
+                <h4>{n.t}</h4>
+                <p class="rk-who">{n.who}</p>
+                <p>{n.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" aria-labelledby="faq">
+    <div class="container">
+      <div class="fa-faq">
+        <h2 id="faq">{c.faqTitle}</h2>
+        {c.faq.map(({ q, a }) => (
+          <details class="faq-item">
+            <summary><h3>{q}</h3></summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="contact dark grid-bg" id="contact">
+    <div class="container contact-inner">
+      <div class="contact-intro">
+        <p class="label mono">{t.contact.label}</p>
+        <h2>{c.ctaTitle}</h2>
+        <p class="contact-text">{c.ctaText}</p>
+        <a class="btn" href={contactHref(c.formSubject)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+        {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
+        <PhoneLine t={t} />
+      </div>
+      <ContactForm t={t} subject={c.formSubject} />
+    </div>
+  </section>
+</Page>
+
+<style>
+  /* Shared pieces: icon frame, numbered dots, sub-headings, small print */
+  .rk-ic { display: block; width: 44px; height: 44px; }
+  .rk-ic :global(svg) { width: 44px; height: 44px; display: block; }
+  .rk-sub { margin: 2.2em 0 0.9em; font-size: var(--fs-md); }
+  .rk-small { margin: 0.9em 0 0; font-size: var(--fs-sm); color: var(--text-2); max-width: 90ch; }
+  .rk-dot { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--cyan); color: var(--white); font-weight: 600; font-size: var(--fs-sm); position: relative; z-index: 1; }
+  .rk-dot-dark { background: var(--anthracite); }
+
+  /* Comparison table: grey "today" column, cyan "goal" column, arrows between */
+  .rk-vs { width: 100%; border-collapse: separate; border-spacing: 0; font-size: var(--fs-ui); }
+  .rk-vs th, .rk-vs td { text-align: left; vertical-align: top; }
+  .rk-vs thead th { font-size: var(--fs-md); font-weight: 600; padding: 14px 20px; }
+  .rk-vs thead small { display: block; font-size: var(--fs-xs); font-weight: 400; margin-top: 2px; }
+  .rk-vs thead .rk-vs-old { background: var(--bg); color: var(--text-2); }
+  .rk-vs thead .rk-vs-new { background: var(--cyan); color: var(--white); }
+  .rk-vs thead .rk-vs-new small { color: var(--on-cyan); }
+  .rk-vs tbody th { width: 130px; padding: 16px 16px 16px 0; font-weight: 400; color: var(--text-2); border-top: 1px solid var(--line); }
+  .rk-vs tbody td { padding: 16px 20px; border-top: 1px solid var(--white); }
+  .rk-vs tbody .rk-vs-old { background: var(--bg); color: var(--text-2); }
+  .rk-vs tbody .rk-vs-new { background: var(--tint-2); color: var(--anthracite); font-weight: 600; }
+  .rk-vs-gap, .rk-vs-arr { width: 56px; }
+  .rk-vs .rk-vs-arr { text-align: center; vertical-align: middle; color: var(--cyan); font-size: var(--fs-lg); padding: 0; border-top: 1px solid var(--line); }
+
+  /* Situations: icon left, text right, two columns */
+  .rk-reasons { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 32px 56px; }
+  .rk-reasons li { display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start; }
+  .rk-reasons h3 { margin: 2px 0 0.35em; font-size: var(--fs-md); }
+  .rk-reasons p { margin: 0 0 0.6em; color: var(--text-2); font-size: var(--fs-ui); }
+  .rk-more { font-size: var(--fs-sm); font-weight: 600; color: var(--cyan-dark); text-decoration: none; }
+  .rk-more:hover { text-decoration: underline; }
+
+  /* Results panel with the decision brief miniature */
+  .rk-panel { display: grid; grid-template-columns: 1fr 400px; gap: 48px; background: var(--tint-2); padding: 36px 40px; border-radius: var(--radius); }
+  .rk-panel-title { margin: 0 0 0.6em; font-size: var(--fs-md); }
+  .rk-dl { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+  .rk-dl li { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: start; }
+  .rk-dl strong { display: block; color: var(--anthracite); font-weight: 600; line-height: 1.35; }
+  .rk-dl span { font-size: var(--fs-ui); color: var(--text-2); }
+  .rk-panel-cta { display: inline-block; margin-top: 26px; padding: 12px 20px; background: var(--white); border-radius: var(--radius-sm); font-weight: 600; color: var(--cyan-dark); text-decoration: none; }
+  .rk-panel-cta:hover { box-shadow: var(--shadow-lift); }
+  .rk-paper { margin: 0; align-self: start; background: var(--white); border: 1px solid var(--tint-line); padding: 24px 26px 20px; box-shadow: var(--shadow-lift); }
+  .rk-paper-title { margin: 0 0 12px; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-weight: 600; font-size: var(--fs-md); color: var(--anthracite); }
+  .rk-paper-sub { margin: 14px 0 8px; font-size: var(--fs-xs); font-weight: 600; color: var(--cyan-dark); }
+  .rk-mat { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; align-items: center; margin: 0; font-size: var(--fs-xs); }
+  .rk-mat dt { color: var(--text-2); }
+  .rk-mat dd { margin: 0; }
+  .rk-bars { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+  .rk-bars i { height: 10px; background: var(--line); }
+  .rk-bars i.on { background: var(--cyan); }
+  .rk-plan { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; font-size: var(--fs-xs); line-height: 1.3; }
+  .rk-plan li { background: var(--tint-line); color: var(--anthracite); padding: 7px 8px; }
+  .rk-plan li:first-child { background: var(--cyan); color: var(--white); }
+  .rk-plan span { display: block; }
+  .rk-paper figcaption { margin-top: 14px; font-size: var(--fs-xs); color: var(--grey-600); }
+
+  /* License example: boxes joined by + and = */
+  .rk-lic { display: grid; grid-template-columns: 1fr 40px 1fr 40px 1fr; align-items: stretch; }
+  .rk-lt { background: var(--bg); padding: 18px 22px; border-radius: var(--radius-sm); color: var(--anthracite); }
+  .rk-lt p { margin: 0; }
+  .rk-lt b { font-weight: 600; }
+  .rk-lt span { display: block; font-size: var(--fs-sm); color: var(--text-2); margin-top: 2px; }
+  .rk-lt em { display: block; font-style: normal; font-weight: 600; font-size: var(--fs-lg); margin-top: 10px; }
+  .rk-lt-sum { background: var(--cyan); color: var(--white); }
+  .rk-lt-sum span { color: var(--on-cyan); }
+  .rk-op { display: grid; place-items: center; color: var(--cyan); font-size: var(--fs-lg); font-weight: 600; }
+
+  /* Numbered timeline with a light connecting line */
+  .rk-tline { list-style: none; margin: 0; padding: 0; position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .rk-tline::before { content: ''; position: absolute; left: 17px; right: 17px; top: 16px; height: 2px; background: var(--tint-line); }
+  .rk-tline li { position: relative; }
+  .rk-tline .rk-dot { margin-bottom: 12px; }
+  .rk-where { display: block; color: var(--cyan-dark); font-size: var(--fs-sm); }
+  .rk-tline h3, .rk-tline h4 { margin: 0.15em 0 0.35em; font-size: var(--fs-base); }
+  .rk-tline p { margin: 0; color: var(--text-2); font-size: var(--fs-ui); }
+  .rk-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin: 28px 0 0; padding-top: 18px; border-top: 1px solid var(--line); font-size: var(--fs-ui); }
+  .rk-meta dt { font-weight: 600; color: var(--anthracite); }
+  .rk-meta dd { margin: 0.2em 0 0; color: var(--text-2); }
+
+  /* Four principles between a dark top rule and a light bottom rule */
+  .rk-principles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--anthracite); border-bottom: 1px solid var(--line); }
+  .rk-principles li { padding: 24px 24px 24px 0; }
+  .rk-principles li + li { padding-left: 24px; border-left: 1px solid var(--line); }
+  .rk-principles .rk-ic { margin-bottom: 14px; }
+  .rk-principles h3 { margin: 0 0 0.35em; font-size: var(--fs-base); line-height: 1.35; }
+  .rk-principles p { margin: 0; color: var(--text-2); font-size: var(--fs-ui); }
+  .rk-gates { list-style: none; margin: 0; padding: 0; position: relative; display: grid; grid-template-columns: repeat(5, 1fr); text-align: center; }
+  .rk-gates::before { content: ''; position: absolute; left: 10%; right: 10%; top: 16px; height: 2px; background: var(--tint-line); }
+  .rk-gates li { position: relative; padding: 0 8px; }
+  .rk-gates .rk-dot { margin: 0 auto 10px; }
+  .rk-gates strong { display: block; color: var(--anthracite); font-weight: 600; }
+  .rk-gates li > span:last-child { font-size: var(--fs-sm); color: var(--text-2); }
+  .rk-note { margin: 2em 0 1.2em; padding: 4px 0 4px 22px; border-left: 3px solid var(--cyan); color: var(--anthracite); font-size: var(--fs-base); max-width: 90ch; }
+
+  /* Experience: photo and tick list */
+  .rk-exp { display: grid; grid-template-columns: 480px 1fr; gap: 48px; align-items: center; }
+  .rk-exp-photo { margin: 0; }
+  .rk-exp-photo :global(img) { width: 100%; height: auto; display: block; border-radius: var(--radius-sm); }
+  .rk-ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .rk-ticks li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; color: var(--text); }
+  .rk-tick { display: block; width: 20px; height: 20px; margin-top: 3px; color: var(--cyan-dark); }
+  .rk-tick :global(svg) { width: 20px; height: 20px; display: block; stroke: currentColor; }
+
+  /* Package head with price, terms and follow-up packages */
+  .rk-pkghead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px; border-bottom: 1px solid var(--anthracite); padding-bottom: 10px; }
+  .rk-pkgname, .rk-pkgprice { margin: 0; font-size: var(--fs-lg); font-weight: 600; color: var(--anthracite); }
+  .rk-pkgname small { font-size: var(--fs-base); font-weight: 400; color: var(--text-2); margin-right: 12px; }
+  .rk-pkgprice small { font-size: var(--fs-sm); font-weight: 400; color: var(--text-2); margin-left: 10px; }
+  .rk-pkgwho { margin: 12px 0 0; color: var(--text-2); }
+  .rk-twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 1.2em; }
+  .rk-ctas { display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; margin-top: 28px; }
+  .rk-next { display: grid; gap: 14px; }
+  .rk-pillar { padding: 18px 22px; border-top: 3px solid var(--line); background: var(--bg); }
+  .rk-pillar:first-child { border-top-color: var(--cyan); background: var(--tint-2); }
+  .rk-tag { font-size: var(--fs-xs); color: var(--text-2); }
+  .rk-pillar h4 { margin: 2px 0 4px; font-size: var(--fs-md); }
+  .rk-pillar p { margin: 0; font-size: var(--fs-ui); color: var(--text-2); }
+  .rk-pillar .rk-who { color: var(--text); margin-bottom: 8px; }
+
+  @media (max-width: 960px) {
+    .rk-panel { grid-template-columns: 1fr; gap: 32px; padding: 28px 24px; }
+    .rk-principles { grid-template-columns: 1fr 1fr; }
+    .rk-principles li:nth-child(3) { padding-left: 0; border-left: 0; }
+    .rk-principles li:nth-child(n + 3) { border-top: 1px solid var(--line); }
+    .rk-exp { grid-template-columns: 1fr; gap: 28px; }
+  }
+  @media (max-width: 760px) {
+    .rk-vs, .rk-vs tbody, .rk-vs tr, .rk-vs th, .rk-vs td { display: block; width: auto; }
+    .rk-vs thead, .rk-vs td.rk-vs-arr { display: none; }
+    .rk-plan { grid-template-columns: 1fr; }
+    .rk-plan span { display: inline; margin-right: 6px; }
+    .rk-vs tbody tr { margin-bottom: 16px; }
+    .rk-vs tbody th { border-top: 0; padding: 0 0 6px; font-weight: 600; color: var(--anthracite); }
+    .rk-vs tbody td::before { content: attr(data-col); display: block; font-size: var(--fs-xs); font-weight: 400; margin-bottom: 2px; }
+    .rk-vs tbody .rk-vs-old::before { color: var(--grey-600); }
+    .rk-vs tbody .rk-vs-new::before { color: var(--cyan-dark); }
+    .rk-reasons { grid-template-columns: 1fr; gap: 28px; }
+    .rk-lic { grid-template-columns: 1fr; }
+    .rk-op { padding: 4px 0; }
+    .rk-tline, .rk-meta, .rk-twocol { grid-template-columns: 1fr; gap: 22px; }
+    .rk-tline::before { left: 16px; right: auto; top: 17px; bottom: 17px; width: 2px; height: auto; }
+    .rk-tline li { padding-left: 52px; }
+    .rk-tline .rk-dot { position: absolute; left: 0; top: 0; }
+    .rk-gates { grid-template-columns: 1fr; text-align: left; gap: 16px; }
+    .rk-gates::before { left: 16px; right: auto; top: 17px; bottom: 17px; width: 2px; height: auto; }
+    .rk-gates li { padding: 0 0 0 52px; }
+    .rk-gates .rk-dot { position: absolute; left: 0; top: 0; margin: 0; }
+    .rk-principles { grid-template-columns: 1fr; }
+    .rk-principles li, .rk-principles li + li { padding: 20px 0; border-left: 0; }
+    .rk-principles li + li { border-top: 1px solid var(--line); }
+  }
+</style>

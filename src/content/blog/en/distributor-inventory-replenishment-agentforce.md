@@ -49,7 +49,7 @@ Replenishment rules are stored in [InventoryReplenishmentPolicy](https://develop
 
 Two consequences for a decision maker:
 
-- **A Product Request is a Salesforce record.** It does not reserve stock in SAP and does not create a sales order or a purchase order. A further step has to turn it into an order, and that integration is your project, not part of the template. If dealers are supposed to place reorders themselves in a B2B store instead, see [reorders in B2B Commerce](../b2b-commerce-reorder-order-templates/).
+- **A Product Request is a Salesforce record.** It does not reserve stock in SAP and does not create a sales order or a purchase order. A further step has to turn it into an order, and that integration is your project, not part of the template. If dealers are supposed to place reorders themselves in a B2B store instead, see [reorders in B2B Commerce](/en/blog/b2b-commerce-reorder-order-templates/).
 - **Externally reported stock is a copy.** If distributors report stock through a portal upload, EDI or an interface weekly, the agent works with figures up to seven days old and should say so, together with the status of the last successful import. If distributors record goods receipts in Salesforce, it can be the operational record instead.
 
 ## Where must SAP or proALPHA remain the system of record?
@@ -67,9 +67,9 @@ SAP or proALPHA should remain the system of record wherever a figure has one rig
 | Distributor purchase order | Salesforce or ERP, depending on the target design | prepares it for approval |
 | Sales order and invoice | SAP or proALPHA | reports the ERP order number |
 
-The order status side of this, meaning how an agent reads SAP through MuleSoft, is covered in [Agentforce and SAP: order status through MuleSoft](../agentforce-sap-order-status-mulesoft/). Replenishment adds the write path. The API therefore needs a simulation call that returns price, availability and credit status without creating anything, and a separate create call. If your ERP has no such interface, read [legacy ERP without an API](../legacy-erp-without-api-ai-agents/) first.
+The order status side of this, meaning how an agent reads SAP through MuleSoft, is covered in [Agentforce and SAP: order status through MuleSoft](/en/blog/agentforce-sap-order-status-mulesoft/). Replenishment adds the write path. The API therefore needs a simulation call that returns price, availability and credit status without creating anything, and a separate create call. If your ERP has no such interface, read [legacy ERP without an API](/en/blog/legacy-erp-without-api-ai-agents/) first.
 
-Who owns each row is a governance question as much as a technical one. If sales ops maintains min/max in Salesforce and supply chain maintains safety stock in SAP, both must agree on which one wins. This requires the same discipline as in the [object ownership matrix](../salesforce-object-ownership-matrix/).
+Who owns each row is a governance question as much as a technical one. If sales ops maintains min/max in Salesforce and supply chain maintains safety stock in SAP, both must agree on which one wins. This requires the same discipline as in the [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/).
 
 ## Write actions need gates set in code
 
@@ -82,13 +82,13 @@ For a replenishment order I would put four gates in code:
 3. **Confirmation by the distributor.** The agent shows line items, ERP prices and confirmed dates, and the distributor approves explicitly.
 4. **A duplicate check.** Timeouts, repeated user input or middleware can send the same request twice. Each proposal carries a unique reference, and the ERP interface rejects a second order with the same reference.
 
-How these building blocks work is in [Agent Script: why business rules don't belong in the LLM](../agent-script-deterministic-rules/). The consumption cost of the simulation and create calls is estimated in [Flex Credits per action](../flex-credits-agentforce-cost-per-action/).
+How these building blocks work is in [Agent Script: why business rules don't belong in the LLM](/en/blog/agent-script-deterministic-rules/). The consumption cost of the simulation and create calls is estimated in [Flex Credits per action](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 ## Worked example: replenishment for 120 distributors
 
 Assume a manufacturer of compressed air components with SAP S/4HANA, 120 distributors in Germany, Austria and the Benelux, and a distributor portal on Experience Cloud. All numbers here are assumptions.
 
-Assume each distributor uploads stock for 300 fast-moving spare parts every Monday. With one min/max policy per part and distributor location, which is the most granular design, that is 36,000 policy records; policies per product category or policies shared across locations reduce the number. Nobody maintains 36,000 records by hand, so the minimum should come from consumption history or from [account forecasting](../account-forecasting-sales-volume-planning/), and sales ops only maintains exceptions.
+Assume each distributor uploads stock for 300 fast-moving spare parts every Monday. With one min/max policy per part and distributor location, which is the most granular design, that is 36,000 policy records; policies per product category or policies shared across locations reduce the number. Nobody maintains 36,000 records by hand, so the minimum should come from consumption history or from [account forecasting](/en/blog/account-forecasting-sales-volume-planning/), and sales ops only maintains exceptions.
 
 On Monday night the periodic process finds 40 parts below minimum at one distributor and creates product requests. On Tuesday the distributor opens the portal, and the agent summarizes the proposal, says the stock figures date from Monday, and asks whether quantities are still right. The distributor removes two line items. The agent then calls the SAP simulation. Prices come back from SAP, because in this example SAP holds the customer conditions. Three line items have no confirmed date yet, and the agent says exactly that. The distributor confirms, the create call returns an SAP order number, and the agent reports it.
 
@@ -107,7 +107,7 @@ Agent in portal --on credit block--> Credit management
 
 Now assume the same distributor is over its credit limit. The simulation returns a block, the create action stays hidden, and the agent hands the conversation to credit management with the proposal attached. It does not explain the credit situation itself; what a distributor is told about a block is a business decision that belongs in the API response.
 
-What I would expect to surface in such a pilot are data issues, not AI issues: distributors who do not upload on time, parts mapped to the wrong material number, and min/max values nobody has reviewed in years. Uploaded files are also untrusted input, a risk described in [prompt injection through dealer portals](../prompt-injection-dealer-portals-agentforce/).
+What I would expect to surface in such a pilot are data issues, not AI issues: distributors who do not upload on time, parts mapped to the wrong material number, and min/max values nobody has reviewed in years. Uploaded files are also untrusted input, a risk described in [prompt injection through dealer portals](/en/blog/prompt-injection-dealer-portals-agentforce/).
 
 ## Name the system of record for every data row
 
@@ -118,4 +118,4 @@ What I would expect to surface in such a pilot are data issues, not AI issues: d
 5. **Add the four gates** and an approval threshold, then let the agent create orders.
 6. **Check licenses early.** As of November 9, 2026, the US pricing page lists the Core editions at $275 per user per month and the Max editions at $650 ($700 for Sales & Service Max), billed annually; Max includes the Agentforce for Industries suite. The inventory subagent Help page still names the Agentforce for Manufacturing add-on or Agentforce 1 Manufacturing Edition, so confirm the entitlement on the order form. Have the partner demonstrate the Summer '26 distributor purchase order workflow in your sandbox.
 
-The interface design between Salesforce and the ERP is the larger part of this work; it is what I cover under [Salesforce integration](../../services/salesforce-integration/). The wider picture of agents in manufacturing is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
+The interface design between Salesforce and the ERP is the larger part of this work; it is what I cover under [Salesforce integration](/en/services/salesforce-integration/). The wider picture of agents in manufacturing is in the masterclass chapter [AI agents in manufacturing](/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/).

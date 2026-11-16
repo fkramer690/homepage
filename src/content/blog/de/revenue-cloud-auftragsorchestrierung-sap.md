@@ -80,7 +80,7 @@ Ein Referenzmuster von Salesforce für Revenue Cloud und SAP habe ich nicht gefu
 1. Der Callout schickt einen stabilen Idempotenzschlüssel mit, etwa die Salesforce-Auftrags-ID, und die Integrationsschicht oder SAP prüft ihn, bevor ein Auftrag angelegt wird. Nur die ID zu senden verhindert keine Duplikate.
 2. Die SAP-Auftragsnummer wird zurückgemeldet und am Salesforce-Auftrag gespeichert, entweder in der synchronen Antwort oder bei einem asynchronen Muster durch einen späteren Callback. Nach einem HTTP 202 bleibt der Callout in Bearbeitung, bis das Ergebnis eintrifft.
 3. In der hier angenommenen Architektur ist SAP nach der Übergabe für Lieferung, bestätigte Termine und Rechnung verantwortlich. Salesforce zeigt den Status an und ändert ihn nicht.
-4. Änderungen nach der Übergabe brauchen ein explizites Nachtragsdesign. Revenue Cloud kann einen verknüpften Zusatzauftrag anlegen, DRO gleicht den laufenden Plan ab und kann Kompensationsschritte ausführen. Ob SAP eine Änderung, eine Stornierung oder einen Ersatzauftrag erhält, ist eine Integrationsentscheidung. Wie Nachträge auf der Asset-Seite funktionieren, steht in [Assets, Nachträge und Verlängerungen](../revenue-cloud-assets-nachtraege-verlaengerungen/).
+4. Änderungen nach der Übergabe brauchen ein explizites Nachtragsdesign. Revenue Cloud kann einen verknüpften Zusatzauftrag anlegen, DRO gleicht den laufenden Plan ab und kann Kompensationsschritte ausführen. Ob SAP eine Änderung, eine Stornierung oder einen Ersatzauftrag erhält, ist eine Integrationsentscheidung. Wie Nachträge auf der Asset-Seite funktionieren, steht in [Assets, Nachträge und Verlängerungen](/blog/revenue-cloud-assets-nachtraege-verlaengerungen/).
 
 ```ablauf
 sf: Auftrag, DRO-Plan, Fallout-Queue
@@ -93,7 +93,7 @@ SAP-Kundenauftrag --> Lieferung
 Lieferung --> Rechnung
 ```
 
-Welches System welchen Schritt vom Angebot bis zur Rechnung verantwortet, behandelt [Revenue Cloud und SAP: Wer führt was?](../revenue-cloud-sap-quote-to-cash-aufteilung/). Dieselbe Aufteilung gehört in Ihre [Object Ownership Matrix](../object-ownership-matrix-salesforce/), damit kein Partner einen zweiten Weg zu SAP baut. Wie Händler den Auftragsstatus aus SAP abfragen, steht in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/).
+Welches System welchen Schritt vom Angebot bis zur Rechnung verantwortet, behandelt [Revenue Cloud und SAP: Wer führt was?](/blog/revenue-cloud-sap-quote-to-cash-aufteilung/). Dieselbe Aufteilung gehört in Ihre [Object Ownership Matrix](/blog/object-ownership-matrix-salesforce/), damit kein Partner einen zweiten Weg zu SAP baut. Wie Händler den Auftragsstatus aus SAP abfragen, steht in [Agentforce und SAP: Auftragsstatus über MuleSoft](/blog/agentforce-sap-auftragsstatus/).
 
 ## Was passiert, wenn SAP den Auftrag ablehnt?
 
@@ -122,4 +122,4 @@ Was dieser Freemium-Zugang umfasst, steht auf der Preisseite nicht. Lassen Sie s
 
 ## Die fünf häufigsten Auftragsarten skizzieren
 
-Nehmen Sie Ihre fünf häufigsten Auftragsarten und skizzieren Sie für jede, was nach der Unterschrift passiert: welches System und welches Team in welcher Reihenfolge beteiligt sind. Endet jede Skizze mit "den Rest macht SAP", beginnen Sie mit einer einfachen Schnittstelle. Sehen Sie mehrere Systeme und Abhängigkeiten, bilden Sie zuerst eine Auftragsart in DRO ab, samt Callout an SAP und Fallout-Queue, und testen Sie die Ablehnungen vor dem Normalfall. Das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/) zeigt, wo dieser Schritt im Gesamtprozess steht, und das Schnittstellendesign gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Nehmen Sie Ihre fünf häufigsten Auftragsarten und skizzieren Sie für jede, was nach der Unterschrift passiert: welches System und welches Team in welcher Reihenfolge beteiligt sind. Endet jede Skizze mit "den Rest macht SAP", beginnen Sie mit einer einfachen Schnittstelle. Sehen Sie mehrere Systeme und Abhängigkeiten, bilden Sie zuerst eine Auftragsart in DRO ab, samt Callout an SAP und Fallout-Queue, und testen Sie die Ablehnungen vor dem Normalfall. Das Kapitel [Angebot, Vertrag, Auftrag](/masterclass/revenue-cloud/angebot-vertrag-auftrag/) zeigt, wo dieser Schritt im Gesamtprozess steht, und das Schnittstellendesign gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/).

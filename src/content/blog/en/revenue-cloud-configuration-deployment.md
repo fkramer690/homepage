@@ -42,7 +42,7 @@ For teams coming from CPQ, the differences look like this:
 | Record states | Active checkbox on price and product rules | Varies by object, for example draft, active and inactive on selling models; some activation is manual |
 | Gearset support | Compare and deploy with the external ID wizard | External ID wizard plus deployment of configuration data alongside metadata, sequenced automatically |
 
-The consequence: a Revenue Cloud release can contain metadata, configuration data and manual setup steps. When it contains both metadata and data, the deployment steps have to run in the right order. The detailed comparison of both products is in [Salesforce CPQ vs Revenue Cloud: the real differences](../salesforce-cpq-vs-revenue-cloud-differences/).
+The consequence: a Revenue Cloud release can contain metadata, configuration data and manual setup steps. When it contains both metadata and data, the deployment steps have to run in the right order. The detailed comparison of both products is in [Salesforce CPQ vs Revenue Cloud: the real differences](/en/blog/salesforce-cpq-vs-revenue-cloud-differences/).
 
 ## Metadata first, parents before children
 
@@ -77,7 +77,7 @@ The release point is the easiest one to miss:
 During the Salesforce preview window, sandboxes run the new release weeks before production. A context definition built in a preview sandbox then cannot be deployed to production until production has the same release.
 ```
 
-Which sandbox runs which release is part of the [environments and branching](../../masterclass/devops-release-management/environments-and-branching/) plan.
+Which sandbox runs which release is part of the [environments and branching](/en/masterclass/devops-release-management/environments-and-branching/) plan.
 
 ## Every configuration record needs a stable unique ID
 
@@ -87,9 +87,9 @@ I would set this up before the first configuration record is created, as a field
 
 ## Which tool moves the data?
 
-Use any data tool that loads related records in order and matches on external IDs. The DevOps masterclass chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/) compares SFDMU, the open-source Salesforce CLI plugin, with the data modules of Gearset, Copado and Flosum. For Revenue Cloud, Gearset runs its External ID wizard first and then deploys configuration data together with metadata. Which tool fits your program overall is covered in [DevOps tools compared](../../masterclass/devops-release-management/devops-tools-compared/).
+Use any data tool that loads related records in order and matches on external IDs. The DevOps masterclass chapter on [data and configuration](/en/masterclass/devops-release-management/data-and-configuration/) compares SFDMU, the open-source Salesforce CLI plugin, with the data modules of Gearset, Copado and Flosum. For Revenue Cloud, Gearset runs its External ID wizard first and then deploys configuration data together with metadata. Which tool fits your program overall is covered in [DevOps tools compared](/en/masterclass/devops-release-management/devops-tools-compared/).
 
-One rule applies whatever the tool: the data templates, the SFDMU workspaces and the tool account belong to the client. Revenue Cloud configuration is your price logic and your catalog. If it lives in a partner's Gearset account, changing partners becomes a migration project. The reasons are in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
+One rule applies whatever the tool: the data templates, the SFDMU workspaces and the tool account belong to the client. Revenue Cloud configuration is your price logic and your catalog. If it lives in a partner's Gearset account, changing partners becomes a migration project. The reasons are in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/).
 
 ## Where is the line between configuration and ERP master data?
 
@@ -100,10 +100,10 @@ My split:
 - **Repository and pipeline:** attributes, classifications, selling models, bundle structures, adjustment rules, pricing procedures, decision tables, context definitions, billing and tax policies.
 - **Integration from SAP:** products with material numbers, list prices, customer conditions if SAP is the price master.
 
-Which prices SAP should own is covered in [customer prices: SAP conditions or Salesforce Pricing](../customer-prices-sap-conditions-or-salesforce-pricing/).
+Which prices SAP should own is covered in [customer prices: SAP conditions or Salesforce Pricing](/en/blog/customer-prices-sap-conditions-or-salesforce-pricing/).
 
 ## Worked example: a release with a new attribute surcharge
 
 A machine builder runs Revenue Cloud with three sandboxes and production. 300 products and list prices come from SAP; 45 attributes, 12 classifications, 4 selling models and 6 pricing procedures are maintained in Salesforce. All figures are assumptions.
 
-A release that adds a new attribute-based surcharge then works like this: the pull request contains the attribute definition, the classification change and the new adjustment rule as SFDMU records with external IDs, plus the changed decision table as metadata. The pipeline deploys metadata, then data, in the order of the reference tables. The release checklist covers the rest: replace any sandbox IDs in pricing procedure constants, activate the procedure, refresh the affected decision tables, rebuild the product index if catalog or search changed, and run five regression quotes. Setting up such a pipeline is part of my work in [DevOps and release management](../../services/devops-release-management/), and the migration that comes before it is covered in [CPQ to Revenue Cloud migration](../cpq-to-revenue-cloud-migration-phases/) and the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
+A release that adds a new attribute-based surcharge then works like this: the pull request contains the attribute definition, the classification change and the new adjustment rule as SFDMU records with external IDs, plus the changed decision table as metadata. The pipeline deploys metadata, then data, in the order of the reference tables. The release checklist covers the rest: replace any sandbox IDs in pricing procedure constants, activate the procedure, refresh the affected decision tables, rebuild the product index if catalog or search changed, and run five regression quotes. Setting up such a pipeline is part of my work in [DevOps and release management](/en/services/devops-release-management/), and the migration that comes before it is covered in [CPQ to Revenue Cloud migration](/en/blog/cpq-to-revenue-cloud-migration-phases/) and the masterclass chapter [from CPQ to Revenue Cloud](/en/masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).

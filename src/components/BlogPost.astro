@@ -1,4 +1,5 @@
 ---
+import { withBrand } from '../lib/page-title.mjs';
 import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
@@ -6,6 +7,8 @@ import PhoneLine from './PhoneLine.astro';
 import AuthorBox from './AuthorBox.astro';
 import PartnerBox from './PartnerBox.astro';
 import ContactBrief from './ContactBrief.astro';
+import GuestArticle from './GuestArticle.astro';
+import { guestArticlesFor } from '../data/guest-articles';
 import ReadingGrid from './ReadingGrid.astro';
 import VideoCard from './VideoCard.astro';
 import PostMeta from './PostMeta.astro';
@@ -33,6 +36,7 @@ const { Content, headings } = await render(post);
 const toc = [...headings.filter((h) => h.depth === 2), { slug: 'faq', text: t.blog.faq }];
 const translation = await getTranslation(post);
 const related = await getRelated(post);
+const guests = guestArticlesFor(post.data.translationKey);
 const service = await getPostService(post);
 const seriesRef = post.data.series;
 const seriesInfo = seriesRef && allSeries[seriesRef.id];
@@ -52,11 +56,10 @@ const brief = getContactBrief(lang, post.data.contactBrief, post.data.categories
 // The booking box in the side column is left out: the two call hints in the text
 // (CallHint.astro) and the contact section at the end carry the booking link.
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
-// Keep the <title> within the ~60 characters search results show.
+// Keep the <title> within what search results show (60 characters, ~580 px).
 // metaTitle (optional) replaces the H1 in the search title only.
-const suffix = ' | FK Solution Design';
 const searchTitle = post.data.metaTitle ?? title;
-const pageTitle = searchTitle.length + suffix.length <= 60 ? searchTitle + suffix : searchTitle;
+const pageTitle = withBrand(searchTitle);
 const modified = (updatedDate ?? pubDate).toISOString();
 // Juliane's articles name her as author and send the contact form with her name in the subject.
 // A co-author (frontmatter coAuthor) is named in the byline, the structured data and in a shared author box.
@@ -156,6 +159,7 @@ const schema = {
           <CallHint slot="hint1" kicker={t.blog.callHintKicker} title={brief.title} text={brief.text} label={t.nav.cta} newTab={t.nav.newTab} subject={title} />
           <CallHint slot="hint2" kicker={t.blog.callHintPrepKicker} title={t.blog.callHintPrepTitle} text={`${brief.bring[1] ?? brief.bring[0]}.`} label={t.nav.cta} newTab={t.nav.newTab} subject={title} />
         </ProseWithHints>
+        {guests.map((g) => <GuestArticle article={g} lang={lang} label={t.blog.guestArticle} langNote={t.blog.guestArticleLang} newTab={t.nav.externalTab} box />)}
         <section class="post-faq" aria-labelledby="faq">
           <h2 id="faq">{t.blog.faq}</h2>
           {faq.map(({ q, a }) => (

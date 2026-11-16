@@ -34,7 +34,7 @@ Fachbereiche sollten vor jedem Salesforce-Release erfahren, was sich für sie ä
 
 Mit einem sauberen Release-Prozess werden Releases meist kleiner und häufiger. Mit automatisierten Tests und kontrollierten Abhängigkeiten kann das das Risiko einzelner Releases senken. Für Fachbereiche bedeutet das aber auch: öfter kleine Änderungen statt einmal im Quartal ein großes Paket. Wer nicht weiß, dass sich etwas geändert hat, hält die Änderung für einen Fehler, ruft den Support an oder sucht eine Umgehungslösung.
 
-Im [ADKAR-Modell](../change-management-salesforce-einfuehrung/) fehlt in diesem Fall die erste Stufe, Awareness. Der Anwender weiß nicht, dass und warum sich etwas ändert. Keine Schulung kann das nachholen, wenn sie erst nach dem Release stattfindet.
+Im [ADKAR-Modell](/blog/change-management-salesforce-einfuehrung/) fehlt in diesem Fall die erste Stufe, Awareness. Der Anwender weiß nicht, dass und warum sich etwas ändert. Keine Schulung kann das nachholen, wenn sie erst nach dem Release stattfindet.
 
 ```praxis
 Vor jedem Release kläre ich mit den Verantwortlichen im Fachbereich, welche Teams betroffen sind, was sich in ihren Abläufen ändert und wer sie informiert. Das steht im Release-Plan, bevor die Entwicklung fertig ist. Nach dem Release prüfe ich, ob die neuen Prozesse genutzt werden, und bringe Rückmeldungen aus dem Alltag in den Backlog.
@@ -63,7 +63,7 @@ Technische Release Notes listen User Stories, Komponenten, Abhängigkeiten und D
 - **Was bleibt gleich?** Das nimmt viel Unsicherheit.
 - **Wen frage ich?** Den Key User des Teams, mit Namen.
 
-Mehr als eine halbe Seite pro Gruppe ist zu viel. Bei Herstellern mit Gesellschaften in mehreren Ländern erscheinen die Release Notes in der Landessprache. Die Key User geben sie im Team weiter und beantworten die ersten Fragen, siehe [Key User in Salesforce-Einführungen](../salesforce-key-user-netzwerk/).
+Mehr als eine halbe Seite pro Gruppe ist zu viel. Bei Herstellern mit Gesellschaften in mehreren Ländern erscheinen die Release Notes in der Landessprache. Die Key User geben sie im Team weiter und beantworten die ersten Fragen, siehe [Key User in Salesforce-Einführungen](/blog/salesforce-key-user-netzwerk/).
 
 ## Wann erfährt wer was?
 
@@ -98,8 +98,8 @@ Manche Änderungen gefallen nicht allen, etwa ein neues Pflichtfeld, das für de
 
 ## Was ist mit den Releases von Salesforce selbst?
 
-Salesforce veröffentlicht drei große saisonale Releases im Jahr: Spring, Summer und Winter. Für manche Produkte und Funktionen erscheinen zusätzlich monatliche Releases. Sie können Oberflächen ändern, Funktionen einführen oder bestehende Funktionen abschalten. Die meisten Änderungen betreffen Admins und Entwickler, einige auch Anwender. Was in [Winter '27](../salesforce-winter-27-aenderungen-pipeline/) für die Pipeline wichtig war, habe ich beschrieben. Für den Fachbereich gilt derselbe Weg, aber der Zeitpunkt richtet sich nach Salesforce: Diese Änderungen werden zu dem Termin in Produktion aktiviert, den Salesforce festlegt. Manche werden automatisch aktiviert oder später als Release Update verpflichtend. Ich prüfe Release Notes und Release Updates, teste in der Preview-Sandbox und informiere die betroffenen Nutzer, bevor die Änderung aktiv wird, im Einführungsplan des Releases, das zuerst ansteht.
+Salesforce veröffentlicht drei große saisonale Releases im Jahr: Spring, Summer und Winter. Für manche Produkte und Funktionen erscheinen zusätzlich monatliche Releases. Sie können Oberflächen ändern, Funktionen einführen oder bestehende Funktionen abschalten. Die meisten Änderungen betreffen Admins und Entwickler, einige auch Anwender. Was in [Winter '27](/blog/salesforce-winter-27-aenderungen-pipeline/) für die Pipeline wichtig war, habe ich beschrieben. Für den Fachbereich gilt derselbe Weg, aber der Zeitpunkt richtet sich nach Salesforce: Diese Änderungen werden zu dem Termin in Produktion aktiviert, den Salesforce festlegt. Manche werden automatisch aktiviert oder später als Release Update verpflichtend. Ich prüfe Release Notes und Release Updates, teste in der Preview-Sandbox und informiere die betroffenen Nutzer, bevor die Änderung aktiv wird, im Einführungsplan des Releases, das zuerst ansteht.
 
 ## Erster Schritt: ein Einführungsplan für das nächste Release
 
-Legen Sie für Ihr nächstes Release einen Einführungsplan mit einer Zeile pro betroffener Gruppe an, bevor die Entwicklung fertig ist. Schreiben Sie die Release Notes für Anwender getrennt von den technischen Release Notes und lassen Sie sie von einem Key User gegenlesen: Versteht er sie ohne Erklärung, sind sie verständlich genug. Nach dem Release fragen Sie die Key User, welche Fragen gestellt wurden, und übernehmen die Antworten in die nächsten Release Notes. Wiederholen Sie das bei jedem Release in derselben Reihenfolge, damit Fachbereiche wissen, wann sie mit Informationen rechnen können. Wie ich Releases in Programmen aufsetze, steht unter [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
+Legen Sie für Ihr nächstes Release einen Einführungsplan mit einer Zeile pro betroffener Gruppe an, bevor die Entwicklung fertig ist. Schreiben Sie die Release Notes für Anwender getrennt von den technischen Release Notes und lassen Sie sie von einem Key User gegenlesen: Versteht er sie ohne Erklärung, sind sie verständlich genug. Nach dem Release fragen Sie die Key User, welche Fragen gestellt wurden, und übernehmen die Antworten in die nächsten Release Notes. Wiederholen Sie das bei jedem Release in derselben Reihenfolge, damit Fachbereiche wissen, wann sie mit Informationen rechnen können. Wie ich Releases in Programmen aufsetze, steht unter [DevOps und Release-Management](/leistungen/devops-und-release-management/).

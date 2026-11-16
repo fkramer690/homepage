@@ -39,9 +39,9 @@ According to the [Salesforce Developers Blog from May 2026](https://developer.sa
 - **GenAiPlannerBundle:** subagents, instructions and actions of one published version.
 - **The actions underneath:** Flows, Apex and prompt templates, ordinary metadata components with their own lifecycles.
 
-For a decision maker, this means: the logic that decides what a dealer is told about warranty or spare parts is now a text file that can be reviewed and reverted, which matters once rules such as warranty eligibility are defined in [Agent Script instead of the LLM](../agent-script-deterministic-rules/).
+For a decision maker, this means: the logic that decides what a dealer is told about warranty or spare parts is now a text file that can be reviewed and reverted, which matters once rules such as warranty eligibility are defined in [Agent Script instead of the LLM](/en/blog/agent-script-deterministic-rules/).
 
-One detail matters now. The [Metadata API reference](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_aiauthoringbundle.htm) lists Winter '27 as API 68.0, and the [Agentforce DX guide for moving agents between orgs](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx-deploy-metadata.html) says agent metadata changed in v68: both orgs must be on v68 to move agents with the new types (AiAgentDefinition in the example manifests). With v68 you list a committed version in the manifest as Agent#n, retrieve it from the source org and deploy it to the target org. The planner and version metadata described above apply to v67 and earlier. Other changes in that release are covered in [what Winter '27 changes for your pipeline](../salesforce-winter-27-what-changes-for-your-pipeline/).
+One detail matters now. The [Metadata API reference](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_aiauthoringbundle.htm) lists Winter '27 as API 68.0, and the [Agentforce DX guide for moving agents between orgs](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx-deploy-metadata.html) says agent metadata changed in v68: both orgs must be on v68 to move agents with the new types (AiAgentDefinition in the example manifests). With v68 you list a committed version in the manifest as Agent#n, retrieve it from the source org and deploy it to the target org. The planner and version metadata described above apply to v67 and earlier. Other changes in that release are covered in [what Winter '27 changes for your pipeline](/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/).
 
 ## How does an agent move through the release pipeline?
 
@@ -57,7 +57,7 @@ Publish in the source org
 Scoped deploy
   Changed Flows and Apex first, backward compatible with the active version, then the committed agent version, named explicitly in the manifest. The ADLC post warns that a bare sf project deploy start ships everything that changed, agent metadata included.
 Test
-  The suite runs against the deployed version in the sandbox; which version a test uses depends on the tool, and some CLI tests need an active agent. Gates and pass rates are covered in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+  The suite runs against the deployed version in the sandbox; which version a test uses depends on the tool, and some CLI tests need an active agent. Gates and pass rates are covered in [testing Agentforce agents before go-live](/en/blog/testing-agentforce-agents-before-go-live/).
 Activate
   sf agent activate with --api-name and --version turns the version on. Activation "makes it immediately available to your users", says the [activate reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_activate.html).
 ```
@@ -107,7 +107,7 @@ The client releases, with clear lines between the roles:
 - **Client release manager:** owns the pipeline, controls the deployment and activates in production, with a technical pipeline user for the deployment itself.
 - **Business owner, for example the head of service:** approves activation on the basis of test results and decides on rollbacks with the release manager, without technical activation rights.
 
-Each agent is assigned exactly one owner in the [object ownership matrix](../salesforce-object-ownership-matrix/), so two partners never build versions of the same agent. The pipeline and repository belong to the client, as argued in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/); setting them up is part of my [DevOps and release management](../../services/devops-release-management/) work.
+Each agent is assigned exactly one owner in the [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/), so two partners never build versions of the same agent. The pipeline and repository belong to the client, as argued in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/); setting them up is part of my [DevOps and release management](/en/services/devops-release-management/) work.
 
 Groups with one production org per subsidiary face a gap. The [agent command reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_agent_commands_unified.htm) lists an agent template for second-generation managed packages, which fits ISVs better than a group with its own orgs. I would treat each org as its own release target, with the same source version but its own tests, agent user, permissions, activation and version log.
 

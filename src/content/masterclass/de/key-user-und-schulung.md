@@ -22,7 +22,7 @@ faq:
   - q: "Wie viele Key User braucht ein Hersteller?"
     a: "Einen pro Team, Standort oder Land, bei kritischen Bereichen zwei. Fällt der einzige Key User eines Landes in der Woche nach dem Go-live aus, fällt die Unterstützung für das ganze Land aus."
   - q: "Ersetzt ein Key User den Support?"
-    a: "Nein. Er beantwortet Fragen zur Nutzung, ändert aber keine Konfiguration und behebt keine Fehler in Schnittstellen. Fehler gehen weiter über das Ticketsystem, damit sie gezählt und priorisiert werden."
+    a: "Nein. Er beantwortet Fragen zur Nutzung, ändert aber keine Konfiguration und behebt keine Fehler in Schnittstellen. Fehler werden weiter über das Ticketsystem gemeldet, damit sie gezählt und priorisiert werden."
 draft: false
 ---
 
@@ -43,7 +43,7 @@ Betrieb | laufend · Key User und Admin
   Reinforcement: Er arbeitet Neue ein und übersetzt jedes Release für sein Team.
 ```
 
-Im Abnahmetest sind Key User die besten Tester, weil sie wissen, welche Fälle in ihrem Team vorkommen. Wie ein Abnahmetest mit dem Fachbereich aufgebaut ist, steht in [Salesforce UAT: Wer testet vor dem Release?](../../../blog/salesforce-uat-abnahmetest-fachbereich/).
+Im Abnahmetest sind Key User die besten Tester, weil sie wissen, welche Fälle in ihrem Team vorkommen. Wie ein Abnahmetest mit dem Fachbereich aufgebaut ist, steht in [Salesforce UAT: Wer testet vor dem Release?](/blog/salesforce-uat-abnahmetest-fachbereich/).
 
 ## Key User nach Ansehen im Team auswählen
 
@@ -56,21 +56,21 @@ Oft wird Key User, wer gerade Luft im Kalender hat. Das ist die schlechteste Wah
 | Kritischer Blick | Sie fragt nach, statt zu jubeln, und findet so Schwächen früh | Desire: Ist sie überzeugt, glaubt man ihr |
 | Verbleib | Kein Stellenwechsel in den nächsten Monaten absehbar | Reinforcement: Das Wissen bleibt im Team |
 
-Ein einfacher Weg zu den Kandidaten: Fragen Sie in jedem Team, wen die Leute heute fragen, wenn sie im System nicht weiterkommen. Die Namen, die mehrfach fallen, sind Ihre Kandidaten. Die Grenzen der Rolle, Aufgaben im Betrieb und wie das Netzwerk zusammenhält, beschreibe ich in [Key User in Salesforce-Einführungen: was sie leisten](../../../blog/salesforce-key-user-netzwerk/).
+Ein einfacher Weg zu den Kandidaten: Fragen Sie in jedem Team, wen die Leute heute fragen, wenn sie im System nicht weiterkommen. Die Namen, die mehrfach fallen, sind Ihre Kandidaten. Die Grenzen der Rolle, Aufgaben im Betrieb und wie das Netzwerk zusammenhält, beschreibe ich in [Key User in Salesforce-Einführungen: was sie leisten](/blog/salesforce-key-user-netzwerk/).
 
 ## Wie viel Zeit muss der Fachbereich freistellen?
 
 Ohne freigestellte Zeit bleibt Key User ein Etikett. Den Bedarf bestimmt der Umfang. Für die Planung rechne ich mit vier halbtägigen Workshops, einer Woche Abnahmetest mit halber Kapazität und den ersten zwei Wochen nach dem Go-live mit einem Drittel. Das sind knapp acht Arbeitstage, Vorbereitung und Kurzschulungen für Kollegen kommen hinzu. Im Betrieb bleiben ein paar Stunden im Monat, meist rund um Releases.
 
 ```hinweis tipp
-Halten Sie mit der Führungskraft schriftlich fest, in welchen Wochen und wie viele Stunden der Key User fürs Projekt arbeitet und wer so lange seine Aufgaben macht. Das Papier gehört in den Sponsor-Plan aus Kapitel 2.
+Halten Sie mit der Führungskraft schriftlich fest, in welchen Wochen und wie viele Stunden der Key User fürs Projekt arbeitet und wer so lange seine Aufgaben übernimmt. Das Papier gehört in den Sponsor-Plan aus Kapitel 2.
 ```
 
 Anerkennung, die andere sehen, kostet nichts und wirkt. Die Projektarbeit gehört ins Jahresgespräch. Das entscheidet darüber, ob sich beim nächsten Projekt wieder jemand meldet.
 
 ## Schulung kurz vor dem Go-live, mit Fällen aus dem eigenen Alltag
 
-Eine Schulung zwei Monate vor dem Go-live ist vergessen, wenn das System kommt. Eine Schulung mit erfundenen Beispieldaten zeigt die Funktion, aber nicht den eigenen Fall. Ich plane Schulungen deshalb nach drei Regeln:
+Eine Schulung zwei Monate vor dem Go-live ist vergessen, wenn das System live geht. Eine Schulung mit erfundenen Beispieldaten zeigt die Funktion, aber nicht den eigenen Fall. Ich plane Schulungen deshalb nach drei Regeln:
 
 1. **Kurz vor dem Go-live.** Wenige Tage bis zwei Wochen vorher, damit das Wissen bis zum ersten Kundenfall hält.
 2. **Am echten Fall.** Der Innendienst legt ein Angebot für einen Kunden an, den er kennt, mit den Produkten, die er verkauft. Dafür braucht die Schulungsumgebung realistische Daten.
@@ -86,8 +86,8 @@ Servicetechniker sind selten im Büro, kommen zu Schulungen oft nur einmal und h
 In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetriebnahmen lagen die Stolpersteine an drei Stellen: Datenqualität der Anlagen, Akzeptanz bei den Technikern und Schnittstellen zum ERP. Alle drei bekommt man in einer Region leichter in den Griff als im ganzen Außendienst auf einmal.
 ```
 
-Ich empfehle drei bis fünf erfahrene Techniker pro Region, die vor dem Rollout mitarbeiten. Sie testen Formulare im echten Einsatz, nehmen die App dorthin mit, wo kein Netz ist, schulen ihre Kollegen und bleiben danach Ansprechpartner wie Key User im Innendienst. Wichtig ist, dass ihre Rückmeldungen sichtbare Änderungen bewirken. Was Techniker von der App abhält und wie Sie Standortdaten offen klären, steht in [Field Service App: wie Techniker sie annehmen](../../../blog/field-service-app-akzeptanz-techniker/), die Einführung in Wellen im Field-Service-Kapitel [KI-Agenten, Einführung und Kennzahlen](../../field-service/field-service-ki-agenten-einfuehrung/).
+Ich empfehle drei bis fünf erfahrene Techniker pro Region, die vor dem Rollout mitarbeiten. Sie testen Formulare im echten Einsatz, nehmen die App dorthin mit, wo kein Netz ist, schulen ihre Kollegen und bleiben danach Ansprechpartner wie Key User im Innendienst. Wichtig ist, dass ihre Rückmeldungen sichtbare Änderungen bewirken. Was Techniker von der App abhält und wie Sie Standortdaten offen klären, steht in [Field Service App: wie Techniker sie annehmen](/blog/field-service-app-akzeptanz-techniker/), die Einführung in Wellen im Field-Service-Kapitel [KI-Agenten, Einführung und Kennzahlen](/masterclass/field-service/field-service-ki-agenten-einfuehrung/).
 
 ## In jedem Team fragen, wen die Leute heute um Rat fragen
 
-Fragen Sie in jedem betroffenen Team, wen die Leute heute um Rat fragen, und sprechen Sie mit den Führungskräften dieser Personen über Zeit und Vertretung. Nehmen Sie die Key User in die ersten Workshops mit, bevor gebaut wird, und planen Sie die Schulung am echten Fall in die letzten zwei Wochen vor dem Go-live. Wie das in einem Rollout über mehrere Länder aussieht, zeigt [Kapitel 4](../change-management-rollout-laender/). Die Rolle der Führung dahinter steht in [Kapitel 2](../sponsor-und-kommunikation/).
+Fragen Sie in jedem betroffenen Team, wen die Leute heute um Rat fragen, und sprechen Sie mit den Führungskräften dieser Personen über Zeit und Vertretung. Nehmen Sie die Key User in die ersten Workshops mit, bevor gebaut wird, und planen Sie die Schulung am echten Fall in die letzten zwei Wochen vor dem Go-live. Wie das in einem Rollout über mehrere Länder aussieht, zeigt [Kapitel 4](/masterclass/change-management/change-management-rollout-laender/). Die Rolle der Führung dahinter steht in [Kapitel 2](/masterclass/change-management/sponsor-und-kommunikation/).
