@@ -2,7 +2,7 @@
 title: "Migrate Connected Apps to External Client Apps"
 metaTitle: "Connected App to External Client App migration plan"
 description: "Salesforce ends support for connected apps in Summer '27. How to sort your ERP and middleware interfaces: migrate, rebuild or wait for the vendor."
-pubDate: 2026-11-16
+pubDate: 2026-11-30
 lang: en
 slug: connected-app-external-client-app-migration
 translationKey: connected-app-external-client-app-migration
