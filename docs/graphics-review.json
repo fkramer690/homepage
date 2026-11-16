@@ -221,6 +221,7 @@
     "card:field-service-management-software": {"title": "Kartenskizze Field Service Management Software", "proposal": 2, "rating": null},
     "card:salesforce-release-schedule": {"title": "Kartenskizze Salesforce Release Schedule", "proposal": 2, "rating": null},
     "card:salesforce-integration-users-cleanup": {"title": "Kartenskizze Integrationsbenutzer aufräumen", "proposal": 2, "rating": null},
+    "card:connected-app-external-client-app-migration": {"title": "Kartenskizze Connected Apps in External Client Apps migrieren", "proposal": 2, "rating": null},
     "card:salesforce-release-updates": {"title": "Kartenskizze Salesforce Release Updates testen", "proposal": 2, "rating": null},
     "card:what-is-agentforce": {"title": "Kartenskizze Was ist Agentforce", "proposal": 2, "rating": null},
     "card:meshmesh-salesforce-checklist": {"title": "Kartenskizze MeshMesh vor dem Anschließen", "proposal": 1, "rating": null},
