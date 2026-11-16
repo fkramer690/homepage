@@ -56,13 +56,33 @@ Chosen 2026-10-31 (Fabian: "Skala + Mono reduzieren"). Part of the polished desi
   gets no eyebrow that repeats the menu item or the heading.
 - **Decoration only with a job** (AI-slop review 2026-10-31): no icon that
   only illustrates the word next to it (proof bar, start page service cards
-  carry none); no cyan accent bar on top of cards; the cyan line on the left
-  is reserved for quotes and the takeaways box; no gradients on boxes; the
+  carry none); no cyan accent bar on top of cards; no coloured stripe on
+  the left (or right) edge of a box, the cyan line on the left is reserved
+  for quotes (rule 2026-11-16, see "Highlighted boxes"); no gradients on boxes; the
   Blueprint marks (dimension lines, crosshair) only in the start page hero.
   At most one without/with comparison per page.
 - **Numbers (01, 02 …) only where the order matters** (steps, chapters,
   phases), never as a counter on lists whose order means nothing (references,
   questions).
+
+## Highlighted boxes (binding)
+
+Chosen by Fabian 2026-11-16 (preview https://claude.ai/artifact/LABtSmi9xvi8ZtXimdhvy1).
+A box never gets a coloured stripe on its edge (a typical AI-generated
+design tell). It is highlighted by one of three means the site already uses,
+picked by the job of the box:
+
+- **Dark (anthracite, like the contact block):** the takeaways box, jumps to
+  another page (`.post-service` "Passende Leistung", masterclass pager,
+  guest article box) and the partner box below the light author box.
+- **Header row (1px `--tint-line` frame, label as a `--tint-2` row across the
+  full width, like the table head in ```tabelle):** overviews and grouped
+  content: series box, case cards in ```stufen, recruiter box and fairness
+  note.
+- **Light cyan surface (`--tint-2` with `--tint-line`, like the author box):**
+  "Projekt im Fokus" on service pages, "Dafür besser" in ```staerken-grenzen.
+- Marked table cells get a 2px cyan frame inside the cell and semibold text;
+  the form success message is a white card with the check icon.
 
 ## Colours, radii and shadows (binding)
 
@@ -85,10 +105,11 @@ corner of 12px legend squares (3px to 4px).
   areas stay allowed.
 - **Radii:** `--radius` 10px (cards, frames, blocks), `--radius-md` 8px (boxes
   inside a block), `--radius-sm` 6px (small boxes, photos, buttons),
-  `--radius-xs` 4px (tags, code, tiny marks), `--radius-pill`; circles use
+  `--radius-xs` 4px (tags, code, tiny marks), `--radius-inner` 9px (top
+  corners of a header row inside a 1px frame), `--radius-pill`; circles use
   `50%`, square edges `0`.
-- **Shadows:** accent lines `--accent-top` (cyan), `--accent-top-dark`,
-  `--accent-left`; one lift on hover `--shadow-lift`; `--shadow-up` for the
+- **Shadows:** accent lines `--accent-top` (cyan), `--accent-top-dark`;
+  `--mark-frame` for a marked table cell; one lift on hover `--shadow-lift`; `--shadow-up` for the
   bottom contact bar; `--shadow-knob` for the play button; `--focus-glow` for
   focus and the "now" dot. Outline rings stay as `0 0 0 Npx var(--token)`.
 - `scripts/check-tokens.mjs` runs in `npm run build` and fails on a hex colour
