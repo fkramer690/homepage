@@ -67,9 +67,9 @@ A license forecast starts in your own org. Your admin can pull this data togethe
 
 - **Purchased and assigned licenses.** In Setup under Company Information, you can find the purchased, used and remaining licenses by license type. "Used" only means a user has the license, not that the user uses it.
 - **Last login.** Active users who have not logged in for months still cost you money.
-- **What users do in the system.** Users who work with leads and opportunities or handle cases as service agents need a Sales or Service Cloud license. Users who only read, approve or work with custom objects can often use a Platform license; the license type determines which objects they can access. The license types and their limits are in [Salesforce licenses: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+- **What users do in the system.** Users who work with leads and opportunities or handle cases as service agents need a Sales or Service Cloud license. Users who only read, approve or work with custom objects can often use a Platform license; the license type determines which objects they can access. The license types and their limits are in [Salesforce licenses: does everyone need a full one?](/en/blog/salesforce-licences-full-licence-needed/).
 - **Add-on licenses.** Permission set licenses and feature licenses for add-ons that were purchased but are rarely assigned. You can only reduce costs for items that appear as their own line items in the order form.
-- **Integrations.** Interfaces that still run via a user with a full license. How to clean that up is described in [Salesforce Integration User: remove admin rights](../salesforce-integration-users-cleanup/).
+- **Integrations.** Interfaces that still run via a user with a full license. How to clean that up is described in [Salesforce Integration User: remove admin rights](/en/blog/salesforce-integration-users-cleanup/).
 - **Growth.** Countries, plants or business units that join in the next two to three years.
 
 The result is a forecast by user group that you compare with the Salesforce offer. At manufacturers, the largest user groups are usually sales, inside sales, customer service and field service, plus many users in production, quality or purchasing who only view or approve data.
@@ -96,9 +96,9 @@ So negotiate a cap on the price increase at the next renewal, for every line ite
 
 ## What Salesforce sells alongside the renewal
 
-For the account executive, a renewal is a chance to sell new products: a higher edition, Agentforce add-ons or an industry cloud. That can be appropriate if it fits your roadmap. The editions and what they include are described in [Salesforce editions Core, Advanced, Max for manufacturers](../salesforce-editions-core-advanced-max/).
+For the account executive, a renewal is a chance to sell new products: a higher edition, Agentforce add-ons or an industry cloud. That can be appropriate if it fits your roadmap. The editions and what they include are described in [Salesforce editions Core, Advanced, Max for manufacturers](/en/blog/salesforce-editions-core-advanced-max/).
 
-Check every new product with the same questions as in a [fit-gap analysis](../fit-gap-analysis-salesforce/): which requirement does it cover that you do not cover today, who will use it, and from when? For Agentforce, business value and data quality are my first priorities. My first Agentforce pilot was a green banana, too early for what the product could do at the time. Buy Agentforce capacity for a clearly defined use case with clean data, as set out in [Agentforce pilots: business value and data quality first](../agentforce-business-value-data-quality-first/), and clarify beforehand how consumption is measured and what happens to unused credit. The billing models are explained in [Agentforce costs for manufacturers](../flex-credits-agentforce-cost-per-action/).
+Check every new product with the same questions as in a [fit-gap analysis](/en/blog/fit-gap-analysis-salesforce/): which requirement does it cover that you do not cover today, who will use it, and from when? For Agentforce, business value and data quality are my first priorities. My first Agentforce pilot was a green banana, too early for what the product could do at the time. Buy Agentforce capacity for a clearly defined use case with clean data, as set out in [Agentforce pilots: business value and data quality first](/en/blog/agentforce-business-value-data-quality-first/), and clarify beforehand how consumption is measured and what happens to unused credit. The billing models are explained in [Agentforce costs for manufacturers](/en/blog/flex-credits-agentforce-cost-per-action/).
 
 ## Timeline for a Salesforce contract renewal
 
@@ -123,7 +123,7 @@ The 30-day notice period marks the last day on which you can still prevent an au
 
 Your procurement team negotiates the contract. IT has to define what belongs in the offer: which users need which license, which products will be added within two years and which ones nobody uses today. The Salesforce account executive calculates too, but from Salesforce's perspective. A license advisor understands discounts, but rarely knows what your users do in the org.
 
-I review offers using what I know from pre-sales work, do not sell licenses myself and take no commissions from Salesforce, tool vendors or implementation partners. I explain how a license check works on the page [license check and make or buy](../../services/make-or-buy-licences/).
+I review offers using what I know from pre-sales work, do not sell licenses myself and take no commissions from Salesforce, tool vendors or implementation partners. I explain how a license check works on the page [license check and make or buy](/en/services/make-or-buy-licences/).
 
 ## First step: list users who have not logged in for 90 days
 

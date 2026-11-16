@@ -68,7 +68,7 @@ The first group is the hardest to free up because day-to-day business needs them
 
 ## Edge cases determine the effort
 
-For manufacturers, the standard case can usually be demonstrated quickly: a service case, a field visit, a simple quote. The effort lies in the cases around it and at the interface with the ERP, for example prices, variants and availability. I have seen estimates where discovery covered only the happy path, the standard case by the book. The edge cases were then submitted as change requests, and the fixed price existed only on paper. For what to look for when choosing the partner, see [how to choose a Salesforce implementation partner](../how-to-choose-a-salesforce-implementation-partner/).
+For manufacturers, the standard case can usually be demonstrated quickly: a service case, a field visit, a simple quote. The effort lies in the cases around it and at the interface with the ERP, for example prices, variants and availability. I have seen estimates where discovery covered only the happy path, the standard case by the book. The edge cases were then submitted as change requests, and the fixed price existed only on paper. For what to look for when choosing the partner, see [how to choose a Salesforce implementation partner](/en/blog/how-to-choose-a-salesforce-implementation-partner/).
 
 These questions bring edge cases to light:
 
@@ -78,7 +78,7 @@ These questions bring edge cases to light:
 - Who approves an order when the approver is on holiday?
 - Which countries, plants or brands work differently, and why?
 
-Some gaps only become apparent when someone walks through the process step by step. In my Field Service projects this is the gap that hurts most: flows in the Field Service mobile app do not provide a data table, so the technician cannot select several records from a list in one step. If the fit-gap analysis finds it, the team plans a solution. If acceptance testing finds it, it becomes a change request. The details are in [Field Service Mobile App: flow limitations in Winter '27](../field-service-mobile-flow-limitations/).
+Some gaps only become apparent when someone walks through the process step by step. In my Field Service projects this is the gap that hurts most: flows in the Field Service mobile app do not provide a data table, so the technician cannot select several records from a list in one step. If the fit-gap analysis finds it, the team plans a solution. If acceptance testing finds it, it becomes a change request. The details are in [Field Service Mobile App: flow limitations in Winter '27](/en/blog/field-service-mobile-flow-limitations/).
 
 ## How does a fit-gap analysis work?
 
@@ -99,7 +99,7 @@ Decide on gaps | process owners
 
 The third step is what separates a fit-gap analysis from a requirements list in Excel. Once the business sees the standard, some requirements are dropped because the standard solves them differently and well enough. Others only emerge at this point because someone says: that is not how we work.
 
-The rating is made against the licenses you plan to buy. Whether a requirement is a fit or a gap often depends on the edition, an add-on or an industry cloud. In one manufacturing project, sales agreements, a core feature of Manufacturing Cloud, were not relevant to the business. A custom solution on the core platform was cheaper and simpler to maintain. I describe such trade-offs on the page [license check and make or buy](../../services/make-or-buy-licences/).
+The rating is made against the licenses you plan to buy. Whether a requirement is a fit or a gap often depends on the edition, an add-on or an industry cloud. In one manufacturing project, sales agreements, a core feature of Manufacturing Cloud, were not relevant to the business. A custom solution on the core platform was cheaper and simpler to maintain. I describe such trade-offs on the page [license check and make or buy](/en/services/make-or-buy-licences/).
 
 ## Template: the columns a fit-gap list should include
 
@@ -124,16 +124,16 @@ For every gap, you choose one of these options, and each has a cost:
 - **Adapt the process.** Fits when the deviation has no business value and grew out of habit. The cheapest option, but it needs the backing of the process owner.
 - **AppExchange solution.** Fits when a package covers the case. You pay ongoing license costs and bring in another vendor.
 - **Custom build on the platform.** Fits when the case is frequent and has clear business value. It only pays off if tests and standards keep maintenance manageable for every release.
-- **Other system.** Fits when the data is mastered there anyway, for example prices or stock in the ERP. The gap then becomes an interface, as described on the page [Salesforce integration](../../services/salesforce-integration/).
+- **Other system.** Fits when the data is mastered there anyway, for example prices or stock in the ERP. The gap then becomes an interface, as described on the page [Salesforce integration](/en/services/salesforce-integration/).
 - **Drop or defer.** Fits when nobody can justify the value of the requirement or it can wait for a later phase. Record who decided this.
 
-The first question for every gap is therefore whether the process can be adapted. Only once the process owner explains why the deviation has to stay is it worth discussing code or packages. Record the decision and its rationale; the article on the [decision log](../salesforce-architecture-decision-log/) shows what such a log looks like.
+The first question for every gap is therefore whether the process can be adapted. Only once the process owner explains why the deviation has to stay is it worth discussing code or packages. Record the decision and its rationale; the article on the [decision log](/en/blog/salesforce-architecture-decision-log/) shows what such a log looks like.
 
 ## Who owns the fit-gap analysis
 
 Usually the implementation partner creates the fit-gap analysis as part of discovery. That makes sense, because it knows the product. Two things should still remain with the client: the list itself, in your own wiki or ticket system, and the decision on every gap.
 
-The partner rates what it would implement and prepares its offer on that basis. An architect on the client side checks whether rating and effort are plausible and whether a gap is cheaper to close in the standard, with a different license or in another system. The difference between the two roles is described in [Salesforce architect or system integrator?](../salesforce-architect-vs-system-integrator/), and how I set up this work is on the page [Salesforce architecture](../../services/salesforce-architecture/).
+The partner rates what it would implement and prepares its offer on that basis. An architect on the client side checks whether rating and effort are plausible and whether a gap is cheaper to close in the standard, with a different license or in another system. The difference between the two roles is described in [Salesforce architect or system integrator?](/en/blog/salesforce-architect-vs-system-integrator/), and how I set up this work is on the page [Salesforce architecture](/en/services/salesforce-architecture/).
 
 ## First step: collect the key exceptions per process
 

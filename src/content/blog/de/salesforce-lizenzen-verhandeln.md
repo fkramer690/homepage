@@ -67,9 +67,9 @@ Eine Lizenzprognose beginnt mit Daten aus der eigenen Org. Ihr Admin stellt sie 
 
 - **Gekaufte und vergebene Lizenzen.** Im Setup unter Unternehmensinformationen stehen je Lizenztyp die gekauften, vergebenen und freien Lizenzen. Vergeben heißt nur, dass ein Nutzer die Lizenz hat, nicht, dass er sie nutzt.
 - **Letzte Anmeldung.** Für aktive Nutzer, die sich seit Monaten nicht angemeldet haben, zahlen Sie trotzdem.
-- **Was Nutzer im System tun.** Wer mit Leads und Opportunities arbeitet oder als Servicemitarbeiter Fälle bearbeitet, braucht eine Sales- oder Service-Cloud-Lizenz. Für Nutzer, die nur lesen, freigeben oder in eigenen Objekten arbeiten, reicht oft eine Platform-Lizenz; welche Objekte erlaubt sind, regelt der Lizenztyp. Die Lizenztypen und ihre Grenzen stehen in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
+- **Was Nutzer im System tun.** Wer mit Leads und Opportunities arbeitet oder als Servicemitarbeiter Fälle bearbeitet, braucht eine Sales- oder Service-Cloud-Lizenz. Für Nutzer, die nur lesen, freigeben oder in eigenen Objekten arbeiten, reicht oft eine Platform-Lizenz; welche Objekte erlaubt sind, regelt der Lizenztyp. Die Lizenztypen und ihre Grenzen stehen in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](/blog/salesforce-lizenzen-volle-lizenz/).
 - **Zusatzlizenzen.** Gekaufte, aber kaum vergebene Permission Set Licenses und Feature Licenses für Add-ons. Einsparen lässt sich nur, was im Order Form als eigene Position steht.
-- **Schnittstellen.** Integrationen, die noch einen Nutzer mit voller Lizenz verwenden. Wie Sie das aufräumen, beschreibt [Salesforce Integration User: Adminrechte entziehen](../salesforce-integrationsbenutzer-aufraeumen/).
+- **Schnittstellen.** Integrationen, die noch einen Nutzer mit voller Lizenz verwenden. Wie Sie das aufräumen, beschreibt [Salesforce Integration User: Adminrechte entziehen](/blog/salesforce-integrationsbenutzer-aufraeumen/).
 - **Wachstum.** Länder, Werke oder Bereiche, die in den nächsten zwei bis drei Jahren hinzukommen.
 
 Daraus entsteht eine Prognose je Nutzergruppe, die Sie neben das Angebot von Salesforce legen. Bei Herstellern sind die großen Gruppen meist Vertrieb, Innendienst, Kundenservice und Außendienst, außerdem viele Nutzer in Produktion, Qualität oder Einkauf, die Daten nur ansehen oder freigeben.
@@ -96,9 +96,9 @@ Verhandeln Sie deshalb eine Obergrenze für die Preissteigerung bei der nächste
 
 ## Was Salesforce bei der Verlängerung mitverkauft
 
-Eine Verlängerung ist für den Account Executive eine Gelegenheit, neue Produkte anzubieten: eine höhere Edition, Agentforce-Add-ons oder eine Industry Cloud. Das kann richtig sein, wenn es zu Ihrer Roadmap passt. Die Editionen und ihre Inhalte beschreibt [Salesforce-Editionen Core, Advanced, Max für Hersteller](../salesforce-editionen-core-advanced-max/).
+Eine Verlängerung ist für den Account Executive eine Gelegenheit, neue Produkte anzubieten: eine höhere Edition, Agentforce-Add-ons oder eine Industry Cloud. Das kann richtig sein, wenn es zu Ihrer Roadmap passt. Die Editionen und ihre Inhalte beschreibt [Salesforce-Editionen Core, Advanced, Max für Hersteller](/blog/salesforce-editionen-core-advanced-max/).
 
-Prüfen Sie jedes neue Produkt mit denselben Fragen wie in einer [Fit-Gap-Analyse](../fit-gap-analyse-salesforce/): Welche Anforderung deckt es ab, die Sie heute nicht abdecken? Wer nutzt es, und ab wann? Bei Agentforce stehen für mich Geschäftsnutzen und Datenqualität an erster Stelle. Mein erster Agentforce-Pilot war eine grüne Banane, zu früh für das, was das Produkt damals konnte. Kaufen Sie Agentforce-Kapazität für einen beschriebenen Anwendungsfall mit sauberen Daten, wie in [Agentforce-Piloten: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) beschrieben, und klären Sie vorher, wie der Verbrauch gemessen wird und wie ungenutztes Guthaben behandelt wird. Die Abrechnungsmodelle stehen in [Agentforce-Kosten für Hersteller](../flex-credits-agentforce-kosten-pro-aktion/).
+Prüfen Sie jedes neue Produkt mit denselben Fragen wie in einer [Fit-Gap-Analyse](/blog/fit-gap-analyse-salesforce/): Welche Anforderung deckt es ab, die Sie heute nicht abdecken? Wer nutzt es, und ab wann? Bei Agentforce stehen für mich Geschäftsnutzen und Datenqualität an erster Stelle. Mein erster Agentforce-Pilot war eine grüne Banane, zu früh für das, was das Produkt damals konnte. Kaufen Sie Agentforce-Kapazität für einen beschriebenen Anwendungsfall mit sauberen Daten, wie in [Agentforce-Piloten: Business Value und Datenqualität zuerst](/blog/agentforce-business-value-datenqualitaet/) beschrieben, und klären Sie vorher, wie der Verbrauch gemessen wird und wie ungenutztes Guthaben behandelt wird. Die Abrechnungsmodelle stehen in [Agentforce-Kosten für Hersteller](/blog/flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Zeitplan für die Salesforce-Vertragsverlängerung
 
@@ -123,7 +123,7 @@ Die Frist von 30 Tagen vor Laufzeitende markiert den letzten Tag, an dem Sie ein
 
 Den Vertrag verhandelt Ihr Einkauf. Was im Angebot stehen soll, muss die IT liefern: welche Nutzer welche Lizenz brauchen, welche Produkte in zwei Jahren hinzukommen und welche heute niemand nutzt. Der Account Executive von Salesforce rechnet auch, aber für Salesforce. Ein Lizenzberater kennt Rabatte, weiß aber selten, was Ihre Nutzer in der Org tun.
 
-Ich prüfe Angebote mit dem Wissen aus der Pre-Sales-Arbeit, verkaufe selbst keine Lizenzen und nehme keine Provisionen von Salesforce, Toolherstellern oder Implementierungspartnern. Wie ein Lizenz-Check abläuft, steht auf der Seite [Lizenz-Check und Make-or-buy](../../leistungen/make-or-buy-lizenzen/).
+Ich prüfe Angebote mit dem Wissen aus der Pre-Sales-Arbeit, verkaufe selbst keine Lizenzen und nehme keine Provisionen von Salesforce, Toolherstellern oder Implementierungspartnern. Wie ein Lizenz-Check abläuft, steht auf der Seite [Lizenz-Check und Make-or-buy](/leistungen/make-or-buy-lizenzen/).
 
 ## Erster Schritt: Nutzer auflisten, die sich seit 90 Tagen nicht angemeldet haben
 

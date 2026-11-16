@@ -68,7 +68,7 @@ Die erste Gruppe ist am schwersten freizustellen, weil sie im Tagesgeschäft geb
 
 ## Randfälle bestimmen den Aufwand
 
-Bei Herstellern lässt sich der Standardfall meist schnell vorführen: ein Servicefall, ein Einsatz, ein einfaches Angebot. Der Aufwand entsteht in den Sonderfällen und an den Grenzen zum ERP, etwa bei Preisen, Varianten und Verfügbarkeiten. Ich habe Schätzungen gesehen, für die in der Discovery nur der Happy Path besprochen wurde, der Standardfall nach Schema F. Die Randfälle wurden danach als Change Requests nachbeauftragt, und der Festpreis war nur noch auf dem Papier fest. Worauf Sie deshalb schon bei der Auswahl des Partners achten, steht in [Salesforce-Implementierungspartner auswählen](../salesforce-implementierungspartner-auswaehlen/).
+Bei Herstellern lässt sich der Standardfall meist schnell vorführen: ein Servicefall, ein Einsatz, ein einfaches Angebot. Der Aufwand entsteht in den Sonderfällen und an den Grenzen zum ERP, etwa bei Preisen, Varianten und Verfügbarkeiten. Ich habe Schätzungen gesehen, für die in der Discovery nur der Happy Path besprochen wurde, der Standardfall nach Schema F. Die Randfälle wurden danach als Change Requests nachbeauftragt, und der Festpreis war nur noch auf dem Papier fest. Worauf Sie deshalb schon bei der Auswahl des Partners achten, steht in [Salesforce-Implementierungspartner auswählen](/blog/salesforce-implementierungspartner-auswaehlen/).
 
 Diese Fragen bringen Randfälle zutage:
 
@@ -78,7 +78,7 @@ Diese Fragen bringen Randfälle zutage:
 - Wer gibt einen Auftrag frei, wenn die freigabeberechtigte Person im Urlaub ist?
 - Welche Länder, Werke oder Marken weichen ab, und warum?
 
-Manche Lücken zeigen sich erst, wenn jemand den Prozess Schritt für Schritt durchspielt. In meinen Field-Service-Projekten ist das die Lücke, die am meisten wehtut: Flows in der Field Service Mobile App haben keine Data-Table-Komponente; der Techniker kann also nicht mehrere Datensätze aus einer Liste in einem Schritt auswählen. Fällt das in der Fit-Gap-Analyse auf, plant das Team eine Lösung ein. Fällt es im Abnahmetest auf, wird daraus ein Change Request. Die Einzelheiten stehen in [Field Service Mobile App: Flow-Grenzen in Winter '27](../field-service-mobile-flows-grenzen/).
+Manche Lücken zeigen sich erst, wenn jemand den Prozess Schritt für Schritt durchspielt. In meinen Field-Service-Projekten ist das die Lücke, die am meisten wehtut: Flows in der Field Service Mobile App haben keine Data-Table-Komponente; der Techniker kann also nicht mehrere Datensätze aus einer Liste in einem Schritt auswählen. Fällt das in der Fit-Gap-Analyse auf, plant das Team eine Lösung ein. Fällt es im Abnahmetest auf, wird daraus ein Change Request. Die Einzelheiten stehen in [Field Service Mobile App: Flow-Grenzen in Winter '27](/blog/field-service-mobile-flows-grenzen/).
 
 ## Wie läuft eine Fit-Gap-Analyse ab?
 
@@ -99,7 +99,7 @@ Lücken entscheiden | Prozessverantwortliche
 
 Der dritte Schritt unterscheidet die Fit-Gap-Analyse von einer Anforderungsliste in Excel. Sieht der Fachbereich den Standard, fallen manche Anforderungen weg, weil der Standard sie anders und ausreichend löst. Andere zeigen sich erst jetzt, weil jemand sagt: So arbeiten wir nicht.
 
-Maßstab sind die Lizenzen, die Sie kaufen wollen. Ob eine Anforderung ein Fit oder ein Gap ist, richtet sich oft nach der Edition, einem Add-on oder einer Industry Cloud. In einem Fertigungsprojekt waren Sales Agreements, eine Kernfunktion der Manufacturing Cloud, für das Geschäft nicht relevant. Eine eigene Lösung auf der Kernplattform war günstiger und einfacher zu warten. Solche Abwägungen beschreibe ich auf der Seite [Lizenz-Check und Make-or-buy](../../leistungen/make-or-buy-lizenzen/).
+Maßstab sind die Lizenzen, die Sie kaufen wollen. Ob eine Anforderung ein Fit oder ein Gap ist, richtet sich oft nach der Edition, einem Add-on oder einer Industry Cloud. In einem Fertigungsprojekt waren Sales Agreements, eine Kernfunktion der Manufacturing Cloud, für das Geschäft nicht relevant. Eine eigene Lösung auf der Kernplattform war günstiger und einfacher zu warten. Solche Abwägungen beschreibe ich auf der Seite [Lizenz-Check und Make-or-buy](/leistungen/make-or-buy-lizenzen/).
 
 ## Vorlage: welche Spalten die Fit-Gap-Liste braucht
 
@@ -124,16 +124,16 @@ Für jede Lücke stehen diese Wege zur Wahl, und jeder hat seinen Preis:
 - **Prozess anpassen.** Passt, wenn die Abweichung keinen Geschäftswert hat und aus Gewohnheit entstanden ist. Dieser Weg ist am günstigsten, erfordert aber die Rückendeckung des Prozessverantwortlichen.
 - **AppExchange-Lösung.** Passt, wenn ein Paket den Fall abdeckt. Dafür zahlen Sie laufende Lizenzkosten und binden einen weiteren Anbieter ein.
 - **Eigenentwicklung auf der Plattform.** Passt, wenn der Fall häufig ist und einen klaren Geschäftswert hat. Sie zahlt sich nur aus, wenn Tests und Standards die Wartung bei jedem Release beherrschbar halten.
-- **Anderes System.** Passt, wenn die Daten ohnehin dort geführt werden, etwa Preise oder Bestände im ERP. Dann wird aus der Lücke eine Schnittstelle, wie auf der Seite [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/) beschrieben.
+- **Anderes System.** Passt, wenn die Daten ohnehin dort geführt werden, etwa Preise oder Bestände im ERP. Dann wird aus der Lücke eine Schnittstelle, wie auf der Seite [Salesforce-Schnittstellen](/leistungen/salesforce-schnittstellen/) beschrieben.
 - **Streichen oder verschieben.** Passt, wenn niemand den Wert der Anforderung begründen kann oder sie bis in eine spätere Phase warten kann. Halten Sie fest, wer das entschieden hat.
 
-Die erste Frage bei jeder Lücke lautet deshalb, ob sich der Prozess anpassen lässt. Erst wenn der Prozessverantwortliche begründet, warum die Abweichung bleibt, lohnt die Diskussion über Code oder Pakete. Halten Sie die Entscheidung mit Begründung fest; wie ein solches [Entscheidungslog](../salesforce-architektur-entscheidungslog/) aussieht, zeigt der verlinkte Artikel.
+Die erste Frage bei jeder Lücke lautet deshalb, ob sich der Prozess anpassen lässt. Erst wenn der Prozessverantwortliche begründet, warum die Abweichung bleibt, lohnt die Diskussion über Code oder Pakete. Halten Sie die Entscheidung mit Begründung fest; wie ein solches [Entscheidungslog](/blog/salesforce-architektur-entscheidungslog/) aussieht, zeigt der verlinkte Artikel.
 
 ## Wer die Fit-Gap-Analyse verantwortet
 
 Meist erstellt der Implementierungspartner die Fit-Gap-Analyse als Teil der Discovery. Das ist sinnvoll, weil er das Produkt kennt. Zwei Dinge sollten trotzdem in der Hand des Kunden bleiben: die Liste selbst, in Ihrem eigenen Wiki oder Ticketsystem, und die Entscheidung für jede Lücke.
 
-Der Partner bewertet, was er umsetzen würde, und kalkuliert sein Angebot auf dieser Grundlage. Ein Architekt auf Kundenseite prüft, ob die Bewertung und der Aufwand plausibel sind und ob sich eine Lücke durch den Standard, mit einer anderen Lizenz oder in einem anderen System günstiger schließen lässt. Den Unterschied zwischen beiden Rollen beschreibt [Salesforce-Architekt oder Systemintegrator?](../salesforce-architekt-oder-systemintegrator/), und wie ich diese Rolle ausfülle, steht auf der Seite [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+Der Partner bewertet, was er umsetzen würde, und kalkuliert sein Angebot auf dieser Grundlage. Ein Architekt auf Kundenseite prüft, ob die Bewertung und der Aufwand plausibel sind und ob sich eine Lücke durch den Standard, mit einer anderen Lizenz oder in einem anderen System günstiger schließen lässt. Den Unterschied zwischen beiden Rollen beschreibt [Salesforce-Architekt oder Systemintegrator?](/blog/salesforce-architekt-oder-systemintegrator/), und wie ich diese Rolle ausfülle, steht auf der Seite [Salesforce-Architektur](/leistungen/salesforce-architektur/).
 
 ## Erster Schritt: die wichtigsten Ausnahmen pro Prozess sammeln
 
