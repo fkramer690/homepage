@@ -904,6 +904,19 @@ const drawings: Record<string, Drawing> = {
     ${[l('ERP user · permission set', 'ERP-Benutzer · Permission Set'), l('Middleware user · perm. set', 'Middleware · Permission Set'), l('Marketing user · perm. set', 'Marketing · Permission Set')].map((s, i) => box(172, 28 + i * 24, 130, 18, C) + t(237, 40 + i * 24, s, { size: 6.5, anchor: 'middle' })).join('')}
     ${tag(18, 128, 150, l('5 licences included', '5 Lizenzen inklusive'))}${t(178, 141, l('API only · OAuth', 'nur API · OAuth'), { size: 7 })}`,
 
+  'connected-app-external-client-app-migration': (l) => `
+    ${t(18, 20, l('ONE BUTTON IN APP MANAGER', 'EIN BUTTON IM APP MANAGER'), { fill: D, size: 7 })}
+    ${box(18, 30, 110, 30)}${t(73, 49, 'Connected App', { size: 7.5, anchor: 'middle' })}
+    ${arrow(130, 45, 188, C)}
+    ${box(190, 30, 112, 30, C)}${t(246, 49, 'External Client App', { fill: C, size: 7.5, anchor: 'middle' })}
+    ${check(18, 70)}${t(30, 76, l('same consumer key', 'gleicher Consumer Key'), { size: 7 })}
+    ${check(18, 82)}${t(30, 88, l('refresh tokens stay valid', 'Refresh Tokens bleiben gültig'), { size: 7 })}
+    ${cross(178, 73)}${t(188, 76, l('password flow', 'Passwort-Flow'), { size: 7 })}
+    ${cross(178, 85)}${t(188, 88, 'SSO · Canvas', { size: 7 })}
+    <path d="M18 100H302" stroke="${L}"/>
+    ${[l('migrate', 'migrieren'), l('rebuild', 'neu bauen'), l('vendor', 'Anbieter'), l('delete', 'löschen')].map((s, i) => box(18 + i * 71, 106, 66, 20, i === 0 ? C : G) + t(51 + i * 71, 119, s, { fill: i === 0 ? C : G, size: 7, anchor: 'middle' })).join('')}
+    ${tag(18, 134, 150, l("Summer '27: end of support", "Summer '27: Support-Ende"))}${t(178, 147, l('apps keep running', 'Apps laufen weiter'), { size: 7 })}`,
+
   'salesforce-password-integrations-2027': (l) => `
     ${box(22, 56, 80, 48)}${t(62, 77, l('INTEGRATION', 'SCHNITTSTELLE'), { fill: D, anchor: 'middle' })}${t(62, 91, 'ERP · middleware', { size: 7, anchor: 'middle' })}
     ${box(218, 56, 80, 48)}${t(258, 77, 'SALESFORCE', { fill: D, anchor: 'middle' })}${t(258, 91, 'connected app', { size: 7, anchor: 'middle' })}
