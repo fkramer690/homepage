@@ -2,6 +2,7 @@
 title: "Sandbox-Kundendaten: Was KI-Coding-Agenten lesen dürfen"
 description: "Muss eine Full-Copy-Sandbox mit Händlerpreisen und Servicefällen maskiert werden, bevor KI-Agenten eines Partners sie lesen? Regeln, Data Mask, Testrealismus."
 pubDate: 2026-10-27
+updatedDate: 2026-11-16
 lang: de
 slug: sandbox-kundendaten-ki-coding-agenten
 translationKey: sandbox-data-ai-coding-agents
@@ -109,7 +110,7 @@ Der angenommene Aufwand beträgt 6 bis 10 Personentage für Seed-Datensatz und M
 Die wirksamste Kontrolle: Auf keinem Rechner, auf dem ein Agent läuft, dürfen Zugangsdaten für die Full Copy eingerichtet sein. Werkzeugeinstellungen sichern das zusätzlich ab:
 
 - **Claude Code.** Laut den [Best Practices](https://code.claude.com/docs/en/best-practices) von Anthropic gelten Deny-Regeln in jedem Berechtigungsmodus. Dieselbe Seite sagt aber, dass eine WebFetch-Sperre nichts gegen curl ausrichtet, solange die Sandbox nicht aktiv ist. Deny-Regeln ergänzen die Regel, keinen Login einzurichten, ersetzen sie aber nicht.
-- **Salesforce DX MCP Server.** Er erreicht nur [ausdrücklich freigegebene](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-mcp.html) Orgs. Laut README erreicht er am 2. November 2026 das [Ende seiner Lebensdauer](/blog/salesforce-dx-mcp-server-ende/), und sein Nachfolger muss ebenso eingeschränkt werden.
+- **Salesforce DX MCP Server.** Er erreicht nur [ausdrücklich freigegebene](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-mcp.html) Orgs. Am 2. November 2026 hat er das [Ende seiner Lebensdauer](/blog/salesforce-dx-mcp-server-ende/) erreicht und erhält keine Korrekturen mehr, und sein Nachfolger muss ebenso eingeschränkt werden.
 - **Agentforce Vibes.** Salesforce beschreibt, wie man [Vibes pro Org abschaltet](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes): für Produktions-Orgs im Setup unter Agentforce Vibes Extensions. Ich würde das auch für die Full Copy tun.
 - **Protokolle.** Verkürzen Sie die lokale Aufbewahrung mit `cleanupPeriodDays` und lassen Sie sich von Partnern bei Projektende die Löschung bestätigen.
 

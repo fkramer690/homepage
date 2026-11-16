@@ -2,6 +2,7 @@
 title: "Sandbox customer data: what AI coding agents may read"
 description: "Should a full copy sandbox with dealer prices and service cases be masked before a partner's AI agent reads it? Environment rules, Data Mask and test realism."
 pubDate: 2026-10-27
+updatedDate: 2026-11-16
 lang: en
 slug: sandbox-customer-data-ai-coding-agents
 translationKey: sandbox-data-ai-coding-agents
@@ -109,7 +110,7 @@ The assumed effort is 6 to 10 person-days for the seed set and the mask, plus ha
 The strongest control: no full copy login on any machine where an agent runs. Tool settings come second:
 
 - **Claude Code.** Anthropic's [best practices](https://code.claude.com/docs/en/best-practices) say deny rules "hold in every permission mode", but also that a WebFetch deny does nothing against curl unless sandboxing is on. Deny rules back up the no-login rule; they do not replace it.
-- **Salesforce DX MCP Server.** It reaches only [explicitly allowlisted](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-mcp.html) orgs. According to its README, it will reach [end of life on November 2, 2026](/en/blog/salesforce-dx-mcp-server-end-of-life/); whatever replaces it needs the same restriction.
+- **Salesforce DX MCP Server.** It reaches only [explicitly allowlisted](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-mcp.html) orgs. It reached [end of life on November 2, 2026](/en/blog/salesforce-dx-mcp-server-end-of-life/) and receives no more fixes; whatever replaces it needs the same restriction.
 - **Agentforce Vibes.** Salesforce describes [disabling Vibes per org](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes) for production orgs under Setup, Agentforce Vibes Extensions. I would do the same for the full copy.
 - **Transcripts.** Shorten local retention with `cleanupPeriodDays` and have partners confirm deletion when the engagement ends.
 
