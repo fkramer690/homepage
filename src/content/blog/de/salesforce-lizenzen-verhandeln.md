@@ -55,15 +55,15 @@ Viele Unternehmen starten mit dem Plan in die Verlängerung, Lizenzen zu streich
 
 Rechenbeispiel: Sie haben 200 Lizenzen mit einem Listenpreis von 100 Euro pro Nutzer und Monat und 25 Prozent Rabatt, zahlen also 75 Euro. Das sind 180.000 Euro im Jahr. Sie reduzieren die Menge auf 150 Lizenzen und erwarten 135.000 Euro, also 45.000 Euro weniger. Berechnet Salesforce die 150 Lizenzen neu, etwa mit 10 Prozent Rabatt, zahlen Sie 162.000 Euro. Die Ersparnis schrumpft auf 18.000 Euro.
 
-Verhandeln Sie bei einer Reduzierung deshalb die Stückpreise der verbleibenden Lizenzen ausdrücklich mit und lassen Sie sie im Order Form festschreiben. Für Salesforce zählt das Vertragsvolumen. Bleibt es stabil, weil Produkte aus Ihrer Roadmap hinzukommen, haben Sie für die Stückpreise mehr Spielraum als bei einer reinen Kürzung. Vergleichen Sie die Varianten trotzdem anhand der Gesamtkosten über die Laufzeit: Ein neues Produkt, das niemand nutzt, verteuert jeden Stückpreis.
+Verhandeln Sie bei einer Reduzierung deshalb die Stückpreise der verbleibenden Lizenzen ausdrücklich mit und lassen Sie sie im Order Form festschreiben. Salesforce möchte das Vertragsvolumen bei einer Verlängerung erhöhen. Ein gleichbleibendes Volumen wirkt sich in der Verhandlung eher negativ aus, eine reine Kürzung erst recht. Wächst das Volumen, weil Produkte aus Ihrer Roadmap hinzukommen, haben Sie für die Stückpreise den meisten Spielraum. Vergleichen Sie die Varianten trotzdem anhand der Gesamtkosten über die Laufzeit: Ein neues Produkt, das niemand nutzt, verteuert jeden Stückpreis.
 
 ## Wie viele Lizenzen brauchen Sie wirklich?
 
 ```praxis
-Aus der Pre-Sales-Arbeit mit Salesforce kenne ich die andere Seite des Tisches. Der Listenpreis ist ein Ausgangspunkt und selten das endgültige Angebot. Volle Lizenzen werden standardmäßig angeboten, auch für Nutzer, die nur Daten lesen oder Datensätze freigeben. Bei großen Nutzergruppen liegt der Unterschied leicht im sechsstelligen Bereich pro Jahr.
+Aus der Pre-Sales-Arbeit mit Salesforce kenne ich die andere Seite des Tisches. Der Listenpreis ist ein Ausgangspunkt und selten das endgültige Angebot. Volle Lizenzen werden standardmäßig angeboten, auch für Mitarbeitende, die nicht direkt im Vertrieb oder Kundenservice arbeiten, etwa aus Forschung und Entwicklung, wenn sie Einsicht in Projektdaten brauchen. Bei großen Nutzergruppen liegt der Unterschied leicht im sechsstelligen Bereich pro Jahr.
 ```
 
-Eine Lizenzprognose beginnt mit Daten aus der eigenen Org. Ihr Admin kann sie in wenigen Tagen zusammenstellen:
+Eine Lizenzprognose beginnt mit Daten aus der eigenen Org. Ihr Admin stellt sie in wenigen Tagen zusammen, mit KI-Unterstützung sogar in wenigen Minuten:
 
 - **Gekaufte und vergebene Lizenzen.** Im Setup unter Unternehmensinformationen stehen je Lizenztyp die gekauften, vergebenen und freien Lizenzen. Vergeben heißt nur, dass ein Nutzer die Lizenz hat, nicht, dass er sie nutzt.
 - **Letzte Anmeldung.** Für aktive Nutzer, die sich seit Monaten nicht angemeldet haben, zahlen Sie trotzdem.

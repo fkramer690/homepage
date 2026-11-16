@@ -135,6 +135,6 @@ Usually the implementation partner creates the fit-gap analysis as part of disco
 
 The partner rates what it would implement and prepares its offer on that basis. An architect on the client side checks whether rating and effort are plausible and whether a gap is cheaper to close in the standard, with a different license or in another system. The difference between the two roles is described in [Salesforce architect or system integrator?](../salesforce-architect-vs-system-integrator/), and how I set up this work is on the page [Salesforce architecture](../../services/salesforce-architecture/).
 
-## First step: collect ten exceptions per process
+## First step: collect the key exceptions per process
 
-Before you plan the first fit-gap workshop, ask one person in each process area who runs the process every day to write down the ten most common exceptions, plus the rare ones that become expensive if they are missed: what happens, how often it occurs and who makes the decision today. This list goes to the partner before the workshop. After an hour of preparation, you can see whether your discovery assesses the standard case or your day-to-day business.
+Before you plan the first fit-gap workshop, ask one person in each process area who runs the process every day to write down the most common exceptions, often only a handful, plus the rare ones that become expensive if they are missed: what happens, how often it occurs and who makes the decision today. This list goes to the partner before the workshop. After two hours of preparation, you can see whether your discovery assesses the standard case or your day-to-day business.

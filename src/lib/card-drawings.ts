@@ -950,7 +950,7 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 82, l('SOLUTION PER GAP', 'LÖSUNGSWEG JE GAP'), { fill: D, size: 7 })}
     ${[l('Process', 'Prozess'), 'AppExchange', l('Custom build', 'Eigenbau'), l('Other system', 'Fremdsystem')]
       .map((s, i) => box(18 + i * 72, 90, 66, 22) + t(51 + i * 72, 104, s, { size: 7, anchor: 'middle' })).join('')}
-    ${tag(18, 128, 162, l('Edge cases before fixed price', 'Randfälle vor dem Festpreis'))}${t(188, 141, l('10 exceptions per process', '10 Ausnahmen je Prozess'), { size: 7 })}`,
+    ${tag(18, 128, 162, l('Edge cases before fixed price', 'Randfälle vor dem Festpreis'))}${t(188, 141, l('list exceptions per process', 'Ausnahmen je Prozess sammeln'), { size: 7 })}`,
 
   'salesforce-renewal-negotiation': (l) => `
     ${t(18, 20, l('RENEWAL · COUNT BACK FROM CONTRACT END', 'VERLÄNGERUNG · RÜCKWÄRTS VOM VERTRAGSENDE'), { fill: D, size: 7 })}

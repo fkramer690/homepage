@@ -55,15 +55,15 @@ Many companies start renewal planning with the aim of cutting licenses. That mak
 
 Worked example: you have 200 licenses at a list price of 100 euros per user per month with a 25 percent discount, so 75 euros. That is 180,000 euros a year. You reduce to 150 licenses and expect 135,000 euros, so 45,000 euros less. If Salesforce re-prices the 150 licenses, say, with a 10 percent discount, you pay 162,000 euros. The saving shrinks to 18,000 euros.
 
-So when you reduce, negotiate the per-unit prices of the remaining licenses explicitly and have them written into the order form. What counts for Salesforce is contract volume. If it stays stable because products from your roadmap are added, you have more room to negotiate per-unit prices than with a straightforward reduction. Still compare the options by total cost over the term: a new product nobody uses makes the deal expensive, whatever its per-unit price.
+So when you reduce, negotiate the per-unit prices of the remaining licenses explicitly and have them written into the order form. Salesforce wants contract volume to grow at renewal. Flat volume tends to weaken your position, and a straightforward reduction weakens it even more. If volume grows because products from your roadmap are added, you have the most room to negotiate per-unit prices. Still compare the options by total cost over the term: a new product nobody uses makes the deal expensive, whatever its per-unit price.
 
 ## How many licenses do you need?
 
 ```praxis
-From my pre-sales work with Salesforce I know the other side of the table. The list price is a starting point and rarely the final offer. Full licenses are offered by default, including for users who only read data or approve records. With large user groups the difference can easily reach six figures a year.
+From my pre-sales work with Salesforce I know the other side of the table. The list price is a starting point and rarely the final offer. Full licenses are offered by default, including for employees who do not work directly in sales or customer service, for example colleagues in research and development who need to see project data. With large user groups the difference can easily reach six figures a year.
 ```
 
-A license forecast starts in your own org. Your admin can pull this data together in a few days:
+A license forecast starts in your own org. Your admin can pull this data together in a few days, or in a few minutes with AI assistance:
 
 - **Purchased and assigned licenses.** In Setup under Company Information, you can find the purchased, used and remaining licenses by license type. "Used" only means a user has the license, not that the user uses it.
 - **Last login.** Active users who have not logged in for months still cost you money.
