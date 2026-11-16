@@ -24,6 +24,7 @@ faq:
   - q: "Was sind die DORA-Metriken?"
     a: "DORA nutzt derzeit fünf Kennzahlen: Change Lead Time, Deployment-Häufigkeit und Wiederherstellungszeit nach fehlgeschlagenem Deployment als Kennzahlen für den Durchsatz sowie Change Fail Rate und Deployment Rework Rate als Kennzahlen für die Instabilität. Die Rework Rate wurde 2024 ergänzt."
 draft: false
+contactBrief: ai-coding
 ---
 
 Den KI-Nutzen im Salesforce-Projekt messen Sie mit Ergebniskennzahlen im Vergleich mit Ihrer eigenen Basislinie: Durchlaufzeit pro Story, Fehlerdurchschlupf, Nacharbeit und Change Fail Rate, erfasst, bevor der erste Coding-Agent eingesetzt wird. Eindrücke der Entwickler und Lizenzzahlen belegen keine schnellere Lieferung. Die Studien unten reichen von 55 Prozent schneller bis 19 Prozent langsamer, je nach Aufgabe und Codebasis. Eine gewachsene Org mit über Jahre entstandenen Triggern, Flows und einer SAP-Schnittstelle liegt am schwierigen Ende dieser Spanne. Ob KI Ihr Programm schneller macht, beantwortet deshalb nur eine Zahl, die Sie selbst erhoben haben.

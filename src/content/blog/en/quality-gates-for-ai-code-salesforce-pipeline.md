@@ -25,6 +25,7 @@ faq:
   - q: "Does sfdx-hardis include quality gates?"
     a: "Yes. Pull requests to a major branch such as integration trigger one job that simulates the deployment, runs Apex tests and checks coverage, and another code quality job with MegaLinter and PMD. Whether these jobs block the merge depends on the required checks in your Git platform. ApexGuru and org-specific rules need extra steps."
 draft: false
+contactBrief: ai-coding
 ---
 
 AI-generated Salesforce code should pass the same quality gates as code a person wrote, with three conditions: the gates can stop a change, they run in a pipeline you own, and they apply to every partner alike. In practice that means four blocking checks on every pull request, the change proposal a developer submits before code enters the main branch: code analysis with a hard threshold, a few rules for mistakes agents typically make, a dry-run deployment into a sandbox and a protected merge. ApexGuru adds performance hints as a report. What a rule cannot decide stays with a human reviewer.

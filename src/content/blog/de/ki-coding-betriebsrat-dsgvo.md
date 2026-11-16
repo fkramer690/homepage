@@ -27,6 +27,7 @@ faq:
   - q: "Gilt das auch für Standorte außerhalb Deutschlands?"
     a: "Die Regeln zum Betriebsrat sind deutsches Recht und gelten für Ihre deutschen Standorte und deren Beschäftigte. Die DSGVO gilt in der ganzen EU. Manche Konzerne mit deutschen Werken oder Entwicklungszentren entscheiden sich deshalb womöglich, den deutschen Prozess als Konzernstandard für KI-Tools zu nutzen."
 draft: false
+contactBrief: ai-coding
 ---
 
 Wer Claude Code, GitHub Copilot oder Codex für Salesforce-Entwickler an einem deutschen Standort einführt, braucht in aller Regel die Zustimmung des Betriebsrats nach § 87 Abs. 1 Nr. 6 BetrVG, weil diese Tools Nutzungsdaten pro Person erzeugen können. Beim Datenschutz geht es darum, welche Daten über welchen Kanal Ihre Umgebung verlassen, vom Kontext des Agenten bis zur Region der Inferenz. Die Anthropic-API bietet keine EU-Region; Bedrock, Copilot und OpenAI bieten EU-Verarbeitung unter bestimmten Bedingungen. Planen Sie beides vor dem Pilotprojekt, denn wo es einen Betriebsrat gibt, darf das Tool ohne dessen Zustimmung oder einen Spruch der Einigungsstelle nicht in Betrieb gehen.

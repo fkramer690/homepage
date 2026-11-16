@@ -8,7 +8,7 @@ slug: ai-org-assessment-technical-debt
 translationKey: ai-org-assessment-technical-debt
 topic: code-review
 categories: [devops, architecture]
-contactBrief: partner-governance
+contactBrief: ai-coding
 tags: [org assessment, technical debt, claude batch api, code analyzer, sfdx-hardis, partner change]
 takeaways:
   - "An LLM is good at reading what each class, flow and permission set does and where two partners built the same logic twice."

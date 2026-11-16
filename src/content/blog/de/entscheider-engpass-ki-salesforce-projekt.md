@@ -26,6 +26,7 @@ faq:
   - q: "Was tun, wenn eine Entscheidung nicht rechtzeitig kommt?"
     a: "Vereinbaren Sie Fristen nach Art der Entscheidung und einen Eskalationsweg. Bei risikoarmen, reversiblen Entscheidungen innerhalb vereinbarter Leitplanken kann der dokumentierte Vorschlag des Teams gelten und wird im Entscheidungslog festgehalten. Für Datenschutz, Preise, Garantie, Berechtigungen und irreversible Migrationen braucht es eine ausdrückliche Freigabe; Schweigen reicht nicht."
 draft: false
+contactBrief: ai-coding
 ---
 
 Wenn Coding-Agenten die Salesforce-Delivery beschleunigen, ist das Entwicklungsteam oft nicht mehr der Engpass. Mit KI-getriebenen Projekten meine ich den Einsatz von KI im Delivery-Prozess und nicht die Einführung eines KI-Produkts. Coding-Agenten setzen eine Story innerhalb von Stunden um. Warten muss das Team dann nach meiner Erfahrung auf die Entscheider beim Kunden: auf Antworten zum Prozess, auf Freigaben, auf Abnahmen. Diese Personen sind im Tagesgeschäft gebunden, die Prozesse sind intern oft nicht abgestimmt, und selten kennt jemand den Alltag der Nutzer und verantwortet zugleich den Scope. Mehr Druck hilft nicht. Entscheidungen brauchen eigenes Budget, explizite und delegierte Entscheidungsrechte sowie Fristen.

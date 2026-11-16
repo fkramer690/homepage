@@ -25,6 +25,7 @@ faq:
   - q: "Should partners disclose which code an AI agent generated?"
     a: "Yes. Ask for the AI-generated parts to be marked in the pull request, together with the test run and the Code Analyzer result. Put that rule into the contract so it applies to every partner in the program."
 draft: false
+contactBrief: ai-coding
 ---
 
 As the client, you review AI-generated Salesforce code by splitting the work. Your partner's pipeline flags what machines can reliably find: SOQL and DML in loops, missing sharing declarations and common CRUD and field-level security issues. Your human reviewer spends the time on what tools miss: tests that prove nothing, fields that exist but are the wrong ones, business rules that only look right and data access that is too wide. Ask for evidence instead of "all tests pass", and keep the final approval with a person on your side.

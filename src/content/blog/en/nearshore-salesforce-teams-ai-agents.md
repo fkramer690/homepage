@@ -25,6 +25,7 @@ faq:
   - q: "Which accounts should nearshore developers use for coding agents?"
     a: "Use commercial accounts that the client provides or approves, never private plans. Anthropic does not train on Claude Code data under commercial terms; on the Free, Pro and Max plans that depends on a user setting."
 draft: false
+contactBrief: ai-coding
 ---
 
 When nearshore Salesforce teams with AI agents produce more changes per developer, review capacity can become the bottleneck; measure it rather than assume it. For a manufacturer, the planning number becomes reviewer capacity from people who know your org and processes, not developer headcount. Agents can help new developers understand an unknown org faster, but they can also let them skip the judgment a reviewer needs later. And every rotation in the team becomes an access event: tool accounts, org access and local agent transcripts have to be cleaned up per person. The rules from my nearshore article still hold; agents make breaking them more expensive.

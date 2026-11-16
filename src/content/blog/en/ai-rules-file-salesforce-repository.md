@@ -25,6 +25,7 @@ faq:
   - q: "How long should an AI rules file be?"
     a: "Anthropic recommends keeping each CLAUDE.md under 200 lines, and OpenAI says a short, accurate AGENTS.md beats a long file of vague rules. Add a line when a review finding repeats, and delete lines that the pipeline already enforces."
 draft: false
+contactBrief: ai-coding
 ---
 
 An AI rules file is the Markdown file a coding agent loads as standing instructions, usually at the start of a session: CLAUDE.md for Claude Code, AGENTS.md for Codex and Copilot, rule files in .vibes/rules/ for Agentforce Vibes. In my view, a shared Salesforce repository needs one as soon as internal or partner developers start coding with agents, because otherwise every tool and every partner follows its own conventions. The file belongs to the client and has a named owner on your side, usually the lead architect. It guides the agent. Whatever must happen every time goes into settings, hooks and the pipeline.

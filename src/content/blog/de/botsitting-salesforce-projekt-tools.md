@@ -7,7 +7,7 @@ slug: botsitting-salesforce-projekt-tools
 translationKey: botsitting-salesforce-tools
 topic: ai
 categories: [ai, devops]
-contactBrief: architecture
+contactBrief: ai-coding
 tags: [Botsitting, Claude, MCP, Miro, Figma, Lightning Web Components]
 takeaways:
   - "Botsitting ist die Arbeit, KI-Ergebnisse brauchbar zu machen. Laut Work AI Index 2026 kostet sie Beschäftigte 6,4 Stunden pro Woche."
