@@ -24,6 +24,7 @@ faq:
   - q: "What are the DORA metrics?"
     a: "DORA currently uses five software delivery metrics: change lead time, deployment frequency and failed deployment recovery time for throughput, and change fail rate and deployment rework rate for instability. Rework rate was added in 2024."
 draft: false
+contactBrief: ai-coding
 ---
 
 You measure AI productivity in a Salesforce project with outcome metrics on your own baseline: cycle time per story, defect escape rate, rework and change fail rate, recorded before the first coding agent is introduced. Developer impressions and license counts do not prove faster delivery. The studies below range from 55 percent faster to 19 percent slower, depending on the task and the codebase. A mature org with years of triggers, Flows and an SAP integration is at the difficult end of that range. So whether AI makes your program faster can only be answered with a number you collected yourself.

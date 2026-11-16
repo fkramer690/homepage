@@ -1352,6 +1352,9 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .contact-brief { display: grid; gap: 1.4em; margin: 0 0 1.8em; max-width: 52ch; }
 .contact-brief h3 { font-size: var(--fs-xs); letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan-light); margin: 0 0 0.6em; }
 .contact-brief ul { list-style: none; margin: 0; padding: 0; }
+.contact-offer { margin: -0.6em 0 1.8em; font-size: var(--fs-ui); color: var(--on-dark-2); }
+.contact-offer a { color: var(--cyan-light); font-weight: 600; text-decoration: none; }
+.contact-offer a:hover { text-decoration: underline; }
 .contact-brief li { position: relative; padding-left: 1.4em; margin: 0 0 0.45em; color: rgba(255, 255, 255, 0.85); font-size: var(--fs-ui); }
 .contact-brief li::before { content: ''; position: absolute; left: 0.1em; top: 0.5em; width: 0.6em; height: 0.32em; border-left: 2px solid var(--cyan-light); border-bottom: 2px solid var(--cyan-light); transform: rotate(-45deg); }
 .booking-note { margin: 1em 0 0; font-size: var(--fs-sm); color: rgba(255, 255, 255, 0.55); }

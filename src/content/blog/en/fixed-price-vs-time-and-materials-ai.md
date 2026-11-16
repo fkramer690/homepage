@@ -8,7 +8,7 @@ slug: fixed-price-vs-time-and-materials-ai
 translationKey: fixed-price-ai-salesforce-partners
 topic: governance
 categories: [architecture, ai]
-contactBrief: partner-governance
+contactBrief: ai-coding
 tags: [fixed price, time and materials, partner governance, ai coding, partner program, manufacturing]
 takeaways:
   - "Under hourly billing a partner bills fewer days for every day a coding agent saves, so you only see the gain if it shows up in time records or extra scope."

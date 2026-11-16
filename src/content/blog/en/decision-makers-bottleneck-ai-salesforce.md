@@ -26,6 +26,7 @@ faq:
   - q: "What if a decision does not come in time?"
     a: "Agree deadlines by type of decision and an escalation path. For low-risk, reversible decisions within agreed guardrails, the team's documented proposal can apply and is recorded in the decision log. Data protection, pricing, warranty, permissions and irreversible migrations need explicit approval and must never be approved by silence."
 draft: false
+contactBrief: ai-coding
 ---
 
 When coding agents speed up Salesforce delivery, the development team is often no longer the bottleneck. By AI-driven, I mean AI in the delivery process, not the introduction of an AI product. Coding agents build a story in hours. In my experience, the team then waits for decisions from the client: process answers, approvals and acceptance. These people are tied up in day-to-day operations, processes are often not agreed internally, and it is rare for anyone to know the users' daily work and own the scope at the same time. More pressure does not help. Decisions need their own budget, explicit delegated decision rights and deadlines.

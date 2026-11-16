@@ -268,7 +268,7 @@ const schema = {
     <div class="container contact-inner">
       <div class="contact-intro">
         <p class="label mono">{t.contact.label}</p>
-        <ContactBrief brief={getContactBrief(lang, service.data.contactBrief)} t={t} />
+        <ContactBrief brief={getContactBrief(lang, service.data.contactBrief)} t={t} lang={lang} />
         <a class="btn" href={contactHref(name)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
         {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
         <PhoneLine t={t} />

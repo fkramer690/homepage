@@ -25,6 +25,7 @@ faq:
   - q: "Welche Konten sollten Nearshore-Entwickler für Coding-Agenten nutzen?"
     a: "Nearshore-Entwickler sollten kommerzielle Konten nutzen, die der Kunde stellt oder freigibt, nie private Tarife. Unter kommerziellen Bedingungen trainiert Anthropic nicht mit Claude-Code-Daten; bei Free, Pro und Max hängt das von einer Nutzereinstellung ab."
 draft: false
+contactBrief: ai-coding
 ---
 
 Erzeugen Nearshore-Teams für Salesforce mit KI-Agenten mehr Änderungen pro Entwickler, kann das Review zum Engpass werden; messen Sie das, statt es anzunehmen. Für einen Hersteller wird Review-Kapazität bei Personen, die Ihre Org und Ihre Prozesse kennen, zur Planungsgröße, nicht die Zahl der Entwickler. Das Einlesen in eine fremde Org kann durch Agenten schneller werden, baut aber nicht automatisch das Urteilsvermögen auf, das ein Reviewer später braucht. Und jede Rotation im Team wird zum Zugriffsereignis: Werkzeugkonten, Org-Zugänge und lokale Agenten-Transkripte müssen pro Person bereinigt werden. Die Regeln aus meinem Nearshore-Artikel gelten weiter; mit Agenten wird es nur teurer, sie zu brechen.

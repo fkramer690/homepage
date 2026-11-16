@@ -25,6 +25,7 @@ faq:
   - q: "What is the difference between vibe coding and agentic engineering?"
     a: "Martin Fowler separates the two: in vibe coding nobody reads the generated code; in agentic engineering an LLM writes the code, but developers review it and care about its structure. Production Salesforce work needs the second approach."
 draft: false
+contactBrief: ai-coding
 ---
 
 Vibe coding in Salesforce pays off where the code is meant to be thrown away: a clickable dealer-portal mock-up for a requirements workshop, a service cockpit LWC that shows the head of service what the screen could look like, a script that fills a test org with spare parts. Build it in a Developer Edition or scratch org with dummy data. For anything that reaches an org with dealer, warranty or service data, switch to agentic engineering: an approved plan, human review, tests and pipeline gates. The prototype becomes the specification, and the production build starts again from your repository.

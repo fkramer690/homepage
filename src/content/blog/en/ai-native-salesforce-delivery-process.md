@@ -25,6 +25,7 @@ faq:
   - q: "Who is responsible for the quality of the agent's output?"
     a: "The business analyst for the business content, the architect for technical quality through the rules file in the repository, and for the code the developer who reviews every pull request. The agent drafts and triggers reversible automated steps, but every binding decision needs a named person."
 draft: false
+contactBrief: ai-coding
 ---
 
 An AI-native delivery process for Salesforce turns the Jira ticket into an executable specification. An agent does the legwork from preparing the workshop to the pull request, the pipeline checks deterministically, and people decide at five fixed gates: minutes, spec, code review, bugs and change requests, release. The process has 14 steps from the first requirement to production. It maintains a chain that classic projects rarely manage: every deployed change traces back to an approved requirement, ideally to a decision confirmed by someone at the client. For manufacturers, one thing changes most: the business sees something that runs much earlier and, in return, has to confirm decisions more quickly.

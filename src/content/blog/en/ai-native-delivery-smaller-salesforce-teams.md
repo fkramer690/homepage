@@ -25,6 +25,7 @@ faq:
   - q: "Does a daily demo replace user acceptance testing?"
     a: "No. It cuts late rework, because the domain lead sees working software in the sandbox every day. Release acceptance with regression testing, roles and sharing remains necessary, and processes that post into SAP, such as credit notes for warranty claims, need an end-to-end test before release."
 draft: false
+contactBrief: ai-coding
 ---
 
 In the model I look at here, AI-native delivery can shrink a Salesforce team to small pods: an architect, a builder-reviewer who steers the coding agents, and a domain lead from the business. For a manufacturer, the bigger change is on its own side, not with the partner. Each pod needs someone from service, sales or after-sales who makes process decisions every day and accepts working software in a daily demo. Short intents with testable acceptance criteria replace long prose specifications, and a named person owns every artifact. If your organization cannot free up those people, smaller partner teams will not make the program faster.

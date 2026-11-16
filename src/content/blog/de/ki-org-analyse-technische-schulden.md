@@ -8,7 +8,7 @@ slug: ki-org-analyse-technische-schulden
 translationKey: ai-org-assessment-technical-debt
 topic: code-review
 categories: [devops, architecture]
-contactBrief: partner-governance
+contactBrief: ai-coding
 tags: [Org-Analyse, Technische Schulden, Claude Batch API, Code Analyzer, sfdx-hardis, Partnerwechsel]
 takeaways:
   - "Ein LLM kann gut erklären, was jede Klasse, jeder Flow und jedes Permission Set tut und wo zwei Partner dieselbe Logik doppelt gebaut haben."

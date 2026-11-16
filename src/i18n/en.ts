@@ -522,6 +522,7 @@ export const en = {
     articleCount: { one: '{n} article', other: '{n} articles' },
     ctaTitle: 'Planning an AI initiative on Salesforce?',
     ctaText: 'A short conversation clarifies where to start and where not to.',
+    ctaOffer: { text: 'For Salesforce teams that want to use AI agents in development, I offer a fixed-price starting point:', path: 'salesforce-ai-readiness-check/', linkText: 'Three-day AI readiness check' },
     formSubject: 'AI masterclass',
     back: 'All chapters',
     chapterEyebrow: 'Chapter {n} of {total} · AI masterclass',

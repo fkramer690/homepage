@@ -122,6 +122,8 @@ I build pipelines on the Git platform the company already uses. So far that has 
 
 For the Salesforce part I often use sfdx-hardis, an open-source DevOps tool that I use in my own projects. It has no license fee (runners and maintenance still cost time and money), and the repository, the pipeline and the access rights stay with the client. I explain what it does in [sfdx-hardis: open-source DevOps for Salesforce](/en/blog/sfdx-hardis-open-source-salesforce-devops/). I support the project, but I have no financial ties to it. If a client already has a commercial tool that works, I build on it.
 
+Teams that want to use AI agents in development need this pipeline as a control point: it checks every change an AI agent creates before a person approves it. In the [AI readiness check](/en/salesforce-ai-readiness-check/), we assess in three days, at a fixed price, how well prepared your team is.
+
 ```hinweis tipp
 Platform changes are part of release management too. Each Salesforce release, such as [Winter '27](/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/), can change API versions, metadata behavior or security settings that a pipeline depends on. On top of that, a new version of the Salesforce CLI comes out every week, so I pin the tool versions in the pipeline and test updates before they reach the release path.
 ```

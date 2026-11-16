@@ -11,6 +11,8 @@ interface Brief {
   text: string;
   bring: string[];
   clarify: string[];
+  // Optional pointer to a fixed-price entry offer, shown under the checklists.
+  offer?: { text: string; path: string; linkText: string };
 }
 
 export const contactBriefs = {
@@ -312,6 +314,38 @@ export const contactBriefs = {
         'Which running costs per action you have to expect',
         'Which data quality and which tests you need before go-live',
       ],
+    },
+  },
+  'ai-coding': {
+    de: {
+      title: 'Wie gut ist Ihr Salesforce-Team auf den Einsatz von KI-Agenten vorbereitet?',
+      text: 'In 30 Minuten klären wir, wie Ihr Team KI-Werkzeuge heute nutzt und welcher nächste Schritt sinnvoll ist.',
+      bring: [
+        'Wie viele Personen an Salesforce arbeiten und welche von ihnen heute KI-Werkzeuge nutzen',
+        'Wie Sie Änderungen heute ausliefern: mit Change Sets, einem Deployment-Tool oder einer Pipeline',
+        'Ob ein Implementierungspartner in Ihrer Org arbeitet',
+      ],
+      clarify: [
+        'Welche Voraussetzungen für den Einsatz von KI-Agenten erfüllt sind und welche fehlen',
+        'Welche Story aus Ihrem Backlog sich für die gemeinsame Umsetzung vor Ort eignet',
+        'Ob der KI-Readiness-Check für Ihre Situation sinnvoll ist',
+      ],
+      offer: { text: 'Angebot zum Festpreis:', path: 'salesforce-ki-readiness-check/', linkText: 'KI-Readiness-Check in drei Tagen' },
+    },
+    en: {
+      title: 'How well prepared is your Salesforce team to use AI agents?',
+      text: 'In 30 minutes, we clarify how your team uses AI tools today and what the sensible next step is.',
+      bring: [
+        'How many people work on Salesforce and which of them use AI tools today',
+        'How you deploy changes today: with change sets, a deployment tool or a pipeline',
+        'Whether an implementation partner works in your org',
+      ],
+      clarify: [
+        'Which prerequisites for using AI agents are in place and which are missing',
+        'Which backlog story is suitable for implementation during the on-site session',
+        'Whether the AI readiness check makes sense for your situation',
+      ],
+      offer: { text: 'Fixed-price offer:', path: 'salesforce-ai-readiness-check/', linkText: 'Three-day AI readiness check' },
     },
   },
   integration: {

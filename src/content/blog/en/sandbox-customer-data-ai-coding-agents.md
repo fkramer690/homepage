@@ -27,6 +27,7 @@ faq:
   - q: "What does Data Mask & Seed cost?"
     a: "Salesforce's product page does not list a price. Ask your account executive for a quote and compare it with the effort of building and maintaining your own seed data set."
 draft: false
+contactBrief: ai-coding
 ---
 
 Sandbox customer data should be masked, or kept out of reach, before a partner's AI coding agent connects to a Salesforce sandbox, because whatever the agent reads ends up in a prompt. A full copy sandbox holds the same dealer prices, contracts and service cases as production. My rule: agents work in scratch orgs and developer sandboxes with seeded test data, a masked partial copy is used for integration tests, and the full copy is reserved for human users. The price is less test realism: masking breaks price logic and rare data constellations, so someone has to build a seed data set on purpose.

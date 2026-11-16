@@ -3,12 +3,14 @@
 // under blog articles and service pages (texts: src/lib/contact-briefs.ts).
 import type { getContactBrief } from '../lib/contact-briefs';
 import type { Dict } from '../i18n/en';
+import { localHref } from '../lib/paths';
 
 interface Props {
   brief: ReturnType<typeof getContactBrief>;
   t: Dict;
+  lang: 'en' | 'de';
 }
-const { brief, t } = Astro.props;
+const { brief, t, lang } = Astro.props;
 ---
 <h2>{brief.title}</h2>
 <p class="contact-text">{brief.text}</p>
@@ -22,3 +24,4 @@ const { brief, t } = Astro.props;
     <ul>{brief.clarify.map((item) => <li>{item}</li>)}</ul>
   </div>
 </div>
+{brief.offer && <p class="contact-offer">{brief.offer.text} <a href={localHref(lang, brief.offer.path)}>{brief.offer.linkText} →</a></p>}

@@ -8,7 +8,7 @@ slug: partner-ki-coding-regeln-vertrag
 translationKey: partners-ai-coding-sow-rules
 topic: governance
 categories: [architecture, ai]
-contactBrief: partner-governance
+contactBrief: ai-coding
 tags: [Partnersteuerung, KI-Coding, Leistungsbeschreibung, Datenschutz, Code-Review, Maschinenbau]
 takeaways:
   - "Bei Claude Code trainiert Anthropic unter kommerziellen Bedingungen nicht mit Ihrem Code, bei Free, Pro und Max hängt das von einer Nutzereinstellung ab."

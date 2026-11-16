@@ -487,6 +487,7 @@ export const de: Dict = {
     articleCount: { one: '{n} Fachartikel', other: '{n} Fachartikel' },
     ctaTitle: 'Sie planen ein KI-Vorhaben auf Salesforce?',
     ctaText: 'Ein kurzes Gespräch klärt, wo Sie anfangen sollten und wo nicht.',
+    ctaOffer: { text: 'Für Salesforce-Teams, die mit KI-Agenten entwickeln wollen, biete ich einen Einstieg zum Festpreis an:', path: 'salesforce-ki-readiness-check/', linkText: 'KI-Readiness-Check in drei Tagen' },
     formSubject: 'Masterclass KI',
     back: 'Alle Kapitel',
     chapterEyebrow: 'Kapitel {nn} von {total} · Masterclass KI',
