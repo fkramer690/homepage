@@ -24,7 +24,7 @@ import { offerPdf, type OfferBlock } from '../data/ki-readiness-check';
 // same structure, other content, paths, preview image and photo.
 interface Props {
   lang: 'en' | 'de';
-  content?: Record<'en' | 'de', (typeof freelanceArchitect)['de'] & { offer?: OfferBlock }>;
+  content?: Record<'en' | 'de', (typeof freelanceArchitect)['de'] & { offer?: OfferBlock; ctaSecondaryHref?: string }>;
   paths?: { de: string; en: string };
   og?: string;
   photo?: PhotoKey;
@@ -99,7 +99,7 @@ const schema = {
         <ul class="rc-promises">{c.promises.map((p) => <li>{p}</li>)}</ul>
         <div class="hero-ctas">
           <a class="btn" href="#contact">{c.ctaPrimary}</a>
-          <a class="btn btn-ghost" href="#situations">{c.ctaSecondary}</a>
+          <a class="btn btn-ghost" href={c.ctaSecondaryHref ?? '#situations'}>{c.ctaSecondary}</a>
         </div>
       </div>
       <figure class="rc-portrait">
