@@ -9737,6 +9737,14 @@
  },
  {
   "day": "2026-11-14",
+  "query": "how do you compare salesforce implementation proposals fairly?",
+  "page": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-14",
   "query": "how does a new team take over an unfinished salesforce development project?",
   "page": "https://www.fk-sd.de/en/blog/switching-salesforce-implementation-partner/",
   "clicks": 0,
@@ -9956,24 +9964,40 @@
   "query": "click field service management software",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
-  "impressions": 5,
-  "position": 85
+  "impressions": 8,
+  "position": 82.4
  },
  {
   "day": "2026-11-15",
   "query": "field service application software",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
-  "impressions": 3,
-  "position": 54.3
+  "impressions": 4,
+  "position": 56.3
  },
  {
   "day": "2026-11-15",
   "query": "field service management cloud",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
+  "impressions": 4,
+  "position": 84.3
+ },
+ {
+  "day": "2026-11-15",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 4.5
+ },
+ {
+  "day": "2026-11-15",
+  "query": "agentforce",
+  "page": "https://www.fk-sd.de/en/blog/what-is-agentforce/",
+  "clicks": 0,
   "impressions": 3,
-  "position": 84.7
+  "position": 21.7
  },
  {
   "day": "2026-11-15",
@@ -10001,11 +10025,11 @@
  },
  {
   "day": "2026-11-15",
-  "query": "agentforce",
-  "page": "https://www.fk-sd.de/en/blog/what-is-agentforce/",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
   "clicks": 0,
-  "impressions": 2,
-  "position": 27
+  "impressions": 3,
+  "position": 7.3
  },
  {
   "day": "2026-11-15",
@@ -10049,22 +10073,6 @@
  },
  {
   "day": "2026-11-15",
-  "query": "what does a typical salesforce devops rollout look like?",
-  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 7
- },
- {
-  "day": "2026-11-15",
-  "query": "what makes a salesforce devops platform enterprise-ready?",
-  "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 10
- },
- {
-  "day": "2026-11-15",
   "query": "agent for",
   "page": "https://www.fk-sd.de/en/blog/what-is-agentforce/",
   "clicks": 0,
@@ -10078,6 +10086,22 @@
   "clicks": 0,
   "impressions": 1,
   "position": 46
+ },
+ {
+  "day": "2026-11-15",
+  "query": "agentforce erp",
+  "page": "https://www.fk-sd.de/en/blog/what-is-agentforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 25
+ },
+ {
+  "day": "2026-11-15",
+  "query": "change management communication plan",
+  "page": "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
  },
  {
   "day": "2026-11-15",
@@ -10153,6 +10177,14 @@
  },
  {
   "day": "2026-11-15",
+  "query": "field management solutions",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 37
+ },
+ {
+  "day": "2026-11-15",
   "query": "field service data",
   "page": "https://www.fk-sd.de/en/blog/salesforce-field-service-master-data/",
   "clicks": 0,
@@ -10166,6 +10198,14 @@
   "clicks": 0,
   "impressions": 1,
   "position": 68
+ },
+ {
+  "day": "2026-11-15",
+  "query": "field service management erp",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 86
  },
  {
   "day": "2026-11-15",
@@ -10209,11 +10249,35 @@
  },
  {
   "day": "2026-11-15",
+  "query": "nearshore teams",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 35
+ },
+ {
+  "day": "2026-11-15",
   "query": "revenue cloud advanced vs revenue cloud",
   "page": "https://www.fk-sd.de/masterclass/revenue-cloud/revenue-cloud-ueberblick/",
   "clicks": 0,
   "impressions": 1,
   "position": 9
+ },
+ {
+  "day": "2026-11-15",
+  "query": "salesforce architektur",
+  "page": "https://www.fk-sd.de/leistungen/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 17
+ },
+ {
+  "day": "2026-11-15",
+  "query": "salesforce architektur",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 14
  },
  {
   "day": "2026-11-15",
@@ -10238,6 +10302,38 @@
   "clicks": 0,
   "impressions": 1,
   "position": 35
+ },
+ {
+  "day": "2026-11-15",
+  "query": "service pro vs ptc servicemax",
+  "page": "https://www.fk-sd.de/blog/servicemax-oder-salesforce-field-service/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-15",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/blog/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 41
+ },
+ {
+  "day": "2026-11-15",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-free-devops-training/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-15",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/en/partners/recruiters/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
  },
  {
   "day": "2026-11-15",
@@ -10270,5 +10366,37 @@
   "clicks": 0,
   "impressions": 1,
   "position": 10
+ },
+ {
+  "day": "2026-11-15",
+  "query": "which field service management software is best for manufacturing?",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
+ },
+ {
+  "day": "2026-11-16",
+  "query": "devops release management",
+  "page": "https://www.fk-sd.de/leistungen/devops-und-release-management/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 92
+ },
+ {
+  "day": "2026-11-16",
+  "query": "how does salesforce field service handle contractor management compared to servicemax?",
+  "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-16",
+  "query": "kotter international inc alternatives",
+  "page": "https://www.fk-sd.de/en/blog/change-management-models/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
  }
 ]

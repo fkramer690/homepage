@@ -30,16 +30,16 @@
   "position": 8
  },
  {
-  "query": "veränderungskurve kühn-rosch",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 6
- },
- {
   "query": "salesforce fehlende sicht berechtigung",
   "clicks": 0,
   "impressions": 3,
   "position": 10
+ },
+ {
+  "query": "veränderungskurve kühn-rosch",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 6
  },
  {
   "query": "does the salesforce agent context engine allow me to configure my company's semantics and terminology?",
@@ -48,58 +48,22 @@
   "position": 3.3
  },
  {
-  "query": "change-kurve y-achse, kompetenz, energie",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 3
- },
- {
   "query": "fk solution design gmbh",
   "clicks": 0,
   "impressions": 3,
   "position": 1
  },
  {
+  "query": "change-kurve y-achse, kompetenz, energie",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 3
+ },
+ {
   "query": "primäradresse im salesforce ändern",
   "clicks": 0,
   "impressions": 2,
   "position": 9
- },
- {
-  "query": "brauch salesforce voice flex credits",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 10
- },
- {
-  "query": "暴食后第二天轻断食有用吗",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "query": "salesforce well architected framework architect agent",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 7
- },
- {
-  "query": "scheduling console salesforce",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
- },
- {
-  "query": "well architected framework salesforce",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 6
- },
- {
-  "query": "sfdx-hardis vs salesforce devops center lifecycle center comparison 2026",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 2
  },
  {
   "query": "salesforce well architected framework",
@@ -114,7 +78,49 @@
   "position": 8
  },
  {
+  "query": "scheduling console salesforce",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
+  "query": "well architected framework salesforce",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 6
+ },
+ {
+  "query": "salesforce well architected framework architect agent",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7
+ },
+ {
+  "query": "sfdx-hardis vs salesforce devops center lifecycle center comparison 2026",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 2
+ },
+ {
   "query": "4-seiten-analyse nach stakeholder meetings",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
+  "query": "暴食后第二天轻断食有用吗",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
+ },
+ {
+  "query": "brauch salesforce voice flex credits",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
+ },
+ {
+  "query": "what is an fk in salesforce?",
   "clicks": 0,
   "impressions": 2,
   "position": 8
@@ -126,10 +132,16 @@
   "position": 10
  },
  {
-  "query": "fk-sd.de",
+  "query": "sfdxhardis training",
   "clicks": 0,
   "impressions": 2,
-  "position": 2
+  "position": 5
+ },
+ {
+  "query": "findest du eine abbildung einer change kurve mit netten icons als erklärung",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
  },
  {
   "query": "salesforce: wir nutzen contracts, preisbücher und accounts. kann ich in einem contract für einen account, der einem preisbuch zugeordnet ist, ein produkt als sonderpreis führen, dass nicht im preisbuch steht?",
@@ -144,28 +156,16 @@
   "position": 6
  },
  {
+  "query": "fk-sd.de",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 2
+ },
+ {
   "query": "sfdx hardis badges",
   "clicks": 0,
   "impressions": 2,
   "position": 10
- },
- {
-  "query": "findest du eine abbildung einer change kurve mit netten icons als erklärung",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
- },
- {
-  "query": "what is an fk in salesforce?",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
- },
- {
-  "query": "sfdxhardis training",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 5
  },
  {
   "query": "unterschiede adkar und drei phasen modell von lewis",
@@ -178,102 +178,6 @@
   "clicks": 1,
   "impressions": 1,
   "position": 4
- },
- {
-  "query": "what is rca latest name for by salesforce",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "query": "salesforce b2b commerce extension",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
- },
- {
-  "query": "trailhead scheduling console",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 6
- },
- {
-  "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
- },
- {
-  "query": "trailhead new dispatch console",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "query": "salesforce scheduling console update service appointment duration on gantt",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
- },
- {
-  "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 8
- },
- {
-  "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
- },
- {
-  "query": "hardifs",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
-  "query": "difference between devops centre and salesforce dx",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 1
- },
- {
-  "query": "adjust duration in new cheudling console salesforce field service",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "query": "what is salesforce devopps now called",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
-  "query": "difference between devops centre and salesforce dx  and copado",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 9
- },
- {
-  "query": "i don't see classic dispatcher console in salesforce",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 6
- },
- {
-  "query": "salesforce new dispatch console",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 6
- },
- {
-  "query": "new dispatch console salesforce",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
  },
  {
   "query": "migrate list views scheudling console sfdc",
@@ -294,9 +198,105 @@
   "position": 10
  },
  {
+  "query": "what is rca latest name for by salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "query": "hardifs",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "query": "difference between devops centre and salesforce dx",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 1
+ },
+ {
+  "query": "adjust duration in new cheudling console salesforce field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "query": "what is salesforce devopps now called",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "query": "new dispatch console salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "query": "trailhead new dispatch console",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "query": "salesforce scheduling console update service appointment duration on gantt",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "query": "difference between devops centre and salesforce dx  and copado",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "query": "i don't see classic dispatcher console in salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
+  "query": "salesforce new dispatch console",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
   "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
   "clicks": 0,
   "impressions": 1,
   "position": 4
+ },
+ {
+  "query": "change management definition kotter lewin widerstand organisation",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
+ },
+ {
+  "query": "trailhead scheduling console",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
+  "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  }
 ]

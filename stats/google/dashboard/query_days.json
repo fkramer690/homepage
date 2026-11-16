@@ -7421,6 +7421,13 @@
  },
  {
   "day": "2026-11-14",
+  "query": "how do you compare salesforce implementation proposals fairly?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-14",
   "query": "how does a new team take over an unfinished salesforce development project?",
   "clicks": 0,
   "impressions": 1,
@@ -7598,8 +7605,22 @@
   "day": "2026-11-15",
   "query": "click field service management software",
   "clicks": 0,
-  "impressions": 5,
-  "position": 85
+  "impressions": 8,
+  "position": 82.4
+ },
+ {
+  "day": "2026-11-15",
+  "query": "field service application software",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 56.3
+ },
+ {
+  "day": "2026-11-15",
+  "query": "field service management cloud",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 84.3
  },
  {
   "day": "2026-11-15",
@@ -7610,17 +7631,17 @@
  },
  {
   "day": "2026-11-15",
-  "query": "field service application software",
+  "query": "what does a typical salesforce devops rollout look like?",
   "clicks": 0,
-  "impressions": 3,
-  "position": 54.3
+  "impressions": 4,
+  "position": 4.5
  },
  {
   "day": "2026-11-15",
-  "query": "field service management cloud",
+  "query": "agentforce",
   "clicks": 0,
   "impressions": 3,
-  "position": 84.7
+  "position": 21.7
  },
  {
   "day": "2026-11-15",
@@ -7645,10 +7666,17 @@
  },
  {
   "day": "2026-11-15",
-  "query": "agentforce",
+  "query": "sfdx-hardis",
   "clicks": 0,
-  "impressions": 2,
-  "position": 27
+  "impressions": 3,
+  "position": 21.7
+ },
+ {
+  "day": "2026-11-15",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 7.3
  },
  {
   "day": "2026-11-15",
@@ -7680,20 +7708,6 @@
  },
  {
   "day": "2026-11-15",
-  "query": "what does a typical salesforce devops rollout look like?",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 7
- },
- {
-  "day": "2026-11-15",
-  "query": "what makes a salesforce devops platform enterprise-ready?",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 10
- },
- {
-  "day": "2026-11-15",
   "query": "agent for",
   "clicks": 0,
   "impressions": 1,
@@ -7705,6 +7719,20 @@
   "clicks": 0,
   "impressions": 1,
   "position": 46
+ },
+ {
+  "day": "2026-11-15",
+  "query": "agentforce erp",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 25
+ },
+ {
+  "day": "2026-11-15",
+  "query": "change management communication plan",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
  },
  {
   "day": "2026-11-15",
@@ -7757,6 +7785,13 @@
  },
  {
   "day": "2026-11-15",
+  "query": "field management solutions",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 37
+ },
+ {
+  "day": "2026-11-15",
   "query": "field service data",
   "clicks": 0,
   "impressions": 1,
@@ -7768,6 +7803,13 @@
   "clicks": 0,
   "impressions": 1,
   "position": 68
+ },
+ {
+  "day": "2026-11-15",
+  "query": "field service management erp",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 86
  },
  {
   "day": "2026-11-15",
@@ -7806,10 +7848,24 @@
  },
  {
   "day": "2026-11-15",
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 35
+ },
+ {
+  "day": "2026-11-15",
   "query": "revenue cloud advanced vs revenue cloud",
   "clicks": 0,
   "impressions": 1,
   "position": 9
+ },
+ {
+  "day": "2026-11-15",
+  "query": "salesforce architektur",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 14
  },
  {
   "day": "2026-11-15",
@@ -7831,6 +7887,13 @@
   "clicks": 0,
   "impressions": 1,
   "position": 35
+ },
+ {
+  "day": "2026-11-15",
+  "query": "service pro vs ptc servicemax",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  },
  {
   "day": "2026-11-15",
@@ -7859,5 +7922,33 @@
   "clicks": 0,
   "impressions": 1,
   "position": 10
+ },
+ {
+  "day": "2026-11-15",
+  "query": "which field service management software is best for manufacturing?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
+ },
+ {
+  "day": "2026-11-16",
+  "query": "devops release management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 92
+ },
+ {
+  "day": "2026-11-16",
+  "query": "how does salesforce field service handle contractor management compared to servicemax?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-16",
+  "query": "kotter international inc alternatives",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
  }
 ]

@@ -6,8 +6,8 @@
  },
  {
   "source": "Direct",
-  "pageviews": 820,
-  "visits": 820
+  "pageviews": 830,
+  "visits": 830
  },
  {
   "source": "fkramer690.github.io",
@@ -20,12 +20,12 @@
   "visits": 40
  },
  {
-  "source": "teams.public.onecdn.static.microsoft",
-  "pageviews": 20,
-  "visits": 20
+  "source": "com.linkedin.android",
+  "pageviews": 30,
+  "visits": 30
  },
  {
-  "source": "com.linkedin.android",
+  "source": "teams.public.onecdn.static.microsoft",
   "pageviews": 20,
   "visits": 20
  }

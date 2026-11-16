@@ -1,8 +1,8 @@
 [
  {
   "page": "/",
-  "pageviews": 360,
-  "visits": 170
+  "pageviews": 370,
+  "visits": 180
  },
  {
   "page": "/en/",
@@ -25,14 +25,14 @@
   "visits": 50
  },
  {
+  "page": "/en/blog/salesforce-forward-deployed-engineer/",
+  "pageviews": 60,
+  "visits": 60
+ },
+ {
   "page": "/fragen/",
   "pageviews": 50,
   "visits": 0
- },
- {
-  "page": "/en/blog/salesforce-forward-deployed-engineer/",
-  "pageviews": 50,
-  "visits": 50
  },
  {
   "page": "/en/blog/",
