@@ -1,0 +1,943 @@
+{
+  "generatedAt": "2026-11-16T05:44:17.187Z",
+  "domain": "fk-sd.de",
+  "requests": 223,
+  "summary": {
+    "keywordsFound": 32,
+    "keywords": 99,
+    "questionsFound": 27,
+    "questions": 37,
+    "indexedPages": 16,
+    "submittedIndexed": 21,
+    "submitted": 25
+  },
+  "keywords": {
+    "de": [
+      {
+        "keyword": "salesforce berater",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce freelancer",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce architekt freelancer",
+        "position": 9,
+        "url": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce solution architect",
+        "position": 30,
+        "url": "https://www.fk-sd.de/",
+        "ownResults": 2
+      },
+      {
+        "keyword": "salesforce beratung mittelstand",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce partnersteuerung",
+        "position": 3,
+        "url": "https://www.fk-sd.de/leistungen/partnersteuerung/",
+        "ownResults": 2
+      },
+      {
+        "keyword": "salesforce devops beratung",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce release management",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "sfdx-hardis",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce devops center",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce nearshore",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce lizenzen",
+        "position": 7,
+        "url": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce field service",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce field service einführung",
+        "position": 3,
+        "url": "https://www.fk-sd.de/blog/salesforce-field-service-einfuehrung/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "field service lizenzen salesforce",
+        "position": 6,
+        "url": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce manufacturing cloud",
+        "position": 34,
+        "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "manufacturing cloud funktionen",
+        "position": 10,
+        "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce revenue cloud",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce cpq revenue cloud",
+        "position": 33,
+        "url": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce cpq end of sale",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce b2b commerce",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "b2b commerce preise salesforce",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "agentforce hersteller",
+        "position": 2,
+        "url": "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "agentforce kosten",
+        "position": 23,
+        "url": "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "flex credits agentforce",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce sap integration",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce document builder",
+        "position": 16,
+        "url": "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce well-architected",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "sap to salesforce",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce implementation partner",
+        "position": 28,
+        "url": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce partner deutschland",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce lizenz kosten",
+        "position": 7,
+        "url": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "was ist agentforce",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce field service license",
+        "position": 18,
+        "url": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce manufacturing cloud vs sales cloud",
+        "position": 4,
+        "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce manufacturing cloud pricing",
+        "position": 16,
+        "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce cpq end of life",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce field service implementation guide",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce change management",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management beratung",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management crm",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "crm einführung",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "adkar modell",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management masterclass",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "key user aufgaben",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "hypercare phase",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "juliane winterscheid",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management definition",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "was ist change management",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management modelle",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "stakeholder analyse",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "stakeholder analyse vorlage",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change kurve",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "veränderungskurve",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "kommunikationsplan",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "kommunikationsplan vorlage",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "gearset alternative",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "copado alternative",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce partner wechseln",
+        "position": 8,
+        "url": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce projekt retten",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce beratung maschinenbau",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce architekt freiberuflich",
+        "position": 1,
+        "url": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce field service berater",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce lizenzberatung",
+        "position": 12,
+        "url": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce sap integration berater",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce implementierungspartner auswählen",
+        "position": 1,
+        "url": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce freelancer oder agentur",
+        "position": 15,
+        "url": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+        "ownResults": 1
+      }
+    ],
+    "en": [
+      {
+        "keyword": "salesforce solution architect freelance",
+        "position": 6,
+        "url": "https://www.fk-sd.de/en/freelance-salesforce-architect/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce consultant germany",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce partner governance",
+        "position": 1,
+        "url": "https://www.fk-sd.de/en/services/partner-governance/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce devops consulting",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "sfdx-hardis",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "sfdx-hardis vs devops center",
+        "position": 1,
+        "url": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce field service implementation",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce manufacturing cloud features",
+        "position": 39,
+        "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce revenue cloud pricing",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce cpq vs revenue cloud",
+        "position": 34,
+        "url": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce b2b commerce pricing",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "agentforce flex credits",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce document builder limitations",
+        "position": 1,
+        "url": "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "salesforce well-architected framework",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce change management",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce change management consulting",
+        "position": 12,
+        "url": "https://www.fk-sd.de/en/services/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "adkar model",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce user adoption",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce adoption dashboard",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "what is change management",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management models",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "stakeholder analysis template",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change curve",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "change management communication plan",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "gearset alternatives",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "copado alternatives",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce project rescue",
+        "position": null,
+        "url": null
+      },
+      {
+        "keyword": "salesforce multi vendor governance",
+        "position": 2,
+        "url": "https://www.fk-sd.de/en/services/partner-governance/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "how to choose a salesforce implementation partner",
+        "position": 6,
+        "url": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+        "ownResults": 1
+      },
+      {
+        "keyword": "independent salesforce architect",
+        "position": 1,
+        "url": "https://www.fk-sd.de/en/",
+        "ownResults": 3
+      },
+      {
+        "keyword": "salesforce field service consultant germany",
+        "position": null,
+        "url": null
+      }
+    ]
+  },
+  "prompts": [
+    {
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "position": 1,
+      "url": "https://www.fk-sd.de/leistungen/partnersteuerung/",
+      "ownResults": 1
+    },
+    {
+      "lang": "de",
+      "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+      "position": 1,
+      "url": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+      "ownResults": 2
+    },
+    {
+      "lang": "de",
+      "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+      "position": 1,
+      "url": "https://www.fk-sd.de/blog/salesforce-field-service-einfuehrung/",
+      "ownResults": 1
+    },
+    {
+      "lang": "de",
+      "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+      "position": 1,
+      "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+      "ownResults": 2
+    },
+    {
+      "lang": "de",
+      "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+      "position": 1,
+      "url": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
+      "ownResults": 1
+    },
+    {
+      "lang": "de",
+      "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+      "position": 1,
+      "url": "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/",
+      "ownResults": 1
+    },
+    {
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "position": 1,
+      "url": "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
+      "ownResults": 1
+    },
+    {
+      "lang": "de",
+      "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+      "position": 3,
+      "url": "https://www.fk-sd.de/blog/kundenpreise-sap-konditionen-oder-salesforce-pricing/",
+      "ownResults": 1
+    },
+    {
+      "lang": "de",
+      "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+      "position": 1,
+      "url": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+      "ownResults": 1
+    },
+    {
+      "lang": "en",
+      "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+      "position": 1,
+      "url": "https://www.fk-sd.de/en/",
+      "ownResults": 3
+    },
+    {
+      "lang": "en",
+      "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+      "position": 1,
+      "url": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
+      "ownResults": 2
+    },
+    {
+      "lang": "en",
+      "prompt": "How do I govern several Salesforce implementation partners in one program?",
+      "position": 2,
+      "url": "https://www.fk-sd.de/en/services/partner-governance/",
+      "ownResults": 2
+    },
+    {
+      "lang": "en",
+      "prompt": "Best practices for rolling out Salesforce Field Service in waves",
+      "position": 1,
+      "url": "https://www.fk-sd.de/en/blog/salesforce-field-service-rollout/",
+      "ownResults": 1
+    },
+    {
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "position": 1,
+      "url": "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
+      "ownResults": 1
+    },
+    {
+      "lang": "de",
+      "prompt": "Salesforce Architekt freiberuflich NRW",
+      "position": 4,
+      "url": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+      "ownResults": 1
+    },
+    {
+      "lang": "de",
+      "prompt": "Salesforce Enterprise Architect freelance für Fertigungsunternehmen in Deutschland",
+      "position": 1,
+      "url": "https://www.fk-sd.de/",
+      "ownResults": 2
+    },
+    {
+      "lang": "de",
+      "prompt": "Berater gesucht: mehrere Salesforce-Implementierungspartner in einem Programm steuern",
+      "position": 1,
+      "url": "https://www.fk-sd.de/leistungen/partnersteuerung/",
+      "ownResults": 2
+    },
+    {
+      "lang": "de",
+      "prompt": "Salesforce-Partner wechseln ohne Projektverzögerung, wer hilft dabei?",
+      "position": 5,
+      "url": "https://www.fk-sd.de/leistungen/partnersteuerung/",
+      "ownResults": 2
+    },
+    {
+      "lang": "de",
+      "prompt": "Salesforce-Projekt läuft aus dem Ruder: unabhängigen Architekten finden",
+      "position": 3,
+      "url": "https://www.fk-sd.de/",
+      "ownResults": 3
+    },
+    {
+      "lang": "de",
+      "prompt": "Salesforce Implementierungspartner auswählen: Kriterien und Fragen",
+      "position": 1,
+      "url": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+      "ownResults": 1
+    },
+    {
+      "lang": "de",
+      "prompt": "Salesforce Field Service Einführung Berater Maschinenbau",
+      "position": 3,
+      "url": "https://www.fk-sd.de/blog/salesforce-field-service-einfuehrung/",
+      "ownResults": 2
+    },
+    {
+      "lang": "de",
+      "prompt": "Unabhängige Salesforce Beratung für Maschinenbau und Anlagenbau",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Salesforce Lizenzkosten prüfen lassen, unabhängiger Berater",
+      "position": 6,
+      "url": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+      "ownResults": 1
+    },
+    {
+      "lang": "de",
+      "prompt": "Salesforce DevOps Berater für sfdx-hardis gesucht",
+      "position": 1,
+      "url": "https://www.fk-sd.de/",
+      "ownResults": 2
+    },
+    {
+      "lang": "de",
+      "prompt": "Gearset Alternative für Salesforce DevOps",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Copado Alternative ohne Lizenzkosten",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Salesforce Freelancer oder Agentur: was ist besser für ein Großprojekt?",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "de",
+      "prompt": "Salesforce SAP Integration Berater für Hersteller",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "en",
+      "prompt": "independent Salesforce architect for manufacturers in Europe",
+      "position": 1,
+      "url": "https://www.fk-sd.de/en/",
+      "ownResults": 4
+    },
+    {
+      "lang": "en",
+      "prompt": "Salesforce multi-vendor governance consultant",
+      "position": 1,
+      "url": "https://www.fk-sd.de/en/services/partner-governance/",
+      "ownResults": 1
+    },
+    {
+      "lang": "en",
+      "prompt": "Gearset alternatives for Salesforce DevOps",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "en",
+      "prompt": "Copado alternatives open source",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "en",
+      "prompt": "Salesforce Field Service implementation consultant Germany",
+      "position": null,
+      "url": null
+    },
+    {
+      "lang": "en",
+      "prompt": "client-side Salesforce architect vs system integrator",
+      "position": 4,
+      "url": "https://www.fk-sd.de/en/freelance-salesforce-architect/",
+      "ownResults": 3
+    },
+    {
+      "lang": "en",
+      "prompt": "how to choose a Salesforce implementation partner",
+      "position": 6,
+      "url": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+      "ownResults": 1
+    },
+    {
+      "lang": "en",
+      "prompt": "Salesforce project rescue consultant",
+      "position": null,
+      "url": null
+    }
+  ],
+  "indexed": [
+    "https://www.fk-sd.de/",
+    "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/",
+    "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
+    "https://www.fk-sd.de/blog/kommunikationsplan-change-management/",
+    "https://www.fk-sd.de/blog/kundenpreise-sap-konditionen-oder-salesforce-pricing/",
+    "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+    "https://www.fk-sd.de/blog/salesforce-dubletten-stammdaten-bereinigen/",
+    "https://www.fk-sd.de/blog/salesforce-field-service-einfuehrung/",
+    "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+    "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+    "https://www.fk-sd.de/en/blog/revenue-cloud-discount-approvals/",
+    "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
+    "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
+    "https://www.fk-sd.de/en/blog/visual-remote-assistant-remote-help-instead-of-visit/",
+    "https://www.fk-sd.de/fragen/",
+    "https://www.fk-sd.de/leistungen/partnersteuerung/"
+  ],
+  "submitted": [
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/leistungen/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/services/partner-governance/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/blog/salesforce-field-service-rollout/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/masterclass/devops-release-management/devops-werkzeuge-vergleich/",
+      "indexed": false
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/blog/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/masterclass/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/services/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/freelance-salesforce-architect/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/leistungen/partnersteuerung/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/fragen/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/kundenpreise-sap-konditionen-oder-salesforce-pricing/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/blog/salesforce-field-service-einfuehrung/",
+      "indexed": true
+    },
+    {
+      "date": "2026-11-09",
+      "url": "https://www.fk-sd.de/en/blog/visual-remote-assistant-remote-help-instead-of-visit/",
+      "indexed": true
+    }
+  ]
+}
