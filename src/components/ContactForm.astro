@@ -1,6 +1,7 @@
 ---
 import type { Dict } from '../i18n/en';
 import { site } from '../site';
+import Icon from './Icon.astro';
 
 interface Props {
   t: Dict;
@@ -57,7 +58,7 @@ const base = import.meta.env.BASE_URL;
   </p>
   <button class="btn" type="submit">{f.submit}</button>
   </div>
-  <p class="form-status" role="status" aria-live="polite" tabindex="-1"></p>
+  <p class="form-status" role="status" aria-live="polite" tabindex="-1"><Icon name="check" class="form-status-icon" /><span class="form-status-text"></span></p>
 </form>
 
 <script>
@@ -71,6 +72,7 @@ const base = import.meta.env.BASE_URL;
   for (const form of document.querySelectorAll<HTMLFormElement>('.contact-form')) {
     const body = form.querySelector<HTMLElement>('.form-body')!;
     const status = form.querySelector<HTMLElement>('.form-status')!;
+    const statusText = status.querySelector<HTMLElement>('.form-status-text')!;
     const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
     const label = button.textContent;
 
@@ -78,7 +80,7 @@ const base = import.meta.env.BASE_URL;
       event.preventDefault();
       button.disabled = true;
       button.textContent = form.dataset.sending ?? '';
-      status.textContent = '';
+      statusText.textContent = '';
       status.className = 'form-status';
       try {
         const tooFast = Date.now() - loadedAt < MIN_FILL_MS;
@@ -93,11 +95,11 @@ const base = import.meta.env.BASE_URL;
         track('formular');
         // Collapse the form and leave only the confirmation.
         body.hidden = true;
-        status.textContent = form.dataset.success ?? '';
+        statusText.textContent = form.dataset.success ?? '';
         status.classList.add('is-success');
         status.focus();
       } catch {
-        status.textContent = form.dataset.error ?? '';
+        statusText.textContent = form.dataset.error ?? '';
         status.classList.add('is-error');
       } finally {
         button.disabled = false;
