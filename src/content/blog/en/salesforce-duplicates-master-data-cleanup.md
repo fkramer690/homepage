@@ -1,8 +1,9 @@
 ---
 title: "Salesforce duplicates: clean master data before AI"
-description: "How manufacturers find, clean up and prevent duplicate accounts, contacts and assets in Salesforce before an AI agent starts working with the data."
+metaTitle: "Salesforce duplicates: 4 cleanup steps before AI agents"
+description: "Clean up Salesforce duplicates in four steps: measure, define a unique key, merge, then prevent new ones. For accounts, contacts and assets at manufacturers."
 pubDate: 2026-10-29
-updatedDate: 2026-11-09
+updatedDate: 2026-11-16
 lang: en
 slug: salesforce-duplicates-master-data-cleanup
 translationKey: duplicates-master-data-cleanup
