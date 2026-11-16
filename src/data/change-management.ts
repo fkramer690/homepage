@@ -23,7 +23,7 @@ export const changeSection = {
       items: [
         { who: 'Fabian Kramer', icon: 'architecture', title: 'Architektur und Releases', text: 'Ich sorge dafür, dass Architektur, Release-Plan und Pipeline die Veränderung tragen, und messe die Nutzung direkt in Salesforce.', more: 'Über mich' },
         { who: 'Juliane Winterscheid', icon: 'change', title: 'Change Management', text: 'Juliane begleitet Sponsoren, Führungskräfte und Key User durch die Veränderung. Sie ist Prosci-zertifiziert und hat an der Hochschule Fresenius Change Management gelehrt.', more: 'Profil und Referenzen' },
-        { who: 'Gemeinsam', icon: 'handshake', title: 'Ein Plan für Release und Veränderung', text: 'Key User, Schulung, Kommunikation und Messung planen wir entlang des Release-Plans. Wie das entlang der ADKAR-Stufen aussieht, zeigt die Masterclass.', more: 'Zur Masterclass' },
+        { who: 'Gemeinsam', icon: 'handshake', title: 'Ein Plan für Release und Veränderung', text: 'Key User, Schulung, Kommunikation und Messung planen wir entlang des Release-Plans. Wie das in den einzelnen ADKAR-Stufen aussieht, zeigt die Masterclass.', more: 'Zur Masterclass' },
       ],
     },
     articles: {
@@ -45,13 +45,13 @@ export const changeSection = {
     authors: { label: 'Your contacts', joint: 'We developed the approach together, and that is how we work together in your program.' },
     team: {
       label: 'Who is behind it',
-      title: 'Two specialisms, one joint plan',
+      title: 'Two specialties, one joint plan',
       intro:
-        'I am responsible for the Salesforce architecture, Juliane Winterscheid for the change in people. In your program we plan both together, so that release plan and change plan fit.',
+        'I am responsible for the Salesforce architecture, Juliane Winterscheid for the change in people. In your program we plan both together, so that release plan and change plan match.',
       items: [
         { who: 'Fabian Kramer', icon: 'architecture', title: 'Architecture and releases', text: 'I make sure architecture, release plan and pipeline support the change, and I measure adoption directly in Salesforce.', more: 'About me' },
         { who: 'Juliane Winterscheid', icon: 'change', title: 'Change management', text: 'Juliane guides sponsors, managers and key users through the change. She is Prosci certified and has taught change management at Hochschule Fresenius.', more: 'Profile and references' },
-        { who: 'Together', icon: 'handshake', title: 'One plan for release and change', text: 'We plan key users, training, communication and measurement along the release plan. The masterclass shows how that works along the ADKAR stages.', more: 'See the masterclass' },
+        { who: 'Together', icon: 'handshake', title: 'One plan for release and change', text: 'We plan key users, training, communication and measurement along the release plan. The masterclass shows what that looks like at each ADKAR stage.', more: 'See the masterclass' },
       ],
     },
     articles: {

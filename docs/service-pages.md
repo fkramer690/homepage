@@ -2,7 +2,7 @@
 
 Each service from the home page ("What I take care of") has its own page: DE under `/leistungen/<slug>/`, EN under `/en/services/<slug>/`. The pages are Markdown files in `src/content/services/<lang>/`. `src/content.config.ts` checks the frontmatter and `scripts/check-blog.mjs` checks the body, both in `npm run build`.
 
-Service pages follow the content rules of the [blog guidelines](blog-guidelines.md): plain language, no AI slop, no en or em dashes, only experience Fabian has confirmed, no client names, never the energy or utility sector, relative links only.
+Service pages follow the content rules of the [blog guidelines](blog-guidelines.md): plain language, no AI slop, no en or em dashes, only experience Fabian has confirmed, no client names, never the energy or utility sector, internal links as root paths starting with `/`, never relative.
 
 ## Fixed page structure
 
@@ -60,5 +60,5 @@ Blog articles link back to the best matching service automatically (`getPostServ
 - Not every H2 is a question: at most half, at least one stays a question for AI search. The others state the answer ("Regeln und Werkzeuge gehören dem Kunden").
 - The "No template shape" rules under "No AI slop" in the blog guidelines apply to the body and the frontmatter lists too (at most one counting announcement, at most 3 intensifiers, at most 5 × "statt", no "Topic: statement" headings by default), even though `--structure` does not check service pages.
 - Say each point once: situations, deliverables and results above the body are the summary. A content block in the body must not repeat them word for word; a ```vergleich shows how it works (mechanism), not the results list again (2026-10-31).
-- At least 2 relative links: related blog articles (`../../blog/<slug>/`), other services (`../<slug>/`), `../../#about`.
+- At least 2 internal links as root paths: related blog articles (`/blog/<slug>/`, EN `/en/blog/<slug>/`), other services (`/leistungen/<slug>/`, EN `/en/services/<slug>/`), `/#about`.
 - No closing invitation to get in touch: the contact section ("Book a call" plus form) follows directly below the text (Fabian, 2026-10-29).

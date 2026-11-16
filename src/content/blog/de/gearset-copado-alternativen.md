@@ -46,7 +46,7 @@ Zusatzfunktionen | Brauchen Sie Datenmigration, Backup oder Monitoring? | Manche
 fazit: Die ersten beiden Kriterien entscheiden in den meisten Fällen.
 ```
 
-Warum Repository und Pipeline unabhängig vom Tool dem Kunden gehören sollten, lesen Sie in [Warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/).
+Warum Repository und Pipeline unabhängig vom Tool dem Kunden gehören sollten, lesen Sie in [Warum Kunden ihre DevOps-Tools selbst besitzen sollten](/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
 ## Gearset, Copado, Flosum, Lifecycle Center und sfdx-hardis im Überblick
 
@@ -91,17 +91,17 @@ Flosum gibt heute an, vollständig auf Salesforce zu laufen und Metadaten innerh
 
 ## Lifecycle Center: der Einstieg ohne Lizenzkosten
 
-Das DevOps Center heißt seit Oktober 2026 Lifecycle Center und ist ohne separate Lizenz in Salesforce enthalten. Ich habe es in der Praxis eingesetzt. Für kleine Admin-Teams ist es ein guter Einstieg, weil sich der Prozess direkt aus Salesforce steuern lässt. In größeren Teams war es mir oft zu langsam, und Konflikte zwischen Änderungen können Admins darin nur schwer auflösen. Laut Salesforce-Hilfe unterstützt Lifecycle Center GitHub-Cloud-Pläne und Bitbucket Cloud. Teams mit GitLab oder Azure DevOps können es daher nicht nutzen. Einen ausführlichen Vergleich mit sfdx-hardis finden Sie in [sfdx-hardis oder Lifecycle Center, früher DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/).
+Das DevOps Center heißt seit Oktober 2026 Lifecycle Center und ist ohne separate Lizenz in Salesforce enthalten. Ich habe es in der Praxis eingesetzt. Für kleine Admin-Teams ist es ein guter Einstieg, weil sich der Prozess direkt aus Salesforce steuern lässt. In größeren Teams war es mir oft zu langsam, und Konflikte zwischen Änderungen können Admins darin nur schwer auflösen. Laut Salesforce-Hilfe unterstützt Lifecycle Center GitHub-Cloud-Pläne und Bitbucket Cloud. Teams mit GitLab oder Azure DevOps können es daher nicht nutzen. Einen ausführlichen Vergleich mit sfdx-hardis finden Sie in [sfdx-hardis oder Lifecycle Center, früher DevOps Center](/blog/sfdx-hardis-oder-devops-center-vergleich/).
 
 ## Welches Tool passt zu welchem Team?
 
 Von keinem dieser Tools rate ich grundsätzlich ab. Es bleibt immer eine Abwägung, und meine Tendenz sieht so aus:
 
-- **Technikaffines Team, mehrere Partner, eigene Git-Plattform:** sfdx-hardis. Es fallen keine Kosten pro Nutzer an, die Pipeline läuft auf GitHub, GitLab, Azure DevOps oder Bitbucket, und Monitoring, eine Sicherung der Metadaten in Git sowie Dokumentation sind enthalten. Ein Backup von Daten und Dateien ersetzt das nicht. Eine Einführung finden Sie in [sfdx-hardis: Open Source für Salesforce DevOps](../sfdx-hardis-einfuehrung-salesforce-devops/).
+- **Technikaffines Team, mehrere Partner, eigene Git-Plattform:** sfdx-hardis. Es fallen keine Kosten pro Nutzer an, die Pipeline läuft auf GitHub, GitLab, Azure DevOps oder Bitbucket, und Monitoring, eine Sicherung der Metadaten in Git sowie Dokumentation sind enthalten. Ein Backup von Daten und Dateien ersetzt das nicht. Eine Einführung finden Sie in [sfdx-hardis: Open Source für Salesforce DevOps](/blog/sfdx-hardis-einfuehrung-salesforce-devops/).
 - **Kleineres Team, das ohne Pipeline- und Git-Aufbau direkt starten will:** Lifecycle Center oder Gearset. Damit arbeiten Kunden nach einem Tag mit den Grundlagen. Lifecycle Center passt, wenn das Budget knapp ist und GitHub oder Bitbucket Cloud bereits im Haus sind. Gearset passt, wenn Hilfe bei Abhängigkeiten und Datenmigration wichtig ist.
 - **Copado und Flosum:** empfehle ich selten, Copado wegen der Kosten und der Nähe zu Salesforce, Flosum wegen der Datenhaltung, an der es bei meinen Kunden früher gescheitert ist.
 
-Wie ich DevOps-Prozesse bei Kunden aufbaue, beschreibe ich auf der Seite [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
+Wie ich DevOps-Prozesse bei Kunden aufbaue, beschreibe ich auf der Seite [DevOps und Release-Management](/leistungen/devops-und-release-management/).
 
 ## Erster Schritt: zählen, wer in zwei Jahren deployt
 

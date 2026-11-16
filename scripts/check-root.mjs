@@ -7,7 +7,7 @@ const root = new URL('../', import.meta.url).pathname;
 const ALLOWED = new Set([
   '.astro', '.claude', '.DS_Store', '.git', '.github', '.gitignore', '.vscode',
   'CLAUDE.md', 'README.md', 'astro.config.mjs', 'dist', 'docs', 'node_modules',
-  'package-lock.json', 'package.json', 'previews', 'public', 'scripts', 'seo', 'src', 'tsconfig.json',
+  'package-lock.json', 'package.json', 'previews', 'public', 'scripts', 'seo', 'src', 'tsconfig.json', 'workers',
 ]);
 const stray = readdirSync(root).filter((name) => !ALLOWED.has(name));
 if (stray.length) {

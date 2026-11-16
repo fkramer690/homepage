@@ -46,7 +46,7 @@ Extras | Do you need data migration, backup or monitoring? | Some tools include 
 note: The first two criteria decide most cases.
 ```
 
-Why repository and pipeline should belong to the client regardless of the tool is explained in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
+Why repository and pipeline should belong to the client regardless of the tool is explained in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/).
 
 ## Gearset, Copado, Flosum, Lifecycle Center and sfdx-hardis at a glance
 
@@ -91,17 +91,17 @@ Flosum now states that it runs entirely on Salesforce and keeps metadata within 
 
 ## Lifecycle Center: the entry point without licence costs
 
-DevOps Center has been called Lifecycle Center since October 2026 and is included in Salesforce without a separate licence. I have used it in practice. For small admin teams it is a good entry point because the process can be controlled directly from Salesforce. In larger teams I often found it too slow, and admins find it hard to resolve conflicts between changes in it. According to Salesforce Help, Lifecycle Center supports GitHub cloud plans and Bitbucket Cloud, so teams on GitLab or Azure DevOps cannot use it. The detailed comparison with sfdx-hardis is in [sfdx-hardis vs Lifecycle Center, formerly DevOps Center](../sfdx-hardis-vs-devops-center-comparison/).
+DevOps Center has been called Lifecycle Center since October 2026 and is included in Salesforce without a separate licence. I have used it in practice. For small admin teams it is a good entry point because the process can be controlled directly from Salesforce. In larger teams I often found it too slow, and admins find it hard to resolve conflicts between changes in it. According to Salesforce Help, Lifecycle Center supports GitHub cloud plans and Bitbucket Cloud, so teams on GitLab or Azure DevOps cannot use it. The detailed comparison with sfdx-hardis is in [sfdx-hardis vs Lifecycle Center, formerly DevOps Center](/en/blog/sfdx-hardis-vs-devops-center-comparison/).
 
 ## Which tool fits which team?
 
 I do not advise against any of these tools in principle. It is always a trade-off, and my tendency looks like this:
 
-- **Technically minded team, several partners, own Git platform:** sfdx-hardis. There is no cost per user, the pipeline runs on GitHub, GitLab, Azure DevOps or Bitbucket, and monitoring, a Git-based copy of the metadata and documentation are included. That does not replace a backup of data and files. You will find an introduction in [sfdx-hardis: open source Salesforce DevOps](../sfdx-hardis-open-source-salesforce-devops/).
+- **Technically minded team, several partners, own Git platform:** sfdx-hardis. There is no cost per user, the pipeline runs on GitHub, GitLab, Azure DevOps or Bitbucket, and monitoring, a Git-based copy of the metadata and documentation are included. That does not replace a backup of data and files. You will find an introduction in [sfdx-hardis: open source Salesforce DevOps](/en/blog/sfdx-hardis-open-source-salesforce-devops/).
 - **Smaller team that wants to start right away without setting up pipelines and Git:** Lifecycle Center or Gearset. Clients can work with the basics within a day. Lifecycle Center fits when budget is tight and GitHub or Bitbucket Cloud is already in house. Gearset fits when help with dependencies and data migration matters.
 - **Copado and Flosum:** I rarely recommend them, Copado because of the cost and the closeness to Salesforce, Flosum because of the data residency question that used to rule it out at my clients.
 
-I describe how I set up DevOps processes at clients on the [DevOps and release management](../../services/devops-release-management/) page.
+I describe how I set up DevOps processes at clients on the [DevOps and release management](/en/services/devops-release-management/) page.
 
 ## First step: count who will deploy in two years
 

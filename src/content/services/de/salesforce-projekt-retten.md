@@ -87,17 +87,17 @@ Das entschuldigt keine Qualitätsmängel. Es erklärt aber, warum selten eine Se
 
 Die ersten Warnsignale zeigen sich im Backlog und in den Tickets, lange bevor ein Meilenstein verfehlt wird:
 
-- **Tickets warten auf die Abnahme.** Warten Stories lange darauf, dass der Fachbereich sie abnimmt, plant der Kunde dafür nicht genug Zeit ein. Wie Sie das organisieren, beschreibe ich in [Salesforce-UAT mit dem Fachbereich](../../blog/salesforce-uat-abnahmetest-fachbereich/).
+- **Tickets warten auf die Abnahme.** Warten Stories lange darauf, dass der Fachbereich sie abnimmt, plant der Kunde dafür nicht genug Zeit ein. Wie Sie das organisieren, beschreibe ich in [Salesforce-UAT mit dem Fachbereich](/blog/salesforce-uat-abnahmetest-fachbereich/).
 - **Der Backlog reicht nicht für die nächsten Sprints.** Sind die Stories dafür nicht beschrieben und priorisiert, entstehen die Anforderungen erst während der Umsetzung.
 - **Neue Anforderungen im laufenden Sprint.** Werden Anforderungen ohne Planung in den laufenden Sprint aufgenommen, fehlt eine klare Struktur, und die Planung wird unzuverlässig.
 
-Kennzahlen aus dem Ticketsystem und [DORA-Metriken](../../blog/dora-metriken-salesforce-releases/) für die Releases machen solche Trends früh sichtbar.
+Kennzahlen aus dem Ticketsystem und [DORA-Metriken](/blog/dora-metriken-salesforce-releases/) für die Releases machen solche Trends früh sichtbar.
 
 ## Neustart oder ein paar Schritte zurück?
 
 Ein kompletter Neustart ist selten möglich. Oft lehnt das Management ihn ab, auch weil bereits viel Budget investiert ist. Häufig ist er auch nicht nötig: Ist mehr als die Hälfte solide, reicht es, ein oder zwei Schritte zurückzugehen, etwa zu den Ist-Prozessen eines Bereichs. Einen kompletten Neustart oder die Abkehr von Salesforce nach mehr als sechs Monaten Implementierung habe ich noch nicht erlebt.
 
-Wirksam sind meist unspektakuläre Maßnahmen: sauberer dokumentieren und klarer kommunizieren. Es muss klar sein, welche Informationen wann, wo und von wem festgehalten werden, was die nächsten Schritte sind und welche Blocker noch offen sind. Erst dann haben Kunde und Partner eine belastbare Grundlage für Entscheidungen. Ist am Ende doch ein Partnerwechsel nötig, beschreibt [Salesforce-Partner wechseln ohne Stillstand](../../blog/salesforce-partner-wechseln/) den Ablauf. Die [Partnersteuerung](../partnersteuerung/) senkt das Risiko, dass es mit dem nächsten Partner wieder so weit kommt.
+Wirksam sind meist unspektakuläre Maßnahmen: sauberer dokumentieren und klarer kommunizieren. Es muss klar sein, welche Informationen wann, wo und von wem festgehalten werden, was die nächsten Schritte sind und welche Blocker noch offen sind. Erst dann haben Kunde und Partner eine belastbare Grundlage für Entscheidungen. Ist am Ende doch ein Partnerwechsel nötig, beschreibt [Salesforce-Partner wechseln ohne Stillstand](/blog/salesforce-partner-wechseln/) den Ablauf. Die [Partnersteuerung](/leistungen/partnersteuerung/) senkt das Risiko, dass es mit dem nächsten Partner wieder so weit kommt.
 
 ## Ohne Rückendeckung des Managements keine Rettung
 

@@ -1,0 +1,48 @@
+---
+// Interaction of the ring and cycle drawings (src/lib/ring-cycle.mjs), loaded on every
+// page by src/layouts/Page.astro. Pointer on a segment or station: its details show (in the
+// ring centre, beside or below the cycle); keyboard focus and taps do the same. A click on
+// a ring segment with a link opens it on pointer devices; Enter opens it from the keyboard.
+// Without script every detail card stands below the drawing (no `wheel-js` class).
+---
+<script>
+  const hover = matchMedia('(hover: hover)').matches;
+  document.querySelectorAll<HTMLElement>('[data-ar], [data-cy]').forEach((fig) => {
+    const targets = [...fig.querySelectorAll<SVGGElement>('.ar-seg, .cy-st')];
+    fig.classList.add('wheel-js');
+    const set = (key: string | null) => {
+      if (key === null) delete fig.dataset.active;
+      else fig.dataset.active = key;
+      targets.forEach((t) => {
+        const on = t.dataset.k === key;
+        t.classList.toggle('is-on', on);
+        t.setAttribute('aria-pressed', String(on));
+      });
+      fig.querySelectorAll<HTMLElement>('.ar-icon, .cy-icon').forEach((i) => i.classList.toggle('is-on', i.dataset.k === key));
+      fig.querySelectorAll<HTMLElement>('[data-card]').forEach((c) => {
+        const on = c.dataset.card === key;
+        c.classList.toggle('is-on', on);
+        if (c.classList.contains('ar-detail')) c.querySelectorAll('a').forEach((a) => a.setAttribute('tabindex', on ? '0' : '-1'));
+      });
+    };
+    targets.forEach((t) => {
+      const key = t.dataset.k ?? null;
+      t.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') set(key); });
+      // A tap focuses the segment before its click; remember the state before, so a second tap closes the card.
+      let before: string | undefined;
+      t.addEventListener('pointerdown', () => { before = fig.dataset.active; });
+      t.addEventListener('focus', () => set(key));
+      t.addEventListener('click', () => {
+        if (hover && t.dataset.href) location.href = t.dataset.href;
+        else set(!hover && before === key ? null : key);
+        before = undefined;
+      });
+      t.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && t.dataset.href) location.href = t.dataset.href;
+        if (e.key === ' ' || (e.key === 'Enter' && !t.dataset.href)) { e.preventDefault(); set(key); }
+        if (e.key === 'Escape') { set(null); t.blur(); }
+      });
+    });
+    fig.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') set(null); });
+  });
+</script>

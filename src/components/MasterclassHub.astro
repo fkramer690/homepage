@@ -1,4 +1,5 @@
 ---
+import { withBrand } from '../lib/page-title.mjs';
 // Hub page of one masterclass (`course`, default the AI masterclass) in either language.
 // Chapters come from src/content/masterclass/<lang>/, article clusters from
 // src/lib/masterclass.ts, all texts from src/i18n (rules: docs/masterclass.md).
@@ -50,8 +51,7 @@ const abs = (path: string) => new URL(path, Astro.site).href;
 const alternates = { en: masterclassIndex('en', course), de: masterclassIndex('de', course) };
 const url = abs(masterclassIndex(lang, course));
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
-const suffix = ' | FK Solution Design';
-const pageTitle = m.metaTitle.length + suffix.length <= 60 ? m.metaTitle + suffix : m.metaTitle;
+const pageTitle = withBrand(m.metaTitle);
 const ogImage = `${base}og/${lang}/${courses[course].og}.png`;
 const nn = (n: number) => String(n).padStart(2, '0');
 const countLabel = (n: number) => (n === 1 ? m.articleCount.one : m.articleCount.other).replace('{n}', String(n));

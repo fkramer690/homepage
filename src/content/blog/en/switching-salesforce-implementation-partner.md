@@ -60,13 +60,13 @@ note: The marked items cost the most time after the notice.
 
 My experience from four switches: if Jira, Confluence, pipeline and Miro sit with the client and the current state and the open stories, especially for the next sprints, are well kept, about 80 percent of the effort is already done. The more of it sits with the partner, the longer the switch takes.
 
-The repository matters most. The metadata sits in your org, but who changed what and when only exists in the Git repository. Why it was changed sits in tickets, pull requests and the decision log. If repository and tickets live in the partner's account, you lose exactly the knowledge the new partner needs to get up to speed. Whether you may keep using the partner's code and components is a matter of your contract; clarify that before you take over the repository. Why repository and DevOps tools belong with the client in the first place is covered in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
+The repository matters most. The metadata sits in your org, but who changed what and when only exists in the Git repository. Why it was changed sits in tickets, pull requests and the decision log. If repository and tickets live in the partner's account, you lose exactly the knowledge the new partner needs to get up to speed. Whether you may keep using the partner's code and components is a matter of your contract; clarify that before you take over the repository. Why repository and DevOps tools belong with the client in the first place is covered in [why clients should own their DevOps tools](/en/blog/why-clients-should-own-their-devops-tools/).
 
 ```hinweis achtung
 Before giving notice, check whether interfaces to SAP or other systems run on a user, a certificate or a connected app tied to one of the partner's people. If the user is deactivated when the person leaves or the certificate expires, the interface fails. Move such connections to your own integration users first and rotate any credentials the partner knows.
 ```
 
-How to clean up integration users and connected apps is covered in [cleaning up Salesforce integration users](../salesforce-integration-users-cleanup/).
+How to clean up integration users and connected apps is covered in [cleaning up Salesforce integration users](/en/blog/salesforce-integration-users-cleanup/).
 
 ## How does a Salesforce partner switch work?
 
@@ -85,9 +85,9 @@ Hand over | cut-off date · new partner
 
 **Secure.** Put the repository into your own account or have it transferred there, with all branches and the history. Have it scanned for passwords, keys and customer data first, and rotate any credentials you find. Get the pipeline configuration and check whether a deployment works without the partner. Only when it does is the partner replaceable. In this phase, also find out how long granting permissions takes in your organisation: after the selection the new partner needs access, sometimes reaching into Active Directory.
 
-**Assess.** An org assessment shows what the org contains: how many Apex classes, flows and permission sets there are, where rules are broken and how high test coverage is. Whether something is used, the tools only indicate; the business confirms it. I run deterministic tools first and then give the results to a language model that describes the purpose and business process of each component, as a proposal someone checks. With AI the assessment is faster today. How long it takes depends on the size of the org and on whether the partner ran one stream or several. How that works and what it costs is in [AI org assessment before a partner switch](../ai-org-assessment-technical-debt/).
+**Assess.** An org assessment shows what the org contains: how many Apex classes, flows and permission sets there are, where rules are broken and how high test coverage is. Whether something is used, the tools only indicate; the business confirms it. I run deterministic tools first and then give the results to a language model that describes the purpose and business process of each component, as a proposal someone checks. With AI the assessment is faster today. How long it takes depends on the size of the org and on whether the partner ran one stream or several. How that works and what it costs is in [AI org assessment before a partner switch](/en/blog/ai-org-assessment-technical-debt/).
 
-**Select.** Give all candidates the same assessment and the same questions. A partner that recommends a rebuild after a two-hour presentation without having read the assessment is selling you a project. For time and material, a tender is done faster than for fixed outcomes. What to look for in the selection is covered in [how to choose a Salesforce implementation partner](../how-to-choose-a-salesforce-implementation-partner/).
+**Select.** Give all candidates the same assessment and the same questions. A partner that recommends a rebuild after a two-hour presentation without having read the assessment is selling you a project. For time and material, a tender is done faster than for fixed outcomes. What to look for in the selection is covered in [how to choose a Salesforce implementation partner](/en/blog/how-to-choose-a-salesforce-implementation-partner/).
 
 **Hand over.** You can phase the old partner out gradually or switch with a hard cut on a fixed date. I favour the hard cut after a stable release: from the cut-off date the new partner is accountable for the org and takes on all new stories. The old partner only finishes its open tickets and is available for questions. Have it deliver these tickets as pull requests that the new partner reviews and deploys, so that from the cut-off date there is only one way into production. The new partner takes the first release through the pipeline alone, with acceptance testing and a rollback plan. Once the open tickets are done and the agreed period for questions is over, you remove the old partner's access.
 
@@ -113,15 +113,15 @@ These mistakes make a partner switch expensive:
 
 - **The new partner gets no assessment.** It then estimates from a presentation and finds the surprises during the project. The result is change requests in the first three months.
 - **Switching in the middle of a release.** A half-finished release with work from two partners is something nobody understands later. Start the handover after a stable release.
-- **Handing over code, not decisions.** The new partner sees what was built but not why. A [decision log](../salesforce-architecture-decision-log/) answers that question without anyone having to ask.
-- **Not reassigning ownership.** When several partners work on the org, it must be clear for every object who is accountable for it after the switch. An [object ownership matrix](../salesforce-object-ownership-matrix/) does that.
+- **Handing over code, not decisions.** The new partner sees what was built but not why. A [decision log](/en/blog/salesforce-architecture-decision-log/) answers that question without anyone having to ask.
+- **Not reassigning ownership.** When several partners work on the org, it must be clear for every object who is accountable for it after the switch. An [object ownership matrix](/en/blog/salesforce-object-ownership-matrix/) does that.
 - **Repeating the same mistakes.** If the old partner had to go because of poor quality, the new one needs rules that prevent it: pull requests, test coverage, a quality gate before every release. Otherwise you switch again in two years.
 
 ## Who runs the switch on the client side?
 
 Someone on the client side should run the switch, someone who understands the org technically and owes nothing to either partner. Both partners have their own commercial interests: the old one wants its work to look good, the new one tends to find too much to rebuild rather than too little. That is understandable. The client therefore needs a technical assessment of its own.
 
-If you have an internal Salesforce architect or technical product owner, that is the person. If you have nobody, bring in an independent architect for the time of the switch who supports assessment, selection and handover and then sets the standards for the new partner. That is how I work in [partner governance](../../services/partner-governance/): on the client side, without commissions from partners or tool vendors.
+If you have an internal Salesforce architect or technical product owner, that is the person. If you have nobody, bring in an independent architect for the time of the switch who supports assessment, selection and handover and then sets the standards for the new partner. That is how I work in [partner governance](/en/services/partner-governance/): on the client side, without commissions from partners or tool vendors.
 
 ## First step: one deployment without the old partner
 

@@ -4,7 +4,7 @@ Fourteen building blocks that loosen up blog articles and masterclass chapters. 
 
 Design: only the site's own colours and forms (cyan, anthracite, greys, dashed mono labels, cards with a short bar on top, the technical grid). No other colours, no icons beyond the cyan tick and grey cross.
 
-Inside a block, `**bold**`, `` `code` `` and `[links](../slug/)` work; external links get the new-tab mark automatically. Write the block in the language of the file (DE keys like `quelle:` and `titel:` in German files, `source:` and `title:` in English ones; both are accepted).
+Inside a block, `**bold**`, `` `code` `` and `[links](/blog/slug/)` work; external links get the new-tab mark automatically. Write the block in the language of the file (DE keys like `quelle:` and `titel:` in German files, `source:` and `title:` in English ones; both are accepted).
 
 ## 1. Hinweis (note)
 
@@ -391,6 +391,35 @@ sichtbar: Lizenz: 0 € | bei beiden Werkzeugen
 ```
 ````
 
+## 19. Ring and Kreislauf (light, interactive)
+
+Two drawings that show their details only while the pointer rests on a segment or station (layouts "Ring with details in the centre" and "Cycle with labelled stations" in `docs/layouts.md`). Geometry and checks live in `src/lib/ring-cycle.mjs`; the build fails when a label does not fit its arc or runs into the circle. On phones a tap shows the card below the drawing; without script all cards stand below it. Icons are file names from `src/icons/`.
+
+**`ring`**: three to seven equal parts of one whole, without an order. `titel:` (EN `title:`), `mitte: Eyebrow | Title` (EN `centre:`) for the white centre, then one line per segment `- icon | Name | Subtitle | point; point; point` (two to four short points, they must fit the centre circle). A short segment label can follow the name after `~` (`Spare parts ~ Parts`). Use it only where the parts are named in the text around it.
+
+````
+```ring
+titel: Was vor dem ersten Agenten stehen muss
+mitte: Agentforce | bereit?
+- analyse | Volumen | Genug Wiederholung | Tausende ähnliche Anfragen; Anfragen und Minuten gezählt
+- search | Daten | Belastbare Stammdaten | Installierte Basis mit Seriennummer; Gepflegte Wissensartikel
+- integration | ERP | Zugriff per API | Auftragsstatus, Bestand, Preise; API als Aktion des Agenten
+```
+````
+
+**`kreislauf`** (cycle): three to six steps that repeat in a fixed order (release cycle, hypercare routine, ADKAR per release). `titel:`, `mitte: Eyebrow | Title`, `hinweis: Title | text` (EN `hint:`) for the dashed panel at rest, then `- icon | Name | Subtitle | Sentence | point; point` per station. Station names have at most 16 characters. A dot runs around the circle (hidden with reduced motion).
+
+````
+```kreislauf
+titel: Der tägliche Ablauf in der Hypercare
+mitte: Täglich | in der Hypercare
+hinweis: Vier Schritte | Der Kreis läuft jeden Tag, bis die Zahl der Meldungen sinkt.
+- message | Melden | Ein zentraler Eingang | Alle Meldungen kommen über einen Kanal. | Ein Eingang; Kritisches sofort eskalieren
+- search | Bewerten | Fester Termin am Morgen | Jede Meldung bekommt eine Kategorie. | Fehler oder Bedienfrage; Fehler haben Vorrang
+- gear | Beheben | Über die Pipeline | Auch Quick Wins gehen mit Test über die Pipeline. | Fix über die Pipeline; Key User beantworten Fragen
+```
+````
+
 ## Confirmed experience (for `praxis`)
 
 Only these, in Fabian's wording, without client names, industry or size:
@@ -411,5 +440,7 @@ Only these, in Fabian's wording, without client names, industry or size:
 - In his Field Service projects the missing data table in mobile flows, i.e. selecting several records in one step, is the gap that hurts most (confirmed 6 November 2026).
 
 - DevOps tools (confirmed 10 November 2026): used Gearset intensively in projects (admin-friendly, helps with dependencies, data migration included, but every user costs extra and it does not scale for large teams, so make with open source such as sfdx-hardis); introduced Copado in the programme with 30+ developers (very powerful, manageable for admins, very expensive, closeness to Salesforce through Salesforce Ventures made things more political than a client wants); Flosum only examined in own dev orgs and certifications, some time ago it dropped out of comparisons because metadata was processed outside the Salesforce instance and the EU; used DevOps Center in practice, often too slow, conflicts hard for admins; for small clients starting without pipeline and Git he recommends DevOps Center or Gearset (basics after one day); tendency sfdx-hardis for technically minded clients, rarely Copado and Flosum.
+- Field Service clients between 15 and 700 technicians; job length depends on the industry: large machines in manufacturing mostly multi-day jobs, rarely more than two appointments a day; on-site consumption recording in other industries up to ten a day (never name the sector, guideline rule). At his Field Service client the service report comes from Document Builder; what was missing first: layout details and automatic sending (confirmed 11 November 2026, backlog IG1).
+- Implemented the whole AI-driven delivery chain from workshop to deployment and noticed the quality loss wherever a result went through an intermediate tool (Miro, Lucidchart, Figma) and back to the AI. Since then no intermediate versions in such tools: Claude Code artifacts are shared by link, attached to Jira tickets, clickable, some used as dashboards; Claude generates HTML and CSS and turns them into Lightning Web Components without friction (confirmed 12 November 2026).
 
 Add new items here only after Fabian confirms them.

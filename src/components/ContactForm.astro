@@ -61,6 +61,7 @@ const base = import.meta.env.BASE_URL;
 </form>
 
 <script>
+  import { track } from '../lib/events';
   // Submit via fetch so visitors stay on the page and see the result inline.
   // Spam bots fill and send a form within a second or two of loading the page; a person
   // needs longer. Such fast submissions get the success message but are never sent
@@ -89,6 +90,7 @@ const base = import.meta.env.BASE_URL;
         const data = await res.json().catch(() => ({}));
         if (!res.ok || data.success === false) throw new Error(data.message ?? res.statusText);
         form.reset();
+        track('formular');
         // Collapse the form and leave only the confirmation.
         body.hidden = true;
         status.textContent = form.dataset.success ?? '';

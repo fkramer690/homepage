@@ -30,11 +30,11 @@ faq:
 draft: false
 ---
 
-In Revenue Cloud, three parts decide what sales can quote. The product catalog describes what is sold, with product classifications and attributes instead of one record per variant. The Product Configurator decides which combinations are valid, with configuration rules for simple logic and the constraint rules engine for interdependent attributes. Salesforce Pricing calculates the price with pricing procedures, decision tables and context definitions. For a manufacturer with SAP, the key decision sits between these parts: which prices and rules stay in SAP and which move to Salesforce. My rule is one master per price type and per rule set, and one owner at the manufacturer for each.
+In Revenue Cloud, three parts decide what sales can quote. The product catalog describes what is sold, with product classifications and attributes instead of one record per variant. The Product Configurator decides which combinations are valid, with configuration rules for simple logic and the constraint rules engine for interdependent attributes. Salesforce Pricing calculates the price with pricing procedures, decision tables and context definitions. For a manufacturer with SAP, the key decision lies between these parts: which prices and rules stay in SAP and which move to Salesforce. My rule is one master per price type and per rule set, and one owner at the manufacturer for each.
 
 ## How do catalog, configurator and pricing work together?
 
-The catalog holds products, attributes and bundle structure. The configurator checks which options and attribute values fit together. Salesforce Pricing takes the configured line and calculates the net price step by step. A badly modeled catalog makes rules and pricing harder, so the catalog design comes first.
+The catalog contains products, attributes and bundle structure. The configurator checks which options and attribute values fit together. Salesforce Pricing takes the configured line and calculates the net price step by step. A badly modeled catalog makes rules and pricing harder, so the catalog design comes first.
 
 ```ablauf
 erp: SAP
@@ -46,21 +46,21 @@ Pricing --Net price--> Quote
 Quote --Price carried over--> Sales agreement
 ```
 
-All three run on standard objects of the core platform, not in a managed package. A note on names: salesforce.com says Revenue Cloud, Trailhead says Agentforce Revenue Management, and the Developer Guide for Winter '27 is titled Revenue Management Developer Guide. The [overview of product names](../../../blog/revenue-cloud-product-names-rlm-rca/) sorts this out.
+All three are built on standard objects of the core platform, not in a managed package. A note on names: salesforce.com says Revenue Cloud, Trailhead says Agentforce Revenue Management, and the Developer Guide for Winter '27 is titled Revenue Management Developer Guide. The [overview of product names](/en/blog/revenue-cloud-product-names-rlm-rca/) sorts this out.
 
-If you come from Salesforce CPQ, the mapping is simple to state and laborious to do. Product rules become configuration rules or constraint models. Price rules and the quote calculator plugin become pricing procedures. Nothing is converted automatically; the other differences are in [Salesforce CPQ vs Revenue Cloud](../../../blog/salesforce-cpq-vs-revenue-cloud-differences/). Whether Revenue Cloud fits your business at all is covered in [chapter 1](../revenue-cloud-overview/).
+If you come from Salesforce CPQ, the mapping is simple to state and laborious to do. Product rules become configuration rules or constraint models. Price rules and the quote calculator plugin become pricing procedures. Nothing is converted automatically; the other differences are in [Salesforce CPQ vs Revenue Cloud](/en/blog/salesforce-cpq-vs-revenue-cloud-differences/). Whether Revenue Cloud fits your business at all is covered in [chapter 1](/en/masterclass/revenue-cloud/revenue-cloud-overview/).
 
 ## The product catalog: classifications instead of thousands of products
 
-Product Catalog Management holds the products and their structure. According to the [Trailhead module on product catalog management](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/get-started-with-product-catalog-management), the building blocks are:
+Product Catalog Management manages the products and their structure. According to the [Trailhead module on product catalog management](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/get-started-with-product-catalog-management), the building blocks are:
 
 - **Catalogs**, for example one for products and one for services.
-- **Categories and subcategories** for browsing; a product can sit in several.
+- **Categories and subcategories** for browsing; a product can appear in several.
 - **Attributes**, defined once and shared by many products.
 - **Product classifications**, templates with a set of attributes. A product created from a classification inherits them and can override single ones.
 - **Simple products and bundles**. Simple products stand alone, bundles have a hierarchy of items.
 
-For a machine builder this means one classification per machine family, with the attributes sales has to ask about, such as working width, drive, control and voltage. The base machines are created from it. The decision that shapes the whole catalog is when a variant becomes its own product. I use three tests: the ERP has its own material number for it, it is planned in a sales agreement, or it is stocked and serviced separately. Everything else stays an attribute value. Accessories with their own material number become components of a configurable bundle. With that rule, a catalog for 40 base machines stays at a few hundred records. The details, including a worked example, are in [Revenue Cloud product catalog: modeling machine variants](../../../blog/revenue-cloud-product-catalog-variants/).
+For a machine builder this means one classification per machine family, with the attributes sales has to ask about, such as working width, drive, control and voltage. The base machines are created from it. The decision that shapes the whole catalog is when a variant becomes its own product. I use three tests: the ERP has its own material number for it, it is planned in a sales agreement, or it is stocked and serviced separately. Everything else stays an attribute value. Accessories with their own material number become components of a configurable bundle. With that rule, a catalog for 40 base machines stays at a few hundred records. The details, including a worked example, are in [Revenue Cloud product catalog: modeling machine variants](/en/blog/revenue-cloud-product-catalog-variants/).
 
 ### Which product data comes from the ERP?
 
@@ -73,15 +73,15 @@ I would not copy the material master. Salesforce needs the sellable products, no
 | Bundle structure and cardinality | Salesforce |
 | Bill of materials | ERP or PLM |
 
-Attribute values need a mapping to the SAP characteristic values. If "control" has the value "S2" in Salesforce, SAP must know the same value, or the order fails at the hand-over. Spare parts and services go into catalogs of their own, with their own owners.
+Attribute values need a mapping to the SAP characteristic values. If "control" has the value "S2" in Salesforce, SAP must know the same value, or the order fails at the hand-over. Spare parts and services belong in catalogs of their own, with their own owners.
 
 ## The configurator: which rule engine for which product?
 
-The Product Configurator is the screen in which sales picks bundle options and sets attribute values; the configured product then goes to the quote or order. Trailhead names [three approaches that grow with product complexity](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/get-started-with-product-configurator): basic validation rules, selection rules and constraint-based modeling.
+The Product Configurator is the screen in which sales picks bundle options and sets attribute values; the configured product is then passed to the quote or order. Trailhead names [three approaches that grow with product complexity](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/get-started-with-product-configurator): basic validation rules, selection rules and constraint-based modeling.
 
 Behind them are two engines. Configuration rules work with explicit if-then logic and suit simple to moderate products. The constraint rules engine, which Salesforce calls its solution "for complicated, high-volume configurations", uses a constraint-based model, evaluates all possible combinations and [filters out invalid ones in real time](https://trailhead.salesforce.com/content/learn/modules/product-configuration-with-revenue-cloud/explore-product-configurator-with-constraint-rules-engine). A pump with five options and three exclusions needs no constraint model. A machine where frame size, drive power, voltage and safety category depend on each other does.
 
-Constraint models are written in CML, the Constraint Modeling Language. Visual Builder is a no-code interface that generates CML, the CML Editor is a script editor for complex logic. In my view CML is code, even when part of it is clicked together, and it needs someone who thinks in types, value ranges and cardinalities. In most manufacturing companies that is neither the admin nor the application engineer who knows the rules, so plan for both. Trailhead also documents the other route: a third-party configurator connects through APIs, while Salesforce keeps pricing, product data and quoting. When the constraint engine pays off and when it does not is the subject of [Revenue Cloud configurator: when constraint rules pay off](../../../blog/revenue-cloud-configurator-constraint-rules/).
+Constraint models are written in CML, the Constraint Modeling Language. Visual Builder is a no-code interface that generates CML, the CML Editor is a script editor for complex logic. In my view CML is code, even when part of it is clicked together, and it needs someone who thinks in types, value ranges and cardinalities. In most manufacturing companies that is neither the admin nor the application engineer who knows the rules, so plan for both. Trailhead also documents the other route: a third-party configurator connects through APIs, while Salesforce keeps pricing, product data and quoting. When the constraint engine pays off and when it does not is the subject of [Revenue Cloud configurator: when constraint rules pay off](/en/blog/revenue-cloud-configurator-constraint-rules/).
 
 ### Where do your configuration rules live today?
 
@@ -89,9 +89,9 @@ That question decides the route more than the feature list does:
 
 | Where the rules live | What follows |
 |---|---|
-| Spreadsheets and the heads of application engineers | The best case for Revenue Cloud. The rules have to be written down anyway, and CML gives them a home with tests. |
+| Spreadsheets and the heads of application engineers | The best case for Revenue Cloud. The rules have to be written down anyway, and CML gives them a defined place with tests. |
 | SAP variant configuration | If SAP checks every order again, a rebuild in CML creates a second rule set that drifts away from the first. Either SAP stays the master and Salesforce takes the result, or the master moves to Salesforce and SAP accepts the configuration. |
-| PLM or an engineering configurator | That produces drawings or bills of materials. Then that tool stays, and Salesforce receives the configured product with its price-relevant attributes. |
+| PLM or an engineering configurator that produces drawings or bills of materials | That tool stays, and Salesforce receives the configured product with its price-relevant attributes. |
 
 Whichever route you take, name the person who maintains the rules after go-live before the build starts.
 
@@ -107,27 +107,27 @@ One detail is easy to miss in the first weeks:
 After a price book entry or a volume tier changes, the quote still calculates with the old value until Sync Pricing Data has refreshed the decision tables. If SAP loads list prices every night, the sync belongs in the same job.
 ```
 
-The [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) also offer headless pricing, which builds a context and prices it in one call, so a portal, a store or an agent can ask for the same price without creating a quote. How the B2B store does that is in the B2B Commerce chapter on [prices, cart and checkout](../../b2b-commerce/prices-cart-checkout/). The elements, the sync and the testing are explained in [Salesforce Pricing: how Revenue Cloud calculates prices](../../../blog/revenue-cloud-pricing-procedures-explained/).
+The [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) also offer headless pricing, which builds a context and prices it in one call, so a portal, a store or an agent can ask for the same price without creating a quote. How the B2B store does that is in the B2B Commerce chapter on [prices, cart and checkout](/en/masterclass/b2b-commerce/prices-cart-checkout/). The elements, the sync and the testing are explained in [Salesforce Pricing: how Revenue Cloud calculates prices](/en/blog/revenue-cloud-pricing-procedures-explained/).
 
 ## Which prices should come from SAP?
 
-SAP calculates customer prices with the condition technique: price lists, customer prices, discounts, surcharges and scales, each with a validity period. Revenue Cloud can calculate the same prices. If both do it for the same price, quote and SAP order confirmation differ sooner or later, and inside sales sorts it out order by order.
+SAP calculates customer prices with the condition technique: price lists, customer prices, discounts, surcharges and scales, each with a validity period. Revenue Cloud can calculate the same prices. If both do it for the same price, quote and SAP order confirmation differ sooner or later, and inside sales has to resolve the difference order by order.
 
 There are three routes, and you can choose per price type:
 
 | Route | Master | Fits when |
 |---|---|---|
-| A: SAP calculates, Salesforce asks through an API | SAP | Conditions also apply to orders without Salesforce |
-| B: conditions rebuilt in Salesforce Pricing | Salesforce | Price authority moves to sales for good, SAP accepts the price |
+| A: SAP calculates, Salesforce queries through an API | SAP | Conditions also apply to orders without Salesforce |
+| B: conditions rebuilt in Salesforce Pricing | Salesforce | Price authority passes to sales permanently, SAP accepts the price |
 | C: list prices from SAP, discounts in Salesforce | Split | Sales negotiates discounts per deal |
 
-For route A, the [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/minor/1.6/pages/Use%20case%203a%20-%20Quote-to-cash%20-%20Salesforce%20and%20SAP%20S4HANA/) documents the pattern with SAP sales order simulation, but for Sales Cloud and Salesforce CPQ, not for Revenue Cloud. For Revenue Cloud you build the call yourself and test the response time with real quote sizes. My usual split, as an assumption for a typical machine builder: machines on route C, spare parts and dealer conditions on route A, because they also apply to EDI orders. The full comparison is in [Customer prices: SAP conditions or Salesforce Pricing?](../../../blog/customer-prices-sap-conditions-or-salesforce-pricing/), and the wider split of quote to cash between the two systems is part of [chapter 1](../revenue-cloud-overview/).
+For route A, the [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/minor/1.6/pages/Use%20case%203a%20-%20Quote-to-cash%20-%20Salesforce%20and%20SAP%20S4HANA/) documents the pattern with SAP sales order simulation, but for Sales Cloud and Salesforce CPQ, not for Revenue Cloud. For Revenue Cloud you build the call yourself and test the response time with real quote sizes. My usual split, as an assumption for a typical machine builder: machines on route C, spare parts and dealer conditions on route A, because they also apply to EDI orders. The full comparison is in [Customer prices: SAP conditions or Salesforce Pricing?](/en/blog/customer-prices-sap-conditions-or-salesforce-pricing/), and the wider split of quote to cash between the two systems is part of [chapter 1](/en/masterclass/revenue-cloud/revenue-cloud-overview/).
 
 ## From the configured quote to the sales agreement
 
 In run-rate business the configured product is planned in a sales agreement in Manufacturing Cloud, with quantities per product and period. Two things follow. Every variant that is planned in an agreement needs its own product identity that SAP knows too, which is the second of the three catalog tests above. And the price is approved once, on the quote, and carried into the agreement, so the agreement needs no pricing logic of its own.
 
-How configured products move from the quote into the agreement, and what the configurator has to settle beforehand, is described in [From quote to sales agreement: the configurator](../../../blog/quote-to-sales-agreement-product-configurator/). The agreement side is covered in the Manufacturing Cloud chapter on [agreements and forecasting](../../manufacturing-cloud/agreements-and-forecasting/).
+How configured products are carried from the quote into the agreement, and what the configurator has to settle beforehand, is described in [From quote to sales agreement: the configurator](/en/blog/quote-to-sales-agreement-product-configurator/). The agreement side is covered in the Manufacturing Cloud chapter on [agreements and forecasting](/en/masterclass/manufacturing-cloud/agreements-and-forecasting/).
 
 ## How do you test pricing and rules?
 
@@ -144,7 +144,7 @@ Catalog, constraint models and pricing procedures change what every sales rep ca
 source: [CML User Guide](https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/CML_User_Guide.pdf)
 ```
 
-How configuration data moves through a pipeline is the subject of the DevOps chapter on [data and configuration](../../devops-release-management/data-and-configuration/), and how tests fit into the release process is in [quality, tests and reviews](../../devops-release-management/quality-tests-reviews/).
+How configuration data moves through a pipeline is the subject of the DevOps chapter on [data and configuration](/en/masterclass/devops-release-management/data-and-configuration/), and how tests fit into the release process is in [quality, tests and reviews](/en/masterclass/devops-release-management/quality-tests-reviews/).
 
 ## Worked example: 30 packaging machines in three families
 
@@ -160,4 +160,4 @@ Three classifications with about a dozen attributes each, 30 base machines, conf
 4. **Order of the pricing elements**, agreed by sales management and controlling.
 5. **Regression cases** for pricing and constraint models, owned by the manufacturer.
 
-Setting these boundaries between SAP and Salesforce is part of my work on [Salesforce architecture](../../../services/salesforce-architecture/), and the price interface itself falls under [Salesforce integration](../../../services/salesforce-integration/). [Chapter 3](../quote-contract-order/) continues with approvals, contracts and the order hand-over to SAP, and all chapters are on the [overview page](../).
+Setting these boundaries between SAP and Salesforce is part of my work on [Salesforce architecture](/en/services/salesforce-architecture/), and the price interface itself falls under [Salesforce integration](/en/services/salesforce-integration/). [Chapter 3](/en/masterclass/revenue-cloud/quote-contract-order/) continues with approvals, contracts and the order hand-over to SAP, and all chapters are on the [overview page](/en/masterclass/revenue-cloud/).

@@ -87,17 +87,17 @@ That does not excuse poor quality. It does explain why one side is rarely solely
 
 The first warning signs appear in the backlog and the tickets, long before a milestone is missed:
 
-- **Tickets wait for acceptance.** If stories wait a long time for the business to accept them, the client is not planning enough time for it. I describe how to organise that in [Salesforce UAT with the business](../../blog/salesforce-uat-business-acceptance-testing/).
+- **Tickets wait for acceptance.** If stories wait a long time for the business to accept them, the client is not planning enough time for it. I describe how to organise that in [Salesforce UAT with the business](/en/blog/salesforce-uat-business-acceptance-testing/).
 - **The backlog does not cover the next sprint.** If the stories for the next sprints are not described and prioritised, requirements only take shape during implementation.
 - **New requirements in the running sprint.** If requirements are added to the running sprint without planning, the structure breaks down and planning becomes unreliable.
 
-Metrics from the ticket system and [DORA metrics](../../blog/dora-metrics-salesforce-releases/) for the releases make such trends visible early.
+Metrics from the ticket system and [DORA metrics](/en/blog/dora-metrics-salesforce-releases/) for the releases make such trends visible early.
 
 ## Restart or a few steps back?
 
 A complete restart is rarely possible. Management often rejects one, partly because a large budget has already been invested. Often it is not necessary either: if more than half is solid, stepping back one or two steps is enough, for example to one area's current processes. I have not yet seen a complete restart or a move away from Salesforce after more than six months of implementation.
 
-Unspectacular measures are usually the most effective: documenting more cleanly and communicating more clearly. It has to be clear which information is recorded when, where and by whom, what the next steps are and which blockers are still open. Only then do client and partner have a sound basis for decisions. If a partner switch is necessary in the end, [switching Salesforce partners without a standstill](../../blog/switching-salesforce-implementation-partner/) describes the process. [Partner governance](../partner-governance/) lowers the risk of ending up here again with the next partner.
+Unspectacular measures are usually the most effective: documenting more cleanly and communicating more clearly. It has to be clear which information is recorded when, where and by whom, what the next steps are and which blockers are still open. Only then do client and partner have a sound basis for decisions. If a partner switch is necessary in the end, [switching Salesforce partners without a standstill](/en/blog/switching-salesforce-implementation-partner/) describes the process. [Partner governance](/en/services/partner-governance/) lowers the risk of ending up here again with the next partner.
 
 ## No rescue without backing from management
 

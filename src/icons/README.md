@@ -32,7 +32,7 @@ Never paste SVG markup for an icon into a component: add a file here instead.
 | `mail` | 48 | Recruiter page: process step "Request" |
 | `check` | 48 | Recruiter page: process step "Approval" (circle with tick); service pages: phase "delivery and testing", "sustain outcomes" |
 | `interview` | 48 | Recruiter page: process step "Client interview"; proof bar: teams · developers |
-| `contract` | 48 | Recruiter page: process step "Contract and start"; service pages: phase "decision", "specification" |
+| `contract` | 48 | Recruiter page: process step "Contract and start"; service pages: phase "decision", "specification"; guest article card |
 | `swap` | 48 | Recruiter page: arrows between "You get" and "I need" (cyan only); speaking page topic "Flow or OmniStudio" |
 | `analyse` | 48 | Start page, approach step 1; service pages: phase "assessment" |
 | `design` | 48 | Start page, approach step 2; service pages: phase "standards", "solution design" |

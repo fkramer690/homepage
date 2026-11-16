@@ -41,7 +41,9 @@ The EN and DE versions of an article share the same `translationKey`, which link
 
 Rules for structure, SEO and AI search are in [docs/blog-guidelines.md](docs/blog-guidelines.md); start new articles from [docs/blog-template.md](docs/blog-template.md). `npm run build` runs `scripts/check-blog.mjs` first and fails if an article breaks a rule (`npm run check:blog` runs only the check).
 
-Open ideas and planned articles are in [docs/backlog.md](docs/backlog.md) (German, single source of truth; the repo is public, so no client names or internal notes there).
+Open ideas and planned articles are kept in a private backlog in the project files, not in this repo; [docs/backlog.md](docs/backlog.md) only says where it lives.
+
+Positioning texts and references (case studies) follow [docs/positioning-and-references.md](docs/positioning-and-references.md).
 
 ### Service pages
 
@@ -79,6 +81,7 @@ The repository root holds only project files (`package.json`, configs, `README.m
 | Files served as they are (favicon, client logos, downloads) | `public/` |
 | Images for guest articles on other sites (hero images linked by URL) | `public/guest/` |
 | Concept notes for reuse in other projects (not published) | `docs/konzepte/` |
+| Cloudflare Workers (event counter for "Book a call" clicks and sent forms) | `workers/<name>/`, deployed by its own workflow (`events-worker.yml`) |
 
 ## Local development
 
