@@ -1,9 +1,9 @@
 {
- "generatedAt": "2026-11-15T05:03:13.493Z",
+ "generatedAt": "2026-11-16T05:03:02.304Z",
  "window": {
   "google": {
-   "from": "2026-10-18",
-   "to": "2026-11-14"
+   "from": "2026-10-19",
+   "to": "2026-11-15"
   },
   "bingWeek": "2026-11-13"
  },
@@ -72,16 +72,16 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
    "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
-   "impressions": 28,
+   "impressions": 30,
    "clicks": 0,
-   "position": 6.6,
+   "position": 6.8,
    "title": "Why DevOps decides Salesforce enterprise projects",
    "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
    "topQueries": [
     {
      "query": "what makes a salesforce devops platform enterprise-ready?",
-     "impressions": 26,
-     "position": 6.4
+     "impressions": 28,
+     "position": 6.6
     },
     {
      "query": "salesforce devops for finance",
@@ -101,7 +101,7 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/",
    "path": "/en/blog/",
-   "impressions": 26,
+   "impressions": 27,
    "clicks": 0,
    "position": 8.7,
    "title": null,
@@ -204,6 +204,25 @@
    "new": false
   },
   {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+   "path": "/en/masterclass/devops-release-management/rollout-roadmap/",
+   "impressions": 19,
+   "clicks": 0,
+   "position": 6.7,
+   "title": "Salesforce DevOps rollout: roadmap and metrics",
+   "file": "src/content/masterclass/en/rollout-roadmap.md",
+   "topQueries": [
+    {
+     "query": "what does a typical salesforce devops rollout look like?",
+     "impressions": 18,
+     "position": 6
+    }
+   ],
+   "hint": "Antwort auf „what does a typical salesforce devops rollout look like?“ in Description und ersten Satz",
+   "new": false
+  },
+  {
    "source": "bing",
    "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
    "path": "/en/blog/field-service-scheduling-console-dispatchers/",
@@ -214,25 +233,6 @@
    "file": "src/content/blog/en/field-service-scheduling-console-dispatchers.md",
    "topQueries": [],
    "hint": "Title und Description schärfen, Antwort in den ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
-   "path": "/en/masterclass/devops-release-management/rollout-roadmap/",
-   "impressions": 16,
-   "clicks": 0,
-   "position": 7,
-   "title": "Salesforce DevOps rollout: roadmap and metrics",
-   "file": "src/content/masterclass/en/rollout-roadmap.md",
-   "topQueries": [
-    {
-     "query": "what does a typical salesforce devops rollout look like?",
-     "impressions": 15,
-     "position": 6.2
-    }
-   ],
-   "hint": "Antwort auf „what does a typical salesforce devops rollout look like?“ in Description und ersten Satz",
    "new": false
   },
   {
@@ -322,7 +322,7 @@
    "file": "src/content/blog/en/revenue-cloud-pricing-procedures-explained.md",
    "topQueries": [],
    "hint": "Title und Description schärfen, Antwort in den ersten Satz",
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -372,9 +372,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/blog/",
    "path": "/blog/",
-   "impressions": 62,
+   "impressions": 64,
    "clicks": 1,
-   "position": 19.5,
+   "position": 19.8,
    "title": null,
    "file": null,
    "topQueries": [
@@ -389,9 +389,9 @@
      "position": 29
     },
     {
-     "query": "sfdx hardis",
-     "impressions": 1,
-     "position": 19
+     "query": "projekte in salesforce verwalten",
+     "impressions": 2,
+     "position": 30
     }
    ],
    "hint": "Abschnitt und interne Links zu „sfdx-hardis“",
@@ -478,7 +478,7 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
    "path": "/en/blog/agentforce-llm-choice-bring-your-own/",
-   "impressions": 23,
+   "impressions": 24,
    "clicks": 0,
    "position": 10.8,
    "title": "Agentforce LLM choice: default, Claude or your own model",
@@ -486,8 +486,8 @@
    "topQueries": [
     {
      "query": "what llms does agentforce use and can enterprises bring their own model?",
-     "impressions": 2,
-     "position": 11
+     "impressions": 3,
+     "position": 10.7
     }
    ],
    "hint": "Abschnitt und interne Links zu „what llms does agentforce use and can enterprises bring their own model?“",
@@ -497,9 +497,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/salesforce-service-documents-document-builder/",
    "path": "/en/blog/salesforce-service-documents-document-builder/",
-   "impressions": 23,
+   "impressions": 24,
    "clicks": 0,
-   "position": 12,
+   "position": 11.7,
    "title": "Salesforce Document Builder for Field Service reports",
    "file": "src/content/blog/en/salesforce-service-documents-document-builder.md",
    "topQueries": [
@@ -540,16 +540,16 @@
    "source": "google",
    "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
    "path": "/masterclass/ki-salesforce/",
-   "impressions": 20,
+   "impressions": 21,
    "clicks": 0,
-   "position": 14.7,
+   "position": 14.9,
    "title": null,
    "file": null,
    "topQueries": [
     {
      "query": "fertigung salesforce",
-     "impressions": 8,
-     "position": 18.3
+     "impressions": 9,
+     "position": 18.2
     }
    ],
    "hint": "Abschnitt und interne Links zu „fertigung salesforce“",
@@ -790,31 +790,26 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/what-is-agentforce/",
-   "path": "/en/blog/what-is-agentforce/",
-   "impressions": 11,
+   "page": "https://www.fk-sd.de/en/blog/switching-salesforce-implementation-partner/",
+   "path": "/en/blog/switching-salesforce-implementation-partner/",
+   "impressions": 10,
    "clicks": 0,
-   "position": 18.8,
-   "title": "What Is Agentforce? Explained for IT Leaders",
-   "file": "src/content/blog/en/what-is-agentforce.md",
+   "position": 11.4,
+   "title": "Switch Salesforce Partner: Handover Checklist and Process",
+   "file": "src/content/blog/en/switching-salesforce-implementation-partner.md",
    "topQueries": [
     {
-     "query": "agentforce",
-     "impressions": 3,
-     "position": 14
+     "query": "how does a new team take over an unfinished salesforce development project?",
+     "impressions": 1,
+     "position": 2
     },
     {
-     "query": "agent force",
+     "query": "change salesforce partner",
      "impressions": 1,
-     "position": 27
-    },
-    {
-     "query": "agentforce agents",
-     "impressions": 1,
-     "position": 42
+     "position": 21
     }
    ],
-   "hint": "Abschnitt und interne Links zu „agentforce“",
+   "hint": "Abschnitt und interne Links zu „how does a new team take over an unfinished salesforce development project?“",
    "new": true
   }
  ],
@@ -822,8 +817,8 @@
   {
    "source": "google",
    "query": "what makes a salesforce devops platform enterprise-ready?",
-   "impressions": 26,
-   "position": 6.4,
+   "impressions": 28,
+   "position": 6.6,
    "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
    "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
    "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
@@ -833,8 +828,8 @@
   {
    "source": "google",
    "query": "what does a typical salesforce devops rollout look like?",
-   "impressions": 15,
-   "position": 6.2,
+   "impressions": 18,
+   "position": 6,
    "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
    "path": "/en/masterclass/devops-release-management/rollout-roadmap/",
    "file": "src/content/masterclass/en/rollout-roadmap.md",
@@ -862,6 +857,17 @@
    "file": "src/content/blog/de/salesforce-dubletten-stammdaten-bereinigen.md",
    "covered": false,
    "new": false
+  },
+  {
+   "source": "google",
+   "query": "how do you compare salesforce implementation proposals fairly?",
+   "impressions": 3,
+   "position": 2.7,
+   "page": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+   "path": "/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+   "file": "src/content/blog/en/how-to-choose-a-salesforce-implementation-partner.md",
+   "covered": false,
+   "new": true
   },
   {
    "source": "bing",
@@ -908,6 +914,17 @@
    "new": false
   },
   {
+   "source": "google",
+   "query": "what llms does agentforce use and can enterprises bring their own model?",
+   "impressions": 3,
+   "position": 10.7,
+   "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
+   "path": "/en/blog/agentforce-llm-choice-bring-your-own/",
+   "file": "src/content/blog/en/agentforce-llm-choice-bring-your-own.md",
+   "covered": false,
+   "new": false
+  },
+  {
    "source": "bing",
    "query": "salesforce: wir nutzen contracts, preisbücher und accounts. kann ich in einem contract für einen account, der einem preisbuch zugeordnet ist, ein produkt als sonderpreis führen, dass nicht im preisbuch steht?",
    "impressions": 2,
@@ -916,7 +933,7 @@
    "path": null,
    "file": null,
    "covered": false,
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -953,17 +970,6 @@
   },
   {
    "source": "google",
-   "query": "what llms does agentforce use and can enterprises bring their own model?",
-   "impressions": 2,
-   "position": 11,
-   "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
-   "path": "/en/blog/agentforce-llm-choice-bring-your-own/",
-   "file": "src/content/blog/en/agentforce-llm-choice-bring-your-own.md",
-   "covered": false,
-   "new": false
-  },
-  {
-   "source": "google",
    "query": "welche field-service-management-software mit crm- und erp-integration eignet sich für ein unternehmen mit 51 bis 499 mitarbeitenden?",
    "impressions": 1,
    "position": 2,
@@ -982,7 +988,7 @@
    "path": "/en/blog/switching-salesforce-implementation-partner/",
    "file": "src/content/blog/en/switching-salesforce-implementation-partner.md",
    "covered": false,
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -1103,7 +1109,7 @@
    "path": "/en/blog/what-is-agentforce/",
    "file": "src/content/blog/en/what-is-agentforce.md",
    "covered": false,
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -1169,7 +1175,7 @@
    "path": "/en/masterclass/devops-release-management/devops-tools-compared/",
    "file": "src/content/masterclass/en/devops-tools-compared.md",
    "covered": false,
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -1269,11 +1275,6 @@
    },
    {
     "source": "bing",
-    "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
-    "impressions": 1
-   },
-   {
-    "source": "bing",
     "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
     "impressions": 1
    },
@@ -1281,14 +1282,19 @@
     "source": "bing",
     "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
     "impressions": 1
+   },
+   {
+    "source": "bing",
+    "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
+    "impressions": 1
    }
   ]
  },
  "counts": {
   "snippet": 18,
   "nearPage1": 21,
-  "questions": 33,
-  "new": 6,
+  "questions": 34,
+  "new": 2,
   "spam": 19
  }
 }

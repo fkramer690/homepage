@@ -2,56 +2,56 @@
  {
   "country": "deu",
   "clicks": 13,
-  "impressions": 1292,
-  "position": 45.6
+  "impressions": 1330,
+  "position": 45.9
  },
  {
   "country": "usa",
   "clicks": 3,
-  "impressions": 1009,
+  "impressions": 1022,
   "position": 26.1
  },
  {
   "country": "gbr",
   "clicks": 2,
-  "impressions": 150,
-  "position": 44.1
+  "impressions": 155,
+  "position": 44
  },
  {
   "country": "ind",
   "clicks": 3,
-  "impressions": 86,
+  "impressions": 87,
   "position": 15.2
  },
  {
   "country": "bra",
   "clicks": 0,
-  "impressions": 83,
-  "position": 22.2
+  "impressions": 84,
+  "position": 22
  },
  {
   "country": "nld",
   "clicks": 0,
-  "impressions": 73,
-  "position": 53.1
+  "impressions": 79,
+  "position": 55.6
  },
  {
   "country": "fra",
   "clicks": 1,
-  "impressions": 60,
-  "position": 8.6
+  "impressions": 62,
+  "position": 9
  },
  {
   "country": "aut",
   "clicks": 1,
-  "impressions": 55,
-  "position": 34.5
+  "impressions": 56,
+  "position": 35.6
  },
  {
   "country": "aus",
   "clicks": 1,
-  "impressions": 43,
-  "position": 42.8
+  "impressions": 44,
+  "position": 44.1
  },
  {
   "country": "rus",
@@ -168,10 +168,22 @@
   "position": 15
  },
  {
+  "country": "isr",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 8.1
+ },
+ {
   "country": "sgp",
   "clicks": 0,
   "impressions": 9,
   "position": 30.2
+ },
+ {
+  "country": "vnm",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 46.8
  },
  {
   "country": "hun",
@@ -184,12 +196,6 @@
   "clicks": 0,
   "impressions": 8,
   "position": 22.1
- },
- {
-  "country": "vnm",
-  "clicks": 0,
-  "impressions": 8,
-  "position": 51
  },
  {
   "country": "nzl",
@@ -205,12 +211,6 @@
  },
  {
   "country": "hkg",
-  "clicks": 0,
-  "impressions": 7,
-  "position": 8.7
- },
- {
-  "country": "isr",
   "clicks": 0,
   "impressions": 7,
   "position": 8.7
@@ -234,6 +234,12 @@
   "position": 12.5
  },
  {
+  "country": "lux",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 73.2
+ },
+ {
   "country": "twn",
   "clicks": 1,
   "impressions": 5,
@@ -246,10 +252,10 @@
   "position": 31
  },
  {
-  "country": "lux",
+  "country": "mar",
   "clicks": 0,
   "impressions": 5,
-  "position": 73.6
+  "position": 7.6
  },
  {
   "country": "sau",
@@ -276,10 +282,10 @@
   "position": 5.8
  },
  {
-  "country": "mar",
+  "country": "mus",
   "clicks": 0,
   "impressions": 4,
-  "position": 8.5
+  "position": 6.8
  },
  {
   "country": "srb",
@@ -304,12 +310,6 @@
   "clicks": 0,
   "impressions": 3,
   "position": 6.3
- },
- {
-  "country": "mus",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 7.7
  },
  {
   "country": "mys",
