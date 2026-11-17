@@ -127,6 +127,8 @@ better: For license negotiations and the target architecture: review user tasks 
 
 From my pre-sales work with Salesforce I know that full licenses are offered by default, including for users who only read data or approve records. With a large user base that easily adds up to six figures a year. The health check shows idle seats; whether an active user would need a cheaper license type only becomes clear from what that user does, which is how I approach [make-or-buy and licenses](/en/services/make-or-buy-licences/). What an AI-assisted analysis has to deliver before a partner switch is covered in [AI org assessment: technical debt before a partner switch](/en/blog/ai-org-assessment-technical-debt/).
 
+A shorter version for CIOs is on LinkedIn: [MeshMesh wants to work in your Salesforce org](https://www.linkedin.com/pulse/meshmesh-wants-work-your-salesforce-org-here-what-i-would-kramer-0u5fe/).
+
 ## First step: test MeshMesh in a developer sandbox until the end of January
 
 The beta is expected to run until January 31, 2027. That is enough time for a small, clean test that gives you your own evidence before general availability. The durations are my suggestion for a mid-sized org.
