@@ -2,6 +2,7 @@
 title: "Field Service Management Software for Manufacturers"
 description: "Field service management software for manufacturers: how to shortlist Salesforce Field Service, SAP Field Service Management, IFS or ServiceNow."
 pubDate: 2026-11-06
+updatedDate: 2026-11-17
 lang: en
 slug: field-service-management-software-selection
 translationKey: field-service-management-software
@@ -24,6 +25,8 @@ faq:
     a: "No. S/4HANA puts SAP Field Service Management on the shortlist because SAP offers standard integration content, but you still need to check it against your actual S/4HANA process. Where customer service and sales run in Salesforce, Salesforce Field Service belongs on the list too. The decision should come from tests with your own jobs."
   - q: "When is ServiceNow an option for field service?"
     a: "ServiceNow is a natural candidate when customer service already runs on ServiceNow Customer Service Management, not only IT service management. As of November 2026, ServiceNow offers Advanced and Prime packages; only Prime includes Schedule Optimization."
+  - q: "All-in-one platform or specialist tool for companies with 500+ employees?"
+    a: "Usually the platform your customer service already runs on, if it handles your jobs in the scenario test. A specialist tool only pays off when it meets a requirement the platform cannot. In that case, include the extra interface and its ongoing operation in the total cost."
 draft: false
 ---
 
@@ -42,7 +45,7 @@ Installed base | Which machine is where, in which configuration, with which hist
 Contracts and warranty | What is covered, entitlements, SLAs, maintenance plans | Your contract types and warranty rules
 Spare parts | Stock in the warehouse and van, reservation, returns | Reservation and returns against the ERP
 Reports and checklists | Service report, measurements, acceptance by the customer | Your report and the signature on site
-Service partners | External technicians and subcontractors | Partner access, assignment, confirmation and settlement
+Service partners | External technicians, subcontractors and preferred partners | Partner access, assignment, confirmation and settlement
 ERP feedback | Time, material and travel back for billing | Which data flows, in which package, at what effort
 note: The fact that a feature exists is not enough as a test criterion. What matters is which license or add-on it requires and how much you still have to build.
 ```
@@ -62,6 +65,24 @@ note: A natural candidate is not a decision. Especially when customer contact an
 ```
 
 Salesforce customers also come across ServiceMax, which now belongs to PTC and is built on Salesforce. I compared the two in [ServiceMax vs Salesforce Field Service](/en/blog/servicemax-vs-salesforce-field-service/).
+
+## Which solution fits which company size?
+
+Company size alone does not decide, but it changes the priorities. Small businesses care most about price and simplicity, mid-sized manufacturers about the ERP integration, and corporate groups about rollout, data residency and operations across several countries. The four platforms above are designed for manufacturers with their own service organisation, an ERP and several dispatchers.
+
+```tabelle
+titel: What matters by company size
+spalten: Company size | What matters | What it usually leads to
+Up to 50 employees | Predictable cost per user, quick setup, limited in-house IT | A lean scheduling tool with a mobile app is usually sufficient; the four platforms are often too large here
+51 to 499 employees | ERP integration, installed base, spare parts, maintenance contracts | The leading system for customers and orders sets the shortlist; compare two vendors in a scenario test
+500 employees and more | Several service companies, service partners, permissions, operations by an internal team | One platform integrated with CRM and ERP instead of a standalone tool, so customer history and billing stay consistent
+International group | Countries, languages, data residency, compliance, several ERP systems, release model | Check rollout capability and integration architecture before comparing features
+fazit: The larger the company, the more the architecture decides and the less the feature list.
+```
+
+From around 500 employees, the question is often: all-in-one platform or specialist tool? My answer: the platform your customer service already runs on, as long as it handles your jobs in the scenario test. A specialist tool pays off when it meets a requirement the platform cannot, such as specialised scheduling logic. In that case, include the extra interface and its ongoing operation in the total cost.
+
+If you still plan jobs on paper or in spreadsheets, do not start with automated optimisation. Start with digital work orders, a mobile app and a signed service report for one job type. Automatic scheduling follows once asset and order data are complete and reliable.
 
 ## Salesforce Field Service fits when customer interactions are managed in Salesforce
 
