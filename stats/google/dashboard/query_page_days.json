@@ -10401,6 +10401,14 @@
  },
  {
   "day": "2026-11-16",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 5.2
+ },
+ {
+  "day": "2026-11-16",
   "query": "click field service management software",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
@@ -10417,11 +10425,19 @@
  },
  {
   "day": "2026-11-16",
-  "query": "what does a typical salesforce devops rollout look like?",
-  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
   "clicks": 0,
-  "impressions": 4,
-  "position": 6.3
+  "impressions": 3,
+  "position": 53
+ },
+ {
+  "day": "2026-11-16",
+  "query": "salesforce zertifizierte experten",
+  "page": "https://www.fk-sd.de/certifications/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 31.3
  },
  {
   "day": "2026-11-16",
@@ -10433,11 +10449,35 @@
  },
  {
   "day": "2026-11-16",
+  "query": "click field service edge",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 48.5
+ },
+ {
+  "day": "2026-11-16",
   "query": "erp field service",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
   "impressions": 2,
   "position": 73.5
+ },
+ {
+  "day": "2026-11-16",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 43.5
+ },
+ {
+  "day": "2026-11-16",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 15.5
  },
  {
   "day": "2026-11-16",
@@ -10449,6 +10489,14 @@
  },
  {
   "day": "2026-11-16",
+  "query": "field service management application",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 66
+ },
+ {
+  "day": "2026-11-16",
   "query": "field service system",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
@@ -10457,11 +10505,19 @@
  },
  {
   "day": "2026-11-16",
-  "query": "salesforce zertifizierte experten",
-  "page": "https://www.fk-sd.de/certifications/",
+  "query": "nearshore salesforce development",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
   "clicks": 0,
   "impressions": 2,
-  "position": 30
+  "position": 77
+ },
+ {
+  "day": "2026-11-16",
+  "query": "salesforce manufacturing cloud",
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 78.5
  },
  {
   "day": "2026-11-16",
@@ -10470,6 +10526,14 @@
   "clicks": 0,
   "impressions": 2,
   "position": 6.5
+ },
+ {
+  "day": "2026-11-16",
+  "query": "zertifizierte cloud-architektur",
+  "page": "https://www.fk-sd.de/certifications/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 82.5
  },
  {
   "day": "2026-11-16",
@@ -10577,22 +10641,6 @@
  },
  {
   "day": "2026-11-16",
-  "query": "fertigung salesforce",
-  "page": "https://www.fk-sd.de/masterclass/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 44
- },
- {
-  "day": "2026-11-16",
-  "query": "fertigung salesforce",
-  "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 15
- },
- {
-  "day": "2026-11-16",
   "query": "field service erp",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
@@ -10601,11 +10649,11 @@
  },
  {
   "day": "2026-11-16",
-  "query": "field service management application",
+  "query": "field service management cloud",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
   "impressions": 1,
-  "position": 66
+  "position": 86
  },
  {
   "day": "2026-11-16",
@@ -10657,6 +10705,14 @@
  },
  {
   "day": "2026-11-16",
+  "query": "is salesforce devops center enough for enterprise teams?",
+  "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "day": "2026-11-16",
   "query": "kotter international inc alternatives",
   "page": "https://www.fk-sd.de/en/blog/change-management-models/",
   "clicks": 0,
@@ -10665,11 +10721,27 @@
  },
  {
   "day": "2026-11-16",
-  "query": "nearshore salesforce development",
-  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+  "query": "nearshore teams",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
   "clicks": 0,
   "impressions": 1,
-  "position": 80
+  "position": 19
+ },
+ {
+  "day": "2026-11-16",
+  "query": "ondemand visual remote support",
+  "page": "https://www.fk-sd.de/en/blog/visual-remote-assistant-remote-help-instead-of-visit/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
+ },
+ {
+  "day": "2026-11-16",
+  "query": "platform integration user salesforce",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-integration-users-cleanup/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
  },
  {
   "day": "2026-11-16",
@@ -10686,14 +10758,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 10
- },
- {
-  "day": "2026-11-16",
-  "query": "salesforce manufacturing cloud",
-  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 69
  },
  {
   "day": "2026-11-16",
@@ -10737,6 +10801,30 @@
  },
  {
   "day": "2026-11-16",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/en/partners/recruiters/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "day": "2026-11-16",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/partner/recruiter/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
+ },
+ {
+  "day": "2026-11-16",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/speaking/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 12
+ },
+ {
+  "day": "2026-11-16",
   "query": "what is solution junkies process for taking over",
   "page": "https://www.fk-sd.de/en/blog/switching-salesforce-implementation-partner/",
   "clicks": 0,
@@ -10758,5 +10846,21 @@
   "clicks": 0,
   "impressions": 1,
   "position": 20
+ },
+ {
+  "day": "2026-11-17",
+  "query": "manufacturing cloud vs sales cloud",
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 48
+ },
+ {
+  "day": "2026-11-17",
+  "query": "switch salesforce partner",
+  "page": "https://www.fk-sd.de/en/blog/switching-salesforce-implementation-partner/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 18
  }
 ]
