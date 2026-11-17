@@ -103,6 +103,8 @@ I start with four numbers from your own field service operation, before discussi
 
 These numbers can usually be pulled from the ERP or the existing scheduling tool. If nobody knows them, that is a finding in itself: the basis for any business case is missing, whatever the product.
 
+Why the number of jobs per day says more about the business case than the size of the team is the subject of an article on LinkedIn: [Field service software for manufacturers: count the appointments before you count the technicians](https://www.linkedin.com/pulse/field-service-software-manufacturers-count-before-you-fabian-kramer-d9wle/).
+
 The business case itself has to cover both sides. On the benefit side, include the cost of a failed visit, repeat visits, dispatcher effort, overtime, missed response times and their contractual consequences, and the effort for service reports. On the cost side, include licenses, implementation, integration, operation and existing systems that are switched off or remain in use. Calculate the business case over the expected lifetime, not just for the first year.
 
 Then comes the data question. Field Service schedules using only the assets, locations, skills and availability that are maintained. A technician whose skills are not recorded anywhere will be scheduled incorrectly by the engine. Exactly which data is required is covered in [part 2 of this series](/en/blog/salesforce-field-service-master-data/).
