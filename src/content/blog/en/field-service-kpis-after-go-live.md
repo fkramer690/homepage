@@ -2,13 +2,13 @@
 title: "Field Service KPIs after go-live: what to measure"
 description: "Which KPIs show whether Salesforce Field Service delivers after go-live, how to define first-time fix and what Operations Home and its dashboards add."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-17
 lang: en
 slug: field-service-kpis-after-go-live
 translationKey: field-service-kpis-after-go-live
 topic: field-service
 categories: [field-service]
-tags: [field service, KPIs, first-time fix, Operations Home, rollout, analytics]
+tags: [field service, KPIs, first-time fix, Operations Home, rollout, attach rate]
 takeaways:
   - "I also measure how often dispatchers change the engine's proposals before release. It shows whether data and scheduling policy fit."
   - "The Salesforce dashboard calculates first-time fix from appointment status. A repeat-visit definition needs its own calculation."
@@ -89,6 +89,20 @@ Assume a component maker with 90 technicians in three regions, SAP as ERP and a 
 **Region one, month three after go-live.** 2.4 jobs per day, 33 percent travel, 88 percent of response times met. First-time fix is still at 72 percent. Dispatchers changed 41 percent of proposals in month one and 24 percent in month three, mostly because of customer access times.
 
 **The reading.** Scheduling works, so jobs and travel improve. First-time fix does not move because technicians still arrive without the right part: van stock is not in Salesforce yet. Before wave two, the team models van stock as mobile locations, as described in [spare parts between ERP and Salesforce](/en/blog/salesforce-field-service-spare-parts-erp/), and adds visiting hours for the accounts that caused most of the changes.
+
+## Contribution margin and attach rate show whether service pays off
+
+The six KPIs above measure productivity. They do not show whether the installed base generates service revenue. For that I add three commercial metrics once the processes of the first wave are stable:
+
+| KPI | How I define it | Where the number comes from |
+|---|---|---|
+| Attach rate | Share of newly installed machines for which a maintenance contract is signed within 90 days of installation | Install date on the asset, contract line item linked to the asset |
+| Contract coverage | Share of active assets with a valid contract or entitlement, by product line | Asset, entitlement, term of the contract line item |
+| Contribution margin per contract | Contract revenue minus directly attributable labour, travel and parts costs for the jobs on the contract's assets, per year | Revenue, cost rates and invoices from the ERP, labour time and consumed parts (Product Consumed) from Field Service |
+
+The first two can be calculated from Salesforce data, provided every asset has an install date and contracts are kept at asset level. That is not enough for the third: labour rates, parts costs and invoices are usually held in the ERP. I would therefore calculate the margin in the system where the costs are maintained, usually ERP controlling. Salesforce holds work orders, time entries and consumed parts per asset. If you already use Data 360 for Field Service Intelligence, you can combine the cost rates there instead.
+
+For reference: in Bain's study [Winning in Industrial Service](https://www.bain.com/insights/winning-in-industrial-service/) (2015, 45 European manufacturers), the best companies had an average attach rate just above 20 percent, and many set targets above 50 percent. [BCG](https://www.bcg.com/publications/2025/aftermarket-services-drive-growth-for-industrial-manufacturers) reported in 2025 that leading manufacturers sign 31 percent more customers to maintenance contracts at purchase than the average. Use these figures for context. Set the target from your own baseline. How maintenance contracts become recurring revenue in Revenue Cloud is covered in [Billing maintenance contracts as recurring revenue](/en/blog/maintenance-contracts-recurring-billing/).
 
 ## Who owns the numbers after go-live?
 

@@ -3,7 +3,7 @@ title: "Visual Remote Assistance: Wann Video den Einsatz ersetzt"
 metaTitle: "Visual Remote Assistance mit Salesforce: Video statt Einsatz"
 description: "Visuelle Fernunterstützung mit Salesforce Visual Remote Assistant: wann Video den Technikereinsatz ersetzt, was es kostet und was Sie vorher klären."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-17
 lang: de
 slug: visual-remote-assistant-fernhilfe-statt-einsatz
 translationKey: visual-remote-assistant-instead-of-visit
@@ -82,6 +82,14 @@ Der Hersteller lizenziert sechs Hotline-Mitarbeitende und zwei Remote-Experten, 
 Wichtiger als das Ziel ist die Methode. Vor dem Pilotprojekt wertet das Serviceteam die Störungsaufträge eines Jahres aus und ordnet jeden einer Ursache zu: Bedienfehler, Parameter, Verschleißteil, mechanischer Schaden, elektrischer Fehler. Nur Fälle aus den ersten beiden Gruppen sowie Verschleißteile, die der Kunde selbst tauschen darf, kommen für eine Lösung per Video infrage. Machen diese Fälle 35 Prozent der Einsätze des Vorjahres aus, sind 20 Prozent realistisch. Machen sie 10 Prozent aus, rechnet sich der Business Case nur über die bessere Diagnose, und das sollte man offen sagen.
 
 Nach drei Monaten zeigen zwei Zahlen, ob es funktioniert: der Anteil der Videositzungen, nach denen der Fall geschlossen wird, und der Anteil dieser Fälle mit erneutem Anruf innerhalb von sieben Tagen. Eine Lösung per Video, auf die zwei Tage später doch ein Einsatz folgt, hat keinen Einsatz gespart, auch wenn sie ihn verkürzt hat. Messen Sie den Nutzen für die Diagnose deshalb getrennt, zum Beispiel über die Erstlösungsquote und über Einsätze mit fehlendem Teil.
+
+## Ferndiagnose über Maschinendaten hat Vorrang vor dem Video
+
+Ist die Maschine vernetzt, kann der Service die Fehlerdaten häufig auslesen, bevor der Kunde anruft. Salesforce beschreibt diesen Ablauf im Blogbeitrag [Field Service for Asset-Intensive Industries](https://www.salesforce.com/blog/field-service-asset-revenue/) vom Juni 2026: Ein Alarm aus der Maschine erscheint in der Service Console, eine Prüfung aus der Ferne oder eine Automatisierung versucht, die Störung zu beheben, und erst wenn das scheitert, entsteht ein Arbeitsauftrag mit Preis und empfohlenen Teilen. In Salesforce deckt das Add-on Connected Assets diesen Teil ab, mehr dazu in [Asset Service Lifecycle Management](/blog/asset-service-lifecycle-management-zusatz/). Alternativ kann eine eigene IoT-Plattform über eine Schnittstelle einen Fall anlegen.
+
+Für die Reihenfolge heißt das: zuerst Maschinendaten, dann Video, dann Einsatz. Für den nicht vernetzten Teil der installierten Basis bleibt Video trotzdem das naheliegende Werkzeug, denn laut [BCG](https://www.bcg.com/publications/2025/aftermarket-services-drive-growth-for-industrial-manufacturers) hatten 2025 nur 28 Prozent der neu verkauften Maschinen einen Fernzugang. Ältere Baureihen haben häufig keinen Fernzugang.
+
+Vorsicht bei den Zahlen aus Herstellerbeiträgen. Der Salesforce-Beitrag schreibt, Honeywell löse bis zu 30 Prozent der Servicefälle aus der Ferne. In der verlinkten [Fallstudie](https://www.salesforce.com/news/stories/salesforce-honeywell-update/) von 2022 finde ich diese Zahl nicht, dort stehen 11 Millionen Dollar Produktivitätsgewinn im Außendienst pro Jahr. Für Ihren Business Case zählt die Auswertung Ihrer eigenen Störungen, wie im Rechenbeispiel oben.
 
 ## Visual Remote Assistant oder ein Drittanbieter?
 

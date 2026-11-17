@@ -3,7 +3,7 @@ title: "Visual remote assistance: when video replaces a visit"
 metaTitle: "Visual remote assistance with Salesforce: video or visit?"
 description: "Visual remote assistance with Salesforce Visual Remote Assistant: when a video call replaces a technician visit, what it costs, what to settle first."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-17
 lang: en
 slug: visual-remote-assistant-remote-help-instead-of-visit
 translationKey: visual-remote-assistant-instead-of-visit
@@ -82,6 +82,14 @@ The builder licenses six hotline agents and two remote experts, so eight users a
 The method matters more than the target. Before the pilot, the service team pulls a year of breakdown work orders and tags each one: operating error, parameter, wear part, mechanical damage, electrical fault. Only the first two categories, plus wear parts the customer may change, are candidates for a video fix. If those make up 35 percent of last year's visits, 20 percent is realistic. If they make up 10 percent, the business case rests on better diagnosis, and that should be stated honestly.
 
 After three months, two numbers show whether it works: the share of video sessions that close the case, and the share of those cases with a repeat call within seven days. A video fix followed by a visit two days later did not avoid a dispatch, even if it made that visit shorter, so measure the diagnostic value separately: first-time fix rate and visits with missing parts.
+
+## Remote diagnostics from machine data take priority over video
+
+If the machine is connected, the service team can often retrieve the fault data before the customer calls. Salesforce describes this flow in its blog post [Field Service for Asset-Intensive Industries](https://www.salesforce.com/blog/field-service-asset-revenue/) from June 2026: an alert from the machine appears in the Service Console, a remote check or an automation attempts to resolve the fault, and only if that fails is a work order created with a price and recommended parts. In Salesforce, the Connected Assets add-on covers this part, see [Asset Service Lifecycle Management](/en/blog/asset-service-lifecycle-management-add-on/). Alternatively, your own IoT platform can create a case through an integration.
+
+For the order of steps this means: machine data first, then video, then a visit. For the unconnected part of the installed base, video remains the obvious tool, because according to [BCG](https://www.bcg.com/publications/2025/aftermarket-services-drive-growth-for-industrial-manufacturers) only 28 percent of newly sold machines had remote connectivity in 2025. Older series often have no remote connectivity.
+
+Be careful with figures from vendor posts. The Salesforce post says Honeywell resolves up to 30 percent of service calls remotely. I cannot find that number in the linked [case study](https://www.salesforce.com/news/stories/salesforce-honeywell-update/) from 2022, which reports $11 million a year in field technician productivity gains. For your business case, what counts is the analysis of your own breakdowns, as in the worked example above.
 
 ## Visual Remote Assistant or a third-party tool?
 
