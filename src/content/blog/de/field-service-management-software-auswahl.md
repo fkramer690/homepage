@@ -2,6 +2,7 @@
 title: "Field Service Management Software für Hersteller"
 description: "Field Service Management Software für Hersteller: wie Sie Salesforce Field Service, SAP Field Service Management, IFS oder ServiceNow vorauswählen."
 pubDate: 2026-11-06
+updatedDate: 2026-11-17
 lang: de
 slug: field-service-management-software-auswahl
 translationKey: field-service-management-software
@@ -24,6 +25,8 @@ faq:
     a: "Nein. S/4HANA setzt SAP Field Service Management auf die Vorauswahlliste, weil SAP Standardinhalte für die Integration anbietet. Gleichen Sie diese Inhalte mit Ihrem tatsächlichen S/4HANA-Prozess ab. Laufen Kundenservice und Vertrieb in Salesforce, gehört Salesforce Field Service mit auf die Liste. Entscheiden sollte der Test mit Ihren eigenen Einsätzen."
   - q: "Wann kommt ServiceNow für den Außendienst in Frage?"
     a: "Naheliegend ist ServiceNow, wenn der Kundenservice bereits auf ServiceNow Customer Service Management läuft, nicht nur das IT-Service-Management. Stand November 2026 bietet ServiceNow die Pakete Advanced und Prime an; nur Prime enthält Schedule Optimization."
+  - q: "All-in-one-Plattform oder Speziallösung ab 500 Mitarbeitenden?"
+    a: "Meist die Plattform, auf der der Kundenservice bereits läuft, wenn sie Ihre Einsätze im Szenariotest abbildet. Eine Speziallösung lohnt sich nur dann, wenn sie eine Anforderung erfüllt, die die Plattform nicht abdeckt. Dann gehören die zusätzliche Schnittstelle und ihr laufender Betrieb in die Gesamtkosten."
 draft: false
 ---
 
@@ -42,7 +45,7 @@ Installierte Basis | Welche Maschine steht wo, in welcher Konfiguration, mit wel
 Verträge und Garantie | Abdeckung, Ansprüche, SLAs und Wartungspläne | Ihre Vertragsarten und Garantieregeln
 Ersatzteile | Bestand im Lager und im Fahrzeug, Reservierung, Rückgaben | Reservierung und Rückgaben im Zusammenspiel mit dem ERP
 Berichte und Checklisten | Servicebericht, Messwerte, Abnahme durch den Kunden | Ihren Bericht und die Unterschrift vor Ort
-Servicepartner | Externe Techniker und Subunternehmer | Zugang, Zuweisung, Rückmeldung und Abrechnung der Partner
+Servicepartner | Externe Techniker, Subunternehmer und bevorzugte Partner | Zugang, Zuweisung, Rückmeldung und Abrechnung der Partner
 Rückmeldung an das ERP | Zeit, Material und Fahrt zur Abrechnung zurückmelden | Welche Daten in welchem Paket und mit welchem Aufwand fließen
 fazit: Dass es eine Funktion gibt, reicht als Prüfkriterium nicht. Entscheidend sind die nötige Lizenz oder das Add-on und der verbleibende Eigenbau.
 ```
@@ -62,6 +65,24 @@ fazit: Ein naheliegender Kandidat ist noch keine Entscheidung. Gerade wenn Kunde
 ```
 
 Salesforce-Kunden begegnen außerdem ServiceMax, das heute zu PTC gehört und auf Salesforce aufsetzt. Den Vergleich habe ich in [ServiceMax oder Salesforce Field Service?](/blog/servicemax-oder-salesforce-field-service/) beschrieben.
+
+## Welche Lösung passt zu welcher Unternehmensgröße?
+
+Die Unternehmensgröße allein entscheidet nicht, sie verändert aber die Prioritäten. Bei kleinen Betrieben zählen Preis und Einfachheit, im Mittelstand die Integration mit dem ERP, in Konzernen Rollout, Datenresidenz und Betrieb über mehrere Länder. Die vier Plattformen oben richten sich an Hersteller mit eigener Serviceorganisation, ERP und mehreren Disponenten.
+
+```tabelle
+titel: Was je nach Unternehmensgröße zählt
+spalten: Unternehmensgröße | Was zählt | Worauf es hinausläuft
+Bis 50 Mitarbeitende | Planbare Kosten pro Nutzer, schnelle Einführung, kaum eigene IT | Eine schlanke Einsatzplanung mit mobiler App genügt meist; die vier Plattformen sind hier oft zu groß
+51 bis 499 Mitarbeitende | Anbindung an das ERP, installierte Basis, Ersatzteile, Wartungsverträge | Das führende System für Kunden und Aufträge bestimmt die Vorauswahl; zwei Anbieter im Szenariotest vergleichen
+Ab 500 Mitarbeitende | Mehrere Servicegesellschaften, Servicepartner, Berechtigungen, Betrieb durch ein eigenes Team | Eine mit CRM und ERP integrierte Plattform statt einer Insellösung, damit Kundenhistorie und Abrechnung übereinstimmen
+International tätiger Konzern | Länder, Sprachen, Datenresidenz, Compliance, mehrere ERP-Systeme, Release-Modell | Rollout-Fähigkeit und Integrationsarchitektur prüfen, bevor Funktionen verglichen werden
+fazit: Je größer das Unternehmen, desto mehr entscheidet die Architektur und desto weniger die Funktionsliste.
+```
+
+Ab etwa 500 Mitarbeitenden stellt sich oft die Frage: All-in-one-Plattform oder Speziallösung? Meine Antwort: die Plattform, auf der der Kundenservice bereits läuft, solange sie Ihre Einsätze im Szenariotest abbildet. Eine Speziallösung lohnt sich, wenn sie eine Anforderung erfüllt, die die Plattform nicht abdeckt, etwa eine besondere Logik in der Terminplanung. Dann rechnen Sie die zusätzliche Schnittstelle und ihren laufenden Betrieb in die Gesamtkosten ein.
+
+Wer heute noch auf Papier oder mit Tabellen plant, sollte nicht mit der automatischen Optimierung beginnen. Führen Sie zuerst digitale Aufträge, die mobile App und den unterschriebenen Servicebericht für eine Einsatzart ein. Die automatische Terminplanung folgt, wenn Anlagen- und Auftragsdaten vollständig und verlässlich sind.
 
 ## Salesforce Field Service passt, wenn der Kundenkontakt in Salesforce läuft
 

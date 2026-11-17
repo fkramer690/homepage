@@ -5,6 +5,9 @@
 //   snippet    page on position <= 10 with >= 10 impressions and 0 clicks
 //   nearPage1  page on position 11-20 with >= 10 impressions
 //   questions  question query on position <= 15 whose page has no matching FAQ
+//   longQueries  pages with Google queries of 8+ words (prompt-like searches) on
+//               position <= 20, grouped per page; several similar long queries on
+//               one page point to a sub-question the page does not answer yet
 // Google uses the last 28 days, Bing its latest week. Items that were not in the
 // previous run are marked `new`.
 // Used by .github/workflows/analytics.yml on Mondays (or on manual runs); the
@@ -223,6 +226,42 @@ const questions = [
   .filter((q) => !q.covered)
   .sort(rank);
 
+// Long, prompt-like queries (8+ words, the Search Console regex
+// ^(?:\S+\s+){7,}\S+$), grouped per page. Google only: Bing shows no page per query.
+const LONG = /^(?:\S+\s+){7,}\S+$/;
+const LONG_MAX_POSITION = 20;
+const questionKeys = new Set(questions.map((q) => q.query));
+const longByPage = new Map();
+for (const r of queryPages) {
+  const q = r.query.trim();
+  if (!LONG.test(q) || isSpam(q) || q.includes('"') || r.position > LONG_MAX_POSITION) continue;
+  const list = longByPage.get(r.page) ?? [];
+  list.push({ query: q, impressions: r.impressions, clicks: r.clicks, position: r.position, inQuestions: questionKeys.has(q) });
+  longByPage.set(r.page, list);
+}
+const longQueries = [...longByPage]
+  .map(([page, list]) => {
+    const info = pageInfo(page);
+    list.sort((a, b) => b.impressions - a.impressions || a.position - b.position);
+    const impressions = list.reduce((n, r) => n + r.impressions, 0);
+    return {
+      source: 'google',
+      page,
+      path: pathOf(page),
+      title: info?.metaTitle || info?.title || null,
+      file: info?.file ?? null,
+      count: list.length,
+      impressions,
+      clicks: list.reduce((n, r) => n + r.clicks, 0),
+      queries: list.slice(0, 15),
+      hint:
+        list.length >= 3
+          ? 'Mehrere ähnliche lange Suchen: fehlende Teilfrage als Abschnitt oder FAQ mit direkter Antwort ergänzen'
+          : `Direkte Antwort auf „${list[0].query}“ ergänzen, falls die Seite sie noch nicht gibt`,
+    };
+  })
+  .sort((a, b) => b.count - a.count || b.impressions - a.impressions);
+
 const spamRows = [
   ...gQueries.filter((r) => isSpam(r.query)).map((r) => ({ source: 'google', query: r.query, impressions: r.impressions })),
   ...bQueries.filter((r) => isSpam(r.query)).map((r) => ({ source: 'bing', query: r.query, impressions: r.impressions })),
@@ -230,9 +269,11 @@ const spamRows = [
 
 // Mark what is new compared with the previous run.
 const prev = args.prev ? readJson(args.prev, null) : null;
-const keyOf = (i) => `${i.source}|${i.page ?? ''}|${i.query ?? ''}`;
+const keyOf = (i) => `${i.source}|${i.page ?? ''}|${i.query ?? ''}${i.queries ? '|long' : ''}`;
 const seen = new Set(
-  prev ? [...(prev.snippet ?? []), ...(prev.nearPage1 ?? []), ...(prev.questions ?? [])].map(keyOf) : [],
+  prev
+    ? [...(prev.snippet ?? []), ...(prev.nearPage1 ?? []), ...(prev.questions ?? []), ...(prev.longQueries ?? [])].map(keyOf)
+    : [],
 );
 const mark = (list) => list.map((i) => ({ ...i, new: prev ? !seen.has(keyOf(i)) : false }));
 
@@ -243,10 +284,12 @@ const result = {
     snippet: 'Platz ≤ 10 · ≥ 10 Impr. · 0 Klicks',
     nearPage1: 'Platz 11–20 · ≥ 10 Impr.',
     questions: 'Frage-Anfrage · Platz ≤ 15 · keine passende FAQ',
+    longQueries: 'Suchen mit 8+ Wörtern · Platz ≤ 20 · je Seite',
   },
   snippet: mark(snippet),
   nearPage1: mark(nearPage1),
   questions: mark(questions),
+  longQueries: mark(longQueries),
   spam: {
     queries: spamRows.length,
     impressions: spamRows.reduce((n, r) => n + r.impressions, 0),
@@ -257,7 +300,8 @@ result.counts = {
   snippet: result.snippet.length,
   nearPage1: result.nearPage1.length,
   questions: result.questions.length,
-  new: [...result.snippet, ...result.nearPage1, ...result.questions].filter((i) => i.new).length,
+  longQueries: result.longQueries.length,
+  new: [...result.snippet, ...result.nearPage1, ...result.questions, ...result.longQueries].filter((i) => i.new).length,
   spam: result.spam.queries,
 };
 
@@ -265,5 +309,5 @@ mkdirSync(args.out, { recursive: true });
 writeFileSync(join(args.out, 'latest.json'), JSON.stringify(result, null, 1) + '\n');
 console.log(
   `Search actions: ${result.counts.snippet} snippet, ${result.counts.nearPage1} near page 1, ` +
-    `${result.counts.questions} questions, ${result.counts.new} new, ${result.counts.spam} spam queries`,
+    `${result.counts.questions} questions, ${result.counts.longQueries} pages with long queries, ${result.counts.new} new, ${result.counts.spam} spam queries`,
 );
