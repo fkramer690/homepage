@@ -109,12 +109,41 @@ corner of 12px legend squares (3px to 4px).
   corners of a header row inside a 1px frame), `--radius-pill`; circles use
   `50%`, square edges `0`.
 - **Shadows:** accent lines `--accent-top` (cyan), `--accent-top-dark`;
-  `--mark-frame` for a marked table cell; one lift on hover `--shadow-lift`; `--shadow-up` for the
+  `--mark-frame` for a marked table cell; the depth scale `--elev-1`,
+  `--elev-2`, `--elev-3`, `--elev-dark`, `--edge-light`, `--btn-depth`,
+  `--sheet-offset` (see "Depth: elevation and layers"); one lift on hover
+  `--shadow-lift` (= `--elev-2`); `--shadow-up` for the
   bottom contact bar; `--shadow-knob` for the play button; `--focus-glow` for
   focus and the "now" dot. Outline rings stay as `0 0 0 Npx var(--token)`.
 - `scripts/check-tokens.mjs` runs in `npm run build` and fails on a hex colour
   outside `:root`, a radius that is not a token, or a shadow that is not a token
   or an outline ring. Never weaken it.
+
+## Depth: elevation and layers (binding)
+
+Chosen 2026-11-17 (Fabian: variant A "Ebenen" plus B "Überlappung" without the
+frame behind the quote). Depth comes from fixed heights and overlapping layers,
+never from gloss, glow, colour gradients or reflections. All rules sit in the
+"Depth" block at the end of `src/styles/global.css`.
+
+- **Three heights, light from above.** White cards and boxes rest on
+  `--elev-1` with the soft border `--line-soft` instead of a plain 1px line;
+  a highlighted box (the "with" column of the comparison, the project panel)
+  sits on `--elev-2`; a card lying over a section edge (key figures) on
+  `--elev-3`. Higher means more important; never give every box the top height.
+- **On dark:** framed photos and the contact form get `--elev-dark` plus the
+  light top edge `--edge-light`. Filled buttons get `--btn-depth`.
+- **Header** is frosted glass (86 % anthracite, blur 14px). This is the only
+  place with `backdrop-filter`.
+- **Key figures over the head:** the dark head gets 64px more bottom padding,
+  `.proof` moves up by 64px and shows its list as a white card.
+- **Offset sheets:** framed photos in dark heads (`hero-photo`, `rc-portrait`,
+  `.service-hero .service-photo`) have a second, empty frame offset by 14px
+  (8px below 960px). The About portrait on the start page gets
+  `--sheet-offset`. The project panel and the masterclass list on the start
+  page show one or two stacked sheets below. Quotes get no frame behind them.
+- New white cards join the `--elev-1` selector list instead of getting their
+  own border or shadow.
 
 ## Page heads, key figures, links and cards (binding)
 
@@ -127,8 +156,10 @@ Chosen 2026-10-31 as part of the polished design pass.
   eyebrow naming the area, h1, lead, optional photo on the right
   (`service-head has-photo`). Reading and list pages (blog overview, articles,
   masterclass chapters, certifications, legal) keep the light head.
-- **Key figures** always sit as the grey band `.proof` directly below the dark
-  head (`proof-list`, `cols-4` for four figures), never inside the running text.
+- **Key figures** always sit as `.proof` directly below the dark head
+  (`proof-list`, `cols-4` for four figures), never inside the running text.
+  Since 2026-11-17 the figures lie as a white card (`--elev-3`) over the lower
+  edge of the dark head (see "Depth: elevation and layers").
 - **One link style for "next" links** (`.text-link`, `.card-more`, `.fa-link`):
   Sora, bold, `--fs-ui`, cyan-dark, text arrow "→". Links in running text stay
   underlined.
@@ -141,7 +172,8 @@ Chosen 2026-10-31 as part of the polished design pass (details package).
 
 - **One hover for linked cards** (`.card-link`, `.post-tile a`, `.post-card`,
   `.q-topic`, `.post-service`, `.video-card`; grouped rule in global.css): cyan
-  border, `--shadow-lift`, title in cyan-dark. Nothing moves or jumps. A new
+  border, `--shadow-lift`, title in cyan-dark, the card lifts by 2px (not with
+  reduced motion; changed 2026-11-17 with the depth pass). A new
   kind of linked card joins that rule instead of getting its own hover.
 - **Rows in a white box** (masterclass lists on start and overview) get the grey
   `--bg` background on hover; rows without a box only colour the title.

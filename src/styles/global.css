@@ -55,7 +55,17 @@
   --accent-top: inset 0 3px 0 var(--cyan);
   --accent-top-dark: inset 0 3px 0 var(--anthracite);
   --mark-frame: inset 0 0 0 2px var(--cyan); /* marked table cell */
-  --shadow-lift: 0 6px 20px rgba(35, 35, 37, 0.08);
+  /* Depth (chosen 2026-11-17, docs/layouts.md "Depth: elevation and layers"):
+     three heights with soft anthracite-tinted double shadows, light from above */
+  --elev-1: 0 1px 2px rgba(35, 35, 37, 0.05), 0 2px 6px -2px rgba(35, 35, 37, 0.06);   /* resting cards and boxes */
+  --elev-2: 0 1px 2px rgba(35, 35, 37, 0.05), 0 10px 28px -8px rgba(35, 35, 37, 0.16);  /* highlighted box, hovered card */
+  --elev-3: 0 2px 4px rgba(35, 35, 37, 0.06), 0 28px 56px -16px rgba(35, 35, 37, 0.26); /* card lying over a section edge */
+  --elev-dark: 0 2px 6px rgba(0, 0, 0, 0.25), 0 32px 64px -20px rgba(0, 0, 0, 0.65);   /* photo frame, form card on dark */
+  --edge-light: inset 0 1px 0 rgba(255, 255, 255, 0.07);   /* light top edge of a frame on dark */
+  --btn-depth: 0 1px 2px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  --sheet-offset: 14px 14px 0 -1px var(--bg), 14px 14px 0 0 var(--line); /* offset sheet behind a light photo */
+  --line-soft: rgba(35, 35, 37, 0.07);  /* border of an elevated white card */
+  --shadow-lift: var(--elev-2);
   --shadow-up: 0 -6px 18px rgba(0, 0, 0, 0.18);
   --shadow-knob: 0 2px 8px rgba(0, 0, 0, 0.35);
   --focus-glow: 0 0 0 3px rgba(27, 161, 226, 0.15);
@@ -2995,3 +3005,79 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   .cy-layout .cy-panel { margin-top: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .ar-seg.is-on { transform: none; } .cy-runner { display: none; } }
+
+/* ===== Depth: elevation and layers (chosen 2026-11-17, docs/layouts.md) =====
+   A: white cards rest on --elev-1 instead of a plain 1px line, highlighted boxes
+   on --elev-2, linked cards lift on hover; frosted-glass header; frames on dark
+   get --elev-dark and a light top edge. B: the key figures lie as a card over
+   the dark head, an offset sheet sits behind framed photos and the project /
+   masterclass boxes on the start page. */
+.site-header {
+  background: rgba(35, 35, 37, 0.86);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+.btn:not(.btn-ghost) { box-shadow: var(--btn-depth); }
+.card, .compare-col, .mc-home-list, .mc-overview-list, .rf-panel, .call-questions li, .about-facts li,
+.post-card, .post-tile a, .q-topic, .video-card {
+  border-color: var(--line-soft);
+  box-shadow: var(--elev-1);
+}
+.call-questions li { background: var(--white); }
+.rf-panel { box-shadow: var(--elev-2); }
+.compare-with { border-color: var(--cyan); box-shadow: var(--accent-top), var(--elev-2); }
+.role-quote { box-shadow: var(--elev-3); }
+.contact-form { box-shadow: var(--elev-dark), var(--edge-light); }
+.card-link, .post-tile a, .post-card, .q-topic, .post-service, .video-card {
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), transform var(--t-fast);
+}
+.card-link:hover, .post-tile a:hover, .post-card:hover, .q-topic:hover, .post-service:hover, .video-card:hover { transform: translateY(-2px); }
+
+/* Key figures as a card over the dark head */
+.dark:has(+ .proof), .dark:has(+ .service-index-body > .proof:first-child) { padding-bottom: 64px; }
+.dark + .service-index-body > .proof:first-child,
+.dark + .proof { position: relative; z-index: 2; margin-top: -64px; margin-bottom: 8px; background: transparent; border: 0; }
+.dark + .service-index-body > .proof:first-child .container > *,
+.dark + .proof .container > * { background: var(--white); border-radius: var(--radius); box-shadow: var(--elev-3); padding-left: 28px; padding-right: 28px; }
+
+/* Framed photos on dark: shadow plus an offset sheet behind */
+.hero-photo, .rc-portrait, .service-hero .service-photo { position: relative; isolation: isolate; box-shadow: var(--elev-dark), var(--edge-light); background: rgba(255, 255, 255, 0.04); }
+.hero-photo::before, .rc-portrait::before, .service-hero .service-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translate(14px, 14px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.02);
+  z-index: -1;
+  pointer-events: none;
+}
+.about-portrait { box-shadow: var(--sheet-offset); }
+@media (max-width: 960px) {
+  .hero-photo::before, .rc-portrait::before, .service-hero .service-photo::before { transform: translate(8px, 8px); }
+}
+
+/* Stacked sheets under the project panel and the masterclass list (start page) */
+.rf-panel, .mc-home-list { position: relative; isolation: isolate; }
+.rf-panel { overflow: visible; }
+.rf-panel .rf-photo { border-radius: var(--radius) var(--radius) 0 0; }
+.rf-panel::after, .mc-home-list::after, .mc-home-list::before {
+  content: '';
+  position: absolute;
+  bottom: -7px;
+  left: 14px;
+  right: 14px;
+  height: 7px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 0;
+  border-radius: 0 0 var(--radius) var(--radius);
+  z-index: -1;
+  pointer-events: none;
+}
+.mc-home-list::before { bottom: -13px; left: 28px; right: 28px; background: var(--bg); z-index: -2; }
+
+@media (prefers-reduced-motion: reduce) {
+  .card-link:hover, .post-tile a:hover, .post-card:hover, .q-topic:hover, .post-service:hover, .video-card:hover { transform: none; }
+}
