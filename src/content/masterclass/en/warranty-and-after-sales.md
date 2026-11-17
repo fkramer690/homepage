@@ -7,6 +7,7 @@ course: manufacturing-cloud
 translationKey: mfg-04
 chapter: 4
 pubDate: 2026-10-28
+updatedDate: 2026-11-17
 short: "Warranty and after-sales"
 summary: "Warranty claims, recalls and the installed base: when Manufacturing Cloud for Service is enough and where Field Service begins."
 takeaways:
@@ -123,6 +124,14 @@ At the customer's door. Manufacturing Cloud settles whether damage is covered, w
 Field technicians need Field Service licenses in either case. The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) also requires "at least one (1) Service Cloud user license" and forbids Dispatcher and Technician licenses for case management. Two add-ons appear here often: according to the [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/), Connected Assets costs $15,000 per org and month and Asset Service Lifecycle Management $75 per user and month, the latter with Field Service editions. Neither is needed for a clean installed base; whether telemetry pays off is covered in [predictive maintenance in Salesforce](/en/blog/predictive-maintenance-salesforce-data-needed/).
 
 The asset hierarchy, maintenance plans and service partners are the topic of the Field Service masterclass chapter [assets, maintenance, parts and partners](/en/masterclass/field-service/field-service-assets-maintenance-parts/). If you introduce both clouds, design the asset model once for both. Drawing that line is part of my [Salesforce architecture](/en/services/salesforce-architecture/) work.
+
+## Warranty expiry is a reason to offer a contract
+
+Every registered warranty has an end date. The [Asset Warranty](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetwarranty.htm) object holds the start and end of the warranty for each asset. A report of all machines whose warranty ends in the next 90 days and that have no active maintenance contract is an action list for sales. In its blog post [Field Service for Asset-Intensive Industries](https://www.salesforce.com/blog/field-service-asset-revenue/), Salesforce names expiring warranties as one of two natural first revenue triggers; the other is ageing equipment.
+
+In the dealer channel, decide first who follows up on this trigger. If the dealer sells the maintenance contract, the manufacturer shares the list with the dealer through the portal and only measures how many of these machines then have a contract. If the manufacturer sells the contract directly, it needs a rule for how the dealer is involved. Without that decision, the report goes unused.
+
+For a reference point on contracts signed at machine sale, see Bain's study [Winning in Industrial Service](https://www.bain.com/insights/winning-in-industrial-service/) (2015): the best European manufacturers had an average attach rate just above 20 percent, and many set targets above 50 percent. Measure your own figure before you set a target.
 
 ## In which order would I introduce after-sales?
 

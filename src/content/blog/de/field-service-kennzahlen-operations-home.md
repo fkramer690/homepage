@@ -2,13 +2,13 @@
 title: "Field Service Kennzahlen nach dem Go-live: Was messen?"
 description: "Welche Kennzahlen nach dem Go-live zeigen, ob Field Service wirkt, wie Sie die Erstlösungsquote definieren und was Operations Home und Dashboards beitragen."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-17
 lang: de
 slug: field-service-kennzahlen-operations-home
 translationKey: field-service-kpis-after-go-live
 topic: field-service
 categories: [field-service]
-tags: [Field Service, Kennzahlen, Erstlösungsquote, Operations Home, Einführung, Analytics]
+tags: [Field Service, Kennzahlen, Erstlösungsquote, Operations Home, Einführung, Attach Rate]
 takeaways:
   - "Ich messe zusätzlich, wie oft Disponenten die Vorschläge der Engine vor der Freigabe ändern. Das zeigt, ob Datenqualität und Scheduling Policy passen."
   - "Das Salesforce-Dashboard berechnet die Erstlösungsquote aus dem Terminstatus. Eine auf Folgeeinsätzen beruhende Definition braucht eine eigene Berechnung."
@@ -89,6 +89,20 @@ Angenommen ist ein Komponentenhersteller mit 90 Technikern in drei Regionen, SAP
 **Region eins, drei Monate nach dem Go-live.** 2,4 Einsätze pro Tag, 33 Prozent Fahrzeit, 88 Prozent eingehaltene Reaktionszeiten. Die Erstlösungsquote liegt weiter bei 72 Prozent. Die Disponenten haben im ersten Monat 41 Prozent der Vorschläge geändert, im dritten 24 Prozent, meist wegen der Zugangszeiten beim Kunden.
 
 **Die Deutung.** Die Terminplanung funktioniert, also verbessern sich Einsätze und Fahrzeit. Die Erstlösungsquote bewegt sich nicht, weil Techniker weiter ohne das passende Teil ankommen: Das Fahrzeuglager ist noch nicht in Salesforce. Vor der zweiten Welle bildet das Team die Fahrzeuglager als mobile Lagerorte im System ab, wie in [Ersatzteile zwischen ERP und Salesforce](/blog/salesforce-field-service-ersatzteile-erp/) beschrieben, und pflegt Besuchszeiten für die Accounts, bei denen die meisten Änderungen entstehen.
+
+## Deckungsbeitrag und Attach Rate zeigen, ob sich der Service rechnet
+
+Die sechs Kennzahlen oben messen Produktivität. Ob die installierte Basis Serviceumsatz erzeugt, zeigen sie nicht. Dafür ergänze ich drei kaufmännische Kennzahlen, sobald die Prozesse der ersten Welle stabil sind:
+
+| Kennzahl | Wie ich sie definiere | Woher die Zahl kommt |
+|---|---|---|
+| Attach Rate | Anteil der neu installierten Maschinen, für die innerhalb von 90 Tagen nach Installation ein Wartungsvertrag abgeschlossen wurde | Installationsdatum am Asset, Vertragsposition (Contract Line Item) mit Bezug zum Asset |
+| Vertragsabdeckung | Anteil der aktiven Assets mit gültigem Vertrag oder Entitlement, getrennt nach Baureihe | Asset, Entitlement, Laufzeit der Vertragsposition |
+| Deckungsbeitrag pro Vertrag | Vertragserlös minus direkt zurechenbare Arbeits-, Reise- und Teilekosten für die Einsätze an den Assets des Vertrags, pro Jahr | Erlöse, Kostensätze und Rechnungen aus dem ERP, Arbeitszeiten und verbrauchte Teile (Product Consumed) aus Field Service |
+
+Die ersten beiden Zahlen lassen sich aus Salesforce-Daten berechnen, sofern jedes Asset ein Installationsdatum hat und Verträge auf Asset-Ebene gepflegt werden. Für den Deckungsbeitrag reicht das nicht: Verrechnungssätze, Teilekosten und Rechnungen liegen in der Regel im ERP. Ich würde den Deckungsbeitrag deshalb in dem System berechnen, in dem die Kosten geführt werden, meist im Controlling des ERP. Salesforce enthält dafür Arbeitsaufträge, Zeitbuchungen und verbrauchte Teile pro Asset. Wer Data 360 bereits für Field Service Intelligence nutzt, kann die Kostensätze auch dort zusammenführen.
+
+Zum Vergleich: In der Studie [Winning in Industrial Service](https://www.bain.com/de/insights/winning-in-industrial-service/) von Bain (2015, 45 europäische Hersteller) lag die Attach Rate der besten Unternehmen im Mittel knapp über 20 Prozent, und viele setzten sich Ziele über 50 Prozent. [BCG](https://www.bcg.com/publications/2025/aftermarket-services-drive-growth-for-industrial-manufacturers) berichtete 2025, dass führende Hersteller beim Maschinenkauf 31 Prozent mehr Kunden für einen Wartungsvertrag gewinnen als der Durchschnitt. Diese Werte helfen bei der Einordnung. Das Ziel leiten Sie aus Ihrem eigenen Ausgangswert ab. Wie Wartungsverträge in Revenue Cloud zu wiederkehrendem Umsatz werden, beschreibe ich in [Wartungsverträge wiederkehrend abrechnen](/blog/wartungsvertraege-wiederkehrend-abrechnen/).
 
 ## Wem gehören die Zahlen nach dem Go-live?
 

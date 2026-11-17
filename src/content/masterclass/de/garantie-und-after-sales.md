@@ -7,6 +7,7 @@ course: manufacturing-cloud
 translationKey: mfg-04
 chapter: 4
 pubDate: 2026-10-28
+updatedDate: 2026-11-17
 short: "Garantie und After-Sales"
 summary: "Garantieansprüche, Rückrufaktionen und installierte Basis: wann Manufacturing Cloud for Service reicht und wo Field Service beginnt."
 takeaways:
@@ -123,6 +124,14 @@ An der Tür des Kunden. Manufacturing Cloud klärt, ob ein Schaden gedeckt ist, 
 Servicetechniker brauchen in jedem Fall Field-Service-Lizenzen. Die [Preisseite von Field Service](https://www.salesforce.com/service/field-service-management/pricing/) verlangt außerdem „at least one (1) Service Cloud user license“ und schließt Dispatcher- und Technician-Lizenzen für Case-Bearbeitung aus. Zwei Zusatzprodukte tauchen hier oft auf: Laut [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) kostet Connected Assets 15.000 US-Dollar pro Org und Monat, Asset Service Lifecycle Management 75 US-Dollar pro Nutzer und Monat, Letzteres zusammen mit den Field-Service-Editionen. Für eine saubere installierte Basis brauchen Sie keines davon; ob sich Telemetrie lohnt, behandelt [Predictive Maintenance in Salesforce](/blog/predictive-maintenance-salesforce-datenbasis/).
 
 Asset-Hierarchie, Wartungspläne und Servicepartner sind Thema des Kapitels [Assets, Wartung, Teile und Partner](/masterclass/field-service/field-service-assets-wartung-teile/) der Field-Service-Masterclass. Wenn Sie beide Clouds einführen, entwerfen Sie das Asset-Modell einmal für beide. Diese Grenze zu ziehen, gehört zu meiner Arbeit an der [Salesforce-Architektur](/leistungen/salesforce-architektur/).
+
+## Das Garantieende ist ein Anlass für ein Vertragsangebot
+
+Jede registrierte Garantie hat ein Enddatum. Das Objekt [Asset Warranty](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetwarranty.htm) hält Beginn und Ende der Garantie pro Asset fest. Ein Bericht über alle Maschinen, deren Garantie in den nächsten 90 Tagen endet und die keinen aktiven Wartungsvertrag haben, ist eine Arbeitsliste für den Vertrieb. Salesforce nennt auslaufende Garantien im Blogbeitrag [Field Service for Asset-Intensive Industries](https://www.salesforce.com/blog/field-service-asset-revenue/) als einen von zwei naheliegenden ersten Umsatzanlässen; der andere sind alternde Maschinen.
+
+Im Händlerkanal muss vorher geklärt sein, wer diesen Verkaufsanlass bearbeitet. Verkauft der Händler den Wartungsvertrag, stellt der Hersteller ihm die Liste über das Portal bereit und misst nur, wie viele dieser Maschinen anschließend einen Vertrag haben. Verkauft der Hersteller selbst, braucht er eine Regel, wie der Händler eingebunden wird. Ohne diese Klärung bleibt der Bericht ungenutzt.
+
+Einen Anhaltspunkt für Vertragsabschlüsse beim Maschinenverkauf liefert ein Vergleich: In der Studie [Winning in Industrial Service](https://www.bain.com/de/insights/winning-in-industrial-service/) von Bain (2015) lag die Attach Rate der besten europäischen Hersteller im Mittel knapp über 20 Prozent, und viele setzten sich Ziele über 50 Prozent. Messen Sie Ihren eigenen Wert, bevor Sie ein Ziel festlegen.
 
 ## In welcher Reihenfolge würde ich After-Sales einführen?
 
