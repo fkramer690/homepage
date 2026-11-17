@@ -88,5 +88,17 @@
   "inIndex": 444,
   "crawledPages": 149,
   "crawlErrors": 0
+ },
+ {
+  "day": "2026-11-14",
+  "inIndex": 445,
+  "crawledPages": 109,
+  "crawlErrors": 0
+ },
+ {
+  "day": "2026-11-15",
+  "inIndex": 452,
+  "crawledPages": 144,
+  "crawlErrors": 0
  }
 ]

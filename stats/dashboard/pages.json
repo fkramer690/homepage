@@ -25,6 +25,11 @@
   "visits": 50
  },
  {
+  "page": "/en/blog/ai-native-salesforce-delivery-process/",
+  "pageviews": 70,
+  "visits": 50
+ },
+ {
   "page": "/en/blog/salesforce-forward-deployed-engineer/",
   "pageviews": 60,
   "visits": 60
@@ -38,11 +43,6 @@
   "page": "/en/blog/",
   "pageviews": 50,
   "visits": 20
- },
- {
-  "page": "/masterclass/",
-  "pageviews": 40,
-  "visits": 10
  },
  {
   "page": "/leistungen/salesforce-architektur/",
@@ -65,9 +65,9 @@
   "visits": 10
  },
  {
-  "page": "/en/blog/ai-native-salesforce-delivery-process/",
+  "page": "/masterclass/",
   "pageviews": 40,
-  "visits": 20
+  "visits": 10
  },
  {
   "page": "/en/services/change-management-salesforce/",
@@ -90,12 +90,12 @@
   "visits": 30
  },
  {
-  "page": "/en/blog/ai-coding-tools-works-council-gdpr/",
+  "page": "/en/partners/juliane-winterscheid/",
   "pageviews": 20,
   "visits": 0
  },
  {
-  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
+  "page": "/og/en/botsitting-salesforce-projects-tools.png",
   "pageviews": 20,
   "visits": 20
  }
