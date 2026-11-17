@@ -81,6 +81,8 @@ Not without changes. Salesforce points out that LWCs for service documents need 
 
 ![Five limits of the Salesforce Document Builder and how to close them. Template choice: the template is only a text field that points to a Lightning page, solved with a screen flow or quick action. File name: cannot be defined, an asynchronous flow renames the file shortly after creation. Email: no sending out of the box, rebuilt with a flow. Defaults: language preset by flow on the work order, template on work order or service appointment. Styling: custom LWCs as building blocks, for example a divider or a related list with long text fields and report labels such as Technician instead of Created By. Custom components read data through GraphQL, so they work offline and show correctly in the mobile preview.](../../../assets/blog/document-builder-workarounds-en.png)
 
+A shorter version from the technician's side is on LinkedIn: [Digital service reports in Salesforce: the small gaps that decide whether technicians use them](https://www.linkedin.com/pulse/digital-service-reports-salesforce-small-gaps-decide-whether-kramer-xy4ge/).
+
 ## Do the workarounds work offline?
 
 The main argument for the Document Builder is offline creation at the customer's site, so the workarounds must not break that capability. In my projects they did not. Custom components read their data through GraphQL (the query interface that the Field Service mobile app uses for offline data) and do not use Apex, because Apex returns an empty result offline. This means primed data is available on the device without a connection. The preview in the mobile app shows the information correctly, including the custom related list and the overridden labels.

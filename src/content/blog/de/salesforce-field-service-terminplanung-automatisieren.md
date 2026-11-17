@@ -71,6 +71,8 @@ Bei der Prüfung hilft ein fester Rhythmus. Trailhead empfiehlt, morgens die Vor
 
 Das Modell hat auch Kosten. Jeder Disponent braucht eine Dispatcher-Lizenz, und laut Preisliste kostet sie so viel wie eine Technician-Lizenz. Die Zahlen stehen in Teil 1. Wer den Disponenten dauerhaft jeden Termin von Hand prüfen lässt, zahlt für eine Automatik, die er nicht nutzt.
 
+Wie viel Vertrauen in die automatische Planung realistisch ist, beschreibe ich auf Englisch in einem Artikel auf LinkedIn: [The system plans, the dispatcher releases: how much trust in automated scheduling is realistic](https://www.linkedin.com/pulse/system-plans-dispatcher-releases-how-much-trust-automated-kramer-avkwe/).
+
 ## Wann kann der Dispatch automatisch laufen?
 
 Field Service kann Termine auch automatisch freigeben. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=service.pfs_dispatching_appointments.htm&language=en_US&type=5) setzt ein geplanter Job Termine von Scheduled auf Dispatched. Mit Drip Feed hält Field Service dabei nur eine festgelegte Zahl von Terminen in der Warteschlange jedes Technikers, bei einem Wert von zwei also zwei Termine. Ist ein Termin erledigt, rückt der nächste nach. Der Rest des Plans bleibt beweglich.

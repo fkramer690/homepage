@@ -127,6 +127,8 @@ besser: Für Lizenzverhandlung und Zielarchitektur: Aufgaben der Nutzer und Date
 
 Aus meiner Pre-Sales-Arbeit mit Salesforce weiß ich, dass standardmäßig volle Lizenzen angeboten werden, auch für Nutzer, die nur lesen oder Datensätze freigeben. Bei großer Nutzerbasis sind das schnell sechsstellige Beträge pro Jahr. Ungenutzte Plätze zeigt der Health Check an; ob ein aktiver Nutzer eine günstigere Lizenzart bräuchte, zeigt erst der Blick auf seine Aufgaben, wie ich ihn bei [Make-or-Buy und Lizenzen](/leistungen/make-or-buy-lizenzen/) mache. Was eine KI-gestützte Analyse vor einem Partnerwechsel leisten muss, beschreibe ich in [KI-Org-Analyse: technische Schulden vor dem Partnerwechsel](/blog/ki-org-analyse-technische-schulden/).
 
+Eine kürzere Fassung für CIOs steht auf Englisch als Artikel auf LinkedIn: [MeshMesh wants to work in your Salesforce org](https://www.linkedin.com/pulse/meshmesh-wants-work-your-salesforce-org-here-what-i-would-kramer-0u5fe/).
+
 ## Erster Schritt: MeshMesh bis Ende Januar in einer Developer-Sandbox testen
 
 Die Beta läuft voraussichtlich bis zum 31. Januar 2027. Das reicht für einen kleinen, sauberen Test, der Ihnen vor der allgemeinen Verfügbarkeit eine eigene Grundlage gibt. Die Dauer der Schritte ist mein Vorschlag für eine Org mittlerer Größe.
