@@ -103,6 +103,8 @@ Ich beginne mit vier Zahlen aus dem eigenen Außendienst, noch bevor es um das P
 
 Diese Zahlen lassen sich meist dem ERP oder der bestehenden Einsatzplanung entnehmen. Sind sie unbekannt, ist das schon ein Ergebnis: Dann fehlt die Grundlage für jeden Business Case, egal mit welchem Produkt.
 
+Warum die Zahl der Einsätze pro Tag mehr über den Business Case sagt als die Größe des Teams, beschreibe ich auf Englisch in einem Artikel auf LinkedIn: [Field service software for manufacturers: count the appointments before you count the technicians](https://www.linkedin.com/pulse/field-service-software-manufacturers-count-before-you-fabian-kramer-d9wle/).
+
 Der Business Case selbst braucht beide Seiten. Auf der Nutzenseite stehen Kosten eines Fehleinsatzes, Wiederholungsbesuche, Aufwand der Disposition, Überstunden, verfehlte Reaktionszeiten mit ihren Vertragsfolgen und der Aufwand für Serviceberichte. Auf der Kostenseite stehen Lizenzen, Umsetzung, Integration, Betrieb und bestehende Systeme, die abgelöst werden oder bleiben. Rechnen Sie über die erwartete Nutzungsdauer, nicht nur für das erste Jahr.
 
 Danach folgt die Frage nach den Daten. Field Service plant nur mit gepflegten Anlagen, Standorten, Qualifikationen und Verfügbarkeiten. Ein Techniker, dessen Qualifikationen nirgends hinterlegt sind, wird von der Engine falsch eingeplant. Welche Daten das genau sind, beschreibe ich in [Teil 2 dieser Serie](/blog/salesforce-field-service-stammdaten/).
