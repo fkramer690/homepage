@@ -20,8 +20,8 @@
  {
   "query": "manufacturing cloud",
   "clicks": 0,
-  "impressions": 44,
-  "position": 47.5
+  "impressions": 47,
+  "position": 46.7
  },
  {
   "query": "salesforce commerce product data",
@@ -42,6 +42,12 @@
   "position": 84.7
  },
  {
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "clicks": 0,
+  "impressions": 34,
+  "position": 6.5
+ },
+ {
   "query": "sfdx-hardis",
   "clicks": 1,
   "impressions": 33,
@@ -54,16 +60,16 @@
   "position": 89.1
  },
  {
-  "query": "what makes a salesforce devops platform enterprise-ready?",
-  "clicks": 0,
-  "impressions": 32,
-  "position": 6.3
- },
- {
   "query": "b2b portal",
   "clicks": 0,
   "impressions": 30,
   "position": 73.1
+ },
+ {
+  "query": "what does a typical salesforce devops rollout look like?",
+  "clicks": 0,
+  "impressions": 30,
+  "position": 6.2
  },
  {
   "query": "field service pricing",
@@ -78,10 +84,16 @@
   "position": 75.9
  },
  {
-  "query": "what does a typical salesforce devops rollout look like?",
+  "query": "click field service management software",
   "clicks": 0,
   "impressions": 25,
-  "position": 5.5
+  "position": 72.6
+ },
+ {
+  "query": "field service application software",
+  "clicks": 0,
+  "impressions": 25,
+  "position": 59.8
  },
  {
   "query": "cad vertriebsdaten",
@@ -96,22 +108,10 @@
   "position": 80.5
  },
  {
-  "query": "click field service management software",
-  "clicks": 0,
-  "impressions": 23,
-  "position": 75
- },
- {
   "query": "nearshore teamerweiterung",
   "clicks": 0,
   "impressions": 21,
   "position": 49.3
- },
- {
-  "query": "field service application software",
-  "clicks": 0,
-  "impressions": 20,
-  "position": 61.8
  },
  {
   "query": "kommunikationsplan",
@@ -138,6 +138,12 @@
   "position": 90
  },
  {
+  "query": "field service management cloud",
+  "clicks": 0,
+  "impressions": 18,
+  "position": 80.7
+ },
+ {
   "query": "is salesforce sales planning included with agentforce sales?",
   "clicks": 0,
   "impressions": 18,
@@ -150,10 +156,10 @@
   "position": 63.5
  },
  {
-  "query": "field service management cloud",
+  "query": "erp field service",
   "clicks": 0,
   "impressions": 17,
-  "position": 83.1
+  "position": 76.4
  },
  {
   "query": "fertigung salesforce",
@@ -168,16 +174,16 @@
   "position": 81.3
  },
  {
-  "query": "erp field service",
-  "clicks": 0,
-  "impressions": 15,
-  "position": 79
- },
- {
   "query": "nearshore teams",
   "clicks": 0,
   "impressions": 15,
   "position": 49.2
+ },
+ {
+  "query": "service pro vs ptc servicemax",
+  "clicks": 0,
+  "impressions": 15,
+  "position": 8.5
  },
  {
   "query": "stakeholder analysis matrix",
@@ -222,10 +228,10 @@
   "position": 73.8
  },
  {
-  "query": "service pro vs ptc servicemax",
+  "query": "wechsel von cpq zu revenue cloud",
   "clicks": 0,
   "impressions": 12,
-  "position": 8.7
+  "position": 7.8
  },
  {
   "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
@@ -256,12 +262,6 @@
   "clicks": 0,
   "impressions": 11,
   "position": 71.8
- },
- {
-  "query": "wechsel von cpq zu revenue cloud",
-  "clicks": 0,
-  "impressions": 11,
-  "position": 8
  },
  {
   "query": "b2b commerce platform with negotiable quotes",
@@ -318,10 +318,40 @@
   "position": 62.3
  },
  {
+  "query": "change management salesforce projekt",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 15
+ },
+ {
+  "query": "devops release management",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 63.3
+ },
+ {
+  "query": "erp field service management",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 90.3
+ },
+ {
+  "query": "field service erp",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 70.9
+ },
+ {
   "query": "field service scheduling dispatch software",
   "clicks": 0,
   "impressions": 9,
   "position": 73
+ },
+ {
+  "query": "field service system",
+  "clicks": 0,
+  "impressions": 9,
+  "position": 74.7
  },
  {
   "query": "revenue cloud advanced vs revenue cloud",
@@ -342,10 +372,10 @@
   "position": 9.1
  },
  {
-  "query": "change management salesforce projekt",
+  "query": "click field service edge",
   "clicks": 0,
   "impressions": 8,
-  "position": 16.1
+  "position": 74.1
  },
  {
   "query": "cpq revenue cloud integration",
@@ -358,24 +388,6 @@
   "clicks": 0,
   "impressions": 8,
   "position": 37
- },
- {
-  "query": "devops release management",
-  "clicks": 0,
-  "impressions": 8,
-  "position": 66.4
- },
- {
-  "query": "erp field service management",
-  "clicks": 0,
-  "impressions": 8,
-  "position": 94.1
- },
- {
-  "query": "field service system",
-  "clicks": 0,
-  "impressions": 8,
-  "position": 78.4
  },
  {
   "query": "field services software",
@@ -396,6 +408,12 @@
   "position": 58.3
  },
  {
+  "query": "vertragsmanagement mit salesforce",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 9.3
+ },
+ {
   "query": "(eingesammelt or \"sichert sich\" or abgeschlossen or eingeworben) (seed or \"pre-seed\" or \"serie a\" or \"seed-finanzierung\") startup millionen",
   "clicks": 0,
   "impressions": 7,
@@ -408,16 +426,16 @@
   "position": 55
  },
  {
-  "query": "click field service edge",
+  "query": "clicksoftware field service",
   "clicks": 0,
   "impressions": 7,
-  "position": 75.7
+  "position": 85.6
  },
  {
-  "query": "field service erp",
+  "query": "field service management application",
   "clicks": 0,
   "impressions": 7,
-  "position": 74.6
+  "position": 67.1
  },
  {
   "query": "salesforce manufacturing cloud partner",
@@ -456,12 +474,6 @@
   "position": 65.4
  },
  {
-  "query": "vertragsmanagement mit salesforce",
-  "clicks": 0,
-  "impressions": 7,
-  "position": 9.4
- },
- {
   "query": "agent context engine salesforce",
   "clicks": 0,
   "impressions": 6,
@@ -474,10 +486,10 @@
   "position": 32.3
  },
  {
-  "query": "clicksoftware field service",
+  "query": "cloud field service management",
   "clicks": 0,
   "impressions": 6,
-  "position": 93.2
+  "position": 78
  },
  {
   "query": "field service management erp",
@@ -490,6 +502,12 @@
   "clicks": 0,
   "impressions": 6,
   "position": 19.5
+ },
+ {
+  "query": "predictive maintenance salesforce",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 13.7
  },
  {
   "query": "produktdaten api",
@@ -552,10 +570,10 @@
   "position": 16.6
  },
  {
-  "query": "cloud field service management",
+  "query": "click field service",
   "clicks": 0,
   "impressions": 5,
-  "position": 85.2
+  "position": 77
  },
  {
   "query": "cpq revenue cloud migration",
@@ -576,16 +594,16 @@
   "position": 72.4
  },
  {
-  "query": "field service management application",
-  "clicks": 0,
-  "impressions": 5,
-  "position": 69.8
- },
- {
   "query": "field service mobile flow limitations",
   "clicks": 0,
   "impressions": 5,
   "position": 4.2
+ },
+ {
+  "query": "field service planning",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 91.4
  },
  {
   "query": "kommunikationsplan vorlage",
@@ -598,12 +616,6 @@
   "clicks": 0,
   "impressions": 5,
   "position": 4
- },
- {
-  "query": "predictive maintenance salesforce",
-  "clicks": 0,
-  "impressions": 5,
-  "position": 13.8
  },
  {
   "query": "produktstammdaten handel",
@@ -690,12 +702,6 @@
   "position": 62.3
  },
  {
-  "query": "click field service",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 89
- },
- {
   "query": "click field service management",
   "clicks": 0,
   "impressions": 4,
@@ -724,6 +730,12 @@
   "clicks": 0,
   "impressions": 4,
   "position": 61.5
+ },
+ {
+  "query": "fauser ag software",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 44.8
  },
  {
   "query": "field service mobile solutions",
@@ -936,12 +948,6 @@
   "position": 88
  },
  {
-  "query": "field service planning",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 97
- },
- {
   "query": "field service scheduling system",
   "clicks": 0,
   "impressions": 3,
@@ -952,6 +958,12 @@
   "clicks": 0,
   "impressions": 3,
   "position": 8
+ },
+ {
+  "query": "how does a new team take over an unfinished salesforce development project?",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 6
  },
  {
   "query": "manufacturing cloud implementeren",
@@ -1012,6 +1024,12 @@
   "clicks": 0,
   "impressions": 3,
   "position": 17.3
+ },
+ {
+  "query": "salesforce release dates",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 25.7
  },
  {
   "query": "servicemax integration with salesforce",
@@ -1200,6 +1218,12 @@
   "position": 56
  },
  {
+  "query": "field service data",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 23
+ },
+ {
   "query": "field service lightning scheduling",
   "clicks": 0,
   "impressions": 2,
@@ -1234,12 +1258,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 36
- },
- {
-  "query": "how does a new team take over an unfinished salesforce development project?",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 2
  },
  {
   "query": "how does gearset position its agent and ai solutions?",
@@ -1314,6 +1332,12 @@
   "position": 13
  },
  {
+  "query": "salesforce architektur salzburg",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 34.5
+ },
+ {
   "query": "salesforce b2b commerce sap",
   "clicks": 0,
   "impressions": 2,
@@ -1362,12 +1386,6 @@
   "position": 32
  },
  {
-  "query": "salesforce release dates",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 28.5
- },
- {
   "query": "salesforce revenue cloud usage-based billing software",
   "clicks": 0,
   "impressions": 2,
@@ -1402,6 +1420,12 @@
   "clicks": 0,
   "impressions": 2,
   "position": 44.5
+ },
+ {
+  "query": "sx.e salesforce warranty claim handoff",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
  },
  {
   "query": "vendor forecast",
@@ -1626,6 +1650,12 @@
   "position": 8
  },
  {
+  "query": "can a new salesforce partner take over an existing implementation?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 20
+ },
+ {
   "query": "casey help agent",
   "clicks": 0,
   "impressions": 1,
@@ -1764,12 +1794,6 @@
   "position": 50
  },
  {
-  "query": "field service data",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 24
- },
- {
   "query": "field service dispatcher console",
   "clicks": 0,
   "impressions": 1,
@@ -1786,6 +1810,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 98
+ },
+ {
+  "query": "field service management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 56
  },
  {
   "query": "field service management service",
@@ -1840,6 +1870,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 49
+ },
+ {
+  "query": "field services",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 58
  },
  {
   "query": "field services management app",
@@ -2034,6 +2070,12 @@
   "position": 8
  },
  {
+  "query": "ist salesforce ein erp system",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 45
+ },
+ {
   "query": "juliane winterscheid",
   "clicks": 0,
   "impressions": 1,
@@ -2136,6 +2178,12 @@
   "position": 44
  },
  {
+  "query": "release management devops",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 71
+ },
+ {
   "query": "sales portal",
   "clicks": 0,
   "impressions": 1,
@@ -2166,6 +2214,12 @@
   "position": 33
  },
  {
+  "query": "salesforce and erp integration",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 77
+ },
+ {
   "query": "salesforce architektur bonn",
   "clicks": 0,
   "impressions": 1,
@@ -2182,12 +2236,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 17
- },
- {
-  "query": "salesforce architektur salzburg",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 49
  },
  {
   "query": "salesforce billing",
@@ -2230,6 +2278,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 4
+ },
+ {
+  "query": "salesforce custom development nearshore",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 87
  },
  {
   "query": "salesforce devops for finance",
@@ -2340,6 +2394,12 @@
   "position": 38
  },
  {
+  "query": "salesforce releases in a year",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
+ },
+ {
   "query": "salesforce service max",
   "clicks": 0,
   "impressions": 1,
@@ -2364,6 +2424,12 @@
   "position": 55
  },
  {
+  "query": "salesforce vertriebsprozess",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 23
+ },
+ {
   "query": "salesforce warranty management",
   "clicks": 0,
   "impressions": 1,
@@ -2380,6 +2446,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 10
+ },
+ {
+  "query": "salesforceiq integration user",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 53
  },
  {
   "query": "sap and salesforce data duplication",
@@ -2464,12 +2536,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 18
- },
- {
-  "query": "sx.e salesforce warranty claim handoff",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
  },
  {
   "query": "top field-service-management-software-anbieter für unternehmen mit 51 bis 499 mitarbeitenden",
@@ -2596,6 +2662,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 8
+ },
+ {
+  "query": "which client",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  },
  {
   "query": "wie verlieren wir pipeline-daten, wenn vertriebsteams zwischen ihrem crm und salesforce wechseln?",

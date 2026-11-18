@@ -1,16 +1,17 @@
 {
- "generatedAt": "2026-11-17T05:02:48.206Z",
+ "generatedAt": "2026-11-18T05:03:54.139Z",
  "window": {
   "google": {
-   "from": "2026-10-20",
-   "to": "2026-11-16"
+   "from": "2026-10-21",
+   "to": "2026-11-17"
   },
   "bingWeek": "2026-11-13"
  },
  "rules": {
   "snippet": "Platz ≤ 10 · ≥ 10 Impr. · 0 Klicks",
   "nearPage1": "Platz 11–20 · ≥ 10 Impr.",
-  "questions": "Frage-Anfrage · Platz ≤ 15 · keine passende FAQ"
+  "questions": "Frage-Anfrage · Platz ≤ 15 · keine passende FAQ",
+  "longQueries": "Suchen mit 8+ Wörtern · Platz ≤ 20 · je Seite"
  },
  "snippet": [
   {
@@ -28,51 +29,9 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
-   "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
-   "impressions": 34,
-   "clicks": 0,
-   "position": 6.5,
-   "title": "Why DevOps decides Salesforce enterprise projects",
-   "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
-   "topQueries": [
-    {
-     "query": "what makes a salesforce devops platform enterprise-ready?",
-     "impressions": 32,
-     "position": 6.3
-    },
-    {
-     "query": "salesforce devops for finance",
-     "impressions": 1,
-     "position": 14
-    },
-    {
-     "query": "is salesforce devops center enough for enterprise teams?",
-     "impressions": 1,
-     "position": 4
-    }
-   ],
-   "hint": "Antwort auf „what makes a salesforce devops platform enterprise-ready?“ in Description und ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/prompt-builder-or-agentforce-agent/",
-   "path": "/en/blog/prompt-builder-or-agentforce-agent/",
-   "impressions": 34,
-   "clicks": 0,
-   "position": 9.7,
-   "title": "Prompt Builder vs Agentforce agent: which one, what it costs",
-   "file": "src/content/blog/en/prompt-builder-or-agentforce-agent.md",
-   "topQueries": [],
-   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
    "path": "/en/blog/sfdx-hardis-open-source-salesforce-devops/",
-   "impressions": 33,
+   "impressions": 38,
    "clicks": 0,
    "position": 7,
    "title": "sfdx-hardis: free open-source Salesforce DevOps toolkit",
@@ -99,11 +58,53 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+   "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
+   "impressions": 37,
+   "clicks": 0,
+   "position": 6.6,
+   "title": "Why DevOps decides Salesforce enterprise projects",
+   "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
+   "topQueries": [
+    {
+     "query": "what makes a salesforce devops platform enterprise-ready?",
+     "impressions": 34,
+     "position": 6.5
+    },
+    {
+     "query": "is salesforce devops center enough for enterprise teams?",
+     "impressions": 2,
+     "position": 4.5
+    },
+    {
+     "query": "salesforce devops for finance",
+     "impressions": 1,
+     "position": 14
+    }
+   ],
+   "hint": "Antwort auf „what makes a salesforce devops platform enterprise-ready?“ in Description und ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/prompt-builder-or-agentforce-agent/",
+   "path": "/en/blog/prompt-builder-or-agentforce-agent/",
+   "impressions": 34,
+   "clicks": 0,
+   "position": 9.7,
+   "title": "Prompt Builder vs Agentforce agent: which one, what it costs",
+   "file": "src/content/blog/en/prompt-builder-or-agentforce-agent.md",
+   "topQueries": [],
+   "hint": "Title und Description schärfen, Antwort in den ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/",
    "path": "/en/blog/",
-   "impressions": 27,
+   "impressions": 32,
    "clicks": 0,
-   "position": 8.7,
+   "position": 9.5,
    "title": null,
    "file": null,
    "topQueries": [
@@ -118,11 +119,30 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+   "path": "/en/masterclass/devops-release-management/rollout-roadmap/",
+   "impressions": 31,
+   "clicks": 0,
+   "position": 6.6,
+   "title": "Salesforce DevOps rollout: roadmap and metrics",
+   "file": "src/content/masterclass/en/rollout-roadmap.md",
+   "topQueries": [
+    {
+     "query": "what does a typical salesforce devops rollout look like?",
+     "impressions": 30,
+     "position": 6.2
+    }
+   ],
+   "hint": "Antwort auf „what does a typical salesforce devops rollout look like?“ in Description und ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
    "path": "/en/blog/servicemax-vs-salesforce-field-service/",
-   "impressions": 26,
+   "impressions": 29,
    "clicks": 0,
-   "position": 8.8,
+   "position": 8.4,
    "title": "ServiceMax vs Salesforce Field Service: part of Salesforce?",
    "file": "src/content/blog/en/servicemax-vs-salesforce-field-service.md",
    "topQueries": [
@@ -143,25 +163,6 @@
     }
    ],
    "hint": "Antwort auf „servicemax“ in Description und ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
-   "path": "/en/masterclass/devops-release-management/rollout-roadmap/",
-   "impressions": 25,
-   "clicks": 0,
-   "position": 6.3,
-   "title": "Salesforce DevOps rollout: roadmap and metrics",
-   "file": "src/content/masterclass/en/rollout-roadmap.md",
-   "topQueries": [
-    {
-     "query": "what does a typical salesforce devops rollout look like?",
-     "impressions": 24,
-     "position": 5.7
-    }
-   ],
-   "hint": "Antwort auf „what does a typical salesforce devops rollout look like?“ in Description und ersten Satz",
    "new": false
   },
   {
@@ -200,13 +201,32 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
    "path": "/en/blog/flex-credits-agentforce-cost-per-action/",
-   "impressions": 21,
+   "impressions": 22,
    "clicks": 0,
-   "position": 7.9,
+   "position": 8,
    "title": "Agentforce pricing 2026: $0.10 per action, full cost example",
    "file": "src/content/blog/en/flex-credits-agentforce-cost-per-action.md",
    "topQueries": [],
    "hint": "Title und Description schärfen, Antwort in den ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
+   "path": "/en/blog/field-service-mobile-flow-limitations/",
+   "impressions": 21,
+   "clicks": 0,
+   "position": 7.1,
+   "title": "Field Service mobile flow limitations: Winter '27 update",
+   "file": "src/content/blog/en/field-service-mobile-flow-limitations.md",
+   "topQueries": [
+    {
+     "query": "field service mobile flow limitations",
+     "impressions": 5,
+     "position": 4.2
+    }
+   ],
+   "hint": "Antwort auf „field service mobile flow limitations“ in Description und ersten Satz",
    "new": false
   },
   {
@@ -220,25 +240,6 @@
    "file": null,
    "topQueries": [],
    "hint": "Title und Description schärfen, Antwort in den ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
-   "path": "/en/blog/field-service-mobile-flow-limitations/",
-   "impressions": 19,
-   "clicks": 0,
-   "position": 7.1,
-   "title": "Field Service mobile flow limitations: Winter '27 update",
-   "file": "src/content/blog/en/field-service-mobile-flow-limitations.md",
-   "topQueries": [
-    {
-     "query": "field service mobile flow limitations",
-     "impressions": 5,
-     "position": 4.2
-    }
-   ],
-   "hint": "Antwort auf „field service mobile flow limitations“ in Description und ersten Satz",
    "new": false
   },
   {
@@ -271,6 +272,30 @@
     }
    ],
    "hint": "Antwort auf „juliane winterscheid“ in Description und ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/blog/salesforce-editionen-core-advanced-max/",
+   "path": "/blog/salesforce-editionen-core-advanced-max/",
+   "impressions": 14,
+   "clicks": 0,
+   "position": 6,
+   "title": "Salesforce-Editionen Core, Advanced, Max für Hersteller",
+   "file": "src/content/blog/de/salesforce-editionen-core-advanced-max.md",
+   "topQueries": [
+    {
+     "query": "salesforce core edition",
+     "impressions": 1,
+     "position": 4
+    },
+    {
+     "query": "salesforce max edition",
+     "impressions": 1,
+     "position": 9
+    }
+   ],
+   "hint": "Antwort auf „salesforce core edition“ in Description und ersten Satz",
    "new": false
   },
   {
@@ -313,35 +338,11 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/blog/salesforce-editionen-core-advanced-max/",
-   "path": "/blog/salesforce-editionen-core-advanced-max/",
-   "impressions": 10,
-   "clicks": 0,
-   "position": 6.1,
-   "title": "Salesforce-Editionen Core, Advanced, Max für Hersteller",
-   "file": "src/content/blog/de/salesforce-editionen-core-advanced-max.md",
-   "topQueries": [
-    {
-     "query": "salesforce core edition",
-     "impressions": 1,
-     "position": 4
-    },
-    {
-     "query": "salesforce max edition",
-     "impressions": 1,
-     "position": 9
-    }
-   ],
-   "hint": "Antwort auf „salesforce core edition“ in Description und ersten Satz",
-   "new": true
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
    "path": "/leistungen/salesforce-architektur/",
-   "impressions": 10,
+   "impressions": 12,
    "clicks": 0,
-   "position": 8.7,
+   "position": 8.5,
    "title": "Salesforce-Architektur und Solution Design",
    "file": "src/content/services/de/salesforce-architektur.md",
    "topQueries": [
@@ -362,7 +363,7 @@
     }
    ],
    "hint": "Antwort auf „salesforce architektur dortmund“ in Description und ersten Satz",
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -412,9 +413,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
    "path": "/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
-   "impressions": 58,
+   "impressions": 69,
    "clicks": 1,
-   "position": 19.7,
+   "position": 17.8,
    "title": "Salesforce release planning: calendar and releases",
    "file": "src/content/masterclass/en/release-planning-salesforce-releases.md",
    "topQueries": [
@@ -430,12 +431,12 @@
     },
     {
      "query": "salesforce release dates",
-     "impressions": 2,
-     "position": 28.5
+     "impressions": 3,
+     "position": 25.7
     }
    ],
    "hint": "Abschnitt und interne Links zu „salesforce release cycle“",
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -470,9 +471,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/revenue-cloud-billing-costs/",
    "path": "/en/blog/revenue-cloud-billing-costs/",
-   "impressions": 29,
+   "impressions": 32,
    "clicks": 0,
-   "position": 12,
+   "position": 16.1,
    "title": "Revenue Cloud Billing pricing: one billing event per $50",
    "file": "src/content/blog/en/revenue-cloud-billing-costs.md",
    "topQueries": [
@@ -487,27 +488,22 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-free-devops-training/",
-   "path": "/en/blog/sfdx-hardis-free-devops-training/",
-   "impressions": 26,
-   "clicks": 3,
-   "position": 10.3,
-   "title": "What I learned from the free sfdx-hardis training",
-   "file": "src/content/blog/en/sfdx-hardis-free-devops-training.md",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-service-documents-document-builder/",
+   "path": "/en/blog/salesforce-service-documents-document-builder/",
+   "impressions": 28,
+   "clicks": 0,
+   "position": 10.6,
+   "title": "Salesforce Document Builder for Field Service reports",
+   "file": "src/content/blog/en/salesforce-service-documents-document-builder.md",
    "topQueries": [
     {
-     "query": "sfdx-hardis",
-     "impressions": 8,
-     "position": 15.4
-    },
-    {
-     "query": "sfdx hardis",
-     "impressions": 1,
-     "position": 19
+     "query": "salesforce document builder",
+     "impressions": 4,
+     "position": 23.3
     }
    ],
-   "hint": "Abschnitt und interne Links zu „sfdx-hardis“",
-   "new": true
+   "hint": "Abschnitt und interne Links zu „salesforce document builder“",
+   "new": false
   },
   {
    "source": "google",
@@ -540,28 +536,9 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/salesforce-service-documents-document-builder/",
-   "path": "/en/blog/salesforce-service-documents-document-builder/",
-   "impressions": 25,
-   "clicks": 0,
-   "position": 11.4,
-   "title": "Salesforce Document Builder for Field Service reports",
-   "file": "src/content/blog/en/salesforce-service-documents-document-builder.md",
-   "topQueries": [
-    {
-     "query": "salesforce document builder",
-     "impressions": 4,
-     "position": 23.3
-    }
-   ],
-   "hint": "Abschnitt und interne Links zu „salesforce document builder“",
-   "new": false
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
    "path": "/en/blog/agentforce-llm-choice-bring-your-own/",
-   "impressions": 24,
+   "impressions": 25,
    "clicks": 0,
    "position": 10.8,
    "title": "Agentforce LLM choice: default, Claude or your own model",
@@ -580,9 +557,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
    "path": "/en/blog/field-service-scheduling-console-dispatchers/",
-   "impressions": 24,
+   "impressions": 25,
    "clicks": 0,
-   "position": 11.3,
+   "position": 11.2,
    "title": "Field Service Scheduling Console vs. Dispatcher Console",
    "file": "src/content/blog/en/field-service-scheduling-console-dispatchers.md",
    "topQueries": [
@@ -604,7 +581,7 @@
    "source": "google",
    "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
    "path": "/masterclass/ki-salesforce/",
-   "impressions": 22,
+   "impressions": 23,
    "clicks": 0,
    "position": 14.9,
    "title": null,
@@ -612,8 +589,8 @@
    "topQueries": [
     {
      "query": "fertigung salesforce",
-     "impressions": 10,
-     "position": 17.9
+     "impressions": 11,
+     "position": 17.7
     }
    ],
    "hint": "Abschnitt und interne Links zu „fertigung salesforce“",
@@ -623,16 +600,16 @@
    "source": "google",
    "page": "https://www.fk-sd.de/blog/servicemax-oder-salesforce-field-service/",
    "path": "/blog/servicemax-oder-salesforce-field-service/",
-   "impressions": 20,
+   "impressions": 23,
    "clicks": 0,
-   "position": 19.7,
+   "position": 18.2,
    "title": "ServiceMax: Teil von Salesforce? Vergleich mit Field Service",
    "file": "src/content/blog/de/servicemax-oder-salesforce-field-service.md",
    "topQueries": [
     {
      "query": "service pro vs ptc servicemax",
-     "impressions": 12,
-     "position": 8.7
+     "impressions": 15,
+     "position": 8.5
     },
     {
      "query": "servicemax integration with salesforce",
@@ -641,7 +618,7 @@
     }
    ],
    "hint": "Abschnitt und interne Links zu „service pro vs ptc servicemax“",
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -665,6 +642,35 @@
     }
    ],
    "hint": "Abschnitt und interne Links zu „ai code review tools salesforce“",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/switching-salesforce-implementation-partner/",
+   "path": "/en/blog/switching-salesforce-implementation-partner/",
+   "impressions": 16,
+   "clicks": 0,
+   "position": 12.7,
+   "title": "Switch Salesforce Partner: Handover Checklist and Process",
+   "file": "src/content/blog/en/switching-salesforce-implementation-partner.md",
+   "topQueries": [
+    {
+     "query": "how does a new team take over an unfinished salesforce development project?",
+     "impressions": 3,
+     "position": 6
+    },
+    {
+     "query": "change salesforce partner",
+     "impressions": 1,
+     "position": 21
+    },
+    {
+     "query": "what is solution junkies process for taking over",
+     "impressions": 1,
+     "position": 20
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „how does a new team take over an unfinished salesforce development project?“",
    "new": false
   },
   {
@@ -701,31 +707,21 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/switching-salesforce-implementation-partner/",
-   "path": "/en/blog/switching-salesforce-implementation-partner/",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
+   "path": "/en/blog/salesforce-password-integrations-end-2027/",
    "impressions": 13,
-   "clicks": 0,
-   "position": 11.6,
-   "title": "Switch Salesforce Partner: Handover Checklist and Process",
-   "file": "src/content/blog/en/switching-salesforce-implementation-partner.md",
+   "clicks": 1,
+   "position": 11,
+   "title": "Salesforce username-password flow retirement: Feb 20, 2027",
+   "file": "src/content/blog/en/salesforce-password-integrations-end-2027.md",
    "topQueries": [
     {
-     "query": "how does a new team take over an unfinished salesforce development project?",
-     "impressions": 2,
-     "position": 2
-    },
-    {
-     "query": "change salesforce partner",
+     "query": "salesforce username password flow retirement",
      "impressions": 1,
-     "position": 21
-    },
-    {
-     "query": "what is solution junkies process for taking over",
-     "impressions": 1,
-     "position": 20
+     "position": 55
     }
    ],
-   "hint": "Abschnitt und interne Links zu „how does a new team take over an unfinished salesforce development project?“",
+   "hint": "Abschnitt und interne Links zu „salesforce username password flow retirement“",
    "new": false
   },
   {
@@ -783,30 +779,11 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
-   "path": "/en/blog/salesforce-password-integrations-end-2027/",
-   "impressions": 12,
-   "clicks": 1,
-   "position": 11.3,
-   "title": "Salesforce username-password flow retirement: Feb 20, 2027",
-   "file": "src/content/blog/en/salesforce-password-integrations-end-2027.md",
-   "topQueries": [
-    {
-     "query": "salesforce username password flow retirement",
-     "impressions": 1,
-     "position": 55
-    }
-   ],
-   "hint": "Abschnitt und interne Links zu „salesforce username password flow retirement“",
-   "new": false
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
    "path": "/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
-   "impressions": 12,
+   "impressions": 13,
    "clicks": 0,
-   "position": 14.4,
+   "position": 14.1,
    "title": "Salesforce Winter '27: what changes for your CI/CD pipeline",
    "file": "src/content/blog/en/salesforce-winter-27-what-changes-for-your-pipeline.md",
    "topQueries": [
@@ -909,9 +886,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/agentforce-agents-release-pipeline/",
    "path": "/en/blog/agentforce-agents-release-pipeline/",
-   "impressions": 10,
+   "impressions": 11,
    "clicks": 0,
-   "position": 12.8,
+   "position": 12.5,
    "title": "Agentforce agents in the release pipeline: who releases?",
    "file": "src/content/blog/en/agentforce-agents-release-pipeline.md",
    "topQueries": [],
@@ -923,8 +900,8 @@
   {
    "source": "google",
    "query": "what makes a salesforce devops platform enterprise-ready?",
-   "impressions": 32,
-   "position": 6.3,
+   "impressions": 34,
+   "position": 6.5,
    "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
    "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
    "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
@@ -934,8 +911,8 @@
   {
    "source": "google",
    "query": "what does a typical salesforce devops rollout look like?",
-   "impressions": 24,
-   "position": 5.7,
+   "impressions": 30,
+   "position": 6.2,
    "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
    "path": "/en/masterclass/devops-release-management/rollout-roadmap/",
    "file": "src/content/masterclass/en/rollout-roadmap.md",
@@ -988,6 +965,17 @@
   },
   {
    "source": "google",
+   "query": "how does a new team take over an unfinished salesforce development project?",
+   "impressions": 3,
+   "position": 6,
+   "page": "https://www.fk-sd.de/en/blog/switching-salesforce-implementation-partner/",
+   "path": "/en/blog/switching-salesforce-implementation-partner/",
+   "file": "src/content/blog/en/switching-salesforce-implementation-partner.md",
+   "covered": false,
+   "new": false
+  },
+  {
+   "source": "google",
    "query": "wer integriert einen b2b-onlineshop mit live-preisen und lagerbestand aus dem erp?",
    "impressions": 3,
    "position": 7.3,
@@ -1031,17 +1019,6 @@
    "new": false
   },
   {
-   "source": "google",
-   "query": "how does a new team take over an unfinished salesforce development project?",
-   "impressions": 2,
-   "position": 2,
-   "page": "https://www.fk-sd.de/en/blog/switching-salesforce-implementation-partner/",
-   "path": "/en/blog/switching-salesforce-implementation-partner/",
-   "file": "src/content/blog/en/switching-salesforce-implementation-partner.md",
-   "covered": false,
-   "new": false
-  },
-  {
    "source": "bing",
    "query": "salesforce: wir nutzen contracts, preisbücher und accounts. kann ich in einem contract für einen account, der einem preisbuch zugeordnet ist, ein produkt als sonderpreis führen, dass nicht im preisbuch steht?",
    "impressions": 2,
@@ -1049,6 +1026,17 @@
    "page": null,
    "path": null,
    "file": null,
+   "covered": false,
+   "new": false
+  },
+  {
+   "source": "google",
+   "query": "is salesforce devops center enough for enterprise teams?",
+   "impressions": 2,
+   "position": 4.5,
+   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+   "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
+   "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
    "covered": false,
    "new": false
   },
@@ -1131,17 +1119,6 @@
   },
   {
    "source": "google",
-   "query": "is salesforce devops center enough for enterprise teams?",
-   "impressions": 1,
-   "position": 4,
-   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
-   "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
-   "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
-   "covered": false,
-   "new": false
-  },
-  {
-   "source": "google",
    "query": "wie verlieren wir pipeline-daten, wenn vertriebsteams zwischen ihrem crm und salesforce wechseln?",
    "impressions": 1,
    "position": 4,
@@ -1181,17 +1158,6 @@
    "page": "https://www.fk-sd.de/en/blog/salesforce-hosted-mcp-servers-data-access/",
    "path": "/en/blog/salesforce-hosted-mcp-servers-data-access/",
    "file": "src/content/blog/en/salesforce-hosted-mcp-servers-data-access.md",
-   "covered": false,
-   "new": false
-  },
-  {
-   "source": "bing",
-   "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
-   "impressions": 1,
-   "position": 7,
-   "page": null,
-   "path": null,
-   "file": null,
    "covered": false,
    "new": false
   },
@@ -1263,6 +1229,17 @@
   },
   {
    "source": "google",
+   "query": "which client",
+   "impressions": 1,
+   "position": 10,
+   "page": "https://www.fk-sd.de/en/blog/warranty-claims-dealers-salesforce/",
+   "path": "/en/blog/warranty-claims-dealers-salesforce/",
+   "file": "src/content/blog/en/warranty-claims-dealers-salesforce.md",
+   "covered": false,
+   "new": true
+  },
+  {
+   "source": "google",
    "query": "was für salesforce lizenzen brauche ich, um service tätigkeiten optimieren zu können?",
    "impressions": 1,
    "position": 11,
@@ -1304,6 +1281,771 @@
    "file": "src/content/blog/de/field-service-management-software-auswahl.md",
    "covered": false,
    "new": false
+  }
+ ],
+ "longQueries": [
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+   "path": "/blog/field-service-management-software-auswahl/",
+   "title": "Field Service Management Software für Hersteller",
+   "file": "src/content/blog/de/field-service-management-software-auswahl.md",
+   "count": 17,
+   "impressions": 17,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "finale anbieterauswahl für field-service-management-software für international tätige konzerne",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 2,
+     "inQuestions": false
+    },
+    {
+     "query": "welche field-service-management-software mit crm- und erp-integration eignet sich für ein unternehmen mit 51 bis 499 mitarbeitenden?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 2,
+     "inQuestions": true
+    },
+    {
+     "query": "welche field-service-management-software für internationale rollouts und hohe compliance-anforderungen eignet sich für einen international tätigen konzern?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 3,
+     "inQuestions": true
+    },
+    {
+     "query": "welche field-service-management-software mit transparenten kosten eignet sich für ein kleines unternehmen?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 3,
+     "inQuestions": true
+    },
+    {
+     "query": "worauf sollte ein b2b-unternehmen bei der auswahl einer field-service-management-software achten?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 3,
+     "inQuestions": true
+    },
+    {
+     "query": "field-service-management-software bewertungen für unternehmen mit 51 bis 499 mitarbeitenden",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 4,
+     "inQuestions": false
+    },
+    {
+     "query": "all-in-one-plattform oder speziallösung für field-service-management-software für unternehmen ab 500 mitarbeitenden",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 7,
+     "inQuestions": false
+    },
+    {
+     "query": "alternative zu einsatzplanung auf papier mit field-service-management-software für enterprise-unternehmen",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 8,
+     "inQuestions": false
+    },
+    {
+     "query": "field-service-management-software all-in-one speziallösung vergleich für unternehmen bis 50 mitarbeitende",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 8,
+     "inQuestions": false
+    },
+    {
+     "query": "field-service-management-software kaufentscheidung für kleine teams ohne eigene it-abteilung",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 8,
+     "inQuestions": false
+    },
+    {
+     "query": "sollte ein unternehmen ab 500 mitarbeitenden bei field-service-management-software eine speziallösung oder eine all-in-one-plattform wählen?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 9,
+     "inQuestions": true
+    },
+    {
+     "query": "field-service-management-software all-in-one speziallösung vergleich für unternehmen mit 51 bis 499 mitarbeitenden",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 13,
+     "inQuestions": false
+    },
+    {
+     "query": "welche field-service-management-software ist für ein kleines unternehmen am besten geeignet?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 14,
+     "inQuestions": true
+    },
+    {
+     "query": "field-service-management-software kaufentscheidung für wachsende unternehmen mit rund 200 mitarbeitenden",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 16,
+     "inQuestions": false
+    },
+    {
+     "query": "wann lohnt sich für ein unternehmen mit 51 bis 499 mitarbeitenden der wechsel von einsatzplanung auf papier zu einer field-service-management-software?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 16,
+     "inQuestions": false
+    }
+   ],
+   "hint": "Mehrere ähnliche lange Suchen: fehlende Teilfrage als Abschnitt oder FAQ mit direkter Antwort ergänzen",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/switching-salesforce-implementation-partner/",
+   "path": "/en/blog/switching-salesforce-implementation-partner/",
+   "title": "Switch Salesforce Partner: Handover Checklist and Process",
+   "file": "src/content/blog/en/switching-salesforce-implementation-partner.md",
+   "count": 3,
+   "impressions": 5,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "how does a new team take over an unfinished salesforce development project?",
+     "impressions": 3,
+     "clicks": 0,
+     "position": 6,
+     "inQuestions": true
+    },
+    {
+     "query": "what is solution junkies process for taking over",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 20,
+     "inQuestions": false
+    },
+    {
+     "query": "can a new salesforce partner take over an existing implementation?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 20,
+     "inQuestions": false
+    }
+   ],
+   "hint": "Mehrere ähnliche lange Suchen: fehlende Teilfrage als Abschnitt oder FAQ mit direkter Antwort ergänzen",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
+   "path": "/en/masterclass/devops-release-management/devops-tools-compared/",
+   "title": "Salesforce DevOps tools compared: 2026 decision matrix",
+   "file": "src/content/masterclass/en/devops-tools-compared.md",
+   "count": 3,
+   "impressions": 3,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "how does salesforce devops center compare to third-party tools?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 10,
+     "inQuestions": true
+    },
+    {
+     "query": "does gearset support more salesforce clouds than copado?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 11,
+     "inQuestions": true
+    },
+    {
+     "query": "are all salesforce devops tools basically the same?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 11,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Mehrere ähnliche lange Suchen: fehlende Teilfrage als Abschnitt oder FAQ mit direkter Antwort ergänzen",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
+   "path": "/en/blog/servicemax-vs-salesforce-field-service/",
+   "title": "ServiceMax vs Salesforce Field Service: part of Salesforce?",
+   "file": "src/content/blog/en/servicemax-vs-salesforce-field-service.md",
+   "count": 2,
+   "impressions": 2,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "evaluate the erp company servicemax on transport alm",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 5,
+     "inQuestions": false
+    },
+    {
+     "query": "how does salesforce field service handle contractor management compared to servicemax?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 10,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „evaluate the erp company servicemax on transport alm“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+   "path": "/en/masterclass/devops-release-management/rollout-roadmap/",
+   "title": "Salesforce DevOps rollout: roadmap and metrics",
+   "file": "src/content/masterclass/en/rollout-roadmap.md",
+   "count": 1,
+   "impressions": 30,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "what does a typical salesforce devops rollout look like?",
+     "impressions": 30,
+     "clicks": 0,
+     "position": 6.2,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „what does a typical salesforce devops rollout look like?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/agentforce-sales-planning-agreements-forecasts/",
+   "path": "/en/blog/agentforce-sales-planning-agreements-forecasts/",
+   "title": "Agentforce Sales Planning: not included in Agentforce Sales",
+   "file": "src/content/blog/en/agentforce-sales-planning-agreements-forecasts.md",
+   "count": 1,
+   "impressions": 18,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "is salesforce sales planning included with agentforce sales?",
+     "impressions": 18,
+     "clicks": 0,
+     "position": 9.9,
+     "inQuestions": false
+    }
+   ],
+   "hint": "Direkte Antwort auf „is salesforce sales planning included with agentforce sales?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/testing-agentforce-agents-before-go-live/",
+   "path": "/en/blog/testing-agentforce-agents-before-go-live/",
+   "title": "Testing Agentforce agents: when is one ready to go live?",
+   "file": "src/content/blog/en/testing-agentforce-agents-before-go-live.md",
+   "count": 1,
+   "impressions": 5,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "can agentforce agents be tested and monitored before going live?",
+     "impressions": 5,
+     "clicks": 0,
+     "position": 3.8,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „can agentforce agents be tested and monitored before going live?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/blog/salesforce-dubletten-stammdaten-bereinigen/",
+   "path": "/blog/salesforce-dubletten-stammdaten-bereinigen/",
+   "title": "Dubletten in Salesforce: Stammdaten vor der KI bereinigen",
+   "file": "src/content/blog/de/salesforce-dubletten-stammdaten-bereinigen.md",
+   "count": 1,
+   "impressions": 4,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "was passiert mit kundendaten, wenn ein teil des vertriebsteams ein anderes crm und ein anderer teil salesforce nutzt?",
+     "impressions": 4,
+     "clicks": 0,
+     "position": 8.3,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „was passiert mit kundendaten, wenn ein teil des vertriebsteams ein anderes crm und ein anderer teil salesforce nutzt?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
+   "path": "/en/blog/salesforce-agent-context-engine-explained/",
+   "title": "Salesforce Agent Context Engine explained",
+   "file": "src/content/blog/en/salesforce-agent-context-engine-explained.md",
+   "count": 1,
+   "impressions": 4,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "what is the agent context engine in salesforce data 360?",
+     "impressions": 4,
+     "clicks": 0,
+     "position": 8.5,
+     "inQuestions": false
+    }
+   ],
+   "hint": "Direkte Antwort auf „what is the agent context engine in salesforce data 360?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+   "path": "/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+   "title": "How to choose a Salesforce implementation partner",
+   "file": "src/content/blog/en/how-to-choose-a-salesforce-implementation-partner.md",
+   "count": 1,
+   "impressions": 4,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "how do you compare salesforce implementation proposals fairly?",
+     "impressions": 4,
+     "clicks": 0,
+     "position": 3,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „how do you compare salesforce implementation proposals fairly?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/blog/bestand-b2b-shop-erp-live/",
+   "path": "/blog/bestand-b2b-shop-erp-live/",
+   "title": "Bestand im B2B-Shop: live aus dem ERP oder kopiert?",
+   "file": "src/content/blog/de/bestand-b2b-shop-erp-live.md",
+   "count": 1,
+   "impressions": 3,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "wer integriert einen b2b-onlineshop mit live-preisen und lagerbestand aus dem erp?",
+     "impressions": 3,
+     "clicks": 0,
+     "position": 7.3,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „wer integriert einen b2b-onlineshop mit live-preisen und lagerbestand aus dem erp?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-search-part-numbers/",
+   "path": "/en/blog/b2b-commerce-search-part-numbers/",
+   "title": "B2B Commerce search: finding parts by part number",
+   "file": "src/content/blog/en/b2b-commerce-search-part-numbers.md",
+   "count": 1,
+   "impressions": 3,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "which vendor can verify part numbers and provide documentation?",
+     "impressions": 3,
+     "clicks": 0,
+     "position": 8.3,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „which vendor can verify part numbers and provide documentation?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
+   "path": "/en/blog/headless-b2b-commerce-own-frontend/",
+   "title": "Headless B2B Commerce: own frontend, Salesforce core",
+   "file": "src/content/blog/en/headless-b2b-commerce-own-frontend.md",
+   "count": 1,
+   "impressions": 3,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "headless commerce solution with advanced b2b account hierarchies.",
+     "impressions": 3,
+     "clicks": 0,
+     "position": 8,
+     "inQuestions": false
+    }
+   ],
+   "hint": "Direkte Antwort auf „headless commerce solution with advanced b2b account hierarchies.“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
+   "path": "/en/blog/agentforce-llm-choice-bring-your-own/",
+   "title": "Agentforce LLM choice: default, Claude or your own model",
+   "file": "src/content/blog/en/agentforce-llm-choice-bring-your-own.md",
+   "count": 1,
+   "impressions": 3,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "what llms does agentforce use and can enterprises bring their own model?",
+     "impressions": 3,
+     "clicks": 0,
+     "position": 10.7,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „what llms does agentforce use and can enterprises bring their own model?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/einstein-trust-layer-what-it-protects/",
+   "path": "/en/blog/einstein-trust-layer-what-it-protects/",
+   "title": "Einstein Trust Layer in Agentforce: masking is disabled",
+   "file": "src/content/blog/en/einstein-trust-layer-what-it-protects.md",
+   "count": 1,
+   "impressions": 2,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "what ensures that agentforce protects your company’s data and detects toxicity? a data 360 b einstein trust layer c external apis d external human audits",
+     "impressions": 2,
+     "clicks": 0,
+     "position": 6,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „what ensures that agentforce protects your company’s data and detects toxicity? a data 360 b einstein trust layer c external apis d external human audits“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/copado-gearset-provar-ai-agents/",
+   "path": "/en/blog/copado-gearset-provar-ai-agents/",
+   "title": "Copado, Gearset and Provar AI agents: a client check",
+   "file": "src/content/blog/en/copado-gearset-provar-ai-agents.md",
+   "count": 1,
+   "impressions": 2,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "how does gearset position its agent and ai solutions?",
+     "impressions": 2,
+     "clicks": 0,
+     "position": 9,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „how does gearset position its agent and ai solutions?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/masterclass/field-service/field-service-mobile-app-dokumente/",
+   "path": "/masterclass/field-service/field-service-mobile-app-dokumente/",
+   "title": "Field Service App: offline, Formulare und Berichte",
+   "file": "src/content/masterclass/de/field-service-mobile-app-dokumente.md",
+   "count": 1,
+   "impressions": 2,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "welche field-service-app unterstützt einsatzplanung, fotodokumentation und digitale unterschriften?",
+     "impressions": 2,
+     "clicks": 0,
+     "position": 9.5,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „welche field-service-app unterstützt einsatzplanung, fotodokumentation und digitale unterschriften?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
+   "path": "/en/blog/predictive-maintenance-salesforce-data-needed/",
+   "title": "Predictive maintenance in Salesforce: what data you need",
+   "file": "src/content/blog/en/predictive-maintenance-salesforce-data-needed.md",
+   "count": 1,
+   "impressions": 2,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "can salesforce handle asset-heavy maintenance like maximo? in 2026",
+     "impressions": 2,
+     "clicks": 0,
+     "position": 5.5,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „can salesforce handle asset-heavy maintenance like maximo? in 2026“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+   "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
+   "title": "Why DevOps decides Salesforce enterprise projects",
+   "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
+   "count": 1,
+   "impressions": 2,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "is salesforce devops center enough for enterprise teams?",
+     "impressions": 2,
+     "clicks": 0,
+     "position": 4.5,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „is salesforce devops center enough for enterprise teams?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+   "path": "/en/blog/field-service-management-software-selection/",
+   "title": "Field Service Management Software for Manufacturers",
+   "file": "src/content/blog/en/field-service-management-software-selection.md",
+   "count": 1,
+   "impressions": 2,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "which field service management software is best for manufacturing?",
+     "impressions": 2,
+     "clicks": 0,
+     "position": 9.5,
+     "inQuestions": false
+    }
+   ],
+   "hint": "Direkte Antwort auf „which field service management software is best for manufacturing?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/blog/salesforce-field-service-lohnt-sich/",
+   "path": "/blog/salesforce-field-service-lohnt-sich/",
+   "title": "Lohnt sich Salesforce Field Service? Kriterien und Kosten",
+   "file": "src/content/blog/de/salesforce-field-service-lohnt-sich.md",
+   "count": 1,
+   "impressions": 1,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "was für salesforce lizenzen brauche ich, um service tätigkeiten optimieren zu können?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 11,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „was für salesforce lizenzen brauche ich, um service tätigkeiten optimieren zu können?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-hosted-mcp-servers-data-access/",
+   "path": "/en/blog/salesforce-hosted-mcp-servers-data-access/",
+   "title": "Salesforce hosted MCP servers: who can read which data?",
+   "file": "src/content/blog/en/salesforce-hosted-mcp-servers-data-access.md",
+   "count": 1,
+   "impressions": 1,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "what permissions does an mcp server get on my machine?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 7,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „what permissions does an mcp server get on my machine?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/visual-remote-assistant-remote-help-instead-of-visit/",
+   "path": "/en/blog/visual-remote-assistant-remote-help-instead-of-visit/",
+   "title": "Visual remote assistance with Salesforce: video or visit?",
+   "file": "src/content/blog/en/visual-remote-assistant-remote-help-instead-of-visit.md",
+   "count": 1,
+   "impressions": 1,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "how can visual remote assistant help my business?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 7,
+     "inQuestions": false
+    }
+   ],
+   "hint": "Direkte Antwort auf „how can visual remote assistant help my business?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/blog/salesforce-field-service-stammdaten/",
+   "path": "/blog/salesforce-field-service-stammdaten/",
+   "title": "Salesforce Field Service: Welche Daten braucht die Planung?",
+   "file": "src/content/blog/de/salesforce-field-service-stammdaten.md",
+   "count": 1,
+   "impressions": 1,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "welche kriterien sollte ein unternehmen mit bis zu 50 mitarbeitenden vor der kaufentscheidung für field-service-management-software prüfen?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 19,
+     "inQuestions": false
+    }
+   ],
+   "hint": "Direkte Antwort auf „welche kriterien sollte ein unternehmen mit bis zu 50 mitarbeitenden vor der kaufentscheidung für field-service-management-software prüfen?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/blog/field-service-data-capture-pruefprotokolle/",
+   "path": "/blog/field-service-data-capture-pruefprotokolle/",
+   "title": "Field Service Data Capture: Prüfprotokolle ohne Papier",
+   "file": "src/content/blog/de/field-service-data-capture-pruefprotokolle.md",
+   "count": 1,
+   "impressions": 1,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "welche field-service-app unterstützt einsatzplanung, fotodokumentation und digitale unterschriften?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 10,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „welche field-service-app unterstützt einsatzplanung, fotodokumentation und digitale unterschriften?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/masterclass/field-service/field-service-ki-agenten-einfuehrung/",
+   "path": "/masterclass/field-service/field-service-ki-agenten-einfuehrung/",
+   "title": "Field Service: KI-Agenten, Einführung und Kennzahlen",
+   "file": "src/content/masterclass/de/field-service-ki-agenten-einfuehrung.md",
+   "count": 1,
+   "impressions": 1,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "welche prozesse im field service lassen sich mit ki automatisieren?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 8,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „welche prozesse im field service lassen sich mit ki automatisieren?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/blog/salesforce-partner-wechseln/",
+   "path": "/blog/salesforce-partner-wechseln/",
+   "title": "Salesforce-Partner wechseln: Ablauf und Übergabe-Checkliste",
+   "file": "src/content/blog/de/salesforce-partner-wechseln.md",
+   "count": 1,
+   "impressions": 1,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "wie verlieren wir pipeline-daten, wenn vertriebsteams zwischen ihrem crm und salesforce wechseln?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 4,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „wie verlieren wir pipeline-daten, wenn vertriebsteams zwischen ihrem crm und salesforce wechseln?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/what-is-agentforce/",
+   "path": "/en/blog/what-is-agentforce/",
+   "title": "What Is Agentforce? Explained for IT Leaders",
+   "file": "src/content/blog/en/what-is-agentforce.md",
+   "count": 1,
+   "impressions": 1,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "what powers agentforce custom actions? a flows, apex classes, heroku, and prompt templates b process builder and workflows c bot dialogs d data masking and event logs",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 8,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „what powers agentforce custom actions? a flows, apex classes, heroku, and prompt templates b process builder and workflows c bot dialogs d data masking and event logs“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+   "path": "/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+   "title": "Salesforce release planning: calendar and releases",
+   "file": "src/content/masterclass/en/release-planning-salesforce-releases.md",
+   "count": 1,
+   "impressions": 1,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "schedule salesforce help content publish and expire dates",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 14,
+     "inQuestions": false
+    }
+   ],
+   "hint": "Direkte Antwort auf „schedule salesforce help content publish and expire dates“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-buyer-licences/",
+   "path": "/en/blog/b2b-commerce-buyer-licences/",
+   "title": "B2B Commerce buyer licenses: who needs which one?",
+   "file": "src/content/blog/en/b2b-commerce-buyer-licences.md",
+   "count": 1,
+   "impressions": 1,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "what licenses do i need to use b2b commerce in commerce cloud?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 2,
+     "inQuestions": false
+    }
+   ],
+   "hint": "Direkte Antwort auf „what licenses do i need to use b2b commerce in commerce cloud?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
   }
  ],
  "spam": {
@@ -1387,12 +2129,7 @@
    },
    {
     "source": "bing",
-    "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
-    "impressions": 1
-   },
-   {
-    "source": "bing",
-    "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
+    "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
     "impressions": 1
    },
    {
@@ -1402,16 +2139,22 @@
    },
    {
     "source": "bing",
-    "query": "skip to navigationskip to main content 1 new notifications sales console scheduler (pc) press spacebar to reorder tabs. account bagot opticians | account richard petrie - search richard petrie - search account richard petrie optometrists ltd | account press spacebar to reorder tabs. account richard petrie optometrists ltd | account event new event: eu-event new event: eu-event *= required information event information subject contact name contact name - current selection: emily h rpetrie (contact) contact name - current selection: emily h rpetrie (contact) emily h rpetrieto remove the selected record, press backspace or del. type phone meeting related account related account - current selection: richard petrie optometrists ltd (account) related account - current selection: richard petrie optometrists ltd (account) richard petrie optometrists ltdto remove the selected record, press backspace or del. event status completed attendees people resources auto complete label jillian gordon start *date format: 31-dec-2024 *time program end *date format: 31-dec-2024 *time event end updated. opportunity call planning primary product myday misight secondary product --none-- primary product brand type --none-- secondary product brand type call objective outcome and next steps outcome notes tip: type control + period to insert quick text.",
+    "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
+    "impressions": 1
+   },
+   {
+    "source": "bing",
+    "query": "app launcher#R##N#pfp field service#R##N#classic dispatch console#R##N##R##N#show navigation menu#R##N#press spacebar to reorder tabs.#R##N#new gas dashboard (april '26) (loading...)#R##N##R##N#actions#R##N#electrical scheduling dashboard (loading...)#R##N##R##N#actions",
     "impressions": 1
    }
   ]
  },
  "counts": {
   "snippet": 19,
-  "nearPage1": 24,
+  "nearPage1": 23,
   "questions": 35,
-  "new": 5,
+  "longQueries": 30,
+  "new": 31,
   "spam": 19
  }
 }

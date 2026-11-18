@@ -35,28 +35,13 @@
   "visits": 60
  },
  {
-  "page": "/fragen/",
-  "pageviews": 50,
-  "visits": 0
- },
- {
   "page": "/en/blog/",
   "pageviews": 50,
   "visits": 20
  },
  {
-  "page": "/leistungen/salesforce-architektur/",
-  "pageviews": 40,
-  "visits": 20
- },
- {
-  "page": "/blog/account-forecasting-absatzprognose-vertrieb/",
-  "pageviews": 40,
-  "visits": 40
- },
- {
-  "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
-  "pageviews": 40,
+  "page": "/fragen/",
+  "pageviews": 50,
   "visits": 0
  },
  {
@@ -65,9 +50,24 @@
   "visits": 10
  },
  {
+  "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
+  "pageviews": 40,
+  "visits": 0
+ },
+ {
   "page": "/masterclass/",
   "pageviews": 40,
   "visits": 10
+ },
+ {
+  "page": "/blog/account-forecasting-absatzprognose-vertrieb/",
+  "pageviews": 40,
+  "visits": 40
+ },
+ {
+  "page": "/leistungen/salesforce-architektur/",
+  "pageviews": 40,
+  "visits": 20
  },
  {
   "page": "/en/services/change-management-salesforce/",
@@ -90,13 +90,13 @@
   "visits": 30
  },
  {
-  "page": "/en/partners/juliane-winterscheid/",
+  "page": "/masterclass-ki/",
   "pageviews": 20,
   "visits": 0
  },
  {
-  "page": "/og/en/botsitting-salesforce-projects-tools.png",
+  "page": "/en/blog/revenue-cloud-discount-approvals/",
   "pageviews": 20,
-  "visits": 20
+  "visits": 10
  }
 ]
