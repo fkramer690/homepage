@@ -28,6 +28,10 @@ export const site = {
     href: 'tel:+4922198656758',
   },
   linkedin: 'https://www.linkedin.com/in/fabian-kramer-400500127',
+  // Consultant listing of the company on Salesforce AppExchange (published
+  // 2026-11-17). Linked in the footer, the about section and the
+  // certifications page, and listed as sameAs of the organisation.
+  appexchange: 'https://appexchange.salesforce.com/appxListingDetail?listingId=95c7baa6-56f2-4183-851a-9e3fede15157',
   // Speaker profile, linked on the speaking page and listed as sameAs.
   sessionize: 'https://sessionize.com/fabian-kramer/',
   // Further profiles of Fabian, only listed as sameAs in the structured data.

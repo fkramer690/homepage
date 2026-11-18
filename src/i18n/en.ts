@@ -273,6 +273,7 @@ export const en = {
       { label: 'Education', text: 'M.Sc. Information Systems, University of Koblenz-Landau' },
     ],
     linkedin: 'LinkedIn profile',
+    appexchange: 'AppExchange profile',
     speaking: 'Speaker & events',
     certifications: 'Certifications',
     masterclass: 'Masterclasses: Salesforce in manufacturing',

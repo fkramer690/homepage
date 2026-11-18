@@ -239,6 +239,7 @@ export const de: Dict = {
       { label: 'Studium', text: 'M.Sc. Wirtschaftsinformatik, Universität Koblenz-Landau' },
     ],
     linkedin: 'LinkedIn-Profil',
+    appexchange: 'AppExchange-Profil',
     speaking: 'Vorträge & Events',
     certifications: 'Zertifizierungen',
     masterclass: 'Masterclasses: Salesforce in der Fertigung',
