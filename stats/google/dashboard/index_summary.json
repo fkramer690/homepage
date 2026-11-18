@@ -2,21 +2,21 @@
  {
   "day": "2026-11-18",
   "sitemapUrls": 562,
-  "inspected": 561,
-  "failed": 1,
-  "indexed": 510,
+  "inspected": 562,
+  "failed": 0,
+  "indexed": 513,
   "byCoverage": [
    {
     "coverage": "Submitted and indexed",
-    "urls": 510
+    "urls": 513
    },
    {
     "coverage": "Discovered - currently not indexed",
-    "urls": 43
+    "urls": 37
    },
    {
     "coverage": "URL is unknown to Google",
-    "urls": 8
+    "urls": 12
    }
   ]
  }

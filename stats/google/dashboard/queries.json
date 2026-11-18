@@ -26,8 +26,8 @@
  {
   "query": "salesforce commerce product data",
   "clicks": 0,
-  "impressions": 42,
-  "position": 61
+  "impressions": 45,
+  "position": 57.8
  },
  {
   "query": "field service shift planning",
@@ -36,22 +36,22 @@
   "position": 74.8
  },
  {
-  "query": "field service scheduling and dispatch",
-  "clicks": 0,
-  "impressions": 34,
-  "position": 84.7
- },
- {
   "query": "what makes a salesforce devops platform enterprise-ready?",
   "clicks": 0,
-  "impressions": 34,
-  "position": 6.5
+  "impressions": 35,
+  "position": 6.4
  },
  {
   "query": "sfdx-hardis",
   "clicks": 1,
-  "impressions": 33,
+  "impressions": 34,
   "position": 10.8
+ },
+ {
+  "query": "field service scheduling and dispatch",
+  "clicks": 0,
+  "impressions": 34,
+  "position": 84.7
  },
  {
   "query": "field service scheduling",
@@ -86,14 +86,14 @@
  {
   "query": "click field service management software",
   "clicks": 0,
-  "impressions": 25,
-  "position": 72.6
+  "impressions": 26,
+  "position": 71.1
  },
  {
   "query": "field service application software",
   "clicks": 0,
-  "impressions": 25,
-  "position": 59.8
+  "impressions": 26,
+  "position": 59.3
  },
  {
   "query": "cad vertriebsdaten",
@@ -126,6 +126,12 @@
   "position": 6.9
  },
  {
+  "query": "field service management cloud",
+  "clicks": 0,
+  "impressions": 19,
+  "position": 78.5
+ },
+ {
   "query": "b2b portal software pricing",
   "clicks": 0,
   "impressions": 18,
@@ -136,12 +142,6 @@
   "clicks": 0,
   "impressions": 18,
   "position": 90
- },
- {
-  "query": "field service management cloud",
-  "clicks": 0,
-  "impressions": 18,
-  "position": 80.7
  },
  {
   "query": "is salesforce sales planning included with agentforce sales?",
@@ -168,6 +168,12 @@
   "position": 25.8
  },
  {
+  "query": "service pro vs ptc servicemax",
+  "clicks": 0,
+  "impressions": 16,
+  "position": 8.4
+ },
+ {
   "query": "b2b dealer portal",
   "clicks": 0,
   "impressions": 15,
@@ -178,12 +184,6 @@
   "clicks": 0,
   "impressions": 15,
   "position": 49.2
- },
- {
-  "query": "service pro vs ptc servicemax",
-  "clicks": 0,
-  "impressions": 15,
-  "position": 8.5
  },
  {
   "query": "stakeholder analysis matrix",
@@ -252,6 +252,12 @@
   "position": 88.2
  },
  {
+  "query": "erp field service management",
+  "clicks": 0,
+  "impressions": 11,
+  "position": 84.6
+ },
+ {
   "query": "nearshore salesforce development",
   "clicks": 0,
   "impressions": 11,
@@ -280,6 +286,12 @@
   "clicks": 0,
   "impressions": 10,
   "position": 53.7
+ },
+ {
+  "query": "field services software",
+  "clicks": 0,
+  "impressions": 10,
+  "position": 50.1
  },
  {
   "query": "headless commerce for b2b",
@@ -328,12 +340,6 @@
   "clicks": 0,
   "impressions": 9,
   "position": 63.3
- },
- {
-  "query": "erp field service management",
-  "clicks": 0,
-  "impressions": 9,
-  "position": 90.3
  },
  {
   "query": "field service erp",
@@ -390,10 +396,16 @@
   "position": 37
  },
  {
-  "query": "field services software",
+  "query": "field service management application",
   "clicks": 0,
   "impressions": 8,
-  "position": 52.1
+  "position": 66.8
+ },
+ {
+  "query": "field service management erp",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 80.8
  },
  {
   "query": "salesforce release management tools",
@@ -430,12 +442,6 @@
   "clicks": 0,
   "impressions": 7,
   "position": 85.6
- },
- {
-  "query": "field service management application",
-  "clicks": 0,
-  "impressions": 7,
-  "position": 67.1
  },
  {
   "query": "salesforce manufacturing cloud partner",
@@ -492,10 +498,10 @@
   "position": 78
  },
  {
-  "query": "field service management erp",
+  "query": "field service mobile flow limitations",
   "clicks": 0,
   "impressions": 6,
-  "position": 86.3
+  "position": 5.3
  },
  {
   "query": "kundeportal b2b",
@@ -592,12 +598,6 @@
   "clicks": 0,
   "impressions": 5,
   "position": 72.4
- },
- {
-  "query": "field service mobile flow limitations",
-  "clicks": 0,
-  "impressions": 5,
-  "position": 4.2
  },
  {
   "query": "field service planning",
@@ -736,6 +736,12 @@
   "clicks": 0,
   "impressions": 4,
   "position": 44.8
+ },
+ {
+  "query": "field service",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 76.5
  },
  {
   "query": "field service mobile solutions",
@@ -924,16 +930,16 @@
   "position": 27.7
  },
  {
-  "query": "field service",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 79.7
- },
- {
   "query": "field service bedeutung",
   "clicks": 0,
   "impressions": 3,
   "position": 56
+ },
+ {
+  "query": "field service crm",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 45
  },
  {
   "query": "field service lizenzen salesforce",
@@ -1212,12 +1218,6 @@
   "position": 84
  },
  {
-  "query": "field service crm",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 56
- },
- {
   "query": "field service data",
   "clicks": 0,
   "impressions": 2,
@@ -1360,6 +1360,12 @@
   "clicks": 0,
   "impressions": 2,
   "position": 24.5
+ },
+ {
+  "query": "salesforce key user training",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 15
  },
  {
   "query": "salesforce manufacturing cloud roi",
@@ -1884,6 +1890,12 @@
   "position": 67
  },
  {
+  "query": "field voice salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
+ },
+ {
   "query": "field workforce scheduling",
   "clicks": 0,
   "impressions": 1,
@@ -2232,6 +2244,12 @@
   "position": 20
  },
  {
+  "query": "salesforce architektur linz",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
   "query": "salesforce architektur nürnberg",
   "clicks": 0,
   "impressions": 1,
@@ -2332,12 +2350,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 62
- },
- {
-  "query": "salesforce key user training",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 22
  },
  {
   "query": "salesforce lizenzen",

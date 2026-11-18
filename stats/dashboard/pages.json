@@ -5,18 +5,23 @@
   "visits": 180
  },
  {
+  "page": "/en/blog/",
+  "pageviews": 210,
+  "visits": 20
+ },
+ {
   "page": "/en/",
   "pageviews": 130,
   "visits": 40
  },
  {
-  "page": "/leistungen/change-management/",
-  "pageviews": 90,
+  "page": "/blog/",
+  "pageviews": 130,
   "visits": 20
  },
  {
-  "page": "/blog/",
-  "pageviews": 80,
+  "page": "/leistungen/change-management/",
+  "pageviews": 90,
   "visits": 20
  },
  {
@@ -33,11 +38,6 @@
   "page": "/en/blog/salesforce-forward-deployed-engineer/",
   "pageviews": 60,
   "visits": 60
- },
- {
-  "page": "/en/blog/",
-  "pageviews": 50,
-  "visits": 20
  },
  {
   "page": "/fragen/",
@@ -90,12 +90,12 @@
   "visits": 30
  },
  {
-  "page": "/masterclass-ki/",
+  "page": "/impressum/",
   "pageviews": 20,
-  "visits": 0
+  "visits": 20
  },
  {
-  "page": "/en/blog/revenue-cloud-discount-approvals/",
+  "page": "/masterclass/revenue-cloud/",
   "pageviews": 20,
   "visits": 10
  }

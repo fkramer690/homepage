@@ -66,30 +66,6 @@
   "position": 9
  },
  {
-  "query": "well architected framework salesforce",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 6
- },
- {
-  "query": "salesforce well architected framework architect agent",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 7
- },
- {
-  "query": "scheduling console salesforce",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
- },
- {
-  "query": "4-seiten-analyse nach stakeholder meetings",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
- },
- {
   "query": "salesforce well architected framework",
   "clicks": 0,
   "impressions": 2,
@@ -102,10 +78,34 @@
   "position": 8
  },
  {
+  "query": "salesforce well architected framework architect agent",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7
+ },
+ {
+  "query": "4-seiten-analyse nach stakeholder meetings",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
+  "query": "scheduling console salesforce",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
   "query": "sfdx-hardis vs salesforce devops center lifecycle center comparison 2026",
   "clicks": 0,
   "impressions": 2,
   "position": 2
+ },
+ {
+  "query": "well architected framework salesforce",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 6
  },
  {
   "query": "暴食后第二天轻断食有用吗",
@@ -120,7 +120,31 @@
   "position": 10
  },
  {
-  "query": "comparison between change management models lewin kotter adkar",
+  "query": "sfdxhardis training",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 5
+ },
+ {
+  "query": "fk-sd.de",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 2
+ },
+ {
+  "query": "salesforce: wir nutzen contracts, preisbücher und accounts. kann ich in einem contract für einen account, der einem preisbuch zugeordnet ist, ein produkt als sonderpreis führen, dass nicht im preisbuch steht?",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
+ },
+ {
+  "query": "change kurve team",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 6
+ },
+ {
+  "query": "sfdx hardis badges",
   "clicks": 0,
   "impressions": 2,
   "position": 10
@@ -132,46 +156,16 @@
   "position": 8
  },
  {
-  "query": "fk-sd.de",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 2
- },
- {
-  "query": "sfdx hardis badges",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 10
- },
- {
-  "query": "change kurve team",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 6
- },
- {
   "query": "what is an fk in salesforce?",
   "clicks": 0,
   "impressions": 2,
   "position": 8
  },
  {
-  "query": "sfdxhardis training",
+  "query": "comparison between change management models lewin kotter adkar",
   "clicks": 0,
   "impressions": 2,
-  "position": 5
- },
- {
-  "query": "salesforce: wir nutzen contracts, preisbücher und accounts. kann ich in einem contract für einen account, der einem preisbuch zugeordnet ist, ein produkt als sonderpreis führen, dass nicht im preisbuch steht?",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "query": "salesforce gmv",
-  "clicks": 1,
-  "impressions": 1,
-  "position": 4
+  "position": 10
  },
  {
   "query": "unterschiede adkar und drei phasen modell von lewis",
@@ -180,10 +174,22 @@
   "position": 2
  },
  {
-  "query": "what is salesforce devopps now called",
-  "clicks": 0,
+  "query": "salesforce gmv",
+  "clicks": 1,
   "impressions": 1,
   "position": 4
+ },
+ {
+  "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "query": "\"snelstart\" \"verkooporders\" \"post\"",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
  },
  {
   "query": "trailhead new dispatch console",
@@ -210,19 +216,13 @@
   "position": 3
  },
  {
-  "query": "hardifs",
+  "query": "how to enable adjust duration of service appointments in new scheduling console salesforce field service",
   "clicks": 0,
   "impressions": 1,
-  "position": 5
+  "position": 7
  },
  {
-  "query": "difference between devops centre and salesforce dx",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 1
- },
- {
-  "query": "adjust duration in new cheudling console salesforce field service",
+  "query": "what is rca latest name for by salesforce",
   "clicks": 0,
   "impressions": 1,
   "position": 4
@@ -240,16 +240,22 @@
   "position": 3
  },
  {
-  "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
+  "query": "hardifs",
   "clicks": 0,
   "impressions": 1,
   "position": 5
  },
  {
-  "query": "\"snelstart\" \"verkooporders\" \"post\"",
+  "query": "difference between devops centre and salesforce dx",
   "clicks": 0,
   "impressions": 1,
-  "position": 10
+  "position": 1
+ },
+ {
+  "query": "adjust duration in new cheudling console salesforce field service",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
  },
  {
   "query": "difference between devops centre and salesforce dx  and copado",
@@ -276,6 +282,12 @@
   "position": 5
  },
  {
+  "query": "what is salesforce devopps now called",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
   "query": "trailhead scheduling console",
   "clicks": 0,
   "impressions": 1,
@@ -286,17 +298,5 @@
   "clicks": 0,
   "impressions": 1,
   "position": 10
- },
- {
-  "query": "salesforce b2b commerce extension",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 7
- },
- {
-  "query": "what is rca latest name for by salesforce",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
  }
 ]
