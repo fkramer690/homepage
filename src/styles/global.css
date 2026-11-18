@@ -1749,6 +1749,14 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 /* Search bar above the articles (blog overview); it filters together with the side column. */
 .blog-main { min-width: 0; }
 .blog-search { display: block; margin-bottom: 24px; }
+.blog-search-row { display: flex; gap: 10px; }
+.blog-search-row .blog-search-field { flex: 1; min-width: 0; }
+.blog-search-button { flex: none; height: 54px; padding: 0 24px; cursor: pointer; font-family: inherit; }
+.blog-search-offer { font: inherit; font-size: var(--fs-sm); padding: 0; color: var(--cyan-dark); background: none; border: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.blog-search-offer:hover { color: var(--cyan); }
+.blog-search-offer[hidden], .blog-search-partial[hidden] { display: none; }
+.blog-search-partial { margin: 6px 0 0; font-size: var(--fs-sm); color: var(--text-2); }
+.post-tile .post-snippet { font-size: var(--fs-sm); line-height: 1.5; color: var(--text-2); background: var(--tint); border-radius: var(--radius-sm); padding: 8px 10px; }
 .blog-search-field { display: flex; align-items: center; gap: 12px; height: 54px; padding: 0 16px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); transition: border-color var(--t-fast), box-shadow var(--t-fast); }
 .blog-search-field:focus-within { border-color: var(--cyan); box-shadow: var(--focus-glow); }
 .blog-search-field input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: inherit; font-size: var(--fs-base); color: var(--text); }
@@ -1769,6 +1777,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   .blog-main { display: contents; }
   .blog-search { order: -1; margin-bottom: 0; }
   .blog-search-field kbd { display: none; }
+  .blog-search-button { padding: 0 16px; }
 }
 /* Certifications subpage */
 .blog .page-main > h2 { margin-top: 1.6em; }
