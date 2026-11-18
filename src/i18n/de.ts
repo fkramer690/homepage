@@ -332,7 +332,6 @@ export const de: Dict = {
     searchButton: 'Suchen',
     searchHitsTitle: 'Treffer in Titeln, Beschreibungen und Schlagworten für',
     searchHitsFull: 'Treffer im Volltext aller Artikel für',
-    searchFullOffer: 'In allen Artikeltexten suchen',
     searchPartial: 'Kein Artikel enthält alle Begriffe. Zuerst stehen die Artikel, die die meisten Begriffe enthalten.',
     searchLoading: 'Artikeltexte werden durchsucht …',
     searchClear: 'Suche leeren',
