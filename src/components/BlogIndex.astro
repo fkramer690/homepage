@@ -122,7 +122,7 @@ const schema = {
             <button type="button" class="btn blog-search-button" data-search-full>{t.blog.searchButton}</button>
             </div>
             <p class="blog-search-popular"><span>{t.blog.searchPopular}:</span>{t.blog.searchPopularTerms.map((term) => <button type="button" class="blog-search-chip" data-search-term={term}>{term}</button>)}</p>
-            <p class="blog-search-status" aria-live="polite" data-search-status data-scope-title={t.blog.searchHitsTitle} data-scope-full={t.blog.searchHitsFull} data-loading={t.blog.searchLoading} hidden><span><strong data-search-count></strong> <span data-search-scope></span> {lang === 'de' ? '„' : '“'}<span data-search-query></span>{lang === 'de' ? '“' : '”'}</span> <button type="button" class="blog-search-offer" data-search-full>{t.blog.searchFullOffer}</button> <button type="button" class="blog-filter-reset" data-search-clear>× {t.blog.searchClear}</button></p>
+            <p class="blog-search-status" aria-live="polite" data-search-status data-scope-title={t.blog.searchHitsTitle} data-scope-full={t.blog.searchHitsFull} data-loading={t.blog.searchLoading} hidden><span><strong data-search-count></strong> <span data-search-scope></span> {lang === 'de' ? '„' : '“'}<span data-search-query></span>{lang === 'de' ? '“' : '”'}</span> <button type="button" class="blog-filter-reset" data-search-clear>× {t.blog.searchClear}</button></p>
             <p class="blog-search-partial" data-search-partial hidden>{t.blog.searchPartial}</p>
           </search>
         <ul class="post-grid" data-more-text={t.blog.loadMoreCount} data-drawings={drawingsHref} data-fulltext={fulltextHref}>
@@ -160,14 +160,13 @@ const schema = {
 <script>
   // Without JavaScript all articles stay visible. Search, author and topic filter
   // combine. The filters are kept in the URL hash (#juliane, #devops or
-  // #juliane+change-management), the search in ?q= (plus &volltext=1 after the
-  // "Search" button), so every view can be shared.
+  // #juliane+change-management), the search in ?q=, so every view can be shared.
+  // The search looks through the full text of every article (src/lib/blog-search.ts).
   // The overview shows the first PAGE matching articles; "Load more" adds the next
   // PAGE. Filter and search always look through all articles.
   // Search rules, synonyms and the full-text index: src/lib/blog-search.ts.
   import { parseQuery, matches, shardOf, tokenize, snippet, markPattern, WEIGHT, type Term } from '../lib/blog-search';
   const PAGE = 24;
-  const FULL_PARAM = 'volltext';
   const box = document.querySelector<HTMLElement>('.blog-filter');
   const grid = document.querySelector<HTMLElement>('.post-grid');
   if (box && grid) {
@@ -177,7 +176,6 @@ const schema = {
     const input = document.querySelector<HTMLInputElement>('[data-search-input]')!;
     const status = document.querySelector<HTMLElement>('[data-search-status]')!;
     const scope = status.querySelector<HTMLElement>('[data-search-scope]')!;
-    const offer = status.querySelector<HTMLElement>('[data-search-full]')!;
     const partial = document.querySelector<HTMLElement>('[data-search-partial]')!;
     const none = document.querySelector<HTMLElement>('[data-search-none]')!;
     const more = document.querySelector<HTMLElement>('[data-more]')!;
@@ -349,10 +347,9 @@ const schema = {
       status.querySelector('[data-search-count]')!.textContent = String(shown);
       status.querySelector('[data-search-query]')!.textContent = state.q.trim();
       scope.textContent = state.full ? status.dataset.scopeFull! : status.dataset.scopeTitle!;
-      offer.hidden = state.full;
       partial.hidden = !result?.partial;
       none.hidden = shown > 0;
-      const params = searching ? `?q=${encodeURIComponent(state.q.trim())}${state.full ? `&${FULL_PARAM}=1` : ''}` : '';
+      const params = searching ? `?q=${encodeURIComponent(state.q.trim())}` : '';
       history.replaceState(null, '', `${location.pathname}${params}${active.length ? `#${active.join('+')}` : ''}`);
     }
 
@@ -375,9 +372,22 @@ const schema = {
     // Every new filter or search starts again with the first PAGE hits.
     authors.forEach((b) => b.addEventListener('click', () => { state.author = b.dataset.author ?? 'all'; state.limit = PAGE; apply(); }));
     topics.forEach((b) => b.addEventListener('click', () => { state.topic = b.dataset.topic ?? 'all'; state.limit = PAGE; apply(); }));
-    const searchFor = (q: string) => { state.q = q; state.full = false; input.value = q; state.limit = PAGE; apply(); };
-    // Typing goes back to the quick search through titles, descriptions and tags.
-    input.addEventListener('input', () => { fullRun++; state.q = input.value; state.full = false; state.limit = PAGE; apply(); });
+    // Typing searches the full text right away when the index files of the words are
+    // already loaded; otherwise titles, descriptions and tags first, and the full text
+    // follows a moment later.
+    let pending: ReturnType<typeof setTimeout> | undefined;
+    function searchFor(q: string) {
+      fullRun++;
+      clearTimeout(pending);
+      state.q = q;
+      input.value = q;
+      state.limit = PAGE;
+      const terms = parseQuery(q);
+      state.full = terms.length > 0 && shardKeys(terms).every((key) => loaded.has(key));
+      apply();
+      if (terms.length && !state.full) pending = setTimeout(searchFullText, 250);
+    }
+    input.addEventListener('input', () => searchFor(input.value));
     input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); searchFullText(); } });
     document.querySelectorAll<HTMLButtonElement>('[data-search-full]').forEach((b) => b.addEventListener('click', () => searchFullText()));
     more.querySelector('[data-more-button]')?.addEventListener('click', () => {
@@ -409,6 +419,6 @@ const schema = {
     state.q = params.get('q') ?? '';
     input.value = state.q;
     apply();
-    if (params.get(FULL_PARAM) === '1') searchFullText();
+    if (state.q.trim()) searchFullText();
   }
 </script>

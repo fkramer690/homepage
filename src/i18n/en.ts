@@ -367,7 +367,6 @@ export const en = {
     searchButton: 'Search',
     searchHitsTitle: 'results in titles, descriptions and tags for',
     searchHitsFull: 'results in the full text of all articles for',
-    searchFullOffer: 'Search all article texts',
     searchPartial: 'No article contains all terms. Articles with the most terms are shown first.',
     searchLoading: 'Searching article texts …',
     searchClear: 'Clear search',

@@ -363,20 +363,21 @@ field, bar above the articles, full-text result list). Built in
 - Above the article column a 54px search field (`search` icon, "/" shortcut hint)
   with a "Suchen" button next to it (added 2026-11-18), below it "Oft gesucht"
   chips with fixed terms from `t.blog.searchPopularTerms` and, while searching,
-  "N Treffer in Titeln, Beschreibungen und Schlagworten für „…“ · In allen
-  Artikeltexten suchen · × Suche leeren".
-- While typing it searches title, description, tags and topic names. The button
-  (or Enter) adds the full text of every article: it loads only the index files
-  of the first letters of the search words (`/blog/suche/<letter>.json`, EN
-  `/en/blog/search/`) and, for the shown hits, the article text for a passage
-  under the card (light tint box, words marked). Matching rules and the EN/DE
-  synonym list live in `src/lib/blog-search.ts`: hyphens split words, a search
-  word matches the start of a word, words of up to three letters match whole
-  words only. Results are ranked (title before tags before description before
-  running text); if no article has every word, the articles with the most words
-  come first with a note. Hits are marked; no wide card while searching.
+  "N Treffer im Volltext aller Artikel für „…“ × Suche leeren".
+- The search always covers the full text of every article (Fabian 2026-11-18:
+  typing alone must find body hits). While typing it first ranks title,
+  description, tags and topic names, then loads the index files of the first
+  letters of the search words (`/blog/suche/<letter>.json`, EN
+  `/en/blog/search/`, cached) and adds the text; Enter or the button skip the
+  short wait. Shown hits get a passage from their article text under the card
+  (light tint box, words marked). Matching rules and the EN/DE synonym list live
+  in `src/lib/blog-search.ts`: hyphens split words, a search word matches the
+  start of a word, words of up to three letters match whole words only. Results
+  are ranked (title before tags before description before running text); if no
+  article has every word, the articles with the most words come first with a
+  note. Hits are marked; no wide card while searching.
 - Combines with author and topic: the side-column counts follow the search. The
-  query sits in `?q=` (plus `&volltext=1` after the button), the filters stay in the hash.
+  query sits in `?q=`, the filters stay in the hash.
 - Below 960px the bar sits above the folded "Filter" box.
 - Fits: overviews with enough items that people look for a term, not a category.
 
