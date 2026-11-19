@@ -1,7 +1,7 @@
 [
  {
   "country": "DE",
-  "pageviews": 1340,
+  "pageviews": 1350,
   "visits": 220
  },
  {
@@ -35,6 +35,11 @@
   "visits": 10
  },
  {
+  "country": "CA",
+  "pageviews": 20,
+  "visits": 20
+ },
+ {
   "country": "SG",
   "pageviews": 20,
   "visits": 0
@@ -46,11 +51,6 @@
  },
  {
   "country": "AU",
-  "pageviews": 10,
-  "visits": 10
- },
- {
-  "country": "CA",
   "pageviews": 10,
   "visits": 10
  },
