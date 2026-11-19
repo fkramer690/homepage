@@ -11265,6 +11265,14 @@
  },
  {
   "day": "2026-11-18",
+  "query": "what software manages preferred supplier lists in field service?",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 7,
+  "position": 42.3
+ },
+ {
+  "day": "2026-11-18",
   "query": "field service application software",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
@@ -11292,8 +11300,16 @@
   "query": "click field service management software",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
-  "impressions": 3,
-  "position": 35
+  "impressions": 4,
+  "position": 36
+ },
+ {
+  "day": "2026-11-18",
+  "query": "wo kann ich eine demo für f&e software anfragen",
+  "page": "https://www.fk-sd.de/speaking/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 48
  },
  {
   "day": "2026-11-18",
@@ -11305,11 +11321,27 @@
  },
  {
   "day": "2026-11-18",
+  "query": "gearset alternatives",
+  "page": "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 11
+ },
+ {
+  "day": "2026-11-18",
   "query": "erp field service",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
   "impressions": 2,
   "position": 56
+ },
+ {
+  "day": "2026-11-18",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 15.5
  },
  {
   "day": "2026-11-18",
@@ -11337,11 +11369,35 @@
  },
  {
   "day": "2026-11-18",
+  "query": "field services software",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 42.5
+ },
+ {
+  "day": "2026-11-18",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 14.5
+ },
+ {
+  "day": "2026-11-18",
   "query": "wechsel von cpq zu revenue cloud",
   "page": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
   "clicks": 0,
   "impressions": 2,
   "position": 10
+ },
+ {
+  "day": "2026-11-18",
+  "query": "agent f",
+  "page": "https://www.fk-sd.de/blog/agentforce-ja-oder-nein-hersteller/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 43
  },
  {
   "day": "2026-11-18",
@@ -11361,6 +11417,22 @@
  },
  {
   "day": "2026-11-18",
+  "query": "cloud manufacturing",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 68
+ },
+ {
+  "day": "2026-11-18",
+  "query": "copado alternatives",
+  "page": "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-18",
   "query": "epicor kinetic salesforce warranty claim handoff",
   "page": "https://www.fk-sd.de/en/blog/warranty-claims-dealers-salesforce/",
   "clicks": 0,
@@ -11374,14 +11446,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 43
- },
- {
-  "day": "2026-11-18",
-  "query": "fertigung salesforce",
-  "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 15
  },
  {
   "day": "2026-11-18",
@@ -11441,14 +11505,6 @@
  },
  {
   "day": "2026-11-18",
-  "query": "field services software",
-  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 43
- },
- {
-  "day": "2026-11-18",
   "query": "field software",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
@@ -11470,6 +11526,14 @@
   "clicks": 0,
   "impressions": 1,
   "position": 90
+ },
+ {
+  "day": "2026-11-18",
+  "query": "manufacturing cloud",
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 55
  },
  {
   "day": "2026-11-18",
@@ -11505,6 +11569,14 @@
  },
  {
   "day": "2026-11-18",
+  "query": "salesforce core edition",
+  "page": "https://www.fk-sd.de/blog/salesforce-editionen-core-advanced-max/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-18",
   "query": "salesforce release schedule",
   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
   "clicks": 0,
@@ -11529,6 +11601,30 @@
  },
  {
   "day": "2026-11-18",
+  "query": "sap order in mulesoft",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-sap-order-status-mulesoft/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-18",
+  "query": "service pro vs ptc servicemax",
+  "page": "https://www.fk-sd.de/blog/servicemax-oder-salesforce-field-service/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "day": "2026-11-18",
+  "query": "sfdx-hardis",
+  "page": "https://www.fk-sd.de/en/partners/recruiters/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
+ },
+ {
+  "day": "2026-11-18",
   "query": "wechsel von cpq zu revenue cloud",
   "page": "https://www.fk-sd.de/blog/cpq-migration-revenue-cloud-phasen/",
   "clicks": 0,
@@ -11537,18 +11633,66 @@
  },
  {
   "day": "2026-11-18",
-  "query": "what software manages preferred supplier lists in field service?",
+  "query": "what licenses do i need to use b2b commerce in commerce cloud?",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-buyer-licences/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "day": "2026-11-19",
+  "query": "salesforce core edition",
+  "page": "https://www.fk-sd.de/blog/salesforce-editionen-core-advanced-max/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
+  "day": "2026-11-19",
+  "query": "core edition salesforce",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-editions-core-advanced-max/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-19",
+  "query": "field services",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
   "impressions": 1,
-  "position": 43
+  "position": 63
  },
  {
-  "day": "2026-11-18",
-  "query": "wo kann ich eine demo für f&e software anfragen",
-  "page": "https://www.fk-sd.de/speaking/",
+  "day": "2026-11-19",
+  "query": "ki chatbot audit trail",
+  "page": "https://www.fk-sd.de/blog/audit-trail-ki-agenten-salesforce/",
   "clicks": 0,
   "impressions": 1,
-  "position": 64
+  "position": 91
+ },
+ {
+  "day": "2026-11-19",
+  "query": "vertragsmanagement mit salesforce",
+  "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-19",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-19",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 1
  }
 ]

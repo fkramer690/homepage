@@ -1,8 +1,8 @@
 [
  {
   "page": "/",
-  "pageviews": 370,
-  "visits": 180
+  "pageviews": 390,
+  "visits": 200
  },
  {
   "page": "/en/blog/",
@@ -50,24 +50,24 @@
   "visits": 10
  },
  {
-  "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
-  "pageviews": 40,
-  "visits": 0
- },
- {
   "page": "/masterclass/",
   "pageviews": 40,
   "visits": 10
  },
  {
-  "page": "/leistungen/salesforce-architektur/",
+  "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
   "pageviews": 40,
-  "visits": 20
+  "visits": 0
  },
  {
   "page": "/blog/account-forecasting-absatzprognose-vertrieb/",
   "pageviews": 40,
   "visits": 40
+ },
+ {
+  "page": "/leistungen/salesforce-architektur/",
+  "pageviews": 40,
+  "visits": 20
  },
  {
   "page": "/en/services/change-management-salesforce/",

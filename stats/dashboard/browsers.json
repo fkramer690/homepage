@@ -6,8 +6,8 @@
  },
  {
   "browser": "Unknown",
-  "pageviews": 320,
-  "visits": 220
+  "pageviews": 350,
+  "visits": 250
  },
  {
   "browser": "MobileSafari",
@@ -36,6 +36,11 @@
  },
  {
   "browser": "Firefox",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "browser": "Safari",
   "pageviews": 10,
   "visits": 10
  }
