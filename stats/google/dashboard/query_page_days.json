@@ -11644,16 +11644,16 @@
   "query": "salesforce release dates",
   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
   "clicks": 0,
-  "impressions": 14,
-  "position": 20.4
+  "impressions": 16,
+  "position": 20.6
  },
  {
   "day": "2026-11-19",
   "query": "salesforce release schedule",
   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
   "clicks": 0,
-  "impressions": 9,
-  "position": 22
+  "impressions": 10,
+  "position": 21.4
  },
  {
   "day": "2026-11-19",
@@ -11745,6 +11745,14 @@
  },
  {
   "day": "2026-11-19",
+  "query": "can agentforce agents be tested and monitored before going live?",
+  "page": "https://www.fk-sd.de/en/blog/testing-agentforce-agents-before-go-live/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 2
+ },
+ {
+  "day": "2026-11-19",
   "query": "change management salesforce projekt",
   "page": "https://www.fk-sd.de/blog/change-management-prozess-salesforce/",
   "clicks": 0,
@@ -11777,6 +11785,30 @@
  },
  {
   "day": "2026-11-19",
+  "query": "clicksoftware field service management",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 66
+ },
+ {
+  "day": "2026-11-19",
+  "query": "cloud field service management",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 46
+ },
+ {
+  "day": "2026-11-19",
+  "query": "copado alternative",
+  "page": "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 19
+ },
+ {
+  "day": "2026-11-19",
   "query": "cpq upgraden",
   "page": "https://www.fk-sd.de/blog/cpq-migration-revenue-cloud-phasen/",
   "clicks": 0,
@@ -11790,6 +11822,14 @@
   "clicks": 0,
   "impressions": 1,
   "position": 69
+ },
+ {
+  "day": "2026-11-19",
+  "query": "field service",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 65
  },
  {
   "day": "2026-11-19",
@@ -11825,6 +11865,22 @@
  },
  {
   "day": "2026-11-19",
+  "query": "manufacturing cloud implementeren",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 68
+ },
+ {
+  "day": "2026-11-19",
+  "query": "nearshore salesforce development",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 47
+ },
+ {
+  "day": "2026-11-19",
   "query": "nearshore teamerweiterung",
   "page": "https://www.fk-sd.de/blog/nearshore-teams-salesforce-acht-entwickler/",
   "clicks": 0,
@@ -11841,11 +11897,59 @@
  },
  {
   "day": "2026-11-19",
+  "query": "nearshore teams",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 62
+ },
+ {
+  "day": "2026-11-19",
+  "query": "offline field service app",
+  "page": "https://www.fk-sd.de/en/blog/field-service-mobile-app-offline-data/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 52
+ },
+ {
+  "day": "2026-11-19",
   "query": "predictive maintenance salesforce",
   "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
   "clicks": 0,
   "impressions": 1,
   "position": 12
+ },
+ {
+  "day": "2026-11-19",
+  "query": "salesforce architektur leipzig",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-19",
+  "query": "salesforce architektur luzern",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
+ },
+ {
+  "day": "2026-11-19",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-19",
+  "query": "salesforce custom development nearshore",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 56
  },
  {
   "day": "2026-11-19",
@@ -11921,6 +12025,14 @@
  },
  {
   "day": "2026-11-19",
+  "query": "salesforce pim",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 46
+ },
+ {
+  "day": "2026-11-19",
   "query": "salesforce project recovery consultant",
   "page": "https://www.fk-sd.de/en/services/salesforce-project-rescue/",
   "clicks": 0,
@@ -11945,11 +12057,27 @@
  },
  {
   "day": "2026-11-19",
+  "query": "sap order in mulesoft",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-sap-order-status-mulesoft/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "day": "2026-11-19",
   "query": "solutions factory consulting gmbh",
   "page": "https://www.fk-sd.de/en/",
   "clicks": 0,
   "impressions": 1,
   "position": 36
+ },
+ {
+  "day": "2026-11-19",
+  "query": "spring release calendar",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
  },
  {
   "day": "2026-11-19",
@@ -11990,5 +12118,21 @@
   "clicks": 0,
   "impressions": 1,
   "position": 43
+ },
+ {
+  "day": "2026-11-20",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7
+ },
+ {
+  "day": "2026-11-20",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
  }
 ]

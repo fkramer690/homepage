@@ -26,20 +26,20 @@
  {
   "query": "salesforce commerce product data",
   "clicks": 0,
-  "impressions": 47,
-  "position": 55.9
+  "impressions": 48,
+  "position": 55
  },
  {
   "query": "what makes a salesforce devops platform enterprise-ready?",
   "clicks": 0,
-  "impressions": 44,
+  "impressions": 45,
   "position": 6.3
  },
  {
   "query": "what does a typical salesforce devops rollout look like?",
   "clicks": 0,
-  "impressions": 39,
-  "position": 6.7
+  "impressions": 41,
+  "position": 6.8
  },
  {
   "query": "field service shift planning",
@@ -150,6 +150,12 @@
   "position": 25.6
  },
  {
+  "query": "salesforce release dates",
+  "clicks": 0,
+  "impressions": 19,
+  "position": 21.4
+ },
+ {
   "query": "b2b portal software pricing",
   "clicks": 0,
   "impressions": 18,
@@ -168,12 +174,6 @@
   "position": 9.9
  },
  {
-  "query": "salesforce release dates",
-  "clicks": 0,
-  "impressions": 17,
-  "position": 21.3
- },
- {
   "query": "service pro vs ptc servicemax",
   "clicks": 0,
   "impressions": 17,
@@ -184,6 +184,12 @@
   "clicks": 0,
   "impressions": 17,
   "position": 10.2
+ },
+ {
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 16,
+  "position": 50
  },
  {
   "query": "b2b dealer portal",
@@ -198,10 +204,10 @@
   "position": 70.3
  },
  {
-  "query": "nearshore teams",
+  "query": "salesforce release schedule",
   "clicks": 0,
   "impressions": 15,
-  "position": 49.2
+  "position": 26.1
  },
  {
   "query": "stakeholder analysis matrix",
@@ -226,12 +232,6 @@
   "clicks": 0,
   "impressions": 14,
   "position": 22.6
- },
- {
-  "query": "salesforce release schedule",
-  "clicks": 0,
-  "impressions": 14,
-  "position": 26.9
  },
  {
   "query": "field service schedule",
@@ -270,6 +270,12 @@
   "position": 73.8
  },
  {
+  "query": "nearshore salesforce development",
+  "clicks": 0,
+  "impressions": 12,
+  "position": 78.2
+ },
+ {
   "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
   "clicks": 0,
   "impressions": 11,
@@ -298,12 +304,6 @@
   "clicks": 0,
   "impressions": 11,
   "position": 69
- },
- {
-  "query": "nearshore salesforce development",
-  "clicks": 0,
-  "impressions": 11,
-  "position": 81
  },
  {
   "query": "scalable b2b headless commerce",
@@ -480,6 +480,12 @@
   "position": 55
  },
  {
+  "query": "cloud field service management",
+  "clicks": 0,
+  "impressions": 7,
+  "position": 73.4
+ },
+ {
   "query": "field service mobile flow limitations",
   "clicks": 0,
   "impressions": 7,
@@ -496,6 +502,12 @@
   "clicks": 0,
   "impressions": 7,
   "position": 17.4
+ },
+ {
+  "query": "sap order in mulesoft",
+  "clicks": 0,
+  "impressions": 7,
+  "position": 12.4
  },
  {
   "query": "stakeholder analysis example",
@@ -528,22 +540,28 @@
   "position": 32.3
  },
  {
+  "query": "can agentforce agents be tested and monitored before going live?",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 3.5
+ },
+ {
   "query": "click field service",
   "clicks": 0,
   "impressions": 6,
   "position": 72
  },
  {
-  "query": "cloud field service management",
-  "clicks": 0,
-  "impressions": 6,
-  "position": 78
- },
- {
   "query": "epicor kinetic salesforce warranty claim handoff",
   "clicks": 0,
   "impressions": 6,
   "position": 18.8
+ },
+ {
+  "query": "field service",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 72.8
  },
  {
   "query": "field service planning",
@@ -582,12 +600,6 @@
   "position": 38.8
  },
  {
-  "query": "sap order in mulesoft",
-  "clicks": 0,
-  "impressions": 6,
-  "position": 12.3
- },
- {
   "query": "service field management software",
   "clicks": 0,
   "impressions": 6,
@@ -598,12 +610,6 @@
   "clicks": 0,
   "impressions": 6,
   "position": 29.8
- },
- {
-  "query": "can agentforce agents be tested and monitored before going live?",
-  "clicks": 0,
-  "impressions": 5,
-  "position": 3.8
  },
  {
   "query": "change management communication plan template",
@@ -622,12 +628,6 @@
   "clicks": 0,
   "impressions": 5,
   "position": 37.4
- },
- {
-  "query": "field service",
-  "clicks": 0,
-  "impressions": 5,
-  "position": 74.4
  },
  {
   "query": "field service kpi",
@@ -822,6 +822,12 @@
   "position": 62.3
  },
  {
+  "query": "manufacturing cloud implementeren",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 59
+ },
+ {
   "query": "manufacturing customer portal",
   "clicks": 0,
   "impressions": 4,
@@ -1002,10 +1008,10 @@
   "position": 6
  },
  {
-  "query": "manufacturing cloud implementeren",
+  "query": "offline field service app",
   "clicks": 0,
   "impressions": 3,
-  "position": 56
+  "position": 72.7
  },
  {
   "query": "replace drs scheduling",
@@ -1054,6 +1060,12 @@
   "clicks": 0,
   "impressions": 3,
   "position": 53
+ },
+ {
+  "query": "salesforce pim",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 36.7
  },
  {
   "query": "salesforce predictive maintenance",
@@ -1368,12 +1380,6 @@
   "position": 85.5
  },
  {
-  "query": "offline field service app",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 83
- },
- {
   "query": "revenue cloud vs cpq",
   "clicks": 0,
   "impressions": 2,
@@ -1434,6 +1440,12 @@
   "position": 16.5
  },
  {
+  "query": "salesforce custom development nearshore",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 71.5
+ },
+ {
   "query": "salesforce erp schnittstelle",
   "clicks": 0,
   "impressions": 2,
@@ -1462,12 +1474,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 54
- },
- {
-  "query": "salesforce pim",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 32
  },
  {
   "query": "salesforce project rescue company",
@@ -1780,6 +1786,18 @@
   "clicks": 0,
   "impressions": 1,
   "position": 75
+ },
+ {
+  "query": "clicksoftware field service management",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 66
+ },
+ {
+  "query": "copado alternative",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 19
  },
  {
   "query": "copado alternatives",
@@ -2328,6 +2346,18 @@
   "position": 20
  },
  {
+  "query": "salesforce architektur leipzig",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "query": "salesforce architektur luzern",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
+ },
+ {
   "query": "salesforce architektur nürnberg",
   "clicks": 0,
   "impressions": 1,
@@ -2368,12 +2398,6 @@
   "clicks": 0,
   "impressions": 1,
   "position": 51
- },
- {
-  "query": "salesforce custom development nearshore",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 87
  },
  {
   "query": "salesforce devops for finance",
@@ -2638,6 +2662,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 46
+ },
+ {
+  "query": "spring release calendar",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 3
  },
  {
   "query": "stakeholder matrix excel",
