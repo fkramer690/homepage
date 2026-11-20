@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-19T14:24:16.972Z",
+  "generatedAt": "2026-11-20T04:48:34.516Z",
   "range": {
-    "start": "2026-10-20",
-    "end": "2026-11-19"
+    "start": "2026-10-21",
+    "end": "2026-11-20"
   },
   "browsers": [
     {
@@ -15,12 +15,12 @@
       }
     },
     {
-      "count": 350,
+      "count": 360,
       "dimensions": {
         "userAgentBrowser": "Unknown"
       },
       "sum": {
-        "visits": 250
+        "visits": 260
       }
     },
     {
@@ -182,6 +182,15 @@
       "count": 10,
       "dimensions": {
         "countryName": "AU"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "countryName": "AL"
       },
       "sum": {
         "visits": 10
@@ -424,12 +433,12 @@
       }
     },
     {
-      "count": 40,
+      "count": 50,
       "dimensions": {
         "date": "2026-11-19"
       },
       "sum": {
-        "visits": 40
+        "visits": 50
       }
     }
   ],
@@ -444,12 +453,12 @@
       }
     },
     {
-      "count": 530,
+      "count": 540,
       "dimensions": {
         "deviceType": "mobile"
       },
       "sum": {
-        "visits": 260
+        "visits": 270
       }
     }
   ],
@@ -547,19 +556,19 @@
     {
       "count": 40,
       "dimensions": {
-        "requestPath": "/masterclass/"
+        "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
       },
       "sum": {
-        "visits": 10
+        "visits": 0
       }
     },
     {
       "count": 40,
       "dimensions": {
-        "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
+        "requestPath": "/masterclass/"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     },
     {
@@ -646,12 +655,12 @@
       }
     },
     {
-      "count": 900,
+      "count": 910,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 900
+        "visits": 910
       }
     },
     {
@@ -2082,20 +2091,20 @@
       }
     },
     {
-      "count": 10,
+      "count": 20,
       "dimensions": {
         "date": "2026-11-19",
-        "requestPath": "/en/blog/manufacturing-cloud-global-rollout/"
+        "requestPath": "/en/blog/what-is-agentforce/"
       },
       "sum": {
-        "visits": 10
+        "visits": 20
       }
     },
     {
       "count": 10,
       "dimensions": {
         "date": "2026-11-19",
-        "requestPath": "/en/blog/what-is-agentforce/"
+        "requestPath": "/en/blog/manufacturing-cloud-global-rollout/"
       },
       "sum": {
         "visits": 10
@@ -2614,13 +2623,13 @@
       }
     },
     {
-      "count": 30,
+      "count": 40,
       "dimensions": {
         "date": "2026-11-19",
         "refererHost": ""
       },
       "sum": {
-        "visits": 30
+        "visits": 40
       }
     },
     {

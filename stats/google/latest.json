@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-19T14:39:51.997Z",
+ "generatedAt": "2026-11-20T05:06:37.316Z",
  "site": "sc-domain:fk-sd.de",
  "daily": [
   {
@@ -149,14 +149,14 @@
   {
    "day": "2026-11-18",
    "clicks": 2,
-   "impressions": 211,
-   "position": 18.4
+   "impressions": 215,
+   "position": 18.2
   },
   {
    "day": "2026-11-19",
-   "clicks": 0,
-   "impressions": 12,
-   "position": 18.6
+   "clicks": 3,
+   "impressions": 162,
+   "position": 19.2
   }
  ],
  "queries": [
@@ -169,8 +169,8 @@
   {
    "query": "manufacturing cloud",
    "clicks": 0,
-   "impressions": 57,
-   "position": 44.3
+   "impressions": 61,
+   "position": 43.9
   },
   {
    "query": "how to automate technician scheduling and dispatch?",
@@ -193,8 +193,14 @@
   {
    "query": "what makes a salesforce devops platform enterprise-ready?",
    "clicks": 0,
-   "impressions": 42,
+   "impressions": 44,
    "position": 6.3
+  },
+  {
+   "query": "what does a typical salesforce devops rollout look like?",
+   "clicks": 0,
+   "impressions": 39,
+   "position": 6.7
   },
   {
    "query": "field service shift planning",
@@ -203,10 +209,10 @@
    "position": 74.8
   },
   {
-   "query": "what does a typical salesforce devops rollout look like?",
+   "query": "field service application software",
    "clicks": 0,
    "impressions": 36,
-   "position": 6.8
+   "position": 58.1
   },
   {
    "query": "sfdx-hardis",
@@ -221,28 +227,22 @@
    "position": 84.7
   },
   {
-   "query": "field service application software",
-   "clicks": 0,
-   "impressions": 32,
-   "position": 57.2
-  },
-  {
    "query": "field service scheduling",
    "clicks": 0,
    "impressions": 32,
    "position": 89.1
   },
   {
+   "query": "click field service management software",
+   "clicks": 0,
+   "impressions": 31,
+   "position": 66
+  },
+  {
    "query": "b2b portal",
    "clicks": 0,
    "impressions": 30,
    "position": 73.1
-  },
-  {
-   "query": "click field service management software",
-   "clicks": 0,
-   "impressions": 30,
-   "position": 66.4
   },
   {
    "query": "field service pricing",
@@ -269,16 +269,22 @@
    "position": 80.5
   },
   {
-   "query": "field service management cloud",
-   "clicks": 0,
-   "impressions": 21,
-   "position": 74.7
-  },
-  {
    "query": "nearshore teamerweiterung",
    "clicks": 0,
-   "impressions": 21,
-   "position": 49.3
+   "impressions": 23,
+   "position": 52
+  },
+  {
+   "query": "field service management cloud",
+   "clicks": 0,
+   "impressions": 22,
+   "position": 74
+  },
+  {
+   "query": "erp field service",
+   "clicks": 0,
+   "impressions": 20,
+   "position": 74
   },
   {
    "query": "kommunikationsplan",
@@ -287,16 +293,16 @@
    "position": 89.2
   },
   {
+   "query": "salesforce manufacturing cloud",
+   "clicks": 0,
+   "impressions": 20,
+   "position": 62.6
+  },
+  {
    "query": "(\"nearshore development center\" or \"nearshore partner\" or \"nearshore team\" or \"build delivery center poland\") (enterprise or \"mid-size\" or corporation) (europe or uk or germany or netherlands or scandinavia) -site:linkedin.com -site:twitter.com",
    "clicks": 0,
    "impressions": 19,
    "position": 6.9
-  },
-  {
-   "query": "erp field service",
-   "clicks": 0,
-   "impressions": 19,
-   "position": 74.2
   },
   {
    "query": "fertigung salesforce",
@@ -323,16 +329,22 @@
    "position": 9.9
   },
   {
-   "query": "salesforce manufacturing cloud",
+   "query": "salesforce release dates",
    "clicks": 0,
-   "impressions": 18,
-   "position": 63.5
+   "impressions": 17,
+   "position": 21.3
   },
   {
    "query": "service pro vs ptc servicemax",
    "clicks": 0,
    "impressions": 17,
    "position": 8.5
+  },
+  {
+   "query": "wechsel von cpq zu revenue cloud",
+   "clicks": 0,
+   "impressions": 17,
+   "position": 10.2
   },
   {
    "query": "b2b dealer portal",
@@ -359,12 +371,6 @@
    "position": 28.3
   },
   {
-   "query": "wechsel von cpq zu revenue cloud",
-   "clicks": 0,
-   "impressions": 15,
-   "position": 8
-  },
-  {
    "query": "advanced field service",
    "clicks": 0,
    "impressions": 14,
@@ -383,10 +389,28 @@
    "position": 22.6
   },
   {
+   "query": "salesforce release schedule",
+   "clicks": 0,
+   "impressions": 14,
+   "position": 26.9
+  },
+  {
    "query": "field service schedule",
    "clicks": 0,
    "impressions": 13,
    "position": 87.2
+  },
+  {
+   "query": "ki chatbot audit trail",
+   "clicks": 0,
+   "impressions": 13,
+   "position": 75.3
+  },
+  {
+   "query": "what software manages preferred supplier lists in field service?",
+   "clicks": 0,
+   "impressions": 13,
+   "position": 40
   },
   {
    "query": "field service app",
@@ -405,18 +429,6 @@
    "clicks": 0,
    "impressions": 12,
    "position": 73.8
-  },
-  {
-   "query": "ki chatbot audit trail",
-   "clicks": 0,
-   "impressions": 12,
-   "position": 74
-  },
-  {
-   "query": "what software manages preferred supplier lists in field service?",
-   "clicks": 0,
-   "impressions": 12,
-   "position": 39.8
   },
   {
    "query": "\"agentforce\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
@@ -467,6 +479,12 @@
    "position": 62.2
   },
   {
+   "query": "change management salesforce projekt",
+   "clicks": 0,
+   "impressions": 10,
+   "position": 14.2
+  },
+  {
    "query": "dealer ecommerce portal",
    "clicks": 0,
    "impressions": 10,
@@ -497,6 +515,12 @@
    "position": 21.6
   },
   {
+   "query": "salesforce zertifizierte experten",
+   "clicks": 0,
+   "impressions": 10,
+   "position": 35.7
+  },
+  {
    "query": "b2b checkout",
    "clicks": 0,
    "impressions": 9,
@@ -509,10 +533,16 @@
    "position": 62.3
   },
   {
-   "query": "change management salesforce projekt",
+   "query": "clicksoftware field service",
    "clicks": 0,
    "impressions": 9,
-   "position": 15
+   "position": 73.6
+  },
+  {
+   "query": "cpq upgraden",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 36.1
   },
   {
    "query": "devops release management",
@@ -569,34 +599,28 @@
    "position": 74.1
   },
   {
-   "query": "clicksoftware field service",
-   "clicks": 0,
-   "impressions": 8,
-   "position": 78.9
-  },
-  {
    "query": "cpq revenue cloud integration",
    "clicks": 0,
    "impressions": 8,
    "position": 81.6
   },
   {
-   "query": "cpq upgraden",
+   "query": "salesforce manufacturing cloud partner",
    "clicks": 0,
    "impressions": 8,
-   "position": 37
+   "position": 59.1
+  },
+  {
+   "query": "salesforce nearshore development",
+   "clicks": 0,
+   "impressions": 8,
+   "position": 66.5
   },
   {
    "query": "salesforce release management tools",
    "clicks": 0,
    "impressions": 8,
    "position": 95.9
-  },
-  {
-   "query": "salesforce zertifizierte experten",
-   "clicks": 0,
-   "impressions": 8,
-   "position": 36.1
   },
   {
    "query": "tourenplanung field service",
@@ -623,10 +647,10 @@
    "position": 6.1
   },
   {
-   "query": "salesforce manufacturing cloud partner",
+   "query": "predictive maintenance salesforce",
    "clicks": 0,
    "impressions": 7,
-   "position": 59.7
+   "position": 13.4
   },
   {
    "query": "salesforce revenue cloud advanced implementierung",
@@ -665,6 +689,12 @@
    "position": 32.3
   },
   {
+   "query": "click field service",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 72
+  },
+  {
    "query": "cloud field service management",
    "clicks": 0,
    "impressions": 6,
@@ -689,12 +719,6 @@
    "position": 19.5
   },
   {
-   "query": "predictive maintenance salesforce",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 13.7
-  },
-  {
    "query": "produktdaten api",
    "clicks": 0,
    "impressions": 6,
@@ -711,12 +735,6 @@
    "clicks": 0,
    "impressions": 6,
    "position": 35
-  },
-  {
-   "query": "salesforce nearshore development",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 68.5
   },
   {
    "query": "salesforce revenue cloud implementierung",
@@ -759,12 +777,6 @@
    "clicks": 0,
    "impressions": 5,
    "position": 16.6
-  },
-  {
-   "query": "click field service",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 77
   },
   {
    "query": "cpq revenue cloud migration",
@@ -821,22 +833,28 @@
    "position": 25.8
   },
   {
+   "query": "salesforce core edition",
+   "clicks": 0,
+   "impressions": 5,
+   "position": 6.2
+  },
+  {
    "query": "salesforce implementierungspartner",
    "clicks": 0,
    "impressions": 5,
    "position": 35.4
   },
   {
+   "query": "salesforce manufacturing cloud implementation",
+   "clicks": 0,
+   "impressions": 5,
+   "position": 89
+  },
+  {
    "query": "salesforce release cycle",
    "clicks": 0,
    "impressions": 5,
    "position": 45
-  },
-  {
-   "query": "salesforce release schedule",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 35.6
   },
   {
    "query": "salesforce revenue cloud advanced",
@@ -929,6 +947,12 @@
    "position": 44.8
   },
   {
+   "query": "field service crm",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 37.3
+  },
+  {
    "query": "field service mobile solutions",
    "clicks": 0,
    "impressions": 4,
@@ -1001,12 +1025,6 @@
    "position": 50.8
   },
   {
-   "query": "salesforce core edition",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 6
-  },
-  {
    "query": "salesforce devops tools",
    "clicks": 0,
    "impressions": 4,
@@ -1029,12 +1047,6 @@
    "clicks": 0,
    "impressions": 4,
    "position": 74.5
-  },
-  {
-   "query": "salesforce manufacturing cloud implementation",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 96.8
   },
   {
    "query": "salesforce revenue cloud",
@@ -1113,12 +1125,6 @@
    "clicks": 0,
    "impressions": 3,
    "position": 56
-  },
-  {
-   "query": "field service crm",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 45
   },
   {
    "query": "field service lizenzen salesforce",
@@ -1217,16 +1223,28 @@
    "position": 17.3
   },
   {
-   "query": "salesforce release dates",
+   "query": "salesforce vertriebsprozess",
    "clicks": 0,
    "impressions": 3,
-   "position": 25.7
+   "position": 19.3
   },
   {
    "query": "servicemax integration with salesforce",
    "clicks": 0,
    "impressions": 3,
    "position": 90.3
+  },
+  {
+   "query": "solutions factory consulting gmbh",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 41.7
+  },
+  {
+   "query": "sx.e salesforce warranty claim handoff",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 10
   },
   {
    "query": "the b2b store",
@@ -1373,6 +1391,12 @@
    "position": 50.5
   },
   {
+   "query": "core edition salesforce",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 10
+  },
+  {
    "query": "cpq anpassung",
    "clicks": 0,
    "impressions": 2,
@@ -1449,6 +1473,12 @@
    "clicks": 0,
    "impressions": 2,
    "position": 73
+  },
+  {
+   "query": "gearset alternative",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 19
   },
   {
    "query": "headless b2b solution",
@@ -1601,16 +1631,16 @@
    "position": 32
   },
   {
+   "query": "salesforce project rescue company",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 16.5
+  },
+  {
    "query": "salesforce revenue cloud usage-based billing software",
    "clicks": 0,
    "impressions": 2,
    "position": 84.5
-  },
-  {
-   "query": "salesforce vertriebsprozess",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 20.5
   },
   {
    "query": "salesportal",
@@ -1635,18 +1665,6 @@
    "clicks": 0,
    "impressions": 2,
    "position": 90.5
-  },
-  {
-   "query": "solutions factory consulting gmbh",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 44.5
-  },
-  {
-   "query": "sx.e salesforce warranty claim handoff",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 10
   },
   {
    "query": "vendor forecast",
@@ -1929,12 +1947,6 @@
    "clicks": 0,
    "impressions": 1,
    "position": 4
-  },
-  {
-   "query": "core edition salesforce",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 10
   },
   {
    "query": "customserverpro.com",
@@ -2549,6 +2561,24 @@
    "position": 69
   },
   {
+   "query": "salesforce enterprise architektur",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 14
+  },
+  {
+   "query": "salesforce erp integration",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 81
+  },
+  {
+   "query": "salesforce fde",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
    "query": "salesforce field service job costing time capture",
    "clicks": 0,
    "impressions": 1,
@@ -2597,10 +2627,22 @@
    "position": 10
   },
   {
+   "query": "salesforce max",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
    "query": "salesforce max edition",
    "clicks": 0,
    "impressions": 1,
    "position": 9
+  },
+  {
+   "query": "salesforce nearshore pdo",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 84
   },
   {
    "query": "salesforce partner revenue cloud",
@@ -2619,6 +2661,18 @@
    "clicks": 0,
    "impressions": 1,
    "position": 15
+  },
+  {
+   "query": "salesforce project recovery consultant",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 12
+  },
+  {
+   "query": "salesforce project rescue services",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 18
   },
   {
    "query": "salesforce release management",
@@ -2931,8 +2985,14 @@
   {
    "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
    "clicks": 0,
-   "impressions": 258,
-   "position": 64.3
+   "impressions": 269,
+   "position": 63.7
+  },
+  {
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+   "clicks": 2,
+   "impressions": 108,
+   "position": 17.5
   },
   {
    "page": "https://www.fk-sd.de/en/blog/b2b-commerce-or-dealer-portal/",
@@ -2943,32 +3003,26 @@
   {
    "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
    "clicks": 7,
-   "impressions": 90,
-   "position": 6.3
-  },
-  {
-   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
-   "clicks": 2,
-   "impressions": 83,
-   "position": 16.8
+   "impressions": 97,
+   "position": 6.4
   },
   {
    "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
    "clicks": 1,
-   "impressions": 78,
+   "impressions": 80,
    "position": 6.9
   },
   {
    "page": "https://www.fk-sd.de/blog/",
    "clicks": 2,
-   "impressions": 74,
-   "position": 18.8
+   "impressions": 76,
+   "position": 18.5
   },
   {
    "page": "https://www.fk-sd.de/",
-   "clicks": 7,
-   "impressions": 70,
-   "position": 6
+   "clicks": 9,
+   "impressions": 73,
+   "position": 5.8
   },
   {
    "page": "https://www.fk-sd.de/en/blog/headless-b2b-commerce-own-frontend/",
@@ -2985,26 +3039,32 @@
   {
    "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
    "clicks": 0,
-   "impressions": 68,
-   "position": 45.1
+   "impressions": 69,
+   "position": 45.5
   },
   {
    "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
    "clicks": 0,
-   "impressions": 57,
+   "impressions": 58,
    "position": 52.3
   },
   {
    "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
    "clicks": 0,
-   "impressions": 47,
-   "position": 45.9
+   "impressions": 54,
+   "position": 45.5
   },
   {
    "page": "https://www.fk-sd.de/blog/cpq-migration-revenue-cloud-phasen/",
    "clicks": 0,
-   "impressions": 45,
-   "position": 38.9
+   "impressions": 47,
+   "position": 38.7
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+   "clicks": 0,
+   "impressions": 47,
+   "position": 6.4
   },
   {
    "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
@@ -3013,16 +3073,16 @@
    "position": 6.9
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
-   "clicks": 0,
-   "impressions": 45,
-   "position": 6.4
-  },
-  {
    "page": "https://www.fk-sd.de/en/masterclass/revenue-cloud/billing-and-usage-based-pricing/",
    "clicks": 0,
    "impressions": 43,
    "position": 29.2
+  },
+  {
+   "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+   "clicks": 0,
+   "impressions": 41,
+   "position": 42.8
   },
   {
    "page": "https://www.fk-sd.de/blog/produktdaten-b2b-commerce-pim-erp/",
@@ -3031,16 +3091,22 @@
    "position": 60.8
   },
   {
+   "page": "https://www.fk-sd.de/en/",
+   "clicks": 0,
+   "impressions": 40,
+   "position": 10.3
+  },
+  {
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+   "clicks": 0,
+   "impressions": 40,
+   "position": 7.1
+  },
+  {
    "page": "https://www.fk-sd.de/en/speaking/",
    "clicks": 1,
    "impressions": 39,
    "position": 8.9
-  },
-  {
-   "page": "https://www.fk-sd.de/en/",
-   "clicks": 0,
-   "impressions": 39,
-   "position": 9.7
   },
   {
    "page": "https://www.fk-sd.de/masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/",
@@ -3053,18 +3119,6 @@
    "clicks": 0,
    "impressions": 38,
    "position": 45.4
-  },
-  {
-   "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
-   "clicks": 0,
-   "impressions": 38,
-   "position": 40.7
-  },
-  {
-   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
-   "clicks": 0,
-   "impressions": 37,
-   "position": 7.1
   },
   {
    "page": "https://www.fk-sd.de/en/blog/",
@@ -3097,10 +3151,22 @@
    "position": 9.7
   },
   {
+   "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
+   "clicks": 1,
+   "impressions": 32,
+   "position": 10.2
+  },
+  {
    "page": "https://www.fk-sd.de/blog/agentforce-1-field-service-paket-rechnung/",
    "clicks": 0,
    "impressions": 32,
    "position": 55.7
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
+   "clicks": 0,
+   "impressions": 32,
+   "position": 8.3
   },
   {
    "page": "https://www.fk-sd.de/en/blog/stakeholder-analysis/",
@@ -3109,16 +3175,16 @@
    "position": 39
   },
   {
+   "page": "https://www.fk-sd.de/en/blog/warranty-claims-dealers-salesforce/",
+   "clicks": 0,
+   "impressions": 32,
+   "position": 18.2
+  },
+  {
    "page": "https://www.fk-sd.de/en/blog/salesforce-service-documents-document-builder/",
    "clicks": 0,
    "impressions": 30,
    "position": 10.4
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
-   "clicks": 0,
-   "impressions": 30,
-   "position": 8.4
   },
   {
    "page": "https://www.fk-sd.de/blog/von-salesforce-billing-zu-revenue-cloud-billing/",
@@ -3139,28 +3205,28 @@
    "position": 62.6
   },
   {
+   "page": "https://www.fk-sd.de/leistungen/",
+   "clicks": 0,
+   "impressions": 29,
+   "position": 13.1
+  },
+  {
    "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-free-devops-training/",
    "clicks": 3,
    "impressions": 28,
    "position": 9.9
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/warranty-claims-dealers-salesforce/",
+   "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
    "clicks": 0,
    "impressions": 28,
-   "position": 19.4
+   "position": 7.3
   },
   {
-   "page": "https://www.fk-sd.de/leistungen/",
-   "clicks": 0,
-   "impressions": 28,
-   "position": 13.4
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
+   "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
    "clicks": 0,
    "impressions": 27,
-   "position": 10.6
+   "position": 10.4
   },
   {
    "page": "https://www.fk-sd.de/blog/servicemax-oder-salesforce-field-service/",
@@ -3169,28 +3235,16 @@
    "position": 16.9
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
+   "page": "https://www.fk-sd.de/en/blog/request-for-quote-b2b-commerce-cart-to-quote/",
    "clicks": 0,
    "impressions": 26,
-   "position": 7.2
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
-   "clicks": 0,
-   "impressions": 26,
-   "position": 10.8
+   "position": 29.8
   },
   {
    "page": "https://www.fk-sd.de/en/blog/agentforce-sales-planning-agreements-forecasts/",
    "clicks": 0,
    "impressions": 25,
    "position": 9.5
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/request-for-quote-b2b-commerce-cart-to-quote/",
-   "clicks": 0,
-   "impressions": 25,
-   "position": 30.7
   },
   {
    "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
@@ -3205,16 +3259,28 @@
    "position": 5.3
   },
   {
+   "page": "https://www.fk-sd.de/blog/salesforce-editionen-core-advanced-max/",
+   "clicks": 0,
+   "impressions": 23,
+   "position": 6.2
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
+   "clicks": 0,
+   "impressions": 23,
+   "position": 7.7
+  },
+  {
    "page": "https://www.fk-sd.de/en/blog/what-is-agentforce/",
    "clicks": 0,
    "impressions": 23,
    "position": 20.3
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
+   "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
    "clicks": 0,
-   "impressions": 22,
-   "position": 8
+   "impressions": 23,
+   "position": 48.2
   },
   {
    "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/devops-tools-compared/",
@@ -3223,22 +3289,16 @@
    "position": 28.5
   },
   {
-   "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
-   "clicks": 0,
-   "impressions": 22,
-   "position": 46
-  },
-  {
    "page": "https://www.fk-sd.de/masterclass/revenue-cloud/revenue-cloud-ueberblick/",
    "clicks": 0,
-   "impressions": 21,
-   "position": 31.4
+   "impressions": 22,
+   "position": 30
   },
   {
-   "page": "https://www.fk-sd.de/blog/salesforce-editionen-core-advanced-max/",
+   "page": "https://www.fk-sd.de/blog/nearshore-teams-salesforce-acht-entwickler/",
    "clicks": 0,
    "impressions": 19,
-   "position": 6.3
+   "position": 44.6
   },
   {
    "page": "https://www.fk-sd.de/en/masterclass/ai-salesforce/ai-code-best-practices/",
@@ -3247,10 +3307,22 @@
    "position": 17.2
   },
   {
+   "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+   "clicks": 0,
+   "impressions": 19,
+   "position": 57.6
+  },
+  {
    "page": "https://www.fk-sd.de/en/masterclass/revenue-cloud/quote-contract-order/",
    "clicks": 0,
    "impressions": 19,
    "position": 20
+  },
+  {
+   "page": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+   "clicks": 0,
+   "impressions": 19,
+   "position": 10
   },
   {
    "page": "https://www.fk-sd.de/en/blog/salesforce-document-builder-limits-workarounds/",
@@ -3265,16 +3337,22 @@
    "position": 46.4
   },
   {
-   "page": "https://www.fk-sd.de/blog/nearshore-teams-salesforce-acht-entwickler/",
+   "page": "https://www.fk-sd.de/certifications/",
    "clicks": 0,
    "impressions": 18,
-   "position": 43.7
+   "position": 30.9
   },
   {
    "page": "https://www.fk-sd.de/leistungen/devops-und-release-management/",
    "clicks": 0,
    "impressions": 18,
    "position": 40.9
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-pricing-procedures-explained/",
+   "clicks": 1,
+   "impressions": 17,
+   "position": 9.4
   },
   {
    "page": "https://www.fk-sd.de/en/blog/b2b-checkout-purchase-order-card-invoice/",
@@ -3289,28 +3367,16 @@
    "position": 21.4
   },
   {
-   "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-cpq-vs-revenue-cloud-differences/",
    "clicks": 0,
    "impressions": 17,
-   "position": 59.4
+   "position": 33.6
   },
   {
-   "page": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
-   "clicks": 0,
-   "impressions": 17,
-   "position": 10.5
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-pricing-procedures-explained/",
+   "page": "https://www.fk-sd.de/en/blog/agentforce-eu-data-residency-models/",
    "clicks": 1,
    "impressions": 16,
-   "position": 9.6
-  },
-  {
-   "page": "https://www.fk-sd.de/certifications/",
-   "clicks": 0,
-   "impressions": 16,
-   "position": 30.6
+   "position": 7.3
   },
   {
    "page": "https://www.fk-sd.de/en/blog/b2b-commerce-search-part-numbers/",
@@ -3361,12 +3427,6 @@
    "position": 8.9
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/agentforce-eu-data-residency-models/",
-   "clicks": 1,
-   "impressions": 14,
-   "position": 7.6
-  },
-  {
    "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
    "clicks": 1,
    "impressions": 14,
@@ -3389,6 +3449,12 @@
    "clicks": 0,
    "impressions": 14,
    "position": 25.2
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
+   "clicks": 0,
+   "impressions": 14,
+   "position": 13.9
   },
   {
    "page": "https://www.fk-sd.de/masterclass/change-management/key-user-und-schulung/",
@@ -3433,22 +3499,16 @@
    "position": 14
   },
   {
+   "page": "https://www.fk-sd.de/en/blog/manufacturing-cloud-service-vs-service-cloud/",
+   "clicks": 0,
+   "impressions": 13,
+   "position": 5.1
+  },
+  {
    "page": "https://www.fk-sd.de/en/blog/revenue-cloud-billing-or-sap-invoicing/",
    "clicks": 0,
    "impressions": 13,
    "position": 12.2
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/salesforce-cpq-vs-revenue-cloud-differences/",
-   "clicks": 0,
-   "impressions": 13,
-   "position": 42.3
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
-   "clicks": 0,
-   "impressions": 13,
-   "position": 14.1
   },
   {
    "page": "https://www.fk-sd.de/en/masterclass/revenue-cloud/",
@@ -3473,12 +3533,6 @@
    "clicks": 0,
    "impressions": 12,
    "position": 32.7
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/manufacturing-cloud-service-vs-service-cloud/",
-   "clicks": 0,
-   "impressions": 12,
-   "position": 5.4
   },
   {
    "page": "https://www.fk-sd.de/en/masterclass/b2b-commerce/catalog-search-entitlements/",
@@ -3517,10 +3571,22 @@
    "position": 11.5
   },
   {
+   "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
+   "clicks": 0,
+   "impressions": 11,
+   "position": 10
+  },
+  {
    "page": "https://www.fk-sd.de/en/blog/testing-agentforce-agents-before-go-live/",
    "clicks": 0,
    "impressions": 11,
    "position": 22.8
+  },
+  {
+   "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-mobile-app-documents/",
+   "clicks": 0,
+   "impressions": 11,
+   "position": 68.8
   },
   {
    "page": "https://www.fk-sd.de/masterclass/",
@@ -3571,28 +3637,34 @@
    "position": 8
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
-   "clicks": 0,
-   "impressions": 10,
-   "position": 9.8
-  },
-  {
    "page": "https://www.fk-sd.de/en/blog/salesforce-field-service-worth-it/",
    "clicks": 0,
    "impressions": 10,
    "position": 49.7
   },
   {
-   "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-mobile-app-documents/",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/",
    "clicks": 0,
    "impressions": 10,
-   "position": 74.8
+   "position": 39.3
   },
   {
    "page": "https://www.fk-sd.de/en/services/salesforce-architecture/",
    "clicks": 0,
    "impressions": 10,
    "position": 33.7
+  },
+  {
+   "page": "https://www.fk-sd.de/en/services/salesforce-integration/",
+   "clicks": 0,
+   "impressions": 10,
+   "position": 35.1
+  },
+  {
+   "page": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 22.8
   },
   {
    "page": "https://www.fk-sd.de/blog/salesforce-freelancer-oder-agentur/",
@@ -3619,16 +3691,16 @@
    "position": 17
   },
   {
+   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-configuration-deployment/",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 3.8
+  },
+  {
    "page": "https://www.fk-sd.de/en/blog/salesforce-hosted-mcp-servers-data-access/",
    "clicks": 0,
    "impressions": 9,
    "position": 8.1
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/",
-   "clicks": 0,
-   "impressions": 9,
-   "position": 43.6
   },
   {
    "page": "https://www.fk-sd.de/en/blog/service-cloud-casey-service-rep-assistant/",
@@ -3643,16 +3715,16 @@
    "position": 8.2
   },
   {
+   "page": "https://www.fk-sd.de/blog/audit-trail-ki-agenten-salesforce/",
+   "clicks": 0,
+   "impressions": 8,
+   "position": 90.6
+  },
+  {
    "page": "https://www.fk-sd.de/blog/b2b-shop-suche-teilenummer/",
    "clicks": 0,
    "impressions": 8,
    "position": 37.1
-  },
-  {
-   "page": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
-   "clicks": 0,
-   "impressions": 8,
-   "position": 24.3
   },
   {
    "page": "https://www.fk-sd.de/blog/mcp-salesforce-erklaert-it-leitung/",
@@ -3673,10 +3745,22 @@
    "position": 59.6
   },
   {
+   "page": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+   "clicks": 0,
+   "impressions": 8,
+   "position": 12.3
+  },
+  {
    "page": "https://www.fk-sd.de/blog/salesforce-partner-wechseln/",
    "clicks": 0,
    "impressions": 8,
    "position": 6.5
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/ai-native-salesforce-delivery-process/",
+   "clicks": 0,
+   "impressions": 8,
+   "position": 5.8
   },
   {
    "page": "https://www.fk-sd.de/en/blog/change-management-models/",
@@ -3691,10 +3775,16 @@
    "position": 19.4
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-configuration-deployment/",
+   "page": "https://www.fk-sd.de/en/blog/field-service-licences-by-role/",
    "clicks": 0,
    "impressions": 8,
-   "position": 3.4
+   "position": 26.6
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
+   "clicks": 0,
+   "impressions": 8,
+   "position": 9.6
   },
   {
    "page": "https://www.fk-sd.de/en/blog/salesforce-licences-full-licence-needed/",
@@ -3703,10 +3793,10 @@
    "position": 49.8
   },
   {
-   "page": "https://www.fk-sd.de/en/services/salesforce-integration/",
+   "page": "https://www.fk-sd.de/leistungen/partnersteuerung/",
    "clicks": 0,
    "impressions": 8,
-   "position": 33.5
+   "position": 10
   },
   {
    "page": "https://www.fk-sd.de/masterclass/devops-release-management/release-planung-salesforce-releases/",
@@ -3721,16 +3811,16 @@
    "position": 8.1
   },
   {
-   "page": "https://www.fk-sd.de/blog/audit-trail-ki-agenten-salesforce/",
-   "clicks": 0,
-   "impressions": 7,
-   "position": 90.6
-  },
-  {
    "page": "https://www.fk-sd.de/blog/b2b-store-laender-marken-haendler/",
    "clicks": 0,
    "impressions": 7,
    "position": 21
+  },
+  {
+   "page": "https://www.fk-sd.de/blog/change-management-prozess-salesforce/",
+   "clicks": 0,
+   "impressions": 7,
+   "position": 12
   },
   {
    "page": "https://www.fk-sd.de/blog/revenue-cloud-billing-oder-sap-rechnung/",
@@ -3739,16 +3829,22 @@
    "position": 15.3
   },
   {
+   "page": "https://www.fk-sd.de/blog/salesforce-akzeptanz-vertrieb/",
+   "clicks": 0,
+   "impressions": 7,
+   "position": 17.3
+  },
+  {
    "page": "https://www.fk-sd.de/blog/salesforce-field-service-stammdaten/",
    "clicks": 0,
    "impressions": 7,
    "position": 35.1
   },
   {
-   "page": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+   "page": "https://www.fk-sd.de/blog/salesforce-well-architected-framework-neu/",
    "clicks": 0,
    "impressions": 7,
-   "position": 12.6
+   "position": 7.6
   },
   {
    "page": "https://www.fk-sd.de/en/blog/api-67-apex-user-mode-fewer-records/",
@@ -3767,12 +3863,6 @@
    "clicks": 0,
    "impressions": 7,
    "position": 65
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/field-service-licences-by-role/",
-   "clicks": 0,
-   "impressions": 7,
-   "position": 28.9
   },
   {
    "page": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
@@ -3799,16 +3889,16 @@
    "position": 18
   },
   {
+   "page": "https://www.fk-sd.de/en/masterclass/change-management/",
+   "clicks": 0,
+   "impressions": 7,
+   "position": 17.3
+  },
+  {
    "page": "https://www.fk-sd.de/en/masterclass/revenue-cloud/from-cpq-to-revenue-cloud/",
    "clicks": 0,
    "impressions": 7,
    "position": 32.7
-  },
-  {
-   "page": "https://www.fk-sd.de/leistungen/partnersteuerung/",
-   "clicks": 0,
-   "impressions": 7,
-   "position": 10.6
   },
   {
    "page": "https://www.fk-sd.de/masterclass/devops-release-management/daten-und-konfiguration/",
@@ -3847,16 +3937,16 @@
    "position": 28.3
   },
   {
-   "page": "https://www.fk-sd.de/blog/change-management-prozess-salesforce/",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 12.8
-  },
-  {
    "page": "https://www.fk-sd.de/blog/einstein-trust-layer-was-er-schuetzt/",
    "clicks": 0,
    "impressions": 6,
    "position": 7.2
+  },
+  {
+   "page": "https://www.fk-sd.de/blog/flex-credits-agentforce-kosten-pro-aktion/",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 8.2
   },
   {
    "page": "https://www.fk-sd.de/blog/manufacturing-cloud-service-oder-service-cloud/",
@@ -3871,28 +3961,10 @@
    "position": 23.7
   },
   {
-   "page": "https://www.fk-sd.de/blog/salesforce-akzeptanz-vertrieb/",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 17.3
-  },
-  {
    "page": "https://www.fk-sd.de/blog/salesforce-implementierungspartner-auswaehlen/",
    "clicks": 0,
    "impressions": 6,
    "position": 32.7
-  },
-  {
-   "page": "https://www.fk-sd.de/blog/salesforce-well-architected-framework-neu/",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 7.3
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/ai-native-salesforce-delivery-process/",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 6.7
   },
   {
    "page": "https://www.fk-sd.de/en/blog/aiforce-salesforce-in-claude-and-slack/",
@@ -3913,12 +3985,6 @@
    "position": 6.2
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
-   "clicks": 0,
-   "impressions": 6,
-   "position": 6.5
-  },
-  {
    "page": "https://www.fk-sd.de/en/blog/revenue-cloud-product-catalog-variants/",
    "clicks": 0,
    "impressions": 6,
@@ -3931,10 +3997,22 @@
    "position": 7.5
   },
   {
+   "page": "https://www.fk-sd.de/en/blog/salesforce-editions-core-advanced-max/",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 7
+  },
+  {
    "page": "https://www.fk-sd.de/en/blog/salesforce-field-service-mobile-guided-voice/",
    "clicks": 0,
    "impressions": 6,
    "position": 7
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/salesforce-sandbox-strategy-multiple-partners/",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 7.5
   },
   {
    "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/scope-and-business-case/",
@@ -4021,12 +4099,6 @@
    "position": 22.2
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/salesforce-editions-core-advanced-max/",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 6.4
-  },
-  {
    "page": "https://www.fk-sd.de/en/blog/sfdx-hardis-vs-devops-center-comparison/",
    "clicks": 0,
    "impressions": 5,
@@ -4037,12 +4109,6 @@
    "clicks": 0,
    "impressions": 5,
    "position": 10.2
-  },
-  {
-   "page": "https://www.fk-sd.de/en/masterclass/change-management/",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 18.8
   },
   {
    "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-process-ownership-roles/",
@@ -4057,10 +4123,22 @@
    "position": 5
   },
   {
+   "page": "https://www.fk-sd.de/en/services/salesforce-project-rescue/",
+   "clicks": 0,
+   "impressions": 5,
+   "position": 14.6
+  },
+  {
    "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/erp-ki-und-rollout/",
    "clicks": 0,
    "impressions": 5,
    "position": 71.4
+  },
+  {
+   "page": "https://www.fk-sd.de/partner/recruiter/",
+   "clicks": 0,
+   "impressions": 5,
+   "position": 7.8
   },
   {
    "page": "https://www.fk-sd.de/en/blog/account-manager-targets-sales-targets/",
@@ -4073,12 +4151,6 @@
    "clicks": 0,
    "impressions": 4,
    "position": 5
-  },
-  {
-   "page": "https://www.fk-sd.de/blog/flex-credits-agentforce-kosten-pro-aktion/",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 9.3
   },
   {
    "page": "https://www.fk-sd.de/blog/manufacturing-cloud-weltweit-ausrollen/",
@@ -4135,6 +4207,18 @@
    "position": 37.5
   },
   {
+   "page": "https://www.fk-sd.de/en/blog/meshmesh-salesforce-before-you-connect/",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 6
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-order-orchestration-sap/",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 8
+  },
+  {
    "page": "https://www.fk-sd.de/en/blog/salesforce-cpq-end-of-sale-status/",
    "clicks": 0,
    "impressions": 4,
@@ -4151,12 +4235,6 @@
    "clicks": 0,
    "impressions": 4,
    "position": 30.3
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/salesforce-sandbox-strategy-multiple-partners/",
-   "clicks": 0,
-   "impressions": 4,
-   "position": 6.8
   },
   {
    "page": "https://www.fk-sd.de/en/blog/setup-with-agentforce-admin-changes/",
@@ -4207,6 +4285,12 @@
    "position": 9.3
   },
   {
+   "page": "https://www.fk-sd.de/fragen/",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 5.8
+  },
+  {
    "page": "https://www.fk-sd.de/masterclass/change-management/",
    "clicks": 0,
    "impressions": 4,
@@ -4219,16 +4303,34 @@
    "position": 22.8
   },
   {
-   "page": "https://www.fk-sd.de/partner/recruiter/",
+   "page": "https://www.fk-sd.de/blog/change-management-salesforce-einfuehrung/",
+   "clicks": 1,
+   "impressions": 3,
+   "position": 6
+  },
+  {
+   "page": "https://www.fk-sd.de/blog/agentforce-llm-auswahl-eigenes-modell/",
    "clicks": 0,
-   "impressions": 4,
-   "position": 8
+   "impressions": 3,
+   "position": 9.7
+  },
+  {
+   "page": "https://www.fk-sd.de/blog/agentforce-vertriebsplanung-rahmenvertraege/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 2.7
   },
   {
    "page": "https://www.fk-sd.de/blog/bestand-b2b-shop-erp-live/",
    "clicks": 0,
    "impressions": 3,
    "position": 7.3
+  },
+  {
+   "page": "https://www.fk-sd.de/blog/salesforce-integrationsbenutzer-aufraeumen/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 8.3
   },
   {
    "page": "https://www.fk-sd.de/blog/salesforce-nutzung-messen-nach-go-live/",
@@ -4255,10 +4357,28 @@
    "position": 7.7
   },
   {
+   "page": "https://www.fk-sd.de/blog/warum-pull-request-reviews-pflicht-sind/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 8
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/aela-agentforce-flat-fee-vs-credits/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 4.7
+  },
+  {
    "page": "https://www.fk-sd.de/en/blog/ai-coding-costs-salesforce-project/",
    "clicks": 0,
    "impressions": 3,
    "position": 7.7
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-pricing-gmv-model/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 3.7
   },
   {
    "page": "https://www.fk-sd.de/en/blog/b2b-commerce-sap-data-flows/",
@@ -4297,22 +4417,10 @@
    "position": 68
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/meshmesh-salesforce-before-you-connect/",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 6
-  },
-  {
    "page": "https://www.fk-sd.de/en/blog/program-based-business-supplier-forecasts/",
    "clicks": 0,
    "impressions": 3,
    "position": 50
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-order-orchestration-sap/",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 8.3
   },
   {
    "page": "https://www.fk-sd.de/en/blog/revenue-cloud-sap-quote-to-cash-ownership/",
@@ -4399,12 +4507,6 @@
    "position": 5.3
   },
   {
-   "page": "https://www.fk-sd.de/fragen/",
-   "clicks": 0,
-   "impressions": 3,
-   "position": 4.7
-  },
-  {
    "page": "https://www.fk-sd.de/masterclass/field-service/field-service-terminplanung-disposition/",
    "clicks": 0,
    "impressions": 3,
@@ -4423,22 +4525,10 @@
    "position": 89.3
   },
   {
-   "page": "https://www.fk-sd.de/blog/change-management-salesforce-einfuehrung/",
-   "clicks": 1,
-   "impressions": 2,
-   "position": 7.5
-  },
-  {
    "page": "https://www.fk-sd.de/blog/agentforce-business-value-datenqualitaet/",
    "clicks": 0,
    "impressions": 2,
    "position": 2
-  },
-  {
-   "page": "https://www.fk-sd.de/blog/agentforce-llm-auswahl-eigenes-modell/",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 7.5
   },
   {
    "page": "https://www.fk-sd.de/blog/field-service-app-akzeptanz-techniker/",
@@ -4477,22 +4567,34 @@
    "position": 47.5
   },
   {
+   "page": "https://www.fk-sd.de/blog/revenue-cloud-sap-quote-to-cash-aufteilung/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 2
+  },
+  {
+   "page": "https://www.fk-sd.de/blog/salesforce-architekt-oder-systemintegrator/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 7.5
+  },
+  {
    "page": "https://www.fk-sd.de/blog/salesforce-document-builder-grenzen-workarounds/",
    "clicks": 0,
    "impressions": 2,
    "position": 7.5
   },
   {
-   "page": "https://www.fk-sd.de/blog/salesforce-integrationsbenutzer-aufraeumen/",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 8.5
-  },
-  {
    "page": "https://www.fk-sd.de/blog/salesforce-sandbox-strategie-mehrere-partner/",
    "clicks": 0,
    "impressions": 2,
    "position": 6
+  },
+  {
+   "page": "https://www.fk-sd.de/blog/sfdx-hardis-einfuehrung-salesforce-devops/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 3
   },
   {
    "page": "https://www.fk-sd.de/blog/shop-bestellungen-erp-auftrag/",
@@ -4507,22 +4609,10 @@
    "position": 6
   },
   {
-   "page": "https://www.fk-sd.de/blog/warum-pull-request-reviews-pflicht-sind/",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 8
-  },
-  {
    "page": "https://www.fk-sd.de/en/ai-masterclass/teamwork-and-delivery/",
    "clicks": 0,
    "impressions": 2,
    "position": 8.5
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/aela-agentforce-flat-fee-vs-credits/",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 6.5
   },
   {
    "page": "https://www.fk-sd.de/en/blog/ai-rules-file-salesforce-repository/",
@@ -4535,12 +4625,6 @@
    "clicks": 0,
    "impressions": 2,
    "position": 23.5
-  },
-  {
-   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-pricing-gmv-model/",
-   "clicks": 0,
-   "impressions": 2,
-   "position": 4.5
   },
   {
    "page": "https://www.fk-sd.de/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
@@ -4595,6 +4679,12 @@
    "clicks": 0,
    "impressions": 2,
    "position": 6.5
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-assets-amendments-renewals/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 8
   },
   {
    "page": "https://www.fk-sd.de/en/blog/revenue-cloud-worth-it-manufacturers/",
@@ -4729,12 +4819,6 @@
    "position": 43
   },
   {
-   "page": "https://www.fk-sd.de/blog/agentforce-vertriebsplanung-rahmenvertraege/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 4
-  },
-  {
    "page": "https://www.fk-sd.de/blog/aiforce-salesforce-in-claude-und-slack/",
    "clicks": 0,
    "impressions": 1,
@@ -4807,6 +4891,12 @@
    "position": 44
   },
   {
+   "page": "https://www.fk-sd.de/blog/forward-deployed-engineer-salesforce/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
    "page": "https://www.fk-sd.de/blog/ki-fehlersuche-handbuecher-aussendienst/",
    "clicks": 0,
    "impressions": 1,
@@ -4849,6 +4939,18 @@
    "position": 7
   },
   {
+   "page": "https://www.fk-sd.de/blog/revenue-cloud-assets-nachtraege-verlaengerungen/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 8
+  },
+  {
+   "page": "https://www.fk-sd.de/blog/revenue-cloud-billing-kosten/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
+  },
+  {
    "page": "https://www.fk-sd.de/blog/revenue-cloud-lohnt-sich-hersteller/",
    "clicks": 0,
    "impressions": 1,
@@ -4861,19 +4963,7 @@
    "position": 67
   },
   {
-   "page": "https://www.fk-sd.de/blog/revenue-cloud-sap-quote-to-cash-aufteilung/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3
-  },
-  {
    "page": "https://www.fk-sd.de/blog/rueckrufaktionen-service-kampagnen/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 1
-  },
-  {
-   "page": "https://www.fk-sd.de/blog/salesforce-architekt-oder-systemintegrator/",
    "clicks": 0,
    "impressions": 1,
    "position": 1
@@ -4927,12 +5017,6 @@
    "position": 7
   },
   {
-   "page": "https://www.fk-sd.de/blog/sfdx-hardis-einfuehrung-salesforce-devops/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 5
-  },
-  {
    "page": "https://www.fk-sd.de/blog/sfdx-hardis-kostenloses-devops-training/",
    "clicks": 0,
    "impressions": 1,
@@ -4951,6 +5035,12 @@
    "position": 18
   },
   {
+   "page": "https://www.fk-sd.de/blog/was-ist-change-management/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
    "page": "https://www.fk-sd.de/en/blog/agentforce-a2a-multi-agent-sap-microsoft/",
    "clicks": 0,
    "impressions": 1,
@@ -4963,10 +5053,22 @@
    "position": 5
   },
   {
+   "page": "https://www.fk-sd.de/en/blog/b2b-buyer-agent-whatsapp-ordering/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1
+  },
+  {
    "page": "https://www.fk-sd.de/en/blog/breakdown-hotline-agentforce-voice/",
    "clicks": 0,
    "impressions": 1,
    "position": 1
+  },
+  {
+   "page": "https://www.fk-sd.de/en/blog/cpq-to-revenue-cloud-migration-phases/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
   },
   {
    "page": "https://www.fk-sd.de/en/blog/customer-prices-sap-conditions-or-salesforce-pricing/",
@@ -5029,12 +5131,6 @@
    "position": 10
   },
   {
-   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-assets-amendments-renewals/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 8
-  },
-  {
    "page": "https://www.fk-sd.de/en/blog/salesforce-development-standards-definition-of-done/",
    "clicks": 0,
    "impressions": 1,
@@ -5089,10 +5185,10 @@
    "position": 8
   },
   {
-   "page": "https://www.fk-sd.de/en/services/salesforce-project-rescue/",
+   "page": "https://www.fk-sd.de/leistungen/salesforce-projekt-retten/",
    "clicks": 0,
    "impressions": 1,
-   "position": 10
+   "position": 9
   },
   {
    "page": "https://www.fk-sd.de/masterclass/ki-salesforce/aiforce-und-systemintegratoren/",
@@ -14123,17 +14219,171 @@
   },
   {
    "day": "2026-11-19",
+   "query": "salesforce release dates",
+   "clicks": 0,
+   "impressions": 14,
+   "position": 20.4
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce release schedule",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 22
+  },
+  {
+   "day": "2026-11-19",
+   "query": "field service application software",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 65.8
+  },
+  {
+   "day": "2026-11-19",
+   "query": "manufacturing cloud",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 38.3
+  },
+  {
+   "day": "2026-11-19",
+   "query": "what does a typical salesforce devops rollout look like?",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 7
+  },
+  {
+   "day": "2026-11-19",
    "query": "salesforce core edition",
    "clicks": 0,
-   "impressions": 2,
-   "position": 8
+   "impressions": 3,
+   "position": 7.7
+  },
+  {
+   "day": "2026-11-19",
+   "query": "what makes a salesforce devops platform enterprise-ready?",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 4.3
   },
   {
    "day": "2026-11-19",
    "query": "core edition salesforce",
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "position": 10
+  },
+  {
+   "day": "2026-11-19",
+   "query": "gearset alternative",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 19
+  },
+  {
+   "day": "2026-11-19",
+   "query": "ki chatbot audit trail",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 91
+  },
+  {
+   "day": "2026-11-19",
+   "query": "nearshore teamerweiterung",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 79.5
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce manufacturing cloud",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 54
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce nearshore development",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 60.5
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce project rescue company",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 16.5
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce zertifizierte experten",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 34
+  },
+  {
+   "day": "2026-11-19",
+   "query": "wechsel von cpq zu revenue cloud",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 26.5
+  },
+  {
+   "day": "2026-11-19",
+   "query": "change management salesforce projekt",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "day": "2026-11-19",
+   "query": "click field service",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 47
+  },
+  {
+   "day": "2026-11-19",
+   "query": "click field service management software",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 55
+  },
+  {
+   "day": "2026-11-19",
+   "query": "clicksoftware field service",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 31
+  },
+  {
+   "day": "2026-11-19",
+   "query": "cpq upgraden",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 29
+  },
+  {
+   "day": "2026-11-19",
+   "query": "erp field service",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 69
+  },
+  {
+   "day": "2026-11-19",
+   "query": "field service crm",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 14
+  },
+  {
+   "day": "2026-11-19",
+   "query": "field service management cloud",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 60
   },
   {
    "day": "2026-11-19",
@@ -14144,10 +14394,94 @@
   },
   {
    "day": "2026-11-19",
-   "query": "ki chatbot audit trail",
+   "query": "predictive maintenance salesforce",
    "clicks": 0,
    "impressions": 1,
-   "position": 91
+   "position": 12
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce enterprise architektur",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 14
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce erp integration",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 81
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce fde",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce manufacturing cloud implementation",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 58
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce manufacturing cloud partner",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 55
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce max",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce nearshore pdo",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 84
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce project recovery consultant",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 12
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce project rescue services",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 18
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce vertriebsprozess",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 17
+  },
+  {
+   "day": "2026-11-19",
+   "query": "solutions factory consulting gmbh",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 36
+  },
+  {
+   "day": "2026-11-19",
+   "query": "sx.e salesforce warranty claim handoff",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10
   },
   {
    "day": "2026-11-19",
@@ -14158,17 +14492,10 @@
   },
   {
    "day": "2026-11-19",
-   "query": "what does a typical salesforce devops rollout look like?",
+   "query": "what software manages preferred supplier lists in field service?",
    "clicks": 0,
    "impressions": 1,
-   "position": 10
-  },
-  {
-   "day": "2026-11-19",
-   "query": "what makes a salesforce devops platform enterprise-ready?",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 1
+   "position": 43
   }
  ],
  "page_days": [
@@ -24835,6 +25162,13 @@
   },
   {
    "day": "2026-11-18",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
+   "clicks": 0,
+   "impressions": 10,
+   "position": 7.7
+  },
+  {
+   "day": "2026-11-18",
    "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
    "clicks": 0,
    "impressions": 10,
@@ -24842,16 +25176,9 @@
   },
   {
    "day": "2026-11-18",
-   "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
-   "clicks": 0,
-   "impressions": 9,
-   "position": 7.8
-  },
-  {
-   "day": "2026-11-18",
    "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
    "clicks": 0,
-   "impressions": 8,
+   "impressions": 9,
    "position": 6.8
   },
   {
@@ -24965,6 +25292,13 @@
    "clicks": 0,
    "impressions": 3,
    "position": 7.7
+  },
+  {
+   "day": "2026-11-18",
+   "page": "https://www.fk-sd.de/en/blog/warranty-claims-dealers-salesforce/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 9
   },
   {
    "day": "2026-11-18",
@@ -25094,10 +25428,10 @@
   },
   {
    "day": "2026-11-18",
-   "page": "https://www.fk-sd.de/en/blog/warranty-claims-dealers-salesforce/",
+   "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
    "clicks": 0,
    "impressions": 2,
-   "position": 8.5
+   "position": 9.5
   },
   {
    "day": "2026-11-18",
@@ -25395,13 +25729,6 @@
   },
   {
    "day": "2026-11-18",
-   "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 8
-  },
-  {
-   "day": "2026-11-18",
    "page": "https://www.fk-sd.de/en/certifications/",
    "clicks": 0,
    "impressions": 1,
@@ -25500,6 +25827,139 @@
   },
   {
    "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+   "clicks": 0,
+   "impressions": 26,
+   "position": 19.5
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+   "clicks": 0,
+   "impressions": 12,
+   "position": 48.7
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+   "clicks": 0,
+   "impressions": 7,
+   "position": 42.4
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/salesforce-editionen-core-advanced-max/",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 6.5
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-dx-mcp-server-end-of-life/",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 7.8
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/agentforce-llm-choice-bring-your-own/",
+   "clicks": 1,
+   "impressions": 5,
+   "position": 7.6
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-cpq-vs-revenue-cloud-differences/",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 5.3
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 7
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/services/salesforce-project-rescue/",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 15.8
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/",
+   "clicks": 2,
+   "impressions": 3,
+   "position": 1.3
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 7
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/warranty-claims-dealers-salesforce/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 10
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 4.3
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 68.3
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 8
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/agentforce-vertriebsplanung-rahmenvertraege/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 2
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/audit-trail-ki-agenten-salesforce/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 91
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/cpq-migration-revenue-cloud-phasen/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 35.5
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/flex-credits-agentforce-kosten-pro-aktion/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 6
+  },
+  {
+   "day": "2026-11-19",
    "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
    "clicks": 0,
    "impressions": 2,
@@ -25507,17 +25967,157 @@
   },
   {
    "day": "2026-11-19",
-   "page": "https://www.fk-sd.de/blog/salesforce-editionen-core-advanced-max/",
+   "page": "https://www.fk-sd.de/certifications/",
    "clicks": 0,
    "impressions": 2,
+   "position": 34
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/agentforce-eu-data-residency-models/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 5
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/ai-native-salesforce-delivery-process/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 3
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 19
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-editions-core-advanced-max/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 10
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-sandbox-strategy-multiple-partners/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 9
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/masterclass/change-management/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 13.5
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 43
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/services/salesforce-integration/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 41.5
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 5.5
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/agentforce-llm-auswahl-eigenes-modell/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 14
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/change-management-prozess-salesforce/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/change-management-salesforce-einfuehrung/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 3
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 11
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 69
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/forward-deployed-engineer-salesforce/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/nearshore-teams-salesforce-acht-entwickler/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 61
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/revenue-cloud-assets-nachtraege-verlaengerungen/",
+   "clicks": 0,
+   "impressions": 1,
    "position": 8
   },
   {
    "day": "2026-11-19",
-   "page": "https://www.fk-sd.de/blog/audit-trail-ki-agenten-salesforce/",
+   "page": "https://www.fk-sd.de/blog/revenue-cloud-billing-kosten/",
    "clicks": 0,
    "impressions": 1,
-   "position": 91
+   "position": 6
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/revenue-cloud-sap-quote-to-cash-aufteilung/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/salesforce-akzeptanz-vertrieb/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 17
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/salesforce-architekt-oder-systemintegrator/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 14
   },
   {
    "day": "2026-11-19",
@@ -25528,45 +26128,248 @@
   },
   {
    "day": "2026-11-19",
-   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+   "page": "https://www.fk-sd.de/blog/salesforce-integrationsbenutzer-aufraeumen/",
    "clicks": 0,
    "impressions": 1,
-   "position": 63
+   "position": 8
   },
   {
    "day": "2026-11-19",
-   "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
-   "clicks": 0,
-   "impressions": 1,
-   "position": 3
-  },
-  {
-   "day": "2026-11-19",
-   "page": "https://www.fk-sd.de/en/blog/salesforce-editions-core-advanced-max/",
+   "page": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
    "clicks": 0,
    "impressions": 1,
    "position": 10
   },
   {
    "day": "2026-11-19",
-   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+   "page": "https://www.fk-sd.de/blog/salesforce-well-architected-framework-neu/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/sfdx-hardis-einfuehrung-salesforce-devops/",
    "clicks": 0,
    "impressions": 1,
    "position": 1
   },
   {
    "day": "2026-11-19",
-   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+   "page": "https://www.fk-sd.de/blog/warum-pull-request-reviews-pflicht-sind/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 8
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/blog/was-ist-change-management/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 36
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/aela-agentforce-flat-fee-vs-credits/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/b2b-buyer-agent-whatsapp-ordering/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-pricing-gmv-model/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 2
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 53
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/cpq-to-revenue-cloud-migration-phases/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/field-service-licences-by-role/",
    "clicks": 0,
    "impressions": 1,
    "position": 11
   },
   {
    "day": "2026-11-19",
-   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+   "page": "https://www.fk-sd.de/en/blog/field-service-scheduling-console-dispatchers/",
    "clicks": 0,
    "impressions": 1,
-   "position": 10
+   "position": 1
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/flex-credits-agentforce-cost-per-action/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/manufacturing-cloud-service-vs-service-cloud/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/meshmesh-salesforce-before-you-connect/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 12
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/request-for-quote-b2b-commerce-cart-to-quote/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-assets-amendments-renewals/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 8
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-configuration-deployment/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-order-orchestration-sap/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/revenue-cloud-pricing-procedures-explained/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 11
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/blog/servicemax-vs-salesforce-field-service/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/en/masterclass/field-service/field-service-mobile-app-documents/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/fragen/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/leistungen/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/leistungen/partnersteuerung/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 6
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 98
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/leistungen/salesforce-projekt-retten/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/masterclass/revenue-cloud/revenue-cloud-ueberblick/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1
+  },
+  {
+   "day": "2026-11-19",
+   "page": "https://www.fk-sd.de/partner/recruiter/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
   }
  ],
  "query_page_days": [
@@ -37212,19 +38015,171 @@
   },
   {
    "day": "2026-11-19",
+   "query": "salesforce release dates",
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+   "clicks": 0,
+   "impressions": 14,
+   "position": 20.4
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce release schedule",
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 22
+  },
+  {
+   "day": "2026-11-19",
+   "query": "field service application software",
+   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 65.8
+  },
+  {
+   "day": "2026-11-19",
+   "query": "what does a typical salesforce devops rollout look like?",
+   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+   "clicks": 0,
+   "impressions": 4,
+   "position": 7
+  },
+  {
+   "day": "2026-11-19",
+   "query": "manufacturing cloud",
+   "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 31.3
+  },
+  {
+   "day": "2026-11-19",
    "query": "salesforce core edition",
    "page": "https://www.fk-sd.de/blog/salesforce-editionen-core-advanced-max/",
    "clicks": 0,
-   "impressions": 2,
-   "position": 8
+   "impressions": 3,
+   "position": 7.7
+  },
+  {
+   "day": "2026-11-19",
+   "query": "what makes a salesforce devops platform enterprise-ready?",
+   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 4.3
   },
   {
    "day": "2026-11-19",
    "query": "core edition salesforce",
    "page": "https://www.fk-sd.de/en/blog/salesforce-editions-core-advanced-max/",
    "clicks": 0,
-   "impressions": 1,
+   "impressions": 2,
    "position": 10
+  },
+  {
+   "day": "2026-11-19",
+   "query": "gearset alternative",
+   "page": "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 19
+  },
+  {
+   "day": "2026-11-19",
+   "query": "ki chatbot audit trail",
+   "page": "https://www.fk-sd.de/blog/audit-trail-ki-agenten-salesforce/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 91
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce nearshore development",
+   "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 60.5
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce project rescue company",
+   "page": "https://www.fk-sd.de/en/services/salesforce-project-rescue/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 16.5
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce zertifizierte experten",
+   "page": "https://www.fk-sd.de/certifications/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 34
+  },
+  {
+   "day": "2026-11-19",
+   "query": "change management salesforce projekt",
+   "page": "https://www.fk-sd.de/blog/change-management-prozess-salesforce/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 7
+  },
+  {
+   "day": "2026-11-19",
+   "query": "click field service",
+   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 47
+  },
+  {
+   "day": "2026-11-19",
+   "query": "click field service management software",
+   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 55
+  },
+  {
+   "day": "2026-11-19",
+   "query": "clicksoftware field service",
+   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 31
+  },
+  {
+   "day": "2026-11-19",
+   "query": "cpq upgraden",
+   "page": "https://www.fk-sd.de/blog/cpq-migration-revenue-cloud-phasen/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 29
+  },
+  {
+   "day": "2026-11-19",
+   "query": "erp field service",
+   "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 69
+  },
+  {
+   "day": "2026-11-19",
+   "query": "field service crm",
+   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 14
+  },
+  {
+   "day": "2026-11-19",
+   "query": "field service management cloud",
+   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 60
   },
   {
    "day": "2026-11-19",
@@ -37236,11 +38191,147 @@
   },
   {
    "day": "2026-11-19",
-   "query": "ki chatbot audit trail",
-   "page": "https://www.fk-sd.de/blog/audit-trail-ki-agenten-salesforce/",
+   "query": "manufacturing cloud",
+   "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
    "clicks": 0,
    "impressions": 1,
-   "position": 91
+   "position": 59
+  },
+  {
+   "day": "2026-11-19",
+   "query": "nearshore teamerweiterung",
+   "page": "https://www.fk-sd.de/blog/nearshore-teams-salesforce-acht-entwickler/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 61
+  },
+  {
+   "day": "2026-11-19",
+   "query": "nearshore teamerweiterung",
+   "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 98
+  },
+  {
+   "day": "2026-11-19",
+   "query": "predictive maintenance salesforce",
+   "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 12
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce enterprise architektur",
+   "page": "https://www.fk-sd.de/blog/salesforce-architekt-oder-systemintegrator/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 14
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce erp integration",
+   "page": "https://www.fk-sd.de/en/services/salesforce-integration/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 81
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce fde",
+   "page": "https://www.fk-sd.de/blog/forward-deployed-engineer-salesforce/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce manufacturing cloud",
+   "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 27
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce manufacturing cloud",
+   "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 81
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce manufacturing cloud implementation",
+   "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 58
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce manufacturing cloud partner",
+   "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 55
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce max",
+   "page": "https://www.fk-sd.de/blog/salesforce-editionen-core-advanced-max/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 9
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce nearshore pdo",
+   "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 84
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce project recovery consultant",
+   "page": "https://www.fk-sd.de/en/services/salesforce-project-rescue/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 12
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce project rescue services",
+   "page": "https://www.fk-sd.de/en/services/salesforce-project-rescue/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 18
+  },
+  {
+   "day": "2026-11-19",
+   "query": "salesforce vertriebsprozess",
+   "page": "https://www.fk-sd.de/blog/salesforce-akzeptanz-vertrieb/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 17
+  },
+  {
+   "day": "2026-11-19",
+   "query": "solutions factory consulting gmbh",
+   "page": "https://www.fk-sd.de/en/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 36
+  },
+  {
+   "day": "2026-11-19",
+   "query": "sx.e salesforce warranty claim handoff",
+   "page": "https://www.fk-sd.de/en/blog/warranty-claims-dealers-salesforce/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 10
   },
   {
    "day": "2026-11-19",
@@ -37252,71 +38343,79 @@
   },
   {
    "day": "2026-11-19",
-   "query": "what does a typical salesforce devops rollout look like?",
-   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+   "query": "wechsel von cpq zu revenue cloud",
+   "page": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
    "clicks": 0,
    "impressions": 1,
-   "position": 10
+   "position": 11
   },
   {
    "day": "2026-11-19",
-   "query": "what makes a salesforce devops platform enterprise-ready?",
-   "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+   "query": "wechsel von cpq zu revenue cloud",
+   "page": "https://www.fk-sd.de/blog/cpq-migration-revenue-cloud-phasen/",
    "clicks": 0,
    "impressions": 1,
-   "position": 1
+   "position": 42
+  },
+  {
+   "day": "2026-11-19",
+   "query": "what software manages preferred supplier lists in field service?",
+   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 43
   }
  ],
  "devices": [
   {
    "device": "DESKTOP",
-   "clicks": 28,
-   "impressions": 3453,
-   "position": 33.6
+   "clicks": 30,
+   "impressions": 3588,
+   "position": 33.1
   },
   {
    "device": "MOBILE",
-   "clicks": 10,
-   "impressions": 656,
-   "position": 23.6
+   "clicks": 11,
+   "impressions": 674,
+   "position": 23.4
   },
   {
    "device": "TABLET",
    "clicks": 0,
-   "impressions": 61,
+   "impressions": 62,
    "position": 6.9
   }
  ],
  "countries": [
   {
    "country": "deu",
-   "clicks": 15,
-   "impressions": 1562,
-   "position": 43.6
+   "clicks": 17,
+   "impressions": 1615,
+   "position": 43
   },
   {
    "country": "usa",
-   "clicks": 3,
-   "impressions": 1166,
-   "position": 24.9
+   "clicks": 4,
+   "impressions": 1201,
+   "position": 24.7
   },
   {
    "country": "gbr",
    "clicks": 2,
-   "impressions": 185,
-   "position": 39.4
+   "impressions": 194,
+   "position": 38.2
   },
   {
    "country": "ind",
    "clicks": 5,
-   "impressions": 139,
-   "position": 13
+   "impressions": 153,
+   "position": 13.2
   },
   {
    "country": "nld",
    "clicks": 0,
-   "impressions": 102,
-   "position": 54.1
+   "impressions": 107,
+   "position": 53.5
   },
   {
    "country": "bra",
@@ -37327,14 +38426,20 @@
   {
    "country": "fra",
    "clicks": 1,
-   "impressions": 85,
-   "position": 10.5
+   "impressions": 90,
+   "position": 10.2
   },
   {
    "country": "aut",
    "clicks": 1,
-   "impressions": 65,
-   "position": 34.4
+   "impressions": 68,
+   "position": 34
+  },
+  {
+   "country": "can",
+   "clicks": 1,
+   "impressions": 58,
+   "position": 26.1
   },
   {
    "country": "aus",
@@ -37343,22 +38448,16 @@
    "position": 38.8
   },
   {
-   "country": "can",
-   "clicks": 1,
-   "impressions": 54,
-   "position": 27.5
+   "country": "rus",
+   "clicks": 0,
+   "impressions": 51,
+   "position": 18.8
   },
   {
    "country": "esp",
    "clicks": 1,
-   "impressions": 49,
-   "position": 10.1
-  },
-  {
-   "country": "rus",
-   "clicks": 0,
-   "impressions": 45,
-   "position": 18.7
+   "impressions": 50,
+   "position": 10
   },
   {
    "country": "che",
@@ -37369,20 +38468,20 @@
   {
    "country": "dnk",
    "clicks": 0,
-   "impressions": 37,
-   "position": 20.3
-  },
-  {
-   "country": "jpn",
-   "clicks": 0,
-   "impressions": 30,
-   "position": 17.5
+   "impressions": 39,
+   "position": 19.3
   },
   {
    "country": "swe",
    "clicks": 1,
-   "impressions": 29,
-   "position": 21.8
+   "impressions": 33,
+   "position": 20
+  },
+  {
+   "country": "jpn",
+   "clicks": 0,
+   "impressions": 31,
+   "position": 17.2
   },
   {
    "country": "pol",
@@ -37421,16 +38520,22 @@
    "position": 9.1
   },
   {
+   "country": "arg",
+   "clicks": 0,
+   "impressions": 17,
+   "position": 15.5
+  },
+  {
    "country": "isr",
    "clicks": 0,
    "impressions": 16,
    "position": 8.3
   },
   {
-   "country": "arg",
+   "country": "zaf",
    "clicks": 0,
-   "impressions": 14,
-   "position": 13.6
+   "impressions": 15,
+   "position": 39.5
   },
   {
    "country": "nor",
@@ -37443,12 +38548,6 @@
    "clicks": 0,
    "impressions": 13,
    "position": 26.1
-  },
-  {
-   "country": "zaf",
-   "clicks": 0,
-   "impressions": 13,
-   "position": 44.2
   },
   {
    "country": "bgd",
@@ -37469,16 +38568,34 @@
    "position": 14.5
   },
   {
+   "country": "pak",
+   "clicks": 0,
+   "impressions": 10,
+   "position": 19.4
+  },
+  {
    "country": "vnm",
    "clicks": 0,
    "impressions": 10,
    "position": 42.9
   },
   {
-   "country": "pak",
+   "country": "hun",
    "clicks": 0,
    "impressions": 9,
-   "position": 20.4
+   "position": 6.2
+  },
+  {
+   "country": "sau",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 7.2
+  },
+  {
+   "country": "tha",
+   "clicks": 0,
+   "impressions": 9,
+   "position": 16.7
   },
   {
    "country": "nzl",
@@ -37487,28 +38604,10 @@
    "position": 7.4
   },
   {
-   "country": "hun",
-   "clicks": 0,
-   "impressions": 8,
-   "position": 6.1
-  },
-  {
    "country": "mex",
    "clicks": 0,
    "impressions": 8,
    "position": 6.3
-  },
-  {
-   "country": "sau",
-   "clicks": 0,
-   "impressions": 8,
-   "position": 7.3
-  },
-  {
-   "country": "tha",
-   "clicks": 0,
-   "impressions": 8,
-   "position": 17.6
   },
   {
    "country": "kor",
@@ -37541,6 +38640,12 @@
    "position": 7.5
   },
   {
+   "country": "mys",
+   "clicks": 0,
+   "impressions": 6,
+   "position": 30
+  },
+  {
    "country": "twn",
    "clicks": 1,
    "impressions": 5,
@@ -37563,12 +38668,6 @@
    "clicks": 0,
    "impressions": 5,
    "position": 5.8
-  },
-  {
-   "country": "mys",
-   "clicks": 0,
-   "impressions": 5,
-   "position": 35.8
   },
   {
    "country": "srb",
@@ -37745,6 +38844,12 @@
    "position": 88
   },
   {
+   "country": "ken",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 1
+  },
+  {
    "country": "khm",
    "clicks": 0,
    "impressions": 1,
@@ -37791,11 +38896,17 @@
    "clicks": 0,
    "impressions": 1,
    "position": 19
+  },
+  {
+   "country": "zzz",
+   "clicks": 0,
+   "impressions": 1,
+   "position": 5
   }
  ],
  "index_summary": [
   {
-   "day": "2026-11-19",
+   "day": "2026-11-20",
    "sitemapUrls": 562,
    "inspected": 562,
    "failed": 0,
@@ -37807,11 +38918,11 @@
     },
     {
      "coverage": "Discovered - currently not indexed",
-     "urls": 44
+     "urls": 40
     },
     {
      "coverage": "URL is unknown to Google",
-     "urls": 5
+     "urls": 9
     }
    ]
   }
@@ -38387,14 +39498,14 @@
   {
    "url": "https://www.fk-sd.de/blog/garantieansprueche-haendler-salesforce/",
    "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
+   "coverage": "Discovered - currently not indexed",
    "lastCrawl": null,
    "googleCanonical": null
   },
   {
    "url": "https://www.fk-sd.de/blog/gearset-copado-alternativen/",
    "verdict": "NEUTRAL",
-   "coverage": "Discovered - currently not indexed",
+   "coverage": "URL is unknown to Google",
    "lastCrawl": null,
    "googleCanonical": null
   },
@@ -38464,7 +39575,7 @@
   {
    "url": "https://www.fk-sd.de/blog/ki-generierten-salesforce-code-pruefen/",
    "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
+   "coverage": "Discovered - currently not indexed",
    "lastCrawl": null,
    "googleCanonical": null
   },
@@ -38632,7 +39743,7 @@
   {
    "url": "https://www.fk-sd.de/blog/partner-ki-coding-regeln-vertrag/",
    "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
+   "coverage": "Discovered - currently not indexed",
    "lastCrawl": null,
    "googleCanonical": null
   },
@@ -38828,7 +39939,7 @@
   {
    "url": "https://www.fk-sd.de/blog/sales-agreements-abnahmemengen-erp/",
    "verdict": "NEUTRAL",
-   "coverage": "Discovered - currently not indexed",
+   "coverage": "URL is unknown to Google",
    "lastCrawl": null,
    "googleCanonical": null
   },
@@ -38940,7 +40051,7 @@
   {
    "url": "https://www.fk-sd.de/blog/salesforce-field-service-ersatzteile-erp/",
    "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
+   "coverage": "Discovered - currently not indexed",
    "lastCrawl": null,
    "googleCanonical": null
   },
@@ -39402,7 +40513,7 @@
   {
    "url": "https://www.fk-sd.de/en/blog/agentforce-vibes-claude-code-copilot/",
    "verdict": "NEUTRAL",
-   "coverage": "Discovered - currently not indexed",
+   "coverage": "URL is unknown to Google",
    "lastCrawl": null,
    "googleCanonical": null
   },
@@ -39640,7 +40751,7 @@
   {
    "url": "https://www.fk-sd.de/en/blog/change-curve/",
    "verdict": "NEUTRAL",
-   "coverage": "Discovered - currently not indexed",
+   "coverage": "URL is unknown to Google",
    "lastCrawl": null,
    "googleCanonical": null
   },
@@ -39878,7 +40989,7 @@
   {
    "url": "https://www.fk-sd.de/en/blog/field-service-multiday-jobs-crews-commissioning/",
    "verdict": "NEUTRAL",
-   "coverage": "URL is unknown to Google",
+   "coverage": "Discovered - currently not indexed",
    "lastCrawl": null,
    "googleCanonical": null
   },
@@ -40305,7 +41416,7 @@
   {
    "url": "https://www.fk-sd.de/en/blog/salesforce-architecture-decision-log/",
    "verdict": "NEUTRAL",
-   "coverage": "Discovered - currently not indexed",
+   "coverage": "URL is unknown to Google",
    "lastCrawl": null,
    "googleCanonical": null
   },
@@ -40564,7 +41675,7 @@
   {
    "url": "https://www.fk-sd.de/en/blog/salesforce-uat-business-acceptance-testing/",
    "verdict": "NEUTRAL",
-   "coverage": "Discovered - currently not indexed",
+   "coverage": "URL is unknown to Google",
    "lastCrawl": null,
    "googleCanonical": null
   },
@@ -40816,7 +41927,7 @@
   {
    "url": "https://www.fk-sd.de/en/masterclass/ai-salesforce/external-coding-agents/",
    "verdict": "NEUTRAL",
-   "coverage": "Discovered - currently not indexed",
+   "coverage": "URL is unknown to Google",
    "lastCrawl": null,
    "googleCanonical": null
   },
@@ -40928,7 +42039,7 @@
   {
    "url": "https://www.fk-sd.de/en/masterclass/change-management/sponsor-and-communication/",
    "verdict": "NEUTRAL",
-   "coverage": "Discovered - currently not indexed",
+   "coverage": "URL is unknown to Google",
    "lastCrawl": null,
    "googleCanonical": null
   },
@@ -41607,7 +42718,7 @@
   {
    "url": "https://www.fk-sd.de/masterclass/ki-salesforce/salesforce-werkzeuge-ki-entwicklung/",
    "verdict": "NEUTRAL",
-   "coverage": "Discovered - currently not indexed",
+   "coverage": "URL is unknown to Google",
    "lastCrawl": null,
    "googleCanonical": null
   },
