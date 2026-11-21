@@ -1,6 +1,6 @@
 [
  {
-  "day": "2026-11-20",
+  "day": "2026-11-21",
   "sitemapUrls": 562,
   "inspected": 562,
   "failed": 0,
@@ -12,11 +12,11 @@
    },
    {
     "coverage": "Discovered - currently not indexed",
-    "urls": 41
+    "urls": 43
    },
    {
     "coverage": "URL is unknown to Google",
-    "urls": 8
+    "urls": 6
    }
   ]
  }
