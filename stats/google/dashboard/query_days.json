@@ -9402,6 +9402,13 @@
  },
  {
   "day": "2026-11-20",
+  "query": "gearset alternative",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 15
+ },
+ {
+  "day": "2026-11-20",
   "query": "gearset vs copado",
   "clicks": 0,
   "impressions": 5,
@@ -9409,10 +9416,10 @@
  },
  {
   "day": "2026-11-20",
-  "query": "gearset alternative",
+  "query": "copado alternative",
   "clicks": 0,
   "impressions": 4,
-  "position": 14.3
+  "position": 17
  },
  {
   "day": "2026-11-20",
@@ -9430,6 +9437,13 @@
  },
  {
   "day": "2026-11-20",
+  "query": "salesforce commerce product data",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 11.7
+ },
+ {
+  "day": "2026-11-20",
   "query": "salesforce manufacturing cloud",
   "clicks": 0,
   "impressions": 3,
@@ -9441,6 +9455,20 @@
   "clicks": 0,
   "impressions": 3,
   "position": 82.3
+ },
+ {
+  "day": "2026-11-20",
+  "query": "click field service management software",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 54
+ },
+ {
+  "day": "2026-11-20",
+  "query": "copado alternatives",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 24
  },
  {
   "day": "2026-11-20",
@@ -9479,6 +9507,34 @@
  },
  {
   "day": "2026-11-20",
+  "query": "manufacturing cloud",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 46
+ },
+ {
+  "day": "2026-11-20",
+  "query": "nearshore teamerweiterung",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 85
+ },
+ {
+  "day": "2026-11-20",
+  "query": "salesforce architektur salzburg",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 13
+ },
+ {
+  "day": "2026-11-20",
+  "query": "salesforce nearshore development",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 42
+ },
+ {
+  "day": "2026-11-20",
   "query": "wechsel von cpq zu revenue cloud",
   "clicks": 0,
   "impressions": 2,
@@ -9493,17 +9549,10 @@
  },
  {
   "day": "2026-11-20",
-  "query": "click field service management software",
+  "query": "cloud field service management",
   "clicks": 0,
   "impressions": 1,
-  "position": 63
- },
- {
-  "day": "2026-11-20",
-  "query": "copado alternative",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
+  "position": 46
  },
  {
   "day": "2026-11-20",
@@ -9528,6 +9577,13 @@
  },
  {
   "day": "2026-11-20",
+  "query": "field service agent builder",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 20
+ },
+ {
+  "day": "2026-11-20",
   "query": "gearset documentation alternative",
   "clicks": 0,
   "impressions": 1,
@@ -9542,10 +9598,17 @@
  },
  {
   "day": "2026-11-20",
-  "query": "manufacturing cloud",
+  "query": "manufacturing cloud implementeren",
   "clicks": 0,
   "impressions": 1,
-  "position": 32
+  "position": 69
+ },
+ {
+  "day": "2026-11-20",
+  "query": "manufacturing cloud saudi arabia",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 43
  },
  {
   "day": "2026-11-20",
@@ -9556,10 +9619,17 @@
  },
  {
   "day": "2026-11-20",
-  "query": "nearshore teamerweiterung",
+  "query": "nearshore teams",
   "clicks": 0,
   "impressions": 1,
-  "position": 99
+  "position": 58
+ },
+ {
+  "day": "2026-11-20",
+  "query": "offline field service app",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 52
  },
  {
   "day": "2026-11-20",
@@ -9584,10 +9654,17 @@
  },
  {
   "day": "2026-11-20",
-  "query": "salesforce commerce product data",
+  "query": "salesforce custom development nearshore",
   "clicks": 0,
   "impressions": 1,
-  "position": 12
+  "position": 69
+ },
+ {
+  "day": "2026-11-20",
+  "query": "salesforce konfiguration",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 30
  },
  {
   "day": "2026-11-20",
@@ -9605,10 +9682,10 @@
  },
  {
   "day": "2026-11-20",
-  "query": "salesforce nearshore development",
+  "query": "salesforce middleware",
   "clicks": 0,
   "impressions": 1,
-  "position": 42
+  "position": 44
  },
  {
   "day": "2026-11-20",
@@ -9616,5 +9693,40 @@
   "clicks": 0,
   "impressions": 1,
   "position": 18
+ },
+ {
+  "day": "2026-11-20",
+  "query": "sfdx-hardis",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-20",
+  "query": "sonarqube vs gearset, which is better for salesforce code quality?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 1
+ },
+ {
+  "day": "2026-11-21",
+  "query": "erp salesforce integration",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 42
+ },
+ {
+  "day": "2026-11-21",
+  "query": "fertigung salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 40
+ },
+ {
+  "day": "2026-11-21",
+  "query": "what is the agent context engine in salesforce data 360?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
  }
 ]

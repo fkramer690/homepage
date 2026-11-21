@@ -11987,8 +11987,8 @@
   "day": "2026-11-20",
   "page": "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
   "clicks": 0,
-  "impressions": 18,
-  "position": 19.9
+  "impressions": 25,
+  "position": 19.6
  },
  {
   "day": "2026-11-20",
@@ -12001,8 +12001,8 @@
   "day": "2026-11-20",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
-  "impressions": 9,
-  "position": 49.4
+  "impressions": 12,
+  "position": 42
  },
  {
   "day": "2026-11-20",
@@ -12022,15 +12022,50 @@
   "day": "2026-11-20",
   "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
   "clicks": 0,
-  "impressions": 4,
-  "position": 72.3
+  "impressions": 6,
+  "position": 66.7
  },
  {
   "day": "2026-11-20",
   "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
   "clicks": 0,
+  "impressions": 5,
+  "position": 57.8
+ },
+ {
+  "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
   "impressions": 4,
-  "position": 55
+  "position": 11.3
+ },
+ {
+  "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 41.3
+ },
+ {
+  "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 11.5
+ },
+ {
+  "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 8.3
+ },
+ {
+  "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 5.7
  },
  {
   "day": "2026-11-20",
@@ -12062,6 +12097,13 @@
  },
  {
   "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/blog/nearshore-teams-salesforce-acht-entwickler/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 85
+ },
+ {
+  "day": "2026-11-20",
   "page": "https://www.fk-sd.de/en/blog/",
   "clicks": 0,
   "impressions": 2,
@@ -12073,20 +12115,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 6.5
- },
- {
-  "day": "2026-11-20",
-  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 11
- },
- {
-  "day": "2026-11-20",
-  "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 5.5
  },
  {
   "day": "2026-11-20",
@@ -12118,17 +12146,17 @@
  },
  {
   "day": "2026-11-20",
-  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
   "clicks": 0,
   "impressions": 2,
-  "position": 31
+  "position": 67
  },
  {
   "day": "2026-11-20",
-  "page": "https://www.fk-sd.de/",
+  "page": "https://www.fk-sd.de/blog/",
   "clicks": 0,
   "impressions": 1,
-  "position": 10
+  "position": 30
  },
  {
   "day": "2026-11-20",
@@ -12153,17 +12181,17 @@
  },
  {
   "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 46
+ },
+ {
+  "day": "2026-11-20",
   "page": "https://www.fk-sd.de/blog/forward-deployed-engineer-salesforce/",
   "clicks": 0,
   "impressions": 1,
   "position": 10
- },
- {
-  "day": "2026-11-20",
-  "page": "https://www.fk-sd.de/blog/nearshore-teams-salesforce-acht-entwickler/",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 99
  },
  {
   "day": "2026-11-20",
@@ -12237,10 +12265,38 @@
  },
  {
   "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/change-management-models/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "day": "2026-11-20",
   "page": "https://www.fk-sd.de/en/blog/dora-metrics-salesforce-releases/",
   "clicks": 0,
   "impressions": 1,
   "position": 10
+ },
+ {
+  "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/field-service-ai-agents-what-works-today/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 20
+ },
+ {
+  "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/field-service-mobile-app-offline-data/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 52
+ },
+ {
+  "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/request-for-quote-b2b-commerce-cart-to-quote/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 6
  },
  {
   "day": "2026-11-20",
@@ -12286,6 +12342,20 @@
  },
  {
   "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 9
+ },
+ {
+  "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-release-communication-business/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-20",
   "page": "https://www.fk-sd.de/en/blog/salesforce-sandbox-strategy-multiple-partners/",
   "clicks": 0,
   "impressions": 1,
@@ -12321,10 +12391,24 @@
  },
  {
   "day": "2026-11-20",
-  "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+  "page": "https://www.fk-sd.de/en/services/devops-release-management/",
   "clicks": 0,
   "impressions": 1,
-  "position": 10
+  "position": 4
+ },
+ {
+  "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/en/services/salesforce-integration/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 44
+ },
+ {
+  "day": "2026-11-20",
+  "page": "https://www.fk-sd.de/leistungen/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
  },
  {
   "day": "2026-11-20",
@@ -12346,5 +12430,26 @@
   "clicks": 0,
   "impressions": 1,
   "position": 16
+ },
+ {
+  "day": "2026-11-21",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-21",
+  "page": "https://www.fk-sd.de/en/services/salesforce-integration/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 42
+ },
+ {
+  "day": "2026-11-21",
+  "page": "https://www.fk-sd.de/masterclass/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 40
  }
 ]

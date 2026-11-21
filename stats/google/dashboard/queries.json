@@ -8,14 +8,20 @@
  {
   "query": "manufacturing cloud",
   "clicks": 0,
-  "impressions": 62,
-  "position": 43.7
+  "impressions": 63,
+  "position": 44
  },
  {
   "query": "how to automate technician scheduling and dispatch?",
   "clicks": 0,
   "impressions": 56,
   "position": 37.8
+ },
+ {
+  "query": "salesforce commerce product data",
+  "clicks": 0,
+  "impressions": 51,
+  "position": 52.4
  },
  {
   "query": "what makes a salesforce devops platform enterprise-ready?",
@@ -28,12 +34,6 @@
   "clicks": 0,
   "impressions": 49,
   "position": 94.5
- },
- {
-  "query": "salesforce commerce product data",
-  "clicks": 0,
-  "impressions": 49,
-  "position": 54.1
  },
  {
   "query": "what does a typical salesforce devops rollout look like?",
@@ -56,8 +56,8 @@
  {
   "query": "sfdx-hardis",
   "clicks": 1,
-  "impressions": 35,
-  "position": 10.7
+  "impressions": 36,
+  "position": 10.5
  },
  {
   "query": "field service scheduling and dispatch",
@@ -68,8 +68,8 @@
  {
   "query": "click field service management software",
   "clicks": 0,
-  "impressions": 32,
-  "position": 65.9
+  "impressions": 33,
+  "position": 65.3
  },
  {
   "query": "field service scheduling",
@@ -96,6 +96,12 @@
   "position": 75.9
  },
  {
+  "query": "nearshore teamerweiterung",
+  "clicks": 0,
+  "impressions": 25,
+  "position": 54.6
+ },
+ {
   "query": "cad vertriebsdaten",
   "clicks": 0,
   "impressions": 24,
@@ -114,12 +120,6 @@
   "position": 72.5
  },
  {
-  "query": "nearshore teamerweiterung",
-  "clicks": 0,
-  "impressions": 24,
-  "position": 53.9
- },
- {
   "query": "salesforce manufacturing cloud",
   "clicks": 0,
   "impressions": 23,
@@ -128,8 +128,8 @@
  {
   "query": "fertigung salesforce",
   "clicks": 0,
-  "impressions": 21,
-  "position": 25.8
+  "impressions": 22,
+  "position": 26.4
  },
  {
   "query": "erp field service",
@@ -180,16 +180,16 @@
   "position": 9.9
  },
  {
+  "query": "nearshore teams",
+  "clicks": 0,
+  "impressions": 17,
+  "position": 50.5
+ },
+ {
   "query": "service pro vs ptc servicemax",
   "clicks": 0,
   "impressions": 17,
   "position": 8.5
- },
- {
-  "query": "nearshore teams",
-  "clicks": 0,
-  "impressions": 16,
-  "position": 50
  },
  {
   "query": "b2b dealer portal",
@@ -306,6 +306,12 @@
   "position": 69
  },
  {
+  "query": "salesforce konfiguration",
+  "clicks": 0,
+  "impressions": 11,
+  "position": 22.4
+ },
+ {
   "query": "scalable b2b headless commerce",
   "clicks": 0,
   "impressions": 11,
@@ -354,10 +360,10 @@
   "position": 68.7
  },
  {
-  "query": "salesforce konfiguration",
+  "query": "salesforce nearshore development",
   "clicks": 0,
   "impressions": 10,
-  "position": 21.6
+  "position": 61.6
  },
  {
   "query": "salesforce zertifizierte experten",
@@ -426,12 +432,6 @@
   "position": 57.4
  },
  {
-  "query": "salesforce nearshore development",
-  "clicks": 0,
-  "impressions": 9,
-  "position": 63.8
- },
- {
   "query": "vertragsmanagement mit salesforce",
   "clicks": 0,
   "impressions": 9,
@@ -448,6 +448,12 @@
   "clicks": 0,
   "impressions": 8,
   "position": 74.1
+ },
+ {
+  "query": "cloud field service management",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 70
  },
  {
   "query": "cpq revenue cloud integration",
@@ -486,16 +492,16 @@
   "position": 69.1
  },
  {
-  "query": "cloud field service management",
-  "clicks": 0,
-  "impressions": 7,
-  "position": 73.4
- },
- {
   "query": "field service mobile flow limitations",
   "clicks": 0,
   "impressions": 7,
   "position": 6.1
+ },
+ {
+  "query": "gearset alternative",
+  "clicks": 0,
+  "impressions": 7,
+  "position": 16.1
  },
  {
   "query": "predictive maintenance salesforce",
@@ -576,12 +582,6 @@
   "position": 82
  },
  {
-  "query": "gearset alternative",
-  "clicks": 0,
-  "impressions": 6,
-  "position": 15.8
- },
- {
   "query": "kundeportal b2b",
   "clicks": 0,
   "impressions": 6,
@@ -648,6 +648,12 @@
   "position": 16.6
  },
  {
+  "query": "copado alternative",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 17.4
+ },
+ {
   "query": "cpq revenue cloud migration",
   "clicks": 0,
   "impressions": 5,
@@ -676,6 +682,12 @@
   "clicks": 0,
   "impressions": 5,
   "position": 29.2
+ },
+ {
+  "query": "manufacturing cloud implementeren",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 61
  },
  {
   "query": "produktstammdaten handel",
@@ -712,6 +724,12 @@
   "clicks": 0,
   "impressions": 5,
   "position": 63.8
+ },
+ {
+  "query": "what is the agent context engine in salesforce data 360?",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 7.6
  },
  {
   "query": "wo kann ich eine demo für f&e software anfragen",
@@ -834,16 +852,16 @@
   "position": 62.3
  },
  {
-  "query": "manufacturing cloud implementeren",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 59
- },
- {
   "query": "manufacturing customer portal",
   "clicks": 0,
   "impressions": 4,
   "position": 37.5
+ },
+ {
+  "query": "offline field service app",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 67.5
  },
  {
   "query": "ordre de travail field service",
@@ -874,6 +892,12 @@
   "clicks": 0,
   "impressions": 4,
   "position": 59.5
+ },
+ {
+  "query": "salesforce architektur salzburg",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 23.8
  },
  {
   "query": "salesforce beratung maschinenbau",
@@ -936,12 +960,6 @@
   "position": 8.3
  },
  {
-  "query": "what is the agent context engine in salesforce data 360?",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 8.5
- },
- {
   "query": "\"agentforce 360\" (inurl:softonic or inurl:apkcombo or inurl:apkpure or inurl:apkmirror or inurl:aptoide or inurl:droid or inurl:apps2app or inurl:androidapks or inurl:uptown or inurl:appbrain or inurl:apkdownload or inurl:apk)",
   "clicks": 0,
   "impressions": 3,
@@ -982,6 +1000,12 @@
   "clicks": 0,
   "impressions": 3,
   "position": 46.3
+ },
+ {
+  "query": "copado alternatives",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 17.3
  },
  {
   "query": "fakturierung cloud",
@@ -1044,12 +1068,6 @@
   "position": 6
  },
  {
-  "query": "offline field service app",
-  "clicks": 0,
-  "impressions": 3,
-  "position": 72.7
- },
- {
   "query": "replace drs scheduling",
   "clicks": 0,
   "impressions": 3,
@@ -1090,6 +1108,18 @@
   "clicks": 0,
   "impressions": 3,
   "position": 94.3
+ },
+ {
+  "query": "salesforce custom development nearshore",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 70.7
+ },
+ {
+  "query": "salesforce middleware",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 50.7
  },
  {
   "query": "salesforce mit erp integrieren lassen",
@@ -1278,12 +1308,6 @@
   "position": 50.5
  },
  {
-  "query": "copado alternative",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 12
- },
- {
   "query": "copado vs gearset",
   "clicks": 0,
   "impressions": 2,
@@ -1452,12 +1476,6 @@
   "position": 8
  },
  {
-  "query": "salesforce architektur salzburg",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 34.5
- },
- {
   "query": "salesforce b2b commerce sap",
   "clicks": 0,
   "impressions": 2,
@@ -1474,12 +1492,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 16.5
- },
- {
-  "query": "salesforce custom development nearshore",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 71.5
  },
  {
   "query": "salesforce erp schnittstelle",
@@ -1504,12 +1516,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 19.5
- },
- {
-  "query": "salesforce middleware",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 54
  },
  {
   "query": "salesforce project rescue company",
@@ -1830,12 +1836,6 @@
   "position": 66
  },
  {
-  "query": "copado alternatives",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 4
- },
- {
   "query": "customserverpro.com",
   "clicks": 0,
   "impressions": 1,
@@ -1896,6 +1896,12 @@
   "position": 11
  },
  {
+  "query": "erp salesforce integration",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 42
+ },
+ {
   "query": "evaluate the erp company servicemax on transport alm",
   "clicks": 0,
   "impressions": 1,
@@ -1918,6 +1924,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 10
+ },
+ {
+  "query": "field service agent builder",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 20
  },
  {
   "query": "field service automation",
@@ -2266,6 +2278,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 9
+ },
+ {
+  "query": "manufacturing cloud saudi arabia",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 43
  },
  {
   "query": "manufacturing cloud vs sales cloud",
@@ -2710,6 +2728,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 9
+ },
+ {
+  "query": "sonarqube vs gearset, which is better for salesforce code quality?",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 1
  },
  {
   "query": "spare parts portal with user hierarchy",

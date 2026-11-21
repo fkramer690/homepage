@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-21T04:48:21.522Z",
+  "generatedAt": "2026-11-21T13:26:43.828Z",
   "range": {
     "start": "2026-10-22",
     "end": "2026-11-21"
@@ -1272,6 +1272,16 @@
       "count": 20,
       "dimensions": {
         "date": "2026-11-05",
+        "requestPath": "/masterclass/ki-salesforce/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "date": "2026-11-05",
         "requestPath": "/en/"
       },
       "sum": {
@@ -1289,16 +1299,6 @@
       }
     },
     {
-      "count": 20,
-      "dimensions": {
-        "date": "2026-11-05",
-        "requestPath": "/masterclass/ki-salesforce/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
       "count": 10,
       "dimensions": {
         "date": "2026-11-05",
@@ -1312,20 +1312,10 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-05",
-        "requestPath": "/blog/salesforce-document-builder-grenzen-workarounds/"
+        "requestPath": "/blog/merchandising-agent-teilekatalog/"
       },
       "sum": {
         "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-05",
-        "requestPath": "/blog/"
-      },
-      "sum": {
-        "visits": 0
       }
     },
     {
@@ -1343,16 +1333,6 @@
       "dimensions": {
         "date": "2026-11-05",
         "requestPath": "/impressum/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "date": "2026-11-05",
-        "requestPath": "/blog/merchandising-agent-teilekatalog/"
       },
       "sum": {
         "visits": 10
@@ -1392,6 +1372,16 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-05",
+        "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05",
         "requestPath": "/masterclass/revenue-cloud/"
       },
       "sum": {
@@ -1422,10 +1412,10 @@
       "count": 10,
       "dimensions": {
         "date": "2026-11-05",
-        "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
+        "requestPath": "/blog/salesforce-document-builder-grenzen-workarounds/"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     },
     {
@@ -1463,6 +1453,16 @@
       "dimensions": {
         "date": "2026-11-05",
         "requestPath": "/en/blog/quality-gates-for-ai-code-salesforce-pipeline/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05",
+        "requestPath": "/blog/"
       },
       "sum": {
         "visits": 0
