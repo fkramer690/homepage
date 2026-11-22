@@ -12529,6 +12529,118 @@
  },
  {
   "day": "2026-11-21",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 6.4
+ },
+ {
+  "day": "2026-11-21",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 4.4
+ },
+ {
+  "day": "2026-11-21",
+  "query": "field service application software",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 4,
+  "position": 66
+ },
+ {
+  "day": "2026-11-21",
+  "query": "click field service management software",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 55
+ },
+ {
+  "day": "2026-11-21",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 40.5
+ },
+ {
+  "day": "2026-11-21",
+  "query": "field service management cloud",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 54
+ },
+ {
+  "day": "2026-11-21",
+  "query": "ki chatbot audit trail",
+  "page": "https://www.fk-sd.de/blog/audit-trail-ki-agenten-salesforce/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 96.5
+ },
+ {
+  "day": "2026-11-21",
+  "query": "manufacturing cloud",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 30.5
+ },
+ {
+  "day": "2026-11-21",
+  "query": "manufacturing cloud vs service cloud",
+  "page": "https://www.fk-sd.de/en/blog/manufacturing-cloud-service-vs-service-cloud/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 3
+ },
+ {
+  "day": "2026-11-21",
+  "query": "salesforce manufacturing cloud",
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 41
+ },
+ {
+  "day": "2026-11-21",
+  "query": "click field service management",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 47
+ },
+ {
+  "day": "2026-11-21",
+  "query": "clicksoftware field service management",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
+ },
+ {
+  "day": "2026-11-21",
+  "query": "cloud field service management",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 47
+ },
+ {
+  "day": "2026-11-21",
+  "query": "erp field service",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 64
+ },
+ {
+  "day": "2026-11-21",
   "query": "erp salesforce integration",
   "page": "https://www.fk-sd.de/en/services/salesforce-integration/",
   "clicks": 0,
@@ -12538,10 +12650,154 @@
  {
   "day": "2026-11-21",
   "query": "fertigung salesforce",
-  "page": "https://www.fk-sd.de/masterclass/",
+  "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
   "clicks": 0,
   "impressions": 1,
-  "position": 40
+  "position": 15
+ },
+ {
+  "day": "2026-11-21",
+  "query": "field service partner network",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-field-service-service-partners/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-21",
+  "query": "manufacturing cloud implementeren",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 65
+ },
+ {
+  "day": "2026-11-21",
+  "query": "nearshore teamerweiterung",
+  "page": "https://www.fk-sd.de/blog/nearshore-teams-salesforce-acht-entwickler/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 95
+ },
+ {
+  "day": "2026-11-21",
+  "query": "nearshore teamerweiterung",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 68
+ },
+ {
+  "day": "2026-11-21",
+  "query": "predictive maintenance salesforce",
+  "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 14
+ },
+ {
+  "day": "2026-11-21",
+  "query": "proalpha anbindung salesforce",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-schnittstellen/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 35
+ },
+ {
+  "day": "2026-11-21",
+  "query": "salesforce commerce product data",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
+ },
+ {
+  "day": "2026-11-21",
+  "query": "salesforce custom development nearshore",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 62
+ },
+ {
+  "day": "2026-11-21",
+  "query": "salesforce forward deployed engineer",
+  "page": "https://www.fk-sd.de/blog/forward-deployed-engineer-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 12
+ },
+ {
+  "day": "2026-11-21",
+  "query": "salesforce mahnwesen",
+  "page": "https://www.fk-sd.de/blog/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 20
+ },
+ {
+  "day": "2026-11-21",
+  "query": "salesforce manufacturing cloud implementation",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 60
+ },
+ {
+  "day": "2026-11-21",
+  "query": "salesforce manufacturing cloud partner",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 44
+ },
+ {
+  "day": "2026-11-21",
+  "query": "salesforce nearshore development",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 43
+ },
+ {
+  "day": "2026-11-21",
+  "query": "salesforce nearshore pdo",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 84
+ },
+ {
+  "day": "2026-11-21",
+  "query": "salesforce release cycle",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 37
+ },
+ {
+  "day": "2026-11-21",
+  "query": "salesforce zertifizierte experten",
+  "page": "https://www.fk-sd.de/certifications/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 34
+ },
+ {
+  "day": "2026-11-21",
+  "query": "wechsel von cpq zu revenue cloud",
+  "page": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 11
+ },
+ {
+  "day": "2026-11-21",
+  "query": "wechsel von cpq zu revenue cloud",
+  "page": "https://www.fk-sd.de/blog/cpq-migration-revenue-cloud-phasen/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 33
  },
  {
   "day": "2026-11-21",

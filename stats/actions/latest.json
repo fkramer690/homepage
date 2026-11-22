@@ -1,9 +1,9 @@
 {
- "generatedAt": "2026-11-21T05:02:58.542Z",
+ "generatedAt": "2026-11-22T05:03:42.436Z",
  "window": {
   "google": {
-   "from": "2026-10-24",
-   "to": "2026-11-20"
+   "from": "2026-10-25",
+   "to": "2026-11-21"
   },
   "bingWeek": "2026-11-20"
  },
@@ -31,16 +31,16 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
    "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
-   "impressions": 53,
+   "impressions": 58,
    "clicks": 0,
-   "position": 6.2,
+   "position": 6.1,
    "title": "Why DevOps decides Salesforce enterprise projects",
    "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
    "topQueries": [
     {
      "query": "what makes a salesforce devops platform enterprise-ready?",
-     "impressions": 50,
-     "position": 6.1
+     "impressions": 55,
+     "position": 6
     },
     {
      "query": "is salesforce devops center enough for enterprise teams?",
@@ -60,15 +60,15 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
    "path": "/en/masterclass/devops-release-management/rollout-roadmap/",
-   "impressions": 47,
+   "impressions": 52,
    "clicks": 0,
-   "position": 7.2,
+   "position": 7.1,
    "title": "Salesforce DevOps rollout: roadmap and metrics",
    "file": "src/content/masterclass/en/rollout-roadmap.md",
    "topQueries": [
     {
      "query": "what does a typical salesforce devops rollout look like?",
-     "impressions": 46,
+     "impressions": 51,
      "position": 6.9
     }
    ],
@@ -169,7 +169,7 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/field-service-mobile-flow-limitations/",
    "path": "/en/blog/field-service-mobile-flow-limitations/",
-   "impressions": 30,
+   "impressions": 31,
    "clicks": 0,
    "position": 7.2,
    "title": "Field Service mobile flow limitations: Winter '27 update",
@@ -273,6 +273,35 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
+   "path": "/leistungen/salesforce-architektur/",
+   "impressions": 21,
+   "clicks": 0,
+   "position": 9.8,
+   "title": "Salesforce-Architektur und Solution Design",
+   "file": "src/content/services/de/salesforce-architektur.md",
+   "topQueries": [
+    {
+     "query": "salesforce architektur bonn",
+     "impressions": 2,
+     "position": 8
+    },
+    {
+     "query": "salesforce architektur linz",
+     "impressions": 2,
+     "position": 8
+    },
+    {
+     "query": "salesforce architektur salzburg",
+     "impressions": 2,
+     "position": 13
+    }
+   ],
+   "hint": "Antwort auf „salesforce architektur bonn“ in Description und ersten Satz",
+   "new": false
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/freiberuflicher-salesforce-architect/",
    "path": "/freiberuflicher-salesforce-architect/",
    "impressions": 19,
@@ -299,31 +328,21 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/leistungen/salesforce-architektur/",
-   "path": "/leistungen/salesforce-architektur/",
-   "impressions": 18,
+   "page": "https://www.fk-sd.de/en/blog/manufacturing-cloud-service-vs-service-cloud/",
+   "path": "/en/blog/manufacturing-cloud-service-vs-service-cloud/",
+   "impressions": 17,
    "clicks": 0,
-   "position": 9.4,
-   "title": "Salesforce-Architektur und Solution Design",
-   "file": "src/content/services/de/salesforce-architektur.md",
+   "position": 5,
+   "title": "Manufacturing Cloud vs Service Cloud: $275 vs $195 per user",
+   "file": "src/content/blog/en/manufacturing-cloud-service-vs-service-cloud.md",
    "topQueries": [
     {
-     "query": "salesforce architektur bonn",
-     "impressions": 2,
-     "position": 8
-    },
-    {
-     "query": "salesforce architektur linz",
-     "impressions": 2,
-     "position": 8
-    },
-    {
-     "query": "salesforce architektur dortmund",
-     "impressions": 1,
-     "position": 11
+     "query": "manufacturing cloud vs service cloud",
+     "impressions": 6,
+     "position": 3
     }
    ],
-   "hint": "Antwort auf „salesforce architektur bonn“ in Description und ersten Satz",
+   "hint": "Antwort auf „manufacturing cloud vs service cloud“ in Description und ersten Satz",
    "new": false
   },
   {
@@ -343,25 +362,6 @@
     }
    ],
    "hint": "Antwort auf „juliane winterscheid“ in Description und ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/manufacturing-cloud-service-vs-service-cloud/",
-   "path": "/en/blog/manufacturing-cloud-service-vs-service-cloud/",
-   "impressions": 15,
-   "clicks": 0,
-   "position": 5.3,
-   "title": "Manufacturing Cloud vs Service Cloud: $275 vs $195 per user",
-   "file": "src/content/blog/en/manufacturing-cloud-service-vs-service-cloud.md",
-   "topQueries": [
-    {
-     "query": "manufacturing cloud vs service cloud",
-     "impressions": 4,
-     "position": 3
-    }
-   ],
-   "hint": "Antwort auf „manufacturing cloud vs service cloud“ in Description und ersten Satz",
    "new": false
   },
   {
@@ -417,35 +417,6 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
-   "path": "/en/blog/predictive-maintenance-salesforce-data-needed/",
-   "impressions": 11,
-   "clicks": 0,
-   "position": 10,
-   "title": "Predictive maintenance in Salesforce: what data you need",
-   "file": "src/content/blog/en/predictive-maintenance-salesforce-data-needed.md",
-   "topQueries": [
-    {
-     "query": "predictive maintenance salesforce",
-     "impressions": 4,
-     "position": 14.5
-    },
-    {
-     "query": "can salesforce handle asset-heavy maintenance like maximo? in 2026",
-     "impressions": 2,
-     "position": 5.5
-    },
-    {
-     "query": "predictive maintenance steps with agentforce",
-     "impressions": 1,
-     "position": 8
-    }
-   ],
-   "hint": "Antwort auf „predictive maintenance salesforce“ in Description und ersten Satz",
-   "new": false
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/b2b-commerce-customer-prices-price-books-erp/",
    "path": "/en/blog/b2b-commerce-customer-prices-price-books-erp/",
    "impressions": 10,
@@ -463,9 +434,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
    "path": "/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
-   "impressions": 129,
+   "impressions": 136,
    "clicks": 2,
-   "position": 16.5,
+   "position": 16.8,
    "title": "Salesforce release planning: calendar and releases",
    "file": "src/content/masterclass/en/release-planning-salesforce-releases.md",
    "topQueries": [
@@ -481,8 +452,8 @@
     },
     {
      "query": "salesforce release cycle",
-     "impressions": 5,
-     "position": 45
+     "impressions": 6,
+     "position": 43.7
     }
    ],
    "hint": "Abschnitt und interne Links zu „salesforce release dates“",
@@ -492,9 +463,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/blog/",
    "path": "/blog/",
-   "impressions": 76,
+   "impressions": 78,
    "clicks": 2,
-   "position": 18.5,
+   "position": 18.6,
    "title": null,
    "file": null,
    "topQueries": [
@@ -505,13 +476,13 @@
     },
     {
      "query": "salesforce konfiguration",
-     "impressions": 3,
-     "position": 29
+     "impressions": 4,
+     "position": 29.3
     },
     {
-     "query": "projekte in salesforce verwalten",
+     "query": "salesforce mahnwesen",
      "impressions": 2,
-     "position": 30
+     "position": 22.5
     }
    ],
    "hint": "Abschnitt und interne Links zu „sfdx-hardis“",
@@ -579,9 +550,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/en/blog/revenue-cloud-billing-costs/",
    "path": "/en/blog/revenue-cloud-billing-costs/",
-   "impressions": 36,
+   "impressions": 37,
    "clicks": 0,
-   "position": 15,
+   "position": 14.7,
    "title": "Revenue Cloud Billing pricing: one billing event per $50",
    "file": "src/content/blog/en/revenue-cloud-billing-costs.md",
    "topQueries": [
@@ -592,6 +563,35 @@
     }
    ],
    "hint": "Abschnitt und interne Links zu „revenue cloud billing“",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
+   "path": "/en/blog/gearset-copado-alternatives/",
+   "impressions": 34,
+   "clicks": 0,
+   "position": 17.2,
+   "title": "Gearset and Copado Alternatives 2026 for Salesforce DevOps",
+   "file": "src/content/blog/en/gearset-copado-alternatives.md",
+   "topQueries": [
+    {
+     "query": "gearset alternative",
+     "impressions": 7,
+     "position": 16.1
+    },
+    {
+     "query": "copado alternative",
+     "impressions": 5,
+     "position": 17.4
+    },
+    {
+     "query": "gearset vs copado",
+     "impressions": 5,
+     "position": 26.2
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „gearset alternative“",
    "new": false
   },
   {
@@ -646,9 +646,9 @@
    "source": "google",
    "page": "https://www.fk-sd.de/leistungen/",
    "path": "/leistungen/",
-   "impressions": 29,
+   "impressions": 30,
    "clicks": 0,
-   "position": 13.2,
+   "position": 13.3,
    "title": null,
    "file": null,
    "topQueries": [
@@ -697,38 +697,9 @@
   },
   {
    "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
-   "path": "/en/blog/gearset-copado-alternatives/",
-   "impressions": 27,
-   "clicks": 0,
-   "position": 16.8,
-   "title": "Gearset and Copado Alternatives 2026 for Salesforce DevOps",
-   "file": "src/content/blog/en/gearset-copado-alternatives.md",
-   "topQueries": [
-    {
-     "query": "gearset alternative",
-     "impressions": 6,
-     "position": 15.9
-    },
-    {
-     "query": "gearset vs copado",
-     "impressions": 5,
-     "position": 26.2
-    },
-    {
-     "query": "gearset alternatives",
-     "impressions": 3,
-     "position": 11
-    }
-   ],
-   "hint": "Abschnitt und interne Links zu „gearset alternative“",
-   "new": true
-  },
-  {
-   "source": "google",
    "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
    "path": "/masterclass/ki-salesforce/",
-   "impressions": 26,
+   "impressions": 27,
    "clicks": 0,
    "position": 15,
    "title": null,
@@ -736,8 +707,8 @@
    "topQueries": [
     {
      "query": "fertigung salesforce",
-     "impressions": 14,
-     "position": 17.2
+     "impressions": 15,
+     "position": 17.1
     }
    ],
    "hint": "Abschnitt und interne Links zu „fertigung salesforce“",
@@ -860,6 +831,25 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
+   "path": "/en/blog/salesforce-password-integrations-end-2027/",
+   "impressions": 15,
+   "clicks": 1,
+   "position": 10.2,
+   "title": "Salesforce username-password flow retirement: Feb 20, 2027",
+   "file": "src/content/blog/en/salesforce-password-integrations-end-2027.md",
+   "topQueries": [
+    {
+     "query": "salesforce username password flow retirement",
+     "impressions": 1,
+     "position": 55
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „salesforce username password flow retirement“",
+   "new": false
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/en/blog/einstein-trust-layer-what-it-protects/",
    "path": "/en/blog/einstein-trust-layer-what-it-protects/",
    "impressions": 15,
@@ -909,25 +899,6 @@
     }
    ],
    "hint": "Abschnitt und interne Links zu „change management salesforce projekt“",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/salesforce-password-integrations-end-2027/",
-   "path": "/en/blog/salesforce-password-integrations-end-2027/",
-   "impressions": 14,
-   "clicks": 1,
-   "position": 10.3,
-   "title": "Salesforce username-password flow retirement: Feb 20, 2027",
-   "file": "src/content/blog/en/salesforce-password-integrations-end-2027.md",
-   "topQueries": [
-    {
-     "query": "salesforce username password flow retirement",
-     "impressions": 1,
-     "position": 55
-    }
-   ],
-   "hint": "Abschnitt und interne Links zu „salesforce username password flow retirement“",
    "new": false
   },
   {
@@ -995,6 +966,35 @@
     }
    ],
    "hint": "Abschnitt und interne Links zu „replace drs scheduling“",
+   "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/predictive-maintenance-salesforce-data-needed/",
+   "path": "/en/blog/predictive-maintenance-salesforce-data-needed/",
+   "impressions": 12,
+   "clicks": 0,
+   "position": 10.3,
+   "title": "Predictive maintenance in Salesforce: what data you need",
+   "file": "src/content/blog/en/predictive-maintenance-salesforce-data-needed.md",
+   "topQueries": [
+    {
+     "query": "predictive maintenance salesforce",
+     "impressions": 5,
+     "position": 14.4
+    },
+    {
+     "query": "can salesforce handle asset-heavy maintenance like maximo? in 2026",
+     "impressions": 2,
+     "position": 5.5
+    },
+    {
+     "query": "predictive maintenance steps with agentforce",
+     "impressions": 1,
+     "position": 8
+    }
+   ],
+   "hint": "Abschnitt und interne Links zu „predictive maintenance salesforce“",
    "new": false
   },
   {
@@ -1120,8 +1120,8 @@
   {
    "source": "google",
    "query": "what makes a salesforce devops platform enterprise-ready?",
-   "impressions": 50,
-   "position": 6.1,
+   "impressions": 55,
+   "position": 6,
    "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
    "path": "/en/blog/why-devops-matters-salesforce-enterprise/",
    "file": "src/content/blog/en/why-devops-matters-salesforce-enterprise.md",
@@ -1131,7 +1131,7 @@
   {
    "source": "google",
    "query": "what does a typical salesforce devops rollout look like?",
-   "impressions": 46,
+   "impressions": 51,
    "position": 6.9,
    "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
    "path": "/en/masterclass/devops-release-management/rollout-roadmap/",
@@ -1258,7 +1258,7 @@
    "path": null,
    "file": null,
    "covered": false,
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -1303,6 +1303,17 @@
    "file": "src/content/blog/en/copado-gearset-provar-ai-agents.md",
    "covered": false,
    "new": false
+  },
+  {
+   "source": "google",
+   "query": "sonarqube vs gearset, which is better for salesforce code quality?",
+   "impressions": 1,
+   "position": 1,
+   "page": "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
+   "path": "/en/blog/gearset-copado-alternatives/",
+   "file": "src/content/blog/en/gearset-copado-alternatives.md",
+   "covered": false,
+   "new": true
   },
   {
    "source": "google",
@@ -1358,6 +1369,17 @@
    "file": "src/content/blog/de/salesforce-partner-wechseln.md",
    "covered": false,
    "new": false
+  },
+  {
+   "source": "bing",
+   "query": "what is rca latest name for by salesforce",
+   "impressions": 1,
+   "position": 4,
+   "page": null,
+   "path": null,
+   "file": null,
+   "covered": false,
+   "new": true
   },
   {
    "source": "google",
@@ -1467,7 +1489,7 @@
    "path": "/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
    "file": "src/content/masterclass/en/release-planning-salesforce-releases.md",
    "covered": false,
-   "new": true
+   "new": false
   },
   {
    "source": "google",
@@ -1767,12 +1789,12 @@
    "title": "Salesforce DevOps rollout: roadmap and metrics",
    "file": "src/content/masterclass/en/rollout-roadmap.md",
    "count": 1,
-   "impressions": 46,
+   "impressions": 51,
    "clicks": 0,
    "queries": [
     {
      "query": "what does a typical salesforce devops rollout look like?",
-     "impressions": 46,
+     "impressions": 51,
      "clicks": 0,
      "position": 6.9,
      "inQuestions": true
@@ -1825,6 +1847,27 @@
   },
   {
    "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
+   "path": "/en/blog/salesforce-agent-context-engine-explained/",
+   "title": "Salesforce Agent Context Engine explained",
+   "file": "src/content/blog/en/salesforce-agent-context-engine-explained.md",
+   "count": 1,
+   "impressions": 5,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "what is the agent context engine in salesforce data 360?",
+     "impressions": 5,
+     "clicks": 0,
+     "position": 7.6,
+     "inQuestions": false
+    }
+   ],
+   "hint": "Direkte Antwort auf „what is the agent context engine in salesforce data 360?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": false
+  },
+  {
+   "source": "google",
    "page": "https://www.fk-sd.de/blog/salesforce-dubletten-stammdaten-bereinigen/",
    "path": "/blog/salesforce-dubletten-stammdaten-bereinigen/",
    "title": "Dubletten in Salesforce: Stammdaten vor der KI bereinigen",
@@ -1842,27 +1885,6 @@
     }
    ],
    "hint": "Direkte Antwort auf „was passiert mit kundendaten, wenn ein teil des vertriebsteams ein anderes crm und ein anderer teil salesforce nutzt?“ ergänzen, falls die Seite sie noch nicht gibt",
-   "new": false
-  },
-  {
-   "source": "google",
-   "page": "https://www.fk-sd.de/en/blog/salesforce-agent-context-engine-explained/",
-   "path": "/en/blog/salesforce-agent-context-engine-explained/",
-   "title": "Salesforce Agent Context Engine explained",
-   "file": "src/content/blog/en/salesforce-agent-context-engine-explained.md",
-   "count": 1,
-   "impressions": 4,
-   "clicks": 0,
-   "queries": [
-    {
-     "query": "what is the agent context engine in salesforce data 360?",
-     "impressions": 4,
-     "clicks": 0,
-     "position": 8.5,
-     "inQuestions": false
-    }
-   ],
-   "hint": "Direkte Antwort auf „what is the agent context engine in salesforce data 360?“ ergänzen, falls die Seite sie noch nicht gibt",
    "new": false
   },
   {
@@ -2284,6 +2306,27 @@
    ],
    "hint": "Direkte Antwort auf „what powers agentforce custom actions? a flows, apex classes, heroku, and prompt templates b process builder and workflows c bot dialogs d data masking and event logs“ ergänzen, falls die Seite sie noch nicht gibt",
    "new": false
+  },
+  {
+   "source": "google",
+   "page": "https://www.fk-sd.de/en/blog/gearset-copado-alternatives/",
+   "path": "/en/blog/gearset-copado-alternatives/",
+   "title": "Gearset and Copado Alternatives 2026 for Salesforce DevOps",
+   "file": "src/content/blog/en/gearset-copado-alternatives.md",
+   "count": 1,
+   "impressions": 1,
+   "clicks": 0,
+   "queries": [
+    {
+     "query": "sonarqube vs gearset, which is better for salesforce code quality?",
+     "impressions": 1,
+     "clicks": 0,
+     "position": 1,
+     "inQuestions": true
+    }
+   ],
+   "hint": "Direkte Antwort auf „sonarqube vs gearset, which is better for salesforce code quality?“ ergänzen, falls die Seite sie noch nicht gibt",
+   "new": true
   }
  ],
  "spam": {
@@ -2378,10 +2421,10 @@
   ]
  },
  "counts": {
-  "snippet": 23,
-  "nearPage1": 28,
-  "questions": 36,
-  "longQueries": 30,
+  "snippet": 22,
+  "nearPage1": 29,
+  "questions": 38,
+  "longQueries": 31,
   "new": 3,
   "spam": 17
  }
