@@ -12435,8 +12435,8 @@
   "day": "2026-11-21",
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
-  "impressions": 10,
-  "position": 53.4
+  "impressions": 11,
+  "position": 53.1
  },
  {
   "day": "2026-11-21",
@@ -12465,6 +12465,13 @@
   "clicks": 0,
   "impressions": 5,
   "position": 46
+ },
+ {
+  "day": "2026-11-21",
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 47.7
  },
  {
   "day": "2026-11-21",
@@ -12500,13 +12507,6 @@
   "clicks": 0,
   "impressions": 2,
   "position": 3
- },
- {
-  "day": "2026-11-21",
-  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 41
  },
  {
   "day": "2026-11-21",
@@ -12563,6 +12563,20 @@
   "clicks": 0,
   "impressions": 1,
   "position": 34
+ },
+ {
+  "day": "2026-11-21",
+  "page": "https://www.fk-sd.de/en/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "day": "2026-11-21",
+  "page": "https://www.fk-sd.de/en/blog/agentforce-sap-order-status-mulesoft/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
  },
  {
   "day": "2026-11-21",
@@ -12629,6 +12643,13 @@
  },
  {
   "day": "2026-11-21",
+  "page": "https://www.fk-sd.de/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 1
+ },
+ {
+  "day": "2026-11-21",
   "page": "https://www.fk-sd.de/en/blog/salesforce-release-schedule-what-it-checks/",
   "clicks": 0,
   "impressions": 1,
@@ -12640,6 +12661,13 @@
   "clicks": 0,
   "impressions": 1,
   "position": 5
+ },
+ {
+  "day": "2026-11-21",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/environments-and-branching/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 8
  },
  {
   "day": "2026-11-21",

@@ -14,7 +14,7 @@
  {
   "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
   "clicks": 0,
-  "impressions": 293,
+  "impressions": 294,
   "position": 62.4
  },
  {
@@ -120,16 +120,16 @@
   "position": 29.2
  },
  {
+  "page": "https://www.fk-sd.de/en/",
+  "clicks": 0,
+  "impressions": 41,
+  "position": 10.2
+ },
+ {
   "page": "https://www.fk-sd.de/blog/produktdaten-b2b-commerce-pim-erp/",
   "clicks": 0,
   "impressions": 40,
   "position": 60.8
- },
- {
-  "page": "https://www.fk-sd.de/en/",
-  "clicks": 0,
-  "impressions": 40,
-  "position": 10.3
  },
  {
   "page": "https://www.fk-sd.de/en/speaking/",
@@ -294,16 +294,16 @@
   "position": 16.9
  },
  {
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 26,
+  "position": 54
+ },
+ {
   "page": "https://www.fk-sd.de/en/blog/agentforce-sales-planning-agreements-forecasts/",
   "clicks": 0,
   "impressions": 25,
   "position": 9.5
- },
- {
-  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
-  "clicks": 0,
-  "impressions": 25,
-  "position": 53.7
  },
  {
   "page": "http://fk-sd.de/",
@@ -492,6 +492,12 @@
   "position": 25.2
  },
  {
+  "page": "https://www.fk-sd.de/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/",
+  "clicks": 0,
+  "impressions": 14,
+  "position": 29.2
+ },
+ {
   "page": "https://www.fk-sd.de/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
   "clicks": 0,
   "impressions": 14,
@@ -552,12 +558,6 @@
   "position": 12.2
  },
  {
-  "page": "https://www.fk-sd.de/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/",
-  "clicks": 0,
-  "impressions": 13,
-  "position": 31.4
- },
- {
   "page": "https://www.fk-sd.de/en/masterclass/revenue-cloud/",
   "clicks": 0,
   "impressions": 13,
@@ -598,6 +598,12 @@
   "clicks": 0,
   "impressions": 12,
   "position": 11.5
+ },
+ {
+  "page": "https://www.fk-sd.de/en/blog/agentforce-sap-order-status-mulesoft/",
+  "clicks": 0,
+  "impressions": 12,
+  "position": 11.2
  },
  {
   "page": "https://www.fk-sd.de/en/blog/b2b-commerce-buyer-licences/",
@@ -646,12 +652,6 @@
   "clicks": 0,
   "impressions": 11,
   "position": 8.4
- },
- {
-  "page": "https://www.fk-sd.de/en/blog/agentforce-sap-order-status-mulesoft/",
-  "clicks": 0,
-  "impressions": 11,
-  "position": 11
  },
  {
   "page": "https://www.fk-sd.de/en/blog/commerce-extensions-custom-code/",
@@ -1152,6 +1152,12 @@
   "position": 10.2
  },
  {
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/environments-and-branching/",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 23.6
+ },
+ {
   "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/release-management-basics/",
   "clicks": 0,
   "impressions": 5,
@@ -1312,12 +1318,6 @@
   "clicks": 0,
   "impressions": 4,
   "position": 6.3
- },
- {
-  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/environments-and-branching/",
-  "clicks": 0,
-  "impressions": 4,
-  "position": 27.5
  },
  {
   "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/warranty-and-after-sales/",

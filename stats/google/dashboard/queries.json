@@ -8,8 +8,8 @@
  {
   "query": "manufacturing cloud",
   "clicks": 0,
-  "impressions": 65,
-  "position": 43.6
+  "impressions": 66,
+  "position": 43.8
  },
  {
   "query": "how to automate technician scheduling and dispatch?",
@@ -450,6 +450,12 @@
   "position": 9.1
  },
  {
+  "query": "click field service",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 66.8
+ },
+ {
   "query": "click field service edge",
   "clicks": 0,
   "impressions": 8,
@@ -480,6 +486,12 @@
   "position": 95.9
  },
  {
+  "query": "sap order in mulesoft",
+  "clicks": 0,
+  "impressions": 8,
+  "position": 12.5
+ },
+ {
   "query": "tourenplanung field service",
   "clicks": 0,
   "impressions": 8,
@@ -496,12 +508,6 @@
   "clicks": 0,
   "impressions": 7,
   "position": 55
- },
- {
-  "query": "click field service",
-  "clicks": 0,
-  "impressions": 7,
-  "position": 69.1
  },
  {
   "query": "field service mobile flow limitations",
@@ -532,12 +538,6 @@
   "clicks": 0,
   "impressions": 7,
   "position": 17.4
- },
- {
-  "query": "sap order in mulesoft",
-  "clicks": 0,
-  "impressions": 7,
-  "position": 12.4
  },
  {
   "query": "stakeholder analysis example",
@@ -1482,6 +1482,12 @@
   "position": 13
  },
  {
+  "query": "salesforce architektur köln",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7.5
+ },
+ {
   "query": "salesforce architektur linz",
   "clicks": 0,
   "impressions": 2,
@@ -2422,6 +2428,12 @@
   "clicks": 0,
   "impressions": 1,
   "position": 77
+ },
+ {
+  "query": "salesforce architektur dresden",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 16
  },
  {
   "query": "salesforce architektur essen",
