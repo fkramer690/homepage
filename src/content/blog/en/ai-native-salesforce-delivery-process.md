@@ -1,8 +1,9 @@
 ---
 title: "AI-native Salesforce delivery process in 14 steps"
-description: "An AI-native delivery process for Salesforce from workshop to deployment: what the agent does, where people decide at five gates and what the pipeline checks."
+metaTitle: "AI-native Salesforce delivery: 14 steps, 5 human gates"
+description: "An agent does the legwork from workshop to pull request, the pipeline checks, and people decide at five gates. The process in 14 steps."
 pubDate: 2026-10-30
-updatedDate: 2026-11-12
+updatedDate: 2026-11-23
 lang: en
 slug: ai-native-salesforce-delivery-process
 translationKey: ai-native-delivery-process

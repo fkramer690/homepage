@@ -1,9 +1,9 @@
 ---
 title: "Salesforce Licenses: Does Everyone Need a Full One?"
-metaTitle: "Salesforce License Cost: Does Everyone Need a Full One?"
-description: "Not every user needs a full Salesforce license. Which license types exist, what they cost, and how a license forecast can save six figures a year."
+metaTitle: "Salesforce licenses: no, not everyone needs a full one"
+description: "No, not every user needs a full Salesforce license. Which cheaper license types exist, what they cost and how to check actual usage before you sign."
 pubDate: 2026-10-26
-updatedDate: 2026-11-09
+updatedDate: 2026-11-23
 lang: en
 slug: salesforce-licences-full-licence-needed
 translationKey: salesforce-licence-types

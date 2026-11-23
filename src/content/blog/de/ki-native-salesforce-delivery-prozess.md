@@ -1,8 +1,9 @@
 ---
 title: "KI-nativer Delivery-Prozess für Salesforce in 14 Schritten"
-description: "KI-nativer Delivery-Prozess für Salesforce vom Workshop bis zur Produktion: was der Agent macht, wo Personen an fünf Toren entscheiden, was die Pipeline prüft."
+metaTitle: "KI-native Salesforce-Delivery: 14 Schritte, 5 Tore"
+description: "Ein Agent erledigt die Fleißarbeit vom Workshop bis zum Pull Request, Personen entscheiden an fünf Toren. Der Prozess in 14 Schritten."
 pubDate: 2026-10-30
-updatedDate: 2026-11-12
+updatedDate: 2026-11-23
 lang: de
 slug: ki-native-salesforce-delivery-prozess
 translationKey: ai-native-delivery-process

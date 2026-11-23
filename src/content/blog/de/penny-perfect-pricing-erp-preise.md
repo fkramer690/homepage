@@ -1,8 +1,9 @@
 ---
 title: "Penny Perfect Pricing: ERP-Preise in Salesforce?"
-description: "Penny Perfect Pricing bringt Preisfindung nach SAP-Muster in die Manufacturing Cloud. Wann sie zu Telesales passt und warum meist das ERP Preis-Master bleibt."
+metaTitle: "Penny Perfect Pricing: Bleibt SAP der Preis-Master?"
+description: "Meist ja: SAP bleibt Preis-Master, Penny Perfect Pricing lohnt sich nur, wo Aufträge in Salesforce entstehen. Was sie in der Manufacturing Cloud kann."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-23
 lang: de
 slug: penny-perfect-pricing-erp-preise
 translationKey: penny-perfect-pricing-erp-prices

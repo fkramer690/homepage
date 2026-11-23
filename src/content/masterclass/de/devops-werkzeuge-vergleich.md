@@ -27,6 +27,8 @@ faq:
     a: "Es löst eine andere Frage. Gearset, Copado und Flosum verkaufen Oberfläche, Zusatzmodule und Herstellersupport. sfdx-hardis hat keine Lizenzkosten, verlangt aber jemanden beim Kunden, der die Pipeline versteht. Welche Rolle Sie besetzen können, entscheidet mehr als die Funktionsliste."
   - q: "Wer sollte den Vertrag für das DevOps-Werkzeug unterschreiben?"
     a: "Der Kunde. Lizenzen, Admin-Rechte und Repository gehören auf Ihren Namen, Partner erhalten benannte Benutzer. Dann bleibt der Release-Prozess bei Ihnen, auch wenn ein Partner das Programm verlässt."
+  - q: "Sind alle Salesforce-DevOps-Werkzeuge im Grunde gleich?"
+    a: "Nein. Lifecycle Center, früher DevOps Center, ist ohne Zusatzlizenz in die Plattform eingebaut, arbeitet aber nur mit GitHub.com-Cloud-Plänen und Bitbucket Cloud. Gearset läuft als Dienst außerhalb Ihrer Org und ist stark im visuellen Vergleich von Metadaten. Copado und Flosum sind Salesforce-nativ, Flosum bringt eine eigene Versionsverwaltung mit. sfdx-hardis ist kostenlose Open Source auf Ihrer eigenen Git-Plattform. Für mich entscheiden die Git-Plattform und die Frage, wer auf Kundenseite die Pipeline verantworten kann."
 draft: false
 ---
 

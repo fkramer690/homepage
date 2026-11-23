@@ -3,6 +3,7 @@ title: "Salesforce-Partner wechseln ohne Stillstand"
 metaTitle: "Salesforce-Partner wechseln: Ablauf und Übergabe-Checkliste"
 description: "Salesforce-Implementierungspartner wechseln, ohne das Projekt anzuhalten: Ablauf, Übergabe-Checkliste und was Sie vor der Kündigung besitzen müssen."
 pubDate: 2026-11-10
+updatedDate: 2026-11-23
 lang: de
 slug: salesforce-partner-wechseln
 translationKey: switch-salesforce-partner
@@ -27,6 +28,8 @@ faq:
     a: "Ich empfehle einen harten Cut: Ab einem Stichtag verantwortet der neue Partner die Org. Der alte Partner stellt danach nur noch seine offenen Tickets fertig und steht für Rückfragen zur Verfügung, neue Arbeit bekommt er nicht mehr. Ein sanftes Auslaufen, bei dem beide Partner neue Arbeit übernehmen, verwischt die Verantwortung."
   - q: "Sollte der neue Partner die Org-Analyse machen?"
     a: "Lieber nicht allein. Ein neuer Partner hat ein Interesse daran, viel Neubaubedarf zu finden. Lassen Sie die Analyse von der Kundenseite durchführen und geben Sie dem neuen Partner das Ergebnis."
+  - q: "Kann ein neuer Salesforce-Partner ein laufendes Projekt übernehmen?"
+    a: "Ja, auch mitten in der Umsetzung, es dauert dann aber länger als nach dem Go-live. Der neue Partner braucht das Repository mit Historie, die Pipeline, die offenen Branches und Stories sowie eine Org-Analyse von der Kundenseite. Am besten gelingt das mit einem harten Cut nach einem stabilen Release und einer kurzen Überlappung, in der der alte Partner seine offenen Tickets fertigstellt und Rückfragen beantwortet. Ohne sie dauert die erste Änderung oft Wochen statt Tage."
 draft: false
 ---
 

@@ -1,8 +1,9 @@
 ---
 title: "Revenue Cloud configurator: when constraint rules pay off"
-description: "When the Revenue Cloud configurator with constraint rules and CML is enough for technical products, and when manufacturers should keep an external configurator."
+metaTitle: "Revenue Cloud constraint rules: when they pay off"
+description: "Constraint rules pay off for interdependent attributes that the manufacturer maintains itself. When SAP variant config or an external configurator stays."
 pubDate: 2026-10-28
-updatedDate: 2026-11-09
+updatedDate: 2026-11-23
 lang: en
 slug: revenue-cloud-configurator-constraint-rules
 translationKey: revenue-cloud-configurator-constraint-rules
