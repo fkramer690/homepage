@@ -1066,6 +1066,17 @@ const drawings: Record<string, Drawing> = {
     ${[l('integration user', 'Integrationsuser'), l('technician', 'Techniker'), l('sales rep', 'Vertrieb')].map((s, i) => box(18 + i * 98, 100, 88, 22) + t(62 + i * 98, 114, s, { size: 7, anchor: 'middle' })).join('')}
     ${tag(18, 132, 150, l('activate on your date', 'selbst aktivieren'))}${t(178, 145, l('not on the upgrade weekend', 'nicht am Upgrade-Wochenende'), { size: 6.5 })}`,
 
+  'salesforce-device-flow': (l) => `
+    ${t(18, 18, l('DEVICE FLOW FROM 30 NOV 2026', 'DEVICE FLOW AB 30.11.2026'), { fill: D, size: 7 })}
+    ${box(18, 30, 80, 44)}${t(58, 46, 'TERMINAL', { fill: D, size: 7, anchor: 'middle' })}${t(58, 62, l('user code', 'Benutzercode'), { size: 6.5, anchor: 'middle' })}
+    ${arrow(98, 52, 124)}
+    ${box(124, 30, 70, 44)}${t(159, 46, l('PHONE / PC', 'HANDY / PC'), { fill: D, size: 7, anchor: 'middle' })}${t(159, 62, l('confirm', 'bestätigen'), { size: 6.5, anchor: 'middle' })}
+    ${arrow(194, 52, 214, C)}
+    ${box(214, 30, 88, 44, C)}${t(258, 46, 'LOCAL ECA', { fill: C, size: 7, anchor: 'middle' })}${t(258, 62, 'https://localhost', { size: 6.5, anchor: 'middle' })}
+    <path d="M18 88H302" stroke="${L}"/>
+    ${cross(26, 104)}${t(36, 107, l('connected app', 'Connected App'), { size: 7 })}${cross(120, 104)}${t(130, 107, l('packaged ECA', 'paketierte ECA'), { size: 7 })}${cross(210, 104)}${t(220, 107, l('other flows', 'weitere Flows'), { size: 7 })}
+    ${tag(18, 124, 160, l('Login History: OAuth Device', 'Anmeldeverlauf: OAuth Device'))}${t(188, 137, l('last 6 months', 'letzte 6 Monate'), { size: 7 })}`,
+
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
     ${arrow(70, 43, 82)}${arrow(132, 43, 144)}
