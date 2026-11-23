@@ -1,6 +1,6 @@
 ---
 title: "Salesforce DevOps rollout: roadmap and metrics"
-description: "The roadmap from change sets to your own Salesforce pipeline in seven phases: team training, avoiding typical mistakes, measuring progress, planning for agents."
+description: "A typical Salesforce DevOps rollout runs in seven phases, from ownership and Git to quality gates and a release calendar, with one pilot stream first."
 lang: en
 slug: rollout-roadmap
 course: devops
