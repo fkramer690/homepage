@@ -12689,6 +12689,14 @@
  },
  {
   "day": "2026-11-21",
+  "query": "field service affald",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 13
+ },
+ {
+  "day": "2026-11-21",
   "query": "field service partner network",
   "page": "https://www.fk-sd.de/en/blog/salesforce-field-service-service-partners/",
   "clicks": 0,
@@ -12726,6 +12734,22 @@
   "clicks": 0,
   "impressions": 1,
   "position": 68
+ },
+ {
+  "day": "2026-11-21",
+  "query": "nearshore teams",
+  "page": "https://www.fk-sd.de/leistungen/projektsteuerung-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 37
+ },
+ {
+  "day": "2026-11-21",
+  "query": "offline field service app",
+  "page": "https://www.fk-sd.de/en/blog/field-service-mobile-app-offline-data/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 50
  },
  {
   "day": "2026-11-21",
@@ -12854,5 +12878,317 @@
   "clicks": 0,
   "impressions": 1,
   "position": 4
+ },
+ {
+  "day": "2026-11-22",
+  "query": "what does a typical salesforce devops rollout look like?",
+  "page": "https://www.fk-sd.de/en/masterclass/devops-release-management/rollout-roadmap/",
+  "clicks": 0,
+  "impressions": 6,
+  "position": 7.3
+ },
+ {
+  "day": "2026-11-22",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/",
+  "clicks": 0,
+  "impressions": 5,
+  "position": 39.8
+ },
+ {
+  "day": "2026-11-22",
+  "query": "field service application software",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 64
+ },
+ {
+  "day": "2026-11-22",
+  "query": "what makes a salesforce devops platform enterprise-ready?",
+  "page": "https://www.fk-sd.de/en/blog/why-devops-matters-salesforce-enterprise/",
+  "clicks": 0,
+  "impressions": 3,
+  "position": 4
+ },
+ {
+  "day": "2026-11-22",
+  "query": "click field service management software",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 53.5
+ },
+ {
+  "day": "2026-11-22",
+  "query": "field service management cloud",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 59
+ },
+ {
+  "day": "2026-11-22",
+  "query": "manage multiple price books with erp pricing",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-customer-prices-price-books-erp/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 72
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce beratung maschinenbau",
+  "page": "https://www.fk-sd.de/salesforce-maschinenbau/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce zertifizierte experten",
+  "page": "https://www.fk-sd.de/certifications/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 35
+ },
+ {
+  "day": "2026-11-22",
+  "query": "symfony salesforce integration",
+  "page": "https://www.fk-sd.de/en/services/salesforce-integration/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 73
+ },
+ {
+  "day": "2026-11-22",
+  "query": "vertragsmanagement mit salesforce",
+  "page": "https://www.fk-sd.de/blog/salesforce-contracts-vertragsmanagement/",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 9
+ },
+ {
+  "day": "2026-11-22",
+  "query": "agentforce angebote",
+  "page": "https://www.fk-sd.de/blog/flex-credits-agentforce-kosten-pro-aktion/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 48
+ },
+ {
+  "day": "2026-11-22",
+  "query": "click field service",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 49
+ },
+ {
+  "day": "2026-11-22",
+  "query": "click field service management",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 47
+ },
+ {
+  "day": "2026-11-22",
+  "query": "cloud field service management",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 46
+ },
+ {
+  "day": "2026-11-22",
+  "query": "cpq upgraden",
+  "page": "https://www.fk-sd.de/blog/cpq-migration-revenue-cloud-phasen/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 31
+ },
+ {
+  "day": "2026-11-22",
+  "query": "criteria for evaluating a qsr cdp implementation partner",
+  "page": "https://www.fk-sd.de/en/blog/how-to-choose-a-salesforce-implementation-partner/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 96
+ },
+ {
+  "day": "2026-11-22",
+  "query": "epicor kinetic salesforce warranty claim handoff",
+  "page": "https://www.fk-sd.de/en/blog/warranty-claims-dealers-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 10
+ },
+ {
+  "day": "2026-11-22",
+  "query": "erp field service",
+  "page": "https://www.fk-sd.de/blog/field-service-management-software-auswahl/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 58
+ },
+ {
+  "day": "2026-11-22",
+  "query": "erp field service",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 71
+ },
+ {
+  "day": "2026-11-22",
+  "query": "fertigung salesforce",
+  "page": "https://www.fk-sd.de/masterclass/ki-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 15
+ },
+ {
+  "day": "2026-11-22",
+  "query": "field service",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 89
+ },
+ {
+  "day": "2026-11-22",
+  "query": "field service management",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 59
+ },
+ {
+  "day": "2026-11-22",
+  "query": "field services software",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 57
+ },
+ {
+  "day": "2026-11-22",
+  "query": "fieldservice",
+  "page": "https://www.fk-sd.de/en/blog/field-service-management-software-selection/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 50
+ },
+ {
+  "day": "2026-11-22",
+  "query": "ki chatbot audit trail",
+  "page": "https://www.fk-sd.de/blog/audit-trail-ki-agenten-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 94
+ },
+ {
+  "day": "2026-11-22",
+  "query": "manufacturing cloud",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 34
+ },
+ {
+  "day": "2026-11-22",
+  "query": "proalpha anbindung salesforce",
+  "page": "https://www.fk-sd.de/leistungen/salesforce-schnittstellen/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 36
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce manufacturing cloud",
+  "page": "https://www.fk-sd.de/en/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 29
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce manufacturing cloud implementation",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 61
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce manufacturing cloud partner",
+  "page": "https://www.fk-sd.de/masterclass/manufacturing-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 44
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce nearshore development",
+  "page": "https://www.fk-sd.de/en/services/program-management-nearshore/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 56
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce pim",
+  "page": "https://www.fk-sd.de/en/blog/b2b-commerce-product-data-pim-erp/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 21
+ },
+ {
+  "day": "2026-11-22",
+  "query": "salesforce projektmanagement",
+  "page": "https://www.fk-sd.de/blog/change-management-prozess-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 75
+ },
+ {
+  "day": "2026-11-22",
+  "query": "sx.e salesforce warranty claim handoff",
+  "page": "https://www.fk-sd.de/en/blog/warranty-claims-dealers-salesforce/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 7
+ },
+ {
+  "day": "2026-11-22",
+  "query": "syteline salesforce customer hierarchy synchronization",
+  "page": "https://www.fk-sd.de/en/services/salesforce-integration/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 72
+ },
+ {
+  "day": "2026-11-22",
+  "query": "wechsel von cpq zu revenue cloud",
+  "page": "https://www.fk-sd.de/blog/cpq-behalten-oder-revenue-cloud/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 20
+ },
+ {
+  "day": "2026-11-22",
+  "query": "wechsel von cpq zu revenue cloud",
+  "page": "https://www.fk-sd.de/blog/cpq-migration-revenue-cloud-phasen/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "day": "2026-11-22",
+  "query": "what's a field service action",
+  "page": "https://www.fk-sd.de/en/blog/field-service-case-to-work-order/",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 42
  }
 ]

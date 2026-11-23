@@ -45,6 +45,11 @@
   "visits": 0
  },
  {
+  "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
+  "pageviews": 40,
+  "visits": 0
+ },
+ {
   "page": "/partner/juliane-winterscheid/",
   "pageviews": 40,
   "visits": 10
@@ -60,9 +65,9 @@
   "visits": 40
  },
  {
-  "page": "/leistungen/salesforce-architektur/",
+  "page": "/en/blog/manufacturing-cloud-global-rollout/",
   "pageviews": 40,
-  "visits": 20
+  "visits": 40
  },
  {
   "page": "/en/services/change-management-salesforce/",
@@ -70,9 +75,9 @@
   "visits": 30
  },
  {
-  "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
+  "page": "/leistungen/salesforce-architektur/",
   "pageviews": 40,
-  "visits": 0
+  "visits": 20
  },
  {
   "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
@@ -83,11 +88,6 @@
   "page": "/en/blog/what-is-agentforce/",
   "pageviews": 30,
   "visits": 30
- },
- {
-  "page": "/homepage/",
-  "pageviews": 30,
-  "visits": 10
  },
  {
   "page": "/leistungen/salesforce-schnittstellen/",

@@ -102,13 +102,7 @@
   "position": 9
  },
  {
-  "query": "salesforce well architected framework architect agent",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 7
- },
- {
-  "query": "changekonzept nach lewin",
+  "query": "4-seiten-analyse nach stakeholder meetings",
   "clicks": 0,
   "impressions": 2,
   "position": 8
@@ -120,22 +114,28 @@
   "position": 8
  },
  {
+  "query": "salesforce well architected framework architect agent",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 7
+ },
+ {
   "query": "sfdx-hardis vs salesforce devops center lifecycle center comparison 2026",
   "clicks": 0,
   "impressions": 2,
   "position": 2
  },
  {
-  "query": "4-seiten-analyse nach stakeholder meetings",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
- },
- {
   "query": "暴食后第二天轻断食有用吗",
   "clicks": 0,
   "impressions": 2,
   "position": 4
+ },
+ {
+  "query": "changekonzept nach lewin",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
  },
  {
   "query": "brauch salesforce voice flex credits",
@@ -150,6 +150,42 @@
   "position": 7.5
  },
  {
+  "query": "findest du eine abbildung einer change kurve mit netten icons als erklärung",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 8
+ },
+ {
+  "query": "comparison between change management models lewin kotter adkar",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
+ },
+ {
+  "query": "sfdx hardis badges",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 10
+ },
+ {
+  "query": "salesforce: wir nutzen contracts, preisbücher und accounts. kann ich in einem contract für einen account, der einem preisbuch zugeordnet ist, ein produkt als sonderpreis führen, dass nicht im preisbuch steht?",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 4
+ },
+ {
+  "query": "change kurve team",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 6
+ },
+ {
+  "query": "fk-sd.de",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 2
+ },
+ {
   "query": "what is an fk in salesforce?",
   "clicks": 0,
   "impressions": 2,
@@ -162,52 +198,10 @@
   "position": 5
  },
  {
-  "query": "change kurve team",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 6
- },
- {
-  "query": "sfdx hardis badges",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 10
- },
- {
-  "query": "comparison between change management models lewin kotter adkar",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 10
- },
- {
-  "query": "findest du eine abbildung einer change kurve mit netten icons als erklärung",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 8
- },
- {
-  "query": "fk-sd.de",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 2
- },
- {
-  "query": "salesforce: wir nutzen contracts, preisbücher und accounts. kann ich in einem contract für einen account, der einem preisbuch zugeordnet ist, ein produkt als sonderpreis führen, dass nicht im preisbuch steht?",
+  "query": "aela flex credits",
   "clicks": 0,
   "impressions": 2,
   "position": 4
- },
- {
-  "query": "salesforce einstein trust layer data masking zero retention agentforce limitations",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 4
- },
- {
-  "query": "fk solution design",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 2
  },
  {
   "query": "mcp server personenbezogene daten",
@@ -228,16 +222,16 @@
   "position": 9
  },
  {
-  "query": "aela flex credits",
+  "query": "fk solution design",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 2
+ },
+ {
+  "query": "salesforce einstein trust layer data masking zero retention agentforce limitations",
   "clicks": 0,
   "impressions": 2,
   "position": 4
- },
- {
-  "query": "salesforce dx mcp is end of life?",
-  "clicks": 0,
-  "impressions": 2,
-  "position": 6
  },
  {
   "query": "salesforce meshmesh",
@@ -246,10 +240,10 @@
   "position": 10
  },
  {
-  "query": "unterschiede adkar und drei phasen modell von lewis",
-  "clicks": 1,
-  "impressions": 1,
-  "position": 2
+  "query": "salesforce dx mcp is end of life?",
+  "clicks": 0,
+  "impressions": 2,
+  "position": 6
  },
  {
   "query": "salesforce gmv",
@@ -258,10 +252,28 @@
   "position": 4
  },
  {
-  "query": "migrate list views scheudling console sfdc",
+  "query": "unterschiede adkar und drei phasen modell von lewis",
+  "clicks": 1,
+  "impressions": 1,
+  "position": 2
+ },
+ {
+  "query": "what is salesforce devopps now called",
   "clicks": 0,
   "impressions": 1,
-  "position": 3
+  "position": 4
+ },
+ {
+  "query": "what is rca latest name for by salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 4
+ },
+ {
+  "query": "new dispatch console salesforce",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 5
  },
  {
   "query": "trailhead new dispatch console",
@@ -270,33 +282,21 @@
   "position": 4
  },
  {
-  "query": "unter y:\\zentral\\verträge\\dienstleister\\salesforce\\verträge, agb, rechnungen\\renewal 2026 - laufzeit 11-2026 bis einschl. 10-2027",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 5
- },
- {
-  "query": "\"snelstart\" \"verkooporders\" \"post\"",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 10
- },
- {
   "query": "salesforce scheduling console update service appointment duration on gantt",
   "clicks": 0,
   "impressions": 1,
   "position": 10
  },
  {
-  "query": "mandantstatusrelevanzauftragstypspediteurreserv.createdsortieren002 ergebniss insgesamt (seite: 0er",
-  "clicks": 0,
-  "impressions": 1,
-  "position": 8
- },
- {
   "query": "hardifs",
   "clicks": 0,
   "impressions": 1,
   "position": 5
+ },
+ {
+  "query": "difference between devops centre and salesforce dx",
+  "clicks": 0,
+  "impressions": 1,
+  "position": 1
  }
 ]

@@ -6,13 +6,8 @@
  },
  {
   "source": "Direct",
-  "pageviews": 940,
-  "visits": 940
- },
- {
-  "source": "fkramer690.github.io",
-  "pageviews": 60,
-  "visits": 0
+  "pageviews": 930,
+  "visits": 930
  },
  {
   "source": "www.linkedin.com",
@@ -30,7 +25,17 @@
   "visits": 20
  },
  {
+  "source": "www.msn.cn",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
   "source": "www.google.com",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "source": "docs.google.com",
   "pageviews": 10,
   "visits": 10
  }
